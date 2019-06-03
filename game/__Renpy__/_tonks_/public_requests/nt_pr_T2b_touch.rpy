@@ -1,46 +1,77 @@
-#Favour 2 - Touch me (Tonks gets a student to play with her tits)
-label tonks_teacher_event_2_intro: #First intro
-    m "Ready for the next step?"
-    ton "Mmmm, you make it sound so ominous."
-    ton "So where do we go from here?"
-    ton "Should I start making out with them?"
-    m "Pfft, may as well start holding hands."
-    m "I was thinking you could take a few of these boys to second base."
-    ton "Second base?! Already?"
-    m "Obviously. We're trying to earn you a reputation as a favour trader."
-    m "Making your students write lines in their underwear isn't going to cut it."
-    ton "I suppose you might be right..."
-    ton "I'm not sure if the students will be ready for it though..."
-    m "Please, you sound like you're talking about a pop-quiz."
-    m "All you have to do is follow the damn train-ahem"
-    m "All you have to do is get them to grope your chest a little..."
-    m "I can't imagine any of them saying no to that."
-    m "Goodness knows I wouldn't..."
-    ton "Mmm, well if you say so... You are the expert."
-    m "That I am. Now get out there and buy some favours!"
-    ton "Yes, sir!"
-    ton "(This is way better than being an auror!)"
-    return
 
-label tonks_teacher_event_2_repeat: #Repeatable intro
-    m "Think you're up for messing around with your students again?"
-    ton "Mmm, you bet!"
-    m "Why don't you let them cop a feel then?"
-    ton "Consider it done."
-    m "Good to hear. I'll see you after class."
-    ton "(I still can't believe Dumbledore is telling me to go molest my students...)"
-    ton "Yes, sir!"
-    return
 
-label tonks_teacher_event_2_1: #Level 1 Event 1
+### Grope me ###
+
+# (Tonks lets her students play with her tits, ass,...)
+
+label nt_pr_grope_start:
+
+    if ton_tier == 1:
+
+        if nt_pr_grope.points == 0:
+            m "Ready for the next step?"
+            ton "Mmmm, you make it sound so ominous."
+            ton "So where do we go from here?"
+            ton "Should I start making out with them?"
+            m "Pfft, may as well start holding hands."
+            m "I was thinking you could take a few of these boys to second base."
+            ton "Second base?! Already?"
+            m "Obviously. We're trying to earn you a reputation as a favour trader."
+            m "Making your students write lines in their underwear isn't going to cut it."
+            ton "I suppose you might be right..."
+            ton "I'm not sure if the students will be ready for it though..."
+            m "Please, you sound like you're talking about a pop-quiz."
+            m "All you have to do is follow the damn train-ahem"
+            m "All you have to do is get them to grope your chest a little..."
+            m "I can't imagine any of them saying no to that."
+            m "Goodness knows I wouldn't..."
+            ton "Mmm, well if you say so... You are the expert."
+            m "That I am. Now get out there and buy some favours!"
+            ton "Yes, sir!"
+            ton "(This is way better than being an auror!)"
+
+        else:
+            m "Think you're up for messing around with your students again?"
+            ton "Mmm, you bet!"
+            m "Why don't you let them cop a feel then?"
+            ton "Consider it done."
+            m "Good to hear. I'll see you after class."
+            ton "(I still can't believe Dumbledore is telling me to go molest my students...)"
+            ton "Yes, sir!"
+
+    elif ton_tier >= 2:
+
+        if nt_pr_grope.points == 0: # Tell her to be even lewder for the next level of favors.
+
+            "Dev Note" "Write 2nd intro."
+
+        else: # Repeat
+            m "Would you like to mess around with your students again?"
+            ton "And let them grope their teacher?"
+            g9 "Anyway they like!"
+            ton "That sounds perfect!"
+            m "I'll see you after class..."
+            ton "Yes, [ton_genie_name]...{image=textheart}"
+
+    # Tonks leaves
+
+    $ nt_pr_grope.inProgress = True
+
+    jump end_tonks_event
+
+
+
+### Tier 1 ###
+
+label nt_pr_grope_T1_E1: # Tier 1 - Event 1 - Slytherin boy
     m "How were classes today, [tonks_name]?"
-    m "Teach your students a valuable lesson?"
+    m "Taught your students some valuable lessons?"
     ton "I'm not sure about valuable... But I do know that he isn't going to forget it anytime soon!"
     m "That's what I like to hear! Go on."
-    ton "Remember that \'slytherin\' cutie I held back to write lines?"
+    ton "Remember that \"Slytherin\" cutie I held back to write lines?"
     m "Vaguely."
     ton "Well, I decided to hold him back after class again."
-    ton "He tried to put on a proud \'slytherin\' facade, claiming that I had no right to hold him back."
+    ton "He tried to put on a proud \"Slytherin\" facade, claiming that I had no right to hold him back."
     ton "Saying he's lucky he didn't \"report me\" for making him pull down his pants the first time."
     ton "It was all empty talk though... I could tell by the bulge in those pants he wanted to be there more than anything."
     ton "Still, I let him act tough... just so he wouldn't run away..."
@@ -61,23 +92,30 @@ label tonks_teacher_event_2_1: #Level 1 Event 1
     ton "Maybe... Maybe not..."
     ton "All I know is that he wasn't afraid to give it a go."
     m "He enjoyed himself then?"
-    ton "Like you wouldn't believe. It was like a kid playing with lego for the first time."
+    ton "Like you wouldn't believe. It was like a kid playing with lego for the first time." # Lego are muggle toys! No idea what wizards do  "It was like a kid playing with some bludgers..."
     ton "He just sat there silently groping them for ten minutes straight..."
     ton "Ughh... It took everything I had not to hold him down and jump his bones..."
-    m "Tonks..."
-    ton "Right, well after letting him have a play in Disneyland for a little while I sent him back to class."
+    m "[tonks_name]..."
+    ton "Right, well after letting him have a play in Disneyland for a little while I sent him back to class." # Disneyland?
     m "Just like that?"
     ton "There may have been a little more dirty talk... but that was just for me."
     m "Very well... Think you'll gain any rep from this encounter then?"
     ton "Hmmm, I'm not sure if he'll talk... But the fact I keep holding boys behind should start to spread some rumours by itself."
     m "Good to hear. That'll be all then, [tonks_name]."
-    ton "Thank you, Dumbledore."
-    return
+    ton "Thank you, [ton_genie_name]."
 
-label tonks_teacher_event_2_2: #Level 1 Event 2
+    # Tonks leaves
+
+    if ton_reputation < 9: # Points til 9.
+        $ ton_reputation += 1
+
+    jump end_tonks_event
+
+
+label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     m "So, how are you finding the education industry?"
     ton "Fun! I never though making lesson plans and marking tests would actually be enjoyable, but there's something rather cathartic to it..."
-    ton "Plus, the being allowed to mess around with your students is a nice bonus."
+    ton "Plus, being allowed to mess around with your students is a nice bonus."
     m "Speaking of..."
     ton "Don't worry, I've got a story for you old man."
     ton "Remember that shy \"Ravenclaw\" boy I had touch himself for me the other day?"
@@ -97,7 +135,7 @@ label tonks_teacher_event_2_2: #Level 1 Event 2
     ton "And boy was I right. You should have seen his face light up when I asked him about buying another favour!"
     ton "You'd think it was Christmas!"
     m "Pfft, fooling around with you would be better than Christmas!"
-    ton "Mmmm, thanks Dumbledore... I think he thought the same."
+    ton "Mmmm, thanks [ton_genie_name]... I think he thought the same."
     m "So did you go straight for the kill?"
     ton "No... I wanted to play with my food first."
     ton "That look of nervous awe as he gazed up at me after I asked him if he wanted to touch his teachers boobs."
@@ -112,17 +150,23 @@ label tonks_teacher_event_2_2: #Level 1 Event 2
     ton "No where really, he just stared nuzzling his face into my cleavage, grinding himself against my thigh while giving me the tightest hug of his life."
     m "Sound's like he went to heaven then."
     ton "Maybe... It was pretty cute if I'm being honest."
-    m "How long did this \'hug\' go on for?"
+    m "How long did this \"hug\" go on for?"
     ton "About five or ten minutes."
     ton "Eventually it all got too much for him and he just broke of the hug, said thanks and ran off."
     m "Very good. Did you make sure to pay him his points?"
     ton "I did, even if he wasn't there to hear it..."
     m "That'll be all then."
-    ton "See ya, Dumbledore."
-    return
+    ton "See ya, [ton_genie_name]."
+
+    # Tonks leaves
+
+    if ton_reputation < 9: # Points til 9.
+        $ ton_reputation += 1
+
+    jump end_tonks_event
 
 
-label tonks_teacher_event_2_3: #Level 1 Event 3
+label nt_pr_grope_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys
     m "I think I noticed a few extra points for \"Gryffindor\" today."
     m "Does that mean what I think it does?"
     ton "Maybe..."
@@ -152,11 +196,17 @@ label tonks_teacher_event_2_3: #Level 1 Event 3
     ton "Thank you, sir. Now if you don't mind, I think I need to go to my room to \"unwind\"..."
     m "Goodnight."
     ton "Night."
-    ton "(Mmmm, who knows, I might even come across {i}Harry{/i} and {i}Ron{/i} on my walk back...)" #Italics to draw attention to the name reveal
-    return
+    ton "(Mmmm, who knows, I might even come across {i}Harry{/i} and {i}Ron{/i} on my walk back...)" #Italics to draw attention to the name reveal # Note: Would change it to "Potter" and "Weasley"
+
+    # Tonks leaves
+
+    if ton_reputation < 9: # Points til 9.
+        $ ton_reputation += 1
+
+    jump end_tonks_event
 
 
-label tonks_teacher_event_2_4: #Level 1 Event 4
+label nt_pr_grope_T1_E4: # Tier 1 - Event 4 - Slytherin girl
     m "How's my favorite teacher doing today?"
     ton "Never better!"
     m "I take it you were able to buy a favour then?"
@@ -195,4 +245,28 @@ label tonks_teacher_event_2_4: #Level 1 Event 4
     ton "Yes, sir!"
     ton "(I still can't believe that Dumbledore is having me fool around with my students...)"
     ton "(Best. job. ever.)"
-    return
+
+    # Tonks leaves
+
+    if ton_reputation < 9: # Points til 9.
+        $ ton_reputation += 1
+
+    jump end_tonks_event
+
+
+
+### Tier 2 ###
+
+label nt_pr_grope_T2_E1: # Tier 2 - Event 1
+
+
+
+label nt_pr_grope_T2_E2: # Tier 2 - Event 2
+
+
+
+label nt_pr_grope_T2_E3: # Tier 2 - Event 3
+
+
+
+label nt_pr_grope_T2_E4: # Tier 2 - Event 4

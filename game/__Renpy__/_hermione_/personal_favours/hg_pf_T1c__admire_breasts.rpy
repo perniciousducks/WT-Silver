@@ -105,7 +105,7 @@ label hg_pf_admire_breasts:
 # Event 2 (i) - Hermione will lift up her top.
 # Event 3 (r) - Hermione will lift up her top.
 
-label hg_pf_admire_breasts_T1_intro_E1:
+label hg_pf_admire_breasts_T1_intro_E1: # Needs posing
     call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
 
     m "[hermione_name]?"

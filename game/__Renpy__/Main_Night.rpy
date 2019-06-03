@@ -113,6 +113,11 @@ label night_resume:
         $ astoria_intro_completed = True
         $ days_without_an_event = 0
         jump astoria_tonks_intro
+    python:
+        for i in nt_requests_list:
+            if i.inProgress:
+                i.inProgress = False
+                i.start()
 
     # Cho Events.
     if cho_intro_state == "event_2": # Happens right after intro.

@@ -18,8 +18,8 @@ init python:
                                    "postman": ["Cardgame", "Poster Boy", "Bought all posters from the token shop.", False, "interface/icons/posters/agrabah.png", False],
                                    "hats": ["Cardgame", "Mad Hatter", "Bought all hat decorations from the token shop.", False, "interface/icons/icon_gambler_hat.png", False],
                                    "daddy": ["Characters", "Who's your daddy?", "Let Hermione call you a {size=-5}(sugar){/size} daddy.", False, "interface/icons/head/head_hermione_2.png", True],
-                                   "pantiesfap": ["General", "I sneezed on them...", "Rubbed one out on Hermione's panties.", False, "images/animation/06_jerking_02.png", False],
-                                   "pantiesfapcho": ["General", "Exercise is important", "Rubbed one out on Cho's panties.", False, "images/animation/06_jerking_04.png", False],
+                                   "pantiesfap": ["General", "I sneezed on them...", "Rubbed one out on Hermione's panties.", False, "characters/hermione/chibis/grope_breasts/masturbate_02.png", False],
+                                   "pantiesfapcho": ["General", "Exercise is important", "Rubbed one out on Cho's panties.", False, "characters/hermione/chibis/grope_breasts/masturbate_04.png", False],
                                    "bros": ["Characters", "Bros before hoes", "Became best pals with Snape.", False, "interface/icons/head/head_snape_1.png", False],
                                    "knock": ["Characters", "*Knock* *knock*", "Go away! I'm busy.", False, "images/rooms/_objects_/doors/door_idle.png", True],
                                    "decorator": ["Cardgame", "Decorator", "Applied decoration in the office.", False, "interface/icons/trophies/stag.png", False],
@@ -40,10 +40,10 @@ init python:
 
     class achievement_class(object):
         achievements = {}
-    
+
         def __init__(self):
             self.achievements = persistent.achievements
-            
+
         def unlock(self, id, silent=False):
             try:
                 if persistent.achievements[id][3] == False:
@@ -55,11 +55,11 @@ init python:
                 return
             except KeyError:
                 return
-            
+
         def lock(self, id):
             self.achievements[id][3] = False
             persistent.achievements[id][3] = False
-            
+
     def achievement_sortfilter(item, sortby="A-z", filtering=None):
         if filtering == "Locked":
             item = filter(lambda x: x[1][3] is False, item)
@@ -67,7 +67,7 @@ init python:
             item = filter(lambda x: x[1][3] is True, item)
         elif filtering == "Secret":
             item = filter(lambda x: x[1][5] is True, item)
-            
+
         if sortby == "z-A":
             item = sorted(item, key=lambda x: x[1][1], reverse=True)
         elif current_sorting == "Unlocked":
@@ -77,7 +77,7 @@ init python:
         else:
             item = sorted(item, key=lambda x: x[1][1])
         return item
-        
+
 init:
     python:
         def update_achievements():
@@ -85,46 +85,46 @@ init:
             if gold >= 10000:
                 achievement.unlock("gold")
                 temp_var += 1
-            
+
             if wine >= 25:
                 achievement.unlock("drunkard")
                 temp_var += 1
-                
+
             if (day-phoenix_fed_counter) >= 50:
                 achievement.unlock("peta")
                 temp_var += 1
-                
+
             if phoenix_petted_counter >= 25:
                 achievement.unlock("petpal")
                 temp_var += 1
-                
+
             if sna_friendship_maxed:
                 achievement.unlock("bros")
                 temp_var += 1
-                
+
             if her_whoring >= 24:
                 achievement.unlock("overwhored")
                 temp_var += 1
-                
+
             if stat_fireplace_counter >= 5:
                 achievement.unlock("fireplace")
                 temp_var += 1
-                
+
             if stat_reports_counter >= 5:
                 achievement.unlock("workaholic")
                 temp_var += 1
-                
+
             if temp_var >= 8:
                 renpy.hide_screen("achievement_block")
-    
+
 screen achievement_block():
     tag achievement_block
-    
+
     timer 5.0 action Function(update_achievements) repeat True
 ###
 init:
     $ achievement = achievement_class()
-    
+
 label popup(string="", title="", icon=None, xpos=0, ypos=60, sound=True, soundfile='sounds/achievement.mp3'):
     if sound:
         $ renpy.play(soundfile)
@@ -134,14 +134,14 @@ label popup(string="", title="", icon=None, xpos=0, ypos=60, sound=True, soundfi
 screen achievement_window(string="", title="", icon=None, xpos=0, ypos=60):
     tag popup_window
     zorder 100
-    
+
     frame:
         style "empty"
         at popup_animation(time=5.0, xx=-410)
         pos (xpos, ypos)
-        xsize 410 
+        xsize 410
         ysize 96
-        
+
         add "interface/achievements/"+interface_color+"/box.png"
         if icon:
             frame:
@@ -154,7 +154,7 @@ screen achievement_window(string="", title="", icon=None, xpos=0, ypos=60):
                     add image_zoom[0] zoom image_zoom[1] align (0.5, 1.0) yoffset -1
                 else:
                     add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
-                
+
             add "interface/achievements/glass.png"
         frame:
             style "empty"
@@ -167,60 +167,60 @@ screen achievement_window(string="", title="", icon=None, xpos=0, ypos=60):
                 text title size 18 xalign 0.5 xanchor 0.5
                 text string size 14 xalign 0.5 xanchor 0.5
     timer 6.0 action Hide("achievement_window")
-    
+
 transform rotate_circular():
     subpixel True
-    
+
     on show, appear, start:
         rotate 0
         linear 7.0 rotate 360
         repeat
-    
+
 ####################################
 ############# Menu #################
 ####################################
-    
+
 label achievement_menu(xx=150, yy=90):
-    
+
     $ hide_transitions = True
-    
+
     # Styling
     if daytime:
         #$ btn_hover = "#e3ba7140"
         $ btn_hover = "#edc48240"
     else:
         $ btn_hover = "#7d75aa40"
-    
+
     $ achievement_categories_sorted = ["All", "General", "Characters", "Cardgame", "Mirror"]
     $ achievement_categories_sorted_length = len(achievement_categories_sorted)
-    
+
     $ items_shown = 36
     $ current_page = 0
     $ current_item = None
     $ current_category = achievement_categories_sorted[0]
     $ current_filter = None
     $ current_sorting = "A-z"
-    
+
     $ category_items = list(persistent.achievements.iteritems())
     $ menu_items = achievement_sortfilter(category_items, current_sorting, current_filter)
     $ menu_items_length = len(menu_items)
 
     label achievement_menu_after_init:
-    
+
     show screen bld1
     show screen achievement_menu(xx, yy)
     show screen achievement_menuitem(xx, yy)
-    
+
     $ _return = ui.interact()
-    
+
     hide screen bld1
     hide screen achievement_menu
     hide screen achievement_menuitem
-    
+
     if _return[0] == "select":
         $ current_item = _return[1]
     elif _return[0] == "category":
-        $ current_category = _return[1] 
+        $ current_category = _return[1]
         if current_category == "All":
             $ category_items = list(persistent.achievements.iteritems())
         else:
@@ -263,15 +263,15 @@ label achievement_menu(xx=150, yy=90):
     else:
         $ hide_transitions = False
         jump day_main_menu
-    
+
     jump achievement_menu_after_init
-    
+
 screen achievement_menu(xx, yy):
     tag achievement_menu
     zorder 4
-    
+
     use top_bar_close_button
-    
+
     frame:
         style "empty"
         pos (xx, yy)
@@ -279,7 +279,7 @@ screen achievement_menu(xx, yy):
         ysize 454
 
         add "interface/achievements/"+interface_color+"/panel_left.png"
-        
+
         vbox:
             pos (6, 41)
             for category in achievement_categories_sorted:
@@ -296,23 +296,23 @@ screen achievement_menu(xx, yy):
             else:
                 textbutton "Show: [current_filter]" style "empty" xsize 195 ysize 32 text_align (0.5, 0.5) text_size 12 hover_background btn_hover action Return("filter")
             textbutton "Sort by: [current_sorting]" style "empty" xsize 195 ysize 32 text_align (0.5, 0.5) text_size 12 hover_background btn_hover action Return("sort")
-        
+
 screen achievement_menuitem(xx, yy):
     tag achievement_menuitem
     zorder 4
-    
+
     frame:
         style "empty"
         pos (xx+217, yy-53)
         xsize 560
         ysize 507
-        
+
         add "interface/achievements/"+interface_color+"/panel.png"
-        
+
         text "Achievements" size 22 xalign 0.5 ypos 65
-        
+
         text "Unlocked: "+str(len(filter(lambda x: x[1][3] is True, menu_items)))+"/[menu_items_length]" size 12 pos (24, 70)
-        
+
         # Page counter
         if menu_items_length > items_shown:
             hbox:
@@ -324,19 +324,19 @@ screen achievement_menuitem(xx, yy):
             vbox:
                 pos (570, 186)
                 spacing 10
-                
+
                 imagebutton:
                     idle "interface/frames/"+interface_color+"/arrow_up.png"
                     if not current_page <= 0:
                         hover image_hover("interface/frames/"+interface_color+"/arrow_up.png")
                         action Return("dec")
-                    
+
                 imagebutton:
                     idle im.Flip("interface/frames/"+interface_color+"/arrow_up.png", vertical=True)
                     if current_page < math.ceil((menu_items_length-1)/items_shown):
                         hover im.Flip(image_hover("interface/frames/"+interface_color+"/arrow_up.png"), vertical=True)
                         action Return("inc")
-        
+
         # Add items
         for i in xrange(current_page*items_shown, (current_page*items_shown)+items_shown):
             if i < menu_items_length:
@@ -346,7 +346,7 @@ screen achievement_menuitem(xx, yy):
                     style "empty"
                     xsize 48
                     ysize 48
-                    pos (24+58*(col), 113+58*(row)) 
+                    pos (24+58*(col), 113+58*(row))
                     add "interface/achievements/"+interface_color+"/iconbox.png"
                     if current_item and current_item[0] == menu_items[i][0]:
                         add "interface/achievements/glow.png" align (0.5, 0.5) zoom 0.105 alpha 0.7 at rotate_circular
@@ -364,13 +364,13 @@ screen achievement_menuitem(xx, yy):
                             add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
                     add "interface/achievements/glass_iconbox.png" pos (3, 2)
                     button xsize 46 ysize 46 style "empty" hover_background btn_hover action Return(["select", menu_items[i]])
-                    
+
         # Add empty items
         #for i in xrange(menu_items_length, items_shown):
             #$ row = (i // 9) % 4
             #$ col = i % 9
             #button xsize 48 ysize 48 style "empty" background "#00000033" xpos 24+58*(col) ypos 113+58*(row)
-            
+
         if current_item:
             frame:
                 style "empty"
@@ -391,14 +391,14 @@ screen achievement_menuitem(xx, yy):
                     else:
                         add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
                 add "interface/achievements/glass_selected.png" pos (6, 6)
-                
+
             add "interface/achievements/"+interface_color+"/highlight.png" pos (112, 375)
             add "interface/achievements/"+interface_color+"/spacer.png" pos (120, 398)
             hbox:
                 spacing 5
                 xalign 0.5
                 text current_item[1][1] ypos 380 size 16 xoffset 45
-                add "interface/unlocked_"+str(current_item[1][3])+".png" xoffset 45 ypos 377 
+                add "interface/unlocked_"+str(current_item[1][3])+".png" xoffset 45 ypos 377
             hbox:
                 pos (132, 407)
                 xsize 410

@@ -13,17 +13,17 @@ image snape_walk: #Default Snape walk animation.
 
 
 ### HANGING WITH SNAPE ###
-image genie_toast_goblet: #Genie and Snape sitting in front of fireplace...
-    "images/animation/hanging_with_snape_01.png"
+image snape_toast_goblet: # Snape sitting in front of fireplace, right side.
+    "characters/snape/chibis/drinking/01.png"
     pause 2
-    "images/animation/hanging_with_snape_02.png"
+    "characters/snape/chibis/drinking/02.png"
     pause.2
-    "images/animation/hanging_with_snape_03.png"
+    "characters/snape/chibis/drinking/03.png"
     pause.2
-    "images/animation/hanging_with_snape_04.png"
+    "characters/snape/chibis/drinking/04.png"
     pause 1
-    "images/animation/hanging_with_snape_03.png"
+    "characters/snape/chibis/drinking/03.png"
     pause.2
-    "images/animation/hanging_with_snape_01.png"
+    "characters/snape/chibis/drinking/01.png"
     pause 3
     repeat

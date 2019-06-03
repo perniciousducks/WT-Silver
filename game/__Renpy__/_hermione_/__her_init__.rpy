@@ -537,25 +537,11 @@ label her_progress_init:
 
     ### Hermione Favours ###
 
-    if not hasattr(renpy.store,'hg_pf_dance'): #important!
-        $ hg_pf_dance = favor_class(
-            tier = 2,
-            title = "Dance for me!",
-            start_label = "hg_pf_dance",
-        )
-
     if not hasattr(renpy.store,'hg_pf_look_at_ass'): #important!
         $ hg_pf_look_at_ass = favor_class(
             tier = 3,
             title = "Show me that ass!",
             start_label = "hg_pf_look_at_ass",
-        )
-
-    if not hasattr(renpy.store,'hg_pf_masturbate'): #important!
-        $ hg_pf_masturbate = favor_class(
-            tier = 3,
-            title = "Touch Yourself!",
-            start_label = "hg_pf_masturbate",
         )
 
     if not hasattr(renpy.store,'hg_pf_handjob'): #important!
@@ -595,9 +581,7 @@ label her_progress_init:
         )
 
     if game_difficulty >= 3: #Hardcore
-        $ hg_pf_dance.tier = 4
         $ hg_pf_look_at_ass.tier = 5
-        $ hg_pf_masturbate.tier = 5
         $ hg_pf_handjob.tier = 5
         $ hg_pf_blowjob.tier = 6
         $ hg_pf_titjob.tier = 6
@@ -605,9 +589,7 @@ label her_progress_init:
         $ hg_pf_anal_sex.tier = 8
 
     $ hg_pf_list = [
-                    hg_pf_dance,
                     hg_pf_look_at_ass,
-                    hg_pf_masturbate,
                     hg_pf_handjob,
                     hg_pf_blowjob,
                     hg_pf_titjob,
@@ -726,9 +708,21 @@ label updated_hermione_favors: # For 1.37
         $ her_tier = 1
         $ hg_T1_trigger          = True # Temporary
         $ hg_T2_jerk_off_trigger = False
+
+        # Strip Favor
         $ hg_T3_strip_trigger    = False
-        $ hg_T4_trigger          = True # Temporary
+        $ hg_fingering_trigger   = False
+        $ hg_strip_snape_trigger = False
+        $ hg_tonks_snape_trigger = False
+        $ hg_cho_snape_trigger   = False
+
+        # Handjob Favor
+        $ hg_T4_handjob_trigger  = False
+
+        # Blowjob Favor
         $ hg_T5_blowjob_trigger  = False
+
+        # Sex Favor
         $ hg_T6_sex_trigger      = False
 
     if not hasattr(renpy.store,'hg_pf_talk'):
@@ -750,7 +744,7 @@ label updated_hermione_favors: # For 1.37
 
             ],
             icons = [None, None, None], #if a tier doesn't need an icon replace with None
-            iconset = [["heart_empty", "heart_yellow"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"]]
+            iconset = [["heart_empty", "heart_red"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"]]
             )
 
     if not hasattr(renpy.store,'hg_pf_admire_panties'):
@@ -773,7 +767,7 @@ label updated_hermione_favors: # For 1.37
 
             ],
             icons = [None, None, None], #if a tier doesn't need an icon replace with None
-            iconset = [["heart_empty", "heart_yellow"],["heart_empty", "heart_red"],["heart_empty", "heart_yellow"]]
+            iconset = [["heart_empty", "heart_red"],["heart_empty", "heart_red"],["heart_empty", "heart_red"]]
             )
 
     if not hasattr(renpy.store,'hg_pf_admire_breasts'):
@@ -803,16 +797,19 @@ label updated_hermione_favors: # For 1.37
 
             ],
             icons = [None, None, None, None], #if a tier doesn't need an icon replace with None
-            iconset = [["heart_empty", "heart_yellow"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"],["heart_empty", "heart_red"]]
+            iconset = [["heart_empty", "heart_red"],["heart_empty", "heart_red"],["heart_empty", "heart_red"],["heart_empty", "heart_red"]]
             )
-
-
 
     if not hasattr(renpy.store,'hg_pf_grope'):
         $ hg_pf_grope   = event_class(title = "Grope her!", start_label = "hg_pf_grope", start_tier = 1, events = [
             [
-            ["hg_pf_grope_T1_fail_intro"],
-            ["hg_pf_grope_T1_fail_repeat"],
+            ["hg_pf_grope_T0_fail_intro"],
+            ["hg_pf_grope_T0_fail_repeat"],
+            ],
+
+            [
+            ["hg_pf_grope_T1_intro_E1"],
+            ["hg_pf_grope_T1_E1"]
             ],
 
             [
@@ -822,25 +819,49 @@ label updated_hermione_favors: # For 1.37
 
             [
             ["hg_pf_grope_T3_intro_E1"],
-            ["hg_pf_grope_T3_E1"]
-            ],
-
-            [
-            ["hg_pf_grope_T4_intro_E1"],
-            ["hg_pf_grope_T4_intro_E2"],
-            ["hg_pf_grope_T4_E2"]
+            ["hg_pf_grope_T3_intro_E2"],
+            ["hg_pf_grope_T3_E2"]
             ]
 
             ],
             icons = [None, None, None, None], #if a tier doesn't need an icon replace with None
-            iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_yellow"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"]]
+            iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_red"],["heart_empty", "heart_red"],["heart_empty", "heart_red"]]
+            )
+
+    if not hasattr(renpy.store,'hg_pf_strip'):
+        $ hg_pf_strip   = event_class(title = "Dance for Me!", start_label = "hg_pf_strip", start_tier = 1, events = [
+            [
+            ["hg_pf_strip_fail"],
+            ],
+
+            [
+            ["hg_pf_strip_T0_fail_intro"],
+            ["hg_pf_strip_T0_fail_repeat"],
+            ],
+
+            [
+            ["hg_pf_strip_T1_intro_E1"], # First Strip event.
+            ["hg_pf_strip_T1_intro_E2"], # Strip event where Snape enters.
+            ["hg_pf_strip_T1_E2"]        # Clumsy Strip. Has branches.
+            ],
+
+            [
+            ["hg_pf_strip_T2_intro_E1"], # Hermione has improved.
+            ["hg_pf_strip_T2_intro_E2"], # Hermione doesn't mind stripping.
+            ["hg_pf_strip_T2_E2"]        # She's happy to strip.
+            ]
+
+            ],
+            icons = [None, None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"]]
             )
 
     $ hg_favor_list = [
         hg_pf_talk,
         hg_pf_admire_breasts,
         hg_pf_admire_panties,
-        hg_pf_grope
+        hg_pf_grope,
+        hg_pf_strip
         ]
 
     return

@@ -151,15 +151,15 @@ image ch_hem potion:
     repeat
 
 image ch_hem hotdog:
-    "images/animation/22_cum_01.png"
+    "characters/hermione/chibis/sex/sperm_01.png"
     pause.3
-    "images/animation/22_cum_02.png"
+    "characters/hermione/chibis/sex/sperm_02.png"
     pause.3
-    "images/animation/22_cum_03.png"
+    "characters/hermione/chibis/sex/sperm_03.png"
     pause.3
-    "images/animation/22_cum_04.png"
+    "characters/hermione/chibis/sex/sperm_04.png"
     pause 1
-    "images/animation/22_cum_03.png"
+    "characters/hermione/chibis/sex/sperm_03.png"
     pause.3
     repeat
 
@@ -925,21 +925,21 @@ image ch_hem fly_a:
 
 ### HERMIONE GROPE BREASTS (w/ top) ###
 image ani_her_grope_breasts_top_a:
-    "images/animation/molest_01.png"
+    "characters/hermione/chibis/grope_breasts/01.png"
     pause.2
-    "images/animation/molest_02.png"
+    "characters/hermione/chibis/grope_breasts/02.png"
     pause.2
-    "images/animation/molest_03.png"
+    "characters/hermione/chibis/grope_breasts/03.png"
     pause.2
-    "images/animation/molest_04.png"
+    "characters/hermione/chibis/grope_breasts/04.png"
     pause.2
-    "images/animation/molest_05.png"
+    "characters/hermione/chibis/grope_breasts/05.png"
     pause.2
-    "images/animation/molest_06.png"
+    "characters/hermione/chibis/grope_breasts/06.png"
     pause.2
-    "images/animation/molest_07.png"
+    "characters/hermione/chibis/grope_breasts/07.png"
     pause.2
-    "images/animation/molest_08.png"
+    "characters/hermione/chibis/grope_breasts/08.png"
     pause.2
     repeat
 
@@ -1056,879 +1056,714 @@ image hermione_stripper_dance:
 
 ## HERMIONE GROPE BREASTS (nude) ###
 image ani_her_grope_breasts_lift_top:
-    "images/animation/tit_molester_naked_01.png"
+    "characters/hermione/chibis/grope_breasts/bare_01.png"
     pause.2
-    "images/animation/tit_molester_naked_02.png"
+    "characters/hermione/chibis/grope_breasts/bare_02.png"
     pause.2
-    "images/animation/tit_molester_naked_03.png"
+    "characters/hermione/chibis/grope_breasts/bare_03.png"
     pause.2
-    "images/animation/tit_molester_naked_04.png"
+    "characters/hermione/chibis/grope_breasts/bare_04.png"
     pause.2
-    "images/animation/tit_molester_naked_05.png"
+    "characters/hermione/chibis/grope_breasts/bare_05.png"
     pause.2
-    "images/animation/tit_molester_naked_06.png"
+    "characters/hermione/chibis/grope_breasts/bare_06.png"
     pause.2
-    "images/animation/tit_molester_naked_07.png"
+    "characters/hermione/chibis/grope_breasts/bare_07.png"
     pause.2
-    "images/animation/tit_molester_naked_08.png"
+    "characters/hermione/chibis/grope_breasts/bare_08.png"
     pause.2
     repeat
 image ani_her_grope_breasts_no_top:
-    "images/animation/tit_molester_naked_00_01.png"
+    "characters/hermione/chibis/grope_breasts/bare_n_01.png"
     pause.2
-    "images/animation/tit_molester_naked_00_02.png"
+    "characters/hermione/chibis/grope_breasts/bare_n_02.png"
     pause.2
-    "images/animation/tit_molester_naked_00_03.png"
+    "characters/hermione/chibis/grope_breasts/bare_n_03.png"
     pause.2
-    "images/animation/tit_molester_naked_00_04.png"
+    "characters/hermione/chibis/grope_breasts/bare_n_04.png"
     pause.2
-    "images/animation/tit_molester_naked_00_05.png"
+    "characters/hermione/chibis/grope_breasts/bare_n_05.png"
     pause.2
-    "images/animation/tit_molester_naked_00_06.png"
+    "characters/hermione/chibis/grope_breasts/bare_n_06.png"
     pause.2
-    "images/animation/tit_molester_naked_00_07.png"
+    "characters/hermione/chibis/grope_breasts/bare_n_07.png"
     pause.2
-    "images/animation/tit_molester_naked_00_08.png"
+    "characters/hermione/chibis/grope_breasts/bare_n_08.png"
     pause.2
     repeat
 
 ### HERMIONE HANDJOB ###
 image ani_her_handjob:
-    "images/animation/12_handjob_01.png"
+    "characters/hermione/chibis/handjob/01.png"
     pause.1
-    "images/animation/12_handjob_02.png"
+    "characters/hermione/chibis/handjob/02.png"
     pause.1
-    "images/animation/12_handjob_03.png"
+    "characters/hermione/chibis/handjob/03.png"
     pause.1
-    "images/animation/12_handjob_04.png"
+    "characters/hermione/chibis/handjob/04.png"
     pause.1
-    "images/animation/12_handjob_05.png"
+    "characters/hermione/chibis/handjob/05.png"
     pause.1
-    "images/animation/12_handjob_06.png"
+    "characters/hermione/chibis/handjob/06.png"
     pause.1
     repeat
 image ani_her_handjob_kiss:
-    "images/animation/13_kiss_01.png"
+    "characters/hermione/chibis/handjob/kiss_01.png"
     pause.1
-    "images/animation/13_kiss_02.png"
+    "characters/hermione/chibis/handjob/kiss_02.png"
     pause.1
-    "images/animation/13_kiss_03.png"
+    "characters/hermione/chibis/handjob/kiss_03.png"
     pause.1
-    "images/animation/13_kiss_04.png"
+    "characters/hermione/chibis/handjob/kiss_04.png"
     pause.1
-    "images/animation/13_kiss_05.png"
+    "characters/hermione/chibis/handjob/kiss_05.png"
     pause.1
-    "images/animation/13_kiss_06.png"
+    "characters/hermione/chibis/handjob/kiss_06.png"
     pause.1
-    "images/animation/13_kiss_07.png"
+    "characters/hermione/chibis/handjob/kiss_07.png"
     pause.1
-    "images/animation/13_kiss_08.png"
+    "characters/hermione/chibis/handjob/kiss_08.png"
     pause.1
-    "images/animation/13_kiss_09.png"
+    "characters/hermione/chibis/handjob/kiss_09.png"
     pause.1
-    "images/animation/13_kiss_10.png"
+    "characters/hermione/chibis/handjob/kiss_10.png"
     pause.1
-    "images/animation/13_kiss_11.png"
+    "characters/hermione/chibis/handjob/kiss_11.png"
     pause.1
-    "images/animation/13_kiss_12.png"
+    "characters/hermione/chibis/handjob/kiss_12.png"
     pause.1
     repeat
 image ani_her_handjob_cum_kiss:
-    "images/animation/16_cum_01.png"
+    "characters/hermione/chibis/handjob/sperm_kiss_01.png"
     pause.1
-    "images/animation/16_cum_02.png"
+    "characters/hermione/chibis/handjob/sperm_kiss_02.png"
     pause.1
-    "images/animation/16_cum_03.png"
+    "characters/hermione/chibis/handjob/sperm_kiss_03.png"
     pause.1
-    "images/animation/16_cum_04.png"
+    "characters/hermione/chibis/handjob/sperm_kiss_04.png"
     pause.1
-    "images/animation/16_cum_05.png"
+    "characters/hermione/chibis/handjob/sperm_kiss_05.png"
     pause.1
-    "images/animation/16_cum_06.png"
+    "characters/hermione/chibis/handjob/sperm_kiss_06.png"
     pause.1
-    "images/animation/16_cum_07.png"
+    "characters/hermione/chibis/handjob/sperm_kiss_07.png"
     pause.1
     repeat
 image ani_her_handjob_cum_under_shirt:
-    "images/animation/14_finish_01.png"
+    "characters/hermione/chibis/handjob/sperm_under_01.png"
     pause 1
-    "images/animation/14_finish_02.png"
+    "characters/hermione/chibis/handjob/sperm_under_02.png"
     pause.1
-    "images/animation/14_finish_03.png"
+    "characters/hermione/chibis/handjob/sperm_under_03.png"
     pause.1
-    "images/animation/14_finish_04.png"
+    "characters/hermione/chibis/handjob/sperm_under_04.png"
     pause.1
-    "images/animation/14_finish_05.png"
+    "characters/hermione/chibis/handjob/sperm_under_05.png"
     pause.1
-    "images/animation/14_finish_06.png"
+    "characters/hermione/chibis/handjob/sperm_under_06.png"
     pause.1
-    "images/animation/14_finish_07.png"
+    "characters/hermione/chibis/handjob/sperm_under_07.png"
     pause.1
-    "images/animation/14_finish_08.png"
+    "characters/hermione/chibis/handjob/sperm_under_08.png"
     pause.1
-    "images/animation/14_finish_09.png"
+    "characters/hermione/chibis/handjob/sperm_under_09.png"
     pause.1
-    "images/animation/14_finish_10.png"
+    "characters/hermione/chibis/handjob/sperm_under_10.png"
     pause 2
-    "images/animation/14_finish_11.png"
+    "characters/hermione/chibis/handjob/sperm_under_11.png"
     pause.1
-    "images/animation/14_finish_12.png"
+    "characters/hermione/chibis/handjob/sperm_under_12.png"
     pause.1
-    "images/animation/14_finish_13.png"
+    "characters/hermione/chibis/handjob/sperm_under_13.png"
     pause.1
     repeat
 image ani_her_handjob_cum_on_shirt:
-    "images/animation/15_cum_00.png"
+    "characters/hermione/chibis/handjob/sperm_on_00.png"
     pause.1
-    "images/animation/15_cum_01.png"
+    "characters/hermione/chibis/handjob/sperm_on_01.png"
     pause.1
-    "images/animation/15_cum_02.png"
+    "characters/hermione/chibis/handjob/sperm_on_02.png"
     pause.1
-    "images/animation/15_cum_03.png"
+    "characters/hermione/chibis/handjob/sperm_on_03.png"
     pause.1
-    "images/animation/15_cum_04.png"
+    "characters/hermione/chibis/handjob/sperm_on_04.png"
     pause.1
-    "images/animation/15_cum_05.png"
+    "characters/hermione/chibis/handjob/sperm_on_05.png"
     pause.1
-    "images/animation/15_cum_06.png"
+    "characters/hermione/chibis/handjob/sperm_on_06.png"
     pause.1
-    "images/animation/15_cum_07.png"
+    "characters/hermione/chibis/handjob/sperm_on_07.png"
     pause.1
-    "images/animation/15_cum_08.png"
+    "characters/hermione/chibis/handjob/sperm_on_08.png"
     pause.1
-    "images/animation/15_cum_09.png"
+    "characters/hermione/chibis/handjob/sperm_on_09.png"
     pause.1
-    "images/animation/15_cum_10.png"
+    "characters/hermione/chibis/handjob/sperm_on_10.png"
     pause.1
-    "images/animation/15_cum_11.png"
+    "characters/hermione/chibis/handjob/sperm_on_11.png"
     pause.1
-    "images/animation/15_cum_12.png"
+    "characters/hermione/chibis/handjob/sperm_on_12.png"
     pause.1
-    "images/animation/15_cum_13.png"
+    "characters/hermione/chibis/handjob/sperm_on_13.png"
     pause.1
-    "images/animation/15_cum_14.png"
+    "characters/hermione/chibis/handjob/sperm_on_14.png"
     pause.1
-    "images/animation/15_cum_15.png"
+    "characters/hermione/chibis/handjob/sperm_on_15.png"
     pause.1
-    "images/animation/15_cum_16.png"
+    "characters/hermione/chibis/handjob/sperm_on_16.png"
     pause.1
-    "images/animation/15_cum_17.png"
+    "characters/hermione/chibis/handjob/sperm_on_17.png"
     pause.1
-    "images/animation/15_cum_18.png"
+    "characters/hermione/chibis/handjob/sperm_on_18.png"
     pause.1
-    "images/animation/15_cum_19.png"
+    "characters/hermione/chibis/handjob/sperm_on_19.png"
     pause.1
-    "images/animation/15_cum_20.png"
+    "characters/hermione/chibis/handjob/sperm_on_20.png"
     pause.1
-    "images/animation/15_cum_21.png"
+    "characters/hermione/chibis/handjob/sperm_on_21.png"
     pause 1
-    "images/animation/15_cum_22.png"
+    "characters/hermione/chibis/handjob/sperm_on_22.png"
     pause.1
-    "images/animation/15_cum_21.png"
+    "characters/hermione/chibis/handjob/sperm_on_21.png"
     pause.1
-    "images/animation/15_cum_22.png"
+    "characters/hermione/chibis/handjob/sperm_on_22.png"
     pause .1
-    "images/animation/15_cum_21.png"
+    "characters/hermione/chibis/handjob/sperm_on_21.png"
     pause 1
-    "images/animation/15_cum_23.png"
+    "characters/hermione/chibis/handjob/sperm_on_23.png"
     pause.1
-    "images/animation/15_cum_24.png"
+    "characters/hermione/chibis/handjob/sperm_on_24.png"
     pause.1
-    "images/animation/15_cum_25.png"
+    "characters/hermione/chibis/handjob/sperm_on_25.png"
     pause.1
-    "images/animation/15_cum_00.png"
+    "characters/hermione/chibis/handjob/sperm_on_00.png"
     pause.7
     repeat
 
 ### GENIE BJ ###
 image blowjob_ani:#-------------### HERMIONE BLOWJOB ###
-    "images/animation/17_blow_01.png"
+    "characters/hermione/chibis/blowjob/01.png"
     pause.1
-    "images/animation/17_blow_02.png"
+    "characters/hermione/chibis/blowjob/02.png"
     pause.1
-    "images/animation/17_blow_03.png"
+    "characters/hermione/chibis/blowjob/03.png"
     pause.1
-    "images/animation/17_blow_04.png"
+    "characters/hermione/chibis/blowjob/04.png"
     pause.1
-    "images/animation/17_blow_05.png"
+    "characters/hermione/chibis/blowjob/05.png"
     pause.1
-    "images/animation/17_blow_06.png"
+    "characters/hermione/chibis/blowjob/06.png"
     pause.1
-    "images/animation/17_blow_07.png"
+    "characters/hermione/chibis/blowjob/07.png"
     pause.1
-    "images/animation/17_blow_08.png"
+    "characters/hermione/chibis/blowjob/08.png"
     pause.1
-    "images/animation/17_blow_09.png"
+    "characters/hermione/chibis/blowjob/09.png"
     pause.1
-    "images/animation/17_blow_10.png"
+    "characters/hermione/chibis/blowjob/10.png"
     pause.1
-    "images/animation/17_blow_11.png"
+    "characters/hermione/chibis/blowjob/11.png"
     pause.1
-    "images/animation/17_blow_12.png"
+    "characters/hermione/chibis/blowjob/12.png"
     pause.1
     repeat
 image hand_ani:#----------------### HERMIONE BLOWJOB NOT SUCKING ###
-    "images/animation/18_hand_01.png"
+    "characters/hermione/chibis/blowjob/hand_01.png"
     pause 3
-    "images/animation/18_hand_02.png"
+    "characters/hermione/chibis/blowjob/hand_02.png"
     pause.1
-    "images/animation/18_hand_03.png"
+    "characters/hermione/chibis/blowjob/hand_03.png"
     pause.1
-    "images/animation/18_hand_04.png"
+    "characters/hermione/chibis/blowjob/hand_04.png"
     pause.1
     repeat
 image cum_in_mouth_ani:#--------### HERMIONE BLOWJOB CUM IN MOUTH ###
-    "images/animation/19_mouth_cum_01.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_01.png"
     pause.1
-    "images/animation/19_mouth_cum_02.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_02.png"
     pause.1
-    "images/animation/19_mouth_cum_03.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_03.png"
     pause.1
-    "images/animation/19_mouth_cum_04.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_04.png"
     pause.1
-    "images/animation/19_mouth_cum_05.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_05.png"
     pause.1
-    "images/animation/19_mouth_cum_06.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_06.png"
     pause.1
-    "images/animation/19_mouth_cum_07.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_07.png"
     pause.1
-    "images/animation/19_mouth_cum_08.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_08.png"
     pause.1
-    "images/animation/19_mouth_cum_09.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_09.png"
     pause.1
-    "images/animation/19_mouth_cum_10.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_10.png"
     pause.1
-    "images/animation/19_mouth_cum_11.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_11.png"
     pause 1
-    "images/animation/19_mouth_cum_12.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_12.png"
     pause.1
-    "images/animation/19_mouth_cum_13.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_13.png"
     pause.1
-    "images/animation/19_mouth_cum_14.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_14.png"
     pause.1
-    "images/animation/19_mouth_cum_15.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_15.png"
     pause.1
-    "images/animation/19_mouth_cum_16.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_16.png"
     pause.1
-    "images/animation/19_mouth_cum_17.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_17.png"
     pause 2
-    "images/animation/19_mouth_cum_18.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_18.png"
     pause.2
-    "images/animation/19_mouth_cum_01.png"
+    "characters/hermione/chibis/blowjob/sperm_throat_01.png"
     pause 1
     repeat
 image cum_on_face_ani:#---------### HERMIONE BLOWJOB CUM ON FACE ###
-    "images/animation/20_face_cum_01.png"
+    "characters/hermione/chibis/blowjob/sperm_face_01.png"
     pause.1
-    "images/animation/20_face_cum_02.png"
+    "characters/hermione/chibis/blowjob/sperm_face_02.png"
     pause.1
-    "images/animation/20_face_cum_03.png"
+    "characters/hermione/chibis/blowjob/sperm_face_03.png"
     pause.1
-    "images/animation/20_face_cum_04.png"
+    "characters/hermione/chibis/blowjob/sperm_face_04.png"
     pause.1
-    "images/animation/20_face_cum_05.png"
+    "characters/hermione/chibis/blowjob/sperm_face_05.png"
     pause.1
-    "images/animation/20_face_cum_06.png"
+    "characters/hermione/chibis/blowjob/sperm_face_06.png"
     pause.1
-    "images/animation/20_face_cum_07.png"
+    "characters/hermione/chibis/blowjob/sperm_face_07.png"
     pause.1
-    "images/animation/20_face_cum_08.png"
+    "characters/hermione/chibis/blowjob/sperm_face_08.png"
     pause.1
-    "images/animation/20_face_cum_09.png"
+    "characters/hermione/chibis/blowjob/sperm_face_09.png"
     pause.1
-    "images/animation/20_face_cum_10.png"
+    "characters/hermione/chibis/blowjob/sperm_face_10.png"
     pause.1
-    "images/animation/20_face_cum_11.png"
+    "characters/hermione/chibis/blowjob/sperm_face_11.png"
     pause.1
-    "images/animation/20_face_cum_12.png"
+    "characters/hermione/chibis/blowjob/sperm_face_12.png"
     pause.1
-    "images/animation/20_face_cum_13.png"
+    "characters/hermione/chibis/blowjob/sperm_face_13.png"
     pause.1
-    "images/animation/20_face_cum_14.png"
+    "characters/hermione/chibis/blowjob/sperm_face_14.png"
     pause.1
-    "images/animation/20_face_cum_15.png"
+    "characters/hermione/chibis/blowjob/sperm_face_15.png"
     pause.1
-    "images/animation/20_face_cum_16.png"
+    "characters/hermione/chibis/blowjob/sperm_face_16.png"
     pause.1
-    "images/animation/20_face_cum_17.png"
+    "characters/hermione/chibis/blowjob/sperm_face_17.png"
     pause.1
-    "images/animation/20_face_cum_18.png"
+    "characters/hermione/chibis/blowjob/sperm_face_18.png"
     pause.1
-    "images/animation/20_face_cum_19.png"
+    "characters/hermione/chibis/blowjob/sperm_face_19.png"
     pause.1
-    "images/animation/20_face_cum_20.png"
+    "characters/hermione/chibis/blowjob/sperm_face_20.png"
     pause.1
-    "images/animation/20_face_cum_21.png"
+    "characters/hermione/chibis/blowjob/sperm_face_21.png"
     pause.1
-    "images/animation/20_face_cum_22.png"
+    "characters/hermione/chibis/blowjob/sperm_face_22.png"
     pause.1
-    "images/animation/20_face_cum_23.png"
+    "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
-    "images/animation/20_face_cum_24.png"
+    "characters/hermione/chibis/blowjob/sperm_face_24.png"
     pause 1
-    "images/animation/20_face_cum_23.png"
+    "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
-    "images/animation/20_face_cum_22.png"
+    "characters/hermione/chibis/blowjob/sperm_face_22.png"
     pause.1
-    "images/animation/20_face_cum_23.png"
+    "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
-    "images/animation/20_face_cum_24.png"
+    "characters/hermione/chibis/blowjob/sperm_face_24.png"
     pause 1
-    "images/animation/20_face_cum_23.png"
+    "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
-    "images/animation/20_face_cum_22.png"
+    "characters/hermione/chibis/blowjob/sperm_face_22.png"
     pause.1
-    "images/animation/20_face_cum_23.png"
+    "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
-    "images/animation/20_face_cum_24.png"
+    "characters/hermione/chibis/blowjob/sperm_face_24.png"
     pause 2
     repeat
 image cum_on_face_blink_ani:#---### HERMIONE CUM COVERED FACE BLINKING ###
-    "images/animation/20_face_cum_23.png"
+    "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
-    "images/animation/20_face_cum_24.png"
+    "characters/hermione/chibis/blowjob/sperm_face_24.png"
     pause 1
-    "images/animation/20_face_cum_23.png"
+    "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
-    "images/animation/20_face_cum_22.png"
+    "characters/hermione/chibis/blowjob/sperm_face_22.png"
     pause.1
-    "images/animation/20_face_cum_23.png"
+    "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
-    "images/animation/20_face_cum_24.png"
+    "characters/hermione/chibis/blowjob/sperm_face_24.png"
     pause 1
-    "images/animation/20_face_cum_23.png"
+    "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
-    "images/animation/20_face_cum_22.png"
+    "characters/hermione/chibis/blowjob/sperm_face_22.png"
     pause.1
-    "images/animation/20_face_cum_23.png"
+    "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
-    "images/animation/20_face_cum_24.png"
+    "characters/hermione/chibis/blowjob/sperm_face_24.png"
     pause 2
     repeat
 
-### SNAPE BJ ###
-image s_blowjob_ani:#-----------### HERMIONE BLOWJOB W/ SNAPE ###
-    "images/animation/s_17_blow_01.png"
-    pause.1
-    "images/animation/s_17_blow_02.png"
-    pause.1
-    "images/animation/s_17_blow_03.png"
-    pause.1
-    "images/animation/s_17_blow_04.png"
-    pause.1
-    "images/animation/s_17_blow_05.png"
-    pause.1
-    "images/animation/s_17_blow_06.png"
-    pause.1
-    "images/animation/s_17_blow_07.png"
-    pause.1
-    "images/animation/s_17_blow_08.png"
-    pause.1
-    "images/animation/s_17_blow_09.png"
-    pause.1
-    "images/animation/s_17_blow_10.png"
-    pause.1
-    "images/animation/s_17_blow_11.png"
-    pause.1
-    "images/animation/s_17_blow_12.png"
-    pause.1
-    repeat
-image s_hand_ani:#--------------### HERMIONE BLOWJOB NOT SUCKING W/ SNAPE ###
-    "images/animation/s_18_hand_01.png"
-    pause 3
-    "images/animation/s_18_hand_02.png"
-    pause.1
-    "images/animation/s_18_hand_03.png"
-    pause.1
-    "images/animation/s_18_hand_04.png"
-    pause.1
-    repeat
-image s_cum_in_mouth_ani:#------### HERMIONE BLOWJOB CUM IN MOUTH W/ SNAPE ###
-    "images/animation/s_19_mouth_cum_01.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_02.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_03.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_04.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_05.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_06.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_07.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_08.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_09.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_10.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_11.png"
-    pause 1
-    "images/animation/s_19_mouth_cum_12.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_13.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_14.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_15.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_16.png"
-    pause.1
-    "images/animation/s_19_mouth_cum_17.png"
-    pause 2
-    "images/animation/s_19_mouth_cum_18.png"
-    pause.2
-    "images/animation/s_19_mouth_cum_01.png"
-    pause 1
-    repeat
-image s_cum_on_face_ani:#-------### HERMIONE BLOWJOB CUM ON FACE W/ SNAPE ###
-    "images/animation/s_20_face_cum_01.png"
-    pause.1
-    "images/animation/s_20_face_cum_02.png"
-    pause.1
-    "images/animation/s_20_face_cum_03.png"
-    pause.1
-    "images/animation/s_20_face_cum_04.png"
-    pause.1
-    "images/animation/s_20_face_cum_05.png"
-    pause.1
-    "images/animation/s_20_face_cum_06.png"
-    pause.1
-    "images/animation/s_20_face_cum_07.png"
-    pause.1
-    "images/animation/s_20_face_cum_08.png"
-    pause.1
-    "images/animation/s_20_face_cum_09.png"
-    pause.1
-    "images/animation/s_20_face_cum_10.png"
-    pause.1
-    "images/animation/s_20_face_cum_11.png"
-    pause.1
-    "images/animation/s_20_face_cum_12.png"
-    pause.1
-    "images/animation/s_20_face_cum_13.png"
-    pause.1
-    "images/animation/s_20_face_cum_14.png"
-    pause.1
-    "images/animation/s_20_face_cum_15.png"
-    pause.1
-    "images/animation/s_20_face_cum_16.png"
-    pause.1
-    "images/animation/s_20_face_cum_17.png"
-    pause.1
-    "images/animation/s_20_face_cum_18.png"
-    pause.1
-    "images/animation/s_20_face_cum_19.png"
-    pause.1
-    "images/animation/s_20_face_cum_20.png"
-    pause.1
-    "images/animation/s_20_face_cum_21.png"
-    pause.1
-    "images/animation/s_20_face_cum_22.png"
-    pause.1
-    "images/animation/s_20_face_cum_23.png"
-    pause.1
-    "images/animation/s_20_face_cum_24.png"
-    pause 1
-    "images/animation/s_20_face_cum_23.png"
-    pause.1
-    "images/animation/s_20_face_cum_22.png"
-    pause.1
-    "images/animation/s_20_face_cum_23.png"
-    pause.1
-    "images/animation/s_20_face_cum_24.png"
-    pause 1
-    "images/animation/s_20_face_cum_23.png"
-    pause.1
-    "images/animation/s_20_face_cum_22.png"
-    pause.1
-    "images/animation/s_20_face_cum_23.png"
-    pause.1
-    "images/animation/s_20_face_cum_24.png"
-    pause 2
-    repeat
-image s_cum_on_face_blink_ani:#-### HERMIONE CUM COVERED FACE BLINKING W/ SNAPE ###
-    "images/animation/s_20_face_cum_23.png"
-    pause.1
-    "images/animation/s_20_face_cum_24.png"
-    pause 1
-    "images/animation/s_20_face_cum_23.png"
-    pause.1
-    "images/animation/s_20_face_cum_22.png"
-    pause.1
-    "images/animation/s_20_face_cum_23.png"
-    pause.1
-    "images/animation/s_20_face_cum_24.png"
-    pause 1
-    "images/animation/s_20_face_cum_23.png"
-    pause.1
-    "images/animation/s_20_face_cum_22.png"
-    pause.1
-    "images/animation/s_20_face_cum_23.png"
-    pause.1
-    "images/animation/s_20_face_cum_24.png"
-    pause 2
-    repeat
 
 ### HERMIONE SEX ###
 image ani_her_sex_pause:
-    "images/animation/21_sex_03.png"
+    "characters/hermione/chibis/sex/03.png"
 image ani_her_sex_slow:
-    "images/animation/21_sex_01.png"
+    "characters/hermione/chibis/sex/01.png"
     pause.15
-    "images/animation/21_sex_02.png"
+    "characters/hermione/chibis/sex/02.png"
     pause.15
-    "images/animation/21_sex_03.png"
+    "characters/hermione/chibis/sex/03.png"
     pause.15
-    "images/animation/21_sex_04.png"
+    "characters/hermione/chibis/sex/04.png"
     pause.15
-    "images/animation/21_sex_05.png"
+    "characters/hermione/chibis/sex/05.png"
     pause.15
-    "images/animation/21_sex_06.png"
+    "characters/hermione/chibis/sex/06.png"
     pause.15
-    "images/animation/21_sex_07.png"
+    "characters/hermione/chibis/sex/07.png"
     pause.15
     repeat
 image ani_her_sex_slow_naked:
-    "images/animation/21_sex_n_01.png"
+    "characters/hermione/chibis/sex/n_01.png"
     pause.15
-    "images/animation/21_sex_n_02.png"
+    "characters/hermione/chibis/sex/n_02.png"
     pause.15
-    "images/animation/21_sex_n_03.png"
+    "characters/hermione/chibis/sex/n_03.png"
     pause.15
-    "images/animation/21_sex_n_04.png"
+    "characters/hermione/chibis/sex/n_04.png"
     pause.15
-    "images/animation/21_sex_n_05.png"
+    "characters/hermione/chibis/sex/n_05.png"
     pause.15
-    "images/animation/21_sex_n_06.png"
+    "characters/hermione/chibis/sex/n_06.png"
     pause.15
-    "images/animation/21_sex_n_07.png"
+    "characters/hermione/chibis/sex/n_07.png"
     pause.15
     repeat
 image ani_her_sex:
-    "images/animation/21_sex_01.png"
+    "characters/hermione/chibis/sex/01.png"
     pause.1
-    "images/animation/21_sex_02.png"
+    "characters/hermione/chibis/sex/02.png"
     pause.1
-    "images/animation/21_sex_03.png"
+    "characters/hermione/chibis/sex/03.png"
     pause.1
-    "images/animation/21_sex_04.png"
+    "characters/hermione/chibis/sex/04.png"
     pause.1
-    "images/animation/21_sex_05.png"
+    "characters/hermione/chibis/sex/05.png"
     pause.1
-    "images/animation/21_sex_06.png"
+    "characters/hermione/chibis/sex/06.png"
     pause.1
-    "images/animation/21_sex_07.png"
+    "characters/hermione/chibis/sex/07.png"
     pause.1
     repeat
 image ani_her_sex_naked:
-    "images/animation/21_sex_n_01.png"
+    "characters/hermione/chibis/sex/n_01.png"
     pause.1
-    "images/animation/21_sex_n_02.png"
+    "characters/hermione/chibis/sex/n_02.png"
     pause.1
-    "images/animation/21_sex_n_03.png"
+    "characters/hermione/chibis/sex/n_03.png"
     pause.1
-    "images/animation/21_sex_n_04.png"
+    "characters/hermione/chibis/sex/n_04.png"
     pause.1
-    "images/animation/21_sex_n_05.png"
+    "characters/hermione/chibis/sex/n_05.png"
     pause.1
-    "images/animation/21_sex_n_06.png"
+    "characters/hermione/chibis/sex/n_06.png"
     pause.1
-    "images/animation/21_sex_n_07.png"
+    "characters/hermione/chibis/sex/n_07.png"
     pause.1
     repeat
 image ani_her_sex_fast:
-    "images/animation/21_sex_01.png"
+    "characters/hermione/chibis/sex/01.png"
     pause.05
-    "images/animation/21_sex_02.png"
+    "characters/hermione/chibis/sex/02.png"
     pause.05
-    "images/animation/21_sex_03.png"
+    "characters/hermione/chibis/sex/03.png"
     pause.05
-    "images/animation/21_sex_04.png"
+    "characters/hermione/chibis/sex/04.png"
     pause.05
-    "images/animation/21_sex_05.png"
+    "characters/hermione/chibis/sex/05.png"
     pause.05
-    "images/animation/21_sex_06.png"
+    "characters/hermione/chibis/sex/06.png"
     pause.05
-    "images/animation/21_sex_07.png"
+    "characters/hermione/chibis/sex/07.png"
     pause.05
     repeat
 image ani_her_sex_fast_naked:
-    "images/animation/21_sex_n_01.png"
+    "characters/hermione/chibis/sex/n_01.png"
     pause.05
-    "images/animation/21_sex_n_02.png"
+    "characters/hermione/chibis/sex/n_02.png"
     pause.05
-    "images/animation/21_sex_n_03.png"
+    "characters/hermione/chibis/sex/n_03.png"
     pause.05
-    "images/animation/21_sex_n_04.png"
+    "characters/hermione/chibis/sex/n_04.png"
     pause.05
-    "images/animation/21_sex_n_05.png"
+    "characters/hermione/chibis/sex/n_05.png"
     pause.05
-    "images/animation/21_sex_n_06.png"
+    "characters/hermione/chibis/sex/n_06.png"
     pause.05
-    "images/animation/21_sex_n_07.png"
+    "characters/hermione/chibis/sex/n_07.png"
     pause.05
     repeat
 
 ### HERMIONE SEX CUM OUTSIDE ###
 image ani_her_sex_cum_outside:
-    "images/animation/22_cum_01.png"
+    "characters/hermione/chibis/sex/sperm_01.png"
     pause.1
-    "images/animation/22_cum_02.png"
+    "characters/hermione/chibis/sex/sperm_02.png"
     pause.1
-    "images/animation/22_cum_03.png"
+    "characters/hermione/chibis/sex/sperm_03.png"
     pause.1
-    "images/animation/22_cum_04.png"
+    "characters/hermione/chibis/sex/sperm_04.png"
     pause.1
-    "images/animation/22_cum_05.png"
+    "characters/hermione/chibis/sex/sperm_05.png"
     pause.1
-    "images/animation/22_cum_06.png"
+    "characters/hermione/chibis/sex/sperm_06.png"
     pause.1
-    "images/animation/22_cum_07.png"
+    "characters/hermione/chibis/sex/sperm_07.png"
     pause.1
-    "images/animation/22_cum_08.png"
+    "characters/hermione/chibis/sex/sperm_08.png"
     pause.1
-    "images/animation/22_cum_09.png"
+    "characters/hermione/chibis/sex/sperm_09.png"
     pause.1
-    "images/animation/22_cum_10.png"
+    "characters/hermione/chibis/sex/sperm_10.png"
     pause.1
-    "images/animation/22_cum_11.png"
+    "characters/hermione/chibis/sex/sperm_11.png"
     pause.1
-    "images/animation/22_cum_12.png"
+    "characters/hermione/chibis/sex/sperm_12.png"
     pause.1
-    "images/animation/22_cum_13.png"
+    "characters/hermione/chibis/sex/sperm_13.png"
     pause.1
-    "images/animation/22_cum_14.png"
+    "characters/hermione/chibis/sex/sperm_14.png"
     pause.1
-    "images/animation/22_cum_15.png"
+    "characters/hermione/chibis/sex/sperm_15.png"
     pause.1
-    "images/animation/22_cum_16.png"
+    "characters/hermione/chibis/sex/sperm_16.png"
     pause.1
-    "images/animation/22_cum_17.png"
+    "characters/hermione/chibis/sex/sperm_17.png"
     pause.1
-    "images/animation/22_cum_18.png"
+    "characters/hermione/chibis/sex/sperm_18.png"
     pause.1
-    "images/animation/22_cum_19.png"
+    "characters/hermione/chibis/sex/sperm_19.png"
     pause 2
-    "images/animation/22_cum_20.png"
+    "characters/hermione/chibis/sex/sperm_20.png"
     pause.1
-    "images/animation/22_cum_21.png"
+    "characters/hermione/chibis/sex/sperm_21.png"
     pause.1
-    "images/animation/22_cum_22.png"
+    "characters/hermione/chibis/sex/sperm_22.png"
     pause.1
-    "images/animation/22_cum_23.png"
+    "characters/hermione/chibis/sex/sperm_23.png"
     pause.1
     repeat
 image ani_her_sex_cum_outside_naked:
-    "images/animation/22_cum_n_01.png"
+    "characters/hermione/chibis/sex/sperm_n_01.png"
     pause.1
-    "images/animation/22_cum_n_02.png"
+    "characters/hermione/chibis/sex/sperm_n_02.png"
     pause.1
-    "images/animation/22_cum_n_03.png"
+    "characters/hermione/chibis/sex/sperm_n_03.png"
     pause.1
-    "images/animation/22_cum_n_04.png"
+    "characters/hermione/chibis/sex/sperm_n_04.png"
     pause.1
-    "images/animation/22_cum_n_05.png"
+    "characters/hermione/chibis/sex/sperm_n_05.png"
     pause.1
-    "images/animation/22_cum_n_06.png"
+    "characters/hermione/chibis/sex/sperm_n_06.png"
     pause.1
-    "images/animation/22_cum_n_07.png"
+    "characters/hermione/chibis/sex/sperm_n_07.png"
     pause.1
-    "images/animation/22_cum_n_08.png"
+    "characters/hermione/chibis/sex/sperm_n_08.png"
     pause.1
-    "images/animation/22_cum_n_09.png"
+    "characters/hermione/chibis/sex/sperm_n_09.png"
     pause.1
-    "images/animation/22_cum_n_10.png"
+    "characters/hermione/chibis/sex/sperm_n_10.png"
     pause.1
-    "images/animation/22_cum_n_11.png"
+    "characters/hermione/chibis/sex/sperm_n_11.png"
     pause.1
-    "images/animation/22_cum_n_12.png"
+    "characters/hermione/chibis/sex/sperm_n_12.png"
     pause.1
-    "images/animation/22_cum_n_13.png"
+    "characters/hermione/chibis/sex/sperm_n_13.png"
     pause.1
-    "images/animation/22_cum_n_14.png"
+    "characters/hermione/chibis/sex/sperm_n_14.png"
     pause.1
-    "images/animation/22_cum_n_15.png"
+    "characters/hermione/chibis/sex/sperm_n_15.png"
     pause.1
-    "images/animation/22_cum_n_16.png"
+    "characters/hermione/chibis/sex/sperm_n_16.png"
     pause.1
-    "images/animation/22_cum_n_17.png"
+    "characters/hermione/chibis/sex/sperm_n_17.png"
     pause.1
-    "images/animation/22_cum_n_18.png"
+    "characters/hermione/chibis/sex/sperm_n_18.png"
     pause.1
-    "images/animation/22_cum_n_19.png"
+    "characters/hermione/chibis/sex/sperm_n_19.png"
     pause 2
-    "images/animation/22_cum_n_20.png"
+    "characters/hermione/chibis/sex/sperm_n_20.png"
     pause.1
-    "images/animation/22_cum_n_21.png"
+    "characters/hermione/chibis/sex/sperm_n_21.png"
     pause.1
-    "images/animation/22_cum_n_22.png"
+    "characters/hermione/chibis/sex/sperm_n_22.png"
     pause.1
-    "images/animation/22_cum_n_23.png"
+    "characters/hermione/chibis/sex/sperm_n_23.png"
     pause.1
     repeat
 image ani_her_sex_cum_outside_blink:
-    "images/animation/22_cum_19.png"
+    "characters/hermione/chibis/sex/sperm_19.png"
     pause 1
-    "images/animation/22_cum_24.png" #closed
+    "characters/hermione/chibis/sex/sperm_24.png" #closed
     pause.1
-    "images/animation/22_cum_19.png"
+    "characters/hermione/chibis/sex/sperm_19.png"
     pause.1
-    "images/animation/22_cum_24.png" #closed
+    "characters/hermione/chibis/sex/sperm_24.png" #closed
     pause.1
-    "images/animation/22_cum_19.png"
+    "characters/hermione/chibis/sex/sperm_19.png"
     pause 2
-    "images/animation/22_cum_24.png" #closed
+    "characters/hermione/chibis/sex/sperm_24.png" #closed
     pause.1
-    "images/animation/22_cum_19.png"
+    "characters/hermione/chibis/sex/sperm_19.png"
     pause 2
     repeat
 image ani_her_sex_cum_outside_blink_naked:
-    "images/animation/22_cum_n_19.png"
+    "characters/hermione/chibis/sex/sperm_n_19.png"
     pause 1
-    "images/animation/22_cum_n_24.png" #closed
+    "characters/hermione/chibis/sex/sperm_n_24.png" #closed
     pause.1
-    "images/animation/22_cum_n_19.png"
+    "characters/hermione/chibis/sex/sperm_n_19.png"
     pause.1
-    "images/animation/22_cum_n_24.png" #closed
+    "characters/hermione/chibis/sex/sperm_n_24.png" #closed
     pause.1
-    "images/animation/22_cum_n_19.png"
+    "characters/hermione/chibis/sex/sperm_n_19.png"
     pause 2
-    "images/animation/22_cum_n_24.png" #closed
+    "characters/hermione/chibis/sex/sperm_n_24.png" #closed
     pause.1
-    "images/animation/22_cum_n_19.png"
+    "characters/hermione/chibis/sex/sperm_n_19.png"
     pause 2
     repeat
 
 ### HERMIONE SEX CUM INSIDE###
 image ani_her_sex_cum_inside: #sex_cum_in_ani
-    "images/animation/23_cum_01.png"
+    "characters/hermione/chibis/sex/creampie_01.png"
     pause.1
-    "images/animation/23_cum_02.png"
+    "characters/hermione/chibis/sex/creampie_02.png"
     pause.1
-    "images/animation/23_cum_03.png"
+    "characters/hermione/chibis/sex/creampie_03.png"
     pause.1
-    "images/animation/23_cum_04.png"
+    "characters/hermione/chibis/sex/creampie_04.png"
     pause.1
-    "images/animation/23_cum_05.png"
+    "characters/hermione/chibis/sex/creampie_05.png"
     pause.1
-    "images/animation/23_cum_06.png"
+    "characters/hermione/chibis/sex/creampie_06.png"
     pause.1
-    "images/animation/23_cum_07.png"
+    "characters/hermione/chibis/sex/creampie_07.png"
     pause.1
-    "images/animation/23_cum_08.png"
+    "characters/hermione/chibis/sex/creampie_08.png"
     pause.1
-    "images/animation/23_cum_09.png"
+    "characters/hermione/chibis/sex/creampie_09.png"
     pause.1
-    "images/animation/23_cum_10.png"
+    "characters/hermione/chibis/sex/creampie_10.png"
     pause.1
-    "images/animation/23_cum_11.png"
+    "characters/hermione/chibis/sex/creampie_11.png"
     pause.1
-    "images/animation/23_cum_12.png"
+    "characters/hermione/chibis/sex/creampie_12.png"
     pause.1
-    "images/animation/23_cum_13.png"
+    "characters/hermione/chibis/sex/creampie_13.png"
     pause.1
-    "images/animation/23_cum_14.png"
+    "characters/hermione/chibis/sex/creampie_14.png"
     pause.1
-    "images/animation/23_cum_15.png"
+    "characters/hermione/chibis/sex/creampie_15.png"
     pause.1
-    "images/animation/23_cum_16.png"
+    "characters/hermione/chibis/sex/creampie_16.png"
     pause.1
-    "images/animation/23_cum_17.png"
+    "characters/hermione/chibis/sex/creampie_17.png"
     pause.1
-    "images/animation/23_cum_18.png"
+    "characters/hermione/chibis/sex/creampie_18.png"
     pause.1
-    "images/animation/23_cum_19.png"
+    "characters/hermione/chibis/sex/creampie_19.png"
     pause 3
-    "images/animation/23_cum_20.png"
+    "characters/hermione/chibis/sex/creampie_20.png"
     pause.1
-    "images/animation/23_cum_21.png"
+    "characters/hermione/chibis/sex/creampie_21.png"
     pause.1
-    "images/animation/23_cum_22.png"
+    "characters/hermione/chibis/sex/creampie_22.png"
     pause.1
-    "images/animation/23_cum_23.png"
+    "characters/hermione/chibis/sex/creampie_23.png"
     pause.1
     repeat
 image ani_her_sex_cum_inside_naked:
-    "images/animation/23_cum_n_01.png"
+    "characters/hermione/chibis/sex/creampie_n_01.png"
     pause.1
-    "images/animation/23_cum_n_02.png"
+    "characters/hermione/chibis/sex/creampie_n_02.png"
     pause.1
-    "images/animation/23_cum_n_03.png"
+    "characters/hermione/chibis/sex/creampie_n_03.png"
     pause.1
-    "images/animation/23_cum_n_04.png"
+    "characters/hermione/chibis/sex/creampie_n_04.png"
     pause.1
-    "images/animation/23_cum_n_05.png"
+    "characters/hermione/chibis/sex/creampie_n_05.png"
     pause.1
-    "images/animation/23_cum_n_06.png"
+    "characters/hermione/chibis/sex/creampie_n_06.png"
     pause.1
-    "images/animation/23_cum_n_07.png"
+    "characters/hermione/chibis/sex/creampie_n_07.png"
     pause.1
-    "images/animation/23_cum_n_08.png"
+    "characters/hermione/chibis/sex/creampie_n_08.png"
     pause.1
-    "images/animation/23_cum_n_09.png"
+    "characters/hermione/chibis/sex/creampie_n_09.png"
     pause.1
-    "images/animation/23_cum_n_10.png"
+    "characters/hermione/chibis/sex/creampie_n_10.png"
     pause.1
-    "images/animation/23_cum_n_11.png"
+    "characters/hermione/chibis/sex/creampie_n_11.png"
     pause.1
-    "images/animation/23_cum_n_12.png"
+    "characters/hermione/chibis/sex/creampie_n_12.png"
     pause.1
-    "images/animation/23_cum_n_13.png"
+    "characters/hermione/chibis/sex/creampie_n_13.png"
     pause.1
-    "images/animation/23_cum_n_14.png"
+    "characters/hermione/chibis/sex/creampie_n_14.png"
     pause.1
-    "images/animation/23_cum_n_15.png"
+    "characters/hermione/chibis/sex/creampie_n_15.png"
     pause.1
-    "images/animation/23_cum_n_16.png"
+    "characters/hermione/chibis/sex/creampie_n_16.png"
     pause.1
-    "images/animation/23_cum_n_17.png"
+    "characters/hermione/chibis/sex/creampie_n_17.png"
     pause.1
-    "images/animation/23_cum_n_18.png"
+    "characters/hermione/chibis/sex/creampie_n_18.png"
     pause.1
-    "images/animation/23_cum_n_19.png"
+    "characters/hermione/chibis/sex/creampie_n_19.png"
     pause 3
-    "images/animation/23_cum_n_20.png"
+    "characters/hermione/chibis/sex/creampie_n_20.png"
     pause.1
-    "images/animation/23_cum_n_21.png"
+    "characters/hermione/chibis/sex/creampie_n_21.png"
     pause.1
-    "images/animation/23_cum_n_22.png"
+    "characters/hermione/chibis/sex/creampie_n_22.png"
     pause.1
-    "images/animation/23_cum_n_23.png"
+    "characters/hermione/chibis/sex/creampie_n_23.png"
     pause.1
     repeat
 image ani_her_sex_cum_inside_blink:
-    "images/animation/23_cum_19.png"
+    "characters/hermione/chibis/sex/creampie_19.png"
     pause 1
-    "images/animation/23_cum_24.png" #closed
+    "characters/hermione/chibis/sex/creampie_24.png" #closed
     pause.1
-    "images/animation/23_cum_19.png"
+    "characters/hermione/chibis/sex/creampie_19.png"
     pause.1
-    "images/animation/23_cum_24.png" #closed
+    "characters/hermione/chibis/sex/creampie_24.png" #closed
     pause.1
-    "images/animation/23_cum_19.png"
+    "characters/hermione/chibis/sex/creampie_19.png"
     pause 2
-    "images/animation/23_cum_24.png" #closed
+    "characters/hermione/chibis/sex/creampie_24.png" #closed
     pause.1
-    "images/animation/23_cum_19.png"
+    "characters/hermione/chibis/sex/creampie_19.png"
     pause 2
     repeat
 image ani_her_sex_cum_inside_blink_naked:
-    "images/animation/23_cum_n_19.png"
+    "characters/hermione/chibis/sex/creampie_n_19.png"
     pause 1
-    "images/animation/23_cum_n_24.png" #closed
+    "characters/hermione/chibis/sex/creampie_n_24.png" #closed
     pause.1
-    "images/animation/23_cum_n_19.png"
+    "characters/hermione/chibis/sex/creampie_n_19.png"
     pause.1
-    "images/animation/23_cum_n_24.png" #closed
+    "characters/hermione/chibis/sex/creampie_n_24.png" #closed
     pause.1
-    "images/animation/23_cum_n_19.png"
+    "characters/hermione/chibis/sex/creampie_n_19.png"
     pause 2
-    "images/animation/23_cum_n_24.png" #closed
+    "characters/hermione/chibis/sex/creampie_n_24.png" #closed
     pause.1
-    "images/animation/23_cum_n_19.png"
+    "characters/hermione/chibis/sex/creampie_n_19.png"
     pause 2
     repeat
 

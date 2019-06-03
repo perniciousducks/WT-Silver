@@ -9,9 +9,9 @@
 
 ### Tier 2 ###
 
-label hg_pf_grope_ass_T2:
+label hg_pf_grope_ass_T1:
     stop music fadeout 5.0
-    call hg_chibi_transition("grope_ass", flip=False, trans="d5")
+    call hg_chibi_transition("grope_ass", flip=False, trans="d7")
 
     call her_main("[genie_name]!?","mad","wide", cheeks="blush", ypos="head")
     m "Relax, [hermione_name]. It will be the easiest [current_payout] points you've ever made, I promise."
@@ -34,15 +34,15 @@ label hg_pf_grope_ass_T2:
         m "*Hmm*..."
 
         "\"Yes. Turn around, [hermione_name].\"": # Can fail
-            jump hg_pf_grope_ass_T2_back
+            jump hg_pf_grope_ass_T1_back
 
         "\"No. Just stand still, [hermione_name].\"": # Fails
-            jump hg_pf_grope_ass_T2_front
+            jump hg_pf_grope_ass_T1_front
 
 
 
-label hg_pf_grope_ass_T2_front:
-    call hg_chibi_transition("stand_behind_desk", trans="d5")
+label hg_pf_grope_ass_T1_front:
+    call hg_chibi_transition("stand_behind_desk", trans="d7")
 
     call her_main("(...)","disgust","down", cheeks="blush", ypos="head")
 
@@ -67,8 +67,8 @@ label hg_pf_grope_ass_T2_front:
 
 
 
-label hg_pf_grope_ass_T2_back:
-    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d5")
+label hg_pf_grope_ass_T1_back:
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d7")
 
     call her_main("As you say, [genie_name]...","annoyed","angryL", cheeks="blush")
 
@@ -84,7 +84,7 @@ label hg_pf_grope_ass_T2_back:
     menu:
         m "Hm..."
         "-Give her butt a squeeze-":
-            jump hg_pf_grope_ass_T2_continue
+            jump hg_pf_grope_ass_T1_continue
 
         "-Give her butt a slap-":
             $ her_mood += 2
@@ -99,7 +99,7 @@ label hg_pf_grope_ass_T2_back:
         "\"Fine, fine... I just couldn't resist....\"":
             call her_main(".......................","annoyed","angryL", cheeks="blush")
 
-            jump hg_pf_grope_ass_T2_continue
+            jump hg_pf_grope_ass_T1_continue
 
         "-Give her butt another slap-":
             $ her_mood += 2
@@ -115,7 +115,7 @@ label hg_pf_grope_ass_T2_back:
         "\"Fine, fine... I just couldn't resist....\"":
             call her_main(".......................","annoyed","angryL", cheeks="blush")
 
-            jump hg_pf_grope_ass_T2_continue
+            jump hg_pf_grope_ass_T1_continue
 
         "-Give her butt another slap-":
             $ her_mood += 2
@@ -204,8 +204,8 @@ label hg_pf_grope_ass_T2_back:
 
 
 
-label hg_pf_grope_ass_T2_continue:
-    call hg_chibi_transition("grope_ass", flip=True, trans="d5")
+label hg_pf_grope_ass_T1_continue:
+    call hg_chibi_transition("grope_ass", flip=True, trans="d7")
     # show screen groping_02
     call ctc
 
@@ -238,8 +238,8 @@ label hg_pf_grope_ass_T2_continue:
 
 ### Tier 3 ###
 
-label hg_pf_grope_ass_T3:
-    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d5")
+label hg_pf_grope_ass_T2:
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d7")
 
     call her_main("Do you want me to turn around then, [genie_name]?","base","baseL", cheeks="blush", ypos="head")
 
@@ -250,17 +250,17 @@ label hg_pf_grope_ass_T3:
         "\"Yes. Turn around, [hermione_name].\"":
             call her_main("As you say, [genie_name]...","base","baseL", cheeks="blush")
 
-            jump hg_pf_grope_ass_T3_back
+            jump hg_pf_grope_ass_T2_back
 
         "\"No. Just stand still, [hermione_name].\"":
             call her_main("As you say, [genie_name]...","annoyed","angryL", cheeks="blush", ypos="head")
 
-            jump hg_pf_grope_ass_T3_front
+            jump hg_pf_grope_ass_T2_front
 
 
 
-label hg_pf_grope_ass_T3_front:
-    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d5")
+label hg_pf_grope_ass_T2_front:
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d7")
     #show screen no_groping_01
     call ctc
 
@@ -331,8 +331,8 @@ label hg_pf_grope_ass_T3_front:
 
 
 
-label hg_pf_grope_ass_T3_back:
-    call hg_chibi_transition("stand_behind_desk", flip=True, trans="d5")
+label hg_pf_grope_ass_T2_back:
+    call hg_chibi_transition("stand_behind_desk", flip=True, trans="d7")
     # show screen no_groping_02
     call ctc
 
@@ -341,7 +341,7 @@ label hg_pf_grope_ass_T3_back:
     menu:
         m "Hm..."
         "-Give her butt a squeeze-":
-            jump hg_pf_grope_ass_T3_continue
+            jump hg_pf_grope_ass_T2_continue
 
         "-Give her butt a slap-":
             call slap_her
@@ -354,7 +354,7 @@ label hg_pf_grope_ass_T3_back:
         "\"Fine, fine... I just couldn't resist....\"":
             call her_main("It's Ok...","base","baseL", cheeks="blush")
 
-            jump hg_pf_grope_ass_T3_continue
+            jump hg_pf_grope_ass_T2_continue
 
         "-Give her butt another slap-":
             call slap_her
@@ -368,7 +368,7 @@ label hg_pf_grope_ass_T3_back:
         "\"Fine, fine... I just couldn't resist....\"":
             call her_main("It's not a big deal...","base","baseL", cheeks="blush")
 
-            jump hg_pf_grope_ass_T3_continue
+            jump hg_pf_grope_ass_T2_continue
 
         "-Give her butt another slap-":
             call slap_her
@@ -378,12 +378,12 @@ label hg_pf_grope_ass_T3_back:
             m "Alright, alright... proceeding with groping then..."
             call her_main("................","base","baseL", cheeks="blush")
 
-            jump hg_pf_grope_ass_T3_continue
+            jump hg_pf_grope_ass_T2_continue
 
 
 
-label hg_pf_grope_ass_T3_continue:
-    call hg_chibi_transition("grope_ass", flip=True, trans="d5")
+label hg_pf_grope_ass_T2_continue:
+    call hg_chibi_transition("grope_ass", flip=True, trans="d7")
     # show screen groping_02
     call ctc
 
@@ -468,7 +468,7 @@ label hg_pf_grope_ass_T3_continue:
                     ">It's very tight and warm..."
                     ">Also it is relatively dry... Doesn't look like Hermione's taking any pleasure in this..."
 
-                    jump hg_pf_grope_ass_T3_fail
+                    jump hg_pf_grope_ass_T2_fail
 
                 "-Let the girl go...-":
                     jump end_hg_pf_grope
@@ -486,7 +486,7 @@ label hg_pf_grope_ass_T3_continue:
                     call her_main("!!?","angry","wide")
                     call nar(">It's very tight and warm inside...")
 
-                    jump hg_pf_grope_ass_T3_fail
+                    jump hg_pf_grope_ass_T2_fail
 
                 "-Let the girl go...-":
                     jump end_hg_pf_grope
@@ -496,7 +496,7 @@ label hg_pf_grope_ass_T3_continue:
 
 
 
-label hg_pf_grope_ass_T3_fail:
+label hg_pf_grope_ass_T2_fail:
     call her_main("NO! What have you done!!?","angry","worriedCl", cheeks="blush", tears="soft_blink", ypos="head")
     call nar(">Hermione gives you an unexpectedly strong shove...")
 
@@ -562,8 +562,8 @@ label hg_pf_grope_ass_T3_fail:
 
 ### Tier 4 ###
 
-label hg_pf_grope_ass_T4:
-    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d5")
+label hg_pf_grope_ass_T3:
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d7")
 
     call her_main("Do you want me to turn around then, [genie_name]?","base","baseL", cheeks="blush", ypos="head")
 
@@ -573,43 +573,52 @@ label hg_pf_grope_ass_T4:
         m "Hm..."
         "\"Yes. Turn around, [hermione_name].\"":
             call her_main("As you say, [genie_name]...","base","baseL", cheeks="blush")
-            jump hg_pf_grope_ass_T4_back
+            jump hg_pf_grope_ass_T3_back
 
         "\"No. Just stand still, [hermione_name].\"":
             call her_main("As you say, [genie_name]...","soft","base", cheeks="blush", ypos="head")
-            jump hg_pf_grope_ass_T4_front
+            jump hg_pf_grope_ass_T3_front
 
 
 
-label hg_pf_grope_ass_T4_front:
+label hg_pf_grope_ass_T3_front:
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d7")
 
-    "Dev Note" "This section is missing an event."
-
-    jump hg_pf_grope_ass_T4_continue
-
-
-
-label hg_pf_grope_ass_T4_back:
-
-    "Dev Note" "This section is missing an event."
-
-    jump hg_pf_grope_ass_T4_continue
-
-
-
-
-
-
-
-
-label hg_pf_grope_ass_T4_continue:
+    "Dev Note" "This section is missing writing."
 
     menu:
         "-Slide your hands under her panties-":
-            pass
+            call hg_chibi_transition("grope_ass", flip=False, trans="d7")
 
         "-No. That's enough for today. Dismiss her-":
             jump end_hg_pf_grope
+
+    jump hg_pf_grope_ass_T3_continue
+
+
+
+label hg_pf_grope_ass_T3_back:
+    call hg_chibi_transition("stand_behind_desk", flip=True, trans="d7")
+
+    "Dev Note" "This section is missing writing."
+
+    menu:
+        "-Slide your hands under her panties-":
+            call hg_chibi_transition("grope_ass", flip=True, trans="d7")
+
+        "-No. That's enough for today. Dismiss her-":
+            jump end_hg_pf_grope
+
+    jump hg_pf_grope_ass_T3_continue
+
+
+
+
+
+
+
+
+label hg_pf_grope_ass_T3_continue:
 
     call nar(">You slowly slide one of your hands under the fabric of the girl's panties...")
     call her_main("[genie_name]... What are you...?","open","baseL", cheeks="blush", ypos="head")
@@ -694,8 +703,8 @@ label hg_pf_grope_ass_T4_continue:
 
 ### Tier 5 ###
 
-label hg_pf_grope_ass_T5:
-    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d5")
+label hg_pf_grope_ass_T4:
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d7")
 
     call her_main("Do you want me to turn around then, [genie_name]?","soft","glance", cheeks="blush", ypos="head")
 
@@ -705,16 +714,16 @@ label hg_pf_grope_ass_T5:
         m "Hm..."
         "\"Yes. Turn around, [hermione_name].\"":
             call her_main("As you say, [genie_name]...","base","baseL", cheeks="blush")
-            jump hg_pf_grope_ass_T5_back
+            jump hg_pf_grope_ass_T4_back
 
         "\"No. Just stand still, [hermione_name].\"":
             call her_main("As you say, [genie_name]...","soft","base", cheeks="blush", ypos="head")
-            jump hg_pf_grope_ass_T5_front
+            jump hg_pf_grope_ass_T4_front
 
 
 
-label hg_pf_grope_ass_T5_front:
-    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d5")
+label hg_pf_grope_ass_T4_front:
+    call hg_chibi_transition("stand_behind_desk", flip=False, trans="d7")
     #show screen no_groping_01
     call ctc
 
@@ -822,8 +831,8 @@ label hg_pf_grope_ass_T5_front:
 
 
 
-label hg_pf_grope_ass_T5_back:
-    call hg_chibi_transition("stand_behind_desk", flip=True, trans="d5")
+label hg_pf_grope_ass_T4_back:
+    call hg_chibi_transition("stand_behind_desk", flip=True, trans="d7")
     # show screen no_groping_02
     call ctc
 
@@ -913,11 +922,11 @@ label hg_pf_grope_ass_T5_back:
 
     call her_main("................","base","baseL", cheeks="blush")
 
-    jump hg_pf_grope_T5_continue
+    jump hg_pf_grope_T4_continue
 
 
 
-label hg_pf_grope_T5_continue:
+label hg_pf_grope_T4_continue:
 
     menu:
         "-Slide your hands between her legs-":

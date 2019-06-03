@@ -189,13 +189,9 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
     m "Just stand still, [hermione_name]..."
 
     # Start Jerking Off.
-    hide screen genie
     hide screen bld1
     hide screen blktone
-    show screen chair_left
-    show screen jerking_off_01
-    with d1
-    call hide_blkfade
+    call hg_chibi_transition("jerk_off", trans="fade")
     call ctc
 
     call bld
@@ -224,19 +220,21 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
             g4 "Don't you dare to leave me in this state, [hermione_name]!"
 
             call set_her_action("none","update")
-            call her_main("I am not setting a foot into your office ever again, [genie_name]!","angry","suspicious", cheeks="blush")
+            call hg_chibi_transition("stand","desk","base", flip=False, trans="fade")
+
+            call her_main("I am not setting a foot into your office ever again, [genie_name]!","angry","suspicious", cheeks="blush", xpos="mid", ypos="base")
 
             g4 "Come on, now. Just say something dirty! I'm almost there!"
             call her_main("You are a horrible person, [genie_name]...","angry","suspicious", cheeks="blush", tears="messy")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave", speed=2)
 
             jump end_hermione_event
 
         "\"Alright, alright. That's enough for now.\"":
             $ her_mood += 9
 
-            pass
+            jump end_hg_pf_admire_breasts
 
         "-Start jerking your cock faster-":
             $ her_mood += 35
@@ -249,9 +247,12 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
             call set_her_action("none","update")
 
             call her_main("Ew! [genie_name]!","angry","suspicious", cheeks="blush")
+
+            call hg_chibi_transition("stand","desk","base", flip=False, trans="fade")
+
             call her_main("I'm leaving!","angry","suspicious", cheeks="blush")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave", speed=2)
 
             jump end_hermione_event
 
@@ -369,12 +370,9 @@ label hg_pf_admire_breasts_T3_masturbate:
     ">You stare at Hermione's breasts with hunger..."
 
     #Start Jerking Off.
-    hide screen genie
     hide screen bld1
     hide screen blktone
-    show screen chair_left
-    show screen jerking_off_01
-    call hide_blkfade
+    call hg_chibi_transition("jerk_off", trans="fade")
     call ctc
 
     call her_main("[genie_name], I didn't agree to this...","shock","worriedCl")
@@ -401,7 +399,6 @@ label hg_pf_admire_breasts_T3_masturbate:
     call nar(">You start to stroke your cock even harder...")
     g4 "Yes, I know you want this! Yes!"
     call her_main("................","angry","worriedCl", cheeks="blush")
-    call blkfade
 
     ">You are about to cum..."
 
@@ -418,15 +415,15 @@ label hg_pf_admire_breasts_T3_masturbate:
         "-Just start cumming-":
             #call play_music("chipper_doodle") # HERMIONE'S THEME.
             g4 "Argh! You whore!"
-            call her_main("Proff-- ??","scream","wide", cheeks="blush")
+            call her_main("Proff- ??","scream","wide", cheeks="blush")
             call cum_block
             g4 "Argh! YES!"
             hide screen bld1
             with d1
+
             $ no_blinking = True #When True - blinking animation is not displayed.
+
             show screen jerking_off_cum
-            hide screen bld1
-            hide screen blkfade
             with d5
             call ctc
 
@@ -455,17 +452,17 @@ label hg_pf_admire_breasts_T3_masturbate:
             her "I need to clean myself up..."
 
             hide screen hermione_main
-            call blkfade
+            show screen blkfade
+            with d5
 
             call set_her_action("none","update")
             $ sperm_on_tits = False
 
-            hide screen jerking_off_01
-            hide screen chair_left
             call her_chibi("stand","desk","base")
-            show screen genie
+            call gen_chibi("sit_behind_desk")
 
-            call hide_blkfade
+            hide screen blkfade
+            with d5
             call her_main("","angry","angry")
             call ctc
 
@@ -629,16 +626,9 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
     ">You stare at Hermione's breasts with hunger..."
 
     # Start Jerking off.
-
-    hide screen genie
     hide screen bld1
     hide screen blktone
-    show screen chair_left
-    show screen jerking_off_01
-
-    hide screen bld1
-    hide screen blkfade
-    with fade
+    call hg_chibi_transition("jerk_off", trans="fade")
     call ctc
 
     if her_whoring < 17:
@@ -685,8 +675,6 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
 
 
     # Genie cums.
-    call blkfade
-
     menu:
         g4 "Argh! (I'm about to cum!)"
         "-Hold it in-":
@@ -709,8 +697,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             $ sperm_on_tits = True
 
             show screen jerking_off_cum
-            hide screen bld1
-            call hide_blkfade
+            with d5
             call ctc
 
             call bld
@@ -718,7 +705,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             g4 "Oh, this is great, yes..."
             $ no_blinking = False #When True - blinking animation is not displayed.
             hide screen jerking_off_cum
-            with d3
+            with d5
 
             call her_main("Well, what's done is done I suppose...","base","baseL", cheeks="blush")
             m "Oh, this was quite amazing..."
@@ -744,11 +731,10 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             $ aftersperm = True
             call set_her_action("none","update")
 
-            hide screen jerking_off_01
-            hide screen chair_left
             call her_chibi("stand","desk","base")
-            show screen genie
-            call hide_blkfade
+            call gen_chibi("sit_behind_desk")
+            hide screen blkfade
+            with d5
 
             call her_main("","base","base")
             call ctc
@@ -802,11 +788,10 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             $ sperm_on_tits = False
             call set_her_action("none","update") #This reloads all her clothing!
 
-            show screen genie
-            hide screen jerking_off_01
-            hide screen chair_left
             call her_chibi("stand","desk","base")
-            call hide_blkfade
+            call gen_chibi("sit_behind_desk")
+            hide screen blkfade
+            with d5
 
             call her_main("","base","base")
             call ctc

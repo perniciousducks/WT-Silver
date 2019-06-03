@@ -394,6 +394,8 @@ label hg_handjob_1:
             call her_main("So, did it work? Are you ready to... finish, [genie_name]?","open","down")
             g4 "{size=-4}(Surprisingly, yes! I'm about to cum! Should I warn her?){/size}"
 
+            $ hg_T4_handjob_trigger = True
+
             return
 
 
@@ -497,7 +499,7 @@ label hg_handjob_1_cumming:
             m "Yes... I Feel so much better now..."
             pause.5
 
-            $ g_c_u_pic = "images/animation/15_cum_21.png"
+            $ g_c_u_pic = "characters/hermione/chibis/handjob/sperm_on_21.png"
             $ u_sperm = "characters/hermione/face/auto_06.png"
             $ uni_sperm = True
 

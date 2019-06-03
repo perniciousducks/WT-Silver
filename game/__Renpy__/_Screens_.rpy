@@ -353,7 +353,8 @@ screen with_snape():
     zorder 3
 
 screen with_snape_animated():
-    add "genie_toast_goblet" at Position(xpos=140, ypos=0)
+    add "genie_toast_goblet" at Position(xpos=435, ypos=200)
+    add "snape_toast_goblet" at Position(xpos=618, ypos=200)
     tag hanging_with_snape
     zorder 3
 

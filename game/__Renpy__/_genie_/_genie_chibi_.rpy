@@ -12,9 +12,8 @@ screen g_c_u():
 
 ###  GENIE'S CUM UNIVERSAL SCREEN ###
 screen g_c_c_u():
-    add g_c_c_u_pic at Position(xpos=genie_cum_chibi_xpos, ypos=genie_cum_chibi_ypos) #xpos=-45,ypos=5
+    add g_c_c_u_pic at Position(xpos=genie_cum_chibi_xpos, ypos=genie_cum_chibi_ypos) #xpos=-65,ypos=5
     zorder 4
-
 
 
 screen genie(): #Sitting behind desk.
@@ -75,14 +74,14 @@ screen done_reading(): #DONE READING THE BOOK.
     tag genie_chibi
     add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
     add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
-    add im.Flip("images/animation/reading_07.png", horizontal=True) xpos 290+140 ypos 205
+    add im.Flip("characters/genie/chibis/reading/07.png", horizontal=True) xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
 
 screen done_reading_near_fire(): #DONE READING THE BOOK BY THE FIRE.
     tag genie_chibi
     add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
     add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
-    add "images/animation/reading_07.png" xpos 290+140 ypos 205
+    add "characters/genie/chibis/reading/07.png" xpos 290+140 ypos 205
 
     zorder 4 #Because otherwise the bird food would be on top.
 
@@ -98,7 +97,7 @@ screen genie_jerking_sperm(): #Genie's behind desk cum animation, CUM ONLY!
     zorder 2
 
 screen genie_jerking_sperm_02(): #Genie's behind desk cum still image, CUM ONLY!
-    add "images/animation/jerking_sperm_11.png" xpos 218 ypos 205
+    add "characters/genie/chibis/masturbating/desk_sperm_11.png" xpos 218 ypos 205
     zorder 2
 
 
@@ -110,12 +109,12 @@ screen genie_jerking_off_standing():
     zorder 2
 
 screen genie_jerking_off_standing_cum():
-    add "genie_cum_03" at Position(xpos=gen_chibi_xpos-270, ypos=gen_chibi_ypos-185)
-    zorder 2
+    add "genie_cum_03" at Position(xpos=gen_chibi_xpos-290, ypos=gen_chibi_ypos-190) #x270, y185 #290
+    zorder 4
 
 screen genie_stands_holds_dick():
     tag genie_chibi
-    add "images/animation/06_jerking_01.png" at Position(xpos=gen_chibi_xpos-270, ypos=gen_chibi_ypos-185)
+    add "characters/genie/chibis/masturbating/01.png" at Position(xpos=gen_chibi_xpos-270, ypos=gen_chibi_ypos-185)
     zorder 2
 
 
@@ -128,7 +127,7 @@ screen genie_handjob():
 
 screen genie_handjob_pause():
     tag genie_chibi
-    add "images/animation/12_handjob_01.png" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
+    add "characters/hermione/chibis/handjob/01.png" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
 screen genie_handjob_kiss():
@@ -141,7 +140,7 @@ screen genie_handjob_cum_on_shirt():
     zorder 2
 
 screen genie_handjob_cum_on_shirt_pause():
-    add "images/animation/15_cum_21.png" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
+    add "characters/hermione/chibis/handjob/sperm_on_21.png" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
     zorder 2
 
 screen genie_handjob_cum_under_shirt():
@@ -246,7 +245,7 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
         elif xpos == "left":
             $ gen_chibi_xpos = 100
         elif xpos == "behind_desk":
-            $ gen_chibi_xpos = 230
+            $ gen_chibi_xpos = 210
         elif xpos == "cupboard":
             $ gen_chibi_xpos = 260
         else:
@@ -256,7 +255,7 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
         if ypos in ["base","default"]:
             $ gen_chibi_ypos = 190
         elif ypos == "behind_desk":
-            $ gen_chibi_ypos = 200
+            $ gen_chibi_ypos = 190
         else:
             $ gen_chibi_ypos = int(ypos)
 
@@ -274,7 +273,7 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
         show screen g_c_u
 
     #Jerking off solo.
-    elif action in ["jerking","jerking_off","cumming","hold_dick"]:
+    elif action in ["jerk_off","jerking","jerking_off","cumming","hold_dick"]:
 
         if action == "cumming":
             show screen genie_jerking_off_standing

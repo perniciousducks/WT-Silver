@@ -63,7 +63,7 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             call set_ton_face(eyebrows = face)
         if pupils == None:
             call set_ton_face(pupils = face)
-            
+
     # Hair color changes
     if hair != None:
         if hair in ("red", "angry", "furious"):
@@ -110,7 +110,7 @@ label update_tonks:
     #$ tonks_flip = 1
     #$ tonks_cloth_pile = False
     return
-    
+
 label set_ton_astoria_name:
     if one_of_five == 1:
         $ ton_astoria_name = "Cutie"
@@ -136,7 +136,6 @@ label end_tonks_event:
     $ active_girl = None
     $ tonks_busy = True
 
-    call music_block
     jump main_room
 
 screen tonks_main():

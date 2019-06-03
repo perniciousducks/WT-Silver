@@ -119,26 +119,24 @@ label cho_wardrobe_check(section, arg=None):
                             $ wardrobe_fail_hint(10)
                             return
                 else:
-                    if cho_whoring < 5:
-                        call cho_main("I can't let you pick underwear for me, its inappropriate.",face="annoyed")
-                        call cho_main("{size=-8}Yet...{/size}",face="horny")
-                        #Hint
-                        $ wardrobe_fail_hint(5)
+                    if cho_whoring < arg.whoring:
+                        call cho_wardrobe_too_much
                         return
-                    else:
-                        if cho_whoring < arg.whoring:
-                            call cho_wardrobe_too_much
-                            return
             else:
                 if cho_whoring < 3:
                     if arg.type in ("top", "bottom"):
-                        if arg.id == char_active.get_cloth("top").id:
-                            call cho_main("I am not taking off my top, forget it!",face="annoyed")
-                        elif arg.id == char_active.get_cloth("bottom").id:
-                            call cho_main("I won't be walking bottomless on the school grounds..",face="annoyed")
-                        #Hint
-                        $ wardrobe_fail_hint(3)
-                        return
+                        if char_active.get_cloth("top"):
+                            if arg.id == char_active.get_cloth("top").id:
+                                call cho_main("I am not taking off my top, forget it!",face="annoyed")
+                                #Hint
+                                $ wardrobe_fail_hint(3)
+                                return
+                        if char_active.get_cloth("bottom"):
+                            if arg.id == char_active.get_cloth("bottom").id:
+                                call cho_main("I won't be walking bottomless on the school grounds..",face="annoyed")
+                                #Hint
+                                $ wardrobe_fail_hint(3)
+                                return
                 label cho_wardrobe_too_much:
                 if cho_whoring < arg.whoring:
                     $ random_number = renpy.random.randint(1, 5)

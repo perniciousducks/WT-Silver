@@ -53,7 +53,11 @@ label nt_pr_grope_start:
             m "I'll see you after class..."
             ton "Yes, [ton_genie_name]...{image=textheart}"
 
-    return
+    # Tonks leaves
+
+    $ nt_pr_grope.inProgress = True
+
+    jump end_tonks_event
 
 
 
@@ -91,7 +95,7 @@ label nt_pr_grope_T1_E1: # Tier 1 - Event 1 - Slytherin boy
     ton "Like you wouldn't believe. It was like a kid playing with lego for the first time." # Lego are muggle toys! No idea what wizards do  "It was like a kid playing with some bludgers..."
     ton "He just sat there silently groping them for ten minutes straight..."
     ton "Ughh... It took everything I had not to hold him down and jump his bones..."
-    m "[ton_name]..."
+    m "[tonks_name]..."
     ton "Right, well after letting him have a play in Disneyland for a little while I sent him back to class." # Disneyland?
     m "Just like that?"
     ton "There may have been a little more dirty talk... but that was just for me."
@@ -105,7 +109,7 @@ label nt_pr_grope_T1_E1: # Tier 1 - Event 1 - Slytherin boy
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
-    return
+    jump end_tonks_event
 
 
 label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
@@ -159,7 +163,7 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
-    return
+    jump end_tonks_event
 
 
 label nt_pr_grope_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys
@@ -199,7 +203,7 @@ label nt_pr_grope_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
-    return
+    jump end_tonks_event
 
 
 label nt_pr_grope_T1_E4: # Tier 1 - Event 4 - Slytherin girl
@@ -247,7 +251,7 @@ label nt_pr_grope_T1_E4: # Tier 1 - Event 4 - Slytherin girl
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
-    return
+    jump end_tonks_event
 
 
 

@@ -2,7 +2,7 @@
 
 ### Kissing ###
 
-# ([ton_name] makes out with her students...)
+# ([tonks_name] makes out with her students...)
 
 
 label nt_pr_kiss_start:
@@ -47,7 +47,11 @@ label nt_pr_kiss_start:
             g9 "Then go and practice with them!"
             ton "I will, [ton_genie_name]..."
 
-    return
+    # Tonks leaves
+
+    $ nt_pr_kiss.inProgress = True
+
+    jump end_tonks_event
 
 
 
@@ -55,14 +59,14 @@ label nt_pr_kiss_start:
 
 label tonks_teacher_event_3_1: #Level 1 Event 1
 
-    return
+    jump end_tonks_event
 
 label tonks_teacher_event_3_2: #Level 1 Event 2
 
-    return
+    jump end_tonks_event
 
 label tonks_teacher_event_3_3: #Level 1 Event 3
-    m "[ton_name]."
+    m "[tonks_name]."
     ton "[ton_genie_name]. Want me to jump straight into the story?"
     m "By all means."
     menu:
@@ -74,11 +78,11 @@ label tonks_teacher_event_3_3: #Level 1 Event 3
 
 
 
-    return
+    jump end_tonks_event
 
 label tonks_teacher_event_3_4: #Level 1 Event 4
 
-    return
+    jump end_tonks_event
 
 label tonks_teacher_event_3_5: #Level 2 Event 1
     m "How did your extra-curricular activities pan out today?"
@@ -140,7 +144,7 @@ label tonks_teacher_event_3_5: #Level 2 Event 1
     m "I need to clean up..."
     ton "Very well... Thank you, sir."
 
-    return
+    jump end_tonks_event
 
 label tonks_teacher_event_3_6: #Level 2 Event 2
     m "You're a bit late... Get caught up having fun with your students?"
@@ -176,7 +180,7 @@ label tonks_teacher_event_3_6: #Level 2 Event 2
     ton "A few minutes? Why do you think I'm so late?"
     m "Wait... You mean to tell me you spent all afternoon, french kissing one of your students?"
     ton "I didn't think it'd-"
-    m "I'm very proud. Good work, [ton_name]."
+    m "I'm very proud. Good work, [tonks_name]."
     ton "..."
     ton "Thank you, [ton_genie_name]."
-    return
+    jump end_tonks_event

@@ -254,15 +254,19 @@ label nt_pr_grope_T1_E4: # Tier 1 - Event 4 - Slytherin girl
 ### Tier 2 ###
 
 label nt_pr_grope_T2_E1: # Tier 2 - Event 1
+    #Begrudgingly talks about how pretty tonks is
 
 
-
-label nt_pr_grope_T2_E2: # Tier 2 - Event 2
+label nt_pr_grope_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy again
+    #breastfeeding and mommy play
 
 
 
 label nt_pr_grope_T2_E3: # Tier 2 - Event 3
+    #hufflepuff girl comes in asking for another favour
+    #ends up sucking tonks boobs
 
 
 
-label nt_pr_grope_T2_E4: # Tier 2 - Event 4
+label nt_pr_grope_T2_E4: # Tier 2 - Event 4 - 
+    #Tonks has her a slyhterin girl sit there and do work while she has no top on

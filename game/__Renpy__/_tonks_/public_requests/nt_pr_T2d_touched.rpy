@@ -1,4 +1,4 @@
-#Favour 4 - Touched by me (Tonks jerks off/fingers her students)
+#Favour 4 - Touched by me (Tonks sucks off/eats out her students)
 label tonks_teacher_event_4_intro: #First intro
     
     return

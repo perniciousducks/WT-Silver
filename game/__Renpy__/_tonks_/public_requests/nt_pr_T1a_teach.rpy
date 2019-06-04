@@ -435,7 +435,7 @@ label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
 
 label nt_pr_teach_T2_E4: # Tier 2 - Event 4 - Slytherin girl
     m "Anything interesting happen today, [ton_name]?"
-    ton "Do I ever... I broke new ground today..."
+    ton "Did it ever... I broke new ground today..."
     m "That's what I like to hear... So what happened?"
     ton "Remember that cute little \"Slytherin\" that's still coming to grips with her budding sexuality?"
     m "The girl you're turning into a lesbian, got it."

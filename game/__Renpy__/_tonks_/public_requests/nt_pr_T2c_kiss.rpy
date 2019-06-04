@@ -62,6 +62,43 @@ label nt_pr_kiss_start:
 
 label tonks_teacher_event_3_1: #Level 1 Event 1
     #Gentle kissing
+    m "Fun day?"
+    ton "It was! I got to show the kids a Boggart for the first time, that was pretty entertaining!"
+    ton "Not to mention I got to take a boys first kiss..."
+    m "A day of firsts then..."
+    ton "Mmmm, I know which one I preferred..."
+    m "Care to fill me in?"
+    ton "Alright..."
+    ton "So, I had class with my favourite little \'slythinerin\' today."
+    ton "I figured that I didn't really have much to do after classes so I may as well hold him back."
+    ton "He was expecting me to buy a favour from him straight away, however, I was in the mood for a little conversation today..."
+    ton "We talked about his performance in class... him being so distracted..."
+    ton "Then I asked him if he had a girlfriend to help with his distractions..."
+    ton "He answered no of course, so I pretend to sympathize, saying it must be hard for him to walk around school with all the pretty thing running around."
+    ton "I then asked if he'd made out with any of the girls..."
+    ton "He hadn't even kissed anyone before!"
+    ton "So, obviously I had to buy a favour off of him..."
+    ton "It's my duty as a teacher of this school to see to my students education."
+    m "How noble."
+    ton "Not to mention, he was so excited by the whole thing."
+    ton "You should have seen his face light up... It was precious."
+    m "Was it as intense as you promised?"
+    ton "Not really... I wanted to take it slow for his first time..."
+    ton "I just sat next to him and slowly peppered a few kisses on his lips at first..."
+    ton "After the initial shock and nerves, we were Eventually able to settle into a nice rhythm of kissing and some light tongue play..."
+    ton "He was still inexperienced, but definitely eager to learn."
+    ton "Then, after five minutes I paid him his points and sent him on his way..."
+    m "Just like that?"
+    ton "I don't think it's the last I'll see of him, besides I don't want to push him too far."
+    ton "This favour trading might actually be a good way to address student behavior!"
+    m "Oh?"
+    ton "His behavior has really started to improve after I've started buying favours from him."
+    m "Maybe you should consider dealing with all your troublemakers this way?"
+    ton "Hmmmm, don't tempt me..."
+    m "That'll be all then."
+    ton "See ya, [ton_genie_name]."
+
+
     return
 
     jump end_tonks_event
@@ -277,40 +314,5 @@ label tonks_teacher_event_3_7: #Level 2 Event 3
 
 label tonks_teacher_event_3_8: #Level 2 Event 4
     #Another make out sesh with slytherin involving tonks fingering the student
-    m "You're a bit late... Get caught up having fun with your students?"
-    ton "Mmmm, and then some..."
-    m "I like the sound of that!"
-    m "Now, care to elaborate?"
-    ton "Alright then, you old perv..."
-    ton "Today was that shy, horny \"ravenclaw\" boy..."
-    m "The one who stayed behind by himself?" # Note: If the favors don't reference each other in such a direct way, we could make bother "tough" and "kiss" available at the same time, playable independently to each other.
-    ton "Yep..."
-    ton "Ugh... he made the classic school boy mistake today..."
-    m "Which is?"
-    ton "Calling your teacher \"Mommy\"."
-    m "hahaha! Really?"
-    m "I bet he copped it for that!"
-    ton "Surprisingly not... Everyone just sort of went quiet."
-    m "Hmmm. I know I would have given him hell for that..."
-    ton "Anyway... I decided that was plenty of reason to hold him back..."
-    ton "Not that I needed to... Cheeky bugger didn't even get out of his seat..."
-    ton "He just sat there with his head down... waiting for me to come over..."
-    ton "So, I figured I'd indulge him... I walked over and plonked myself onto his lap, facing towards him..."
-    m "Mmmm, did he see that coming."
-    ton "No, although it didn't seem to bother him..."
-    ton "He just looked up at me with this look in his eyes..."
-    ton "It was too much... I started kissing him just to break our gaze..."
-    m "I assume he just sat there, taking it?"
-    ton "Oh no... He may have seemed shy... but kissing awoke something in him..."
-    ton "It was like he wanted to suck my soul out through my mouth... ugh..."
-    ton "I've never had someone attack me with their tongue like that..."
-    ton "It was intense... if a little inexperienced..."
-    ton "But my god... the most fun I've had in years!" # They don't really say "my god" in HP or reference god. "Merlin" is their stand in for that.
-    m "And what, you made out for a few minutes and sent him on his way?"
-    ton "A few minutes? Why do you think I'm so late?"
-    m "Wait... You mean to tell me you spent all afternoon, french kissing one of your students?"
-    ton "I didn't think it'd-"
-    m "I'm very proud. Good work, [tonks_name]."
-    ton "..."
-    ton "Thank you, [ton_genie_name]."
+    
     jump end_tonks_event

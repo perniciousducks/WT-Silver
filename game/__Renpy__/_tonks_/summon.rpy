@@ -10,7 +10,7 @@ label summon_tonks:
     call tonks_random_clothing
 
     label tonks_requests:
-    
+
     call ton_main(xpos="base",ypos="base")
     $ hide_transitions = False
 
@@ -23,6 +23,15 @@ label summon_tonks:
                 jump tonks_talk
             else:
                 jump tonks_talk
+
+
+        # Requests
+        "-Public Requests-" if daytime and tonks_requests_unlocked:
+            jump tonks_requests_menu
+
+        "{color=#858585}-Public Requests-{/color}" if not daytime and tonks_requests_unlocked:
+            call nar(">Public requests are available during the daytime only.")
+            jump tonks_requests
 
 
         # Detention Events
@@ -119,6 +128,41 @@ label summon_tonks:
             $ tonks_class.wear("all")
 
             jump main_room
+
+
+# Tonks Requests Menu
+label tonks_requests_menu:
+    call update_ton_requests
+    python:
+        menu_choices = []
+        for i in nt_requests_list:
+            if i in []: # Not in the game yet.
+                menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
+            elif i.start_tier > ton_tier:
+                menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
+            else:
+                menu_choices.append((i.getMenuText(),i.start_label))
+        menu_choices.append(("-Never mind-", "nvm"))
+        result = custom_menu(menu_choices)
+    if result == "nvm":
+        jump tonks_requests
+    elif result == "vague":
+        call favor_not_ready
+        jump tonks_requests
+    elif result == "na":
+        call not_available
+        jump tonks_requests
+    else:
+        $ renpy.jump(result)
+
+label update_ton_requests:
+    # Set event tier to current Tonks tier if they are different
+    python:
+        for i in nt_requests_list:
+            if i.tier != ton_tier and i.max_tiers >= ton_tier:
+                i.tier = ton_tier
+
+    return
 
 
 

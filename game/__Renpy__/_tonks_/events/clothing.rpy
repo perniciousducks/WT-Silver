@@ -121,7 +121,7 @@ label tonks_random_clothing:
         if not tonks_wardrobe_unlocked:
             call popup("You can now access Tonks' wardrobe and change her appearance!", "Congratulations!", "interface/icons/head/head_tonks_4.png")
 
-        $ tonks_wardrobe_unlocked = True
+            $ tonks_wardrobe_unlocked = True
 
         call ton_main(xpos="base",ypos="base",trans="fade")
 

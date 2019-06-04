@@ -89,7 +89,7 @@ init python:
                     return (False, renpy.show_screen("popup_window", "Corrupted file!"))
 
                 for item in imported:
-                    if isinstance(item, list):
+                    if not isinstance(item, basestring):
                         for object in character_clothes_list:
                             if item[0] == object.id:
                                 if object.char == char_active.char:
@@ -213,6 +213,7 @@ init python:
 
         name = ""
         desc = ""
+        whoring = 0
         
         pose = ""
 
@@ -299,7 +300,7 @@ init python:
             dyes = []
             for dye in self.color:
                 dyes.append([dye[0],dye[1],dye[2],dye[3]])
-            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=dyes, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix)
+            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=dyes, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix, whoring=self.whoring)
                 
         def set_pose(self, pose):
             if pose == None:
@@ -596,6 +597,39 @@ init python:
             if not self.get_cloth(self.get_clothing_list(category, subcategory)[item].type) == None:
                 return self.get_cloth(self.get_clothing_list(category, subcategory)[item].type).id
             return None
+            
+        def get_score(self):
+            score = 0
+            for key, item in self.clothing.iteritems():
+                if item[0] != None:
+                    if not item[0].type in ("tattoo0", "tattoo1", "piercing0", "piercing1", "buttplug"):
+                        score += item[0].whoring
+                else:
+                    if key == "top":
+                        score += 30
+                        if not self.get_worn("bra"):
+                            score += 25
+                            if self.get_worn("piercing1"):
+                                score += 10
+                            if self.get_worn("tattoo1"):
+                                score += self.get_cloth("tattoo1").whoring
+                    elif key == "bra" and self.get_worn("top"):
+                        score += 10
+                    elif key == "bottom":
+                        score += 30
+                        if self.get_worn("buttplug"):
+                            score += 10
+                        if not self.get_worn("panties"):
+                            score += 25
+                            if self.get_worn("buttplug"):
+                                score += 25
+                            if self.get_worn("piercing0"):
+                                score += 10
+                            if self.get_worn("tattoo0"):
+                                score += self.get_cloth("tattoo0").whoring
+                    elif key == "panties" and self.get_worn("bottom"):
+                        score += 15
+            return score
             
         def equip(self, object):
             if isinstance(object, outfit_class):

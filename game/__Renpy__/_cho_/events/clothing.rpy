@@ -52,7 +52,7 @@ label cho_random_clothing:
         elif cho_wardrobe_unlocked:
             # Party outfit
             if random_number < 6: #50% chance for any random clothing event
-                if not cc_party_slut_ITEM.unlocked:
+                if not cc_party_slut_ITEM.unlocked and cho_whoring >= 14:
                     $ cc_party_slut_ITEM.unlocked = True
 
                     $ cho_class.unequip("all")

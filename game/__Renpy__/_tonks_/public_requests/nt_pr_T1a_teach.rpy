@@ -72,7 +72,9 @@ label nt_pr_teach_start:
 
     # Tonks leaves
 
-    return
+    $ nt_pr_teach.inProgress = True
+
+    jump end_tonks_event
 
 
 
@@ -121,7 +123,7 @@ label nt_pr_teach_T1_E1: #Tier 1 - Event 1 - Slytherin boy
     if ton_reputation < 3: # Points til 3.
         $ ton_reputation += 1
 
-    return
+    jump end_tonks_event
 
 
 label nt_pr_teach_T1_E2: # Tier 1 - Event 2 - Racenclaw boy
@@ -158,7 +160,7 @@ label nt_pr_teach_T1_E2: # Tier 1 - Event 2 - Racenclaw boy
     if ton_reputation < 3: # Points til 3.
         $ ton_reputation += 1
 
-    return
+    jump end_tonks_event
 
 
 label nt_pr_teach_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys. Guess who...
@@ -200,7 +202,7 @@ label nt_pr_teach_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys. Guess who...
     if ton_reputation < 3: # Points til 3.
         $ ton_reputation += 1
 
-    return
+    jump end_tonks_event
 
 
 label nt_pr_teach_T1_E4: # Tier 1 - Event 4 - Slytherin girl
@@ -252,14 +254,14 @@ label nt_pr_teach_T1_E4: # Tier 1 - Event 4 - Slytherin girl
     m "Oh, um... time can do that..."
     m "Speaking of, it's getting a bit late..."
     ton "So it is... Night, sir."
-    m "Goodnight, [ton_name]."
+    m "Goodnight, [tonks_name]."
 
     # Tonks leaves
 
     if ton_reputation < 3: # Points til 3.
         $ ton_reputation += 1
 
-    return
+    jump end_tonks_event
 
 
 
@@ -317,7 +319,7 @@ label nt_pr_teach_T2_E1: # Tier 2 - Event 1 - Hufflepuff girl
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
-    return
+    jump end_tonks_event
 
 
 label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
@@ -372,7 +374,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
     m "Fuck. That's pretty hot..."
     ton "I know... Ugh... I need to go rub one out after it..."
     ton "See you, sir."
-    m "Goodbye [ton_name]."
+    m "Goodbye [tonks_name]."
     if choice_flag:
         m "Are you going to do anything about the cum?"
         ton "Oh... Eh, why bother?"
@@ -384,7 +386,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
-    return
+    jump end_tonks_event
 
 
 label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
@@ -430,7 +432,7 @@ label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
-    return
+    jump end_tonks_event
 
 
 label nt_pr_teach_T2_E4: # Tier 2 - Event 4 - Slytherin girl
@@ -457,7 +459,7 @@ label nt_pr_teach_T2_E4: # Tier 2 - Event 4 - Slytherin girl
     m "What did she have to say about the whole thing?"
     ton "Not much... She just looked up at me with those puppy-dog eyes whispering \"wow\" and \"don't stop\"..."
     ton "To think she tried to pretend she wasn't into me before..."
-    m "Good work, [ton_name]. Think she'll start talking now?"
+    m "Good work, [tonks_name]. Think she'll start talking now?"
     ton "Not unless she's ready to out herself as bi..."
     ton "But I think there are some whispers..."
     m "Very good. That'll be all then."
@@ -468,4 +470,4 @@ label nt_pr_teach_T2_E4: # Tier 2 - Event 4 - Slytherin girl
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
 
-    return
+    jump end_tonks_event

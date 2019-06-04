@@ -2,7 +2,7 @@
 
 ### Kissing ###
 
-# ([ton_name] makes out with her students...)
+# ([tonks_name] makes out with her students...)
 
 
 label nt_pr_kiss_start:
@@ -50,7 +50,11 @@ label nt_pr_kiss_start:
             g9 "Then go and practice with them!"
             ton "I will, [ton_genie_name]..."
 
-    return
+    # Tonks leaves
+
+    $ nt_pr_kiss.inProgress = True
+
+    jump end_tonks_event
 
 
 
@@ -60,6 +64,7 @@ label tonks_teacher_event_3_1: #Level 1 Event 1
     #Gentle kissing
     return
 
+    jump end_tonks_event
 label tonks_teacher_event_3_2: #Level 1 Event 2
     m "You're a bit late... Get caught up having fun with your students?"
     ton "Mmmm, and then some..."
@@ -99,7 +104,7 @@ label tonks_teacher_event_3_2: #Level 1 Event 2
     ton "Thank you, [ton_genie_name]."
     return
 
-    return
+    jump end_tonks_event
 
 label tonks_teacher_event_3_3: #Level 1 Event 3
     #Tonks pays two best friends to make-out
@@ -139,6 +144,19 @@ label tonks_teacher_event_3_3: #Level 1 Event 3
     m "You're telling me... That'll be all for now then Tonks."
     ton "Yes, sir..."
     return
+    m "[tonks_name]."
+    ton "[ton_genie_name]. Want me to jump straight into the story?"
+    m "By all means."
+    menu:
+        "-start jerking off-":
+            ">Your arm slips into your robe, grabbing a hold of your cock and gently stroking it back to life."
+            ton "...*tsk*"
+            ton "At least I know I have your attention..."
+            m "Mmmm... undivided."
+
+
+
+    jump end_tonks_event
 
 label tonks_teacher_event_3_4: #Level 1 Event 4
     #Tender make-out sesh with slytherin lesbian
@@ -183,7 +201,7 @@ label tonks_teacher_event_3_4: #Level 1 Event 4
     
 
 
-    return
+    jump end_tonks_event
 
 label tonks_teacher_event_3_5: #Level 2 Event 1
     m "How did your extra-curricular activities pan out today?"
@@ -245,7 +263,7 @@ label tonks_teacher_event_3_5: #Level 2 Event 1
     m "I need to clean up..."
     ton "Very well... Thank you, sir."
 
-    return
+    jump end_tonks_event
 
 label tonks_teacher_event_3_6: #Level 2 Event 2
     #Spends afternoon making out with ravenclaw, topless
@@ -259,4 +277,40 @@ label tonks_teacher_event_3_7: #Level 2 Event 3
 
 label tonks_teacher_event_3_8: #Level 2 Event 4
     #Another make out sesh with slytherin involving tonks fingering the student
-    return
+    m "You're a bit late... Get caught up having fun with your students?"
+    ton "Mmmm, and then some..."
+    m "I like the sound of that!"
+    m "Now, care to elaborate?"
+    ton "Alright then, you old perv..."
+    ton "Today was that shy, horny \"ravenclaw\" boy..."
+    m "The one who stayed behind by himself?" # Note: If the favors don't reference each other in such a direct way, we could make bother "tough" and "kiss" available at the same time, playable independently to each other.
+    ton "Yep..."
+    ton "Ugh... he made the classic school boy mistake today..."
+    m "Which is?"
+    ton "Calling your teacher \"Mommy\"."
+    m "hahaha! Really?"
+    m "I bet he copped it for that!"
+    ton "Surprisingly not... Everyone just sort of went quiet."
+    m "Hmmm. I know I would have given him hell for that..."
+    ton "Anyway... I decided that was plenty of reason to hold him back..."
+    ton "Not that I needed to... Cheeky bugger didn't even get out of his seat..."
+    ton "He just sat there with his head down... waiting for me to come over..."
+    ton "So, I figured I'd indulge him... I walked over and plonked myself onto his lap, facing towards him..."
+    m "Mmmm, did he see that coming."
+    ton "No, although it didn't seem to bother him..."
+    ton "He just looked up at me with this look in his eyes..."
+    ton "It was too much... I started kissing him just to break our gaze..."
+    m "I assume he just sat there, taking it?"
+    ton "Oh no... He may have seemed shy... but kissing awoke something in him..."
+    ton "It was like he wanted to suck my soul out through my mouth... ugh..."
+    ton "I've never had someone attack me with their tongue like that..."
+    ton "It was intense... if a little inexperienced..."
+    ton "But my god... the most fun I've had in years!" # They don't really say "my god" in HP or reference god. "Merlin" is their stand in for that.
+    m "And what, you made out for a few minutes and sent him on his way?"
+    ton "A few minutes? Why do you think I'm so late?"
+    m "Wait... You mean to tell me you spent all afternoon, french kissing one of your students?"
+    ton "I didn't think it'd-"
+    m "I'm very proud. Good work, [tonks_name]."
+    ton "..."
+    ton "Thank you, [ton_genie_name]."
+    jump end_tonks_event

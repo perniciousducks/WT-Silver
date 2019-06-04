@@ -324,6 +324,21 @@ image heal:
     pause.06
     "magic/heal18.png"
     pause.06
+    
+image love_heart:
+    "magic/love09.png"
+    pause.06
+    "magic/love10.png"
+    pause.06
+    "magic/love11.png"
+    pause.06
+    "magic/love12.png"
+    pause.06
+    "magic/love13.png"
+    pause.06
+    "magic/love14.png"
+    pause.06
+    "magic/love15.png"
 
 ############################################
 #######EMOTIONS #^_^# ########################
@@ -611,3 +626,9 @@ transform pulse:
         linear 0.8 xzoom 1.2 yzoom 1.2
         linear 0.8 xzoom 1.0 yzoom 1.0
         repeat
+        
+transform moveto(start_x=0, start_y=0, target_x, target_y, duration=1.0):
+    on show:
+        xpos start_x
+        ypos start_y
+        linear duration xpos target_x ypos target_y

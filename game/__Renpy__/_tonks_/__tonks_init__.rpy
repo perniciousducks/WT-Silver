@@ -22,6 +22,9 @@ label tonks_progress_init:
         #Flags
         $ tonks_busy = False
         $ tonks_unlocked = False
+        $ tonks_favors_unlocked = False
+        $ tonks_requests_unlocked = False
+        $ tonks_shaming_unlocked = False
         $ tonks_wardrobe_unlocked = False
         $ chitchated_with_tonks = False
         $ tonks_strip_happened = False #Tonks random clothing event.
@@ -38,9 +41,21 @@ label tonks_progress_init:
         $ ton_astoria_date_counter = 0
         $ ton_hermione_date_counter = 0
 
+
+
+    ### 1.37 updates ###
+
+    if not hasattr(renpy.store,'ton_tier'):
+        $ ton_tier = 1
+        $ tonks_favors_unlocked   = False
+        $ tonks_requests_unlocked = False
+        $ tonks_shaming_unlocked  = False
+
+
     ###################
     # Public requests #
     ###################
+
     if not hasattr(renpy.store,'nt_pr_teach'):
         $ nt_pr_teach   = event_class(title = "Detention with Tonks.", start_label = "nt_pr_teach_start", events = [
             [
@@ -101,10 +116,10 @@ label tonks_progress_init:
             iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
             )
 
-        $ nt_requests_list = [
-            nt_pr_teach,
-            nt_pr_grope,
-            #nt_pr_kiss
-            ]
+    $ nt_requests_list = [
+        nt_pr_teach,
+        nt_pr_grope,
+        nt_pr_kiss
+        ]
 
     return

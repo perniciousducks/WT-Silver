@@ -152,6 +152,8 @@ label hg_blowjob_1: #Call label. Returns.
     call play_music("playful_tension") # SEX THEME.
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     hide screen genie
+
+
     call her_chibi("hide")
     show screen chair_left
     call u_play_ani
@@ -160,7 +162,8 @@ label hg_blowjob_1: #Call label. Returns.
     with fade
     call ctc
 
-    call her_main("*Slurp!* *Gulp!* *Slurp!*",ypos="head")
+    call her_main("*Slurp!* *Gulp!* *Slurp!*", "sucking", ypos='suck')
+    $ hermione_scaleratio = 1.4
     m "Yes..."
     m "Try to take it deeper now..."
     call her_main("*Gulp!* *Gobble!* *Gobble!*")
@@ -171,25 +174,25 @@ label hg_blowjob_1: #Call label. Returns.
     menu:
         m "Hm..."
         "\"Whatever happened to your \"MRM\" thing?\"":
-            call her_main("*Slurp?*",ypos="head")
+            call her_main("*Slurp?*", ypos='suck')
             call u_pause_ani
             call her_main("Oh, well...","angry","down_raised")
             call her_main("We are still active, but...")
             call u_play_ani
-            her "*Slurp!* *Gobble!*"
+            call her_main("*Slurp!* *Gobble!*","sucking","ahegao")
             call u_pause_ani
             call her_main("But we are not getting as popular and as much support as I thought we would...","angry","wink")
             call u_play_ani
-            her "*Slurp!* *Gulp!* *Gulp!*"
+            call her_main("*Slurp!* *Gulp!* *Gulp!*","sucking","down")
             m "Oh... This is good..."
-            her "*Slurp!* *Slurp!* *Slurp!*"
+            call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao_mad")
             m "Hm..."
             m "So you don't mind selling me sexual favours, letting me play with your tits and such..."
-            her "*Gobble!* *Gltch!* *Slurp!*"
+            call her_main("*Gobble!* *Gltch!* *Slurp!*","sucking","ahegao")
             m "And then condemn such behavior in front of the other students."
-            her "*Slurp!* *Slurp!* *Gulp!*"
+            call her_main("*Slurp!* *Slurp!* *Gulp!*","sucking","down")
             m "You perverted, little hypocrite."
-            her "*Gulp--"
+            call her_main("*Gulp--","sucking","ahegao_mad")
             call u_pause_ani
             call her_main("That's not what we stand for, [genie_name].","angry","base")
             m "What do you mean?"
@@ -201,10 +204,10 @@ label hg_blowjob_1: #Call label. Returns.
             m "Suck on my cock some more before we continue."
             call her_main("Of course, [genie_name].","soft","ahegao")
             call u_play_ani
-            her "*Gobble!* *Slurp!* *Slurp!*"
+            call her_main("*Gobble!* *Slurp!* *Slurp!*","sucking","ahegao_mad")
             m "Yes, much better..."
             m "But you still disapprove of selling the favours, right?"
-            her "*Slurp--"
+            call her_main("*Slurp--","sucking","ahegao_mad")
             call u_pause_ani
             call her_main("Yes, it is frowned upon...","upset","closed")
             m "And yet, you are the biggest offender by far."
@@ -213,8 +216,8 @@ label hg_blowjob_1: #Call label. Returns.
             m "The cock, [hermione_name]."
             call her_main("Right, sorry...","upset","closed")
             call u_play_ani
-            her "*Slurp!* *Gulp!* *Gltch!*"
-            her "*Slurp--"
+            call her_main("*Slurp!* *Gulp!* *Gltch!*","sucking","ahegao_mad")
+            call her_main("*Slurp--","sucking","ahegao")
             call u_pause_ani
             call her_main("This one time we had a meeting right after I sold you another favour, [genie_name].","angry","base")
             call her_main("I had to give a speech with my uniform all messy and stained.")
@@ -232,7 +235,7 @@ label hg_blowjob_1: #Call label. Returns.
             call u_play_ani
 
         "\"Your parents must be proud of you...\"":
-            call her_main("*Slurp--",ypos="head")
+            call her_main("*Slurp--",ypos="suck")
             call u_pause_ani
             call her_main("Yes, I believe they are...","smile","happyCl")
             call her_main("With me being an excellent student despite being muggle-born and all...","base","happyCl")
@@ -241,12 +244,12 @@ label hg_blowjob_1: #Call label. Returns.
             m "Yes, a respectable institution indeed."
             m "Cock back in your mouth [hermione_name]."
             call u_play_ani
-            her "*Slurp!* *Gulp!* *Gobble!*"
+            call her_main("*Slurp!* *Gulp!* *Gobble!*","sucking","ahegao_mad")
             m "Yes, just keep at it for a while..."
-            her "*Slurp!* *Gltch!* *Gulp!*"
+            call her_main("*Slurp!* *Gltch!* *Gulp!*","sucking","ahegao")
             m "Good, good..."
             m "So, what would your folks say if they were to see you now, [hermione_name]?"
-            her "*Slurp--"
+            call her_main("*Slurp--","sucking","ahegao")
             call u_pause_ani
             call her_main("They would not understand of course...","open","down")
             call her_main("But I do not care.")
@@ -255,10 +258,10 @@ label hg_blowjob_1: #Call label. Returns.
             call her_main("Hm... I suppose I am.","angry","wink")
             m "Back to sucking then. Teach your folks a lesson."
             call u_play_ani
-            her "*Slurp!* *Slurp!* *Slurp!*"
+            call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao")
 
         "\"Tell me about the \"Gryffindor\" house.\"":
-            call her_main("*Slurp--",ypos="head")
+            call her_main("*Slurp--",ypos="suck")
             call u_pause_ani
             call her_main("What can I say that you don't already know, [genie_name]?","soft","baseL")
             m "Yes... Ehm... I know everything of course."
@@ -267,31 +270,31 @@ label hg_blowjob_1: #Call label. Returns.
             call nar(">As soon as you mention \"test\" Hermone's eyes light up with excitement.")
             call her_main("OK. But I need a moment gather my thoughts...","smile","happyCl",emote="06")
             call u_play_ani
-            her "*Slurp!* *Slurp!* *Gulp!*"
+            call her_main("*Slurp!* *Slurp!* *Gulp!*","sucking","ahegao_mad")
             m "Oh, yes... Take as much time as you need, [hermione_name]."
-            her "*Slurp!* *Gulp!* *Slurp!*"
-            her "*Gulp--"
+            call her_main("*Slurp!* *Gulp!* *Slurp!*","sucking","ahegao_mad")
+            call her_main("*Gulp--","sucking","ahegao")
             call u_pause_ani
             call her_main("The \"Gryffindor\" house was founded by Godric Gryffindor, thus the name.","open","down")
             call her_main("The heraldic animal of \"Gryffindor\" is the lion...")
             call her_main("And it's colors are red and gold.","open","closed")
             call u_play_ani
-            her "*Gulp!* *Slurp!* *Slurp!*"
+            call her_main("*Gulp!* *Slurp!* *Slurp!*","sucking","ahegao")
             call u_pause_ani
             call her_main("Professor Minerva McGonagall is the headmaster of our house.","open","closed")
             call her_main("The \"Gryffindor\" house emphasizes the traits of courage...")
             call her_main("As well as \"daring, nerve and chivalry\"...")
             call her_main("And thus its members are generally regarded as brave but reckless...")
             call u_play_ani
-            her "*Slurp!* *Slurp!* *Slurp!*"
+            call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao")
             call u_pause_ani
             call her_main("\"Gryffindor\" corresponds roughly to the element of fire...","open","closed")
             call her_main("And for that reason the colours of red and gold were chosen.")
             call u_play_ani
-            her "*Slurp!* *Gulp!* *Slurp!*"
+            call her_main("*Slurp!* *Gulp!* *Slurp!*","sucking","ahegao_mad")
             m "Hm..."
             m "Well, I thought I could turn this around somehow to make fun of you..."
-            her "*Slurp??*"
+            call her_main("*Slurp??*","sucking","ahegao")
             m "Well, with your house representing courage and righteousness and such..."
             m "And you being a nasty slut..."
             call u_pause_ani
@@ -301,24 +304,24 @@ label hg_blowjob_1: #Call label. Returns.
             m "That sort of describes your personality quite well..."
             call her_main("[genie_name]...","base","base")
             call u_play_ani
-            her "*Gobble!!* *Gltch!!* *Gobble!!!*"
+            call her_main("*Gobble!!* *Gltch!!* *Gobble!!!*","sucking","ahegao_mad")
             m "Good girl..."
 
     m "Good..."
-    call her_main("*Gobble!* *Slurp!* *Slurp!*",ypos="head")
+    call her_main("*Gobble!* *Slurp!* *Slurp!*",ypos="suck")
     m "Good... Back and forth, back and forth... Good girl."
-    her "*Slurp!* *Slurp!* *Slurp!*"
-    her "*Slurp--"
+    call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao")
+    call her_main("*Slurp--","sucking","ahegao")
     call u_pause_ani
     call her_main("[genie_name]... I am a... whore.","open","down")
     m "What?"
     call u_play_ani
-    her "*Slurp-Slurp-Slurp!*"
+    call her_main("*Slurp-Slurp-Slurp!*","sucking","ahegao_mad")
     call u_pause_ani
     call her_main("I truly am a slut and deeply enjoy sucking your cock.","angry","base")
     m "Oh, yes, yes... Say more things like that."
     call u_play_ani
-    her "*Slurp!* *Gulp!* *Slurp!*"
+    call her_main("*Slurp!* *Gulp!* *Slurp!*","sucking","ahegao")
     call u_pause_ani
     call her_main("Please, [genie_name]. Cum for me.","soft","ahegao")
     with hpunch
@@ -328,7 +331,7 @@ label hg_blowjob_1: #Call label. Returns.
     menu:
         m "..."
         "-Warn her-":
-            call her_main("Yes, I love to suck and --","soft","ahegao",ypos="head")
+            call her_main("Yes, I love to suck and --","soft","ahegao",ypos="suck")
             g4 "Heads up, [hermione_name]! Here it comes!"
             call her_main("!!!","angry","wide")
             call ctc
@@ -340,10 +343,10 @@ label hg_blowjob_1: #Call label. Returns.
             ">Hermione quickly puts your cock back in her mouth and continues to suck on it with great passion."
             call cum_block
             g4 "{size=+7}ARGH!{/size}"
-            her "*Gulp!-Gulp!-Gulp!*"
+            call her_main("*Gulp!-Gulp!-Gulp!*","cumming","ahegao")
             with hpunch
             g4 "And some more!"
-            her "*Gulp!* *Gulp!* *Gulp!*"
+            call her_main("*Gulp!* *Gulp!* *Gulp!*","cumming","ahegao")
             call hide_blkfade
             call ctc
 
@@ -376,10 +379,10 @@ label hg_blowjob_1: #Call label. Returns.
             return
 
         "-Don't bother-":
-            call her_main("Yes, I love to suck and --","soft","ahegao",ypos="head")
+            call her_main("Yes, I love to suck and --","soft","ahegao",ypos="suck")
             call cum_block
             g4 "{size=+7}Whore!{/size}"
-            call her_main("!!?","shock","wide")
+            call her_main("!!?","cumshot","wide")
             hide screen bld1
             call set_u_ani("cum_on_face_ani")
             call u_play_ani
@@ -444,13 +447,13 @@ label hg_hidden_blowjob: #Call label. Returns.
     with fade
     call ctc
 
-    call her_main("*Slurp!* *Slurp!* *Gulp!*",ypos="head")
+    call her_main("*Slurp!* *Slurp!* *Gulp!*",ypos="suck")
     m "Yes, good girl..."
-    her "*Slurp!* *Gobble!* *Slurp!*"
+    call her_main("*Slurp!* *Gobble!* *Slurp!*","sucking","ahegao")
 
     call play_sound("knocking") #Sound someone knocking on the door.
     call nar("> *Knock-knock-knock!*")
-    her "{size=+7}!!!{/size}"
+    call her_main("{size=+7}!!!{/size}","sucking","ahegao_mad")
     m "Hm?"
 
     if daytime:
@@ -492,7 +495,7 @@ label hg_hidden_blowjob: #Call label. Returns.
 
 
 label hg_hidden_blowjob_snape: #Call label. Returns.
-    call her_main("([genie_name], what should I do?)","shock","wide",ypos="head")
+    call her_main("([genie_name], what should I do?)","shock","wide",ypos="suck")
     m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
     sna "Albus? Are you there? I need to talk to you."
     call her_main("(It's professor Snape!)","angry","base")
@@ -505,7 +508,7 @@ label hg_hidden_blowjob_snape: #Call label. Returns.
                 $ hg_hidden_bj_seen_list.append("snape")
             $ her_mood = 30
             stop music fadeout 1.0
-            call her_main("([genie_name], no!)","angry","angry",emote="01",ypos="head")
+            call her_main("([genie_name], no!)","angry","angry",emote="01",ypos="suck")
 
             call nar(">Hermione gives your balls a firm twist full of frustration.")
             g4 "Ouch!"
@@ -523,32 +526,32 @@ label hg_hidden_blowjob_snape: #Call label. Returns.
 
             call sna_main("Good, you are here.","snape_01",xpos="base",ypos="base")
             call u_play_ani
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_intense")
             call sna_main("Listen, there is something I want to discuss...","snape_06")
             call sna_main("Hm...?","snape_05")
             call sna_main("Genie? Are you alright?")
-            her "{size=-4}(Ginny!!? Is she here as well?!){/size}"
-            her "{size=-4}(No, please! I will die of shame!){/size}"
+            call her_main("{size=-4}(Ginny!!? Is she here as well?!){/size}","sucking","ahegao_mad")
+            call her_main("{size=-4}(No, please! I will die of shame!){/size}","sucking","ahegao")
             m "Yes, Severus, I am fine..."
-            her "{size=-4}(What? *Slurp...?* *Slurp...?* *Gulp...?*){/size}"
+            call her_main("{size=-4}(What? *Slurp...?* *Slurp...?* *Gulp...?*){/size}","sucking","ahegao")
             call sna_main("What are you... looking at?","snape_05")
             m "Ehm... Just admiring...{w} the cupboard."
             m "Please, continue..."
             call sna_main("...............","snape_05")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_mad")
             m "Did you want to discuss something?"
             call sna_main("Yes. That Hermione girl.","snape_06")
-            her "{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}"
+            call her_main("{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}","sucking","ahegao")
             m "Oh... What about her?"
             call sna_main("You promised that you would take care of the little witch.","snape_04")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_intense")
             call sna_main("But she is still being a major pain in my arse!","snape_04")
             call sna_main("Her tactics have changed...")
             call sna_main("But the amount of grief she manages to bring me is the same...","snape_03")
             m "I see... ah..."
             call sna_main("I swear, that girl is driving me crazy!","snape_10")
             g4 "Yeah, she is driving me crazy as well... ah..."
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_mad")
             call sna_main("Will you take care of this then?","snape_04")
             m "Yes. She'll get what she deserves."
             call sna_main("Good. That is all I wanted to hear.","snape_06")
@@ -578,7 +581,7 @@ label hg_hidden_blowjob_snape: #Call label. Returns.
             return
 
         "\"I am busy right now, Severus.\"":
-            call her_main("(Thank you, [genie_name].)","angry","base",ypos="head")
+            call her_main("(Thank you, [genie_name].)","angry","base",ypos="suck")
             sna "Busy? With what?"
             sna "All you do is sit on you arse all day."
             sna "I really need to talk to you about something."
@@ -592,7 +595,7 @@ label hg_hidden_blowjob_snape: #Call label. Returns.
 
 
 label hg_hidden_blowjob_luna: #Call label. Returns.
-    call her_main("([genie_name], what should I do?)","shock","wide",ypos="head")
+    call her_main("([genie_name], what should I do?)","shock","wide",ypos="suck")
     m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
     lun "[lun_genie_name]? Are you there? I need to talk to you."
     call her_main("(It's Luna!)","disgust","wide")
@@ -605,7 +608,7 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
                 $ hg_hidden_bj_seen_list.append("luna")
             $ her_mood += 30
             stop music fadeout 1.0
-            call her_main("[genie_name], no! Why would you let-","angry","angry",emote="01",ypos="head")
+            call her_main("[genie_name], no! Why would you let-","angry","angry",emote="01",ypos="suck")
             m "Quiet, [hermione_name]! Unless you want to be noticed..."
 
             #Luna comes in
@@ -617,14 +620,14 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
             $ g_c_u_pic = "blowjob_ani" # sucking
             call u_play_ani
 
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao")
             g9 "Miss Lovegood! How can I help you?"
             call lun_main("I have a message for you, [lun_genie_name],... from Professor Sprout.","open","base","base","R")
             m "Professor Sprout?"
             m "(Who was that again?)"
             call lun_main("Yes, she's sent me to inform you about the school's latest yield of Venomous Tentacula.","open","base","raised","mid")
             m "(Venomous Tentacles?)"
-            her "{size=-4}(Those things are nasty... *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(Those things are nasty... *Slurp...* *Gulp...*){/size}","sucking","ahegao")
 
             lun "Very feisty little plants, they are. And still quite young."
             lun "They'll wither if you don't take care of them properly..."
@@ -632,7 +635,7 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
             call lun_main("They have just started sucking!","smile_large","happyCl","raised","mid")
             with hpunch
             m "What?"
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_mad")
             call lun_main("Sucking, [lun_genie_name]!","base","seductive","base","mid")
             call lun_main("It's so cute! They suck at each others tentacles with their little mouths!","soft","base","raised","up")
             m "(Plants with mouths?)"
@@ -659,7 +662,7 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
             m "But now, straight down on the knees... right in front of me."
             g4 "Sucking like crazy!"
             call lun_main("(So they do not only have a head but also knees... I didn't even know that!)","soft","base","raised","up")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_mad")
 
             call lun_main("Sprout told us to be careful, [lun_genie_name]. As you probably know, they like to spit... and bite...","soft","base","base","mid")
             m "Truly?"
@@ -675,18 +678,18 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
             call spit_on_her
 
             g4 "Take that, you nasty little slu-... Uhh, plant."
-            her "{size=-4}(What the... *Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(What the... *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_intense")
             call lun_main("That's right, [lun_genie_name]!","grin","happyCl","raised","mid")
             g4 "This one wants more spit!"
             call spit_on_her
-            her "{size=-4}(Stop it! *Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(Stop it! *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_mad")
             call lun_main("Professor Sprout said, sometimes, a bit of tough love is the only thing that can make them behave.","clench","angry","angry","down")
             m "She did?"
             g9 "Oh no, mine is fighting back!"
             call lun_main("Be careful, [lun_genie_name]! Or she'll bite you!","clench","closed","sad","mid")
             g4 "Don't worry, this one's getting a beating!"
             call slap_her
-            her "{size=-4}(Ouch!... *Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(Ouch!... *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao")
             call slap_her
             call slap_her
             g4 "Had enough, you narsty little thing?"
@@ -717,7 +720,7 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
             pause.5
 
             m "Well that wasn't too bad, was it?"
-            her "{size=-4}(............................. *Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(............................. *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao")
             call blkfade
 
             call u_play_ani
@@ -727,7 +730,7 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
             return
 
         "\"I am busy right now, [lun_name].\"":
-            call her_main("(Thank you, [genie_name].)","angry","base",ypos="head")
+            call her_main("(Thank you, [genie_name].)","angry","base",ypos="suck")
             lun "Oh... well, I'll visit you later then, [lun_genie_name]."
             if daytime:
                 lun "Have a good day!"
@@ -742,7 +745,7 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
 #Add scene with Cho here.
 
 label hg_hidden_blowjob_tonks: #Call label. Returns.
-    call her_main("([genie_name], what should I do?)","shock","wide",ypos="head")
+    call her_main("([genie_name], what should I do?)","shock","wide",ypos="suck")
     m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
     ton "[ton_genie_name]? Is it ok if I come in?"
     call her_main("(It's Professor Tonks!)","clench","worriedCl")
@@ -756,7 +759,7 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
                 $ hg_hidden_bj_seen_list.append("tonks")
             $ her_mood += 10
             stop music fadeout 1.0
-            call her_main("[genie_name], no! Please she will know that-","angry","angry",emote="01",ypos="head")
+            call her_main("[genie_name], no! Please she will know that-","angry","angry",emote="01",ypos="suck")
             m "Shhhhsh. Keep your voice down..."
 
             #Tonks comes in
@@ -772,12 +775,12 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
             $ g_c_u_pic = "blowjob_ani" # sucking
             call u_play_ani
 
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao")
             g9 "Tonks! What can I do for you?"
             call ton_main("[ton_genie_name], I was wondering if we could-","open","base","raised","R")
             call ton_main("(...)","base","base","base","mid")
             call ton_main("Am I interrupting something?","horny","base","raised","down")
-            her "She's going to find out!!!"
+            call her_main("She's going to find out!!!","sucking","ahegao")
             m "Nothing drastically..."
 
             menu:
@@ -792,14 +795,14 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
                     call ton_main("Are you masturbating, [ton_genie_name]?","horny","base","raised","mid")
                     call ton_main("Are you stroking your hard, {w}magnificent, {w}cock?","open_wide_tongue","base","base","ahegao")
                     with hpunch
-                    her "{size=-4}(*Blergchhhgh...* *Caugh...* *Caugh...* *Caugh...*){/size}"
+                    call her_main("{size=-4}(*Blergchhhgh...* *Caugh...* *Caugh...* *Caugh...*){/size}","sucking","ahegao_intense")
                     call u_pause_ani
-                    her "{size=-4}What??{/size}"
+                    call her_main("{size=-4}What??{/size}","sucking","ahegao_mad")
                     call ton_main("who was that?","base","base","raised","mid")
                     call ton_main("[ton_genie_name]?!","open","base","angry","mid")
                     m "Uhm-{w} My belly?"
                     call ton_main("Sounded like somebody doesn't know how to throat a dick properly...","open","base","base","R")
-                    her "(Excuse me?!)"
+                    call her_main("(Excuse me?!)","sucking","ahegao")
                     m "Don't be mean, she's doing her best..."
                     call ton_main("So there is a girl behind you!","horny","base","raised","down")
                     call ton_main("Who is it? Tell me!","base","base","base","mid")
@@ -810,10 +813,10 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
 
             if lock_public_favors:
                 call ton_main("That cute little tease who always hangs out at the library, pretending to study?","open","base","raised","mid")
-                her "(Pretending???)"
+                call her_main("(Pretending???)","sucking","ahegao_mad")
             else:
                 call ton_main("That Gryffindor slut? The one who always hangs around flirting with some Slytherins?","open","base","raised","mid")
-                her "(Gryffindor slut !!?)"
+                call her_main("(Gryffindor slut !!?)","sucking","ahegao")
                 with hpunch
                 m "Ouch, I felt that..."
 
@@ -829,19 +832,19 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
             m "Or I fear she will bite me..."
             g4 "Or worse,..."
             m "She'll stop with the sucking..."
-            her "(Damn right I will...)"
+            call her_main("(Damn right I will...)","sucking","ahegao_mad")
             call u_play_ani
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_intense")
 
             call ton_main("Very well...","base","base","raised","R",xpos="right",ypos="base")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_squint")
 
             call ton_main("Is that really, {w}Miss Hermione Granger,{w} back there?","horny","base","base","mid")
             call ton_main("That's so hard to believe!","open","base","raised","L")
             call ton_main("Or perhaps, you are just fucking with me, [ton_genie_name]...","horny","base","angry","mid")
             m "No,... {w}it's her..."
             call ton_main("That's too good to be true!","base","base","base","ahegao")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao")
 
             call ton_main("Miss Granger, If that's really you back there, why don't you say hi to your favourite teacher?","horny","base","raised","down")
             m "(...)"
@@ -849,7 +852,7 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
             with hpunch
             g4 "What?!"
             call u_pause_ani
-            her "(Oh wow, that's a lot of points!)"
+            call her_main("(Oh wow, that's a lot of points!)","sucking","ahegao")
             call u_play_ani
             g4 "You can't give her that many points, [tonks_name]! She's already getting [current_payout] from me!"
             m "Do you even realise how many days I'll have to spend with Snape, of all people, to get even with Slytherin again, after this?"
@@ -859,27 +862,27 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
             call ton_main("You only have to stick your gorgeous head out and say hi to me, and of course...","open","base","base","R")
             call ton_main("I promise I won't tell anybody.","base","base","base","down")
             call ton_main("It will be our little secret.","horny","base","angry","down")
-            her "(...)"
+            call her_main("(...)","sucking","ahegao")
             m "Do what you must, girl..."
-            her "(...............)"
+            call her_main("(...............)","sucking","ahegao_mad")
             call u_pause_ani
 
             call ton_main("Oh my!","horny","base","base","down")
 
             $ hermione_flip = -1 #head will be on the left.
-            call her_main("He- Hello, Miss Tonks.","clench","worriedCl",ypos="head")
+            call her_main("He- Hello, Miss Tonks.","clench","worriedCl",ypos="suck")
 
             call ton_main("Miss Granger, what a plreasant surprise.","base","base","raised","mid")
             call ton_main("Are you having a good time back there?","open","base","base","down")
             call ton_main("You nasty little cock sucker.","horny","base","raised","mid")
-            her "(........................)"
+            call her_main("(........................)","sucking","ahegao")
             call her_main("I suppose so...................","disgust","down")
             call ton_main("What a sight to see...","base","base","base","mid")
             call u_play_ani
 
             call ton_main("I'd love to join you back there, Miss Granger...","base","base","base","down")
             call ton_main("Suck your Headmaster's dick with you!","horny","base","angry","mid")
-            her "{size=-4}(She'd do what?... *Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(She'd do what?... *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_squint")
             g9 "You can both have it!"
             call ton_main("I'm sorry, [ton_genie_name]... I'm already pre-occupied with something...","open","base","worried","R")
             call ton_main("Teaching our second-years how to cast a simple deflection spell...","open","base","raised","down")
@@ -892,7 +895,7 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
             call ton_main("As a headmaster maybe... All you do is molest any girl that finds her way in here, I reckon...","horny","base","raised","down")
             m "It can get quite hard, taking care of all those girls."
             call ton_main("I can certainly see that...","horny","base","angry","mid")
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao")
 
             call ton_main("Anyway...","open","base","raised","R")
             call ton_main("Hermione, for your exceptional and benevolent effort of sucking your headmaster's cock, {w}I hereby reward the house Gryffindor...","open","base","base","down")
@@ -901,7 +904,7 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
             call ton_main("69 points!","horny","base","base","mid")
             $ gryffindor += 69
 
-            her "(69! That's even more than she agreed on!)"
+            call her_main("(69! That's even more than she agreed on!)","sucking","ahegao_raised")
             m "Didn't you say 50 earlier?"
             call ton_main("Yes, but 69 is so much better!","horny","base","raised","mid")
             call ton_main("Don't you think so too, Miss Granger?","base","base","angry","down")
@@ -910,7 +913,7 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
             call her_main("Sorry, [genie_name]...","soft","ahegao")
             call u_play_ani
 
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao")
             call ton_main("I'm going to have to go, [ton_genie_name].","open","base","worried","R")
             call ton_main("Wish I could watch you two a little longer...","base","base","worried","mid")
             call ton_main("But I have to head back to my office.","open","base","worried","L")
@@ -944,7 +947,7 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
             return
 
         "\"I am busy right now, [tonks_name].\"":
-            call her_main("(Thank you, [genie_name].)","soft","base",ypos="head")
+            call her_main("(Thank you, [genie_name].)","soft","base",ypos="suck")
             ton "Busy?"
             ton "Could it be..."
             ton "Is Snape with you?"
@@ -954,22 +957,22 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
                 ton "Don't stay up drinking again..."
                 ton "We wouldn't want him making a fool of himself. Not in front of the students."
                 ton "He made such a mess last time..."
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_squint")
             m "He isn't here, actually. But I will let him know..."
             ton "So, are you with a student then, hmm?"
-            her "{size=-4}(.......... *Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(.......... *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao")
             ton "Who is she? Is it the blonde? Or..."
             ton "You aren't shagging my little cousin, are you?"
-            her "{size=-4}(Her cusin? *Slurp...* *Slurp...* *Gulp...*){/size}"
-            her "{size=-4}(Is she talking about Susan? *Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(Her cusin? *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_squint")
+            call her_main("{size=-4}(Is she talking about Susan? *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao")
             m "That's non of your concern, Tonks!"
             m "You may leave now..."
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_raised")
             ton "I can help you jack off, if that's what you're-"
             g4 "I said, leave!"
             ton "Okay, [ton_genie_name]."
             ton "*Giggle...*"
-            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao")
             m "I think she's gone..."
 
             return
@@ -977,7 +980,7 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
 
 label hg_hidden_blowjob_cumming: #Call label. Returns.
     call blkfade
-    her "*Slurp!* *Slurp!* *Gulp!*"
+    call her_main("*Slurp!* *Slurp!* *Gulp!*","sucking","ahegao_squint")
     ">Hermione keeps sucking on your cock with a rather fierce determination."
     ">Her technique is lacking but she makes up for it with the effort she puts it."
     hide screen bld1
@@ -986,16 +989,16 @@ label hg_hidden_blowjob_cumming: #Call label. Returns.
 
     call bld
     m "Yes... I love your eager, little mouth girl..."
-    her "*Gobble!* *Gobble!* *Gobble!*"
+    call her_main("*Gobble!* *Gobble!* *Gobble!*","sucking","ahegao")
     call u_pause_ani
-    call her_main("[genie_name]?","soft","ahegao",ypos="head")
+    call her_main("[genie_name]?","soft","ahegao",ypos="suck")
     m "Hm?"
     call her_main("Are you going to cum on my face today?","soft","ahegao")
     call her_main("Or do you plan to cum in my mouth?")
 
     menu:
         "\"I Plan to splatter your face with cum!\"":
-            call her_main("I see...","soft","ahegao",ypos="head")
+            call her_main("I see...","soft","ahegao",ypos="suck")
             m "Why do you ask?"
             call her_main("Oh... I just read in a book that semen contains a lot of antioxidants...","grin","dead")
             call her_main("It's good for the skin...")
@@ -1003,7 +1006,7 @@ label hg_hidden_blowjob_cumming: #Call label. Returns.
             m "Back to work now."
 
         "\"I Plan to fill your mouth with cum!\"":
-            call her_main("I see...","grin","dead",ypos="head")
+            call her_main("I see...","grin","dead",ypos="suck")
             m "Why do you ask?"
             call her_main("Well, I am trying to watch my calorie-intake...","soft","ahegao")
             call her_main("I just wonder how much calories your load contains, [genie_name].")
@@ -1013,7 +1016,7 @@ label hg_hidden_blowjob_cumming: #Call label. Returns.
             m "Dick back in the mouth."
 
         "\"I don't plan so far ahead.\"":
-            call her_main("I see...","soft","ahegao",ypos="head")
+            call her_main("I see...","soft","ahegao",ypos="suck")
             m "Don't you like surprises?"
             call her_main("Not really...","soft","ahegao")
             call her_main("I rather enjoy planning ahead actually...")
@@ -1021,7 +1024,7 @@ label hg_hidden_blowjob_cumming: #Call label. Returns.
             m "There is only one way to find out for sure."
 
         "\"What would you like?\"":
-            call her_main("If it is all the same to you, [genie_name]...","soft","ahegao",ypos="head")
+            call her_main("If it is all the same to you, [genie_name]...","soft","ahegao",ypos="suck")
             if generating_points == 1:
                 call her_main("I would like you to cum on my face, [genie_name].","grin","dead")
                 call her_main("I read that it's good for the skin.")
@@ -1033,16 +1036,16 @@ label hg_hidden_blowjob_cumming: #Call label. Returns.
             m "Back to sucking now."
 
     call u_play_ani
-    her "*Slurp!* *Slurp!* *Slurp!*"
+    call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao")
     m "Hm..."
     m "You are getting better at this [hermione_name]."
-    her "*Slurp!* *Slurp!* *Gulp!*"
+    call her_main("*Slurp!* *Slurp!* *Gulp!*","sucking","ahegao_raised")
     m "Ok, say something nasty now..."
-    her "*Slurp--?"
+    call her_main("*Slurp--?","sucking","ahegao")
     call u_pause_ani
 
     if her_whoring < 21:
-        call her_main("uhm...","angry","down_raised",ypos="head")
+        call her_main("uhm...","angry","down_raised",ypos="suck")
         call her_main("I eat cockroaches?","angry","base")
         m "What the fuck?"
         call her_main("T-they are pretty nasty, [genie_name]...","angry","base")
@@ -1056,7 +1059,7 @@ label hg_hidden_blowjob_cumming: #Call label. Returns.
         call her_main("Of course, [genie_name].","upset","closed")
 
     else:
-        call her_main("I'm a slut, [genie_name].","base","suspicious",ypos="head")
+        call her_main("I'm a slut, [genie_name].","base","suspicious",ypos="suck")
         call her_main("A slut for your cum.","base","glance")
         m "That's it, [hermione_name]."
         call her_main("It's all I can think about [genie_name].","base","down")
@@ -1067,18 +1070,18 @@ label hg_hidden_blowjob_cumming: #Call label. Returns.
         call her_main("...","base","ahegao_raised")
 
     call u_play_ani
-    her "*Slurp!* *Gulp!* *Slurp!*"
+    call her_main("*Slurp!* *Gulp!* *Slurp!*","sucking","ahegao")
     m "Yes, like this... Good..."
-    her "*Slurp!* *Slurp!* *Slurp!*"
+    call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao")
     m "You know what? I think we are almost there."
-    her "*Slurp!* *Slurp!* *Slurp!*"
+    call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao_up")
     m "Yes, definitely."
-    her "*Slurp!* *Gobble!* *Gobble!*"
+    call her_main("*Slurp!* *Gobble!* *Gobble!*","sucking","ahegao_raised")
     m "Alright, [hermione_name], this is the final stretch."
     g4 "Show me what you've got."
-    her "!!! *Gobble-goble-slurp-goble!* !!!"
+    call her_main("!!! *Gobble-goble-slurp-goble!* !!!","sucking","ahegao")
     g4 "Yes, like that!"
-    her "{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}"
+    call her_main("{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}","sucking","ahegao_up")
     g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
     g4 "Ghr!!!"
 
@@ -1086,7 +1089,7 @@ label hg_hidden_blowjob_cumming: #Call label. Returns.
         g4 "!!!"
         "-Cum in her mouth-":
             g4 "Here it comes, [hermione_name]! get ready to swallow fast!"
-            her "!!!"
+            call her_main("!!!","sucking","ahegao_raised")
             call ctc
             call blkfade
 
@@ -1095,10 +1098,10 @@ label hg_hidden_blowjob_cumming: #Call label. Returns.
             call cum_block
             g4 "{size=+7}ARGH!{/size}"
             g4 "Eat my cum, slut!"
-            her "*Gulp!-Gulp!-Gulp!*"
+            call her_main("*Gulp!-Gulp!-Gulp!*","cumming","ahegao")
             with hpunch
             g4 "Yes! Down your fucking throat!"
-            her "*Gulp-gulp-gulp-gulp-gulp!*"
+            call her_main("*Gulp-gulp-gulp-gulp-gulp!*","cumming","ahegao")
             hide screen bld1
             call hide_blkfade
             stop music fadeout 1.0
@@ -1143,7 +1146,7 @@ label hg_hidden_blowjob_cumming: #Call label. Returns.
 
             call u_pause_ani
             g4 "Ready for your facial, [hermione_name]?"
-            call her_main("Yes [genie_name]!","grin","dead",ypos="head")
+            call her_main("Yes [genie_name]!","grin","dead",ypos="suck")
             g4 "Here it comes then!"
             hide screen bld1
             call set_u_ani("cum_on_face_ani")
@@ -1153,7 +1156,7 @@ label hg_hidden_blowjob_cumming: #Call label. Returns.
 
             call bld
             g4 "{size=+7}Whore!{/size}"
-            call her_main("!!?","shock","wide",ypos="head")
+            call her_main("!!?","cumshot","wide",ypos="suck")
             hide screen bld1
             with d1
             call ctc
@@ -1161,7 +1164,7 @@ label hg_hidden_blowjob_cumming: #Call label. Returns.
             call bld
             $ uni_sperm = True
             $ u_sperm = "characters/hermione/face/auto_07.png"
-            call her_main("[genie_name]...","shock","wide")
+            call her_main("[genie_name]...","cumshot","wide")
             g4 "All over your fucking face!"
             call her_main("Aaah!","grin","dead")
             call set_u_ani("cum_on_face_blink_ani")
@@ -1220,15 +1223,15 @@ label hg_blowjob_4:
     with fade
     call ctc
 
-    call her_main("*Slurp!* *Slurp!* *Gulp!*",ypos="head")
+    call her_main("*Slurp!* *Slurp!* *Gulp!*",ypos="suck")
     m "Yes, good girl..."
-    her "*Slurp!* *Gobble!* *Slurp!*"
+    call her_main("*Slurp!* *Gobble!* *Slurp!*","sucking","ahegao_raised")
     m "lick the shaft..."
-    her "*lick!* *Slurp!* *lick!*"
+    call her_main("*lick!* *Slurp!* *lick!*","sucking","ahegao_up")
     call nar(">Hermione keeps sucking on your cock like her life depends on it.","start")
     call nar(">Her technique is almost perfect and she is incredibly enthusiastic.","end")
     m "Yes... I love your eager, little mouth slut..."
-    her "*Gobble!* *Gobble!* *Gobble!*"
+    call her_main("*Gobble!* *Gobble!* *Gobble!*","sucking","ahegao_up")
     call u_pause_ani
     call her_main("[genie_name]?","base","down")
     m "Hm?"
@@ -1236,71 +1239,71 @@ label hg_blowjob_4:
 
     menu:
         "\"Pretend I am your father.\"":
-            call her_main("My father?","angry","wink",ypos="head")
+            call her_main("My father?","angry","wink",ypos="suck")
             m "Anything wrong with that?"
             call her_main("I suppose not...","base","down")
             call her_main("I mean it's just pretending...","grin","dead")
             m "Great. Dick back in mouth then."
             call u_play_ani
-            her "*Slurp!* *Slurp!* *Slurp!*"
+            call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao")
             m "That's it, princess. Suck daddy's dick."
-            her "*Slurp!* *Gulp!* *Slurp!*"
+            call her_main("*Slurp!* *Gulp!* *Slurp!*","sucking","ahegao_up")
             m "Tell me how much you want it."
-            her "*Slurp!* *Gobble!* *Slurp!*"
+            call her_main("*Slurp!* *Gobble!* *Slurp!*","sucking","ahegao_raised")
             call u_pause_ani
             call her_main("So much daddy...","soft","ahegao")
             call u_play_ani
-            her "*Slurp!* *Gobble!* *Slurp!*"
+            call her_main("*Slurp!* *Gobble!* *Slurp!*","sucking","ahegao")
             call u_pause_ani
             call her_main("It's all I think about when we're together...","base","ahegao_raised")
             call u_play_ani
-            her "*Gobble!* *Gulp!* *Gobble!*"
+            call her_main("*Gobble!* *Gulp!* *Gobble!*","sucking","ahegao_raised")
             call u_pause_ani
             call her_main("When we're sitting together on the couch watching T.V...","base","ahegao_raised")
             call her_main("I just imagine that I am sucking your cock instead...","base","ahegao_raised")
             call u_play_ani
-            her "*lick!* *Slurp!* *Slurp!*"
+            call her_main("*lick!* *Slurp!* *Slurp!*","sucking","ahegao_up")
             call u_pause_ani
             call her_main("I even wish that mum left you sometimes...","annoyed","down")
             call u_play_ani
-            her "*Gobble!* *Slurp!* *lick!*"
+            call her_main("*Gobble!* *Slurp!* *lick!*","sucking","dead")
             m "Why's that?"
             call u_pause_ani
             call her_main("So that I'm the only one to get your dick...","soft","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao")
             call u_pause_ani
             call her_main("You'll come home every day...","soft","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao_raised")
             call u_pause_ani
             call her_main("Throw me onto my bed...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao")
             call u_pause_ani
             call her_main("and use me...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao_raised")
             call u_pause_ani
             call her_main("however you want...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao")
             call u_pause_ani
             call her_main("for as long as you want...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao_raised")
             call u_pause_ani
             call her_main("you won't even ask...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao")
             call u_pause_ani
             call her_main("you'll just take me...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","dead")
             call u_pause_ani
             call her_main("even though I say no...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao_raised")
             m "That's it princess, Almost there..."
             call u_pause_ani
             call her_main("Where do you want to cum today daddy?","soft","ahegao")
@@ -1310,18 +1313,18 @@ label hg_blowjob_4:
             m "Let's find out shall we?"
             call her_main("Yes daddy...","soft","ahegao")
             call u_play_ani
-            her "*Slurp!* *Gulp!* *Slurp!*"
+            call her_main("*Slurp!* *Gulp!* *Slurp!*","sucking","ahegao")
             m "Yes, like that... Good girl..."
-            her "*Slurp!* *Slurp!* *Slurp!*"
+            call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao")
             m "Do it for daddy."
-            her "*Slurp!* *Slurp!* *Slurp!*"
+            call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao")
             m "Come on princess."
-            her "*Slurp!* *Gobble!* *Gobble!*"
+            call her_main("*Slurp!* *Gobble!* *Gobble!*","sucking","ahegao_raised")
             m "Alright, [hermione_name], almost there."
             g4 "Make daddy proud!"
-            her "!!! *Gobble-goble-slurp-goble!* !!!"
+            call her_main("!!! *Gobble-goble-slurp-goble!* !!!","sucking","ahegao")
             g4 "Yes, like that!"
-            her "{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}"
+            call her_main("{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}","sucking","dead")
             g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
             g4 "Ghr!!!"
 
@@ -1330,7 +1333,7 @@ label hg_blowjob_4:
                 "-Cum in her mouth-":
                     call hide_blkfade
                     g4 "Here it comes, [hermione_name]! Here comes daddy!"
-                    her "!!!"
+                    call her_main("!!!","sucking","ahegao_raised")
                     call ctc
                     call blkfade
 
@@ -1340,10 +1343,10 @@ label hg_blowjob_4:
                     g4 "{size=+7}ARGH!{/size}"
                     g4 "Eat my cum, slut!"
                     #Cumming.
-                    her "*Gulp!-Gulp!-Gulp!*"
+                    call her_main("*Gulp!-Gulp!-Gulp!*","sucking","ahegao")
                     with hpunch
                     g4 "Yes! Down your fucking slut throat!"
-                    her "*Gulp-gulp-gulp-gulp-gulp!*"
+                    call her_main("*Gulp-gulp-gulp-gulp-gulp!*","sucking","ahegao_raised")
                     hide screen bld1
                     call hide_blkfade
 
@@ -1355,7 +1358,7 @@ label hg_blowjob_4:
                     m "Well, I think that's it."
                     m "You can let go now..."
                     call u_pause_ani
-                    call her_main("...........................","full_cum","dead",ypos="head")
+                    call her_main("...........................","full_cum","dead",ypos="suck")
                     call her_main("................")
                     call her_main("........")
                     $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
@@ -1380,11 +1383,11 @@ label hg_blowjob_4:
                     call hide_blkfade
                     call u_pause_ani
                     g4 "Ready for your cum-load, princess slut?"
-                    call her_main("Yes daddy!","grin","dead",ypos="head")
+                    call her_main("Yes daddy!","grin","dead",ypos="suck")
                     g4 "Here it comes then!"
                     call cum_block
                     g4 "{size=+7}Slut!{/size}"
-                    call her_main("!!?","shock","dead")
+                    call her_main("!!?","cumshot","dead")
                     call set_u_ani("cum_on_face_ani")
                     call u_play_ani
                     hide screen bld1
@@ -1394,7 +1397,7 @@ label hg_blowjob_4:
                     call bld
                     $ uni_sperm = True
                     $ u_sperm = "characters/hermione/face/auto_07.png"
-                    call her_main("Daddy...","shock","wide")
+                    call her_main("Daddy...","cumshot","wide")
                     g4 "That's it, princess!"
                     call her_main("Aaah!","grin","dead")
                     call set_u_ani("cum_on_face_blink_ani")
@@ -1430,89 +1433,89 @@ label hg_blowjob_4:
                     return
 
         "\"Worship my cock.\"":
-            call her_main("Worship it?","angry","wink",ypos="head")
+            call her_main("Worship it?","angry","wink",ypos="suck")
             m "Worship. My. Cock."
             call her_main("Well...","base","down")
             call her_main("ok...","soft","ahegao")
             m "Great. You can start by putting it back in your mouth."
             call u_play_ani
-            her "*Slurp!* *Slurp!* *Slurp!*"
+            call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao")
             m "Thats it.."
-            her "*Slurp!* *Gulp!* *Slurp!*"
+            call her_main("*Slurp!* *Gulp!* *Slurp!*","sucking","dead")
             m "Tell me how much you love my cock."
-            her "*Slurp!* *Gobble!* *Slurp!*"
+            call her_main("*Slurp!* *Gobble!* *Slurp!*","sucking","ahegao_raised")
             call u_pause_ani
             call her_main("So much [genie_name]...","soft","ahegao")
             call u_play_ani
-            her "*Slurp!* *Gobble!* *Slurp!*"
+            call her_main("*Slurp!* *Gobble!* *Slurp!*","sucking","ahegao_mad")
             call u_pause_ani
             call her_main("It's all I think about when I'm in class...","base","ahegao_raised")
             call u_play_ani
-            her "*Gobble!* *Gulp!* *Gobble!*"
+            call her_main("*Gobble!* *Gulp!* *Gobble!*","sucking","ahegao")
 
             if lock_public_favors == True:
                 call u_pause_ani
                 call her_main("Sucking your perfect dick.","base","ahegao_raised")
                 call her_main("No one elses...","base","ahegao_raised")
                 call u_play_ani
-                her "*lick!* *Slurp!* *Slurp!*"
+                call her_main("*lick!* *Slurp!* *Slurp!*","sucking","ahegao_raised")
                 call u_pause_ani
                 call her_main("Just your {p}perfect, {p}beautiful {p}{size=-4}cock{/size}","grin","dead")
                 call u_play_ani
-                her "*Gobble!* *Slurp!* *lick!*"
+                call her_main("*Gobble!* *Slurp!* *lick!*","sucking","ahegao")
 
             else:
                 call u_pause_ani
                 call her_main("Even when you make me suck another boys dick...","base","ahegao_raised")
                 call her_main("I still imagine that it's yours...","base","ahegao_raised")
                 call u_play_ani
-                her "*lick!* *Slurp!* *Slurp!*"
+                call her_main("*lick!* *Slurp!* *Slurp!*","sucking","dead")
                 call u_pause_ani
                 call her_main("Imagine that it's your cum sliding down my throat...","soft","ahegao")
                 call u_play_ani
-                her "*Gobble!* *Slurp!* *lick!*"
+                call her_main("*Gobble!* *Slurp!* *lick!*","sucking","dead")
                 call u_pause_ani
                 call her_main("Imagine that it's your hot load shot across my face...","grin","dead")
                 call u_play_ani
-                her "*Gobble!* *Slurp!* *lick!*"
+                call her_main("*Gobble!* *Slurp!* *lick!*","sucking","ahegao_raised")
 
             m "Is that so?"
             call u_pause_ani
             call her_main("Yes [genie_name]...","soft","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao_raised")
             call u_pause_ani
             call her_main("Sometimes...","soft","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","dead")
             call u_pause_ani
             call her_main("After you make me suck your perfect cock...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao_raised")
             call u_pause_ani
             call her_main("I won't brush my teeth...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao_mad")
             call u_pause_ani
             call her_main("just so I can go to sleep...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao")
             call u_pause_ani
             call her_main("with that perfect taste in my mouth...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","dead")
             call u_pause_ani
             call her_main("and when I do brush my teeth...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao_raised")
             call u_pause_ani
             call her_main("Your beautiful cock is all I can think about...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","down")
             call u_pause_ani
             call her_main("I even started to moan while brushing them...","grin","dead")
             call u_play_ani
-            her "*Gobble!* *lick!* *Gobble!*"
+            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","ahegao")
             m "That's it cock slut, Almost there..."
             call u_pause_ani
             call her_main("Where do you want to cum today [genie_name]?","soft","ahegao")
@@ -1523,22 +1526,22 @@ label hg_blowjob_4:
             call her_main("Thank you [genie_name]!","smile","happyCl",cheeks="blush",emote="06")
             call u_play_ani
             call nar(">Hermione devours your cock with renewed vigour.")
-            her "*Slurp!* *Gulp!* *Slurp!*"
+            call her_main("*Slurp!* *Gulp!* *Slurp!*","sucking","ahegao")
             m "Yes, like that... that's a good little slut..."
-            her "*Slurp!* *Slurp!* *Slurp!*"
+            call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao")
             m "Deeper now."
-            her "*Slurp!* *Slurp!* *Slurp!*"
+            call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao_mad")
             m "Come on cock-slut."
-            her "*Slurp!* *Gobble!* *Gobble!*"
+            call her_main("*Slurp!* *Gobble!* *Gobble!*","sucking","down")
             m "Alright, [hermione_name], almost there."
             g4 "Deeper now!"
-            her "!!! *Gobble-goble-slurp-goble!* !!!"
+            call her_main("!!! *Gobble-goble-slurp-goble!* !!!","sucking","ahegao")
             g4 "Yes, like that!"
-            her "{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}"
+            call her_main("{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}","sucking","ahegao")
             g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
             g4 "Ghr!!!"
             g4 "Here it comes, [hermione_name]! Here's you reward!"
-            her "!!!"
+            call her_main("!!!","sucking","down")
 
             call ctc
             call blkfade
@@ -1551,10 +1554,10 @@ label hg_blowjob_4:
             call cum_block
             g4 "{size=+7}ARGH!{/size}"
             g4 "Eat my cum, slut!"
-            her "*Gulp!-Gulp!-Gulp!*"
+            call her_main("*Gulp!-Gulp!-Gulp!*","cumming","ahegao")
             with hpunch
             g4 "Yes! Down your fucking cumslut mouth!"
-            her "*Gulp-gulp-gulp-gulp-gulp!*"
+            call her_main("*Gulp-gulp-gulp-gulp-gulp!*","cumming","ahegao")
 
             stop music fadeout 1.0
             call ctc

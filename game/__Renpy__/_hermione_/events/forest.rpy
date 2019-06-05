@@ -970,7 +970,7 @@ label hermione_map_sex:
     her "{image=textheart}{image=textheart}{size=+5}Mmmm...{/size}{image=textheart}{image=textheart}"
     myr "While the school watches on..."
     her "{image=textheart}{image=textheart}{size=+10}ah...{/size}{image=textheart}{image=textheart}"
-    myr "Along with mummy and daddy..."
+    myr "Along with {i}mummy{/i} and {b}daddy{/b}..."
     her "{image=textheart}{image=textheart}{size=+15}!!!{/size}{image=textheart}{image=textheart}"
     ">It all proves too much for Hermione, causing her hips to buck wildly, desperate for any additional stimulation."
     g4 "That's it whore! You've done it now!"

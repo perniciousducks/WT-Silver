@@ -60,7 +60,7 @@ label nt_pr_kiss_start:
 
 ### Tier 1 ###
 
-label tonks_teacher_event_3_1: #Level 1 Event 1
+label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
     #Gentle kissing
     m "Fun day?"
     ton "It was! I got to show the kids a Boggart for the first time, that was pretty entertaining!"
@@ -69,7 +69,7 @@ label tonks_teacher_event_3_1: #Level 1 Event 1
     ton "Mmmm, I know which one I preferred..."
     m "Care to fill me in?"
     ton "Alright..."
-    ton "So, I had class with my favourite little \'slythinerin\' today."
+    ton "So, I had class with my favourite little \"slythinerin\" today."
     ton "I figured that I didn't really have much to do after classes so I may as well hold him back."
     ton "He was expecting me to buy a favour from him straight away, however, I was in the mood for a little conversation today..."
     ton "We talked about his performance in class... him being so distracted..."
@@ -98,18 +98,17 @@ label tonks_teacher_event_3_1: #Level 1 Event 1
     m "That'll be all then."
     ton "See ya, [ton_genie_name]."
 
-
-    return
-
     jump end_tonks_event
-label tonks_teacher_event_3_2: #Level 1 Event 2
+
+
+label nt_pr_kiss_T1_intro_E2: # Tier 1 - Event 2 - Ravenclaw boy
     m "You're a bit late... Get caught up having fun with your students?"
     ton "Mmmm, and then some..."
     m "I like the sound of that!"
     m "Now, care to elaborate?"
     ton "Alright then, you old perv..."
     ton "Today was that shy, horny \"ravenclaw\" boy..."
-    m "The one who stayed behind by himself?" # Note: If the favors don't reference each other in such a direct way, we could make bother "tough" and "kiss" available at the same time, playable independently to each other.
+    m "The one who stayed behind by himself?" # Note: If the favors don't reference each other in such a direct way, we could make both "touch" and "kiss" available at the same time, playable independently to each other.
     ton "Yep..."
     ton "Ugh... he made the classic school boy mistake today..."
     m "Which is?"
@@ -139,20 +138,20 @@ label tonks_teacher_event_3_2: #Level 1 Event 2
     m "I'm very proud. Good work, [ton_name]."
     ton "..."
     ton "Thank you, [ton_genie_name]."
-    return
 
     jump end_tonks_event
 
-label tonks_teacher_event_3_3: #Level 1 Event 3
+
+label nt_pr_kiss_T1_intro_E3: # Tier 1 - Event 3 - Slytherin girls
     #Tonks pays two best friends to make-out
     m "How was your day?"
     ton "Better than most... You're going to love todays story!"
     m "Don't let me stop you then."
-    ton "As always, there were a few \'slytherins\' messing around in class."
+    ton "As always, there were a few \"slytherins\" messing around in class."
     ton "There was an especially annoying pair of girls that wouldn't shut up."
     ton "So, I pretty much had to give them detention, just to quiet down the class a little."
     ton "Normally, I only try and buy favours from one person at a time..."
-    ton "But I figured, if what they say about \'slytherin\' sluts is true this should be worth a shot."
+    ton "But I figured, if what they say about \"slytherin\" sluts is true this should be worth a shot."
     m "Did you take turns kissing the girls?"
     ton "Better."
     ton "I gave them the option of staying behind for detention for a full hour..."
@@ -164,7 +163,7 @@ label tonks_teacher_event_3_3: #Level 1 Event 3
     ton "Ugh... It was quite possibly the hottest thing I've ever witnessed in my life."
     m "Mmmm, more..."
     ton "Well, the two of them are best friends, so naturally they were a bit hesitant to start..."
-    ton "But I have a feeling that this wasn't their first time kissing a girl..."
+    ton "But I have a feeling that this wasn't their first time kissing girls..."
     ton "Maybe not even each other..."
     m "Ugh... that's it..."
     ton "I couldn't help myself... I had to play around while they did it..."
@@ -173,14 +172,17 @@ label tonks_teacher_event_3_3: #Level 1 Event 3
     ton "Not that it stopped them making out..."
     ton "They'd just take it in waves..."
     ton "Making out... calling me a pervert..."
-    ton "Closing they're mouths together only to break apart to call me a slut..."
-    ton "Ugh... it was so {b}fucking{/b} {b}hot{/b}..."
-    ton "Eventually they were calling me a leso while saliva dripped down their faces..."
+    ton "Closing their mouths together only to break apart to call me a slut..."
+    ton "Ugh... it was so {b}bloody{/b} {b}hot{/b}..."
+    ton "Eventually they continued to call me a lesbo while saliva kept dripping down their faces..."
     ton "Fuck, I came so hard while they just sat there goading me on..."
     ton "Ugh... This really is the best job ever..."
     m "You're telling me... That'll be all for now then Tonks."
     ton "Yes, sir..."
-    return
+
+    jump end_tonks_event
+
+label nt_pr_kiss_T1_E3: # Slytherin girls (From T1_intro_E3) repeat
     m "[tonks_name]."
     ton "[ton_genie_name]. Want me to jump straight into the story?"
     m "By all means."
@@ -192,8 +194,8 @@ label tonks_teacher_event_3_3: #Level 1 Event 3
             m "Mmmm... undivided."
 
 
-
     jump end_tonks_event
+
 
 label tonks_teacher_event_3_4: #Level 1 Event 4
     #Tender make-out sesh with slytherin lesbian
@@ -209,7 +211,7 @@ label tonks_teacher_event_3_4: #Level 1 Event 4
     m "Hey! {w}I'm not that fat..."
     ton "Well, Harvey, Do you want to hear the story or not?"
     m "I do..."
-    ton "Good. Today's star is our favourite little repressed \'slytherin\'..."
+    ton "Good. Today's star is our favourite little repressed \"slytherin\"..."
     ton "Now, she's started coming around to me as of late..."
     ton "So, I figured now might be a good time to take it to the next level..."
     ton "Getting her to stay after class is easy enough now, I can just brush her hand as I walk around the class and throw her a subtle wink."
@@ -235,7 +237,7 @@ label tonks_teacher_event_3_4: #Level 1 Event 4
     ton "Oh, I do, believe me."
     m "Very good. That'll be all for now then tonks."
     ton "Thank you, sir."
-    
+
 
 
     jump end_tonks_event
@@ -309,10 +311,10 @@ label tonks_teacher_event_3_6: #Level 2 Event 2
 
 label tonks_teacher_event_3_7: #Level 2 Event 3
     #Tonks has two best friends make out while she plays with herself
-    
+
     return
 
 label tonks_teacher_event_3_8: #Level 2 Event 4
     #Another make out sesh with slytherin involving tonks fingering the student
-    
+
     jump end_tonks_event

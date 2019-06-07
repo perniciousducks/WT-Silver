@@ -136,18 +136,28 @@ label summon_hermione:
 
 
 label update_her_tier:
-    if her_tier == 1 and her_whoring >= 3 and hg_T1_trigger == True:
+    if her_tier == 1 and her_whoring >= 6 and hg_T1_trigger == True:
         # Trigger: None
         $ her_tier = 2
+        call book_notification(tier=1)
     elif her_tier == 2 and her_whoring >= 9 and hg_T2_jerk_off_trigger == True:
         # Trigger: When you get caught jerking off.
-        $ her_tier = 3
+        if imagination >= 2:
+            $ her_tier = 3
+        else:
+            call book_notification(tier=2)
     elif her_tier == 3 and her_whoring >= 12 and hg_T3_strip_trigger == True:
         # Trigger: After she strips for you.
-        $ her_tier = 4
+        if imagination >= 3:
+            $ her_tier = 4
+        else:
+            call book_notification(tier=3)
     elif her_tier == 4 and her_whoring >= 15 and hg_T4_handjob_trigger == True:
         # Trigger: None
-        $ her_tier = 5
+        if imagination >= 4:
+            $ her_tier = 5
+        else:
+            call book_notification(tier=4)
     elif her_tier == 5 and her_whoring >= 21 and hg_T5_blowjob_trigger == True:
         # Trigger: First BJ
         $ her_tier = 6
@@ -157,8 +167,48 @@ label update_her_tier:
 
     return
 
+label book_notification(tier=None):
+
+    if tier == 1 and "hg_note_1" not in book_notification_list:
+        $ book_notification_list.append("hg_note_1")
+        call nar(">Hermione has advanced to the next \"Favour tier\".","start")
+        call nar(">You can move up \"Favour tiers\" by increasing her \"whoring level\", triggering \"favour milestones\", and by reading \"Fictional Books\".","end")
+    if tier == 2 and "hg_note_2" not in book_notification_list:
+        $ book_notification_list.append("hg_note_2")
+        call bld
+        m "I wonder if she's ready for the next step."
+        m "But what should I do with her..."
+        m "(...)"
+        m "Maybe I there's a book I could read to give me some ideas on what to do with the girl..."
+        call nar(">You might want to read the next \"Fictional Book\" to increase your imagination and advance to the next tier.")
+    elif tier == 3 and "hg_note_3" not in book_notification_list:
+        $ book_notification_list.append("hg_note_3")
+        call bld
+        m "I think she's ready for some more advanced favours."
+        m "If only I had some good ideas..."
+        call nar(">You might want to read the next \"Fantasy Book\" to increase your imagination and advance to the next tier.")
+    elif tier == 4 and "hg_note_4" not in book_notification_list:
+        $ book_notification_list.append("hg_note_4")
+        call bld
+        m "(...)"
+        m "Does she know what a handjob is? Or a titjob?"
+        m "Can't imagine she'd let me do it..."
+        call nar(">You might want to read the next \"Fantasy Book\" to increase your imagination and advance to the next tier.")
+    elif tier == 5 and "hg_note_5" not in book_notification_list:
+        $ book_notification_list.append("hg_note_5")
+        call bld
+        m "I wonder if I can get her to suck me off today..."
+        g4 "I'm dying to feel that mouth around my cock!"
+        m "How do you even approach a girl for a request such as that..."
+        g9 "*Eh* I bet my irresistible charm will be anough to get her down on her knees!"
+        call nar(">You might want to read the next \"Fantasy Book\" to increase your imagination and advance to the next tier.")
+
+    return
+
+
 label hermione_favor_menu:
     call update_her_favors
+    call update_her_requests
 
     if slytherin >= gryffindor or ravenclaw >= gryffindor or hufflepuff >= gryffindor:
         show screen hermione_main
@@ -166,7 +216,6 @@ label hermione_favor_menu:
         label silver_requests_root:
         menu:
             "-Personal favours-":
-                label not_now_pf:
                 python:
                     menu_choices = []
                     for i in hg_favor_list:
@@ -178,17 +227,14 @@ label hermione_favor_menu:
                             menu_choices.append((i.getMenuText(),i.start_label))
 
                     for i in hg_pf_list:
-                        if i.tier > imagination:
-                            menu_choices.append(("{color=#858585}-A vague idea-{/color}","vague"))
-                        else:
-                            menu_choices.append((i.getMenuText(),i.start_label))
+                        menu_choices.append((i.getMenuText(),i.start_label))
                     menu_choices.append(("-Never mind-", "nvm"))
                     result = custom_menu(menu_choices)
                 if result == "nvm":
                     jump silver_requests_root
-                elif result == "vague":
-                    call vague_idea
-                    jump not_now_pf
+                if result == "vague":
+                    call favor_not_ready
+                    jump silver_requests_root
                 elif result == "na":
                     call not_available
                     jump silver_requests_root
@@ -206,21 +252,14 @@ label hermione_favor_menu:
                     her "But only as long as we keep them private..."
                     jump silver_requests_root
                 else:
-                    label not_now_pr:
                     python:
                         menu_choices = []
-                        for i in hg_pr_list:
-                            if i.tier > bdsm_imagination:
-                                menu_choices.append(("{color=#858585}-A vague idea-{/color}","vague"))
-                            else:
-                                menu_choices.append((i.getMenuText(),i.start_label))
+                        for i in hg_requests_list:
+                            menu_choices.append((i.getMenuText(),i.start_label))
                         menu_choices.append(("-Never mind-", "nvm"))
                         result = custom_menu(menu_choices)
                     if result == "nvm":
                         jump silver_requests_root
-                    elif result == "vague":
-                        call vague_idea
-                        jump not_now_pr
                     else:
                         $ renpy.jump(result)
 
@@ -248,6 +287,7 @@ label hermione_favor_menu:
 
             "-Never mind-":
                 jump hermione_requests
+
     else:
         show screen hermione_main
         with d3
@@ -304,6 +344,7 @@ label hermione_favor_menu:
                         pass
         jump hermione_requests
 
+
 label update_her_favors:
     python:
         for i in hg_favor_list:
@@ -311,6 +352,16 @@ label update_her_favors:
                 i.tier = her_tier
 
     return
+
+
+label update_her_requests:
+    python:
+        for i in hg_requests_list:
+            if i.tier != her_tier and i.max_tiers >= her_tier:
+                i.tier = her_tier
+
+    return
+
 
 label hermione_talk:
     menu:

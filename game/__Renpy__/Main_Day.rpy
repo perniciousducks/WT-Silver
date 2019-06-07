@@ -329,7 +329,7 @@ label day_start:
         jump collar_scene
 
     if hg_pr_sex_skip:#Hermione does not show up. This sends to label where she shows up next morning.
-        call hg_pr_sex_Alt
+        $ hg_pr_sex.start() # hg_pr_sex_T1_intro_E2
 
     if her_whoring == 11 and not touched_by_boy and not ignore_warning:
         call nar("!!! Attention !!!","start")

@@ -64,6 +64,10 @@ label hg_pf_strip:
         if her_whoring < 12: # Points til 12
             $ her_whoring += 1
 
+    if her_tier == 4:
+        if her_whoring < 15: # Points til 15
+            $ her_whoring += 1
+
     jump end_hermione_event
 
 
@@ -76,6 +80,9 @@ label hg_pf_strip_fail:
     call her_main("You want me to...","soft","wide")
 
     call her_main("...dance for you, [genie_name]?","open","wide")
+
+    $ hg_pf_strip.counter -= 1
+
     jump too_much
 
 
@@ -131,6 +138,7 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
     call her_walk(action="leave", speed=2.5)
 
     $ her_mood += 5
+    $ hg_pf_strip.counter -= 1
 
     jump end_hermione_event
 
@@ -150,6 +158,7 @@ label hg_pf_strip_T0_fail_repeat:
     call her_walk(action="leave", speed=2.5)
 
     $ her_mood += 5
+    $ hg_pf_strip.counter -= 1
 
     jump end_hermione_event
 

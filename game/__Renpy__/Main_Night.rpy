@@ -185,11 +185,11 @@ label night_resume:
     #if milking == -3:
         #call potion_scene_11_3_2 <- label does not exist
 
-    # Hermione Personal Requests, Public Shaming return.
     python:
-        for i in hg_pr_list: #Call any public request event if it's in progress
+        for i in hg_requests_list:
             if i.inProgress:
-                renpy.jump(i.complete_label)
+                i.inProgress = False
+                i.start()
         for i in hg_ps_list: #Call any public shaming event if it's in progress
             if i.inProgress:
                 renpy.jump(i.complete_label)

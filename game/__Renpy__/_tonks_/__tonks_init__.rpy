@@ -116,6 +116,8 @@ label tonks_progress_init:
             iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
             )
 
+    # Idea for "blowjob pr" name: "Stress Mitigation."
+
     $ nt_requests_list = [
         nt_pr_teach,
         nt_pr_grope,

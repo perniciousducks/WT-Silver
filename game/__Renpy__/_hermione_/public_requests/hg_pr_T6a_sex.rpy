@@ -25,7 +25,7 @@ label hg_pr_sex:
                         "\"(Yes, continue!)\"":
                             pass
                         "\"(No, return.)\"":
-                        jump hermione_favor_menu
+                            jump hermione_favor_menu
 
                 "\"(Not right now.)\"":
                     jump hermione_favor_menu

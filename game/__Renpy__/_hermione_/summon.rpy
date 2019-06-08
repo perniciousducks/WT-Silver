@@ -246,22 +246,16 @@ label hermione_favor_menu:
                 jump silver_requests_root
 
             "-Public requests-" if daytime:
-                if lock_public_favors:
-                    her "Em... [genie_name]..."
-                    her "I do not mind to keep selling you the favours..."
-                    her "But only as long as we keep them private..."
+                python:
+                    menu_choices = []
+                    for i in hg_requests_list:
+                        menu_choices.append((i.getMenuText(),i.start_label))
+                    menu_choices.append(("-Never mind-", "nvm"))
+                    result = custom_menu(menu_choices)
+                if result == "nvm":
                     jump silver_requests_root
                 else:
-                    python:
-                        menu_choices = []
-                        for i in hg_requests_list:
-                            menu_choices.append((i.getMenuText(),i.start_label))
-                        menu_choices.append(("-Never mind-", "nvm"))
-                        result = custom_menu(menu_choices)
-                    if result == "nvm":
-                        jump silver_requests_root
-                    else:
-                        $ renpy.jump(result)
+                    $ renpy.jump(result)
 
             "{color=#858585}-Public Shaming-{/color}" if not daytime:
                 call nar(">Public Shaming events are available during the daytime only.")

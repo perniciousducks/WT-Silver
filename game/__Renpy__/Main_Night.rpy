@@ -194,18 +194,6 @@ label night_resume:
             if i.inProgress:
                 renpy.jump(i.complete_label)
 
-    if her_whoring == 11 and not touched_by_boy and not ignore_warning:
-        call nar("!!! Attention !!!","start")
-        ">Increasing Hermione's Whoring level any further without doing more public requests will lock your game to a specific ending."
-        ">This message will repeat until you increase her Whoring level, or do a certain number of public requests!"
-        call nar(">You should also save your game here.","end")
-        menu:
-            "-Understood-":
-                pass
-            "-Don't tell me what to do!-":
-                call nar(">This message will stop appearing. You're on your own!")
-                $ ignore_warning = True
-
     #Atoria / Tonks event return.
     if astoria_tonks_event_in_progress:
         jump astoria_tonks_event #These do not return to 'night_resume'!

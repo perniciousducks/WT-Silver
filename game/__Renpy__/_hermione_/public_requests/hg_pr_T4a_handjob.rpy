@@ -15,9 +15,9 @@ label hg_pr_handjob:
     call her_main(face="happy", xpos="right", ypos="base", trans="fade")
 
     #Intro
-    if hg_pr_handjob.points == 0:
+    if hg_pr_handjob.counter == 0:
 
-        if her_tier < 4:
+        if her_tier < 4 or her_reputation < 12:
             m "[hermione_name], I want you to do something different today..."
             call her_main("...?","normal","frown")
             m "I want you to give a handjob to one of your classmates."
@@ -121,7 +121,7 @@ label end_hg_pr_handjob:
             $ her_whoring += 1
 
     if her_reputation < 15: # Points til 15
-        $ her_reputation +=1
+        $ her_reputation += 1
 
     jump end_hermione_event
 

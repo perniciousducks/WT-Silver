@@ -43,7 +43,7 @@ label hg_pr_flirt_teacher:
 # End Event
 label end_hg_pr_flirt_teacher:
     $ gryffindor += current_payout
-    m "The \"Gryffindors\" gets [current_payout] points!"
+    m "The \"Gryffindors\" get [current_payout] points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave", speed=2.5)
@@ -64,7 +64,6 @@ label end_hg_pr_flirt_teacher:
 label hg_pr_flirt_teacher_intro:
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
-    #First level.
     call her_main("Good evening, [genie_name].", face="happy", xpos="right", ypos="base")
     m "[hermione_name]..."
     m "Did you complete your task?"

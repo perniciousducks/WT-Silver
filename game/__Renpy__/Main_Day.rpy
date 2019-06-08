@@ -83,13 +83,6 @@ label day_start:
 
 
 
-
-
-    if her_whoring >= 12 and not touched_by_boy and not force_unlock_pub_favors: #Turns true if sent Hermione to get touched by a boy at least once.
-        $ lock_public_favors = True #Turns True if reached her_whoring level 05 while public event "Touched by boy" never attempted. Locks public events.
-    else:
-        $ lock_public_favors = False
-
     $ generating_snape_bonus = renpy.random.randint(1, 2) #Determines whether ot not Snape bonus will be added to the Slytherin house.
     $ generating_points = renpy.random.randint(1, 2) #Determines whether or not point will be awarded to Slytherin on this day. # MAKE NO CHANGES HERE. BEING USED AS "ONE_OUT_OF_TWO".
     $ generating_points_gryffindor = renpy.random.randint(1, 10) #Addying point to Gryffindor (07_points_gry.rpy)
@@ -330,18 +323,6 @@ label day_start:
 
     if hg_pr_sex_skip:#Hermione does not show up. This sends to label where she shows up next morning.
         $ hg_pr_sex.start() # hg_pr_sex_T1_intro_E2
-
-    if her_whoring == 11 and not touched_by_boy and not ignore_warning:
-        call nar("!!! Attention !!!","start")
-        ">Increasing Hermione's Whoring level any further without doing more public requests will lock your game to a specific ending."
-        ">This message will repeat until you increase her Whoring level, or do a certain number of public requests!"
-        call nar(">You should also save your game here.","end")
-        menu:
-            "-Understood-":
-                pass
-            "-Don't tell me what to do!-":
-                call nar(">This message will stop appearing. You're on your own!")
-                $ ignore_warning = True
 
     ### EVENTS ### (COMMENTED OUT FOR THE TESTING PORPOISES) ===============================================================================================================================
     if day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined:

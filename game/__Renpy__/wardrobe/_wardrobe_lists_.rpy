@@ -247,7 +247,7 @@ label update_wr_tops_list:
         $ wr_tops_uniform.append("top_6_g")
         $ wr_tops_uniform.append("top_7_g")
 
-        if her_whoring >= 15 and lock_public_favors == False:
+        if her_reputation > 15:
             $ wr_tops_uniform.append("top_1_s")
             $ wr_tops_uniform.append("top_2_s")
             $ wr_tops_uniform.append("top_3_s")
@@ -512,12 +512,12 @@ label update_wr_other_clothings_list:
 
         #Neckwear
         $ wr_neckwears.append("tie_striped_g")
-        if hg_accs_wool_g_ITEM.unlocked and her_whoring >= 15 and lock_public_favors == False:
+        if hg_accs_wool_g_ITEM.unlocked and her_reputation > 15:
             $ wr_neckwears.append("tie_striped_s")
 
         if hg_accs_wool_g_ITEM.unlocked:
             $ wr_neckwears.append("scarf_striped_g")
-        if hg_accs_wool_g_ITEM.unlocked and her_whoring >= 15 and lock_public_favors == False:
+        if hg_accs_wool_g_ITEM.unlocked and her_reputation > 15:
             $ wr_neckwears.append("scarf_striped_s")
 
         if her_whoring >= 14:

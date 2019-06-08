@@ -6,21 +6,29 @@ label hg_pr_blowjob:
 
     if hg_pr_blowjob.counter < 1:
         m "{size=-4}(Tell her to go give a blowjob to one of her classmates?){/size}"
-        menu:
-            "\"(Yes, let's do it!)\"":
-                call nar("!!! Attention !!!","start")
-                ">Continuing on this path will lock your game to a specific ending."
-                call nar(">You might want to save you game here.","end")
+        if her_tier < 5 or hg_T5_blowjob_trigger == False or her_reputation < 15:
+            menu:
+                "\"(Yes, let's do it!)\"":
+                    pass
+                "\"(Not right now.)\"":
+                    jump hermione_favor_menu
 
-                menu:
-                    "Do you wish to continue?"
-                    "\"(Yes, continue!)\"":
-                        pass
-                    "\"(No, return.)\"":
-                        jump hermione_favor_menu
+        else: # Succeeds
+            menu:
+                "\"(Yes, let's do it!)\"":
+                    call nar("!!! Attention !!!","start")
+                    ">Continuing on this path will lock your game to a specific ending."
+                    call nar(">You might want to save your game here.","end")
 
-            "\"(Not right now.)\"":
-                jump hermione_favor_menu
+                    menu:
+                        "Do you wish to continue?"
+                        "\"(Yes, continue!)\"":
+                            pass
+                        "\"(No, return.)\"":
+                            jump hermione_favor_menu
+
+                "\"(Not right now.)\"":
+                    jump hermione_favor_menu
 
     call her_main(face="happy", xpos="right", ypos="base")
 
@@ -34,7 +42,7 @@ label hg_pr_blowjob:
         call her_main("!!!","shock","wide")
         her "...with my mouth?"
 
-        if her_tier < 5:
+        if her_tier < 5 or hg_T5_blowjob_trigger == False or her_reputation < 15:
             jump too_much
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -101,7 +109,7 @@ label end_hg_pr_blowjob:
     $ aftersperm = False
     $ uni_sperm = False
 
-    $ public_whore_ending = True #Activates "Public Whore" ending.
+    $ public_whore_ending = True
 
     $ hg_pr_blowjob.inProgress = False
 
@@ -111,7 +119,7 @@ label end_hg_pr_blowjob:
             $ her_whoring += 1
 
     if her_reputation < 21: # Points til 21
-        $ her_reputation +=1
+        $ her_reputation += 1
 
     jump end_hermione_event
 

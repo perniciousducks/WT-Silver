@@ -27,7 +27,6 @@ label start_wt:
     $ sucked_off_ron = False #In public events. Give a handjob to classmate. Event level 03. Event # 1. "Jerked of and suked of Ron Weasley". Turns True after that.
     $ suked_off_ron_and_har = False #In public events. Give blowjob to a classmate. Event level 03. Event # 3. "Sukerd off Harrt and Ron". Turns True after that.
     $ fucked_ron_and_har = False #In public events. Have sex with a classmate. Event # 1. "Returns next morning". Turns True after that.
-    $ ignore_warning = False
 
 
 
@@ -52,14 +51,6 @@ label start_wt:
     $ gryffindor = 53 #Shows amount of points the Gryffindor house has.
     $ hufflepuff = 25 #Shows amount of points the Hufflepuff house has.
     $ ravenclaw = 31 #Shows amount of points the Ravenclaw house has.
-
-
-
-
-
-    #Misc Flags
-    $ lock_public_favors = False #Turns True if reached her_whoring level 05 while public
-    $ touched_by_boy = False #Turns true if sent Hermione to get touched by a boy at least once.
 
     #Duel
     $ potions = 0 #Amount of healing potions Genie has in stock.

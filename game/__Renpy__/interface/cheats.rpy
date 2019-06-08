@@ -21,13 +21,6 @@ label cheats:
                     "Hermione recovered some of her dignity"
                     jump cheats_hermione
 
-                "-Unlock public favours-":
-                    $ force_unlock_pub_favors = True
-                    $ touched_by_boy = True
-                    $ lock_public_favors = False
-                    ">Public favours unlocked!"
-                    jump cheats_hermione
-
                 "-Unlock all outfits & sets-":
                     python:
                         for i in hermione_outfits_list:
@@ -229,8 +222,6 @@ label cheats_init:
         $ skip_duel = False
         $ skip_to_hermione = False
         $ skip_after_hermione = False
-
-        $ force_unlock_pub_favors = False
 
         #Display Characters Screen
         $ character_choice = "hermione"

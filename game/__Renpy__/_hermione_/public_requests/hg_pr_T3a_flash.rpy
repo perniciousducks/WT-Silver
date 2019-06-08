@@ -28,7 +28,7 @@ label hg_pr_flash:
         m "You know, flash your breasts to some boys..."
         call her_main("?!!","shock","wide")
 
-        if her_tier < 3:
+        if her_tier < 3 or her_reputation < 6:
             jump too_much
 
         her "[genie_name]!"
@@ -151,7 +151,7 @@ label end_hg_pr_flash:
             $ her_whoring += 1
 
     if her_reputation < 12: # Points til 12
-        $ her_reputation +=1
+        $ her_reputation += 1
 
     jump end_hermione_event
 

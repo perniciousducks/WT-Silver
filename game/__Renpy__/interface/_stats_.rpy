@@ -442,15 +442,11 @@ label update_stats:
     # Reputation
     $ her_reputation_word_list = ["Teacher's pet", "School star", "good girl", "minx", "slutty schoolgirl", "easy lay", "whore", "slut for sex", "gryffindor whore", "school cumdump", "mudblood cumdump"]
     #$ slutWords = ["Teacher's pet", "School star", "good girl", "principal's pet", "slutty schoolgirl", "slut", "principal's slut", "daddy's girl", "gryffindor slut", "Dumbledore's whore", "Dumbledore's cumdump"]
+    $ her_reputation_word = her_reputation_word_list[int(her_reputation/2.4)]
 
     # Tutoring
     $ her_tutoring_word_list = ["pure ", "naive", "tempted", "curious", "tainted", "eager", "sinful", "perverted", "corrupted", "depraved", "shattered"]
     $ her_tutoring_word = her_tutoring_word_list[int(her_tutoring/1.4)]
-
-    if lock_public_favors:
-        $ her_reputation_word = "- Locked Off -"
-    else:
-        $ her_reputation_word = her_reputation_word_list[int(her_reputation/2.4)]
 
     # Mood
     $ her_mood_word_list = ["Cheerfull", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]

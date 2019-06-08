@@ -849,7 +849,7 @@ label updated_hermione_favors: # For 1.37
             iconset = [["star_empty", "star_yellow"],["star_empty", "star_yellow"],["star_empty", "star_yellow"]]
             )
 
-        $ hg_pr_grope   = event_class(title = "Let a classmate molest you", start_label = "hg_pr_grope", start_tier = 2, events = [
+        $ hg_pr_grope   = event_class(title = "Let a classmate molest you", start_label = "hg_pr_grope", start_tier = 1, events = [
             [
             ["hg_pr_grope_T1_E1"],
             ["hg_pr_grope_T1_E2"],
@@ -873,7 +873,7 @@ label updated_hermione_favors: # For 1.37
             iconset = [["star_empty", "star_yellow"],["star_empty", "star_yellow"],["star_empty", "star_yellow"]]
             )
 
-        $ hg_pr_flash   = event_class(title = "Flash your tits to a classmate", start_label = "hg_pr_flash", start_tier = 3, events = [
+        $ hg_pr_flash   = event_class(title = "Flash your tits to a classmate", start_label = "hg_pr_flash", start_tier = 1, events = [
             [
             ["hg_pr_flash_T1_E1"],
             ["hg_pr_flash_T1_E2"],
@@ -897,7 +897,7 @@ label updated_hermione_favors: # For 1.37
             iconset = [["star_empty", "star_yellow"],["star_empty", "star_yellow"],["star_empty", "star_yellow"]]
             )
 
-        $ hg_pr_kiss   = event_class(title = "Kiss a girl", start_label = "hg_pr_kiss", start_tier = 3, events = [
+        $ hg_pr_kiss   = event_class(title = "Kiss a girl", start_label = "hg_pr_kiss", start_tier = 1, events = [
             [
             ["hg_pr_kiss_T1_E1"],
             ["hg_pr_kiss_T1_E2"],
@@ -920,7 +920,7 @@ label updated_hermione_favors: # For 1.37
             iconset = [["star_empty", "star_yellow"],["star_empty", "star_yellow"],["star_empty", "star_yellow"]]
             )
 
-        $ hg_pr_handjob   = event_class(title = "Give a handjob to a classmate", start_label = "hg_pr_handjob", start_tier = 4, events = [
+        $ hg_pr_handjob   = event_class(title = "Give a handjob to a classmate", start_label = "hg_pr_handjob", start_tier = 1, events = [
             [
             ["hg_pr_handjob_T1_E1"],
             ["hg_pr_handjob_T1_E2"],
@@ -944,7 +944,7 @@ label updated_hermione_favors: # For 1.37
             iconset = [["star_empty", "star_yellow"],["star_empty", "star_yellow"],["star_empty", "star_yellow"]]
             )
 
-        $ hg_pr_blowjob   = event_class(title = "Give a blowjob to a classmate", start_label = "hg_pr_blowjob", start_tier = 5, events = [
+        $ hg_pr_blowjob   = event_class(title = "Give a blowjob to a classmate", start_label = "hg_pr_blowjob", start_tier = 1, events = [
             [
             ["hg_pr_blowjob_T1_E1"],
             ["hg_pr_blowjob_T1_E2"],
@@ -963,7 +963,7 @@ label updated_hermione_favors: # For 1.37
             )
 
 
-        $ hg_pr_sex   = event_class(title = "Have sex with a classmate", start_label = "hg_pr_sex", start_tier = 6, events = [
+        $ hg_pr_sex   = event_class(title = "Have sex with a classmate", start_label = "hg_pr_sex", start_tier = 1, events = [
             [
             ["hg_pr_sex_T1_intro_E1"],
             ["hg_pr_sex_T1_intro_E2"],

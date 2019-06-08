@@ -6,11 +6,29 @@ label hg_pr_sex:
 
     if hg_pr_sex.counter < 1:
         m "{size=-4}(Tell her to fuck one of her classmates?){/size}"
-        menu:
-            "\"(Yes, let's do it!)\"":
-                pass
-            "\"(Not right now.)\"":
-                jump hermione_favor_menu
+        if her_tier < 6 or hg_T6_sex_trigger == False or her_reputation < 18:
+            menu:
+                "\"(Yes, let's do it!)\"":
+                    pass
+                "\"(Not right now.)\"":
+                    jump hermione_favor_menu
+
+        else: # Succeeds
+            menu:
+                "\"(Yes, let's do it!)\"":
+                    call nar("!!! Attention !!!","start")
+                    ">Continuing on this path will lock your game to a specific ending."
+                    call nar(">You might want to save your game here.","end")
+
+                    menu:
+                        "Do you wish to continue?"
+                        "\"(Yes, continue!)\"":
+                            pass
+                        "\"(No, return.)\"":
+                        jump hermione_favor_menu
+
+                "\"(Not right now.)\"":
+                    jump hermione_favor_menu
 
     call her_main(face="happy", xpos="right", ypos="base")
 
@@ -19,7 +37,7 @@ label hg_pr_sex:
         m "[hermione_name]..."
         m "Today I need you to have sex with a classmate of your choice."
 
-        if her_tier < 6:
+        if her_tier < 6 or hg_T6_sex_trigger == False or her_reputation < 18:
             jump too_much
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -54,11 +72,13 @@ label end_hg_pr_sex:
 
     call her_walk(action="leave", speed=2.5)
 
+    $ public_whore_ending = True
+
     $ hg_pr_sex.inProgress = False
 
     # Increase Points
     if her_reputation < 24: # Points til 24
-        $ her_reputation +=1
+        $ her_reputation += 1
 
     jump end_hermione_event
 

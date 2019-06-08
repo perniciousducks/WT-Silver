@@ -253,7 +253,7 @@ label set_her_map_location(location = ""):
             else: #Gryff Room
                 $ her_map_location = "room_g"
         else:
-            if lock_public_favors:
+            if her_reputation < 12:
                 if her_random_number == 1: #Great Hall
                     $ her_map_location = "great_hall"
                 elif her_random_number == 2: #Courtyard

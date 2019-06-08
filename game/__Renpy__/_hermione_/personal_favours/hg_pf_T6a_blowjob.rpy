@@ -811,7 +811,7 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
 
             call ton_main("Miss Granger?!","open","wide","wide","wide")
 
-            if lock_public_favors:
+            if her_reputation <= 15:
                 call ton_main("That cute little tease who always hangs out at the library, pretending to study?","open","base","raised","mid")
                 call her_main("(Pretending???)","sucking","ahegao_mad")
             else:
@@ -1453,7 +1453,7 @@ label hg_blowjob_4:
             call u_play_ani
             call her_main("*Gobble!* *Gulp!* *Gobble!*","sucking","ahegao")
 
-            if lock_public_favors == True:
+            if hg_pr_blowjob.counter == 0:
                 call u_pause_ani
                 call her_main("Sucking your perfect dick.","base","ahegao_raised")
                 call her_main("No one elses...","base","ahegao_raised")

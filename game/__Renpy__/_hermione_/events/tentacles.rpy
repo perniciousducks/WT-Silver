@@ -66,7 +66,7 @@ label tentacle_scene_intro: #Public tentacle scene
 
     $ tentacle_cosmetic = True
 
-    if lock_public_favors == False:
+    if her_reputation > 15:
         jump tentacle_1
     jump tentacle_2
 

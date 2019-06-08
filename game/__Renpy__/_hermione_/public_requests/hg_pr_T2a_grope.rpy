@@ -31,7 +31,7 @@ label hg_pr_grope:
         call her_main(".......?","open","base")
         m "And let him touch you..."
 
-        if her_tier < 2:
+        if her_tier < 2 or her_reputation < 3:
             jump too_much
 
         call her_main("Let him... touch me, [genie_name]?","open","base")
@@ -109,8 +109,6 @@ label end_hg_pr_grope:
 
     call her_walk(action="leave", speed=2.5)
 
-    $ touched_by_boy = True #Makes sure that Public favours do not get locked after reaching Whoring level 05.
-
     $ hg_pr_grope.inProgress = False
 
     # Increase Points
@@ -119,7 +117,7 @@ label end_hg_pr_grope:
             $ her_whoring += 1
 
     if her_reputation < 9: # Points til 9
-        $ her_reputation +=1
+        $ her_reputation += 1
 
     jump end_hermione_event
 

@@ -59,15 +59,17 @@ init python:
 label studio(studio_return, studio_char):
     call hide_characters
     
-    $ studio_eyebrows_list = ["base", "raised", "angry", "sad"]
-    $ studio_eyes_list = ["base", "closed", "wink", "narrow", "angry", "wide", "shocked"]
-    $ studio_mouth_list = ["base", "open", "soft", "upset", "angry", "scream", "smile", "annoyed", "horny", "pout", "quiver"]
-    $ studio_pupils_list = ["mid", "L", "R", "up", "down", "downR"]
+    python:
+        studio_eyebrows_list = os.listdir(config.basedir+"\\game\\characters\\"+active_girl+"\\face\\eyebrows\\")
+        studio_eyes_list = os.listdir(config.basedir+"\\game/characters\\"+active_girl+"\\face\\eyes\\")
+        studio_eyes_list.remove("_white_.png")
+        studio_mouth_list = os.listdir(config.basedir+"\\game\\characters\\"+active_girl+"\\face\\mouth\\")
+        studio_pupils_list = os.listdir(config.basedir+"\\game\\characters\\"+active_girl+"\\face\\pupils\\")
     
     $ studio_bg_list = ["wall_day", "castle", "forest", "highlight", "versus", "main_room_day", "main_room_night", "corridor", "custom"]
     $ studio_bg_overlay_list = [None, "curtains", "card", "g_bottom", "g_left", "g_circular"]
     
-    $ char_active.expression(eyebrows=studio_eyebrows_list[studio_image_eyebrows], eyes=studio_eyes_list[studio_image_eyes], pupils=studio_pupils_list[studio_image_pupils], mouth=studio_mouth_list[studio_image_mouth])
+    $ char_active.expression(eyebrows=studio_eyebrows_list[studio_image_eyebrows][:-4], eyes=studio_eyes_list[studio_image_eyes][:-4], pupils=studio_pupils_list[studio_image_pupils][:-4], mouth=studio_mouth_list[studio_image_mouth][:-4])
     
     $ studio_hide = False
     
@@ -106,28 +108,28 @@ label studio(studio_return, studio_char):
         else:
             $ studio_image_eyebrows -= 1
         $ studio_image_eyebrows = clamp(studio_image_eyebrows, 0, len(studio_eyebrows_list)-1)
-        $ char_active.expression(eyebrows=studio_eyebrows_list[studio_image_eyebrows])
+        $ char_active.expression(eyebrows=studio_eyebrows_list[studio_image_eyebrows][:-4])
     elif _return[0] == "eyes":
         if _return[1] == "inc":
             $ studio_image_eyes += 1
         else:
             $ studio_image_eyes -= 1
         $ studio_image_eyes = clamp(studio_image_eyes, 0, len(studio_eyes_list)-1)
-        $ char_active.expression(eyes=studio_eyes_list[studio_image_eyes])
+        $ char_active.expression(eyes=studio_eyes_list[studio_image_eyes][:-4])
     elif _return[0] == "pupils":
         if _return[1] == "inc":
             $ studio_image_pupils += 1
         else:
             $ studio_image_pupils -= 1
         $ studio_image_pupils = clamp(studio_image_pupils, 0, len(studio_pupils_list)-1)
-        $ char_active.expression(pupils=studio_pupils_list[studio_image_pupils])
+        $ char_active.expression(pupils=studio_pupils_list[studio_image_pupils][:-4])
     elif _return[0] == "mouth":
         if _return[1] == "inc":
             $ studio_image_mouth += 1
         else:
             $ studio_image_mouth -= 1
         $ studio_image_mouth = clamp(studio_image_mouth, 0, len(studio_mouth_list)-1)
-        $ char_active.expression(mouth=studio_mouth_list[studio_image_mouth])
+        $ char_active.expression(mouth=studio_mouth_list[studio_image_mouth][:-4])
     elif _return[0] == "bg":
         if _return[1] == "inc":
             $ studio_room_bg += 1
@@ -286,8 +288,13 @@ screen character_studio():
     if not export_in_progress:
         use top_bar_close_button
     
-    #if config.developer:
-        #textbutton "Save transparent" xalign 1.0 yalign 1.0 action Return("save")
+    if config.developer:
+        vbox:
+            xpos 50 yalign 0.9
+            text "Eyebrows: {size=-4}{color=#93c763}"+studio_eyebrows_list[studio_image_eyebrows][:-4]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
+            text "Eyes: {size=-4}{color=#93c763}"+studio_eyes_list[studio_image_eyes][:-4]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
+            text "Pupils: {size=-4}{color=#93c763}"+studio_pupils_list[studio_image_pupils][:-4]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
+            text "Mouth: {size=-4}{color=#93c763}"+studio_mouth_list[studio_image_mouth][:-4]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
     
     frame:
         ypos 50

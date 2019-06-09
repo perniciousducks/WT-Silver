@@ -4,7 +4,7 @@ label tonks_wardrobe_check(section, arg=None):
             temp_count = [0, 0, 0]
             temp_score = 0
             for item in arg.group:
-                if ton_friendship < item.whoring and temp_count[0] < item.whoring:
+                if ton_friendship < item.whoring*2 and temp_count[0]*2 < item.whoring*2:
                     temp_count[0] = item.whoring
                 if item.type in ("bra", "panties"):
                     temp_count[2] += 1

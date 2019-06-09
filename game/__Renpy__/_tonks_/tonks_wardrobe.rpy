@@ -66,9 +66,11 @@ label tonks_wardrobe_check(section, arg=None):
         elif section == "toggle":
             if arg in ("bra", "panties"):
                 if ton_friendship < 15:
-                    $ random_number = renpy.random.randint(1, 3)
+                    $ random_number = renpy.random.randint(1, 2)
                     if random_number == 1:
                         call ton_main("Maybe another time..",face="angry")
+                    elif random_number == 2:
+                        call ton_main("I like my underwear in its proper place.",face="angry")
                     #Hint
                     $ wardrobe_fail_hint(15)
                     return

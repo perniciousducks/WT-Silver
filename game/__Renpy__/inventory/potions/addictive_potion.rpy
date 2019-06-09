@@ -1,48 +1,132 @@
 
 
 ### CUM ADDICTION ###
+#Add check if she has drunk addiction  potion
+#Add check if she has drunk cum addiction (for future uses)
 
-label potion_scene_3_1_1: #cum addiction - work in progress, has some scenes adjusted for it
+init:
+    $ hg_pp_cumaddict = event_class(title = "Cum Addiction", start_label = "hg_pp_cumaddict", 
+    events = [[["hg_pp_cumaddict_intro"],["hg_pp_cumaddict_E1"]]],
+    iconset = [["potion_empty", "potion_white"]], # <--- menu icons
+    #Extra variables
+    fail_counter=0)
+
+label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjusted for it
     m "[hermione_name], today I have a very special potion that I would like you to drink."
-    call her_main("What does this one do?","normal","frown")
-    m "As always, it's going to be a surprise."
-    call her_main("You're not going to try to transform me into a cat again are you [genie_name]?","normal","frown")
-    call her_main("","normal","frown")
-    m "Of course not, now would you kindly drink the potion?"
+    if hermione_potions_counter < 0: #
+        her "A potion?"
+        her "What is it going to do?"
+        m "Well, that's going to be a surprise..."
+        if whoring <= 17: #Under when she stops caring about points too Much
+                her "And you'll pay me if I drink this?"
+                m "Of course...{w} I'll give you 30 points for Gryffindor house."
+    else:"
+        call her_main("What does this one do?","normal","frown")
+        m "As always, it's going to be a surprise."
+        if whoring <= 17: #Under when she stops caring about points too Much
+                her "And you'll pay me if I drink this?"
+                m "Of course...{w} I'll give you 30 points for Gryffindor house."
+                
+    if hg_pp_polyjuice.counter > 0:
+        call her_main("You're not going to try to transform me into a cat again are you [genie_name]?","normal","frown")
+        call her_main("","normal","frown")
+        m "Of course not, now would you kindly drink the potion?"
+    elif hg_pp_expansion.counter > 0:
+        call her_main("You're not going to make my breasts expand again are you [genie_name]?","normal","frown")
+        call her_main("","normal","frown")
+        m "Of course not, now would you kindly drink the potion?"
+    else:
+        m "Now would you kindly drink the potion?"
+        her "Fine..."
+        
+    $ renpy.sound.play("sounds/bottle.mp3")
+        
     call her_main("...","annoyed","angryL")
-    call her_chibi("drink_potion","mid","base")
 
-    call nar(">Hermione cautiously starts drinking the potion.")
+    if her_whoring <= 12 and hg_pp_cumaddict.fail_counter == 0: #Too low
+        call her_chibi("drink_potion","mid","base")
+        call nar(">Hermione cautiously takes a small sip of the potion.")
+        call her_main("","cum","worriedCl")
+        pause .5
+        call her_chibi("stand","mid","base")
+        
+        call her_main("This isn't a potion! This is just a bottle full of your cum!","scream","angryCl")
+        m "Wait, how could you tell if there's cum in there?"
+        her "So you did put cum in there!"
+        m "I didn't say that..."
+        m "Although, if I did... what did you think of the taste?"
+        her "Are you crazy? You came in a bottle and served it to me and then has the audacity to ask if I liked the taste?"
+        her "What's wrong with you?"
+        her "I'm leaving..."
+        call her_walk(action="leave", speed=2)
+        m "(Damn, looks like she didn't drink enough for the effect to kick in. I guess she has to trust me more before drinking this one...)"
+        $ hg_pp_cumaddict.fail_counter += 1
+        $ her_mood += 10
+        $ hermione_busy = True
+        jump main_room
+        #Check that she has drunk the addictive potion
+        #No check that it's cum addiction specifically since the effects doesn't kick in here.
+        #Hermiones mood gets worse
+    elif her_whoring <= 12 and hg_pp_cumaddict.fail_counter > 0: # Too low and failed previously
+        call nar(">Hermione takes a whiff of the potion contents.")
+        $ renpy.play('sounds/sniff.mp3')
+        pause 0.5
+        call her_main("*Ughhh*{w=0.5}{nw}", "disgust","narrow")
+        with hpunch
+        call her_main("This isn't a potion! This is just a bottle full of your cum!","scream","angryCl")
+        g4 "How did you know?"
+        call her_main("It reeks of semen ","angry","angry")
+        her "I can't believe you were going to make me drink that..."
+        her "I'm leaving..."
+        call her_walk(action="leave", speed=2)
+        m "(Damn, looks like she won't even consider tasting it. I guess she has to trust me more before drinking this one...)"
+        $ hg_pp_cumaddict.fail_counter += 1
+        $ her_mood += 10
+        $ hermione_busy = True
+        jump main_room
+    else:
+        if hg_pp_cumaddict.counter == 0: # First time
+            call her_chibi("drink_potion","mid","base")
+            call nar(">Hermione cautiously takes a small sip of the potion.")
+            call her_main("","cum","worriedCl")
+            pause .5
+            call her_chibi("stand","mid","base")
+            
+            call her_main("Is this bottle full of your cum?","disgust","angryCl")
+            call her_main("Ughhh and it's cold as well.","disgust","narrow")
+            m "So it just tastes like cum to you?"
+            call her_main("Of course it does, what else would it taste like?","angry","angry")
+            call nar(">Hermione starts unconsciously licking her lips.")
+            her "I can't believe you were going to make me drink that..."
+            call nar(">Without thinking of what she's doing she downs the rest of the potion.")
+        else: #Tried and drank the potion successfully before
+            # Johnny add writing here please :)
+            
+    $ renpy.sound.play("sounds/gulp.mp3")
+    call her_chibi("drink_potion","mid","base")
     call her_main("","cum","worriedCl")
     pause .5
     call her_chibi("stand","mid","base")
 
-    call her_main("This isn't a potion! This is just a bottle full of your cum!","scream","angryCl")
-    call her_main("Ughhh and it's cold as well.","disgust","narrow")
-    m "So it just tastes like cum to you?"
-    call her_main("Of course it does, what else would it taste like?","angry","angry")
-    call nar(">Hermione starts unconsciously licking her lips.")
     call her_main("At least warn me next time you make me drink your cum, [genie_name].","open","worriedL")
     m "What do you mean next time?"
     call her_main("Well, you're such a pervert you'll probably try and do this again. At least warn me so it's not such a shock.","annoyed","annoyed")
     m "Ok, [hermione_name], I'll make sure to warn you next time."
     call her_main("Is that all then, [genie_name]?","annoyed","angryL")
-    m "Yes [hermione_name], 20 points to Gryffindor."
+    m "Yes [hermione_name], that will be all."
     call her_main("Thank you, [genie_name].","open","suspicious")
-    call nar(">Hermione leaves the room with the remaining potion firmly in her grasp.")
-    hide screen bld1
+    call nar(">Hermione hurriedly leaves the room with the remainder of the potion firmly in her grasp.")
+    
     hide screen hermione_main
-    hide screen blktone
-    hide screen ctc
-    with d3
-
     call her_walk(action="leave", speed=2)
 
-    $ addicted = True
+    #Check that she has drunk the addiction potion (addiction_drunk)
+    #Check that she has drunk the cum addiction potion (addiction_cum_drunk)
+    $ hg_pp_cumaddict.inProgress = True
     $ hermione_busy = True
     jump main_room
 
-label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum (replace sucking noises with actual text)
+label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your cum (replace sucking noises with actual text)
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
     pause.2
@@ -63,104 +147,89 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
             m "Hmmm, I don't think that was sincere enough."
             call her_main("Please [genie_name], let me suck your big, thick dick. Pretty please.","angry","worriedCl",emote="05")
             m "Much better."
-
+    label hg_pp_cumaddict_sucking:
+    
     call blkfade
     pause 1
-
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     hide screen genie
     $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
     $ gen_chibi_ypos = 10
+    call set_u_ani("blowjob_ani","hand_ani", 0,10)
     $ g_c_u_pic = "blowjob_ani"
-    show screen chair_left
-    show screen g_c_u
-
+    call u_pause_ani
+    hide screen hermione_main
+    hide screen genie
     call her_chibi("hide")
-    hide screen blktone
-    hide screen bld1
-    call hide_blkfade
-    call ctc
-
-    $ hermione_zorder = 8
+    show screen chair_left
+    hide screen blkfade
+    with d5
 
     show screen bld1
+    call u_play_ani
     call nar(">As soon as you remove your cock from your robe Hermione is on top of you.")
     call her_main("","disgust","glance")
-    $ g_c_u_pic = "hand_ani"
-    with d3
+    call u_pause_ani
     her "Do you have any idea how hard it was sitting through classes today?"
     hide screen hermione_main
-    $ g_c_u_pic = "blowjob_ani"
-    with d3
+    call u_play_ani
     her "*Slurp!* *Slurp!* *Slurp!*"    ###start sucking etc....
     call her_main("","annoyed","angryL")
-    $ g_c_u_pic = "hand_ani"
-    with d3
+    call u_pause_ani
     her "Being this aroused."
     hide screen hermione_main
-    $ g_c_u_pic = "blowjob_ani"
-    with d3
+    call u_play_ani
     her "*Slurp!* *Gobble!* *Slurp!*"
     call her_main("","grin","baseL")
-    $ g_c_u_pic = "hand_ani"
-    with d3
+    call u_pause_ani
     her "With no way to relieve myself."
     her "I tried everything."
     hide screen hermione_main
-    $ g_c_u_pic = "blowjob_ani"
-    with d3
+    call u_play_ani
     her "*Gobble!* *Slurp!* *Slurp!*"
     call her_main("","smile","glance")
-    $ g_c_u_pic = "hand_ani"
-    with d3
+    call u_pause_ani
     her "I even masturbated in the girls bathroom."
     hide screen hermione_main
-    $ g_c_u_pic = "blowjob_ani"
-    with d3
+    call u_play_ani
     her "*Gobble!!* *Gltch!!* *Gobble!!!*"
     call her_main("","annoyed","annoyed")
-    $ g_c_u_pic = "hand_ani"
-    with d3
+    call u_pause_ani
     her "But nothing worked."
     hide screen hermione_main
-    $ g_c_u_pic = "blowjob_ani"
-    with d3
+    call u_play_ani
     her "*Slurp!* *Gulp!* *Slurp!*"
     call her_main("","base","ahegao_raised")
-    $ g_c_u_pic = "hand_ani"
-    with d3
+    call u_pause_ani
     her "All I could think about was the taste of your filthy cum."
     hide screen hermione_main
-    $ g_c_u_pic = "blowjob_ani"
-    with d3
+    call u_play_ani
     her "*Slurp!* *Gulp!* *Gulp!*"
     m "My my, someone is becoming quite the slut wouldn't you say [hermione_name]"
     her "*Slurp!* *Gulp!* *Slurp!*"
     call her_main("","open_tongue","glance")
-    $ g_c_u_pic = "hand_ani"
-    with d3
+    call u_pause_ani
     her "You know why this is happening to me."
     hide screen hermione_main
-    $ g_c_u_pic = "blowjob_ani"
-    with d3
+    call u_play_ani
     her "*Slurp!* *Slurp!* *Gulp!*"
     call her_main("","smile","glance")
-    $ g_c_u_pic = "hand_ani"
-    with d3
+    call u_pause_ani
     her "Whatever was in that delicious potion you made me drink this morning."
     hide screen hermione_main
+    call u_play_ani
     m "Delicious? I thought you said it was just a bottle full of my cum?"
     m "Are you sure that you're just not a little slut who's become addicted to her Headmaster's semen?"
+    call u_pause_ani
     call her_main("I'm sure. There was something else in there.","angry","wink")
     hide screen hermione_main
+    call u_play_ani
     m "Whatever you say [hermione_name]. Now if you want your reward you better get back to work."
     call her_main("","base","suspicious")
-    $ g_c_u_pic = "hand_ani"
-    with d3
+    call u_pause_ani
     her "..."
     hide screen hermione_main
-    $ g_c_u_pic = "blowjob_ani"
-    with d3
+    call u_play_ani
     her "*Slurp!* *Slurp!* *Gulp!*"
     call nar(">She is incredibly enthusiastic. You can feel your load building.")
 
@@ -170,14 +239,18 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
             call nar(">Hermione quickly swallows the majority of your shaft. You can feel the tip of your head pressed against the entrance to her throat.")
             m "You'll have to do better than that if you want your reward [hermione_name]."
             call nar(">You place your hands on the back of her head pull her head into you.")
-            call her_main("{size=+7}!!!{/size}","scream","worriedCl")
+            call her_main("{size=+7}!!!{/size}","scream","worriedCl") 
+            with vpunch
             hide screen hermione_main
             call nar(">The sensation of entering her throat sends you over the edge.")
             m "Better start swallowing slut!"
             call nar(">You start pumping your thick load directly into her stomach.")
-            $ g_c_u_pic = "cum_in_mouth_ani"
+            call set_u_ani("cum_in_mouth_ani","hand_ani", 0,10)
+            call cum_block
+            call u_play_ani
             $ aftersperm = True
             call nar(">Hermione's eyes widen and tears form as she senses your semen enter her.")
+            call cum_block
             call her_main("hhaanooo hhhheerrr","scream","wide")
             hide screen hermione_main
             call nar(">Her hands shoot down into her trousers as she starts violently orgasming.","start")
@@ -186,6 +259,7 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
             m "I bet your loving this, being used as a nothing more than a toy."
             call nar(">She says nothing but quickens the pace of her masturbation.","start")
             call nar(">You finally pull out of keen mouth with a satisfactory pop.","end")
+            call u_pause_ani
             call her_main("It won't stop!","shock","worriedCl")
             hide screen hermione_main
             m "What won't?"
@@ -198,11 +272,14 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
             call nar(">Hermione starts swirling her tongue and focusing on the tip of your shaft.")
             g4 "That's done it slut! Start swallowing!"
             call nar(">You explode into her mouth.")
-            $ g_c_u_pic = "cum_in_mouth_ani"
+            call set_u_ani("cum_in_mouth_ani","hand_ani", 0,10)
+            call cum_block
+            call u_play_ani
             $ aftersperm = True
             call her_main("mmmmmmm... *gulp* *gulp*","full_cum","dead")
             hide screen hermione_main
             call nar(">Hermiones eyes go blank as she starts swallowing down your load.")
+            call cum_block
             m "That's it, swallow it down like a good girl. You earned your prize."
             call her_main("*gulp* *gulp* *gulp* *gulp*","cum","worriedCl")
             hide screen hermione_main
@@ -210,6 +287,7 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
             call her_main("*gulp* *gulp* *gulp* ","full_cum","dead")
             hide screen hermione_main
             call nar(">You finally remove your shaft from her hungry mouth.")
+            call u_pause_ani
             m "Very good girl. Almost entirely clean... except for a bit of cum on the tip."
             m "I can't dirty my robes now can I? Better wipe this off."
             call nar(">You wipe yourself clean on the tip of her nose.")
@@ -226,28 +304,32 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
             m "Get ready, girl! here it comes!"
             call nar(">Hermione increases her efforts and starts focusing on the head of your penis.")
             m "Not so quick [hermione_name]."
-            $ g_c_u_pic = "hand_ani"
-            with d3
+            call set_u_ani("cum_on_face_ani","hand_ani", 0,10)
+            call u_pause_ani
             call nar(">You quickly pull your penis out from her mouth.")
             call her_main("What are you doing [genie_name]?","shock","wide")
             hide screen hermione_main
             m "Giving you your well earned reward."
-            $ g_c_u_pic = "cum_on_face_ani"
-            with d3
+            call cum_block
+            call u_play_ani
             $ uni_sperm = True
             call nar(">You start pumping your cock quickly and explode all over the young witch's face")
             m "Take it you filthy cum slut!"
+            call cum_block
             call her_main("{size=+5}!!!{/size}","soft","ahegao")
             hide screen hermione_main
             call nar(">Hermione immediately starts masturbating shamelessly in front of you.")
             call her_main("{size=+5}I'm cumming{/size}","angry","base")
+            with vpunch
             hide screen hermione_main
             m "What was that [hermione_name]?"
-            call her_main("I-I'm cumming","scream","wide")
+            call her_main("I-I'm cumming again?!","scream","wide")
+            with hpunch
             hide screen hermione_main
             m "Just from a facial? What sort of cumslut have you become Miss Granger?"
             m "What would your parents think? Looking at you covered in some old mans cum."
             call her_main("No. Please stop, I'll-","angry","worriedCl",emote="05")
+            with vpunch
             hide screen hermione_main
             m "They'd be ashamed at what you've become. A whore who gets off from being used as a toy."
             call her_main("I-I'm cumming again [genie_name]. It won't stop...","scream","worriedCl")
@@ -259,12 +341,13 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
             call her_main("mmmmmmmm...","open_wide_tongue","base")
             hide screen hermione_main
             call nar(">She goes to bury her face into her crouch but you put your palm on her forehead and push her away.")
-            $ g_c_u_pic = "hand_ani"
-            with d3
+            call u_pause_ani
             call her_main("[genie_name], what are you doing?","angry","wide")
             hide screen hermione_main
             m "giving you your reward!"
             call nar(">After a few quick pumps you point your dick at the floor and explode.")
+            call cum_block
+            # Need to find proper animation
             call her_main("PROFESSOR! Why would you waste that?","angry","down_raised")
             hide screen hermione_main
             m "It's not wasted [hermione_name], your reward is right there waiting for you."
@@ -278,6 +361,7 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
             call her_main("...Fine.","upset","closed")
             hide screen hermione_main
             call nar(">She begrudgingly starts scooping your cum off the floor with her fingers.")
+            # add animation?
 
             menu:
                 "-Watch her-":
@@ -301,10 +385,11 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
 
             call nar(">The effect is instantaneous.","end")
             $ aftersperm = True
-            call her_main("I-I'm cumming...","cum","worriedCl") #small text
+            call her_main("{size=-4}I-I'm cumming...{/size}","cum","worriedCl")
             hide screen hermione_main
             m "What was that?"
             call her_main("I'm cumming!","silly","dead")
+            with vpunch
             hide screen hermione_main
             call nar(">Hermione's hand shoots under her skirt as she starts violently orgasming.")
             call her_main("What's wrong with me [genie_name]?","silly","ahegao")
@@ -314,9 +399,8 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
             hide screen hermione_main
             call nar(">Hermione loses conciousness.")
 
-    hide screen bld1
     hide screen hermione_main
-    call nar(">Hermione is in an unconscious heap on the floor.")
+    call blkfade
 
     menu:
         "-Carry her back to her room as is-":
@@ -326,6 +410,9 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
             hide screen hermione_main
             call nar(">You place her carefully back into her bed.")
             m "Sleep tight, slut."
+            if her_whoring <= 17 #When she still cares about points (Defined at the start)
+                m "30 points to Gryffindor..."
+                $ gryffindor += 30
         "-Clean her up and take her back to her room-":
             $ uni_sperm = False
             call nar(">You pick her limp body up and carry her to her room.","start")
@@ -333,10 +420,10 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
             call her_main("You want a kiss [genie_name]? Of course I don't mind...","open","closed")
             hide screen hermione_main
             call nar(">You place her carefully back into her bed.")
-            m "Sleep tight, Hermione."
-
-    call blkfade
-    pause.5
+            m "Sleep tight, [hermione_name]."
+            if her_whoring <= 17 #When she still cares about points (Defined at the start)
+                m "30 points to Gryffindor..."
+                $ gryffindor += 30
 
     hide screen hermione_main
     hide screen h_c_u
@@ -347,20 +434,69 @@ label potion_scene_3_1_2: #Scene where Hermione comes back addicted to your cum 
     hide screen desk
     show screen genie
     hide screen blktone
-    $ addicted = False
+
     $ uni_sperm = False
     $ aftersperm = False
     call hide_blkfade
 
-    $ hermione_zorder = 5
-
     $ hermione_busy = True
     jump main_room
+    
+label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the event maybe?
 
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
+    pause.2
 
+    call her_main("Take off your pants! No questions!","scream","worriedCl", xpos="mid", ypos="base", trans="hpunch")
+    m "Hold on a minute, what are you-....{w=0.5}{nw}"
+    call her_main("Shut it, just let me suck it.","annoyed","worriedL")
+    m "...."
 
-
-
+    menu:
+        "-Let her suck your dick-":
+            g9 "Be my guest, [hermione_name]."
+        "-Make her apologize first-":
+            m "I don't think that you deserve to suck my dick after being this rude."
+            m "Maybe if you apologized..."
+            call her_main("......","upset","wink")
+            m "No? Well in that case...{w=0.5}{nw}"
+            call her_main("{size=+5}I'm sorry!{/size}","scream","angryCl")
+            call her_main("Please let me suck your dick [genie_name]...","annoyed","closed")
+            m "Hmmm, I don't think that was sincere enough."
+            call her_main("Please [genie_name], let me suck your big, thick dick. Pretty please.","soft","worried")
+            m "Much better."
+    jump hg_pp_cumaddict_sucking # <-- Jumps to blowjob section from the intro, you can replace it with new writing if you'd like.
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
 
 label potion_scene_7: #hyper sensitivity potion
     m "I'd like you to drink a potion today."

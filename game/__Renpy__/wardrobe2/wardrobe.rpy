@@ -19,7 +19,10 @@ init python:
         if cheats_active or game_difficulty <= 2:
             renpy.show_screen("blktone5")
             renpy.with_statement(d3)
-            renpy.say(None, "{size=+6}> Try again at whoring level {color=#7a0000}"+str(value)+"{/color}.{/size}")
+            if active_girl == "tonks":
+                renpy.say(None, "{size=+6}> Try again at friendship level {color=#7a0000}"+str(value)+"{/color}.{/size}")
+            else:
+                renpy.say(None, "{size=+6}> Try again at whoring level {color=#7a0000}"+str(value)+"{/color}.{/size}")
             renpy.hide_screen("blktone5")
             renpy.with_statement(d3)
         return

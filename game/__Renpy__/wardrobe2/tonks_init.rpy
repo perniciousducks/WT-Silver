@@ -14,8 +14,16 @@ label tonks_wardrobe_init:
             tonks_hair_base = cloth_class(char="tonks", category="head", subcat="hair", type="hair", id="base", layers=1, color=[[243, 158, 189, 255]])
             
             tonks_cloth_top_auror = cloth_class(char="tonks", category="tops", subcat="auror", type="top", id="auror", layers=2, color=[[28, 27, 31, 255], [124, 42, 50, 255]])
+            tonks_cloth_top_auror2 = cloth_class(char="tonks", category="tops", subcat="auror", type="top", id="auror2", layers=1, color=[[124, 42, 50, 255]])
+            tonks_cloth_top_corset = cloth_class(char="tonks", category="tops", subcat="school", type="top", id="corset", layers=1, color=[[247, 206, 146, 255]])
             
             tonks_cloth_jeans = cloth_class(char="tonks", category="bottoms", subcat="trousers", type="bottom", id="jeans", layers=1, color=[[51, 104, 105, 255]])
+            
+            tonks_cloth_panties_base = cloth_class(char="tonks", category="panties", subcat="panties", type="panties", id="base", layers=1, color=[[124, 42, 50, 255]])
+            
+            tonks_cloth_garterbase = cloth_class(char="tonks", category="legwear", subcat="stockings", type="stockings", id="auror", layers=2, color=[[45, 45, 48, 255], [177, 168, 172, 255]])
+            
+            tonks_cloth_garterbase = cloth_class(char="tonks", category="bras", subcat="bras", type="bra", id="bikini", layers=2, color=[[124, 42, 50, 255], [177, 168, 172, 255]])
         
             ################
             #              #
@@ -28,7 +36,7 @@ label tonks_wardrobe_init:
                         "handright":   ["characters/tonks/body/arms/armfixR.png", 40, 0, 0, False],
                         "armleft":     ["l_arm_hips", 18, 0, 0, False],
                         "armright":    ["r_arm_hips", 2, 0, 0, False],
-                        "breasts":     [None, 6, 0, 0, False],
+                        "breasts":     ["base", 6, 0, 0, False],
                         "base":        ["base_01", 3, 0, 0, False],
                         "legs":        [None, 2, 0, 0, False],
                         "animation":   [None, 2, 0, 0, False]}

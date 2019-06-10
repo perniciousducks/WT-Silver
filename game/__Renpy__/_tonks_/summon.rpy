@@ -10,6 +10,7 @@ label summon_tonks:
     call tonks_random_clothing
 
     label tonks_requests:
+    $ tonks_haircolor = tonks_class.get_cloth("hair").color
 
     call ton_main(xpos="base",ypos="base")
     $ hide_transitions = False

@@ -63,6 +63,8 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             call set_ton_face(eyebrows = face)
         if pupils == None:
             call set_ton_face(pupils = face)
+        if hair == None:
+            call set_ton_face(hair = face)
 
     # Hair color changes
     if hair != None:

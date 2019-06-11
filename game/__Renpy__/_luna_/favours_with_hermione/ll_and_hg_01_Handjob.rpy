@@ -155,7 +155,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_kneel("I want... I want \"gryffindor\" to win the house cup...","open","down")
 
         if gryffindor > slytherin:
-            call lun_main("But \"gryffindor\" is already ahead by [gryffindor-slytherin] points...","pout","angry","raised","down")
+            call lun_main("But \"gryffindor\" is already ahead by "+str(gryffindor-slytherin)+" points...","pout","angry","raised","down")
             call lun_main("do you really think that they need any more points to win?","base","angry","sad","down")
             call her_kneel("...","soft","squintL")
         else:

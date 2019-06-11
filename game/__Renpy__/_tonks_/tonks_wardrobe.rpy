@@ -140,7 +140,7 @@ label tonks_wardrobe_check(section, arg=None):
                     elif random_number == 2:
                         call ton_main("It does look nice but I cannot show myself in such attire around hogwarts.",face="annoyed")
                     else:
-                        call ton_main("I would make me look like a whore, thanks but no thanks.",face="annoyed")
+                        call ton_main("It would make me look like a whore, thanks but no thanks.",face="annoyed")
                     
                     #Hint
                     $ wardrobe_fail_hint(arg.whoring*2)

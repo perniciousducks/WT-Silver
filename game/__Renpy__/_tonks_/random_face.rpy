@@ -1,6 +1,6 @@
 
 
-label set_ton_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=None):
+label set_ton_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=None, hair=None):
     hide screen tonks_main
 
     $ temp_mouth    = None
@@ -11,6 +11,21 @@ label set_ton_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
     $ temp_tears    = None
     $ temp_extra    = None
     $ temp_emote    = None
+    
+    if hair != None:
+        if hair in ("angry"):
+            $ tonks_class.get_cloth("hair").color = [[164, 34, 34, 255]]
+        elif hair in ("annoyed"):
+            $ tonks_class.get_cloth("hair").color = [[228, 93, 34, 255]]
+        elif hair in ("happy"):
+            $ tonks_class.get_cloth("hair").color = [[240, 240, 50, 255]]
+        elif hair in ("disgusted"):
+            $ tonks_class.get_cloth("hair").color = [[111, 205, 75, 255]]
+        elif hair in ("sad"):
+            $ tonks_class.get_cloth("hair").color = [[64, 75, 205, 255]]
+        elif hair in ("naughty", "horny"):
+            $ tonks_class.get_cloth("hair").color = [[242, 126, 168, 255]]
+        $ tonks_class.get_cloth("hair").cached = False
 
 
     #Face emotions

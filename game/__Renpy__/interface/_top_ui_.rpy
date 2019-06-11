@@ -57,14 +57,16 @@ label house_points:
     return
 
 #Close Button
-screen top_bar_close_button(offsetx = 0, offsety = 0, close_var=lambda : "Close", flip=-1):
+screen top_bar_close_button(xoffset=0, yoffset=0, close_var="Close"):
     imagebutton:
-        xpos 1080 -offsetx
-        ypos 0 -offsety
+        xpos 1080
+        ypos 0
+        xoffset xoffset
+        yoffset yoffset
         xanchor 1.0
         idle "interface/topbar/buttons/"+interface_color+"/ui_close.png"
         hover image_hover("interface/topbar/buttons/"+interface_color+"/ui_close.png")
-        action Return(close_var())
+        action Return(close_var)
         keysym "game_menu"
 
 #Top Bar UI

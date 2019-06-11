@@ -123,8 +123,9 @@ init python:
             return outfit_class(name=self.name, desc=self.desc, unlocked=self.unlocked, group=clothes)
             
         def save(self):
+            char = self.group[0].char
             self.group = []
-            clothing = get_character_object(active_girl).clothing
+            clothing = get_character_object(char).clothing
             for key in clothing:
                 if not clothing[key][0] == None:
                     self.group.append(clothing[key][0])

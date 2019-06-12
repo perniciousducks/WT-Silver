@@ -78,8 +78,8 @@ init python:
                 
     current_book = None
     
-label test_book:
-    $ book_test.open()
+label book_handle(book=None):
+    $ book.open()
     $ renpy.play('sounds/bookopen.mp3')
     show screen book_animator("book_page_next", 0.5)
     label book_after_init:
@@ -107,7 +107,7 @@ label test_book:
     elif _return == "Close":
         $ current_book.close()
         $ renpy.play('sounds/bookclose.mp3')
-        jump main_room
+        return
     
 screen book_menu(page, pages, title, page_title, page_text, page_overflow):
     tag book_menu

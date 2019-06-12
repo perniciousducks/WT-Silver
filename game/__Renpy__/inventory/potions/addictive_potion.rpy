@@ -20,7 +20,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
         if whoring <= 17: #Under when she stops caring about points too Much
                 her "And you'll pay me if I drink this?"
                 m "Of course...{w} I'll give you 30 points for Gryffindor house."
-    else:"
+    else:
         call her_main("What does this one do?","normal","frown")
         m "As always, it's going to be a surprise."
         if whoring <= 17: #Under when she stops caring about points too Much
@@ -101,6 +101,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
             call nar(">Without thinking of what she's doing she downs the rest of the potion.")
         else: #Tried and drank the potion successfully before
             # Johnny add writing here please :)
+            pass
             
     $ renpy.sound.play("sounds/gulp.mp3")
     call her_chibi("drink_potion","mid","base")
@@ -410,7 +411,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             hide screen hermione_main
             call nar(">You place her carefully back into her bed.")
             m "Sleep tight, slut."
-            if her_whoring <= 17 #When she still cares about points (Defined at the start)
+            if her_whoring <= 17: #When she still cares about points (Defined at the start)
                 m "30 points to Gryffindor..."
                 $ gryffindor += 30
         "-Clean her up and take her back to her room-":
@@ -421,7 +422,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             hide screen hermione_main
             call nar(">You place her carefully back into her bed.")
             m "Sleep tight, [hermione_name]."
-            if her_whoring <= 17 #When she still cares about points (Defined at the start)
+            if her_whoring <= 17: #When she still cares about points (Defined at the start)
                 m "30 points to Gryffindor..."
                 $ gryffindor += 30
 

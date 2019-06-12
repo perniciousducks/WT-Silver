@@ -18,8 +18,8 @@ init python:
                                    "postman": ["Cardgame", "Poster Boy", "Bought all posters from the token shop.", False, "interface/icons/posters/agrabah.png", False],
                                    "hats": ["Cardgame", "Mad Hatter", "Bought all hat decorations from the token shop.", False, "interface/icons/icon_gambler_hat.png", False],
                                    "daddy": ["Characters", "Who's your daddy?", "Let Hermione call you a {size=-5}(sugar){/size} daddy.", False, "interface/icons/head/head_hermione_2.png", True],
-                                   "pantiesfap": ["General", "I sneezed on them...", "Rubbed one out on Hermione's panties.", False, "characters/hermione/chibis/grope_breasts/masturbate_02.png", False],
-                                   "pantiesfapcho": ["General", "Exercise is important", "Rubbed one out on Cho's panties.", False, "characters/hermione/chibis/grope_breasts/masturbate_04.png", False],
+                                   "pantiesfap": ["Characters", "I sneezed on them...", "Rubbed one out on Hermione's panties.", False, "characters/genie/chibis/masturbating/02.png", False],
+                                   "pantiesfapcho": ["Characters", "Exercise is important", "Rubbed one out on Cho's panties.", False, "characters/genie/chibis/masturbating/02.png", False],
                                    "bros": ["Characters", "Bros before hoes", "Became best pals with Snape.", False, "interface/icons/head/head_snape_1.png", False],
                                    "knock": ["Characters", "*Knock* *knock*", "Go away! I'm busy.", False, "images/rooms/_objects_/doors/door_idle.png", True],
                                    "decorator": ["Cardgame", "Decorator", "Applied decoration in the office.", False, "interface/icons/trophies/stag.png", False],
@@ -31,7 +31,6 @@ init python:
                                    "puzzle": ["General", "Down the hatch!", "Wasted a bottle of unbelievably rare phoenix tears by drinking it.", False, "interface/icons/item_potion.png", True],
                                    "ending": ["General", "Bittersweet Farewell", "Finished the game.", False, "interface/icons/book_silver.png", True],
                                    #1.37 HG achievements
-                                   "NONAMEYET": ["Characters", "BLANK", "BLANK", False, "interface/icons/head/head_hermione_2.png", False],
                                    "busted": ["Characters", "BUSTED!", "... a nut when got busted for busting a nut.", False, "interface/icons/head/head_hermione_2.png", False],
                                    "herstrip": ["Characters", "Dance lessons", "Even elephants have more grace when they're moving, girl.. -Severus Snape", False, "interface/icons/head/head_hermione_2.png", False],
                                    "hertits": ["Characters", "Boobs Lover", "*ahem* I mean.. books, yes, books lover!", False, "interface/icons/head/head_hermione_2.png", False],

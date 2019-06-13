@@ -42,6 +42,9 @@ init python:
 
         def __init__(self):
             self.achievements = persistent.achievements
+            
+        def status(self, id):
+            return self.achievements.get(id)[3]
 
         def unlock(self, id, silent=False):
             try:
@@ -79,50 +82,51 @@ init python:
 
 init:
     python:
+        def restart_achievements_thread():
+            renpy.invoke_in_thread(update_achievements)
+            return
         def update_achievements():
-            temp_var = 0
-            if gold >= 10000:
-                achievement.unlock("gold")
-                temp_var += 1
+            import time
+            while True:
+                time.sleep(5)
+                
+                if not achievement.status('gold') and gold >= 10000:
+                    achievement.unlock("gold")
 
-            if wine >= 25:
-                achievement.unlock("drunkard")
-                temp_var += 1
+                if not achievement.status('drunkard') and wine >= 25:
+                    achievement.unlock("drunkard")
 
-            if (day-phoenix_fed_counter) >= 50:
-                achievement.unlock("peta")
-                temp_var += 1
+                if not achievement.status('peta') and (day-phoenix_fed_counter) >= 50:
+                    achievement.unlock("peta")
 
-            if phoenix_petted_counter >= 25:
-                achievement.unlock("petpal")
-                temp_var += 1
+                if not achievement.status('petpal') and phoenix_petted_counter >= 25:
+                    achievement.unlock("petpal")
 
-            if sna_friendship_maxed:
-                achievement.unlock("bros")
-                temp_var += 1
+                if not achievement.status('bros') and sna_friendship_maxed:
+                    achievement.unlock("bros")
 
-            if her_whoring >= 24:
-                achievement.unlock("overwhored")
-                temp_var += 1
+                if not achievement.status('overwhored') and her_whoring >= 24:
+                    achievement.unlock("overwhored")
 
-            if stat_fireplace_counter >= 5:
-                achievement.unlock("fireplace")
-                temp_var += 1
+                if not achievement.status('fireplace') and stat_fireplace_counter >= 5:
+                    achievement.unlock("fireplace")
 
-            if stat_reports_counter >= 5:
-                achievement.unlock("workaholic")
-                temp_var += 1
+                if not achievement.status('workaholic') and stat_reports_counter >= 5:
+                    achievement.unlock("workaholic")
+            return
+                
+        #config.interact_callbacks.append(update_achievements)
+        config.after_load_callbacks.append(restart_achievements_thread)
 
-            if temp_var >= 8:
-                renpy.hide_screen("achievement_block")
+#screen achievement_block():
+    #tag achievement_block
 
-screen achievement_block():
-    tag achievement_block
-
-    timer 5.0 action Function(update_achievements) repeat True
+    #timer 5.0 action Function(update_achievements) repeat True
 ###
 init:
     $ achievement = achievement_class()
+    
+    #$ renpy.invoke_in_thread(update_achievements)
 
 label popup(string="", title="", icon=None, xpos=0, ypos=60, sound=True, soundfile='sounds/achievement.mp3'):
     if sound:

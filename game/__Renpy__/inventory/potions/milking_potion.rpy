@@ -1,5 +1,3 @@
-
-
 label potion_scene_11: #Milking potion
 
     if potion_scene_11_progress == 0 or her_whoring < 13:

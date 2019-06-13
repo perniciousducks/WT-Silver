@@ -1,4 +1,8 @@
 label phoenix:
+    menu:
+        "start alchemy test":
+            $ start_alchemy()
+
     if not bird_examined or day == 1:
         menu:
             "-Examine-" if not bird_examined:

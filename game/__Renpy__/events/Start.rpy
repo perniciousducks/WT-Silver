@@ -174,8 +174,9 @@ label start_wt:
                 $ skip_to_hermione = True
                 $ skip_after_hermione = True
 
-
-    show screen achievement_block()
+    # Run achievements thread
+    $ renpy.invoke_in_thread(update_achievements)
+    #show screen achievement_block()
 
     ### GAME STARTS HERE ###
     stop music fadeout 1

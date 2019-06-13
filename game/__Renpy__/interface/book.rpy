@@ -20,6 +20,7 @@ init python:
             current_book = self
             self.page = max(0, min(page, self.pages))
             self.refresh()
+            return
             
         # Hide book screen
         def close(self):
@@ -27,16 +28,19 @@ init python:
             current_book = None
             self.page = 0
             renpy.hide_screen("book_menu")
+            return
             
         # Next page
         def next(self):
             self.page = min(self.page+2, self.pages)
             self.refresh()
+            return
             
         # Previous page
         def prev(self):
             self.page = max(self.page-2, 0)
             self.refresh()
+            return
             
         # Max 882 characters per page.
         def get_text(self):
@@ -54,6 +58,11 @@ init python:
             
         def refresh(self):
             renpy.show_screen("book_menu", page=self.page, pages=self.pages, title=self.title, page_title=self.get_title(), page_text=self.get_text(), page_overflow=self.overflow)
+            return
+            
+        def append(self, new_page):
+            self.contents.append(new_page)
+            self.pages = len(self.contents)-1
             return
             
     def text_image_scale(tag, argument, contents):

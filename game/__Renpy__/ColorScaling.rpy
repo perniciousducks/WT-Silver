@@ -707,6 +707,10 @@ init python:
         sprite = Composite((width, height), (-posx, -posy), sprite)
             
         return (sprite, zoom) 
+        
+    def scale_multi(image, zoom):
+        size = renpy.image_size(image)
+        return im.Scale(image, size[0]*zoom, size[1] * zoom)
  
     def bilear_scale(src, size, dest=None):
         """

@@ -129,7 +129,10 @@ screen list_menu_item(menu_item, ypos=0):
             ysize 55
             text menu_item.get_description() size 12
 
-        text menu_item.get_buttom_right() xalign 1.0 yalign 1.0
+        if menu_item.number > 0:
+            text menu_item.get_buttom_right() + str(menu_item.number) xalign 1.0 yalign 1.0
+        else:
+            text menu_item.get_buttom_right() xalign 1.0 yalign 1.0
 
 
 
@@ -437,9 +440,6 @@ screen character_select_menu(character_list=[], menu_text="menu name", xposition
 ### Menu Init ###
 
 init -2 python:
-
-    def whiteTint(image):
-        return im.MatrixColor( image, im.matrix.tint(1.1, 1.1, 1.1))
 
     def grayTint(image):
         return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(1.1, 1.1, 1.1))

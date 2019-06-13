@@ -1,44 +1,86 @@
 screen alchemy_screen(ingredient):
     zorder 3
-    textbutton ingredient_pos[0].name xalign 0.05 yalign 0.33 action Return(0)
-    textbutton ingredient_pos[1].name xalign 0.15 yalign 0.33 action Return(1)
-    textbutton ingredient_pos[2].name xalign 0.25 yalign 0.33 action Return(2)
-    textbutton ingredient_pos[3].name xalign 0.35 yalign 0.33 action Return(3)
+    $ alchemy_zoom = 0.25
+    add "interface/alchemy/Desk.png" zoom 0.25
+    add "interface/alchemy/Firepit_glow.png" zoom 0.25
     
+    for i in range(0,4):
+        imagebutton:
+            xpos 30 +(ingredient_pos[i].ranx*i)
+            ypos 120 + ingredient_pos[i].rany + (-30*(i%2))
+            focus_mask True
+            idle scale_multi(ingredient_pos[i].jar, alchemy_zoom)
+            hover im.MatrixColor(scale_multi(ingredient_pos[i].jar, alchemy_zoom),im.matrix.brightness(0.12))
+            action Return(i)
+    
+    imagebutton:
+        focus_mask True
+        idle scale_multi("interface/alchemy/Book.png", alchemy_zoom)
+        hover im.MatrixColor(scale_multi("interface/alchemy/Book.png", alchemy_zoom),im.matrix.brightness(0.12))
+        action Return("book")
+        
+    imagebutton:
+        focus_mask True
+        idle scale_multi("interface/alchemy/Bellows.png", alchemy_zoom)
+        hover im.MatrixColor(scale_multi("interface/alchemy/Bellows.png", alchemy_zoom),im.matrix.brightness(0.12))
+        action Return("bellow")
+        
+    imagebutton:
+        focus_mask True
+        idle scale_multi("interface/alchemy/Pestle_and_Mortar.png", alchemy_zoom)
+        hover im.MatrixColor(scale_multi("interface/alchemy/Pestle_and_Mortar.png", alchemy_zoom),im.matrix.brightness(0.12))
+        action Return("mortar")
+        
+    imagebutton:
+        focus_mask True
+        idle scale_multi("interface/alchemy/Chopping_Board.png", alchemy_zoom)
+        hover im.MatrixColor(scale_multi("interface/alchemy/Chopping_Board.png", alchemy_zoom),im.matrix.brightness(0.12))
+        action Return("cut_board")
+    
+    add Solid((31,43,51)) zoom 0.1 xpos 675 ypos 200 rotate 90
+    add im.MatrixColor(im.Scale("interface/alchemy/one_pixel.png", 40, 50,  bilinear=False), im.matrix.tint(0.1, 0.5, 0.15)) xpos 720 ypos 250
+    
+    imagebutton:
+        focus_mask True
+        idle scale_multi("interface/alchemy/Cauldron.png", alchemy_zoom)
+        hover im.MatrixColor(scale_multi("interface/alchemy/Cauldron.png", alchemy_zoom),im.matrix.brightness(0.12))
+        action Return("brew")
+    
+    
+    
+
+        
     textbutton "ingr" xalign 0.10 yalign 0.10 action Return("ingredient")
-    textbutton "garbage" xalign 0.66 yalign 0.33 action Return("garbage")
-    
-    textbutton "book" xalign 0.10 yalign 0.80 action Return("book")
-    
-    
-    textbutton "brew" xalign 0.5 yalign 0.33 action Return("brew")
-    textbutton "cut_board" xalign 0.33 yalign 0.66 action Return("cut_board")
-    
+    textbutton "garbage" xalign 0.15 yalign 0.10 action Return("garbage")
+
     use top_bar_close_button
  
 screen display_ingredient(ingredient, align):
     tag ingredient_screen
     zorder 4
-    add ingredient.jar xalign align[0] yalign align[1] zoom 0.2
+    add ingredient.jar xalign align[0] yalign align[1] zoom 0.2 rotate 315
     
 screen move_ingredient(ingredient, align, move_align):
     tag ingredient_screen
     zorder 4
-    add ingredient.jar zoom 0.2 at move_image(align, move_align)
+    add ingredient.jar zoom 0.2 rotate 315 at move_image(align, move_align)
     
 init python: 
     water = ingredient("water")
     stuff = ingredient("stuff")
     
-    ingredient_pos = [water, stuff, water, stuff]
+    ingredient_pos = [water.clone(), stuff, water, stuff]
     
-    water_stuff = recipe([water,stuff])
-    stuff_water = recipe([stuff,water])
+    water_stuff = recipe([water,stuff], "Water Brew", "A potion based on water and stuff very simple to make just put water and then stuff into the coldron.")
+    stuff_water = recipe([stuff,water], "Stuff Brew", "Something something dark side")
+    
+    
     
     all_ingredients = [water, stuff]
     all_recipe = [water_stuff, stuff_water]
     
     def start_alchemy():
+        
         recipe_state = 0
         selected_ingredient = None
         holding_ingredient = None
@@ -79,7 +121,7 @@ init python:
                 elif _return == "ingredient":
                     renpy.show_screen("list_menu", all_ingredients, "Ingredients")
                     _return = ui.interact()
-                    ingredient_pos[selected_ingredient] = _return
+                    ingredient_pos[selected_ingredient] = _return.clone()
                     selected_ingredient = None
                     holding_ingredient = None
                     renpy.hide_screen("list_menu")
@@ -87,5 +129,11 @@ init python:
                 elif _return == "garbage":
                     selected_ingredient = None
                     holding_ingredient = None
+                #elif _return == "book":
+                    
+                 
+                elif _return == "Close":
+                    renpy.hide_screen("alchemy_screen")
+                    renpy.jump("return_office")
                 
     

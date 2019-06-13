@@ -8,14 +8,19 @@ init:
 
 init -1 python:
     class ingredient(item_class):
-        jar = "interface/icons/item_potion.png"
+        jar = "interface/alchemy/Ingredient_Jar.png"
         imagepath = "interface/icons/item_lollipop.png"
         name = ""
         current_state = "hand"
         cut_ingredient = None
         number = 4
+        ranx = 0
+        rany = 0
+        
         def __init__(self, ingredient):
             self.name = ingredient
+            self.ranx = renpy.random.randint(80, 100)
+            self.rany = renpy.random.randint(0, 20)
             
         def update_state(self, new_state):
             if new_state == "cut_board":
@@ -33,12 +38,12 @@ init -1 python:
         def show_screen(self):
             renpy.hide_screen("display_ingredient")
             if self.current_state == "hand":
-                renpy.show_screen("display_ingredient", self, (0.5,0.5))
+                renpy.show_screen("display_ingredient", self, (0.5,0.2))
             elif self.current_state == "cut_board":
-                renpy.show_screen("move_ingredient", self, (0.5,0.5), (0.33,0.66))
+                renpy.show_screen("move_ingredient", self, (0.5,0.2), (0.40,0.55))
                 renpy.pause(2)
                 renpy.hide_screen("move_ingredient")
-                renpy.show_screen("display_ingredient", self, (0.33,0.66))
+                renpy.show_screen("display_ingredient", self, (0.40,0.55))
         
         def clone(self):
             return ingredient(self.name)
@@ -46,10 +51,13 @@ init -1 python:
     class recipe:
         recipe_steps =[]
         finish_label =""
+        name = ""
+        description = ""
         
-        
-        def __init__(self, recipe):
+        def __init__(self, recipe, name, description):
             self.recipe_steps = recipe
+            self.name = name
+            self.description = description
         
         def validate(self, action, current_state):
             if self.recipe_steps[current_state] == action:

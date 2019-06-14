@@ -1,10 +1,6 @@
 
 
 label end_hermione_event:
-
-    hide screen hermione_main
-    hide screen hermione_main_ass
-
     call hide_characters
     hide screen bld1
     hide screen blktone
@@ -80,6 +76,16 @@ label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, t
             show screen no_groping_02 # Towards Door.
         else:
             show screen no_groping_01 # Towards Cupboard.
+
+    elif action in ["admire_ass_jerk_off","admire_ass_cum"]:
+        if flip:
+            $ masturbating = True
+            show screen chair_left
+            if action == "admire_ass_jerk_off":
+                call gen_chibi("jerking_off","behind_desk","base") # Fix position
+            if action == "admire_ass_cum":
+                call gen_chibi("cumming","behind_desk","base") # Fix position
+            show screen no_groping_02
 
     elif action in ["grope_breasts"]:
         show screen chair_left

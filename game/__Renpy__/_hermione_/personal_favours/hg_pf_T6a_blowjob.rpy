@@ -451,7 +451,7 @@ label hg_hidden_blowjob: #Call label. Returns.
     m "Yes, good girl..."
     call her_main("*Slurp!* *Gobble!* *Slurp!*","sucking","ahegao")
 
-    call play_sound("knocking") #Sound someone knocking on the door.
+    call play_sound("knocking")
     call nar("> *Knock-knock-knock!*")
     call her_main("{size=+7}!!!{/size}","sucking","ahegao_mad")
     m "Hm?"

@@ -325,8 +325,6 @@ label luna_progress_init:
         $ luna_reverted = False
         $ luna_addicted = False
 
-        $ days_to_luna = 0
-
         #Names
         $ lun_genie_name = "Professor"
         $ lun_name = "Miss Lovegood"

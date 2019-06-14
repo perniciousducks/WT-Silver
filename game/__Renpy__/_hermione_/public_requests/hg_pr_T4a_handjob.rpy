@@ -475,7 +475,6 @@ label hg_pr_handjob_T3_intro_E1:
 
     #elif her_whoring >= 21:
 
-    $ sucked_off_ron = True #Makes sure this event is not repeated twice.
     stop music fadeout 1.0
 
     # HERMIONE HAS CUM ON HAIR.

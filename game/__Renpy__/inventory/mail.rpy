@@ -2,6 +2,14 @@
 
 label read_letter:
 
+    if not always_read_letter:
+        menu:
+            "-Read Letter-":
+                pass
+            "-Shoosh the bird away!-":
+                call shoosh_owl_away
+                jump main_room
+
     $ letter = letter_queue_list[0]
 
     $ menu_x = 0.5
@@ -36,10 +44,7 @@ label read_letter:
         hide screen bld1
         with d3
 
-        if letter.label == "letter_from_hermione_A" and day == 1:
-            jump snape_intro_E1 # First event with Snape.
-
-    call screen main_room_menu
+    jump main_room
 
 
 screen letter():
@@ -52,7 +57,30 @@ screen letter():
 
     zorder 4
 
+label shoosh_owl_away:
+    show screen chair_left
+    show screen desk
+    call gen_chibi("image", pic="standing", "420", "160", flip=True) # Update position and sprite
+    with d5
+    pause.2
 
+    g4 "Fuck off, stupid bird!"
+    pause.1
+
+    call gen_chibi("animation", pic="genie_rum_ani", "360", "80", flip=False)
+    call play_sound("owl")
+    hide screen owl
+    with hpunch
+    pause.8
+
+    call gen_chibi("sit_behind_desk")
+    with d5
+    pause.5
+
+    $ owl_away = True
+    $ owl_away_counter += 1
+
+    return
 
 ### Letter Attachment Call Labels ###
 
@@ -187,7 +215,7 @@ label get_package:
                 gift = item.object
                 gift.number += item.quantity
                 gift_list.append([gift.name, gift.get_image(), item.quantity])
-                
+
         if len(gift_list) > 0:
             renpy.block_rollback()
             if len(gift_list) == 1:
@@ -204,8 +232,8 @@ label get_package:
                         txt_gifts += str(item[2])+" "+item[0]+".{/size}"
                 renpy.block_rollback()
                 renpy.call("give_reward","You have received your ordered items:\n"+txt_gifts, "interface/icons/box_brown_"+str(random.randint(1, 4))+".png")
-                
-            
+
+
     hide screen blktone
     with d3
 
@@ -244,6 +272,11 @@ label __init_variables:
         $ letter_paperwork_report_OBJ = mail_letter_class()
     $ letter_paperwork_report_OBJ.text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing a report this week.\n\nYou will find you payment in the attached purse.{/size}\n\n\n{size=-3}-With deepest respect-{/size}\n\n{size=-2}The Ministry of Magic.{/size}"
     $ letter_paperwork_report_OBJ.label = "letter_paperwork_report"
+
+    if not hasattr(renpy.store,'letter_favor_complaint_OBJ'):
+        $ letter_favor_complaint_OBJ = mail_letter_class()
+    $ letter_favor_complaint_OBJ.text = "{size=-7}Dear Albus Dubmbledore,\n\n favour trading bad!\nSent Auror to Hogwarts\n\nCornelius Fudge,\nDepartment Head: Improper Use of Magic Office{/size}"
+    $ letter_favor_complaint_OBJ.label = "" # Dev Note Add comment on letter!
 
     if not hasattr(renpy.store,'letter_curse_complaint_OBJ'):
         $ letter_curse_complaint_OBJ = mail_letter_class()

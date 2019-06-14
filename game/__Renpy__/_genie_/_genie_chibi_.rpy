@@ -6,7 +6,7 @@
 ###  GENIE CHIBI UNIVERSAL SCREEN ###
 screen g_c_u():
     tag genie
-    add g_c_u_pic at Position(xpos=gen_chibi_xpos, ypos=gen_chibi_ypos)
+    add g_c_u_pic xpos gen_chibi_xpos ypos gen_chibi_ypos xzoom gen_chibi_flip
     zorder 3
 
 
@@ -263,12 +263,19 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
     #Genie Chibi Actions.
 
     #Special Images. These need custom xpos/ypos positions!
-    if action == "image":
-
-        #Add specific xpos and ypos number when calling.
+    if action in ["image","animation"]:
+        if flip:
+            $ gen_chibi_flip = -1
+        else:
+            $ gen_chibi_flip = 1
 
         if pic != "":
-            $ s_c_u_pic = "characters/genie/chibis/"+str(pic)+".png"
+
+            #Add specific xpos and ypos number when calling.
+            if action == "animation":
+                $ g_c_u_pic = pic
+            else:
+                $ g_c_u_pic = "characters/genie/chibis/"+str(pic)+".png"
 
         show screen g_c_u
 

@@ -1,5 +1,242 @@
 
 
+label tonks_intro_E1:
+
+    pause.5
+    call bld
+    call play_sound("knocking")
+    "*Knock on door*"
+    m "Who is it?"
+    ton "It’s Tonks-"
+    ton "*Ugh*..."
+    ton "(...)"
+    ton "Nymphadora Tonks, Sir."
+    ton "Ministry of Magic, Auror division."
+
+    if letter_favor_complaint_OBJ.read:
+        g4 "(Oh shit, the fuzz...)"
+        m "(They must’ve found out I’m not actually Dumbywho!)"
+        ton "Sir?"
+        m "Governments are all the same with their bloody rules...{w=2.0}{nw}"
+        ton "Sir, I’m here to discuss an important matter with you regarding your students."
+        m "Oh... is that all?"
+        m "I mean, of course. do come in!"
+    else:
+        m "(Another female?)"
+        m "(She sounds a bit too old to be a student...)"
+        g9 "(Better to just let my charm play...)"
+        m "Yes... come in."
+
+    #*Tonks walks in*
+
+    call ton_main(face="neutral", xpos="right", ypos="base")
+
+    ton "Thank you, I do apologize for arriving unannounced."
+    m "(Oh shit, she’s hot...)"
+    ton "Okay then, let’s get this over with."
+    ton "So... Professor Dumbledore, are you aware of why the Ministry sent me here?"
+
+    if letter_favor_complaint_OBJ.read:
+        m "More or less..."
+        ton "We have received a letter by a certain \"Hermione Granger\", about ongoing favour tradings here at this school."
+        m "Yes she likes to do that..."
+        ton "Trading favors?"
+        m "(I wished...)"
+        m "No. She likes to write letters... lots of 'em..."
+    else:
+        m "I can’t say that I do."
+        ton "So you haven't had any complaints from students in regards to \"favour trading\"?"
+        g4 "(Oh, fuck...)"
+        g9 "That depends...{w=0.3} What sort of favours are you referring to?"
+        ton "..."
+        ton "Well, we’ve received a letter from Miss Hermione Granger."
+        m "Oh, good..."
+        g4 "..."
+
+    ton "I take it you’re acquainted with Miss Granger?"
+    m "Quite..."
+    ton "Fantastic. So, the reason I’m here is because of said letter."
+    ton "And to address the concerns this student has presented to the ministry."
+    m "I see..."
+
+    menu:
+        "-You don't have any proof!-":
+            m "We aren't selling sexual favours to our students."
+            ton "Who said anything about sexual favours?"
+            m "Shit..."
+            ton "Go on..."
+
+        "-What was mentioned in the letter?-":
+            ton "Miss Granger wrote about several Slytherin girls that inquire to do favours for their male     teachers."
+            m "So what?"
+            ton "Those favours tend to be very \"sexual\" in nature."
+            m "Shit..."
+
+    m "Well, I can’t say I’m very well versed in these... very,{w=0.4} very rare occurrences."
+    m "I was actually just about to begin my own investigation in the matter."
+    ton "Don't worry about it, Professor."
+    ton "The Ministry has sent me specifically to investigate in case there is any truth to Miss Granger's concerns."
+    ton "I’ll be happy to look into this for you."
+    m "Now, now. That shouldn’t be-"
+    ton "Investigating is in my job description, after all..."
+    ton "I’ll just stay for a little while to investigate the claims and question the students."
+    m "But you can’t-"
+    ton "Do have some confidence in me, Professor. This is what I was trained for..."
+    m "Well, wait just one minute..."
+    ton "Don’t worry, I’ve already gotten a room down in Hogsmeade, I’ll be staying there so no worries about accommodations."
+    m "Great..."
+    ton "And you are not to speak to any of the other professors and students about our meeting. I’d like to keep my presence unknown."
+    m "(...)"
+    ton "Good day to you sir."
+
+    # Tonks leaves.
+    call hide_characters
+
+    call bld
+    m "Shit..."
+    m "I better talk to Snape about this..."
+
+    $ tonks_intro.E1_complete = True
+    $ nt_event_pause += 1
+
+    jump main_room
+
+
+label tonks_intro_E2:
+
+    "Dev Note" "Add knocking interaction."
+
+    call ton_main(face="neutral", xpos="right", ypos="base")
+
+    m "Tonks... Have you found any evidence yet?"
+    ton "Sadly no, Professor."
+    ton "I haven't gotten a chance to investigate properly."
+    ton "I was rather occupied listening to Miss Granger's own investigations first."
+    ton "That girl sure is something, isn't she?"
+    ton "Not that I minded listening to her."
+    ton "(With her cute little accent...)"
+    ton "I offered her to stay over the evening and tell me everything, while I enjoyed a glass of firewhiskey..."
+    ton "She was very thorough in writing down the happenings she's witnessed."
+
+    # Tonks could tell you about some of Hermione's
+
+    ton "Anyhow, she had no proof of any such activities. It's all just accusations."
+    ton "As much as I wish they were true..."
+    m "(Huh?)"
+    ton "So I could conclude my investigations early, of course."
+    ton "And bring this favour trading business to an end, once and for all."
+
+    # Tonks leaves.
+    call hide_characters
+
+    $ tonks_intro.E2_complete = True
+    $ nt_event_pause += 1
+
+    jump main_room
+
+
+label tonks_intro_E3:
+
+    call bld
+    call play_sound("knocking")
+    "*Loud kocking*"
+
+    call play_sound("knocking")
+    "*Knock on door*"
+
+    m "............"
+    call play_sound("knocking")
+
+    ton "Professor Dumbledore, I know you’re in there..."
+    m "Who is it?"
+    ton "Tonks!"
+    m "Who?"
+    ton "..."
+    ton "Nymphadora Tonks...{w=1.0} Ministry of Magic, Auror division."
+    m "I see..."
+    m "Do you mind coming another time, I’m very busy...{w} watering the bird."
+    ton "..."
+    ton "I’m coming in."
+
+    #*Tonks enters the office*
+    call ton_main(face="angry", xpos="right", ypos="base")
+
+    m "Oh, that Tonks, my apologies. I thought you might have been someone else."
+    m "How’s the investigation going? Nothing to report I gather?"
+    ton "On the contrary..."
+    m "(Darn...)"
+    ton "In fact I caught one of your teachers engaged in rather...{w=0.3} adulterous activities with a couple of students."
+    m "A couple...{w} Like, at the same time?"
+    ton "Indeed, and could you guess who this teacher might be?"
+    m "Probably Sn-"
+    ton "Severus Snape!"
+    m "Oh, no! How could this have happened in my school!"
+    ton "Cut the bullshit, I know you’re in on it!"
+    g4 "What, how... I mean, of course I’m not. What are these accusations?"
+    ton "Surely these kinds of activities is not the proper way for a headmaster to behave."
+    g4 "But I didn’t..."
+    ton "Well, I got proof confirming the opposite."
+    g4 "I never even got to..."
+    ton "You’ll surely end up in azkaban prison for letting this go on under your supervision."
+    g4 "No, I hate confined spaces!"
+    ton "..."
+    ton "And I can’t believe things had gone this far already without my involvement."
+    g4 "Please don’t put me in...{w=0.4} Wait,{w=0.2} already?"
+    ton "I assumed it would’ve taken at least another year before things reached anywhere close to this stage, at first I thought it was just pure ignorance from your part."
+    ton "But if you’re also in on it, it makes a lot more sense..."
+    m "Wait... hold on a minute."
+    m "The ministry is in on this too?"
+    ton "Oh, by Merlins left testicle..."
+    ton "Of course they’re not, I am!"
+    m "Why would you..."
+    ton "Who do you think kept things quiet with the ministry and intercepted any correspondence to begin with."
+    ton "Well, until miss Granger had hers sent directly to one of the other departments..."
+    m "But this doesn’t make any sense, why would a ministry worker. That doesn’t even work here be in on any illicit goings on confined within the school."
+    ton "Panty pictures!"
+    m "What!"
+    ton "Well, I’m fine with any photographs really, ankles, butts, underwear..."
+    m "I see..."
+    ton "Feet!"
+    g4 "Feet?"
+    ton "Well, anything I can get really."
+    m "(This lady’s a pervert...)"
+    ton "There seems to be a great opportunity here..."
+    m "I’d rather keep my shoes on thank you!"
+    ton "Not that, silly."
+    ton "It appears that there’s finally an opening for me."
+    ton "The ministry sent me to check out what they assumed to be a rumour."
+    ton "And whilst I could just squash the rumour and go back to a dull office job, I know for a fact that they’ve been looking at any excuse to have an adversary here at Hogwarts."
+    m "Then what are you suggesting?"
+    ton "Well, I’m suggesting I continue keeping my own motives to myself, squash the rumour but suggest to the ministry that I could take a position here in the guise of continuing the investigation."
+    m "So, you’re going to pretend that you’re doing them a favour and continuing your diligent allegiance with the ministry?"
+    m "Whilst taking a normal teaching position here with the purpose to get closer to the students?"
+    ton "Exactly!"
+    m "(I think I might’ve come across this universe’s version of me...)"
+    ton "So what do you say, Dumbledore? Any vacancies you need filled?"
+    ton "Oh, who am I kidding. I already know you’re always in the need of a Defence against the Dark arts teacher."
+    m "Are you sure it’s such a good idea..."
+    ton "The alternative would be me bringing this to the ministry’s attention."
+    g9 "Welcome aboard!"
+    m "You can take whatever position is vacant."
+    ton "Great, I already brought my things with me!"
+    m "Of course you did..."
+    ton "I’ll make sure to keep you updated."
+    m "Marvelous..."
+
+    #*Tonks leaves*
+    call hide_characters
+
+    $ tonks_unlocked = True
+    $ achievement.unlock("unlockton")
+    $ tonks_busy = True
+
+    $ tonks_intro.E3_complete = True
+    $ nt_event_pause += 1
+
+    jump main_room
+
+
+
 label new_tonks_intro:
     #knock on the office door
     #option to ask who it is

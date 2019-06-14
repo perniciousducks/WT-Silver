@@ -24,7 +24,7 @@ label summon_snape:
                         #You tell Snape about the curses.
                         if hermione_on_the_lookout: #Already talked to Hermione.
                             $ hermione_finds_astoria = True
-                            $ days_without_an_event = 0 #So the event won't happen right after.
+                            $ ag_event_pause = 2 # Event happens in 2 days.
                         if snape_on_the_lookout:
                             call sna_main("I'm still on the lookout, Genie.","snape_01")
                             call sna_main("If I find the little maggot that casts those spells,...","snape_10")
@@ -232,14 +232,21 @@ label snape_dates:  ### HANGING WITH SNAPE ###
     # High Priority Events First!
 
     # Hermione
-    if snape_against_hermione: #Turns True after hermione_intro_E1 (Hermione shows up for the first time).
-                               #Activates special event when hanging out with Snape next time.
+    if hermione_intro.E1_complete and not hang_with_snape.E1_complete:
         show screen with_snape #Makes sure the scene is not animated...
-        jump special_date_with_snape
+        jump hang_with_snape_E1
 
-    if snape_against_hermione_02: #Activates after second visit from Hermione (hermione_intro_E2).
+    if tonks_intro.E1_complete and not hang_with_snape.E3_complete:
         show screen with_snape #Makes sure the scene is not animated...
-        jump special_date_with_snape_02
+        jump hang_with_snape_E3
+
+    if hermione_intro.E2_complete and not hang_with_snape.E2_complete:
+        show screen with_snape #Makes sure the scene is not animated...
+        jump hang_with_snape_E2
+
+    if tonks_intro.E3_complete and not hang_with_snape.E4_complete:
+        show screen with_snape #Makes sure the scene is not animated...
+        jump hang_with_snape_E4
 
     # Cho
     if cho_intro_state == "talk_with_snape":
@@ -345,8 +352,7 @@ label snape_dates:  ### HANGING WITH SNAPE ###
 
 
 ### SPECIAL DATE ###
-label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
-    $ snape_against_hermione = False #Turns True after hermione_intro_E1. Activates special event (THIS EVENT) when hanging out with Snape next time.
+label hang_with_snape_E1: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     call sna_main("...........................","snape_31", ypos="head")
     m "...............................?"
     call sna_main("I hate her so much...","snape_08")
@@ -432,14 +438,15 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     m "Alright..."
 
 
-    $ hermione_is_waiting_01 = True #Triggers another visit from Hermione. (Event_09)
+    $ hang_with_snape.E1_complete = True
 
     jump day_start
 
 
 
-label special_date_with_snape_02:
-    # TAKES PLACE AFTER SECOND VISIT FROM HERMIONE. (Where she says that she sent letter to the ministry.)
+label hang_with_snape_E2:
+    # TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
+    # Where she says that she sent letter to the ministry.
     call bld
     m "......................."
     m "Hermione Granger came by again..."
@@ -583,16 +590,36 @@ label special_date_with_snape_02:
 
     ">You spend the rest of the evening in Snape's company drinking your worries away."
 
-    $ snape_against_hermione_02 = False #Turns True after event_10. Activates special event (THIS EVENT) when hanging out with Snape next time.
-    $ hermione_is_waiting_02 = True #Triggers another visit from Hermione. (Event_11)
+    $ hang_with_snape.E2_complete = True
+    $ ss_event_pause += 1
 
-    $ days_without_an_event = 0 #Making sure next even will not start right away.
     jump day_start
 
 
+# You discuss Tonks and the Ministry with Snape.
+label hang_with_snape_E3:
+
+    "Dev Note" "Add writing in which Snape and Genie discuss the Ministry's involvement."
+
+    $ hang_with_snape.E3_complete = True
+    $ ss_event_pause += 1
+
+    jump day_start
+
+
+# You inform Snape that Tonks is now an ally and has been made a teacher.
+label hang_with_snape_E4:
+
+    "Dev Note" "Add writing in which you tell Snape that Tonks is now a teacher."
+
+    $ hang_with_snape.E4_complete = True
+    $ ss_event_pause += 1
+
+    jump day_start
+
 
 label special_date_with_snape_03:
-    # TAKES PLACE AFTER SECOND VISIT FROM HERMIONE. (Where she says that she sent letter to the ministry.)
+    # TAKES PLACE AFTER Hermione has danced for you and Snape.
     call sna_main("So...","snape_31", ypos="head")
     call sna_main("You got the girl to strip for you...","snape_35")
     call sna_main("And you didn't even invite me?!","snape_08")
@@ -630,8 +657,6 @@ label special_date_with_snape_03:
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
-
-    $ days_without_an_event = 0 #Making sure next even will not start right away.
 
     jump day_start
 

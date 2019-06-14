@@ -27,7 +27,7 @@ label ball_ending_start:
 
 label ball_ending_E1:
 
-    $ days_without_an_event = 0
+    $ ss_event_pause += 2
 
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
 

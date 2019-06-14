@@ -41,9 +41,7 @@ label her_init:
         $ hermione_perm_expand_ass       = False
 
         $ hermione_expand_breasts           = False #Temporary Expand
-        $ hermione_expand_breasts_counter   = 0
         $ hermione_expand_ass               = False #Temporary Expand
-        $ hermione_expand_ass_counter       = 0
 
 
         #Arms
@@ -484,11 +482,6 @@ label her_progress_init:
 
         #Public Request Vars.
         $ hg_pr_sex_skip = False
-
-        $ lazy_aka_not_yet = True #In public events. Kiss a girl. Event level 03. Event # 3. Turns FALSE after that.
-        $ sucked_off_ron = False #In public events. Give a handjob to classmate. Event level 03. Event # 1. "Jerked of and suked of Ron Weasley". Turns True after that.
-        $ suked_off_ron_and_har = False #In public events. Give blowjob to a classmate. Event level 03. Event # 3. "Sukerd off Harrt and Ron". Turns True after that.
-        $ fucked_ron_and_har = False #In public events. Have sex with a classmate. Event # 1. "Returns next morning". Turns True after that.
 
         #Public Shaming Flags
         $ her_panties_soaked = False

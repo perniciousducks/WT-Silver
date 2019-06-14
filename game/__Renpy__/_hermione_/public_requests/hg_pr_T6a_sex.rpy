@@ -88,8 +88,6 @@ label end_hg_pr_sex:
 
 label hg_pr_sex_T1_intro_E1:
 
-    $ fucked_ron_and_har = True
-
     call bld
     m "....."
     m ".........."

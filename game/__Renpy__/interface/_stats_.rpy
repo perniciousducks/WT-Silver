@@ -250,7 +250,7 @@ screen hermione_stat_menu():
             mousewheel True
 
             vbox:
-                use stat_bar(int(her_tier/0.6), "-Favuor Tier-", "", her_tier) #Max 6
+                use stat_bar(int(her_tier/0.6), "-Favour Tier-", "", her_tier) #Max 6
 
                 use stat_bar(int(her_whoring/2.4), "-Whoring-", her_whoring_word, her_whoring) #Max 24
 

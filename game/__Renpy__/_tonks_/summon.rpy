@@ -36,7 +36,7 @@ label summon_tonks:
 
 
         # Detention Events
-        "-Send Astoria with her-" if astoria_book_intro_happened and spells_locked and daytime and not astoria_busy:
+        "-Send Astoria with her-" if astoria_book_intro_happened and spells_locked and daytime and not astoria_busy and astoria_unlocked:
             call blkfade
             call nar(">You summon Astoria.")
             pause.5

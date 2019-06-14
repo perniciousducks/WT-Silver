@@ -730,7 +730,7 @@ label cc_pf_strip_T1_intro_E3:
     call ctc
 
     # Check if Hermione has already stripped for you.
-    if hg_T3_strip_trigger:
+    if not hg_T3_strip_trigger:
 
         # Cho demands that you get Hermione to strip, so Cho has something to blackmail her should anything happen.
         # Cho gets dressed again and storms off.

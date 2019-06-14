@@ -5,7 +5,6 @@
 # First time genie meets snape
 
 label snape_intro_E1:
-    #$ snape_intro.complete("E1")
     call play_music("dark_fog")
     call play_sound("door")
 
@@ -116,7 +115,8 @@ label snape_intro_E1:
     m "So basically, I'm a genie disguised as a human, who is in turn disguised as another human..."
     m "No, that's not stupid at all..."
 
-    $ days_without_an_event = 0
+    $ snape_intro.E1_complete = True
+    $ ss_event_pause += 1
 
     jump day_start
 
@@ -126,7 +126,6 @@ label snape_intro_E1:
 # Sanpe talks to genie about hermione, snape becomes suspicious
 
 label snape_intro_E2:
-    #$ snape_intro.complete("E2")
     call play_music("dark_fog")
 
     call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
@@ -216,6 +215,9 @@ label snape_intro_E2:
 
     call sna_chibi("leave")
 
+    $ snape_intro.E2_complete = True
+    $ ss_event_pause += 1
+
     jump day_start
 
 
@@ -224,7 +226,6 @@ label snape_intro_E2:
 # Snape comes in, has a talk with Genie, then the duel starts.
 
 label snape_intro_E3:
-    #$ snape_intro.complete("E2")
     call play_music("dark_fog")
 
     call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
@@ -244,7 +245,7 @@ label snape_intro_E3:
             who2 "What? B-but... Those kids..."
             call sna_main("","snape_06")
             who2 "Well, perhaps you are right..."
-        "{size=-2}\"That owl is fetching my mail, man!\"{/size}":
+        "{size=-2}\"That owl is fetching my mail, man!\"{/size}" if owl_away_counter != 0:
             who2 "An owl? What about it?"
             call sna_main("","snape_25")
             who2 "That's not what I mean..."
@@ -269,7 +270,7 @@ label snape_intro_E3:
             who2 "I see... So she's been bluffing then."
             call sna_main("","snape_16")
             who2 "What an annoying young witch."
-        "\"Yes... Every damn day...\"":
+        "\"Yes... Every damn day...\"" if letter_from_hermione_B_OBJ.read:
             who2 "Really now?"
             who2 "Any lies about me in particular?"
             who2 "I hope you know better than to listen to the likes of her..."
@@ -423,7 +424,9 @@ label snape_intro_E3:
     call sna_main("Since you refuse to cooperate, I'll be taking you into custody by force!","snape_01")
     g4 "What?! Wait!"
 
+    $ snape_intro.E3_complete = True
     if skip_duel == True:
+        $ snape_intro.duel_complete = True
         jump snape_lost
 
     stop music
@@ -447,7 +450,6 @@ label snape_intro_E3:
 # THE TALK AFTER THE DUEL ENDS.
 
 label snape_intro_E4:
-    #$ snape_intro.complete("E4")
     $ potions = 0 #Makes sure there are no potions left in the possessions.
 
     stop music fadeout 2.0
@@ -607,6 +609,7 @@ label snape_intro_E4:
     call sna_main("(A genie? Now that's new...)","snape_35")
 
     hide screen duel
+    $ snape_intro.E4_complete = True
 
     jump day_start
 
@@ -616,7 +619,6 @@ label snape_intro_E4:
 # Snape visits you after the dual (next evening).
 
 label snape_intro_E5:
-    #$ snape_intro.complete("E5")
     call play_music("dark_fog")
 
     call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
@@ -715,16 +717,18 @@ label snape_intro_E5:
     call sna_walk(xpos="door", ypos="base", speed=3)
     pause.2
 
-    call sna_main(".................","snape_06",xpos="base",ypos="base")
+    call sna_main(".................","snape_06", ypos="head")
     call sna_main("\"Send those whores up, Severus!\" Ha-ha-ha..","snape_28")
-    $ renpy.play('sounds/door.mp3')
+
     call sna_chibi("leave")
 
+    call bld
     m "Hm... "
     m "I Suppose I'll just curl up in a ball on top of this desk as usual..."
     pause.2
 
     $ snape_unlocked = True
     $ achievement.unlock("unlocksna")
+    $ snape_intro.E5_complete = True
 
     jump day_start

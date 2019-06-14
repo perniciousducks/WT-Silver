@@ -119,19 +119,6 @@ label update_tonks:
     #$ tonks_cloth_pile = False
     return
 
-label set_ton_astoria_name:
-    if one_of_five == 1:
-        $ ton_astoria_name = "Cutie"
-    elif one_of_five == 2:
-        $ ton_astoria_name = "Kitty"
-    elif one_of_five == 3:
-        $ ton_astoria_name = "Princess"
-    elif one_of_five == 4:
-        $ ton_astoria_name = "Little girl"
-    else:
-        $ ton_astoria_name = "Honey"
-    return
-
 
 label end_tonks_event:
     #call tonks_chibi("hide")

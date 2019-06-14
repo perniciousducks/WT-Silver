@@ -8,15 +8,15 @@
 
 ### POLYJUICE POTION ###
 
-#Cat ears. 
+#Cat ears.
 
 init:
-    $ hg_pp_polyjuice = event_class(title = "Polyjuice", start_label = "hg_pp_polyjuice", 
+    $ hg_pp_polyjuice = event_class(title = "Polyjuice", start_label = "hg_pp_polyjuice",
     events = [[["hg_pp_polyjuice_T1_intro"],["hg_pp_polyjuice_T1_E1"],["hg_pp_polyjuice_T1_E2"],["hg_pp_polyjuice_T1_E3"]]],
     iconset = [["heart_empty", "heart_green"]],
     #Extra variables
     done_blowjob=False)
-    
+
 label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her into another girl)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?","base","base")
@@ -41,8 +41,8 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
                 m "But if you do decide to, it would make me very happy...."
                 her "..."
                 m "And there's some points in it for you as well..."
-        else:    
-            if her_whoring >= 12:    
+        else:
+            if her_whoring >= 12:
                 call her_main("If it makes you happy, [genie_name].","smile","base")
                 call her_main("...","annoyed","down_raised")
             elif her_whoring >= 6:
@@ -65,8 +65,8 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
                 her "..."
                 her "No thanks..."
                 jump hermione_requests
-    
-    $ renpy.sound.play("sounds/sniff.mp3")    
+
+    $ renpy.sound.play("sounds/sniff.mp3")
     call nar(">Hermione takes a whiff of the thick potion.")
     call her_main("It smells disgusting. Like mud and wet dog fur.","disgust","narrow")
     call her_main("Do I really have to drink this?","open","worried")
@@ -77,7 +77,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
     with d3
     pause.2
 
-    $ renpy.sound.play("sounds/gulp.mp3")    
+    $ renpy.sound.play("sounds/gulp.mp3")
     call her_chibi("drink_potion","mid","base")
     pause 2
     call nar(">She downs the thick potion.")
@@ -86,7 +86,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
     pause.2
     call her_main("Blehgh.","disgust","narrow")
     m "Well done."
-    
+
     if hg_pp_polyjuice.counter > 0:
         her "Here we go again I suppose..."
         her "Nothing's happening..."
@@ -124,10 +124,10 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
     $ hermione_busy = True
 
     jump main_room
-    
+
 label hg_pp_polyjuice_T1_intro:
     call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
-    
+
     call her_main("How could you do this to me [genie_name]?","angry","angry", xpos="mid", ypos="base", trans="hpunch")
     her "Try and turn me into a cat!"
     call her_main("In the middle of class!","annoyed","worriedL")
@@ -138,7 +138,7 @@ label hg_pp_polyjuice_T1_intro:
     m "What's that?"
     call her_main("There's no point playing dumb [genie_name].","annoyed","annoyed")
     call her_main("Well at least I know that it will wear off by morning.","annoyed","angryL")
-    
+
     if her_whoring >= 17:
         call her_walk(xpos="door", speed=2)
         nar "You see Hermione reaching for the door knob but an idea strikes you."
@@ -157,14 +157,14 @@ label hg_pp_polyjuice_T1_intro:
                 call her_main("","annoyed","baseL")
                 m "Would you like to earn 75 additional points?"
                 call her_main("75 points? How?","annoyed","suspicious")
-                
+
                 g9 "By sucking my cock, obviously."
                 call her_main("Right now? I look like a cat! Why would you ask me at a time like this?","angry","wide")
                 call her_main("You're not some sort of pervert who likes animals are you?","angry","base")
                 m "Of course not, I just think that you have a very unique look at the moment and that it would be a shame not to do anything with it."
                 call her_main("Fine, just promise me you aren't going to do anything weird.","upset","closed")
                 m "I promise. Now, kneel."
-                
+
                 #Fade to black
                 show screen blkfade with d3
                 pause.5
@@ -180,40 +180,40 @@ label hg_pp_polyjuice_T1_intro:
                 show screen chair_left
                 hide screen blkfade
                 with d5
-                
+
                 m "Good girl."
                 m "Now open wide."
                 call her_main("...","open_wide_tongue","base")
                 call u_play_ani
-                
+
                 ">Hermione takes you into her mouth"
                 hide screen hermione_main
                 hide screen genie
                 call ctc
                 m "Good god what is with your tongue?! It feels like velcro."
                 her "*Slurp?*"
-                
+
                 call u_pause_ani
-                
+
                 call her_main("It's because of your stupid potion, it made my tongue all rough.","open_wide_tongue","angry")
                 call her_main("Do you want to stop?","grin","baseL")
                 hide screen hermione_main
                 m "No, keep going, just try not to focus on the tongue work too much."
                 call her_main("Okay, [genie_name].","annoyed","angryL")
                 hide screen hermione_main
-                
+
                 call u_play_ani
-                
+
                 call nar(">Hermione swallows your cock again, taking care not to apply too much pressure with her tongue.") #start sucking scene. might insert more sucking noises for a little while or add pauses
                 m "So..{w=1.0} did you attend all your classes today?"
-                
+
                 call u_pause_ani
-                
+
                 call her_main("Of course [genie_name].","base","glance")
-                
+
                 hide screen hermione_main
                 call u_play_ani
-             
+
                 m "Even looking like this?"
                 m "What would everyone have thought? Would they just assume that you were a victim of a prank?"
                 m "Or would they just think that slutty little Miss Granger was just begging for attention again."
@@ -249,9 +249,9 @@ label hg_pp_polyjuice_T1_intro:
                 $ g_c_u_pic = "cum_in_mouth_ani"
                 call cum_block
                 her "*Purr* *Purr* *Purr*"
-                call nar(">You shoot you load directly down her throat.") 
+                call nar(">You shoot you load directly down her throat.")
                 call ctc
-                
+
                 with d3
                 call her_main("","full_cum","dead")
                 pause .1
@@ -274,15 +274,16 @@ label hg_pp_polyjuice_T1_intro:
                 m "Who's a good girl?"
                 call her_main("..........","annoyed","worriedL")
                 call her_main("I am...","smile","baseL")
-                
+
                 show screen blkfade with d3
 
                 call hide_characters
                 call u_end_ani
                 call her_chibi(xpos="desk")
                 call gen_chibi("sit_behind_desk")
-                
-                hide screen blkfade with d5
+
+                hide screen blkfade
+                with d5
                 pause 1.0
             "-Let her go-":
                 m "Maybe next time.."
@@ -326,7 +327,7 @@ label hg_pp_polyjuice_T1_introCC:
         m "What's that?"
         call her_main("There's no point playing dumb [genie_name].","annoyed","annoyed")
         call her_main("Well at least I know that it will wear off by morning.","annoyed","angryL")
-        
+
 
     menu:
         "-Let her go-":
@@ -355,7 +356,7 @@ label hg_pp_polyjuice_T1_introCC:
         her "I thought you found my tounge way to rough in this state?"
         m "Well, the purring certainly made well up for that aspect."
         her "Okay then..."
-    else:    
+    else:
         call her_main("Like this? I look like a cat! Why would you ask me at a time like this?","angry","wide")
         call her_main("You're not some sort of pervert who likes animals are you?","angry","base")
         m "Of course not, I just think that you have a very unique look at the moment and that it would be a shame not to do anything with it."
@@ -460,7 +461,7 @@ label hg_pp_polyjuice_T1_introCC:
         hide screen hermione_main
         with d3
         call nar(">You immediately put your hands back on her ears and start stroking them as she sucks you.")### start sucking
-        
+
     her "*Slurp!* *Purr* *Slurp!*"
     m "Oh god yes. This is Fantastic."
     her "*Purr* *Slurp!* *Purr*"
@@ -469,7 +470,7 @@ label hg_pp_polyjuice_T1_introCC:
     call nar(">You grab her ears and pull her head into you causing the tip of your cock to rest on her purring throat.") #show genie climax scene
     g4 "{size=+10}ARGH!!!!!!!!!!!!!!!!{/size}"
     her "*Purr* *Purr* *Purr*"
-    call nar(">You shoot you load directly down her throat.") 
+    call nar(">You shoot you load directly down her throat.")
     call ctc
 
 #This scene looks a bit weird
@@ -524,7 +525,7 @@ label hg_pp_polyjuice_T1_introCC:
     # if is_first_potion:
         # first_potion = False
         # her "I can't believe you're making me drink random potions..."
-    # else:    
+    # else:
         # call her_main("Another of your mysterious potions?","open","suspicious")
     # if polyjuice_drunk:
         # her "Yuck... another polyjuice potion..."
@@ -539,7 +540,7 @@ label hg_pp_polyjuice_T1_introCC:
         # if her whoring <= #high
             # her "Well, I might be a little bit curious..."
             # her "Okay then..."
-    # else:    
+    # else:
         # her "Let me guess, you won't tell me what it does and I'll embarrass myself in front of the whole class?"
         # m "Not at all."
         # call her_main("That's new.","annoyed","suspicious")
@@ -571,7 +572,7 @@ label hg_pp_polyjuice_T1_introCC:
     # if polyjuice_drunk:
         # her "Pinching my nose barely helps..."
         # her "So, do I leave or?"
-        # m "No, just wait here for a moment..."    
+        # m "No, just wait here for a moment..."
         # m "Why don't you tell me a little bit about how your day's been going."
         # her "Okay..."
         # if her_whoring <= 13:
@@ -589,7 +590,7 @@ label hg_pp_polyjuice_T1_introCC:
             # her "I would be lying if I said I wasn't a little bit excited when you called on me."
             # m "Oh, you'll be getting your fair share of excitement soon enough... Well, not this version of you."
             # her "What version of me will be..."
-    # else:    
+    # else:
         # her "I was wrong, not muck. Snot. It's as thick as Trollsnot."
         # m "As long as you keep it down, you'll earn Gryffindor a great deal of points."
         # her "And I will."
@@ -651,7 +652,7 @@ label hg_pp_polyjuice_T1_introCC:
         # m "Now now, you're the one looking like her remember."
         # m "Unless you're reffering to yourself there's nothing wrong with the way she looks."
         # $ changeLuna("pout","base","sad","mid")
-        # her "..."    
+        # her "..."
         # m "Now, I'd like to see those great assets of hers..."
         # if her_whoring <= #Lowish
             # her "This again? I already told you, I'm not going to flaunt another students... assets."
@@ -664,7 +665,7 @@ label hg_pp_polyjuice_T1_introCC:
             # her "Yeah, that's still going to be a no, bye [genie_name]."
             # #Hermione walks out Scene end
             # #Hermione mood gets worse
-    # else:    
+    # else:
         # her "Ughhh... I feel like I'm going to throw up! Did the Polyjuice work??"
         # m "Like a charm."
         # call nar(">Hermione starts examining herself, feeling out her outfit and pausing at her breasts.")
@@ -698,7 +699,7 @@ label hg_pp_polyjuice_T1_introCC:
             # her "Yeah, that's still going to be a no, bye [genie_name]."
             # #Hermione walks out Scene end
             # #Hermione mood gets worse
-        # else:    
+        # else:
             # $ changeLuna("base","seductive","raised","mid")
             # her "You can't possibly be interested in that... that girl's paltry breasts."
             # m "Currently they're yours. And they don't look so paltry from where I'm sitting [hermione_name]. Do I detect a hint of jealousy?"
@@ -752,7 +753,7 @@ label hg_pp_polyjuice_T1_introCC:
         # her "You're staring directly at my chest [genie_name] and I can't help but feel a bit guilty as its not my own..."
         # m "Well, hopefully this should take your mind off that... 20 points to Gryffindor."
         # her "Thank you, [genie_name]...."
-    # else:    
+    # else:
         # m "Yes yes, upon closer inspection it seems I was wrong. Luna's breasts are indeed second to your own."
         # $ changeLuna("pout","seductive","angry","mid")
         # her "I'm glad you came to your senses. Thank you, If you're completely satisfied, I'll cover these hideous things up now."

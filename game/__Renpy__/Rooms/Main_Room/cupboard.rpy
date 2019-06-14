@@ -35,8 +35,8 @@ label rummaging:
     with d3
     ">You rummage through the cupboard for a while..."
 
-    if day <= 4:
-        if rum_times in [1,2,3]:
+    if day <= 3:
+        if rum_times in [1,2]:
             $ potions += 1
             call give_reward(">You found some sort of potion...","interface/icons/item_potion.png")
 
@@ -45,10 +45,7 @@ label rummaging:
             hide screen bld1
             with d3
 
-            if daytime:
-                jump night_start
-            else:
-                jump day_start
+            jump main_room
 
     if rum_times >= 7 and not map_unlocked:
         $ map_unlocked = True # Turns TRUE after you found the Dahr's oddities catalog in the cupboard.
@@ -75,7 +72,7 @@ label rummaging:
         hide screen rum_screen
         hide screen bld1
         with d3
-        
+
         if daytime:
             jump day_main_menu
         else:

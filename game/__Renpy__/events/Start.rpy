@@ -248,13 +248,14 @@ label start_wt:
 
         if skip_to_hermione:
             $ skip_to_hermione = False
-            
+
             $ hermione_intro.E1_complete = True
             $ hermione_intro.E2_complete = True
-            $ hermione_intro.E3_complete = True
 
             $ hang_with_snape.E1_complete = True
             $ hang_with_snape.E2_complete = True
+            $ hang_with_snape.E3_complete = True
+            $ hang_with_snape.E4_complete = True
 
             $ snape_unlocked = True
             $ achievement.unlock("unlocksna", True)
@@ -264,8 +265,6 @@ label start_wt:
             if skip_after_hermione:
                 $ skip_after_hermione = False
 
-                $ hermione_intro.E3_complete = True
-                $ hermione_intro.E4_complete = True
                 $ hermione_intro.E5_complete = True
                 $ hermione_intro.E6_complete = True
 

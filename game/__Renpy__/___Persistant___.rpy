@@ -77,7 +77,8 @@ label __init_variables:
         $ stat_reports_counter = 0
 
     #Room Deco
-    if not hasattr(renpy.store,'room_deco'):
+    if not hasattr(renpy.store,'current_room'):
+        $ current_room = "main_room"
         $ room_deco = ""
         $ cupboard_deco = ""
 

@@ -58,8 +58,12 @@ screen ch_potion():
 ### GROPING ###
 screen groping_01(): # Grope Ass fully clothed - Flip = True (facing door)
     tag favor
-    add "groping_01" at Position(xpos=-60, ypos=10)
-    add "groping_01_blinking" at Position(xpos=-60, ypos=10)
+    if hermione_wear_top == False and hermione_wear_bottom == False:
+        add "characters/hermione/chibis/fingering/02.png" at Position(xpos=-60, ypos=10)
+        add "fingering_blinking" at Position(xpos=-60, ypos=10)
+    else:
+        add "groping_01" at Position(xpos=-60, ypos=10)
+        add "groping_01_blinking" at Position(xpos=-60, ypos=10)
     zorder desk_zorder
 
 screen groping_02(): # Grope Ass fully clothed - Flip = False
@@ -76,8 +80,15 @@ screen no_groping_01(): # Hermione stands with you behind desk - Flip = True (fa
 
 screen no_groping_02(): # Hermione stands with you behind desk - Flip = False
     tag favor
-    add "characters/hermione/chibis/grope_ass/back_b_05.png" at Position(xpos=-60, ypos=10)
-    add "groping_02_blinking" at Position(xpos=-60, ypos=10)
+    if hermione_wear_top == False and hermione_wear_bottom == False:
+        if masturbating:
+            add "characters/hermione/chibis/fingering/back_n_solo.png" at Position(xpos=-60, ypos=10)
+        else:
+            add "characters/hermione/chibis/fingering/back_n_idle.png" at Position(xpos=-60, ypos=10)
+        add "fingering_blinking" at Position(xpos=-60, ypos=10)
+    else:
+        add "characters/hermione/chibis/grope_ass/back_b_05.png" at Position(xpos=-60, ypos=10)
+        add "groping_02_blinking" at Position(xpos=-60, ypos=10)
     zorder desk_zorder
 
 

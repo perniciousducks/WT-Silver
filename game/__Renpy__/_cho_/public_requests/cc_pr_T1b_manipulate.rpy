@@ -377,7 +377,7 @@ label cc_pr_manipulate_T2_E1:
     m "Forget I just said that!..."
     g9 "What happened after that point?"
     call cho_main("Oh, well... I asked him if he had ever touched a Quidditch players ass before.","soft","base","base","R")
-    call cho_main("And before he could answer I pushed him up onto the wall, put his hand around my waste and right on my butt cheeks!","base","narrow","angry","mid")
+    call cho_main("And before he could answer I pushed him up onto the wall, put his hand around my waist and right on my butt cheeks!","base","narrow","angry","mid")
     g9 "Impressive!"
     m "And what was his reaction?"
     call cho_main("At first he was mostly surprised by the circumstance...","soft","base","base","R")
@@ -566,8 +566,8 @@ label cc_pr_manipulate_T2_E3:
     call cho_main("I mean, who wouldn't... I have a great butt.","soft","narrow","angry","R")
     m "Yes indeed!"
     call cho_main("They did ask why I keep wearing a skirt to school, though.","annoyed","base","sad","mid")
-    call cho_main("Said that it would look a lot better in trousers... or some tight leggins...","angry","base","sad","downR")
-    m "They’re not wrong... you would look great in some leggins!"
+    call cho_main("Said that it would look a lot better in trousers... or some tight leggings...","angry","base","sad","downR")
+    m "They’re not wrong... you would look great in some leggings!"
     call cho_main("Anyway, I left before they had a chance to touch it...","annoyed","narrow","angry","mid")
     call cho_main("The last thing I want is their grimy hands on it.","annoyed","narrow","angry","R")
     m "Well, I believe you made the best out of the situation!"

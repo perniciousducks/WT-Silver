@@ -1705,7 +1705,7 @@ label l_tutoring:
         call blkfade
         pause 1
 
-        call set_her_action("hold_book")
+        #call set_her_action("hold_book")
 
         play sound sd_door
         pause.3

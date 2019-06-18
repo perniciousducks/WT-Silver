@@ -396,6 +396,23 @@ image groping_02_blinking: #Animation of Hermione blinking her eyes.
     pause 3
     repeat
 
+image fingering_blinking:
+    "images/animation/00.png"
+    pause.1
+    "characters/hermione/chibis/fingering/blink.png"
+    pause.1
+    "images/animation/00.png"
+    pause 3
+    "characters/hermione/chibis/fingering/blink.png"
+    pause.1
+    "images/animation/00.png"
+    pause.1
+    "characters/hermione/chibis/fingering/blink.png"
+    pause.1
+    "images/animation/00.png"
+    pause 3
+    repeat
+
 ### GROPING TITS FULLY CLOTHED ###
 image groping_03_ani: #Genie groping Hermione under her skirt. Hermione is facing Genie.
     "characters/hermione/chibis/grope_breasts/01.png"

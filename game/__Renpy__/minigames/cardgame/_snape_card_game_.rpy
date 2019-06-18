@@ -150,7 +150,7 @@ label snape_duel_menu:
                 call sna_main("But I think we should up our wager a bit...","snape_02")
                 m "In what way?"
                 call sna_main("I was thinking maybe you could send the Granger girl to my room tonight if I win.","snape_20")
-                if touched_by_boy and her_whoring >= 11:
+                if hg_pr_kiss.counter >= 3 or her_reputation >= 21:
                     m "We'll see about that."
                 else:
                     m "I doubt she would agree to that."
@@ -394,29 +394,29 @@ label snape_random_duel:
     call sna_chibi("hide")
 
     jump main_room
-    
+
 label snape_special_duel:
     call play_music("boss_card_theme")
 
     $ random_enemy_deck = create_random_deck(get_deck_score(playerdeck)-2, get_deck_score(playerdeck)+8, cards_all)
     $ duel_response = start_duel(random_enemy_deck) #snape_after_special
-    
+
     hide screen blkfade
     stop music fadeout 1
     if duel_response == "draw":
         g4 "Not another fucking..."
-        call her_main("*Gltch*, *Slurp*, *Gobble*")  
+        call her_main("*Gltch*, *Slurp*, *Gobble*")
         g4 "Draaaaaaw!"
         return "draw"
     elif not duel_response == "win" or duel_response == "Close":
         call sna_main("Well, well.. Looks like I've...{nw}")
         m "Fuuuuuuuuck!"
         return "loss"
-        
+
     g9 "Yeeeeees!"
     g4 "Thats it you whore! Take it!"
     return "win"
-    
+
 label snape_duel_draw:
     stop music fadeout 1
 
@@ -550,7 +550,7 @@ init python:
         renpy.say(sna,snape_speech_card[renpy.random.randint(0,len(snape_speech_card)-1)])
         _preferences.volumes['music'] = volume
         return
-        
+
     def snape_after_special():
         renpy.call("sna_main", "It's my time to shine, I'm counting on an explosive victory.", face="snape_02")
         renpy.call("her_main", "*Slurp*, *Slurp*, *Gobble*")

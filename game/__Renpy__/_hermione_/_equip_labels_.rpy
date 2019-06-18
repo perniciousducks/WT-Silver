@@ -550,16 +550,12 @@ label set_her_action(action =  "", update=""):
 
             #Temporarily expand Hermione #Resets after 5 days.
             if action == "expand_breasts":
-                $ hermione_expand_breasts_counter = 5
                 $ hermione_expand_breasts = True
 
             if action == "expand_ass":
-                $ hermione_expand_ass_counter = 5
                 $ hermione_expand_ass = True
 
             if action == "expand_all":
-                $ hermione_expand_breasts_counter = 5
-                $ hermione_expand_ass_counter = 5
                 $ hermione_expand_breasts = True
                 $ hermione_expand_ass = True
 

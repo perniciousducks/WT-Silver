@@ -197,7 +197,7 @@ screen main_room_menu():
             unhovered SetVariable("ui_hint", "")
             action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Hide("package"), Jump("get_package")]
 
-    if letter_queue_list != []:
+    if letter_queue_list != [] and not owl_away:
         imagebutton:
             xpos owl_OBJ.xpos
             ypos owl_OBJ.ypos

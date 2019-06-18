@@ -147,6 +147,9 @@ label reset_hermione:
     #Hermione clothing save state
     call load_hermione_clothing_saves
 
+    $ hermione_expand_breasts = False
+    $ hermione_expand_ass = False
+    $ no_blinking      = False #When True - blinking animation is not displayed.
     $ hermione_dribble = False
     $ hermione_squirt  = False
     $ aftersperm       = False #Show cum stains on Hermione's uniform.

@@ -254,7 +254,7 @@ label gryffindor_cheer_responses:
                 call her_main("Of course they did.","open","base")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-            elif day_random >=9 and lock_public_favors == True or her_whoring <= 15:
+            elif day_random >=9 and her_reputation <= 15:
                 m "You seem very chipper today."
                 call her_main("Of course I am, we won!","base","base")
                 m "Won?"
@@ -365,7 +365,7 @@ label slytherin_cheer_responses:
     else: #Normal
         call h_equip_temp_outfit(hg_cheer_s_ITEM)
 
-    if day_random >=9 and lock_public_favors == False:
+    if day_random >=9 and her_reputation > 15:
         $ uni_sperm = True
         call her_main("","base","ahegao_raised",xpos="right",ypos="base")
     else:
@@ -406,7 +406,7 @@ label slytherin_cheer_responses:
                 m "Of course I am... Now, did they pay you?"
                 call her_main("Yes [genie_name].","base","base")
                 m "Well done [hermione_name], 20 points to Gryffindor."
-            elif day_random >=9 and lock_public_favors == True:
+            elif day_random >=9 and her_reputation > 15:
                 call her_main("[genie_name], something must be done about those Slytherin boys...","open","angryCl")
                 call her_main("It's bad enough that I have to cheer for them but they are being a little bit touchy.","annoyed","angryL")
                 m "Touchy?"

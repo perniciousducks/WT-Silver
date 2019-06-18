@@ -63,6 +63,8 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             call set_ton_face(eyebrows = face)
         if pupils == None:
             call set_ton_face(pupils = face)
+        if hair == None:
+            call set_ton_face(hair = face)
 
     # Hair color changes
     if hair != None:
@@ -70,14 +72,20 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             $ tonks_class.get_cloth("hair").color = [[164, 34, 34, 255]]
         elif hair in ("orange", "upset", "annoyed"):
             $ tonks_class.get_cloth("hair").color = [[228, 93, 34, 255]]
-        elif hair in ("yellow", "surprised", "shocked"):
+        elif hair in ("yellow", "happy", "cheerful"):
             $ tonks_class.get_cloth("hair").color = [[240, 240, 50, 255]]
-        elif hair in ("green", "oblivious", "what"):
+        elif hair in ("green", "disgusted"):
             $ tonks_class.get_cloth("hair").color = [[111, 205, 75, 255]]
         elif hair in ("blue", "sad"):
             $ tonks_class.get_cloth("hair").color = [[64, 75, 205, 255]]
-        else: #purple, horny
+        elif hair in ("purple"):
             $ tonks_class.get_cloth("hair").color = [[205, 75, 205, 255]]
+        elif hair in ("white", "scared"):
+            $ tonks_class.get_cloth("hair").color = [[238, 238, 241, 255]]
+        elif hair in ("pink", "horny"):
+            $ tonks_class.get_cloth("hair").color = [[242, 126, 168, 255]]
+        else: # RANDOM limited from 50 to 235 for better outcome
+            $ tonks_class.get_cloth("hair").color = [[random.randint(50, 235), random.randint(50, 235), random.randint(50, 235), 255]]
         # Clear cache and redraw
         $ tonks_class.get_cloth("hair").cached = False
 
@@ -109,19 +117,6 @@ label update_tonks:
     #$ update_chibi_image("tonks")
     #$ tonks_flip = 1
     #$ tonks_cloth_pile = False
-    return
-
-label set_ton_astoria_name:
-    if one_of_five == 1:
-        $ ton_astoria_name = "Cutie"
-    elif one_of_five == 2:
-        $ ton_astoria_name = "Kitty"
-    elif one_of_five == 3:
-        $ ton_astoria_name = "Princess"
-    elif one_of_five == 4:
-        $ ton_astoria_name = "Little girl"
-    else:
-        $ ton_astoria_name = "Honey"
     return
 
 

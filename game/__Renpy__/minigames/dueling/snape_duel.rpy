@@ -446,6 +446,7 @@ label snape_lost:
     hide screen hp_bar
     with flashbulb
     pause 1
+    $ snape_intro.duel_complete = True
     jump snape_intro_E4
 
 

@@ -92,12 +92,15 @@ label update_astoria:
     return
 
 
-label set_ast_susan_name:
-    $ ast_susan_name = renpy.random.choice(["Susy","Cow","Cow Tits","Milk Bag","Slut","Whore","Piggy","Pig","Bessie","Moo Moo"])
-    return
+label set_random_nicknames:
+    $ random_number = renpy.random.randint(0, 5)
+    if random_number in [1,5]:
+        $ ast_susan_name = renpy.random.choice(["Susy","Cow","Cow Tits","Milk Bag","Slut","Whore","Piggy","Pig","Bessie","Moo Moo"])
+    if random_number in [2,5]:
+        $ ast_tonks_name = renpy.random.choice(["Hag","Old Hag","Punk","Dyke","Lesbo"])
+    if random_number in [3,5]:
+        $ ton_astoria_name = renpy.random.choice(["Cutie","Kitty","Princess","Little girl","Honey"])
 
-label set_ast_tonks_name:
-    $ ast_tonks_name = renpy.random.choice(["Hag","Old Hag","Punk","Dyke","Lesbo"])
     return
 
 

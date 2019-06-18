@@ -451,7 +451,7 @@ label hg_hidden_blowjob: #Call label. Returns.
     m "Yes, good girl..."
     call her_main("*Slurp!* *Gobble!* *Slurp!*","sucking","ahegao")
 
-    call play_sound("knocking") #Sound someone knocking on the door.
+    call play_sound("knocking")
     call nar("> *Knock-knock-knock!*")
     call her_main("{size=+7}!!!{/size}","sucking","ahegao_mad")
     m "Hm?"
@@ -692,7 +692,7 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
             call her_main("{size=-4}(Ouch!... *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao")
             call slap_her
             call slap_her
-            g4 "Had enough, you narsty little thing?"
+            g4 "Had enough, you nasty little thing?"
             call slap_her
             g4 "Want some more?"
             call slap_her
@@ -811,7 +811,7 @@ label hg_hidden_blowjob_tonks: #Call label. Returns.
 
             call ton_main("Miss Granger?!","open","wide","wide","wide")
 
-            if lock_public_favors:
+            if her_reputation <= 15:
                 call ton_main("That cute little tease who always hangs out at the library, pretending to study?","open","base","raised","mid")
                 call her_main("(Pretending???)","sucking","ahegao_mad")
             else:
@@ -1453,7 +1453,7 @@ label hg_blowjob_4:
             call u_play_ani
             call her_main("*Gobble!* *Gulp!* *Gobble!*","sucking","ahegao")
 
-            if lock_public_favors == True:
+            if hg_pr_blowjob.counter == 0:
                 call u_pause_ani
                 call her_main("Sucking your perfect dick.","base","ahegao_raised")
                 call her_main("No one elses...","base","ahegao_raised")

@@ -3,15 +3,15 @@
 ### Hermione Intro ###
 
 label hermione_intro_E1:
-    #$ hermione_intro.complete("E1")
     stop music fadeout 1.0
     pause 1
 
-    call play_sound("knocking") #Sound someone knocking on the door.
+    call play_sound("knocking")
+    call bld
     "*Knock-knock-knock*"
     m "Huh?"
 
-    call play_sound("knocking") #Sound someone knocking on the door.
+    call play_sound("knocking")
     "*Knock-knock-knock*"
     pause.7
 
@@ -20,12 +20,11 @@ label hermione_intro_E1:
     m "Hm... What are the chances that the thing knocking on my door is not human?"
     m "Yeah, quite slim..."
 
-    call play_sound("knocking") #Sound someone knocking on the door.
+    call play_sound("knocking")
     "*Knock-knock-knock*"
     m "Persistent little bastard..."
 
     $ d_flag_01 = False #When False Genie doesn't know Hermione's name.
-    $ d_flag_02 = False #When TRUE Genie knows it's a girl knocking on the door.
 
     menu:
         m "..."
@@ -48,13 +47,11 @@ label hermione_intro_E1:
         "\"Come in!\"":
             pass
         "\"Go away!\"":
-            $ d_flag_02 = True #When TRUE Genie knows it's a girl knocking on the door.
             who "But, professor, I really need to talk to you..."
             m "..........................................."
             who "Professor? I'm coming in!"
             m "{size=-4}(Crap...){/size}"
         "\"................\"":
-            $ d_flag_02 = True #When TRUE Genie knows it's a girl knocking on the door.
             who "Professor, are you there?"
             m "{size=-4}(Go away...){/size}"
             who "Professor, I really need to talk to you..."
@@ -69,15 +66,15 @@ label hermione_intro_E1:
     with d3
     pause.5
 
-    if not d_flag_01:
-        m "?!!"
-    if not d_flag_02: #When TRUE Genie knows it's a girl knocking on the door.
+    if d_flag_01:
         m "{size=-3}(A girl?){/size}"
+    else:
+        m "?!!"
 
     call her_walk(xpos="mid", ypos="base", speed=3)
     pause.5
 
-    call her_main("","base","base",xpos="base",ypos="base")
+    call her_main("","base","base", xpos="base", ypos="base")
     call ctc
 
     call her_main("Good morning, professor.","normal","base")
@@ -282,12 +279,9 @@ label hermione_intro_E1:
     hide screen genie_jerking_sperm_02
     with d3
 
-    $ snape_against_hermione = True #Turns True after hermione_intro_E1. Activates special date with Snape # 01.
-    $ event08_happened = True
+    $ hermione_intro.E1_complete = True
 
-    call play_music("brittle_rille")
-
-    return
+    jump main_room
 
 
 # Event 2
@@ -296,9 +290,8 @@ label hermione_intro_E1:
 # Takes place after first special event with Snape, where he just complains about Hermione.
 
 label hermione_intro_E2:
-    #$ hermione_intro.complete("E2")
     stop music fadeout 3.0
-    call play_sound("knocking") #Sound someone knocking on the door.
+    call play_sound("knocking")
     "*Knock-knock-knock!*"
 
     menu:
@@ -311,39 +304,41 @@ label hermione_intro_E2:
                 "\"Absolutely not! I'm busy! Come back later!\"":
                     her "But..."
                     her "Alright... I will come back tomorrow then..."
-
-                    $ achievement.unlock("knock")
-
-                    return
+                    pass
 
                 "\"Of course. Come on in.\"":
-                    pass
+                    jump hermione_intro_E2_continue
 
         "\"I'm busy. Come back later.\"":
             her "But..."
             her "Well alright..."
-
-            $ achievement.unlock("knock")
-
-            return
-
-        "\"Yes, come in.\"":
             pass
 
+        "\"Yes, come in.\"":
+            jump hermione_intro_E2_continue
+
         "\"...................................\"":
-            call play_sound("knocking") #Sound someone knocking on the door.
+            call play_sound("knocking")
             "*Knock-knock-knock!*"
             m "............................."
             her "Professor, I'm coming in..."
             m "{size=-4}(Crap!){/size}"
+            jump hermione_intro_E2_continue
 
-    $ event09 = True #You let Hermione in. This event will stop looping now.
+    # Don't let Hermione in.
+    $ achievement.unlock("knock")
+    $ hg_event_pause += 1
+    jump main_room
+
+    # Let Hermione in.
+    label hermione_intro_E2_continue:
+        pass
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=3)
     pause.5
 
     call play_music("chipper_doodle")
-    call her_main("","normal","base",xpos="base",ypos="base")
+    call her_main("","normal","base", xpos="base", ypos="base")
     call ctc
 
     call her_main("Good morning, professor Dumbledore.","open","angryCl")
@@ -410,14 +405,13 @@ label hermione_intro_E2:
 
     call her_walk(action="leave", speed=2)
 
+    call bld
     m "...................."
 
-    $ hermione_is_waiting_01 = False #Makes sure this event is not repeated.
-    $ snape_against_hermione_02 = True #Turns True after hermione_intro_E2. Activates second event when hanging out with Snape.
+    $ hermione_intro.E2_complete = True
+    $ hg_event_pause += 1
 
-    call play_music("brittle_rille")
-
-    return
+    jump main_room
 
 
 
@@ -427,9 +421,8 @@ label hermione_intro_E2:
 # Hermione complains that she almost failed a test. (EVENING EVENT!)
 
 label hermione_intro_E3:
-    #$ hermione_intro.complete("E3")
     stop music fadeout 1.0
-    call play_sound("knocking") #Sound someone knocking on the door.
+    call play_sound("knocking")
     "*Knock-knock-knock!*"
 
     her "Professor, I'm coming in!"
@@ -443,10 +436,10 @@ label hermione_intro_E3:
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
     pause.5
 
-    call her_main("","annoyed","frown",xpos="base",ypos="base")
+    call her_main("","annoyed","frown", xpos="base", ypos="base")
     call ctc
 
-    call her_main("Good evening, professor.","annoyed","angryL")
+    call her_main("Good evening, Professor.","annoyed","angryL")
 
     menu:
         "\"-stare full of hatred-\"":
@@ -460,7 +453,7 @@ label hermione_intro_E3:
             m "Yes, yes..."
 
     call her_main("Something... bizarre has happened today...","open","angryCl")
-    call her_main("I'm Not sure how to describe this...","normal","frown")
+    call her_main("I'm not sure how to describe this...","normal","frown")
     call her_main("................................","annoyed","frown")
     call her_main("I think I almost failed a test...","annoyed","angryL")
 
@@ -478,7 +471,7 @@ label hermione_intro_E3:
 
     her "I'm not sure what is going on here..."
     m "An evil scheme against you, miss Granger?"
-    call her_main("This is not a laughing matter, sir.","normal","base")
+    call her_main("This is not a laughing matter, Sir.","normal","base")
     call her_main("You should consider me a \"measuring stick\" for our educational system.","open","angryCl")
     her "If I \"almost\" fail a test, the rest of the students will definitely fail it."
     m "Is that so...?"
@@ -486,24 +479,54 @@ label hermione_intro_E3:
     call her_main(".................................","annoyed","angryL")
     call her_main("But what if it didn't?","open","worried")
     her "What if all the tests will be this difficult from now on?"
-    call her_main("I need to study harder!","open","worriedL")
+
+    menu:
+        "\"You should study more, girl!\"":
+            call her_main("But I studied all night for this test!","soft","base", tears="soft")
+        "\"There, there... It'll be alright.\"":
+            call her_main("No it won't! This is a catastrophe!","mad","worriedCl", tears="soft_blink")
+
+    call her_main("And the worst part is that I think I might be the only one who failed...","angry","base", tears="soft")
+    call her_main("How will this make me look?","angry","base", tears="soft")
+    call her_main("I will know for sure when we get the results though...","normal","baseL", tears="soft")
+    call her_main("Yes, I'm sure everyone else failed as well...","soft","baseL")
+    call her_main("I mean, they must have, right?","open","worried")
+    call her_main(".....................","soft","baseL")
+    call her_main("....right?","open","worried")
 
     label cant_say:
     menu:
-        "\"I could tutor you, miss Granger.\"":
-            call her_main("You, professor?","open","base")
-            call her_main("Oh, thank you for your offer but I don't think that would be necessary, sir.","soft","base")
+        "{size=-3}\"Of course. You are a top student after all.\"{/size}":
+            call her_main("Exactly...","annoyed","frown")
+            her "Or at least I used to be until today..."
+            call her_main("I cannot believe this is happening!","mad","worriedCl", tears="soft_blink")
+        "{size=-3}\"You could prepare better if I were to tutor you.\"{/size}":
+            $ tutoring_offer_made = True
+            call her_main("hm...","annoyed","suspicious")
+            call her_main("Yes, that could help I suppose...","soft","baseL")
+            call her_main("I appreciate your offer, professor, but...","open","base")
             call her_main("The best tutor is a book, and I have the entire Hogwarts library at my disposal.","open","closed")
-        "\"A wise decision, miss Granger.\"":
-            call her_main("Thank you, professor.","soft","base")
-        "\"You need to put my cock in your mouth.\"":
-            m "You need to put my co--"
+            call her_main("I don't think it would be necessary, sir. But...","soft","base")
+            her "May I think about it?"
+            m "Don't take too long..."
+        "{size=-3}\"I suppose we'll know soon enough.\"{/size}":
+            call her_main("Yes, I suppose we will...","soft","base")
+        "{size=-3}\"You need to put my cock in your mouth.\"{/size}":
+            m "You need to put my co-"
             call her_main("Huh?","soft","base")
             m "{size=-4}(No, I can't actually say that...){/size}"
             call her_main("......?","annoyed","suspicious")
             jump cant_say
 
     m "............"
+    call her_main("I'm sorry, professor, I'm probably just overreacting anyway...","grin","worriedCl", emote="05")
+    call her_main("But you must understand that my reputation is at stake here!","open","base")
+    call her_main("There's gotta be something wrong with the test...","annoyed","angryL")
+    her "And although the entire class might have failed, I probably still got the most points on the test..."
+    her "As usual..."
+    call her_main("Well, I'd better go now. We have another \"MRM\" meeting today.","open","angryCl")
+    her "I will let you know about the new ideas we come up with."
+    m "I can hardly wait..."
     call her_main("Well, if there is nothing else, I have a studying schedule to keep.","open","closed")
     m "By all means..."
 
@@ -511,97 +534,33 @@ label hermione_intro_E3:
 
     $ hermione_wear_robe = False
 
-    $ event11_happened = True #Allows next event to start.
-    $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
+    $ hermione_intro.E3_complete = True
+    $ hg_event_pause += 1
 
-    call play_music("night_theme")
-
-    return
+    jump main_room
 
 
 
 # Event 4
 
-# Hermione complains that she might have failed a test. (EVENING EVENT!)
-
-label hermione_intro_E4:
-    #$ hermione_intro.complete("E4")
-    call her_walk(action="enter", xpos="desk", ypos="base", speed=2.8)
-
-    call play_music("chipper_doodle")
-    call her_main("Professor! I need to talk to you!","open","base", xpos="right", ypos="base")
-    m "(So She doesn't even bother to knock anymore?)"
-    call her_main("Professor, something awful happened today!","open","worried")
-    her "I failed a test today..."
-    her "I cannot believe this is happening!"
-    call her_main("How is this even possible?!","angry","wide")
-
-    menu:
-        "\"You should study more, girl!\"":
-            call her_main("But I studied all night for this test!","soft","base",tears="soft")
-        "\"There, there... It'll be alright.\"":
-            call her_main("No it won't! This is a catastrophe!","mad","worriedCl",tears="soft_blink")
-
-    call her_main("And the worst part is that I think I might be the only one who failed...","angry","base",tears="soft")
-    call her_main("How will this make me look?","angry","base",tears="soft")
-    call her_main("I will know for sure when we get the results though...","normal","baseL",tears="soft")
-    call her_main("Yes, I'm sure everyone else failed as well...","soft","baseL")
-    call her_main("I mean, they must have, right?","open","worried")
-    call her_main(".....................","soft","baseL")
-    call her_main("....right?","open","worried")
-
-    menu:
-        "{size=-3}\"Of course. You are a top student after all.\"{/size}":
-            call her_main("Exactly...","annoyed","frown")
-            her "Or at least I used to be until today..."
-            call her_main("I cannot believe this is happening!","mad","worriedCl",tears="soft_blink")
-        "{size=-3}\"You could prepare better if I were to tutor you.\"{/size}":
-            $ tutoring_offer_made = True #Affects conversation in the next event.
-            call her_main("hm...","annoyed","suspicious")
-            call her_main("Yes, that could help I suppose...","soft","baseL")
-            call her_main("I appreciate your offer, professor, but...","open","base")
-            her "May I think about it?"
-            m "Don't take too long..."
-        "{size=-3}\"I suppose we'll know soon enough.\"{/size}":
-            call her_main("Yes, I suppose we will...","soft","base")
-
-    call her_main("I'm sorry, professor, I'm probably just overreacting anyway...","grin","worriedCl",emote="05")
-    call her_main("But you must understand that my reputation is at stake here!","open","base")
-    call her_main("There's gotta be something wrong with the test...","annoyed","angryL")
-    her "And although I failed, I probably still got the most points on the test..."
-    her "As usual..."
-    call her_main("Well, I'd better go now. We have another \"MRM\" meeting today.","open","angryCl")
-    her "I will let you know about the new ideas we come up with tonight."
-    m "I can hardly wait..."
-
-    call her_walk(action="leave", speed=3)
-
-    $ event12_happened = True #Allows next event to start.
-    $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
-
-    jump day_start
-
-
-
-# Event 5
-
 # Hermione complains that she did fail the test. (EVENING EVENT!)
 
-label hermione_intro_E5:
-    #$ hermione_intro.complete("E5")
+label hermione_intro_E4:
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
+    call bld
     her "....................."
     m "???"
 
     call her_walk(xpos="desk", ypos="base", speed=1.6)
 
+    call bld
     her "............"
     m "Miss Granger?"
     her "..............................."
     m "Miss Granger?!!"
 
-    call her_main("","upset","dead",tears="mascara", xpos="right", ypos="base")
+    call her_main("","upset","dead", tears="mascara", xpos="right", ypos="base")
     call ctc
 
     her "Huh?"
@@ -612,7 +571,7 @@ label hermione_intro_E5:
     her "I did... uhm..."
     her "... I failed that test after all."
     her "I..."
-    call her_main("I'm sorry, professor...","upset","worriedCl",tears="mascara_soft_blink")
+    call her_main("I'm sorry, professor...","upset","worriedCl", tears="mascara_soft_blink")
     her "I'm not sure why I'm here..."
     her "I think I'd better go..."
     m "..................."
@@ -626,25 +585,25 @@ label hermione_intro_E5:
     m "She will be alright..."
     m "I think..."
 
-    $ event13_happened = True #Allows next event to start.
-    $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
+    $ hermione_intro.E4_complete = True
+    $ hg_event_pause += 1
 
     jump day_start
 
 
-# Event 6
+# Event 5
 
 # Hermione comes after her breakdown (when she failed the test).
 # She is asking for tutoring.
 # Tutoring unlocked!
 
-label hermione_intro_E6:
-    #$ hermione_intro.complete("E6")
+label hermione_intro_E5:
+    call her_walk(action="enter", xpos="desk", ypos="base", speed=2.8)
+
     call play_music("chipper_doodle")
+    call her_main("Good morning, Professor.","base","base", xpos="right", ypos="base")
+    m "(So She doesn't even bother to knock anymore?)"
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
-
-    call her_main("Good morning, Professor.","base","base",xpos="base",ypos="base")
     m "How can I help you today, miss Granger?"
     call her_main("Well, first of all, I am terribly sorry about yesterday's display, sir...","open","angryCl")
     call her_main("I've never failed a test in my life, so I wasn't sure how to react...","open","suspicious")
@@ -677,7 +636,7 @@ label hermione_intro_E6:
                                 m "Of course not, miss Granger."
                                 m "It was a test... You passed. Good job."
                                 call her_main("What...?","open","base")
-                                call her_main("Oh, of course. I'm so silly sometimes. Sorry about the yelling, sir.","grin","worriedCl",emote="05")
+                                call her_main("Oh, of course. I'm so silly sometimes. Sorry about the yelling, sir.","grin","worriedCl", emote="05")
                                 m "My offer is still valid. If you want me to then I can tutor you."
                                 call her_main("..............","annoyed","worriedL")
                             "\"Well, alright, alright...\"":
@@ -725,20 +684,17 @@ label hermione_intro_E6:
     $ hermione_busy = True
     $ tutoring_hermione_unlocked = True
 
-    $ event14_happened = True #Allows next event to start.
-    $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
+    $ hermione_intro.E5_complete = True #Allows next event to start.
+    $ hg_event_pause += 2
 
-    call play_music("brittle_rille")
-
-    return
+    jump main_room
 
 
-# Event 7
+# Event 6
 
 # Hermione comes and asks to buy a favour from her.
 
-label hermione_intro_E7:
-    #$ hermione_intro.complete("E7")
+label hermione_intro_E6:
     call play_sound("knocking")
 
     "*Knock-knock-knock!*"
@@ -753,24 +709,18 @@ label hermione_intro_E7:
                 "\"Absolutely not! I'm busy! Come back later!\"":
                     her "But..."
                     her "Alright... I will come back tomorrow then..."
-
-                    $ achievement.unlock("knock")
-
-                    return
+                    pass
 
                 "\"Of course. Come on in.\"":
-                    pass
+                    jump hermione_intro_E6_continue
 
         "\"I'm busy. Come back later.\"":
             her "But..."
             her "Well, alright..."
-
-            $ achievement.unlock("knock")
-
-            return
+            pass
 
         "\"Yes, come in.\"":
-            pass
+            jump hermione_intro_E6_continue
 
         "\"...................................\"":
             call play_sound("knocking")
@@ -778,10 +728,20 @@ label hermione_intro_E7:
             m "............................."
             her "Professor, I'm coming in..."
             m "{size=-4}(Crap!){/size}"
+            jump hermione_intro_E6_continue
+
+    # Don't let Hermione in.
+    $ achievement.unlock("knock")
+    $ hg_event_pause += 1
+    jump main_room
+
+    # Let Hermione in.
+    label hermione_intro_E6_continue:
+        pass
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=3)
 
-    call her_main("Good evening, professor...","soft","baseL",xpos="base",ypos="base")
+    call her_main("Good evening, professor...","soft","baseL", xpos="base", ypos="base")
     her "........................"
     call her_main("........................","annoyed","worriedL")
     her "........................"
@@ -800,10 +760,10 @@ label hermione_intro_E7:
 
     menu:
         "\"You mean like a sexual favour?\"":
-            call her_main("Ehm... I'm not sure...","angry","worriedCl",emote="05")
+            call her_main("Ehm... I'm not sure...","angry","worriedCl", emote="05")
             her "The kind that would gain our house additional points..."
             call her_main("I could write an essay for you or...","open","base")
-            call her_main("Or maybe clean your tower..?","angry","worriedCl",emote="05")
+            call her_main("Or maybe clean your tower..?","angry","worriedCl", emote="05")
             m "{size=-4}(Clean my tower? Heh... There's gotta be dirty joke in there somewhere...){/size}"
             m "Well, alright then, I think we can figure something out."
         "\"Well, if you insist...\"":
@@ -817,61 +777,46 @@ label hermione_intro_E7:
     call play_music("chipper_doodle")
     call her_main("Thank you, professor...","base","base")
 
-    label choose_favor_agagin:
-    $ d_flag_01 = False
-    $ d_flag_02 = False
-    $ d_flag_03 = False
-    $ d_flag_04 = False
+    label choose_favor_again:
+    $ current_favor = ""
     her "So... What will it be?"
 
     menu:
         "\"Show me your tongue...\"":
-            $ d_flag_01 = True
-            pass
+            $ current_favor = "show_tongue"
         "\"Stand there. Let me look at you.\"":
-            $ d_flag_02 = True
-            pass
+            $ current_favor = "stand_there"
         "\"Make a silly face...\"":
-            $ d_flag_03 = True
-            pass
+            $ current_favor = "silly_face"
         "\"Say \"I've been a bad girl\".\"":
-            $ d_flag_04 = True
-            pass
+            $ current_favor = "bad_girl"
 
     her "Em..."
     her "How many house points will I get for that...?"
-    $ d_flag_05 = False # 20 Points.
-    $ d_flag_06 = False # 40 Points.
-    $ d_flag_07 = False # 10 Points.
-    $ d_flag_08 = False # 1 Point.
+    $ current_payout = 0
 
     menu:
         "\"1 point.\"":
-            if d_flag_02: #Stand there.
-                $ d_flag_08 = True # 1 Point.
-                pass
-            else:
+            if current_favor != in ["stand_there"]:
                 her "I don't think it's worth it then..."
-                jump choose_favor_agagin
+                jump choose_favor_again
+            $ current_payout = 1
         "\"10 points.\"":
-            if d_flag_02: #Stand there.
-                $ d_flag_07 = True # 10 Points.
-                pass
-            else:
+            if current_favor != in ["stand_there","silly_face"]:
                 her "I don't think it's worth it then..."
-                jump choose_favor_agagin
+                jump choose_favor_again
+            $ current_payout = 10
         "\"20 points.\"":
-            $ d_flag_05 = True
             her "So little...?"
-            pass
+            $ current_payout = 20
         "\"40 points.\"":
-            $ d_flag_06 = True
-            pass
+            her "(Wow. That's quite a lot...)"
+            $ current_payout = 40
 
-    call her_main("Em, alright...",xpos="mid",ypos="base",trans="fade")
+    call her_main("Em, alright...", xpos="mid", ypos="base", trans="fade")
 
-    if d_flag_01: #Show me your tongue.
-        call her_main("M-my... tongue, sir?","grin","worriedCl",emote="05")
+    if current_favor == "show_tongue":
+        call her_main("M-my... tongue, sir?","grin","worriedCl", emote="05")
         m "Yes, girl. Open your mouth, and show me your tongue."
         call her_main("{size=-7}(What a weirdo...){/size}","annoyed","angryL")
         call her_main("Ehm... well, alright then...","normal","frown")
@@ -895,7 +840,7 @@ label hermione_intro_E7:
                 her "...................................................................."
                 call her_main(".......................................................................................................","open_wide_tongue","angryCl")
 
-    if d_flag_02: #Stand still...
+    if current_favor == "stand_there":
         call her_main("So, I just have to stand here then...?","base","base")
         m "Good... Now turn around... slowly."
         her "uhm... alright..."
@@ -934,8 +879,8 @@ label hermione_intro_E7:
         call bld
         her "................."
 
-    if d_flag_03: #STUPID FACE
-        call her_main("A silly face then...","grin","worriedCl",emote="05")
+    if current_favor == "silly_face":
+        call her_main("A silly face then...","grin","worriedCl", emote="05")
         her "Let's see..."
         label stupid_faces:
         call her_main("How about this one?","silly","silly")
@@ -964,7 +909,7 @@ label hermione_intro_E7:
             "\"Not stupid enough.\"":
                 jump stupid_faces
 
-    if d_flag_04: #BAD GIRL
+    if current_favor == "bad_girl":
         call her_main("I...","normal","frown")
         her "I have been a very bad girl..."
         g9 "Have you been a very, very, very bad girl?"
@@ -1007,20 +952,13 @@ label hermione_intro_E7:
                 jump to_early_for_sucking_cocks
 
     label stupid_enogh:
-    if d_flag_05:
-        m "20 points to the \"Gryffindor\" house."
-        $ gryffindor +=20
-    elif d_flag_06:
-        m "40 points to the \"Gryffindor\" house."
-        $ gryffindor +=40
-    elif d_flag_07:
-        m "10 points to the \"Gryffindor\" house."
-        $ gryffindor +=10
-    elif d_flag_08:
-        m "1 point to the \"Gryffindor\" house."
-        $ gryffindor +=1
+        if current_payout == 1:
+            m "[current_payout] point to the \"Gryffindor\" house."
+        else:
+            m "[current_payout] points to the \"Gryffindor\" house."
+        $ gryffindor += current_payout
 
-    call her_main("Yay!..............","grin","worriedCl",emote="05",xpos="base",ypos="base",flip=False,trans="fade")
+    call her_main("Yay!..............","grin","worriedCl", emote="05", xpos="base", ypos="base", flip=False, trans="fade")
     her "This was quite easy..."
     her "Do you think you could buy some more favours from me in the future, professor?"
 
@@ -1042,27 +980,27 @@ label hermione_intro_E7:
     call her_walk(xpos="door", ypos="base", speed=2)
     pause.3
 
-    if d_flag_01: #Show me your tongue
-        her "{size=-4}(Hm...){/size}"
-        her "{size=-4}(Students show teachers their tongues all the time...){/size}"
-        her "{size=-4}(Although that's usually when the teacher is not looking...){/size}"
-        her "{size=-4}(But there is nothing wrong with what I did today...){/size}"
-        her "{size=-4}(I earned my house extra points...){/size}"
+    if current_favor == "show_tongue":
+        call her_main("{size=-4}(Hm...){/size}","annoyed","down", ypos="head")
+        call her_main("{size=-4}(Students show teachers their tongues all the time...){/size}","soft","baseL")
+        call her_main("{size=-4}(Although that's usually when the teacher is not looking...){/size}","base","glanceL")
+        call her_main("{size=-4}(But there is nothing wrong with what I did today...){/size}","disgust","down")
+        call her_main("{size=-4}(I earned my house extra points...){/size}","smile","happyCl")
 
-    if d_flag_02: #Stand still...
-        her "{size=-4}(I can just stand there and let the professor look at me...){/size}"
-        her "{size=-4}(There is nothing wrong with that... nothing at all...){/size}"
+    if current_favor == "stand_there":
+        call her_main("{size=-4}(I can just stand there and let the professor look at me...){/size}","annoyed","baseL", ypos="head")
+        call her_main("{size=-4}(There is nothing wrong with that... nothing at all...){/size}","open","closed")
 
-    if d_flag_03:
-        her "{size=-4}(Stupid face...){/size}"
-        her "{size=-4}(Stupid face...){/size}"
-        her "{size=-4}(I need to practice this.){/size}"
+    if current_favor == "silly_face":
+        call her_main("{size=-4}(Stupid face...){/size}","silly","silly", ypos="head")
+        call her_main("{size=-4}(Stupid face...){/size}","silly","happy")
+        call her_main("{size=-4}(I need to practice this.){/size}","base","happyCl")
 
-    if d_flag_04:
-        her "{size=-4}(I'm a bad girl...){/size}"
-        her "{size=-4}(I am very bad...){/size}"
-        her "{size=-4}(Yes, I can say things like that easily...){/size}"
-        her "{size=-4}(There is nothing wrong with that... nothing at all...){/size}"
+    if current_favor == "bad_girl":
+        call her_main("{size=-4}(I'm a bad girl...){/size}","angry","angry", ypos="head")
+        call her_main("{size=-4}(I am very bad...){/size}","soft","angry")
+        call her_main("{size=-4}(Yes, I can say things like that easily...){/size}","smile","happyCl")
+        call her_main("{size=-4}(There is nothing wrong with that... nothing at all...){/size}","base","happyCl")
 
     call her_chibi("leave")
 
@@ -1071,11 +1009,9 @@ label hermione_intro_E7:
     call popup("You unlocked the ability to buy sexual favours from Hermione.", "Congratulations!", "interface/icons/head/head_hermione_2.png")
 
     $ hermione_favors = True
-
-    $ event15_happened = True #Turns TRUE after hermione_intro_E7
-    $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
     $ hermione_busy = True
 
-    call music_block
+    $ hermione_intro.E6_complete = True
+    $ hg_event_pause += 1
 
-    return
+    jump main_room

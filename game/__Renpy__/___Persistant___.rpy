@@ -24,8 +24,26 @@ label __init_variables:
         $ game_difficulty = 2                      # 2 = normal
 
     ### Gameplay ###
-    if not hasattr(renpy.store,'ignore_warning'):
-        $ ignore_warning = False #Warning message that tells you which ending you will get.
+    if not hasattr(renpy.store,'always_read_letter'):
+
+        $ ss_event_pause  = 0
+        $ ss_summon_pause = 0
+        $ nt_event_pause  = 0
+        $ nt_summon_pause = 0
+        $ hg_event_pause  = 0
+        $ hg_summon_pause = 0
+        $ cc_event_pause  = 0
+        $ cc_summon_pause = 0
+        $ ll_event_pause  = 0
+        $ ll_summon_pause = 0
+        $ ag_event_pause  = 0
+        $ ag_summon_pause = 0
+        $ sb_event_pause  = 0
+        $ sb_summon_pause = 0
+
+        $ always_read_letter = False
+        $ owl_away = False
+        $ owl_away_counter = 0
 
     ### Misc ###
     if not hasattr(renpy.store,'desk_zorder'):
@@ -59,7 +77,8 @@ label __init_variables:
         $ stat_reports_counter = 0
 
     #Room Deco
-    if not hasattr(renpy.store,'room_deco'):
+    if not hasattr(renpy.store,'current_room'):
+        $ current_room = "main_room"
         $ room_deco = ""
         $ cupboard_deco = ""
 
@@ -146,6 +165,9 @@ label __init_variables:
     call tonks_init
     call tonks_progress_init
     call tonks_wardrobe_init
+
+    # Quests
+    call quest_init
 
     #Map
     call map_init

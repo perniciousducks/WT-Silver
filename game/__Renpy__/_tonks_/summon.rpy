@@ -10,6 +10,7 @@ label summon_tonks:
     call tonks_random_clothing
 
     label tonks_requests:
+    $ tonks_haircolor = tonks_class.get_cloth("hair").color
 
     call ton_main(xpos="base",ypos="base")
     $ hide_transitions = False
@@ -35,7 +36,7 @@ label summon_tonks:
 
 
         # Detention Events
-        "-Send Astoria with her-" if astoria_book_intro_happened and spells_locked and daytime and not astoria_busy:
+        "-Send Astoria with her-" if astoria_book_intro_happened and spells_locked and daytime and not astoria_busy and astoria_unlocked:
             call blkfade
             call nar(">You summon Astoria.")
             pause.5

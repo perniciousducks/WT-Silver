@@ -805,7 +805,8 @@ label hg_ps_buttplug_complete:
             call her_main("And she just played with it so aggressively...","grin","dead")
             her "I was a mess afterwards..."
             g9 "And did you return the favour?"
-            if touched_by_boy == True:
+
+            if hg_pr_kiss.counter >= 1:
                 call her_main("Err... maybe...","open","squint",cheeks="blush")
                 m "What did you do?"
                 call her_main("well I don't want to say too much [genie_name].","base","baseL",cheeks="blush") # :)

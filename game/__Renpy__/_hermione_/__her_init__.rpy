@@ -41,9 +41,7 @@ label her_init:
         $ hermione_perm_expand_ass       = False
 
         $ hermione_expand_breasts           = False #Temporary Expand
-        $ hermione_expand_breasts_counter   = 0
         $ hermione_expand_ass               = False #Temporary Expand
-        $ hermione_expand_ass_counter       = 0
 
 
         #Arms
@@ -485,11 +483,6 @@ label her_progress_init:
         #Public Request Vars.
         $ hg_pr_sex_skip = False
 
-        $ lazy_aka_not_yet = True #In public events. Kiss a girl. Event level 03. Event # 3. Turns FALSE after that.
-        $ sucked_off_ron = False #In public events. Give a handjob to classmate. Event level 03. Event # 1. "Jerked of and suked of Ron Weasley". Turns True after that.
-        $ suked_off_ron_and_har = False #In public events. Give blowjob to a classmate. Event level 03. Event # 3. "Sukerd off Harrt and Ron". Turns True after that.
-        $ fucked_ron_and_har = False #In public events. Have sex with a classmate. Event # 1. "Returns next morning". Turns True after that.
-
         #Public Shaming Flags
         $ her_panties_soaked = False
         $ current_job = 0
@@ -596,76 +589,6 @@ label her_progress_init:
                     hg_pf_sex,
                     hg_pf_anal_sex
         ]
-
-
-
-    if not hasattr(renpy.store,'hg_pr_flirt'):
-        $ hg_pr_flirt = request_class()
-    $ hg_pr_flirt.tier = 1
-    $ hg_pr_flirt.title = "She's a flirt"
-    $ hg_pr_flirt.start_label = "hg_pr_flirt"
-    $ hg_pr_flirt.complete_label = "hg_pr_flirt_complete"
-
-    if not hasattr(renpy.store,'hg_pr_flirt_teacher'):
-        $ hg_pr_flirt_teacher = request_class()
-    $ hg_pr_flirt_teacher.tier = 1
-    $ hg_pr_flirt_teacher.title = "She's bait"
-    $ hg_pr_flirt_teacher.start_label = "hg_pr_flirt_teacher"
-    $ hg_pr_flirt_teacher.complete_label = "hg_pr_flirt_teacher_complete"
-
-    if not hasattr(renpy.store,'hg_pr_grope'):
-        $ hg_pr_grope = request_class()
-    $ hg_pr_grope.tier = 1
-    $ hg_pr_grope.title = "Let a classmate molest you"
-    $ hg_pr_grope.start_label = "hg_pr_grope"
-    $ hg_pr_grope.complete_label = "hg_pr_grope_complete"
-
-    if not hasattr(renpy.store,'hg_pr_flash'):
-        $ hg_pr_flash = request_class()
-    $ hg_pr_flash.tier = 1
-    $ hg_pr_flash.title = "Flash your tits to a classmate"
-    $ hg_pr_flash.start_label = "hg_pr_flash"
-    $ hg_pr_flash.complete_label = "hg_pr_flash_complete"
-
-    if not hasattr(renpy.store,'hg_pr_kiss'):
-        $ hg_pr_kiss = request_class()
-    $ hg_pr_kiss.tier = 2
-    $ hg_pr_kiss.title = "Kiss a girl."
-    $ hg_pr_kiss.start_label = "hg_pr_kiss"
-    $ hg_pr_kiss.complete_label = "hg_pr_kiss_complete"
-
-    if not hasattr(renpy.store,'hg_pr_handjob'):
-        $ hg_pr_handjob = request_class()
-    $ hg_pr_handjob.tier = 2
-    $ hg_pr_handjob.title = "Give a handjob to a classmate"
-    $ hg_pr_handjob.start_label = "hg_pr_handjob"
-    $ hg_pr_handjob.complete_label = "hg_pr_handjob_complete"
-
-    if not hasattr(renpy.store,'hg_pr_blowjob'):
-        $ hg_pr_blowjob = request_class()
-    $ hg_pr_blowjob.tier = 2
-    $ hg_pr_blowjob.title = "Give a blowjob to a classmate"
-    $ hg_pr_blowjob.start_label = "hg_pr_blowjob"
-    $ hg_pr_blowjob.complete_label = "hg_pr_blowjob_complete"
-
-    if not hasattr(renpy.store,'hg_pr_sex'):
-        $ hg_pr_sex = request_class()
-    $ hg_pr_sex.tier = 2
-    $ hg_pr_sex.title = "Have sex with a classmate"
-    $ hg_pr_sex.start_label = "hg_pr_sex"
-    $ hg_pr_sex.complete_label = "hg_pr_sex_complete"
-
-
-    $ hg_pr_list = [hg_pr_flirt,
-                    hg_pr_flirt_teacher,
-                    hg_pr_grope,
-                    hg_pr_flash,
-                    hg_pr_kiss,
-                    hg_pr_handjob,
-                    hg_pr_blowjob,
-                    hg_pr_sex,
-        ]
-
 
 
     if not hasattr(renpy.store,'hg_ps_get_panties'):
@@ -886,5 +809,196 @@ label updated_hermione_favors: # For 1.37
         $ her_cg_xpos_abs   = 0
         $ her_cg_ypos_abs   = 0
         $ her_cg_zoom       = 1
+
+    ### Public Requests ###
+
+    if not hasattr(renpy.store,'book_notification_list'):
+        $ book_notification_list = []
+
+        $ hg_pr_flirt   = event_class(title = "She's a flirt", start_label = "hg_pr_flirt", start_tier = 1, events = [
+            [
+            ["hg_pr_flirt_T1_E1"],
+            ["hg_pr_flirt_T1_E2"],
+            ["hg_pr_flirt_T1_E3"]
+            ],
+
+            [
+            ["hg_pr_flirt_T2_E1"],
+            ["hg_pr_flirt_T2_E2"],
+            ["hg_pr_flirt_T2_E3"]
+            ],
+
+            [
+            ["hg_pr_flirt_T3_E1"],
+            ["hg_pr_flirt_T3_E2"],
+            ["hg_pr_flirt_T3_E3"]
+            ]
+
+            ],
+            icons = [None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["star_empty", "star_yellow"],["star_empty", "star_yellow"],["star_empty", "star_yellow"]]
+            )
+
+        $ hg_pr_flirt_teacher   = event_class(title = "She's bait", start_label = "hg_pr_flirt_teacher", start_tier = 1, events = [
+            [
+            ["hg_pr_flirt_teacher_T1_E1"],
+            ["hg_pr_flirt_teacher_T1_E2"],
+            ["hg_pr_flirt_teacher_T1_E3"]
+            ],
+
+            [
+            ["hg_pr_flirt_teacher_T2_E1"],
+            ["hg_pr_flirt_teacher_T2_E2"],
+            ["hg_pr_flirt_teacher_T2_E3"]
+            ],
+
+            [
+            ["hg_pr_flirt_teacher_T3_E1"],
+            ["hg_pr_flirt_teacher_T3_E2"],
+            ["hg_pr_flirt_teacher_T3_E3"]
+            ]
+
+            ],
+            icons = [None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["star_empty", "star_yellow"],["star_empty", "star_yellow"],["star_empty", "star_yellow"]]
+            )
+
+        $ hg_pr_grope   = event_class(title = "Let a classmate molest you", start_label = "hg_pr_grope", start_tier = 1, events = [
+            [
+            ["hg_pr_grope_T1_E1"],
+            ["hg_pr_grope_T1_E2"],
+            ["hg_pr_grope_T1_E3"]
+            ],
+
+            [
+            ["hg_pr_grope_T2_E1"],
+            ["hg_pr_grope_T2_E2"],
+            ["hg_pr_grope_T2_E3"]
+            ],
+
+            [
+            ["hg_pr_grope_T3_E1"],
+            ["hg_pr_grope_T3_E2"],
+            ["hg_pr_grope_T3_E3"]
+            ]
+
+            ],
+            icons = [None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["star_empty", "star_yellow"],["star_empty", "star_yellow"],["star_empty", "star_yellow"]]
+            )
+
+        $ hg_pr_flash   = event_class(title = "Flash your tits to a classmate", start_label = "hg_pr_flash", start_tier = 1, events = [
+            [
+            ["hg_pr_flash_T1_E1"],
+            ["hg_pr_flash_T1_E2"],
+            ["hg_pr_flash_T1_E3"]
+            ],
+
+            [
+            ["hg_pr_flash_T2_E1"],
+            ["hg_pr_flash_T2_E2"],
+            ["hg_pr_flash_T2_E3"]
+            ],
+
+            [
+            ["hg_pr_flash_T3_E1"],
+            ["hg_pr_flash_T3_E2"],
+            ["hg_pr_flash_T3_E3"]
+            ]
+
+            ],
+            icons = [None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["star_empty", "star_yellow"],["star_empty", "star_yellow"],["star_empty", "star_yellow"]]
+            )
+
+        $ hg_pr_kiss   = event_class(title = "Kiss a girl", start_label = "hg_pr_kiss", start_tier = 1, events = [
+            [
+            ["hg_pr_kiss_T1_E1"],
+            ["hg_pr_kiss_T1_E2"],
+            ["hg_pr_kiss_T1_E3"]
+            ],
+
+            [
+            ["hg_pr_kiss_T2_E1"],
+            ["hg_pr_kiss_T2_E2"],
+            ["hg_pr_kiss_T2_E3"]
+            ],
+
+            [
+            ["hg_pr_kiss_T3_E1"],
+            ["hg_pr_kiss_T3_E2"]
+            ]
+
+            ],
+            icons = [None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["star_empty", "star_yellow"],["star_empty", "star_yellow"],["star_empty", "star_yellow"]]
+            )
+
+        $ hg_pr_handjob   = event_class(title = "Give a handjob to a classmate", start_label = "hg_pr_handjob", start_tier = 1, events = [
+            [
+            ["hg_pr_handjob_T1_E1"],
+            ["hg_pr_handjob_T1_E2"],
+            ["hg_pr_handjob_T1_E3"]
+            ],
+
+            [
+            ["hg_pr_handjob_T2_E1"],
+            ["hg_pr_handjob_T2_E2"],
+            ["hg_pr_handjob_T2_E3"]
+            ],
+
+            [
+            ["hg_pr_handjob_T3_intro_E1"], # Ron
+            ["hg_pr_handjob_T3_E2"],
+            ["hg_pr_handjob_T3_E3"] # Ron & Harry
+            ]
+
+            ],
+            icons = [None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["star_empty", "star_yellow"],["star_empty", "star_yellow"],["star_empty", "star_yellow"]]
+            )
+
+        $ hg_pr_blowjob   = event_class(title = "Give a blowjob to a classmate", start_label = "hg_pr_blowjob", start_tier = 1, events = [
+            [
+            ["hg_pr_blowjob_T1_E1"],
+            ["hg_pr_blowjob_T1_E2"],
+            ["hg_pr_blowjob_T1_E3"]
+            ],
+
+            [
+            ["hg_pr_blowjob_T2_intro_E1"], # Ron & Harry
+            ["hg_pr_blowjob_T2_E2"], # Slytherin
+            ["hg_pr_blowjob_T2_E3"] # Restroom bukkake :O
+            ]
+
+            ],
+            icons = [None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["star_empty", "star_yellow"],["star_empty", "star_yellow"]]
+            )
+
+
+        $ hg_pr_sex   = event_class(title = "Have sex with a classmate", start_label = "hg_pr_sex", start_tier = 1, events = [
+            [
+            ["hg_pr_sex_T1_intro_E1"],
+            ["hg_pr_sex_T1_intro_E2"],
+            ["hg_pr_sex_T1_E3"],
+            ["hg_pr_sex_T1_E4"]
+            ]
+
+            ],
+            icons = [None], #if a tier doesn't need an icon replace with None
+            iconset = [["star_empty", "star_yellow"]]
+            )
+
+    $ hg_requests_list = [
+        hg_pr_flirt,
+        hg_pr_flirt_teacher,
+        hg_pr_grope,
+        hg_pr_flash,
+        hg_pr_kiss,
+        hg_pr_handjob,
+        hg_pr_blowjob,
+        hg_pr_sex
+        ]
 
     return

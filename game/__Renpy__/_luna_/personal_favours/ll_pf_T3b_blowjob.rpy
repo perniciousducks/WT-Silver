@@ -121,7 +121,7 @@ label ll_pf_blowjob:
 # Variation of the intro.
 
 label ll_pf_blowjob_T1_intro_E1:
-    $ days_to_luna += renpy.random.randint(1, 2)
+    $ ll_event_pause += renpy.random.randint(1, 2)
 
     call lun_main("","base","happyCl","base","mid", xpos="mid", ypos="base", trans="fade")
     m "Argh... these wrackspurts are causing a fair bit of swelling-"
@@ -158,7 +158,7 @@ label ll_pf_blowjob_T1_intro_E1:
 # Luna gentle BJ for about 9 hours and 14 orgasms from Genie #NEEDS TESTING
 
 label ll_pf_blowjob_T1_intro_E2:
-    $ days_to_luna += renpy.random.randint(1, 2)
+    $ ll_event_pause += renpy.random.randint(1, 2)
 
     call lun_main("","base","happyCl","base","mid", xpos="mid", ypos="base", trans="fade")
     m "Miss Lovegood, care to help me with my wackspurts infection again?"

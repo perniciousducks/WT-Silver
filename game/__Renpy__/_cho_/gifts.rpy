@@ -66,6 +66,7 @@ label cho_gift_menu:
 ### Give Cho Gift ###
 
 label give_cho_gift(gift_item):
+    $ gave_cho_gift = True
 
     if gift_item == lollipop_ITEM:
         if cho_tier <= 1:
@@ -531,9 +532,7 @@ label give_cho_gift(gift_item):
             call cho_main("I leave it in the boys changing room, should be a good reward after a practice.",face="annoyed")
             call cho_mood_change(-7)
 
-
     call cho_main(xpos="base",ypos="base")
-
     return
 
 label cho_mood_change(value=0):

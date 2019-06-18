@@ -832,7 +832,6 @@ label hg_titjob_3_cumming:
             call her_main("I mean it doesn't taste that bad and it means that I don't have to clean up afterwards.","base","happyCl")
             m "Hm... Are you sure you don't want people seeing your tits covered in cum..."
             call her_main("What? walk around school covered in your cum [genie_name]?","angry","wink")
-            m "It would keep your clothes clean."
 
             if her_whoring < 21:
                 call her_main("With all due respect [genie_name]...","upset","closed")

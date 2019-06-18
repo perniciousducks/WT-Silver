@@ -20,11 +20,11 @@ label collar_scene:
     call her_main("Please, You don't think I'm a slut do you [genie_name]?","open","base")
 
     menu:
-        "-You are a slut-" if lock_public_favors == True:
+        "-You are a slut-":
             jump slut_scene
-        "-You're a whore-" if lock_public_favors == False:
+        "-You're a whore-" if her_reputation >= 21:
             jump whore_scene
-        "-No, you're a slave-":
+        "-No, you're a slave-" if her_whoring >= 21:
             jump slave_scene
         "-Of course not, you're a good girl-":
             jump good_girl_scene

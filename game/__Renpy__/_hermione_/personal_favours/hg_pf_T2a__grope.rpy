@@ -100,6 +100,8 @@ label hg_pf_grope_T0_fail_intro:
     call her_main("My tits?!","angry","wide_stare")
     g9 "Or your butt! I haven't fully decided yet!"
 
+    $ hg_pf_grope.counter -= 1
+
     jump too_much
 
 
@@ -114,6 +116,8 @@ label hg_pf_grope_T0_fail_repeat:
     call her_chibi(action="leave", speed=2.5)
 
     $ her_mood += 6
+
+    $ hg_pf_grope.counter -= 1
 
     jump end_hermione_event
 

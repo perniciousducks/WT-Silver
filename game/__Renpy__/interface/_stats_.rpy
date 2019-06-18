@@ -250,6 +250,8 @@ screen hermione_stat_menu():
             mousewheel True
 
             vbox:
+                use stat_bar(int(her_tier/0.6), "-Favour Tier-", "", her_tier) #Max 6
+
                 use stat_bar(int(her_whoring/2.4), "-Whoring-", her_whoring_word, her_whoring) #Max 24
 
                 use stat_bar(int(her_reputation/2.4), "Reputation", her_reputation_word, her_reputation) #Max 24
@@ -258,7 +260,7 @@ screen hermione_stat_menu():
 
                 use stat_bar(int(10-her_mood/1.0), "-Mood-" , her_mood_word, her_mood) #Max 14
 
-                #Imagination 2:
+                # Tier 1
                 use text_stat("You Jerked off in front of her:")
                 use text_stat("- ", " times -", her_jerk_off_counter)
                 use text_stat("You saw her panties:")
@@ -266,47 +268,51 @@ screen hermione_stat_menu():
                 use text_stat("You admired her tits:")
                 use text_stat("- ", " times -", hg_pf_admire_breasts.counter)
 
-                #Imagination 2:
-                if imagination >= 2:
+                # Tier 2
+                if hg_pf_grope.counter != 0:
                     use text_stat("You groped her:")
                     use text_stat("- ", " times -", hg_pf_grope.counter)
                 else:
                     use text_stat("Hidden")
 
-                #Imagination 3:
-                if imagination >= 3:
+                # Tier 3
+                if hg_pf_strip.counter != 0:
                     use text_stat("Hermione has \"danced\" for you:")
                     use text_stat("- ", " times -", hg_pf_strip.counter)
                 else:
                     use text_stat("Hidden")
 
-                #Imagination 4:
-                if imagination >= 2:
+                if hg_pf_look_at_ass.counter != 0:
                     use text_stat("You admired her butt:")
                     use text_stat("- ", " times -", (hg_pf_look_at_ass.counter) )
                 else:
                     use text_stat("Hidden")
-                    use text_stat("Hidden")
 
-                if imagination >= 4:
+                # Tier 4
+                if hg_pf_handjob.counter != 0:
                     use text_stat("Hermione has given you:")
                     use text_stat("- ", " Handjobs -", hg_pf_handjob.counter)
+                else:
+                    use text_stat("Hidden")
+
+                # Tier 5
+                if hg_pf_blowjob.counter != 0:
+                    use text_stat("Hermione has given you:")
                     use text_stat("- ", " Blowjobs -", hg_pf_blowjob.counter)
+                else:
+                    use text_stat("Hidden")
+
+                if hg_pf_titjob.counter != 0:
+                    use text_stat("Hermione has given you:")
                     use text_stat("- ", " Tit jobs -", hg_pf_titjob.counter)
                 else:
                     use text_stat("Hidden")
-                    use text_stat("Hidden")
-                    use text_stat("Hidden")
-                    use text_stat("Hidden")
 
-                #Imagination 5:
-                if imagination >= 5:
+                # Tier 6
+                if hg_pf_sex.counter != 0:
                     use text_stat("You've had sex with her:")
                     use text_stat("- ", " times -", hg_pf_sex.counter)
-                    use text_stat("You've had anal sex with her:")
-                    use text_stat("- ", " times -", hg_pf_anal_sex.counter)
                 else:
-                    use text_stat("Hidden")
                     use text_stat("Hidden")
 
         vbar value YScrollValue("vp")
@@ -436,15 +442,11 @@ label update_stats:
     # Reputation
     $ her_reputation_word_list = ["Teacher's pet", "School star", "good girl", "minx", "slutty schoolgirl", "easy lay", "whore", "slut for sex", "gryffindor whore", "school cumdump", "mudblood cumdump"]
     #$ slutWords = ["Teacher's pet", "School star", "good girl", "principal's pet", "slutty schoolgirl", "slut", "principal's slut", "daddy's girl", "gryffindor slut", "Dumbledore's whore", "Dumbledore's cumdump"]
+    $ her_reputation_word = her_reputation_word_list[int(her_reputation/2.4)]
 
     # Tutoring
     $ her_tutoring_word_list = ["pure ", "naive", "tempted", "curious", "tainted", "eager", "sinful", "perverted", "corrupted", "depraved", "shattered"]
     $ her_tutoring_word = her_tutoring_word_list[int(her_tutoring/1.4)]
-
-    if lock_public_favors:
-        $ her_reputation_word = "- Locked Off -"
-    else:
-        $ her_reputation_word = her_reputation_word_list[int(her_reputation/2.4)]
 
     # Mood
     $ her_mood_word_list = ["Cheerfull", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]

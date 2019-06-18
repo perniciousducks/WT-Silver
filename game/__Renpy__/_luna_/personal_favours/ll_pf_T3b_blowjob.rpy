@@ -292,7 +292,7 @@ label luna_blowjob_under_desk: # Call label
     $ lun_cg_xpos         = 0
     $ lun_cg_ypos         = 0
     $ luna_wear_top       = True
-    $ lunCG(pupil='left', eye='wide', mouth='open', eyebrow='base', cheeks='base', extra_1='blank', extra_2='blank', extra_3='blank', tears='blank')
+    $ lunCG(pupil='left', eye='wide', mouth='open', eyebrow='base', cheeks='base', extra_1='blank', extra_2='blank', extra_3='blank', tears='blank', body='base')
 
     show screen luncg
     hide screen blkfade
@@ -682,13 +682,12 @@ label ll_pf_blowjob_T1_slapping: # Call label
     ">You quickly take out your hard cock and slap it against Luna's naive nose a few times."
 
     $ lun_cg_path       = "images/CG/luna_desk2/"
-    $ lun_cg_base       = lun_cg_path+"base.png"
     $ lun_cg_xpos_abs     = 0
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0
     $ lun_cg_ypos         = 0
 
-    $ lunCG(pupil='dick', eye='excited', mouth='base', eyebrow='sad', cheeks='blush', pos=1, extra_1='blank', extra_2='blank', extra_3='blank', tears='blank')
+    $ lunCG(pupil='dick', eye='excited', mouth='base', eyebrow='sad', cheeks='blush', pos=1, extra_1='blank', extra_2='blank', extra_3='blank', tears='blank', body='base')
 
     show screen luncg
     hide screen blkfade
@@ -936,7 +935,7 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     $ lun_cg_xpos         = 0
     $ lun_cg_ypos         = 0
 
-    $ lunCG('open', 'wide', 'base', 'up', extra_1='blank', extra_2='hand', extra_3='blank', pos=1, cheeks='blush', tears='blank')
+    $ lunCG('open', 'wide', 'base', 'up', extra_1='blank', extra_2='hand', extra_3='blank', pos=1, cheeks='blush', tears='blank', body='base')
 
     show screen luncg
     hide screen blkfade
@@ -1139,7 +1138,7 @@ label ll_pf_blowjob_T1_summon:
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = 0
     $ lun_cg_ypos         = 0
-    $ lunCG(pupil='dick', eye='excited', mouth='sucking', eyebrow='sad', cheeks='blush', pos=5, extra_1='cum_3', extra_2='hand', extra_3='blank', tears='mascara')
+    $ lunCG(pupil='dick', eye='excited', mouth='sucking', eyebrow='sad', cheeks='blush', pos=5, extra_1='cum_3', extra_2='hand', extra_3='blank', tears='mascara', body='base')
 
     show screen luncg
     hide screen blkfade
@@ -1369,7 +1368,7 @@ label ll_pf_blowjob_T1_summon:
     hide screen blkfade
     with d5
 
-    $ lunCG('wide_tongue', 'seductive', '', 'dick', pos=2)
+    $ lunCG('wide_tongue', 'seductive', '', 'dick', pos=2, body='base')
     lun "*slrp* *pop*"
     $ lunCG('base', 'wink', '', 'left', pos=1)
     lun "Hi Hermione! Nice work guessing that it was me!"
@@ -1404,7 +1403,7 @@ label ll_pf_blowjob_T1_summon:
     hide screen blkfade
     with d5
 
-    $ lunCG('sucking', 'seductive', 'angry', 'dick', pos=14)
+    $ lunCG('sucking', 'seductive', 'angry', 'dick', pos=14, body='base')
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=8)
     call her_main("Six times already? How long does she stay under there?","disgust","narrow")

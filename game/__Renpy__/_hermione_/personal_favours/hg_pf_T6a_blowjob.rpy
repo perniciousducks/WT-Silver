@@ -1691,137 +1691,203 @@ label hg_blowjob_5: #Bondage facefuck scene
     #Start CG with Hermione sitting there with her mouth open gazing up at Genie
     her "Ahhhh..."
     m "Perfect."
+    $ her_cg_path           = "images/CG/herm_deep/"
+    $ her_cg_genie          = her_cg_path+"genie.png"
+    $ her_cg_xpos_abs       = 0
+    $ her_cg_ypos_abs       = 0
+    $ her_cg_xpos           = 0
+    $ hwe_cg_ypos           = 0
+
+    $ herCG(pupil='up', eye='squint_m', mouth='base', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='hand', tears='mascara', body='base')
+
+    show screen hercg
+    hide screen blkfade
+    with d5
     ">Unable to wait any longer, you put your hand on the back of Hermione's head before forcefully pulling it forward burying her nose in your stomach and your cock down her throat?"
     her "!!!"
     ">Hermione's arms desperately sturggle against the cuffs as she attempts to push herself off your cock."
     m "See why we need the cuffs now?"
+    $ herCG(pupil='mid', xpos=-renpy.random.randint(0, 50))
     her "..."
     m "Because I don't juyst want a blowjob today. I don't want your arms interfering and getting in the way."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "..."
     m "I want to {b}fuck{/b} your face."
     m "Hard."
     ">With that you starting mercilessly pumping Hermione's head backwards and forwards viscously on your cock, filling the room with the harsh sounds of you throating the poor girl."
     #Cocksucking loop
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Ugh... that's it..."
+    $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "This is what I've been missing..."
+    $ herCG(pupil='up', eye='squeeze', xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "The feeling some slut's throat struggling..."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "While I fuck it senseless..."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Can't be beat..."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Only way this can get any better is when the girl you're doing it to also ends up being a princess."
     ">You pull Hermione's head off your cock,"
     m "You're not a princess are you?"
+    $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
     her "COUGH COUGH COUGH"
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "Ah...... no... I'm not a princess..."
     m "Shame..."
     ">You grab hermione's hair, forcefully ramming your cock back down her throat..."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "!!!"
+    $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Guess you'll just have to settle for being grade-a fuck meat..."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Not that you aren't good enough to be dicksucking royalty..."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Maybe we'll have to give you a title after all..."
+    $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "You could be the queen of cocksucking..."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Princess of penis?"
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Let me know when you hear anything that piques your fancy."
+    $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Nothing? Probably too focused on earning yourself a salty treat."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Well... Let me indulge you then."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     ">With that, you hold hermione's face hard against your stomach as you start pumping your load down her throat."
+    $ herCG(pupil='up', eye='squint_m', xpos=0, extra_1="cum")
     her "!!!"
     g9 "Ugh... that's it..."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glp*glp*glp*"
     ">Hermione helplessly starts to struggle against her cuffs as you cut off her air supply to pump her full of cum."
     g9 "Mmmmm...."
     ">Eventually, you let her head go, allowing her to pull herself off your cock to take a much needed breath."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "aaaaaaahhh...."
+    $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
     her "[genie_name]! *pant* You almost killed me!"
     m "You're fine..."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "Barely! What if I had died?"
     m "At least you would have died doing what you love."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "Ha! Well don't think I'll let you try that again!"
     m "You're not really in any position to argue that though, are you?"
     ">You start smearing your cock against her nose and face while she helplessly glares at you."
+    $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
     her "..."
     m "Besides, that puddle your kneeling in doesn't really make it look like you're having such a bad time yourself..."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "You k-know I can't help that!"
     m "You're right... You just can't help being such a naughty little slut, can you?"
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "..."
     m "I guess there are other ways your throat can answer that question. Now, open wide..."
+    $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
     her "No, please, not again... I can't-"
     ">Instead of giving her time to complain, you grab the back of her head and jam your cock back down the poor girls throat."
+    $ herCG(pupil='up', eye='squint_m', xpos=0, extra_1='blank', extra_2='cum_2')
     her "!!!"
     m "Fuck... that's it..."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     ">You revel in the feeling of Hermione's throat helplessly contracting around the head of your cock as it mercilessly pumps in and out."
+    $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "We really need to do this more often..."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Nothing quite drains the old balls more than a good facefucking."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "What do you think?"
+    $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Would you be OK with letting your headmaster fuck your little face everyday?"
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Going to every class with a belly full of cum."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Your makeup a mess."
+    $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "Showing off to everyone that your a shameless blowjob barbie..."
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     m "You'd love it, wouldn't you?"
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     ">Hermione's legs start spasming as the puddle of cum beneath her grows..."
     m "That answers that..."
+    $ herCG(pupil='up', eye='squint_m', xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     g9 "Ready for another load, slut?"
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     g9 "HERE IT COMES!"
+    $ herCG(xpos=-renpy.random.randint(0, 50))
     her "*glck*glk*glck*"
     g9 "ARGH!!!"
     menu:
         "Cum up her nose":
+            hide screen hercg
+            with fade
             ">You quickly pull your cock out of her throat before placing it up against her left nostril."
-            her "aaaaaaahhh.... *pant*wait...*pant* not there..."
+            call her_main("aaaaaaahhh.... *pant*wait...*pant* not there...","nose","wide", ypos="suck", tears="mascara")
             ">Helpless to stop you, Hermione is unable to prevent you from firing a huge load up her nose."
             g9 "FUCK YES! TAKE THIS, WHORE!"
-            her "Ah... no... it's so hot! I can feel it! Ugh... it's coming down my throat..."
+            call her_main("Ah... no... it's so hot! I can feel it! Ugh... it's coming down my throat...","nose_cum","ahegao")
             g9 "UGHH!!!"
             ">You shift your cock head so it's firmly sealed against her right nostril before you continue unloading into the poor girl."
-            her "Ah.... it's... your shooting it on my brain!"
-            her "Agh.... the smell... it's so much... I can't..."
-            her "ah........"
+            call her_main("Ah.... it's... your shooting it on my brain!","full_cum","ahegao")
+            call her_main("Agh.... the smell... it's so much... I can't...","full_cum","ahegao")
+            call her_main("ah........","full_cum","ahegao")
 
         "Cum down her throat":
             ">You firmly hold hermione's head against your body as you shamelessly unload down her throat for the second time..."
             g9 "FUCK YES! SWALLOW THIS, SLUT!"
+            $ herCG(pupil='up', eye='squint', xpos=-0, extra_1='cum')
             her "*glp*glp*glp*"
             g9 "Ugh... that's it..."
+            $ herCG(pupil='up', eye='squint', xpos=-40)
             her "*glp*glp*glp*"
             g9 "Take it all..."
+            $ herCG(pupil='up', eye='squint', xpos=-0)
             her "*glp*glp*glp*"
 
         "Cum on her face":
             ">You pull your cock out and start furiously jerking it in front of her face."
-            her "aaaaaaahhh.... *pant*please...*pant* coat me..."
+            call her_main("aaaaaaahhh.... *pant*please...*pant* coat me...","cumshot","ahegao")
             g9 "ARGH!!! YOU WHORE!!!"
-            her "*pant*{image=textheart}{image=textheart}{image=textheart}*pant*"
+            $ uni_sperm = True
+            $ u_sperm = "characters/hermione/face/auto_07.png"
+            call her_main("*pant*{image=textheart}{image=textheart}{image=textheart}*pant*","cumshot","ahegao_intense")
             g9 "TAKE THIS!!!"
             ">You start unloading onto the girl's waiting face."
-            her "{image=textheart}Yesss....{image=textheart}"
+            call her_main("{image=textheart}Yesss....{image=textheart}","soft","ahegao_mad")
             ">Hermione closes her eyes and smiles, holding her face dead still, allowing you to paint it with cum..."
 
+    hide screen hercg
+    show screen blkfade
+    with fade
     ">With that, Hermione's legs again start to shake, giving away another shameless orgasm from the cumslut..."
     her "Ah... soooo... goooodd..."
     ">Before she can say anymore, she passes out in a naked mess, laying in a pool of her own cum, still cuffed together."

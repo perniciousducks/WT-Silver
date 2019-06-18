@@ -864,4 +864,27 @@ label updated_hermione_favors: # For 1.37
         hg_pf_strip
         ]
 
+    if not hasattr(renpy.store,'her_cg_path') or reset_persistants or reset_luna_content:
+        $ her_cg_path       = "images/CG/herm_deep/"
+        $ her_cg_overlay    = her_cg_path+"blank.png"
+        $ her_cg_base       = her_cg_path+"base.png"  
+        $ her_cg_body       = her_cg_path+"luna_base.png"
+        $ her_cg_cheeks     = her_cg_path+"c_base.png"
+        $ her_cg_mouth      = her_cg_path+"m_base.png"
+        $ her_cg_eyewhite   = her_cg_path+"eye_white.png"
+        $ her_cg_pupil      = her_cg_path+"pup_base.png"
+        $ her_cg_eye        = her_cg_path+"eye_base.png"
+        $ her_cg_eyebrow    = her_cg_path+"eb_base.png"
+        $ her_cg_eyewear    = her_cg_path+"glasses.png"
+        $ her_cg_tears      = her_cg_path+"blank.png"
+        $ her_cg_extra_1    = her_cg_path+"blank.png"
+        $ her_cg_extra_2    = her_cg_path+"blank.png"
+        $ her_cg_extra_3    = her_cg_path+"blank.png"
+        $ her_cg_genie      = her_cg_path+"genie.png"
+        $ her_cg_xpos       = 0
+        $ her_cg_ypos       = 0
+        $ her_cg_xpos_abs   = 0
+        $ her_cg_ypos_abs   = 0
+        $ her_cg_zoom       = 1
+
     return

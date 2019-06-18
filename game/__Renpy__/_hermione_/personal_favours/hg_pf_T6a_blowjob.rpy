@@ -692,7 +692,7 @@ label hg_hidden_blowjob_luna: #Call label. Returns.
             call her_main("{size=-4}(Ouch!... *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao")
             call slap_her
             call slap_her
-            g4 "Had enough, you narsty little thing?"
+            g4 "Had enough, you nasty little thing?"
             call slap_her
             g4 "Want some more?"
             call slap_her

@@ -52,12 +52,50 @@ label tonks_progress_init:
         $ tonks_shaming_unlocked  = False
 
 
+
+    ### Tonks Hangout Events ###
+
+    if not hasattr(renpy.store,'nt_he_drink_responses'):
+        $ nt_he_drink_responses   = event_class(title = "Tonks Firewhisky", start_label = "tonks_hangout", events = [
+            [
+            ["nt_he_wine_intro"],
+            ["nt_he_firewhiskey_intro"],
+            ["nt_he_firewhiskey_E1"],
+            ["nt_he_firewhiskey_E2"],
+            ["nt_he_firewhiskey_E3"],
+            ["nt_he_firewhiskey_E4"]
+            ]
+
+            ],
+            iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
+            )
+
+    if not hasattr(renpy.store,'nt_he_auror_story'):
+        $ nt_he_auror_story   = event_class(title = "Tonks Auror Stories", start_label = "tonks_hangout", events = [
+            [
+            ["nt_he_auror_story_intro_E1"], # Intro
+            ["nt_he_auror_story_intro_E2"], # Moody
+            ["nt_he_auror_story_intro_E3"], # Turning water into wine
+            ["nt_he_auror_story_intro_E4"], # Lots of paperwork
+            ["nt_he_auror_story_E5"],       # Vampire story
+            ["nt_he_auror_story_intro_E6"], # Moody's teaching methods
+            ["nt_he_auror_story_E7"],       # Werewold story
+            ["nt_he_auror_story_intro_E8"], # Illegal love potion
+            ["nt_he_auror_story_intro_E9"], # Dumb game mechanics
+            ["nt_he_auror_story_E10"],      # Metamorphmagi
+            ["nt_he_auror_story_E11"]       # Invisible clothing charm
+            ]
+
+            ],
+            iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
+            )
+
     ###################
     # Public requests #
     ###################
 
     if not hasattr(renpy.store,'nt_pr_teach'):
-        $ nt_pr_teach   = event_class(title = "Detention with Tonks.", start_label = "nt_pr_teach_start", events = [
+        $ nt_pr_teach   = event_class(title = "Detention with Tonks.", start_label = "nt_pr_teach_start", start_tier = 1, events = [
             [
             ["nt_pr_teach_T1_E1"], # Slytherin boy
             ["nt_pr_teach_T1_E2"], # Ravenclaw boy
@@ -77,39 +115,39 @@ label tonks_progress_init:
             )
 
     if not hasattr(renpy.store,'nt_pr_grope'):
-        $ nt_pr_grope   = event_class(title = "Hands-on lessons!", start_label = "nt_pr_grope_start", events = [
+        $ nt_pr_grope   = event_class(title = "Hands-on lessons!", start_label = "nt_pr_grope_start", start_tier = 2, events = [
             [
             ["nt_pr_grope_T1_E1"], # Slytherin boy
             ["nt_pr_grope_T1_E2"], # Ravenclaw boy
             ["nt_pr_grope_T1_E3"], # Potter & Weasley
             ["nt_pr_grope_T1_E4"]  # Slytherin girl
-            ],
+            ]#,
 
-            [
-            ["nt_pr_grope_T2_E1"], #
-            ["nt_pr_grope_T2_E2"], #
-            ["nt_pr_grope_T2_E3"], #
-            ["nt_pr_grope_T2_E4"]  #
-            ]
+            #[
+            #["nt_pr_grope_T2_E1"], #
+            #["nt_pr_grope_T2_E2"], #
+            #["nt_pr_grope_T2_E3"], #
+            #["nt_pr_grope_T2_E4"]  #
+            #]
 
             ],
             iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
             )
 
     if not hasattr(renpy.store,'nt_pr_kiss'):
-        $ nt_pr_kiss   = event_class(title = "Oral practice!", start_label = "nt_pr_kiss_start", events = [
+        $ nt_pr_kiss   = event_class(title = "Oral practice!", start_label = "nt_pr_kiss_start", start_tier = 2, events = [
             [
-            ["nt_pr_kiss_T1_E1"], #
-            ["nt_pr_kiss_T1_E2"], #
-            ["nt_pr_kiss_T1_E3"], #
-            ["nt_pr_kiss_T1_E4"]  #
+            ["nt_pr_kiss_T1_intro_E1"], # Ravenclaw boy
+            ["nt_pr_kiss_T1_E2"],       #
+            ["nt_pr_kiss_T1_E3"], # Slytherin girls
+            ["nt_pr_kiss_T1_E4"]        # Slytherin girl
             ],
 
             [
-            ["nt_pr_kiss_T2_E1"], #
-            ["nt_pr_kiss_T2_E2"], #
-            ["nt_pr_kiss_T2_E3"], #
-            ["nt_pr_kiss_T2_E4"]  #
+            ["nt_pr_kiss_T2_E1"], # Slytherin boy
+            #["nt_pr_kiss_T2_E2"], #
+            #["nt_pr_kiss_T2_E3"], #
+            #["nt_pr_kiss_T2_E4"]  #
             ]
 
             ],

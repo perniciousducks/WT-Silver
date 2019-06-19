@@ -7,7 +7,7 @@
 
 label nt_pr_kiss_start:
 
-    if ton_tier == 1:
+    if ton_tier == 2:
 
         if nt_pr_kiss.points == 0:
             m "Ready to try something a little different?"
@@ -35,7 +35,7 @@ label nt_pr_kiss_start:
             m "Well, don't let me stop you."
             ton "Thank you, sir..."
 
-    elif ton_tier >= 2:
+    elif ton_tier >= 3:
 
         if nt_pr_kiss.points == 0: # Tell her to be even lewder for the next level of favors.
 
@@ -101,7 +101,7 @@ label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
     jump end_tonks_event
 
 
-label nt_pr_kiss_T1_intro_E2: # Tier 1 - Event 2 - Ravenclaw boy
+label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     m "You're a bit late... Get caught up having fun with your students?"
     ton "Mmmm, and then some..."
     m "I like the sound of that!"
@@ -142,7 +142,7 @@ label nt_pr_kiss_T1_intro_E2: # Tier 1 - Event 2 - Ravenclaw boy
     jump end_tonks_event
 
 
-label nt_pr_kiss_T1_intro_E3: # Tier 1 - Event 3 - Slytherin girls
+label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
     #Tonks pays two best friends to make-out
     m "How was your day?"
     ton "Better than most... You're going to love todays story!"
@@ -159,6 +159,16 @@ label nt_pr_kiss_T1_intro_E3: # Tier 1 - Event 3 - Slytherin girls
     m "I take it they said yes?"
     ton "Only after they negotiated out a price."
     ton "But I tell you what, those hundred points were worth it."
+
+    menu:
+        "-start jerking off-":
+            ">Your arm slips into your robe, grabbing a hold of your cock and gently stroking it back to life."
+            ton "...*tsk*"
+            ton "At least I know I have your attention..."
+            m "Mmmm... undivided."
+        "-Pay attention-":
+            pass
+
     ton "I convinced the two of them to make out with each other for a full ten minutes..."
     ton "Ugh... It was quite possibly the hottest thing I've ever witnessed in my life."
     m "Mmmm, more..."
@@ -182,36 +192,14 @@ label nt_pr_kiss_T1_intro_E3: # Tier 1 - Event 3 - Slytherin girls
 
     jump end_tonks_event
 
-label nt_pr_kiss_T1_E3: # Slytherin girls (From T1_intro_E3) repeat
-    m "[tonks_name]."
-    ton "[ton_genie_name]. Want me to jump straight into the story?"
-    m "By all means."
-    menu:
-        "-start jerking off-":
-            ">Your arm slips into your robe, grabbing a hold of your cock and gently stroking it back to life."
-            ton "...*tsk*"
-            ton "At least I know I have your attention..."
-            m "Mmmm... undivided."
 
-
-    jump end_tonks_event
-
-
-label tonks_teacher_event_3_4: #Level 1 Event 4
+label nt_pr_kiss_T1_E4: #Level 1 Event 4
     #Tender make-out sesh with slytherin lesbian
     ton "Do I have a story for you today!"
     ton "This is so good I feel I should turn it into a feel-good, coming-of-age flick!"
     m "About a boy snogging his teacher?"
     ton "No! About a tender and confused young girl coming to terms with her sexuality thanks to her stunningly intelligent teacher."
-    ton "I'm thinking I should be played by Mary Elizabeth Winstead... She's definitely has the sexual aggressiveness to portray me..."
-    m "I wouldn't go casting just yet... You still have to get the script approved by yours truly."
-    ton "Oh? Are you going to be the producer?"
-    m "Just call me MR Weinstein from now on."
-    ton "Hahaha... You do look a little like him!"
-    m "Hey! {w}I'm not that fat..."
-    ton "Well, Harvey, Do you want to hear the story or not?"
-    m "I do..."
-    ton "Good. Today's star is our favourite little repressed \"slytherin\"..."
+    ton "Starring our favourite little repressed \"slytherin\"..."
     ton "Now, she's started coming around to me as of late..."
     ton "So, I figured now might be a good time to take it to the next level..."
     ton "Getting her to stay after class is easy enough now, I can just brush her hand as I walk around the class and throw her a subtle wink."
@@ -238,11 +226,11 @@ label tonks_teacher_event_3_4: #Level 1 Event 4
     m "Very good. That'll be all for now then tonks."
     ton "Thank you, sir."
 
-
-
     jump end_tonks_event
 
-label tonks_teacher_event_3_5: #Level 2 Event 1
+
+
+label nt_pr_kiss_T2_E1: # Tier 2 Event 1
     m "How did your extra-curricular activities pan out today?"
     ton "Honestly? I don't think I've ever been as turned on in my life..."
     ton "Fuck... It was incredible... the power I felt over him... it was intoxicating..."

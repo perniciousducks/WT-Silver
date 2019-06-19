@@ -170,8 +170,6 @@ label start_wt:
     pause 1.2
 
 
-    if not persistent.nightmode:
-        $ interface_color = "gold"
     $ day = 0
 
     ### CHARACTER INIT RESET ###
@@ -244,13 +242,23 @@ label start_wt:
             $ skip_duel = False
             $ rum_times = 3 #7 unlocks map!
             $ day = 5
+            $ daytime = False
+            $ interface_color = "gray"
+            hide screen blkfade
+            with fade
             jump snape_intro_E4
 
+        $ snape_intro.E4_complete = True
+        $ snape_intro.E5_complete = True
         if skip_to_hermione:
             $ skip_to_hermione = False
 
             $ hermione_intro.E1_complete = True
             $ hermione_intro.E2_complete = True
+
+            $ tonks_intro.E1_complete = True
+            $ tonks_intro.E2_complete = True
+            $ tonks_intro.E3_complete = True
 
             $ hang_with_snape.E1_complete = True
             $ hang_with_snape.E2_complete = True
@@ -274,7 +282,11 @@ label start_wt:
                 $ tutoring_hermione_unlocked = True
                 $ hermione_favors = True
                 jump day_start
-
+            $ daytime = True
+            if not persistent.nightmode:
+                $ interface_color = "gold"
+            hide screen blkfade
+            with fade
             jump hermione_intro_E6
 
     ### START ANIMATION ###

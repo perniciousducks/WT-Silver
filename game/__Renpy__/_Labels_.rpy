@@ -37,6 +37,7 @@ label hide_all_screens:
 
     hide screen with_snape #Genie hangs out with Snape in front of the fireplace.
     hide screen with_snape_animated #Genie hangs out with Snape in front of the fireplace.
+    hide screen with_tonks_animated
     hide screen done_reading
     hide screen done_reading_near_fire
 
@@ -210,6 +211,34 @@ label main_room:
         jump day_resume
     else:
         jump night_resume
+
+
+
+label setup_fireplace_hangout(char=None):
+    play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
+    show screen blkfade
+    with d3
+
+    $ fire_in_fireplace = True
+
+    call hide_characters
+    call gen_chibi("hide")
+    call sna_chibi("hide")
+    hide screen chair_right
+    show screen desk
+
+    show screen fireplace_fire
+    if char == "snape":
+        show screen with_snape_animated
+    if char == "tonks":
+        show screen with_tonks_animated
+
+    hide screen bld1
+    hide screen blkfade
+    with fade
+
+    return
+
 
 
 # Reset menu
@@ -448,7 +477,7 @@ label spit_on_her:
     return
 
 label cast_spell(spell=""):
-    if spell == "imperio":
+    if spell in ["revelio","imperio"]:
 
         stop music fadeout 2.0
         call play_sound("spell")

@@ -559,13 +559,6 @@ label her_progress_init:
             start_label = "hg_pf_titjob",
         )
 
-    if not hasattr(renpy.store,'hg_pf_sex'): #important!
-        $ hg_pf_sex = favor_class(
-            tier = 5,
-            title = "Let's have sex!",
-            start_label = "hg_pf_sex",
-        )
-
     if not hasattr(renpy.store,'hg_pf_anal_sex'): #important!
         $ hg_pf_anal_sex = favor_class(
             tier = 5,
@@ -578,7 +571,6 @@ label her_progress_init:
         $ hg_pf_handjob.tier = 5
         $ hg_pf_blowjob.tier = 6
         $ hg_pf_titjob.tier = 6
-        $ hg_pf_sex.tier = 7
         $ hg_pf_anal_sex.tier = 8
 
     $ hg_pf_list = [
@@ -586,7 +578,6 @@ label her_progress_init:
                     hg_pf_handjob,
                     hg_pf_blowjob,
                     hg_pf_titjob,
-                    hg_pf_sex,
                     hg_pf_anal_sex
         ]
 
@@ -648,7 +639,6 @@ label updated_hermione_favors: # For 1.37
         # Sex Favor
         $ hg_T6_sex_trigger      = False
 
-    if not hasattr(renpy.store,'hg_pf_talk'):
         $ hg_pf_talk   = event_class(title = "Talk to me!", start_label = "hg_pf_talk", start_tier = 1, events = [
             [
             ["hg_pf_talk_T1_intro_E1"],
@@ -753,9 +743,7 @@ label updated_hermione_favors: # For 1.37
 
     if not hasattr(renpy.store,'hg_pf_strip'):
         $ hg_pf_strip   = event_class(title = "Dance for Me!", start_label = "hg_pf_strip", start_tier = 1, events = [
-            [
-            ["hg_pf_strip_fail"],
-            ],
+            [["hg_pf_strip_fail"]], # Tier 1
 
             [
             ["hg_pf_strip_T0_fail_intro"],
@@ -779,12 +767,35 @@ label updated_hermione_favors: # For 1.37
             iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"]]
             )
 
+    if not hasattr(renpy.store,'hg_pf_sex'):
+        $ hg_pf_sex   = event_class(title = "Let's have sex!", start_label = "hg_pf_sex", start_tier = 1, events = [
+            [["hg_pf_sex_fail"]], # Tier 1
+            [["hg_pf_sex_fail"]], # Tier 2
+            [["hg_pf_sex_fail"]], # Tier 3
+            [["hg_pf_sex_fail"]], # Tier 4
+
+            [
+            ["hg_pf_sex_fail"] # Tier 5 (Add tier 0 events that fail.)
+            ],
+
+            [
+            ["hg_pf_sex_T1_intro_E1"], #
+            ["hg_pf_sex_T1_intro_E2"], #
+            ["hg_pf_sex_T1_E2"]        #
+            ]
+
+            ],
+            icons = [None, None, None, None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_yellow"]]
+            )
+
     $ hg_favor_list = [
         hg_pf_talk,
         hg_pf_admire_breasts,
         hg_pf_admire_panties,
         hg_pf_grope,
-        hg_pf_strip
+        hg_pf_strip,
+        hg_pf_sex,
         ]
 
     if not hasattr(renpy.store,'her_cg_path') or reset_persistants or reset_luna_content:

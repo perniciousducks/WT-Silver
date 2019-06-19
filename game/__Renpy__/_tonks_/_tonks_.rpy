@@ -1,6 +1,6 @@
 ### Tonks###
 
-label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False, hair=None):
+label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
 
     #Flip
     if flip == False:

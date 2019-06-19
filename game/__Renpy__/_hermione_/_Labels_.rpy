@@ -105,6 +105,13 @@ label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, t
         show screen chair_left
         show screen jerking_off_01
 
+    elif action in ["sex","sex_slow","sex_fast","sex_pause","sex_cumming_out","sex_cumming_out_blink","sex_creampie","sex_creampie_pause"]:
+        show screen chair_left
+        show screen hermione_chibi_sex(ani=action)
+        if action in ["sex_cumming_out","sex_cumming_out_blink","sex_creampie","sex_creampie_pause"]:
+            $ uni_sperm = True
+            $ u_sperm = "characters/hermione/face/auto_08.png"
+
     else:
         $ menu_y = 0.5
         call reset_hermione

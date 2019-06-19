@@ -13,14 +13,16 @@ label tonks_intro_E1:
     ton "Nymphadora Tonks, Sir."
     ton "Ministry of Magic, Auror division."
 
+
     if letter_favor_complaint_OBJ.read:
         g4 "(Oh shit, the fuzz...)"
-        m "(They must’ve found out I’m not actually Dumbywho!)"
-        ton "Sir?"
-        m "Governments are all the same with their bloody rules...{w=2.0}{nw}"
+        m "(I thought they would have forgotten about those damn letters by now...)"
         ton "Sir, I’m here to discuss an important matter with you regarding your students."
-        m "Oh... is that all?"
-        m "I mean, of course. do come in!"
+        m "(Governments are all the same with their bloody rules.)"
+        ton "Sir?"
+        m "(...)"
+        m "Of course. Do come in..."
+
     else:
         m "(Another female?)"
         m "(She sounds a bit too old to be a student...)"
@@ -31,8 +33,14 @@ label tonks_intro_E1:
 
     call ton_main(face="neutral", xpos="right", ypos="base")
 
-    ton "Thank you, I do apologize for arriving unannounced."
+    ton "Thank you, Professor."
     m "(Oh shit, she’s hot...)"
+    ton "I apologize for arriving unannounced... And a couple of days late..."
+    ton "I had quite the *pleasant* encounter with a group of centaurs that moved too far out of their assigned territory."
+    ton "I had to *convince* them to move back into the area that was given to them by the Ministry."
+    m "(...)"
+    ton "You'd never be able to guess how I did it... It's quite the story."
+    m "(I bet she gave them all a blowjob...)"
     ton "Okay then, let’s get this over with."
     ton "So... Professor Dumbledore, are you aware of why the Ministry sent me here?"
 
@@ -70,7 +78,7 @@ label tonks_intro_E1:
             ton "Miss Granger wrote about several Slytherin girls that inquire to do favours for their male     teachers."
             m "So what?"
             ton "Those favours tend to be very \"sexual\" in nature."
-            m "Shit..."
+            m "(Shit...)"
 
     m "Well, I can’t say I’m very well versed in these... very,{w=0.4} very rare occurrences."
     m "I was actually just about to begin my own investigation in the matter."
@@ -83,7 +91,8 @@ label tonks_intro_E1:
     m "But you can’t-"
     ton "Do have some confidence in me, Professor. This is what I was trained for..."
     m "Well, wait just one minute..."
-    ton "Don’t worry, I’ve already gotten a room down in Hogsmeade, I’ll be staying there so no worries about accommodations."
+    ton "Don’t worry, I’ve already gotten a room down in Hogsmeade."
+    ton "I’ll be staying there so no worries about accommodations."
     m "Great..."
     ton "And you are not to speak to any of the other professors and students about our meeting. I’d like to keep my presence unknown."
     m "(...)"
@@ -92,12 +101,8 @@ label tonks_intro_E1:
     # Tonks leaves.
     call hide_characters
 
-    call bld
-    m "Shit..."
-    m "I better talk to Snape about this..."
-
     $ tonks_intro.E1_complete = True
-    $ nt_event_pause += 1
+    # Don't add event pause here!
 
     jump main_room
 
@@ -108,26 +113,27 @@ label tonks_intro_E2:
 
     call ton_main(face="neutral", xpos="right", ypos="base")
 
-    m "Tonks... Have you found any evidence yet?"
+    m "Hey! It's...{w} you again..."
+    m "Found any evidence yet?"
     ton "Sadly no, Professor."
     ton "I haven't gotten a chance to investigate properly."
-    ton "I was rather occupied listening to Miss Granger's own investigations first."
+    ton "I’ve been rather occupied listening to Miss Granger's own investigations first."
     ton "That girl sure is something, isn't she?"
-    ton "Not that I minded listening to her."
-    ton "(With her cute little accent...)"
-    ton "I offered her to stay over the evening and tell me everything, while I enjoyed a glass of firewhiskey..."
-    ton "She was very thorough in writing down the happenings she's witnessed."
-
-    # Tonks could tell you about some of Hermione's
-
-    ton "Anyhow, she had no proof of any such activities. It's all just accusations."
+    ton "Not that I mind listening to her."
+    ton "She gave me a very long report that went well into the evening, whilst I enjoyed a glass of firewhisky..."
+    ton "She’s sure been very thorough in documenting the happenings she's witnessed..."
+    ton "Anyhow, other than her documentation she had no proof of any illicit activities. It's all just accusations."
     ton "As much as I wish they were true..."
-    m "(Huh?)"
+    m "Huh?"
     ton "So I could conclude my investigations early, of course."
     ton "And bring this favour trading business to an end, once and for all."
 
     # Tonks leaves.
     call hide_characters
+
+    call bld
+    m "Shit..."
+    m "I better talk to Snape about this..."
 
     $ tonks_intro.E2_complete = True
     $ nt_event_pause += 1
@@ -147,84 +153,182 @@ label tonks_intro_E3:
     m "............"
     call play_sound("knocking")
 
-    ton "Professor Dumbledore, I know you’re in there..."
-    m "Who is it?"
-    ton "Tonks!"
-    m "Who?"
-    ton "..."
-    ton "Nymphadora Tonks...{w=1.0} Ministry of Magic, Auror division."
-    m "I see..."
-    m "Do you mind coming another time, I’m very busy...{w} watering the bird."
-    ton "..."
-    ton "I’m coming in."
+    ton "Professor Dumbledore, may I come in?"
+    m "(It's that hot Ministry chick again...)"
+
+    menu:
+        "Yes, please come on in.":
+            pass
+        "Not right now.":
+            ton "But it's urgent, Sir. I need to talk to you about Miss Granger's favour trading accusations..."
+            g4 "(Shit. That can't be good.)"
+            m "Do you mind coming another time, I’m very busy...{w} watering the bird."
+            ton "Watering what?"
+            ton "Sir, I’m coming in."
+        "Who is it?":
+            ton "It's Tonks."
+            m "Who?"
+            ton "..."
+            ton "Nymphadora Tonks...{w=1.0} Ministry of Magic, Auror division."
+            m "(Nympho-what?)"
+            ton "Sir, I’m coming in."
+            g4 "(Shit!)"
+
 
     #*Tonks enters the office*
     call ton_main(face="angry", xpos="right", ypos="base")
 
-    m "Oh, that Tonks, my apologies. I thought you might have been someone else."
+    ton "Thank you, Professor."
     m "How’s the investigation going? Nothing to report I gather?"
     ton "On the contrary..."
-    m "(Darn...)"
-    ton "In fact I caught one of your teachers engaged in rather...{w=0.3} adulterous activities with a couple of students."
-    m "A couple...{w} Like, at the same time?"
-    ton "Indeed, and could you guess who this teacher might be?"
-    m "Probably Sn-"
-    ton "Severus Snape!"
-    m "Oh, no! How could this have happened in my school!"
-    ton "Cut the bullshit, I know you’re in on it!"
-    g4 "What, how... I mean, of course I’m not. What are these accusations?"
-    ton "Surely these kinds of activities is not the proper way for a headmaster to behave."
-    g4 "But I didn’t..."
-    ton "Well, I got proof confirming the opposite."
-    g4 "I never even got to..."
-    ton "You’ll surely end up in azkaban prison for letting this go on under your supervision."
+    ton "This school has changed since the last time I was here."
+    ton "And I wouldn't say for the better..."
+    ton "Teachers taking advantage of their students, selling them favours..."
+    ton "While they abuse their authority and power to do the most despicable things to them..."
+    ton "The Dumbledore I know would never agree to such debauchery..."
+    m "(...)"
+    ton "I had this suspicion... Since the very day I got here..."
+    # Tonks threatens Genie.
+    # Maybe have her chibi point her wand at him?
+
+    ton "Now tell me, who are you? And you better tell the truth!"
+    g4 "(Shit, how often is this going to happen to me?)"
+
+    menu:
+        g4 "I'm..."
+        "Albus Dumbledore!":
+            ton "You are most certainly *not* Albus Dumbledore!"
+            g4 "No wait, it was Albertus Dumblerdore! That's it!"
+            m "(Yes, that was probably it...)"
+        "You know who!":
+            ton "What?"
+            m "You... know... who..."
+            ton "That can't be true!"
+            m "You know who I am. You said it yourself earlier."
+            m "(If only I could remember what she called me...)"
+
+    ton "I've had enough of this!"
+    ton "Reveal who you are, dark wizard!"
+    g4 "I'm not a dark wizard, you racist twat!"
+    ton "What? How dare you call me a racist!"
+    g4 "I'm not afraid of you! Bring it! Do your worst, witch!"
+    call hide_characters
+    hide screen bld1
+    with d3
+
+    # Glass break animation.
+    # Duel won't happen and Tonks just casts a spell.
+
+    call play_music("boss_theme")
+    call play_sound("glass_break")
+    pause.1
+
+    show screen snape_glass
+    pause 3
+    show screen blkfade
+    with d5
+
+    hide screen snape_glass
+    hide screen blkfade
+    with d5
+    pause.1
+
+    call gen_chibi("hide")
+    show screen dumbledore
+    call cast_spell("revelio")
+    call ton_main("Revelio!","open","base","angry","mid", hair="angry", ypos="head")
+    call bld("hide")
+    pause.6
+
+    call gen_chibi("sit_behind_desk")
+    hide screen dumbledore
+    with d9
+    pause.6
+
+    call ton_main("","open","wide","wide","mid", xpos="right", ypos="base")
+    m "(...)"
+    call ton_main("No way!","open","base","base","mid")
+    m "What just happened?"
+    ton "What... are you...?"
+    m "(Can she see through the illusion?)"
+    ton "Wait a minute... Are you...{w} a Genie?"
+    g4 "(This witch knows her shit...)"
+    m "..."
+    call play_music("playful")
+    g9 "Some people would say I'm *the* Genie, actually!"
+    m "The most powerful being in the entire universe... Multiple universes even.... Glad my reputation precedes me..."
+    ton "How curious. I've never had one before..." # Tonks looks horny.
+    m "What?"
+    ton "I meant, I've never had the pleasure of meeting a Genie before. This is brilliant!"
+    m "I'm flattered... But how were you able to tell?"
+    ton "I'm an Auror. It's my job to identify and catch magical beings..."
+    ton "But, if you are here, what happened to Professor Dumbledore? Did he use one of your wishes and wished himself away?"
+    m "No... I don't do that anymore."
+    m "I'm what you would call a *free* Genie..."
+    ton "So? What happened to him?"
+    m "I believe we traded places when one of my magical inventions went wrong..."
+    ton "You don't say?! Is he all right?"
+    m "I think so.{w} He traveled to my universe, and I’m stuck in this dull place..."
+    m "Believe me, there are a lot more brothels in Agrabah.{w} I bet he's having the time of his life..."
+    ton "So, you just poofed in here and decided to turn this school into your own private brothel..."
+    ton "Because you were bored?!"
+    m "Hey! I'm an immortal being... boredom is my worst enemy."
+    m "And I didn’t do much, just a nudge in the right direction at the very best."
+    ton "You need to bring him back, the real Dumbledore, immediately!"
+    m "I don't know how,... yet.{w} We’re still working on it..."
+    ton "We? Who else knows about this?"
+    m "That Snape guy."
+    ton "But of course!{w} After all... Professor Snape was mentioned in Miss Granger's letter as one of the offenders."
+    ton "That sleazy, vile snake... Naturally he'd be all over an opportunity such as this."
+    m "(Snake? Have I been saying his name wrong this entire time... I hate when that happens.)"
+    ton "And to think I got fooled by that creep when I questioned him about it."
+    m "(...)"
+    ton "He's a very skilled liar, I'll give him that."
+    m "Are you going to lock us up now?"
+    ton "I very well should! It would be the moral thing to do."
+    m "(Shit...)"
+    ton "But that won't bring back Professor Dumbledore..."
+    call ton_main("You and Professor Snape should be locked up in the tiniest cell in Azkaban for what you’ve done...","open","base","angry","mid")
     g4 "No, I hate confined spaces!"
-    ton "..."
-    ton "And I can’t believe things had gone this far already without my involvement."
-    g4 "Please don’t put me in...{w=0.4} Wait,{w=0.2} already?"
-    ton "I assumed it would’ve taken at least another year before things reached anywhere close to this stage, at first I thought it was just pure ignorance from your part."
-    ton "But if you’re also in on it, it makes a lot more sense..."
-    m "Wait... hold on a minute."
-    m "The ministry is in on this too?"
-    ton "Oh, by Merlins left testicle..."
-    ton "Of course they’re not, I am!"
-    m "Why would you..."
-    ton "Who do you think kept things quiet with the ministry and intercepted any correspondence to begin with."
-    ton "Well, until miss Granger had hers sent directly to one of the other departments..."
-    m "But this doesn’t make any sense, why would a ministry worker. That doesn’t even work here be in on any illicit goings on confined within the school."
-    ton "Panty pictures!"
-    m "What!"
-    ton "Well, I’m fine with any photographs really, ankles, butts, underwear..."
-    m "I see..."
-    ton "Feet!"
-    g4 "Feet?"
-    ton "Well, anything I can get really."
-    m "(This lady’s a pervert...)"
-    ton "There seems to be a great opportunity here..."
-    m "I’d rather keep my shoes on thank you!"
-    ton "Not that, silly."
-    ton "It appears that there’s finally an opening for me."
-    ton "The ministry sent me to check out what they assumed to be a rumour."
-    ton "And whilst I could just squash the rumour and go back to a dull office job, I know for a fact that they’ve been looking at any excuse to have an adversary here at Hogwarts."
+    ton "And stay there for the rest of your life..."
+    g4 "You can't do that to me, I'm immortal! I'd go insane!"
+    ton "You should have thought about that before deciding to fuck your own students!"
+    g4 "But I haven't even gotten to that part yet!"
+    call ton_main("And you never will! Unless...","open","base","raised","R")
+    m "Unless?"
+    ton "It's simple..."
+    call ton_main("You let me join in on the fun.",face="horny")
+    m "..."
+    m "What?" #screenshake
+    ton "The ministry sent me to investigate what they assumed to be a rumour."
+    ton "And whilst I could just squash the rumour and go back to a dull desk job."
+    ton "Keeping quiet would be far more beneficial to me..."
+    ton "I know for a fact that the Ministry has been looking at any excuse to have an adversary here at Hogwarts."
     m "Then what are you suggesting?"
-    ton "Well, I’m suggesting I continue keeping my own motives to myself, squash the rumour but suggest to the ministry that I could take a position here in the guise of continuing the investigation."
-    m "So, you’re going to pretend that you’re doing them a favour and continuing your diligent allegiance with the ministry?"
-    m "Whilst taking a normal teaching position here with the purpose to get closer to the students?"
-    ton "Exactly!"
-    m "(I think I might’ve come across this universe’s version of me...)"
-    ton "So what do you say, Dumbledore? Any vacancies you need filled?"
-    ton "Oh, who am I kidding. I already know you’re always in the need of a Defence against the Dark arts teacher."
-    m "Are you sure it’s such a good idea..."
+    ton "Hire me as a teacher."
+    ton "I could teach the students a thing or two about the *Defence against the Dark Arts*..."
+    m "(...)"
+    ton "And if you and Snape want this favour trading to continue, you'll need somebody who can keep things quiet with the ministry."
+    m "Do I even have a choice?"
     ton "The alternative would be me bringing this to the ministry’s attention."
     g9 "Welcome aboard!"
-    m "You can take whatever position is vacant."
-    ton "Great, I already brought my things with me!"
-    m "Of course you did..."
-    ton "I’ll make sure to keep you updated."
-    m "Marvelous..."
+    ton "Don't worry. I'm not here to spoil the fun."
+    m "That's a relief..."
+    ton "I'll inform the other teachers about my stay."
+    ton "And the Ministry too of course. I know they'd love to have a ministry person teaching at Hogwarts, at the request of Professor Dumbledore himself, no less."
+    ton "If only they knew..."
+    ton "In any case, Profess-"
+    ton "Or is it Genie now? What would you like me to call you?"
+    m "You can call me whatever you want, hon."
+    ton "Very well. Call me to your office whenever you need my help, Sir."
+    m "I most certainly will..."
 
     #*Tonks leaves*
     call hide_characters
+
+    call bld
+    m "What an interesting turn of events..."
+    g9 "Who could have guessed that she's a pervert as well?!"
 
     $ tonks_unlocked = True
     $ achievement.unlock("unlockton")

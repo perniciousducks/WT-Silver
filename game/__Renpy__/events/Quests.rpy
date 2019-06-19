@@ -56,30 +56,21 @@ label quests:
             if hg_event_pause == 0 and hang_with_snape.E1_complete and not hermione_intro.E2_complete:
                 # Second visit from Hermione. Says she sent a letter to the Minestry.
                 jump hermione_intro_E2
-        else:
-            if hermione_intro.E2_complete and not letter_favor_complaint_OBJ.read:
-                $ letter_favor_complaint_OBJ.mailLetter()
 
     if day >= 7:
+        if hermione_intro.E2_complete and not letter_favor_complaint_OBJ.read:
+            $ letter_favor_complaint_OBJ.mailLetter()
+        if not letter_paperwork_unlock_OBJ.read:
+            $ letter_paperwork_unlock_OBJ.mailLetter()
         if daytime:
-            if hg_event_pause == 0 and hermione_intro.E2_complete and not tonks_intro.E1_complete:
-                # Tonks visits for the first time.
-                jump tonks_intro_E1
-
-    if day >= 8:
-        if daytime:
-            if nt_event_pause == 0 and hang_with_snape.E3_complete and not tonks_intro.E2_complete:
-                # Tonks has found no evidence so far.
-                jump tonks_intro_E2
+            pass
         else:
             if hg_event_pause == 0 and hang_with_snape.E2_complete and not hermione_intro.E3_complete:
                 # Takes place after first special event with Snape, where he just complains about Hermione.
                 # Hermione might have failed a test...
                 jump hermione_intro_E3
 
-    if day >= 9:
-        if not letter_paperwork_unlock_OBJ.read:
-            $ letter_paperwork_unlock_OBJ.mailLetter()
+    if day >= 8:
         if daytime:
             pass
         else:
@@ -87,21 +78,33 @@ label quests:
                 # She failed a test and cries.
                 jump hermione_intro_E4
 
-    if day >= 10:
+    if day >= 9:
         if daytime:
             if hg_event_pause == 0 and hermione_intro.E4_complete and not hermione_intro.E5_complete:
                 # Hermione asks to be tutored. Summon unlocked!
                 jump hermione_intro_E5
 
+    if day >= 10:
+        if daytime:
+            if nt_event_pause == 0 and hermione_intro.E2_complete and not tonks_intro.E1_complete:
+                # Tonks visits for the first time.
+                jump tonks_intro_E1
+        else:
+            if tonks_intro.E1_complete and not tonks_intro.E2_complete:
+                # Tonks has found no evidence so far.
+                jump tonks_intro_E2
+
     if day >= 11:
         if daytime:
-            if nt_event_pause == 0 and hermione_intro.E5_complete and hang_with_snape.E3_complete and not tonks_intro.E3_complete:
+            pass
+        else:
+            if nt_event_pause == 0 and hang_with_snape.E3_complete and not tonks_intro.E3_complete:
                 # Tonks becomes a teacher. Summon unlocked!
                 jump tonks_intro_E3
 
     if day >= 13:
         if daytime:
-            if hg_event_pause == 0 and hermione_intro.E5_complete and not hermione_intro.E6_complete: # Add Tonks trigger
+            if hg_event_pause == 0 and hermione_intro.E5_complete and hang_with_snape.E3_complete and hang_with_tonks.E1_complete and not hermione_intro.E6_complete:
                 # Hermione wants to buy favors. Favors unlocked!
                 jump hermione_intro_E6
 
@@ -315,18 +318,18 @@ label quest_init:
 
     if not hasattr(renpy.store,'tonks_intro'):
         $ tonks_intro   = event_class(title = "Tonks intro", events =
-        [[ ["tonks_intro"] ]], iconset = [["star_empty", "star_yellow"]],
+        [[ ["tonks_intro"] ]], iconset = [["star_empty", "star_pink"]],
         E1_complete=False,   # 1st visit
         E2_complete=False,   # 2nd visit
         E3_complete=False,   # 3rd visit, summon unlocked.
         )
 
-    #if not hasattr(renpy.store,'hang_with_tonks'):
-    #    $ hang_with_tonks   = event_class(title = "Hang with Tonks", events =
-    #    [[ ["hang_with_tonks"] ]], iconset = [["star_empty", "star_yellow"]],
-    #    E1_complete=False,
-    #    E2_complete=False,
-    #    E3_complete=False,
-    #    )
+    if not hasattr(renpy.store,'hang_with_tonks'):
+        $ hang_with_tonks   = event_class(title = "Hang with Tonks", events =
+        [[ ["hang_with_tonks"] ]], iconset = [["star_empty", "star_pink"]],
+        E1_complete=False,
+        E2_complete=False,
+        E3_complete=False,
+        )
 
     return

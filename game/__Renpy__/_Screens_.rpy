@@ -155,13 +155,14 @@ screen gift():
     add the_gift align (0.5, 0.4) zoom get_zoom(the_gift, 320,320)
 
 
-label give_reward(text="",gift=""):
+label give_reward(text="",gift="", sound=True):
 
-    $ renpy.play('sounds/win2.mp3')
-    show screen notes
-    with d9
-    hide screen notes
-    with d3
+    if sound == True:
+        $ renpy.play('sounds/win2.mp3')
+        show screen notes
+        with d9
+        hide screen notes
+        with d3
 
     if gift!="":
         $ the_gift = gift

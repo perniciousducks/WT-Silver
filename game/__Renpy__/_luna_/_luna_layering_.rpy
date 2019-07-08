@@ -4,6 +4,7 @@
 
 screen luna_main():
     tag luna_main
+    zorder luna_zorder
 
     ### BASE IMAGE
     add luna_base xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
@@ -73,9 +74,6 @@ screen luna_main():
 
     if luna_wear_cum and genie_base == "characters/genie/base/hard.png":
         add "characters/luna/body/arms/right_4_2.png" xpos 390 ypos 0 xzoom luna_flip zoom (1.0/luna_scaleratio)
-
-    ### ZORDER
-    zorder luna_zorder
 
 
 screen luna_uniform():

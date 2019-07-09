@@ -47,11 +47,19 @@ screen alchemy_screen(ingredient):
         action Return("brew")
     
     
-    
-
+    imagebutton:
+        xpos 59
+        ypos 15
+        idle "interface/topbar/buttons/" +interface_color+ "/ui_delete.png"
+        hover im.MatrixColor("interface/topbar/buttons/" +interface_color+ "/ui_delete.png",im.matrix.brightness(0.12))
+        action Return("garbage")
         
-    textbutton "ingr" xalign 0.10 yalign 0.10 action Return("ingredient")
-    textbutton "garbage" xalign 0.15 yalign 0.10 action Return("garbage")
+    imagebutton:
+        xpos 15
+        ypos 15
+        idle "interface/topbar/buttons/" +interface_color+ "/ui_inv.png"
+        hover im.MatrixColor("interface/topbar/buttons/" +interface_color+ "/ui_inv.png",im.matrix.brightness(0.12))
+        action Return("ingredient")
 
     use top_bar_close_button
  
@@ -69,7 +77,9 @@ init python:
     water = ingredient("water")
     stuff = ingredient("stuff")
     
-    ingredient_pos = [water.clone(), stuff, water, stuff]
+    ingredient_pos = [water.clone(), stuff.clone(), water.clone(), stuff.clone()]
+    
+    recipe_book = book_readable_class("Snakes recipes for dymmies", [])
     
     water_stuff = recipe([water,stuff], "Water Brew", "A potion based on water and stuff very simple to make just put water and then stuff into the coldron.")
     stuff_water = recipe([stuff,water], "Stuff Brew", "Something something dark side")
@@ -129,11 +139,13 @@ init python:
                 elif _return == "garbage":
                     selected_ingredient = None
                     holding_ingredient = None
-                #elif _return == "book":
                     
+            elif _return == "book":
+                renpy.call("book_handle", recipe_book)
                  
-                elif _return == "Close":
-                    renpy.hide_screen("alchemy_screen")
-                    renpy.jump("return_office")
+            elif _return == "Close":
+                renpy.hide_screen("alchemy_screen")
+                renpy.jump("return_office")
+                print("works")
                 
     

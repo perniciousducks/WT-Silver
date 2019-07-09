@@ -18,9 +18,11 @@ init -1 python:
         rany = 0
         
         def __init__(self, ingredient):
+            
             self.name = ingredient
             self.ranx = renpy.random.randint(80, 100)
             self.rany = renpy.random.randint(0, 20)
+            
             
         def update_state(self, new_state):
             if new_state == "cut_board":
@@ -55,10 +57,12 @@ init -1 python:
         description = ""
         
         def __init__(self, recipe, name, description):
+            global recipe_book
             self.recipe_steps = recipe
             self.name = name
             self.description = description
-        
+            recipe_book.append((name, description))
+            
         def validate(self, action, current_state):
             if self.recipe_steps[current_state] == action:
                 return True

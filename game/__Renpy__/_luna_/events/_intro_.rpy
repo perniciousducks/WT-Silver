@@ -59,7 +59,8 @@ label hat_intro:
     m "What?"
     hat "{size=+5}z{/size}{size=+4}z{/size}{size=+3}z{/size}{size=+2}z{/size}{size=+1}z{/size}"
     m "Oh..."
-    return
+
+    jump main_room
 
 
 label hat_intro_2: #Bringing in Hermione
@@ -116,7 +117,7 @@ label hat_intro_3: #Luna change scene #DONE
         "-Let the hat mess with her-(Slytherin Luna Path)":
             pass
         "-Let her go-(Regular Luna Path)":
-            $ days_to_luna += renpy.random.randint(2, 5)
+            $ ll_event_pause += renpy.random.randint(2, 5)
             $ luna_reverted = True
             m "Actually, on second thought, I better not put the hat on."
             call lun_main("Oh... Why not?","base","wink","sad","mid")
@@ -141,7 +142,7 @@ label hat_intro_3: #Luna change scene #DONE
             $ luna_unlocked = True
             $ achievement.unlock("unlocklun")
 
-            return
+            jump main_room
 
     m "I just wanted to put the hat on your head to see if he made the right choice."
     call lun_main("oh, alright then!","base","base","base","R")
@@ -203,7 +204,7 @@ label hat_intro_3: #Luna change scene #DONE
 
     $ luna_busy = True
 
-    return
+    jump main_room
 
 ###Need another intro event here, introducing Luna and setting up the favour selling stuff.
 
@@ -216,7 +217,7 @@ label hat_intro_3: #Luna change scene #DONE
 
 label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
 
-    $ days_to_luna += renpy.random.randint(2, 5)
+    $ ll_event_pause += renpy.random.randint(2, 5)
     $ lun_whoring = 0 #Triggers event during the evening.
 
     #Reset Luna Model

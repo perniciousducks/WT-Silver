@@ -474,7 +474,7 @@ label luna_revert_1: #Reversion event #DONE
     $ luna_reverted = True
     $ luna_wardrobe_unlocked = False
     $ lun_whoring = -2 #Triggers new intro event.
-    $ days_to_luna = 3
+    $ ll_event_pause += 3
 
     $ hermione_busy = True
 

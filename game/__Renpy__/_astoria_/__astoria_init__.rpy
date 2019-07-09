@@ -186,10 +186,6 @@ label astoria_progress_init:
         $ astoria_wardrobe_unlocked = False
         $ chitchated_with_astoria = False
 
-        $ days_since_astoria = 0
-        $ astoria_arrival_day = 30
-        $ astoria_arrvial_whoring = 9
-
         #Names
         $ astoria_name = "Miss Greengrass"
         $ ast_genie_name = "Dumby"

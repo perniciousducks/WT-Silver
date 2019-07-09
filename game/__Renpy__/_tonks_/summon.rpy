@@ -26,23 +26,14 @@ label summon_tonks:
                 jump tonks_talk
 
 
-        # Requests
-        "-Public Requests-" if daytime and tonks_requests_unlocked:
-            jump tonks_requests_menu
-
-        "{color=#858585}-Public Requests-{/color}" if not daytime and tonks_requests_unlocked:
-            call nar(">Public requests are available during the daytime only.")
-            jump tonks_requests
-
-
         # Detention Events
-        "-Send Astoria with her-" if astoria_book_intro_happened and spells_locked and daytime and not astoria_busy:
+        "-Send Astoria with her-" if astoria_book_intro_happened and spells_locked and daytime and not astoria_busy and astoria_unlocked:
             call blkfade
             call nar(">You summon Astoria.")
             pause.5
             hide screen blkfade
             call ast_main("Hi, [ast_genie_name]!","grin","base","base","mid",xpos="mid",ypos="base",trans="fade")
-            if tonks_wear_robe == False and tonks_wear_top == False: #Half or completely naked.
+            if not tonks_class.get_worn("robe") and not tonks_class.get_worn("top"): #Half or completely naked.
                 call ast_main("He--","worried","closed","base","mid")
                 call ast_main("[ast_tonks_name]?!","open","wide","wide","R",trans="hpunch")
                 call ast_main("[ast_genie_name], why is she naked?","scream","closed","worried","mid",trans="hpunch")
@@ -82,7 +73,7 @@ label summon_tonks:
             call play_music("brittle_rille") #Day Theme
             jump day_main_menu
 
-        "{color=#858585}-Send Astoria with her-{/color}" if astoria_busy or not astoria_book_intro_happened or not daytime or not spells_locked:
+        "{color=#858585}-Send Astoria with her-{/color}" if astoria_busy or not astoria_book_intro_happened or not daytime or not spells_locked and astoria_unlocked:
             if not astoria_book_intro_happened:
                 call nar(">You should probably discuss this with Astoria first.")
             elif not spells_locked:
@@ -92,6 +83,20 @@ label summon_tonks:
             elif astoria_busy:
                 call nar(">Astoria is currently unavailable.")
             jump tonks_requests
+
+
+        # Requests
+        "-Public Requests-" if daytime and tonks_requests_unlocked:
+            jump tonks_requests_menu
+
+        "{color=#858585}-Public Requests-{/color}" if not daytime and tonks_requests_unlocked:
+            call nar(">Public requests are available during the daytime only.")
+            jump tonks_requests
+
+
+        # Fireplace Chats
+        "-Let's hang-":
+            jump tonks_hangout
 
 
         # Wardrobe
@@ -196,7 +201,7 @@ label tonks_talk:
                 call ton_main("I will see what I can do should you get any new ones.","base","base","base","mid")
                 jump tonks_requests
 
-        "-Get naked!-" if tonks_strip_happened and (tonks_wear_top or tonks_wear_bottom or tonks_wear_robe):
+        "-Get naked!-" if tonks_strip_happened and (not tonks_class.get_worn("top") or not tonks_class.get_worn("bottom") or not tonks_class.get_worn("robe")):
             m "Get naked, [tonks_name]!"
             call ton_main("Of course, [ton_genie_name].","horny","base","base","ahegao")
             hide screen tonks_main
@@ -213,7 +218,7 @@ label tonks_talk:
             call ton_main("I like the way you think, [ton_genie_name]!","horny","base","base","mid")
             jump tonks_requests
 
-        "-Get dressed-" if tonks_strip_happened and not (tonks_wear_top or tonks_wear_bottom or tonks_wear_robe):
+        "-Get dressed-" if tonks_strip_happened and not (tonks_class.get_worn("top") or tonks_class.get_worn("bottom") or tonks_class.get_worn("robe")):
             m "Put on some clothes, would you..."
             m "This is a school, after all."
             call ton_main("Of course, [ton_genie_name].","base","base","base","mid")

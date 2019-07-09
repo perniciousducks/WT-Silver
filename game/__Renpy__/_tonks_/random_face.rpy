@@ -11,7 +11,7 @@ label set_ton_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
     $ temp_tears    = None
     $ temp_extra    = None
     $ temp_emote    = None
-    
+
     if hair != None:
         if hair in ("angry"):
             $ tonks_class.get_cloth("hair").color = [[164, 34, 34, 255]]
@@ -108,19 +108,28 @@ label set_ton_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
 
 label tonks_face_layers:
 
-    $ ton_mouth_layers  = ["base",
+    $ ton_mouth_layers  = ["angry",
+                           "base",
                            "horny",
                            "open",
-                           "open_wide_tongue"
+                           "open_wide_tongue",
+                           "scream",
+                           "smile",
+                           "upset"
                            ]
 
     $ ton_eye_layers    = ["base",
+                           "closed",
+                           "happyCl",
+                           "shocked",
                            "wide"
                            ]
 
     $ ton_brow_layers   = ["angry",
                            "base",
                            "raised",
+                           "sad",
+                           "upset",
                            "wide",
                            "worried"
                            ]

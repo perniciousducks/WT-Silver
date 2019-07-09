@@ -3,6 +3,11 @@ label cheats:
         "-Hermione Cheats-" if hermione_unlocked:
             label cheats_hermione:
             menu:
+                "-Read Hermione's Diary-":
+                    call her_whoring_pages
+                    call cheat_append_all_pages
+                    call book_handle(book=hermione_diary)
+                    jump cheats_hermione
                 "-Reset Hermione's mood-" if her_mood != 0:
                     $ her_mood = 0
                     ">Hermione is no longer mad at you."

@@ -195,6 +195,7 @@ label cho_intro_1:
             pause.5
 
             $ cho_jerk_off_counter += 1
+            $ her_jerk_off_counter += 1
             $ jerked_off_during_cho_intro = True # Optional dialogue with Snape.
 
             $ masturbating = True

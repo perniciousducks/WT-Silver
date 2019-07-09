@@ -1,6 +1,6 @@
 ### Tonks###
 
-label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False, hair=None):
+label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
 
     #Flip
     if flip == False:
@@ -117,19 +117,6 @@ label update_tonks:
     #$ update_chibi_image("tonks")
     #$ tonks_flip = 1
     #$ tonks_cloth_pile = False
-    return
-
-label set_ton_astoria_name:
-    if one_of_five == 1:
-        $ ton_astoria_name = "Cutie"
-    elif one_of_five == 2:
-        $ ton_astoria_name = "Kitty"
-    elif one_of_five == 3:
-        $ ton_astoria_name = "Princess"
-    elif one_of_five == 4:
-        $ ton_astoria_name = "Little girl"
-    else:
-        $ ton_astoria_name = "Honey"
     return
 
 

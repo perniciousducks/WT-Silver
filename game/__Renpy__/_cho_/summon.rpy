@@ -4,7 +4,7 @@ label summon_cho:
     call play_sound("door")
     call cho_chibi("stand","mid","base")
     with d3
-    
+
     $ active_girl = "cho"
     $ cho_busy = True
     call cho_random_clothing
@@ -21,7 +21,8 @@ label summon_cho:
             $ lock_cho_training = True # Temporarily, Until next events get added.
             $ cho_tier = 2
             $ main_match_1_stage = "start"
-            $ days_without_an_event = 0 # Event starts on the next day.
+            $ cc_event_pause  += 1  # Event starts on the next day.
+            $ cc_summon_pause += 1 # Can't be summoned until next event.
             jump start_hufflepuff_match
 
 

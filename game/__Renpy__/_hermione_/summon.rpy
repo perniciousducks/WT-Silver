@@ -426,7 +426,7 @@ label hermione_talk:
             #You tell Hermione about the curses.
             if snape_on_the_lookout: #Already talked to Snape.
                 $ hermione_finds_astoria = True
-                $ days_without_an_event = 0 #So the event won't happen right after.
+                $ ag_event_pause = 2 # Event happens in 2 days.
             if hermione_on_the_lookout:
                 call her_main("I'm still looking for that student, [genie_name]!","open","closed")
                 call her_main("Trust in me, I will find that slytherin scum!","angry","angry")

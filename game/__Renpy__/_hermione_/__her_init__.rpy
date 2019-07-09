@@ -41,9 +41,7 @@ label her_init:
         $ hermione_perm_expand_ass       = False
 
         $ hermione_expand_breasts           = False #Temporary Expand
-        $ hermione_expand_breasts_counter   = 0
         $ hermione_expand_ass               = False #Temporary Expand
-        $ hermione_expand_ass_counter       = 0
 
 
         #Arms
@@ -485,11 +483,6 @@ label her_progress_init:
         #Public Request Vars.
         $ hg_pr_sex_skip = False
 
-        $ lazy_aka_not_yet = True #In public events. Kiss a girl. Event level 03. Event # 3. Turns FALSE after that.
-        $ sucked_off_ron = False #In public events. Give a handjob to classmate. Event level 03. Event # 1. "Jerked of and suked of Ron Weasley". Turns True after that.
-        $ suked_off_ron_and_har = False #In public events. Give blowjob to a classmate. Event level 03. Event # 3. "Sukerd off Harrt and Ron". Turns True after that.
-        $ fucked_ron_and_har = False #In public events. Have sex with a classmate. Event # 1. "Returns next morning". Turns True after that.
-
         #Public Shaming Flags
         $ her_panties_soaked = False
         $ current_job = 0
@@ -566,13 +559,6 @@ label her_progress_init:
             start_label = "hg_pf_titjob",
         )
 
-    if not hasattr(renpy.store,'hg_pf_sex'): #important!
-        $ hg_pf_sex = favor_class(
-            tier = 5,
-            title = "Let's have sex!",
-            start_label = "hg_pf_sex",
-        )
-
     if not hasattr(renpy.store,'hg_pf_anal_sex'): #important!
         $ hg_pf_anal_sex = favor_class(
             tier = 5,
@@ -585,7 +571,6 @@ label her_progress_init:
         $ hg_pf_handjob.tier = 5
         $ hg_pf_blowjob.tier = 6
         $ hg_pf_titjob.tier = 6
-        $ hg_pf_sex.tier = 7
         $ hg_pf_anal_sex.tier = 8
 
     $ hg_pf_list = [
@@ -593,7 +578,6 @@ label her_progress_init:
                     hg_pf_handjob,
                     hg_pf_blowjob,
                     hg_pf_titjob,
-                    hg_pf_sex,
                     hg_pf_anal_sex
         ]
 
@@ -655,7 +639,6 @@ label updated_hermione_favors: # For 1.37
         # Sex Favor
         $ hg_T6_sex_trigger      = False
 
-    if not hasattr(renpy.store,'hg_pf_talk'):
         $ hg_pf_talk   = event_class(title = "Talk to me!", start_label = "hg_pf_talk", start_tier = 1, events = [
             [
             ["hg_pf_talk_T1_intro_E1"],
@@ -760,9 +743,7 @@ label updated_hermione_favors: # For 1.37
 
     if not hasattr(renpy.store,'hg_pf_strip'):
         $ hg_pf_strip   = event_class(title = "Dance for Me!", start_label = "hg_pf_strip", start_tier = 1, events = [
-            [
-            ["hg_pf_strip_fail"],
-            ],
+            [["hg_pf_strip_fail"]], # Tier 1
 
             [
             ["hg_pf_strip_T0_fail_intro"],
@@ -786,15 +767,59 @@ label updated_hermione_favors: # For 1.37
             iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"]]
             )
 
+    if not hasattr(renpy.store,'hg_pf_sex'):
+        $ hg_pf_sex   = event_class(title = "Let's have sex!", start_label = "hg_pf_sex", start_tier = 1, events = [
+            [["hg_pf_sex_fail"]], # Tier 1
+            [["hg_pf_sex_fail"]], # Tier 2
+            [["hg_pf_sex_fail"]], # Tier 3
+            [["hg_pf_sex_fail"]], # Tier 4
+
+            [
+            ["hg_pf_sex_fail"] # Tier 5 (Add tier 0 events that fail.)
+            ],
+
+            [
+            ["hg_pf_sex_T1_intro_E1"], #
+            ["hg_pf_sex_T1_intro_E2"], #
+            ["hg_pf_sex_T1_E2"]        #
+            ]
+
+            ],
+            icons = [None, None, None, None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_yellow"]]
+            )
+
     $ hg_favor_list = [
         hg_pf_talk,
         hg_pf_admire_breasts,
         hg_pf_admire_panties,
         hg_pf_grope,
-        hg_pf_strip
+        hg_pf_strip,
+        hg_pf_sex,
         ]
 
-
+    if not hasattr(renpy.store,'her_cg_path') or reset_persistants or reset_luna_content:
+        $ her_cg_path       = "images/CG/herm_deep/"
+        $ her_cg_overlay    = her_cg_path+"blank.png"
+        $ her_cg_base       = her_cg_path+"base.png"  
+        $ her_cg_body       = her_cg_path+"luna_base.png"
+        $ her_cg_cheeks     = her_cg_path+"c_base.png"
+        $ her_cg_mouth      = her_cg_path+"m_base.png"
+        $ her_cg_eyewhite   = her_cg_path+"eye_white.png"
+        $ her_cg_pupil      = her_cg_path+"pup_base.png"
+        $ her_cg_eye        = her_cg_path+"eye_base.png"
+        $ her_cg_eyebrow    = her_cg_path+"eb_base.png"
+        $ her_cg_eyewear    = her_cg_path+"glasses.png"
+        $ her_cg_tears      = her_cg_path+"blank.png"
+        $ her_cg_extra_1    = her_cg_path+"blank.png"
+        $ her_cg_extra_2    = her_cg_path+"blank.png"
+        $ her_cg_extra_3    = her_cg_path+"blank.png"
+        $ her_cg_genie      = her_cg_path+"genie.png"
+        $ her_cg_xpos       = 0
+        $ her_cg_ypos       = 0
+        $ her_cg_xpos_abs   = 0
+        $ her_cg_ypos_abs   = 0
+        $ her_cg_zoom       = 1
 
     ### Public Requests ###
 

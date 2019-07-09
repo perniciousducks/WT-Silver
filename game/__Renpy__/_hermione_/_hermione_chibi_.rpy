@@ -58,8 +58,12 @@ screen ch_potion():
 ### GROPING ###
 screen groping_01(): # Grope Ass fully clothed - Flip = True (facing door)
     tag favor
-    add "groping_01" at Position(xpos=-60, ypos=10)
-    add "groping_01_blinking" at Position(xpos=-60, ypos=10)
+    if hermione_wear_top == False and hermione_wear_bottom == False:
+        add "characters/hermione/chibis/fingering/02.png" at Position(xpos=-60, ypos=10)
+        add "fingering_blinking" at Position(xpos=-60, ypos=10)
+    else:
+        add "groping_01" at Position(xpos=-60, ypos=10)
+        add "groping_01_blinking" at Position(xpos=-60, ypos=10)
     zorder desk_zorder
 
 screen groping_02(): # Grope Ass fully clothed - Flip = False
@@ -76,8 +80,15 @@ screen no_groping_01(): # Hermione stands with you behind desk - Flip = True (fa
 
 screen no_groping_02(): # Hermione stands with you behind desk - Flip = False
     tag favor
-    add "characters/hermione/chibis/grope_ass/back_b_05.png" at Position(xpos=-60, ypos=10)
-    add "groping_02_blinking" at Position(xpos=-60, ypos=10)
+    if hermione_wear_top == False and hermione_wear_bottom == False:
+        if masturbating:
+            add "characters/hermione/chibis/fingering/back_n_solo.png" at Position(xpos=-60, ypos=10)
+        else:
+            add "characters/hermione/chibis/fingering/back_n_idle.png" at Position(xpos=-60, ypos=10)
+        add "fingering_blinking" at Position(xpos=-60, ypos=10)
+    else:
+        add "characters/hermione/chibis/grope_ass/back_b_05.png" at Position(xpos=-60, ypos=10)
+        add "groping_02_blinking" at Position(xpos=-60, ypos=10)
     zorder desk_zorder
 
 
@@ -113,6 +124,33 @@ screen jerking_off_cum():
 screen genie_and_tits_01(): #Genie sitting, looking ar naked tits. Hermione stands right in front of him. (Behind the desk even).
     tag favor
     add "images/rooms/main_room/admire_tits_00.png" at Position(xpos=-60, ypos=10)
+    zorder desk_zorder
+
+
+
+### Sex ###
+screen hermione_chibi_sex(ani=None): #x-70 y10
+    tag favor
+    if ani == "sex_slow":
+        add "sex_slow_ani" at Position(xpos=-70, ypos=10)
+    elif ani == "sex_fast":
+        add "sex2_ani" at Position(xpos=-70, ypos=10)
+    elif ani == "sex_pause":
+        add "pause_sex" at Position(xpos=-70, ypos=10)
+
+    elif ani in ["sex_cumming_out","sex_cumming_out_blink"]:
+        if ani == "sex_cumming_out":
+            add "sex_cum_out_ani" at Position(xpos=-70, ypos=10)
+        else:
+            add "sex_cum_out_blink_ani" at Position(xpos=-70, ypos=10)
+
+    elif ani in ["sex_creampie"]:
+        add "sex_cum_in_ani" at Position(xpos=-70, ypos=10)
+    elif ani in ["sex_creampie_pause"]:
+        add "characters/hermione/chibis/sex/creampie_19.png" at Position(xpos=-70, ypos=10)
+
+    else:
+        add "sex_ani" at Position(xpos=-70, ypos=10)
     zorder desk_zorder
 
 
@@ -412,51 +450,3 @@ label her_walk_end_loiter(dissolveTime = 3):
     else:
         hide screen hermione_stand
     return
-
-
-
-label set_h_animation(ani=u_h_animation, xpos = u_h_ani_xpos, ypos = u_h_ani_ypos):
-    if ani != u_h_animation:
-        $ u_h_animation = ani
-    if ani == "sex_ani":
-        $ u_h_ani_xpos = -210
-        $ u_h_ani_ypos = 10
-    if ani == "blowjob_ani":
-        $ u_h_animation_paused = "hand_ani"
-        $ u_h_ani_xpos = -150
-        $ u_h_ani_ypos = 10
-    return
-
-label play_h_animation:
-    hide screen u_h_ani_scr_pause
-    if u_h_animation == "sex_ani":
-        hide screen genie
-        show screen chair_left
-    if ani == "blowjob_ani":
-        hide screen genie
-        show screen chair_left
-    #if:
-
-    show screen u_h_ani_scr
-    return
-
-label pause_u_animation:
-    hide screen u_h_ani_scr
-    show screen u_h_ani_scr_pause
-    with d2
-    return
-
-label end_h_animation:
-    if u_h_animation == "sex_ani":
-        show screen genie
-        hide screen chair_left
-        hide screen u_h_ani_scr
-    #if:
-    return
-
-
-screen u_h_ani_scr():
-    add u_h_animation at Position(xpos=u_ani_xpos, ypos=u_ani_ypos)
-
-screen u_h_ani_scr_pause():
-    add u_h_animation_paused at Position(xpos=u_ani_xpos, ypos=u_ani_ypos)

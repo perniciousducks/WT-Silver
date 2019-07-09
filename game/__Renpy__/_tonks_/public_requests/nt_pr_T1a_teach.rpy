@@ -12,49 +12,55 @@ label nt_pr_teach_start:
     if ton_tier == 1:
 
         if nt_pr_teach.points == 0:
-            ton "So, what's the plan?"
+            call ton_main("So, what's the plan?","base","base","base","mid")
             m "The plan?"
-            ton "You know, how does this go down?"
-            ton "I'm hardly a regular when it comes to this stuff."
+            call ton_main("You know, how does this go down?","base","base","base","mid")
+            call ton_main("I'm hardly a regular when it comes to this stuff.","base","base","base","mid")
             m "Let's start small. We'll need to build up a bit of a reputation for you before you start trying anything crazy."
-            ton "A reputation?"
-            ton "Think I'll get a nickname? Maybe they'll call me touchy tonks?"
+            call ton_main("A reputation?","base","base","base","mid")
+            call ton_main("Think I'll get a nickname? Maybe they'll call me touchy tonks?","base","base","base","mid")
             m "Maybe..."
-            ton "So what did you buy off of Hermione on your first favour?"
+            call ton_main("So what did you buy off of Hermione on your first favour?","base","base","base","mid")
             m "Ugh... I think I got her to make a silly face or something..."
             m "That and getting her to talk to me."
-            ton "Talk to you? You paid her for that? You can get that for free!"
-            m "In that case, the first \"real\" favour I bought was getting her to lift her skirt."
-            ton "That's more like it!"
-            ton "But even though we're in Scotland-"
-            m "(we are?)"
-            ton "None of the boys are wearing skirts..."
+            call ton_main("Talk to you? You paid her for that? You can get that for free!","base","base","base","mid")
+            if hg_pf_admire_panties.counter != 0:
+                m "In that case, the first \"real\" favour I bought was getting her to lift her skirt."
+                call ton_main("That's more like it!","base","base","base","mid")
+                call ton_main("But even though we're in Scotland-","base","base","base","mid")
+                m "(we are?)"
+                call ton_main("None of the boys are wearing skirts...","base","base","base","mid")
+            elif hg_pf_admire_breasts.counter != 0:
+                m "In that case, the first \"real\" favour I bought was getting her to show me her bra."
+                call ton_main("That's more like it!","base","base","base","mid")
+                call ton_main("But it's not a big deal for boys to show you their chests...","base","base","base","mid")
+            else:
+                m "Yes, Granger is greedy when it comes to points..."
+                call ton_main("I'm not interested in just chatting with my Students! I get to do that all day...","base","base","base","mid")
             m "Just get them to show you their dicks then."
-            # Note: Mabye ad a section here in which Tonks is a bit more surprised about this suggestion, but ok with it in the end.
-            ton "Show me their dicks... That's good... {p}Can I touch them?"
+            call ton_main("Oh wow! Are you serious about that?","base","base","base","mid")
+            m "Sure why the hell not. It's no big deal..."
+            call ton_main("Show me their dicks... That's good... {p}Can I touch them?","base","base","base","mid")
             m "Let's just look for now..."
-            ton "Fine... So how many am I allowed to look at?"
+            call ton_main("Fine... So how many am I allowed to look at?","base","base","base","mid")
             m "As many as you want..."
-            ton "And how many points am I allowed to give out?"
+            call ton_main("And how many points am I allowed to give out?","base","base","base","mid")
             m "Look, I'm not really convinced these points are real..."
-            ton "(what? Can't he see the scoreboard at the top of the screen?)" # Note: only Genie can break the 4th wall.
             m "I just say \"Ten points to gryffindor!\" to get these girls to show me their tits..."
             $ gryffindor += 10
             m "So as far as I'm concerned, hand out as many as you like."
-            ton "Alright... Well, I better get to class. I've got some boys to {b}teach{/b}..."
+            call ton_main("Alright... Well, I better get to class. I've got some boys to {b}teach{/b}...","base","base","base","mid")
             m "Don't forget to come back here after classes to fill me in."
-            ton "Will do..."
-            #send tonks off
+            call ton_main("Will do...","base","base","base","mid")
 
         else:
             m "Ready to help the boys earn some points?"
-            ton "You mean am I ready to see some dick?"
+            call ton_main("You mean am I ready to see some dick?", face="horny")
             m "Is there a difference?"
-            ton "There {b}should{/b} be."
-            ton "Lucky for you, I'm happy to do both."
+            call ton_main("There {b}should{/b} be.","open","base","base","R")
+            call ton_main("Lucky for you, I'm happy to do both.","base","base","base","mid")
             m "See you after classes then."
-            ton "Mhmmm... Don't worry if I'm a little late though..."
-            ">With that, Tonks strolls out of your office with a hungry look in her eyes..." # Note, we can just replace sentences like that with the chibi walking out.
+            call ton_main("Mhmmm... Don't worry if I'm a little late though...", face="horny")
 
     elif ton_tier >= 2:
 
@@ -64,11 +70,11 @@ label nt_pr_teach_start:
 
         else: # Repeat
             m "Would you like to give some boys detention again?"
-            ton "And make them show me their dicks, Sir?"
+            call ton_main("And make them show me their dicks, Sir?", face="horny")
             m "If that's what you fancy..."
-            ton "Hmm...Yes. I wouldn't mind seeing the \"hard cocks\" of some of my \"favorites\"..."
+            call ton_main("Hmm...Yes. I wouldn't mind seeing the \"hard cocks\" of some of my \"favorites\"...", face="horny")
             m "And make sure they remember it."
-            ton "Yes, [ton_genie_name]. Don't wait for me, though..."
+            call ton_main("Yes, [ton_genie_name]. Don't wait for me...","base","base","base","mid")
 
     # Tonks leaves
 

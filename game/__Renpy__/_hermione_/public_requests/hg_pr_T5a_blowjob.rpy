@@ -227,8 +227,6 @@ label hg_pr_blowjob_T2_intro_E1:
 
     call her_main(face="annoyed", xpos="right", ypos="base")
 
-    $ suked_off_ron_and_har = True
-
     m "[hermione_name], how did it go?"
     show screen blktone
     call her_main("Splendid, [genie_name]. Simply splendid.","base","happyCl")

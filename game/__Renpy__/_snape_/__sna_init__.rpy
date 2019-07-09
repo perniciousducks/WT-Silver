@@ -44,9 +44,7 @@ label snape_progress_init:
 
 
         ### SNAPE EVENTS ###
-        $ snape_against_hermione = False #Turns True after genie_intro_E1. Activates hermione_intro_E3 when hanging out with Snape next time.
-        $ snape_against_hermione_02 = False #Turns True after hermione_intro_E2. Activates second event when hanging out with Snape.
-
+        $ snape_invited_to_watch = False #Turns TRUE when Hermione is stripping and Snape walks in on you. Allows to invite him to watch her strip next time.
 
         ### CHITCHATS WITH SNAPE ###
         $ chitchated_with_snape = False #Prevents you from chitchating more then once a day. Turns back to False every night.

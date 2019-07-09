@@ -57,7 +57,7 @@ label hg_pf_strip_T2_fingering:
     call play_music("playful_tension") # SEX THEME.
     call her_main("...........","upset","base")
     call her_main("Do you want me to... start?","soft","wink")
-    m "Yes, my deer."
+    m "Yes, my dear."
     call her_main("...........","disgust","down_raised")
     call her_main("(I can't believe I'm going to do this...)","normal","worriedCl")
 

@@ -3,10 +3,32 @@ label desk:
 
     if day == 1:
         if not desk_examined:
+            $ desk_examined = True
             menu:
                 "-Examine the desk-":
-                    $ desk_examined = True
+                    call bld
                     m "A desk of some sort..."
+                    m "And a letter..."
+                    m "Mailed to a certain \"Albus Dumbledore\"."
+
+            menu:
+                m "Should I open it?"
+                "-Read the letter-":
+                    call bld
+                    g9 "Of course I will!"
+
+            # First letter from Hermione
+            $ letter_from_hermione_A_OBJ.mailLetter()
+            $ letter = letter_queue_list[0]
+
+            $ menu_x = 0.5
+            $ menu_y = 0.9
+
+            show screen letter
+            with d5
+
+            jump read_letter_again
+
         jump day_main_menu
 
     #Define hints variable

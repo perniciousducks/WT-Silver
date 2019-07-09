@@ -954,7 +954,6 @@ label potion_scene_11_3: #Milking potion part 3
         $ hermione_perm_expand_breasts = True
 
     $ hermione_expand_breasts = True #Temporary one.
-    $ hermione_expand_breasts_counter = 0 #If 0 resets temporary one the next day.
 
     jump main_room
 

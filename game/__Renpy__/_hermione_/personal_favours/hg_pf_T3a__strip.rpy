@@ -4,8 +4,6 @@
 
 label hg_pf_strip:
 
-    call reset_menu_position
-
     if hg_pf_strip.counter < 1:
         m "{size=-4}(Ask her to dance for me?){/size}"
         menu:

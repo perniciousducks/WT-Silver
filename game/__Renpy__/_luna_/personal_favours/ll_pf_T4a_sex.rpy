@@ -204,7 +204,7 @@ label ll_pf_sex_T1_lake_sex: # Call label
     $ lun_cg_xpos         = 0
     $ lun_cg_ypos         = 0
     $ luna_wear_top       = True
-    $ lunCG(pupil='up', eye='excited', mouth='open_tongue', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='blank', tears='blank')
+    $ lunCG(pupil='up', eye='excited', mouth='open_tongue', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='blank', tears='blank', body='base')
 
     hide screen blkfade
     with d3
@@ -341,7 +341,7 @@ label ll_pf_sex_start: # Call label
 
     ">Tired of talking, you decide to end the poor girl's suffering by slamming into her needy little fuckhole."
 
-    $ lunCG(pupil='up', eye='wide', mouth='open_tongue', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='blank', overlay='fade', tears='blank')
+    $ lunCG(pupil='up', eye='wide', mouth='open_tongue', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='blank', overlay='fade', tears='blank', body='base')
 
     hide screen blkfade
     with d5
@@ -453,7 +453,7 @@ label ll_pf_sex_T1_her_1: # Call label
     $ lun_cg_xpos         = -200
     $ hermione_scaleratio = 1.6
 
-    $ lunCG('open', 'wide', 'base', 'right')
+    $ lunCG('open', 'wide', 'base', 'right', body='base')
 
     show screen luncg
     hide screen blkfade
@@ -665,7 +665,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     $ lun_cg_xpos        = -200
     $ astoria_scaleratio = 1.6
 
-    $ lunCG('open', 'wide', 'base', 'right')
+    $ lunCG('open', 'wide', 'base', 'right', body='base')
 
     show screen luncg
     hide screen blkfade
@@ -772,7 +772,7 @@ label ll_pf_sex_T1_ast_2: # Call label
     $ lun_cg_xpos        = -200
     $ astoria_scaleratio = 1.6
 
-    $ lunCG('open', 'wide', 'base', 'right')
+    $ lunCG('open', 'wide', 'base', 'right', body='base')
 
     show screen luncg
     hide screen blkfade
@@ -878,7 +878,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ lun_cg_xpos      = -200
     $ tonks_scaleratio = 1.6
 
-    $ lunCG('open', 'wide', 'base', 'right')
+    $ lunCG('open', 'wide', 'base', 'right', body='base')
 
     show screen luncg
     hide screen blkfade
@@ -977,7 +977,7 @@ label ll_pf_sex_T1_ton_1: # Call label
             $ lun_cg_ypos_abs     = 0
             $ lun_cg_xpos         = 0
             $ lun_cg_ypos         = 0
-            $ lunCG(pupil='up', eye='excited', mouth='base', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='blank', tears='blank', pos=1)
+            $ lunCG(pupil='up', eye='excited', mouth='base', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='blank', tears='blank', pos=1, body='base')
             m "On your knees slut!"
             $ lunCG('sucking', 'seductive', 'sad', 'up', pos=8)
             lun "Mhmm!"
@@ -1021,7 +1021,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ lun_cg_ypos_abs     = 0
     $ lun_cg_xpos         = -200
     $ lun_cg_ypos         = 0
-    $ lunCG(pupil='ahegao', eye='furious', mouth='base', eyebrow='sad', cheeks='blush', extra_1='cum_3', extra_2='blank', extra_3='blank', tears='mascara')
+    $ lunCG(pupil='ahegao', eye='furious', mouth='base', eyebrow='sad', cheeks='blush', extra_1='cum_3', extra_2='blank', extra_3='blank', tears='mascara', body='base')
     ">With that, she slips your softening cock back into her tight hole..."
     m "Ugh... can't we have a break first?"
     $ lunCG('pout', 'seductive', 'sad', 'left')
@@ -1126,7 +1126,7 @@ label ll_pf_sex_T1_ton_2: # Call label
     $ lun_cg_xpos      = -200
     $ tonks_scaleratio = 1.6
 
-    $ lunCG('open', 'wide', 'base', 'right')
+    $ lunCG('open', 'wide', 'base', 'right', body='base')
 
     show screen luncg
     hide screen blkfade
@@ -1245,7 +1245,7 @@ label ll_pf_sex_T1_ton_2: # Call label
             $ lun_cg_ypos_abs     = 0
             $ lun_cg_xpos         = -200
             $ lun_cg_ypos         = 0
-            $ lunCG(pupil='up', eye='excited', mouth='base', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='blank', tears='blank', pos=1)
+            $ lunCG(pupil='up', eye='excited', mouth='base', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='blank', tears='blank', pos=1, body='base')
             m "On your knees slut!"
             lun "OK!"
             $ lunCG('open_tongue', 'seductive', 'sad', 'dick')
@@ -1356,7 +1356,7 @@ label ll_pf_sex_bedroom:
     hide screen luna_main
     hide screen ccg
 
-    $ lunCG(pupil='up', eye='base', mouth='open_tongue', eyebrow='sad', cheeks='blush', extra_1='hand', extra_2='blank', extra_3='blank', overlay='overlay', tears='blank')
+    $ lunCG(pupil='up', eye='base', mouth='open_tongue', eyebrow='sad', cheeks='blush', extra_1='hand', extra_2='blank', extra_3='blank', overlay='overlay', tears='blank', body='base')
     ">Led on by Luna's ignorant desperation you take the naive girl to her bed, reveling in its softness before guiding the needy slut onto your lap."
     hide screen blkfade
     with d3

@@ -248,7 +248,7 @@ label ll_pf_masturbate:
 # Masturbate for Genie and then Genie cums on Luna's face
 
 label ll_pf_masturbate_T1_intro_E1:
-    $ days_to_luna += renpy.random.randint(1, 2)
+    $ ll_event_pause += renpy.random.randint(1, 2)
 
     call lun_main("","base","base","base","mid")
     m "Miss Lovegood. How have you been?"
@@ -302,7 +302,7 @@ label ll_pf_masturbate_T1_intro_E1:
 # Masturbate for Genie
 
 label ll_pf_masturbate_T1_intro_E2:
-    $ days_to_luna += renpy.random.randint(1, 2)
+    $ ll_event_pause += renpy.random.randint(1, 2)
 
     m "So, Miss Lovegood, To what do I owe the pleasure today?"
     call lun_main("Ah... I was hoping that I could... Um...","normal","seductive","sad","mid")
@@ -674,7 +674,7 @@ label ll_pf_masturbate_T1_jerk_off: # Call label
 
 label ll_pf_masturbate_T1_E2_old: #Masturbate for Genie and then Genie cum on Luna's face #DONE
     $ lun_whoring = 2
-    $ days_to_luna = 3
+    $ ll_event_pause = 3
 
     call play_sound("knocking")
     "*knock* *knock* *knock*"

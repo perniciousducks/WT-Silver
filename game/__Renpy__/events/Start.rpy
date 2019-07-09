@@ -1,43 +1,27 @@
 label start_wt:
     $ daytime = False
     $ gold = 0
-    $ rum_times = 0 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
+    $ rum_times = 0 # Counts how many times have you rummaged the cupboard.
+    $ current_payout = 0
 
     ### HERMIONE_MAIN SCREN FLAGS ###
-    $ only_upper = False #When true, legs are not displayed in the hermione_main screen.
     $ no_blinking = False #When True - blinking animation is not displayed.
     $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
     $ aftersperm = False #Shows cum stains on Hermione's uniform.
-    $ legs_02 = False # Turns TRUE when miniskirt is activated.
-
-    $ current_payout = 0
-
-    $ snape_invited_to_watch = False #Turns TRUE when Hermione is stripping and Snape walks in on you. Allows to invite him to watch her strip next time.
-
     $ uni_sperm = False #Triggers universal sperm to show on hermione_main screen.
-    $ days_without_an_event = 0 #Counts days since last (any) event took place.
-
-    $ ask_me_once = False #Turns true after Hermione asks you about your true identity, during sex.
-
-    $ tiara = False #When TRUE tiara is displayed on h_head2 and hermione_main screens.
 
     $ public_whore_ending = False #If TRUE the game will end with "Public Whore Ending".
 
-    $ lazy_aka_not_yet = True #In public events. Kiss a girl. Event level 03. Event # 3. Turns FALSE after that.
-    $ sucked_off_ron = False #In public events. Give a handjob to classmate. Event level 03. Event # 1. "Jerked of and suked of Ron Weasley". Turns True after that.
-    $ suked_off_ron_and_har = False #In public events. Give blowjob to a classmate. Event level 03. Event # 3. "Sukerd off Harrt and Ron". Turns True after that.
-    $ fucked_ron_and_har = False #In public events. Have sex with a classmate. Event # 1. "Returns next morning". Turns True after that.
 
 
+    ### EVENTS ###
 
-### EVENTS ###
-    $ event08_happened = False #Turns TRUE after hermione_intro_E1 (Hermone visits first time).
     $ event09 = False #Turns TRUE when you let Hermione in during hermione_intro_E2. Otherwise she will keep coming every morning.
     $ event10 = False #Turns TRUE when you let Hermione in during event_10. Otherwise she will keep coming every morning.
     $ event11_happened = False #Turns TRUE after hermione_intro_E3
     $ event12_happened = False #Turns TRUE after hermione_intro_E4
     $ event13_happened = False #Turns TRUE after hermione_intro_E5
-    $ event14_happened = False #Turns TRUE after hermione_intro_E6
+    $ hermione_intro.E6_complete = False #Turns TRUE after hermione_intro_E6
     $ event15_happened = False #Turns TRUE after hermione_intro_E7
     $ event16_happened = False #Turns TRUE after event_16
 
@@ -186,8 +170,6 @@ label start_wt:
     pause 1.2
 
 
-    if not persistent.nightmode:
-        $ interface_color = "gold"
     $ day = 0
 
     ### CHARACTER INIT RESET ###
@@ -246,36 +228,66 @@ label start_wt:
         $ cupboard_examined = True
         $ door_examined = True
         $ fireplace_examined = True
+        $ genie_intro.E1_complete = True
+        $ genie_intro.E2_complete = True
+        $ genie_intro.E3_complete = True
         $ achievement.unlock("start", True)
+
+        $ snape_intro.E1_complete = True
+        $ snape_intro.E2_complete = True
+        $ snape_intro.E3_complete = True
+        $ snape_intro.duel_complete = True
+
         if skip_duel:
             $ skip_duel = False
             $ rum_times = 3 #7 unlocks map!
             $ day = 5
+            $ daytime = False
+            $ interface_color = "gray"
+            hide screen blkfade
+            with fade
+            jump snape_intro_E4
 
+        $ snape_intro.E4_complete = True
+        $ snape_intro.E5_complete = True
         if skip_to_hermione:
             $ skip_to_hermione = False
-            #Add vars
+
+            $ hermione_intro.E1_complete = True
+            $ hermione_intro.E2_complete = True
+
+            $ tonks_intro.E1_complete = True
+            $ tonks_intro.E2_complete = True
+            $ tonks_intro.E3_complete = True
+
+            $ hang_with_snape.E1_complete = True
+            $ hang_with_snape.E2_complete = True
+            $ hang_with_snape.E3_complete = True
+            $ hang_with_snape.E4_complete = True
+
             $ snape_unlocked = True
             $ achievement.unlock("unlocksna", True)
-            $ event08_happened = True
-            $ event09 = True #You let Hermione in. This event will stop looping now.
-            $ hermione_is_waiting_01 = False #Makes sure this event is not repeated.
-            $ event11_happened = True #Allows next event to start.
-            $ event12_happened = True #Allows next event to start.
-            $ event13_happened = True #Allows next event to start.
             $ rum_times = 6 #7 unlocks map!
             $ day = 14
 
             if skip_after_hermione:
+                $ skip_after_hermione = False
+
+                $ hermione_intro.E5_complete = True
+                $ hermione_intro.E6_complete = True
+
                 $ hermione_unlocked = True
                 $ achievement.unlock("unlockher", True)
                 $ day = 15
                 $ tutoring_hermione_unlocked = True
-                $ event14_happened = True
                 $ hermione_favors = True
-                $ event15_happened = True
                 jump day_start
-            call hermione_intro_E6 #returns
+            $ daytime = True
+            if not persistent.nightmode:
+                $ interface_color = "gold"
+            hide screen blkfade
+            with fade
+            jump hermione_intro_E6
 
     ### START ANIMATION ###
     stop bg_sounds #Stops playing the fire SFX.
@@ -297,11 +309,9 @@ label start_wt:
 
 
 
-### EVENT 0 ###
 
 # First event in the game. Gennie finds himself at the desk.
 label genie_intro_E1:
-    #$ genie_intro.complete("E1")
 
     call bld
     m "..................?"
@@ -324,18 +334,34 @@ label genie_intro_E1:
     m "I think I will stick around for a little bit..."
 
     $ achievement.unlock("start")
+    $ genie_intro.E1_complete = True
 
-    return
+    jump main_room
+
+
+label genie_intro_E2:
+    call bld
+    m "It's getting darker already..."
+    m "Did I just spend an entire day examining this room?"
+    call bld("hide")
+
+    $ genie_intro.E2_complete = True
+
+    jump night_start
 
 
 # Owl intro.
-label genie_intro_E2:
-    #$ genie_intro.complete("E2")
+label genie_intro_E3:
+    pause.2
     call play_sound("owl")
     show screen owl
+    with d1
+    pause.6
+
     call bld
     m "What? An owl?"
-    hide screen bld1
-    with d3
+    call bld("hide")
 
-    return
+    $ genie_intro.E3_complete = True
+
+    jump main_room

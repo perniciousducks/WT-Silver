@@ -6,7 +6,7 @@
 
 label nt_pr_grope_start:
 
-    if ton_tier == 1:
+    if ton_tier == 2:
 
         if nt_pr_grope.points == 0:
             m "Ready for the next step?"
@@ -39,7 +39,7 @@ label nt_pr_grope_start:
             ton "(I still can't believe Dumbledore is telling me to go molest my students...)"
             ton "Yes, sir!"
 
-    elif ton_tier >= 2:
+    elif ton_tier >= 3:
 
         if nt_pr_grope.points == 0: # Tell her to be even lewder for the next level of favors.
 
@@ -272,5 +272,5 @@ label nt_pr_grope_T2_E3: # Tier 2 - Event 3
 
 
 
-label nt_pr_grope_T2_E4: # Tier 2 - Event 4 - 
+label nt_pr_grope_T2_E4: # Tier 2 - Event 4 -
     #Tonks has her a slyhterin girl sit there and do work while she has no top on

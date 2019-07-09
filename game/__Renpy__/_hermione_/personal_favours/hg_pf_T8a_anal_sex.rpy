@@ -34,7 +34,7 @@ label hg_pf_anal_sex: #LV.8 (Whoring = 21 - 23)
 
         call hg_anal_sex_1
 
-        jump end_hg_anal_sex
+        jump end_hg_pf_sex
 
     #Second time event.
     elif hg_pf_anal_sex.points == 1:
@@ -56,7 +56,7 @@ label hg_pf_anal_sex: #LV.8 (Whoring = 21 - 23)
         #call hg_anal_sex_2
         call hg_anal_sex_1
 
-        jump end_hg_anal_sex
+        jump end_hg_pf_sex
 
     #Third time event.
     elif hg_pf_anal_sex.points >= 2:
@@ -85,7 +85,7 @@ label hg_pf_anal_sex: #LV.8 (Whoring = 21 - 23)
 
         call hg_anal_sex_3
 
-        jump end_hg_anal_sex
+        jump end_hg_pf_sex
 
 
 
@@ -652,53 +652,3 @@ label hg_anal_sex_3:
         call her_main("Can I just get paid now, [genie_name]?")
 
     return
-
-
-
-### END Anal Sex ###
-
-label end_hg_anal_sex:
-
-    hide screen hermione_main
-    show screen blkfade
-
-    stop music fadeout 1.0
-
-    $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
-    $ current_payout = 90
-
-    hide screen g_c_c_u # Genie's sperm. Universal.
-    hide screen ccg
-
-    call her_chibi("stand","desk","base")
-    call gen_chibi("sit_behind_desk")
-    call hide_blkfade
-
-    if her_whoring <= 24:
-        m "Yes, [hermione_name]. [current_payout] points to \"Gryffindor\"."
-        $ gryffindor += current_payout
-
-    call her_main("Thank you, [genie_name]...","angry","suspicious",cheeks="blush",xpos="right",ypos="base")
-
-    call her_walk(action="leave", speed=2.5)
-
-    if her_whoring < 24: #Adds points till 24.
-        $ her_whoring +=1
-
-    if hg_pf_anal_sex.points == 0:
-        $ hg_pf_anal_sex.level = 1 #Event hearts level (0-3)
-
-    if hg_pf_anal_sex.points == 1:
-        $ hg_pf_anal_sex.level = 2 #Event hearts level (0-3)
-
-    if hg_pf_anal_sex.points >= 2:
-        $ hg_pf_anal_sex.level = 3 #Event hearts level (0-3)
-
-    $ hg_pf_anal_sex.points += 1
-
-    $ aftersperm = False #Show cum stains on Hermione's uniform.
-
-    # Stats
-    $ hg_pf_anal_sex.counter += 1
-
-    jump end_hermione_event

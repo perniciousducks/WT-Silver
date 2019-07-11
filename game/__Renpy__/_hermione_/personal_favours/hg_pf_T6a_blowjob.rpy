@@ -1934,7 +1934,7 @@ label end_hg_blowjob:
     pause.5
 
     call bld
-    if her_whoring <= 24:
+    if her_whoring < 21:
         m "Yes, [hermione_name]. [current_payout] points to \"Gryffindor\"."
         $ gryffindor += current_payout
 

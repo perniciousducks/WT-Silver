@@ -16,6 +16,8 @@ label hg_pf_anal_sex: #LV.8 (Whoring = 21 - 23)
     $ gen_chibi_ypos = 10
     $ g_c_u_pic = "sex_slow_ani"
 
+    $ current_payout = 90
+
     #Intro
     if hg_pf_anal_sex.points == 0:
         m "[hermione_name]..."

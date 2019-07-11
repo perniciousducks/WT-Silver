@@ -226,20 +226,7 @@ label unlock_clothing(text="",item=None):
     hide screen blktone5
     with d3
 
-    $ item.unlocked = True
-    #
-    # New outfit system compatibility
-    #
-    #
-    python:
-        try:
-            item.unlock(True)
-        except:
-            pass
-        try:
-            outfit_linking[item.id].unlock(True)
-        except:
-            pass
+    $ unlock_clothing_compat(item)
 
     call reset_menu_position
 

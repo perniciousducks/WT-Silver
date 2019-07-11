@@ -390,6 +390,7 @@ label store_items_init:
     $ outfit_linking[cc_bikini_micro_ITEM.id] = cho_outfit_bikini
     $ outfit_linking[cc_lingerie_lace_ITEM.id] = cho_outfit_lacelingerie
     $ outfit_linking[cc_dress_red_ITEM.id] = cho_outfit_dress1
+
     #Tonks Outfits
     $ tonks_outfits_list=[
         ]

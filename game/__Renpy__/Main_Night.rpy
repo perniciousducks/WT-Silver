@@ -1,6 +1,6 @@
 #Night Start.
 label night_start:
-    play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
+    call play_music("night_theme")
     show screen blkfade
 
     #    $ renpy.set_style_preference("dialog", "Night")

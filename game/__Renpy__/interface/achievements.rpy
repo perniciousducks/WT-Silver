@@ -221,7 +221,10 @@ label achievement_menu(xx=150, yy=90):
     hide screen achievement_menuitem
 
     if _return[0] == "select":
-        $ current_item = _return[1]
+        if current_item == _return[1]:
+            $ current_item = None
+        else:
+            $ current_item = _return[1]
     elif _return[0] == "category":
         $ current_category = _return[1]
         if current_category == "All":
@@ -309,7 +312,8 @@ screen achievement_menuitem(xx, yy):
         pos (xx+217, yy-53)
         xsize 560
         ysize 507
-
+        
+        add "interface/achievements/star.png"
         add "interface/achievements/"+interface_color+"/panel.png"
 
         text "Achievements" size 22 xalign 0.5 ypos 65

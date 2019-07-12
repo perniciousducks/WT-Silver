@@ -1,4 +1,8 @@
 label phoenix:
+    jump inventory_menu
+    #
+    #
+    #
     if not bird_examined or day == 1:
         menu:
             "-Examine-" if not bird_examined:

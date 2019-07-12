@@ -299,7 +299,7 @@ label hg_pp_polyjuice_T1_introCC:
     if her_know_polyjuice:
         her "I can't believe you had me drink this again..."
         m "What's the problem? I think you look cute..."
-        if her whoring < 6:
+        if her_whoring < 6:
             her "The problem?"
             her "People kept making fun of me and pulling my tail!"
             m "And how did that make you feel?"

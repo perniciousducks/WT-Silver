@@ -108,13 +108,13 @@ label night_start:
         jump hermione_helping_selling_cards
 
     #Hermione Potions return.
-    if cat_ears_potion_return:
-        jump potion_scene_1_1_2
+    # if cat_ears_potion_return:
+        # jump potion_scene_1_1_2  <--- Missing label
     if transparent_quest:
         $ transparent_quest = False
         jump potion_scene_4_2
-    if addicted == True:
-        jump potion_scene_3_1_2
+    # if addicted == True:
+        # jump potion_scene_3_1_2  <--- Missing label
 
     if milking == -1:
         call potion_scene_11_1_2 #Returns

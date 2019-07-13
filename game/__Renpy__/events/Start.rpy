@@ -296,19 +296,22 @@ label start_wt:
     $ show_weather()
 
     call room("main_room")
-    call gen_chibi("sit_behind_desk")
-    pause.1
+    call gen_chibi("hide")
+    show screen dumbledore
     hide screen blkfade
     with d3
+    pause.1
 
-    call teleport("desk")
+    call teleport("desk", poof_label="swap_dumb_genie")
 
     call reset_menu_position
 
     jump day_start
 
-
-
+label swap_dumb_genie:
+    hide screen dumbledore
+    call gen_chibi("sit_behind_desk")
+    return
 
 # First event in the game. Gennie finds himself at the desk.
 label genie_intro_E1:

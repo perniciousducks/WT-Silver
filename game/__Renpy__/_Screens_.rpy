@@ -359,7 +359,7 @@ screen ch_hotdog():
 
 
 
-label teleport(position=None,effect=True):
+label teleport(position=None,effect=True,poof_label=None):
     if position == "genie":
         $ teleport_xpos = gen_chibi_xpos+75
         $ teleport_ypos = gen_chibi_ypos-15
@@ -396,6 +396,8 @@ label teleport(position=None,effect=True):
     #stop music fadeout 1
 
     hide screen heal_animation
+    if poof_label != None:
+        $ renpy.call(poof_label)
     show screen teleport_animation
     with d5
 

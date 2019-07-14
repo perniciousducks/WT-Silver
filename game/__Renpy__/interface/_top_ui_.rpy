@@ -137,7 +137,7 @@ screen ui_top_bar():
                 idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png"
                 if renpy.get_screen("main_room_menu"):
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
-                    hovered SetVariable("ui_hint", "Statistics (c)")
+                    hovered SetVariable("ui_hint", "Characters (c)")
                     unhovered SetVariable("ui_hint", "")
                     action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("open_stat_menu")]
                     activate_sound "sounds/click3.mp3"

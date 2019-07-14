@@ -10,6 +10,8 @@ label open_stat_menu:
     call update_genie
     call update_snape
     call update_tonks
+    
+    jump stats_menu
 
     jump stat_screen_character
 
@@ -171,12 +173,7 @@ screen stat_bar(steps, top_text, buttom_text, stat_number, top_padding = 20):
 
 
 screen text_stat(startText="", endText="", amount="", top_padding = 20):
-    #Just some padding
-    frame:
-        background #00000000
-        ysize top_padding
-
-    text (startText +str(amount)+ endText) xpos 20 size 20
+    text (startText +str(amount)+ endText) xpos 20 size 14
 
 screen charecter_name(name):
 
@@ -445,7 +442,7 @@ label update_stats:
     $ her_reputation_word = her_reputation_word_list[int(her_reputation/2.4)]
 
     # Tutoring
-    $ her_tutoring_word_list = ["pure ", "naive", "tempted", "curious", "tainted", "eager", "sinful", "perverted", "corrupted", "depraved", "shattered"]
+    $ her_tutoring_word_list = ["Not started", "naive", "tempted", "curious", "tainted", "eager", "sinful", "perverted", "corrupted", "depraved", "shattered"]
     $ her_tutoring_word = her_tutoring_word_list[int(her_tutoring/1.4)]
 
     # Mood

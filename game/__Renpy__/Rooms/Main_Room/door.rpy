@@ -9,22 +9,23 @@ label door:
                     jump examine_door
         jump day_main_menu
 
-    #Updates
-    $ summon_list = []
-    $ summon_list.append(["hermione", 0 if hermione_busy else 1]) if hermione_unlocked else 0
-    $ summon_list.append(["luna", 0 if luna_busy else 1]) if luna_unlocked else 0
-    $ summon_list.append(["astoria", 0 if astoria_busy else 1]) if astoria_unlocked else 0
-    $ summon_list.append(["susan", 0 if susan_busy else 1]) if susan_unlocked else 0
-    $ summon_list.append(["cho", 0 if cho_busy else 1]) if cho_unlocked else 0
-    $ summon_list.append(["snape", 0 if snape_busy else 1]) if snape_unlocked else 0
-    $ summon_list.append(["tonks", 0 if tonks_busy else 1]) if tonks_unlocked else 0
+    # #Updates
+    # $ summon_list = []
+    # $ summon_list.append(["hermione", 0 if hermione_busy else 1]) if hermione_unlocked else 0
+    # $ summon_list.append(["luna", 0 if luna_busy else 1]) if luna_unlocked else 0
+    # $ summon_list.append(["astoria", 0 if astoria_busy else 1]) if astoria_unlocked else 0
+    # $ summon_list.append(["susan", 0 if susan_busy else 1]) if susan_unlocked else 0
+    # $ summon_list.append(["cho", 0 if cho_busy else 1]) if cho_unlocked else 0
+    # $ summon_list.append(["snape", 0 if snape_busy else 1]) if snape_unlocked else 0
+    # $ summon_list.append(["tonks", 0 if tonks_busy else 1]) if tonks_unlocked else 0
 
     call update_character_map_locations
 
     #Screens
     call play_sound("scroll")
-    show screen door_menu
-    with d1
+    jump door_menu
+    #show screen door_menu
+    #with d1
 
     $_return = ui.interact()
 
@@ -122,7 +123,7 @@ label door:
 
     $ renpy.jump(_return)
 
-screen door_menu():
+screen door_menu_old():
     zorder 8
     button style "empty" action [Return("Close")]
     use top_bar_close_button

@@ -88,7 +88,7 @@ label t_wardrobe(return_label, char_label):
     hide screen t_wardrobe_menuitem
     hide screen t_wardrobe_outfit_menuitem
     
-    $ ui_hint = ""
+    $ tooltip = ""
     
     if _return == "tabswitch":
         show screen t_wardrobe_menu(550, 50)
@@ -285,19 +285,19 @@ screen t_wardrobe_menu(xx, yy):
             else:
                 add "interface/wardrobe/test/"+str(interface_color)+"/frame.png" xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
                 add "interface/wardrobe/test/"+char_active.char+"_"+category+".png" xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
-                button xpos 61+377*cat_row ypos 80+110*cat_col xsize 44 ysize 96 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]]) hovered SetVariable("ui_hint", category) unhovered SetVariable("ui_hint", "")
+                button xpos 61+377*cat_row ypos 80+110*cat_col xsize 44 ysize 96 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]]) hovered SetVariable("tooltip", category) unhovered SetVariable("tooltip", None)
         
         frame xsize 340 ysize 548 xpos 100 style "empty" background bg_color_wardrobe
         
         add "interface/frames/"+str(interface_color)+"/circle.png" pos (373, 62)
-        button xsize 50 ysize 50 pos (373, 62) style "empty" background "interface/wardrobe/test/switch.png" hover_background image_hover("interface/wardrobe/test/switch.png") action Return("tabswitch") hovered SetVariable("ui_hint", "Switch tabs") unhovered SetVariable("ui_hint", "")
+        button xsize 50 ysize 50 pos (373, 62) style "empty" background "interface/wardrobe/test/switch.png" hover_background image_hover("interface/wardrobe/test/switch.png") action Return("tabswitch") hovered SetVariable("tooltip", "Switch tabs") unhovered SetVariable("tooltip", None)
 
         add "interface/frames/"+str(interface_color)+"/circle.png" pos (373, 117)
-        button xsize 50 ysize 50 pos (373, 117) style "empty" background "interface/wardrobe/test/outfits.png" hover_background image_hover("interface/wardrobe/test/outfits.png") action Return(["category", "outfits"]) hovered SetVariable("ui_hint", "Outfits Manager") unhovered SetVariable("ui_hint", "")
+        button xsize 50 ysize 50 pos (373, 117) style "empty" background "interface/wardrobe/test/outfits.png" hover_background image_hover("interface/wardrobe/test/outfits.png") action Return(["category", "outfits"]) hovered SetVariable("tooltip", "Outfits Manager") unhovered SetVariable("tooltip", None)
 
         if not renpy.variant('android'):
             add "interface/frames/"+str(interface_color)+"/circle.png" pos (373, 172)
-            button xsize 50 ysize 50 pos (373, 172) style "empty" background "interface/wardrobe/test/studio.png" hover_background image_hover("interface/wardrobe/test/studio.png") action Return("studio") hovered SetVariable("ui_hint", "Open Studio") unhovered SetVariable("ui_hint", "")
+            button xsize 50 ysize 50 pos (373, 172) style "empty" background "interface/wardrobe/test/studio.png" hover_background image_hover("interface/wardrobe/test/studio.png") action Return("studio") hovered SetVariable("tooltip", "Open Studio") unhovered SetVariable("tooltip", None)
         
         #add "interface/wardrobe/test/"+str(interface_color)+"/icons_"+char_active.char+"_"+current_category+".png" xpos 13 ypos 80 zoom 0.5
 
@@ -311,15 +311,15 @@ screen t_wardrobe_menu(xx, yy):
                 spacing 2
                 for item in character_toggles:
                     $ curr_item = item[0]
-                    textbutton "{size=12}[curr_item]{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn(curr_item))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 80 action Return(["toggle", curr_item])hovered SetVariable("ui_hint", "Show/hide "+str(curr_item)) unhovered SetVariable("ui_hint", "")
+                    textbutton "{size=12}[curr_item]{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn(curr_item))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 80 action Return(["toggle", curr_item])hovered SetVariable("tooltip", "Show/hide "+str(curr_item)) unhovered SetVariable("tooltip", None)
             vbox:
                 ypos 416
-                textbutton "{size=12}Music{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(wardrobe_music_active)+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("music") hovered SetVariable("ui_hint", "Toggle music") unhovered SetVariable("ui_hint", "")
-                textbutton "{size=12}BG Color{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_true.png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("bg_color") hovered SetVariable("ui_hint", "Change background colour") unhovered SetVariable("ui_hint", "")
+                textbutton "{size=12}Music{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(wardrobe_music_active)+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("music") hovered SetVariable("tooltip", "Toggle music") unhovered SetVariable("tooltip", None)
+                textbutton "{size=12}BG Color{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_true.png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("bg_color") hovered SetVariable("tooltip", "Change background colour") unhovered SetVariable("tooltip", None)
                 
         # Tooltip
-        if persistent.ui_hint:
-            text "[ui_hint]" xalign 0.5 ypos 33
+        if persistent.tooltip:
+            text "[tooltip]" xalign 0.5 ypos 33
             
         #Erogenous zones
         vbox:

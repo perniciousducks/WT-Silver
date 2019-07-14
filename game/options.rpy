@@ -34,7 +34,7 @@ init -1 python hide:
         persistent.delwarning = True
         persistent.customcursor = False
         persistent.autosave = False
-        persistent.ui_hint = True
+        persistent.tooltip = True
 
     #Load custom preference options
     if persistent.customcursor:

@@ -526,7 +526,7 @@ screen preferences():
                 
                 label _("Interface")
                 if not renpy.variant('android'):
-                    textbutton "Tooltips" action ToggleVariable("persistent.ui_hint", True, False)
+                    textbutton "Tooltips" action ToggleVariable("persistent.tooltip", True, False)
                     textbutton _("Custom Cursor") action [ToggleVariable("persistent.customcursor", True, False), ToggleVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] }, None) ]
                 textbutton _("Nightmode") action ToggleVariable("persistent.nightmode", True, False)
             frame:

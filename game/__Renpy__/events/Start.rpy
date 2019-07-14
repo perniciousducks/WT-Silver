@@ -3,6 +3,7 @@ label start_wt:
     $ gold = 0
     $ rum_times = 0 # Counts how many times have you rummaged the cupboard.
     $ current_payout = 0
+    $ tooltip = None
 
     ### HERMIONE_MAIN SCREN FLAGS ###
     $ no_blinking = False #When True - blinking animation is not displayed.
@@ -73,6 +74,8 @@ label start_wt:
     $ menu_x = 0.5
     $ menu_y = 0.75
 
+    if not renpy.variant('android'):
+        show screen mouse_tooltip
     label choose_your_difficulty:
     menu:
         "-Play with easy difficulty-":

@@ -24,7 +24,7 @@ label house_points:
     $ toggle_ui_lock = True
     $ toggle_points = False
     $ toggle_menu = False
-    $ ui_hint = ""
+    $ tooltip = ""
 
     # Outline settings
     $ points_outline = [ (1, "#000", 0, 0) ]
@@ -89,14 +89,14 @@ screen ui_top_bar():
             idle "interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png"
             if renpy.get_screen("main_room_menu"):
                 hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
-                hovered SetVariable("ui_hint", "Open menu")
-                unhovered SetVariable("ui_hint", "")
+                hovered SetVariable("tooltip", "Open menu")
+                unhovered SetVariable("tooltip", None)
                 action [Hide("main_room_menu"), ToggleVariable("toggle_menu", True, False)]
                 activate_sound "sounds/click3.mp3"
             elif not renpy.get_screen("main_room_menu") and toggle_menu:
                 hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
-                hovered SetVariable("ui_hint", "Close menu")
-                unhovered SetVariable("ui_hint", "")
+                hovered SetVariable("tooltip", "Close menu")
+                unhovered SetVariable("tooltip", None)
                 action [Show("main_room_menu"), ToggleVariable("toggle_menu", True, False)]
                 activate_sound "sounds/click3.mp3"
 
@@ -109,11 +109,11 @@ screen ui_top_bar():
                 hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.png")
                 if daytime:
                     action Jump("night_start")
-                    hovered SetVariable("ui_hint", "Doze Off (s)")
+                    hovered SetVariable("tooltip", "Doze Off (s)")
                 else:
                     action Jump("day_start")
-                    hovered SetVariable("ui_hint", "Sleep (s)")
-                unhovered SetVariable("ui_hint", "")
+                    hovered SetVariable("tooltip", "Sleep (s)")
+                unhovered SetVariable("tooltip", None)
                 activate_sound "sounds/click3.mp3"
 
         hbox:
@@ -127,9 +127,9 @@ screen ui_top_bar():
                 idle "interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.png"
                 if renpy.get_screen("main_room_menu"):
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.png")
-                    hovered SetVariable("ui_hint", "Achievements")
-                    unhovered SetVariable("ui_hint", "")
-                    action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("achievement_menu")]
+                    hovered SetVariable("tooltip", "Achievements")
+                    unhovered SetVariable("tooltip", None)
+                    action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("achievement_menu")]
                     activate_sound "sounds/click3.mp3"
 
             # Stats button
@@ -137,9 +137,9 @@ screen ui_top_bar():
                 idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png"
                 if renpy.get_screen("main_room_menu"):
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
-                    hovered SetVariable("ui_hint", "Characters (c)")
-                    unhovered SetVariable("ui_hint", "")
-                    action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("open_stat_menu")]
+                    hovered SetVariable("tooltip", "Characters (c)")
+                    unhovered SetVariable("tooltip", None)
+                    action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("open_stat_menu")]
                     activate_sound "sounds/click3.mp3"
 
             # Inventory button
@@ -147,9 +147,9 @@ screen ui_top_bar():
                 idle "interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png"
                 if renpy.get_screen("main_room_menu"):
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png")
-                    hovered SetVariable("ui_hint", "Inventory (i)")
-                    unhovered SetVariable("ui_hint", "")
-                    action [SetVariable("ui_hint", ""), Jump("open_inventory_menu")]
+                    hovered SetVariable("tooltip", "Inventory (i)")
+                    unhovered SetVariable("tooltip", None)
+                    action [SetVariable("tooltip", None), Jump("open_inventory_menu")]
                     activate_sound "sounds/click3.mp3"
 
             # Work button
@@ -158,9 +158,9 @@ screen ui_top_bar():
                     idle "interface/topbar/buttons/"+str(interface_color)+"/ui_work.png"
                     if renpy.get_screen("main_room_menu"):
                         hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_work.png")
-                        hovered SetVariable("ui_hint", "Work (w)")
-                        unhovered SetVariable("ui_hint", "")
-                        action [SetVariable("ui_hint", ""), Jump("paperwork")]
+                        hovered SetVariable("tooltip", "Work (w)")
+                        unhovered SetVariable("tooltip", None)
+                        action [SetVariable("tooltip", None), Jump("paperwork")]
                         activate_sound "sounds/click3.mp3"
 
         ## Toggle UI lock button
@@ -177,8 +177,25 @@ screen ui_top_bar():
                 xpos 10 ypos 40
                 text "{size=-3}{color=#FFF}[total_points] [housepoints]\n[housepoints_y]\nToggle display:[persistent.toggle_points]\n\nSly:[slytherin_place]\nGry:[gryffindor_place]\nRav:[ravenclaw_place]\nHuf:[hufflepuff_place]\nUI lock:[toggle_ui_lock]{/color}{/size}"
 
-        if not ui_hint == "" and persistent.ui_hint and not renpy.get_screen("t_wardrobe_menu") and not renpy.variant('android'):
-            text "{color=#FFF}{size=+4}[ui_hint]{/size}{/color}" xalign 0.5 text_align 0.5 ypos 540
+        # if tooltip and persistent.tooltip and not renpy.variant('android'):
+            # text "{color=#FFF}{size=+4}[tooltip]{/size}{/color}" xalign 0.5 text_align 0.5 ypos 540
+            
+screen mouse_tooltip():
+    zorder 999
+    tag tooltip
+    
+    if persistent.tooltip and tooltip:
+        python:
+            x, y = renpy.get_mouse_pos()
+            xval = 1.0 if x > config.screen_width/2 else .0
+            yval = 1.0 if y > config.screen_height/2 else .0
+            
+        frame:
+            style_prefix "dropdown_gm"
+            pos (x, y)
+            anchor (xval, yval)
+            
+            text tooltip color "#FFF" size 14
 
 screen ui_points():
     tag ui
@@ -220,8 +237,8 @@ screen ui_points():
             if toggle_ui_lock and renpy.get_screen("main_room_menu"):
                 imagebutton:
                     idle "interface/topbar/hover_zone.png"
-                    hovered [SetVariable("toggle_points", True), SetVariable("ui_hint", "Toggle banners style")]
-                    unhovered [SetVariable("toggle_points", False), SetVariable("ui_hint", "")]
+                    hovered [SetVariable("toggle_points", True), SetVariable("tooltip", "Toggle banners style")]
+                    unhovered [SetVariable("toggle_points", False), SetVariable("tooltip", None)]
                     action ToggleVariable("persistent.toggle_points", True, False)
                     activate_sound "sounds/click3.mp3"
 
@@ -303,25 +320,25 @@ screen ui_menu():
             imagebutton:
                 idle image_alpha("interface/topbar/icon_discord.png")
                 hover "interface/topbar/icon_discord.png"
-                hovered [SetVariable("ui_hint", "Visit {size=-6}SilverStudioGames{/size} discord")]
-                unhovered [SetVariable("ui_hint", "")]
+                hovered [SetVariable("tooltip", "Visit {size=-6}SilverStudioGames{/size} discord")]
+                unhovered [SetVariable("tooltip", None)]
                 action OpenURL("https://discord.gg/7PD57yt")
                 activate_sound "sounds/click3.mp3"
             #Patreon
             imagebutton:
                 idle image_alpha("interface/topbar/icon_patreon.png")
                 hover "interface/topbar/icon_patreon.png"
-                hovered [SetVariable("ui_hint", "Visit {size=-6}SilverStudioGames{/size} patreon")]
-                unhovered [SetVariable("ui_hint", "")]
+                hovered [SetVariable("tooltip", "Visit {size=-6}SilverStudioGames{/size} patreon")]
+                unhovered [SetVariable("tooltip", None)]
                 action OpenURL("https://www.patreon.com/SilverStudioGames")
                 activate_sound "sounds/click3.mp3"
             #Bugfixes
             imagebutton:
                 idle image_alpha("interface/topbar/icon_bug.png")
                 hover "interface/topbar/icon_bug.png"
-                hovered [SetVariable("ui_hint", "Open bugfix menu")]
-                unhovered [SetVariable("ui_hint", "")]
-                action [SetVariable("toggle_menu", False), SetVariable("ui_hint", ""), Jump("bugfix_menu")]
+                hovered [SetVariable("tooltip", "Open bugfix menu")]
+                unhovered [SetVariable("tooltip", None)]
+                action [SetVariable("toggle_menu", False), SetVariable("tooltip", None), Jump("bugfix_menu")]
                 activate_sound "sounds/click3.mp3"
 
 

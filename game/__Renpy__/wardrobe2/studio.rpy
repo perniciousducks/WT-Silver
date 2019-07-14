@@ -69,6 +69,15 @@ label studio(studio_return, studio_char):
     $ studio_bg_list = ["wall_day", "castle", "forest", "highlight", "versus", "main_room_day", "main_room_night", "corridor", "custom"]
     $ studio_bg_overlay_list = [None, "curtains", "card", "g_bottom", "g_left", "g_circular"]
     
+    if studio_image_eyebrows > len(studio_eyebrows_list):
+        $ studio_image_eyebrows = 0
+    if studio_image_eyes > len(studio_eyes_list):
+        $ studio_image_eyes = 0
+    if studio_image_pupils > len(studio_pupils_list):
+        $ studio_image_pupils = 0
+    if studio_image_mouth > len(studio_mouth_list):
+        $ studio_image_mouth = 0
+    
     $ char_active.expression(eyebrows=studio_eyebrows_list[studio_image_eyebrows][:-4], eyes=studio_eyes_list[studio_image_eyes][:-4], pupils=studio_pupils_list[studio_image_pupils][:-4], mouth=studio_mouth_list[studio_image_mouth][:-4])
     
     $ studio_hide = False

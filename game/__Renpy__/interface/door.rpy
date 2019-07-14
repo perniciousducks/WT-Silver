@@ -123,6 +123,9 @@ screen door_menu(xx, yy):
                                 add image_zoom[0] zoom image_zoom[1] align (0.5, 1.0) offset (3, 4)
                             add "interface/achievements/glass_iconbox.png" pos (3, 3)
                             text map_transcript_loc[door_dict[char]["loc"]] size 10 xalign 0.625 yalign 0.9 xanchor 0.5
-        if tmp_x <= 0:
-            text "All characters are busy" size 12 at truecenter
+        if not snape_unlocked:
+            text "You don't know anyone" size 12 at truecenter
+        else:
+            if tmp_x <= 0:
+                text "All characters are busy" size 12 at truecenter
             

@@ -1,32 +1,28 @@
 label phoenix:
-    if not bird_examined or day == 1:
-        menu:
-            "-Examine-" if not bird_examined:
-                $ bird_examined = True
-                hide screen genie
-                call gen_chibi("stand","mid","base",flip=True)
-                show screen chair_left #Empty chair near the desk.
-                show screen desk
-                with Dissolve(0.5)
-                m "Hm....."
-                m "Even this weird looking bird radiates magic..."
-                show screen genie
-                hide screen genie_stand
-                hide screen chair_left #Empty chair near the desk.
-                hide screen desk
-                with Dissolve(0.5)
-                jump day_main_menu
+    if not bird_examined:
+        $ bird_examined = True
+        hide screen genie
+        call gen_chibi("stand","mid","base",flip=True)
+        show screen chair_left #Empty chair near the desk.
+        show screen desk
+        with Dissolve(0.5)
+        m "Hm....."
+        m "Even this weird looking bird radiates magic..."
+        show screen genie
+        hide screen genie_stand
+        hide screen chair_left #Empty chair near the desk.
+        hide screen desk
+        with Dissolve(0.5)
+        jump day_main_menu
 
-
-    if day != 1:
-        if not phoenix_is_fed:
-            $ phoenix_is_fed = True
-            $ phoenix_fed_counter += 1
-            jump feeding
-        if phoenix_is_fed and not phoenix_is_petted:
-            $ phoenix_is_petted = True
-            $ phoenix_petted_counter += 1
-            jump petting
+    if not phoenix_is_fed:
+        $ phoenix_is_fed = True
+        $ phoenix_fed_counter += 1
+        jump feeding
+    if phoenix_is_fed and not phoenix_is_petted:
+        $ phoenix_is_petted = True
+        $ phoenix_petted_counter += 1
+        jump petting
 
     call screen main_room_menu
 

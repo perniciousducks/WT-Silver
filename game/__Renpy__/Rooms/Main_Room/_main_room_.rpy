@@ -77,7 +77,10 @@ screen main_room_menu():
         yanchor "center"
         idle door_OBJ.get_idle_image()
         hover door_OBJ.get_hover_image()
-        hovered SetVariable("tooltip", "Summon")
+        if door_examined:
+            hovered SetVariable("tooltip", "Summon")
+        else:
+            hovered SetVariable("tooltip", "Examine Door")
         unhovered SetVariable("tooltip", None)
         action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("door")]
 
@@ -127,7 +130,10 @@ screen main_room_menu():
             idle cupboard_OBJ.get_idle_image()
             if not searched:
                 hover cupboard_OBJ.get_hover_image()
-                hovered SetVariable("tooltip", "Rummage")
+                if cupboard_examined:
+                    hovered SetVariable("tooltip", "Rummage")
+                else:
+                    hovered SetVariable("tooltip", "Examine Cupboard")
                 unhovered SetVariable("tooltip", None)
                 action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("cupboard")]
 
@@ -229,7 +235,10 @@ screen main_room_menu():
             yanchor "center"
             idle "newanimation"
             hover "images/rooms/main_room/11_genie_02.png"
-            hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("tooltip", "Open desk menu") ]
+            if desk_examined:
+                hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("tooltip", "Open desk")]
+            else:
+                hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("tooltip", "Examine Desk")]
             unhovered [Hide("gui_tooltip"), SetVariable("tooltip", None)]
             action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("desk")]
 
@@ -243,7 +252,10 @@ screen main_room_menu():
         idle phoenix_OBJ.get_idle_image()
         if not phoenix_is_petted:
             hover phoenix_OBJ.get_hover_image()
-            hovered SetVariable("tooltip", "Feed/Pet")
+            if bird_examined:
+                hovered SetVariable("tooltip", "Feed/Pet")
+            else:
+                hovered SetVariable("tooltip", "Examine the bird")
             unhovered SetVariable("tooltip", None)
             action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("phoenix")]
 
@@ -256,7 +268,10 @@ screen main_room_menu():
         yanchor "center"
         idle fireplace_OBJ.get_idle_image()
         hover fireplace_OBJ.get_hover_image()
-        hovered SetVariable("tooltip", "Light fire")
+        if fireplace_examined:
+            hovered SetVariable("tooltip", "Light/Extinguish fire")
+        else:
+            hovered SetVariable("tooltip", "Examine fireplace")
         unhovered SetVariable("tooltip", None)
         action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("fireplace")]
 

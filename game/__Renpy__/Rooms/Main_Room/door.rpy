@@ -3,10 +3,8 @@ label door:
 
     if day == 1:
         if not door_examined:
-            menu:
-                "-Examine the door-":
-                    $ door_examined = True
-                    jump examine_door
+            $ door_examined = True
+            jump examine_door
         jump day_main_menu
 
     # #Updates

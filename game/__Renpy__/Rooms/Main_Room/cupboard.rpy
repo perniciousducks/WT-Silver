@@ -1,25 +1,24 @@
 
 
 label cupboard:
-    menu:
-        "-Examine the cupboard-" if not cupboard_examined:
-            $ cupboard_examined = True
-            $ searched = True
-            show screen chair_left #Empty chair near the desk.
-            hide screen genie
-            call gen_chibi("stand","behind_desk","base",flip=True)
-            show screen desk
-            with Dissolve(0.5)
+    if not cupboard_examined:
+        $ cupboard_examined = True
+        $ searched = True
+        show screen chair_left #Empty chair near the desk.
+        hide screen genie
+        call gen_chibi("stand","behind_desk","base",flip=True)
+        show screen desk
+        with Dissolve(0.5)
 
-            m "Hm....."
-            m "A cupboard..."
-            m "Maybe I should rummage through this one later..."
-            show screen genie
-            hide screen genie_stand
-            hide screen chair_left #Empty chair near the desk.
-            hide screen desk
-            with Dissolve(0.5)
-            jump day_main_menu
+        m "Hm....."
+        m "A cupboard..."
+        m "Maybe I should rummage through this one later..."
+        show screen genie
+        hide screen genie_stand
+        hide screen chair_left #Empty chair near the desk.
+        hide screen desk
+        with Dissolve(0.5)
+        jump day_main_menu
 
     if day > 1:
         jump rummaging

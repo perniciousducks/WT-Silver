@@ -383,11 +383,13 @@ label bugfix_menu:
             call reset_hermione_clothing
             call reset_luna_base
             call reset_luna_clothing
-            call reset_astoria_clothing
             call reset_susan_clothing
             $ cho_class.animation(None)
             $ cho_class.wear("all")
-            #call reset_tonks_clothing
+            $ astoria_class.animation(None)
+            $ astoria_class.wear("all")
+            $ tonks_class.animation(None)
+            $ tonks_class.wear("all")
             ">Appearance of each girl set back to default."
             jump bugfix_menu
         "-Reset Cho public and personal favours-" if cho_unlocked:

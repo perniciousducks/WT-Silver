@@ -170,19 +170,6 @@ label update_wr_head_list:
         if ll_stewardess_ITEM.unlocked or ll_stewardess_short_ITEM.unlocked:
             $ wr_hats.append("hat_stewardess")
 
-    if active_girl == "astoria":
-
-        #Hair
-        $ wr_hair.append("straight")
-        if ag_costume_lazy_town_ITEM.unlocked or ag_costume_lazy_town_short_ITEM.unlocked:
-            $ wr_hair.append("stephanie")
-        if ag_boss_uniform_ITEM.unlocked:
-            $ wr_hair.append("pigtails")
-
-        #Hats
-        if ag_boss_uniform_ITEM.unlocked:
-            $ wr_hats.append("boss_hat")
-
     if active_girl == "susan":
 
         $ wr_hair.append("braided")
@@ -199,29 +186,6 @@ label update_wr_head_list:
             $ wr_hats.append("bow_sailor_green")
             $ wr_hats.append("bow_sailor_red")
             $ wr_hats.append("bow_sailor_yellow")
-
-    if active_girl == "tonks":
-
-        $ wr_hair.append("short")
-
-        $ wr_hats.append("hat_witch")
-        $ wr_hats.append("hat_maid")
-
-        if game_difficulty >= 3:
-            $ wr_hats.append("paper_bag_1")
-            $ wr_hats.append("paper_bag_2")
-            $ wr_hats.append("paper_bag_3")
-
-            $ wr_hats.append("gimp_mask_1")
-            $ wr_hats.append("gimp_mask_2")
-            $ wr_hats.append("gimp_mask_3")
-            $ wr_hats.append("gimp_mask_4")
-            $ wr_hats.append("gimp_mask_5")
-
-        if game_difficulty >= 3:
-            $ wr_hats.append("paper_bag_1")
-            $ wr_hats.append("paper_bag_2")
-            $ wr_hats.append("paper_bag_3")
 
     return
 
@@ -319,14 +283,6 @@ label update_wr_tops_list:
             $ wr_tops_normal.append("top_muggle_1")
             $ wr_tops_normal.append("top_muggle_2")
             $ wr_tops_normal.append("top_muggle_3")
-
-    if active_girl == "astoria":
-
-        #Uniform
-        $ wr_tops_uniform.append("top_1")
-        $ wr_tops_uniform.append("top_2")
-        $ wr_tops_uniform.append("top_3")
-        $ wr_tops_uniform.append("top_4")
 
     if active_girl == "susan":
 
@@ -446,54 +402,11 @@ label update_wr_bottoms_list:
         if ll_quirky_muggle_ITEM.unlocked:
             $ wr_bottoms_skirts.append("skirt_muggle_1")
 
-    if active_girl == "astoria":
-
-        #Uniform
-        $ wr_bottoms_uniform.append("skirt_1")
-        $ wr_bottoms_uniform.append("skirt_2")
-
     if active_girl == "susan":
 
         #Uniform
         $ wr_bottoms_uniform.append("skirt_1")
         $ wr_bottoms_uniform.append("skirt_2")
-
-    if active_girl == "cho":
-
-        #Uniform
-        $ wr_bottoms_uniform.append("skirt_2")
-        $ wr_bottoms_uniform.append("skirt_3")
-        $ wr_bottoms_uniform.append("skirt_4")
-
-        $ wr_bottoms_uniform.append("skirt_2_low")
-        $ wr_bottoms_uniform.append("skirt_3_low")
-        $ wr_bottoms_uniform.append("skirt_4_low")
-
-        #Skirts
-        if cc_outfit_sailor_white_ITEM.unlocked or cc_outfit_sailor_black_ITEM.unlocked:
-            $ wr_bottoms_skirts.append("skirt_short_1")
-        if cc_party_slut_ITEM.unlocked:
-            $ wr_bottoms_skirts.append("skirt_short_2")
-
-        #Pants
-        $ wr_bottoms_pants.append("pants_long_1")
-        $ wr_bottoms_pants.append("pants_short_1")
-        $ wr_bottoms_pants.append("pants_long_2")
-        if cc_muggle_hot_ITEM.unlocked:
-            $ wr_bottoms_pants.append("pants_short_2")
-        if cc_costume_misty_ITEM.unlocked:
-            $ wr_bottoms_pants.append("pants_short_3")
-
-    if active_girl == "tonks":
-
-        #Uniform
-        $ wr_bottoms_uniform.append("skirt_2")
-        $ wr_bottoms_uniform.append("skirt_3")
-        $ wr_bottoms_uniform.append("skirt_4")
-
-        #Pants
-        $ wr_bottoms_pants.append("pants_jeans_long")
-        $ wr_bottoms_pants.append("pants_rocker")
 
     return
 
@@ -640,12 +553,6 @@ label update_wr_other_clothings_list:
             $ wr_stockings.append("leggings_1")
             $ wr_stockings.append("leggings_2")
 
-    if active_girl == "astoria":
-        if ag_nighty_silk_ITEM.unlocked:
-            $ wr_stockings.append("nighty_stockings")
-
-        $ wr_robes.append("robe_1_s")
-
     if active_girl == "susan":
 
         $ wr_neckwears.append("choker_base")
@@ -653,51 +560,6 @@ label update_wr_other_clothings_list:
         $ wr_stockings.append("stockings_base")
         $ wr_stockings.append("stockings_lace")
         $ wr_stockings.append("stockings_rose")
-
-    if active_girl == "cho":
-
-        #Neck
-        $ wr_neckwears.append("choker_lace_1")
-        $ wr_neckwears.append("choker_leather_1")
-        $ wr_neckwears.append("collar_leather_1")
-        $ wr_neckwears.append("collar_leather_2")
-        $ wr_neckwears.append("goggles")
-        $ wr_neckwears.append("choker_bow_tie_1")
-        if cc_lingerie_lace_ITEM.unlocked:
-            $ wr_neckwears.append("choker_lace_2")
-
-        #Body Accessories
-        if cc_costume_misty_ITEM.unlocked:
-            $ wr_body_accs.append("suspenders_1")
-
-        #Gloves
-        $ wr_gloves.append("gloves_quidditch")
-
-        #Stockings
-        $ wr_stockings.append("stockings")
-        if cc_lingerie_lace_ITEM.unlocked:
-            $ wr_stockings.append("stockings_lace_1")
-            $ wr_stockings.append("stockings_lace_2")
-        if cc_outfit_sailor_white_ITEM.unlocked:
-            $ wr_stockings.append("stockings_sailor_1")
-
-        #Robes
-        $ wr_robes.append("robe_quidditch_1")
-        $ wr_robes.append("robe_quidditch_2")
-
-    if active_girl == "tonks":
-
-        #Neck
-        $ wr_neckwears.append("choker_beads")
-        $ wr_neckwears.append("choker_lace_1")
-        $ wr_neckwears.append("collar_leather_1")
-        $ wr_neckwears.append("collar_leather_2")
-
-        $ wr_gloves.append("auror_gloves")
-
-        $ wr_stockings.append("stockings_auror")
-
-        $ wr_robes.append("auror_coat")
 
     return
 
@@ -802,28 +664,6 @@ label update_wr_underwear_list:
         $ wr_onepieces.append("nighty_long")
         $ wr_onepieces.append("nighty_long_translucent")
 
-    if active_girl == "astoria":
-
-        #Bras
-        $ wr_bras.append("clear_bra")
-        if ag_lingerie_lace_ITEM.unlocked:
-            $ wr_bras.append("lace_bra")
-        if ag_lingerie_lewd_ITEM.unlocked:
-            $ wr_bras.append("lewd_bra")
-
-        #Panties
-        $ wr_panties.append("clear_panties")
-        if ag_lingerie_lace_ITEM.unlocked:
-            $ wr_panties.append("lace_panties")
-        if ag_lingerie_lewd_ITEM.unlocked:
-            $ wr_panties.append("lewd_panties")
-        if ag_nighty_silk_ITEM.unlocked:
-            $ wr_panties.append("nighty_panties")
-
-        #One-Pieces
-        if ag_nighty_silk_ITEM.unlocked:
-            $ wr_onepieces.append("nighty")
-
     if active_girl == "susan":
 
         #Bras
@@ -838,52 +678,6 @@ label update_wr_underwear_list:
         #One-Pieces
         $ wr_onepieces.append("sling_1")
         $ wr_onepieces.append("sling_2")
-
-    if active_girl == "cho":
-
-        #Bras
-        $ wr_bras.append("bra_base_1")
-        $ wr_bras.append("sport_bra_1")
-        if cc_lingerie_lace_ITEM.unlocked:
-            $ wr_bras.append("bra_lace_1")
-            $ wr_bras.append("bra_lace_2")
-        if cc_party_slut_ITEM.unlocked:
-            $ wr_bras.append("bikini_top_1")
-        if cc_bikini_micro_ITEM.unlocked:
-            $ wr_bras.append("bikini_top_2")
-
-        #Panties
-        $ wr_panties.append("panties_base_1")
-        $ wr_panties.append("sport_panties_1")
-        $ wr_panties.append("sport_panties_2")
-        if cc_lingerie_lace_ITEM.unlocked:
-            $ wr_panties.append("panties_lace_1")
-            $ wr_panties.append("panties_lace_2")
-        if cc_bikini_micro_ITEM.unlocked:
-            $ wr_panties.append("bikini_bottom_1")
-        if cc_outfit_sailor_white_ITEM.unlocked or cc_outfit_sailor_black_ITEM.unlocked:
-            $ wr_panties.append("bikini_bottom_2")
-
-        #One-Pieces
-
-        #Garterbelts
-        if cc_lingerie_lace_ITEM.unlocked:
-            $ wr_garterbelts.append("garter_lace_1")
-            $ wr_garterbelts.append("garter_lace_2")
-
-    if active_girl == "tonks":
-
-        #Bras
-        $ wr_bras.append("bra_tape")
-
-        #Panties
-        $ wr_panties.append("panties_base")
-        $ wr_panties.append("panties_latex")
-
-        #One-Pieces
-        $ wr_onepieces.append("bikini_sling_1")
-        $ wr_onepieces.append("netsuit_1")
-        $ wr_onepieces.append("netsuit_2")
 
     return
 
@@ -929,22 +723,6 @@ label update_wr_outfits_list:
                 if i.unlocked:
                     wr_dresses.append(i)
 
-    if active_girl == "astoria":
-        python:
-
-            #Outfits
-            for i in astoria_outfits_list:
-                if i.unlocked:
-                    wr_outfits.append(i)
-            #Costumes
-            for i in astoria_costumes_list:
-                if i.unlocked:
-                    wr_costumes.append(i)
-            #Dresses
-            for i in astoria_dresses_list:
-                if i.unlocked:
-                    wr_dresses.append(i)
-
     if active_girl == "susan":
         python:
 
@@ -958,38 +736,6 @@ label update_wr_outfits_list:
                     wr_costumes.append(i)
             #Dresses
             for i in susan_dresses_list:
-                if i.unlocked:
-                    wr_dresses.append(i)
-
-    if active_girl == "cho":
-        python:
-
-            #Outfits
-            for i in cho_outfits_list:
-                if i.unlocked:
-                    wr_outfits.append(i)
-            #Costumes
-            for i in cho_costumes_list:
-                if i.unlocked:
-                    wr_costumes.append(i)
-            #Dresses
-            for i in cho_dresses_list:
-                if i.unlocked:
-                    wr_dresses.append(i)
-
-    if active_girl == "tonks":
-        python:
-
-            #Outfits
-            for i in tonks_outfits_list:
-                if i.unlocked:
-                    wr_outfits.append(i)
-            #Costumes
-            for i in tonks_costumes_list:
-                if i.unlocked:
-                    wr_costumes.append(i)
-            #Dresses
-            for i in tonks_dresses_list:
                 if i.unlocked:
                     wr_dresses.append(i)
 
@@ -1077,24 +823,5 @@ label update_wr_miscellaneous_list:
     if active_girl == "luna":
         if potion_inv.has("p_transparency"):
             $ wr_potions_list.append("clothes_potion")
-
-    if active_girl == "cho":
-        if potion_inv.has("p_transparency"):
-            $ wr_potions_list.append("clothes_potion")
-        if cc_lingerie_lace_ITEM.unlocked:
-            $ wr_piercings_list.append("ears_feather")
-
-    if active_girl == "tonks":
-        $ wr_potions_list.append("hair_growth_potion")
-        if potion_inv.has("p_transparency"):
-            $ wr_potions_list.append("clothes_potion")
-
-        if game_difficulty >= 3 and ballgag_and_cuffs_ITEM.number > 0:
-            $ wr_items_list.append("item_ballgag_and_cuffs")
-
-        $ wr_piercings_list.append("ears_rings")
-        $ wr_piercings_list.append("tongue_pearls")
-        $ wr_piercings_list.append("nipples_pearls")
-        $ wr_piercings_list.append("belly_pearls")
 
     return

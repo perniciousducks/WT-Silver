@@ -28,7 +28,7 @@ label stats_menu(xx=150, yy=90):
                     "Hermione": {"ico": "head_hermione_2", "flag": hermione_unlocked, "name": "Hermione Granger", "sex": "Female", "height": "5.2ft", "weight": "126lb", "job": "Student", "hates": "Slytherin", "likes": "Books"},
                     "Cho": {"ico": "head_cho_2", "flag": cho_unlocked, "name": "Cho Chang", "sex": "Female", "height": "5.1ft", "weight": "122lb", "job": "Student", "hates": "Hermione", "likes": "Winning"},
                     "Luna": {"ico": "head_luna_2", "flag": luna_unlocked, "name": "Luna Lovegood", "sex": "Female", "height": "5.2ft", "weight": "117lb", "job": "Student", "hates": "Wrackspurts", "likes": "{size=-2}Magical creatures{/size}"},
-                    "Astoria": {"ico": "head_astoria_2", "flag": astoria_unlocked, "name": "Astoria Greengrass", "sex": "Female", "height": "4.8ft", "weight": "98lb", "job": "Student", "hates": "Rules", "likes": "Breaking them"},
+                    "Astoria": {"ico": "head_astoria_2", "flag": astoria_unlocked, "name": "Astoria Greengrass", "sex": "Female", "height": "5.0ft", "weight": "102lb", "job": "Student", "hates": "Rules", "likes": "Breaking them"},
                     "Susan": {"ico": "head_susan_2", "flag": susan_unlocked, "name": "Susan Bones", "sex": "Female", "height": "5.3ft", "weight": "135lb", "job": "Student", "hates": "Chores", "likes": "You {size=-4}Secretly..{/size}"}
                     }
 
@@ -200,16 +200,9 @@ screen stats_menuitem(xx, yy):
                     add "interface/characters/luna_locked.png" zoom 0.38 align (0.75, 1.0)
             elif current_category == "Astoria":
                 if current_item["flag"]:
-                    frame:
-                        style "empty"
-                        #align (0.7, 1.0)
-                        at at_zoom(0.78)
-                        xoffset -350
-                        yoffset -62
-                        
-                        use astoria_main
+                    add astoria_class.get_image() zoom 0.4 align (0.7, 1.0)
                 else:
-                     add "interface/characters/astoria_locked.png" zoom 0.38 align (0.7, 1.0)
+                    add "interface/characters/astoria_locked.png" zoom 0.38 align (0.7, 1.0)
             elif current_category == "Susan":
                 if current_item["flag"]:
                     frame:

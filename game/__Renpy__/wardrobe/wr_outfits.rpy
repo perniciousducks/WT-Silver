@@ -9,9 +9,6 @@ label equip_outfit:
     #Luna
     if active_girl == "luna":
         jump equip_lun_outfit
-    #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_outfit
     #Susan
     if active_girl == "susan":
         jump equip_sus_outfit
@@ -498,22 +495,6 @@ label equip_lun_outfit:
         call set_lun_outfit(None)
 
         jump return_to_wardrobe
-
-
-### Equip Astoria's Outfit ###
-label equip_ast_outfit:
-    if (outfit_choice != astoria_outfit_GLBL) or (outfit_choice == astoria_outfit_GLBL and not astoria_wear_outfit):
-
-        call set_ast_outfit(outfit_choice)
-
-        jump return_to_wardrobe
-
-    else: # Unequip
-
-        call set_ast_outfit(None)
-
-        jump return_to_wardrobe
-
 
 ### Equip Susan's Outfit ###
 label equip_sus_outfit:

@@ -8,9 +8,6 @@ label equip_top:
     #Luna
     if active_girl == "luna":
         jump equip_lun_top
-    #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_top
     #Susan
     if active_girl == "susan":
         jump equip_sus_top
@@ -847,13 +844,7 @@ label equip_lun_top:
     call set_lun_top(top_choice)
 
     jump return_to_wardrobe
-
-### Equip Astoria's Top ###
-label equip_ast_top:
-    call set_ast_top(top_choice)
-
-    jump return_to_wardrobe
-
+    
 ### Equip Susan's Top ###
 label equip_sus_top:
     call set_sus_top(top_choice)

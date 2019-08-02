@@ -160,6 +160,7 @@ label __init_variables:
     #Astoria Init
     call astoria_init
     call astoria_progress_init
+    call astoria_wardrobe_init
 
     #Tonks Init
     call tonks_init

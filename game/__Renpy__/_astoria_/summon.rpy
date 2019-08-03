@@ -28,6 +28,7 @@ label summon_astoria:
     label astoria_requests:
 
     $ hide_transitions = False
+    $ active_girl = "astoria"
     $ astoria_busy = True
 
     menu:
@@ -78,8 +79,8 @@ label summon_astoria:
 
         # Wardrobe
         "-Wardrobe-" if astoria_wardrobe_unlocked:
-            "TBA"
-            jump astoria_requests
+            call ast_main(xpos="wardrobe",ypos="base", face="neutral")
+            call expression 't_wardrobe' pass (return_label="astoria_requests", char_label="ast_main")
 
         "{color=#858585}-Hidden-{/color}" if not astoria_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")

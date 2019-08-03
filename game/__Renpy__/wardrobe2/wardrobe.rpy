@@ -21,6 +21,8 @@ init python:
             renpy.with_statement(d3)
             if active_girl == "tonks":
                 renpy.say(None, "{size=+6}> Try again at friendship level {color=#7a0000}"+str(value)+"{/color}.{/size}")
+            elif active_girl == "astoria":
+                renpy.say(None, "{size=+6}> Try again at affection level {color=#7a0000}"+str(value)+"{/color}.{/size}")
             else:
                 renpy.say(None, "{size=+6}> Try again at whoring level {color=#7a0000}"+str(value)+"{/color}.{/size}")
             renpy.hide_screen("blktone5")
@@ -316,10 +318,6 @@ screen t_wardrobe_menu(xx, yy):
                 ypos 416
                 textbutton "{size=12}Music{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(wardrobe_music_active)+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("music") hovered SetVariable("tooltip", "Toggle music") unhovered SetVariable("tooltip", None)
                 textbutton "{size=12}BG Color{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_true.png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("bg_color") hovered SetVariable("tooltip", "Change background colour") unhovered SetVariable("tooltip", None)
-                
-        # Tooltip
-        if persistent.tooltip:
-            text "[tooltip]" xalign 0.5 ypos 33
             
         #Erogenous zones
         vbox:
@@ -382,8 +380,8 @@ screen t_wardrobe_menuitem(xx, yy):
                 spacing 4
                 
                 for i in xrange(current_item.layers):
-                    button xsize 24 ysize 24 background current_item.get_color_hex(i) action Return(["item_color", i])
-                textbutton "R" xsize 24 ysize 24 background "#d3d3d3" action Return("item_reset")
+                    button xsize 24 ysize 24 background current_item.get_color_hex(i) action Return(["item_color", i]) hovered SetVariable("tooltip", "Change colour ("+str(i+1)+")") unhovered SetVariable("tooltip", None)
+                textbutton "R" xsize 24 ysize 24 background "#d3d3d3" action Return("item_reset") hovered SetVariable("tooltip", "Reset all colours") unhovered SetVariable("tooltip", None)
             
         # Add subcategory list
         if len(category_items) > 0:

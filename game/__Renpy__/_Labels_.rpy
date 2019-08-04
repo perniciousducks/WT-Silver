@@ -598,6 +598,8 @@ label play_music(music=""):
         play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 if_changed
     if music in ["night_outside", "outside_night"]:
         play music "sounds/night.mp3" fadein 1 fadeout 1 if_changed
+    if music in ["jazz_take"]:
+        play music "sounds/jazz take 2.mp3" fadein 1 fadeout 1 if_changed
 
     # Interface
     if music in ["my_immortal"]:

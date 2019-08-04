@@ -1,4 +1,12 @@
-
+image dark_overlay:
+    "images/rooms/room_of_requirement/dark_overlay_1.png"
+    pause 0.2
+    "images/rooms/room_of_requirement/dark_overlay_2.png"
+    pause 0.2
+    "images/rooms/room_of_requirement/dark_overlay_3.png"
+    pause 0.2
+    repeat
+    
 screen whose_points_screen():
     add "images/rooms/room_of_requirement/whose_points.png"
     
@@ -11,3 +19,8 @@ screen day_to_night():
     use blkfade
     add "images/rooms/room_of_requirement/day_to_night.png" xalign 0.5 yalign 0.5
     zorder 5
+    
+screen add_overlay():
+    add "dark_overlay"  xpos 0 ypos 0
+    zorder 6
+    

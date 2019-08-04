@@ -15,7 +15,7 @@ label helf_main(text="", trans=None, remove=False):
     show screen house_elf
     show screen bld1
 
-    call transition(trans)
+    call transition(trans, True)
 
     helf "[text]"
 
@@ -38,34 +38,30 @@ label nar(text="",action=""):
     return
 
 #Transitions
-label transition(trans=None):
-    if trans != None:         #d3 is default.
-        if trans == "d1":
-            with d1
-        elif trans == "d3": #Default anyways.
-            with d3
-        elif trans == "d5":
-            with d5
-        elif trans == "d7":
-            with d7
-        elif trans == "d9":
-            with d9
-        elif trans == "fade":
-            with fade
-        elif trans == "hpunch":
-            with hpunch
-        elif trans == "vpunch":
-            with vpunch
-        elif trans == "move":
-            with move
-        #Skip Transitions
-        elif trans in ["None","none","skip"]:
-            pass
-        else: #for typos and preventing crashes...
-            with d3
-    else:
-        if not hide_transitions:
-            with d3
+init python:
+    def dynamic_transition(trans, immediate):
+        """Apply a transition normally or immediately (at the same time as next interaction)."""
+        try:
+            # Check if the requested transition is properly defined
+            x = globals()[trans]
+            if issubclass(x.callable, renpy.display.transition.Transition):
+                # Apply the transition
+                if immediate:
+                    renpy.with_statement({ "master": x })
+                else:
+                    renpy.with_statement(x)
+        except:
+            renpy.with_statement("None") # Fallback
+
+label transition(trans=None, immediate=False):
+    if trans != None:
+        if trans in ["None", "none", "skip"]:
+            return # Skip transition
+        # Note: runs regardless of hide_transitions setting
+        $ dynamic_transition(trans, immediate)
+    elif not hide_transitions:
+        # Default transition
+        $ dynamic_transition("d3", immediate)
     return
 
 init python:

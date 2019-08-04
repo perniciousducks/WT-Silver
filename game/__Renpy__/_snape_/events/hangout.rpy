@@ -134,7 +134,12 @@ label wine_intro:
     pause.1
 
     # Show wine
-    call give_reward(text=">You hand over the bottle you found in the cupboard to professor Snape...", gift="interface/icons/item_wine.png", sound=False)
+    $ the_gift = "interface/icons/item_wine.png" # WINE.
+    show screen gift
+    with d3
+    ">You hand over the bottle you fond in the cupboard to professor Snape..."
+    hide screen gift
+    with d3
 
     call sna_main("This one has got to be from Albus' personal stash!","snape_24")
     call sna_main("Some pricey and incredibly rare stuff.","snape_06")
@@ -155,6 +160,7 @@ label drink_wine:
     m "Look what I've got!"
     pause.1
 
+    # Show wine
     $ the_gift = "interface/icons/item_wine.png" # WINE.
     show screen gift
     with d3

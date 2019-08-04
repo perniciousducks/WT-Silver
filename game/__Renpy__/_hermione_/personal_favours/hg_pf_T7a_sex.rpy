@@ -4,7 +4,7 @@
 
 label hg_pf_sex:
 
-    if hg_pf_blowjob.counter < 1:
+    if hg_pf_sex.counter < 1:
         m "{size=-4}(Should I ask her to have sex with me?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
@@ -42,7 +42,6 @@ label hg_pf_sex:
     m "Yes, [hermione_name]. [current_payout] points to the \"Gryffindor\" house."
     $ gryffindor += current_payout
     call her_main("Thank you, [genie_name]...","soft","baseL")
-
 
     # Hermione leaves
     call her_walk(xpos="door", ypos="base", speed=2.5)
@@ -120,14 +119,12 @@ label hg_pf_sex_T1_E2:
     g9 "You were lying on my desk and I was fucking your tight pussy like a madman..."
     if her_whoring >= 24:
         call her_main("In that dream, [genie_name]...","soft","ahegao", xpos="right", ypos="base")
-    else:
-        call her_main("In that dream, [genie_name]...","upset","closed", xpos="right", ypos="base")
-    if her_whoring <= 23:
-        call her_main("Did I happen to receive 65 house points afterwards?","angry","angry")
-        g9 "Why yes, you did, [hermione_name]."
-    else:
         call her_main("Did you cum inside me or not?","smile","baseL")
         g9 "I'm not sure [hermione_name], care to find out?"
+    else:
+        call her_main("In that dream, [genie_name]...","upset","closed", xpos="right", ypos="base")
+        call her_main("Did I happen to receive 65 house points afterwards?","angry","angry")
+        g9 "Why yes, you did, [hermione_name]."
     call her_main("...............................","disgust","glance")
     her "Let me just take my panties off..."
     stop music fadeout 1.0

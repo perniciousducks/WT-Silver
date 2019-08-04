@@ -226,20 +226,7 @@ label unlock_clothing(text="",item=None):
     hide screen blktone5
     with d3
 
-    $ item.unlocked = True
-    #
-    # New outfit system compatibility
-    #
-    #
-    python:
-        try:
-            item.unlock(True)
-        except:
-            pass
-        try:
-            outfit_linking[item.id].unlock(True)
-        except:
-            pass
+    $ unlock_clothing_compat(item)
 
     call reset_menu_position
 
@@ -354,7 +341,8 @@ screen with_snape():
     zorder 3
 
 screen with_snape_animated():
-    add "genie_toast_goblet" at Position(xpos=140, ypos=0)
+    add "genie_toast_goblet" at Position(xpos=435, ypos=200)
+    add "snape_toast_goblet" at Position(xpos=618, ypos=200)
     tag hanging_with_snape
     zorder 3
 
@@ -371,7 +359,7 @@ screen ch_hotdog():
 
 
 
-label teleport(position=None,effect=True):
+label teleport(position=None,effect=True,poof_label=None):
     if position == "genie":
         $ teleport_xpos = gen_chibi_xpos+75
         $ teleport_ypos = gen_chibi_ypos-15
@@ -408,6 +396,8 @@ label teleport(position=None,effect=True):
     #stop music fadeout 1
 
     hide screen heal_animation
+    if poof_label != None:
+        $ renpy.call(poof_label)
     show screen teleport_animation
     with d5
 

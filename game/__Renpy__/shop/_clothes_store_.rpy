@@ -1,4 +1,13 @@
+init python:
+    def unlock_clothing_compat(item):
+        """Unlock a clothing item. Compatible with new outfit system."""
+        if isinstance(item, item_class):
+            item.unlocked = True
+        elif isinstance(item, outfit_class) or isinstance(item, cloth_class):
+            item.unlock(True)
 
+        if item.id in outfit_linking:
+            outfit_linking[item.id].unlock(True)
 
 ### CLOTHING STORE ###
 

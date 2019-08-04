@@ -258,7 +258,7 @@ label __init_variables:
 
     if not hasattr(renpy.store,'letter_from_hermione_B_OBJ'):
         $ letter_from_hermione_B_OBJ = mail_letter_class()
-    $ letter_from_hermione_B_OBJ.text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sorry to disturb you again, professor. I just want to make sure that you take this problem seriously.\n\nLast night another classmate confided inme... I gave my word to keep it a secret, so I cannot go into any details.\n\nAll I can say is that one of the Professors was involved.\n\nPlease take action soon.\n\n{size=-3}With deepest respect,\nHermione Granger.{/size}"
+    $ letter_from_hermione_B_OBJ.text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sorry to disturb you again, professor. I just want to make sure that you take this problem seriously.\n\nLast night another classmate confided in me... I gave my word to keep it a secret, so I cannot go into any details.\n\nAll I can say is that one of the Professors was involved.\n\nPlease take action soon.\n\n{size=-3}With deepest respect,\nHermione Granger.{/size}"
     $ letter_from_hermione_B_OBJ.label = "" #No comment on letter.
 
 

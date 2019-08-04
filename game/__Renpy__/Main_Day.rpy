@@ -3,7 +3,7 @@
 #Day Start.
 
 label day_start:
-    play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY THEME
+    call play_music("day_theme")
     show screen blkfade
 
     #$ renpy.set_style_preference("dialog", "Day")

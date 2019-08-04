@@ -189,7 +189,7 @@ label cc_pf_talk_T1_intro_E1:
     g4 "I'm in shock!"
 
     # Viktor
-    call cho_main("Then there also was Viktor Crum who-","open","base","base","R")
+    call cho_main("Then there also was Viktor Krum who-","open","base","base","R")
     with hpunch
     g4 "Slow down, girl! I'm still not over the fact that you made out with a girl!"
     call cho_main("","annoyed","narrow","base","mid")
@@ -428,7 +428,7 @@ label cc_pf_talk_T1_E3:
     call cho_main("Sir, Why do you have to keep bringing that up?","soft","narrow","base","mid")
     call cho_main("What's past is in the past...","annoyed","narrow","angry","R")
     m "I believe otherwise..."
-    g4 "Have you already forgetten that he's our enemy?!"
+    g4 "Have you already forgotten that he's our enemy?!"
     m "Your relationship with him is of the utmost importance right now!"
     m "I need to know every tiny bit of detail about the two of you."
     m "His sexual preferences. Secret fetishes he might have. That sort of stuff..."
@@ -507,7 +507,7 @@ label cc_pf_talk_T1_E3:
         with d3
         pause.8
 
-        call cho_main("As for me, panties have to be practical, first and formost!","soft","closed","base","mid")
+        call cho_main("As for me, panties have to be practical, first and foremost!","soft","closed","base","mid")
         g4 "*Ahg!* So you can quickly get them off, you whore!"
 
         call cum_block
@@ -672,7 +672,7 @@ label cc_pf_talk_T2_intro_E1:
             call cho_main("No, Sir.","soft","closed","base","mid")
             m "No?"
 
-    call cho_main("I do not endorse their behavior, Sir.{p=0.6}And I hope no other student has to share the same harassment that I received.","soft","narrow","angry","mid")
+    call cho_main("I do not endorse their behaviour, Sir.{p=0.6}And I hope no other student has to share the same harassment that I received.","soft","narrow","angry","mid")
     call cho_main("{size=-4}Unless maybe Granger...{/size}","annoyed","narrow","angry","R") # Small text.
     call cho_main("But{w}, watching them succumb to me has been rather fun...","base","narrow","angry","mid")
     m "Succumb to you?"
@@ -1153,7 +1153,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
 
             # Add section here.
 
-            #cho "Don't tell me you also buy favors from her?!"
+            #cho "Don't tell me you also buy favours from her?!"
             #m "No, of course not!"
             #m "She's more of a-..."
            # m "It's complicated..."
@@ -1263,7 +1263,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 call cho_main("You see, they don't play Quidditch to win... but as a warrant to beat up the opposing players instead...","soft","narrow","base","mid")
                 call cho_main("But... If I could get them to play poorly...","soft","narrow","raised","mid")
                 m "Could you manage that?"
-                call cho_main("*Tzzz!* Nothing would be easier, Sir!","angry","clsoed","angry","mid")
+                call cho_main("*Tzzz!* Nothing would be easier, Sir!","angry","closed","angry","mid")
                 call cho_main("They would happily throw the towel with the right kind of... motivation. Don't you think?","base","narrow","base","mid")
                 g9 "You've become quite the strategist!"
                 call cho_main("If they like smacking asses that much, maybe I should just let them hit a girl that can take their feeble swings...","soft","narrow","base","R")

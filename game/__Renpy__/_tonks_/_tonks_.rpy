@@ -99,8 +99,7 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
     show screen tonks_main()
     show screen bld1
 
-    #Transitions
-    call transition(trans)
+    call transition(trans, True)
 
     $ tonks_class.say(text)
 

@@ -180,7 +180,7 @@ label hermione_intro_E1:
         g4 "{size=-4}(Crap. What does she want now?){/size}"
         g4 "Yes, it's all true. Please keep going..."
         her "Ehm... So, as I was saying..."
-        m "{size=-4}(Oh... That was a good jerkoff session, but I'm getting dangerously close to the \"grand finale\".){/size}"
+        m "{size=-4}(Oh... That was a good jerk-off session, but I'm getting dangerously close to the \"grand finale\".){/size}"
         m "{size=-4}(Maybe I should stop before I get myself into trouble.){/size}"
 
         menu:
@@ -741,7 +741,7 @@ label hermione_intro_E6:
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=3)
 
-    call her_main("Good evening, professor...","soft","baseL", xpos="base", ypos="base")
+    call her_main("Good day, professor...","soft","baseL", xpos="base", ypos="base")
     her "........................"
     call her_main("........................","annoyed","worriedL")
     her "........................"
@@ -927,7 +927,7 @@ label hermione_intro_E6:
                 call her_main("But do I need to be punished... hm?","soft","baseL")
                 call her_main("Is this really for me to decide...? I mean...","normal","frown")
                 her "What does this have to do with anything?"
-                m "You are overanalyzing this, girl."
+                m "You are overanalysing this, girl."
                 m "Just say that you need to be punished!"
                 call her_main("Fine. I need to be punished!","angry","angry")
                 call her_main("{size=-5}(And I truly do think so sometimes...){/size}","normal","worriedCl")

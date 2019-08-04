@@ -75,8 +75,7 @@ label ast_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
     show screen astoria_main()
     show screen bld1
 
-    #Transitions
-    call transition(trans)
+    call transition(trans, True)
 
     if text != "":
         $ renpy.say(ast, text)

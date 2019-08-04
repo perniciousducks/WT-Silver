@@ -26,6 +26,12 @@ label astoria_wardrobe_init:
             astoria_cloth_schoolskirt2 = cloth_class(char="astoria", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_2", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=4)
             astoria_cloth_schoolskirt3 = cloth_class(char="astoria", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_3", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=8)
             astoria_cloth_schoolskirt4 = cloth_class(char="astoria", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_4", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=12)
+            
+            # Legwear
+            astoria_cloth_pantyhose1 = cloth_class(char="astoria", category="legwear", subcat="stockings", type="stockings", id="pantyhose", layers=1, color=[[190, 146, 129, 255]])
+            
+            # Temporal save
+            astoria_outfit_last = outfit_class(name="Last worn items", group=[astoria_hair_base])
         
             ################
             #              #
@@ -70,7 +76,7 @@ label astoria_wardrobe_init:
                         "bottom":     [astoria_cloth_schoolskirt1, 16, 0, 0, False],
                         "garterbelt": [None, 15, 0, 0, False],
                         "panties":    [None, 14, 0, 0, False],
-                        "stockings":  [None, 13, 0, 0, False],
+                        "stockings":  [astoria_cloth_pantyhose1, 13, 0, 0, False],
                         "buttplug":   [None, 0, 0, 0, False],
                         "pubes":      [None, 11, 0, 0, False],
                         "tattoo0":    [None, 10, 0, 0, False],

@@ -6315,8 +6315,6 @@ interface/wardrobe/test/icons/astoria/panties_panties.png:80,0,301,429
 interface/wardrobe/test/icons/astoria/pelvis_piercing.png:15,66,278,193
 interface/wardrobe/test/icons/astoria/pelvis_pubes.png:98,52,263,377
 interface/wardrobe/test/icons/astoria/pelvis_tattoos.png:98,52,263,377
-interface/wardrobe/test/icons/astoria/tops_auror.png:75,0,302,429
-interface/wardrobe/test/icons/astoria/tops_onepieces.png:78,0,297,429
-interface/wardrobe/test/icons/astoria/tops_quidditch.png:0,0,395,429
-interface/wardrobe/test/icons/astoria/tops_robes.png:67,0,345,429
 interface/wardrobe/test/icons/astoria/tops_school.png:79,0,303,429
+characters/astoria/clothes/stockings/pantyhose/0.png:463,838,225,361
+characters/astoria/clothes/stockings/pantyhose/outline.png:462,837,227,362

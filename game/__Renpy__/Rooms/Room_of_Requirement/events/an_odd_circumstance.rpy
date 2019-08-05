@@ -140,8 +140,8 @@ label an_odd_circumstance():
     her "*Gulp!*"
     nar "Her eyes watering she looked as if she was about to pass out but kept her head wrapped around my shaft as she tried to swallow it all, a couple of bubbles now forming around her nose."
     her "*Aahh!*"
-    call set_u_ani("blowjob_ani","hand_ani", 0,10)
-    call u_pause_ani
+    call set_u_ani("cum_on_face_ani")
+    call u_play_ani
     nar "She then pulled away satisfied with her deed, moving back just as another wave of seemingly endless amount of semen found its way spurting out and coating her surprised face..."
     nar "As the residue started flowing down her cheeks, she wiped some off with her finger and let it slide across the fingertip into her open mouth..."
     her "Looks like I've made a mess again..."
@@ -162,10 +162,13 @@ label an_odd_circumstance():
     her "Make it known that Hermione never backs down on a deal..."
     call her_walk("door", "base", speed=2)
     call her_chibi("leave")
-    call play_sound("door")
     nar "My breathing now returning to normal the feeling as if someone had been pinching my vocal cords slowly faded away."
+    show screen blkfade
+    with d3
     call room("main_room")
     nar "After clearing my throat and composing myself. I sat back down in my chair trying to get my head around on what had just transpired."
+    hide screen blkfade
+    with d3
     nar "Hermione she said..."
     nar "It was the only clue you had gotten on who this mysterious girl was, you still had yet to know what kind of favour you had granted her..."
     nar "But it didn't matter, the favour you had received in return was more than enough to make up for anything you might have assisted her with..."

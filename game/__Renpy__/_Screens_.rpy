@@ -97,8 +97,8 @@ $ width_offset = 140
 
 
 
-screen desk(): #Desk only!
-    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
+screen desk(xposistion=360): #Desk only!
+    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=xposistion, ypos=330, xanchor="center", yanchor="center")
     zorder 2
 
 screen chair_left():

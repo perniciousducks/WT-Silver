@@ -1,10 +1,10 @@
 image dark_overlay:
-    "images/rooms/room_of_requirement/dark_overlay_1.png"
-    pause 0.2
-    "images/rooms/room_of_requirement/dark_overlay_2.png"
-    pause 0.2
-    "images/rooms/room_of_requirement/dark_overlay_3.png"
-    pause 0.2
+    "images/rooms/room_of_requirement/dark_overlay_1.png" with d3
+    pause 0.4
+    "images/rooms/room_of_requirement/dark_overlay_2.png" with d3
+    pause 0.4
+    "images/rooms/room_of_requirement/dark_overlay_3.png" with d3
+    pause 0.4
     repeat
     
 screen whose_points_screen():

@@ -29,12 +29,12 @@ label __init_variables:
                 ach_desc = "Unlock the mirror of noisrevrep/Erised",
                 content_characters = []
             )
-            
+
     if not hasattr(renpy.store,'mr_ev_AOC'):
         $ mr_ev_AOC = mirror_stories(
                 name = "An odd circumstance",
                 unlockable = True,
-                story_description = "You find yourself being comfronted by a mysterious girl that seemingly seems to know you.",
+                story_description = "You find yourself being confronted by a mysterious girl that seemingly seems to know you.",
                 start_label = "an_odd_circumstance",
                 authors = ["TeamSilver"],
                 categories= ["Parody", "lewd"],
@@ -121,7 +121,7 @@ label __init_variables:
                 ach_desc = "",
                 content_characters = ["hermione"]
             )
-    
+
     # WIP
     #if not hasattr(renpy.store,'mr_ev_CM'):
     #    $ mr_ev_CM = mirror_stories(
@@ -133,7 +133,7 @@ label __init_variables:
     #            ach_desc = "",
     #            content_characters = ["hermione"]
     #        )
-    
+
     $ mr_evs_list = []
     $ mr_evs_list.append(mr_ev_PaH)
     $ mr_evs_list.append(mr_ev_AXmasTale)
@@ -145,7 +145,7 @@ label __init_variables:
     $ mr_evs_list.append(mr_ev_ADR)
     $ mr_evs_list.append(mr_ev_PR)
     $ mr_evs_list.append(mr_ev_AOC)
-    
+
     #$ mr_evs_list.append(mr_ev_CM)
 
     $current_page = 0

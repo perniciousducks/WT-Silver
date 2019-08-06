@@ -137,7 +137,7 @@ label wine_intro:
     $ the_gift = "interface/icons/item_wine.png" # WINE.
     show screen gift
     with d3
-    ">You hand over the bottle you fond in the cupboard to professor Snape..."
+    ">You hand over the bottle you found in the cupboard to professor Snape..."
     hide screen gift
     with d3
 

@@ -217,7 +217,6 @@ label main_room:
 label setup_fireplace_hangout(char=None):
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
     show screen blkfade
-    with d3
 
     $ fire_in_fireplace = True
 

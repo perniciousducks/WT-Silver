@@ -279,6 +279,8 @@ label hermione_intro_E1:
     hide screen genie_jerking_sperm_02
     with d3
 
+    $ snape_busy = True # No point in calling him during the day.
+
     $ hermione_intro.E1_complete = True
 
     jump main_room
@@ -408,6 +410,8 @@ label hermione_intro_E2:
     call bld
     m "...................."
 
+    $ snape_busy = True # No point in calling him during the day.
+
     $ hermione_intro.E2_complete = True
     $ hg_event_pause += 1
 
@@ -533,6 +537,7 @@ label hermione_intro_E3:
     call her_walk(action="leave", speed=2)
 
     $ hermione_wear_robe = False
+    $ snape_busy = False
 
     $ hermione_intro.E3_complete = True
     $ hg_event_pause += 1

@@ -805,23 +805,25 @@ label hg_titjob_3_cumming:
             call her_main("*GULP*","cum","worriedCl") #play noise here
             hide screen bld1
             call ctc
+
             call blkfade
 
             pause.5
             ">Hermione releases your cock from between her tits."
             pause 1
-            $ ccg1 = 28
+
             call gen_chibi("stand","desk","base")
             call her_chibi("stand","mid","base")
 
             call set_her_action("None")
 
+            hide screen ccg
             call hide_blkfade
             pause.5
 
             call her_main("","soft","glance",xpos="right",ypos="base")
             call ctc
-            $ ccg1 = 29
+
             if daytime:
                 call her_main("Well, I think I'd better go now... my Classes are about to start.","base","base")
             else:
@@ -948,7 +950,7 @@ label end_hg_titjob:
 
     call her_walk(action="leave", speed=2.5)
 
-    if her_whoring < 18:
+    if her_whoring < 21:
         $ her_whoring +=1
 
     $ hg_pf_titjob.points += 1

@@ -66,5 +66,40 @@ label snape_progress_init:
                                       #Turns true after hermione_intro_E2
 
     #if not hasattr(renpy.store,'ADD') or reset_persistants:
+    if not hasattr(renpy.store,'ss_he_drink'):
+        $ ss_he_drink   = event_class(title = "Snape Wine", start_label = "snape_hangout", events = [
+            [
+            ["ss_he_wine_intro"],
+            ["ss_he_wine_repeat"],
+            ["ss_he_wine_intro_E2"]
+            ]
+
+            ],
+            iconset = [["star_empty", "star_yellow"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
+            )
+
+    if not hasattr(renpy.store,'ss_he_story'):
+        $ ss_he_story   = event_class(title = "Snape Stories", start_label = "snape_hangout", events = [
+            [
+            ["ss_he_story_E1"], # Teach me wand magic
+            ["ss_he_story_intro_E2"], # More points for Slytherin
+            ["ss_he_story_intro_E3"], # M.R.M. nonsense
+            ["ss_he_story_intro_E4"], # Parallel worlds
+            ["ss_he_story_intro_E5"], # Progress with Hermione?
+            ["ss_he_story_E6"],       # Those nasty Slytherin Sluts!
+            ["ss_he_story_intro_E7"], # Jasmine is a muggle
+            ["ss_he_story_intro_E8"], # Flogging
+            ["ss_he_story_intro_E9"], # Russian dream (replace this one)
+            ["ss_he_story_intro_E10"],# The meaning of life
+            ["ss_he_story_intro_E11"],# The great catastrophe
+            ["ss_he_story_intro_E12"],# Albus might be dead?
+            ["ss_he_story_intro_E13"],# Snape is happy
+            ["ss_he_story_E14"],      # Choking Slytherin girls...
+            ["ss_he_story_intro_E15"] # Busy days
+            ]
+
+            ],
+            iconset = [["star_empty", "star_yellow"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
+            )
 
     return

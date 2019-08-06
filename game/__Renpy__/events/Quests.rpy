@@ -38,6 +38,8 @@ label quests:
                 jump snape_intro_E3
 
     if day >= 4:
+        if not letter_paperwork_unlock_OBJ.read:
+            $ letter_paperwork_unlock_OBJ.mailLetter()
         if daytime:
             pass
         else:
@@ -60,8 +62,6 @@ label quests:
     if day >= 7:
         if hermione_intro.E2_complete and not letter_favor_complaint_OBJ.read:
             $ letter_favor_complaint_OBJ.mailLetter()
-        if not letter_paperwork_unlock_OBJ.read:
-            $ letter_paperwork_unlock_OBJ.mailLetter()
         if daytime:
             pass
         else:
@@ -302,7 +302,8 @@ label quest_init:
         E1_complete=False,   # I hate her!
         E2_complete=False,   # Let's ruin her!
         E3_complete=False,   # Discuss Tonks with Snape.
-        E4_complete=False,   # Inform him that Tonks became a teacher.
+        E4_complete=False,   # Inform him that Tonks has joined you both.
+        E5_complete=False,   # Tonks is teaching DAtDA. Snape might use Veritaserum on her...
         )
 
     if not hasattr(renpy.store,'hermione_intro'):
@@ -327,8 +328,8 @@ label quest_init:
     if not hasattr(renpy.store,'hang_with_tonks'):
         $ hang_with_tonks   = event_class(title = "Hang with Tonks", events =
         [[ ["hang_with_tonks"] ]], iconset = [["star_empty", "star_pink"]],
-        E1_complete=False,
-        E2_complete=False,
+        E1_complete=False, # Hermione favors unlocked.
+        E2_complete=False, # Tonks Public Requests unlocked.
         E3_complete=False,
         )
 

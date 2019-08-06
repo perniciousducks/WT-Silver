@@ -95,9 +95,12 @@ label summon_tonks:
 
 
         # Fireplace Chats
-        "-Let's hang-":
+        "-Let's hang-" if (wine_ITEM.number >= 1 and nt_he_drink.counter == 0) or firewhisky_ITEM.number >= 1:
             jump tonks_hangout
 
+        "{color=#858585}-Let's hang-{/color}" if firewhisky_ITEM.number < 1 and nt_he_drink.counter != 0:
+            m "(I don't have any more firewhisky...)"
+            jump tonks_requests
 
         # Wardrobe
         "-Wardrobe-" if tonks_wardrobe_unlocked:
@@ -245,37 +248,72 @@ label tonks_talk:
                     $ ton_genie_name = "Professor"
                     call ton_main("Alright, [ton_genie_name].","base","base","base","mid")
                     jump tonks_talk
+
                 "-Old man-":
                     $ ton_genie_name = "Old man"
-                    call ton_main("Please... You aren't that old...","base","base","base","R")
-                    m "You think I'm-- Wait? What?"
-                    call ton_main("Oh yes... I've had men far older than you...","horny","base","base","ahegao")
-                    call ton_main("[ton_genie_name].","base","base","base","mid")
-                    m "(Older than me?)"
-                    m "(What's the deal with her...?)"
+                    call ton_main("I have to say, for your age you are in a really great shape...","horny","base","base","down")
+                    m "That's part of the benefits of being immortal. Your body doesn't age..."
+                    call ton_main("You're lucky then... I've had men that were a couple hundred years old, who's bodies were quite fragile...","open","base","base","R")
+                    m "All mortals? How did they get that old?"
+                    call ton_main("Ever heard of the \"philosopher stone?\"","base","base","base","mid")
+                    m "*Ah!* Is it a tiny, red, stone-looking gem, that lengthens the owner's life?"
+                    m "It's called the \"sorcerer's stone\" in my world, however."
+                    call ton_main("Really? Why is that?","open","base","raised","mid")
+                    m "I have no clue..."
+                    call ton_main("Didn't you say you were an \"all knowing\" being?","open","base","angry","mid")
+                    call ton_main("I guess you really are an \"old man\", Genie...","base","base","base","mid")
+                    m "..............."
                     jump tonks_talk
+
                 "-Genie-":
                     $ ton_genie_name = "Genie"
-                    call ton_main("A genie?","open","wide","wide","wide")
-                    m "Yes. Surprising isn't it."
-                    call ton_main("I knew something was off about you!","open","wide","raised","mid")
-                    m "Yes. Just don't tell anybody..."
-                    call ton_main("I hope you are still in posess of your lower half.","horny","base","raised","down")
-                    g9 "I am!"
-                    call ton_main("Would you like to know a secret?","open","base","base","R")
-                    call ton_main("I never did it with a genie...","base","base","base","mid")
-                    call ton_main("But I would like to change that... Eventually...","horny","base","raised","mid")
-                    g9 "At your service!"
+                    call ton_main("Of course.","base","base","base","mid")
+                    g9 "Sweet."
+                    call ton_main("Will I get my three wishes too?","open","base","base","mid")
+                    call ton_main("Or would I have to rub your \"thing\" first?","horny","base","base","mid", hair="horny")
+                    m "My lamp?"
+                    call ton_main("I was talking about your dick, but-","base","base","base","R")
+                    with hpunch
+                    g4 "My lamp!!!"
+                    g4 "Shit, where even is that thing?"
+                    g4 "I must have lost it when I got to this place!"
+                    call ton_main("Do you even need it? Didn't you say you were a free Genie now?","open","base","worried","mid")
+                    g4 "Of course I still need it! What sort of question is that, woman?!"
+                    call ton_main("(................)","angry","base","base","down")
+                    g4 "How would you like to suddenly be robbed of your house?!"
+                    call ton_main("(I guess I can jerk him off some other time...)","angry","base","worried","R")
+                    m "If you find a golden, shiny looking lamp, return it to me..."
+                    call ton_main("Sure, [ton_genie_name]...","upset","base","base","R")
                     jump tonks_talk
+
                 "-Lord Voldemort-":
                     $ ton_genie_name = "Lord Voldemort"
-                    call ton_main("Yeah... I'm not buying it.","base","base","angry","mid")
-                    m "You don't?"
-                    call ton_main("You don't posess the aura of a dark wizard.","open","base","base","R")
-                    m "..."
-                    call ton_main("But fine... I will call you, [ton_genie_name], if that's what makes you happy...","base","base","raised","mid")
+                    call ton_main("Bold of you to say his name out loud... Who even told you about the dark lord?","open","base","angry","mid")
+                    m "I've read the stories..."
+                    call ton_main("So you know this wizard did some terrible things in his lifetime?","open","base","angry","R")
+                    m "Did he corrupt young witches for his own twisted pleasure?"
+                    call ton_main("You could say that... He corrupted many witches and wizards alike.","upset","base","base","mid")
+                    m "....................."
+                    m "So he was \"Bi\" is what you're saying?"
+                    call ton_main("What? No.","open","wide","wide","wide")
+                    call ton_main("I mean, I'm not really sure if someone like him would have even be capable of loving anything...","angry","base","worried","R")
+                    call ton_main("All that mattered to him was power, and achieving his own immortality...","open","base","angry","mid")
+                    m "Both fairly overrated once you have it, if you ask me..."
+                    call ton_main("You don't say...","base","base","raised","mid")
+                    m "I bet all he secretly wanted was to have a wife and a kid that loved him..."
+                    call ton_main("Voldemort, having a child? Are you serious?","open","wide","wide","wide")
+                    m "No. J.K..."
+                    call ton_main("I'm sorry?","angry","base","base","mid")
+                    m "I'm \"just kidding\" with you..."
+                    m "He was never a true immortal..."
+                    g9 "All we do is waste a majority of our existence with mindless sex!"
+                    call ton_main("Oh my...","horny","base","base","mid", hair="horny")
+                    m "And sometimes a bit of kinky roleplay..."
+                    m "Are you going to call me \"Lord Voldemort\" now or what?"
+                    call ton_main("Fine... I will call you, [ton_genie_name], if it makes you happy...","base","base","base","mid")
                     g9 "Yippee!"
                     jump tonks_talk
+
                 "-Daddy-":
                     $ ton_genie_name = "Daddy"
                     call ton_main("Well, you do look about thrice as old as me...","base","base","raised","mid")
@@ -284,9 +322,20 @@ label tonks_talk:
                     m "But I thought you don't mind it?"
                     call ton_main("Oh, I don't mind at all, [ton_genie_name]!","horny","base","base","mid")
                     jump tonks_talk
-                "-Master-":
+
+                "{color=#858585}-Master-{/color}" if ton_friendship < 60:
+                    call ton_main("No.","base","base","base","R")
+                    m "What?- Why not?"
+                    call ton_main("Because... that title has to be earned!","horny","base","angry","mid")
+                    m "Seriously?"
+                    call ton_main("Yes. Show me that you're worth to be my master, and I'll gladly become your bitch!","open","base","angry","mid")
+                    g4 "!!!"
+                    call ton_main("Until then you can forget about it...","base","base","base","mid")
+                    m "...................."
+                    jump tonks_talk
+                "-Master-" if ton_friendship >= 60:
                     $ ton_genie_name = "Master"
-                    call ton_main("Yes, [ton_genie_name].","base","base","base","mid")
+                    call ton_main("Yes, [ton_genie_name].","open","base","base","mid")
                     m "(...)"
                     call ton_main("","base","base","raised","mid")
                     call ctc
@@ -295,7 +344,8 @@ label tonks_talk:
                     call ton_main("Thank you, [ton_genie_name].","base","base","base","down")
                     g9 "(I could get used to that.)"
                     jump tonks_talk
-                "-Custom Input-":
+
+                "-Custom Input-" if cheats_active or ton_friendship >= 60:
                     $ temp_name = renpy.input("(Please enter the name.)")
                     $ temp_name = temp_name.strip()
                     if temp_name == "":
@@ -304,6 +354,7 @@ label tonks_talk:
                         $ ton_genie_name = temp_name
                         call ton_main("Hmm, [ton_genie_name]... I like it.","horny","base","raised","mid")
                     jump tonks_talk
+
                 "-Never mind-":
                     jump tonks_talk
 
@@ -316,13 +367,11 @@ label tonks_talk:
                     jump tonks_talk
                 "-Nymphadora-":
                     $ tonks_name = "Nymphadora"
-                    call ton_main("Ugh--","base","base","angry","R")
+                    call ton_main("*Ugh*-","angry","base","angry","R")
                     call ton_main("Really, [ton_genie_name]?","open","base","angry","mid")
-                    call ton_main("How do you even know my real name?","open","base","raised","mid")
-                    g9 "Just a lucky guess!"
-                    call ton_main("I highly doubt that...","base","base","raised","up")
-                    call ton_main("I despise that name, but...","open","base","raised","R")
-                    call ton_main("You are the boss...","base","base","worried","R")
+                    call ton_main("I hate that name,...","open","base","worried","R")
+                    m "Well you better get used to hearing it then, [tonks_name]..."
+                    call ton_main("................","upset","base","angry","R")
                     jump tonks_talk
                 "-Nympho-":
                     $ tonks_name = "Nympho"
@@ -346,13 +395,23 @@ label tonks_talk:
                     m "(...)"
                     g4 "(What does she mean with that now?)"
                     jump tonks_talk
-                "-Cunt-":
+
+                "{color=#858585}-Cunt-{/color}" if ton_friendship < 60:
+                    call ton_main("[ton_genie_name], I'm used to getting insulted by my many previous lovers...","base","base","raised","mid")
+                    call ton_main("Truth be told I bloody love it!","open_wide_tongue","base","base","ahegao")
+                    call ton_main("But we aren't close enough for that yet, don't you think?","open","base","worried","mid")
+                    call ton_main("Maybe we should wait with that until we know each other a bit better.","base","base","worried","R")
+                    m "Of course.{w} And I will respect that."
+                    call ton_main("I'm glad.{w} You are a very polite man, [ton_genie_name]...","base","base","base","mid")
+                    m "..........................."
+                "-Cunt-" if ton_friendship >= 60:
                     $ tonks_name = "Cunt"
-                    call ton_main("Uuuh, [ton_genie_name]...","base","base","raised","mid")
+                    call ton_main("*Uuuh*, [ton_genie_name]...","base","base","raised","mid")
                     call ton_main("You better not call me that in front of a student...","open","base","base","mid")
                     g9 "What if I do?"
-                    call ton_main("Do it, I dare you!","horny","base","base","mid")
+                    call ton_main("Do it, I dare you!","horny","base","base","mid", hair="horny")
                     jump tonks_talk
+
                 "-Custom Input-":
                     $ temp_name = renpy.input("(Please enter the name.)")
                     $ temp_name = temp_name.strip()

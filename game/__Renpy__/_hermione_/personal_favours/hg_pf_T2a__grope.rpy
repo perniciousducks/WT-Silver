@@ -89,7 +89,7 @@ label hg_pf_grope:
 
 
 
-### Tier 1 - Events Fail ###
+### Tier 0 - Events Fail ###
 
 # Those events still prgress, but Hermione will run off and get mad.
 # The heart icons for these events are 'black'
@@ -262,7 +262,7 @@ label hg_pf_grope_T2_E1:
 
 
 
-### Tier 4 ###
+### Tier 3 ###
 
 # Event 1 (i) - Hermione ejoys it.
 # Event 2 (i) - Hermione asks if you are going to grope her tits or her ass.

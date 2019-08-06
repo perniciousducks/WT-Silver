@@ -139,6 +139,8 @@ label hermione_random_clothing:
                 call her_main("Do you like it?","soft","base")
                 g9 "I do, [hermione_name]. It's cute."
                 $ her_mood -= 10
+                if her_mood < 0:
+                    $ her_mood = 0
 
                 #Unlocks rewards.
                 call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_ITEM)
@@ -166,6 +168,8 @@ label hermione_random_clothing:
                 call her_main("Do you like it?","soft","base")
                 g9 "Very much so, [hermione_name]. I love the breast window."
                 $ her_mood -= 10
+                if her_mood < 0:
+                    $ her_mood = 0
 
                 #Unlocks rewards.
                 call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_sexy_ITEM)
@@ -194,6 +198,8 @@ label hermione_random_clothing:
                 g9 "Besides, I wouldn't mind seeing you in jeans more often!"
                 call her_main("Thank you, [genie_name].","normal","baseL")
                 $ her_mood -= 10
+                if her_mood < 0:
+                    $ her_mood = 0
 
                 #Unlocks rewards.
                 call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_rainy_ITEM)

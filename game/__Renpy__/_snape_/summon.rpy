@@ -16,45 +16,43 @@ label summon_snape:
         # Talk
         "-Talk-":
             if not chitchated_with_snape:
+                $ chitchated_with_snape = True
                 call snape_chitchat
 
-            if (letter_curse_complaint_OBJ.read and not astoria_unlocked) or ((third_curse_got_cast or spells_unlocked) and not snape_gave_spellbook):
-                menu:
-                    "-Talk about the ministry letter-" if letter_curse_complaint_OBJ.read and not astoria_unlocked:
-                        #You tell Snape about the curses.
-                        if hermione_on_the_lookout: #Already talked to Hermione.
-                            $ hermione_finds_astoria = True
-                            $ ag_event_pause = 2 # Event happens in 2 days.
-                        if snape_on_the_lookout:
-                            call sna_main("I'm still on the lookout, Genie.","snape_01")
-                            call sna_main("If I find the little maggot that casts those spells,...","snape_10")
-                            call sna_main("I will crush his bones!","snape_16")
-                            jump snape_ready
-                        $ snape_busy = True
-                        $ snape_on_the_lookout = True
-                        jump letter_intro_snape
-
-                    "-Ask for a spellbook-" if (third_curse_got_cast or spells_unlocked) and not snape_gave_spellbook:
-                        $ snape_gave_spellbook = True
-                        jump snape_book_intro
-
-                    "-Never mind":
+            menu:
+                "-Talk about the ministry letter-" if letter_curse_complaint_OBJ.read and not astoria_unlocked:
+                    #You tell Snape about the curses.
+                    if hermione_on_the_lookout: #Already talked to Hermione.
+                        $ hermione_finds_astoria = True
+                        $ ag_event_pause = 2 # Event happens in 2 days.
+                    if snape_on_the_lookout:
+                        call sna_main("I'm still on the lookout, Genie.","snape_01")
+                        call sna_main("If I find the little maggot that casts those spells,...","snape_10")
+                        call sna_main("I will crush his bones!","snape_16")
                         jump snape_ready
-            else:
-                if chitchated_with_snape:
-                    ">You have already talked with Snape today."
-                pass
+                    $ snape_busy = True
+                    $ snape_on_the_lookout = True
+                    jump letter_intro_snape
 
-            $ chitchated_with_snape = True
-            jump snape_ready
+                "-Ask for a spellbook-" if (third_curse_got_cast or spells_unlocked) and not snape_gave_spellbook:
+                    $ snape_gave_spellbook = True
+                    jump snape_book_intro
+
+                "-Never mind":
+                    jump snape_ready
 
 
         # Fireplace Chats
-        "-Let's hang-" if not daytime: # Turns TRUE when friendship with Snape been maxed out.
-            if one_of_ten == 10 and game_difficulty >= 2:  #Doesn't happen with easy difficulty.
-                jump not_today #Snape says: "I am busy tonight."
-            else:
-                jump snape_dates
+        "-Let's hang-" if wine_ITEM.number >= 1 and not daytime:
+            jump snape_hangout
+
+        "{color=#858585}-Let's hang-{/color}" if wine_ITEM.number < 1 or daytime:
+            if daytime:
+                m "(I'm not sharing my booze with Snape while he still has to teach classes...)"
+                m "(I better ask him during the evening to get drunk...)"
+            elif wine_ITEM.number < 1:
+                m "(I don't have any more wine...)"
+            jump snape_ready
 
 
         # Potions

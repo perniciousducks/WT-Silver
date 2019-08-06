@@ -193,7 +193,7 @@ label quidditch_training_intro_2:
     call cho_main("I have no choice but to try your methods, Sir.","annoyed","narrow","angry","mid")
     g9 "I'm glad you came to your senses."
     call cho_main("(...)","annoyed","narrow","angry","R")
-    g9 "Let's discussing tactics then, shall we!"
+    g9 "Let's discuss tactics then, shall we!"
     call cho_main("(...)","annoyed","base","base","mid")
     m "(...)"
     m "What did I suggest last time again?"
@@ -306,7 +306,7 @@ label change_quidditch_tactics:
                 call demonstrate_tactic("above")
             "\"Panties are Key!\" {size=-6}(selected){/size}" if quidditch_position == "above":
                 pass
-                
+
             "\"Get intimate!\"" if quidditch_position != "close":
                 call demonstrate_tactic("close")
             "\"Get intimate!\" {size=-6}(selected){/size}" if quidditch_position == "close":

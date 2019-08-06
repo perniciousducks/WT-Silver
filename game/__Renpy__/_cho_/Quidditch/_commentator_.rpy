@@ -66,7 +66,7 @@ label quidditch_commentator_event_1:
     call cho_main("(She'll be humiliated and no one will ever see her as anything but a showoff that knows nothing!)","quiver","angry","angry","down")
     call cho_main("(I can already picture it...{w=0.8} the whole school laughing...)","quiver","base","raised","up")
     m "Miss Chang?"
-    call cho_main("Oh, thank you for handling it professor! Boy, you put a load off my mind...","open","base","base","mid",trans="hpunch")
+    call cho_main("Oh, thank you for handling it professor! Boy, you took a load off my mind...","open","base","base","mid",trans="hpunch")
     call cho_main("I'll be heading back to classes now, if you don't mind.","soft","closed","base","mid")
 
     # Cho leaves.
@@ -127,7 +127,7 @@ label quidditch_commentator_event_3:
     g9 "Yes! Very good guess!"
     call cho_main("It wasn't a guess, [cho_genie_name]. We've discussed her already.","pout","narrow","angry","mid")
     m "Oh, sure..."
-    call cho_main("But I'm surprised she even took up to the task...","pout","base","base","R")
+    call cho_main("But I'm surprised she even took up the task...","pout","base","base","R")
     g9 "Right away. No questions asked."
     call cho_main("And little miss Granger wasn't even the slightest bit intimidated by her new obligation?","open","base","raised","mid")
     g9 "Not at all. She seemed rather joyous of her situation."

@@ -32,7 +32,7 @@ label hg_pf_talk:
     if her_tier <= 3:
         $ gryffindor += current_payout
         m "[current_payout] points to \"Gryffindor\" [hermione_name]. Well done."
-    else:
+    elif her_tier == 4 and hg_pf_talk.points == 1:
         m "[current_payout] points to \"Gryffindor\", [hermione_name]. Well done."
         her "Oh, don't worry about the points, [genie_name]. We were just having a nice talk."
         m "Really? What about \"Gryffindor\" winning the cup?"
@@ -58,7 +58,7 @@ label hg_pf_talk:
 
     # Increase level
     if her_tier == 1:
-        if her_whoring < 6: # Points til 6
+        if her_whoring < 3: # Points til 3
             $ her_whoring += 1
 
     if her_tier == 2:
@@ -77,11 +77,10 @@ label hg_pf_talk_T1_intro_E1:
     m "Alright then..."
     m "Just tell me some news about you."
     call her_main("Ehm... Alright...","open","suspicious")
-    call her_main("I just stand here and talk then...? Like this?","open","suspicious")
 
     call her_walk(xpos="desk", ypos="base", speed=1)
 
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("I just stand here and talk then...? Like this?","open","suspicious", xpos="mid", ypos="base", trans="fade")
     call ctc
 
     m "Well?"
@@ -100,11 +99,10 @@ label hg_pf_talk_T1_E1:
 
     m "Alright then..."
     m "Just tell me some news about you."
-    call her_main("Here in the middle, right? I remember...","open","suspicious")
 
     call her_chibi("stand","desk","base")
 
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("Here in the middle, right? I remember...","open","suspicious", xpos="mid", ypos="base", trans="fade")
     call ctc
 
     m "Yes?"
@@ -330,14 +328,6 @@ label hg_pf_talk_T2:
 
 
 
-
-
-
-
-
-
-
-
 ### Tier 3 ###
 
 # Hermione knows by now that you like to jerk off while she talks.
@@ -345,7 +335,9 @@ label hg_pf_talk_T2:
 # Favors can revolve around Cho, Luna, Tonks
 
 label hg_pf_talk_T3_intro_E1:
-    "Dev Note" "Add intro for 3rd favor."
+
+    # You summon Tonks or Snape
+    m "I've just got an idea!"
 
     call hg_talk_3
 
@@ -353,89 +345,16 @@ label hg_pf_talk_T3_intro_E1:
 
 
 label hg_pf_talk_T3_E1:
-    "Dev Note" "Add shorter repeatable intro."
+
+    # You summon Tonks or Snape
 
     call hg_talk_3
 
     jump end_hg_pf_talk
 
 
-
-
-
-
-
 label hg_talk_3:
 
-    "Dev Note" "Add writing here."
+    "Dev Note" "Add Tier 3 favor here."
 
-    menu:
-        "-Start jerking off-":
-            $ her_jerk_off_counter += 1
-            $ masturbating = True
-
-            hide screen hermione_main
-            call nar(">You reach under the desk and grab your cock...")
-            call gen_chibi("jerking_behind_desk")
-            with d3
-            pause.8
-
-            call her_main("[genie_name], don't tell me you are...","open","suspicious")
-            call her_main("Masturbating again.....","disgust","suspicious")
-            m "Me? I'd never do such a thing. Ever..."
-            call her_main("I have caught you once before, remember?","annoyed","angry")
-            m "Oh right..."
-            m "Anyhow... Remember why you are here, [hermione_name]. To earn some points..."
-
-        "-Participate in the conversation-":
-            $ masturbating = False
-            m "Don't mention it."
-
-    call her_main("Well, like I was saying...","open","closed")
-
-    # Add writing
-
-    if masturbating:
-        m "{size=-4}(What a slut... ah... Yes...){/size}"
-
-    her "Yes..."
-
-    if masturbating:
-
-        # Add story here.
-
-        g4 "{size=-4}(You little slut! That did it!) *Argh!*{/size}"
-
-        call cum_block
-        call gen_chibi("cumming_behind_desk")
-        with d3
-        pause.8
-
-        call cum_block
-        g4 "*Argh!* YES!"
-
-        $ her_mood = +7
-        call her_main("*Yuck!* Please don't tell me you just...","disgust","down_raised")
-        call her_main("Came...","disgust","glance")
-
-        m "That felt amazing...!"
-        g9 "You should try it aswell, [hermione_name]! It can help you relax."
-        call her_main("(.........)","annoyed","angryL")
-
-        call hide_characters
-        call gen_chibi("came_on_desk")
-        with d3
-        pause.8
-
-        call her_main("(...................)","disgust","worried")
-
-        # Add section here.
-
-    else:
-
-        # Add story here.
-
-        m "Yeah, sure..."
-
-
-    return
+    jump end_hg_pf_talk

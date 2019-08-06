@@ -1263,7 +1263,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 call cho_main("You see, they don't play Quidditch to win... but as a warrant to beat up the opposing players instead...","soft","narrow","base","mid")
                 call cho_main("But... If I could get them to play poorly...","soft","narrow","raised","mid")
                 m "Could you manage that?"
-                call cho_main("*Tzzz!* Nothing would be easier, Sir!","angry","clsoed","angry","mid")
+                call cho_main("*Tzzz!* Nothing would be easier, Sir!","angry","closed","angry","mid")
                 call cho_main("They would happily throw the towel with the right kind of... motivation. Don't you think?","base","narrow","base","mid")
                 g9 "You've become quite the strategist!"
                 call cho_main("If they like smacking asses that much, maybe I should just let them hit a girl that can take their feeble swings...","soft","narrow","base","R")

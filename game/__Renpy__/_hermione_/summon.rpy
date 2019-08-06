@@ -20,6 +20,10 @@ label summon_hermione:
     menu:
 
         # Talk
+        "-Level Up-" if her_level_up != None:
+            call hermione_level_up(tier=her_level_up)
+            jump hermione_requests
+
         "-Talk-":
             if not chitchated_with_her:
                 if her_mood <= 3:
@@ -136,72 +140,72 @@ label summon_hermione:
 
 
 label update_her_tier:
-    if her_tier == 1 and her_whoring >= 6 and hg_T1_trigger == True:
+    if her_tier == 1 and her_whoring >= 3 and hg_T1_trigger == True:
         # Trigger: None
-        $ her_tier = 2
-        call book_notification(tier=1)
+        $ her_level_up = 1
     elif her_tier == 2 and her_whoring >= 9 and hg_T2_jerk_off_trigger == True:
         # Trigger: When you get caught jerking off.
-        if imagination >= 2:
-            $ her_tier = 3
-        else:
-            call book_notification(tier=2)
+        if game_difficulty >= 3 and imagination < 2: # Hardcore only
+            return
+        $ her_level_up = 2
     elif her_tier == 3 and her_whoring >= 12 and hg_T3_strip_trigger == True:
         # Trigger: After she strips for you.
-        if imagination >= 3:
-            $ her_tier = 4
-        else:
-            call book_notification(tier=3)
-    elif her_tier == 4 and her_whoring >= 15 and hg_T4_handjob_trigger == True:
+        if game_difficulty >= 3 and imagination < 3: # Hardcore only
+            return
+        $ her_level_up = 3
+    elif her_tier == 4 and her_whoring >= 18 and hg_T4_handjob_trigger == True:
         # Trigger: None
-        if imagination >= 4:
-            $ her_tier = 5
-        else:
-            call book_notification(tier=4)
+        if game_difficulty >= 3 and imagination < 4: # Hardcore only
+            return
+        $ her_level_up = 4
     elif her_tier == 5 and her_whoring >= 21 and hg_T5_blowjob_trigger == True:
         # Trigger: First BJ
-        $ her_tier = 6
-    #elif her_tier == 6 and her_whoring >= 24 and hg_T6_sex_trigger == True:
-        # Trigger: First time having sex.
-    #    $ her_tier = 7
+        if game_difficulty >= 3 and imagination < 5: # Hardcore only
+            return
+        $ her_level_up = 5
 
     return
 
-label book_notification(tier=None):
 
-    if tier == 1 and "hg_note_1" not in book_notification_list:
-        $ book_notification_list.append("hg_note_1")
-        call nar(">Hermione has advanced to the next \"Favour tier\".","start")
-        call nar(">You can move up \"Favour tiers\" by increasing her \"whoring level\", triggering \"favour milestones\", and by reading \"Fictional Books\".","end")
-    if tier == 2 and "hg_note_2" not in book_notification_list:
-        $ book_notification_list.append("hg_note_2")
-        call bld
-        m "I wonder if she's ready for the next step."
-        m "But what should I do with her..."
+label hermione_level_up(tier=None):
+
+    call bld
+    if tier == 1:
+        show screen blktone5
+        with d3
+        ">Hermione`s second \"favour tier\" is now available."
+        ">You can move up \"favour tiers\" by increasing her \"whoring level\", and by triggering \"favour milestones.\""
+        if game_difficulty >= 3: # Hardcore, books are required.
+            ">In addition, it is also required of you to increase your \"imagination level\" by reading \"fictional books\", to unlock Hermione's next tier of favours."
+        hide screen blktone5
+        with d3
+        pause.5
+        menu:
+            "Would you like to increase Hermione's \"tier-level\" to 2?"
+            "-Yes, increase her level-":
+                pass
+            "-No, stay on current level.-":
+                return
+
+    elif tier == 2:
+        m "I wonder she's ready for some more advanced favours now..."
+    elif tier == 3:
         m "(...)"
-        m "Maybe I there's a book I could read to give me some ideas on what to do with the girl..."
-        call nar(">You might want to read the next \"Fictional Book\" to increase your imagination and advance to the next tier.")
-    elif tier == 3 and "hg_note_3" not in book_notification_list:
-        $ book_notification_list.append("hg_note_3")
-        call bld
-        m "I think she's ready for some more advanced favours."
-        m "If only I had some good ideas..."
-        call nar(">You might want to read the next \"Fantasy Book\" to increase your imagination and advance to the next tier.")
-    elif tier == 4 and "hg_note_4" not in book_notification_list:
-        $ book_notification_list.append("hg_note_4")
-        call bld
-        m "(...)"
-        m "Does she know what a handjob is? Or a titjob?"
-        m "Can't imagine she'd let me do it..."
-        call nar(">You might want to read the next \"Fantasy Book\" to increase your imagination and advance to the next tier.")
-    elif tier == 5 and "hg_note_5" not in book_notification_list:
-        $ book_notification_list.append("hg_note_5")
-        call bld
+        m "Does she know what a handjob is? Or a titjob?..."
+    elif tier == 4:
         m "I wonder if I can get her to suck me off today..."
         g4 "I'm dying to feel that mouth around my cock!"
-        m "How do you even approach a girl for a request such as that..."
-        g9 "*Eh* I bet my irresistible charm will be anough to get her down on her knees!"
-        call nar(">You might want to read the next \"Fantasy Book\" to increase your imagination and advance to the next tier.")
+    elif tier == 5:
+        m "Yes, I think it's time..."
+        g4 "I'm finally going to have sex with her!"
+
+    $ her_tier = tier+1
+    $ her_level_up = None
+
+    pause.5
+    call nar(">Hermione has reached level "+str(her_tier)+"!")
+
+    call update_her_tier
 
     return
 

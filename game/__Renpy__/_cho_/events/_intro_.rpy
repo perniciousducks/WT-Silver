@@ -42,7 +42,7 @@ label cho_intro_1:
     # Cho enters your office for the first time.
     call cho_walk("660", "base", action="enter", speed=1.6)
 
-    call cho_main("Good evening, Sir.","base","base","base","mid",xpos="mid",ypos="base")
+    call cho_main("Good morning, Sir.","base","base","base","mid", xpos="mid", ypos="base")
 
     call ctc
 
@@ -161,14 +161,14 @@ label cho_intro_1:
     call play_sound("door")
     call her_chibi("stand","door","base")
 
-    call her_main("Professor I'm sorry to bother you but I wanted to...","open","closed",ypos="head")
-    call her_main("!!!","normal","wide",ypos="head",trans="hpunch")
+    call her_main("Professor I'm sorry to bother you but I wanted to...","open","closed", ypos="head")
+    call her_main("!!!","normal","wide", ypos="head",trans="hpunch")
 
     call her_walk(xpos="570", ypos="base", speed=2)
     call her_chibi("stand","570","base",flip=True)
 
-    call cho_main("","annoyed","angry","angry","R",xpos="base",ypos="base")
-    call her_main("Cho,{w} How nice to see you here...","open","baseL",xpos="mid",ypos="base",flip=True)
+    call cho_main("","annoyed","angry","angry","R", xpos="base", ypos="base")
+    call her_main("Cho,{w} How nice to see you here...","open","baseL", xpos="mid", ypos="base",flip=True)
     call her_main("And why are you here exactly?","angry","annoyed")
 
     call cho_main("Oh, you know...{w=0.5} Just having a discussion with our dear headmaster...", "smile", "base", "base", "L")
@@ -249,7 +249,7 @@ label cho_intro_1:
 
         g4 "*Argh!* {size=-4}You whores!{/size}"
 
-        call cho_main("Sir?","soft","narrow","base","mid",ypos="head")
+        call cho_main("Sir?","soft","narrow","base","mid", ypos="head")
 
         m "(Shit...)"
 
@@ -257,7 +257,7 @@ label cho_intro_1:
         with d3
         pause.8
 
-        call cho_main("Sir, I’m sorry about all this... it’s not what I came here for...","open","closed","sad","mid",xpos="base",ypos="base")
+        call cho_main("Sir, I’m sorry about all this... it’s not what I came here for...","open","closed","sad","mid", xpos="base", ypos="base")
         m "Oh, of course not!"
         call cho_main("Please consider what we’ve talked about...","base","base","sad","mid")
         m "Certainly..."
@@ -269,8 +269,8 @@ label cho_intro_1:
         with d3
         pause.8
 
-        call cho_main("{size=-4}You have fun now... getting at that wand of his...{/size}","angry","narrow","angry","L",ypos="head")
-        call her_main("*Tzzzh!*...","clench","angryCl",ypos="head")
+        call cho_main("{size=-4}You have fun now... getting at that wand of his...{/size}","angry","narrow","angry","L", ypos="head")
+        call her_main("*Tzzzh!*...","clench","angryCl", ypos="head")
 
 
     # Not masturbating
@@ -319,9 +319,9 @@ label cho_intro_1:
         with d3
         pause.8
 
-        call cho_main("Professor, please do consider what we discussed earlier...","soft","closed","base","mid",ypos="head")
+        call cho_main("Professor, please do consider what we discussed earlier...","soft","closed","base","mid", ypos="head")
         m "Of course."
-        call her_main("Hmmm?","normal","suspicious",ypos="head")
+        call her_main("Hmmm?","normal","suspicious", ypos="head")
 
 
     # Cho leaves
@@ -336,7 +336,7 @@ label cho_intro_1:
     with d3
     pause.5
 
-    call her_main("...","annoyed","angry",xpos="base",ypos="base",flip=False)
+    call her_main("...","annoyed","angry", xpos="base", ypos="base",flip=False)
     m "..."
     call her_main("You’re selling favours to her aren’t you?","soft","glance")
     m "I’m...{p=0.8}{nw}"
@@ -374,7 +374,7 @@ label cho_intro_2:
     call cho_walk("desk", "base", speed=2.2)
     pause.2
 
-    call cho_main("I hate her!","scream","closed","angry","mid",xpos="mid",ypos="base",trans="hpunch")
+    call cho_main("I hate her!","scream","closed","angry","mid", xpos="mid", ypos="base",trans="hpunch")
     call cho_main("","angry","angry","angry","mid")
 
     g9 "Miss Chang! My favourite student!"
@@ -452,7 +452,7 @@ label cho_snape_talk:
 
     call bld
     m "I had another girl visiting me the other day."
-    call sna_main("I told you not to get involved with the outside world.","snape_09",ypos="head")
+    call sna_main("I told you not to get involved with the outside world.","snape_09", ypos="head")
     call sna_main("I hope you were smart enough to not let her into your office.","snape_05")
     g9 "How couldn’t I let her in? She sounded cute."
     call sna_main("Why doesn't that surprise me...","snape_06")
@@ -472,7 +472,7 @@ label cho_snape_talk:
             m "Bless you."
             call sna_main("No. That's her name.","snape_08")
             call sna_main("We only have one asian girl at our school.","snape_24")
-            call sna_main("You’d think as the only wizard school in all of britain, our school would be more diversive...","snape_09")
+            call sna_main("You’d think as the only wizard school in all of britain, our school would be more diverse...","snape_09")
 
     call sna_main("And what did she want from you exactly?","snape_05")
     m "She asked me a couple of things about Quidditch."
@@ -617,7 +617,7 @@ label cho_snape_talk:
 ### Talk with Hermione ###
 label cho_hermione_talk:
 
-    call her_main("",xpos="mid",ypos="base",trans="fade")
+    call her_main("", xpos="mid", ypos="base",trans="fade")
 
     # Intro
     if cho_intro_state == "talk_with_hermione":
@@ -776,7 +776,7 @@ label cho_hermione_talk:
         call her_main("Exactly!","normal","closed")
         m "(She's so predictable.)"
 
-    m "Well... The quidditch teams is none of your concern anymore..."
+    m "Well... The quidditch teams are none of your concern anymore..."
     m "You'll tell Cho that you are sorry about your previous interferences."
     call her_main("(...)","annoyed","angry")
     m "And that the \"Quidditch equality movement\" will be...{w}\n\"no more\"."
@@ -818,10 +818,10 @@ label cho_hermione_talk:
         pause.5
 
     # Cho enters the office.
-    call cho_walk("mid", "base", action="enter", speed=1.6)
+    call cho_walk("580", "base", action="enter", speed=1.6)
 
-    call cho_main("Hello, Sir.{p=0.6}You've called for me?","base","base","base","mid",xpos="base",ypos="base")
-    call her_main("","normal","closed",xpos="450",ypos="base")
+    call cho_main("Hello, Sir.{p=0.6}You've called for me?","base","base","base","mid", xpos="base", ypos="base")
+    call her_main("","normal","closed", xpos="450", ypos="base")
     call cho_main("Granger...","soft","narrow","angry","L")
     call her_main("Chang...","annoyed","angryL")
     m "Go on, girl. Tell her."
@@ -850,7 +850,7 @@ label cho_hermione_talk:
     with d3
     pause.2
 
-    call her_main("*glare*","normal","angry",ypos="head")
+    call her_main("*glare*","normal","angry", ypos="head")
     # Add Cho glaring back with her 'head' image.
 
     call her_chibi("stand","door","base",flip=True)
@@ -861,7 +861,7 @@ label cho_hermione_talk:
 
     call cho_main("Thank you for getting her off my back, Professor.","base","base","base","mid")
     m "No problem."
-    call cho_main("Now, if you’ll excuse me. I'm expected back on the Quidditch field.","open","closed","base","mid")
+    call cho_main("Now, if you’ll excuse me. I'm expected back on the Quidditch pitch.","open","closed","base","mid")
     call cho_main("Just call me whenever I can be of service.","soft","narrow","base","mid")
     g9 "I will."
     call cho_main("Good day, Professor.","smile","base","base","mid")

@@ -1,105 +1,30 @@
 
 
-label hg_pf_anal_sex: #LV.8 (Whoring = 21 - 23)
+### Anal Sex ###
 
-    call reset_menu_position
-
-    if hg_pf_anal_sex.points == 0:
-        m "{size=-4}(Should I ask her to have anal sex with me?){/size}"
-        menu:
-            "\"(Yes, let's do it!)\"":
-                pass
-            "\"(Not right now.)\"":
-                jump hermione_favor_menu
-
-    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ gen_chibi_ypos = 10
-    $ g_c_u_pic = "sex_slow_ani"
-
-    #Intro
-    if hg_pf_anal_sex.points == 0:
-        m "[hermione_name]..."
-        call her_main("[genie_name]..?","annoyed","suspicious")
-        m "How familiar you are with the term \"Anal Sex\"?"
-
-        if her_whoring < 21:
-            jump too_much
-
-        call her_main("90 house points...","annoyed","annoyed")
-        m "What?"
-        call her_main(".............................","disgust","glance")
-        m "Well alright then. 90 house points it is."
-        hide screen hermione_main
-        call blkfade
-
-        call hg_anal_sex_1
-
-        jump end_hg_pf_sex
-
-    #Second time event.
-    elif hg_pf_anal_sex.points == 1:
-        m "[hermione_name]?"
-        call her_main("[genie_name]?","soft","base")
-        m "I will be buying another favour from you today..."
-        call her_main(".............","open","suspicious")
-        m "Care to guess what the favour will be?"
-        m "You have three attempts to find out."
-        call her_main("...........","annoyed","frown")
-        call her_main("Anal sex?","disgust","glance")
-        g4 "Wha..........?!"
-        g4 "How did you...?"
-        call her_main("Just a lucky guess, [genie_name]...","angry","angry")
-        m "Sometimes you scare me, [hermione_name]..."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        call blkfade
-
-        #call hg_anal_sex_2
-        call hg_anal_sex_1
-
-        jump end_hg_pf_sex
-
-    #Third time event.
-    elif hg_pf_anal_sex.points >= 2:
-        m "How about another assfuck, [hermione_name]?"
-        call her_main("Of course, [genie_name].","base","ahegao_raised")
-        g9 "Come here, you little mynx!"
-
-        hide screen hermione_main
-        call blkfade
-
-        stop music fadeout 1.0
-
-        call her_main("........","annoyed","worriedL",ypos="head")
-        m "Hm..."
-        call her_main("...........","open","base")
-        $ renpy.play('sounds/gltch.mp3')
-        with hpunch
-        with kissiris
-        call her_main("Ooooohhhhhhhhhhhh....{image=textheart}","scream","wide")
-        g4 "Oh, ye-es!"
-        call her_main("Ah...","soft","ahegao")
-        m "It seems like your butthole became a bit more welcoming, [hermione_name]."
-        call her_main("Ah... It still hurts a little.","base","glance")
-        call her_main("And please, just call me \"whore\", [genie_name].","base","suspicious")
-        g4 "Agh! You slut! You always get me with your words!"
-
-        call hg_anal_sex_3
-
-        jump end_hg_pf_sex
-
-
-
-### First Time Anal Sex ###
-
+# Intro
 label hg_anal_sex_1:
-    call blkfade
+    call hg_chibi_transition("admire_ass", flip=True, trans="d3")
+    call bld
+    m "[hermione_name]..."
+    call her_main("[genie_name]..?","annoyed","suspicious", ypos="head")
+    m "How familiar you are with the term \"Anal Sex\"?"
+    call her_main("What?!","soft","shocked")
+    m "I asked you a question..."
+    call her_main("90 house points...","annoyed","annoyed")
+    m "Seriously?"
+    call her_main("Yes!","mad","worriedCl")
+    call her_main(".............................","disgust","glance")
+    m "Well alright then. 90 house points it is."
 
     stop music fadeout 1.0
-
-    call her_main("...........","annoyed","worriedL",ypos="head")
+    call her_main("...........","annoyed","worriedL")
     m "Let's see..."
     call her_main(".................","angry","worriedCl",emote="05")
     m "Hm..."
+
+    call hg_chibi_transition("sex_pause", trans="fade")
+
     call her_main("!!!","angry","wide")
     g4 "Oh, come on!"
     call her_main("Ouch!","mad","worriedCl",tears="soft_blink")
@@ -146,18 +71,6 @@ label hg_anal_sex_1:
             with kissiris
             call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}","scream","wide")
             g4 "YES!!!"
-            call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!","scream","wide")
-            g4 "Let us pump this little asshole full of semen then, shall we?"
-            call her_main("Yes... Please, I just want this to end...","scream","worriedCl",cheeks="blush",tears="crying")
-
-            call her_chibi("hide") #HERMIONE
-            hide screen genie
-            show screen chair_left
-
-            $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-            $ gen_chibi_ypos = 10
-            $ g_c_u_pic = "sex_slow_ani"
-            show screen g_c_u
 
             if use_cgs:
                 $ face_on_cg = True
@@ -167,14 +80,11 @@ label hg_anal_sex_1:
                 $ ccg3 = "blank"
                 call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
                 show screen ccg
+            call hg_chibi_transition("sex_slow", trans="d5")
 
-            hide screen blktone
-            hide screen bld1
-            hide screen blkfade
-            with fade
-            call ctc
-
-            #SCHUSH!
+            call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!","scream","wide")
+            g4 "Let us pump this little asshole full of semen then, shall we?"
+            call her_main("Yes... Please, I just want this to end...","scream","worriedCl",cheeks="blush",tears="crying")
             g4 "Agh... You want this to end sooner?"
             g4 "Help me out then!"
             call her_main("*sob!* How?","shock","baseL",cheeks="blush",tears="soft")
@@ -195,28 +105,18 @@ label hg_anal_sex_1:
             call her_main("Oh... Alright...","open","base",ypos="head")
             call play_music("playful_tension") # SEX THEME.
 
-            #SUCKING
-            call her_chibi("hide")
-            hide screen genie
-            show screen chair_left
-
-            $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
-            $ gen_chibi_ypos = 10
-            $ g_c_u_pic = "blowjob_ani"
-            show screen g_c_u
-
-            hide screen blktone
-            hide screen bld1
-            call hide_blkfade
+            # Blowjob
+            call hg_chibi_transition("bj", trans="fade")
             call ctc
 
             call her_main("*Slurp!* *Slurp!* *Slurp!*",ypos="head",flip=False)
             m "Yes... good..."
             her "*Slurp!* *Slurp!* *Slurp!*"
             m "Alright, I think that's enough. Back on the desk now."
-            call blkfade
 
-            #ON THE DESK
+            # Sex
+            call hg_chibi_transition("sex_pause", trans="fade")
+
             call her_main(".............","open","base")
             g4 "Yes! Almost!"
             call her_main("Ouch!","scream","worriedCl")
@@ -226,21 +126,6 @@ label hg_anal_sex_1:
             with hpunch
             with kissiris
             call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}","scream","wide")
-            g4 "YES!!!"
-            call her_main("My... my...","scream","wide")
-            call her_main("It hurts!","shock","worriedCl")
-            g4 "Let's pump this little asshole full of semen then, shall we?"
-            call her_main(".....................","angry","suspicious",cheeks="blush")
-
-            # SEX
-            call her_chibi("hide") #HERMIONE
-            hide screen genie
-            show screen chair_left
-
-            $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-            $ gen_chibi_ypos = 10
-            $ g_c_u_pic = "sex_slow_ani"
-            show screen g_c_u
 
             if use_cgs:
                 $ face_on_cg = True
@@ -250,11 +135,13 @@ label hg_anal_sex_1:
                 $ ccg3 = "blank"
                 call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
                 show screen ccg
+            call hg_chibi_transition("sex_slow", trans="d5")
 
-            hide screen blktone
-            hide screen bld1
-            hide screen blkfade
-            with fade
+            g4 "YES!!!"
+            call her_main("My... my...","scream","wide")
+            call her_main("It hurts!","shock","worriedCl")
+            g4 "Let's pump this little asshole full of semen then, shall we?"
+            call her_main(".....................","angry","suspicious",cheeks="blush")
             call ctc
 
             call her_main(".....................","shock","baseL",cheeks="blush",tears="soft")
@@ -269,24 +156,11 @@ label hg_anal_sex_1:
             m "Yes, it's been inside, but that doesn't mean it's dirty now."
             m "Come on, [hermione_name]. Suck my cock some more."
             call her_main("...........","shock","baseL",cheeks="blush",tears="soft")
-            call blkfade
 
-            #SUCKING
+            # Blowjob
             hide screen ccg
             $ face_on_cg = False
-            hide screen hermione_face
-            call her_chibi("hide")
-            hide screen genie
-            show screen chair_left
-
-            $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
-            $ gen_chibi_ypos = 10
-            $ g_c_u_pic = "blowjob_ani"
-            show screen g_c_u
-
-            hide screen blktone
-            hide screen bld1
-            call hide_blkfade
+            call hg_chibi_transition("bj", trans="fade")
             call ctc
 
             call her_main("*Slurp!* *Slurp!* *Slurp!*",ypos="head",flip=False)
@@ -295,18 +169,8 @@ label hg_anal_sex_1:
             m "Can you taste your ass on my dick?"
             her "*Slurp!* *Slurp!* *Slurp!*"
             m "Alright, Maybe that's enough."
-            call blkfade
 
             # SEX
-            call her_chibi("hide") #HERMIONE
-            hide screen genie
-            show screen chair_left
-
-            $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-            $ gen_chibi_ypos = 10
-            $ g_c_u_pic = "sex_slow_ani"
-            show screen g_c_u
-
             if use_cgs:
                 $ face_on_cg = True
                 $ ccg_folder = "herm_sex"
@@ -315,11 +179,7 @@ label hg_anal_sex_1:
                 $ ccg3 = "blank"
                 call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
                 show screen ccg
-
-            hide screen blktone
-            hide screen bld1
-            hide screen blkfade
-            with fade
+            call hg_chibi_transition("sex_slow", trans="fade")
             call ctc
 
             call her_main("Ah...","shock","baseL",cheeks="blush",tears="soft")
@@ -358,15 +218,9 @@ label hg_anal_sex_1:
             call cum_block
             g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
 
-            $ g_c_u_pic = "sex_cum_in_ani"
-            hide screen bld1
-            with d1
-
+            call hg_chibi_transition("sex_creampie", trans="d5")
             call cum_block
             call ctc
-
-            $ uni_sperm = True
-            $ u_sperm = "characters/hermione/face/auto_08.png"
 
             call her_main("AH! IT'S FILLING ME UP!{image=textheart}{image=textheart}{image=textheart}","open","surprised",cheeks="blush",tears="messy")
             g4 "Yes, you whore! Yes!"
@@ -390,13 +244,10 @@ label hg_anal_sex_1:
             call her_main("{size=+5}I HATE YOU! YOU HEAR ME?!{/size}")
             g4 "Agh...Shut it, whore!"
             call her_main("*sob!* *Sob!*...","angry","suspicious",cheeks="blush",tears="messy")
-
-            # AFTER CUM INSIDE
-            hide screen bld1
-            with d1
             call ctc
 
-            $ g_c_u_pic = "ani_her_sex_cum_inside_blink"
+            # AFTER CUM INSIDE
+            call hg_chibi_transition("sex_creampie_pause", trans="d5")
 
             call her_main("*Sob!*...","angry","dead",cheeks="blush",tears="crying")
             m "Whew!... I think that was the last of it."
@@ -410,8 +261,10 @@ label hg_anal_sex_1:
             with d1
             call ctc
 
-            call blkfade
             $ face_on_cg = False
+            hide screen ccg
+            call hg_chibi_transition("sex_creampie_pause", trans="d5")
+            pause.8
 
             call her_main("I apologize for saying that I hate you, [genie_name]...","base","baseL",cheeks="blush",tears="mascara",ypos="head",flip=False)
             call her_main("And your cock is not nasty...",cheeks="blush",tears="mascara")
@@ -436,15 +289,9 @@ label hg_anal_sex_1:
             return
 
         "-Pull out and cum on Hermione-":
-            $ g_c_u_pic = "sex_cum_out_ani"
-            hide screen bld1
-            with d1
-
+            call hg_chibi_transition("sex_cumming_out", trans="d5")
             call cum_block
             call ctc
-
-            $ uni_sperm = True
-            $ u_sperm = "characters/hermione/face/auto_08.png"
 
             call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}","silly","dead",ypos="head")
             g4 "Yes!!! Allover your ass!"
@@ -453,10 +300,10 @@ label hg_anal_sex_1:
             with d1
             call ctc
 
-            call blkfade
-
-            call blkfade
             $ face_on_cg = False
+            hide screen ccg
+            call hg_chibi_transition("sex_creampie_pause", trans="d5")
+            pause.8
 
             m "Well, I'm done... You can get off my desk now."
             call her_main("Yes, [genie_name]...","silly","worried",cheeks="blush",tears="soft",ypos="head",flip=False)
@@ -472,20 +319,29 @@ label hg_anal_sex_1:
 
 
 
-### Third Time Anal Sex ###
+### Anal Sex Repeat ###
 
-label hg_anal_sex_3:
+label hg_anal_sex_2:
+    call hg_chibi_transition("admire_ass", flip=True, trans="d3")
+
+    call bld
+    m "How about another assfuck, [hermione_name]?"
+    call her_main("Of course, [genie_name].","base","ahegao_raised", ypos="head")
+    g4 "*Hngh!* You little mynx!"
+
+    stop music fadeout 1.0
+    hide screen hermione_main
     call blkfade
 
-    call her_chibi("hide")
-    hide screen genie
-    show screen chair_left
+    call her_main("........","annoyed","worriedL")
+    m "Hm..."
+    call her_main("...........","open","base")
+    $ renpy.play('sounds/gltch.mp3')
+    with hpunch
+    with kissiris
+    call her_main("Ooooohhhhhhhhhhhh....{image=textheart}","scream","wide")
 
-    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ gen_chibi_ypos = 10
-    $ g_c_u_pic = "sex_ani"
-    show screen g_c_u
-
+    # Transition
     if use_cgs:
         $ face_on_cg = True
         $ ccg_folder = "herm_sex"
@@ -494,15 +350,16 @@ label hg_anal_sex_3:
         $ ccg3 = "blank"
         call her_main("","open","closed",ypos="head")
         show screen ccg
+    call hg_chibi_transition("sex_slow", trans="d5")
 
-    hide screen blktone
-    hide screen bld1
-    call hide_blkfade
-    call ctc
+    g4 "Oh, ye-es!"
+    call her_main("Ah...","soft","ahegao")
+    m "It seems like your butthole became a bit more welcoming, [hermione_name]."
+    call her_main("Ah... It still hurts a little.","base","glance")
+    call her_main("And please, just call me \"whore\", [genie_name].","base","suspicious")
+    g4 "Agh! You slut! You always get me with your words!"
 
     call play_music("playful_tension") # SEX THEME.
-
-    #INSERTION
     call her_main("Ah... Ah...","open","closed")
     call her_main("Ah...")
     call her_main("[genie_name]?","base","glance")
@@ -546,17 +403,6 @@ label hg_anal_sex_3:
             call her_main("Ah...{image=textheart} Thank you, [genie_name].","angry","dead",cheeks="blush",tears="crying")
             m "Huh?"
             m "Are you crying?"
-            label among_other_things:
-            call her_main("Among other things, [genie_name]...{image=textheart}{image=textheart}{image=textheart}","silly","dead",ypos="head")
-            m "Among other things?"
-            call her_main("I'm cumming [genie_name]...{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","ahegao")
-            g4 "Agh! My cock!"
-            g4 "Relax your muscles a little, would you?"
-            call her_main("BUT I'M CUMMING!{image=textheart}{image=textheart}{image=textheart}","open","worriedCl")
-            g4 "Fine! Have it your way whore!"
-            with hpunch
-            call her_main("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}","scream","wide")
-            g4 "{size=+7}Argh!{/size}"
 
         "\"Marriage is out of the picture for you.\"":
             call her_main("That's what I thought...","shock","down_raised",cheeks="blush",tears="crying",ypos="head")
@@ -581,15 +427,23 @@ label hg_anal_sex_3:
             m "You just sold me your asshole for 90 house points. How would you call that?"
             call her_main("Yes, yes...{image=textheart} I am a whore...{image=textheart}","silly","worried",cheeks="blush",tears="soft")
             m "Are you crying?"
-            jump among_other_things
+
+
+    call her_main("Among other things, [genie_name]...{image=textheart}{image=textheart}{image=textheart}","silly","dead",ypos="head")
+    m "Among other things?"
+    call her_main("I'm cumming [genie_name]...{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","ahegao")
+    g4 "Agh! My cock!"
+    g4 "Relax your muscles a little, would you?"
+    call her_main("BUT I'M CUMMING!{image=textheart}{image=textheart}{image=textheart}","open","worriedCl")
+    g4 "Fine! Have it your way whore!"
+    with hpunch
+    call her_main("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}","scream","wide")
+    g4 "{size=+7}Argh!{/size}"
 
     menu:
         g4 "!!!"
         "-Fill Hermione up with cum-":
-            hide screen bld1
-            with d1
-            $ g_c_u_pic = "sex_cum_in_ani"
-
+            call hg_chibi_transition("sex_creampie", trans="d5")
             call cum_block
             call ctc
 
@@ -606,17 +460,9 @@ label hg_anal_sex_3:
             m "Yes, yes..."
             call her_main("Ah...{image=textheart}","angry","suspicious",cheeks="blush",tears="messy")
             m "......"
-            hide screen bld1
-            with d1
-            call ctc
-
-            call blkfade
 
         "-Cum all over Hermione-":
-            hide screen bld1
-            with d1
-            $ g_c_u_pic = "sex_cum_out_ani"
-
+            call hg_chibi_transition("sex_cumming_out", trans="d5")
             call cum_block
             call ctc
 
@@ -631,14 +477,16 @@ label hg_anal_sex_3:
             call her_main("I'm so full...{image=textheart}{image=textheart}{image=textheart}")
             g4 "Yes!!! All over your ass!"
             call her_main("Ah... It's so hot!","silly","ahegao")
-            hide screen bld1
-            with d1
-            call ctc
 
-            call blkfade
 
     #Ending
+    call hide_characters
+    show screen blkfade
+    with d7
+
     $ face_on_cg = False
+    hide screen ccg
+    call hg_chibi_transition("sex_pause", trans="fade")
 
     m "Well, this was intense..."
     call her_main("Ah-ha...{image=textheart} ah...{image=textheart}","grin","dead",cheeks="blush",tears="messy",ypos="head",flip=False)
@@ -647,8 +495,25 @@ label hg_anal_sex_3:
     call her_main("I think I may still be cumming, [genie_name].","grin","dead",cheeks="blush",tears="messy")
     call her_main("Or maybe not...","grin","dead",cheeks="blush",tears="messy")
     call her_main("Everything is in a daze... and my legs feel so weak...")
-
-    if her_whoring < 24:
-        call her_main("Can I just get paid now, [genie_name]?")
+    call her_main("Can I just get paid now, [genie_name]?")
 
     return
+
+
+
+
+
+
+label hg_pf_anal_sex_old: # Writing not in use
+    m "[hermione_name]?"
+    call her_main("[genie_name]?","soft","base")
+    m "I will be buying another favour from you today..."
+    call her_main(".............","open","suspicious")
+    m "Care to guess what the favour will be?"
+    m "You have three attempts to find out."
+    call her_main("...........","annoyed","frown")
+    call her_main("Anal sex?","disgust","glance")
+    g4 "Wha..........?!"
+    g4 "How did you...?"
+    call her_main("Just a lucky guess, [genie_name]...","angry","angry")
+    m "Sometimes you scare me, [hermione_name]..."

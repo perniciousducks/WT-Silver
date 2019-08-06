@@ -524,7 +524,7 @@ label snape_spell_intro: #Snape tells genie that he has adjusted the magic shiel
         call sna_main("Wanna get drunk?","snape_02")
         m "Do I!"
 
-        jump snape_dates #Snape Genie drinking. Jumps to next day.
+        jump snape_hangout # Snape Genie drinking. Jumps to next day.
 
 
 
@@ -925,7 +925,7 @@ label snape_book_intro: #Have genie ask for a book of sex spells
         m "I guess... Unless you fancy a drink?"
         call sna_main("I thought you'd never ask.","snape_02")
 
-        jump snape_dates #Snape Genie drinking. Jumps to next day.
+        jump snape_hangout # Snape Genie drinking. Jumps to next day.
 
 
 

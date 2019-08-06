@@ -624,7 +624,7 @@ label happy(sub_mad = 0):
     hide screen hermione_main
     with d3
     $ her_mood -= sub_mad
-    if her_mood <= 0:
+    if her_mood < 0:
         $ her_mood = 0
     if her_mood == 0:
         ">Hermione's mood has improved...\n>Hermione is {size=+5}not upset{/size} with you..."

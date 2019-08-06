@@ -5,13 +5,13 @@ label fireplace:
                 $ fireplace_examined = True
                 hide screen genie
                 call gen_chibi("stand","mid","base")
-                show screen chair_left #Empty chair near the desk.
+                show screen chair_left
                 show screen desk
                 with Dissolve(0.5)
                 m "Hm... Looks like an ordinary fireplace..."
                 show screen genie
                 hide screen genie_stand
-                hide screen chair_left #Empty chair near the desk.
+                hide screen chair_left
                 hide screen desk
                 with Dissolve(0.5)
         jump day_main_menu

@@ -77,14 +77,17 @@ label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, t
         else:
             show screen no_groping_01 # Towards Cupboard.
 
-    elif action in ["admire_ass_jerk_off","admire_ass_cum"]:
-        if flip:
-            $ masturbating = True
+    elif action in ["admire_ass","admire_ass_jerk_off","admire_ass_cum"]:
+        if action == "admire_ass": # Bend over desk, with clothes on.
+            show screen hermione_chibi_ass(ani=action)
+        else:
             show screen chair_left
-            if action == "admire_ass_jerk_off":
-                call gen_chibi("jerking_off","behind_desk","base") # Fix position
-            if action == "admire_ass_cum":
-                call gen_chibi("cumming","behind_desk","base") # Fix position
+            if flip:
+                $ masturbating = True
+                if action == "admire_ass_jerk_off":
+                    call gen_chibi("jerking_off","behind_desk","base") # Fix position
+                if action == "admire_ass_cum":
+                    call gen_chibi("cumming","behind_desk","base") # Fix position
             show screen no_groping_02
 
     elif action in ["grope_breasts"]:
@@ -105,6 +108,21 @@ label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, t
         show screen chair_left
         show screen jerking_off_01
 
+    ### Handjob ###
+    elif action in ["hj","hj_pause","hj_kiss","hj_cumming_in","hj_cumming_in_pause","hj_cumming_on","hj_cumming_on_pause"]:
+        show screen chair_left
+        show screen desk
+        show screen hermione_chibi_hj(ani=action, xpos=230, ypos=0)
+
+    ### Blowjob ###
+    elif action in ["bj","bj_pause","bj_cumming_in","bj_cumming_out","bj_cumming_out_blink"]:
+        show screen chair_left
+        show screen hermione_chibi_bj(ani=action)
+        if action in ["bj_cumming_out","bj_cumming_out_blink"]:
+            $ uni_sperm = True
+            $ u_sperm = "characters/hermione/face/auto_08.png"
+
+    ### Sex ###
     elif action in ["sex","sex_slow","sex_fast","sex_pause","sex_cumming_out","sex_cumming_out_blink","sex_creampie","sex_creampie_pause"]:
         show screen chair_left
         show screen hermione_chibi_sex(ani=action)

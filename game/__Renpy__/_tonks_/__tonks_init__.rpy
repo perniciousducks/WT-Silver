@@ -47,6 +47,7 @@ label tonks_progress_init:
 
     if not hasattr(renpy.store,'ton_tier'):
         $ ton_tier = 1
+        $ tonks_shared = False
         $ tonks_favors_unlocked   = False
         $ tonks_requests_unlocked = False
         $ tonks_shaming_unlocked  = False
@@ -55,35 +56,36 @@ label tonks_progress_init:
 
     ### Tonks Hangout Events ###
 
-    if not hasattr(renpy.store,'nt_he_drink_responses'):
-        $ nt_he_drink_responses   = event_class(title = "Tonks Firewhisky", start_label = "tonks_hangout", events = [
+    if not hasattr(renpy.store,'nt_he_drink'):
+        $ nt_he_drink   = event_class(title = "Tonks Firewhisky", start_label = "tonks_hangout", events = [
             [
             ["nt_he_wine_intro"],
-            ["nt_he_firewhiskey_intro"],
-            ["nt_he_firewhiskey_E1"],
-            ["nt_he_firewhiskey_E2"],
-            ["nt_he_firewhiskey_E3"],
-            ["nt_he_firewhiskey_E4"]
+            ["nt_he_firewhisky_intro"],
+            ["nt_he_firewhisky_E1"],
+            ["nt_he_firewhisky_E2"],
+            ["nt_he_firewhisky_E3"],
+            ["nt_he_firewhisky_E4"]
             ]
 
             ],
             iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
             )
 
-    if not hasattr(renpy.store,'nt_he_auror_story'):
-        $ nt_he_auror_story   = event_class(title = "Tonks Auror Stories", start_label = "tonks_hangout", events = [
+    if not hasattr(renpy.store,'nt_he_story'):
+        $ nt_he_story   = event_class(title = "Tonks Stories", start_label = "tonks_hangout", events = [
             [
-            ["nt_he_auror_story_intro_E1"], # Intro
-            ["nt_he_auror_story_intro_E2"], # Moody
-            ["nt_he_auror_story_intro_E3"], # Turning water into wine
-            ["nt_he_auror_story_intro_E4"], # Lots of paperwork
-            ["nt_he_auror_story_E5"],       # Vampire story
-            ["nt_he_auror_story_intro_E6"], # Moody's teaching methods
-            ["nt_he_auror_story_E7"],       # Werewold story
-            ["nt_he_auror_story_intro_E8"], # Illegal love potion
-            ["nt_he_auror_story_intro_E9"], # Dumb game mechanics
-            ["nt_he_auror_story_E10"],      # Metamorphmagi
-            ["nt_he_auror_story_E11"]       # Invisible clothing charm
+            ["nt_he_story_intro_E1"], # Intro
+            ["nt_he_story_intro_E2"], # Moody
+            ["nt_he_story_intro_E3"], # Brooms and flying carpets
+            ["nt_he_story_intro_E4"], # Turning water into wine
+            ["nt_he_story_intro_E5"], # Lots of paperwork
+            ["nt_he_story_E6"],       # Vampire story
+            ["nt_he_story_intro_E7"], # Moody's teaching methods
+            ["nt_he_story_E8"],       # Werewold story
+            ["nt_he_story_intro_E9"], # Illegal love potion
+            ["nt_he_story_intro_E10"], # Dumb game mechanics
+            ["nt_he_story_E11"],      # Metamorphmagi
+            ["nt_he_story_E12"]       # Invisible clothing charm
             ]
 
             ],
@@ -139,16 +141,16 @@ label tonks_progress_init:
             [
             ["nt_pr_kiss_T1_intro_E1"], # Ravenclaw boy
             ["nt_pr_kiss_T1_E2"],       #
-            ["nt_pr_kiss_T1_E3"], # Slytherin girls
+            ["nt_pr_kiss_T1_E3"],       # Slytherin girls
             ["nt_pr_kiss_T1_E4"]        # Slytherin girl
-            ],
+            ]#,
 
-            [
-            ["nt_pr_kiss_T2_E1"], # Slytherin boy
+            #[
+            #["nt_pr_kiss_T2_E1"], # Slytherin boy
             #["nt_pr_kiss_T2_E2"], #
             #["nt_pr_kiss_T2_E3"], #
             #["nt_pr_kiss_T2_E4"]  #
-            ]
+            #]
 
             ],
             iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.

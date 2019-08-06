@@ -208,12 +208,11 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
     hide screen genie_jerking_off_standing
     hide screen genie_jerking_off_standing_cum
 
-    hide screen genie_handjob
-    hide screen genie_handjob_pause
-    hide screen genie_handjob_kiss
-    hide screen genie_handjob_cum_on_shirt
-    hide screen genie_handjob_cum_on_shirt_pause
-    hide screen genie_handjob_cum_under_shirt
+    # Favors
+    hide screen hermione_chibi_ass
+    hide screen hermione_chibi_hj
+    hide screen hermione_chibi_bj
+    hide screen hermione_chibi_sex
 
     hide screen genie_titjob
     hide screen genie_titjob_pause
@@ -228,8 +227,10 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
     hide screen groping_03         # Grope breasts fully clothed
     hide screen genie_and_tits_01
     hide screen groping_naked_tits
-
     hide screen genie_groping
+
+    hide screen rum_screen
+
     hide screen blktone
     hide screen bld1
 
@@ -310,22 +311,6 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
             show screen genie_jerking_sperm_02
         else:
             show screen genie_jerking_off
-
-    #Handjob with Hermione.
-    elif action in ["handjob","handjob_pause","handjob_kiss","cumming_under_shirt","cumming_on_shirt","cumming_on_shirt_pause"]:
-
-        if action == "handjob":
-            show screen genie_handjob
-        if action == "handjob_pause":
-            show screen genie_handjob_pause
-        if action == "handjob_kiss":
-            show screen genie_handjob_kiss
-        if action == "cumming_on_shirt":
-            show screen genie_handjob_cum_on_shirt
-        if action == "cumming_on_shirt_pause":
-            show screen genie_handjob_cum_on_shirt_pause
-        if action == "cumming_under_shirt":
-            show screen genie_handjob_cum_under_shirt
 
     #Titjob
     elif action in ["titjob","titjob_pause","titjob_cum_in_mouth","titjob_cum_on_tits"]:

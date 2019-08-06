@@ -137,7 +137,7 @@ label ll_pf_sex_T1_E2: #Luna sex repeatable (in the office)
     jump end_luna_sex_event
 
 label ll_pf_sex_T1_E3: #Luna sex repeatable (in her bedroom)
-    
+
     call ll_pf_sex_bedroom
 
     jump end_luna_sex_event
@@ -1285,8 +1285,8 @@ label ll_pf_sex_bedroom:
     m "Mmmm, you know, I think you might be on to something with these rookiesports..."
     m "I haven't been able to get that tight little pussy of your out of my mind!"
     call lun_main("Really?","soft","wink","sad","mid")
-    call lun_main("For you to be think about it too...","pout","angry","sad","R")
-    call lun_main("They must be truly be out of control...","soft","wide","sad","down")
+    call lun_main("For you to think about it too...","pout","angry","sad","R")
+    call lun_main("They must truly be out of control...","soft","wide","sad","down")
     m "Mind giving me a hand getting rid of them?"
     call lun_main("Of course!","open","wide","sad","mid")
     call lun_main("I mean... No! I don't mind...","base","annoyed","sad","R", cheeks='blush')
@@ -1341,7 +1341,7 @@ label ll_pf_sex_bedroom:
     call lun_main("Goodie!","base","happyCl","base","mid")
     call lun_main("So, um... is it alright... can we... start... now... {b}{size=-5}please{/size}{/b}...","soft","seductive","sad","R")
     m "if you insist..."
-    show screen blkfade 
+    show screen blkfade
     with d3
     #Start cg
     $ lun_cg_path         = "images/CG/luna_bedsex/"
@@ -1516,61 +1516,3 @@ label ll_pf_sex_bedroom:
     with d3
 
     return
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

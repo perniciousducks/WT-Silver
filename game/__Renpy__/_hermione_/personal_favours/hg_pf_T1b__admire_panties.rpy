@@ -72,7 +72,7 @@ label hg_pf_admire_panties:
 
     # Increase level
     if her_tier == 1:
-        if her_whoring < 6: # Points til 6
+        if her_whoring < 3: # Points til 3
             $ her_whoring += 1
 
     elif her_tier == 2:

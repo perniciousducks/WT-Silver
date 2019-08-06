@@ -354,7 +354,8 @@ screen with_snape():
     zorder 3
 
 screen with_snape_animated():
-    add "genie_toast_goblet" at Position(xpos=140, ypos=0)
+    add "genie_toast_goblet" at Position(xpos=435, ypos=200)
+    add "snape_toast_goblet" at Position(xpos=618, ypos=200)
     tag hanging_with_snape
     zorder 3
 
@@ -628,7 +629,7 @@ screen hercg():
 
     add her_cg_base
     add her_cg_genie        xpos her_cg_xpos_abs ypos her_cg_ypos_abs   xzoom her_cg_zoom
-    
+
 
     add her_cg_body         xpos (her_cg_xpos_abs+her_cg_xpos) ypos (her_cg_ypos_abs+her_cg_ypos)   xzoom her_cg_zoom
     add her_cg_mouth        xpos (her_cg_xpos_abs+her_cg_xpos) ypos (her_cg_ypos_abs+her_cg_ypos)   xzoom her_cg_zoom
@@ -643,7 +644,7 @@ screen hercg():
     add her_cg_extra_3      xpos (her_cg_xpos_abs+her_cg_xpos) ypos (her_cg_ypos_abs+her_cg_ypos)   xzoom her_cg_zoom
 
     add her_cg_overlay      # xpos her_cg_xpos_abs ypos her_cg_ypos_abs   xzoom her_cg_zoom # Overlay should cover the screen and not move with the CG.
-    
+
     zorder 6
 
 init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
@@ -712,7 +713,7 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.hide_screen("blkfade")
         #renpy.with_statement(Dissolve(0.5))
 
-        lun_cg_eyewhite     = lun_cg_path+"eye_white.png" 
+        lun_cg_eyewhite     = lun_cg_path+"eye_white.png"
         lun_cg_eyewear      = lun_cg_path+"glasses.png"
         lun_cg_hair         = lun_cg_path+lun_hair_style+"_hair.png"
         lun_cg_hairtop      = lun_cg_path+lun_hair_style+"_hair_top.png"
@@ -765,7 +766,7 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.hide_screen("blkfade")
         #renpy.with_statement(Dissolve(0.5))
 
-        her_cg_eyewhite     = her_cg_path+"eye_white.png" 
+        her_cg_eyewhite     = her_cg_path+"eye_white.png"
 
         if body:
             her_cg_body     = her_cg_path+"body_base.png"

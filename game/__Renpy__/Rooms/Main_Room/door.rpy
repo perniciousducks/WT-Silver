@@ -131,7 +131,7 @@ screen door_menu():
 #Day 1 room interact quest.
 label examine_door:
     $ door_examined = True
-    show screen chair_left #Empty chair near the desk.
+    show screen chair_left
     show screen chair_right
     show screen desk
     call gen_chibi("stand","door","base")

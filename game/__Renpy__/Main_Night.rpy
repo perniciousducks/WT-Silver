@@ -132,9 +132,8 @@ label night_main_menu:
     ### MENU PLACEMENT ###
     call reset_menu_position
 
-    hide screen bld1
-    hide screen blktone
     call hide_characters
-    with d1
+    call gen_chibi("sit_behind_desk")
+    with d3
 
     call screen main_room_menu

@@ -196,25 +196,26 @@ screen genie_stat_menu():
             mousewheel True
 
             vbox:
-                if not map_unlocked:
-                    use stat_bar(int(100/10), "-Lust-", "", 100) #Joke stat
-                    use stat_bar(int(0/10), "-Sanity-", "", 0) #Joke stat
-                else:
-                    use stat_bar(int(imagination +bdsm_imagination/1), "-Imagination-", "", imagination +bdsm_imagination) #Max 10
-                    use stat_bar(int(speed_writing/0.25), "-Speed Writing-", "", speed_writing) #Max 4
-                    use stat_bar(int(speed_reading/0.25), "-Speed Reading-", "", speed_reading) #Max 4
+                use stat_bar(int(imagination +bdsm_imagination/1), "-Imagination-", "", imagination +bdsm_imagination) #Max 10
+                use stat_bar(int(speed_writing/0.25), "-Speed Writing-", "", speed_writing) #Max 4
+                use stat_bar(int(speed_reading/0.25), "-Speed Reading-", "", speed_reading) #Max 4
 
                 use text_stat("Bird fed:")
                 use text_stat("- ", " times -", phoenix_fed_counter)
                 use text_stat("Bird petted:")
                 use text_stat("- ", " times -", phoenix_petted_counter)
                 use text_stat("You missed feeding your bird for:")
-                use text_stat("- ", " days...", (day - phoenix_fed_counter) )
+                use text_stat("- ", " days...", day -phoenix_fed_counter -1 ) # -1 because it's impossible to feed it on the first day.
+                use text_stat("Searched Cupboard:")
+                use text_stat("- ", " times -", rum_times)
                 use text_stat("If you were a Quidditch player...")
                 use text_stat("You'd be a \"", "\"", genie_quid_position)
+
         vbar value YScrollValue("vp")
 
     zorder 8
+
+
 
 screen snape_stat_menu():
     tag stat_content
@@ -238,6 +239,7 @@ screen snape_stat_menu():
         vbar value YScrollValue("vp")
 
     zorder 8
+
 
 
 screen hermione_stat_menu():
@@ -319,6 +321,8 @@ screen hermione_stat_menu():
 
     zorder 8
 
+
+
 screen luna_stat_menu():
     tag stat_content
     side "c r":
@@ -336,6 +340,8 @@ screen luna_stat_menu():
         vbar value YScrollValue("vp")
 
     zorder 8
+
+
 
 screen astoria_stat_menu():
     tag stat_content
@@ -355,6 +361,8 @@ screen astoria_stat_menu():
 
     zorder 8
 
+
+
 screen susan_stat_menu():
     tag stat_content
     side "c r":
@@ -371,6 +379,8 @@ screen susan_stat_menu():
         vbar value YScrollValue("vp")
 
     zorder 8
+
+
 
 screen cho_stat_menu():
     tag stat_content
@@ -394,15 +404,9 @@ screen cho_stat_menu():
 
         vbar value YScrollValue("vp")
 
-
-
-
-
-
-
-
-
     zorder 8
+
+
 
 screen tonks_stat_menu():
     tag stat_content
@@ -425,6 +429,9 @@ screen tonks_stat_menu():
 
                 use text_stat("Tonks has sluttyfied:")
                 use text_stat("- ", "/7 outfits -", ton_clothing_upgrades)
+
+                use text_stat("Enjoyed some firewhisky with Tonks:")
+                use text_stat("- ", " times -", nt_he_drink.counter)
 
         vbar value YScrollValue("vp")
 

@@ -6,25 +6,25 @@ label snape_duel_menu:
     if geniecard_level == 1:
         if not snape_know_cards:
             m "Ever heard of Wizard Cards?"
-            call sna_main( "What about them?","snape_05")
+            call sna_main("What about them?","snape_05")
             g9 "Do you have any?"
-            call sna_main( "I do, I collected some when I was younger... never played though.","snape_09")
+            call sna_main("I do, I collected some when I was younger... never played though.","snape_09")
             m "Why not?"
-            call sna_main( "Didn't really have anyone to play with so I stopped buying them.","snape_06")
+            call sna_main("Didn't really have anyone to play with so I stopped buying them.","snape_06")
             m "Up for a game or two?"
-            call sna_main( "...", "snape_03")
-            call sna_main( "Why not...", "snape_02")
+            call sna_main("...", "snape_03")
+            call sna_main("Why not...", "snape_02")
             m "What do I get if I win?"
-            call sna_main( "What do you mean? There never used to be prizes in Wizard Cards...","snape_01")
+            call sna_main("What do you mean? There never used to be prizes in Wizard Cards...","snape_01")
             g4 "What..."
             m "No wonder this game never took off..."
             m "Let's just play a few practice rounds for now then."
-            call sna_main( "And then?","snape_05")
+            call sna_main("And then?","snape_05")
             m "..."
             m "And then we'll think about prizes."
-            call sna_main( "...","snape_01")
-            call sna_main( "Fine, I'm confident enough to beat a beginner.","snape_06")
-            call sna_main( "But first a bit of practice...","snape_02")
+            call sna_main("...","snape_01")
+            call sna_main("Fine, I'm confident enough to beat a beginner.","snape_06")
+            call sna_main("But first a bit of practice...","snape_02")
             g9 "Let's play."
             $ snape_know_cards = True
 
@@ -47,15 +47,17 @@ label snape_duel_menu:
         if not snape_wager_talk:
             sna "With you?"
             sna "..."
+
             if sna_friendship < 30:
                 call sna_main("no...", "snape_03")
                 g4 "Why not."
                 m "What if we did a game as a part of a wager?"
                 call sna_main("A wager...","snape_09")
                 call sna_main("No, I have better things to do right now...","snape_06")
-                m "\"He doesn't seem that keen, maybe I should ask again when we know each other a bit better.\""
-                "> Improve your relationship with Snape before trying again."
+                m "(He doesn't seem that keen, maybe I should ask again when we know each other a bit better.)"
+                call nar(">Improve your relationship with Snape before trying again.")
                 jump snape_ready
+
             call sna_main("Do you know how hard it is to progress with this game with no one to play against?","snape_03")
             call sna_main("I even traded some of my potion ingredients to some wierd guy in knockturn alley for one of the old booster packs...","snape_01")
             call sna_main("Turns out... that card I gave you, whilst not very powerful was quite a rare one.","snape_08")
@@ -70,7 +72,7 @@ label snape_duel_menu:
             call sna_main("A wager?","snape_05")
             g9 "Yes, how about just one token and a wager ontop of that to make it interesting."
             call sna_main("...","snape_04")
-            call sna_main("Fine, only if it's on equal terms...","snape_10")
+            call sna_main("Fine, but only if it's on equal terms...","snape_10")
             g4 "What does that mean?"
             call sna_main("It means, you set your prize and I'll set mine accordingly.","snape_03")
             m "Okay, so..."
@@ -84,21 +86,22 @@ label snape_duel_menu:
             call sna_main("Fine, if that's your only proposal. If you win then I'll give you something from my personal collection.","snape_03")
             g4 "Like what?"
             call sna_main("You'll see...","snape_02")
-            m "\"Must be something good if he's not going to tell me...\""
+            m "(Must be something good if he's not going to tell me...)"
             g9 "I'm in."
+
             $ snape_wager_talk = True
-            if wine < 1:
+            if wine_ITEM.number < 1:
                 sna "Show me the bottle."
                 m "What?"
                 sna "I want to see the wine first."
                 m "I dont have one, right now..."
                 sna "Thats a shame, the wager will have to wait then."
                 m "Damn...!"
-                m "\"I should see if I could find some more wine in that cupboard... \""
+                m "(I should see if I could find some more wine in that cupboard...)"
                 jump snape_ready
 
         else:
-            if wine < 1:
+            if wine_ITEM.number < 1:
                 sna "Do you have it?"
                 m "What?"
                 sna "The wine of course!"
@@ -108,7 +111,7 @@ label snape_duel_menu:
                 sna "Neither am I."
                 sna "No wine, no duel."
                 m "Damn!"
-                m "\"I should see if I could find some more wine in that cupboard...  \""
+                m "(I should see if I could find some more wine in that cupboard...)"
                 jump snape_ready
 
             $ one_of_ten = renpy.random.randint(1, 10)
@@ -156,15 +159,16 @@ label snape_duel_menu:
                     m "I doubt she would agree to that."
                 m "Let's just stick to the original bet for now..."
                 call sna_main("Fine...","snape_06")
+
         jump snape_random_duel
 
 
 
 label snape_first_duel:
-    call sna_main( "A bit dusty but this should do!","snape_03")
+    call sna_main("A bit dusty but this should do!","snape_03")
     m "You, or the deck?"
-    call sna_main( "I... the deck, obviously.","snape_14")
-    call sna_main( "Let's do this.","snape_17")
+    call sna_main("I... the deck, obviously.","snape_14")
+    call sna_main("Let's do this.","snape_17")
 
     call play_music("grape_soda")
 
@@ -176,26 +180,31 @@ label snape_first_duel:
     elif not duel_response == "win":
         jump snape_duel_lost
 
-
-    hide screen blkfade
     stop music fadeout 1
-    call sna_main( "Maybe I should've gone over the rules a bit more before trying this game again....","snape_05")
-    call sna_main(  "Well played though.","snape_04")
-    $ achievement.unlock("Cardwin")
-    $ snape_first_win = True
+    hide screen blkfade
+    call sna_main("Maybe I should've gone over the rules a bit more before trying this game again....","snape_05")
+    call sna_main("Well played though.","snape_04")
+
     call play_sound("door")
+    call hide_characters
     call sna_chibi("hide")
+    with d3
+
     $ snape_busy = True
 
+    $ achievement.unlock("Cardwin")
+    $ snape_first_win = True
     $ geniecard_tokens += 1
 
     jump main_room
 
+
+
 label snape_second_duel:
-    call sna_main( "That first one was just a warm up, there's no way you'll beat me this time!","snape_16")
+    call sna_main("That first one was just a warm up, there's no way you'll beat me this time!","snape_16")
     g9 "Time to get our decks out."
-    call sna_main( "....","snape_25")
-    call sna_main( "Let's just play.","snape_04")
+    call sna_main("....","snape_25")
+    call sna_main("Let's just play.","snape_04")
 
     call play_music("grape_soda")
 
@@ -207,23 +216,29 @@ label snape_second_duel:
     elif not duel_response == "win":
         jump snape_duel_lost
 
-    hide screen blkfade
     stop music fadeout 1
-    call sna_main( "Not again... I swear these cards used to be good when I bought them.","snape_07")
-    call sna_main( "They must've made them obsolete to get you to buy more.","snape_04")
-    call sna_main( "So deliciously mischievous.","snape_02")
-    call sna_main(remove=True)
-    $ snape_second_win = True
+    hide screen blkfade
+    call sna_main("Not again... I swear these cards used to be good when I bought them.","snape_07")
+    call sna_main("They must've made them obsolete to get you to buy more.","snape_04")
+    call sna_main("So deliciously mischievous.","snape_02")
+
     call play_sound("door")
+    call hide_characters
     call sna_chibi("hide")
-    $ snape_busy = True
+    with d3
 
     if not her_know_cards:
+        call bld
         g9 "This is awesome, I wonder if Hermione would want to play against me..."
 
+    $ snape_busy = True
+
+    $ snape_second_win = True
     $ geniecard_tokens += 1
 
     jump main_room
+
+
 
 label snape_third_duel:
     if her_know_cards == False:
@@ -235,17 +250,17 @@ label snape_third_duel:
         jump snape_duel_menu
 
     m "So, how about that prize?"
-    call sna_main( "Again with the prize...","snape_01")
+    call sna_main("Again with the prize...","snape_01")
     m "I'm bored okay... and I like prizes..."
-    call sna_main( "Fine, I challenge you!!","snape_10")
+    call sna_main("Fine, I challenge you!!","snape_10")
     m "..."
-    call sna_main( "You don't say it like that anymore?","snape_05")
+    call sna_main("You don't say it like that anymore?","snape_05")
     m "No, that's lame."
-    call sna_main( "You're not going to beat me again genie, I've practiced with the greatest Wizard cards player there is!","snape_02")
+    call sna_main("You're not going to beat me again genie, I've practiced with the greatest Wizard cards player there is!","snape_02")
     m "Me?"
-    call sna_main( "I... no, of course not.","snape_14")
-    call sna_main( "Let's do this.","snape_17")
-    call sna_main( "Show me what you got genie... beat me and I'll give you a card from my collection and 3 tokens.","snape_18")
+    call sna_main("I... no, of course not.","snape_14")
+    call sna_main("Let's do this.","snape_17")
+    call sna_main("Show me what you got genie... beat me and I'll give you a card from my collection and 3 tokens.","snape_18")
     m "Bring it."
 
     call play_music("boss_card_theme")
@@ -278,11 +293,11 @@ label snape_third_duel:
     hide screen blkfade
 
     if snape_third_win == False:
-        call sna_main( "Impossible, what's wrong with these cards...","snape_05")
+        call sna_main("Impossible, what's wrong with these cards...","snape_05")
         m "They're old, that's what."
         m "Now to the prize..."
-        call sna_main( "Fine, here's your tokens and one of my precious cards....","snape_05")
-        call sna_main( "\"You were a good card my boy. But it's time to grow up.\"","snape_05")
+        call sna_main("Fine, here's your tokens and one of my precious cards....","snape_05")
+        call sna_main("(You were a good card my boy. But it's time to grow up.)","snape_05")
         $ snape_third_win = True
         $ unlocked_cards += [card_snape]
         call give_reward("You have received a special card!", "images/cardgame/t1/special/snape_v1.png")
@@ -291,10 +306,15 @@ label snape_third_duel:
         $ geniecard_tokens += 1
 
     call play_sound("door")
+    call hide_characters
     call sna_chibi("hide")
+    with d3
+
     $ snape_busy = True
 
     jump main_room
+
+
 
 label snape_random_duel:
     call play_music("boss_card_theme")
@@ -306,15 +326,16 @@ label snape_random_duel:
     $ duel_response = start_duel(random_enemy_deck, snape_after, [renpy.random.randint(0,3), False, True, False], random_player_deck)
 
     if duel_response == "Close":
-        $ wine -= 1
+        $ wine_ITEM.number -= 1
         jump snape_duel_cancel
     elif duel_response == "draw":
         jump snape_duel_draw
     elif not duel_response == "win":
-        $ wine -= 1
+        $ wine_ITEM.number -= 1
         jump snape_duel_lost
-    hide screen blkfade
+
     stop music fadeout 1
+    hide screen blkfade
 
     python:
         import random
@@ -345,6 +366,7 @@ label snape_random_duel:
         call sna_main("There's plenty more where that came from if you want another game...","snape_24")
         m "..."
         m "I'll think about it."
+
     else:
         $ random_choice = renpy.random.randint(0, 3)
         if random_choice == 0:
@@ -382,18 +404,22 @@ label snape_random_duel:
             call sna_main("No... I'll beat you next time.","snape_16")
             g9 "That's the spirit."
         elif random_choice == 4:
-            call sna_main( "Maybe I should've gone over the rules a bit more before trying this game again....","snape_05")
-            call sna_main(  "Well played though.","snape_04")
+            call sna_main("Maybe I should've gone over the rules a bit more before trying this game again....","snape_05")
+            call sna_main("Well played though.","snape_04")
 
         call give_reward("You've received "+rand_ing_or_pot.name+" from Snape!", "interface/icons/item_potion.png")
+
+    call play_sound("door")
+    call hide_characters
+    call sna_chibi("hide")
+    with d3
 
     $ snape_busy = True
     $ geniecard_tokens += 1
 
-    call play_sound("door")
-    call sna_chibi("hide")
-
     jump main_room
+
+
 
 label snape_special_duel:
     call play_music("boss_card_theme")
@@ -401,21 +427,25 @@ label snape_special_duel:
     $ random_enemy_deck = create_random_deck(get_deck_score(playerdeck)-2, get_deck_score(playerdeck)+8, cards_all)
     $ duel_response = start_duel(random_enemy_deck) #snape_after_special
 
-    hide screen blkfade
     stop music fadeout 1
+    hide screen blkfade
+
     if duel_response == "draw":
         g4 "Not another fucking..."
         call her_main("*Gltch*, *Slurp*, *Gobble*")
         g4 "Draaaaaaw!"
         return "draw"
+
     elif not duel_response == "win" or duel_response == "Close":
         call sna_main("Well, well.. Looks like I've...{nw}")
         m "Fuuuuuuuuck!"
         return "loss"
 
-    g9 "Yeeeeees!"
-    g4 "Thats it you whore! Take it!"
-    return "win"
+    else:
+        g9 "Yeeeeees!"
+        g4 "Thats it you whore! Take it!"
+        return "win"
+
 
 label snape_duel_draw:
     stop music fadeout 1
@@ -430,7 +460,9 @@ label snape_duel_draw:
             pass
 
     sna "Alright, another time then..."
+
     jump main_room
+
 
 label snape_duel_lost:
     hide screen blkfade
@@ -442,7 +474,7 @@ label snape_duel_lost:
                 jump snape_duel_menu
             else:
                 m "I demand a rematch!"
-                if wine < 1:
+                if wine_ITEM.number < 1:
                     sna "Seems like you lost all of your bottles, maybe next time."
                     g4 "...You evil creature..."
                     pass
@@ -493,10 +525,14 @@ label snape_duel_lost:
             m "Whatever, here's your bottle."
 
     call play_sound("door")
+    call hide_characters
     call sna_chibi("hide")
+    with d3
+
     $ snape_busy = True
 
     jump main_room
+
 
 label snape_duel_cancel:
     show screen blkfade
@@ -515,10 +551,15 @@ label snape_duel_cancel:
         m "Fine..."
 
     call play_sound("door")
+    call hide_characters
     call sna_chibi("hide")
+    with d3
+
     $ snape_busy = True
 
     jump main_room
+
+
 
 screen genie_vs_snape():
     zorder 8
@@ -544,7 +585,7 @@ init python:
         volume = _preferences.volumes['music']
         _preferences.volumes['music'] *= .5
         s_punch = renpy.random.randint(1, 4)
-        renpy.sound.play( "sounds/card_punch%s.mp3" % s_punch)
+        renpy.sound.play("sounds/card_punch%s.mp3" % s_punch)
         # Prevents volume to change again when using rollback
         renpy.block_rollback()
         renpy.say(sna,snape_speech_card[renpy.random.randint(0,len(snape_speech_card)-1)])

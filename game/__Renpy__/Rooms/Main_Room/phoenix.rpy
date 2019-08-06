@@ -5,14 +5,14 @@ label phoenix:
                 $ bird_examined = True
                 hide screen genie
                 call gen_chibi("stand","mid","base",flip=True)
-                show screen chair_left #Empty chair near the desk.
+                show screen chair_left
                 show screen desk
                 with Dissolve(0.5)
                 m "Hm....."
                 m "Even this weird looking bird radiates magic..."
                 show screen genie
                 hide screen genie_stand
-                hide screen chair_left #Empty chair near the desk.
+                hide screen chair_left
                 hide screen desk
                 with Dissolve(0.5)
                 jump day_main_menu
@@ -38,7 +38,7 @@ label feeding:
     pause 1
 
     show screen phoenix_food
-    
+
     $ random_number = renpy.random.randint(1, 3)
     if random_number == 1:
         m "There you go..."

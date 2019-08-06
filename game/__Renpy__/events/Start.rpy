@@ -47,7 +47,6 @@ label start_wt:
 
     #Cupboard
     $ searched = False #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
-    $ wine = 0 # Dumbledore's wine you find in the cupboard and use for "Snape dates".
 
     #Books
     $ found_voucher = False # Turns TRUE after you complete "My Dear Waifu" with the harem ending and "Dahr's voucher" fall out.
@@ -118,9 +117,9 @@ label start_wt:
                 #$ toy_gift_list   = persistent.toy_gift_list
                 #">All previously bought gift items have been added to your possessions."
 
-                if persistent.wine >= 1:
-                    $ wine = wine + persistent.wine # WINE.
-                    ">[persistent.wine] bottles of Dumbledore's wine have been added to your possessions."
+                #if persistent.wine >= 1:
+                #    $ wine = wine + persistent.wine # WINE.
+                #    ">[persistent.wine] bottles of Dumbledore's wine have been added to your possessions."
 
                 #$ scroll_list_A = persistent.scroll_list_A
                 #$ scroll_list_B = persistent.scroll_list_B
@@ -264,6 +263,7 @@ label start_wt:
             $ hang_with_snape.E2_complete = True
             $ hang_with_snape.E3_complete = True
             $ hang_with_snape.E4_complete = True
+            $ hang_with_snape.E5_complete = True
 
             $ snape_unlocked = True
             $ achievement.unlock("unlocksna", True)

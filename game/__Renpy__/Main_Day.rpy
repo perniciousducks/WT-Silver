@@ -69,19 +69,8 @@ label day_start:
 
     $ day_random = renpy.random.randint(0, 10)
 
+    $ random_gold = renpy.random.randint(8, 120) # Money you find in the cupboard.
 
-    ### CUPBOARD MONEY GENERATOR ###
-
-    if game_difficulty <= 1: #Easy difficulty
-        $ gold1 = renpy.random.randint(8, 20) # Money you find in the cupboard when Whoring Level: 1-2.
-        $ gold2 = renpy.random.randint(20, 80) # Money you find in the cupboard when Whoring Level: 3-4.
-        $ gold3 = renpy.random.randint(40, 100) # Money you find in the cupboard when Whoring Level: 5-6.
-        $ gold4 = renpy.random.randint(60, 180) # Money you find in the cupboard when Whoring Level: 7+.
-    else: #Normal (2) & hardcore (3) difficulty
-        $ gold1 = renpy.random.randint(5, 15)
-        $ gold2 = renpy.random.randint(15, 60)
-        $ gold3 = renpy.random.randint(30, 75)
-        $ gold4 = renpy.random.randint(45, 135)
 
 
     scene black
@@ -160,10 +149,9 @@ label day_start:
     ### MENU PLACEMENT ###
     call reset_menu_position
 
-    hide screen bld1
-    hide screen blktone
     call hide_characters
-    with d1
+    call gen_chibi("sit_behind_desk")
+    with d3
 
     if bird_examined and desk_examined and cupboard_examined and door_examined and fireplace_examined and not genie_intro.E2_complete:
         jump genie_intro_E2

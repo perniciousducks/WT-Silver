@@ -33,6 +33,7 @@ init python:
                                    #1.37 HG achievements
                                    "busted": ["Characters", "BUSTED!", "... a nut when got busted for busting a nut.", False, "interface/icons/head/head_hermione_2.png", False],
                                    "herstrip": ["Characters", "Dance lessons", "Even elephants have more grace when they're moving, girl.. -Severus Snape", False, "interface/icons/head/head_hermione_2.png", False],
+                                   "herkiss": ["Characters", "First Kiss", "Hermione made out with you-...`r cock...", False, "interface/icons/head/head_hermione_2.png", False],
                                    "hertits": ["Characters", "Boobs Lover", "*ahem* I mean.. books, yes, books lover!", False, "interface/icons/head/head_hermione_2.png", False],
                                    "headlib": ["Characters", "Head Librarian", "Did she just swallow it?", False, "interface/icons/head/head_hermione_2.png", False],
                                    "nerdgasm": ["Characters", "Nerdgasm", "Had a very fulfilling moment with Hermione.", False, "interface/icons/head/head_hermione_2.png", False]}
@@ -42,7 +43,7 @@ init python:
 
         def __init__(self):
             self.achievements = persistent.achievements
-            
+
         def status(self, id):
             return self.achievements.get(id)[3]
 
@@ -89,11 +90,11 @@ init:
             import time
             while True:
                 time.sleep(5)
-                
+
                 if not achievement.status('gold') and gold >= 10000:
                     achievement.unlock("gold")
 
-                if not achievement.status('drunkard') and wine >= 25:
+                if not achievement.status('drunkard') and wine_ITEM.number >= 25:
                     achievement.unlock("drunkard")
 
                 if not achievement.status('peta') and (day-phoenix_fed_counter) >= 50:
@@ -102,7 +103,7 @@ init:
                 if not achievement.status('petpal') and phoenix_petted_counter >= 25:
                     achievement.unlock("petpal")
 
-                if not achievement.status('bros') and sna_friendship_maxed:
+                if not achievement.status('bros') and sna_friendship >= 100:
                     achievement.unlock("bros")
 
                 if not achievement.status('overwhored') and her_whoring >= 24:
@@ -114,7 +115,7 @@ init:
                 if not achievement.status('workaholic') and stat_reports_counter >= 5:
                     achievement.unlock("workaholic")
             return
-                
+
         #config.interact_callbacks.append(update_achievements)
         config.after_load_callbacks.append(restart_achievements_thread)
 
@@ -125,7 +126,7 @@ init:
 ###
 init:
     $ achievement = achievement_class()
-    
+
     #$ renpy.invoke_in_thread(update_achievements)
 
 label popup(string="", title="", icon=None, xpos=0, ypos=60, sound=True, soundfile='sounds/achievement.mp3'):

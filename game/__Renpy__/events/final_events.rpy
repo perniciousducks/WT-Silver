@@ -422,7 +422,7 @@ label ball_quest_E2:
     call bld
     call nar("Professor Snape spends the day in your chamber, drinking the stress away.")
 
-    if not sna_friendship_maxed:# Turns TRUE when friendship with Snape been maxed out.
+    if sna_friendship < 100:
         call nar(">Your relationship with him has improved.")
         $ sna_friendship +=1
 

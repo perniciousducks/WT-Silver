@@ -2,194 +2,286 @@
 
 ### Hermione Handjob ###
 
-label hg_pf_handjob: #LV.5 (Whoring = 12 - 14)
+label hg_pf_handjob:
 
-    call reset_menu_position
-
-    if hg_pf_handjob.points == 0:
+    if hg_pf_handjob.counter == 0:
         m "{size=-4}(Should I ask her for a handjob?){/size}"
     else:
         m "{size=-4}(I feel like getting another handjob!){/size}"
 
-    if hg_pf_handjob.points < 1:
+    if hg_pf_handjob.counter < 1:
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
+    # Start Event
     $ current_payout = 45
-
-    call bld
-
-    #First Event.
-    if hg_pf_handjob.points == 0:
-
-        m "[hermione_name]."
-        call her_main("Yes, [genie_name]?","base","base",xpos="mid",ypos="base")
-        m "Do you know what a \"handjob\" is?"
-
-        if her_whoring < 12:
-            jump too_much
-
-        call her_main("Why?","annoyed","annoyed")
-        m "I feel like getting one..."
-        call her_main("[genie_name]!","angry","angry")
-        m "Just another favour. No big deal, right?"
-        call her_main("......","disgust","glance")
-        call her_main("{size=-7}I want 100 house points for this...{/size}","angry","worriedCl",emote="05")
-        m "Huh? What was that?"
-        call her_main("I want 100 house points for this!!!","scream","worriedCl")
-        m "100 house points, huh?"
-        m "And you will stroke my cock and everything?"
-        call her_main("{size=-7}Yes...{/size}","disgust","glance")
-        m "Sorry, I couldn't hear you..."
-        call her_main("Yes, I said yes! I will stroke your cock, [genie_name]!","scream","worriedCl")
+    $ hg_pf_handjob.start()
 
 
-        $ hg_pf_handjob.level = 1 #Event hearts level (0-3)
+    # End Event
+    label end_hg_pf_handjob:
 
-        label back_to_handjob_choices:
+    # Setup
+    stop music fadeout 1.0
+    call hide_characters
+    show screen blkfade
+    with d3
 
-        menu:
-            m "..."
-            "\"You will get 15 house points.\"":
-                $ her_mood +=7
-                call her_main("For 15 house points I suppose I could let you molest me a little, but that is all you'll be getting, [genie_name].","annoyed","angryL")
-                her "I will not stoop as low as to sell handjobs for 15 house points."
-                her "That is just insulting, [genie_name]."
-                jump back_to_handjob_choices
+    # Update Hermione
+    $ temp_save = aftersperm # Save
+    $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
+    call set_her_action("none","update") #Resets clothing.
+    $ aftersperm = temp_save # Load
 
-            "\"you will get 45 house points.\"":
-                if her_mood > 7: #You could spam points into infinity with the choice above.
-                    $ her_mood = 7
-                call her_main(".....","annoyed","angryL")
-                call her_main("45 house points...?","open","down")
-                her "This could put \"Gryffindor\" back in the lead..."
-                m "Is that a \"yes\"?"
-                call her_main("Yes, it is a yes, [genie_name].","annoyed","annoyed")
-                m "Great!"
+    call hg_chibi_transition("stand", xpos="desk", ypos="base", flip=False, trans="fade")
 
-            "\"you will get 100 house points.\"":
-                call play_music("chipper_doodle") # HERMIONE'S THEME.
-                $ current_payout = 100
-                $ her_mood = 0
-                call her_main("100 house points?!","scream","wide_stare")
-                her "This will definitely put \"Gryffindor\" in the lead!"
-                m "Is that a \"yes\" then?"
-                call her_main("Of course!","smile","happyCl")
-                call her_main("If it will bring \"Gryffindor\" 100 house points, I don't mind touching your... thing a little.","smile","happyCl",emote="06")
-
-        call hg_handjob_1 #Sets up handjob.
-        call hg_handjob_1_cumming
-
-        jump end_hg_handjob
+    if her_mood != 0:
+        call her_main("","annoyed","angry", xpos="mid", ypos="base")
+    else:
+        call her_main("","base","base", xpos="mid", ypos="base")
 
 
-    #Second Event.
-    elif hg_pf_handjob.points == 1:
-        $ hg_pf_handjob.level = 2 #Event hearts level (0-3)
+    # Points
+    if her_tier <= 5:
+        m "Yes, [hermione_name]. [current_payout] to \"Gryffindor\"."
+        $ gryffindor += current_payout
+    else:
+        m "You may leave now, [hermione_name]."
 
-        m "[hermione_name]?"
-        call her_main("Yes, [genie_name]?","base","base",xpos="mid",ypos="base")
-        m "Do you know what a \"handjob\" is?"
-        call her_main("You have asked me that already, [genie_name].","disgust","glance")
-        m "Ah, that's right."
-        m "Well, I want you to play with my cock again."
-        call her_main("[genie_name], you are being vulgar again...","upset","closed")
-        m "Fine, fine."
-        m "[hermione_name], I would like to buy another favour from you today."
-        call her_main("Of course, [genie_name].","annoyed","angryL")
-        g9 "The favour being you playing with my cock!"
-        call her_main("..............","disgust","glance")
-        m "Oh, come on. For the honour of the \"Gryffindors\"?"
-        call her_main(".............","angry","angry")
-        g9 "Play with my cock for the honour of the \"Gryffindors\", [hermione_name]!"
-        call her_main("Stop saying that, [genie_name]...","scream","angry",emote="01")
-        m "Come on [hermione_name], it's not like I'm asking you to do this for free."
-        call her_main(".......","annoyed","angryL")
-        stop music fadeout 4.0
+    call her_main("Thank you, [genie_name]...","soft","baseL")
 
-        call hg_handjob_1 #Sets up handjob.
-        call hg_handjob_1_cumming
-
-        jump end_hg_handjob
+    if daytime:
+        her "I better go. My classes are about to start."
+    else:
+        her "I'd better go now. It's getting pretty late..."
 
 
-    #Third Event.
-    elif hg_pf_handjob.points >= 2:
-        $ hg_pf_handjob.level = 3 #Event hearts level (0-3)
+    # Hermione leaves
+    call her_walk(xpos="door", ypos="base", speed=2.5)
 
-        m "[hermione_name]?"
-        call her_main("[genie_name]?","base","base",xpos="mid",ypos="base")
-        m "You don't mind giving me another handjob, do you?"
+    call her_chibi(action="leave")
 
-        if her_whoring <= 16:
-            call her_main("As long as I am getting paid...","grin","baseL")
-            m "Well, come here then. Time to earn those points."
-        else:
-            call her_main("Of course not [genie_name]...","grin","baseL")
-            m "Well, come here then."
 
-        call hg_handjob_3
+    # Increase level
+    if her_tier == 4:
+        if her_whoring < 18: # Points til 18
+            $ her_whoring += 1
+    if her_tier == 5:
+        if her_whoring < 21: # Points til 21
+            $ her_whoring += 1
 
-        if her_whoring < 17: # LEVEL 07
-            call hg_handjob_3_cumming
-        else:
-            call hg_handjob_4_cumming
-
-        jump end_hg_handjob
+    jump end_hermione_event
 
 
 
-### First Handjob ###
+### Fail Events ###
+
+label hg_pf_handjob_fail:
+    m "[hermione_name]."
+    call her_main("Yes, [genie_name]?","base","base",xpos="mid",ypos="base")
+    m "Do you know what a \"handjob\" is?"
+
+    $ hg_pf_handjob.counter -= 1
+
+    jump too_much
+
+
+
+### Tier 1 ###
+
+# Event 1 (i) - Hermione wants 100 house-points for it!
+# Event 2 (i) - Reluctantly does it again.
+# Event 3 (r) -
+
+label hg_pf_handjob_T1_intro_E1:
+    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    m "[hermione_name]."
+    call her_main("Yes, [genie_name]?","base","base")
+    m "Do you know what a \"handjob\" is?"
+    call her_main("Why?","annoyed","annoyed")
+    m "I feel like getting one..."
+    call her_main("[genie_name]!","angry","angry")
+    m "Just another favour. No big deal, right?"
+    call her_main("......","disgust","glance")
+    call her_main("{size=-7}I want 100 house points for this...{/size}","angry","worriedCl", emote="05")
+    m "Huh? What was that?"
+    call her_main("I want 100 house points for this!!!","scream","worriedCl")
+    call her_main("","clench","worriedCl")
+    m "100 house points, huh?"
+    m "And you will stroke my cock and everything?"
+    call her_main("{size=-7}Yes...{/size}","disgust","glance")
+    m "Sorry, I couldn't hear you..."
+    call her_main("Yes, I said yes! I will stroke your cock, [genie_name]!","scream","worriedCl")
+    call her_main("","upset","angryL")
+
+    label back_to_handjob_choices:
+
+    menu:
+        m "..."
+        "\"You will get 15 house points.\"" if her_mood != 0:
+            $ her_mood += 7
+            call her_main("For 15 house points I suppose I could let you molest me a little, but that is all you'll be getting, [genie_name].","annoyed","angryL")
+            her "I will not stoop as low as to sell handjobs for 15 house points."
+            her "That is just insulting, [genie_name]."
+            jump back_to_handjob_choices
+
+        "\"you will get 45 house points.\"":
+            $ her_mood += 7
+            call her_main(".....","annoyed","angryL")
+            call her_main("45 house points...?","open","down")
+            her "This could put \"Gryffindor\" back in the lead..."
+            m "Is that a \"yes\"?"
+            call her_main("Yes, it is a yes, [genie_name].","annoyed","annoyed")
+            m "Great!"
+            pass
+
+        "\"you will get 100 house points.\"":
+            call play_music("chipper_doodle") # HERMIONE'S THEME.
+            $ current_payout = 100
+            call her_main("100 house points?!","scream","wide_stare")
+            her "This will definitely put \"Gryffindor\" in the lead!"
+            m "Is that a \"yes\" then?"
+            call her_main("Of course!","smile","happyCl")
+            call her_main("If it will bring \"Gryffindor\" 100 house points, I don't mind touching your... thing a little.","smile","happyCl", emote="06")
+            pass
+
+    jump hg_handjob_1
+
+
+
+label hg_pf_handjob_T1_intro_E2:
+    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    m "[hermione_name]?"
+    call her_main("Yes, [genie_name]?","base","base")
+    m "Do you know what a \"handjob\" is?"
+    call her_main("You have asked me that already, [genie_name].","disgust","glance")
+    m "Ah, that's right."
+    m "Well, I want you to play with my cock again."
+    call her_main("[genie_name], you are being vulgar again...","upset","closed")
+    m "Fine, fine."
+    m "[hermione_name], I would like to buy another favour from you today."
+    call her_main("Of course, [genie_name].","annoyed","angryL")
+    g9 "The favour being you playing with my cock!"
+    call her_main("..............","disgust","glance")
+    m "Oh, come on. For the honour of the \"Gryffindors\"?"
+    call her_main(".............","angry","angry")
+    g9 "Play with my cock for the honour of the \"Gryffindors\", [hermione_name]!"
+    call her_main("Stop saying that, [genie_name]...","scream","angry", emote="01")
+    m "Come on [hermione_name], it's not like I'm asking you to do this for free."
+    call her_main(".......","annoyed","angryL")
+
+    jump hg_handjob_1
+
+
+label hg_pf_handjob_T1_repeat:
+    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    m "[hermione_name]?"
+    call her_main("[genie_name]?","base","base")
+    m "How would you like to give me another handjob?"
+
+    call her_main("...............","upset","angry")
+    call her_main("Will I be getting payed for it, [genie_name]?","open","angry")
+    m "Of course. 45 points."
+    call her_main(".........................","upset","angryL")
+
+    jump hg_handjob_1
+
+
+
+### Tier 2 ###
+
+# Event 1 (i) -
+# Event 3 (r) -
+
+label hg_pf_handjob_T2_intro_E1:
+    call her_main("[genie_name]?","base","base", xpos="mid", ypos="base", trans="fade")
+    m "[hermione_name]?"
+    call her_main("[genie_name]?","base","base")
+    m "You don't mind giving me another handjob, do you?"
+    call her_main("*Uhm*...","upset","down")
+    call her_main("As long as I am getting paid...","grin","baseL")
+    m "Well, then. Time to earn those points."
+
+    jump hg_handjob_2
+
+
+label hg_pf_handjob_T2_intro_E2:
+    call her_main("[genie_name]?","base","base", xpos="mid", ypos="base", trans="fade")
+    m "[hermione_name]?"
+    call her_main("[genie_name]?","base","base")
+    m "You don't mind giving me another handjob, do you?"
+    call her_main("I guess not, [genie_name]...","grin","down")
+    call her_main("...................","clench","baseL")
+
+    jump hg_handjob_2
+
+
+label hg_pf_handjob_T2_repeat:
+    call her_main("[genie_name]?","base","base", xpos="mid", ypos="base", trans="fade")
+    m "[hermione_name]?"
+    call her_main("[genie_name]?","base","base")
+    m "You don't mind giving me another handjob, do you?"
+    call her_main("Of course not, [genie_name]...","grin","baseL")
+
+    jump hg_handjob_2
+
+
+
+### First Tier Handjob ###
 
 label hg_handjob_1:
-    call play_music("playful_tension") # SEX THEME.
-    hide screen hermione_main
+    stop music fadeout 4.0
+    call hide_characters
+    show screen blkfade
+    with d3
+
     show screen chair_left
     show screen desk
-    call gen_chibi("jerking_off","on_girl","base")
+    call her_chibi("stand","560","base")
+    call gen_chibi("jerking_off","450","base")
 
-    hide screen bld1
-    hide screen blktone
+    hide screen blkfade
     with fade
-    call ctc
+    pause.8
 
-    call her_main("...........","open","base",xpos="right",ypos="base")
+    call play_music("playful_tension") # SEX THEME.
+    call her_main("...........","disgust","down", ypos="head")
     m "Whenever you're ready, [hermione_name]."
-    pause.5
+    call her_main(".......................","disgust","worriedCl", ypos="head")
+    pause.1
 
-    hide screen hermione_main
-    call blkfade
+    call hg_chibi_transition("hj_pause", trans="d9")
+    pause.8
 
-    ">Hermione puts her slender hands on your cock..."
+    call nar(">Hermione puts her slender hands on your cock...")
+
+    call bld
     m "Good. Now stroke it."
-    call her_main("Right...","angry","worriedCl",emote="05",ypos="head")
-    show screen chair_left
-    show screen desk
-    call her_chibi("hide")
-    call gen_chibi("handjob","desk","base")
-    hide screen bld1
-    call hide_blkfade
+    call her_main("Right...","angry","worriedCl", emote="05")
+
+    call hg_chibi_transition("hj", trans="d5")
     call ctc
 
     call play_music("playful_tension") # SEX THEME.
-    call blktone
+    call bld
     g9 "Nice..."
 
     if hg_pf_handjob.points == 0:
-        call her_main("!!!","shock","wide",xpos="right",ypos="base")
+        call her_main("!!!","shock","wide")
         call her_main("Are you about to finish, [genie_name]?!")
         m "About to finish?"
         m "Don't be ridiculous [hermione_name], we are just getting started."
-        call her_main("Oh...","angry","worriedCl",emote="05")
+        call her_main("Oh...","angry","worriedCl", emote="05")
         call her_main("......")
         call her_main("You will give me a warning though, won't you, [genie_name]?","upset","wink")
+
     else:
-        call her_main("[genie_name]...?","angry","worriedCl",emote="05",xpos="right",ypos="base")
+        call her_main("[genie_name]...?","angry","worriedCl", emote="05")
         m "What is it?"
-        call her_main("Will you warn me before... uhm... you now...","angry","worriedCl",emote="05")
+        call her_main("Will you warn me before... uhm... you now...","angry","worriedCl", emote="05")
 
     $ d_flag_01 = False #If TRUE Genie promised to warn her.
 
@@ -259,8 +351,6 @@ label hg_handjob_1:
             with hpunch
             g4 "{size=-4}(Here it comes! Should I warn her?){/size}"
 
-            return
-
         "\"Stick your tongue out and look at me!\"":
             call her_main("What?","base","base")
             m "Just do it, slut."
@@ -293,8 +383,6 @@ label hg_handjob_1:
             with hpunch
             g4 "{size=-4}(Here it comes! Should I warn her?){/size}"
 
-            return
-
         "\"Give my cock a kiss!\"":
             call her_main("Excuse me?","angry","angry")
             m "You know, just a little kiss, right on the tip."
@@ -303,22 +391,21 @@ label hg_handjob_1:
             m "Sure... That will speed things up, I'm telling you."
             call her_main("*sigh!*..............","open","down")
             call her_main("Well, I might as well, I suppose...")
-            call nar(">Hermione gives the tip of your engorged cock a tender kiss.")
 
-            hide screen hermione_main
-            hide screen blktone
-            call blkfade
-
-            call gen_chibi("handjob_kiss","desk","base")
             $ renpy.play('sounds/kiss.mp3')
-            with kissiris
-            call hide_blkfade
+            call hg_chibi_transition("hj_kiss", trans="kissiris")
             pause 2
 
-            call gen_chibi("handjob","desk","base")
+            # T4 Trigger - "First Kiss"
+            $ hg_T4_handjob_trigger = True
+            $ achievement.unlock("herkiss")
+            pause 1
+
+            call nar(">Hermione gives the tip of your engorged cock a tender kiss.")
+
+            call hg_chibi_transition("hj", trans="d5")
             pause.5
 
-            show screen blktone
             call her_main("Like this?","open","down")
             m "Wasn't that bad, was it?"
             call her_main("No, I suppose not...","upset","wink")
@@ -326,27 +413,20 @@ label hg_handjob_1:
             call her_main("I could...","normal","worriedCl")
             m "Do it!"
             call her_main("Well, alright...","open","base")
-            call nar(">Hermione gives your cock another kiss...")
 
-            hide screen hermione_main
-            hide screen blktone
-            call blkfade
-
-            call gen_chibi("handjob_kiss","desk","base")
             $ renpy.play('sounds/kiss.mp3')
-            with kissiris
-            call hide_blkfade
+            call hg_chibi_transition("hj_kiss", trans="kissiris")
             pause 3
 
-            call nar(">This time she lingers a moment longer...")
-            pause.8
+            call nar(">Hermione gives your cock another kiss...")
+            call ctc
 
-            call blkfade
-            call gen_chibi("handjob","desk","base")
-            call hide_blkfade
+            call nar(">This time she lingers a moment longer...")
             pause.5
 
-            call blktone
+            call hg_chibi_transition("hj", trans="d5")
+            pause.5
+
             m "Good... Now do it again and just stay there for a while."
             call her_main("You mean with my lips touching your... cock, [genie_name]?","open","base")
             call her_main("No, I will look stupid...","annoyed","worriedL")
@@ -362,45 +442,28 @@ label hg_handjob_1:
             call nar(">Hermione reaches down with her lips again...","start")
             call nar(">She touches the tip of your cock with her lips and keeps them there...","end")
 
-            hide screen hermione_main
-            hide screen blktone
-            call blkfade
-
-            call gen_chibi("handjob_kiss","desk","base")
             $ renpy.play('sounds/kiss.mp3')
-            with kissiris
-            call hide_blkfade
+            call hg_chibi_transition("hj_kiss", trans="kissiris")
             call ctc
 
-            call blktone
+            call bld
             m "Very good..."
             m "Now touch it with your tongue."
             call her_main("??!","open_tongue","closed")
             m "That's the last thing I will be asking of you today."
-            her "............"
+            call her_main("............")
             call nar(">You feel the tip of Hermione's tongue warily rubbing against the head of your cock...")
             m "Yes, like this..."
             call nar(">Hermione wiggles her tongue a little....")
             m "Yes... Good..."
 
-            call blkfade
-            hide screen hermione_main
-            call gen_chibi("handjob","desk","base")
-            hide screen blktone
-            call hide_blkfade
+            call hg_chibi_transition("hj", trans="d5")
             pause.8
 
-            show screen blktone
             call her_main("So, did it work? Are you ready to... finish, [genie_name]?","open","down")
             g4 "{size=-4}(Surprisingly, yes! I'm about to cum! Should I warn her?){/size}"
 
-            $ hg_T4_handjob_trigger = True
 
-            return
-
-
-
-label hg_handjob_1_cumming:
     menu:
         m "..."
         "-Give her a warning-":
@@ -408,28 +471,30 @@ label hg_handjob_1_cumming:
             call her_main("What? So soon?!","shock","wide")
             g4 "{size=+5}Yeah, you did a great job!!!{/size}"
             g4 "{size=+5}You little whore!!!{/size}"
-            hide screen hermione_main
-            call blkfade
-
-            call her_main("No, [genie_name], wait, I--","angry","base",ypos="head")
+            call her_main("No, [genie_name], wait, I--","angry","base")
             g4 "{size=+5}Too late for that, slut!{/size}"
-            call her_main("*whimper*","angry","down_raised",ypos="head")
-            ">Hermione suddenly slides your already dripping cock under her shirt..."
-            g4 "?!!"
-            ">The sensation of her warm skin against your cock overwhelms you and you begin to ejaculate like a mad-man."
-            call cum_block
-
+            call her_main("*whimper*","angry","down_raised")
             g4 "{size=+5}ARGH! YES!!!{/size}"
-            call her_main("!!!!!!!!!!!","shock","wide",ypos="head")
+            call her_main("!!!!!!!!!!!","shock","wide")
 
-            call gen_chibi("cumming_under_shirt","desk","base")
-            hide screen blktone
-            call hide_blkfade
             stop music fadeout 1.0
+            call hg_chibi_transition("hj_cumming_in_pause", trans="d5")
+            pause.5
+
+            call cum_block
+            call hg_chibi_transition("hj_cumming_in", trans="d5")
+            pause.8
+
+            show screen bld1
+            call nar(">Hermione suddenly slides your already dripping cock under her shirt...")
+            g4 "?!!"
+            call nar(">The sensation of her warm skin against your cock overwhelms you and you begin to ejaculate like a mad-man.")
             call ctc
 
+            call hg_chibi_transition("hj_cumming_in_pause", trans="d5")
+
             $ aftersperm = True
-            call her_main(".......................","angry","wide",xpos="right",ypos="base")
+            call her_main(".......................","angry","wide", xpos="right", ypos="base")
             m "..........................."
             call her_main(".......................","angry","wide")
             m "....................?"
@@ -437,17 +502,16 @@ label hg_handjob_1_cumming:
             m "...What the fuck just happened?"
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-
-            call her_main("I don't know... I suppose I just panicked...","angry","worriedCl",emote="05")
+            call her_main("I don't know... I suppose I just panicked...","angry","worriedCl", emote="05")
 
             if daytime:
-                call her_main("My classes are about to start and I didn't want you to ruin my uniform, [genie_name]...","angry","worriedCl",emote="05")
+                call her_main("My classes are about to start and I didn't want you to ruin my uniform, [genie_name]...","angry","worriedCl", emote="05")
                 m "So you'll go to classes like this now?"
                 m "With your clothes all sperm-soaked from the inside?"
                 call her_main("What choice do I have?","angry","down_raised")
                 call her_main("I can't just skip a class...")
             else:
-                call her_main("At this hour The \"Gryffindor\" common room will be full of people...","angry","worriedCl",emote="05")
+                call her_main("At this hour The \"Gryffindor\" common room will be full of people...","angry","worriedCl", emote="05")
                 call her_main("I didn't want to have to return there all covered in your... spunk, [genie_name].")
                 call her_main("Oh, it's getting pretty late...","angry","base")
                 m "So you will go like this, instead?"
@@ -471,55 +535,45 @@ label hg_handjob_1_cumming:
             call her_main("I... don't think so, [genie_name].","annoyed","annoyed")
             call her_main("I really need to go. Can I just get paid now?")
 
-            return
-
         "-Just start cumming-":
-
             with hpunch
             g4 "ARGH!"
-            call blkfade
-
-            call her_main("WHAT?!","shock","wide",ypos="head")
+            call her_main("WHAT?!","shock","wide")
             g4 "Take this!"
 
             call cum_block
+            call hg_chibi_transition("hj_cumming_on", trans="d9")
+            pause.8
 
+            call cum_block
+            call bld
             g4 "{size=+5}ARGH! YES!!!{/size}"
-            call her_main("!!!!!!!!!!!","shock","wide",ypos="head")
+            call her_main("!!!!!!!!!!!","shock","wide")
 
-            call gen_chibi("cumming_on_shirt","desk","base")
-            hide screen blktone
-            call hide_blkfade
+            call hg_chibi_transition("hj_cumming_on_pause", trans="d5")
             call ctc
-
-            $ aftersperm = True
-
-            call her_main(".......................","angry","wide",xpos="right",ypos="base")
-            call gen_chibi("cumming_on_shirt_pause")
-            m "Yes... I Feel so much better now..."
-            pause.5
 
             $ g_c_u_pic = "characters/hermione/chibis/handjob/sperm_on_21.png"
             $ u_sperm = "characters/hermione/face/auto_06.png"
             $ uni_sperm = True
+            $ aftersperm = True
 
-            call her_main("","soft","base",tears="soft")
-            pause.5
-            her ".........."
-            m "Well, I think that's about it..."
-            pause.2
+            call her_main(".......................","angry","wide", xpos="right", ypos="base")
+            m "Yes... I Feel so much better now..."
+            call hide_characters
+            show screen blkfade
+            with d5
 
-            hide screen hermione_main
-            hide screen chair_left
-            hide screen desk
-            call gen_chibi("hide")
-            call her_chibi("stand","desk","base")
-            show screen genie
+            call her_chibi("stand","mid","base")
+            call gen_chibi("stand","desk","base")
             hide screen bld1
+            hide screen blkfade
             with fade
             pause.8
 
-            call her_main("[genie_name]! What have you done?!","scream","worriedCl")
+            call her_main("..................","disgust","down", tears="soft")
+            m "Well, I think that's about it..."
+            call her_main("[genie_name]! What have you done?!","scream","worriedCl", trans="hpunch")
             m "What?"
 
             if d_flag_01: #If TRUE Genie promised to warn her.
@@ -546,36 +600,25 @@ label hg_handjob_1_cumming:
                     m "Nobody will even notice."
                     call her_main("...I would like to get paid now.","annoyed","annoyed")
 
-            return
+    jump end_hg_pf_handjob
 
 
 
 ### Third Handjob ###
 
-label hg_handjob_3:
-    hide screen hermione_main
-    hide screen bld1
-    call blkfade
-
+label hg_handjob_2:
     stop music fadeout 3.0
-    call her_main("Do you like it when I do it like this, [genie_name]?","grin","baseL",ypos="head")
+    call hg_chibi_transition("hj", trans="fade")
+    pause.8
+
+    call her_main("Do you like it when I do it like this, [genie_name]?","grin","baseL", ypos="head")
     g9 "Actually, yes! Very nice!"
+
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-
-    show screen chair_left
-    hide screen desk
-    show screen desk
-    call her_chibi("hide")
-    call gen_chibi("handjob","desk","base")
-
-    hide screen bld1
-    call hide_blkfade
-    call ctc
-
-    call blktone
-    m "Yes, yes, like that..."
+    with hpunch
+    g4 "{size=+5}Yes, yes, like that...{/size}"
     m "Hm... You are getting pretty good at this."
-    call her_main("Thank you, [genie_name].","base","happyCl",xpos="right",ypos="base")
+    call her_main("Thank you, [genie_name].","base","happyCl")
     call her_main("I figured the better I do this, the sooner it'll be over.")
     m "Hm..."
 
@@ -584,7 +627,7 @@ label hg_handjob_3:
         "\"What do you think of my cock?\"":
             call her_main("Huh?","open","base")
             call her_main("Oh, that's right...")
-            call her_main("I need to compliment your penis! I completely forgot about that!","angry","worriedCl",emote="05")
+            call her_main("I need to compliment your penis! I completely forgot about that!","angry","worriedCl", emote="05")
             m "Well, you don't have to--"
             call her_main("[genie_name], let me be honest with you...","upset","closed")
             m "Yes?"
@@ -607,7 +650,7 @@ label hg_handjob_3:
             m "OK, I think I've heard enough."
             call her_main("Too much?","angry","wink")
             m "Yeah, just a bit."
-            call her_main("Sorry...","angry","worriedCl",emote="05")
+            call her_main("Sorry...","angry","worriedCl", emote="05")
             m "No biggie. Just keep on stroking it."
             call her_main(".................","soft","ahegao")
             call nar(">Hermione keeps on stroking your cock.","start")
@@ -655,7 +698,7 @@ label hg_handjob_3:
             call her_main("Sort of... Well not really...")
             call her_main("I had a talk with the girls, and...","angry","wink")
             m "About handjobs?"
-            call her_main("Among other things...","smile","happyCl",emote="06")
+            call her_main("Among other things...","smile","happyCl", emote="06")
             m "So those girls of yours, they know a lot about such things?"
             call her_main("Actually, yes. I was surprised myself.","shock","wide")
             call her_main("All sorts of weird sexual things seem to be happening lately in our school...","grin","baseL")
@@ -682,10 +725,10 @@ label hg_handjob_3:
             with hpunch
             with kissiris
             g4 "Oh!!! By the great desert sands, yes!"
-            call her_main("Really? That good?","smile","happyCl",emote="06")
+            call her_main("Really? That good?","smile","happyCl", emote="06")
             call her_main("What if I keep doing this but stick my finger here and press a little...","base","down")
             g4 "[hermione_name], you are killing me!"
-            call her_main("Really? Really?!","smile","happyCl",emote="06")
+            call her_main("Really? Really?!","smile","happyCl", emote="06")
             call her_main("This is actually quite fun!")
             call her_main("Err... I mean...","angry","wink")
             call her_main("I am only doing this to help my house of course...")
@@ -696,6 +739,18 @@ label hg_handjob_3:
 
     m "Yes... Keep stroking it."
     call her_main("..............","angry","wink")
+
+    if hg_pf_handjob.points == 1:
+        jump hg_handjob_2_cumming
+    else:
+        jump hg_handjob_2_continue
+
+
+label hg_handjob_2_continue:
+    call hg_chibi_transition("hj", trans="d5")
+    call ctc
+
+    call bld
     m "Now I want you to say..."
 
     menu:
@@ -704,7 +759,7 @@ label hg_handjob_3:
             $ her_mood += 11
             call her_main("I do not!","angry","angry")
             m "I know. Just say it."
-            call her_main("My father? That's disgusting, [genie_name]!","angry","angry",emote="01")
+            call her_main("My father? That's disgusting, [genie_name]!","angry","angry", emote="01")
             m "Humour me."
             call her_main("...........","annoyed","annoyed")
             call her_main("Well...","open","down")
@@ -718,25 +773,29 @@ label hg_handjob_3:
             m "Heh... Nice."
             call her_main(".......","angry","down_raised")
             m "Well, this wasn't that hard, was--"
-            call her_main("I scream for my Mommy but she is still at work...","mad","worried",tears="soft")
+            call her_main("I scream for my Mommy but she is still at work...","mad","worried", tears="soft")
             m "Huh?"
             call her_main("My daddy takes me to my room...","normal","worriedCl")
             call her_main("He throws me on my bed!")
             call her_main("I cry \"No, daddy, please, I'm still a virgin!\"","scream","worriedCl")
-            call gen_chibi("handjob_pause")
+
+            call hg_chibi_transition("hj_pause", trans="d5")
+            pause.5
+
             call her_main("But He doesn't listen! He rips my panties off!","grin","dead")
-            call her_main("I beg him to stop! I scream and I scream!","angry","base",tears="soft")
+            call her_main("I beg him to stop! I scream and I scream!","angry","base", tears="soft")
             m "Uhm, [hermione_name]?"
-            call her_main("Yes?","angry","base",tears="soft")
+            call her_main("Yes?","angry","base", tears="soft")
             m "You are not stroking my cock anymore..."
-            call her_main("Oh, I am sorry, [genie_name].","grin","worriedCl",emote="05")
+            call her_main("Oh, I am sorry, [genie_name].","grin","worriedCl", emote="05")
             call her_main("I got lost in thought...")
-            call gen_chibi("handjob")
+
+            call hg_chibi_transition("hj", trans="d5")
+            pause.5
+
             call her_main("But everything I just said is not true of course!","open","base")
             call her_main("I never have fantasies like that!")
             m "Right."
-
-            return
 
         "{size=-4}\"Sometimes I get lonely and let my dog mount me.\"{/size}":
             call her_main("What?!","angry","wide")
@@ -756,8 +815,6 @@ label hg_handjob_3:
             call her_main("Because we don't even own a dog!","normal","frown")
             m "Fine, whatever, let's just move on then..."
 
-            return
-
         "{size=-4}\"-Manual user input-\"{/size}":
 
             # The phrase in the brackets is the text that the game will display to prompt
@@ -769,10 +826,16 @@ label hg_handjob_3:
             #  If the player can't be bothered to choose a name, then we
             #  choose a suitable one for them:
             if tmp_name == "":
-                $ tmp_name="I'm a whore."
-                call her_main("Hm...?","annoyed","worriedL")
-                call her_main("Should I just say \"I'm a whore\" as usual?")
-            if one_out_of_three == 1:
+                $ tmp_name="I'm a whore"
+                m "(...)"
+                call her_main("I could just call myself a \"Whore\" again, as usual...","annoyed","worriedL")
+                m "Yes. A great suggestion."
+                call her_main("...............","annoyed","baseL")
+                call her_main("[tmp_name]","base","base")
+                m "A bit louder..."
+                call her_main("[tmp_name]!!!","scream","angryCl")
+                g9 "He-he..."
+            elif one_out_of_three == 1:
                 call her_main("I don't want to say that...","annoyed","worriedL")
                 m "Oh, just do it, [hermione_name]."
                 call her_main("...........","annoyed","worriedL")
@@ -793,78 +856,87 @@ label hg_handjob_3:
                 call her_main("[tmp_name]","scream","angryCl")
                 g9 "He-he..."
 
-            return
+    jump hg_handjob_2_cumming
 
 
+label hg_handjob_2_cumming:
+    call hg_chibi_transition("hj", trans="d5")
+    pause.8
 
-label hg_handjob_3_cumming:
+    call bld
     m "Hm..."
     m "I love that thing you do with the palm of your hand!"
     call her_main("You noticed...?","angry","wink")
     call her_main("Shall I do it some more then?")
-    call blkfade
 
-    ">Hermione presses her palm against the tip of your pulsating cock and starts rubbing it very gently..."
+    call nar(">Hermione presses her palm against the tip of your pulsating cock and starts rubbing it very gently...")
     m "Oh yes!!!"
+
     stop music fadeout 1.0
     g4 "{size=-5}(I think this is it! Should I give her a waring?){/size}"
 
     menu:
         m "..."
-        "\"(Yes, I must warn her).\"":
+        "\"(Yes, I must warn her.)\"":
             g4 "I think I'm about to--"
-            ">Hermione swiftly pulls her shirt up..."
-            ">She then pushes your already dribbling cock against her belly and covers it up again..."
-            ">The sensation of her skin under your engorged cock almost makes you lightheaded..."
-            ">Hermione placed your cock a bit higher than you would expect..."
-            ">You can feel her incredibly soft tits rubbing against the tip of your cock..."
+            call hg_chibi_transition("hj_cumming_in_pause", trans="d5")
+            pause.8
+
+            call nar(">Hermione swiftly pulls her shirt up...","start")
+            ">She then pushes your already dribbling cock against her belly and covers it up again, placing your cock a bit higher than you would have expected..."
+            call nar(">You can feel her incredibly soft tits rubbing against the tip of your cock...","end")
 
             call cum_block
+            call hg_chibi_transition("hj_cumming_in", trans="d5")
+            pause.8
 
+            call bld
             g4 "{size=+5}ARGH! YES!!!{/size}"
 
-
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-
-            call her_main("!!!!!!!!!!!","shock","wide",ypos="head")
-
-            call gen_chibi("cumming_under_shirt")
-            hide screen blktone
-            call hide_blkfade
+            call her_main("!!!!!!!!!!!","shock","wide", ypos="head")
+            hide screen bld1
             call ctc
 
             $ aftersperm = True
 
+            call cum_block
             g4 "Argh! You whore!"
-            show screen blktone
-            call her_main("Yes, [genie_name]! Just let it out!","base","down",xpos="right",ypos="base")
+            call nar(">The sensation of her skin under your engorged cock almost makes you lightheaded...")
+            call her_main("Yes, [genie_name]! Just let it out!","base","down", xpos="right", ypos="base")
             g4 "Argh! Fucking slut!"
             call her_main("Ah!! It's so hot!","smile","glance")
             call her_main("And it's getting everywhere! So much of it!","soft","ahegao")
             call her_main("...[genie_name].")
             g4 "Argh!!!"
             m "............"
+            call hg_chibi_transition("hj_cumming_in_pause", trans="d5")
+            pause.8
+
+            call bld
             m "I think I am done..."
             call her_main("Ah, alright...","angry","wink")
             call her_main("..............","base","down")
             call her_main("You came so much this time, [genie_name]...","soft","ahegao")
             call ctc
-            call blkfade
+
+            call hide_characters
+            show screen blkfade
+            with d5
 
             ">Hermione releases your still pulsating cock."
 
-            hide screen chair_left
-            hide screen desk
             call her_chibi("stand","desk","base")
-            call gen_chibi("hide")
-            show screen genie
-            show screen bld1
+            call gen_chibi("sit_behind_desk")
+            hide screen bld1
             hide screen blkfade
+            with fade
+            pause.8
 
             if daytime:
-                call her_main("Well, I think I'd better go now... my Classes are about to start.","base","base",xpos="right",ypos="base")
+                call her_main("Well, I think I'd better go now... my Classes are about to start.","base","base", xpos="right", ypos="base")
             else:
-                call her_main("Well, I think I'd better go now...  It's getting late.","base","base",xpos="right",ypos="base")
+                call her_main("Well, I think I'd better go now...  It's getting late.","base","base", xpos="right", ypos="base")
 
             m "Will you be alright in those clothes?"
             call her_main("What?","open","down")
@@ -874,7 +946,7 @@ label hg_handjob_3_cumming:
             call her_main("And swallow your hot spunk like that, [genie_name]?","angry","wink")
             m "Would keep your clothes clean."
 
-            if her_whoring <= 15:
+            if hg_T5_blowjob_trigger == False: # Hasn't done blowjobs yet.
                 call her_main("With all due respect [genie_name]...","upset","closed")
                 call her_main("Not for the meagre 45 points...","angry","wink")
                 call her_main("Speaking of which. Can I get may payment now please?")
@@ -882,52 +954,48 @@ label hg_handjob_3_cumming:
                 call her_main("Maybe next time...","angry","wink")
                 call her_main("Can I get may payment now please?","angry","wink")
 
-            return
-
-        "\"(Nah... no need).\"":
+        "\"(Nah... no need.)\"":
             g4 "Here! Take this, whore!"
-            with hpunch
-            g4 "ARGH!"
-            call blkfade
 
-            call her_main("WHAT?!","shock","wide",ypos="head")
-            g4 "Take this!"
             call cum_block
+            call hg_chibi_transition("hj_cumming_out", trans="d5")
+            pause.8
+            g4 "ARGH!"
 
+            call her_main("WHAT?!","shock","wide", ypos="head")
+            g4 "Take this!"
+
+            call cum_block
             g4 "{size=+5}ARGH! YES!!!{/size}"
-            call her_main("!!!!!!!!!!!","shock","wide",ypos="head")
 
-            call gen_chibi("cumming_under_shirt")
-
+            call play_music("chipper_doodle") # HERMIONE'S THEME.
+            call her_main("!!!!!!!!!!!","shock","wide")
             hide screen bld1
-            call hide_blkfade
             call ctc
 
             $ aftersperm = True
-            call her_main(".......................","angry","wide",ypos="head")
-            call gen_chibi("cumming_on_shirt_pause")
-            m "Yes... I Feel so much better now..."
-            call ctc
+            call her_main(".......................","angry","wide")
 
-            hide screen hermione_main
-            with d3
+            call hg_chibi_transition("hj_cumming_out_pause", trans="d5")
+            pause.8
+
+            call bld
+            m "Yes... I Feel so much better now..."
 
             $ u_sperm = "characters/hermione/face/auto_06.png"
             $ uni_sperm = True
 
-            call her_main("","soft","base",tears="soft",xpos="right",ypos="base")
+            call her_chibi("stand","mid","base")
+            call gen_chibi("stand","mid","base")
+
+            call her_main("","soft","base", tears="soft", xpos="right", ypos="base", trans="fade")
             call ctc
+
             her ".........."
             m "Well, I think that's about it..."
-            call blkfade
 
-            call her_chibi("stand","desk","base")
-            call gen_chibi("sit_behind_desk")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-
-            hide screen blkfade
             call her_main("[genie_name]! What have you done?","scream","worriedCl")
-
             m "What?"
             call her_main("You came all over me, [genie_name]...","scream","worriedCl")
             call her_main("What a mess...","angry","down_raised")
@@ -941,117 +1009,59 @@ label hg_handjob_3_cumming:
             call her_main("I will just wipe it off and hope that nobody will notice...","grin","dead")
             call her_main("Can I get my payment now?","angry","wink")
 
-            return
+        "\"(Cum in her mouth!)\"" if hg_T5_blowjob_trigger == True: # Has done blowjobs already.
+            call bld
+            m "Open your mouth, [hermione_name]!"
+            call her_main("What?!","open","wide", ypos="head")
+            g4 "Open your mouth, or I'll have to cover your clothes!"
+            call her_main(".....................","upset","worriedCl")
 
+            call hg_chibi_transition("hj_kiss", trans="kissiris")
+            pause.8
 
-label hg_handjob_4_cumming:
-    ">Hermione swiftly puts the tip of your cock on her lips, as if to give it a kiss..."
-    ">The simple gesture makes your dick practically explode with pleasure and waves of cum."
-    call cum_block
+            call nar(">Hermione swiftly puts the tip of your cock on her lips, as if to give it a kiss...","start")
+            call nar(">The simple gesture makes your dick practically explode with pleasure and waves of cum.","end")
 
-    g4 "{size=+5}ARGH! YES!!!{/size}"
-    call gen_chibi("handjob_kiss","desk","base")
+            call cum_block
+            g4 "{size=+5}ARGH! YES!!!{/size}"
+            call her_main("*Gulp!-Gulp!-Gulp!*","full","wide")
 
-    hide screen hermione_main
-    hide screen bld1
-    call hide_blkfade
-    call ctc
+            call cum_block
+            g4 "Argh! You little whore!"
+            g4 "Yes, you slut! Drink my cum! Drink all of it!"
+            call her_main("*Gulp!-Gulp!-Gulp!*","full_cum","worried")
+            g4 "Argh... Yes!"
+            call nar(">You notice that Hermione is barely able to keep up with the amount of hot cum your cock is pumping into her mouth.")
+            call her_main("*Gulp!-Gulp!-Gulp!*","full_cum","worriedCl")
+            g4 "Ah..."
+            g4 "This feels great..."
+            call her_main("*Gulp!* *Gulp!* *Gulp!*","full_cum","ahegao")
+            m "I think that's it, [hermione_name]..."
+            m "You can let go now..."
 
-    call her_main("*Gulp!-Gulp!-Gulp!*",ypos="head")
-    g4 "Argh! You little whore!"
-    g4 "Yes, you slut! Drink my cum! Drink all of it!"
-    call her_main("*Gulp!-Gulp!-Gulp!*",ypos="head")
-    g4 "Argh... Yes!"
-    call nar(">You notice that Hermione is barely able to keep up with the amount of hot cum your cock is pumping into her mouth.")
-    call her_main("*Gulp!-Gulp!-Gulp!*",ypos="head")
-    g4 "Ah..."
-    g4 "This feels great..."
-    call her_main("*Gulp!* *Gulp!* *Gulp!*",ypos="head")
-    m "I think that's it, [hermione_name]..."
-    m "You can let go now..."
-    call blkfade
+            call her_chibi("stand","desk","base")
+            call gen_chibi("sit_behind_desk")
 
-    hide screen chair_left
-    hide screen desk
-    call her_chibi("stand","desk","base")
-    call gen_chibi("hide")
-    show screen genie
-    with d3
+            call her_main("","full_cum","dead", xpos="right", ypos="base", trans="fade")
+            call ctc
 
-    call her_main("","full_cum","dead",xpos="mid",xpos="base")
-    call ctc
-    her "........................................."
-    call her_main("GULP!!!","cum","worriedCl")
-    call her_main("Gu-ah-a...","open_wide_tongue","down_raised")
+            her "........................................."
+            call her_main("GULP!!!","cum","worriedCl")
+            call her_main("Gu-ah-a...","open_wide_tongue","down_raised")
+            call her_main("I swallowed it all, [genie_name]!","grin","dead")
+            m "Good girl..."
+            call her_main("At one point I thought I was going to choke...","open","dead")
+            call her_main("There was so much of it...","soft","dead")
+            m "Well, the deed is done, and your uniform is perfectly clean."
+            call her_main("Yes! I know! It's So much easier this way!","base","down")
 
-    hide screen blkfade
-    call her_main(trans="fade",xpos="right",xpos="base")
-    pause.5
+            if daytime:
+                call her_main("I can just go to classes now as if nothing ever happened.","angry","wink")
+            else:
+                call her_main("I can just go and spend some time with the guys in the common room now and nobody will know...","base","down")
 
-    show screen bld1
-    call her_main("I swallowed it all, [genie_name]!","grin","dead")
-    m "Good girl..."
-    call her_main("At one point I thought I was going to choke...","grin","dead")
-    her "There was so much of it..."
-    m "Well, the deed is done, and your uniform is perfectly clean."
-    call her_main("Yes! I know! It's So much easier this way!","base","down")
+            m "Yes... With your belly full of semen..."
+            call her_main("[genie_name]!","angry","base")
+            her "...Can I just get paid now, please, [genie_name]?"
 
-    if daytime:
-        call her_main("I can just go to classes now as if nothing ever happened.","angry","wink")
-    else:
-        call her_main("I can just go and spend some time with the guys in the common room now and nobody will know...","base","down")
-
-    m "Yes... With your belly full of semen..."
-    call her_main("[genie_name]!","angry","base")
-    her "...Can I just get paid now, please, [genie_name]?"
-
-    return
-
-
-
-### END BLOWJOB ###
-
-label end_hg_handjob:
-    call blkfade
-
-    $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
-
-    call set_her_action("none","update") #Resets clothing.
-
-    hide screen hermione_main
-    hide screen hermione_ass
-    hide screen jerking_off_01
-    hide screen groping_01
-    hide screen groping_02
-    hide screen groping_naked_tits
-
-    call gen_chibi("sit_behind_desk")
-    call her_chibi("stand","desk","base")
-
-    hide screen blktone
-    hide screen blkfade
-    call her_main(trans="fade",xpos="right",ypos="base")
-
-    if her_whoring < 24:
-        m "Yes, [hermione_name]. [current_payout] to \"Gryffindor\"."
-        $ gryffindor += current_payout
-
-    call her_main("Thank you, [genie_name]...","soft","baseL")
-
-    call her_walk(action="leave", speed=2.5)
-
-    $ hg_pf_handjob.points += 1
-
-    if her_whoring < 15:
-        $ her_whoring +=1
-
-    if her_whoring >= 12 and her_whoring < 15:
-        $ hg_pf_handjob.level = 1 #Event hearts level (0-3)
-
-    if her_whoring >= 15 and her_whoring < 18:
-        $ hg_pf_handjob.level = 2 #Event hearts level (0-3)
-
-    # Stats
-    $ hg_pf_handjob.counter += 1
-
-    jump end_hermione_event
+    jump end_hg_pf_handjob

@@ -25,12 +25,26 @@ label store_items_init:
         $ anal_beads_ITEM        = item_class(id="anal_beads", name="Anal beads",                cost=65, type="toy", image="item_anal_beads", description="Anal beads engraved with a strange inscription \"Property of L.C.\".")
         #$ _ITEM = item_class(id="", name="", cost=50, type="", image="", description="")
 
+    if not hasattr(renpy.store,'firewhisky_ITEM'):
+        $ wine_ITEM              = item_class(id="wine", name="Wine", cost=60, type="drink", image="item_wine", description="Add description. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
+        $ firewhisky_ITEM       = item_class(id="firewhisky", name="firewhisky", cost=80, unlockable=True ,type="drink", image="item_wine", description="Add description. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
+
+    if game_difficulty <= 1:
+        $ wine_ITEM.cost = 40
+        $ firewhisky_ITEM.cost = 60
+    elif game_difficulty == 2:
+        $ wine_ITEM.cost = 60
+        $ firewhisky_ITEM.cost = 80
+    else:
+        $ wine_ITEM.cost = 140
+        $ firewhisky_ITEM.cost = 160
+
     $ candy_gift_list = [
         lollipop_ITEM, chocolate_ITEM,
     ]
 
     $ drink_gift_list = [
-        butterbeer_ITEM,
+        butterbeer_ITEM, wine_ITEM, firewhisky_ITEM
     ]
 
     $ mag_gift_list = [

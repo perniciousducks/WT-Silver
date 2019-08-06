@@ -1945,7 +1945,7 @@ label end_hg_blowjob:
 
     call her_walk(action="leave", speed=2.5)
 
-    if her_whoring < 18:
+    if her_whoring < 21:
         $ her_whoring +=1
 
     $ hg_pf_blowjob.points += 1

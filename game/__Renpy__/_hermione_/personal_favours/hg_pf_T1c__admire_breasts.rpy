@@ -65,19 +65,21 @@ label hg_pf_admire_breasts:
     # Hermione leaves
     call her_walk(xpos="door", ypos="base", speed=3)
 
-    if her_tier <= 2:
-        call her_main("(How humiliating... What have I become...?)","disgust","down_raised", cheeks="blush", ypos="head")
-    elif her_tier <= 5:
+    if her_tier <= 1 and hg_pf_admire_breasts.points == 1:
         call her_main("........................","disgust","down_raised", cheeks="blush", ypos="head")
+    elif her_tier <= 2 and hg_pf_admire_breasts.points == 1:
+        call her_main("(How humiliating... What have I become...?)","disgust","down_raised", cheeks="blush", ypos="head")
+    elif her_tier <= 2:
+        call her_main("........................","disgust","down_raised", cheeks="blush", ypos="head")
+    elif her_tier <= 3 and hg_pf_admire_breasts.points == 1:
+        call her_main("{size=-5}(That was so humiliating...){/size}","base","ahegao_raised", cheeks="blush", ypos="head")
+        call her_main("{size=-5}(No, Hermione, you silly girl!){/size}","angry","angry", cheeks="blush", ypos="head")
+        call her_main("{size=-5}(We are doing this to protect the honour of our house!){/size}","angry","angry", cheeks="blush", ypos="head")
+        call her_main(".................................","base","ahegao_raised", cheeks="blush", ypos="head")
     elif aftersperm:
         call her_main("{size=-5}(That was so exhilarating...){/size}","base","ahegao_raised", cheeks="blush", ypos="head")
         call her_main("{size=-5}(I wonder if anyone will notice my uniform!){/size}","open","ahegao_raised", cheeks="blush", ypos="head")
         call her_main("{size=-5}(What will people think of me?){/size}","open","ahegao_raised", cheeks="blush", ypos="head")
-        call her_main(".................................","base","ahegao_raised", cheeks="blush", ypos="head")
-    else:
-        call her_main("{size=-5}(That was so humiliating...){/size}","base","ahegao_raised", cheeks="blush", ypos="head")
-        call her_main("{size=-5}(No, Hermione, you silly girl!){/size}","angry","angry", cheeks="blush", ypos="head")
-        call her_main("{size=-5}(We are doing this to protect the honour of our house!){/size}","angry","angry", cheeks="blush", ypos="head")
         call her_main(".................................","base","ahegao_raised", cheeks="blush", ypos="head")
 
     call her_chibi(action="leave")
@@ -85,7 +87,7 @@ label hg_pf_admire_breasts:
 
     # Increase level
     if her_tier == 1:
-        if her_whoring < 6: # Points til 6
+        if her_whoring < 3: # Points til 3
             $ her_whoring += 1
 
     elif her_tier == 2:

@@ -56,7 +56,7 @@ screen ch_potion():
 ### HERMIONE CHIBI FAVOUR SCREENS (with Genie or Snape,...) ###
 
 ### GROPING ###
-screen groping_01(): # Grope Ass fully clothed - Flip = True (facing door)
+screen groping_01: # Grope Ass fully clothed - Flip = True (facing door)
     tag favor
     if hermione_wear_top == False and hermione_wear_bottom == False:
         add "characters/hermione/chibis/fingering/02.png" at Position(xpos=-60, ypos=10)
@@ -128,6 +128,67 @@ screen genie_and_tits_01(): #Genie sitting, looking ar naked tits. Hermione stan
 
 
 
+### Admire Ass ###
+screen hermione_chibi_ass(ani=None):
+    tag favor
+    if ani in ["admire_ass"]:
+        if hermione_wear_top and hermione_wear_bottom:
+            add "characters/hermione/chibis/fingering/01.png" at Position(xpos=-60, ypos=10)
+        else: # Nude
+            add "characters/hermione/chibis/fingering/02.png" at Position(xpos=-60, ypos=10)
+        add "fingering_blinking" at Position(xpos=-60, ypos=10)
+    zorder desk_zorder
+
+
+
+### Handjob ###
+screen hermione_chibi_hj(ani=None, xpos=230, ypos=0):
+    tag favor
+
+    $ chibi_xpos = xpos
+    $ chibi_ypos = ypos
+
+    if ani in ["hj"]:
+        add "handjob_ani" xpos chibi_xpos ypos chibi_ypos
+    elif ani in ["hj_pause"]:
+        add "characters/hermione/chibis/handjob/01.png" xpos chibi_xpos ypos chibi_ypos
+    elif ani in ["hj_kiss"]:
+        add "kiss_ani" xpos chibi_xpos ypos chibi_ypos
+
+    elif ani in ["hj_cumming_on"]:
+        add "on_shirt_cum_ani" xpos chibi_xpos ypos chibi_ypos
+    elif ani in ["hj_cumming_on_pause"]:
+        add "characters/hermione/chibis/handjob/sperm_on_21.png" xpos chibi_xpos ypos chibi_ypos
+    elif ani in ["hj_cumming_in"]:
+        add "undershirt_cum_ani" xpos chibi_xpos ypos chibi_ypos
+    elif ani in ["hj_cumming_in_pause"]:
+        add "characters/hermione/chibis/handjob/sperm_under_12.png" xpos chibi_xpos ypos chibi_ypos
+    zorder chibi_zorder
+
+
+
+### Blowjob ###
+screen hermione_chibi_bj(ani=None): # x-10 y10
+    tag favor
+    if ani in ["bj"]:
+        add "blowjob_ani" at Position(xpos=-10, ypos=10)
+    elif ani in ["bj_pause"]:
+        add "hand_ani" at Position(xpos=-10, ypos=10)
+
+    elif ani in ["bj_cumming_in"]:
+        add "cum_in_mouth_ani" at Position(xpos=-10, ypos=10)
+    elif ani in ["bj_cumming_out"]:
+        add "cum_on_face_ani" at Position(xpos=-10, ypos=10)
+    elif ani in ["bj_cumming_out_blink"]:
+        add "cum_on_face_blink_ani" at Position(xpos=-10, ypos=10)
+
+    else:
+        add "blowjob_ani" at Position(xpos=-10, ypos=10)
+
+    zorder desk_zorder
+
+
+
 ### Sex ###
 screen hermione_chibi_sex(ani=None): #x-70 y10
     tag favor
@@ -151,6 +212,7 @@ screen hermione_chibi_sex(ani=None): #x-70 y10
 
     else:
         add "sex_ani" at Position(xpos=-70, ypos=10)
+
     zorder desk_zorder
 
 

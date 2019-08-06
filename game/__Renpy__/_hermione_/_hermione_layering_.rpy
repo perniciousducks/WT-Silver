@@ -700,7 +700,7 @@ screen hermione_ass():
     add "characters/hermione/body/ass/hermione_ass_01.png" xpos 500 ypos 0 zoom (1.0/hermione_scaleratio)
     if hermione_ass_cum:
         add "characters/hermione/body/ass/ass_cum_01.png" xpos 500 ypos 0 zoom (1.0/hermione_scaleratio)
-    zorder hermione_zorder
+    zorder 5
 
 screen hermione_clone():
     tag hermione_clone

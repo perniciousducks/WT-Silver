@@ -63,7 +63,7 @@ label hg_pf_strip:
             $ her_whoring += 1
 
     if her_tier == 4:
-        if her_whoring < 15: # Points til 15
+        if her_whoring < 18: # Points til 18
             $ her_whoring += 1
 
     jump end_hermione_event

@@ -3,6 +3,7 @@ label start_wt:
     $ gold = 0
     $ rum_times = 0 # Counts how many times have you rummaged the cupboard.
     $ current_payout = 0
+    $ tooltip = None
 
     ### HERMIONE_MAIN SCREN FLAGS ###
     $ no_blinking = False #When True - blinking animation is not displayed.
@@ -72,6 +73,8 @@ label start_wt:
     $ menu_x = 0.5
     $ menu_y = 0.75
 
+    if not renpy.variant('android'):
+        show screen mouse_tooltip
     label choose_your_difficulty:
     menu:
         "-Play with easy difficulty-":
@@ -296,19 +299,22 @@ label start_wt:
     $ show_weather()
 
     call room("main_room")
-    call gen_chibi("sit_behind_desk")
-    pause.1
+    call gen_chibi("hide")
+    show screen dumbledore
     hide screen blkfade
     with d3
+    pause.1
 
-    call teleport("desk")
+    call teleport("desk", poof_label="swap_dumb_genie")
 
     call reset_menu_position
 
     jump day_start
 
-
-
+label swap_dumb_genie:
+    hide screen dumbledore
+    call gen_chibi("sit_behind_desk")
+    return
 
 # First event in the game. Gennie finds himself at the desk.
 label genie_intro_E1:

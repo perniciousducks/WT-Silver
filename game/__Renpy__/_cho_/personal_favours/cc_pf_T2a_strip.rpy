@@ -84,7 +84,7 @@ label cc_pf_strip_T1_intro_E1:
     g9 "Let me see it!"
 
     # Cho stays reluctant.
-    call cho_main("Is there no other way I could repay the favor?","annoyed","narrow","sad","mid")
+    call cho_main("Is there no other way I could repay the favour?","annoyed","narrow","sad","mid")
     m "Well, yes- Several.{w} But we'll get to those later..."
     call cho_main("Later, Sir?","soft","base","raised","mid")
     g4 "Girl, I wouldn't be asking you this if it wasn't absolutely necessary for your training!"
@@ -134,9 +134,9 @@ label cc_pf_strip_T1_intro_E1:
             m "Her?!"
             call cho_main("Madame Hooch, Sir.","soft","narrow","sad","mid")
             m "Ah, the old, gray haired lady..."
-            call cho_main("Yes, she's been eying me a lot lately...","quiver","base","sad","downR")
+            call cho_main("Yes, she's been eyeing me a lot lately...","quiver","base","sad","downR")
             call cho_main("Even more so after our recent game against Hufflepuff. I wonder why...","horny","narrow","sad","R")
-            g9 "I can't blame her... Your body is very plasant to look at!"
+            g9 "I can't blame her... Your body is very pleasant to look at!"
             call cho_main("Thank you, Sir.","base","base","base","mid")
 
         "\"You have marvelous abs!\"":
@@ -191,7 +191,7 @@ label cc_pf_strip_T1_intro_E1:
             m "Besides, jealousy is quite unbecoming of a young witch like yourself..."
             call cho_main("But she doesn't even do work-outs!","angry","narrow","angry","downR")
             m "Let's just forget about her, shall we?"
-            m "And continute where we left off..."
+            m "And continue where we left off..."
             call cho_main("And where would that be?","annoyed","narrow","angry","mid")
             m "Your Quidditch training, Miss Chang."
             call cho_main("I'm not sure I want to after what you've just said...","annoyed","narrow","angry","R")
@@ -412,7 +412,7 @@ label cc_pf_strip_T1_intro_E2:
             m "Including stripping?"
             call cho_main("Including bloody stripping!","scream","closed","angry","mid", trans="hpunch")
             call cho_main("","annoyed","narrow","angry","mid")
-            m "To my defense. I got some mixed messages from you earlier..."
+            m "To my defence. I got some mixed messages from you earlier..."
             call cho_main("(...)","annoyed","narrow","angry","R") # Annoyed
             call play_music("stop")
             m "Very well then..."
@@ -1375,7 +1375,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("Because it is.","smile","narrow","angry","mid")
             call her_main("Not to mention that you have even fever curves than some of the boys I know...","grin","angry")
             call cho_main("","annoyed","narrow","angry","mid")
-            call her_main("Maybe once your Quidditch endeavors all fail, you can apply for a profession to model male underwear...","soft","closed")
+            call her_main("Maybe once your Quidditch endeavours all fail, you can apply for a profession to model male underwear...","soft","closed")
             call cho_main("I wonder where you're getting \"your\" undergarments from...","soft","closed","base","mid")
             call cho_main("Stealing them from Madam Pomfrey, are you?","smile","narrow","angry","mid")
             call her_main("I do not!!!","open","wide")

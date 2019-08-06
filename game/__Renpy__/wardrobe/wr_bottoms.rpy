@@ -8,9 +8,6 @@ label equip_bottom:
     #Luna
     if active_girl == "luna":
         jump equip_lun_bottom
-    #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_bottom
     #Susan
     if active_girl == "susan":
         jump equip_sus_bottom
@@ -680,12 +677,6 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
 label equip_lun_bottom:
 
     call set_lun_bottom(skirt_choice)
-
-    jump return_to_wardrobe
-
-### Equip Astoria's Bottom ###
-label equip_ast_bottom:
-    call set_ast_bottom(skirt_choice)
 
     jump return_to_wardrobe
 

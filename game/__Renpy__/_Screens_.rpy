@@ -97,8 +97,8 @@ $ width_offset = 140
 
 
 
-screen desk(): #Desk only!
-    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
+screen desk(xposistion=360): #Desk only!
+    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=xposistion, ypos=330, xanchor="center", yanchor="center")
     zorder 2
 
 screen chair_left():
@@ -226,20 +226,7 @@ label unlock_clothing(text="",item=None):
     hide screen blktone5
     with d3
 
-    $ item.unlocked = True
-    #
-    # New outfit system compatibility
-    #
-    #
-    python:
-        try:
-            item.unlock(True)
-        except:
-            pass
-        try:
-            outfit_linking[item.id].unlock(True)
-        except:
-            pass
+    $ unlock_clothing_compat(item)
 
     call reset_menu_position
 
@@ -372,7 +359,7 @@ screen ch_hotdog():
 
 
 
-label teleport(position=None,effect=True):
+label teleport(position=None,effect=True,poof_label=None):
     if position == "genie":
         $ teleport_xpos = gen_chibi_xpos+75
         $ teleport_ypos = gen_chibi_ypos-15
@@ -409,6 +396,8 @@ label teleport(position=None,effect=True):
     #stop music fadeout 1
 
     hide screen heal_animation
+    if poof_label != None:
+        $ renpy.call(poof_label)
     show screen teleport_animation
     with d5
 

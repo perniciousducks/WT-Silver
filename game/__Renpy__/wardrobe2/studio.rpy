@@ -69,6 +69,17 @@ label studio(studio_return, studio_char):
     $ studio_bg_list = ["wall_day", "castle", "forest", "highlight", "versus", "main_room_day", "main_room_night", "corridor", "custom"]
     $ studio_bg_overlay_list = [None, "curtains", "card", "g_bottom", "g_left", "g_circular"]
     
+    $ studio_outfit_saves = {"cho": cho_outfit_last, "tonks": tonks_outfit_last, "astoria": astoria_outfit_last}
+    
+    if studio_image_eyebrows > len(studio_eyebrows_list):
+        $ studio_image_eyebrows = 0
+    if studio_image_eyes > len(studio_eyes_list):
+        $ studio_image_eyes = 0
+    if studio_image_pupils > len(studio_pupils_list):
+        $ studio_image_pupils = 0
+    if studio_image_mouth > len(studio_mouth_list):
+        $ studio_image_mouth = 0
+    
     $ char_active.expression(eyebrows=studio_eyebrows_list[studio_image_eyebrows][:-4], eyes=studio_eyes_list[studio_image_eyes][:-4], pupils=studio_pupils_list[studio_image_pupils][:-4], mouth=studio_mouth_list[studio_image_mouth][:-4])
     
     $ studio_hide = False
@@ -90,17 +101,17 @@ label studio(studio_return, studio_char):
         $ renpy.pause(0.1, hard=True)
         $ item_to_export.outfit_export(True, txt_filename)
         $ studio_hide = False
-        $ char_active.equip(cho_outfit_last)
+        $ char_active.equip(studio_outfit_saves.get(active_girl))
         hide screen studio
         call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
         call expression 't_wardrobe' pass (return_label=studio_return, char_label=studio_char)
     elif _return == "cancel":
-        $ char_active.equip(cho_outfit_last)
+        $ char_active.equip(studio_outfit_saves.get(active_girl))
         call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
         call expression 't_wardrobe' pass (return_label=studio_return, char_label=studio_char)
     elif _return[0] == "body":
-        $ cho_outfit_last.save()
-        $ char_active.equip(cho_outfit_last)
+        $ studio_outfit_saves.get(active_girl).save()
+        $ char_active.equip(studio_outfit_saves.get(active_girl))
         $ studio_image_body = _return[1]
     elif _return[0] == "eyebrows":
         if _return[1] == "inc":
@@ -237,9 +248,9 @@ screen studio():
         drag_offscreen True
         xpos 160 ypos -75
         if studio_image_body:
-            add char_active.get_image() zoom get_zoom(cho_class.get_image(), int(studio_image_xx*studio_image_zoom), int(studio_image_yy*studio_image_zoom)) xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
+            add char_active.get_image() zoom get_zoom(char_active.get_image(), int(studio_image_xx*studio_image_zoom), int(studio_image_yy*studio_image_zoom)) xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
         else:
-            add cho_outfit_last.get_image() zoom get_zoom(cho_class.get_image(), int(studio_image_xx*studio_image_zoom), int(studio_image_yy*studio_image_zoom)) xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
+            add studio_outfit_saves.get(active_girl).get_image() zoom get_zoom(char_active.get_image(), int(studio_image_xx*studio_image_zoom), int(studio_image_yy*studio_image_zoom)) xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
         
     if not studio_bg_overlay_list[studio_room_overlay2] == None:
         if studio_room_overlay2_blur > 0.0:

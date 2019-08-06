@@ -71,8 +71,7 @@ label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
     show screen susan_main
     show screen bld1
 
-    #Transitions
-    call transition(trans)
+    call transition(trans, True)
 
     if text != "":
         $ renpy.say(sus, text)

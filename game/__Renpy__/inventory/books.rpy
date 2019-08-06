@@ -476,7 +476,7 @@ label read_scroll:
                 if scroll in scroll_list_C:
                     renpy.say(sil,comment)
                 else:
-                    renpy.say(s,comment)
+                    renpy.say("\"Creator\"",comment)
     call ctc
 
     hide screen gift

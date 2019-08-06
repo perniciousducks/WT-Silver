@@ -89,10 +89,8 @@ label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=Non
 
     show screen bld1 #Should be active anyways.
 
-    #Transitions
-    call transition(trans)
+    call transition(trans, True)
 
-    #Text
     if text != "":
         $ renpy.say(her, text)
 
@@ -119,8 +117,7 @@ label her_kneel(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=No
 
     show screen bld1 #Should be active anyways.
 
-    #Transitions
-    call transition(trans)
+    call transition(trans, True)
 
     #Text
     if text != "":

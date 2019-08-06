@@ -12,9 +12,6 @@ label change_hair:
     #Luna
     if active_girl == "luna":
         jump change_lun_hair
-    #Astoria
-    if active_girl == "astoria":
-        jump change_ast_hair
     #Susan
     if active_girl == "susan":
         jump change_sus_hair
@@ -431,11 +428,6 @@ label compliment_her_hair_style:
 
 label change_lun_hair:
     call set_lun_hair(hair_style_choice, hair_color_choice)
-
-    jump return_to_wardrobe
-
-label change_ast_hair:
-    call set_ast_hair(hair_style_choice, hair_color_choice)
 
     jump return_to_wardrobe
 

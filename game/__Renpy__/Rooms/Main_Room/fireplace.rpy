@@ -1,19 +1,17 @@
 label fireplace:
-    if day == 1:
-        menu:
-            "-Examine the fireplace-" if not fireplace_examined:
-                $ fireplace_examined = True
-                hide screen genie
-                call gen_chibi("stand","mid","base")
-                show screen chair_left
-                show screen desk
-                with Dissolve(0.5)
-                m "Hm... Looks like an ordinary fireplace..."
-                show screen genie
-                hide screen genie_stand
-                hide screen chair_left
-                hide screen desk
-                with Dissolve(0.5)
+    if not fireplace_examined:
+        $ fireplace_examined = True
+        hide screen genie
+        call gen_chibi("stand","mid","base")
+        show screen chair_left #Empty chair near the desk.
+        show screen desk
+        with Dissolve(0.5)
+        m "Hm... Looks like an ordinary fireplace..."
+        show screen genie
+        hide screen genie_stand
+        hide screen chair_left #Empty chair near the desk.
+        hide screen desk
+        with Dissolve(0.5)
         jump day_main_menu
 
     if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):

@@ -187,7 +187,8 @@ transform rotate_circular():
 label achievement_menu(xx=150, yy=90):
 
     $ hide_transitions = True
-
+    $ renpy.suspend_rollback(True)
+    
     # Styling
     if daytime:
         #$ btn_hover = "#e3ba7140"
@@ -210,6 +211,7 @@ label achievement_menu(xx=150, yy=90):
     $ menu_items_length = len(menu_items)
 
     label achievement_menu_after_init:
+    $ renpy.block_rollback()
 
     show screen bld1
     show screen achievement_menu(xx, yy)
@@ -222,7 +224,10 @@ label achievement_menu(xx=150, yy=90):
     hide screen achievement_menuitem
 
     if _return[0] == "select":
-        $ current_item = _return[1]
+        if current_item == _return[1]:
+            $ current_item = None
+        else:
+            $ current_item = _return[1]
     elif _return[0] == "category":
         $ current_category = _return[1]
         if current_category == "All":
@@ -266,6 +271,7 @@ label achievement_menu(xx=150, yy=90):
         $ current_item = None
     else:
         $ hide_transitions = False
+        $ renpy.suspend_rollback(False)
         jump day_main_menu
 
     jump achievement_menu_after_init
@@ -310,7 +316,8 @@ screen achievement_menuitem(xx, yy):
         pos (xx+217, yy-53)
         xsize 560
         ysize 507
-
+        
+        add "interface/achievements/star.png"
         add "interface/achievements/"+interface_color+"/panel.png"
 
         text "Achievements" size 22 xalign 0.5 ypos 65

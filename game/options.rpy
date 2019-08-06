@@ -13,7 +13,7 @@ define config.gc_thresholds = (25000, 10, 10)
 define config.idle_gc_count = 2500
 define gc_print_unreachable = False
 
-init -1 python hide:v
+init -1 python hide:
 
     config.autoreload = False # If false, Ren'Py will reload the game once per press of shift+R.
 
@@ -34,7 +34,7 @@ init -1 python hide:v
         persistent.delwarning = True
         persistent.customcursor = False
         persistent.autosave = False
-        persistent.ui_hint = True
+        persistent.tooltip = True
 
     #Load custom preference options
     if persistent.customcursor:

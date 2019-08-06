@@ -333,8 +333,8 @@ label hg_pf_strip_T4_fingering:
         m "Once more for good luck then!"
         call her_main("If you insist...{image=textheart}","open","baseL", cheeks="blush")
 
-        call hg_masturbate_3
-        call hg_masturbate_3_cumming
+        #call hg_masturbate_3 <--- Missing label
+        #call hg_masturbate_3_cumming <--- Missing label
 
     call her_main("...","base","glance")
     call set_her_action("covering")

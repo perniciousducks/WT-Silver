@@ -9,9 +9,6 @@ label equip_bra:
     #Luna
     if active_girl == "luna":
         jump equip_lun_bra
-    #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_bra
     #Susan
     if active_girl == "susan":
         jump equip_sus_bra
@@ -303,12 +300,6 @@ label equip_lun_bra:
 
     jump return_to_wardrobe
 
-### Equip Astoria's Bra ###
-label equip_ast_bra:
-    call set_ast_bra(underwear_choice)
-
-    jump return_to_wardrobe
-
 ### Equip Susan's Bra ###
 label equip_sus_bra:
     call set_sus_bra(underwear_choice)
@@ -324,9 +315,6 @@ label equip_onepiece:
     #Luna
     if active_girl == "luna":
         jump equip_lun_onepiece
-    #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_onepiece
     #Susan
     if active_girl == "susan":
         jump equip_sus_onepiece
@@ -340,12 +328,6 @@ label equip_her_onepiece:
 ### Equip Luna's OnePiece/Nighty ###
 label equip_lun_onepiece:
     call set_lun_onepiece(underwear_choice)
-
-    jump return_to_wardrobe
-
-### Equip Astoria's OnePiece/Nighty ###
-label equip_ast_onepiece:
-    call set_ast_onepiece(underwear_choice)
 
     jump return_to_wardrobe
 
@@ -364,9 +346,6 @@ label equip_panties:
     #Luna
     if active_girl == "luna":
         jump equip_lun_panties
-    #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_panties
     #Susan
     if active_girl == "susan":
         jump equip_sus_panties
@@ -621,12 +600,6 @@ label equip_lun_panties:
 
     jump return_to_wardrobe
 
-### Equip Astoria's Panties ###
-label equip_ast_panties:
-    call set_ast_panties(underwear_choice)
-
-    jump return_to_wardrobe
-
 ### Equip Susan's Panties ###
 label equip_sus_panties:
     call set_sus_panties(underwear_choice)
@@ -642,9 +615,6 @@ label equip_garterbelt:
     #Luna
     if active_girl == "luna":
         jump equip_lun_garterbelt
-    #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_garterbelt
     #Susan
     if active_girl == "susan":
         jump equip_sus_garterbelt
@@ -658,12 +628,6 @@ label equip_her_garterbelt:
 ### Equip Luna's Garterbelt ###
 label equip_lun_garterbelt:
     call set_lun_garterbelt(underwear_choice)
-
-    jump return_to_wardrobe
-
-### Equip Astoria's Garterbelt ###
-label equip_ast_garterbelt:
-    call set_ast_garterbelt(underwear_choice)
 
     jump return_to_wardrobe
 

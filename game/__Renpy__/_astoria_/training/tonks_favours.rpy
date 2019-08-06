@@ -196,7 +196,7 @@ label astoria_tonks_3:
 
     $ active_girl = "astoria"
 
-    call load_astoria_clothing_saves
+    #call load_astoria_clothing_saves
 
     call reset_wardrobe_vars
     call update_wr_color_list

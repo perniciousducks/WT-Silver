@@ -56,8 +56,7 @@ label gen_main(text="", face=None, xpos=None, ypos=None, flip=True, trans=None):
     show screen genie_main
     show screen bld1
 
-    #Transitions
-    call transition(trans)
+    call transition(trans, True)
 
     if text != "":
         $ renpy.say(gen, text)

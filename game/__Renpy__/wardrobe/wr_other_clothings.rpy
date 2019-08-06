@@ -17,9 +17,6 @@ label equip_neckwear:
     #Luna
     if active_girl == "luna":
         jump equip_lun_neckwear
-    #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_neckwear
     #Susan
     if active_girl == "susan":
         jump equip_sus_neckwear
@@ -33,12 +30,6 @@ label equip_her_neckwear:
 ### Equip Luna's Neckwear ###
 label equip_lun_neckwear:
     call set_lun_neckwear(neckwear_choice)
-
-    jump return_to_wardrobe
-
-### Equip Astoria's Neckwear ###
-label equip_ast_neckwear:
-    call set_ast_neckwear(neckwear_choice)
 
     jump return_to_wardrobe
 
@@ -57,9 +48,6 @@ label equip_gloves:
     #Luna
     if active_girl == "luna":
         jump equip_lun_gloves
-    #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_gloves
     #Susan
     if active_girl == "susan":
         jump equip_sus_gloves
@@ -73,12 +61,6 @@ label equip_her_gloves:
 ### Equip Luna's Gloves ###
 label equip_lun_gloves:
     #call set_lun_gloves(gloves_choice)
-
-    jump return_to_wardrobe
-
-### Equip Astoria's Gloves ###
-label equip_ast_gloves:
-    #call set_ast_gloves(gloves_choice)
 
     jump return_to_wardrobe
 
@@ -97,9 +79,6 @@ label equip_body_accessory:
     #Luna
     #if active_girl == "luna":
         #jump equip_lun_body_accessory
-    #Astoria
-    #if active_girl == "astoria":
-        #jump equip_ast_body_accessory
     #Susan
     #if active_girl == "susan":
         #jump equip_sus_body_accessory
@@ -226,9 +205,6 @@ label equip_stockings:
     #Luna
     if active_girl == "luna":
         jump equip_lun_stockings
-    #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_stockings
     #Susan
     if active_girl == "susan":
         jump equip_sus_stockings
@@ -242,12 +218,6 @@ label equip_her_stockings:
 ### Equip Luna's Stockings ###
 label equip_lun_stockings:
     call set_lun_stockings(stockings_choice)
-
-    jump return_to_wardrobe
-
-### Equip Astoria's Stockings ###
-label equip_ast_stockings:
-    call set_ast_stockings(stockings_choice)
 
     jump return_to_wardrobe
 
@@ -267,9 +237,6 @@ label equip_robe:
     #Luna
     if active_girl == "luna":
         jump equip_lun_robe
-    #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_robe
     #Susan
     if active_girl == "susan":
         jump equip_sus_robe
@@ -283,12 +250,6 @@ label equip_her_robe:
 ### Equip Luna's Robe ###
 label equip_lun_robe:
     call set_lun_robe(robe_choice)
-
-    jump return_to_wardrobe
-
-### Equip Astoria's Robe ###
-label equip_ast_robe:
-    call set_ast_robe(robe_choice)
 
     jump return_to_wardrobe
 

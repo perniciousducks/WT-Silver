@@ -13,9 +13,6 @@ label equip_makeup:
     #Luna
     #if active_girl == "luna":
         #jump equip_lun_makeup
-    #Astoria
-    #if active_girl == "astoria":
-        #jump equip_ast_makeup
     #Susan
     #if active_girl == "susan":
         #jump equip_sus_makeup
@@ -182,9 +179,6 @@ label equip_head_accessory:
     #Luna
     if active_girl == "luna":
         jump equip_lun_head_accessory
-    #Astoria
-    if active_girl == "astoria":
-        jump equip_ast_head_accessory
     #Susan
     if active_girl == "astoria":
         jump equip_sus_head_accessory
@@ -418,17 +412,6 @@ label equip_lun_head_accessory:
         call set_lun_glasses(head_accessory_choice)
     if head_accessory_choice in ["hat_stewardess"]: #Hat
         call set_lun_hat(head_accessory_choice)
-
-    jump return_to_wardrobe
-
-### Equip Astoria's Accessory ###
-label equip_ast_head_accessory:
-    #if head_accessory_choice in []:
-        #call set_ast_ears(head_accessory_choice)
-    #if head_accessory_choice in []:
-        #call set_ast_glasses(head_accessory_choice)
-    if head_accessory_choice in ["boss_hat"]:
-        call set_ast_hat(head_accessory_choice)
 
     jump return_to_wardrobe
 

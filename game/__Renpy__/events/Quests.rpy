@@ -278,16 +278,14 @@ label quests:
 label quest_init:
 
     if not hasattr(renpy.store,'genie_intro'):
-        $ genie_intro   = event_class(title = "Genie intro", events =
-        [[ ["genie_intro"] ]], iconset = [["star_empty", "star_yellow"]],
+        $ genie_intro   = quest_class(
         E1_complete=False,
         E2_complete=False,
         E3_complete=False,
         )
 
     if not hasattr(renpy.store,'snape_intro'):
-        $ snape_intro   = event_class(title = "Snape intro", events =
-        [[ ["snape_intro"] ]], iconset = [["star_empty", "star_yellow"]],
+        $ snape_intro   = quest_class(
         E1_complete=False,   # 1st visit
         E2_complete=False,   # 2nd visit
         E3_complete=False,   # 3rd visit, before the duel.
@@ -297,8 +295,7 @@ label quest_init:
         )
 
     if not hasattr(renpy.store,'hang_with_snape'):
-        $ hang_with_snape   = event_class(title = "Hang with Snape", events =
-        [[ ["hang_with_snape"] ]], iconset = [["star_empty", "star_yellow"]],
+        $ hang_with_snape   = quest_class(
         E1_complete=False,   # I hate her!
         E2_complete=False,   # Let's ruin her!
         E3_complete=False,   # Discuss Tonks with Snape.
@@ -307,8 +304,7 @@ label quest_init:
         )
 
     if not hasattr(renpy.store,'hermione_intro'):
-        $ hermione_intro   = event_class(title = "Hermione intro", events =
-        [[ ["hermione_intro"] ]], iconset = [["star_empty", "star_yellow"]],
+        $ hermione_intro   = quest_class(
         E1_complete=False, # 1st visit
         E2_complete=False, # 2nd visit, MRM + informed the Ministry.
         E3_complete=False, # 3rd visit, did she fail a test?
@@ -318,19 +314,17 @@ label quest_init:
         )
 
     if not hasattr(renpy.store,'tonks_intro'):
-        $ tonks_intro   = event_class(title = "Tonks intro", events =
-        [[ ["tonks_intro"] ]], iconset = [["star_empty", "star_pink"]],
+        $ tonks_intro   = quest_class(
         E1_complete=False,   # 1st visit
         E2_complete=False,   # 2nd visit
         E3_complete=False,   # 3rd visit, summon unlocked.
         )
 
     if not hasattr(renpy.store,'hang_with_tonks'):
-        $ hang_with_tonks   = event_class(title = "Hang with Tonks", events =
-        [[ ["hang_with_tonks"] ]], iconset = [["star_empty", "star_pink"]],
-        E1_complete=False, # Hermione favors unlocked.
-        E2_complete=False, # Tonks Public Requests unlocked.
+        $ hang_with_tonks   = quest_class(
+        E1_complete=False,
+        E2_complete=False,
         E3_complete=False,
         )
-
+        
     return

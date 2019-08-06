@@ -73,8 +73,7 @@ label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
     show screen luna_main
     show screen bld1
 
-    #Transitions
-    call transition(trans)
+    call transition(trans, True)
 
     if text != "":
         $ renpy.say(lun, text)

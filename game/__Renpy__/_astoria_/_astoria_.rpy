@@ -2,8 +2,7 @@
 
 ### Astoria Greengrass ###
 
-label ast_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
-    hide screen astoria_main
+label ast_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
 
     #Flip
     if flip == False:
@@ -59,20 +58,24 @@ label ast_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
     if face != None:
         if mouth == None:
             call set_ast_face(mouth = face)
-        if eye == None:
+        if eyes == None:
             call set_ast_face(eyes = face)
-        if brows == None:
-            call set_ast_face(brows = face)
+        if eyebrows == None:
+            call set_ast_face(eyebrows = face)
         if pupils == None:
             call set_ast_face(pupils = face)
+            
+    if animation != False:
+        $ astoria_animation = animation
 
-    $ changeAstoria(mouth, eye, brows, pupils, cheeks, tears, extra, emote)
+    python:
+        astoria_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
+        astoria_class.special(emote=emote)
 
-    show screen astoria_main
+    show screen astoria_main()
     show screen bld1
 
-    #Transitions
-    call transition(trans)
+    call transition(trans, True)
 
     if text != "":
         $ renpy.say(ast, text)
@@ -81,16 +84,6 @@ label ast_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
         hide screen astoria_main
 
     return
-
-
-
-label update_astoria:
-
-    $ astoria_flip = 1
-    $ use_astoria_head = False
-
-    return
-
 
 label set_random_nicknames:
     $ random_number = renpy.random.randint(0, 5)
@@ -102,45 +95,34 @@ label set_random_nicknames:
         $ ton_astoria_name = renpy.random.choice(["Cutie","Kitty","Princess","Little girl","Honey"])
 
     return
+            
+label update_astoria:
 
+    # Chibi Update
+    $ update_chibi_image("astoria")
+    $ astoria_flip = 1
+    $ astoria_cloth_pile = False
 
+    return
+            
+label end_astoria_event:
+    #call astoria_chibi("hide") TODO: Fix me
+    hide screen astoria_main
+    with d3
+    pause.5
 
-init python:
-    def changeAstoria(  mouth=None,
-                        eye=None,
-                        brows=None,
-                        pupils=None,
-                        cheeks=None,
-                        tears=None,
-                        extra=None,
-                        emote=None):
+    call update_astoria
 
-        ###DEFINE GLOBAL VARIABLES
-        global astoria_mouth
-        global astoria_eye
-        global astoria_eye_bg
-        global astoria_eyebrow
-        global astoria_pupil
-        global astoria_cheeks
-        global astoria_tears
-        global astoria_extra
-        global astoria_emote
+    $ active_girl = None
+    $ astoria_busy = True
 
-        ### FACE CONTROL ###
-        if mouth is not None:
-            astoria_mouth       = "characters/astoria/face/mouth/"+mouth+".png"
-        if eye is not None:
-            astoria_eye         = "characters/astoria/face/eyes/"+eye+".png"
-            astoria_eye_bg      = "characters/astoria/face/eyes/"+eye+"_bg.png"
-        if brows is not None:
-            astoria_eyebrow     = "characters/astoria/face/brow/"+brows+".png"
-        if pupils is not None:
-            astoria_pupil       = "characters/astoria/face/pupil/"+pupils+".png"
-        if cheeks is not None:
-            astoria_cheeks      = "characters/astoria/face/extras/cheeks_"+cheeks+".png"
-        if tears is not None:
-            astoria_tears       = "characters/astoria/face/extras/tears_"+tears+".png"
-        if extra is not None:
-            astoria_extra       = "characters/astoria/face/extras/"+extra+".png"
-        if emote is not None:
-            astoria_emote       = "characters/emotes/"+str(emote)+".png"
+    call music_block
+    jump main_room
+
+screen astoria_main():
+    tag astoria_main
+    zorder astoria_zorder
+    if astoria_animation != None:
+        add astoria_class.get_image() xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio) at astoria_animation
+    else:
+        add astoria_class.get_image() xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)

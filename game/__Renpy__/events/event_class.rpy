@@ -1,4 +1,14 @@
 init python:
+    class quest_class(object):
+        title = ""
+        hint = ""
+        
+        def __init__(self, **kwargs):
+            self.__dict__.update(kwargs)
+            
+        def status(self):
+            return list(self.__dict__)
+            
     class event_class(object):
         title     = ""
         hint      = ""

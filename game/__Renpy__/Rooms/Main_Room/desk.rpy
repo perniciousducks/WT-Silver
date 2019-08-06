@@ -4,12 +4,10 @@ label desk:
     if day == 1:
         if not desk_examined:
             $ desk_examined = True
-            menu:
-                "-Examine the desk-":
-                    call bld
-                    m "A desk of some sort..."
-                    m "And a letter..."
-                    m "Mailed to a certain \"Albus Dumbledore\"."
+            call bld
+            m "A desk of some sort..."
+            m "And a letter..."
+            m "Mailed to a certain \"Albus Dumbledore\"."
 
             menu:
                 m "Should I open it?"

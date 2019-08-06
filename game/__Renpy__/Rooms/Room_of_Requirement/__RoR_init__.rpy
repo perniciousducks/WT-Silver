@@ -30,6 +30,18 @@ label __init_variables:
                 content_characters = []
             )
 
+    if not hasattr(renpy.store,'mr_ev_AOC'):
+        $ mr_ev_AOC = mirror_stories(
+                name = "An odd circumstance",
+                unlockable = True,
+                story_description = "You find yourself being confronted by a mysterious girl that seemingly seems to know you.",
+                start_label = "an_odd_circumstance",
+                authors = ["TeamSilver"],
+                categories= ["Parody", "lewd"],
+                ach_desc = "Completed Hermiones Suck It personal favours",
+                content_characters = ["hermione"]
+            )
+
     if not hasattr(renpy.store,'mr_ev_ABTTD'):
         $ mr_ev_ABTTD = mirror_stories(
                 name = "A bad time to disrobe",
@@ -109,7 +121,7 @@ label __init_variables:
                 ach_desc = "",
                 content_characters = ["hermione"]
             )
-    
+
     # WIP
     #if not hasattr(renpy.store,'mr_ev_CM'):
     #    $ mr_ev_CM = mirror_stories(
@@ -121,7 +133,7 @@ label __init_variables:
     #            ach_desc = "",
     #            content_characters = ["hermione"]
     #        )
-    
+
     $ mr_evs_list = []
     $ mr_evs_list.append(mr_ev_PaH)
     $ mr_evs_list.append(mr_ev_AXmasTale)
@@ -132,6 +144,8 @@ label __init_variables:
     $ mr_evs_list.append(mr_ev_ABAS)
     $ mr_evs_list.append(mr_ev_ADR)
     $ mr_evs_list.append(mr_ev_PR)
+    $ mr_evs_list.append(mr_ev_AOC)
+
     #$ mr_evs_list.append(mr_ev_CM)
 
     $current_page = 0
@@ -222,10 +236,12 @@ init python:
         #And if you dont make any then it will all ways be true
         def unlock_check(self):
             if self.name == "A bad time to disrobe":
-                return hg_pf_look_at_breasts.points > 0
+                return hg_pf_admire_breasts.points > 0
             elif self.name == "A spaced out conversation":
                 return sna_friendship > 60
             elif self.name == "A Booty at sea":
                 return hg_pf_anal_sex.points > 2
+            elif self.name == "An odd circumstance":
+                return hg_pf_blowjob.points > 2
             else:
                 return True

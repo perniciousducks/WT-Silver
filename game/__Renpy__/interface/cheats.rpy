@@ -28,14 +28,14 @@ label cheats:
 
                 "-Unlock all outfits & sets-":
                     python:
-                        for i in hermione_outfits_list:
-                            i.unlocked = True
-                        for i in hermione_costumes_list:
-                            i.unlocked = True
-                        for i in hermione_dresses_list:
-                            i.unlocked = True
-                        for i in hermione_clothing_sets_list:
-                            i.unlocked = True
+                        for item in hermione_outfits_list:
+                            unlock_clothing_compat(item)
+                        for item in hermione_costumes_list:
+                            unlock_clothing_compat(item)
+                        for item in hermione_dresses_list:
+                            unlock_clothing_compat(item)
+                        for item in hermione_clothing_sets_list:
+                            unlock_clothing_compat(item)
                     ">All of Hermione's outfits and clothing sets have been unlocked."
                     jump cheats_hermione
 
@@ -65,14 +65,14 @@ label cheats:
             menu:
                 "-Unlock all outfits & sets-":
                     python:
-                        for i in luna_outfits_list:
-                            i.unlocked = True
-                        for i in luna_costumes_list:
-                            i.unlocked = True
-                        for i in luna_dresses_list:
-                            i.unlocked = True
-                        for i in luna_clothing_sets_list:
-                            i.unlocked = True
+                        for item in luna_outfits_list:
+                            unlock_clothing_compat(item)
+                        for item in luna_costumes_list:
+                            unlock_clothing_compat(item)
+                        for item in luna_dresses_list:
+                            unlock_clothing_compat(item)
+                        for item in luna_clothing_sets_list:
+                            unlock_clothing_compat(item)
                     ">All of Luna's outfits and clothing sets have been unlocked."
                     jump cheats_luna
 
@@ -105,14 +105,14 @@ label cheats:
             menu:
                 "-Unlock all outfits & sets-":
                     python:
-                        for i in astoria_outfits_list:
-                            i.unlocked = True
-                        for i in astoria_costumes_list:
-                            i.unlocked = True
-                        for i in astoria_dresses_list:
-                            i.unlocked = True
-                        for i in astoria_clothing_sets_list:
-                            i.unlocked = True
+                        for item in astoria_outfits_list:
+                            unlock_clothing_compat(item)
+                        for item in astoria_costumes_list:
+                            unlock_clothing_compat(item)
+                        for item in astoria_dresses_list:
+                            unlock_clothing_compat(item)
+                        for item in astoria_clothing_sets_list:
+                            unlock_clothing_compat(item)
                     ">All of Astoria's outfits and clothing sets have been unlocked."
                     jump cheats_astoria
 
@@ -141,14 +141,14 @@ label cheats:
                     jump cheats_cho
                 "-Unlock all outfits & sets-":
                     python:
-                        for i in cho_outfits_list:
-                            i.unlocked = True
-                        for i in cho_costumes_list:
-                            i.unlocked = True
-                        for i in cho_dresses_list:
-                            i.unlocked = True
-                        for i in cho_clothing_sets_list:
-                            i.unlocked = True
+                        for item in cho_outfits_list:
+                            unlock_clothing_compat(item)
+                        for item in cho_costumes_list:
+                            unlock_clothing_compat(item)
+                        for item in cho_dresses_list:
+                            unlock_clothing_compat(item)
+                        for item in cho_clothing_sets_list:
+                            unlock_clothing_compat(item)
                     ">All of Cho's outfits and clothing sets have been unlocked."
                     jump cheats_cho
                 "-Reset ALL Cho content-":

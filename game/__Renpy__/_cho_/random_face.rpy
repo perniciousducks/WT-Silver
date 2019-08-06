@@ -1,7 +1,6 @@
 
 
 label set_cho_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=None):
-    #hide screen cho_chang
 
     $ temp_mouth    = None
     $ temp_eyes     = None

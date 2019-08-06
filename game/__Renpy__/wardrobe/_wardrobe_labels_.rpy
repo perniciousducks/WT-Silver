@@ -10,8 +10,6 @@ label wardrobe: #NOT IN USE
         call her_main(xpos="wardrobe")
     #if active_girl == "luna":
     #    call lun_main("",xpos="wardrobe")
-    if active_girl == "astoria":
-        call ast_main(xpos="wardrobe")
     if active_girl == "susan":
         call sus_main(xpos="wardrobe")
 
@@ -60,15 +58,9 @@ label reset_wardrobe_vars:
     elif active_girl == "luna":
         $ wr_base_hair_style = "curly"
         $ wr_base_hair_color = "blonde"
-    elif active_girl == "astoria":
-        $ wr_base_hair_style = "straight"
-        $ wr_base_hair_color = "blonde"
     elif active_girl == "susan":
         $ wr_base_hair_style = "braided"
         $ wr_base_hair_color = "red"
-    elif active_girl == "tonks":
-        $ wr_base_hair_style = "short"
-        $ wr_base_hair_color = "pink"
 
     $ wardrobe_head_color             = "base"
     $ wardrobe_uniform_color          = "base"
@@ -94,8 +86,6 @@ label return_to_wardrobe:
             call her_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "luna":
             call lun_main(eye="base", mouth='base',xpos="wardrobe",ypos="base",trans="fade")
-        if active_girl == "astoria":
-            call ast_main(face="neutral",xpos="wardrobe",ypos="base",trans="fade")
         if active_girl == "susan":
             call sus_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
 
@@ -109,8 +99,6 @@ label return_to_wardrobe:
             call her_main(face="happy",xpos="wardrobe",ypos="base")
         if active_girl == "luna":
             call lun_main(eye="base", mouth='base',xpos="wardrobe",ypos="base")
-        if active_girl == "astoria":
-            call ast_main(face="neutral",xpos="wardrobe",ypos="base")
         if active_girl == "susan":
             call sus_main(face="happy",xpos="wardrobe",ypos="base")
 
@@ -125,8 +113,6 @@ label update_wardrobe_color:
         call her_main(xpos="wardrobe",ypos="base")
     if active_girl == "luna":
         call lun_main(xpos="wardrobe",ypos="base")
-    if active_girl == "astoria":
-        call ast_main(xpos="wardrobe",ypos="base")
     if active_girl == "susan":
         call sus_main(xpos="wardrobe",ypos="base")
 
@@ -187,9 +173,6 @@ label wardrobe_update:
     if active_girl == "luna":
         call wr_lun_clothing_reset
         call lun_main(xpos="wardrobe",ypos="base")
-    if active_girl == "astoria":
-        call wr_ast_clothing_reset
-        call ast_main(xpos="wardrobe",ypos="base")
     if active_girl == "susan":
         call wr_sus_clothing_reset
         call sus_main(xpos="wardrobe",ypos="base")
@@ -234,29 +217,6 @@ label wr_lun_clothing_reset:
 
     return
 
-label wr_ast_clothing_reset:
-    #Reload Clothing
-    call load_astoria_clothing_saves
-
-    #Qol stuff
-    if wardrobe_page != 6:
-        pass
-    #    if astoria_action != "none":
-    #        $ astoria_use_action = True
-    else: #Underwear page Qol
-        $ astoria_wear_robe = False
-        $ astoria_wear_top = False
-        $ astoria_wear_bottom = False
-
-    call update_ast_uniform
-
-    if not astoria_wear_top or not astoria_wear_bottom:
-        call ast_main("","pout","angry","angry","R")
-    else:
-        call ast_main("","smile","base","base","mid")
-
-    return
-
 label wr_sus_clothing_reset:
     #Reload Clothing
     call load_susan_clothing_saves
@@ -298,9 +258,6 @@ label close_wardrobe:
         pause.2
         call lun_chibi("stand","mid","base")
         jump luna_requests
-    if active_girl == "astoria":
-        call ast_main(xpos="base",ypos="base")
-        jump astoria_requests
     if active_girl == "susan":
         call sus_main(xpos="base",ypos="base")
         jump susan_requests

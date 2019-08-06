@@ -77,8 +77,7 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
     show screen cho_chang()
     show screen bld1
 
-    #Transitions
-    call transition(trans)
+    call transition(trans, True)
 
     $ cho_class.say(text)
 

@@ -685,14 +685,11 @@ screen hermione_piercings():
             add "characters/hermione/clothes/piercings/"+str(hermione_piercings_list[i])+".png" xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
     zorder hermione_zorder
 
-
-
 #TATTOOS
 screen hermione_tattoos():
     for i in range(0,len(hermione_tattoos_list)):
         add "characters/hermione/body/tattoos/"+str(hermione_tattoos_list[i])+".png" xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
     zorder hermione_zorder
-
 
 screen hermione_ass():
     tag hermione_ass
@@ -702,35 +699,6 @@ screen hermione_ass():
         add "characters/hermione/body/ass/ass_cum_01.png" xpos 500 ypos 0 zoom (1.0/hermione_scaleratio)
     zorder 5
 
-screen hermione_clone():
-    tag hermione_clone
-
-    $ hermione_clone_xpos = 500
-
-    add hermione_base xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio) #Add the base body
-    add hermione_legs xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
-
-    add hermione_right_arm xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
-
-    add hermione_breasts xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
-
-    add hermione_left_arm xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
-
-    add "characters/hermione/body/head/B_2.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio) #Add the hair shadow
-    add hermione_body xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
-    add hermione_tears xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
-
-  ### CLOTHES
-    add "characters/hermione/clothes/stockings/fishnet_a.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
-
-    add "characters/hermione/clothes/bottoms/skirt_6.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
-    add "characters/hermione/clothes/tops/top_5_g.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio)
-
-    add "characters/hermione/body/head/B_2_2.png" xpos hermione_clone_xpos ypos hermione_ypos zoom (1.0/hermione_scaleratio) #Add the hair shadow
-    ### ZORDER
-    zorder hermione_zorder
-
-
 screen hermione_outfit():
     tag hermione_main
     for i in hermoine_outfit_GLBL.getOutfitLayers():
@@ -739,9 +707,9 @@ screen hermione_outfit():
     add hermione_costume_action_a xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
     zorder hermione_zorder
 
-
 screen hermione_kneel():
     tag hermione_kneel
+    zorder hermione_zorder
 
     $ hermione_xpos = hermione_xpos
     $ hermione_ypos_offset = hermione_ypos-150
@@ -768,6 +736,3 @@ screen hermione_kneel():
 
     if hermione_kneel_cock: #Need to redo this into a better system.
         add "characters/hermione/body/kneel/kneel_cock.png" xpos luna_xpos ypos luna_ypos zoom (1.0/hermione_scaleratio)
-
-    ### ZORDER
-    zorder luna_zorder+1

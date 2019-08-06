@@ -77,9 +77,12 @@ screen main_room_menu():
         yanchor "center"
         idle door_OBJ.get_idle_image()
         hover door_OBJ.get_hover_image()
-        hovered SetVariable("ui_hint", "Summon")
-        unhovered SetVariable("ui_hint", "")
-        action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("door")]
+        if door_examined:
+            hovered SetVariable("tooltip", "Summon")
+        else:
+            hovered SetVariable("tooltip", "Examine Door")
+        unhovered SetVariable("tooltip", None)
+        action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("door")]
 
     #Scrolls
     if renpy.variant('android'):
@@ -102,9 +105,9 @@ screen main_room_menu():
             idle cupboard_top_OBJ.get_idle_image()
             if store_intro_done:
                 hover cupboard_top_OBJ.get_hover_image()
-                hovered SetVariable("ui_hint", "Scrolls")
-                unhovered SetVariable("ui_hint", "")
-                action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("read_scroll_menu")]
+                hovered SetVariable("tooltip", "Scrolls")
+                unhovered SetVariable("tooltip", None)
+                action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("read_scroll_menu")]
 
     #Cupboard
     if renpy.variant('android'):
@@ -127,9 +130,12 @@ screen main_room_menu():
             idle cupboard_OBJ.get_idle_image()
             if not searched:
                 hover cupboard_OBJ.get_hover_image()
-                hovered SetVariable("ui_hint", "Rummage")
-                unhovered SetVariable("ui_hint", "")
-                action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("cupboard")]
+                if cupboard_examined:
+                    hovered SetVariable("tooltip", "Rummage")
+                else:
+                    hovered SetVariable("tooltip", "Examine Cupboard")
+                unhovered SetVariable("tooltip", None)
+                action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("cupboard")]
 
     #Hat
     #if renpy.variant('android'):
@@ -150,9 +156,9 @@ screen main_room_menu():
     #        yanchor "center"
     #        idle hat_OBJ.get_idle_image()
     #        hover hat_OBJ.get_hover_image()
-    #        hovered SetVariable("ui_hint", "Hat")
-    #        unhovered SetVariable("ui_hint", "")
-    #        action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("options_menu")]
+    #        hovered SetVariable("tooltip", "Hat")
+    #        unhovered SetVariable("tooltip", None)
+    #        action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("options_menu")]
 
 #    imagebutton: # CUPBOARD LEFT
 #        xpos 120+140
@@ -193,9 +199,9 @@ screen main_room_menu():
             yanchor 1.0
             idle package_OBJ.get_idle_image()
             hover package_OBJ.get_hover_image()
-            hovered SetVariable("ui_hint", "Open package")
-            unhovered SetVariable("ui_hint", "")
-            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Hide("package"), Jump("get_package")]
+            hovered SetVariable("tooltip", "Open package")
+            unhovered SetVariable("tooltip", None)
+            action [SetVariable("tooltip", None), Hide("main_room_menu"), Hide("package"), Jump("get_package")]
 
     if letter_queue_list != [] and not owl_away:
         imagebutton:
@@ -205,9 +211,9 @@ screen main_room_menu():
             yanchor 1.0
             idle owl_OBJ.get_idle_image()
             hover owl_OBJ.get_hover_image()
-            hovered SetVariable("ui_hint", "Check mail")
-            unhovered SetVariable("ui_hint", "")
-            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("read_letter")]
+            hovered SetVariable("tooltip", "Check mail")
+            unhovered SetVariable("tooltip", None)
+            action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("read_letter")]
 
     #Genie
     if renpy.variant('android'):
@@ -229,9 +235,12 @@ screen main_room_menu():
             yanchor "center"
             idle "newanimation"
             hover "images/rooms/main_room/11_genie_02.png"
-            hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("ui_hint", "Open desk menu") ]
-            unhovered [Hide("gui_tooltip"), SetVariable("ui_hint", "")]
-            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("desk")]
+            if desk_examined:
+                hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("tooltip", "Open desk")]
+            else:
+                hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("tooltip", "Examine Desk")]
+            unhovered [Hide("gui_tooltip"), SetVariable("tooltip", None)]
+            action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("desk")]
 
     #Phoenix
     imagebutton:
@@ -243,9 +252,12 @@ screen main_room_menu():
         idle phoenix_OBJ.get_idle_image()
         if not phoenix_is_petted:
             hover phoenix_OBJ.get_hover_image()
-            hovered SetVariable("ui_hint", "Feed/Pet")
-            unhovered SetVariable("ui_hint", "")
-            action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("phoenix")]
+            if bird_examined:
+                hovered SetVariable("tooltip", "Feed/Pet")
+            else:
+                hovered SetVariable("tooltip", "Examine the bird")
+            unhovered SetVariable("tooltip", None)
+            action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("phoenix")]
 
     #Fireplace
     imagebutton:
@@ -256,9 +268,12 @@ screen main_room_menu():
         yanchor "center"
         idle fireplace_OBJ.get_idle_image()
         hover fireplace_OBJ.get_hover_image()
-        hovered SetVariable("ui_hint", "Light fire")
-        unhovered SetVariable("ui_hint", "")
-        action [SetVariable("ui_hint", ""), Hide("main_room_menu"), Jump("fireplace")]
+        if fireplace_examined:
+            hovered SetVariable("tooltip", "Light/Extinguish fire")
+        else:
+            hovered SetVariable("tooltip", "Examine fireplace")
+        unhovered SetVariable("tooltip", None)
+        action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("fireplace")]
 
     # Old buttons
     #

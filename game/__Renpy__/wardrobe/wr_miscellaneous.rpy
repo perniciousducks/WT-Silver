@@ -10,9 +10,6 @@ label equip_misc_item:
     #Luna
     if active_girl == "luna":
         jump equip_lun_misc_item
-    #Astoria
-    #if active_girl == "astoria":
-        #jump equip_ast_misc_item
     #Susan
     #if active_girl == "susan":
         #jump equip_sus_misc_item
@@ -283,96 +280,3 @@ label equip_lun_misc_item:
             call lun_main(face="neutral")
 
         jump make_lunas_item_transparent
-
-
-
-### Cho ###
-
-label equip_cho_misc_item:
-
-    if misc_item_choice == "transparency":
-
-        $ hide_transitions = False #activates dissolve in her_main
-
-        call cho_main("You want to make my clothes see through?",mouth="open",face="annoyed")
-        m "Yes. Just drink this potion."
-        call cho_main("I don't know, [cho_genie_name]...",mouth="quiver",pupils="down",face="horny")
-        call cho_main("Well... Okay.{w} How much do you want me to drink?",mouth="open",face="neutral")
-
-        label make_chos_item_transparent:
-
-        menu:
-            "-Just a sip-":
-                $ transparency = 0.9
-                if wardrobe_chitchat_active:
-                    call cho_main("You sure? That's barely anything.",mouth="annoyed",pupils="down",face="neutral")
-            "-20 percent-":
-                $ transparency = 0.8
-            "-30 percent-":
-                $ transparency = 0.7
-            "-40 percent-":
-                $ transparency = 0.6
-            "-Half the bottle-":
-                $ transparency = 0.5
-            "-60 percent-":
-                $ transparency = 0.4
-            "-70 percent-":
-                $ transparency = 0.3
-            "-80 percent-":
-                $ transparency = 0.2
-            "-All of it-":
-                $ transparency = 0.1
-                if wardrobe_chitchat_active:
-                    call cho_main("I can't believe I'm doing this!..",mouth="quiver",eye="closed",face="disgusted")
-            "-remove it-":
-                $ transparency = 1
-            "-That's enough-":
-                jump return_to_wardrobe
-
-        if wardrobe_chitchat_active:
-            call cho_main("What would you like to change?",face="happy")
-
-        menu:
-            ">Which item would you like to make transparent?\n>Only items she's currently wearing are listed here."
-            "-top-" if cho_class.get_cloth("top"):
-                pass
-                #call set_cho_transparency(top=transparency)
-            "-bottom" if cho_class.get_cloth("bottom"):
-                pass
-                #call set_cho_transparency(bottom=transparency)
-            "-bra-" if cho_class.get_cloth("bra"):
-                pass
-                #call set_cho_transparency(bra=transparency)
-            "-onepiece-" if cho_wear_onepiece:
-                pass
-                #call set_cho_transparency(onepiece=transparency)
-            "-panties-" if cho_class.get_cloth("panties"):
-                pass
-                #call set_cho_transparency(panties=transparency)
-            "-garterbelt-" if cho_class.get_cloth("garter"):
-                pass
-                #call set_cho_transparency(garterbelt=transparency)
-            "-gloves-" if cho_class.get_cloth("gloves"):
-                pass
-                #call set_cho_transparency(gloves=transparency)
-            "-stockings-" if cho_class.get_cloth("stockings"):
-                pass
-                #call set_cho_transparency(stockings=transparency)
-            "-robe-" if cho_class.get_cloth("robe"):
-                pass
-                #call set_cho_transparency(robe=transparency)
-            "-outfit-" if cho_wear_outfit:
-                pass
-                #call set_cho_transparency(outfit=transparency)
-            "-Never mind-":
-                jump return_to_wardrobe
-
-        if wardrobe_chitchat_active:
-            call cho_main()
-            pause.8
-            call cho_main("All done!",face="happy")
-            call cho_main("I could drink a bit more if you'd like.",face="neutral")
-        else:
-            call cho_main(face="neutral")
-
-        jump make_chos_item_transparent

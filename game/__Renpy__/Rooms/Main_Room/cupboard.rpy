@@ -3,23 +3,22 @@
 ### Cupboard ###
 
 label cupboard:
-    menu:
-        "-Examine the cupboard-" if not cupboard_examined:
-            $ cupboard_examined = True
-            $ searched = True
-            show screen chair_left
-            hide screen genie
-            call gen_chibi("stand","behind_desk","base", flip=True)
-            show screen desk
-            with d5
-            pause.2
+    if not cupboard_examined:
+        $ cupboard_examined = True
+        $ searched = True
+        show screen chair_left
+        hide screen genie
+        call gen_chibi("stand","behind_desk","base", flip=True)
+        show screen desk
+        with d5
+        pause.2
 
-            call bld
-            m "Hm....."
-            m "A cupboard..."
-            m "Maybe I should rummage through this one later..."
+        call bld
+        m "Hm....."
+        m "A cupboard..."
+        m "Maybe I should rummage through this one later..."
+        jump day_main_menu
 
-            jump day_main_menu
 
     jump rummaging
 

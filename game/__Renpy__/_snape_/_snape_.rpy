@@ -55,7 +55,7 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, r
     show screen snape_main(wand=wand)
     show screen bld1
 
-    call transition(trans)
+    call transition(trans, True)
 
     if text != "":
         if "[hermione_name]" in text or "[genie_name]" in text:

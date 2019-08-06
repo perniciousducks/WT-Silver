@@ -24,6 +24,9 @@ label tonks_wardrobe_init:
             tonks_cloth_garterbase = cloth_class(char="tonks", category="legwear", subcat="stockings", type="stockings", id="auror", layers=2, color=[[45, 45, 48, 255], [177, 168, 172, 255]])
             
             tonks_cloth_garterbase = cloth_class(char="tonks", category="bras", subcat="bras", type="bra", id="bikini", layers=2, color=[[124, 42, 50, 255], [177, 168, 172, 255]])
+            
+            # Temporal save
+            tonks_outfit_last = outfit_class(name="Last worn items", group=[tonks_hair_base])
         
             ################
             #              #

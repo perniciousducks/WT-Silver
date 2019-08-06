@@ -1,7 +1,6 @@
 
 
-label set_ast_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
-    hide screen astoria_main
+label set_ast_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=None):
 
     $ temp_mouth    = None
     $ temp_eyes     = None
@@ -42,18 +41,18 @@ label set_ast_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
         elif eyes in ["angry"]:
             $ temp_eyes     = renpy.random.choice(["angry"])
 
-    if brows != None:
-        if brows in ["neutral"]:
+    if eyebrows != None:
+        if eyebrows in ["neutral"]:
             $ temp_eyebrows = renpy.random.choice(["base"])
-        elif brows in ["happy"]:
+        elif eyebrows in ["happy"]:
             $ temp_eyebrows = renpy.random.choice(["base","wide"])
-        elif brows in ["naughty","horny"]:
+        elif eyebrows in ["naughty","horny"]:
             $ temp_eyebrows = renpy.random.choice(["base","angry"])
-        elif brows in ["annoyed"]:
+        elif eyebrows in ["annoyed"]:
             $ temp_eyebrows = renpy.random.choice(["narrow"])
-        elif brows in ["disgusted"]:
+        elif eyebrows in ["disgusted"]:
             $ temp_eyebrows = renpy.random.choice(["wide"])
-        elif brows in ["angry"]:
+        elif eyebrows in ["angry"]:
             $ temp_eyebrows = renpy.random.choice(["angry"])
 
     if pupils != None:
@@ -76,7 +75,7 @@ label set_ast_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
         $ temp_mouth    = renpy.random.choice(ast_mouth_layers)
     elif change in ["eyes"]:
         $ temp_eyes     = renpy.random.choice(ast_eye_layers)
-    elif change in ["brows"]:
+    elif change in ["eyebrows"]:
         $ temp_eyebrows = renpy.random.choice(ast_brow_layers)
     elif change in ["pupils"]:
         $ temp_pupils   = renpy.random.choice(ast_pupil_layers)
@@ -84,11 +83,13 @@ label set_ast_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
     #Mood specific
     elif change in ["all","random"]:
         if ast_mood >= 1:
-            call set_ast_face(mouth="annoyed",eyes="annoyed",brows="annoyed",pupils="annoyed")
+            call set_ast_face(mouth="annoyed",eyes="annoyed",eyebrows="annoyed",pupils="annoyed")
         else:
-            call set_ast_face(mouth="happy",eyes="happy",brows="happy",pupils="happy")
+            call set_ast_face(mouth="happy",eyes="happy",eyebrows="happy",pupils="happy")
 
-    $ changeAstoria(temp_mouth, temp_eyes, temp_eyebrows, temp_pupils, temp_cheeks, temp_tears, temp_extra, temp_emote)
+    python:
+        astoria_class.expression(mouth=temp_mouth, eyes=temp_eyes, eyebrows=temp_eyebrows, pupils=temp_pupils, cheeks=temp_cheeks, tears=temp_tears)
+        astoria_class.special(emote=temp_emote)
 
     return
 

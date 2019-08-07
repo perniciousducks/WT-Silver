@@ -17,9 +17,9 @@ label stats_menu(xx=150, yy=90):
         $ btn_hover = "#edc48240"
     else:
         $ btn_hover = "#7d75aa40"
-        
+
     call update_stats
-        
+
     # Stats dictionary
     $ stats_dict = {
                     "Genie": {"ico": "head_genie_1", "flag": True, "name": "Genie", "sex": "Yes", "height": "6.2ft", "weight": "200lb", "job": "Headmaster", "hates": "Lamps", "likes": "Tits"},
@@ -62,7 +62,7 @@ label stats_menu(xx=150, yy=90):
         $ category_items = stats_dict[current_category]
         $ menu_items = stats_sortfilter(category_items, current_sorting)
         $ menu_items_length = len(menu_items)
-        $ current_item = stats_dict[current_category]        
+        $ current_item = stats_dict[current_category]
         #$ current_subcategory = "overview"
     elif _return[0] == "subcat":
         if _return[1] != current_subcategory:
@@ -86,7 +86,7 @@ screen stats_menu(xx, yy):
         ysize 454
 
         add "interface/achievements/"+interface_color+"/panel_left.png"
-        
+
         vbox:
             pos (6, 384)
             button action NullAction() style "empty" xsize 195 ysize 32
@@ -127,7 +127,7 @@ screen stats_menu(xx, yy):
                             ysize 42
                             add image_zoom[0] zoom image_zoom[1] align (0.5, 1.0) offset (3, 4)
                         add "interface/achievements/glass_iconbox.png" pos (3, 3)
-                    
+
 transform at_zoom(zoom=1.0):
     zoom zoom
 
@@ -138,18 +138,18 @@ screen stats_menuitem(xx, yy):
         style "empty"
         pos (xx+217, yy-53)
         xsize 560 ysize 507
-        
+
         #add "interface/achievements/inventory.png"
         add "interface/achievements/"+interface_color+"/panel.png"
         add "interface/achievements/markup.png"
 
         text "Characters" size 22 xalign 0.5 ypos 65
-        
+
         hbox:
             pos (24, 70)
             textbutton "Overview" text_size 12 action [Return(["subcat", "overview"]), SelectedIf(current_subcategory=="overview")]
             textbutton "Details" text_size 12 action [Return(["subcat", "details"]), SelectedIf(current_subcategory=="details")]
-        
+
         # Character sprites
         frame:
             style "empty"
@@ -177,7 +177,7 @@ screen stats_menuitem(xx, yy):
                         at at_zoom(0.75)
                         xoffset -395
                         yoffset -44
-                        
+
                         use hermione_main
                 else:
                     add "interface/characters/hermione_locked.png" zoom 0.38 align (0.65, 1.0)
@@ -194,7 +194,7 @@ screen stats_menuitem(xx, yy):
                         at at_zoom(0.75)
                         xoffset -620
                         yoffset -44
-                        
+
                         use luna_main
                 else:
                     add "interface/characters/luna_locked.png" zoom 0.38 align (0.75, 1.0)
@@ -211,33 +211,33 @@ screen stats_menuitem(xx, yy):
                         at at_zoom(0.78)
                         xoffset -350
                         yoffset -62
-                        
+
                         use susan_main
                 else:
                      add "interface/characters/susan_locked.png" zoom 0.385 align (0.65, 1.0)
-                
+
         frame:
             style "empty"
             xsize 360 ysize 406
             yalign 1.0 xoffset 6
-            
+
             if current_subcategory == "overview":
                 if current_item["flag"]:
                     text current_item["name"] size 20 xalign 0.5 xanchor 0.5 ypos 5
                 else:
                     text "???" size 20 xalign 0.5 xanchor 0.5 ypos 5
-                
+
                 vbox:
                     xoffset 10
                     hbox:
                         spacing 20
                         pos (10, 36)
-                        
-                        vbox:                    
+
+                        vbox:
                             text "Sex:" size 15
                             text "Height:" size 15
                             text "Weight:" size 15
-                            
+
                         vbox:
                             spacing 3
                             if current_item["flag"]:
@@ -248,12 +248,12 @@ screen stats_menuitem(xx, yy):
                                 text "unknown" size 12
                                 text "unknown" size 12
                                 text "unknown" size 12
-                            
-                        vbox:                    
+
+                        vbox:
                             text "Job:" size 15
                             text "Hates:" size 15
                             text "Likes:" size 15
-                            
+
                         vbox:
                             spacing 3
                             if current_item["flag"]:
@@ -264,7 +264,7 @@ screen stats_menuitem(xx, yy):
                                 text "unknown" size 12
                                 text "unknown" size 12
                                 text "unknown" size 12
-                                
+
                     if current_item["flag"]:
                         vbox:
                             yoffset 35
@@ -327,18 +327,25 @@ screen stats_menuitem(xx, yy):
                             use text_stat("- ", " times -", phoenix_petted_counter)
                             use text_stat("You missed feeding your bird for:")
                             use text_stat("- ", " days...", (day - phoenix_fed_counter) )
-                            use text_stat("If you were a Quidditch player...")
-                            use text_stat("You'd be a \"", "\"", genie_quid_position)
+                            use text_stat("If you were a Quidditch player, you'd be a:")
+                            use text_stat("- \"", "\" -", genie_quid_position)
+
                         elif current_category == "Snape":
                             use text_stat("Hung out with Snape:")
-                            use text_stat("- ", " times -", sna_dates_counter)
+                            use text_stat("- ", " times -", ss_he_counter)
                             use text_stat("Enjoyed some wine with Snape:")
-                            use text_stat("- ", " times -", sna_wine_counter)
+                            use text_stat("- ", " times -", ss_he_drink.counter)
+
                         elif current_category == "Tonks":
+                            use text_stat("Hung out with Tonks:")
+                            use text_stat("- ", " times -", nt_he_counter)
+                            use text_stat("Enjoyed some firewhisky with Tonks:")
+                            use text_stat("- ", " times -", nt_he_drink.counter)
                             use text_stat("Hung out with Astoria:")
                             use text_stat("- ", " times -", ton_astoria_date_counter)
                             use text_stat("Tonks has sluttyfied:")
                             use text_stat("- ", "/7 outfits -", ton_clothing_upgrades)
+
                         elif current_category == "Hermione":
                             # Tier 1
                             use text_stat("You Jerked off in front of her:")
@@ -347,53 +354,24 @@ screen stats_menuitem(xx, yy):
                             use text_stat("- ", " times -", hg_pf_admire_panties.counter)
                             use text_stat("You admired her tits:")
                             use text_stat("- ", " times -", hg_pf_admire_breasts.counter)
-
                             # Tier 2
-                            if hg_pf_grope.counter != 0:
-                                use text_stat("You groped her:")
-                                use text_stat("- ", " times -", hg_pf_grope.counter)
-                            else:
-                                use text_stat("Hidden")
-
+                            use text_stat("You groped her:")
+                            use text_stat("- ", " times -", hg_pf_grope.counter)
                             # Tier 3
-                            if hg_pf_strip.counter != 0:
-                                use text_stat("Hermione has \"danced\" for you:")
-                                use text_stat("- ", " times -", hg_pf_strip.counter)
-                            else:
-                                use text_stat("Hidden")
-
-                            if hg_pf_look_at_ass.counter != 0:
-                                use text_stat("You admired her butt:")
-                                use text_stat("- ", " times -", (hg_pf_look_at_ass.counter) )
-                            else:
-                                use text_stat("Hidden")
-
+                            use text_stat("Hermione has \"danced\" for you:")
+                            use text_stat("- ", " times -", hg_pf_strip.counter)
                             # Tier 4
-                            if hg_pf_handjob.counter != 0:
-                                use text_stat("Hermione has given you:")
-                                use text_stat("- ", " Handjobs -", hg_pf_handjob.counter)
-                            else:
-                                use text_stat("Hidden")
-
+                            use text_stat("Hermione has given you:")
+                            use text_stat("- ", " Handjobs -", hg_pf_handjob.counter)
                             # Tier 5
-                            if hg_pf_blowjob.counter != 0:
-                                use text_stat("Hermione has given you:")
-                                use text_stat("- ", " Blowjobs -", hg_pf_blowjob.counter)
-                            else:
-                                use text_stat("Hidden")
-
-                            if hg_pf_titjob.counter != 0:
-                                use text_stat("Hermione has given you:")
-                                use text_stat("- ", " Tit jobs -", hg_pf_titjob.counter)
-                            else:
-                                use text_stat("Hidden")
-
+                            use text_stat("Hermione has given you:")
+                            use text_stat("- ", " Blowjobs -", hg_pf_blowjob.counter)
+                            use text_stat("Hermione has given you:")
+                            use text_stat("- ", " Tit jobs -", hg_pf_titjob.counter)
                             # Tier 6
-                            if hg_pf_sex.counter != 0:
-                                use text_stat("You've had sex with her:")
-                                use text_stat("- ", " times -", hg_pf_sex.counter)
-                            else:
-                                use text_stat("Hidden")
+                            use text_stat("You've had sex with her:")
+                            use text_stat("- ", " times -", hg_pf_sex.counter)
+
                         elif current_category == "Cho":
                             use text_stat("You Jerked off in front of her:")
                             use text_stat("- ", " times -", cho_jerk_off_counter)

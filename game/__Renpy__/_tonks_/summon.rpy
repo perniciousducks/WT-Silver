@@ -404,6 +404,7 @@ label tonks_talk:
                     m "Of course.{w} And I will respect that."
                     call ton_main("I'm glad.{w} You are a very polite man, [ton_genie_name]...","base","base","base","mid")
                     m "..........................."
+                    jump tonks_talk
                 "-Cunt-" if ton_friendship >= 60:
                     $ tonks_name = "Cunt"
                     call ton_main("*Uuuh*, [ton_genie_name]...","base","base","raised","mid")

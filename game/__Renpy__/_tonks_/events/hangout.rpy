@@ -6,6 +6,7 @@ label tonks_hangout:
 
     call setup_fireplace_hangout(char="tonks")
 
+    $ nt_he_counter += 1
     if firewhisky_ITEM.number >= 1:
         $ firewhisky_ITEM.number -= 1
 

@@ -56,7 +56,8 @@ label tonks_progress_init:
 
     ### Tonks Hangout Events ###
 
-    if not hasattr(renpy.store,'nt_he_drink'):
+    if not hasattr(renpy.store,'nt_he_counter'):
+        $ nt_he_counter = 0
         $ nt_he_drink   = event_class(title = "Tonks Firewhisky", start_label = "tonks_hangout", events = [
             [
             ["nt_he_wine_intro"],

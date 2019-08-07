@@ -6,6 +6,7 @@ label snape_hangout:
 
     call setup_fireplace_hangout(char="snape")
 
+    $ ss_he_counter += 1
     if wine_ITEM.number >= 1:
         $ wine_ITEM.number -= 1
 

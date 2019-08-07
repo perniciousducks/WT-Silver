@@ -37,11 +37,6 @@ label snape_progress_init:
         $ sna_friendship = 0 #Get's +1 after every evening spent is Snape's company.
         $ sna_friendship_maxed = False
 
-        $ wine_intro_done = False
-        $ sna_wine_counter = 0
-
-
-
 
         ### SNAPE EVENTS ###
         $ snape_invited_to_watch = False #Turns TRUE when Hermione is stripping and Snape walks in on you. Allows to invite him to watch her strip next time.
@@ -49,24 +44,14 @@ label snape_progress_init:
         ### CHITCHATS WITH SNAPE ###
         $ chitchated_with_snape = False #Prevents you from chitchating more then once a day. Turns back to False every night.
 
-        $ chitchat_event_01_happened = False
-        $ chitchat_event_02_happened = False
-        $ chitchat_event_03_happened = False
-        $ chitchat_event_04_happened = False
-        $ chitchat_event_05_happened = False
-        $ chitchat_event_06_happened = False
-        $ chitchat_event_07_happened = False
 
 
         ### SPECIAL DATES WITH SNAPE ###
         $ snape_unlocked = False
         $ hanging_with_snape = False #Removed! Not in use anymore!
 
-        $ date_with_snape_02_happened = False #Second date with Snape. They decide to de-throne Hermione.
-                                      #Turns true after hermione_intro_E2
-
-    #if not hasattr(renpy.store,'ADD') or reset_persistants:
-    if not hasattr(renpy.store,'ss_he_drink'):
+    if not hasattr(renpy.store,'ss_he_counter'):
+        $ ss_he_counter = 0
         $ ss_he_drink   = event_class(title = "Snape Wine", start_label = "snape_hangout", events = [
             [
             ["ss_he_wine_intro"],

@@ -110,6 +110,13 @@ label letter_paperwork_report:
 
     return
 
+label letter_favor_complaint:
+    m "Amelia...{w}Bones?"
+    g9 "*He-he-he-he-he*..."
+    m "Wait a second..."
+    m "Does that mean I'm in trouble?"
+    return
+
 label update_report_money:
 
     if game_difficulty <= 1: #easy
@@ -275,8 +282,8 @@ label __init_variables:
 
     if not hasattr(renpy.store,'letter_favor_complaint_OBJ'):
         $ letter_favor_complaint_OBJ = mail_letter_class()
-    $ letter_favor_complaint_OBJ.text = "{size=-7}Dear Albus Dubmbledore,\n\n favour trading bad!\nSent Auror to Hogwarts\n\nCornelius Fudge,\nDepartment Head: Improper Use of Magic Office{/size}"
-    $ letter_favor_complaint_OBJ.label = "" # Dev Note Add comment on letter!
+    $ letter_favor_complaint_OBJ.text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-4}Dear professor Dumbledore,\nit has come to the ministry's attention from an anonymous letter, that there has been illicit activities going on between staff members and students within your halls.\n\nAn Auror has been dispatched and will arrive shortly to begin the investigation.{/size}\n\n\n{size=-3}Yours sincerely,\nAmelia Bones, Department of Magical Law Enforcement.{/size}"
+    $ letter_favor_complaint_OBJ.label = "letter_favor_complaint"
 
     if not hasattr(renpy.store,'letter_curse_complaint_OBJ'):
         $ letter_curse_complaint_OBJ = mail_letter_class()

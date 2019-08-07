@@ -87,13 +87,14 @@ label nt_pr_teach_start:
 ### Tier 1 ###
 
 label nt_pr_teach_T1_E1: #Tier 1 - Event 1 - Slytherin boy
+    call ton_main("Hi, [ton_genie_name].","base","base","base","mid")
     m "How were your extra curricular activities today?"
-    call ton_main("Ah! It's such a rush!","base","base","base","mid")
+    call ton_main("It's such a rush!","base","base","base","mid")
     call ton_main("I can't believe how naughty I feel!","base","base","base","mid")
     m "So I take it you managed to sneak a peek?"
     call ton_main("Sort of... I didn't really see it.","base","base","base","mid")
     call ton_main("But it was still incredible...","base","base","base","mid")
-    call ton_main("Ugh... that look on his face...","base","base","base","mid")
+    call ton_main("*Ugh*... that look on his face...","base","base","base","mid")
     m "What did you see then?"
     call ton_main("Well, this sweet little Slytherin kid had been staring at my boobs all lesson.","base","base","base","mid")
     call ton_main("So, naturally, I get him to stay behind after class.","base","base","base","mid")

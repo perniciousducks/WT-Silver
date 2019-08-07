@@ -77,9 +77,9 @@ label nt_he_wine_intro:
     call ton_main("How about \"firewhisky?\" Got any of that?","open","base","base","mid")
     m "I fear not..."
     call ton_main("What a bummer. I guess wine will do for the day.","upset","base","sad","down")
-    m "(Maybe there is some of that stuff stored in that cupboard aswell...)"
+    m "(Maybe there is some of that stuff stored in that cupboard as well...)"
 
-    $ firewhisky_ITEM.unlocked   = True  # Makes this availabel in the cupboard.
+    $ firewhisky_ITEM.unlocked   = True  # Makes this available in the cupboard.
     $ firewhisky_ITEM.unlockable = False # Makes this available at the shop as a buyable item.
 
     jump tonks_hangout_continue
@@ -119,13 +119,13 @@ label nt_he_firewhisky_E1:
     call ton_main("...","horny","base","base","down")
     call ton_main("A little bit more...","open","base","raised","down")
     call ton_main("A bit more...","horny","base","angry","down")
-    call ton_main("That's it, thanks.","base","base","base","mid")
+    call ton_main("That's it, cheers.","base","base","base","mid")
     if daytime:
         m "Boring lessons ahead?"
         call ton_main("Not in particular, why?","open","base","base","mid")
         m "You might regret going back to classes after drinking this much."
         call ton_main("Oh don't you worry, [ton_genie_name].","smile","happyCl","base","mid")
-        call ton_main("I could down this entire bottle without anybody being able to notive a thing.","horny","base","base","L")
+        call ton_main("I could down this entire bottle without anybody being able to notice a thing.","horny","base","base","L")
         m "You're one glass in and swaying like a buoy..."
         call ton_main("*Hick* Oh well-...","open","base","base","ahegao", trans="hpunch")
         call ton_main("No risk, no fun!","horny","base","base","mid")
@@ -151,8 +151,8 @@ label nt_he_firewhisky_E3:
     m "Want to get drunk?"
     call ton_main("Of course.","base","base","base","down", ypos="head")
     if daytime:
-        call ton_main("I'm going to regret this, won't I?","angry","base","worried","down")
-        call ton_main("I hope my students won't notice.","horny","base","base","mid")
+        call ton_main("I'm not going to regret this, am I?","angry","base","worried","down")
+        call ton_main("Hopefully my students won't notice...","horny","base","base","mid")
     else:
         call ton_main("I'd never say no to that!","horny","base","base","down")
 
@@ -181,16 +181,16 @@ label hang_with_tonks_E1:
     m "Quite a bit. She's not too thrilled on the idea of favour trading."
     call ton_main("Maybe I can be of help with her?","base","base","wide","L")
     call ton_main("I can be very convincing.","horny","base","raised","mid")
-    m "What are you going to do?"
-    call ton_main("Persuade her to try it herself, for a start...","open","base","base","R")
+    m "What are you suggesting?"
+    call ton_main("To persuade her having a try of it herself, for a start...","open","base","base","R")
     call ton_main("Convince her that trading favours isn't all bad.","base","base","base","mid")
     m "That would indeed be very helpful. She's stubborn in that regard."
     call ton_main("You don't have to tell me. She's been lecturing me about those \"sexual favours\" since the very day I got here...","open","base","base","R")
     call ton_main("But I shouldn't complain about that...","base","base","base","mid")
     call ton_main("Hearing those naughty words spill out of her gorgeous little mouth really gets me going!","horny","base","base","ahegao")
-    g9 "I can imagine that."
+    g9 "I can imagine so."
     call ton_main("When she describes all the wrong-doings of those filthy \"Slytherin girls\"...","open","base","angry","mid")
-    call ton_main("How could I possibly get tired of that!","base","base","base","mid")
+    call ton_main("How can I possibly get tired of that!","base","base","base","mid")
     call ton_main("I'm very glad that I've decided to join you two.","open","base","base","down")
     call ton_main("As an Auror It's just constant busy work...","open","base","angry","mid")
     call ton_main("Not to mention the hours.","angry","base","upset","down")
@@ -350,7 +350,7 @@ label nt_he_story_intro_E2:
     g9 "And you?"
     call ton_main("Me? What about me?","upset","base","angry","mid")
     m "You wouldn't say what we do is unethical as well?"
-    call ton_main("Did you already start drinking before I got here?","open","base","angry","mid")
+    call ton_main("Did you start drinking before I got here?","open","base","angry","mid")
     m "I never stop..."
     call ton_main("...","upset","base","base","up")
 
@@ -360,7 +360,7 @@ label nt_he_story_intro_E2:
 label nt_he_story_intro_E3:
     call ton_main("Do you always happen to have a bottle ready for me?","base","base","raised","mid")
     g9 "For you, always."
-    call ton_main("I don't even have to visit the Hogshead anymore to get a drink...","base","base","base","down")
+    call ton_main("I don't even have to visit the Hogshead to get a drink anymore...","base","base","base","down")
     m "Why go anywhere when you got a magic cupboard that fills itself with alcohol."
     call ton_main("It does?","open","base","raised","mid")
     m "At least I think that’s how it works..."
@@ -375,7 +375,7 @@ label nt_he_story_intro_E3:
     m "If only I had my powers...I could do it with a snap of a finger."
     call ton_main("I'm sure you could...","smile","happyCl","base","mid")
 
-    ">You brag abour your almighty powers in front of the witch..."
+    ">You brag about your almighty powers in front of the witch..."
     ">If only you hadn't lost them..."
 
     #m "(What kind of shit wizard can't even make food...)"
@@ -392,7 +392,7 @@ label nt_he_story_intro_E3:
 
 
 label nt_he_story_intro_E4:
-    call ton_main("I've been so busy lately... The days here fly by faster than a Firebolt.","open","closed","sad","mid", ypos="head")
+    call ton_main("I've been so busy lately... The days here is flying by faster than a Firebolt.","open","closed","sad","mid", ypos="head")
     m "I'm not sure I know that...spell?"
     call ton_main("It's a broom...","base","base","base","mid")
     m "Oh, I see... I'm not into brooms you should know."
@@ -410,7 +410,7 @@ label nt_he_story_intro_E4:
     call ton_main("Just out of curiosity...","horny","base","base","mid")
     m "(...)"
 
-    ">You keep thinking about what Tonks meant with that, while she's giving you submissive looks..."
+    ">You keep thinking about what Tonks meant with that, whilst she eyes you up expectantly..."
 
     jump end_tonks_hangout
 
@@ -498,13 +498,13 @@ label nt_he_story_E8:
     call ton_main("Anyway, he once brought in this werewolf that we had put in custody.","angry","base","base","mid")
     g4 "He did what?!?"
     call ton_main("See, I knew you'd react like that.","base","base","angry","mid")
-    m "No, I was just taken by surprise... I didn't know they exist."
+    m "No, I was just taken by surprise... I didn't know they existed."
     call ton_main("Of course they do, silly!","smile","happyCl","base","mid")
     call ton_main("So he brought in this werewolf... apparently quite harmless comparatively.","open","base","base","R")
     m "Compared to what? A dog?"
     call ton_main("Compared to werewolves like Fenrir Greyback...","upset","base","angry","L")
     m "Oh yeah..."
-    m "That Guy..."
+    m "That... Guy..."
     call ton_main("Moody had worked out a deal with this guy...","open","base","base","mid")
     call ton_main("To see how I would react in a real life situation where he would turn.","base","base","angry","mid")
     m "Turn where?"
@@ -539,7 +539,7 @@ label nt_he_story_intro_E9:
     call ton_main("Anyway...","open","base","base","L")
     call ton_main("He could've ended up in prison at some point... but law isn't black and white like that.","open","base","base","mid")
     m "So you're saying that his intentions were good?"
-    m "When is using drugs on people ever okay?"
+    m "When is using drugs on people okay in your book?"
     call ton_main("In this instance, the woman in question was in an abusive relationship.","open","base","sad","R")
     call ton_main("And the man in question knew that the boyfriend was quite jealous.","open","base","base","mid")
     m "I see, so he fed her the potion to get her out of it."
@@ -605,13 +605,13 @@ label nt_he_story_E11:
     call ton_main("So,...I changed my appearance to professor Snape and went towards the staff room...","open","base","angry","mid")
     m "Isn't the staff room just full of boring old teachers?"
     #call ton_main("Have you used a mirror lately?","open","base","raised","mid")
-    call ton_main("I wasn't going there to talk to the teachers...","open","closed","base","mid")
+    call ton_main("My goal wasn't to talk with the teachers...","open","closed","base","mid")
     call ton_main("I was trying to get a key to the prefects bathroom.","base","base","angry","mid")
-    m "And you couldn't have turned into a prefect to get in there that way?"
+    m "And you couldn't just turn into a prefect to get in there that way?"
     call ton_main("Well, that would’ve been the clever thing to do...","open","base","sad","R")
     call ton_main("Although like everything else in this school the bathroom has a password and not a key...","open","base","sad","mid")
     call ton_main("Of course I didn't know that... I had just heard rumours about the bathroom.","angry","base","sad","down")
-    m "Did you manage to get in there in the end?"
+    m "So did you manage to get in there in the end?"
     call ton_main("Oh yeah, it was easy!","smile","happyCl","base","mid")
     call ton_main("Once I knew about the password I just had to pretend to be one of the prefects, and ask another for it.","base","base","base","mid")
     m "Smart..."
@@ -624,7 +624,7 @@ label nt_he_story_E12:
     m "Tell me more about that shape-shifting ability of yours..."
     call ton_main("Of course...","base","base","angry","mid", ypos="head")
     call ton_main("Most of my escapades were kind of one trick ponies.","open","base","base","mid")
-    m "Sounds pretty foolproof to me..."
+    m "Sounds pretty fool proof to me..."
     m "I mean how many other students could change their appearance?"
     call ton_main("None, that's why. Process of elimination.","upset","base","sad","R")
     m "So you got punished without any sort of proof?"
@@ -641,15 +641,15 @@ label nt_he_story_E12:
     call ton_main("Well, just like many weird or odd sexual preferences they're often deeply embedded with experiences from your youth.","open","base","worried","L")
     call ton_main("So for me, there was this one time where I pretended to be a teacher...","open","base","worried","mid")
     call ton_main("As in, I literally took over their lesson when they were ill.","angry","base","base","down")
-    m "How did you manage that. Weren't the students notified of their leave beforehand?"
+    m "How did you manage that, weren't the students notified of their leave beforehand?"
     call ton_main("No. There was just a note on their door and I ripped it off before the class got there.","open","closed","base","mid")
     m "Seems like a flawed system..."
     call ton_main("Yeah, some of the teachers to this day changed the way they do it because of this reason. Not the new ones though...","angry","base","sad","R")
-    m "You didn't tell me what class this was, did you turn into Snape and teach potions?"
+    m "You haven't told me which class this was, did you turn into Snape and teach potions?"
     call ton_main("Of course not, I wasn't going to make someone hurt themselves... and Snape would've made my life hell.","open","closed","sad","mid")
     call ton_main("It was charms...","angry","base","base","down")
     m "Right..."
-    call ton_main("I had been practicing some charms, and tought myself a couple on my own,...like the one for invisibility...","base","base","base","down")
+    call ton_main("I had been practicing some charms, and taught myself a couple on my own,...like the one for invisibility...","base","base","base","down")
     m "Impressive..."
     call ton_main("Thanks... Normally you wouldn't learn that one until much later, so you'd easily be able to dispel it.","smile","happyCl","base","mid")
     m "But you decided it was a good idea to teach it anyway?"
@@ -660,7 +660,7 @@ label nt_he_story_E12:
     call ton_main("And that's where that particular fetish came from...","base","base","base","mid")
     g4 "Hold on, there's a spell to make only the clothes invisible?"
     call ton_main("That's what you focus on?","open","base","raised","mid")
-    m "Well, yeah! You invented a new spell that no one's ever heard off, and that hasn't been used since..."
+    m "Well, yeah! Sound to me like you invented a new spell that no one's ever heard off..."
     g4 "And it can make people's clothing invisible?! That's kind of a big deal!"
     call ton_main("It's not a new spell... it was just novice wizards and witches not being powerful enough to cast it properly...","open","base","base","mid")
     call ton_main("Similarly to splinching.","upset","base","worried","R")
@@ -696,34 +696,34 @@ label nt_he_story_centaur: # Not in use.
     m "(I like where this is going!)"
 
     call nar(">*Fap!* *Fap!* *Fap!*")
-    call ton_main("Centaurs don't do well with Ministry personell...{w} Even less so with female witches such as myself...","open","base","raised","mid")
+    call ton_main("Centaurs don't do well with Ministry personnel{w} Even less so with female witches such as myself...","open","base","raised","mid")
     call ton_main("Making them a compelling offer so they'd peacefully return to their assigned territory was quite...{w}challenging {image=textheart}","horny","base","base","R")
     g4 "Go on..."
     call ton_main("All I did was do them a small favour.{w} A little service the Ministry would never even think of providing them with.","angry","base","worried","down")
     call ton_main("But I did it anyway...","base","base","angry","base")
     g4 "*Argh!* What did you do?"
     call ton_main("Well, I simply helped them release some of their stored up tension...","open","base","base","R")
-    call ton_main("And stroked their manhoods...{w}with my hands...","horny","base","base","mid")
+    call ton_main("And stroked their manhood's{w}with my hands...","horny","base","base","mid")
 
     g9 "Yes! How filthy!"
     call ton_main("*Hmph?!* You believe what I did was filthy, Professor?!","base","wide","wide","wide")
     call ton_main("*Uhm*... I mean, it depends on how you look at it...","upset","base","worried","down")
     call ton_main("It's by far the simplest way to calm down a group of wild centaurs...","open","base","worried","R")
     call ton_main("As far as I could tell, they haven't had any females within their group...","open","base","base","mid")
-    call ton_main("You can imagine the amount of tention that gets built up as a result of that...","angry","base","base","mid")
+    call ton_main("You can imagine the amount of tension that gets built up as a result of that...","angry","base","base","mid")
     call ton_main("(Inside those heavy, cum-filled balls!)","horny","base","base","ahegao", hair="horny") # ahegao
     m "So your idea was to jerk them off?"
 
     call ton_main("Well, yes.{w} They can't easily reach around to do it themselves now, can they?","horny","base","base","mid")
     m "(Those poor bastards!)"
 
-    g4 "Must have been a real...{w}*argh!*- relieve for them!"
+    g4 "Must have been a real...{w}*argh!*- relief for them!"
     call ton_main("I believe so too, Sir.","base","base","base","mid")
     call ton_main("You should know, I never shy away from getting my hands dirty!","horny","base","raised","mid", hair="horny")
     g4 "*Agh!* Fuck! I'm getting close..."
     call ton_main("Most of the Ministry view Centaurs as \"lesser\"... As animals.","open","base","base","R")
     call ton_main("But not me. To me they're all powerful, and magnificent creatures.","base","base","angry","mid")
-    call ton_main("And it's known that above all they virtue strenght, dominance, and lust...","open","base","base","mid")
+    call ton_main("And it's known that above all they virtue strength, dominance, and lust...","open","base","base","mid")
     call ton_main("(And they are so{w} fucking{w} hung!!!)","horny","base","base","ahegao", hair="horny") # Ahegao
 
     #Genie cums
@@ -744,7 +744,7 @@ label nt_he_story_centaur: # Not in use.
     call cum_block
     g4 "You dirty slut!"
 
-    call ton_main("(I better not tell him what I had to do for their chieftain...)","angry","base","worried","L", hair="horny")
+    call ton_main("(I'd better not tell him what I had to do for their chieftain...)","angry","base","worried","L", hair="horny")
     call ton_main("(I can still taste him) {image=textheart} {image=textheart} {image=textheart}","horny","base","base","ahegao", hair="horny")
 
     call hide_characters

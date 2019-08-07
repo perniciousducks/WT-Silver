@@ -300,13 +300,11 @@ label tonks_talk:
                     call ton_main("All that mattered to him was power, and achieving his own immortality...","open","base","angry","mid")
                     m "Both fairly overrated once you have it, if you ask me..."
                     call ton_main("You don't say...","base","base","raised","mid")
-                    m "I bet all he secretly wanted was to have a wife and a kid that loved him..."
+                    m "I bet all he secretly wanted was to have a wife, and a kid that loved him..."
                     call ton_main("Voldemort, having a child? Are you serious?","open","wide","wide","wide")
-                    m "No. J.K..."
-                    call ton_main("I'm sorry?","angry","base","base","mid")
-                    m "I'm \"just kidding\" with you..."
-                    m "He was never a true immortal..."
-                    g9 "All we do is waste a majority of our existence with mindless sex!"
+                    m "Of course not."
+                    m "Once you're immortal, the last thing you need is some annoying brat on your mind..."
+                    g9 "All we really want to do is waste a majority of our existence with mindless sex!"
                     call ton_main("Oh my...","horny","base","base","mid", hair="horny")
                     m "And sometimes a bit of kinky roleplay..."
                     m "Are you going to call me \"Lord Voldemort\" now or what?"
@@ -317,9 +315,9 @@ label tonks_talk:
                 "-Daddy-":
                     $ ton_genie_name = "Daddy"
                     call ton_main("Well, you do look about thrice as old as me...","base","base","raised","mid")
-                    call ton_main("Crazy to think you geezers get to bang all those young, innocent witches here...","open","base","base","R")
+                    call ton_main("Crazy to think you geezers gets to bang all those young, innocent witches here...","open","base","base","R")
                     m "(Geezers?)"
-                    m "But I thought you don't mind it?"
+                    m "But I thought you didn't mind it?"
                     call ton_main("Oh, I don't mind at all, [ton_genie_name]!","horny","base","base","mid")
                     jump tonks_talk
 
@@ -393,7 +391,7 @@ label tonks_talk:
                     call ton_main("Hihi--","base","base","base","R")
                     call ton_main("If only you knew...","horny","base","raised","ahegao")
                     m "(...)"
-                    g4 "(What does she mean with that now?)"
+                    g4 "(What does she mean by that?)"
                     jump tonks_talk
 
                 "{color=#858585}-Cunt-{/color}" if ton_friendship < 60:

@@ -56,7 +56,7 @@ screen ch_potion():
 ### HERMIONE CHIBI FAVOUR SCREENS (with Genie or Snape,...) ###
 
 ### GROPING ###
-screen groping_01: # Grope Ass fully clothed - Flip = True (facing door)
+screen groping_01(): # Grope Ass fully clothed - Flip = True (facing door)
     tag favor
     if hermione_wear_top == False and hermione_wear_bottom == False:
         add "characters/hermione/chibis/fingering/02.png" at Position(xpos=-60, ypos=10)

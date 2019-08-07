@@ -220,60 +220,8 @@ label start_wt:
 
     ### CHEATS / SKIPPING ###
     if skip_to_hermione:
-        $ bird_examined = True
-        $ desk_examined = True
-        $ cupboard_examined = True
-        $ door_examined = True
-        $ fireplace_examined = True
 
-        $ achievement.unlock("start", True)
-
-        $ genie_intro.E1_complete = True
-        $ genie_intro.E2_complete = True
-        $ genie_intro.E3_complete = True
-
-        $ snape_intro.E1_complete   = True
-        $ snape_intro.E2_complete   = True
-        $ snape_intro.E3_complete   = True
-        $ snape_intro.duel_complete = True
-        $ snape_intro.E4_complete   = True
-        $ snape_intro.E5_complete   = True
-
-        $ hang_with_snape.E1_complete = True
-        $ hang_with_snape.E2_complete = True
-        $ hang_with_snape.E3_complete = True
-        $ hang_with_snape.E4_complete = True
-        $ hang_with_snape.E5_complete = True
-
-        $ tonks_intro.E1_complete = True
-        $ tonks_intro.E2_complete = True
-        $ tonks_intro.E3_complete = True
-
-        $ hang_with_tonks.E1_complete = True
-
-        $ hermione_intro.E1_complete = True
-        $ hermione_intro.E2_complete = True
-        $ hermione_intro.E3_complete = True
-        $ hermione_intro.E4_complete = True
-        $ hermione_intro.E5_complete = True
-        $ hermione_intro.E6_complete = True
-
-        $ letter_from_hermione_A_OBJ.mailRead()
-        $ letter_from_hermione_B_OBJ.mailRead()
-        $ letter_paperwork_unlock_OBJ.mailRead()
-        $ letter_paperwork_report_OBJ.mailRead()
-        $ letter_favor_complaint_OBJ.mailRead()
-
-        $ snape_unlocked = True
-        $ achievement.unlock("unlocksna", True)
-
-        $ tonks_unlocked = True
-        $ achievement.unlock("unlockton", True)
-
-        $ hermione_unlocked = True
-        $ achievement.unlock("unlockher", True)
-        $ tutoring_hermione_unlocked = True
-        $ hermione_favors = True
+        call update_early_game_vars
 
         $ wine_ITEM.number       += 5
         $ firewhisky_ITEM.number += 5

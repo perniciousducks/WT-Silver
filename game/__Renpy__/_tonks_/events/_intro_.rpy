@@ -109,7 +109,7 @@ label tonks_intro_E1:
         call ton_main("The Ministry would be furious if they knew that I've told you!","open","base","worried","mid")
         call ton_main("(Not that I'd mention any of it... They'd probably have me sacked on the spot if they knew...)","angry","base","worried","R")
         call ton_main("(I did the job. That's all that should matter to them...)","upset","base","base","down")
-        g4 "Come one!..."
+        g4 "Come on!..."
         call ton_main("I'm sorry, Professor, but I really shouldn't!","open","base","base","mid")
         call ton_main("And sharing stories is not why I came here.","base","base","base","R")
         m "(Balls...)"
@@ -168,7 +168,7 @@ label tonks_intro_E1:
             call ton_main("Sir?","open","wide","wide","wide")
             call ton_main("I'm sorry Professor, I wasn't accusing you of-","open","base","sad","mid")
             m "I did not have sexual relations with that woman."
-            call ton_main("Professor! I neve implied that-...","angry","base","raised","mid")
+            call ton_main("Professor! I wasn't implying that-...","angry","base","raised","mid")
             call ton_main("In the letter she wrote, Miss Granger never accused you of selling favours to your students...","open","base","base","L")
             call ton_main("Nonetheless, she was very persistent that certain other teachers weren't behaving as adequately...","open","base","base","mid")
 
@@ -247,6 +247,8 @@ label tonks_intro_E2:
             ton "I'm coming in..."
             g4 "(Shit!)"
 
+    call play_sound("door")
+
     call ton_main("Professor.","base","base","base","mid", xpos="right", ypos="base")
     m "Hey! If it isn't..."
 
@@ -277,7 +279,7 @@ label tonks_intro_E2:
     call ton_main("I’ve been rather occupied listening to Miss Granger's own investigations...","open","base","base","R")
     call ton_main("That girl sure is something, isn't she?","base","base","base","mid")
     call ton_main("Not that I mind listening to her.","horny","base","base","R", hair="horny")
-    call ton_main("She gave me a very long report that went well into the evening, whilst I enjoyed a glass of firewhisky...","open","base","base","mid")
+    call ton_main("She gave me a very long report that went well into the evening, whilst I enjoyed a glass of firewhiskey...","open","base","base","mid")
     call ton_main("She has been very thorough in documenting the happenings she's witnessed...","base","base","base","mid")
     m "I can imagine that..."
     call ton_main("Anyhow... Other than her documentation, she had no proof of any illicit activities.{w} It's all just accusations.","open","base","base","R")

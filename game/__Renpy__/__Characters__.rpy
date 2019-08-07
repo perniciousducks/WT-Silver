@@ -42,16 +42,14 @@ init python:
     def dynamic_transition(trans, immediate):
         """Apply a transition normally or immediately (at the same time as next interaction)."""
         try:
-            # Check if the requested transition is properly defined
+            # Assume `trans` refers to an existing transition, rely on exception for fallback
             x = globals()[trans]
-            if issubclass(x.callable, renpy.display.transition.Transition):
-                # Apply the transition
-                if immediate:
-                    renpy.with_statement({ "master": x })
-                else:
-                    renpy.with_statement(x)
+            if immediate:
+                renpy.with_statement({ "master": x })
+            else:
+                renpy.with_statement(x)
         except:
-            renpy.with_statement("None") # Fallback
+            renpy.with_statement(None) # Fallback
 
 label transition(trans=None, immediate=False):
     if trans != None:

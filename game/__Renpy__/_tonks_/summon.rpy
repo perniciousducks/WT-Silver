@@ -99,7 +99,7 @@ label summon_tonks:
             jump tonks_hangout
 
         "{color=#858585}-Let's hang-{/color}" if firewhisky_ITEM.number < 1 and nt_he_drink.counter != 0:
-            m "(I don't have any more firewhisky...)"
+            m "(I don't have any firewhisky...)"
             jump tonks_requests
 
         # Wardrobe

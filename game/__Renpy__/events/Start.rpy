@@ -151,14 +151,9 @@ label start_wt:
         menu:
             ">Would you like to skip early sections of the game?"
             "-No, play the intro-":
-                pass
-            "-Skip to after the duel-" if cheats_active or persistent.game_complete:
-                $ skip_duel = True
+                $ skip_to_hermione = False
             "-Skip to Hermione-" if cheats_active or persistent.game_complete:
                 $ skip_to_hermione = True
-            "-Skip to {color=#007f00}AFTER{/color} Hermione events-" if config.developer:
-                $ skip_to_hermione = True
-                $ skip_after_hermione = True
 
     # Run achievements thread
     $ renpy.invoke_in_thread(update_achievements)
@@ -224,73 +219,69 @@ label start_wt:
     $ addicted = False
 
     ### CHEATS / SKIPPING ###
-    if skip_duel or skip_to_hermione:
+    if skip_to_hermione:
         $ bird_examined = True
         $ desk_examined = True
         $ cupboard_examined = True
         $ door_examined = True
         $ fireplace_examined = True
+
+        $ achievement.unlock("start", True)
+
         $ genie_intro.E1_complete = True
         $ genie_intro.E2_complete = True
         $ genie_intro.E3_complete = True
-        $ achievement.unlock("start", True)
 
-        $ snape_intro.E1_complete = True
-        $ snape_intro.E2_complete = True
-        $ snape_intro.E3_complete = True
+        $ snape_intro.E1_complete   = True
+        $ snape_intro.E2_complete   = True
+        $ snape_intro.E3_complete   = True
         $ snape_intro.duel_complete = True
+        $ snape_intro.E4_complete   = True
+        $ snape_intro.E5_complete   = True
 
-        if skip_duel:
-            $ skip_duel = False
-            $ rum_times = 3 #7 unlocks map!
-            $ day = 5
-            $ daytime = False
-            $ interface_color = "gray"
-            hide screen blkfade
-            with fade
-            jump snape_intro_E4
+        $ hang_with_snape.E1_complete = True
+        $ hang_with_snape.E2_complete = True
+        $ hang_with_snape.E3_complete = True
+        $ hang_with_snape.E4_complete = True
+        $ hang_with_snape.E5_complete = True
 
-        $ snape_intro.E4_complete = True
-        $ snape_intro.E5_complete = True
-        if skip_to_hermione:
-            $ skip_to_hermione = False
+        $ tonks_intro.E1_complete = True
+        $ tonks_intro.E2_complete = True
+        $ tonks_intro.E3_complete = True
 
-            $ hermione_intro.E1_complete = True
-            $ hermione_intro.E2_complete = True
+        $ hang_with_tonks.E1_complete = True
 
-            $ tonks_intro.E1_complete = True
-            $ tonks_intro.E2_complete = True
-            $ tonks_intro.E3_complete = True
+        $ hermione_intro.E1_complete = True
+        $ hermione_intro.E2_complete = True
+        $ hermione_intro.E3_complete = True
+        $ hermione_intro.E4_complete = True
+        $ hermione_intro.E5_complete = True
+        $ hermione_intro.E6_complete = True
 
-            $ hang_with_snape.E1_complete = True
-            $ hang_with_snape.E2_complete = True
-            $ hang_with_snape.E3_complete = True
-            $ hang_with_snape.E4_complete = True
-            $ hang_with_snape.E5_complete = True
+        $ letter_from_hermione_A_OBJ.mailRead()
+        $ letter_from_hermione_B_OBJ.mailRead()
+        $ letter_paperwork_unlock_OBJ.mailRead()
+        $ letter_paperwork_report_OBJ.mailRead()
+        $ letter_favor_complaint_OBJ.mailRead()
 
-            $ snape_unlocked = True
-            $ achievement.unlock("unlocksna", True)
-            $ rum_times = 6 #7 unlocks map!
-            $ day = 14
+        $ snape_unlocked = True
+        $ achievement.unlock("unlocksna", True)
 
-            if skip_after_hermione:
-                $ skip_after_hermione = False
+        $ tonks_unlocked = True
+        $ achievement.unlock("unlockton", True)
 
-                $ hermione_intro.E5_complete = True
-                $ hermione_intro.E6_complete = True
+        $ hermione_unlocked = True
+        $ achievement.unlock("unlockher", True)
+        $ tutoring_hermione_unlocked = True
+        $ hermione_favors = True
 
-                $ hermione_unlocked = True
-                $ achievement.unlock("unlockher", True)
-                $ day = 15
-                $ tutoring_hermione_unlocked = True
-                $ hermione_favors = True
-                jump day_start
-            $ daytime = True
-            if not persistent.nightmode:
-                $ interface_color = "gold"
-            hide screen blkfade
-            with fade
-            jump hermione_intro_E6
+        $ wine_ITEM.number       += 5
+        $ firewhisky_ITEM.number += 5
+
+        $ rum_times = 6
+        $ day = 14
+
+        jump day_start
 
     ### START ANIMATION ###
     stop bg_sounds #Stops playing the fire SFX.

@@ -86,7 +86,7 @@ label quests:
 
     if day >= 10:
         if daytime:
-            if nt_event_pause == 0 and hermione_intro.E2_complete and not tonks_intro.E1_complete:
+            if nt_event_pause == 0 and hermione_intro.E5_complete and not tonks_intro.E1_complete:
                 # Tonks visits for the first time.
                 jump tonks_intro_E1
         else:
@@ -326,5 +326,5 @@ label quest_init:
         E2_complete=False,
         E3_complete=False,
         )
-        
+
     return

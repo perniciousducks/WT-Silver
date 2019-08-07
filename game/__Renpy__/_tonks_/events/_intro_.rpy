@@ -277,7 +277,7 @@ label tonks_intro_E2:
     call ton_main("I’ve been rather occupied listening to Miss Granger's own investigations...","open","base","base","R")
     call ton_main("That girl sure is something, isn't she?","base","base","base","mid")
     call ton_main("Not that I mind listening to her.","horny","base","base","R", hair="horny")
-    call ton_main("She gave me a very long report that went well into the evening, whilst I enjoyed a glass of firewhiskey...","open","base","base","mid")
+    call ton_main("She gave me a very long report that went well into the evening, whilst I enjoyed a glass of firewhisky...","open","base","base","mid")
     call ton_main("She has been very thorough in documenting the happenings she's witnessed...","base","base","base","mid")
     m "I can imagine that..."
     call ton_main("Anyhow... Other than her documentation, she had no proof of any illicit activities.{w} It's all just accusations.","open","base","base","R")

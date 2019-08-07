@@ -144,7 +144,7 @@ screen hermione_chibi_ass(ani=None):
 ### Handjob ###
 screen hermione_chibi_hj(ani=None, xpos=230, ypos=0):
     tag favor
-
+    zorder chibi_zorder
     $ chibi_xpos = xpos
     $ chibi_ypos = ypos
 
@@ -163,7 +163,7 @@ screen hermione_chibi_hj(ani=None, xpos=230, ypos=0):
         add "undershirt_cum_ani" xpos chibi_xpos ypos chibi_ypos
     elif ani in ["hj_cumming_in_pause"]:
         add "characters/hermione/chibis/handjob/sperm_under_12.png" xpos chibi_xpos ypos chibi_ypos
-    zorder chibi_zorder
+    
 
 
 

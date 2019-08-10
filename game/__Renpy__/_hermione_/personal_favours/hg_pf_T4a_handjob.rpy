@@ -148,7 +148,7 @@ label hg_pf_handjob_T1_intro_E1:
             call her_main("If it will bring \"Gryffindor\" 100 house points, I don't mind touching your... thing a little.","smile","happyCl", emote="06")
             pass
 
-    jump hg_handjob_1
+    jump hg_pf_handjob_1
 
 
 
@@ -173,7 +173,7 @@ label hg_pf_handjob_T1_intro_E2:
     m "Come on [hermione_name], it's not like I'm asking you to do this for free."
     call her_main(".......","annoyed","angryL")
 
-    jump hg_handjob_1
+    jump hg_pf_handjob_1
 
 
 label hg_pf_handjob_T1_repeat:
@@ -187,7 +187,7 @@ label hg_pf_handjob_T1_repeat:
     m "Of course. 45 points."
     call her_main(".........................","upset","angryL")
 
-    jump hg_handjob_1
+    jump hg_pf_handjob_1
 
 
 
@@ -205,7 +205,7 @@ label hg_pf_handjob_T2_intro_E1:
     call her_main("As long as I am getting paid...","grin","baseL")
     m "Well, then. Time to earn those points."
 
-    jump hg_handjob_2
+    jump hg_pf_handjob_2
 
 
 label hg_pf_handjob_T2_intro_E2:
@@ -216,7 +216,7 @@ label hg_pf_handjob_T2_intro_E2:
     call her_main("I guess not, [genie_name]...","grin","down")
     call her_main("...................","clench","baseL")
 
-    jump hg_handjob_2
+    jump hg_pf_handjob_2
 
 
 label hg_pf_handjob_T2_repeat:
@@ -226,13 +226,13 @@ label hg_pf_handjob_T2_repeat:
     m "You don't mind giving me another handjob, do you?"
     call her_main("Of course not, [genie_name]...","grin","baseL")
 
-    jump hg_handjob_2
+    jump hg_pf_handjob_2
 
 
 
 ### First Tier Handjob ###
 
-label hg_handjob_1:
+label hg_pf_handjob_1:
     stop music fadeout 4.0
     call hide_characters
     show screen blkfade
@@ -606,7 +606,7 @@ label hg_handjob_1:
 
 ### Third Handjob ###
 
-label hg_handjob_2:
+label hg_pf_handjob_2:
     stop music fadeout 3.0
     call hg_chibi_transition("hj", trans="fade")
     pause.8
@@ -741,12 +741,12 @@ label hg_handjob_2:
     call her_main("..............","angry","wink")
 
     if hg_pf_handjob.points == 1:
-        jump hg_handjob_2_cumming
+        jump hg_pf_handjob_2_cumming
     else:
-        jump hg_handjob_2_continue
+        jump hg_pf_handjob_2_continue
 
 
-label hg_handjob_2_continue:
+label hg_pf_handjob_2_continue:
     call hg_chibi_transition("hj", trans="d5")
     call ctc
 
@@ -856,10 +856,10 @@ label hg_handjob_2_continue:
                 call her_main("[tmp_name]","scream","angryCl")
                 g9 "He-he..."
 
-    jump hg_handjob_2_cumming
+    jump hg_pf_handjob_2_cumming
 
 
-label hg_handjob_2_cumming:
+label hg_pf_handjob_2_cumming:
     call hg_chibi_transition("hj", trans="d5")
     pause.8
 

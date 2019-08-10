@@ -211,6 +211,7 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
     # Favors
     hide screen hermione_chibi_ass
     hide screen hermione_chibi_hj
+    hide screen hermione_chibi_tj
     hide screen hermione_chibi_bj
     hide screen hermione_chibi_sex
 

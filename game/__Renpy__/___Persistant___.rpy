@@ -56,7 +56,7 @@ label __init_variables:
         $ walk_ypos = 250
         $ chibi_xpos = 0
         $ chibi_ypos = 0
-        $ chibi_zorder = 0
+        $ chibi_zorder = 1
         $ desk_zorder = 2
 
     if not hasattr(renpy.store,'unlocked_xmas_deco'):
@@ -212,7 +212,7 @@ label __init_variables:
 
 label update_early_game_vars: # Save compatibility
     $ updated_early_game = True # Prevents this from being called again.
-    
+
     $ bird_examined = True
     $ desk_examined = True
     $ cupboard_examined = True

@@ -85,9 +85,9 @@ label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, t
             if flip:
                 $ masturbating = True
                 if action == "admire_ass_jerk_off":
-                    call gen_chibi("jerking_off","behind_desk","base") # Fix position
+                    call gen_chibi("jerking_off","behind_desk","base")
                 if action == "admire_ass_cum":
-                    call gen_chibi("cumming","behind_desk","base") # Fix position
+                    call gen_chibi("cumming","behind_desk","base")
             show screen no_groping_02
 
     elif action in ["grope_breasts"]:
@@ -113,6 +113,12 @@ label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, t
         show screen chair_left
         show screen desk
         show screen hermione_chibi_hj(ani=action, xpos=230, ypos=0)
+
+    ### Titjob ###
+    elif action in ["tj","tj_pause","tj_idle","tj_bj_pause","tj_cumming_in","tj_cumming_in_pause","tj_cumming_on","tj_cumming_on_pause"]:
+        show screen chair_left
+        show screen desk
+        show screen hermione_chibi_tj(ani=action, xpos=450, ypos=200)
 
     ### Blowjob ###
     elif action in ["bj","bj_pause","bj_cumming_in","bj_cumming_out","bj_cumming_out_blink"]:

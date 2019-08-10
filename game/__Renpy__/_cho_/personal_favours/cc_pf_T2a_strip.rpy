@@ -1539,7 +1539,7 @@ label cc_pf_strip_T2_E1:
             call cho_main("That's the entire reason I want them!!!","open","narrow","angry","R")
             m "Seriously?"
             call cho_main("Give me those points, or I will walk right out of here!","open","narrow","angry","mid")
-            m "Fine. If you're that insistent on [current_payout] meager points..."
+            m "Fine. If you're that insistent on [current_payout] meagre points..."
             call cho_main("Thank you.","soft","closed","base","mid")
 
 

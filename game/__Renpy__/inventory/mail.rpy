@@ -110,6 +110,13 @@ label letter_paperwork_report:
 
     return
 
+label letter_favor_complaint:
+    m "Amelia...{w}Bones?"
+    g9 "*He-he-he-he-he*..."
+    m "Wait a second..."
+    m "Does that mean I'm in trouble?"
+    return
+
 label update_report_money:
 
     if game_difficulty <= 1: #easy
@@ -253,30 +260,30 @@ label __init_variables:
     # Hermione Granger Letters.
     if not hasattr(renpy.store,'letter_from_hermione_A_OBJ'):
         $ letter_from_hermione_A_OBJ = mail_letter_class()
-    $ letter_from_hermione_A_OBJ.text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sure that you remember the reason why I'm writing you this letter from my last one, sir.\n\nI beg of you, please hear my plea this time. This injustice simply cannot go on...\nNot in this day and age, not in our school.\n\nPlease take action.\n\n{size=-3}With deepest respect,\nHermione Granger{/size}"
+    $ letter_from_hermione_A_OBJ.text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sure that you remember the reason why I'm writing you this letter from my last one, sir.\n\nI beg of you, please hear my plea this time. This injustice simply cannot go on...\nNot in this day and age, not in our school.\n\nPlease take action.{/size}\n\n{size=-7}With deepest respect,\nHermione Granger{/size}"
     $ letter_from_hermione_A_OBJ.label = "letter_from_hermione_A"
 
     if not hasattr(renpy.store,'letter_from_hermione_B_OBJ'):
         $ letter_from_hermione_B_OBJ = mail_letter_class()
-    $ letter_from_hermione_B_OBJ.text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sorry to disturb you again, professor. I just want to make sure that you take this problem seriously.\n\nLast night another classmate confided in me... I gave my word to keep it a secret, so I cannot go into any details.\n\nAll I can say is that one of the Professors was involved.\n\nPlease take action soon.\n\n{size=-3}With deepest respect,\nHermione Granger.{/size}"
+    $ letter_from_hermione_B_OBJ.text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sorry to disturb you again, professor. I just want to make sure that you take this problem seriously.\n\nLast night another classmate confided in me... I gave my word to keep it a secret, so I cannot go into any details.\n\nAll I can say is that one of the Professors was involved.\n\nPlease take action soon.{/size}\n\n{size=-7}With deepest respect,\nHermione Granger.{/size}"
     $ letter_from_hermione_B_OBJ.label = "" #No comment on letter.
 
 
     # Ministry of Magic Letters.
     if not hasattr(renpy.store,'letter_paperwork_unlock_OBJ'):
         $ letter_paperwork_unlock_OBJ = mail_letter_class()
-    $ letter_paperwork_unlock_OBJ.text = "{size=-7}From: Ministry of Magic\nTo: Professor Albus Dumbledore\n\n{/size}{size=-4}Dear professor Dumbledore,\nWe remind you that only upon providing us with a completed report will we be able to make a payment in your name.\n\n{size=-3}With deepest respect,\nThe Ministry of Magic.{/size}"
+    $ letter_paperwork_unlock_OBJ.text = "{size=-7}From: Ministry of Magic\nTo: Professor Albus Dumbledore\n\n{/size}{size=-4}Dear professor Dumbledore,\nWe remind you that only upon providing us with a completed report will we be able to make a payment in your name.{/size}\n\n{size=-7}With deepest respect,\nThe Ministry of Magic.{/size}"
     $ letter_paperwork_unlock_OBJ.label = "letter_paperwork_unlock"
 
     if not hasattr(renpy.store,'letter_paperwork_report_OBJ'):
         $ letter_paperwork_report_OBJ = mail_letter_class()
-    $ letter_paperwork_report_OBJ.text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing a report this week.\n\nYou will find you payment in the attached purse.{/size}\n\n\n{size=-3}-With deepest respect-{/size}\n\n{size=-2}The Ministry of Magic.{/size}"
+    $ letter_paperwork_report_OBJ.text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n{/size}{size=-4}Thank you for completing a report this week.\n\nYou will find you payment in the attached purse.{/size}\n\n{size=-7}With deepest respect,\nThe Ministry of Magic.{/size}"
     $ letter_paperwork_report_OBJ.label = "letter_paperwork_report"
 
     if not hasattr(renpy.store,'letter_favor_complaint_OBJ'):
         $ letter_favor_complaint_OBJ = mail_letter_class()
-    $ letter_favor_complaint_OBJ.text = "{size=-7}Dear Albus Dubmbledore,\n\n favour trading bad!\nSent Auror to Hogwarts\n\nCornelius Fudge,\nDepartment Head: Improper Use of Magic Office{/size}"
-    $ letter_favor_complaint_OBJ.label = "" # Dev Note Add comment on letter!
+    $ letter_favor_complaint_OBJ.text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n{/size}{size=-4}Dear professor Dumbledore,\nit has come to the ministry's attention from an anonymous letter, that there has been illicit activities going on between staff members and students within your halls.\n\nAn Auror has been dispatched and will arrive shortly to begin the investigation.{/size}\n\n{size=-7}Yours sincerely,\nAmelia Bones, Department of Magical Law Enforcement.{/size}"
+    $ letter_favor_complaint_OBJ.label = "letter_favor_complaint"
 
     if not hasattr(renpy.store,'letter_curse_complaint_OBJ'):
         $ letter_curse_complaint_OBJ = mail_letter_class()

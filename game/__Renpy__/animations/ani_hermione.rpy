@@ -1781,9 +1781,6 @@ image titjob_ani:    #titjob
     pause.3
     repeat
 
-image titjob_ani_pause:    #titjob
-    "characters/hermione/chibis/titjob/tj_cum_chest_01.png"
-
 image titjob_chest_ani:    #titjob cum on chest
     "characters/hermione/chibis/titjob/tj_cum_chest_01.png"
     pause.2

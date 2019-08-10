@@ -1460,7 +1460,7 @@ label hg_pf_strip_T2_masturbate:
         "\"You get 1 extra point.\"":
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("One extra point?","soft","angry")
-            call her_main("One meager extra point for letting you do this to me?","scream","worriedCl")
+            call her_main("One meagre extra point for letting you do this to me?","scream","worriedCl")
             call her_main("Now, that is just insulting, [genie_name]!","soft","angry")
             m "One extra point, [hermione_name]. Take it or leave it."
             hide screen g_c_c_u

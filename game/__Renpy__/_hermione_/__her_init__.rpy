@@ -538,20 +538,11 @@ label her_progress_init:
             start_label = "hg_pf_blowjob",
         )
 
-    if not hasattr(renpy.store,'hg_pf_titjob'): #important!
-        $ hg_pf_titjob = favor_class(
-            tier = 4,
-            title = "Let me fuck them!",
-            start_label = "hg_pf_titjob",
-        )
-
     if game_difficulty >= 3: #Hardcore
         $ hg_pf_blowjob.tier = 6
-        $ hg_pf_titjob.tier = 6
 
     $ hg_pf_list = [
                     hg_pf_blowjob,
-                    hg_pf_titjob
         ]
 
 
@@ -764,6 +755,29 @@ label updated_hermione_favors: # For 1.37
             iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"]]
             )
 
+    if not hasattr(renpy.store,'hg_pf_titjob'):
+        $ hg_pf_titjob   = event_class(title = "Let me fuck them!", start_label = "hg_pf_titjob", start_tier = 1, events = [
+            [["hg_pf_titjob_fail"]], # Tier 1
+            [["hg_pf_titjob_fail"]], # Tier 2
+            [["hg_pf_titjob_fail"]], # Tier 3
+            [["hg_pf_titjob_fail"]], # Tier 4
+
+            [
+            ["hg_pf_titjob_T1_intro_E1"], # First time titjob
+            ["hg_pf_titjob_T1_repeat"]   # Repeated titjob
+            ],
+
+            [
+            ["hg_pf_titjob_T2_intro_E1"], # Couple of choices
+            ["hg_pf_titjob_T2_intro_E2"], # New interactions
+            ["hg_pf_titjob_T2_repeat"]    # Repeated titjob
+            ]
+
+            ],
+            icons = [None, None, None, None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_red"],["heart_empty", "heart_red"]]
+            )
+
     if not hasattr(renpy.store,'hg_pf_sex'):
         $ hg_pf_sex   = event_class(title = "Let's have sex!", start_label = "hg_pf_sex", start_tier = 1, events = [
             [["hg_pf_sex_fail"]], # Tier 1
@@ -794,6 +808,7 @@ label updated_hermione_favors: # For 1.37
         hg_pf_grope,
         hg_pf_strip,
         hg_pf_handjob,
+        hg_pf_titjob,
         hg_pf_sex,
         ]
 

@@ -56,7 +56,7 @@ label __init_variables:
         $ walk_ypos = 250
         $ chibi_xpos = 0
         $ chibi_ypos = 0
-        $ chibi_zorder = 0
+        $ chibi_zorder = 1
         $ desk_zorder = 2
 
     if not hasattr(renpy.store,'unlocked_xmas_deco'):
@@ -64,25 +64,25 @@ label __init_variables:
         $ charName = "genie"
         $ unlocked_xmas_deco = False
 
-    #Phoenix
+    # Phoenix
     if not hasattr(renpy.store,'phoenix_is_fed'):
         $ phoenix_is_fed = False
         $ phoenix_is_petted = False
         $ phoenix_fed_counter = 0
         $ phoenix_petted_counter = 0
 
-    #Other
+    # Other
     if not hasattr(renpy.store,'stat_fireplace_counter'):
         $ stat_fireplace_counter = 0
         $ stat_reports_counter = 0
 
-    #Room Deco
+    # Room Deco
     if not hasattr(renpy.store,'current_room'):
         $ current_room = "main_room"
         $ room_deco = ""
         $ cupboard_deco = ""
 
-    #HD RESCALE RATION
+    # HD RESCALE RATION
     if not hasattr(renpy.store,'genie_scaleratio'):
         $ scaleratio = 2 #BECAUSE THE IMAGES ARE 2X LARGER
 
@@ -96,7 +96,7 @@ label __init_variables:
         $ susan_scaleratio = 2
         $ cho_scaleratio = 2
 
-    #CGs
+    # CGs
     if not hasattr(renpy.store,'cg_image'):
         $ ccg_folder = "luna_bj"
         $ ccg1 = "herm"
@@ -114,14 +114,14 @@ label __init_variables:
         $ sccgxpos = 200
         $ sccgypos = 50
 
-    #Using images instead of chibis.
+    # Using images instead of chibis.
     if not hasattr(renpy.store,'face_on_cg'):
         $ face_on_cg = False #"call her_main(,ypos="head")" will use screen "her_face". Face gets positioned automatically.
         $ use_cgs = False
 
 
 
-    #Reset Persistants
+    # Reset Persistants
     if not hasattr(renpy.store,'reset_persistants'): #Turns true when creating a new game only.
         $ reset_persistants            = False
 
@@ -129,40 +129,40 @@ label __init_variables:
         $ reset_luna_content = False
         $ reset_cho_content = False
 
-    #Rooms
+    # Rooms
     call room_objects_init
 
-    #Genie Init
+    # Genie Init
     call genie_init
 
-    #Snape Init
+    # Snape Init
     call snape_init
     call snape_progress_init
 
-    #Hermione Init
+    # Hermione Init
     call her_init #Defines newly added variables. Resets variables after creating a new game.
     call her_clothing_lists_init #Lists update every time!
     call her_progress_init #Defines newly added variables. Resets variables after creating a new game.
 
-    #Luna Init
+    # Luna Init
     call luna_init
     call luna_progress_init
 
-    #Cho Init
+    # Cho Init
     call cho_init
     call cho_progress_init
     call cho_wardrobe_init
 
-    #Susan Init
+    # Susan Init
     call susan_init
     call susan_progress_init
 
-    #Astoria Init
+    # Astoria Init
     call astoria_init
     call astoria_progress_init
     call astoria_wardrobe_init
 
-    #Tonks Init
+    # Tonks Init
     call tonks_init
     call tonks_progress_init
     call tonks_wardrobe_init
@@ -170,25 +170,31 @@ label __init_variables:
     # Quests
     call quest_init
 
-    #Map
+    # Map
     call map_init
 
-    #Wardrobe
+    # Wardrobe
     call wardrobe_init
 
-    #Items
+    # Items
     call store_init
     call store_items_init
     call quest_items_init
 
-    #Minigames & Mirror Stories
+    # Minigames & Mirror Stories
     call dark_room_init
 
-    #Cheats
+    # Cheats
     call cheats_init
 
+    # Save compatibility
+    if not hasattr(renpy.store,'updated_early_game'):
+        $ updated_early_game = False
+    if hermione_favors == True and updated_early_game == False:
+        call update_early_game_vars
 
-    #Hidden Blowjob
+
+    # Hidden Blowjob
     $ hg_hidden_blowjob_character_list = ["snape"]
     if luna_unlocked and luna_reverted:
         $ hg_hidden_blowjob_character_list.append("luna")
@@ -200,5 +206,66 @@ label __init_variables:
     #    $ hg_hidden_blowjob_character_list.append("cho")
     if tonks_unlocked:
         $ hg_hidden_blowjob_character_list.append("tonks")
+
+    return
+
+
+label update_early_game_vars: # Save compatibility
+    $ updated_early_game = True # Prevents this from being called again.
+
+    $ bird_examined = True
+    $ desk_examined = True
+    $ cupboard_examined = True
+    $ door_examined = True
+    $ fireplace_examined = True
+
+    $ achievement.unlock("start", True)
+
+    $ genie_intro.E1_complete = True
+    $ genie_intro.E2_complete = True
+    $ genie_intro.E3_complete = True
+
+    $ snape_intro.E1_complete   = True
+    $ snape_intro.E2_complete   = True
+    $ snape_intro.E3_complete   = True
+    $ snape_intro.duel_complete = True
+    $ snape_intro.E4_complete   = True
+    $ snape_intro.E5_complete   = True
+
+    $ hang_with_snape.E1_complete = True
+    $ hang_with_snape.E2_complete = True
+    $ hang_with_snape.E3_complete = True
+    $ hang_with_snape.E4_complete = True
+    $ hang_with_snape.E5_complete = True
+
+    $ tonks_intro.E1_complete = True
+    $ tonks_intro.E2_complete = True
+    $ tonks_intro.E3_complete = True
+
+    $ hang_with_tonks.E1_complete = True
+
+    $ hermione_intro.E1_complete = True
+    $ hermione_intro.E2_complete = True
+    $ hermione_intro.E3_complete = True
+    $ hermione_intro.E4_complete = True
+    $ hermione_intro.E5_complete = True
+    $ hermione_intro.E6_complete = True
+
+    $ letter_from_hermione_A_OBJ.mailRead()
+    $ letter_from_hermione_B_OBJ.mailRead()
+    $ letter_paperwork_unlock_OBJ.mailRead()
+    $ letter_paperwork_report_OBJ.mailRead()
+    $ letter_favor_complaint_OBJ.mailRead()
+
+    $ snape_unlocked = True
+    $ achievement.unlock("unlocksna", True)
+
+    $ tonks_unlocked = True
+    $ achievement.unlock("unlockton", True)
+
+    $ hermione_unlocked = True
+    $ achievement.unlock("unlockher", True)
+    $ tutoring_hermione_unlocked = True
+    $ hermione_favors = True
 
     return

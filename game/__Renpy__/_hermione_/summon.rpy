@@ -191,16 +191,17 @@ label hermione_level_up(tier=None):
         m "I wonder she's ready for some more advanced favours now..."
     elif tier == 3:
         m "(...)"
-        m "Does she know what a handjob is? Or a titjob?..."
+        m "Does she know what a handjob is?..."
     elif tier == 4:
         m "I wonder if I can get her to suck me off today..."
         g4 "I'm dying to feel that mouth around my cock!"
     elif tier == 5:
         m "Yes, I think it's time..."
-        g4 "I'm finally going to have sex with her!"
+        g4 "I'm gonna put my \"P\" in her \"V\"!"
 
     $ her_tier = tier+1
     $ her_level_up = None
+    $ her_mood = 0
 
     pause.5
     call nar(">Hermione has reached level "+str(her_tier)+"!")

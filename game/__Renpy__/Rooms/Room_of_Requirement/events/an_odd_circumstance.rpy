@@ -1,7 +1,7 @@
 label an_odd_circumstance():
     $ temp_day = daytime
     $ daytime = False
-    $ temp_interface = interface_color 
+    $ temp_interface = interface_color
     $ interface_color = "gray"
     call set_u_ani("blowjob_ani","hand_ani", 0,10)
     call room("main_room")
@@ -65,7 +65,7 @@ label an_odd_circumstance():
     nar "My eyes met with hers again, as I looked back up from my desk."
     her "..."
     nar "She blushed, now with a slightly guilty expression, fidgeting and clearly out of her comfort zone..."
-    nar "As I was about to open my mouth and speak, a voice that coming from no specific direction chimed in before I even got a word out..."
+    nar "As I was about to open my mouth and speak, a voice that came from no specific direction chimed in before I even got a word out..."
     $ renpy.sound.play("sounds/magic4.ogg")
     hide screen add_overlay
     show screen white
@@ -120,13 +120,13 @@ label an_odd_circumstance():
     her "*G-g-gah...*"
     nar "A string of saliva still attached between her mouth and my penis slowly found itself moving down and then disconnected, resting across the front of her chest."
     nar "Now smiling, the girl started massaging my cock with a mixture of precum and her saliva..."
-    nar "Feeling more relaxed about the whole situation I couldn't help but forgetting about any consequences and began to just enjoy myself."
+    nar "Feeling more relaxed about the whole situation I couldn't help but forget about any consequences and began to just enjoy myself."
     call u_play_ani
     nar "Without warning, her lips then wrapped themselves around my now throbbing cock..."
     her "*Slurp!* *Gulp!* *Slurp!*"
     nar "Her head, yet again found itself further and further down my shaft... And now with seemingly more ease, her tongue moved slowly across the bottom."
     her "*Slurp!* *Slurp!* *Slurp!*"
-    nar "For a moment I could only feel her forehead pushed towards my torso as my cock reached the bottom of her throat and it seemed as if time had stopped..."
+    nar "For a moment I could only feel her forehead pushed towards my torso as my cock reached the bottom of her throat,...it seemed as if time had stopped..."
     her "..."
     nar "Suddenly she looked up into my eyes as she started moving her tongue, massaging the underside of my cock and balls..."
     her "*Gobble!* *Gltch!* *Slurp!*"
@@ -176,8 +176,8 @@ label an_odd_circumstance():
 
 
     $ daytime = temp_day
-    $ interface_color = temp_interface 
-    
+    $ interface_color = temp_interface
+
     hide screen add_overlay
 
     jump enter_room_of_req

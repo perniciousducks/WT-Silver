@@ -56,7 +56,7 @@ screen ch_potion():
 ### HERMIONE CHIBI FAVOUR SCREENS (with Genie or Snape,...) ###
 
 ### GROPING ###
-screen groping_01: # Grope Ass fully clothed - Flip = True (facing door)
+screen groping_01(): # Grope Ass fully clothed - Flip = True (facing door)
     tag favor
     if hermione_wear_top == False and hermione_wear_bottom == False:
         add "characters/hermione/chibis/fingering/02.png" at Position(xpos=-60, ypos=10)
@@ -163,7 +163,39 @@ screen hermione_chibi_hj(ani=None, xpos=230, ypos=0):
         add "undershirt_cum_ani" xpos chibi_xpos ypos chibi_ypos
     elif ani in ["hj_cumming_in_pause"]:
         add "characters/hermione/chibis/handjob/sperm_under_12.png" xpos chibi_xpos ypos chibi_ypos
-    
+
+
+    #screen genie_titjob
+    #screen genie_titjob_pause
+    #screen genie_titjob_cum_in_mouth
+    #screen genie_titjob_cum_on_tits
+
+### Titjob ###
+screen hermione_chibi_tj(ani=None, xpos=450, ypos=200):
+    tag favor
+    zorder chibi_zorder
+    $ chibi_xpos = xpos
+    $ chibi_ypos = ypos
+
+    if ani in ["tj"]:
+        add "titjob_ani" xpos chibi_xpos ypos chibi_ypos
+    elif ani in ["tj_pause"]:
+        add "characters/hermione/chibis/titjob/tj_sex_01.png" xpos chibi_xpos ypos chibi_ypos
+
+    # Number offset so Hermione's Chibi doesn't move.
+    elif ani in ["tj_idle"]:
+        add "characters/hermione/chibis/titjob/tj_cum_chest_01.png" xpos chibi_xpos-15 ypos chibi_ypos+16
+    elif ani in ["tj_cumming_on"]:
+        add "titjob_chest_ani" xpos chibi_xpos-15 ypos chibi_ypos+16
+    elif ani in ["tj_cumming_on_pause"]:
+        add "characters/hermione/chibis/titjob/tj_cum_chest_25.png" xpos chibi_xpos-15 ypos chibi_ypos+16
+
+    elif ani in ["tj_bj_pause"]:
+        add "characters/hermione/chibis/titjob/tj_cum_mouth_01.png" xpos chibi_xpos+27 ypos chibi_ypos+16
+    elif ani in ["tj_cumming_in"]:
+        add "titjob_mouth_ani" xpos chibi_xpos+27 ypos chibi_ypos+16
+    elif ani in ["tj_cumming_in_pause"]:
+        add "characters/hermione/chibis/titjob/tj_cum_mouth_09.png" xpos chibi_xpos+27 ypos chibi_ypos+16
 
 
 

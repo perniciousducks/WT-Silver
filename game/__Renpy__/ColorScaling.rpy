@@ -777,7 +777,10 @@ init python:
                              precise=1,
                              )
         return dest    
-        
+     
+    def lerp_color(color1, color2, time):
+        return Color((float(color1[0]+(color2[0]-color1[0])*time),int(color1[1]+(color2[1]-color1[1])*time),int(color1[2]+(color2[2]-color1[2])*time)))
+     
     UI_color_scale =  o_color_scale()
     UI_color_bar = o_color_bar()
     UI_alpha_bar = o_alpha_bar()

@@ -17,8 +17,8 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
         $ extra = "blank"
     if emote == None:
         $ emote = "blank"
-    if hair == None:
-        $ tonks_class.get_cloth("hair").color = tonks_haircolor
+    #if hair == None:
+        #$ tonks_class.get_cloth("hair").color = tonks_haircolor
 
     #Positioning
     if xpos != None:

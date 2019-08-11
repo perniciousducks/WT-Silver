@@ -27,7 +27,7 @@ label store_items_init:
 
     if not hasattr(renpy.store,'firewhisky_ITEM'):
         $ wine_ITEM              = item_class(id="wine", name="Wine", cost=60, type="drink", image="item_wine", description="Add description. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
-        $ firewhisky_ITEM       = item_class(id="firewhisky", name="firewhisky", cost=80, unlockable=True ,type="drink", image="item_wine", description="Add description. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
+        $ firewhisky_ITEM       = item_class(id="firewhisky", name="firewhisky", cost=80, unlockable=True ,type="drink", image="item_whisky", description="Add description. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
 
     if game_difficulty <= 1:
         $ wine_ITEM.cost = 40

@@ -64,12 +64,12 @@ label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=Non
                 $ hermione_ypos = 230
                 $ hermione_zorder = 8
 
-        elif ypos in ["suck"]:
-            $ use_hermione_head = True
-            $ hermione_scaleratio = 1.4
-            $ hermione_xpos = 500
-            $ hermione_ypos = 100
-            $ hermione_zorder = 8
+        #elif ypos in ["suck"]:
+        #    $ use_hermione_head = True
+        #    $ hermione_scaleratio = 1.4
+        #    $ hermione_xpos = 500
+        #    $ hermione_ypos = 100
+        #    $ hermione_zorder = 8
 
         else:
             $ hermione_ypos = int(ypos)

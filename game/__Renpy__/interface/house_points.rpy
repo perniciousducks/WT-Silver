@@ -1,3 +1,82 @@
+
+
+### House-Points ###
+
+label points_changes: # Gets called every day/night.
+
+    ### House-Points Generator ###
+    if gryffindor > slytherin:  # G is in the lead. How unfair!
+        $ generating_points = 2 # 2 = Slytherin is guaranteed to get points.
+    else:
+        $ generating_points = renpy.random.randint(1, 2) # 1 = No points today.
+
+    $ generating_points_gryffindor = renpy.random.randint(1, 10)
+    $ generating_points_hufflepuff = renpy.random.randint(1, 10)
+    $ generating_points_ravenclaw = renpy.random.randint(1, 10)
+
+    ### Gryffindor ###
+    if 3 <= generating_points_gryffindor <= 4:
+        $ gryffindor += 1
+    elif 5 <= generating_points_gryffindor <= 6:
+        $ gryffindor += 2
+    elif 7 <= generating_points_gryffindor <= 8:
+        $ gryffindor += 3
+    elif generating_points_gryffindor == 9:
+        $ gryffindor += 5
+    elif generating_points_gryffindor == 10:
+        $ gryffindor += 11
+
+    ###  Hufflepuff ###
+    if 3 <= generating_points_hufflepuff <= 4:
+        $ hufflepuff += 1
+    elif 5 <= generating_points_hufflepuff <= 6:
+        $ hufflepuff += 2
+    elif 7 <= generating_points_hufflepuff <= 8:
+        $ hufflepuff += 4
+    elif generating_points_hufflepuff == 9:
+        $ hufflepuff += 7
+    elif generating_points_hufflepuff == 10:
+        $ hufflepuff += 14
+
+    ### Ravenclaw ###
+    if 3 <= generating_points_ravenclaw <= 4:
+        $ ravenclaw += 1
+    elif 5 <= generating_points_ravenclaw <= 6:
+        $ ravenclaw += 2
+    elif 7 <= generating_points_ravenclaw <= 8:
+        $ ravenclaw += 6
+    elif generating_points_ravenclaw == 9:
+        $ ravenclaw += 8
+    elif generating_points_ravenclaw == 10:
+        $ ravenclaw += 13
+
+    ### Slytherin ###
+    if generating_points == 1 and game_difficulty >= 1: # Failed, no points for S today.
+            pass
+
+    else: # Success, award points to S today.
+
+        if game_difficulty <= 1: # Easy Difficulty
+            # sna_support = number between 0 and 15
+            # ton_support = number between 0 and 12
+            # Tonks' is lower since you can do events with her to directly increase points.
+            $ slytherin += (sna_support * renpy.random.randint(2, 4))
+            $ slytherin += (ton_support * renpy.random.randint(1, 3))
+
+        else: # Normal & Hardcore difficulty
+            # sna_support = number between 0 and 15
+            # ton_support = number between 0 and 12
+            # Tonks' is lower since you can do events with her to directly increase points.
+            $ slytherin += (sna_support * renpy.random.randint(2, 3))
+            $ slytherin += (ton_support * renpy.random.randint(1, 2))
+
+    return
+
+
+
+
+### Old Code ###
+
 #label add_house_points(house, points):
 #    show screen adding_house_points(points, house)
 #    with Dissolve(0.5)
@@ -37,66 +116,3 @@
 #    $ house_pos = {"r":175,"s":286,"g":393,"h":502}
 #    text "[points]" at Position(xpos=house_pos[house], ypos=8)
 #    zorder 3
-
-### Gryffindor, Hufflepuff, Ravenclaw Points ###
-label points_changes:
-    $ gryffindor_p_gain = "+0"
-    $ slytherin_p_gain = "+0"
-    $ hufflepuff_p_gain = "+0"
-    $ ravenclaw_p_gain = "+0"
-    ### GRYFFINDOR POINTS ###
-    if 3 <= generating_points_gryffindor <= 4:
-        $ gryffindor += 1
-        $ gryffindor_p_gain = "+1"
-    elif 5 <= generating_points_gryffindor <= 6:
-        $ gryffindor += 2
-        $ gryffindor_p_gain = "+2"
-    elif 7 <= generating_points_gryffindor <= 8:
-        $ gryffindor += 3
-        $ gryffindor_p_gain = "+3"
-    elif generating_points_gryffindor == 9:
-        $ gryffindor += 5
-        $ gryffindor_p_gain = "+5"
-    elif generating_points_gryffindor == 10:
-        $ gryffindor += 11
-        $ gryffindor_p_gain = "+11"
-
-
-    ###  Hufflepuff ###
-    if 3 <= generating_points_hufflepuff <= 4:
-        $ hufflepuff += 1
-        $ hufflepuff_p_gain = "+1"
-    elif 5 <= generating_points_hufflepuff <= 6:
-        $ hufflepuff += 2
-        $ hufflepuff_p_gain = "+2"
-    elif 7 <= generating_points_hufflepuff <= 8:
-        $ hufflepuff += 4
-        $ hufflepuff_p_gain = "+4"
-    elif generating_points_hufflepuff == 9:
-        $ hufflepuff += 7
-        $ hufflepuff_p_gain = "+7"
-    elif generating_points_hufflepuff == 10:
-        $ hufflepuff += 14
-        $ hufflepuff_p_gain = "+14"
-
-
-    ### Ravenclaw ###
-    if 3 <= generating_points_ravenclaw <= 4:
-        $ ravenclaw += 1
-        $ ravenclaw_p_gain = "+1"
-    elif 5 <= generating_points_ravenclaw <= 6:
-        $ ravenclaw += 2
-        $ ravenclaw_p_gain = "+2"
-    elif 7 <= generating_points_ravenclaw <= 8:
-        $ ravenclaw += 6
-        $ ravenclaw_p_gain = "+6"
-    elif generating_points_ravenclaw == 9:
-        $ ravenclaw += 8
-        $ ravenclaw_p_gain = "+8"
-    elif generating_points_ravenclaw == 10:
-        $ ravenclaw += 13
-        $ ravenclaw_p_gain = "+13"
-
-    call slytherin_points
-
-    return

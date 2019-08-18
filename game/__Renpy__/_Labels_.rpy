@@ -632,3 +632,23 @@ label vague_idea:
     call nar(">You lack imagination for an idea of this caliber.")
 
     return
+
+label increase_house_points(house="Add house", points=0):
+    call bld
+    $ renpy.play('sounds/win_04.mp3')
+    show screen notes
+    if house in ["gryffindor","g","gryff"]:
+        $ gryffindor += points
+        ">Gryffindor has received [points] house-points today!"
+    elif house in ["hufflepuff","h","huffl"]:
+        $ hufflepuff += points
+        ">Hufflepuff has received [points] house-points today!"
+    elif house in ["ravenclaw","r","raven"]:
+        $ ravenclaw += points
+        ">Ravenclaw has received [points] house-points today!"
+    else:
+        $ slytherin += points
+        ">Slytherin has received [points] house-points today!"
+    hide screen notes
+
+    return

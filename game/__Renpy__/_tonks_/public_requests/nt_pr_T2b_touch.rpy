@@ -5,6 +5,7 @@
 # (Tonks lets her students play with her tits, ass,...)
 
 label nt_pr_grope_start:
+    call ton_main("","base","base","base","mid", xpos="right", ypos="base", trans="fade")
 
     if ton_tier == 2:
 
@@ -62,6 +63,8 @@ label nt_pr_grope_start:
 ### Tier 1 ###
 
 label nt_pr_grope_T1_E1: # Tier 1 - Event 1 - Slytherin boy
+    call play_sound("door")
+    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
     m "How were classes today, [tonks_name]?"
     m "Taught your students some valuable lessons?"
     call ton_main("I'm not sure about valuable... But I do know that he isn't going to forget it anytime soon!","base","base","base","mid")
@@ -111,6 +114,8 @@ label nt_pr_grope_T1_E1: # Tier 1 - Event 1 - Slytherin boy
 
 
 label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
+    call play_sound("door")
+    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
     m "So, how are you finding the education industry?"
     call ton_main("Fun! I never though making lesson plans and marking tests would actually be enjoyable, but there's something rather cathartic to it...","base","base","base","mid")
     call ton_main("Plus, being allowed to mess around with your students is a nice bonus.","base","base","base","mid")
@@ -165,6 +170,8 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
 
 
 label nt_pr_grope_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys
+    call play_sound("door")
+    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
     m "I think I noticed a few extra points for \"Gryffindor\" today."
     m "Does that mean what I think it does?"
     call ton_main("Maybe...","base","base","base","mid")
@@ -205,6 +212,8 @@ label nt_pr_grope_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys
 
 
 label nt_pr_grope_T1_E4: # Tier 1 - Event 4 - Slytherin girl
+    call play_sound("door")
+    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
     m "How's my favorite teacher doing today?"
     call ton_main("Never better!","base","base","base","mid")
     m "I take it you were able to buy a favour then?"

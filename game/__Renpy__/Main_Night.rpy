@@ -54,8 +54,8 @@ label night_start:
     hide screen blkfade
     with fade
 
-    call points_changes #Makes house points changes.
-
+    call points_changes # Calculates points
+    call house_points   # Updates points
 
 
     ### NIGHT EVENTS ###

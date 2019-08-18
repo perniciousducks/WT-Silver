@@ -475,7 +475,7 @@ label hufflepuff_match:
     $ qp_mob_reaction[1] = "an"
     $ renpy.music.play("sounds/crowd.mp3", fadein=8)
     hide screen hermione_main
-    mal "Just get on with it already you big titted slag!"
+    mal "Just get on with it already you big-titted slag!"
     $ qp_mob_reaction[2] = "excl"
     mal2 "Yeh! Start the game!"
     qcr "START THE GAME! START THE GAME!"

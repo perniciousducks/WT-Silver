@@ -56,7 +56,10 @@ label snape_hangout:
     # Snape Tutor Stories.
     $ random_number = renpy.random.randint(1, 3)
     if random_number == 1:
+        if sna_support < 15:
+            $ sna_support += 1
         $ ss_he_story.start()
+
     else:
         call bld
         $ renpy.play('sounds/win_04.mp3')
@@ -427,7 +430,8 @@ label hang_with_snape_E3:
     call sna_main("Listen, we have to be even more cautious, now that there's an Auror making her rounds...","snape_10")
     call sna_main("They are the ministry's private investigators.","snape_35")
     call sna_main("One slip-up and they will have us locked up in no time!","snape_24")
-    m "\"Us?\"...{w}what wrong did I do?"
+    m "\"Us?\"..."
+    m "What wrong did I do?"
     call sna_main("You snapped the most talented, clever, and most beloved wizard that's ever lived out of existence!","snape_10")
     m "Oh right...{w} Who again?"
     call sna_main("Albus{w} Percival{w} Wulfric{w} Brian{w} Dumbledore!","snape_34")
@@ -509,12 +513,12 @@ label hang_with_snape_E4:
     call sna_main("Otherwise things will never go back to how they were!","snape_03")
     m "Have you lost your mind again?"
     call sna_main("No, but I'm about to!","snape_01")
-    call sna_main("I haven't had a mouth on my cock in so long...","snape_29")
-    call sna_main("Please, Genie. I need a fix!","snape_19") # Weird look
-    m "..................."
-    call sna_main("...................","snape_19") # Weird look
-    g4 "Would you stop looking at me like that!!!"
-    call sna_main("What? Don't be ridiculous...","snape_14")
+    #call sna_main("I haven't had a mouth on my cock in so long...","snape_29")
+    #call sna_main("Please, Genie. I need a fix!","snape_19") # Weird look
+    #m "..................."
+    #call sna_main("...................","snape_19") # Weird look
+    #g4 "Would you stop looking at me like that!!!"
+    #call sna_main("What? Don't be ridiculous...","snape_14")
     m "..................."
     call sna_main("What a fool I was to believe that she'd be gone by now...","snape_31")
     call sna_main("But of course not! ","snape_32")

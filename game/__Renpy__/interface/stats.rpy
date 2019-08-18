@@ -281,41 +281,43 @@ screen stats_menuitem(xx, yy):
                                 #text "Jerked off -"+str(phoenix_fed_counter)+"- times"
                             elif current_category == "Snape":
                                 use stat_bar(int(3/1.0), "-Mood-" , "Grumpy", 3)
-                                use stat_bar(int(sna_support/1.5), "-Support-", sna_support_word, sna_support)
+                                use stat_bar(int(sna_support/1.5), "-Support-", sna_support_word, sna_support) # sna_support between 0 and 15.
                                 use stat_bar(int(sna_friendship/10), "-Friendship-", sna_friendship_word, sna_friendship)
                             elif current_category == "Tonks":
                                 use stat_bar(int(10/1.0), "-Mood-" , "Content", 10)
-                                use stat_bar(int(ton_support/1.5), "-Support-", "Non-existent", ton_support)
+                                use stat_bar(int(ton_tier/0.2), "-Favour Tier-", "", ton_tier) # 4 will be max.
+                                use stat_bar(int(ton_reputation/2.4), "-Reputation-", ton_reputation_word, ton_reputation) # Current max is 9.
+                                use stat_bar(int(ton_support/1.2), "-Support-", ton_support_word, ton_support) # ton_support between 0 and 12.
                                 use stat_bar(int(ton_friendship/10), "-Relationship-", ton_friendship_word, ton_friendship)
                             elif current_category == "Hermione":
                                 use stat_bar(int(10-her_mood/1.0), "-Mood-" , her_mood_word, her_mood)
+                                use stat_bar(int(her_tier/0.6), "-Favour Tier-", "", her_tier) # 6 will be max.
                                 use stat_bar(int(her_whoring/2.4), "-Whoring-", her_whoring_word, her_whoring)
                                 use stat_bar(int(her_reputation/2.4), "-Reputation-", her_reputation_word, her_reputation)
-                                use stat_bar(int(her_tier/0.6), "-Favour Tier-", "", her_tier)
                                 use stat_bar(int(her_tutoring/1.4), "-Tutoring-" , her_tutoring_word, her_tutoring)
                             elif current_category == "Cho":
                                 use stat_bar(int(10-cho_mood/1.0), "-Mood-" , cho_mood_word, cho_mood)
+                                use stat_bar(int(cho_tier/0.2), "-Favour Tier-", "", cho_tier) # 4 will be max.
                                 use stat_bar(int(cho_whoring/0.9), "-Recklessness-", cho_whoring_word, cho_whoring)
                                 use stat_bar(int(cho_reputation/0.9), "-Reputation-", cho_reputation_word, cho_reputation)
-                                use stat_bar(int(cho_tier/0.6), "-Favour Tier-", "", cho_tier)
                                 use stat_bar(int((huffl_matches_won+gryff_matches_won+slyth_matches_won)/0.6), "{size=-10}-Quidditch Training-{/size}" , "Not started", huffl_matches_won+gryff_matches_won+slyth_matches_won) # TODO: Add word list
                             elif current_category == "Luna":
                                 use stat_bar(int(10-lun_mood/1.0), "-Mood-" , "Cheerful", lun_mood) # TODO: Add word list
+                                use stat_bar(int(1/0.9), "-Favour Tier-", "", 1) # TODO: Add Luna tier
                                 use stat_bar(int(lun_whoring/0.9), "-Corruption-", "Naive", lun_whoring) # TODO: Add word list
                                 use stat_bar(int(10/0.9), "-Reputation-", "Total Weirdo", 10) # Joke stat
-                                use stat_bar(int(1/0.9), "-Favour Tier-", "", 1) # TODO: Add Luna tier
                                 use stat_bar(int(0), "{size=-10}-Wrackspurts Therapy-{/size}" , "Not started", 0) # TODO: Add word list and variable
                             elif current_category == "Astoria":
                                 use stat_bar(int(10-ast_mood/1.0), "-Mood-" , "Cheerful", ast_mood) # TODO: Add word list
+                                use stat_bar(int(1/0.9), "-Favour Tier-", "", 1) # TODO: Add Astoria tier
                                 use stat_bar(int(ast_affection/0.9), "-Affection-", "Non-existent", ast_affection) # TODO: Add word list
                                 use stat_bar(int(3/0.9), "-Reputation-", "Mischevious", 4) # TODO: Add word list and variable, starts at level 4
-                                use stat_bar(int(1/0.9), "-Favour Tier-", "", 1) # TODO: Add Astoria tier
                                 use stat_bar(int(ast_training_counter/0.9), "-Spell training-" , "Not started", ast_training_counter) # TODO: Add word list
                             elif current_category == "Susan":
                                 use stat_bar(int(10-sus_mood/1.0), "-Mood-" , "Cheerful", sus_mood) # TODO: Add word list
+                                use stat_bar(int(1/0.9), "-Favour Tier-", "", 1) # TODO: Add Susan tier
                                 use stat_bar(int(sus_whoring/0.9), "-Confidence-", "Non-existent", sus_whoring) # TODO: Add word list
                                 use stat_bar(int(0/0.9), "-Reputation-", "Invisible", 0) # TODO: Add word list and variable
-                                use stat_bar(int(1/0.9), "-Favour Tier-", "", 1) # TODO: Add Susan tier
                                 use stat_bar(int(0), "{size=-10}-Assertivness Training-{/size}" , "Not started", 0) # TODO: Add word list
             else:
                 if current_item["flag"]:

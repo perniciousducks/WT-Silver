@@ -165,10 +165,6 @@ screen hermione_chibi_hj(ani=None, xpos=230, ypos=0):
         add "characters/hermione/chibis/handjob/sperm_under_12.png" xpos chibi_xpos ypos chibi_ypos
 
 
-    #screen genie_titjob
-    #screen genie_titjob_pause
-    #screen genie_titjob_cum_in_mouth
-    #screen genie_titjob_cum_on_tits
 
 ### Titjob ###
 screen hermione_chibi_tj(ani=None, xpos=450, ypos=200):

@@ -369,7 +369,7 @@ label hg_pp_polyjuice_T1_introCC:
     m "Good girl."
     call her_main("...","open_wide_tongue","base")
     ">Hermione takes you into her mouth"                ###Have the chibi scene of her sucking
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    hide screen hermione_main
     hide screen genie
 
     $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).

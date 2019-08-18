@@ -52,14 +52,6 @@ label day_start:
     #Genie Reset.
     call update_genie
 
-
-
-    $ generating_snape_bonus = renpy.random.randint(1, 2) #Determines whether ot not Snape bonus will be added to the Slytherin house.
-    $ generating_points = renpy.random.randint(1, 2) #Determines whether or not point will be awarded to Slytherin on this day. # MAKE NO CHANGES HERE. BEING USED AS "ONE_OUT_OF_TWO".
-    $ generating_points_gryffindor = renpy.random.randint(1, 10)
-    $ generating_points_hufflepuff = renpy.random.randint(1, 10)
-    $ generating_points_ravenclaw = renpy.random.randint(1, 10)
-
     $ one_out_of_three = renpy.random.randint(1, 3)
     $ i_of_iv = renpy.random.randint(1, 4)
     $ one_of_five = renpy.random.randint(1, 5)
@@ -79,6 +71,7 @@ label day_start:
     if day_of_week == 7: #Counts days of the week. Everyday +1. When day_of_week = 7 resets to zero.
         $ day_of_week = 0
         if finished_report >= 1:
+            call update_report_money
             $ letter_paperwork_report_OBJ.mailLetter()
         if not first_random_twins:
             $ twins_interest = True
@@ -116,8 +109,8 @@ label day_start:
     hide screen blkfade
     with fade
 
-    call points_changes #Makes house points changes.
-    call house_points
+    call points_changes # Calculates points
+    call house_points   # Updates points
 
 
 

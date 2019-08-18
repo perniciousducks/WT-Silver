@@ -10,7 +10,7 @@ label open_stat_menu:
     call update_genie
     call update_snape
     call update_tonks
-    
+
     jump stats_menu
 
     jump stat_screen_character
@@ -435,7 +435,6 @@ screen tonks_stat_menu():
     zorder 8
 
 label update_stats:
-    #$ madWords = ["Happy", "Slightly upset", "annoyed", "upset", "very upset", "mad", "angry", "hateful", "despises you", "Furious", "Absolutely Furious"] #Her face will be angry if she's mad. No need to display a stat for it.
 
     ### Hermione ###
 
@@ -481,20 +480,25 @@ label update_stats:
     else:
         $ cho_mood_word = "Very Angry"
 
-
-
     ### Snape ###
-
-    # Friendship
-    $ sna_friendship_word_list = ["Unknown", "Colleague", "Confidant", "Trusted", "Acquaintance", "Friend", "Good friend", "Homie", "If I had to pick a dude...", "BFF", "Bros"]
-    $ sna_friendship_word = sna_friendship_word_list[int(sna_friendship/10)]
 
     # Support
     $ sna_support_word_list = ["Tight-Arse", "Miser", "Stingy", "Sparing", "Adequate", "Loose", "Easy", "Generous", "Frivolous", "Excessive", "Exorbitant"]
     $ sna_support_word = sna_support_word_list[int(sna_support/1.5)]
 
+    # Friendship
+    $ sna_friendship_word_list = ["Unknown", "Colleague", "Confidant", "Trusted", "Acquaintance", "Friend", "Good friend", "Homie", "If I had to pick a dude...", "BFF", "Bros"]
+    $ sna_friendship_word = sna_friendship_word_list[int(sna_friendship/10)]
 
     ### Tonks ###
+
+    # Reputation
+    $ ton_reputation_word_list = ["Teacher", "Bore", "Weirdo", "A Bit Nutty", "Easy Going", "Tart", "Naughty Teacher", "Slutty Teacher", "Slag", "Shameful", "Disgrace"]
+    $ ton_reputation_word = ton_reputation_word_list[int(ton_reputation/2.4)]
+
+    # Support
+    $ ton_support_word_list = ["Undecided", "Modest", "Candid", "Unbiased", "Positive", "Fair", "Neutral", "Biased", "Scummy", "Cruel", "Heartless"]
+    $ ton_support_word = ton_support_word_list[int(ton_support/1.2)]
 
     # Friendship
     $ ton_friendship_word_list = ["Unknown", "inferior", "employee", "advisor", "trusted advisor", "Acquaintance", "friend", "Girlfriend", "Partner in crime", "Bonnie & Clyde", "Master & Slave"]

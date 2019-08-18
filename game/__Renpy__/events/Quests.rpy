@@ -322,9 +322,9 @@ label quest_init:
 
     if not hasattr(renpy.store,'hang_with_tonks'):
         $ hang_with_tonks   = quest_class(
-        E1_complete=False,
-        E2_complete=False,
-        E3_complete=False,
+        E1_complete=False, # Help with/unlock Hermione's favors.
+        E2_complete=False, # Unlock Public Requests.
+        E3_complete=False, # Advance to Tier 2.
         )
 
     return

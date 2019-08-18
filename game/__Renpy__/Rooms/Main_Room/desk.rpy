@@ -301,12 +301,9 @@ screen watch():
 
 ### PAPERWORK ###
 label paperwork:
-    if finished_report >= 6 and (letter_paperwork_report_OBJ not in letter_queue_list):
-        m "I've completed six reports this week already."
-        jump desk
-    elif letter_paperwork_report_OBJ in letter_queue_list:
+    if letter_paperwork_report_OBJ in letter_queue_list:
         m "I need to get paid first."
-        jump desk
+        jump main_room
     else:
         pass
 

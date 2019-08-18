@@ -48,7 +48,7 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
             if tonks_flip == -1: #Flipped
                 $ tonks_xpos = -50
             else:
-                $ tonks_xpos = 590
+                $ tonks_xpos = 650
             $ tonks_ypos = 200
             $ tonks_zorder = 8
         else:

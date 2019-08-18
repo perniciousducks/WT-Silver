@@ -30,12 +30,14 @@ label hg_pf_sex:
     hide screen ccg
     hide screen g_c_c_u
 
-    call hg_chibi_transition("stand", xpos="desk", ypos="base", flip=False, trans="fade")
+    call her_chibi("stand","desk","base", flip=False)
+    call gen_chibi("sit_behind_desk")
 
+    hide screen blkfade
     if her_mood != 0:
-        call her_main("","annoyed","angry", xpos="mid", ypos="base")
+        call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
     else:
-        call her_main("","base","base", xpos="mid", ypos="base")
+        call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
 
 
     # Points

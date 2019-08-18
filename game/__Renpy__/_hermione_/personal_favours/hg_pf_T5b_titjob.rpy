@@ -36,12 +36,14 @@ label hg_pf_titjob:
     call set_her_action("none","update") #Resets clothing.
     $ aftersperm = temp_save # Load
 
-    call hg_chibi_transition("stand", xpos="desk", ypos="base", flip=False, trans="fade")
+    call her_chibi("stand","desk","base", flip=False)
+    call gen_chibi("sit_behind_desk")
 
+    hide screen blkfade
     if her_mood != 0:
-        call her_main("","annoyed","angry", xpos="mid", ypos="base")
+        call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
     else:
-        call her_main("","base","base", xpos="mid", ypos="base")
+        call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
 
 
     # Points
@@ -67,11 +69,11 @@ label hg_pf_titjob:
 
 
     # Increase level
-    if her_tier == 4:
-        if her_whoring < 18: # Points til 18
-            $ her_whoring +=1
     if her_tier == 5:
         if her_whoring < 21: # Points til 21
+            $ her_whoring +=1
+    if her_tier == 6:
+        if her_whoring < 24: # Points til 24
             $ her_whoring += 1
 
     jump end_hermione_event
@@ -493,7 +495,7 @@ label hg_pf_titjob_1:
                 call her_main("I can't go to class like this...","angry","worriedCl", emote="05")
                 call her_main("I'm covered in semen...","disgust","down_raised", emote="05")
             else:
-                call her_main("At this hour the \"Gryffindor\" common room will be full of students...","angry","worriedCl", emote="05")
+                call her_main("At this hour the \"Gryffindor common room\" will be full of students...","angry","worriedCl", emote="05")
                 call her_main("And I'm smelling like spunk!","scream","worriedCl")
                 call her_main("I hope I can just run past them without anybody noticing...","disgust","down")
 
@@ -642,11 +644,11 @@ label hg_pf_titjob_2:
             $ ccg1 = 21
             m "Yes, yes...{w=0.3} That's it, slut!"
 
-        "\"Call yourself a big titted whore!\"":
+        "\"Call yourself a big-titted whore!\"":
             $ ccg1 = 22
             call her_main("Excuse me?","open","base", ypos="head")
             $ ccg1 = 23
-            call her_main("Oh...{w} I am a big titted whore!","soft","ahegao")
+            call her_main("Oh...{w} I am a big-titted whore!","soft","ahegao")
             m "Good. Glad we established that."
             m "Now I want you to say..."
 
@@ -769,7 +771,7 @@ label hg_pf_titjob_2_continue:
             call her_main("I'm not sure...","annoyed","base")
             call her_main("I think so...","soft","squintL")
             $ ccg1 = 23
-            call her_main("He always seem to cover his crotch afterwards...","base","closed")
+            call her_main("He always seems to cover his crotch afterwards...","base","closed")
             call her_main("He even says I'm too old for hugs...","annoyed","closed")
             call her_main("But I make sure to give him a big one every night before I go to bed...")
             call her_main("So that he'll think of me...","base","down")

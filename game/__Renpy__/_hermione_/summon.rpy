@@ -231,8 +231,6 @@ label hermione_favor_menu:
                         else:
                             menu_choices.append((i.getMenuText(),i.start_label))
 
-                    for i in hg_pf_list:
-                        menu_choices.append((i.getMenuText(),i.start_label))
                     menu_choices.append(("-Never mind-", "nvm"))
                     result = custom_menu(menu_choices)
                 if result == "nvm":

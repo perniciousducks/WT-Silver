@@ -6,6 +6,7 @@
 
 
 label nt_pr_kiss_start:
+    call ton_main("","base","base","base","mid", xpos="right", ypos="base", trans="fade")
 
     if ton_tier == 2:
 
@@ -62,6 +63,8 @@ label nt_pr_kiss_start:
 
 label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
     #Gentle kissing
+    call play_sound("door")
+    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
     m "Fun day?"
     call ton_main("It was! I got to show the kids a Boggart for the first time, that was pretty entertaining!","base","base","base","mid")
     call ton_main("Not to mention I got to take a boys first kiss...","base","base","base","mid")
@@ -102,6 +105,8 @@ label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
 
 
 label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
+    call play_sound("door")
+    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
     m "You're a bit late... Get caught up having fun with your students?"
     call ton_main("Mmmm, and then some...","base","base","base","mid")
     m "I like the sound of that!"
@@ -143,6 +148,8 @@ label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
 
 label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
     #Tonks pays two best friends to make-out
+    call play_sound("door")
+    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
     m "How was your day?"
     call ton_main("Better than most... You're going to love todays story!","base","base","base","mid")
     m "Don't let me stop you then."
@@ -185,6 +192,8 @@ label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
 
 label nt_pr_kiss_T1_E4: #Level 1 Event 4
     #Tender make-out sesh with slytherin lesbian
+    call play_sound("door")
+    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
     call ton_main("Do I have a story for you today!","base","base","base","mid")
     call ton_main("This is so good I feel I should turn it into a feel-good, coming-of-age flick!","base","base","base","mid")
     m "About a boy snogging his teacher?"
@@ -221,6 +230,8 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
 
 
 label nt_pr_kiss_T2_E1: # Tier 2 Event 1 # Not in use.
+    call play_sound("door")
+    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
     m "How did your extra-curricular activities pan out today?"
     call ton_main("Honestly? I don't think I've ever been as turned on in my life...","base","base","base","mid")
     call ton_main("Fuck... It was incredible... the power I felt over him... it was intoxicating...","base","base","base","mid")

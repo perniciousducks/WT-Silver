@@ -26,9 +26,14 @@ label tonks_hangout:
     if hermione_intro.E6_complete and her_tier >= 2 and not tonks_requests_unlocked:
         jump hang_with_tonks_E2
 
+    if ton_reputation >= 4 and ton_friendship >= 20 and ton_tier == 1:
+        jump hang_with_tonks_E3
+
     # Tonks Auror Stories.
     $ random_number = renpy.random.randint(1, 3)
     if random_number == 1:
+        if ton_support < 12:
+            $ ton_support += 1
         $ nt_he_story.start()
 
     label end_tonks_hangout:
@@ -244,6 +249,34 @@ label hang_with_tonks_E2:
     else:
         jump day_start
 
+
+label hang_with_tonks_E3:
+    call ton_main("You know, [ton_genie_name],... I've overheard a couple of students whispering about me...","open","base","base","mid", ypos="head")
+    g9 "Finally..."
+    call ton_main("And I walked past a group of boys the other day...","open","base","base","R")
+    call ton_main("One straight up called me a slut, while the others started snickering...","open","base","base","down")
+    m "And?..."
+    call ton_main("Well, I turned around and told him that behaviour like that could earn him detention...","base","base","base","mid")
+    call ton_main("Of course word has it that detention with me is rather enjoyable...","horny","base","base","mid")
+    call ton_main("And I believe that group of boys knew that as well...","base","base","angry","mid")
+    m "I think it's time to step it up a notch."
+    call ton_main("And behave even riskier?","open","base","angry","mid")
+    call ton_main("Who do you think you are asking exactly?","open","closed","base","mid")
+    m "So,...is that a yes?"
+    call ton_main("Fuck yes!","horny","base","base","ahegao")
+    call ton_main("I want those boys to call me all sorts of names... But do it straight to my face!","horny","base","angry","mid")
+    g9 "Make sure to reward them if they do."
+    call ton_main("I promise, [ton_genie_name].","base","base","base","mid")
+
+    $ ton_tier = 2
+    call popup("Tonks has reached level 2! New favors have been unlocked.", "Congratulations!", "interface/icons/head/head_tonks_1.png", sound=False)
+
+    $ hang_with_tonks.E3_complete = True
+
+    if daytime:
+        jump night_start
+    else:
+        jump day_start
 
 
 ### Discuss Hermione ###

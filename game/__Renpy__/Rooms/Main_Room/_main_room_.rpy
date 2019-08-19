@@ -253,7 +253,10 @@ screen main_room_menu():
         if not phoenix_is_petted:
             hover phoenix_OBJ.get_hover_image()
             if bird_examined:
-                hovered SetVariable("tooltip", "Feed/Pet")
+                if not phoenix_is_fed:
+                    hovered SetVariable("tooltip", "Feed")
+                else:
+                    hovered SetVariable("tooltip", "Pet")
             else:
                 hovered SetVariable("tooltip", "Examine the bird")
             unhovered SetVariable("tooltip", None)
@@ -269,7 +272,13 @@ screen main_room_menu():
         idle fireplace_OBJ.get_idle_image()
         hover fireplace_OBJ.get_hover_image()
         if fireplace_examined:
-            hovered SetVariable("tooltip", "Light/Extinguish fire")
+            if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
+                hovered SetVariable("tooltip", "What's that glimmer?")
+            else:
+                if not fire_in_fireplace:
+                    hovered SetVariable("tooltip", "Light fire")
+                else:
+                    hovered SetVariable("tooltip", "Extinguish fire")
         else:
             hovered SetVariable("tooltip", "Examine fireplace")
         unhovered SetVariable("tooltip", None)

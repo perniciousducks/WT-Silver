@@ -64,7 +64,7 @@ label shoosh_owl_away:
     with d5
     pause.2
 
-    $ renpy.say(g4, renpy.random.choice(["fuck off", "bug off", "get out", "get the hell out of here", "go away", "away with you", "don't you even dare shit on my floor"])+", you"+renpy.random.choice([" stupid", " silly", " annoying", "", " idiotic"])+renpy.random.choice([" flying rat!", " bird!", ", poor excuse for a pidgeon!", " pidgeon!", " idiot!"]))
+    $ renpy.say(g4, renpy.random.choice(["fuck off", "bug off", "get out", "get the hell out of here", "go away", "away with you", "don't you even dare shit on my floor"])+", you"+renpy.random.choice([" stupid", " silly", " annoying", "", " idiotic", " bloody"])+renpy.random.choice([" flying rat!", " bird!", " poor excuse for a pidgeon!", " pidgeon!", " idiot!"]))
     pause.1
 
     call gen_chibi("animation", pic="genie_rum_ani", "360", "80", flip=False)

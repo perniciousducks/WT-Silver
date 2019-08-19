@@ -8,12 +8,12 @@ transform crop_meter(fill, opacity):
         easein_back 1.0 crop (0, 0, 60, int((float(fill)/100)*500))
         repeat
 
-label exp_o_meter(fill=50, opacity=1.0):
-    show screen exp_o_meter(fill=fill, opacity=opacity)
+label exp_o_meter(fill=50, opacity=1.0, alt=False, alt_text=None):
+    show screen exp_o_meter(fill=fill, opacity=opacity, alt=alt, alt_text=alt_text)
     #with d3
     return
 
-screen exp_o_meter(fill, opacity):
+screen exp_o_meter(fill, opacity, alt, alt_text):
     tag exp_o_meter
     zorder 4
 
@@ -26,17 +26,21 @@ screen exp_o_meter(fill, opacity):
         add "interface/meter/fill.png" at crop_meter(fill, opacity)
         add "interface/meter/glass.png" yanchor 1.0 alpha opacity
 
-    frame:
-        style "empty"
-        xpos 150
-        ypos 70
-        add "interface/meter/"+interface_color+"/circle.png" alpha opacity
-        if fill >= 90:
-            add "interface/meter/100.png" alpha opacity
-        elif fill >= 50:
-            add "interface/meter/50.png" alpha opacity
-        else:
-            add "interface/meter/0.png" alpha opacity
+    if not alt:
+        frame:
+            style "empty"
+            xpos 150
+            ypos 70
+            add "interface/meter/"+interface_color+"/circle.png" alpha opacity
+            if fill >= 90:
+                add "interface/meter/100.png" alpha opacity
+            elif fill >= 50:
+                add "interface/meter/50.png" alpha opacity
+            else:
+                add "interface/meter/0.png" alpha opacity
+                
+    if alt_text:
+        text alt_text size 22 vertical True color "#FFF" outlines [ (2, "#000", 0, 0) ] xpos 70 ypos 340 yalign 0.5
 
 screen swear_bubble(type):
     tag bubble

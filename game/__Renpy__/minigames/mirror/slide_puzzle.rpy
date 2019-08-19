@@ -25,12 +25,14 @@ label start_slide_puzzle:
 
 
 label update_puzzle_slide:
+    call exp_o_meter(fill=98-puzzle_tries, alt=True, alt_text="Patience") #Reversed
     show screen puzzle_board
     $ p_move = ui.interact()
     hide screen puzzle_board
 
     if int(p_move) == -1:
-        jump main_room
+        hide screen exp_o_meter
+        call screen main_room_menu
 
     $xposS = int(p_move/4)
     $yposS = int(p_move%4)
@@ -44,6 +46,7 @@ label update_puzzle_slide:
         $ emptyposition = p_move
 
     if p_move == -2:
+        hide screen exp_o_meter
         jump open_pyzzle_box
 
     python:
@@ -57,7 +60,11 @@ label update_puzzle_slide:
 
 label open_pyzzle_box:
     if unlocked_7th or p_move == -2:
-        m "Fuck it... {size=18}*Smash*{/size}"
+        g4 "Fuck it..."
+        $ renpy.play('sounds/door_down.mp3')
+        with hpunch
+        "{size=32}*Smash*{/size}"
+        $ renpy.play('sounds/glass_shatter.mp3')
         m "A broken bottle..."
         m "Oh well, too late now. Back to my usual-"
     elif unlocked_7th == False:
@@ -101,16 +108,12 @@ label open_pyzzle_box:
     jump main_room
 
 screen puzzle_board():
+    tag puzzle
 
     use close_button(close_var=lambda : -1)
 
-    if puzzle_tries > 150:
-        imagebutton:
-            xpos 240
-            ypos 100
-            idle "interface/slide/fuck.png"
-            hover "interface/slide/fuck_hover.png"
-            action Return(-2)
+    if puzzle_tries > 95:
+        textbutton "Fuck it!" action Return(-2) text_size 32 xalign 0.5 yalign 0.93
 
     frame:
         background #00000000

@@ -374,15 +374,16 @@ screen t_wardrobe_menuitem(xx, yy):
                 add "interface/page.png" yanchor 0.5 ypos 53
                 text str(current_page+1)+"/"+str(int(math.ceil(menu_items_length/items_shown)+1)) ypos 44 size 16
         
+        # Colours
         if current_item:
             hbox:
-                xpos 300
-                ypos 40
-                spacing 4
+                xpos 283
+                ypos 31
+                spacing 2
                 
                 for i in xrange(current_item.layers):
-                    button xsize 24 ysize 24 background current_item.get_color_hex(i) action Return(["item_color", i]) hovered SetVariable("tooltip", "Change colour ("+str(i+1)+")") unhovered SetVariable("tooltip", None)
-                textbutton "R" xsize 24 ysize 24 background "#d3d3d3" action Return("item_reset") hovered SetVariable("tooltip", "Reset all colours") unhovered SetVariable("tooltip", None)
+                    button xsize 32 ysize 44 background current_item.get_color_hex(i) action Return(["item_color", i]) hovered SetVariable("tooltip", "Change colour ("+str(i+1)+")") unhovered SetVariable("tooltip", None)
+            textbutton "R" xsize 32 ysize 44 xpos 422 ypos 31 background "#d3d3d3" action Return("item_reset") hovered SetVariable("tooltip", "Reset all colours") unhovered SetVariable("tooltip", None)
             
         # Add subcategory list
         if len(category_items) > 0:

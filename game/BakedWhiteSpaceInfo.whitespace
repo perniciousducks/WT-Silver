@@ -6101,7 +6101,6 @@ characters/tonks/clothes/tops/auror/0.png:334,589,371,384
 characters/tonks/clothes/tops/auror/1.png:433,617,264,333
 characters/tonks/clothes/tops/auror/outline.png:430,532,275,441
 characters/tonks/clothes/tops/corset/0.png:456,619,246,268
-characters/tonks/clothes/tops/corset/extra.png:466,534,222,121
 characters/tonks/clothes/tops/corset/outline.png:454,617,250,272
 interface/wardrobe/test/icons/tonks/bottoms_skirts.png:64,0,317,429
 interface/wardrobe/test/icons/tonks/bottoms_skirts_old.png:75,0,306,429
@@ -6323,3 +6322,5 @@ images/rooms/room_of_requirement/dark_overlay.png:0,0,1079,599
 images/rooms/room_of_requirement/dark_overlay_1.png:0,0,1079,599
 images/rooms/room_of_requirement/dark_overlay_2.png:0,0,1079,599
 images/rooms/room_of_requirement/dark_overlay_3.png:0,0,1079,599
+characters/tonks/chibis/nt_walk_large.png:35,9,114,333
+characters/tonks/clothes/tops/corset/skin.png:466,534,222,120

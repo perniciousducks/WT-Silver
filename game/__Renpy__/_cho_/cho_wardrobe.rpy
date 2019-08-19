@@ -41,6 +41,8 @@ label cho_wardrobe_check(section, arg=None):
                 $ wardrobe_fail_hint(12)
                 return False
             return True
+        elif section == "category":
+            return arg #IMPORTANT
         elif section == "touching":
             $ random_number = renpy.random.randint(1, 5)
             if arg == "boobs":

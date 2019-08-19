@@ -96,7 +96,7 @@ label nt_he_firewhisky_intro:
     pause.1
 
     # Show firewhisky
-    call give_reward(">You hand over a bottle of firewhisky to Tonks...", gift="interface/icons/item_wine.png", sound=False)
+    call give_reward(">You hand over a bottle of firewhisky to Tonks...", gift="interface/icons/item_whisky.png", sound=False)
 
     call ton_main("Finally, the good stuff!","horny","base","base","down", ypos="head")
     call ton_main("I'm glad you brought out some firewhisky this time...","base","base","base","down")

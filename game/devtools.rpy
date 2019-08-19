@@ -31,6 +31,14 @@ init -2 python:
                 return True
         return False
         
+    def TBA_message(msg="Currently unavailable, check in later versions of the game."):
+        renpy.show_screen("blktone5")
+        renpy.with_statement(d3)
+        renpy.say(sil, msg)
+        renpy.hide_screen("blktone5")
+        renpy.with_statement(d3)
+        return
+        
 label missing_label():
     $ renpy.choice_for_skipping()
     $ err_msg1 = systemerror[0]

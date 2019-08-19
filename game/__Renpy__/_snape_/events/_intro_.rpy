@@ -726,7 +726,9 @@ label snape_intro_E5:
     pause.2
 
     $ snape_unlocked = True
-    $ achievement.unlock("unlocksna")
+    # Silently add an achievement, then display a popup message.
+    $ achievement.unlock("unlocksna", True)
+    call popup("{size=-4}You can now summon Snape into your office.{/size}", "Character unlocked!", "interface/icons/head/head_snape_1.png")
     $ snape_intro.E5_complete = True
 
     jump day_start

@@ -531,7 +531,8 @@ label tonks_intro_E3:
     g9 "Who could have guessed that she's a pervert as well?!"
 
     $ tonks_unlocked = True
-    $ achievement.unlock("unlockton")
+    $ achievement.unlock("unlockton", True)
+    call popup("{size=-4}You can now summon Tonks into your office.{/size}", "Character unlocked!", "interface/icons/head/head_tonks_1.png")
     $ tonks_busy = True
 
     $ tonks_intro.E3_complete = True

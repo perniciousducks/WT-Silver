@@ -314,7 +314,8 @@ label astoria_captured_intro:
     m "(This isn't what I signed on for...)"
 
     $ astoria_unlocked = True
-    $ achievement.unlock("unlockast")
+    $ achievement.unlock("unlockast", True)
+    call popup("{size=-4}You can now summon Astoria into your office.{/size}", "Character unlocked!", "interface/icons/head/head_astoria_1.png")
 
     $ astoria_busy = True
     $ hermione_busy = True
@@ -863,7 +864,8 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     with d3
 
     $ susan_unlocked = True
-    $ achievement.unlock("unlocksus")
+    $ achievement.unlock("unlocksus", True)
+    call popup("{size=-4}You can now summon Susan into your office.{/size}", "Character unlocked!", "interface/icons/head/head_susan_1.png")
 
     $ astoria_busy = True
     $ susan_busy = True
@@ -1079,7 +1081,8 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
     m "Did I just become a pimp?"
 
     $ tonks_unlocked = True
-    $ achievement.unlock("unlockton")
+    $ achievement.unlock("unlockton", True)
+    call popup("{size=-4}You can now summon Tonks into your office.{/size}", "Character unlocked!", "interface/icons/head/head_tonks_1.png")
 
     $ tonks_busy = True
 

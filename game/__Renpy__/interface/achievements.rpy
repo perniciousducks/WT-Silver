@@ -374,7 +374,11 @@ screen achievement_menuitem(xx, yy):
                         else:
                             add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
                     add "interface/achievements/glass_iconbox.png" pos (3, 2)
-                    button xsize 46 ysize 46 style "empty" hover_background btn_hover action Return(["select", menu_items[i]])
+                    
+                    if menu_items[i][1][5] and not menu_items[i][1][3]:
+                        button xsize 46 ysize 46 style "empty" hover_background btn_hover action Return(["select", menu_items[i]]) hovered SetVariable("tooltip", "???") unhovered SetVariable("tooltip", None)
+                    else:
+                        button xsize 46 ysize 46 style "empty" hover_background btn_hover action Return(["select", menu_items[i]]) hovered SetVariable("tooltip", menu_items[i][1][1]) unhovered SetVariable("tooltip", None)
 
         # Add empty items
         #for i in xrange(menu_items_length, items_shown):

@@ -197,7 +197,7 @@ screen inventory_menuitem(xx, yy):
                             text str(menu_items[i].number) size 10 align (0.95, 0.95) anchor (1.0, 1.0) color "#FFFFFF" outlines [ (1, "#000", 0, 0) ]
                         #else:
                             #text str(menu_items[i].number) size 10 align (0.9, 0.9) color "#FFFFFF80" outlines [ (1, "#00000080", 0, 0) ]
-                    button xsize 46 ysize 46 style "empty" hover_background btn_hover action Return(["select", menu_items[i]])
+                    button xsize 46 ysize 46 style "empty" hover_background btn_hover action Return(["select", menu_items[i]]) hovered SetVariable("tooltip", menu_items[i].name) unhovered SetVariable("tooltip", None)
                     
         if menu_items_length <= 0:
             text "Nothing here yet" align (0.5, 0.5) anchor (0.5, 0.5) size 24

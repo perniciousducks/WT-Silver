@@ -66,9 +66,6 @@ label night_start:
     label night_resume:
 
     # Owl
-    $ random_number = renpy.random.randint(1, 5)
-    if random_number in [1]:
-        $ owl_away = False
     if letter_queue_list != [] and not owl_away:
         call play_sound("owl")
         show screen owl

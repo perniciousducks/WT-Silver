@@ -211,7 +211,7 @@ screen main_room_menu():
             yanchor 1.0
             idle owl_OBJ.get_idle_image()
             hover owl_OBJ.get_hover_image()
-            hovered SetVariable("tooltip", "Check mail")
+            hovered SetVariable("tooltip", "Check mail\n{size=-4}"+str(len(letter_queue_list))+" new message(s){/size}")
             unhovered SetVariable("tooltip", None)
             action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("read_letter")]
 

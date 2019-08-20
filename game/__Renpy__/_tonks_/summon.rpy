@@ -73,7 +73,7 @@ label summon_tonks:
             call play_music("brittle_rille") #Day Theme
             jump day_main_menu
 
-        "{color=#858585}-Send Astoria with her-{/color}" if astoria_busy or not astoria_book_intro_happened or not daytime or not spells_locked and astoria_unlocked:
+        "{color=#858585}-Send Astoria with her-{/color}" if astoria_unlocked and (astoria_busy or not astoria_book_intro_happened or not daytime or not spells_locked):
             if not astoria_book_intro_happened:
                 call nar(">You should probably discuss this with Astoria first.")
             elif not spells_locked:

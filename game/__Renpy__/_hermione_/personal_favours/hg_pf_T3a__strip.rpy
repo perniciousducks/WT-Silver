@@ -38,12 +38,14 @@ label hg_pf_strip:
     hide screen s_c_c_u # Snape's sperm. Universal.
 
     call sna_chibi("hide")
-    call hg_chibi_transition("stand", xpos="desk", ypos="base", flip=False, trans="fade")
+    call her_chibi("stand","desk","base", flip=False)
+    call gen_chibi("sit_behind_desk")
 
+    hide screen blkfade
     if her_mood != 0:
-        call her_main("","annoyed","angry", xpos="mid", ypos="base")
+        call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
     else:
-        call her_main("","base","base", xpos="mid", ypos="base")
+        call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
 
 
     # Points
@@ -146,8 +148,8 @@ label hg_pf_strip_T0_fail_repeat:
     m "[hermione_name], I need you to dance for me a little."
     call her_main("And would you like me to take off my clothes as well?","soft","closed")
     m "Yes?"
-    call her_main("No! I will not!","sceam","angry")
-    call her_main("And I'd appreaciate if you could stop asking me this.","annoyed","angry")
+    call her_main("No! I will not!","scream","angry")
+    call her_main("And I'd appreaciate it if you'd stop making such outrageous requests...","annoyed","angry")
     m "You will get points for it..."
     call her_main("Shove those points up your-","angry","angryCl")
     call her_main("I will be leaving now...","annoyed","angry")
@@ -892,7 +894,7 @@ label hg_pf_strip_T1_watch:
             m "You have a lot of talent for this!"
             call her_main("Thank you [genie_name].","soft","worriedL", emote="05")
         "{size=-3}\"Hm... This was quite awful...\"{/size}":
-            $ mad += 4
+            $ her_mood += 4
             call her_main("............","annoyed","angry")
             m "You just need to practice more..."
             call her_main("Whatever..........","annoyed","angryL")

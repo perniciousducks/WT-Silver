@@ -182,6 +182,7 @@ label t_wardrobe(return_label, char_label):
             if 'head' in wardrobe_categories_sorted:
                 $ char_active.wear("all")
         else:
+            $ renpy.call(active_girl+"_wardrobe_check", "category", _return)
             $ renpy.play('sounds/scroll.mp3')
             $ current_category = _return[1]
             # Outfits
@@ -373,21 +374,22 @@ screen t_wardrobe_menuitem(xx, yy):
                 add "interface/page.png" yanchor 0.5 ypos 53
                 text str(current_page+1)+"/"+str(int(math.ceil(menu_items_length/items_shown)+1)) ypos 44 size 16
         
+        # Colours
         if current_item:
             hbox:
-                xpos 300
-                ypos 40
-                spacing 4
+                xpos 283
+                ypos 31
+                spacing 2
                 
                 for i in xrange(current_item.layers):
-                    button xsize 24 ysize 24 background current_item.get_color_hex(i) action Return(["item_color", i]) hovered SetVariable("tooltip", "Change colour ("+str(i+1)+")") unhovered SetVariable("tooltip", None)
-                textbutton "R" xsize 24 ysize 24 background "#d3d3d3" action Return("item_reset") hovered SetVariable("tooltip", "Reset all colours") unhovered SetVariable("tooltip", None)
+                    button xsize 32 ysize 44 background current_item.get_color_hex(i) action Return(["item_color", i]) hovered SetVariable("tooltip", "Change colour ("+str(i+1)+")") unhovered SetVariable("tooltip", None)
+            textbutton "R" xsize 32 ysize 44 xpos 422 ypos 31 background "#d3d3d3" action Return("item_reset") hovered SetVariable("tooltip", "Reset all colours") unhovered SetVariable("tooltip", None)
             
         # Add subcategory list
         if len(category_items) > 0:
             for i, subcategory in enumerate(category_items.keys()):
                 add "interface/wardrobe/test/icons/"+char_active.char+"/"+current_category+"_"+subcategory+".png" ypos 86 xpos 10+(90*i) zoom 0.2
-                button xsize 86 ysize 86 ypos 86 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", subcategory])
+                button xsize 86 ysize 86 ypos 86 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", subcategory]) hovered SetVariable("tooltip", subcategory) unhovered SetVariable("tooltip", None)
             
         text "[current_category]: [current_subcategory]" xpos 24 ypos 44 size 16
         
@@ -404,10 +406,11 @@ screen t_wardrobe_menuitem(xx, yy):
                     pos (14+90*col, 182+90*row)
                     
                     add menu_items[i].get_icon() zoom image_zoom xalign 0.5 yalign 0.5
-                button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]])
                 if menu_items[i].id == char_active.get_equipped(current_category, current_subcategory, i):
-                    #$ current_item = menu_items[i]
-                    text "{color=#FFFFFF}Worn{/color}" xpos 26+90*col ypos 240+90*row
+                    button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]]) hovered SetVariable("tooltip", "Take off") unhovered SetVariable("tooltip", None)
+                    add "interface/topbar/icon_check.png" xpos 60+90*col ypos 225+90*row
+                else:
+                    button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]]) #hovered SetVariable("tooltip", "Put on") unhovered SetVariable("tooltip", None)
                 if config.developer:
                     text "{color=#b20000}"+str(menu_items[i].whoring)+"{/color}" size 20 xpos 15+90*col ypos 180+90*row outlines [ (1, "#000", 0, 0) ]
                     
@@ -463,7 +466,7 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
         # Add subcategory list
         for i, subcategory in enumerate(category_items):
             add "interface/wardrobe/test/icons/"+current_category+"_"+subcategory+".png" ypos 88 xpos 10+(90*i) zoom 0.2
-            button xsize 86 ysize 86 ypos 88 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", subcategory])
+            button xsize 86 ysize 86 ypos 88 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", subcategory]) hovered SetVariable("tooltip", subcategory) unhovered SetVariable("tooltip", None)
         
         # Add items
         for i in xrange(current_page*10, (current_page*10)+10):

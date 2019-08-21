@@ -11,13 +11,10 @@ label set_ton_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
     $ temp_tears    = None
     $ temp_extra    = None
     $ temp_emote    = None
-
-    $ hair_color_steps = 7
     
     if hair != None:
-        $ current_step = 1.0
-        $ current_color = tonks_class.get_cloth("hair").color[0]
-        $ target_color = None
+        #if hair in ("neutral"):
+            #$ target_color = tonks_haircolor # player
         if hair in ("angry"):
             $ target_color = [[164, 34, 34, 255]] # red
         elif hair in ("annoyed"):
@@ -27,21 +24,9 @@ label set_ton_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
         elif hair in ("disgusted"):
             $ target_color =  [[111, 205, 75, 255]] # green
         elif hair in ("sad"):
-            $ tonks_class.get_cloth("hair").color = [[64, 75, 205, 255]] # blue
+            $ target_color = [[64, 75, 205, 255]] # blue
         elif hair in ("naughty", "horny"):
             $ target_color =  [[242, 126, 168, 255]] # pink
-            
-        if not target_color  == None:
-            while current_step < hair_color_steps:
-                hide screen tonks_main
-                $ tonks_class.get_cloth("hair").color = [lerp_color(current_color, target_color[0], current_step/(hair_color_steps))]
-                $ tonks_class.get_cloth("hair").cached = False
-                $ tonks_outfit_last.cached = False
-                $ tonks_class.cached = False
-                $ current_step = current_step + 1.0
-                show screen tonks_main()
-                pause 0.05
-            $ tonks_class.get_cloth("hair").color = target_color
 
     #Face emotions
     if mouth != None:

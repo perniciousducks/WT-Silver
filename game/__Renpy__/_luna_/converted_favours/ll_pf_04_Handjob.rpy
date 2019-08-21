@@ -246,7 +246,7 @@ label luna_favour_4: ###Luna handjob #DONE
 
                 call lun_main("(It's so good...)","full","seductive","sad","R")
                 call lun_main("...","full","seductive","down","sad")
-                g4 "{size=+10}TAKE IT ALL YOU big titted sLUT!{/size}"
+                g4 "{size=+10}TAKE IT ALL YOU big-titted sLUT!{/size}"
                 g4 "mmmm....."
                 hide screen g_c_c_u
                 $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
@@ -748,7 +748,7 @@ label luna_favour_4: ###Luna handjob #DONE
             g4 "Argh! by the gods {size=+10}YES!{/size}"
             call lun_main("...","base","seductive","base","down")
             call lun_main("(It's so warm...)","base","seductive","sad","R")
-            g4 "{size=+10}TAKE IT ALL YOU big titted sLUT!{/size}"
+            g4 "{size=+10}TAKE IT ALL YOU big-titted sLUT!{/size}"
             g4 "mmmm....."
             hide screen g_c_c_u
             $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
@@ -830,7 +830,7 @@ label luna_cum_addict_event:
     g4 "Argh! by the gods {size=+10}YES!{/size}"
     call lun_main("...","normal","seductive","base","crossed")
     call lun_main("(What's this smell?)","pout","seductive","sad","downL")
-    g4 "{size=+10}TAKE IT ALL YOU big titted SLUT!{/size}"
+    g4 "{size=+10}TAKE IT ALL YOU big-titted SLUT!{/size}"
     g4 "mmmm....."
     hide screen g_c_c_u
     $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"

@@ -30,13 +30,20 @@ label hg_pf_grope:
     ">You let go of Hermione..."
 
     call set_her_action("none")
-    call hg_chibi_transition("stand", xpos="desk", ypos="base", flip=False, trans="fade")
+    call her_chibi("stand","desk","base", flip=False)
+    call gen_chibi("sit_behind_desk")
+
+    hide screen blkfade
+    if her_mood != 0:
+        call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
+    else:
+        call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
 
     m "This will do for now."
     if her_tier <= 3:
-        call her_main("................","annoyed","angryL", cheeks="blush", xpos="mid", ypos="base")
+        call her_main("................","annoyed","angryL", cheeks="blush")
     else:
-        call her_main("................", face="horny", cheeks="blush", xpos="mid", ypos="base")
+        call her_main("................", face="horny", cheeks="blush")
 
 
     # Points
@@ -113,7 +120,7 @@ label hg_pf_grope_T0_fail_repeat:
     m "Please?"
     call her_main("I'm leaving! Good day, Sir!","soft","closed")
 
-    call her_chibi(action="leave", speed=2.5)
+    call her_walk(action="leave", speed=2.5)
 
     $ her_mood += 6
 

@@ -64,7 +64,7 @@ label shoosh_owl_away:
     with d5
     pause.2
 
-    g4 "Fuck off, stupid bird!"
+    $ renpy.say(g4, renpy.random.choice(["fuck off", "bug off", "get out", "get the hell out of here", "go away", "away with you", "don't you even dare shit on my floor"])+", you"+renpy.random.choice([" stupid", " silly", " annoying", "", " idiotic", " bloody"])+renpy.random.choice([" flying rat!", " bird!", " poor excuse for a pidgeon!", " pidgeon!", " idiot!"]))
     pause.1
 
     call gen_chibi("animation", pic="genie_rum_ani", "360", "80", flip=False)
@@ -101,10 +101,8 @@ label letter_paperwork_unlock:
     return
 
 label letter_paperwork_report:
-    call update_report_money
-    call give_reward(">You received {size=+4}"+str(report_money)+"{/size} gold coins.","interface/icons/gold.png")
-    $ gold += report_money
 
+    $ gold += report_money
     $ report_money = 0
     $ finished_report = 0
 
@@ -119,25 +117,14 @@ label letter_favor_complaint:
 
 label update_report_money:
 
-    if game_difficulty <= 1: #easy
-        $ report_money += 80*finished_report
+    if game_difficulty <= 1: # Easy
+        $ report_money = finished_report * 50
 
-    elif game_difficulty == 2: #normal
-        $ report_money += 60*finished_report
+    elif game_difficulty == 2: # Normal
+        $ report_money = finished_report * 40
 
-    else: #hardcore
-        $ random_number = renpy.random.randint(1, 10)
-
-        if random_number in [1]:
-            $ report_money += 10*finished_report
-        elif random_number in [2]:
-            $ report_money += 100*finished_report
-        elif random_number in [3,4]:
-            $ report_money += 30*finished_report
-        elif random_number in [5,6]:
-            $ report_money += 80*finished_report
-        else:
-            $ report_money += 60*finished_report
+    else: # Hardcore
+        $ report_money = finished_report * renpy.random.randint(20, 30)
 
     return
 
@@ -277,7 +264,7 @@ label __init_variables:
 
     if not hasattr(renpy.store,'letter_paperwork_report_OBJ'):
         $ letter_paperwork_report_OBJ = mail_letter_class()
-    $ letter_paperwork_report_OBJ.text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n{/size}{size=-4}Thank you for completing a report this week.\n\nYou will find you payment in the attached purse.{/size}\n\n{size=-7}With deepest respect,\nThe Ministry of Magic.{/size}"
+    $ letter_paperwork_report_OBJ.text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n{/size}{size=-4}Thank you for completing a report this week.\n\nYou will find your payment of\n\n{/size}{b}-[report_money] gold-{/b}{size=-4}\n\nin the attached purse.{/size}\n\n{size=-7}With deepest respect,\nThe Ministry of Magic.{/size}"
     $ letter_paperwork_report_OBJ.label = "letter_paperwork_report"
 
     if not hasattr(renpy.store,'letter_favor_complaint_OBJ'):

@@ -960,7 +960,7 @@ label cc_pf_strip_T1_intro_E3:
     call cho_main("We both know what he would prefer...","soft","closed","base","mid")
     m "..."
     call cho_main("And who he prefers...","smile","angry","angry","mid")
-    call her_main("You think that's he prefers you over me?{w} Please...","soft","angryL")
+    call her_main("You think that he prefers you over me?{w} Please...","soft","angryL")
     call cho_main("Why don't we just ask him?","base","narrow","base","mid")
     call cho_main("Tell us, Professor...","soft","narrow","base","R")
     call cho_main("How do you like the athletic, immaculate, nude body of your favourite student?","smile","narrow","angry","mid")

@@ -69,6 +69,8 @@ label inventory_menu(xx=150, yy=90):
             $ current_item = None
         else:
             $ current_item = _return[1]
+    elif _return[0] == "use":
+        $ renpy.call(_return[1])
     elif _return[0] == "category":
         $ current_category = _return[1]
         $ category_items = inventory_dict[current_category]
@@ -197,7 +199,7 @@ screen inventory_menuitem(xx, yy):
                             text str(menu_items[i].number) size 10 align (0.95, 0.95) anchor (1.0, 1.0) color "#FFFFFF" outlines [ (1, "#000", 0, 0) ]
                         #else:
                             #text str(menu_items[i].number) size 10 align (0.9, 0.9) color "#FFFFFF80" outlines [ (1, "#00000080", 0, 0) ]
-                    button xsize 46 ysize 46 style "empty" hover_background btn_hover action Return(["select", menu_items[i]])
+                    button xsize 46 ysize 46 style "empty" hover_background btn_hover action Return(["select", menu_items[i]]) hovered SetVariable("tooltip", menu_items[i].name) unhovered SetVariable("tooltip", None)
                     
         if menu_items_length <= 0:
             text "Nothing here yet" align (0.5, 0.5) anchor (0.5, 0.5) size 24
@@ -229,6 +231,9 @@ screen inventory_menuitem(xx, yy):
                 spacing 5
                 xalign 0.5
                 text current_item.name ypos 380 size 16 xoffset 45
+                
+            if current_category == "Quest Items":
+                textbutton "Use" action Return(["use", current_item.event]) xsize 90 ysize 26 xalign 0.89 ypos 374 text_size 16 xoffset 45
             hbox:
                 pos (132, 407)
                 xsize 410

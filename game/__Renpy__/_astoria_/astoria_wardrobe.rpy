@@ -34,12 +34,18 @@ label astoria_wardrobe_check(section, arg=None):
             return
     else:
         if section == "tabswitch":
-            if ast_affection < 24:
-                call ast_main("As much as I'd like to get a new piercing or a tattoo I can't simply let you modify my body like that.",face="angry")
-                #Hint
-                $ wardrobe_fail_hint(24)
-                return False
-            return True
+            # Need more art
+            $ TBA_message()
+            return False
+            
+            # if ast_affection < 24:
+                # call ast_main("As much as I'd like to get a new piercing or a tattoo I can't simply let you modify my body like that.",face="angry")
+                # #Hint
+                # $ wardrobe_fail_hint(24)
+                # return False
+            # return True
+        elif section == "category":
+            return arg #IMPORTANT
         elif section == "touching":
             $ random_number = renpy.random.randint(1, 10)
             if arg == "boobs":

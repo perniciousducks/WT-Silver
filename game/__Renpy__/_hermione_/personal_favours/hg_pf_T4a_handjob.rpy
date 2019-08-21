@@ -36,12 +36,14 @@ label hg_pf_handjob:
     call set_her_action("none","update") #Resets clothing.
     $ aftersperm = temp_save # Load
 
-    call hg_chibi_transition("stand", xpos="desk", ypos="base", flip=False, trans="fade")
+    call her_chibi("stand","desk","base", flip=False)
+    call gen_chibi("sit_behind_desk")
 
+    hide screen blkfade
     if her_mood != 0:
-        call her_main("","annoyed","angry", xpos="mid", ypos="base")
+        call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
     else:
-        call her_main("","base","base", xpos="mid", ypos="base")
+        call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
 
 
     # Points
@@ -80,8 +82,9 @@ label hg_pf_handjob:
 ### Fail Events ###
 
 label hg_pf_handjob_fail:
+    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]."
-    call her_main("Yes, [genie_name]?","base","base",xpos="mid",ypos="base")
+    call her_main("Yes, [genie_name]?","base","base")
     m "Do you know what a \"handjob\" is?"
 
     $ hg_pf_handjob.counter -= 1

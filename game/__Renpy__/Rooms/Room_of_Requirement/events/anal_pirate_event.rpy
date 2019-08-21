@@ -455,7 +455,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         g4 "How did ye...?"
         call her_main("You seem like a booty pirate kind of a man. captain...","angry","angry")
         m "I'm not sure you know what that means, lass..."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        hide screen hermione_main
         with d3
         jump lucky_anal_guess
 

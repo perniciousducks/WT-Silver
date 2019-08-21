@@ -49,8 +49,11 @@ label tonks_intro_E1:
             m "*Uhm* Yes, you may enter..."
 
     call play_sound("door")
-
+    call sna_chibi("stand","mid","base")
     #Tonks walks in
+    show screen tonks_chibi_large(xx=470, yy=265)
+    with d3
+    call ctc
 
     call ton_main("Thank you, Professor.","base","base","base","mid", xpos="right", ypos="base")
     m "(Oh shit, she’s hot...)"
@@ -194,8 +197,8 @@ label tonks_intro_E1:
     call ton_main("I’ve already gotten a room down in Hogsmeade.","open","base","base","R")
     call ton_main("I’ll be staying there, so no worries about accommodations.","base","base","base","mid")
     m "Great..."
-    call ton_main("I will begin the investigation right away!","base","happyCl","base","mid")
-    call ton_main("Good day to you sir.","base","base","base","mid")
+    call ton_main("I shall begin with it right away!","base","happyCl","base","mid")
+    call ton_main("Good day, Sir.","base","base","base","mid")
 
     # Tonks leaves.
     call play_sound("door")
@@ -282,7 +285,7 @@ label tonks_intro_E2:
     call ton_main("She gave me a very long report that went well into the evening, whilst I enjoyed a glass of firewhiskey...","open","base","base","mid")
     call ton_main("She has been very thorough in documenting the happenings she's witnessed...","base","base","base","mid")
     m "I can imagine that..."
-    call ton_main("Anyhow... Other than her documentation, she had no proof of any illicit activities.{w} It's all just accusations.","open","base","base","R")
+    call ton_main("Anyhow... She had no proof of any illicit activities.{w} It's all just accusations.","open","base","base","R")
     call ton_main("As much as I wish they were true...","horny","base","base","R", hair="horny")
     m "Huh?"
     call ton_main("So I could conclude my investigations early, of course...","base","closed","worried","mid")
@@ -528,7 +531,8 @@ label tonks_intro_E3:
     g9 "Who could have guessed that she's a pervert as well?!"
 
     $ tonks_unlocked = True
-    $ achievement.unlock("unlockton")
+    $ achievement.unlock("unlockton", True)
+    call popup("{size=-4}You can now summon Tonks into your office.{/size}", "Character unlocked!", "interface/icons/head/head_tonks_1.png")
     $ tonks_busy = True
 
     $ tonks_intro.E3_complete = True

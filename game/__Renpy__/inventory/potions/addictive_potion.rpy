@@ -5,7 +5,7 @@
 #Add check if she has drunk cum addiction (for future uses)
 
 init:
-    $ hg_pp_cumaddict = event_class(title = "Cum Addiction", start_label = "hg_pp_cumaddict", 
+    $ hg_pp_cumaddict = event_class(title = "Cum Addiction", start_label = "hg_pp_cumaddict",
     events = [[["hg_pp_cumaddict_intro"],["hg_pp_cumaddict_E1"]]],
     iconset = [["potion_empty", "potion_white"]], # <--- menu icons
     #Extra variables
@@ -26,7 +26,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
         if whoring <= 17: #Under when she stops caring about points too Much
                 her "And you'll pay me if I drink this?"
                 m "Of course...{w} I'll give you 30 points for Gryffindor house."
-                
+
     if hg_pp_polyjuice.counter > 0:
         call her_main("You're not going to try to transform me into a cat again are you [genie_name]?","normal","frown")
         call her_main("","normal","frown")
@@ -38,9 +38,9 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
     else:
         m "Now would you kindly drink the potion?"
         her "Fine..."
-        
+
     $ renpy.sound.play("sounds/bottle.mp3")
-        
+
     call her_main("...","annoyed","angryL")
 
     if her_whoring <= 12 and hg_pp_cumaddict.fail_counter == 0: #Too low
@@ -49,7 +49,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
         call her_main("","cum","worriedCl")
         pause .5
         call her_chibi("stand","mid","base")
-        
+
         call her_main("This isn't a potion! This is just a bottle full of your cum!","scream","angryCl")
         m "Wait, how could you tell if there's cum in there?"
         her "So you did put cum in there!"
@@ -91,7 +91,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
             call her_main("","cum","worriedCl")
             pause .5
             call her_chibi("stand","mid","base")
-            
+
             call her_main("Is this bottle full of your cum?","disgust","angryCl")
             call her_main("Ughhh and it's cold as well.","disgust","narrow")
             m "So it just tastes like cum to you?"
@@ -102,7 +102,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
         else: #Tried and drank the potion successfully before
             # Johnny add writing here please :)
             pass
-            
+
     $ renpy.sound.play("sounds/gulp.mp3")
     call her_chibi("drink_potion","mid","base")
     call her_main("","cum","worriedCl")
@@ -117,7 +117,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
     m "Yes [hermione_name], that will be all."
     call her_main("Thank you, [genie_name].","open","suspicious")
     call nar(">Hermione hurriedly leaves the room with the remainder of the potion firmly in her grasp.")
-    
+
     hide screen hermione_main
     call her_walk(action="leave", speed=2)
 
@@ -149,10 +149,10 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call her_main("Please [genie_name], let me suck your big, thick dick. Pretty please.","angry","worriedCl",emote="05")
             m "Much better."
     label hg_pp_cumaddict_sucking:
-    
+
     call blkfade
     pause 1
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    hide screen hermione_main
     hide screen genie
     $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
     $ gen_chibi_ypos = 10
@@ -240,7 +240,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call nar(">Hermione quickly swallows the majority of your shaft. You can feel the tip of your head pressed against the entrance to her throat.")
             m "You'll have to do better than that if you want your reward [hermione_name]."
             call nar(">You place your hands on the back of her head pull her head into you.")
-            call her_main("{size=+7}!!!{/size}","scream","worriedCl") 
+            call her_main("{size=+7}!!!{/size}","scream","worriedCl")
             with vpunch
             hide screen hermione_main
             call nar(">The sensation of entering her throat sends you over the edge.")
@@ -442,7 +442,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
 
     $ hermione_busy = True
     jump main_room
-    
+
 label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the event maybe?
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
@@ -467,37 +467,37 @@ label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the 
             call her_main("Please [genie_name], let me suck your big, thick dick. Pretty please.","soft","worried")
             m "Much better."
     jump hg_pp_cumaddict_sucking # <-- Jumps to blowjob section from the intro, you can replace it with new writing if you'd like.
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 label potion_scene_7: #hyper sensitivity potion
     m "I'd like you to drink a potion today."
@@ -967,7 +967,7 @@ label potion_scene_3_4_1:
     with hpunch
     with kissiris
     call her_main("ahhhhhhhhh....{image=textheart}","scream","wide")
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    hide screen hermione_main
     hide screen genie
     $ ccg_folder = "herm_sex"
     $ ccg1 = "blank"

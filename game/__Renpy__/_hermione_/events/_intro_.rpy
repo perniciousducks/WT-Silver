@@ -684,7 +684,8 @@ label hermione_intro_E5:
     stop music fadeout 1.0
 
     $ hermione_unlocked = True
-    $ achievement.unlock("unlockher")
+    $ achievement.unlock("unlockher", True)
+    call popup("{size=-4}You can now summon Hermione into your office.{/size}", "Character unlocked!", "interface/icons/head/head_hermione_2.png")
 
     $ hermione_busy = True
     $ tutoring_hermione_unlocked = True

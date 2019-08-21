@@ -1,6 +1,8 @@
 ### Tonks###
 
 label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+    
+    $ target_color = None
 
     #Flip
     if flip == False:
@@ -17,8 +19,6 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
         $ extra = "blank"
     if emote == None:
         $ emote = "blank"
-    #if hair == None:
-        #$ tonks_class.get_cloth("hair").color = tonks_haircolor
 
     #Positioning
     if xpos != None:
@@ -48,7 +48,7 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
             if tonks_flip == -1: #Flipped
                 $ tonks_xpos = -50
             else:
-                $ tonks_xpos = 590
+                $ tonks_xpos = 650
             $ tonks_ypos = 200
             $ tonks_zorder = 8
         else:
@@ -68,26 +68,27 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
 
     # Hair color changes
     if hair != None:
-        if hair in ("red", "angry", "furious"):
-            $ tonks_class.get_cloth("hair").color = [[164, 34, 34, 255]]
+        $ target_color = None
+        if hair in ("neutral", "basic", "reset"):
+            $ target_color = tonks_haircolor # player
+        elif hair in ("red", "angry", "furious"):
+            $ target_color = [[164, 34, 34, 255]]
         elif hair in ("orange", "upset", "annoyed"):
-            $ tonks_class.get_cloth("hair").color = [[228, 93, 34, 255]]
+            $ target_color = [[228, 93, 34, 255]]
         elif hair in ("yellow", "happy", "cheerful"):
-            $ tonks_class.get_cloth("hair").color = [[240, 240, 50, 255]]
+            $ target_color = [[240, 240, 50, 255]]
         elif hair in ("green", "disgusted"):
-            $ tonks_class.get_cloth("hair").color = [[111, 205, 75, 255]]
+            $ target_color = [[111, 205, 75, 255]]
         elif hair in ("blue", "sad"):
-            $ tonks_class.get_cloth("hair").color = [[64, 75, 205, 255]]
+            $ target_color = [[64, 75, 205, 255]]
         elif hair in ("purple"):
-            $ tonks_class.get_cloth("hair").color = [[205, 75, 205, 255]]
+            $ target_color = [[205, 75, 205, 255]]
         elif hair in ("white", "scared"):
-            $ tonks_class.get_cloth("hair").color = [[238, 238, 241, 255]]
+            $ target_color = [[238, 238, 241, 255]]
         elif hair in ("pink", "horny"):
-            $ tonks_class.get_cloth("hair").color = [[242, 126, 168, 255]]
+            $ target_color = [[242, 126, 168, 255]]
         else: # RANDOM limited from 50 to 235 for better outcome
-            $ tonks_class.get_cloth("hair").color = [[random.randint(50, 235), random.randint(50, 235), random.randint(50, 235), 255]]
-        # Clear cache and redraw
-        $ tonks_class.get_cloth("hair").cached = False
+            $ target_color = [[random.randint(50, 235), random.randint(50, 235), random.randint(50, 235), 255]]
 
     if animation != False:
         $ tonks_animation = animation
@@ -100,6 +101,12 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
     show screen bld1
 
     call transition(trans, True)
+    
+    # Hair transition, performs only when applying new colour
+    if target_color != None and target_color != tonks_class.get_cloth("hair").color:
+        $ tonks_class.get_cloth("hair").color = target_color
+        show screen tonks_main()
+        call transition("d3", False)
 
     $ tonks_class.say(text)
 
@@ -116,7 +123,7 @@ label update_tonks:
     #$ update_chibi_image("tonks")
     #$ tonks_flip = 1
     #$ tonks_cloth_pile = False
-    return
+    #return
 
 
 label end_tonks_event:
@@ -129,6 +136,10 @@ label end_tonks_event:
 
     $ active_girl = None
     $ tonks_busy = True
+    
+    # Reset temporal hair colour
+    $ tonks_class.get_cloth("hair").color = tonks_haircolor
+    $ tonks_class.get_cloth("hair").cached = False
 
     jump main_room
 

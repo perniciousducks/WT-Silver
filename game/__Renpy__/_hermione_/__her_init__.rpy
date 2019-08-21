@@ -528,23 +528,6 @@ label her_progress_init:
 
 
 
-    ### Hermione Favours ###
-
-    if not hasattr(renpy.store,'hg_pf_blowjob'): #important!
-        $ hg_pf_blowjob = favor_class(
-            tier = 4,
-            title = "Suck it!",
-            max_level = 4,
-            start_label = "hg_pf_blowjob",
-        )
-
-    if game_difficulty >= 3: #Hardcore
-        $ hg_pf_blowjob.tier = 6
-
-    $ hg_pf_list = [
-                    hg_pf_blowjob,
-        ]
-
 
     if not hasattr(renpy.store,'hg_ps_get_panties'):
         $ hg_ps_get_panties = shaming_class()
@@ -624,7 +607,7 @@ label updated_hermione_favors: # For 1.37
             iconset = [["heart_empty", "heart_red"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"]]
             )
 
-    if not hasattr(renpy.store,'hg_pf_admire_panties'):
+
         $ hg_pf_admire_panties   = event_class(title = "Show me your Panties!", start_label = "hg_pf_admire_panties", start_tier = 1, events = [
             [
             ["hg_pf_admire_panties_T1_intro_E1"],
@@ -647,7 +630,7 @@ label updated_hermione_favors: # For 1.37
             iconset = [["heart_empty", "heart_red"],["heart_empty", "heart_red"],["heart_empty", "heart_red"]]
             )
 
-    if not hasattr(renpy.store,'hg_pf_admire_breasts'):
+
         $ hg_pf_admire_breasts   = event_class(title = "Show me your tits!", start_label = "hg_pf_admire_breasts", start_tier = 1, events = [
             [
             ["hg_pf_admire_breasts_T1_intro_E1"],
@@ -677,7 +660,7 @@ label updated_hermione_favors: # For 1.37
             iconset = [["heart_empty", "heart_red"],["heart_empty", "heart_red"],["heart_empty", "heart_red"],["heart_empty", "heart_red"]]
             )
 
-    if not hasattr(renpy.store,'hg_pf_grope'):
+
         $ hg_pf_grope   = event_class(title = "Grope her!", start_label = "hg_pf_grope", start_tier = 1, events = [
             [
             ["hg_pf_grope_T0_fail_intro"],
@@ -705,7 +688,7 @@ label updated_hermione_favors: # For 1.37
             iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_red"],["heart_empty", "heart_red"],["heart_empty", "heart_red"]]
             )
 
-    if not hasattr(renpy.store,'hg_pf_strip'):
+
         $ hg_pf_strip   = event_class(title = "Dance for Me!", start_label = "hg_pf_strip", start_tier = 1, events = [
             [["hg_pf_strip_fail"]], # Tier 1
 
@@ -732,7 +715,6 @@ label updated_hermione_favors: # For 1.37
             )
 
 
-    if not hasattr(renpy.store,'hg_pf_handjob'):
         $ hg_pf_handjob   = event_class(title = "Touch me!", start_label = "hg_pf_handjob", start_tier = 1, events = [
             [["hg_pf_handjob_fail"]], # Tier 1
             [["hg_pf_handjob_fail"]], # Tier 2
@@ -755,7 +737,7 @@ label updated_hermione_favors: # For 1.37
             iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"]]
             )
 
-    if not hasattr(renpy.store,'hg_pf_titjob'):
+
         $ hg_pf_titjob   = event_class(title = "Let me fuck them!", start_label = "hg_pf_titjob", start_tier = 1, events = [
             [["hg_pf_titjob_fail"]], # Tier 1
             [["hg_pf_titjob_fail"]], # Tier 2
@@ -778,7 +760,36 @@ label updated_hermione_favors: # For 1.37
             iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_red"],["heart_empty", "heart_red"]]
             )
 
-    if not hasattr(renpy.store,'hg_pf_sex'):
+
+        $ hg_pf_blowjob   = event_class(title = "Suck it!", start_label = "hg_pf_blowjob", start_tier = 1, events = [
+            [["hg_pf_blowjob_fail"]], # Tier 1
+            [["hg_pf_blowjob_fail"]], # Tier 2
+            [["hg_pf_blowjob_fail"]], # Tier 3
+
+            [
+            ["hg_pf_blowjob_T0_fail_intro"], # Hermione refuses
+            ["hg_pf_blowjob_T0_fail_repeat"] # Repeat fail
+            ],
+
+            [
+            ["hg_pf_blowjob_T1_intro_E1"], # First time blowjob
+            ["hg_pf_blowjob_T1_intro_E2"], # Second time blowjob
+            ["hg_pf_blowjob_T1_repeat"]   # Repeated blowjob
+            ],
+
+            [
+            ["hg_pf_blowjob_T2_intro_E1"], # Couple of choices
+            ["hg_pf_blowjob_T2_intro_E2"], # Facefuck
+            ["hg_pf_blowjob_T2_hidden_repeat"], # Repeat: Random visit
+            ["hg_pf_blowjob_T2_repeat"]    # Repeat: Regular + Facefuck
+            ]
+
+            ],
+            icons = [None, None, None, None, None, None], #if a tier doesn't need an icon replace with None
+            iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_yellow"],["heart_empty", "heart_red"]]
+            )
+
+
         $ hg_pf_sex   = event_class(title = "Let's have sex!", start_label = "hg_pf_sex", start_tier = 1, events = [
             [["hg_pf_sex_fail"]], # Tier 1
             [["hg_pf_sex_fail"]], # Tier 2
@@ -801,6 +812,7 @@ label updated_hermione_favors: # For 1.37
             iconset = [["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_black"],["heart_empty", "heart_yellow"]]
             )
 
+
     $ hg_favor_list = [
         hg_pf_talk,
         hg_pf_admire_breasts,
@@ -809,6 +821,7 @@ label updated_hermione_favors: # For 1.37
         hg_pf_strip,
         hg_pf_handjob,
         hg_pf_titjob,
+        hg_pf_blowjob,
         hg_pf_sex,
         ]
 

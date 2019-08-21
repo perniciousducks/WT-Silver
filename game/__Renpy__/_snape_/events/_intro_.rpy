@@ -346,19 +346,19 @@ label snape_intro_E3:
 
     call bld
     if d_flag_01:
-        call sna_main("Who are you, scum!","snape_34", ypos="head")
+        call sna_main("Who are you, scum!","snape_34", ypos="head", wand=True)
         g4 "What? It's me... uhm... Abius! I mean, Albus!"
-        call sna_main("You cannot fool me.","snape_32")
-        call sna_main("Just now, you used some sort of alien magic!","snape_32")
-        call sna_main("Reveal your true self to me now, fiend! Who are you?!","snape_34")
+        call sna_main("You cannot fool me.","snape_32", wand=True)
+        call sna_main("Just now, you used some sort of alien magic!","snape_32", wand=True)
+        call sna_main("Reveal your true self to me now, fiend! Who are you?!","snape_34", wand=True)
     else:
-        call sna_main("My name is Severus Snape!", ypos="head")
-        call sna_main("Now, who might you be...?","snape_01")
+        call sna_main("My name is Severus Snape!", ypos="head", wand=True)
+        call sna_main("Now, who might you be...?","snape_01", wand=True)
 
     g4 "!!!"
-    call sna_main("Easy now... Just answer my question.","snape_01")
+    call sna_main("Easy now... Just answer my question.","snape_01", wand=True)
     m "Alright, alright. Just calm down, would you?"
-    call sna_main("........","snape_01")
+    call sna_main("........","snape_01", wand=True)
 
     $ d_points = 0
     $ d_flag_01 = False
@@ -371,23 +371,23 @@ label snape_intro_E3:
         "\"I am not your enemy.\"" if not d_flag_01:
             $ d_flag_01 = True
             $ d_points +=1
-            call sna_main("That the first thing an enemy would say.","snape_01")
+            call sna_main("That the first thing an enemy would say.","snape_01", wand=True)
         "\"I'm just a tourist. I'll be leaving now.\"" if not d_flag_02:
             $ d_flag_02 = True
             $ d_points +=1
-            call sna_main("You are not going anywhere.","snape_01")
+            call sna_main("You are not going anywhere.","snape_01", wand=True)
         "\"I work for Albis Doombldore!\"" if not d_flag_03:
             $ d_flag_03 = True
             $ d_points +=1
-            call sna_main("It's Albus Dumbledore, you moron!","snape_01")
+            call sna_main("It's Albus Dumbledore, you moron!","snape_01", wand=True)
 
     if d_points == 2:
         pass
     else:
         jump no_wait
 
-    call sna_main("Who sent you here? What did you do with the real Albus?","snape_01")
-    call sna_main("Shed your disguise and reveal your true self at once, this is your last warning!","snape_01")
+    call sna_main("Who sent you here? What did you do with the real Albus?","snape_01", wand=True)
+    call sna_main("Shed your disguise and reveal your true self at once, this is your last warning!","snape_01", wand=True)
 
     $ d_points = 0
     $ d_flag_01 = False
@@ -400,28 +400,28 @@ label snape_intro_E3:
         "\"I can't. It's hard to explain...\"" if not d_flag_01:
             $ d_flag_01 = True
             $ d_points +=1
-            call sna_main("I have no interest in your explanations. I wouldn't believe a single word you'd say anyway!","snape_01")
+            call sna_main("I have no interest in your explanations. I wouldn't believe a single word you'd say anyway!","snape_01", wand=True)
         "\"Stop threatening me, human!\"" if not d_flag_02:
             $ d_flag_02 = True
             $ d_points +=1
-            call sna_main("\"Human\"?","snape_01",ypos="head")
-            call sna_main("Are you implying that you are {size=+5}not{/size} one?","snape_01")
-            call sna_main("What are you then?! Dispell your cloaking charm immediately or else!","snape_01")
+            call sna_main("\"Human\"?","snape_01",ypos="head", wand=True)
+            call sna_main("Are you implying that you are {size=+5}not{/size} one?","snape_01", wand=True)
+            call sna_main("What are you then?! Dispell your cloaking charm immediately or else!","snape_01", wand=True)
         "\"I mean you no harm, I swear!\"" if not d_flag_03:
             $ d_flag_03 = True
             $ d_points +=1
             call sna_main("Is that so?","snape_01")
-            call sna_main("Prove it then. Dispel your cloaking charm now!","snape_01")
+            call sna_main("Prove it then. Dispel your cloaking charm now!","snape_01", wand=True)
 
     if d_points == 2:
         pass
     else:
         jump no_wait_2
 
-    call sna_main("I've heard enough!","snape_01")
+    call sna_main("I've heard enough!","snape_01", wand=True)
     g4 "By the great desert sands! Would you let me explain, human?!"
-    call sna_main("There is nothing left to explain!","snape_01")
-    call sna_main("Since you refuse to cooperate, I'll be taking you into custody by force!","snape_01")
+    call sna_main("There is nothing left to explain!","snape_01", wand=True)
+    call sna_main("Since you refuse to cooperate, I'll be taking you into custody by force!","snape_01", wand=True)
     g4 "What?! Wait!"
 
     $ snape_intro.E3_complete = True
@@ -726,7 +726,9 @@ label snape_intro_E5:
     pause.2
 
     $ snape_unlocked = True
-    $ achievement.unlock("unlocksna")
+    # Silently add an achievement, then display a popup message.
+    $ achievement.unlock("unlocksna", True)
+    call popup("{size=-4}You can now summon Snape into your office.{/size}", "Character unlocked!", "interface/icons/head/head_snape_1.png")
     $ snape_intro.E5_complete = True
 
     jump day_start

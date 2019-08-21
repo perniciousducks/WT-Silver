@@ -27,7 +27,7 @@ label store_items_init:
 
     if not hasattr(renpy.store,'firewhisky_ITEM'):
         $ wine_ITEM              = item_class(id="wine", name="Wine", cost=60, type="drink", image="item_wine", description="Add description. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
-        $ firewhisky_ITEM       = item_class(id="firewhisky", name="firewhisky", cost=80, unlockable=True ,type="drink", image="item_wine", description="Add description. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
+        $ firewhisky_ITEM       = item_class(id="firewhisky", name="firewhisky", cost=80, unlockable=True ,type="drink", image="item_whisky", description="Add description. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
 
     if game_difficulty <= 1:
         $ wine_ITEM.cost = 40
@@ -178,7 +178,7 @@ label store_items_init:
 
     #Quest Items
     if not hasattr(renpy.store,'puzzle_box_ITEM'):
-        $ puzzle_box_ITEM = item_class(id="puzzle_box",   name="Puzzle Box",  type="quest item", image="icon_puzzle", description=">Quest Item!")
+        $ puzzle_box_ITEM = item_class(id="puzzle_box",   name="Puzzle Box",  type="quest item", image="icon_puzzle", description="A wooden box with a slide puzzle located on top of it. It was found hidden behind one of the loose bricks in the fireplace. Who knows what's inside.", event="start_slide_puzzle")
     if not hasattr(renpy.store,'collar_quest_ITEM'):
         $ collar_quest_ITEM = item_class(id="collar_quest",   name="Collar",  type="quest item", image="icon_collar", description=">Quest Item!")
 

@@ -247,7 +247,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("...","angry","down_raised")
 
     call her_walk_desk_blkfade
-                                                                                                                                                                                  #HERMIONE
+
     hide screen genie
     $ gen_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
     $ gen_chibi_ypos = 10

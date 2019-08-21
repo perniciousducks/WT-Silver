@@ -55,8 +55,9 @@ label her_walk_desk_blkfade:
 
 
 
-label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, trans="fade"):
-    call hide_characters
+label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, trans=None):
+    if trans != None:
+        call hide_characters
     show screen blkfade
 
     $ menu_y = 0.75 # Menu moved down.
@@ -126,7 +127,7 @@ label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, t
         show screen hermione_chibi_bj(ani=action)
         if action in ["bj_cumming_out","bj_cumming_out_blink"]:
             $ uni_sperm = True
-            $ u_sperm = "characters/hermione/face/auto_08.png"
+            $ u_sperm = "characters/hermione/face/auto_07.png"
 
     ### Sex ###
     elif action in ["sex","sex_slow","sex_fast","sex_pause","sex_cumming_out","sex_cumming_out_blink","sex_creampie","sex_creampie_pause"]:
@@ -144,9 +145,8 @@ label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, t
 
     hide screen bld1
     hide screen blkfade
-    if trans != "fade":
+
+    if trans != None:
         call transition(trans)
-    else:
-        with fade # Default
 
     return

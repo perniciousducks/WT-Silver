@@ -19,9 +19,12 @@ label fireplace:
             "Search fireplace":
                 m "(Hmm, there's something glimmering in the fireplace.)"
                 "Click Click Click Click Click!!!"
-                m "(A loose brick... If only I could.. *Hhng*...{w=0.4} There we go.)"
+                m "(A loose brick... If only I could..{nw}{w=1.0}"
+                $ renpy.play('sounds/brick_scrape.mp3')
+                m "(A loose brick... If only I could..{fast} *Hhng*... There we go.)"
                 call give_reward("A puzzle box has been added to your quest items in the Inventory!", "interface/icons/icon_puzzle.png")
                 $ puzzle_box_ITEM.unlocked = True
+                call update_quest_items
                 m "Seems straight forward enough."
                 m "Maybe I should give it a try?"
                 menu:

@@ -314,7 +314,7 @@ init python:
             dyes = []
             for dye in self.color:
                 dyes.append([dye[0],dye[1],dye[2],dye[3]])
-            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=dyes, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix, whoring=self.whoring)
+            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=dyes, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix, whoring=self.whoring, bodyfix=self.bodyfix, incompatible=self.incompatible)
                 
         def set_pose(self, pose):
             if pose == None:

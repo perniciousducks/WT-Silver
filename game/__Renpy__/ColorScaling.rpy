@@ -42,7 +42,7 @@ screen color_map(color, palette_color, cursor, cursor_h, cursor_v, alpha=True, t
                 xpos 25
                 idle im.Scale(UI_alpha_bar, 255, 30, False)
                 clicked Return("alpha_bar")
-            add "interface/color_palete/"+str(interface_color)+"/cursor_v.png" xpos int(cursor_h) ypos 290 xanchor 0.5
+            add "interface/color_palete/"+str(interface_color)+"/cursor_v.png" xpos int(320-cursor_h) ypos 290 xanchor 0.5
             textbutton "Alpha: " + str(int(color[3])) xpos 360 ypos 130 clicked Return(["input", "alpha"])
             
         textbutton "Red: " + str(int(color[0])) xpos 360 ypos 25 clicked Return(["input", "red"])

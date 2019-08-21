@@ -15,8 +15,7 @@ label tonks_wardrobe_init:
             
             tonks_cloth_top_auror = cloth_class(char="tonks", category="tops", subcat="auror", type="top", id="auror", layers=2, color=[[28, 27, 31, 255], [124, 42, 50, 255]])
             tonks_cloth_top_auror2 = cloth_class(char="tonks", category="tops", subcat="auror", type="top", id="auror2", layers=1, color=[[124, 42, 50, 255]])
-            #tonks_cloth_top_corset = cloth_class(char="tonks", category="tops", subcat="school", type="top", id="corset", layers=1, color=[[247, 206, 146, 255]])
-            # Corset will be added later
+            tonks_cloth_top_corset = cloth_class(char="tonks", category="tops", subcat="school", type="top", id="corset", layers=1, color=[[247, 206, 146, 255]], bodyfix={"breasts": ["base_tight", 6, 0, 0, False]}, incompatible=["bra"])
             
             tonks_cloth_jeans = cloth_class(char="tonks", category="bottoms", subcat="trousers", type="bottom", id="jeans", layers=1, color=[[51, 104, 105, 255]])
             

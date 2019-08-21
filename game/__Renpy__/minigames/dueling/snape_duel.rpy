@@ -163,8 +163,10 @@ label main_tease:
         call sna_main("Stop mocking me!","snape_08", wand=True)
         call sna_main("Prepare to die!","snape_15", wand=True)
         g4 "shit!"
+        hide screen bld1
+        with d3
         pause 1
-        $ in_action = False
+        #$ in_action = False
         jump snapes_turn
     else:
         m "No way I'm doing THAT again..."

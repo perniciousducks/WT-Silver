@@ -204,6 +204,9 @@ init python:
         cloned = False
         cached = False
         
+        bodyfix = None
+        incompatible = None
+        
         armfix = False
         armfix_L = []
         armfix_Lx = ""
@@ -270,6 +273,16 @@ init python:
                 
             if renpy.loadable(self.imagepath+"overlay.png"):
                 self.overlayer = self.imagepath+"overlay.png"
+                
+            # Check if bodyfix exists
+            if self.bodyfix != None:
+                imagepath = "characters/"+self.char+"/body/"
+                
+                for key, value in self.bodyfix.iteritems():
+                    if key in ("armleft", "armright", "handleft", "handright"):
+                        self.bodyfix[key][0] = imagepath+"arms/"+value[0]+".png"
+                    else:
+                        self.bodyfix[key][0] = imagepath+key+"/"+value[0]+".png"
                 
             # Check if armfix layers exist
             self.set_armfix()
@@ -381,7 +394,10 @@ init python:
             return self.color[layer][3]/255.0
 
         def set_color(self, layer):
-            self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
+            if config.developer:
+                self.color[layer] = color_picker(self.color[layer], True, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
+            else:
+                self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
             self.sprite_ico.cached = False
             self.cached = False
             
@@ -632,16 +648,37 @@ init python:
                         score += 15
             return score
             
+        def clothes_compatible(self, unequip=True):
+            result = True
+            for key in self.clothing:
+                if self.clothing[key][0] != None and self.clothing[key][0].incompatible != None:
+                    for item in self.clothing[key][0].incompatible:
+                        if self.clothing[item][0] != None:
+                            if unequip:
+                                self.unequip(item)
+                            result = False
+            return result
+            
         def equip(self, object):
             if isinstance(object, outfit_class):
                 self.unequip("all")
                 for item in object.group:
+                    # Check if item is compatible with other clothing pieces
+                    if item.incompatible != None:
+                        for key in item.incompatible:
+                            # Unequip incompatible item types
+                            self.unequip(key)
                     self.clothing[item.type][0] = item
                     self.clothing[item.type][4] = False
             else:
                 if self.clothing[object.type][0] == object and object.type != "hair":
-                    self.clothing[object.type][0] = None
+                    self.unequip(object.type)
                 else:
+                    # Check if item is compatible with other clothing pieces
+                    if object.incompatible != None:
+                        for key in object.incompatible:
+                            # Unequip incompatible item types
+                            self.unequip(key)
                     self.clothing[object.type][0] = object
                     self.clothing[object.type][4] = False
             self.cached = False
@@ -765,6 +802,12 @@ init python:
                 # Add clothing to sprite list 
                 for key, value in self.clothing.iteritems():
                     if self.clothing[key][0] and not self.clothing[key][4]:
+                        # Perform an additional check for body parts modifications
+                        if self.clothing[key][0].bodyfix != None:
+                            # Iterate through all body fixes
+                            for k, v in self.clothing[key][0].bodyfix.iteritems():
+                                # Temporarily replace a body part using list comprehension 
+                                sprite_list = [v if isinstance(x[0], basestring) and k in x[0] else x for x in sprite_list]
                         sprite_list.append(value)
                         sprite_list.append([self.clothing[key][0].get_skin(), 5, 0, 0, False])
                         

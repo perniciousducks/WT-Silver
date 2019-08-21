@@ -29,6 +29,7 @@ label open_gallery():
         python:
             sorting_list = []
             gallery_page = 0
+            select_sorting = 0
             url = "http://172.104.129.60:8080/outfit/"
             header_info = ""
             

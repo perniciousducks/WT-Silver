@@ -36,8 +36,8 @@ init python:
             req.add_header(header[0], header[1]) 
         req.get_method = lambda: 'GET'
         resualt = opener.open(req)
-        # need to be read in the python class since resualt is a stringIO
-        #which renpy cant pickle, so if it is returned it will be i global scope and renpy will try to pickle it
+        # need to be read in the python function since resualt is a stringIO
+        # which renpy cant pickle, so if it is returned it will be i global scope and renpy will try to pickle it
         return (resualt.getcode(), resualt.read())
     
     def put_request(url):

@@ -1,4 +1,7 @@
 label phoenix:
+    menu:
+        "Gallery test":
+            jump open_gallery
     if not bird_examined:
         $ bird_examined = True
         hide screen genie

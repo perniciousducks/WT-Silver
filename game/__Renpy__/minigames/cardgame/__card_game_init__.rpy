@@ -180,7 +180,7 @@ label __init_variables:
                                     rightvalue = 1,
                                     leftvalue = 4,
                                     title="Hermione Granger",
-                                    description = "The Granger girl clutching a real page turner")
+                                    description = "The Granger girl clutching a real page turner.")
                                     
         card_sus_schoolgirl = card_new( imagepath="images/cardgame/t1/susan/sus_schoolgirl_v%s.png" % str(geniecard_level),
                                     topvalue = 3,
@@ -509,10 +509,10 @@ label __init_variables:
         cards_hogwarts = [card_her_schoolgirl, card_her_librarian, card_lun_schoolgirl, card_sus_schoolgirl, card_cho_schoolgirl, card_fred, card_george, card_snape, card_dumbledore]
         cards_other = [card_santa]
         cards_items = [card_item_badge, card_item_barbell, card_item_beads, card_item_bird, card_item_bookchairs, card_item_bookgala, card_item_bookgala2, card_item_bookwaifu, card_item_broom, card_item_bdsm, card_item_condoms, card_item_desk, card_item_dildo, card_item_doll, card_item_elf, card_item_eromag, card_item_girlmag, card_item_hat, card_item_lingerie, card_item_lipstick, card_item_lube, card_item_owl, card_item_plugs, card_item_pornmag, card_item_potions, card_item_scroll, card_item_stockings, card_item_strapon, card_item_sweets, card_item_wine]
-        cards_all = cards_realm
-        cards_all += cards_hogwarts
-        cards_all += cards_other
-        cards_all += cards_items
+        cards_all = list(cards_realm)
+        cards_all += list(cards_hogwarts)
+        cards_all += list(cards_other)
+        cards_all += list(cards_items)
         
         cards_dynamic = [card_iris, card_jasmine, card_azalea, card_her_schoolgirl, card_her_librarian, card_lun_schoolgirl, card_sus_schoolgirl, card_cho_schoolgirl]
         

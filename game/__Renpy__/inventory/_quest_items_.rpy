@@ -39,7 +39,14 @@ label update_quest_items:
     else:
         if puzzle_box_ITEM in gen_quest_items_list:
             $ gen_quest_items_list.remove(puzzle_box_ITEM)
-
+            
+    # Lootbox
+    if lootbox_quest_ITEM.number > 0:
+        if lootbox_quest_ITEM not in gen_quest_items_list:
+            $ gen_quest_items_list.append(lootbox_quest_ITEM)
+    else:
+        if lootbox_quest_ITEM in gen_quest_items_list:
+            $ gen_quest_items_list.remove(lootbox_quest_ITEM)
 
     ### Hermione ###
     if tentacle_owned:
@@ -57,7 +64,5 @@ label update_quest_items:
     else:
         if collar_quest_ITEM in her_quest_items_list:
             $ her_quest_items_list.remove(collar_quest_ITEM)
-
-
 
     return

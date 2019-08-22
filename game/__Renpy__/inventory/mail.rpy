@@ -157,7 +157,7 @@ label deck_mail_send:
             unlocked_cards = [card_genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2, card_rand_item3, card_rand_item4, card_rand_item5]
             playerdeck = [card_genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2]
             # Delete copies of playerdeck cards
-            for i in range(0,5):
+            for i in xrange(0,5):
                 playerdeck[i].copies -= 1
 
     show screen blktone

@@ -2,6 +2,8 @@ label phoenix:
     menu:
         "Gallery test":
             jump open_gallery
+        "Lootbox":
+            jump card_lootbox
     if not bird_examined:
         $ bird_examined = True
         hide screen genie

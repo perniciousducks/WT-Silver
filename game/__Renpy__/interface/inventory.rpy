@@ -25,7 +25,6 @@ transform rotate_circular():
 label inventory_menu(xx=150, yy=90):
 
     $ hide_transitions = True
-    $ renpy.suspend_rollback(True)
     # Styling
     if daytime:
         $ btn_hover = "#edc48240"
@@ -98,7 +97,6 @@ label inventory_menu(xx=150, yy=90):
         $ current_item = None
     else:
         $ hide_transitions = False
-        $ renpy.suspend_rollback(False)
         jump day_main_menu
 
     jump inventory_menu_after_init

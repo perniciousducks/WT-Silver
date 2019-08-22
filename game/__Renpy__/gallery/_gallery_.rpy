@@ -125,7 +125,6 @@ label open_gallery():
                 
     else:
         $ hide_transitions = False
-        $ renpy.suspend_rollback(False)
         jump day_main_menu
         
     python:

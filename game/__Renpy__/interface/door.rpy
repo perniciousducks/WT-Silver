@@ -11,7 +11,6 @@ default door_show_busy = True
 label door_menu(xx=723, yy=90):
 
     $ hide_transitions = True
-    $ renpy.suspend_rollback(True)
     # Styling
     if daytime:
         $ btn_hover = "#edc48240"
@@ -63,7 +62,6 @@ label door_menu(xx=723, yy=90):
                 call nar(">"+_return[1]+" is currently asleep. Try again tomorrow.")
     else:
         $ hide_transitions = False
-        $ renpy.suspend_rollback(False)
         jump day_main_menu
 
     jump door_menu_after_init

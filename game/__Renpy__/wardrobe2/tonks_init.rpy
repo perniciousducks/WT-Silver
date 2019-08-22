@@ -25,6 +25,8 @@ label tonks_wardrobe_init:
             
             tonks_cloth_bra_base = cloth_class(char="tonks", category="bras", subcat="bras", type="bra", id="bikini", layers=2, color=[[124, 42, 50, 255], [177, 168, 172, 255]])
             
+            tonks_cloth_auror_coat = cloth_class(char="tonks", category="tops", subcat="robes", type="robe", id="auror_coat", layers=2, color=[[40, 40, 41, 255], [174, 165, 169, 255]], armfix=True)
+            
             # Temporal save
             tonks_outfit_last = outfit_class(name="Last worn items", group=[tonks_hair_base])
         
@@ -35,7 +37,7 @@ label tonks_wardrobe_init:
             ################
         
             tonks_class.body = {
-                        "handleft":    ["characters/tonks/body/arms/armfixL.png", 40, 0, 0, False],
+                        "handleft":    ["characters/tonks/body/arms/armfixL.png", 20, 0, 0, False],
                         "handright":   ["characters/tonks/body/arms/armfixR.png", 40, 0, 0, False],
                         "armleft":     ["l_arm_hips", 18, 0, 0, False],
                         "armright":    ["r_arm_hips", 2, 0, 0, False],
@@ -64,14 +66,14 @@ label tonks_wardrobe_init:
                         "hair":       [tonks_hair_base, 12, 0, 0, False],
                         "earring":    [None, 22, 0, 0, False],
                         "neckwear":   [None, 17, 0, 0, False],
-                        "robe":       [None, 21, 0, 0, False],
-                        "gloves":     [None, 20, 0, 0, False],
-                        "top":        [tonks_cloth_top_auror, 19, 0, 0, False],
-                        "bra":        [None, 18, 0, 0, False],
-                        "bottom":     [tonks_cloth_jeans, 16, 0, 0, False],
-                        "garterbelt": [None, 15, 0, 0, False],
-                        "panties":    [None, 14, 0, 0, False],
-                        "stockings":  [None, 13, 0, 0, False],
+                        "robe":       [tonks_cloth_auror_coat, 21, 0, 0, False],
+                        "gloves":     [None, 18, 0, 0, False],
+                        "top":        [tonks_cloth_top_auror, 17, 0, 0, False],
+                        "bra":        [None, 16, 0, 0, False],
+                        "bottom":     [tonks_cloth_jeans, 15, 0, 0, False],
+                        "garterbelt": [None, 14, 0, 0, False],
+                        "panties":    [None, 13, 0, 0, False],
+                        "stockings":  [None, 12, 0, 0, False],
                         "buttplug":   [None, 0, 0, 0, False],
                         "pubes":      [None, 11, 0, 0, False],
                         "tattoo0":    [None, 10, 0, 0, False],

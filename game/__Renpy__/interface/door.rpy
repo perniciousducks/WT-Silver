@@ -1,7 +1,3 @@
-init python:
-    def stats_sortfilter(item, sortby=False):
-        return item
-
 ####################################
 ############# Menu #################
 ####################################

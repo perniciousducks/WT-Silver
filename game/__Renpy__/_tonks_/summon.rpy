@@ -3,6 +3,7 @@
 label summon_tonks:
     call play_sound("door")
     #call ton_chibi("stand","mid","base") #ADD Tonks chibi here.
+    call ton_chibi("stand","mid","base")
     #with d3
 
     $ active_girl = "tonks"

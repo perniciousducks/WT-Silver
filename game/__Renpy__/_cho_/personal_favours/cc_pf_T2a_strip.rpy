@@ -652,7 +652,7 @@ label cc_pf_strip_T1_intro_E2:
     call play_sound("equip")
     hide screen cho_chang
     $ cho_class.wear("all")
-    $ update_chibi_image("Cho")
+    $ update_chibi_image("cho")
     $ cho_cloth_pile = False
     pause.8
 

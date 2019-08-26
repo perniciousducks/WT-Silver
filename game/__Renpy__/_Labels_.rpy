@@ -130,7 +130,7 @@ label room(room=None, hide_screens=True):
         if phoenix_is_fed:
             show screen phoenix_food
         hide screen owl
-        if letter_queue_list != []:
+        if letter_queue_list != [] and not owl_away:
             show screen owl
         hide screen package
         if package_is_here:

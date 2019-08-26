@@ -470,7 +470,7 @@ label hang_with_snape_E3:
     call sna_main("It is also the only magical institution...","snape_09")
     m "...................................."
 
-    "You spend the remaining day with Snape, drenching your worries in pleny of wine..."
+    "You spend the remaining day with Snape, drenching your worries in plenty of wine..."
 
     #m "So, what are your thoughts on this whole ministry situation?"
     #sna "I can't say I have a very high opinion on how those fools run the place."

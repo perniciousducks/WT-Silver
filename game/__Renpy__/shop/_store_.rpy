@@ -637,10 +637,12 @@ label token_shop_menu:
             item_list.extend(wall_deco_list)
             item_list.extend(misc_deco_list)
             item_list.extend(misc_hat_list)
+        if toggle3_bool:
+            item_list.extend([lootbox_quest_ITEM])
 
         item_list = list(filter(lambda x: x.unlocked==False, item_list))
 
-    show screen list_menu(item_list, "Token Shop", toggle1="Outfits", toggle2="Decorations")
+    show screen list_menu(item_list, "Token Shop", toggle1="Outfits", toggle2="Decorations", toggle3="Other")
 
     $ _return = ui.interact()
 
@@ -682,11 +684,13 @@ label purchase_deco(item):
     if item.type == "outfit_token":
         $ item_token_str = "A new \"%s\" outfit has been added to Hermiones' wardrobe." % item.name
         $ item_token_type = " outfit"
+    elif item.type == "quest item":
+        $ item_token_str = "\"%s\" has been added to your quest items." % item.name
     else:
         $ item_token_str = "%s has been added to your decoration menu." % item.type
         $ item_token_type = ""
     menu:
-        "-Buy [item.name][item_token_type] for [item.cost] tokens -":
+        "-Buy [item.name][item_token_type] for [item.cost] tokens -" if not item.type == "quest item":
             if geniecard_tokens >= item.cost:
                 $ geniecard_tokens -= item.cost
                 $ item.unlocked = True
@@ -698,6 +702,14 @@ label purchase_deco(item):
                     $ achievement.unlock("hats")
             else:
                 m "I don't have enough tokens."
+        "-Buy [item.name] for [item.cost] gold coins -" if item.type == "quest item":
+            if gold >= item.cost:
+                $ gold -= item.cost
+                $ item.number += 1
+                call update_quest_items
+                "[item_token_str]"
+            else:
+                m "I don't have enough gold."
         "-Never mind-":
             pass
 

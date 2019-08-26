@@ -7,6 +7,7 @@ init -2:
     python:
 
         import math
+        import errno
         import threading
 
         def notNull(object):

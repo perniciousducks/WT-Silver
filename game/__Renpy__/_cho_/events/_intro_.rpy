@@ -878,7 +878,8 @@ label cho_hermione_talk:
     $ cho_intro_state = "complete"
 
     $ cho_unlocked = True
-    $ achievement.unlock("unlockcho")
+    $ achievement.unlock("unlockcho", True)
+    call popup("{size=-4}You can now summon Cho into your office.{/size}", "Character unlocked!", "interface/icons/head/head_cho_1.png")
 
     # End of Intro.
     $ hermione_busy = True

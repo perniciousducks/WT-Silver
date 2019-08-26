@@ -120,9 +120,9 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
 label update_tonks:
     return
     # Chibi Update
-    #$ update_chibi_image("tonks")
-    #$ tonks_flip = 1
-    #$ tonks_cloth_pile = False
+    $ update_chibi_image("tonks")
+    $ tonks_flip = 1
+    $ ton_cloth_pile = False
     #return
 
 

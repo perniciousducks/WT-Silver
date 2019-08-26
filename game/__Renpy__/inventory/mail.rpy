@@ -64,7 +64,7 @@ label shoosh_owl_away:
     with d5
     pause.2
 
-    g4 "Fuck off, stupid bird!"
+    $ renpy.say(g4, renpy.random.choice(["fuck off", "bug off", "get out", "get the hell out of here", "go away", "away with you", "don't you even dare shit on my floor"])+", you"+renpy.random.choice([" stupid", " silly", " annoying", "", " idiotic", " bloody"])+renpy.random.choice([" flying rat!", " bird!", " poor excuse for a pidgeon!", " pidgeon!", " idiot!"]))
     pause.1
 
     call gen_chibi("animation", pic="genie_rum_ani", "360", "80", flip=False)
@@ -157,7 +157,7 @@ label deck_mail_send:
             unlocked_cards = [card_genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2, card_rand_item3, card_rand_item4, card_rand_item5]
             playerdeck = [card_genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2]
             # Delete copies of playerdeck cards
-            for i in range(0,5):
+            for i in xrange(0,5):
                 playerdeck[i].copies -= 1
 
     show screen blktone

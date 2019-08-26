@@ -11,7 +11,6 @@ default stats_show_locked = False
 label stats_menu(xx=150, yy=90):
 
     $ hide_transitions = True
-    $ renpy.suspend_rollback(True)
     # Styling
     if daytime:
         $ btn_hover = "#edc48240"
@@ -69,7 +68,6 @@ label stats_menu(xx=150, yy=90):
             $ current_subcategory = _return[1]
     else:
         $ hide_transitions = False
-        $ renpy.suspend_rollback(False)
         jump day_main_menu
 
     jump stats_menu_after_init

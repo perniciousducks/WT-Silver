@@ -44,7 +44,7 @@ label ball_ending_E1:
     m "Protection spells, huh?"
     call sna_main("Yes...","snape_23")
     sna "Very powerful, old and nasty magic..."
-    call sna_main("Even the land itself is heavily enchanted for kilometers in every direction...","snape_24")
+    call sna_main("Even the land itself is heavily enchanted for miles in every direction...","snape_24")
     m "Hm..."
     call sna_main("Basically, any number of spells could be interfering with your powers around here...","snape_25")
     m "Wait, then how come that you have no problems with casting your spells?"

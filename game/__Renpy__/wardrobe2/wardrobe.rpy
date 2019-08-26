@@ -255,6 +255,8 @@ label t_wardrobe(return_label, char_label):
         $ renpy.play('sounds/door2.mp3')
         $ hide_transitions = False
         $ char_active.wear("all")
+        # add check for compatibility issues.
+        $ char_active.clothes_compatible()
         if wardrobe_music_active:
             call music_block
         python:
@@ -374,15 +376,16 @@ screen t_wardrobe_menuitem(xx, yy):
                 add "interface/page.png" yanchor 0.5 ypos 53
                 text str(current_page+1)+"/"+str(int(math.ceil(menu_items_length/items_shown)+1)) ypos 44 size 16
         
+        # Colours
         if current_item:
             hbox:
-                xpos 300
-                ypos 40
-                spacing 4
+                xpos 283
+                ypos 31
+                spacing 2
                 
                 for i in xrange(current_item.layers):
-                    button xsize 24 ysize 24 background current_item.get_color_hex(i) action Return(["item_color", i]) hovered SetVariable("tooltip", "Change colour ("+str(i+1)+")") unhovered SetVariable("tooltip", None)
-                textbutton "R" xsize 24 ysize 24 background "#d3d3d3" action Return("item_reset") hovered SetVariable("tooltip", "Reset all colours") unhovered SetVariable("tooltip", None)
+                    button xsize 32 ysize 44 background current_item.get_color_hex(i) action Return(["item_color", i]) hovered SetVariable("tooltip", "Change colour ("+str(i+1)+")") unhovered SetVariable("tooltip", None)
+            textbutton "R" xsize 32 ysize 44 xpos 422 ypos 31 background "#d3d3d3" action Return("item_reset") hovered SetVariable("tooltip", "Reset all colours") unhovered SetVariable("tooltip", None)
             
         # Add subcategory list
         if len(category_items) > 0:
@@ -412,6 +415,8 @@ screen t_wardrobe_menuitem(xx, yy):
                     button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]]) #hovered SetVariable("tooltip", "Put on") unhovered SetVariable("tooltip", None)
                 if config.developer:
                     text "{color=#b20000}"+str(menu_items[i].whoring)+"{/color}" size 20 xpos 15+90*col ypos 180+90*row outlines [ (1, "#000", 0, 0) ]
+                    if menu_items[i].incompatible != None:
+                        textbutton "{color=#b20000}!{/color}" background None text_size 20 xpos 64+90*col ypos 180+90*row text_outlines [ (1, "#000", 0, 0) ] hovered SetVariable("tooltip", "Incompatible with:\n"+"\n".join(str(k) for k in menu_items[i].incompatible)+"\n{size=-4}{color=#009999}Above items will be unequipped.{/color}{/size}") unhovered SetVariable("tooltip", None) action NullAction()
                     
         # Add empty items
         for i in xrange(menu_items_length, items_shown):

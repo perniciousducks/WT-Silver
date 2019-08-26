@@ -2,6 +2,10 @@
 
 label store_items_init:
 
+    # Cardgame
+    if not hasattr(renpy.store,'lootbox_quest_ITEM'):
+        $ lootbox_quest_ITEM = item_class(id="lootbox", name="Pack of cards", type="quest item", image="cards", description="A pack of cards.", cost=100, event="card_lootbox")
+
     if not hasattr(renpy.store,'lollipop_ITEM'):
         $ lollipop_ITEM          = item_class(id="lollipop", name="Lollipop Candy",              cost=20, type="candy", image="item_lollipop", description="A lollipop candy. An adult candy for kids or kids candy for adults?")
         $ chocolate_ITEM         = item_class(id="chocolate", name="Chocolate",                  cost=40, type="candy", image="item_chocolate", description="The recipe for this delicious milk chocolate is kept a secret. (Rumoured to contain dried faeries).")
@@ -104,7 +108,7 @@ label store_items_init:
         $ scroll_37_ITEM = scroll_class(id="scroll_37", name="Map 2",   cost=10,  type="scroll", image="item_scroll_silver", scroll_image="37", comments=["First try at the new map.","We removed all the text and labels and replaced them with icons."])
 
     $ forbidden_scroll_list = [
-        sealed_scroll_ITEM,
+        sealed_scroll_ITEM
     ]
 
     $ scroll_list_A = [
@@ -178,10 +182,9 @@ label store_items_init:
 
     #Quest Items
     if not hasattr(renpy.store,'puzzle_box_ITEM'):
-        $ puzzle_box_ITEM = item_class(id="puzzle_box",   name="Puzzle Box",  type="quest item", image="icon_puzzle", description=">Quest Item!")
+        $ puzzle_box_ITEM = item_class(id="puzzle_box",   name="Puzzle Box",  type="quest item", image="icon_puzzle", description="A wooden box with a slide puzzle located on top of it. It was found hidden behind one of the loose bricks in the fireplace. Who knows what's inside.", event="start_slide_puzzle")
     if not hasattr(renpy.store,'collar_quest_ITEM'):
         $ collar_quest_ITEM = item_class(id="collar_quest",   name="Collar",  type="quest item", image="icon_collar", description=">Quest Item!")
-
 
     #Hermione Outfits.
     if not hasattr(renpy.store,'hg_outfit_maid_ITEM'):

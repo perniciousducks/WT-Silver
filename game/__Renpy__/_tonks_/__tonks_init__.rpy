@@ -8,6 +8,31 @@ label tonks_init:
         $ tonks_animation = None
 
         $ tonks_haircolor = [[243, 158, 189, 255]]
+        
+        #Chibi
+        $ ton_chibi_xpos          = 500
+        $ ton_chibi_ypos          = 250
+        $ ton_chibi_flip          = 1
+        $ ton_chibi_zorder        = 3
+        $ ton_chibi_animation     = None
+        $ ton_chibi_status        = ""
+
+        $ ton_chibi_stand         = "ch_ton blink"
+        $ ton_chibi_shoes         = "characters/tonks/chibis/nt_walk_01_shoes.png"
+
+        $ ton_chibi_walk          = "ch_ton walk"
+        $ ton_chibi_walk_shoes    = "ch_ton walk_shoes"
+
+        $ ton_chibi_top           = "characters/tonks/chibis/nt_top.png"
+        $ ton_chibi_bottom        = "characters/tonks/chibis/nt_trousers.png"
+        $ ton_chibi_robe          = "blank"
+        $ ton_chibi_gloves        = "blank" #blank is the new defined image, makes our lives easier
+        $ ton_chibi_fix           = "blank"
+        
+    if not hasattr(renpy.store,'ton_cloth_pile') or reset_persistants:
+        $ ton_cloth_pile = False
+        $ ton_pile_xpos = 440 # Right side of desk.
+        $ ton_pile_ypos = 425 # Bit below feet level.
     return
 
 label tonks_progress_init:

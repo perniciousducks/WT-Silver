@@ -297,35 +297,35 @@ screen snape_defends(xx=0):
 
 ### DAMAGE ###
 
-screen minus_0():
-    add "minus_0" at Position(xpos=780, ypos=120)
-screen minus_50():
-    add "minus_50" at Position(xpos=780, ypos=120)
-screen minus_100():
-    add "minus_100" at Position(xpos=780, ypos=120)
+transform damage_transform:
+    alpha 1.0
+    linear 1.5 yoffset -100 alpha 0.0
 
-screen minus_300():
-    add "minus_300" at Position(xpos=780, ypos=120)
-screen minus_400():
-    add "minus_400" at Position(xpos=780, ypos=120)
-screen minus_500():
-    add "minus_500" at Position(xpos=780, ypos=120)
-
-
-#GENIE HEALTH LOSS
-screen minus_0_genie():
-    add "minus_0" at Position(xpos=450, ypos=120)
-screen minus_50_genie():
-    add "minus_50" at Position(xpos=450, ypos=120)
-screen minus_100_genie():
-    add "minus_100" at Position(xpos=450, ypos=120)
-
-screen minus_300_genie():
-    add "minus_300" at Position(xpos=450, ypos=120)
-screen minus_400_genie():
-    add "minus_400" at Position(xpos=450, ypos=120)
-screen minus_500_genie():
-    add "minus_500" at Position(xpos=450, ypos=120)
+screen duel_damage(value=0, attacking=True):
+    tag damage
+    frame:
+        style "empty"
+        at damage_transform
+        if attacking:
+            xpos 780 
+            ypos 120
+        else:
+            xpos 450
+            ypos 120
+        add "images/dueling/damage/"+str(value)+".png"
+        
+screen duel_heal(value=300, player=True):
+    tag damage
+    frame:
+        style "empty"
+        at damage_transform
+        if not player:
+            xpos 780 
+            ypos 120
+        else:
+            xpos 450
+            ypos 120
+        add "images/dueling/damage/plus_"+str(value)+".png"
 
 #GENIE HEALTH GAIN
 screen plus_300():

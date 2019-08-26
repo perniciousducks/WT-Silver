@@ -12,44 +12,51 @@ label nt_pr_kiss_start:
 
         if nt_pr_kiss.points == 0:
             m "Ready to try something a little different?"
-            call ton_main("Mmmm, you bet... This is the most fun I've had in years!","base","base","base","mid")
-            call ton_main("What were you thinking we try out next?","base","base","base","mid")
+            call ton_main("*Mmmm*... Absolutely! This is the most fun I've had in years!","horny","base","base","mid")
+            call ton_main("What did you have in mind?","base","base","angry","mid")
             m "What do you think?"
-            call ton_main("I know you shot it down earlier... but I think making-out with them would be really fucking hot...","base","base","base","mid")
-            m "Pfft, you're such a girl."
-            m "You've already gotten to second base, let's not jump back to first!"
-            call ton_main("You don't understand... The way I make-out... It's way more intense than anything these kids will have ever experienced...","base","base","base","mid")
-            m "Hmmmm... So you're not just going to give them a peck on the cheek, are you?"
-            call ton_main("Oh no...","base","base","base","mid")
-            call ton_main("They'll be lucky if they can talk straight after I'm done with them...","base","base","base","mid")
-            m "In that case, you have my permission..."
-            m "Just don't disappoint me with the stories you bring back!"
-            call ton_main("I'll make sure you get your money's worth, don't worry.","base","base","base","mid")
+            if nt_pr_grope.points == 0:
+                call ton_main("I think making-out with them would be really fucking hot...","horny","base","base","R")
+                m "Just kissing?"
+                call ton_main("You don't understand...{w} The way I make-out...","horny","base","base","mid")
+                call ton_main("It's way more intense than anything these students will have ever experienced...","base","base","angry","mid")
+            else:
+                call ton_main("I know you shot it down earlier... but I think a little making-out would be really fucking hot...","horny","base","angry","mid")
+                m "*Pfft*... you're such a bad girl..."
+                m "You've already gotten to second base! Let's not jump back to first!"
+                call ton_main("You don't get it...{w} The way I make-out...","horny","base","base","R")
+                call ton_main("It's way more intense than anything these students will have ever experienced...","base","base","angry","mid")
+            m "*Hmmm*..."
+            g9 "So you're not just going to give them a peck on the cheek, are you?"
+            call ton_main("Oh no...","angry","base","base","mid")
+            call ton_main("They'll be lucky if they can talk-straight after I'm done with them...","open","closed","base","mid")
+            m "You've set my expectations in you quite high, you know that right?"
+            call ton_main("I'll make sure you get your money's worth, don't worry...","base","base","base","mid")
             m "Just see me after class."
-            call ton_main("Yes, sir!","base","base","base","mid")
+            call ton_main("Yes, sir!","horny","base","base","mid")
 
         else:
 
             m "Fancy another student-snog-session?"
-            call ton_main("Mmmm, you bet... It's my job to teach these kids...","base","base","base","mid")
-            call ton_main("Even if that lesson is French Kissing...","base","base","base","mid")
+            call ton_main("*Mmmm*... You bet... Teaching is my job...","horny","base","base","R", hair="horny")
+            call ton_main("Even if that lesson is \"French-Kissing\"...","horny","base","angry","mid")
             m "Well, don't let me stop you."
             call ton_main("Thank you, sir...","base","base","base","mid")
 
-    elif ton_tier >= 3:
+    elif ton_tier >= 3: # Not in 1.37
 
         if nt_pr_kiss.points == 0: # Tell her to be even lewder for the next level of favors.
 
-            m "How would you feel about French kissing your students again?"
-            call ton_main("Mmmm... Pretty good if the last few times are anything to go by...","base","base","base","mid")
-            call ton_main("I'll see you after class then.","base","base","base","mid")
-            m "Very good..."
+            m "Would you like to help your students with their oral skills again?"
+            call ton_main("Mmmm, yes... Some of them are in dire need of some practice...","horny","base","raised","mid")
+            g9 "Then go give them some practice!"
+            call ton_main("I will, [ton_genie_name]...","base","base","base","mid")
 
         else: # Repeat
-            m "Would you like to help your students with their oral skills again?"
-            call ton_main("Mmmm, yes... Some of these kids are in dire need of some practice...","base","base","base","mid")
-            g9 "Then go and practice with them!"
-            call ton_main("I will, [ton_genie_name]...","base","base","base","mid")
+
+            m "How would you feel about French-kissing your students again?"
+            call ton_main("*Mmmm*... Pretty good if the last few times are anything to go by...","horny","base","base","R", hair="horny")
+            call ton_main("I'll see you after class...","base","base","angry","mid")
 
     # Tonks leaves
 
@@ -64,84 +71,141 @@ label nt_pr_kiss_start:
 label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
     #Gentle kissing
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
+
+    if ton_reputation <= 7 and nt_pr_kiss.points == 4: # First time.
+        pass
+    else: # Repeat.
+        menu:
+            m "(...)"
+            "\"You are back!\"":
+                pass
+            "\"Make it quick!\"":
+                call ton_main("I made out with my favorite \"Slytherin boy\" again...","open","base","base","R")
+                call ton_main("He's getting quite good at it...","horny","base","base","up")
+                m "Well done, [tonks_name]... We'll talk next time."
+                call ton_main("Have a good night, [ton_genie_name].","base","happyCl","base","mid")
+                call increase_house_points(house="s", points=40)
+                if ton_reputation < 9: # Points til 9.
+                    $ ton_reputation += 1
+                jump end_tonks_event
+
     m "Fun day?"
-    call ton_main("It was! I got to show the kids a Boggart for the first time, that was pretty entertaining!","base","base","base","mid")
-    call ton_main("Not to mention I got to take a boys first kiss...","base","base","base","mid")
-    m "A day of firsts then..."
-    call ton_main("Mmmm, I know which one I preferred...","base","base","base","mid")
+    call ton_main("It was!","smile","happyCl","base","mid")
+    call ton_main("I got to show some students a Boggart for the first time...{w} That was pretty entertaining!","smile","base","base","mid")
+    m ".................."
+    call ton_main("Not to mention that I got to take a boy's first kiss...","horny","base","angry","mid")
+    g9 "A first for everybody!"
+    call ton_main("*Mmmm*... I know which one I preferred...","base","base","base","ahegao")
     m "Care to fill me in?"
-    call ton_main("Alright...","base","base","base","mid")
-    call ton_main("So, I had class with my favourite little \"Slythinerin\" today.","base","base","base","mid")
-    call ton_main("I figured that I didn't really have much to do after classes so I may as well hold him back.","base","base","base","mid")
-    call ton_main("He was expecting me to buy a favour from him straight away, however, I was in the mood for a little conversation today...","base","base","base","mid")
-    call ton_main("We talked about his performance in class... him being so distracted...","base","base","base","mid")
-    call ton_main("Then I asked him if he had a girlfriend to help with his distractions...","base","base","base","mid")
-    call ton_main("He answered no of course, so I pretend to sympathize, saying it must be hard for him to walk around school with all the pretty thing running around.","base","base","base","mid")
-    call ton_main("I then asked if he'd made out with any of the girls...","base","base","base","mid")
-    call ton_main("He hadn't even kissed anyone before!","base","base","base","mid")
-    call ton_main("So, obviously I had to buy a favour off of him...","base","base","base","mid")
-    call ton_main("It's my duty as a teacher of this school to see to my students education.","base","base","base","mid")
-    m "How noble."
-    call ton_main("Not to mention, he was so excited by the whole thing.","base","base","base","mid")
-    call ton_main("You should have seen his face light up... It was precious.","base","base","base","mid")
+    call ton_main("I'd love to!","horny","base","angry","mid")
+    call ton_main("So, today I had class with my favourite little \"Slythinerin boy\"...","open","closed","base","mid")
+    call ton_main("I didn't really have much to do after classes, so I figured I may as well hold him back...","open","base","base","R")
+    call ton_main("He was expecting me to buy a favour straight away...","open","closed","base","mid")
+    call ton_main("However, I was in the mood for a little conversation today...","base","base","base","mid")
+    call ton_main("Some rather unimportant banter... Such as his performance in class...","open","base","base","L")
+    call ton_main("Then I asked if he had a girlfriend, to maybe help with him at school...","base","happyCl","base","mid")
+    call ton_main("He answered {b}no{/b}, of course,... so I showed him some sympathy...","open","base","base","R")
+    call ton_main("Saying how {b}hard{/b} it must be - trying your best to concentrate on school with so many pretty girls running around...","open","base","angry","mid")
+    m "(I should go for a walk as well some day...)"
+    call ton_main("Then I asked if he'd ever made-out with any of the girls...","base","base","angry","mid")
+    call ton_main("And of course he hadn't...","horny","base","angry","mid")
+    call ton_main("So, obviously, I just had to buy this little favour from him...","open","closed","base","mid")
+    call ton_main("It's my duty as a teacher of this school - to see to my students education!","horny","base","angry","mid")
+    m "How noble..."
+    call ton_main("He was so excited by the whole thing.","open","base","worried","R")
+    call ton_main("You should have seen his face... It was precious.","base","happyCl","base","mid")
     m "Was it as intense as you promised?"
-    call ton_main("Not really... I wanted to take it slow for his first time...","base","base","base","mid")
-    call ton_main("I just sat next to him and slowly peppered a few kisses on his lips at first...","base","base","base","mid")
-    call ton_main("After the initial shock and nerves, we were Eventually able to settle into a nice rhythm of kissing and some light tongue play...","base","base","base","mid")
-    call ton_main("He was still inexperienced, but definitely eager to learn.","base","base","base","mid")
-    call ton_main("Then, after five minutes I paid him his points and sent him on his way...","base","base","base","mid")
-    m "Just like that?"
-    call ton_main("I don't think it's the last I'll see of him, besides I don't want to push him too far.","base","base","base","mid")
-    call ton_main("This favour trading might actually be a good way to address student behavior!","base","base","base","mid")
-    m "Oh?"
-    call ton_main("His behavior has really started to improve after I've started buying favours from him.","base","base","base","mid")
+    call ton_main("Not that intense, per say... I wanted to take it slow for his first time...","open","base","base","R")
+    call ton_main("I just sat next to him, and slowly peppered a few kisses on his lips...","open","base","base","mid")
+    call ton_main("After the initial excitement died down, we eventually got into a nice rhythm of kissing...and some light tongue-play...","horny","base","base","mid")
+    call ton_main("He was very inexperienced, but definitely eager to learn.","horny","base","angry","mid")
+    call ton_main("Then, after five minutes or so, I awarded him some house points...and sent him on his way...","open","base","base","R")
+    m "And that was all?"
+    call ton_main("I don't think it's the last I'll see of him... Besides, I don't want to push him too far.","base","happyCl","base","mid")
+    call ton_main("This favour trading might actually be a good way to address student behaviour!","base","base","base","mid")
+    m "Oh... How so?"
+    call ton_main("His behaviour has really started to improve after I began buying favours from him!","open","base","base","mid")
     m "Maybe you should consider dealing with all your troublemakers this way?"
-    call ton_main("Hmmmm, don't tempt me...","base","base","base","mid")
+    call ton_main("*Hmmm*... Don't tempt me...","horny","base","base","R")
     m "That'll be all then."
-    call ton_main("See ya, [ton_genie_name].","base","base","base","mid")
+    call ton_main("Right, see you, [ton_genie_name].","base","base","base","mid")
+
+    # Tonks leaves.
+
+    call increase_house_points(house="s", points=40)
+    if ton_reputation < 9: # Points til 9.
+        $ ton_reputation += 1
 
     jump end_tonks_event
 
 
 label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
-    m "You're a bit late... Get caught up having fun with your students?"
-    call ton_main("Mmmm, and then some...","base","base","base","mid")
-    m "I like the sound of that!"
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
+
+    if ton_reputation <= 7 and nt_pr_kiss.points == 4: # First time.
+        pass
+    else: # Repeat.
+        menu:
+            m "(...)"
+            "\"You are back!\"":
+                pass
+            "\"Make it quick!\"":
+                call ton_main("Sorry I'm a bit late today...","open","base","base","R")
+                call ton_main("I was \"occupied\" kissing that little \"Ravenclaw boy\" again...","horny","base","angry","mid")
+                m "Very good, [tonks_name]."
+                call ton_main("Thank you, [ton_genie_name]. Have a good night.","base","base","base","mid")
+                call increase_house_points(house="r", points=20)
+                if ton_reputation < 9: # Points til 9.
+                    $ ton_reputation += 1
+                jump end_tonks_event
+
+    m "You're a bit late..."
+    g9 "Got caught up having too much fun with your students?"
+    call ton_main("*Mmmm*... and then some...","horny","base","base","R")
+    g9 "I like the sound of that!"
     m "Now, care to elaborate?"
-    call ton_main("Alright then, you old perv...","base","base","base","mid")
-    call ton_main("Today was that shy, horny \"ravenclaw\" boy...","base","base","base","mid")
-    m "The one who stayed behind by himself?" # Note: If the favors don't reference each other in such a direct way, we could make both "touch" and "kiss" available at the same time, playable independently to each other.
-    call ton_main("Yep...","base","base","base","mid")
-    call ton_main("Ugh... he made the classic school boy mistake today...","base","base","base","mid")
+    call ton_main("Alright then, you old perv...","horny","base","angry","mid")
+    call ton_main("Today's event was with my favourite-little \"Ravenclaw boy\"...","base","base","base","mid")
+    m "That shy one?"
+    call ton_main("Yes, the cute one!{w} He made a classic mistake today...","smile","happyCl","base","mid")
     m "Which is?"
-    call ton_main("Calling your teacher \"Mommy\".","base","base","base","mid")
-    m "hahaha! Really?"
-    m "I bet he copped it for that!"
-    call ton_main("Surprisingly not... Everyone just sort of went quiet.","base","base","base","mid")
-    m "Hmmm. I know I would have given him hell for that..."
-    call ton_main("Anyway... I decided that was plenty of reason to hold him back...","base","base","base","mid")
-    call ton_main("Not that I needed to... Cheeky bugger didn't even get out of his seat...","base","base","base","mid")
-    call ton_main("He just sat there with his head down... waiting for me to come over...","base","base","base","mid")
-    call ton_main("So, I figured I'd indulge him... I walked over and plonked myself onto his lap, facing towards him...","base","base","base","mid")
-    m "Mmmm, did he see that coming."
-    call ton_main("No, although it didn't seem to bother him...","base","base","base","mid")
-    call ton_main("He just looked up at me with this look in his eyes...","base","base","base","mid")
-    call ton_main("It was too much... I started kissing him just to break our gaze...","base","base","base","mid")
-    m "I assume he just sat there, taking it?"
-    call ton_main("Oh no... He may have seemed shy... but kissing awoke something in him...","base","base","base","mid")
-    call ton_main("It was like he wanted to kiss me as much as he could... ugh...","base","base","base","mid")
-    call ton_main("I've never had someone attack me with their tongue like that...","base","base","base","mid")
-    call ton_main("He was intense... if a little inexperienced...","base","base","base","mid")
-    m "And what, you made out for a few minutes and sent him on his way?"
-    call ton_main("A few minutes? Why do you think I'm so late?","base","base","base","mid")
-    m "Wait... You mean to tell me you spent all afternoon, french kissing one of your students?"
-    call ton_main("I didn't think it'd-","base","base","base","mid")
-    m "I'm very proud. Good work, [ton_name]."
-    call ton_main("...","base","base","base","mid")
-    call ton_main("Thank you, [ton_genie_name].","base","base","base","mid")
+    call ton_main("Calling your teacher \"Mommy.\"","base","base","base","mid")
+    g9 "*ha-ha-ha!*... Really?"
+    m "I bet the students had a field day with that one!"
+    call ton_main("Surprisingly not... Everyone just sort of went quiet.","open","base","base","R")
+    m "I know that {b}I{/b} would have given him hell for that..."
+    call ton_main("I might have blushed as much as him - after he said it...","open","base","worried","down")
+    call ton_main("Anyhow... I decided that it was reason enough to hold him back...","open","closed","base","mid")
+    call ton_main("Not that I needed to... He seemed almost paralyzed for the rest of the lesson...","base","base","base","mid")
+    call ton_main("He just sat there with his head down,...waiting for everyone to leave the classroom...","open","base","base","L")
+    call ton_main("So, I figured I'd indulge him...","open","closed","base","mid")
+    call ton_main("I walked over - and plonked myself onto his lap, facing him...","horny","base","base","mid")
+    g9 "Bet that woke him up!"
+    call ton_main("Yes... However I wouldn't say it bothered him too much...","open","base","base","R")
+    call ton_main("He just looked up at me with those big-puppy-eyes...","base","base","base","mid")
+    call ton_main("And then I broke our gaze and kissed him...","horny","base","base","mid")
+    m "How did he take it?"
+    call ton_main("Great! That kiss must have awoken something in him...","smile","base","angry","mid")
+    call ton_main("He really got into it after a while...","base","base","base","mid")
+    call ton_main("*Ugh!*... I've never had someone attack me with their tongue like that...","horny","base","base","ahegao")
+    call ton_main("It was intense! And neither of us wanted it to end...","base","base","angry","ahegao")
+    g9 "Is that why you were late today?"
+    call ton_main("*Hmmm*... Can you blame me?","base","base","base","mid")
+    g9 "So you spent all afternoon french-kissing one of your students?"
+    call ton_main("Yes, [ton_genie_name]...","open","closed","base","mid")
+    call ton_main("I guess I fucking did!","horny","base","angry","mid")
+    g9 "I'm very proud!"
+    m "Great work, [tonks_name]."
+    call ton_main("...","base","base","base","ahegao")
+    call ton_main("Thank you, [ton_genie_name]. Have a good night.","base","base","base","mid")
+
+    # Tonks leaves.
+
+    call increase_house_points(house="r", points=20)
+    if ton_reputation < 9: # Points til 9.
+        $ ton_reputation += 1
 
     jump end_tonks_event
 
@@ -149,43 +213,67 @@ label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
 label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
     #Tonks pays two best friends to make-out
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
-    m "How was your day?"
-    call ton_main("Better than most... You're going to love todays story!","base","base","base","mid")
-    m "Don't let me stop you then."
-    call ton_main("As always, there were a few \"slytherins\" messing around in class.","base","base","base","mid")
-    call ton_main("There was an especially annoying pair of girls that wouldn't shut up.","base","base","base","mid")
-    call ton_main("So, I pretty much had to give them detention, just to quiet down the class a little.","base","base","base","mid")
-    call ton_main("Normally, I only try and buy favours from one person at a time...","base","base","base","mid")
-    call ton_main("But I figured, if what they say about \"slytherin\" sluts is true this should be worth a shot.","base","base","base","mid")
-    m "Did you take turns kissing the girls?"
-    call ton_main("Better.","base","base","base","mid")
-    call ton_main("I gave them the option of staying behind for detention for a full hour...","base","base","base","mid")
-    call ton_main("Or sell their teacher a favour and get out of here in ten minutes...","base","base","base","mid")
-    m "I take it they said yes?"
-    call ton_main("Only after they negotiated out a price.","base","base","base","mid")
-    call ton_main("But I tell you what, those hundred points were worth it.","base","base","base","mid")
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
 
-    call ton_main("I convinced the two of them to make out with each other for a full ten minutes...","base","base","base","mid")
-    call ton_main("Ugh... It was quite possibly the hottest thing I've ever witnessed in my life.","base","base","base","mid")
-    m "Mmmm, more..."
-    call ton_main("Well, the two of them are best friends, so naturally they were a bit hesitant to start...","base","base","base","mid")
-    call ton_main("But I have a feeling that this wasn't their first time kissing girls...","base","base","base","mid")
-    call ton_main("Maybe not even each other...","base","base","base","mid")
-    m "Ugh... that's it..."
-    call ton_main("I couldn't help myself... I had to play around while they did it...","base","base","base","mid")
+    if ton_reputation <= 7 and nt_pr_kiss.points == 4: # First time.
+        pass
+    else: # Repeat.
+        menu:
+            m "(...)"
+            "\"You are back!\"":
+                pass
+            "\"Make it quick!\"":
+                call ton_main("I gave those two \"Slytherin sluts\" detention again...","open","base","base","R")
+                call ton_main("Fuck, I came so hard watching them kiss!","base","base","base","mid")
+                m "You wouldn't believe how jealous I am!"
+                call ton_main("You have no idea, [ton_genie_name]!","base","base","angry","mid")
+                call ton_main("I better get going. Until next time!","base","happyCl","base","mid")
+                call increase_house_points(house="s", points=40)
+                if ton_reputation < 9: # Points til 9.
+                    $ ton_reputation += 1
+                jump end_tonks_event
+
+    m "How was your day?"
+    call ton_main("Better than most... You'll love this one!","base","happyCl","base","mid")
+    g9 "Don't let me stop you then..."
+    call ton_main("As always, there were a few \"Slytherins\" messing-around in class...","open","base","base","R")
+    call ton_main("With an especially annoying pair-of-girls that wouldn't shut up!","open","closed","base","mid")
+    call ton_main("So,... I gave them detention,...which thankfully got them to quiet down a little.","open","base","base","L")
+    m "So far so good..."
+    call ton_main("Normally, I only try and buy favours from one person at a time...","open","closed","base","mid")
+    call ton_main("But then I figured, why not give both those \"Slytherin sluts\" a shot.","base","base","base","mid")
+    g9 "So you took turns kissing the girls?"
+    call ton_main("No, but I could have...","open","base","base","R")
+    call ton_main("I gave them the option of staying behind - for a full hour of detention...","open","closed","base","mid")
+    call ton_main("Or,...have them do their teacher a little favour...","base","base","base","mid")
+    g9 "Which was?"
+    call ton_main("*Mmmm*... They had to make out with each other!","horny","base","angry","mid")
+    call ton_main("And they had to do it properly. For at least ten minutes.","open","closed","base","mid")
+    call ton_main("*Ugh*... It was the hottest thing to witness, I tell you...","angry","base","base","ahegao")
+    g9 "Don't spare any details!"
+    call ton_main("Well, they were a bit hesitant at first... which I can't even blame them for...","open","base","worried","mid")
+    call ton_main("It doesn't happen often that you have a teacher watch you make-out,...and savouring every second of it!","base","base","angry","mid")
+    call ton_main("But, I have a feeling that wasn't their first time kissing another girl...","open","closed","base","mid")
+    call ton_main("Maybe not even each other...","base","base","angry","mid")
+    m "Ought to-be young again..."
+    call ton_main("I couldn't help myself, [ton_genie_name]!","upset","base","base","ahegao")
+    call ton_main("I simply {b}had{/b} to play around while they did it...","open","base","sad","mid")
     m "Did they care?"
-    call ton_main("Big time... they whined about this not being included in the price...","base","base","base","mid")
-    call ton_main("Not that it stopped them making out...","base","base","base","mid")
-    call ton_main("They'd just take it in waves...","base","base","base","mid")
-    call ton_main("Making out... calling me a pervert...","base","base","base","mid")
-    call ton_main("Closing their mouths together only to break apart to call me a slut...","base","base","base","mid")
-    call ton_main("Ugh... it was so {b}bloody{/b} {b}hot{/b}...","base","base","base","mid")
-    call ton_main("Eventually they continued to call me a lesbo while saliva kept dripping down their faces...","base","base","base","mid")
-    call ton_main("Fuck, I came so hard while they just sat there goading me on...","base","base","base","mid")
-    call ton_main("Ugh... This really is the best job ever...","base","base","base","mid")
-    m "You're telling me... That'll be all for now then Tonks."
-    call ton_main("Yes, sir...","base","base","base","mid")
+    call ton_main("Not one bit!","base","base","angry","mid")
+    call ton_main("They'd just take it in waves...","horny","base","base","L")
+    call ton_main("Making out... Calling me a pervert...","horny","base","base","ahegao")
+    call ton_main("Locking their mouths together, only to break-apart again to tease me  more...","base","base","base","ahegao")
+    call ton_main("*Ugh*... It was so {b}bloody hot!{/b}...","angry","base","angry","mid")
+    m "I take your word for it..."
+    call ton_main("This really is the best job ever!","horny","base","angry","mid")
+    m "Very good! That shall be all for now, [tonks_name]."
+    call ton_main("Have a good night, [ton_genie_name].","base","happyCl","base","mid")
+
+    # Tonks leaves.
+
+    call increase_house_points(house="s", points=40)
+    if ton_reputation < 9: # Points til 9.
+        $ ton_reputation += 1
 
     jump end_tonks_event
 
@@ -193,45 +281,82 @@ label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
 label nt_pr_kiss_T1_E4: #Level 1 Event 4
     #Tender make-out sesh with slytherin lesbian
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
-    call ton_main("Do I have a story for you today!","base","base","base","mid")
-    call ton_main("This is so good I feel I should turn it into a feel-good, coming-of-age flick!","base","base","base","mid")
-    m "About a boy snogging his teacher?"
-    call ton_main("No! About a tender and confused young girl coming to terms with her sexuality thanks to her stunningly intelligent teacher.","base","base","base","mid")
-    call ton_main("Starring our favourite little repressed \"Slytherin\"...","base","base","base","mid")
-    call ton_main("Now, she's started coming around to me as of late...","base","base","base","mid")
-    call ton_main("So, I figured now might be a good time to take it to the next level...","base","base","base","mid")
-    call ton_main("Getting her to stay after class is easy enough now, I can just brush her hand as I walk around the class and throw her a subtle wink.","base","base","base","mid")
-    m "You're getting brazen."
-    call ton_main("Wasn't that the idea? To spread rumours?","base","base","base","mid")
-    m "I never said it was a bad thing."
-    call ton_main("Good. Because I'm not planning on slowing down. Not after today.","base","base","base","mid")
-    call ton_main("She was so cute. Still nervous, but not nearly as cocky...","base","base","base","mid")
-    call ton_main("Today, she just let her red cheeks do most of the talking as she hung her head towards her desk...","base","base","base","mid")
-    call ton_main("All I had to do was ask to purchase another favour. It's not like she'd say no at this point.","base","base","base","mid")
-    call ton_main("I don't think she was expecting me to ask for a kiss though... It really threw her for a loop...","base","base","base","mid")
-    call ton_main("She couldn't work out whether it was too extreme a favour or too mild...","base","base","base","mid")
-    m "Kissing can always be a bit weird at first..."
-    call ton_main("especially when you're as emotionally charged as a horny little schoolgirl...","base","base","base","mid")
-    call ton_main("Mmm... She didn't let me down...","base","base","base","mid")
-    call ton_main("At first she just gazed up at me like a stunned deer... lips quivering in either fear or anticipation... I couldn't tell...","base","base","base","mid")
-    call ton_main("Of course, I had to make the first move. I just swept in and placed my lips on hers... Ugh... they were so soft...","base","base","base","mid")
-    call ton_main("After waiting for a little bit of her shock to wear off, I started probing the front of her mouth with my tongue...","base","base","base","mid")
-    call ton_main("I thought she was going to try and close her teeth and keep me out but she was Surprisingly quick to open wide for auntie Tonks...","base","base","base","mid")
-    call ton_main("After that it was game over for her... I just softly cradled her head as I spent the next five minutes teaching her how to french...","base","base","base","mid")
-    call ton_main("Ugh... That's not an experience you get to live very often...","base","base","base","mid")
-    m "Consider yourself lucky then."
-    call ton_main("Oh, I do, believe me.","base","base","base","mid")
-    m "Very good. That'll be all for now then tonks."
-    call ton_main("Thank you, sir.","base","base","base","mid")
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
+
+    if ton_reputation <= 7 and nt_pr_kiss.points == 4: # First time.
+        pass
+    else: # Repeat.
+        menu:
+            m "(...)"
+            "\"You are back!\"":
+                pass
+            "\"Make it quick!\"":
+                call ton_main("I kissed that cure little \"Slytherin girl\"...","open","base","base","mid")
+                call ton_main("She gotting there!","base","happyCl","base","mid")
+                m "Very good, [tonks_name]."
+                call ton_main("Thank you, [ton_genie_name]. Have a good night.","base","base","base","mid")
+                call increase_house_points(house="s", points=40)
+                if ton_reputation < 9: # Points til 9.
+                    $ ton_reputation += 1
+                jump end_tonks_event
+
+    call ton_main("I have a story for you!","base","base","angry","mid")
+    g9 "Let's hear it!"
+    call ton_main("This is so good, I feel I should write it down and turn it into a novel...","base","happyCl","base","mid")
+    g9 "About a boy snogging his teacher?"
+    call ton_main("No.{w} About a tender and confused girl...","open","closed","base","mid")
+    call ton_main("Who's coming to terms with her sexuality, thanks to her stunningly-intelligent teacher.","base","base","angry","mid")
+
+    call ton_main("That little \"Slytherin girl\" is starting to come around to me more often - as of late...","base","base","base","mid")
+    call ton_main("So, I figured now might be a good time to take it to the next level...","open","base","base","R")
+    call ton_main("Getting her to stay after class is easy enough now...","open","closed","base","mid")
+    call ton_main("I just brush her hand as I walk past her,...and throw her a subtle wink.","base","base","base","mid")
+    g9 "You're getting brazen!"
+    call ton_main("Wasn't that the plan?","open","base","worried","R")
+    m "I never said it was a bad thing..."
+    call ton_main("Good!{w} Because I don't intent of slowing down...","open","closed","angry","mid")
+    call ton_main("Not after what happened today!","horny","base","angry","mid")
+    call ton_main("She was so cute!...","open","base","sad","mid")
+    call ton_main("Still nervous, but not nearly as cocky...","open","base","sad","R")
+    call ton_main("Today, she simply let her reddened-cheeks do most of the talking... Until the end of my lessons...","base","base","base","mid")
+    call ton_main("And, once the classroom had emptied out, I offered to purchase another favour from her.","open","base","base","L")
+    call ton_main("It's not as if she'd say no at this stage.","base","base","base","mid")
+    call ton_main("I believe she wasn't expecting me to ask for a kiss though... It really threw her for a loop...","smile","happyCl","base","mid")
+    m "....................."
+    call ton_main("She couldn't quite work out whether it was too extreme of a favour,...or too mild...","upset","base","base","R")
+    m "Well, it all depends on how you kiss..."
+    call ton_main("*Hmmm*... Yes!","horny","base","base","ahegao")
+    call ton_main("For an emotionally charged schoolgirl, she really didn't let me down one bit...","horny","base","angry","mid")
+    call ton_main("Her lips kept quivering...{w} And I'm not sure if it was because of fear...or anticipation...","open","base","worried","R")
+    call ton_main("And she gazed at me like a stunned deer... Waiting for me to make the first move...","horny","base","base","mid")
+    call ton_main("*Mmmm*... Her lips were so soft!","open_wide_tongue","base","base","ahegao")
+    g9 "This is good!"
+    g9 "Did you slip in some tongue?"
+    call ton_main("*Mhmm*... More than some...","horny","base","angry","mid")
+    call ton_main("I was surprised just how easily she opened her mouth for me...","base","base","angry","mid")
+    call ton_main("Once my tongue was in there - it was game-over for her!","angry","base","angry","mid")
+    call ton_main("I just softly cradled her head - and spent the next five minutes teaching her how to \"french\"...","horny","base","angry","mid")
+    call ton_main("They can't offer you an experience like that at the Ministry!","base","base","base","mid")
+    g9 "Consider yourself lucky then."
+    call ton_main("Oh, I do!{w} Believe me!","horny","base","base","ahegao")
+    m "That shall be all for now..."
+    call ton_main("Thank you, [ton_genie_name].","base","base","base","mid")
+
+    # Tonks leaves.
+
+    call increase_house_points(house="s", points=40)
+    if ton_reputation < 9: # Points til 9.
+        $ ton_reputation += 1
 
     jump end_tonks_event
 
 
 
+### Tier 2 ###
+
 label nt_pr_kiss_T2_E1: # Tier 2 Event 1 # Not in use.
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
     m "How did your extra-curricular activities pan out today?"
     call ton_main("Honestly? I don't think I've ever been as turned on in my life...","base","base","base","mid")
     call ton_main("Fuck... It was incredible... the power I felt over him... it was intoxicating...","base","base","base","mid")

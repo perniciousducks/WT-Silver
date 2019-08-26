@@ -96,8 +96,8 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
-        "-Mail ministry letter-" if her_whoring >= 2 and not letter_curse_complaint_OBJ.read:
-            $ letter_curse_complaint_OBJ.mailLetter()
+        "-Mail ministry letter-" if her_whoring >= 2 and not letter_min_curses.read:
+            $ letter_min_curses.mailLetter()
             ">Letter sent."
             jump cheats
         "-Astoria & Susan Cheats-" if astoria_unlocked:

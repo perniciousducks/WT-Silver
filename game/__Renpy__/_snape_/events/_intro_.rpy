@@ -270,7 +270,7 @@ label snape_intro_E3:
             who2 "I see... So she's been bluffing then."
             call sna_main("","snape_16")
             who2 "What an annoying young witch."
-        "\"Yes... Every damn day...\"" if letter_from_hermione_B_OBJ.read:
+        "\"Yes... Every damn day...\"" if letter_hg_2.read:
             who2 "Really now?"
             who2 "Any lies about me in particular?"
             who2 "I hope you know better than to listen to the likes of her..."

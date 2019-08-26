@@ -52,7 +52,7 @@ screen hotkeys_main():
     
     if map_unlocked:
         key hkey_map action Jump("desk")
-    if letter_paperwork_unlock_OBJ.read:
+    if letter_min_work.read:
         key hkey_work action Jump("paperwork")
     if store_intro_done:
         key hkey_book action Jump("read_book_menu")

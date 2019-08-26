@@ -19,8 +19,8 @@ label quests:
                 jump snape_intro_E1
 
     if day >= 2:
-        if not letter_from_hermione_B_OBJ.read:
-            $ letter_from_hermione_B_OBJ.mailLetter()
+        if not letter_hg_2.read:
+            $ letter_hg_2.mailLetter()
         if daytime:
             if not genie_intro.E3_complete:
                 jump genie_intro_E3
@@ -38,8 +38,8 @@ label quests:
                 jump snape_intro_E3
 
     if day >= 4:
-        if not letter_paperwork_unlock_OBJ.read:
-            $ letter_paperwork_unlock_OBJ.mailLetter()
+        if not letter_min_work.read:
+            $ letter_min_work.mailLetter()
         if daytime:
             pass
         else:
@@ -60,8 +60,8 @@ label quests:
                 jump hermione_intro_E2
 
     if day >= 7:
-        if hermione_intro.E2_complete and not letter_favor_complaint_OBJ.read:
-            $ letter_favor_complaint_OBJ.mailLetter()
+        if hermione_intro.E2_complete and not letter_min_favors.read:
+            $ letter_min_favors.mailLetter()
         if daytime:
             pass
         else:
@@ -110,15 +110,11 @@ label quests:
 
     if day >= 16:
         if daytime:
-            if her_whoring >= 2 and cho_intro_state == "event_1":
+            if her_tier >= 2 and cho_intro_state == "event_1":
                 $ cho_intro_state = "event_2"
                 jump cho_intro_1
 
     if day >= 25:
-        if her_whoring >= 9 and not letter_curse_complaint_OBJ.read:
-            $ letter_curse_complaint_OBJ.mailLetter()
-
-    if day >= 26:
         if not deck_unlocked:
             $ letter_deck.mailLetter()
 
@@ -324,7 +320,8 @@ label quest_init:
         $ hang_with_tonks   = quest_class(
         E1_complete=False, # Help with/unlock Hermione's favors.
         E2_complete=False, # Unlock Public Requests.
-        E3_complete=False, # Advance to Tier 2.
+        E3_complete=False, # Unlock Susan.
+        E4_complete=False, # Advance to Tier 2.
         )
 
     return

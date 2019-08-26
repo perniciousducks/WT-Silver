@@ -23,11 +23,14 @@ label tonks_hangout:
     if hermione_intro.E5_complete and not hang_with_tonks.E1_complete:
         jump hang_with_tonks_E1
 
-    if hermione_intro.E6_complete and her_tier >= 2 and not tonks_requests_unlocked:
+    if her_tier >= 2 and not tonks_requests_unlocked:
         jump hang_with_tonks_E2
 
-    if ton_reputation >= 4 and ton_friendship >= 20 and ton_tier == 1:
+    if ton_friendship >= 10 and not hang_with_tonks.E3_complete:
         jump hang_with_tonks_E3
+
+    if ton_reputation >= 4 and ton_friendship >= 20 and ton_tier == 1:
+        jump hang_with_tonks_E4
 
     # Tonks Auror Stories.
     $ random_number = renpy.random.randint(1, 3)
@@ -125,20 +128,22 @@ label nt_he_firewhisky_E1:
     call ton_main("A little bit more...","open","base","raised","down")
     call ton_main("A bit more...","horny","base","angry","down")
     call ton_main("That's it, cheers.","base","base","base","mid")
-    if daytime:
-        m "Boring lessons ahead?"
-        call ton_main("Not in particular, why?","open","base","base","mid")
-        m "You might regret going back to classes after drinking this much."
-        call ton_main("Oh don't you worry, [ton_genie_name].","smile","happyCl","base","mid")
-        call ton_main("I could down this entire bottle without anybody being able to notice a thing.","horny","base","base","L")
-        m "You're one glass in and swaying like a buoy..."
-        call ton_main("*Hick* Oh well-...","open","base","base","ahegao", trans="hpunch")
-        call ton_main("No risk, no fun!","horny","base","base","mid")
-    else:
-        m "Long day?"
-        call ton_main("Not in particular, why?","open","base","base","mid")
-        m "..."
-        m "No reason..."
+
+    if nt_he_drink.counter <= 3: # First time only.
+        if daytime:
+            m "Boring lessons ahead?"
+            call ton_main("Not in particular, why?","open","base","base","mid")
+            m "You might regret going back to classes after drinking this much."
+            call ton_main("Oh don't you worry, [ton_genie_name].","smile","happyCl","base","mid")
+            call ton_main("I could down this entire bottle without anybody being able to notice a thing.","horny","base","base","L")
+            m "You're one glass in and swaying like a buoy..."
+            call ton_main("*Hick* Oh well-...","open","base","base","ahegao", trans="hpunch")
+            call ton_main("No risk, no fun!","horny","base","base","mid")
+        else:
+            m "Long day?"
+            call ton_main("Not in particular, why?","open","base","base","mid")
+            m "..."
+            m "No reason..."
 
     jump tonks_hangout_continue
 
@@ -240,7 +245,7 @@ label hang_with_tonks_E2:
     m "Whatever floats your boat."
 
     $ tonks_requests_unlocked = True
-    call popup("You can now ask Tonks to sell \"Public Requests\" to her students!", "Congratulations!", "interface/icons/head/head_tonks_1.png")
+    call popup("You can now ask Tonks to do \"Public Requests\" with her students!", "Congratulations!", "interface/icons/head/head_tonks_1.png")
 
     $ hang_with_tonks.E2_complete = True
 
@@ -251,6 +256,69 @@ label hang_with_tonks_E2:
 
 
 label hang_with_tonks_E3:
+    # Tonks introduces you to Susan.
+    # She's getting mocked because of her large breasts by the other students.
+    # Susan is ashamed of her large breasts, and for being a hufflepuff.
+    # Suggest that it might be a good idea to have Susan trained by you, to increase her confidence in herself and her body.
+
+    call ton_main(".................","base","base","base","R", ypos="head")
+    m "Something on your mind?"
+    ton "Yes, there's this student in my class. She seems to be having a bad time."
+    m "Education isn't meant to be enjoyable."
+    ton "It's not that, she's being bullied by the other students apparently..."
+    m "For what reason?"
+    ton "For being shy,...insecure,..."
+    ton "She's the whole package..."
+    m "About what?"
+    ton "About her massive tits!"
+    g4 "!!!"
+    m "Why would she be insecure about that? Surely that's something to be massively jealous of as a girl."
+    ton "That's what I said..."
+    ton "She didn't seem to think I was being genuine."
+    m "I suppose their jealousy could be interpreted as bullying..."
+    ton "For sure... her insecurities might've brought some actual bullying her way as well since she's been too shy to answer any teachers questions directed her way."
+    ton "She's lost quite a few points for her house that way."
+    g9 "Just send her my way and I'll drown her in house-points!"
+    #g9 "Just send her my way and I'll teach her some body confidence!"
+    m "Even if she doesn't, I'll surely appreciate her body."
+    ton "That's what I was thinking..."
+    g4 "Wait, you were?"
+    ton "Of course, why else would I be telling to you about this?"
+    m "I don't know... banter? Snape sure as hell hasn't sent me any girls up here."
+    ton "I can teach him a thing or two about sharing if you'd like..."
+    ton "The more the merrier in my opinion..."
+    m "You don't mean Snape and I..."
+    ton "Of course not, don't be silly!"
+    ton "Maybe he's afraid you'd steal them from him if you got the chance..."
+    m "I have my doubts those girls he's talking about even exit..."
+    m "But don't tell him I said that."
+    m "..."
+    ton "I'll talk to Miss Bones."
+
+    if letter_min_favors.read:
+      m "Bones... I think I've heard that name before..."
+      ton "Her Aunt works at the ministry."
+      m "..."
+    else:
+      m "He-He... Bones."
+
+    ton "I'm sure you'll find her less than bony..."
+    m "..."
+    ton "Don't you go overboard or anything, I'd rather not risk having her contact that aunt of hers..."
+    m "I can be slick and subtle when I want to..."
+    ton "..."
+    ton "You're making me regret this decision already..."
+
+    $ hang_with_tonks.E3_complete = True
+
+    if daytime:
+        jump night_start
+    else:
+        jump day_start
+
+
+label hang_with_tonks_E4:
+
     call ton_main("You know, [ton_genie_name],... I've overheard a couple of students whispering about me...","open","base","base","mid", ypos="head")
     g9 "Finally..."
     call ton_main("And I walked past a group of boys the other day...","open","base","base","R")
@@ -271,7 +339,7 @@ label hang_with_tonks_E3:
     $ ton_tier = 2
     call popup("Tonks has reached level 2! New favors have been unlocked.", "Congratulations!", "interface/icons/head/head_tonks_1.png", sound=False)
 
-    $ hang_with_tonks.E3_complete = True
+    $ hang_with_tonks.E4_complete = True
 
     if daytime:
         jump night_start
@@ -802,3 +870,19 @@ label nt_he_story_centaur: # Not in use.
     g9 "Great! I'd love to hear them!"
 
     jump end_tonks_hangout
+
+
+    #(Not in use. Can be written into a Hangout event.)
+    #ton "In fact I caught one of your teachers engaged in rather...{w=0.3} adulterous activities with a couple of students."
+    #m "A couple...{w} Like, at the same time?"
+    #ton "Panty pictures!"
+    #m "What!"
+    #ton "Well, I’m fine with any photographs really, ankles, butts, underwear..."
+    #m "I see...{nw}
+    #ton "Feet!"
+    #g4 "Feet?"
+    #ton "Well, anything I can get really."
+    #m "(This lady’s a pervert...)"
+    #ton "There seems to be a great opportunity here..."
+    #m "I’d rather keep my shoes on thank you!"
+    #ton "Not that, silly."

@@ -102,7 +102,7 @@ label nt_pr_teach_T1_E1: #Tier 1 - Event 1 - Slytherin boy
             m "(...)"
             "\"How was your day?\"":
                 pass
-            "\"I'm sure you did great!\"":
+            "\"Make it quick!\"":
                 call ton_main("I had some fun with that \"Slytherin boy\" again...","horny","base","angry","mid")
                 call ton_main("Gave him a couple of points for his house.","open","base","base","R")
                 m "Well done, [tonks_name]... We'll talk next time."
@@ -238,7 +238,7 @@ label nt_pr_teach_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys. Guess who...
     else: # Repeat.
         menu:
             m "(...)"
-            "\"I hope you have a story for me!\"":
+            "\"How was your day?\"":
                 pass
             "\"Make it quick!\"":
                 call ton_main("I had some fun with those two \"Gryffindor boys\" again...","horny","base","base","R")
@@ -494,7 +494,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
     else: # Repeat.
         menu:
             m "(...)"
-            "\"Do you have a story for me?\"":
+            "\"How was your day?\"":
                 pass
             "\"Make it quick!\"":
                 call ton_main("Remember that cute \"Ravenclaw boy?\"","open","base","base","mid")
@@ -597,7 +597,7 @@ label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
     else: # Repeat.
         menu:
             m "(...)"
-            "\"Do you have something to tell me?\"":
+            "\"How was your day?\"":
                 pass
             "\"Make it quick!\"":
                 call ton_main("This \"Slytherin dickhead\" was asking for trouble again!","angry","base","angry","R")
@@ -669,7 +669,7 @@ label nt_pr_teach_T2_E4: # Tier 2 - Event 4 - Slytherin girl
     else: # Repeat.
         menu:
             m "(...)"
-            "\"Here to tell me a story?\"":
+            "\"How was your day?\"":
                 pass
             "\"Make it quick!\"":
                 call ton_main("This cute \"Slytherin girl\" earned herself a couple of points from me today...","open","base","base","R")
@@ -681,7 +681,7 @@ label nt_pr_teach_T2_E4: # Tier 2 - Event 4 - Slytherin girl
                     $ ton_reputation += 1
                 jump end_tonks_event
 
-    m "Anything interesting happen today, [ton_name]?"
+    m "Anything interesting happen today, [tonks_name]?"
     call ton_main("Oh yes!... I broke new ground today...","base","base","angry","mid")
     m "That's very promising... So what happened?"
     call ton_main("Remember that cute little \"Slytherin?\"","horny","base","base","mid")

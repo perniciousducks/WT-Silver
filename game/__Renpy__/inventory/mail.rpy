@@ -245,37 +245,37 @@ label __init_variables:
         $ report_money = 0
 
     # Hermione Granger Letters.
-    if not hasattr(renpy.store,'letter_from_hermione_A_OBJ'):
-        $ letter_from_hermione_A_OBJ = mail_letter_class()
-    $ letter_from_hermione_A_OBJ.text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sure that you remember the reason why I'm writing you this letter from my last one, sir.\n\nI beg of you, please hear my plea this time. This injustice simply cannot go on...\nNot in this day and age, not in our school.\n\nPlease take action.{/size}\n\n{size=-7}With deepest respect,\nHermione Granger{/size}"
-    $ letter_from_hermione_A_OBJ.label = "letter_from_hermione_A"
+    if not hasattr(renpy.store,'letter_hg_1'):
+        $ letter_hg_1 = mail_letter_class()
+    $ letter_hg_1.text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sure that you remember the reason why I'm writing you this letter from my last one, sir.\n\nI beg of you, please hear my plea this time. This injustice simply cannot go on...\nNot in this day and age, not in our school.\n\nPlease take action.{/size}\n\n{size=-7}With deepest respect,\nHermione Granger{/size}"
+    $ letter_hg_1.label = "letter_from_hermione_A"
 
-    if not hasattr(renpy.store,'letter_from_hermione_B_OBJ'):
-        $ letter_from_hermione_B_OBJ = mail_letter_class()
-    $ letter_from_hermione_B_OBJ.text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sorry to disturb you again, professor. I just want to make sure that you take this problem seriously.\n\nLast night another classmate confided in me... I gave my word to keep it a secret, so I cannot go into any details.\n\nAll I can say is that one of the Professors was involved.\n\nPlease take action soon.{/size}\n\n{size=-7}With deepest respect,\nHermione Granger.{/size}"
-    $ letter_from_hermione_B_OBJ.label = "" #No comment on letter.
+    if not hasattr(renpy.store,'letter_hg_2'):
+        $ letter_hg_2 = mail_letter_class()
+    $ letter_hg_2.text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sorry to disturb you again, professor. I just want to make sure that you take this problem seriously.\n\nLast night another classmate confided in me... I gave my word to keep it a secret, so I cannot go into any details.\n\nAll I can say is that one of the Professors was involved.\n\nPlease take action soon.{/size}\n\n{size=-7}With deepest respect,\nHermione Granger.{/size}"
+    $ letter_hg_2.label = "" #No comment on letter.
 
 
     # Ministry of Magic Letters.
-    if not hasattr(renpy.store,'letter_paperwork_unlock_OBJ'):
-        $ letter_paperwork_unlock_OBJ = mail_letter_class()
-    $ letter_paperwork_unlock_OBJ.text = "{size=-7}From: Ministry of Magic\nTo: Professor Albus Dumbledore\n\n{/size}{size=-4}Dear professor Dumbledore,\nWe remind you that only upon providing us with a completed report will we be able to make a payment in your name.{/size}\n\n{size=-7}With deepest respect,\nThe Ministry of Magic.{/size}"
-    $ letter_paperwork_unlock_OBJ.label = "letter_paperwork_unlock"
+    if not hasattr(renpy.store,'letter_min_work'):
+        $ letter_min_work = mail_letter_class()
+    $ letter_min_work.text = "{size=-7}From: Ministry of Magic\nTo: Professor Albus Dumbledore\n\n{/size}{size=-4}Dear professor Dumbledore,\nWe remind you that only upon providing us with a completed report will we be able to make a payment in your name.{/size}\n\n{size=-7}With deepest respect,\nThe Ministry of Magic.{/size}"
+    $ letter_min_work.label = "letter_paperwork_unlock"
 
-    if not hasattr(renpy.store,'letter_paperwork_report_OBJ'):
-        $ letter_paperwork_report_OBJ = mail_letter_class()
-    $ letter_paperwork_report_OBJ.text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n{/size}{size=-4}Thank you for completing a report this week.\n\nYou will find your payment of\n\n{/size}{b}-[report_money] gold-{/b}{size=-4}\n\nin the attached purse.{/size}\n\n{size=-7}With deepest respect,\nThe Ministry of Magic.{/size}"
-    $ letter_paperwork_report_OBJ.label = "letter_paperwork_report"
+    if not hasattr(renpy.store,'letter_min_report'):
+        $ letter_min_report = mail_letter_class()
+    $ letter_min_report.text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n{/size}{size=-4}Thank you for completing a report this week.\n\nYou will find your payment of\n\n{/size}{b}-[report_money] gold-{/b}{size=-4}\n\nin the attached purse.{/size}\n\n{size=-7}With deepest respect,\nThe Ministry of Magic.{/size}"
+    $ letter_min_report.label = "letter_paperwork_report"
 
-    if not hasattr(renpy.store,'letter_favor_complaint_OBJ'):
-        $ letter_favor_complaint_OBJ = mail_letter_class()
-    $ letter_favor_complaint_OBJ.text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n{/size}{size=-4}Dear professor Dumbledore,\nit has come to the ministry's attention from an anonymous letter, that there has been illicit activities going on between staff members and students within your halls.\n\nAn Auror has been dispatched and will arrive shortly to begin the investigation.{/size}\n\n{size=-7}Yours sincerely,\nAmelia Bones, Department of Magical Law Enforcement.{/size}"
-    $ letter_favor_complaint_OBJ.label = "letter_favor_complaint"
+    if not hasattr(renpy.store,'letter_min_favors'):
+        $ letter_min_favors = mail_letter_class()
+    $ letter_min_favors.text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n{/size}{size=-4}Dear professor Dumbledore,\nit has come to the ministry's attention from an anonymous letter, that there has been illicit activities going on between staff members and students within your halls.\n\nAn Auror has been dispatched and will arrive shortly to begin the investigation.{/size}\n\n{size=-7}Yours sincerely,\nAmelia Bones, Department of Magical Law Enforcement.{/size}"
+    $ letter_min_favors.label = "letter_favor_complaint"
 
-    if not hasattr(renpy.store,'letter_curse_complaint_OBJ'):
-        $ letter_curse_complaint_OBJ = mail_letter_class()
-    $ letter_curse_complaint_OBJ.text = "{size=-7}Dear Albus Dubmbledore, as we are sure you are aware, an unforgivable curse has been detected within the grounds of Hogwarts.\nWhile the punishment for such a curse is usually lifetime incarceration in the prison, Azkaban, we are allowing you to address this matter at your own discretion.\nThis is due to the possible nature of the spell being cast by a minor who has not fully grasped the serious nature of the curse.\nIf this is the case we expect no further communication from you regarding this unfortunate event.\nIf, however, you believe the curse has been cast by someone other than a student, or if any other complications arise we expect direct communication.\nLastly, the detection of any further curses will result in the immediate dispatchment of an auror to Hogwarts.\n\nCornelius Fudge,\nDepartment Head: Improper Use of Magic Office{/size}"
-    $ letter_curse_complaint_OBJ.label = "letter_curse_complaint"
+    if not hasattr(renpy.store,'letter_min_curses'): # Not in use anymore.
+        $ letter_min_curses = mail_letter_class()
+    $ letter_min_curses.text = "{size=-7}Dear Albus Dubmbledore, as we are sure you are aware, an unforgivable curse has been detected within the grounds of Hogwarts.\nWhile the punishment for such a curse is usually lifetime incarceration in the prison, Azkaban, we are allowing you to address this matter at your own discretion.\nThis is due to the possible nature of the spell being cast by a minor who has not fully grasped the serious nature of the curse.\nIf this is the case we expect no further communication from you regarding this unfortunate event.\nIf, however, you believe the curse has been cast by someone other than a student, or if any other complications arise we expect direct communication.\nLastly, the detection of any further curses will result in the immediate dispatchment of an auror to Hogwarts.\n\nCornelius Fudge,\nDepartment Head: Improper Use of Magic Office{/size}"
+    $ letter_min_curses.label = "letter_curse_complaint"
 
     if not hasattr(renpy.store,'letter_deck'):
         $ letter_deck = mail_letter_class()
@@ -360,3 +360,30 @@ init python:
             if self in letter_queue_list:
                 letter_queue_list.remove(self)
             return
+
+
+
+
+
+
+
+
+### Old Ministry Letter ###
+
+#LETTER FROM THE MINISTRY OF MAGIC
+#Dear Albus Dubmbledore, as we are sure you are aware,
+#an unforgivable curse has been detected within the grounds of Hogwarts.
+#While the punishment for such a curse is usually lifetime incarceration in the
+#prison, Azkaban, we are allowing you to address this matter at your own discretion.
+#This is due to the possible nature of the spell being cast by a minor who has not
+#fully grasped the serious nature of the curse. If this is the case we expect no further communication from
+#you regarding this unfortunate event. If, however, you believe the curse has been cast by someone other than a student,
+#or if any other complications arise we expect direct communication. Lastly, the detection of any further curses will
+#result in the immediate dispatchment of an auror to Hogwarts.
+
+#Cornelius Fudge,
+#Department Head: Improper Use of Magic Office
+
+#m "That doesn't sound good..."
+#m "Perhaps I should tell Snape about this."
+#m "Or maybe miss granger?"

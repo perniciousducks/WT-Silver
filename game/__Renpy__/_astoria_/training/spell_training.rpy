@@ -712,3 +712,62 @@ label astoria_lap_sit_2_3:
     call nar(">With a teasing look on her face, astoria hops off of your lap and out of your office.")
 
     return
+
+
+### Astoria Imperio Training ###
+
+label ag_st_imperio_intro:
+
+    ton "It's not uncommon for a student in your year to be taught curses..."
+    ton ""
+
+    ton "Now, I wasn't planning to"
+    ton "Under the supervision of a Hogwarts teacher"
+    ton "Or a Ministry Auror, as in my case..."
+
+    ton "Now, Astoria..."
+    ton "I would like you to hit me with a curse..."
+    ast "What?"
+    ton "There are ways to figh-off a curse even after you've been hit by it..."
+    ton "I'd like to put on a little demonstration to you, Miss Greengrass!"
+    ast "Really?"
+    ton "Yes- Go on. Hit me with any curse you want... I'm more than prepared for it."
+    ast "*Uhm*..."
+    ast "I actually don't know "
+    ton "I see..."
+    ton "What about the impero curse? You cast that one before..."
+    ton "Use it on me. And make me do something in front of Professor Dumbledore."
+    ast "I'll try..."
+
+label ag_st_imperio_E1:
+    # Tonks doesn't feel anything.
+    # Very quiet voice in her head appears.
+    # Astoria gives up.
+    # Tonks encourages her to try again.
+
+label ag_st_imperio_E2:
+    # Feels something tingling.
+    # Astoria gets annoyed.
+    # Tries even harder. Gets angry. Starts screaming.
+    # Tonks thinks it's funny.
+
+label ag_st_imperio_E3:
+    # Astoria is more confident this time.
+    # Tonks sais that she almost want to do the command.
+    # Atoria lightens up hearing that.
+    # Tonks encourages her more, but to no success.
+    # Next time it will be a success for sure!
+    # Astoria leaves. After she's left, Tonks tells you how she barely felt anything...
+
+label ag_st_imperio_E4:
+    # Tonks taught her Astoria a new trick on how to make the imperio curse be more potent.
+    # You need to charm the person you cast on. Compliment them. Flirt with them.
+    # Tonks makes it appear as if it works. Takes off her vest, and then shows her breasts.
+    # Astoria is getting cocky and demands Tonks to do more.
+    # Tonks refuses which makes Astoria even angrier.
+
+label ag_st_imperio_E5:
+    # Tonks strips in front of genie.
+    # She mostly did it to make Astoria look good.
+    # She wasn't really affected by the imperio curse, but she played along.
+    # She said it's not enough to harm a trained Auror, but it will be enough to be successful on a weak student.

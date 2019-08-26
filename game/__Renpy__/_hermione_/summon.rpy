@@ -425,7 +425,7 @@ label hermione_talk:
 
 
         # About Astoria.
-        "-Talk about the ministry letter-" if letter_curse_complaint_OBJ.read and not astoria_unlocked:
+        "-Talk about the ministry letter-" if letter_min_curses.read and not astoria_unlocked:
             #You tell Hermione about the curses.
             if snape_on_the_lookout: #Already talked to Snape.
                 $ hermione_finds_astoria = True

@@ -16,7 +16,7 @@ label desk:
                     g9 "Of course I will!"
 
             # First letter from Hermione
-            $ letter_from_hermione_A_OBJ.mailLetter()
+            $ letter_hg_1.mailLetter()
             $ letter = letter_queue_list[0]
 
             $ menu_x = 0.5
@@ -208,7 +208,7 @@ screen desk_menu():
         action Return("jerk_off")
 
     #Work
-    if letter_paperwork_unlock_OBJ.read:
+    if letter_min_work.read:
         imagebutton:
             xpos -10
             ypos 0
@@ -301,7 +301,7 @@ screen watch():
 
 ### PAPERWORK ###
 label paperwork:
-    if letter_paperwork_report_OBJ in letter_queue_list:
+    if letter_min_report in letter_queue_list:
         m "I need to get paid first."
         jump main_room
     else:

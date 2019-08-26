@@ -20,7 +20,7 @@ label summon_snape:
                 call snape_chitchat
 
             menu:
-                "-Talk about the ministry letter-" if letter_curse_complaint_OBJ.read and not astoria_unlocked:
+                "-Talk about the ministry letter-" if letter_min_curses.read and not astoria_unlocked:
                     #You tell Snape about the curses.
                     if hermione_on_the_lookout: #Already talked to Hermione.
                         $ hermione_finds_astoria = True

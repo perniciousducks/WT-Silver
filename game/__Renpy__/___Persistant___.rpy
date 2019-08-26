@@ -251,11 +251,11 @@ label update_early_game_vars: # Save compatibility
     $ hermione_intro.E5_complete = True
     $ hermione_intro.E6_complete = True
 
-    $ letter_from_hermione_A_OBJ.mailRead()
-    $ letter_from_hermione_B_OBJ.mailRead()
-    $ letter_paperwork_unlock_OBJ.mailRead()
-    $ letter_paperwork_report_OBJ.mailRead()
-    $ letter_favor_complaint_OBJ.mailRead()
+    $ letter_hg_1.mailRead()
+    $ letter_hg_2.mailRead()
+    $ letter_min_work.mailRead()
+    $ letter_min_report.mailRead()
+    $ letter_min_favors.mailRead()
 
     $ snape_unlocked = True
     $ achievement.unlock("unlocksna", True)

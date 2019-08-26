@@ -72,7 +72,7 @@ label day_start:
         $ day_of_week = 0
         if finished_report >= 1:
             call update_report_money
-            $ letter_paperwork_report_OBJ.mailLetter()
+            $ letter_min_report.mailLetter()
         if not first_random_twins:
             $ twins_interest = True
 

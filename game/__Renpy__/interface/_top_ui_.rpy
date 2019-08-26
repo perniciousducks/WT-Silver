@@ -153,7 +153,7 @@ screen ui_top_bar():
                     activate_sound "sounds/click3.mp3"
 
             # Work button
-            if letter_paperwork_unlock_OBJ.read:
+            if letter_min_work.read:
                 imagebutton:
                     idle "interface/topbar/buttons/"+str(interface_color)+"/ui_work.png"
                     if renpy.get_screen("main_room_menu"):
@@ -179,22 +179,22 @@ screen ui_top_bar():
 
         # if tooltip and persistent.tooltip and not renpy.variant('android'):
             # text "{color=#FFF}{size=+4}[tooltip]{/size}{/color}" xalign 0.5 text_align 0.5 ypos 540
-            
+
 screen mouse_tooltip():
     zorder 999
     tag tooltip
-    
+
     if persistent.tooltip and tooltip:
         python:
             x, y = renpy.get_mouse_pos()
             xval = 1.0 if x > config.screen_width/2 else .0
             yval = 1.0 if y > config.screen_height/2 else .0
-            
+
         frame:
             style_prefix "dropdown_gm"
             pos (x, y)
             anchor (xval, yval)
-            
+
             text tooltip color "#FFF" size 14
 
 screen ui_points():
@@ -375,7 +375,7 @@ label options_menu:
             jump day_main_menu
         "-Never mind-":
             jump day_main_menu
-            
+
 label bugfix_menu:
     menu:
         "-Reset Everyone's Appearance-":

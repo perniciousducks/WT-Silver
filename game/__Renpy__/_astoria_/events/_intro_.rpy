@@ -1,32 +1,152 @@
-#LETTER FROM THE MINISTRY OF MAGIC
-#Dear Albus Dubmbledore, as we are sure you are aware,
-#an unforgivable curse has been detected within the grounds of Hogwarts.
-#While the punishment for such a curse is usually lifetime incarceration in the
-#prison, Azkaban, we are allowing you to address this matter at your own discretion.
-#This is due to the possible nature of the spell being cast by a minor who has not
-#fully grasped the serious nature of the curse. If this is the case we expect no further communication from
-#you regarding this unfortunate event. If, however, you believe the curse has been cast by someone other than a student,
-#or if any other complications arise we expect direct communication. Lastly, the detection of any further curses will
-#result in the immediate dispatchment of an auror to Hogwarts.
-
-#Cornelius Fudge,
-#Department Head: Improper Use of Magic Office
-
-#m "That doesn't sound good..."
-#m "Perhaps I should tell Snape about this."
-#m "Or maybe miss granger?"
 
 
-#TELL HERMIONE ABOUT THE LETTER #Done
+### Astoria Intro ###
+
+label astoria_intro_E1:
+
+    # Tonks enters your office. Apparently Susan has been hit by an unforgivable curse.
+    # She informs you that it must have been a student, and that the situation is serious.
+    # Susan has shown her breasts to a bunch of other students unwillingly.
+    # Tonks questioned Susan after she got cursed, Susan didn't want to lift her top, but a pleasant inner voice told her. Definite signs of the Imperius curse.
+    # She tells you about the curses and what they do.
+    # She needs you to help find the culprit.
+    # She doesn't want the ministry to find out about it just as much as you.
+
+    stop music fadeout 1.0
+
+    # Tonks walks in.
+
+    ton "Good evening, [ton_genie_name]."
+    m "[tonks_name]..."
+    ton "Oh... I'm terribly sorry for bursting in like this!"
+    ton "I simply forgot to knock..."
+    m "What in the world got you so flustered?"
+    ton "We might be in big trouble, [ton_genie_name]!"
+
+    call play_music("playful")
+    g9 "Miss Tonks... Have you been a bad girl?"
+    ton "I'm not joking, [ton_genie_name]!"
+    ton "Something terrible has happened at school today!"
+    ton "I believe one of our students has conducted some highly-illegal activities against another student!"
+    ton "We have to take action! The last thing we need is for this to reach the Ministry's attention!"
+    m "So? Isn't it your task to cover that sort of stuff?"
+    ton "Yes, but..."
+    ton "Please, [ton_genie_name]! I can't cover this up all on my own!"
+    ton "I'll require your help..."
+    m "My help, you say?"
+    ton "Yes..."
+
+    menu:
+        m "(...)"
+        "\"How exactly can I help you?\"":
+            pass
+
+        "\"I'm busy right now...\"":
+            ton "Busy with what exactly?"
+            m "............."
+            ton "[ton_genie_name]?"
+            m "Please give me a minute,... I'm still thinking..."
+            ton "We don't have time for this!"
+            m "I have all the time in the world, darling..."
+            m "I'm immortal..."
+            ton "Could you please just listen to me?"
+
+        "\"What's in it for me?\"":
+            ton "Are you seriously asking me that?"
+            ton "If this doesn't get dealt with immediately, they'll have us both locked-up in a cell in Azkaban, do you hear me?!"
+            m "Loud and clear..."
+            m "I'll be locked up in a cell together with you..."
+            g9 "I can think of many fates worse than that, if I'm honest."
+            ton "Weren't you so scared of that very thing before?"
+            g9 "Not when I'm accompanied by someone as lovely as you!"
+            ton "................"
+            ton "You are clearly insane!" # Annoyed
+            ton "Fine. Tell me what you want so we can continue..."
+            m "Hmm..."
+
+            menu:
+                m "How about you..."
+                "\"Pull on my finger...\"":
+                    ton "I'm sorry?"
+                    g9 "Come on. It's an old trick we Genies like to do!"
+                    m "It's harmless, I swear..."
+                    ton "............."
+                    ton "Very well..."
+                    # Tonks walks over.
+                    # Blkfade.
+                    # Genie and Tonks stand behind the desk.
+                    g9 "Now pull it."
+                    ton ".................................."
+                    m "Try a bit harder..."
+                    ton ".............................................."
+                    g4 "Why isn't this working?!"
+                    m "(Oh, that's right...)"
+                    m "(I forgot we Genies are unable to fart...)"
+                    ton "Are we done here?"
+                    m "Want to give it one more try?"
+                    ton "I think not..."
+                    ton "I expected a bit more from a Genie... A magic-trick, perhaps?"
+                    m "I've told you, I can't do magic anymore..."
+                    ton "How very disappointing..."
+                    ton "I'm starting to have my doubts that you ever were a Genie..."
+                    ton "Anyhow, here is what I'll require your help with..."
+
+                "\"Blow me!\"":
+                    ton "Blow you? With my mouth?"
+                    m "Yes, please."
+                    ton "On your dick, I imagine?"
+                    g9 "Yes, if you would..."
+                    ton "Very well..."
+                    ton "Get it out for me, would you..." # Naughty look
+                    g9 "!!!"
+                    # Tonks walks over.
+                    # Blkfade.
+                    # Genie and Tonks stand behind the desk.
+                    # Genie has his dick in hand, jerking off.
+
+                    call nar("To your surprise, Tonks \"blows\" a gust of wind over \"your cock\"...")
+                    ton "There, all done."
+                    m ".............."
+                    ton "What? I did what you asked for... I blew your cock..."
+                    m "......................"
+                    ton "Now, could we get back to discuss what I came here for in the first place?"
+                    m "Fine. I know when I'm outwitted..."
+                    ton "I will suck your delicious cock some other time, [ton_genie_name]... I promise!"
+                    ton "But now, we simply don't have time to fool around, I'm afraid..."
+
+                "\"Give me a card.\"" if deck_unlocked:
+                    ton "A card, [ton_genie_name]?"
+                    g9 "\"Wizard cards!\" And I want a rare one!"
+                    ton "Why would you want a card?"
+                    m "Because I like to collect them..."
+                    m "I have more hobbies than just sex,...or drinking booze..."
+                    ton "*Huh*... You don't say..."
+                    ton "(Is he making fun of me?)"
+                    ton "Well, I don't have any cards on me at the moment..."
+                    if tonks_plays_cards: # Add correct variable.
+                        ton "Perhaps I could give you one of my \"doubles\" some other time..."
+                    else:
+                        ton "Some of my students play \"Wizard cards\"... maybe I could confiscate one of theirs..."
+                        m "And teach them a life-lesson to be more attentive of their possessions. Very good."
+                    ton "Very well, I'll send you an owl tomorrow morning."
+                    g9 "Sweet!"
+                    ton "Now, here is what I'll require your help with..."
+
+    ton "This girl I've told you about, Susan Bones?"
+
+    # Missing writing from "doc"
+
+    jump main_room
+
+
 label letter_intro_hermione:
-    m "I received a letter not too long ago."
-    call her_main("It's from the ministry of magic isn't it?!","shock","wide") #No xpos change.
-    call her_main("Did they get wind of my favour trading? Please don't tell me they--","disgust","worriedCl")
-    m "No no, the letter isn't about you..."
-    m "It \'is\' from the ministry of magic, however."
-    m "Apparently they've detected something called an \'unforgivable\' curse at the school."
-    call her_main("AN unforgivable CURSE!!!","scream","wide",trans="hpunch")
-    call her_main("AT out school?!","shock","wide_stare")
+    m "I require your help with something."
+    m "Tonks came by earlier and informed me about a student making a ruckus."
+    m "I- *uhm*...{w} She thought maybe you could be of help finding them?"
+    her "Of course, Sir."
+    m "Apparently a student got hit by an \"unforgivable curse\" here at the school."
+    call her_main("AN unforgivable CURSE!!!","scream","wide", trans="hpunch")
+    call her_main("AT our school?!","shock","wide_stare")
     call her_main("SOMEONE COULD BE DEAD!","scream","wideL")
     call her_main("OR TORTURED!!","disgust","worriedCl")
     call her_main("OR WORSE!!!","disgust","worriedL")
@@ -92,21 +212,26 @@ label letter_intro_hermione:
 
 #TELL SNAPE ABOUT THE LETTER #Done
 label letter_intro_snape:
-    m "I got some letter from the ministry of magic..."
+    m "Tonks came by earlier and informed me about one of your students causing trouble."
     call sna_main("Really?","snape_03") #No xpos change.
     call sna_main("Why are you telling me?","snape_04")
-    m "Apparently they've detected something called an \'unforgivable\' curse at the school..."
+    m "Apparently she's detected something called an \'unforgivable\' curse being cast at the school..."
     call play_sound("scratch")
     call sna_main("","snape_11")
     with hpunch
     pause.2
+
     call sna_main("Shit... this isn't good...","snape_08")
-    m "And if they detect another one they're going to send an \'auror\' or something."
+    m "She worries that the ministry might find out about it if we don't do anything."
     call sna_main("This really isn't good...","snape_07")
     m "Why, are the curses that bad?"
-    call sna_main("Forget about the damn curses, if they send an auror here they might find out what we've been doing.","snape_10")
-    m "What?"
-    call sna_main("THe favour trading! Fucking our students isn't something teachers are supposed to do genie!","snape_25")
+    call sna_main("If they send an auror here they might find out what we've been doing!","snape_10")
+
+    m "Didn't they already do that?"
+    sna "We've got lucky with Tonks, but if they were to send another Auror investigating the curses."
+    sna "They might get wind of all the favour trading that we've been doing as well."
+    call sna_main("Fucking our students isn't something teachers are supposed to do genie!","snape_25")
+    sna "We can't risk receiving any more attention on the matter."
     call sna_main("If an auror finds out what's going on here we're both going to Azkaban!","snape_16")
     m "so what are we going to do?"
     call sna_main("We'll just have to make sure that no more curses are cast...","snape_01")
@@ -117,15 +242,22 @@ label letter_intro_snape:
     m "So you want me to launch a manhunt?"
     call sna_main("Are you crazy? We can't let anyone know what's happened. All the students will panic thinking someone's been murdered...","snape_16")
     call sna_main("It's probably just an imperio or crucio that's been cast.","snape_24")
-    call sna_main("I'll start the search immediately. In the mean time, just stay here and keep yourself busy.","snape_10")
+    call sna_main("I'll start the search immediately. In the meantime, just stay here and keep yourself busy.","snape_10")
     m "You don't want my help?"
-    call sna_main("Not really... With how potent your magic is you'll probably just attract more attention from the ministry and then they'll definitely send an auror.","snape_03")
-    call sna_main("Don't worry Genie, I'll find that student in no time.","snape_02")
+    call sna_main("Not really... me and Tonks should be able to find that student in no time.","snape_02")
+    if hermione_on_the_lookout:
+        m "And Granger..."
+        sna "Have you told her about this?!"
+        m "Sure... She seemed eager to help."
+        sna "Of course she did..."
+        sna "(You bloody fool...)"
+
+    call sna_main("Don't worry, I'll find that student in no time. You shall see...","snape_02")
 
     call sna_walk(action="leave", speed=2)
 
     call bld
-    m "Drama queen..."
+    m "What a drama queen..."
 
     jump main_room
 
@@ -198,6 +330,20 @@ label astoria_captured_intro:
     call her_main("Not a chance!","scream","angryCl")
     m "Miss granger..."
     call her_main("professor! I think it's only fair, given that I was the one to catch her!","upset","annoyed")
+
+    # Tonks, Astoria, and Hermione are in your room.
+    ton "I'll have to thank you for your help some day, Miss Granger."
+    her "Oh, any time, Miss Tonks!"
+
+    # Hermione asks for points.
+    menu:
+        "\"You'll get 20.\"":
+            pass
+        "\"Not now, Miss Granger...\"":
+            pass
+
+
+
     m "We'll talk about your reward later..."
     call her_main("*hmph*","annoyed","angryL")
     call her_main("Fine...","open","angryCl")
@@ -326,79 +472,25 @@ label astoria_captured_intro:
 
 #TONKS AUROR INTRO #Done
 label tonks_intro_event: #occurs a day or two after the last event
-    call play_sound("knocking")
-    "*knock* *knock* *knock*"
 
-    m "Ugh..."
-    m "Who is it?"
-    ton "Tonk-"
-    ton "Ugh-"
-    ton "(...)"
-    ton "Nymphadora Tonks, sir."
-    ton "I've been sent by the ministry of magic."
-    m "(Shit, another female... Is Snape the only dude on this forsaken planet?)"
-    g9 "(Better to just let my charm play...)"
-    m "Yes... come in."
+    #call ton_main("Fantastic, that saves me most of the effort involved with divination and location spells.","open","base","base","mid")
 
-    call play_sound("door")
-    call ton_main("","base","base","base","mid",xpos="right",ypos="base")
-    call ctc
-
-    g4 "(Holy shit!)"
-    g9 "(She's hot!)"
-    call ton_main("Thank you sir... I assume you know why I'm here then?","open","base","base","mid")
-    m "The curses, I'd imagine."
-    call ton_main("Yes. As I'm sure you're aware, it's ministry protocol to have an auror investigate every instance of an unforgivable curse being cast.","open","base","raised","R")
-    call ton_main("The ministry was willing to ignore one curse given the likelihood that it was just a student playing about...","open","base","worried","down")
-    call ton_main("Two curses on the other hand, cannot be ignored.","open","base","raised","mid")
-    m "I understand..."
-    call ton_main("Well, first things first, do you know who it was that cast the spells?","base","base","raised","mid")
-    m "I do."
-    call ton_main("Fantastic, that saves me most of the effort involved with divination and location spells.","open","base","base","mid")
-    call ton_main("Secondly, are you aware of what spell was cast?","base","base","raised","mid")
-    m "(Shit... what was it called again?)"
-
-    menu:
-        "\'Imperio\'":
-            call ton_main("I thought as much.","base","base","worried","R")
-        "\'Imperial\'":
-            call ton_main("Do you mean imperio sir?","base","base","raised","mid")
-            m "Yes of course, forgive me..."
-        "\'Imp Pio?\'":
-            call ton_main("...","base","base","raised","mid")
-            call ton_main("This is a serious matter sir, I'd prefer if you kept the jokes to a minimum.","open","base","angry","mid")
-            m "certainly..."
 
     call ton_main("Well, I'm not surprised, It usually is Imperio.","open","base","worried","R")
     call ton_main("Most students don't have the guts to cast crucio on another person,...","open","base","worried","mid")
     call ton_main("Let alone Avada Cadavara...","open","wide","wide","wide")
-    call ton_main("And lastly, are you aware who the curse was cast on?","open","base","worried","mid")
-    m "I am."
-    call ton_main("If you wouldn't mind...","base","base","raised","mid")
-    m "Susan Bon--"
-    call ton_main("Susan Bones!","open","wide","wide","wide",trans="hpunch")
-    m "Is there something wrong?"
 
-    show screen blktone
-    call ton_main("Of course there's something wrong!","open","wide","angry","wide")
-    call ton_main("Susan's my niece!","open","base","angry","mid")
-    call ton_main("And you just let her have an unforgivable curse cast on her?","open","base","angry","mid")
-    call ton_main("Aren't you supposed to protect your students from these sort of things?","open","base","angry","mid")
-    m "There's only so much I can do-"
-    call ton_main("Typical! You're just like the ministry, never willing to take responsibility for your failings.","open","base","angry","R")
+
+
     call ton_main("At least bring the son of a bitch who cursed my niece up here so I can escort them to Azkaban.","open","base","angry","mid")
     m "Azkaban? I thought that I was being put in charge of their punishment?"
     call ton_main("That was before I found out who it was that had been cursed, Dumbledore!","open","base","base","mid")
+
+
+
     call ton_main("Now they're going to be punished to the full extent of the law.","open","wide","angry","wide")
-    call ton_main("Which means a lifetime sentence in Azkaban!","open","base","raised","mid")
-    m "..."
-    call ton_main("Well are you going to bring them up here or not?","open","base","angry","mid")
-    m "I really don't think-"
-    call ton_main("I don't care if it was Harry {b}fucking{/b} Potter himself that did it, they're going to Azkaban!","open","base","angry","mid")
-    call ton_main("so... Bring. {size=+2}them. {size=+2}up. {size=+2}here!..","open","base","angry","mid")
-    call ton_main("{size=+5}now!{/size}","open","base","angry","mid",trans="hpunch")
-    m "alright..."
-    call blkfade
+
+
 
     ">You summon Astoria up to your office."
     pause.5
@@ -408,11 +500,12 @@ label tonks_intro_event: #occurs a day or two after the last event
     call ast_main("","upset","base","worried","R",xpos="mid",ypos="base",trans="fade")
     pause.8
 
-    call ast_main("Hello professor.","upset","closed","base","mid")
-    call ton_main("...","base","base","raised","L",xpos="base",ypos="base")
-    call ast_main("Hello, ma'am.","pout","base","worried","R")
-    call ton_main("H-hello...","open","base","raised","L")
-    call ast_main("You wanted to see me sir?","pout","narrow","base","down")
+    call ast_main("Professor...","base","base","base","mid")
+    call ton_main("Astoria?!","base","base","raised","L",xpos="base",ypos="base") # Shocked
+    call ast_main("Ma'am.","base","base","base","mid")
+    call ton_main("(O shit!)","open","base","raised","L")
+
+    call ast_main("You wanted to see me sir?","base","base","base","mid")
     m "I'm afraid not, it was actually Miss Tonks here who wanted you brought up here."
     call ast_main("Oh...","upset","base","worried","down")
     call ast_main("Is everything alright?","worried","wink","worried","R")
@@ -996,69 +1089,10 @@ label astoria_tonks_intro: #occurs after you get the book from Snape
     call ton_main("Are you fucking your students Dumbledore?","open","base","angry","mid")
     call ton_main("Or are you just covering up for the other teachers here?","base","base","raised","mid")
 
-    menu:
-        "-lie-":
-            m "I'd never allow--"
-        "-tell the truth-":
-            m "It all started--"
 
-    call ton_main("I don't care, either way you're going to Azkaban for the rest of your life...","open","base","angry","mid")
-    m "*gulp*"
-    call ton_main("Unless...","open","base","raised","R")
-    m "Unless what?"
 
-    call play_music("hermione_theme")
-    call ton_main("Do you have an opening for a defense against the dark arts teacher?","open","base","worried","mid")
-    m "..."
-    m "What?"
-    call ton_main("Ugh... You can't think I like being an auror do you?","base","base","worried","R")
-    call ton_main("It's just constant busy work...","open","base","angry","mid")
-    call ton_main("Not to mention the hours.","open","base","base","up")
-    call ton_main("And the mortality rate...","open","base","worried","down")
-    call ton_main("If I'd realized the benefits of being a teacher at hogwarts, I would have signed up straight away!","open","base","angry","mid")
-    m "Benefits?"
-    m "You mean the favour trading?"
-    call ton_main("No, I mean the health care... Of course I mean the favour trading, Dumbledore!","open","base","raised","mid")
-    call ton_main("I always assumed that you and Snape wouldn't allow holding hands in the corridors...","open","base","base","mid")
-    call ton_main("But if you're playing around with your students...","base","base","base","mid")
-    call ton_main("Well let's just say I want in.","horny","base","raised","mid")
-    m "(...)"
 
-    g9 "You are hired!"
-    m "Consider yourself the new defense of the ancients teacher or whatever..."
-    call ton_main("What about Quirrel?","open","base","raised","mid")
-    m "Who?"
-    call ton_main("The current defense against the dark arts professor...","open","base","base","R")
-    m "Oh yeah... I'll get Snape to deal with him..."
-    call ton_main("So Snape is in on this too?","open","base","raised","mid")
-    m "Yeah..."
-    call ton_main("Huh... I didn't think that sad sack even knew what fun was...","base","base","raised","R")
-    call ton_main("So what's the going rate around here then?","open","base","base","mid")
-    m "Going rate?"
-    call ton_main("How much do you pay your students to fool around?","base","base","base","mid")
-    m "Oh... It depends on what you want them to do."
-    call ton_main("How much for a lap dance?","horny","base","raised","mid")
-    m "Again, it depends on the student."
-    call ton_main("...","base","base","base","mid")
-    m "But if I had to guess, I'd say about 25 points."
-    call ton_main("Wait...","open","wide","wide","wide")
-    call ton_main("You pay them in points?","open","base","raised","mid")
-    m "Most of them."
-    call ton_main("So you've managed to convince these girls to offer themselves up for a bunch of imaginary points that don't mean anything?","open","base","angry","mid")
-    m "Works for the internet..."
-    call ton_main("What?","base","base","angry","mid")
-    m "Anyway, you can't just ask for a lap dance straight away, You have to butter them up first."
-    call ton_main("How so?","base","base","raised","mid")
-    m "Well most of them aren't going to just do whatever you say from the get go..."
-    m "You have to slowly earn their trust over time and start out small..."
-    call ton_main("Awww really... Can't I just cheat a bit?","open","base","worried","L")
-    m "..."
-    m "Just take it slow alright, I'm sure you'll find a cute boy who'll be willing to do whatever you want anyway."
-    call ton_main("...And what if I want a girl?","horny","base","raised","mid")
-    g4 "(...!)"
-    m "Whatever floats your boat."
-    call ton_main("Well what if I want a specific girl?","base","base","raised","mid")
-    m "which one?"
+
     call ton_main("Astoria Greengrass.","horny","base","angry","mid")
     m "Astoria? Isn't she a little too--"
     call ton_main("She's perfect! She's just so cute and innocent... I can't wait to gobble her up!","horny","base","worried","mid")

@@ -13,7 +13,7 @@ label tonks_hangout:
     $ nt_he_drink.start()
 
     label tonks_hangout_continue:
-        hide sceen bld1
+        hide screen bld1
         with fade
         call bld
 

@@ -1,4 +1,11 @@
 label open_gallery():
+    $ hide_transitions = True
+    # Styling
+    if daytime:
+        $ btn_hover = "#edc48240"
+    else:
+        $ btn_hover = "#7d75aa40"
+        
     # Door dictionary
     $ character_info = {
         "All": {"ico": "head_hermione_2_locked", "flag": True, "active": False, "activity": ""},
@@ -9,14 +16,14 @@ label open_gallery():
         "Astoria": {"ico": "head_astoria_2", "flag": astoria_wardrobe_unlocked, "active": False, "activity": ""},
         "Susan": {"ico": "head_susan_2", "flag": susan_wardrobe_unlocked, "active": False, "activity": ""}
     }
-    $ sorting_modes = ["newest", "Best this month", "Best ever", "Least amount of votes"]
+    $ sorting_modes = ["newest", "Best this month", "Best ever", "Least voted"]
     $ select_sorting = 0
     $ outfits_displayed = 3
     $ loadet_gallery = []
     $ cached_outfits = {}
-    $ sorting_list =[]
+    $ sorting_list = []
     $ gallery_page = 0
-    $ month_in_sec = 60*60*24*7*4
+    $ month_in_sec = 2419200 #60*60*24*7*4 
     label gallery_reapet():
     
     show screen gallery_outfits(character_info, loadet_gallery)

@@ -13,7 +13,7 @@ label snape_hangout:
     $ ss_he_drink.start()
 
     label snape_hangout_continue:
-        hide sceen bld1
+        hide screen bld1
         show screen with_snape # No animation.
         with fade
         call bld

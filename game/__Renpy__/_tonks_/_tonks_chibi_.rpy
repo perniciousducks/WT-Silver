@@ -274,7 +274,19 @@ init python:
                 ton_chibi_top = imagepath+"nt_top"+animation+status+".png" if animation else imagepath+"nt_top.png"
 
             if tonks_class.get_worn("bottom"):
-                ton_chibi_bottom = imagepath+"nt_trousers"+animation+status+".png" if animation else imagepath+"nt_trousers.png"
+                if tonks_class.get_cloth("bottom").subcat == "trousers":
+                    if not status == "_move":
+                        ton_chibi_bottom = imagepath+"nt_trousers"+animation+".png"
+                    else:
+                        if animation:
+                            ton_chibi_bottom = imagepath+"nt_trousers"+animation+status+".png"
+                        else:
+                            if status == "_move":
+                                ton_chibi_bottom = "ch_ton trousers"
+                            else:
+                                ton_chibi_bottom = imagepath+"nt_trousers.png"
+                else:
+                    ton_chibi_bottom = imagepath+"nt_skirt"+animation+status+".png" if animation else imagepath+"nt_skirt.png"
 
             if tonks_class.get_worn("gloves"):
                 ton_chibi_gloves = imagepath+"nt_gloves"+animation+status+".png" if animation else imagepath+"nt_gloves.png"

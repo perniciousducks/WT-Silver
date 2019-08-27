@@ -1,62 +1,7 @@
-#Night Start.
 label night_start:
-    call play_music("night_theme")
-    show screen blkfade
-
-    #    $ renpy.set_style_preference("dialog", "Night")
-    # $ textColor = "#1e1008"
-
     $ daytime = False
-    $ interface_color = "gray"
-
-    $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
-    $ save_name = temp_name
-
-    ###RESET STUFF
-    call room(hide_screens=True)
-
-    call reset_day_and_night_flags
-
-    # Hermione
-    call reset_hermione
-
-    #Luna
-    call reset_luna
-
-    #Astoria
-    call update_astoria
-
-    #Susan
-    call update_susan
-
-    #Cho
-    call update_cho
-
-    #Tonks
-    call update_tonks
-
-    #Snape
-    call update_snape
-
-    #Genie
-    call update_genie
-
-
-    scene black
-
-    ### WEATHER ###
-    stop bg_sounds #Stops playing the fire SFX.
-    stop weather #Stops playing the rain SFX.
-    $ show_weather()
-
-    call room("main_room", hide_screens=False) #Screens already get hidden above.
-
-    hide screen blkfade
-    with fade
-
-    call points_changes # Calculates points
-    call house_points   # Updates points
-
+    
+    call common_start
 
     ### NIGHT EVENTS ###
 
@@ -65,11 +10,12 @@ label night_start:
 
     label night_resume:
 
-    # Owl
-    if letter_queue_list != [] and not owl_away:
-        call play_sound("owl")
-        show screen owl
-        with d3
+    # Owl is already handled by common_start -> room()
+    # # Owl
+    # if letter_queue_list != [] and not owl_away:
+    #     call play_sound("owl")
+    #     show screen owl
+    #     with d3
 
     # Favors
     python:

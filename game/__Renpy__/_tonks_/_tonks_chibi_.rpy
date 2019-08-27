@@ -8,7 +8,7 @@ label ton_chibi(action = "", xpos=ton_chibi_xpos, ypos=ton_chibi_ypos, flip=Fals
 
     if xpos != ton_chibi_xpos:
         if xpos == "mid":
-            $ ton_chibi_xpos = 560
+            $ ton_chibi_xpos = 540 # 560
         elif xpos in ("wardrobe","center","base","default"): #Don't use these when there are other chibis around (like Hermione's). Use "mid" instead.
             $ ton_chibi_xpos = 530
         elif xpos == "desk":

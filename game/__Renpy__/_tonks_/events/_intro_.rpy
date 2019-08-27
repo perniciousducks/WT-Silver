@@ -35,8 +35,10 @@ label tonks_intro_E1:
     menu:
         m "(Should I let her in?)"
         "\"Please, come on in.\"":
+            call bld
             g9 "(Better to just let my charm play...)"
         "\"Not right now.\"":
+            call bld
             ton "But, Sir."
             ton "I've traveled half the country just to get here."
             m "........................."
@@ -48,12 +50,25 @@ label tonks_intro_E1:
             ton "Sir?"
             m "*Uhm* Yes, you may enter..."
 
-    call play_sound("door")
-    call sna_chibi("stand","mid","base")
     #Tonks walks in
-    show screen tonks_chibi_large(xx=470, yy=265)
+    call bld("hide")
+    pause.2
+
+    call play_sound("door")
+    call ton_chibi("stand","door","base")
+    call chibi_effect(action="hearts", chibi="Tonks")
     with d3
-    call ctc
+    pause.5
+
+    call chibi_effect(action="hide")
+    with d3
+    pause.1
+
+    call bld
+    m "*hmmm?*..."
+
+    call ton_walk(xpos="mid", ypos="base", speed=2.5)
+    pause.5
 
     call ton_main("Thank you, Professor.","base","base","base","mid", xpos="right", ypos="base")
     m "(Oh shit, she’s hot...)"
@@ -201,8 +216,7 @@ label tonks_intro_E1:
     call ton_main("Good day, Sir.","base","base","base","mid")
 
     # Tonks leaves.
-    call play_sound("door")
-    call hide_characters
+    call ton_walk(action="leave", speed=2)
 
     call bld
     m "This can't be good..."

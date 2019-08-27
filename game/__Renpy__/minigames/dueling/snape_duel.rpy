@@ -97,7 +97,7 @@ label duel_main:
 screen duel_buttons():
     zorder 3
 
-    imagebutton: # tease 
+    imagebutton: # tease
         xpos 726
         yalign 1.0
         focus_mask True
@@ -153,7 +153,7 @@ screen duel_buttons():
 label main_tease:
     $ in_action = True
     $ blocking = False #To stop the game treating Genie as being in a block stance.
-    
+
     if not used_tease:
         $ used_tease = True
         call nar("You turn around and start shaking your buttocks violently.")
@@ -384,7 +384,7 @@ label potion:
     pause.5
 
     $ duel_OBJ.hide("heal_02")
-    
+
     jump snapes_turn
 
 
@@ -477,7 +477,7 @@ screen hp_bar():
     add "images/dueling/snape/hp_bar_11.png" #Black background for HP bar.
     add "images/dueling/snape/hp_bar_12.png" xpos int((snape_max_hp-snape_hp)/(snape_max_hp/727.0)) ypos 0
     add "images/dueling/snape/hp_bar_10.png" #Snape avatr pic.
-    
+
     use duel_buttons
 
 
@@ -513,7 +513,7 @@ label genie_lost:
     menu:
         "-Try again-":
             stop music
-            $ renpy.play('sounds/glass_break.mp3') #Sound of a door opening.
+            $ renpy.play('sounds/glass_break.mp3')
             play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1
             hide screen cg
             if rum_times <= 1: # Give a healing potion for bad players

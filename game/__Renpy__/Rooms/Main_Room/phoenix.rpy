@@ -4,20 +4,23 @@ label phoenix:
             jump open_gallery
         "Lootbox":
             jump card_lootbox
+        "Never Mind":
+            pass
+
     if not bird_examined:
         $ bird_examined = True
         hide screen genie
         call gen_chibi("stand","mid","base",flip=True)
         show screen chair_left #Empty chair near the desk.
         show screen desk
-        with Dissolve(0.5)
+        with d5
         m "Hm....."
         m "Even this weird looking bird radiates magic..."
         show screen genie
         hide screen genie_stand
         hide screen chair_left #Empty chair near the desk.
         hide screen desk
-        with Dissolve(0.5)
+        with d5
         jump day_main_menu
 
     if not phoenix_is_fed:

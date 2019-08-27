@@ -259,7 +259,7 @@ label hg_pf_blowjob_T1_repeat:
 
 label hg_pf_blowjob_T2_intro_E1:
     call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
-    
+
     "Dev Note" "This even is missing an intro (T2 E1)"
 
     jump hg_pf_blowjob_2
@@ -826,7 +826,7 @@ label hg_hidden_blowjob_luna:
     m "Quiet, [hermione_name]! Unless you want to be noticed..."
 
     #Luna comes in
-    call play_sound("door") #Sound of a door opening.
+    call play_sound("door")
 
     call lun_walk("door","mid",3)
 
@@ -994,7 +994,7 @@ label hg_hidden_blowjob_tonks:
     m "*Shhhhsh*... Keep your voice down..."
 
     #Tonks comes in
-    call play_sound("door") #Sound of a door opening.
+    call play_sound("door")
 
     #call ton_walk("door","mid",3)
 

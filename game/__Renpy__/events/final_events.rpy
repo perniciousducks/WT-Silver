@@ -209,7 +209,7 @@ label ball_quest_E1:
                     pause.5
 
                     call chibi_effect("hide")
-                    $ renpy.play('sounds/09_lock.wav') #Sound of a door opening.
+                    $ renpy.play('sounds/09_lock.wav')
                     pause.4
 
                     call her_chibi("stand","door","base")

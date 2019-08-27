@@ -30,6 +30,7 @@ label hermione_intro_E1:
         m "..."
         "\"Who is it?\"":
             $ d_flag_01 = True
+            call bld
             who "It's me, professor..."
             who "Hermione Granger. Can I come in?"
             m "{size=-4}(It's that wretched woman who's been harassing me with her letters lately...){/size}"
@@ -37,6 +38,7 @@ label hermione_intro_E1:
             menu:
                 m "..."
                 "\"Go away, please. I'm busy.\"":
+                    call bld
                     her "But, professor, I really need to talk to you..."
                     m "..........................................."
                     her "Professor? I'm coming in!"
@@ -47,11 +49,13 @@ label hermione_intro_E1:
         "\"Come in!\"":
             pass
         "\"Go away!\"":
+            call bld
             who "But, professor, I really need to talk to you..."
             m "..........................................."
             who "Professor? I'm coming in!"
             m "{size=-4}(Crap...){/size}"
         "\"................\"":
+            call bld
             who "Professor, are you there?"
             m "{size=-4}(Go away...){/size}"
             who "Professor, I really need to talk to you..."
@@ -59,13 +63,15 @@ label hermione_intro_E1:
             her "Professor? I'm coming in!"
             m "{size=-4}(Crap...){/size}"
 
+    call bld("hide")
     pause.2
-    call play_sound("door") #Sound of a door opening.
 
+    call play_sound("door")
     call her_chibi("stand","door","base")
     with d3
     pause.5
 
+    call bld
     if d_flag_01:
         m "{size=-3}(A girl?){/size}"
     else:

@@ -1,20 +1,7 @@
 
 
-screen with_tonks_animated():
-    tag tonks_chibi
-    add "genie_toast_goblet" at Position(xpos=435, ypos=200)
-    add "snape_toast_goblet" at Position(xpos=618, ypos=200) # TODO: Add correct Chibi images.
-
-    zorder 3
-
-screen tonks_chibi_large(xx=nxpos, yy=nypos):
-    tag tonks_chibi
-    add "characters/tonks/chibis/nt_walk_large.png" xpos xx ypos yy zoom (1.0/scaleratio)
-    zorder 3
-
-
-
 ### Tonks Chibi ###
+
 label ton_chibi(action = "", xpos=ton_chibi_xpos, ypos=ton_chibi_ypos, flip=False, animation=False):
     $ ton_chibi_status = ""
     $ update_chibi_image("tonks")
@@ -101,7 +88,7 @@ label ton_walk(xpos=walk_xpos, ypos=walk_ypos, speed=ton_speed, action="", loite
 
     # Target location.
     if xpos == "mid":
-        $ walk_xpos2 = 560
+        $ walk_xpos2 = 540 # 560
     elif xpos == "desk":
         $ walk_xpos2 = 440
     elif xpos == "door":
@@ -152,6 +139,7 @@ label ton_walk(xpos=walk_xpos, ypos=walk_ypos, speed=ton_speed, action="", loite
 
     return
 
+
 label ton_walk_end_loiter(dissolveTime = 3):
     if dissolveTime > 0:
         hide screen ton_stand
@@ -163,6 +151,7 @@ label ton_walk_end_loiter(dissolveTime = 3):
 
 
 ### TONKS CHIBI SCREENS ###
+
 screen ton_stand():
     tag ton_chibi
     zorder ton_chibi_zorder
@@ -180,6 +169,7 @@ screen ton_stand():
         add ton_chibi_gloves     xpos ton_chibi_xpos ypos ton_chibi_ypos xzoom ton_chibi_flip zoom (1.0/scaleratio)
         if ton_cloth_pile:
             add "characters/chibis/cloth_pile_r.png" xpos ton_pile_xpos ypos ton_pile_ypos
+
 
 screen ton_walk():
     tag ton_chibi
@@ -204,6 +194,12 @@ screen ton_walk():
         add "characters/chibis/cloth_pile_r.png" xpos ton_pile_xpos ypos ton_pile_ypos
 
 
+screen with_tonks_animated():
+    tag tonks_chibi
+    add "genie_toast_goblet" at Position(xpos=435, ypos=200)
+    add "snape_toast_goblet" at Position(xpos=618, ypos=200) # TODO: Add correct Chibi images.
+
+    zorder 3
 
 init python:
     # Temporal function

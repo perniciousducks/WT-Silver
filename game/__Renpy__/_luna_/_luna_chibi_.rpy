@@ -130,7 +130,7 @@ label lun_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = her_speed, action = 
         #hide screen luna_run_f
         hide screen luna_walk_f
         if pos2 == "leave":
-            call play_sound("door") #Sound of a door opening.
+            call play_sound("door")
             with d3
             pause.5
         if loiter:

@@ -169,25 +169,15 @@ label give_reward(text="",gift="", sound=True):
     else:
         $ the_gift = "interface/icons/box_blue_2.png"
 
-    $ menu_x = 0.5
-    $ menu_y = 0.75 #makes the menu lower so it isn't writing over the image.
-
-    $ reward_text = text
-
     show screen gift
     show screen blktone5
     with d3
 
-    menu:
-        "[reward_text]"
-        "-Done Reading-":
-            pass
+    "[text]"
 
     hide screen gift
     hide screen blktone5
     with d3
-
-    call reset_menu_position
 
     return
 
@@ -307,20 +297,20 @@ screen duel_damage(value=0, attacking=True):
         style "empty"
         at damage_transform
         if attacking:
-            xpos 780 
+            xpos 780
             ypos 120
         else:
             xpos 450
             ypos 120
         add "images/dueling/damage/"+str(value)+".png"
-        
+
 screen duel_heal(value=300, player=True):
     tag damage
     frame:
         style "empty"
         at damage_transform
         if not player:
-            xpos 780 
+            xpos 780
             ypos 120
         else:
             xpos 450
@@ -427,10 +417,10 @@ label get_chibi_position(char=None):
         $ chibi_xpos   = sna_chibi_xpos
         $ chibi_ypos   = sna_chibi_ypos
         $ chibi_zorder = sna_chibi_zorder
-    #elif char == "tonks":
-    #    $ chibi_xpos   = ton_chibi_xpos
-    #    $ chibi_ypos   = ton_chibi_ypos
-    #    $ chibi_zorder = ton_chibi_zorder
+    elif char == "tonks":
+        $ chibi_xpos   = ton_chibi_xpos
+        $ chibi_ypos   = ton_chibi_ypos
+        $ chibi_zorder = ton_chibi_zorder
 
     elif char == "hermione":
         $ chibi_xpos   = her_chibi_xpos
@@ -483,6 +473,8 @@ label chibi_effect(action=None, chibi=None):
         show screen emo_sad
     elif action == "hoot":
         show screen emo_hoot
+    elif action == "hearts":
+        show screen emo_hearts
 
     with d3
 
@@ -508,11 +500,17 @@ screen emo_hoot():
     add "hoot" xpos chibi_xpos ypos chibi_ypos
     zorder chibi_zorder+1
 
+screen emo_hearts():
+    tag emo
+    add "characters/emotes/animated/heart_01.png" xpos chibi_xpos-60 ypos chibi_ypos+90 zoom (1.0/scaleratio) # Offset numbers so it's to the left of the chibi head.
+    zorder chibi_zorder+1
+
 label hide_chibi_effects:
     hide screen emo_thought
     hide screen emo_exclamation
     hide screen emo_sad
     hide screen emo_hoot
+    hide screen emo_hearts
 
     return
 

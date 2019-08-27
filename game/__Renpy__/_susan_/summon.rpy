@@ -3,7 +3,7 @@
 
 label summon_susan:
 
-    call play_sound("door") #Sound of a door opening.
+    call play_sound("door")
 
     call load_susan_clothing_saves
 

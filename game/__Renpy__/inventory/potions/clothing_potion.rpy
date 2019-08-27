@@ -50,7 +50,7 @@ label potion_scene_4: #Transparent uniform
 
 label potion_scene_4_2: #Scene where Hermione comes back after classes angry and confused at having her uniform made transparent
     $ transparent_quest = False
-    call play_sound("door") #Sound of a door opening.
+    call play_sound("door")
     call her_chibi("stand","mid","base")
 
     show screen bld1

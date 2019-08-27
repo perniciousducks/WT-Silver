@@ -18,7 +18,7 @@ label hermione_random_clothing:
 
         call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
-        call her_main("","base","base",xpos="mid",ypos="base")
+        call her_main("","base","base", xpos="mid", ypos="base")
         call ctc
 
         m "(...)"
@@ -58,18 +58,70 @@ label hermione_random_clothing:
         call her_main("Is it ok if we could start right away with the lessons?","soft","base")
         m "Well... Of course..."
 
-        call her_main("","base","base",xpos="base",ypos="base",trans="fade")
+        call her_main("","base","base", xpos="base", ypos="base",trans="fade")
 
         return
 
-    # Rainy and Thundery Weather.
-    if weather_gen >= 5:
+    # weather_gen 1-3   = good weather
+    # weather_gen 4     = cloudy weather
+    # weather_gen 5-6   = bad weather
+    # raining           = bool
+    # snowing           = bool
+    # blizzard          = bool
+    # storm             = bool
 
-        if random_number in [1,2,3,4,5]: #50% chance
+    # Sunny
+    if weather_gen in [1]:
 
-            #One time event.
-            if not hg_accs_wool_g_ITEM.unlocked and not hermione_door_event_happened:
-                $ hg_accs_wool_g_ITEM.unlocked = True
+        if her_tier >= 3 and daytime and not hg_muggle_hot_ITEM.unlocked:
+            $ hg_muggle_hot_ITEM.unlocked = True
+
+            if not persistent.game_complete:
+                $ hermione_door_event_happened = True #Hermione won't greet you again.
+
+                $ hermione_wear_neckwear    = False
+                $ hermione_wear_gloves      = False
+                $ hermione_wear_stockings   = True
+                $ h_top = "top_frilled_1"
+                $ h_bottom = "pants_jeans_short"
+                $ h_stockings = "stockings_cute"
+
+                call update_her_uniform
+                call her_chibi("stand","mid","base")
+
+                pause.2
+                call her_main("","base","base", xpos="base", ypos="base")
+                call ctc
+
+                g4 "(Wow! Look at her!)"
+                g9 "That's quite a sexy outfit, [hermione_name]!"
+                if her_whoring < 11:
+                    call her_main("Uhm... Thank you, [genie_name].","soft","baseL")
+                    call her_main("I normally don't wear something like this.","open","base")
+                    call her_main("(Showing so much cleavage...)","disgust","down",cheeks="blush")
+                    call her_main("But the weather is just too hot today.","base","baseL")
+                    g9 "You should wear this more often!"
+                else:
+                    call her_main("Thank you, [genie_name].","base","glance")
+
+            else:
+                call update_her_uniform
+                call her_chibi("stand","mid","base")
+                pause.2
+                call her_main("","base","base", xpos="base", ypos="base")
+
+            #Unlocks rewards.
+            call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_hot_ITEM)
+
+
+    # Cloudy
+    if weather_gen in [4]:
+
+        #One time event.
+        if not hg_accs_wool_g_ITEM.unlocked:
+            $ hg_accs_wool_g_ITEM.unlocked = True
+
+            if not persistent.game_complete:
                 $ hermione_door_event_happened = True #Hermione won't greet you again.
 
                 $ hermione_wear_neckwear    = True
@@ -82,7 +134,7 @@ label hermione_random_clothing:
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
                 pause.2
-                call her_main("","base","base",xpos="base",ypos="base")
+                call her_main("","base","base", xpos="base", ypos="base")
                 call ctc
 
                 m "..."
@@ -112,70 +164,23 @@ label hermione_random_clothing:
                 $ h_request_wear_gloves = True
                 $ h_request_wear_stockings = True
 
-                #Unlocks rewards.
-                call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_accs_wool_g_ITEM)
-
-
-            elif not hg_muggle_cold_ITEM.unlocked and not hermione_door_event_happened:
-                $ hg_muggle_cold_ITEM.unlocked = True
-                $ hermione_door_event_happened = True #Hermione won't greet you again.
-
-                $ h_request_wear_stockings = True
-
-                $ hermione_wear_neckwear    = False
-                $ hermione_wear_gloves      = False
-                $ hermione_wear_stockings = True
-                $ h_top = "top_pullover_1"
-                $ h_stockings = "stockings_pantyhose"
-
+            else:
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
                 pause.2
-                call her_main("","base","base",xpos="base",ypos="base")
-                call ctc
+                call her_main("","base","base", xpos="base", ypos="base")
 
-                m "New outfit?"
-                call her_main("Yes, [genie_name]. I brought it with me from home. It's a bit too cold for just my normal uniform...","open","baseL")
-                call her_main("Do you like it?","soft","base")
-                g9 "I do, [hermione_name]. It's cute."
-                $ her_mood -= 10
-                if her_mood < 0:
-                    $ her_mood = 0
+            #Unlocks rewards.
+            call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_accs_wool_g_ITEM)
 
-                #Unlocks rewards.
-                call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_ITEM)
 
-            elif her_whoring >= 5 and hg_muggle_cold_ITEM.unlocked and not hg_muggle_cold_sexy_ITEM.unlocked and not hermione_door_event_happened:
-                $ hg_muggle_cold_sexy_ITEM.unlocked = True
-                $ hermione_door_event_happened = True #Hermione won't greet you again.
+    # Raining
+    if raining:
 
-                $ h_request_wear_stockings = True
+        if her_tier >= 2 and not hg_muggle_rainy_ITEM.unlocked:
+            $ hg_muggle_rainy_ITEM.unlocked = True
 
-                $ hermione_wear_neckwear    = False
-                $ hermione_wear_gloves      = False
-                $ hermione_wear_stockings   = True
-                $ h_top = "top_pullover_2"
-                $ h_stockings = "stockings_pantyhose"
-
-                call update_her_uniform
-                call her_chibi("stand","mid","base")
-                pause.2
-                call her_main("","base","base",xpos="base",ypos="base")
-                call ctc
-
-                m "That's quite the cute outfit, [hermione_name]."
-                call her_main("Thank you, [genie_name]. I made some changes to the old one...","open","baseL")
-                call her_main("Do you like it?","soft","base")
-                g9 "Very much so, [hermione_name]. I love the breast window."
-                $ her_mood -= 10
-                if her_mood < 0:
-                    $ her_mood = 0
-
-                #Unlocks rewards.
-                call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_sexy_ITEM)
-
-            elif not hg_muggle_rainy_ITEM.unlocked and not hermione_door_event_happened:
-                $ hg_muggle_rainy_ITEM.unlocked = True
+            if not persistent.game_complete:
                 $ hermione_door_event_happened = True #Hermione won't greet you again.
 
                 $ aftersperm = True
@@ -187,7 +192,7 @@ label hermione_random_clothing:
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
                 pause.2
-                call her_main("","disgust","down",xpos="base",ypos="base")
+                call her_main("","disgust","down", xpos="base", ypos="base")
                 call ctc
 
                 m "Damn girl. You look drenched..."
@@ -201,12 +206,16 @@ label hermione_random_clothing:
                 if her_mood < 0:
                     $ her_mood = 0
 
-                #Unlocks rewards.
-                call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_rainy_ITEM)
+            else:
+                call update_her_uniform
+                call her_chibi("stand","mid","base")
+                pause.2
+                call her_main("","base","base", xpos="base", ypos="base")
 
+            #Unlocks rewards.
+            call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_rainy_ITEM)
 
-
-        #Hermione wears a robe.
+        # Robe
         else:
 
             $ hermione_wear_robe = True
@@ -215,48 +224,89 @@ label hermione_random_clothing:
             call her_chibi("stand","mid","base")
 
             if her_mood > 1:
-                call her_main("","annoyed","baseL",xpos="base",ypos="base")
+                call her_main("","annoyed","baseL", xpos="base", ypos="base")
             else:
-                call her_main("","base","base",xpos="base",ypos="base")
+                call her_main("","base","base", xpos="base", ypos="base")
 
             if not h_request_wear_robe:
                 pause.5 #Shows Hermione with robe for a bit.
 
-    # Clear Weather.
-    else:
-        if daytime and random_number in [1,2,3,4,5]: #50% chance:
+    # Snow
+    if snowing or blizzard:
 
-            if not hg_muggle_hot_ITEM.unlocked and not hermione_door_event_happened and her_whoring >= 5:
-                $ hg_muggle_hot_ITEM.unlocked = True
+        if her_tier >= 2 and not hg_muggle_cold_ITEM.unlocked:
+            $ hg_muggle_cold_ITEM.unlocked = True
+
+            if not persistent.game_complete:
                 $ hermione_door_event_happened = True #Hermione won't greet you again.
+
+                $ h_request_wear_stockings = True
+                $ hermione_wear_neckwear    = False
+                $ hermione_wear_gloves      = False
+                $ hermione_wear_stockings = True
+                $ h_top = "top_pullover_1"
+                $ h_stockings = "stockings_pantyhose"
+
+                call update_her_uniform
+                call her_chibi("stand","mid","base")
+                pause.2
+                call her_main("","base","base", xpos="base", ypos="base")
+                call ctc
+
+                m "New outfit?"
+                call her_main("Yes, [genie_name]. I brought it with me from home. It's a bit too cold for just my normal uniform...","open","baseL")
+                call her_main("Do you like it?","soft","base")
+                g9 "I do, [hermione_name]. It's cute."
+                $ her_mood -= 10
+                if her_mood < 0:
+                    $ her_mood = 0
+
+            else:
+                call update_her_uniform
+                call her_chibi("stand","mid","base")
+                pause.2
+                call her_main("","base","base", xpos="base", ypos="base")
+
+            #Unlocks rewards.
+            call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_ITEM)
+
+        elif her_tier >= 3 and not hg_muggle_cold_sexy_ITEM.unlocked:
+            $ hg_muggle_cold_sexy_ITEM.unlocked = True
+
+            if not persistent.game_complete:
+                $ hermione_door_event_happened = True #Hermione won't greet you again.
+
+                $ h_request_wear_stockings = True
 
                 $ hermione_wear_neckwear    = False
                 $ hermione_wear_gloves      = False
                 $ hermione_wear_stockings   = True
-                $ h_top = "top_frilled_1"
-                $ h_bottom = "pants_jeans_short"
-                $ h_stockings = "stockings_cute"
+                $ h_top = "top_pullover_2"
+                $ h_stockings = "stockings_pantyhose"
 
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
-
                 pause.2
-                call her_main("","base","base",xpos="base",ypos="base")
+                call her_main("","base","base", xpos="base", ypos="base")
                 call ctc
 
-                g4 "(Wow! Look at her!)"
-                g9 "That's quite a sexy outfit, [hermione_name]!"
-                if her_whoring < 11:
-                    call her_main("Uhm... Thank you, [genie_name].","soft","baseL")
-                    call her_main("I normally don't wear something like this.","open","base")
-                    call her_main("(Showing so much cleavage...)","disgust","down",cheeks="blush")
-                    call her_main("But the weather is just too hot today.","base","baseL")
-                    g9 "You should wear this more often!"
-                else:
-                    call her_main("Thank you, [genie_name].","base","glance")
+                m "That's quite the cute outfit, [hermione_name]."
+                call her_main("Thank you, [genie_name]. I made some changes to the old one...","open","baseL")
+                call her_main("Do you like it?","soft","base")
+                g9 "Very much so, [hermione_name]. I love the breast window."
+                $ her_mood -= 10
+                if her_mood < 0:
+                    $ her_mood = 0
 
-                #Unlocks rewards.
-                call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_hot_ITEM)
+            else:
+                call update_her_uniform
+                call her_chibi("stand","mid","base")
+                pause.2
+                call her_main("","base","base", xpos="base", ypos="base")
+
+            #Unlocks rewards.
+            call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_sexy_ITEM)
+
 
 
     #Resets her clothing.
@@ -269,7 +319,7 @@ label hermione_random_clothing:
     if her_mood >= 1:
 
         call set_her_face(change="all")
-        call her_main(xpos="base",ypos="base")
+        call her_main(xpos="base", ypos="base")
         if her_mood >=1 and her_mood < 3:
             ">Looks like Hermione is still a little upset with you..."
         elif her_mood >=3 and her_mood < 10:
@@ -288,8 +338,8 @@ label hermione_random_clothing:
     else: #Not mad.
         call set_her_face(change="all")
         if not hermione_door_event_happened:
-            call her_main("Yes, [genie_name]?",xpos="base",ypos="base")
+            call her_main("Yes, [genie_name]?", xpos="base", ypos="base")
         else:
-            call her_main(xpos="base",ypos="base")
+            call her_main(xpos="base", ypos="base")
 
     return

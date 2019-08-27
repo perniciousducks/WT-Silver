@@ -23,7 +23,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         m "Hey, I'm not going to say no to that!"
 
         ">You summon hermione to your office."
-        call play_sound("door") #Sound of a door opening.
+        call play_sound("door")
         call her_chibi("stand","desk","base")
         hide screen luna_main
         $ luna_flip = -1
@@ -895,7 +895,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call lun_main("...","base","base","sad","down", cheeks="blush",tears="mascara")
         ">Luna and hermione leave the office together, chattering happily as the door closes."
 
-    call play_sound("door") #Sound of a door opening.
+    call play_sound("door")
     hide screen luna_main
     hide screen hermione_main
     with d3

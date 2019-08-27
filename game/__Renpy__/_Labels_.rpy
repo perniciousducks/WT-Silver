@@ -11,6 +11,7 @@ label hide_all_screens:
     call sus_chibi("hide")
     call cho_chibi("hide")
     call sna_chibi("hide")
+    call ton_chibi("hide")
     call gen_chibi("hide")
 
     #CGs
@@ -223,6 +224,7 @@ label setup_fireplace_hangout(char=None):
     call hide_characters
     call gen_chibi("hide")
     call sna_chibi("hide")
+    call ton_chibi("hide")
     hide screen chair_right
     show screen desk
 

@@ -852,7 +852,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("...","normal","seductive","base","mid")
         call lun_main("just hurry up and bring her up here...","normal","seductive","base","R")
         call nar(">You summon hermione to your office.")
-        call play_sound("door") #Sound of a door opening.
+        call play_sound("door")
 
         call her_chibi("stand","mid","base")
 
@@ -1196,7 +1196,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
                     ">You can hear them talking and laughing together as they shut your door."
 
-    call play_sound("door") #Sound of a door opening.
+    call play_sound("door")
     hide screen luna_main
     call lun_chibi("hide")
     call her_chibi("hide")

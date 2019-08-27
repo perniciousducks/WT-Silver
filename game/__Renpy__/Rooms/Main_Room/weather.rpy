@@ -2,21 +2,27 @@ init python:
         ### Weather Types ###
 
         ## Day ##
-        # (cloud across sky)    w_g < 4
-        # (heavy clouds)        w_g > 3
-        # (rain)                w_g > 4
-        # (lighting)            w_g > 5 or (w_g = 4 and chance success)
-        # (snowy)               w_g > 3 (and chance success) (Cant be raining)
-        # (blizzard)            w_g > 6
+
+        # (clear sky)           w_g == 1 + 2
+        # (cloud across sky)    w_g == 3
+
+        # (heavy clouds)        w_g >= 4
+        # (rain)                w_g >= 5
+        # (lighting)            w_g >= 5 + l_g == 1
+        # (snowy)               w_g >= 5 + s_g == 1
+        # (blizzard)            w_g >= 5 + s_g == 1 + l_g == 1
 
         ## Night ##
-        # (clear sky)           w_g = 1
-        # (Clear sky with moon) w_g = 2
-        # (clouds across moon)  w_g = 3
-        # (heavy clouds)        w_g > 3
-        # (rain)                w_g > 4
-        # (rain and lighting)   w_g > 5 or (w_g = 4 and chance success)
-        # (blizzard)            w_g > 6
+
+        # (clear sky)           w_g == 1
+        # (Clear sky with moon) w_g == 2
+        # (clouds across moon)  w_g == 3
+
+        # (heavy clouds)        w_g >= 4
+        # (rain)                w_g >= 5
+        # (lighting)            w_g >= 5 + l_g == 1
+        # (snowy)               w_g >= 5 + s_g == 1
+        # (blizzard)            w_g >= 5 + s_g == 1 + l_g == 1
 
     def show_weather():
         global weather_animations
@@ -30,21 +36,34 @@ init python:
         blizzard = False
         storm = False
         weather_animations = []
-        lightning_gen = renpy.random.randint(1, 2)
-        if weather_gen == 6:
-            blizzard = True
-            weather_animations.append("blizzard")
-            renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
-        if weather_gen == 5 or (weather_gen == 4 and lightning_gen == 1): # (Heavy clouds with chance of lightning)
-            storm = True
-            weather_animations.append("lightning")
-        if weather_gen > 4 and not blizzard:
-            raining = True
-            weather_animations.append("rain")
-            renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
-        if weather_gen > 3 and lightning_gen == 2 and not (raining or blizzard):
-            snowing = True
-            weather_animations.append("snow")
+        snow_gen      = renpy.random.randint(1, 3)
+        lightning_gen = renpy.random.randint(1, 3)
+
+        # Bad Weather
+        if weather_gen in [5,6]:
+
+            # Blizzard
+            if snow_gen == 1 and lightning_gen == 1 and day >= 30:
+                blizzard = True
+                weather_animations.append("blizzard")
+                renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
+
+            # Snow
+            elif snow_gen == 1 and day >= 30:
+                snowing = True
+                weather_animations.append("snow")
+
+            # Lightning
+            elif lightning_gen == 1: # (Heavy clouds with chance of lightning)
+                storm = True
+                weather_animations.append("lightning")
+
+            # Rain
+            else:
+                raining = True
+                weather_animations.append("rain")
+                renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
+
 
 
 init -2:

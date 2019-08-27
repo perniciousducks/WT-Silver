@@ -173,10 +173,14 @@ init python:
                                 (0,0), sprite[0].get_image())
                                     
                         if sprite[0].armfix:
-                                if armfix == []:
-                                    armfix.append(sprite[0].get_armfix(True, False))
-                                else:
-                                    armfix.append(sprite[0].get_armfix(True, True))
+                            # add fixes WITH a hand image
+                            if armfix == []:
+                                armfix.append(sprite[0].get_armfix(True, False)[0]) # Lefthand
+                                armfix.append(sprite[0].get_armfix(True, False)[1]) # Righthand
+                            else:
+                                # add fixes WITHOUT hand image
+                                armfix.append(sprite[0].get_armfix(True, True)[0]) # L
+                                armfix.append(sprite[0].get_armfix(True, True)[1]) # R
                     
                 if armfix > 0:
                     for item in armfix:
@@ -439,13 +443,16 @@ init python:
             
         def get_armfix(self, skingray=False, nohand=False):
             armL = Image("characters/"+self.char+"/body/arms/armfixL.png")
+            armR = Image("characters/"+self.char+"/body/arms/armfixR.png")
             
             if nohand or self.pose != "":
                 armL = Image("characters/dummy.png")
+                armR = Image("characters/dummy.png")
             
             # Used in mannequin generation
             if skingray:
                 armL = im.MatrixColor(armL, im.matrix.desaturate())
+                armR = im.MatrixColor(armR, im.matrix.desaturate())
             
             # Add armfix with proper colors
             if self.armfix_L > 0:
@@ -454,6 +461,13 @@ init python:
                            (1010, 1200),
                            (0,0), armL,
                            (0,0), im.MatrixColor(self.armfix_L[i], self.get_matrixcolor(i)))
+                           
+            if self.armfix_R > 0:
+                for i in xrange(len(self.armfix_R)):
+                    armR = Composite(
+                           (1010, 1200),
+                           (0,0), armR,
+                           (0,0), im.MatrixColor(self.armfix_R[i], self.get_matrixcolor(i)))
                        
             # Add armfix outline    
             if self.armfix_Lx != "":
@@ -461,7 +475,13 @@ init python:
                         (1010, 1200),
                         (0,0), armL,
                         (0,0), self.armfix_Lx)
-            return armL
+                        
+            if self.armfix_Rx != "":
+                armR = Composite(
+                        (1010, 1200),
+                        (0,0), armR,
+                        (0,0), self.armfix_Rx)
+            return (armL, armR)
             
         def get_icon(self):
             return self.sprite_ico.get_image()
@@ -841,10 +861,14 @@ init python:
                                     (sprite[2],sprite[3]), sprite[0].get_image())
                                     
                             if sprite[0].armfix:
+                                # add fixes WITH a hand image
                                 if armfix == []:
-                                    armfix.append(sprite[0].get_armfix(False, False))
+                                    armfix.append(sprite[0].get_armfix(True, False)[0]) # Lefthand
+                                    armfix.append(sprite[0].get_armfix(True, False)[1]) # Righthand
                                 else:
-                                    armfix.append(sprite[0].get_armfix(False, True))
+                                    # add fixes WITHOUT hand image
+                                    armfix.append(sprite[0].get_armfix(True, True)[0]) # L
+                                    armfix.append(sprite[0].get_armfix(True, True)[1]) # R
                     
                     if armfix > 0:
                         for item in armfix:

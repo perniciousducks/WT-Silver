@@ -13,9 +13,13 @@ label tonks_wardrobe_init:
             
             tonks_hair_base = cloth_class(char="tonks", category="head", subcat="hair", type="hair", id="base", layers=1, color=[[243, 158, 189, 255]])
             
-            tonks_cloth_top_auror = cloth_class(char="tonks", category="tops", subcat="auror", type="top", id="auror", layers=2, color=[[28, 27, 31, 255], [124, 42, 50, 255]])
-            tonks_cloth_top_auror2 = cloth_class(char="tonks", category="tops", subcat="auror", type="top", id="auror2", layers=1, color=[[124, 42, 50, 255]])
-            tonks_cloth_top_corset = cloth_class(char="tonks", category="tops", subcat="school", type="top", id="corset", layers=1, color=[[247, 206, 146, 255]], bodyfix={"breasts": ["base_tight", 6, 0, 0, False]}, incompatible=["bra"])
+            tonks_cloth_choker_beads = cloth_class(char="tonks", category="head", subcat="neckwear", type="neckwear", id="choker_beads", layers=2, color=[[45, 45, 48, 255], [177, 168, 172, 255]])
+            
+            tonks_cloth_gloves_auror = cloth_class(char="tonks", category="misc", subcat="gloves", type="gloves", id="auror_gloves", layers=1, color=[[45, 45, 48, 255]], armfix=True)
+            
+            tonks_cloth_top_auror = cloth_class(char="tonks", category="tops", subcat="auror", type="top", id="auror", layers=2, color=[[28, 27, 31, 255], [124, 42, 50, 255]], armfix=True)
+            tonks_cloth_top_auror2 = cloth_class(char="tonks", category="tops", subcat="auror", type="top", id="auror2", layers=1, color=[[124, 42, 50, 255]], armfix=True)
+            tonks_cloth_top_corset = cloth_class(char="tonks", category="tops", subcat="school", type="top", id="corset", layers=1, color=[[247, 206, 146, 255]], bodyfix={"breasts": ["base_tight", 6, 0, 0, False]}, incompatible=["bra"], armfix=True)
             
             tonks_cloth_jeans = cloth_class(char="tonks", category="bottoms", subcat="trousers", type="bottom", id="jeans", layers=1, color=[[51, 104, 105, 255]])
             tonks_cloth_leggings = cloth_class(char="tonks", category="bottoms", subcat="trousers", type="bottom", id="leggings", layers=1, color=[[45, 45, 48, 255]])
@@ -39,8 +43,8 @@ label tonks_wardrobe_init:
             ################
         
             tonks_class.body = {
-                        "handleft":    ["characters/tonks/body/arms/armfixL.png", 20, 0, 0, False],
-                        "handright":   ["characters/tonks/body/arms/armfixR.png", 40, 0, 0, False],
+                        "handleft":    [None, 20, 0, 0, False],
+                        "handright":   [None, 40, 0, 0, False],
                         "armleft":     ["l_arm_hips", 18, 0, 0, False],
                         "armright":    ["r_arm_hips", 2, 0, 0, False],
                         "breasts":     ["base", 6, 0, 0, False],
@@ -67,12 +71,12 @@ label tonks_wardrobe_init:
                         "hat":        [None, 24, 0, 0, False],
                         "hair":       [tonks_hair_base, 12, 0, 0, False],
                         "earring":    [None, 22, 0, 0, False],
-                        "neckwear":   [None, 17, 0, 0, False],
+                        "neckwear":   [tonks_cloth_choker_beads, 17, 0, 0, False],
                         "robe":       [tonks_cloth_auror_coat, 21, 0, 0, False],
-                        "gloves":     [None, 18, 0, 0, False],
+                        "gloves":     [tonks_cloth_gloves_auror, 19, 0, 0, False],
                         "top":        [tonks_cloth_top_auror, 17, 0, 0, False],
                         "bra":        [None, 16, 0, 0, False],
-                        "bottom":     [tonks_cloth_jeans, 15, 0, 0, False],
+                        "bottom":     [tonks_cloth_leggings_hole, 15, 0, 0, False],
                         "garterbelt": [None, 14, 0, 0, False],
                         "panties":    [None, 13, 0, 0, False],
                         "stockings":  [None, 12, 0, 0, False],

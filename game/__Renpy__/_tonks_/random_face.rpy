@@ -35,7 +35,7 @@ label set_ton_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
         elif mouth in ["happy"]:
             $ temp_mouth    = renpy.random.choice(["base","smile"])
         elif mouth in ["naughty","horny"]:
-            $ temp_mouth    = renpy.random.choice(["horny"])
+            $ temp_mouth    = renpy.random.choice(["horny", "base"])
         elif mouth in ["annoyed"]:
             $ temp_mouth    = renpy.random.choice(["upset"])
         elif mouth in ["disgusted"]:

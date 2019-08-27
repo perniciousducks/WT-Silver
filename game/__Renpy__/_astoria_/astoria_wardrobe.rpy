@@ -12,23 +12,23 @@ label astoria_wardrobe_check(section, arg=None):
                         if not char_active.get_cloth(item.type).id == item.id:
                             if ast_affection < 15:
                                 temp_count[1] += 1
-                            
+
         # Outfit outrage score check
         if ast_affection < temp_count[0]*2:
-            call ast_main("It looks lovely, but I doubt our studends would understand...",face="annoyed")
+            call ast_main("You're joking right? Why'd you think I would ever put this on...",face="annoyed")
             $ temp_score += 1
         if temp_count[2] < 2 and ast_affection < 20:
             if temp_score > 0:
-                call ast_main("...especially because of missing underwear",face="annoyed")
+                call ast_main("...There's no underwear on that... What kind of pervert created this?",face="annoyed")
             else:
-                call ast_main("No panties? I like that, but no thanks, I'm at work.",face="annoyed")
+                call ast_main("No panties? I'd rather keep mine on thank you very much...",face="annoyed")
             $ temp_score += 1
         elif temp_count[1] > 0:
-            call ast_main("I feel alright wearing my current set of underwear.",face="annoyed")
+            call ast_main("I prefer wearing the underwear I have on already...",face="annoyed")
             $ temp_score += 1
-            
+
         if temp_score > 0:
-            call ast_main("Sorry, [ast_genie_name] but I can't wear it.",face="annoyed")
+            call ast_main("Sorry, [ast_genie_name] but I can't wear that.",face="annoyed")
             #Hint
             $ wardrobe_fail_hint(max(temp_count[0], 15, 20))
             return
@@ -37,7 +37,7 @@ label astoria_wardrobe_check(section, arg=None):
             # Need more art
             $ TBA_message()
             return False
-            
+
             # if ast_affection < 24:
                 # call ast_main("As much as I'd like to get a new piercing or a tattoo I can't simply let you modify my body like that.",face="angry")
                 # #Hint
@@ -47,24 +47,46 @@ label astoria_wardrobe_check(section, arg=None):
         elif section == "category":
             return arg #IMPORTANT
         elif section == "touching":
-            $ random_number = renpy.random.randint(1, 10)
             if arg == "boobs":
                 if ast_affection < 20:
                     $ slap_mouse_away()
                     
+                    $ random_number = renpy.random.randint(1, 7)
+
                     if random_number == 1:
-                        call ast_main("That's not how a headmaster should treat their subordinates.",face="annoyed")
+                        call ast_main("Hey, cut that out!",face="annoyed")
                     elif random_number == 2:
-                        call ast_main("Its inappropriate, lets keep it civil alright?",face="annoyed")
+                        call ast_main("Ouch, that hurts...",face="annoyed")
+                    elif random_number == 3:
+                        call ast_main("Hey, no nipple twisters...",face="annoyed")
+                    elif random_number == 4:
+                        call ast_main("Bad Touch!",face="annoyed")
+                    elif random_number == 5:
+                        call ast_main("*EEEH* Don't you have better things to do?",face="annoyed")
+                    elif random_number == 6:
+                        call ast_main("{size=+5}What are you doing?{/size}",face="annoyed")
+                    elif random_number == 7:
+                        call ast_main("Stop that!",face="annoyed")
                     return
             if arg == "pussy":
                 if ast_affection < 30:
                     $ slap_mouse_away()
                     
+                    $ random_number = renpy.random.randint(1, 6)
+
                     if random_number == 1:
-                        call ast_main("You've gotta earn it first.",face="annoyed")
+                        call ast_main("Hey, that's private property.",face="annoyed")
                     elif random_number == 2:
-                        call ast_main("If you'd like to keep these hands intact I suggest you stop it right now, [ast_genie_name].",face="annoyed")
+                        call ast_main("Get your filthy hands off me, [ast_genie_name].",face="annoyed")
+                    elif random_number == 3:
+                        call ast_main("Stop it, you creep.",face="annoyed")
+                    elif random_number == 4:
+                        call ast_main("Why would you do that... nasty old man...",face="annoyed")
+                    elif random_number == 5:
+                        call ast_main("Don't touch me...",face="annoyed")
+                    elif random_number == 6:
+                        call ast_main("Don't be gross, [ast_genie_name].",face="annoyed")
+
                     return
             $ love_mouse_away()
             call ast_main("", face="horny")
@@ -74,29 +96,22 @@ label astoria_wardrobe_check(section, arg=None):
                 if ast_affection < 15:
                     $ random_number = renpy.random.randint(1, 2)
                     if random_number == 1:
-                        call ast_main("Maybe another time..",face="angry")
+                        call ast_main("*Eeeh* No?",face="angry")
                     elif random_number == 2:
-                        call ast_main("I like my underwear in its proper place.",face="angry")
+                        call ast_main("I'd rather keep my underwear on...",face="angry")
                     #Hint
                     $ wardrobe_fail_hint(15)
                     return
             elif arg in ("top", "bottom"):
                 if ast_affection < 10:
                     if arg == "top":
-                        call ast_main("Take my top off for a quickie? Are you insane?!",face="annoyed")
+                        call ast_main("You want me to take my clothes of... Oh sure, I'll just go ahead and bare my chest and all as well then shall I?",face="annoyed")
                         call ast_main("Just kidding, sure have a quick look, [ast_genie_name].",face="annoyed")
-                        $ char_active.toggle_wear(arg)
-                        call ast_main("",face="happy")
-                        pause 1.0
-                        call ast_main("",face="happy")
-                        pause 1.0
-                        call ast_main("",face="happy")
-                        $ char_active.toggle_wear(arg)
-                        g4 "What gives?!"
-                        call ast_main("Your time's up.",face="annoyed")
+                        g4 "Really?!"
+                        call ast_main("{size=+5}NO!{/size}",face="annoyed")
                         m "......"
                     elif arg == "bottom":
-                        call ast_main("Maybe later.",face="annoyed")
+                        call ast_main("{size=+5}No, get away from me!{/size}",face="annoyed")
                     #Hint
                     $ wardrobe_fail_hint(10)
                     return
@@ -107,15 +122,15 @@ label astoria_wardrobe_check(section, arg=None):
                 if ast_affection < 20:
                     if char_active.get_cloth("bra"):
                         if arg.id == char_active.get_cloth("bra").id:
-                            call ast_main("If you behave maybe I'll let you take a peek later, [ast_genie_name].",face="angry")
+                            call ast_main("I'd rather not do that right now, [ast_genie_name].",face="angry")
                             #Hint
                             $ wardrobe_fail_hint(20)
                             return
                     if char_active.get_cloth("panties"):
                         if arg.id == char_active.get_cloth("panties").id:
                             call ast_main("",face="happy")
-                            nar "> Suddenly Astoria starts laughing."
-                            call ast_main("You're bold I'll give you that much.",face="angry")
+                            nar "> Astoria starts giggling."
+                            call ast_main("Yeah right...",face="angry")
                             #Hint
                             $ wardrobe_fail_hint(20)
                             return
@@ -128,13 +143,13 @@ label astoria_wardrobe_check(section, arg=None):
                     if arg.type in ("top", "bottom"):
                         if char_active.get_cloth("top"):
                             if arg.id == char_active.get_cloth("top").id:
-                                call ast_main("Mmm.. I like where your head is at, but I have to refuse.",face="annoyed")
+                                call ast_main("I guess I could... but I'm not going to.",face="annoyed")
                                 #Hint
                                 $ wardrobe_fail_hint(30)
                                 return
                         if char_active.get_cloth("bottom"):
                             if arg.id == char_active.get_cloth("bottom").id:
-                                call ast_main("As much as I'd like to I can't walk bottomless around school grounds.",face="annoyed")
+                                call ast_main("Hey, that's a great idea... but not in this universe.",face="annoyed")
                                 #Hint
                                 $ wardrobe_fail_hint(30)
                                 return
@@ -142,16 +157,16 @@ label astoria_wardrobe_check(section, arg=None):
                 if ast_affection < arg.whoring:
                     $ random_number = renpy.random.randint(1, 3)
                     if random_number == 1:
-                        call ast_main("I can't wear that in public, even if I wanted to.",face="annoyed")
+                        call ast_main("Nuh uh, I'm not putting that on.",face="annoyed")
                     elif random_number == 2:
-                        call ast_main("It does look nice but I cannot show myself in such attire around hogwarts.",face="annoyed")
+                        call ast_main("*Pfff* You want me to wear that? In your dreams old man...",face="annoyed")
                     else:
-                        call ast_main("It would make me look like a whore, thanks but no thanks.",face="annoyed")
-                    
+                        call ast_main("Don't be such a creep, thanks but no thanks.",face="annoyed")
+
                     #Hint
                     $ wardrobe_fail_hint(arg.whoring)
                     return
-                    
+
     $ renpy.play('sounds/equip.ogg')
     $ current_item = arg
     $ char_active.equip(current_item)

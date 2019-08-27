@@ -863,12 +863,12 @@ init python:
                             if sprite[0].armfix:
                                 # add fixes WITH a hand image
                                 if armfix == []:
-                                    armfix.append(sprite[0].get_armfix(True, False)[0]) # Lefthand
-                                    armfix.append(sprite[0].get_armfix(True, False)[1]) # Righthand
+                                    armfix.append(sprite[0].get_armfix(False, False)[0]) # Lefthand
+                                    armfix.append(sprite[0].get_armfix(False, False)[1]) # Righthand
                                 else:
                                     # add fixes WITHOUT hand image
-                                    armfix.append(sprite[0].get_armfix(True, True)[0]) # L
-                                    armfix.append(sprite[0].get_armfix(True, True)[1]) # R
+                                    armfix.append(sprite[0].get_armfix(False, True)[0]) # L
+                                    armfix.append(sprite[0].get_armfix(False, True)[1]) # R
                     
                     if armfix > 0:
                         for item in armfix:

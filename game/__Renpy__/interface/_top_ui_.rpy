@@ -12,8 +12,8 @@ init python:
     def image_hover(image):
         return im.MatrixColor(image, im.matrix.brightness(0.12))
 
-    def image_alpha(image):
-        return im.MatrixColor(image, im.matrix.opacity(0.5))
+    def image_alpha(image, alpha=0.5):
+        return im.MatrixColor(image, im.matrix.opacity(alpha))
 
 label house_points:
     # Debug

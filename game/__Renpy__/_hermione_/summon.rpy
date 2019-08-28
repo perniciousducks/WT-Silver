@@ -1,7 +1,7 @@
 
 
 label summon_hermione:
-
+    call play_music("hermione_theme")
     call play_sound("door")
 
     call update_hermione

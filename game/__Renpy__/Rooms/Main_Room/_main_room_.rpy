@@ -2,6 +2,7 @@
 
 #Main Room Screen
 screen main_room():
+    tag room
     if daytime:
         add "images/rooms/_bg_/main_room_day.png"
     else:
@@ -39,7 +40,7 @@ screen main_room():
 #Main Room Overlay - (layer is on top of main_room_menu screen)
 screen main_room_overlay():
     tag room_overlay_screen
-
+    zorder 3
     #Decorations
     #for i in deco_overlay_list:
     #    add deco_overlay_list[i].get_room_image() xpos i.xpos ypos i.ypos xanchor 0.5 yanchor 0.5
@@ -60,16 +61,16 @@ screen main_room_overlay():
     if owl_deco_OBJ.room_image and renpy.get_screen("owl"):
         add owl_deco_OBJ.get_room_image() xpos owl_deco_OBJ.xpos ypos owl_deco_OBJ.ypos xanchor 0.5 yanchor 1.0
 
-    zorder 3#2
-
 ### Main Room Menu Screen ###
 screen main_room_menu():
+    tag room_menu
+    zorder 1
     #Hotkeys
     if day != 1 and not renpy.variant('android'):
         use hotkeys_main
 
-    tag room_screen
-    imagebutton: # DOOR
+    #Door
+    imagebutton:
         xpos door_OBJ.xpos
         ypos door_OBJ.ypos
         focus_mask True
@@ -136,59 +137,6 @@ screen main_room_menu():
                     hovered SetVariable("tooltip", "Examine Cupboard")
                 unhovered SetVariable("tooltip", None)
                 action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("cupboard")]
-
-    #Hat
-    #if renpy.variant('android'):
-    #    imagemap:
-    #        xpos hat_OBJ.xpos
-    #        ypos hat_OBJ.ypos
-    #        xanchor "center"
-    #        yanchor "center"
-    #        ground hat_OBJ.get_idle_image()
-    #        hover hat_OBJ.get_hover_image()
-    #        hotspot(77, 50, 70, 76) action [Hide("main_room_menu"), Jump("options_menu")]
-    #else:
-    #    imagebutton:
-    #        xpos hat_OBJ.xpos
-    #        ypos hat_OBJ.ypos
-    #        focus_mask True
-    #        xanchor "center"
-    #        yanchor "center"
-    #        idle hat_OBJ.get_idle_image()
-    #        hover hat_OBJ.get_hover_image()
-    #        hovered SetVariable("tooltip", "Hat")
-    #        unhovered SetVariable("tooltip", None)
-    #        action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("options_menu")]
-
-#    imagebutton: # CUPBOARD LEFT
-#        xpos 120+140
-#        ypos 280
-#        focus_mask True
-#        xanchor "center"
-#        yanchor "center"
-#        idle "images/rooms/main_room/cupboard/idle_lower_left.png"
-#        hover "images/rooms/main_room/cupboard/hover_lower_left.png"
-#        action [Hide("main_room_menu"), Hide("animation_feather"), Jump("cupboard")]
-
-#    imagebutton: # CUPBOARD RIGHT
-#        xpos 120+140
-#        ypos 280
-#        focus_mask True
-#        xanchor "center"
-#        yanchor "center"
-#        idle "images/rooms/main_room/cupboard/idle_lower_right.png"
-#        hover "images/rooms/main_room/cupboard/hover_lower_right.png"
-#        action [Hide("main_room_menu"), Hide("animation_feather"), Jump("cupboard")]
-
-    # imagebutton: # OLD CUPBOARD
-        # xpos 120+140
-        # ypos 280
-        # focus_mask True
-        # xanchor "center"
-        # yanchor "center"
-        # idle "images/rooms/main_room/02_cupboard.png"
-        # hover "images/rooms/main_room/02_cupboard_02.png"
-        # action [Hide("main_room_menu"), Hide("animation_feather"), Jump("cupboard")]
 
     #Mail
     if package_is_here:
@@ -283,29 +231,3 @@ screen main_room_menu():
             hovered SetVariable("tooltip", "Examine fireplace")
         unhovered SetVariable("tooltip", None)
         action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("fireplace")]
-
-    # Old buttons
-    #
-    #
-    #Stats
-    #imagebutton:
-    #    xpos 830
-    #    ypos 16
-    #    xanchor "center"
-    #    yanchor "center"
-    #    idle "interface/points/Stats_Button.png"
-    #    hover "interface/points/Stats_Button_Hover.png"
-    #    action [Hide("main_room_menu"), Jump("open_stat_menu")]
-
-
-    #Inventory
-    #imagebutton:
-    #    xpos 830+77
-    #    ypos 16
-    #    xanchor "center"
-    #    yanchor "center"
-    #    idle "interface/points/Inventory_Button.png"
-    #    hover "interface/points/Inventory_Button_Hover.png"
-    #    action [Hide("main_room_menu"), Jump("open_inventory_menu")]
-
-    zorder 1

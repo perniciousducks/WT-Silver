@@ -1,10 +1,10 @@
 
 
 label summon_luna:
-
+    call play_music("luna_theme")
     call play_sound("door")
-
     call lun_chibi("stand","mid","base")
+    with d3
 
     if luna_reverted:
         call lun_main("Hello, [lun_genie_name]!","normal","wink","base","mid",xpos="base",ypos="base")

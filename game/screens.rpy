@@ -66,7 +66,7 @@ screen say(who, what, side_image=None):
 # http://www.renpy.org/doc/html/screen_special.html#choice
 
 screen choice(items):
-    add "interface/bld.png"
+    use bld1
     window:
         style "menu_window"
         xalign menu_x

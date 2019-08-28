@@ -1,7 +1,7 @@
 
 
 label summon_astoria:
-
+    call play_music("astoria_theme")
     call play_sound("door")
 
     #Events

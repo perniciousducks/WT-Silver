@@ -182,18 +182,6 @@ label room(room=None, hide_screens=True):
 label main_room:
     show screen blkfade
 
-    #Predict and cache all often used images for the room
-    #$ renpy.start_predict("interface/desk/*.*")
-    #$ renpy.start_predict("interface/map/*.*")
-    #$ renpy.start_predict("interface/icons/*.*")
-    #$ renpy.start_predict("interface/frames/*.*")
-    #$ renpy.start_predict("images/rooms/_objects_/*.*")
-    #$ renpy.start_predict("images/rooms/_weather_/*.*")
-    #$ renpy.start_predict("characters/genie/chibis/working/*.*")
-    #$ renpy.start_predict("images/animation/rum_*.*")
-    #$ renpy.start_predict("characters/genie/chibis/reading/*.*")
-    #$ renpy.start_predict("characters/genie/chibis/masturbating/desk_*.*")
-
     call room("main_room")
 
     hide screen blkfade
@@ -203,14 +191,11 @@ label main_room:
 
     if daytime:
         call play_music("day_theme")
-    else:
-        call play_music("night_theme")
-
-    pause.5
-
-    if daytime:
+        pause.5
         jump day_resume
     else:
+        call play_music("night_theme")
+        pause.5
         jump night_resume
 
 
@@ -565,59 +550,80 @@ label play_sound(sound=""):
 label play_music(music=""):
     if music in ["stop","pause"]:
         stop music fadeout 1.0
+        return
 
     # Harry Potter
     if music in ["hedwigs_theme", "hogwarts"]:
         play music "music/01 Prologue.mp3" fadein 1 fadeout 1 if_changed
-    if music in ["ball_theme", "ball"]:
+    elif music in ["ball_theme", "ball"]:
         play music "music/11 Neville's Waltz.mp3" fadein 1 fadeout 1 if_changed
-    if music in ["festive", "xmas"]:
+    elif music in ["festive", "xmas"]:
         play music "music/07 Introducing Colin2.mp3" fadein 1 fadeout 1 if_changed
 
     # Character Music
-    if music in ["snape", "snape_theme", "dark_fog"]:
+    elif music in ["snape", "snape_theme", "dark_fog"]:
+        # Snape
         play music "music/Dark Fog.mp3" fadein 1 fadeout 1 if_changed
-    if music in ["hermione", "hermione_theme", "chipper_doodle"]:
+    elif music in ["hermione", "hermione_theme", "chipper_doodle"]:
+        # Hermione
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
-    if music in ["cho", "cho_theme", "happy_adventure"]:
-        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed #Placeholder
-    if music in ["playful", "playful_tension"]:
+    elif music in ["cho", "cho_theme", "happy_adventure"]:
+        # Cho
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
+    elif music in ["astoria", "astoria_theme"]:
+        # Astoria
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
+    elif music in ["susan", "susan_theme"]:
+        # Susan
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
+    elif music in ["tonks", "tonks_theme"]:
+        # Tonks
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
+    elif music in ["luna", "luna_theme"]:
+        # Luna
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
+    elif music in ["playful", "playful_tension"]:
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 if_changed
-    if music in ["silly", "fun", "silly_fun_loop"]:
+    elif music in ["silly", "fun", "silly_fun_loop"]:
         play music "music/silly_fun_loop.mp3" fadein 1 fadeout 1 if_changed
 
     # Store Music
-    if music in ["weasley_store"]:
+    elif music in ["weasley_store"]:
         play music "music/weasley_store.mp3" fadein 1 fadeout 1 if_changed
-    if music in ["clothing_store"]:
+    elif music in ["clothing_store"]:
         play music "music/clothing_store.mp3" fadein 1 fadeout 1 if_changed
 
     # Background Music
-    if music in ["day", "day_theme", "brittle_rille"]:
+    elif music in ["day", "day_theme", "brittle_rille"]:
         play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 if_changed
-    if music in ["night", "night_theme", "manatees"]:
+    elif music in ["night", "night_theme", "manatees"]:
         play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 if_changed
-    if music in ["night_outside", "outside_night"]:
+    elif music in ["night_outside", "outside_night"]:
         play music "sounds/night.mp3" fadein 1 fadeout 1 if_changed
-    if music in ["jazz_take"]:
+    elif music in ["jazz_take"]:
         play music "sounds/jazz take 2.mp3" fadein 1 fadeout 1 if_changed
 
     # Interface
-    if music in ["my_immortal"]:
+    elif music in ["my_immortal"]:
         play music "music/Spring_In_My_Step.mp3" fadein 0.2 fadeout 0.2 if_changed
 
     # Misc
-    if music in ["hitman"]:
+    elif music in ["hitman"]:
         play music "music/hitman.mp3" fadein 1 fadeout 1 if_changed
-    if music in ["boss_theme"]:
+    elif music in ["boss_theme"]:
         play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1 if_changed
-    if music in ["boss_card_theme"]:
+    elif music in ["boss_card_theme"]:
         play music "music/Juhani_Junkala.mp3" fadein 1 fadeout 1 if_changed
-    if music in ["sad","grape_soda"]:
+    elif music in ["sad","grape_soda"]:
         play music "music/GrapeSodaIsFuckingRawbyjrayteam6.mp3" fadein 0.2 fadeout 0.5 if_changed
-    if music in ["anguish"]:
+    elif music in ["anguish"]:
         play music "music/Anguish.mp3" fadein 1 fadeout 1 if_changed
-
+    else:
+        python:
+            try:
+                renpy.music.play(filenames="music/"+music+".mp3", channel="music", loop=True, fadeout=1.0, fadein=1.0)
+            except IOError:
+                pass
     return
 
 ### MUSIC BLOCK ###

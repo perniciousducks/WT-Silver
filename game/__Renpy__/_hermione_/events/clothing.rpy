@@ -88,7 +88,7 @@ label hermione_random_clothing:
 
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
-
+                with d3
                 pause.2
                 call her_main("","base","base", xpos="base", ypos="base")
                 call ctc
@@ -107,6 +107,7 @@ label hermione_random_clothing:
             else:
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
+                with d3
                 pause.2
                 call her_main("","base","base", xpos="base", ypos="base")
 
@@ -133,6 +134,7 @@ label hermione_random_clothing:
 
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
+                with d3
                 pause.2
                 call her_main("","base","base", xpos="base", ypos="base")
                 call ctc
@@ -167,6 +169,7 @@ label hermione_random_clothing:
             else:
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
+                with d3
                 pause.2
                 call her_main("","base","base", xpos="base", ypos="base")
 
@@ -191,6 +194,7 @@ label hermione_random_clothing:
 
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
+                with d3
                 pause.2
                 call her_main("","disgust","down", xpos="base", ypos="base")
                 call ctc
@@ -209,6 +213,7 @@ label hermione_random_clothing:
             else:
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
+                with d3
                 pause.2
                 call her_main("","base","base", xpos="base", ypos="base")
 
@@ -222,6 +227,7 @@ label hermione_random_clothing:
             call update_her_uniform
 
             call her_chibi("stand","mid","base")
+            with d3
 
             if her_mood > 1:
                 call her_main("","annoyed","baseL", xpos="base", ypos="base")
@@ -249,6 +255,7 @@ label hermione_random_clothing:
 
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
+                with d3
                 pause.2
                 call her_main("","base","base", xpos="base", ypos="base")
                 call ctc
@@ -264,6 +271,7 @@ label hermione_random_clothing:
             else:
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
+                with d3
                 pause.2
                 call her_main("","base","base", xpos="base", ypos="base")
 
@@ -286,6 +294,7 @@ label hermione_random_clothing:
 
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
+                with d3
                 pause.2
                 call her_main("","base","base", xpos="base", ypos="base")
                 call ctc
@@ -301,6 +310,7 @@ label hermione_random_clothing:
             else:
                 call update_her_uniform
                 call her_chibi("stand","mid","base")
+                with d3
                 pause.2
                 call her_main("","base","base", xpos="base", ypos="base")
 
@@ -311,6 +321,7 @@ label hermione_random_clothing:
 
     #Resets her clothing.
     call her_chibi("stand","mid","base")
+    with d3
     pause.2
     call load_hermione_clothing_saves
     call update_her_uniform

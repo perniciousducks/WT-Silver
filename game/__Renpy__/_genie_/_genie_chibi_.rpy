@@ -18,7 +18,7 @@ screen g_c_c_u():
 
 screen genie(): #Sitting behind desk.
     tag genie_chibi
-    add "images/rooms/main_room/11_genie_00.png" at Position(xpos=370, ypos=336, xanchor="center", yanchor="center")
+    add "newanimation" at Position(xpos=370, ypos=336, xanchor="center", yanchor="center")
     zorder 1
 
 

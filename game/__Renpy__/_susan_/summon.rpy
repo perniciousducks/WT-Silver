@@ -2,7 +2,7 @@
 
 
 label summon_susan:
-
+    call play_music("susan_theme")
     call play_sound("door")
 
     call load_susan_clothing_saves
@@ -13,6 +13,7 @@ label summon_susan:
     call update_sus_uniform
 
     call sus_chibi("stand","mid","base")
+    with d3
 
     if one_of_ten < 4:
         if daytime:

@@ -569,19 +569,19 @@ label play_music(music=""):
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["cho", "cho_theme", "happy_adventure"]:
         # Cho
-        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
+        play music "music/fuzzball-parade-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["astoria", "astoria_theme"]:
         # Astoria
-        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
+        play music "music/fluffing-a-duck-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["susan", "susan_theme"]:
         # Susan
-        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
+        play music "music/teddy-bear-waltz-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["tonks", "tonks_theme"]:
         # Tonks
-        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
+        play music "music/scheming-weasel-slower-version-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["luna", "luna_theme"]:
         # Luna
-        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
+        play music "music/wallpaper-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["playful", "playful_tension"]:
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["silly", "fun", "silly_fun_loop"]:

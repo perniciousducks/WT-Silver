@@ -14,25 +14,23 @@ label read_letter:
 
     $ menu_x = 0.5
     $ menu_y = 0.9
-
+    show screen bld1
+    show screen blktone5
     show screen letter
-    with d5
-    label read_letter_again:
-    call ctc
+    with d3
 
     menu:
         "-Done reading-":
             pass
-        "-Not yet-":
-            jump read_letter_again
 
     $ letter.mailRead()
 
     call reset_menu_position
 
     hide screen letter
+    hide screen blktone5
     hide screen bld1
-    with d5
+    with d3
 
     if letter.label != "":
         pause.2
@@ -48,14 +46,13 @@ label read_letter:
 
 
 screen letter():
+    zorder 20
     tag letter
 
     add "interface/points/letter.png" at Position(xpos=340, ypos=30)
     hbox:
         spacing 40 xpos 410 ypos 80 xmaximum 250
         text letter.getLetterText()
-
-    zorder 4
 
 label shoosh_owl_away:
     show screen chair_left

@@ -140,7 +140,7 @@ screen custom_menu(items):
     zorder 15
     
     # Dont add the fade if character or saybox is present (They have their own triggers for fading)
-    if not renpy.get_screen("say") and not renpy.get_screen("hermione_main") and not renpy.get_screen("cho_chang") and not renpy.get_screen("luna_main") and not renpy.get_screen("snape_main") and not renpy.get_screen("astoria_main") and not renpy.get_screen("tonks_main") and not renpy.get_screen("susan_main"):
+    if not renpy.get_screen("say") and not renpy.get_screen("hermione_main") and not renpy.get_screen("cho_chang") and not renpy.get_screen("luna_main") and not renpy.get_screen("snape_main") and not renpy.get_screen("astoria_main") and not renpy.get_screen("tonks_main") and not renpy.get_screen("susan_main") and not renpy.get_screen("letter"):
         add "interface/bld.png" at fadeOutOnly
     window at fadeInOut:
         style "menu_window"

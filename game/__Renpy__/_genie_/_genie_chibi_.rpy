@@ -250,6 +250,8 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
             $ gen_chibi_xpos = 210
         elif xpos == "cupboard":
             $ gen_chibi_xpos = 260
+        elif xpos == "fireplace":
+            $ gen_chibi_xpos = 550
         else:
             $ gen_chibi_xpos = int(xpos)
 
@@ -258,6 +260,8 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
             $ gen_chibi_ypos = 190
         elif ypos == "behind_desk":
             $ gen_chibi_ypos = 190
+        elif ypos == "fireplace":
+            $ gen_chibi_ypos = 160
         else:
             $ gen_chibi_ypos = int(ypos)
 

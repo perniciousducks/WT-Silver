@@ -236,12 +236,12 @@ init python:
         #And if you dont make any then it will all ways be true
         def unlock_check(self):
             if self.name == "A bad time to disrobe":
-                return hg_pf_admire_breasts.points > 0
+                return hg_pf_admire_breasts.tier > 1
             elif self.name == "A spaced out conversation":
                 return sna_friendship > 60
             elif self.name == "A Booty at sea":
-                return hg_pf_anal_sex.points > 2
+                return hg_pf_sex.tier > 1
             elif self.name == "An odd circumstance":
-                return hg_pf_blowjob.points > 2
+                return hg_pf_blowjob.tier > 1
             else:
                 return True

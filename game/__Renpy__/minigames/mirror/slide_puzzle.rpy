@@ -30,7 +30,7 @@ label update_puzzle_slide:
     $ p_move = ui.interact()
     hide screen puzzle_board
 
-    if int(p_move) == -1:
+    if p_move == "Close":
         hide screen exp_o_meter
         call screen main_room_menu
 
@@ -111,7 +111,7 @@ label open_pyzzle_box:
 screen puzzle_board():
     tag puzzle
 
-    use close_button(close_var=lambda : -1)
+    use top_bar_close_button
 
     if puzzle_tries > 95:
         textbutton "Fuck it!" action Return(-2) text_size 32 xalign 0.5 yalign 0.93

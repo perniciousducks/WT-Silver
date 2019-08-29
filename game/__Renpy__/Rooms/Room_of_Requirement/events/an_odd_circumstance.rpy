@@ -69,18 +69,21 @@ label an_odd_circumstance():
     $ renpy.sound.play("sounds/magic4.ogg")
     hide screen add_overlay
     show screen white
-    pause 0.1
+    with d1
+    call her_chibi("stand",xpos=200,flip=True)
     hide screen white
     show screen add_overlay
-    call her_chibi("stand",xpos=200,flip=True)
+    with d1
     her "Silencio."
     nar "After a few seconds I went to ask where that voice and bright light had come from... But as I tried, I could only feel my lips moving with no sound emerging..."
     hide screen genie
     call gen_chibi("stand","260","base", flip=False)
     show screen chair_left
     show screen desk(430)
+    with d3
     nar "Taken aback by this, I pushed myself back in my chair and stood up clutching my vocal cords..."
     call gen_chibi("stand","260","base", flip=True)
+    with d3
     nar "I turned around, now feeling slightly worried, looking for the source of the voice."
     her "Don't say anything else... you know why I'm here, we had a deal remember..."
     nar "The girl had now moved to behind the desk..."
@@ -132,6 +135,7 @@ label an_odd_circumstance():
     her "*Gobble!* *Gltch!* *Slurp!*"
     nar "My eyes closed and without warning I felt a sudden rush of ecstasy come over me, after only being able to let out a inaudible groan my pelvic muscles tightened as I ejaculated down her throat."
     call set_u_ani("cum_in_mouth_ani","hand_ani", 0,10)
+    with hpunch
     call u_play_ani
     nar "I opened my eyes as hers locked with mine from the sudden overwhelming amount of semen hitting the back of her throat."
     call play_sound("gulp")
@@ -140,9 +144,10 @@ label an_odd_circumstance():
     her "*Gulp!*"
     nar "Her eyes watering she looked as if she was about to pass out but kept her head wrapped around my shaft as she tried to swallow it all, a couple of bubbles now forming around her nose."
     her "*Aahh!*"
-    call set_u_ani("cum_on_face_ani")
+    call set_u_ani("cum_on_face_ani", "cum_on_face_blink_ani")
     call u_play_ani
     nar "She then pulled away satisfied with her deed, moving back just as another wave of seemingly endless amount of semen found its way spurting out and coating her surprised face..."
+    call u_pause_ani
     nar "As the residue started flowing down her cheeks, she wiped some off with her finger and let it slide across the fingertip into her open mouth..."
     her "Looks like I've made a mess again..."
     show screen blkfade
@@ -173,6 +178,9 @@ label an_odd_circumstance():
     nar "It was the only clue you had gotten on who this mysterious girl was, you still had yet to know what kind of favour you had granted her..."
     nar "But it didn't matter, the favour you had received in return was more than enough to make up for anything you might have assisted her with..."
     nar "Or at least that's what you hoped..."
+    
+    show screen blkfade
+    with d9
 
 
     $ daytime = temp_day

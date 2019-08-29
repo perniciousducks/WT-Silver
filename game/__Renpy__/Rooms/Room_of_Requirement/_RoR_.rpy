@@ -23,7 +23,7 @@ screen room_of_requirement():
 
     add "images/rooms/_objects_/candles/candleM.png" at Position(xpos=700, ypos=200, xanchor="center", yanchor="center")
 
-    #use ui_top_bar
+    use ui_top_bar
 
 screen room_of_requirement_overlay():
     tag foreground
@@ -42,7 +42,9 @@ screen room_of_requirement_menu():
         ypos 180
         idle "images/rooms/room_of_requirement/mirror.png"
         hover "images/rooms/room_of_requirement/mirror_hover.png"
-        action [Hide("room_of_requirement_menu"), Jump("mirror_menu")]
+        hovered SetVariable("tooltip", "Look into")
+        unhovered SetVariable("tooltip", None)
+        action [SetVariable("tooltip", None), Hide("room_of_requirement_menu"), Jump("mirror_menu")]
 
     imagebutton: # DOOR
         xpos 758+140
@@ -52,7 +54,9 @@ screen room_of_requirement_menu():
         yanchor "center"
         idle "images/rooms/_objects_/doors/door_idle_night.png"
         hover "images/rooms/_objects_/doors/door_hover_night.png"
-        action [Jump("return_office")]
+        hovered SetVariable("tooltip", "Back to office")
+        unhovered SetVariable("tooltip", None)
+        action [SetVariable("tooltip", None), Jump("return_office")]
 
 screen genie_stand_mirror():
     tag genie_chibi_mirror
@@ -117,6 +121,8 @@ screen floor_7th_screen():
     add "images/rooms/_objects_/deco/owlbasin.png" xpos 350 ypos 255 zoom 0.3
     add "images/rooms/_objects_/deco/hogwarts_banner.png" xpos 200 ypos 105
     zorder -1
+    
+    use ui_top_bar
 
 #animation of flower for painting maybe?
 image flower_animation:
@@ -151,7 +157,9 @@ screen floor_7th_menu():
         ypos 105
         idle "images/rooms/_objects_/doors/front_door.png"
         hover "images/rooms/_objects_/doors/front_door_hover.png"
-        action [Jump("enter_room_of_req")]
+        hovered SetVariable("tooltip", "Enter")
+        unhovered SetVariable("tooltip", None)
+        action [SetVariable("tooltip", None), Jump("enter_room_of_req")]
     zorder -1
 
 label enter_room_of_req:

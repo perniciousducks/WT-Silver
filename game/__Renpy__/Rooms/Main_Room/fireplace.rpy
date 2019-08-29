@@ -15,9 +15,14 @@ label fireplace:
         jump day_main_menu
 
     if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
+        hide screen genie
+        call gen_chibi("stand", "fireplace", "fireplace")
+        show screen chair_left
+        show screen desk
+        with d3
+        m "(Hmm, there's something glimmering in the fireplace.)"
         menu:
             "Search fireplace":
-                m "(Hmm, there's something glimmering in the fireplace.)"
                 m "(A loose brick... If only I could..{nw}{w=1.0}"
                 $ renpy.play('sounds/brick_scrape.mp3')
                 m "(A loose brick... If only I could..{fast} *Hhng*... There we go.)"
@@ -28,9 +33,19 @@ label fireplace:
                 m "Maybe I should give it a try?"
                 menu:
                     "-Try solving the puzzle-":
+                        show screen genie
+                        hide screen genie_stand
+                        hide screen chair_left #Empty chair near the desk.
+                        hide screen desk
+                        with d3
                         jump start_slide_puzzle
                     "-Save it for later-":
                         pass
+                show screen genie
+                hide screen genie_stand
+                hide screen chair_left #Empty chair near the desk.
+                hide screen desk
+                with d3
 
     else:
         if fire_in_fireplace:

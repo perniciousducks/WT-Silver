@@ -153,6 +153,13 @@ screen map_buttons():
 
     #Room of Requirement
     if unlocked_7th:
+        if not first_visit_req:
+            frame:
+                style "empty"
+                at animate
+                xpos UI_xpos_offset +80
+                ypos UI_ypos_offset +120
+                add "interface/achievements/glow.png" align (0.5, 0.5) zoom 0.15 alpha 0.5 at rotate_circular
         imagebutton at animate:
             xpos UI_xpos_offset +116
             ypos UI_ypos_offset +160
@@ -527,6 +534,7 @@ label floor_7th:
     else:
         call blkfade
         call room(hide_screens=True)
+        $ interface_color = "gray"
         show screen floor_7th_screen
 
         if unlocked_7th and first_time_7th:
@@ -534,7 +542,7 @@ label floor_7th:
             call hide_blkfade
 
             $ first_time_7th=False
-            m "So... he was walking around here."
+            m "So... The diary mentioned he was walking around here."
 
             call gen_walk(xpos="200", ypos="base", speed=2.7)
 
@@ -558,6 +566,8 @@ label floor_7th:
 
             call bld
             g9 "Well... will you look at that"
+            hide screen bld1
+            with d3
             hide screen room_of_req_door
             show screen floor_7th_door
             call screen floor_7th_menu
@@ -795,6 +805,10 @@ label return_office:
     show screen blkfade
     with d3
 
+    if daytime:
+        $ interface_color = "gold"
+    else:
+        $ interface_color = "gray"
     pause.8
 
     jump main_room

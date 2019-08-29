@@ -28,7 +28,7 @@ label house_points:
 
     # Outline settings
     $ points_outline = [ (1, "#000", 0, 0) ]
-    if daytime and not persistent.nightmode:
+    if interface_color == "gold" and not persistent.nightmode:
         $ daygold_colour = "{color=#000}"
         $ daygold_outline = [ (1, "#e4ba7080", 0, 0) ]
     else:
@@ -82,7 +82,7 @@ screen ui_top_bar():
     use ui_points
 
     # Don't display buttons in the shops or on day 1
-    if not renpy.get_screen("clothing_store_room") and not renpy.get_screen("weasley_store_room") and day != 1:
+    if not renpy.get_screen("clothing_store_room") and not renpy.get_screen("weasley_store_room") and not renpy.get_screen("room_of_requirement") and not renpy.get_screen("floor_7th_screen") and day != 1:
         # Menu button
         imagebutton:
             xpos 0
@@ -234,7 +234,7 @@ screen ui_points():
                 text "{size=16}{color=#FFF}[ravenclaw_place]{/color}{/size}" outlines points_outline xpos 98 ypos 10 xanchor 0.5
                 text "{size=16}{color=#FFF}[hufflepuff_place]{/color}{/size}" outlines points_outline xpos 139 ypos 10 xanchor 0.5
 
-            if toggle_ui_lock and renpy.get_screen("main_room_menu"):
+            if toggle_ui_lock and renpy.get_screen("main_room_menu") or renpy.get_screen("room_of_requirement_menu") or renpy.get_screen("floor_7th_menu"):
                 imagebutton:
                     idle "interface/topbar/hover_zone.png"
                     hovered [SetVariable("toggle_points", True), SetVariable("tooltip", "Toggle banners style")]

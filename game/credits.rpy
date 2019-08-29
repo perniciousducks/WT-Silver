@@ -1,18 +1,11 @@
 ﻿init python:
-    # Function to add a line to the credits
-    def addLine(credits_text, line):
-        # Add the line to the credits
-        credits_text += line + "\n\n"
-
-        return credits_text
-
     # Function to add a section to the credits
     def addSection(credits_text, title, names):
         # Add the section title to the credits
-        credits_text += "{size=+10}" + title + "{/size}\n\n"
+        credits_text += "{k=5.0}{size=+15}{outlinecolor=#842500}{color=#f9a001}{{" + title + "}{/color}{/outlinecolor}{/size}{/k}\n\n"
         # Add all of the names in the section to the credits
         for name in names:
-            credits_text += name + "\n"
+            credits_text += "{k=1.5}" + name + "{/k}\n"
         # Add some extra newlines to the credits
         credits_text += "\n"
 
@@ -21,19 +14,26 @@
 label credits:    
     python:
         # Variables to control and setup the credits text
-        credits_duration = 40.0
-        credits_text = "{image=logo/silverstudiogames.png}\n\n"
+        credits_duration = 30.0
+        credits_text = "{image=logo/title.png}\n\n"
 
-        # Text for artists credits
-        credits_team = ["MadMerlin: {size=-5}Lead writer, QA Lead, Coder, Editor.{/size}", "Soggy: {size=-5}Lead Artist.{/size}", "Asease1: {size=-5}Lead Coder.{/size}", "DostojevskijSTG: {size=-5}Artist.{/size}", "Johnny: {size=-5}Writer, Editor, Designer, QA.{/size}", "LoafyLemon: {size=-5}Artist, C{s}o{/s}der, Designer.{/size}", "Dr. Lupin: {size=-5}Networking, Management and Administration.{/size}", "Lineup: {size=-5}Moderator, tester{/size}", "Mo: {size=-5}Writer, coder.{/size}"]
-        credits_text = addSection(credits_text, "-Current Team-", credits_team)
+        credits_artists = ("Soggy", "DostojevskijSTG", "LoafyLemon", "Noodle")
+        credits_writers = ("Johnny28", "Mo")
+        credits_programmers = ("Asease1", "LoafyLemon")
+        credits_music = ("Harry Potter OST\n{size=-5}{color=#808080}{k=0.7}\"Prologue\"\n\"Shanghai Honey\"\n\"Introducing Colin\"\n\"Neville's Waltz\"\n\"The Quidditch Match\"{/k}{/color}{/size}\n", "Kevin MacLeod\n{size=-5}{color=#808080}{k=0.7}\"Anguish\"\n\"Awkward Meeting\"\n\"Brittle Rille\"\n\"Chipper Doodle v2\"\n\"Dark Fog\"\n\"Despair\"\n\"Game Over Theme\"\n\"Boss Theme\"\n\"Hitman\"\n\"Music for Manatees\"\n\"Plaint\"\n\"Fuzzball Parade\"\n\"Teddy Bear Waltz\"\n\"Scheming Weasel (Slower version)\"{/k}{/color}{/size}\n", "PhobyAk\n{size=-5}{color=#808080}{k=0.7}\"Under-the-radar\"{/k}{/color}{/size}\n", "Shadow16nh\n{size=-5}{color=#808080}{k=0.7}\"Playful Tension (Orchestral)\"{/k}{/color}{/size}\n", "controllerhead\n{size=-5}{color=#808080}{k=0.7}\"Item Shop\"{/k}{/color}{/size}\n", "jrayteam6\n{size=-5}{color=#808080}{k=0.7}\"Grape Soda is Fucking Raw\"{/k}{/color}{/size}\n", "Juhani Junkala\n{size=-5}{color=#808080}{k=0.7}Retro Game Music Pack:\n\"Title Screen\"\n\"Level 1\"\n\"Level 3\"{/k}{/color}{/size}")
+        credits_special = ("{size=+4}Akabur{/size}\n{color=#808080}{size=-5}{k=0.7}Creator of the original Witch Trainer and other awesome games! {a=https://www.patreon.com/akabur}PATREON{/a}{/size}{/color}\n{/k}", "Dr. Lupin", "Lineup", "MaiL", "MedicBear", "STG Anon", "Boom313", "Sandmaster", "Pinguino", "UE Crew", "Catbug", "CaptainNemo", "Artguy", "Linear", "Amadan", "Anons", "Heretic", "Maverick", "Cleanzo", "Techy", "Zuel32")
         
-        credits_additional = ["Akabur: {size=-5}Creator of the original Witch Trainer and other awesome games! {a=https://www.patreon.com/akabur}PATREON{/a}{/size}", "STG Anon: {size=-5}Coding.{/size}", "Booom313: {size=-5}Android Port. {a=https://www.patreon.com/booom313}PATREON{/a}{/size}", "Sandmaster: {size=-5}Assistant management, Networking and Moderation.{/size}", "Pinguino: {size=-5}Support, QA, Being a penguin.{/size}", "UE Crew: {size=-5}Tutoring and additional assets.{/size}", "Catbug: {size=-5}Writing, Coding and face emotion selection.{/size}", "CaptainNemo: {size=-5}Art (Luna).{/size}", "Artguy: {size=-5}Art (HeartDancer outfit and Weasley Twins).{/size}", "Linear: {size=-5}Art (Outfits).{/size}", "Heretic: {size=-5}Writing (Custom Events).{/size}", "Maverick", "Cleanzo: {size=-5}Coding (Helped with python methods).{/size}", "Techy: {size=-5}Art (Outfit).{/size}", "Amadan: {size=-5}Art (Madam Mafkin and some of the chibi scenes).{/size}", "Anons: {size=-5}Art and other stuff.{/size}", "MaiL: {size=-5}Tester of the cardgame{/size}", "Lineup: {size=-5}Recolored clothing, tester of the cardgame{/size}"]
-        credits_text = addSection(credits_text, "-Additional Credits-", credits_additional)
+        # Start
+        credits_text = addSection(credits_text, "Director", ["MadMerlin"])
+        credits_text = addSection(credits_text, "Artists", credits_artists)
+        credits_text = addSection(credits_text, "Writers", credits_writers)
+        credits_text = addSection(credits_text, "Programmers", credits_programmers)
+        credits_text = addSection(credits_text, "Music", credits_music)
+        credits_text = addSection(credits_text, "Special Thanks", credits_special)
         
-        credits_text += "\nSpecial thanks to our fans, testers and {a=https://www.patreon.com/SilverStudioGames/}patreon supporters{/a} {image=images/misc/heart.png}\n\n\n"
-        credits_text += "{size=-5}If you feel like you have contributed to this project and would like recognition\nplease email us at {a=mailto:silverstudiogamesofficial@gmail.com}silverstudiogamesofficial@gmail.com{/a}{/size}"
-        credits_text += "\n\n\n{image=characters/genie/mage9.png}"
+        credits_text += "\nSpecial thanks to our fans, discord moderators and {a=https://www.patreon.com/SilverStudioGames/}patreon supporters{/a} {image=images/misc/heart.png}\n\n\n"
+        credits_text += "{image=logo/silverstudiogames.png}\n\n"
+        credits_text += "\n{space=220}{image=characters/genie/mage9.png}{rb}{space=-60}Thank you for playing!{/rb}"
 
     show screen credits_screen
     with dissolve
@@ -49,7 +49,7 @@ transform credits_scroll:
     subpixel True
     ypos absolute(20)
     time 2.0
-    linear credits_duration-7 ypos absolute(-330)
+    linear credits_duration-7 ypos absolute(-1400)
     
 screen credits_screen():
     tag credits
@@ -60,4 +60,4 @@ screen credits_screen():
         style "empty"
     add "interface/blackfade.png"
     
-    text "{color=#FFF}[credits_text]{/color}" xalign 0.5 xpos 540 text_align 0.5 at credits_scroll
+    text "{color=#FFF}[credits_text]{/color}" xalign 0.5 xpos 540 text_align 0.5 outlines [(2, "#000", 0, 0)] at credits_scroll

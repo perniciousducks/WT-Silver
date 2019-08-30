@@ -190,7 +190,7 @@ label hg_pf_talk_T1: # Call label
 ### Tier 2 ###
 
 # Hermione realizes you've been jerking off this whole time!
-# 'hg_T2_jerk_off_trigger' is required to advance into the next tier.
+# 'hg_jerkoff.trigger' is required to advance into the next tier.
 # Event 1 (i) - Hermione can spot you jerking off.
 # Event 2 (r) - Slight dialogue variation if you've been busted jerking off before.
 
@@ -205,7 +205,7 @@ label hg_pf_talk_T2_intro_E1:
 
 label hg_pf_talk_T2_E1:
 
-    if hg_T2_jerk_off_trigger:
+    if hg_jerkoff.trigger:
         call her_main("Another talk, [hermione_name]?","soft","base")
         call her_main("(I hope he doesn't do \"that\" again...)","disgust","down_raised")
     else:
@@ -290,7 +290,7 @@ label hg_pf_talk_T2:
         g4 "*Argh!* YES!"
 
         $ her_mood = +7
-        if hg_T2_jerk_off_trigger:
+        if hg_jerkoff.trigger:
             call her_main("I can't believe it, [genie_name]!","soft","angry")
             call her_main("You were touching yourself!{w} Again!","angry","angry")
         else:
@@ -310,7 +310,7 @@ label hg_pf_talk_T2:
         m "Yes, you did."
         call her_main("Ew... I feel so dirty now...","angry","angry")
 
-        $ hg_T2_jerk_off_trigger = True
+        $ hg_jerkoff.trigger = True
 
     else:
         her "We need to put an end to this behavior, [genie_name]!"

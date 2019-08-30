@@ -48,7 +48,7 @@ label snape_hangout:
         jump ask_snape_for_quidditch_help
 
     # General
-    if hg_T3_strip_trigger and not snape_invited_to_watch: #After second dance where Snape entered room.
+    if hg_strip.trigger and not snape_invited_to_watch: #After second dance where Snape entered room.
         show screen with_snape #Makes sure the scene is not animated...
         jump special_date_with_snape_03
 

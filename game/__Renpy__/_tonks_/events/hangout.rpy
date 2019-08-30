@@ -29,7 +29,7 @@ label tonks_hangout:
     if ton_friendship >= 10 and not hang_with_tonks.E3_complete:
         jump hang_with_tonks_E3
 
-    if ton_reputation >= 4 and ton_friendship >= 20 and ton_tier == 1:
+    if ton_reputation >= 4 and ton_friendship >= 20 and not hang_with_tonks.E4_complete:
         jump hang_with_tonks_E4
 
     # Tonks Auror Stories.
@@ -336,8 +336,7 @@ label hang_with_tonks_E4:
     g9 "Make sure to reward them if they do."
     call ton_main("I promise, [ton_genie_name].","base","base","base","mid")
 
-    $ ton_tier = 2
-    call popup("Tonks has reached level 2! New favors have been unlocked.", "Congratulations!", "interface/icons/head/head_tonks_1.png", sound=False)
+    call popup("Tonks can now reach the next level!", "Congratulations!", "interface/icons/head/head_tonks_1.png", sound=False)
 
     $ hang_with_tonks.E4_complete = True
 
@@ -345,60 +344,6 @@ label hang_with_tonks_E4:
         jump night_start
     else:
         jump day_start
-
-
-### Discuss Hermione ###
-
-label nt_he_hermione_panties:
-    # You tell Tonks zjaz Hermione has shown you her panties.
-    #if hg_T1_panties_trigger
-
-    jump end_tonks_hangout
-
-
-label nt_he_hermione_talk:
-    # You tell Tonks about when you got busted jerking off on front of Hermione.
-    #if hg_T2_jerk_off_trigger
-
-    jump end_tonks_hangout
-
-
-label nt_he_hermione_strip:
-    # You tell Tonks about Hermione stipping and Snape walking in.
-    #if hg_T3_strip_trigger
-
-    jump end_tonks_hangout
-
-
-label nt_he_hermione_handjob:
-    # You tell Tonks about Hermione's attempts to give you a hangjob.
-    #if hg_T4_handjob_trigger
-
-    jump end_tonks_hangout
-
-
-label nt_he_hermione_blowjob:
-    # You tell Tonks about the memorable day in which Hermione gave you a blowjob.
-    #if hg_T5_blowjob_trigger
-
-    jump end_tonks_hangout
-
-
-label nt_he_hermione_sex:
-    # You tell Tonks about the time you put your p in Hermione's v.
-    #if hg_T6_sex_trigger
-
-    jump end_tonks_hangout
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -68,7 +68,7 @@ label nt_pr_grope_T1_E1: # Tier 1 - Event 1 - Slytherin boy
     call play_sound("door")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
 
-    if ton_reputation <= 7 and nt_pr_grope.points == 4: # First time.
+    if ton_reputation <= 7 and nt_pr_grope.points < 4: # First time.
         pass
     else: # Repeat.
         menu:
@@ -141,7 +141,7 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     call play_sound("door")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
 
-    if ton_reputation <= 7 and nt_pr_grope.points == 4: # First time.
+    if ton_reputation <= 7 and nt_pr_grope.points < 4: # First time.
         pass
     else: # Repeat.
         menu:
@@ -224,7 +224,7 @@ label nt_pr_grope_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys
     call play_sound("door")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
 
-    if ton_reputation <= 7 and nt_pr_grope.points == 4: # First time.
+    if ton_reputation <= 7 and nt_pr_grope.points < 4: # First time.
         pass
     else: # Repeat.
         menu:
@@ -285,7 +285,7 @@ label nt_pr_grope_T1_E4: # Tier 1 - Event 4 - Slytherin girl
     call play_sound("door")
     call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
 
-    if ton_reputation <= 7 and nt_pr_grope.points == 4: # First time.
+    if ton_reputation <= 7 and nt_pr_grope.points < 4: # First time.
         pass
     else: # Repeat.
         menu:

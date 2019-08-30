@@ -53,7 +53,8 @@ label hg_pf_sex:
 
 
     # Increase level
-    $ hg_T6_sex_trigger = True
+    $ hg_sex.trigger = True
+    $ hg_anal.trigger = True
     if her_whoring < 24: #Adds points till 24.
         $ her_whoring += 1
 
@@ -147,6 +148,7 @@ label hg_pf_sex_T1_intro_E3:
         "-Poke her butthole!-":
             g4 "(Yes! Let's see if she's willing to take it up her ass!)"
             call hg_anal_sex_1
+            $ hg_anal.trigger = True
             $ current_payout = 90
 
     jump end_hg_pf_sex
@@ -174,6 +176,8 @@ label hg_pf_sex_T1_E3: # repeats
 
         "-Fuck her asshole!-":
             g4 "(Let's see how well she takes it up the ass this time!)"
+            $ hg_anal.trigger = True
+            $ current_payout = 90
             call hg_anal_sex_2
 
     jump end_hg_pf_sex

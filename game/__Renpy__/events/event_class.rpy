@@ -2,27 +2,73 @@ init python:
     class quest_class(object):
         title = ""
         hint = ""
-        
+
         def __init__(self, **kwargs):
             self.__dict__.update(kwargs)
-            
+
         def status(self):
             return list(self.__dict__)
-            
+
+
+    class trigger_class(object):
+        title       = ""
+        bool        = False # Can me switched to 'True' and 'False' for events
+        trigger     = False # Can only be switched to 'True'
+        counter     = 0
+
+        ss_trigger  = False # Snape
+        nt_trigger  = False # Tonks
+        hg_trigger  = False # Hermione
+        gw_trigger  = False # Ginny
+        cc_trigger  = False # Cho
+        ll_trigger  = False # Luna
+        sb_trigger  = False # Susan
+        ag_trigger  = False # Astoria
+        dg_trigger  = False # Daphne
+        pp_trigger  = False # Pansy
+
+        ss_counter  = 0 # Snape
+        nt_counter  = 0 # Tonks
+        hg_counter  = 0 # Hermione
+        gw_counter  = 0 # Ginny
+        cc_counter  = 0 # Cho
+        ll_counter  = 0 # Luna
+        sb_counter  = 0 # Susan
+        ag_counter  = 0 # Astoria
+        dg_counter  = 0 # Daphne
+        pp_counter  = 0 # Pansy
+
+        def __init__(self, **kwargs):
+            self.__dict__.update(kwargs)
+
+        def status(self):
+            return list(self.__dict__)
+
+        def trigger(self):
+            self.trigger = True
+            self.counter += 1
+            return
+
+        def trigger_char(self, char): # char = 'ss','nt',...
+            str(char)+_trigger = True
+            str(char)+_counter += 1
+            return
+
+
     class event_class(object):
         title     = ""
         hint      = ""
         counter   = 0
-        
+
         start_label = ""
         start_tier = 0
         inProgress = False
 
         events = []
-        
+
         icons = []
         iconset = []
-        
+
         # Private attributes
         _tier     = 0
         _max_tiers = 0
@@ -33,9 +79,9 @@ init python:
 
             if self.events == []:
                 raise Exception('Events: "events" list was not defined in event_class.')
-                
+
             self._max_tiers = len(self.events)
-                
+
             if self.iconset == []:
                 raise Exception('Events: "iconset" list was not defined in event_class. You need to add at least one set of icons.')
             elif len(self.iconset) < self._max_tiers:
@@ -79,16 +125,16 @@ init python:
                     heart_list.append(imagepath+self.iconset[self._tier][1]+".png")
                 else:
                     heart_list.append(imagepath+self.iconset[self._tier][0]+".png")
-                    
+
             # Before Text hint
             if self.hint:
                 menu_text += "{image=interface/check_True.png} "
-                
+
             # Before Text icon
             if len(self.icons) > 0:
                 if self.icons[self._tier]:
                     menu_text += "{image="+imagepath+self.icons[self._tier]+".png} "
-                
+
             # Main Text
             if self.title:
                 menu_text += "\""+self.title+"\" "
@@ -98,13 +144,13 @@ init python:
                 menu_text += "{image="+heart+"}"
 
             return menu_text
-            
+
         def fail(self):
             self.counter -= max(0, self.counter-1)
             self.points -= 1
             self.events[self._tier][self._points][1] = False
             return
-            
+
         # Reset the event completely
         def reset(self):
             for i in xrange(self._max_tiers):
@@ -114,35 +160,35 @@ init python:
             self._points = 0
             self.counter = 0
             self.inProgress = False
-            
+
         def status(self, value):
             status_list = []
             for item in self.events[value-1]:
                 status_list += [item[1]]
             return status_list
-            
+
         @property
         def points(self):
             return self._points
-            
+
         @points.setter
         def points(self, value):
             self._points = max(0, min(value, len(self.events[self._tier])))
-            
+
         @property
         def tier(self):
             return self._tier+1
-            
+
         @tier.setter
         def tier(self, value):
             if value > self._tier+1:
                 self._points = 0
             self._tier = max(0, min(value-1, self._max_tiers-1))
-            
+
         @property
         def max_tiers(self):
             return self._max_tiers
-            
+
         @max_tiers.setter
         def max_tiers(self, value):
             pass

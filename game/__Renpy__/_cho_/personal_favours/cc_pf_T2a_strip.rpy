@@ -326,7 +326,7 @@ label cc_pf_strip_T1_intro_E2:
     call cho_main("And dance for you like some common harlot?","soft","narrow","base","R")
 
     # You saw Hermione strip before.
-    if hg_T3_strip_trigger:
+    if hg_strip.trigger:
         m "If it's not too much trouble..."
         call cho_main("Of course not, [cho_genie_name].","soft","closed","base","mid")
         g4 "(I'm having a bit of a deja vu!)" # In-game font doesn't support special characters. déjà vu!
@@ -730,7 +730,7 @@ label cc_pf_strip_T1_intro_E3:
     call ctc
 
     # Check if Hermione has already stripped for you.
-    if not hg_T3_strip_trigger:
+    if not hg_strip.trigger:
 
         # Cho demands that you get Hermione to strip, so Cho has something to blackmail her should anything happen.
         # Cho gets dressed again and storms off.

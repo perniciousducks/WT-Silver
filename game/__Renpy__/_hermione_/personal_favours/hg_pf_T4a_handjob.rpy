@@ -400,7 +400,7 @@ label hg_pf_handjob_1:
             pause 2
 
             # T4 Trigger - "First Kiss"
-            $ hg_T4_handjob_trigger = True
+            $ hg_handjob.trigger = True
             $ achievement.unlock("herkiss")
             pause 1
 
@@ -949,7 +949,7 @@ label hg_pf_handjob_2_cumming:
             call her_main("And swallow your hot spunk like that, [genie_name]?","angry","wink")
             m "Would keep your clothes clean."
 
-            if hg_T5_blowjob_trigger == False: # Hasn't done blowjobs yet.
+            if hg_blowjob.trigger == False: # Hasn't done blowjobs yet.
                 call her_main("With all due respect [genie_name]...","upset","closed")
                 call her_main("Not for the meagre 45 points...","angry","wink")
                 call her_main("Speaking of which. Can I get may payment now please?")
@@ -1012,7 +1012,7 @@ label hg_pf_handjob_2_cumming:
             call her_main("I will just wipe it off and hope that nobody will notice...","grin","dead")
             call her_main("Can I get my payment now?","angry","wink")
 
-        "\"(Cum in her mouth!)\"" if hg_T5_blowjob_trigger == True: # Has done blowjobs already.
+        "\"(Cum in her mouth!)\"" if hg_blowjob.trigger == True: # Has done blowjobs already.
             call bld
             m "Open your mouth, [hermione_name]!"
             call her_main("What?!","open","wide", ypos="head")

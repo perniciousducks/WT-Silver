@@ -140,6 +140,30 @@ label summon_tonks:
             jump main_room
 
 
+# Tonks level up
+label update_ton_tier:
+    if ton_tier == 1 and hang_with_tonks.E4_complete:
+        $ ton_level_up = 1
+
+    return
+
+label tonks_level_up(tier=None):
+
+    call bld
+    if tier == 1:
+        g9 "(It's time to teach those students some )"
+
+    $ ton_tier = tier+1
+    $ ton_level_up = None
+
+    pause.5
+    call nar(">Tonks has reached level "+str(ton_tier)+"!")
+
+    call update_ton_tier
+
+    return
+
+
 # Tonks Requests Menu
 label tonks_requests_menu:
     call update_ton_requests

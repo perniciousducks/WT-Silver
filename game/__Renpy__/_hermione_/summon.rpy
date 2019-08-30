@@ -140,25 +140,25 @@ label summon_hermione:
 
 
 label update_her_tier:
-    if her_tier == 1 and her_whoring >= 3 and hg_T1_trigger == True:
+    if her_tier == 1 and her_whoring >= 3 and hg_talk.trigger == True:
         # Trigger: None
         $ her_level_up = 1
-    elif her_tier == 2 and her_whoring >= 9 and hg_T2_jerk_off_trigger == True:
+    elif her_tier == 2 and her_whoring >= 9 and hg_jerkoff.trigger == True:
         # Trigger: When you get caught jerking off.
         if game_difficulty >= 3 and imagination < 2: # Hardcore only
             return
         $ her_level_up = 2
-    elif her_tier == 3 and her_whoring >= 12 and hg_T3_strip_trigger == True:
+    elif her_tier == 3 and her_whoring >= 12 and hg_strip.trigger == True:
         # Trigger: After she strips for you.
         if game_difficulty >= 3 and imagination < 3: # Hardcore only
             return
         $ her_level_up = 3
-    elif her_tier == 4 and her_whoring >= 18 and hg_T4_handjob_trigger == True:
+    elif her_tier == 4 and her_whoring >= 18 and hg_handjob.trigger == True:
         # Trigger: None
         if game_difficulty >= 3 and imagination < 4: # Hardcore only
             return
         $ her_level_up = 4
-    elif her_tier == 5 and her_whoring >= 21 and hg_T5_blowjob_trigger == True:
+    elif her_tier == 5 and her_whoring >= 21 and hg_blowjob.trigger == True:
         # Trigger: First BJ
         if game_difficulty >= 3 and imagination < 5: # Hardcore only
             return

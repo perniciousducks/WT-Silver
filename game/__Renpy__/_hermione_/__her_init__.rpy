@@ -565,26 +565,22 @@ label her_progress_init:
 
 label updated_hermione_favors: # For 1.37
 
-    if not hasattr(renpy.store,'hg_T1_trigger'):
+    if not hasattr(renpy.store,'panty_jerkoff'):
+        $ panty_jerkoff     = trigger_class()
+
+        $ hg_talk           = trigger_class()
+        $ hg_jerkoff        = trigger_class()
+        $ hg_strip          = trigger_class()
+        $ hg_fingered       = trigger_class()
+        $ hg_masturbated    = trigger_class()
+        $ hg_handjob        = trigger_class()
+        $ hg_titjob         = trigger_class()
+        $ hg_blowjob        = trigger_class()
+        $ hg_sex            = trigger_class()
+        $ hg_anal           = trigger_class()
+
+    if not hasattr(renpy.store,'her_tier'):
         $ her_tier = 1
-        $ hg_T1_trigger          = True # Temporary
-        $ hg_T2_jerk_off_trigger = False
-
-        # Strip Favor
-        $ hg_T3_strip_trigger    = False
-        $ hg_fingering_trigger   = False
-        $ hg_strip_snape_trigger = False
-        $ hg_tonks_snape_trigger = False
-        $ hg_cho_snape_trigger   = False
-
-        # Handjob Favor
-        $ hg_T4_handjob_trigger  = False
-
-        # Blowjob Favor
-        $ hg_T5_blowjob_trigger  = False
-
-        # Sex Favor
-        $ hg_T6_sex_trigger      = False
 
         $ hg_pf_talk   = event_class(title = "Talk to me!", start_label = "hg_pf_talk", start_tier = 1, events = [
             [
@@ -825,28 +821,6 @@ label updated_hermione_favors: # For 1.37
         hg_pf_sex,
         ]
 
-    if not hasattr(renpy.store,'her_cg_path') or reset_persistants or reset_luna_content:
-        $ her_cg_path       = "images/CG/herm_deep/"
-        $ her_cg_overlay    = her_cg_path+"blank.png"
-        $ her_cg_base       = her_cg_path+"base.png"
-        $ her_cg_body       = her_cg_path+"luna_base.png"
-        $ her_cg_cheeks     = her_cg_path+"c_base.png"
-        $ her_cg_mouth      = her_cg_path+"m_base.png"
-        $ her_cg_eyewhite   = her_cg_path+"eye_white.png"
-        $ her_cg_pupil      = her_cg_path+"pup_base.png"
-        $ her_cg_eye        = her_cg_path+"eye_base.png"
-        $ her_cg_eyebrow    = her_cg_path+"eb_base.png"
-        $ her_cg_eyewear    = her_cg_path+"glasses.png"
-        $ her_cg_tears      = her_cg_path+"blank.png"
-        $ her_cg_extra_1    = her_cg_path+"blank.png"
-        $ her_cg_extra_2    = her_cg_path+"blank.png"
-        $ her_cg_extra_3    = her_cg_path+"blank.png"
-        $ her_cg_genie      = her_cg_path+"genie.png"
-        $ her_cg_xpos       = 0
-        $ her_cg_ypos       = 0
-        $ her_cg_xpos_abs   = 0
-        $ her_cg_ypos_abs   = 0
-        $ her_cg_zoom       = 1
 
     ### Public Requests ###
 
@@ -1038,5 +1012,30 @@ label updated_hermione_favors: # For 1.37
         hg_pr_blowjob,
         hg_pr_sex
         ]
+
+
+    if not hasattr(renpy.store,'her_cg_path') or reset_persistants or reset_luna_content:
+        $ her_cg_path       = "images/CG/herm_deep/"
+        $ her_cg_overlay    = her_cg_path+"blank.png"
+        $ her_cg_base       = her_cg_path+"base.png"
+        $ her_cg_body       = her_cg_path+"luna_base.png"
+        $ her_cg_cheeks     = her_cg_path+"c_base.png"
+        $ her_cg_mouth      = her_cg_path+"m_base.png"
+        $ her_cg_eyewhite   = her_cg_path+"eye_white.png"
+        $ her_cg_pupil      = her_cg_path+"pup_base.png"
+        $ her_cg_eye        = her_cg_path+"eye_base.png"
+        $ her_cg_eyebrow    = her_cg_path+"eb_base.png"
+        $ her_cg_eyewear    = her_cg_path+"glasses.png"
+        $ her_cg_tears      = her_cg_path+"blank.png"
+        $ her_cg_extra_1    = her_cg_path+"blank.png"
+        $ her_cg_extra_2    = her_cg_path+"blank.png"
+        $ her_cg_extra_3    = her_cg_path+"blank.png"
+        $ her_cg_genie      = her_cg_path+"genie.png"
+        $ her_cg_xpos       = 0
+        $ her_cg_ypos       = 0
+        $ her_cg_xpos_abs   = 0
+        $ her_cg_ypos_abs   = 0
+        $ her_cg_zoom       = 1
+
 
     return

@@ -6,7 +6,7 @@ label hg_pr_sex:
 
     if hg_pr_sex.counter < 1:
         m "{size=-4}(Tell her to fuck one of her classmates?){/size}"
-        if her_tier < 6 or hg_T6_sex_trigger == False or her_reputation < 18:
+        if her_tier < 6 or hg_sex.trigger == False or her_reputation < 18:
             menu:
                 "\"(Yes, let's do it!)\"":
                     pass
@@ -37,7 +37,7 @@ label hg_pr_sex:
         m "[hermione_name]..."
         m "Today I need you to have sex with a classmate of your choice."
 
-        if her_tier < 6 or hg_T6_sex_trigger == False or her_reputation < 18:
+        if her_tier < 6 or hg_sex.trigger == False or her_reputation < 18:
             jump too_much
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.

@@ -240,8 +240,8 @@ init python:
             elif self.name == "A spaced out conversation":
                 return sna_friendship > 60
             elif self.name == "A Booty at sea":
-                return hg_pf_sex.tier > 1
+                return hg_anal.trigger == True
             elif self.name == "An odd circumstance":
-                return hg_pf_blowjob.tier > 1
+                return hg_blowjob.trigger == True
             else:
                 return True

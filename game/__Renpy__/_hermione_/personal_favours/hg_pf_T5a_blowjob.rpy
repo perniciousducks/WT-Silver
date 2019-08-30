@@ -71,7 +71,7 @@ label hg_pf_blowjob:
         if her_whoring < 24: # Points til 24
             $ her_whoring += 1
 
-    $ hg_T5_blowjob_trigger = True
+    $ hg_blowjob.trigger = True
 
     jump end_hermione_event
 
@@ -106,7 +106,7 @@ label hg_pf_blowjob_T0_fail_intro:
     call her_main("Suck you...{w}off?","disgust","wide_stare")
     call her_main("With my mouth?!","disgust","wide")
 
-    if hg_T4_handjob_trigger:
+    if hg_handjob.trigger:
         g9 "Wouldn't even be the first time you've done it!"
         call her_main("Yes, but...","disgust","down")
         call her_main("That was something different entirely...","disgust","worriedCl")
@@ -146,7 +146,7 @@ label hg_pf_blowjob_T0_fail_repeat:
     call her_main("I refuse...","open","closed")
     m "It's only a blowjob, girl..."
 
-    if hg_T4_handjob_trigger:
+    if hg_handjob.trigger:
         m "It's not like you haven't done it before..."
         call her_main("Are you talking about the kiss I gave it?","open","angry")
         call her_main("That was something different entirely...","open","closed")

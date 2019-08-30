@@ -716,40 +716,13 @@ label astoria_lap_sit_2_3:
 
 ### Astoria Imperio Training ###
 
-label ag_st_imperio_intro:
-
-    ton "It's not uncommon for a student in your year to be taught curses..."
-    ton ""
-
-    ton "Now, I wasn't planning to"
-    ton "Under the supervision of a Hogwarts teacher"
-    ton "Or a Ministry Auror, as in my case..."
-
-    ton "Now, Astoria..."
-    ton "I would like you to hit me with a curse..."
-    ast "What?"
-    ton "There are ways to figh-off a curse even after you've been hit by it..."
-    ton "I'd like to put on a little demonstration to you, Miss Greengrass!"
-    ast "Really?"
-    ton "Yes- Go on. Hit me with any curse you want... I'm more than prepared for it."
-    ast "*Uhm*..."
-    ast "I actually don't know "
-    ton "I see..."
-    ton "What about the impero curse? You cast that one before..."
-    ton "Use it on me. And make me do something in front of Professor Dumbledore."
-    ast "I'll try..."
-
 label ag_st_imperio_E1:
-    # Tonks doesn't feel anything.
-    # Very quiet voice in her head appears.
-    # Astoria gives up.
-    # Tonks encourages her to try again.
+
+
 
 label ag_st_imperio_E2:
-    # Feels something tingling.
-    # Astoria gets annoyed.
-    # Tries even harder. Gets angry. Starts screaming.
-    # Tonks thinks it's funny.
+
+
 
 label ag_st_imperio_E3:
     # Astoria is more confident this time.

@@ -5,8 +5,8 @@
 label hg_pf_strip_fingering_intro:
 
     # Intro
-    if not hg_fingering_trigger:
-        $ hg_fingering_trigger = True
+    if not hg_fingered.trigger:
+        $ hg_fingered.trigger = True
         m "[hermione_name]..."
         call her_main("Yes, [genie_name]?","base","base", xpos="mid", ypos="base")
         m "Do you ever touch yourself?"
@@ -320,7 +320,7 @@ label hg_pf_strip_T3_fingering:
 ### Tier 4 ###
 
 label hg_pf_strip_T4_fingering:
-    $ hg_fingering_trigger = True
+    $ hg_fingered.trigger = True
 
     m "[hermione_name]?"
     call her_main("[genie_name]?","base","base")

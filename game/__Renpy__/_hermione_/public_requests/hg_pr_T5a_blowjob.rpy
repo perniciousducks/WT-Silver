@@ -6,7 +6,7 @@ label hg_pr_blowjob:
 
     if hg_pr_blowjob.counter < 1:
         m "{size=-4}(Tell her to go give a blowjob to one of her classmates?){/size}"
-        if her_tier < 5 or hg_T5_blowjob_trigger == False or her_reputation < 15:
+        if her_tier < 5 or hg_blowjob.trigger == False or her_reputation < 15:
             menu:
                 "\"(Yes, let's do it!)\"":
                     pass
@@ -42,7 +42,7 @@ label hg_pr_blowjob:
         call her_main("!!!","shock","wide")
         her "...with my mouth?"
 
-        if her_tier < 5 or hg_T5_blowjob_trigger == False or her_reputation < 15:
+        if her_tier < 5 or hg_blowjob.trigger == False or her_reputation < 15:
             jump too_much
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.

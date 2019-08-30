@@ -103,7 +103,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
     stop music fadeout 1.0
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="d7")
 
-    if hg_T3_strip_trigger:
+    if hg_strip.trigger:
         menu:
             "\"First, lift up your top\"": # Needs posing
                 her "Sir?!"

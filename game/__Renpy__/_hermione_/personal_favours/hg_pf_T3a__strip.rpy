@@ -697,7 +697,7 @@ label hg_pf_strip_T1_intro_E2:
     call her_main("Can I just get my points now, please?","angry","worriedCl", emote="05")
     pause.5
 
-    $ hg_T3_strip_trigger = True
+    $ hg_strip.trigger = True
     $ hg_pf_strip.title = "Strip for Me!"
 
     jump end_hg_pf_strip

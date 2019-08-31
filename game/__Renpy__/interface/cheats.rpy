@@ -116,14 +116,6 @@ label cheats:
                     ">All of Astoria's outfits and clothing sets have been unlocked."
                     jump cheats_astoria
 
-                "-Unlock first spell-":
-                    $ ast_affection = 2
-                    $ astoria_tonks_1_completed = True
-                    $ astoria_tonks_2_completed = True
-
-                    $ ag_cs_imperio_sb.points = 3
-                    ">Astoria can now use the first spell!"
-                    jump cheats_astoria
                 "-never mind-":
                     jump cheats
 

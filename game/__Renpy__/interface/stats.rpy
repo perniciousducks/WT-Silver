@@ -301,7 +301,7 @@ screen stats_menuitem(xx, yy):
                                 use stat_bar(int((huffl_matches_won+gryff_matches_won+slyth_matches_won)/0.6), "{size=-10}-Quidditch Training-{/size}" , "Not started", huffl_matches_won+gryff_matches_won+slyth_matches_won) # TODO: Add word list
                             elif current_category == "Luna":
                                 use stat_bar(int(10-lun_mood/1.0), "-Mood-" , "Cheerful", lun_mood) # TODO: Add word list
-                                use stat_bar(int(1/0.9), "-Favour Tier-", "", 1) # TODO: Add Luna tier
+                                use stat_bar(int(lun_tier/0.4), "-Favour Tier-", "", lun_tier) # 4 is max.
                                 use stat_bar(int(lun_whoring/0.9), "-Corruption-", "Naive", lun_whoring) # TODO: Add word list
                                 use stat_bar(int(10/0.9), "-Reputation-", "Total Weirdo", 10) # Joke stat
                                 use stat_bar(int(0), "{size=-10}-Wrackspurts Therapy-{/size}" , "Not started", 0) # TODO: Add word list and variable

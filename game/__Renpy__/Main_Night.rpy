@@ -91,6 +91,10 @@ label night_start:
             if i.inProgress:
                 renpy.jump(i.complete_label)
 
+        for i in ag_spell_list: # Spell Training
+            if i.inProgress:
+                i.inProgress = False
+                i.start()
 
     # Hermione Events.
     if current_job == 1:

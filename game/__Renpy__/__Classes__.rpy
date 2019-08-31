@@ -14,7 +14,7 @@ init -2 python:
         counter      = 0 # For stats
         hint         = False
 
-    class favor_class(silver_request):
+    class favor_class(silver_request): # Not in use anymore.
         level        = 0 # Hearts
         max_level    = 3
         heart_color  = "red"

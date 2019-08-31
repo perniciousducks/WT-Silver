@@ -123,11 +123,12 @@ label astoria_intro_E1:
                     ton "*Huh*... You don't say..."
                     ton "(Is he making fun of me?)"
                     ton "Well, I don't have any cards on me at the moment..."
-                    if tonks_plays_cards: # Add correct variable.
-                        ton "Perhaps I could give you one of my \"doubles\" some other time..."
-                    else:
-                        ton "Some of my students play \"Wizard cards\"... maybe I could confiscate one of theirs..."
-                        m "And teach them a life-lesson to be more attentive of their possessions. Very good."
+                    #if tonks_plays_cards: # Add correct variable.
+                    #    ton "Perhaps I could give you one of my \"doubles\" some other time..."
+                    #else:
+                    ton "Some of my students play \"Wizard cards\"... maybe I could confiscate one of theirs..."
+                    m "And teach them a life-lesson to be more attentive of their possessions. Very good."
+
                     ton "Very well, I'll send you an owl tomorrow morning."
                     g9 "Sweet!"
                     ton "Now, here is what I'll require your help with..."
@@ -136,10 +137,13 @@ label astoria_intro_E1:
 
     # Missing writing from "doc"
 
+    $ tonks_busy = True
+    $ astoria_intro.E1_complete = True
+
     jump main_room
 
 
-label letter_intro_hermione:
+label astoria_intro_E2_hermione:
     m "I require your help with something."
     m "Tonks came by earlier and informed me about a student making a ruckus."
     m "I- *uhm*...{w} She thought maybe you could be of help finding them?"
@@ -202,16 +206,19 @@ label letter_intro_hermione:
 
     call her_walk(action="leave", speed=2)
 
-    if snape_on_the_lookout:
+    if astoria_intro.E2_snape:
         m "I wonder if she'll find them before Snape..."
     else:
         m "I should probably go tell Snape as well..."
+
+    $ hermione_busy = True
+    $ astoria_intro.E2_hermione = True
 
     jump main_room
 
 
 #TELL SNAPE ABOUT THE LETTER #Done
-label letter_intro_snape:
+label astoria_intro_E2_snape:
     m "Tonks came by earlier and informed me about one of your students causing trouble."
     call sna_main("Really?","snape_03") #No xpos change.
     call sna_main("Why are you telling me?","snape_04")
@@ -245,7 +252,7 @@ label letter_intro_snape:
     call sna_main("I'll start the search immediately. In the meantime, just stay here and keep yourself busy.","snape_10")
     m "You don't want my help?"
     call sna_main("Not really... me and Tonks should be able to find that student in no time.","snape_02")
-    if hermione_on_the_lookout:
+    if astoria_intro.E2_hermione:
         m "And Granger..."
         sna "Have you told her about this?!"
         m "Sure... She seemed eager to help."
@@ -259,11 +266,23 @@ label letter_intro_snape:
     call bld
     m "What a drama queen..."
 
+    $ snape_busy = True
+    $ astoria_intro.E2_snape = True
+
     jump main_room
 
 
 #HERMIONE CAPTURED ASTORIA    #Done
-label astoria_captured_intro:
+label astoria_intro_E3:
+    $ astoria_intro.E3_complete = True
+
+    "Dev Note" "Add writing for 3rd intro event."
+    
+    $ astoria_unlocked = True # Placeholder
+
+    jump main_room
+
+label remove_this_label_493:
     call play_sound("knocking")
     "*knock* *knock* *knock*"
 

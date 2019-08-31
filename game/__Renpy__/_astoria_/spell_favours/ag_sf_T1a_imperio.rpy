@@ -1,82 +1,8 @@
 
 
+### Susan Imperio Events ###
 
-
-
-
-label susan_imperio: #Not being used anymore...
-    call ast_main("Alright, [ast_genie_name].","smile","base","base","mid",xpos="base",ypos="base",trans="fade")
-    call ast_main("I will bring the [ast_susan_name]!","grin","angry","angry","mid")
-    call blkfade
-
-    call nar(">Astoria leaves to summon Susan.")
-    pause.5
-    call hide_blkfade
-
-    call sus_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
-    pause.8
-
-    call sus_main("Hello, Professor.","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
-    call sus_main("You wanted to see me?","upset","base","worried","down")
-
-    m "Yes, Miss Bones, if you could just stand there in the middle while--"
-    call ast_main("Wait a second, [ast_genie_name],...","scream","closed","base","mid",xpos="close",ypos="base",trans="hpunch")
-    call ast_main("50 points, remember!","grin","angry","angry","mid")
-    m "..."
-    m "Right..."
-    m "Alright... 50 points to \"Slytherin\"!"
-    $ slytherin +=50
-    call ast_main("Thank you!","grin","happyCl","base","mid")
-    hide screen astoria_main
-    with d3
-    call ast_main("","grin","angry","angry","L",xpos="base",ypos="base")
-    call blkfade
-
-    hide screen blkfade
-    call sus_main("What are you--","open","wide","worried","R",xpos="mid",ypos="base",trans="fade")
-
-    call cast_spell("imperio")
-    call ast_main("{size=+10}{b}IMPERIO{/b}{/size}","scream","angry","angry","angry")
-
-    show screen blktone
-    call ast_main("[ast_susan_name], I command you to do whatever the old man tells you to do!")
-    call sus_main("Of course, I will do whatever the old man sa--","open","base","base","up")
-
-    hide screen blktone
-    call ast_main("All done, [ast_genie_name]! This will probably last a couple of days...","smile","base","base","R")
-    call ast_main("You may leave now, [ast_susan_name]!","grin","happyCl","base","mid")
-    call sus_main("Ok","base","base","base","up")
-
-    call sus_walk(action="leave", speed=2.5)
-
-    call ast_main(xpos="base",ypos="base")
-
-    $ susan_imperio_counter += 20 #Lasts 20 days.
-    $ susan_imperio_influence = True
-    $ spells_locked = True
-
-    call nar(">Susan is now under the influence of imperio.\n>The effect will last for 20 days.")
-    jump astoria_requests
-
-
-label ag_cs_imperio_sb:
-    if ag_cs_imperio_sb.points == 1: #Trained once.
-        jump imperio_spell_1
-    elif ag_cs_imperio_sb.points == 2: #Trained twice.
-        jump imperio_spell_2
-    elif ag_cs_imperio_sb.points == 3 and ag_cs_imperio_sb.level < 3: #Trained three times.
-        jump imperio_spell_3
-    elif ag_cs_imperio_sb.points == 3 and ag_cs_imperio_sb.level == 3: #Three hearts. Repeats events.
-        $ random_number = renpy.random.randint(1, 3)
-        if random_number in [1]:
-            jump imperio_spell_1
-        elif random_number in [2]:
-            jump imperio_spell_2
-        else:
-            jump imperio_spell_3
-
-
-label imperio_spell_1:
+label ag_se_imperio_sb_E1:
     call play_music("hermione_theme")
     call blkfade
 
@@ -87,6 +13,11 @@ label imperio_spell_1:
     call sus_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
     pause.8
 
+    "Dev Note" "The posing for Astoria on this event has to be update."
+
+    jump main_room
+
+label ag_se_imperio_sb_E1_update:
     call sus_main("Hello, [sus_genie_name]. You wanted to see me?.","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
     call ast_main("Hey [ast_susan_name]!","grin","narrow","narrow","L",xpos="base",ypos="base")
     call sus_main("Astoria? What are you doing here?","open","base","worried","R")
@@ -257,21 +188,11 @@ label imperio_spell_1:
 
     $ astoria_busy = True
     $ susan_busy = True
-    $ spells_locked = True #Locks spells until you send Astoria to Tonks.
-
-    if ag_cs_imperio_sb.points == 1:
-        $ ag_cs_imperio_sb.level = 1
-        $ ast_affection = 1
-        $ ast_spell_progress = 0
-
-    $ sus_curse_counter += 1
 
     jump day_main_menu
 
 
-
-
-label imperio_spell_2: #second level imperio spell #needs posing
+label ag_se_imperio_sb_E2:
     call play_music("hermione_theme")
     call ast_main("Are you finally ready to try out the new spell Dumby?","grin","narrow","narrow","mid",xpos="close",ypos="base",trans="fade")
     m "You bet!"
@@ -286,6 +207,11 @@ label imperio_spell_2: #second level imperio spell #needs posing
     call sus_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
     pause.8
 
+    "Dev Note" "The posing for Astoria on this event has to be update."
+
+    jump main_room
+
+label ag_se_imperio_sb_E2_update:
     call sus_main("You wanted to see me, [sus_genie_name]?","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
     call sus_main("Astoria? Why are you here again?","open","base","worried","R")
     call ast_main("Oh... no reason...","pout","base","base","down")
@@ -488,19 +414,11 @@ label imperio_spell_2: #second level imperio spell #needs posing
 
     $ astoria_busy = True
     $ susan_busy = True
-    $ spells_locked = True #Locks spells until you send Astoria to Tonks.
-
-    if ag_cs_imperio_sb.points == 2:
-        $ ag_cs_imperio_sb.level = 2
-        $ ast_affection = 2
-        $ ast_spell_progress = 0
-
-    $ sus_curse_counter += 1
 
     jump day_main_menu
 
 
-label imperio_spell_3:
+label ag_se_imperio_sb_E3:
     call play_music("hermione_theme")
     call ast_main("","smile","base","base","mid",xpos="close",ypos="base",trans="fade")
     m "Ready to try out the final imperio spell?"
@@ -517,6 +435,11 @@ label imperio_spell_3:
     call sus_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
     pause.8
 
+    "Dev Note" "The posing for Astoria on this event has to be update."
+
+    jump main_room
+
+label ag_se_imperio_sb_E3_update:
     call sus_main("You wanted to see me sir?","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
     call sus_main("Astoria?...","upset","base","worried","R")
     call sus_main("You seem to be here quite often...","upset","narrow","worried","R")
@@ -817,14 +740,6 @@ label imperio_spell_3:
 
     $ astoria_busy = True
     $ susan_busy = True
-    $ spells_locked = True #Locks spells until you send Astoria to Tonks.
-
-    if ag_cs_imperio_sb.points == 3:
-        $ ag_cs_imperio_sb.level = 3
-        $ ast_affection = 3
-        $ ast_spell_progress = 0
-
-    $ sus_curse_counter += 1
 
     jump day_main_menu
 

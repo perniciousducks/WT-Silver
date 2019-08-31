@@ -8,7 +8,7 @@ label tonks_init:
         $ tonks_animation = None
 
         $ tonks_haircolor = [[243, 158, 189, 255]]
-        
+
         #Chibi
         $ ton_chibi_xpos          = 500
         $ ton_chibi_ypos          = 250
@@ -28,7 +28,7 @@ label tonks_init:
         $ ton_chibi_robe          = "blank"
         $ ton_chibi_gloves        = "blank" #blank is the new defined image, makes our lives easier
         $ ton_chibi_fix           = "blank"
-        
+
     if not hasattr(renpy.store,'ton_cloth_pile') or reset_persistants:
         $ ton_cloth_pile = False
         $ ton_pile_xpos = 440 # Right side of desk.
@@ -72,6 +72,7 @@ label tonks_progress_init:
 
     if not hasattr(renpy.store,'ton_tier'):
         $ ton_tier = 1
+        $ ton_level_up = None
         $ tonks_shared = False
         $ tonks_favors_unlocked   = False
         $ tonks_requests_unlocked = False

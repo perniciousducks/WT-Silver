@@ -350,8 +350,8 @@ screen astoria_stat_menu():
             mousewheel True
 
             vbox:
-                use stat_bar(int(ag_cs_imperio_sb.counter/0.3), "-Spells-", "", ag_cs_imperio_sb.counter) #Max is 4
-                use stat_bar(int(ast_training_counter/0.9), "-Training-", "", ast_training_counter) #Max is 9
+                #use stat_bar(int(ag_cs_imperio_sb.counter/0.3), "-Spells-", "", ag_cs_imperio_sb.counter) #Max is 4
+                #use stat_bar(int(ast_training_counter/0.9), "-Training-", "", ast_training_counter) #Max is 9
                 use stat_bar(int(ast_affection/10), "-Affection-", "", ast_affection) #Max is 100
 
         vbar value YScrollValue("vp")

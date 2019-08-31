@@ -579,7 +579,6 @@ label updated_hermione_favors: # For 1.37
         $ hg_sex            = trigger_class()
         $ hg_anal           = trigger_class()
 
-    if not hasattr(renpy.store,'her_tier'):
         $ her_tier = 1
 
         $ hg_pf_talk   = event_class(title = "Talk to me!", start_label = "hg_pf_talk", start_tier = 1, events = [

@@ -95,43 +95,34 @@ label set_ast_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
 
 label astoria_face_layers:
 
-    $ ast_mouth_layers  = ["clench",
-                           "disgust",
+    $ ast_mouth_layers  = ["angry",
+                           "annoyed",
+                           "base",
+                           "clench",
                            "grin",
-                           "happy",
+                           "horny",
                            "open",
-                           "pout",
                            "scream",
                            "smile",
-                           "tongue_disgust", "tongue_silly",
-                           "upset",
-                           "worried"
+                           "upset"
                            ]
 
-    $ ast_eye_layers    = ["ahegao",
-                           "angry",
-                           "base",
-                           "closed", "happyCl",
-                           "narrow",
-                           "wide",
-                           "wink"
+    $ ast_eye_layers    = ["base",
+                           "closed",
+                           "narrow"
                            ]
 
-    $ ast_brow_layers   = ["ahegao",
-                           "angry",
+    $ ast_brow_layers   = ["angry",
                            "base",
-                           "narrow",
-                           "wide",
                            "worried"
                            ]
 
     $ ast_pupil_layers  = ["ahegao",
-                           "angry",
                            "down",
                            "L",
                            "mid",
                            "R",
-                           "wide"
+                           "up"
                            ]
 
     return

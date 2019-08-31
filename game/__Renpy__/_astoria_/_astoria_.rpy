@@ -64,7 +64,7 @@ label ast_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             call set_ast_face(eyebrows = face)
         if pupils == None:
             call set_ast_face(pupils = face)
-            
+
     if animation != False:
         $ astoria_animation = animation
 
@@ -95,7 +95,7 @@ label set_random_nicknames:
         $ ton_astoria_name = renpy.random.choice(["Cutie","Kitty","Princess","Little girl","Honey"])
 
     return
-            
+
 label update_astoria:
 
     # Chibi Update
@@ -104,7 +104,7 @@ label update_astoria:
     $ astoria_cloth_pile = False
 
     return
-            
+
 label end_astoria_event:
     #call astoria_chibi("hide") TODO: Fix me
     hide screen astoria_main
@@ -116,7 +116,6 @@ label end_astoria_event:
     $ active_girl = None
     $ astoria_busy = True
 
-    call music_block
     jump main_room
 
 screen astoria_main():

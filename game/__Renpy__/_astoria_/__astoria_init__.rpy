@@ -81,35 +81,48 @@ label astoria_progress_init:
         #Stat Screen
         $ ast_training_counter = 0
 
-    if not hasattr(renpy.store,'gave_astoria_gift') or reset_persistants:
+    ### Imperius Curse ###
+    if not hasattr(renpy.store,'ag_st_imperio') or reset_persistants:
         $ gave_astoria_gift = False
 
-    #Curses on Susan
-    if not hasattr(renpy.store,'ag_cs_imperio_sb'):
-        $ ag_cs_imperio_sb = favor_class()
-    $ ag_cs_imperio_sb.title   = "Imperio on Susan"
-    $ ag_cs_imperio_sb.start_label = "ag_cs_imperio_sb"
+        $ ag_st_imperio   = event_class(title = "Imperio Curse Training", start_label = "ag_st_imperio", start_tier = 1, events = [
+            [
+            ["ag_st_imperio_E1"],
+            ["ag_st_imperio_E2"],
+            ["ag_st_imperio_E3"],
+            ["ag_st_imperio_E4"],
+            ["ag_st_imperio_E5"]
+            ]
 
-    $ ag_susan_spells_list = [
-        ag_cs_imperio_sb
-        ]
+            ],
+            icons = [None], #if a tier doesn't need an icon replace with None
+            iconset = [["star_empty", "star_yellow"]],
+            complete = False
+            )
 
-    #Curses on Hermione
-    if not hasattr(renpy.store,'ag_cs_imperio_hg'):
-        $ ag_cs_imperio_hg = favor_class()
-    $ ag_cs_imperio_hg.title   = "Imperio on Hermione"
-    $ ag_cs_imperio_hg.start_label = "ag_cs_imperio_hg"
+        $ ag_se_imperio_sb   = event_class(title = "Cast Imperio on Susan", start_label = "ag_se_imperio_sb", start_tier = 1, events = [
+            [
+            ["ag_se_imperio_sb_E1"],
+            ["ag_se_imperio_sb_E2"],
+            ["ag_se_imperio_sb_E3"]
+            ]
 
-    $ ag_hermione_spells_list = [
-        ]
+            ],
+            icons = [None], #if a tier doesn't need an icon replace with None
+            iconset = [["star_empty", "heart_yellow"]],
+            complete = True
+            )
 
-    #Curses on Tonks
-    if not hasattr(renpy.store,'ag_cs_crucio_nt'):
-        $ ag_cs_crucio_nt = favor_class()
-    $ ag_cs_crucio_nt.title   = "Crucio on Tonks"
-    $ ag_cs_crucio_nt.start_label = "ag_cs_crucio_nt"
 
-    $ ag_tonks_spells_list = [
-        ]
+
+
+
+    label update_astoria_spells:
+
+    $ ag_spell_list = []
+    if ag_st_imperio.complete == False:
+        $ ag_spell_list.append(ag_st_imperio)
+    else:
+        $ ag_spell_list.append(ag_se_imperio_sb) # Susan
 
     return

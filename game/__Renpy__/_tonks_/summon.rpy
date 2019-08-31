@@ -151,7 +151,7 @@ label tonks_level_up(tier=None):
 
     call bld
     if tier == 1:
-        g9 "(It's time to teach those students some )"
+        g9 "(Time to teach those students some useful!)"
 
     $ ton_tier = tier+1
     $ ton_level_up = None

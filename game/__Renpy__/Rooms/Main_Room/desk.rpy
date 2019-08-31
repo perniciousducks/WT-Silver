@@ -25,7 +25,19 @@ label desk:
             show screen letter
             with d5
 
-            jump read_letter_again
+            menu:
+                "-Continue-":
+                    pass
+
+            call reset_menu_position
+
+            $ letter_hg_1.mailRead()
+            hide screen letter
+            with d5
+            pause.5
+
+            call bld
+            call letter_from_hermione_A
 
         jump day_main_menu
 

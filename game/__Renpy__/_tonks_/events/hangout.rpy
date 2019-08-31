@@ -21,16 +21,17 @@ label tonks_hangout:
 
     # Events.
     if hermione_intro.E5_complete and not hang_with_tonks.E1_complete:
-        jump hang_with_tonks_E1
+        jump hang_with_tonks_E1 # Persuade Hermione to sell favors.
 
     if her_tier >= 2 and not tonks_requests_unlocked:
-        jump hang_with_tonks_E2
+        jump hang_with_tonks_E2 # Unlocks Public Requests.
 
     if ton_friendship >= 10 and not hang_with_tonks.E3_complete:
-        jump hang_with_tonks_E3
+        $ ag_event_pause += 2 # Astoria intro happens in 2 days.
+        jump hang_with_tonks_E3 # Starts Susan/Astoria intro.
 
     if ton_reputation >= 4 and ton_friendship >= 20 and not hang_with_tonks.E4_complete:
-        jump hang_with_tonks_E4
+        jump hang_with_tonks_E4 # Tonks Tier 2 available.
 
     # Tonks Auror Stories.
     $ random_number = renpy.random.randint(1, 3)

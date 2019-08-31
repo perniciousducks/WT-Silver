@@ -239,31 +239,19 @@ label quests:
     # Astoria events not triggered by a date.
     if ag_event_pause == 0:
         if daytime:
-            if hermione_finds_astoria and not astoria_unlocked:
-                $ astoria_unlocked = True
-                jump astoria_captured_intro
+            if hang_with_tonks.E3_complete and not astoria_intro.E1_complete:
+                jump astoria_intro_E1
+
+            if astoria_intro.E2_hermione and astoria_intro.E2_snape and not astoria_intro.E3_complete:
+                jump astoria_intro_E3
 
     # Tonks events not triggered by a date.
     if nt_event_pause == 0:
         if daytime:
             pass
         else:
-            if astoria_unlocked and not tonks_intro_happened:
-                $ tonks_intro_happened = True
-                $ nt_event_pause += 1
-                jump tonks_intro_event
+            pass
 
-            # Snape prevents the ministry from detecting curses.
-            if tonks_intro_happened and not spells_unlocked:
-                $ spells_unlocked = True #Astoria can now use spells.
-                $ nt_event_pause += 1
-                jump snape_spell_intro
-
-            # Tonks becomes a teacher.
-            if third_curse_got_cast and not tonks_unlocked:
-                $ tonks_unlocked = True
-                $ astoria_intro_completed = True
-                jump astoria_tonks_intro
 
     jump main_room
 
@@ -323,5 +311,14 @@ label quest_init:
         E3_complete=False, # Unlock Susan.
         E4_complete=False, # Advance to Tier 2.
         )
+
+    if not hasattr(renpy.store,'astoria_intro'):
+        $ astoria_intro   = quest_class(
+        E1_complete=False,   # Tonks visits.
+        E2_hermione=False,   # Tell Hermione to look for her.
+        E2_snape   =False,   # Tell Snape to look for her.
+        E3_complete=False,   # Hermione finds her.
+        )
+
 
     return

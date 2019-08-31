@@ -21,23 +21,18 @@ label summon_snape:
                 call snape_chitchat
 
             menu:
-                "-Talk about the ministry letter-" if letter_min_curses.read and not astoria_unlocked:
-                    #You tell Snape about the curses.
-                    if hermione_on_the_lookout: #Already talked to Hermione.
-                        $ hermione_finds_astoria = True
-                        $ ag_event_pause = 2 # Event happens in 2 days.
-                    if snape_on_the_lookout:
+                "-Ask him to help Tonks-" if astoria_intro.E1_complete and not astoria_intro.E3_complete:
+
+                    if astoria_intro.E2_snape and not astoria_intro.E2_hermione:
                         call sna_main("I'm still on the lookout, Genie.","snape_01")
                         call sna_main("If I find the little maggot that casts those spells,...","snape_10")
                         call sna_main("I will crush his bones!","snape_16")
                         jump snape_ready
-                    $ snape_busy = True
-                    $ snape_on_the_lookout = True
-                    jump letter_intro_snape
 
-                "-Ask for a spellbook-" if (third_curse_got_cast or spells_unlocked) and not snape_gave_spellbook:
-                    $ snape_gave_spellbook = True
-                    jump snape_book_intro
+                    $ snape_busy = True
+                    $ astoria_intro.E2_snape = True
+                    $ ag_event_pause = 2
+                    jump astoria_intro_E2_snape
 
                 "-Never mind":
                     jump snape_ready

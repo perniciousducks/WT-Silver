@@ -425,18 +425,16 @@ label hermione_talk:
 
 
         # About Astoria.
-        "-Talk about the ministry letter-" if letter_min_curses.read and not astoria_unlocked:
-            #You tell Hermione about the curses.
-            if snape_on_the_lookout: #Already talked to Snape.
-                $ hermione_finds_astoria = True
-                $ ag_event_pause = 2 # Event happens in 2 days.
-            if hermione_on_the_lookout:
+        "-Ask her to help Tonks-" if astoria_intro.E1_complete and not astoria_intro.E3_complete:
+            if astoria_intro.E2_hermione and not astoria_intro.E2_snape:
                 call her_main("I'm still looking for that student, [genie_name]!","open","closed")
                 call her_main("Trust in me, I will find that slytherin scum!","angry","angry")
                 jump hermione_talk
+
             $ hermione_busy = True
-            $ hermione_on_the_lookout = True
-            jump letter_intro_hermione
+            $ astoria_intro.E2_hermione = True
+            $ ag_event_pause = 2
+            jump astoria_intro_E2_hermione
 
 
         # About Cho.

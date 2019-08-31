@@ -1,27 +1,7 @@
 
-label astoria_tonks_event: #send astoria to go see tonks
-
-    $ spells_locked = False
-    $ tonks_busy = True
-    $ astoria_tonks_event_in_progress = False
-    $ ton_astoria_date_counter += 1 #For Stats
-
-    if ast_affection < 100:
-        $ ast_affection += 1
-
-    if ag_cs_imperio_sb.level == 0 and not astoria_tonks_intro_completed:
-        jump astoria_tonks_0
-    elif ag_cs_imperio_sb.level == 1 and not astoria_tonks_1_completed:
-        jump astoria_tonks_1
-    elif ag_cs_imperio_sb.level == 2 and not astoria_tonks_2_completed:
-        jump astoria_tonks_2
-    elif ag_cs_imperio_sb.level == 3 and not astoria_tonks_3_completed:
-        jump astoria_tonks_3
-    else: #Repeatable events.
-        jump astoria_tonks_random
-
 
 ### TONKS EVENTS ###
+
 label astoria_tonks_0: #First time astoria sent to tonks.
     call play_music("fun")
     call play_sound("door")

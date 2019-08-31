@@ -1,27 +1,6 @@
 
 
 #Spell Training.
-label astoria_spell_training:
-    if ag_cs_imperio_sb.level == 0 and ag_cs_imperio_sb.points == 0:
-        $ ast_training_counter += 1 #For Stats
-        jump imperio_spell_1_training
-    elif ag_cs_imperio_sb.level == 1  and ag_cs_imperio_sb.points == 1: #You have to try the spell once before you can train the next one.
-        $ ast_training_counter += 1 #For Stats
-        jump imperio_spell_2_training
-    elif ag_cs_imperio_sb.level == 2 and ag_cs_imperio_sb.points == 2: #You have to try the spell once before you can train the next one.
-        $ ast_training_counter += 1 #For Stats
-        jump imperio_spell_3_training
-    elif ag_cs_imperio_sb.level == 3 and ag_cs_imperio_sb.points == 3:
-        call nar(">There are currently no more spells to train!")
-        jump astoria_requests
-    else:
-        if spells_locked:
-            call nar(">You owe Tonks another favour. Pay it back before she gets you into trouble.")
-        else:
-            call nar(">You haven't used your newest unlocked spell yet!\n>You should use it before training your next.")
-        jump astoria_requests
-
-
 
 label imperio_spell_1_training: #first level imperio spell
 
@@ -213,10 +192,6 @@ label imperio_spell_1_training: #first level imperio spell
 
     call popup("Astoria has learned a new spell!", "Congratulations!", "interface/icons/head/head_astoria_2.png")
 
-    #Unlocks imperio spell.
-    $ ag_cs_imperio_sb.points += 1
-    $ ag_cs_imperio_sb.counter += 1
-
     if daytime:
         jump night_start
     else:
@@ -250,10 +225,6 @@ label imperio_spell_2_training: #second level imperio spell
 
     call popup("Astoria has learned a new spell!", "Congratulations!", "interface/icons/head/head_astoria_2.png")
 
-    #Unlocks Spell 2.
-    $ ag_cs_imperio_sb.points += 1
-    $ ag_cs_imperio_sb.counter += 1
-
     if daytime:
         jump night_start
     else:
@@ -282,10 +253,6 @@ label imperio_spell_3_training: #third level imperio spell
                 jump day_start
 
     call popup("Astoria has learned a new spell!", "Congratulations!", "interface/icons/head/head_astoria_2.png")
-
-    #Unlocks Spell 3.
-    $ ag_cs_imperio_sb.points += 1
-    $ ag_cs_imperio_sb.counter += 1
 
     if daytime:
         jump night_start
@@ -318,44 +285,6 @@ label orgasmio_spell_3_training: #third level orgasmio spell
     #Extreme orgasm, Astoria casts the spell multiple times
 
 
-
-
-
-
-### SPELL PRACTICE / SIT ON LAP CG ###
-label astoria_spell_practice:
-    hide screen astoria_main
-    hide screen bld1
-    call blkfade
-
-    #Set up CG scene here!
-    $ ccg_folder = "astoria_sit"
-    $ ccg("e6","b3","m1")
-
-    hide screen blkfade
-    with fade
-    pause.8
-
-    $ renpy.call('astoria_lap_sit_'+str(ag_cs_imperio_sb.points)+'_'+str(ast_spell_progress))
-
-    pause.8
-    call blkfade
-
-    #Hide CG scene here!
-    hide screen ccg
-
-    hide screen astoria_main
-    hide screen bld1
-    hide screen blkfade
-    with fade
-
-    $ ast_spell_progress += 1
-    $ astoria_busy = True
-
-    return
-
-
-#
 label astoria_lap_sit_0_1:
     call nar(">Astoria lightly hops up onto your lap.")
     $ ccg("e6","b1","m3")
@@ -716,12 +645,391 @@ label astoria_lap_sit_2_3:
 
 ### Astoria Imperio Training ###
 
+label ag_st_imperio:
+
+    "Dev Note" "You send Astoria to Tonks"
+
+    $ ag_st_imperio.inProgress = True
+
+    jump main_room
+
+
+label ag_se_imperio_sb: # Move label
+
+    $ ag_se_imperio_sb.start()
+
+    label end_ag_se_imperio_sb:
+
+    jump main_room
+
+
 label ag_st_imperio_E1:
 
+    ton "Good evening, Professor."
+    m "You are back."
+    ton "Yes we are."
+    ast "......................" # embarrassed
+    g9 "Astoria! How was your training?"
+    ast "................................"
+    ton "It went very well, I'd say."
+    ton "I instructed her on how to cast the curse properly."
+    ton "The right wand movement,...the correct pronunciation..."
+    ton "There's a lot to it!"
+    ton "One mishap with those - and the curse might backfire!"
+    ton "Sending you straight to St. Mungos hospital - quacking like a duck!"
+    ton "I'd say she was very lucky using it on Susan..."
+    ast "I knew exactly what I was doing..."
+    ton "Of course you did, princess." # Happy
+    ast "................................." # annoyed
+
+    ton "Now, shall we get started?"
+    ast "Get started - with what?"
+    ton "Continuing your training, of course!"
+    ton "I'd like you to cast the Imperius curse now... On another person."
+    ast "Wait- what?"
+    ast "I thought I wasn't allowed to ever use it again?"
+    ton "You aren't...that is correct."
+    ton "However, you are hereby given special permission!"
+    ast "Really?" # happy
+    ton "Yes, dear!"
+    ton "I believe our Professor would have no objection with that..."
+    ton "Would you, Professor?"
+    ast "Please, Professor!"
+    m "*Uhm*... Sure... Go ahead."
+    ton "Splendid!"
+    ast "Yes!" # Evil face
+
+    ton "You can cast it, as long as it's under the surveillance of a teacher..."
+    ton "And only within the walls of this room!" # stern
+    ast "Right here? In front of Professor Dumbledore?"
+    ton "Naturally!"
+    ast "But who do I I cast it on? Susan?"
+    ton "Not this time, sweetheart."
+    ton "Today, I'd like you to cast it on me, if you don't mind..."
+    ast "Wicked!"
+    ton "Let's give this old man a quick demonstration of your talents, shall we..."
+    m ".............................."
+
+    ton "Just like we practiced..."
+    ton "Do the movement with your wand, and then you say-"
+    ast "Imperio!" # angry scream
+    ton "Yes..."
+    ton "...................."
+    ton "You don't have to scream the words, darling."
+    ton "What's crucial is that your mind is focused and-{w=2.0}{nw}"
+
+    # Astoria casts imperio.
+    ast "IMPERIO!{w=0.8}{nw}" # Screams it even louder
+    # screenshake & chibi animation.
+
+    ton "*Aaaaaah*..." # inhales
+    ton "........................." # slight ahegao
+    ast "......................" # clenched teeth
+    m "What's happening to her?"
+    ast "I just cast the spell on her..."
+    ast "Now she should be under my command!"
+    g9 "You don't say?"
+    g9 "I love magic!"
+    ast "What shall I do, Professor?"
+    m "I don't know... Why are you asking me?"
+    m "Did you not discuss this with her beforehand?"
+    ast "No. All we did was some theoretical practice of the spell..."
+    ast "I need to tell her to do something...or..."
+    ast "I don't know... Maybe say something?"
+    ton "*Hmmm*... Something..."
+    m "What?"
+    ast "She did it!"
+    g4 "Something what?"
+    ast "No, she just said what I asked her to say!"
+    m "Oh..."
+    ast "I believe it's working!"
+
+    ast "*Uhm*... Professor Tonks, you can now speak freely!"
+    ton "............................"
+    ton "Oh... can I?..."
+    ton "Thank you..."
+    ast "She can hear me!"
+    ton "You have a really cute voice..."
+    ast "................"
+    m "Try something else now."
+    ton "I feel so good!"
+    ton "What is happening to me?"
+    ton "Are you playing with me?"
+    ton "I want you to play with me!" # horny
+    m "I think she's tripping..."
+    ast "No! Keep - standing - still!"
+    ton "Ok..................."
+    g9 "This is quite funny to watch!"
+    g9 "Can you make her *oink?*"
+    ast "*oink?*"
+    m "You know, like a pig..."
+    ast "Yes, we can try that!"
+    ast "Professor Tonks, I demand that you *oink!*"
+    ton "*Huh?*..."
+    ast "*oink!*"
+    ton "..................."
+    ast "Do it already!"
+    ast "*oink!*{w=0.8}-*oink!*{w=0.8}-*oink!*" # Angry
+    g9 "*he-he-he!*"
+    ast "*oink*...{w=0.8} you pig!" # Screaming
+    m "I don't believe she's going to do it..."
+    ast "But!"
+    m "It's pointless, girl... You can stop now..."
+    ast "............................."
+
+    # Tonks reverts back.
+
+    ton "Oh my..."
+    ton "Well that was fun!" # Happy
+    ast "No it wasn't!"
+    ast "Why weren't you doing pig noises!"
+    ast "You refused to do what I demanded!"
+    ton "Yes I did!"
+    ton "It was quite easy, actually."
+    ast "*Hnghhh!*"
+    ton "Don't worry. You'll have better luck next time..."
+    ton "Just try a bit harder."
+    ast "..................................."
+    ton "Thank you for your assistance, Professor."
+    ton "You can have Astoria visit me again for our next training session..."
+    m "Very well."
+    ton "I can't wait!" # Happy
+    ast "........................"
+    ton "Have a good night, Professor."
+    ton "Come on, Astoria. I shall escort you back to your dormitory..."
+    ast "................................................."
+
+    # They both leave.
+
+    jump main_room
 
 
 label ag_st_imperio_E2:
 
+    ton "Hello, Professor."
+    ast "........................."
+    m "Back already?"
+    ton "Yes, I gave Astoria a couple more pointers on how to improve the persuasiveness of the curse..."
+    ton "The trick is to not lose your temper after casting it!"
+    ast "........................."
+    ton "This should be fun!"
+    m "Very good."
+
+    ton "Now, Astoria, just as last time - you will cast the Imperius curse on me..."
+    ton "And I'll do my best to resist-"
+
+    # Astoria casts the curse.
+    ast "IMPERIO" # Screams
+    # Screenshake
+
+    g9 "Damnit, girl!"
+    m "Give me a warning next time. You scared the crap out of me..."
+    ast "Sorry Professor!" # Cute face
+
+    ton ".........................."
+    ton "*uhhhh*... I looooooove this!"
+    ton "It's like - I'm floating..."
+    ton "It feels...sooooooooooooo...goooooooooooood!"
+    m "(Is she getting off on this?)"
+
+    ast "What shall I have her do, Professor?"
+
+    m "..........."
+    menu:
+        "Have her turn around.":
+            ast "Yes, that's a good idea!"
+            ton "................................"
+            ast "Professor Tonks, I command you to turn around."
+            ton "*Huh?*"
+            ast "Turn around!" # louder
+            m "Remember what she said about your temper, Astoria..."
+            ast "Oh... yes Sir! Of course..."
+            ast "Turn around."
+            ton "......................"
+
+            # Tonks turns around. (mirror sprite)
+
+        "Ask her to remove her coat.":
+            ast "Yes, that should be easy."
+            ton "................................"
+            ast "Tonks, I command you to remove your coat."
+            ton "*Huh?*"
+            ast "Come on, do it!"
+            m "Try saying the magic word..."
+            ast "Imperio? But I already did-"
+            m "No... Ask her politely..."
+            ast "Oh! I got it!"
+            ast "Professor Tonks, please remove your coat for me..."
+            ton "*Hmmm*... okay..."
+
+            # Tonks removes her coat.
+
+
+    ast "Yes, she did it!"
+    ast "What shall I have her do next?"
+    m "*hmmm*................."
+
+    $ d_flag_01 = False
+
+    label ag_st_imperio_E3_choices:
+
+    menu:
+        m "Make her..."
+        "Do pig-noises again!" if not d_flag_01: # Jumps back to choices.
+            ast "Do a pig-noise?"
+            ton "*oink!*"
+            ast "She did it!"
+            g9 "Well done!"
+            ast "Do it again!"
+            ton "*oink!*"
+            ast "*hi-hi-hi-hi!*"
+            m "I believe that's enough-"
+            ast "Do it again! Ten times!" # Angry
+            ton "*oink*{w=0.8}-*oink*{w=0.8}-*oink*{w=1.2}-*oink*{w=0.8}-*oink*{w=1.4}-*oink*{w=1.4}-*oink*{w=1.6}-*oink*{w=2.0}-*oink*{w}-*oink!*"
+            m "......................."
+            ast "Agai-"
+            g4 "That's enough, Astoria!"
+            ast "Fine..."
+
+            # Tonks returns to normal
+
+            ton "Oh wow..."
+            ton "You made me squeal like a pig!" # Happy
+            ton "That was quite good!"
+            ast "Thank you!"
+            m "......................"
+            m "I have to say, I'm not that impressed..."
+            ton "You aren't?"
+            ast "But, Professor!"
+            m "Tonks, would you please do the noise again..."
+            ton "The noise, Professor?"
+            m "Yes. Squeal for me."
+            ton "*oink*-*oink!*"
+            g9 "See, I don't even have to use magic to make her do it!"
+            ton "Very funny, Sir..."
+            m "I'd like us to try this again..."
+            ton "Right now? Are you sure?"
+            g4 "(I want to see some tits - damnit! Or hear her talk dirty...)"
+            m "Yes, cast that spell again, Astoria..."
+            ast "Very well, Sir..."
+
+            # Astoria casts imperio.
+            ast "Imperio!"
+
+            ton "*hmmm*............."
+            ast "And now?"
+
+            $ d_flag_01 = True
+
+            jump ag_st_imperio_E3_choices
+
+        "Let her say something naughty!": # Fails
+            ast "*Huh?*..."
+            g9 "Wouldn't you like to hear your teacher say something shameful?"
+            ast "Yes!"
+            ast "And what exactly?"
+            m "I don't know... You should think of something..."
+            m "You're the one with the magic-stick, after all..."
+            ton "......................."
+            ast "Okay... Professor Tonks..."
+            ast "I want you to repeat after me..."
+            ton "..................................."
+            ast "I - am - a-"
+            ton "I am a..."
+            ast "dirty! - filthy! - pig!"
+            ton "..................................."
+            ast "Go on and say it!"
+            ast "I'm a dirty - filthy - pig!"
+            ton "*hi-hi!*..................................."
+            ast "SAY IT!" # Scream
+            g4 "Time-out!"
+            ast "No! She has to do what she's told!"
+            m "She clearly isn't going to..."
+            m "We should take a break here..."
+            ast "......................."
+
+            # Tonks returns to normal.
+
+            ton "*huh*..."
+            ton "Well that was something, wasn't it?" # cheerful
+            ast ".................................."
+            m "You resisted her curse again."
+            ton "Yes..."
+            ton "I'm sorry, honey!"
+            ast ".................................."
+            ton "You can't expect to succeed right away now, can you?"
+            ton "To master a spell it takes time - and regular practicing..."
+            ton "Or else anyone could do it."
+            ton "We'll try again next time..."
+            ast "............................"
+            ton "Have a good night, Professor."
+            ton "After you, Astoria."
+            ast "..........................."
+
+            # They both leave
+
+            # Event fails.
+            $ ag_st_imperio.fail()
+
+            jump main_room
+
+        "Make her show us those tits!": # Succeeds
+            ast "What?"
+            g9 "Have her show us her breasts!"
+            ast "Professor?!" # Shocked
+            m "You did the same to Susan, didn't you?"
+            ast "Yes, but..."
+            ast "I doubt Professor Tonks would be ok with that!"
+            m "Did you have those concerns with Susan as well?"
+            m "Just try it."
+            m "She can refuse to do it if she doesn't want to..."
+            ast "I suppose..."
+            ast "Professor Tonks, I'd like you to show us your..."
+            ast "*uhm*..."
+            ast "Your breasts!" # embarrassed
+            ton "Oh..."
+            ton "............................"
+            g4 "(Fingers crossed!)"
+            ton "............................" # Clenched teeth
+            ast "I think she's struggling!"
+            g4 "Very good, girl!"
+            g4 "Pressure her more! I want to see those puppies!"
+            ast "Professor Tonks, show us your breasts! Now!"
+            m "(It was easier for her to resist doing pig-noises...)"
+            m "(Could it be that she wants to show them to us? And is resisting that inner urge?)"
+            ton "................................" # Really struggling!
+            g4 "What a slut!" # Small text
+            ast "Come on, do it!"
+            ton "*Hnnnngh!*..."
+            ton "*Aaaaahhh*................................" # Relieved
+            m "I think she's done..."
+            ast "What?"
+            m "She broke the curse. You can stop now..."
+            ast "*Aww*..."
+            ast "If you say so, Professor..."
+
+            # Tonks returns to normal.
+
+            ton "Ouch... That was painful!"
+            ton "You nearly got me there."
+            ast "Did I really?"
+            ton "Yes, well done, Astoria!"
+            ast "Thank you!"
+            m "Was it really such a struggle for you to not get your breasts out?"
+            ton "*Uhm*..."
+            ton "Yes!" # Embarrassed
+            g9 "*He-he-he!*"
+            ton "Shall we wrap it up for today?"
+            ton "I'm sure next time you'll have better luck, Astoria."
+            ast "Okay..."
+            ton "Have a good night, Professor!"
+            m "See ya..."
+
+            # They both leave
+
+            # Event succeeds
+
+            jump main_room
 
 
 label ag_st_imperio_E3:
@@ -732,6 +1040,10 @@ label ag_st_imperio_E3:
     # Next time it will be a success for sure!
     # Astoria leaves. After she's left, Tonks tells you how she barely felt anything...
 
+    "Dev Note" "Add 3rd event here."
+
+    jump main_room
+
 label ag_st_imperio_E4:
     # Tonks taught her Astoria a new trick on how to make the imperio curse be more potent.
     # You need to charm the person you cast on. Compliment them. Flirt with them.
@@ -739,8 +1051,20 @@ label ag_st_imperio_E4:
     # Astoria is getting cocky and demands Tonks to do more.
     # Tonks refuses which makes Astoria even angrier.
 
+    "Dev Note" "Add 4th event here."
+
+    jump main_room
+
 label ag_st_imperio_E5:
     # Tonks strips in front of genie.
     # She mostly did it to make Astoria look good.
     # She wasn't really affected by the imperio curse, but she played along.
     # She said it's not enough to harm a trained Auror, but it will be enough to be successful on a weak student.
+
+    "Dev Note" "Add 5th event here."
+
+    call nar(">Astoria has \"mastered\" the imperio curse!")
+
+    $ ag_st_imperio.complete = True
+
+    jump main_room

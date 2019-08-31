@@ -32,7 +32,7 @@ init python:
         def status(self):
             return list(self.__dict__)
 
-        def trigger(self):
+        def triggered(self):
             self.trigger = True
             return
 

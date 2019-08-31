@@ -310,7 +310,7 @@ screen stats_menuitem(xx, yy):
                                 use stat_bar(int(1/0.9), "-Favour Tier-", "", 1) # TODO: Add Astoria tier
                                 use stat_bar(int(ast_affection/0.9), "-Affection-", "Non-existent", ast_affection) # TODO: Add word list
                                 use stat_bar(int(3/0.9), "-Reputation-", "Mischevious", 4) # TODO: Add word list and variable, starts at level 4
-                                use stat_bar(int(ast_training_counter/0.9), "-Spell training-" , "Not started", ast_training_counter) # TODO: Add word list
+                                #use stat_bar(int(ast_training_counter/0.9), "-Spell training-" , "Not started", ast_training_counter) # TODO: Add word list
                             elif current_category == "Susan":
                                 use stat_bar(int(10-sus_mood/1.0), "-Mood-" , "Cheerful", sus_mood) # TODO: Add word list
                                 use stat_bar(int(1/0.9), "-Favour Tier-", "", 1) # TODO: Add Susan tier
@@ -332,17 +332,13 @@ screen stats_menuitem(xx, yy):
 
                         elif current_category == "Snape":
                             use text_stat("Hung out with Snape:")
-                            use text_stat("- ", " times -", ss_he_counter)
-                            use text_stat("Enjoyed some wine with Snape:")
                             use text_stat("- ", " times -", ss_he_drink.counter)
 
                         elif current_category == "Tonks":
                             use text_stat("Hung out with Tonks:")
-                            use text_stat("- ", " times -", nt_he_counter)
-                            use text_stat("Enjoyed some firewhisky with Tonks:")
                             use text_stat("- ", " times -", nt_he_drink.counter)
-                            use text_stat("Hung out with Astoria:")
-                            use text_stat("- ", " times -", ton_astoria_date_counter)
+                            #use text_stat("Hung out with Astoria:")
+                            #use text_stat("- ", " times -", ton_astoria_date_counter)
                             use text_stat("Tonks has sluttyfied:")
                             use text_stat("- ", "/7 outfits -", ton_clothing_upgrades)
 
@@ -380,5 +376,5 @@ screen stats_menuitem(xx, yy):
                         elif current_category == "Astoria":
                             pass
                         elif current_category == "Susan":
-                            use text_stat("Times Cursed:")
-                            use text_stat("- ", " times -", sus_curse_counter)
+                            use text_stat("Cursed with Imperio:")
+                            use text_stat("- ", " times -", ag_se_imperio_sb.counter)

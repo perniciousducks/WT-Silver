@@ -310,7 +310,7 @@ label hg_pf_talk_T2:
         m "Yes, you did."
         call her_main("Ew... I feel so dirty now...","angry","angry")
 
-        $ hg_jerkoff.trigger()
+        $ hg_jerkoff.triggered()
 
     else:
         her "We need to put an end to this behavior, [genie_name]!"

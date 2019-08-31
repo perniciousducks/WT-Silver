@@ -8,6 +8,8 @@ label summon_tonks:
 
     $ active_girl = "tonks"
     $ tonks_busy = True
+    call update_ton_tier
+    
     call tonks_random_clothing
 
     label tonks_requests:
@@ -19,71 +21,16 @@ label summon_tonks:
     menu:
 
         # Talk
+        "-Level Up-" if ton_level_up != None:
+            call tonks_level_up(tier=ton_level_up)
+            jump tonks_requests
+
         "-Talk-":
             if not chitchated_with_tonks:
                 call tonks_chit_chat
                 jump tonks_talk
             else:
                 jump tonks_talk
-
-
-        # Detention Events
-        "-Send Astoria with her-" if astoria_book_intro_happened and spells_locked and daytime and not astoria_busy and astoria_unlocked:
-            call blkfade
-            call nar(">You summon Astoria.")
-            pause.5
-            hide screen blkfade
-            call ast_main("Hi, [ast_genie_name]!","grin","base","base","mid",xpos="mid",ypos="base",trans="fade")
-            if not tonks_class.get_worn("robe") and not tonks_class.get_worn("top"): #Half or completely naked.
-                call ast_main("He--","worried","closed","base","mid")
-                call ast_main("[ast_tonks_name]?!","open","wide","wide","R",trans="hpunch")
-                call ast_main("[ast_genie_name], why is she naked?","scream","closed","worried","mid",trans="hpunch")
-                call ton_main("Because your headmaster wants me to...","horny","base","base","mid")
-                g9 "That's right!"
-            else:
-                call ast_main("Uhm, hello, Miss Tonks.","worried","base","worried","R")
-                call ton_main("Hello, [ton_astoria_name].","horny","base","raised","L")
-                call ast_main("{size=-2}[ast_tonks_name]...{/size}","pout","narrow","narrow","L")
-            if one_out_of_three == 1:
-                m "Astoria, I want you to spend the day with Miss [tonks_name] again."
-            if one_out_of_three == 2:
-                m "Miss Greengrass, you are going to spend some quality time with Miss [tonks_name] today."
-            if one_out_of_three == 3:
-                m "Girl, you're going with Miss [tonks_name] today. Like it or not..."
-            call ast_main("Again?! Do I really have to?","pout","base","worried","mid")
-            m "Yes."
-            call ton_main("Don't worry [ton_astoria_name]. It's gonna be fun!","base","base","base","L")
-            call ton_main("Take care, [ton_genie_name].","base","base","base","mid")
-            call ast_main("...","pout","base","worried","L")
-            call play_sound("door")
-            hide screen tonks_main
-            with d3
-
-            pause.5
-            call play_sound("door")
-            hide screen astoria_main
-            hide screen bld1
-            with d3
-
-            $ astoria_busy = True
-            $ tonks_busy = True
-
-            $ astoria_tonks_event_in_progress = True
-            call set_ast_map_location("defense_classroom") #Update's Astoria's map location.
-
-            call play_music("brittle_rille") #Day Theme
-            jump day_main_menu
-
-        "{color=#858585}-Send Astoria with her-{/color}" if astoria_unlocked and (astoria_busy or not astoria_book_intro_happened or not daytime or not spells_locked):
-            if not astoria_book_intro_happened:
-                call nar(">You should probably discuss this with Astoria first.")
-            elif not spells_locked:
-                call nar(">There is no reason to send Astoria with Tonks right now.")
-            elif not daytime:
-                call nar(">It is too late to send Astoria with Tonks today! Try again tomorrow.")
-            elif astoria_busy:
-                call nar(">Astoria is currently unavailable.")
-            jump tonks_requests
 
 
         # Requests
@@ -151,7 +98,7 @@ label tonks_level_up(tier=None):
 
     call bld
     if tier == 1:
-        g9 "(Time to teach those students some useful!)"
+        g9 "(Time to teach those students something useful!)"
 
     $ ton_tier = tier+1
     $ ton_level_up = None

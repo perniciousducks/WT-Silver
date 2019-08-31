@@ -140,7 +140,7 @@ label summon_hermione:
 
 
 label update_her_tier:
-    if her_tier == 1 and her_whoring >= 3 and hg_talk.trigger == True:
+    if her_tier == 1 and her_whoring >= 3:
         # Trigger: None
         $ her_level_up = 1
     elif her_tier == 2 and her_whoring >= 9 and hg_jerkoff.trigger == True:

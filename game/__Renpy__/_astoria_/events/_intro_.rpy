@@ -134,8 +134,79 @@ label astoria_intro_E1:
                     ton "Now, here is what I'll require your help with..."
 
     ton "This girl I've told you about, Susan Bones?"
-
-    # Missing writing from "doc"
+    ton "The one with-"
+    g9 "With the giant tits!"
+    ton "...The one with the unfortunate luck of being a constant target of bullying and harassment!" # annoyed
+    m "Yes, that too..."
+    ton "That poor girl! She cried the entire time when she told me about what happened..."
+    ton "I cannot believe she got hit by a curse!" # Angry
+    m "At least she isn't dead..."
+    ton "No, of course not!"
+    m "Or injured?"
+    ton "Thankfuly not..."
+    m "And nobody tried to shrink her tits?"
+    ton "Don't be silly..."
+    m "Then what are you concerned about exactly?"
+    
+    ton "This is something quite serious!"
+    ton "If we don't find the culprit of this, and find them quickly, the Ministry will be on our toes by tomorrow!"
+    m "That bad, huh?"
+    ton "yes, I'm afraid..."
+    ton "She was the target of an \"unforgivable curse!\""
+    m "The c-word?"
+    ton "Merlin's Beard! I told you, ...it wasn't an insult!"
+    ton "Those curses are a major transgression of Ministry-laws!"
+    ton "if you are caught having cast even one of them, they will put you in Azkaban for the rest of your life, sharing a room with a whole bunch of Dementors!"
+    m "Dement-ors?"
+    m "is it like a nursing-home or something?"
+    ton "No, I've told you before! Azkaban is a prison!"
+    ton "With Dementors roaming all over it..."
+    ton "Believe me, you wouldn't want to be around them, I tell you that much..."
+    m "(Does she hate old people as well now?)"
+    
+    ton "Should the ministry find out about what happened to Miss Bones-"
+    g9 "*He-he-he* ..."
+    g9 "(Still funny!)"
+    ton "Which they most certainly will, as her aunt is a head of Ministry's department for magical-law-enforcement..."
+    ton "Our whole operation would be busted! And we'd get locked-up once and for all!"
+    
+    m "So, are we in trouble?"
+    ton "Not yet..."
+    ton "I could luckily erase Susan's memory of the ordeal - with the obliviate spell."
+    m "You can do that? Neat..."
+    ton "But, if this should happen to her again, I doubt there is much I could do to prevent her from telling her aunt right away..."
+    m "So what do you suggest we do?"
+    ton "Find the student who cursed her, and then talk some sense into her to never do it again..."
+    m "Find... her?"
+    ton "Yes. She heard a girl's voice in her head while she was under the influence of the imperius curse..."
+    ton "Who... told her to lift-up her top..."
+    g9 "Oh yes?"
+    ton "The imperius curse can make people do unspeakable things against their will..."
+    ton "I have no doubt that someone as sweet and good-hearted as Susan wouldn't know how to defent herself against it."
+    ton "So, ...she showed her breasts to a bunch of other students ... unfortunately..."
+    g9 "I wish I could have been there to stop it!"
+    ton "Of course you do..."
+    ton "That's sadly all the information I can share with you."
+    ton "Nobody standing with her saw who might have cursed her either..."
+    
+    m "Should we get some help finding them?"
+    ton "*Hmmm* ... That wouldn't be such a bad idea."
+    m "Shall I ask Snape? Maybe even Miss Granger?"
+    ton "Professor Snape might prove himself useful with this..."
+    ton "I don't know about Granger..., She'd need to keep quiet at all cost!"
+    ton "The Ministry can't know about this!"
+    m "Yes. Yes..."
+    ton "Well, I should get going... there are a couple of students I'd like to question." #Tongue?
+    m "Good luck, then."
+    ton "Talk to you soon, [ton_genie_name]."
+    
+    # Tonks leaves
+    
+    m "I should definitely get Snape on this..."
+    m "And Granger..."
+    g9 "Or I could jerk-off instead! Yes that seems like a good idea right now!"
+    
+    # TODO: Add hidden achievement called "Follow the script!" and unlock it if you jerk off after this scene. Maybe add some Susan smut writing for the jerk-off session?
 
     $ tonks_busy = True
     $ astoria_intro.E1_complete = True

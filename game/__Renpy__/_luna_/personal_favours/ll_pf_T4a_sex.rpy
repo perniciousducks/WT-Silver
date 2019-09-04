@@ -276,7 +276,7 @@ label ll_pf_sex_T1_lake_sex: # Call label
     m "Argh! You dirty little slut! Who said you could cum yet!"
     $ lunCG('left', 'furious', 'open')
     lun "I had too, [lun_genie_name]."
-    ">Her hips refuse to slow their pase as she speaks..."
+    ">Her hips refuse to slow their pace as she speaks..."
     $ lunCG('ahegao', 'furious', 'base')
     lun "I {b}need{/b} it..."
     $ lunCG('up', 'wide', 'wide', extra_2='cum_1')
@@ -989,7 +989,7 @@ label ll_pf_sex_T1_ton_1: # Call label
             lun "..."
             g4 "Ugh... here it is you little whore!"
             ton "..."
-            ">Eager to show off to your audience you fire off a colossal load over cum over luna's waiting face."
+            ">Eager to show off to your audience you fire off a colossal load of cum over luna's waiting face."
             $ lunCG('open_tongue', 'seductive', 'sad', 'ahegao', extra_1='cum_3')
             lun "{image=textheart}{image=textheart}{image=textheart}"
             lun "{size=-5}thank you...{/size}"
@@ -999,7 +999,7 @@ label ll_pf_sex_T1_ton_1: # Call label
         "-Fire it in her-":
             g4 "ARGH!!! TAKE IT ALL YOU LITTLE WHORE!"
             $ lunCG('open', 'angry', 'sad', 'ahegao', extra_1='cum_3')
-            ">You start filling up poor Luna as her hungry pussy does it's best to milk you dry."
+            ">You start filling up poor Luna as her hungry pussy does its best to milk you dry."
             $ lunCG('open_tongue', 'furious', 'sad', 'ahegao')
             lun "Oh thank you! thank you! thank you!"
             call ton_main("Wow...","horny","base","raised","L")
@@ -1083,7 +1083,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     call ton_main("Aren't you going to scourgify yourself before we go?","base","base","raised","L", xpos="base", ypos="base")
     call lun_main("What, Why?","base","wink","raised","mid")
     call ton_main("No offence honey, but you reek... I'm feeling light headed just standing next to you.","base","base","raised","L")
-    call lun_main("Oh that's just the wrackspurts! They're corpses can have that affect on people.","base","happyCl","base","mid")
+    call lun_main("Oh that's just the wrackspurts! Their corpses can have that effect on people.","base","happyCl","base","mid")
     call lun_main("I {b}love{/b} the smell myself... Besides, I need to wear them to act as a warning to the other wrackspurts while I sleep!","base","angry","sad","up")
     call ton_main("You mean you expect me to walk you back to your room covered head to toe in cum?","horny","base","base","L")
     call lun_main("You don't have to... I can make my own way home.","base","wink","sad","mid")
@@ -1145,7 +1145,7 @@ label ll_pf_sex_T1_ton_2: # Call label
     lun "So quick! Ah... You better stay here... ah... to let them all out..."
     call ton_main("I wouldn't miss a show like this for the world...","horny","base","base","mid")
     $ lunCG('base', 'base', 'sad', 'up')
-    call ton_main("I'd normally have to pay a fortune this definition.","open","base","wide","mid")
+    call ton_main("I'd normally have to pay a fortune to see this.","open","base","wide","mid")
     m "Maybe I should start charging?"
     $ lunCG('pout', 'wink', 'sad', 'left')
     call ton_main("I could say the same to you...","open","base","base","mid")

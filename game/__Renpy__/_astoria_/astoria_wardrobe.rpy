@@ -1,7 +1,7 @@
 label astoria_wardrobe_check(section, arg=None):
     if isinstance(arg, outfit_class):
         python:
-            temp_count = [0, 0, 0]
+            temp_count = [0, 0, 0] # [0: required level, 1: underwear changed, 2: underwear equipped]
             temp_score = 0
             for item in arg.group:
                 if ast_affection < item.whoring and temp_count[0]*2 < item.whoring*2:
@@ -54,9 +54,9 @@ label astoria_wardrobe_check(section, arg=None):
                     $ random_number = renpy.random.randint(1, 7)
 
                     if random_number == 1:
-                        call ast_main("Hey, cut that out!",face="annoyed")
+                        call ast_main("Hey, cut that out!",face="annoyed",mouth="clench")
                     elif random_number == 2:
-                        call ast_main("Ouch, that hurts...",face="annoyed")
+                        call ast_main("Ouch, that hurts...",face="annoyed",mouth="scream")
                     elif random_number == 3:
                         call ast_main("Hey, no nipple twisters...",face="annoyed")
                     elif random_number == 4:
@@ -64,7 +64,7 @@ label astoria_wardrobe_check(section, arg=None):
                     elif random_number == 5:
                         call ast_main("*EEEH* Don't you have better things to do?",face="annoyed")
                     elif random_number == 6:
-                        call ast_main("{size=+5}What are you doing?{/size}",face="annoyed")
+                        call ast_main("{size=+5}What are you doing?{/size}",face="angry",mouth="scream")
                     elif random_number == 7:
                         call ast_main("Stop that!",face="annoyed")
                     return
@@ -105,13 +105,13 @@ label astoria_wardrobe_check(section, arg=None):
             elif arg in ("top", "bottom"):
                 if ast_affection < 10:
                     if arg == "top":
-                        call ast_main("You want me to take my clothes of... Oh sure, I'll just go ahead and bare my chest and all as well then shall I?",face="annoyed")
-                        call ast_main("Just kidding, sure have a quick look, [ast_genie_name].",face="annoyed")
+                        call ast_main("You want me to take my clothes off... Oh sure, I'll just go ahead and bare my chest and all as well then shall I?",face="annoyed")
+                        #call ast_main("Just kidding! Sure... have a quick look, [ast_genie_name].",face="annoyed")
                         g4 "Really?!"
-                        call ast_main("{size=+5}NO!{/size}",face="annoyed")
+                        call ast_main("{size=+5}NO!{/size}",face="annoyed",mouth="scream")
                         m "......"
                     elif arg == "bottom":
-                        call ast_main("{size=+5}No, get away from me!{/size}",face="annoyed")
+                        call ast_main("{size=+5}No, get away from me!{/size}",face="annoyed",mouth="scream")
                     #Hint
                     $ wardrobe_fail_hint(10)
                     return
@@ -149,7 +149,7 @@ label astoria_wardrobe_check(section, arg=None):
                                 return
                         if char_active.get_cloth("bottom"):
                             if arg.id == char_active.get_cloth("bottom").id:
-                                call ast_main("Hey, that's a great idea... but not in this universe.",face="annoyed")
+                                call ast_main("Hey, that's a great idea... but not in this universe.",face="angry")
                                 #Hint
                                 $ wardrobe_fail_hint(30)
                                 return

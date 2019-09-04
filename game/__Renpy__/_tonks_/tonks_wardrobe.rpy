@@ -102,7 +102,7 @@ label tonks_wardrobe_check(section, arg=None):
                 if ton_friendship < 10:
                     if arg == "top":
                         call ton_main("Someone's being naughty... I might have to give you a spanking for that.",face="annoyed",eyebrows="angry",mouth="smile")
-                        call ton_main("Just kidding, sure have a quick look, [ton_genie_name].",face="annoyed",eyebrows="raised",mouth="horny")
+                        call ton_main("Just kidding! Sure, have a quick look, [ton_genie_name].",face="annoyed",eyebrows="raised",mouth="horny")
                         $ char_active.toggle_wear(arg)
                         call ton_main("",face="happy")
                         pause 1.0

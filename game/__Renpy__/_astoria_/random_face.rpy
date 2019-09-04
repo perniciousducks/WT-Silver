@@ -21,7 +21,7 @@ label set_ast_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
         elif mouth in ["naughty","horny"]:
             $ temp_mouth    = renpy.random.choice(["grin", "horny"])
         elif mouth in ["annoyed"]:
-            $ temp_mouth    = renpy.random.choice(["upset"])
+            $ temp_mouth    = renpy.random.choice(["annoyed", "upset"])
         elif mouth in ["disgusted"]:
             $ temp_mouth    = renpy.random.choice(["disgust","worried"])
         elif mouth in ["angry"]:

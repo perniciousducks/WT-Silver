@@ -1,7 +1,7 @@
 label tonks_wardrobe_check(section, arg=None):
     if isinstance(arg, outfit_class):
         python:
-            temp_count = [0, 0, 0]
+            temp_count = [0, 0, 0] # [0: required level, 1: underwear changed, 2: underwear equipped]
             temp_score = 0
             for item in arg.group:
                 if ton_friendship < item.whoring*2 and temp_count[0]*2 < item.whoring*2:
@@ -15,13 +15,13 @@ label tonks_wardrobe_check(section, arg=None):
 
         # Outfit outrage score check
         if ton_friendship < temp_count[0]*2:
-            call ton_main("It looks lovely, but you'd have to prove yourself a bit more before I put that on...",face="annoyed")
+            call ton_main("It looks lovely, but you'd have to prove yourself a bit more before I put that on...",face="annoyed",eyebrows="angry",mouth="smile")
             $ temp_score += 1
         if temp_count[2] < 2 and ton_friendship < 20:
             if temp_score > 0:
-                call ton_main("...especially something without underwear",face="annoyed")
+                call ton_main("...especially something without underwear",face="annoyed",eyebrows="angry",mouth="horny")
             else:
-                call ton_main("No panties? I like that, but no thanks, I'm at work.",face="annoyed")
+                call ton_main("No panties? I like that, but no thanks, I'm at work.",face="annoyed",eyebrows="angry",mouth="base")
             $ temp_score += 1
         elif temp_count[1] > 0:
             call ton_main("I feel perfectly fine wearing my current set of underwear for the time being.",face="annoyed")
@@ -61,9 +61,9 @@ label tonks_wardrobe_check(section, arg=None):
                     elif random_number == 2:
                         call ton_main("Its inappropriate, lets keep it civil okay?",face="annoyed")
                     elif random_number == 3:
-                        call ton_main("Someone fancy themselves a bit of a bad boy?",face="annoyed")
+                        call ton_main("Someone fancy themselves a bit of a bad boy?",face="annoyed",mouth="base")
                     elif random_number == 4:
-                        call ton_main("Hey, those are my funbags... Don't be naughty.",face="annoyed")
+                        call ton_main("Hey, those are my funbags... Don't be naughty.",face="annoyed",mouth="horny")
                     elif random_number == 5:
                         call ton_main("Hey now, someone's getting a bit ahead of themselves.",face="annoyed")
                     elif random_number == 6:
@@ -78,11 +78,11 @@ label tonks_wardrobe_check(section, arg=None):
                     elif random_number == 2:
                         call ton_main("If you'd like to keep these hands intact I suggest you stop it right now, [ton_genie_name].",face="annoyed")
                     elif random_number == 3:
-                        call ton_main("Hey, who said you had permission to approach the chamber of secrets?",face="annoyed")
+                        call ton_main("Hey, who said you had permission to approach the chamber of secrets?",face="annoyed",eyebrows="angry",mouth="smile")
                     elif random_number == 4:
-                        call ton_main("That place is reserved for good boys and girls...",face="annoyed")
+                        call ton_main("That place is reserved for good boys and girls...",face="annoyed",eyebrows="angry",mouth="smile")
                     elif random_number == 5:
-                        call ton_main("That forest is forbidden entry for first years... let's get to know each other a bit better first...",face="annoyed")
+                        call ton_main("That forest is forbidden entry for first years... let's get to know each other a bit better first...",face="annoyed",eyebrows="angry",mouth="smile")
                     return
             $ love_mouse_away()
             call ton_main("", face="horny")
@@ -92,17 +92,17 @@ label tonks_wardrobe_check(section, arg=None):
                 if ton_friendship < 15:
                     $ random_number = renpy.random.randint(1, 2)
                     if random_number == 1:
-                        call ton_main("Maybe another time...",face="angry")
+                        call ton_main("Maybe another time...",face="annoyed",eyebrows="raised")
                     elif random_number == 2:
-                        call ton_main("I like my underwear in its proper place.",face="angry")
+                        call ton_main("I like my underwear in its proper place.",face="annoyed",eyebrows="base",mouth="angry")
                     #Hint
                     $ wardrobe_fail_hint(15)
                     return
             elif arg in ("top", "bottom"):
                 if ton_friendship < 10:
                     if arg == "top":
-                        call ton_main("Someone's being naughty... I might have to give you a spanking for that.",face="annoyed")
-                        call ton_main("Just kidding, sure have a quick look, [ton_genie_name].",face="annoyed")
+                        call ton_main("Someone's being naughty... I might have to give you a spanking for that.",face="annoyed",eyebrows="angry",mouth="smile")
+                        call ton_main("Just kidding! Sure, have a quick look, [ton_genie_name].",face="annoyed",eyebrows="raised",mouth="horny")
                         $ char_active.toggle_wear(arg)
                         call ton_main("",face="happy")
                         pause 1.0
@@ -111,10 +111,10 @@ label tonks_wardrobe_check(section, arg=None):
                         call ton_main("",face="happy")
                         $ char_active.toggle_wear(arg)
                         g4 "What gives?!"
-                        call ton_main("Time's up.",face="annoyed")
+                        call ton_main("Time's up.",face="annoyed",eyebrows="angry",mouth="smile")
                         m "......"
                     elif arg == "bottom":
-                        call ton_main("Maybe later.",face="annoyed")
+                        call ton_main("Maybe later.",face="annoyed",eyebrows="raised")
                     #Hint
                     $ wardrobe_fail_hint(10)
                     return
@@ -125,7 +125,7 @@ label tonks_wardrobe_check(section, arg=None):
                 if ton_friendship < 20:
                     if char_active.get_cloth("bra"):
                         if arg.id == char_active.get_cloth("bra").id:
-                            call ton_main("If you behave maybe I'll let you take a peek later, [ton_genie_name].",face="angry")
+                            call ton_main("If you behave maybe I'll let you take a peek later, [ton_genie_name].",face="annoyed",eyebrows="angry",mouth="smile")
                             #Hint
                             $ wardrobe_fail_hint(20)
                             return
@@ -133,7 +133,7 @@ label tonks_wardrobe_check(section, arg=None):
                         if arg.id == char_active.get_cloth("panties").id:
                             call ton_main("",face="happy")
                             nar "> Tonks clicks her tongue, staring at you in a disapproving manner."
-                            call ton_main("Getting ahead of ourselves are we? You're bold, I'll give you that much.",face="angry")
+                            call ton_main("Getting ahead of ourselves are we? You're bold, I'll give you that much.",face="annoyed",eyebrows="angry",mouth="smile")
                             #Hint
                             $ wardrobe_fail_hint(20)
                             return
@@ -146,13 +146,13 @@ label tonks_wardrobe_check(section, arg=None):
                     if arg.type in ("top", "bottom"):
                         if char_active.get_cloth("top"):
                             if arg.id == char_active.get_cloth("top").id:
-                                call ton_main("Mmm... I like where your head is at, but I have to refuse.",face="annoyed")
+                                call ton_main("Mmm... I like where your head is at, but I have to refuse.",face="annoyed",eyebrows="angry",mouth="smile")
                                 #Hint
                                 $ wardrobe_fail_hint(30)
                                 return
                         if char_active.get_cloth("bottom"):
                             if arg.id == char_active.get_cloth("bottom").id:
-                                call ton_main("Really... doing that would be quite uncouth don't you think?",face="annoyed")
+                                call ton_main("Really... doing that would be quite uncouth don't you think?",face="annoyed",eyebrows="angry",mouth="horny")
                                 #Hint
                                 $ wardrobe_fail_hint(30)
                                 return
@@ -160,11 +160,11 @@ label tonks_wardrobe_check(section, arg=None):
                 if ton_friendship < arg.whoring*2:
                     $ random_number = renpy.random.randint(1, 3)
                     if random_number == 1:
-                        call ton_main("Not yet big boy, perhaps once this scheme of ours comes more into fruition...",face="annoyed")
+                        call ton_main("Not yet big boy, perhaps once this scheme of ours comes more into fruition...",face="annoyed",eyebrows="angry",mouth="smile")
                     elif random_number == 2:
-                        call ton_main("It does look nice but you need to deserve it...",face="annoyed")
+                        call ton_main("It does look nice but you need to deserve it...",face="annoyed",eyebrows="angry",mouth="smile")
                     else:
-                        call ton_main("Hmm, what'd you think of me if I wore this... Later perhaps.",face="annoyed")
+                        call ton_main("Hmm, what would you think of me if I wore this...? Later perhaps.",face="annoyed",eyebrows="raised",mouth="horny")
 
                     #Hint
                     $ wardrobe_fail_hint(arg.whoring*2)

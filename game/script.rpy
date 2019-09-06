@@ -162,6 +162,7 @@ define sd_win2 = "sounds/win2.mp3"
         ### INTRO MOVIE ANIMATIONS ###
 image title_ani: #Main title animation.
     contains:
+        zoom 0.5
         "title/00.png"
         pause 3
         "title/01.png"
@@ -197,6 +198,14 @@ image title_ani: #Main title animation.
         "title/01.png"
         pause.1
         repeat
+        
+    contains:
+        xanchor 1.0
+        xalign 1.0
+        zoom 0.9
+        ypos 12
+        xoffset -2
+        "logo/title.png"
         
     contains:
         xpos -17
@@ -279,6 +288,7 @@ image title_ani: #Main title animation.
         
 image menu_ani:
     contains:
+        zoom 0.5
         "title/00b.png"
         
     contains:

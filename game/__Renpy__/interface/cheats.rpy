@@ -202,6 +202,71 @@ label cheats:
             "The marauder's map has been added to your inventory!"
             $ map_unlocked = True
             jump cheats
+            
+        "-DEVROOM-" if config.developer:
+            menu:
+                "-Unlock all characters-":
+                    $ snape_unlocked = True
+                    $ tonks_unlocked = True
+                    $ hermione_unlocked = True
+                    $ cho_unlocked = True
+                    $ astoria_unlocked = True
+                    $ susan_unlocked = True
+                    $ luna_unlocked = True
+                    # ginny_unlocked = True
+                    jump cheats
+                "-Unlock all characters wardrobe-":
+                    $ tonks_wardrobe_unlocked = True
+                    $ hermione_wardrobe_unlocked = True
+                    $ cho_wardrobe_unlocked = True
+                    $ astoria_wardrobe_unlocked = True
+                    $ susan_wardrobe_unlocked = True
+                    $ luna_wardrobe_unlocked = True
+                    # ginny_wardrobe_unlocked = True
+                    jump cheats
+                "-Get 100 of all gift items-":
+                    python:
+                        for i in candy_gift_list:
+                            i.number = 100
+                        for i in drink_gift_list:
+                            i.number = 100
+                        for i in mag_gift_list:
+                            i.number = 100
+                        for i in toy_gift_list:
+                            i.number = 100
+                    jump cheats
+                "-Get all scrolls-":
+                    python:
+                        for i in scroll_list_A:
+                            i.unlocked = True
+                        for i in scroll_list_B:
+                            i.unlocked = True
+                        for i in scroll_list_C:
+                            i.unlocked = True
+                        sealed_scroll_ITEM.unlocked = True
+                    jump cheats
+                "-Get all books-":
+                    python:
+                        for i in book_list.read_books:
+                            i.unlocked = True
+                        for i in book_list.write_books:
+                            i.unlocked = True
+                        for i in book_list.fiction_books:
+                            i.unlocked = True
+                    jump cheats
+                "-Get all decorations-":
+                    python:
+                        for i in wall_deco_list:
+                            i.unlocked = True
+                        for i in fireplace_deco_list:
+                            i.unlocked = True
+                        for i in cupboard_deco_list:
+                            i.unlocked = True
+                        for i in misc_deco_list:
+                            i.unlocked = True
+                        for i in misc_hat_list:
+                            i.unlocked = True
+                    jump cheats
 
         "-Never mind-":
             jump day_main_menu

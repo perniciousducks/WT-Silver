@@ -516,6 +516,7 @@ label hufflepuff_match:
 
     # Cho’s Skirt gets addressed
     show screen hufflepuff_match_cho_chase(1.0, 1.0)
+    play bg_sounds "sounds/snitchloop.ogg" fadein 0.0 fadeout 0.0 
     call her_main("Higher up, Cho seems to have caught an eye on the snitch and is chasing after it, directly followed by Cedric who...", mouth="open", eye="narrow")
     show screen hufflepuff_match_cho_chase(1.0, 0.5)
     call her_main("Hold on a minute... Is Cho wearing a skirt?", mouth="scream", eye="surprised")
@@ -535,6 +536,7 @@ label hufflepuff_match:
     hide screen hermione_main
     "Fem Student #1" "What a slut!"
     hide screen hufflepuff_match_cho_chase
+    stop bg_sounds fadeout 2.0
     with d3
 
     call her_chibi("stand","375","105", flip=False)

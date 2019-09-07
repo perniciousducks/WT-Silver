@@ -182,7 +182,7 @@ label astoria_intro_E1:
     ton "Who... told her to lift-up her top..."
     g9 "Oh yes?"
     ton "The imperius curse can make people do unspeakable things against their will..."
-    ton "I have no doubt that someone as sweet and good-hearted as Susan wouldn't know how to defent herself against it."
+    ton "I have no doubt that someone as sweet and good-hearted as Susan wouldn't know how to defend herself against it."
     ton "So, ...she showed her breasts to a bunch of other students ... unfortunately..."
     g9 "I wish I could have been there to stop it!"
     ton "Of course you do..."

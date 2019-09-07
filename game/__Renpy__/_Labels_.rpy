@@ -588,7 +588,7 @@ label play_music(music=""):
         play music "music/fuzzball-parade-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["astoria", "astoria_theme"]:
         # Astoria
-        play music "music/fluffing-a-duck-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
+        play music "music/KMcL_OpenThoseBrightEyes.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["susan", "susan_theme"]:
         # Susan
         play music "music/teddy-bear-waltz-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed

@@ -17,7 +17,7 @@ init python:
     def outfit_cached(file_info):
         char = file_info[4]
         file_name = str(file_info[0]) + file_info[1].split("/",-1)[-1]
-        file_path = config.basedir+"\\game\\outfits\\"+char.lower()+"\\"+file_name
+        file_path = config.basedir+"/game/outfits/"+char.lower()+"/"+file_name
         if not os.path.isfile(file_path):
             headers = { 'User-Agent' : 'Mozilla/5.0' }
             response = urllib2.urlopen(urllib2.Request(file_info[1], None, headers)).read()

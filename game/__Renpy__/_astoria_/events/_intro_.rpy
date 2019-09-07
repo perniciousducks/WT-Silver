@@ -16,7 +16,7 @@ label astoria_intro_E1:
 
     # Tonks walks in.
 
-    ton "Good evening, [ton_genie_name]."
+    ton "Good day, [ton_genie_name]."
     m "[tonks_name]..."
     ton "Oh... I'm terribly sorry for bursting in like this!"
     ton "I simply forgot to knock..."

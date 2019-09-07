@@ -50,8 +50,7 @@ label summon_astoria:
 
         # Gifts
         "-Gifts-" if not gave_astoria_gift:
-            $ current_category = None
-            jump astoria_gift_menu
+            call expression 'gift_menu' pass (return_label="astoria_requests")
 
         "{color=#858585}-Gifts-{/color}" if gave_astoria_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."

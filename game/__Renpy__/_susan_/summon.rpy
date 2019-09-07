@@ -65,11 +65,10 @@ label summon_susan:
 
         # Gifts
         "-Gifts-" if not gave_susan_gift:
-            $ current_category = None
-            jump susan_gift_menu
+            call expression 'gift_menu' pass (return_label="susan_requests")
 
         "{color=#858585}-Gifts-{/color}" if gave_susan_gift:
-            "Not yet added. WIP!"
+            $ TBA_message()
             #m "I already gave her a gift today. Don't want to spoil her too much..."
             jump susan_requests
 

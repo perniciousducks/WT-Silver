@@ -18,7 +18,7 @@ label tonks_hangout:
         call bld
         
     if daytime:
-        $ temp_txt = "day"
+        $ temp_txt = "afternoon"
     else:
         $ temp_txt = "evening"
 

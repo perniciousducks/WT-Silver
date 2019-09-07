@@ -104,12 +104,14 @@ label tonks_wardrobe_check(section, arg=None):
                         call ton_main("Someone's being naughty... I might have to give you a spanking for that.",face="annoyed",eyebrows="angry",mouth="smile")
                         call ton_main("Just kidding! Sure, have a quick look, [ton_genie_name].",face="annoyed",eyebrows="raised",mouth="horny")
                         $ char_active.toggle_wear(arg)
+                        $ char_active.strip("robe")
                         call ton_main("",face="happy")
                         pause 1.0
                         call ton_main("",face="happy")
                         pause 1.0
                         call ton_main("",face="happy")
                         $ char_active.toggle_wear(arg)
+                        $ char_active.wear("robe")
                         g4 "What gives?!"
                         call ton_main("Time's up.",face="annoyed",eyebrows="angry",mouth="smile")
                         m "......"

@@ -96,9 +96,7 @@ label summon_cho:
 
         # Gifts
         "-Gifts-" if not gave_cho_gift:
-            $ current_category = None
-            $ current_page = 0
-            jump cho_gift_menu
+            call expression 'gift_menu' pass (return_label="cho_requests")
 
         "{color=#858585}-Gifts-{/color}" if gave_cho_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."

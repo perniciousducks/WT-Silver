@@ -13,6 +13,8 @@ define config.gc_thresholds = (25000, 10, 10)
 define config.idle_gc_count = 2500
 define gc_print_unreachable = False
 
+define config.gl_clear_color = "#000"
+
 init -1 python hide:
 
     config.autoreload = False # If false, Ren'Py will reload the game once per press of shift+R.
@@ -91,29 +93,29 @@ init -1 python hide:
         ## Color scheme: Muted Horror
 
         ## The color of an idle widget face.
-        widget = "#777777",
+        widget = "#5d5151",
 
         ## The color of a focused widget face.
-        widget_hover = "#73735C",
+        widget_hover = "#897e75",
 
         ## The color of the text in a widget.
-        widget_text = "#404033",
+        widget_text = "#9b8d84",
 
         ## The color of the text in a selected widget. (For
         ## example, the current value of a preference.)
-        widget_selected = "#000000",
+        widget_selected = "#FFFFFF",
 
         ## The color of a disabled widget face.
-        disabled = "#73735C",
+        disabled = "#463b3b",
 
         ## The color of disabled widget text.
-        disabled_text = "#8C8C70",
+        disabled_text = "#50443c",
 
         ## The color of informational labels.
-        label = "#1A0001",
+        label = "#9b8d84",
 
         ## The color of a frame containing widgets.
-        frame = "#555544",
+        frame = "#5d5151", #ConditionSwitch("interface_color == \"gold\"", "#ac8d5a", "True", "#5d5151"),
 
         ## The background of the main menu. This can be a color
         ## beginning with '#', or an image filename. The latter
@@ -143,10 +145,33 @@ init -1 python hide:
     ## The background of the window. In a Frame, the two numbers
     ## are the size of the left/right and top/bottom borders,
     ## respectively.
+    #
+    #
+    
+    #
+    #
+    #
+    #
+    
+    #renpy.register_style_preference("text2", "day", style.button_text, "color", "#f9d592")
+    #renpy.register_style_preference("text2", "night", style.button_text, "color", "#9b8d84")
 
-    style.window.background = Frame(ConditionSwitch(
-    "interface_color == \"gold\"", "interface/frames/gold/frame.png",
-    "True","interface/frames/gray/frame.png"))
+    style.window.background = Frame(ConditionSwitch("interface_color == \"gold\"", "interface/frames/gold/frame.png","True","interface/frames/gray/frame.png"))
+    
+    #style.pref_button.background = Frame(ConditionSwitch("interface_color == \"gold\"", "#FFF", "True", "#000"),15,15)
+    
+    style.button.background = "#5d5151E6"#ConditionSwitch("interface_color == \"gold\"", "#ac8d5aE6", "True", "#5d5151E6")
+    style.button.hover_background = "#897e75"#ConditionSwitch("interface_color == \"gold\"", "#97681f", "True", "#897e75")
+    style.button.insensitive_background = "#463b3bE6"#ConditionSwitch("interface_color == \"gold\"", "#917442E6", "True", "#463b3bE6")
+    style.button.selected_background = "#766a6aE6"#ConditionSwitch("interface_color == \"gold\"", "#e5c48dE6", "True", "#766a6aE6")
+    style.button.selected_hover_background = "#897e75"#ConditionSwitch("interface_color == \"gold\"", "#97681f", "True", "#897e75")
+    
+    style.button_text.color = "#9b8d84" #If(interface_color == "gold", "#f9d592", "#9b8d84")
+    style.button_text.hover_color = "#ffffff"
+    style.button_text.insensitive_color = "#50443c"
+    style.button_text.selected_color = "#eedfd5"
+    style.button_text.selected_hover_color = "#FFFFFF"
+    style.button_text.outlines = [(1, "#00000080", 1, 0)]
 
     ## Margin is space surrounding the window, where the background
     ## is not drawn.

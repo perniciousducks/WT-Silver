@@ -17,35 +17,35 @@ label imperio_spell_1_training: #first level imperio spell
         m "Sure, just come hop up on my lap and we can start reading it together."
         call ast_main("WHAT???","scream","wide","wide","wide")
         call ast_main("Why do I have to sit up on your lap?","open","angry","angry","mid")
-        call ast_main("It was bad enough that you made me go hang out with that old hag...","disgust","angry","angry","R")
-        call ast_main("Why can't I just use a chair?","disgust","angry","angry","mid")
+        call ast_main("It was bad enough that you made me go hang out with that old hag...", "upset","angry","angry","R")
+        call ast_main("Why can't I just use a chair?", "upset","angry","angry","mid")
         m "I only have one chair..."
         call ast_main("There is another chair right here! Dumby!!!","scream","wide","wide","mid")
         m "No that's..."
         m "My antique shelve..."
         g9 "Besides, it'll be fun!"
-        call ast_main("Fun?","pout","angry","angry","mid")
+        call ast_main("Fun?", "annoyed", "angry","angry", "mid")
         g9 "It'll be fun for me..."
-        call ast_main("Ugh...","disgust","ahegao","ahegao","ahegao")
+        call ast_main("Ugh...", "upset","ahegao","ahegao","ahegao")
         call ast_main("At least tell me what the spell does and I'll decide...","open","closed","base","mid")
         m "OK, let me just open it up."
         call ctc
 
-        call ast_main("","pout","narrow","narrow","mid")
+        call ast_main("", "annoyed", "narrow","narrow", "mid")
         pause.5
         call nar(">You try to open the spell book only to find it doesn't budge.")
         m "(What gives?)"
-        call ast_main("Come on, old man...","pout","narrow","narrow","L")
+        call ast_main("Come on, old man...", "annoyed", "narrow","narrow", "L")
         m "I... can't open it..."
         call ast_main("What? You're not that weak are you, dumby?","tongue_silly","angry","angry","mid")
         m "I'm not a damn cripple!"
         call ast_main("Pffft, I think most cripples can open a book.","smile","base","base","mid")
         pause.8
         m "I think it's magically locked..."
-        call ast_main("Really? It must be powerful then...","worried","wide","wide","wide")
+        call ast_main("Really? It must be powerful then...", "annoyed", "wide","wide", "wide")
         call ast_main("Does it say anything on the cover?","open","base","base","mid") #need soggy to draw the book here
         m "No..."
-        call ast_main("And on the back?","pout","base","base","R")
+        call ast_main("And on the back?", "annoyed", "base","base", "R")
         m "Noth- no wait, there's a poem."
         call ast_main("What does it say, dumby!","grin","angry","angry","mid")
         m "When venus and mars meet, all my knowledge shall be at your feet..."
@@ -57,15 +57,15 @@ label imperio_spell_1_training: #first level imperio spell
                     pass
                 "-We have to wait until venus and mars are aligned-":
                     call ast_main("But that could take forever!","open","ahegao","ahegao","ahegao")
-                    call ast_main("It's gotta be something else dumby!","pout","angry","angry","mid")
+                    call ast_main("It's gotta be something else dumby!", "annoyed", "angry","angry", "mid")
                     jump astoria_book_question
                 "-We've gotta get some ancient gods to hook up-":
-                    call ast_main("Stop being such a dumby!","pout","narrow","narrow","R")
+                    call ast_main("Stop being such a dumby!", "annoyed", "narrow","narrow", "R")
                     jump astoria_book_question
 
-        call ast_main("Oh... is that why you wanted me to sit on your lap?","disgust","base","base","down")
+        call ast_main("Oh... is that why you wanted me to sit on your lap?", "upset","base","base","down")
         m "o-of course... why else would I ask?"
-        call ast_main("hmpf...","pout","angry","angry","R")
+        call ast_main("hmpf...", "annoyed", "angry","angry", "R")
         call ast_main("well alright... Just don't try anything funny!","open","closed","base","mid")
 
         hide screen astoria_main
@@ -156,7 +156,7 @@ label imperio_spell_1_training: #first level imperio spell
         call ast_main("You better keep those nasty thoughts to yourself, old man!","scream","angry","angry","angry")
         call ast_main("Or you'll have to go and kiss that granny's feet yourself!","clench","angry","angry","angry")
         m "Fine... I'm sorry..."
-        call ast_main("...","pout","angry","angry","R")
+        call ast_main("...", "annoyed", "angry","angry", "R")
 
         hide screen bld1
         hide screen astoria_main

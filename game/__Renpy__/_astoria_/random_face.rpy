@@ -23,7 +23,7 @@ label set_ast_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
         elif mouth in ["annoyed"]:
             $ temp_mouth    = renpy.random.choice(["annoyed", "upset"])
         elif mouth in ["disgusted"]:
-            $ temp_mouth    = renpy.random.choice(["disgust","worried"])
+            $ temp_mouth    = renpy.random.choice(["clench","upset", "annoyed"])
         elif mouth in ["angry"]:
             $ temp_mouth    = renpy.random.choice(["clench", "angry"])
 
@@ -47,11 +47,11 @@ label set_ast_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
         elif eyebrows in ["happy"]:
             $ temp_eyebrows = renpy.random.choice(["base"])
         elif eyebrows in ["naughty","horny"]:
-            $ temp_eyebrows = renpy.random.choice(["base","angry"])
-        elif eyebrows in ["annoyed"]:
-            $ temp_eyebrows = renpy.random.choice(["worried", "angry"])
-        elif eyebrows in ["disgusted"]:
             $ temp_eyebrows = renpy.random.choice(["base"])
+        elif eyebrows in ["annoyed"]:
+            $ temp_eyebrows = renpy.random.choice(["worried"])
+        elif eyebrows in ["disgusted"]:
+            $ temp_eyebrows = renpy.random.choice(["base", "angry"])
         elif eyebrows in ["angry"]:
             $ temp_eyebrows = renpy.random.choice(["angry"])
 

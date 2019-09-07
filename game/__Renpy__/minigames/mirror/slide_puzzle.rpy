@@ -45,20 +45,17 @@ label update_puzzle_slide:
         $imagepuzzle[xposS][yposS] = "empty"
         $ emptyposition = p_move
 
-    if p_move == -2:
-        hide screen exp_o_meter
-        jump open_pyzzle_box
-
     python:
         for x in range(0,4):
             for y in range(0,4):
-                if ((imagepuzzle[y][x] != "images/rooms/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" and (y+1)+(4*(x)) != 16) or imagepuzzle[3][3] != "empty"):
+                if p_move != -2 and ((imagepuzzle[y][x] != "images/rooms/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" and (y+1)+(4*(x)) != 16) or imagepuzzle[3][3] != "empty"):
                     renpy.jump("update_puzzle_slide")
 
+    jump open_puzzle_box
 
-    jump open_pyzzle_box
-
-label open_pyzzle_box:
+label open_puzzle_box:
+    hide screen exp_o_meter
+    
     if unlocked_7th or p_move == -2:
         g4 "Fuck it..."
         $ renpy.play('sounds/door_down.mp3')

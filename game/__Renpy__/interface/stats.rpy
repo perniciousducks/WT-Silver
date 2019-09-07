@@ -42,7 +42,16 @@ label stats_menu(xx=150, yy=90):
     $ category_items = stats_dict[current_category]
     $ menu_items = category_items
     $ menu_items_length = len(menu_items)
-
+    
+    # Reset legacy character positioning
+    # TODO: Remove it once all characters have been converted into a class.
+    $ hermione_xpos = 370
+    $ hermione_ypos = 0
+    $ luna_xpos = 640
+    $ luna_ypos = 0
+    $ susan_xpos = 300
+    $ susan_ypos = 0
+    #
     label stats_menu_after_init:
     $ renpy.block_rollback()
 

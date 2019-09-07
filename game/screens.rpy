@@ -8,7 +8,7 @@
 # http://www.renpy.org/doc/html/screen_special.html#say
     
 screen say(who, what, side_image=None):
-    zorder 6 #Otherwise the character sprite would be obscuring it.
+    zorder 30 #Otherwise the character sprite would be obscuring it.
     
     if side_image:
         add side_image yalign 1.0 yanchor 1.0

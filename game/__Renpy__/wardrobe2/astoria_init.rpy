@@ -32,6 +32,8 @@ label astoria_wardrobe_init:
             
             # Temporal save
             astoria_outfit_last = outfit_class(name="Last worn items", group=[astoria_hair_base])
+            
+            astoria_outfit_custom = outfit_class(name="Default", group=[astoria_hair_base, astoria_cloth_schoolskirt1, astoria_cloth_topschool1], unlocked=True) # TODO: Add underwear once its been drawn
         
             ################
             #              #

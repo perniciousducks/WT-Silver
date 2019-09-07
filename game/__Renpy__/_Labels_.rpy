@@ -201,22 +201,38 @@ label main_room:
 
 
 label setup_fireplace_hangout(char=None):
-    play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
-    show screen blkfade
 
-    $ fire_in_fireplace = True
+    if not daytime: # Night time
+        play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
+        show screen blkfade
 
-    call hide_characters
-    call gen_chibi("hide")
-    call sna_chibi("hide")
-    call ton_chibi("hide")
-    hide screen chair_right
-    show screen desk
+        $ fire_in_fireplace = True
 
-    show screen fireplace_fire
+        call hide_characters
+        call gen_chibi("hide")
+        call sna_chibi("hide")
+        call ton_chibi("hide")
+        hide screen chair_right
+        show screen desk
+
+        show screen fireplace_fire
+    else: # Daytime
+        stop bg_sounds
+        show screen blkfade
+        
+        $ fire_in_fireplace = False
+        
+        call hide_characters
+        call gen_chibi("hide")
+        call sna_chibi("hide")
+        call ton_chibi("hide")
+        hide screen chair_right
+        show screen desk
+        
+    # Proceed as usual
     if char == "snape":
         show screen with_snape_animated
-    if char == "tonks":
+    elif char == "tonks":
         show screen with_tonks_animated
 
     hide screen bld1

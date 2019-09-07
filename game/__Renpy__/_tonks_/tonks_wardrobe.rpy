@@ -17,7 +17,7 @@ label tonks_wardrobe_check(section, arg=None):
         if ton_friendship < temp_count[0]*2:
             call ton_main("It looks lovely, but you'd have to prove yourself a bit more before I put that on...",face="annoyed",eyebrows="angry",mouth="smile")
             $ temp_score += 1
-        if temp_count[2] < 2 and ton_friendship < 20:
+        if temp_count[2] < 2 and ton_friendship < 0: # Disabled underwear check
             if temp_score > 0:
                 call ton_main("...especially something without underwear",face="annoyed",eyebrows="angry",mouth="horny")
             else:
@@ -89,7 +89,7 @@ label tonks_wardrobe_check(section, arg=None):
             return
         elif section == "toggle":
             if arg in ("bra", "panties"):
-                if ton_friendship < 15:
+                if ton_friendship < 0: # Disabled underwear check
                     $ random_number = renpy.random.randint(1, 2)
                     if random_number == 1:
                         call ton_main("Maybe another time...",face="annoyed",eyebrows="raised")
@@ -122,7 +122,7 @@ label tonks_wardrobe_check(section, arg=None):
             return
         elif section == "equip":
             if arg.type in ("bra", "panties"):
-                if ton_friendship < 20:
+                if ton_friendship < 0: # Disabled underwear check
                     if char_active.get_cloth("bra"):
                         if arg.id == char_active.get_cloth("bra").id:
                             call ton_main("If you behave maybe I'll let you take a peek later, [ton_genie_name].",face="annoyed",eyebrows="angry",mouth="smile")

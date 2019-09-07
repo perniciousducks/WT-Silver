@@ -176,6 +176,22 @@ image genie_toast_goblet: # Genie sitting in front of fireplace, left sire.
     "characters/genie/chibis/drinking/01.png"
     pause 3
     repeat
+    
+### Drinking ###
+image genie_toast_goblet_daytime: # Genie sitting in front of fireplace, left sire.
+    "characters/genie/chibis/drinking/01_day.png"
+    pause 2
+    "characters/genie/chibis/drinking/02_day.png"
+    pause.2
+    "characters/genie/chibis/drinking/03_day.png"
+    pause.2
+    "characters/genie/chibis/drinking/04_day.png"
+    pause 1
+    "characters/genie/chibis/drinking/03_day.png"
+    pause.2
+    "characters/genie/chibis/drinking/01_day.png"
+    pause 3
+    repeat
 
 
 ### Jerking Off ###

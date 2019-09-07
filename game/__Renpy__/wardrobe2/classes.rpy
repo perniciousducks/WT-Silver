@@ -279,7 +279,7 @@ init python:
                 self.overlayer = self.imagepath+"overlay.png"
                 
             # Check if bodyfix exists
-            if self.bodyfix != None:
+            if self.bodyfix != None and not self.cloned:
                 imagepath = "characters/"+self.char+"/body/"
                 
                 for key, value in self.bodyfix.iteritems():
@@ -499,6 +499,8 @@ init python:
         outfits = []
         other = {}
         
+        incompatible_wardrobe = []
+        
         pose = ""
         
         sprite = "empty"
@@ -687,6 +689,8 @@ init python:
                     if item.incompatible != None:
                         for key in item.incompatible:
                             # Unequip incompatible item types
+                            if key not in self.incompatible_wardrobe:
+                                self.incompatible_wardrobe.append(key)
                             self.unequip(key)
                     self.clothing[item.type][0] = item
                     self.clothing[item.type][4] = False
@@ -694,13 +698,20 @@ init python:
                 if self.clothing[object.type][0] == object and object.type != "hair":
                     self.unequip(object.type)
                 else:
-                    # Check if item is compatible with other clothing pieces
-                    if object.incompatible != None:
-                        for key in object.incompatible:
-                            # Unequip incompatible item types
-                            self.unequip(key)
-                    self.clothing[object.type][0] = object
-                    self.clothing[object.type][4] = False
+                    # Check if item is compatible with other clothing pieces  
+                    if object.type not in self.incompatible_wardrobe:
+                        if self.clothing[object.type][0] and self.clothing[object.type][0].incompatible != None:
+                            for key in self.clothing[object.type][0].incompatible:
+                                if key in self.incompatible_wardrobe:
+                                    self.incompatible_wardrobe.remove(key)
+                        if object.incompatible != None:
+                            for key in object.incompatible:
+                                # Unequip incompatible item types
+                                if key not in self.incompatible_wardrobe:
+                                    self.incompatible_wardrobe.append(key)
+                                self.unequip(key)
+                        self.clothing[object.type][0] = object
+                        self.clothing[object.type][4] = False
             self.cached = False
             update_chibi_image(self.char)
             
@@ -709,9 +720,14 @@ init python:
                 for key in self.clothing:
                     if not key == "hair":
                         self.clothing[key][0] = None
+                self.incompatible_wardrobe = []
             else:
                 for arg in args:
                     try:
+                        if self.clothing[str(arg)][0] and self.clothing[str(arg)][0].incompatible != None:
+                            for key in self.clothing[str(arg)][0].incompatible:
+                                if key in self.incompatible_wardrobe:
+                                    self.incompatible_wardrobe.remove(key)
                         self.clothing[str(arg)][0] = None
                     except KeyError:
                         raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')

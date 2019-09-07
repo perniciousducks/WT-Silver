@@ -185,7 +185,7 @@ label cheats:
 
         "-Solve the slider puzzle-" if puzzle_box_ITEM.unlocked == True and unlocked_7th == False:
             $ unlocked_7th = True
-            jump open_pyzzle_box
+            jump open_puzzle_box
 
         "-Add Gold-":
             $ gold += 500

@@ -13,6 +13,7 @@ label summon_tonks:
     call tonks_random_clothing
 
     label tonks_requests:
+    $ tonks_class.get_cloth("hair").color = tonks_haircolor
     $ tonks_haircolor = tonks_class.get_cloth("hair").color
 
     call ton_main(xpos="base",ypos="base")
@@ -149,32 +150,34 @@ label update_ton_requests:
 
 label tonks_talk:
     menu:
-        "-Ask about outfit upgrades-":
-            m "[tonks_name],..."
-            m "Do you think you could change any of these outfits?"
-            m "You know..."
-            g9 "Make them sluttier!"
-            call ton_main("Let me see...","base","base","base","down")
+        # Temporarily disabled
+        #
+        # "-Ask about outfit upgrades-":
+            # m "[tonks_name],..."
+            # m "Do you think you could change any of these outfits?"
+            # m "You know..."
+            # g9 "Make them sluttier!"
+            # call ton_main("Let me see...","base","base","base","down")
 
-            #call check_tonks_clothing_upgrades #Adds items to the list. Picks one random item.
-            if upgradable_clothing != []:
-                $ ton_clothing_upgrades += 1
-                call ton_main("Oh I really like this one.","open","base","raised","down")
-                call ton_main("I could make some adjustments here...","base","base","raised","down")
-                call ton_main("Maybe make this a bit shorter and...","horny","base","base","down")
-                call ton_main("There you go, [ton_genie_name], all done.","base","base","base","mid")
-                call unlock_clothing(text = ">A sexier variant of an outfit has been unlocked!", item = clothing_unlock)
-                $ clothing_unlock.unlocked = True
-                $ clothing_unlock = None
-                g9 "Nice!"
-                m "Thanks a ton!"
-                call ton_main("Don't mention it, [ton_genie_name].","base","base","base","mid")
-                jump tonks_requests
+            # #call check_tonks_clothing_upgrades #Adds items to the list. Picks one random item.
+            # if upgradable_clothing != []:
+                # $ ton_clothing_upgrades += 1
+                # call ton_main("Oh I really like this one.","open","base","raised","down")
+                # call ton_main("I could make some adjustments here...","base","base","raised","down")
+                # call ton_main("Maybe make this a bit shorter and...","horny","base","base","down")
+                # call ton_main("There you go, [ton_genie_name], all done.","base","base","base","mid")
+                # call unlock_clothing(text = ">A sexier variant of an outfit has been unlocked!", item = clothing_unlock)
+                # $ clothing_unlock.unlocked = True
+                # $ clothing_unlock = None
+                # g9 "Nice!"
+                # m "Thanks a ton!"
+                # call ton_main("Don't mention it, [ton_genie_name].","base","base","base","mid")
+                # jump tonks_requests
 
-            else:
-                call ton_main("I'm sorry [ton_genie_name], but I don't think I can improved these outfits any further.","open","base","raised","mid")
-                call ton_main("I will see what I can do should you get any new ones.","base","base","base","mid")
-                jump tonks_requests
+            # else:
+                # call ton_main("I'm sorry [ton_genie_name], but I don't think I can improved these outfits any further.","open","base","raised","mid")
+                # call ton_main("I will see what I can do should you get any new ones.","base","base","base","mid")
+                # jump tonks_requests
 
         "-Get naked!-" if tonks_strip_happened and (not tonks_class.get_worn("top") or not tonks_class.get_worn("bottom") or not tonks_class.get_worn("robe")):
             m "Get naked, [tonks_name]!"

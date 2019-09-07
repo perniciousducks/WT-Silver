@@ -22,7 +22,7 @@ label ag_se_imperio_sb_E1_update:
     call ast_main("Hey [ast_susan_name]!","grin","narrow","narrow","L",xpos="base",ypos="base")
     call sus_main("Astoria? What are you doing here?","open","base","worried","R")
 
-    call ast_main("Oh, don't mind me...","pout","base","base","R")
+    call ast_main("Oh, don't mind me...", "annoyed", "base","base", "R")
     call ast_main("I'm only here to put a curse on you.","grin","angry","angry","mid")
     call sus_main("P-Put a curse on me?!!","open","wide","worried","wide")
     call sus_main("No! Professor, do someth--","scream","wide","worried","mid")
@@ -42,7 +42,7 @@ label ag_se_imperio_sb_E1_update:
     call ast_main("What should we make her want?","grin","angry","angry","L")
     m "Hmmm?"
     m "How about making her want to strip?"
-    call ast_main("[ast_genie_name]!","disgust","closed","worried","mid")
+    call ast_main("[ast_genie_name]!", "upset","closed","worried","mid")
     m "What? Didn't you already do that?"
     call ast_main("I only made her take her top off.","open","base","base","mid")
     m "Ugh, fine... let's just go with that again..."
@@ -84,7 +84,7 @@ label ag_se_imperio_sb_E1_update:
     call gen_chibi("jerking_off_behind_desk")
     pause.5
 
-    call ast_main("(...)","pout","narrow","narrow","mid")
+    call ast_main("(...)", "annoyed", "narrow","narrow", "mid")
     call sus_main("I-I-I'm sorry, Professor Dumbledore, I don't know what's come over me...","open","narrow","worried","down")
     call sus_main("I'm Sorry you have to see this...","upset","closed","base","mid")
     call ast_main("See what Susy?","grin","angry","angry","mid")
@@ -103,7 +103,7 @@ label ag_se_imperio_sb_E1_update:
     call ast_main("Dumby!","scream","wide","wide","mid")
     m "What? You can't blame me for this!"
     call ast_main("Not that! You're not supposed to think they're nice!","clench","angry","angry","mid")
-    call ast_main("(And stop touching yourself... Gross...)","pout","angry","angry","R",cheeks="blush")
+    call ast_main("(And stop touching yourself... Gross...)", "annoyed", "angry","angry", "R",cheeks="blush")
     m "Are they not?"
     call ast_main("{b}No!{/b} they're huge and soft and squishy and, and, and,... gross!","scream","closed","angry","mid")
     g9 "You're right about them looking huge and soft..."
@@ -111,7 +111,7 @@ label ag_se_imperio_sb_E1_update:
     call sus_main("How can you two be so mean!","upset","narrow","worried","R")
     call ast_main("Oh calm down, [ast_susan_name]!","scream","angry","angry","L")
     call sus_main("[ast_susan_name]!? What's that supposed to mean?","open","wide","worried","wide")
-    call ast_main("Pfft... you know...","pout","angry","angry","R")
+    call ast_main("Pfft... you know...", "annoyed", "angry","angry", "R")
     call sus_main("How dare you!","scream","closed","angry","mid")
     call sus_main("Are you just going to let her say that, sir?","scream","base","angry","mid")
     g4 "What's that? I was a little-- ugh... distracted..."
@@ -119,7 +119,7 @@ label ag_se_imperio_sb_E1_update:
     call nar(">You keep stroking your rock-hard cock whilst marveling at Susan's heaving chest.")
     g4 "(So big...)"
     call sus_main("...","upset","base","worried","down")
-    call ast_main("Alright, I think you're enjoying this a little too much, Dumby!","disgust","angry","angry","mid")
+    call ast_main("Alright, I think you're enjoying this a little too much, Dumby!", "upset","angry","angry","mid")
     m "Just a little longer..."
 
     call cast_spell("imperio")
@@ -155,11 +155,11 @@ label ag_se_imperio_sb_E1_update:
     m "Aww... why'd you do that?"
     call ast_main("You were getting too excited, old man.","clench","angry","angry","mid")
     m "So what?"
-    call ast_main("Well you can't go having too much fun, otherwise you'll never want to practice the new spells!","pout","angry","angry","R")
+    call ast_main("Well you can't go having too much fun, otherwise you'll never want to practice the new spells!", "annoyed", "angry","angry", "R")
     m "You could have at least made her dance or something..."
-    call ast_main("We could do that...","pout","base","base","L")
+    call ast_main("We could do that...", "annoyed", "base","base", "L")
     m "Then why don't we?"
-    call ast_main("Because it's boring!","disgust","ahegao","ahegao","ahegao")
+    call ast_main("Because it's boring!", "upset","ahegao","ahegao","ahegao")
     call ast_main("I wanna learn more spells!","open","closed","base","mid")
     m "Ugh... fine..."
     call ast_main("Good, I already read what the next one is called!","grin","angry","angry","mid")
@@ -167,7 +167,7 @@ label ag_se_imperio_sb_E1_update:
     call ast_main("Imperio tempus...","open","closed","base","mid")
     call ast_main("I didn't see what it could do though...","upset","base","base","down")
     m "Wanna start reading it now?"
-    call ast_main("It's a little late sir.","worried","base","base","mid")
+    call ast_main("It's a little late sir.", "annoyed", "base","base", "mid")
     call ast_main("Besides, I better put bessy here back in her barn before people start to notice.","grin","angry","angry","L")
     call sus_main("(Bessy...?)","upset","wide","worried","wide")
     m "Alright..."
@@ -214,7 +214,7 @@ label ag_se_imperio_sb_E2:
 label ag_se_imperio_sb_E2_update:
     call sus_main("You wanted to see me, [sus_genie_name]?","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
     call sus_main("Astoria? Why are you here again?","open","base","worried","R")
-    call ast_main("Oh... no reason...","pout","base","base","down")
+    call ast_main("Oh... no reason...", "annoyed", "base","base", "down")
     call sus_main("Is there something wrong, Professor?","upset","base","worried","mid")
     m "As a matter of fact there is..."
     call sus_main("R-really? Is this about me returning my books to the library a day late?","open","wide","base","wide")
@@ -228,7 +228,7 @@ label ag_se_imperio_sb_E2_update:
     m "I am, Ms Bones..."
     g9 "Hiding away those glorious milk duds of yours is a serious offense!"
     call sus_main("","open","wide","base","wide")
-    call ast_main("(Pffft, gloriously gross)","pout","angry","angry","R")
+    call ast_main("(Pffft, gloriously gross)", "annoyed", "angry","angry", "R")
     call sus_main("Professor Dumbledore! How can you say something like that!","scream","base","angry","mid",trans="hpunch")
     call sus_main("I think I better go...","upset","closed","worried","mid")
     hide screen astoria_main
@@ -255,15 +255,15 @@ label ag_se_imperio_sb_E2_update:
     m "(What in the hells is obliviate?)"
     call ast_main("So what should we make her do today, [ast_genie_name]?","smile","base","base","mid")
     m "Well, if the books to be believed, this spell should let us change something about her permanently."
-    call ast_main("Hmmm...","pout","narrow","narrow","R")
+    call ast_main("Hmmm...", "annoyed", "narrow","narrow", "R")
     call ast_main("I know!","grin","angry","angry","mid")
     call ast_main("Lets make her forget everything that happens in this room as soon as she leaves!","open","angry","angry","L")
     call ast_main("That way we don't have to worry about her tattling on us.","open","angry","angry","mid")
     m "Good thinking boy wonder."
-    call ast_main("...","pout","angry","angry","mid")
+    call ast_main("...", "annoyed", "angry","angry", "mid")
     m "But is that all we're going to change about her?"
     m "Can't we do something a little more... adventurous?"
-    call ast_main("You mean like making her show you her milk duds?","pout","narrow","narrow","mid")
+    call ast_main("You mean like making her show you her milk duds?", "annoyed", "narrow","narrow", "mid")
     m "Well if you insist..."
     call ast_main("ugh... you're such a filthy pervert!","clench","angry","angry","mid")
     m "We can do something else if you--"
@@ -275,13 +275,13 @@ label ag_se_imperio_sb_E2_update:
     call ast_main("Not to mention you'd probably do something over the top and gross...","open","narrow","narrow","R")
     m "Probably..."
     m "So what's your plan?"
-    call ast_main("Just wait and see old man!","disgust","narrow","narrow","mid")
+    call ast_main("Just wait and see old man!", "upset","narrow","narrow","mid")
     call ast_main("Susan, listen up!","scream","closed","base","L")
     call sus_main("Yes...","upset","narrow","base","up")
     call ast_main("From now on, you'll no longer remember anything that happens in this office.","open","base","base","L")
     call sus_main("Ok...","upset","narrow","base","mid")
     m "Is that all?"
-    call ast_main("Shush old man, I'm not done yet!","disgust","narrow","narrow","mid")
+    call ast_main("Shush old man, I'm not done yet!", "upset","narrow","narrow","mid")
     call ast_main("You'll also get an uncontrollable urge to take your top off whenever you see Dumby and I together, OK?","open","closed","base","mid")
     call sus_main("yes...","upset","base","worried","down")
     m "Nice! But won't she just run away from now on?"
@@ -345,7 +345,7 @@ label ag_se_imperio_sb_E2_update:
     call ast_main("No one asked you, slut!","clench","angry","angry","L")
     call sus_main("I am not a slut!","scream","closed","angry","mid")
     call ast_main("Ha! You're standing here, letting old man dumbledore ogle your fat tits while he jerks his wrinkly old cock!","open","closed","base","mid")
-    call ast_main("If that's not a slut then I don't know what is!","disgust","narrow","narrow","L")
+    call ast_main("If that's not a slut then I don't know what is!", "upset","narrow","narrow","L")
     call sus_main("I-- don't know why I'm doing this...","upset","closed","worried","mid")
     call sus_main("You probably cursed me!","open","closed","angry","mid")
     call ast_main("Duh!","grin","angry","angry","L")
@@ -360,9 +360,9 @@ label ag_se_imperio_sb_E2_update:
     call sus_main("This is unbelievable!","scream","base","angry","mid")
     call sus_main("I'm going to report both of you to the ministry of magic!","open","closed","angry","mid")
     call sus_main("My aunt is an auror you know!","open","base","angry","mid")
-    call ast_main("yeah... I've met your creepy old aunt.","pout","narrow","narrow","R")
+    call ast_main("yeah... I've met your creepy old aunt.", "annoyed", "narrow","narrow", "R")
     call sus_main("What? Did you curse her too, you evil little witch?","open","wide","base","R")
-    call ast_main("I wish...","pout","narrow","base","R")
+    call ast_main("I wish...", "annoyed", "narrow","base", "R")
     call sus_main("Well she's going to lock both of you away in azkaban!","open","closed","angry","mid")
     call sus_main("You'll never see me or anyone else again...","scream","closed","angry","mid")
     call ast_main("Ha!","grin","angry","angry","L")
@@ -381,7 +381,7 @@ label ag_se_imperio_sb_E2_update:
     call gen_chibi("cumming_behind_desk")
     call cum_block
     g4 "{size=+10}AHHH... YESS!!!!{/size}"
-    call ast_main("Woah... I didn't think you'd have that much in you, dumby...","worried","wide","wide","wide")
+    call ast_main("Woah... I didn't think you'd have that much in you, dumby...", "annoyed", "wide","wide", "wide")
 
     hide screen susan_main
     $ susan_wear_top = True
@@ -391,7 +391,7 @@ label ag_se_imperio_sb_E2_update:
 
     call sus_walk(action="leave", speed=2)
 
-    call ast_main("","pout","narrow","narrow","R")
+    call ast_main("", "annoyed", "narrow","narrow", "R")
     call gen_chibi("cum_on_desk")
     pause.5
 
@@ -399,7 +399,7 @@ label ag_se_imperio_sb_E2_update:
     m "Ugh... should we stop her?"
     call ast_main("It's fine [ast_genie_name], I made it so she forgets everything that happens in here, remember?","open","closed","base","mid")
     m "Oh... yeah..."
-    call ast_main("Well I'll let you clean up...","disgust","narrow","narrow","mid")
+    call ast_main("Well I'll let you clean up...", "upset","narrow","narrow","mid")
     m "(...)"
     call ast_main("See ya [ast_genie_name]! and don't forget that we've got a new spell to learn!","open","closed","base","mid")
     m "Can't we just do that one again?"
@@ -443,7 +443,7 @@ label ag_se_imperio_sb_E3_update:
     call sus_main("You wanted to see me sir?","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
     call sus_main("Astoria?...","upset","base","worried","R")
     call sus_main("You seem to be here quite often...","upset","narrow","worried","R")
-    call ast_main("I'm surprised you have noticed that, Susy...","pout","base","base","R")
+    call ast_main("I'm surprised you have noticed that, Susy...", "annoyed", "base","base", "R")
     call sus_main("Well I'm not sure why I was brought here...","open","base","worried","mid")
 
     hide screen susan_main
@@ -465,7 +465,7 @@ label ag_se_imperio_sb_E3_update:
     pause.5
 
     g4 "(!!!)"
-    call ast_main("Maybe it's because of you showing off your gross boobs?","pout","base","base","R")
+    call ast_main("Maybe it's because of you showing off your gross boobs?", "annoyed", "base","base", "R")
     call sus_main("Astoria! How can you say something so rude! I'd never...","open","closed","angry","mid")
     call sus_main("","upset","wide","worried","down",trans="hpunch")
     pause.8
@@ -473,9 +473,9 @@ label ag_se_imperio_sb_E3_update:
     call sus_main("WHAT?!?!?","scream","wide","worried","down")
     call sus_main("I'm so sorry, professor Dumbledore!","upset","closed","worried","mid")
     call sus_main("I Don't know what came over me!","open","closed","base","mid")
-    call ast_main("Maybe it's just because you're a nasty slut!","pout","base","base","L")
+    call ast_main("Maybe it's just because you're a nasty slut!", "annoyed", "base","base", "L")
     call sus_main("I am not a {size=+10}slut{/size}, Astoria!","scream","closed","angry","mid")
-    call ast_main("Pfft... You must just like showing your headmaster your tits because you're such a prude then...","pout","base","base","R")
+    call ast_main("Pfft... You must just like showing your headmaster your tits because you're such a prude then...", "annoyed", "base","base", "R")
     call sus_main("I-- don't know why this is happening...","open","wide","worried","wide")
     call sus_main("You must have cursed me!","scream","narrow","angry","R")
     call ast_main("Bingo!","grin","angry","angry","L")
@@ -501,7 +501,7 @@ label ag_se_imperio_sb_E3_update:
     m "Hmmm... Are you actually going to let me choose this time or are you just asking to be annoying?"
     call ast_main("Hey! I am not annoying!","scream","closed","angry","mid",trans="hpunch")
     m "Well are you going to let me choose then?"
-    call ast_main("Alright... Just don't be too gross dumby!","disgust","narrow","narrow","mid")
+    call ast_main("Alright... Just don't be too gross dumby!", "upset","narrow","narrow","mid")
     call ast_main("Or boring... that'd be even worse!","upset","narrow","narrow","mid")
 
     m "Alright well, first things first..." #I'll add a menu here with more options once art assets are drawn for them
@@ -516,11 +516,11 @@ label ag_se_imperio_sb_E3_update:
     show screen bld1
     call nar(">Your hands sneak under your desk and around your engorged cock.")
     g9 "That's better..."
-    call ast_main("(...)","pout","angry","angry","R")
+    call ast_main("(...)", "annoyed", "angry","angry", "R")
     m "What?"
     call ast_main("I told you not to be boring! We already did this last time!","open","closed","base","mid")
     g9 "If this is too boring, why don't you get her to suck me off?"
-    call ast_main("Dumby! That's too gross!","disgust","narrow","narrow","mid")
+    call ast_main("Dumby! That's too gross!", "upset","narrow","narrow","mid")
     call ast_main("I don't wanna have to see your nasty old cock!","clench","narrow","narrow","R")
     m "Ugh... Fine... What do you want to do then?"
     call ast_main("Well seeing as how you asked...","open","closed","base","mid")
@@ -550,17 +550,17 @@ label ag_se_imperio_sb_E3_update:
     show screen blktone
     call ast_main("And you're not allowed to come out until dumby covers you in his nasty goop!","open","closed","base","mid")
     sus "yes..."
-    call ast_main("And you have to love it down there!","disgust","narrow","base","down")
+    call ast_main("And you have to love it down there!", "upset","narrow","base","down")
     sus "...Love it?"
     call ast_main("Yep! You have to love how it smells and how it looks and how gross it is!","open","closed","base","mid")
     sus "I'll love it..."
     call ast_main("Good!","clench","angry","angry","angry")
     m "Isn't that a little much?"
-    call ast_main("Pfft! That's rich coming from you dumby!","pout","narrow","narrow","mid")
-    call ast_main("If it was up to you she'd be touching your nasty old wrinkly thing!","pout","narrow","narrow","R")
-    call ast_main("With her mouth!","disgust","narrow","narrow","down")
+    call ast_main("Pfft! That's rich coming from you dumby!", "annoyed", "narrow","narrow", "mid")
+    call ast_main("If it was up to you she'd be touching your nasty old wrinkly thing!", "annoyed", "narrow","narrow", "R")
+    call ast_main("With her mouth!", "upset","narrow","narrow","down")
     m "I suppose you're right..."
-    call ast_main("Of course I am!","pout","narrow","narrow","R")
+    call ast_main("Of course I am!", "annoyed", "narrow","narrow", "R")
     call ast_main("Now get back to stroking that gross cock of yours!","open","closed","angry","mid")
     m "You don't have to tell me twice!"
     call nar(">You renew your efforts, encouraged by the image of the well-endowed redhead hidden under your desk.")
@@ -590,7 +590,7 @@ label ag_se_imperio_sb_E3_update:
     call ast_main("Really? Because it sure looks like you did...","grin","base","base","R")
     sus "I--"
     sus "I don't know why..."
-    call ast_main("If you don't like it down there, why don't you just hop out then?","pout","base","base","R")
+    call ast_main("If you don't like it down there, why don't you just hop out then?", "annoyed", "base","base", "R")
     sus "I can't!"
     call ast_main("Really? why's that, susy?","grin","narrow","narrow","down")
     sus "I don't know... I just can't!"
@@ -605,7 +605,7 @@ label ag_se_imperio_sb_E3_update:
     sus "Professor... {b}please...{/b}"
     call ast_main("Please what, Susan?","open","closed","base","mid")
     call ast_main("Please stop?","open","narrow","narrow","down")
-    call ast_main("Or please coat me in cum?","disgust","narrow","narrow","down")
+    call ast_main("Or please coat me in cum?", "upset","narrow","narrow","down")
     with hpunch
     sus "ASTORIA!"
     call ast_main("Answer the question, Susy...","open","base","base","mid")
@@ -621,9 +621,9 @@ label ag_se_imperio_sb_E3_update:
     sus "Under professor dumbledore's desk?"
     call ast_main("Mhmm... I bet it's nasty down there...","clench","angry","angry","down")
     call ast_main("It probably smells gross with all the yucky cum he shoots against that desk of his...","open","base","base","R")
-    call ast_main("Not to mention his smelly old cock...","disgust","ahegao","ahegao","ahegao")
+    call ast_main("Not to mention his smelly old cock...", "upset","ahegao","ahegao","ahegao")
     m "Ahem..."
-    call ast_main("Shh, dumby!","pout","angry","angry","R")
+    call ast_main("Shh, dumby!", "annoyed", "angry","angry", "R")
     call ast_main("So go on, Susy... tell me what it's like...","open","closed","base","mid")
 
     sus "It... It's..."
@@ -633,9 +633,9 @@ label ag_se_imperio_sb_E3_update:
     sus "Everything about it is fantastic!"
     call ast_main("","smile","base","base","mid")
     sus "The cum stains on the back of the desk..."
-    call ast_main("","disgust","narrow","base","mid")
+    call ast_main("", "upset","narrow","base","mid")
     sus "The thick smell of semen in the air..."
-    call ast_main("","disgust","narrow","narrow","R")
+    call ast_main("", "upset","narrow","narrow","R")
     sus "The way Dumbledore's stroking his {b}cock{/b}..."
     call ast_main("","clench","narrow","narrow","R")
     sus "That cock... that's the best part..."
@@ -651,7 +651,7 @@ label ag_se_imperio_sb_E3_update:
     sus "Really? You mean I won't have to..."
     sus "Alright..."
     sus "{size=-5}I'm a...{/size} {size=-3}slut...{/size}"
-    call ast_main("Hmmm, I'm not sure I heard anything... What about you, dumby?","pout","base","base","R")
+    call ast_main("Hmmm, I'm not sure I heard anything... What about you, dumby?", "annoyed", "base","base", "R")
     m "Ah... almost..."
     call ast_main("Go on susy... one more time...","smile","narrow","narrow","down")
     with hpunch
@@ -720,12 +720,12 @@ label ag_se_imperio_sb_E3_update:
     call ast_main("Pfft... it's nothing more than what that tramp deserves!","open","closed","angry","mid")
     call ast_main("She's just lucky I didn't make her touch your gross weiner!","clench","angry","angry","down")
     m "..."
-    call ast_main("Don't tell me you've gotten soft, old man!","pout","narrow","narrow","mid")
+    call ast_main("Don't tell me you've gotten soft, old man!", "annoyed", "narrow","narrow", "mid")
     m "Well that's usually what happens after I--"
     call ast_main("That's not what I meant!","clench","closed","angry","mid")
     call ast_main("Besides, these spells were your idea in the first place!","open","closed","base","mid")
     m "I don't think that's--"
-    call ast_main("Anyway, it's getting pretty late...","pout","narrow","narrow","R")
+    call ast_main("Anyway, it's getting pretty late...", "annoyed", "narrow","narrow", "R")
     call ast_main("I better go to bed.","open","closed","base","mid")
     m "Ugh... uhm... good night."
     call ast_main("Good night, [ast_genie_name]!","grin","happyCl","base","mid")
@@ -765,8 +765,8 @@ label hornify_spell_1: #first level hornify spell
     m "I'm not sure they'd run that story some how..."
     call ast_main("You're the headmaster aren't you, Dumby? Make them run it!","smile","angry","angry","mid")
     m "Let's just focus on your magic for the moment, leave the journalism for later."
-    call ast_main("Hmph!","pout","angry","angry","R")
-    call ast_main("If you want me to focus on magic then bring those boobs on legs up here so I have someone to practice on!","pout","angry","angry","mid")
+    call ast_main("Hmph!", "annoyed", "angry","angry", "R")
+    call ast_main("If you want me to focus on magic then bring those boobs on legs up here so I have someone to practice on!", "annoyed", "angry","angry", "mid")
     m "Couldn't have said it better myself..."
     call ast_main("Hang on, wait!","smile","base","narrow","mid")
     ">Astoria runs around your desk and hops up on your lap..."
@@ -780,7 +780,7 @@ label hornify_spell_1: #first level hornify spell
     call sus_main("Ast-","open","wide","worried","mid")
     call ast_main("Dumby! We haven't even started yet!","smile","angry","base","R")
     m "Don't blame me for this, [astoria_name]!"
-    call ast_main("I do! I expect you to wait until we start...","pout","happyCl","base","R")
+    call ast_main("I do! I expect you to wait until we start...", "annoyed", "happyCl","base", "R")
     call sus_main("Excuse me!","scream","worriedCl","angry","mid")
     call sus_main("Why are you sitting on Dumbledore's lap Astoria?","open","suspicious","angry","mid")
     call sus_main("And what are you starting?","open","narrow","worried","mid")
@@ -790,9 +790,9 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("IMPERIO!","scream","closed","angry","mid")
     ">With a puff of golden smoke Astoria's wand goes off, entrancing the poor redhead once more..."
     m "Hey, Isn't that the old spell?"
-    call ast_main("Of course it is Dumby! Can't you hear things at all?","pout","angry","angry","R")
+    call ast_main("Of course it is Dumby! Can't you hear things at all?", "annoyed", "angry","angry", "R")
     call ast_main("I cast it because I wanna change some stuff about bessy here.","smile","angry","narrow","mid")
-    call ast_main("I think she can still cast spells at us if she wants...","pout","narrow","narrow","mid")
+    call ast_main("I think she can still cast spells at us if she wants...", "annoyed", "narrow","narrow", "mid")
     call ast_main("Plus I wanna be able to boss her around in class!","grin","happyCl","base","mid")
     call ast_main("So listen up Susan!","open","closed","angry","mid")
     call sus_main("Yes...","open","base","worried","empty")
@@ -804,13 +804,13 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("And you aren't allowed to play with yourself unless I say!","open","closed","angry","mid")
     call sus_main("Yes...","open","base","worried","empty")
     m "What was that for?"
-    call ast_main("Can you imagine how much a big boobed bimbo like Bessy here probably plays with herself?","disgust","angry","angry","R")
+    call ast_main("Can you imagine how much a big boobed bimbo like Bessy here probably plays with herself?", "upset","angry","angry","R")
     call ast_main("I'm just doing her a favour by giving her some more free time...","smile","narrow","narrow","mid")
     m "..."
     call ast_main("OK, all done, you can go back to normal now Susy!","open","happyCl","base","mid")
     ">The colour rushes back into Susan's eyes as she snaps back to life."
     call sus_main("-sitting on your lap!","open","suspicious","worried","mid")
-    call ast_main("I'm sitting here because Dumby refuses to get any comfy furniture!","pout","closed","narrow","mid")
+    call ast_main("I'm sitting here because Dumby refuses to get any comfy furniture!", "annoyed", "closed","narrow", "mid")
     ">You feel astoria's butt adjust ever so slightly, causing the barest bit of friction to your cock..."
     m "Ugh... th-that's right..."
     call sus_main("Ok... so what's this experiment you needed me to help with?","upset","narrow","worried","mid")
@@ -823,13 +823,13 @@ label hornify_spell_1: #first level hornify spell
     call sus_main("I don't think I want to help with this experiment Dumbledore! I'm going to leave now...","open","worriedCl","worried","mid",flip=True)
     ">Susan turns to leave, but is compelled by Astoria's previous imperio to be unable to leave until excused..."
     call sus_main("I can't... I can't leave!","upset","worriedCl","worried","wide")
-    call ast_main("We know! Just get back here and let us cast the spell!","pout","narrow","base","R")
+    call ast_main("We know! Just get back here and let us cast the spell!", "annoyed", "narrow","base", "R")
     call sus_main("...","upset","narrow","worried","empty")
     ">Susan begrudgingly walks back in front of your desk, sullenly standing before you and Astoria."
     call sus_main("Whatever you two have done, my aunt-","scream","closed","angry","mid")
     call ast_main("Shhh!","clench","angry","angry","angry")
     call sus_main("...","upset","narrow","worried","empty")
-    call ast_main("That's better, now I can focus...","pout","narrow","base","L")
+    call ast_main("That's better, now I can focus...", "annoyed", "narrow","base", "L")
     call ast_main("ready dumby?","smile","happyCl","base","mid")
     m "Ready as ever, [astoria_name]..."
     call ast_main("HORNIFY BOOBS!","scream","angry","angry","angry")
@@ -840,10 +840,10 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("Pfft, you took them off ages ago.","smile","base","base","R")
     call ast_main("And I just cast a little spell is all.","grin","narrow","narrow","mid")
     ">Astoria begins to rock back and forth on your lap, causing a sinful bolt of pleasure through your cock as you buck back into the evil little witch..."
-    call ast_main("Dumby...","pout","wink","ahegao","R")
+    call ast_main("Dumby...", "annoyed", "wink","ahegao", "R")
     call ast_main("Now what's the spell feel like Susy?","smile","wink","ahegao","mid")
     call sus_main("Agh... it's like... it's like they're on fire!","open","wide","worried","down",cheeks="blush")
-    call ast_main("mmmm.... Bad fire?","pout","narrow","narrow","mid")
+    call ast_main("mmmm.... Bad fire?", "annoyed", "narrow","narrow", "mid")
     ">Astoria rolls her hips hard against your cock..."
     call ast_main("Or good fire?","smile","narrow","narrow","mid")
     call sus_main("{b}Good{/b} fire...","upset","","base","base",cheeks="blush")

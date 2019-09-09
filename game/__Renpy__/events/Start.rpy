@@ -40,12 +40,6 @@ label start_wt:
     #Duel
     $ potions = 0 #Amount of healing potions Genie has in stock.
 
-    #Map
-    call reset_map_init
-
-    #Cheats
-    call reset_cheats_init
-
     #Cupboard
     $ searched = False #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
 
@@ -166,32 +160,7 @@ label start_wt:
     with d7
     pause 1.2
 
-
     $ day = 0
-
-    ### CHARACTER INIT RESET ###
-    $ reset_persistants = True
-    call reset_genie_base
-    call snape_init
-    call snape_progress_init
-    call reset_hermione_base
-    call reset_hermione_clothing
-    call her_clothing_lists_init #Everything resets here!
-    call her_progress_init #Everything resets here!
-    call luna_init
-    call luna_progress_init
-    call cho_init
-    call cho_progress_init
-    call susan_init
-    call susan_progress_init
-    call astoria_init
-    call astoria_progress_init
-    call tonks_init
-    call tonks_progress_init
-    call store_init
-    call store_items_init
-    call wardrobe_init
-    $ reset_persistants = False
 
     ### PAPERWORK (MONEY-MAKING) RELATED FLAGS ###
     $ day_of_week = 0 #Counts days of the week. Everyday +1. When day_of_week = 7 resets to zero.

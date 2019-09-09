@@ -8,7 +8,7 @@ init python:
 
 # The game starts here.
 label start:
-    $ init_variables()
+    call temporary_post_default_init
     
     $ save_internal_version = config.version
     
@@ -17,9 +17,16 @@ label start:
     jump start_wt
 
 label after_load:
-    $ init_variables()
+    call temporary_post_default_init
     return
 
+#TODO Remove the necessity for post-default-init calls by fixing code
+label temporary_post_default_init:
+    call default_cho_class_init
+    call default_astoria_class_init
+    call default_tonks_class_init
+    call default_cho_class_init
+    call default_items_init
 
 init:
 

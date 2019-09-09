@@ -1,21 +1,11 @@
-
-
-### Quest Items ###
-
-#Init
-label quest_items_init:
-
-    if not hasattr(renpy.store,'gen_quest_items_list'):
-        $ gen_quest_items_list = []
-        $ her_quest_items_list = []
-        $ lun_quest_items_list = []
-        $ ast_quest_items_list = []
-        $ sus_quest_items_list = []
-        $ cho_quest_items_list = []
-        $ ton_quest_items_list = []
-
-    return
-
+# Quest Items
+default gen_quest_items_list = []
+default her_quest_items_list = []
+default lun_quest_items_list = []
+default ast_quest_items_list = []
+default sus_quest_items_list = []
+default cho_quest_items_list = []
+default ton_quest_items_list = []
 
 #Update lists
 label update_quest_items:

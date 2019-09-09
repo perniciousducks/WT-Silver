@@ -1,3 +1,13 @@
+define genie_max_hp = 1000
+define snape_max_hp = 2000
+
+default genie_hp = genie_max_hp
+default snape_hp = snape_max_hp
+
+default blocking = False
+default snape_blocking = False
+
+default pentogram = False
 
 init python:
     class silver_duel(object):
@@ -11,25 +21,6 @@ init python:
             renpy.hide(image,layer="screens")
 
     duel_OBJ = silver_duel()
-
-label __init_variables:
-
-    $ genie_max_hp = 1000
-    $ snape_max_hp = 2000
-
-    if not hasattr(renpy.store,'genie_hp'): #important!
-        $ genie_hp = genie_max_hp
-    if not hasattr(renpy.store,'snape_hp'): #important!
-        $ snape_hp = snape_max_hp
-    if not hasattr(renpy.store,'blocking'): #important!
-        $ blocking = False
-    if not hasattr(renpy.store,'snape_blocking'): #important!
-        $ snape_blocking = False
-    if not hasattr(renpy.store,'pentogram'): #important!
-        $ pentogram = False
-
-    return
-
 
 label duel:
     ### DUEL ###

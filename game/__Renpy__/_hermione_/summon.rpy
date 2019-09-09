@@ -418,7 +418,6 @@ label hermione_talk:
 
         # About Luna.
         "-Ask for a new student-" if hat_known and not luna_known:
-            call luna_init
             $ luna_known = True
             jump hat_intro_2
 

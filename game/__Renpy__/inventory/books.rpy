@@ -1,42 +1,66 @@
-label __init_variables:
+# Speedreading books
+default Speedreading_1_ITEM = book_class(
+    id = "Speedreading_1", name = "\"Copper book of spirit\"",
+    cost = 40,  type = "book", image = "book_general",
+    chapters = 2,  description = ">This book contains various tips on speed reading. 2 chapters.",
+    effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when reading."
+)
+default Speedreading_2_ITEM = book_class(
+    id = "Speedreading_2", name = "\"Bronze book of spirit\"",
+    cost = 60, type = "book", image = "book_general",
+    chapters = 4, description = ">This book contains various tips on speed reading. 4 chapters.",
+    effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when reading."
+)
+default Speedreading_3_ITEM = book_class(
+    id = "Speedreading_3", name = "\"Silver book of spirit\"",
+    cost = 80, type = "book", image = "book_general",
+    chapters = 6, description = ">This book contains various tips on speed reading. 6 chapters.",
+    effect = ">New skill unlocked: always complete an additional chapter when reading."
+)
+default Speedreading_4_ITEM = book_class(
+    id = "Speedreading_4", name = "\"Golden book of spirit\"",
+    cost = 160, type = "book", image="book_general",
+    chapters = 8, description = ">This book contains various tips on speed reading. 8 chapters.",
+    effect = ">You have mastered your spirit and from now on you can always complete two additional chapters when reading."
+)
 
+# Speedwriting books
+default Speedwriting_1_ITEM = book_class(
+    id = "Speedwriting_1", name = "\"Speedwriting for beginners\"",
+    cost = 90, type = "book", image = "book_general",
+    chapters = 2, description = ">This book contains a bunch of very basic techniques used to improve one's ability to write quickly. 2 chapters.",
+    effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when doing paperwork."
+)
+default Speedwriting_2_ITEM = book_class(
+    id="Speedwriting_2", name="\"Speedwriting for amateurs\"",
+    cost=110, type="book", image="book_general",
+    chapters=4, description=">This book contains intermediate techniques used to improve one's ability to write quickly. 4 chapters.",
+    effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when doing paperwork."
+)
+default Speedwriting_3_ITEM = book_class(
+    id="Speedwriting_3", name="\"Speedwriting for advanced\"",
+    cost=130, type="book", image="book_general",
+    chapters=6, description=">This book contains advanced techniques used to improve one's ability to write quickly. 6 chapters.",
+    effect = ">New skill unlocked: always complete an additional chapter when doing paperwork."
+)
+default Speedwriting_4_ITEM = book_class(
+    id="Speedwriting_4", name="\"Speedwriting for experts\"",
+    cost=150, type="book", image="book_general",
+    chapters=8, description=">This book contains expert techniques used to improve one's ability to read quickly. 8 chapters.",
+    effect = ">You have become a true master of Speedwriting and from now on you shall always complete two additional chapters when doing paperwork."
+)
 
-    ### Book Items ###
-
-    if not hasattr(renpy.store,'Speedreading_1_ITEM'):
-        $ Speedreading_1_ITEM = book_class(id="Speedreading_1", name="\"Copper book of spirit\"",             cost=40,  type="book", image="book_general",     chapters=2,  description=">This book contains various tips on speed reading. 2 chapters.", effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when reading.")
-        $ Speedreading_2_ITEM = book_class(id="Speedreading_2", name="\"Bronze book of spirit\"",             cost=60,  type="book", image="book_general",     chapters=4,  description=">This book contains various tips on speed reading. 4 chapters.", effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when reading.")
-        $ Speedreading_3_ITEM = book_class(id="Speedreading_3", name="\"Silver book of spirit\"",             cost=80,  type="book", image="book_general",     chapters=6,  description=">This book contains various tips on speed reading. 6 chapters.", effect = ">New skill unlocked: always complete an additional chapter when reading.")
-        $ Speedreading_4_ITEM = book_class(id="Speedreading_4", name="\"Golden book of spirit\"",             cost=160, type="book", image="book_general",     chapters=8,  description=">This book contains various tips on speed reading. 8 chapters.", effect = ">You have mastered your spirit and from now on you can always complete two additional chapters when reading.")
-
-        $ Speedwriting_1_ITEM = book_class(id="Speedwriting_1", name="\"Speedwriting for beginners\"",        cost=90,  type="book", image="book_general",     chapters=2,  description=">This book contains a bunch of very basic techniques used to improve one's ability to write quickly. 2 chapters.", effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when doing paperwork.")
-        $ Speedwriting_2_ITEM = book_class(id="Speedwriting_2", name="\"Speedwriting for amateurs\"",         cost=110, type="book", image="book_general",     chapters=4,  description=">This book contains intermediate techniques used to improve one's ability to write quickly. 4 chapters.", effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when doing paperwork.")
-        $ Speedwriting_3_ITEM = book_class(id="Speedwriting_3", name="\"Speedwriting for advanced\"", cost=130, type="book", image="book_general",     chapters=6,  description=">This book contains advanced techniques used to improve one's ability to write quickly. 6 chapters.", effect = ">New skill unlocked: always complete an additional chapter when doing paperwork.")
-        $ Speedwriting_4_ITEM = book_class(id="Speedwriting_4", name="\"Speedwriting for experts\"",          cost=150, type="book", image="book_general",     chapters=8,  description=">This book contains expert techniques used to improve one's ability to read quickly. 8 chapters.", effect = ">You have become a true master of Speedwriting and from now on you shall always complete two additional chapters when doing paperwork.")
-
-        $ Galadriel_I_ITEM    = fiction_book(id="Galadriel_I",    name="\"The Tale of Galadriel. Book I.\"",    cost=100, type="book", image="book_galadriel_1", chapters=20, description=">This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? 20 chapters.", effect = ">Your imagination has improved.")
-        $ Galadriel_II_ITEM   = fiction_book(id="Galadriel_II",   name="\"The Tale of Galadriel. Book II.\"",   cost=200, type="book", image="book_galadriel_2", chapters=20, description=">This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? 20 chapters.", effect = ">Your imagination has improved.")
-        $ Armchairs_ITEM      = fiction_book(id="Armchairs",      name="\"A game of Armchairs\"",               cost=300, type="book", image="book_chairs",      chapters=20, description=">An epic tale of betrayal, murder and rape. Then some more murder, some more betrayal and some more rape. 20 chapters.", effect = ">Your imagination has improved.")
-        $ Dear_Wifu_ITEM      = fiction_book(id="Dear_Wifu",      name="\"My dear waifu\"",                     cost=300, type="book", image="book_waifu",       chapters=20, description=">Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"? 20 chapters.", effect = ">Your imagination has improved.")
-
-    if not hasattr(renpy.store,'quidditch_book_1_ITEM'):
-        $ quidditch_book_1_ITEM = fiction_book(id="quidditch_book_1", name="\"Quidditch for Dummies\"",  unlockable=True, type="book", image="book_general",     chapters=10,  description=">This book contains the basic knowledge of Quidditch.\n 10 chapters.", effect = ">New skill unlocked: You now have enough knowledge to beat even the simplest of Quidditch quizzes.")
-
-
-    $ quidditch_book_1_ITEM.chapter_description = [
-        "Quidditch - One of the most popular sports in the wizarding world is a team based sport played on broomsticks...",
-        "Two opposing teams with seven people making up each team go up against each other...",
-        "The game is played using four balls... One quaffle, two bludgers and one snitch.\nThe beginning of the match is signaled by the quaffle being thrown into the air by the referee...",
-        "Quidditch, unlike many other sports is played on an oval shaped pitch with a scoring area on each end...",
-        "Much like other sports, you’re not allowed to go outside the boundary lines with the quaffle or you’d have to hand it over to the opposing team...",
-        "When the game is set in motion each player takes their assigned positions.\nThere’s three chasers, two beaters, one keeper and one seeker...",
-        "The chasers purpose once they have the quaffle to try and score. The Beaters on the other hand is to hit them with the bludgers as to knock the ball out of their grasp... The keeper blocks the goal and the seeker needs to catch the snitch.",
-        "As most injuries are easily remedied through magical means there’s nothing to stop a player from knocking into one another as to get a hold of the quaffle.\nTactics which distracts is therefore quite common even during official matches...",
-        "The way scoring is done is when the chaser has a hold of the quaffle they need to get to the opponent's side of the pitch and score it by getting it through a hoop...",
-        "The winning team is decided once the snitch is caught which is worth 150 points to the team of which seeker caught it. Therefor a match could technically go on forever... The longest Quidditch match ever recorded went on for about 3 months..."
-    ]
-
-    $ Galadriel_I_ITEM.chapter_description = [
+# Fictional books
+default Galadriel_I_ITEM = fiction_book(
+    id          = "Galadriel_I",
+    name        = "\"The Tale of Galadriel. Book I.\"",
+    cost        = 100,
+    type        = "book",
+    image       = "book_galadriel_1",
+    chapters    = 20,
+    description = ">This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? 20 chapters.",
+    effect      = ">Your imagination has improved.",
+    chapter_description = [
         "Galadriel - a gentle and gracious elven princess is introduced into the story.",
         "Galadriel's father - King Methis and his childhood friend Mofothelis are introduced into the story.",
         "King Methis makes an announcement. His daughter, princess Galadriel is to be wed to chancellor Mofothelis.",
@@ -58,8 +82,18 @@ label __init_variables:
         "The fame of the young and beautiful elven whore spreads. Galadriel accepts her new life in the brothel.",
         "Suddenly and abruptly everything changes. Galadriel finds out that she is pregnant. -End of book one-"
     ]
-
-    $ Galadriel_II_ITEM.chapter_description = [
+)
+    
+default Galadriel_II_ITEM = fiction_book(
+    id          = "Galadriel_II",
+    name        = "\"The Tale of Galadriel. Book II.\"",
+    cost        = 200,
+    type        = "book",
+    image       = "book_galadriel_2",
+    chapters    = 20,
+    description = ">This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? 20 chapters.",
+    effect      = ">Your imagination has improved.",
+    chapter_description = [
         "Galadriel has been pregnant for several months now. To the princess' own surprise her popularity grows seemingly in direct correlation to the size of her belly.",
         "Although Galadriel maintains the appearance of an obedient whore, in truth she contemplates her escape from the brothel.",
         "The Elven Princess-Whore knows nothing of the life outside the of walls of the brothel. But it does not affect her determination to escape.",
@@ -82,8 +116,18 @@ label __init_variables:
         "Galadriel rushes to her father's chambers and embraces him. The girl is relived to have her old life \"back\". She happy agrees to marry chancellor Mofothelis.",
         "{size=-1}Galadriel is at the altar. She is content and happy. Suddenly she notices something that fills her heart with horror. There is a scar on her hand. The mark of a dog's bite. -The End-{/size}"
     ]
+)
 
-    $ Armchairs_ITEM.chapter_description = [
+default Armchairs_ITEM = fiction_book(
+    id          = "Armchairs",
+    name        = "\"A game of Armchairs\"",
+    cost        = 300,
+    type        = "book",
+    image       = "book_chairs",
+    chapters    = 20,
+    description = ">An epic tale of betrayal, murder and rape. Then some more murder, some more betrayal and some more rape. 20 chapters.",
+    effect      = ">Your imagination has improved.",
+    chapter_description = [
         "A family of noble northmen is introduced into the story.",
         "The royal family and the king are introduced into the story.",
         "Another family is introduced into the story.",
@@ -105,40 +149,65 @@ label __init_variables:
         "The character you were rooting for gets brutally murdered. His girl gets raped and then murdered as well.",
         "A new race of half-frozen undead monsters is introduced into the story. To be continued..."
     ]
+)
+       
+default Dear_Wifu_ITEM = fiction_book(
+    id          = "Dear_Wifu",
+    name        = "\"My dear waifu\"",
+    cost        = 300,
+    type        = "book",
+    image       = "book_waifu",
+    chapters    = 20,
+    description = ">Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"? 20 chapters.",
+    effect      = ">Your imagination has improved."
+)
 
-    # Efficiency Books
-    $ book_list = silver_book_lib()
-    $ book_list.read_books = [
+default quidditch_book_1_ITEM = fiction_book(
+    id          = "quidditch_book_1",
+    name        = "\"Quidditch for Dummies\"",
+    unlockable  = True,
+    type        = "book",
+    image       = "book_general",
+    chapters    = 10,
+    description = ">This book contains the basic knowledge of Quidditch.\n 10 chapters.",
+    effect      = ">New skill unlocked: You now have enough knowledge to beat even the simplest of Quidditch quizzes.",
+    chapter_description = [
+        "Quidditch - One of the most popular sports in the wizarding world is a team based sport played on broomsticks...",
+        "Two opposing teams with seven people making up each team go up against each other...",
+        "The game is played using four balls... One quaffle, two bludgers and one snitch.\nThe beginning of the match is signaled by the quaffle being thrown into the air by the referee...",
+        "Quidditch, unlike many other sports is played on an oval shaped pitch with a scoring area on each end...",
+        "Much like other sports, you’re not allowed to go outside the boundary lines with the quaffle or you’d have to hand it over to the opposing team...",
+        "When the game is set in motion each player takes their assigned positions.\nThere’s three chasers, two beaters, one keeper and one seeker...",
+        "The chasers purpose once they have the quaffle to try and score. The Beaters on the other hand is to hit them with the bludgers as to knock the ball out of their grasp... The keeper blocks the goal and the seeker needs to catch the snitch.",
+        "As most injuries are easily remedied through magical means there’s nothing to stop a player from knocking into one another as to get a hold of the quaffle.\nTactics which distracts is therefore quite common even during official matches...",
+        "The way scoring is done is when the chaser has a hold of the quaffle they need to get to the opponent's side of the pitch and score it by getting it through a hoop...",
+        "The winning team is decided once the snitch is caught which is worth 150 points to the team of which seeker caught it. Therefor a match could technically go on forever... The longest Quidditch match ever recorded went on for about 3 months..."
+    ]
+)
+    
+default book_list = silver_book_lib(
+    read_books = [
         Speedreading_1_ITEM,
         Speedreading_2_ITEM,
         Speedreading_3_ITEM,
         Speedreading_4_ITEM,
-    ]
-
-    # Educational Books
-    $ book_list.write_books = [
+    ],
+    write_books = [
         Speedwriting_1_ITEM,
         Speedwriting_2_ITEM,
         Speedwriting_3_ITEM,
         Speedwriting_4_ITEM
-    ]
-
-    # Fictional Books
-    $ book_list.fiction_books = [
+    ],
+    fiction_books = [
         Galadriel_I_ITEM,
         Galadriel_II_ITEM,
         Armchairs_ITEM,
         Dear_Wifu_ITEM,
         quidditch_book_1_ITEM
     ]
+)
 
-
-    if not hasattr(renpy.store,'books'): #important!
-        $ books = []
-
-    return
-
-
+default  books = [] # Not used!
 
 label read_book_menu:
     hide screen desk_menu

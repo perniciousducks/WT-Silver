@@ -66,66 +66,67 @@ label set_her_face(change=None, mouth=None, eyes=None):
 
 
 
-label hermione_face_layers:
+define h_mouth_list = [
+    "angry",
+    "annoyed",
+    "base",
+    "clench",
+    "crooked_smile",
+    "cum",
+    "disgust",
+    "full", "full_cum",
+    "gag",
+    "grin",
+    "mad",
+    "mouthpiece", "mouthpiece_drool",
+    "normal",
+    "open", "open_tongue",
+    "open_wide_tongue", "open_wide_tongue_cum",
+    "scream",
+    "shock",
+    "silly",
+    "smile",
+    "soft",
+    "upset"
+    ]
 
-    $ h_mouth_list                  = ["angry",
-                                       "annoyed",
-                                       "base",
-                                       "clench",
-                                       "crooked_smile",
-                                       "cum",
-                                       "disgust",
-                                       "full",             "full_cum",
-                                       "gag",
-                                       "grin",
-                                       "mad",
-                                       "mouthpiece",       "mouthpiece_drool",
-                                       "normal",
-                                       "open",             "open_tongue",
-                                       "open_wide_tongue", "open_wide_tongue_cum",
-                                       "scream",
-                                       "shock",
-                                       "silly",
-                                       "smile",
-                                       "soft",
-                                       "upset"
-                                       ]
+define h_eye_list = [
+    "ahegao", "ahegao_intense", "ahegao_mad", "ahegao_raised", "ahegao_squint", "ahegao_wide",
+    "angry", "angryCl", "angryL",
+    "annoyed",
+    "base", "baseL",
+    "closed",
+    "concerned",
+    "dead", "dead_mad",
+    "down", "down_raised",
+    "frown",
+    "glance", "glanceL",
+    "happy", "happyCl",
+    "narrow",
+    "shocked", "shocked_raised",
+    "silly",
+    "soft",
+    "squint", "squintL",
+    "surprised",
+    "suspicious",
+    "wide", "wide_stare", "wideL",
+    "wink",
+    "worried", "worriedCl", "worriedL"
+    ]
 
-    $ h_eye_list                    = ["ahegao",     "ahegao_intense", "ahegao_mad", "ahegao_raised", "ahegao_squint", "ahegao_wide",
-                                       "angry",      "angryCl",        "angryL",
-                                       "annoyed",
-                                       "base",       "baseL",          "closed",
-                                       "concerned",
-                                       "dead",       "dead_mad",
-                                       "down",       "down_raised",
-                                       "frown",
-                                       "glance",     "glanceL",
-                                       "happy",      "happyCl",
-                                       "narrow",
-                                       "shocked",    "shocked_raised",
-                                       "silly",
-                                       "soft",
-                                       "squint",     "squintL",
-                                       "surprised",
-                                       "suspicious",
-                                       "wide",       "wide_stare",     "wideL",
-                                       "wink",
-                                       "worried",    "worriedCl",      "worriedL"
-                                       ]
+define h_cheeks_list = [
+    "blank",
+    "blush",
+    "freckles"
+    ]
 
-    $ h_cheeks_list                 = ["blank",
-                                       "blush",
-                                       "freckles"
-                                       ]
-
-    $ h_tears_list                  = ["blank",
-                                       "body",
-                                       "crying",  "crying_side",
-                                       "down",
-                                       "mascara", "mascara_crying","mascara_soft",
-                                       "messy",
-                                       "soft",    "soft_sweat",
-                                       "sweat"
-                                       ]
-
-    return
+define h_tears_list = [
+    "blank",
+    "body",
+    "crying", "crying_side",
+    "down",
+    "mascara", "mascara_crying", "mascara_soft",
+    "messy",
+    "soft", "soft_sweat",
+    "sweat"
+    ]

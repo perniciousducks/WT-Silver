@@ -1,5 +1,5 @@
 label t_wardrobe_quidditch():
-    $ char_active = get_character_object(active_girl)
+    $ char_active = get_character_object(active_girl) #TODO It's Cho, just use cho_class
     $ hide_transitions = True
     
     $ image_arrow = "interface/frames/"+interface_color+"/arrow2.png"

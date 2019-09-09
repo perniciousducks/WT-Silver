@@ -1,62 +1,57 @@
 
+default active_girl      = "hermione"
 
-label wardrobe_init:
+default wardrobe_page        = 0
+default wardrobe_page_choice = 0
+default wardrobe_toggle_page = 0
 
-    if not hasattr(renpy.store,'cho_bg_color') or reset_persistants:
+default wardrobe_chitchat_active = True
 
-        $ hide_transitions = False
-        $ active_girl = "hermione"
+default hide_transitions = False
 
-        $ wardrobe_page = 0
-        $ wardrobe_page_choice = 0
-        $ wardrobe_toggle_page = 0
-        $ wardrobe_chitchat_active = True
+default play_wardrobe_music   = False
+default wardrobe_music_active = False
+default add_wardrobe_sound    = False
 
-        $ play_wardrobe_music = False
-        $ wardrobe_music_active = False
-        $ add_wardrobe_sound = False
+default wr_her_action = "none"
 
-        $ wr_her_action = "none"
+default wardrobe_color_update = True
+default wardrobe_color        = "base"
 
-        $ wardrobe_color_update = True
-        $ wardrobe_color = "base"
+default wardrobe_gift_item         = 0
+default wardrobe_costume_selection = 0
+default wardrobe_uniform_selection = ""
 
-        $ wardrobe_gift_item = 0
-        $ wardrobe_costume_selection = 0
-        $ wardrobe_uniform_selection = ""
+# Wardrobe Categories
+default wardrobe_head_category        = 0
+default wardrobe_tops_category        = 0
+default wardrobe_bottoms_category     = 0
+default wardrobe_stockings_category   = 0
+default wardrobe_accessories_category = 0
+default wardrobe_underwear_category   = 0
+default wardrobe_outfits_category     = 0
+default wardrobe_gifts_category       = 0
 
-        #Wardrobe Categories
-        $ wardrobe_head_category = 0
-        $ wardrobe_tops_category = 0
-        $ wardrobe_bottoms_category = 0
-        $ wardrobe_stockings_category = 0
-        $ wardrobe_accessories_category = 0
-        $ wardrobe_underwear_category = 0
-        $ wardrobe_outfits_category = 0
-        $ wardrobe_gifts_category = 0
+# Wardrobe Color Select
+default wr_background_color            = ["base","red","green","blue"]
+default wardrobe_hair_style            = "curly"
+default wardrobe_head_color            = "base"
+default wardrobe_uniform_color         = "base" #can be: base, red, greed, blue, or yellow.
+default wardrobe_tops_color            = "base"
+default wardrobe_bottoms_color         = "base"
+default wardrobe_other_clothings_color = "base"
+default wardrobe_accessories_color     = "base"
+default wardrobe_underwear_color       = "base"
+default wardrobe_outfits_color         = "base"
 
-        #Wardrobe Color Select
-        $ wr_background_color            = ["base","red","green","blue"]
-        $ wardrobe_hair_style            = "curly"
-        $ wardrobe_head_color            = "base"
-        $ wardrobe_uniform_color         = "base" #can be: base, red, greed, blue, or yellow.
-        $ wardrobe_tops_color            = "base"
-        $ wardrobe_bottoms_color         = "base"
-        $ wardrobe_other_clothings_color = "base"
-        $ wardrobe_accessories_color     = "base"
-        $ wardrobe_underwear_color       = "base"
-        $ wardrobe_outfits_color         = "base"
+# Wardrobe Icons
+default icon_xpos_offset = 0
+default icon_ypos_offset = 0
 
-        #Wardrobe Icons
-        $ icon_xpos_offset = 0
-        $ icon_ypos_offset = 0
+default wardrobe_load_custom_outfit = True
 
-        $ wardrobe_load_custom_outfit = True
-
-        $ cho_bg_color = [82,150,248,255]
-        $ luna_bg_color = [82,150,248,255]
-
-    return
+default cho_bg_color = [82,150,248,255]
+default luna_bg_color = [82,150,248,255]
 
 label color_cloth_test:
     $ cho_class.cache_override = True

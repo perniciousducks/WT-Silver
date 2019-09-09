@@ -93,9 +93,7 @@ label set_lun_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
 
     return
 
-label luna_face_layers:
-
-    $ lun_mouth_layers  = ["angry",
+define lun_mouth_layers = ["angry",
                            "base",
                            "clench",
                            "crazy",
@@ -114,7 +112,7 @@ label luna_face_layers:
                            "upset"
                            ]
 
-    $ lun_eye_layers    = ["angry",
+define lun_eye_layers = ["angry",
                            "annoyed",
                            "base",
                            "closed",  "happyCl",
@@ -125,14 +123,14 @@ label luna_face_layers:
                            "wink"
                            ]
 
-    $ lun_brow_layers   = ["angry",
+define lun_brow_layers = ["angry",
                            "base",
                            "mad",
                            "raised",
                            "sad"
                            ]
 
-    $ lun_pupil_layers  = ["crossed",
+define lun_pupil_layers = ["crossed",
                           "down",    "downL",
                           "empty",
                           "L",
@@ -140,5 +138,3 @@ label luna_face_layers:
                           "R",
                           "up"
                           ]
-
-    return

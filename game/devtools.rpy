@@ -38,6 +38,20 @@ init -2 python:
         renpy.hide_screen("blktone5")
         renpy.with_statement(d3)
         return
+
+    def reset_variables(*args):
+        """Resets the given variables to their default values."""
+        # Refer to renpy.ast.Default.set_default for implementation details
+        defaults_set = renpy.store._defaults_set
+        changed_set = renpy.store.__dict__.ever_been_changed
+        for arg in args:
+            if arg in defaults_set:
+                if arg in changed_set:
+                    defaults_set.remove(arg)
+                    changed_set.remove(arg)
+            elif config.developer:
+                raise Exception("The variable `{}` was not previously set with a default value.".format(arg))
+        renpy.execute_default_statement(False)
         
 label missing_label():
     $ renpy.choice_for_skipping()

@@ -1,543 +1,532 @@
-label __init_variables:
-    python:
-        selectcard = -1
-        selectenemycard = -1
-        currentpage = 0
-        #Shown Cards is a interger for how many cards should be hidden
-        #
-        #Sudden Death is where when there is draw then a new round will begin
-        #Where you take all card of you color up in you hand
-        #
-        #Reverse is where the take over is reverse so instead of > it is <
-        #
-        #Dobelt_number
-        # Rules(Shown Cards, Sudden Death, Reverse, Dobelt_number)
-        standard_rules = [0, False, False, False]
-        
-        if not hasattr(renpy.store,'playercolor_rgb'):
-            playercolor_rgb = [51.0, 92.0, 147.0, 255.0]
-            enemycolor_rgb = [116.0, 0, 0, 255.0]
-        
-        if not hasattr(renpy.store, 'geniecard_level'):
-            geniecard_level = 1
-            geniecard_tokens = 0
-            cardgame_eoc = False # End of content flag
-        
-        table_cards = [[None for x in range(0,3)] for y in range(0,3)] 
-        
-        card_width = get_width("images/cardgame/border.png")
-        card_height = get_height("images/cardgame/border.png")
-        
-        playerborder = playerTint("images/cardgame/border.png")
-        enemyborder = enemyTint("images/cardgame/border.png")
-        
-        # Used in deckbuilder, DONT DELETE!
-        card_empty = card_new( imagepath="images/cardgame/border.png",
-                                    topvalue = 0,
-                                    bottomvalue = 0,
-                                    rightvalue = 0,
-                                    leftvalue = 0,
-                                    title="Dummy",
-                                    description="Dummy")
-        
-        #Special Cards
-        
-        card_genie = card_new( imagepath="images/cardgame/t1/special/genie_v1.png",
-                                    topvalue = 2,
-                                    bottomvalue = 2,
-                                    rightvalue = 5,
-                                    leftvalue = 3,
-                                    title="Genie",
-                                    description = "It's you, looking sexy as fuck. As always.")
-          
-        card_snape = card_new( imagepath="images/cardgame/t1/special/snape_v1.png",
-                                    topvalue = 4,
-                                    bottomvalue = 1,
-                                    rightvalue = 4,
-                                    leftvalue = 2,
-                                    title="Severus Snape",
-                                    description = "The potions master at Hogwarts. Known to many by his slithering walk and greasy appearance.")
-                                    
-        card_dumbledore = card_new( imagepath="images/cardgame/t1/special/dumbledore_v1.png",
-                                    topvalue = 6,
-                                    bottomvalue = 1,
-                                    rightvalue = 3,
-                                    leftvalue = 1,
-                                    title="Albus Dumbledore",
-                                    description = "Some old dude, you have no idea who this is.")
-                                    
-        card_fred = card_new( imagepath="images/cardgame/t1/special/fred_v1.png",
-                                    topvalue = 3,
-                                    bottomvalue = 2,
-                                    rightvalue = 4,
-                                    leftvalue = 1,
-                                    title="Fred Weasley",
-                                    description = "One of the Weasley twins, I think it might be George.")
-                                    
-        card_george = card_new( imagepath="images/cardgame/t1/special/george_v1.png",
-                                    topvalue = 2,
-                                    bottomvalue = 3,
-                                    rightvalue = 1,
-                                    leftvalue = 4,
-                                    title="George Weasley",
-                                    description = "One of the Weasley twins, I think it might be Fred.")
+default selectcard = -1
+default selectenemycard = -1
+default currentpage = 0
+#Shown Cards is a interger for how many cards should be hidden
+#
+#Sudden Death is where when there is draw then a new round will begin
+#Where you take all card of you color up in you hand
+#
+#Reverse is where the take over is reverse so instead of > it is <
+#
+#Dobelt_number
+# Rules(Shown Cards, Sudden Death, Reverse, Dobelt_number)
+default standard_rules = [0, False, False, False]
 
-        #Special Cards - Alternative
-                                    
-        card_jasmine = card_new( imagepath="images/cardgame/t1/genie_realm/jas_v%s.png" % str(geniecard_level),
-                                    topvalue = 2,
-                                    bottomvalue = 3,
-                                    rightvalue = 2,
-                                    leftvalue = 4,
-                                    title="Princess Jasmine",
-                                    description = "One of your favourite sluts, I mean, princesses.")
-                                    
-        card_iris = card_new( imagepath="images/cardgame/t1/genie_realm/iri_v%s.png" % str(geniecard_level),
-                                    topvalue = 3,
-                                    bottomvalue = 2,
-                                    rightvalue = 4,
-                                    leftvalue = 2,
-                                    title="Iris",
-                                    description = "Your most devoted fangirl.")
-                                    
-        card_azalea = card_new( imagepath="images/cardgame/t1/genie_realm/azalea_v%s.png" % str(geniecard_level),
-                                    topvalue = 4,
-                                    bottomvalue = 2,
-                                    rightvalue = 2,
-                                    leftvalue = 3,
-                                    title="Azalea",
-                                    description = "Your dreamgirl.")
-                                    
-        card_dahlia = card_new( imagepath="images/cardgame/t1/genie_realm/dahlia_v1.png",
-                                    topvalue = 3,
-                                    bottomvalue = 3,
-                                    rightvalue = 1,
-                                    leftvalue = 2,
-                                    title="Dahlia",
-                                    description = "She's very (s)experienced.")
-                                    
-        card_aladdin = card_new( imagepath="images/cardgame/t1/genie_realm/aladdin_v1.png",
-                                    topvalue = 4,
-                                    bottomvalue = 2,
-                                    rightvalue = 1,
-                                    leftvalue = 4,
-                                    title="Aladdin",
-                                    description = "The biggest cuck in the whole multiverse.")
-                                    
-        card_lilly = card_new( imagepath="images/cardgame/t1/genie_realm/lilly_v1.png",
-                                    topvalue = 1,
-                                    bottomvalue = 5,
-                                    rightvalue = 5,
-                                    leftvalue = 5,
-                                    title="Lilly",
-                                    description = "Whos your momma?")
-                                    
-        card_maslab = card_new( imagepath="images/cardgame/t1/genie_realm/maslab_v1.png",
-                                    topvalue = 2,
-                                    bottomvalue = 3,
-                                    rightvalue = 4,
-                                    leftvalue = 4,
-                                    title="Maslab",
-                                    description = "\"If you hurt my precious daughter I'll find you!\"")
-                                    
-        card_rasul = card_new( imagepath="images/cardgame/t1/genie_realm/rasul_v1.png",
-                                    topvalue = 6,
-                                    bottomvalue = 2,
-                                    rightvalue = 2,
-                                    leftvalue = 2,
-                                    title="Rasul",
-                                    description = "Loyalty has its price.")
-                                    
-        card_jafar = card_new( imagepath="images/cardgame/t1/genie_realm/jafar_v1.png",
-                                    topvalue = 4,
-                                    bottomvalue = 1,
-                                    rightvalue = 4,
-                                    leftvalue = 2,
-                                    title="Jafar",
-                                    description = "That silvertongued motherfucker..")
-                                    
-        card_santa = card_new( imagepath="images/cardgame/t1/special/santa_v1.png",
-                                    topvalue = 2,
-                                    bottomvalue = 2,
-                                    rightvalue = 5,
-                                    leftvalue = 1,
-                                    title="Santa",
-                                    description = "Some guy that's been stealing your style. I'll put him on my naughty list.")
-                                    
-        #Tier 1 cards
-                                    
-        card_her_schoolgirl = card_new( imagepath="images/cardgame/t1/hermione/her_schoolgirl_v%s.png" % str(geniecard_level),
-                                    topvalue = 4,
-                                    bottomvalue = 3,
-                                    rightvalue = 2,
-                                    leftvalue = 1,
-                                    title="Hermione Granger",
-                                    description = "The Granger girl wearing her normal school uniform.")
-                                    
-        card_her_librarian = card_new( imagepath="images/cardgame/t1/hermione/her_librarian_v%s.png" % str(geniecard_level),
-                                    topvalue = 5,
-                                    bottomvalue = 2,
-                                    rightvalue = 1,
-                                    leftvalue = 4,
-                                    title="Hermione Granger",
-                                    description = "The Granger girl clutching a real page turner.")
-                                    
-        card_sus_schoolgirl = card_new( imagepath="images/cardgame/t1/susan/sus_schoolgirl_v%s.png" % str(geniecard_level),
-                                    topvalue = 3,
-                                    bottomvalue = 4,
-                                    rightvalue = 1,
-                                    leftvalue = 2,
-                                    title="Susan Bones",
-                                    description = "Miss Bones, barely contained within her school uniform.")
-                                    
-        card_cho_schoolgirl = card_new( imagepath="images/cardgame/t1/cho/cho_schoolgirl_v%s.png" % str(geniecard_level),
-                                    topvalue = 2,
-                                    bottomvalue = 4,
-                                    rightvalue = 3,
-                                    leftvalue = 1,
-                                    title="Cho Chang",
-                                    description = "Miss Chang, sporting her school uniform.")
-                                    
-        card_lun_schoolgirl = card_new( imagepath="images/cardgame/t1/luna/lun_schoolgirl_v%s.png" % str(geniecard_level),
-                                    topvalue = 1,
-                                    bottomvalue = 2,
-                                    rightvalue = 4,
-                                    leftvalue = 3,
-                                    title="Luna Lovegood",
-                                    description = "Miss Lovegood, wearing her normal school uniform.")
-                                    
-        #Item cards
-        
-        card_item_badge = card_new( imagepath="images/cardgame/t1/other/badge_v1.png",
-                                    topvalue = 3,
-                                    bottomvalue = 1,
-                                    rightvalue = 1,
-                                    leftvalue = 3,
-                                    title="SPEW Badge",
-                                    description="The S.P.E.W Badge, I think it might stand for Sluts for the Pleasuring of Excited Wizards...")
-                                    
-        card_item_barbell = card_new( imagepath="images/cardgame/t1/other/barbell_v1.png",
-                                    topvalue = 4,
-                                    bottomvalue = 2,
-                                    rightvalue = 1,
-                                    leftvalue = 1,
-                                    title="Barbell piercing",
-                                    description="A nipple piercing a female student might wear... after some convincing.")
-                                    
-        card_item_beads = card_new( imagepath="images/cardgame/t1/other/beads_v1.png",
-                                    topvalue = 2,
-                                    bottomvalue = 4,
-                                    rightvalue = 1,
-                                    leftvalue = 1,
-                                    title="Anal beads",
-                                    description="Some beads, I'm sure you already know where these go... Hogwarts express to brown town.")
-                                    
-        card_item_bird = card_new( imagepath="images/cardgame/t1/other/bird_v1.png",
-                                    topvalue = 4,
-                                    bottomvalue = 3,
-                                    rightvalue = 1,
-                                    leftvalue = 1,
-                                    title="Phoenix",
-                                    description="A bird that was here when I arrived. It doesn't say or do much... I like it.")
-                                    
-        card_item_bookchairs = card_new( imagepath="images/cardgame/t1/other/bookchairs_v1.png",
-                                    topvalue = 1,
-                                    bottomvalue = 2,
-                                    rightvalue = 2,
-                                    leftvalue = 2,
-                                    title="Book of Chairs",
-                                    description="A book with seemingly sharp pages. I've not dared to open it.")
-                                    
-        card_item_bookgala = card_new( imagepath="images/cardgame/t1/other/bookgala_v1.png",
-                                    topvalue = 1,
-                                    bottomvalue = 2,
-                                    rightvalue = 3,
-                                    leftvalue = 1,
-                                    title="Book of Galadrier (Light ED)",
-                                    description="One of the books, waste of printing paper.")
-                                    
-        card_item_bookgala2 = card_new( imagepath="images/cardgame/t1/other/bookgala2_v1.png",
-                                    topvalue = 1,
-                                    bottomvalue = 4,
-                                    rightvalue = 2,
-                                    leftvalue = 1,
-                                    title="Book of Galadriel (Hardcore ED)",
-                                    description="One of the books, a culture shock and a half.")
-                                    
-        card_item_bookwaifu = card_new( imagepath="images/cardgame/t1/other/bookwaifu_v1.png",
-                                    topvalue = 3,
-                                    bottomvalue = 2,
-                                    rightvalue = 1,
-                                    leftvalue = 2,
-                                    title="Waifu Book",
-                                    description="One of the books, a culture shock and a half.")
-                                    
-        card_item_broom = card_new( imagepath="images/cardgame/t1/other/broom_v1.png",
-                                    topvalue = 1,
-                                    bottomvalue = 4,
-                                    rightvalue = 2,
-                                    leftvalue = 2,
-                                    title="Modified Nimbus 2000",
-                                    description="Highly modified broom. I'd call it, \"The Thundersnatch.\"")
-                                    
-        card_item_bdsm = card_new( imagepath="images/cardgame/t1/other/bdsm_v1.png",
-                                    topvalue = 3,
-                                    bottomvalue = 2,
-                                    rightvalue = 3,
-                                    leftvalue = 1,
-                                    title="BDSM Kit",
-                                    description="Fetish gear, I like it for the peace and quiet.")
-                                    
-        card_item_condoms = card_new( imagepath="images/cardgame/t1/other/condoms_v1.png",
-                                    topvalue = 3,
-                                    bottomvalue = 2,
-                                    rightvalue = 1,
-                                    leftvalue = 3,
-                                    title="Pack of condoms",
-                                    description="Some condoms, I don't need them.")
-                                    
-        card_item_desk = card_new( imagepath="images/cardgame/t1/other/desk_v1.png",
-                                    topvalue = 3,
-                                    bottomvalue = 3,
-                                    rightvalue = 3,
-                                    leftvalue = 1,
-                                    title="Office desk",
-                                    description="My desk, with an underside way more glazed than before I arrived.")
-                                    
-        card_item_dildo = card_new( imagepath="images/cardgame/t1/other/dildo_v1.png",
-                                    topvalue = 3,
-                                    bottomvalue = 3,
-                                    rightvalue = 1,
-                                    leftvalue = 2,
-                                    title="Magical Dildo",
-                                    description="A Dildo, the perfect gift for any female student.")
-                                    
-        card_item_doll = card_new( imagepath="images/cardgame/t1/other/doll_v1.png",
-                                    topvalue = 1,
-                                    bottomvalue = 3,
-                                    rightvalue = 2,
-                                    leftvalue = 2,
-                                    title="Sex Doll",
-                                    description="A sex doll. Wished I had one of these in my lamp...")
-                                    
-        card_item_elf = card_new( imagepath="images/cardgame/t1/other/elf_v1.png",
-                                    topvalue = 3,
-                                    bottomvalue = 3,
-                                    rightvalue = 2,
-                                    leftvalue = 2,
-                                    title="House-Elf",
-                                    description="Disgusting creature... Apparently they clean underneath my desk though.")
-                                    
-        card_item_eromag = card_new( imagepath="images/cardgame/t1/other/eromag_v1.png",
-                                    topvalue = 4,
-                                    bottomvalue = 2,
-                                    rightvalue = 1,
-                                    leftvalue = 1,
-                                    title="Erotic Magazine",
-                                    description="Perfect way to teach any girl about the more important things in life.")
-                                    
-        card_item_girlmag = card_new( imagepath="images/cardgame/t1/other/girlmag_v1.png",
-                                    topvalue = 2,
-                                    bottomvalue = 3,
-                                    rightvalue = 1,
-                                    leftvalue = 1,
-                                    title="Girly Magazine",
-                                    description="A good gift to make you seem hip. Whatever that means.")
-                                    
-        card_item_hat = card_new( imagepath="images/cardgame/t1/other/hat_v1.png",
-                                    topvalue = 6,
-                                    bottomvalue = 1,
-                                    rightvalue = 1,
-                                    leftvalue = 1,
-                                    title="Sorting Hat",
-                                    description="One of the weird items in my office. I swear it talked to me once.")
-                                    
-        card_item_lingerie = card_new( imagepath="images/cardgame/t1/other/lingerie_v1.png",
-                                    topvalue = 2,
-                                    bottomvalue = 4,
-                                    rightvalue = 2,
-                                    leftvalue = 2,
-                                    title="Lingerie",
-                                    description="If a girl needs to wear any undergarments at all these would be my preferred choice.")
-                                    
-        card_item_lipstick = card_new( imagepath="images/cardgame/t1/other/lipstick_v1.png",
-                                    topvalue = 1,
-                                    bottomvalue = 2,
-                                    rightvalue = 1,
-                                    leftvalue = 2,
-                                    title="Lipstick (Red)",
-                                    description="For when a girl wants to feel less naked. Comes in a variety of unnatural colours.")
-                                    
-        card_item_lube = card_new( imagepath="images/cardgame/t1/other/lube_v1.png",
-                                    topvalue = 1,
-                                    bottomvalue = 5,
-                                    rightvalue = 1,
-                                    leftvalue = 1,
-                                    title="Jar of lubricant",
-                                    description="A Jar full of lube, I should get a subscription for these.")
-                                    
-        card_item_owl = card_new( imagepath="images/cardgame/t1/other/owl_v1.png",
-                                    topvalue = 3,
-                                    bottomvalue = 3,
-                                    rightvalue = 1,
-                                    leftvalue = 1,
-                                    title="Stuffed Owl",
-                                    description="An Owl plush, very popular among the girls.")
-                                    
-        card_item_plugs = card_new( imagepath="images/cardgame/t1/other/plugs_v1.png",
-                                    topvalue = 2,
-                                    bottomvalue = 2,
-                                    rightvalue = 3,
-                                    leftvalue = 3,
-                                    title="Set of anal plugs",
-                                    description="A selection of plugs... Bit weird, even for me. ")
-                                    
-        card_item_pornmag = card_new( imagepath="images/cardgame/t1/other/pornmag_v1.png",
-                                    topvalue = 4,
-                                    bottomvalue = 3,
-                                    rightvalue = 1,
-                                    leftvalue = 1,
-                                    title="Porno Magazine",
-                                    description="Some porn mags. Perfect gift for the more sophisticated lady. ")
-                                    
-        card_item_potions = card_new( imagepath="images/cardgame/t1/other/potions_v1.png",
-                                    topvalue = 3,
-                                    bottomvalue = 2,
-                                    rightvalue = 3,
-                                    leftvalue = 2,
-                                    title="Batch of Potions",
-                                    description="A set of potions. None of my favorites...")      
+default playercolor_rgb = [51.0, 92.0, 147.0, 255.0]
+default enemycolor_rgb = [116.0, 0, 0, 255.0]
 
-        card_item_scroll = card_new( imagepath="images/cardgame/t1/other/scroll_v1.png",
-                                    topvalue = 1,
-                                    bottomvalue = 4,
-                                    rightvalue = 2,
-                                    leftvalue = 3,
-                                    title="Forbidden Scroll",
-                                    description="One of the scrolls from the Weasley's shop.")
-                                    
-        card_item_stockings = card_new( imagepath="images/cardgame/t1/other/stockings_v1.png",
-                                    topvalue = 1,
-                                    bottomvalue = 2,
-                                    rightvalue = 3,
-                                    leftvalue = 3,
-                                    title="Pair of stockings",
-                                    description="Pair of stockings, looks great with a short skirt.")
-                                    
-        card_item_strapon = card_new( imagepath="images/cardgame/t1/other/strapon_v1.png",
-                                    topvalue = 2,
-                                    bottomvalue = 3,
-                                    rightvalue = 1,
-                                    leftvalue = 4,
-                                    title="Thestral Strapon",
-                                    description="Don't have any use for these but they're great practice for the ladies.")
-                                    
-        card_item_sweets = card_new( imagepath="images/cardgame/t1/other/sweets_v1.png",
-                                    topvalue = 1,
-                                    bottomvalue = 1,
-                                    rightvalue = 2,
-                                    leftvalue = 3,
-                                    title="Pack of Sweets",
-                                    description="Some of the most popular sweets. Including Butter beer, not alcoholic enough in my opinion.")
-                                    
-        card_item_wine = card_new( imagepath="images/cardgame/t1/other/wine_v1.png",
-                                    topvalue = 4,
-                                    bottomvalue = 2,
-                                    rightvalue = 1,
-                                    leftvalue = 2,
-                                    title="Bottle of wine",
-                                    description="That wine I keep finding in this cupboard. Not sure if the wine is magically infused or the cupboard.")
-            
-        if not hasattr(renpy.store,'deck_unlocked'):
-            deck_unlocked = False
-            deck_mail_send = False
-            enemy_deck = []
-            duel_win_label = ""
-            duel_loss_label = ""
-        
-        if not hasattr(renpy.store,'snape_know_cards'):
-            snape_know_cards = False
-            snape_first_win = False
-            snape_second_win = False
-            snape_third_win = False
-            snape_wager_talk = False
-            random_snape_win = False
+default geniecard_level = 1
+default geniecard_tokens = 0
+default cardgame_eoc = False # End of content flag
 
-        if not hasattr(renpy.store, 'her_know_cards'):
-            her_know_cards = False
-            her_cards_stocked_talk = False
-            her_first_win = False
-            her_second_win = False
-            her_third_win = False
-            her_random_win = False
-            cardgame_work = False
-            first_time_cardgame_work = True
-            
-        if not hasattr(renpy.store, 'twins_know_cards'):
-            twins_know_cards = False
-            twins_first_win = False
-            twins_second_win = False
-            twins_cards_delay = 7
-            twins_cards_stocked = False
-            twins_cards_stocked_talk = False
-            twins_interest = False
-            first_random_twins = True
-            twins_random_win = True
-            twins_profit = 1.0
-        
-        if not hasattr(renpy.store,'unlocked_cards'):
-            card_rand_realm = renpy.random.choice([card_iris, card_jasmine, card_azalea])
-            card_rand_girl = renpy.random.choice([card_her_schoolgirl, card_sus_schoolgirl, card_cho_schoolgirl, card_lun_schoolgirl])
-            card_rand_item1 = renpy.random.choice([card_item_desk, card_item_bird])
-            card_rand_item2 = renpy.random.choice([card_item_beads, card_item_dildo, card_item_doll, card_item_condoms, card_item_plugs])
-            card_rand_item3 = renpy.random.choice([card_item_barbell, card_item_lingerie, card_item_stockings, card_item_badge, card_item_bdsm, card_item_lipstick])
-            card_rand_item4 = renpy.random.choice([card_item_bookchairs, card_item_bookgala, card_item_bookgala2, card_item_bookwaifu, card_item_hat])
-            card_rand_item5 = renpy.random.choice([card_item_eromag, card_item_pornmag, card_item_girlmag, card_item_scroll, card_item_sweets])
-            unlocked_cards = [card_genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2, card_rand_item3, card_rand_item4, card_rand_item5]
-            playerdeck = [card_genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2]
-            # Delete copies of playerdeck cards
-            for i in range(0,5):
-                playerdeck[i].copies = 0
-                
-            card_rule_reverse = cardgame_rules(name="Reverse", description="Instead of a higher number, you need to have the lowest number to take over a card.", icon="images/cardgame/rule_reverse.png")
-            card_rule_hidden = cardgame_rules(name="Hidden", description="The hidden rule means that a certain amount of cards in your enemies deck will be hidden.", icon="images/cardgame/rule_hidden.png")
-            card_rule_death = cardgame_rules(name="Death", description="If your game ends in a draw you pick up the cards that are shown in your colour and play again.", icon="images/cardgame/rule_death.png")
-            card_rule_double = cardgame_rules(name="Double", description="If the card you put down has the same number facing at least 2 other cards (Rather than higher/lower) you'll take over those cards.", icon="images/cardgame/rule_double.png")
-            card_rule_random = cardgame_rules(name="Random", description="Your deck is selected randomly from the available cards.", icon="images/cardgame/rule_random.png")
-                
-        cards_realm = [card_genie, card_iris, card_jasmine, card_azalea, card_dahlia, card_maslab, card_aladdin, card_lilly, card_rasul, card_jafar]
-        cards_hogwarts = [card_her_schoolgirl, card_her_librarian, card_lun_schoolgirl, card_sus_schoolgirl, card_cho_schoolgirl, card_fred, card_george, card_snape, card_dumbledore]
-        cards_other = [card_santa]
-        cards_items = [card_item_badge, card_item_barbell, card_item_beads, card_item_bird, card_item_bookchairs, card_item_bookgala, card_item_bookgala2, card_item_bookwaifu, card_item_broom, card_item_bdsm, card_item_condoms, card_item_desk, card_item_dildo, card_item_doll, card_item_elf, card_item_eromag, card_item_girlmag, card_item_hat, card_item_lingerie, card_item_lipstick, card_item_lube, card_item_owl, card_item_plugs, card_item_pornmag, card_item_potions, card_item_scroll, card_item_stockings, card_item_strapon, card_item_sweets, card_item_wine]
-        cards_all = list(cards_realm)
-        cards_all += list(cards_hogwarts)
-        cards_all += list(cards_other)
-        cards_all += list(cards_items)
-        
-        cards_dynamic = [card_iris, card_jasmine, card_azalea, card_her_schoolgirl, card_her_librarian, card_lun_schoolgirl, card_sus_schoolgirl, card_cho_schoolgirl]
-        
-        if not hasattr(renpy.store,'snape_first_deck'):
-            snape_first_deck = [card_snape.clone(), card_item_potions.clone(), card_item_elf.clone(), card_item_wine.clone(), card_item_lipstick.clone()]
-            snape_second_deck = [card_snape.clone(), card_item_potions.clone(), card_item_elf.clone(), card_item_elf.clone(), card_item_eromag.clone()]
-            snape_third_deck = [card_snape.clone(), card_item_potions.clone(), card_item_elf.clone(), card_item_elf.clone(), card_item_elf.clone()]
-            
-        if not hasattr(renpy.store,'twins_first_deck'):
-            twins_first_deck = [card_fred.clone(), card_item_sweets.clone(), card_item_beads.clone(), card_item_sweets.clone(), card_item_condoms.clone()]
-            twins_second_deck = [card_george.clone(), card_fred.clone(), card_item_doll.clone(), card_item_sweets.clone(), card_item_broom.clone()]
-            
-        if not hasattr(renpy.store,'her_first_deck'):
-            her_first_deck = [card_her_schoolgirl.clone(), card_item_girlmag.clone(), card_item_bookgala.clone(), card_item_bookgala2.clone(), card_item_bookchairs.clone()]
-            her_second_deck = [card_her_schoolgirl.clone(), card_item_eromag.clone(), card_item_bookgala.clone(), card_item_bookgala2.clone(), card_item_bookchairs.clone()]
-            her_third_deck = [card_her_librarian.clone(), card_item_pornmag.clone(), card_item_bookgala.clone(), card_item_bookgala2.clone(), card_item_bookchairs.clone()]
+default table_cards = [[None for x in range(0,3)] for y in range(0,3)] 
 
-        card_non_spec_char = [ "I see you've been practicing... so have I!", "You've activated my trap card... wait... it's in my other deck!", "You think you're so good, but this school has never seen a player of the likes of me! In this particular office...", "Aha, you've walked right into my trap. Take this!", "You'll never beat me! I will give you the reward though... in your dreams!", "Thats impossible... that card is legendary... wait, it doesn't have a shimmering effect, never mind.", "I was sure my cards used to be good...", "Wait, you've got that card... I've been such a fool! This is a witchmasters deck!", "We're playing reverse rules right? Lowest amount of cards win?", "If only slight of hand was taught at Hogwarts...", "Wait, this can't be right. I must have put my good cards in my other robes.", "You should be happy that they banned one of the cards that came in a cereal box promotion... that one was overpowered.", "This one's a board sweeper!", "I'll just burn this card... oh yeah, I got better cards coming.", "This is a control deck. I'll win in the end don't you worry.", "Maybe I should have made less of a filler deck... I'll get you in the end.", "Your loss is inevitable. It's all in the heart of the cards.", "Have you been Netdecking? Did those damn spiders in the forest tell you what cards to play?", "I've been metagaming the crap out of you... I know exactly what cards you're going to play...except for that last one.", "Oh, it's my turn? I was just thinking about how I'm going to celebrate after your inevitable loss.", "I've been slowrolling you this whole time. My last card is a mega ultimate legendary.", "What kind of deck is this... don't you even care about synergy?", "I see what kind of player you are now... perhaps a more offensive approach is in order.", "I was born to play card games... you merely adopted your liking of them.", "Hahah, you don't even know that I have a card with powers that has been locked away for centuries... unfortunately I lost the key...", "Prepare for a total wipe... your tears when I beat you that is.", "You want to know what's shown on my cards? What do I like the most? Winning, which is why this card is going to guarantee my victory.", "Life is like a game of Wizard Cards. If you don't win... you lose.", "Quitters never win, winners never quit, but those who never win and never quit are idiots... I'm not sure which I am.", "Go fish...", "Do you have any spells to make you better at Wizard Cards? Didn't think so...", "You can smell the roses as much as you want, while I smell the aroma of victory", "Do you see any stars yet, because you're getting beaten pretty badly.", "Well, your performance in this round is certainly a divine comedy.", "The forecast today is calling for my victory, so I'm not worried.", "Are you out of juice already?", "Couldn't you see from your own fortune that you're bound to lose?", "Looks like you fell right into your own trap... now look at this!! KAPOW", "I don't need luck potion to beat you. That's how confident I am in my deck.", "I know my deck like the back of my hand... wait, when did that mole get there?", "Fool, you'll soon see my finishing move... but before that, UNO!", "I'm so confident in my card collection I just shuffled and picked some at random before this game.", "Great cards doesn’t ensure a win. Right moves do.", "The game balance of this game has been broken for centuries... and I have the winning cards.", "The ministry of magic considered banning this game as they thought it all mattered what cards you had... something about gambling for children.", "If I said that I picked my cards blindfolded would you believe me? Yes, they're all that good.", "I tried to use transfiguration on one of my cards but it burnt up instead... I probably wasn't the first one who tried that.", "Wait! Isn't that card banned? No, the stats aren't the same...phew", "Why does that card of yours look so sticky?", "Oh nice a shiny... wait, why has it stuck to the board?", "That's nowhere near the best move you could've done. Check this out!", "Even a troll would play better than you at this point... no offense.", "Some people are half blood and some pure blood. But I'm purely a Card playing genius.", "That must be a new card. Why haven't I seen that one before?", "Wait, my numbers must have changed. Did you put a spell on my cards?", "Hit me... I mean, give me another card.", "Ah, that one. To bad I have the perfect counter.", "So, when do I get to draw a card again?", "Someone replaced one of my cards with a joker... I bet it was peeves.", "I was told that face cards was the best ones to get... but they were talking about poker.", "By Merlins beard, where did you get that card?", "Next time you should let me use the cards I drew. Their numbers are a lot better than these ones."]
+default card_width = 320 # get_width("images/cardgame/border.png")
+default card_height = 480 # get_height("images/cardgame/border.png")
+
+default playerborder = playerTint("images/cardgame/border.png")
+default enemyborder = enemyTint("images/cardgame/border.png")
+
+# Used in deckbuilder, DONT DELETE!
+default card_empty = card_new( imagepath="images/cardgame/border.png",
+                            topvalue = 0,
+                            bottomvalue = 0,
+                            rightvalue = 0,
+                            leftvalue = 0,
+                            title="Dummy",
+                            description="Dummy")
+
+#Special Cards
+
+default card_genie = card_new( imagepath="images/cardgame/t1/special/genie_v1.png",
+                            topvalue = 2,
+                            bottomvalue = 2,
+                            rightvalue = 5,
+                            leftvalue = 3,
+                            title="Genie",
+                            description = "It's you, looking sexy as fuck. As always.")
+    
+default card_snape = card_new( imagepath="images/cardgame/t1/special/snape_v1.png",
+                            topvalue = 4,
+                            bottomvalue = 1,
+                            rightvalue = 4,
+                            leftvalue = 2,
+                            title="Severus Snape",
+                            description = "The potions master at Hogwarts. Known to many by his slithering walk and greasy appearance.")
+                            
+default card_dumbledore = card_new( imagepath="images/cardgame/t1/special/dumbledore_v1.png",
+                            topvalue = 6,
+                            bottomvalue = 1,
+                            rightvalue = 3,
+                            leftvalue = 1,
+                            title="Albus Dumbledore",
+                            description = "Some old dude, you have no idea who this is.")
+                            
+default card_fred = card_new( imagepath="images/cardgame/t1/special/fred_v1.png",
+                            topvalue = 3,
+                            bottomvalue = 2,
+                            rightvalue = 4,
+                            leftvalue = 1,
+                            title="Fred Weasley",
+                            description = "One of the Weasley twins, I think it might be George.")
+                            
+default card_george = card_new( imagepath="images/cardgame/t1/special/george_v1.png",
+                            topvalue = 2,
+                            bottomvalue = 3,
+                            rightvalue = 1,
+                            leftvalue = 4,
+                            title="George Weasley",
+                            description = "One of the Weasley twins, I think it might be Fred.")
+
+#Special Cards - Alternative
+                            
+default card_jasmine = card_new( imagepath="images/cardgame/t1/genie_realm/jas_v%s.png" % str(geniecard_level),
+                            topvalue = 2,
+                            bottomvalue = 3,
+                            rightvalue = 2,
+                            leftvalue = 4,
+                            title="Princess Jasmine",
+                            description = "One of your favourite sluts, I mean, princesses.")
+                            
+default card_iris = card_new( imagepath="images/cardgame/t1/genie_realm/iri_v%s.png" % str(geniecard_level),
+                            topvalue = 3,
+                            bottomvalue = 2,
+                            rightvalue = 4,
+                            leftvalue = 2,
+                            title="Iris",
+                            description = "Your most devoted fangirl.")
+                            
+default card_azalea = card_new( imagepath="images/cardgame/t1/genie_realm/azalea_v%s.png" % str(geniecard_level),
+                            topvalue = 4,
+                            bottomvalue = 2,
+                            rightvalue = 2,
+                            leftvalue = 3,
+                            title="Azalea",
+                            description = "Your dreamgirl.")
+                            
+default card_dahlia = card_new( imagepath="images/cardgame/t1/genie_realm/dahlia_v1.png",
+                            topvalue = 3,
+                            bottomvalue = 3,
+                            rightvalue = 1,
+                            leftvalue = 2,
+                            title="Dahlia",
+                            description = "She's very (s)experienced.")
+                            
+default card_aladdin = card_new( imagepath="images/cardgame/t1/genie_realm/aladdin_v1.png",
+                            topvalue = 4,
+                            bottomvalue = 2,
+                            rightvalue = 1,
+                            leftvalue = 4,
+                            title="Aladdin",
+                            description = "The biggest cuck in the whole multiverse.")
+                            
+default card_lilly = card_new( imagepath="images/cardgame/t1/genie_realm/lilly_v1.png",
+                            topvalue = 1,
+                            bottomvalue = 5,
+                            rightvalue = 5,
+                            leftvalue = 5,
+                            title="Lilly",
+                            description = "Whos your momma?")
+                            
+default card_maslab = card_new( imagepath="images/cardgame/t1/genie_realm/maslab_v1.png",
+                            topvalue = 2,
+                            bottomvalue = 3,
+                            rightvalue = 4,
+                            leftvalue = 4,
+                            title="Maslab",
+                            description = "\"If you hurt my precious daughter I'll find you!\"")
+                            
+default card_rasul = card_new( imagepath="images/cardgame/t1/genie_realm/rasul_v1.png",
+                            topvalue = 6,
+                            bottomvalue = 2,
+                            rightvalue = 2,
+                            leftvalue = 2,
+                            title="Rasul",
+                            description = "Loyalty has its price.")
+                            
+default card_jafar = card_new( imagepath="images/cardgame/t1/genie_realm/jafar_v1.png",
+                            topvalue = 4,
+                            bottomvalue = 1,
+                            rightvalue = 4,
+                            leftvalue = 2,
+                            title="Jafar",
+                            description = "That silvertongued motherfucker..")
+                            
+default card_santa = card_new( imagepath="images/cardgame/t1/special/santa_v1.png",
+                            topvalue = 2,
+                            bottomvalue = 2,
+                            rightvalue = 5,
+                            leftvalue = 1,
+                            title="Santa",
+                            description = "Some guy that's been stealing your style. I'll put him on my naughty list.")
+                            
+#Tier 1 cards
+                            
+default card_her_schoolgirl = card_new( imagepath="images/cardgame/t1/hermione/her_schoolgirl_v%s.png" % str(geniecard_level),
+                            topvalue = 4,
+                            bottomvalue = 3,
+                            rightvalue = 2,
+                            leftvalue = 1,
+                            title="Hermione Granger",
+                            description = "The Granger girl wearing her normal school uniform.")
+                            
+default card_her_librarian = card_new( imagepath="images/cardgame/t1/hermione/her_librarian_v%s.png" % str(geniecard_level),
+                            topvalue = 5,
+                            bottomvalue = 2,
+                            rightvalue = 1,
+                            leftvalue = 4,
+                            title="Hermione Granger",
+                            description = "The Granger girl clutching a real page turner.")
+                            
+default card_sus_schoolgirl = card_new( imagepath="images/cardgame/t1/susan/sus_schoolgirl_v%s.png" % str(geniecard_level),
+                            topvalue = 3,
+                            bottomvalue = 4,
+                            rightvalue = 1,
+                            leftvalue = 2,
+                            title="Susan Bones",
+                            description = "Miss Bones, barely contained within her school uniform.")
+                            
+default card_cho_schoolgirl = card_new( imagepath="images/cardgame/t1/cho/cho_schoolgirl_v%s.png" % str(geniecard_level),
+                            topvalue = 2,
+                            bottomvalue = 4,
+                            rightvalue = 3,
+                            leftvalue = 1,
+                            title="Cho Chang",
+                            description = "Miss Chang, sporting her school uniform.")
+                            
+default card_lun_schoolgirl = card_new( imagepath="images/cardgame/t1/luna/lun_schoolgirl_v%s.png" % str(geniecard_level),
+                            topvalue = 1,
+                            bottomvalue = 2,
+                            rightvalue = 4,
+                            leftvalue = 3,
+                            title="Luna Lovegood",
+                            description = "Miss Lovegood, wearing her normal school uniform.")
+                            
+#Item cards
+
+default card_item_badge = card_new( imagepath="images/cardgame/t1/other/badge_v1.png",
+                            topvalue = 3,
+                            bottomvalue = 1,
+                            rightvalue = 1,
+                            leftvalue = 3,
+                            title="SPEW Badge",
+                            description="The S.P.E.W Badge, I think it might stand for Sluts for the Pleasuring of Excited Wizards...")
+                            
+default card_item_barbell = card_new( imagepath="images/cardgame/t1/other/barbell_v1.png",
+                            topvalue = 4,
+                            bottomvalue = 2,
+                            rightvalue = 1,
+                            leftvalue = 1,
+                            title="Barbell piercing",
+                            description="A nipple piercing a female student might wear... after some convincing.")
+                            
+default card_item_beads = card_new( imagepath="images/cardgame/t1/other/beads_v1.png",
+                            topvalue = 2,
+                            bottomvalue = 4,
+                            rightvalue = 1,
+                            leftvalue = 1,
+                            title="Anal beads",
+                            description="Some beads, I'm sure you already know where these go... Hogwarts express to brown town.")
+                            
+default card_item_bird = card_new( imagepath="images/cardgame/t1/other/bird_v1.png",
+                            topvalue = 4,
+                            bottomvalue = 3,
+                            rightvalue = 1,
+                            leftvalue = 1,
+                            title="Phoenix",
+                            description="A bird that was here when I arrived. It doesn't say or do much... I like it.")
+                            
+default card_item_bookchairs = card_new( imagepath="images/cardgame/t1/other/bookchairs_v1.png",
+                            topvalue = 1,
+                            bottomvalue = 2,
+                            rightvalue = 2,
+                            leftvalue = 2,
+                            title="Book of Chairs",
+                            description="A book with seemingly sharp pages. I've not dared to open it.")
+                            
+default card_item_bookgala = card_new( imagepath="images/cardgame/t1/other/bookgala_v1.png",
+                            topvalue = 1,
+                            bottomvalue = 2,
+                            rightvalue = 3,
+                            leftvalue = 1,
+                            title="Book of Galadrier (Light ED)",
+                            description="One of the books, waste of printing paper.")
+                            
+default card_item_bookgala2 = card_new( imagepath="images/cardgame/t1/other/bookgala2_v1.png",
+                            topvalue = 1,
+                            bottomvalue = 4,
+                            rightvalue = 2,
+                            leftvalue = 1,
+                            title="Book of Galadriel (Hardcore ED)",
+                            description="One of the books, a culture shock and a half.")
+                            
+default card_item_bookwaifu = card_new( imagepath="images/cardgame/t1/other/bookwaifu_v1.png",
+                            topvalue = 3,
+                            bottomvalue = 2,
+                            rightvalue = 1,
+                            leftvalue = 2,
+                            title="Waifu Book",
+                            description="One of the books, a culture shock and a half.")
+                            
+default card_item_broom = card_new( imagepath="images/cardgame/t1/other/broom_v1.png",
+                            topvalue = 1,
+                            bottomvalue = 4,
+                            rightvalue = 2,
+                            leftvalue = 2,
+                            title="Modified Nimbus 2000",
+                            description="Highly modified broom. I'd call it, \"The Thundersnatch.\"")
+                            
+default card_item_bdsm = card_new( imagepath="images/cardgame/t1/other/bdsm_v1.png",
+                            topvalue = 3,
+                            bottomvalue = 2,
+                            rightvalue = 3,
+                            leftvalue = 1,
+                            title="BDSM Kit",
+                            description="Fetish gear, I like it for the peace and quiet.")
+                            
+default card_item_condoms = card_new( imagepath="images/cardgame/t1/other/condoms_v1.png",
+                            topvalue = 3,
+                            bottomvalue = 2,
+                            rightvalue = 1,
+                            leftvalue = 3,
+                            title="Pack of condoms",
+                            description="Some condoms, I don't need them.")
+                            
+default card_item_desk = card_new( imagepath="images/cardgame/t1/other/desk_v1.png",
+                            topvalue = 3,
+                            bottomvalue = 3,
+                            rightvalue = 3,
+                            leftvalue = 1,
+                            title="Office desk",
+                            description="My desk, with an underside way more glazed than before I arrived.")
+                            
+default card_item_dildo = card_new( imagepath="images/cardgame/t1/other/dildo_v1.png",
+                            topvalue = 3,
+                            bottomvalue = 3,
+                            rightvalue = 1,
+                            leftvalue = 2,
+                            title="Magical Dildo",
+                            description="A Dildo, the perfect gift for any female student.")
+                            
+default card_item_doll = card_new( imagepath="images/cardgame/t1/other/doll_v1.png",
+                            topvalue = 1,
+                            bottomvalue = 3,
+                            rightvalue = 2,
+                            leftvalue = 2,
+                            title="Sex Doll",
+                            description="A sex doll. Wished I had one of these in my lamp...")
+                            
+default card_item_elf = card_new( imagepath="images/cardgame/t1/other/elf_v1.png",
+                            topvalue = 3,
+                            bottomvalue = 3,
+                            rightvalue = 2,
+                            leftvalue = 2,
+                            title="House-Elf",
+                            description="Disgusting creature... Apparently they clean underneath my desk though.")
+                            
+default card_item_eromag = card_new( imagepath="images/cardgame/t1/other/eromag_v1.png",
+                            topvalue = 4,
+                            bottomvalue = 2,
+                            rightvalue = 1,
+                            leftvalue = 1,
+                            title="Erotic Magazine",
+                            description="Perfect way to teach any girl about the more important things in life.")
+                            
+default card_item_girlmag = card_new( imagepath="images/cardgame/t1/other/girlmag_v1.png",
+                            topvalue = 2,
+                            bottomvalue = 3,
+                            rightvalue = 1,
+                            leftvalue = 1,
+                            title="Girly Magazine",
+                            description="A good gift to make you seem hip. Whatever that means.")
+                            
+default card_item_hat = card_new( imagepath="images/cardgame/t1/other/hat_v1.png",
+                            topvalue = 6,
+                            bottomvalue = 1,
+                            rightvalue = 1,
+                            leftvalue = 1,
+                            title="Sorting Hat",
+                            description="One of the weird items in my office. I swear it talked to me once.")
+                            
+default card_item_lingerie = card_new( imagepath="images/cardgame/t1/other/lingerie_v1.png",
+                            topvalue = 2,
+                            bottomvalue = 4,
+                            rightvalue = 2,
+                            leftvalue = 2,
+                            title="Lingerie",
+                            description="If a girl needs to wear any undergarments at all these would be my preferred choice.")
+                            
+default card_item_lipstick = card_new( imagepath="images/cardgame/t1/other/lipstick_v1.png",
+                            topvalue = 1,
+                            bottomvalue = 2,
+                            rightvalue = 1,
+                            leftvalue = 2,
+                            title="Lipstick (Red)",
+                            description="For when a girl wants to feel less naked. Comes in a variety of unnatural colours.")
+                            
+default card_item_lube = card_new( imagepath="images/cardgame/t1/other/lube_v1.png",
+                            topvalue = 1,
+                            bottomvalue = 5,
+                            rightvalue = 1,
+                            leftvalue = 1,
+                            title="Jar of lubricant",
+                            description="A Jar full of lube, I should get a subscription for these.")
+                            
+default card_item_owl = card_new( imagepath="images/cardgame/t1/other/owl_v1.png",
+                            topvalue = 3,
+                            bottomvalue = 3,
+                            rightvalue = 1,
+                            leftvalue = 1,
+                            title="Stuffed Owl",
+                            description="An Owl plush, very popular among the girls.")
+                            
+default card_item_plugs = card_new( imagepath="images/cardgame/t1/other/plugs_v1.png",
+                            topvalue = 2,
+                            bottomvalue = 2,
+                            rightvalue = 3,
+                            leftvalue = 3,
+                            title="Set of anal plugs",
+                            description="A selection of plugs... Bit weird, even for me. ")
+                            
+default card_item_pornmag = card_new( imagepath="images/cardgame/t1/other/pornmag_v1.png",
+                            topvalue = 4,
+                            bottomvalue = 3,
+                            rightvalue = 1,
+                            leftvalue = 1,
+                            title="Porno Magazine",
+                            description="Some porn mags. Perfect gift for the more sophisticated lady. ")
+                            
+default card_item_potions = card_new( imagepath="images/cardgame/t1/other/potions_v1.png",
+                            topvalue = 3,
+                            bottomvalue = 2,
+                            rightvalue = 3,
+                            leftvalue = 2,
+                            title="Batch of Potions",
+                            description="A set of potions. None of my favorites...")      
+
+default card_item_scroll = card_new( imagepath="images/cardgame/t1/other/scroll_v1.png",
+                            topvalue = 1,
+                            bottomvalue = 4,
+                            rightvalue = 2,
+                            leftvalue = 3,
+                            title="Forbidden Scroll",
+                            description="One of the scrolls from the Weasley's shop.")
+                            
+default card_item_stockings = card_new( imagepath="images/cardgame/t1/other/stockings_v1.png",
+                            topvalue = 1,
+                            bottomvalue = 2,
+                            rightvalue = 3,
+                            leftvalue = 3,
+                            title="Pair of stockings",
+                            description="Pair of stockings, looks great with a short skirt.")
+                            
+default card_item_strapon = card_new( imagepath="images/cardgame/t1/other/strapon_v1.png",
+                            topvalue = 2,
+                            bottomvalue = 3,
+                            rightvalue = 1,
+                            leftvalue = 4,
+                            title="Thestral Strapon",
+                            description="Don't have any use for these but they're great practice for the ladies.")
+                            
+default card_item_sweets = card_new( imagepath="images/cardgame/t1/other/sweets_v1.png",
+                            topvalue = 1,
+                            bottomvalue = 1,
+                            rightvalue = 2,
+                            leftvalue = 3,
+                            title="Pack of Sweets",
+                            description="Some of the most popular sweets. Including Butter beer, not alcoholic enough in my opinion.")
+                            
+default card_item_wine = card_new( imagepath="images/cardgame/t1/other/wine_v1.png",
+                            topvalue = 4,
+                            bottomvalue = 2,
+                            rightvalue = 1,
+                            leftvalue = 2,
+                            title="Bottle of wine",
+                            description="That wine I keep finding in this cupboard. Not sure if the wine is magically infused or the cupboard.")
+    
+default deck_unlocked = False
+default deck_mail_send = False
+default enemy_deck = []
+default duel_win_label = ""
+default duel_loss_label = ""
+
+default snape_know_cards = False
+default snape_first_win = False
+default snape_second_win = False
+default snape_third_win = False
+default snape_wager_talk = False
+default random_snape_win = False
+
+default her_know_cards = False
+default her_cards_stocked_talk = False
+default her_first_win = False
+default her_second_win = False
+default her_third_win = False
+default her_random_win = False
+default cardgame_work = False
+default first_time_cardgame_work = True
+
+default twins_know_cards = False
+default twins_first_win = False
+default twins_second_win = False
+default twins_cards_delay = 7
+default twins_cards_stocked = False
+default twins_cards_stocked_talk = False
+default twins_interest = False
+default first_random_twins = True
+default twins_random_win = True
+default twins_profit = 1.0
+
+default card_rand_realm = renpy.random.choice([card_iris, card_jasmine, card_azalea])
+default card_rand_girl = renpy.random.choice([card_her_schoolgirl, card_sus_schoolgirl, card_cho_schoolgirl, card_lun_schoolgirl])
+default card_rand_item1 = renpy.random.choice([card_item_desk, card_item_bird])
+default card_rand_item2 = renpy.random.choice([card_item_beads, card_item_dildo, card_item_doll, card_item_condoms, card_item_plugs])
+default card_rand_item3 = renpy.random.choice([card_item_barbell, card_item_lingerie, card_item_stockings, card_item_badge, card_item_bdsm, card_item_lipstick])
+default card_rand_item4 = renpy.random.choice([card_item_bookchairs, card_item_bookgala, card_item_bookgala2, card_item_bookwaifu, card_item_hat])
+default card_rand_item5 = renpy.random.choice([card_item_eromag, card_item_pornmag, card_item_girlmag, card_item_scroll, card_item_sweets])
+default unlocked_cards = [card_genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2, card_rand_item3, card_rand_item4, card_rand_item5]
+
+default playerdeck = default_playerdeck([card_genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2])
+init python:
+    # Helper function for default playerdeck
+    def default_playerdeck(deck):
+        for card in deck:
+            card.copies = 0 # Delete copies
+        return deck
+    
+default card_rule_reverse = cardgame_rules(name="Reverse", description="Instead of a higher number, you need to have the lowest number to take over a card.", icon="images/cardgame/rule_reverse.png")
+default card_rule_hidden = cardgame_rules(name="Hidden", description="The hidden rule means that a certain amount of cards in your enemies deck will be hidden.", icon="images/cardgame/rule_hidden.png")
+default card_rule_death = cardgame_rules(name="Death", description="If your game ends in a draw you pick up the cards that are shown in your colour and play again.", icon="images/cardgame/rule_death.png")
+default card_rule_double = cardgame_rules(name="Double", description="If the card you put down has the same number facing at least 2 other cards (Rather than higher/lower) you'll take over those cards.", icon="images/cardgame/rule_double.png")
+default card_rule_random = cardgame_rules(name="Random", description="Your deck is selected randomly from the available cards.", icon="images/cardgame/rule_random.png")
         
-        snape_speech_card = ["You may have lived for hundreds of years but my superior intellect will outweigh your otherworldly powers.", "When this is over I think I'll celebrate my victory with one of your nice bottles of alcohol.", "You should stick to charming women... wizard cards is my game.", "You said you were from a different world, another reality? Maybe in that reality you'd beat me at cards. But not this one!", "We don't stop playing because we grow old, we grow old because we stop playing.", "Where did you even find your trash cards? In a promotional pamphlet?", "Why are my cards so much greasier than yours?"] + card_non_spec_char
-        
-        twins_speech_card = ["Our cards are fresher than fresh. They were printed last night so they must be good.", "Giving you a percentage of our profit was an easy bet, because we know you'll never win.", "We weighed our packs before opening them so our cards must be rare.", "Activate twin psychic link.", "Some people wouldn't duel a duo because they can't maintain eye contact during play... or eye to card contact.", "We're a two player team, so we get double the cards to chose from right?", "We're not going easy on you just so you wont shut our shop down.", "What's on our cards? Sweet, sweet profit of course.", "Hey, that percentage we promised you... you mind lowering it a bit? I mean, a deal is a deal...but still.", "You better open up the trade routes a bit more if you beat us. We don't want to deal with Filtch if he finds where these cards came from.", "We probably should have opened a few of our boosters but where's the fun without a bit of risk?"] + card_non_spec_char
-        
-        her_speech_card = ["You should double the points you give me if I win... or at least consider it.", "I'm great at wizards chess so beating you at this shouldn't be a problem...", "I should have asked for house points if I beat you... oh well, too late now.", "Have you been looking at my deck? That's cheating, you better whip yours out..."] + card_non_spec_char
-        
+default cards_realm = [card_genie, card_iris, card_jasmine, card_azalea, card_dahlia, card_maslab, card_aladdin, card_lilly, card_rasul, card_jafar]
+default cards_hogwarts = [card_her_schoolgirl, card_her_librarian, card_lun_schoolgirl, card_sus_schoolgirl, card_cho_schoolgirl, card_fred, card_george, card_snape, card_dumbledore]
+default cards_other = [card_santa]
+default cards_items = [card_item_badge, card_item_barbell, card_item_beads, card_item_bird, card_item_bookchairs, card_item_bookgala, card_item_bookgala2, card_item_bookwaifu, card_item_broom, card_item_bdsm, card_item_condoms, card_item_desk, card_item_dildo, card_item_doll, card_item_elf, card_item_eromag, card_item_girlmag, card_item_hat, card_item_lingerie, card_item_lipstick, card_item_lube, card_item_owl, card_item_plugs, card_item_pornmag, card_item_potions, card_item_scroll, card_item_stockings, card_item_strapon, card_item_sweets, card_item_wine]
+default cards_all = list(cards_realm) + list(cards_hogwarts) + list(cards_other) + list(cards_items)
+
+default cards_dynamic = [card_iris, card_jasmine, card_azalea, card_her_schoolgirl, card_her_librarian, card_lun_schoolgirl, card_sus_schoolgirl, card_cho_schoolgirl]
+
+default snape_first_deck = [card_snape.clone(), card_item_potions.clone(), card_item_elf.clone(), card_item_wine.clone(), card_item_lipstick.clone()]
+default snape_second_deck = [card_snape.clone(), card_item_potions.clone(), card_item_elf.clone(), card_item_elf.clone(), card_item_eromag.clone()]
+default snape_third_deck = [card_snape.clone(), card_item_potions.clone(), card_item_elf.clone(), card_item_elf.clone(), card_item_elf.clone()]
+    
+default twins_first_deck = [card_fred.clone(), card_item_sweets.clone(), card_item_beads.clone(), card_item_sweets.clone(), card_item_condoms.clone()]
+default twins_second_deck = [card_george.clone(), card_fred.clone(), card_item_doll.clone(), card_item_sweets.clone(), card_item_broom.clone()]
+    
+default her_first_deck = [card_her_schoolgirl.clone(), card_item_girlmag.clone(), card_item_bookgala.clone(), card_item_bookgala2.clone(), card_item_bookchairs.clone()]
+default her_second_deck = [card_her_schoolgirl.clone(), card_item_eromag.clone(), card_item_bookgala.clone(), card_item_bookgala2.clone(), card_item_bookchairs.clone()]
+default her_third_deck = [card_her_librarian.clone(), card_item_pornmag.clone(), card_item_bookgala.clone(), card_item_bookgala2.clone(), card_item_bookchairs.clone()]
+
+default card_non_spec_char = ["I see you've been practicing... so have I!", "You've activated my trap card... wait... it's in my other deck!", "You think you're so good, but this school has never seen a player of the likes of me! In this particular office...", "Aha, you've walked right into my trap. Take this!", "You'll never beat me! I will give you the reward though... in your dreams!", "Thats impossible... that card is legendary... wait, it doesn't have a shimmering effect, never mind.", "I was sure my cards used to be good...", "Wait, you've got that card... I've been such a fool! This is a witchmasters deck!", "We're playing reverse rules right? Lowest amount of cards win?", "If only slight of hand was taught at Hogwarts...", "Wait, this can't be right. I must have put my good cards in my other robes.", "You should be happy that they banned one of the cards that came in a cereal box promotion... that one was overpowered.", "This one's a board sweeper!", "I'll just burn this card... oh yeah, I got better cards coming.", "This is a control deck. I'll win in the end don't you worry.", "Maybe I should have made less of a filler deck... I'll get you in the end.", "Your loss is inevitable. It's all in the heart of the cards.", "Have you been Netdecking? Did those damn spiders in the forest tell you what cards to play?", "I've been metagaming the crap out of you... I know exactly what cards you're going to play...except for that last one.", "Oh, it's my turn? I was just thinking about how I'm going to celebrate after your inevitable loss.", "I've been slowrolling you this whole time. My last card is a mega ultimate legendary.", "What kind of deck is this... don't you even care about synergy?", "I see what kind of player you are now... perhaps a more offensive approach is in order.", "I was born to play card games... you merely adopted your liking of them.", "Hahah, you don't even know that I have a card with powers that has been locked away for centuries... unfortunately I lost the key...", "Prepare for a total wipe... your tears when I beat you that is.", "You want to know what's shown on my cards? What do I like the most? Winning, which is why this card is going to guarantee my victory.", "Life is like a game of Wizard Cards. If you don't win... you lose.", "Quitters never win, winners never quit, but those who never win and never quit are idiots... I'm not sure which I am.", "Go fish...", "Do you have any spells to make you better at Wizard Cards? Didn't think so...", "You can smell the roses as much as you want, while I smell the aroma of victory", "Do you see any stars yet, because you're getting beaten pretty badly.", "Well, your performance in this round is certainly a divine comedy.", "The forecast today is calling for my victory, so I'm not worried.", "Are you out of juice already?", "Couldn't you see from your own fortune that you're bound to lose?", "Looks like you fell right into your own trap... now look at this!! KAPOW", "I don't need luck potion to beat you. That's how confident I am in my deck.", "I know my deck like the back of my hand... wait, when did that mole get there?", "Fool, you'll soon see my finishing move... but before that, UNO!", "I'm so confident in my card collection I just shuffled and picked some at random before this game.", "Great cards doesn’t ensure a win. Right moves do.", "The game balance of this game has been broken for centuries... and I have the winning cards.", "The ministry of magic considered banning this game as they thought it all mattered what cards you had... something about gambling for children.", "If I said that I picked my cards blindfolded would you believe me? Yes, they're all that good.", "I tried to use transfiguration on one of my cards but it burnt up instead... I probably wasn't the first one who tried that.", "Wait! Isn't that card banned? No, the stats aren't the same...phew", "Why does that card of yours look so sticky?", "Oh nice a shiny... wait, why has it stuck to the board?", "That's nowhere near the best move you could've done. Check this out!", "Even a troll would play better than you at this point... no offense.", "Some people are half blood and some pure blood. But I'm purely a Card playing genius.", "That must be a new card. Why haven't I seen that one before?", "Wait, my numbers must have changed. Did you put a spell on my cards?", "Hit me... I mean, give me another card.", "Ah, that one. To bad I have the perfect counter.", "So, when do I get to draw a card again?", "Someone replaced one of my cards with a joker... I bet it was peeves.", "I was told that face cards was the best ones to get... but they were talking about poker.", "By Merlins beard, where did you get that card?", "Next time you should let me use the cards I drew. Their numbers are a lot better than these ones."]
+
+default snape_speech_card = ["You may have lived for hundreds of years but my superior intellect will outweigh your otherworldly powers.", "When this is over I think I'll celebrate my victory with one of your nice bottles of alcohol.", "You should stick to charming women... wizard cards is my game.", "You said you were from a different world, another reality? Maybe in that reality you'd beat me at cards. But not this one!", "We don't stop playing because we grow old, we grow old because we stop playing.", "Where did you even find your trash cards? In a promotional pamphlet?", "Why are my cards so much greasier than yours?"] + card_non_spec_char
+
+default twins_speech_card = ["Our cards are fresher than fresh. They were printed last night so they must be good.", "Giving you a percentage of our profit was an easy bet, because we know you'll never win.", "We weighed our packs before opening them so our cards must be rare.", "Activate twin psychic link.", "Some people wouldn't duel a duo because they can't maintain eye contact during play... or eye to card contact.", "We're a two player team, so we get double the cards to chose from right?", "We're not going easy on you just so you wont shut our shop down.", "What's on our cards? Sweet, sweet profit of course.", "Hey, that percentage we promised you... you mind lowering it a bit? I mean, a deal is a deal...but still.", "You better open up the trade routes a bit more if you beat us. We don't want to deal with Filtch if he finds where these cards came from.", "We probably should have opened a few of our boosters but where's the fun without a bit of risk?"] + card_non_spec_char
+
+default her_speech_card = ["You should double the points you give me if I win... or at least consider it.", "I'm great at wizards chess so beating you at this shouldn't be a problem...", "I should have asked for house points if I beat you... oh well, too late now.", "Have you been looking at my deck? That's cheating, you better whip yours out..."] + card_non_spec_char
+
         
 init python:
     #For card randomization

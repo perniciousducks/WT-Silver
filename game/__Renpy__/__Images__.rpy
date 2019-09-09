@@ -4,27 +4,20 @@
 image blank:
     "characters/dummy.png"
 
-label __init_variables:
+image textheart = "interface/textheart.png"
+image check_07 = "interface/check_07.png"
+image check_08 = "interface/check_08.png"
 
-    image textheart = "interface/textheart.png"
-    image check_07 = "interface/check_07.png"
-    image check_08 = "interface/check_08.png"
+image heart_00 = "interface/heart_00.png"
+image heart_01 = "interface/heart_01.png"
+image heart_02 = "interface/heart_02.png"
+image heart_03 = "interface/heart_03.png"
+image heart_04 = "interface/heart_04.png"
 
-    image heart_00 = "interface/heart_00.png"
-    image heart_01 = "interface/heart_01.png"
-    image heart_02 = "interface/heart_02.png"
-    image heart_03 = "interface/heart_03.png"
-    image heart_04 = "interface/heart_04.png"
-
-
-
-    if not hasattr(renpy.store,'u_ani_pause_img'):
-        $ u_ani_pause_img = ""
-        $ u_ani_play_img = ""
-        $ u_ani_xpos = 1
-        $ u_ani_ypos = 1
-
-    return
+default u_ani_pause_img = ""
+default u_ani_play_img = ""
+default u_ani_xpos = 1
+default u_ani_ypos = 1
 
 label set_u_ani(play = u_ani_play_img, pause = u_ani_pause_img, xpos = u_ani_xpos, ypos = u_ani_ypos):
     if play != u_ani_play_img:

@@ -259,66 +259,54 @@ label quests:
 
 ### Quests flags ###
 
-label quest_init:
+default genie_intro = quest_class(
+    E1_complete = False,
+    E2_complete = False,
+    E3_complete = False,
+)
 
-    if not hasattr(renpy.store,'genie_intro'):
-        $ genie_intro   = quest_class(
-        E1_complete=False,
-        E2_complete=False,
-        E3_complete=False,
-        )
+default snape_intro = quest_class(
+    E1_complete   = False, # 1st visit
+    E2_complete   = False, # 2nd visit
+    E3_complete   = False, # 3rd visit, before the duel.
+    duel_complete = False, # Duel
+    E4_complete   = False, # After the duel.
+    E5_complete   = False, # 4th visit, summon unlocked.
+)
 
-    if not hasattr(renpy.store,'snape_intro'):
-        $ snape_intro   = quest_class(
-        E1_complete=False,   # 1st visit
-        E2_complete=False,   # 2nd visit
-        E3_complete=False,   # 3rd visit, before the duel.
-        duel_complete=False, # Duel
-        E4_complete=False,   # After the duel.
-        E5_complete=False,   # 4th visit, summon unlocked.
-        )
+default hang_with_snape = quest_class(
+    E1_complete = False, # I hate her!
+    E2_complete = False, # Let's ruin her!
+    E3_complete = False, # Discuss Tonks with Snape.
+    E4_complete = False, # Inform him that Tonks has joined you both.
+    E5_complete = False, # Tonks is teaching DAtDA. Snape might use Veritaserum on her...
+)
 
-    if not hasattr(renpy.store,'hang_with_snape'):
-        $ hang_with_snape   = quest_class(
-        E1_complete=False,   # I hate her!
-        E2_complete=False,   # Let's ruin her!
-        E3_complete=False,   # Discuss Tonks with Snape.
-        E4_complete=False,   # Inform him that Tonks has joined you both.
-        E5_complete=False,   # Tonks is teaching DAtDA. Snape might use Veritaserum on her...
-        )
+default hermione_intro = quest_class(
+    E1_complete = False, # 1st visit
+    E2_complete = False, # 2nd visit, MRM + informed the Ministry.
+    E3_complete = False, # 3rd visit, did she fail a test?
+    E4_complete = False, # 4th visit, she's crying. Failed a test.
+    E5_complete = False, # 5th visit, asks to be tutored, summon unlocked.
+    E6_complete = False, # 6th visit, asks to buy favors, favors unlocked.
+)
 
-    if not hasattr(renpy.store,'hermione_intro'):
-        $ hermione_intro   = quest_class(
-        E1_complete=False, # 1st visit
-        E2_complete=False, # 2nd visit, MRM + informed the Ministry.
-        E3_complete=False, # 3rd visit, did she fail a test?
-        E4_complete=False, # 4th visit, she's crying. Failed a test.
-        E5_complete=False, # 5th visit, asks to be tutored, summon unlocked.
-        E6_complete=False, # 6th visit, asks to buy favors, favors unlocked.
-        )
+default tonks_intro = quest_class(
+    E1_complete = False, # 1st visit
+    E2_complete = False, # 2nd visit
+    E3_complete = False, # 3rd visit, summon unlocked.
+)
 
-    if not hasattr(renpy.store,'tonks_intro'):
-        $ tonks_intro   = quest_class(
-        E1_complete=False,   # 1st visit
-        E2_complete=False,   # 2nd visit
-        E3_complete=False,   # 3rd visit, summon unlocked.
-        )
+default hang_with_tonks = quest_class(
+    E1_complete = False, # Help with/unlock Hermione's favors.
+    E2_complete = False, # Unlock Public Requests.
+    E3_complete = False, # Unlock Susan.
+    E4_complete = False, # Advance to Tier 2.
+)
 
-    if not hasattr(renpy.store,'hang_with_tonks'):
-        $ hang_with_tonks   = quest_class(
-        E1_complete=False, # Help with/unlock Hermione's favors.
-        E2_complete=False, # Unlock Public Requests.
-        E3_complete=False, # Unlock Susan.
-        E4_complete=False, # Advance to Tier 2.
-        )
-
-    if not hasattr(renpy.store,'astoria_intro'):
-        $ astoria_intro   = quest_class(
-        E1_complete=False,   # Tonks visits.
-        E2_hermione=False,   # Tell Hermione to look for her.
-        E2_snape   =False,   # Tell Snape to look for her.
-        E3_complete=False,   # Hermione finds her.
-        )
-
-
-    return
+default astoria_intro = quest_class(
+    E1_complete = False, # Tonks visits.
+    E2_hermione = False, # Tell Hermione to look for her.
+    E2_snape    = False, # Tell Snape to look for her.
+    E3_complete = False, # Hermione finds her.
+)

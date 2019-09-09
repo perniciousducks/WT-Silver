@@ -1,41 +1,32 @@
+# Sprite
+default genie_xpos       = 200
+default genie_ypos       = 0
+default genie_zorder     = 4
+default genie_flip       = 1
+default use_genie_head   = False
 
-label genie_init:
+default genie_base = "characters/genie/base/base.png"
+default genie_face = "characters/genie/face/base.png"
 
+# Chibi
+default gen_chibi_xpos   = 500
+default gen_chibi_ypos   = 190
+default gen_speed        = 2.0
+default gen_chibi_zorder = 2
+default gen_chibi_flip   = 1
+default gen_chibi_stand  = "characters/genie/chibis/walk_01.png"
+default gen_chibi_walk   = "genie_walk_ani"
 
-    #Genie
-    if not hasattr(renpy.store,'gen_chibi_stand') or reset_persistants:
-        label reset_genie_base:
+default genie_cum_chibi_xpos = -45
+default genie_cum_chibi_ypos = -5
 
-        #Sprite
-        $ genie_xpos       = 200
-        $ genie_ypos       = 0
-        $ genie_zorder     = 4
-        $ genie_flip       = 1
-        $ use_genie_head   = False
+# Stats
+default imagination      = 1
+default bdsm_imagination = 1
+default speed_writing    = 0
+default speed_reading    = 0
 
-        $ genie_base = "characters/genie/base/base.png"
-        $ genie_face = "characters/genie/face/base.png"
+default birthday_happened = False # Outfit "Present" wardrobe dialogue.
+default masturbating = False
 
-        #Chibi
-        $ gen_chibi_xpos   = 500
-        $ gen_chibi_ypos   = 190
-        $ gen_speed        = 2.0
-        $ gen_chibi_zorder = 2
-        $ gen_chibi_flip   = 1
-        $ gen_chibi_stand  = "characters/genie/chibis/walk_01.png"
-        $ gen_chibi_walk   = "genie_walk_ani"
-        
-        $ genie_cum_chibi_xpos = -45
-        $ genie_cum_chibi_ypos = -5
-
-        $ imagination      = 1
-        $ bdsm_imagination = 1
-        $ speed_writing    = 0
-        $ speed_reading    = 0
-
-        $ birthday_happened = False # Outfit "Present" wardrobe dialogue.
-        $ masturbating = False
-
-        $ genie_quid_position = "???" # For stats.
-
-    return
+default genie_quid_position = "???" # For stats.

@@ -1,106 +1,91 @@
-label tonks_init:
-    if not hasattr(renpy.store,'tonks_xpos') or reset_persistants:
-        $ tonks_xpos                = 600
-        $ tonks_ypos                = 0
-        $ tonks_zorder              = 5
-        $ tonks_flip                = 1
-        $ use_tonks_head            = False
-        $ tonks_animation = None
+default tonks_xpos      = 600
+default tonks_ypos      = 0
+default tonks_zorder    = 5
+default tonks_flip      = 1
+default use_tonks_head  = False
+default tonks_animation = None
 
-        $ tonks_haircolor = [[243, 158, 189, 255]]
+default tonks_haircolor = [[243, 158, 189, 255]]
 
-        #Chibi
-        $ ton_chibi_xpos          = 500
-        $ ton_chibi_ypos          = 250
-        $ ton_chibi_flip          = 1
-        $ ton_chibi_zorder        = 3
-        $ ton_chibi_animation     = None
-        $ ton_chibi_status        = ""
+# Chibi
+default ton_chibi_xpos      = 500
+default ton_chibi_ypos      = 250
+default ton_chibi_flip      = 1
+default ton_chibi_zorder    = 3
+default ton_chibi_animation = None
+default ton_chibi_status    = ""
 
-        $ ton_chibi_stand         = "ch_ton blink"
-        $ ton_chibi_shoes         = "characters/tonks/chibis/nt_walk_01_shoes.png"
+default ton_chibi_stand = "ch_ton blink"
+default ton_chibi_shoes = "characters/tonks/chibis/nt_walk_01_shoes.png"
 
-        $ ton_chibi_walk          = "ch_ton walk"
-        $ ton_chibi_walk_shoes    = "ch_ton walk_shoes"
+default ton_chibi_walk       = "ch_ton walk"
+default ton_chibi_walk_shoes = "ch_ton walk_shoes"
 
-        $ ton_chibi_top           = "characters/tonks/chibis/nt_top.png"
-        $ ton_chibi_bottom        = "characters/tonks/chibis/nt_trousers.png"
-        $ ton_chibi_robe          = "blank"
-        $ ton_chibi_gloves        = "blank" #blank is the new defined image, makes our lives easier
-        $ ton_chibi_fix           = "blank"
+default ton_chibi_top    = "characters/tonks/chibis/nt_top.png"
+default ton_chibi_bottom = "characters/tonks/chibis/nt_trousers.png"
+default ton_chibi_robe   = "blank"
+default ton_chibi_gloves = "blank" # blank is the new defined image, makes our lives easier
+default ton_chibi_fix    = "blank"
 
-    if not hasattr(renpy.store,'ton_cloth_pile') or reset_persistants:
-        $ ton_cloth_pile = False
-        $ ton_pile_xpos = 440 # Right side of desk.
-        $ ton_pile_ypos = 425 # Bit below feet level.
-    return
+default ton_cloth_pile = False
+default ton_pile_xpos  = 440 # Right side of desk.
+default ton_pile_ypos  = 425 # Bit below feet level.
 
-label tonks_progress_init:
-    if not hasattr(renpy.store,'tonks_unlocked') or reset_persistants:
+# Stats
+default ton_tier           = 1
+default ton_friendship     = 0 #Max is 100.
+default ton_support        = 0
+default ton_reputation     = 0
+default ton_clothing_level = 100
 
-        #Stats
-        $ ton_friendship = 0 #Max is 100.
-        $ ton_support = 0
-        $ ton_reputation = 0
-        $ ton_clothing_level = 100
+# Flags
+default tonks_busy              = False
+default tonks_unlocked          = False
+default tonks_favors_unlocked   = False
+default tonks_requests_unlocked = False
+default tonks_shaming_unlocked  = False
+default tonks_wardrobe_unlocked = False
+default chitchated_with_tonks   = False
+default tonks_strip_happened    = False #Tonks random clothing event.
 
-        #Flags
-        $ tonks_busy = False
-        $ tonks_unlocked = False
-        $ tonks_favors_unlocked = False
-        $ tonks_requests_unlocked = False
-        $ tonks_shaming_unlocked = False
-        $ tonks_wardrobe_unlocked = False
-        $ chitchated_with_tonks = False
-        $ tonks_strip_happened = False #Tonks random clothing event.
+default gave_tonks_gift = False
 
-        $ gave_tonks_gift    = False
+# Names
+default tonks_name       = "Tonks"
+default ton_genie_name   = "Professor"
+default ton_astoria_name = "Cutie"
 
-        #Names
-        $ tonks_name = "Tonks"
-        $ ton_genie_name = "Professor"
-        $ ton_astoria_name = "Cutie"
+# Stat Screen
+default ton_clothing_upgrades     = 0
+default ton_astoria_date_counter  = 0
+default ton_hermione_date_counter = 0
 
-        #Stat Screen
-        $ ton_clothing_upgrades = 0
-        $ ton_astoria_date_counter = 0
-        $ ton_hermione_date_counter = 0
+default ton_level_up = None
+default tonks_shared = False
 
+# Hangout Events
 
+default nt_he_counter = 0
 
-    ### 1.37 updates ###
-
-    if not hasattr(renpy.store,'ton_tier'):
-        $ ton_tier = 1
-        $ ton_level_up = None
-        $ tonks_shared = False
-        $ tonks_favors_unlocked   = False
-        $ tonks_requests_unlocked = False
-        $ tonks_shaming_unlocked  = False
-
-
-
-    ### Tonks Hangout Events ###
-
-    if not hasattr(renpy.store,'nt_he_counter'):
-        $ nt_he_counter = 0
-        $ nt_he_drink   = event_class(title = "Tonks Firewhisky", start_label = "tonks_hangout", events = [
-            [
+default nt_he_drink = event_class(
+    title = "Tonks Firewhisky", start_label = "tonks_hangout",
+    events = [
+        [
             ["nt_he_wine_intro"],
             ["nt_he_firewhisky_intro"],
             ["nt_he_firewhisky_E1"],
             ["nt_he_firewhisky_E2"],
             ["nt_he_firewhisky_E3"],
             ["nt_he_firewhisky_E4"]
-            ]
+        ]
+    ],
+    iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
+)
 
-            ],
-            iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
-            )
-
-    if not hasattr(renpy.store,'nt_he_story'):
-        $ nt_he_story   = event_class(title = "Tonks Stories", start_label = "tonks_hangout", events = [
-            [
+default nt_he_story = event_class(
+    title = "Tonks Stories", start_label = "tonks_hangout",
+    events = [
+        [
             ["nt_he_story_intro_E1"], # Intro
             ["nt_he_story_intro_E2"], # Moody
             ["nt_he_story_intro_E3"], # Brooms and flying carpets
@@ -113,82 +98,108 @@ label tonks_progress_init:
             ["nt_he_story_intro_E10"], # Dumb game mechanics
             ["nt_he_story_E11"],      # Metamorphmagi
             ["nt_he_story_E12"]       # Invisible clothing charm
-            ]
+        ]
+    ],
+    iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
+)
 
-            ],
-            iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
-            )
-
-    ###################
-    # Public requests #
-    ###################
-
-    if not hasattr(renpy.store,'nt_pr_teach'):
-        $ nt_pr_teach   = event_class(title = "Detention with Tonks.", start_label = "nt_pr_teach_start", start_tier = 1, events = [
-            [
+# Public requests
+default nt_pr_teach = event_class(
+    title = "Detention with Tonks.", start_label = "nt_pr_teach_start", start_tier = 1,
+    events = [
+        [
             ["nt_pr_teach_T1_E1"], # Slytherin boy
             ["nt_pr_teach_T1_E2"], # Ravenclaw boy
             ["nt_pr_teach_T1_E3"], # Potter & Weasley
             ["nt_pr_teach_T1_E4"]  # Slytherin girl
-            ],
-
-            [
+        ],
+        [
             ["nt_pr_teach_T2_E1"], # Hufflepuff girl
             ["nt_pr_teach_T2_E2"], # Ravenclaw boy
             ["nt_pr_teach_T2_E3"], # Slytherin boy
             ["nt_pr_teach_T2_E4"]  # Slytherin girl
-            ]
+        ]
+    ],
+    iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
+)
 
-            ],
-            iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
-            )
-
-    if not hasattr(renpy.store,'nt_pr_grope'):
-        $ nt_pr_grope   = event_class(title = "Hands-on lessons!", start_label = "nt_pr_grope_start", start_tier = 2, events = [
-            [
+default nt_pr_grope = event_class(
+    title = "Hands-on lessons!", start_label = "nt_pr_grope_start", start_tier = 2,
+    events = [
+        [
             ["nt_pr_grope_T1_E1"], # Slytherin boy
             ["nt_pr_grope_T1_E2"], # Ravenclaw boy
             ["nt_pr_grope_T1_E3"], # Potter & Weasley
             ["nt_pr_grope_T1_E4"]  # Slytherin girl
-            ]#,
+        ]# ,
+        # [
+        #     ["nt_pr_grope_T2_E1"], #
+        #     ["nt_pr_grope_T2_E2"], #
+        #     ["nt_pr_grope_T2_E3"], #
+        #     ["nt_pr_grope_T2_E4"]  #
+        # ]
+    ],
+    iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
+)
 
-            #[
-            #["nt_pr_grope_T2_E1"], #
-            #["nt_pr_grope_T2_E2"], #
-            #["nt_pr_grope_T2_E3"], #
-            #["nt_pr_grope_T2_E4"]  #
-            #]
-
-            ],
-            iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
-            )
-
-    if not hasattr(renpy.store,'nt_pr_kiss'):
-        $ nt_pr_kiss   = event_class(title = "Oral practice!", start_label = "nt_pr_kiss_start", start_tier = 2, events = [
-            [
+default nt_pr_kiss = event_class(
+    title = "Oral practice!", start_label = "nt_pr_kiss_start", start_tier = 2,
+    events = [
+        [
             ["nt_pr_kiss_T1_intro_E1"], # Ravenclaw boy
             ["nt_pr_kiss_T1_E2"],       #
             ["nt_pr_kiss_T1_E3"],       # Slytherin girls
             ["nt_pr_kiss_T1_E4"]        # Slytherin girl
-            ]#,
+        ]# ,
+        # [
+        #     ["nt_pr_kiss_T2_E1"], # Slytherin boy
+        #     ["nt_pr_kiss_T2_E2"], #
+        #     ["nt_pr_kiss_T2_E3"], #
+        #     ["nt_pr_kiss_T2_E4"]  #
+        # ]
+    ],
+    iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
+)
 
-            #[
-            #["nt_pr_kiss_T2_E1"], # Slytherin boy
-            #["nt_pr_kiss_T2_E2"], #
-            #["nt_pr_kiss_T2_E3"], #
-            #["nt_pr_kiss_T2_E4"]  #
-            #]
+# Idea for "blowjob pr" name: "Stress Mitigation."
 
-            ],
-            iconset = [["star_empty", "star_pink"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
-            )
+default nt_requests_list = [
+    nt_pr_teach,
+    nt_pr_grope,
+    nt_pr_kiss
+]
 
-    # Idea for "blowjob pr" name: "Stress Mitigation."
+label reset_tonks_progress:
+    #TODO Add Tonks' event class variables to the list below to reset event progress
+    $ reset_variables(
+        # Stats
+        "ton_tier",
+        "ton_friendship",
+        "ton_support",
+        "ton_reputation",
+        "ton_clothing_level",
 
-    $ nt_requests_list = [
-        nt_pr_teach,
-        nt_pr_grope,
-        nt_pr_kiss
-        ]
+        # Flags
+        "tonks_busy",
+        "tonks_unlocked",
+        "tonks_favors_unlocked",
+        "tonks_requests_unlocked",
+        "tonks_shaming_unlocked",
+        "tonks_wardrobe_unlocked",
+        "chitchated_with_tonks",
+        "tonks_strip_happened",
+        "gave_tonks_gift",
 
+        # Names
+        "tonks_name",
+        "ton_genie_name",
+        "ton_astoria_name",
+
+        # Stat Screen
+        "ton_clothing_upgrades",
+        "ton_astoria_date_counter",
+        "ton_hermione_date_counter",
+        "ton_level_up",
+        "tonks_shared"
+    )
     return

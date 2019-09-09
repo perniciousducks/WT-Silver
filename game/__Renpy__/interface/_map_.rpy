@@ -1,3 +1,25 @@
+default map_scale = 0.7 / scaleratio
+default UI_xpos_offset = 230
+default UI_ypos_offset = 150
+
+default map_unlocked = False
+
+default her_map_location = "library"
+default lun_map_location = "room_r"
+default ast_map_location = "room_s"
+default sus_map_location = "room_h"
+default cho_map_location = "training_grounds"
+
+default sna_map_location = "room_potions"
+default ton_map_location = "room_defense"
+
+default first_time_7th = True
+default pitch_open = True
+default inn_intro = False
+default attic_open = False
+
+default map_ani_time = 1.5
+
 init python:
     def image_scale(image, zoom=0.5, alpha=1.0):
         #return im.Scale(image, math.ceil(get_width(image)*zoom), math.ceil(get_height(image)*zoom))
@@ -7,34 +29,6 @@ transform animate:
     alpha 0 # set the value to zero in the start
     time map_ani_time #1.5
     linear 1 alpha 1 # go from zero to 1 in one second
-
-label map_init:
-    $ map_scale = 0.7/scaleratio
-    $ UI_xpos_offset = 230
-    $ UI_ypos_offset = 150
-
-    if not hasattr(renpy.store,'map_ani_time') or reset_persistants:
-        label reset_map_init:
-
-        $ map_unlocked = False
-
-        $ her_map_location = "library"
-        $ lun_map_location = "room_r"
-        $ ast_map_location = "room_s"
-        $ sus_map_location = "room_h"
-        $ cho_map_location = "training_grounds"
-
-        $ sna_map_location = "room_potions"
-        $ ton_map_location = "room_defense"
-
-        $ first_time_7th = True
-        $ pitch_open = True
-        $ inn_intro = False
-        $ attic_open = False
-
-        $ map_ani_time = 1.5
-
-    return
 
 ### Map Screen ###
 screen map_screen():

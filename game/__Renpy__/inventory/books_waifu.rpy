@@ -1,103 +1,101 @@
-label __init_variables:
-    if not hasattr(renpy.store,'waifu_completed_once'): #important!
-        $ waifu_completed_once = False
+default waifu_completed_once = False
 
-        $ shea = 0 #Shows how many times you went on a date with your stepsister Shea.
-        $ complited_shea = False #Turns TRUE when you finish with Shea once. Need so that when you finish with Shea again you don get +1 Imagination.
+default shea = 0 #Shows how many times you went on a date with your stepsister Shea.
+default complited_shea = False #Turns TRUE when you finish with Shea once. Need so that when you finish with Shea again you don get +1 Imagination.
 
-        $ victoria = 0
-        $ complited_stevens = False #Turns TRUE when you finish with Ms.Stevens once. Need so that when you finish with Shea again you don get +1 Imagination.
+default victoria = 0
+default complited_stevens = False #Turns TRUE when you finish with Ms.Stevens once. Need so that when you finish with Shea again you don get +1 Imagination.
 
-        $ leena = 0
-        $ complited_leena = False #Turns TRUE when you finish with Leena once. Need so that when you finish with Shea again you don get +1 Imagination.
+default leena = 0
+default complited_leena = False #Turns TRUE when you finish with Leena once. Need so that when you finish with Shea again you don get +1 Imagination.
 
-    $ waifu_chapters = [
-        "{size=-2}You are a teenage boy who is sharing his home with his cute stepsister Shea. What would you like to do after school today?{/size}",
-        "{size=-2}During classes ms.Stevens is droning away about something. You admire her chest to stay awake. She's way too hot to be a teacher.{/size}",
-        "{size=-2}You meet your stepsister at school. Unlike you, Shea is quite popular among her classmates, but She all but denies your existence.{/size}",
-        "{size=-2}You bump into a girl in the hallway, She is wearing thick glasses and acts very shy. afterwards She apologizes and quickly runs off, is she even a student of this school?{/size}",
-        "{size=-2}Ms.Stevens is organizing extracurricular activities today. You decide to show up in hopes of extra credit.{/size}",
-        "{size=-2}A bully takes your lunch money today. Later Shea shows up and brings the bully with her, He apologizes and returns you your money. Shea can be scary...{/size}",
-        "{size=-2}Another boring class. You ignore the teacher completely and daydream about getting a degree in art and becoming a professional hentai-manga artist.{/size}",
-        "{size=-2}Another terribly generic school day, Ms.Stevens' modest green suit does little to conceal her attractive figure. You couldn't care less about the topic of her class though.{/size}" ,
-        "{size=-2}You ditch your classes and roam through the deserted school corridors, pretending to be the sole survivor of some deadly virus. The janitor spots you, He's infected! You run for your life.{/size}" ,
-        "{size=-2}The same bully takes your money again. An hour later an ambulance parks before school, Some guy broke his hand. You recognize your bully... Did Shea do this to him?{/size}",
-        "{size=-2}Another day in school. After the incident with the bully, people are looking at you funnily, but they seem to adore Shea more than ever. How is she doing it?{/size}",
-        "{size=-2}You have no classes with ms.Stevens today. So why even bother? You fall asleep behind your desk.{/size}",
-        "{size=-2}Your classmates all seem to be very excited about the upcoming prom, but You couldn't care less for the stupid thing.{/size}",
-        "{size=-2}Another boring class. You gaze out of the window and notice a suspicious looking black van with tinted windows parked nearby the school library building. Why?{/size}",
-        "{size=-2}You overhear one of your classmates talking about starting a secret \"Ms.Stevens fan club\". Not very surprising, considering how attractive she is.{/size}",
-        "{size=-2}Everyone's excitement about the upcoming prom grows with every day. You toy with an idea of asking someone to the prom, but decide to save yourself the awkwardness.{/size}" ,
-        "{size=-2}Ms.Stevens is wearing her skintight business suit again today. All the guys in your class look very eager to learn, while many of the girls are pouting.{/size}",
-        "{size=-2}The graduation ceremony is tomorrow. Everyone is very excited, but You just want this day to end.{/size}",
-        "{size=-2}Today is your graduation day. You see your classmates getting emotional during the ceremony, but you don't care much.{/size}",
-        "{size=-2}The prom will take place tonight. You have nothing to do today, No chores, no homework... So this is how it feels to be free!?{/size}"
-     ]
+# Chapters
+define waifu_chapters = [
+    "{size=-2}You are a teenage boy who is sharing his home with his cute stepsister Shea. What would you like to do after school today?{/size}",
+    "{size=-2}During classes ms.Stevens is droning away about something. You admire her chest to stay awake. She's way too hot to be a teacher.{/size}",
+    "{size=-2}You meet your stepsister at school. Unlike you, Shea is quite popular among her classmates, but She all but denies your existence.{/size}",
+    "{size=-2}You bump into a girl in the hallway, She is wearing thick glasses and acts very shy. afterwards She apologizes and quickly runs off, is she even a student of this school?{/size}",
+    "{size=-2}Ms.Stevens is organizing extracurricular activities today. You decide to show up in hopes of extra credit.{/size}",
+    "{size=-2}A bully takes your lunch money today. Later Shea shows up and brings the bully with her, He apologizes and returns you your money. Shea can be scary...{/size}",
+    "{size=-2}Another boring class. You ignore the teacher completely and daydream about getting a degree in art and becoming a professional hentai-manga artist.{/size}",
+    "{size=-2}Another terribly generic school day, Ms.Stevens' modest green suit does little to conceal her attractive figure. You couldn't care less about the topic of her class though.{/size}" ,
+    "{size=-2}You ditch your classes and roam through the deserted school corridors, pretending to be the sole survivor of some deadly virus. The janitor spots you, He's infected! You run for your life.{/size}" ,
+    "{size=-2}The same bully takes your money again. An hour later an ambulance parks before school, Some guy broke his hand. You recognize your bully... Did Shea do this to him?{/size}",
+    "{size=-2}Another day in school. After the incident with the bully, people are looking at you funnily, but they seem to adore Shea more than ever. How is she doing it?{/size}",
+    "{size=-2}You have no classes with ms.Stevens today. So why even bother? You fall asleep behind your desk.{/size}",
+    "{size=-2}Your classmates all seem to be very excited about the upcoming prom, but You couldn't care less for the stupid thing.{/size}",
+    "{size=-2}Another boring class. You gaze out of the window and notice a suspicious looking black van with tinted windows parked nearby the school library building. Why?{/size}",
+    "{size=-2}You overhear one of your classmates talking about starting a secret \"Ms.Stevens fan club\". Not very surprising, considering how attractive she is.{/size}",
+    "{size=-2}Everyone's excitement about the upcoming prom grows with every day. You toy with an idea of asking someone to the prom, but decide to save yourself the awkwardness.{/size}" ,
+    "{size=-2}Ms.Stevens is wearing her skintight business suit again today. All the guys in your class look very eager to learn, while many of the girls are pouting.{/size}",
+    "{size=-2}The graduation ceremony is tomorrow. Everyone is very excited, but You just want this day to end.{/size}",
+    "{size=-2}Today is your graduation day. You see your classmates getting emotional during the ceremony, but you don't care much.{/size}",
+    "{size=-2}The prom will take place tonight. You have nothing to do today, No chores, no homework... So this is how it feels to be free!?{/size}"
+    ]
 
-    ### DATES ###
-    $ shea_dates = [
-        "{size=-2}You return home and walk in on Shea taking a bath. You stare at her tits until she knocks you out cold with one of her trademark punches.{/size}",
-        "{size=-2}At home, Shea cooks supper for you. You catch a glimpse of her panties and she knocks you out cold again with one of her trademark punches.{/size}",
-        "{size=-2}You return home and The house is empty, so You decide to watch an adult movie in the living room. Shea walks in on you... and knocks you out with one of her trademark punches.{/size}",
-        "{size=-2}It's a stormy night with rain and thunder. Frightened, Shea crawls into your bed. Your manhood gets hard and Shea knocks you out with one of her trademark punches.{/size}",
-        "{size=-2}As a peace offering you decide to clean Shea's room. She doesn't appreciate such an invasion of privacy and dishes out another one of her trademark punches, which knocks you out cold.{/size}",
-        "{size=-2}The house is empty. You decide to watch an adult movie in the living room, but Shea walks in on you again. You expect another punch but she just runs off.{/size}",
-        "{size=-2}You come to Shea's room to apologize for the last time. She is wearing her pajamas. You get a little hard during your apology. She accepts your apology blushing.{/size}" ,
-        "{size=-2}It's raining again, so Shea sneaks into your bed at night. She kisses you and asks you to take her anal virginity. You have anal sex with your little step sister.{/size}",
-        "{size=-2}Shea sneaks into your room after supper. While your parents finish eating downstairs, you drill your sister's little asshole with your cock and she takes it ecstatically{/size}"
-     ]
+# Dates
+define shea_dates = [
+    "{size=-2}You return home and walk in on Shea taking a bath. You stare at her tits until she knocks you out cold with one of her trademark punches.{/size}",
+    "{size=-2}At home, Shea cooks supper for you. You catch a glimpse of her panties and she knocks you out cold again with one of her trademark punches.{/size}",
+    "{size=-2}You return home and The house is empty, so You decide to watch an adult movie in the living room. Shea walks in on you... and knocks you out with one of her trademark punches.{/size}",
+    "{size=-2}It's a stormy night with rain and thunder. Frightened, Shea crawls into your bed. Your manhood gets hard and Shea knocks you out with one of her trademark punches.{/size}",
+    "{size=-2}As a peace offering you decide to clean Shea's room. She doesn't appreciate such an invasion of privacy and dishes out another one of her trademark punches, which knocks you out cold.{/size}",
+    "{size=-2}The house is empty. You decide to watch an adult movie in the living room, but Shea walks in on you again. You expect another punch but she just runs off.{/size}",
+    "{size=-2}You come to Shea's room to apologize for the last time. She is wearing her pajamas. You get a little hard during your apology. She accepts your apology blushing.{/size}" ,
+    "{size=-2}It's raining again, so Shea sneaks into your bed at night. She kisses you and asks you to take her anal virginity. You have anal sex with your little step sister.{/size}",
+    "{size=-2}Shea sneaks into your room after supper. While your parents finish eating downstairs, you drill your sister's little asshole with your cock and she takes it ecstatically{/size}"
+    ]
 
-    $ victoria_dates = [
-        "{size=-2}You decide to roam around the school for a while. Ms.Stevens is sitting behind a desk in one of the classrooms, working and you end up secretly watching her.{/size}",
-        "{size=-2}You find Ms.Stevens working in one of the empty classrooms again. This time She notices you and You have to lie your way out of it. She gives you a big home assignment.{/size}",
-        "{size=-2}Ms.Stevens finds you roaming around in some deserted school corridors. You haven't completed the assignment she gave you yet. She treats you with contempt for some reason.{/size}",
-        "{size=-2}You bump into your teacher Ms.Stevens again. Is she stalking your or something? It's the assignment thing again. You start to really dislike the woman.{/size}",
-        "{size=-2}You try to avoid Ms.Stevens but fail. Your assignment is not completed yet and You grow tired of her droning on about \"how terrible pupils like you fail at life\".{/size}",
-        "{size=-2}Ms.Stevens lectures you again. While doing so she Accidentally spills her tea on your lap. Afterwards She uses a tissue to rub it off, even though You get aroused by that she pretends not to notice.{/size}",
-        "{size=-2}Ms.Stevens lectures you once again. Suddenly she kisses your lips, apologizes and asks you to keep this a secret. You return home very confused.{/size}",
-        "{size=-2}You decide to roam the school after your classes again in hopes of running into Ms.Stevens, but you can't find her anywhere...{/size}",
-        "{size=-2}Ms.Stevens invites you to her office. She grabs your crotch and fondles your hard cock for a while, but then just sends you on your way. You return home in a daze.{/size}"
-     ]
+define victoria_dates = [
+    "{size=-2}You decide to roam around the school for a while. Ms.Stevens is sitting behind a desk in one of the classrooms, working and you end up secretly watching her.{/size}",
+    "{size=-2}You find Ms.Stevens working in one of the empty classrooms again. This time She notices you and You have to lie your way out of it. She gives you a big home assignment.{/size}",
+    "{size=-2}Ms.Stevens finds you roaming around in some deserted school corridors. You haven't completed the assignment she gave you yet. She treats you with contempt for some reason.{/size}",
+    "{size=-2}You bump into your teacher Ms.Stevens again. Is she stalking your or something? It's the assignment thing again. You start to really dislike the woman.{/size}",
+    "{size=-2}You try to avoid Ms.Stevens but fail. Your assignment is not completed yet and You grow tired of her droning on about \"how terrible pupils like you fail at life\".{/size}",
+    "{size=-2}Ms.Stevens lectures you again. While doing so she Accidentally spills her tea on your lap. Afterwards She uses a tissue to rub it off, even though You get aroused by that she pretends not to notice.{/size}",
+    "{size=-2}Ms.Stevens lectures you once again. Suddenly she kisses your lips, apologizes and asks you to keep this a secret. You return home very confused.{/size}",
+    "{size=-2}You decide to roam the school after your classes again in hopes of running into Ms.Stevens, but you can't find her anywhere...{/size}",
+    "{size=-2}Ms.Stevens invites you to her office. She grabs your crotch and fondles your hard cock for a while, but then just sends you on your way. You return home in a daze.{/size}"
+    ]
 
-    $ leena_dates = [
-        "{size=-2}You go to the school library. Apart from an unfamiliar dark haired girl in the corner you are the only visitor. You spend some time with reading a sci-fi novel.{/size}",
-        "{size=-2}You're at the library. There is that girl with the glasses again. You read your sci-fi book and catch the girl staring at you A couple of timesng. What's her problem?{/size}",
-        "{size=-2}Seems like the girl is always here. You look at her properly for the first time: long dark hair, glasses, with a well-formed body. She is sort of cute, but this time she catches you staring.{/size}",
-        "{size=-2}The girl is here, just as always. She looks very shy, so You decide to talk to her, but she just ignores you at first and then simply leaves. She's a weird one.{/size}",
-        "{size=-2}The silent, dark haired girl is absent today, so You just take your usual seat. But There is a note from her in which She apologizes, then says that she actually likes you and apologizes again.{/size}",
-        "{size=-2}It's just you again. The girl is not here, there's No note either. You can't remember ever seeing her in school apart from that one time. Who the hell is that silent beauty?{/size}",
-        "{size=-2}You try to read your sci-fi novel, but you just can't concentrate. Suddenly The girl takes a seat next to you. You wait for an explanation but she just pretends to read her book.{/size}",
-        "{size=-2}You pretend to read while you wait for the girl. She takes the seat beside you again and starts rubbing your crotch under the desk. What's the matter with her?!{/size}",
-        "{size=-2}As soon as you show up the girl drags you behind a bookshelf and begs you to fuck her. You comply, cum inside of her and she returns to her desk, while you just keep on standing there, confused and speechless.{/size}"
-     ]
+define leena_dates = [
+    "{size=-2}You go to the school library. Apart from an unfamiliar dark haired girl in the corner you are the only visitor. You spend some time with reading a sci-fi novel.{/size}",
+    "{size=-2}You're at the library. There is that girl with the glasses again. You read your sci-fi book and catch the girl staring at you A couple of timesng. What's her problem?{/size}",
+    "{size=-2}Seems like the girl is always here. You look at her properly for the first time: long dark hair, glasses, with a well-formed body. She is sort of cute, but this time she catches you staring.{/size}",
+    "{size=-2}The girl is here, just as always. She looks very shy, so You decide to talk to her, but she just ignores you at first and then simply leaves. She's a weird one.{/size}",
+    "{size=-2}The silent, dark haired girl is absent today, so You just take your usual seat. But There is a note from her in which She apologizes, then says that she actually likes you and apologizes again.{/size}",
+    "{size=-2}It's just you again. The girl is not here, there's No note either. You can't remember ever seeing her in school apart from that one time. Who the hell is that silent beauty?{/size}",
+    "{size=-2}You try to read your sci-fi novel, but you just can't concentrate. Suddenly The girl takes a seat next to you. You wait for an explanation but she just pretends to read her book.{/size}",
+    "{size=-2}You pretend to read while you wait for the girl. She takes the seat beside you again and starts rubbing your crotch under the desk. What's the matter with her?!{/size}",
+    "{size=-2}As soon as you show up the girl drags you behind a bookshelf and begs you to fuck her. You comply, cum inside of her and she returns to her desk, while you just keep on standing there, confused and speechless.{/size}"
+    ]
 
-    ### RANDOM ###
-    $ random_home = [
-        "{size=-2}You return home. The house is empty. You decide to play some video games till the evening.{/size}",
-        "{size=-2}You return home. The house is empty. You decide to watch an adult movie in the living room.{/size}",
-        "{size=-2}You return home. Your father is home early. You decide to go for a jog to avoid his awkward questions about your personal life.{/size}",
-        "{size=-2}You return home. Your stepmother is home early. You listen to her going on and on about something trivial and wonder why your father decided to marry her.{/size}",
-        "{size=-2}You return home. The house is empty. You decide to use this precious moment of solitude to take a nap.{/size}"
-     ]
+# Random
+define random_home = [
+    "{size=-2}You return home. The house is empty. You decide to play some video games till the evening.{/size}",
+    "{size=-2}You return home. The house is empty. You decide to watch an adult movie in the living room.{/size}",
+    "{size=-2}You return home. Your father is home early. You decide to go for a jog to avoid his awkward questions about your personal life.{/size}",
+    "{size=-2}You return home. Your stepmother is home early. You listen to her going on and on about something trivial and wonder why your father decided to marry her.{/size}",
+    "{size=-2}You return home. The house is empty. You decide to use this precious moment of solitude to take a nap.{/size}"
+    ]
 
-    $ random_school = [
-        "{size=-2}You go to the school stadium and relax on the bleachers, while you watch cheerleaders practice in the distance...{/size}",
-        "{size=-2}You sneak to your secret place: the school building's rooftop and watch heavy clouds creep closer slowly high above, hoping that it's gonna rain tonight.{/size}",
-        "{size=-2}You roam through the deserted school hallways and run into the janitor. He gives you the stink eye and goes on about his business. You head home.{/size}" ,
-        "{size=-2}You buy a chocolate bar from a vending machine, then sneak into one of the empty classrooms and spend a couple of hours with reading one of your favorite sci-fi novels.{/size}",
-        "{size=-2}You roam through the deserted school hallways for a while. It's starting to rain. Your stepsister Shea is terrified of thunder so You hope for a stormy night.{/size}"
-     ]
+define random_school = [
+    "{size=-2}You go to the school stadium and relax on the bleachers, while you watch cheerleaders practice in the distance...{/size}",
+    "{size=-2}You sneak to your secret place: the school building's rooftop and watch heavy clouds creep closer slowly high above, hoping that it's gonna rain tonight.{/size}",
+    "{size=-2}You roam through the deserted school hallways and run into the janitor. He gives you the stink eye and goes on about his business. You head home.{/size}" ,
+    "{size=-2}You buy a chocolate bar from a vending machine, then sneak into one of the empty classrooms and spend a couple of hours with reading one of your favorite sci-fi novels.{/size}",
+    "{size=-2}You roam through the deserted school hallways for a while. It's starting to rain. Your stepsister Shea is terrified of thunder so You hope for a stormy night.{/size}"
+    ]
 
-    $ random_library = [
-        "{size=-2}You head towards the school library and notice a man in a black suit near the entrance, half expecting him to prevent you from entering, but he ignores you.{/size}",
-        "{size=-2}You spend the rest of the day at the school library, read your sci-fi book, take a nap, buy candy from the vending machine and then read some more. Life is great!{/size}",
-        "{size=-2}You browse through ancient-looking bookshelves, hoping to stumble on a long forgotten book of spells or something, but You just get bored soon and decide to head home.{/size}",
-        "{size=-2}The library is deserted, so You hide behind a bookshelf and jerk off while imagining Ms.Stevens giving a lecture in her underwear.{/size}",
-        "{size=-2}You hear voices and hide behind a bookshelf. From there you see one of the cheerleader girls making out with two of the jocks at once, so You decide to leave before you get in trouble.{/size}"
-     ]
+define random_library = [
+    "{size=-2}You head towards the school library and notice a man in a black suit near the entrance, half expecting him to prevent you from entering, but he ignores you.{/size}",
+    "{size=-2}You spend the rest of the day at the school library, read your sci-fi book, take a nap, buy candy from the vending machine and then read some more. Life is great!{/size}",
+    "{size=-2}You browse through ancient-looking bookshelves, hoping to stumble on a long forgotten book of spells or something, but You just get bored soon and decide to head home.{/size}",
+    "{size=-2}The library is deserted, so You hide behind a bookshelf and jerk off while imagining Ms.Stevens giving a lecture in her underwear.{/size}",
+    "{size=-2}You hear voices and hide behind a bookshelf. From there you see one of the cheerleader girls making out with two of the jocks at once, so You decide to leave before you get in trouble.{/size}"
+    ]
 
-    return
-
+# Book reading
 label waifu:
     $ renpy.say("\"Chapter [Dear_Wifu_ITEM.progress]\"", waifu_chapters[Dear_Wifu_ITEM.progress-1])
     if Dear_Wifu_ITEM.progress < 20:

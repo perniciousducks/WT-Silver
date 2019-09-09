@@ -1,4 +1,5 @@
-init python:    
+init python:
+
     def get_character_object(key):
         return character_list.get(key)
             
@@ -17,16 +18,17 @@ init python:
         return __import__('ast').literal_eval(txt)
             
     class outfit_class(object):
-        name = None
-        price = 0
-        desc = ""
-        unlocked = False
-        group = []
-        cached = False
-        
-        sprite = "empty"
-        
+       
         def __init__(self, **kwargs):
+            self.name = None
+            self.price = 0
+            self.desc = ""
+            self.unlocked = False
+            self.group = []
+            self.cached = False
+            
+            self.sprite = "empty"
+
             self.__dict__.update(**kwargs)
             
             if self.name == None:
@@ -116,7 +118,7 @@ init python:
                 
         def clone(self):
             clothes = []
-            clothing = get_character_object(active_girl).clothing
+            clothing = get_character_object(self.group[0].char).clothing
             for key in clothing:
                 if not clothing[key][0] == None:
                     clothes.append(clothing[key][0].clone())
@@ -192,42 +194,43 @@ init python:
             
             
     class cloth_class(object):
-        char = None # astoria, cho, hermione, luna, susan, tonks
-        category = None
-        subcat = None
-        type = None
-        id = None
-        layers = None
-        color = []
-        color_default = []
-        skinlayer = "characters/dummy.png"
-        extralayer = "characters/dummy.png"
-        overlayer = "characters/dummy.png"
-        outline = None
-        unlocked = True
-        cloned = False
-        cached = False
-        
-        bodyfix = None
-        incompatible = None
-        
-        armfix = False
-        armfix_L = []
-        armfix_Lx = ""
-        armfix_R = []
-        armfix_Rx = ""
-        
-        sprite_ico = None
 
-        name = ""
-        desc = ""
-        whoring = 0
-        
-        pose = ""
-
-        imagepath = ""
-        
         def __init__(self, **kwargs):
+            self.char = None # astoria, cho, hermione, luna, susan, tonks
+            self.category = None
+            self.subcat = None
+            self.type = None
+            self.id = None
+            self.layers = None
+            self.color = []
+            self.color_default = []
+            self.skinlayer = "characters/dummy.png"
+            self.extralayer = "characters/dummy.png"
+            self.overlayer = "characters/dummy.png"
+            self.outline = None
+            self.unlocked = True
+            self.cloned = False
+            self.cached = False
+            
+            self.bodyfix = None
+            self.incompatible = None
+            
+            self.armfix = False
+            self.armfix_L = []
+            self.armfix_Lx = ""
+            self.armfix_R = []
+            self.armfix_Rx = ""
+            
+            self.sprite_ico = None
+
+            self.name = ""
+            self.desc = ""
+            self.whoring = 0
+            
+            self.pose = ""
+
+            self.imagepath = ""
+
             self.__dict__.update(**kwargs)
             
             if self.char == None:
@@ -487,25 +490,26 @@ init python:
             return self.sprite_ico.get_image()
             
     class char_class(object):
-        char = None
-        
-        cached = False
-        cache_override = False
-        
-        body = {}
-        face = {}
-        clothing = {}
-        clothing_dictlist = {}
-        outfits = []
-        other = {}
-        
-        incompatible_wardrobe = []
-        
-        pose = ""
-        
-        sprite = "empty"
-        
+
         def __init__(self, **kwargs):
+            self.char = None
+            
+            self.cached = False
+            self.cache_override = False
+            
+            self.body = {}
+            self.face = {}
+            self.clothing = {}
+            self.clothing_dictlist = {}
+            self.outfits = []
+            self.other = {}
+            
+            self.incompatible_wardrobe = []
+            
+            self.pose = ""
+            
+            self.sprite = "empty"
+
             self.__dict__.update(**kwargs)
             
             if self.char == None:

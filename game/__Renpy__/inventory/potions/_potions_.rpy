@@ -1,4 +1,226 @@
+default potion_scene_11_progress = 0
 
+# base potions:
+# Polyjuice potion (Luna, Cat, Lamia)
+# Expanding Elixir (Breast, Ass)
+# Moreish mead (cum)
+# Transparent tincture (Transparency potion)
+# Coloring concoction (hair colors)
+
+# Cum addiction = Moreish mead? + wormwood + your cum
+# Ass expansion = Expanding Elixir + knotgrass
+# Breast expansion = Expanding Elixir + Root of aconite
+# Cat potion = Polyjuice + Cat hair
+# Luna potion = Polyjuice + Luna's hair
+# Lamia potion = Polyjuice + Basilisk scale
+# Transparency potion = Transparent tincture + Niffler's fancy
+
+# Cum addiction: wormwood+your cum (jerk off into it)
+# Ass expansion: knotgrass
+# Breast expansion: Root of aconite
+# Luna potion: Luna's hair
+# Transparency potion:  Niffler's fancy
+# Lamia potion: Basilisk scale
+
+
+# wormwood = forbidden forest
+# knotgrass = ?
+# root_of_aconite =?
+# cat_hair
+# luna_hair = brush from room?
+# basilisk_scale = ?
+
+
+# all the metadata for the objects is stored statically any information
+# that needs to be persistent is stored in a separate known dict value
+default potion_lib = potion_item_library(
+    lib = [
+        potion_ingredient(
+            id = "ing_wormwood",
+            name = "Wormwood",
+            effect = "",
+            description = "Wormwood is sometimes found in the forbidden forest.",
+            picture = ""
+        ),
+        potion_ingredient(
+            id = "ing_knotgrass",
+            name = "Knotgrass",
+            effect = "",
+            description = "You can sometimes find Knotgrass by the forbidden forest.",
+            picture = ""
+        ),
+        potion_ingredient(
+            id = "ing_aconite_root",
+            name = "Root of Aconite",
+            effect = "",
+            description = "Root of Aconite can be found down by the lake.",
+            picture = ""
+        ),
+        potion_ingredient(
+            id = "ing_niffler_fancy",
+            name = "Niffler's fancy",
+            effect = "",
+            description = "Hmm... I think I heard that it's found by the lake.",
+            picture = ""
+        ),
+        potion_ingredient(
+            id = "ing_luna_hair",
+            name = "Luna's Hair",
+            effect = "",
+            description = "The hair of Luna Lovegood.",
+            picture = ""
+        ),
+        potion_ingredient(
+            id = "ing_cat_hair",
+            name = "Cat Hair",
+            effect = "",
+            description = "The hair of a common cat.",
+            picture = ""
+        ),
+        potion_ingredient(
+            id = "ing_basilisk_scale",
+            name = "Basilisk Scale",
+            effect = "",
+            description = "The scale of what appears to be a large snake.",
+            picture = ""
+        ),
+        silver_potion(
+            id = "p_transparent_tincture",
+            cost = 20,
+            whoring_rec = 3,
+            name = "Transparent Tincture",
+            effect = "",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_polyjuice_potion",
+            cost = 40,
+            whoring_rec = 5,
+            name = "Polyjuice Potion",
+            effect = "",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_expanding_elixir",
+            cost = 30,
+            whoring_rec = 8,
+            name = "Expanding Elixir",
+            effect = "",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_imperius_potion",
+            cost = 45,
+            whoring_rec = 14,
+            name = "Imperius Potion",
+            effect = "",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_moreish_mead",
+            cost = 60,
+            whoring_rec = 14,
+            name = "Moreish Mead",
+            effect = "",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_cum_addiction",
+            ingredients = ["ing_wormwood","p_moreish_mead"],
+            name = "Cum Addiction Potion",
+            effect = "Cum Addiction",
+            start_label = "potion_scene_3_1_1",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_ass_expansion",
+            ingredients = ["ing_knotgrass","p_expanding_elixir"],
+            name = "Ass Expansion Potion",
+            effect = "Ass Expansion",
+            start_label = "potion_scene_2_2",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_breast_expansion",
+            ingredients = ["ing_aconite_root","p_expanding_elixir"],
+            name = "Breast Expansion Potion",
+            effect = "Breast Expansion",
+            start_label = "potion_scene_2_1_1",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_cat_transformation",
+            ingredients = ["ing_cat_hair","p_polyjuice_potion"],
+            name = "Cat Transformation Potion",
+            effect = "Cat Ears",
+            start_label = "potion_scene_1_1_1",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_luna_transformation",
+            ingredients = ["ing_luna_hair","p_polyjuice_potion"],
+            name = "Luna Transformation Potion",
+            effect = "Luna Potion",
+            start_label = "potion_scene_1_2",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_lamia_transformation",
+            ingredients = ["ing_basilisk_scale","p_polyjuice_potion"],
+            name = "Lamia Transformation Potion",
+            start_label = "potion_scene_1_3",
+            effect = "Snek",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_transparency",
+            ingredients = ["ing_niffler_fancy","p_transparent_tincture"],
+            name = "Transparency Potion",
+            effect = "Transparent Clothes",
+            start_label = "potion_scene_4",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_hypno",
+            ingredients = ["ing_aconite_root","p_imperius_potion"],
+            name = "Hypno Potion",
+            effect = "Hypno Potion",
+            start_label = "potion_scene_3_3_1",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_clone",
+            ingredients = ["p_polyjuice_potion","p_imperius_potion"],
+            name = "Clone Potion",
+            effect = "Clone Potion",
+            start_label = "potion_scene_1_4",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_milk_potion",
+            name = "Lactantium",
+            effect = "Lactantium",
+            start_label = "potion_scene_11",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_veritaserum",
+            name = "Veritaserum",
+            effect = "",
+            description = ""
+        ),
+        silver_potion(
+            id = "p_voluptatem",
+            name = "Voluptatem",
+            effect = "Voluptatem",
+            start_label = "potion_scene_3_4_1",
+            description = ""
+        )
+    ]
+)
+
+default potion_inv = player_potion_invintory()
+default p_inv = {} # this stores the id and quantity of items the player has persistently
 
 ### Potions Room ###
 
@@ -11,245 +233,6 @@ screen potions_room():
         add "images/rooms/_bg_/corridor.png"
 
     zorder 0
-
-
-
-
-label __init_variables:
-
-    if not hasattr(renpy.store,'potion_scene_11_progress'): #important!
-        $ potion_scene_11_progress = 0
-
-    # base potions:
-    # Polyjuice potion (Luna, Cat, Lamia)
-    # Expanding Elixir (Breast, Ass)
-    # Moreish mead (cum)
-    # Transparent tincture (Transparency potion)
-    # Coloring concoction (hair colors)
-
-    # Cum addiction = Moreish mead? + wormwood + your cum
-    # Ass expansion = Expanding Elixir + knotgrass
-    # Breast expansion = Expanding Elixir + Root of aconite
-    # Cat potion = Polyjuice + Cat hair
-    # Luna potion = Polyjuice + Luna's hair
-    # Lamia potion = Polyjuice + Basilisk scale
-    # Transparency potion = Transparent tincture + Niffler's fancy
-
-    # Cum addiction: wormwood+your cum (jerk off into it)
-    # Ass expansion: knotgrass
-    # Breast expansion: Root of aconite
-    # Luna potion: Luna's hair
-    # Transparency potion:  Niffler's fancy
-    # Lamia potion: Basilisk scale
-
-
-    # wormwood = forbidden forest
-    # knotgrass = ?
-    # root_of_aconite =?
-    # cat_hair
-    # luna_hair = brush from room?
-    # basilisk_scale = ?
-
-
-    # all the metadata for the objects is stored statically any information
-    # that needs to be persistent is stored in a separate known dict value
-    $ potion_lib = potion_item_library(
-        lib = [
-            potion_ingredient(
-                id = "ing_wormwood",
-                name = "Wormwood",
-                effect = "",
-                description = "Wormwood is sometimes found in the forbidden forest.",
-                picture = ""
-            ),
-            potion_ingredient(
-                id = "ing_knotgrass",
-                name = "Knotgrass",
-                effect = "",
-                description = "You can sometimes find Knotgrass by the forbidden forest.",
-                picture = ""
-            ),
-            potion_ingredient(
-                id = "ing_aconite_root",
-                name = "Root of Aconite",
-                effect = "",
-                description = "Root of Aconite can be found down by the lake.",
-                picture = ""
-            ),
-            potion_ingredient(
-                id = "ing_niffler_fancy",
-                name = "Niffler's fancy",
-                effect = "",
-                description = "Hmm... I think I heard that it's found by the lake.",
-                picture = ""
-            ),
-            potion_ingredient(
-                id = "ing_luna_hair",
-                name = "Luna's Hair",
-                effect = "",
-                description = "The hair of Luna Lovegood.",
-                picture = ""
-            ),
-            potion_ingredient(
-                id = "ing_cat_hair",
-                name = "Cat Hair",
-                effect = "",
-                description = "The hair of a common cat.",
-                picture = ""
-            ),
-            potion_ingredient(
-                id = "ing_basilisk_scale",
-                name = "Basilisk Scale",
-                effect = "",
-                description = "The scale of what appears to be a large snake.",
-                picture = ""
-            ),
-
-
-            silver_potion(
-                id = "p_transparent_tincture",
-                cost = 20,
-                whoring_rec = 3,
-                name = "Transparent Tincture",
-                effect = "",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_polyjuice_potion",
-                cost = 40,
-                whoring_rec = 5,
-                name = "Polyjuice Potion",
-                effect = "",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_expanding_elixir",
-                cost = 30,
-                whoring_rec = 8,
-                name = "Expanding Elixir",
-                effect = "",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_imperius_potion",
-                cost = 45,
-                whoring_rec = 14,
-                name = "Imperius Potion",
-                effect = "",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_moreish_mead",
-                cost = 60,
-                whoring_rec = 14,
-                name = "Moreish Mead",
-                effect = "",
-                description = ""
-            ),
-
-            silver_potion(
-                id = "p_cum_addiction",
-                ingredients = ["ing_wormwood","p_moreish_mead"],
-                name = "Cum Addiction Potion",
-                effect = "Cum Addiction",
-                start_label = "potion_scene_3_1_1",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_ass_expansion",
-                ingredients = ["ing_knotgrass","p_expanding_elixir"],
-                name = "Ass Expansion Potion",
-                effect = "Ass Expansion",
-                start_label = "potion_scene_2_2",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_breast_expansion",
-                ingredients = ["ing_aconite_root","p_expanding_elixir"],
-                name = "Breast Expansion Potion",
-                effect = "Breast Expansion",
-                start_label = "potion_scene_2_1_1",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_cat_transformation",
-                ingredients = ["ing_cat_hair","p_polyjuice_potion"],
-                name = "Cat Transformation Potion",
-                effect = "Cat Ears",
-                start_label = "potion_scene_1_1_1",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_luna_transformation",
-                ingredients = ["ing_luna_hair","p_polyjuice_potion"],
-                name = "Luna Transformation Potion",
-                effect = "Luna Potion",
-                start_label = "potion_scene_1_2",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_lamia_transformation",
-                ingredients = ["ing_basilisk_scale","p_polyjuice_potion"],
-                name = "Lamia Transformation Potion",
-                start_label = "potion_scene_1_3",
-                effect = "Snek",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_transparency",
-                ingredients = ["ing_niffler_fancy","p_transparent_tincture"],
-                name = "Transparency Potion",
-                effect = "Transparent Clothes",
-                start_label = "potion_scene_4",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_hypno",
-                ingredients = ["ing_aconite_root","p_imperius_potion"],
-                name = "Hypno Potion",
-                effect = "Hypno Potion",
-                start_label = "potion_scene_3_3_1",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_clone",
-                ingredients = ["p_polyjuice_potion","p_imperius_potion"],
-                name = "Clone Potion",
-                effect = "Clone Potion",
-                start_label = "potion_scene_1_4",
-                description = ""
-            ),
-
-
-            silver_potion(
-                id = "p_milk_potion",
-                name = "Lactantium",
-                effect = "Lactantium",
-                start_label = "potion_scene_11",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_veritaserum",
-                name = "Veritaserum",
-                effect = "",
-                description = ""
-            ),
-            silver_potion(
-                id = "p_voluptatem",
-                name = "Voluptatem",
-                effect = "Voluptatem",
-                start_label = "potion_scene_3_4_1",
-                description = ""
-            )
-        ]
-    )
-
-
-    $ potion_inv = player_potion_invintory()
-    if not hasattr(renpy.store,'p_inv'): #important!
-        $ p_inv = {} # this stores the id and quantity of items the player has persistently
-
-    return
 
 label potions_room:
     show screen blkfade

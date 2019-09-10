@@ -27,13 +27,21 @@ label astoria_wardrobe_init:
             astoria_cloth_schoolskirt3 = cloth_class(char="astoria", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_3", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=8)
             astoria_cloth_schoolskirt4 = cloth_class(char="astoria", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_4", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=12)
             
+            # Bras
+            astoria_cloth_basicbra1 = cloth_class(char="astoria", category="bras", subcat="bras", type="bra", id="basic_bra_1", layers=2, color=[[213, 62, 65, 255], [234, 236, 234, 255]])
+            astoria_cloth_basicbra2 = cloth_class(char="astoria", category="bras", subcat="bras", type="bra", id="basic_bra_2", layers=1, color=[[213, 62, 65, 255]])
+            
+            # Panties
+            astoria_cloth_basicpanties1 = cloth_class(char="astoria", category="panties", subcat="panties", type="panties", id="basic_panties_1", layers=2, color=[[213, 62, 65, 255], [234, 236, 234, 255]])
+            astoria_cloth_basicpanties2 = cloth_class(char="astoria", category="panties", subcat="panties", type="panties", id="basic_panties_2", layers=1, color=[[213, 62, 65, 255]])
+            
             # Legwear
             astoria_cloth_pantyhose1 = cloth_class(char="astoria", category="legwear", subcat="stockings", type="stockings", id="pantyhose", layers=1, color=[[190, 146, 129, 255]])
             
             # Temporal save
             astoria_outfit_last = outfit_class(name="Last worn items", group=[astoria_hair_base])
             
-            astoria_outfit_custom = outfit_class(name="Default", group=[astoria_hair_base, astoria_cloth_schoolskirt1, astoria_cloth_topschool1], unlocked=True) # TODO: Add underwear once its been drawn
+            astoria_outfit_custom = outfit_class(name="Default", group=[astoria_hair_base, astoria_cloth_schoolskirt1, astoria_cloth_topschool1, astoria_cloth_basicbra1, astoria_cloth_basicpanties1], unlocked=True) # TODO: Add underwear once its been drawn
         
             ################
             #              #

@@ -47,7 +47,13 @@ label t_wardrobe(return_label, char_label):
     else:
         $ btn_hover = "#7d75aa40"
         
-    default bg_color_wardrobe = "#7d756e"
+    default bg_color_wardrobe_day = "#e8c97e"
+    default bg_color_wardrobe_night = "#7d756e"
+    
+    if daytime and not persistent.nightmode:
+        $ bg_color_wardrobe = bg_color_wardrobe_day
+    else:
+        $ bg_color_wardrobe = bg_color_wardrobe_night
     
     $ items_shown = 20
     $ current_page = 0
@@ -428,10 +434,10 @@ screen t_wardrobe_menuitem(xx, yy):
                 # Whoring req
                 if config.developer:
                     text "{color=#b20000}"+str(menu_items[i].whoring)+"{/color}" size 20 xpos 15+90*col ypos 180+90*row outlines [ (1, "#000", 0, 0) ]
-                    if menu_items[i].incompatible != None:
-                        textbutton "{color=#b20000}!{/color}" background None text_size 20 xpos 64+90*col ypos 180+90*row text_outlines [ (1, "#000", 0, 0) ] hovered SetVariable("tooltip", "Incompatible with:\n"+"\n".join(str(k) for k in menu_items[i].incompatible)+"\n{size=-4}{color=#009999}Above items will be unequipped.{/color}{/size}") unhovered SetVariable("tooltip", None) action NullAction()
+                if menu_items[i].incompatible != None:
+                    textbutton "{color=#b20000}!{/color}" background None text_size 20 xpos 64+90*col ypos 180+90*row text_outlines [ (1, "#000", 0, 0) ] hovered SetVariable("tooltip", "Incompatible with:\n"+"\n".join(str(k) for k in menu_items[i].incompatible)+"\n{size=-4}{color=#009999}Above items will be unequipped.{/color}{/size}") unhovered SetVariable("tooltip", None) action NullAction()
                         
-                # Check current item compatibility, if fails forbit from equipping
+                # Check current item compatibility, if fails forbid equipping
                 if menu_items[i].type in char_active.incompatible_wardrobe:
                     textbutton "{color=#b20000}X{/color}" background None text_size 20 xpos 64+90*col ypos 180+90*row text_outlines [ (1, "#000", 0, 0) ] hovered SetVariable("tooltip", "Incompatible with your current setup.") unhovered SetVariable("tooltip", None) action NullAction()
                     

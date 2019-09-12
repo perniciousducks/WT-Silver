@@ -29,7 +29,7 @@ default tonks_cloth_auror_coat = cloth_class(char="tonks", category="tops", subc
 
 # Temporal save
 default tonks_outfit_last   = outfit_class(name="Last worn items", group=[tonks_hair_base])
-default tonks_outfit_custom = outfit_class(name="Default", group=[tonks_hair_base, tonks_cloth_leggings_hole, tonks_cloth_top_auror, tonks_cloth_choker_beads, tonks_cloth_gloves_auror, tonks_cloth_auror_coat], unlocked=True)
+default tonks_outfit_custom = outfit_class(name="Default", group=[tonks_hair_base.clone(), tonks_cloth_leggings_hole.clone(), tonks_cloth_top_auror.clone(), tonks_cloth_choker_beads.clone(), tonks_cloth_gloves_auror.clone(), tonks_cloth_auror_coat.clone()], unlocked=True)
         
 label default_tonks_class_init:
 python:

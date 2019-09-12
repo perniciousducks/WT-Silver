@@ -237,7 +237,7 @@ screen ui_points():
             if toggle_ui_lock and renpy.get_screen("main_room_menu") or renpy.get_screen("room_of_requirement_menu") or renpy.get_screen("floor_7th_menu"):
                 imagebutton:
                     idle "interface/topbar/hover_zone.png"
-                    hovered [SetVariable("toggle_points", True), SetVariable("tooltip", "Toggle banners style")]
+                    hovered [SetVariable("toggle_points", True), SetVariable("tooltip", "House Points\n{size=-6}Click to toggle raw points display{/size}")]
                     unhovered [SetVariable("toggle_points", False), SetVariable("tooltip", None)]
                     action ToggleVariable("persistent.toggle_points", True, False)
                     activate_sound "sounds/click3.mp3"
@@ -285,27 +285,25 @@ screen ui_menu():
     frame:
         style "empty"
         ypos 34
+        xsize 102
+        ysize 204
+        
         add "interface/topbar/"+str(interface_color)+"/menu.png"
+        
         vbox:
-            style_group "mm"
-            if renpy.variant('android'):
-                ypos 10
-                spacing 5
-                xpos 5
-            else:
-                ypos 20
-                xpos 5
-            textbutton "Save" action ShowMenu("save") background #000
-            textbutton "Load" action ShowMenu("load") background #000
-            text "" # space
+            xanchor 0.5
+            xalign 0.5
+            ypos 15
+            textbutton "Save" action ShowMenu("save") background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
+            textbutton "Load" action ShowMenu("load") background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
             if cheats_active and game_difficulty <= 2 and day > 1:
-                textbutton "{size=-11}Cheats{/size}" action [SetVariable("toggle_menu", False), Jump("cheats")] background #000
+                textbutton "Cheats" action [SetVariable("toggle_menu", False), Jump("cheats")] background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
             if day != 1 and renpy.variant('android'):
-                textbutton "{size=-11}PrEfErEnCeS{/size}" action ShowMenu("preferences") background #000
+                textbutton "Preferences" action ShowMenu("preferences") background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
             if day != 1 and persistent.game_complete:
-                textbutton "{size=-11}Gallery{/size}" action [SetVariable("toggle_menu", False), Jump("scene_gallery")] background #000
+                textbutton "Gallery" action [SetVariable("toggle_menu", False), Jump("scene_gallery")] background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
             if day != 1:
-                textbutton "{size=-11}Decorate{/size}" action [SetVariable("toggle_menu", False), Jump("decorate_room_menu")] background #000
+                textbutton "Decorate" action [SetVariable("toggle_menu", False), Jump("decorate_room_menu")] background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
 
             #if day != 1 and config.developer:
             #    textbutton "{size=-11}Show Chars{/size}" action [SetVariable("toggle_menu", False), Jump("summon_characters")] background #000

@@ -17,13 +17,31 @@ default astoria_cloth_schoolskirt2 = cloth_class(char="astoria", category="botto
 default astoria_cloth_schoolskirt3 = cloth_class(char="astoria", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_3", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=8)
 default astoria_cloth_schoolskirt4 = cloth_class(char="astoria", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_4", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=12)
 
+# Bras
+default astoria_cloth_basicbra1 = cloth_class(char="astoria", category="bras", subcat="bras", type="bra", id="basic_bra_1", layers=2, color=[[213, 62, 65, 255], [234, 236, 234, 255]])
+default astoria_cloth_basicbra2 = cloth_class(char="astoria", category="bras", subcat="bras", type="bra", id="basic_bra_2", layers=1, color=[[213, 62, 65, 255]])
+
+# Panties
+default astoria_cloth_basicpanties1 = cloth_class(char="astoria", category="panties", subcat="panties", type="panties", id="basic_panties_1", layers=2, color=[[213, 62, 65, 255], [234, 236, 234, 255]])
+default astoria_cloth_basicpanties2 = cloth_class(char="astoria", category="panties", subcat="panties", type="panties", id="basic_panties_2", layers=1, color=[[213, 62, 65, 255]])
+
 # Legwear
 default astoria_cloth_pantyhose1 = cloth_class(char="astoria", category="legwear", subcat="stockings", type="stockings", id="pantyhose", layers=1, color=[[190, 146, 129, 255]])
 
 # Temporal save
 default astoria_outfit_last = outfit_class(name="Last worn items", group=[astoria_hair_base])
 
-default astoria_outfit_custom = outfit_class(name="Default", group=[astoria_hair_base, astoria_cloth_schoolskirt1, astoria_cloth_topschool1], unlocked=True)
+default astoria_outfit_custom = outfit_class(
+    name = "Default",
+    group = [
+        astoria_hair_base.clone(),
+        astoria_cloth_schoolskirt1.clone(),
+        astoria_cloth_topschool1.clone(),
+        astoria_cloth_basicbra1.clone(),
+        astoria_cloth_basicpanties1.clone()
+    ],
+    unlocked=True
+)
 
 #TODO Add underwear once it's been drawn
         
@@ -67,10 +85,10 @@ python:
             "robe":       [None, 21, 0, 0, False],
             "gloves":     [None, 20, 0, 0, False],
             "top":        [astoria_cloth_topschool1, 19, 0, 0, False],
-            "bra":        [None, 18, 0, 0, False],
+            "bra":        [astoria_cloth_basicbra1, 18, 0, 0, False],
             "bottom":     [astoria_cloth_schoolskirt1, 16, 0, 0, False],
             "garterbelt": [None, 15, 0, 0, False],
-            "panties":    [None, 14, 0, 0, False],
+            "panties":    [astoria_cloth_basicpanties1, 14, 0, 0, False],
             "stockings":  [astoria_cloth_pantyhose1, 13, 0, 0, False],
             "buttplug":   [None, 0, 0, 0, False],
             "pubes":      [None, 11, 0, 0, False],

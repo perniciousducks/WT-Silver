@@ -120,7 +120,7 @@ default cho_outfit_cheerleader  = outfit_class(name="Cheerleader", group=[cho_ha
 
 # Temporal save
 default cho_outfit_last   = outfit_class(name="Last worn items", group=[cho_hair_ponytail])
-default cho_outfit_custom = outfit_class(name="Default", group=[cho_hair_ponytail, cho_cloth_topschool1, cho_cloth_schoolskirt1, cho_cloth_basicbra1, cho_cloth_basicpanties1], unlocked=True) # Don't change
+default cho_outfit_custom = outfit_class(name="Default", group=[cho_hair_ponytail.clone(), cho_cloth_topschool1.clone(), cho_cloth_schoolskirt1.clone(), cho_cloth_basicbra1.clone(), cho_cloth_basicpanties1.clone()], unlocked=True) # Don't change
 
 label default_cho_class_init:
 python:

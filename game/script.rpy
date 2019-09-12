@@ -35,6 +35,10 @@ label temporary_post_default_init:
 # Turns commentaries on/off in gallery
 default commentaries = False
 
+default txt_style = "night_text"
+default btn_style = "nightbtn"
+default btn_hover = "#7d75aa40"
+
 # Menu placement
 default menu_x = 0.5
 default menu_y = 0.5
@@ -58,28 +62,6 @@ define flashblood = Fade(0.2, 0.0, 0.8, color='#f02424')
 define kissiris = Fade(0.2, 0.0, 0.8, color='#fb8dc8')
 define black_magic = Fade(0.2, 0.0, 0.5, color='#7f3590')
 define blackfade = Fade(0.9, 0.5, 1, color='#000000')
-
-# Music
-define ms_arabian_nights = "music/Arabian_Nights.mp3"
-define ms_bushwick = "music/Bushwick_Tarantella_Loop.mp3"
-define ms_croft_manor = "music/Croft_Manor.mp3"
-define ms_dice_game = "music/Dice_Game.mp3"
-define ms_gtkm = "music/Going_to_Kill_Me.mp3"
-define ms_gorilla = "music/Gorilla_Theme.mp3"
-define ms_india = "music/India's_Different.mp3"
-define ms_jafar = "music/Jafar's_Hour.mp3"
-define ms_kabul = "music/Kabul_Flight_Jumpstart.mp3"
-define ms_manatees = "music/Music for Manatees.mp3"
-define ms_marketplace = "music/Marketplace.mp3"
-define ms_outlaw_star = "music/Outlaw_Star_Freedom.mp3"
-define ms_ozone = "music/Ozone.ogg"
-define ms_sleep_walking = "music/Sleep_Walking.mp3"
-define ms_tension = "music/Tension.mp3"
-define ms_the_calm_before = "music/The_Calm_Before.mp3"
-define ms_the_eastern_wind = "music/The_Eastern_Wind.mp3"
-define ms_the_kiss = "music/The_Kiss.mp3"
-define ms_the_xfiles = "music/The_X-Files.mp3"
-define ms_vision = "music/Vision.mp3"
 
 # Sounds
 define sd_boing1 = "sounds/boing.mp3"

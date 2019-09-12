@@ -16,7 +16,7 @@ label stats_menu(xx=150, yy=90):
         $ btn_hover = "#edc48240"
     else:
         $ btn_hover = "#7d75aa40"
-
+        
     call update_stats
 
     # Stats dictionary
@@ -153,9 +153,9 @@ screen stats_menuitem(xx, yy):
         text "Characters" size 22 xalign 0.5 ypos 65
 
         hbox:
-            pos (24, 70)
-            textbutton "Overview" text_size 12 action [Return(["subcat", "overview"]), SelectedIf(current_subcategory=="overview")]
-            textbutton "Details" text_size 12 action [Return(["subcat", "details"]), SelectedIf(current_subcategory=="details")]
+            pos (24, 65)
+            textbutton "Overview" text_size 12 action [Return(["subcat", "overview"]), SelectedIf(current_subcategory=="overview")] background None style btn_style text_style txt_style
+            textbutton "Details" text_size 12 action [Return(["subcat", "details"]), SelectedIf(current_subcategory=="details")] background None style btn_style text_style txt_style
 
         # Character sprites
         frame:

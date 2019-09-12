@@ -18,7 +18,7 @@ init python:
         return __import__('ast').literal_eval(txt)
             
     class outfit_class(object):
-       
+        
         def __init__(self, **kwargs):
             self.name = None
             self.price = 0
@@ -28,7 +28,6 @@ init python:
             self.cached = False
             
             self.sprite = "empty"
-
             self.__dict__.update(**kwargs)
             
             if self.name == None:
@@ -230,7 +229,7 @@ init python:
             self.pose = ""
 
             self.imagepath = ""
-
+            
             self.__dict__.update(**kwargs)
             
             if self.char == None:
@@ -255,7 +254,6 @@ init python:
                 for i in xrange(len(self.color), self.layers):
                     self.color.append([255, 255, 255, 255])
                     
-            self.color_default = [] # DO NOT DELETE !!!
             for i in xrange(len(self.color)):
                 self.color_default.append(self.color[i])
                 
@@ -304,7 +302,7 @@ init python:
                 character_clothes_list.append(self)
                 
             # Initialize icon crop calculations A.K.A threading A.k.A lazyload
-            layers = []
+            layers = [] # This is NOT a class variable
             for i in xrange(self.layers):
                 layers.append(self.get_imagelayer(i))
             layers.append(self.extralayer)

@@ -43,15 +43,18 @@ screen color_map(color, palette_color, cursor, cursor_h, cursor_v, alpha=True, t
                 idle im.Scale(UI_alpha_bar, 255, 30, False)
                 clicked Return("alpha_bar")
             add "interface/color_palete/"+str(interface_color)+"/cursor_v.png" xpos int(320-cursor_h) ypos 290 xanchor 0.5
-            textbutton "Alpha: " + str(int(color[3])) xpos 360 ypos 130 clicked Return(["input", "alpha"])
+            textbutton "Alpha: " + str(int(color[3])) xpos 360 ypos 130 clicked Return(["input", "alpha"]) style btn_style text_style txt_style
             
-        textbutton "Red: " + str(int(color[0])) xpos 360 ypos 25 clicked Return(["input", "red"])
-        textbutton "Green: " + str(int(color[1])) xpos 360 ypos 60 clicked Return(["input", "green"])
-        textbutton "Blue: " + str(int(color[2])) xpos 360 ypos 95 clicked Return(["input", "blue"])
+        textbutton "Red: " + str(int(color[0])) xpos 360 ypos 25 clicked Return(["input", "red"]) style btn_style text_style txt_style
+        textbutton "Green: " + str(int(color[1])) xpos 360 ypos 60 clicked Return(["input", "green"]) style btn_style text_style txt_style
+        textbutton "Blue: " + str(int(color[2])) xpos 360 ypos 95 clicked Return(["input", "blue"]) style btn_style text_style txt_style
 
         text title xalign 0.5 text_align 0.5
         
-        textbutton "Apply" xalign 1.0 yalign 1.0 clicked Return("finish")
+        hbox: 
+            xalign 1.0 yalign 1.0
+            textbutton "Cancel" xalign 1.0 yalign 1.0 clicked Return("Close") style btn_style text_style txt_style
+            textbutton "Apply" xalign 1.0 yalign 1.0 clicked Return("finish") style btn_style text_style txt_style
         
         # Add gradient based colour picker
         frame background "#fff" xsize 255 ysize 255 xpos 25 ypos 25

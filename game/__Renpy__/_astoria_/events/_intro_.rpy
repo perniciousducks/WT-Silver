@@ -967,10 +967,10 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call ast_main("That's terrible!","scream","wide","wide","L")
     call sus_main("Oh...","upset","base","worried","mid")
     call ast_main("Take your top off at least...","grin","angry","angry","L")
-    call ast_main("Don't worry Dumby, I'll make sure you get a good show!","open","closed","base","mid")
-    m "Dumby?"
-    call ast_main("Short for Dumbledore!", "annoyed", "narrow","narrow", "mid")
-    m "oh... right..."
+    call ast_main("Don't worry, [ast_genie_name], I'll make sure you get a good show!","open","closed","base","mid")
+    #m "[ast_genie_name]?"
+    #call ast_main("Short for Dumbledore!", "annoyed", "narrow","narrow", "mid")
+    #m "oh... right..."
 
     #call set_sus_top("top_2") #ADD Shirt without vest.
     #pause.5
@@ -1221,9 +1221,9 @@ label astoria_book_intro: #Tell Astoria that you have a book of spells as well a
     call ast_main("So have you finally managed to remember some cool spells?","grin","angry","angry","mid",xpos="mid",ypos="base",trans="fade")
     call ast_main("Or is remembering stuff too hard for you now?","tongue_silly","angry","angry","mid")
     m "I'll have you know that I've got a whole book full of new spells for you to learn."
-    call ast_main("Really?","happy","wide","wide","wide")
-    call ast_main("Maybe you're not so such a Dumby after all!","grin","happyCl","base","mid")
-    m "Do you want to learn them or not?"
+    #call ast_main("Really?","happy","wide","wide","wide")
+   # call ast_main("Maybe you're not so such a [ast_genie_name] after all!","grin","happyCl","base","mid")
+    m "Do you want to learn them?"
     call ast_main("Of course!","grin","base","base","mid")
     call ast_main("I had to spent the whole day listening to Mcgonagall prattle on about the importance of a transfiguration spell.", "annoyed", "angry","angry", "R")
     call ast_main("When all it did was turn a stupid rat yellow!","upset","ahegao","ahegao","ahegao")

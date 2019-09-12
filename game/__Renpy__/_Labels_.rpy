@@ -12,6 +12,7 @@ label hide_all_screens:
     call cho_chibi("hide")
     call sna_chibi("hide")
     call ton_chibi("hide")
+    call ast_chibi("hide")
     call gen_chibi("hide")
 
     #CGs

@@ -51,7 +51,7 @@ label ag_se_imperio_sb_E1_update:
     call sus_main("yes...","upset","narrow","worried","up")
     call ast_main("Good, I want you to pay attention.","open","base","base","L")
     call sus_main("...","base","narrow","base","up")
-    call ast_main("From now on you have an uncontrollable urge to show Dumby and I your boobs!","open","closed","base","mid")
+    call ast_main("From now on you have an uncontrollable urge to show [ast_genie_name] and I your boobs!","open","closed","base","mid")
     call sus_main("My boobs? Ok...","upset","narrow","worried","down")
     call ast_main("Alright, now wake up!","smile","base","base","L")
     call sus_main("I am awa--...","open","narrow","base","down")
@@ -100,14 +100,14 @@ label ag_se_imperio_sb_E1_update:
     call ctc
 
     g4 "{size=+10}Nice!{/size}"
-    call ast_main("Dumby!","scream","wide","wide","mid")
+    call ast_main("[ast_genie_name]!","scream","wide","wide","mid")
     m "What? You can't blame me for this!"
     call ast_main("Not that! You're not supposed to think they're nice!","clench","angry","angry","mid")
     call ast_main("(And stop touching yourself... Gross...)", "annoyed", "angry","angry", "R",cheeks="blush")
     m "Are they not?"
     call ast_main("{b}No!{/b} they're huge and soft and squishy and, and, and,... gross!","scream","closed","angry","mid")
     g9 "You're right about them looking huge and soft..."
-    call ast_main("Dumby!","clench","angry","angry","mid")
+    call ast_main("[ast_genie_name]!","clench","angry","angry","mid")
     call sus_main("How can you two be so mean!","upset","narrow","worried","R")
     call ast_main("Oh calm down, [ast_susan_name]!","scream","angry","angry","L")
     call sus_main("[ast_susan_name]!? What's that supposed to mean?","open","wide","worried","wide")
@@ -119,7 +119,7 @@ label ag_se_imperio_sb_E1_update:
     call nar(">You keep stroking your rock-hard cock whilst marveling at Susan's heaving chest.")
     g4 "(So big...)"
     call sus_main("...","upset","base","worried","down")
-    call ast_main("Alright, I think you're enjoying this a little too much, Dumby!", "upset","angry","angry","mid")
+    call ast_main("Alright, I think you're enjoying this a little too much, [ast_genie_name]!", "upset","angry","angry","mid")
     m "Just a little longer..."
 
     call cast_spell("imperio")
@@ -171,9 +171,9 @@ label ag_se_imperio_sb_E1_update:
     call ast_main("Besides, I better put bessy here back in her barn before people start to notice.","grin","angry","angry","L")
     call sus_main("(Bessy...?)","upset","wide","worried","wide")
     m "Alright..."
-    call ast_main("Just let me know when you're ready to read the next chapter, Dumby!","smile","narrow","narrow","mid")
+    call ast_main("Just let me know when you're ready to read the next chapter, [ast_genie_name]!","smile","narrow","narrow","mid")
     m "You got it."
-    call ast_main("Night, Dumby!","grin","closed","base","mid")
+    call ast_main("Night, [ast_genie_name]!","grin","closed","base","mid")
     m "Good night..."
     call ast_main("Come on Susy, go back to your room and go to sleep.","open","base","base","L")
     call sus_main("yes...","upset","narrow","worried","down")
@@ -194,7 +194,7 @@ label ag_se_imperio_sb_E1_update:
 
 label ag_se_imperio_sb_E2:
     call play_music("hermione_theme")
-    call ast_main("Are you finally ready to try out the new spell Dumby?","grin","narrow","narrow","mid",xpos="close",ypos="base",trans="fade")
+    call ast_main("Are you finally ready to try out the new spell, [ast_genie_name]?","grin","narrow","narrow","mid",xpos="close",ypos="base",trans="fade")
     m "You bet!"
     call ast_main("Awesome, I can't wait to see the look on Susan's dumb face...","grin","closed","base","mid")
     m "Let me just bring her up here."
@@ -282,7 +282,7 @@ label ag_se_imperio_sb_E2_update:
     call sus_main("Ok...","upset","narrow","base","mid")
     m "Is that all?"
     call ast_main("Shush old man, I'm not done yet!", "upset","narrow","narrow","mid")
-    call ast_main("You'll also get an uncontrollable urge to take your top off whenever you see Dumby and I together, OK?","open","closed","base","mid")
+    call ast_main("You'll also get an uncontrollable urge to take your top off whenever you see [ast_genie_name] and I together, OK?","open","closed","base","mid")
     call sus_main("yes...","upset","base","worried","down")
     m "Nice! But won't she just run away from now on?"
     call ast_main("Hmmm, you're probably right...","upset","base","worried","L")
@@ -298,11 +298,11 @@ label ag_se_imperio_sb_E2_update:
     call ast_main("Nothing Susy, Dumbledore was just explaining how your uniform wasn't up to scratch.","grin","base","base","mid")
     call sus_main("My uniform... You're right... Too many clothes...","open","narrow","worried","down")
     call sus_main("I need to take off my top...","open","base","worried","down")
-    call ast_main("Mhmm, that's right, Susy... Why don't you show old Dumby here your gross boobs...","grin","angry","angry","mid")
+    call ast_main("Mhmm, that's right, Susy... Why don't you show old Dumbledore here your gross boobs...","grin","angry","angry","mid")
     call sus_main("B-b-b-but,... he's so old.","upset","narrow","worried","L")
     call ast_main("That's right... Only a nasty slut would show their boobs to such a wrinkly old man...","grin","angry","angry","L")
     m "Hey!"
-    call ast_main("Shhh, dumby,... don't ruin my fun!","clench","angry","angry","mid")
+    call ast_main("Shhh, [ast_genie_name],... don't ruin my fun!","clench","angry","angry","mid")
     m "Fine..."
     call sus_main("I-I'm not a slut...","upset","narrow","worried","down")
     call ast_main("Well I'm sure you'll be able to keep your top on then, [ast_susan_name].","open","closed","base","mid")
@@ -333,7 +333,7 @@ label ag_se_imperio_sb_E2_update:
     call sus_main("Please sir... it's too much!","open","closed","base","mid")
     call sus_main("It's bad enough that I have to show you my breasts...","open","closed","worried","mid")
     call ast_main("Wait...","open","wide","wide","wide")
-    call ast_main("Keep going, dumby!","clench","angry","angry","mid")
+    call ast_main("Keep going, [ast_genie_name]!","clench","angry","angry","mid")
     m "What?"
     call sus_main("What?","scream","wide","base","mid")
     call ast_main("Well if bessy here hates it... Then I love it!","clench","angry","angry","L")
@@ -355,7 +355,7 @@ label ag_se_imperio_sb_E2_update:
 
     call nar(">You start to zone out the two girls argument as you focus in on Susan's heaving boosom...")
     g4 "Ugh yeah... that's it..."
-    call ast_main("You can leave once old dumby here's done.","open","closed","base","mid")
+    call ast_main("You can leave once professor here's done.","open","closed","base","mid")
     call sus_main("What? you mean I have to wait until he...","open","base","worried","mid")
     call sus_main("This is unbelievable!","scream","base","angry","mid")
     call sus_main("I'm going to report both of you to the ministry of magic!","open","closed","angry","mid")
@@ -381,7 +381,7 @@ label ag_se_imperio_sb_E2_update:
     call gen_chibi("cumming_behind_desk")
     call cum_block
     g4 "{size=+10}AHHH... YESS!!!!{/size}"
-    call ast_main("Woah... I didn't think you'd have that much in you, dumby...", "annoyed", "wide","wide", "wide")
+    call ast_main("Woah... I didn't think you'd have that much in you, [ast_genie_name]...", "annoyed", "wide","wide", "wide")
 
     hide screen susan_main
     $ susan_wear_top = True
@@ -501,7 +501,7 @@ label ag_se_imperio_sb_E3_update:
     m "Hmmm... Are you actually going to let me choose this time or are you just asking to be annoying?"
     call ast_main("Hey! I am not annoying!","scream","closed","angry","mid",trans="hpunch")
     m "Well are you going to let me choose then?"
-    call ast_main("Alright... Just don't be too gross dumby!", "upset","narrow","narrow","mid")
+    call ast_main("Alright... Just don't be too gross, [ast_genie_name]!", "upset","narrow","narrow","mid")
     call ast_main("Or boring... that'd be even worse!","upset","narrow","narrow","mid")
 
     m "Alright well, first things first..." #I'll add a menu here with more options once art assets are drawn for them
@@ -520,7 +520,7 @@ label ag_se_imperio_sb_E3_update:
     m "What?"
     call ast_main("I told you not to be boring! We already did this last time!","open","closed","base","mid")
     g9 "If this is too boring, why don't you get her to suck me off?"
-    call ast_main("Dumby! That's too gross!", "upset","narrow","narrow","mid")
+    call ast_main("[ast_genie_name]! That's too gross!", "upset","narrow","narrow","mid")
     call ast_main("I don't wanna have to see your nasty old cock!","clench","narrow","narrow","R")
     m "Ugh... Fine... What do you want to do then?"
     call ast_main("Well seeing as how you asked...","open","closed","base","mid")
@@ -528,9 +528,9 @@ label ag_se_imperio_sb_E3_update:
 
     show screen blktone
     call sus_main("yes...","upset","narrow","base","up")
-    call ast_main("I want you to crawl under Dumby's desk.","grin","base","base","L")
+    call ast_main("I want you to crawl under Dumbledore's desk.","grin","base","base","L")
     m "I thought you didn't want her to suck me off?"
-    call ast_main("Shut it, and stop being so gross, dumby!","scream","closed","angry","mid")
+    call ast_main("Shut it, and stop being so gross, [ast_genie_name]!","scream","closed","angry","mid")
     call sus_main("...","upset","narrow","base","up")
     call ast_main("Now go, [ast_susan_name]!","grin","narrow","angry","mid")
 
@@ -548,7 +548,7 @@ label ag_se_imperio_sb_E3_update:
     call ctc
 
     show screen blktone
-    call ast_main("And you're not allowed to come out until dumby covers you in his nasty goop!","open","closed","base","mid")
+    call ast_main("And you're not allowed to come out until professor covers you in his nasty goop!","open","closed","base","mid")
     sus "yes..."
     call ast_main("And you have to love it down there!", "upset","narrow","base","down")
     sus "...Love it?"
@@ -556,7 +556,7 @@ label ag_se_imperio_sb_E3_update:
     sus "I'll love it..."
     call ast_main("Good!","clench","angry","angry","angry")
     m "Isn't that a little much?"
-    call ast_main("Pfft! That's rich coming from you dumby!", "annoyed", "narrow","narrow", "mid")
+    call ast_main("Pfft! That's rich coming from you [ast_genie_name]!", "annoyed", "narrow","narrow", "mid")
     call ast_main("If it was up to you she'd be touching your nasty old wrinkly thing!", "annoyed", "narrow","narrow", "R")
     call ast_main("With her mouth!", "upset","narrow","narrow","down")
     m "I suppose you're right..."
@@ -623,7 +623,7 @@ label ag_se_imperio_sb_E3_update:
     call ast_main("It probably smells gross with all the yucky cum he shoots against that desk of his...","open","base","base","R")
     call ast_main("Not to mention his smelly old cock...", "upset","ahegao","ahegao","ahegao")
     m "Ahem..."
-    call ast_main("Shh, dumby!", "annoyed", "angry","angry", "R")
+    call ast_main("Shh, [ast_genie_name]!", "annoyed", "angry","angry", "R")
     call ast_main("So go on, Susy... tell me what it's like...","open","closed","base","mid")
 
     sus "It... It's..."
@@ -651,7 +651,7 @@ label ag_se_imperio_sb_E3_update:
     sus "Really? You mean I won't have to..."
     sus "Alright..."
     sus "{size=-5}I'm a...{/size} {size=-3}slut...{/size}"
-    call ast_main("Hmmm, I'm not sure I heard anything... What about you, dumby?", "annoyed", "base","base", "R")
+    call ast_main("Hmmm, I'm not sure I heard anything... What about you, [ast_genie_name]?", "annoyed", "base","base", "R")
     m "Ah... almost..."
     call ast_main("Go on susy... one more time...","smile","narrow","narrow","down")
     with hpunch
@@ -694,7 +694,7 @@ label ag_se_imperio_sb_E3_update:
 
     call ast_main("Oh my god! He absolutely covered you!","scream","base","base","mid",xpos="close",ypos="base")
     call sus_main("...","upset","narrow","base","L")
-    call ast_main("I didn't know you had it in you, dumby!","scream","wide","wide","wide")
+    call ast_main("I didn't know you had it in you, [ast_genie_name]!","scream","wide","wide","wide")
     call ast_main("Nice work!","open","wide","wide","mid")
     m "Thanks..."
     call ast_main("And Susy... that look suits you.","grin","angry","angry","L")
@@ -710,7 +710,7 @@ label ag_se_imperio_sb_E3_update:
     call sus_walk(action="leave", speed=2)
 
     call nar(">She turns and runs out the door, tears streaming down her face.")
-    call ast_main("ahahahahaha, that was incredible, dumby!","happy","wide","wide","mid")
+    call ast_main("ahahahahaha, that was incredible, [ast_genie_name]!","happy","wide","wide","mid")
     call ast_main("Did you see the look on that tramp's face!","grin","ahegao","ahegao","ahegao")
     m "..."
     m "Yeah..."
@@ -753,17 +753,17 @@ label ag_se_imperio_sb_E3_update:
 label hornify_spell_1: #first level hornify spell
     #Start grinding her hips in front of genie
     m "Ready to try out a brand new spell?"
-    call ast_main("Probably almost as ready as you are to see me use it, dumby!","smile","narrow","angry","mid")
+    call ast_main("Probably almost as ready as you are to see me use it, [ast_genie_name]!","smile","narrow","angry","mid")
     m "Well if it's half as exciting as what the name suggests..."
     call ast_main("Then we'll have Susan begging for your dirty old cock in no time!","grin","narrow","angry","mid")
     call ast_main("Maybe I should get a magical photo of her covered in cum!","smile","wide","wide","mid")
     call ast_main("Imagine that in the school paper!","grin","angry","angry","mid")
     m "Magic photos?"
-    call ast_main("Haven't you ever read a newspaper, Dumby? I thought that's all old people like you did!","upset","angry","angry","mid")
+    call ast_main("Haven't you ever read a newspaper, [ast_genie_name]? I thought that's all old people like you did!","upset","angry","angry","mid")
     call ast_main("I wonder if I could take it just as you shoot it all over her...","smile","wide","wide","L")
     call ast_main("Imagine that for a front page scoop!","grin","narrow","narrow","mid")
     m "I'm not sure they'd run that story some how..."
-    call ast_main("You're the headmaster aren't you, Dumby? Make them run it!","smile","angry","angry","mid")
+    call ast_main("You're the headmaster aren't you, professor? Make them run it!","smile","angry","angry","mid")
     m "Let's just focus on your magic for the moment, leave the journalism for later."
     call ast_main("Hmph!", "annoyed", "angry","angry", "R")
     call ast_main("If you want me to focus on magic then bring those boobs on legs up here so I have someone to practice on!", "annoyed", "angry","angry", "mid")
@@ -778,7 +778,7 @@ label hornify_spell_1: #first level hornify spell
     m "mmm, that I did..."
     ">The sight of Susan's milky tits rapidly cause your cock to spring to life, straining against the weight of Astoria on your lap."
     call sus_main("Ast-","open","wide","worried","mid")
-    call ast_main("Dumby! We haven't even started yet!","smile","angry","base","R")
+    call ast_main("[ast_genie_name]! We haven't even started yet!","smile","angry","base","R")
     m "Don't blame me for this, [astoria_name]!"
     call ast_main("I do! I expect you to wait until we start...", "annoyed", "happyCl","base", "R")
     call sus_main("Excuse me!","scream","worriedCl","angry","mid")
@@ -790,7 +790,7 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("IMPERIO!","scream","closed","angry","mid")
     ">With a puff of golden smoke Astoria's wand goes off, entrancing the poor redhead once more..."
     m "Hey, Isn't that the old spell?"
-    call ast_main("Of course it is Dumby! Can't you hear things at all?", "annoyed", "angry","angry", "R")
+    call ast_main("Of course it is, [ast_genie_name]! Can't you hear things at all?", "annoyed", "angry","angry", "R")
     call ast_main("I cast it because I wanna change some stuff about bessy here.","smile","angry","narrow","mid")
     call ast_main("I think she can still cast spells at us if she wants...", "annoyed", "narrow","narrow", "mid")
     call ast_main("Plus I wanna be able to boss her around in class!","grin","happyCl","base","mid")
@@ -799,7 +799,7 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("From now on, you have to do whatever I say, whenever I say, OK?","open","narrow","narrow","mid")
     call sus_main("Yes...","open","base","worried","empty")
     call ast_main("Awesome!","grin","happyCl","base","mid")
-    call ast_main("And you can't ever cast a spell on me or Dumby!","open","angry","angry","mid")
+    call ast_main("And you can't ever cast a spell on me or Professor Dumbledore!","open","angry","angry","mid")
     call sus_main("Yes...","open","base","worried","empty")
     call ast_main("And you aren't allowed to play with yourself unless I say!","open","closed","angry","mid")
     call sus_main("Yes...","open","base","worried","empty")
@@ -810,11 +810,11 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("OK, all done, you can go back to normal now Susy!","open","happyCl","base","mid")
     ">The colour rushes back into Susan's eyes as she snaps back to life."
     call sus_main("-sitting on your lap!","open","suspicious","worried","mid")
-    call ast_main("I'm sitting here because Dumby refuses to get any comfy furniture!", "annoyed", "closed","narrow", "mid")
+    call ast_main("I'm sitting here because Dumbledore refuses to get any comfy furniture!", "annoyed", "closed","narrow", "mid")
     ">You feel astoria's butt adjust ever so slightly, causing the barest bit of friction to your cock..."
     m "Ugh... th-that's right..."
     call sus_main("Ok... so what's this experiment you needed me to help with?","upset","narrow","worried","mid")
-    call ast_main("Dumby and I want to test the effects of a new spell I just learned!","grin","narrow","narrow","mid")
+    call ast_main("Dumbledore and I want to test the effects of a new spell I just learned!","grin","narrow","narrow","mid")
     call ast_main("And we needed someone to cast it on...","grin","angry","angry","angry")
     call sus_main("What? I-I'm not so sure about that... What does it do?","open","suspicious","worried","wide")
     call ast_main("We're not really sure... All we know is that I have to target it somewhere on your body...","smile","angry","worried","mid")
@@ -830,7 +830,7 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("Shhh!","clench","angry","angry","angry")
     call sus_main("...","upset","narrow","worried","empty")
     call ast_main("That's better, now I can focus...", "annoyed", "narrow","base", "L")
-    call ast_main("ready dumby?","smile","happyCl","base","mid")
+    call ast_main("ready, [ast_genie_name]?","smile","happyCl","base","mid")
     m "Ready as ever, [astoria_name]..."
     call ast_main("HORNIFY BOOBS!","scream","angry","angry","angry")
     ">With that, a thin bolt of pink electricity jumps from the end of Astoria's wand onto Susan's breasts before fading away into them..."
@@ -840,7 +840,7 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("Pfft, you took them off ages ago.","smile","base","base","R")
     call ast_main("And I just cast a little spell is all.","grin","narrow","narrow","mid")
     ">Astoria begins to rock back and forth on your lap, causing a sinful bolt of pleasure through your cock as you buck back into the evil little witch..."
-    call ast_main("Dumby...", "annoyed", "wink","ahegao", "R")
+    call ast_main("[ast_genie_name]...", "annoyed", "wink","ahegao", "R")
     call ast_main("Now what's the spell feel like Susy?","smile","wink","ahegao","mid")
     call sus_main("Agh... it's like... it's like they're on fire!","open","wide","worried","down",cheeks="blush")
     call ast_main("mmmm.... Bad fire?", "annoyed", "narrow","narrow", "mid")
@@ -851,7 +851,7 @@ label hornify_spell_1: #first level hornify spell
     call sus_main("Ugh... I... I don't want to say...","base","base","base","base")
     call ast_main("Why not?","base","base","base","base")
     call sus_main("it's too embarrassing!","base","base","base","base")
-    call ast_main("Don't worry, you love being embarrassed in front of Dumby and me...","base","base","base","base")
+    call ast_main("Don't worry, you love being embarrassed in front of [ast_genie_name] and me...","base","base","base","base")
     call ast_main("It makes the fire feel even better...","base","base","base","base")
     call ast_main("{b}doesn't it?{/b}","base","base","base","base")
     call sus_main("Ah...","base","base","base","base")
@@ -881,7 +881,7 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("Not to mention when she's doing it in front of her headmaster. *tsk*tsk*tsk*","base","base","base","base")
     call sus_main("Y-you made me do this!","base","base","base","base")
     call ast_main("What?","base","base","base","base")
-    call ast_main("You came up here and asked dumby and me to watch you...","base","base","base","base")
+    call ast_main("You came up here and asked [ast_genie_name] and me to watch you...","base","base","base","base")
     call ast_main("Didnt you...","base","base","base","base")
     ">Susan struggles unsuccessfully against the effect of the imperio spell."
     call sus_main("I don't- maybe- I- why?...","base","base","base","base")
@@ -909,7 +909,7 @@ label hornify_spell_1: #first level hornify spell
     m "You dirty little sluts..."
     ">Your hips slow as your orgasm begins to subside."
     m "Mmmm... that's it..."
-    call ast_main("All done now dumby?","base","base","base","base")
+    call ast_main("All done now [ast_genie_name]?","base","base","base","base")
     m "Yeah... I could go for a nap right about now..."
     call ast_main("Don't fall asleep now old man, we've still got bessy here putting on a show for us...","base","base","base","base")
     call sus_main("Arghh...{image=textheart}{image=textheart}{image=textheart}","base","base","base","base")
@@ -919,7 +919,7 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("Oh well, I'm bored now.","base","base","base","base")
     ">Astoria hops off your lap, causing you to notice a huge cumstain on her skirt..."
     call ast_main("!!!","base","base","base","base")
-    call ast_main("DUMBY!","base","base","base","base")
+    call ast_main("[ast_genie_name]!","base","base","base","base")
     m "What?"
     call ast_main("My butt is {b}covered{/b} in your gross cum!","base","base","base","base")
     m "Well what did you expect after that?"
@@ -949,7 +949,7 @@ label hornify_spell_1: #first level hornify spell
     ">Susan moves her head away from the Astoria's cute skirt."
     call sus_main("Mhmm...","base","base","base","base")
     call ast_main("Good, well swallow that and head to class.","base","base","base","base")
-    call ast_main("See ya, dumby! Lemme know when you want to try out the next spell...","base","base","base","base")
+    call ast_main("See ya, [ast_genie_name]! Lemme know when you want to try out the next spell...","base","base","base","base")
     ">Astoria throws Susan a cheeky grin."
     call ast_main("Bye bessy...","base","base","base","base")
     ">With that, Astoria hops out of your office, leaving Susan alone to silently collect her clothes and leave, forgetting the whole incident only moments after closing the door."
@@ -981,7 +981,7 @@ label hornify_spell_2: #second level hornify spell
     call sus_main("...","base","base","base","base")
     ">Susan nods, a terror in her eyes as she gazes down silently at the smiling young blonde."
     call ast_main("Now why don't you kneel in front of me right here...","base","base","base","base")
-    call ast_main("And dumby, hurry up and get over here!","base","base","base","base")
+    call ast_main("And [ast_genie_name], hurry up and get over here!","base","base","base","base")
     m "Ugh... the things I do to help my students..."
     ">You put on a mock air of reluctance as you stroll over to Susan, pulling your cock from it's robe and presenting the imposing thing to a frightened young Susan."
     call ast_main("Wow...","base","base","base","base")
@@ -992,18 +992,18 @@ label hornify_spell_2: #second level hornify spell
     call ast_main("Go on then... make it shoot... stuff...","base","base","base","base")
     ">You slowly start to stroke your cock only inches from Susan's face..."
     m "If you want this to go a little quicker at least make her move a little..."
-    call ast_main("Just wait a sec, Dumby, I haven't even cast it yet!","base","base","base","base")
+    call ast_main("Just wait a sec, [ast_genie_name], I haven't even cast it yet!","base","base","base","base")
     call sus_main("???","base","base","base","base")
     call ast_main("Hornify cum!","base","base","base","base")
     ">Another flash as the pink bolt of lightning shoots from the end of astoria's wand and strikes susan's head."
     call sus_main("!!!","base","base","base","base")
     ">Susan's hips immediately start to quiver as she struggles to maintain her composure."
     call ast_main("Now what this spell does, susy, is it makes you feel really good...","base","base","base","base")
-    call ast_main("Once you cover yourself in dumbys gross smelly cum...","base","base","base","base")
+    call ast_main("Once you cover yourself in [ast_genie_name]s gross smelly cum...","base","base","base","base")
     call sus_main("!!!!!!","base","base","base","base")
     call ast_main("Until then...","base","base","base","base")
     call ast_main("Well... you're slutty, little brain won't be able to think of much else...","base","base","base","base")
-    call ast_main("So why don't you help old Dumby out and give him a little show, hmmm?","base","base","base","base")
+    call ast_main("So why don't you help old [ast_genie_name] out and give him a little show, hmmm?","base","base","base","base")
     call sus_main("...","base","base","base","base")
     call ast_main("You can speak now Bessy...","base","base","base","base")
     call sus_main("...","base","base","base","base")
@@ -1022,7 +1022,7 @@ label hornify_spell_2: #second level hornify spell
     call sus_main("...","base","base","base","base")
     call ast_main("Maybe this would go faster if you sucked on dumbledore's gross old cock...","base","base","base","base")
     call sus_main("What? You can't be serious! Isn't this enough?","base","base","base","base")
-    call ast_main("I don't know... Is it, Dumby?","base","base","base","base")
+    call ast_main("I don't know... Is it, [ast_genie_name]?","base","base","base","base")
     menu:
         "-\"This is fine.\"-":
             call ast_main("*pfft*","base","base","base","base")
@@ -1043,7 +1043,7 @@ label hornify_spell_2: #second level hornify spell
     call sus_main("It's disgusting!","base","base","base","base")
     call ast_main("HAHAHAHAHAHA","base","base","base","base")
     m "Now, now [susan_name]..."
-    call ast_main("Yeah, susy, don't be rude to Dumby!","base","base","base","base")
+    call ast_main("Yeah, susy, don't be rude to [ast_genie_name]!","base","base","base","base")
     call sus_main("But, but-","base","base","base","base")
     call ast_main("Hornify cock!","base","base","base","base")
     ">Another flash of lightning erupts from the Slytherin's wand as it flies towards poor Susan..."
@@ -1066,7 +1066,7 @@ label hornify_spell_2: #second level hornify spell
     call sus_main("*Slrp*glp*slrp*","base","base","base","base")
     ">Susan refuses to acknowledge you, desperate to drain you as fast as she can..."
     call ast_main("Mmmm, that's it bessy...","base","base","base","base")
-    call ast_main("Are you ready yet, dumby?","base","base","base","base")
+    call ast_main("Are you ready yet, [ast_genie_name]?","base","base","base","base")
     m "Ugh... almost there..."
     ">Astoria leans in close to Susan."
     call sus_main("*Slrp*glp*slrp*","base","base","base","base")
@@ -1088,13 +1088,13 @@ label hornify_spell_2: #second level hornify spell
     call ast_main("...","base","base","base","base")
     m "!!!"
     call ast_main("Hahahaha! I guess casting it twice was too much for poor old Bessy.","base","base","base","base")
-    call ast_main("Looks like you were right for once, Dumby.","base","base","base","base")
+    call ast_main("Looks like you were right for once, [ast_genie_name].","base","base","base","base")
     m "Well we'll know for next time."
     call ast_main("Are you kidding? Someone like Susan deserves way worse than this!","base","base","base","base")
     m "...(What's she got against this girl?)"
-    call ast_main("Good job by the way, Dumby, you covered her! I can smell her from here...","base","base","base","base")
+    call ast_main("Good job by the way, [ast_genie_name], you covered her! I can smell her from here...","base","base","base","base")
     m "About that..."
-    call ast_main("Not now, dumby, I wanna wake her up.","base","base","base","base")
+    call ast_main("Not now, [ast_genie_name], I wanna wake her up.","base","base","base","base")
     call ast_main("Surgere!","base","base","base","base")
     ">A brief flash of white appears at the end of Astoria's wand."
     call sus_main("W-w-wha happened? where am I?","base","base","base","base")
@@ -1113,7 +1113,7 @@ label hornify_spell_2: #second level hornify spell
     call ast_main("Pfft, no... Besides, Everyone already stares at her big tits, it's not like anything will change...","base","base","base","base")
     call sus_main("...","base","base","base","base")
     call ast_main("Bye bye, Susy, don't forget to have fun!","base","base","base","base")
-    call ast_main("And no magic to hide or clean up dumby's cum either!","base","base","base","base")
+    call ast_main("And no magic to hide or clean up [ast_genie_name]'s cum either!","base","base","base","base")
     call sus_main("......","base","base","base","base")
     ">With that, Susan silently walks a death march towards the door..."
     ">The door closes behind the cum drenched redhead as she puts her clothes back on and forgets the entire encounter..."
@@ -1128,7 +1128,7 @@ label hornify_spell_2: #second level hornify spell
     call ast_main("Speaking of, I better go see her now...","base","base","base","base")
     m "Have fun..."
     call ast_main("I will, she's probably got some more cool clothes for me.","base","base","base","base")
-    call ast_main("Seeya, dumby!","base","base","base","base")
+    call ast_main("Seeya, [ast_genie_name]!","base","base","base","base")
     ">With that, Astoria turns and walk out the door on the way to tonk's office..."
     m "Hmmm..."
     jump day_main_menu
@@ -1164,7 +1164,7 @@ label hornify_spell_3: #third level hornify spell
     call ast_main("Shhhh, Susy... just stay still for a sec, OK?","base","base","base","base")
     ">Susan's bodies stiffens in response to Astoria's lingering spell."
     call sus_main("...","base","base","base","base")
-    call ast_main("You ready to go, Dumby?","base","base","base","base")
+    call ast_main("You ready to go, [ast_genie_name]?","base","base","base","base")
     m "I don't see why not."
     call ast_main("Ready, Susy?","base","base","base","base")
     call sus_main("...","base","base","base","base")
@@ -1176,7 +1176,7 @@ label hornify_spell_3: #third level hornify spell
     call ast_main("What? You've got a problem with it?","base","base","base","base")
     m "no, no, it's just a little tame compared to last time..."
     m "Maybe tonks really did teach you a lesson."
-    call ast_main("Pfft as if! I wasn't even done yet, Dumby!","base","base","base","base")
+    call ast_main("Pfft as if! I wasn't even done yet, [ast_genie_name]!","base","base","base","base")
     call ast_main("hornify exhibitionism!","base","base","base","base")
     call sus_main("!!!","base","base","base","base")
     m "Hmmm, that's a little more interesting..."
@@ -1185,7 +1185,7 @@ label hornify_spell_3: #third level hornify spell
     call ast_main("Susy, walk out and come back in!","base","base","base","base")
     ">Susan turns and walks outside, closing the large door behind her."
     m "What's that supposed to do?"
-    call ast_main("So she forgets about the spells, Dumby!","base","base","base","base")
+    call ast_main("So she forgets about the spells, [ast_genie_name]!","base","base","base","base")
     call ast_main("This way we can trick her into thinking she came to us...","base","base","base","base")
     ">With that the door swings open as Susan bones enters."
     call sus_main("Hello Professor Dumbledore.","base","base","base","base")
@@ -1256,9 +1256,9 @@ label hornify_spell_3: #third level hornify spell
         "-It's fine-":
             m "That's short enough i'd say..."
             call sus_main("Really? You don't want it a little...","base","base","base","base")
-            call ast_main("Dumby! Of course he wants it shorter!","base","base","base","base")
+            call ast_main("[ast_genie_name]! Of course he wants it shorter!","base","base","base","base")
             call sus_main("b-but he said...","base","base","base","base")
-            call ast_main("You want it shorter, don't you, dumby?","base","base","base","base")
+            call ast_main("You want it shorter, don't you, [ast_genie_name]?","base","base","base","base")
             ">Astoria presses her ass into your cock with a playful hop."
             m "Ugh... gods yes..."
             call sus_main("...","base","base","base","base")
@@ -1297,7 +1297,7 @@ label hornify_spell_3: #third level hornify spell
     call sus_main("...","base","base","base","base")
     call sus_main("What do you think, sir?","base","base","base","base")
     ">Before you're able to muster a response, Astoria shamelessly starts grinding in front of Susan, doing everything she can to shame the poor girl..."
-    call ast_main("Mmmm, Dumby sure feels like he likes it...","base","base","base","base")
+    call ast_main("Mmmm, [ast_genie_name] sure feels like he likes it...","base","base","base","base")
     call sus_main("Feels like-","base","base","base","base")
     call sus_main("You mean?","base","base","base","base")
     call ast_main("Yep, his nasty old cock is all hard from having to look at your slutty little uniform...","base","base","base","base")
@@ -1339,7 +1339,7 @@ label hornify_spell_3: #third level hornify spell
             m "Ten should do."
             call sus_main("Only ten?!","base","base","base","base")
             call sus_main("I'll have this done before lunch!","base","base","base","base")
-            call ast_main("Yeah, that's not enough, Dumby!","base","base","base","base")
+            call ast_main("Yeah, that's not enough, [ast_genie_name]!","base","base","base","base")
             call sus_main("Astoria!","base","base","base","base")
             call ast_main("Fine, I guess that just means he must really like your uniform...","base","base","base","base")
         "-Fifty-":
@@ -1367,7 +1367,7 @@ label hornify_spell_3: #third level hornify spell
     call ast_main("You know what happens if I send her out with your cum all over her...","base","base","base","base")
     call ast_main("Just be a good headmaster and wait for Susy to come back later today.","base","base","base","base")
     m "Ugh, fine... But it's not good to leave a man with blue balls..."
-    call ast_main("Ew... Dumby!","base","base","base","base")
+    call ast_main("Ew... [ast_genie_name]!","base","base","base","base")
     ">Astoria then rushes off to watch the flaming wreck that is Susan's social life..."
     m "..."
     jump day_main_menu
@@ -1436,7 +1436,7 @@ label hermione_spell: #Branching path event based on Astoria and Genie casting s
     ast "You bet! What are we going to {b}blast{/b} Susan with today?"
     m "Actually, I was thinking we could bring someone else up..."
     ast "Really?"
-    ast "I don't know about this, Dumby... It's not one of my friends is it?"
+    ast "I don't know about this, [ast_genie_name]... It's not one of my friends is it?"
     m "Are you friends with Hermione Granger?"
     ast "That know-it-all {b}bitch{/b}?!"
     ast "Bring her up here..."
@@ -1558,26 +1558,26 @@ label hermione_breaks_astoria:
     her "You slytherins... All you do is spit venom..."
     ">Hermione goes back to jerking you off..."
     her "About time you got a bit thrown back at you..."
-    ast "What? You think making Dumby cum on me is going to change anything?"
+    ast "What? You think making [ast_genie_name] cum on me is going to change anything?"
     her "Probably not... I don't think I can change an evil little witch like you..."
     ast "..."
     her "But that doesn't mean that I shouldn't at least try to teach you a lesson."
     ast "How to jerk off old man cock? Ha, I bet you're an expert..."
     m "Mmmmm... That she is..."
     her "Thank you, sir..."
-    ast "Wait... {p}how often has she been coming up here, Dumby?"
+    ast "Wait... {p}how often has she been coming up here, [ast_genie_name]?"
     m "Oh, um... A little bit..."
     her "*ahem*"
     m "OK... A lot..."
     ast "Then why did you suggest her for spell practice, unless..."
-    ast "You did this on purpose, didn't you dumby!"
+    ast "You did this on purpose, didn't you [ast_genie_name]!"
     m "I don-"
     her "Of course he did! He'd never let me get hit with your curse, would you [genie_name]?"
     m "O-of course not..."
     her "See... He probably just needed some help to {b}break{/b} you in..."
-    ast "That's not... You wouldn't do that would you Dumby?"
+    ast "That's not... You wouldn't do that would you [ast_genie_name]?"
     m "..."
-    ast "Dumby!"
+    ast "[ast_genie_name]!"
     her "Ugh... I'm sick of listening to you blabber on..."
     her "Petrificus totalus!"
     ">Another flash as Hermione paralyses Astoria once more."
@@ -1667,7 +1667,7 @@ label astoria_leash_walk:
     g4 "ARGH!"
     ast "IMPERIO!"
     ">As your body stiffens from the spell, you see the life drain from Hermione's eyes as the puff of cursed smoke flies up her nostrils."
-    ast "YES! We did it Dumby!"
+    ast "YES! We did it [ast_genie_name]!"
     m "..."
     ast "Oh, did her spell hit you?"
     m "..."
@@ -1681,13 +1681,13 @@ label astoria_leash_walk:
     m "..."
     ast "Why?"
     her "It makes me feel {b}so{/b} good."
-    ast "Wait... Have you shown Dumby your boobs before?"
+    ast "Wait... Have you shown [ast_genie_name] your boobs before?"
     her "Yes."
     ast "How many times have you shown him, you little tramp?"
     her "I can't remember."
-    ast "What? Have you been having sex with Dumby?"
+    ast "What? Have you been having sex with [ast_genie_name]?"
     her "Yes..."
-    ast "DUMBY!"
+    ast "[ast_genie_name]!"
     m "..."
     ast "Oh... right... paralysed..."
     ast "..."
@@ -1695,13 +1695,13 @@ label astoria_leash_walk:
     ast "So, did you do it for a better grade?"
     her "No..."
     ast "That's surprising..."
-    ast "So, Dumby,  why did you suggest her if you've already been there?"
+    ast "So, [ast_genie_name],  why did you suggest her if you've already been there?"
     ast "Unless you wanted me to fool around with her..."
-    ast "Dumby! You're such a dirty old pervert!"
+    ast "[ast_genie_name]! You're such a dirty old pervert!"
     ast "So what can I do then?"
-    ast "Is there even anything that Dumby can do that would embarrass you any more, slut?"
+    ast "Is there even anything that [ast_genie_name] can do that would embarrass you any more, slut?"
     her "I don't think so..."
-    ast "Huh, I knew you were useless, Dumby!"
+    ast "Huh, I knew you were useless, [ast_genie_name]!"
     ast "I guess I'll have to come up with my own super smart way to shame Miss know-it-all then!"
     ast "Ready for the best, most humiliating idea ever, Hermione?"
     her "Yes..."
@@ -1722,9 +1722,9 @@ label astoria_leash_walk:
     ast "ACCIO LEASH!"
     ">A leash and collar fly quickly in through your window."
     m "(Woah... How'd she do that?)"
-    ast "Well, have fun being stuck here all by yourself, Dumby."
+    ast "Well, have fun being stuck here all by yourself, [ast_genie_name]."
     ast "Hermione and I are going to go on a walk around the school."
     her "..."
-    ast "See ya Dumby!"
+    ast "See ya [ast_genie_name]!"
     ">With that, Astoria leads a dazed Hermione out of your office and into the wider wizarding world."
     jump main_room

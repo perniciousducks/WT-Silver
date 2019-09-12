@@ -203,11 +203,11 @@ label astoria_tonks_4:
     m "Have a fun time with Tonks?"
     ast "Do I look like I'm having fun?"
     m "Mmmm, you look like a lot of fun from where I'm sitting..."
-    ast "Gross Dumby!"
+    ast "That's gross, [ast_genie_name]!"
     m "So, will you going to be wearing that skirt from now on?"
     ast "I have to, don't I?"
     m "Or else what?"
-    ast "Or else Tonks will dob us in to the ministry! At least try to keep up, Dumby."
+    ast "Or else Tonks will dob us in to the ministry! At least try to keep up, [ast_genie_name]."
     m "Mmmm, well things certainly have gotten interesting..."
     ast "Stop looking at me like that! You've got the same look in your eye as she did!"
     m "Ready for your next lesson then?"
@@ -261,7 +261,7 @@ label astoria_tonks_5:
     m "Susan?"
     ast "Of course! If she wasn't such a cow none of this would have happened."
     ">With that, Astoria hops up onto your lap in her tiny skirt, giving you a dangerous look at the witches' thighs."
-    ast "Now, hurry up, Dumby! I'll never get my revenge at your reading pace!"
+    ast "Now, hurry up, [ast_genie_name]! I'll never get my revenge at your reading pace!"
 
 #Tonks spends the whole time rubbing Astoria's butt
 label astoria_tonks_6:

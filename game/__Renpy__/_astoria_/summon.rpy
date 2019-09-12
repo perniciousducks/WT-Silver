@@ -3,11 +3,11 @@
 label summon_astoria:
     call play_music("astoria_theme")
     call play_sound("door")
+    call ast_chibi("stand","mid","base")
+    with d3
 
     ### RANDOM CLOTHING EVENTS ###
     call astoria_door_event
-
-    #call ast_chibi("stand","mid","base")
 
     if one_of_ten < 4:
         call ast_main("Heya, [genie_name]!", face="neutral", xpos="base",ypos="base")
@@ -16,12 +16,13 @@ label summon_astoria:
     else:
         call ast_main("Hi, [genie_name]!", face="happy", xpos="base",ypos="base")
 
-    label astoria_requests:
-
-    $ hide_transitions = False
     $ active_girl = "astoria"
     $ astoria_busy = True
 
+    label astoria_requests:
+    call ast_main(xpos="base",ypos="base")
+    $ hide_transitions = False
+    
     menu:
 
         # Talk
@@ -59,6 +60,8 @@ label summon_astoria:
 
         # Dismiss
         "-Dismiss her-":
+            stop music fadeout 1.0
+            
             if daytime:
                 call ast_main("I will go back to classes then, [ast_genie_name].", face="neutral")
             else:
@@ -67,7 +70,8 @@ label summon_astoria:
             call play_sound("door")
 
             $ astoria_busy = True
-
+            $ astoria_class.wear("all")
+            
             jump main_room
 
 

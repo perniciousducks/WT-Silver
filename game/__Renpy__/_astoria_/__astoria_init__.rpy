@@ -6,28 +6,28 @@ default astoria_flip      = 1
 default astoria_animation = None
 
 # Chibi
-default astoria_chibi_xpos      = 500
-default astoria_chibi_ypos      = 250
-default astoria_chibi_flip      = 1
-default astoria_chibi_zorder    = 3
-default astoria_chibi_animation = None
-default astoria_chibi_status    = ""
+default ast_chibi_xpos      = 500
+default ast_chibi_ypos      = 250
+default ast_chibi_flip      = 1
+default ast_chibi_zorder    = 3
+default ast_chibi_animation = None
+default ast_chibi_status    = ""
 
-default astoria_chibi_stand = "ch_cho blink"
-default astoria_chibi_shoes = "characters/cho/chibis/cc_walk_01_shoes.png"
+default ast_chibi_stand = "ch_ast blink"
+default ast_chibi_shoes = "characters/astoria/chibis/ag_walk_01_shoes.png"
 
-default astoria_chibi_walk       = "ch_cho walk"
-default astoria_chibi_walk_shoes = "ch_cho walk_shoes"
+default ast_chibi_walk       = "ch_ast walk"
+default ast_chibi_walk_shoes = "ch_ast walk_shoes"
 
-default astoria_chibi_top    = "characters/cho/chibis/cc_cloth_shirt_r.png"
-default astoria_chibi_bottom = "characters/cho/chibis/cc_cloth_skirt.png"
-default astoria_chibi_robe   = "blank"
-default astoria_chibi_gloves = "blank" # blank is the new defined image, makes our lives easier
-default astoria_chibi_fix    = "blank"
+default ast_chibi_top    = "characters/astoria/chibis/ag_top.png"
+default ast_chibi_bottom = "characters/astoria/chibis/ag_skirt.png"
+default ast_chibi_robe   = "blank"
+default ast_chibi_gloves = "blank" # blank is the new defined image, makes our lives easier
+default ast_chibi_fix    = "blank"
 
-default astoria_cloth_pile = False
-default astoria_pile_xpos  = 440 # Right side of desk.
-default astoria_pile_ypos  = 425 # Bit below feet level.
+default ast_cloth_pile = False
+default ast_pile_xpos  = 440 # Right side of desk.
+default ast_pile_ypos  = 425 # Bit below feet level.
 
 # Flags
 default astoria_busy              = False
@@ -37,7 +37,7 @@ default chitchated_with_astoria   = False
 
 # Names
 default astoria_name   = "Miss Greengrass"
-default ast_genie_name = "Dumby"
+default ast_genie_name = "Sir"
 default ast_susan_name = "Cow"
 default ast_tonks_name = "Old Hag"
 

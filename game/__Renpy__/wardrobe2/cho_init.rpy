@@ -135,7 +135,7 @@ label cho_wardrobe_init:
             cho_outfit_dress1 = outfit_class(name="Lingerie", group=[cho_hair_ponytail, cho_cloth_dress1])
             cho_outfit_cheerleader = outfit_class(name="Cheerleader", group=[cho_hair_pigtails, cho_earring_snitch, cho_cloth_quidstocking1, cho_cloth_sportpanties2, cho_cloth_sportbra1, cho_cloth_quidskirt1, cho_cloth_topquid1, cho_makeup_blush])
             
-            cho_outfit_custom = outfit_class(name="Default", group=[cho_hair_ponytail, cho_cloth_topschool1, cho_cloth_schoolskirt1, cho_cloth_basicbra1, cho_cloth_basicpanties1], unlocked=True) # Don't change
+            cho_outfit_custom = outfit_class(name="Default", group=[cho_hair_ponytail.clone(), cho_cloth_topschool1.clone(), cho_cloth_schoolskirt1.clone(), cho_cloth_basicbra1.clone(), cho_cloth_basicpanties1.clone()], unlocked=True) # Don't change
         
             ################
             #              #

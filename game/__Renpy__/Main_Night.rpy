@@ -8,6 +8,9 @@ label night_start:
 
     $ daytime = False
     $ interface_color = "gray"
+    $ txt_style = "night_text"
+    $ btn_style = "nightbtn"
+    $ btn_hover = "#7d75aa40"
 
     $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
     $ save_name = temp_name

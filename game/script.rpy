@@ -41,6 +41,10 @@ init:
     ### MENU PLACEMENT ###
     $ menu_x = 0.5
     $ menu_y = 0.5
+    
+    default txt_style = "night_text"
+    default btn_style = "nightbtn"
+    default btn_hover = "#7d75aa40"
 
     $ teleport = ImageDissolve("id_teleport.png", 1.0, 0)
 
@@ -79,23 +83,6 @@ init:
     $ blackfade = Fade(0.9, 0.5, 1, color='#000000')
 
 
-    # MUSIC / SOUNDS
-    $ galm = "music/GrapeSodaIsFuckingRawbyjrayteam6.mp3"
-    $ JafarsHour = "music/JafarsHour.mp3"
-    $ mark = "music/Marketplace.mp3"
-    $ palace = "music/EasternJourneybyPike270.mp3"
-    $ mrm = "music/PartOfYourWorld.mp3"
-    $ wnd = "music/TheEasternWindbyroensb.mp3"
-    $ kiss = "music/TheKiss.mp3"
-    $ sillyc = "music/SillyCatbyMaverlyn.mp3"
-    $ xf = "music/TheXFiles.mp3"
-    $ freedom = "music/outlawstarostfreedom.mp3"
-    $ palace2 = "music/GoingtoKillMe.mp3"
-    $ title = "music/RollIntheLeaves.mp3"
-    $ swat = "music/025SWAT.mp3"
-    $ hemanmusic = "music/HeMan.mp3"
-
-
 ###TRANSITIONS###########
 define d1 = Dissolve(0.1)
 define d2 = Dissolve(0.2)
@@ -106,29 +93,6 @@ define d6 = Dissolve(0.6)
 define d7 = Dissolve(0.7)
 define d8 = Dissolve(0.8)
 define d9 = Dissolve(0.9)
-
-
-# Music
-define ms_arabian_nights = "music/Arabian_Nights.mp3"
-define ms_bushwick = "music/Bushwick_Tarantella_Loop.mp3"
-define ms_croft_manor = "music/Croft_Manor.mp3"
-define ms_dice_game = "music/Dice_Game.mp3"
-define ms_gtkm = "music/Going_to_Kill_Me.mp3"
-define ms_gorilla = "music/Gorilla_Theme.mp3"
-define ms_india = "music/India's_Different.mp3"
-define ms_jafar = "music/Jafar's_Hour.mp3"
-define ms_kabul = "music/Kabul_Flight_Jumpstart.mp3"
-define ms_manatees = "music/Music for Manatees.mp3"
-define ms_marketplace = "music/Marketplace.mp3"
-define ms_outlaw_star = "music/Outlaw_Star_Freedom.mp3"
-define ms_ozone = "music/Ozone.ogg"
-define ms_sleep_walking = "music/Sleep_Walking.mp3"
-define ms_tension = "music/Tension.mp3"
-define ms_the_calm_before = "music/The_Calm_Before.mp3"
-define ms_the_eastern_wind = "music/The_Eastern_Wind.mp3"
-define ms_the_kiss = "music/The_Kiss.mp3"
-define ms_the_xfiles = "music/The_X-Files.mp3"
-define ms_vision = "music/Vision.mp3"
 
 # Sounds
 define sd_boing1 = "sounds/boing.mp3"

@@ -12,6 +12,9 @@ label day_start:
     # Dont change UI if using nightmode
     if not persistent.nightmode:
         $ interface_color = "gold"
+        $ txt_style = "day_text"
+        $ btn_style = "daybtn"
+        $ btn_hover = "#e3ba7140"
 
     $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
     $ save_name = temp_name

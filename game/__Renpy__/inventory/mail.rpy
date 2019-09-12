@@ -213,7 +213,7 @@ label get_package:
                 if gift_list[0][2] == 1:
                     renpy.call("give_reward","You have received a "+gift_list[0][0]+".", gift_list[0][1])
                 else:
-                    renpy.call("give_reward","You have received "+str(gift_list[0][2])+" pieces of "+gift_list[0][0]+".", the_gift)
+                    renpy.call("give_reward","You have received "+str(gift_list[0][2])+" pieces of "+gift_list[0][0]+".", gift_list[0][1])
             else:
                 txt_gifts = "{size=-4}"
                 for i, item in enumerate(gift_list):
@@ -296,11 +296,6 @@ label __init_variables:
 init python:
 
     class deliveryItem(object):
-        object = None
-        transit_time = 0
-        quantity=1
-        type = ''
-
         def __init__(self,object,transit_time,quantity,type):
             self.object = object
             self.transit_time = transit_time
@@ -308,9 +303,11 @@ init python:
             self.type = type
 
     class deliveryQueue(object):
-        queue = []
         max_wait = 15
-
+        
+        def __init__(self):
+            self.queue = []
+            
         def send(self, item, transit_time, quantity, type):
             if transit_time > self.max_wait:
                 transit_time = self.max_wait
@@ -326,21 +323,21 @@ init python:
 
         def get_mail(self):
             delivery = []
-            for i in self.queue:
+            for i in list(self.queue):
                 if i.transit_time <= 0:
                     delivery.append(i)
-            for i in delivery:
-                self.queue.remove(i)
+                    self.queue.remove(i)
             return delivery
 
     if not hasattr(renpy.store,'deliveryQ'):
         deliveryQ = deliveryQueue()
 
     class mail_letter_class(object):
-        mailed = False
-        read = False
-        text = "Add Text"
-        label = "" #If Genie doesn't comment on the letter, this should remain ""
+        def __init__(self):
+            self.mailed = False
+            self.read = False
+            self.text = "Add Text"
+            self.label = ""
 
         def getLetterText(self):
             return self.text
@@ -357,30 +354,3 @@ init python:
             if self in letter_queue_list:
                 letter_queue_list.remove(self)
             return
-
-
-
-
-
-
-
-
-### Old Ministry Letter ###
-
-#LETTER FROM THE MINISTRY OF MAGIC
-#Dear Albus Dubmbledore, as we are sure you are aware,
-#an unforgivable curse has been detected within the grounds of Hogwarts.
-#While the punishment for such a curse is usually lifetime incarceration in the
-#prison, Azkaban, we are allowing you to address this matter at your own discretion.
-#This is due to the possible nature of the spell being cast by a minor who has not
-#fully grasped the serious nature of the curse. If this is the case we expect no further communication from
-#you regarding this unfortunate event. If, however, you believe the curse has been cast by someone other than a student,
-#or if any other complications arise we expect direct communication. Lastly, the detection of any further curses will
-#result in the immediate dispatchment of an auror to Hogwarts.
-
-#Cornelius Fudge,
-#Department Head: Improper Use of Magic Office
-
-#m "That doesn't sound good..."
-#m "Perhaps I should tell Snape about this."
-#m "Or maybe miss granger?"

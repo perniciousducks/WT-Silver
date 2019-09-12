@@ -87,6 +87,9 @@ init:
         color "#f9d592"
         hover_color "#FFFFFF"
         insensitive_color "#50443c"
+        selected_color "#eedfd5"
+        selected_hover_color "#FFFFFF"
+        outlines [ (1, "#00000080", 1, 0) ]
         
     style night_text:
         color "#9b8d84"
@@ -96,15 +99,17 @@ init:
         selected_hover_color "#FFFFFF"
         outlines [ (1, "#00000080", 1, 0) ]
         
-    style daybutton:
+    style daybtn:
         background "#ac8d5aE6"
         hover_background "#97681f"
         insensitive_background "#d1a02eB3"
+        padding (5, 5, 5, 5)
         
-    style nightbutton:
+    style nightbtn:
         background "#5d5151E6"
         hover_background "#897e75"
         insensitive_background "#9e8449"
+        padding (5, 5, 5, 5)
         
     style menu_choice_daybutton:
         background "#ac8d5aE6"

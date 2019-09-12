@@ -41,7 +41,7 @@ label astoria_wardrobe_init:
             # Temporal save
             astoria_outfit_last = outfit_class(name="Last worn items", group=[astoria_hair_base])
             
-            astoria_outfit_custom = outfit_class(name="Default", group=[astoria_hair_base, astoria_cloth_schoolskirt1, astoria_cloth_topschool1, astoria_cloth_basicbra1, astoria_cloth_basicpanties1], unlocked=True) # TODO: Add underwear once its been drawn
+            astoria_outfit_custom = outfit_class(name="Default", group=[astoria_hair_base.clone(), astoria_cloth_schoolskirt1.clone(), astoria_cloth_topschool1.clone(), astoria_cloth_basicbra1.clone(), astoria_cloth_basicpanties1.clone()], unlocked=True) # TODO: Add underwear once its been drawn
         
             ################
             #              #
@@ -82,10 +82,10 @@ label astoria_wardrobe_init:
                         "robe":       [None, 21, 0, 0, False],
                         "gloves":     [None, 20, 0, 0, False],
                         "top":        [astoria_cloth_topschool1, 19, 0, 0, False],
-                        "bra":        [None, 18, 0, 0, False],
+                        "bra":        [astoria_cloth_basicbra1, 18, 0, 0, False],
                         "bottom":     [astoria_cloth_schoolskirt1, 16, 0, 0, False],
                         "garterbelt": [None, 15, 0, 0, False],
-                        "panties":    [None, 14, 0, 0, False],
+                        "panties":    [astoria_cloth_basicpanties1, 14, 0, 0, False],
                         "stockings":  [astoria_cloth_pantyhose1, 13, 0, 0, False],
                         "buttplug":   [None, 0, 0, 0, False],
                         "pubes":      [None, 11, 0, 0, False],

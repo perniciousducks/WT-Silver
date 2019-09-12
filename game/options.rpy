@@ -1,474 +1,122 @@
-﻿## This file contains some of the options that can be changed to customize
-## your Ren'Py game. It only contains the most common options... there
-## is quite a bit more customization you can do.
-##
-## Lines beginning with two '#' marks are comments, and you shouldn't
-## uncomment them. Lines beginning with a single '#' mark are
-## commented-out code, and you may want to uncomment them when
-## appropriate.
+﻿# Ren'Py configuration
 
-# Garbage collector
-define config.manage_gc = True
-define config.gc_thresholds = (25000, 10, 10)
-define config.idle_gc_count = 2500
-define gc_print_unreachable = False
+init -1 python hide: 
+    # Internal name and version
+    config.name    = "WT Silver EXPERIMENTAL VERSION"
+    config.version = "1.37"
 
-define config.gl_clear_color = "#000"
+    # Window
+    title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
+    config.window_title = "Witch Trainer (Silver) %s EXPERIMENTAL VERSION" % title_version
+    config.window_icon = "interface/icon.png"
 
-init -1 python hide:
+    # Window size
+    # 16:9 = 1080x600
+    # 4:3 = 800x600
+    config.screen_width = 1080
+    config.screen_height = 600
 
-    config.autoreload = False # If false, Ren'Py will reload the game once per press of shift+R.
+    config.save_physical_size = True # Save the window size in preferences
 
+    # Garbage collector
+    config.manage_gc = True
+    config.gc_thresholds = (25000, 10, 10)
+    config.idle_gc_count = 2500
+    gc_print_unreachable = False
+    
+    # Graphics
     config.gl_enable = True # Enable openGL acceleration
-    config.load_before_transition = True #Preload assets (images, sounds etc.) before transition
-    #config.missing_image_callback = LABEL #This function can be used to display the default image in case of missing file
-    #config.missing_label_callback = LABEL #This function can be used to default the player to main room in case of missing label
-    config.sound_sample_rate = 48000 #Force bitrate to default gaming rate 48k
-    config.cache_surfaces = False #Cache often used images to RAM False = use VRAM instead
-    #config.image_cache_size = 32
-    config.image_cache_size_mb = 1024
-    config.nearest_neighbor = False #Disable pixel art filtering
+    config.gl_clear_color = "#000"
     config.hw_video = True
-    config.save_physical_size = True
+    config.nearest_neighbor = False # Disable pixel art filtering
 
-    #Set default persistent values
+    # Image cache
+    # config.image_cache_size = 32 # Number of screens worth of images in cache
+    config.image_cache_size_mb = 1024 # Image cache size in megabytes
+    config.cache_surfaces = False # Cache often used images to RAM False = use VRAM instead
+    config.load_before_transition = True # Preload assets (images, sounds etc.) before transition
+
+    # Sound
+    config.has_sound = True # Set this to False if the game does not have any sound effects.
+    config.has_music = True # Set this to False if the game does not have any music.
+    config.has_voice = False # Set this to True if the game has voicing
+
+    config.sound_sample_rate = 48000
+
+    config.main_menu_music = "music/01 Prologue.mp3"
+    # config.enter_sound = "click.wav" # Sound that is played when entering the game menu
+    # config.exit_sound = "click.wav" # Sound that is played when exiting the game menu
+    # config.sample_sound = "click.wav" # Sound that can be played to check the sound volume
+
+    # Default persistent values
     if persistent.delwarning == None:
         persistent.delwarning = True
         persistent.customcursor = False
         persistent.autosave = False
         persistent.tooltip = True
 
-    #Load custom preference options
-    if persistent.customcursor:
+    # Preferences
+    config.default_fullscreen = False # Default fullscreen preference
+    config.default_text_cps = 40 # Default text speed preference (characters per second, 0 is infinite)
+    config.default_afm_time = 40 # Default auto-forward time preference
+
+    # Load custom preference options
+    if persistent.customcursor: 
         config.mouse = { 'default' : [ ('interface/cursor.png', 0, 0)] } # Set custom pointer
-    else:
+    else: 
         config.mouse = None
 
     if persistent.autosave: #True if true, false otherwise, still saves upon exit no matter what
         config.has_autosave = True
         config.autosave_on_choice = True
-    else:
+    else: 
         config.has_autosave = False
         config.autosave_on_choice = False
-    config.autosave_on_quit = True
+        config.autosave_on_quit = True
 
-    ## Should we enable the use of developer tools? This should be
-    ## set to False before the game is released, so the user can't
-    ## cheat using developer tools.
+    config.autoreload = False # If False, Ren'Py will reload the game once per press of shift+R
 
+    # Development
     config.developer = "auto" # Will detect if you're using Renpy launcher, if not it will turn off the console
     config.debug = False # Use ONLY for testing, disable before release
+
+    # Help feature
     config.help = None
-
-    ## These control the width and height of the screen.
-
-    # 16:9 = 1080x600
-    # 4:3  = 800x600
-
-    config.screen_width = 1080 #800
-    config.screen_height = 600 #600
-
-    # These control the name and version of the game, that are reported
-    # with tracebacks and other debugging logs.
-
-    config.name = "WT Silver EXPERIMENTAL VERSION"
-    config.version = "1.37"
-
-    ## This controls the title of the window, when Ren'Py is
-    ## running in a window.
-
-    config.window_title = u"Witch Trainer (Silver) %s EXPERIMENTAL VERSION" % config.version[:4]+"."+config.version[4:6] if len(config.version) >=5 else u"Witch Trainer (Silver) %s EXPERIMENTAL VERSION" % config.version
-
-    #########################################
-    # Themes
-
-    ## We then want to call a theme function. theme.roundrect is
-    ## a theme that features the use of rounded rectangles.
-    ##
-    ## The theme function takes a number of parameters that can
-    ## customize the color scheme.
-
-    theme.threeD(
-        ## Theme: 3D
-        ## Color scheme: Muted Horror
-
-        ## The color of an idle widget face.
-        widget = "#5d5151",
-
-        ## The color of a focused widget face.
-        widget_hover = "#897e75",
-
-        ## The color of the text in a widget.
-        widget_text = "#9b8d84",
-
-        ## The color of the text in a selected widget. (For
-        ## example, the current value of a preference.)
-        widget_selected = "#FFFFFF",
-
-        ## The color of a disabled widget face.
-        disabled = "#463b3b",
-
-        ## The color of disabled widget text.
-        disabled_text = "#50443c",
-
-        ## The color of informational labels.
-        label = "#9b8d84",
-
-        ## The color of a frame containing widgets.
-        frame = "#5d5151", #ConditionSwitch("interface_color == \"gold\"", "#ac8d5a", "True", "#5d5151"),
-
-        ## The background of the main menu. This can be a color
-        ## beginning with '#', or an image filename. The latter
-        ## should take up the full height and width of the screen.
-        mm_root = "title_ani",
-
-        ## The background of the game menu. This can be a color
-        ## beginning with '#', or an image filename. The latter
-        ## should take up the full height and width of the screen.
-        gm_root = "menu_ani",
-
-
-        ## If this is True, the in-game window is rounded. If False,
-        ## the in-game window is square.
-        rounded_window = False,
-
-        ## And we're done with the theme. The theme will customize
-        ## various styles, so if we want to change them, we should
-        ## do so below.
-        )
-
-
-    #########################################
-    ## These settings let you customize the window containing the
-    ## dialogue and narration, by replacing it with an image.
-
-    ## The background of the window. In a Frame, the two numbers
-    ## are the size of the left/right and top/bottom borders,
-    ## respectively.
-    #
-    #
-    
-    #
-    #
-    #
-    #
-    
-    #renpy.register_style_preference("text2", "day", style.button_text, "color", "#f9d592")
-    #renpy.register_style_preference("text2", "night", style.button_text, "color", "#9b8d84")
-
-    style.window.background = Frame(ConditionSwitch("interface_color == \"gold\"", "interface/frames/gold/frame.png","True","interface/frames/gray/frame.png"))
-    
-    #style.pref_button.background = Frame(ConditionSwitch("interface_color == \"gold\"", "#FFF", "True", "#000"),15,15)
-    
-    style.button.background = "#5d5151E6"#ConditionSwitch("interface_color == \"gold\"", "#ac8d5aE6", "True", "#5d5151E6")
-    style.button.hover_background = "#897e75"#ConditionSwitch("interface_color == \"gold\"", "#97681f", "True", "#897e75")
-    style.button.insensitive_background = "#463b3bE6"#ConditionSwitch("interface_color == \"gold\"", "#917442E6", "True", "#463b3bE6")
-    style.button.selected_background = "#766a6aE6"#ConditionSwitch("interface_color == \"gold\"", "#e5c48dE6", "True", "#766a6aE6")
-    style.button.selected_hover_background = "#897e75"#ConditionSwitch("interface_color == \"gold\"", "#97681f", "True", "#897e75")
-    
-    style.button_text.color = "#9b8d84" #If(interface_color == "gold", "#f9d592", "#9b8d84")
-    style.button_text.hover_color = "#ffffff"
-    style.button_text.insensitive_color = "#50443c"
-    style.button_text.selected_color = "#eedfd5"
-    style.button_text.selected_hover_color = "#FFFFFF"
-    style.button_text.outlines = [(1, "#00000080", 1, 0)]
-
-    ## Margin is space surrounding the window, where the background
-    ## is not drawn.
-
-    # style.window.left_margin = 6
-    ##style.window.right_margin = 280
-    style.window.top_margin = 22
-    # style.window.bottom_margin = 6
-
-    ## Padding is space inside the window, where the background is
-    ## drawn.
-
-    style.window.left_padding = 250 #200
-    style.window.right_padding = 250
-    style.window.top_padding = 40
-
-    #Backup/Original
-    #style.window.left_padding = 65
-    #style.window.right_padding = 70
-    #style.window.top_padding = 40
-    # style.window.bottom_padding = 6
-
-    ## This is the minimum height of the window, including the margins
-    ## and padding.
-
-    style.window.yminimum = 143
-
-
-    #########################################
-    ## This lets you change the placement of the main menu.
-
-    ## The way placement works is that we find an anchor point
-    ## inside a displayable, and a position (pos) point on the
-    ## screen. We then place the displayable so the two points are
-    ## at the same place.
-
-    ## An anchor/pos can be given as an integer or a floating point
-    ## number. If an integer, the number is interpreted as a number
-    ## of pixels from the upper-left corner. If a floating point,
-    ## the number is interpreted as a fraction of the size of the
-    ## displayable or screen.
-
-    # style.mm_menu_frame.xpos = 0.5
-    # style.mm_menu_frame.xanchor = 0.5
-    # style.mm_menu_frame.ypos = 0.75
-    # style.mm_menu_frame.yanchor = 0.5
-
-
-    #########################################
-    ## These let you customize the default font used for text in Ren'Py.
-
-    ## The file containing the default font.
-
-    style.default.font = "interface/CREABBB.TTF"
-
-    ## The default size of text.
-    style.default.size = 16
-    style.default.color = "#402313"
-
-    #renpy.register_style_preference("dialog", "Day", style.say_dialogue, "font", "interface/CREABBB.TTF")
-    #renpy.register_style_preference("dialog", "Day", style.say_dialogue, "size", 18)
-    #renpy.register_style_preference("dialog", "Day", style.say_dialogue, "color", "#402313")
-
-    #renpy.register_style_preference("dialog", "Night", style.say_dialogue, "font", "interface/CREABBB.TTF")
-    #renpy.register_style_preference("dialog", "Night", style.say_dialogue, "size", 18)
-    #renpy.register_style_preference("dialog", "Night", style.say_dialogue, "color", "#211109")
-
-    ## Note that these only change the size of some of the text. Other
-    ## buttons have their own styles.
-
-
-    #########################################
-    ## These settings let you change some of the sounds that are used by
-    ## Ren'Py.
-
-    ## Set this to False if the game does not have any sound effects.
-
-    config.has_sound = True
-
-    ## Set this to False if the game does not have any music.
-
-    config.has_music = True
-
-    ## Set this to True if the game has voicing.
-
-    config.has_voice = False
-
-    ## Sounds that are used when button and imagemaps are clicked.
-
-    style.button.activate_sound = "interface/click3.mp3"
-    style.imagemap.activate_sound = "interface/click3.mp3"
-
-    ## Sounds that are used when entering and exiting the game menu.
-
-    # config.enter_sound = "click.wav"
-    # config.exit_sound = "click.wav"
-
-    ## A sample sound that can be played to check the sound volume.
-
-    # config.sample_sound = "click.wav"
-
-    ## Music that is played while the user is at the main menu.
-
-    config.main_menu_music = "music/01 Prologue.mp3"
-
-
-    #########################################
-    ## Help.
-
-    ## This lets you configure the help option on the Ren'Py menus.
-    ## It may be:
-    ## - A label in the script, in which case that label is called to
-    ##   show help to the user.
-    ## - A file name relative to the base directory, which is opened in a
-    ##   web browser.
-    ## - None, to disable help.
-    config.help = "README.html"
-
-
-    #########################################
-    ## Transitions.
-
-    ## Used when entering the game menu from the game.
-    config.enter_transition = None
-
-    ## Used when exiting the game menu to the game.
-    config.exit_transition = None
+    # config.help = "README.html"
+    # config.help = "LABEL"
+
+    # Transitions
+    config.enter_transition         = None # Used when entering the game menu from the game
+    config.exit_transition          = None # Used when exiting the game menu to the game
+    config.intra_transition         = None # Used between screens of the game menu
+    config.main_game_transition     = None # Used when entering the game menu from the main menu
+    config.game_main_transition     = None # Used when returning to the main menu from the game
+    config.end_splash_transition    = Dissolve(.3) # Used when entering the main menu from the splashscreen
+    config.end_game_transition      = Dissolve(.7) # Used when entering the main menu after the game has ended
+    config.after_load_transition    = Dissolve(.3) # Used when a game is loaded
+    config.window_show_transition   = Dissolve(.3) # Used when the window is shown
+    config.window_hide_transition   = Dissolve(.3) # Used when the window is hidden
+    config.adv_nvl_transition       = dissolve # Used when showing NVL-mode text directly after ADV-mode text
+    config.nvl_adv_transition       = dissolve # Used when showing ADV-mode text directly after NVL-mode text
+    config.enter_yesno_transition   = None # Used when yesno is shown
+    config.exit_yesno_transition    = None # Used when the yesno is hidden
+    config.enter_replay_transition  = None # Used when entering a replay
+    config.exit_replay_transition   = None # Used when exiting a replay
+    config.say_attribute_transition = None # Used when the image is changed by a say statement with image attributes
+
+    # Gameplay
+    config.hard_rollback_limit = 100
+    config.narrator_menu = True # If True, then display menu narration using narrator character
 
     config.quit_action = Quit(False)
 
-    ## Used between screens of the game menu.
-    config.intra_transition = None
-
-    ## Used when entering the game menu from the main menu.
-    config.main_game_transition = None
-
-    ## Used when returning to the main menu from the game.
-    config.game_main_transition = None
-
-    ## Used when entering the main menu from the splashscreen.
-    config.end_splash_transition = Dissolve(.3)
-
-    ## Used when entering the main menu after the game has ended.
-    config.end_game_transition = Dissolve(.7)
-
-    ## Used when a game is loaded.
-    config.after_load_transition = Dissolve(.3)
-
-    ## Used when the window is shown.
-    config.window_show_transition = Dissolve(.3)
-
-    ## Used when the window is hidden.
-    config.window_hide_transition = Dissolve(.3)
-
-    ## Used when showing NVL-mode text directly after ADV-mode text.
-    config.adv_nvl_transition = dissolve
-
-    ## Used when showing ADV-mode text directly after NVL-mode text.
-    config.nvl_adv_transition = dissolve
-
-    ## Used when yesno is shown.
-    config.enter_yesno_transition = None
-
-    ## Used when the yesno is hidden.
-    config.exit_yesno_transition = None
-
-    ## Used when entering a replay
-    config.enter_replay_transition = None
-
-    ## Used when exiting a replay
-    config.exit_replay_transition = None
-
-    ## Used when the image is changed by a say statement with image attributes.
-    config.say_attribute_transition = None
-
-    #########################################
-    ## This is the name of the directory where the game's data is
-    ## stored. (It needs to be set early, before any other init code
-    ## is run, so the persistent information can be found by the init code.)
-python early:
+# Save directory needs to be set in `python early` block
+python early: 
     config.save_directory = "WT SILVER"
 
-init -1 python hide:
-    #########################################
-    ## Default values of Preferences.
-
-    ## Note: These options are only evaluated the first time a
-    ## game is run. To have them run a second time, delete
-    ## game/saves/persistent
-
-    ## Should we start in fullscreen mode?
-
-    config.default_fullscreen = False
-
-    ## The default text speed in characters per second. 0 is infinite.
-
-    config.default_text_cps = 40
-
-    ## The default auto-forward time setting.
-
-    config.default_afm_time = 40
-
-    #########################################
-    ## More customizations can go here.
-
-
-
-
-    ##Modifies the Menu Choice's BG
-    #style.menu_choice_button.background = Frame("choice_bg_idle.jpg",28,9)
-    #style.menu_choice_button.hover_background = Frame("choice_bg_hover.jpg",28,9)
-    # style.name_button.selected_background = Frame("choice_bg_idle.jpg",28,9)
-    # style.name_button.selected_hover_background = Frame("choice_bg_idle.jpg",28,9)
-    # style.name_button.insensitive_background = Frame("choice_bg_idle.jpg",28,9)
-    # style.menu_choice_button.yminimum = 39 #Sets height, recommended to be the exact height of your image
-
-    ##Modifies the Menu Choice's Text
-    #style.menu_choice.color = "#000"
-    #style.menu_choice.size = 18
-    #style.menu_choice.outlines = [(2, "#000", 0, 0)]
-    style.menu_choice.hover_color = "#e9d570"
-    style.menu_choice.hover_outlines = [(2, "#402313", 0, 0)]
-
-    #style.file_picker_button.color = "#c25fb9"
- ########################################################################################
-
-    style.say_who_window.background = Frame(ConditionSwitch("interface_color == \"gold\"", "interface/frames/gold/PinkBox.png","True","interface/frames/gray/PinkBox.png"), 15, 15)
-
-    #style.say_who_window.background = Frame("interface/PinkBox.png", 15, 15) #Background skin
-    style.say_who_window.xalign = 0.0
-    style.say_who_window.yalign = 1.0
-    style.say_who_window.xpos = 227 #For precise placement
-    style.say_who_window.ypos = 125 #For precise placement
-    style.say_who_window.left_padding = 20
-    style.say_who_window.top_padding = 15
-    style.say_who_window.right_padding = 20
-    style.say_who_window.bottom_padding = 15
-    style.say_who_window.xminimum = 150
-    style.say_who_window.yminimum = 10
-    style.say_who_window.xfill = False
-
-## This section contains information about how to build your project into
-## distribution files.
-init python:
-
-    ## The name that's used for directories and archive files. For example, if
-    ## this is 'mygame-1.0', the windows distribution will be in the
-    ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "WT_Silver_%s" % config.version
-
-    ## The name that's uses for executables - the program that users will run
-    ## to start the game. For example, if this is 'mygame', then on Windows,
-    ## users can click 'mygame.exe' to start the game.
-    build.executable_name = "WT Silver"
-
-    ## If True, Ren'Py will include update information into packages. This
-    ## allows the updater to run.
-    build.include_update = False
-
-    ## File patterns:
-    ##
-    ## The following functions take file patterns. File patterns are case-
-    ## insensitive, and matched against the path relative to the base
-    ## directory, with and without a leading /. If multiple patterns match,
-    ## the first is used.
-    ##
-    ##
-    ## In a pattern:
-    ##
-    ## /
-    ##     Is the directory separator.
-    ## *
-    ##     Matches all characters, except the directory separator.
-    ## **
-    ##     Matches all characters, including the directory separator.
-    ##
-    ## For example:
-    ##
-    ## *.txt
-    ##     Matches txt files in the base directory.
-    ## game/**.ogg
-    ##     Matches ogg files in the game directory or any of its subdirectories.
-    ## **.psd
-    ##    Matches psd files anywhere in the project.
-
-    ## Classify files as None to exclude them from the built distributions.
-
-
-    ## Files matching documentation patterns are duplicated in a mac app
-    ## build, so they appear in both the app and the zip file.
-
-    #build.documentation('*.html')
-    #build.documentation('*.txt')
-
-    config.window_icon = "interface/icon.png"
-
-    config.hard_rollback_limit = 100
-    
-    # Override Styles
-    style.input.color = "#5c321b"
+# Build configuration
+# https://www.renpy.org/doc/html/build.html
+init python hide: 
+    build.directory_name = "WT_Silver_%s" % config.version # Name directories and archive files
+    build.executable_name = "WT Silver" # Name for executables
+    build.include_update = False # If True, include update information into packages (allows the updater to run)

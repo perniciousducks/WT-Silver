@@ -4,12 +4,17 @@
 #Add check if she has drunk addiction  potion
 #Add check if she has drunk cum addiction (for future uses)
 
-init:
-    $ hg_pp_cumaddict = event_class(title = "Cum Addiction", start_label = "hg_pp_cumaddict",
-    events = [[["hg_pp_cumaddict_intro"],["hg_pp_cumaddict_E1"]]],
-    iconset = [["potion_empty", "potion_white"]], # <--- menu icons
-    #Extra variables
-    fail_counter=0)
+default hg_pp_cumaddict = event_class(
+    title = "Cum Addiction", start_label = "hg_pp_cumaddict",
+    events = [
+        [
+            ["hg_pp_cumaddict_intro"],
+            ["hg_pp_cumaddict_E1"]
+        ]
+    ],
+    iconset = [["potion_empty", "potion_white"]],
+    fail_counter = 0
+)
 
 label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjusted for it
     m "[hermione_name], today I have a very special potion that I would like you to drink."

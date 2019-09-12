@@ -94,41 +94,41 @@ label set_cho_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
 
     return
 
-label cho_face_layers:
+define cho_mouth_layers = [
+    "angry",
+    "annoyed",
+    "base",
+    "horny",
+    "open",
+    "pout",
+    "quiver",
+    "scream",
+    "smile",
+    "soft",
+    "upset"
+]
 
-    $ cho_mouth_layers  = ["angry",
-                           "annoyed",
-                           "base",
-                           "horny",
-                           "open",
-                           "pout",
-                           "quiver",
-                           "scream",
-                           "smile",
-                           "soft",
-                           "upset"
-                           ]
+define cho_eye_layers = [
+    "angry",
+    "base",
+    "closed",
+    "shocked",
+    "narrow",
+    "wide",
+    "wink"
+]
 
-    $ cho_eye_layers    = ["angry",
-                           "base",
-                           "closed",
-                           "shocked",
-                           "narrow",
-                           "wide",
-                           "wink"
-                           ]
+define cho_brow_layers = [
+    "angry",
+    "base",
+    "raised",
+    "sad"
+]
 
-    $ cho_brow_layers   = ["angry",
-                           "base",
-                           "raised",
-                           "sad"
-                           ]
-
-    $ cho_pupil_layers  = ["down", "downR",
-                           "L",
-                           "mid",
-                           "R",
-                           "up"
-                           ]
-
-    return
+define cho_pupil_layers = [
+    "down", "downR",
+    "L",
+    "mid",
+    "R",
+    "up"
+]

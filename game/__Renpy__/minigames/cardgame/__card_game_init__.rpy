@@ -19,7 +19,7 @@ default geniecard_level = 1
 default geniecard_tokens = 0
 default cardgame_eoc = False # End of content flag
 
-default table_cards = [[None for x in range(0,3)] for y in range(0,3)] 
+default table_cards = [[None for x in range(0,3)] for y in range(0,3)]
 
 default card_width = 320 # get_width("images/cardgame/border.png")
 default card_height = 480 # get_height("images/cardgame/border.png")
@@ -45,7 +45,7 @@ default card_genie = card_new( imagepath="images/cardgame/t1/special/genie_v1.pn
                             leftvalue = 3,
                             title="Genie",
                             description = "It's you, looking sexy as fuck. As always.")
-    
+
 default card_snape = card_new( imagepath="images/cardgame/t1/special/snape_v1.png",
                             topvalue = 4,
                             bottomvalue = 1,
@@ -53,7 +53,7 @@ default card_snape = card_new( imagepath="images/cardgame/t1/special/snape_v1.pn
                             leftvalue = 2,
                             title="Severus Snape",
                             description = "The potions master at Hogwarts. Known to many by his slithering walk and greasy appearance.")
-                            
+
 default card_dumbledore = card_new( imagepath="images/cardgame/t1/special/dumbledore_v1.png",
                             topvalue = 6,
                             bottomvalue = 1,
@@ -61,7 +61,7 @@ default card_dumbledore = card_new( imagepath="images/cardgame/t1/special/dumble
                             leftvalue = 1,
                             title="Albus Dumbledore",
                             description = "Some old dude, you have no idea who this is.")
-                            
+
 default card_fred = card_new( imagepath="images/cardgame/t1/special/fred_v1.png",
                             topvalue = 3,
                             bottomvalue = 2,
@@ -69,7 +69,7 @@ default card_fred = card_new( imagepath="images/cardgame/t1/special/fred_v1.png"
                             leftvalue = 1,
                             title="Fred Weasley",
                             description = "One of the Weasley twins, I think it might be George.")
-                            
+
 default card_george = card_new( imagepath="images/cardgame/t1/special/george_v1.png",
                             topvalue = 2,
                             bottomvalue = 3,
@@ -79,7 +79,7 @@ default card_george = card_new( imagepath="images/cardgame/t1/special/george_v1.
                             description = "One of the Weasley twins, I think it might be Fred.")
 
 #Special Cards - Alternative
-                            
+
 default card_jasmine = card_new( imagepath="images/cardgame/t1/genie_realm/jas_v%s.png" % str(geniecard_level),
                             topvalue = 2,
                             bottomvalue = 3,
@@ -87,7 +87,7 @@ default card_jasmine = card_new( imagepath="images/cardgame/t1/genie_realm/jas_v
                             leftvalue = 4,
                             title="Princess Jasmine",
                             description = "One of your favourite sluts, I mean, princesses.")
-                            
+
 default card_iris = card_new( imagepath="images/cardgame/t1/genie_realm/iri_v%s.png" % str(geniecard_level),
                             topvalue = 3,
                             bottomvalue = 2,
@@ -95,7 +95,7 @@ default card_iris = card_new( imagepath="images/cardgame/t1/genie_realm/iri_v%s.
                             leftvalue = 2,
                             title="Iris",
                             description = "Your most devoted fangirl.")
-                            
+
 default card_azalea = card_new( imagepath="images/cardgame/t1/genie_realm/azalea_v%s.png" % str(geniecard_level),
                             topvalue = 4,
                             bottomvalue = 2,
@@ -103,7 +103,7 @@ default card_azalea = card_new( imagepath="images/cardgame/t1/genie_realm/azalea
                             leftvalue = 3,
                             title="Azalea",
                             description = "Your dreamgirl.")
-                            
+
 default card_dahlia = card_new( imagepath="images/cardgame/t1/genie_realm/dahlia_v1.png",
                             topvalue = 3,
                             bottomvalue = 3,
@@ -111,7 +111,7 @@ default card_dahlia = card_new( imagepath="images/cardgame/t1/genie_realm/dahlia
                             leftvalue = 2,
                             title="Dahlia",
                             description = "She's very (s)experienced.")
-                            
+
 default card_aladdin = card_new( imagepath="images/cardgame/t1/genie_realm/aladdin_v1.png",
                             topvalue = 4,
                             bottomvalue = 2,
@@ -119,7 +119,7 @@ default card_aladdin = card_new( imagepath="images/cardgame/t1/genie_realm/aladd
                             leftvalue = 4,
                             title="Aladdin",
                             description = "The biggest cuck in the whole multiverse.")
-                            
+
 default card_lilly = card_new( imagepath="images/cardgame/t1/genie_realm/lilly_v1.png",
                             topvalue = 1,
                             bottomvalue = 5,
@@ -127,7 +127,7 @@ default card_lilly = card_new( imagepath="images/cardgame/t1/genie_realm/lilly_v
                             leftvalue = 5,
                             title="Lilly",
                             description = "Whos your momma?")
-                            
+
 default card_maslab = card_new( imagepath="images/cardgame/t1/genie_realm/maslab_v1.png",
                             topvalue = 2,
                             bottomvalue = 3,
@@ -135,7 +135,7 @@ default card_maslab = card_new( imagepath="images/cardgame/t1/genie_realm/maslab
                             leftvalue = 4,
                             title="Maslab",
                             description = "\"If you hurt my precious daughter I'll find you!\"")
-                            
+
 default card_rasul = card_new( imagepath="images/cardgame/t1/genie_realm/rasul_v1.png",
                             topvalue = 6,
                             bottomvalue = 2,
@@ -143,7 +143,7 @@ default card_rasul = card_new( imagepath="images/cardgame/t1/genie_realm/rasul_v
                             leftvalue = 2,
                             title="Rasul",
                             description = "Loyalty has its price.")
-                            
+
 default card_jafar = card_new( imagepath="images/cardgame/t1/genie_realm/jafar_v1.png",
                             topvalue = 4,
                             bottomvalue = 1,
@@ -151,7 +151,7 @@ default card_jafar = card_new( imagepath="images/cardgame/t1/genie_realm/jafar_v
                             leftvalue = 2,
                             title="Jafar",
                             description = "That silvertongued motherfucker..")
-                            
+
 default card_santa = card_new( imagepath="images/cardgame/t1/special/santa_v1.png",
                             topvalue = 2,
                             bottomvalue = 2,
@@ -159,9 +159,9 @@ default card_santa = card_new( imagepath="images/cardgame/t1/special/santa_v1.pn
                             leftvalue = 1,
                             title="Santa",
                             description = "Some guy that's been stealing your style. I'll put him on my naughty list.")
-                            
+
 #Tier 1 cards
-                            
+
 default card_her_schoolgirl = card_new( imagepath="images/cardgame/t1/hermione/her_schoolgirl_v%s.png" % str(geniecard_level),
                             topvalue = 4,
                             bottomvalue = 3,
@@ -169,7 +169,7 @@ default card_her_schoolgirl = card_new( imagepath="images/cardgame/t1/hermione/h
                             leftvalue = 1,
                             title="Hermione Granger",
                             description = "The Granger girl wearing her normal school uniform.")
-                            
+
 default card_her_librarian = card_new( imagepath="images/cardgame/t1/hermione/her_librarian_v%s.png" % str(geniecard_level),
                             topvalue = 5,
                             bottomvalue = 2,
@@ -177,7 +177,7 @@ default card_her_librarian = card_new( imagepath="images/cardgame/t1/hermione/he
                             leftvalue = 4,
                             title="Hermione Granger",
                             description = "The Granger girl clutching a real page turner.")
-                            
+
 default card_sus_schoolgirl = card_new( imagepath="images/cardgame/t1/susan/sus_schoolgirl_v%s.png" % str(geniecard_level),
                             topvalue = 3,
                             bottomvalue = 4,
@@ -185,7 +185,7 @@ default card_sus_schoolgirl = card_new( imagepath="images/cardgame/t1/susan/sus_
                             leftvalue = 2,
                             title="Susan Bones",
                             description = "Miss Bones, barely contained within her school uniform.")
-                            
+
 default card_cho_schoolgirl = card_new( imagepath="images/cardgame/t1/cho/cho_schoolgirl_v%s.png" % str(geniecard_level),
                             topvalue = 2,
                             bottomvalue = 4,
@@ -193,7 +193,7 @@ default card_cho_schoolgirl = card_new( imagepath="images/cardgame/t1/cho/cho_sc
                             leftvalue = 1,
                             title="Cho Chang",
                             description = "Miss Chang, sporting her school uniform.")
-                            
+
 default card_lun_schoolgirl = card_new( imagepath="images/cardgame/t1/luna/lun_schoolgirl_v%s.png" % str(geniecard_level),
                             topvalue = 1,
                             bottomvalue = 2,
@@ -201,7 +201,7 @@ default card_lun_schoolgirl = card_new( imagepath="images/cardgame/t1/luna/lun_s
                             leftvalue = 3,
                             title="Luna Lovegood",
                             description = "Miss Lovegood, wearing her normal school uniform.")
-                            
+
 #Item cards
 
 default card_item_badge = card_new( imagepath="images/cardgame/t1/other/badge_v1.png",
@@ -211,7 +211,7 @@ default card_item_badge = card_new( imagepath="images/cardgame/t1/other/badge_v1
                             leftvalue = 3,
                             title="SPEW Badge",
                             description="The S.P.E.W Badge, I think it might stand for Sluts for the Pleasuring of Excited Wizards...")
-                            
+
 default card_item_barbell = card_new( imagepath="images/cardgame/t1/other/barbell_v1.png",
                             topvalue = 4,
                             bottomvalue = 2,
@@ -219,7 +219,7 @@ default card_item_barbell = card_new( imagepath="images/cardgame/t1/other/barbel
                             leftvalue = 1,
                             title="Barbell piercing",
                             description="A nipple piercing a female student might wear... after some convincing.")
-                            
+
 default card_item_beads = card_new( imagepath="images/cardgame/t1/other/beads_v1.png",
                             topvalue = 2,
                             bottomvalue = 4,
@@ -227,7 +227,7 @@ default card_item_beads = card_new( imagepath="images/cardgame/t1/other/beads_v1
                             leftvalue = 1,
                             title="Anal beads",
                             description="Some beads, I'm sure you already know where these go... Hogwarts express to brown town.")
-                            
+
 default card_item_bird = card_new( imagepath="images/cardgame/t1/other/bird_v1.png",
                             topvalue = 4,
                             bottomvalue = 3,
@@ -235,7 +235,7 @@ default card_item_bird = card_new( imagepath="images/cardgame/t1/other/bird_v1.p
                             leftvalue = 1,
                             title="Phoenix",
                             description="A bird that was here when I arrived. It doesn't say or do much... I like it.")
-                            
+
 default card_item_bookchairs = card_new( imagepath="images/cardgame/t1/other/bookchairs_v1.png",
                             topvalue = 1,
                             bottomvalue = 2,
@@ -243,7 +243,7 @@ default card_item_bookchairs = card_new( imagepath="images/cardgame/t1/other/boo
                             leftvalue = 2,
                             title="Book of Chairs",
                             description="A book with seemingly sharp pages. I've not dared to open it.")
-                            
+
 default card_item_bookgala = card_new( imagepath="images/cardgame/t1/other/bookgala_v1.png",
                             topvalue = 1,
                             bottomvalue = 2,
@@ -251,7 +251,7 @@ default card_item_bookgala = card_new( imagepath="images/cardgame/t1/other/bookg
                             leftvalue = 1,
                             title="Book of Galadrier (Light ED)",
                             description="One of the books, waste of printing paper.")
-                            
+
 default card_item_bookgala2 = card_new( imagepath="images/cardgame/t1/other/bookgala2_v1.png",
                             topvalue = 1,
                             bottomvalue = 4,
@@ -259,7 +259,7 @@ default card_item_bookgala2 = card_new( imagepath="images/cardgame/t1/other/book
                             leftvalue = 1,
                             title="Book of Galadriel (Hardcore ED)",
                             description="One of the books, a culture shock and a half.")
-                            
+
 default card_item_bookwaifu = card_new( imagepath="images/cardgame/t1/other/bookwaifu_v1.png",
                             topvalue = 3,
                             bottomvalue = 2,
@@ -267,7 +267,7 @@ default card_item_bookwaifu = card_new( imagepath="images/cardgame/t1/other/book
                             leftvalue = 2,
                             title="Waifu Book",
                             description="One of the books, a culture shock and a half.")
-                            
+
 default card_item_broom = card_new( imagepath="images/cardgame/t1/other/broom_v1.png",
                             topvalue = 1,
                             bottomvalue = 4,
@@ -275,7 +275,7 @@ default card_item_broom = card_new( imagepath="images/cardgame/t1/other/broom_v1
                             leftvalue = 2,
                             title="Modified Nimbus 2000",
                             description="Highly modified broom. I'd call it, \"The Thundersnatch.\"")
-                            
+
 default card_item_bdsm = card_new( imagepath="images/cardgame/t1/other/bdsm_v1.png",
                             topvalue = 3,
                             bottomvalue = 2,
@@ -283,7 +283,7 @@ default card_item_bdsm = card_new( imagepath="images/cardgame/t1/other/bdsm_v1.p
                             leftvalue = 1,
                             title="BDSM Kit",
                             description="Fetish gear, I like it for the peace and quiet.")
-                            
+
 default card_item_condoms = card_new( imagepath="images/cardgame/t1/other/condoms_v1.png",
                             topvalue = 3,
                             bottomvalue = 2,
@@ -291,7 +291,7 @@ default card_item_condoms = card_new( imagepath="images/cardgame/t1/other/condom
                             leftvalue = 3,
                             title="Pack of condoms",
                             description="Some condoms, I don't need them.")
-                            
+
 default card_item_desk = card_new( imagepath="images/cardgame/t1/other/desk_v1.png",
                             topvalue = 3,
                             bottomvalue = 3,
@@ -299,7 +299,7 @@ default card_item_desk = card_new( imagepath="images/cardgame/t1/other/desk_v1.p
                             leftvalue = 1,
                             title="Office desk",
                             description="My desk, with an underside way more glazed than before I arrived.")
-                            
+
 default card_item_dildo = card_new( imagepath="images/cardgame/t1/other/dildo_v1.png",
                             topvalue = 3,
                             bottomvalue = 3,
@@ -307,7 +307,7 @@ default card_item_dildo = card_new( imagepath="images/cardgame/t1/other/dildo_v1
                             leftvalue = 2,
                             title="Magical Dildo",
                             description="A Dildo, the perfect gift for any female student.")
-                            
+
 default card_item_doll = card_new( imagepath="images/cardgame/t1/other/doll_v1.png",
                             topvalue = 1,
                             bottomvalue = 3,
@@ -315,7 +315,7 @@ default card_item_doll = card_new( imagepath="images/cardgame/t1/other/doll_v1.p
                             leftvalue = 2,
                             title="Sex Doll",
                             description="A sex doll. Wished I had one of these in my lamp...")
-                            
+
 default card_item_elf = card_new( imagepath="images/cardgame/t1/other/elf_v1.png",
                             topvalue = 3,
                             bottomvalue = 3,
@@ -323,7 +323,7 @@ default card_item_elf = card_new( imagepath="images/cardgame/t1/other/elf_v1.png
                             leftvalue = 2,
                             title="House-Elf",
                             description="Disgusting creature... Apparently they clean underneath my desk though.")
-                            
+
 default card_item_eromag = card_new( imagepath="images/cardgame/t1/other/eromag_v1.png",
                             topvalue = 4,
                             bottomvalue = 2,
@@ -331,7 +331,7 @@ default card_item_eromag = card_new( imagepath="images/cardgame/t1/other/eromag_
                             leftvalue = 1,
                             title="Erotic Magazine",
                             description="Perfect way to teach any girl about the more important things in life.")
-                            
+
 default card_item_girlmag = card_new( imagepath="images/cardgame/t1/other/girlmag_v1.png",
                             topvalue = 2,
                             bottomvalue = 3,
@@ -339,7 +339,7 @@ default card_item_girlmag = card_new( imagepath="images/cardgame/t1/other/girlma
                             leftvalue = 1,
                             title="Girly Magazine",
                             description="A good gift to make you seem hip. Whatever that means.")
-                            
+
 default card_item_hat = card_new( imagepath="images/cardgame/t1/other/hat_v1.png",
                             topvalue = 6,
                             bottomvalue = 1,
@@ -347,7 +347,7 @@ default card_item_hat = card_new( imagepath="images/cardgame/t1/other/hat_v1.png
                             leftvalue = 1,
                             title="Sorting Hat",
                             description="One of the weird items in my office. I swear it talked to me once.")
-                            
+
 default card_item_lingerie = card_new( imagepath="images/cardgame/t1/other/lingerie_v1.png",
                             topvalue = 2,
                             bottomvalue = 4,
@@ -355,7 +355,7 @@ default card_item_lingerie = card_new( imagepath="images/cardgame/t1/other/linge
                             leftvalue = 2,
                             title="Lingerie",
                             description="If a girl needs to wear any undergarments at all these would be my preferred choice.")
-                            
+
 default card_item_lipstick = card_new( imagepath="images/cardgame/t1/other/lipstick_v1.png",
                             topvalue = 1,
                             bottomvalue = 2,
@@ -363,7 +363,7 @@ default card_item_lipstick = card_new( imagepath="images/cardgame/t1/other/lipst
                             leftvalue = 2,
                             title="Lipstick (Red)",
                             description="For when a girl wants to feel less naked. Comes in a variety of unnatural colours.")
-                            
+
 default card_item_lube = card_new( imagepath="images/cardgame/t1/other/lube_v1.png",
                             topvalue = 1,
                             bottomvalue = 5,
@@ -371,7 +371,7 @@ default card_item_lube = card_new( imagepath="images/cardgame/t1/other/lube_v1.p
                             leftvalue = 1,
                             title="Jar of lubricant",
                             description="A Jar full of lube, I should get a subscription for these.")
-                            
+
 default card_item_owl = card_new( imagepath="images/cardgame/t1/other/owl_v1.png",
                             topvalue = 3,
                             bottomvalue = 3,
@@ -379,7 +379,7 @@ default card_item_owl = card_new( imagepath="images/cardgame/t1/other/owl_v1.png
                             leftvalue = 1,
                             title="Stuffed Owl",
                             description="An Owl plush, very popular among the girls.")
-                            
+
 default card_item_plugs = card_new( imagepath="images/cardgame/t1/other/plugs_v1.png",
                             topvalue = 2,
                             bottomvalue = 2,
@@ -387,7 +387,7 @@ default card_item_plugs = card_new( imagepath="images/cardgame/t1/other/plugs_v1
                             leftvalue = 3,
                             title="Set of anal plugs",
                             description="A selection of plugs... Bit weird, even for me. ")
-                            
+
 default card_item_pornmag = card_new( imagepath="images/cardgame/t1/other/pornmag_v1.png",
                             topvalue = 4,
                             bottomvalue = 3,
@@ -395,14 +395,14 @@ default card_item_pornmag = card_new( imagepath="images/cardgame/t1/other/pornma
                             leftvalue = 1,
                             title="Porno Magazine",
                             description="Some porn mags. Perfect gift for the more sophisticated lady. ")
-                            
+
 default card_item_potions = card_new( imagepath="images/cardgame/t1/other/potions_v1.png",
                             topvalue = 3,
                             bottomvalue = 2,
                             rightvalue = 3,
                             leftvalue = 2,
                             title="Batch of Potions",
-                            description="A set of potions. None of my favorites...")      
+                            description="A set of potions. None of my favorites...")
 
 default card_item_scroll = card_new( imagepath="images/cardgame/t1/other/scroll_v1.png",
                             topvalue = 1,
@@ -411,7 +411,7 @@ default card_item_scroll = card_new( imagepath="images/cardgame/t1/other/scroll_
                             leftvalue = 3,
                             title="Forbidden Scroll",
                             description="One of the scrolls from the Weasley's shop.")
-                            
+
 default card_item_stockings = card_new( imagepath="images/cardgame/t1/other/stockings_v1.png",
                             topvalue = 1,
                             bottomvalue = 2,
@@ -419,7 +419,7 @@ default card_item_stockings = card_new( imagepath="images/cardgame/t1/other/stoc
                             leftvalue = 3,
                             title="Pair of stockings",
                             description="Pair of stockings, looks great with a short skirt.")
-                            
+
 default card_item_strapon = card_new( imagepath="images/cardgame/t1/other/strapon_v1.png",
                             topvalue = 2,
                             bottomvalue = 3,
@@ -427,7 +427,7 @@ default card_item_strapon = card_new( imagepath="images/cardgame/t1/other/strapo
                             leftvalue = 4,
                             title="Thestral Strapon",
                             description="Don't have any use for these but they're great practice for the ladies.")
-                            
+
 default card_item_sweets = card_new( imagepath="images/cardgame/t1/other/sweets_v1.png",
                             topvalue = 1,
                             bottomvalue = 1,
@@ -435,7 +435,7 @@ default card_item_sweets = card_new( imagepath="images/cardgame/t1/other/sweets_
                             leftvalue = 3,
                             title="Pack of Sweets",
                             description="Some of the most popular sweets. Including Butter beer, not alcoholic enough in my opinion.")
-                            
+
 default card_item_wine = card_new( imagepath="images/cardgame/t1/other/wine_v1.png",
                             topvalue = 4,
                             bottomvalue = 2,
@@ -443,7 +443,7 @@ default card_item_wine = card_new( imagepath="images/cardgame/t1/other/wine_v1.p
                             leftvalue = 2,
                             title="Bottle of wine",
                             description="That wine I keep finding in this cupboard. Not sure if the wine is magically infused or the cupboard.")
-    
+
 default deck_unlocked = False
 default deck_mail_send = False
 default enemy_deck = []
@@ -486,20 +486,14 @@ default card_rand_item4 = renpy.random.choice([card_item_bookchairs, card_item_b
 default card_rand_item5 = renpy.random.choice([card_item_eromag, card_item_pornmag, card_item_girlmag, card_item_scroll, card_item_sweets])
 default unlocked_cards = [card_genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2, card_rand_item3, card_rand_item4, card_rand_item5]
 
-default playerdeck = default_playerdeck([card_genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2])
-init python:
-    # Helper function for default playerdeck
-    def default_playerdeck(deck):
-        for card in deck:
-            card.copies = 0 # Delete copies
-        return deck
-    
+default playerdeck = [card_genie, card_rand_realm, card_rand_girl, card_rand_item1, card_rand_item2]
+
 default card_rule_reverse = cardgame_rules(name="Reverse", description="Instead of a higher number, you need to have the lowest number to take over a card.", icon="images/cardgame/rule_reverse.png")
 default card_rule_hidden = cardgame_rules(name="Hidden", description="The hidden rule means that a certain amount of cards in your enemies deck will be hidden.", icon="images/cardgame/rule_hidden.png")
 default card_rule_death = cardgame_rules(name="Death", description="If your game ends in a draw you pick up the cards that are shown in your colour and play again.", icon="images/cardgame/rule_death.png")
 default card_rule_double = cardgame_rules(name="Double", description="If the card you put down has the same number facing at least 2 other cards (Rather than higher/lower) you'll take over those cards.", icon="images/cardgame/rule_double.png")
 default card_rule_random = cardgame_rules(name="Random", description="Your deck is selected randomly from the available cards.", icon="images/cardgame/rule_random.png")
-        
+
 default cards_realm = [card_genie, card_iris, card_jasmine, card_azalea, card_dahlia, card_maslab, card_aladdin, card_lilly, card_rasul, card_jafar]
 default cards_hogwarts = [card_her_schoolgirl, card_her_librarian, card_lun_schoolgirl, card_sus_schoolgirl, card_cho_schoolgirl, card_fred, card_george, card_snape, card_dumbledore]
 default cards_other = [card_santa]
@@ -511,10 +505,10 @@ default cards_dynamic = [card_iris, card_jasmine, card_azalea, card_her_schoolgi
 default snape_first_deck = [card_snape.clone(), card_item_potions.clone(), card_item_elf.clone(), card_item_wine.clone(), card_item_lipstick.clone()]
 default snape_second_deck = [card_snape.clone(), card_item_potions.clone(), card_item_elf.clone(), card_item_elf.clone(), card_item_eromag.clone()]
 default snape_third_deck = [card_snape.clone(), card_item_potions.clone(), card_item_elf.clone(), card_item_elf.clone(), card_item_elf.clone()]
-    
+
 default twins_first_deck = [card_fred.clone(), card_item_sweets.clone(), card_item_beads.clone(), card_item_sweets.clone(), card_item_condoms.clone()]
 default twins_second_deck = [card_george.clone(), card_fred.clone(), card_item_doll.clone(), card_item_sweets.clone(), card_item_broom.clone()]
-    
+
 default her_first_deck = [card_her_schoolgirl.clone(), card_item_girlmag.clone(), card_item_bookgala.clone(), card_item_bookgala2.clone(), card_item_bookchairs.clone()]
 default her_second_deck = [card_her_schoolgirl.clone(), card_item_eromag.clone(), card_item_bookgala.clone(), card_item_bookgala2.clone(), card_item_bookchairs.clone()]
 default her_third_deck = [card_her_librarian.clone(), card_item_pornmag.clone(), card_item_bookgala.clone(), card_item_bookgala2.clone(), card_item_bookchairs.clone()]
@@ -527,14 +521,12 @@ default twins_speech_card = ["Our cards are fresher than fresh. They were printe
 
 default her_speech_card = ["You should double the points you give me if I win... or at least consider it.", "I'm great at wizards chess so beating you at this shouldn't be a problem...", "I should have asked for house points if I beat you... oh well, too late now.", "Have you been looking at my deck? That's cheating, you better whip yours out..."] + card_non_spec_char
 
-        
+
 init python:
-    #For card randomization
-    import random
-    
-    def clamp(n, smallest, largest): 
+
+    def clamp(n, smallest, largest):
         return max(smallest, min(n, largest))
-        
+
     def card_exist(unlockedlist, cardobj):
         for elm in unlockedlist:
                 if cardobj.title == elm.title:
@@ -550,10 +542,10 @@ init python:
         temp_pool.extend(card_pool)
         for card in range(0,5):
             random_choice = renpy.random.choice(temp_pool)
-                    
+
             new_deck.append(random_choice)
             del temp_pool[temp_pool.index(random_choice)]
-            
+
         while min > get_deck_score(new_deck) or max < get_deck_score(new_deck):
             replace_index = 0
             if new_deck < min:
@@ -561,14 +553,14 @@ init python:
             else:
                 replace_index = find_index_func(temp_pool, gretest_func)
 
-                
-            replace_index = clamp(replace_index,0,4)   
+
+            replace_index = clamp(replace_index,0,4)
             random_choice = renpy.random.choice(temp_pool)
-            
+
             temp_pool.append(new_deck[replace_index])
             new_deck[replace_index] = (random_choice)
             del temp_pool[temp_pool.index(random_choice)]
-                
+
         return new_deck
     def find_index_func(seq, func):
         func_index = 0
@@ -576,29 +568,29 @@ init python:
             if func(seq[func_index], seq[i]):
                 func_index = i
         return func_index
-        
+
     def get_deck_score(deck):
         score = 0
         for card in deck:
             score += card.get_total_value()
         return score
-    
+
     def playerTint(image):
         return im.MatrixColor(image, im.matrix.tint(playercolor_rgb[0]/255.0, playercolor_rgb[1]/255.0, playercolor_rgb[2]/255.0))
     def enemyTint(image):
         return im.MatrixColor(image, im.matrix.tint(enemycolor_rgb[0]/255.0, enemycolor_rgb[1]/255.0, enemycolor_rgb[2]/255.0))
     def grayTint(image):
         return im.MatrixColor(image, im.matrix.desaturate())
-      
+
     def get_image_size(image):
         myDisplayable = im.Image(image)
         myRender = renpy.render(myDisplayable, 800, 600, 0, 0)
         sizes = myRender.get_size()
         x = sizes[0]
         y = sizes[1]
-        
+
         return (x,y)
-        
+
     def get_hex_string(red, green, blue, alpha=1.0):
         red = str(hex( int( math.ceil( red*255))))[2:]
         if not len(red) == 2:
@@ -611,41 +603,41 @@ init python:
             blue = "0"+blue
         alpha = str(hex(int(math.ceil( alpha * 255))))[2:]
         if not len(alpha) == 2:
-            alpha = "0"+alpha    
-        
+            alpha = "0"+alpha
+
         return "#" + red + green + blue + alpha
-        
+
     def get_hex_string_tuple(color):
         return get_hex_string(color[0], color[1], color[2], color[3])
-        
+
     def get_rgb_tuple(hex):
         hex = hex.lstrip('#')
         hex_len = len(hex)
         rgb = tuple(int(hex[i:i + hex_len // 3], 16) for i in range(0, hex_len, hex_len // 3))
         rgb = rgb + (255,) # Add alpha
         return rgb
-        
+
     def get_rgb_list(hex):
         hex = hex.lstrip('#')
         hex_len = len(hex)
         rgb = list(int(hex[i:i + hex_len // 3], 16) for i in range(0, hex_len, hex_len // 3))
         rgb = rgb + [255] # Add alpha
         return rgb
-    
-    def get_width(image):   
+
+    def get_width(image):
         return get_image_size(image)[0]
-        
+
     def get_height(image):
-        return get_image_size(image)[1]    
-    
+        return get_image_size(image)[1]
+
     def reset_table_cards():
         global table_cards
-        
+
         for y in range(0,3):
             for x in range(0,3):
                 table_cards[x][y] = None
         return
-        
+
     def check_winner(player_deck):
         global table_cards
         playerpoints = len(player_deck)
@@ -654,33 +646,33 @@ init python:
             for x in range(0,3):
                 if table_cards[x][y].playercard:
                     playerpoints += 1
-        if playerpoints > 5:        
-            return "win" 
+        if playerpoints > 5:
+            return "win"
         elif playerpoints == 5:
-            return "draw" 
+            return "draw"
         else:
             return "loss"
-           
+
     def update_table(x, y, reverse, dobelt_number):
         global table_cards
         if reverse:
             take_over = lambda a, b : a < b
         else:
             take_over = lambda a, b : a > b
-        
+
 
         if not y == 0 and not table_cards[x][y-1] == None and take_over(table_cards[x][y].topvalue, table_cards[x][y-1].bottomvalue):
             table_cards[x][y-1].playercard = table_cards[x][y].playercard
-            
+
         if not y == 2 and not table_cards[x][y+1] == None and take_over(table_cards[x][y].bottomvalue, table_cards[x][y+1].topvalue):
             table_cards[x][y+1].playercard = table_cards[x][y].playercard
-            
+
         if not x == 0 and not table_cards[x-1][y] == None and take_over(table_cards[x][y].leftvalue, table_cards[x-1][y].rightvalue):
             table_cards[x-1][y].playercard = table_cards[x][y].playercard
-            
+
         if not x == 2 and not table_cards[x+1][y] == None and take_over(table_cards[x][y].rightvalue, table_cards[x+1][y].leftvalue):
             table_cards[x+1][y].playercard = table_cards[x][y].playercard
-        
+
         if dobelt_number:
             dobelt_found = []
             if not y == 0 and not table_cards[x][y-1] == None:
@@ -690,55 +682,53 @@ init python:
             if not y == 2 and not table_cards[x][y+1] == None:
                 if table_cards[x][y].bottomvalue == table_cards[x][y+1].topvalue:
                     dobelt_found.append([x,y+1])
-                
+
             if not x == 0 and not table_cards[x-1][y] == None:
                 if table_cards[x][y].leftvalue == table_cards[x-1][y].rightvalue:
                     dobelt_found.append([x-1,y])
 
-                
+
             if not x == 2 and not table_cards[x+1][y] == None:
                 if table_cards[x][y].rightvalue == table_cards[x+1][y].leftvalue:
                     dobelt_found.append([x+1,y])
-                    
+
             if len(dobelt_found) > 1:
                 for card in dobelt_found:
                     table_cards[card[0]][card[1]].playercard = table_cards[x][y].playercard
-            
+
     def add_card_to_deck(title):
             for card in unlocked_cards:
                 if title == card.title:
                     card.copies += 1
-                    
+
     class cardgame_rules(object):
-        name = None
-        description = None
-        icon = None
-        
         def __init__(self, **kwargs):
+            self.name = None
+            self.description = None
+            self.icon = None
             self.__dict__.update(**kwargs)
-                     
+
     class card_new(object):
-        playercard = True
-        textcolor = "{color=#ffffff}"
-        copies = 0
-        description = "Description"
-        title = "Title"
-        imagepath = "images/cardgame/card.png"
-        backside = "images/cardgame/t1/backside/gryffindor.png"
-        
-        topvalue = 0
-        bottomvalue = 1
-        rightvalue = 2
-        leftvalue = 3
-        
         def __init__(self, **kwargs):
+            self.playercard = True
+            self.textcolor = "{color=#ffffff}"
+            self.copies = 0
+            self.description = "Description"
+            self.title = "Title"
+            self.imagepath = "images/cardgame/card.png"
+            self.backside = "images/cardgame/t1/backside/gryffindor.png"
+
+            self.topvalue = 0
+            self.bottomvalue = 1
+            self.rightvalue = 2
+            self.leftvalue = 3
             self.__dict__.update(**kwargs)
-            
+
         def get_card_image(self, zoom=0.5):
             return im.Scale(self.imagepath, card_width*zoom, card_height*zoom)
         def get_card_hover(self, zoom=0.5):
             return im.MatrixColor(im.Scale(self.imagepath, card_width*zoom, card_height*zoom),im.matrix.brightness(0.12))
-        
+
         def get_back_image(self, zoom=0.5):
             return im.Scale(self.backside, card_width*zoom, card_height*zoom)
         def get_back_hover(self, zoom=0.5):
@@ -751,14 +741,14 @@ init python:
         def get_totalvalue(self):
             return self.textcolor+str(self.topvalue+self.bottomvalue+self.leftvalue+self.rightvalue)+"{/color}"
         def get_total_value(self):
-            return self.topvalue+self.bottomvalue+self.leftvalue+self.rightvalue    
-        
+            return self.topvalue+self.bottomvalue+self.leftvalue+self.rightvalue
+
         def get_description(self):
             return self.textcolor+self.description+"{/color}"
-            
+
         def clone(self):
             return card_new(title = self.title,imagepath=self.imagepath, topvalue=self.topvalue, bottomvalue=self.bottomvalue, rightvalue=self.rightvalue, leftvalue=self.leftvalue, playercard = self.playercard)
-                    
+
         def getAIScore(self, table_of_cards, reverse, dobelt_number):
             high_score = 0
             position = 0
@@ -770,7 +760,7 @@ init python:
             else:
                 score_func = lambda a : a
                 take_over = lambda a, b : a > b
-                
+
             for y in range(0,3):
                 for x in range(0,3):
                     score = 0
@@ -782,7 +772,7 @@ init python:
                                 score += score_func(self.topvalue)
                         else:
                             score += wallscore
-                            
+
                         if not y == 2 and not table_cards[x][y+1] == None and table_cards[x][y+1].playercard:
                             if take_over(self.bottomvalue, table_cards[x][y+1].topvalue):
                                 score += getcardscore
@@ -790,7 +780,7 @@ init python:
                                 score += score_func(self.bottomvalue)
                         else:
                             score += wallscore
-                            
+
                         if not x == 0 and not table_cards[x-1][y] == None and table_cards[x-1][y].playercard:
                             if take_over(self.leftvalue, table_cards[x-1][y].rightvalue):
                                 score += getcardscore
@@ -798,7 +788,7 @@ init python:
                                 score += score_func(self.leftvalue)
                         else:
                             score += wallscore
-                            
+
                         if not x == 2 and not table_cards[x+1][y] == None and table_cards[x+1][y].playercard:
                             if take_over(self.rightvalue, table_cards[x+1][y].leftvalue):
                                 score += getcardscore
@@ -806,34 +796,34 @@ init python:
                                 score += score_func(self.rightvalue)
                         else:
                             score += wallscore
-                            
+
                         if dobelt_number:
                             dobelt_found = []
                             if not y == 0 and not table_cards[x][y-1] == None:
                                 if self.topvalue == table_cards[x][y-1].bottomvalue:
                                     dobelt_found.append(table_cards[x][y-1])
-     
+
                             if not y == 2 and not table_cards[x][y+1] == None:
                                 if self.bottomvalue == table_cards[x][y+1].topvalue:
                                     dobelt_found.append(table_cards[x][y+1])
-                                
+
                             if not x == 0 and not table_cards[x-1][y] == None:
                                 if self.leftvalue == table_cards[x-1][y].rightvalue:
                                     dobelt_found.append(table_cards[x-1][y])
 
-                                
+
                             if not x == 2 and not table_cards[x+1][y] == None:
                                 if self.rightvalue == table_cards[x+1][y].leftvalue:
                                     dobelt_found.append(table_cards[x+1][y])
-                                    
+
                             if len(dobelt_found) > 1:
                                 for card in dobelt_found:
                                     if card.playercard:
                                         high_score += getcardscore
-                            
+
                         if score > high_score:
                             high_score = score
                             position = (x, y)
-                            
-                            
+
+
             return [high_score, position]

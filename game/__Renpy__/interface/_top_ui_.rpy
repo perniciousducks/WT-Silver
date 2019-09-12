@@ -443,8 +443,6 @@ label decorate_room_menu:
     $ current_category = None
 
     label deco_menu:
-    call update_deco_items
-
     python:
 
         category_list = []
@@ -530,45 +528,6 @@ label decorate_room_menu:
 
     jump deco_menu
 
-
-# List with deco objects
-## Same lists get used in the Weasley store.
-## Add any deco objects to the lists here.
-label update_deco_items:
-    if not hasattr(renpy.store,'poster_agrabah_ITEM') or reset_persistants:
-        #Posters
-        $ poster_agrabah_ITEM = item_class(id="agrabah", name="Agrabah Poster", cost=2, type="poster", image="posters/agrabah", description="A remnant of a distant land and memories about different times. A reminder for when you just want to ponder about what could've been.")
-        $ poster_gryffindor_ITEM = item_class(id="gryffindor", name="Gryffindor Poster", cost=2, type="poster", image="posters/gryffindor", description="Make your stance that you support the house of Gryffindor with this themed poster.")
-        $ poster_hufflepuff_ITEM = item_class(id="hufflepuff", name="Hufflepuff Poster", cost=2, type="poster", image="posters/hufflepuff", description="Make your stance that you support the house of Hufflepuff with this themed poster.")
-        $ poster_ravenclaw_ITEM = item_class(id="ravenclaw", name="Ravenclaw Poster", cost=2, type="poster", image="posters/ravenclaw", description="Make your stance that you support the house of Ravenclaw with this themed poster.")
-        $ poster_slytherin_ITEM = item_class(id="slytherin", name="Slytherin Poster", cost=2, type="poster", image="posters/slytherin", description="Make your stance that you support the house of Slytherin with this themed poster.")
-        $ poster_hermione_ITEM = item_class(id="hermione", name="Hermione Chibi Poster", cost=2, type="poster", image="posters/hermione", description="A little lewdness for the office, don't worry. With a special illusion charm no one but you will notice a thing....")
-        $ poster_harlots_ITEM = item_class(id="harlots", name="Hogwarts Harlots Poster", cost=2, type="poster", image="posters/harlots", description="Hermione showing off her true colours at last with this special poster... illusion charm included...")
-        $ poster_stripper_ITEM = item_class(id="stripper", name="Stripper Poster", cost=2, type="poster", image="posters/stripper", description="Hermione showing off how to work the pole... illusion charm included...")
-        $ poster_wanted_ITEM = item_class(id="wanted", name="Wanted Poster", cost=2, type="poster", image="posters/wanted", description="A Wild West styled Wanted poster depicting our dear headmaster...")
-        #Trophies
-        $ trophy_stag_ITEM = item_class(id="stag", name="Stag Head Trophy", cost=3, type="trophy", image="trophies/stag", description="A perfect decoration over your mantelpiece to add a sense of masculinity to the office.")
-        $ trophy_crest_ITEM = item_class(id="crest", name="Hogwarts Crest", cost=5, type="trophy", image="trophies/crest", description="A perfect decoration for a headmaster.")
-        #Pinups & Misc
-        $ pinup_girl_ITEM = item_class(id="_deco_1", name="Girl Pinup", cost=0, type="pinup", image="pinups/girl", description="Spice up your cupboard with this sexy pinup model...\n(Shows up when rumaging through the cupboard).", unlocked=True)
-        # HATS HATS HATS HATS HATS HYPE
-        $ owl_hat_ITEM = item_class(id="owl_hat", name="Owl Hat", cost=1, type="owl", imagepath="interface/icons/misc/owl_hat.png", description="A hat for an owl. Don't ask, just accept it..")
-        $ phoenix_hat_ITEM = item_class(id="phoenix_hat", name="Phoenix Hat", cost=1, type="phoenix", imagepath="interface/icons/misc/phoenix_hat.png", description="A little something to make your friend look less depressed.")
-        $ fireplace_hat_ITEM = item_class(id="fireplace_hat", name="Skull Hat", cost=1, type="fireplace", imagepath="interface/icons/misc/fireplace_hat.png", description="Don't let Johnny get a cold!")
-
-        $ owl_black_ITEM = item_class(id="owl_idle_black", name="Black Owl", cost=3, type="mail", imagepath="interface/icons/misc/owl_black.png", description="Magically dye your mail courier black!")
-
-        $ wall_deco_list = [poster_agrabah_ITEM, poster_gryffindor_ITEM, poster_hufflepuff_ITEM, poster_ravenclaw_ITEM, poster_slytherin_ITEM, poster_hermione_ITEM, poster_harlots_ITEM, poster_stripper_ITEM, poster_wanted_ITEM]
-        $ fireplace_deco_list = [trophy_crest_ITEM, trophy_stag_ITEM]
-        $ cupboard_deco_list = [pinup_girl_ITEM]
-        $ misc_deco_list = [owl_black_ITEM]
-        $ misc_hat_list = [phoenix_hat_ITEM, owl_hat_ITEM, fireplace_hat_ITEM]
-
-    # Outfits
-    if hg_gamble_slut_ITEM.unlocked and hg_gamble_slut_ITEM not in hermione_outfits_list: # Updates image from shop icon to mannequin.
-        $ hg_gamble_slut_ITEM.image = "outfits/hg_gambler_slut"
-        $ hermione_outfits_list.append(hg_gamble_slut_ITEM)
-    return
 
 label use_deco_item(item=None): # Add the 'item' decoration to the room. Remove it when 'item' is currently displayed as a deco.
     if item.type == "poster":

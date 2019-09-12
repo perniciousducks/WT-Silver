@@ -93,36 +93,36 @@ label set_ast_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
 
     return
 
-label astoria_face_layers:
+define ast_mouth_layers = [
+    "angry",
+    "annoyed",
+    "base",
+    "clench",
+    "grin",
+    "horny",
+    "open",
+    "scream",
+    "smile",
+    "upset"
+]
 
-    $ ast_mouth_layers  = ["angry",
-                           "annoyed",
-                           "base",
-                           "clench",
-                           "grin",
-                           "horny",
-                           "open",
-                           "scream",
-                           "smile",
-                           "upset"
-                           ]
+define ast_eye_layers = [
+    "base",
+    "closed",
+    "narrow"
+]
 
-    $ ast_eye_layers    = ["base",
-                           "closed",
-                           "narrow"
-                           ]
+define ast_brow_layers = [
+    "angry",
+    "base",
+    "worried"
+]
 
-    $ ast_brow_layers   = ["angry",
-                           "base",
-                           "worried"
-                           ]
-
-    $ ast_pupil_layers  = ["ahegao",
-                           "down",
-                           "L",
-                           "mid",
-                           "R",
-                           "up"
-                           ]
-
-    return
+define ast_pupil_layers = [
+    "ahegao",
+    "down",
+    "L",
+    "mid",
+    "R",
+    "up"
+]

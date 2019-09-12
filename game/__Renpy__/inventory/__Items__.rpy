@@ -23,7 +23,6 @@ default testral_strapon_ITEM   = item_class(id="testral_strapon", name="Thestral
 default broom_2000_ITEM        = item_class(id="broom_2000", name="Lady Speed Stick-2000",     cost=500,type="toy", image="item_broom", description="The \"Lady Speed Stick-2000\", an elegant way of transportation for passionate witches. The trademarked saddle guarantees full satisfaction. Get one for your witch and she won't use her boring old broom ever again!")
 default sexdoll_ITEM           = item_class(id="sexdoll", name="Sex doll \"Joanne\"",          cost=350,type="toy", image="item_sexdoll", description="Sex doll \"Joanne\"... It's so realistic. Almost looks like a real human under the influence of a spell of some sort.")
 default anal_beads_ITEM        = item_class(id="anal_beads", name="Anal beads",                cost=65, type="toy", image="item_anal_beads", description="Anal beads engraved with a strange inscription \"Property of L.C.\".")
-# default _ITEM = item_class(id="", name="", cost=50, type="", image="", description="")
 
 default wine_ITEM       = item_class(id="wine", name="Wine",             cost=60, type="drink", image="item_wine", description="Add description. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
 default firewhisky_ITEM = item_class(id="firewhisky", name="firewhisky", cost=80, type="drink", image="item_whisky", description="Add description. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
@@ -32,13 +31,11 @@ default candy_gift_list = [
     lollipop_ITEM,
     chocolate_ITEM,
 ]
-
 default drink_gift_list = [
     butterbeer_ITEM,
     wine_ITEM,
     firewhisky_ITEM
 ]
-
 default mag_gift_list = [
     krum_poster_ITEM,
     science_mag_ITEM,
@@ -46,7 +43,6 @@ default mag_gift_list = [
     adult_mag_ITEM,
     porn_mag_ITEM,
 ]
-
 default toy_gift_list = [
     plush_owl_ITEM,
     pink_condoms_ITEM,
@@ -61,13 +57,64 @@ default toy_gift_list = [
     anal_beads_ITEM,
 ]
 
+# Posters
+default poster_agrabah_ITEM = item_class(id="agrabah", name="Agrabah Poster", cost=2, type="poster", image="posters/agrabah", description="A remnant of a distant land and memories about different times. A reminder for when you just want to ponder about what could've been.")
+default poster_gryffindor_ITEM = item_class(id="gryffindor", name="Gryffindor Poster", cost=2, type="poster", image="posters/gryffindor", description="Make your stance that you support the house of Gryffindor with this themed poster.")
+default poster_hufflepuff_ITEM = item_class(id="hufflepuff", name="Hufflepuff Poster", cost=2, type="poster", image="posters/hufflepuff", description="Make your stance that you support the house of Hufflepuff with this themed poster.")
+default poster_ravenclaw_ITEM = item_class(id="ravenclaw", name="Ravenclaw Poster", cost=2, type="poster", image="posters/ravenclaw", description="Make your stance that you support the house of Ravenclaw with this themed poster.")
+default poster_slytherin_ITEM = item_class(id="slytherin", name="Slytherin Poster", cost=2, type="poster", image="posters/slytherin", description="Make your stance that you support the house of Slytherin with this themed poster.")
+default poster_hermione_ITEM = item_class(id="hermione", name="Hermione Chibi Poster", cost=2, type="poster", image="posters/hermione", description="A little lewdness for the office, don't worry. With a special illusion charm no one but you will notice a thing....")
+default poster_harlots_ITEM = item_class(id="harlots", name="Hogwarts Harlots Poster", cost=2, type="poster", image="posters/harlots", description="Hermione showing off her true colours at last with this special poster... illusion charm included...")
+default poster_stripper_ITEM = item_class(id="stripper", name="Stripper Poster", cost=2, type="poster", image="posters/stripper", description="Hermione showing off how to work the pole... illusion charm included...")
+default poster_wanted_ITEM = item_class(id="wanted", name="Wanted Poster", cost=2, type="poster", image="posters/wanted", description="A Wild West styled Wanted poster depicting our dear headmaster...")
+
+# Trophies
+default trophy_stag_ITEM = item_class(id="stag", name="Stag Head Trophy", cost=3, type="trophy", image="trophies/stag", description="A perfect decoration over your mantelpiece to add a sense of masculinity to the office.")
+default trophy_crest_ITEM = item_class(id="crest", name="Hogwarts Crest", cost=5, type="trophy", image="trophies/crest", description="A perfect decoration for a headmaster.")
+
+# Pinups & Misc
+default pinup_girl_ITEM = item_class(id="_deco_1", name="Girl Pinup", cost=0, type="pinup", image="pinups/girl", description="Spice up your cupboard with this sexy pinup model...\n(Shows up when rumaging through the cupboard).", unlocked=True)
+
+# Hats
+default owl_hat_ITEM = item_class(id="owl_hat", name="Owl Hat", cost=1, type="owl", imagepath="interface/icons/misc/owl_hat.png", description="A hat for an owl. Don't ask, just accept it..")
+default phoenix_hat_ITEM = item_class(id="phoenix_hat", name="Phoenix Hat", cost=1, type="phoenix", imagepath="interface/icons/misc/phoenix_hat.png", description="A little something to make your friend look less depressed.")
+default fireplace_hat_ITEM = item_class(id="fireplace_hat", name="Skull Hat", cost=1, type="fireplace", imagepath="interface/icons/misc/fireplace_hat.png", description="Don't let Johnny get a cold!")
+
+default owl_black_ITEM = item_class(id="owl_idle_black", name="Black Owl", cost=3, type="mail", imagepath="interface/icons/misc/owl_black.png", description="Magically dye your mail courier black!")
+
+default wall_deco_list = [
+    poster_agrabah_ITEM,
+    poster_gryffindor_ITEM,
+    poster_hufflepuff_ITEM,
+    poster_ravenclaw_ITEM,
+    poster_slytherin_ITEM,
+    poster_hermione_ITEM,
+    poster_harlots_ITEM,
+    poster_stripper_ITEM,
+    poster_wanted_ITEM,
+]
+default fireplace_deco_list = [
+    trophy_crest_ITEM,
+    trophy_stag_ITEM,
+]
+default cupboard_deco_list = [
+    pinup_girl_ITEM
+]
+default misc_deco_list = [
+    owl_black_ITEM
+]
+default misc_hat_list = [
+    fireplace_hat_ITEM,
+    phoenix_hat_ITEM,
+    owl_hat_ITEM,    
+]
 
 # Scroll Items
 default sealed_scroll_ITEM = scroll_class(id="sealed_scroll",   name="Forbidden Scroll",  cost=300,   type="scroll", image="item_scroll_sealed", description=">Quest Item!")
 default scroll_1_ITEM = scroll_class(id="scroll_1",   name="The room",           cost=1,   type="scroll", image="item_scroll", scroll_image="1", comments=["This is a first ever draft of the Dumbledore's office.","Not a very exciting thing to look at, sure. But holds great historical value."])
 default scroll_2_ITEM = scroll_class(id="scroll_2",   name="The calendar",       cost=2,   type="scroll", image="item_scroll", scroll_image="2", comments=["The calendar...","On the early stages of development I toyed with an idea of implementing an actual in-game calendar into the gameplay...","I soon realized how much more difficult it would be to create a game like that...","And since I personally believe that any time limits in any game always work against the fun factor I decided to abandon the idea...","Later on I used this drawing as a parchment paper for letters to be written on..."])
 default scroll_3_ITEM = scroll_class(id="scroll_3",   name="The girl",           cost=10,  type="scroll", image="item_scroll", scroll_image="3", comments=["A couple of very early drawings of Hermione..."])
-default scroll_4_ITEM = scroll_class(id="scroll_4",   name="Deeptroating",       cost=60,  type="scroll", image="item_scroll", scroll_image="4", comments=["The deepthroating scene...","My first attempt.","Been deemed unworthy and ended up here."])
+default scroll_4_ITEM = scroll_class(id="scroll_4",   name="Deepthroating",      cost=60,  type="scroll", image="item_scroll", scroll_image="4", comments=["The deepthroating scene...","My first attempt.","Been deemed unworthy and ended up here."])
 default scroll_5_ITEM = scroll_class(id="scroll_5",   name="Poster 01",          cost=50,  type="scroll", image="item_scroll", scroll_image="5", comments=["The game poster...","Hermione is Dahr's work. The rest is me..."])
 default scroll_6_ITEM = scroll_class(id="scroll_6",   name="Poster 02",          cost=50,  type="scroll", image="item_scroll", scroll_image="6", comments=["Alternative game poster.","This one has never been released."])
 default scroll_7_ITEM = scroll_class(id="scroll_7",   name="Chibi-dancing",      cost=20,  type="scroll", image="item_scroll", scroll_image="7", comments=["Some chibi closeups.","The one on the left never made it into the final game..."])
@@ -96,7 +143,6 @@ default scroll_28_ITEM = scroll_class(id="scroll_28", name="New clothes 01",    
 default scroll_29_ITEM = scroll_class(id="scroll_29", name="New clothes 02",     cost=50,  type="scroll", image="item_scroll", scroll_image="29", comments=[".........."])
 default scroll_30_ITEM = scroll_class(id="scroll_30", name="The gang",           cost=10,  type="scroll", image="item_scroll", scroll_image="30", comments=["One of the very early sketches related to the quiddich sub-quests..."])
 
-#Silver Scroll.
 default scroll_31_ITEM = scroll_class(id="scroll_31", name="Silver",           cost=10,  type="scroll", image="item_scroll_silver", scroll_image="31", comments=[""])
 default scroll_32_ITEM = scroll_class(id="scroll_32", name="New characters!",   cost=50,  type="scroll", image="item_scroll_silver", scroll_image="32", comments=["More and more characters got added along the way..."])
 default scroll_33_ITEM = scroll_class(id="scroll_33", name="Lion, Witch, & Wardrobe 1",   cost=10,  type="scroll", image="item_scroll_silver", scroll_image="33", comments=["The very first wardrobe that got added to silver."])
@@ -108,18 +154,30 @@ default scroll_37_ITEM = scroll_class(id="scroll_37", name="Map 2",   cost=10,  
 default forbidden_scroll_list = [sealed_scroll_ITEM]
 
 default scroll_list_A = [
-    scroll_1_ITEM, scroll_2_ITEM, scroll_3_ITEM, scroll_4_ITEM, scroll_5_ITEM,
-    scroll_6_ITEM, scroll_7_ITEM, scroll_8_ITEM, scroll_9_ITEM, scroll_10_ITEM,
-    scroll_11_ITEM, scroll_12_ITEM, scroll_13_ITEM ,scroll_14_ITEM, scroll_15_ITEM,
+    scroll_1_ITEM, scroll_2_ITEM,
+    scroll_3_ITEM, scroll_4_ITEM,
+    scroll_5_ITEM, scroll_6_ITEM,
+    scroll_7_ITEM, scroll_8_ITEM,
+    scroll_9_ITEM, scroll_10_ITEM,
+    scroll_11_ITEM, scroll_12_ITEM,
+    scroll_13_ITEM ,scroll_14_ITEM,
+    scroll_15_ITEM,
 ]
-
 default scroll_list_B = [
-    scroll_16_ITEM, scroll_17_ITEM, scroll_18_ITEM, scroll_19_ITEM, scroll_20_ITEM,
-    scroll_21_ITEM, scroll_22_ITEM, scroll_23_ITEM, scroll_24_ITEM, scroll_25_ITEM,
-    scroll_26_ITEM, scroll_27_ITEM, scroll_28_ITEM, scroll_29_ITEM, scroll_30_ITEM,
+    scroll_16_ITEM, scroll_17_ITEM,
+    scroll_18_ITEM, scroll_19_ITEM,
+    scroll_20_ITEM, scroll_21_ITEM,
+    scroll_22_ITEM, scroll_23_ITEM,
+    scroll_24_ITEM, scroll_25_ITEM,
+    scroll_26_ITEM, scroll_27_ITEM,
+    scroll_28_ITEM, scroll_29_ITEM,
+    scroll_30_ITEM,
 ]
-
-default scroll_list_C = [scroll_31_ITEM, scroll_32_ITEM, scroll_33_ITEM, scroll_34_ITEM, scroll_35_ITEM, scroll_37_ITEM]
+default scroll_list_C = [
+    scroll_31_ITEM, scroll_32_ITEM,
+    scroll_33_ITEM, scroll_34_ITEM,
+    scroll_35_ITEM, scroll_37_ITEM,
+]
 
 # Badges
 default spew_badge_ITEM      = item_class(id="spew_badge", name="S.P.E.W. Badge",       type="accessory", items=["badge"],       image="badge_spew",        cost=5,  description=">A badge designed to show one's opposition of elf\n slavery.")
@@ -184,35 +242,151 @@ default dye_list=[
     white_dye_ITEM,
 ]
 
-#Quest Items
+# Quest Items
 default puzzle_box_ITEM   = item_class(id="puzzle_box", name="Puzzle Box", type="quest item", image="icon_puzzle", description="A wooden box with a slide puzzle located on top of it. It was found hidden behind one of the loose bricks in the fireplace. Who knows what's inside.", event="start_slide_puzzle")
 default collar_quest_ITEM = item_class(id="collar_quest", name="Collar", type="quest item", image="icon_collar", description=">Quest Item!")
 
-#Hermione Outfits.
-
-default hg_outfit_maid_ITEM      = costume_class(id="hg_outfit_maid", name="Maid",                 type="outfit", items=["outfit","hair","hat","gloves","garter","stockings"], cost=250, wait_time=2, image="outfits/hg_maid", description=">A classic Maids Outfit for a classy Witch.")
-default hg_outfit_pirate_ITEM    = costume_class(id="hg_outfit_pirate", name="Pirate",             type="outfit", items=["outfit"],       cost=75, wait_time=1, image="outfits/hg_pirate", description="> A lightweight Pirates outfit with only room for the\n necessities. Comes with two canon ball storage compartments.")
-default hg_outfit_christmas_ITEM = costume_class(id="hg_outfit_christmas", name="Christmas Girl",  type="outfit", items=["outfit"],       cost=50, wait_time=2, image="outfits/hg_christmas", description=">A christmas themed outfit complete with tightly wrapped\n snowglobes.")
-default hg_outfit_present_ITEM   = costume_class(id="hg_outfit_present", name="Present",           type="outfit", items=["outfit"],       cost=35, wait_time=1, image="outfits/hg_present", description=">A tightly wrapped gift, scissors not included.")
-default hg_outfit_japan_ITEM     = costume_class(id="hg_outfit_japan", name="Japanese Schoolgirl", type="outfit", items=["outfit"],       cost=125, wait_time=2, image="outfits/hg_japan", description=">A schoolgirl outfit traditionally worn in Japan.")
-default hg_outfit_egypt_ITEM     = costume_class(id="hg_outfit_egypt", name="Egyptian Goddess",    type="outfit", image="outfits/hg_egypt", unlockable=True)
-default hg_gamble_slut_ITEM      = costume_class(id="hg_gamble_slut", name="Poke Her Nips",        type="outfit_token", image="icon_gambler_hat", cost=14, wait_time=1, description=">An outfit that doesn't leave much for the mind's desire, perfect for a lewd card loving girl.")
-
-default hg_witch_ITEM        = costume_class(id="hg_witch", name="Witch Outfit",      type="outfit", items=["outfit","hat"], cost=250, wait_time=3, image="outfits/hg_witch", description=">Release your inner witch with this halloween\n inspired outfit.")
-default hg_witch_skimpy_ITEM = costume_class(id="hg_witch_skimpy", name="Sexy Witch", type="outfit", items=["outfit","hat"], unlockable=True,       image="outfits/hg_witch_skimpy")
+# Hermione Outfits
+default hg_outfit_maid_ITEM = costume_class(
+    id = "hg_outfit_maid", name = "Maid", type = "outfit", items = ["outfit","hair","hat","gloves","garter","stockings"],
+    cost = 250, wait_time=2, image = "outfits/hg_maid", description = ">A classic Maids Outfit for a classy Witch.",
+    # Layers
+    outfit_layers = ["stockings/stockings_lace", "bottoms/costume/skirt_maid", "tops/costume/top_maid","gloves/gloves_maid"],
+    breast_layer = "breasts_normal_pressed",
+    hair_layer = "updo",
+    top_layers = "hat_maid"
+)
+default hg_outfit_pirate_ITEM = costume_class(
+    id = "hg_outfit_pirate", name = "Pirate", type = "outfit", items = ["outfit"],
+    cost = 75, wait_time = 1, image = "outfits/hg_pirate", description = "> A lightweight Pirates outfit with only room for the\n necessities. Comes with two canon ball storage compartments.",
+    # Layers
+    outfit_layers = ["stockings/stockings_pirate","bottoms/costume/pants_pirate","tops/costume/top_pirate"],
+    breast_layer = "breasts_nipfix"
+)
+default hg_outfit_christmas_ITEM = costume_class(
+    id = "hg_outfit_christmas", name = "Christmas Girl", type = "outfit", items = ["outfit"],
+    cost = 50, wait_time = 2, image = "outfits/hg_christmas", description = ">A christmas themed outfit complete with tightly wrapped\n snowglobes.",
+    # Layers
+    outfit_layers = ["bottoms/costume/skirt_xmas_1","tops/costume/top_xmas_1","gloves/gloves_wool_1","neckwear/collar_xmas"],
+    breast_layer  = "breasts_normal_pressed",
+    top_layers    = "antlers"
+)
+default hg_outfit_present_ITEM = costume_class(
+    id = "hg_outfit_present", name = "Present", type = "outfit", items = ["outfit"],
+    cost = 35, wait_time = 1, image = "outfits/hg_present", description = ">A tightly wrapped gift, scissors not included.",
+    # Layers
+    outfit_layers = ["bottoms/costume/skirt_xmas_2","tops/costume/top_xmas_2"],
+    breast_layer  = "breasts_nipfix"
+)
+default hg_outfit_japan_ITEM = costume_class(
+    id = "hg_outfit_japan", name = "Japanese Schoolgirl", type = "outfit", items = ["outfit"],
+    cost = 125, wait_time = 2, image = "outfits/hg_japan", description = ">A schoolgirl outfit traditionally worn in Japan.",
+    # Layers
+    outfit_layers = ["bottoms/costume/skirt_japan","tops/costume/top_japan"],
+    breast_layer  = "breasts_normal_pressed"
+)
+default hg_outfit_egypt_ITEM = costume_class(
+    id = "hg_outfit_egypt", name = "Egyptian Goddess", type = "outfit", image = "outfits/hg_egypt", unlockable = True,
+    # Layers
+    outfit_layers = ["bottoms/costume/skirt_egyptian","tops/costume/top_egyptian","gloves/wrist_shackles"],
+    breast_layer  = "breasts_normal"
+)
+default hg_gamble_slut_ITEM = costume_class(
+    id="hg_gamble_slut", name="Poke Her Nips", type="outfit_token", image="icon_gambler_hat",
+    cost=14, wait_time=1, description=">An outfit that doesn't leave much for the mind's desire, perfect for a lewd card loving girl.",
+    # Layers
+    outfit_layers = ["onepieces/onepiece_gambler_cards","stockings/stockings_gambler_cards","onepieces/onepiece_gambler","stockings/stockings_gambler","gloves/wrist_cuffs_1","neckwear/choker_bow_tie_1","piercings/ears_gambler","piercings/belly_gambler"],
+    breast_layer  = "breasts_normal",
+    top_layers    = "hat_gambler"    
+)
+default hg_witch_ITEM = costume_class(
+    id="hg_witch", name="Witch Outfit", type="outfit", items=["outfit","hat"],
+    cost=250, wait_time=3, image="outfits/hg_witch", description=">Release your inner witch with this halloween\n inspired outfit.",
+    # Layers
+    outfit_layers = ["robe/robe_witch_back","stockings/stockings_striped_2","onepieces/witch_top_1","robe/robe_witch"],
+    breast_layer  = "breasts_normal",
+    top_layers    = "hat_witch"
+)
+default hg_witch_skimpy_ITEM = costume_class(
+    id="hg_witch_skimpy", name="Sexy Witch", type="outfit", items=["outfit","hat"], unlockable=True, image="outfits/hg_witch_skimpy",
+    # Layers
+    outfit_layers = ["robe/robe_witch_back","stockings/stockings_striped_2","onepieces/witch_top_2","robe/robe_witch"],
+    breast_layer  = "breasts_normal",
+    top_layers    = "hat_witch"
+)
 
 # Hermione Costumes
-default hg_costume_power_girl_ITEM   = costume_class(id="hg_costume_power_girl", name="Power Girl",       type="outfit", items=["outfit"],                      cost=350, wait_time=3, image="outfits/hg_power", description=">An outfit for when you feel extra heroic\n \"Sometimes it takes balls to be a woman\".")
-default hg_costume_ms_marvel_ITEM    = costume_class(id="hg_costume_ms_marvel", name="Mrs Marvel",        type="outfit", items=["outfit"],                      cost=250, wait_time=2, image="outfits/hg_marvel", description=">For the girl that likes the lightningbolt\n better on the chest than the forehead.")
-default hg_costume_harley_quinn_ITEM = costume_class(id="hg_costume_harley_quinn", name="Harley Quinn",   type="outfit", items=["outfit"],                      cost=300, wait_time=3, image="outfits/hg_harley", description=">A outfit for when you're actually nuts\n rather than just crazy for them.")
-default hg_costume_lara_croft_ITEM   = costume_class(id="hg_costume_lara_croft", name="Lara Croft",       type="outfit", items=["outfit","gloves"],             cost=270, wait_time=2, image="outfits/hg_lara", description=">An outfit perfectly suited for exploring deep, dark\n and moist caverns.")
-default hg_costume_tifa_ITEM         = costume_class(id="hg_costume_tifa", name="Tifa",                   type="outfit", items=["outfit"],                      cost=220, wait_time=2, image="outfits/hg_tifa", description=">An outfit for when when your sexual fantasies\n are just getting started.")
-default hg_costume_elizabeth_ITEM    = costume_class(id="hg_costume_elizabeth", name="Bioshock outfit",   type="outfit", items=["outfit","hair","choker"],      cost=400, wait_time=3, image="outfits/hg_bio", description=">Flick some coins for this Bioshock inspired outfit.")
-default hg_costume_yennefer_ITEM     = costume_class(id="hg_costume_yennefer", name="Yennefer's costume", type="outfit", items=["outfit","choker","stockings"], cost=500, wait_time=3, image="outfits/hg_yenn", description=">A Witcher inspired outfit to fit even the most\n perverted witch")
+default hg_costume_power_girl_ITEM = costume_class(
+    id="hg_costume_power_girl", name="Power Girl", type="outfit", items=["outfit"],
+    cost=350, wait_time=3, image="outfits/hg_power", description=">An outfit for when you feel extra heroic\n \"Sometimes it takes balls to be a woman\".",
+    # Layers
+    outfit_layers = ["robe/robe_power_girl_back","onepieces/onepiece_power_girl_1","robe/robe_power_girl","gloves/gloves_power_girl","accs/belt_power_girl"],
+    breast_layer  = "breasts_normal",
+    hair_layer    = "power_girl"
+)
+default hg_costume_ms_marvel_ITEM = costume_class(
+    id="hg_costume_ms_marvel", name="Mrs Marvel", type="outfit", items=["outfit"],
+    cost=250, wait_time=2, image="outfits/hg_marvel", description=">For the girl that likes the lightningbolt\n better on the chest than the forehead.",
+    # Layers
+    outfit_layers = ["stockings/stockings_ms_marvel","onepieces/onepiece_ms_marvel","accs/belt_ms_marvel","gloves/gloves_ms_marvel"],
+    breast_layer  = "breasts_normal"
+)
+default hg_costume_harley_quinn_ITEM = costume_class(
+    id="hg_costume_harley_quinn", name="Harley Quinn",   type="outfit", items=["outfit"],
+    cost=300, wait_time=3, image="outfits/hg_harley", description=">A outfit for when you're actually nuts\n rather than just crazy for them.",
+    # Layers
+    outfit_layers = ["bottoms/costume/pants_harley","tops/costume/top_harley","gloves/gloves_harley","neckwear/collar_leather"],
+    breast_layer  = "breasts_normal",
+    hair_layer    = "harley"
+)
+default hg_costume_lara_croft_ITEM = costume_class(
+    id="hg_costume_lara_croft", name="Lara Croft", type="outfit", items=["outfit","gloves"],
+    cost=270, wait_time=2, image="outfits/hg_lara", description=">An outfit perfectly suited for exploring deep, dark\n and moist caverns.",
+    # Layers
+    outfit_layers = ["bottoms/costume/pants_lara","tops/costume/top_lara","gloves/gloves_leather_2"],
+    breast_layer  = "breasts_normal"
+)
+default hg_costume_tifa_ITEM = costume_class(
+    id="hg_costume_tifa", name="Tifa", type="outfit", items=["outfit"],
+    cost=220, wait_time=2, image="outfits/hg_tifa", description=">An outfit for when when your sexual fantasies\n are just getting started.",
+    # Layers
+    outfit_layers = ["bottoms/costume/skirt_tifa","tops/costume/top_tifa","gloves/gloves_tifa"],
+    breast_layer  = "breasts_normal",
+    hair_layer    = "tifa"
+)
+default hg_costume_elizabeth_ITEM = costume_class(
+    id="hg_costume_elizabeth", name="Bioshock outfit", type="outfit", items=["outfit","hair","choker"],
+    cost=400, wait_time=3, image="outfits/hg_bio", description=">Flick some coins for this Bioshock inspired outfit.",
+    # Layers
+    outfit_layers = ["bottoms/skirt_long_1","tops/top_corset_1","neckwear/choker_leather","tops/top_jacket_4"],
+    breast_layer  = "breasts_normal_pressed",
+    hair_layer    = "bobcut"
+)
+default hg_costume_yennefer_ITEM = costume_class(
+    id="hg_costume_yennefer", name="Yennefer's costume", type="outfit", items=["outfit","choker","stockings"],
+    cost=500, wait_time=3, image="outfits/hg_yenn", description=">A Witcher inspired outfit to fit even the most\n perverted witch",
+    # Layers
+    outfit_layers = ["stockings/stockings_silk_1","bottoms/pants_silk_1","bottoms/costume/skirt_yennefer","tops/costume/top_yennefer","gloves/gloves_leather_1","neckwear/scarf_silk","accs/belt_leather"],
+    breast_layer  = "breasts_normal"
+)
 
 # Hermione Dresses
-default hg_dress_yule_ball_ITEM = costume_class(id="hg_dress_yule_ball", name="Ball Dress", type="outfit", items=["outfit","hair","neckless","tiara"], cost=1500, wait_time=7, image="outfits/hg_ball_dress", description=">A traditional ball dress complete with a imitation\n ball-queen tiara.")
-default hg_dress_dancer_ITEM    = costume_class(id="hg_dress_dancer", name="Heart Dancer",  type="outfit", items=["outfit"],                           cost=80,   wait_time=1, image="outfits/hg_heart", description=">A sexy dancers outfit with heart shaped nipple tassels.")
+default hg_dress_yule_ball_ITEM = costume_class(
+    id="hg_dress_yule_ball", name="Ball Dress", type="outfit", items=["outfit","hair","neckless","tiara"],
+    cost=1500, wait_time=7, image="outfits/hg_ball_dress", description=">A traditional ball dress complete with a imitation\n ball-queen tiara.",
+    # Layers
+    outfit_layers = ["onepieces/onepiece_ball_dress"],
+    breast_layer  = "breasts_nipfix",
+    hair_layer    = "updo",
+    top_layers    = "tiara"
+)
+default hg_dress_dancer_ITEM = costume_class(
+    id="hg_dress_dancer", name="Heart Dancer",  type="outfit", items=["outfit"],
+    cost=80, wait_time=1, image="outfits/hg_heart", description=">A sexy dancers outfit with heart shaped nipple tassels.",
+    # Layers
+    outfit_layers = ["bottoms/costume/skirt_heart_dancer","tops/costume/top_heart_dancer","neckwear/collar_heart_dancer"],
+    breast_layer  = "breasts_normal"
+)
 
 default hermione_outfits_list = [
     hg_outfit_maid_ITEM,
@@ -223,8 +397,8 @@ default hermione_outfits_list = [
     hg_witch_ITEM,
     hg_witch_skimpy_ITEM,
     hg_outfit_egypt_ITEM,
+    hg_gamble_slut_ITEM,
 ]
-
 default hermione_costumes_list = [
     hg_costume_power_girl_ITEM,
     hg_costume_ms_marvel_ITEM,
@@ -234,30 +408,69 @@ default hermione_costumes_list = [
     hg_costume_elizabeth_ITEM,
     hg_costume_yennefer_ITEM,
 ]
-
 default hermione_dresses_list = [
     hg_dress_dancer_ITEM,
     hg_dress_yule_ball_ITEM,
 ]
 
-# Clothing Sets
-default hg_cheer_g_ITEM      = costume_class(id="hg_cheer_g", name="Gryffindor Cheerleader",           type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_g",      cost=80, wait_time=2, description=">A basic Cheerleader attire for Gryffindor's\n  Quidditch team.")
-default hg_cheer_s_ITEM      = costume_class(id="hg_cheer_s", name="Slythrin Cheerleader",             type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_s",      cost=80, wait_time=2, description=">The Slytherin version of the Cheerleader attire.")
-default hg_cheer_r_ITEM      = costume_class(id="hg_cheer_r", name="Ravenclaw Cheerleader",            type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_r",      cost=80, wait_time=2, description=">The Ravenclaw version of the Cheerleader attire.")
-default hg_cheer_h_ITEM      = costume_class(id="hg_cheer_h", name="Hufflepuff Cheerleader",           type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_h",      cost=80, wait_time=2, description=">The Hufflepuff version of the Cheerleader attire.")
-default hg_cheer_g_sexy_ITEM = costume_class(id="hg_cheer_g_sexy", name="Sexy Gryffindor Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_g_sexy", unlockable=True)
-default hg_cheer_s_sexy_ITEM = costume_class(id="hg_cheer_s_sexy", name="Sexy Slythrin Cheerleader",   type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_s_sexy", unlockable=True)
-default hg_cheer_r_sexy_ITEM = costume_class(id="hg_cheer_r_sexy", name="Sexy Ravenclaw Cheerleader",  type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_r_sexy", unlockable=True)
-default hg_cheer_h_sexy_ITEM = costume_class(id="hg_cheer_h_sexy", name="Sexy Hufflepuff Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_h_sexy", unlockable=True)
+# Hermione Cheerleader
+default hg_cheer_g_ITEM = costume_class(
+    id="hg_cheer_g", name="Gryffindor Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_g",
+    cost=80, wait_time=2, description=">A basic Cheerleader attire for Gryffindor's\n  Quidditch team.",
+    outfit_layers = ["tops/top_cheer_g","bottoms/skirt_cheer_g"]
+)
+default hg_cheer_s_ITEM = costume_class(
+    id="hg_cheer_s", name="Slythrin Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_s",
+    cost=80, wait_time=2, description=">The Slytherin version of the Cheerleader attire.",
+    outfit_layers = ["tops/top_cheer_s","bottoms/skirt_cheer_s"]
+)
+default hg_cheer_r_ITEM      = costume_class(
+    id="hg_cheer_r", name="Ravenclaw Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_r",
+    cost=80, wait_time=2, description=">The Ravenclaw version of the Cheerleader attire.",
+    outfit_layers = ["tops/top_cheer_r","bottoms/skirt_cheer_r"]
+)
+default hg_cheer_h_ITEM      = costume_class(
+    id="hg_cheer_h", name="Hufflepuff Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_h",
+    cost=80, wait_time=2, description=">The Hufflepuff version of the Cheerleader attire.",
+    outfit_layers = ["tops/top_cheer_h","bottoms/skirt_cheer_h"]
+)
+default hg_cheer_g_sexy_ITEM = costume_class(
+    id="hg_cheer_g_sexy", name="Sexy Gryffindor Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_g_sexy", unlockable=True,
+    outfit_layers = ["tops/top_cheer_sexy_g","bottoms/skirt_cheer_sexy_g"]
+)
+default hg_cheer_s_sexy_ITEM = costume_class(
+    id="hg_cheer_s_sexy", name="Sexy Slythrin Cheerleader",   type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_s_sexy", unlockable=True,
+    outfit_layers = ["tops/top_cheer_sexy_s","bottoms/skirt_cheer_sexy_s"]
+)
+default hg_cheer_r_sexy_ITEM = costume_class(
+    id="hg_cheer_r_sexy", name="Sexy Ravenclaw Cheerleader",  type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_r_sexy", unlockable=True,
+    outfit_layers = ["tops/top_cheer_sexy_r","bottoms/skirt_cheer_sexy_r"]
+)
+default hg_cheer_h_sexy_ITEM = costume_class(
+    id="hg_cheer_h_sexy", name="Sexy Hufflepuff Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_h_sexy", unlockable=True,
+    outfit_layers = ["tops/top_cheer_sexy_h","bottoms/skirt_cheer_sexy_h"]
+)
 
-# Lingerie
+# Hermione Event Outfits
+default hg_standart_school_ITEM = costume_class(
+    id = "hg_standart_school",
+    outfit_layers = ["bottoms/skirt_2", "tops/top_1_g"],
+    breast_layer = "breasts_nipfix"
+)
+default hg_standart_school_noshirt_ITEM = costume_class(
+    id = "hg_standart_school_noshirt",
+    outfit_layers = ["bottoms/skirt_2", "bras/bra_base"],
+    breast_layer = "breasts_nipfix"
+)
+
+# Hermione Lingerie
 default hg_lingerie_lace_ITEM    = item_class(id="hg_lingerie_lace", name="Lace Lingerie",       type="set", items=["bra","panties"],                                   image="outfits/hg_lingerie_lace",    cost=40,  wait_time=1, description=">A lovely lace bra and panty set.")
 default hg_lingerie_silk_ITEM    = item_class(id="hg_lingerie_silk", name="Silk Lingerie",       type="set", items=["bra","panties","garter","stockings"],              image="outfits/hg_lingerie_silk",    cost=80,  wait_time=1, description=">A smooth and comfortable silk bra and panty set.")
 default hg_lingerie_maid_ITEM    = item_class(id="hg_lingerie_maid", name="Maid Lingerie",       type="set", items=["bra","panties","gloves","stockings","hair","hat"], image="outfits/hg_lingerie_maid",    cost=160, wait_time=2, description=">A revealing piece of maid clothing that only serves\n  to highlight the wearer's breasts.")
 default hg_lingerie_latex_ITEM   = item_class(id="hg_lingerie_latex", name="Latex Lingerie",     type="set", items=["bra","panties","gloves","stockings"],              image="outfits/hg_lingerie_latex",   cost=200, wait_time=2, description=">A tight and shiny lace bra and panty set.")
 default hg_lingerie_fishnet_ITEM = item_class(id="hg_lingerie_fishnet", name="Fishnet Lingerie", type="set", items=["top","bra","panties"],                             image="outfits/hg_lingerie_fishnet", cost=100, wait_time=1, description=">A very revealing set for fishnet lingerie.")
 
-# One-pieces
+# Hermione One-pieces
 default hg_nighty_silk_ITEM    = item_class(id="hg_nighty_silk", name="Silk Nighty",         type="set", items=["one-piece","panties"], cost=80,  wait_time=1, image="outfits/hg_nighty_silk",             description=">A comfortable yet elegant Nightwear set.")
 default hg_nightgown_ITEM      = item_class(id="hg_nighty_silk", name="Silk Nightgown",      type="set", items=["one-piece"],           cost=80,  wait_time=1, image="outfits/hg_nightgown",               description=">A more free-flowing set of Nightwear.")
 default hg_bikini_latex_ITEM   = item_class(id="hg_bikini_latex", name="Latex Bikini",       type="set", items=["bra","panties"],       cost=100, wait_time=1, image="outfits/hg_bikini_latex",            description=">A set for when you want to become one with your\n underwear")
@@ -265,11 +478,11 @@ default hg_bikini_sling_ITEM   = item_class(id="hg_bikini_sling", name="Sling Bi
 default hg_onepiece_sling_ITEM = item_class(id="hg_onepiece_sling", name="Sling Monokini",   type="set", items=["one-piece"],           cost=69,  wait_time=1, image="outfits/hg_onepiece_sling",          description=">A Mononoke variant of the Sling Bikini")
 default hg_swimsuit_sport_ITEM = item_class(id="hg_swimsuit_sport", name="Sports Swimsuits", type="set", items=["one-piece"],           cost=69,  wait_time=1, image="outfits/hg_onepiece_swimsuit_sport", description=">Comes in 4 different variants. \nSwimmies not included!")
 
-# Wicked Clothing
+# Hermione Wicked Clothing
 default hg_punk_rocker_ITEM  = item_class(id="hg_punk_rocker", name="Punk Rocker",   type="set", items=["top","bottom","gloves","choker"], cost=180, wait_time=2, image="outfits/hg_punk_rocker", description=">A punk-rock set of clothes for the more rebellious\n type of witch.")
 default hg_punk_leather_ITEM = item_class(id="hg_punk_leather", name="Punk Leather", type="set", items=["top","bottom","bra","stockings"], cost=300, wait_time=3, image="outfits/hg_punk_leather", description=">A punk-leather set for wicked witches!\n The sleeve-length of the Leather-jacket can be changed.")
 
-# Unlockable Clothing
+# Hermione Unlockable Clothing
 default hg_accs_wool_g_ITEM      = item_class(id="hg_wool_accs_g", name="Gryffindor Wool Accessories",     type="set", items=["scarf","gloves","stockings"], image="outfits/hg_accs_wool_g", unlockable=True)
 default hg_muggle_cold_ITEM      = item_class(id="hg_muggle_cold", name="Cold Weather Clothing",           type="set", items=["pullover","skirt","pantyhose"], image="outfits/hg_muggle_cold", unlockable=True)
 default hg_muggle_cold_sexy_ITEM = item_class(id="hg_muggle_cold_sexy", name="Sexy Cold Weather Clothing", type="set", items=["pullover","skirt","pantyhose"], image="outfits/hg_muggle_cold_sexy", unlockable=True)
@@ -309,12 +522,31 @@ default hg_unlockable_clothing_sets_list = [
 ]
 
 # Luna Outfits
-default ll_pyjama_ITEM = costume_class(id="ll_pyjama", name="Pyjama", type="outfit", items=["outfit"],  cost=40, wait_time=1, image="outfits/ll_pyjama", description=">A quirky pyjama for a quirky girl.")
-
-default ll_stewardess_ITEM       = costume_class(id="ll_stewardess", name="Stewardess Outfit", type="outfit", items=["outfit","hat","neckless","thong"], cost=80, wait_time=2, image="outfits/ll_stewardess", description=">For immediate access into the mile-high club!")
-default ll_stewardess_short_ITEM = costume_class(id="ll_stewardess_short", name="Short Stewardess Outfit", type="outfit", items=["outfit","hat","neckless","thong"], image="outfits/ll_stewardess_short", unlockable=True)
-
-default ll_dress_orange_ITEM = costume_class(id="ll_dress_orange", name="Ball Dress", type="outfit", items=["outfit","earrings","stockings"],  cost=200, wait_time=3, image="outfits/ll_dress_orange", description=">A cute dress in a questionable color.")
+default ll_pyjama_ITEM = costume_class(
+    id="ll_pyjama", name="Pyjama", type="outfit", items=["outfit"],
+    cost=40, wait_time=1, image="outfits/ll_pyjama", description=">A quirky pyjama for a quirky girl.",
+    # Layers
+    outfit_layers = ["bottoms/pants_pyjama","tops/top_pyjama"]
+)
+default ll_stewardess_ITEM = costume_class(
+    id="ll_stewardess", name="Stewardess Outfit", type="outfit", items=["outfit","hat","neckless","thong"],
+    cost=80, wait_time=2, image="outfits/ll_stewardess", description=">For immediate access into the mile-high club!",
+    # Layers
+    outfit_layers = ["panties/panties_thong_1","onepieces/onepiece_stewardess_1","neckwear/cloth_tie"],
+    top_layers    = "hat_stewardess"
+)
+default ll_stewardess_short_ITEM = costume_class(
+    id="ll_stewardess_short", name="Short Stewardess Outfit", type="outfit", items=["outfit","hat","neckless","thong"], image="outfits/ll_stewardess_short", unlockable=True,
+    # Layers
+    outfit_layers = ["panties/panties_thong_2","onepieces/onepiece_stewardess_2","neckwear/cloth_tie"],
+    top_layers    = "hat_stewardess"
+)
+default ll_dress_orange_ITEM = costume_class(
+    id="ll_dress_orange", name="Ball Dress", type="outfit", items=["outfit","earrings","stockings"],
+    cost=200, wait_time=3, image="outfits/ll_dress_orange", description=">A cute dress in a questionable color.",
+    # Layers
+    outfit_layers = ["stockings/leggings_1","onepieces/onepiece_ball_dress","piercings/ears_starts_1"]
+)
 
 default luna_outfits_list = [
     ll_pyjama_ITEM,
@@ -340,13 +572,36 @@ default luna_clothing_sets_list = [
 ]
 
 # Astoria Outfits
-default ag_boss_uniform_ITEM            = costume_class(id="ag_boss_uniform", name="Boss Uniform", type="outfit", items=["outfit","hair","hat"], cost=500, wait_time=3, image="outfits/ag_boss_uniform", description=">A uniform I designed with an old friend of mine.\n Makes me wonder what happened to Hugo...")
-default ag_costume_lazy_town_ITEM       = costume_class(id="ag_costume_lazy_town", name="Lazy Town Outfit", type="outfit", items=["outfit","hair","bracelet"],  cost=120, wait_time=1, image="outfits/ag_lazy", description=">Nobody is lazy at Hogwarts!")
-default ag_costume_lazy_town_short_ITEM = costume_class(id="ag_costume_lazy_town_short", name="Short Lazy Town Outfit", type="outfit", items=["outfit","hair","bracelet"],  image="outfits/ag_lazy_short", unlockable=True)
-default ag_dress_yule_ball_ITEM         = costume_class(id="ag_dress_yule_ball", name="Ball Dress", type="outfit", items=["outfit"], cost=300, wait_time=4, image="outfits/ag_ball_dress", description=">A cute dress for your favourite princess!")
+default ag_boss_uniform_ITEM = costume_class(
+    id="ag_boss_uniform", name="Boss Uniform", type="outfit", items=["outfit","hair","hat"],
+    cost=500, wait_time=3, image="outfits/ag_boss_uniform", description=">A uniform I designed with an old friend of mine.\n Makes me wonder what happened to Hugo...",
+    # Layers
+    outfit_layers = ["bottoms/pants_uniform","tops/top_uniform"],
+    hair_layer    = "pigtails",
+    top_layers    = "boss_hat"
+)
+default ag_costume_lazy_town_ITEM = costume_class(
+    id="ag_costume_lazy_town", name="Lazy Town Outfit", type="outfit", items=["outfit","hair","bracelet"],
+    cost=120, wait_time=1, image="outfits/ag_lazy", description=">Nobody is lazy at Hogwarts!",
+    # Layers
+    outfit_layers = ["stockings/leggings_1","onepieces/onepiece_striped_1","gloves/wrist_bracelet_1"],
+    hair_layer    = "stephanie"
+)
+default ag_costume_lazy_town_short_ITEM = costume_class(
+    id="ag_costume_lazy_town_short", name="Short Lazy Town Outfit", type="outfit", items=["outfit","hair","bracelet"],  image="outfits/ag_lazy_short", unlockable=True,
+    # Layers
+    outfit_layers = ["stockings/leggings_1","onepieces/onepiece_striped_2","gloves/wrist_bracelet_1"],
+    hair_layer    = "stephanie"
+)
+default ag_dress_yule_ball_ITEM = costume_class(
+    id="ag_dress_yule_ball", name="Ball Dress", type="outfit", items=["outfit"],
+    cost=300, wait_time=4, image="outfits/ag_ball_dress", description=">A cute dress for your favourite princess!",
+    # Layers
+    outfit_layers = ["onepieces/onepiece_ball_dress"]
+)
 
 default astoria_outfits_list=[
-ag_boss_uniform_ITEM,
+    ag_boss_uniform_ITEM,
 ]
 default astoria_costumes_list = [
     ag_costume_lazy_town_ITEM,
@@ -376,22 +631,52 @@ default susan_dresses_list = []
 default susan_clothing_sets_list = []
 
 # Cho Outfits
-default cc_outfit_quidditch_ITEM = costume_class(id="cc_outfit_quidditch", name="Quidditch Outfit", type="outfit", items=["outfit"], image="outfits/cc_quidditch", unlockable=True)
-default cc_dress_red_ITEM        = costume_class(id="cc_dress_red", name="Traditional Dress in Red", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_red", description=">A traditional dress inspired by chinese culture.")
-default cc_dress_silver_ITEM     = costume_class(id="cc_dress_silver", name="Traditional Dress in Silver", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_silver", description=">A traditional dress inspired by chinese culture.")
-default cc_dress_black_ITEM      = costume_class(id="cc_dress_black", name="Traditional Dress in Black", type="outfit", items=["outfit"], cost=100, wait_time=3, image="outfits/cc_dress_black", description=">A traditional dress inspired by chinese culture.")
-
-default cc_outfit_sailor_white_ITEM = costume_class(id="cc_outfit_sailor_white", name="White Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"], cost=240, wait_time=3, image="outfits/cc_sailor_white", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!")
-default cc_outfit_sailor_black_ITEM = costume_class(id="cc_outfit_sailor_black", name="Black Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"], cost=240, wait_time=3, image="outfits/cc_sailor_black", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!")
-
-default cc_costume_misty_ITEM = costume_class(id="cc_costume_misty", name="Misty Costume", type="outfit", items=["outfit","top","pants","suspenders"], cost=100, wait_time=2, image="outfits/cc_misty", description=">For trainers that want to be the very best!\n To train them is your cause!")
+default cc_outfit_quidditch_ITEM = costume_class(
+    id="cc_outfit_quidditch", name="Quidditch Outfit", type="outfit", items=["outfit"], image="outfits/cc_quidditch", unlockable=True, outfit_layers = []
+)
+default cc_dress_red_ITEM = costume_class(
+    id="cc_dress_red", name="Traditional Dress in Red", type="outfit", items=["outfit"],
+    cost=100, wait_time=3, image="outfits/cc_dress_red", description=">A traditional dress inspired by chinese culture.",
+    # Layers
+    outfit_layers = ["onepieces/onepiece_ball_dress"]
+)
+default cc_dress_silver_ITEM = costume_class(
+    id="cc_dress_silver", name="Traditional Dress in Silver", type="outfit", items=["outfit"],
+    cost=100, wait_time=3, image="outfits/cc_dress_silver", description=">A traditional dress inspired by chinese culture."
+    # No layers
+)
+default cc_dress_black_ITEM = costume_class(
+    id="cc_dress_black", name="Traditional Dress in Black", type="outfit", items=["outfit"],
+    cost=100, wait_time=3, image="outfits/cc_dress_black", description=">A traditional dress inspired by chinese culture."
+    # No layers
+)
+default cc_outfit_sailor_white_ITEM = costume_class(
+    id="cc_outfit_sailor_white", name="White Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"],
+    cost=240, wait_time=3, image="outfits/cc_sailor_white", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!",
+    # Layers
+    outfit_layers = ["panties/panties_bikini_2","stockings/stockings_sailor_1","tops/top_sailor_1","bottoms/skirt_sailor","../body/arms/arm_down_l_overlay"],
+    top_layers    = "bow_sailor_yellow"
+)
+default cc_outfit_sailor_black_ITEM = costume_class(
+    id="cc_outfit_sailor_black", name="Black Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"],
+    cost=240, wait_time=3, image="outfits/cc_sailor_black", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!",
+    # Layers
+    outfit_layers = ["panties/panties_bikini_2","stockings/stockings_sailor_2","tops/top_sailor_2","bottoms/skirt_sailor","../body/arms/arm_down_l_overlay"],
+    top_layers    = "bow_sailor_red"
+)
+default cc_costume_misty_ITEM = costume_class(
+    id="cc_costume_misty", name="Misty Costume", type="outfit", items=["outfit","top","pants","suspenders"],
+    cost=100, wait_time=2, image="outfits/cc_misty", description=">For trainers that want to be the very best!\n To train them is your cause!",
+    # Layers
+    outfit_layers = ["tops/top_shirt_1","bottoms/pants_short_1","../body/arms/arm_down_l_overlay","accs/suspenders_1"]
+)
 
 default cho_outfits_list = [
     cc_outfit_quidditch_ITEM,
     cc_outfit_sailor_white_ITEM,
     # cc_outfit_sailor_black_ITEM
 ] 
-default cho_costumes_lis = [
+default cho_costumes_list = [
     cc_costume_misty_ITEM
 ]
 default cho_dresses_list = [
@@ -442,9 +727,3 @@ label default_items_init:
     else:
         $ wine_ITEM.cost = 140
         $ firewhisky_ITEM.cost = 160
-
-    #TODO Figure out when and why hg_gamble_slut_ITEM needs to change
-    # Updates image from shop icon to mannequin
-    if hg_gamble_slut_ITEM.unlocked and hg_gamble_slut_ITEM not in hermione_outfits_list:
-        $ hg_gamble_slut_ITEM.image = "outfits/hg_gambler_slut"
-        $ hermione_outfits_list.append(hg_gamble_slut_ITEM)

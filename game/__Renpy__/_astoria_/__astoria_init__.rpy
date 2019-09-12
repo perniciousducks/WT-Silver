@@ -57,6 +57,8 @@ default third_curse_got_cast        = False
 default astoria_book_intro_happened = False
 default astoria_intro_completed     = False
 
+default ast_seen_lun_sex = False
+
 # Tonks events
 default spells_locked                   = False
 default astoria_tonks_event_in_progress = False
@@ -144,6 +146,7 @@ label reset_astoria_progress:
         "third_curse_got_cast",
         "astoria_book_intro_happened",
         "astoria_intro_completed",
+        "ast_seen_lun_sex",
 
         # Tonks events
         "spells_locked",

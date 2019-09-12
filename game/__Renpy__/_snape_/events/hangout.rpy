@@ -464,7 +464,7 @@ label hang_with_snape_E3:
     m "And Granger? What do you suggest we do with her?"
     call sna_main("*Tzzzgh*-{w=0.6} Like that annoying brat can do any harm to us...","snape_25")
     call sna_main("A girl her age would do anything for attention, is what I'd say...","snape_09")
-    call sna_main("Do you think some students word would be as good as the headmaster's?","snape_02")
+    call sna_main("Do you think some student's word would be as good as the headmaster's?","snape_02")
     call sna_main("The Headmaster of the most respected educational institution in the country, no less...","snape_37")
     g4 "I'm the headmaster of the most respected institution of the country!?!"
     call sna_main("It is also the only magical institution...","snape_09")

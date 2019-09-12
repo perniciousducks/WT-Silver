@@ -4,26 +4,23 @@ init -2 python:
 
     #Items Main
     class item_class(object):
-        id = ""
-        name = ""
-        type = ""
-        items = []
-        image = ""
-        imagepath = "interface/icons/box_blue_2.png"
-        unlockable = False #If True, prevents this item to be shown in the shop.
-        unlocked = False #Set to True once unlocked or purchased.
-        number = 0 #Amount of items of this type that you possess. Can be used for weasley store and gift items.
-        cost = 0
-        wait_time = 1
-        description = ""
-
-        #Used in decorations
-        active = False # Check if decoration is used or not
-
-        #Used in decorations
-        active = False # Check if decoration is used or not
-
         def __init__(self, **kwargs):
+            self.id = ""
+            self.name = ""
+            self.type = ""
+            self.items = []
+            self.image = ""
+            self.imagepath = "interface/icons/box_blue_2.png"
+            self.unlockable = False #If True, prevents this item to be shown in the shop.
+            self.unlocked = False #Set to True once unlocked or purchased.
+            self.number = 0 #Amount of items of this type that you possess. Can be used for weasley store and gift items.
+            self.cost = 0
+            self.wait_time = 1
+            self.description = ""
+
+            #Used in decorations
+            self.active = False # Check if decoration is used or not
+
             self.__dict__.update(**kwargs)
 
         def get_name(self):
@@ -63,12 +60,16 @@ init -2 python:
 
     #Outfit Items
     class costume_class(item_class):
-        top_layers = []
-        outfit_layers = []
-        actions = []
-        action_images = []
-        hair_layer = ""
-        breast_layer = "breasts_nipfix"
+        
+        def __init__(self, **kwargs):
+            self.top_layers = []
+            self.outfit_layers = []
+            self.actions = []
+            self.action_images = []
+            self.hair_layer = ""
+            self.breast_layer = "breasts_nipfix"
+
+            super(costume_class, self).__init__(**kwargs)
 
         def getOutfitLayers(self):
             return self.outfit_layers

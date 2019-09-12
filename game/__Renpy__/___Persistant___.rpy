@@ -1,4 +1,4 @@
-#TODO Move default variable definitions to appropriate files
+#TODO Move variable defaults to appropriate files, leave common ones here (and rename this file to _Variables_.rpy or something)
 
 default addicted          = False
 default tentacle_cosmetic = False
@@ -9,6 +9,47 @@ default gallery_active = False
 default ball_ending_2  = False
 
 default game_difficulty = 2
+
+default day = 0
+
+default daytime        = False
+default gold           = 0
+default rum_times      = 0 # Counts how many times have you rummaged the cupboard.
+default current_payout = 0
+default tooltip        = None
+
+# Hermione main screen flags
+default no_blinking   = False # When True - blinking animation is not displayed.
+default sperm_on_tits = False # Sperm on tits when Hermione pulls her shirt up.
+default aftersperm    = False # Shows cum stains on Hermione's uniform.
+default uni_sperm     = False # Triggers universal sperm to show on hermione_main screen.
+
+default public_whore_ending = False # If TRUE the game will end with "Public Whore Ending".
+
+# Events
+default event_chairman_happened    = False # Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
+default snape_against_chairman_hap = False # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
+default have_no_dress_hap          = False # Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
+default sorry_for_hesterics        = False # Turns TRUE after Hermione comes and apologizes for the day (event) before.
+
+# House points
+default slytherin  = 180
+default gryffindor = 53
+default hufflepuff = 25
+default ravenclaw  = 31
+
+# Duel
+default potions = 0 # Amount of healing potions Genie has in stock.
+
+# Cupboard
+default searched = False # Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
+
+# Books
+default found_voucher = False # Turns TRUE after you complete "My Dear Waifu" with the harem ending and "Dahr's voucher" fall out.
+
+# Clothing
+default gave_miniskirt = False # Turns True when Hermione has the miniskirt.
+default gave_the_dress = False # Turns True when Hermione has the dress.
 
 # Used to pause events/summons for a number of days
 default ss_event_pause  = 0
@@ -51,8 +92,22 @@ default phoenix_is_petted      = False
 default phoenix_fed_counter    = 0
 default phoenix_petted_counter = 0
 
+# Paperwork related flags
+default day_of_week          = 0 # Counts days of the week. Everyday +1. When day_of_week = = 7 resets to zero.
+default report_chapters      = 0 # Number of chapters of current report completed so far. Resets to zero when report is finished.
+default finished_report      = 0 # Number of completed reports.
+default stat_reports_counter = 0
+
+# Fireplace
+default fire_in_fireplace = False
 default stat_fireplace_counter = 0
-default stat_reports_counter   = 0
+
+# Examine room flags
+default desk_examined = False
+default cupboard_examined = False
+default bird_examined = False
+default door_examined = False
+default fireplace_examined = False
 
 # Room decoration
 default current_room  = "main_room"
@@ -91,75 +146,3 @@ default sccgypos = 50
 # CG or chibis
 default face_on_cg = False # `call her_main(,ypos="head")` will use screen "her_face". Face gets positioned automatically.
 default use_cgs = False
-
-#TODO hg_hidden_blowjob_characters is never used
-default hg_hidden_blowjob_characters = set(["snape"])
-# if luna_unlocked and luna_reverted:
-#     $ hg_hidden_blowjob_characters.add("luna")
-# if astoria_unlocked:
-#     $ hg_hidden_blowjob_characters.add("astoria")
-# if susan_unlocked:
-#     $ hg_hidden_blowjob_characters.add("susan")
-# if cho_unlocked:
-#     $ hg_hidden_blowjob_characters.add("cho")
-# if tonks_unlocked:
-#     $ hg_hidden_blowjob_characters.add("tonks")
-
-# Skip to Hermione
-label update_early_game_vars:
-    $ bird_examined = True
-    $ desk_examined = True
-    $ cupboard_examined = True
-    $ door_examined = True
-    $ fireplace_examined = True
-
-    $ achievement.unlock("start", True)
-
-    $ genie_intro.E1_complete = True
-    $ genie_intro.E2_complete = True
-    $ genie_intro.E3_complete = True
-
-    $ snape_intro.E1_complete   = True
-    $ snape_intro.E2_complete   = True
-    $ snape_intro.E3_complete   = True
-    $ snape_intro.duel_complete = True
-    $ snape_intro.E4_complete   = True
-    $ snape_intro.E5_complete   = True
-
-    $ hang_with_snape.E1_complete = True
-    $ hang_with_snape.E2_complete = True
-    $ hang_with_snape.E3_complete = True
-    $ hang_with_snape.E4_complete = True
-    $ hang_with_snape.E5_complete = True
-
-    $ tonks_intro.E1_complete = True
-    $ tonks_intro.E2_complete = True
-    $ tonks_intro.E3_complete = True
-
-    $ hang_with_tonks.E1_complete = True
-
-    $ hermione_intro.E1_complete = True
-    $ hermione_intro.E2_complete = True
-    $ hermione_intro.E3_complete = True
-    $ hermione_intro.E4_complete = True
-    $ hermione_intro.E5_complete = True
-    $ hermione_intro.E6_complete = True
-
-    $ letter_hg_1.mailRead()
-    $ letter_hg_2.mailRead()
-    $ letter_min_work.mailRead()
-    $ letter_min_report.mailRead()
-    $ letter_min_favors.mailRead()
-
-    $ snape_unlocked = True
-    $ achievement.unlock("unlocksna", True)
-
-    $ tonks_unlocked = True
-    $ achievement.unlock("unlockton", True)
-
-    $ hermione_unlocked = True
-    $ achievement.unlock("unlockher", True)
-    $ tutoring_hermione_unlocked = True
-    $ hermione_favors = True
-
-    return

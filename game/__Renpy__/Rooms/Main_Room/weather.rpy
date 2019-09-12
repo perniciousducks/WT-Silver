@@ -1,3 +1,10 @@
+default weather_animations = []
+default weather_gen = 1
+default raining = False
+default snowing = False
+default blizzard = False
+default storm = False
+
 init python:
         ### Weather Types ###
 
@@ -64,59 +71,58 @@ init python:
                 weather_animations.append("rain")
                 renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
 
-
-
-init -2:
-    transform cloud_move: #http://www.renpy.org/wiki/atl
-        subpixel True
-        xpos 520
-        choice:
-            ypos 150
-        choice:
-            ypos 160
-        choice:
-            ypos 170
-        choice:
-            ypos 190
-        choice:
-            ypos 200
-
-        linear 15.0 xpos 237 # linear
-        pause 7
-        repeat
-
-    transform cloud_night_move_01: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
-        subpixel True
-        xpos 520
-        choice:
-            ypos 130
-        choice:
-            ypos 150
-        choice:
-            ypos 150
-        linear 30.0 xpos 280 # linear
-        pause 2
-        repeat
-
-    transform cloud_night_move_02: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
-        subpixel True
-        xpos 520
-        choice:
-            ypos 150
-        choice:
-            ypos 170
-        linear 70.0 xpos 280 # linear
-        pause 2
-        repeat
-
-    transform cloud_night_move_03: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
-        subpixel True
-        xpos 520
+# Transforms
+transform cloud_move: #http://www.renpy.org/wiki/atl
+    subpixel True
+    xpos 520
+    choice:
+        ypos 150
+    choice:
         ypos 160
-        linear 50.0 xpos 280 # linear
-        pause 2
-        repeat
+    choice:
+        ypos 170
+    choice:
+        ypos 190
+    choice:
+        ypos 200
 
+    linear 15.0 xpos 237 # linear
+    pause 7
+    repeat
+
+transform cloud_night_move_01: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
+    subpixel True
+    xpos 520
+    choice:
+        ypos 130
+    choice:
+        ypos 150
+    choice:
+        ypos 150
+    linear 30.0 xpos 280 # linear
+    pause 2
+    repeat
+
+transform cloud_night_move_02: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
+    subpixel True
+    xpos 520
+    choice:
+        ypos 150
+    choice:
+        ypos 170
+    linear 70.0 xpos 280 # linear
+    pause 2
+    repeat
+
+transform cloud_night_move_03: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
+    subpixel True
+    xpos 520
+    ypos 160
+    linear 50.0 xpos 280 # linear
+    pause 2
+    repeat
+
+# Images
 image rain: #Rain.
     "images/rooms/_weather_/rain_01.png"
     pause.1

@@ -1,3 +1,11 @@
+default hermione_diary = book_readable_class(title = "My Diary",
+    contents = [
+        ["MRM meeting", "I hosted another M.R.M. meeting today, not that anyone bothered to show up... I don't understand why people aren't more upset about the inequalities of this favour trading! You'd almost think that the boys are happy about it!"],
+        ["X", "I failed an exam today... I never thought that I'd ever put those words to paper... It's unbelievable... Should I have studied more? (Perhaps a time turner could help?) No... It must have been Snape! That crooked old weirdo probably failed me on purpose... Maybe I should speak to Dumbledore about this..."], #no title
+        ["Favour trading?", "I overheard some more girls talking about selling favour to their teachers today... The amount of points they were talking about were unbelievable! Maybe it's something I should consider after all... It could be the only way for Gryffindor to win the house cup..."]
+    ]
+)
+
 label her_whoring_pages:
     #End of talk to me tier 1 (Options for choice made)
     $ diary_page_1_1 = "I can't believe it... I sold my first real favour to Professor Dumbledore today! \nEven if it was just the two of talking... not that he said much! He just kept silently nodding and staring at my boobs... I suppose that's what made it a favour... Still, I can't wait to tell Ron and Harry about the five points! Go Gryffindor!!!"

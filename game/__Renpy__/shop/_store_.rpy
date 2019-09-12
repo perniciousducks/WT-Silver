@@ -624,8 +624,6 @@ label shop_potion_menu:
 label token_shop_menu:
     show screen weasley_store_menu
 
-    call update_deco_items
-
     python:
         item_list = []
 
@@ -700,6 +698,7 @@ label purchase_deco(item):
                     $ achievement.unlock("postman")
                 if len(filter(lambda x: x.unlocked==False, misc_hat_list)) <= 0:
                     $ achievement.unlock("hats")
+                call update_deco_items # Call needed to update gambler outfit image
             else:
                 m "I don't have enough tokens."
         "-Buy [item.name] for [item.cost] gold coins -" if item.type == "quest item":
@@ -716,4 +715,10 @@ label purchase_deco(item):
     hide screen gift
     with d3
 
+    return
+
+label update_deco_items:
+    # Updates image from shop icon to mannequin
+    if hg_gamble_slut_ITEM.unlocked:
+        $ hg_gamble_slut_ITEM.image = "outfits/hg_gambler_slut"
     return

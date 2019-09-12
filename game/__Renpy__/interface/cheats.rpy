@@ -43,6 +43,7 @@ label cheats:
                         for item in hermione_clothing_sets_list:
                             unlock_clothing_compat(item)
                     ">All of Hermione's outfits and clothing sets have been unlocked."
+                    call update_deco_items # Call needed to update gambler outfit image
                     jump cheats_hermione
 
                 "-Toggle Breast Expansion-":
@@ -251,10 +252,13 @@ label cheats:
                     python:
                         for i in book_list.read_books:
                             i.unlocked = True
+                            i.unlockable = False
                         for i in book_list.write_books:
                             i.unlocked = True
+                            i.unlockable = False
                         for i in book_list.fiction_books:
                             i.unlocked = True
+                            i.unlockable = False
                     jump cheats
                 "-Get all decorations-":
                     python:

@@ -1,5 +1,6 @@
 default letter_queue_list = []
 default report_money = 0
+default deliveryQ = deliveryQueue()
 
 # Hermione Granger Letters
 default letter_hg_1 = mail_letter_class(
@@ -322,9 +323,6 @@ init python:
             for i in delivery:
                 self.queue.remove(i)
             return delivery
-
-    if not hasattr(renpy.store,'deliveryQ'):
-        deliveryQ = deliveryQueue()
 
     class mail_letter_class(object):
         mailed = False

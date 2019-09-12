@@ -50,6 +50,8 @@ default tonks_strip_happened    = False #Tonks random clothing event.
 
 default gave_tonks_gift = False
 
+default ton_seen_lun_sex = False
+
 # Names
 default tonks_name       = "Tonks"
 default ton_genie_name   = "Professor"
@@ -189,6 +191,7 @@ label reset_tonks_progress:
         "chitchated_with_tonks",
         "tonks_strip_happened",
         "gave_tonks_gift",
+        "ton_seen_lun_sex"
 
         # Names
         "tonks_name",

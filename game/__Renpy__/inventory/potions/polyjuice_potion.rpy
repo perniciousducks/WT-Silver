@@ -10,12 +10,19 @@
 
 #Cat ears.
 
-init:
-    $ hg_pp_polyjuice = event_class(title = "Polyjuice", start_label = "hg_pp_polyjuice",
-    events = [[["hg_pp_polyjuice_T1_intro"],["hg_pp_polyjuice_T1_E1"],["hg_pp_polyjuice_T1_E2"],["hg_pp_polyjuice_T1_E3"]]],
+default hg_pp_polyjuice = event_class(
+    title = "Polyjuice", start_label = "hg_pp_polyjuice",
+    events = [
+        [
+            ["hg_pp_polyjuice_T1_intro"],
+            ["hg_pp_polyjuice_T1_E1"],
+            ["hg_pp_polyjuice_T1_E2"],
+            ["hg_pp_polyjuice_T1_E3"]
+        ]
+    ],
     iconset = [["heart_empty", "heart_green"]],
-    #Extra variables
-    done_blowjob=False)
+    done_blowjob = False
+)
 
 label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her into another girl)
     m "[hermione_name]?"
@@ -304,7 +311,7 @@ label hg_pp_polyjuice_T1_introCC:
             her "People kept making fun of me and pulling my tail!"
             m "And how did that make you feel?"
             her "Humiliated!"
-            her "They kept asking if I was been a good kitty and if I wanted scratches..."
+            her "They kept asking if I was a good kitty and if I wanted scratches..."
             her "And you know the worst thing?"
             m "What?"
             her "The darn potion sort of made me want scratches..."

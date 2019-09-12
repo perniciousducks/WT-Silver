@@ -1,4 +1,5 @@
 init python:
+
     def start_duel(opppent_deck, after_enemy = None, rules = None, duel_player_deck = None):
         global standard_rules
         global playerdeck

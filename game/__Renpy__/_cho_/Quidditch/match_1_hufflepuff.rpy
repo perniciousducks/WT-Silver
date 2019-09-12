@@ -801,7 +801,7 @@ label hufflepuff_match_return:
     $ renpy.sound.play("sounds/snore2.mp3")
     m "......{w=0.5}*Snore*{w=1.0}{nw}"
     stop music fadeout 6.0
-    call cho_walk("desk", "base", 2.4, action="enter")
+    call cho_walk("desk", "base", speed=2.4, action="enter")
 
     $ renpy.sound.play("sounds/punch01.mp3")
     call cho_main("We beat \"Hufflepuff\"!!!","smile","angry","base","mid", ypos="base", trans="hpunch")

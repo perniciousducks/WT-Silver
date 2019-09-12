@@ -482,7 +482,7 @@ label tonks_intro_E3:
     m "(Shit...)"
     call ton_main("But that won't bring back Professor Dumbledore...","upset","base","angry","R")
     call ton_main("You and Professor Snape should be locked up in the tiniest cell in Azkaban for what you’ve done...","angry","base","angry","mid")
-    g4 "No, plase! I hate confined spaces!"
+    g4 "No, please! I hate confined spaces!"
     call ton_main("And stay there for the rest of your lives...","open","base","angry","mid")
     g4 "You can't do that to me, I'm immortal! I'd go insane!"
     call ton_main("You should have thought about that before deciding to fuck your own students!","angry","base","angry","mid")

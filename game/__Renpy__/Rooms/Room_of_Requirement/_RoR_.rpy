@@ -1,6 +1,5 @@
-init:
-    $ mirror_bg = [None, "images/rooms/room_of_requirement/agrabah.png"]
-    $ mirror_image = 0
+define mirror_bg = [None, "images/rooms/room_of_requirement/agrabah.png"]
+default mirror_image = 0
 
 transform mirrage:
     subpixel True

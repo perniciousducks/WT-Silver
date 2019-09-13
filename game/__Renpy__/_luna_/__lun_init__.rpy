@@ -446,7 +446,6 @@ label reset_lun_transparency:
     return
 
 label reset_luna_progress:
-    #TODO Add Luna's event class variables to the list below to reset event progress
     $ reset_variables(
         "lun_whoring",
         "lun_tier",
@@ -468,6 +467,12 @@ label reset_luna_progress:
         "ames",
         "lun_genie_name",
         "lun_name",
-        "gave_luna_gift"
+        "gave_luna_gift",
+
+        # Event objects
+        "ll_pf_masturbate",
+        "ll_pf_blowjob",
+        "ll_pf_sex",
+        "ll_favor_list"
     )
     return

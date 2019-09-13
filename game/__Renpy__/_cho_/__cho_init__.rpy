@@ -149,7 +149,6 @@ default cc_pr_manipulate = event_class(title = "Manipulate the enemy!", start_la
 default cc_requests_list = [cc_pr_manipulate]
 
 label reset_cho_progress:
-    #TODO Add Cho's event class variables to the list below to reset event progress
     $ reset_variables(
         # Stats
         "cho_tier",
@@ -207,6 +206,14 @@ label reset_cho_progress:
         "main_match_2_stage",
         "main_match_3_seen",
         "cho_content_complete",
+
+        # Event objects
+        "cc_pf_talk",
+        "cc_pf_strip",
+        "cc_favor_list",
+
+        "cc_pr_manipulate",
+        "cc_requests_list",
 
         # Names
         "cho_genie_name",

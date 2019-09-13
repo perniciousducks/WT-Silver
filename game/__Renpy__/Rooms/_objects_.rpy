@@ -36,6 +36,14 @@ default door_OBJ = room_object_class(type="door",
     hover_image="door_hover",    hover_image_path="images/rooms/_objects_/doors/",
     xpos=898, ypos=315)
 
+default door_night_OBJ = room_object_class(
+    type="door",
+    room_image  = "door_idle_night",  room_image_path  = "images/rooms/_objects_/doors/",
+    idle_image  = "door_idle_night",  idle_image_path  = "images/rooms/_objects_/doors/",
+    hover_image = "door_hover_night", hover_image_path = "images/rooms/_objects_/doors/",
+    xpos=898, ypos=315
+)
+
 #default carpet_OBJ = room_object_class(type="carpet", room_image="", xpos=0, ypos=0)
 
 default candle_left_OBJ = room_object_class(type="candle",

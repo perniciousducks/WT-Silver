@@ -1,5 +1,4 @@
 label t_wardrobe_quidditch():
-    $ char_active = get_character_object(active_girl) #TODO It's Cho, just use cho_class
     $ hide_transitions = True
     
     $ image_arrow = "interface/frames/"+interface_color+"/arrow2.png"
@@ -24,11 +23,11 @@ label t_wardrobe_quidditch():
         else:
             $ current_item[_return[2]] = clamp(current_item[_return[2]]+1, 0, len(quidditch_items.items()[_return[2]][1])-1)
             
-        if not char_active.get_cloth(quidditch_items.keys()[_return[2]]) == quidditch_items.items()[_return[2]][1][current_item[_return[2]]]:
+        if not cho_class.get_cloth(quidditch_items.keys()[_return[2]]) == quidditch_items.items()[_return[2]][1][current_item[_return[2]]]:
             if not quidditch_items.items()[_return[2]][1][current_item[_return[2]]] == None:
-                $ char_active.equip(quidditch_items.items()[_return[2]][1][current_item[_return[2]]])
+                $ cho_class.equip(quidditch_items.items()[_return[2]][1][current_item[_return[2]]])
             else:
-                $ char_active.unequip(quidditch_items.keys()[_return[2]])
+                $ cho_class.unequip(quidditch_items.keys()[_return[2]])
     elif _return == "apply":
         # Add reactions here, example:
         

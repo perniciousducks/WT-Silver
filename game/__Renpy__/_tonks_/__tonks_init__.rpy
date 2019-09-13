@@ -172,7 +172,6 @@ default nt_requests_list = [
 ]
 
 label reset_tonks_progress:
-    #TODO Add Tonks' event class variables to the list below to reset event progress
     $ reset_variables(
         # Stats
         "ton_tier",
@@ -203,6 +202,14 @@ label reset_tonks_progress:
         "ton_astoria_date_counter",
         "ton_hermione_date_counter",
         "ton_level_up",
-        "tonks_shared"
+        "tonks_shared",
+
+        # Events
+        "nt_he_counter",
+        "nt_he_drink",
+        "nt_pr_teach",
+        "nt_pr_grope",
+        "nt_pr_kiss",
+        "nt_requests_list"
     )
     return

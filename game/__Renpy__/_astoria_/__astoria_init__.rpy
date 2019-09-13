@@ -117,7 +117,6 @@ label update_astoria_spells:
     return
 
 label reset_astoria_progress:
-    #TODO Add Astoria's event class variables to the list below to reset event progress
     $ reset_variables(
         # Flags
         "astoria_busy",
@@ -147,6 +146,11 @@ label reset_astoria_progress:
         "astoria_book_intro_happened",
         "astoria_intro_completed",
         "ast_seen_lun_sex",
+
+        # Event objects
+        "ag_st_imperio",
+        "ag_se_imperio_sb",
+        "ag_spell_list",
 
         # Tonks events
         "spells_locked",

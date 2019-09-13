@@ -36,9 +36,10 @@ init python:
             if self.group < 1:
                 raise Exception('Outfit: "group" list was not defined in outfit_class.')
             
-            # Mark each clothing piece from the group as unlocked/locked by default
             if self.unlocked:
-                self.unlock(True)
+                # Unlock outfit object properly using unlock method
+                self.unlocked = False
+                self.unlock()
                 
         def outfit_export(self, tofile=True, filename="exported"):
             exported = [self.group[0].char]
@@ -109,11 +110,12 @@ init python:
             renpy.block_rollback()
             return (False, renpy.show_screen("popup_window", "Import failed!"))
                     
-        def unlock(self, bool):
-            self.unlocked = bool
-            get_character_object(self.group[0].char).outfits.append(self)
-            for item in self.group:
-                item.unlock(bool)
+        def unlock(self):
+            if not self.unlocked:
+                get_character_object(self.group[0].char).outfits.append(self)
+                # Mark each clothing piece from the group as unlocked/locked by default
+                for item in self.group:
+                    item.unlock()
                 
         def clone(self):
             clothes = []
@@ -294,13 +296,18 @@ init python:
             
             # Set outline layer path
             self.outline = self.imagepath+"outline.png"
-                
-            # Add cloth object to respective character, category and sub-category in dictionary keylist
+
             if not self.cloned:
                 if self.unlocked:
-                    get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
-                character_clothes_list.append(self)
+                    # Unlock cloth object properly using unlock method
+                    self.unlocked = False
+                    self.unlock()
                 
+                # Add cloth object to a stored list
+                if not hasattr(renpy.store, 'character_clothes_list'):
+                    renpy.store.character_clothes_list = []
+                renpy.store.character_clothes_list.append(self)
+            
             # Initialize icon crop calculations A.K.A threading A.k.A lazyload
             layers = [] # This is NOT a class variable
             for i in xrange(self.layers):
@@ -310,9 +317,10 @@ init python:
                 
             self.sprite_ico = lazyload(layers, self.color, self.layers+1, self.layers)
                 
-        def unlock(self, bool):
+        def unlock(self):
             if not self.unlocked:
-                self.unlocked = bool
+                self.unlocked = True
+                # Add cloth object to the character's clothing data
                 get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
             
         def clone(self):
@@ -512,8 +520,11 @@ init python:
             
             if self.char == None:
                 raise Exception('Character: "char" was not defined in char_class.')
-                
-            character_list.update({self.char: self})
+
+            # Add the character to a stored list
+            if not hasattr(renpy.store, 'character_list'):
+                renpy.store.character_list = {}
+            renpy.store.character_list.update({self.char: self})
                 
         def get_object(self, dict, key):
             return dict.get(key)[0]

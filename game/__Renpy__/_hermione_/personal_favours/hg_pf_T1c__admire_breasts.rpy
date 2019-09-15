@@ -199,8 +199,8 @@ label hg_pf_admire_breasts_T1_intro_E2:
     call her_main("Sir, this is a very inapporpriate thing to ask of me!!!","scream","angryCl")
     m "Yeah, yeah... What else is new..."
     call her_main("Sir!!!","scream","angryCl")
-    m "Please. All I'm asking for is to get a little peak..."
-    call her_main("A peak at what?","scream","angryCl")
+    m "Please. All I'm asking for is to get a little peek..."
+    call her_main("A peek at what?","scream","angryCl")
 
     menu:
         "\"Your bra!\"":

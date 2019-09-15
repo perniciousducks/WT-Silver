@@ -546,6 +546,18 @@ default hg_pf_talk = event_class(title = "Talk to me!", start_label = "hg_pf_tal
     icons = [None, None, None], # If a tier doesn't need an icon replace with None
     iconset = [["heart_empty", "heart_red"], ["heart_empty", "heart_yellow"], ["heart_empty", "heart_red"]]
     )
+    
+# Alternate talk event with TONKS
+default hg_pf_talk_tonks = event_class(title = "", start_label = "", start_tier = 3, events = [
+    [
+    ["hg_pf_talk_tonks_T3_intro_E1"],
+    ["hg_pf_talk_tonks_T3_E1"]
+    ]
+    
+    ],
+    icons = [None, None, None], # If a tier doesn't need an icon replace with None
+    iconset = [["heart_empty", "heart_red"], ["heart_empty", "heart_yellow"], ["heart_empty", "heart_red"]]
+    )
 
 
 default hg_pf_admire_panties = event_class(title = "Show me your Panties!", start_label = "hg_pf_admire_panties", start_tier = 1, events = [

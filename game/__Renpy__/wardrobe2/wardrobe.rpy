@@ -131,7 +131,7 @@ label t_wardrobe(return_label, char_label):
         else:
             $ renpy.call(active_girl+"_wardrobe_check", "equip", _return[1])
     elif _return == "addoutfit":
-        $ cho_outfit_custom.clone()
+        $ globals()[active_girl+"_outfit_custom"].clone()
         $ menu_items = char_active.outfits
         $ menu_items_length = len(menu_items)
     elif _return[0] == "deloutfit":

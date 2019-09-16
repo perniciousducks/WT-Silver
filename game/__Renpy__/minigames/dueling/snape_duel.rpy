@@ -891,4 +891,4 @@ image hand_guard: #Hand attacks the guard.
 screen snape_glass():
     # add "interface/blackfade.png"
     add "glass" at Position(xpos=0,ypos=0)
-    zorder 2
+    zorder 10

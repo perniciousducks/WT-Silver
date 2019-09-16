@@ -876,7 +876,7 @@ label hermione_change:
                     g4 "You deserve to be called a slut, a whore and a mudblood... just look at you."
                     call her_main("...", "scream","worriedCl", tears="mascara_soft_blink")
                     call her_main("", "disgust","worriedCl", tears="mascara_soft")
-                    g4 "You walk into my office and sell your body for the soul reason that it will make Gryffindor happy to win the house cup."
+                    g4 "You walk into my office and sell your body for the sole reason that it will make Gryffindor happy to win the house cup."
                     call her_main("...", "open","worriedCl", tears="mascara_soft_blink")
                     call her_main("", "disgust","worriedCl", tears="mascara_soft")
                     g4 "Bending over onto my desk and let yourself be taken like a some common harlot..."

@@ -112,6 +112,7 @@ init python:
                     
         def unlock(self):
             if not self.unlocked:
+                self.unlocked = True
                 get_character_object(self.group[0].char).outfits.append(self)
                 # Mark each clothing piece from the group as unlocked/locked by default
                 for item in self.group:

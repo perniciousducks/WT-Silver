@@ -788,7 +788,7 @@ label outskirts_of_hogwarts:
     pause.3
     call hide_blkfade
     pause.8
-    call play_music("walking_on_grass")
+    call play_sound("walking_on_grass")
     $ ccg(layer2="172")
 
     return

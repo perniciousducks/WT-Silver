@@ -341,6 +341,8 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
 
     elif action == "leave":
         call play_sound("door")
+        with d3
+        pause .5
     else:
         if flip:
             $ gen_chibi_flip = -1

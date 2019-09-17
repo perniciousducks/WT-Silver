@@ -401,8 +401,6 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 pause 0.5
 
                 call her_chibi("leave")
-                with d3
-                pause.5
 
         call blkfade
 

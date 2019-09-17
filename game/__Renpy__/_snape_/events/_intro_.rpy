@@ -214,8 +214,6 @@ label snape_intro_E2:
     pause.2
 
     call sna_chibi("leave")
-    with d3
-    pause .5
 
     $ snape_intro.E2_complete = True
     $ ss_event_pause += 1
@@ -335,7 +333,8 @@ label snape_intro_E3:
     call bld
     who2 "........................"
 
-    call sna_chibi("leave")
+    # Hide Snape chibi and fade to black
+    hide screen snape_stand
     show screen blkfade
     with d3
 
@@ -720,8 +719,6 @@ label snape_intro_E5:
     call sna_main("\"Send those whores up, Severus!\" Ha-ha-ha..","snape_28")
 
     call sna_chibi("leave")
-    with d3
-    pause .5
 
     call bld
     m "Hm... "

@@ -1015,8 +1015,6 @@ label hermione_intro_E6:
         call her_main("{size=-4}(There is nothing wrong with that... nothing at all...){/size}","base","happyCl")
 
     call her_chibi("leave")
-    with d3
-    pause.5
 
     stop music fadeout 1.0
 

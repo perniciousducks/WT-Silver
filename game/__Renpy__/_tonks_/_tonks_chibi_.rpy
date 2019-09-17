@@ -37,6 +37,8 @@ label ton_chibi(action = "", xpos=ton_chibi_xpos, ypos=ton_chibi_ypos, flip=Fals
         hide screen bld1
         hide screen blktone
         hide screen ton_stand
+        with d3
+        pause .5
     else:
         if action == "reset":
             $ ton_chibi_animation = None

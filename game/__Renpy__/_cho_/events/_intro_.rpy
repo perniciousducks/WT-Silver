@@ -331,12 +331,8 @@ label cho_intro_1:
     pause.5
 
     call cho_chibi("leave")
-    with d3
-    pause.5    
 
     call her_chibi("stand","mid","base",flip=False)
-    with d3
-    pause.5
 
     call her_main("...","annoyed","angry", xpos="base", ypos="base",flip=False)
     m "..."

@@ -397,7 +397,6 @@ default hermione_outfits_list = [
     hg_witch_ITEM,
     hg_witch_skimpy_ITEM,
     hg_outfit_egypt_ITEM,
-    hg_gamble_slut_ITEM,
 ]
 default hermione_costumes_list = [
     hg_costume_power_girl_ITEM,

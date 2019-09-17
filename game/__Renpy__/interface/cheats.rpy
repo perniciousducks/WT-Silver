@@ -43,6 +43,7 @@ label cheats:
                         for item in hermione_clothing_sets_list:
                             unlock_clothing_compat(item)
                     ">All of Hermione's outfits and clothing sets have been unlocked."
+                    $ unlock_clothing_compat(hg_gamble_slut_ITEM) # Gambler outfit is not included in above lists
                     call update_deco_items # Call needed to update gambler outfit image
                     jump cheats_hermione
 

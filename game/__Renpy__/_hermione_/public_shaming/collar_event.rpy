@@ -48,7 +48,7 @@ label slut_scene: #Locked to her being your slut
     hide screen hermione_main
     with d3
 
-    call her_walk_desk_blkfade #Hides her_main, her_chibi, screen-tones, calls blkfade.
+    call chibi_walk_desk_blkfade("hermione") #Hides her_main, her_chibi, screen-tones, calls blkfade.
 
     ">Hermione walks over and kneels before you as you pull out your cock from your robes."
 
@@ -246,7 +246,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     m "I am serious, now be a good little whore and bend over my desk and I'll give you what you want."
     call her_main("...","angry","down_raised")
 
-    call her_walk_desk_blkfade
+    call chibi_walk_desk_blkfade("hermione")
 
     hide screen genie
     $ gen_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
@@ -383,7 +383,7 @@ label slave_scene:
     m "Now be a good girl and bend over the desk."
     call her_main("...","angry","base")
 
-    call her_walk_desk_blkfade
+    call chibi_walk_desk_blkfade("hermione")
 
     hide screen genie
     $ gen_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).

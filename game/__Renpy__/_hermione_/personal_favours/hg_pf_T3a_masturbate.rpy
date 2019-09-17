@@ -5,8 +5,7 @@
 label hg_pf_strip_fingering_intro:
 
     # Intro
-    if not hg_fingered.trigger:
-        $ hg_fingered.trigger = True
+    if hg_masturbated.trigger == False:
         m "[hermione_name]..."
         call her_main("Yes, [genie_name]?","base","base", xpos="mid", ypos="base")
         m "Do you ever touch yourself?"
@@ -62,6 +61,9 @@ label hg_pf_strip_T2_fingering:
     call her_main("(I can't believe I'm going to do this...)","normal","worriedCl")
 
     call set_her_action("covering_top")
+    #if hg_masturbated.trigger == False:
+        #$ achievement.unlock("hg_masturbated") # TODO: Add achievement
+    $ hg_masturbated.triggered() # .trigger = True, .counter += 1
     call ctc
 
     g9 "Nice..."
@@ -265,6 +267,9 @@ label hg_pf_strip_T3_fingering:
     call hg_pf_strip_fingering_intro
 
     call set_her_action("covering_top")
+    #if hg_masturbated.trigger == False:
+        #$ achievement.unlock("hg_masturbated") # TODO: Add achievement
+    $ hg_masturbated.triggered() # .trigger = True, .counter += 1
     call ctc
 
     call play_music("playful_tension") # SEX THEME.
@@ -320,8 +325,6 @@ label hg_pf_strip_T3_fingering:
 ### Tier 4 ###
 
 label hg_pf_strip_T4_fingering:
-    $ hg_fingered.trigger = True
-
     m "[hermione_name]?"
     call her_main("[genie_name]?","base","base")
     m "You don't mind pleasuring yourself in front of me, do you?"
@@ -333,11 +336,12 @@ label hg_pf_strip_T4_fingering:
         m "Once more for good luck then!"
         call her_main("If you insist...{image=textheart}","open","baseL", cheeks="blush")
 
-        #call hg_masturbate_3 <--- Missing label
-        #call hg_masturbate_3_cumming <--- Missing label
-
     call her_main("...","base","glance")
     call set_her_action("covering")
+
+    #if hg_masturbated.trigger == False:
+        #$ achievement.unlock("hg_masturbated") # TODO: Add achievement
+    $ hg_masturbated.triggered() # .trigger = True, .counter += 1
 
     stop music fadeout 3.0
     call her_main("Do you like it when I do it like this, [genie_name]?","grin","baseL")

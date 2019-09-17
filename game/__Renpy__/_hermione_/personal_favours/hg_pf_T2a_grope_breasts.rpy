@@ -106,14 +106,15 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
     if hg_strip.trigger:
         menu:
             "\"First, lift up your top\"": # Needs posing
-                her "Sir?!"
+                call her_main("Sir?!","clench","base")
                 m "What? It's not like I haven't seen them before..."
-                her "But!"
+                call her_main("But!","clench","down_raised")
                 call play_music("playful_tension") # SEX THEME.
                 m "I just want to massage them a little..."
-                her "..............................."
-                her "Promise me you will be gentle with them."
+                call her_main("...............................","annoyed","down_raised")
+                call her_main("Promise me you will be gentle with them.","soft","glance")
                 m "Sure..."
+
                 $ hermione_wear_bra = False
                 call set_her_action("lift_top")
                 call hg_chibi_transition("admire_breasts", flip=False, trans="d5")

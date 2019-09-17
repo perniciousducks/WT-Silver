@@ -310,7 +310,10 @@ label hg_pf_talk_T2:
         m "Yes, you did."
         call her_main("Ew... I feel so dirty now...","angry","angry")
 
-        $ hg_jerkoff.triggered()
+        if hg_jerkoff.trigger == False:
+            $ achievement.unlock("busted")
+        $ hg_jerkoff.triggered() # .trigger = True, .counter += 1
+
 
     else:
         her "We need to put an end to this behavior, [genie_name]!"
@@ -336,8 +339,7 @@ label hg_pf_talk_T2:
 
 label hg_pf_talk_T3_intro_E1:
 
-    # You summon Tonks or Snape
-    m "I've just got an idea!"
+    "Dev Note" "Add long intro here."
 
     call hg_talk_3
 
@@ -346,7 +348,7 @@ label hg_pf_talk_T3_intro_E1:
 
 label hg_pf_talk_T3_E1:
 
-    # You summon Tonks or Snape
+    "Dev Note" "Add short repeated intro here."
 
     call hg_talk_3
 
@@ -355,6 +357,194 @@ label hg_pf_talk_T3_E1:
 
 label hg_talk_3:
 
-    "Dev Note" "Add Tier 3 favor here."
 
-    jump end_hg_pf_talk
+    menu:
+        "-Start jerking off-":
+            $ her_jerk_off_counter += 1
+            $ masturbating = True
+
+            hide screen hermione_main
+            call nar(">You reach under the desk and grab your cock...")
+            call gen_chibi("jerking_behind_desk")
+            with d3
+            pause.8
+
+            call her_main("[genie_name], don't tell me you are...","open","suspicious")
+            call her_main("Masturbating again.....","disgust","suspicious")
+            m "Me? I'd never do such a thing. Ever..."
+            call her_main("I caught you before, remember?","annoyed","angry")
+            m "Oh right..."
+            m "Anyhow... Don't forget why you are here, [hermione_name]. To earn some points..."
+
+        "-Participate in the conversation-":
+            $ masturbating = False
+            m "Don't mention it."
+
+    call her_main("Well, as I was saying...","open","closed")
+    her "Today started off fairly normal..."
+    her "We had muggle studies."
+    her "Professor Burbage babbled on about things she doesn't understand as usual."
+    her " As I'm a muggle born I've been considering dropping the subject as it's a waste of time."
+    her "Although since I failed that test I feel like I need all the extra points I can get..."
+    her "Her views on muggle and wizarding relations and the fact that we're not that different is also quite refreshing..."
+    her "Not that the Slytherins aren't constantly trying to disrupt her classes..."
+    if masturbating:
+        m "*Hmm* I bet they were...."
+        her "*UGH* Do you have to keep touching yourself professor?"
+        m "Just keep talking [hermione_name]..."
+        her "Fine..."
+    else:
+        m "Is that so?"
+    m "So, what were they doing exactly?"
+    her "Well, her room is filled with a bunch of muggle toys, instruments and trinkets..."
+    her "Her collection would even bring Mr Weasleys to shame."
+    if masturbating:
+        m "(I bet she has a bunch of sex toys in there...)"
+    else:
+        m "Maybe I should have a look at her collection myself."
+    her "There's obviously nothing that stands out as odd to me in any way."
+    her "But since most of the Slytherins are pure-blood they were handling her items with little to no care."
+    her "So when they weren't silently insulting her about her views they were constantly making suggestive remarks about the objects asking where she'd insert that one..."
+    her "She's quite oblivious to it most of the time but the constant giggling from the Slytherin girls is very distracting and annoying."
+    her "It didn't help when they discovered what professor Burbage actually believed to be a back massager..."
+    m "I mean, that's what it says on the box..."
+    m "Wait, how do you know what people usually use them for?"
+    her "..."#Blush
+    m "Well?"
+    her "Well, it's obvious to anyone with common sense isn't it!"
+    her "Even those Slytherin girls quickly realised what people use it for... and they're thicker than polyjuice potion!"
+    if masturbating:
+        m "(I bet you wouldn't mind nicking it for yourself...)"
+    else:
+        m "(Poly... what?)"
+    m "Why don't you tell me since you seem to knowledgeable about the subject..."
+    her "Sorry?"
+    m "What do{nw=0.2} people use those massagers for?"
+    her "Well, you know..."
+    m "Pretend that I don't."
+    her "..."
+
+    if masturbating:
+        her "They use it for what you're doing..."
+        m "Which is..."
+        her "They insert it... and use it to..."
+        m "To what?"
+        her "To pleasure themselves..."
+        m "And are you using one of these devices?"
+        her "Of... of course I'm not! Muggle electronics doesn't work at Hogwarts!"
+        g9 "So you have one at home then?"
+        her "I..."
+        g9 "(I knew it, you dirty slut!)"
+        her "I don't have to talk about my personal health to you!"
+        g9 "I bet you use it any chance you get when nobody is around!"
+        her "I am not!"
+        m "So you do it even when your parents is at home?"
+        her "I don...{nw}"
+
+        g4 "{size=-4}You dirty whore! *Argh!*{/size}"
+        call cum_block
+        call gen_chibi("cumming_behind_desk")
+        with d3
+        pause.8
+
+        call cum_block
+        g4 "*Argh!* YES!"
+
+        $ her_mood = +7
+        call her_main("[genie_name] did you just..?","disgust","down_raised")
+        call her_main("*Yuck!*...","disgust","glance")
+
+        m "That felt amazing..."
+        her "..."
+        g9 "You shouldn't hold it in, [hermione_name]... It could help you relax a bit."
+        m "All great wizards do it..."
+        call her_main("(.........)","annoyed","angryL")
+        m "I could even go fetch that massager for you if you'd like."
+        her "No!"
+        m "Oh yeah, you said they don't work at the school..."
+        her "That's not what I meant..."
+        m "Loosen up a bit wont you, I'll figure something out don't you worry..."
+        her "{size=-4}I am not-{/size}"
+
+
+        call hide_characters
+        call gen_chibi("came_on_desk")
+        with d3
+        pause.8
+
+        call her_main("(...................)","disgust","worried")
+        m "You've done well today [hermione_name]..."
+        her "You've soiled your entire desk!" #Shocked
+        m "I'm sure it will be cleaned at one point or another..."
+        her "Gross..."
+        her "Can I have my points now?"
+        m "Of course..."
+
+
+
+        # VVV Remove this bit VVV
+        m "[points] to gryffindor-"
+        her "Thanks, [genie_name]..." #Still a bit mad
+        m "-and an extra [points] for opening up to me."
+        her "What?!" #Shocked can't believe it
+        her "Really?" #hesitant smile
+        m "Of course [hermione_name], you've deserved it."
+        her "*Oh*... Okay then, thank you I suppose..."
+        m "Don't mention it."
+        if daytime:
+            m "Now, back to class [hermione_name]."
+            her "Of course!"
+            her "Good day then [genie_name]."
+            m "To you as well [hermine_name]..."
+        else:
+            m "Now, time for bed..."
+            her "What are you..."
+            m "Close the door on your way out wont you..."
+            her "Oh... of course [genie_name]."
+            her "Good night then."
+            m "Good night [hermione_name]"
+
+    else:
+        m "Yes?"
+        her "They're... they're back massagers, it says so on the box... you said so yourself."
+        m "Then what's the problem with the Slytherin girls having a go with it?"
+        her "Nothing! I'm sure they found it very educational!"
+        her "I had never seen them more interested in muggle studies in fact!"
+        m "I bet..."
+        m "So, since you're muggle born and all..."
+        her "Yes?"
+        m "I hope you properly demonstrated for them on how to use it."
+        her "What? Why on earth do you think I would do that?"
+        her "You take me for some sort of exhibitionist?"
+        m "Sorry?"
+        her "Don't you sorry me... you expect me to get my fanny out and casually just shove it in there for the whole class to see?"
+        her "I'm sure they would love that and find it more than educational..."
+        her "How dare you suggest-"
+        m "What are you talking about? Weren't we talking about back massagers?"
+        her "-I'd just tear my clothes of and..." #Scraeming mouth
+        her "..." #Wide eyes
+        her "I...{w} I'm sorry professor!"
+        g9 "I didn't take you for such a naughty girl [hermione_name]!"
+        g9 "Here we were having an innocent conversation about back massagers and you spring all this on me."
+        her "Professor... I didn't mean."
+        g9 "Don't you professor me..."
+        her "But please, I assure you..."
+        m "That will be all for today Miss Granger."
+
+
+
+        # VVV Remvoe this bit VVV
+        m "[points] to Gryffindor."
+        her "But...{w} okay then...{w} Thank you [genie_name]"
+        if daytime:
+            m "Now, back to class [hermione_name]."
+            her "Of course!"
+            her "Good day then [genie_name]."
+            m "To you as well [hermine_name]..."
+        else:
+            m "Now, time for bed..."
+            her "Oh... of course [genie_name]."
+            her "Good night."
+            m "Good night [hermione_name]"
+
+    return

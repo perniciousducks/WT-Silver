@@ -386,8 +386,8 @@ label snape_intro_E3:
     else:
         jump no_wait
 
-    call sna_main("Who sent you here? What did you do with the real Albus?","snape_01", wand=True)
-    call sna_main("Shed your disguise and reveal your true self at once, this is your last warning!","snape_01", wand=True)
+    call sna_main("Who sent you here? What did you do with the real \nAlbus?","snape_01", wand=True)
+    call sna_main("Shed your disguise and reveal your true self at once, \nthis is your last warning!","snape_01", wand=True)
 
     $ d_points = 0
     $ d_flag_01 = False
@@ -400,7 +400,7 @@ label snape_intro_E3:
         "\"I can't. It's hard to explain...\"" if not d_flag_01:
             $ d_flag_01 = True
             $ d_points +=1
-            call sna_main("I have no interest in your explanations. I wouldn't believe a single word you'd say anyway!","snape_01", wand=True)
+            call sna_main("I have no interest in your explanations. I wouldn't \nbelieve a single word you'd say anyway!","snape_01", wand=True)
         "\"Stop threatening me, human!\"" if not d_flag_02:
             $ d_flag_02 = True
             $ d_points +=1
@@ -421,7 +421,7 @@ label snape_intro_E3:
     call sna_main("I've heard enough!","snape_01", wand=True)
     g4 "By the great desert sands! Would you let me explain, human?!"
     call sna_main("There is nothing left to explain!","snape_01", wand=True)
-    call sna_main("Since you refuse to cooperate, I'll be taking you into custody by force!","snape_01", wand=True)
+    call sna_main("Since you refuse to cooperate, I'll be taking you \ninto custody by force!","snape_01", wand=True)
     g4 "What?! Wait!"
 
     $ snape_intro.E3_complete = True

@@ -40,21 +40,6 @@ label very_no:
 
 
 
-label her_walk_desk_blkfade:
-
-    hide screen bld1
-    hide screen blktone
-    hide screen hermione_main
-    with d3
-    pause.2
-
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
-    call blkfade
-
-    return
-
-
-
 label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, trans=None):
     if trans != None:
         call hide_characters

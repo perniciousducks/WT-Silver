@@ -184,7 +184,10 @@ label hg_pf_admire_panties_T2_intro_E1:
 
 
 label hg_pf_admire_panties_T2_E1:
-    "Dev Note" "Add repeatable intro here."
+    call her_main("What will it be, [genie_name]?")
+    m "I'd like you to show me your panties again."
+    call her_main("..................","annoyed","worriedL")
+    call her_main("Alright...","open","worriedL")
 
     call hg_pf_admire_panties_T2
 
@@ -244,10 +247,9 @@ label hg_pf_admire_panties_T2: # Call label
 # Event 3 (r) - Panties may or may not be equipped. Hermione asks to remove them or keep them on.
 
 label hg_pf_admire_panties_T3_intro_E1:
-    m "[hermione_name], would you like to show me your panties?"
-    call her_main("Again?","annoyed","worriedL")
-    m "If it's not too much trouble..."
-    call her_main("..................","annoyed","worriedL")
+    m "[hermione_name], I'd like you to show me your panties again if that's not too much trouble."
+    call her_main("Oh...","open","down")
+    call her_main("Okay...","base","down_raised", cheeks="blush")
 
     call hide_characters
     hide screen bld1
@@ -288,12 +290,12 @@ label hg_pf_admire_panties_T3_intro_E1:
                 "\"Absolutely not!\"":
                     $ her_mood +=5
                     call her_main("Why not!?","scream","angryCl")
-                    m "Sluts aren't paid"
-                    m "That's what makes them sluts"
+                    m "Sluts aren't paid."
+                    m "That's what makes them sluts."
                     call her_main("well are you even going to pay me [current_payout] points?","annoyed","angry")
                     m "Are you a slut or are you a prostitute?"
                     her "{size=-4}...a slut {/size}"
-                    m "Good girl"
+                    m "Good girl."
                     call ctc
 
         "\"Good! [current_payout] points!\"":
@@ -304,7 +306,9 @@ label hg_pf_admire_panties_T3_intro_E1:
 
 
 label hg_pf_admire_panties_T3_E1:
-    "Dev Note" "Add repeatable intro here."
+    m "[hermione_name], I'd like you to show me your panties again if possible."
+    call her_main("Oh...","open","down")
+    call her_main("Well, that might be an issue...","base","down_raised", cheeks="blush")
 
     call hide_characters
     hide screen bld1
@@ -322,14 +326,14 @@ label hg_pf_admire_panties_T3_E1:
     call ctc
 
     # No Panties!
-    g9 "Where are your panties, [hermione_name]?"
-    call her_main("Oh, lately I just don't feel like wearing them...","base","down", cheeks="blush")
+    g9 "No panties again, [hermione_name]?"
+    call her_main("Well... what's the point if they're just going to be in the way all the time...","base","down", cheeks="blush")
 
     menu:
         "\"You little slut!\"":
             her "Hm..."
             call her_main("I suppose I am...","base","glance")
-            her "Do I get extra points for that?"
+            her "Do I get extra points this time?"
 
             menu:
                 "\"Absolutely!\"":
@@ -342,12 +346,12 @@ label hg_pf_admire_panties_T3_E1:
                 "\"Absolutely not!\"":
                     $ her_mood +=5
                     call her_main("Why not!?","scream","angryCl")
-                    m "Sluts aren't paid"
-                    m "That's what makes them sluts"
-                    call her_main("well are you even going to pay me [current_payout] points?","annoyed","angry")
+                    m "Sluts aren't paid."
+                    m "That's what makes them sluts."
+                    call her_main("Well are you even going to pay me [current_payout] points?","annoyed","angry")
                     m "Are you a slut or are you a prostitute?"
                     her "{size=-4}...a slut {/size}"
-                    m "Good girl"
+                    m "Good girl."
                     call ctc
 
         "\"Good! [current_payout] points!\"":
@@ -387,7 +391,9 @@ label hg_pf_admire_panties_T3_E1:
 
 label hg_pf_admire_panties_T3_E2:
 
-    "Dev Note" "Add repeatable intro here."
+    m "[hermione_name], show me those cute panties of yours again."
+    call her_main("Oh...","open","down")
+    call her_main("Okay...","base","down_raised", cheeks="blush")
 
     call hide_characters
     hide screen bld1

@@ -571,8 +571,8 @@ label updated_hermione_favors: # For 1.37
         $ hg_talk           = trigger_class()
         $ hg_jerkoff        = trigger_class()
         $ hg_strip          = trigger_class()
-        $ hg_fingered       = trigger_class()
         $ hg_masturbated    = trigger_class()
+        $ hg_kiss           = trigger_class()
         $ hg_handjob        = trigger_class()
         $ hg_titjob         = trigger_class()
         $ hg_blowjob        = trigger_class()
@@ -774,7 +774,6 @@ label updated_hermione_favors: # For 1.37
 
             [
             ["hg_pf_blowjob_T2_intro_E1"], # Couple of choices
-            ["hg_pf_blowjob_T2_intro_E2"], # Facefuck
             ["hg_pf_blowjob_T2_hidden_repeat"], # Repeat: Random visit
             ["hg_pf_blowjob_T2_repeat"]    # Repeat: Regular + Facefuck
             ]

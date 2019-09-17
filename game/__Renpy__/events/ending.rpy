@@ -3119,7 +3119,7 @@ label ball_ending_E3:
         call set_her_action("")
         call her_main("And I mean {size=+9}ANYTHING!!!{/size}","scream","angry",emote="01", trans="hpunch")
 
-        call her_walk_desk_blkfade
+        call chibi_walk_desk_blkfade("hermione")
 
         call play_sound("climb_desk")
         pause.7

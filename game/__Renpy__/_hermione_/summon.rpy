@@ -153,7 +153,7 @@ label update_her_tier:
         if game_difficulty >= 3 and imagination < 3: # Hardcore only
             return
         $ her_level_up = 3
-    elif her_tier == 4 and her_whoring >= 18 and hg_handjob.trigger == True:
+    elif her_tier == 4 and her_whoring >= 18 and hg_kiss.trigger == True:
         # Trigger: None
         if game_difficulty >= 3 and imagination < 4: # Hardcore only
             return

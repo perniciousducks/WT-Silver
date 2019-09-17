@@ -14,17 +14,18 @@ init python:
         title       = ""
         bool        = False # Can me switched to 'True' and 'False' for events
         trigger     = False # Can only be switched to 'True'
+        counter     = 0 # For stats
 
-        ss_trigger  = False # Snape
-        nt_trigger  = False # Tonks
-        hg_trigger  = False # Hermione
-        gw_trigger  = False # Ginny
-        cc_trigger  = False # Cho
-        ll_trigger  = False # Luna
-        sb_trigger  = False # Susan
-        ag_trigger  = False # Astoria
-        dg_trigger  = False # Daphne
-        pp_trigger  = False # Pansy
+        ss_counter  = 0 # Snape
+        nt_counter  = 0 # Tonks
+        hg_counter  = 0 # Hermione
+        gw_counter  = 0 # Ginny
+        cc_counter  = 0 # Cho
+        ll_counter  = 0 # Luna
+        sb_counter  = 0 # Susan
+        ag_counter  = 0 # Astoria
+        dg_counter  = 0 # Daphne
+        pp_counter  = 0 # Pansy
 
         def __init__(self, **kwargs):
             self.__dict__.update(kwargs)
@@ -34,6 +35,7 @@ init python:
 
         def triggered(self):
             self.trigger = True
+            self.counter += 1
             return
 
 

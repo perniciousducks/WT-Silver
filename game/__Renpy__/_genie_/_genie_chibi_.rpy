@@ -303,7 +303,7 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
         show screen genie
 
     #Jerking off behind desk.
-    elif action in ["jerking_behind_desk","jerking_off_behind_desk","cumming_behind_desk","cum_on_desk","came_on_desk"]:
+    elif action in ["jerking_behind_desk","jerk_off_behind_desk","jerking_off_behind_desk","cumming_behind_desk","cum_on_desk","came_on_desk"]:
 
         $ masturbating = True
 

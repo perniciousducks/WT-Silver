@@ -47,9 +47,9 @@ label ast_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             $ astoria_scaleratio = 2
 
             if astoria_flip == -1: #Flipped
-                $ astoria_xpos = 620
+                $ astoria_xpos = 50
             else:
-                $ astoria_xpos = 590
+                $ astoria_xpos = 650
             $ astoria_ypos = 230
             $ astoria_zorder = 8
         else:

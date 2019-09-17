@@ -660,3 +660,21 @@ label increase_house_points(house="Add house", points=0):
     hide screen notes
 
     return
+
+
+label chibi_walk_desk_blkfade(char=None):
+
+    call hide_characters
+    hide screen blktone
+    hide screen bld1
+    with d3
+    pause.2
+
+    if char == "hermione":
+        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    elif char == "tonks":
+        call ton_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+
+    call blkfade
+
+    return

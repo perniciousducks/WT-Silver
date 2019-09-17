@@ -19,11 +19,11 @@ label tonks_random_clothing:
             call ctc
 
             call ton_main("Hi, [ton_genie_name].","horny","base","raised","mid")
-            g9 "You are naked!"
+            g9 "You're naked!"
             call ton_main("Indeed I am.","open","base","raised","mid")
             call ton_main("Is that a problem, [ton_genie_name]?","horny","base","raised","mid")
             call ton_main("Am I going to get fired now?","open","base","base","R")
-            call ton_main("A person of authority?","open","base","base","mid")
+             #don't think there needs to be a line here tbh
             call ton_main("For inappropriate behaviour?","open","base","base","ahegao")
             call ton_main("Am I going to get punished?","horny","base","raised","mid")
 
@@ -38,7 +38,7 @@ label tonks_random_clothing:
             call ton_main("Hi, [ton_genie_name].","horny","base","raised","mid")
             g9 "You are naked again."
             call ton_main("Yes. Just felt like it.","base","base","raised","ahegao")
-            m "You don't worry if anybody's sees you?"
+            m "What if someone sees you?"
             if random_number in [1,2]:
                 m "Snape could have been in here."
                 call ton_main("Snape? He already knows how I roll...","open","base","raised","mid")
@@ -63,7 +63,7 @@ label tonks_random_clothing:
                 menu:
                     "-1 gold-":
                         m "A gold, if anything..."
-                        call ton_main("(bastard... How humiliating.)","base","base","raised","ahegao")
+                        call ton_main("(Bastard... How humiliating.)","base","base","raised","ahegao")
                         call ton_main("Thank you so much, [ton_genie_name].","base","base","base","mid")
                         m "Don't mention it, [tonks_name]."
                         $ gold -= 1
@@ -77,28 +77,28 @@ label tonks_random_clothing:
                         m "Does 100 gold sound nice to you?"
                         g9 "With a body like that, you could earn a fortune at a strip club!"
                         call ton_main("Really...","horny","base","raised","mid")
-                        call ton_main("You think a noble teacher like me,... an ex-auror,... would quit her highly regarded job to become a cheap stripper?","open","base","base","mid")
+                        call ton_main("You think a noble teacher like me- an ex-auror... Would quit her highly regarded job to become a cheap stripper?","open","base","base","mid")
                         m "Well, no. I still want to keep you as a teacher."
                         m "I merely suggested that you could--"
                         call ton_main("Well, the dueling stage isn't seeing any use...","base","base","base","R")
-                        call ton_main("Maybe I should arrange some extra curricular classes for a couple of my favourite students,... give them a little show...","open","base","raised","mid")
+                        call ton_main("Maybe I should arrange some extra curricular activities for a couple of my favourite students, give them a little show...","open","base","raised","mid")
                         g9 "I'm sure they would all love to watch their perverted teacher strip!"
-                        call ton_main("Maybe I won't just end it at stripping!","horny","base","raised","mid")
+                        call ton_main("Maybe I won't just stop at stripping!","horny","base","raised","mid")
                         $ gold -= 100
 
             "-Scold her-":
                 m "You know I have to, Miss [tonks_name]."
-                m "Walking into the room of your boss, completely naked?"
+                m "Walking into your boss' office, completely naked?"
                 m "A behaviour like that from a teacher... that's just unspeakable!"
                 call ton_main("I'm terribly sorry, [ton_genie_name]...","open","base","base","down")
                 m "What will you do next? Climb under my desk and suck my cock?"
                 g4 "Spread your legs for one of your students?"
                 call ton_main("(Hngh-- I'd love to. All of it!)","base","base","raised","ahegao")
-                g4 "A cunt like you doesn't deserve to be a teacher. You are nothing more than a disgusting whore!"
+                g4 "A bitch like you doesn't deserve to be a teacher. You are nothing more than a disgusting whore!"
                 call ton_main("You are so right, [ton_genie_name]!","open_wide_tongue","base","worried","ahegao")
                 m "I should make you the school's cum-dumpster instead. How would you like that position?"
                 m "Boys lining up in front of the school toilets, waiting their turn to dump their cum into their teacher's mouth, day after day!"
-                call ton_main("You are making me wet, [ton_genie_name]!","base","base","base","ahegao")
+                call ton_main("You're making me so wet, [ton_genie_name]!","base","base","base","ahegao")
                 call ton_main("Maybe some day I'll get bored of my current position here at Hogwarts,... you never know...","horny","base","raised","mid")
                 m "I'm not done with your punishment, Miss [tonks_name]!"
                 m "You went to this school, didn't you? Which house were you in?"
@@ -131,6 +131,6 @@ label tonks_random_clothing:
         #else:
             #$ ton_request_wear_coat = False
 
-        call ton_main("You've called, [ton_genie_name]?","base","base","base","mid",xpos="base",ypos="base")
+        call ton_main("You called, [ton_genie_name]?","base","base","base","mid",xpos="base",ypos="base")
 
     return

@@ -37,9 +37,6 @@ label ton_chibi(action = "", xpos=ton_chibi_xpos, ypos=ton_chibi_ypos, flip=Fals
         hide screen bld1
         hide screen blktone
         hide screen ton_stand
-        with d3
-        pause.5
-
     else:
         if action == "reset":
             $ ton_chibi_animation = None
@@ -128,8 +125,6 @@ label ton_walk(xpos=walk_xpos, ypos=walk_ypos, speed=ton_speed, action="", loite
         hide screen ton_walk
         if action == "leave":
             call play_sound("door")
-            with d3
-            pause.3
             $ ton_chibi_flip = 1
         else:
             if loiter:

@@ -354,13 +354,13 @@ label tonks_intro_E3:
             ton "Nymphadora Tonks..."
             m "(That Nympho again...)"
             ton "Sir, I’m coming in."
-    
+
     #Tonks enters the office
     #call play_sound("door")
-    
+
     call ton_walk(action="enter", xpos="desk", speed=2)
     #call ton_chibi("stand","mid","base")
-    
+
     call ton_main("Professor...","base","base","base","mid", xpos="right", ypos="base")
     m "How’s the investigation going? Nothing to report I gather?"
     call ton_main("On the contrary...","open","wide","wide","wide")
@@ -447,7 +447,7 @@ label tonks_intro_E3:
     g4 "(This witch knows her shit!)"
     m "..."
 
-    call play_music("playful")
+    $ renpy.music.play("music/Under-the-Radar by PhobyAk.mp3")
     g9 "Some people would say I'm \"the\" Genie, actually!"
     m "The most powerful being in the entire universe... Multiple universes even...."
     m "Glad my reputation precedes me..."
@@ -483,27 +483,28 @@ label tonks_intro_E3:
     m "Are you going to lock us up now?"
     call ton_main("I very well should! It would be the moral thing to do.","open","base","angry","mid")
     m "(Shit...)"
-    call ton_main("But that won't bring back Professor Dumbledore...","upset","base","angry","R")
-    call ton_main("You and Professor Snape should be locked up in the tiniest cell in Azkaban for what you’ve done...","angry","base","angry","mid")
-    g4 "No, please! I hate confined spaces!"
+    call ton_main("You and Professor Snape should be locked in Azkaban for what you’ve done...","angry","base","angry","mid")
     call ton_main("And stay there for the rest of your lives...","open","base","angry","mid")
     g4 "You can't do that to me, I'm immortal! I'd go insane!"
     call ton_main("You should have thought about that before deciding to fuck your own students!","angry","base","angry","mid")
     g4 "But I haven't even gotten to that part yet!"
     call ton_main("And you never will!","open","base","angry","mid")
+    call ton_main("I'm going to put you in the smallest cell Azkaban has to offer...","open","base","angry","mid")
+    g4 "No, please! I hate confined spaces!"
     # fake game over
-    stop music fadeout 7.0
+    $ renpy.music.stop(fadeout=2)
+    $ renpy.play('sounds/level_failed.mp3')
     show screen cartoon_zoom
     g4 "...{w=6.0}{nw}"
     call gameover(fake=True)
     # back from game over
-    
-    stop music fadeout 0.5
-    $ renpy.play('sounds/scratch.wav') 
+
+    stop music fadeout 1.5
+    $ renpy.play('sounds/scratch.wav')
     with hpunch
     call ton_main("Unless...", "upset","base","angry","R")
-    
-    m "Unless what?"
+
+    g4 "Unless?"
     call play_music("tonks_theme")
     call ton_main("You let me join in on the fun!","base","base","raised","mid", hair="horny")
     m "..."

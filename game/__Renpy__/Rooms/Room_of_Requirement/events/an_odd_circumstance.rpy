@@ -167,6 +167,8 @@ label an_odd_circumstance():
     her "Make it known that Hermione never backs down on a deal..."
     call her_walk("door", "base", speed=2)
     call her_chibi("leave")
+    with d3
+    pause.5
     nar "My breathing now returning to normal the feeling as if someone had been pinching my vocal cords slowly faded away."
     show screen blkfade
     with d3

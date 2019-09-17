@@ -3,25 +3,14 @@ label day_start:
     
     call common_start
 
-    ### DAY EVENTS ###
-
     # Start Quests
     jump quests
 
     label day_resume:
 
-    # Owl is already handled by common_start -> room()
-    # # Owl
-    # if letter_queue_list != [] and not owl_away:
-    #     call play_sound("owl")
-    #     show screen owl
-    #     with d3
-
     # Favors
-    if hg_pr_sex_skip:#Hermione does not show up. This sends to label where she shows up next morning.
+    if hg_pr_sex_skip: # Hermione does not show up. This sends to label where she shows up next morning.
         $ hg_pr_sex.start() # hg_pr_sex_T1_intro_E2
-
-
 
     label day_main_menu:
 

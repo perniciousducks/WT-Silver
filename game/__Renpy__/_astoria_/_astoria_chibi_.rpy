@@ -37,9 +37,6 @@ label ast_chibi(action = "", xpos=ast_chibi_xpos, ypos=ast_chibi_ypos, flip=Fals
         hide screen bld1
         hide screen blktone
         hide screen ast_stand
-        with d3
-        pause.5
-
     else:
         if action == "reset":
             $ ast_chibi_animation = None

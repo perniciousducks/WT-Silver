@@ -17,7 +17,7 @@ label gameover(fake=False):
     $ renpy.pause(4.0, hard=True)
     if fake:
         python:
-            credits_duration = 11.0
+            credits_duration = 30.0
             credits_text = "{image=logo/title.png}\n\n"
 
             credits_artists = ("A Professional Pervert", "The Purveyor of Pencils", "The Deviant Drawer", "A Painter of Filth")
@@ -50,7 +50,7 @@ label gameover(fake=False):
         show screen credits_screen(False)
         with blinds
         
-        $ renpy.pause(credits_duration-6.1, hard=True)
+        $ renpy.pause(12, hard=True)
         
         hide screen credits_screen
         with d1

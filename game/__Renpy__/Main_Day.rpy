@@ -1,6 +1,6 @@
 label day_start:
     $ daytime = True
-    
+
     call common_start
 
     # Start Quests

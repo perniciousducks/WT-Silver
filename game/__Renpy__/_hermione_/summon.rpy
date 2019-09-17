@@ -16,6 +16,7 @@ label summon_hermione:
 
     $ hide_transitions = False
     $ hermione_busy = True
+    $ active_girl = "hermione"
 
     menu:
 
@@ -87,8 +88,6 @@ label summon_hermione:
 
         # Wardrobe
         "-Wardrobe-" if hermione_wardrobe_unlocked: # Unlocks after first summoning her.
-            $ active_girl = "hermione"
-
             call load_hermione_clothing_saves
 
             call reset_wardrobe_vars

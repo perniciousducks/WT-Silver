@@ -242,7 +242,7 @@ label get_package:
     show screen blktone
 
     if clothing_mail_item != None:
-        if clothing_mail_timer <= 1:
+        if clothing_mail_timer <= 0:
             call unlock_clothing(text="You received a new outfit.",item=clothing_mail_item)
             $ clothing_mail_item = None
             $ clothing_mail_timer = 0

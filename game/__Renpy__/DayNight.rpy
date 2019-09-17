@@ -186,7 +186,7 @@ label update_day_values:
     if clothing_mail_item != None:
         $ clothing_mail_timer -= 1
 
-        if clothing_mail_timer <= 1:
+        if clothing_mail_timer <= 0:
             $ package_is_here = True
 
     return

@@ -294,7 +294,7 @@ label purchase_outfit(item):
     hide screen clothing_menu
     with d3
 
-    if clothing_mail_timer != 0:
+    if clothing_mail_item != None:
         maf "I'm sorry luv, but I'm still quite busy working on your item."
         maf "Come back once you got my package."
         return

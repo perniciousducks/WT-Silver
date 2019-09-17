@@ -3,7 +3,7 @@
 ### Tonks Intro ###
 
 label tonks_intro_E1:
-
+    stop music fadeout 1.0
     call play_sound("knocking")
     call bld
     "*Knock-knock-knock*"
@@ -70,6 +70,7 @@ label tonks_intro_E1:
     call ton_walk(xpos="mid", ypos="base", speed=2.5)
     pause.5
 
+    call play_music("tonks_theme")
     call ton_main("Thank you, Professor.","base","base","base","mid", xpos="right", ypos="base")
     m "(Oh shit, she’s hot...)"
     call ton_main("I apologize for arriving unannounced...{w=0.8} And a couple of days late...","open","base","base","R")
@@ -229,7 +230,7 @@ label tonks_intro_E1:
 
 
 label tonks_intro_E2:
-
+    stop music fadeout 1.0
     call play_sound("knocking")
     call bld
     "*Knock-knock-knock*"
@@ -263,8 +264,9 @@ label tonks_intro_E2:
             ton "I'm coming in..."
             g4 "(Shit!)"
 
-    call play_sound("door")
+    call ton_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
 
+    call play_music("tonks_theme")
     call ton_main("Professor.","base","base","base","mid", xpos="right", ypos="base")
     m "Hey! If it isn't..."
 
@@ -310,7 +312,7 @@ label tonks_intro_E2:
     call ton_main("I won't Professor.{w} Have a good night.","base","base","base","mid")
 
     # Tonks leaves.
-    call hide_characters
+    call ton_walk(action="leave", speed=2.5)
 
     call bld
     m "Shit..."
@@ -323,9 +325,9 @@ label tonks_intro_E2:
 
 
 label tonks_intro_E3:
-
-    call bld
+    stop music fadeout 1.0
     call play_sound("knocking")
+    call bld
     "*Knock-knock-knock*"
 
     call play_sound("knocking")
@@ -355,12 +357,10 @@ label tonks_intro_E3:
             ton "Sir, I’m coming in."
 
     #Tonks enters the office
-    #call play_sound("door")
+    call ton_walk(action="enter", xpos="desk", ypos="base", speed=2.8)
 
-    call ton_walk(action="enter", xpos="desk", speed=2)
-    #call ton_chibi("stand","mid","base")
-
-    call ton_main("Professor...","base","base","base","mid", xpos="right", ypos="base")
+    call play_music("tonks_theme")
+    call ton_main("Professor...","base","base","base","mid", xpos="mid", ypos="base")
     m "How’s the investigation going? Nothing to report I gather?"
     call ton_main("On the contrary...","open","wide","wide","wide")
     call ton_main("It's worse than I could have ever imagined!","open","base","angry","mid", hair="angry")
@@ -375,6 +375,8 @@ label tonks_intro_E3:
     call ton_main("While they abuse their authority and power to do the most despicable things to them...","open","base","base","R", hair="horny")
     call ton_main("But the Dumbledore I know would never allow such disgracefulness at his school...","angry","base","angry","mid", hair="angry")
     m "(...)"
+
+    stop music fadeout 1.0
     call ton_main("I had this suspicion... Since the very day I got here...","open","base","angry","mid", hair="angry")
     # Tonks threatens Genie.
     # Maybe have her chibi point her wand at him?
@@ -446,7 +448,7 @@ label tonks_intro_E3:
     g4 "(This witch knows her shit!)"
     m "..."
 
-    $ renpy.music.play("music/Under-the-Radar by PhobyAk.mp3")
+    call play_music("tonks_theme")
     g9 "Some people would say I'm \"the\" Genie, actually!"
     m "The most powerful being in the entire universe... Multiple universes even...."
     m "Glad my reputation precedes me..."
@@ -553,9 +555,7 @@ label tonks_intro_E3:
     m "I most certainly will..."
 
     #Tonks leaves
-    call play_sound("door")
-    call ton_chibi("hide")
-    call hide_characters
+    call ton_walk(action="leave", speed=2.5)
 
     call bld
     m "What an interesting turn of events..."
@@ -564,6 +564,7 @@ label tonks_intro_E3:
     $ tonks_unlocked = True
     $ achievement.unlock("unlockton", True)
     call popup("{size=-4}You can now summon Tonks into your office.{/size}", "Character unlocked!", "interface/icons/head/head_tonks_1.png")
+
     $ tonks_busy = True
 
     $ tonks_intro.E3_complete = True

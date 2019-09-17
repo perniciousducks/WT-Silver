@@ -219,16 +219,16 @@ label setup_fireplace_hangout(char=None):
     else: # Daytime
         stop bg_sounds
         show screen blkfade
-        
+
         $ fire_in_fireplace = False
-        
+
         call hide_characters
         call gen_chibi("hide")
         call sna_chibi("hide")
         call ton_chibi("hide")
         hide screen chair_right
         show screen desk
-        
+
     # Proceed as usual
     if char == "snape":
         show screen with_snape_animated
@@ -493,6 +493,8 @@ label play_music(music=""):
         play music "music/GrapeSodaIsFuckingRawbyjrayteam6.mp3" fadein 0.2 fadeout 0.5 if_changed
     elif music in ["anguish"]:
         play music "music/Anguish.mp3" fadein 1 fadeout 1 if_changed
+    elif music in ["trance"]:
+        play music "music/Under-the-Radar by PhobyAk.mp3" fadein 1 fadeout 1 if_changed
     else:
         python:
             try:

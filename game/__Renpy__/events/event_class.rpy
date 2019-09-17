@@ -3,30 +3,31 @@ init python:
         def __init__(self, **kwargs):
             self.title = ""
             self.hint = ""
-            
+
             self.__dict__.update(kwargs)
 
         def status(self):
             return list(self.__dict__)
 
 
-    class trigger_class(object):
+    class counter_class(object):
         def __init__(self, **kwargs):
             self.title       = ""
             self.bool        = False # Can me switched to 'True' and 'False' for events
             self.trigger     = False # Can only be switched to 'True'
+            self.counter     = 0
 
-            self.ss_trigger  = False # Snape
-            self.nt_trigger  = False # Tonks
-            self.hg_trigger  = False # Hermione
-            self.gw_trigger  = False # Ginny
-            self.cc_trigger  = False # Cho
-            self.ll_trigger  = False # Luna
-            self.sb_trigger  = False # Susan
-            self.ag_trigger  = False # Astoria
-            self.dg_trigger  = False # Daphne
-            self.pp_trigger  = False # Pansy
-            
+            self.hg_counter  = 0 # Hermione
+            self.gw_counter  = 0 # Ginny
+            self.cc_counter  = 0 # Cho
+            self.ll_counter  = 0 # Luna
+            self.sb_counter  = 0 # Susan
+            self.ag_counter  = 0 # Astoria
+            self.dg_counter  = 0 # Daphne
+            self.pp_counter  = 0 # Pansy
+            self.ss_counter  = 0 # Snape
+            self.nt_counter  = 0 # Tonks
+
             self.__dict__.update(kwargs)
 
         def status(self):
@@ -56,7 +57,7 @@ init python:
             # Private attributes
             self._tier     = 0
             self._points    = 0
-            
+
             self.__dict__.update(kwargs)
 
             if self.events == []:

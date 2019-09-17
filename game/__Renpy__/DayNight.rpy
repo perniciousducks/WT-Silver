@@ -56,7 +56,7 @@ label common_start:
 
     hide screen blkfade
     with fade
-
+    return
 
 label update_day_values:
     $ fire_in_fireplace = False

@@ -576,25 +576,26 @@ label ag_st_imperio_E4:
     ast "What shall I have her do, Professor?"
 
     m "How about..."
-    "Make her turn around!": # She's facing Astoria
-    ast "Very well, Sir."
-    ast "Professor, please turn around for me..."
-    ton "*hmm*... Yes!"
+    menu:
+        "Make her turn around!": # She's facing Astoria
+            ast "Very well, Sir."
+            ast "Professor, please turn around for me..."
+            ton "*hmm*... Yes!"
 
-    # Tonks turns around
+            # Tonks turns around
 
-    ton "........................"
-    ast "*uhm*..." # Astoria is uncomfortable
+            ton "........................"
+            ast "*uhm*..." # Astoria is uncomfortable
 
-    "Let her face me!":
-    ast "Okay, Sir."
+        "Let her face me!":
+            ast "Okay, Sir."
 
-    ast "And now?"
-    g9 "Her coat! Tell her to take it off!"
-    ast "Professor Tonks, please remove your coat for me."
-    ton "Of course, honey! [textheart]"
+            ast "And now?"
+            g9 "Her coat! Tell her to take it off!"
+            ast "Professor Tonks, please remove your coat for me."
+            ton "Of course, honey! [textheart]"
 
-    # Tonks removes her coat.
+            # Tonks removes her coat.
 
     g9 "You're doing great, Astoria!"
     g9 "It's like watching you teach a puppy new tricks..."
@@ -648,7 +649,7 @@ label ag_st_imperio_E4:
         ast "...................." # eyes still closed
         ast "*Eeeeehig*..." # Weird sound.
         ast "...................." # Looks away
-        g9 "That wasn't too bad now, was it?
+        g9 "That wasn't too bad now, was it?"
         ton "......................." # ahegao
 
     else:

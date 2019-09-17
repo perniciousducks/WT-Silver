@@ -50,6 +50,10 @@ label common_start:
     stop bg_sounds
     stop weather
 
+    # Play owl arrival sound once per day/night start
+    if letter_queue_list != [] and not owl_away:
+        call play_sound("owl")
+
     $ show_weather()
 
     call room("main_room", hide_screens=False) # Screens already get hidden above

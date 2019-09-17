@@ -3,19 +3,10 @@ label night_start:
     
     call common_start
 
-    ### NIGHT EVENTS ###
-
     # Start Quests
     jump quests
 
     label night_resume:
-
-    # Owl is already handled by common_start -> room()
-    # # Owl
-    # if letter_queue_list != [] and not owl_away:
-    #     call play_sound("owl")
-    #     show screen owl
-    #     with d3
 
     # Favors
     python:

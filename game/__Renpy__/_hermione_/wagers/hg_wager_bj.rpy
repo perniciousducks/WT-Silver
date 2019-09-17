@@ -12,6 +12,8 @@ label hg_wager_bj:
             $ gryffindor -= 20
             pause.5
             call her_chibi("leave","door","base")
+            with d3
+            pause.5
         else:
             call her_main("Okay, I can do that...", mouth="open", eye="soft", cheeks="blush")
             call her_main("", mouth="base", eye="soft")
@@ -323,6 +325,8 @@ label hg_wager_bj:
                             hide screen blkfade
                             call her_main("In that case I'll take my leave...", mouth="smile", eye="happy", ypos="base")
                             call her_chibi("leave","door","base")
+                            with d3
+                            pause.5
                             g9 "That girl..."
                         "-Let her keep going and deal with the aftermath-":
                             m "Yeah... I'm good."

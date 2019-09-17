@@ -37,9 +37,6 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
         hide screen bld1
         hide screen blktone
         hide screen cho_stand
-        with d3
-        pause.5
-
     else:
         if action == "fly":
             $ cho_chibi_animation = "fly"

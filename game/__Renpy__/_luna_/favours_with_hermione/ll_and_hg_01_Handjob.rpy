@@ -331,6 +331,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             call lun_main("Good bye slut...","normal","angry","angry","R")
 
             call lun_chibi("leave")
+            with d3
+            pause.5
 
             ">Luna quietly exits the room."
             call reset_luna
@@ -375,6 +377,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             call lun_main("Good bye slut...","normal","angry","angry","R")
 
             call lun_chibi("leave")
+            with d3
+            pause.5
 
             call her_kneel("","cum","worriedCl")
             ">Hermione swallows the last mouthful of your cum."
@@ -832,6 +836,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("(What have I agreed to)","normal","suspicious","sad","down")
         hide screen luna_main
         call lun_chibi("leave")
+        with d3
+        pause.5
 
         $ luna_busy = True
         $ hermione_busy = True

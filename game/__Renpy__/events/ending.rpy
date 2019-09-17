@@ -149,6 +149,7 @@ label ball_ending_E1:
     pause.3
 
     call sna_chibi("leave","door","base")
+    with d3
     pause.8
 
     call bld

@@ -112,7 +112,6 @@ label hide_characters:
 
 
 label room(room=None, hide_screens=True):
-
     if hide_screens:
         call hide_all_screens
 
@@ -133,7 +132,6 @@ label room(room=None, hide_screens=True):
             show screen phoenix_food
         hide screen owl
         if letter_queue_list != [] and not owl_away:
-            call play_sound("owl")
             show screen owl
         hide screen package
         if package_is_here:

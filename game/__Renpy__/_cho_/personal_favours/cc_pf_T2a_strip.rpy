@@ -1179,6 +1179,8 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             pause.2
 
             call her_chibi("leave")
+            with d3
+            pause.5
 
             # Cho runs out the door.
             if cho_chibi_xpos == 350: # On desk

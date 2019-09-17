@@ -36,9 +36,6 @@ label sus_chibi(action = "", xpos=sus_chibi_xpos, ypos=sus_chibi_ypos, flip=Fals
         hide screen susan_main
         hide screen bld1
         hide screen blktone
-        with d3
-        pause.5
-
     else:
         if flip:
             $ sus_chibi_flip = -1

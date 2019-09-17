@@ -110,7 +110,6 @@ label l_tutoring:
         call her_chibi(action="leave")
 
         $ her_tutoring = 1
-        $ aftercum = False
         jump day_start
 
     if her_tutoring == 1:   # Whoring lvl 1
@@ -156,7 +155,6 @@ label l_tutoring:
         call her_chibi(action="leave")
 
         $ her_tutoring = 2
-        $ aftercum = False
         jump day_start
 
     elif her_tutoring == 2:   # Whoring lvl 2
@@ -202,7 +200,6 @@ label l_tutoring:
         call her_chibi(action="leave")
 
         $ her_tutoring = 3
-        $ aftercum = False
         jump day_start
 
     elif her_tutoring == 3:   # Whoring lvl 3
@@ -279,7 +276,6 @@ label l_tutoring:
         call her_chibi(action="leave")
 
         $ her_tutoring = 4
-        $ aftercum = False
         jump day_start
 
     elif her_tutoring == 4:   # Whoring lvl 5
@@ -394,7 +390,6 @@ label l_tutoring:
         call her_chibi(action="leave")
 
         $ her_tutoring = 5
-        $ aftercum = False
         jump day_start
 
     elif her_tutoring == 5:   # Whoring lvl 8
@@ -482,7 +477,6 @@ label l_tutoring:
         call her_chibi(action="leave")
 
         $ her_tutoring = 6
-        $ aftercum = False
         jump day_start
 
     elif her_tutoring == 6:   # Whoring lvl 11
@@ -589,7 +583,6 @@ label l_tutoring:
         call her_chibi(action="leave")
 
         $ her_tutoring = 7
-        $ aftercum = False
         jump day_start
 
     elif her_tutoring == 7:   # Whoring lvl 14
@@ -730,7 +723,6 @@ label l_tutoring:
         call her_chibi(action="leave")
 
         $ her_tutoring = 8
-        $ aftercum = False
         jump day_start
 
     elif her_tutoring == 8:   # Whoring lvl 17
@@ -821,7 +813,6 @@ label l_tutoring:
 
             hide screen groping_06
             show screen no_groping_06
-            $ b_her_panties_off = True
             call her_main("","base","closed")
             call ctc
 
@@ -898,7 +889,6 @@ label l_tutoring:
         call her_chibi(action="leave")
 
         $ her_tutoring = 9
-        $ aftercum = False
         jump day_start
 
     elif her_tutoring == 9:   # Whoring lvl 20
@@ -1033,7 +1023,6 @@ label l_tutoring:
         call her_main("I want to hear her moan as I work my fingers.","open_wide_tongue","ahegao_mad",cheeks="blush")
         her "Hear her cum!"
         call her_main("Like me! Aaah yesssss! {image=textheart} {image=textheart}","open_wide_tongue","ahegao_mad",cheeks="blush")
-        #$ b_her_squirt = True # the squirting needs some work. Graphically, I mean.
         call ctc
         g11 "Ahh! You little whore!!!"
         show screen genie_jerking_sperm
@@ -1053,8 +1042,6 @@ label l_tutoring:
         call gen_chibi("cum_on_desk")
         call hide_blkfade
 
-        #$ aftercum = True   # the aftercum skirt is a bit overkill IMO. Maybe reduce the height of the stains and add some dripping down the legs.
-
         call her_main("I hope you enjoyed it as much I did.","open","concerned",cheeks="blush",tears="mascara",xpos="right",ypos="base")
         m "Oh fuck yes, you're doing great, my little witch!"
         g9 "Very good!"
@@ -1073,7 +1060,6 @@ label l_tutoring:
         call her_chibi(action="leave")
 
         $ her_tutoring = 10
-        $ aftercum = False
         jump day_start
 
     elif her_tutoring == 10:   # Whoring lvl 23
@@ -1244,7 +1230,6 @@ label l_tutoring:
         call her_chibi(action="leave")
 
         $ her_tutoring = 11
-        $ aftercum = False
         jump day_start
 
     elif her_tutoring == 11:
@@ -1482,7 +1467,6 @@ label l_tutoring:
         call her_chibi(action="leave")
 
         $ her_tutoring = 12
-        $ aftercum = False
         jump day_start
 
     elif her_tutoring == 12:
@@ -1695,7 +1679,6 @@ label l_tutoring:
 
         call set_her_action("none","update") #Resets clothes.
 
-        $ aftercum = False
         jump day_start
 
     elif her_tutoring == 13:
@@ -1887,7 +1870,6 @@ label l_tutoring:
         call her_chibi(action="leave")
 
         $ her_tutoring = 14
-        $ aftercum = False
         jump day_start
 
 

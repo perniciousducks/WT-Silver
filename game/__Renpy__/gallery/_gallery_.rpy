@@ -67,7 +67,7 @@ label open_gallery():
                 if i >= len(loadet_gallery):
                     pass
                 else:
-                    create_folder_if_not_exist(config.basedir+"\\game\\outfits\\"+loadet_gallery[i][4].lower()+"\\")
+                    create_folder_if_not_exist(config.basedir+"/game/outfits/"+loadet_gallery[i][4].lower()+"/")
                     outfit_cached(loadet_gallery[i])
                         
     elif _return[0] == "upvote":
@@ -101,8 +101,8 @@ label open_gallery():
             $ _return[1][2] = int(_return[1][2]) - 1
             
     elif _return[0] == "import":
-        $ file_path = config.basedir+"\\game\\outfits\\"+_return[1][4].lower()+"\\"+str(loadet_gallery[i][0])+loadet_gallery[i][1].split("/",-1)[-1]
-        $ target_path = config.basedir+"\\game\\outfits\\"+loadet_gallery[i][1].split("/",-1)[-1]
+        $ file_path = config.basedir+"/game/outfits/"+_return[1][4].lower()+"/"+str(loadet_gallery[i][0])+loadet_gallery[i][1].split("/",-1)[-1]
+        $ target_path = config.basedir+"/game/outfits/"+loadet_gallery[i][1].split("/",-1)[-1]
         if not os.path.isfile(target_path):
             $ copyfile(file_path, target_path)
             

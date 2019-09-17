@@ -38,8 +38,7 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
         hide screen blktone
         hide screen cho_stand
         with d3
-        pause.5
-
+        pause .5
     else:
         if action == "fly":
             $ cho_chibi_animation = "fly"
@@ -63,7 +62,6 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
 
 
 ### Cho Chibi Walk ###
-
 label cho_walk(xpos=walk_xpos, ypos=walk_ypos, speed=cho_speed, action="", loiter=True, redux_pause=0):
     call hide_characters
     call hide_chibi_effects
@@ -194,69 +192,3 @@ screen cho_walk():
         add cho_chibi_gloves       xzoom cho_chibi_flip zoom (1.0/scaleratio)
     if cho_cloth_pile:
         add "characters/chibis/cloth_pile_r.png" xpos cho_pile_xpos ypos cho_pile_ypos
-
-
-
-init python:
-    # Temporal function
-    # TODO: Create a chibi class instead.
-    def update_chibi_image(name):
-        if name == "cho":
-            imagepath = "characters/cho/chibis/"
-            animation = "_"+cho_chibi_animation if cho_chibi_animation else ""
-            status = "_"+cho_chibi_status if cho_chibi_status else ""
-            global cho_chibi_fix, cho_chibi_gloves, cho_chibi_top, cho_chibi_bottom, cho_chibi_robe, cho_chibi_shoes, cho_chibi_walk_shoes, cho_chibi_stand, cho_chibi_walk
-            cho_chibi_fix, cho_chibi_gloves, cho_chibi_top, cho_chibi_bottom, cho_chibi_robe, cho_chibi_shoes, cho_chibi_walk_shoes, cho_chibi_stand, cho_chibi_walk, cho_chibi_shoes = "blank", "blank", "blank", "blank", "blank", "blank", "blank", "ch_cho blink", "ch_cho walk", "ch_cho walk_shoes"
-
-            if cho_chibi_animation == "fly":
-                cho_chibi_stand = "ch_cho fly_idle"
-                cho_chibi_walk = "ch_cho fly"
-
-            if cho_class.get_worn("top"):
-                if cho_class.get_cloth("top").id == "top_sweater_1":
-                    cho_chibi_top = imagepath+"cc_sweater"+animation+status+".png" if animation else imagepath+"cc_sweater.png"
-                else:
-                    cho_chibi_top = imagepath+"cc_top"+animation+status+".png" if animation else imagepath+"cc_top.png"
-
-            if cho_class.get_worn("bottom"):
-                if cho_class.get_cloth("bottom").id in ("pants_long_2", "pants_short_4"):
-                    if not status == "_move":
-                        cho_chibi_bottom = imagepath+"cc_trousers"+animation+".png"
-                    else:
-                        if animation:
-                            cho_chibi_bottom = imagepath+"cc_trousers"+animation+status+".png"
-                        else:
-                            if status == "_move":
-                                cho_chibi_bottom = "ch_cho trousers"
-                            else:
-                                cho_chibi_bottom = imagepath+"cc_trousers.png"
-                else:
-                    cho_chibi_bottom = imagepath+"cc_skirt"+animation+status+".png" if animation else imagepath+"cc_skirt.png"
-
-            if cho_class.get_worn("gloves"):
-                if cho_class.get_cloth("gloves").id == "quidditch":
-                    cho_chibi_gloves = imagepath+"cc_gloves"+animation+status+".png" if animation else imagepath+"cc_gloves.png"
-
-            if cho_class.get_worn("robe"):
-                if cho_class.get_cloth("robe").id == "robe_quidditch_1":
-                    cho_chibi_robe = imagepath+"cc_quid_robe"+animation+status+".png" if animation else imagepath+"cc_quid_robe.png"
-                    if not animation:
-                        cho_chibi_fix = imagepath+"cc_quid_robe_fix.png"
-                else:
-                    cho_chibi_robe = imagepath+"cc_robe"+animation+status+".png" if animation else imagepath+"cc_robe.png"
-
-            if cho_class.get_worn("bottom") or cho_class.get_worn("stockings"):
-                if cho_class.get_worn("gloves") and cho_class.get_cloth("gloves").id == "quidditch":
-                    if not animation and status == "_move":
-                        cho_chibi_shoes = "ch_cho walk_quid_shoes"
-                    else:
-                        cho_chibi_shoes = imagepath+"cc_quid_shoes"+animation+status+".png"
-                else:
-                    if not status == "_move":
-                        cho_chibi_shoes = imagepath+"cc_shoes"+animation+".png"
-                    else:
-                        if animation:
-                            cho_chibi_shoes = imagepath+"cc_shoes"+animation+".png"
-            else:
-                cho_chibi_shoes = "blank"
-        return

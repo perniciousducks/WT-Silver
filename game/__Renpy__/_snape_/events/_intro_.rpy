@@ -51,7 +51,7 @@ label snape_intro_E1:
             call sna_main("","snape_01")
             who2 "What?"
             who2 "Hm...?"
-            who2 "You mean the minster of magic?"
+            who2 "You mean the Minister for Magic?"
             call sna_main("","snape_03")
             who2 "I would rather avoid having to deal with that bureaucrat..."
             hide screen snape_main
@@ -296,6 +296,11 @@ label snape_intro_E3:
     call sna_main("","snape_05")
     who2 "What is my name?"
 
+    $ d_points = 0
+    $ d_flag_01 = False
+    $ d_flag_02 = False
+    $ d_flag_03 = False
+
     menu:
         m "..."
         "\"What? What kind of question is that?\"":
@@ -328,8 +333,8 @@ label snape_intro_E3:
     call bld
     who2 "........................"
 
-    call sna_chibi("leave")
-
+    # Hide Snape chibi and fade to black
+    hide screen snape_stand
     show screen blkfade
     with d3
 
@@ -359,11 +364,6 @@ label snape_intro_E3:
     call sna_main("Easy now... Just answer my question.","snape_01", wand=True)
     m "Alright, alright. Just calm down, would you?"
     call sna_main("........","snape_01", wand=True)
-
-    $ d_points = 0
-    $ d_flag_01 = False
-    $ d_flag_02 = False
-    $ d_flag_03 = False
 
     label no_wait:
     menu:

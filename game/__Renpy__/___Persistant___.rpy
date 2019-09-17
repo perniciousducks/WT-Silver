@@ -1,271 +1,148 @@
+#TODO Move variable defaults to appropriate files, leave common ones here (and rename this file to _Variables_.rpy or something)
 
+default addicted          = False
+default tentacle_cosmetic = False
 
-### PERSISTANTS ###
+default interface_color = "gold"
 
-label __init_variables:
+default gallery_active = False
+default ball_ending_2  = False
 
-    #place save variables here
-    if not hasattr(renpy.store,'addicted'):
-        $ addicted = False
-    if not hasattr(renpy.store,'tentacle_cosmetic'):
-        $ tentacle_cosmetic = False
+default game_difficulty = 2
 
-    ### Interface ###
-    if not hasattr(renpy.store,'interface_color'):
-        $ interface_color = "gold"
+default day = 0
 
-    ### Gallery ###
-    if not hasattr(renpy.store,'gallery_active'):
-        $ gallery_active = False
-        $ ball_ending_2  = False
+default daytime        = False
+default gold           = 0
+default rum_times      = 0 # Counts how many times have you rummaged the cupboard.
+default current_payout = 0
+default tooltip        = None
 
-    ### Difficulty ###
-    if not hasattr(renpy.store,'game_difficulty'):
-        $ game_difficulty = 2                      # 2 = normal
+# Hermione main screen flags
+default no_blinking   = False # When True - blinking animation is not displayed.
+default sperm_on_tits = False # Sperm on tits when Hermione pulls her shirt up.
+default aftersperm    = False # Shows cum stains on Hermione's uniform.
+default uni_sperm     = False # Triggers universal sperm to show on hermione_main screen.
 
-    ### Gameplay ###
-    if not hasattr(renpy.store,'always_read_letter'):
+default public_whore_ending = False # If TRUE the game will end with "Public Whore Ending".
 
-        $ ss_event_pause  = 0
-        $ ss_summon_pause = 0
-        $ nt_event_pause  = 0
-        $ nt_summon_pause = 0
-        $ hg_event_pause  = 0
-        $ hg_summon_pause = 0
-        $ cc_event_pause  = 0
-        $ cc_summon_pause = 0
-        $ ll_event_pause  = 0
-        $ ll_summon_pause = 0
-        $ ag_event_pause  = 0
-        $ ag_summon_pause = 0
-        $ sb_event_pause  = 0
-        $ sb_summon_pause = 0
+# Events
+default event_chairman_happened    = False # Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
+default snape_against_chairman_hap = False # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
+default have_no_dress_hap          = False # Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
+default sorry_for_hesterics        = False # Turns TRUE after Hermione comes and apologizes for the day (event) before.
 
-        $ always_read_letter = False
-        $ owl_away = False
-        $ owl_away_counter = 0
+# House points
+default slytherin  = 180
+default gryffindor = 53
+default hufflepuff = 25
+default ravenclaw  = 31
 
-    ### Misc ###
-    if not hasattr(renpy.store,'desk_zorder'):
-        #For UI help,temporary add them to your UI element and use the console to quickly get it into place.
-        #Then replace the variables with the number you ended up with.
-        $ nxpos = 0
-        $ nypos = 0
-        $ nscale = 0.5
-        $ walk_xpos = 750
-        $ walk_ypos = 250
-        $ chibi_xpos = 0
-        $ chibi_ypos = 0
-        $ chibi_zorder = 1
-        $ desk_zorder = 2
+# Duel
+default potions = 0 # Amount of healing potions Genie has in stock.
 
-    if not hasattr(renpy.store,'unlocked_xmas_deco'):
-        $ unlocked_7th = False
-        $ charName = "genie"
-        $ unlocked_xmas_deco = False
+# Cupboard
+default searched = False # Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
 
-    # Phoenix
-    if not hasattr(renpy.store,'phoenix_is_fed'):
-        $ phoenix_is_fed = False
-        $ phoenix_is_petted = False
-        $ phoenix_fed_counter = 0
-        $ phoenix_petted_counter = 0
+# Books
+default found_voucher = False # Turns TRUE after you complete "My Dear Waifu" with the harem ending and "Dahr's voucher" fall out.
 
-    # Other
-    if not hasattr(renpy.store,'stat_fireplace_counter'):
-        $ stat_fireplace_counter = 0
-        $ stat_reports_counter = 0
+# Clothing
+default gave_miniskirt = False # Turns True when Hermione has the miniskirt.
+default gave_the_dress = False # Turns True when Hermione has the dress.
 
-    # Room Deco
-    if not hasattr(renpy.store,'current_room'):
-        $ current_room = "main_room"
-        $ room_deco = ""
-        $ cupboard_deco = ""
+# Used to pause events/summons for a number of days
+default ss_event_pause  = 0
+default ss_summon_pause = 0
+default nt_event_pause  = 0
+default nt_summon_pause = 0
+default hg_event_pause  = 0
+default hg_summon_pause = 0
+default cc_event_pause  = 0
+default cc_summon_pause = 0
+default ll_event_pause  = 0
+default ll_summon_pause = 0
+default ag_event_pause  = 0
+default ag_summon_pause = 0
+default sb_event_pause  = 0
+default sb_summon_pause = 0
 
-    # HD RESCALE RATION
-    if not hasattr(renpy.store,'genie_scaleratio'):
-        $ scaleratio = 2 #BECAUSE THE IMAGES ARE 2X LARGER
+default always_read_letter = False
+default owl_away           = False
+default owl_away_counter   = 0
 
-        $ genie_scaleratio = 2 #Scaleratio of each character can be changed to be used in custom "CG" scenes. Made larger, more zoomed in,...
-        $ snape_scaleratio = 2
-        $ tonks_scaleratio = 2
+# Sprite positioning
+default nxpos        = 0
+default nypos        = 0
+default nscale       = 0.5
+default walk_xpos    = 750
+default walk_ypos    = 250
+default chibi_xpos   = 0
+default chibi_ypos   = 0
+default chibi_zorder = 1
+default desk_zorder  = 2
 
-        $ hermione_scaleratio = 2
-        $ luna_scaleratio = 2
-        $ astoria_scaleratio = 2
-        $ susan_scaleratio = 2
-        $ cho_scaleratio = 2
+default unlocked_7th       = False
+default charName           = "genie"
+default unlocked_xmas_deco = False
 
-    # CGs
-    if not hasattr(renpy.store,'cg_image'):
-        $ ccg_folder = "luna_bj"
-        $ ccg1 = "herm"
-        $ ccg2 = 1
-        $ ccg3 = "gene"
-        $ loopimage = None
-        $ cg_image = "e2"
-        $ cg_path  = "images/CG/"+cg_image+".png"
+# Phoenix
+default phoenix_is_fed         = False
+default phoenix_is_petted      = False
+default phoenix_fed_counter    = 0
+default phoenix_petted_counter = 0
 
-    if not hasattr(renpy.store,'sc_cg_base'):
-        $ sc_cg_base = "images/CG/sc34/1/base_1.png"
-        $ sc_cg_image_1 = "images/CG/sc34/1/A_1.png"
-        $ sc_cg_image_2 = "images/CG/sc34/2/B_1.png"
-        $ sc_cg_image_3 = "images/CG/sc34/2/C_1.png"
-        $ sccgxpos = 200
-        $ sccgypos = 50
+# Paperwork related flags
+default day_of_week          = 0 # Counts days of the week. Everyday +1. When day_of_week = = 7 resets to zero.
+default report_chapters      = 0 # Number of chapters of current report completed so far. Resets to zero when report is finished.
+default finished_report      = 0 # Number of completed reports.
+default stat_reports_counter = 0
 
-    # Using images instead of chibis.
-    if not hasattr(renpy.store,'face_on_cg'):
-        $ face_on_cg = False #"call her_main(,ypos="head")" will use screen "her_face". Face gets positioned automatically.
-        $ use_cgs = False
+# Fireplace
+default fire_in_fireplace = False
+default stat_fireplace_counter = 0
 
+# Examine room flags
+default desk_examined = False
+default cupboard_examined = False
+default bird_examined = False
+default door_examined = False
+default fireplace_examined = False
 
+# Room decoration
+default current_room  = "main_room"
+default room_deco     = ""
+default cupboard_deco = ""
 
-    # Reset Persistants
-    if not hasattr(renpy.store,'reset_persistants'): #Turns true when creating a new game only.
-        $ reset_persistants            = False
+# Scale factors (because most images are 2x larger)
+# Scale-ratio of each character can be changed to be used in custom "CG" scenes. Made larger, more zoomed in,...
+default scaleratio          = 2
+default genie_scaleratio    = 2
+default snape_scaleratio    = 2
+default tonks_scaleratio    = 2
+default hermione_scaleratio = 2
+default luna_scaleratio     = 2
+default astoria_scaleratio  = 2
+default susan_scaleratio    = 2
+default cho_scaleratio      = 2
 
-    if not hasattr(renpy.store,'reset_cho_content'):
-        $ reset_luna_content = False
-        $ reset_cho_content = False
+# CGs
+default ccg_folder = "luna_bj"
+default ccg1       = "herm"
+default ccg2       = 1
+default ccg3       = "gene"
+default loopimage  = None
+default cg_image   = "e2"
+default cg_path    = "images/CG/"+cg_image+".png"
 
-    # Rooms
-    call room_objects_init
+default sc_cg_base    = "images/CG/sc34/1/base_1.png"
+default sc_cg_image_1 = "images/CG/sc34/1/A_1.png"
+default sc_cg_image_2 = "images/CG/sc34/2/B_1.png"
+default sc_cg_image_3 = "images/CG/sc34/2/C_1.png"
 
-    # Genie Init
-    call genie_init
+default sccgxpos = 200
+default sccgypos = 50
 
-    # Snape Init
-    call snape_init
-    call snape_progress_init
-
-    # Hermione Init
-    call her_init #Defines newly added variables. Resets variables after creating a new game.
-    call her_clothing_lists_init #Lists update every time!
-    call her_progress_init #Defines newly added variables. Resets variables after creating a new game.
-
-    # Luna Init
-    call luna_init
-    call luna_progress_init
-
-    # Cho Init
-    call cho_init
-    call cho_progress_init
-    call cho_wardrobe_init
-
-    # Susan Init
-    call susan_init
-    call susan_progress_init
-
-    # Astoria Init
-    call astoria_init
-    call astoria_progress_init
-    call astoria_wardrobe_init
-
-    # Tonks Init
-    call tonks_init
-    call tonks_progress_init
-    call tonks_wardrobe_init
-
-    # Quests
-    call quest_init
-
-    # Map
-    call map_init
-
-    # Wardrobe
-    call wardrobe_init
-
-    # Items
-    call store_init
-    call store_items_init
-    call quest_items_init
-
-    # Minigames & Mirror Stories
-    call dark_room_init
-
-    # Cheats
-    call cheats_init
-
-    # Save compatibility
-    if not hasattr(renpy.store,'updated_early_game'):
-        $ updated_early_game = False
-    if hermione_favors == True and updated_early_game == False:
-        call update_early_game_vars
-
-
-    # Hidden Blowjob
-    $ hg_hidden_blowjob_character_list = ["snape"]
-    if luna_unlocked and luna_reverted:
-        $ hg_hidden_blowjob_character_list.append("luna")
-    #if astoria_unlocked:
-    #    $ hg_hidden_blowjob_character_list.append("astoria")
-    #if susan_unlocked:
-    #    $ hg_hidden_blowjob_character_list.append("susan")
-    #if cho_unlocked:
-    #    $ hg_hidden_blowjob_character_list.append("cho")
-    if tonks_unlocked:
-        $ hg_hidden_blowjob_character_list.append("tonks")
-
-    return
-
-
-label update_early_game_vars: # Save compatibility
-    $ updated_early_game = True # Prevents this from being called again.
-
-    $ bird_examined = True
-    $ desk_examined = True
-    $ cupboard_examined = True
-    $ door_examined = True
-    $ fireplace_examined = True
-
-    $ achievement.unlock("start", True)
-
-    $ genie_intro.E1_complete = True
-    $ genie_intro.E2_complete = True
-    $ genie_intro.E3_complete = True
-
-    $ snape_intro.E1_complete   = True
-    $ snape_intro.E2_complete   = True
-    $ snape_intro.E3_complete   = True
-    $ snape_intro.duel_complete = True
-    $ snape_intro.E4_complete   = True
-    $ snape_intro.E5_complete   = True
-
-    $ hang_with_snape.E1_complete = True
-    $ hang_with_snape.E2_complete = True
-    $ hang_with_snape.E3_complete = True
-    $ hang_with_snape.E4_complete = True
-    $ hang_with_snape.E5_complete = True
-
-    $ tonks_intro.E1_complete = True
-    $ tonks_intro.E2_complete = True
-    $ tonks_intro.E3_complete = True
-
-    $ hang_with_tonks.E1_complete = True
-
-    $ hermione_intro.E1_complete = True
-    $ hermione_intro.E2_complete = True
-    $ hermione_intro.E3_complete = True
-    $ hermione_intro.E4_complete = True
-    $ hermione_intro.E5_complete = True
-    $ hermione_intro.E6_complete = True
-
-    $ letter_hg_1.mailRead()
-    $ letter_hg_2.mailRead()
-    $ letter_min_work.mailRead()
-    $ letter_min_report.mailRead()
-    $ letter_min_favors.mailRead()
-
-    $ snape_unlocked = True
-    $ achievement.unlock("unlocksna", True)
-
-    $ tonks_unlocked = True
-    $ achievement.unlock("unlockton", True)
-
-    $ hermione_unlocked = True
-    $ achievement.unlock("unlockher", True)
-    $ tutoring_hermione_unlocked = True
-    $ hermione_favors = True
-
-    return
+# CG or chibis
+default face_on_cg = False # `call her_main(,ypos="head")` will use screen "her_face". Face gets positioned automatically.
+default use_cgs = False

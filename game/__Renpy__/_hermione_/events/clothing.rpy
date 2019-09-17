@@ -5,7 +5,6 @@
 label hermione_random_clothing:
     call load_hermione_clothing_saves
 
-    $ hermione_costume = False
     $ hermione_wear_top         = True
     $ hermione_wear_bottom      = True
 

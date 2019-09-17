@@ -81,53 +81,44 @@ init python:
             item = sorted(item, key=lambda x: x[1][1])
         return item
 
-init:
-    python:
-        def restart_achievements_thread():
-            renpy.invoke_in_thread(update_achievements)
-            return
-        def update_achievements():
-            import time
-            while True:
-                time.sleep(5)
+    def restart_achievements_thread():
+        renpy.invoke_in_thread(update_achievements)
+        return
 
-                if not achievement.status('gold') and gold >= 10000:
-                    achievement.unlock("gold")
+    def update_achievements():
+        import time
+        while True:
+            time.sleep(5)
 
-                if not achievement.status('drunkard') and wine_ITEM.number >= 25:
-                    achievement.unlock("drunkard")
+            if not achievement.status('gold') and gold >= 10000:
+                achievement.unlock("gold")
 
-                if not achievement.status('peta') and (day-phoenix_fed_counter) >= 50:
-                    achievement.unlock("peta")
+            if not achievement.status('drunkard') and wine_ITEM.number >= 25:
+                achievement.unlock("drunkard")
 
-                if not achievement.status('petpal') and phoenix_petted_counter >= 25:
-                    achievement.unlock("petpal")
+            if not achievement.status('peta') and (day-phoenix_fed_counter) >= 50:
+                achievement.unlock("peta")
 
-                if not achievement.status('bros') and sna_friendship >= 100:
-                    achievement.unlock("bros")
+            if not achievement.status('petpal') and phoenix_petted_counter >= 25:
+                achievement.unlock("petpal")
 
-                if not achievement.status('overwhored') and her_whoring >= 24:
-                    achievement.unlock("overwhored")
+            if not achievement.status('bros') and sna_friendship >= 100:
+                achievement.unlock("bros")
 
-                if not achievement.status('fireplace') and stat_fireplace_counter >= 5:
-                    achievement.unlock("fireplace")
+            if not achievement.status('overwhored') and her_whoring >= 24:
+                achievement.unlock("overwhored")
 
-                if not achievement.status('workaholic') and stat_reports_counter >= 5:
-                    achievement.unlock("workaholic")
-            return
+            if not achievement.status('fireplace') and stat_fireplace_counter >= 5:
+                achievement.unlock("fireplace")
 
-        #config.interact_callbacks.append(update_achievements)
-        config.after_load_callbacks.append(restart_achievements_thread)
+            if not achievement.status('workaholic') and stat_reports_counter >= 5:
+                achievement.unlock("workaholic")
+        return
 
-#screen achievement_block():
-    #tag achievement_block
+    #config.interact_callbacks.append(update_achievements)
+    config.after_load_callbacks.append(restart_achievements_thread)
 
-    #timer 5.0 action Function(update_achievements) repeat True
-###
-init:
-    $ achievement = achievement_class()
-
-    #$ renpy.invoke_in_thread(update_achievements)
+    achievement = achievement_class()
 
 label popup(string="", title="", icon=None, xpos=0, ypos=60, sound=True, soundfile='sounds/achievement.mp3'):
     if sound:
@@ -187,7 +178,7 @@ transform rotate_circular():
 label achievement_menu(xx=150, yy=90):
 
     $ hide_transitions = True
-    
+
     # Styling
     if daytime:
         #$ btn_hover = "#e3ba7140"
@@ -314,7 +305,7 @@ screen achievement_menuitem(xx, yy):
         pos (xx+217, yy-53)
         xsize 560
         ysize 507
-        
+
         add "interface/achievements/star.png"
         add "interface/achievements/"+interface_color+"/panel.png"
 
@@ -372,7 +363,7 @@ screen achievement_menuitem(xx, yy):
                         else:
                             add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
                     add "interface/achievements/glass_iconbox.png" pos (3, 2)
-                    
+
                     if menu_items[i][1][5] and not menu_items[i][1][3]:
                         button xsize 46 ysize 46 style "empty" hover_background btn_hover action Return(["select", menu_items[i]]) hovered SetVariable("tooltip", "???") unhovered SetVariable("tooltip", None)
                     else:

@@ -106,41 +106,41 @@ label set_ton_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
 
     return
 
-label tonks_face_layers:
+define ton_mouth_layers  = [
+    "angry",
+    "base",
+    "horny",
+    "open",
+    "open_wide_tongue",
+    "scream",
+    "smile",
+    "upset"
+]
 
-    $ ton_mouth_layers  = ["angry",
-                           "base",
-                           "horny",
-                           "open",
-                           "open_wide_tongue",
-                           "scream",
-                           "smile",
-                           "upset"
-                           ]
+define ton_eye_layers = [
+    "base",
+    "closed",
+    "happyCl",
+    "shocked",
+    "wide"
+]
 
-    $ ton_eye_layers    = ["base",
-                           "closed",
-                           "happyCl",
-                           "shocked",
-                           "wide"
-                           ]
+define ton_brow_layers = [
+    "angry",
+    "base",
+    "raised",
+    "sad",
+    "upset",
+    "wide",
+    "worried"
+]
 
-    $ ton_brow_layers   = ["angry",
-                           "base",
-                           "raised",
-                           "sad",
-                           "upset",
-                           "wide",
-                           "worried"
-                           ]
-
-    $ ton_pupil_layers  = ["ahegao", "ahegao_intense",
-                           "down",
-                           "L",
-                           "mid",
-                           "R",
-                           "up",
-                           "wide"
-                           ]
-
-    return
+define ton_pupil_layers = [
+    "ahegao", "ahegao_intense",
+    "down",
+    "L",
+    "mid",
+    "R",
+    "up",
+    "wide"
+]

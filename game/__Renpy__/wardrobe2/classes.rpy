@@ -1,4 +1,5 @@
-init python:    
+init python:
+
     def get_character_object(key):
         return character_list.get(key)
             
@@ -17,16 +18,16 @@ init python:
         return __import__('ast').literal_eval(txt)
             
     class outfit_class(object):
-        name = None
-        price = 0
-        desc = ""
-        unlocked = False
-        group = []
-        cached = False
-        
-        sprite = "empty"
         
         def __init__(self, **kwargs):
+            self.name = None
+            self.price = 0
+            self.desc = ""
+            self.unlocked = False
+            self.group = []
+            self.cached = False
+            
+            self.sprite = "empty"
             self.__dict__.update(**kwargs)
             
             if self.name == None:
@@ -35,9 +36,10 @@ init python:
             if self.group < 1:
                 raise Exception('Outfit: "group" list was not defined in outfit_class.')
             
-            # Mark each clothing piece from the group as unlocked/locked by default
             if self.unlocked:
-                self.unlock(True)
+                # Unlock outfit object properly using unlock method
+                self.unlocked = False
+                self.unlock()
                 
         def outfit_export(self, tofile=True, filename="exported"):
             exported = [self.group[0].char]
@@ -108,15 +110,17 @@ init python:
             renpy.block_rollback()
             return (False, renpy.show_screen("popup_window", "Import failed!"))
                     
-        def unlock(self, bool):
-            self.unlocked = bool
-            get_character_object(self.group[0].char).outfits.append(self)
-            for item in self.group:
-                item.unlock(bool)
+        def unlock(self):
+            if not self.unlocked:
+                self.unlocked = True
+                get_character_object(self.group[0].char).outfits.append(self)
+                # Mark each clothing piece from the group as unlocked/locked by default
+                for item in self.group:
+                    item.unlock()
                 
         def clone(self):
             clothes = []
-            clothing = get_character_object(active_girl).clothing
+            clothing = get_character_object(self.group[0].char).clothing
             for key in clothing:
                 if not clothing[key][0] == None:
                     clothes.append(clothing[key][0].clone())
@@ -192,42 +196,43 @@ init python:
             
             
     class cloth_class(object):
-        char = None # astoria, cho, hermione, luna, susan, tonks
-        category = None
-        subcat = None
-        type = None
-        id = None
-        layers = None
-        color = []
-        color_default = []
-        skinlayer = "characters/dummy.png"
-        extralayer = "characters/dummy.png"
-        overlayer = "characters/dummy.png"
-        outline = None
-        unlocked = True
-        cloned = False
-        cached = False
-        
-        bodyfix = None
-        incompatible = None
-        
-        armfix = False
-        armfix_L = []
-        armfix_Lx = ""
-        armfix_R = []
-        armfix_Rx = ""
-        
-        sprite_ico = None
 
-        name = ""
-        desc = ""
-        whoring = 0
-        
-        pose = ""
-
-        imagepath = ""
-        
         def __init__(self, **kwargs):
+            self.char = None # astoria, cho, hermione, luna, susan, tonks
+            self.category = None
+            self.subcat = None
+            self.type = None
+            self.id = None
+            self.layers = None
+            self.color = []
+            self.color_default = []
+            self.skinlayer = "characters/dummy.png"
+            self.extralayer = "characters/dummy.png"
+            self.overlayer = "characters/dummy.png"
+            self.outline = None
+            self.unlocked = True
+            self.cloned = False
+            self.cached = False
+            
+            self.bodyfix = None
+            self.incompatible = None
+            
+            self.armfix = False
+            self.armfix_L = []
+            self.armfix_Lx = ""
+            self.armfix_R = []
+            self.armfix_Rx = ""
+            
+            self.sprite_ico = None
+
+            self.name = ""
+            self.desc = ""
+            self.whoring = 0
+            
+            self.pose = ""
+
+            self.imagepath = ""
+            
             self.__dict__.update(**kwargs)
             
             if self.char == None:
@@ -252,7 +257,6 @@ init python:
                 for i in xrange(len(self.color), self.layers):
                     self.color.append([255, 255, 255, 255])
                     
-            self.color_default = [] # DO NOT DELETE !!!
             for i in xrange(len(self.color)):
                 self.color_default.append(self.color[i])
                 
@@ -279,7 +283,7 @@ init python:
                 self.overlayer = self.imagepath+"overlay.png"
                 
             # Check if bodyfix exists
-            if self.bodyfix != None:
+            if self.bodyfix != None and not self.cloned:
                 imagepath = "characters/"+self.char+"/body/"
                 
                 for key, value in self.bodyfix.iteritems():
@@ -293,15 +297,20 @@ init python:
             
             # Set outline layer path
             self.outline = self.imagepath+"outline.png"
-                
-            # Add cloth object to respective character, category and sub-category in dictionary keylist
+
             if not self.cloned:
                 if self.unlocked:
-                    get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
-                character_clothes_list.append(self)
+                    # Unlock cloth object properly using unlock method
+                    self.unlocked = False
+                    self.unlock()
                 
+                # Add cloth object to a stored list
+                if not hasattr(renpy.store, 'character_clothes_list'):
+                    renpy.store.character_clothes_list = []
+                renpy.store.character_clothes_list.append(self)
+            
             # Initialize icon crop calculations A.K.A threading A.k.A lazyload
-            layers = []
+            layers = [] # This is NOT a class variable
             for i in xrange(self.layers):
                 layers.append(self.get_imagelayer(i))
             layers.append(self.extralayer)
@@ -309,9 +318,10 @@ init python:
                 
             self.sprite_ico = lazyload(layers, self.color, self.layers+1, self.layers)
                 
-        def unlock(self, bool):
+        def unlock(self):
             if not self.unlocked:
-                self.unlocked = bool
+                self.unlocked = True
+                # Add cloth object to the character's clothing data
                 get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
             
         def clone(self):
@@ -487,29 +497,35 @@ init python:
             return self.sprite_ico.get_image()
             
     class char_class(object):
-        char = None
-        
-        cached = False
-        cache_override = False
-        
-        body = {}
-        face = {}
-        clothing = {}
-        clothing_dictlist = {}
-        outfits = []
-        other = {}
-        
-        pose = ""
-        
-        sprite = "empty"
-        
+
         def __init__(self, **kwargs):
+            self.char = None
+            
+            self.cached = False
+            self.cache_override = False
+            
+            self.body = {}
+            self.face = {}
+            self.clothing = {}
+            self.clothing_dictlist = {}
+            self.outfits = []
+            self.other = {}
+            
+            self.incompatible_wardrobe = []
+            
+            self.pose = ""
+            
+            self.sprite = "empty"
+
             self.__dict__.update(**kwargs)
             
             if self.char == None:
                 raise Exception('Character: "char" was not defined in char_class.')
-                
-            character_list.update({self.char: self})
+
+            # Add the character to a stored list
+            if not hasattr(renpy.store, 'character_list'):
+                renpy.store.character_list = {}
+            renpy.store.character_list.update({self.char: self})
                 
         def get_object(self, dict, key):
             return dict.get(key)[0]
@@ -687,6 +703,8 @@ init python:
                     if item.incompatible != None:
                         for key in item.incompatible:
                             # Unequip incompatible item types
+                            if key not in self.incompatible_wardrobe:
+                                self.incompatible_wardrobe.append(key)
                             self.unequip(key)
                     self.clothing[item.type][0] = item
                     self.clothing[item.type][4] = False
@@ -694,13 +712,20 @@ init python:
                 if self.clothing[object.type][0] == object and object.type != "hair":
                     self.unequip(object.type)
                 else:
-                    # Check if item is compatible with other clothing pieces
-                    if object.incompatible != None:
-                        for key in object.incompatible:
-                            # Unequip incompatible item types
-                            self.unequip(key)
-                    self.clothing[object.type][0] = object
-                    self.clothing[object.type][4] = False
+                    # Check if item is compatible with other clothing pieces  
+                    if object.type not in self.incompatible_wardrobe:
+                        if self.clothing[object.type][0] and self.clothing[object.type][0].incompatible != None:
+                            for key in self.clothing[object.type][0].incompatible:
+                                if key in self.incompatible_wardrobe:
+                                    self.incompatible_wardrobe.remove(key)
+                        if object.incompatible != None:
+                            for key in object.incompatible:
+                                # Unequip incompatible item types
+                                if key not in self.incompatible_wardrobe:
+                                    self.incompatible_wardrobe.append(key)
+                                self.unequip(key)
+                        self.clothing[object.type][0] = object
+                        self.clothing[object.type][4] = False
             self.cached = False
             update_chibi_image(self.char)
             
@@ -709,9 +734,14 @@ init python:
                 for key in self.clothing:
                     if not key == "hair":
                         self.clothing[key][0] = None
+                self.incompatible_wardrobe = []
             else:
                 for arg in args:
                     try:
+                        if self.clothing[str(arg)][0] and self.clothing[str(arg)][0].incompatible != None:
+                            for key in self.clothing[str(arg)][0].incompatible:
+                                if key in self.incompatible_wardrobe:
+                                    self.incompatible_wardrobe.remove(key)
                         self.clothing[str(arg)][0] = None
                     except KeyError:
                         raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')

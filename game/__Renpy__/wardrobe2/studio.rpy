@@ -60,11 +60,11 @@ label studio(studio_return, studio_char):
     call hide_characters
     
     python:
-        studio_eyebrows_list = os.listdir(config.basedir+"\\game\\characters\\"+active_girl+"\\face\\eyebrows\\")
-        studio_eyes_list = os.listdir(config.basedir+"\\game/characters\\"+active_girl+"\\face\\eyes\\")
+        studio_eyebrows_list = os.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyebrows/")
+        studio_eyes_list = os.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyes/")
         studio_eyes_list.remove("_white_.png")
-        studio_mouth_list = os.listdir(config.basedir+"\\game\\characters\\"+active_girl+"\\face\\mouth\\")
-        studio_pupils_list = os.listdir(config.basedir+"\\game\\characters\\"+active_girl+"\\face\\pupils\\")
+        studio_mouth_list = os.listdir(config.basedir+"/game/characters/"+active_girl+"/face/mouth/")
+        studio_pupils_list = os.listdir(config.basedir+"/game/characters/"+active_girl+"/face/pupils/")
     
     $ studio_bg_list = ["wall_day", "castle", "forest", "highlight", "versus", "main_room_day", "main_room_night", "corridor", "custom"]
     $ studio_bg_overlay_list = [None, "curtains", "card", "g_bottom", "g_left", "g_circular"]

@@ -4,10 +4,13 @@ init python:
         if isinstance(item, item_class):
             item.unlocked = True
         elif isinstance(item, outfit_class) or isinstance(item, cloth_class):
-            item.unlock(True)
+            item.unlock()
 
+        #TODO Find a better solution than outfit linking (probably just convert all clothes to new wardrobe system)
         if item.id in outfit_linking:
-            outfit_linking[item.id].unlock(True)
+            var_name = outfit_linking[item.id]
+            outfit = globals()[var_name]
+            outfit.unlock()
 
 ### CLOTHING STORE ###
 

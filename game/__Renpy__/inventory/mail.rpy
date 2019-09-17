@@ -1,4 +1,55 @@
+default letter_queue_list = []
+default report_money = 0
+default deliveryQ = deliveryQueue()
 
+# Hermione Granger Letters
+default letter_hg_1 = mail_letter_class(
+    text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sure that you remember the reason why I'm writing you this letter from my last one, sir.\n\nI beg of you, please hear my plea this time. This injustice simply cannot go on...\nNot in this day and age, not in our school.\n\nPlease take action.{/size}\n\n{size=-7}With deepest respect,\nHermione Granger{/size}",
+    label = "letter_from_hermione_A"
+)
+
+default letter_hg_2 = mail_letter_class(
+    text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sorry to disturb you again, professor. I just want to make sure that you take this problem seriously.\n\nLast night another classmate confided in me... I gave my word to keep it a secret, so I cannot go into any details.\n\nAll I can say is that one of the Professors was involved.\n\nPlease take action soon.{/size}\n\n{size=-7}With deepest respect,\nHermione Granger.{/size}",
+    label = "" # No comment on letter
+)
+
+# Ministry of Magic Letters
+default letter_min_work = mail_letter_class(
+    text = "{size=-7}From: Ministry of Magic\nTo: Professor Albus Dumbledore\n\n{/size}{size=-4}Dear professor Dumbledore,\nWe remind you that only upon providing us with a completed report will we be able to make a payment in your name.{/size}\n\n{size=-7}With deepest respect,\nThe Ministry of Magic.{/size}",
+    label = "letter_paperwork_unlock"
+)
+
+default letter_min_report = mail_letter_class(
+    text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n{/size}{size=-4}Thank you for completing a report this week.\n\nYou will find your payment of\n\n{/size}{b}-[report_money] gold-{/b}{size=-4}\n\nin the attached purse.{/size}\n\n{size=-7}With deepest respect,\nThe Ministry of Magic.{/size}",
+    label = "letter_paperwork_report"
+)
+
+default letter_min_favors = mail_letter_class(
+    text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n{/size}{size=-4}Dear professor Dumbledore,\nit has come to the ministry's attention from an anonymous letter, that there has been illicit activities going on between staff members and students within your halls.\n\nAn Auror has been dispatched and will arrive shortly to begin the investigation.{/size}\n\n{size=-7}Yours sincerely,\nAmelia Bones, Department of Magical Law Enforcement.{/size}",
+    label = "letter_favor_complaint"
+)
+
+# Not in use anymore
+default letter_min_curses = mail_letter_class(
+    text = "{size=-7}Dear Albus Dubmbledore, as we are sure you are aware, an unforgivable curse has been detected within the grounds of Hogwarts.\nWhile the punishment for such a curse is usually lifetime incarceration in the prison, Azkaban, we are allowing you to address this matter at your own discretion.\nThis is due to the possible nature of the spell being cast by a minor who has not fully grasped the serious nature of the curse.\nIf this is the case we expect no further communication from you regarding this unfortunate event.\nIf, however, you believe the curse has been cast by someone other than a student, or if any other complications arise we expect direct communication.\nLastly, the detection of any further curses will result in the immediate dispatchment of an auror to Hogwarts.\n\nCornelius Fudge,\nDepartment Head: Improper Use of Magic Office{/size}",
+    label = "letter_curse_complaint"
+)
+
+# Card Game Letters
+default letter_deck = mail_letter_class(
+    text = "{size=-3}Sir Albus Dumbledore{/size}\n\n{size=-7}We would like to present to you great opportunity to become a Wizard Cards champion. We've included a starter pack to our card game in the hopes that you will consider any of our resellers to stock our cards for your students to purchase and play.\n\nHere's a little bit of information about our cards:\nEvery Wizard card has an enchantment that will personalize its look just for you and show something of your own favorite interest.\n\nDo you like Quidditch? Every card will look like a famous Quidditch player or a sport related print.\nInterested in magical creatures? The cards will have magical creatures on them.\nFind out your unique illustrations today with a started pack, we don't even know what it is!{/size}\n\n{space=110}{size=-5}Wizard cards inc{/size}",
+    label = "deck_mail_send"
+)
+
+default letter_cards_store = mail_letter_class(
+    text = "{size=-7}Weasley's Wizard Wheezes shop emporium is now officially partnering with Wizard cards.\nCheck out the notice board at our shop to find a list of challengers at your skill level.{/size}",
+    label = "cards_store_mail_send"
+)
+
+default letter_cardgame_t2 = mail_letter_class(
+    text = "{size=-3}Congratulations!{/size}\n\n{size=-7}You've beaten your first 3 challenges of Wizard Cards.\nWe're currently working on expanding our business and are recruiting even more challengers so that in the future you'll be able to challenge even more people.\nIn the meanwhile, you'll be able to earn even more tokens by making wagers with the ones you've already beaten to complete your collection of items.\nFor wagers both participant needs to be fine with the prize/forfeit before the wager is made, good luck!\n\nYours truly,\nWeasley's Wizard Wheeze's and Team Silver{/size}",
+    label = "cardgame_t2_mail_send"
+)
 
 label read_letter:
 
@@ -213,7 +264,7 @@ label get_package:
                 if gift_list[0][2] == 1:
                     renpy.call("give_reward","You have received a "+gift_list[0][0]+".", gift_list[0][1])
                 else:
-                    renpy.call("give_reward","You have received "+str(gift_list[0][2])+" pieces of "+gift_list[0][0]+".", the_gift)
+                    renpy.call("give_reward","You have received "+str(gift_list[0][2])+" pieces of "+gift_list[0][0]+".", gift_list[0][1])
             else:
                 txt_gifts = "{size=-4}"
                 for i, item in enumerate(gift_list):
@@ -233,74 +284,9 @@ label get_package:
 
     call screen main_room_menu
 
-
-
-label __init_variables:
-
-    if not hasattr(renpy.store,'letter_queue_list'):
-        $ letter_queue_list = []
-        $ report_money = 0
-
-    # Hermione Granger Letters.
-    if not hasattr(renpy.store,'letter_hg_1'):
-        $ letter_hg_1 = mail_letter_class()
-    $ letter_hg_1.text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sure that you remember the reason why I'm writing you this letter from my last one, sir.\n\nI beg of you, please hear my plea this time. This injustice simply cannot go on...\nNot in this day and age, not in our school.\n\nPlease take action.{/size}\n\n{size=-7}With deepest respect,\nHermione Granger{/size}"
-    $ letter_hg_1.label = "letter_from_hermione_A"
-
-    if not hasattr(renpy.store,'letter_hg_2'):
-        $ letter_hg_2 = mail_letter_class()
-    $ letter_hg_2.text = "{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sorry to disturb you again, professor. I just want to make sure that you take this problem seriously.\n\nLast night another classmate confided in me... I gave my word to keep it a secret, so I cannot go into any details.\n\nAll I can say is that one of the Professors was involved.\n\nPlease take action soon.{/size}\n\n{size=-7}With deepest respect,\nHermione Granger.{/size}"
-    $ letter_hg_2.label = "" #No comment on letter.
-
-
-    # Ministry of Magic Letters.
-    if not hasattr(renpy.store,'letter_min_work'):
-        $ letter_min_work = mail_letter_class()
-    $ letter_min_work.text = "{size=-7}From: Ministry of Magic\nTo: Professor Albus Dumbledore\n\n{/size}{size=-4}Dear professor Dumbledore,\nWe remind you that only upon providing us with a completed report will we be able to make a payment in your name.{/size}\n\n{size=-7}With deepest respect,\nThe Ministry of Magic.{/size}"
-    $ letter_min_work.label = "letter_paperwork_unlock"
-
-    if not hasattr(renpy.store,'letter_min_report'):
-        $ letter_min_report = mail_letter_class()
-    $ letter_min_report.text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n{/size}{size=-4}Thank you for completing a report this week.\n\nYou will find your payment of\n\n{/size}{b}-[report_money] gold-{/b}{size=-4}\n\nin the attached purse.{/size}\n\n{size=-7}With deepest respect,\nThe Ministry of Magic.{/size}"
-    $ letter_min_report.label = "letter_paperwork_report"
-
-    if not hasattr(renpy.store,'letter_min_favors'):
-        $ letter_min_favors = mail_letter_class()
-    $ letter_min_favors.text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n{/size}{size=-4}Dear professor Dumbledore,\nit has come to the ministry's attention from an anonymous letter, that there has been illicit activities going on between staff members and students within your halls.\n\nAn Auror has been dispatched and will arrive shortly to begin the investigation.{/size}\n\n{size=-7}Yours sincerely,\nAmelia Bones, Department of Magical Law Enforcement.{/size}"
-    $ letter_min_favors.label = "letter_favor_complaint"
-
-    if not hasattr(renpy.store,'letter_min_curses'): # Not in use anymore.
-        $ letter_min_curses = mail_letter_class()
-    $ letter_min_curses.text = "{size=-7}Dear Albus Dubmbledore, as we are sure you are aware, an unforgivable curse has been detected within the grounds of Hogwarts.\nWhile the punishment for such a curse is usually lifetime incarceration in the prison, Azkaban, we are allowing you to address this matter at your own discretion.\nThis is due to the possible nature of the spell being cast by a minor who has not fully grasped the serious nature of the curse.\nIf this is the case we expect no further communication from you regarding this unfortunate event.\nIf, however, you believe the curse has been cast by someone other than a student, or if any other complications arise we expect direct communication.\nLastly, the detection of any further curses will result in the immediate dispatchment of an auror to Hogwarts.\n\nCornelius Fudge,\nDepartment Head: Improper Use of Magic Office{/size}"
-    $ letter_min_curses.label = "letter_curse_complaint"
-
-    if not hasattr(renpy.store,'letter_deck'):
-        $ letter_deck = mail_letter_class()
-    $ letter_deck.text = "{size=-3}Sir Albus Dumbledore{/size}\n\n{size=-7}We would like to present to you great opportunity to become a Wizard Cards champion. We've included a starter pack to our card game in the hopes that you will consider any of our resellers to stock our cards for your students to purchase and play.\n\nHere's a little bit of information about our cards:\nEvery Wizard card has an enchantment that will personalize its look just for you and show something of your own favorite interest.\n\nDo you like Quidditch? Every card will look like a famous Quidditch player or a sport related print.\nInterested in magical creatures? The cards will have magical creatures on them.\nFind out your unique illustrations today with a started pack, we don't even know what it is!{/size}\n\n{space=110}{size=-5}Wizard cards inc{/size}"
-    $ letter_deck.label = "deck_mail_send"
-
-    if not hasattr(renpy.store,'letter_cards_store'):
-        $ letter_cards_store = mail_letter_class()
-    $ letter_cards_store.text = "{size=-7}Weasley's Wizard Wheezes shop emporium is now officially partnering with Wizard cards.\nCheck out the notice board at our shop to find a list of challengers at your skill level.{/size}"
-    $ letter_cards_store.label = "cards_store_mail_send"
-
-    if not hasattr(renpy.store,'letter_cardgame_t2'):
-        $ letter_cardgame_t2 = mail_letter_class()
-    $ letter_cardgame_t2.text = "{size=-3}Congratulations!{/size}\n\n{size=-7}You've beaten your first 3 challenges of Wizard Cards.\nWe're currently working on expanding our business and are recruiting even more challengers so that in the future you'll be able to challenge even more people.\nIn the meanwhile, you'll be able to earn even more tokens by making wagers with the ones you've already beaten to complete your collection of items.\nFor wagers both participant needs to be fine with the prize/forfeit before the wager is made, good luck!\n\nYours truly,\nWeasley's Wizard Wheeze's and Team Silver{/size}"
-    $ letter_cardgame_t2.label = "cardgame_t2_mail_send"
-
-    return
-
-
-
 init python:
 
     class deliveryItem(object):
-        object = None
-        transit_time = 0
-        quantity=1
-        type = ''
-
         def __init__(self,object,transit_time,quantity,type):
             self.object = object
             self.transit_time = transit_time
@@ -308,9 +294,11 @@ init python:
             self.type = type
 
     class deliveryQueue(object):
-        queue = []
         max_wait = 15
-
+        
+        def __init__(self):
+            self.queue = []
+            
         def send(self, item, transit_time, quantity, type):
             if transit_time > self.max_wait:
                 transit_time = self.max_wait
@@ -326,21 +314,21 @@ init python:
 
         def get_mail(self):
             delivery = []
-            for i in self.queue:
+            for i in list(self.queue):
                 if i.transit_time <= 0:
                     delivery.append(i)
-            for i in delivery:
-                self.queue.remove(i)
+                    self.queue.remove(i)
             return delivery
 
-    if not hasattr(renpy.store,'deliveryQ'):
-        deliveryQ = deliveryQueue()
-
     class mail_letter_class(object):
-        mailed = False
-        read = False
-        text = "Add Text"
-        label = "" #If Genie doesn't comment on the letter, this should remain ""
+        
+        def __init__(self, **kwargs):
+            self.mailed = False
+            self.read = False
+            self.text = "Add Text"
+            self.label = ""
+
+            self.__dict__.update(**kwargs)
 
         def getLetterText(self):
             return self.text
@@ -357,30 +345,3 @@ init python:
             if self in letter_queue_list:
                 letter_queue_list.remove(self)
             return
-
-
-
-
-
-
-
-
-### Old Ministry Letter ###
-
-#LETTER FROM THE MINISTRY OF MAGIC
-#Dear Albus Dubmbledore, as we are sure you are aware,
-#an unforgivable curse has been detected within the grounds of Hogwarts.
-#While the punishment for such a curse is usually lifetime incarceration in the
-#prison, Azkaban, we are allowing you to address this matter at your own discretion.
-#This is due to the possible nature of the spell being cast by a minor who has not
-#fully grasped the serious nature of the curse. If this is the case we expect no further communication from
-#you regarding this unfortunate event. If, however, you believe the curse has been cast by someone other than a student,
-#or if any other complications arise we expect direct communication. Lastly, the detection of any further curses will
-#result in the immediate dispatchment of an auror to Hogwarts.
-
-#Cornelius Fudge,
-#Department Head: Improper Use of Magic Office
-
-#m "That doesn't sound good..."
-#m "Perhaps I should tell Snape about this."
-#m "Or maybe miss granger?"

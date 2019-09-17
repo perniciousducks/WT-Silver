@@ -1,4 +1,21 @@
 
+default DRgame = game_class()
+
+default DRplayer   = game_character_class(name="You",          hp=8, skills=["strength"],              unskilled=["cooking","hunting","sewing"], inventory=["axe"])
+default DRstranger = game_character_class(name="The Stranger", hp=7, skills=["hunting"],               unskilled=["sewing"],                     inventory=["knife"])
+default DRmaid     = game_character_class(name="The Maiden",   hp=3, skills=["sewing"],                unskilled=["hunting","strength"])
+# default DRmaid     = game_character_class(name="The Maiden",   hp=3, skills=["cooking"],               unskilled=["hunting"],                    inventory=[])
+default DRhunter   = game_character_class(name="The Hunter",   hp=7, skills=["hunting","sewing"],      unskilled=["cooking"],                    inventory=["knife","rifle"])
+
+label reset_dark_room_init:
+    $ reset_variables(
+        "DRgame",
+        "DRplayer",
+        "DRstranger",
+        "DRmaid",
+        "DRhunter"
+    )
+    return
 
 ### A Dark Room ###
 
@@ -917,21 +934,6 @@ label DRgame_advance_time:
         $ DRgame.time = "night"
     return
 
-
-label dark_room_init:
-    if not hasattr(renpy.store,'DRgame'):
-        label reset_dark_room_init:
-        $ DRgame = game_class()
-
-        $ DRplayer   = game_character_class(name="You",          hp=8, skills=["strength"],              unskilled=["cooking","hunting","sewing"], inventory=["axe"])
-        $ DRstranger = game_character_class(name="The Stranger", hp=7, skills=["hunting"],               unskilled=["sewing"],                     inventory=["knife"])
-        $ DRmaid     = game_character_class(name="The Maiden",   hp=3, skills=["sewing"],                unskilled=["hunting","strength"])
-        #$ DRmaid     = game_character_class(name="The Maiden",   hp=3, skills=["cooking"],               unskilled=["hunting"],                    inventory=[])
-        $ DRhunter   = game_character_class(name="The Hunter",   hp=7, skills=["hunting","sewing"],      unskilled=["cooking"],                    inventory=["knife","rifle"])
-
-        $ DRgame.characters = []
-
-    return
 
 init -1 python:
 

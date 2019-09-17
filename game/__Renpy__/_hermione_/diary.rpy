@@ -1,3 +1,11 @@
+default hermione_diary = book_readable_class(title = "My Diary",
+    contents = [
+        ["MRM meeting", "I hosted another M.R.M. meeting today, not that anyone bothered to show up... I don't understand why people aren't more upset about the inequalities of this favour trading! You'd almost think that the boys are happy about it!"],
+        ["X", "I failed an exam today... I never thought that I'd ever put those words to paper... It's unbelievable... Should I have studied more? (Perhaps a time turner could help?) No... It must have been Snape! That crooked old weirdo probably failed me on purpose... Maybe I should speak to Dumbledore about this..."], #no title
+        ["Favour trading?", "I overheard some more girls talking about selling favour to their teachers today... The amount of points they were talking about were unbelievable! Maybe it's something I should consider after all... It could be the only way for Gryffindor to win the house cup..."]
+    ]
+)
+
 label her_whoring_pages:
     #End of talk to me tier 1 (Options for choice made)
     $ diary_page_1_1 = "I can't believe it... I sold my first real favour to Professor Dumbledore today! \nEven if it was just the two of talking... not that he said much! He just kept silently nodding and staring at my boobs... I suppose that's what made it a favour... Still, I can't wait to tell Ron and Harry about the five points! Go Gryffindor!!!"
@@ -15,7 +23,7 @@ label her_whoring_pages:
     #End of show me your tits tier 3 (Options for no touch, touch, and cum on)
     $ diary_page_6_1 = "What is it with men and breasts??? They're obsessed! They're just bags of flesh... you'd think someone as old as dumbledore would have seen enough by now... but no! \nHe has to make me lift up my shirt and expose myself for him whenever he wants!!! Ugh... I hope Mum never finds out about any of this..."
     $ diary_page_6_2 = "Ugh... Not only did this old pervert insist on seeing my breasts again... \n\nHe actually just went ahead and grabbed them!!! Straight after promising me he wouldn't as well..."
-    $ diary_page_6_3 = "He CAME ON ME!!! What a gross old pervert! I should report him to the ministry! \\nnThey need to know about a gross old headmaster just cumming all over their students... But that would mean no more favours... no more points for \'gryffinor\'... UGH!!! We better win!"
+    $ diary_page_6_3 = "He CAME ON ME!!! What a gross old pervert! I should report him to the ministry! \nThey need to know about a gross old headmaster just cumming all over their students... But that would mean no more favours... no more points for \'gryffinor\'... UGH!!! We better win!"
     #End of show my your tits tier 4 (Options for no touch, touch, and cum on)
     $ diary_page_7_1 = "At least Dumbledore seems to have calmed down a bit... He just wanted to take a look at my breasts... \n\nUgh... I know it's wrong to think, but I was sort of hoping he'd grab them... or at least touch himself a little..."
     $ diary_page_7_2 = "What are the point of promises if you're just going to break them anyway? \n\nHe promised he wouldn't touch me and then grabs a hold of both my breasts like it was Christmas! Ugh, it wasn't the worst feeling in the world though... his hands are so strong..."

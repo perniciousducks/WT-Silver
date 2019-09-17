@@ -1050,7 +1050,7 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     lun "Mhmmm. I mean you are a genie aren't you?"
     m "Well, yes..."
     $ lunCG('base', 'base', '', 'up')
-    m "But how do you know that? I thought I looked like dumbydoo or whoever..."
+    m "But how do you know that? I thought I looked like [ast_genie_name]doo or whoever..."
     $ lunCG('base', 'closed', '', 'up')
     lun "Only when I'm not wearing my spectrespecs!"
     m "Those glasses?... So you've known the whole time?"

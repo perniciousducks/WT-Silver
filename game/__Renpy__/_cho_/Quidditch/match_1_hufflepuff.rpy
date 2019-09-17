@@ -516,6 +516,7 @@ label hufflepuff_match:
 
     # Cho’s Skirt gets addressed
     show screen hufflepuff_match_cho_chase(1.0, 1.0)
+    play bg_sounds "sounds/snitchloop.ogg" fadein 0.0 fadeout 0.0 
     call her_main("Higher up, Cho seems to have caught an eye on the snitch and is chasing after it, directly followed by Cedric who...", mouth="open", eye="narrow")
     show screen hufflepuff_match_cho_chase(1.0, 0.5)
     call her_main("Hold on a minute... Is Cho wearing a skirt?", mouth="scream", eye="surprised")
@@ -535,6 +536,7 @@ label hufflepuff_match:
     hide screen hermione_main
     "Fem Student #1" "What a slut!"
     hide screen hufflepuff_match_cho_chase
+    stop bg_sounds fadeout 2.0
     with d3
 
     call her_chibi("stand","375","105", flip=False)
@@ -799,7 +801,7 @@ label hufflepuff_match_return:
     $ renpy.sound.play("sounds/snore2.mp3")
     m "......{w=0.5}*Snore*{w=1.0}{nw}"
     stop music fadeout 6.0
-    call cho_walk("desk", "base", 2.4, action="enter")
+    call cho_walk("desk", "base", speed=2.4, action="enter")
 
     $ renpy.sound.play("sounds/punch01.mp3")
     call cho_main("We beat \"Hufflepuff\"!!!","smile","angry","base","mid", ypos="base", trans="hpunch")

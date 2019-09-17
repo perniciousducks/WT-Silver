@@ -1921,7 +1921,7 @@ label hg_pf_facefuck_1: # Bondage facefuck scene
     $ her_cg_xpos_abs       = 0
     $ her_cg_ypos_abs       = 0
     $ her_cg_xpos           = 0
-    $ hwe_cg_ypos           = 0
+    $ her_cg_ypos           = 0
 
     $ herCG(pupil='up', eye='squint_m', mouth='base', eyebrow='sad', cheeks='blush', extra_1='blank', extra_2='blank', extra_3='hand', tears='mascara', body='base')
 

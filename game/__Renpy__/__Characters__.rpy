@@ -45,7 +45,7 @@ init python:
             # Assume `trans` refers to an existing transition, rely on exception for fallback
             x = globals()[trans]
             if immediate:
-                renpy.with_statement({ "master": x })
+                renpy.with_statement({ "screens": x })
             else:
                 renpy.with_statement(x)
         except:

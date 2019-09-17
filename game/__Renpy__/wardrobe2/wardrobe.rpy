@@ -47,7 +47,13 @@ label t_wardrobe(return_label, char_label):
     else:
         $ btn_hover = "#7d75aa40"
         
-    default bg_color_wardrobe = "#7d756e"
+    default bg_color_wardrobe_day = "#e8c97e"
+    default bg_color_wardrobe_night = "#7d756e"
+    
+    if daytime and not persistent.nightmode:
+        $ bg_color_wardrobe = bg_color_wardrobe_day
+    else:
+        $ bg_color_wardrobe = bg_color_wardrobe_night
     
     $ items_shown = 20
     $ current_page = 0
@@ -120,9 +126,12 @@ label t_wardrobe(return_label, char_label):
         call expression 'studio' pass (studio_return=return_label, studio_char=char_label)
     elif _return[0] == "equip":
         show screen t_wardrobe_menu(550, 50)
-        $ renpy.call(active_girl+"_wardrobe_check", "equip", _return[1])
+        if isinstance(_return[1], cloth_class) and _return[1].type in char_active.incompatible_wardrobe:
+            $ renpy.play('sounds/fail.mp3')
+        else:
+            $ renpy.call(active_girl+"_wardrobe_check", "equip", _return[1])
     elif _return == "addoutfit":
-        $ cho_outfit_custom.clone()
+        $ globals()[active_girl+"_outfit_custom"].clone()
         $ menu_items = char_active.outfits
         $ menu_items_length = len(menu_items)
     elif _return[0] == "deloutfit":
@@ -166,6 +175,7 @@ label t_wardrobe(return_label, char_label):
         $ current_item.reset_color()
         $ char_active.cached = False
     elif _return == "bg_color":
+        $ active_layer = None
         show screen t_wardrobe_menu(550, 50)
         $ bg_color_wardrobe = color_picker(get_rgb_list(bg_color_wardrobe), False, "Wardrobe Background Color", pos_xy=[20, 130])
         $ bg_color_wardrobe = get_hex_string(bg_color_wardrobe[0]/255.0, bg_color_wardrobe[1]/255.0, bg_color_wardrobe[2]/255.0, bg_color_wardrobe[3]/255.0)
@@ -237,15 +247,22 @@ label t_wardrobe(return_label, char_label):
                             break
     elif _return[0] == "erozone":
         show screen t_wardrobe_menu(550, 50)
+        if current_category:
+            show screen t_wardrobe_menuitem(20, 50)
         $ renpy.call(active_girl+"_wardrobe_check", "touching", _return[1])
         #call expression char_label pass (text="", face="horny")
     elif _return[0] == "toggle":
         show screen t_wardrobe_menu(550, 50)
+        if current_category:
+            show screen t_wardrobe_menuitem(20, 50)
         $ renpy.call(active_girl+"_wardrobe_check", "toggle", _return[1])
     elif _return == "music":
+        show screen t_wardrobe_menu(550, 50)
+        if current_category:
+            show screen t_wardrobe_menuitem(20, 50)
         if wardrobe_music_active:
             $ wardrobe_music_active = False
-            call music_block
+            call play_music(active_girl+"_theme")
             call expression char_label pass (text="", face="annoyed")
         else:
             $ wardrobe_music_active = True
@@ -258,7 +275,7 @@ label t_wardrobe(return_label, char_label):
         # add check for compatibility issues.
         $ char_active.clothes_compatible()
         if wardrobe_music_active:
-            call music_block
+            call play_music(active_girl+"_theme")
         python:
             renpy.jump(return_label)
     jump t_wardrobe_after_init
@@ -411,12 +428,18 @@ screen t_wardrobe_menuitem(xx, yy):
                 if menu_items[i].id == char_active.get_equipped(current_category, current_subcategory, i):
                     button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]]) hovered SetVariable("tooltip", "Take off") unhovered SetVariable("tooltip", None)
                     add "interface/topbar/icon_check.png" xpos 60+90*col ypos 225+90*row
-                else:
+                else:   
                     button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]]) #hovered SetVariable("tooltip", "Put on") unhovered SetVariable("tooltip", None)
+                    
+                # Whoring req
                 if config.developer:
                     text "{color=#b20000}"+str(menu_items[i].whoring)+"{/color}" size 20 xpos 15+90*col ypos 180+90*row outlines [ (1, "#000", 0, 0) ]
-                    if menu_items[i].incompatible != None:
-                        textbutton "{color=#b20000}!{/color}" background None text_size 20 xpos 64+90*col ypos 180+90*row text_outlines [ (1, "#000", 0, 0) ] hovered SetVariable("tooltip", "Incompatible with:\n"+"\n".join(str(k) for k in menu_items[i].incompatible)+"\n{size=-4}{color=#009999}Above items will be unequipped.{/color}{/size}") unhovered SetVariable("tooltip", None) action NullAction()
+                if menu_items[i].incompatible != None:
+                    textbutton "{color=#b20000}!{/color}" background None text_size 20 xpos 64+90*col ypos 180+90*row text_outlines [ (1, "#000", 0, 0) ] hovered SetVariable("tooltip", "Incompatible with:\n"+"\n".join(str(k) for k in menu_items[i].incompatible)+"\n{size=-4}{color=#009999}Above items will be unequipped.{/color}{/size}") unhovered SetVariable("tooltip", None) action NullAction()
+                        
+                # Check current item compatibility, if fails forbid equipping
+                if menu_items[i].type in char_active.incompatible_wardrobe:
+                    textbutton "{color=#b20000}X{/color}" background None text_size 20 xpos 64+90*col ypos 180+90*row text_outlines [ (1, "#000", 0, 0) ] hovered SetVariable("tooltip", "Incompatible with your current setup.") unhovered SetVariable("tooltip", None) action NullAction()
                     
         # Add empty items
         for i in xrange(menu_items_length, items_shown):

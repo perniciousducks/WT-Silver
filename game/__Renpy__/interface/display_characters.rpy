@@ -1,4 +1,19 @@
+# Display Characters Screen
+default character_choice = "hermione"
+default summoned_character_list = []
 
+default display_character_hermione = False
+default display_character_luna = False
+default display_character_astoria = False
+default display_character_susan = False
+default display_character_cho = False
+
+default display_character_genie = False
+default display_character_snape = False
+default display_character_tonks = False
+
+default display_background = False
+default custom_bg_image = "images/rooms/_bg_/main_room_night.png"
 
 label summon_characters:
     call update_display_characters_summon_list
@@ -10,7 +25,25 @@ label summon_characters:
 
     call screen summon_characters
 
+label update_display_characters_summon_list:
+    $ character_summon_list = []
+    if hermione_unlocked:
+        $ character_summon_list.append("hermione")
+    if luna_unlocked:
+        $ character_summon_list.append("luna")
+    if astoria_unlocked:
+        $ character_summon_list.append("astoria")
+    if susan_unlocked:
+        $ character_summon_list.append("susan")
+    if cho_unlocked:
+        $ character_summon_list.append("cho")
+    $ character_summon_list.append("genie")
+    $ character_summon_list.append("snape")
+    if tonks_unlocked:
+        $ character_summon_list.append("tonks")
+    $ character_summon_list.append("bg")
 
+    return
 
 label summon_a_character:
     if character_choice == "hermione":

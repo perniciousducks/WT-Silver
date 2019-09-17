@@ -431,8 +431,7 @@ label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "",
         hide screen bld1
         hide screen blktone
         with d3
-        pause.5
-
+        pause .5
     else:
         if flip:
             $ her_chibi_flip = -1

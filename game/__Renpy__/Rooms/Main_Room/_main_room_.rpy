@@ -16,7 +16,11 @@ screen main_room():
         add trophy_OBJ.get_room_image() xpos trophy_OBJ.xpos ypos trophy_OBJ.ypos xanchor 0.5 yanchor 0.5
 
     #Door
-    add door_OBJ.get_room_image() xpos door_OBJ.xpos ypos door_OBJ.ypos xanchor 0.5 yanchor 0.5
+    
+    if daytime:
+        add door_OBJ.get_room_image() xpos door_OBJ.xpos ypos door_OBJ.ypos xanchor 0.5 yanchor 0.5
+    else:
+        add door_night_OBJ.get_room_image() xpos door_night_OBJ.xpos ypos door_night_OBJ.ypos xanchor 0.5 yanchor 0.5
 
     #Cupboard
     add cupboard_OBJ.get_room_image() xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5
@@ -71,13 +75,19 @@ screen main_room_menu():
 
     #Door
     imagebutton:
-        xpos door_OBJ.xpos
-        ypos door_OBJ.ypos
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle door_OBJ.get_idle_image()
-        hover door_OBJ.get_hover_image()
+        if daytime:
+            xpos door_OBJ.xpos
+            ypos door_OBJ.ypos
+            idle door_OBJ.get_idle_image()
+            hover door_OBJ.get_hover_image()
+        else:
+            xpos door_night_OBJ.xpos
+            ypos door_night_OBJ.ypos
+            idle door_night_OBJ.get_idle_image()
+            hover door_night_OBJ.get_hover_image()
         if door_examined:
             hovered SetVariable("tooltip", "Summon")
         else:

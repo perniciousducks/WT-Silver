@@ -16,7 +16,7 @@ label stats_menu(xx=150, yy=90):
         $ btn_hover = "#edc48240"
     else:
         $ btn_hover = "#7d75aa40"
-
+        
     call update_stats
 
     # Stats dictionary
@@ -42,7 +42,16 @@ label stats_menu(xx=150, yy=90):
     $ category_items = stats_dict[current_category]
     $ menu_items = category_items
     $ menu_items_length = len(menu_items)
-
+    
+    # Reset legacy character positioning
+    # TODO: Remove it once all characters have been converted into a class.
+    $ hermione_xpos = 370
+    $ hermione_ypos = 0
+    $ luna_xpos = 640
+    $ luna_ypos = 0
+    $ susan_xpos = 300
+    $ susan_ypos = 0
+    #
     label stats_menu_after_init:
     $ renpy.block_rollback()
 
@@ -144,9 +153,9 @@ screen stats_menuitem(xx, yy):
         text "Characters" size 22 xalign 0.5 ypos 65
 
         hbox:
-            pos (24, 70)
-            textbutton "Overview" text_size 12 action [Return(["subcat", "overview"]), SelectedIf(current_subcategory=="overview")]
-            textbutton "Details" text_size 12 action [Return(["subcat", "details"]), SelectedIf(current_subcategory=="details")]
+            pos (24, 65)
+            textbutton "Overview" text_size 12 action [Return(["subcat", "overview"]), SelectedIf(current_subcategory=="overview")] background None style btn_style text_style txt_style
+            textbutton "Details" text_size 12 action [Return(["subcat", "details"]), SelectedIf(current_subcategory=="details")] background None style btn_style text_style txt_style
 
         # Character sprites
         frame:

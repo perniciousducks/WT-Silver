@@ -18,7 +18,7 @@ label equip_her_outfit:
     if her_mood >= 1:
         jump equipping_failed
 
-    if (outfit_choice != hermoine_outfit_GLBL) or (outfit_choice == hermoine_outfit_GLBL and not hermione_costume):
+    if outfit_choice != hermoine_outfit_GLBL or outfit_choice == hermoine_outfit_GLBL:
         if wardrobe_chitchat_active:
             hide screen hermione_main
             with d3
@@ -43,7 +43,7 @@ label equip_her_outfit:
                 else: #Fail
                     call her_main("Your maid? [genie_name] isn't it the house elves job to clean up the rooms?","open","base")
                     call her_main("(Not that I approve of this horrible house-elf enslavement...)","annoyed","angryL")
-                    call her_main("I have more important things to attent to. I have no time to clean up behind you...","open","closed")
+                    call her_main("I have more important things to attend to. I have no time to clean up behind you...","open","closed")
                     call her_main("Unless... there are some points in it for me...","soft","baseL")
                     m "No points,..."
                     g9 "But I've got this cute outfit for you!"

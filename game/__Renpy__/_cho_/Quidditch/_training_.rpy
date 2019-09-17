@@ -314,7 +314,7 @@ label change_quidditch_tactics:
             "":
                 pass
             "\"Come back down.\"":
-                call cho_walk("mid", "base", 1.2)
+                call cho_walk("mid", "base", speed=1.2)
                 pause.2
 
                 call cho_chibi("reset","mid","base", flip=False)

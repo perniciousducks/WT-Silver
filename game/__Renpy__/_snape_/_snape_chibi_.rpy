@@ -121,8 +121,7 @@ label sna_chibi(action = "", xpos=sna_chibi_xpos, ypos=sna_chibi_ypos, pic = "",
         hide screen bld1
         hide screen blktone
         with d3
-        pause.5
-
+        pause .5
     else:
         if flip:
             $ sna_chibi_flip = -1

@@ -149,6 +149,7 @@ label ball_ending_E1:
     pause.3
 
     call sna_chibi("leave","door","base")
+    with d3
     pause.8
 
     call bld
@@ -3054,12 +3055,10 @@ label ball_ending_E3:
         stop music fadeout 7.0
         pause.1
 
-        #Define Letter.
-        $ letter_from_genie_OBJ = mail_letter_class()
-        $ letter_from_genie_OBJ.text = "{size=-7}To: Hermione Granger\n\n{/size}{size=-4}Dear Hermione.\nI am not who you think I am... Not even human so to speak. For months now I have been posing as a person known to you as Professor Dumbledore. But it is time for me to go back to the place I belong. By the time you will receive this letter I shall be long gone. We shall never cross paths again, but I promise you that I will cherish the memories of my brief time in your strange world. \n\nFarewell, my little [hermione_name]. {size=-3}\n\n-Yours truly, Genie-{/size}"
-
-        #Read Letter.
-        $ letter = letter_from_genie_OBJ
+        # Read letter from Genie
+        $ letter = mail_letter_class(
+            text = "{size=-7}To: Hermione Granger\n\n{/size}{size=-4}Dear Hermione.\nI am not who you think I am... Not even human so to speak. For months now I have been posing as a person known to you as Professor Dumbledore. But it is time for me to go back to the place I belong. By the time you will receive this letter I shall be long gone. We shall never cross paths again, but I promise you that I will cherish the memories of my brief time in your strange world. \n\nFarewell, my little [hermione_name]. {size=-3}\n\n-Yours truly, Genie-{/size}"
+        )
 
         $ menu_x = 0.5
         $ menu_y = 0.9

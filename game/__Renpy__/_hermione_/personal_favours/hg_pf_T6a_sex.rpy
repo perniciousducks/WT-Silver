@@ -769,7 +769,6 @@ label hg_sex_luna:
     call nar(">The door opens as Luna Lovegood walks in.")
     call play_sound("door")
 
-    call luna_init
     call lun_walk("door","desk",2.5)
 
     lun "Hello Professor!"

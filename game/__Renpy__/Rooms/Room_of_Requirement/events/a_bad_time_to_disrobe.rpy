@@ -162,6 +162,7 @@ label a_bad_time_to_disrobe_part_1:
     call her_main("\"would they?\"","base","base", cheeks="blush", tears="mascara",ypos="head")
 
     call her_chibi("leave")
+
     "The End."
 
     $ daytime = temp_time
@@ -328,6 +329,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("\"What am I thinking? snap out of it...\"","base","worriedCl", cheeks="blush",ypos="head")
 
     call her_chibi("leave")
+
     call blkfade
     centered "{size=+10}{color=#cbcbcb}The end{/color}{/size}"
 

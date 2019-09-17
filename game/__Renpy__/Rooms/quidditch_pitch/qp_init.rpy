@@ -1,7 +1,6 @@
-init:
-    default qp_mob = 0
-    $ qp_mob_reaction = [None, None, None]
-    $ qp_spotlight = False
+default qp_mob = 0
+default qp_mob_reaction = [None, None, None]
+default qp_spotlight = False
 
 screen quidditch_pitch():
     tag quidditch_pitch

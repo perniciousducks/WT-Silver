@@ -1,3 +1,15 @@
+define genie_max_hp = 1000
+define snape_max_hp = 2000
+
+default genie_hp = genie_max_hp
+default snape_hp = snape_max_hp
+
+default blocking = False
+default snape_blocking = False
+
+default pentogram = False
+
+default duel_OBJ = silver_duel()
 
 init python:
     class silver_duel(object):
@@ -9,27 +21,6 @@ init python:
             renpy.show(image,at_list=[Position(xpos=x, ypos=y, xanchor="center", yanchor="center")],layer="screens",zorder=z)
         def hide(self,image=None):
             renpy.hide(image,layer="screens")
-
-    duel_OBJ = silver_duel()
-
-label __init_variables:
-
-    $ genie_max_hp = 1000
-    $ snape_max_hp = 2000
-
-    if not hasattr(renpy.store,'genie_hp'): #important!
-        $ genie_hp = genie_max_hp
-    if not hasattr(renpy.store,'snape_hp'): #important!
-        $ snape_hp = snape_max_hp
-    if not hasattr(renpy.store,'blocking'): #important!
-        $ blocking = False
-    if not hasattr(renpy.store,'snape_blocking'): #important!
-        $ snape_blocking = False
-    if not hasattr(renpy.store,'pentogram'): #important!
-        $ pentogram = False
-
-    return
-
 
 label duel:
     ### DUEL ###
@@ -530,374 +521,374 @@ label genie_lost:
     $ MainMenu(confirm=False)
 
 ### DUEL IMAGES ###
-init -1:
-    ### BROKEN GLASS ###
-    image glass: # Animation that shows a broken glass effect when the duel starts.
-        "images/dueling/snape/01.png"
-        pause 1.3
-        "images/dueling/snape/02.png"
-        pause.3
-        "images/dueling/snape/03.png"
-        pause.3
-        "images/dueling/snape/04.png"
-        pause.3
-        "images/dueling/snape/05.png"
-        pause.3
-        "images/dueling/snape/06.png"
-        pause.3
-        "images/dueling/snape/07.png"
 
-    ### Harry Potter DUEL ANIMATIONS ###
-    image smoke:
-        "images/animation/smoke_01.png"
-        pause.1
-        "images/animation/smoke_02.png"
-        pause.1
-        "images/animation/smoke_03.png"
-        pause.1
-        "images/animation/smoke_04.png"
-        pause.1
+### BROKEN GLASS ###
+image glass: # Animation that shows a broken glass effect when the duel starts.
+    "images/dueling/snape/01.png"
+    pause 1.3
+    "images/dueling/snape/02.png"
+    pause.3
+    "images/dueling/snape/03.png"
+    pause.3
+    "images/dueling/snape/04.png"
+    pause.3
+    "images/dueling/snape/05.png"
+    pause.3
+    "images/dueling/snape/06.png"
+    pause.3
+    "images/dueling/snape/07.png"
 
-    image duel_table:
-        "images/rooms/main_room/desk_with_shadow.png"
+### Harry Potter DUEL ANIMATIONS ###
+image smoke:
+    "images/animation/smoke_01.png"
+    pause.1
+    "images/animation/smoke_02.png"
+    pause.1
+    "images/animation/smoke_03.png"
+    pause.1
+    "images/animation/smoke_04.png"
+    pause.1
 
-    ### GENIE ###
-    image ch_gen duel_01:
-        "images/dueling/snape/gen_01.png"
-        pause.1
-        "images/dueling/snape/gen_02.png"
-        pause.1
-        "images/dueling/snape/gen_03.png"
-        pause.1
-        "images/dueling/snape/gen_02.png"
-        pause.1
-        repeat
+image duel_table:
+    "images/rooms/main_room/desk_with_shadow.png"
 
-    image ch_gen guard:
-        "images/dueling/snape/guard_01.png"
-        pause.1
-        "images/dueling/snape/guard_02.png"
-        pause.1
-        "images/dueling/snape/guard_03.png"
-        pause.1
-        "images/dueling/snape/guard_02.png"
-        pause.1
-        repeat
+### GENIE ###
+image ch_gen duel_01:
+    "images/dueling/snape/gen_01.png"
+    pause.1
+    "images/dueling/snape/gen_02.png"
+    pause.1
+    "images/dueling/snape/gen_03.png"
+    pause.1
+    "images/dueling/snape/gen_02.png"
+    pause.1
+    repeat
 
-    image ch_gen barb:
-        "images/dueling/snape/barb_01.png"
-        pause.15
-        "images/dueling/snape/barb_02.png"
-        pause.15
-        repeat
+image ch_gen guard:
+    "images/dueling/snape/guard_01.png"
+    pause.1
+    "images/dueling/snape/guard_02.png"
+    pause.1
+    "images/dueling/snape/guard_03.png"
+    pause.1
+    "images/dueling/snape/guard_02.png"
+    pause.1
+    repeat
 
-    image genie_attack:
-        "images/dueling/snape/genie_attack_01.png"
-        pause.15
-        "images/dueling/snape/genie_attack_02.png"
-        pause.15
-        "images/dueling/snape/genie_attack_01.png"
-        pause.15
-        "images/dueling/snape/genie_attack_02.png"
-        pause.15
-        "images/dueling/snape/genie_attack_01.png"
-        pause.15
-        "images/dueling/snape/genie_attack_02.png"
-        pause.15
-        "images/dueling/snape/genie_attack_03.png"
-        pause.15
-        "images/dueling/snape/genie_attack_04.png"
-        pause.15
-        "images/dueling/snape/genie_attack_05.png"
-        pause.15
-        "images/dueling/snape/genie_attack_06.png"
-        pause.15
-        "images/dueling/snape/genie_attack_07.png"
-        pause.15
-        "images/dueling/snape/genie_attack_08.png"
-        pause.15
-        "images/dueling/snape/genie_attack_09.png"
-        pause.15
-        "images/dueling/snape/genie_attack_10.png"
-        pause.15
-        "images/dueling/snape/genie_attack_11.png"
-        pause.15
-        "images/dueling/snape/genie_attack_12.png"
-        pause.15
-        "images/dueling/snape/genie_attack_13.png"
-        pause.15
-        "images/dueling/snape/genie_attack_14.png"
-        pause.15
-        "images/dueling/snape/genie_attack_15.png"
-        pause.15
-        "images/dueling/snape/genie_attack_14.png"
-        pause.15
-        "images/dueling/snape/genie_attack_15.png"
-        pause.15
-        repeat
+image ch_gen barb:
+    "images/dueling/snape/barb_01.png"
+    pause.15
+    "images/dueling/snape/barb_02.png"
+    pause.15
+    repeat
 
-    image genie_no_magic:
-        "images/dueling/snape/no_magic.png"
+image genie_attack:
+    "images/dueling/snape/genie_attack_01.png"
+    pause.15
+    "images/dueling/snape/genie_attack_02.png"
+    pause.15
+    "images/dueling/snape/genie_attack_01.png"
+    pause.15
+    "images/dueling/snape/genie_attack_02.png"
+    pause.15
+    "images/dueling/snape/genie_attack_01.png"
+    pause.15
+    "images/dueling/snape/genie_attack_02.png"
+    pause.15
+    "images/dueling/snape/genie_attack_03.png"
+    pause.15
+    "images/dueling/snape/genie_attack_04.png"
+    pause.15
+    "images/dueling/snape/genie_attack_05.png"
+    pause.15
+    "images/dueling/snape/genie_attack_06.png"
+    pause.15
+    "images/dueling/snape/genie_attack_07.png"
+    pause.15
+    "images/dueling/snape/genie_attack_08.png"
+    pause.15
+    "images/dueling/snape/genie_attack_09.png"
+    pause.15
+    "images/dueling/snape/genie_attack_10.png"
+    pause.15
+    "images/dueling/snape/genie_attack_11.png"
+    pause.15
+    "images/dueling/snape/genie_attack_12.png"
+    pause.15
+    "images/dueling/snape/genie_attack_13.png"
+    pause.15
+    "images/dueling/snape/genie_attack_14.png"
+    pause.15
+    "images/dueling/snape/genie_attack_15.png"
+    pause.15
+    "images/dueling/snape/genie_attack_14.png"
+    pause.15
+    "images/dueling/snape/genie_attack_15.png"
+    pause.15
+    repeat
 
-
-    ### SNAPE ###
-    image ch_sna duel_01:
-        "images/dueling/snape/snape_01.png"
-        pause.1
-        "images/dueling/snape/snape_02.png"
-        pause.1
-        "images/dueling/snape/snape_03.png"
-        pause.1
-        "images/dueling/snape/snape_02.png"
-        pause.1
-        repeat
-
-    image ch_sna defend:
-        "images/dueling/snape/snape_defend_01.png"
-        pause.1
-        "images/dueling/snape/snape_defend_02.png"
-        pause.1
-        "images/dueling/snape/snape_defend_03.png"
-        pause.1
-        "images/dueling/snape/snape_defend_02.png"
-        pause.1
-        repeat
-
-    image snape_attack:
-        "images/dueling/snape/sna_attack_01.png"
-        pause.08
-        "images/dueling/snape/sna_attack_02.png"
-        pause.08
-        "images/dueling/snape/sna_attack_03.png"
-        pause.08
-        "images/dueling/snape/sna_attack_04.png"
-        pause.08
-        "images/dueling/snape/sna_attack_05.png"
-        pause.08
-        "images/dueling/snape/sna_attack_06.png"
-        pause.08
-        "images/dueling/snape/sna_attack_07.png"
-        pause.08
-        "images/dueling/snape/sna_attack_08.png"
-        pause.08
-        "images/dueling/snape/sna_attack_09.png"
-        pause.08
-        "images/dueling/snape/sna_attack_10.png"
-        pause.08
-        repeat
-
-    image snape_defend: #Snape is in defense stance. Barbarian throws axes at him.
-        "images/dueling/snape/sna_block_01.png"
-        pause.15
-        "images/dueling/snape/sna_block_02.png"
-        pause.15
-        "images/dueling/snape/sna_block_01.png"
-        pause.15
-        "images/dueling/snape/sna_block_02.png"
-        pause.15
-        "images/dueling/snape/sna_block_01.png"
-        pause.15
-        "images/dueling/snape/sna_block_02.png"
-        pause.15
-        "images/dueling/snape/sna_block_03.png"
-        pause.15
-        "images/dueling/snape/sna_block_04.png"
-        pause.15
-        "images/dueling/snape/sna_block_05.png"
-        pause.15
-        "images/dueling/snape/sna_block_06.png"
-        pause.15
-        "images/dueling/snape/sna_block_07.png"
-        pause.15
-        "images/dueling/snape/sna_block_08.png"
-        pause.15
-        "images/dueling/snape/sna_block_09.png"
-        pause.15
-        "images/dueling/snape/sna_block_10.png"
-        pause.15
-        "images/dueling/snape/sna_block_11.png"
-        pause.15
-        "images/dueling/snape/sna_block_12.png"
-        pause.15
-        "images/dueling/snape/sna_block_13.png"
-        pause.15
-        repeat
-
-    image snape_summon:
-        "images/dueling/snape/snape_casting_01.png"
-
-    image snape_lost:
-        "images/dueling/snape/snape.png"
-
-    image snape_attack_guard: # CREDITS VERSION, with a longer pause.
-        "images/dueling/snape/sna_attack_guard_01.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_02.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_03.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_04.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_05.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_06.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_07.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_08.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_09.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_10.png"
-        pause.5
-        repeat
-
-    image snape_attack_guard:
-        "images/dueling/snape/sna_attack_guard_01.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_02.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_03.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_04.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_05.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_06.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_07.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_08.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_09.png"
-        pause.08
-        "images/dueling/snape/sna_attack_guard_10.png"
-        pause.08
-        repeat
+image genie_no_magic:
+    "images/dueling/snape/no_magic.png"
 
 
-    ### HAND ###
-    image pentogram:
-        "images/dueling/snape/pen_05.png"
-        pause.1
-        "images/dueling/snape/pen_04.png"
-        pause.1
-        "images/dueling/snape/pen_03.png"
-        pause.1
-        "images/dueling/snape/pen_02.png"
-        pause.1
-        "images/dueling/snape/pen_01.png"
-        pause.1
-        "images/dueling/snape/pen_02.png"
-        pause.1
-        "images/dueling/snape/pen_03.png"
-        pause.1
-        "images/dueling/snape/pen_04.png"
-        pause.1
-        "images/dueling/snape/pen_05.png"
-        pause.1
-        repeat
+### SNAPE ###
+image ch_sna duel_01:
+    "images/dueling/snape/snape_01.png"
+    pause.1
+    "images/dueling/snape/snape_02.png"
+    pause.1
+    "images/dueling/snape/snape_03.png"
+    pause.1
+    "images/dueling/snape/snape_02.png"
+    pause.1
+    repeat
 
-    image hand: #Hand appears.
-        "images/dueling/snape/hand_01.png"
-        pause.1
-        "images/dueling/snape/hand_02.png"
-        pause.1
-        "images/dueling/snape/hand_03.png"
-        pause.1
-        "images/dueling/snape/hand_04.png"
-        pause.1
-        "images/dueling/snape/hand_05.png"
-        pause.1
-        "images/dueling/snape/hand_06.png"
-        pause.1
-        "images/dueling/snape/hand_07.png"
-        pause.1
-        "images/dueling/snape/hand_08.png"
-        pause.1
-        "images/dueling/snape/hand_09.png"
-        pause.1
-        "images/dueling/snape/hand_10.png"
-        pause.1
-        "images/dueling/snape/hand_11.png"
-        pause.1
-        "images/dueling/snape/hand_12.png"
-        pause.1
-        "images/dueling/snape/hand_13.png"
-        pause.1
-        "images/dueling/snape/hand_14.png"
-        pause.1
-        "images/dueling/snape/hand_15.png"
-        pause.1
-        "images/dueling/snape/hand_16.png"
-        pause.1
-        repeat
+image ch_sna defend:
+    "images/dueling/snape/snape_defend_01.png"
+    pause.1
+    "images/dueling/snape/snape_defend_02.png"
+    pause.1
+    "images/dueling/snape/snape_defend_03.png"
+    pause.1
+    "images/dueling/snape/snape_defend_02.png"
+    pause.1
+    repeat
 
-    image hand_genie: #Hand attacks Genie.
-        "images/dueling/snape/hand_genie_01.png"
-        pause.1
-        "images/dueling/snape/hand_genie_02.png"
-        pause.1
-        "images/dueling/snape/hand_genie_03.png"
-        pause.1
-        "images/dueling/snape/hand_genie_04.png"
-        pause.1
-        "images/dueling/snape/hand_genie_05.png"
-        pause.1
-        "images/dueling/snape/hand_genie_06.png"
-        pause.1
-        "images/dueling/snape/hand_genie_07.png"
-        pause.1
-        "images/dueling/snape/hand_genie_08.png"
-        pause.1
-        "images/dueling/snape/hand_genie_09.png"
-        pause.1
-        "images/dueling/snape/hand_genie_10.png"
-        pause.1
-        "images/dueling/snape/hand_genie_11.png"
-        pause.1
-        "images/dueling/snape/hand_genie_12.png"
-        pause.1
-        "images/dueling/snape/hand_genie_13.png"
-        pause.1
+image snape_attack:
+    "images/dueling/snape/sna_attack_01.png"
+    pause.08
+    "images/dueling/snape/sna_attack_02.png"
+    pause.08
+    "images/dueling/snape/sna_attack_03.png"
+    pause.08
+    "images/dueling/snape/sna_attack_04.png"
+    pause.08
+    "images/dueling/snape/sna_attack_05.png"
+    pause.08
+    "images/dueling/snape/sna_attack_06.png"
+    pause.08
+    "images/dueling/snape/sna_attack_07.png"
+    pause.08
+    "images/dueling/snape/sna_attack_08.png"
+    pause.08
+    "images/dueling/snape/sna_attack_09.png"
+    pause.08
+    "images/dueling/snape/sna_attack_10.png"
+    pause.08
+    repeat
 
-    image hand_guard: #Hand attacks the guard.
-        "images/dueling/snape/hand_guard_01.png"
-        pause.1
-        "images/dueling/snape/hand_guard_02.png"
-        pause.1
-        "images/dueling/snape/hand_guard_03.png"
-        pause.1
-        "images/dueling/snape/hand_guard_04.png"
-        pause.1
-        "images/dueling/snape/hand_guard_05.png"
-        pause.1
-        "images/dueling/snape/hand_guard_06.png"
-        pause.1
-        "images/dueling/snape/hand_guard_07.png"
-        pause.1
-        "images/dueling/snape/hand_guard_08.png"
-        pause.1
-        "images/dueling/snape/hand_guard_09.png"
-        pause.1
-        "images/dueling/snape/hand_guard_10.png"
-        pause.1
-        "images/dueling/snape/hand_guard_11.png"
-        pause.1
-        "images/dueling/snape/hand_guard_12.png"
-        pause.1
-        "images/dueling/snape/hand_guard_13.png"
-        pause.1
-        "images/dueling/snape/hand_guard_14.png"
-        pause.1
-        "images/dueling/snape/hand_guard_11.png"
-        pause.1
-        "images/dueling/snape/hand_guard_12.png"
-        pause.1
-        "images/dueling/snape/hand_guard_13.png"
-        pause.1
+image snape_defend: #Snape is in defense stance. Barbarian throws axes at him.
+    "images/dueling/snape/sna_block_01.png"
+    pause.15
+    "images/dueling/snape/sna_block_02.png"
+    pause.15
+    "images/dueling/snape/sna_block_01.png"
+    pause.15
+    "images/dueling/snape/sna_block_02.png"
+    pause.15
+    "images/dueling/snape/sna_block_01.png"
+    pause.15
+    "images/dueling/snape/sna_block_02.png"
+    pause.15
+    "images/dueling/snape/sna_block_03.png"
+    pause.15
+    "images/dueling/snape/sna_block_04.png"
+    pause.15
+    "images/dueling/snape/sna_block_05.png"
+    pause.15
+    "images/dueling/snape/sna_block_06.png"
+    pause.15
+    "images/dueling/snape/sna_block_07.png"
+    pause.15
+    "images/dueling/snape/sna_block_08.png"
+    pause.15
+    "images/dueling/snape/sna_block_09.png"
+    pause.15
+    "images/dueling/snape/sna_block_10.png"
+    pause.15
+    "images/dueling/snape/sna_block_11.png"
+    pause.15
+    "images/dueling/snape/sna_block_12.png"
+    pause.15
+    "images/dueling/snape/sna_block_13.png"
+    pause.15
+    repeat
+
+image snape_summon:
+    "images/dueling/snape/snape_casting_01.png"
+
+image snape_lost:
+    "images/dueling/snape/snape.png"
+
+image snape_attack_guard: # CREDITS VERSION, with a longer pause.
+    "images/dueling/snape/sna_attack_guard_01.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_02.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_03.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_04.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_05.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_06.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_07.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_08.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_09.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_10.png"
+    pause.5
+    repeat
+
+image snape_attack_guard:
+    "images/dueling/snape/sna_attack_guard_01.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_02.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_03.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_04.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_05.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_06.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_07.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_08.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_09.png"
+    pause.08
+    "images/dueling/snape/sna_attack_guard_10.png"
+    pause.08
+    repeat
+
+
+### HAND ###
+image pentogram:
+    "images/dueling/snape/pen_05.png"
+    pause.1
+    "images/dueling/snape/pen_04.png"
+    pause.1
+    "images/dueling/snape/pen_03.png"
+    pause.1
+    "images/dueling/snape/pen_02.png"
+    pause.1
+    "images/dueling/snape/pen_01.png"
+    pause.1
+    "images/dueling/snape/pen_02.png"
+    pause.1
+    "images/dueling/snape/pen_03.png"
+    pause.1
+    "images/dueling/snape/pen_04.png"
+    pause.1
+    "images/dueling/snape/pen_05.png"
+    pause.1
+    repeat
+
+image hand: #Hand appears.
+    "images/dueling/snape/hand_01.png"
+    pause.1
+    "images/dueling/snape/hand_02.png"
+    pause.1
+    "images/dueling/snape/hand_03.png"
+    pause.1
+    "images/dueling/snape/hand_04.png"
+    pause.1
+    "images/dueling/snape/hand_05.png"
+    pause.1
+    "images/dueling/snape/hand_06.png"
+    pause.1
+    "images/dueling/snape/hand_07.png"
+    pause.1
+    "images/dueling/snape/hand_08.png"
+    pause.1
+    "images/dueling/snape/hand_09.png"
+    pause.1
+    "images/dueling/snape/hand_10.png"
+    pause.1
+    "images/dueling/snape/hand_11.png"
+    pause.1
+    "images/dueling/snape/hand_12.png"
+    pause.1
+    "images/dueling/snape/hand_13.png"
+    pause.1
+    "images/dueling/snape/hand_14.png"
+    pause.1
+    "images/dueling/snape/hand_15.png"
+    pause.1
+    "images/dueling/snape/hand_16.png"
+    pause.1
+    repeat
+
+image hand_genie: #Hand attacks Genie.
+    "images/dueling/snape/hand_genie_01.png"
+    pause.1
+    "images/dueling/snape/hand_genie_02.png"
+    pause.1
+    "images/dueling/snape/hand_genie_03.png"
+    pause.1
+    "images/dueling/snape/hand_genie_04.png"
+    pause.1
+    "images/dueling/snape/hand_genie_05.png"
+    pause.1
+    "images/dueling/snape/hand_genie_06.png"
+    pause.1
+    "images/dueling/snape/hand_genie_07.png"
+    pause.1
+    "images/dueling/snape/hand_genie_08.png"
+    pause.1
+    "images/dueling/snape/hand_genie_09.png"
+    pause.1
+    "images/dueling/snape/hand_genie_10.png"
+    pause.1
+    "images/dueling/snape/hand_genie_11.png"
+    pause.1
+    "images/dueling/snape/hand_genie_12.png"
+    pause.1
+    "images/dueling/snape/hand_genie_13.png"
+    pause.1
+
+image hand_guard: #Hand attacks the guard.
+    "images/dueling/snape/hand_guard_01.png"
+    pause.1
+    "images/dueling/snape/hand_guard_02.png"
+    pause.1
+    "images/dueling/snape/hand_guard_03.png"
+    pause.1
+    "images/dueling/snape/hand_guard_04.png"
+    pause.1
+    "images/dueling/snape/hand_guard_05.png"
+    pause.1
+    "images/dueling/snape/hand_guard_06.png"
+    pause.1
+    "images/dueling/snape/hand_guard_07.png"
+    pause.1
+    "images/dueling/snape/hand_guard_08.png"
+    pause.1
+    "images/dueling/snape/hand_guard_09.png"
+    pause.1
+    "images/dueling/snape/hand_guard_10.png"
+    pause.1
+    "images/dueling/snape/hand_guard_11.png"
+    pause.1
+    "images/dueling/snape/hand_guard_12.png"
+    pause.1
+    "images/dueling/snape/hand_guard_13.png"
+    pause.1
+    "images/dueling/snape/hand_guard_14.png"
+    pause.1
+    "images/dueling/snape/hand_guard_11.png"
+    pause.1
+    "images/dueling/snape/hand_guard_12.png"
+    pause.1
+    "images/dueling/snape/hand_guard_13.png"
+    pause.1
 
 screen snape_glass():
     # add "interface/blackfade.png"
     add "glass" at Position(xpos=0,ypos=0)
-    zorder 2
+    zorder 10

@@ -21,9 +21,9 @@ label set_ast_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
         elif mouth in ["naughty","horny"]:
             $ temp_mouth    = renpy.random.choice(["grin", "horny"])
         elif mouth in ["annoyed"]:
-            $ temp_mouth    = renpy.random.choice(["upset"])
+            $ temp_mouth    = renpy.random.choice(["annoyed", "upset"])
         elif mouth in ["disgusted"]:
-            $ temp_mouth    = renpy.random.choice(["disgust","worried"])
+            $ temp_mouth    = renpy.random.choice(["clench","upset", "annoyed"])
         elif mouth in ["angry"]:
             $ temp_mouth    = renpy.random.choice(["clench", "angry"])
 
@@ -47,11 +47,11 @@ label set_ast_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
         elif eyebrows in ["happy"]:
             $ temp_eyebrows = renpy.random.choice(["base"])
         elif eyebrows in ["naughty","horny"]:
-            $ temp_eyebrows = renpy.random.choice(["base","angry"])
-        elif eyebrows in ["annoyed"]:
-            $ temp_eyebrows = renpy.random.choice(["worried", "angry"])
-        elif eyebrows in ["disgusted"]:
             $ temp_eyebrows = renpy.random.choice(["base"])
+        elif eyebrows in ["annoyed"]:
+            $ temp_eyebrows = renpy.random.choice(["worried"])
+        elif eyebrows in ["disgusted"]:
+            $ temp_eyebrows = renpy.random.choice(["base", "angry"])
         elif eyebrows in ["angry"]:
             $ temp_eyebrows = renpy.random.choice(["angry"])
 
@@ -93,36 +93,36 @@ label set_ast_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
 
     return
 
-label astoria_face_layers:
+define ast_mouth_layers = [
+    "angry",
+    "annoyed",
+    "base",
+    "clench",
+    "grin",
+    "horny",
+    "open",
+    "scream",
+    "smile",
+    "upset"
+]
 
-    $ ast_mouth_layers  = ["angry",
-                           "annoyed",
-                           "base",
-                           "clench",
-                           "grin",
-                           "horny",
-                           "open",
-                           "scream",
-                           "smile",
-                           "upset"
-                           ]
+define ast_eye_layers = [
+    "base",
+    "closed",
+    "narrow"
+]
 
-    $ ast_eye_layers    = ["base",
-                           "closed",
-                           "narrow"
-                           ]
+define ast_brow_layers = [
+    "angry",
+    "base",
+    "worried"
+]
 
-    $ ast_brow_layers   = ["angry",
-                           "base",
-                           "worried"
-                           ]
-
-    $ ast_pupil_layers  = ["ahegao",
-                           "down",
-                           "L",
-                           "mid",
-                           "R",
-                           "up"
-                           ]
-
-    return
+define ast_pupil_layers = [
+    "ahegao",
+    "down",
+    "L",
+    "mid",
+    "R",
+    "up"
+]

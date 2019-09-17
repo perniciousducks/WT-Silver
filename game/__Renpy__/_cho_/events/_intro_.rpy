@@ -333,8 +333,6 @@ label cho_intro_1:
     call cho_chibi("leave")
 
     call her_chibi("stand","mid","base",flip=False)
-    with d3
-    pause.5
 
     call her_main("...","annoyed","angry", xpos="base", ypos="base",flip=False)
     m "..."
@@ -858,6 +856,8 @@ label cho_hermione_talk:
     pause.8
 
     call her_chibi("leave")
+    with d3
+    pause.5
 
     call cho_main("Thank you for getting her off my back, Professor.","base","base","base","mid")
     m "No problem."

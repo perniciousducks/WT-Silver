@@ -1,9 +1,9 @@
 init python:
     class quest_class(object):
-        title = ""
-        hint = ""
-
         def __init__(self, **kwargs):
+            self.title = ""
+            self.hint = ""
+            
             self.__dict__.update(kwargs)
 
         def status(self):
@@ -11,23 +11,22 @@ init python:
 
 
     class trigger_class(object):
-        title       = ""
-        bool        = False # Can me switched to 'True' and 'False' for events
-        trigger     = False # Can only be switched to 'True'
-        counter     = 0 # For stats
-
-        ss_counter  = 0 # Snape
-        nt_counter  = 0 # Tonks
-        hg_counter  = 0 # Hermione
-        gw_counter  = 0 # Ginny
-        cc_counter  = 0 # Cho
-        ll_counter  = 0 # Luna
-        sb_counter  = 0 # Susan
-        ag_counter  = 0 # Astoria
-        dg_counter  = 0 # Daphne
-        pp_counter  = 0 # Pansy
-
         def __init__(self, **kwargs):
+            self.title       = ""
+            self.bool        = False # Can me switched to 'True' and 'False' for events
+            self.trigger     = False # Can only be switched to 'True'
+
+            self.ss_trigger  = False # Snape
+            self.nt_trigger  = False # Tonks
+            self.hg_trigger  = False # Hermione
+            self.gw_trigger  = False # Ginny
+            self.cc_trigger  = False # Cho
+            self.ll_trigger  = False # Luna
+            self.sb_trigger  = False # Susan
+            self.ag_trigger  = False # Astoria
+            self.dg_trigger  = False # Daphne
+            self.pp_trigger  = False # Pansy
+            
             self.__dict__.update(kwargs)
 
         def status(self):
@@ -40,25 +39,24 @@ init python:
 
 
     class event_class(object):
-        title     = ""
-        hint      = ""
-        counter   = 0
-
-        start_label = ""
-        start_tier = 0
-        inProgress = False
-
-        events = []
-
-        icons = []
-        iconset = []
-
-        # Private attributes
-        _tier     = 0
-        _max_tiers = 0
-        _points    = 0
-
         def __init__(self, **kwargs):
+            self.title     = ""
+            self.hint      = ""
+            self.counter   = 0
+
+            self.start_label = ""
+            self.start_tier = 0
+            self.inProgress = False
+
+            self.events = []
+
+            self.icons = []
+            self.iconset = []
+
+            # Private attributes
+            self._tier     = 0
+            self._points    = 0
+            
             self.__dict__.update(kwargs)
 
             if self.events == []:

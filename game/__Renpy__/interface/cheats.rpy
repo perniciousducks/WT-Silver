@@ -1,3 +1,9 @@
+default cheats_active = False
+default cheat_reading = False
+
+default skip_duel = False
+default skip_to_hermione = False
+
 label cheats:
     menu:
         "-Hermione Cheats-" if hermione_unlocked:
@@ -37,6 +43,8 @@ label cheats:
                         for item in hermione_clothing_sets_list:
                             unlock_clothing_compat(item)
                     ">All of Hermione's outfits and clothing sets have been unlocked."
+                    $ unlock_clothing_compat(hg_gamble_slut_ITEM) # Gambler outfit is not included in above lists
+                    call update_deco_items # Call needed to update gambler outfit image
                     jump cheats_hermione
 
                 "-Toggle Breast Expansion-":
@@ -88,9 +96,7 @@ label cheats:
                     jump cheats_luna
 
                 "-Reset ALL Luna content-":
-                    $ reset_luna_content = True
-                    call luna_progress_init
-                    $ reset_luna_content = False
+                    call reset_luna_progress
                     ">Luna content reset!"
                     jump cheats
                 "-never mind-":
@@ -144,9 +150,7 @@ label cheats:
                     ">All of Cho's outfits and clothing sets have been unlocked."
                     jump cheats_cho
                 "-Reset ALL Cho content-":
-                    $ reset_cho_content = True
-                    call cho_progress_init
-                    $ reset_cho_content = False
+                    call reset_cho_progress
                     ">Cho content reset!"
                     jump cheats_cho
                 "-never mind-":
@@ -185,7 +189,7 @@ label cheats:
 
         "-Solve the slider puzzle-" if puzzle_box_ITEM.unlocked == True and unlocked_7th == False:
             $ unlocked_7th = True
-            jump open_pyzzle_box
+            jump open_puzzle_box
 
         "-Add Gold-":
             $ gold += 500
@@ -202,57 +206,74 @@ label cheats:
             "The marauder's map has been added to your inventory!"
             $ map_unlocked = True
             jump cheats
+            
+        "-DEVROOM-" if config.developer:
+            menu:
+                "-Unlock all characters-":
+                    $ snape_unlocked = True
+                    $ tonks_unlocked = True
+                    $ hermione_unlocked = True
+                    $ cho_unlocked = True
+                    $ astoria_unlocked = True
+                    $ susan_unlocked = True
+                    $ luna_unlocked = True
+                    # ginny_unlocked = True
+                    jump cheats
+                "-Unlock all characters wardrobe-":
+                    $ tonks_wardrobe_unlocked = True
+                    $ hermione_wardrobe_unlocked = True
+                    $ cho_wardrobe_unlocked = True
+                    $ astoria_wardrobe_unlocked = True
+                    $ susan_wardrobe_unlocked = True
+                    $ luna_wardrobe_unlocked = True
+                    # ginny_wardrobe_unlocked = True
+                    jump cheats
+                "-Get 100 of all gift items-":
+                    python:
+                        for i in candy_gift_list:
+                            i.number = 100
+                        for i in drink_gift_list:
+                            i.number = 100
+                        for i in mag_gift_list:
+                            i.number = 100
+                        for i in toy_gift_list:
+                            i.number = 100
+                    jump cheats
+                "-Get all scrolls-":
+                    python:
+                        for i in scroll_list_A:
+                            i.unlocked = True
+                        for i in scroll_list_B:
+                            i.unlocked = True
+                        for i in scroll_list_C:
+                            i.unlocked = True
+                        sealed_scroll_ITEM.unlocked = True
+                    jump cheats
+                "-Get all books-":
+                    python:
+                        for i in book_list.read_books:
+                            i.unlocked = True
+                            i.unlockable = False
+                        for i in book_list.write_books:
+                            i.unlocked = True
+                            i.unlockable = False
+                        for i in book_list.fiction_books:
+                            i.unlocked = True
+                            i.unlockable = False
+                    jump cheats
+                "-Get all decorations-":
+                    python:
+                        for i in wall_deco_list:
+                            i.unlocked = True
+                        for i in fireplace_deco_list:
+                            i.unlocked = True
+                        for i in cupboard_deco_list:
+                            i.unlocked = True
+                        for i in misc_deco_list:
+                            i.unlocked = True
+                        for i in misc_hat_list:
+                            i.unlocked = True
+                    jump cheats
 
         "-Never mind-":
             jump day_main_menu
-
-label cheats_init:
-
-    #Update 1.34
-    if not hasattr(renpy.store,'cheats_active') or reset_persistants:
-        label reset_cheats_init:
-
-        $ cheats_active = False
-        $ cheat_reading = False
-
-        $ next_day = False
-        $ skip_duel = False
-        $ skip_to_hermione = False
-        $ skip_after_hermione = False
-
-        #Display Characters Screen
-        $ character_choice = "hermione"
-        $ summoned_character_list = []
-
-        $ display_character_hermione = False
-        $ display_character_luna = False
-        $ display_character_astoria = False
-        $ display_character_susan = False
-        $ display_character_cho = False
-
-        $ display_character_genie = False
-        $ display_character_snape = False
-        $ display_character_tonks = False
-
-        $ display_background = False
-        $ custom_bg_image = "images/rooms/_bg_/main_room_night.png"
-
-    label update_display_characters_summon_list:
-        $ character_summon_list = []
-        if hermione_unlocked:
-            $ character_summon_list.append("hermione")
-        if luna_unlocked:
-            $ character_summon_list.append("luna")
-        if astoria_unlocked:
-            $ character_summon_list.append("astoria")
-        if susan_unlocked:
-            $ character_summon_list.append("susan")
-        if cho_unlocked:
-            $ character_summon_list.append("cho")
-        $ character_summon_list.append("genie")
-        $ character_summon_list.append("snape")
-        if tonks_unlocked:
-            $ character_summon_list.append("tonks")
-        $ character_summon_list.append("bg")
-
-    return

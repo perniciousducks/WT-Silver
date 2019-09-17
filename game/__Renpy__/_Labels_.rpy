@@ -12,6 +12,7 @@ label hide_all_screens:
     call cho_chibi("hide")
     call sna_chibi("hide")
     call ton_chibi("hide")
+    call ast_chibi("hide")
     call gen_chibi("hide")
 
     #CGs
@@ -111,7 +112,6 @@ label hide_characters:
 
 
 label room(room=None, hide_screens=True):
-
     if hide_screens:
         call hide_all_screens
 
@@ -201,22 +201,38 @@ label main_room:
 
 
 label setup_fireplace_hangout(char=None):
-    play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
-    show screen blkfade
 
-    $ fire_in_fireplace = True
+    if not daytime: # Night time
+        play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
+        show screen blkfade
 
-    call hide_characters
-    call gen_chibi("hide")
-    call sna_chibi("hide")
-    call ton_chibi("hide")
-    hide screen chair_right
-    show screen desk
+        $ fire_in_fireplace = True
 
-    show screen fireplace_fire
+        call hide_characters
+        call gen_chibi("hide")
+        call sna_chibi("hide")
+        call ton_chibi("hide")
+        hide screen chair_right
+        show screen desk
+
+        show screen fireplace_fire
+    else: # Daytime
+        stop bg_sounds
+        show screen blkfade
+        
+        $ fire_in_fireplace = False
+        
+        call hide_characters
+        call gen_chibi("hide")
+        call sna_chibi("hide")
+        call ton_chibi("hide")
+        hide screen chair_right
+        show screen desk
+        
+    # Proceed as usual
     if char == "snape":
         show screen with_snape_animated
-    if char == "tonks":
+    elif char == "tonks":
         show screen with_tonks_animated
 
     hide screen bld1
@@ -234,147 +250,6 @@ label reset_menu_position:
     $ menu_y = 0.6
 
     return
-
-
-label reset_day_flags:
-    $ fire_in_fireplace = False
-    $ phoenix_is_fed = False
-    $ phoenix_is_petted = False
-    $ searched  = False #Turns true after you search the cupboard.
-    $ owl_away = False
-
-    # Snape
-    if ss_event_pause > 0:
-        $ ss_event_pause -= 1
-    if ss_summon_pause > 0:
-        $ ss_summon_pause -= 1
-
-    # Tonks
-    if nt_event_pause > 0:
-        $ nt_event_pause -= 1
-    if nt_summon_pause > 0:
-        $ nt_summon_pause -= 1
-    $ gave_tonks_gift    = False
-
-    # Hermione
-    if hg_event_pause > 0:
-        $ hg_event_pause -= 1
-    if hg_summon_pause > 0:
-        $ hg_summon_pause -= 1
-    $ gave_hermione_gift = False
-
-    # Luna
-    if ll_event_pause > 0:
-        $ ll_event_pause -= 1
-    if ll_summon_pause > 0:
-        $ ll_summon_pause -= 1
-    $ gave_luna_gift     = False
-
-    # Cho
-    if cc_event_pause > 0:
-        $ cc_event_pause -= 1
-    if cc_summon_pause > 0:
-        $ cc_summon_pause -= 1
-    $ gave_cho_gift      = False
-
-    # Astoria
-    if ag_event_pause > 0:
-        $ ag_event_pause -= 1
-    if ag_summon_pause > 0:
-        $ ag_summon_pause -= 1
-    $ gave_astoria_gift  = False
-
-    # Susan
-    if sb_event_pause > 0:
-        $ sb_event_pause -= 1
-    if sb_summon_pause > 0:
-        $ sb_summon_pause -= 1
-    $ gave_susan_gift    = False
-
-    # Nicknames
-    call set_random_nicknames
-
-    # Mood
-    if game_difficulty <= 1:   # Easy difficulty
-        $ her_mood -= 3
-        $ lun_mood -= 3
-        $ cho_mood -= 3
-        $ ast_mood -= 3
-        $ sus_mood -= 3
-    elif game_difficulty == 2: # Normal difficulty
-        $ her_mood -= 2
-        $ lun_mood -= 2
-        $ cho_mood -= 2
-        $ ast_mood -= 2
-        $ sus_mood -= 2
-        # Hardcore # Gifting items is required!
-
-    if her_mood < 0:
-        $ her_mood = 0
-    if lun_mood < 0:
-        $ lun_mood = 0
-    if cho_mood < 0:
-        $ cho_mood = 0
-    if ast_mood < 0:
-        $ ast_mood = 0
-    if sus_mood < 0:
-        $ sus_mood = 0
-
-    return
-
-
-
-label reset_day_and_night_flags:
-
-    # Snape
-    if ss_summon_pause == 0:
-        $ snape_busy = False
-    $ chitchated_with_snape = False
-
-    # Tonks
-    if nt_summon_pause == 0:
-        $ tonks_busy = False
-    $ chitchated_with_tonks = False
-
-    # Hermione
-    if hg_summon_pause == 0:
-        $ hermione_busy = False
-    $ chitchated_with_her = False
-    $ hermione_door_event_happened = False
-    $ her_random_number = renpy.random.randint(1, 5) #Used for Map screen. Gets defined once during day and night.
-    call set_her_map_location()
-
-    # Luna
-    if ll_summon_pause == 0:
-        $ luna_busy = False
-    $ chitchated_with_luna = False
-    $ lun_random_number = renpy.random.randint(1, 5) #Used for Map screen. Gets defined once during day and night.
-    call set_lun_map_location()
-
-    # Cho
-    if cc_summon_pause == 0:
-        $ cho_busy = False
-    $ chitchated_with_cho = False
-    $ cho_random_number = renpy.random.randint(1, 5) #Used for Map screen. Gets defined once during day and night.
-    call set_cho_map_location()
-
-    # Astoria
-    if ag_summon_pause == 0:
-        $ astoria_busy = False
-    $ chitchated_with_astoria = False
-    $ ast_random_number = renpy.random.randint(1, 5) #Used for Map screen. Gets defined once during day and night.
-    call set_ast_map_location()
-
-    # Susan
-    if sb_summon_pause == 0:
-        $ susan_busy = False
-    $ chitchated_with_susan = False
-    $ sus_random_number = renpy.random.randint(1, 5) #Used for Map screen. Gets defined once during day and night.
-    call set_sus_map_location()
-
-    return
-
-
 
 label bld(action=None):
     if action == "hide":
@@ -572,7 +447,7 @@ label play_music(music=""):
         play music "music/fuzzball-parade-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["astoria", "astoria_theme"]:
         # Astoria
-        play music "music/fluffing-a-duck-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
+        play music "music/KMcL_OpenThoseBrightEyes.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["susan", "susan_theme"]:
         # Susan
         play music "music/teddy-bear-waltz-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed

@@ -156,7 +156,7 @@ label hg_pf_talk_T1: # Call label
     m "It's nothing, keep going..."
     call her_main("Well, some students are making fun of professor Quirell behind his back...","open","base")
 
-    her "I disapprove of such behavior, of course."
+    her "I disapprove of such behaviour, of course."
     if masturbating:
         m "{size=-4}(Come on! Say something naughty!){/size}"
     else:
@@ -266,7 +266,7 @@ label hg_pf_talk_T2:
 
     if masturbating:
         call her_main("And these two other girls...","annoyed","worriedL")
-        her "There is a rumor that they are actually sleeping with professor snape..."
+        her "There is a rumour that they are actually sleeping with professor snape..."
         m "{size=-4}(Yes... Those nasty \"slytherin\" sluts!){/size}"
         call her_main("Also, there was this one girl who gave a teacher a handjob, right during class...","base","base")
         m "{size=-4}(Yes... This is good stuff, go on!){/size}"
@@ -316,7 +316,7 @@ label hg_pf_talk_T2:
 
 
     else:
-        her "We need to put an end to this behavior, [genie_name]!"
+        her "We need to put an end to this behaviour, [genie_name]!"
         m "Yeah, sure..."
         her "So you agree with me then?"
         her "I think we need to implement a new penalty system to punish girls who are known to sell favours..."
@@ -339,24 +339,41 @@ label hg_pf_talk_T2:
 
 label hg_pf_talk_T3_intro_E1:
 
-    "Dev Note" "Add long intro here."
+    m "Let's have another chat [hermione_name]."
+    call her_main("Okay...","annoyed","worried")
+    m "I'd like you to tell me a bit about your day."
+    call her_main("Are you going to...{w=0.8} touch yourself again sir?","open","suspicious")
+    m "I can't guarantee I won't...."
+    m "You will be awarded your house points as usual."
+    call her_main("...","mad","down", cheeks="blush") #mad Blush
+    m "You've not walked out the door so please, tell me about your day."
 
-    call hg_talk_3
+    call hg_pf_talk_T3
 
     jump end_hg_pf_talk
 
 
 label hg_pf_talk_T3_E1:
+    m "{size=-4}(Unless we spice things up a bit...){/size}"
+    menu:
+        "-Suggest inviting Snape-":
+            pass
+            #To be added
+            # $ hg_pf_talk_snape.start()
+        "-Suggest inviting Tonks-":
+            # Start event chronologically
+            $ hg_pf_talk_tonks.start()
+        "-Decide against it-":
+           
+            m "Tell me about your day [hermione_name]."
+            her "Okay..."
 
-    "Dev Note" "Add short repeated intro here."
-
-    call hg_talk_3
+            call hg_pf_talk_T3
 
     jump end_hg_pf_talk
 
 
-label hg_talk_3:
-
+label hg_pf_talk_T3:
 
     menu:
         "-Start jerking off-":
@@ -368,80 +385,76 @@ label hg_talk_3:
             call gen_chibi("jerking_behind_desk")
             with d3
             pause.8
-
-            call her_main("[genie_name], don't tell me you are...","open","suspicious")
-            call her_main("Masturbating again.....","disgust","suspicious")
+            call her_main("[genie_name], I hoped we wouldn't do this again...","open","suspicious")
+            call her_main(" Are you actually... Masturbating again?","disgust","suspicious")
             m "Me? I'd never do such a thing. Ever..."
-            call her_main("I caught you before, remember?","annoyed","angry")
-            m "Oh right..."
-            m "Anyhow... Don't forget why you are here, [hermione_name]. To earn some points..."
+            m "Anyhow... Don't forget why you're here, [hermione_name]. To earn some points..."
 
         "-Participate in the conversation-":
             $ masturbating = False
-            m "Don't mention it."
+            m "Time to earn those points."
 
-    call her_main("Well, as I was saying...","open","closed")
+    call her_main("Well...","open","closed")
     her "Today started off fairly normal..."
-    her "We had muggle studies."
-    her "Professor Burbage babbled on about things she doesn't understand as usual."
-    her " As I'm a muggle born I've been considering dropping the subject as it's a waste of time."
-    her "Although since I failed that test I feel like I need all the extra points I can get..."
-    her "Her views on muggle and wizarding relations and the fact that we're not that different is also quite refreshing..."
-    her "Not that the Slytherins aren't constantly trying to disrupt her classes..."
+    call her_main("We had muggle studies.","base","base")
+    call her_main("Professor Burbage babbled on about things she doesn't understand as usual.","open","baseL")
+    call her_main("As I'm a muggle born I've been considering dropping the subject. It's a waste of time.","base","base")
+    call her_main("Although since I failed that test I feel like I need all the extra points I can get...","open","down")
+    call her_main("Her views on muggle and wizarding relations and the fact that we're not that different is also quite refreshing...","base","happy")
+    call her_main("Not that the Slytherins aren't constantly trying to disrupt her classes...","annoyed","happyCl")
     if masturbating:
         m "*Hmm* I bet they were...."
-        her "*UGH* Do you have to keep touching yourself professor?"
+        call her_main("*UGH* Do you have to keep touching yourself professor?","disgust","down", cheeks="blush")
         m "Just keep talking [hermione_name]..."
-        her "Fine..."
+        call her_main("Fine...","annoyed","angryL", cheeks="blush")
     else:
         m "Is that so?"
-    m "So, what were they doing exactly?"
-    her "Well, her room is filled with a bunch of muggle toys, instruments and trinkets..."
-    her "Her collection would even bring Mr Weasleys to shame."
+        m "So, what were they doing exactly?"
+        call her_main("Well, her room is filled with a bunch of muggle toys, instruments and trinkets...","open","base")
+        call her_main("Her collection would even bring Mr Weasley's to shame.","base","base")
     if masturbating:
         m "(I bet she has a bunch of sex toys in there...)"
     else:
         m "Maybe I should have a look at her collection myself."
-    her "There's obviously nothing that stands out as odd to me in any way."
-    her "But since most of the Slytherins are pure-blood they were handling her items with little to no care."
-    her "So when they weren't silently insulting her about her views they were constantly making suggestive remarks about the objects asking where she'd insert that one..."
-    her "She's quite oblivious to it most of the time but the constant giggling from the Slytherin girls is very distracting and annoying."
-    her "It didn't help when they discovered what professor Burbage actually believed to be a back massager..."
+    call her_main("There's obviously nothing that stands out as odd to me in any way.","open","base", cheeks="blush")
+    call her_main("But since most of the Slytherins are pure-blood they were handling her items with little to no care.","mad","baseL")
+    call her_main("So when they weren't silently insulting her about her views they were constantly making suggestive remarks about the objects asking where she'd insert that one...","annoyed","worriedL")
+    call her_main("She's quite oblivious to it most of the time but the constant giggling from the Slytherin girls is very distracting and annoying.","open","down", cheeks="blush")
+    call her_main("It didn't help when they discovered what professor Burbage actually believed to be a back massager...","angry","happyCl", cheeks="blush")
     m "I mean, that's what it says on the box..."
-    m "Wait, how do you know what people usually use them for?"
-    her "..."#Blush
-    m "Well?"
-    her "Well, it's obvious to anyone with common sense isn't it!"
-    her "Even those Slytherin girls quickly realised what people use it for... and they're thicker than polyjuice potion!"
+    g4 "Wait, how do you know what people usually use them for?"
+    call her_main("...","disgust","shocked", cheeks="blush")
+    g9 "Well?"
+    call her_main("I...","annoyed","worriedCl", cheeks="blush")
+    call her_main("Well, it's obvious to anyone with common sense isn't it!","open","angryL", cheeks="blush")
+    call her_main("Even those Slytherin girls quickly realised what people use it for... and they're thicker than polyjuice potion!","mad","angryCl", cheeks="blush")
     if masturbating:
         m "(I bet you wouldn't mind nicking it for yourself...)"
     else:
         m "(Poly... what?)"
-    m "Why don't you tell me since you seem to knowledgeable about the subject..."
-    her "Sorry?"
-    m "What do{nw=0.2} people use those massagers for?"
-    her "Well, you know..."
+    g9 "Why don't {size=+4}you{/size} tell me since you seem so knowledgeable about the subject..."
+    call her_main("Sorry?","mad","worried", cheeks="blush")
+    m "What {size=+4}would{/size}{w=0.6} they use those massagers for?"
+    call her_main("Well, you know...","open","down", cheeks="blush")
     m "Pretend that I don't."
-    her "..."
+    call her_main("...","normal","down_raised", cheeks="blush")
 
     if masturbating:
-        her "They use it for what you're doing..."
+        call her_main("They'd use it for what you're doing...","open","worriedCl")
         m "Which is..."
-        her "They insert it... and use it to..."
+        call her_main("Well, you'd insert it...{w=0.5} and use it to...","normal","down", cheeks="blush")
         m "To what?"
-        her "To pleasure themselves..."
+        her "To pleasure yourself..."
         m "And are you using one of these devices?"
-        her "Of... of course I'm not! Muggle electronics doesn't work at Hogwarts!"
+        call her_main("Of...{w=0.5} of course I'm not!{w=0.5} Muggle electronics don't work at Hogwarts!","base","happyCl", cheeks="blush")
         g9 "So you have one at home then?"
-        her "I..."
+        call her_main("I...","normal","down", cheeks="blush")
         g9 "(I knew it, you dirty slut!)"
-        her "I don't have to talk about my personal health to you!"
+        call her_main("I don't have to talk about my personal health to you!","open","angryL", cheeks="blush")
         g9 "I bet you use it any chance you get when nobody is around!"
-        her "I am not!"
-        m "So you do it even when your parents is at home?"
-        her "I don...{nw}"
-
-        g4 "{size=-4}You dirty whore! *Argh!*{/size}"
+        call her_main("I do not!","angry","angry", cheeks="blush")
+        g9 "{size=-4}So you do it even when your parents are at home?{/size}"
+        g4 "{size=-4}You dirty...{w=0.5}*HNGH*...{w=0.5} whore! *Argh!*{/size}"
         call cum_block
         call gen_chibi("cumming_behind_desk")
         with d3
@@ -451,8 +464,10 @@ label hg_talk_3:
         g4 "*Argh!* YES!"
 
         $ her_mood = +7
-        call her_main("[genie_name] did you just..?","disgust","down_raised")
-        call her_main("*Yuck!*...","disgust","glance")
+        call her_main("[genie_name]...{w} did you just..?","disgust","down_raised")
+        call hide_characters
+        call gen_chibi("came_on_desk")
+        call her_main("*Yuck!*...","annoyed","glance")
 
         m "That felt amazing..."
         her "..."
@@ -462,89 +477,333 @@ label hg_talk_3:
         m "I could even go fetch that massager for you if you'd like."
         her "No!"
         m "Oh yeah, you said they don't work at the school..."
-        her "That's not what I meant..."
-        m "Loosen up a bit wont you, I'll figure something out don't you worry..."
-        her "{size=-4}I am not-{/size}"
-
-
-        call hide_characters
-        call gen_chibi("came_on_desk")
-        with d3
-        pause.8
+        call her_main("That's not what I meant...","annoyed","worriedCl")
+        m "Loosen up a bit won't you, I'll figure something out don't you worry..."
+        call her_main("{size=-4}I am not-{/size}","annoyed","worriedCl")
 
         call her_main("(...................)","disgust","worried")
         m "You've done well today [hermione_name]..."
-        her "You've soiled your entire desk!" #Shocked
+        call her_main("You've soiled your entire desk!","mad","wide")
         m "I'm sure it will be cleaned at one point or another..."
-        her "Gross..."
-        her "Can I have my points now?"
+        call her_main("Gross...","normal","worriedCl", cheeks="blush")
+        call her_main("May I have my points now?","open","down", cheeks="blush")
         m "Of course..."
-
-
-
-        # VVV Remove this bit VVV
-        m "[points] to gryffindor-"
-        her "Thanks, [genie_name]..." #Still a bit mad
-        m "-and an extra [points] for opening up to me."
-        her "What?!" #Shocked can't believe it
-        her "Really?" #hesitant smile
-        m "Of course [hermione_name], you've deserved it."
-        her "*Oh*... Okay then, thank you I suppose..."
-        m "Don't mention it."
-        if daytime:
-            m "Now, back to class [hermione_name]."
-            her "Of course!"
-            her "Good day then [genie_name]."
-            m "To you as well [hermine_name]..."
-        else:
-            m "Now, time for bed..."
-            her "What are you..."
-            m "Close the door on your way out wont you..."
-            her "Oh... of course [genie_name]."
-            her "Good night then."
-            m "Good night [hermione_name]"
-
     else:
         m "Yes?"
-        her "They're... they're back massagers, it says so on the box... you said so yourself."
+        call her_main("They're...{w=0.5} they're back massagers, it says so on the box... you said so yourself.","open","worriedL", cheeks="blush")
         m "Then what's the problem with the Slytherin girls having a go with it?"
-        her "Nothing! I'm sure they found it very educational!"
-        her "I had never seen them more interested in muggle studies in fact!"
+        call her_main("Nothing! I'm sure they found it very educational!","angry","worriedCl", cheeks="blush")
+        call her_main("I had never seen them more interested in muggle studies in fact!","disgust","angryL", cheeks="blush")
         m "I bet..."
         m "So, since you're muggle born and all..."
-        her "Yes?"
-        m "I hope you properly demonstrated for them on how to use it."
-        her "What? Why on earth do you think I would do that?"
-        her "You take me for some sort of exhibitionist?"
+        call her_main("Yes?","open","happy")
+        m "I hope you properly demonstrated how to use it to them."
+        call her_main("What? Why on earth do you think I would do that?","shock","wide", cheeks="blush")
+        call her_main("Do you take me for some sort of exhibitionist?","mad","wide", cheeks="blush")
         m "Sorry?"
-        her "Don't you sorry me... you expect me to get my fanny out and casually just shove it in there for the whole class to see?"
-        her "I'm sure they would love that and find it more than educational..."
-        her "How dare you suggest-"
+        call her_main("Don't you sorry me...{w=0.5} you expect me to get my fanny out and casually just shove it in there for the whole class to see?","angry","angry", cheeks="blush")
+        call her_main("I'm sure they would love that and find it more than educational...","base","angryCl", cheeks="blush")
+        with hpunch
+        call her_main("How{w=0.8} {size=+6}dare{/size} you suggest-","open","angry", cheeks="blush")
         m "What are you talking about? Weren't we talking about back massagers?"
-        her "-I'd just tear my clothes of and..." #Scraeming mouth
-        her "..." #Wide eyes
+        call her_main("-I'd just tear my clothes off and...","open","angryCl", cheeks="blush")
+        $ renpy.sound.play("sounds/glass_shatter.mp3")
+        call her_main("...","mad","wide", cheeks="blush")
         her "I...{w} I'm sorry professor!"
         g9 "I didn't take you for such a naughty girl [hermione_name]!"
         g9 "Here we were having an innocent conversation about back massagers and you spring all this on me."
-        her "Professor... I didn't mean."
-        g9 "Don't you professor me..."
-        her "But please, I assure you..."
+        call her_main("Professor... I didn't mean.","soft","worriedCl", cheeks="blush")
+        g9 "Don't you 'Professor' me..."
+        call her_main("But please, I assure you...","open","worried", cheeks="blush")
         m "That will be all for today Miss Granger."
+        m "You've surely opened my eyes..."
+        call her_main("...","annoyed","base")
+    return
+    
+label hg_pf_talk_tonks_T3_intro_E1:
+
+    m "[hermione_name], for todays favour I'd like to bring in a guest to join us."
+    her "What? Didn't we decide it was going to be between just you and I?"
+    m "Well, why only the two of us when there was the option to bring another person in?"
+    her "The option to?"
+    her "Sorry, I'm not following..."
+    m "[hermione_name], what is your opinion of Miss Tonks?"
+    her "Well, she's a very talented witch... You'd have to be to become an auror."
+    m "Wouldn't it be great if we could have another chat with each other?"
+    m "I heard you already had a bit of a talk previously."
+    her "You knew about that?" #worried
+    m "I'm the headmaster [hermione_name]...{w} It's my job to know what goes on within the castle."
+    m "She was the one that suggested you try selling some favours yourself was it not?"
+    her "Well..."
+    m "I think it could be quite nice to have a little conversation all of us together."
+    her "Just a conversation then?"
+    m "Yes, just a conversation..."
+    m "And you'd be awarded points of course."
+    her "..." #Upset mouth #Worried eyes
+    her "Would I be getting any extra points for this?"
+    m "Well, that will be up to Miss Tonks, [hermione_name]."
+    her "Okay..."
+    m "Great, I'll call for her then..."
+    
+    call hg_pf_talk_tonks
+    
+    jump end_hg_pf_talk
+    
+label hg_pf_talk_tonks_T3_E1:
+
+    m "Let's call Miss Tonks up for this one shall we."
+    her "For what?"
+    m "For today's favour of course!"
+    her "..."
+    her "Will I get any extra points for this?"
+    m "Well, that will be up to Miss Tonks, [hermione_name]."
+    her "Fine.."
+    
+    call hg_pf_talk_tonks
+    
+    jump end_hg_pf_talk
+    
+label hg_pf_talk_tonks:
+    
+    her "Hello, Professor Tonks."
+    if daytime:
+        m "Good day, Miss Tonks."
+    else:
+        m "Good evening, Miss Tonks."
+    if daytime:
+        ton "Good day, Professor."
+    else:
+        ton "Good evening, Professor."
+    ton "Hermione..." # Horny
+    ton "Is there some sort of special circumstance as to why the two of you summoned me here?"
+    m "More or less."
+    m "I think the three of us should have a bit of a chat..."
+    ton "Miss Granger, you didn't cause any trouble I hope?"
+    her "Me? Of course not!"
+    m "Now, I thought we could have a chat about these favour trading allegations that you most kindly brought to Miss Tonks' attention." #changed 'think' to 'thought'
+    her "Oh, those..."
+    m "Unless you've suddenly changed your mind on that sort of thing?"
+    her "..."
+    her "No, I'll talk about it if you like..." #Blush
+    ton "..." #Smirk
+    m "Why don't we start with..."
+    menu:
+        "\"Those pesky Slytherin Sluts!\"":
+            ton "Yes, I've heard those Slytherin girls are up to no good..."
+            her "They are! Where do I begin?"
+            # Add option to jerk off here.
+            her "There's the time Tracey Davis gave Slughorn a lapdance, in the middle of class!"
+            ton "In the middle of class?"
+            her "Yes, she was just sitting on his lap while he taught from his desk..."
+            her "But we could all see her moving her hips!"
+            ton "Interesting... Any other incidents?"
+            her "More than I could count!"
+            her "I'm almost certain one of the girls wasn't wearing any underwear in class which is completely unhygienic."
+            her "It was if a snail had dragged themselves across one of the seats." #there was a missing speech mark here, fixed
+            her "I had to insist on staying after class and I spent a good 10 minutes scourgifying everything."
+            ton "Why bother, the elves would've done it anyway."
+            her "About tha...{nw}"
+            ton "Actually, let's save that topic for another time..."
+            ton "Is there anything else you could tell me about these... naughty Slytherin girls?"
+            g9 "..."
+            her "I could go on for hours about the vile things they've been up to..."
+            ton "I'm not in a rush... even if I was it can wait until later."
+            her "Well, that girl...{w=0.3} Pansy Parkinson... She just lets Snape grab her ass whenever he wants for 5 points each time!"
+            ton "Only 5 meagre points?"
+            ton "Now we can't have that can we..."
+            her "I know... It angers me to the core..."
+            her "Everyone has been working so hard towards winning the cup... I have been working so hard..."
+            her "The way it is right now doesn't promote fairness at all."
+            ton "I can see how that could be a problem..."
+            her "It's a huge problem!"
+
+        "\"Yourself, Miss Granger!\"":
+            her "What?!"
+            ton "Yes, I would love to hear a bit more about what's going on with you Miss Granger... once I took the teaching position you and I had a bit of a discussion didn't we?"
+            ton "From what I've been hearing on the Portrait vine you have been selling a few favours yourself to professor Dumbledore here..."
+            her "I have not!"
+            if masturbating:
+                pass
+                #Add writing
+            else:
+                m "She totally has."
+                her "*hmpf!*" # Annoyed
+            ton "Don't be so shy girl, I'm happy that you took my advice to heart... it's also thanks to you that the ministry sent me here."
+            her "I guess..."
+            her "I assure you that I was actually against the practice during the time of sending the letter..."
+            her "At least I was until we had our talk about me trying it out for myself..."
+            her "To help my house catch up in points. Doing it to help Gryffindor..."
+            ton "Well if you can't beat them...."
+            ton "So how has that been working for you so far?"
+            ton "How is morale amongst the Gryffindors, now?"
+            her "It's great! Although I still believe that it isn't fair..."
+            her "That is why I created the \"M.R.M\"!"
+            ton "Yes. The \"Men's Reign Movement\"..."
+            her "But- that's not what \"M.R.M\" stands for!"
+            her "It's the \"Men's Rights Movement\"!"
+            her "I've told you both about it... In detail!"
+            ton "I see, I probably wrote it down and put it somewhere in my... extensive notes folder..."
+            m "*Heh!* It's like looking at myself in a mirror..." # Small text
+            her "(...)" # Annoyed
+            her "The \"M.R.M\" is there to provide male students with the same fairness, righteousness, and just benefits that girls are receiving at the school."
+            her "I felt its creation was necessary..."
 
 
+    her "All this favour trading has been completely unfair to the boys!"
+    ton "Ah, yes... yes."
+    ton "...{w}What?"
+    g9 "..."
+    her "Ugh... I assumed you read through the initial letter more thoroughly..."
+    m "Now, now Miss Granger... Tonks was very quick to get here when she heard about your accusations."
+    her "I suppose..."
+    ton "Wait... So your problem was never that the girls of this school are engaging in illicit, sexual favours with their teachers..."
+    ton "It's that the boys aren't able to do the same?"
+    her "Exactly!"
+    ton "Why didn't you say so during our talk earlier Miss Granger?"
+    ton "I can easily sort out that problem!"
+    her "I did mention it!"
+    ton "Oh..."
+    ton "Hold on..."
+    ton "That doesn't explain as to why you decided to contribute to this problem and do favours for your teachers as well."
+    her "Well..."
+    ton "There is no need for you to keep up an act if you changed your mind on it."
+    ton "You can tell us. I most certainly won't judge you..." # Horny
+    her "I just...{w} Sometimes Gryffindor is just so far behind in points, I also only asked Professor Dumbledore for a favour once or twice..."
+    ton "Oh, I see... and I suppose you're against the idea of doing favours for another teacher?"
+    her "I..." #Hesitant Nervousness
+    her "Ummm... maybe?"
+    her "I haven't actively considered it..."
+    ton "Don't think I'm judging you Miss Granger. I'm sure your house has been ecstatic about the sudden spike in house points."
 
-        # VVV Remvoe this bit VVV
-        m "[points] to Gryffindor."
-        her "But...{w} okay then...{w} Thank you [genie_name]"
-        if daytime:
-            m "Now, back to class [hermione_name]."
-            her "Of course!"
-            her "Good day then [genie_name]."
-            m "To you as well [hermine_name]..."
-        else:
-            m "Now, time for bed..."
-            her "Oh... of course [genie_name]."
-            her "Good night."
-            m "Good night [hermione_name]"
+
+    m "I think we've been trailing a bit off topic here..."
+    ton "Oh yes, perhaps..."
+    m "Miss granger, why don't you tell us more about..."
+    menu:
+        "\"Those pesky Slytherin Sluts!\"":
+            her "What else would you like to know?"
+            m "What other classes do you have here?"
+            her "I'm not sure what you mean professor..."
+            ton "I think what your headmaster is getting at..."
+            ton "Is there any other... uncouth behaviour going on outside of the dungeons? You've only mentioned potions and alchemy class thus far."
+            m "Yes, that!"
+            her "Well of course there is... Even if they might not be as successful with all the teachers there are plenty of filthy tactics being used all over the school..." #replaced 'are' with 'is'
+            m "Such...{w}"
+            ton "Such as?"
+            #You continue stroking cock
+            if cho has had hufflepuff match with hermione commentating:
+                her "It's not even just the Slytherins doing it!"
+                ton "Oh really?"
+                her "Yes, that girl from Ravenclaw... Cho Chang, she was using some pretty dirty tactics during the first Quidditch match of the season!"
+                her "You could clearly see her panties at one point and she was surely dressed that way to distract the other team..."
+                ton "Hmm... sounds like watching Quidditch has gotten a lot more interesting since I was in school."
+                her "I wouldn't use the word interesting to describe it..."
+                ton "I'll make sure to show up to the next match to see what's going on for myself."
+                her "Thank you professor..."
+            elif Slytherin match has happened:
+                her "You're well aware that it's not just Slytherins that has been doing stuff like this..."
+                ton "If you'd like to give an example..."
+                her "I'm talking about Cho Chang!"
+                ton "Ah yes, the Ravenclaw seeker... she's a feisty one isn't she!"
+                her "..."
+                her "Yes, I can't believe I chose to commentate those matches..."
+                ton "If you're having such a problem I'm sure I could step in..."
+                her "..."
+            elif Astoria cast imperio on susan:
+                her "That Astoria girl, casting imperio on a student making her lift her top..."
+                ton "Ah, yes that was unfortunate..."
+                her "I take it that has been dealt with?"
+                ton "Yes, there's no need for you to worry about it miss Granger..."
+                ton "She has been properly reprimanded and both professor Dumbledore and I have taken it upon ourselves to work on her behaviour."
+                if first training done:
+                    m "Yes, it's been quite an experience for both Tonks and I that's for certain..."
+                else:
+                    her "I see..."
+                her "Well, that's good to hear..."
+                her "I would have just handed over her to the authorities if it was me..."
+            else:
+                her "It is quite astonishing to what level those Slytherin would go to get the teachers going..."
+
+            her "Especially that one time during care for magical creatures..."
+            ton "Oh? You weren't studying centaurs were you?"
+            her "No? Why would you assume that?"
+            ton "No reason... please continue..."
+            her "Well, I do hope that Hagrid is above this favour trading business. He sure seems like it during my classes with him."
+            her "One of those Slytherin students was being quite rough with a blast ended skrewt making it go off on purpose..."
+            if masturbating:
+                her "She was slowly moving it up and down only agitating it a bit initially..."
+                m "(Yes I bet you'd love to do that with my cock.)"
+                her "But once she got going you could really see how it could just go off any minute..."
+                m "(Yes, any minute now...)"
+                her "I was just about to call her out on it as it started shaking violently."
+                m "(Yes, any second now...)"
+                ton "Then what happened?"
+                her "I could momentarily see the concerned look on her face as the skrewt exploded right into it..."
+                m "(Yes, take it right on your face you slut!)"
+                # Genie cums
+            else:
+                ton "Now that's fucked up!"
+                her "I know! Finally!"
+                ton "That's not how you're supposed to care for a blast ended skrewt..."
+                ton "Wait, what is a blast ended skrewt actually?"
+                her "It's some crossbreed that Hagrid made... I don't know exactly how he managed it..."
+                ton "Sounds to me that this Hagrid fellow has been doing some illegal breeding..."
+                m "*Ahem*"
+                ton "Although all things considered!"
+                ton "It's probably nothing too bad."
+        "\"Yourself.\"":
+            her "Well..."
+            ton "Yes..."
+            ton "What does our Headmaster ask of you? To earn those house points."
+            g4 "..."
+            ton "..." #Winks
+            her "I..."
+            ton "Go on, I'm sure the Headmaster doesn't mind. My lips are sealed."
+            her "Professor..."
+            m "Miss Granger, your professor asked you a question..."
+            her "But I thought it was supposed to stay between just you and I..."
+            menu:
+                "\"That's true\"":
+                    m "Then let's end it here for today..."
+                    ton "But sir..."
+                    m "Tonks..."
+                    ton "Fine..."
+                    ton "I've thoroughly enjoyed it in any case."
+                    m "Yes."
+                "\"Tonks isn't some kind of snitch\"":
+                    m "I'm sure we can take Miss Tonks by her word."
+                    her "But..."
+                    m "I'm sure Miss Tonks would be happy to provide an additional [points] as you'd basically be providing a favour for us both."
+                    ton "*Hmmm* Oh yes, I'd love to be of help for the Gryffindor house."
+                    her "Okay then, I want an additional [points] in that case."
+                    m "That can be arran..."
+                    ton "Done!"
+                    her "W...What would you like to know about then?"
+                    ton "I'd be happy with anything you'd like to tell me..."
+                    her "Well... it's quite embarrassing."
+                    ton "Yes?" #Horny
+                    her "Well, he made me dance for him..."
+                    ton "Yes... dance..."
+                    ton "And how did that make you feel?"
+                    her "Humiliated!"
+                    ton "And your headmaster, did he enjoy it?"
+                    m "I sure wa...{nw}"
+                    ton "I'm asking miss Granger."
+                    m "Oh, of course!"
+                    her "He did seem to enjoy it."
+                    her "Maybe a bit too much even..."
+                    ton "That just means you did a great job Miss Granger."
+                    ton "Your house surely benefited even more from it."
+                    her "True..."
+                    ton "Well, I do believe we're done here..."
+                    ton "You've done a great job Miss Granger, Gryffindor should be proud."
+                    ton "[Points] to Gryffindor..."
+                    her "Thank you."
+                    m "Yes..."
+
+                #needs writing
+    m "That surely was something Miss Granger..."
+    ton "It was... I'm glad you two called me..." #removed 'on' think it's superfluous here
+    ton "This conversation has been very enlightening."
 
     return

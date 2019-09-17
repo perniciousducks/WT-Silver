@@ -16,6 +16,11 @@ label tonks_hangout:
         hide screen bld1
         with fade
         call bld
+        
+    if daytime:
+        $ temp_txt = "afternoon"
+    else:
+        $ temp_txt = "evening"
 
     # High Priority Events First!
 
@@ -41,15 +46,15 @@ label tonks_hangout:
         $ nt_he_story.start()
 
     label end_tonks_hangout:
-
+            
         call bld
         if ton_friendship < 100:
             $ renpy.play('sounds/win_04.mp3')
             show screen notes
-            ">You spend the evening hanging out with Tonks.\n>Your relationship with her has improved."
+            ">You spend the [temp_txt] hanging out with Tonks.\n>Your relationship with her has improved."
             hide screen notes
         else:
-            ">You spend the evening hanging out with Tonks."
+            ">You spend the [temp_txt] hanging out with Tonks."
         call bld("hide")
 
     if ton_friendship < 100: # max
@@ -208,7 +213,7 @@ label hang_with_tonks_E1:
     call ton_main("And the mortality rate...","upset","base","worried","R")
     call ton_main("If I'd realized the benefits of being a teacher at Hogwarts, I would have signed up straight away!","horny","base","base","ahegao")
 
-    ">You spend the evening by conspiring against Hermione with Tonks..."
+    ">You spend the [temp_txt] conspiring against Hermione with Tonks..."
     ">You feel a faint bond forming between you two..."
 
     $ hang_with_tonks.E1_complete = True

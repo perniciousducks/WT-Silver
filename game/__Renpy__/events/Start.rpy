@@ -1,65 +1,4 @@
 label start_wt:
-    $ daytime = False
-    $ gold = 0
-    $ rum_times = 0 # Counts how many times have you rummaged the cupboard.
-    $ current_payout = 0
-    $ tooltip = None
-
-    ### HERMIONE_MAIN SCREN FLAGS ###
-    $ no_blinking = False #When True - blinking animation is not displayed.
-    $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
-    $ aftersperm = False #Shows cum stains on Hermione's uniform.
-    $ uni_sperm = False #Triggers universal sperm to show on hermione_main screen.
-
-    $ public_whore_ending = False #If TRUE the game will end with "Public Whore Ending".
-
-
-
-    ### EVENTS ###
-
-    $ event09 = False #Turns TRUE when you let Hermione in during hermione_intro_E2. Otherwise she will keep coming every morning.
-    $ event10 = False #Turns TRUE when you let Hermione in during event_10. Otherwise she will keep coming every morning.
-    $ event11_happened = False #Turns TRUE after hermione_intro_E3
-    $ event12_happened = False #Turns TRUE after hermione_intro_E4
-    $ event13_happened = False #Turns TRUE after hermione_intro_E5
-    $ hermione_intro.E6_complete = False #Turns TRUE after hermione_intro_E6
-    $ event15_happened = False #Turns TRUE after hermione_intro_E7
-    $ event16_happened = False #Turns TRUE after event_16
-
-    $ event_chairman_happened = False #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
-    $ snape_against_chairman_hap = False # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
-    $ have_no_dress_hap = False #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
-    $ sorry_for_hesterics = False # Turns TRUE after Hermione comes and apologizes for the day (event) before.
-
-
-    $ slytherin = 180 #Shows amount of points the Slytherin house has.
-    $ gryffindor = 53 #Shows amount of points the Gryffindor house has.
-    $ hufflepuff = 25 #Shows amount of points the Hufflepuff house has.
-    $ ravenclaw = 31 #Shows amount of points the Ravenclaw house has.
-
-    #Duel
-    $ potions = 0 #Amount of healing potions Genie has in stock.
-
-    #Map
-    call reset_map_init
-
-    #Cheats
-    call reset_cheats_init
-
-    #Cupboard
-    $ searched = False #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
-
-    #Books
-    $ found_voucher = False # Turns TRUE after you complete "My Dear Waifu" with the harem ending and "Dahr's voucher" fall out.
-
-    #Clothing
-    $ gave_miniskirt = False #Turns True when Hermione has the miniskirt.
-    $ gave_the_dress = False #Turns True when Hermione has the dress.
-
-
-
-
-
     call play_music("hedwigs_theme")
     show screen blkfade
     with d3
@@ -166,62 +105,10 @@ label start_wt:
     with d7
     pause 1.2
 
-
-    $ day = 0
-
-    ### CHARACTER INIT RESET ###
-    $ reset_persistants = True
-    call reset_genie_base
-    call snape_init
-    call snape_progress_init
-    call reset_hermione_base
-    call reset_hermione_clothing
-    call her_clothing_lists_init #Everything resets here!
-    call her_progress_init #Everything resets here!
-    call luna_init
-    call luna_progress_init
-    call cho_init
-    call cho_progress_init
-    call susan_init
-    call susan_progress_init
-    call astoria_init
-    call astoria_progress_init
-    call tonks_init
-    call tonks_progress_init
-    call store_init
-    call store_items_init
-    call wardrobe_init
-    $ reset_persistants = False
-
-    ### PAPERWORK (MONEY-MAKING) RELATED FLAGS ###
-    $ day_of_week = 0 #Counts days of the week. Everyday +1. When day_of_week = 7 resets to zero.
-    $ report_chapters = 0 #Shows how many chapters of a current report has been completed so far. Resets to zero when report is finished.
-    $ finished_report = 0 #Shows amount of completed reports.
-
-    ###Miscellaneous flags###
-    $ phoenix_is_fed = False #When True the graphic of bird food being displayed on top of the phoenix food can.
-    $ fire_in_fireplace = False #When True there is a fire going in the fireplace.
-
-    #Event - Examine Room
-    $ desk_examined = False #Turns True when you did examine you desk on day one.
-    $ cupboard_examined = False
-    $ bird_examined = False
-    $ door_examined = False
-    $ fireplace_examined = False
-
-    #Map
-    $ inn_intro = True
-    $ pitch_open = True
-    $ attic_open = False
-    $ clothes_store_intro_done = False
-
-    $ tentacle_cosmetic = False
-    $ addicted = False
-
     ### CHEATS / SKIPPING ###
     if skip_to_hermione:
 
-        call update_early_game_vars
+        call skip_to_hermione
 
         $ wine_ITEM.number       += 5
         $ firewhisky_ITEM.number += 5
@@ -310,3 +197,61 @@ label genie_intro_E3:
     $ genie_intro.E3_complete = True
 
     jump main_room
+
+label skip_to_hermione:
+    $ bird_examined = True
+    $ desk_examined = True
+    $ cupboard_examined = True
+    $ door_examined = True
+    $ fireplace_examined = True
+
+    $ achievement.unlock("start", True)
+
+    $ genie_intro.E1_complete = True
+    $ genie_intro.E2_complete = True
+    $ genie_intro.E3_complete = True
+
+    $ snape_intro.E1_complete   = True
+    $ snape_intro.E2_complete   = True
+    $ snape_intro.E3_complete   = True
+    $ snape_intro.duel_complete = True
+    $ snape_intro.E4_complete   = True
+    $ snape_intro.E5_complete   = True
+
+    $ hang_with_snape.E1_complete = True
+    $ hang_with_snape.E2_complete = True
+    $ hang_with_snape.E3_complete = True
+    $ hang_with_snape.E4_complete = True
+    $ hang_with_snape.E5_complete = True
+
+    $ tonks_intro.E1_complete = True
+    $ tonks_intro.E2_complete = True
+    $ tonks_intro.E3_complete = True
+
+    $ hang_with_tonks.E1_complete = True
+
+    $ hermione_intro.E1_complete = True
+    $ hermione_intro.E2_complete = True
+    $ hermione_intro.E3_complete = True
+    $ hermione_intro.E4_complete = True
+    $ hermione_intro.E5_complete = True
+    $ hermione_intro.E6_complete = True
+
+    $ letter_hg_1.mailRead()
+    $ letter_hg_2.mailRead()
+    $ letter_min_work.mailRead()
+    $ letter_min_report.mailRead()
+    $ letter_min_favors.mailRead()
+
+    $ snape_unlocked = True
+    $ achievement.unlock("unlocksna", True)
+
+    $ tonks_unlocked = True
+    $ achievement.unlock("unlockton", True)
+
+    $ hermione_unlocked = True
+    $ achievement.unlock("unlockher", True)
+    $ tutoring_hermione_unlocked = True
+    $ hermione_favors = True
+
+    return

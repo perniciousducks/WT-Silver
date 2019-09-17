@@ -106,8 +106,7 @@ label summon_hermione:
 
         # Gifts
         "-Gifts-" if not gave_hermione_gift:
-            $ current_category = None
-            jump hermione_gift_menu
+            call expression 'gift_menu' pass (return_label="hermione_requests")
 
         "{color=#858585}-Gifts-{/color}" if gave_hermione_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."
@@ -419,7 +418,6 @@ label hermione_talk:
 
         # About Luna.
         "-Ask for a new student-" if hat_known and not luna_known:
-            call luna_init
             $ luna_known = True
             jump hat_intro_2
 

@@ -167,7 +167,7 @@ label whose_points:
 
     m "Go ahead..."
 
-    call ast_main("Things that you would not share with your classmates... but would share with dumby.")
+    call ast_main("Things that you would not share with your classmates... but would share with.. how you call him again.. ah yes, \"[lun_genie_name]\".")
     hide screen astoria_main
     with d3
 

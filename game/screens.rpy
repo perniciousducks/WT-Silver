@@ -8,7 +8,7 @@
 # http://www.renpy.org/doc/html/screen_special.html#say
     
 screen say(who, what, side_image=None):
-    zorder 6 #Otherwise the character sprite would be obscuring it.
+    zorder 30 #Otherwise the character sprite would be obscuring it.
     
     if side_image:
         add side_image yalign 1.0 yanchor 1.0
@@ -90,17 +90,14 @@ screen choice(items):
                     text caption style "menu_caption"
     zorder 7
 
-init -2:
-    $ config.narrator_menu = True
+style menu_window is default
 
-    style menu_window is default
+style menu_choice is button_text:
+    clear
 
-    style menu_choice is button_text:
-        clear
-
-    style menu_choice_button is button:
-        xminimum int(config.screen_width * 0.75)
-        xmaximum int(config.screen_width * 0.75)
+style menu_choice_button is button:
+    xminimum int(config.screen_width * 0.75)
+    xmaximum int(config.screen_width * 0.75)
 
 
 ##############################################################################
@@ -272,14 +269,9 @@ screen main_menu():
             text "We have detected old unusable files in your game folder,\nplease close the game and perform a clean installation." xalign 0.5 xanchor 0.5 ypos 250 color "#FFF"
             textbutton "{size=+30}Quit{/size}" action Quit(confirm=False) xalign 0.5 xanchor 0.5 yalign 0.9
 
-
-init -2:
-
-    # Make all the main menu buttons be the same size.
-    style mm_button:
-        size_group "mm"
-
-
+# Make all the main menu buttons be the same size.
+style mm_button:
+    size_group "mm"
 
 # Extras
 screen extras():
@@ -302,9 +294,6 @@ screen extras():
         if persistent.game_complete:
             textbutton _("Gallery") action Start("gallery")
         textbutton _("Return") action Start("assmenu") # Sent here from "EXTRAS" menu. Basically just jumps to the title screen.
-
-init -2 python:
-    style.gm_nav_button.size_group = "gm_nav"
 
 ##############################################################################
 # Navigation
@@ -334,11 +323,9 @@ screen navigation():
         #textbutton _("Help") action Help()
         textbutton _("Quit") action Quit()
 
-init -2:
-
-    # Make all game menu navigation buttons the same size.
-    style gm_nav_button:
-        size_group "gm_nav"
+# Make all game menu navigation buttons the same size.
+style gm_nav_button:
+    size_group "gm_nav"
 
 ##############################################################################
 # Save, Load
@@ -416,9 +403,9 @@ screen file_picker():
                                 yfill True
                                 ymaximum 50
                                 action FileDelete(i, persistent.delwarning)
-                            text "[file_name]. [file_time!t]\n[save_name!t]" xpos -40 yalign 0.5
+                            text "[file_name]. [file_time!t]\n[save_name!t]" xpos -40 yalign 0.5 style "night_text"
                         else:
-                            text "[file_name]. [file_time!t]" xoffset 1
+                            text "[file_name]. [file_time!t]" xoffset 1 style "night_text"
                             
                         key "save_delete" action FileDelete(i, persistent.delwarning)
                 else:
@@ -442,9 +429,9 @@ screen file_picker():
                                 yfill True
                                 ymaximum 50
                                 action FileDelete(i, persistent.delwarning)
-                            text "[file_name]. [file_time!t]\n\n{color=#7a0000}NOT COMPATIBLE{/color}" xpos -40 yalign 0.5
+                            text "[file_name]. [file_time!t]\n\n{color=#7a0000}NOT COMPATIBLE{/color}" xpos -40 yalign 0.5 style "night_text"
                         else:
-                            text "[file_name]. [file_time!t]" xoffset 1
+                            text "[file_name]. [file_time!t]" xoffset 1 style "night_text"
                             
                         key "save_delete" action FileDelete(i, persistent.delwarning)
 
@@ -464,12 +451,11 @@ screen load():
 
     zorder 5
 
-init -2:
-    style file_picker_frame is menu_frame
-    style file_picker_nav_button is small_button
-    style file_picker_nav_button_text is small_button_text
-    style file_picker_button is large_button
-    style file_picker_text is large_button_text
+style file_picker_frame is menu_frame
+style file_picker_nav_button is small_button
+style file_picker_nav_button_text is small_button_text
+style file_picker_button is large_button
+style file_picker_text is large_button_text
 
 ##############################################################################
 # Preferences
@@ -658,25 +644,24 @@ screen preferences():
                     textbutton _("Jerk off - [hkey_fap]") action None
     zorder 5
 
-init -2:
-    style pref_frame:
-        xfill True
-        xmargin 5
-        top_margin 5
+style pref_frame:
+    xfill True
+    xmargin 5
+    top_margin 5
 
-    style pref_vbox:
-        xfill True
+style pref_vbox:
+    xfill True
 
-    style pref_button:
-        size_group "pref"
-        xalign 1.0
+style pref_button:
+    size_group "pref"
+    xalign 1.0
 
-    style pref_slider:
-        xmaximum 192
-        xalign 1.0
+style pref_slider:
+    xmaximum 192
+    xalign 1.0
 
-    style soundtest_button:
-        xalign 1.0
+style soundtest_button:
+    xalign 1.0
 
 ##############################################################################
 # Yes/No Prompt
@@ -716,14 +701,12 @@ screen confirm(message, yes_action, no_action):
     key "game_menu" action no_action
     zorder 6
 
-init -2:
-    style yesno_button:
-        size_group "yesno"
+style yesno_button:
+    size_group "yesno"
 
-    style yesno_label_text:
-        text_align 0.5
-        layout "subtitle"
-
+style yesno_label_text:
+    text_align 0.5
+    layout "subtitle"
 
 ##############################################################################
 # Quick Menu
@@ -765,18 +748,17 @@ screen quick_menu():
             textbutton _("Auto") action Preference("auto-forward", "toggle") activate_sound "sounds/click3.mp3"
             textbutton _("Prefs") action ShowMenu('preferences') activate_sound "sounds/click3.mp3"
 
-init -2:
-    style quick_button:
-        is default
-        background None
-        xpadding 8
-        ypadding 8
+style quick_button:
+    is default
+    background None
+    xpadding 8
+    ypadding 8
 
-    style quick_button_text:
-        is default
-        size 10
-        idle_color "#8888"
-        hover_color "#ccc"
-        selected_idle_color "#cc08"
-        selected_hover_color "#cc0"
-        insensitive_color "#4448"
+style quick_button_text:
+    is default
+    size 10
+    idle_color "#8888"
+    hover_color "#ccc"
+    selected_idle_color "#cc08"
+    selected_hover_color "#cc0"
+    insensitive_color "#4448"

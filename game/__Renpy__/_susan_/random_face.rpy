@@ -93,34 +93,31 @@ label set_sus_face(change=None, mouth=None, eyes=None, brows=None, pupils=None):
 
     return
 
-label susan_face_layers:
-
-    $ sus_mouth_layers  = ["base",
-                           "grin",
-                           "open", "open_tongue", "open_wide",
-                           "scream",
-                           "upset"
-                           ]
-
-    $ sus_eye_layers    = ["base",
-                           "closed",
-                           "eager",
-                           "narrow", "suspicious",
-                           "wide",
-                           "worriedCl"
-                           ]
-
-    $ sus_brow_layers   = ["angry",
-                           "base",
-                           "worried"
-                           ]
-
-    $ sus_pupil_layers  = ["down",
-                           "L",
-                           "mid",
-                           "R",
-                           "up",
-                           "wide"
-                           ]
-
-    return
+define sus_mouth_layers = [
+    "base",
+    "grin",
+    "open", "open_tongue", "open_wide",
+    "scream",
+    "upset"
+]
+define sus_eye_layers = [
+    "base",
+    "closed",
+    "eager",
+    "narrow", "suspicious",
+    "wide",
+    "worriedCl"
+]
+define sus_brow_layers = [
+    "angry",
+    "base",
+    "worried"
+]
+define sus_pupil_layers = [
+    "down",
+    "L",
+    "mid",
+    "R",
+    "up",
+    "wide"
+]

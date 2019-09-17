@@ -461,13 +461,13 @@ label tonks_intro_E3:
     m "I'm what you would call a \"free\" Genie..."
     call ton_main("So? What happened to him?","upset","base","raised","mid")
     m "I believe we traded places when one of my magical inventions went wrong..."
-    call ton_main("Really?! Is he okay?","open","base","base","mid") #'you don't say' is a typically sarcastic phrase, so I prefer to use something else
+    call ton_main("Really?! Is he okay?","open","base","base","mid")
     m "I think so.{w} He travelled to my universe, and I’m stuck in this dull place..."
     m "Believe me, there are a lot more brothels in Agrabah.{w} I bet he's having the time of his life..."
     call ton_main("So, you just poofed in here and decided to turn this school into your own private brothel...","open","base","angry","mid")
     call ton_main("Because you were bored?!","upset","base","angry","mid")
     m "Hey! I'm an immortal being... boredom is my worst enemy."
-    m "And I didn’t do much, just a nudge in the right direction..." #adding the 'at the very best' takes away the punch of the line
+    m "And I didn’t do much, just a nudge in the right direction..."
     call ton_main("You need to bring him back, the real Dumbledore, immediately!","angry","base","angry","mid", hair="angry")
     m "I don't know how,... yet.{w} We’re still working on it..."
     call ton_main("We? Who else knows about this?","angry","base","worried","R")
@@ -480,7 +480,7 @@ label tonks_intro_E3:
     m "(...)"
     call ton_main("He's a very skilled liar, I'll give him that.","upset","base","angry","down")
     m "Are you going to lock us up now?"
-    call ton_main("Locking you up is the least of what you deserve!","open","base","angry","mid")
+    call ton_main("I very well should! It would be the moral thing to do.","open","base","angry","mid")
     m "(Shit...)"
     call ton_main("You and Professor Snape should be locked in Azkaban for what you’ve done...","angry","base","angry","mid")
     call ton_main("And stay there for the rest of your lives...","open","base","angry","mid")
@@ -498,12 +498,12 @@ label tonks_intro_E3:
     call gameover(fake=True)
     # back from game over
 
-    stop music fadeout 0.5
+    stop music fadeout 1.5
     $ renpy.play('sounds/scratch.wav')
     with hpunch
     call ton_main("Unless...", "upset","base","angry","R")
 
-    m "Unless what?"
+    g4 "Unless?"
     call play_music("tonks_theme")
     call ton_main("You let me join in on the fun!","base","base","raised","mid", hair="horny")
     m "..."

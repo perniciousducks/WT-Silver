@@ -53,9 +53,10 @@ label gameover(fake=False):
         $ renpy.pause(12, hard=True)
         
         hide screen credits_screen
-        with d1
+        with None
         
-        return
+    hide screen gameover
+    return
         
 screen cartoon_zoom():
     tag gameover

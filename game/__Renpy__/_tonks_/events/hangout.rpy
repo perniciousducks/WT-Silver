@@ -273,35 +273,21 @@ label hang_with_tonks_E3:
     m "Education isn't meant to be enjoyable."
     call ton_main("It's not that, she's being bullied by the other students apparently...","open","base","sad","R")
     m "For what reason?"
-<<<<<<< Updated upstream
     call ton_main("For being shy,...insecure,...","upset","closed","base","mid")
-    call ton_main("She's the whole package...","upset","base","worried","mid")
-    m ".................."
-    call ton_main("She's also getting mocked because of her {b}massive tits!{/b}","upset","base","base","mid")
+    m "About what?"
+    call ton_main("About her massive tits!","upset","base","base","mid")
     g4 "!!!"
     m "Why would she be insecure about that?"
-    g9 "Surely that's something to be {b}massively proud{/b} of!"
+    g9 "Surely that's something to be {b}massively proud{/b} of!" # or "Surely that's something any girl would kill for."
     call ton_main("That's what I said...","open","closed","base","mid")
     call ton_main("She didn't seem to think I was being genuine.","upset","base","worried","down")
-    m "I assume they are all just jealous of her?"
+    m "I assume they are all just jealous of her?" # or "I suppose their jealousy could be interpreted as bullying..."
     call ton_main("Naturally... Even I'm jealous of those {b}milk-bags{/b} of hers!","open","base","angry","mid")
     g9 "I definitely need to see them!"
     call ton_main("That being said, I'm quite worried about her...","open","closed","worried","mid")
     call ton_main("Lately she's been too shy to even answer the simplest of questions during my class.","open","base","sad","R")
     call ton_main("She's lost quite a few points for her house that way.","upset","base","sad","mid")
     call ton_main("Not in my lessons, of course. I'd never take points from \"Hufflepuff!\"","upset","base","worried","down")
-=======
-    ton "For being shy,...insecure,..." #"she's the whole package" didn't make sense here
-    m "About what?"
-    ton "About her massive tits!"
-    g4 "!!!"
-    m "Why would she be insecure about that? Surely that's something any girl would kill for."
-    ton "That's what I said..."
-    ton "She didn't seem to think I was being genuine."
-    m "I suppose their jealousy could be interpreted as bullying..."
-    ton "For sure... her insecurities might've brought some actual bullying her way as well, since she's too shy to answer any questions teachers ask her."
-    ton "She's lost quite a few points for her house that way."
->>>>>>> Stashed changes
     g9 "Just send her my way and I'll drown her in house-points!"
     m "And show her that her bod-..."
     g4 "*Ahem!* Show her that she's appreciated..."
@@ -313,16 +299,9 @@ label hang_with_tonks_E3:
     call ton_main("I can teach him a thing or two about sharing - if you'd like...","horny","base","base","mid")
     call ton_main("The more the merrier in my opinion...","smile","happyCl","base","mid")
     m "You don't mean Snape and I..."
-<<<<<<< Updated upstream
     call ton_main("Of course not, don't be silly!","base","happyCl","base","mid")
-    m ".................."
     call ton_main("Maybe he's afraid you'd steal them from him if you got the chance...","horny","base","angry","mid")
-    m "I have my doubts those girls he's talking about even exit..."
-=======
-    ton "Of course not, don't be silly!"
-    ton "Maybe he's afraid you'd steal them from him if you got the chance..."
     m "I have my doubts those girls he's talking about even exist..."
->>>>>>> Stashed changes
     m "But don't tell him I said that."
     call ton_main("I shall talk to Miss Bones.","open","closed","base","mid")
 

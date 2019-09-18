@@ -142,7 +142,7 @@ label t_wardrobe(return_label, char_label):
         menu:
             "Export to PNG file" if not renpy.variant('android'):
                 $ export_in_progress = True
-                $ cho_outfit_last.save()
+                $ globals()[active_girl+"_outfit_last"].save()
                 $ char_active.equip(_return[1])
                 $ item_to_export = _return[1]
                 call expression 'studio' pass (studio_return=return_label, studio_char=char_label)
@@ -156,9 +156,9 @@ label t_wardrobe(return_label, char_label):
             "Import from PNG file" if not renpy.variant('android'):
                 $ txt_filename = "exported"
                 $ txt_filename = renpy.input("Filename", txt_filename, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#& ", length=64)
-                $ cho_outfit_custom.outfit_import(True, txt_filename)
+                $ globals()[active_girl+"_outfit_custom"].outfit_import(True, txt_filename)
             "Import from clipboard":
-                $ cho_outfit_custom.outfit_import(False)
+                $ globals()[active_girl+"_outfit_custom"].outfit_import(False)
             "Back":
                 pass
         $ menu_items = char_active.outfits

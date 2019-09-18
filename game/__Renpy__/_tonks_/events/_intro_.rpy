@@ -440,6 +440,7 @@ label tonks_intro_E3:
 
     call ton_main("","open","wide","wide","wide", xpos="right", ypos="base")
     m "(...)"
+    $ renpy.music.play("music/Under-the-Radar by PhobyAk.mp3")
     call ton_main("No way!","open","base","base","mid")
     m "What just happened?"
     call ton_main("What... are you...?","open","base","worried","down")
@@ -448,7 +449,6 @@ label tonks_intro_E3:
     g4 "(This witch knows her shit!)"
     m "..."
 
-    call play_music("tonks_theme")
     g9 "Some people would say I'm \"the\" Genie, actually!"
     m "The most powerful being in the entire universe... Multiple universes even...."
     m "Glad my reputation precedes me..."
@@ -497,7 +497,7 @@ label tonks_intro_E3:
     $ renpy.play('sounds/level_failed.mp3')
     show screen cartoon_zoom
     g4 "...{w=6.0}{nw}"
-    call gameover(fake=True)
+    call gameover()
     # back from game over
 
     stop music fadeout 1.5

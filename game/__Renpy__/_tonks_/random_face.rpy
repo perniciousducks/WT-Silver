@@ -20,7 +20,7 @@ label set_ton_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
         elif hair in ("annoyed"):
             $ target_color =  [[ 228.0, 93, 34, 255]] # orange
         elif hair in ("happy"):
-            $ target_color =  [[240, 240, 50, 255]] # yellow
+            $ target_color = [[255, 213, 23, 255]] # yellow
         elif hair in ("disgusted"):
             $ target_color =  [[111, 205, 75, 255]] # green
         elif hair in ("sad"):

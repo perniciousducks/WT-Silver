@@ -521,12 +521,7 @@ default hg_unlockable_clothing_sets_list = [
 ]
 
 # Luna Outfits
-default ll_pyjama_ITEM = costume_class(
-    id="ll_pyjama", name="Pyjama", type="outfit", items=["outfit"],
-    cost=40, wait_time=1, image="outfits/ll_pyjama", description=">A quirky pyjama for a quirky girl.",
-    # Layers
-    outfit_layers = ["bottoms/pants_pyjama","tops/top_pyjama"]
-)
+
 default ll_stewardess_ITEM = costume_class(
     id="ll_stewardess", name="Stewardess Outfit", type="outfit", items=["outfit","hat","neckless","thong"],
     cost=80, wait_time=2, image="outfits/ll_stewardess", description=">For immediate access into the mile-high club!",
@@ -547,9 +542,7 @@ default ll_dress_orange_ITEM = costume_class(
     outfit_layers = ["stockings/leggings_1","onepieces/onepiece_ball_dress","piercings/ears_starts_1"]
 )
 
-default luna_outfits_list = [
-    ll_pyjama_ITEM,
-]
+default luna_outfits_list = []
 default luna_costumes_list = [
     ll_stewardess_ITEM,
     ll_stewardess_short_ITEM,

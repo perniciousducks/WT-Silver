@@ -76,7 +76,7 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
         elif hair in ("orange", "upset", "annoyed"):
             $ target_color = [[228, 93, 34, 255]]
         elif hair in ("yellow", "happy", "cheerful"):
-            $ target_color = [[240, 240, 50, 255]]
+            $ target_color = [[255, 213, 23, 255]]
         elif hair in ("green", "disgusted"):
             $ target_color = [[111, 205, 75, 255]]
         elif hair in ("blue", "sad"):

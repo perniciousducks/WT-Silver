@@ -247,8 +247,7 @@ default ll_favor_list = []
 
 # Luna Lists
 default luna_arms_up_list  = [
-    "top_cheer_r",
-    "ll_pyjama",
+    "top_cheer_r"
 ]
 
 # Stats

@@ -31,9 +31,9 @@ init -1 python hide:
     config.nearest_neighbor = False # Disable pixel art filtering
 
     # Image cache
+    config.cache_surfaces = True # Use image cache
     # config.image_cache_size = 32 # Number of screens worth of images in cache
     config.image_cache_size_mb = 1024 # Image cache size in megabytes
-    config.cache_surfaces = True # Cache often used images to RAM False = use VRAM instead
     config.load_before_transition = True # Preload assets (images, sounds etc.) before transition
 
     # Sound

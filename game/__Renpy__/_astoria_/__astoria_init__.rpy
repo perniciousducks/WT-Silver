@@ -47,15 +47,7 @@ default ast_affection      = 0 # Affection level with Tonks.
 default ast_mood           = 0
 
 # Events
-default hermione_on_the_lookout     = False
-default hermione_finds_astoria      = False
-default snape_on_the_lookout        = False
-default tonks_intro_happened        = False
-default spells_unlocked             = False
 default snape_gave_spellbook        = False
-default third_curse_got_cast        = False
-default astoria_book_intro_happened = False
-default astoria_intro_completed     = False
 
 default ast_seen_lun_sex = False
 
@@ -136,15 +128,7 @@ label reset_astoria_progress:
         "ast_mood",
 
         # Events
-        "hermione_on_the_lookout",
-        "hermione_finds_astoria",
-        "snape_on_the_lookout",
-        "tonks_intro_happened",
-        "spells_unlocked",
         "snape_gave_spellbook",
-        "third_curse_got_cast",
-        "astoria_book_intro_happened",
-        "astoria_intro_completed",
         "ast_seen_lun_sex",
 
         # Event objects

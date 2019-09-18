@@ -8,9 +8,6 @@ label night_start:
 
     label night_resume:
 
-    # Play a theme
-    call play_music("night_theme")
-    
     # Favors
     python:
         for i in nt_requests_list:

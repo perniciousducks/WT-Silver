@@ -93,9 +93,11 @@ label astoria_intro_E1:
                     m "It's harmless, I swear..."
                     call ton_main(".............","upset","base","angry","R")
                     call ton_main("Very well...","open","closed","base","mid")
+                    pause.2
 
                     # Tonks walks over.
-                    call chibi_walk_desk_blkfade("tonks")
+                    show screen blkfade
+                    with d3
 
                     # Genie and Tonks stand behind the desk.
                     $ gen_chibi_zorder = 1
@@ -105,7 +107,7 @@ label astoria_intro_E1:
                     show screen chair_left
                     show screen desk
                     hide screen blkfade
-                    with d3
+                    with fade
                     pause.8
 
                     call bld
@@ -141,7 +143,7 @@ label astoria_intro_E1:
                     $ gen_chibi_zorder = 2 # Default
                     $ ton_chibi_zorder = 3 # Default
                     call gen_chibi("sit_behind_desk")
-                    call ton_chibi("stand","mid","base")
+                    call ton_chibi("stand","desk","base")
 
                     hide screen blkfade
                     call ton_main("","upset","base","base","mid", xpos="mid", ypos="base", trans="fade")
@@ -190,7 +192,6 @@ label astoria_intro_E1:
                     call ton_main("Now, here is what I'll require your help with...","open","closed","base","mid")
 
                     # TODO: Add poster and weasly show unlock.
-    # TODO: Add hidden achievement called "Follow the script!" and unlock it if you jerk off after this scene. Maybe add some Susan smut writing for the jerk-off session?
 
     call ton_main("This girl I've told you about, Susan Bones?","open","base","base","mid")
     call ton_main("The one with-","open","base","base","R")
@@ -268,6 +269,8 @@ label astoria_intro_E1:
     m "And Granger..."
     g9 "Or I could jerk-off instead!" # Achievement if you do, maybe?
     g9 "Yes that seems like a good idea right now!"
+
+    # TODO: Add hidden achievement called "Follow the script!" and unlock it if you jerk off after this scene. Maybe add some Susan smut writing for the jerk-off session?
 
     $ tonks_busy = True
     $ astoria_intro.E1_complete = True

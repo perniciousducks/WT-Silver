@@ -557,6 +557,8 @@ label hermione_intro_E3:
 # Hermione complains that she did fail the test. (EVENING EVENT!)
 
 label hermione_intro_E4:
+    stop music fadeout 1.0
+
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call bld
@@ -609,6 +611,8 @@ label hermione_intro_E4:
 # Tutoring unlocked!
 
 label hermione_intro_E5:
+    stop music fadeout 1.0
+
     call her_walk(action="enter", xpos="desk", ypos="base", speed=2.8)
 
     call play_music("chipper_doodle")
@@ -707,8 +711,9 @@ label hermione_intro_E5:
 # Hermione comes and asks to buy a favour from her.
 
 label hermione_intro_E6:
-    call play_sound("knocking")
+    stop music fadeout 1.0
 
+    call play_sound("knocking")
     "*Knock-knock-knock!*"
 
     menu:
@@ -753,6 +758,7 @@ label hermione_intro_E6:
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=3)
 
+    call play_music("day_theme")
     call her_main("Good day, professor...","soft","baseL", xpos="base", ypos="base")
     her "........................"
     call her_main("........................","annoyed","worriedL")

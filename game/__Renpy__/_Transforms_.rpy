@@ -56,6 +56,11 @@ transform cho_walk_trans(x, x2, y, y2):
     ypos y
     linear cho_speed xpos x2 ypos y2 # linear
 
+transform ast_walk_trans(x, x2, y, y2):
+    xpos x
+    ypos y
+    linear ast_speed xpos x2 ypos y2 # linear
+
 transform chibi_fly_idle:
     subpixel True
 

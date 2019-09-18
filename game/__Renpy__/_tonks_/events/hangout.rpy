@@ -16,7 +16,7 @@ label tonks_hangout:
         hide screen bld1
         with fade
         call bld
-        
+
     if daytime:
         $ temp_txt = "afternoon"
     else:
@@ -46,7 +46,7 @@ label tonks_hangout:
         $ nt_he_story.start()
 
     label end_tonks_hangout:
-            
+
         call bld
         if ton_friendship < 100:
             $ renpy.play('sounds/win_04.mp3')
@@ -203,7 +203,7 @@ label hang_with_tonks_E1:
     m "That would indeed be very helpful. She's stubborn in that regard."
     call ton_main("You don't have to tell me. She's been lecturing me about those \"sexual favours\" since the very day I got here...","open","base","base","R")
     call ton_main("But I shouldn't complain about that...","base","base","base","mid")
-    call ton_main("Hearing those naughty words spill out of her gorgeous little mouth really gets me going!","horny","base","base","ahegao")
+    call ton_main("Hearing those naughty words spill out of her gorgeous little mouth really gets me going!","horny","base","base","ahegao", hair="horny")
     g9 "I can imagine so."
     call ton_main("When she describes all the wrong-doings of those filthy \"Slytherin girls\"...","open","base","angry","mid")
     call ton_main("How can I possibly get tired of that!","base","base","base","mid")

@@ -25,7 +25,7 @@ label ag_se_imperio_sb: # Move label
 label ag_st_imperio_E1:
     call play_sound("door")
     call ton_chibi("stand","desk","base")
-    # call ast_chibi("stand","desk","base") # Make sure it's slightly to the left of Tonks' chibi.
+    call ast_chibi("stand","500","base") # Make sure it's slightly to the left of Tonks' chibi.
     with d3
     pause.8
 
@@ -117,7 +117,7 @@ label ag_st_imperio_E1:
     call ast_main("I need to tell her to do something... or...","open","base","worried","mid")
     call ast_main("I don't know... Maybe say something?","clench","base","base","L")
     call ton_main("*Hmmm*... Something...","base","base","worried","ahegao")
-    call ast_main("","smile","base","base","L")
+    call ast_main("!!!","smile","base","base","L")
     m "What?"
     call ast_main("She did it!","smile","base","base","L")
     g4 "Something what?"
@@ -187,7 +187,7 @@ label ag_st_imperio_E1:
     call ast_main("........................","annoyed","base","angry","R")
     call ton_main("Have a good night, Professor.","base","base","base","mid")
 
-    call ton_walk(xpos="door", ypos="base", speed=2)
+    call ton_walk(xpos="door", ypos="base", speed=2.5)
     call ton_chibi("stand","door","base", flip=False)
     with d3
     pause.2
@@ -196,9 +196,10 @@ label ag_st_imperio_E1:
     call ast_main(".................................................","annoyed","base","base","down", ypos="head")
 
     # They both leave.
-    #call ast_walk(action="leave", speed=2.5)
+    call ast_walk(xpos="680", ypos="base", speed=2)
 
     call play_sound("door")
+    call ast_chibi("hide")
     call ton_chibi("hide")
     with d3
 
@@ -208,7 +209,7 @@ label ag_st_imperio_E1:
 label ag_st_imperio_E2:
     call play_sound("door")
     call ton_chibi("stand","desk","base")
-    # call ast_chibi("stand","desk","base") # Make sure it's slightly to the left of Tonks' chibi.
+    call ast_chibi("stand","500","base") # Make sure it's slightly to the left of Tonks' chibi.
     with d3
     pause.8
 
@@ -418,10 +419,11 @@ label ag_st_imperio_E2:
             call ton_main("After you, Astoria.","open","base","base","L", ypos="head")
             call ast_main("...........................","upset","base","base","L", ypos="head")
 
-            # They both leave
-            #call ast_walk(action="leave", speed=2.5)
+            # They both leave.
+            call ast_walk(xpos="680", ypos="base", speed=2)
 
             call play_sound("door")
+            call ast_chibi("hide")
             call ton_chibi("hide")
             with d3
 
@@ -498,8 +500,9 @@ label ag_st_imperio_E2:
 
             # They both leave
             call play_sound("door")
-            # Call ast_chibi("leave")
+            call ast_chibi("leave")
             call ton_chibi("leave")
+            with d3
 
             call bld
             m "And they say I'm the big, bad pervert..."

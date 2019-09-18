@@ -4,7 +4,7 @@
 
 label tonks_hangout:
 
-    call setup_fireplace_hangout(char="tonks")
+    call setup_fireplace_hangout(char="tonks")##
 
     $ nt_he_counter += 1
     if firewhisky_ITEM.number >= 1:
@@ -278,10 +278,10 @@ label hang_with_tonks_E3:
     call ton_main("About her massive tits!","upset","base","base","mid")
     g4 "!!!"
     m "Why would she be insecure about that?"
-    g9 "Surely that's something to be {b}massively proud{/b} of!" # or "Surely that's something any girl would kill for."
+    g9 "Surely that's something most girls would kill for!" #the pun sucks sorry, "massively proud" doesn't make sense
     call ton_main("That's what I said...","open","closed","base","mid")
     call ton_main("She didn't seem to think I was being genuine.","upset","base","worried","down")
-    m "I assume they are all just jealous of her?" # or "I suppose their jealousy could be interpreted as bullying..."
+    m "They're probably just jealous of her." 
     call ton_main("Naturally... Even I'm jealous of those {b}milk-bags{/b} of hers!","open","base","angry","mid")
     g9 "I definitely need to see them!"
     call ton_main("That being said, I'm quite worried about her...","open","closed","worried","mid")

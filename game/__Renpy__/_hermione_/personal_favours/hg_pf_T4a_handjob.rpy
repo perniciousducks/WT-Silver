@@ -397,12 +397,12 @@ label hg_pf_handjob_1:
 
             $ renpy.play('sounds/kiss.mp3')
             call hg_chibi_transition("hj_kiss", trans="kissiris")
-            pause 2
-
-            # T4 Trigger - "First Kiss"
-            $ hg_handjob.trigger = True
-            $ achievement.unlock("herkiss")
             pause 1
+
+            if hg_kiss.trigger == False:
+                $ achievement.unlock("herkiss")
+            $ hg_kiss.triggered() # .trigger = True, .counter += 1
+            pause 2
 
             call nar(">Hermione gives the tip of your engorged cock a tender kiss.")
 

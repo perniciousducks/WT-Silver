@@ -4,12 +4,6 @@ label common_start:
     call hide_all_screens
     show screen blkfade
 
-    # Play a theme
-    if daytime:
-        call play_music("day_theme")
-    else:
-        call play_music("night_theme")
-
     # Set interface color
     if not persistent.nightmode and daytime:
         $ interface_color = "gold"
@@ -192,7 +186,7 @@ label update_day_values:
     if clothing_mail_item != None:
         $ clothing_mail_timer -= 1
 
-        if clothing_mail_timer <= 1:
+        if clothing_mail_timer <= 0:
             $ package_is_here = True
 
     return

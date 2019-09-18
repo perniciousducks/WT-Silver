@@ -131,7 +131,7 @@ label hg_pf_sex_T1_intro_E3:
     call her_main("I do....","angry","down_raised")
     stop music fadeout 1.0
 
-    call her_walk_desk_blkfade
+    call chibi_walk_desk_blkfade("hermione")
 
     call hg_chibi_transition("admire_ass", flip=True, trans="fade")
     pause.5
@@ -188,7 +188,7 @@ label hg_pf_sex_T1_E3: # repeats
 
 label hg_sex_1:
     stop music fadeout 1.0
-    call her_walk_desk_blkfade
+    call chibi_walk_desk_blkfade("hermione")
 
     call hg_chibi_transition("grope_ass", flip=True, trans="fade")
     pause.5

@@ -125,8 +125,10 @@ label person_is_busy:
     else:
         m "Seems like she's already asleep."
     return
-
-
+    
+label spell_not_known:
+    call nar("You haven't unlocked this spell yet.")
+    return
 
 label astoria_talk:
     menu:

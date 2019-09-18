@@ -31,7 +31,7 @@ label hg_pf_admire_breasts_transition:
     call her_chibi("stand","mid","base")
     pause.2
 
-    call her_walk_desk_blkfade
+    call chibi_walk_desk_blkfade("hermione")
 
     ">Hermione slowly walks towards your desk."
 
@@ -175,9 +175,10 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
 
 label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
 
-    #First Time Event.
-    # if her_whoring >= 6 and her_whoring <= 8:
     $ her_mood += 2
+    $ her_jerk_off_counter += 1
+    $ masturbating = True
+
     hide screen hermione_main
     with d3
 
@@ -192,6 +193,11 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
     hide screen bld1
     hide screen blktone
     call hg_chibi_transition("jerk_off", trans="fade")
+
+    if hg_jerkoff.trigger == False:
+        $ achievement.unlock("busted")
+    $ hg_jerkoff.triggered() # .trigger = True, .counter += 1
+
     call ctc
 
     call bld

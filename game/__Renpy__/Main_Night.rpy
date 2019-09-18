@@ -1,6 +1,6 @@
 label night_start:
     $ daytime = False
-    
+
     call common_start
 
     # Start Quests
@@ -8,6 +8,9 @@ label night_start:
 
     label night_resume:
 
+    # Play a theme
+    call play_music("night_theme")
+    
     # Favors
     python:
         for i in nt_requests_list:
@@ -61,8 +64,8 @@ label night_start:
 
 
     #Atoria / Tonks event return.
-    if astoria_tonks_event_in_progress:
-        jump astoria_tonks_event #These do not return to 'night_resume'!
+    #if astoria_tonks_event_in_progress:
+        #jump astoria_tonks_event <- label does not exist #These do not return to 'night_resume'!
 
 
 

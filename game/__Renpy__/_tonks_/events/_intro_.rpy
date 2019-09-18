@@ -3,7 +3,7 @@
 ### Tonks Intro ###
 
 label tonks_intro_E1:
-
+    stop music fadeout 1.0
     call play_sound("knocking")
     call bld
     "*Knock-knock-knock*"
@@ -70,6 +70,7 @@ label tonks_intro_E1:
     call ton_walk(xpos="mid", ypos="base", speed=2.5)
     pause.5
 
+    call play_music("tonks_theme")
     call ton_main("Thank you, Professor.","base","base","base","mid", xpos="right", ypos="base")
     m "(Oh shit, she’s hot...)"
     call ton_main("I apologize for arriving unannounced...{w=0.8} And a couple of days late...","open","base","base","R")
@@ -229,7 +230,7 @@ label tonks_intro_E1:
 
 
 label tonks_intro_E2:
-
+    stop music fadeout 1.0
     call play_sound("knocking")
     call bld
     "*Knock-knock-knock*"
@@ -263,8 +264,9 @@ label tonks_intro_E2:
             ton "I'm coming in..."
             g4 "(Shit!)"
 
-    call play_sound("door")
+    call ton_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
 
+    call play_music("tonks_theme")
     call ton_main("Professor.","base","base","base","mid", xpos="right", ypos="base")
     m "Hey! If it isn't..."
 
@@ -310,7 +312,7 @@ label tonks_intro_E2:
     call ton_main("I won't Professor.{w} Have a good night.","base","base","base","mid")
 
     # Tonks leaves.
-    call hide_characters
+    call ton_walk(action="leave", speed=2.5)
 
     call bld
     m "Shit..."
@@ -323,9 +325,9 @@ label tonks_intro_E2:
 
 
 label tonks_intro_E3:
-
-    call bld
+    stop music fadeout 1.0
     call play_sound("knocking")
+    call bld
     "*Knock-knock-knock*"
 
     call play_sound("knocking")
@@ -355,12 +357,10 @@ label tonks_intro_E3:
             ton "Sir, I’m coming in."
 
     #Tonks enters the office
-    #call play_sound("door")
+    call ton_walk(action="enter", xpos="desk", ypos="base", speed=2.8)
 
-    call ton_walk(action="enter", xpos="desk", speed=2)
-    #call ton_chibi("stand","mid","base")
-
-    call ton_main("Professor...","base","base","base","mid", xpos="right", ypos="base")
+    call play_music("tonks_theme")
+    call ton_main("Professor...","base","base","base","mid", xpos="mid", ypos="base")
     m "How’s the investigation going? Nothing to report I gather?"
     call ton_main("On the contrary...","open","wide","wide","wide")
     call ton_main("It's worse than I could have ever imagined!","open","base","angry","mid", hair="angry")
@@ -375,6 +375,8 @@ label tonks_intro_E3:
     call ton_main("While they abuse their authority and power to do the most despicable things to them...","open","base","base","R", hair="horny")
     call ton_main("But the Dumbledore I know would never allow such disgracefulness at his school...","angry","base","angry","mid", hair="angry")
     m "(...)"
+
+    stop music fadeout 1.0
     call ton_main("I had this suspicion... Since the very day I got here...","open","base","angry","mid", hair="angry")
     # Tonks threatens Genie.
     # Maybe have her chibi point her wand at him?
@@ -438,6 +440,7 @@ label tonks_intro_E3:
 
     call ton_main("","open","wide","wide","wide", xpos="right", ypos="base")
     m "(...)"
+    $ renpy.music.play("music/Under-the-Radar by PhobyAk.mp3")
     call ton_main("No way!","open","base","base","mid")
     m "What just happened?"
     call ton_main("What... are you...?","open","base","worried","down")
@@ -446,7 +449,6 @@ label tonks_intro_E3:
     g4 "(This witch knows her shit!)"
     m "..."
 
-    $ renpy.music.play("music/Under-the-Radar by PhobyAk.mp3")
     g9 "Some people would say I'm \"the\" Genie, actually!"
     m "The most powerful being in the entire universe... Multiple universes even...."
     m "Glad my reputation precedes me..."
@@ -461,13 +463,13 @@ label tonks_intro_E3:
     m "I'm what you would call a \"free\" Genie..."
     call ton_main("So? What happened to him?","upset","base","raised","mid")
     m "I believe we traded places when one of my magical inventions went wrong..."
-    call ton_main("Really?! Is he okay?","open","base","base","mid") #'you don't say' is a typically sarcastic phrase, so I prefer to use something else
+    call ton_main("Really?! Is he okay?","open","base","base","mid")
     m "I think so.{w} He travelled to my universe, and I’m stuck in this dull place..."
     m "Believe me, there are a lot more brothels in Agrabah.{w} I bet he's having the time of his life..."
     call ton_main("So, you just poofed in here and decided to turn this school into your own private brothel...","open","base","angry","mid")
     call ton_main("Because you were bored?!","upset","base","angry","mid")
     m "Hey! I'm an immortal being... boredom is my worst enemy."
-    m "And I didn’t do much, just a nudge in the right direction..." #adding the 'at the very best' takes away the punch of the line
+    m "And I didn’t do much, just a nudge in the right direction..."
     call ton_main("You need to bring him back, the real Dumbledore, immediately!","angry","base","angry","mid", hair="angry")
     m "I don't know how,... yet.{w} We’re still working on it..."
     call ton_main("We? Who else knows about this?","angry","base","worried","R")
@@ -480,7 +482,7 @@ label tonks_intro_E3:
     m "(...)"
     call ton_main("He's a very skilled liar, I'll give him that.","upset","base","angry","down")
     m "Are you going to lock us up now?"
-    call ton_main("Locking you up is the least of what you deserve!","open","base","angry","mid")
+    call ton_main("I very well should! It would be the moral thing to do.","open","base","angry","mid")
     m "(Shit...)"
     call ton_main("You and Professor Snape should be locked in Azkaban for what you’ve done...","angry","base","angry","mid")
     call ton_main("And stay there for the rest of your lives...","open","base","angry","mid")
@@ -495,15 +497,15 @@ label tonks_intro_E3:
     $ renpy.play('sounds/level_failed.mp3')
     show screen cartoon_zoom
     g4 "...{w=6.0}{nw}"
-    call gameover(fake=True)
+    call gameover()
     # back from game over
 
-    stop music fadeout 0.5
+    stop music fadeout 1.5
     $ renpy.play('sounds/scratch.wav')
     with hpunch
     call ton_main("Unless...", "upset","base","angry","R")
 
-    m "Unless what?"
+    g4 "Unless?"
     call play_music("tonks_theme")
     call ton_main("You let me join in on the fun!","base","base","raised","mid", hair="horny")
     m "..."
@@ -553,9 +555,7 @@ label tonks_intro_E3:
     m "I most certainly will..."
 
     #Tonks leaves
-    call play_sound("door")
-    call ton_chibi("hide")
-    call hide_characters
+    call ton_walk(action="leave", speed=2.5)
 
     call bld
     m "What an interesting turn of events..."
@@ -564,6 +564,7 @@ label tonks_intro_E3:
     $ tonks_unlocked = True
     $ achievement.unlock("unlockton", True)
     call popup("{size=-4}You can now summon Tonks into your office.{/size}", "Character unlocked!", "interface/icons/head/head_tonks_1.png")
+
     $ tonks_busy = True
 
     $ tonks_intro.E3_complete = True

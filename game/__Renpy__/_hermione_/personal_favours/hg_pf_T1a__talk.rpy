@@ -310,7 +310,10 @@ label hg_pf_talk_T2:
         m "Yes, you did."
         call her_main("Ew... I feel so dirty now...","angry","angry")
 
-        $ hg_jerkoff.triggered()
+        if hg_jerkoff.trigger == False:
+            $ achievement.unlock("busted")
+        $ hg_jerkoff.triggered() # .trigger = True, .counter += 1
+
 
     else:
         her "We need to put an end to this behaviour, [genie_name]!"

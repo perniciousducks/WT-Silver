@@ -513,17 +513,17 @@ default hg_ps_list = [
     hg_ps_cumslut
     ]
 
-default panty_jerkoff  = trigger_class()
-default hg_talk        = trigger_class()
-default hg_jerkoff     = trigger_class()
-default hg_strip       = trigger_class()
-default hg_fingered    = trigger_class()
-default hg_masturbated = trigger_class()
-default hg_handjob     = trigger_class()
-default hg_titjob      = trigger_class()
-default hg_blowjob     = trigger_class()
-default hg_sex         = trigger_class()
-default hg_anal        = trigger_class()
+default panty_jerkoff  = counter_class()
+default hg_talk        = counter_class()
+default hg_jerkoff     = counter_class()
+default hg_strip       = counter_class()
+default hg_fingered    = counter_class()
+default hg_masturbated = counter_class()
+default hg_handjob     = counter_class()
+default hg_titjob      = counter_class()
+default hg_blowjob     = counter_class()
+default hg_sex         = counter_class()
+default hg_anal        = counter_class()
 
 # Personal favours
 default hg_pf_talk = event_class(title = "Talk to me!", start_label = "hg_pf_talk", start_tier = 1, events = [
@@ -546,14 +546,14 @@ default hg_pf_talk = event_class(title = "Talk to me!", start_label = "hg_pf_tal
     icons = [None, None, None], # If a tier doesn't need an icon replace with None
     iconset = [["heart_empty", "heart_red"], ["heart_empty", "heart_yellow"], ["heart_empty", "heart_red"]]
     )
-    
+
 # Alternate talk event with TONKS
 default hg_pf_talk_tonks = event_class(title = "", start_label = "", start_tier = 3, events = [
     [
     ["hg_pf_talk_tonks_T3_intro_E1"],
     ["hg_pf_talk_tonks_T3_E1"]
     ]
-    
+
     ],
     icons = [None, None, None], # If a tier doesn't need an icon replace with None
     iconset = [["heart_empty", "heart_red"], ["heart_empty", "heart_yellow"], ["heart_empty", "heart_red"]]

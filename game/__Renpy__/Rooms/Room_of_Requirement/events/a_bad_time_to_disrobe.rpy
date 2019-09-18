@@ -52,8 +52,6 @@ label a_bad_time_to_disrobe_part_1:
 
     call her_main("{size=7}You heard what I said...{/size}","annoyed","closed",ypos="head")
     call her_chibi("leave")
-    with d3
-    pause.5
 
     g9 "\"Some of that bartering skill put to good use...\""
 
@@ -164,8 +162,6 @@ label a_bad_time_to_disrobe_part_1:
     call her_main("\"would they?\"","base","base", cheeks="blush", tears="mascara",ypos="head")
 
     call her_chibi("leave")
-    with d3
-    pause.5
 
     "The End."
 
@@ -333,8 +329,6 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("\"What am I thinking? snap out of it...\"","base","worriedCl", cheeks="blush",ypos="head")
 
     call her_chibi("leave")
-    with d3
-    pause.5
 
     call blkfade
     centered "{size=+10}{color=#cbcbcb}The end{/color}{/size}"

@@ -15,6 +15,10 @@ label ton_chibi(action = "", xpos=ton_chibi_xpos, ypos=ton_chibi_ypos, flip=Fals
             $ ton_chibi_xpos = 440
         elif xpos == "on_desk":
             $ ton_chibi_xpos = 350
+        elif xpos == "on_desk":
+            $ ton_chibi_xpos = 350
+        elif xpos == "behind_desk":
+            $ ton_chibi_xpos = 230
         elif xpos == "door":
             $ ton_chibi_xpos = 750
         else:
@@ -25,6 +29,8 @@ label ton_chibi(action = "", xpos=ton_chibi_xpos, ypos=ton_chibi_ypos, flip=Fals
             $ ton_chibi_ypos = 250
         elif ypos == "on_desk":
             $ ton_chibi_ypos = 180
+        elif ypos == "behind_desk":
+            $ ton_chibi_ypos = 260
         else:
             $ ton_chibi_ypos = int(ypos)
 
@@ -37,6 +43,8 @@ label ton_chibi(action = "", xpos=ton_chibi_xpos, ypos=ton_chibi_ypos, flip=Fals
         hide screen bld1
         hide screen blktone
         hide screen ton_stand
+        with d3
+        pause .5
     else:
         if action == "reset":
             $ ton_chibi_animation = None

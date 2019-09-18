@@ -13,28 +13,44 @@ label astoria_intro_E1:
     # She doesn't want the ministry to find out about it just as much as you.
 
     stop music fadeout 1.0
+    call play_sound("knocking")
+    "*knock-knock-knock*"
+
+    ton "[ton_genie_name], may I come in?"
+    ton "We have to talk about some recent events that happened..."
+    ton "It's quite urgent..."
+
+    menu:
+        m "(...)"
+        "\"Yes, come in!\"":
+            ton "Thank you..."
+
+        "\"Not now!\"":
+            ton "I'm sorry Sir, but I'm afraid this can't wait."
+            ton "I'm coming in..."
 
     # Tonks walks in.
+    call ton_walk(action="enter", xpos="desk", ypos="base", speed=2.8)
 
-    ton "Good day, [ton_genie_name]."
+    call play_music("tonks_theme")
+    call ton_main("Good evening, [ton_genie_name].","base","base","base","mid", xpos="mid", ypos="base")
     m "[tonks_name]..."
-    ton "Oh... I'm terribly sorry for bursting in like this!"
-    ton "I simply forgot to knock..."
+    call ton_main("I'm terribly sorry for bursting in like this!","open","base","worried","R")
     m "What in the world got you so flustered?"
-    ton "We might be in big trouble, [ton_genie_name]!"
+    call ton_main("We might be in big trouble, [ton_genie_name]!","upset","base","worried","mid")
 
     call play_music("playful")
     g9 "Miss Tonks... Have you been a bad girl?"
-    ton "I'm not joking, [ton_genie_name]!"
-    ton "Something terrible has happened at school today!"
-    ton "I believe one of our students has conducted some highly-illegal activities against another student!"
-    ton "We have to take action! The last thing we need is for this to reach the Ministry's attention!"
+    call ton_main("I'm not joking, [ton_genie_name]!","angry","base","angry","mid")
+    call ton_main("Something terrible has happened at school today!","open","base","angry","R")
+    call ton_main("I believe one of our students has conducted some highly-illegal activities against another student!","upset","base","worried","R")
+    call ton_main("We have to take action!{p=0.6}The last thing we need is for this to reach the Ministry's attention!","open","base","angry","mid")
     m "So? Isn't it your task to cover that sort of stuff?"
-    ton "Yes, but..."
-    ton "Please, [ton_genie_name]! I can't cover this up all on my own!"
-    ton "I'll require your help..."
+    call ton_main("Yes, but...","upset","base","worried","down")
+    call ton_main("Please, [ton_genie_name]! I can't cover this up all on my own!","open","base","worried","mid")
+    call ton_main("I'll require your help...","upset","base","sad","mid")
     m "My help, you say?"
-    ton "Yes..."
+    call ton_main("Yes...","base","base","worried","down")
 
     menu:
         m "(...)"
@@ -42,171 +58,216 @@ label astoria_intro_E1:
             pass
 
         "\"I'm busy right now...\"":
-            ton "Busy with what exactly?"
-            m "............."
-            ton "[ton_genie_name]?"
-            m "Please give me a minute,... I'm still thinking..."
-            ton "We don't have time for this!"
+            call ton_main("Busy with what exactly?","open","base","raised","mid")
+            m "...................."
+            call ton_main("[ton_genie_name]?","angry","base","angry","mid")
+            m "Please give me a minute... I'm still thinking..."
+            call ton_main("We don't have time for this!","angry","base","angry","mid")
             m "I have all the time in the world, darling..."
             m "I'm immortal..."
-            ton "Could you please just listen to me?"
+            call ton_main("Could you please just listen to me?","angry","closed","angry","mid")
 
         "\"What's in it for me?\"":
-            ton "Are you seriously asking me that?"
-            ton "If this doesn't get dealt with immediately, they'll have us both locked-up in a cell in Azkaban, do you hear me?!"
+            call ton_main("Are you seriously asking me that?","open","wide","wide","wide")
+            call ton_main("If this doesn't get dealt with immediately, they'll have us both locked-up in a cell in Azkaban, do you hear me?!","angry","base","angry","mid")
             m "Loud and clear..."
-            m "I'll be locked up in a cell together with you..."
+            m "I'll be locked up in a cell - together with you..."
             g9 "I can think of many fates worse than that, if I'm honest."
-            ton "Weren't you so scared of that very thing before?"
+            call ton_main("Weren't you so scared of that very thing before?","open","base","raised","mid")
             g9 "Not when I'm accompanied by someone as lovely as you!"
-            ton "................"
-            ton "You are clearly insane!" # Annoyed
-            ton "Fine. Tell me what you want so we can continue..."
+            call ton_main("................","upset","base","worried","R")
+            call ton_main("You are clearly insane!","open","base","angry","mid") # Annoyed
+            call ton_main("Fine... Tell me what you want so we can continue...","upset","base","worried","mid")
             m "Hmm..."
+
+            $ d_flag_01 = False
+
+            label astoria_intro_E1_choices:
 
             menu:
                 m "How about you..."
-                "\"Pull on my finger...\"":
-                    ton "I'm sorry?"
+                "\"Pull on my finger...\"" if d_flag_01 == False:
+                    $ d_flag_01 = True
+                    call ton_main("I'm sorry?","open","base","raised","mid")
                     g9 "Come on. It's an old trick we Genies like to do!"
                     m "It's harmless, I swear..."
-                    ton "............."
-                    ton "Very well..."
+                    call ton_main(".............","upset","base","angry","R")
+                    call ton_main("Very well...","open","closed","base","mid")
+
                     # Tonks walks over.
-                    # Blkfade.
+                    call chibi_walk_desk_blkfade("tonks")
+
                     # Genie and Tonks stand behind the desk.
+                    $ gen_chibi_zorder = 1
+                    $ ton_chibi_zorder = 1
+                    call ton_chibi("stand","275","behind_desk")
+                    call gen_chibi("stand","190","behind_desk")
+                    show screen chair_left
+                    show screen desk
+                    hide screen blkfade
+                    with d3
+                    pause.8
+
+                    call bld
                     g9 "Now pull it."
-                    ton ".................................."
+                    call ton_main("..................................","upset","base","worried","down", ypos="head")
                     m "Try a bit harder..."
-                    ton ".............................................."
+                    call ton_main("..............................................","angry","base","angry","down")
+                    call bld("hide")
+                    pause.2
+                    with hpunch
+                    pause.5
+
+                    call bld
                     g4 "Why isn't this working?!"
                     m "(Oh, that's right...)"
                     m "(I forgot we Genies are unable to fart...)"
-                    ton "Are we done here?"
+                    call ton_main("Are we done here?","open","closed","base","mid")
                     m "Want to give it one more try?"
-                    ton "I think not..."
-                    ton "I expected a bit more from a Genie... A magic-trick, perhaps?"
+                    call ton_main("I think not...","open","base","base","R")
+                    call ton_main("I expected a bit more from a Genie... A magic-trick, perhaps?","upset","base","sad","down")
                     m "I've told you, I can't do magic anymore..."
-                    ton "How very disappointing..."
-                    ton "I'm starting to have my doubts that you ever were a Genie..."
-                    ton "Anyhow, here is what I'll require your help with..."
+                    call ton_main("How very disappointing...","open","closed","base","mid")
+                    call ton_main("I'm starting to have my doubts that you ever were a Genie...","angry","base","worried","R")
+                    m "Sorry about that..."
+                    m "Can I ask you for something else?"
+                    call ton_main("Still? Even after disappointing me like this?","upset","base","angry","mid")
+                    m "Please?"
+                    call ton_main("*Ugh*... Fine...","upset","base","angry","R")
+                    show screen blkfade
+                    hide screen bld1
+                    with d3
 
-                "\"Blow me!\"":
-                    ton "Blow you? With my mouth?"
-                    m "Yes, please."
-                    ton "On your dick, I imagine?"
-                    g9 "Yes, if you would..."
-                    ton "Very well..."
-                    ton "Get it out for me, would you..." # Naughty look
-                    g9 "!!!"
+                    $ gen_chibi_zorder = 2 # Default
+                    $ ton_chibi_zorder = 3 # Default
+                    call gen_chibi("sit_behind_desk")
+                    call ton_chibi("stand","mid","base")
+
+                    hide screen blkfade
+                    call ton_main("","upset","base","base","mid", xpos="mid", ypos="base", trans="fade")
+
+                    jump astoria_intro_E1_choices
+
+                #"\"Blow me!\"":
+                #    call ton_main("Blow you? With my mouth?","base","base","base","mid")
+                #    m "Yes, please."
+                #    call ton_main("On your dick, I imagine?","base","base","base","mid")
+                #    g9 "Yes, if you would..."
+                #    call ton_main("Very well...","base","base","base","mid")
+                #    call ton_main("Get it out for me, would you...","base","base","base","mid") # Naughty look
+                #    g9 "!!!"
                     # Tonks walks over.
                     # Blkfade.
                     # Genie and Tonks stand behind the desk.
                     # Genie has his dick in hand, jerking off.
 
-                    call nar("To your surprise, Tonks \"blows\" a gust of wind over \"your cock\"...")
-                    ton "There, all done."
-                    m ".............."
-                    ton "What? I did what you asked for... I blew your cock..."
-                    m "......................"
-                    ton "Now, could we get back to discuss what I came here for in the first place?"
-                    m "Fine. I know when I'm outwitted..."
-                    ton "I will suck your delicious cock some other time, [ton_genie_name]... I promise!"
-                    ton "But now, we simply don't have time to fool around, I'm afraid..."
+                #    call nar("To your surprise, Tonks \"blows\" a gust of wind over \"your cock\"...")
+                #    call ton_main("There, all done.","base","base","base","mid")
+                #    m ".............."
+                #    call ton_main("What? I did what you asked for... I blew your cock...","base","base","base","mid")
+                #    m "......................"
+                #    call ton_main("Now, could we get back to discuss what I came here for in the first place?","base","base","base","mid")
+                #    m "Fine. I know when I'm outwitted..."
+                #    call ton_main("I will suck your delicious cock some other time, [ton_genie_name]... I promise!","base","base","base","mid")
+                #    call ton_main("But now, we simply don't have time to fool around, I'm afraid...","base","base","base","mid")
 
-                "\"Give me a card.\"" if deck_unlocked:
-                    ton "A card, [ton_genie_name]?"
-                    g9 "\"Wizard cards!\" And I want a rare one!"
-                    ton "Why would you want a card?"
-                    m "Because I like to collect them..."
-                    m "I have more hobbies than just sex,...or drinking booze..."
-                    ton "*Huh*... You don't say..."
-                    ton "(Is he making fun of me?)"
-                    ton "Well, I don't have any cards on me at the moment..."
-                    #if tonks_plays_cards: # Add correct variable.
-                    #    ton "Perhaps I could give you one of my \"doubles\" some other time..."
-                    #else:
-                    ton "Some of my students play \"Wizard cards\"... maybe I could confiscate one of theirs..."
-                    m "And teach them a life-lesson to be more attentive of their possessions. Very good."
-
-                    ton "Very well, I'll send you an owl tomorrow morning."
+                "\"Send Nudes.\"":
+                    call ton_main("Nudes, [ton_genie_name]?","upset","base","raised","mid")
+                    g9 "Yes! Send me some nude pictures of yourself!"
+                    g9 "A poster, maybe?"
+                    call ton_main("*Oh*...","upset","base","base","down")
+                    call ton_main("A poster, you say?...","horny","base","base","mid")
+                    call ton_main("What are you gonna do with it? Put it on your wall and fap to it?","horny","base","angry","mid")
+                    g9 "You can count on that!"
+                    call ton_main("Hold on!{w} Are you going to hang it up here? In your office?!","open","wide","wide","wide")
+                    m "Sure... It's not like there are that many other rooms I can go to..."
+                    call ton_main("(Oh my... So everyone would be able to see it...)","upset","base","worried","R", hair="horny")
+                    call ton_main("(All those girls that come in here...)","upset","base","base","ahegao")
+                    call ton_main("(As long as my face isn't on it, this shouldn't be too bad...)","angry","base","worried","down")
+                    call ton_main("...","upset","base","worried","R")
+                    call ton_main("Very well, I shall send you an owl with it tomorrow morning, [ton_genie_name].","base","base","base","mid")
                     g9 "Sweet!"
-                    ton "Now, here is what I'll require your help with..."
+                    call ton_main("Now, here is what I'll require your help with...","open","closed","base","mid")
 
-    ton "This girl I've told you about, Susan Bones?"
-    ton "The one with-"
+                    # TODO: Add poster and weasly show unlock.
+    # TODO: Add hidden achievement called "Follow the script!" and unlock it if you jerk off after this scene. Maybe add some Susan smut writing for the jerk-off session?
+
+    call ton_main("This girl I've told you about, Susan Bones?","open","base","base","mid")
+    call ton_main("The one with-","open","base","base","R")
     g9 "With the giant tits!"
-    ton "...The one with the unfortunate luck of being a constant target of bullying and harassment!" # annoyed
+    call ton_main("...The one with the unfortunate luck of being a constand target of bullying and harassment!","angry","closed","angry","mid") # Annoyed
     m "Yes, that too..."
-    ton "That poor girl! She cried the entire time when she told me about what happened..."
-    ton "I cannot believe she got hit by a curse!" # Angry
+    call ton_main("That poor girl! She cried the entire time when she told me about what happened...","open","base","sad","down")
+    call ton_main("I can't believe she got hit by a curse!","angry","base","angry","down") # Angry
     m "At least she isn't dead..."
-    ton "No, of course not!"
-    m "Or injured?"
-    ton "Thankfuly not..."
-    m "And nobody tried to shrink her tits?"
-    ton "Don't be silly..."
+    call ton_main("No, of course not!","open","base","angry","mid")
+    m  "Or Injured?"
+    call ton_main("Thankfully not...","upset","base","base","R")
+    m "And nobody tied to shrink her tits?"
+    call ton_main("Don't be silly...","open","closed","base","mid")
     m "Then what are you concerned about exactly?"
-    
-    ton "This is something quite serious!"
-    ton "If we don't find the culprit of this, and find them quickly, the Ministry will be on our toes by tomorrow!"
+
+    call ton_main("This is something quite serious!","angry","base","sad","mid")
+    call ton_main("If we don't find the culprit of this, and find them quickly, the Ministry will be on our toes by tomorrow!","open","base","angry","mid")
     m "That bad, huh?"
-    ton "yes, I'm afraid..."
-    ton "She was the target of an \"unforgivable curse!\""
-    m "The c-word?"
-    ton "Merlin's Beard! I told you, ...it wasn't an insult!"
-    ton "Those curses are a major transgression of Ministry-laws!"
-    ton "if you are caught having cast even one of them, they will put you in Azkaban for the rest of your life, sharing a room with a whole bunch of Dementors!"
-    m "Dement-ors?"
-    m "is it like a nursing-home or something?"
-    ton "No, I've told you before! Azkaban is a prison!"
-    ton "With Dementors roaming all over it..."
-    ton "Believe me, you wouldn't want to be around them, I tell you that much..."
+    call ton_main("Yes, I'm afraid...","upset","base","worried","down")
+    call ton_main("She was the target of an \"unforgivable curse!\"","open","base","worried","mid")
+    m "A curse?..."
+    m "Like...{w=0.5} The c-word?"
+    call ton_main("No! A magical curse!{w} not an insult...","angry","closed","angry","mid")
+    call ton_main("Those curses are a major transgression of Ministry-laws!","open","base","angry","mid")
+    call ton_main("If you are caught having cast even one of them, they will put you in Azkaban for the rest of your life!","open","closed","worried","mid")
+    call ton_main("Sharing a room with a whole bunch of Dementors!","upset","base","angry","mid")
+    m "Dement-{w=0.6}ors?"
+    m "Is it like a nursing-home or something?"
+    call ton_main("No, I've told you before!","angry","closed","angry","mid")
+    call ton_main("Azkaban is a prison! With Dementors roaming all over it...","open","base","angry","mid")
+    call ton_main("Believe me, you wouldn't want to be around them, I tell you that much...","open","base","angry","R")
     m "(Does she hate old people as well now?)"
-    
-    ton "Should the ministry find out about what happened to Miss Bones-"
-    g9 "*He-he-he* ..."
-    g9 "(Still funny!)"
-    ton "Which they most certainly will, as her aunt is a head of Ministry's department for magical-law-enforcement..."
-    ton "Our whole operation would be busted! And we'd get locked-up once and for all!"
-    
+
+    call ton_main("Should the Ministry find out about what happened to... Miss Bones.","upset","base","worried","R")
+    g9 "*He-he-he!*..."
+    call ton_main("Which they most certainly will, as her aunt is head of the Ministry's department for \"Magical-Law-Enforcement\"...","open","base","worried","mid")
+    call ton_main("Our whole operation would be busted! And we'd get locked-up once and for all!","upset","base","sad","mid")
+
     m "So, are we in trouble?"
-    ton "Not yet..."
-    ton "I could luckily erase Susan's memory of the ordeal - with the obliviate spell."
+    call ton_main("Not yet...","open","closed","sad","mid")
+    call ton_main("I could luckily erase Susan's memory of the ordeal - with the obliviate spell.","angry","base","sad","mid")
     m "You can do that? Neat..."
-    ton "But, if this should happen to her again, I doubt there is much I could do to prevent her from telling her aunt right away..."
+    call ton_main("But, if this should happen to her again, I doubt there is much I could do to prevent her from telling her aunt right away...","open","base","worried","R")
     m "So what do you suggest we do?"
-    ton "Find the student who cursed her, and then talk some sense into her to never do it again..."
-    m "Find... her?"
-    ton "Yes. She heard a girl's voice in her head while she was under the influence of the imperius curse..."
-    ton "Who... told her to lift-up her top..."
+    call ton_main("Find the student who cursed her, and then talk some sense into her - to never do it again...","open","closed","base","mid")
+    m "Find{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8} her?"
+    call ton_main("Yes! She heard a girl's voice in her head - while she was under the influence of the imperius curse...","open","base","angry","mid")
+    call ton_main("Who told her{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8}to lift-up her top.","upset","base","worried","R")
     g9 "Oh yes?"
-    ton "The imperius curse can make people do unspeakable things against their will..."
-    ton "I have no doubt that someone as sweet and good-hearted as Susan wouldn't know how to defend herself against it."
-    ton "So, ...she showed her breasts to a bunch of other students ... unfortunately..."
+    call ton_main("The imperius curse can make people do {b}unspeakable things{/b} against their wills!","open","closed","angry","mid")
+    call ton_main("I have no doubt that someone as sweet and good-hearted as Susan wouldn't know how to defend herself against it...","open","base","sad","mid")
+    call ton_main("So... She showed her breasts to a bunch of other students...{w=1.4} unfortunately...","upset","base","sad","R")
     g9 "I wish I could have been there to stop it!"
-    ton "Of course you do..."
-    ton "That's sadly all the information I can share with you."
-    ton "Nobody standing with her saw who might have cursed her either..."
-    
+    call ton_main("Of course you do...","open","closed","base","mid")
+    call ton_main("That's sadly all the information I can share...","upset","base","worried","down")
+    call ton_main("Nobody that stood with her saw who might have cursed her...","open","base","worried","mid")
+
     m "Should we get some help finding them?"
-    ton "*Hmmm* ... That wouldn't be such a bad idea."
+    call ton_main("*Hmmm*... That wouldn't be such a bad idea.","base","base","base","R")
     m "Shall I ask Snape? Maybe even Miss Granger?"
-    ton "Professor Snape might prove himself useful with this..."
-    ton "I don't know about Granger..., She'd need to keep quiet at all cost!"
-    ton "The Ministry can't know about this!"
+    call ton_main("Yes. Professor Snape might prove himself useful for once...","open","base","base","down")
+    call ton_main("I don't know about Granger... She'd need to keep quiet at all cost!","angry","base","worried","mid")
+    call ton_main("The Ministry can't know about this!","open","base","angry","mid")
     m "Yes. Yes..."
-    ton "Well, I should get going... there are a couple of students I'd like to question." #Tongue?
+    call ton_main("Well, I should get going... there are a couple of students I'd like to question.","open","base","worried","R")
     m "Good luck, then."
-    ton "Talk to you soon, [ton_genie_name]."
-    
-    # Tonks leaves
-    
+    call ton_main("Talk to you soon, [ton_genie_name].","base","base","worried","mid")
+
+    # Tonks leaves.
+    call ton_walk(action="leave", speed=2.5)
+
+    call bld
     m "I should definitely get Snape on this..."
     m "And Granger..."
-    g9 "Or I could jerk-off instead! Yes that seems like a good idea right now!"
-    
-    # TODO: Add hidden achievement called "Follow the script!" and unlock it if you jerk off after this scene. Maybe add some Susan smut writing for the jerk-off session?
+    g9 "Or I could jerk-off instead!" # Achievement if you do, maybe?
+    g9 "Yes that seems like a good idea right now!"
 
     $ tonks_busy = True
     $ astoria_intro.E1_complete = True
@@ -218,7 +279,7 @@ label astoria_intro_E2_hermione:
     m "I require your help with something."
     m "Tonks came by earlier and informed me about a student making a ruckus."
     m "I- *uhm*...{w} She thought maybe you could be of help finding them?"
-    her "Of course, Sir."
+    call her_main("Of course, Sir.","base","happyCl")
     m "Apparently a student got hit by an \"unforgivable curse\" here at the school."
     call her_main("AN unforgivable CURSE!!!","scream","wide", trans="hpunch")
     call her_main("AT our school?!","shock","wide_stare")
@@ -348,7 +409,7 @@ label astoria_intro_E3:
     $ astoria_intro.E3_complete = True
 
     "Dev Note" "Add writing for 3rd intro event."
-    
+
     $ astoria_unlocked = True # Placeholder
 
     jump main_room

@@ -30,6 +30,7 @@ label summon_susan:
     $ hide_transitions = False
     $ susan_busy = True
     $ gave_susan_gift = True #Remove when adding gift texts!
+    $ active_girl = "susan"
 
     menu:
 
@@ -43,8 +44,6 @@ label summon_susan:
 
         # Wardrobe
         "-Wardrobe-" if susan_wardrobe_unlocked:
-            $ active_girl = "susan"
-
             call load_susan_clothing_saves
 
             call reset_wardrobe_vars

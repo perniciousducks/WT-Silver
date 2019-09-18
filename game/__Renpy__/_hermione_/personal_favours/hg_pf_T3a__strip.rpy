@@ -406,7 +406,7 @@ label hg_pf_strip_T1_intro_E2:
 
     m "??!"
 
-    call her_walk_desk_blkfade
+    call chibi_walk_desk_blkfade("hermione")
 
     $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking.
     pause 3
@@ -697,7 +697,9 @@ label hg_pf_strip_T1_intro_E2:
     call her_main("Can I just get my points now, please?","angry","worriedCl", emote="05")
     pause.5
 
-    $ hg_strip.trigger = True
+    if hg_strip.trigger == False:
+        $ achievement.unlock("herstrip")
+    $ hg_strip.triggered() # .trigger = True, .counter += 1
     $ hg_pf_strip.title = "Strip for Me!"
 
     jump end_hg_pf_strip

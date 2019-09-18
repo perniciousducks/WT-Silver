@@ -418,7 +418,7 @@ label l_tutoring:
         hide screen bld1
         with d3
 
-        call her_walk_desk_blkfade
+        call chibi_walk_desk_blkfade("hermione")
 
         hide screen genie
         show screen no_groping_01
@@ -512,7 +512,7 @@ label l_tutoring:
         hide screen bld1
         with d3
 
-        call her_walk_desk_blkfade
+        call chibi_walk_desk_blkfade("hermione")
 
         ">Hermione walks towards your desk."
         ">You grab her tits and massage them softly."
@@ -624,7 +624,7 @@ label l_tutoring:
         call her_main("","base","closed")
         m "Now."
 
-        call her_walk_desk_blkfade
+        call chibi_walk_desk_blkfade("hermione")
 
         ">Hermione slowly walks towards your desk."
         ">She tries not to bounce her tits without much success..."
@@ -748,7 +748,7 @@ label l_tutoring:
         m "Enough of this! Now take off your shirt and come here."
         call her_main("Here we go for another \"lesson\".","open","suspicious")
 
-        call her_walk_desk_blkfade
+        call chibi_walk_desk_blkfade("hermione")
 
         $ hermione_wear_robe = False
         $ hermione_wear_top = False
@@ -1097,7 +1097,7 @@ label l_tutoring:
 
         ">She rips off her shirt and rushes to your desk."
 
-        call her_walk_desk_blkfade
+        call chibi_walk_desk_blkfade("hermione")
 
         hide screen genie
         show screen groping_05
@@ -1288,7 +1288,7 @@ label l_tutoring:
         m "Oh, we have time."
         call her_main("Speaking of that...","base","concerned",cheeks="blush",tears="soft")
 
-        call her_walk_desk_blkfade
+        call chibi_walk_desk_blkfade("hermione")
 
         hide screen genie
         show screen no_groping_05
@@ -1553,7 +1553,7 @@ label l_tutoring:
         m "{size=-2}(It's not as if you don't like it rough){/size}"
         m "Alright, my desk, you, naked, now!"
 
-        call her_walk_desk_blkfade
+        call chibi_walk_desk_blkfade("hermione")
 
         $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking.
         pause.5
@@ -1711,7 +1711,7 @@ label l_tutoring:
         call her_main("{size=-2}(I give myself away for free now, what a bad whore I make){/size}","base","concerned",cheeks="blush",tears="soft")
         m "Come here and strip."
 
-        call her_walk_desk_blkfade
+        call chibi_walk_desk_blkfade("hermione")
 
         hide screen hermione_main
         with d3

@@ -21,6 +21,7 @@ label summon_luna:
     $ hide_transitions = False
     $ luna_busy = True
     $ gave_luna_gift = True #Remove when adding gift texts!
+    $ active_girl = "luna"
 
     menu:
 
@@ -42,7 +43,6 @@ label summon_luna:
 
         # Wardrobe
         "-Wardrobe-": # if luna_wardrobe_unlocked:
-            $ active_girl = "luna"
             $ ll_quirky_muggle_ITEM.unlocked = True #Temporary unlock. Will be a random clothing event eventually.
 
             call load_luna_clothing_saves

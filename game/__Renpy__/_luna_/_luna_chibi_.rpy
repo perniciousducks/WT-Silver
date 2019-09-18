@@ -42,6 +42,8 @@ label lun_chibi(action = "", xpos=luna_chibi_xpos, ypos=luna_chibi_ypos, flip=Fa
         hide screen luna_main
         hide screen bld1
         hide screen blktone
+        with d3
+        pause .5
     else:
         if flip or luna_flip != 1: #Same variable that the main sprite is using. #1 == Default
             show screen luna_blink_f

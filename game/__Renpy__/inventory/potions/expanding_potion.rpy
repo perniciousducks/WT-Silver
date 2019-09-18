@@ -87,7 +87,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("If you want to touch my breasts it will be an extra 40 points.","annoyed","angryL")
     m "Deal."
 
-    call her_walk_desk_blkfade
+    call chibi_walk_desk_blkfade("hermione")
 
     call nar(">Hermione walks over to behind your desk, her breasts swaying rhythmically as she moves.")
     pause .8
@@ -249,7 +249,7 @@ label potion_scene_2_2: #ass expansion
     hide screen bld1
     with d3
 
-    call her_walk_desk_blkfade
+    call chibi_walk_desk_blkfade("hermione")
 
     call nar(">Hermione hops over to your desk, her ass bouncing as she moves, and presents herself to you.")
     pause 1

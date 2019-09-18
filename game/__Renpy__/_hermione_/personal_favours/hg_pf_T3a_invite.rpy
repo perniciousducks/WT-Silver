@@ -37,8 +37,8 @@ label hg_pf_strip_T1_Snape: # Fails
 # Invite Snape
 
 label hg_pf_strip_T2_Snape:
-    if not hg_strip.ss_trigger:
-        $ hg_strip.ss_trigger = True
+    if hg_strip.ss_counter == 0:
+        $ hg_strip.ss_counter += 1
 
         hide screen blktone
         hide screen hermione_main

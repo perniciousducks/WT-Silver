@@ -239,11 +239,11 @@ label quests:
     # Astoria events not triggered by a date.
     if ag_event_pause == 0:
         if daytime:
-            if hang_with_tonks.E3_complete and not astoria_intro.E1_complete:
-                jump astoria_intro_E1
-
             if astoria_intro.E2_hermione and astoria_intro.E2_snape and not astoria_intro.E3_complete:
                 jump astoria_intro_E3
+        else:
+            if hang_with_tonks.E3_complete and not astoria_intro.E1_complete:
+                jump astoria_intro_E1
 
     # Tonks events not triggered by a date.
     if nt_event_pause == 0:
@@ -255,8 +255,10 @@ label quests:
     # All quest events should somehow end with a jump to the main room day/night cycle
     # If no quest event is triggered, resume normally from the main room
     if daytime:
+        call play_music("day_theme")
         jump day_resume
     else:
+        call play_music("night_theme")
         jump night_resume
 
 

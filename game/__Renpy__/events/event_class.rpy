@@ -175,3 +175,41 @@ init python:
         @max_tiers.setter
         def max_tiers(self, value):
             pass
+            
+    class stats_class(dict):
+            
+        def __delitem__(self, key):
+            """Override delitem method to delete inner dictionary key."""
+            del self[key]
+            
+        def __missing__(self, key):
+            """Return zero if key does not exist in the inner dictionary."""
+            return 0
+            
+        def __setattr__(self, name, value):
+            """Override setattr method to add attributes as keys and values in the inner dictionary."""
+            self[name] = value
+                
+        def __getattr__(self, name):
+            """Override getattr method to return a value of the key from the inner dictionary."""
+            # Skip protected attributes and/or injected Ren'py methods
+            if not name.startswith("_"):
+                return self[name]
+            raise AttributeError("'"+self.__class__.__name__+"' has no attribute '"+name+"'")
+            
+        def status(self):
+            """Print currently defined keys and values in the console."""
+            for key, value in self.iteritems():
+                print key + " == " + str(value)
+            return
+            
+        def reset(self):
+            """Reset all key values back to default values depending on the value type."""
+            for key in self.iterkeys():
+                if isinstance(self[key], (float, int)):
+                    self[key] = 0
+                elif isinstance(self[key], bool):
+                    self[key] = False
+                else:
+                    pass
+            return

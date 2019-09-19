@@ -501,6 +501,8 @@ init python:
         def __init__(self, **kwargs):
             self.char = None
             
+            self.stats = stats_class() # Initialize stats object instance
+            
             self.cached = False
             self.cache_override = False
             
@@ -521,6 +523,9 @@ init python:
             
             if self.char == None:
                 raise Exception('Character: "char" was not defined in char_class.')
+            
+            # Add a pointer to a global var
+            globals()[self.char+'_stats'] = self.stats
 
             # Add the character to a stored list
             if not hasattr(renpy.store, 'character_list'):

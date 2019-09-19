@@ -8,7 +8,7 @@ screen color_picker(color, alpha, title, pos_xy):
     default hue = 0
     default saturation = 0
     default value = 0
-    default alpha = 0
+    default _alpha = 0 # 'alpha' screen variable is already used by Ren'py screen children, it's what caused immovable cursor
 
     # Set HSVA variables based on RGBA when screen shows
     on "show" action Function(color_picker_update_hsva)
@@ -74,7 +74,7 @@ screen color_picker(color, alpha, title, pos_xy):
             add "interface/color_palete/"+str(interface_color)+"/alpha.png" xpos 22 ypos 287
             add Frame("interface/color_picker/checker.png", tile=True, ysize=30, xsize=255) xpos 25 ypos 290
             bar:
-                value ScreenVariableValue("alpha", range=1.0, step=0.01, action=Function(color_picker_update_rgba))
+                value ScreenVariableValue("_alpha", range=1.0, step=0.01, action=Function(color_picker_update_rgba))
                 base_bar im.MatrixColor(AlphaGradientImage(size=(255,30)), im.matrix.colorize(rgba, rgba))
                 thumb Image("interface/color_picker/"+str(interface_color)+"/cursor_v.png", xalign=0.5)
                 thumb_offset 0
@@ -133,7 +133,7 @@ default picking_color = None
 init -1 python:
     import colorsys
 
-    def color_picker_2(color=[0,0,0,0], alpha=True, title="Pick a colour", pos_xy=(240, 130)):
+    def color_picker(color=[0,0,0,0], alpha=True, title="Pick a colour", pos_xy=(240, 130)):
         global picking_color
         picking_color = color # Color object (list) to be updated live
         start_color = list(color) # Keep a copy
@@ -180,7 +180,7 @@ init -1 python:
         scope["hue"] = h
         scope["saturation"] = s
         scope["value"] = v
-        scope["alpha"] = a / 255.0
+        scope["_alpha"] = a / 255.0
 
     def color_picker_update_rgba():
         scope = renpy.get_screen("color_picker").scope
@@ -188,7 +188,7 @@ init -1 python:
         r = int(r * 255)
         g = int(g * 255)
         b = int(b * 255)
-        a = int(scope["alpha"] * 255)
+        a = int(scope["_alpha"] * 255)
         scope["rgba"] = (r, g, b, a)
         update_picking_color(scope["rgba"])
         renpy.restart_interaction()

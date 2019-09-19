@@ -653,6 +653,7 @@ label hg_pf_talk_tonks:
                 #
                 #
             else:
+                pass
                 # TODO: Add a favour counter and try converting int to a string word - LL
                 #
                 #

@@ -75,10 +75,6 @@ label color_cloth_test:
 
 
 screen cloth_test():
-    python:
-        if not color_preview == None:
-            current_clothing.color[active_layer] = color_preview
-
     zorder 100
     add cho_class.get_image() xpos 700 yalign 0.5 zoom 0.5 xanchor 0.5 yanchor 0.5
 

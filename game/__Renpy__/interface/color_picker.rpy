@@ -201,7 +201,6 @@ init -1 python:
         scope["saturation"] = float(x) / size[0]
         scope["value"] = 1 - float(y) / size[1]
         color_picker_update_rgba()
-        renpy.restart_interaction()
 
     def color_picker_dragged(drags, drop=None):
         # Compensate for draggable area
@@ -214,7 +213,6 @@ init -1 python:
         scope["saturation"]  = float(x) / width
         scope["value"] = 1 - float(y) / height
         color_picker_update_rgba()
-        renpy.restart_interaction()
 
     class GradientImageBase(im.ImageBase):
         def __init__(self, **properties):

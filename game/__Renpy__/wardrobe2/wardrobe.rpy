@@ -284,10 +284,6 @@ screen t_wardrobe_menu(xx, yy):
     tag wardrobe
     zorder 4
 
-    python:
-        if current_item and color_preview and not active_layer == None:
-            current_item.color[active_layer] = color_preview
-    
     use top_bar_close_button
     
     frame:

@@ -8,7 +8,7 @@ screen color_picker(color, alpha, title, pos_xy):
     default hue = 0
     default saturation = 0
     default value = 0
-    default _alpha = 0 # 'alpha' screen variable is already used by Ren'py screen children, it's what caused immovable cursor
+    default _alpha = 0 # Avoid name conflict with 'alpha' screen variable in other active screens
 
     # Set HSVA variables based on RGBA when screen shows
     on "show" action Function(color_picker_update_hsva)
@@ -138,8 +138,6 @@ init -1 python:
         picking_color = color # Color object (list) to be updated live
         start_color = list(color) # Keep a copy
 
-        print color
-
         renpy.show_screen("color_picker", tuple(color), alpha, title, pos_xy)
         while True:
             _return = ui.interact()
@@ -156,7 +154,7 @@ init -1 python:
             elif _return[0] == "apply":
                 renpy.hide_screen("color_picker")
                 picking_color = None
-                return _return[1]
+                return color # Return live color object instead of _return tuple
 
     def update_picking_color(rgba):
         global picking_color

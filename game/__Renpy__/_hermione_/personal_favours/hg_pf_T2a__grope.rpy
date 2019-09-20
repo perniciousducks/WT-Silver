@@ -130,7 +130,7 @@ label hg_pf_grope_T0_fail_repeat:
 
 
 
-### Tier 2 ###
+### Tier 1 ###
 
 # Event 1 (i) - Hermione is shocked about you groping her.
 # Event 2 (i) - Hermione is still shocked.
@@ -187,7 +187,7 @@ label hg_pf_grope_T1_E1:
 
 
 
-### Tier 3 ###
+### Tier 2 ###
 
 # Event 1 (i) - Hermione tries to talk you out of it.
 # Event 2 (i) - Hermione is indignant.

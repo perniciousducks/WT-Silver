@@ -271,8 +271,9 @@ label hg_pf_admire_breasts_T1: # Call label
     call ctc
 
     m "............."
-
-    "Dev Note" "Add dialogue here."
+    m "Very good, [hermione_name]."
+    call her_main("Can I get my point then?","disgust","worriedCl")
+    m "Of course..."
 
     return
 
@@ -463,9 +464,13 @@ label hg_pf_admire_breasts_T3_E1:
 label hg_pf_admire_breasts_T4_intro_E1:
     call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
 
-    "Dev Note" "This section is missing writing."
-    m "I need to see your tits, [hermione_name]."
-    call her_main("Of course [genie_name].","base","ahegao_raised", cheeks="blush")
+    m "[hermione_name]?"
+    call her_main("Yes, [genie_name]?","soft","glance")
+    m "Did I ever tell you what magnificent tits you have?"
+    call her_main("............","clench","down_raised", cheeks="blush")
+    call her_main("Why do you have to be so vulgar, [genie_name]?!","clench","worriedCl", cheeks="blush")
+    m "Just take the compliment and show them to me..."
+    call her_main("Yes, [genie_name]...","base","down", cheeks="blush")
 
     $ current_payout = 25
 

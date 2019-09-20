@@ -515,6 +515,7 @@ default hg_ps_list = [
 
 default panty_jerkoff  = counter_class()
 default hg_talk        = counter_class()
+default hg_kiss        = counter_class()
 default hg_jerkoff     = counter_class()
 default hg_strip       = counter_class()
 default hg_fingered    = counter_class()
@@ -539,7 +540,8 @@ default hg_pf_talk = event_class(title = "Talk to me!", start_label = "hg_pf_tal
 
     [
     ["hg_pf_talk_T3_intro_E1"],
-    ["hg_pf_talk_T3_E1"]
+    ["hg_pf_talk_T3_intro_E2"],
+    ["hg_pf_talk_T3_repeat"]
     ]
 
     ],

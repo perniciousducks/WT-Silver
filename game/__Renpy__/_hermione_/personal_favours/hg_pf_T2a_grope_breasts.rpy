@@ -2,15 +2,6 @@
 
 ### Tier 1 ###
 
-# Doesn't exist.
-# Tier 1 always fails.
-
-
-
-### Tier 2 ###
-
-# Complete
-
 label hg_pf_grope_breasts_T1:
     stop music fadeout 1.0
     call hg_chibi_transition("grope_breasts", trans="d7")
@@ -89,15 +80,8 @@ label hg_pf_grope_breasts_T1:
             jump end_hg_pf_grope
 
 
-            #call her_main("Really?","base","baseL", cheeks="blush")
-            #m "Yes, yes... I will even give you your points..."
-            #call her_main("Err... thank you, [genie_name]...","base","baseL", cheeks="blush")
 
-
-
-### Tier 3 - Grope Breasts ###
-
-# Complete
+### Tier 2 ###
 
 label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
     stop music fadeout 1.0
@@ -206,9 +190,7 @@ label hg_pf_grope_breasts_T2_continue:
 
 
 
-### Tier 4 ###
-
-# Complete
+### Tier 3 ###
 
 label hg_pf_grope_breasts_T3:
     stop music fadeout 1.0
@@ -384,24 +366,7 @@ label hg_pf_grope_breasts_T3_continue:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Tier 5 ###
+### Tier 4 ###
 
 label hg_pf_grope_breasts_T4_naked: # No top.
     stop music fadeout 1.0
@@ -478,7 +443,7 @@ label hg_pf_grope_breasts_T4_naked: # No top.
 
 
 
-### Tier 6 ###
+### Tier 5 ###
 
 label hg_pf_grope_breasts_T5_naked:
     call set_her_action("lift_top")

@@ -338,13 +338,12 @@ label hg_pf_talk_T2:
 # Favours can revolve around Cho, Luna, Tonks
 
 label hg_pf_talk_T3_intro_E1:
-
-    m "Let's have another chat [hermione_name]."
+    m "Let's have another chat, [hermione_name]."
     call her_main("Okay...","annoyed","worried")
     m "I'd like you to tell me a bit about your day."
     call her_main("Are you going to...{w=0.8} touch yourself again sir?","open","suspicious")
     m "I can't guarantee I won't...."
-    m "You will be awarded your house points as usual."
+    m "You will be awarded with house points - as usual."
     call her_main("...","mad","down", cheeks="blush") #mad Blush
     m "You've not walked out the door so please, tell me about your day."
 
@@ -353,13 +352,22 @@ label hg_pf_talk_T3_intro_E1:
     jump end_hg_pf_talk
 
 
-label hg_pf_talk_T3_E1:
-    m "{size=-4}(Unless we spice things up a bit...){/size}"
+label hg_pf_talk_T3_intro_E2:
+    m "Let's have another chat [hermione_name]."
+    call her_main("Okay...","base","base")
+
+    call hg_pf_talk_T3
+
+    jump end_hg_pf_talk
+
+
+label hg_pf_talk_T3_repeat:
+    m "{size=-4}(Should I spice things up a bit?){/size}"
     menu:
-        "-Suggest inviting Snape-":
-            pass
-            #To be added
-            # $ hg_pf_talk_snape.start()
+        #"-Suggest inviting Snape-":
+        #    pass
+        #    #To be added
+        #    #$ hg_pf_talk_snape.start()
         "-Suggest inviting Tonks-":
             # Start event chronologically
             $ hg_pf_talk_tonks.start()
@@ -368,12 +376,17 @@ label hg_pf_talk_T3_E1:
             m "Tell me about your day [hermione_name]."
             her "Okay..."
 
+            m "Tell me about your day, [hermione_name]."
+            call her_main("Okay...","base","base")
+
             call hg_pf_talk_T3
 
     jump end_hg_pf_talk
 
 
 label hg_pf_talk_T3:
+    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    pause.8
 
     menu:
         "-Start jerking off-":

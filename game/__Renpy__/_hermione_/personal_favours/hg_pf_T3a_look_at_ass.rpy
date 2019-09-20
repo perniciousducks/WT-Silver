@@ -217,7 +217,7 @@ label hg_pr_strip_rear_transition:
 
 label hg_pr_strip_T2_rear:
 
-    "Dev Note" "Add T2 intro"
+    "Dev Note" "Not in 1.37 - Add T2 intro"
 
     call hg_pr_strip_rear_transition
 

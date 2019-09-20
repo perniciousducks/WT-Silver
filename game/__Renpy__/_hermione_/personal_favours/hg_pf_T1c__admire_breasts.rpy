@@ -272,7 +272,7 @@ label hg_pf_admire_breasts_T1: # Call label
 
     m "............."
     m "Very good, [hermione_name]."
-    call her_main("Can I get my point then?","disgust","worriedCl")
+    call her_main("Can I get my points then?","disgust","worriedCl")
     m "Of course..."
 
     return

@@ -743,7 +743,7 @@ label hg_pf_grope_ass_T3_continue:
                     call her_main("It doesn't matter whether I like this or not, [genie_name].","soft","glance", cheeks="blush")
                     call nar(">You take your fingers out and move them across her slit...")
                     call her_main("You know why I'm doing this...","clench","down", cheeks="blush")
-                    call her_main("....","disgust","down", cheeks="blush"
+                    call her_main("....","disgust","down", cheeks="blush")
                     call her_main("And it's wrong for me to let you do this to me for a meagre 15 points...","base","glance", cheeks="blush")
                     m "Heh... I see..."
 

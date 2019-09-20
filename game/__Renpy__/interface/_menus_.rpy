@@ -436,32 +436,7 @@ screen character_select_menu(character_list=[], menu_text="menu name", xposition
 
 init -2 python:
 
-    def whiteTint(image):
-        return im.MatrixColor( image, im.matrix.tint(1.1, 1.1, 1.1))
-
-    def grayTint(image):
-        return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(1.0, 1.0, 1.0))
-
-    def yellowTint(image):
-        return im.MatrixColor( image,  im.matrix.tint(1.2, 1.1, 0.7))
-
     toggle1_bool = True
     toggle2_bool = True
     toggle3_bool = True
     toggle4_bool = True
-
-    def get_head_icon(name):
-        return "interface/icons/head/head_"+str(name)+"_1.png"
-
-    def get_zoom(image, xsize, ysize):
-        if isinstance(image, basestring):
-            image = im.Image(image)
-
-        myRender = renpy.render(image, 800, 800, 0, 0)
-        sizes = myRender.get_size()
-        x = sizes[0]
-        y = sizes[1]
-
-        if xsize / x < ysize / y:
-            return min(1.0, xsize / x)
-        return min(1.0, ysize / y)

@@ -524,9 +524,6 @@ default her_speech_card = ["You should double the points you give me if I win...
 
 init python:
 
-    def clamp(n, smallest, largest):
-        return max(smallest, min(n, largest))
-
     def card_exist(unlockedlist, cardobj):
         for elm in unlockedlist:
                 if cardobj.title == elm.title:

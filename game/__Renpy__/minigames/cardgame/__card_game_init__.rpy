@@ -611,17 +611,15 @@ init python:
         return get_hex_string(color[0], color[1], color[2], color[3])
 
     def get_rgb_tuple(hex):
-        hex = hex.lstrip('#')
-        hex_len = len(hex)
-        rgb = tuple(int(hex[i:i + hex_len // 3], 16) for i in range(0, hex_len, hex_len // 3))
-        rgb = rgb + (255,) # Add alpha
-        return rgb
+        rgb = get_rgb_list(hex)
+        return tuple(rgb)
 
     def get_rgb_list(hex):
         hex = hex.lstrip('#')
         hex_len = len(hex)
         rgb = list(int(hex[i:i + hex_len // 3], 16) for i in range(0, hex_len, hex_len // 3))
-        rgb = rgb + [255] # Add alpha
+        if len(rgb) < 4:
+            rgb.append(255) # Add alpha
         return rgb
 
     def get_width(image):

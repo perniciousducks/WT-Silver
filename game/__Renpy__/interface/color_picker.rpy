@@ -14,43 +14,37 @@ screen color_picker(color, alpha, title, pos_xy):
     on "show" action Function(color_picker_update_hsva)
 
     frame:
-        xsize 500
-        ysize 350
-        xpos pos_xy[0]
-        ypos pos_xy[1]
-        xpadding 6
-        ypadding 6
+        area (pos_xy[0], pos_xy[1], 500, 350)
+        padding (6, 6)
 
         if interface_color == "gold":
             background "#e9ca7f"
         else:
             background "#7c716a"
 
-        add "interface/color_picker/"+str(interface_color)+"/frame.png" xpos -10 ypos -10
+        add "interface/color_picker/"+str(interface_color)+"/frame.png" pos (-10, -10)
 
         text title xalign 0.5 text_align 0.5
 
         # 2D color map
+        frame:
+            area (25, 25, 255, 255)
+            background Solid(tuple([x * 255 for x in colorsys.hsv_to_rgb(1 - hue, 1, 1)]))
         imagebutton:
-            idle im.MatrixColor(SVGradientImage(size=(255,255)), im.matrix.hue((1 - hue) * 360))
-            xysize (255, 255)
-            ypos 25
-            xpos 25
+            area (25, 25, 255, 255)
+            #idle im.MatrixColor(SVGradientImage(size=(255,255)), color_matrix.hue((1- hue) * 360))
+            idle Frame("interface/color_picker/saturation_value_gradient.png")
+            focus_mask None
             keyboard_focus False
             key_events False
             # Offset is frame position + padding + image position, size is image size
             action Function(color_picker_clicked, offset=(pos_xy[0] + 25 + 6, pos_xy[1] + 25 + 6), size=(255, 255))
         draggroup:
             # Allow cursor to extend 8 pixels outside map
-            ysize 255 + 16
-            xsize 255 + 16
-            ypos 25 - 8
-            xpos 25 - 8
+            area (25 - 8, 25 - 8, 255 + 16,  255 + 16)
             drag:
-                ypos int((1 - value) * 253)
-                xpos int(saturation * 253)
-                xanchor 0
-                yanchor 0
+                pos (int(saturation * 253), int((1 - value) * 253))
+                anchor (0, 0)
                 child "interface/color_picker/"+str(interface_color)+"/cursor_sq.png"
                 focus_mask None
                 activated color_picker_dragged
@@ -58,44 +52,36 @@ screen color_picker(color, alpha, title, pos_xy):
 
         # Hue slider
         vbar:
+            area (290, 25, 30, 255)
             value ScreenVariableValue("hue", range=1.0, step=0.01, action=Function(color_picker_update_rgba))
             base_bar HueGradientImage(size=(30,255))
             thumb Image("interface/color_picker/"+str(interface_color)+"/cursor_h.png", xalign=0.5)
             thumb_offset 0
             top_gutter 0
             bottom_gutter 0
-            ysize 255
-            xsize 30
-            ypos 25
-            xpos 290
 
         if alpha:
             # Alpha slider
-            add "interface/color_palete/"+str(interface_color)+"/alpha.png" xpos 22 ypos 287
+            add "interface/color_picker/"+str(interface_color)+"/alpha.png" xpos 22 ypos 287
             add Frame("interface/color_picker/checker.png", tile=True, ysize=30, xsize=255) xpos 25 ypos 290
             bar:
+                area (25, 290, 255, 30)
                 value ScreenVariableValue("_alpha", range=1.0, step=0.01, action=Function(color_picker_update_rgba))
                 base_bar im.MatrixColor(AlphaGradientImage(size=(255,30)), im.matrix.colorize(rgba, rgba))
                 thumb Image("interface/color_picker/"+str(interface_color)+"/cursor_v.png", xalign=0.5)
                 thumb_offset 0
                 top_gutter 0
                 bottom_gutter 0
-                ysize 30
-                xsize 255
-                ypos 290
-                xpos 25
 
         # Selected color
         add Frame("interface/color_picker/checker.png", tile=True, ysize=100, xsize=100) xpos 360 ypos 180
         frame:
+            area (360, 180, 100, 100)
             background Solid(rgba)
-            xsize 100 ysize 100
-            xpos 360 ypos 180
 
         # Text input
         vbox:
-            xpos 355
-            ypos 25
+            pos (355, 25)
             spacing 6
             textbutton "Red: " + str(int(rgba[0])):
                 style btn_style text_style txt_style
@@ -118,7 +104,7 @@ screen color_picker(color, alpha, title, pos_xy):
 
         # Window buttons
         hbox: 
-            xalign 1.0 yalign 1.0
+            align (1.0, 1.0)
             xoffset -3
             spacing 6
             textbutton "Cancel":
@@ -175,7 +161,7 @@ init -1 python:
         scope = renpy.get_screen("color_picker").scope
         (r, g, b, a) = scope["rgba"]
         (h, s, v) = colorsys.rgb_to_hsv(r / 255.0, g / 255.0, b / 255.0)
-        scope["hue"] = h
+        scope["hue"] = 1 - h
         scope["saturation"] = s
         scope["value"] = v
         scope["_alpha"] = a / 255.0

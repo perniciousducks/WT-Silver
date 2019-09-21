@@ -196,11 +196,20 @@ screen ton_walk():
         add "characters/chibis/cloth_pile_r.png" xpos ton_pile_xpos ypos ton_pile_ypos
 
 screen with_tonks_animated():
-    tag tonks_chibi
+    tag ton_chibi
+    zorder ton_chibi_zorder
+    
     if daytime:
         add "genie_toast_goblet_daytime" at Position(xpos=435, ypos=200)
     else:
         add "genie_toast_goblet" at Position(xpos=435, ypos=200)
-    add "snape_toast_goblet" at Position(xpos=618, ypos=200) # TODO: Add correct Chibi images.
 
-    zorder 3
+    add "ch_ton sit" at Position(xpos=610, ypos=175)
+    
+    if tonks_class.get_worn("bottom"):
+        add "ch_ton sit_trousers" at Position(xpos=610, ypos=175)
+    if tonks_class.get_worn("bottom") or tonks_class.get_worn("stockings"):
+        add "ch_ton sit_shoes" at Position(xpos=610, ypos=175)
+        
+    if tonks_class.get_worn("top"):
+        add "ch_ton sit_top" at Position(xpos=610, ypos=175)

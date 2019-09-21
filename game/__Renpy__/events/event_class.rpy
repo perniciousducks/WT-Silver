@@ -85,6 +85,11 @@ init python:
             events_filtered = filter(lambda x: '_intro' not in x[0], self.events[self._tier])
             random_event = events_filtered[random.randint(0, len(events_filtered)-1)][0]
             return renpy.jump(random_event)
+            
+        def change_icon(self, a="heart_yellow", b="heart_red"):
+            for icon in self.iconset:
+                if icon[1] == a:
+                    icon[1] = b
 
         def start_advance(self):
             self.counter += 1

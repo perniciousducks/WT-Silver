@@ -462,15 +462,15 @@ label hg_pf_grope_ass_T2_continue:
                 "-Let the girl go...-":
                     jump end_hg_pf_grope
 
-        "-Prod her butt-hole instead-":
-            call nar(">You place your one of your thumbs against the girls butt-hole...")
+        "-Prod her butthole instead-":
+            call nar(">You place your one of your thumbs against the girls butthole...")
             call her_main("[genie_name]? No! What are you doing!?","mad","wide", cheeks="blush")
             call nar(">Hermione tries to pull away from you...")
             $ her_mood += 3
 
             menu:
-                "-Force your thumb into her butt-hole-":
-                    call nar(">You force one of your thumbs into her little butt-hole...")
+                "-Force your thumb into her butthole-":
+                    call nar(">You force one of your thumbs into her little butthole...")
                     with hpunch
                     call her_main("!!?","angry","wide")
                     call nar(">It's very tight and warm inside...")
@@ -572,8 +572,8 @@ label hg_pf_grope_ass_T3_front:
     m "You seem more relaxed this time."
     call her_main("...................","base","down", cheeks="blush")
     m "Could it be that you're enjoying this?"
-    call her_main("I suppose...","soft","down", cheeks="blush")
-    call her_main("If I do this to earn points for my house - I might as well enjoy it a little...","soft","down", cheeks="blush") #looks down
+    call her_main("I....","soft","down", cheeks="blush")
+    call her_main("I'm doing this to earn points for my house, it has nothing to do with personal enjoyment...","soft","down", cheeks="blush") #looks down
     m "Is that so?"
     m "Then why aren't you looking into my eyes when you say that..."
     call her_main("I...","disgust","base", cheeks="blush") #looks back up
@@ -594,9 +594,9 @@ label hg_pf_grope_ass_T3_front:
     call her_main("Isn't that what you wanted, [genie_name]...","open","worried", cheeks="blush")
 
     call nar(">You give her butt another firm squeeze as you gently move to massage her inner leg...")
-    call her_main("I take that as a yes...","base","ahegao", cheeks="blush")
+    call her_main("I'll take that as a yes...","base","ahegao", cheeks="blush")
 
-    call nar(">You continue to massage her inner thigh and occasionally give a gentle brush against her panties...")
+    call nar(">You continue to massage her inner thigh and occasionally gently brush against her panties...")
     call her_main("Ah...","soft","ahegao", cheeks="blush")
     call her_main("...","clench","ahegao", cheeks="blush")
     g9 "..."
@@ -605,7 +605,7 @@ label hg_pf_grope_ass_T3_front:
     m "Enjoying yourself?"
     call her_main("W-What...","disgust","down", cheeks="blush")
     m "The massage... You seem less tense than last time."
-    call her_main("Oh... I suppose it's quite nice...","clench","baseL", cheeks="blush")
+    call her_main("Oh... I suppose it is quite nice...","clench","baseL", cheeks="blush")
 
     call nar(">You continue rubbing her inner thighs, Hermione's chest moving up and down faster and faster...")
     call her_main(".......","clench","down_raised", cheeks="blush")
@@ -616,7 +616,7 @@ label hg_pf_grope_ass_T3_front:
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="d7")
     pause.8
 
-    call nar(">Bringing your hands out from underneath her robes you hold them up in front of Hermione...")
+    call nar(">Bringing your hands out from underneath her skirt you hold them up in front of Hermione...")
     m "What would you call this then, [hermione_name]?"
 
     call nar(">Hermione embarrassingly looks at you - as you present her with a sticky substance gleaming across your upper hand...")
@@ -660,7 +660,7 @@ label hg_pf_grope_ass_T3_back:
     call her_main("Do I have to give you a response?","open","base", cheeks="blush")
     m "Well, you don't have to..."
     call her_main("It feels weird...{w} but...","disgust","down", cheeks="blush")
-    g9 "Butt?"
+    g9 "Butt?" #fucks sake
 
     call hg_chibi_transition("grope_ass", flip=True, trans="d7")
     pause.8
@@ -669,12 +669,12 @@ label hg_pf_grope_ass_T3_back:
     call her_main("[genie_name]!","clench","angry", cheeks="blush")
     m "Sorry..."
     call her_main("...","annoyed","angryL", cheeks="blush")
-    call her_main("You should've given me a warning...","soft","angryL", cheeks="blush") #annoyed
+    call her_main("You should've warned me...","soft","angryL", cheeks="blush") #annoyed
 
     call nar(">Hermione goes quiet as you begin massaging her butt cheeks...")
     call her_main("...","base","closed", cheeks="blush")
 
-    call nar(">You take your thumbs and move them gently to each side as her soft butt cheeks spreads open and close with every move...")
+    call nar(">You take your thumbs and move them gently to each side as her soft butt cheeks open and close with every move...")
     m "Does this feel better?"
     call her_main("It...","clench","down", cheeks="blush")
     call her_main("It feels fine...","soft","down", cheeks="blush")
@@ -690,7 +690,7 @@ label hg_pf_grope_ass_T3_back:
     call nar(">Lessening your grip of her cheeks slightly - you then move down towards her inner thighs - and gently begin massaging her with your thumbs...")
     call her_main("...","soft","ahegao", cheeks="blush")
 
-    call nar(">Moving them gently up and down Hermione begins to relax as your soft hands occasionally brushes against her panties...")
+    call nar(">Moving them gently up and down Hermione begins to relax as your soft hands occasionally brush against her panties...")
     call her_main("Ah...","open","ahegao", cheeks="blush") #Involuntarily moans
     call her_main("...","base","ahegao", cheeks="blush") #Blushes furiously
     g9 "..."
@@ -743,7 +743,7 @@ label hg_pf_grope_ass_T3_continue:
                     call her_main("It doesn't matter whether I like this or not, [genie_name].","soft","glance", cheeks="blush")
                     call nar(">You take your fingers out and move them across her slit...")
                     call her_main("You know why I'm doing this...","clench","down", cheeks="blush")
-                    call her_main("....","disgust","down", cheeks="blush"
+                    call her_main("....","disgust","down", cheeks="blush")
                     call her_main("And it's wrong for me to let you do this to me for a meagre 15 points...","base","glance", cheeks="blush")
                     m "Heh... I see..."
 
@@ -755,13 +755,13 @@ label hg_pf_grope_ass_T3_continue:
                             call nar(">With no more objections you move your index finger across her clit and begin rubbing it gently...")
                             call her_main("...","soft","closed", cheeks="blush")
                             call nar("Completely lost in the moment Hermione moves around as you massage her.")
-                            call nar("In response to her movement you starts rubbing her faster - and as you do she squeals and lets out a gentle moan.")
+                            call nar("In response to her movement you start rubbing her faster - and as you do she squeals and lets out a gentle moan.")
                             call her_main("*Hnnngh*","clench","worriedCl", cheeks="blush") #still has eyes closed
                             call her_main("....","disgust","wide", cheeks="blush") #Opens her eyes wide
                             m "Did you just?"
                             if her_tier <= 4:
                                 call her_main("No...","angry","worriedCl", cheeks="blush")
-                                m "Well it sure appears as if you just..."
+                                m "Well it sure looks like you just-"
                                 call her_main("I think we're done here!","soft","worriedCl", cheeks="blush", emote="01")
                                 m "I see..."
                                 m "Well, in that case..."
@@ -779,13 +779,13 @@ label hg_pf_grope_ass_T3_continue:
                 "-Let the girl go...-":
                     jump end_hg_pf_grope
 
-        "-Prod her butt-hole instead-":
-            ">You place your one of your thumbs against the girl's little butt-hole..."
-            call her_main("[genie_name]? What are planning on doing?","base","baseL", cheeks="blush")
+        "-Prod her butthole instead-":
+            ">You place your one of your thumbs against the girl's little butthole..."
+            call her_main("[genie_name]? What are you doing?","base","baseL", cheeks="blush")
 
             menu:
-                "-Force your thumb into her butt-hole-":
-                    ">You force one of your thumbs into her little butt-hole..."
+                "-Force your thumb into her butthole-":
+                    ">You force one of your thumbs into her little butthole..."
                     with hpunch
                     call her_main("ah... your finger is up my...","silly","worried", cheeks="blush", tears="soft")
                     ">It's very tight and warm inside..."
@@ -1103,11 +1103,11 @@ label hg_pf_grope_T4_continue:
 
             jump end_hg_pf_grope
 
-        "-Prod her butt-hole instead-":
-            ">You place your one of your thumbs against the girl's little butt-hole..."
+        "-Prod her butthole instead-":
+            ">You place your one of your thumbs against the girl's little butthole..."
             call her_main("[genie_name]? you're not planning t-","open","baseL", cheeks="blush", ypos="head")
 
-            ">You force one of your thumbs into her little butt-hole..."
+            ">You force one of your thumbs into her little butthole..."
             with hpunch
             call her_main("ah... your finger is up my...","silly","ahegao")
             ">It's very tight and warm inside..."

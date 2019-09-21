@@ -1,7 +1,7 @@
 ### Tonks###
 
 label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
-    
+
     $ target_color = None
 
     #Flip
@@ -46,7 +46,7 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
             $ tonks_scaleratio = 2
 
             if tonks_flip == -1: #Flipped
-                $ tonks_xpos = -50
+                $ tonks_xpos = -80
             else:
                 $ tonks_xpos = 650
             $ tonks_ypos = 200
@@ -101,7 +101,7 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
     show screen bld1
 
     call transition(trans, True)
-    
+
     # Hair transition, performs only when applying new colour
     if target_color != None and target_color != tonks_class.get_cloth("hair").color:
         $ tonks_class.get_cloth("hair").color = target_color
@@ -118,12 +118,12 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
 
 
 label update_tonks:
-    return
+
     # Chibi Update
     $ update_chibi_image("tonks")
     $ tonks_flip = 1
     $ ton_cloth_pile = False
-    #return
+    return
 
 
 label end_tonks_event:
@@ -136,7 +136,7 @@ label end_tonks_event:
 
     $ active_girl = None
     $ tonks_busy = True
-    
+
     # Reset temporal hair colour
     $ tonks_class.get_cloth("hair").color = tonks_haircolor
     $ tonks_class.get_cloth("hair").cached = False

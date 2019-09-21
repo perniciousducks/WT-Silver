@@ -253,7 +253,7 @@ screen whitefade():
 
 screen blktone():
     tag blktone
-    zorder 5 #Otherwise bird's food will be on top.
+    zorder 4 # behind character sprites.
     add im.Alpha("interface/blackfade.png", 0.5)
 
 screen blktone2():
@@ -361,6 +361,10 @@ label teleport(position=None,effect=True,poof_label=None):
     elif position == "cho":
         $ teleport_xpos = cho_chibi_xpos+45
         $ teleport_ypos = cho_chibi_ypos-80
+        $ teleport_zorder = 3
+    elif position == "astoria":
+        $ teleport_xpos = ast_chibi_xpos+45
+        $ teleport_ypos = ast_chibi_ypos-80
         $ teleport_zorder = 3
     elif position == "desk":
         $ teleport_xpos = 320

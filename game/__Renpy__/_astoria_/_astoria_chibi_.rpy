@@ -60,12 +60,13 @@ label ast_chibi(action = "", xpos=ast_chibi_xpos, ypos=ast_chibi_ypos, flip=Fals
 
 ### Astoria Chibi Walk ###
 
-label ast_walk(xpos=walk_xpos, ypos=walk_ypos, speed=ast_speed, action="", loiter=True, redux_pause=0):
-    call hide_characters
-    call hide_chibi_effects
-    hide screen bld1
-    hide screen blktone
-    with d3
+label ast_walk(xpos=walk_xpos, ypos=walk_ypos, speed=ast_speed, action="", loiter=True, redux_pause=0, hide_screens=True):
+    if hide_screens:
+        call hide_characters
+        call hide_chibi_effects
+        hide screen bld1
+        hide screen blktone
+        with d3
 
     $ ast_chibi_status = "move"
     $ update_chibi_image("astoria")

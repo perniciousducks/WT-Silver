@@ -89,7 +89,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
 
     if hg_strip.trigger:
         menu:
-            "\"First, lift up your top\"": # Needs posing
+            "\"First, lift up your top\"":
                 call her_main("Sir?!","clench","base")
                 m "What? It's not like I haven't seen them before..."
                 call her_main("But!","clench","down_raised")

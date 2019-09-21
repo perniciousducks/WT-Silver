@@ -100,14 +100,12 @@ label hg_pf_admire_breasts:
 
 ### Tier 1 ###
 
-### Incomplete ### Needs posing ###
-
 # Her Bra will stay on for this tier.
 # Event 1 (i) - Hermione will remove her vest.
 # Event 2 (i) - Hermione will lift up her top.
 # Event 3 (r) - Hermione will lift up her top.
 
-label hg_pf_admire_breasts_T1_intro_E1: # Needs posing
+label hg_pf_admire_breasts_T1_intro_E1:
     call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
 
     m "[hermione_name]?"
@@ -123,11 +121,11 @@ label hg_pf_admire_breasts_T1_intro_E1: # Needs posing
     call her_main("[genie_name], I refuse to bare my breasts for you!","open","angryCl")
     call her_main("How could you even suggest such a thing?!","angry","angry")
     m "Don't you want to earn some house points?"
-    call her_main("Yes... But not in a way such as this!","angry","angry")
+    call her_main("Yes... But not in a way such as this!","angry","angryL")
 
     m "I will award \"Gryffindor\" [current_payout] whole house-points if you remove your top."
     g9 "Isn't that a steal?"
-    call her_main("No it isn't!","angry","angry")
+    call her_main("No it isn't!","clench","angryCl", emote="01")
     m "Please?"
     m "You can keep your bra on for all I care..."
     call her_main("And my shirt! I will not remove my shirt either!","angry","angry")
@@ -141,14 +139,14 @@ label hg_pf_admire_breasts_T1_intro_E1: # Needs posing
 
         "\"That won't be enough, [hermione_name]...\"":
             g4 "I'm not giving \"Gryffindor\" [current_payout] whole points because you took off a vest..."
-            call her_main("But-","angry","angry")
+            call her_main("But-","open","wide")
             m "No buts! You are dismissed."
-            call her_main("Please, [genie_name]. I need those points!","angry","angry")
+            call her_main("Please, [genie_name]. I need those points!","disgust","worriedCl")
             m "Then might I suggest you put in some work to earn them..."
             call her_main("(................)","annoyed","angryL")
             m "Have a nice day, Miss Granger."
             call her_main("(................)","annoyed","angry")
-            call her_main("Fine! I'm leaving...","angry","angry")
+            call her_main("Fine! I'm leaving...","open","angryCl")
             call her_main("Good day, Sir.","angry","angry")
 
             call her_walk(action="leave", speed=2.5)
@@ -171,9 +169,9 @@ label hg_pf_admire_breasts_T1_intro_E1: # Needs posing
 
     m "*Hmmmmm*"
     m "..........."
-    call her_main("Sir?","annoyed","angryL")
+    call her_main("Sir?","clench","angry")
     g4 "(I wonder what cup size those are.)"
-    call her_main("Sir, I would like to have my points now.","annoyed","angryL")
+    call her_main("Sir, I would like to have my points now.","open","angryCl")
     m "What? Oh yes. Of course..."
 
     call hide_characters
@@ -192,32 +190,33 @@ label hg_pf_admire_breasts_T1_intro_E2:
 
     m "[hermione_name], Is it just me?"
     g9 "Or is it getting really hot in here?!"
-    call her_main("Sir...?","angry","angry")
+    call her_main("Sir...?","open","wink")
     m "Take off your vest for me, would you..."
     call her_main("(...............)","annoyed","angry")
     g9 "And your shirt! Take that off as well!"
     call her_main("Sir, this is a very inapporpriate thing to ask of me!!!","scream","angryCl")
     m "Yeah, yeah... What else is new..."
-    call her_main("Sir!!!","scream","angryCl")
+    call her_main("Sir!!!","clench","wide")
     m "Please. All I'm asking for is to get a little peek..."
-    call her_main("A peek at what?","scream","angryCl")
+    call her_main("A peek at what?","open","angry")
 
     menu:
         "\"Your bra!\"":
             g9 "I bet it's really cute..."
-            call her_main("(......................)","scream","angryCl")
+            call her_main("(......................)","clench","angryCl")
 
-            call her_main("How many points did you say I'd get for this?","scream","angryCl")
+            call her_main("How many points did you say I'd get for this?","open","angry")
             m "[current_payout] points. Just like last time."
-            call her_main("But last time I didn't need to show you my bra!","scream","angryCl")
+            call her_main("But last time I didn't need to show you my bra!","clench","base")
             m "You're correct, Miss Granger."
             m "But as you've already pointed our correctly..."
             g9 "That was last time!"
-            m "Now if you would like those points I suggest you remove those tops of yours..."
-            call her_main("(.............................)","scream","angryCl")
+            m "Now if you would like those points I suggest you remove that top of yours..."
+            call her_main("(.............................)","annoyed","angry")
             m "And I expect you to do it today, if you don't mind. I have... *uhm*..."
             m "I have other things to take care off."
-            call her_main("Very well, Sir. I'll do it.","scream","angryCl")
+            call her_main("Very well, Sir...","open","angry")
+            call her_main("I'll do it.","annoyed","angry")
 
             pass
 
@@ -227,8 +226,9 @@ label hg_pf_admire_breasts_T1_intro_E2:
             call her_main("M-My-... my breasts?!","angry","angry")
 
             # Hermione gets angry
+            call her_main("*Tztzzz!*...","angry","angryCl", emote="01")
 
-            call her_main("Good day, Sir.","angry","angry")
+            call her_main("Good day, Sir.","scream","angry")
 
             call her_walk(action="leave", speed=2.5)
 
@@ -281,8 +281,6 @@ label hg_pf_admire_breasts_T1: # Call label
 
 ### Tier 2 ###
 
-### Complete ### Needs posing ###
-
 # Hermione will bare her breasts after some convincing.
 # Event 1 (i) - Choice: Pay Hermione more points to lift up her top without bra.
 # Event 2 (i) - Hermione will lift up her top.
@@ -329,14 +327,16 @@ label hg_pf_admire_breasts_T2_intro_E1:
             call her_main("[genie_name], I am not going to expose myself for a meagre five points!","angry","angry",emote="01")
             m "Well, your tits sure aren't worth 200, [hermione_name]!"
             call her_main("(They aren't?)","annoyed","down")
-            call her_main("Maybe one hundred then?","annoyed","angryL")
+            call her_main("Maybe one hundred - then?","annoyed","angryL")
 
             menu:
                 "\"Fine. 100 it is! Bare them already!":
                     $ current_payout = 100
+                    $ her_mood = 0
 
-                    her "................."
-                    her "So be it... For a hundred points..."
+                    call her_main(".................","annoyed","wide")
+                    call her_main("A hundred points...","annoyed","baseL")
+                    call her_main("So be it...","smile","happyCl")
 
                     pass
 
@@ -344,13 +344,13 @@ label hg_pf_admire_breasts_T2_intro_E1:
                     $ current_payout = 25
                     $ her_mood += 9
 
-                    her "..............."
-                    her "Well, so be it..."
+                    call her_main("...............","annoyed","down")
+                    call her_main("Well, so be it...","clench","down_raised")
 
                     pass
 
         "\"Fine, leave. I don't care...\"":
-            her "Tsk!"
+            call her_main("Tsk!","clench","angryCl")
 
             call her_walk(action="leave", speed=2.5)
 

@@ -1,18 +1,26 @@
+
+
+### Whose Points?! ###
+
 label whose_points:
     call h_equip_temp_outfit(hg_standart_school_ITEM)
     call room(hide_screens=True)
     show screen whose_points_screen
     show screen blkfade
     with d3
-    pause 0.3
-    
-    call her_chibi("stand","mid","base")
-    call lun_chibi("stand", "mid", "260")
+
+    call ast_chibi("stand","380","240")
+    pause.4
+    call her_chibi("stand","450","240")
+    pause.6
+    call lun_chibi("stand", "530", "250")
+
     hide screen blkfade
     with d3
 
     stop music
     $ renpy.play('sounds/epic_intro.mp3')
+    call bld
     g9 "Hello and welcome to whose points is it anyway."
     g9 "The show where everything is made up but the points don't matter."
     g9 "Just like at Hogwarts."
@@ -23,21 +31,21 @@ label whose_points:
     m "First, let me introduce todays contestants."
     m "The curly haired harlot we all know and love. Give it up for Hermione."
     $ renpy.play('sounds/applause01.ogg')
-    call her_main("...","grin","worried",cheeks="blush", xpos="left",ypos="base")
+    call her_main("...","grin","worried",cheeks="blush", xpos="500",ypos="base")
     $ renpy.sound.play("sounds/wolf_whistle.mp3")
-    call her_main("...","base","worried",cheeks="blush", xpos="left",ypos="base")
+    call her_main("...","base","worried",cheeks="blush")
 
     m "The ravishing ravenclaw who'll rock your socks off. Luna! "
     $ renpy.play('sounds/applause01.ogg')
-    call lun_main("...","base","wink","base","mid",xpos="mid",ypos="base")
+    call lun_main("...","base","wink","base","mid",xpos="650",ypos="base")
     $ renpy.play('sounds/giggle2_loud.mp3')
-    call lun_main("heh...hello.","base","base","base","mid",xpos="mid",ypos="base")
+    call lun_main("heh...hello.","base","base","base","mid")
 
     m "And the small girl with a big personality. Astoria!"
     $ renpy.play('sounds/applause01.ogg')
     g9 "..."
     $ renpy.play('sounds/gasp3.mp3')
-    call ast_main("Hey!","scream","angry","angry","angry",xpos="right",ypos="base")
+    call ast_main("Hey!","scream","base","angry","mid",xpos="380",ypos="base")
 
     pause.5
     hide screen hermione_main
@@ -54,16 +62,16 @@ label whose_points:
 
     g4 "But the notes are already inside you...{w} I put them in there last night."
 
-    hat "You put notes inside me without my consent?" 
+    hat "You put notes inside me without my consent?"
     $ renpy.play('sounds/burp.mp3')
     hat "\n*Burp*"
-    hat "Pardon me." 
+    hat "Pardon me."
 
     m "Looks like we have our first prompt."
     m "Things you might say in potions class... But also in your bedroom."
 
-    call her_main("This cauldron hasn't been used for years. It's all moldy and full of muck!","grin","worried",cheeks="blush",xpos="right")
-    
+    call her_main("This cauldron hasn't been used for years. It's all moldy and full of muck!","grin","worried",cheeks="blush", xpos="right", ypos="base")
+
     $ renpy.play('sounds/applause01.ogg')
     hat "Boo, there's no cauldrons in the bedroom!"
 
@@ -71,7 +79,7 @@ label whose_points:
     hide screen hermione_main
     with d3
 
-    call ast_main("Snape, get your gross hands off my shoulders, you creep!","clench","angry","angry","angry")
+    call ast_main("Snape, get your gross hands off my shoulders, you creep!","clench","narrow","angry","mid", xpos="right", ypos="base")
 
     $ renpy.sound.play("sounds/cough_male.mp3")
     mal "..."
@@ -79,7 +87,7 @@ label whose_points:
     hide screen astoria_main
     with d3
 
-    call lun_main("Oops... I was supposed to squeeze the mucus out with my hands and not crush it.","silly","closed","raised","mid")
+    call lun_main("Oops... I was supposed to squeeze the mucus out with my hands and not crush it.","silly","closed","raised","mid", xpos="right", ypos="base")
 
     $ renpy.play('sounds/applause01.ogg')
     m "Sounds painful... 15 points to Ravenclaw."
@@ -100,30 +108,30 @@ label whose_points:
     m "Ah, this one..."
     g9 "Things you might do in Quidditch... but also with your lover..."
 
-    call ast_main("I'm going first this time! I have a good one!","grin","base","base","mid")
+    call ast_main("I'm going first this time! I have a good one!","smile","base","base","mid")
 
     m "Go on...."
 
-    call ast_main("Madam Hooch! Get your gross hands off my quidditch robes, you creep!" ,"clench","angry","angry","mid")
+    call ast_main("Madam Hooch! Get your gross hands off my quidditch robes, you creep!" ,"clench","narrow","angry","mid")
 
     m "Again, I don't think you understand the game..."
 
-    call ast_main("Give me the points!","scream","narrow","narrow","mid")
+    call ast_main("Give me the points!","scream","narrow","angry","mid", trans="hpunch")
 
     m "Disqualified!"
 
-    call ast_main("Wait, you can do that?" ,"scream" ,"wide","wide")
+    call ast_main("Wait, you can do that?","clench","base","base","mid")
 
     g9 "It's my game, I make the rules."
 
-    call ast_main("\"We'll see about that....\"","upset","narrow","narrow")
+    call ast_main("\"We'll see about that....\"","annoyed","narrow","angry","R")
     hide screen astoria_main
     with d3
 
     call her_main("My turn.")
     call her_main("I love the feeling of a hard wooden object between my legs. \nI tend to tense up during the climax.","grin", cheeks="blush")
 
-    $ renpy.play('sounds/applause01.ogg') 
+    $ renpy.play('sounds/applause01.ogg')
     m "A bit direct but I like it. \n15 points to Gryffindor."
     hide screen hermione_main
     with d3
@@ -156,18 +164,19 @@ label whose_points:
 
     call ast_main("Let me check professor!","smile","base","base","mid")
     $ renpy.play('sounds/cloth_sound.mp3')
-    call ast_main("Hmm...{w} It has to be here somewhere... {w} There it is! It was stuck under one of the folds!")
+    call ast_main("Hmm...{w} It has to be here somewhere...","annoyed","base","base","down")
+    call ast_main("There it is! It was stuck under one of the folds!","smile","base","base","mid")
     hide screen astoria_main
     with d3
 
     $ renpy.sound.play("sounds/MaleGasp.mp3")
-    hat "Are you calling me fat young lady?"
+    hat "Are you calling me fat - young lady?!"
 
-    call ast_main("I'll read it for you shall I?")
+    call ast_main("I'll read it for you, shall I?","smile","closed","base","mid")
 
     m "Go ahead..."
 
-    call ast_main("Things that you would not share with your classmates... but would share with.. how you call him again.. ah yes, \"[lun_genie_name]\".")
+    call ast_main("Things that you would not share with your classmates... but would share with.. how you call him again.. ah yes, \"[lun_genie_name]\".","open","base","base","down")
     hide screen astoria_main
     with d3
 
@@ -175,14 +184,18 @@ label whose_points:
 
     call lun_main("I see invisible creatures... but people don't belie... ","soft","annoyed","sad","down")
     hide screen luna_main
+    hide screen bld1
     with d3
+    pause.1
 
-    call set_her_action("lift_top")
-
-     # SEX THEME.
     stop music
-    call her_chibi("lift_top","mid","base")
-    
+    call her_chibi("lift_top","450","240")
+    with d5
+    pause.8
+
+    $ hermione_wear_bra = False
+    call set_her_action(action="lift_top")
+
     $ renpy.sound.play("sounds/crowd_gasp.mp3")
     call her_main("...","smile","worried")
 
@@ -211,9 +224,9 @@ label whose_points:
     hide screen hermione_main
     with d3
 
-    call ast_main("Harlot! Harlot! Harlot!","grin","happyCl","base","R")
+    call ast_main("Harlot! Harlot! Harlot!","grin","closed","base","mid", xpos="400", ypos="base")
 
-    call lun_main("How do those points taste now? ","grin","base","base","mid")
+    call lun_main("How do those points taste now? ","grin","base","base","mid", xpos="600", ypos="base")
     call lun_main("The whole wizarding world is going see your tits!","silly","base","base","mid")
     hide screen luna_main
     hide screen astoria_main

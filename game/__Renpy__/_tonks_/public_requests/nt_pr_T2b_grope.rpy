@@ -40,11 +40,11 @@ label nt_pr_grope_start:
             call ton_main("Consider it done, [ton_genie_name].", face="horny")
             m "I'll see you after class..."
 
-    elif ton_tier >= 3: # Not in 1.37
+    elif ton_tier >= 3:
 
         if nt_pr_grope.points == 0: # Tell her to be even lewder for the next level of favors.
 
-            "Dev Note" "Write 2nd intro."
+            "Dev Note" "Not in 1.37 - Write 2nd intro."
 
         else: # Repeat
             m "Would you like to mess around with your students again?"

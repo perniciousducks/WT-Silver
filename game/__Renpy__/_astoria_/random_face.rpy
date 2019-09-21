@@ -109,7 +109,8 @@ define ast_mouth_layers = [
 define ast_eye_layers = [
     "base",
     "closed",
-    "narrow"
+    "narrow",
+    "wink"
 ]
 
 define ast_brow_layers = [

@@ -328,7 +328,7 @@ label hg_pf_blowjob_1:
     call hg_chibi_transition("bj", trans="d9")
     call ctc
 
-    call her_main("*Slurp!* *Gulp!* *Slurp!*","sucking", ypos="head")
+    call her_main("*Slurp!* *Gulp!* *Slurp!*","open_tongue", ypos="head")
     m "Yes..."
     m "Try to take it deeper now..."
     call her_main("*Gulp!* *Gobble!* *Gobble!*")

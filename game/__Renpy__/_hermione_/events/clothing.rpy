@@ -97,7 +97,7 @@ label hermione_random_clothing:
                 if her_whoring < 11:
                     call her_main("Uhm... Thank you, [genie_name].","soft","baseL")
                     call her_main("I normally don't wear something like this.","open","base")
-                    call her_main("(Showing so much cleavage...)","disgust","down",cheeks="blush")
+                    call her_main("(Showing so much cleavage...)","disgust","down", cheeks="blush")
                     call her_main("But the weather is just too hot today.","base","baseL")
                     g9 "You should wear this more often!"
                 else:
@@ -141,15 +141,12 @@ label hermione_random_clothing:
                 m "..."
                 m "[hermione_name],..."
                 m "What's with all these clothes you are wearing?"
-
-                call her_main("[genie_name], it's raining outside! I don't want to get a cold.","open","base")
-                m "It's not raining in here..."
-                call her_main("Yes, but it's a bit cold, [genie_name], and my...","soft","baseL",cheeks="blush")
+                call her_main("It's a bit cold outside, [genie_name]... and my...","soft","baseL", cheeks="blush")
 
                 if her_whoring < 11:
-                    call her_main("I better not mention it...","disgust","down",cheeks="blush")
+                    call her_main("I better not mention it...","disgust","down", cheeks="blush")
                 elif her_whoring < 18:
-                    call her_main("{size=-5}People can see my... my nipples...{/size}","disgust","down",cheeks="blush")
+                    call her_main("{size=-5}People can see my... my nipples...{/size}","disgust","down", cheeks="blush")
                 else:
                     call her_main("I can't have my nipples poking out all the time, [genie_name]! It's distracting!","annoyed","angryL")
 

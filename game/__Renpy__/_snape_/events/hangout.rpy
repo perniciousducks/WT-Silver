@@ -374,7 +374,7 @@ label hang_with_snape_E2:
     m "I think so too."
     call sna_main("Oh, I feel so alive tonight!","snape_45")
     call sna_main("Pour me another goblet!","snape_28")
-    call sna_main("The \"Defence Against the Dark Arts\" class will start late tomorrow!","snape_45")
+    call sna_main("Potions class will start late tomorrow!","snape_45")
     m "....."
     m "Don't you think this is a bit too brutal though?"
     m "I mean, she's just a girl..."
@@ -590,6 +590,16 @@ label hang_with_snape_E4:
     call sna_main("So she knows everything? How did she?-","snape_03")
     m "It appears the \"illusion charm\" wasn't perfect. She momentarily got a glimpse through it..."
     call sna_main("That's impressive... perhaps I didn't give her enough credit...","snape_01")
+
+    call sna_main("If what you're telling me about her intentions are true...","snape_03")
+    call sna_main("Maybe she could even be persuaded to help with the Granger situation...","snape_05")
+
+    if hang_with_tonks.E1_complete:
+        g9 "Way ahead of you!"
+        m "She's aleady offered to help with Granger."
+    else:
+        m "Oh, I'm sure there's little to no persuasion needed."
+        m "I have no doubt that she'd be well into the idea of convincing Granger to sell favours herself..."
 
     call sna_main("What a wicked-bitch!","snape_13")
     call sna_main("If only we were selling favours back then...","snape_46")

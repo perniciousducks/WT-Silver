@@ -281,7 +281,7 @@ label hang_with_tonks_E3:
     g9 "Surely that's something most girls would kill for!" #the pun sucks sorry, "massively proud" doesn't make sense
     call ton_main("That's what I said...","open","closed","base","mid")
     call ton_main("She didn't seem to think I was being genuine.","upset","base","worried","down")
-    m "They're probably just jealous of her." 
+    m "They're probably just jealous of her."
     call ton_main("Naturally... Even I'm jealous of those {b}milk-bags{/b} of hers!","open","base","angry","mid")
     g9 "I definitely need to see them!"
     call ton_main("That being said, I'm quite worried about her...","open","closed","worried","mid")
@@ -320,7 +320,7 @@ label hang_with_tonks_E3:
     call ton_main("...","upset","base","worried","R")
     call ton_main("You're making me regret this decision already...","open","closed","worried","mid")
 
-    ">As the hours pass, you can convince Tonks to describe Susan's {b}massive tits{/b} to you..."
+    ">As the hours pass, you convince Tonks to describe Susan's {b}massive tits{/b} to you..."
     ">You are glued to every word she has to say about them..."
 
     $ hang_with_tonks.E3_complete = True
@@ -376,7 +376,10 @@ label nt_he_story_intro_E1:
     call ton_main("Maybe I'll give you a demonstration some day...","horny","base","base","mid")
     call ton_main("And I'm not talking about my intellectual abilities...","horny","base","angry","mid")
     g9 "I'm a well for all kinds of knowledge!"
-    call ton_main("Anyway, I think I'm gonna go hit the sack.","open","base","base","R")
+    if daytime:
+        call ton_main("Anyway, I have to go prepare for classes.","open","base","base","R")
+    else:
+        call ton_main("Anyway, I think I'm gonna go hit the sack.","open","base","base","R")
     m "There's more firewhisky where this came from, so feel free to stop by any time to talk about your progress."
     call ton_main("I'll never say no to a free drink.","base","base","base","down")
     call ton_main("And I'll keep you updated on the academics as usual.","base","base","base","mid")

@@ -11,7 +11,7 @@ label set_ton_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
     $ temp_tears    = None
     $ temp_extra    = None
     $ temp_emote    = None
-    
+
     if hair != None:
         #if hair in ("neutral"):
             #$ target_color = tonks_haircolor # player
@@ -122,7 +122,8 @@ define ton_eye_layers = [
     "closed",
     "happyCl",
     "shocked",
-    "wide"
+    "wide",
+    "wink"
 ]
 
 define ton_brow_layers = [

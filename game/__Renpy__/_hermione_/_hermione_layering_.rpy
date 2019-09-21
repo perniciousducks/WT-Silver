@@ -118,7 +118,7 @@ screen hermione_main():
 
 
     ### EMOTES ###
-    add hermione_emote xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip #zoom (1.0/hermione_scaleratio)
+    add hermione_emote xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
 
 
     zorder hermione_zorder

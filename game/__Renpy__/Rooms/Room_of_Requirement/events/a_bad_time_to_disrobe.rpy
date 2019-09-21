@@ -14,15 +14,18 @@ label a_bad_time_to_disrobe_part_1:
     $ daytime = True
     $ interface_color = "gold"
 
+    call play_music("stop")
     nar "In this story the genie has found an invisibility cloak."
     nar "And with the cloak comes great opportunities"
     nar "Title: A bad time to disrobe."
 
-    call her_chibi("stand","desk")
+    call her_chibi("stand","desk","base")
 
     hide screen blkfade
     with d3
 
+    call music_block
+    call bld
     m "Miss Granger. Have you ever been excited about the thought of being caught?"
 
     call her_main("Caught?","base","base",xpos="right",ypos="base")
@@ -60,12 +63,15 @@ label a_bad_time_to_disrobe_part_1:
 
     $ daytime = False
     $ interface_color = "gray"
+    call music_block
+
     nar "Later that evening. Hermione returns."
     call her_chibi("stand","desk","base")
 
     hide screen day_to_night
     with d3
 
+    call bld
     g9 "I'll take that cloak back if you don't mind."
     call her_main("Certainly.","base","base",xpos="right",ypos="base")
     m "Now, spill the beans."
@@ -99,6 +105,7 @@ label a_bad_time_to_disrobe_part_1:
     nar "Hermione returns the next morning, looking nervous but more determined than yesterday."
     $ daytime = True
     $ interface_color = "gold"
+    call music_block
 
     hide screen quistion_pop_up
     call her_chibi("stand","desk","base")
@@ -116,6 +123,8 @@ label a_bad_time_to_disrobe_part_1:
 
     $ daytime = False
     $ interface_color = "gray"
+    call music_block
+
     nar "Later that evening a distraught looking Hermione enters the office. "
 
     call her_chibi("top_naked","desk","base")
@@ -178,13 +187,16 @@ label a_bad_time_to_disrobe_part_1:
 label a_bad_time_to_disrobe_part_2:
     $ temp_time = daytime
     $ daytime = True
-    call music_block
+    $ interface_color = "gold"
 
+    call play_music("stop")
     call room("main_room")
-    call her_chibi("stand","desk")
+    call her_chibi("stand","desk","base")
     hide screen blkfade
     with d3
 
+    call music_block
+    call bld
     m "Good afternoon miss Granger."
     call her_main("Good afternoon professor, what can I do for you today?","base","base",xpos="right",ypos="base")
     m "Glad you asked, I've got another task for you."
@@ -243,10 +255,11 @@ label a_bad_time_to_disrobe_part_2:
     show screen day_to_night
     with d3
 
-    nar "Later that evening"
     $ daytime = False
     $ interface_color = "gray"
     call music_block
+
+    nar "Later that evening"
 
     call h_unequip_temp_outfit()
     $ hermione_wear_outfit = False #Otherwise the "action" won't show if she's wearing an outfit.

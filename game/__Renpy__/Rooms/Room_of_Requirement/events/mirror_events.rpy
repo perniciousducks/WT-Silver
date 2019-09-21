@@ -249,7 +249,7 @@ label a_spaced_out_conversation:
 
     nar "Genie said sadly."
 
-    g "I can only grant magic to others."
+    m "I can only grant magic to others."
 
     nar "Snape shook his head."
 

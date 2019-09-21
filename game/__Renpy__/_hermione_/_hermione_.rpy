@@ -152,6 +152,7 @@ label reset_hermione:
     $ aftersperm       = False #Show cum stains on Hermione's uniform.
     $ uni_sperm        = False
     $ sperm_on_tits    = False #Sperm on tits when Hermione pulls her shirt up.
+    $ hermione_wet_clothes = False
 
     if hermione_action != "none":
         call set_her_action("none","update")

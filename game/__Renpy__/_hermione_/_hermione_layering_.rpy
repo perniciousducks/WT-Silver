@@ -116,6 +116,10 @@ screen hermione_main():
     elif aftersperm: #Shows cum stains on Hermione's uniform.
         add "characters/hermione/face/auto_03.png" xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
 
+    # Water-soaked clothes
+    if hermione_wet_clothes:
+        add "characters/hermione/face/wet_clothes.png" xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
+
 
     ### EMOTES ###
     add hermione_emote xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip #zoom (1.0/hermione_scaleratio)
@@ -149,10 +153,8 @@ screen hermione_uniform():
         if hermione_wear_onepiece and (h_onepiece in h_onepieces_list): #Skirt or trousers gets added later
             pass
         else:
-            if hermione_action == "none" or hermione_action == "hold_book": #Other actions use the layer below!
-                add hermione_bottom xpos hermione_xpos ypos hermione_ypos alpha her_bottom_transp xzoom hermione_flip zoom (1.0/hermione_scaleratio)
-            if hermione_action == "lift_top" and h_top in h_lift_top_list: #Bottom gets added later, after the top!
-                pass
+            if hermione_action == "lift_top" and h_top in h_lift_top_list:
+                pass #Bottom gets added later, after the top!
             else: #Bottom gets added now, before the top!
                 add hermione_bottom xpos hermione_xpos ypos hermione_ypos alpha her_bottom_transp xzoom hermione_flip zoom (1.0/hermione_scaleratio)
 

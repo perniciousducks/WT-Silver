@@ -519,10 +519,10 @@ screen preferences():
                 style_group "pref"
                 has vbox
 
-                label _("Saybox")
+                label _("Text colour")
                 if not persistent.nightmode:
-                    textbutton _("Day {color=[persistent.text_color_day]}text{/color}") action Call("saybox_color")
-                textbutton _("Night {color=[persistent.text_color_night]}text{/color}") action Call("saybox_color", False)
+                    textbutton _("Day {color=[persistent.text_color_day]}text{/color}") action Function(set_text_color)
+                textbutton _("Night {color=[persistent.text_color_night]}text{/color}") action Function(set_text_color, False)
                 textbutton _("Shadow") action ToggleVariable("persistent.text_outline", "#00000080", "#00000000")
                 textbutton _("Default") action [SetVariable("persistent.text_color_day", "#402313"), SetVariable("persistent.text_color_night", "#341c0f"), SetVariable("persistent.text_outline", "#00000000")]
                 

@@ -184,6 +184,7 @@ style menu_choice_nightbutton:
 style menu_choice_day:
     size 18
     xalign 0.5
+    text_align 0.5
     color "#f9d592"
     hover_color "#ffffff"
     insensitive_color "#444"
@@ -192,6 +193,7 @@ style menu_choice_day:
 style menu_choice_night:
     size 18
     xalign 0.5
+    text_align 0.5
     color "#9b8d84"
     hover_color "#ffffff"
     insensitive_color "#444"

@@ -106,6 +106,7 @@ label set_her_top(top="", color=""):
         $ hermione_wear_bottom = True
     $ h_top = top
     $ h_top_color = color
+    $ hermione_wet_clothes = False # Changing top dries her clothes
     call update_her_uniform
 
     return

@@ -62,6 +62,8 @@ default hermione_costume_action_a = "characters/hermione/clothes/custom/blank.pn
 default u_sperm        = "characters/hermione/face/auto_02.png"
 default hermione_sperm = "characters/hermione/face/auto_02.png" #Not in use yet.
 
+default hermione_wet_clothes = False
+
 # Chibi.
 default her_chibi_stand = "ch_hem blink_a"
 default her_chibi_walk  = "ch_hem walk_a"
@@ -170,8 +172,8 @@ default h_stockings        = "blank"
 default h_stockings_color  = "base"
 default temp_stockings     = h_stockings
 
-default hermione_robe = "characters/hermione/clothes/robe/robe_basic_g.png"
-default h_robe        = "robe_basic_g"
+default hermione_robe = "characters/hermione/clothes/robe/robe_1_g.png"
+default h_robe        = "robe_1_g"
 default h_robe_color  = "base"
 
 # Accessories

@@ -182,7 +182,7 @@ label hermione_random_clothing:
             if not persistent.game_complete:
                 $ hermione_door_event_happened = True #Hermione won't greet you again.
 
-                $ aftersperm = True
+                $ hermione_wet_clothes = True
                 $ hermione_wear_neckwear    = False
                 $ hermione_wear_gloves      = False
                 $ h_top = "top_sweater_1"

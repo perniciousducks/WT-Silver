@@ -16,10 +16,10 @@ label start_wt:
         show screen mouse_tooltip
     label choose_your_difficulty:
     menu:
+        "Difficulty" ">How difficult do you want the game to be?"
         "-Play with easy difficulty-":
-            ">Increased gold and Slytherin-points gain. You will also always find items or gold in your cupboard."
-            ">Hermione's bad-mood will decrease faster, and books can be read in one go."
             menu:
+                "Easy" "{cps=*2}>Increased gold and Slytherin-points gain.\nYou will always find items or gold in your cupboard.\nBad mood will decrease faster.\nBooks can be read in one go.{/cps}"
                 "-Confirm-":
                     ">Game set to easy!"
                     $ game_difficulty = 1
@@ -28,6 +28,7 @@ label start_wt:
                     jump choose_your_difficulty
         "-Play with normal difficulty-":
             menu:
+                "Normal" "{cps=*2}>Balanced gold and Slytherin-points gain.\nRandom chance of finding items or gold in your cupboard.\nBad mood will decrease gradually.\nBooks take time to read.{/cps}"
                 "-Confirm-":
                     ">Game set to normal!"
                     $ game_difficulty = 2
@@ -35,9 +36,8 @@ label start_wt:
                 "-Choose something else-":
                     jump choose_your_difficulty
         "-Play with hardcore difficulty-" if persistent.game_complete:
-            ">Hardcore difficulty. Your gold and Slytherin-points gain has been lowered.\n>All hints and guides have been disabled."
-            ">Additional rewards and dialogue choices have been added."
             menu:
+                "Hardcore" "{cps=*2}>Reduced gold and Slytherin-points gain.\nAll hints and guides are disabled.\nAdditional rewards and dialogue choices are added.{/cps}"
                 "-Confirm-":
                     ">Game set to hardcore!"
                     $ game_difficulty = 3
@@ -73,7 +73,7 @@ label start_wt:
 
     if game_difficulty <= 2:
         menu:
-            "ACTIVATE CHEATS" ">Cheats can be found in the options menu at the top left of the screen."
+            "Cheats" ">Cheats can be found in the options menu at the top left of the screen."
             "-Activate Cheats-":
                 $ cheats_active = True
             "-Disable Cheats-":
@@ -88,8 +88,8 @@ label start_wt:
 
     if cheats_active or persistent.game_complete:
         menu:
-            ">Would you like to skip early sections of the game?"
-            "-No, play the intro-":
+            "Skip content" ">Would you like to skip early sections of the game?"
+            "-Play the intro-{p}{size=-4}{color=#ffae19}new content!{/color}{/size}":
                 $ skip_to_hermione = False
             "-Skip to Hermione-" if cheats_active or persistent.game_complete:
                 $ skip_to_hermione = True

@@ -17,10 +17,10 @@ screen room_of_requirement():
     if renpy.get_screen("genie_walk"):
         use genie_walk_mirror
     add "images/rooms/room_of_requirement/empty_room.png"
-    add "images/rooms/_objects_/doors/door_idle_night.png" at Position(xpos=898, ypos=315, xanchor="center", yanchor="center")
+    add "images/rooms/_objects_/doors/door_idle_night.png" xpos 898 ypos 315 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "images/rooms/room_of_requirement/mirror.png" xpos 100 ypos 180
 
-    add "images/rooms/_objects_/candles/candleM.png" at Position(xpos=700, ypos=200, xanchor="center", yanchor="center")
+    add "images/rooms/_objects_/candles/candleM.png" xpos 700  ypos 200  xanchor 0.5 yanchor 0.5 zoom 0.5
 
     use ui_top_bar
 
@@ -109,9 +109,9 @@ screen floor_7th_door():
 
 screen floor_7th_screen():
     add "images/rooms/room_of_requirement/corridor_edit.png"
-    add "images/rooms/_objects_/candles/candle.png" xpos 0 ypos 95
+    add "images/rooms/_objects_/candles/candle.png" xpos 0 ypos 95 zoom 0.5
     add "candle_fire_02" xpos 0 ypos 95
-    add "images/rooms/_objects_/candles/candleM.png" xpos 900 ypos 95
+    add "images/rooms/_objects_/candles/candleM.png" xpos 900 ypos 95 zoom 0.5
     add "candle_fire_01" xpos 900 ypos 95
     add "images/rooms/_objects_/deco/hogwarts_banner.png" xpos 800 ypos 105
     add "fireplace_fire" xpos 575 ypos 60

@@ -100,7 +100,7 @@ default Galadriel_II_ITEM = fiction_book(
         "It takes a lot of preparation and careful planning but Galadriel manages to successfully escape from the brothel.",
         "Galadriel soon gets lost in the vast city and is forced to spend the night on the street.",
         "Food is hard to come by on the streets. Galadriel fights a pack of stray dogs over some scraps and one of them bites her hand badly.",
-        "The Pregnant Galadriel offers her company to a couple of filthy looking homeless men in exchange for food. She spends the night with them.",
+        "The Pregnant Galadriel offers her company to a couple of filthy-looking homeless men in exchange for food. She spends the night with them.",
         "Galadriel realizes that her live back in the brothel was a heaven compared to the live she's been leading for the past several days. She decides to return.",
         "Galadriel's owner - the fat, wealthy man does not punish Galadriel for escaping. He is happy to have one of his most popular girls back.",
         "Galadriel is, yet again, warm, clean and well fed. She is glad to be back and as popular as ever.",
@@ -179,9 +179,9 @@ default quidditch_book_1_ITEM = fiction_book(
         "Much like other sports, you’re not allowed to go outside the boundary lines with the quaffle or you’d have to hand it over to the opposing team...",
         "When the game is set in motion each player takes their assigned positions.\nThere’s three chasers, two beaters, one keeper and one seeker...",
         "The chasers purpose once they have the quaffle to try and score. The Beaters on the other hand is to hit them with the bludgers as to knock the ball out of their grasp... The keeper blocks the goal and the seeker needs to catch the snitch.",
-        "As most injuries are easily remedied through magical means there’s nothing to stop a player from knocking into one another as to get a hold of the quaffle.\nTactics which distracts is therefore quite common even during official matches...",
+        "As most injuries are easily remedied through magical means there’s nothing to stop a player from knocking into one another as to get a hold of the quaffle.\nTactics which distract is therefore quite common even during official matches...",
         "The way scoring is done is when the chaser has a hold of the quaffle they need to get to the opponent's side of the pitch and score it by getting it through a hoop...",
-        "The winning team is decided once the snitch is caught which is worth 150 points to the team of which seeker caught it. Therefor a match could technically go on forever... The longest Quidditch match ever recorded went on for about 3 months..."
+        "The winning team is decided once the snitch is caught which is worth 150 points to the team of which seeker caught it. Therefore a match could technically go on forever... The longest Quidditch match ever recorded went on for about 3 months..."
     ]
 )
     
@@ -211,7 +211,6 @@ default  books = [] # Not used!
 
 label read_book_menu:
     hide screen desk_menu
-    show screen desk_empty
 
     python:
         item_list = []

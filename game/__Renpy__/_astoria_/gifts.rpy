@@ -89,7 +89,7 @@ label give_ast_gift(gift_item):
             call give_gift(">You give the bottle to Astoria...", gift_item)
             call ast_main("Don't you have something stronger?")
             call ast_main("Like something you can't get in the school usually?")
-            call ast_main(Fine, I'll take it!)
+            call ast_main("Fine, I'll take it!")
             call ast_mood(-1)
         elif ast_affection > 11 and ast_affection < 18:
             call ast_main("Butterbeer?")
@@ -441,7 +441,7 @@ label give_ast_gift(gift_item):
             call ast_main("I mean... why thank you, I shall cherish this forever!")
             call ast_mood(0)
         else:
-            call ast_main("A sex doll?)
+            call ast_main("A sex doll?")
             call give_gift(">You give the doll to Astoria...", gift_item)
             call ast_main("But I'm a girl...")
             call ast_main("I'll leave it in the Slytherin common room to see if anyone has balls enough to takes it...")

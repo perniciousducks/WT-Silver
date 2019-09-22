@@ -42,7 +42,7 @@ screen feeding(): #FEEDING THE PHOENIX.
 
 screen petting(): #PETTING THE PHOENIX.
     tag genie_chibi
-    add "images/rooms/main_room/chair_left_with_shadow.png" pos 320 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/chair_left_with_shadow.png" xpos 320 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "images/rooms/main_room/desk_with_shadow.png" xpos 360 ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "petting" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 390 ypos 65
     zorder 1

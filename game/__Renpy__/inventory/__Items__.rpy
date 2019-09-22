@@ -593,14 +593,14 @@ default ag_dress_yule_ball_ITEM = costume_class(
 )
 
 default astoria_outfits_list=[
-    ag_boss_uniform_ITEM,
+    #ag_boss_uniform_ITEM,
 ]
 default astoria_costumes_list = [
-    ag_costume_lazy_town_ITEM,
-    ag_costume_lazy_town_short_ITEM,
+    #ag_costume_lazy_town_ITEM,
+    #ag_costume_lazy_town_short_ITEM,
 ]
 default astoria_dresses_list=[
-    ag_dress_yule_ball_ITEM,
+    #ag_dress_yule_ball_ITEM,
 ]
 
 # Astoria Sets
@@ -609,9 +609,9 @@ default ag_lingerie_lewd_ITEM = item_class(id="ag_lingerie_lewd", name="Lewd Lin
 default ag_nighty_silk_ITEM   = item_class(id="ag_nighty_silk", name="Silk Nighty", type="set", items=["nighty","panties","stockings"], cost=140, wait_time=1, image="outfits/ag_nighty_silk", description=">+2 attack points while pillow-fighting!")
 
 default astoria_clothing_sets_list = [
-    ag_lingerie_lace_ITEM,
-    ag_lingerie_lewd_ITEM,
-    ag_nighty_silk_ITEM,
+    #ag_lingerie_lace_ITEM,
+    #ag_lingerie_lewd_ITEM,
+    #ag_nighty_silk_ITEM,
 ]
 
 # Susan Outfits

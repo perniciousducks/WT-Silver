@@ -120,7 +120,7 @@ screen input(prompt):
         id "window"
         
         has vbox:
-            style "say_vbox"
+            style "say_vbox" 
         
         text prompt
         input id "input"
@@ -691,6 +691,8 @@ screen confirm(message, yes_action, no_action):
             text _(message):
                 text_align 0.5
                 xalign 0.5
+                style "night_text"
+                color "#9b8d84"
 
             hbox:
                 spacing 100

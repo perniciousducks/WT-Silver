@@ -231,7 +231,7 @@ screen inventory_menuitem(xx, yy):
                 text current_item.name ypos 380 size 16 xoffset 45
                 
             if current_category == "Quest Items":
-                textbutton "Use" action Return(["use", current_item.event]) xsize 90 ysize 26 xalign 0.89 ypos 374 text_size 16 xoffset 45
+                textbutton "Use" action Return(["use", current_item.event]) xsize 90 ysize 26 xalign 0.89 ypos 374 text_size 16 xoffset 45 style btn_style text_style txt_style
             hbox:
                 pos (132, 407)
                 xsize 410

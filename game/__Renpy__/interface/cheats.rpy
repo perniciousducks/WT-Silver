@@ -9,11 +9,6 @@ label cheats:
         "-Hermione Cheats-" if hermione_unlocked:
             label cheats_hermione:
             menu:
-                "-Read Hermione's Diary-":
-                    call her_whoring_pages
-                    call cheat_append_all_pages
-                    call book_handle(book=hermione_diary)
-                    jump cheats_hermione
                 "-Reset Hermione's mood-" if her_mood != 0:
                     $ her_mood = 0
                     ">Hermione is no longer mad at you."
@@ -106,24 +101,24 @@ label cheats:
             $ letter_min_curses.mailLetter()
             ">Letter sent."
             jump cheats
-        "-Astoria & Susan Cheats-" if astoria_unlocked:
-            label cheats_astoria:
-            menu:
-                "-Unlock all outfits & sets-":
-                    python:
-                        for item in astoria_outfits_list:
-                            unlock_clothing_compat(item)
-                        for item in astoria_costumes_list:
-                            unlock_clothing_compat(item)
-                        for item in astoria_dresses_list:
-                            unlock_clothing_compat(item)
-                        for item in astoria_clothing_sets_list:
-                            unlock_clothing_compat(item)
-                    ">All of Astoria's outfits and clothing sets have been unlocked."
-                    jump cheats_astoria
+        # "-Astoria & Susan Cheats-" if astoria_unlocked:
+            # label cheats_astoria:
+            # menu:
+                # "-Unlock all outfits & sets-":
+                    # python:
+                        # for item in astoria_outfits_list:
+                            # unlock_clothing_compat(item)
+                        # for item in astoria_costumes_list:
+                            # unlock_clothing_compat(item)
+                        # for item in astoria_dresses_list:
+                            # unlock_clothing_compat(item)
+                        # for item in astoria_clothing_sets_list:
+                            # unlock_clothing_compat(item)
+                    # ">All of Astoria's outfits and clothing sets have been unlocked."
+                    # jump cheats_astoria
 
-                "-never mind-":
-                    jump cheats
+                # "-never mind-":
+                    # jump cheats
 
         "-Cho Cheats-" if cho_unlocked:
             label cheats_cho:
@@ -207,7 +202,8 @@ label cheats:
             $ map_unlocked = True
             jump cheats
             
-        "-DEVROOM-" if config.developer:
+        "-{color=#7a0000}DEVROOM{/color}-" if config.developer:
+            label devroom:
             menu:
                 "-Unlock all characters-":
                     $ snape_unlocked = True
@@ -218,7 +214,7 @@ label cheats:
                     $ susan_unlocked = True
                     $ luna_unlocked = True
                     # ginny_unlocked = True
-                    jump cheats
+                    jump devroom
                 "-Unlock all characters wardrobe-":
                     $ tonks_wardrobe_unlocked = True
                     $ hermione_wardrobe_unlocked = True
@@ -227,7 +223,7 @@ label cheats:
                     $ susan_wardrobe_unlocked = True
                     $ luna_wardrobe_unlocked = True
                     # ginny_wardrobe_unlocked = True
-                    jump cheats
+                    jump devroom
                 "-Get 100 of all gift items-":
                     python:
                         for i in candy_gift_list:
@@ -238,7 +234,7 @@ label cheats:
                             i.number = 100
                         for i in toy_gift_list:
                             i.number = 100
-                    jump cheats
+                    jump devroom
                 "-Get all scrolls-":
                     python:
                         for i in scroll_list_A:
@@ -248,7 +244,7 @@ label cheats:
                         for i in scroll_list_C:
                             i.unlocked = True
                         sealed_scroll_ITEM.unlocked = True
-                    jump cheats
+                    jump devroom
                 "-Get all books-":
                     python:
                         for i in book_list.read_books:
@@ -260,7 +256,7 @@ label cheats:
                         for i in book_list.fiction_books:
                             i.unlocked = True
                             i.unlockable = False
-                    jump cheats
+                    jump devroom
                 "-Get all decorations-":
                     python:
                         for i in wall_deco_list:
@@ -273,6 +269,18 @@ label cheats:
                             i.unlocked = True
                         for i in misc_hat_list:
                             i.unlocked = True
+                    jump devroom
+                "-Read Hermione's Diary-":
+                    call her_whoring_pages
+                    call cheat_append_all_pages
+                    call book_handle(book=hermione_diary)
+                    jump devroom
+                "Gallery test":
+                    jump open_gallery
+                "Lootbox":
+                    call card_lootbox
+                    jump devroom
+                "Return":
                     jump cheats
 
         "-Never mind-":

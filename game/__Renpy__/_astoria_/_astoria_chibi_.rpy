@@ -133,8 +133,8 @@ label ast_walk(xpos=walk_xpos, ypos=walk_ypos, speed=ast_speed, action="", loite
             $ ast_chibi_flip = 1
         else:
             if loiter:
-                $ update_chibi_image("astoria")
                 $ ast_chibi_status = ""
+                $ update_chibi_image("astoria")
                 show screen ast_stand
 
     return

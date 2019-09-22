@@ -406,7 +406,7 @@ label ball_quest_E2:
     hide screen snape_main
     call blkfade
 
-    show screen with_snape_animated
+    show screen with_snape(ani=False)
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
     hide screen genie
     hide screen chair_right

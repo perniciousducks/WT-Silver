@@ -245,7 +245,7 @@ label ag_st_imperio_E2:
     call ast_main("","clench","base","angry","L", xpos="base", ypos="base")
     call ton_main(".........................","angry","wide","wide","ahegao", xpos="right", ypos="base") # shock
 
-    g9 "Damnit, girl!"
+    g9 "Damn it, girl!"
     m "Give me a warning next time. You scared the crap out of me..."
     call ast_main("Sorry Professor!","smile","base","base","mid") # Cute face
 
@@ -343,7 +343,7 @@ label ag_st_imperio_E2:
             call ton_main("Very funny, Sir...","open","closed","base","mid")
             m "I'd like us to try this again..."
             call ton_main("Right now? Are you sure?","open","base","raised","mid")
-            g4 "(I want to see some tits - damnit! Or hear her talk dirty...)"
+            g4 "(I want to see some tits - damn it! Or hear her talk dirty...)"
             m "Yes, cast that spell again, Astoria..."
             call ast_main("Very well, Sir...","smile","closed","base","mid")
 
@@ -1057,11 +1057,11 @@ label ag_st_imperio_E5:
     call sna_main("Yes! I'd like to know that as well!","snape_43")
     g4 "Snape?!"
     if hg_strip.trigger == True: # Snape saw Hermione strip
-        g4 "Damnit, not you again!"
+        g4 "Damn it, not you again!"
         g4 "(You walking cock-block!)"
 
     else:
-        g4 "Damnit, what are you doing here?"
+        g4 "Damn it, what are you doing here?"
 
     call sna_walk("620","base", speed=1.5)
     pause.2
@@ -1298,7 +1298,7 @@ label ag_st_imperio_E5:
     call ton_main("Erase her memory?","open","base","base","mid")
     m "That's what I said."
     m "Well then, I believe we're done here..."
-    call ton_main("...","upset","base","worried","down")
+    call ton_main("Alright...","upset","base","worried","down")
     call ton_main("I'm gonna need some \"me\" time now...","open","base","worried","ahegao", hair="horny")
     call ton_main("If you know what I mean...","horny","base","angry","mid")
     call ton_main("I suppose I should wish you good luck with the training...","horny","base","worried","mid")

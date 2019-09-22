@@ -1,56 +1,6 @@
 
 
-screen snape_jerking_off():
-    tag snape_chibi
-    add "jerking_off_03_ani" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
-    zorder 3
-
-screen snape_jerking_off_cum():
-    add "snape_cum_01" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
-    zorder 3
-
-screen snape_stands_holds_dick():
-    tag snape_chibi
-    add "characters/snape/chibis/masturbating/01.png" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
-    zorder 3
-
-
-###  SNAPE CHIBI UNIVERSAL SCREEN ###
-screen s_c_u():
-    tag snape_chibi
-    add s_c_u_pic at Position(xpos=sna_chibi_xpos, ypos=sna_chibi_ypos) # (xpos=360, ypos=210)
-    zorder 3
-
-###  SNAPE'S CUM UNIVERSAL SCREEN ###
-screen s_c_c_u():
-    add s_c_c_u_pic at Position(xpos=snape_cum_chibi_xpos+140, ypos=snape_cum_chibi_ypos)
-    zorder 3
-
-
-
-### SNAPE CHIBI SCREENS ###
-
-screen snape_stand():
-    tag snape_chibi
-
-    add sna_chibi_stand xpos sna_chibi_xpos ypos sna_chibi_ypos xzoom sna_chibi_flip #zoom (1.0/scaleratio)
-
-    zorder sna_chibi_zorder
-
-screen snape_walk():
-    tag snape_chibi
-
-    add sna_chibi_walk at sna_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sna_chibi_flip #zoom (1.0/scaleratio)
-
-    zorder sna_chibi_zorder
-
-
-label update_sna_chibi:
-    $ sna_chibi_stand = "snape_stand"
-    $ sna_chibi_walk = "snape_walk"
-    return
-
-
+### Snape Chibi ###
 
 label sna_chibi(action = "", xpos=sna_chibi_xpos, ypos=sna_chibi_ypos, pic = "", flip=False):
     hide screen snape_stand
@@ -215,3 +165,76 @@ label sna_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sna_speed, action="", loite
             show screen snape_stand
 
     return
+
+
+
+### SNAPE CHIBI SCREENS ###
+
+screen snape_stand():
+    tag snape_chibi
+
+    add sna_chibi_stand xpos sna_chibi_xpos ypos sna_chibi_ypos xzoom sna_chibi_flip #zoom (1.0/scaleratio)
+
+    zorder sna_chibi_zorder
+
+screen snape_walk():
+    tag snape_chibi
+
+    add sna_chibi_walk at sna_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sna_chibi_flip #zoom (1.0/scaleratio)
+
+    zorder sna_chibi_zorder
+
+label update_sna_chibi:
+    $ sna_chibi_stand = "snape_stand"
+    $ sna_chibi_walk = "snape_walk"
+    return
+
+
+###  UNIVERSAL SCREEN ###
+
+screen s_c_u():
+    tag snape_chibi
+    add s_c_u_pic at Position(xpos=sna_chibi_xpos, ypos=sna_chibi_ypos) # (xpos=360, ypos=210)
+    zorder 3
+
+screen s_c_c_u(): # cum
+    add s_c_c_u_pic at Position(xpos=snape_cum_chibi_xpos+140, ypos=snape_cum_chibi_ypos)
+    zorder 3
+
+
+### HANGING WITH SNAPE ###
+
+screen with_snape(ani=False):
+    if ani:
+        if daytime:
+            add "genie_toast_goblet_daytime" xpos 435 ypos 200 # Different shadow.
+        else:
+            add "genie_toast_goblet" xpos 435 ypos 200
+        add "snape_toast_goblet" xpos 618 ypos 200
+
+    else:
+        if daytime:
+            add "characters/genie/chibis/drinking/01_day.png" xpos 435 ypos 200 zoom 0.5 # Different shadow.
+        else:
+            add "characters/genie/chibis/drinking/01.png" xpos 435 ypos 200 zoom 0.5
+        add "characters/snape/chibis/drinking/01.png" xpos 618 ypos 200 zoom 0.5
+
+    tag hanging_with_snape
+    zorder 3
+
+
+### Jerking Off ###
+
+screen snape_jerking_off():
+    tag snape_chibi
+    add "jerking_off_03_ani" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
+    zorder 3
+
+screen snape_jerking_off_cum():
+    add "snape_cum_01" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
+    zorder 3
+
+screen snape_stands_holds_dick():
+    tag snape_chibi
+    add "characters/snape/chibis/masturbating/01.png" at Position(xpos=sna_chibi_xpos-500, ypos=sna_chibi_ypos-240)
+    zorder 3

@@ -143,7 +143,7 @@ label a_spaced_out_conversation:
     $ fire_in_fireplace = True
     show screen fireplace_fire
     show screen desk
-    show screen with_snape_animated
+    show screen with_snape(ani=False)
     play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
 
     show screen blkfade
@@ -485,7 +485,7 @@ label a_spaced_out_conversation:
     call room(hide_screens=True)
     $ fire_in_fireplace = False
     hide screen fireplace_fire
-    hide screen with_snape_animated
+    hide screen with_snape
 
     call update_snape
     jump enter_room_of_req

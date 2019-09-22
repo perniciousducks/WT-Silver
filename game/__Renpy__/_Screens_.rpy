@@ -103,7 +103,7 @@ screen desk(xposistion=360): #Desk only!
 
 screen chair_left():
     add "images/rooms/main_room/chair_left_with_shadow.png" xpos 332 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
-    
+
 screen chair_right():
     add "images/rooms/main_room/chair_right.png" xpos 793 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
     zorder 1
@@ -324,18 +324,7 @@ screen plus_300():
 
 
 
-### HANGING WITH SNAPE ###
 
-screen with_snape():
-    add "images/rooms/main_room/with_snape.png" at Position(xpos=140, ypos=0)
-    tag hanging_with_snape
-    zorder 3
-
-screen with_snape_animated():
-    add "genie_toast_goblet" at Position(xpos=435, ypos=200)
-    add "snape_toast_goblet" at Position(xpos=618, ypos=200)
-    tag hanging_with_snape
-    zorder 3
 
 
 

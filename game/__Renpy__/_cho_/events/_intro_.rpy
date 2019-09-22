@@ -3,7 +3,7 @@
 ### Cho Intro ###
 
 label cho_intro_1:
-
+    stop music fadeout 1.0
     call play_sound("knocking")
     call bld
     "*Knock-knock-knock*"
@@ -42,8 +42,8 @@ label cho_intro_1:
     # Cho enters your office for the first time.
     call cho_walk("660", "base", action="enter", speed=1.6)
 
+    call play_music("cho_theme")
     call cho_main("Good morning, Sir.","base","base","base","mid", xpos="mid", ypos="base")
-
     call ctc
 
     menu:
@@ -355,8 +355,6 @@ label cho_intro_1:
 
 
 label cho_intro_2:
-
-    # Cho abruptly bursts into your office! Slamming the door behind her.
     stop music fadeout 1.0
     call play_sound("door")
     call cho_chibi("stand","door","base")
@@ -597,6 +595,7 @@ label cho_snape_talk:
     # Ending
     label discussed_cho_plan:
 
+    show screen with_snape(ani=True)
     show screen bld1
     show screen notes
     with d3

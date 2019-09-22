@@ -174,7 +174,10 @@ label hg_pf_admire_panties_T2_intro_E1:
     call her_main("So, what will it be, [genie_name]?")
     m "Nothing drastic, really..."
     m "I just want you to show me your panties."
-    call her_main("Oh... again?","annoyed","worriedL")
+    if hg_pf_admire_panties.counter == 0:
+        call her_main("My Panties?!","clench","worried")
+    else:
+        call her_main("Oh... again?","annoyed","worriedL")
     m "Just do it..."
     call her_main("..................","annoyed","worriedL")
 
@@ -247,7 +250,10 @@ label hg_pf_admire_panties_T2: # Call label
 # Event 3 (r) - Panties may or may not be equipped. Hermione asks to remove them or keep them on.
 
 label hg_pf_admire_panties_T3_intro_E1:
-    m "[hermione_name], I'd like you to show me your panties again if that's not too much trouble."
+    if hg_pf_admire_panties.counter == 0:
+        m "[hermione_name], I'd like you to show me your panties, if that's not too much trouble."
+    else:
+        m "[hermione_name], I'd like you to show me your panties again, if that's not too much trouble."
     call her_main("Oh...","open","down")
     call her_main("Okay...","base","down_raised", cheeks="blush")
 

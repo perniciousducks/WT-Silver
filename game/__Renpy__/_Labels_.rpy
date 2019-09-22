@@ -38,7 +38,6 @@ label hide_all_screens:
     hide screen animation_feather
 
     hide screen with_snape #Genie hangs out with Snape in front of the fireplace.
-    hide screen with_snape_animated #Genie hangs out with Snape in front of the fireplace.
     hide screen with_tonks_animated
     hide screen done_reading
     hide screen done_reading_near_fire
@@ -231,7 +230,7 @@ label setup_fireplace_hangout(char=None):
 
     # Proceed as usual
     if char == "snape":
-        show screen with_snape_animated
+        show screen with_snape(ani=True)
     elif char == "tonks":
         show screen with_tonks_animated
 

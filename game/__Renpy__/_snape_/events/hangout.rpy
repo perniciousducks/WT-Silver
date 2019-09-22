@@ -14,7 +14,7 @@ label snape_hangout:
 
     label snape_hangout_continue:
         hide screen bld1
-        show screen with_snape # No animation.
+        show screen with_snape(ani=False)
         with fade
         call bld
 
@@ -49,7 +49,6 @@ label snape_hangout:
 
     # General
     if hg_strip.trigger and not snape_invited_to_watch: #After second dance where Snape entered room.
-        show screen with_snape #Makes sure the scene is not animated...
         jump special_date_with_snape_03
 
 
@@ -61,6 +60,7 @@ label snape_hangout:
         $ ss_he_story.start()
 
     else:
+        show screen with_snape(ani=True)
         call bld
         $ renpy.play('sounds/win_04.mp3')
         show screen notes

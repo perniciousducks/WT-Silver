@@ -429,7 +429,7 @@ label demonstrate_tactic(position=""):
 
         # Genie looks up.
         call gen_chibi("hide")
-        $ gen_chibi_stand = "characters/genie/chibis/standing.png"
+        $ gen_chibi_stand = "genie_stand_alternative"
         call gen_chibi("stand","desk","base")
         show screen bld1
         with d3

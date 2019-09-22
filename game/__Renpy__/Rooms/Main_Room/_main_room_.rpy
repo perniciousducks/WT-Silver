@@ -4,9 +4,9 @@
 screen main_room():
     tag room
     if daytime:
-        add "images/rooms/_bg_/main_room_day.png"
+        add "images/rooms/_bg_/main_room_day.png" zoom 0.5
     else:
-        add "images/rooms/_bg_/main_room_night.png"
+        add "images/rooms/_bg_/main_room_night.png" zoom 0.5
 
     #Posters
     if poster_OBJ.room_image:
@@ -23,20 +23,23 @@ screen main_room():
         add door_night_OBJ.get_room_image() xpos door_night_OBJ.xpos ypos door_night_OBJ.ypos xanchor 0.5 yanchor 0.5
 
     #Cupboard
-    add cupboard_OBJ.get_room_image() xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5
+    add cupboard_OBJ.get_room_image() xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
 
     #Fireplace #Fire gets added separately
     add fireplace_OBJ.get_room_image() xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos xanchor 0.5 yanchor 0.5
 
     #Candles
-    add candle_left_OBJ.get_room_image() xpos candle_left_OBJ.xpos ypos candle_left_OBJ.ypos xanchor 0.5 yanchor 0.5
-    add candle_right_OBJ.get_room_image() xpos candle_right_OBJ.xpos ypos candle_right_OBJ.ypos xanchor 0.5 yanchor 0.5
+    add candle_left_OBJ.get_room_image() xpos candle_left_OBJ.xpos ypos candle_left_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
+    add candle_right_OBJ.get_room_image() xpos candle_right_OBJ.xpos ypos candle_right_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
     if not daytime:
         add "candle_fire_01" xpos candle_left_OBJ.xpos-110 ypos candle_left_OBJ.ypos-117
         add "candle_fire_02" xpos candle_right_OBJ.xpos-110 ypos candle_right_OBJ.ypos-117
 
     #Phoenix Food & Feather gets added separately.
     add phoenix_OBJ.get_room_image() xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5
+    
+    if letter_queue_list != [] and not owl_away:
+        add owl_OBJ.get_room_image() xpos owl_OBJ.xpos ypos owl_OBJ.ypos xanchor 0.5 yanchor 1.0
 
     zorder 0
 
@@ -93,7 +96,7 @@ screen main_room_menu():
         else:
             hovered SetVariable("tooltip", "Examine Door")
         unhovered SetVariable("tooltip", None)
-        action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("door")]
+        action [SetVariable("tooltip", None), Jump("door")]
 
     #Scrolls
     if renpy.variant('android'):
@@ -169,7 +172,7 @@ screen main_room_menu():
             yanchor 1.0
             idle owl_OBJ.get_idle_image()
             hover owl_OBJ.get_hover_image()
-            hovered SetVariable("tooltip", "Check mail\n{size=-4}"+str(len(letter_queue_list))+" new message(s){/size}")
+            hovered SetVariable("tooltip", "Check mail\n{size=-4}"+num_to_word(len(letter_queue_list))+" new message(s){/size}")
             unhovered SetVariable("tooltip", None)
             action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("read_letter")]
 
@@ -189,10 +192,10 @@ screen main_room_menu():
             xpos 370
             ypos 336
             focus_mask True
-            xanchor "center"
-            yanchor "center"
+            xanchor 0.5
+            yanchor 0.5
             idle "newanimation"
-            hover "images/rooms/main_room/11_genie_02.png"
+            hover "newanimation_hover"
             if desk_examined:
                 hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("tooltip", "Open desk")]
             else:

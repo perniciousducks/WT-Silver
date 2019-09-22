@@ -64,6 +64,7 @@ label door_menu(xx=723, yy=90):
 
 screen door_menu(xx, yy):
     tag door_menu
+    modal True
     zorder 4
 
     use top_bar_close_button

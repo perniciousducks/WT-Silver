@@ -12,7 +12,7 @@ default sna_speed         = 2.0
 default sna_chibi_flip    = 1
 default sna_chibi_zorder  = 2
 
-default sna_chibi_stand   = "characters/snape/chibis/snape_stand.png"
+default sna_chibi_stand   = "snape_stand"
 default sna_chibi_walk    = "snape_walk"
 
 ###SNAPE STATS###

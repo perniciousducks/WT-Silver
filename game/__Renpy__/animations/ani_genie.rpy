@@ -2,8 +2,20 @@
 
 ### Genie Solo Animations ###
 
+image genie_stand_ani: #Default Genie walk animation.
+    zoom 0.5
+    
+    "characters/genie/chibis/walk_01.png"
+    
+image genie_stand_alternative: #Default Genie walk animation.
+    zoom 0.5
+    
+    "characters/genie/chibis/standing.png"
+
 ### Walk ###
 image genie_walk_ani: #Default Genie walk animation.
+    zoom 0.5
+    
     "characters/genie/chibis/walk_01.png"
     pause.18
     "characters/genie/chibis/walk_02.png"
@@ -15,6 +27,8 @@ image genie_walk_ani: #Default Genie walk animation.
     repeat
 
 image genie_walk_ani_f: #Default Genie walk animation.
+    zoom 0.5
+    
     im.Flip("characters/genie/chibis/walk_01.png", horizontal=True)
     pause.18
     im.Flip("characters/genie/chibis/walk_02.png", horizontal=True)
@@ -27,6 +41,8 @@ image genie_walk_ani_f: #Default Genie walk animation.
 
 ### Cupboard ###
 image genie_rum_ani:
+    zoom 0.5
+    
     "characters/genie/chibis/rummage/rum_01.png"
     pause.3
     "characters/genie/chibis/rummage/rum_02.png"
@@ -43,37 +59,43 @@ image genie_rum_ani:
 
 
 ### Sitting Desk ###
-image newanimation2 = Animation("images/rooms/main_room/12_genie_01.png", 0.25,
-                            "images/rooms/main_room/11_genie_02.png", 0.25)
-
-
-
 image newanimation:
-    "images/rooms/main_room/12_genie_01.png"
+    zoom 0.5
+    
+    "characters/genie/chibis/idle/desk_01.png"
     pause.1
-    "images/rooms/main_room/12_genie_02.png"
+    "characters/genie/chibis/idle/desk_02.png"
     pause.1
-    "images/rooms/main_room/12_genie_03.png"
+    "characters/genie/chibis/idle/desk_03.png"
     pause.1
-    "images/rooms/main_room/12_genie_02.png"
+    "characters/genie/chibis/idle/desk_02.png"
     pause.1
-    "images/rooms/main_room/12_genie_01.png"
+    "characters/genie/chibis/idle/desk_01.png"
     pause 5
-    "images/rooms/main_room/12_genie_01.png"
+    "characters/genie/chibis/idle/desk_01.png"
     pause.15
-    "images/rooms/main_room/12_genie_04.png"
+    "characters/genie/chibis/idle/desk_04.png"
     pause.15
-    "images/rooms/main_room/12_genie_01.png"
+    "characters/genie/chibis/idle/desk_01.png"
     pause.15
-    "images/rooms/main_room/12_genie_04.png"
+    "characters/genie/chibis/idle/desk_04.png"
     pause.15
-    "images/rooms/main_room/12_genie_01.png"
+    "characters/genie/chibis/idle/desk_01.png"
     pause 6
     repeat
+    
+### Hover desk ###
+
+image newanimation_hover:
+    zoom 0.5
+
+    "characters/genie/chibis/idle/desk_hover.png"
 
 
 ### Paperwork ###
 image paperwork_02: #Genie working behind his desk.
+    zoom 0.5
+    
     "characters/genie/chibis/working/01.png"
     pause.15
     "characters/genie/chibis/working/02.png"
@@ -127,6 +149,8 @@ image paperwork_02: #Genie working behind his desk.
 
 ### Reading ###
 image reading: #Genie reading.
+    zoom 0.5
+    
     im.Flip("characters/genie/chibis/reading/01.png", horizontal=True)
     pause 2
     im.Flip("characters/genie/chibis/reading/06.png", horizontal=True)
@@ -144,6 +168,8 @@ image reading: #Genie reading.
     repeat
 
 image reading_near_fire: #Genie reading near the fireplace.
+    zoom 0.5
+    
     "characters/genie/chibis/reading/01.png"
     pause 2
     "characters/genie/chibis/reading/06.png"
@@ -163,6 +189,8 @@ image reading_near_fire: #Genie reading near the fireplace.
 
 ### Drinking ###
 image genie_toast_goblet: # Genie sitting in front of fireplace, left sire.
+    zoom 0.5
+    
     "characters/genie/chibis/drinking/01.png"
     pause 2
     "characters/genie/chibis/drinking/02.png"
@@ -179,6 +207,8 @@ image genie_toast_goblet: # Genie sitting in front of fireplace, left sire.
     
 ### Drinking ###
 image genie_toast_goblet_daytime: # Genie sitting in front of fireplace, left sire.
+    zoom 0.5
+    
     "characters/genie/chibis/drinking/01_day.png"
     pause 2
     "characters/genie/chibis/drinking/02_day.png"
@@ -196,6 +226,8 @@ image genie_toast_goblet_daytime: # Genie sitting in front of fireplace, left si
 
 ### Jerking Off ###
 image genie_jerking_off: #Genie sitting behind his desk and jerking off...
+    zoom 0.5
+    
     "characters/genie/chibis/masturbating/desk_01.png"
     pause.2
     "characters/genie/chibis/masturbating/desk_02.png"
@@ -278,6 +310,8 @@ image genie_cum_03: #Genie cuming on Hermione after she is done striping.
     repeat
 
 image grab_mid:
+    zoom 0.5
+    
     "characters/genie/chibis/grab/grab_01.png"
     pause.5
     "characters/genie/chibis/grab/grab_02.png"
@@ -289,6 +323,8 @@ image grab_mid:
     "characters/genie/chibis/grab/grab_01.png"
 
 image grab_high:
+    zoom 0.5
+    
     "characters/genie/chibis/grab/grab_01.png"
     pause.5
     "characters/genie/chibis/grab/grab_02.png"
@@ -305,10 +341,10 @@ image grab_high:
     pause.1
     "characters/genie/chibis/grab/grab_01.png"
 
-
-
 ### Phoenix ###
 image petting: #PETTING THE PHOENIX.
+    zoom 0.5
+    
     "images/rooms/_objects_/phoenix/petting_ani/petting_01.png"
     pause 1
     "images/rooms/_objects_/phoenix/petting_ani/petting_02.png"

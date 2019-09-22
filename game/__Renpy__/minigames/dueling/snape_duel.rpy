@@ -539,21 +539,16 @@ image glass: # Animation that shows a broken glass effect when the duel starts.
     "images/dueling/snape/07.png"
 
 ### Harry Potter DUEL ANIMATIONS ###
-image smoke:
-    "images/animation/smoke_01.png"
-    pause.1
-    "images/animation/smoke_02.png"
-    pause.1
-    "images/animation/smoke_03.png"
-    pause.1
-    "images/animation/smoke_04.png"
-    pause.1
 
 image duel_table:
+    zoom 0.5
+    
     "images/rooms/main_room/desk_with_shadow.png"
 
 ### GENIE ###
 image ch_gen duel_01:
+    zoom 0.5
+    
     "images/dueling/snape/gen_01.png"
     pause.1
     "images/dueling/snape/gen_02.png"
@@ -565,6 +560,8 @@ image ch_gen duel_01:
     repeat
 
 image ch_gen guard:
+    zoom 0.5
+    
     "images/dueling/snape/guard_01.png"
     pause.1
     "images/dueling/snape/guard_02.png"
@@ -576,6 +573,8 @@ image ch_gen guard:
     repeat
 
 image ch_gen barb:
+    zoom 0.5
+    
     "images/dueling/snape/barb_01.png"
     pause.15
     "images/dueling/snape/barb_02.png"
@@ -583,6 +582,8 @@ image ch_gen barb:
     repeat
 
 image genie_attack:
+    zoom 0.5
+    
     "images/dueling/snape/genie_attack_01.png"
     pause.15
     "images/dueling/snape/genie_attack_02.png"
@@ -628,11 +629,15 @@ image genie_attack:
     repeat
 
 image genie_no_magic:
+    zoom 0.5
+    
     "images/dueling/snape/no_magic.png"
 
 
 ### SNAPE ###
 image ch_sna duel_01:
+    zoom 0.5
+    
     "images/dueling/snape/snape_01.png"
     pause.1
     "images/dueling/snape/snape_02.png"
@@ -644,6 +649,8 @@ image ch_sna duel_01:
     repeat
 
 image ch_sna defend:
+    zoom 0.5
+    
     "images/dueling/snape/snape_defend_01.png"
     pause.1
     "images/dueling/snape/snape_defend_02.png"
@@ -655,6 +662,8 @@ image ch_sna defend:
     repeat
 
 image snape_attack:
+    zoom 0.5
+    
     "images/dueling/snape/sna_attack_01.png"
     pause.08
     "images/dueling/snape/sna_attack_02.png"
@@ -678,6 +687,8 @@ image snape_attack:
     repeat
 
 image snape_defend: #Snape is in defense stance. Barbarian throws axes at him.
+    zoom 0.5
+    
     "images/dueling/snape/sna_block_01.png"
     pause.15
     "images/dueling/snape/sna_block_02.png"
@@ -715,12 +726,18 @@ image snape_defend: #Snape is in defense stance. Barbarian throws axes at him.
     repeat
 
 image snape_summon:
+    zoom 0.5
+    
     "images/dueling/snape/snape_casting_01.png"
 
 image snape_lost:
+    zoom 0.5
+    
     "images/dueling/snape/snape.png"
 
 image snape_attack_guard: # CREDITS VERSION, with a longer pause.
+    zoom 0.5
+    
     "images/dueling/snape/sna_attack_guard_01.png"
     pause.08
     "images/dueling/snape/sna_attack_guard_02.png"
@@ -744,6 +761,8 @@ image snape_attack_guard: # CREDITS VERSION, with a longer pause.
     repeat
 
 image snape_attack_guard:
+    zoom 0.5
+    
     "images/dueling/snape/sna_attack_guard_01.png"
     pause.08
     "images/dueling/snape/sna_attack_guard_02.png"
@@ -769,27 +788,17 @@ image snape_attack_guard:
 
 ### HAND ###
 image pentogram:
-    "images/dueling/snape/pen_05.png"
-    pause.1
-    "images/dueling/snape/pen_04.png"
-    pause.1
-    "images/dueling/snape/pen_03.png"
-    pause.1
-    "images/dueling/snape/pen_02.png"
-    pause.1
+    zoom 0.5
+    
+    alpha 0.0
+    linear .5 alpha 1.0
     "images/dueling/snape/pen_01.png"
-    pause.1
-    "images/dueling/snape/pen_02.png"
-    pause.1
-    "images/dueling/snape/pen_03.png"
-    pause.1
-    "images/dueling/snape/pen_04.png"
-    pause.1
-    "images/dueling/snape/pen_05.png"
-    pause.1
+    linear .5 alpha 0.0
     repeat
 
 image hand: #Hand appears.
+    zoom 0.5
+    
     "images/dueling/snape/hand_01.png"
     pause.1
     "images/dueling/snape/hand_02.png"
@@ -825,6 +834,8 @@ image hand: #Hand appears.
     repeat
 
 image hand_genie: #Hand attacks Genie.
+    zoom 0.5
+    
     "images/dueling/snape/hand_genie_01.png"
     pause.1
     "images/dueling/snape/hand_genie_02.png"
@@ -853,6 +864,8 @@ image hand_genie: #Hand attacks Genie.
     pause.1
 
 image hand_guard: #Hand attacks the guard.
+    zoom 0.5
+    
     "images/dueling/snape/hand_guard_01.png"
     pause.1
     "images/dueling/snape/hand_guard_02.png"

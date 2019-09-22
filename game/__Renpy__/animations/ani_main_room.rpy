@@ -98,7 +98,9 @@ image candle_fire_02: #Candle fire.
 
 
 ### Phoenix ###
-image pho_01: #Phoenix idile animation
+image phoenix_idle:
+    zoom 0.5
+    
     "images/rooms/_objects_/phoenix/phoenix_01.png"
     pause 2
     "images/rooms/_objects_/phoenix/phoenix_02.png"
@@ -119,9 +121,16 @@ image pho_01: #Phoenix idile animation
     pause 10
     repeat
 
-image feather: #Falling feather.
-    "images/rooms/_objects_/phoenix/feather_ani/pho_22.png"
+image phoenix_hover:
+    zoom 0.5
+
+    "images/rooms/_objects_/phoenix/phoenix_hover.png"
+
+image feather:
+    zoom 0.5
+    
     pause 10
+    alpha 1.0
     "images/rooms/_objects_/phoenix/feather_ani/pho_01.png"
     pause.15
     "images/rooms/_objects_/phoenix/feather_ani/pho_02.png"
@@ -158,19 +167,67 @@ image feather: #Falling feather.
     pause.15
     "images/rooms/_objects_/phoenix/feather_ani/pho_18.png"
     pause 10
-    "images/rooms/_objects_/phoenix/feather_ani/pho_19.png"
-    pause.1
-    "images/rooms/_objects_/phoenix/feather_ani/pho_20.png"
-    pause.1
-    "images/rooms/_objects_/phoenix/feather_ani/pho_21.png"
-    pause.1
-    "images/rooms/_objects_/phoenix/feather_ani/pho_22.png"
+    linear .5 alpha 0.0
     pause 20
     repeat
+    
+# Door
+image door_idle:
+    zoom 0.5
+    
+    "images/rooms/_objects_/doors/door_idle.png"
+    
+image door_hover:
+    zoom 0.5
 
+    "images/rooms/_objects_/doors/door_hover.png"
 
+image door_idle_night:
+    zoom 0.5
+
+    "images/rooms/_objects_/doors/door_idle_night.png"
+    
+image door_hover_night:
+    zoom 0.5
+
+    "images/rooms/_objects_/doors/door_hover_night.png"
+    
+# Fireplace
+image fireplace_idle:
+    zoom 0.5
+    
+    "images/rooms/_objects_/fireplace/fireplace_idle.png"
+    
+# Fireplace
+image fireplace_idle_shadow:
+    zoom 0.5
+    
+    "images/rooms/_objects_/fireplace/fireplace_w_shadow.png"
+    
+image fireplace_hover:
+    zoom 0.5
+
+    "images/rooms/_objects_/fireplace/fireplace_hover.png"
+    
 ### Owl Post ###
-image owl_with_letter_blink:
+image owl_idle:
+    zoom 0.5
+    
+    "images/rooms/_objects_/mail/owl_idle_01.png"
+    pause.1
+    "images/rooms/_objects_/mail/owl_idle_02.png"
+    pause.1
+    "images/rooms/_objects_/mail/owl_idle_03.png"
+    pause.15
+    "images/rooms/_objects_/mail/owl_idle_02.png"
+    pause.1
+    "images/rooms/_objects_/mail/owl_idle_01.png"
+    pause 7
+    repeat
+    
+image owl_letter:
+    zoom 0.5
+    
     "images/rooms/_objects_/mail/owl_01.png"
     pause.1
     "images/rooms/_objects_/mail/owl_02.png"
@@ -182,6 +239,12 @@ image owl_with_letter_blink:
     "images/rooms/_objects_/mail/owl_01.png"
     pause 7
     repeat
+    
+image owl_letter_hover:
+    zoom 0.5
+    
+    "images/rooms/_objects_/mail/owl_hover.png"
+    
     
 #Black owl
 image owl_with_letter_blink_black:

@@ -24,24 +24,26 @@ screen genie(): #Sitting behind desk.
 
 screen rum_screen(): #Rummaging through the cumpboard.
     tag genie_chibi
-    add "images/rooms/_objects_/cupboard/cupboard_open.png" at Position(xpos=cupboard_OBJ.xpos, ypos=cupboard_OBJ.ypos, xanchor="center", yanchor="center")
-    add "images/rooms/_objects_/cupboard/cupboard_open" +str(cupboard_deco)+ ".png" at Position(xpos=cupboard_OBJ.xpos, ypos=cupboard_OBJ.ypos, xanchor="center", yanchor="center") #Pinup Girl
-    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=332, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=371, ypos=331, xanchor="center", yanchor="center")
+    add "images/rooms/_objects_/cupboard/cupboard_open.png" xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
+    
+    if cupboard_deco:
+        add "images/rooms/_objects_/cupboard/cupboard_open" +str(cupboard_deco)+ ".png" at Position(xpos=cupboard_OBJ.xpos, ypos=cupboard_OBJ.ypos, xanchor="center", yanchor="center") #Pinup Girl
+    add "images/rooms/main_room/chair_left_with_shadow.png" xpos 332 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/desk_with_shadow.png" xpos 371 ypos 331 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "genie_rum_ani" xpos 160 ypos 110
     zorder 1
 
 screen feeding(): #FEEDING THE PHOENIX.
     tag genie_chibi
-    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=320, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" xpos 320 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/desk_with_shadow.png" xpos 360 ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "grab_high" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 410 ypos 75
     zorder 1
 
 screen petting(): #PETTING THE PHOENIX.
     tag genie_chibi
-    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=320, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" pos 320 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/desk_with_shadow.png" xpos 360 ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "petting" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 390 ypos 65
     zorder 1
 
@@ -58,29 +60,29 @@ screen paperwork(): #GENIE DOING PAPERWORK BEHIND HIS DESK.
 
 screen reading_near_fire(): #GENIE READING A BOOK BY THE FIRE.
     tag genie_chibi
-    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" xpos 180+140 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/desk_with_shadow.png" xpos 220+140 ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "reading_near_fire" xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
 
 screen reading(): #GENIE READING A BOOK.
     tag genie_chibi
-    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" xpos 180+140 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/desk_with_shadow.png" xpos 220+140 ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "reading" xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
 
 screen done_reading(): #DONE READING THE BOOK.
     tag genie_chibi
-    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" xpos 180+140 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/desk_with_shadow.png" xpos 220+140 ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
     add im.Flip("characters/genie/chibis/reading/07.png", horizontal=True) xpos 290+140 ypos 205
     zorder 4 #Because otherwise the bird food would be on top.
 
 screen done_reading_near_fire(): #DONE READING THE BOOK BY THE FIRE.
     tag genie_chibi
-    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=180+140, ypos=300, xanchor="center", yanchor="center")
-    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" xpos 180+140 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/desk_with_shadow.png" xpos 220+140 ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "characters/genie/chibis/reading/07.png" xpos 290+140 ypos 205
 
     zorder 4 #Because otherwise the bird food would be on top.
@@ -188,7 +190,7 @@ screen genie_walk():
     zorder gen_chibi_zorder
 
 label update_gen_chibi:
-    $ gen_chibi_stand = "characters/genie/chibis/walk_01.png"
+    $ gen_chibi_stand = "genie_stand_ani"
     $ gen_chibi_walk = "genie_walk_ani"
 
     return
@@ -283,6 +285,11 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
             else:
                 $ g_c_u_pic = "characters/genie/chibis/"+str(pic)+".png"
 
+        show screen g_c_u
+        
+    elif action in ["standing_alt"]:
+        $ g_c_u_pic = "genie_stand_alternative"
+        
         show screen g_c_u
 
     #Jerking off solo.

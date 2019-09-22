@@ -19,13 +19,15 @@ image glass: # Animation that shows a broken glass effect when the duel starts.
 
 ### Harry Potter DUEL ANIMATIONS ###
 image smoke:
+    zoom 0.5
+    alpha 1.0
     "images/animation/smoke_01.png"
     pause.1
     "images/animation/smoke_02.png"
     pause.1
     "images/animation/smoke_03.png"
     pause.1
-    "images/animation/smoke_04.png"
+    alpha 0.0
     pause.1
 
 image teleport_ani:

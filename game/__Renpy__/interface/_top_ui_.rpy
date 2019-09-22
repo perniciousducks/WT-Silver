@@ -71,7 +71,7 @@ screen ui_top_bar():
     if toggle_menu:
         use ui_menu
 
-    add "interface/topbar/"+str(interface_color)+"/bar.png"
+    add "interface/topbar/"+str(interface_color)+"/bar.png" zoom 0.5
     use ui_stats
     use ui_points
 

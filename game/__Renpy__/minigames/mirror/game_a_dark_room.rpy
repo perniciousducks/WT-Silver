@@ -548,7 +548,7 @@ screen dark_room():
             add "reading_near_fire" xpos 350 ypos 205
     else:
         use chair_left
-    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/desk_with_shadow.png" xpos 360 ypos 330 xanchor 0.5 yanchor 0.5
 
     zorder 0
 

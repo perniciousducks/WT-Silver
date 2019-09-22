@@ -108,7 +108,7 @@ screen letter():
 label shoosh_owl_away:
     show screen chair_left
     show screen desk
-    call gen_chibi("image", pic="standing", "420", "160", flip=True) # Update position and sprite
+    call gen_chibi("standing_alt", "420", "160", flip=True) # Update position and sprite
     with d5
     pause.2
 

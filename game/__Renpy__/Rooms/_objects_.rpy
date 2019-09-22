@@ -2,9 +2,9 @@ default deco_list = []
 default deco_overlay_list = []
 
 default fireplace_OBJ = room_object_class(type="fireplace",
-    room_image="fireplace_w_shadow", room_image_path="images/rooms/_objects_/fireplace/",
-    idle_image="fireplace_idle",     idle_image_path="images/rooms/_objects_/fireplace/",
-    hover_image="fireplace_hover",   hover_image_path="images/rooms/_objects_/fireplace/",
+    room_image="fireplace_idle_shadow", room_image_path="",
+    idle_image="fireplace_idle",     idle_image_path="",
+    hover_image="fireplace_hover",   hover_image_path="",
     xpos=693, ypos=277)
 
 default cupboard_top_OBJ = room_object_class(type="cupboard",
@@ -25,22 +25,22 @@ default hat_OBJ = room_object_class(type="hat",
     xpos=260, ypos=280)
 
 default phoenix_OBJ = room_object_class(type="phoenix",
-    room_image="phoenix_01",      room_image_path="images/rooms/_objects_/phoenix/",
-    idle_image="pho_01",          idle_image_path="",
-    hover_image="phoenix_hover",  hover_image_path="images/rooms/_objects_/phoenix/",
+    room_image="phoenix_idle",      room_image_path="",
+    idle_image="phoenix_idle",          idle_image_path="",
+    hover_image="phoenix_hover",  hover_image_path="",
     xpos=557, ypos=272)
 
 default door_OBJ = room_object_class(type="door",
-    room_image="door_idle",      room_image_path="images/rooms/_objects_/doors/",
-    idle_image="door_idle",      idle_image_path="images/rooms/_objects_/doors/",
-    hover_image="door_hover",    hover_image_path="images/rooms/_objects_/doors/",
+    room_image="door_idle",      room_image_path="",
+    idle_image="door_idle",      idle_image_path="",
+    hover_image="door_hover",    hover_image_path="",
     xpos=898, ypos=315)
 
 default door_night_OBJ = room_object_class(
     type="door",
-    room_image  = "door_idle_night",  room_image_path  = "images/rooms/_objects_/doors/",
-    idle_image  = "door_idle_night",  idle_image_path  = "images/rooms/_objects_/doors/",
-    hover_image = "door_hover_night", hover_image_path = "images/rooms/_objects_/doors/",
+    room_image  = "door_idle_night",  room_image_path  = "",
+    idle_image  = "door_idle_night",  idle_image_path  = "",
+    hover_image = "door_hover_night", hover_image_path = "",
     xpos=898, ypos=315
 )
 
@@ -55,9 +55,9 @@ default candle_right_OBJ = room_object_class(type="candle",
     xpos=833, ypos=225)
 
 default owl_OBJ = room_object_class(type="mail",
-    room_image="owl_idle",              room_image_path="images/rooms/_objects_/mail/",
-    idle_image="owl_with_letter_blink", idle_image_path="",
-    hover_image="owl_hover",            hover_image_path="images/rooms/_objects_/mail/",
+    room_image="owl_idle",              room_image_path="",
+    idle_image="owl_letter",            idle_image_path="",
+    hover_image="owl_letter_hover",     hover_image_path="",
     xpos=455, ypos=289)
 
 default package_OBJ = room_object_class(type="mail",

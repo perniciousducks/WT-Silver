@@ -80,7 +80,7 @@ screen phoenix_food(): #Phoenix's food.
 
 screen fireplace(): #Used to display a fireplace in a different room. Not needed for main room. Included in screen "main_room".
     tag fireplace
-    add fireplace_OBJ.get_room_image() xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos xanchor 0.5 yanchor 0.5
+    add fireplace_OBJ.get_room_image() xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
     zorder 1
 
 screen fireplace_fire(): #Used to display fire without the fireplace.
@@ -98,13 +98,14 @@ $ width_offset = 140
 
 
 screen desk(xposistion=360): #Desk only!
-    add "images/rooms/main_room/desk_with_shadow.png" at Position(xpos=xposistion, ypos=330, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/desk_with_shadow.png" xpos xposistion ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
     zorder 2
 
 screen chair_left():
-    add "images/rooms/main_room/chair_left_with_shadow.png" at Position(xpos=332, ypos=300, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_left_with_shadow.png" xpos 332 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+    
 screen chair_right():
-    add "images/rooms/main_room/chair_right.png" at Position(xpos=793, ypos=300, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/chair_right.png" xpos 793 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
     zorder 1
 
 #Mail

@@ -40,13 +40,13 @@ screen snape_stand():
 screen snape_walk():
     tag snape_chibi
 
-    add sna_chibi_walk         at sna_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sna_chibi_flip #zoom (1.0/scaleratio)
+    add sna_chibi_walk at sna_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sna_chibi_flip #zoom (1.0/scaleratio)
 
     zorder sna_chibi_zorder
 
 
 label update_sna_chibi:
-    $ sna_chibi_stand = "characters/snape/chibis/snape_stand.png"
+    $ sna_chibi_stand = "snape_stand"
     $ sna_chibi_walk = "snape_walk"
     return
 

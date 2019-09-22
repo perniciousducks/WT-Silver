@@ -4,7 +4,6 @@
 
 init -1 python:
 
-    #Favours
     class room_object_class(item_class):
         room_image = ""
         room_image_path = ""
@@ -32,6 +31,6 @@ init -1 python:
 
         def get_hover_image(self):
             if self.hover_image_path != "":
-                return "" +str(self.hover_image_path)+ "" +str(self.hover_image)+ ".png"
+                return image_hover("" +str(self.hover_image_path)+ "" +str(self.hover_image)+ ".png")
             else:
                 return self.hover_image

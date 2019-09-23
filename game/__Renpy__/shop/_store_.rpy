@@ -638,7 +638,7 @@ label token_shop_menu:
         if toggle3_bool:
             item_list.extend([lootbox_quest_ITEM])
 
-        item_list = list(filter(lambda x: x.unlocked==False, item_list))
+        item_list = list(filter(lambda x: x.hidden==False and x.unlocked==False, item_list))
 
     show screen list_menu(item_list, "Token Shop", toggle1="Outfits", toggle2="Decorations", toggle3="Other")
 

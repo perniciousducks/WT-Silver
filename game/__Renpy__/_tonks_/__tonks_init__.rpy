@@ -49,7 +49,7 @@ default chitchated_with_tonks   = False
 default tonks_strip_happened    = False #Tonks random clothing event.
 
 default gave_tonks_gift = False
-
+default tonks_mail_list = []
 default ton_seen_lun_sex = False
 
 # Names

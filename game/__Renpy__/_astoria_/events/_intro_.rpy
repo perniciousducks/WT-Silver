@@ -11,6 +11,8 @@ label astoria_intro_E1:
     # She tells you about the curses and what they do.
     # She needs you to help find the culprit.
     # She doesn't want the ministry to find out about it just as much as you.
+    if "poster_1_store" not in tonks_mail_list:
+        $ tonks_mail_list.append("poster_1_store")
 
     stop music fadeout 1.0
     call play_sound("knocking")
@@ -191,7 +193,9 @@ label astoria_intro_E1:
                     g9 "Sweet!"
                     call ton_main("Now, here is what I'll require your help with...","open","closed","base","mid")
 
-                    # TODO: Add poster and weasly show unlock.
+                    if "poster_1_gift" not in tonks_mail_list:
+                        $ tonks_mail_list.append("poster_1_gift")
+                        $ tonks_mail_list.remove("poster_1_store")
 
     call ton_main("This girl I've told you about, Susan Bones?","open","base","base","mid")
     call ton_main("The one with-","open","base","base","R")

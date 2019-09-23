@@ -13,6 +13,11 @@ default letter_hg_2 = mail_letter_class(
     label = "" # No comment on letter
 )
 
+default letter_nt_1 = mail_letter_class(
+    text = "{size=-7}From: Tonks\nTo: My beloved headmaster\n\n{/size}{size=-4}As promised, here is a very lewd picture of me.{image=textheart}\n\nI sincerely hope you received this letter before anybody had a chance to inspect the owl.\n\nIt would be shameful for me if this image was made public, and shared across all of Hogwarts...\nDon't you think so too, Professor?{image=textheart}\n\nI had so much fun making this for you.\nPlease jerk off to it as much as you like! {image=textheart} {image=textheart} {image=textheart}{/size}\n\n{size=-7}With love,\nTonks. {image=textheart}{/size}",
+    label = "letter_nt_1"
+)
+
 # Ministry of Magic Letters
 default letter_min_work = mail_letter_class(
     text = "{size=-7}From: Ministry of Magic\nTo: Professor Albus Dumbledore\n\n{/size}{size=-4}Dear professor Dumbledore,\nWe remind you that only upon providing us with a completed report will we be able to make a payment in your name.{/size}\n\n{size=-7}With deepest respect,\nThe Ministry of Magic.{/size}",
@@ -163,6 +168,26 @@ label letter_favor_complaint:
     m "Does that mean I'm in trouble?"
     return
 
+label letter_nt_1:
+    m "Well now I'm curious..."
+    call nar(">You slowly roll out the piece of parchment.")
+    pause.2
+    call kiss_her
+    pause.5
+
+    m "Cute..."
+    call play_sound("scroll")
+    call nar(">You roll out the poster completely - getting a good look of it.")
+    g9 "Nice!"
+
+    call give_reward(text="{image=textheart} {image=textheart} {image=textheart}", gift="interface/icons/posters/tonks.png", sound=True)
+    $ poster_tonks_ITEM.unlocked = True
+    $ poster_tonks_ITEM.hidden = False
+
+    g9 "I'll definitely hang this one up!"
+
+    return
+
 label update_report_money:
 
     if game_difficulty <= 1: # Easy
@@ -295,10 +320,10 @@ init python:
 
     class deliveryQueue(object):
         max_wait = 15
-        
+
         def __init__(self):
             self.queue = []
-            
+
         def send(self, item, transit_time, quantity, type):
             if transit_time > self.max_wait:
                 transit_time = self.max_wait
@@ -321,7 +346,7 @@ init python:
             return delivery
 
     class mail_letter_class(object):
-        
+
         def __init__(self, **kwargs):
             self.mailed = False
             self.read = False

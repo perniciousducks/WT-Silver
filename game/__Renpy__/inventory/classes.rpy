@@ -13,6 +13,7 @@ init -2 python:
             self.imagepath = "interface/icons/box_blue_2.png"
             self.unlockable = False #If True, prevents this item to be shown in the shop.
             self.unlocked = False #Set to True once unlocked or purchased.
+            self.hidden = False # Not visible in any menus.
             self.number = 0 #Amount of items of this type that you possess. Can be used for weasley store and gift items.
             self.cost = 0
             self.wait_time = 1
@@ -60,7 +61,7 @@ init -2 python:
 
     #Outfit Items
     class costume_class(item_class):
-        
+
         def __init__(self, **kwargs):
             self.top_layers = []
             self.outfit_layers = []

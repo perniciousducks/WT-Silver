@@ -67,6 +67,7 @@ default poster_hermione_ITEM = item_class(id="hermione", name="Hermione Chibi Po
 default poster_harlots_ITEM = item_class(id="harlots", name="Hogwarts Harlots Poster", cost=2, type="poster", image="posters/harlots", description="Hermione showing off her true colours at last with this special poster... illusion charm included...")
 default poster_stripper_ITEM = item_class(id="stripper", name="Stripper Poster", cost=2, type="poster", image="posters/stripper", description="Hermione showing off how to work the pole... illusion charm included...")
 default poster_wanted_ITEM = item_class(id="wanted", name="Wanted Poster", cost=2, type="poster", image="posters/wanted", description="A Wild West styled Wanted poster depicting our dear headmaster...")
+default poster_tonks_ITEM = item_class(id="tonks", name="Tonks Chibi Poster", hidden=True, cost=2, type="poster", image="posters/tonks", description="Somebody anonymous sent us this poster of what we can only suspect is Professor Tonks in the nude!")
 
 # Trophies
 default trophy_stag_ITEM = item_class(id="stag", name="Stag Head Trophy", cost=3, type="trophy", image="trophies/stag", description="A perfect decoration over your mantelpiece to add a sense of masculinity to the office.")
@@ -92,6 +93,7 @@ default wall_deco_list = [
     poster_harlots_ITEM,
     poster_stripper_ITEM,
     poster_wanted_ITEM,
+    poster_tonks_ITEM,
 ]
 default fireplace_deco_list = [
     trophy_crest_ITEM,
@@ -106,7 +108,7 @@ default misc_deco_list = [
 default misc_hat_list = [
     fireplace_hat_ITEM,
     phoenix_hat_ITEM,
-    owl_hat_ITEM,    
+    owl_hat_ITEM,
 ]
 
 # Scroll Items
@@ -297,7 +299,7 @@ default hg_gamble_slut_ITEM = costume_class(
     # Layers
     outfit_layers = ["onepieces/onepiece_gambler_cards","stockings/stockings_gambler_cards","onepieces/onepiece_gambler","stockings/stockings_gambler","gloves/wrist_cuffs_1","neckwear/choker_bow_tie_1","piercings/ears_gambler","piercings/belly_gambler"],
     breast_layer  = "breasts_normal",
-    top_layers    = "hat_gambler"    
+    top_layers    = "hat_gambler"
 )
 default hg_witch_ITEM = costume_class(
     id="hg_witch", name="Witch Outfit", type="outfit", items=["outfit","hat"],
@@ -667,7 +669,7 @@ default cho_outfits_list = [
     cc_outfit_quidditch_ITEM,
     cc_outfit_sailor_white_ITEM,
     # cc_outfit_sailor_black_ITEM
-] 
+]
 default cho_costumes_list = [
     cc_costume_misty_ITEM
 ]

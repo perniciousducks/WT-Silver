@@ -248,7 +248,13 @@ label quests:
     # Tonks events not triggered by a date.
     if nt_event_pause == 0:
         if daytime:
-            pass
+            python:
+                for i in tonks_mail_list:
+                    if i == "poster_1_gift":
+                        letter_nt_1.mailLetter()
+                    if i == "poster_1_store":
+                        poster_tonks_ITEM.hidden = False # Now available at the store.
+                    tonks_mail_list.remove(i)
         else:
             pass
 

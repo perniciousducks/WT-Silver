@@ -1,7 +1,8 @@
 # Astoria wardrobe init
 default astoria_class = char_class(char="astoria")
 
-default astoria_hair_base = cloth_class(char="astoria", category="head", subcat="hair", type="hair", id="base", layers=1, color=[[229, 198, 129, 255]])
+default astoria_hair_base = cloth_class(char="astoria", category="head", subcat="hair", type="hair", id="base", layers=2, color=[[229, 198, 129, 255], [163, 125, 80, 255]])
+default astoria_hair_short = cloth_class(char="astoria", category="head", subcat="hair", type="hair", id="short", layers=2, color=[[229, 198, 129, 255], [163, 125, 80, 255]])
 
 # Tops
 default astoria_cloth_topschool1 = cloth_class(char="astoria", category="tops", subcat="school", type="top", id="top_school_1", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]])

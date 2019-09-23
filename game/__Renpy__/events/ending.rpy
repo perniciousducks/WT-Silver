@@ -653,7 +653,7 @@ label ball_ending_E2:
     her "It's already been decided, sir."
     m "What?"
     her "Oh, I mean I hope I will win..."
-    her "Since I am the one who organized the whole thing it is only fair..."
+    her "Since I am the one who organised the whole thing it is only fair..."
     her "Wouldn't you agree sir?"
     m "Well... Sounds like cheat--"
     call cg_scene("07")

@@ -463,7 +463,7 @@ label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the 
             g9 "Be my guest, [hermione_name]."
         "-Make her apologize first-":
             m "I don't think that you deserve to suck my dick after being this rude."
-            m "Maybe if you apologized..."
+            m "Maybe if you apologised..."
             call her_main("......","upset","wink")
             m "No? Well in that case...{w=0.5}{nw}"
             call her_main("{size=+5}I'm sorry!{/size}","scream","angryCl")
@@ -623,7 +623,7 @@ label potion_scene_3_3_1: #Hypno potion
     m "Uhm..."
     m "(Should have thought of something. At least the potion seems to work. Lets see...)"
     menu:
-        "-You're an air-headed bimbo-":
+        "-You're an airheaded bimbo-":
             show screen blktone
     #call set_h_hair(hair_style="B",color=2)
     call her_main("I am an airheaded bimbo who only wants to make people happy...","soft","dead")

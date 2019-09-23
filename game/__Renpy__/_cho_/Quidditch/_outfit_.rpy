@@ -29,7 +29,7 @@ label use_quidditch_pants_2:
         $ quid_outfit_intro.append("pants_2")
 
         m "Do you happen to have Quidditch trousers that are a bit shorter?"
-        m "Some sort of hot-pants?"
+        m "Some sort of hotpants?"
         call cho_main("I do. I typically wear them in the summer.","open","base","raised","mid")
         m "Well I'd like you to wear them all the time!"
         call cho_main("Even when it's cold, and raining?","soft","base","sad","mid")
@@ -38,7 +38,7 @@ label use_quidditch_pants_2:
 
     # Repeat
     else:
-        m "I'd like you to wear those hot-pants duing your games again."
+        m "I'd like you to wear those hotpants during your games again."
         call cho_main("Alright. I see nothing wrong with that.","soft","base","base","down")
         call cho_main("I just hope it won't get too cold on our next game...","annoyed","base","sad","mid")
 

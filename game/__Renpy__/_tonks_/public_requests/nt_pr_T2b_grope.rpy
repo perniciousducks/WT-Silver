@@ -262,7 +262,7 @@ label nt_pr_grope_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys
     call ton_main("I don't think I would have been able to stop them at all if I didn't...","open","closed","base","mid")
     call ton_main("Or myself, for that matter...","upset","base","base","ahegao")
     call ton_main("Not that it would have been the worst-thing-in-the-world to let them touch my tits directly...","open","base","base","R")
-    call ton_main("Anyhow, I offered them some house-points for it,...but to my surprise they both kindly refused...","open","closed","base","mid")
+    call ton_main("Anyhow, I offered them some house points for it,...but to my surprise they both kindly refused...","open","closed","base","mid")
     call ton_main("Said they'd much rather have a go-at-it again...","base","base","angry","mid")
     m "Think they'll spread the word this time?"
     call ton_main("They were both pitching a pretty-big-tent when they left class... that was noticeable to say the least...","smile","happyCl","base","mid")

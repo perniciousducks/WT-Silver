@@ -318,7 +318,7 @@ label astoria_tonks_random:
 
         call ast_main("I hate her, [ast_genie_name]!","scream","closed","angry","mid")
         m "Tonks? Last time you said you liked her..."
-        call ast_main("That was before she wanted me to clean up her whole staff-room!","scream","angry","angry","mid")
+        call ast_main("That was before she wanted me to clean up her whole staffroom!","scream","angry","angry","mid")
         call ast_main("Not to mention the horrible outfit she made me wear.","clench","angry","angry","R")
         m "Wait, what outfit?"
         call ast_main("I think she called it a maiden outfit, or something.", "annoyed", "angry","angry", "L")

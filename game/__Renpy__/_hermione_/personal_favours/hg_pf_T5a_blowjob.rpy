@@ -82,7 +82,7 @@ label hg_pf_blowjob_fail:
     call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?","base","base")
-    m "I plan to grant \"Gryffindor\" 55 house-points today..."
+    m "I plan to grant \"Gryffindor\" 55 house points today..."
     m "If you suck me off..."
 
     $ hg_pf_blowjob.counter -= 1
@@ -100,7 +100,7 @@ label hg_pf_blowjob_T0_fail_intro:
     call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?","base","base")
-    m "I plan to grant \"Gryffindor\" 55 house-points today..."
+    m "I plan to grant \"Gryffindor\" 55 house points today..."
     m "If you suck me off..."
     call her_main("Suck you...{w}off?","disgust","wide_stare")
     call her_main("With my mouth?!","disgust","wide")
@@ -138,7 +138,7 @@ label hg_pf_blowjob_T0_fail_repeat:
     call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?","base","base")
-    m "I plan to grant \"Gryffindor\" 55 house-points today..."
+    m "I plan to grant \"Gryffindor\" 55 house points today..."
     call her_main("And let me guess...","open","angryCl")
     call her_main("You'd like me to \"suck you off\" for it?","open","angry")
     g9 "That is correct!"
@@ -178,7 +178,7 @@ label hg_pf_blowjob_T1_intro_E1:
     call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?","base","base")
-    m "I plan to grant \"Gryffindor\" 55 house-points today..."
+    m "I plan to grant \"Gryffindor\" 55 house points today..."
     m "If you suck me off..."
     call her_main("Oh...","open","down")
     call her_main("Alright.","base","down")
@@ -358,7 +358,7 @@ label hg_pf_blowjob_1:
             m "Hm..."
             m "So you don't mind selling me sexual favours, letting me play with your tits and such..."
             call her_main("*Gobble!* *Gltch!* *Slurp!*","sucking","ahegao")
-            m "And then condemn such behavior in front of the other students."
+            m "And then condemn such behaviour in front of the other students."
             call her_main("*Slurp!* *Slurp!* *Gulp!*","sucking","down")
             m "You perverted, little hypocrite."
             call her_main("*Gulp--","sucking","ahegao_mad")
@@ -867,7 +867,7 @@ label hg_hidden_blowjob_luna:
     m "What?"
     call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_mad")
     call lun_main("Sucking, [lun_genie_name]!","base","seductive","base","mid")
-    call lun_main("It's so cute! They suck at each others tentacles with their little mouths!","soft","base","raised","up")
+    call lun_main("It's so cute! They suck at each other's tentacles with their little mouths!","soft","base","raised","up")
     m "(Plants with mouths?)"
     call lun_main("Normally they only do that shortly before they spread their spores.","open","base","base","R")
     call lun_main("Which means they are almost ready!","grin","happyCl","raised","mid")
@@ -897,7 +897,7 @@ label hg_hidden_blowjob_luna:
     call lun_main("Sprout told us to be careful, [lun_genie_name]. As you probably know, they like to spit... and bite...","soft","base","base","mid")
     m "Truly?"
     call lun_main("Yes. If you aren't careful, they'll hit you with their saliva, or bite at your limbs!","clench","annoyed","raised","down")
-    call lun_main("Luckily, there is an easy way to make them stop such behavior!","base","seductive","base","mid")
+    call lun_main("Luckily, there is an easy way to make them stop such behaviour!","base","seductive","base","mid")
     m "I'm all ears..."
     call lun_main("They hate being spat on just as much as you, [lun_genie_name]. Maybe even more so!","soft","seductive","base","L")
     m "(Those are some weird fucking plants...)"
@@ -1134,7 +1134,7 @@ label hg_hidden_blowjob_tonks:
 
     call ton_main("Miss Granger, If that's really you back there, why don't you say hi to your favourite teacher?","horny","base","raised","down")
     m "(...)"
-    call ton_main("I will reward you with 50 house-points if you show yourself!","base","base","raised","down")
+    call ton_main("I will reward you with 50 house points if you show yourself!","base","base","raised","down")
     with hpunch
     g4 "What?!"
     call hg_chibi_transition("bj_pause")

@@ -95,7 +95,7 @@ label hg_pf_handjob_fail:
 
 ### Tier 1 ###
 
-# Event 1 (i) - Hermione wants 100 house-points for it!
+# Event 1 (i) - Hermione wants 100 house points for it!
 # Event 2 (i) - Reluctantly does it again.
 # Event 3 (r) -
 

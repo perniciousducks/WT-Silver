@@ -193,7 +193,7 @@ label hang_with_snape_E1: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     call sna_main("Wait, how do you know this?","snape_34")
     m "Well... I've read the books..."
     call sna_main("What? What books?","snape_34")
-    m "Nah, never-mind. I'm a genie, remember? I know things..."
+    m "Nah, never mind. I'm a genie, remember? I know things..."
     call sna_main("Hm... And yet you need me to teach you stuff...","snape_37")
     m "Well, I told you. My magic is acting up in your world..."
     call sna_main("Sure, sure...","snape_37")
@@ -404,7 +404,7 @@ label hang_with_snape_E3:
     call sna_main(".........................","snape_31", ypos="head")
     call sna_main("That bloody wench has outdone herself, once again!","snape_35")
     m "Granger?"
-    call sna_main("Yes! Her and her cursed letters!","snape_08")
+    call sna_main("Yes! She and her cursed letters!","snape_08")
     call sna_main("I'm certain she was the one who informed the Ministry about our little escapades...","snape_16")
     call sna_main("And now we have an Auror breathing down our necks... All thanks to that mischievous little whore!","snape_15")
     m "................."
@@ -457,7 +457,7 @@ label hang_with_snape_E3:
     call sna_main("Actually, I'd rather not know...","snape_06")
     call sna_main("No, and even if there was one... we're still dealing with a trained Auror here.","snape_01")
     call sna_main("We should keep everything running as normal.","snape_35")
-    call sna_main("Or as normal-as-can-be, without the real Albus...","snape_09")
+    call sna_main("Or as normal as can be, without the real Albus...","snape_09")
     m ".................."
     call sna_main("Even if she finds any concrete proof of something going on, any involvement on our part should be kept quiet at all cost.","snape_01")
     call sna_main("And as soon as she is out of here, I'll go back to drinking wine, whilst enjoying my student's company...","snape_40")
@@ -551,7 +551,7 @@ label hang_with_snape_E4:
     call sna_main("Not a single word! A-Ha-ha-ha...","snape_28")
     m "Fair enough..."
     call sna_main("Ha-ha-ha-...{w=0.5}{nw}","snape_42")
-    call sna_main("*cough*-{w=0.4}*cough*-{w=0.6}*cough*{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8}{nw}","snape_17", trans="hpunch")
+    call sna_main("*cough* {w=0.4}*cough* {w=0.6}*cough*{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8}{nw}","snape_17", trans="hpunch")
     m "..............."
     call sna_main("...................","snape_31")
 
@@ -586,7 +586,7 @@ label hang_with_snape_E4:
     call sna_main("How exactly did you end up in this situation with her?","snape_04")
     m "I don't know... It just... happened."
     m "She pretty much figured everything out by herself."
-    m "Straight-away even guessed that I'm a Genie..."
+    m "Straight away even guessed that I'm a Genie..."
     call sna_main("So she knows everything? How did she?-","snape_03")
     m "It appears the \"illusion charm\" wasn't perfect. She momentarily got a glimpse through it..."
     call sna_main("That's impressive... perhaps I didn't give her enough credit...","snape_01")
@@ -601,7 +601,7 @@ label hang_with_snape_E4:
         m "Oh, I'm sure there's little to no persuasion needed."
         m "I have no doubt that she'd be well into the idea of convincing Granger to sell favours herself..."
 
-    call sna_main("What a wicked-bitch!","snape_13")
+    call sna_main("What a wicked bitch!","snape_13")
     call sna_main("If only we were selling favours back then...","snape_46")
     call sna_main("You know what they say about students from \"Hufflepuff\"...","snape_20")
     call sna_main("They are quite the \"hard-working\" bunch!","snape_21")
@@ -610,7 +610,7 @@ label hang_with_snape_E4:
     call sna_main("You do what?","snape_14")
     m "Dibs, she's mine. I said it first..."
     call sna_main("Are you twelve or something?","snape_04")
-    m "Over Ten-thousand, actually."
+    m "Over Ten thousand, actually."
 
     $ hang_with_snape.E4_complete = True
     $ ss_event_pause += 1
@@ -621,7 +621,7 @@ label hang_with_snape_E4:
 label hang_with_snape_E5:
 
     call bld
-    m "Our new partner-in-crime, is she getting on well?"
+    m "Our new partner in crime, is she getting on well?"
     call sna_main("Tonks? I haven't seen her since last time we talked...","snape_09", ypos="head")
     call sna_main("Shouldn't you know what that witch is up to? You made her a teacher, after all...","snape_01")
     m "I'm sure she's still just settling down..."
@@ -637,7 +637,7 @@ label hang_with_snape_E5:
     call sna_main("That's a subject that requires skill and cunning!","snape_02")
     call sna_main("And a very competent and skilled teacher, to guide those hopeless souls through their lessons...","snape_40")
     call sna_main("Now, If you were to assign me for that, and give Tonks my old subject to teach...","snape_20")
-    m "Yeah,...{w=0.4} I think gave that role to her..."
+    m "Yeah,...{w=0.4} I think I gave that role to her..."
     call sna_main("{size=+5}You did what?!{/size}","snape_33", trans="hpunch")
     m "\"Defence against-...something-something\"..."
     call sna_main("You should have given me the \"defence against the dark arts\" position!","snape_34")
@@ -651,7 +651,7 @@ label hang_with_snape_E5:
     call sna_main("I can't say that I trust her just yet...","snape_35")
     call sna_main("Not before I get to slip in a couple drops of \"Veritaserum\" into her drink...","snape_03")
     m "\"Veritaserum?\""
-    call sna_main("Truth potion!{w=0.4} I often-times use some on my \"very-attractive Slytherins\"...","snape_02")
+    call sna_main("Truth potion!{w=0.4} I oftentimes use some on my \"very attractive Slytherins\"...","snape_02")
     call sna_main("Only a single drop, and they'll tell me everything I want to know.","snape_41")
     call sna_main("Very handy should you need information to blackmail someone...","snape_46")
     call sna_main("Or learn everything about their secret fetishes...","snape_20")
@@ -890,7 +890,7 @@ label ss_he_story_intro_E7:
     pause.1
     call blktone
 
-    ">You and professor Snape share a bitter-sweet moment of complete male solidarity."
+    ">You and professor Snape share a bittersweet moment of complete male solidarity."
     ">The bond of your friendship strengthens."
 
     call sly_plus
@@ -1041,7 +1041,7 @@ label ss_he_story_intro_E12:
     m "The heart of the human civilization if you will."
     call sna_main("I am relieved to hear that...","snape_23")
     m "Sure..."
-    m "Although if your Albus friend really materialized in exactly the same spot I occupied before I casted the spell..."
+    m "Although if your Albus friend really materialised in exactly the same spot I occupied before I casted the spell..."
     m "I suppose the princess could have him beheaded..."
     call sna_main("WHAT?!","snape_01")
     m "But the probabilty of that happening is very slim..."
@@ -1148,7 +1148,7 @@ label ss_he_story_intro_E15:
     call blktone
 
     ">Your friendship level with professor Snape reached its maximum value."
-    ">Congratulations. If this were a \"dating-sim\" you would be getting the ending with Severus Snape."
+    ">Congratulations. If this were a \"dating sim\" you would be getting the ending with Severus Snape."
     ">The \"Slytherin\" house point payout has increased greatly and reached it's maximum level as well."
 
     call sly_plus

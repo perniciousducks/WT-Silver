@@ -297,7 +297,7 @@ label l_tutoring:
         m "And what is your opinion on them?"
         call her_main("At least they don't sleep with professors in exchange for house points.","open","suspicious")
         call her_main("","annoyed","suspicious")
-        m "And that's it? No \"this behavior must be severely punished\"?"
+        m "And that's it? No \"this behaviour must be severely punished\"?"
         m "Are you attracted to girls of this sort, Miss Granger?"
         call her_main("What? Lesbians? I'm not... I... No way, I...","open","base",cheeks="blush")
         m "Alright, alright, back to your report, if you please."
@@ -323,7 +323,7 @@ label l_tutoring:
                 pass
         call her_main("","open","base",cheeks="blush")
         g9 "And? And?"
-        call her_main("They pulled up their shirts and caressed each others breasts.","open","worriedCl",cheeks="blush")
+        call her_main("They pulled up their shirts and caressed each other's breasts.","open","worriedCl",cheeks="blush")
         call her_main("{size=-2}(Their beautiful and tempting breasts...){/size}","open","ahegao_raised",cheeks="blush")
         call her_main("Later those nasty girls raised their skirts and started to touch each other \"there\" while kissing.","silly","ahegao_raised",cheeks="blush")
         call her_main("{size=-2}(I can't believe I said that!){/size}","base","ahegao_raised",cheeks="blush",tears="sweat")
@@ -1777,7 +1777,7 @@ label l_tutoring:
         call nar(">You pull out your cock and roughly shove it back inside.")
         with hpunch
         call her_main("Aaaaah {image=textheart}.","open","ahegao",cheeks="blush")
-        call her_main("I love being sodomized savagely by my headmaster.","silly","ahegao_raised",cheeks="blush")
+        call her_main("I love being sodomised savagely by my headmaster.","silly","ahegao_raised",cheeks="blush")
         call nar(">And again.")
         with hpunch
         her "Yessss {image=textheart}."

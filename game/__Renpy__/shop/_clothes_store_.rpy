@@ -363,12 +363,12 @@ label purchase_outfit(item):
     if item == hg_dress_yule_ball_ITEM:
         if not sorry_for_hesterics:
             m "Do you sell Dresses?"
-            maf "A dress? Are we talking ball-dresses, or more burlesque?"
+            maf "A dress? Are we talking ball dresses, or more burlesque?"
             m "Hmm... Balls actually."
             maf "How surprising."
             m "I was thinking that I could have a custom one made. For a very good girl of mine."
         if sorry_for_hesterics:
-            m "Do you sell Ball Dresses?"
+            m "Do you sell Ball dresses?"
             maf "Hmmm, we do although they're nothing special. Why?"
             m "A 'girl' approached me with a problem. Apparently she's unable to aquire a dress for this years autumn ball."
             maf "How tragic, well I'm sure that one of these cheap ones will suffice."
@@ -383,7 +383,7 @@ label purchase_outfit(item):
         maf "You're welcome."
 
     if item == hg_costume_ms_marvel_ITEM:
-        m "Tell me Madam Mafkin, have you ever heard of super-heroes?"
+        m "Tell me Madam Mafkin, have you ever heard of superheroes?"
         maf "Yes yes, those people in the comic books. My grandson is quite fond of them."
         m "Fantastic, I was wondering if it would be possible for you to make me a costume."
         maf "Certainly, who did you have in mind?"

@@ -96,7 +96,7 @@ label hg_pf_titjob_fail:
 
 ### Tier 1 ###
 
-# Event 1 (i) - Hermione wants 100 house-points for it!
+# Event 1 (i) - Hermione wants 100 house points for it!
 # Event 2 (r) - Reluctantly does it again.
 
 label hg_pf_titjob_T1_intro_E1:
@@ -166,15 +166,15 @@ label hg_pf_titjob_T1_intro_E1:
 
 label hg_pf_titjob_T1_repeat:
     call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
-    m "[hermione_name], would you like to earn some house-points again?"
+    m "[hermione_name], would you like to earn some house points again?"
     call her_main("Of course, [genie_name]...","base","base")
     call her_main("What would I have to do to earn them?","open","baseL")
     g9 "Nothing you aren't already experienced with!"
     m "I'm just going to rub my cock between those precious little tits of yours..."
     call her_main("This again...","angry","angryCl")
     call her_main("(...)","annoyed","angryL")
-    call her_main("For 45 house-points?","open","angry")
-    m "45 house-points, as always..."
+    call her_main("For 45 house points?","open","angry")
+    m "45 house points, as always..."
     call her_main("(...)","annoyed","angryL")
     call her_main("Very well, [genie_name]","open","closed")
     call her_main("But you have to promise me that you'll make it quick...","annoyed","angry")
@@ -215,7 +215,7 @@ label hg_pf_titjob_T2_intro_E2:
     m "I would very much like to see those perfect tits of yours again..."
     g9 "See them wrapped around my cock!"
     call her_main("Oh... Again?","base","down")
-    call her_main("For 45 hourse-points?","soft","glance")
+    call her_main("For 45 house points?","soft","glance")
     m "Yes, [hermione_name]."
     call her_main("(...)","annoyed","baseL")
     call her_main("Very well then...","smile","happyCl")

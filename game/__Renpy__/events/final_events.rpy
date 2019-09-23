@@ -13,7 +13,7 @@ label ball_quest_E1:
     m "Ehm... Sure..."
     call her_main("Please excuse me if I am being too direct with this, sir...","normal","frown")
     call her_main("But I think you should put me in charge.","open","angryCl")
-    her "I did it last year and it was the best organized \"autumn ball\" Hogwarts has had in years."
+    her "I did it last year and it was the best organised \"autumn ball\" Hogwarts has had in years."
     call her_main("You said so yourself, sir. Do you remember?","normal","base")
     m "Right, of course..."
     call her_main("So, is this a yes?","base","base")
@@ -101,7 +101,7 @@ label ball_quest_E1:
                 call her_main("What?","open","base")
                 m "Put your selfishness aside for once, would you?"
                 call her_main("My... selfishness?","annoyed","worriedL")
-                m "Your classmates deserve the best organized ball possible!"
+                m "Your classmates deserve the best organised ball possible!"
                 m "And only {size=+5}YOU{/size} can give them that!"
                 call her_main("...that is true actually.","angry","down_raised")
                 m "People depend on you, girl!"

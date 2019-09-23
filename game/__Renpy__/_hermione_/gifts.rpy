@@ -484,7 +484,7 @@ label give_her_gift(gift_item):
     elif gift_item == anal_plugs_ITEM:#anal plugs
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("Hm...?","base","base")
-            call her_main("Are those like key-chain toys?","soft","base")
+            call her_main("Are those like keychain toys?","soft","base")
             call give_gift(">You give the anal plugs to Hermione...",gift_item)
             call her_main("Thank you, [genie_name].","annoyed","annoyed")
             call her_mood(-8)

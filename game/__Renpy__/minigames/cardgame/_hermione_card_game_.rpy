@@ -51,7 +51,7 @@ label hermione_cardgame_menu:
         call her_main( "Oh, yes... where.","normal","down_raised")
         g9 "In fact, I noticed that you were on the list."
         call her_main( "What list? Have I done something wrong?","soft","worried")
-        m "The tier list for the card-game of course."
+        m "The tier list for the card game of course."
         call her_main( "Ah, yes...","normal","soft")
         call her_main( "I went there to see if you had shut them down and ended up with a deck of cards.","mad","angryCl")
         g9 "\"Sounds like even I could learn some bartering tricks from those two.\""

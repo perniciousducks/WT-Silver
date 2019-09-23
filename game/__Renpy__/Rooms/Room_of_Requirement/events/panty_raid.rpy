@@ -432,7 +432,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", eye="worried", cheeks="blush")
         m "..for which in return you bring me panties of that colleague of yours.."
         call her_main("", eye="down_raised", cheeks="blush")
-        g9 "..I wonder if she realized by now that a washing machine can only eat so much panties."
+        g9 "..I wonder if she realised by now that a washing machine can only eat so much panties."
         call her_main("", mouth="soft", eye="glanceL", cheeks="blush")
         m "but surely that's something worth risking your reputation over, am I right?"
         call her_main("...", mouth="annoyed", eye="glanceL")

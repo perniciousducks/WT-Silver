@@ -818,7 +818,7 @@ label hufflepuff_match_return:
     call cho_main("We could actually win the cup!","open","shocked","angry","L")
     m "And you weren't embarrassed?"
     call cho_main("I was a little at the start of the game...","quiver","narrow","sad","downR")
-    call cho_main("But once I realized how much it was affecting those slack-jawed \"Hufflepuffs\"s...","smile","angry","angry","R")
+    call cho_main("But once I realised how much it was affecting those slack-jawed \"Hufflepuffs\"s...","smile","angry","angry","R")
     call cho_main("It was like having my own personal weapon of mass distraction!","smile","shocked","angry","mid")
     call cho_main("I don't think Cedric even knew where the snitch was most of the time!","horny","base","base","downR")
     call cho_main("All he seemed to do was follow me around...","horny","narrow","sad","down")

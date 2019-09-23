@@ -476,7 +476,7 @@ label cho_quiz_2:
     call cho_main("Let's do some history...", "base", "base", "base", "mid")
     g9 "I am made out of history, this should be a breeze..."
     call cho_main("Okay then...", "smile", "base", "raised", "mid")
-    call cho_main("A game of Quidditch doesn't finish until the Snitch is caught, therefor it could go on forever...", "open", "base", "base", "down")
+    call cho_main("A game of Quidditch doesn't finish until the Snitch is caught, therefore it could go on forever...", "open", "base", "base", "down")
     call cho_main("In the longest ever match played they had to constantly bring on substitutes to let the players get some sleep...", "base", "wide", "raised", "down")
     call cho_main("For how long did the game go on for?", "open", "base", "base", "mid")
 

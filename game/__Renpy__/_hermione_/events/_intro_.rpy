@@ -154,7 +154,7 @@ label hermione_intro_E1:
     else:
         m "Ehm... I suppose you did. I mean, we did."
 
-    call her_main("So it hurts the whole house-point-distribution system.")
+    call her_main("So it hurts the whole house point distribution system.")
     her "But it doesn't even stop there!"
     her "It hurts our entire educational system as well..."
     her "And more importantly, the motivation among students is steadily decreasing due to it!"
@@ -391,7 +391,7 @@ label hermione_intro_E2:
     call her_main("Nobody from the \"Gryffindor\" house of course...","open","angryCl")
     her "And that's what puts us at a disadvantage - our integrity!"
     her "As for the boys - they have to work ten times harder than the girls simply to pass a test..."
-    her "Or, if they are lucky enough, to get one meagre house-point..."
+    her "Or, if they are lucky enough, to get one meagre house point..."
     call her_main("This is sexism in its purest form!","open","base")
     menu:
         m "..."

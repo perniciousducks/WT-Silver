@@ -292,7 +292,7 @@ label change_her_hair:
                     call her_main("Dye my hair...","angry","angry") #mad, angry
                     call her_main("Dye my hair Pink?... {w=0.9}Pink?!","angry","angry",emote="01")
                     call her_main("I can't dye my hair pink, [genie_name]!","scream","worriedCl")
-                    call her_main("(What does he think I am? Some cheap dressup-doll?)","annoyed","angryL")
+                    call her_main("(What does he think I am? Some cheap dress-up doll?)","annoyed","angryL")
                     call her_main("It's an ugly colour anyway.","open","closed")
                     call her_main("I definitely refuse!","annoyed","annoyed")
                     if cheats_active or game_difficulty <= 2:

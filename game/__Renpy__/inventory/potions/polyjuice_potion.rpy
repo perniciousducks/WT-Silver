@@ -224,7 +224,7 @@ label hg_pp_polyjuice_T1_intro:
                 m "Even looking like this?"
                 m "What would everyone have thought? Would they just assume that you were a victim of a prank?"
                 m "Or would they just think that slutty little Miss Granger was just begging for attention again."
-                m "Wearing skimpy outfits and trying to look like a pussy-cat."
+                m "Wearing skimpy outfits and trying to look like a pussycat."
                 call nar(">You try place your hand on the back of her head but her new ears are in the way.")
                 m "These are quite soft."
                 call nar(">You start feeling and petting her brand new ears.","start")
@@ -617,7 +617,7 @@ label hg_pp_polyjuice_T1_introCC:
             # m "No, I'm serious. You should really see the look on your face."
         # else:
             # call her_main("Not really. I realise there are other things I can excel in.","base","base")
-            # m "Like sucking cocks for house-points"
+            # m "Like sucking cocks for house points"
             # call her_main("Professor!","scream","angryCl")
             # m "Oh don't be so modest. If sucking dick was a class, you'd be Magna Cum Laude."
             # call her_main("Thank you professor. You know, there's time to earn some more points before class. If you're feeling generous I could...","scream","angryCl")

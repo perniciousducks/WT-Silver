@@ -54,7 +54,7 @@ label hg_anal_sex_1:
             g4 "Almost! Almost!"
             call her_main("Ah! It hurts!","scream","worriedCl")
             g4 "Shut it, [hermione_name]! I'm doing you a favour!"
-            g4 "Your anus is so tight it's completely un-fuckable!"
+            g4 "Your anus is so tight it's completely unfuckable!"
             call her_main("Then stop, please!","mad","worriedCl",tears="soft_blink")
             m "No! We need to loosen up your asshole a little!"
             call her_main("But I don't want you to!","mad","worriedCl",tears="soft_blink")

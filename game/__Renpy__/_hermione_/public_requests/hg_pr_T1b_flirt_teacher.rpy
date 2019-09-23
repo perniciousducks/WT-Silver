@@ -226,7 +226,7 @@ label hg_pr_flirt_teacher_T2_E1: # Slughorn
 
     stop music fadeout 1.0
     call her_main("Well, professor Slughorn invited me over to one of his...","open","worriedL")
-    her "Rather disturbing tea-parties..."
+    her "Rather disturbing tea parties..."
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("There were plenty of girls...","open","closed")
     her "But all of them were much younger then me..."
@@ -414,7 +414,7 @@ label hg_pr_flirt_teacher_T3_E1: # Filch
     call her_main("Well, aren't you going to do something about this?","open","base")
     m "Well..."
     call her_main("What if I am not the first victim..?","angry","angry")
-    her "Some unfortunate freshman could be traumatized for life!"
+    her "Some unfortunate freshman could be traumatised for life!"
     m "And who wouldn't be really?"
     call her_main("Does this mean you will take action, [genie_name]?","open","base")
     m "uhm... Yeah, sure..."

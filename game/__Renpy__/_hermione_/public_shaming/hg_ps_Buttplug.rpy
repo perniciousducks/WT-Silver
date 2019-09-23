@@ -403,7 +403,7 @@ label hg_ps_buttplug:
             call her_main("...","open","down")
             call her_main("{size=-5}alright then...{/size}","open","down")
             call nar(">You hand her the buttplug.","start")
-            call nar(">You watch it magically worm it's way inside her eager butt-hole.","end")
+            call nar(">You watch it magically worm it's way inside her eager butthole.","end")
 
             call set_her_buttplug("plug_c_on") #Updates clothing and body.
 
@@ -716,7 +716,7 @@ label hg_ps_buttplug_complete:
             show screen blktone
             call her_main("It went well, [genie_name]...","open","base",xpos="right",ypos="base")
             call play_music("playful_tension") # SEX THEME.
-            her "A group of second years from \"hufflepuff\" even complemented me on it..."
+            her "A group of second years from \"hufflepuff\" even complimented me on it..."
             call her_main("...they said that it looked cute...","grin","baseL")
             m "did anything else happen?"
             call her_main("well seeing as how they were so nice...","base","down")

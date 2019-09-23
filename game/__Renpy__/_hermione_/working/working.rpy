@@ -259,7 +259,7 @@ label gryffindor_cheer_responses:
                 call her_main("Of course I am, we won!","base","base")
                 m "Won?"
                 call her_main("We won! We beat Slytherin in a practice match.","smile","happyCl")
-                m "You seem a little bit over-excited for just a practice match."
+                m "You seem a little bit overexcited for just a practice match."
                 call her_main("Well it was such a great game. Not to mention that we got to rub it in those Slytherin students faces afterwards.","smile","baseL")
                 g9 "Well I'm glad that you are enjoying your work."
                 call her_main("I am [genie_name]. Given that most of the \"work\" I've done to help my house is kept private, it feels good to be able to do something public once.","open","base")

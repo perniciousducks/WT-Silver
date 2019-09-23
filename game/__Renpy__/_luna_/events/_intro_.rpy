@@ -128,7 +128,7 @@ label hat_intro_3: #Luna change scene #DONE
             call lun_main("oh, alright then!","base","base","base","R")
             call lun_main("But seeing as how I'm already here ,sir, I need to talk to you.","base","base","base","mid")
             m "You do?"
-            m "(Maybe this won't be a waste of time after-all!)"
+            m "(Maybe this won't be a waste of time after all!)"
             call lun_main("It's about the school being in great danger!","open","wide","angry", "mid")
             m "Oh..."
             m "In that case, you'll have to come speak to me later."
@@ -318,7 +318,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
             m "I see...(No wonder Hermione called her Loony Lovegood)."
         "\"What in Agrabah are you wearing?\"":
             call lun_main("Oh! These are my spectrespecs, professor!","base","base","sad","crossed")
-            m "(Please don’t be mind-reading, please don’t be mind-reading-)"
+            m "(Please don’t be mind reading, please don’t be mind reading-)"
             call lun_main("They help me see the wrackspurts.","normal","base","sad","mid")
             m "(Thank the great desert sands!)"
             call lun_main("And these are my plum earrings.","base","base","sad","L")

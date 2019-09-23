@@ -110,7 +110,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
 
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]...","normal","base")
-    m "Has anyone ever told you what sweet looking breasts you have?"
+    m "Has anyone ever told you what sweet-looking breasts you have?"
     stop music fadeout 1.0
     call her_main("!!!","shock","wide")
     g9 "How much would it cost me for you to lift up your top?"
@@ -123,7 +123,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
     m "Don't you want to earn some house points?"
     call her_main("Yes... But not in a way such as this!","angry","angryL")
 
-    m "I will award \"Gryffindor\" [current_payout] whole house-points if you remove your top."
+    m "I will award \"Gryffindor\" [current_payout] whole house points if you remove your top."
     g9 "Isn't that a steal?"
     call her_main("No it isn't!","clench","angryCl", emote="01")
     m "Please?"

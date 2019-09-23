@@ -96,12 +96,12 @@ label equip_her_bra:
                     else:
                         call her_main("Of course!","grin","happyCl")
                         m "Really?"
-                        call her_main("Of course, I sometimes do sun-bathing during break-time.","open","closed")
+                        call her_main("Of course, I sometimes do sunbathing during breaktime.","open","closed")
                         call her_main("I'll just lie down in the grass and unwind for a bit. I'll even take off my top at times so I won't get any tan-lines!","smile","base")
                         call her_main("I'm always attracting a crowd... Seems like the boys quite like ogling at me.","base","glance")
                 else: #Fail
                     call her_main("Bikinis?","soft","wink")
-                    call her_main("I mostly wear a bathing-suit when I'm out swimming.","open","baseL")
+                    call her_main("I mostly wear a bathing suit when I'm out swimming.","open","baseL")
                     call her_main("Why do you ask, [genie_name]?","base","base")
                     m "I would like you to wear one."
                     call her_main("At school? [genie_name], we don't even have swimming lessons here.","open","wide_stare")
@@ -431,12 +431,12 @@ label equip_her_panties:
                     else:
                         call her_main("Of course!","grin","happyCl")
                         m "Really?"
-                        call her_main("Yeah I sometimes do sun-bathing during break-time.","open","closed")
+                        call her_main("Yeah I sometimes do sunbathing during breaktime.","open","closed")
                         call her_main("I'll just lie down in the grass and unwind for a bit. I'll even take off my top at times so I won't get any tan-lines!","smile","base")
                         call her_main("I'm always attracting a crowd... Seems like the boys quite like ogling at me.","base","glance")
                 else: #Fail
                     call her_main("Bikinis?","soft","wink")
-                    call her_main("I mostly wear a bathing-suit when I'm out swimming.","open","baseL")
+                    call her_main("I mostly wear a bathing suit when I'm out swimming.","open","baseL")
                     call her_main("Why do you ask, [genie_name]?","base","base")
                     m "I would like you to wear one."
                     call her_main("At school? [genie_name], we don't even have swimming lessions here.","open","wide_stare")

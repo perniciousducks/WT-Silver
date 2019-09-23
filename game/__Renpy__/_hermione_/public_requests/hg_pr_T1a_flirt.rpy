@@ -173,7 +173,7 @@ label hg_pr_flirt_T1_E2:
     m "How many boys did you flirt with today, [hermione_name]?"
     call blktone
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Well, I tried to complement an upperclassman...","open","worriedL")
+    call her_main("Well, I tried to compliment an upperclassman...","open","worriedL")
     m "Did he appreciate it?"
     call her_main("He called me a \"Gryffindor whore\", [genie_name]!","angry","angry", emote="01")
     m "I see..."
@@ -234,7 +234,7 @@ label hg_pr_flirt_T1_E3:
     call her_main("A whole flock of those \"Slytherin\" harlots was already there, [genie_name].","angry","angry")
     her "They were cheering and yelling..."
     call her_main("And one of them even exposed herself in an inappropriate manner to the players, [genie_name]...","angry","angry")
-    her "I cannot believe our school accepts such behavior..."
+    her "I cannot believe our school accepts such behaviour..."
     m "So... how did this captivating drama end?"
     call her_main("I just left [genie_name]...","annoyed","angryL")
 
@@ -275,14 +275,14 @@ label hg_pr_flirt_T2_E1:
     call her_main("While I was working he made a couple of inappropriate comments, but I just smiled in response...","angry","worriedCl", emote="05")
     m "So, basically, he was the one doing the flirting..."
     call her_main("well... yes.","grin","worriedCl", emote="05")
-    call her_main("But, despite my better judgment, I did encourage his improper behavior...","base","base")
+    call her_main("But, despite my better judgment, I did encourage his improper behaviour...","base","base")
     m "By being quiet?"
     her "Yes, [genie_name]..."
     her "I mean, this does amount to something, right?"
     m "Meh..."
     m "What else do you have for me?"
     call her_main("Right...","annoyed","angryL")
-    her "Later in a corridor these two other guys complemented my appearance in a very vulgar manner..."
+    her "Later in a corridor these two other guys complimented my appearance in a very vulgar manner..."
     call her_main("But I just smiled at them...","angry","worriedCl", emote="05")
     m "You were on the receiving end again, then..."
     m "This is not what I ordered you to do, [hermione_name]."

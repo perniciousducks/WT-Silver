@@ -189,7 +189,7 @@ label cc_pf_strip_T1_intro_E1:
             call cho_main("","angry","narrow","angry","mid")
             m "I'm afraid, Miss Granger is simply...{w} how shall I put it...{w} sexier!"
             m "Besides, jealousy is quite unbecoming of a young witch like yourself..."
-            call cho_main("But she doesn't even do work-outs!","angry","narrow","angry","downR")
+            call cho_main("But she doesn't even do workouts!","angry","narrow","angry","downR")
             m "Let's just forget about her, shall we?"
             m "And continue where we left off..."
             call cho_main("And where would that be?","annoyed","narrow","angry","mid")
@@ -225,7 +225,7 @@ label cc_pf_strip_T1_intro_E1:
 
     g4 "YES!"
     g4 "Look at those thighs!"
-    g4 "Those tree-trunks!"
+    g4 "Those tree trunks!"
     g9 "Even the great \"Chun Lee\" would be jealous of those!"
     call cho_main("I'm sorry Sir, who's that?","soft","wink","raised","mid")
     m "One of the best female street fighters, if you know how to play with her..."
@@ -675,7 +675,7 @@ label cc_pf_strip_T1_intro_E2:
 
 
 label cc_pf_strip_T1_intro_E3:
-    g9 "[cho_name], how would you like to do another strip-tease for me?"
+    g9 "[cho_name], how would you like to do another striptease for me?"
     call cho_main("(...)","annoyed","narrow","angry","mid")
     g9 "You did such a phenomenal job last time!"
     call cho_main("Another strip show?","soft","narrow","angry","R")
@@ -983,7 +983,7 @@ label cc_pf_strip_T1_E3: # Repeats
     call cho_main("","base","base","base","R", xpos="mid", ypos="base", trans="fade")
     call ctc
 
-    g9 "I’m in the mood for another strip-tease!"
+    g9 "I’m in the mood for another striptease!"
     call cho_main("Funny you should say that, [cho_genie_name]...","soft","base","raised","downR")
     call cho_main("","horny","narrow","angry","mid")
     pause.4
@@ -1481,7 +1481,7 @@ label cc_pf_strip_T2_E1:
             call cho_main("You don't say!","smile","base","angry","mid")
             m "Why were you asking?"
 
-        "\"One-hundred points!\"":
+        "\"One hundred points!\"":
             $ current_payout = 30
             $ cho_mood += 6
 
@@ -1489,7 +1489,7 @@ label cc_pf_strip_T2_E1:
             call cho_main("So many? But...","soft","wide","base","mid")
             call cho_main("Sir, don't you think that's a bit outrageous?","open","closed","angry","mid")
             call cho_main("People in house \"Ravenclaw\" work hard to earn that amount of points!","open","base","raised","L")
-            call cho_main("And you're telling me that you give that cow \"one-hundred bloody points\"{w}, for showing you her tits?!","angry","narrow","angry","mid")
+            call cho_main("And you're telling me that you give that cow \"one hundred bloody points\"{w}, for showing you her tits?!","angry","narrow","angry","mid")
             m "Not just her tits, [cho_name]."
             g4 "Everything!!!"
             call cho_main("Sir, how can you agree to such a thing?","angry","closed","angry","mid")
@@ -1507,7 +1507,7 @@ label cc_pf_strip_T2_E1:
     call cho_main("I have my reasons....","annoyed","narrow","angry","mid")
     call cho_main("And, as I've said, this will be a one-time-only request of mine. I promise!","open","base","base","R")
     call cho_main("I'm a fair sportsman, [cho_genie_name]. You know that...","base","closed","base","mid")
-    call cho_main("I'd never subject myself to earning house-points this way!","soft","narrow","angry","mid")
+    call cho_main("I'd never subject myself to earning house points this way!","soft","narrow","angry","mid")
     call cho_main("Unlike a certain other student at this school...","angry","narrow","angry","R")
     m "And yet you asked me for that very thing?{w} I wonder why, Miss Chang..."
     call cho_main("Just as additional motivation, Sir!","angry","closed","sad","mid")

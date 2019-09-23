@@ -422,7 +422,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
                         call her_main("I don't know, [genie_name].","annoyed","down")
                         call her_main("I'm not the cheerleader type!","angry","wink")
                         call her_main("While I like the idea of supporting my house in Quidditch...","open","closed")
-                        call her_main("My priority is to secure this years house-cup instead!","open","baseL")
+                        call her_main("My priority is to secure this years house cup instead!","open","baseL")
                         call her_main("I have to refuse, [genie_name].","soft","base")
                         if cheats_active or game_difficulty <= 2:
                             ">Try again at Whoring level 5."

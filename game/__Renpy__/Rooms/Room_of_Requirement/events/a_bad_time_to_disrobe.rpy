@@ -125,7 +125,7 @@ label a_bad_time_to_disrobe_part_1:
     $ interface_color = "gray"
     call music_block
 
-    nar "Later that evening a distraught looking Hermione enters the office. "
+    nar "Later that evening a distraught-looking Hermione enters the office. "
 
     call her_chibi("top_naked","desk","base")
     call h_equip_temp_outfit(hg_standart_school_noshirt_ITEM)
@@ -238,7 +238,7 @@ label a_bad_time_to_disrobe_part_2:
     m "With your bu..."
     m "No, well... yes, but this time you'll be prepared."
     call her_main("But... what if they recognize me sir?","open","worried")
-    m "You'd already know if they had recognized you..."
+    m "You'd already know if they had recognised you..."
     call her_main("\"That's true...\"","soft","soft", cheeks="blush")
     call her_main("And then what, you want me to just walk away?","base","base", cheeks="blush")
     m "You can figure it out yourself miss Granger. Once you have the cloak it shouldn't be an issue getting away."

@@ -83,7 +83,7 @@ label store_chit_chat:
         ger "What type of object are you looking for?"
         m "Well... as you boys may know, the Quidditch season is starting soon..."
         fre "Yes?"
-        m "Well, I realized that I haven't actually gone in depth with the sport yet."
+        m "Well, I realised that I haven't actually gone in depth with the sport yet."
         fre "I find that hard to believe... You’re telling me that \"the\" Dumbledore doesn’t know anything about Quidditch?"
         ger "Explains why you’d always just stare out in the distance and just clap politely..."
         m "I was always more fond of Basketball myself."
@@ -93,7 +93,7 @@ label store_chit_chat:
         ger "Yes... don’t you keep any kind of records on these things?"
         m "Of course, I’m just... forgetful when it comes to names, that’s all."
         ger "Understandable..."
-        m "But, as I said, I’d like to get a runthrough of the basics of Quidditch this year."
+        m "But, as I said, I’d like to get a run-through of the basics of Quidditch this year."
         m "You don’t happen to have a Quidditch book to refresh my memories?"
         fre "Of course, you can have ours. We know it off by heart at this point!"
 

@@ -611,7 +611,7 @@ label map_forest: #Label controlling what happens when you go to the forest
         "-Search the area-":
             $ ran = renpy.random.random()
             if ran < 0.3:
-                ">You search around the forest and manage to find an odd looking herb."
+                ">You search around the forest and manage to find an odd-looking herb."
                 m "This must be wormwood."
                 menu:
                     "-Take the wormwood-":
@@ -622,7 +622,7 @@ label map_forest: #Label controlling what happens when you go to the forest
                 ">Finding nothing else of interest you return to your office."
                 jump return_office
             elif ran < 0.6:
-                ">You search around the forest and manage to find an odd looking herb."
+                ">You search around the forest and manage to find an odd-looking herb."
                 m "This must be Knotgrass."
                 menu:
                     "-Take the Knotgrass-":

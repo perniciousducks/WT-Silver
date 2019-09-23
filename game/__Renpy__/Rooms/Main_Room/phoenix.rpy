@@ -8,7 +8,7 @@ label phoenix:
         show screen desk
         with d5
         m "Hm....."
-        m "Even this weird looking bird radiates magic..."
+        m "Even this weird-looking bird radiates magic..."
         show screen genie
         hide screen genie_stand
         hide screen chair_left #Empty chair near the desk.

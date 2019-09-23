@@ -45,7 +45,7 @@ label astoria_intro_E1:
     g9 "Miss Tonks... Have you been a bad girl?"
     call ton_main("I'm not joking, [ton_genie_name]!","angry","base","angry","mid")
     call ton_main("Something terrible has happened at school today!","open","base","angry","R")
-    call ton_main("I believe one of our students has conducted some highly-illegal activities against another student!","upset","base","worried","R")
+    call ton_main("I believe one of our students has conducted some highly illegal activities against another student!","upset","base","worried","R")
     call ton_main("We have to take action!{p=0.6}The last thing we need is for this to reach the Ministry's attention!","open","base","angry","mid")
     m "So? Isn't it your task to cover that sort of stuff?"
     call ton_main("Yes, but...","upset","base","worried","down")
@@ -71,7 +71,7 @@ label astoria_intro_E1:
 
         "\"What's in it for me?\"":
             call ton_main("Are you seriously asking me that?","open","wide","wide","wide")
-            call ton_main("If this doesn't get dealt with immediately, they'll have us both locked-up in a cell in Azkaban, do you hear me?!","angry","base","angry","mid")
+            call ton_main("If this doesn't get dealt with immediately, they'll have us both locked up in a cell in Azkaban, do you hear me?!","angry","base","angry","mid")
             m "Loud and clear..."
             m "I'll be locked up in a cell - together with you..."
             g9 "I can think of many fates worse than that, if I'm honest."
@@ -129,7 +129,7 @@ label astoria_intro_E1:
                     call ton_main("Are we done here?","open","closed","base","mid")
                     m "Want to give it one more try?"
                     call ton_main("I think not...","open","base","base","R")
-                    call ton_main("I expected a bit more from a Genie... A magic-trick, perhaps?","upset","base","sad","down")
+                    call ton_main("I expected a bit more from a Genie... A magic trick, perhaps?","upset","base","sad","down")
                     m "I've told you, I can't do magic anymore..."
                     call ton_main("How very disappointing...","open","closed","base","mid")
                     call ton_main("I'm starting to have my doubts that you ever were a Genie...","angry","base","worried","R")
@@ -220,11 +220,11 @@ label astoria_intro_E1:
     m "A curse?..."
     m "Like...{w=0.5} The c-word?"
     call ton_main("No! A magical curse!{w} not an insult...","angry","closed","angry","mid")
-    call ton_main("Those curses are a major transgression of Ministry-laws!","open","base","angry","mid")
+    call ton_main("Those curses are a major transgression of Ministry laws!","open","base","angry","mid")
     call ton_main("If you are caught having cast even one of them, they will put you in Azkaban for the rest of your life!","open","closed","worried","mid")
     call ton_main("Sharing a room with a whole bunch of Dementors!","upset","base","angry","mid")
     m "Dement-{w=0.6}ors?"
-    m "Is it like a nursing-home or something?"
+    m "Is it like a nursing home or something?"
     call ton_main("No, I've told you before!","angry","closed","angry","mid")
     call ton_main("Azkaban is a prison! With Dementors roaming all over it...","open","base","angry","mid")
     call ton_main("Believe me, you wouldn't want to be around them, I tell you that much...","open","base","angry","R")
@@ -232,8 +232,8 @@ label astoria_intro_E1:
 
     call ton_main("Should the Ministry find out about what happened to... Miss Bones.","upset","base","worried","R")
     g9 "*He-he-he!*..."
-    call ton_main("Which they most certainly will, as her aunt is head of the Ministry's department for \"Magical-Law-Enforcement\"...","open","base","worried","mid")
-    call ton_main("Our whole operation would be busted! And we'd get locked-up once and for all!","upset","base","sad","mid")
+    call ton_main("Which they most certainly will, as her aunt is head of the Ministry's department for \"Magical Law Enforcement\"...","open","base","worried","mid")
+    call ton_main("Our whole operation would be busted! And we'd get locked up once and for all!","upset","base","sad","mid")
 
     m "So, are we in trouble?"
     call ton_main("Not yet...","open","closed","sad","mid")
@@ -244,7 +244,7 @@ label astoria_intro_E1:
     call ton_main("Find the student who cursed her, and then talk some sense into her - to never do it again...","open","closed","base","mid")
     m "Find{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8} her?"
     call ton_main("Yes! She heard a girl's voice in her head - while she was under the influence of the imperius curse...","open","base","angry","mid")
-    call ton_main("Who told her{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8}to lift-up her top.","upset","base","worried","R")
+    call ton_main("Who told her{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8}to lift up her top.","upset","base","worried","R")
     g9 "Oh yes?"
     call ton_main("The imperius curse can make people do {b}unspeakable things{/b} against their wills!","open","closed","angry","mid")
     call ton_main("I have no doubt that someone as sweet and good-hearted as Susan wouldn't know how to defend herself against it...","open","base","sad","mid")
@@ -474,7 +474,7 @@ label remove_this_label_493:
     m "Whatever... that still doesn't get you out of punishment."
     call ast_main("punishment? for what?", "annoyed", "wide","wide", "wide")
     call her_main("You know what you did!","angry","angryCl")
-    call ast_main("I never cast Imperio on anyone! I swear, sir! Hermione's just being a know-it-all tattle-tail!", "annoyed", "wide","worried", "R")
+    call ast_main("I never cast Imperio on anyone! I swear, sir! Hermione's just being a know-it-all tattletale!", "annoyed", "wide","worried", "R")
     m "Miss Granger..."
     call her_main("I overheard her boasting about it to a group of slytherins in the library.","annoyed","concerned")
     call her_main("By the sounds of it she used Imperio to control another student.","annoyed","base")
@@ -755,7 +755,7 @@ label snape_spell_intro: #Snape tells genie that he has adjusted the magic shiel
     call sna_main("It was rather ingenious honestly...","snape_23")
     call sna_main("I modified the muggle masking spell to include unforgivable curses!","snape_02")
     m "And this masking spell,... will it work?"
-    call sna_main("It's an enormous magical force-field surrounding us, Genie.","snape_24")
+    call sna_main("It's an enormous magical force field surrounding us, Genie.","snape_24")
     call sna_main("Hiding the castle and all that's in it from all non-magical beings. Making it disappear.","snape_24")
     call sna_main("I was able to modify it to also shroud all unforgivable curses that are cast within it!","snape_23")
     call sna_main("Except for the deadly one, of course. The others are in my opinion quite harmless...","snape_09")
@@ -970,10 +970,10 @@ label astoria_susan_intro: #have astoria demonstrate the imperio spell for the f
     call ast_main("I might have... made her...", "annoyed", "angry","angry", "R")
     call ast_main("I made her walk around without a shirt on...", "annoyed", "angry","angry", "R")
     m "What? Really?"
-    call ast_main("I'm sorry sir! It was just around the common-room.","open","base","worried","mid")
+    call ast_main("I'm sorry sir! It was just around the common room.","open","base","worried","mid")
     call ast_main("I was just so angry about her getting all the attention from the boys.", "annoyed", "base","worried", "down")
     call ast_main("So I gave her all the attention she could ever ask for!", "annoyed", "base","base", "L")
-    call ast_main("Although it was only around the girls common-room, so it wasn't that big a deal...","open","closed","base","mid")
+    call ast_main("Although it was only around the girls common room, so it wasn't that big a deal...","open","closed","base","mid")
     call ast_main("And it's not like she can remember it anyway...","open","base","base","R")
     call ast_main("It was just so {b}exciting{/b} to see her taken down a notch...","grin","angry","angry","R")
     m "And what did the other girls do once you started parading her around?"

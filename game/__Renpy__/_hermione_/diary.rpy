@@ -91,7 +91,7 @@ label her_whoring_pages:
     #End of tit fuck tier 1
     $ diary_page_26 = "I learned something new today... Normally when I write that it involves complex transfiguration or charms but today... It invloved wrapping my breasts around my headmasters cock... (Dumbledore called it a tit-job?) Ugh... The lengths Dumbledore is going through to humiliate me... Not that it's working! I wasn't even embarresed when he coated me in cum! (Should I be?)"
     #End of tit fuck tier 2
-    $ diary_page_27 = "Mmmm, Dumbledore wanted another titjob for his favour today... I would have said no... but he was so nice, complementing my breasts... Besides, it's not like I had sex with him, I just rubbed my chest against him a little... And let him coat me in his cum... again... (I really am a dirty slut, aren't I?)"
+    $ diary_page_27 = "Mmmm, Dumbledore wanted another titjob for his favour today... I would have said no... but he was so nice, complimenting my breasts... Besides, it's not like I had sex with him, I just rubbed my chest against him a little... And let him coat me in his cum... again... (I really am a dirty slut, aren't I?)"
     #End of tit fuck tier 3
     $ diary_page_28 = "I know it's wrong... but I really do like letting Dumbledore have his way with me... Today he made me jerk him off with my tits... I loved it... the feeling, the smell, the look on his face... ugh... I know it's wrong, but I really do love letting him treat me as his dirty little whore...{image=textheart}{image=textheart}{image=textheart}"
 

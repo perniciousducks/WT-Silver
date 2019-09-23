@@ -72,7 +72,7 @@ label snape_chitchat:
     ### WHORING LEVEL 02 ###
     if her_whoring >= 3 and her_whoring <= 5:
         if one_of_ten == 1:
-            call sna_main("I have yet to notice any changes in miss Granger's behavior...","snape_24") 
+            call sna_main("I have yet to notice any changes in miss Granger's behaviour...","snape_24") 
             call sna_main("Are you sure that you know what you're doing?","snape_05") 
             call sna_main("","snape_09") 
         
@@ -356,7 +356,7 @@ label snape_chitchat:
             call sna_main("","snape_04") 
 
         elif one_of_ten == 3:
-            call sna_main("I hear the vampire-theme is quite popular among the girls lately.","snape_24") 
+            call sna_main("I hear the vampire theme is quite popular among the girls lately.","snape_24") 
             call sna_main("I would make a great vampire, don't you think?","snape_05") 
             sna "Maybe I should buy a couple of those fake fangs..."
             call sna_main("Just to drive the horny, little sluts completely crazy.","snape_21") 
@@ -425,7 +425,7 @@ label snape_chitchat:
             call sna_main("It was kind of catchy...","snape_28") 
 
         elif one_of_ten == 3:
-            call sna_main("I organized a small party the other day...","snape_24") 
+            call sna_main("I organised a small party the other day...","snape_24") 
             sna "One girl and three boys..."
             call sna_main("They fucked her and I watched...","snape_13") 
             call sna_main(".........................","snape_29") 

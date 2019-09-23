@@ -224,7 +224,7 @@ label quidditch_training_intro_2:
     m "I will show you."
     call cho_main("","base","base","base","mid")
 
-    call popup("You've re-gained the ability to train Cho in Quidditch!", "Congratulations!", "interface/icons/head/head_cho_1.png")
+    call popup("You've regained the ability to train Cho in Quidditch!", "Congratulations!", "interface/icons/head/head_cho_1.png")
     pause 1
 
     m "First, get your flying thing ready!"
@@ -438,7 +438,7 @@ label demonstrate_tactic(position=""):
             g4 "Yes, fantastic!"
             g9 "You have very cute panties, girl!"
             call cho_main("*Uhm*...{w} Thank you, [cho_genie_name].","annoyed","base","base","down", ypos="head")
-            m "(I have created the ultimate up-skirt!)"
+            m "(I have created the ultimate upskirt!)"
             m "(Nothing can stop us now...)"
         else:
             m "(...)"

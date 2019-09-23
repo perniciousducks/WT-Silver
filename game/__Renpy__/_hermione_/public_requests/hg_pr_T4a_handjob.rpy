@@ -291,7 +291,7 @@ label hg_pr_handjob_T2_E1:
     her "I was wanking this one boy off in one of the empty classrooms..."
     her "And that nasty ghost Peeves walked in..."
     call her_main("Or rather flew in on us...","annoyed","worriedL")
-    call her_main("And as soon as he realized what I was doing to the boy...","open","base")
+    call her_main("And as soon as he realised what I was doing to the boy...","open","base")
     her "He started to yell obscenities at us..."
     her "So we had to leave in a hurry..."
     m "I see..."

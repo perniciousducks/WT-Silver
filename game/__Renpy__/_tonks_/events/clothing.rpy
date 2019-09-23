@@ -104,7 +104,7 @@ label tonks_random_clothing:
                 m "You went to this school, didn't you? Which house were you in?"
                 call ton_main("Me? I was in Hufflepuff.","open","base","raised","mid")
                 m "Very well then."
-                m "Minus 10 points from house-hufflepuff!"
+                m "Minus 10 points from house hufflepuff!"
                 $ hufflepuff -=10
                 call ton_main("What? But [ton_genie_name]! I'm not even a student--","open","wide","wide","mid",trans="hpunch")
                 g4 "In addition, from this point forward, you will be forbidden to wear even a single piece of clothing whenever you step into this room!"

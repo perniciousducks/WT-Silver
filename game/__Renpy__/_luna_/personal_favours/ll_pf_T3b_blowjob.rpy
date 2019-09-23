@@ -700,7 +700,7 @@ label ll_pf_blowjob_T1_slapping: # Call label
     $ lunCG('dick','excited', 'base')
     lun "Mmmm, what sort of attention?"
     $ lunCG(eye='excited', xpos=20, ypos=20)
-    ">You place the tip of your cock against the air-headed girl's lips."
+    ">You place the tip of your cock against the airheaded girl's lips."
     m "Shhhh..."
     $ lunCG('up')
     ">You slowly start rubbing the tip over her soft lips, a drop of precum smearing across them like lip-gloss."
@@ -1279,7 +1279,7 @@ label ll_pf_blowjob_T1_summon:
     m "Oh fuck yes... just like that..."
     $ lunCG(pos=11)
     call her_main("Is something going-","upset","suspicious")
-    m "Shut-up and get naked [hermione_name]!"
+    m "Shut up and get naked [hermione_name]!"
     $ lunCG(pos=15)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=15)

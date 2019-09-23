@@ -49,7 +49,7 @@ label tentacle_scene_intro: #Public tentacle scene
     ">While she is focused on the dangling limb above her you move six smaller tentacles towards her waist"
     her "Oh god no, someone please help me! Professor Sprout do something!"
     spo "Ok students, stand back!"
-    ">Professor Sprout casts an impressive looking spell at the mass of writhing tentacles"
+    ">Professor Sprout casts an impressive-looking spell at the mass of writhing tentacles"
     spo "Confringo!"
     ">It strikes the plant forcefully but does nothing."
     spo "What? That should have killed it. It must be magically protected."

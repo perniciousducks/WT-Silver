@@ -117,7 +117,7 @@ label nt_he_firewhisky_intro:
     call ton_main("Bottoms up.","horny","base","base","down")
     call play_sound("gulp")
     call ton_main("*Gulp*{w=0.6}{nw}","base","closed","sad","mid", trans="hpunch")
-    call ton_main("*Cough*-*Cough*","open","closed","sad","mid")
+    call ton_main("*Cough* *Cough*","open","closed","sad","mid")
     call ton_main("Yeah, that was a mistake.","angry","base","upset","down")
     m "I don’t drink whisky that often, but even I know not to down it in one..."
     call ton_main("*Mmm*... that's the stuff.","horny","base","base","ahegao")
@@ -129,7 +129,7 @@ label nt_he_firewhisky_intro:
 label nt_he_firewhisky_E1:
     call bld
     m "Another glass of firewhisky?"
-    call ton_main("Fill er up.","base","base","base","down", ypos="head")
+    call ton_main("Fill 'er up.","base","base","base","down", ypos="head")
     call ton_main("...","horny","base","base","down")
     call ton_main("A little bit more...","open","base","raised","down")
     call ton_main("A bit more...","horny","base","angry","down")
@@ -205,13 +205,13 @@ label hang_with_tonks_E1:
     call ton_main("But I shouldn't complain about that...","base","base","base","mid")
     call ton_main("Hearing those naughty words spill out of her gorgeous little mouth really gets me going!","horny","base","base","ahegao", hair="horny")
     g9 "I can imagine so."
-    call ton_main("When she describes all the wrong-doings of those filthy \"Slytherin girls\"...","open","base","angry","mid")
+    call ton_main("When she describes all the wrongdoings of those filthy \"Slytherin girls\"...","open","base","angry","mid")
     call ton_main("How could I possibly get tired of that!","base","base","base","mid")
     call ton_main("I'm very glad I decided to join you two.","open","base","base","down")
     call ton_main("As an Auror It's just constant busy work...","open","base","angry","mid")
     call ton_main("Not to mention the hours.","angry","base","upset","down")
     call ton_main("And the mortality rate...","upset","base","worried","R")
-    call ton_main("If I'd realized the benefits of being a teacher at Hogwarts, I would have signed up straight away!","horny","base","base","ahegao")
+    call ton_main("If I'd realised the benefits of being a teacher at Hogwarts, I would have signed up straight away!","horny","base","base","ahegao")
 
     ">You spend the [temp_txt] conspiring against Hermione with Tonks..."
     ">You feel a faint bond forming between you two..."
@@ -288,7 +288,7 @@ label hang_with_tonks_E3:
     call ton_main("Lately she's been too shy to even answer the simplest of questions during my class.","open","base","sad","R")
     call ton_main("She's lost quite a few points for her house that way.","upset","base","sad","mid")
     call ton_main("Not in my lessons, of course. I'd never take points from \"Hufflepuff!\"","upset","base","worried","down")
-    g9 "Just send her my way and I'll drown her in house-points!"
+    g9 "Just send her my way and I'll drown her in house points!"
     m "And show her that her bod-..."
     g4 "*Ahem!* Show her that she's appreciated..."
     call ton_main("That's what I was thinking...","open","base","base","mid")
@@ -483,7 +483,7 @@ label nt_he_story_intro_E5:
     m "You still haven't told me anything about your time as an auror..."
     call ton_main("Well, what would you like to know?","open","base","worried","R", ypos="head")
     m "That \"moody\" guy taught you, you said. You could start there."
-    call ton_main("Well, the job of an auror is a bit different now than how it was ten-or-so years ago.","open","base","worried","mid")
+    call ton_main("Well, the job of an auror is a bit different now than how it was ten or so years ago.","open","base","worried","mid")
     call ton_main("I studied to become an auror with the hopes of taking down evil wizards.","angry","base","worried","down")
     m "Sounds like a 90s B movie to me."
     call ton_main("Tell me about it...","upset","base","angry","R")
@@ -577,7 +577,7 @@ label nt_he_story_E8:
     g9 "You don't say!"
     call ton_main("The guy wasn't that interested in biting me that's for sure.","base","base","base","mid")
     call ton_main("So you can see why I wasn't so keen on reporting it. More of an embarrassing situation sort of thing than anything else.","open","base","base","R")
-    call ton_main("And it was totally our fault, I should’ve recognized the signs straight away... when they’re turned they’re largely driven by their instincts.","open","base","sad","down")
+    call ton_main("And it was totally our fault, I should’ve recognised the signs straight away... when they’re turned they’re largely driven by their instincts.","open","base","sad","down")
     m "I see."
     call ton_main("Dated him for a while...","horny","base","base","R")
     m "You did what?"
@@ -684,7 +684,7 @@ label nt_he_story_E11:
 
 label nt_he_story_E12:
     call bld
-    m "Tell me more about that shape-shifting ability of yours..."
+    m "Tell me more about that shapeshifting ability of yours..."
     call ton_main("Of course...","base","base","angry","mid", ypos="head")
     call ton_main("Most of my escapades were kind of one trick ponies.","open","base","base","mid")
     m "Sounds pretty foolproof to me..."
@@ -752,7 +752,7 @@ label nt_he_story_centaur: # Not in use.
     g4 "Yes,...now tell me!"
 
     call ton_main("Very well,...","upset","base","worried","down")
-    call ton_main("First you should know, there aren't many witches that could take-on and calm a large group of wild centaurs...","open","base","worried","mid")
+    call ton_main("First you should know, there aren't many witches that could take on and calm a large group of wild centaurs...","open","base","worried","mid")
     call ton_main("Most would foolishly try to intimidate or threaten them, and rely on their wands and spells to keep them at bay, which would only make matters worse...","open","base","worried","R")
     call ton_main("But that's not how I handle \"conflict\" with those beastly creatures...","base","base","base","mid")
     g9 "Yes?!"

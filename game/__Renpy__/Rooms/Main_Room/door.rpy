@@ -118,7 +118,7 @@ label examine_door:
     call gen_chibi("stand","door","base")
     with d5
 
-    m "A sturdy looking door..."
+    m "A sturdy-looking door..."
     m "I wonder what's behind it."
     label examining_the_door:
     menu:

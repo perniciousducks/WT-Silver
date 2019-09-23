@@ -157,7 +157,7 @@ label tonks_intro_E1:
 
     if letter_min_favors.read:
         m "More or less..."
-        call ton_main("We have received a letter from a Miss \" Hermione Granger\", about the trading of... \"favours\" between staff and students at this school.","open","base","base","mid") #not sure if it's better to put miss in quotations or not. My logic is that the fact that she is a "miss" is a given, the name however is something the ministry may not know hence the quotations
+        call ton_main("We have received a letter from a Miss \"Hermione Granger\", about the trading of... \"favours\" between staff and students at this school.","open","base","base","mid") #not sure if it's better to put miss in quotations or not. My logic is that the fact that she is a "miss" is a given, the name however is something the ministry may not know hence the quotations
         m "Yes she very much enjoys doing that..."
         call ton_main("Trading favours?","base","base","raised","mid")
         m "(I wish...)"
@@ -543,7 +543,7 @@ label tonks_intro_E3:
         "Daddy":
             $ ton_genie_name = "Daddy"
             call ton_main("What? Are you serious?!","open","wide","wide","wide")
-            call ton_main("*Ha*-*Ha*-*Ha!*...{w} you're too funny!","smile","base","sad","mid", hair="happy")
+            call ton_main("*Ha-Ha-Ha!*...{w} you're too funny!","smile","base","sad","mid", hair="happy")
             g4 "(What?- Now it's yellow!)"
             call ton_main("Are all Genies this desperate?","smile","base","sad","mid", hair="happy")
             m "Desperate? Why Desperate?..."

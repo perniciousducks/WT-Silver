@@ -447,7 +447,7 @@ label luna_revert_1: #Reversion event #DONE
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
     call lun_main("","soft","wide","raised","mid",trans="hpunch")
     call her_main("liquescimus corporis!","scream","angryCl")
-    ">Another flash of light as Luna becomes un-petrified."
+    ">Another flash of light as Luna becomes unpetrified."
     call lun_main("Ugh... where am I?","normal","suspicious","sad","R")
     call her_main("Shhh, it's alright.","base","glance")
     call lun_main("Hermione? What's happening?","normal","suspicious","sad","mid")
@@ -738,7 +738,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
     call her_main("","soft","wide",trans="hpunch")
     call lun_main("liquescimus corporis!","open","seductive","angry","mid")
-    ">Another flash of light as Hermione becomes un-petrified."
+    ">Another flash of light as Hermione becomes unpetrified."
     call lun_main("","base","seductive","base","R",xpos="mid",ypos="base")
     call her_main("Professor! What is the meaning of this!","scream","angryCl")
     call her_main("And what were the two of you doing before I got here?","angry","angry")

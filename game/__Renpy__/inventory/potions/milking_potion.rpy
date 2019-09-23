@@ -919,7 +919,7 @@ label potion_scene_11_3: #Milking potion part 3
         call her_main("...","shock","down_raised",cheeks="blush",tears="crying")
         call blkfade
 
-        call nar(">You slowly remove the milk filled harness. There are red marks, surrounding her tender looking nipples, where the cups were.")
+        call nar(">You slowly remove the milk filled harness. There are red marks, surrounding her tender-looking nipples, where the cups were.")
         call set_her_action("none","skip_update")
         $ hermione_futa = False
         $ hermione_dribble = False

@@ -452,7 +452,7 @@ label update_stats:
     $ her_tutoring_word = her_tutoring_word_list[int(her_tutoring/1.4)]
 
     # Mood
-    $ her_mood_word_list = ["Cheerfull", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]
+    $ her_mood_word_list = ["Cheerful", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]
     if her_mood >= 0 and her_mood <= 10:
         $ her_mood_word = her_mood_word_list[int(her_mood/1.0)]
     else:
@@ -474,7 +474,7 @@ label update_stats:
     $ cho_reputation_word = cho_reputation_word_list[int(cho_reputation/2.4)]
 
     # Mood
-    $ cho_mood_word_list = ["Cheerfull", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]
+    $ cho_mood_word_list = ["Cheerful", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]
     if cho_mood >= 0 and cho_mood <= 10:
         $ cho_mood_word = cho_mood_word_list[int(cho_mood/1.0)]
     else:

@@ -221,7 +221,7 @@ label cho_intro_1:
         call cho_main("Though what do I know? I didn’t need to get my teeth shortened so I wouldn’t be confused as a rabbit!", "base", "angry", "angry", "L")
         call cho_main("Not that anyone would even see them through that horribly bushy hair of yours...", "smile", "angry", "angry", "L")
         call her_main("Well, I heard that you were caught snogging someone in one off the carriages after the triwizard tournament. I’m sure that will go down in the Hogwarts book of history...","grin","closed", cheeks="blush")
-        g9 "(How naughty, didn’t expect such indecent behavior from a girl with such a cute face...)"
+        g9 "(How naughty, didn’t expect such indecent behaviour from a girl with such a cute face...)"
         call cho_main("Yeah? You ever even kissed a boy before Granger? And I’m talking about a real kiss and not your daddy kissing you good night...", "soft", "angry", "raised", "L")
         call her_main("Oh...{w=0.5} Of course I have!","angry","worriedL", cheeks="blush")
         call her_main("Hey, just because I’m not the kind of person to jump on every opportunity they get to have a peek at some random boys wand... that doesn’t mean I’ve never kissed anyone...","open","WorriedCl", cheeks="blush")
@@ -491,7 +491,7 @@ label cho_snape_talk:
         "\"Help her win the Quidditch cup\"" if "1" not in cho_plan:
             $ cho_plan.append("1")
             call sna_main("And help her win against Slytherin?","snape_16")
-            call sna_main("I can't agree to that, Genie. As much as I'd like to see the Potter boy demoralized by losing to a girl...","snape_10")
+            call sna_main("I can't agree to that, Genie. As much as I'd like to see the Potter boy demoralised by losing to a girl...","snape_10")
             call sna_main("Or Malfoy for that matter... He's been way too cocky lately.","snape_08")
             m "Who?"
             call sna_main("A student of mine... Rich parents, bought his way into our Quidditch team,... Spoiled beyond belief.","snape_29")
@@ -552,12 +552,12 @@ label cho_snape_talk:
             call sna_main("What was it about?","snape_20")
 
             if jerked_off_during_hermione_intro and jerked_off_during_cho_intro:
-                m "I have no idea. I jerked off during thier whole exchange."
-                call sna_main("You did that again? And neither of them realized?","snape_22")
+                m "I have no idea. I jerked off during their whole exchange."
+                call sna_main("You did that again? And neither of them realised?","snape_22")
                 m "Didn't seem like it. They were too occupied with insulting each other..."
 
             elif jerked_off_during_cho_intro:
-                m "I have no idea. I jerked off during thier whole exchange."
+                m "I have no idea. I jerked off during their whole exchange."
                 call sna_main("You did what?","snape_15")
                 m "I jerked off.{w} Beat my meat.{w} Wrestled the snake.{w} Whatever you want to call it."
                 m "Don't tell me you never do it..."
@@ -577,7 +577,7 @@ label cho_snape_talk:
             call sna_main("Hmmm...{w} That reminds me of something I witnessed at the end of last year...","snape_23")
             call sna_main("Granger was scolding the poor girl for kissing a boy in the hallways.","snape_20")
             m "Hot...{w} What happened then?"
-            call sna_main("They were screaming and grabbing at each others hair before I had the chance to interfere.","snape_18")
+            call sna_main("They were screaming and grabbing at each other's hair before I had the chance to interfere.","snape_18")
             call sna_main("I ended up taking fifty points from Gryffindor. I should have taken at least one hundred now that I think about it...","snape_22")
             m "Does she often do things like that?"
             call sna_main("Are you kidding? All the bloody time!","snape_17")
@@ -758,12 +758,12 @@ label cho_hermione_talk:
     call her_main("How else could she possibly win that stupid Quidditch cup...","soft","angryCl")
     m "I thought that cup was so important to you?"
     call her_main("I couldn’t care less about it, [genie_name].","open","closed")
-    call her_main("The only cup that is worth winning is the \"house-cup\".","open","glanceL")
+    call her_main("The only cup that is worth winning is the \"house cup\".","open","glanceL")
     call her_main("They’re completely different...","annoyed","angry")
     m "Totally different..."
 
     if her_whoring < 18:
-        call her_main("It's the most prestigious award one could earn for your school-house!{p=0.6}The Quidditch cup is nothing in comparison...","open","closed")
+        call her_main("It's the most prestigious award one could earn for your school house!{p=0.6}The Quidditch cup is nothing in comparison...","open","closed")
         call her_main("Why are students even allowed to play this silly sport at our School?","annoyed","annoyed")
 
     if her_whoring < 8:

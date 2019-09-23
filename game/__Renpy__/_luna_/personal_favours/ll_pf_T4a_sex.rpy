@@ -1330,7 +1330,7 @@ label ll_pf_sex_bedroom:
             call lun_main("No, nothing like that together.","soft","annoyed","sad","mid")
             call lun_main("Although I think Cho's fighting her own battles against them some nights...","pout","angry","sad","down")
 
-        "-Ask who her room-mate is-":
+        "-Ask who her roommate is-":
             m "So who's your roomie?"
             call lun_main("Cho!","open","happyCl","base","mid")
     m "Cho Chang?"

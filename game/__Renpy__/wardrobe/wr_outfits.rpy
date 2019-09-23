@@ -48,7 +48,7 @@ label equip_her_outfit:
                     m "No points,..."
                     g9 "But I've got this cute outfit for you!"
                     call her_main("No thank you, [genie_name]...","open","closed")
-                    call her_main("Outfits don't win house-cups...","soft","angry")
+                    call her_main("Outfits don't win house cups...","soft","angry")
                     m "(Damn her...)"
                     if cheats_active or game_difficulty <= 2:
                         ">Try again at Whoring level 11."
@@ -212,7 +212,7 @@ label equip_her_outfit:
             if outfit_choice in [hg_costume_power_girl_ITEM,hg_costume_ms_marvel_ITEM]:
                 m "Are there any heroines you know of?"
                 if her_whoring >= 11: #Success
-                    call her_main("You mean like super-heroines?","open","wink")
+                    call her_main("You mean like superheroines?","open","wink")
                     m "Yep"
                     if outfit_choice == hg_costume_power_girl_ITEM:
                         m "I've got this Power Girl outfit I would like you to wear..."
@@ -232,13 +232,13 @@ label equip_her_outfit:
                     call her_main("Rowena Ravenclaw, Helga Hufflepuff, Isolt Sayre, Joan of Arc,...","open","worriedL")
                     call her_main("I can name you hundreds! All witches I admire and look up to!","grin","closed")
                     m "(Who?)"
-                    m "No no, I'm talking about Comic-books! Super-heroes!"
+                    m "No no, I'm talking about Comic books! Superheroes!"
                     call her_main("Oh...","soft","narrow")
                     call her_main("[genie_name], how do you even know about such things? Comics?","soft","wink")
                     g9 "I know all about human activities and pleasures!"
                     call her_main("Muggle activities? Well of course, somebody as wise as you would be knowledged about all sorts of things.","open","baseL")
-                    call her_main("I myself don't think too highly of comic-books, [genie_name].","soft","narrow")
-                    call her_main("Not to mention the contumelious treatment and over-sexualization of female heroines.","soft","narrow")
+                    call her_main("I myself don't think too highly of comic books, [genie_name].","soft","narrow")
+                    call her_main("Not to mention the contumelious treatment and over-sexualisation of female heroines.","soft","narrow")
                     call her_main("It's disgusting...","open","closed")
                     call her_main("I have to refuse, [genie_name]!","annoyed","angry")
                     if cheats_active or game_difficulty <= 2:
@@ -308,7 +308,7 @@ label equip_her_outfit:
                     call her_main("What?","scream","wide")
                     call her_main("In that case, absolutely not!","scream","angryCl")
                     m "Why not?"
-                    call her_main("Video-games are for idiots.","annoyed","angryL")
+                    call her_main("Video games are for idiots.","annoyed","angryL")
                     m "..."
                     m "(No they aren't...)"
                     if cheats_active or game_difficulty <= 2:

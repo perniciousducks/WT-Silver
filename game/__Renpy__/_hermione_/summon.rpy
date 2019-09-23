@@ -171,7 +171,7 @@ label hermione_level_up(tier=None):
     if tier == 1:
         show screen blktone5
         with d3
-        ">Hermione`s second \"favour tier\" is now available."
+        ">Hermione's second \"favour tier\" is now available."
         ">You can move up \"favour tiers\" by increasing her \"whoring level\", and by triggering \"favour milestones.\""
         if game_difficulty >= 3: # Hardcore, books are required.
             ">In addition, it is also required of you to increase your \"imagination level\" by reading \"fictional books\", to unlock Hermione's next tier of favours."
@@ -437,7 +437,7 @@ label hermione_talk:
         # About Cho.
         "{color=#858585}-Solve the matter with Cho-{/color}" if cho_intro_state == "talk_with_snape": # Before talking to Snape.
             m "(I should ask Snape what to do about that Cho girl first. Just to be save.)"
-            m "(I should ask him to hang-out in the evening.)"
+            m "(I should ask him to hang out in the evening.)"
             jump hermione_talk
 
         "-Solve the matter with Cho-" if cho_intro_state in ["talk_with_hermione","nagotiate_with_hermione"]: # After talking to Snape.

@@ -195,7 +195,7 @@ label hg_pf_grope_T1_E1:
 label hg_pf_grope_T2_intro_E1:
     m "[hermione_name]..."
     call her_main("[genie_name]?","base","base")
-    m "How would you like to earn some house-points today?"
+    m "How would you like to earn some house points today?"
     call her_main("And what would I need to do to earn them?","annoyed","annoyed")
     m "Oh nothing too out of the ordinary."
     m "You just stand here while I grope you for a bit..."
@@ -245,7 +245,7 @@ label hg_pf_grope_T2_intro_E1:
 label hg_pf_grope_T2_E1:
     m "[hermione_name]..."
     call her_main("[genie_name]?","base","base")
-    m "How would you like to earn some house-points today?"
+    m "How would you like to earn some house points today?"
     call her_main("And what would I need to do to earn them?","annoyed","annoyed")
     g9 "Get squeezed!"
     call her_main("....................................","annoyed","angryL")

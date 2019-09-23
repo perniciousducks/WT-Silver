@@ -469,7 +469,7 @@ label snape_intro_E4:
     call sna_main("The way you conjure the spells with your bare hands...","snape_01")
     call sna_main("No human could do that... who--","snape_01")
     call sna_main("{size=+5}What are you?{/size}","snape_32")
-    call sna_main("Some sort of shape-shifting demon summoned by \"you know who\"?","snape_01")
+    call sna_main("Some sort of shapeshifting demon summoned by \"you know who\"?","snape_01")
     m "Summoned by whom?"
     call sna_main("By \"you know who\"!","snape_31")
     m "What?"

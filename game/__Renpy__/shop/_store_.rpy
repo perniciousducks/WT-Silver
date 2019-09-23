@@ -531,6 +531,7 @@ label purchase_forbidden_scroll(item):
 
                 $ gold -= item.cost
                 $ item.unlocked = True
+                call update_quest_items
                 ">A New scroll has been added to your sacred scrolls collection."
             else:
                 m "I don't have enough gold."

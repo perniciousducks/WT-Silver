@@ -231,7 +231,6 @@ label update_DRgame_hunger:
             "-Stoke the fire-":
                 $ DRgame.fire = 1
                 $ DRgame.wood -= 1
-                play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
                 show screen fireplace_fire
                 with d5
     if DRgame.fire <= 0 and DRgame.wood <= 0:
@@ -659,7 +658,6 @@ label DRgame_fireplace:
     if DRgame.wood >= 1 and DRgame.fire <= 0:
         $ DRgame.fire += 1
         $ DRgame.wood -= 1
-        play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
         show screen fireplace_fire
         with d9
         pause 1
@@ -673,7 +671,6 @@ label DRgame_fireplace:
         "-Stoke the fire-" if DRgame.wood >= 1 and DRgame.fire < 2:
             $ DRgame.fire += 1
             $ DRgame.wood -= 1
-            play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
             show screen fireplace_fire
             with d9
             pause 1

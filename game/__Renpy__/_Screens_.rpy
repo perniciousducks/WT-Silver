@@ -5,8 +5,9 @@
 label cg_scene(layer=None, folder=None, trans=None):
     hide screen cg
 
+    $ cg_path = "images/CG/"
     if folder != None:
-        $ cg_path = "images/CG/"+folder+"/"
+        $ cg_path = cg_path+folder+"/"
 
     if layer != None:
         $ cg_image = cg_path+layer+".png"
@@ -87,15 +88,22 @@ screen fireplace_fire(): #Used to display fire without the fireplace.
     tag fireplace_fire
     add "fireplace_fire" xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos+25 xanchor 0.5 yanchor 0.5 #xpos 576 ypos 141
     zorder 2
+    on "show" action Function(fireplace_event, True)
+    on "hide" action Function(fireplace_event, False)
 
 screen fireplace_glow():
     tag fireplace_glow
     add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.2
     zorder 3
 
-$ width_offset = 140
-
-
+init python:
+    def fireplace_event(has_fire):
+        global fire_in_fireplace
+        fire_in_fireplace = has_fire
+        if has_fire:
+            renpy.music.play("sounds/fire02.mp3", "bg_sounds", fadeout=1.0, fadein=1.0, if_changed=True)
+        else:
+            renpy.music.stop("bg_sounds", fadeout=1.0)
 
 screen desk(xposistion=360): #Desk only!
     add "images/rooms/main_room/desk_with_shadow.png" xpos xposistion ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5

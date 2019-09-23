@@ -317,7 +317,6 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         $ daytime = False
         $ interface_color = "gray"
         call music_block
-        play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
         show screen fireplace_fire
         pause 1.0
 

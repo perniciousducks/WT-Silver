@@ -123,7 +123,6 @@ label room(room=None, hide_screens=True):
         show screen chair_right
         hide screen fireplace_fire
         if fire_in_fireplace:
-            play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
             show screen fireplace_fire
         show screen animation_feather
         hide screen phoenix_food
@@ -202,7 +201,6 @@ label main_room:
 label setup_fireplace_hangout(char=None):
 
     if not daytime: # Night time
-        play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0
         show screen blkfade
 
         $ fire_in_fireplace = True

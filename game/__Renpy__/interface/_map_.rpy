@@ -573,6 +573,7 @@ label floor_7th:
 
 
 label map_attic: #Label controlling what happens when you access the attic
+    #TODO Maybe show something other than Genie sitting in his office during the following script:
     if not sealed_scroll_ITEM.unlocked:
         ">You venture up to the attic but find that the door is locked."
         m "Damn, it's locked."
@@ -593,6 +594,7 @@ label map_attic: #Label controlling what happens when you access the attic
         ">You cut a piece and leave."
         ">As you shut the door you hear the room erupt in a series of loud crashes."
         $ tentacle_owned = True
+        call update_quest_items
         jump desk
 
 

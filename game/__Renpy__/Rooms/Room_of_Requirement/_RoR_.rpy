@@ -51,8 +51,8 @@ screen room_of_requirement_menu():
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "images/rooms/_objects_/doors/door_idle_night.png"
-        hover "images/rooms/_objects_/doors/door_hover_night.png"
+        idle door_night_OBJ.get_room_image()
+        hover door_night_OBJ.get_hover_image()
         hovered SetVariable("tooltip", "Back to office")
         unhovered SetVariable("tooltip", None)
         action [SetVariable("tooltip", None), Jump("return_office")]

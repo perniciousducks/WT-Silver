@@ -51,7 +51,6 @@ label fireplace:
         if fire_in_fireplace:
             $ fire_in_fireplace = False
             hide screen fireplace_fire
-            stop bg_sounds #Stops playing the fire SFX.
         else:
             $ fire_in_fireplace = True
             $ stat_fireplace_counter += 1

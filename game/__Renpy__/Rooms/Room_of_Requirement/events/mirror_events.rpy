@@ -134,17 +134,16 @@ label a_spaced_out_conversation:
     $ temp_time = daytime
     $ interface_color = "gray"
     $ daytime = False
+    $ fire_in_fireplace = True
 
     call room("main_room")
     call music_block
 
     hide screen genie
     hide screen chair_right
-    $ fire_in_fireplace = True
     show screen fireplace_fire
     show screen desk
     show screen with_snape(ani=False)
-    play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
 
     show screen blkfade
     with d3

@@ -147,7 +147,7 @@ label tentacle_1: #Public tentacle scene
     ">The sensations proved to much for hermione and she faints, going limp in your tentacles."
     mal "What a slut..."
     fem "I told you so."
-    mal2 "Man, I'm going to have to join Gyrffindor."
+    mal2 "Man, I'm going to have to join Gryffindor."
     ">You place Hermione back onto the desk as the plant that you are occupying slowly wilts and dies."
     ">Professor Sprout quickly runs over."
     spo "Miss Granger are you okay?"
@@ -178,10 +178,11 @@ label tentacle_2: #Enjoyable tentacle scene
     call play_music("hermione_theme")
     pause.8
 
-    call cg_scene(folder="", layer="e1")
-    hide screen blkfade
-    with d9
-    call ctc
+    #TODO Find and add missing CG file (e1.png), was it ever in the game?
+    #call cg_scene(folder="", layer="e1")
+    #hide screen blkfade
+    #with d9
+    #call ctc
 
     her "What the hell kind of plant is this?"
     ">You start pumping the tentacles in her vagina slowly"
@@ -189,7 +190,12 @@ label tentacle_2: #Enjoyable tentacle scene
     ">You move a small tentacle with a mouth on the end to her ear so that only she can hear you."
     gen "Enjoying yourself [hermione_name]?"
     her "Profes-"
+    
     call cg_scene("e2")
+    hide screen blkfade
+    with d9
+    call ctc
+
     ">You quickly force another flowered tentacle into her mouth"
     gen "Now, now [hermione_name], you don't want anyone to find out that how you've been earning so many points now do you?"
     her "mmmmmoo"

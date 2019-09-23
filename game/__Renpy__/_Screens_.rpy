@@ -98,8 +98,6 @@ screen fireplace_glow():
 
 init python:
     def fireplace_event(has_fire):
-        global fire_in_fireplace
-        fire_in_fireplace = has_fire
         if has_fire:
             renpy.music.play("sounds/fire02.mp3", "bg_sounds", fadeout=1.0, fadein=1.0, if_changed=True)
         else:

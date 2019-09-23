@@ -54,7 +54,7 @@ screen color_picker(color, alpha, title, pos_xy):
         vbar:
             area (290, 25, 30, 255)
             value ScreenVariableValue("hue", range=1.0, step=0.01, action=Function(color_picker_update_rgba))
-            base_bar HueGradientImage(size=(30,255))
+            base_bar hue_gradient_image
             thumb Image("interface/color_picker/"+str(interface_color)+"/cursor_h.png", xalign=0.5)
             thumb_offset 0
             top_gutter 0
@@ -67,7 +67,7 @@ screen color_picker(color, alpha, title, pos_xy):
             bar:
                 area (25, 290, 255, 30)
                 value ScreenVariableValue("_alpha", range=1.0, step=0.01, action=Function(color_picker_update_rgba))
-                base_bar im.MatrixColor(AlphaGradientImage(size=(255,30)), im.matrix.colorize(rgba, rgba))
+                base_bar im.MatrixColor(alpha_gradient_image, im.matrix.colorize(rgba, rgba))
                 thumb Image("interface/color_picker/"+str(interface_color)+"/cursor_v.png", xalign=0.5)
                 thumb_offset 0
                 top_gutter 0
@@ -115,6 +115,9 @@ screen color_picker(color, alpha, title, pos_xy):
                 clicked Return(["apply", rgba])
 
 default picking_color = None
+
+define alpha_gradient_image = AlphaGradientImage(size=(255,30))
+define hue_gradient_image = HueGradientImage(size=(30,255))
 
 init -1 python:
     import colorsys
@@ -204,9 +207,12 @@ init -1 python:
         def __init__(self, **properties):
             super(GradientImageBase, self).__init__(**properties)
             self.size = properties.get('size')
+            self.cached_surf = None
 
     class AlphaGradientImage(GradientImageBase):
         def load(self):
+            if self.cached_surf != None:
+                return self.cached_surf
             # Generate a horizontal alpha gradient
             width = self.size[0]
             surf = renpy.display.pgrender.surface((width, 1), True)
@@ -214,10 +220,13 @@ init -1 python:
                 color = (255, 255, 255, x)
                 surf.set_at((x, 0), color)
             surf = renpy.display.pgrender.transform_scale(surf, self.size)
+            self.cached_surf = surf
             return surf
 
     class HueGradientImage(GradientImageBase):
         def load(self):
+            if self.cached_surf != None:
+                return self.cached_surf
             # Generate a vertical hue gradient
             height = self.size[1]
             surf = renpy.display.pgrender.surface((1, height), False)
@@ -227,10 +236,13 @@ init -1 python:
                 color = (r * 255, g * 255, b * 255)
                 surf.set_at((0, y), color)
             surf = renpy.display.pgrender.transform_scale(surf, self.size)
+            self.cached_surf = surf
             return surf
 
     class SVGradientImage(GradientImageBase):
         def load(self):
+            if self.cached_surf != None:
+                return self.cached_surf
             # Generate a 2D saturation-value gradient
             (width, height) = self.size
             surf = renpy.display.pgrender.surface(self.size, True)
@@ -241,4 +253,5 @@ init -1 python:
                     (r, g, b) = colorsys.hsv_to_rgb(0, sat, val)
                     color = (r * 255, g * 255, b * 255)
                     surf.set_at((x, y), color)
+            self.cached_surf = surf
             return surf

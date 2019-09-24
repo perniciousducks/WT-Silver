@@ -1,7 +1,7 @@
+#TODO Remove commented-out code
 
-
-label open_inventory_menu:
-    jump inventory_menu
+# label open_inventory_menu:
+#     jump inventory_menu
     #$ current_category = None
 
     #label inventory_menu:
@@ -60,15 +60,3 @@ label open_inventory_menu:
         # $ current_page += -1
 
     # jump inventory_menu
-
-label use_your_quest_item: #(quest_item)
-
-    if quest_item == sealed_scroll_ITEM:
-        if sealed_scroll_ITEM.unlocked and tentacle_owned == False:
-            m "It's missing the key ingredient."
-
-    if quest_item == puzzle_box_ITEM:
-        if unlocked_7th == False:
-            jump start_slide_puzzle
-
-    jump day_main_menu

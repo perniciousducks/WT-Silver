@@ -1,8 +1,14 @@
 
 
-# Cardgame
+# Quest Items
+default puzzle_box_ITEM   = item_class(id="puzzle_box", name="Puzzle Box", type="quest item", image="icon_puzzle", description="A wooden box with a slide puzzle located on top of it. It was found hidden behind one of the loose bricks in the fireplace. Who knows what's inside.", event="start_slide_puzzle")
+default collar_quest_ITEM = item_class(id="collar_quest", name="Collar", type="quest item", image="icon_collar", description="Quest Item!")
 default lootbox_quest_ITEM = item_class(id="lootbox", name="Pack of cards", type="quest item", image="cards", description="A pack of cards.", cost=100, event="card_lootbox")
+default sealed_scroll_ITEM = scroll_class(id="sealed_scroll", name="Forbidden Scroll", cost=300, type="scroll", image="item_scroll_sealed", description="The recipe for a powerful and forbidden potion that transforms you into any magical creature you desire.", event="examine_sealed_scroll")
 
+default forbidden_scroll_list = [sealed_scroll_ITEM]
+
+# Gift items
 default lollipop_ITEM          = item_class(id="lollipop", name="Lollipop Candy",              cost=20, type="candy", image="item_lollipop", description="A lollipop candy. An adult candy for kids or kids candy for adults?")
 default chocolate_ITEM         = item_class(id="chocolate", name="Chocolate",                  cost=40, type="candy", image="item_chocolate", description="The recipe for this delicious milk chocolate is kept a secret. (Rumoured to contain dried faeries).")
 default plush_owl_ITEM         = item_class(id="plush_owl", name="Plush owl",                  cost=35, type="toy", image="item_plush_owl", description="A Toy owl stuffed with feathers of an actual owl. It's so cuddly!")
@@ -112,7 +118,6 @@ default misc_hat_list = [
 ]
 
 # Scroll Items
-default sealed_scroll_ITEM = scroll_class(id="sealed_scroll",   name="Forbidden Scroll",  cost=300,   type="scroll", image="item_scroll_sealed", description=">Quest Item!")
 default scroll_1_ITEM = scroll_class(id="scroll_1",   name="The room",           cost=1,   type="scroll", image="item_scroll", scroll_image="1", comments=["This is a first ever draft of the Dumbledore's office.","Not a very exciting thing to look at, sure. But holds great historical value."])
 default scroll_2_ITEM = scroll_class(id="scroll_2",   name="The calendar",       cost=2,   type="scroll", image="item_scroll", scroll_image="2", comments=["The calendar...","On the early stages of development I toyed with an idea of implementing an actual in-game calendar into the gameplay...","I soon realised how much more difficult it would be to create a game like that...","And since I personally believe that any time limits in any game always work against the fun factor I decided to abandon the idea...","Later on I used this drawing as a parchment paper for letters to be written on..."])
 default scroll_3_ITEM = scroll_class(id="scroll_3",   name="The girl",           cost=10,  type="scroll", image="item_scroll", scroll_image="3", comments=["A couple of very early drawings of Hermione..."])
@@ -152,8 +157,6 @@ default scroll_34_ITEM = scroll_class(id="scroll_34", name="Lion, Witch, & Wardr
 default scroll_35_ITEM = scroll_class(id="scroll_35", name="Lion, Witch, & Wardrobe 3",   cost=10,  type="scroll", image="item_scroll_silver", scroll_image="35", comments=["The wardrobe got a brand new design, with tons of new features!","Every other girl available in silver has one too!"])
 
 default scroll_37_ITEM = scroll_class(id="scroll_37", name="Map 2",   cost=10,  type="scroll", image="item_scroll_silver", scroll_image="37", comments=["First try at the new map.","We removed all the text and labels and replaced them with icons."])
-
-default forbidden_scroll_list = [sealed_scroll_ITEM]
 
 default scroll_list_A = [
     scroll_1_ITEM, scroll_2_ITEM,
@@ -243,10 +246,6 @@ default dye_list=[
     black_dye_ITEM,
     white_dye_ITEM,
 ]
-
-# Quest Items
-default puzzle_box_ITEM   = item_class(id="puzzle_box", name="Puzzle Box", type="quest item", image="icon_puzzle", description="A wooden box with a slide puzzle located on top of it. It was found hidden behind one of the loose bricks in the fireplace. Who knows what's inside.", event="start_slide_puzzle")
-default collar_quest_ITEM = item_class(id="collar_quest", name="Collar", type="quest item", image="icon_collar", description=">Quest Item!")
 
 # Hermione Outfits
 default hg_outfit_maid_ITEM = costume_class(

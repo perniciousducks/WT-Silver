@@ -55,7 +55,7 @@ screen hotkeys_main():
     if store_intro_done:
         key hkey_book action Jump("read_book_menu")
     key hkey_stats action [Hide("main_room_menu"), Jump("open_stat_menu")]
-    key hkey_inventory action Jump("open_inventory_menu")
+    key hkey_inventory action Jump("inventory_menu")
     key hkey_fap action Jump("jerk_off")
 
     if daytime:

@@ -19,7 +19,8 @@ label update_quest_items:
             $ sealed_scroll_ITEM.number = 1 #Makes it clickable in the inventory UI.
     else:
         if sealed_scroll_ITEM in gen_quest_items_list:
-            $ gen_quest_items_list.remove(sealed_scroll_ITEM)
+            pass # Don't remove the item, the player may think it can no longer be used
+            #$ gen_quest_items_list.remove(sealed_scroll_ITEM)
 
     #Puzzle Box
     if puzzle_box_ITEM.unlocked and unlocked_7th == False:
@@ -56,3 +57,10 @@ label update_quest_items:
             $ her_quest_items_list.remove(collar_quest_ITEM)
 
     return
+
+label examine_sealed_scroll:
+    if tentacle_owned:
+        m "I should use this on [hermione_name]."
+    else:
+        m "It's missing the key ingredient."
+    jump main_room

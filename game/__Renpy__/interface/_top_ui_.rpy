@@ -143,7 +143,7 @@ screen ui_top_bar():
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png")
                     hovered SetVariable("tooltip", "Inventory (i)")
                     unhovered SetVariable("tooltip", None)
-                    action [SetVariable("tooltip", None), Jump("open_inventory_menu")]
+                    action [SetVariable("tooltip", None), Jump("inventory_menu")]
                     activate_sound "sounds/click3.mp3"
 
             # Work button

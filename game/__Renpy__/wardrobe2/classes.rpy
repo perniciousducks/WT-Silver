@@ -408,7 +408,7 @@ init python:
             return self.color[layer][3]/255.0
 
         def set_color(self, layer):
-            if config.developer:
+            if config.developer or cheat_wardrobe_alpha:
                 self.color[layer] = color_picker(self.color[layer], True, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
             else:
                 self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer+1), pos_xy=[20, 130])

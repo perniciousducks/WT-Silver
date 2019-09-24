@@ -1,5 +1,6 @@
 default cheats_active = False
 default cheat_reading = False
+default cheat_wardrobe_alpha = False
 
 default skip_duel = False
 default skip_to_hermione = False
@@ -200,6 +201,14 @@ label cheats:
         "-Map-" if day >= 5 and not map_unlocked:
             "The marauder's map has been added to your inventory!"
             $ map_unlocked = True
+            jump cheats
+
+        "-Wardrobe transparency-":
+            $ cheat_wardrobe_alpha = not cheat_wardrobe_alpha
+            if cheat_wardrobe_alpha:
+                "Wardrobe transparency slider is enabled."
+            else:
+                "Wardrobe transparency slider is disabled."
             jump cheats
             
         "-{color=#7a0000}DEVROOM{/color}-" if config.developer:

@@ -1087,6 +1087,8 @@ label ag_st_imperio_E5:
     call nar(">Astoria joyfully jumps up and down on the spot, making a happy squeal...","start")
     show screen astoria_wand_drop
     call ast_chibi("reset","desk","base") # No wand pose.
+    pause.355
+    $ renpy.play('sounds/wand_drop.mp3')
     call nar(">Unknowingly dropping her wand...","end")
 
     call ton_main("","upset","base","base","R")
@@ -1451,7 +1453,8 @@ label ag_st_imperio_E5:
     
 # astoria wand drop animation screen
 screen astoria_wand_drop():
-    zorder 4
+    tag wand
+    zorder 2
     
     add "characters/astoria/chibis/wand.png":
         at transform:

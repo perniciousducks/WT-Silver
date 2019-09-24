@@ -5,6 +5,7 @@
 label ast_chibi(action = "", xpos=ast_chibi_xpos, ypos=ast_chibi_ypos, flip=False, animation=False):
     $ ast_chibi_status = ""
     $ update_chibi_image("astoria")
+    $ xoffset = 0
 
     if xpos != ast_chibi_xpos:
         if xpos == "mid":
@@ -40,9 +41,23 @@ label ast_chibi(action = "", xpos=ast_chibi_xpos, ypos=ast_chibi_ypos, flip=Fals
         with d3
         pause .5
     else:
-        if action == "reset":
+        if action == "wand":
+            $ xoffset = 76 # Fixes image X position for wand stance
+            $ ast_chibi_animation = "wand"
+            $ update_chibi_image("astoria")
+        elif action == "wand_casting":
+            $ xoffset = 76 # Fixes image X position for wand stance
+            $ ast_chibi_animation = "wand_casting"
+            $ update_chibi_image("astoria")
+        elif action == "wand_imperio":
+            $ xoffset = 76 # Fixes image X position for wand stance
+            $ ast_chibi_animation = "wand_imperio"
+            $ update_chibi_image("astoria")
+        elif action == "reset":
             $ ast_chibi_animation = None
             $ update_chibi_image("astoria")
+            
+        $ ast_chibi_xpos = ast_chibi_xpos-xoffset
 
         if flip: #Same variable that the main sprite is using. #1 == Default
             $ ast_chibi_flip = -1

@@ -22,7 +22,7 @@ default tonks_cloth_panties_base = cloth_class(char="tonks", category="panties",
 default tonks_cloth_bra_base = cloth_class(char="tonks", category="bras", subcat="bras", type="bra", id="bikini", layers=2, color=[[124, 42, 50, 255], [177, 168, 172, 255]])
 
 # Legwear
-default tonks_cloth_garterbase = cloth_class(char="tonks", category="legwear", subcat="stockings", type="stockings", id="auror", layers=2, color=[[45, 45, 48, 255], [177, 168, 172, 255]])
+default tonks_cloth_garterbase = cloth_class(char="tonks", category="legwear", subcat="stockings", type="stockings", id="auror", layers=2, color=[[45, 45, 48, 255], [177, 168, 172, 255]], armfix=True)
 
 # Robes
 default tonks_cloth_auror_coat = cloth_class(char="tonks", category="tops", subcat="robes", type="robe", id="auror_coat", layers=2, color=[[40, 40, 41, 255], [174, 165, 169, 255]], armfix=True)

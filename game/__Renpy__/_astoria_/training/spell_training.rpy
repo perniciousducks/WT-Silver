@@ -26,7 +26,7 @@ label ag_st_imperio_E1:
     stop music fadeout 1.0
     call play_sound("door")
     call ton_chibi("stand","desk","base")
-    call ast_chibi("stand","500","base") # Make sure it's slightly to the left of Tonks' chibi.
+    call ast_chibi("stand","530","base") # Make sure it's slightly to the left of Tonks' chibi.
     with d3
     pause.8
 
@@ -77,9 +77,11 @@ label ag_st_imperio_E1:
     call ton_main("Today, I'd like you to cast it on me, if you don't mind...","open","closed","base","mid")
     call ast_main("Wicked!","grin","narrow","worried","down")
     call ton_main("Let's give this old man a quick demonstration of your talents, shall we...","base","base","angry","mid")
+    call ast_chibi(action="wand",xpos="530",ypos="base")
     call ast_main("","grin","narrow","base","mid")
     m ".............................."
 
+    call ast_chibi(action="wand_casting",xpos="530",ypos="base")
     call ton_main("Just like we practiced...","open","closed","base","mid")
     call ton_main("Do the movement with your wand, and then you say-","open","base","base","R")
     call ast_main("Imperio!","scream","narrow","angry","mid") # angry scream
@@ -99,6 +101,8 @@ label ag_st_imperio_E1:
     pause.2
 
     # chibi spell animation.
+    call play_sound("spell")
+    call ast_chibi(action="wand_imperio",xpos="530",ypos="base")
     with hpunch
     pause.8
 
@@ -111,7 +115,8 @@ label ag_st_imperio_E1:
     call ast_main("Now she should be under my command!","smile","base","base","mid")
     g9 "You don't say?"
     g9 "I love magic!"
-    call ast_main("What shall I do, Professor?","clench","base","base","L")
+    call ast_chibi(action="wand",xpos="530",ypos="base")
+    call ast_main("What shall I do now, Professor?","clench","base","base","L")
     m "I don't know... Why are you asking me?"
     m "Did you not discuss this with her beforehand?"
     call ast_main("No. All we did was some theoretical practice of the spell...","open","base","base","down")
@@ -165,6 +170,7 @@ label ag_st_imperio_E1:
     # Tonks reverts back.
     pause.2
     call hide_characters
+    call ast_chibi("reset","530","base")
     hide screen bld1
     with fade
     pause.8
@@ -211,7 +217,7 @@ label ag_st_imperio_E2:
     stop music fadeout 1.0
     call play_sound("door")
     call ton_chibi("stand","desk","base")
-    call ast_chibi("stand","500","base") # Make sure it's slightly to the left of Tonks' chibi.
+    call ast_chibi("stand","530","base") # Make sure it's slightly to the left of Tonks' chibi.
     with d3
     pause.8
 
@@ -222,6 +228,7 @@ label ag_st_imperio_E2:
     m "Back already?"
     call ton_main("Yes, I gave Astoria a couple more pointers on how to improve the persuasiveness of the curse...","open","base","base","mid")
     call ton_main("The trick is to not lose your temper after casting it!","open","closed","base","mid")
+    call ast_chibi(action="wand",xpos="530",ypos="base")
     call ast_main(".........................","annoyed","base","base","down")
     call ton_main("This should be fun!","smile","happyCl","base","mid")
     m "Very good."
@@ -239,6 +246,8 @@ label ag_st_imperio_E2:
     pause.2
 
     # chibi spell animation.
+    call play_sound("spell")
+    call ast_chibi(action="wand_imperio",xpos="530",ypos="base")
     with hpunch
     pause.8
 
@@ -254,6 +263,7 @@ label ag_st_imperio_E2:
     call ton_main("It's like - I'm floating...","open","base","worried","ahegao")
     call ton_main("It feels...sooooooooooooo...goooooooooooood!","open_wide_tongue","base","base","ahegao")
     call ton_main("","angry","base","base","ahegao")
+    call ast_chibi(action="wand",xpos="530",ypos="base")
     m "(Is she getting off on this?)"
 
     call ast_main("What shall I have her do, Professor?","clench","wink","base","mid")
@@ -272,7 +282,7 @@ label ag_st_imperio_E2:
             call ton_main("......................","base","base","base","ahegao")
 
             # Tonks turns around. (mirror sprite)
-            call ton_main("","base","base","base","ahegao", xpos="left", ypos="base", flip=True)
+            call ton_main("","base","base","base","ahegao", xpos="500", ypos="base", flip=True)
             pause.8
 
         "Ask her to remove her coat.":
@@ -291,7 +301,7 @@ label ag_st_imperio_E2:
             # Tonks removes her coat.
             call play_sound("equip")
             $ tonks_class.strip("robe")
-            call ton_main("","base","base","base","ahegao", xpos="mid", ypos="base", flip=False)
+            call ton_main("","base","base","base","ahegao", xpos="right", ypos="base", flip=False)
             pause.8
 
 
@@ -325,6 +335,7 @@ label ag_st_imperio_E2:
 
             # Tonks returns to normal
             with fade
+            call ast_chibi(action="reset",xpos="530",ypos="base")
 
             call ton_main("Oh wow...","angry","base","worried","down")
             call ton_main("You made me squeal like a pig!","smile","happyCl","base","mid")
@@ -345,6 +356,7 @@ label ag_st_imperio_E2:
             call ton_main("Right now? Are you sure?","open","base","raised","mid")
             g4 "(I want to see some tits - damn it! Or hear her talk dirty...)"
             m "Yes, cast that spell again, Astoria..."
+            call ast_chibi(action="wand",xpos="530",ypos="base")
             call ast_main("Very well, Sir...","smile","closed","base","mid")
 
             # Astoria casts imperio.
@@ -357,11 +369,14 @@ label ag_st_imperio_E2:
             pause.2
 
             # chibi spell animation.
+            call play_sound("spell")
+            call ast_chibi(action="wand_imperio",xpos="530",ypos="base")
             with hpunch
             pause.8
 
             call ast_main("","clench","base","angry","L", xpos="base", ypos="base")
             call ton_main("*hmmm*.............","base","base","base","ahegao")
+            call ast_chibi(action="wand",xpos="530",ypos="base")
             call ast_main("And now?","open","base","base","mid")
 
             jump ag_st_imperio_E2_choices
@@ -394,6 +409,7 @@ label ag_st_imperio_E2:
             # Tonks returns to normal.
             pause.2
             call hide_characters
+            call ast_chibi(action="reset",xpos="530",ypos="base")
             hide screen bld1
             with fade
             pause.8
@@ -436,7 +452,7 @@ label ag_st_imperio_E2:
 
             call bld
             m "I don't think we made much progress here..."
-
+            $ tonks_class.wear("all") # wear all previously stripped clothing pieces
             jump main_room
 
         "Make her show us those tits!": # Succeeds
@@ -480,6 +496,7 @@ label ag_st_imperio_E2:
             # Tonks returns to normal.
             pause.2
             call hide_characters
+            call ast_chibi(action="reset",xpos="530",ypos="base")
             hide screen bld1
             with fade
             pause.8
@@ -502,13 +519,15 @@ label ag_st_imperio_E2:
 
             # They both leave
             call play_sound("door")
+            hide screen astoria_main
             call ast_chibi("leave")
+            hide screen tonks_main
             call ton_chibi("leave")
             with d3
 
             call bld
             m "And they say I'm the big, bad pervert..."
-
+            $ tonks_class.wear("all") # wear all previously stripped clothing pieces
             jump main_room
 
 
@@ -544,7 +563,7 @@ label ag_st_imperio_E4:
     pause.1
 
     #Astoria enters
-    call ast_walk(action="enter","500","base", speed=2.8) # Make sure it's slightly to the left of Tonks' chibi.
+    call ast_walk(action="enter","530","base", speed=2.8) # Make sure it's slightly to the left of Tonks' chibi.
     pause.1
 
     call ton_chibi("stand","desk","base", flip=False)
@@ -578,6 +597,7 @@ label ag_st_imperio_E4:
     m "......................."
 
     call ton_main("So, let's begin...","smile","happyCl","base","mid")
+    call ast_chibi(action="wand",xpos="530",ypos="base")
     call ton_main("Astoria, try and focus on what we went through today...","base","base","base","L")
     call ton_main("Keep good track of your emotions after channeling the spell...","open","closed","base","mid")
     call ton_main("Anger and rage will cause you to lose control - and eventually break the connection with the target...","open","base","angry","L")
@@ -594,6 +614,7 @@ label ag_st_imperio_E4:
 
     call ton_main("Now then, let's get on with it, shall we?","base","base","angry","mid")
     call ast_main("...","annoyed","base","base","mid")
+    call ast_chibi(action="wand_casting",xpos="530",ypos="base")
     call ton_main("Astoria, as soon as I'm ready - I'd like you to-","open","closed","base","mid")
 
     # Astora casts the curse.
@@ -607,6 +628,7 @@ label ag_st_imperio_E4:
 
     # chibi spell animation.
     call play_sound("spell")
+    call ast_chibi(action="wand_imperio",xpos="530",ypos="base")
     with hpunch
     pause.8
 
@@ -616,6 +638,7 @@ label ag_st_imperio_E4:
 
     m "......................"
     call ton_main("*Aaaaah*...","open","base","worried","ahegao", hair="horny")
+    call ast_chibi(action="wand",xpos="530",ypos="base")
     call ast_main("I'm getting really good at this!","smile","base","angry","L")
     call ton_main(".......................","base","base","base","ahegao")
     call ast_main("What shall I have her do, Professor?","smile","base","base","mid")
@@ -638,7 +661,7 @@ label ag_st_imperio_E4:
             pause.5
 
             call ast_main("","clench","wink","worried","mid", xpos="base", ypos="base")
-            call ton_main("","base","base","base","L", xpos="490", ypos="base", flip=True)
+            call ton_main("","base","base","base","L", xpos="500", ypos="base", flip=True)
             pause.8
 
             call ton_main("........................","horny","base","angry","L")
@@ -701,7 +724,10 @@ label ag_st_imperio_E4:
     # Remove top.
     call play_sound("equip")
     $ tonks_class.strip("top")
-    $ tonks_class.strip("bra")
+    if tonks_class.get_worn("bra"): # Remove bra if True
+        call ast_main("and your bra...","clench","base","base","down")
+        call play_sound("equip")
+        $ tonks_class.strip("bra")
     call ton_main("","horny","base","angry","ahegao")
     call ast_main("","annoyed","closed","base","mid")
     call ctc
@@ -764,7 +790,7 @@ label ag_st_imperio_E4:
     hide screen bld1
     with d3
     pause.5
-    call ast_chibi("stand","500","base", flip=True)
+    call ast_chibi("reset","530","base", flip=True)
     with d3
     pause.2
 
@@ -828,6 +854,7 @@ label ag_st_imperio_E4:
 
     $ astoria_busy = True
     $ tonks_busy = True
+    $ tonks_class.wear("all") # Wear all stripped clothing
 
     jump main_room
 
@@ -836,7 +863,7 @@ label ag_st_imperio_E5:
     stop music fadeout 1.0
     call play_sound("door")
     call ton_chibi("stand","desk","base")
-    call ast_chibi("stand","500","base") # Make sure it's slightly to the left of Tonks' chibi.
+    call ast_chibi("stand","530","base") # Make sure it's slightly to the left of Tonks' chibi.
     with d3
     pause.8
 
@@ -867,7 +894,9 @@ label ag_st_imperio_E5:
     call ast_main("Okay, Professor...","annoyed","base","base","R")
 
     call ton_main("You may start now, Astoria...","base","happyCl","base","mid")
+    call ast_chibi("wand","530","base")
     call ton_main("...................","base","closed","base","mid")
+    call ast_chibi("wand_casting","530","base")
     call ast_main("...................","annoyed","base","base","down")
     call ton_main("Astoria? Would you cast the curse - please?","open","base","base","L")
     call ast_main("...................","clench","base","base","down")
@@ -882,6 +911,7 @@ label ag_st_imperio_E5:
     pause.2
 
     # chibi spell animation.
+    call ast_chibi("wand_imperio","530","base")
     call play_sound("spell")
     with hpunch
     pause.8
@@ -892,6 +922,7 @@ label ag_st_imperio_E5:
 
     g9 "(Here we go!)"
     call ast_main("..............","grin","base","base","L")
+    call ast_chibi("wand","530","base")
     call ast_main("What should we start with, Professor?","open","base","worried","mid")
     m "Let's just try the same things as last time..."
     m "Ask her to take that coat off first."
@@ -1037,7 +1068,7 @@ label ag_st_imperio_E5:
     call nar(">After giving you a playful wink, Tonks suggestively climbs on top of your desk, getting a good glimps of your rock-hard cock...")
     pause 1
 
-    call ast_chibi("stand","desk","base") # Still in wand pose.
+    call ast_chibi("wand","desk","base") # Still in wand pose.
     call ton_chibi("stand","on_desk","on_desk")
     hide screen blkfade
     with d5
@@ -1051,11 +1082,11 @@ label ag_st_imperio_E5:
     call ast_main("Move your hips!","open","narrow","base","L", xpos="base", ypos="base")
     call ton_main("............","base","base","base","mid")
     call ast_main("She's really doing everything I tell her!","smile","base","angry","mid")
-
-    call ast_chibi("stand","desk","base") # No wand pose.
     call ast_main("Look how easy it is, Professor!","smile","closed","base","mid", emote="03" ,trans="hpunch")
 
     call nar(">Astoria joyfully jumps up and down on the spot, making a happy squeal...","start")
+    show screen astoria_wand_drop
+    call ast_chibi("reset","desk","base") # No wand pose.
     call nar(">Unknowingly dropping her wand...","end")
 
     call ton_main("","upset","base","base","R")
@@ -1087,11 +1118,11 @@ label ag_st_imperio_E5:
     call ast_main("Do \"that\" thing...","angry","base","worried","mid")
     call ton_main(".............","base","base","raised","mid", emote="03")
 
-    stop music fadeout 2.0
     call hide_characters
+    with d3
     hide screen bld1
-    show screen blkfade
-    with d5
+    #show screen blkfade
+    #with d5
     pause.2
 
     call play_sound("door")
@@ -1104,6 +1135,7 @@ label ag_st_imperio_E5:
 
     # Snape enters...
     call sna_main("Genie, I was wondering if you could help me with-{w=0.8}{nw}","snape_35", ypos="head")
+    stop music fadeout 2.0
     call play_sound("scratch")
     call sna_main("!!!","snape_11", ypos="head")
     hide screen bld1
@@ -1179,9 +1211,12 @@ label ag_st_imperio_E5:
 
     call ast_walk("270","290",speed=0.5)
     call ast_walk("370","290",speed=0.6, hide_screens=False)
-    call ast_walk("mid","base",speed=1.4, hide_screens=False)
+    call ast_walk("desk","base",speed=1.4, hide_screens=False)
+    call ast_chibi("stand","desk","base", flip=False)
+    with d3
     pause.1
     call play_sound("lock")
+    hide screen astoria_wand_drop
     pause.5
 
     call sna_main("You may leave, Astoria.","snape_09", ypos="head")
@@ -1409,5 +1444,26 @@ label ag_st_imperio_E5:
     $ snape_busy = True
     $ tonks_busy = True
     $ astoria_busy = True
+    
+    $ tonks_class.wear("all") # Wear all stripped clothing
 
     jump main_room
+    
+# astoria wand drop animation screen
+screen astoria_wand_drop():
+    zorder 4
+    
+    add "characters/astoria/chibis/wand.png":
+        at transform:
+            zoom 0.35
+            rotate -25
+            xanchor 0
+            yoffset -60
+            xpos 530-90
+            ypos 400
+
+            easeout_cubic 0.5 yoffset 0 rotate 0
+            linear 0.15 rotate 5 yoffset -5
+            linear 0.15 rotate 10 yoffset 10
+            linear 0.15 rotate 15 yoffset 5
+            linear 0.15 rotate 25 yoffset 15

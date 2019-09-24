@@ -101,26 +101,42 @@ init python:
                 ton_chibi_shoes = "blank"
         elif name == "astoria":
             imagepath = "characters/astoria/chibis/"
-            animation = "_"+ast_chibi_animation if ast_chibi_animation else ""
+            animation = "/"+ast_chibi_animation+"/" if ast_chibi_animation else ""
             status = "_"+ast_chibi_status if ast_chibi_status else ""
             global ast_chibi_gloves, ast_chibi_top, ast_chibi_bottom, ast_chibi_robe, ast_chibi_shoes, ast_chibi_walk_shoes, ast_chibi_stand, ast_chibi_walk
             ast_chibi_gloves, ast_chibi_top, ast_chibi_bottom, ast_chibi_robe, ast_chibi_shoes, ast_chibi_walk_shoes, ast_chibi_stand, ast_chibi_walk, ast_chibi_shoes = "blank", "blank", "blank", "blank", "blank", "blank", "ch_ast blink", "ch_ast walk", "ch_ast walk_shoes"
+            
+            if ast_chibi_animation == "wand":
+                ast_chibi_stand = "ch_ast wand_stand"
+                #ast_chibi_walk = "ch_ast walk"
+            elif ast_chibi_animation == "wand_casting":
+                ast_chibi_stand = "ch_ast wand_casting"
+                #ast_chibi_walk = "ch_ast walk"
+            elif ast_chibi_animation == "wand_imperio":
+                ast_chibi_stand = "ch_ast wand_imperio"
+                #ast_chibi_walk = "ch_ast walk"
 
             if astoria_class.get_worn("top"):
-                ast_chibi_top = imagepath+"ag_top"+animation+status+".png" if animation else imagepath+"ag_top.png"
+                ast_chibi_top = imagepath+animation+"ag_top"+status+".png" if animation else imagepath+"ag_top.png"
 
             if astoria_class.get_worn("bottom"):
-                ast_chibi_bottom = imagepath+"ag_skirt"+animation+status+".png" if animation else imagepath+"ag_skirt.png"
+                ast_chibi_bottom = imagepath+animation+"ag_skirt"+status+".png" if animation else imagepath+"ag_skirt.png"
 
-            if astoria_class.get_worn("robe"):
-                ast_chibi_robe = imagepath+"ag_robe"+animation+status+".png" if animation else imagepath+"ag_robe.png"
+            if astoria_class.get_worn("robe") and not animation:
+                ast_chibi_robe = imagepath+animation+"ag_robe"+status+".png" if animation else imagepath+"ag_robe.png"
 
             if astoria_class.get_worn("bottom") or astoria_class.get_worn("stockings"):
                 if not status == "_move":
-                    ast_chibi_shoes = imagepath+"ag_shoes"+animation+".png"
+                    if ast_chibi_animation == "wand_imperio":
+                        ast_chibi_shoes = "ch_ast imperio_shoes"
+                    else:
+                        ast_chibi_shoes = imagepath+animation+"ag_shoes.png"
                 else:
                     if animation:
-                        ast_chibi_shoes = imagepath+"ag_shoes"+animation+".png"
+                        if ast_chibi_animation == "wand_imperio":
+                            ast_chibi_shoes = "ch_ast imperio_shoes"
+                        else:
+                            ast_chibi_shoes = imagepath+animation+"ag_shoes.png"
             else:
                 ast_chibi_shoes = "blank"
         return

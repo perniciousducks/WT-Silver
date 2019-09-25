@@ -13,11 +13,11 @@ label ag_st_imperio:
         call ast_main("Do I really have to go there?","clench","base","base","mid")
         g9 "I could have you scrub the toilets instead..."
         call ast_main("Please don't, Sir!","clench","base","worried","mid")
-        m "Tonks has some interesting lessons planned for you!{w=0.8} I'm sure you'll like it."
+        m "Tonks has some interesting lessons planned for you!{w=0.8} I'm sure you'll enjoy it."
         call ast_main("Oh yeah?","open","base","base","mid")
         call ast_main("Well, I doubt it...","annoyed","narrow","angry","R")
         call ast_main("At least it's not gonna be boring with her.","open","closed","base","mid")
-        call ast_main("I once had to spend a whole day listening to Mcgonagall - prattle on about the importance of a transfiguration spell.","annoyed","narrow","angry","R")
+        call ast_main("I once had to spend a whole day listening to McGonagall prattle on about the importance of a transfiguration spell.","annoyed","narrow","angry","R")
         call ast_main("When all it did was turn a stupid rat yellow!","annoyed","base","base","ahegao")
         call ast_main("I wanna learn something that's actually fun!","annoyed","narrow","base","down")
         m "Like an unforgivable curse?"
@@ -25,12 +25,12 @@ label ag_st_imperio:
         m "Good. Because your teacher has offered to teach one of them to you, properly."
         call ast_main("She offered to do...{w=0.8} what?","clench","base","base","mid")
         m "That's what I said!"
-        call ast_main("I thought it was meant to be a punishment?","smile","base","base","L")
+        call ast_main("I thought this was meant to be a punishment?","smile","base","base","L")
         call ast_main("That's wicked!","smile","narrow","angry","down")
         m "Off you go then. She's waiting for you..."
         m "Both of you return to my office once you are done."
         call ast_main("Of course!","smile","closed","base","mid")
-        call ast_main("See ya later!","smile","base","base","mid")
+        call ast_main("See ya later!","smile","base","base","mid") #smell ya later newbie! - gary oak
 
     elif ag_st_imperio.points == 3: # Intro for 4th event.
         call ast_main(face="annoyed", xpos="right", ypos="base", trans="fade")
@@ -39,7 +39,7 @@ label ag_st_imperio:
         call ast_main("I don't want to be yelled at by her...","annoyed","narrow","base","down")
         m "Nobody's gonna yell at you."
         call ast_main("If you say so, Professor.","annoyed","base","base","mid")
-        m "Return here after your lessons."
+        m "Return here after your lesson."
         call ast_main("...","annoyed","base","base","R")
 
     else:
@@ -48,7 +48,7 @@ label ag_st_imperio:
         call ast_main("Yes, Professor.","smile","base","base","mid")
         g9 "I'm eager to see another demonstration of your progress!"
         m "Return to my office with your teacher afterwards."
-        call ast_main("Until later!","smile","base","base","R")
+        call ast_main("Until then, Professor!","smile","base","base","R")
 
     call play_sound("door")
     call hide_characters
@@ -292,7 +292,7 @@ label ag_st_imperio_E2:
     call ton_main("This should be fun!","smile","happyCl","base","mid")
     m "Very good."
 
-    call ton_main("Now, Astoria, just like last time - you will cast the Imperius curse on me...","open","base","base","L")
+    call ton_main("Now, Astoria, just as last time - you will cast the Imperius curse on me...","open","base","base","L")
     call ton_main("And I'll do my best to resist-","open","closed","base","mid")
 
     # Astoria casts imperio.
@@ -641,7 +641,7 @@ label ag_st_imperio_E3:
     m "That's fair."
     m "Time is precious, after all..."
     call ast_main("I've spent enough time today getting lectured by her...","annoyed","base","angry","L")
-    m "Isn't she supposed to do that? Teaching you?"
+    m "Isn't she supposed to do that? Teach you?"
     call ast_main("I don't need to be taught!","annoyed","narrow","angry","mid")
     call ast_main("I already know how to cast the spell.","clench","base","angry","mid")
     m "Surely there is some room for you to improve."
@@ -663,10 +663,10 @@ label ag_st_imperio_E3:
     call ton_main("...","upset","base","worried","ahegao")
     call ast_main("If I can pull off the Imperius curse on Professor Tonks...","open","closed","base","mid")
     call ast_main("Any of the other girls will be easy game for me!","clench","narrow","angry","down") # Game as in "prey".
-    call ast_main("I'll make them suffer for ever making fun of me!","clench","closed","angry","mid")
+    call ast_main("I'll make them rue the day they ever made fun of me!","clench","closed","angry","mid")
     call ton_main("...................................................","upset","base","angry","ahegao", hair="annoyed") # Angry at Astoria
     m "......................."
-    call ast_main("Tomorrow, I shall have Susan walk through school - parading those ridiculous breasts of hers! That'll show her!","angry","narrow","angry","R")
+    call ast_main("Tomorrow, I shall have Susan walk through school - parading those ridiculous breasts of hers for all to see! That'll show her!","angry","narrow","angry","R")
     call ton_main("!!!","angry","base","angry","R", hair="angry") # Very angry
     call ast_main("And then shove her into our common room - and all the boys will laugh at her cow udders!","annoyed","narrow","angry","R")
     call ton_main("*Tzzzzz!*...","angry","closed","angry","mid", emote="01")
@@ -700,12 +700,12 @@ label ag_st_imperio_E3:
     m "So, should we stop?"
     call ton_main("..................","upset","base","worried","R", hair="neutral")
     call ton_main("Only if she refuses to follow our rules...","open","base","angry","mid")
-    call ton_main("For as long as what we're doing happens within these walls, it shouldn't be too bad.","open","base","worried","R")
+    call ton_main("As long as what we're doing stays within these walls, it shouldn't be too bad.","open","base","worried","R")
     call ton_main("And besides, Imperio isn't the worst curse you could be a target of, all things considered...","upset","base","worried","down")
     m "I thought it was dangerous?"
     call ton_main("Only if you use it in such a way!","open","base","sad","mid")
     call ton_main("The curse itself is quite harmless...","base","base","worried","down")
-    call ton_main("And it feels really good when you're under the effects of it.","base","base","base","mid")
+    call ton_main("And it feels really good when you're under its effect...","base","base","base","mid")
     m "It does?"
     call ton_main("*Mhmm*... yeah...","horny","base","angry","mid", hair="horny")
     call ton_main("It's so goood! {image=textheart}","open_wide_tongue","base","worried","ahegao")
@@ -1643,16 +1643,16 @@ label ag_st_imperio_E5:
     $ snape_busy = True
     $ tonks_busy = True
     $ astoria_busy = True
-    
+
     $ tonks_class.wear("all") # Wear all stripped clothing
 
     jump end_ag_st_imperio
-    
+
 # astoria wand drop animation screen
 screen astoria_wand_drop():
     tag wand
     zorder 2
-    
+
     add "characters/astoria/chibis/wand.png":
         at transform:
             zoom 0.35

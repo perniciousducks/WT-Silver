@@ -132,7 +132,7 @@ label update_tonks:
 
 
 label end_tonks_event:
-    call tonks_chibi("hide")
+    call ton_chibi("hide")
     hide screen tonks_main
     with d3
     pause.5

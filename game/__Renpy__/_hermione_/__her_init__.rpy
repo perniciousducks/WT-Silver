@@ -729,13 +729,12 @@ default hg_pf_blowjob = event_class(title = "Suck it!", start_label = "hg_pf_blo
 
     [
     ["hg_pf_blowjob_T1_intro_E1"], # First time blowjob
-    ["hg_pf_blowjob_T1_intro_E2"], # Second time blowjob
+    ["hg_pf_blowjob_T1_intro_E2"], # Snape visit
     ["hg_pf_blowjob_T1_repeat"]   # Repeated blowjob
     ],
 
     [
     ["hg_pf_blowjob_T2_intro_E1"], # Couple of choices
-    ["hg_pf_blowjob_T2_intro_E2"], # Facefuck
     ["hg_pf_blowjob_T2_hidden_repeat"], # Repeat: Random visit
     ["hg_pf_blowjob_T2_repeat"]    # Repeat: Regular + Facefuck
     ]

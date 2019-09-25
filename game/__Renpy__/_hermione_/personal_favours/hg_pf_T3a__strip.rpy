@@ -1105,10 +1105,24 @@ label hg_pf_strip_T2:
     call ctc
 
     call play_music("playful_tension") # SEX THEME.
-
-    "Dev Note" "Add section here"
-
-    call nar(">Hermione undoes the last button of her shirt...")
+    call her_main("...","base","glance", xpos="mid", ypos="base")
+    m "Yes, very nice."
+    call her_main("...","annoyed","down")
+    call nar("Hermione hastily starts pulling at her top...")
+    m "Slowly, please..."
+    m "There's no rush."
+    call her_main("I'm not!","open","angry")
+    call her_main("It's just... it's stuck.","disgust","down_raised")
+    g9 "Would you like some help with it?"
+    if her_tier <= 5:
+        call her_main("No...","annoyed","angry")
+        call her_main("I can do it myself, [hermione_name].","open","closed")
+    else:
+        call her_main("No, [genie_name].","base","glance")
+        call her_main("Just enjoy the show...","soft","glance")
+        g9 "I will, [hermione_name]."
+    call her_main("...","base","down")
+    call nar(">Hermione pulls her shirt over her head...")
 
     $ hermione_wear_bra = False
     call set_her_action("lift_top")

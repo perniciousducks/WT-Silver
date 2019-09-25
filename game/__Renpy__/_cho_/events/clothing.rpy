@@ -1,9 +1,9 @@
 
 
 
-label cho_random_clothing:
+label cho_summon_setup:
 
-    $ tonks_wardrobe_unlocked = True
+    $ cho_wardrobe_unlocked = True
 
     $ cho_class.wear("all")
 
@@ -22,9 +22,11 @@ label cho_random_clothing:
             $ cho_class.unequip("all")
             $ cho_class.equip(cho_outfit_trainee)
 
+            call play_sound("door")
             call cho_chibi("stand","mid","base")
             with d3
 
+            call play_music("cho_theme")
             call cho_main("","base","base","base","mid", xpos="mid", ypos="base", animation=moveFade)
             $ cho_animation = None
             call ctc
@@ -54,9 +56,11 @@ label cho_random_clothing:
             $ cho_class.unequip("all")
             $ cho_class.equip(cho_outfit_party)
 
+            call play_sound("door")
             call cho_chibi("stand","mid","base")
             with d3
 
+            call play_music("cho_theme")
             call cho_main("","base","base","base","mid", xpos="mid", ypos="base", animation=moveFade)
             $ cho_animation = None
             call ctc
@@ -81,10 +85,11 @@ label cho_random_clothing:
 
             return
 
-
+    call play_sound("door")
     call cho_chibi("stand","mid","base")
     with d3
 
+    call play_music("cho_theme")
     if cho_mood != 0:
         call cho_main("[cho_genie_name]...", face="annoyed", xpos="base", ypos="base", animation=moveFade)
         ">Cho is upset with you."

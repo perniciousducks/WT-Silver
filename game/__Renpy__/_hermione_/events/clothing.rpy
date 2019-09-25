@@ -2,7 +2,7 @@
 
 #Door Events (Hermione wears random clothing.)
 
-label hermione_random_clothing:
+label hermione_summon_setup:
     call load_hermione_clothing_saves
 
     $ hermione_wear_top         = True
@@ -17,6 +17,7 @@ label hermione_random_clothing:
 
         call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
+        call play_music("hermione_theme")
         call her_main("","base","base", xpos="mid", ypos="base")
         call ctc
 
@@ -86,9 +87,12 @@ label hermione_random_clothing:
                 $ h_stockings = "stockings_cute"
 
                 call update_her_uniform
+
+                call play_sound("door")
                 call her_chibi("stand","mid","base")
                 with d3
-                pause.2
+
+                call play_music("hermione_theme")
                 call her_main("","base","base", xpos="base", ypos="base")
                 call ctc
 
@@ -105,9 +109,11 @@ label hermione_random_clothing:
 
             else:
                 call update_her_uniform
+                call play_sound("door")
                 call her_chibi("stand","mid","base")
                 with d3
-                pause.2
+
+                call play_music("hermione_theme")
                 call her_main("","base","base", xpos="base", ypos="base")
 
             #Unlocks rewards.
@@ -132,9 +138,11 @@ label hermione_random_clothing:
                 $ h_stockings = "stockings_striped_1"
 
                 call update_her_uniform
+                call play_sound("door")
                 call her_chibi("stand","mid","base")
                 with d3
-                pause.2
+
+                call play_music("hermione_theme")
                 call her_main("","base","base", xpos="base", ypos="base")
                 call ctc
 
@@ -164,9 +172,11 @@ label hermione_random_clothing:
 
             else:
                 call update_her_uniform
+                call play_sound("door")
                 call her_chibi("stand","mid","base")
                 with d3
-                pause.2
+
+                call play_music("hermione_theme")
                 call her_main("","base","base", xpos="base", ypos="base")
 
             #Unlocks rewards.
@@ -189,9 +199,11 @@ label hermione_random_clothing:
                 $ h_bottom = "pants_jeans_long"
 
                 call update_her_uniform
+                call play_sound("door")
                 call her_chibi("stand","mid","base")
                 with d3
-                pause.2
+
+                call play_music("hermione_theme")
                 call her_main("","disgust","down", xpos="base", ypos="base")
                 call ctc
 
@@ -208,9 +220,11 @@ label hermione_random_clothing:
 
             else:
                 call update_her_uniform
+                call play_sound("door")
                 call her_chibi("stand","mid","base")
                 with d3
-                pause.2
+
+                call play_music("hermione_theme")
                 call her_main("","base","base", xpos="base", ypos="base")
 
             #Unlocks rewards.
@@ -221,10 +235,11 @@ label hermione_random_clothing:
 
             $ hermione_wear_robe = True
             call update_her_uniform
-
+            call play_sound("door")
             call her_chibi("stand","mid","base")
             with d3
 
+            call play_music("hermione_theme")
             if her_mood > 1:
                 call her_main("","annoyed","baseL", xpos="base", ypos="base")
             else:
@@ -250,9 +265,11 @@ label hermione_random_clothing:
                 $ h_stockings = "stockings_pantyhose"
 
                 call update_her_uniform
+                call play_sound("door")
                 call her_chibi("stand","mid","base")
                 with d3
-                pause.2
+
+                call play_music("hermione_theme")
                 call her_main("","base","base", xpos="base", ypos="base")
                 call ctc
 
@@ -266,9 +283,11 @@ label hermione_random_clothing:
 
             else:
                 call update_her_uniform
+                call play_sound("door")
                 call her_chibi("stand","mid","base")
                 with d3
-                pause.2
+
+                call play_music("hermione_theme")
                 call her_main("","base","base", xpos="base", ypos="base")
 
             #Unlocks rewards.
@@ -289,9 +308,11 @@ label hermione_random_clothing:
                 $ h_stockings = "stockings_pantyhose"
 
                 call update_her_uniform
+                call play_sound("door")
                 call her_chibi("stand","mid","base")
                 with d3
-                pause.2
+
+                call play_music("hermione_theme")
                 call her_main("","base","base", xpos="base", ypos="base")
                 call ctc
 
@@ -305,9 +326,11 @@ label hermione_random_clothing:
 
             else:
                 call update_her_uniform
+                call play_sound("door")
                 call her_chibi("stand","mid","base")
                 with d3
-                pause.2
+
+                call play_music("hermione_theme")
                 call her_main("","base","base", xpos="base", ypos="base")
 
             #Unlocks rewards.
@@ -316,13 +339,15 @@ label hermione_random_clothing:
 
 
     #Resets her clothing.
+    call play_sound("door")
     call her_chibi("stand","mid","base")
     with d3
-    pause.2
+
     call load_hermione_clothing_saves
     call update_her_uniform
 
     #Hermione greeting.
+    call play_music("hermione_theme")
     if her_mood >= 1:
 
         call set_her_face(change="all")

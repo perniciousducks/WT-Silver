@@ -1,28 +1,16 @@
 
 
 label summon_astoria:
-    call play_music("astoria_theme")
-    call play_sound("door")
-    call ast_chibi("stand","mid","base")
-    with d3
 
-    ### RANDOM CLOTHING EVENTS ###
-    call astoria_door_event
-
-    if one_of_ten < 4:
-        call ast_main("Heya, [genie_name]!", face="neutral", xpos="base",ypos="base")
-    elif one_of_ten < 7:
-        call ast_main("Hello, [genie_name].", face="neutral", xpos="base",ypos="base")
-    else:
-        call ast_main("Hi, [genie_name]!", face="happy", xpos="base",ypos="base")
+    call astoria_summon_setup
 
     $ active_girl = "astoria"
     $ astoria_busy = True
 
     label astoria_requests:
-    call ast_main(xpos="base",ypos="base")
+
     $ hide_transitions = False
-    
+
     menu:
 
         # Talk
@@ -41,7 +29,7 @@ label summon_astoria:
 
         # Wardrobe
         "-Wardrobe-" if astoria_wardrobe_unlocked:
-            call ast_main(xpos="wardrobe",ypos="base", face="neutral")
+            call ast_main(xpos="wardrobe", ypos="base", face="neutral")
             call expression 't_wardrobe' pass (return_label="astoria_requests", char_label="ast_main")
 
         "{color=#858585}-Hidden-{/color}" if not astoria_wardrobe_unlocked:
@@ -61,7 +49,7 @@ label summon_astoria:
         # Dismiss
         "-Dismiss her-":
             stop music fadeout 1.0
-            
+
             if daytime:
                 call ast_main("I will go back to classes then, [ast_genie_name].", face="neutral")
             else:
@@ -71,7 +59,7 @@ label summon_astoria:
 
             $ astoria_busy = True
             $ astoria_class.wear("all")
-            
+
             jump main_room
 
 
@@ -125,7 +113,7 @@ label person_is_busy:
     else:
         m "Seems like she's already asleep."
     return
-    
+
 label spell_not_known:
     call nar("You haven't unlocked this spell yet.")
     return

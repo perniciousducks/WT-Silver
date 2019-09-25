@@ -3,14 +3,12 @@
 label summon_tonks:
     call play_music("tonks_theme")
     call play_sound("door")
-    call ton_chibi("stand","mid","base")
-    with d3
 
     $ active_girl = "tonks"
     $ tonks_busy = True
     call update_ton_tier
-    
-    call tonks_random_clothing
+
+    call tonks_summon_setup
 
     label tonks_requests:
     $ tonks_class.get_cloth("hair").color = tonks_haircolor

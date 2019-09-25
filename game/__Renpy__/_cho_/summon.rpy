@@ -1,11 +1,11 @@
 
 
 label summon_cho:
-    call play_music("cho_theme")
 
     $ active_girl = "cho"
     $ cho_busy = True
-    call cho_random_clothing
+
+    call cho_summon_setup
 
     label cho_requests:
 

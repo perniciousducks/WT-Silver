@@ -133,7 +133,7 @@ label hg_pf_talk_T1: # Call label
             m "Yes, what a tragedy that was..."
             call her_main("Exactly! I'm glad you understand, [genie_name].","open","angry")
 
-    call her_main("Come to think of it, I don't feel like talking about it anymore...","clench","down")
+    call her_main("Come to think of it, I don't feel like talking about it anymore...","annoyed","down")
     m "Alright, what else has happened lately?"
     call her_main("Em... Well, I'm doing pretty well at herbology...","annoyed","baseL")
     call her_main("I mean, I always score the top marks, but I have been studying really hard anyway...","open","closed")

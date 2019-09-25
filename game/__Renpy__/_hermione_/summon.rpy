@@ -1,14 +1,12 @@
 
 
 label summon_hermione:
-    call play_music("hermione_theme")
-    call play_sound("door")
 
     call update_hermione
     call update_her_tier
 
     ### RANDOM CLOTHING EVENTS ###
-    call hermione_random_clothing
+    call hermione_summon_setup
 
     label hermione_requests:
 

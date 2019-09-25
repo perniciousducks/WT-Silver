@@ -31,7 +31,7 @@ label tonks_hangout:
     if her_tier >= 2 and not tonks_requests_unlocked:
         jump hang_with_tonks_E2 # Unlocks Public Requests.
 
-    if ton_friendship >= 10 and not hang_with_tonks.E3_complete:
+    if her_tier >= 2 and ton_friendship >= 20 and not hang_with_tonks.E3_complete:
         $ ag_event_pause += 2 # Astoria intro happens in 2 days.
         jump hang_with_tonks_E3 # Starts Susan/Astoria intro.
 
@@ -56,6 +56,8 @@ label tonks_hangout:
         else:
             ">You spend the [temp_txt] hanging out with Tonks."
         call bld("hide")
+
+    label end_tonks_hangout_points:
 
     if ton_friendship < 100: # max
         if game_difficulty < 2:      #Easy difficulty
@@ -218,10 +220,7 @@ label hang_with_tonks_E1:
 
     $ hang_with_tonks.E1_complete = True
 
-    if daytime:
-        jump night_start
-    else:
-        jump day_start
+    jump end_tonks_hangout_points
 
 
 label hang_with_tonks_E2:
@@ -255,10 +254,7 @@ label hang_with_tonks_E2:
 
     $ hang_with_tonks.E2_complete = True
 
-    if daytime:
-        jump night_start
-    else:
-        jump day_start
+    jump end_tonks_hangout_points
 
 
 label hang_with_tonks_E3:
@@ -325,10 +321,7 @@ label hang_with_tonks_E3:
 
     $ hang_with_tonks.E3_complete = True
 
-    if daytime:
-        jump night_start
-    else:
-        jump day_start
+    jump end_tonks_hangout_points
 
 
 label hang_with_tonks_E4:
@@ -354,10 +347,7 @@ label hang_with_tonks_E4:
 
     $ hang_with_tonks.E4_complete = True
 
-    if daytime:
-        jump night_start
-    else:
-        jump day_start
+    jump end_tonks_hangout_points
 
 
 

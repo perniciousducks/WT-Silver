@@ -123,11 +123,16 @@ label update_tonks:
     $ update_chibi_image("tonks")
     $ tonks_flip = 1
     $ ton_cloth_pile = False
+
+    # Reset temporal hair colour
+    $ tonks_class.get_cloth("hair").color = tonks_haircolor
+    $ tonks_class.get_cloth("hair").cached = False
+
     return
 
 
 label end_tonks_event:
-    #call tonks_chibi("hide")
+    call tonks_chibi("hide")
     hide screen tonks_main
     with d3
     pause.5
@@ -137,11 +142,8 @@ label end_tonks_event:
     $ active_girl = None
     $ tonks_busy = True
 
-    # Reset temporal hair colour
-    $ tonks_class.get_cloth("hair").color = tonks_haircolor
-    $ tonks_class.get_cloth("hair").cached = False
-
     jump main_room
+
 
 screen tonks_main():
     tag tonks_main

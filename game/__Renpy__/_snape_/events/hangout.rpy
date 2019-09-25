@@ -59,7 +59,7 @@ label snape_hangout:
             $ sna_support += 1
         $ ss_he_story.start()
 
-    else:
+    label end_snape_hangout:
         show screen with_snape(ani=True)
         call bld
         $ renpy.play('sounds/win_04.mp3')
@@ -67,9 +67,7 @@ label snape_hangout:
         ">You spend the evening hanging out with Professor Snape.\n>Your relationship with him has improved."
         hide screen notes
 
-
-    label end_snape_hangout:
-        pass
+    label end_snape_hangout_points:
 
     if sna_friendship < 100: # max
         if game_difficulty < 2:      #Easy difficulty
@@ -730,7 +728,7 @@ label ss_he_story_E1:
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label ss_he_story_intro_E2:
@@ -754,7 +752,7 @@ label ss_he_story_intro_E2:
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label ss_he_story_intro_E3:
@@ -775,7 +773,7 @@ label ss_he_story_intro_E3:
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label ss_he_story_intro_E4:
@@ -804,7 +802,7 @@ label ss_he_story_intro_E4:
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 
@@ -837,7 +835,7 @@ label ss_he_story_intro_E5:
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label ss_he_story_E6:
@@ -863,7 +861,7 @@ label ss_he_story_E6:
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label ss_he_story_intro_E7:
@@ -896,7 +894,7 @@ label ss_he_story_intro_E7:
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label ss_he_story_intro_E8:
@@ -924,7 +922,7 @@ label ss_he_story_intro_E8:
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label ss_he_story_intro_E9: # Replace this event.
@@ -959,7 +957,7 @@ label ss_he_story_intro_E9: # Replace this event.
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label ss_he_story_intro_E10:
@@ -997,7 +995,7 @@ label ss_he_story_intro_E10:
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label ss_he_story_intro_E11:
@@ -1023,7 +1021,7 @@ label ss_he_story_intro_E11:
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label ss_he_story_intro_E12:
@@ -1056,7 +1054,7 @@ label ss_he_story_intro_E12:
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label ss_he_story_intro_E13:
@@ -1083,7 +1081,7 @@ label ss_he_story_intro_E13:
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label ss_he_story_E14:
@@ -1112,7 +1110,7 @@ label ss_he_story_E14:
     call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label ss_he_story_intro_E15:
@@ -1151,10 +1149,9 @@ label ss_he_story_intro_E15:
     ">Congratulations. If this were a \"dating sim\" you would be getting the ending with Severus Snape."
     ">The \"Slytherin\" house point payout has increased greatly and reached it's maximum level as well."
 
-    call sly_plus
     call hide_blktone
 
-    jump end_snape_hangout
+    jump end_snape_hangout_points
 
 
 label sly_plus:

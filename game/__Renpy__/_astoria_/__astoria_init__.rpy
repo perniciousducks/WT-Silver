@@ -36,7 +36,7 @@ default astoria_wardrobe_unlocked = False
 default chitchated_with_astoria   = False
 
 # Names
-default astoria_name   = "Miss Greengrass"
+default astoria_name   = "Astoria"
 default ast_genie_name = "Sir"
 default ast_susan_name = "Cow"
 default ast_tonks_name = "Old Hag"
@@ -69,7 +69,7 @@ default gave_astoria_gift = False
 
 # Imperius Curse
 default ag_st_imperio = event_class(
-    title = "Imperio Curse Training", start_label = "ag_st_imperio", start_tier = 1,
+    title = "Imperio Training", start_label = "ag_st_imperio", start_tier = 1,
     events = [
         [
             ["ag_st_imperio_E1"],

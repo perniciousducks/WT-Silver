@@ -34,7 +34,7 @@ label hg_pf_admire_panties:
 
     hide screen blkfade
     if her_tier <= 2:
-        call her_main("..................","base","baseL", xpos="mid", ypos="base", trans="fade")
+        call her_main("..................","annoyed","baseL", xpos="mid", ypos="base", trans="fade")
     elif her_tier <= 5:
         call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
     else:
@@ -47,8 +47,8 @@ label hg_pf_admire_panties:
         m "[current_payout] points to \"Gryffindor\", [hermione_name]. Well done."
 
     if hg_pf_admire_panties.counter == 1: #First time.
-        call her_main("Another [current_payout] points...","smile","baseL")
-        her "Can't wait to tell the guys!"
+        call her_main("Another [current_payout] points...","base","down")
+        call her_main("Can't wait to tell the guys!","smile","happyCl")
         call her_main("Only that I can't actually tell them about any of this...","annoyed","angryL")
 
     call her_main("Will this be all then?","open","base")

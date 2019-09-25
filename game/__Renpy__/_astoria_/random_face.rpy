@@ -29,7 +29,7 @@ label set_ast_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
 
     if eyes != None:
         if eyes in ["neutral"]:
-            $ temp_eyes     = renpy.random.choice(["base","base","closed"])
+            $ temp_eyes     = renpy.random.choice(["base"])
         elif eyes in ["happy"]:
             $ temp_eyes     = renpy.random.choice(["base"])
         elif eyes in ["naughty","horny"]:

@@ -2,9 +2,6 @@
 
 label summon_cho:
     call play_music("cho_theme")
-    call play_sound("door")
-    call cho_chibi("stand","mid","base")
-    with d3
 
     $ active_girl = "cho"
     $ cho_busy = True

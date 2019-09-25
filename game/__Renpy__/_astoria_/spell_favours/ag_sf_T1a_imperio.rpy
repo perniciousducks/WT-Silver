@@ -2,8 +2,21 @@
 
 ### Susan Imperio Events ###
 
+label ag_se_imperio_sb: # Move label
+
+    $ ag_se_imperio_sb.start()
+
+    label end_ag_se_imperio_sb:
+
+    $ astoria_busy = True
+    $ susan_busy = True
+
+    jump main_room
+
+
+
 label ag_se_imperio_sb_E1:
-    call play_music("hermione_theme") #Should try astorias theme and see how it sounds
+    call play_music("astoria_theme")
     call blkfade
 
     call nar(">You summon Susan to your office.")
@@ -193,11 +206,7 @@ label ag_se_imperio_sb_E1:
     hide screen bld1
     with d3
 
-
-    $ astoria_busy = True
-    $ susan_busy = True
-
-    jump day_main_menu
+    jump end_ag_se_imperio_sb
 
 
 label ag_se_imperio_sb_E2:
@@ -444,17 +453,9 @@ label ag_se_imperio_sb_E2:
     m "Yes it was..."
     m "Good night."
 
-    hide screen astoria_main
-    with d3
-    pause.5
+    call ast_walk(action="leave", speed=2.5)
 
-    call nar(">Astoria and Susan turns to leave your office, Astoria skipping cheerfully as she goes...")
-
-
-    $ astoria_busy = True
-    $ susan_busy = True
-
-    jump day_main_menu
+    jump end_ag_se_imperio_sb
 
 
 label ag_se_imperio_sb_E3:
@@ -769,18 +770,13 @@ label ag_se_imperio_sb_E3:
     m "Ugh... uhm... good night."
     call ast_main("Good night, [ast_genie_name]!","grin","closed","base","mid")
 
-    call play_sound("door")
-    hide screen astoria_main
-    with d3
-    pause.5
+    call ast_walk(action="leave", speed=2.5)
 
+    call bld
     call nar(">Astoria and Susan head out of your office... Astoria skipping happily, humming all the way.")
     m "(That girl is even worse than me...)"
 
-    $ astoria_busy = True
-    $ susan_busy = True
-
-    jump day_main_menu
+    jump end_ag_se_imperio_sb
 
 
 

@@ -6,18 +6,75 @@
 
 label ag_st_imperio:
 
-    "Dev Note" "You send Astoria to Tonks"
+    if ag_st_imperio.points == 0: # Intro for 1st event.
+        call ast_main(face="neutral", xpos="right", ypos="base", trans="fade")
+        m "Ready for your first day of detention?"
+        call ast_main("No...","annoyed","base","base","R")
+        call ast_main("Do I really have to go there?","clench","base","base","mid")
+        g9 "I could have you scrub the toilets instead..."
+        call ast_main("Please don't, Sir!","clench","base","worried","mid")
+        m "Tonks has some interesting lessons planned for you!{w=0.8} I'm sure you'll like it."
+        call ast_main("Oh yeah?","open","base","base","mid")
+        call ast_main("Well, I doubt it...","annoyed","narrow","angry","R")
+        call ast_main("At least it's not gonna be boring with her.","open","closed","base","mid")
+        call ast_main("I once had to spend a whole day listening to Mcgonagall - prattle on about the importance of a transfiguration spell.","annoyed","narrow","angry","R")
+        call ast_main("When all it did was turn a stupid rat yellow!","annoyed","base","base","ahegao")
+        call ast_main("I wanna learn something that's actually fun!","annoyed","narrow","base","down")
+        m "Like an unforgivable curse?"
+        call ast_main("Yes.","annoyed","base","base","mid")
+        m "Good. Because your teacher has offered to teach one of them to you, properly."
+        call ast_main("She offered to do...{w=0.8} what?","clench","base","base","mid")
+        m "That's what I said!"
+        call ast_main("I thought it was meant to be a punishment?","smile","base","base","L")
+        call ast_main("That's wicked!","smile","narrow","angry","down")
+        m "Off you go then. She's waiting for you..."
+        m "Both of you return to my office once you are done."
+        call ast_main("Of course!","smile","closed","base","mid")
+        call ast_main("See yah later!","smile","base","base","mid")
+
+    elif ag_st_imperio.points == 3: # Intro for 4th event.
+        call ast_main(face="annoyed", xpos="right", ypos="base", trans="fade")
+        m "Time for another lesson, don't you think?"
+        call ast_main("Do I really have to go there again?","open","narrow","base","R")
+        call ast_main("I don't want to be yelled at by her...","annoyed","narrow","base","down")
+        m "Nobody's gonna yell at you."
+        call ast_main("If you say so, Professor.","annoyed","base","base","mid")
+        m "Return here after your lessons."
+        call ast_main("...","annoyed","base","base","R")
+
+    else:
+        call ast_main(face="happy", xpos="right", ypos="base", trans="fade")
+        m "Ready for another curse lesson?"
+        call ast_main("Yes, Professor.","smile","base","base","mid")
+        g9 "I'm eager to see another demonstration of your progress!"
+        m "Return to my office with your teacher afterwards."
+        call ast_main("Until later!","smile","base","base","R")
+
+    call play_sound("door")
+    call hide_characters
+    call ast_chibi("hide")
+    with d3
+
+    # Setup
+    # Equip temporary Tonks auror outfit.
+    # Equip temporary Astoria school outfit.
+    $ tonks_class.wear("all")
+    $ astoria_class.wear("all")
 
     $ ag_st_imperio.inProgress = True
+
+    $ astoria_busy = True
+    $ tonks_busy = True
 
     jump main_room
 
 
-label ag_se_imperio_sb: # Move label
+label end_ag_st_imperio:
 
-    $ ag_se_imperio_sb.start()
+    # Add Astoria spell stat?
 
-    label end_ag_se_imperio_sb:
+    $ tonks_busy = True
+    $ astoria_busy = True
 
     jump main_room
 
@@ -106,6 +163,7 @@ label ag_st_imperio_E1:
     with hpunch
     pause.8
 
+    call play_music("trance")
     call ast_main("","clench","base","angry","L", xpos="base", ypos="base")
     call ton_main(".........................","angry","wide","wide","ahegao", xpos="right", ypos="base") # shock
     call ton_main("*Aaaaaah*...","horny","base","base","ahegao", hair="horny") # inhales
@@ -175,6 +233,7 @@ label ag_st_imperio_E1:
     with fade
     pause.8
 
+    call play_music("tonks_theme")
     call ast_main("","annoyed","base","angry","mid", xpos="right", ypos="base")
     call ton_main("Oh my...","upset","base","worried","down", xpos="base", ypos="base")
     call ton_main("Well that was fun!","smile","happyCl","base","mid") # Happy
@@ -210,7 +269,7 @@ label ag_st_imperio_E1:
     call ton_chibi("hide")
     with d3
 
-    jump main_room
+    jump end_ag_st_imperio
 
 
 label ag_st_imperio_E2:
@@ -251,6 +310,7 @@ label ag_st_imperio_E2:
     with hpunch
     pause.8
 
+    call play_music("trance")
     call ast_main("","clench","base","angry","L", xpos="base", ypos="base")
     call ton_main(".........................","angry","wide","wide","ahegao", xpos="right", ypos="base") # shock
 
@@ -337,6 +397,7 @@ label ag_st_imperio_E2:
             with fade
             call ast_chibi(action="reset",xpos="530",ypos="base")
 
+            call play_music("astoria_theme")
             call ton_main("Oh wow...","angry","base","worried","down")
             call ton_main("You made me squeal like a pig!","smile","happyCl","base","mid")
             call ton_main("That was quite good!","base","base","base","mid")
@@ -374,6 +435,7 @@ label ag_st_imperio_E2:
             with hpunch
             pause.8
 
+            call play_music("trance")
             call ast_main("","clench","base","angry","L", xpos="base", ypos="base")
             call ton_main("*hmmm*.............","base","base","base","ahegao")
             call ast_chibi(action="wand",xpos="530",ypos="base")
@@ -414,6 +476,7 @@ label ag_st_imperio_E2:
             with fade
             pause.8
 
+            call play_music("tonks_theme")
             call ast_main("","annoyed","base","angry","mid", xpos="right", ypos="base")
             call ton_main("*huh*...","open","base","worried","mid", xpos="base", ypos="base", flip=False)
             call ton_main("Well that was something, wasn't it?","smile","happyCl","base","mid")
@@ -501,6 +564,7 @@ label ag_st_imperio_E2:
             with fade
             pause.8
 
+            call play_music("astoria_theme")
             call ast_main("","annoyed","base","base","mid", xpos="right", ypos="base")
             call ton_main("Ouch... That was painful!","angry","closed","angry","mid", xpos="base", ypos="base", flip=False)
             call ton_main("You nearly got me there.","smile","base","worried","mid")
@@ -527,21 +591,158 @@ label ag_st_imperio_E2:
 
             call bld
             m "And they say I'm the big, bad pervert..."
-            $ tonks_class.wear("all") # wear all previously stripped clothing pieces
-            jump main_room
+
+            jump end_ag_st_imperio
 
 
 label ag_st_imperio_E3:
-    # Astoria is more confident this time.
-    # Tonks sais that she almost want to do the command.
-    # Atoria lightens up hearing that.
-    # Tonks encourages her more, but to no success.
-    # Next time it will be a success for sure!
-    # Astoria leaves. After she's left, Tonks tells you how she barely felt anything...
+    stop music fadeout 1.0
+    call play_sound("door")
+    call ton_chibi("stand","desk","base")
+    call ast_chibi("stand","500","base") # Make sure it's slightly to the left of Tonks' chibi.
+    with d3
+    pause.8
 
-    "Dev Note" "Add 3rd event here."
+    call play_music("tonks_theme")
+    call ast_main("","annoyed","base","base","mid", xpos="right", ypos="base")
+    call ton_main("Well, Professor.","open","closed","base","mid", xpos="base", ypos="base")
+    call ton_main("We're back...","base","base","base","mid")
+    call ast_main("...","annoyed","base","base","L")
+    m "Did you make any progress today?"
+    call ton_main("Of course we did!","smile","happyCl","base","mid")
+    call ton_main("Professor, you aren't questioning my abilities as a teacher, are you?","base","base","angry","mid")
+    m "Of course not..."
+    g9 "You're very skilled at what you do!"
+    g9 "You've shown me many times."
+    call ton_main("Thank you! {image=textheart}","base","happyCl","base","mid")
+    call ast_main("*Ugh*...","clench","narrow","base","down") # Disgusted from the flirting?
 
-    jump main_room
+    call ton_main("I could teach you a thing or two as well, Professor.","base","base","angry","mid")
+    call ton_main("Even the great Albus Dumbledore doesn't know everything about-","horny","base","angry","mid")
+
+    # Astoria casts imperio.
+    hide screen tonks_main
+
+    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
+
+    call hide_characters
+    with d3
+    pause.2
+
+    # chibi spell animation.
+    with hpunch
+    pause.8
+
+    call ast_main("","clench","base","angry","L", xpos="base", ypos="base")
+    call ton_main("*hngh!*...","angry","wide","wide","ahegao", xpos="right", ypos="base") # shock
+
+    call ton_main("*Hmmm*...","base","base","base","ahegao", hair="horny")
+    call ast_main("Sir, I'm not here to listen to you two banter...","angry","closed","angry","mid")
+    m "That's fair."
+    m "Time is precious, after all..."
+    call ast_main("I've spent enough time today getting lectured by her...","annoyed","base","angry","L")
+    m "Isn't she supposed to do that? Teaching you?"
+    call ast_main("I don't need to be taught!","annoyed","narrow","angry","mid")
+    call ast_main("I already know how to cast the spell.","clench","base","angry","mid")
+    m "Surely there is some room for you to improve."
+
+    call ast_main("Professor Tonks, take off that coat!","open","closed","base","mid")
+    call ton_main("...","upset","base","worried","ahegao")
+
+    # Remove coat.
+    call play_sound("equip")
+    $ tonks_class.strip("robe")
+    call ton_main("","base","base","base","ahegao")
+    pause.8
+
+    call ast_main("See, I told you I could do it!","smile","narrow","base","mid")
+    m "Great, kid. Don't get cocky..."
+    call ast_main("Don't you see, Professor?","annoyed","narrow","base","mid")
+    call ast_main("I can make her do whatever I want!","smile","narrow","base","mid")
+    call ast_main("I'm the greatest witch of all time!","clench","base","angry","L")
+    call ton_main("...","upset","base","worried","ahegao")
+    call ast_main("If I can pull off the Imperius curse on Professor Tonks...","open","closed","base","mid")
+    call ast_main("Any of the other girls will be easy game for me!","clench","narrow","angry","down") # Game as in "prey".
+    call ast_main("I'll make them suffer for ever making fun of me!","clench","closed","angry","mid")
+    call ton_main("...................................................","upset","base","angry","ahegao", hair="annoyed") # Angry at Astoria
+    m "......................."
+    call ast_main("Tomorrow, I shall have Susan walk through school - parading those ridiculous breasts of hers! That'll show her!","angry","narrow","angry","R")
+    call ton_main("!!!","angry","base","angry","R", hair="angry") # Very angry
+    call ast_main("And then shove her into our common-room - and all the boys will laugh at her cow-udders!","annoyed","narrow","angry","R")
+    call ton_main("*Tzzzzz!*...","angry","closed","angry","mid", emote="01")
+    call ton_main("That's enough!{w=0.8}{nw}","scream","base","angry","R", trans="hpunch")
+
+    # Tonks returns to normal, and puts her clothes back on.
+    call play_sound("equip")
+    $ tonks_class.wear("all")
+    call ton_main("","angry","base","angry","down")
+    pause.8
+
+    call ast_main("What?","clench","base","worried","L")
+    call ton_main("Astoria, you are dismissed!","open","closed","angry","mid")
+    call ast_main("No! I still wanted to-{w=0.8}{nw}","scream","base","angry","mid")
+    call ton_main("Dismissed!","angry","closed","angry","mid")
+    call ast_main("........................","annoyed","narrow","angry","R")
+    call ast_main("*Tzzz!*...","clench","base","angry","mid")
+
+    # Astoria leaves.
+    call ast_walk(action="leave", speed=2.5)
+
+    call ton_main("The nerve on that girl, I can't believe it!","open","base","angry","mid", hair="angry", xpos="mid", ypos="base")
+    call ton_main("I'm beginning to think teaching her an \"unforgivable curse\" might've been a bad idea after all...","upset","base","base","R")
+    m "How so?"
+    call ton_main("Didn't you hear her?","open","base","angry","mid")
+    call ton_main("She's disregarding all of our advice!... Or at least planning to...","angry","base","angry","mid")
+    call ton_main("She's been ignoring my lessons all day!","open","closed","base","mid")
+    call ton_main("She's such a cute, stubborn, cute little girl...","angry","closed","angry","mid")
+    call ton_main("We can't have her roaming the school - cursing people as she pleases!","upset","base","angry","mid")
+
+    m "So, should we stop?"
+    call ton_main("..................","upset","base","worried","R", hair="neutral")
+    call ton_main("Only if she refuses to follow our rules...","open","base","angry","mid")
+    call ton_main("For as long as what we're doing happens within these walls, it shouldn't be too bad.","open","base","worried","R")
+    call ton_main("And besides, Imperio isn't the worst curse you could be a target of, all things considered...","upset","base","worried","down")
+    m "I thought it was dangerous?"
+    call ton_main("Only if you use it in such a way!","open","base","sad","mid")
+    call ton_main("The curse itself is quite harmless...","base","base","worried","down")
+    call ton_main("And it feels really good when you're under the effects of it.","base","base","base","mid")
+    m "It does?"
+    call ton_main("*Mhmm*... yeah...","horny","base","angry","mid", hair="horny")
+    call ton_main("It's so goood! {image=textheart}","open_wide_tongue","base","worried","ahegao")
+    g9 "I think you're enjoying this a bit too much!"
+    g9 "Just what would your students think if they knew their teacher gets off from being mind controlled?"
+    call ton_main("Oh - be quiet you...","base","base","angry","mid")
+    call ton_main("................................","upset","base","worried","R")
+    call ton_main("Is it that obvious?","open","base","sad","mid")
+    g9 "Can't fool a genie..."
+    m "I'm a genius, it's in the name."
+    g4 "G{w=0.3} E{w=0.3} N{w=0.5} I{w=0.7} U...{w=1.0} hold on a second..."
+    call ton_main("Anyway...","open","base","base","R")
+    call ton_main("I'll have to talk some sense into that girl before we can continue, that's for certain...","upset","base","worried","mid")
+    m "Of course..."
+
+    call ton_main("I'm sorry I let this situation get out of hand...","open","base","sad","down")
+    call ton_main("It won't happen again, I promise.","angry","base","sad","mid")
+    m "You did great..."
+    g9 "But next time I'd like to see some tits!"
+    call ton_main("Of course you would.","horny","base","angry","mid")
+    call ton_main("You love 'em - don't you?","horny","base","raised","mid")
+    g9 "That I do!"
+    call ton_main("I should get going. It's getting late...","open","base","sad","R")
+    m "Until next time..."
+    call ton_main("Have a good night, [ton_genie_name].","open","base","base","mid")
+
+    # Tonks leaves.
+    call ton_walk(action="leave", speed=2.8)
+
+    call bld
+    m "..."
+    g4 "G{w=0.3} E{w=0.3} N{w=0.5} I-..."
+    m "Fuck it..."
+
+    $ ast_mood += 12
+
+    jump end_ag_st_imperio
 
 
 label ag_st_imperio_E4:
@@ -852,11 +1053,7 @@ label ag_st_imperio_E4:
     call bld
     g9 "I hope she's planned something big!"
 
-    $ astoria_busy = True
-    $ tonks_busy = True
-    $ tonks_class.wear("all") # Wear all stripped clothing
-
-    jump main_room
+    jump end_ag_st_imperio
 
 
 label ag_st_imperio_E5:
@@ -1378,7 +1575,7 @@ label ag_st_imperio_E5:
             call ton_main("I...","open","base","sad","down")
             g4 "Say it!"
 
-            $ menu_y = 0.6
+            $ menu_y = 0.7
             menu:
                 "\"You're a selfish slut!\"":
                     call ton_main("Yes!","angry","base","angry","mid", hair="horny")
@@ -1449,7 +1646,7 @@ label ag_st_imperio_E5:
     
     $ tonks_class.wear("all") # Wear all stripped clothing
 
-    jump main_room
+    jump end_ag_st_imperio
     
 # astoria wand drop animation screen
 screen astoria_wand_drop():

@@ -103,7 +103,7 @@ init python:
     lun = Character('Luna')
     cho = Character('[cho_name]')
     sus = Character('Susan')
-    ast = Character('Astoria')
+    ast = Character('[astoria_name]')
     twi = Character('Fred and George', show_side_image=Image("characters/misc/weasley_twins/base_01.png", xalign=1.0))
     fre = Character('Fred', show_side_image=Image("characters/misc/weasley_twins/fred_01.png", xalign=1.0))
     ger = Character('George', show_side_image=Image("characters/misc/weasley_twins/george_01.png", xalign=1.0))
@@ -113,6 +113,7 @@ init python:
     ton = Character('[tonks_name]')
     spo = Character('Professor Sprout')
     hoo = Character('Madam Hooch')
+
     ### Other Characters ###
     hat = Character('Sorting Hat', show_side_image=Image("characters/misc/hat/hat.png", xalign=1.0))
     helf = Character("House-Elf")

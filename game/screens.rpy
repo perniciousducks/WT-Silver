@@ -196,9 +196,9 @@ screen main_menu():
     # Version display
     $ ver = config.version[:4]+"."+config.version[4:6] if len(config.version) >=5 else config.version
     text "{color=#fff}{size=-2}[ver]{/size}{/color}" xpos 1024 ypos 228 outlines [ (1, "#000", 0, 0) ]
-    text "{color=#c70000}EXPERIMENTAL VERSION{/color}" xpos 10 yalign 0.01 size 24 outlines [(2, "#000", 0, 0)]
-    text "Expect bugs, crashes and other weird stuff.\nProceed at your own risk, you have been warned!" xpos 10 yalign 0.05 color "#fff" size 12 outlines [(2, "#000", 0, 0)]
-    text "You can find most recent stable build on our {a=https://pastebin.com/6zbuZ5gS}pastebin{/a}." xpos 10 yalign 0.15 color "#fff" size 12 outlines [(2, "#000", 0, 0)]
+    #text "{color=#c70000}EXPERIMENTAL VERSION{/color}" xpos 10 yalign 0.01 size 24 outlines [(2, "#000", 0, 0)]
+    #text "Expect bugs, crashes and other weird stuff.\nProceed at your own risk, you have been warned!" xpos 10 yalign 0.05 color "#fff" size 12 outlines [(2, "#000", 0, 0)]
+    #text "You can find most recent stable build on our {a=https://pastebin.com/6zbuZ5gS}pastebin{/a}." xpos 10 yalign 0.15 color "#fff" size 12 outlines [(2, "#000", 0, 0)]
     
     if update_available:        
         frame:

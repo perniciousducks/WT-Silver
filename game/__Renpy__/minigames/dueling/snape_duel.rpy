@@ -513,7 +513,8 @@ label genie_lost:
                 $ potions = 2
             elif rum_times == 3:
                 $ potions = 3
-
+                
+            $ duel_OBJ.genie = ""
             jump duel
 
         "-Give up-":

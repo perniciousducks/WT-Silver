@@ -1926,7 +1926,7 @@ define sd_win2 = "sounds/win2.mp3"
 # Screens
 screen genie_and_hermione(): #Genie sitting, Hermione stands right in front of him (behind the desk even).
     tag favor
-    add "images/rooms/main_room/genie_and_hermione_01.png" at Position(xpos = -84, ypos = 10)
+    add "images/rooms/main_room/genie_and_hermione_01.png" xpos -84 ypos 10 zoom 0.5
 
 screen groping_05():
     tag favor

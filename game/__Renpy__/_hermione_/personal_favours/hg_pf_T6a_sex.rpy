@@ -57,6 +57,8 @@ label hg_pf_sex:
     $ hg_anal.trigger = True
     if her_whoring < 24: #Adds points till 24.
         $ her_whoring += 1
+        
+    $ achievement.unlock("nerdgasm")
 
     jump end_hermione_event
 

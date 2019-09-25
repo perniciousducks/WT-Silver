@@ -81,16 +81,13 @@ if her_panties_soaked:
     call gen_chibi("cum_on_desk")
     pause.5
 
-    $ achievement.unlock("pantiesfap")
     call nar(">You received the item: \"Cum-soaked panties\".")
-
 elif cho_panties_soaked:
     call nar(">You cum all over Cho's panties, and then use them to wipe the cum off the floor...")
     call gen_chibi("cum_on_desk")
     pause.5
 
     call nar(">You received the item: \"Cum-soaked panties\".")
-
 else:
     call nar(">You cum on the floor.")
 

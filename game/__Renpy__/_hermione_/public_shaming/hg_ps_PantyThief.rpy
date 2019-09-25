@@ -254,7 +254,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 call her_main("*Ahhhhh*","open_wide_tongue","ahegao")
                 m "There, nice and clean."
                 call her_main("*Yes [genie_name]*","soft","ahegao")
-
+    $ achievement.unlock("pantiesfap")
     jump back_from_soaked
 
 label hg_ps_get_panties_complete:

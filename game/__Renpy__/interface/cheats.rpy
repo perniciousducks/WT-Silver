@@ -143,6 +143,7 @@ label cheats:
                             unlock_clothing_compat(item)
                         for item in cho_clothing_sets_list:
                             unlock_clothing_compat(item)
+                        cho_outfit_cheerleader.unlock()
                     ">All of Cho's outfits and clothing sets have been unlocked."
                     jump cheats_cho
                 "-Reset ALL Cho content-":

@@ -6,11 +6,11 @@ default astoria_hair_short = cloth_class(char="astoria", category="head", subcat
 
 # Tops
 default astoria_cloth_topschool1 = cloth_class(char="astoria", category="tops", subcat="school", type="top", id="top_school_1", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]])
-default astoria_cloth_topschool2 = cloth_class(char="astoria", category="tops", subcat="school", type="top", id="top_school_2", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]])
-default astoria_cloth_topschool3 = cloth_class(char="astoria", category="tops", subcat="school", type="top", id="top_school_3", layers=3, color=[[183, 183, 184, 255], [58, 115, 75, 255], [205, 205, 206, 255]])
-default astoria_cloth_topschool4 = cloth_class(char="astoria", category="tops", subcat="school", type="top", id="top_school_4", layers=3, color=[[183, 183, 184, 255], [58, 115, 75, 255], [205, 205, 206, 255]])
-default astoria_cloth_topschool5 = cloth_class(char="astoria", category="tops", subcat="school", type="top", id="top_school_5", layers=3, color=[[183, 183, 184, 255], [58, 115, 75, 255], [205, 205, 206, 255]])
-default astoria_cloth_topschool6 = cloth_class(char="astoria", category="tops", subcat="school", type="top", id="top_school_6", layers=3, color=[[109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]])
+default astoria_cloth_topschool2 = cloth_class(char="astoria", category="tops", subcat="school", type="top", id="top_school_2", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]], whoring=4)
+default astoria_cloth_topschool3 = cloth_class(char="astoria", category="tops", subcat="school", type="top", id="top_school_3", layers=3, color=[[183, 183, 184, 255], [58, 115, 75, 255], [205, 205, 206, 255]], whoring=8)
+default astoria_cloth_topschool4 = cloth_class(char="astoria", category="tops", subcat="school", type="top", id="top_school_4", layers=3, color=[[183, 183, 184, 255], [58, 115, 75, 255], [205, 205, 206, 255]], whoring=8)
+default astoria_cloth_topschool5 = cloth_class(char="astoria", category="tops", subcat="school", type="top", id="top_school_5", layers=3, color=[[183, 183, 184, 255], [58, 115, 75, 255], [205, 205, 206, 255]], whoring=12)
+default astoria_cloth_topschool6 = cloth_class(char="astoria", category="tops", subcat="school", type="top", id="top_school_6", layers=3, color=[[109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]], whoring=12)
 
 # Bottoms
 default astoria_cloth_schoolskirt1 = cloth_class(char="astoria", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_1", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]])

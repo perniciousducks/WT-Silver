@@ -23,7 +23,7 @@
             try:
                 save_version = renpy.slot_json(page+"-"+slot)['_version']
                 
-                if float(save_version) < 1.36: #float(config.version)
+                if float(save_version) < 1.37: #float(config.version)
                     return False
                 return True
             except:
@@ -38,35 +38,12 @@
             if save_internal_version:
                 pass
         except NameError:
-            save_internal_version = 1.36
+            save_internal_version = 1.37
             
         # Compare&perform an update
-        if save_internal_version < 1.361:
-            global genie_cum_chibi_xpos, genie_cum_chibi_ypos
-            try:
-                if genie_cum_chibi_xpos:
-                    pass
-                if genie_cum_chibi_ypos:
-                    pass
-            except NameError:
-                genie_cum_chibi_xpos = -45
-                genie_cum_chibi_ypos = -5
-                
-            if "head_9" in persistent.achievements['unlocksna'][4]:
-                persistent.achievements['unlocksna'][4] = "interface/icons/head/head_snape_1.png"
-                persistent.achievements['bros'][4] = "interface/icons/head/head_snape_1.png"
-                achievement.achievements['unlocksna'][4] = "interface/icons/head/head_snape_1.png"
-                achievement.achievements['bros'][4] = "interface/icons/head/head_snape_1.png"
-
-            save_internal_version = 1.361
             
-        if save_internal_version < 1.362:
-            ll_pf_sex = event_class(title = "Let's have sex!", start_label = "ll_pf_sex", start_tier = 4, events = [[["ll_pf_sex_T1_intro"],["ll_pf_sex_T1_E1"],["ll_pf_sex_T1_E2"],["ll_pf_sex_T1_E3"]]],iconset = [["heart_empty", "heart_blue"]])
-            
-            save_internal_version = 1.362
-            
-        # Temporal dev bugfix
-        if persistent.achievements.get("busted") == None:
+        # Achievements update
+        if persistent.achievements.get("busted") == None: # 1.37
             persistent.achievements['pantiesfap'] == ["Characters", "I sneezed on them...", "Rubbed one out on Hermione's panties.", False, "characters/genie/chibis/masturbating/02.png", False]
             persistent.achievements['pantiesfapcho'] == ["Characters", "Exercise is important", "Rubbed one out on Cho's panties.", False, "characters/genie/chibis/masturbating/02.png", False]
             persistent.achievements['busted'] = ["Characters", "BUSTED!", "... a nut when got busted for busting a nut.", False, "interface/icons/head/head_hermione_2.png", False]

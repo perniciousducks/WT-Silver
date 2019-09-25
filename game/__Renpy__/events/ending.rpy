@@ -67,7 +67,7 @@ label ball_ending_E1:
     show screen g_c_u
     $ gen_chibi_xpos = 220
     $ gen_chibi_ypos = 205
-    $ g_c_u_pic = "images/rooms/main_room/hand_00.png"
+    $ g_c_u_pic = "characters/snape/chibis/handshake/hand_00.png"
     play music "music/11 The Quidditch Match.mp3" fadein 1 fadeout 1 # EPIC THEME.
     pause 1
 
@@ -81,7 +81,7 @@ label ball_ending_E1:
     m "Right..."
     call blkfade
 
-    $ g_c_u_pic = "images/rooms/main_room/hand_01.png"
+    $ g_c_u_pic = "characters/snape/chibis/handshake/hand_01.png"
     call hide_blkfade
     pause 2
 

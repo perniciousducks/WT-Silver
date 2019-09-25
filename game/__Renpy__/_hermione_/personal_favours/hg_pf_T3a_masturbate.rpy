@@ -95,7 +95,7 @@ label hg_pf_strip_T2_fingering:
             call her_main("I hardly think that language is appropriate.","upset","wink")
             m "And masturbating in front of your headmaster is?"
             call her_main("Well... this is different.","open","down")
-            call her_main("I'm doing this for the honor of \"gryffindor\"...")
+            call her_main("I'm doing this for the honour of \"gryffindor\"...")
             call her_main("To help my--")
             call nar(">You notice how she's starting to grind her hips a little faster.")
             $ hermione_dribble = True
@@ -363,7 +363,7 @@ label hg_pf_strip_T4_fingering:
             call her_main("[genie_name], please, it's too embarrassing...","disgust","down_raised", cheeks="blush")
             g4 "Well now I have to hear it."
             call her_main("OK... but you have to promise not to tell anyone!","open","baseL", cheeks="blush")
-            m "Witcher's honor."
+            m "Witcher's honour."
             call her_main("......","annoyed","annoyed")
             m "[hermione_name]..."
             call her_main("Alright. If you must know... I'm remembering the time I corrected professor Snape about the ingredients of a Hiccoughing potion.","open","down")

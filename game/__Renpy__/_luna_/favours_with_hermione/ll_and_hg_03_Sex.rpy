@@ -36,7 +36,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call her_main("Shh! You're first time needs to be at least a little bit special Luna!","upset","angryL")
     m "..."
     m "Luna Lovegood."
-    m "Would you do me the honor?"
+    m "Would you do me the honour?"
     $ luna_flip = 1
     call lun_main("...","base","wide","sad","mid")
     call her_main("(That's the corniest thing I've ever heard...)","open","wink")
@@ -45,7 +45,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call lun_main("I can't!","upset","wide","sad","down")
     call her_main("What?","shock","wide")
     call her_main("Why not Luna? We've talked about this...","soft","worried")
-    call her_main("We even spent all last weekend \'practicing\'...","normal","worriedL")
+    call her_main("We even spent all last weekend \'practising\'...","normal","worriedL")
     call lun_main("I know...","pout","base","mad","R")
     call lun_main("It's just...","soft","base","sad","down")
     call lun_main("I don't think I can handle it...","upset","base","sad","R")
@@ -434,7 +434,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
             ">Your cock explodes inside Luna, unleashing an avalanche of your thick seed into her tight little pussy."
             g9 "BY THE NINE DIVINES!"
             $ ccg1 = "luna_35"
-            lun "it's{image=textheart}Ican't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
+            lun "it's{image=textheart}I can't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
             $ ccg1 = "luna_36"
             lun "..."
             $ ccg2 = "herm_25"
@@ -470,7 +470,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
             ">You pull your cock out at the last second, jerking it furiously as you shoot rope after rope of thick cum."
             g9 "BY THE NINE DIVINES!"
             $ ccg1 = "luna_40"
-            lun "it's{image=textheart}Ican't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
+            lun "it's{image=textheart}I can't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
             $ ccg1 = "luna_41"
             lun "..."
             $ ccg2 = "herm_25"

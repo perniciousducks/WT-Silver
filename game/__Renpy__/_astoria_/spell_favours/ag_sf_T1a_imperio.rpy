@@ -39,7 +39,7 @@ label ag_se_imperio_sb_E1:
     call ast_main("{size=+10}{b}Imperio!{/b}{/size}","scream","base","angry","L")
 
     call sus_main("W-what are you--","open","wide","worried","wide")
-    call nar("Susans eyes flicker and a blank expression spreads across her face.")
+    call nar("Susan's eyes flicker and a blank expression spreads across her face.")
     call sus_main("--doing...","upset","base","base","up")
     call sus_main("...","upset","narrow","base","up")
     hide screen astoria_main
@@ -145,7 +145,7 @@ label ag_se_imperio_sb_E1:
     call ast_main("{size=+10}{b}Imperio!{/b}{/size}","scream","base","angry","L")
 
     call sus_main("W-w-what...","open","base","base","up")
-    call nar(">Susans eyes flicker once more as the blank expression spreads across her face.")
+    call nar(">Susan's eyes flicker once more as the blank expression spreads across her face.")
 
     call gen_chibi("hide")
     show screen genie
@@ -238,7 +238,7 @@ label ag_se_imperio_sb_E2:
     call sus_main("W-w-what???","scream","wide","base","wide")
     call sus_main("You can't be serious sir!","open","wide","base","mid")
     m "I am, Ms Bones..."
-    g9 "Hiding away those glorious milk duds of yours is a serious offense!"
+    g9 "Hiding away those glorious milk duds of yours is a serious offence!"
     call sus_main("","open","wide","base","wide")
     call ast_main("(Pffft, gloriously gross)","annoyed","base","angry","R")
     call sus_main("P-professor Dumbledore! Why would you want me to do s-something like that!","scream","base","angry","mid",trans="hpunch") #Perhaps she should be a bit intrigued =Blush
@@ -251,7 +251,7 @@ label ag_se_imperio_sb_E2:
     call cast_spell("imperio")
     call ast_main("{size=+10}{b}Imperio!{/b}{/size}","scream","base","angry","L")
 
-    call nar(">Susans eyes flicker once more as the blank expression spreads across her face.")
+    call nar(">Susan's eyes flicker once more as the blank expression spreads across her face.")
     call sus_main("What is--","open","wide","base","wide")
 
     show screen blktone
@@ -263,7 +263,7 @@ label ag_se_imperio_sb_E2:
     with d3
     call ast_main("Of course! Anything to bring Bessy here down a peg.","smile","base","base","L",xpos="close",ypos="base")
     call ast_main("Although, you said that before I cast Imperio on her, so we might have to obliviate that if we want to keep this a secret.","upset","base","worried","L")
-    m "Tonks handle it afterward just like last time..."
+    m "Tonks handle it afterwards just like last time..."
     call ast_main("So what should we make her do today, [ast_genie_name]?","smile","base","base","mid")
     m "Something fun perhaps?"
     call ast_main("*Hmmm*...","annoyed","narrow","base","R")
@@ -391,12 +391,12 @@ label ag_se_imperio_sb_E2:
     call gen_chibi("cum_on_desk")
     pause.5
 
-    call nar(">As you shoot your massive load Susans leg twitches slightly...")
+    call nar(">As you shoot your massive load Susan's leg twitches slightly...")
 
     call cast_spell("imperio")
     call ast_main("{size=+10}{b}Imperio!{/b}{/size}","scream","base","angry","L")
 
-    call nar(">Susans becomes still as her flicker once more as the blank expression spreads across her face.")
+    call nar(">Susan's becomes still as her flicker once more as the blank expression spreads across her face.")
     call ast_main("Let's delve deeper shall we...","grin","narrow","angry","L")
     m "W-what?"
     ast "Susy, can you hear me?"
@@ -484,7 +484,7 @@ label ag_se_imperio_sb_E3:
     call cast_spell("imperio")
     call ast_main("{size=+10}{b}Imperio!{/b}{/size}","scream","base","angry","L")
 
-    call nar(">Susans eyes flicker once more as the blank expression spreads across her face.")
+    call nar(">Susan's eyes flicker once more as the blank expression spreads across her face.")
     call sus_main("Wait, wha--","open","wide","base","wide")
     m "Couldn't even wait this time?"
     ast "Quiet old man."
@@ -537,7 +537,7 @@ label ag_se_imperio_sb_E3:
     call cast_spell("imperio")
     call ast_main("{size=+10}{b}IMPERIO{/b}{/size}","scream","base","angry","L")
 
-    call nar(">Susans eyes flicker once more as the blank expression spreads across her face.")
+    call nar(">Susan's eyes flicker once more as the blank expression spreads across her face.")
     call sus_main("to ...azkaban...","open","narrow","base","up")
 
     show screen blktone
@@ -761,7 +761,7 @@ label ag_se_imperio_sb_E3:
     call cast_spell("imperio")
     call ast_main("{size=+10}{b}IMPERIO{/b}{/size}","scream","base","angry","L")
 
-    call nar(">Susans eyes flicker once more as the blank expression spreads across her face.")
+    call nar(">Susan's eyes flicker once more as the blank expression spreads across her face.")
     call sus_main("Ohh...","open","narrow","base","up")
 
     m "(I have created a monster...)"
@@ -917,7 +917,7 @@ label hornify_spell_1: #first level hornify spell
     call sus_main("Y-you made me do this!","base","base","base","base")
     call ast_main("What?","base","base","base","base")
     call ast_main("You came up here and asked the headmaster and me to watch you...","base","base","base","base")
-    call ast_main("Didnt you...","base","base","base","base")
+    call ast_main("Didn't you...","base","base","base","base")
     ">Susan struggles unsuccessfully against the effect of the imperio spell."
     call sus_main("I don't- maybe- I- why?...","base","base","base","base")
     call ast_main("Because you wanted Dumbledore and me to know what a nasty slut you were...","base","base","base","base")
@@ -952,7 +952,7 @@ label hornify_spell_1: #first level hornify spell
     call sus_main("why do...{image=textheart}{image=textheart}{image=textheart} they still feel so {b}gooood{/b}.","base","base","base","base")
     call ast_main("Hmmm... I thought that it would wear off after the first one...","base","base","base","base")
     call ast_main("Oh well, I'm bored now.","base","base","base","base")
-    ">Astoria hops off your lap, causing you to notice a huge cumstain on her skirt..."
+    ">Astoria hops off your lap, causing you to notice a huge cum stain on her skirt..."
     call ast_main("!!!","base","base","base","base")
     call ast_main("Sir!","base","base","base","base")
     m "What?"
@@ -1163,8 +1163,8 @@ label hornify_spell_2: #second level hornify spell
     call ast_main("Speaking of, I better go see her now...","base","base","base","base")
     m "Have fun..."
     call ast_main("I will, she's probably got some more cool clothes for me.","base","base","base","base")
-    call ast_main("Seeya, sir!","base","base","base","base")
-    ">With that, Astoria turns and walk out the door on the way to tonk's office..."
+    call ast_main("See ya, sir!","base","base","base","base")
+    ">With that, Astoria turns and walk out the door on the way to tonks' office..."
     m "Hmmm..."
     jump day_main_menu
 
@@ -1342,7 +1342,7 @@ label hornify_spell_3: #third level hornify spell
         "-Shame her-":
             m "Of course girl!"
             call ast_main("...","base","base","base","base")
-            ">Astoria continues to encourage you along with her playful lapdance..."
+            ">Astoria continues to encourage you along with her playful lap dance..."
             m "You expect to dress like that and not be called a whore?"
             call sus_main("I-I-I was just trying","base","base","base","base")
             m "To what? Get me to cum just by looking at you?"
@@ -1540,7 +1540,7 @@ label hermione_breaks_astoria:
             m "I feel like we're getting bogged down in semantics..."
             her "Ugh... Your punishment is that you don't get to be involved at all..."
             m "Aww..."
-            her "Now come on Astoria... You've got a date with the Gryffindor gloryhole..."
+            her "Now come on Astoria... You've got a date with the Gryffindor glory hole..."
             ast "!!!"
             her "Ready?"
             ast "!!!"
@@ -1644,7 +1644,7 @@ label hermione_breaks_astoria:
             ">With that, Hermione pulls off Astoria's top as if she were changing the costume on a doll."
             her "ha, they're even smaller than I though!"
             ast "..."
-            ">Hermione's starts rolling her hand around the tip of your cock, smearing it in precum."
+            ">Hermione's starts rolling her hand around the tip of your cock, smearing it in pre-cum."
             m "Ugh... that's it slut, don't stop..."
             ast "..."
             pass
@@ -1691,7 +1691,7 @@ label hermione_breaks_astoria:
     m "One hundred points to \"Gryffindor\" then!"
     $ gryffindor += 100
     her "Thank you, [genie_name]."
-    ">With that, Hermione unparalyzes the dazed Slytherin before leading her out of your office and back to her dorm."
+    ">With that, Hermione unparalyses the dazed Slytherin before leading her out of your office and back to her dorm."
     jump main_room
 
 
@@ -1734,7 +1734,7 @@ label astoria_leash_walk:
     ast "Unless you wanted me to fool around with her..."
     ast "sir! You're such a dirty old pervert!"
     ast "So what can I do then?"
-    ast "Is there even anything that the headmaster can do that would embarrass you any more, slut?"
+    ast "Is there even anything that the headmaster can do that would embarrass you anymore, slut?"
     her "I don't think so..."
     ast "Huh, I knew you were useless, sir!"
     ast "I guess I'll have to come up with my own super smart way to shame Miss know-it-all then!"
@@ -1750,7 +1750,7 @@ label astoria_leash_walk:
     her "..."
     ast "Mudblood slut!"
     her "..."
-    ">It's barely noticable but you can see a flicker of rage flash beneath Hermione's eyes."
+    ">It's barely noticeable but you can see a flicker of rage flash beneath Hermione's eyes."
     ast "You'd hate that, wouldn't you?"
     her "More than anything..."
     ast "Perfect!"

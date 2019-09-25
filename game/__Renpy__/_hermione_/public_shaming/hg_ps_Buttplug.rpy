@@ -9,14 +9,14 @@ label hg_ps_buttplug:
     $ current_payout = 55 #Used when haggling about price of the favour.
 
     if hg_ps_buttplug.points < 1:
-        m "{size=-4}(Tell her to wear a buttplug around the school?){/size}"
+        m "{size=-4}(Tell her to wear a butt plug around the school?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
     else:
-        m "{size=-4}(I feel like making her walk around with a buttplug again!){/size}"
+        m "{size=-4}(I feel like making her walk around with a butt plug again!){/size}"
 
     m "{size=-4}(But what Type?){/size}"
     menu:
@@ -31,15 +31,15 @@ label hg_ps_buttplug:
     if hg_ps_buttplug.points == 0 and buttplug_size == 1:
         m "[hermione_name], I want you to do something different today..."
         call her_main("...........","soft","base",xpos="right",ypos="base")
-        call nar(">You pull a large size buttplug out from under your desk and place it in front of her.")
+        call nar(">You pull a large size butt plug out from under your desk and place it in front of her.")
         if her_whoring <=10:
-            m "I want you to wear a buttplug around the school."
+            m "I want you to wear a butt plug around the school."
             jump too_much
 
         $ buttplug_1_worn = True
 
         call her_main("and what is that supposed to be? Some sort of animals tail?","open","suspicious")
-        m "Not exactly, it's a buttplug. I want you to put it in while you attend class today."
+        m "Not exactly, it's a butt plug. I want you to put it in while you attend class today."
         stop music
         with hpunch
         call her_main("{size=+5}What?!!{/size}","shock","wide")
@@ -61,7 +61,7 @@ label hg_ps_buttplug:
         m "I'm willing to give \"Gryffindor\" fifty five points."
         m "and All I ask for..."
         call her_main("..........?","annoyed","suspicious")
-        call nar(">You pull out the small buttplug from your desk.")
+        call nar(">You pull out the small butt plug from your desk.")
         m "...is that you wear this to class..."
         call her_main("!!!......","angry","angry")
         m "Oh, come on... Just a harmless little baby one."
@@ -79,15 +79,15 @@ label hg_ps_buttplug:
     elif buttplug_2_worn == False and buttplug_size == 2:
         m "[hermione_name], I want you to try something different today..."
         call her_main("...........","soft","base",xpos="right",ypos="base")
-        call nar(">You pull the medium size buttplug out from under your desk and place it in front of her.")
+        call nar(">You pull the medium size butt plug out from under your desk and place it in front of her.")
         if her_whoring <=15:
-            m "I want you to wear this buttplug around the school."
+            m "I want you to wear this butt plug around the school."
             jump too_much
 
         $ buttplug_2_worn = True
 
         call her_main("and what is this supposed to be?","open","suspicious")
-        m "Can't you tell it's a buttplug? They shouldn't be new to you at this point."
+        m "Can't you tell it's a butt plug? They shouldn't be new to you at this point."
         call her_main("...","annoyed","annoyed")
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         call her_main("Why does it have a such a large tail attached to it...","annoyed","angry")
@@ -107,7 +107,7 @@ label hg_ps_buttplug:
                 call her_main("ugh... Fine...","angry","down_raised")
                 call her_main("But I'm not turning around!","annoyed","annoyed")
                 m "Whatever suits you best..."
-                ">You hand her the buttplug"
+                ">You hand her the butt plug"
                 call her_main("{size=-7}It's so big...{/size}","clench","down_raised")
                 ">Hermione lifts her skirt and presses it against her asshole."
                 call her_main("ughh... it's too big...","shock","worriedCl")
@@ -133,7 +133,7 @@ label hg_ps_buttplug:
                 call her_main("Hmmmph...","annoyed","angryL")
                 call her_main("Alright then, just don't expect me to show it to you!","angry","angry")
                 m "So long as you wear it to class then you'll get your 70 points."
-                ">You hand her the buttplug."
+                ">You hand her the butt plug."
                 call her_main("Will that be all [genie_name]?.","annoyed","annoyed")
                 m "Yes [hermione_name], see you tonight."
                 call her_main("{size=-5}(cheap bastard...){/size}","annoyed","angryL")
@@ -145,31 +145,31 @@ label hg_ps_buttplug:
 
             m "Today's favour shall be..."
             call her_main(".........","angry","base",xpos="right",ypos="base")
-            m "Wearing your favourite little buttplug to class!"
+            m "Wearing your favourite little butt plug to class!"
             call her_main("...again?","angry","down_raised")
             m "Sure, why not?"
             m "And another fifty five house points for the \"Gryffindor\" house of course."
             call her_main("..........","annoyed","worriedL")
             m "So... Are you ok with that, [hermione_name]?"
             call her_main("I suppose so...","annoyed","angryL")
-            ">You hand her the buttplug."
+            ">You hand her the butt plug."
             m "Fantastic! See you after class."
 
         elif her_whoring <= 20 and buttplug_size == 1: # LEVEL 07
             $ buttplug_1_worn = True
 
-            ">You pull out the large buttplug."
+            ">You pull out the large butt plug."
             m "Ready to try out the dragon yet?"
             stop music fadeout 1.0
             call her_main("What?","scream","wide_stare",xpos="right",ypos="base")
             call her_main("Of course not! That thing would tear me--","scream","angryCl")
-            ">you pull out the small buttplug"
+            ">you pull out the small butt plug"
             m "How about this one then?"
             call her_main("Oh, ok then!","smile","happyCl",emote="06")
             m "You'll do it that easily?"
             call her_main("Well for fifty five house points I'd be crazy not to.","base","closed")
             call her_main("Plus I don't hate the way it feels","open","baseL")
-            ">You hand her the buttplug."
+            ">You hand her the butt plug."
             m "why don't you put it in now."
             call her_main("you want me to put it in now? in front of you!","scream","wide_stare")
             m "I don't see the harm in it."
@@ -192,12 +192,12 @@ label hg_ps_buttplug:
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "[hermione_name]..."
-            m "What do you think about wearing a buttpl-?"
+            m "What do you think about wearing a butt pl-?"
             call her_main("I'll do it.","grin","baseL",xpos="right",ypos="base")
             m "You're eager."
             call her_main("well... I mean it is a lot of points and... i've sort of grown fond of how it feels...","open","down")
             m "Great. Go have fun then!"
-            ">You hand her the buttplug."
+            ">You hand her the butt plug."
             ">Hermione turns around and lifts her skirt giving you a full view as she inserts it."
 
             call set_her_buttplug("plug_a_on") #Updates clothing and body.
@@ -210,19 +210,19 @@ label hg_ps_buttplug:
 
             m "Today my gracious request will be..."
             call her_main(".........","angry","base",xpos="right",ypos="base")
-            m "That you wear everyone's favourite magical buttplug to class!"
+            m "That you wear everyone's favourite magical butt plug to class!"
             call her_main("...again?","angry","down_raised")
             m "why not? This will be the easiest fifty five points you'll ever earn!"
             call her_main("..........","annoyed","worriedL")
             m "Do you have a problem with it, [hermione_name]?"
             call her_main("I suppose not...","annoyed","angryL")
-            ">You hand her the buttplug."
+            ">You hand her the butt plug."
             m "Fantastic! See you after class."
 
         elif her_whoring <= 23 and buttplug_size == 2: # LEVEL 07
             if buttplug_2_question == False:
                 $ buttplug_2_question = True
-                ">You pull out the buttplug."
+                ">You pull out the butt plug."
                 m "Ready to try out the phoenix again?"
                 call her_main("Oh, I suppose so...","soft","squintL",xpos="right",ypos="base")
                 call her_main("But is it alright if I ask you something first?","open","down")
@@ -235,7 +235,7 @@ label hg_ps_buttplug:
                 call her_main("...I suppose no one...","annoyed","worriedL")
                 m "Then don't worry about it. If anyone asks just tell them you're going through an exhibitionist stage."
                 m "Speaking of which..."
-                ">You hand her the buttplug."
+                ">You hand her the butt plug."
                 call her_main("Oh... right...","base","down")
                 ">Hermione lifts her skirt and pushes it in gently, taking her time."
 
@@ -246,7 +246,7 @@ label hg_ps_buttplug:
                 m "See you tonight [hermione_name]."
                 call her_main("{size=-5}({image=textheart}it's... so... big...{image=textheart}){/size}","grin","ahegao")
             else:
-                ">You pull out the buttplug."
+                ">You pull out the butt plug."
                 m "Ready for the phoenix again?"
                 call her_main("Oh, alright then...","open","down",xpos="right",ypos="base")
                 call her_main("but if you pay me and additional 5 points I'll turn around as I put it in...","soft","squintL")
@@ -260,7 +260,7 @@ label hg_ps_buttplug:
                         call her_main("but as a present i'll show you anyway...","base","down")
                         call her_main("although you better appreciate it...","base","suspicious")
                         m "I'm sure I will."
-                ">You hand her the buttplug."
+                ">You hand her the butt plug."
                 call her_main("well... here goes...","base","down")
                 ">Hermione turns around, lifts her skirt and pushes it in gently, taking her time."
 
@@ -274,13 +274,13 @@ label hg_ps_buttplug:
         elif her_whoring >= 24 and buttplug_size == 2: # LEVEL 08+
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "[hermione_name]..."
-            m "What do you think about wearing a buttpl-?"
+            m "What do you think about wearing a butt pl-?"
             call her_main("I'll do it.","grin","baseL",xpos="right",ypos="base")
             m "You're eager. I haven't even said what one yet..."
             call her_main("oh... can it be the big one... with the long tail...","open","down")
             call her_main("please...","soft","squintL")
             m "well seeing as how you asked so nicely..."
-            ">You hand her the buttplug."
+            ">You hand her the butt plug."
             ">Hermione turns around and lifts her skirt giving you a full view as she inserts it."
 
             call set_her_buttplug("plug_b_on") #Updates clothing and body.
@@ -293,13 +293,13 @@ label hg_ps_buttplug:
         elif buttplug_size == 3 and not buttplug_3_worn:
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "[hermione_name]..."
-            m "What do you think about wearing a buttpl-?"
+            m "What do you think about wearing a butt pl-?"
             call her_main("I'll do it.","grin","baseL",xpos="right",ypos="base")
             m "You're eager. I haven't even said which one yet..."
             call her_main("oh... can it be the big one... with the long tail...","open","down")
             call her_main("please...","soft","squintL")
             m "well seeing as how you did ask for the big one..."
-            call nar(">You hand her the buttplug.")
+            call nar(">You hand her the butt plug.")
             call her_main("!!!","angry","down_raised")
             call her_main("This isn't the one I meant [genie_name]...","angry","down_raised")
             m "Didn't you ask for the big one?"
@@ -339,12 +339,12 @@ label hg_ps_buttplug:
                     call her_main("ugh... fine. I'll {b}try{/b} to fit it in.","disgust","down")
                     call her_main("but I'm not promising anything!","open","closed")
                     m "That's all I ask."
-                    call nar(">You hand hermione the large buttplug.")
+                    call nar(">You hand hermione the large butt plug.")
                     call her_main("I still don't think this is going to work...","open","base")
-                    call nar(">Hermione slowly coats the massive buttplug with lube.")
+                    call nar(">Hermione slowly coats the massive butt plug with lube.")
                     call her_main("There's barely even enough here to cover it...","open","down")
                     call her_main("(There's no way this thing will fit.)","disgust","down_raised")
-                    call nar(">Hermione slowly places the lubed up buttplug to her anus.")
+                    call nar(">Hermione slowly places the lubed up butt plug to her anus.")
                     call her_main("I'm telling you, [genie_name], this isn't going to-","open","closed")
                     call her_main("{size=+10}!!!{/size}","soft","wide",cheeks="blush",trans="hpunch")
                     call her_main("{size=+10}It's moving!{/size}","disgust","worriedCl")
@@ -378,7 +378,7 @@ label hg_ps_buttplug:
                     call her_main("well then i think I better be off to class then.","open","closed")
                     call her_main("{size=-2}unless {size=-2}you {size=-2}have {size=-2}the {size=-2}smaller {size=-2}one?{/size}{image=textheart}","soft","glanceL",cheeks="blush")
                     g9 "It just so happens that I do!"
-                    call nar(">You hand her the buttplug.")
+                    call nar(">You hand her the butt plug.")
 
                     call set_her_buttplug("plug_b_on") #Updates clothing and body.
 
@@ -393,7 +393,7 @@ label hg_ps_buttplug:
         elif buttplug_size == 3: # Large buttplug repeat
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "[hermione_name]..."
-            m "how do you feel about wearing another buttplug to class today?"
+            m "how do you feel about wearing another butt plug to class today?"
             call her_main("...","base","baseL",xpos="right",ypos="base")
             call her_main("which one?","grin","base")
             m "how about the big one again?"
@@ -402,7 +402,7 @@ label hg_ps_buttplug:
             m "you didn't seem to hate wearing it last time..."
             call her_main("...","open","down")
             call her_main("{size=-5}alright then...{/size}","open","down")
-            call nar(">You hand her the buttplug.","start")
+            call nar(">You hand her the butt plug.","start")
             call nar(">You watch it magically worm it's way inside her eager butthole.","end")
 
             call set_her_buttplug("plug_c_on") #Updates clothing and body.
@@ -487,7 +487,7 @@ label hg_ps_buttplug_complete:
             call her_main("Relieve myself...","annoyed","worriedL")
             call her_main("When all of a sudden that annoying ghost poked her head through the door!","scream","angryCl")
             call her_main("As it if wasn't bad enough that she saw me...","open","down")
-            call her_main("She then started yelling \'Hermione has a buttplug\' to everyone in the toilets!","scream","angry",emote="01")
+            call her_main("She then started yelling \'Hermione has a butt plug\' to everyone in the toilets!","scream","angry",emote="01")
             call her_main("Luckily the stalls where empty! Imagine if they weren't!","annoyed","annoyed")
             m "Well, it certainly sounds like you've earned your points."
 
@@ -700,7 +700,7 @@ label hg_ps_buttplug_complete:
             call her_main("It was awful... simply awful...","annoyed","frown",xpos="right",ypos="base")
             m "what happened, [hermione_name]..."
             call her_main("It was that nasty professor snape, [genie_name]!","annoyed","angryL")
-            call her_main("I've never been so embarassed in my life!","annoyed","annoyed")
+            call her_main("I've never been so embarrassed in my life!","annoyed","annoyed")
             m "What did he do?"
             call her_main("Well in potions class I may have corrected him about the proper way to crush a Sopophorous bean...","annoyed","angryL")
             her "so he made me stand out the front and show him the \'correct\' way..."
@@ -861,7 +861,7 @@ label hg_ps_buttplug_complete:
             call her_main("well I made them promise to keep quiet about it...","upset","closed")
             call her_main("but in exchange I may have had to let them touch it...","open","down")
             call her_main("{image=textheart}{image=textheart}{image=textheart}","soft","ahegao")
-            m "So you let a group of innocent first years touch your buttplug..."
+            m "So you let a group of innocent first years touch your butt plug..."
             call her_main("It sounds sinister when you put it like that.","annoyed","angryL")
             her "All I did was take them to a secluded part of the library and let them touch my tail..."
             m "Well that's alright then..."
@@ -884,7 +884,7 @@ label hg_ps_buttplug_complete:
             show screen blktone
             call her_main("Yes I did, [genie_name]...","base","base",xpos="right",ypos="base")
             call her_main("Did you know there are holes between the stalls in the girls bathroom?","soft","base")
-            m "i did not, but What does that have to do with your buttplug?"
+            m "i did not, but What does that have to do with your butt plug?"
             call her_main("Well, I noticed that the hole is the same height as the tail...","grin","baseL")
             call her_main("...............","grin","worriedCl")
             m "go on, [hermione_name]."
@@ -951,7 +951,7 @@ label hg_ps_buttplug_complete:
             call her_main("well I made them promise to keep quiet about it...","upset","closed")
             call her_main("but in exchange I may have had to let them touch it...","open","down")
             call her_main("{image=textheart}{image=textheart}{image=textheart}","soft","ahegao")
-            m "So you let a group of innocent first years touch your buttplug..."
+            m "So you let a group of innocent first years touch your butt plug..."
             call her_main("It sounds sinister when you put it like that.","annoyed","angryL")
             her "All I did was take them to a secluded part of the library and let them touch my tail..."
             m "Well that's alright then..."
@@ -972,7 +972,7 @@ label hg_ps_buttplug_complete:
             show screen blktone
             call her_main("Yes I did, [genie_name]...","base","base",xpos="right",ypos="base")
             call her_main("Did you know there are holes between the stalls in the girls bathroom?","soft","base")
-            m "i did not, but What does that have to do with your buttplug?"
+            m "i did not, but What does that have to do with your butt plug?"
             call her_main("Well, I noticed that the hole is the same height as the tail...","grin","baseL")
             call her_main("...............","grin","worriedCl")
             m "go on, [hermione_name]."

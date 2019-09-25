@@ -81,7 +81,7 @@ label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
             "\"You are back!\"":
                 pass
             "\"Make it quick!\"":
-                call ton_main("I made out with my favorite \"Slytherin boy\" again...","open","base","base","R")
+                call ton_main("I made out with my favourite \"Slytherin boy\" again...","open","base","base","R")
                 call ton_main("He's getting quite good at it...","horny","base","base","up")
                 m "Well done, [tonks_name]... We'll talk next time."
                 call ton_main("Have a good night, [ton_genie_name].","base","happyCl","base","mid")
@@ -178,7 +178,7 @@ label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     m "I know that {b}I{/b} would have given him hell for that..."
     call ton_main("I might have blushed as much as him - after he said it...","open","base","worried","down")
     call ton_main("Anyhow... I decided that it was reason enough to hold him back...","open","closed","base","mid")
-    call ton_main("Not that I needed to... He seemed almost paralyzed for the rest of the lesson...","base","base","base","mid")
+    call ton_main("Not that I needed to... He seemed almost paralysed for the rest of the lesson...","base","base","base","mid")
     call ton_main("He just sat there with his head down,...waiting for everyone to leave the classroom...","open","base","base","L")
     call ton_main("So, I figured I'd indulge him...","open","closed","base","mid")
     call ton_main("I walked over - and plonked myself onto his lap, facing him...","horny","base","base","mid")
@@ -368,7 +368,7 @@ label nt_pr_kiss_T2_E1: # Tier 2 Event 1 # Not in use.
     call ton_main("I asked them to stay back after classes again... Even if it was by staring at them during class...","base","base","base","mid")
     call ton_main("Either way... He knew he had to stay behind to play with \"auntie\" Tonks...","base","base","base","mid")
     m "Kinky..."
-    call ton_main("Mmmm, I walked over to him slowly... Making sure I savored that frightened look on his face...","base","base","base","mid")
+    call ton_main("Mmmm, I walked over to him slowly... Making sure I savoured that frightened look on his face...","base","base","base","mid")
     call ton_main("Then, I got to his desk... I was half expecting him to blabber on about not deserving to be there...","base","base","base","mid")
     call ton_main("But today he just looked up at me with a delectable mix of fear and anticipation...","base","base","base","mid")
 

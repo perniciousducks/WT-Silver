@@ -824,9 +824,9 @@ label hg_sex_luna:
     call her_main("{image=textheart}","silly","worried", cheeks="blush", tears="soft")
     lun "Rule number two: No skirt over 5 inches in length my be worn."
     call her_main("{image=textheart}{image=textheart}","silly","worried", cheeks="blush", tears="soft")
-    lun "rule number three: No bras to be worn at anytime."
+    lun "rule number three: No bras to be worn at any time."
     call her_main("{image=textheart}{image=textheart}{image=textheart}","silly","worried", cheeks="blush", tears="soft")
-    lun "And finally, rule number four: No panties to be worn at anytime."
+    lun "And finally, rule number four: No panties to be worn at any time."
     call her_main("{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","silly","worried", cheeks="blush", tears="soft")
 
     m "Why are your legs shaking, [hermione_name]?"

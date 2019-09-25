@@ -194,7 +194,7 @@ label hg_pf_admire_breasts_T1_intro_E2:
     m "Take off your vest for me, would you..."
     call her_main("(...............)","annoyed","angry")
     g9 "And your shirt! Take that off as well!"
-    call her_main("Sir, this is a very inapporpriate thing to ask of me!!!","scream","angryCl")
+    call her_main("Sir, this is a very inappropriate thing to ask of me!!!","scream","angryCl")
     m "Yeah, yeah... What else is new..."
     call her_main("Sir!!!","clench","wide")
     m "Please. All I'm asking for is to get a little peek..."

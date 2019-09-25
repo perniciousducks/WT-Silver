@@ -225,7 +225,7 @@ label hg_pr_flirt_T1_E3:
     m "How many boys did you flirt with today, [hermione_name]?"
     call blktone
     stop music fadeout 1.0
-    call her_main("Well, the \"Slytherin\" quidditch team was practicing in the stadium today...","open","worriedL")
+    call her_main("Well, the \"Slytherin\" quidditch team was practising in the stadium today...","open","worriedL")
     her "I thought I could sneak into the bleachers and cheer them on..."
     call her_main("But...","annoyed","angryL")
     m "Yes?"
@@ -337,7 +337,7 @@ label hg_pr_flirt_T2_E2:
             call her_main("Yes, of course... Everybody knows that...","soft","baseL")
 
         "\"Could what make what?\"":
-            call her_main("Oh, nevermind me, [genie_name].","soft","baseL")
+            call her_main("Oh, never mind me, [genie_name].","soft","baseL")
             her "Everyone knows that the \"Sorting Hat\" is never wrong."
 
     jump end_hg_pr_flirt

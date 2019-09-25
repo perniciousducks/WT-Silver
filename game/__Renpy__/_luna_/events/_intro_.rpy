@@ -65,7 +65,7 @@ label hat_intro:
 
 label hat_intro_2: #Bringing in Hermione
     m "[hermione_name], I wanted to talk to you about something."
-    call her_main("Whats that [genie_name]?","open","base")
+    call her_main("What's that [genie_name]?","open","base")
     m "Do you feel that any of your friends are in the wrong house?"
     call her_main("What do you mean In the wrong house?","soft","base")
     m "well, do you know anyone who'd be better suited being in a different house?"
@@ -84,7 +84,7 @@ label hat_intro_2: #Bringing in Hermione
     m "Nothing of the sort. This is strictly school business."
     call her_main("...","annoyed","annoyed")
     call her_main("Fine... Just don't do anything too bad...","annoyed","suspicious")
-    m "Scouts honor!"
+    m "Scouts honour!"
     call her_main("Well if that's all then, [genie_name], I better head to class.","open","closed")
 
     call her_walk(action="leave", speed=2.5)
@@ -175,8 +175,8 @@ label hat_intro_3: #Luna change scene #DONE
     $ luna_pupil_color = "green"
 
     call lun_main("...","normal","base","base","empty")
-    m "Wait what happened?! Her eyes just changed color!"
-    hat "Really? Hmmm... didn't expect that... what color are they?"
+    m "Wait what happened?! Her eyes just changed colour!"
+    hat "Really? Hmmm... didn't expect that... what colour are they?"
     m "Green."
     hat "Well, that seems rather fitting."
     m "Why, what did you do to her personality?"

@@ -42,7 +42,7 @@ label tonks_intro_E1:
             ton "But, Sir..."
             ton "I've travelled across half the country just to get here."
             m "........................."
-            ton "Via apparation, of course. It only took me a couple of seconds..."
+            ton "Via apparition, of course. It only took me a couple of seconds..."
             ton "But still, it's quite a long walk up here from Hogsmeade..."
             ton "I'd just like to get this over with. May I come in, Sir?"
             m "(I wouldn't mind having a look at her...)"
@@ -297,7 +297,7 @@ label tonks_intro_E2:
     call ton_main("I’ve been rather preoccupied listening to Miss Granger's own investigations...","open","base","base","R")
     call ton_main("That girl sure is something, isn't she?","base","base","base","mid")
     call ton_main("Not that I mind listening to her.","horny","base","base","R", hair="horny")
-    call ton_main("She gave me a very long report that went well into the evening, whilst I enjoyed a glass of firewhiskey...","open","base","base","mid")
+    call ton_main("She gave me a very long report that went well into the evening, whilst I enjoyed a glass of firewhisky...","open","base","base","mid")
     call ton_main("She has been very thorough in documenting all the happenings she's witnessed...","base","base","base","mid")
     m "I can imagine that..."
     call ton_main("Anyhow... She had no proof of any illicit activities.{w} It's all just hearsay.","open","base","base","R")

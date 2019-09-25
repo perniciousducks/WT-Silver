@@ -219,7 +219,7 @@ label forest_BJ_2:
     $ ccg2 = 14
     her "*slurp* *schkk* *shlrp*"
     $ ccg2 = 15
-    her "Ablus Dumbledore having his {b}cock{/b} sucked by Hermione Granger..."
+    her "Albus Dumbledore having his {b}cock{/b} sucked by Hermione Granger..."
     $ ccg2 = 16
     her "*slurp* *schkk* *shlrp*"
     $ ccg2 = 12
@@ -415,7 +415,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ ccg2 = 33
     $ ccg1 = "m2"
     $ ccg2 = 33
-    ">You're so focussed in your facefuck session you almost fail to notice the ghostly appartation of an attractive little witch appear behind Hermione."
+    ">You're so focussed in your facefuck session you almost fail to notice the ghostly apparition of an attractive little witch appear behind Hermione."
     $ ccg2 = 32
     g4 "!!!"
     $ ccg2 = 33
@@ -483,7 +483,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     $ ccg2 = 36
     her "*glck*Stt-*glck*{image=textheart}*glck*"
     $ ccg2 = 37
-    ">Hermione starts to struggle against you in her embarressment, her face turns a deep red and tears start to roll down her face."
+    ">Hermione starts to struggle against you in her embarrassment, her face turns a deep red and tears start to roll down her face."
     $ ccg2 = 36
     ">Unfortunately for petite witch, her shame only serves to intensify your pleasure."
     $ ccg2 = 37
@@ -789,7 +789,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     $ ccg2 = 35
     her "{size=+5}*glck*{image=textheart}*glck*{image=textheart}*glck*{/size}"
     $ ccg2 = 34
-    myr "Then hogsmead!"
+    myr "Then hogsmeade!"
     $ ccg2 = 35
     myr "{size=+2}THEN{/size} {size=+2}THE{/size} {size=+2}WHOLE{/size} {size=+2}WORLD!!!{/size}"
     $ ccg2 = 34
@@ -976,7 +976,7 @@ label hermione_map_sex:
     g4 "That's it whore! You've done it now!"
     ">You grab onto Hermione's hips and start pumping for dear life."
     her "{image=textheart}{image=textheart}{size=+5}No! I just came! STOP!!!{/size}{image=textheart}{image=textheart}"
-    ">The halls resonate with Hermione's incoherrent moans and the forceful slapping of her ass against your hips."
+    ">The halls resonate with Hermione's incoherent moans and the forceful slapping of her ass against your hips."
     g4 "TAKE THIS!!!"
     ">You dump your load into hermione's limp body as you hold her up."
     her "ahhh..."

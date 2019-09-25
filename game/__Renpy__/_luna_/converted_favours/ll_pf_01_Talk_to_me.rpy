@@ -27,7 +27,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                     call lun_main("I suppose so...","normal","suspicious","base","mid")
                     call lun_main("Just don't try anything funny.","upset","angry","angry","R")
                     $ current_payout = 10
-                    m "Scouts honor. Now..."
+                    m "Scouts honour. Now..."
                 "-50 gold-":
                     $ current_payout = 50
                     m "How does fifty gold sound [lun_name]?"
@@ -71,7 +71,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                     call lun_main("{size=-5}(Well I suppose he did offer fifty gold...){/size}","base","suspicious","base","R")
                     call lun_main("As I was saying, no one seems to even notice me.","normal","angry","angry","mid")
                     call lun_main("The teachers are too busy playing favourites with the \"gryffindor\" and \"slytherin\" students.","pout","angry","angry","R")
-                    call lun_main("The girls are all self obsessesed.","upset","angry","angry","down")
+                    call lun_main("The girls are all self-obsessed.","upset","angry","angry","down")
                     m "You don't say."
                     call lun_main("and The boys are off chasing anything that shows a little skin...","upset","mad","angry","R")
                     m "well, maybe you should fight fire with fire."
@@ -225,7 +225,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                         ">You start stroking your cock again."
                         call lun_main("Doesn't that feel better?","base","suspicious","mad","R")
                         m "{size=-4}(argh... yes...){/size}"
-                        call lun_main("Say it outloud.","base","mad","mad","mid")
+                        call lun_main("Say it out loud.","base","mad","mad","mid")
                         m "{size=-4}yes...{/size}"
                         call lun_main("Good. Now cum for me.","base","suspicious","angry","mid")
                         m "{size=-2}(What?){/size}"

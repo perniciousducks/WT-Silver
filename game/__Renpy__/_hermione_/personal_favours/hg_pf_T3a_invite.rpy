@@ -19,7 +19,7 @@ label hg_pf_strip_T1_Snape: # Fails
     call her_main("My striptease performance...?!!","shock","wide")
     call her_main("Are you completely out of your mind, [genie_name]?","angry","angry")
     call her_main("Wasn't it enough that I've had to embarrass myself in front my teacher once before?","open","angry")
-    call her_main("And now you expect me to do it agiain,... but willingly?!","scream","angryCl")
+    call her_main("And now you expect me to do it again,... but willingly?!","scream","angryCl")
     m "Short answer... yes."
     call her_main("I'm leaving!","angry","angry")
 
@@ -63,7 +63,7 @@ label hg_pf_strip_T2_Snape:
         call her_main("[genie_name], I didn't realise...","open","worried")
         call her_main("I see now...","base","base")
         her "I am sorry for doubting you [genie_name]..."
-        m "No biggy. Now go find professor Snape and bring him here."
+        m "No biggie. Now go find professor Snape and bring him here."
         call her_main("Right away [genie_name]!","smile","angry")
 
     else:
@@ -110,7 +110,7 @@ label hg_pf_strip_T2_Snape:
     call sna_main("Oh...?","snape_05")
     sna "Miss Granger here will be performing I assume?"
     call her_main("..............","angry","worriedCl", emote="05", xpos="mid", ypos="base")
-    m "Yes, our little mynx is more than happy to take off her clothes for our entertainment."
+    m "Yes, our little minx is more than happy to take off her clothes for our entertainment."
     call her_main("............","angry","worriedCl", emote="05")
     m "Aren't you [hermione_name]?"
     call hide_characters
@@ -242,7 +242,7 @@ label hg_pf_strip_T2_Snape:
             m "You, tall-dark-and-handsome, calm down a bit, would you?"
             call sna_main("I beg your pardon?","snape_03")
             call her_main("Yes! You tell him profess--","annoyed","angryL")
-            m "You as well, you perverted little mynx!"
+            m "You as well, you perverted little minx!"
             m "Calm down and take your skirt off already."
             call her_main("I am not perverted...","annoyed","annoyed")
             m "The skirt, [hermione_name]!"
@@ -265,7 +265,7 @@ label hg_pf_strip_T2_Snape:
             g4 "That Bitch is already stripping for you, so what more do you want?!"
             call her_main("(That B-Bi--","shock","wide")
             g4 "And you,... stripper-whore!"
-            g4 "Do what you are payed for and start stripping already!!!"
+            g4 "Do what you are paid for and start stripping already!!!"
             call her_main("......","angry","angryCl", emote="01")
             call sna_main(".............","snape_05")
             call her_main("...","mad","frown")

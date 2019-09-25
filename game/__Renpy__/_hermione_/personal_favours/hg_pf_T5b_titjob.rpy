@@ -720,7 +720,7 @@ label hg_pf_titjob_2:
             with hpunch
             with kissiris
             g4 "Yes, keep going slut"
-            call her_main("As I was \"Practicing\" on her arm she might have...","open","baseL")
+            call her_main("As I was \"Practising\" on her arm she might have...","open","baseL")
             $ ccg1 = 24
             call her_main("cum...","soft","ahegao")
             g4 "[hermione_name], you little slut!"

@@ -90,7 +90,7 @@ label hg_ps_cumslut_Scene_1:
     m "You're doing this because I asked you to."
     call her_main("But if I don't, Gryffindor will lose the house cup.","shock","worriedCl")
     m "And?"
-    call her_main("Harry and Ron will be so dissapointed...","angry","worried")
+    call her_main("Harry and Ron will be so disappointed...","angry","worried")
     m "So that's why you are doing this? For those two boys?"
     call her_main("Sort of... I'm not sure that they'd be too upset though.","annoyed","worriedL")
     m "Are you sure it's not because you love it."
@@ -141,7 +141,7 @@ label hg_ps_cumslut_Scene_1:
         "\"Just keep on jerking [hermione_name]!\"": # Cum on skirt
             $ cum_location = 2
 
-            call nar(">Hermionely keeps jerking your cock, her eyes darting between it and herself.")
+            call nar(">Hermione keeps jerking your cock, her eyes darting between it and herself.")
             g4 "Get ready whore, here it comes!"
             call her_main("Wait, where am I supposed to-","angry","worried",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
@@ -327,7 +327,7 @@ label hg_ps_cumslut_Scene_2:
         "-Stay Silent-": # Legs
             $ cum_location = 4
 
-            call nar(">Hermionely keeps jerking your cock, her eyes darting between it and herself.")
+            call nar(">Hermione keeps jerking your cock, her eyes darting between it and herself.")
             g4 "Get ready slut, here it comes!"
             call her_main("Wait, where am I supposed to-","angry","worried",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
@@ -370,7 +370,7 @@ label hg_ps_cumslut_Scene_2:
         "\"Just keep on jerking [hermione_name]!\"": # Cum on shirt front
             $ cum_location = 5
 
-            call nar(">Hermionely keeps jerking your cock, her eyes focused intently on it.")
+            call nar(">Hermione keeps jerking your cock, her eyes focused intently on it.")
             g4 "Get ready whore, here i come!"
             call her_main("...","angry","worried",ypos="head")
             g9 "{size=+5}ARGH! YES!!! RIGHT ON THOSE TITS!{/size}"

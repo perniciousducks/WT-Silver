@@ -25,7 +25,7 @@ label give_cho_gift(gift_item):
             call cho_main("Sweets?",pupils="down",face="horny",xpos="mid",ypos="base")
             call give_gift(">You give the sweets to Cho...",gift_item)
             call cho_main("I'll keep it for later, I like licking it in front of my teammates to tease them a bit.","open","base","raised","mid")
-            call cho_main("*mmmh*, but in the future... I'm more of a savory kind of girl when it comes to sucking on things...","horny","wink","base","mid")
+            call cho_main("*mmmh*, but in the future... I'm more of a savoury kind of girl when it comes to sucking on things...","horny","wink","base","mid")
             call cho_main("But thanks, [cho_genie_name].","smile","base","base","L")
             call cho_mood(-1)
 

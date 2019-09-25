@@ -286,7 +286,7 @@ label costume_scene_1: #Maid role-play
     m "You certainly look the part. The question is can you act the part?"
     call her_main("Act? I thought you just wanted me to clean your room?","smile","glance")
     m "Where's the fun in that? If I wanted a clean room, I'd just get those ugly dwarves to do it."
-    call her_main("House elfs.","smile","glance")
+    call her_main("House-elves.","smile","glance")
     m "Whatever. Anyway I want you to act like a sexy french maid."
     her "Why does it have to be french?"
     m "Must I explain everything?"
@@ -327,5 +327,5 @@ label costume_scene_1: #Maid role-play
     ">Hermione cleans up your cum from the floor and table."
     her "Well how did I do?"
     m "Very well indeed! You've taken to role-play like a duck to water."
-    m "40 points to Gyrffindor."
+    m "40 points to Gryffindor."
     her "Thank you [genie_name]."

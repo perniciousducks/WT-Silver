@@ -88,7 +88,7 @@ label nt_pr_grope_T1_E1: # Tier 1 - Event 1 - Slytherin boy
     m "How were classes today, [tonks_name]?"
     m "Taught your students some valuable lessons?"
     call ton_main("I'm not sure about valuable...","open","base","base","R")
-    call ton_main("But I do know that he isn't going to forget it anytime soon!","horny","base","angry","mid")
+    call ton_main("But I do know that he isn't going to forget it any time soon!","horny","base","angry","mid")
     m "That's what I like to hear!"
     call ton_main("Remember that \"Slytherin cutie\" I held back to write lines?","base","base","angry","mid")
     m "Vaguely."

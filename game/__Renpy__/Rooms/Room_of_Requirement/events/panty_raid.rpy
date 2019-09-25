@@ -328,7 +328,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call play_sound("bump")
         "She drops a slightly used pair of plain panties on your desk."
         call her_main("", mouth="soft", eye="baseL", cheeks="blush", flip=False)
-        m "I don't see any tags, thats good, did you learn from your previous error?"
+        m "I don't see any tags, that's good, did you learn from your previous error?"
         call her_main("Yes sir...", mouth="disgust", eye="down", cheeks="blush")
         call her_main("", mouth="soft", eye="down", cheeks="blush")
 

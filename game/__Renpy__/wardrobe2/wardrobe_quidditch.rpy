@@ -49,7 +49,7 @@ label t_wardrobe_quidditch():
         $ hide_transitions = False
         return
     else:
-        m "Nevermind, your current outfit is sufficient enough."
+        m "Never mind, your current outfit is sufficient enough."
         cho "Okay."
         $ hide_transitions = False
         return

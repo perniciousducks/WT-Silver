@@ -441,9 +441,9 @@ screen character_studio():
                             bar value VariableValue("studio_text_alpha", 1.0, max_is_zero=False, style=u'bar', offset=0, step=0.01)
                             bar value VariableValue("studio_text_size", 100, max_is_zero=False, style=u'bar', offset=0, step=1)
                             bar value VariableValue("studio_text_outline", 20, max_is_zero=False, style=u'bar', offset=0, step=1)
-                    textbutton "{size=11}{color=#FFF}Color{/color}{/size}" action Return(["input", "color"]) xsize 94 xpos 50 xanchor 0.5
+                    textbutton "{size=11}{color=#FFF}Colour{/color}{/size}" action Return(["input", "color"]) xsize 94 xpos 50 xanchor 0.5
                     if studio_text_outline > 0:
-                        textbutton "{size=11}{color=#FFF}Outline color{/color}{/size}" action Return(["input", "outline_color"]) xsize 94 xpos 50 xanchor 0.5
+                        textbutton "{size=11}{color=#FFF}Outline colour{/color}{/size}" action Return(["input", "outline_color"]) xsize 94 xpos 50 xanchor 0.5
                     textbutton "{size=11}{color=#FFF}Reset{/color}{/size}" action Return(["reset", "text"]) xsize 94 xpos 50 xanchor 0.5
     frame:
         ypos 24

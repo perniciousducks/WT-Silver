@@ -127,7 +127,7 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
 
     hide screen blktone
     call her_main("[genie_name]!","angry","angry", cheeks="blush")
-    call her_main("This is ridiculous on a whole nother level!","angry","angryCl", cheeks="blush")
+    call her_main("This is ridiculous on a whole other level!","angry","angryCl", cheeks="blush")
     call her_main("I won't let myself be forced to become some cheap stripper!!!","mad","wide", cheeks="blush")
     m "Nobody is forcing you to do this."
     m "If you don't need the points, please feel free to leave."
@@ -149,7 +149,7 @@ label hg_pf_strip_T0_fail_repeat:
     call her_main("And would you like me to take off my clothes as well?","soft","closed")
     m "Yes?"
     call her_main("No! I will not!","scream","angry")
-    call her_main("And I'd appreaciate it if you'd stop making such outrageous requests...","annoyed","angry")
+    call her_main("And I'd appreciate it if you'd stop making such outrageous requests...","annoyed","angry")
     m "You will get points for it..."
     call her_main("Shove those points up your-","angry","angryCl")
     call her_main("I will be leaving now...","annoyed","angry")
@@ -770,7 +770,7 @@ label hg_pf_strip_T1_E2:
 
     call her_main("Just for the record...","open","closed", xpos="mid", ypos="base")
     call her_main("I still consider this a highly inappropriate favour to be buying from one of your students, [genie_name].","annoyed","suspicious")
-    m "Right. And an equally inappropriate favour to be selling to your headmaster. Woulnd't you agree?"
+    m "Right. And an equally inappropriate favour to be selling to your headmaster. Wouldn't you agree?"
     call her_main("..........","annoyed","angryL")
 
 
@@ -784,7 +784,7 @@ label hg_pf_strip_T1_E2:
     call set_her_action("None")
     pause.2
 
-    call nar(">And takes it off somewhat clumisly...")
+    call nar(">And takes it off somewhat clumsily...")
     call ctc
 
     g9 "Yes! The tits!"
@@ -805,7 +805,7 @@ label hg_pf_strip_T1_E2:
 
         "{size=-3}\"Your father would spank you hard!\"{/size}":
             call her_main("He would not!","shock","wide")
-            call her_main("And I am too old for that anyways...","upset","wink")
+            call her_main("And I am too old for that any way...","upset","wink")
             g9 "I would say that you are in the perfect age for that..."
             call her_main("Huh?")
             call her_main("I do not know what you mean, [genie_name].","grin","worriedCl", emote="05")
@@ -1008,7 +1008,7 @@ label hg_pf_strip_T2_intro_E2:
     call her_main("*Hmm*...","annoyed","baseL", xpos="base", ypos="base")
     call her_main("Sure! Why not...","base","happyCl")
     g9 "Yes?"
-    call her_main("I've been practicing a bit more. Mainly just my dancing.","soft","down")
+    call her_main("I've been practising a bit more. Mainly just my dancing.","soft","down")
     m "Very good. I'd love to see your progress."
     call her_main("Of course, [genie_name]...","base","glance")
 
@@ -1501,7 +1501,7 @@ label hg_pf_strip_T2_masturbate:
             $ current_payout = 45
             call her_main("Ten extra points [genie_name]?","soft","angry")
             call her_main("But that is not even nearly enough!")
-            m "Ten extra points. Take'em or leave'em [hermione_name]."
+            m "Ten extra points. Take 'em or leave 'em [hermione_name]."
             hide screen g_c_c_u
             call her_chibi("sit_naked","on_desk","on_desk")
             show screen g_c_c_u

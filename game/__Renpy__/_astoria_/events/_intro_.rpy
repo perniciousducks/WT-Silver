@@ -42,7 +42,7 @@ label astoria_intro_E1:
     m "So? Isn't it your task to cover that sort of stuff?"
     call ton_main("Yes, but...","upset","base","worried","down")
     call ton_main("Please, [ton_genie_name]! I can't cover this up all on my own!","open","base","worried","mid")
-    call ton_main("I'll require your help...","upset","base","sad","mid")
+    call ton_main("I require your help...","upset","base","sad","mid")
     m "My help, you say?"
     call ton_main("Yes...","base","base","worried","down")
 
@@ -194,7 +194,7 @@ label astoria_intro_E1:
     call ton_main("This girl I've told you about, Susan Bones?","open","base","base","mid")
     call ton_main("The one with-","open","base","base","R")
     g9 "With the giant tits!"
-    call ton_main("...The one with the unfortunate luck of being a constand target of bullying and harassment!","angry","closed","angry","mid") # Annoyed
+    call ton_main("...The one with the unfortunate luck of being a constant target of bullying and harassment!","angry","closed","angry","mid") # Annoyed
     m "Yes, that too..."
     call ton_main("That poor girl! She cried the entire time when she told me about what happened...","open","base","sad","down")
     call ton_main("I can't believe she got hit by a curse!","angry","base","angry","down") # Angry
@@ -202,7 +202,7 @@ label astoria_intro_E1:
     call ton_main("No, of course not!","open","base","angry","mid")
     m  "Or Injured?"
     call ton_main("Thankfully not...","upset","base","base","R")
-    m "And nobody tied to shrink her tits?"
+    m "And nobody tried to shrink her tits?"
     call ton_main("Don't be silly...","open","closed","base","mid")
     m "Then what are you concerned about exactly?"
 
@@ -240,7 +240,7 @@ label astoria_intro_E1:
     call ton_main("Yes! She heard a girl's voice in her head - while she was under the influence of the imperius curse...","open","base","angry","mid")
     call ton_main("Who told her{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8}to lift up her top.","upset","base","worried","R")
     g9 "Oh yes?"
-    call ton_main("The imperius curse can make people do {b}unspeakable things{/b} against their wills!","open","closed","angry","mid")
+    call ton_main("The imperius curse can make people do {b}unspeakable things{/b} against their will!","open","closed","angry","mid")
     call ton_main("I have no doubt that someone as sweet and good-hearted as Susan wouldn't know how to defend herself against it...","open","base","sad","mid")
     call ton_main("So... She showed her breasts to a bunch of other students...{w=1.4} unfortunately...","upset","base","sad","R")
     g9 "I wish I could have been there to stop it!"
@@ -265,7 +265,7 @@ label astoria_intro_E1:
     call bld
     m "I should definitely get Snape on this..."
     m "And Granger..."
-    g9 "Or I could jerk-off instead!" # Achievement if you do, maybe?
+    g9 "Or I could jerk off instead!" # Achievement if you do, maybe?
     g9 "Yes that seems like a good idea right now!"
 
     # TODO: Add hidden achievement called "Follow the script!" and unlock it if you jerk off after this scene. Maybe add some Susan smut writing for the jerk-off session?
@@ -290,7 +290,7 @@ label astoria_intro_E2_hermione:
     m "really?"
     call her_main("Those are the only things that can happen with an unforgivable curse, [genie_name]!","angry","worried")
     m "of course... I'm just making sure you were aware of them..."
-    call her_main("It's the first lesson we ever received in defense against the dark arts.","open","closed")
+    call her_main("It's the first lesson we ever received in defence against the dark arts.","open","closed")
     m "Well, one's been cast somewhere on the school."
     m "and I need your help finding out who did it..."
     call her_main("Why do you need my help?","soft","wink")
@@ -303,7 +303,7 @@ label astoria_intro_E2_hermione:
     m "so I'll need you to go undercover to find out who."
     call her_main("really? You're depending on me to find a criminal student within our school?","soft","down_raised",cheeks="blush")
     m "If it's not too much troub--"
-    call her_main("I'd be honored, [genie_name]!","scream","closed")
+    call her_main("I'd be honoured, [genie_name]!","scream","closed")
     call her_main("It's no doubt the work of one of those despicable \'slytherins\'...","open","angryCl")
     call her_main("Nothing would give me greater pleasure than to see scum like that sent to \'Azkaban\'...","angry","angryL")
 
@@ -377,8 +377,8 @@ label astoria_intro_E2_snape:
     call sna_main("We'll just have to make sure that no more curses are cast...","snape_01")
     m "How do we manage that?"
     call sna_main("We have to find out who's been casting them.","snape_24")
-    call sna_main("Normally the real Dubmbledore would be able to detect who had cast them, but seeing as how you're here instead...","snape_06")
-    call sna_main("We'll have to find them the old fashioned way.","snape_10")
+    call sna_main("Normally the real Dumbledore would be able to detect who had cast them, but seeing as how you're here instead...","snape_06")
+    call sna_main("We'll have to find them the old-fashioned way.","snape_10")
     m "So you want me to launch a manhunt?"
     call sna_main("Are you crazy? We can't let anyone know what's happened. All the students will panic thinking someone's been murdered...","snape_16")
     call sna_main("It's probably just an imperio or crucio that's been cast.","snape_24")
@@ -431,8 +431,8 @@ label astoria_intro_E3:
     who "Let me go you filthy mudbl-"
     call play_sound("thump")
 
-    m "Who is this?"
-    her "*Shhhhsh*- now!"
+    m "Who's there?"
+    her "*Shhhhh*- now!"
     m "..."
     her "It's Hermione Granger, Sir."
     her "Although... I'm not alone."
@@ -474,7 +474,7 @@ label astoria_intro_E3:
     call ast_main("...","annoyed","base","worried", "R", xpos="mid", ypos="base")
 
     m "..."
-    m "Who's this?"
+    m "And who's this?"
     call her_main("Astoria Greengrass, Sir.","base","base", xpos="right", ypos="base")
     call her_main("You asked me to bring you the person who cast the unforgivable curse, Sir.","soft","annoyed",xpos="close",ypos="base")
     call her_main("And here she is.","grin","angry")
@@ -491,7 +491,7 @@ label astoria_intro_E3:
     call her_main("By the sounds of it, she used Imperio to control another student!","annoyed","base")
     call ast_main("I did not!","annoyed", "base","worried","L")
 
-    call her_main("Shall I go fetch a vial of veritaserum from professor Snape, sir?","grin","base")
+    call her_main("Shall I go fetch a vial of veritaserum from Professor Snape, sir?","grin","base")
     call ast_main("V-veritaserum?!","clench","base","worried","mid")
     call ast_main("That's illegal!","clench","base","base","mid")
     call her_main("Not when you've been casting unforgivable curses - you evil little witch!","grin","angry")
@@ -504,7 +504,7 @@ label astoria_intro_E3:
 
     menu:
         m "(...)"
-        "You're dismissed, Granger!":
+        "You're dismissed, Miss Granger!":
             her "What?!"
             pass
 
@@ -513,7 +513,8 @@ label astoria_intro_E3:
             pass
 
     her "But Sir, I'd really like to know what her punishment is going to be!"
-    m "That's no concern to you..."
+    m "That is of no concern to you."
+    #m "That's none of your concern." - either one works, pick your favourite
     her "Yes it is! And I demand to be rewarded!"
     her "Given that I was the one who caught her, I think it's only fair!"
 
@@ -522,7 +523,7 @@ label astoria_intro_E3:
         "\"Not now, Miss Granger...\"":
             m "We'll talk about your reward later..."
             her "But!"
-            m "No butts..."
+            m "No butts..." #is this deliberate?
             call her_main("*hmph*","annoyed","angryL")
             call her_main("Fine...","open","angryCl")
             $ her_mood += 12
@@ -547,9 +548,9 @@ label astoria_intro_E3:
                     $ her_mood = 0
                     $ gryffindor += 20
 
-    her "It's only a matter of days until everyone at Hogwarts will know what happened to her..."
+    her "In a few days, everyone at Hogwarts will know what happened to her..."
     her "When she's sent to Azkaban!"
-    m "Nobody's going anywhere, except for you you, Miss Granger..."
+    m "Nobody's going anywhere, except for you, Miss Granger..."
 
     if d_flag_01:
         m "Now go and fetch Snape for me."
@@ -582,12 +583,12 @@ label astoria_intro_E3:
     call sna_main("Astoria?!","snape_09")
     call sna_main("Why is one of my students in your office? Don't tell me you...","snape_09")
     m "It's not that sort of visit."
-    call sna_main("Really? Then what's she doing here.","snape_05")
+    call sna_main("Really? Then what's she doing here?","snape_05")
     m "She's the one who's been casting those curses."
     call sna_main("Truthfully? A Slytherin?","snape_05")
-    call sna_main("I expect better than this from my students, miss Greengrass...","snape_10")
+    call sna_main("I expect better than this from my students, Miss Greengrass...","snape_10")
 
-    call sna_main("The very first lesson I give you is to not-","snape_08")
+    call sna_main("The very first lesson I give you is don't-","snape_08")
     call sna_main("get-","snape_08",trans="hpunch")
     call sna_main("caught!","snape_15",trans="hpunch")
     pause.5
@@ -595,7 +596,7 @@ label astoria_intro_E3:
     call sna_main("Do you have anything to say for yourself?","snape_10")
     call ast_main("I-I'm sorry, sir... It won't happen again.", "upset","closed","base","mid")
     call sna_main("Who did you cast them on, you little idiot?","snape_30")
-    sna "Susan Bones, Sir..."
+    ast "Susan Bones, Sir..."
     sna "The \"Hufflepuff\" cow-"
     sna "*Ahem*..."
     m "..."
@@ -635,7 +636,7 @@ label astoria_intro_E3:
     ton "I'd be willing to compensate you for it, you know..."
     sna "..." # Blush
 
-    menu:
+    menu: #what's the point of having a menu here, it doesn't change anything
         m "..."
         "-Cough-":
             m "*Ahem*..."
@@ -643,7 +644,7 @@ label astoria_intro_E3:
             pass
 
     sna "Would you mind?"
-    ton "Sure..." # Add textheart
+    ton "Sure...{image=textheart}"
     sna "Stepping aside."
     ton "Oh, okay..."
 
@@ -668,14 +669,14 @@ label astoria_intro_E3:
     call ast_main("I'm really sorry! I promise I won't ever cast it again!","clench","closed","worried","mid")
     call ton_main("Really? It was you who cast the spell?","open","base","worried","L")
     m "..."
-    call ton_main("It couldn't possibly have been someone that's as cute as you!","open","base","wide","L")
+    call ton_main("It couldn't possibly have been someone as cute as you!","open","base","wide","L")
     ast "..." # Embarrassed, stares down.
     call ast_main("Please don't send me to Azkaban!","scream","wide","wide","wide")
     call ton_main("Don't worry, It won't come to that...","base","base","base","L")
     call ton_main("The ministry isn't going to lock away such a cute little thing like yourself...","open","base","base","mid")
     call ton_main("{size=+2}Over a little harmless fun.{/size} {image=textheart}","horny","base","wide","L")
 
-    call ton_main("It's just the Imperio curse.","open","base","worried","R")
+    call ton_main("It's just the Imperius curse.","open","base","worried","R")
     call ton_main("Most students don't have the guts to cast crucio on another person...","open","base","worried","mid")
     call ton_main("Let alone Avada Kedavra...","open","wide","wide","wide")
 
@@ -694,7 +695,7 @@ label astoria_intro_E3:
     call ton_main("She always has been very sensitive about her body for some reason.","base","base","raised","mid")
     call ast_main("So I'm not going to get in trouble?","upset","base","base","mid")
     call ton_main("I didn't say that... You still cast a very serious spell...","open","base","base","L")
-    ton "A couple hours of detention with me should be a sufficient enough punishment for casting an unforgivable curse."
+    ton "A couple of hours of detention with me should be a sufficient enough punishment for casting an unforgivable curse."
     ton "Wouldn't you agree, Professor?"
 
     $ d_flag_01 = False
@@ -714,7 +715,7 @@ label astoria_intro_E3:
             m "Miss Tonks, I was being sarcastic..."
             ton "But you're right though, Professor!"
             ton "Casting the Imperius curse at her age is no easy task!"
-            ton "A girl with that type of...{w=0.3} talents, are extraordinary." # Horny
+            ton "A girl with that type of...{w=0.3} talent, is a rare thing." # Horny
             ton "I would say, 50 points for \"Slytherin\" should be appropriate."
             ast "!!!"
             g4 "(If Hermione hears about this - she'll Abra Kadabra my head off!)"
@@ -746,16 +747,17 @@ label astoria_intro_E3:
         m "A couple of hours of detention..."
         m "For what you previously described as a serious crime?"
         ton "Did I go too soft on her?"
-        m "Oh, don't you think I suddenly care about this school."
+        #m "Oh, don't you think I suddenly started to care about this school."
+        m "Oh, don't get me wrong. I couldn't care less about this school."
         m "I'm not even supposed to be here..."
         ton "Fair enough..."
 
     m "We should have a chat about Astoria again..."
     m "Discuss the severity of her... \"detention.\""
     ton "Of course, [ton_genie_name]."
-    ton "I'm glad we're on the same page..." # textheart
+    ton "I'm glad we're on the same page...{image=textheart}"
     m "Until next time, [tonks_name]."
-    ton "Bye." # textheart.
+    ton "Bye.{image=textheart}"
 
     call bld
     m "(...)"
@@ -789,11 +791,11 @@ label astoria_intro_E4: # Tonks hangout event.
     ton "But no, it's not that."
     ton "This girl is cursed... and it's quite a problem."
     m "Don't you mean this cursed girl {i}is{/i} a problem?"
-    ton "No, she's cursed. With a hefty one at that!"
+    ton "No, she's cursed. Quite a hefty curse at that!"
     m "..."
     ton "Her family - the Greengrass family - is quite infamous in the wizarding world."
     ton "They're known for being a very high class family of witches and wizards..."
-    ton "Some of them more stuck up and spoiled than the others, because of that reason."
+    ton "Some of them are very stuck-up and spoiled, for that reason."
     ton "It's quite the norm for most pure blood families, actually."
     m "Get to the point..."
     ton "*Sigh*"
@@ -805,32 +807,32 @@ label astoria_intro_E4: # Tonks hangout event.
     ton "Yeah..."
     m "Hey, at least it's not the other way round, am I right..."
     m "Immortality can be quite the curse too you know..."
-    ton "Yes, I can see how much you're hurt inside..."
-    ton "The opportunity to have sex with some of the most attractive women of all time must really suck."
+    ton "Yes, I can see how much you're hurting inside..."
+    ton "The opportunity to have sex with some of the most attractive women in all of history must really suck."
     m "I'll live with it..."
     ton "Fortunately, this curse has faded after many generations, but in turn appears to have evolved into something else..."
     m "How would you know?"
     ton "I'm an auror..."
-    m "Is this your answer for everything now?"
+    m "Is that your answer for everything now?"
     ton "Just trust me..."
     ton "The nature of it is quite familiar to me."
     ton "I have strong reasons to believe that this girl is..."
     ton "She's..."
     m "She's what?"
-    ton "She's Asexual!"
+    ton "She's asexual!"
     m "..."
     ton "You don't believe me?"
     m "Oh no, I do believe you."
     m "..."
-    m "Mind explaining to me what Asexual's supposed to mean?"
-    ton "You've never heard of it?"
+    m "Mind explaining to me what asexual's supposed to mean?"
+    ton "You don't know?"
     ton "Well that's not too surprising - all things considered..."
     ton "It means she feels no sexual feeling or attraction, to anything!"
-    g4 "WHAT!"
+    g4 "WHAT?!"
     ton "I know!"
     m "By the great desert sands... That's a curse worse than death."
-    m "I thought the effect was supposed to have gotten weaker?"
-    ton "The curse has seemingly gone from killing off random members of their family, to preventing new members of being born."
+    m "I thought the effect was supposed to have got weaker?"
+    ton "The curse has seemingly gone from killing off random members of their family, to preventing new members from being born."
     m "That doesn't make any sense..."
     m "But since when has magic made any fucking sense in this universe..."
     ton "Hey, it makes perfect sense!"
@@ -842,9 +844,9 @@ label astoria_intro_E4: # Tonks hangout event.
     g4 "Hold on a second...{w=0.8} what?!"
     g4 "You want to teach this {b}sadist{/b} how to cast those illegal curses?"
     m "That's what got us in all this trouble in the first place!"
-    ton "Don't worry, I'm just gonna teach her the ropes..."
-    ton "She won't go out and curse students at random anymore... I wouldn't allow that."
-    ton "But... Maybe that can help her ignite that \"sexual urge\" - deep inside of her..."
+    ton "Don't worry, I'm just gonna teach her the basics..."
+    ton "She won't go out and curse students at random anymore... I won't allow that."
+    ton "But... Maybe this can help ignite that \"sexual urge\" - deep inside of her..."
     ton "She clearly isn't ready to do it with some boy..."
     ton "Or you, for that matter."
     m "If she's really cursed with \"Asexuality\" - then I don't want to have her anywhere close to me."
@@ -858,7 +860,7 @@ label astoria_intro_E4: # Tonks hangout event.
     ton "It might not be that easy, but I think it would be a good start."
     ton "I must at least know if my theory is correct..."
     m "I don't see how this Imperio thing plays into it, but if you say so..."
-    #m "But hold on... won't the ministry be down our necks again if a illegal curse is repeatedly cast at Hogwash?"
+    #m "But hold on... won't the ministry be down our necks again if an illegal curse is repeatedly cast at Hogwash?"
     #ton "No, the ministry doesn't track magic inside the school walls illegal or not, curses are no different."
     #ton "They rely on these things being reported by the school administration... or lately... by yours truly."
     #ton "And to be frank... This place could blow up and I wouldn't care enough to report it to those assholes anymore."
@@ -919,19 +921,19 @@ label astoria_intro_E5:
     m "(Shit, was I supposed to do anything with her?)"
     ast "...................."
     m  "(Oh that's right. Freeing her from her curse...)"
-    ast "Sir, If there is nothing I can be of help with, then I'd like to leave..."
+    ast "Sir, If there is nothing you need of me, then I'd like to leave..."
 
     menu:
         m "..."
         "\"What about your detention?\"":
             ast "Oh..."
             m "If I recall correctly, we have yet to discuss your punishment."
-            ast "So you haven't forgotten about that..."
+            ast "So you didn't forget about that..."
             pass
 
         "\"You still need to be punished!\"":
             ast "Punished?!"
-            ast "I thought I would only get detention?"
+            ast "I thought I was only going to get detention?"
             m "Yes, detention."
             pass
 
@@ -942,7 +944,7 @@ label astoria_intro_E5:
             # Astoria leaves
 
             call bld
-            m "I better not mention this to Tonks..."
+            m "I'd better not mention this to Tonks..."
             m "I'm sure she'll come back for her punishment."
 
             $ ag_event_pause += 7 # Returns a week later.
@@ -951,13 +953,13 @@ label astoria_intro_E5:
             jump main_room
 
     m "It's just a couple of hours with your teacher."
-    g9 "I'm sure you'll like it!"
+    g9 "I'm sure you'll enjoy it!"
     ast "If you say so, Sir."
     ast "..."
     ast "Would it be ok if I go there some other time?"
     m "Are you trying to weasel yourself out of your punishment?"
     ast "No?"
-    ast "It's just that... I really don't have time for it right now..."
+    ast "It's just that... I really don't have time right now..."
     m "..."
     m "I'll allow it. But just this once!"
     ast "Thank you!"

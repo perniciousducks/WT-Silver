@@ -1,7 +1,7 @@
 
 
 label nothing_to_see_here_048:
-    m "Now did you manage to win todays game?"
+    m "Now did you manage to win today's game?"
     call cho_main("...","pout","narrow","sad","downR")
     call cho_main("No...","open","narrow","sad","down")
     m "You didn't? Why not?"

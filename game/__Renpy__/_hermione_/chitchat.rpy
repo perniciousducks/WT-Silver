@@ -155,7 +155,7 @@ label chit_chat:
             call her_main("","soft","baseL")
 
         elif one_of_ten == 9:
-            call her_main("Some of the less traveled school corridors are not very well lit and rather dusty...","open","angryCl")
+            call her_main("Some of the less travelled school corridors are not very well lit and rather dusty...","open","angryCl")
             her "Please take care of this, sir..."
             call her_main("","normal","base")
 
@@ -246,7 +246,7 @@ label chit_chat:
 
         elif one_of_ten == 6:
             call her_main("My father used to say: \"Magic is just science we don't understand yet\".","open","base")
-            call her_main("He could't be more wrong of course...","open","worriedL")
+            call her_main("He couldn't be more wrong of course...","open","worriedL")
             call her_main("","soft","baseL")
 
         elif one_of_ten == 7:
@@ -367,7 +367,7 @@ label chit_chat:
             call her_main("","base","base")
 
         elif one_of_ten == 9:
-            call her_main("Do You think I am wearing enough makeup, sir?","open","base")
+            call her_main("Do You think I am wearing enough make-up, sir?","open","base")
             her "Wearing too much would look vulgar..."
             call her_main("But wearing too little would make me look plain...","soft","baseL")
             call her_main("I don't want to look plain!","annoyed","angryL")

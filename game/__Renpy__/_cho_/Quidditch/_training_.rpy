@@ -144,7 +144,7 @@ label quidditch_training_intro_1:
     call cho_main("Even with my limited time I thought it was at least worth a try.{w} But hearing your suggestions now...","angry","narrow","angry","mid")
     m "You will learn soon enough, girl."
     m "It’s very clear that to win we’ll have to go beyond normal conventional methods."
-    g4 "The only way you can keep a man from fulfilling his seeked out purpose, is by confronting him with his most primal instinct!"
+    g4 "The only way you can keep a man from fulfilling his sought-out purpose, is by confronting him with his most primal instinct!"
     call cho_main("Which would be?","annoyed","narrow","angry","mid")
     g9 "The act of procreation!"
     call cho_main("Sir, are you suggesting I should have \"sex\" with him?!","soft","wide","base","mid") # Shocked
@@ -159,7 +159,7 @@ label quidditch_training_intro_1:
     call cho_main("I'm sorry Sir, but I feel methods like those would get us nowhere!","open","closed","raised","mid")
     call cho_main("And it's very improper for a teacher to suggest such things! Not to mention right out vulgar!","open","base","angry","R")
     call cho_main("I'll be leaving now.{p=0.8}Please only call me should you decide to finally take things seriously...","soft","narrow","angry","mid")
-    g9 "And you, think about using that adrett body of yours to get closer to your dreams!"
+    g9 "And you, think about using that petite body of yours to get closer to your dreams!"
     call cho_main("*Tzzzz*","angry","closed","angry","mid")
 
     if daytime:

@@ -90,7 +90,7 @@ label cho_favor_3: # Not in use.
                                 $ current_payout = 40
                                 jump cho_favor_3_1
 
-        m "I assume you're familar with the ancient Chinese art of 'SukiSuki'."
+        m "I assume you're familiar with the ancient Chinese art of 'SukiSuki'."
         call cho_main("What?","smile","base","base","mid")
         m "I want a blowjob."
         if cho_mood >= 6:
@@ -563,7 +563,7 @@ label cho_favor_3_2:
         "Cho drops to her knees and waits patiently."
         call cho_main("whenever you're ready.","smile","base","base","mid")
         m "Open your mouth."
-        "Cho obeys, opening her mouth and thusting her tongue out."
+        "Cho obeys, opening her mouth and thrusting her tongue out."
         call cho_main("On 'ea'y...(I'm ready...)","smile","base","base","mid")
         "Your cock throbs under your robes."
         m "This is why I got into teaching..."
@@ -711,7 +711,7 @@ label cho_favor_3_2:
                                         "Cho leans forward and begins to quickly bobs her head over your cock."
                                         "Her mouth fumbles quickly around your head."
                                         "Suddenly, she wraps her hands around your balls and tugs down gently."
-                                        "The sensation is suprisingly pleasant."
+                                        "The sensation is surprisingly pleasant."
                                         m "Yes, take it!"
                                         #Genie cums in Cho's mouth.
                                         "Your cock twitches in Cho's mouth, dumping your cum in her mouth."

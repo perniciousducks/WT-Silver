@@ -307,7 +307,7 @@ label astoria_tonks_random:
         call ast_main("She's sooooo cool, [ast_genie_name]! The best teacher we've ever had here at this lame school!","grin","happyCl","base","mid")
         m "I'm glad to hear that."
         m "Want to cast some spells?"
-        call ast_main("Hihihi-- of couse!","grin","base","base","mid")
+        call ast_main("Hihihi-- of course!","grin","base","base","mid")
 
     #Tonks sucks!
     if random_number == 3:

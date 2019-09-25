@@ -439,8 +439,8 @@ label equip_her_panties:
                     call her_main("I mostly wear a bathing suit when I'm out swimming.","open","baseL")
                     call her_main("Why do you ask, [genie_name]?","base","base")
                     m "I would like you to wear one."
-                    call her_main("At school? [genie_name], we don't even have swimming lessions here.","open","wide_stare")
-                    m "Swimming lessions, hmm."
+                    call her_main("At school? [genie_name], we don't even have swimming lessons here.","open","wide_stare")
+                    m "Swimming lessons, hmm."
                     m "Do you think something like that could be arranged? Down at the lake?"
                     call her_main("The lake? That water is way too cold to swim in, [genie_name]! Especially in a bikini!","disgust","base")
                     m "Right then, I'll think of another school activity we could do in a bikini."

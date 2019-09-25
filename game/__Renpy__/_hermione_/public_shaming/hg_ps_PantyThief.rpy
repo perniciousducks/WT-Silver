@@ -233,7 +233,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 call her_main("My mouth?!","scream","wide_stare")
                 m "What's the big deal? It wouldn't be the first time you've tasted my cum."
                 call her_main("It's a bit different! I wore these panties before I gave them to you.","scream","angryCl")
-                call her_main("Not to mention that your cum is all cold and slimey...","scream","worriedCl")
+                call her_main("Not to mention that your cum is all cold and slimy...","scream","worriedCl")
                 m "Well in that case hand them back."
                 call her_main("What? Can't I just put them on?","angry","wink")
                 m "I'm afraid not, you clean them now or you hand them back."

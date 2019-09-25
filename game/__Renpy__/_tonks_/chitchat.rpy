@@ -33,7 +33,7 @@ label tonks_chit_chat:
             call ton_main("They didn't suspect a thing.","base","base","base","mid")
 
         elif random_number == 6:
-            call ton_main("Being a teacher sure has its perks. If I was caught with firewisky as a student I would've gotten expelled.","open","base","base","mid")
+            call ton_main("Being a teacher sure has its perks. If I was caught with firewhisky as a student I would've gotten expelled.","open","base","base","mid")
             call ton_main("Now I can have as much as I like, even share some every once in a while.","base","base","base","mid")
 
         elif random_number == 7:

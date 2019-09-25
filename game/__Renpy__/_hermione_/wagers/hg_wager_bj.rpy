@@ -544,7 +544,7 @@ label hg_wager_bj:
                                     hide screen rollback_check
                                     $ renpy.block_rollback()
                                     call her_main("If I do what back?","annoyed","glance")
-                                    m "Nevermind..."
+                                    m "Never mind..."
                                 else:
                                     $ achievement.unlock("flashback")
                                     call her_main("........","annoyed","down")

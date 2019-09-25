@@ -70,7 +70,7 @@ label cho_summon_setup:
             m "(...)"
             call cho_main("Is it too much?","quiver","wink","raised","mid")
             m "Too much? Are you really asking me that?"
-            m "If I'm truely honest with you-"
+            m "If I'm truly honest with you-"
             g4 "Your body, in an outfit like that,..."
             g4 "Really shows off your best assets."
             call cho_main("Oh...","horny","base","raised","down")

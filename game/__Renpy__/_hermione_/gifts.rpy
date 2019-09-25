@@ -514,7 +514,7 @@ label give_her_gift(gift_item):
     elif gift_item == testral_strapon_ITEM:#strap on
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("What is that?","angry","wide")
-            call her_main("An artifact of some sort or a trophy?","open","base")
+            call her_main("An artefact of some sort or a trophy?","open","base")
             call her_main("So well-crafted...","base","base")
             call her_main("Are you sure that it's alright for me to have it, [genie_name]?","base","base")
             call give_gift(">You give the strap-on to Hermione...",gift_item)
@@ -542,7 +542,7 @@ label give_her_gift(gift_item):
             call her_mood(-10)
         elif her_whoring >= 18: # Lv 7+
             call her_main("It's... It's magnificent, [genie_name]...","shock","wide")
-            call her_main("Is it really modeled after a thestral?","open","baseL",cheeks="blush")
+            call her_main("Is it really modelled after a thestral?","open","baseL",cheeks="blush")
             call her_main("But the creatures are invisible...","open","squint",cheeks="blush")
             call her_main("..................","angry","down_raised")
             call her_main("Breathtaking...","grin","dead")
@@ -584,7 +584,7 @@ label give_her_gift(gift_item):
             call her_main("That saddle, [genie_name]...","open","baseL",cheeks="blush")
             call her_main("It was designed especially for witches, was it not?","open","squint",cheeks="blush")
             call her_main("I am not sure whether this is inappropriate or clever...","annoyed","annoyed")
-            call her_main("But this is a brilliant piece of engineering eitherway...","base","suspicious")
+            call her_main("But this is a brilliant piece of engineering either way...","base","suspicious")
             call give_gift(">You give the broom to Hermione...",gift_item)
             call her_main("Thank you, [genie_name].","base","glance")
             call her_mood(-30)

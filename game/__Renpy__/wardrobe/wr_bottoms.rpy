@@ -402,7 +402,7 @@ label equip_her_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/
                             m "(Something tells me she doesn't want to wear green stuff.)"
                             m "(Is she allergic to grasshoppers or something?)"
                         else:
-                            m "(Could have sworn I picked the right color for her...)"
+                            m "(Could have sworn I picked the right colour for her...)"
                         m "Forget about it, girl."
                         call her_main("I will!","annoyed","annoyed")
                         if cheats_active or game_difficulty <= 2:

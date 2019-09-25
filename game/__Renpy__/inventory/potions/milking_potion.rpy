@@ -96,7 +96,7 @@ label potion_scene_11_1: #Milking potion part 1
     call her_main("I can't be expected to go to class looking like this!","annoyed","worriedL")
     m "Why not? I don't think they're that much bigger than normal."
     call her_main("Are you kidding me?","disgust","glance")
-    call her_main("They're {size=+5}humungous!{/size}","angry","angry")
+    call her_main("They're {size=+5}humongous!{/size}","angry","angry")
     m "Well if you want them to go back to normal..."
     call her_main("What? Do you have an antidote?","grin","baseL")
     m "Not an antidote, but I do have a method that would alleviate the swelling."
@@ -157,7 +157,7 @@ label potion_scene_11_2: #Milking potion part 2
     call her_main("...","annoyed","frown")
     call her_main("well...","open","suspicious")
     call her_main("if you want me to drink this damn potion again...","open","suspicious")
-    call her_main("I have two conditons...","annoyed","angryL")
+    call her_main("I have two conditions...","annoyed","angryL")
     m "Name them."
     call her_main("One!","scream","angryCl")
     call her_main("I demand to be paid one hundred points!","scream","angryCl")
@@ -295,7 +295,7 @@ label potion_scene_11_2: #Milking potion part 2
     call her_main("It's too intense!","shock","worriedCl")
     m "Can't you just ride it out?"
     call her_main("Ugh.... maybe... {p}I'll try.","silly","ahegao")
-    call nar(">You wait a few more mintues as hermione is milked in front of you.")
+    call nar(">You wait a few more minutes as hermione is milked in front of you.")
 
     $ milking = 3
     call set_her_action("milk_breasts")
@@ -406,7 +406,7 @@ label potion_scene_11_3: #Milking potion part 3
     m "Did you really think it would be?"
     call her_main("I mean... Sort of?","annoyed","down")
     call her_main("you are a wizard after all...","annoyed","down")
-    call her_main("the house elfs make me a milkshake whenever i ask...","annoyed","angry")
+    call her_main("the house-elves make me a milkshake whenever i ask...","annoyed","angry")
     m "Speaking of milkshakes!"
     call nar(">You notice hermione's breasts start to swell...")
     call her_main("Ugh... this always feels so weird...","angry","down_raised")

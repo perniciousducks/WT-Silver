@@ -30,7 +30,7 @@ label ll_pf_masturbate_T1_intro:
     call lun_main("I'm afraid so...","upset","angry","sad","R")
     m "And you think these wackspots are to blame?"
     call lun_main("I'm not sure...","normal","seductive","sad","down")
-    call lun_main("According to my father's beastiaries, they should only ever produce a grey tinge to an aura...","normal","seductive","sad","R")
+    call lun_main("According to my father's bestiaries, they should only ever produce a grey tinge to an aura...","normal","seductive","sad","R")
     call lun_main("For them to be making auras red...","upset","wide","sad","down")
     call lun_main("It could be very dangerous!","normal","wide","sad","mid")
     m "(Pffft... auras...)"
@@ -61,7 +61,7 @@ label ll_pf_masturbate_T1_intro:
     m "(Did she buy it?)"
     call lun_main("Yes, You're right, sir.","normal","closed","sad","R")
     m "(YES!)"
-    call lun_main("But are there really techniques to dispell them?","normal","seductive","raised","mid")
+    call lun_main("But are there really techniques to dispel them?","normal","seductive","raised","mid")
     m "There are, but as I said, if you want to learn them you'd have to promise not to tell anyone what happens here."
     call lun_main("I suppose that's only fair, This information would be worth more than a snorkack sighting!","base","base","sad","mid")
     m "..."
@@ -255,7 +255,7 @@ label ll_pf_masturbate_T1_intro_E1:
     call lun_main("Alright... but the wrackspurts seem to have come back..","upset","base","angry","R")
     m "Again? So soon?"
     call lun_main("I'm afraid so [lun_genie_name]...","normal","base","sad","mid")
-    call lun_main("Everytime I think about what we did in here...","normal","wide","sad","mid")
+    call lun_main("Every time I think about what we did in here...","normal","wide","sad","mid")
     call lun_main("It just makes them feel so much... stronger...","normal","angry","sad","R")
     m "Yes... They must be afraid of my powerful techniques..."
     call lun_main("Do you think so?","normal","closed","sad","R")
@@ -411,7 +411,7 @@ label ll_pf_masturbate_T1_start: # Call label
     call lun_main("Ah...{w=0.3} thank you [lun_genie_name]...","normal","seductive","sad","down")
     m "You seem relieved..."
     call lun_main("Ah...{w=0.3} of course... I've been waiting to come here since yesterday...","base","wide","sad","mid")
-    call lun_main("I think Those slimy wrackspurts have infested the commonroom...","base","seductive","sad","down")
+    call lun_main("I think Those slimy wrackspurts have infested the common room...","base","seductive","sad","down")
     m "That's quite possible..."
     call lun_main("Ah...{w=0.3} ah...","normal","happyCl","sad","R")
     call lun_main("But getting rid of them...{w=0.4} feels...{w=0.4} so...{w=0.3} so...{w=0.3} good...","pout","base","sad","mid")

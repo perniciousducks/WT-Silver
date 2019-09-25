@@ -265,7 +265,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 m "mmmm"
                 call lun_main("I bet you'd cum if I kept going wouldn't you...","normal","seductive","raised","R")
                 m "yes..."
-                call lun_main("well you better be prepared to pay extra for the privilige...","normal","angry","angry","R")
+                call lun_main("well you better be prepared to pay extra for the privilege...","normal","angry","angry","R")
                 m "of course..."
                 call lun_main("...","upset","mad","angry","R")
                 ">luna starts rocking her hips forward and backwards, your cock pressed between her cheeks."
@@ -613,7 +613,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 m "mmmm"
                 call lun_main("I bet you'd cum if I kept going wouldn't you...","base","seductive","angry","R")
                 m "yes..."
-                call lun_main("well you better be prepared to pay extra for the privilige...","normal","angry","angry","R")
+                call lun_main("well you better be prepared to pay extra for the privilege...","normal","angry","angry","R")
                 m "of course..."
                 call lun_main("...","upset","mad","angry","R")
                 ">luna starts rocking her hips forward and backwards, your cock pressed between her cheeks."
@@ -698,7 +698,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 m "mmmm"
                 call lun_main("I bet you'd cum if I kept going wouldn't you...","base","seductive","raised","R")
                 m "yes..."
-                call lun_main("well you better be prepared to pay extra for the privilige...","base","angry","angry","R")
+                call lun_main("well you better be prepared to pay extra for the privilege...","base","angry","angry","R")
                 m "of course..."
                 call lun_main("...","base","mad","angry","R")
                 ">luna starts rocking her hips forward and backwards, your cock pressed between her cheeks."
@@ -852,7 +852,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
 
                 label luna_lap_dance_3:
                     m "That's it, now just start moving your ass a little more."
-                ">Luna starts forcefuly grinding her supple ass against you."
+                ">Luna starts forcefully grinding her supple ass against you."
                 m "mmmm, that's it."
                 call lun_main("...","upset","mad","sad","down")
                 call lun_main("is this good?","normal","seductive","sad","R")
@@ -1058,7 +1058,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 m "mmmm"
                 call lun_main("I bet you'd cum if I kept going wouldn't you...","base","seductive","raised","R")
                 m "yes..."
-                call lun_main("well you better be prepared to pay extra for the privilige...","base","angry","angry","R")
+                call lun_main("well you better be prepared to pay extra for the privilege...","base","angry","angry","R")
                 m "of course..."
                 call lun_main("...","base","mad","angry","R")
                 ">luna starts rocking her hips forward and backwards, your cock pressed between her cheeks."
@@ -1226,7 +1226,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
     else: #Hermione involved
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1
         m "Can I offer you another seat [lun_name]?"
-        call lun_main("so you want another lapdance...","normal","seductive","angry","mid")
+        call lun_main("so you want another lap dance...","normal","seductive","angry","mid")
         m "if it's not too much trouble..."
         call lun_main("not at all...","base","seductive","base","R")
         call lun_main("but just for fun... why don't you get hermione up here?","base","angry","sad","down")
@@ -1255,7 +1255,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         call ctc
 
         call her_main("hello Professor!","base","closed")
-        call her_main("hey luna! oh, has he got you on lapdance duty today then?","smile","happyCl",emote="06")
+        call her_main("hey luna! oh, has he got you on lap dance duty today then?","smile","happyCl",emote="06")
         call lun_main("if you can even call it that...","normal","seductive","angry","R")
         call lun_main("most of the time he just makes me grind up against him while he creams his robe...","base","base","base","down")
         call lun_main("I feel bad for the elves who have to clean it up...","base","mad","angry","down")

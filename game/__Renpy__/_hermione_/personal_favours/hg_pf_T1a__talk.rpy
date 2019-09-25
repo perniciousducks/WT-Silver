@@ -527,7 +527,7 @@ label hg_pf_talk_T3:
 
 label hg_pf_talk_tonks_T3_intro_E1:
 
-    m "[hermione_name], for todays favour I'd like to bring in a guest to join us."
+    m "[hermione_name], for today's favour I'd like to bring in a guest to join us."
     call her_main("What? Didn't we decide it was going to be between just you and I?", mouth="open", eye="frown")
     m "Well, why only the two of us when there was the option to bring another person in?"
     call her_main("The option to?", mouth="normal", eye="frown")
@@ -616,7 +616,7 @@ label hg_pf_talk_tonks:
                 "-Participate in the conversation-":
                     $ masturbating = False
 
-            call her_main("There's the time Tracey Davis gave Slughorn a lapdance, in the middle of class!", mouth="annoyed", eye="angryL", cheeks="blush")
+            call her_main("There's the time Tracey Davis gave Slughorn a lap dance, in the middle of class!", mouth="annoyed", eye="angryL", cheeks="blush")
             call ton_main("In the middle of class?", mouth="open", eyes="wide", pupils="wide", eyebrows="base", hair="basic")
             call her_main("Yes, she was just sitting on his lap while he taught from his desk...", mouth="open", eye="baseL", cheeks="blush")
             call her_main("But we could all see her moving her hips!", mouth="annoyed", eye="baseL", cheeks="blush")
@@ -674,7 +674,7 @@ label hg_pf_talk_tonks:
                 m "You sold me exactly [tmp_word] favours."
                 call her_main("B-but that's...{w=0.4}{nw}", mouth="angry", eye="happy", cheeks="blush")
                 if tmp_val < 10:
-                    call ton_main("Dissapointing but it's a start.", mouth="open", eyes="closed", pupils="R", eyebrows="base", hair="basic")
+                    call ton_main("Disappointing but it's a start.", mouth="open", eyes="closed", pupils="R", eyebrows="base", hair="basic")
                     call her_main("...", mouth="annoyed", eye="glanceL", cheeks="blush")
                 elif tmp_val >= 10 and tmp_val < 20:
                     call ton_main("Not bad, but I expected better from one of the top students in entire school.", mouth="open", eyes="base", pupils="mid", eyebrows="base", hair="basic")
@@ -691,7 +691,7 @@ label hg_pf_talk_tonks:
                     call her_main("...", mouth="angry", eye="base", cheeks="blush")
                 else:
                     call ton_main("Wow! Who would have thought you're the girl from top of the list.", mouth="smile", eyes="happyCl", pupils="wide", eyebrows="base", hair="basic")
-                    call ton_main("Colour me surprised, looks like they were talking the truth afterall.", mouth="base", eyes="happyCl", pupils="wide", eyebrows="base", hair="basic")
+                    call ton_main("Colour me surprised, looks like they were telling the truth after all.", mouth="base", eyes="happyCl", pupils="wide", eyebrows="base", hair="basic")
                     call her_main("(...a list ... what list...?)", mouth="open", eye="surprised", cheeks="blush")
                     call ton_main("Congratulations for being a \"top\" student.", mouth="horny", eyes="base", pupils="L", eyebrows="base", hair="horny")
                     call her_main("...", mouth="disgust", eye="glanceL", cheeks="blush")
@@ -825,7 +825,7 @@ label hg_pf_talk_tonks:
             call ton_main("No reason... please continue...", mouth="open", eyes="base", pupils="R", eyebrows="raised", cheeks="cheeks_blush", hair="basic")
             call ton_main("", mouth="base", eyes="base", pupils="mid", eyebrows="raised", hair="basic")
             call her_main("Well, I do hope that Hagrid is above this favour trading business. He sure seems like it during my classes with him.", mouth="open", eye="closed")
-            call her_main("One of those Slytherin students was being quite rough with a blast ended skrewt making it go off on purpose...", mouth="annoyed", eye="baseL")
+            call her_main("One of those Slytherin students was being quite rough with a Blast-ended skrewt making it go off on purpose...", mouth="annoyed", eye="baseL")
             if masturbating:
                 call her_main("She was slowly moving it up and down only agitating it a bit initially...", mouth="annoyed", eye="base")
                 g9 "(Yes I bet you'd love to do that with my cock.)"
@@ -870,8 +870,8 @@ label hg_pf_talk_tonks:
             else:
                 call ton_main("Now that's fucked up!", mouth="open", eyes="base", pupils="mid", eyebrows="angry", hair="basic")
                 call her_main("I know! Finally!", mouth="open", eye="angryCl")
-                call ton_main("That's not how you're supposed to care for a blast ended skrewt...", mouth="open", eyes="closed", pupils="mid", eyebrows="angry", hair="basic")
-                call ton_main("Wait, what is a blast ended skrewt actually?", mouth="open", eyes="base", pupils="mid", eyebrows="sad", hair="basic")
+                call ton_main("That's not how you're supposed to care for a Blast-ended skrewt...", mouth="open", eyes="closed", pupils="mid", eyebrows="angry", hair="basic")
+                call ton_main("Wait, what is a Blast-ended skrewt actually?", mouth="open", eyes="base", pupils="mid", eyebrows="sad", hair="basic")
                 call her_main("It's some crossbreed that Hagrid made... I don't know exactly how he managed it...", mouth="open", eye="base")
                 call ton_main("Sounds to me that this Hagrid fellow has been doing some illegal breeding...", mouth="upset", eyes="base", pupils="mid", eyebrows="base", hair="basic")
                 m "*Ahem*"

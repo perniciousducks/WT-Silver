@@ -709,7 +709,7 @@ label hg_pr_strip_T4_masturbate_rear:
         m "What are you complaining about, [hermione_name]?"
         m "I'm not even touching your ass..."
         call her_main("Yes, but you are... touching yourself, [genie_name].","shock","worriedCl")
-        m "Just stand still, you fat assed bitch."
+        m "Just stand still, you fat-assed bitch."
         m "It will be over soon."
         call her_main("..................","shock","worriedCl")
         m "Yes... Yes, like that..."
@@ -748,7 +748,7 @@ label hg_show_ass_cumming:
                 hide screen blktone
                 call blkfade
 
-                g4 "Argh! You fat assed slut!"
+                g4 "Argh! You fat-assed slut!"
                 call her_main("Proff-- ??","scream","wide", cheeks="blush", ypos="head")
                 call cum_block
 
@@ -796,7 +796,7 @@ label hg_show_ass_cumming:
                 hide screen blktone
                 call blkfade
 
-                g4 "Argh! You fat assed whore!"
+                g4 "Argh! You fat-assed whore!"
                 call her_main("Proff-- ??","scream","wide", cheeks="blush", ypos="head")
                 call cum_block
 
@@ -889,7 +889,7 @@ label hg_show_ass_cumming:
                 call her_main("ah{image=textheart}, what's done is done I suppose...","base","baseL", cheeks="blush")
 
             "-Just start cumming-":
-                g4 "Argh! You fat assed whore!"
+                g4 "Argh! You fat-assed whore!"
                 call her_main("???","mad","wide", cheeks="blush", ypos="head")
                 call cum_block
 
@@ -998,7 +998,7 @@ label end_hg_show_ass:
         call her_main("{size=-5}(i wonder what he'll ask me to do next...?){/size}","open","ahegao_raised", cheeks="blush", ypos="head")
 
     else:
-        call her_main("{size=-5}(That was so exhilerating...) {/size}", "base", "ahegao_raised", cheeks="blush", ypos="head")
+        call her_main("{size=-5}(That was so exhilarating...) {/size}", "base", "ahegao_raised", cheeks="blush", ypos="head")
         call her_main("{size=-5}(No, Hermione, you silly girl!) {/size}", "angry", "angry", cheeks="blush", ypos="head")
         call her_main("{size=-5}(it was shameful! good girls don't get turned on by stripping for their headmaster!) {/size}", "angry", "angry", cheeks="blush", ypos="head")
         call her_main(".................................","base","ahegao_raised", cheeks="blush", ypos="head")

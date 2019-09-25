@@ -451,7 +451,7 @@ label hg_pf_blowjob_1:
             m "Yes... Ehm... I know everything of course."
             m "But I want to see how much you know."
             m "To test your knowledge on the subject."
-            call nar(">As soon as you mention \"test\" Hermone's eyes light up with excitement.")
+            call nar(">As soon as you mention \"test\" Hermione's eyes light up with excitement.")
             call her_main("OK. But I need a moment gather my thoughts...","smile","happyCl", emote="06")
 
             call hg_chibi_transition("bj", trans="d3")
@@ -464,7 +464,7 @@ label hg_pf_blowjob_1:
             call hg_chibi_transition("bj_pause")
             call her_main("The \"Gryffindor\" house was founded by Godric Gryffindor, thus the name.","open","down")
             call her_main("The heraldic animal of \"Gryffindor\" is the lion...")
-            call her_main("And it's colors are red and gold.","open","closed")
+            call her_main("And it's colours are red and gold.","open","closed")
 
             call hg_chibi_transition("bj")
             call her_main("*Gulp!* *Slurp!* *Slurp!*","sucking","ahegao")
@@ -1065,19 +1065,19 @@ label hg_hidden_blowjob_tonks:
             call hg_chibi_transition("bj_pause")
 
         "-Lie-":
-            m "A... Just polishing...{w} the woodworks."
+            m "A... Just polishing...{w} the woodwork."
             call ton_main("Like I'm going to believe that...","open","base","base","mid")
             call ton_main("Are you masturbating, [ton_genie_name]?","horny","base","raised","mid")
 
             if ton_friendship < 50:
                 call ton_main("Or perhaps somebody else has their tongue wrapped around it?","horny","base","raised","L")
-                call her_main("{size=-4}(*Blergchhhgh...* *Caugh...* *Caugh...* *Caugh...*){/size}","sucking","ahegao_intense")
+                call her_main("{size=-4}(*Blergchhhgh...* *Cough...* *Cough...* *Cough...*){/size}","sucking","ahegao_intense")
                 call ton_main("who was that?","base","base","raised","mid")
                 call ton_main("Surely there nobody at this school who would be able to pleasure you properly...","open","base","raised","mid")
             else:
                 call ton_main("Are you stroking your hard, {w}magnificent, {w}cock?","open_wide_tongue","base","base","ahegao")
                 with hpunch
-                call her_main("{size=-4}(*Blergchhhgh...* *Caugh...* *Caugh...* *Caugh...*){/size}","sucking","ahegao_intense")
+                call her_main("{size=-4}(*Blergchhhgh...* *Cough...* *Cough...* *Cough...*){/size}","sucking","ahegao_intense")
                 call hg_chibi_transition("bj_pause")
                 call her_main("{size=-4}What??{/size}","sucking","ahegao_mad")
                 call ton_main("who was that?","base","base","raised","mid")
@@ -1191,7 +1191,7 @@ label hg_hidden_blowjob_tonks:
     call ton_main("I suppose it can wait.","open","base","worried","R")
     call ton_main("Who said teaching would be easy, am I right?","base","base","worried","ahegao")
     m "It's quite easy, actually."
-    call ton_main("As a headmaster maybe... I'm sure your private tutorage is very popular...","horny","base","raised","down")
+    call ton_main("As a headmaster maybe... I'm sure your private tutelage is very popular...","horny","base","raised","down")
     m "It can get quite hard, taking care of all those girls."
     call ton_main("I can certainly see that...","horny","base","angry","mid")
     call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao")
@@ -1697,7 +1697,7 @@ label hg_pf_blowjob_2:
 
             call hg_chibi_transition("bj")
             call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao")
-            m "Thats it.."
+            m "That's it.."
             call her_main("*Slurp!* *Gulp!* *Slurp!*","sucking","dead")
             m "Tell me how much you love my cock."
             call her_main("*Slurp!* *Gobble!* *Slurp!*","sucking","ahegao_raised")
@@ -1713,7 +1713,7 @@ label hg_pf_blowjob_2:
             if hg_pr_blowjob.counter == 0:
                 call hg_chibi_transition("bj_pause")
                 call her_main("Sucking your perfect dick.","base","ahegao_raised")
-                call her_main("No one elses...","base","ahegao_raised")
+                call her_main("No one else's...","base","ahegao_raised")
                 call hg_chibi_transition("bj")
                 call her_main("*lick!* *Slurp!* *Slurp!*","sucking","ahegao_raised")
                 call hg_chibi_transition("bj_pause")
@@ -1930,11 +1930,11 @@ label hg_pf_facefuck_1: # Bondage facefuck scene
     with d5
     ">Unable to wait any longer, you put your hand on the back of Hermione's head before forcefully pulling it forward burying her nose in your stomach and your cock down her throat?"
     her "!!!"
-    ">Hermione's arms desperately sturggle against the cuffs as she attempts to push herself off your cock."
+    ">Hermione's arms desperately struggle against the cuffs as she attempts to push herself off your cock."
     m "See why we need the cuffs now?"
     $ herCG(pupil='mid', xpos=-renpy.random.randint(0, 50))
     her "..."
-    m "Because I don't juyst want a blowjob today. I don't want your arms interfering and getting in the way."
+    m "Because I don't just want a blowjob today. I don't want your arms interfering and getting in the way."
     $ herCG(xpos=-renpy.random.randint(0, 50))
     her "..."
     m "I want to {b}fuck{/b} your face."

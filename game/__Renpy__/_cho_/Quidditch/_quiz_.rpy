@@ -80,7 +80,7 @@ label cho_quiz_1:
         if her_reputation < 16:
             call cho_main("(So nothing sexual, at the very least...)","base","base","base","R")
         else:
-            call cho_main("(I hope it's nothing sexual. I've heard some rumors about Granger...)","quiver","base","sad","R")
+            call cho_main("(I hope it's nothing sexual. I've heard some rumours about Granger...)","quiver","base","sad","R")
 
         call cho_main("Well... if Granger could do it, so can I!","open","closed","base","mid")
         call cho_main("And better!","soft","narrow","base","mid")
@@ -293,8 +293,8 @@ label cho_quiz_1:
         # Cho leaves.
         call cho_walk(action="leave", speed=2.5)
 
-        g4 "(What am I supposed to do now... I clearly know fuckall about Quidditch...)"
-        m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"
+        g4 "(What am I supposed to do now... I clearly know fuck-all about Quidditch...)"
+        m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumb-ass it might have to do...)"
 
         $ snape_quid_help = True
 
@@ -356,7 +356,7 @@ label cho_quiz_1:
         call cho_walk(action="leave", speed=2.5)
 
         g4 "(The fuck am I supposed to do now... I feel like that must’ve been a fluke, I know nothing about Quidditch..)."
-        m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"
+        m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumb-ass it might have to do...)"
 
         $ snape_quid_help = True
 
@@ -633,7 +633,7 @@ label cho_quiz_2:
         call cho_walk(action="leave", speed=2.5)
 
         g4 "(What am I supposed to do now... I clearly don't know enough about Quidditch...)"
-        m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumbass it might have to do...)"
+        m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumb-ass it might have to do...)"
 
         $ snape_quid_help = True
 

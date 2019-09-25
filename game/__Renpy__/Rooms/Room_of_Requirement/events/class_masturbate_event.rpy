@@ -38,7 +38,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         m "Yep, you make an ass out of you and you."
         call her_main("...", mouth="annoyed", eye="annoyed")
         m "..."
-        call her_main("... The favor?", mouth="open", eye="annoyed")
+        call her_main("... The favour?", mouth="open", eye="annoyed")
         m "The wha- Oh Right! I want you to masturbate during class."
         call her_main("[genie_name]!", mouth="shock", eye="wide")
         call her_main("I was right to assume that this would be humiliating!", mouth="angry", eye="angry")
@@ -157,7 +157,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("I was- They-aghh!", mouth="angry", eye="angry")
         m "Just let it out [hermione_name]"
         call her_main("Those...THose...THOSE!", mouth="scream", eye="wide")
-        call her_main("THOSE DISGUSTING WORMS! TALK TO ME LIKE THAT? TWO FACED HYPROCRITES! FUCK THEM!", mouth="scream", eye="wide")
+        call her_main("THOSE DISGUSTING WORMS! TALK TO ME LIKE THAT? TWO FACED HYPOCRITES! FUCK THEM!", mouth="scream", eye="wide")
         m "Feel better?"
         call her_main("...", mouth="normal", eye="base")
         call her_main("... No, no I do not. Not until those Slytherins pay.", mouth="open", eye="narrow")
@@ -306,7 +306,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("{size=-5}(Score is... [hermione_name] 1 - [genie_name]...58){/size}", mouth="clench", eye="worried")
         m "...Paying attention?"
         call her_main("Yes, yes of course gorgeous, dorg- I mean [genie_name]", mouth="open", eye="base", cheeks="blush")
-        m "Right, well as I was saying for today’s favor, I want you to masturbate during class."
+        m "Right, well as I was saying for today’s favour, I want you to masturbate during class."
         call her_main("Can there be bonus points?", mouth="open", eye="base")
         call her_main("", mouth="base", eye="base")
         m "Bonus points?"
@@ -316,7 +316,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", mouth="soft", eye="soft", cheeks="blush")
         m "Oh you gorgeous little, teasing minx!"
         call her_main("I thought we were done with the nicknames.", mouth="annoyed", eye="base")
-        m "Hmm yes, well unfortunately according to the official rules, I may only give 80 points per day for masturbation related favors."
+        m "Hmm yes, well unfortunately according to the official rules, I may only give 80 points per day for masturbation related favours."
         call her_main("Oh I see, that's too bad.", mouth="upset", eye="down")
         g9 "A real shame...but there nothing preventing you from doing those 'bonus’ acts on your own."
         call her_main("I guess...", mouth="upset", eye="frown")
@@ -353,7 +353,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("I think they might have a point. Written tests there are just stupid.", mouth="annoyed", eye="annoyed")
                 m "Gasp."
                 call her_main("I know it's rich coming from me, but I want to think my time with you is giving me a more practical view of the world and-", mouth="open", eye="happy")
-                call her_main("Well come on, it's a defense against the dark arts class.  What's the point of a 'written exam'?", mouth="smile", eye="happy")
+                call her_main("Well come on, it's a defence against the dark arts class.  What's the point of a 'written exam'?", mouth="smile", eye="happy")
                 call her_main("Am I going to send a letter to the dementors and bogarts asking them to stop?", mouth="open", eye="happyCl")
                 m "{size=-5}(I don't think I want to know what those are.){/size}"
                 m "Indeed, so encouraging to hear our session are making you a better person, but I think we are getting off track here."

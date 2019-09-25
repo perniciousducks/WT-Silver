@@ -296,7 +296,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("It's very messy in there... I thought the girls changing room was bad...","base","down_raised")
     m "*CRUNCH* *Chew* *Chew*"
     m "*CRUNCH*"
-    call her_main("Anyway... so I rumaged around in that mess...","annoyed","worried")
+    call her_main("Anyway... so I rummaged around in that mess...","annoyed","worried")
     call her_main("I knew it had to have been somewhere between the showers and the doorway...","base","base")
     call her_main("After looking around for a while I noticed that the cloak had been pushed under one of the benches lining the wall.","open","down")
     call her_main("So I grabbed it and I thought I might as well disrobe and hide in the shower room with the cloak on.","base","down_raised")

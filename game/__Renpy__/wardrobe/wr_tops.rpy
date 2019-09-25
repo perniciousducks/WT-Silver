@@ -145,7 +145,7 @@ label equip_her_top:
                         call her_main("Do I really have to?","open","wink")
                         m "You do."
                         call her_main(".......","annoyed","down")
-                        call her_main("(How embarassing...)","annoyed","ahegao")
+                        call her_main("(How embarrassing...)","annoyed","ahegao")
                 else:
                     call her_main("No thank you, [genie_name].","open","worriedL")
                     call her_main("No amount of points will ever convince me to remove my precious Gryffindor tie!","open","closed")
@@ -372,7 +372,7 @@ label equip_her_top:
                             m "(Something tells me she doesn't want to wear green stuff.)"
                             m "(Is she grasshoppers allergies or something?)"
                         else:
-                            m "(Could have sworn I picked the right color for her...)"
+                            m "(Could have sworn I picked the right colour for her...)"
                         m "Forget about it, girl."
                         call her_main("I will!","annoyed","annoyed")
                         if cheats_active or game_difficulty <= 2:
@@ -436,8 +436,8 @@ label equip_her_top:
                             if her_whoring < 3:
                                 g9 "The skimp--"
                                 m "Girl? What are you doing?"
-                                ">You see Hermione eying the piece of cloth."
-                                call her_main("(Thats the schools Quidditch uniform alright, but...)","annoyed","down")
+                                ">You see Hermione eyeing the piece of cloth."
+                                call her_main("(That's the schools Quidditch uniform alright, but...)","annoyed","down")
                                 call her_main("(There are so many holes in it...)","disgust","down_raised")
                                 call her_main("(Could it be...!)","soft","wide")
                                 call her_main("[genie_name], do you have a rat problem?","open","closed")

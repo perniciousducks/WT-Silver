@@ -270,7 +270,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     call lun_main("(he's going to shoot it all out front of me...)","normal","angry","sad","down",tears="mascara")
                     m "{size=-4}yes...{/size}"
                     call lun_main("(Should I stop.)","upset","suspicious","sad","R",tears="mascara")
-                    g4 "{size=+2}mmmm... thats it keep shaking those milky tits...{/size}"
+                    g4 "{size=+2}mmmm... that's it keep shaking those milky tits...{/size}"
                     call lun_main(".........","base","seductive","sad","mid", tears="mascara")
                     g4 "{size=+4}(agh... almost there...){/size}"
                     call lun_main("(too late...)","base","suspicious","sad","down",tears="mascara")
@@ -360,7 +360,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
             call lun_main("like what you see?","soft","suspicious","sad","R")
             g9 "!!!"
-            call nar(">You start stroking your cock with renewed vigor.")
+            call nar(">You start stroking your cock with renewed vigour.")
             call lun_main("I'll take that as a yes...","base","mad","angry","mid")
             g9 "Aha... Yeah... This feels great..."
             call lun_main("good... just work up a nice big load for me...","base","suspicious","angry","mid")
@@ -822,7 +822,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     call lun_main("I really don't-","normal","seductive","sad","down",tears="mascara")
                     m "{size=-4}yes...{/size}"
                     call lun_main("-think that-","upset","suspicious","sad","down",tears="mascara")
-                    g4 "{size=+2}mmmm... thats it keep going...{/size}"
+                    g4 "{size=+2}mmmm... that's it keep going...{/size}"
                     call lun_main("-we should be-","base","seductive","sad","down",tears="mascara")
                     g4 "{size=+4}(agh... almost there...){/size}"
                     call lun_main("doing thi-","base","suspicious","sad","down",tears="mascara")
@@ -936,7 +936,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             m "Mmmm..."
             call lun_main("Mmmm, isn't that better?","base","suspicious","sad","R")
             g9 "yes..."
-            ">You start stroking your cock with renewed vigor."
+            ">You start stroking your cock with renewed vigour."
             call lun_main("Aren't you keen today?","base","mad","angry","mid")
             g9 "Aha... Yeah... This really great..."
             call lun_main("good... make sure you work up a nice big load for me...","base","suspicious","angry","mid")
@@ -995,7 +995,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 g4 "ah, shit... ah... this is too good..."
                 call lun_main("mmm...","base","mad","mad","mid")
                 m "ah..."
-                call lun_main("keep going... make sure you get every last drop out of that delicous cum out...","base","mad","sad","down")
+                call lun_main("keep going... make sure you get every last drop out of that delicious cum out...","base","mad","sad","down")
                 m "ah... Thank you..."
                 call lun_main("Good boy...","base","seductive","angry","R")
                 call lun_main("Well seeing as how you've ...finished... I suppose I better clean up.","normal","angry","angry","R")

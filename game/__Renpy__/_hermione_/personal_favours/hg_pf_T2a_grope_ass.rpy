@@ -836,7 +836,7 @@ label hg_pf_grope_ass_T4_front:
     #show screen no_groping_01
     call ctc
 
-    "Dev Note" "This favor needs to be rewritten!"
+    "Dev Note" "This favour needs to be rewritten!"
 
     call her_main("[genie_name], please hurry...","soft","baseL", cheeks="blush")
     m "What's the problem, [hermione_name]?"
@@ -945,7 +945,7 @@ label hg_pf_grope_ass_T4_back:
     # show screen no_groping_02
     call ctc
 
-    "Dev Note" "This favor needs to be rewritten."
+    "Dev Note" "This favour needs to be rewritten."
 
     call her_main(".............","base","ahegao_raised", cheeks="blush")
 
@@ -1002,7 +1002,7 @@ label hg_pf_grope_ass_T4_back:
             call her_main("just a little-","grin","ahegao")
 
             call slap_her
-            call her_main("I'm gunna","silly","dead")
+            call her_main("I'm gonna","silly","dead")
 
             call slap_her
             call her_main("cumcumcummingcumming","silly","ahegao")

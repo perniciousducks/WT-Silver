@@ -344,7 +344,7 @@ label hg_pf_grope_T3_E2:
     if one_out_of_three == 1:
         call her_main("I wouldn't mind it if you massaged my breasts a little...","soft","glanceL")
     elif one_out_of_three == 2:
-        call her_main("I wouldn't mind it if you carassed my bum a bit, Sir...","soft","down")
+        call her_main("I wouldn't mind it if you caressed my bum a bit, Sir...","soft","down")
     else:
         call her_main("I wouldn't mind either today, Sir.","soft","glanceL")
 

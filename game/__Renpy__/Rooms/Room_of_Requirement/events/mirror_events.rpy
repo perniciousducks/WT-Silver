@@ -216,7 +216,7 @@ label a_spaced_out_conversation:
     nar "Genie said."
     nar "Snape flicked his hands impatiently and just decided to move on"
     nar "Determining when Genie was serious or not was still beyond his ability."
-    nar "Plus, there had been another one of those weird flickers and he could have sworn he had seen a multicolor scarf around Genie’s neck."
+    nar "Plus, there had been another one of those weird flickers and he could have sworn he had seen a multicoloured scarf around Genie’s neck."
 
     call sna_main("And, you then grant the summoner three wishes?","snape_01")
 
@@ -236,7 +236,7 @@ label a_spaced_out_conversation:
 
     nar "Snape frowned at that smile. He got along almost perfectly with Genie."
     nar "Their lusts and passions were quite similar..."
-    nar "It’s just Genie’s sense of humor that made Snape doubt his seriousness sometimes."
+    nar "It’s just Genie’s sense of humour that made Snape doubt his seriousness sometimes."
 
     call sna_main("You’ve got the power of a god,","snape_06")
 
@@ -291,12 +291,12 @@ label a_spaced_out_conversation:
 
     call sna_main("After we find a way to get you back to your home, maybe I could come visit you and we could work something out.","snape_28")
 
-    nar "Genie eyed him curiously and then, with a bit of his usual humor asked,"
+    nar "Genie eyed him curiously and then, with a bit of his usual humour asked,"
 
     g9 "Are you sure you could resist the urge to use all three on yourself?"
 
     nar "Snape chuckled. He momentarily considered how rarely he chuckled."
-    nar "Not with humor, at least. He hadn’t really done that since..."
+    nar "Not with humour, at least. He hadn’t really done that since..."
 
     call sna_main("Yes","snape_28")
 
@@ -442,7 +442,7 @@ label a_spaced_out_conversation:
 
     m "Like a space station?"
 
-    nar "Genie asked, his humor returning with his hope."
+    nar "Genie asked, his humour returning with his hope."
 
     call sna_main("Exactly.","snape_28")
 

@@ -80,7 +80,7 @@ default trophy_stag_ITEM = item_class(id="stag", name="Stag Head Trophy", cost=3
 default trophy_crest_ITEM = item_class(id="crest", name="Hogwarts Crest", cost=5, type="trophy", image="trophies/crest", description="A perfect decoration for a headmaster.")
 
 # Pinups & Misc
-default pinup_girl_ITEM = item_class(id="_deco_1", name="Girl Pinup", cost=0, type="pinup", image="pinups/girl", description="Spice up your cupboard with this sexy pinup model...\n(Shows up when rumaging through the cupboard).", unlocked=True)
+default pinup_girl_ITEM = item_class(id="_deco_1", name="Girl Pinup", cost=0, type="pinup", image="pinups/girl", description="Spice up your cupboard with this sexy pinup model...\n(Shows up when rummaging through the cupboard).", unlocked=True)
 
 # Hats
 default owl_hat_ITEM = item_class(id="owl_hat", name="Owl Hat", cost=1, type="owl", imagepath="interface/icons/misc/owl_hat.png", description="A hat for an owl. Don't ask, just accept it..")
@@ -124,10 +124,10 @@ default scroll_3_ITEM = scroll_class(id="scroll_3",   name="The girl",          
 default scroll_4_ITEM = scroll_class(id="scroll_4",   name="Deepthroating",      cost=60,  type="scroll", image="item_scroll", scroll_image="4", comments=["The deepthroating scene...","My first attempt.","Been deemed unworthy and ended up here."])
 default scroll_5_ITEM = scroll_class(id="scroll_5",   name="Poster 01",          cost=50,  type="scroll", image="item_scroll", scroll_image="5", comments=["The game poster...","Hermione is Dahr's work. The rest is me..."])
 default scroll_6_ITEM = scroll_class(id="scroll_6",   name="Poster 02",          cost=50,  type="scroll", image="item_scroll", scroll_image="6", comments=["Alternative game poster.","This one has never been released."])
-default scroll_7_ITEM = scroll_class(id="scroll_7",   name="Chibi-dancing",      cost=20,  type="scroll", image="item_scroll", scroll_image="7", comments=["Some chibi closeups.","The one on the left never made it into the final game..."])
-default scroll_8_ITEM = scroll_class(id="scroll_8",   name="Game items",         cost=10,  type="scroll", image="item_scroll", scroll_image="8", comments=["A banch of items that I ended up not using...","I blame dahr and his awesome artwork."])
+default scroll_7_ITEM = scroll_class(id="scroll_7",   name="Chibi-dancing",      cost=20,  type="scroll", image="item_scroll", scroll_image="7", comments=["Some chibi close-ups.","The one on the left never made it into the final game..."])
+default scroll_8_ITEM = scroll_class(id="scroll_8",   name="Game items",         cost=10,  type="scroll", image="item_scroll", scroll_image="8", comments=["A bunch of items that I ended up not using...","I blame dahr and his awesome artwork."])
 default scroll_9_ITEM = scroll_class(id="scroll_9",   name="Panties no panties", cost=50,  type="scroll", image="item_scroll", scroll_image="9", comments=["The drawing of Hermione from the poster. (by Dahr)","I like one on the right with her panties still on."])
-default scroll_10_ITEM = scroll_class(id="scroll_10", name="A lot of pegs",      cost=50,  type="scroll", image="item_scroll", scroll_image="10", comments=["Another ithing that never made it into the final game...","The idea here was that the more you level up Hermione the more pegs she would let you to put on her...","And the nipple chain was supposed to be worn to class under the uniform."])
+default scroll_10_ITEM = scroll_class(id="scroll_10", name="A lot of pegs",      cost=50,  type="scroll", image="item_scroll", scroll_image="10", comments=["Another thing that never made it into the final game...","The idea here was that the more you level up Hermione the more pegs she would let you to put on her...","And the nipple chain was supposed to be worn to class under the uniform."])
 default scroll_11_ITEM = scroll_class(id="scroll_11", name="House-elf brothel",  cost=80,  type="scroll", image="item_scroll", scroll_image="11", comments=["The house-elf brothel... Just another thing that never happened."])
 default scroll_12_ITEM = scroll_class(id="scroll_12", name="Me and Lola",        cost=10,  type="scroll", image="item_scroll", scroll_image="12", comments=["A drawing featuring yours truly as a Durmstrung mage and Lola as a student...","The drawing itself is by Dahr of course."])
 default scroll_13_ITEM = scroll_class(id="scroll_13", name="Hard training",      cost=80,  type="scroll", image="item_scroll", scroll_image="13", comments=["Another one of those side-quests that never happened...","This one was about--","No, I better not. Who knows, maybe we will get to adding those quests eventually."])
@@ -144,11 +144,11 @@ default scroll_22_ITEM = scroll_class(id="scroll_22", name="Witch robe 02",     
 default scroll_23_ITEM = scroll_class(id="scroll_23", name="Witch robe 03",      cost=20,  type="scroll", image="item_scroll", scroll_image="23", comments=["Didn't expect this one, did you?","In case you're wondering this is still Hermione."])
 default scroll_24_ITEM = scroll_class(id="scroll_24", name="Witch robe 04",      cost=20,  type="scroll", image="item_scroll", scroll_image="24", comments=[".................................","Sub-quests of course..."])
 default scroll_25_ITEM = scroll_class(id="scroll_25", name="The walk",           cost=80,  type="scroll", image="item_scroll", scroll_image="25", comments=["Another sub-quest...","We had a rather lengthy discussion with Dahr about this one...","I was sort of against it, but then Dahr sent me this picture and it made me shut up."])
-default scroll_26_ITEM = scroll_class(id="scroll_26", name="Durmstrang",         cost=80,  type="scroll", image="item_scroll", scroll_image="26", comments=["One the very early stages of development I had an idea of representing outcomes of your failed or successfully completed sub quests with a simplistic plates, or photographs...","At first many of the sub-quests involved deciding on how to spend the Hogwarts budget...","Spend your money to finance the school quiddich team, or to hire new teachers and such..."])
+default scroll_26_ITEM = scroll_class(id="scroll_26", name="Durmstrang",         cost=80,  type="scroll", image="item_scroll", scroll_image="26", comments=["One the very early stages of development I had an idea of representing outcomes of your failed or successfully completed sub quests with a simplistic plates, or photographs...","At first many of the sub-quests involved deciding on how to spend the Hogwarts budget...","Spend your money to finance the school quidditch team, or to hire new teachers and such..."])
 default scroll_27_ITEM = scroll_class(id="scroll_27", name="Gag ball",           cost=80,  type="scroll", image="item_scroll", scroll_image="27", comments=["Isn't she adorable?"])
 default scroll_28_ITEM = scroll_class(id="scroll_28", name="New clothes 01",     cost=50,  type="scroll", image="item_scroll", scroll_image="28", comments=["Another (rather lengthy) sub-quest..."])
 default scroll_29_ITEM = scroll_class(id="scroll_29", name="New clothes 02",     cost=50,  type="scroll", image="item_scroll", scroll_image="29", comments=[".........."])
-default scroll_30_ITEM = scroll_class(id="scroll_30", name="The gang",           cost=10,  type="scroll", image="item_scroll", scroll_image="30", comments=["One of the very early sketches related to the quiddich sub-quests..."])
+default scroll_30_ITEM = scroll_class(id="scroll_30", name="The gang",           cost=10,  type="scroll", image="item_scroll", scroll_image="30", comments=["One of the very early sketches related to the quidditch sub-quests..."])
 
 default scroll_31_ITEM = scroll_class(id="scroll_31", name="Silver",           cost=10,  type="scroll", image="item_scroll_silver", scroll_image="31", comments=[""])
 default scroll_32_ITEM = scroll_class(id="scroll_32", name="New characters!",   cost=50,  type="scroll", image="item_scroll_silver", scroll_image="32", comments=["More and more characters got added along the way..."])
@@ -187,7 +187,7 @@ default scroll_list_C = [
 # Badges
 default spew_badge_ITEM      = item_class(id="spew_badge", name="S.P.E.W. Badge",       type="accessory", items=["badge"],       image="badge_spew",        cost=5,  description=">A badge designed to show one's opposition of elf\n slavery.")
 default cum_badge_ITEM       = item_class(id="cum_badge", name="I <3 C.U.M. Badge",     type="accessory", items=["badge"],       image="badge_cum",  cost=15, description=">A badge that displays ones affection towards semen.")
-default cat_ears_ITEM        = item_class(id="cat_ears", name="Cat Ears",               type="accessory", items=["ears","tail"], image="ears_cat",          cost=40, description=">A fluffy set of catlike ears that matches one's\n hair-color!")
+default cat_ears_ITEM        = item_class(id="cat_ears", name="Cat Ears",               type="accessory", items=["ears","tail"], image="ears_cat",          cost=40, description=">A fluffy set of catlike ears that matches one's\n hair-colour!")
 default elf_ears_ITEM        = item_class(id="elf_ears", name="Elf Ears",               type="accessory", items=["ears"],        image="ears_elf",          cost=20, description=">A pointy set of elven ears.")
 default reading_glasses_ITEM = item_class(id="reading_glasses", name="Reading Glasses", type="accessory", items=["glasses"],     image="glasses_reading",   cost=50, description=">A lot of wizards are into girls wearing these!")
 default vintage_glasses_ITEM = item_class(id="vintage_glasses", name="Vintage Glasses", type="accessory", items=["glasses"],     image="glasses_vintage",   cost=70, description=">Wearing these doesn't automatically make you a nerd!")
@@ -205,7 +205,7 @@ default accs_list=[
 default lipstick_red_ITEM    = item_class(id="lipstick_red", name="Red Lipstick",   type="makeup", items=["lipstick"], image="lipstick_red",    cost=100, description=">They call this one the red rocket!")
 default lipstick_pink_ITEM   = item_class(id="lipstick_pink", name="Pink Lipstick", type="makeup", items=["lipstick"], image="lipstick_pink",   unlockable=True)
 default freckles_makeup_ITEM = item_class(id="freckles_makeup", name="Freckles",    type="makeup", items=["freckles"], image="makeup_freckles", cost=20,  description=">A magical item that makes the wearer's freckles more\n pronounced!")
-default fake_cum_makeup_ITEM = item_class(id="fake_cum_makeup", name="Fake Cum",    type="makeup", items=["fake cum"], image="makeup_fake_cum", cost=20,  description=">When she doen't want to wear your real cum just yet.\n Be patient!")
+default fake_cum_makeup_ITEM = item_class(id="fake_cum_makeup", name="Fake Cum",    type="makeup", items=["fake cum"], image="makeup_fake_cum", cost=20,  description=">When she doesn't want to wear your real cum just yet.\n Be patient!")
 
 default misc_list=[
     lipstick_red_ITEM,
@@ -225,7 +225,7 @@ default dark_green_dye_ITEM = item_class(id="dark_green_dye", name="Serpent Gree
 default blue_dye_ITEM       = item_class(id="blue_dye", name="Pixie Dye",           type="dye", items=["clothing dye"],            image="dye_blue",       cost=60,  description=">A bright shade of blue.")
 default dark_blue_dye_ITEM  = item_class(id="dark_blue_dye", name="Raven Blue",     type="dye", items=["clothing dye","hair dye"], image="dye_dark_blue",  cost=80,  description=">A darker shade of blue.")
 default purple_dye_ITEM     = item_class(id="purple_dye", name="Pygmy Puff Purple", type="dye", items=["clothing dye","hair dye"], image="dye_purple",     cost=100, description=">A very nice shade of purple.")
-default pink_dye_ITEM       = item_class(id="pink_dye", name="Pussy Pink",          type="dye", items=["clothing dye","hair dye"], image="dye_pink",       cost=120, description=">A color so pink, it makes you want to cover your\n whole room with it!")
+default pink_dye_ITEM       = item_class(id="pink_dye", name="Pussy Pink",          type="dye", items=["clothing dye","hair dye"], image="dye_pink",       cost=120, description=">A colour so pink, it makes you want to cover your\n whole room with it!")
 default gray_dye_ITEM       = item_class(id="gray_dye", name="Ghostly Gray",        type="dye", items=["clothing dye","hair dye"], image="dye_gray",       cost=120, description=">A very classy shade of gray.")
 default black_dye_ITEM      = item_class(id="black_dye", name="Seriously Black",    type="dye", items=["clothing dye","hair dye"], image="dye_black",      cost=200, description=">As black as a Testral.")
 default white_dye_ITEM      = item_class(id="white_dye", name="Patroni White",      type="dye", items=["clothing dye"],            image="dye_white",      cost=200, description=">As bright and pure as a Patronus!")
@@ -420,7 +420,7 @@ default hg_cheer_g_ITEM = costume_class(
     outfit_layers = ["tops/top_cheer_g","bottoms/skirt_cheer_g"]
 )
 default hg_cheer_s_ITEM = costume_class(
-    id="hg_cheer_s", name="Slythrin Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_s",
+    id="hg_cheer_s", name="Slytherin Cheerleader", type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_s",
     cost=80, wait_time=2, description=">The Slytherin version of the Cheerleader attire.",
     outfit_layers = ["tops/top_cheer_s","bottoms/skirt_cheer_s"]
 )
@@ -439,7 +439,7 @@ default hg_cheer_g_sexy_ITEM = costume_class(
     outfit_layers = ["tops/top_cheer_sexy_g","bottoms/skirt_cheer_sexy_g"]
 )
 default hg_cheer_s_sexy_ITEM = costume_class(
-    id="hg_cheer_s_sexy", name="Sexy Slythrin Cheerleader",   type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_s_sexy", unlockable=True,
+    id="hg_cheer_s_sexy", name="Sexy Slytherin Cheerleader",   type="set", items=["top","bottom","stockings"], image="outfits/hg_cheer_s_sexy", unlockable=True,
     outfit_layers = ["tops/top_cheer_sexy_s","bottoms/skirt_cheer_sexy_s"]
 )
 default hg_cheer_r_sexy_ITEM = costume_class(

@@ -828,7 +828,7 @@ label cc_pf_strip_T1_intro_E3:
     m "So...{w} what if it's not Snape, but some other teacher that makes their way in here?"
     call cho_main("*Huh?*{w} Oh no!","soft","wide","base","mid")
     call cho_main("For a second I forgot we even had other teachers at this school!","open","wide","sad","L")
-    call cho_main("What if Professor McGonagal stumbles in here while-{w} while I-...","angry","closed","sad","mid")
+    call cho_main("What if Professor McGonagall stumbles in here while-{w} while I-...","angry","closed","sad","mid")
 
     call play_sound("desk")
     call hide_characters

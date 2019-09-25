@@ -333,7 +333,7 @@ screen t_wardrobe_menu(xx, yy):
             vbox:
                 ypos 416
                 textbutton "{size=12}Music{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(wardrobe_music_active)+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("music") hovered SetVariable("tooltip", "Toggle music") unhovered SetVariable("tooltip", None)
-                textbutton "{size=12}BG Color{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_true.png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("bg_color") hovered SetVariable("tooltip", "Change background colour") unhovered SetVariable("tooltip", None)
+                textbutton "{size=12}BG Colour{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_true.png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("bg_color") hovered SetVariable("tooltip", "Change background colour") unhovered SetVariable("tooltip", None)
             
         #Erogenous zones
         vbox:

@@ -121,7 +121,7 @@ label nt_he_firewhisky_intro:
     call ton_main("*Gulp*{w=0.6}{nw}","base","closed","sad","mid", trans="hpunch")
     call ton_main("*Cough* *Cough*","open","closed","sad","mid")
     call ton_main("Yeah, that was a mistake.","angry","base","upset","down")
-    m "I don’t drink whisky that often, but even I know not to down it in one..."
+    m "I don't drink whisky that often, but even I know not to down it in one..."
     call ton_main("*Mmm*... that's the stuff.","horny","base","base","ahegao")
     m "Are you even listening?"
 
@@ -508,7 +508,7 @@ label nt_he_story_E6:
     call ton_main("Corrupted... Forever...","angry","closed","angry","mid")
     m "(Not sure if I should feel bad at this point...)"
     call ton_main("Kind of hot, though,...don't you think?","horny","base","angry","mid")
-    m "(Nevermind...)"
+    m "(Never mind...)"
     call ton_main("The power vampires have over their prey.","horny","base","raised","ahegao")
     call ton_main("It's a shame that they're slaves to their own urges.","open","closed","worried","mid")
     m "(Well... there's that bad feeling I felt before.)"
@@ -535,7 +535,7 @@ label nt_he_story_intro_E7:
     m "Surely in a controlled environment where there's no harm to both parties..."
     call ton_main("Well,...most of the time that was the truth...","open","base","sad","R")
     call ton_main("(I can't believe I'm talking about this...)","upset","base","worried","down")
-    call ton_main("(The ministry will kick Moody out faster than a blast ended skrewt going off if I'm not careful...)","angry","base","worried","R")
+    call ton_main("(The ministry will kick Moody out faster than a Blast-ended Skrewt going off if I'm not careful...)","angry","base","worried","R")
 
     jump end_tonks_hangout
 
@@ -702,7 +702,7 @@ label nt_he_story_E12:
     call ton_main("Of course not- Snape would've made my life hell, and I wasn't going to make someone hurt themself. ","open","closed","sad","mid")
     call ton_main("It was charms...","angry","base","base","down")
     m "Right..."
-    call ton_main("I had been practicing some charms, and taught myself a couple on my own, like the one for invisibility...","base","base","base","down")
+    call ton_main("I had been practising some charms, and taught myself a couple on my own, like the one for invisibility...","base","base","base","down")
     m "Impressive."
     call ton_main("Thanks... Normally you wouldn't learn that one until much later, so you'd easily be able to dispel it.","smile","happyCl","base","mid")
     m "But you decided it was a good idea to teach it anyway?"

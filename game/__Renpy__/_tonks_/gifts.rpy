@@ -14,7 +14,7 @@ label give_ton_gift(gift_item):
         call give_gift(">You give the chocolate to Tonks...", gift_item)
         call ton_main("It's said that chocolate is a very effective mood enhancer after a Dementor attack.",mouth="open",face="happy")
         call ton_main("That's because chocolate is considered to be a great aphrodisiac...",face="horny")
-        call ton_main("I'll keep this for one of my private lessions.",face="happy")
+        call ton_main("I'll keep this for one of my private lessons.",face="happy")
         call ton_friendship(1)
 
     elif gift_item == plush_owl_ITEM:
@@ -101,7 +101,7 @@ label give_ton_gift(gift_item):
 
     elif gift_item == anal_plugs_ITEM:
         call ton_main("Some anal plugs?",face="disgusted",xpos="mid",ypos="base",trans="d5")
-        call ton_main("Wow, this is what they use these days? Very colorful...",face="happy")
+        call ton_main("Wow, this is what they use these days? Very colourful...",face="happy")
         call give_gift(">You give an assortment of anal plugs to Tonks...", gift_item)
         call ton_main("I think I might leave some in one of the desks...",face="horny")
         call ton_friendship(1)

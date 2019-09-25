@@ -547,7 +547,7 @@ label potion_scene_3_2_1: #Hyper sensitive breasts
     m "But if you don't ask me to stop I get to massage you for as long as I like, wherever I like."
     her "Deal."
     m "Are you sure?"
-    her "No offense [genie_name], but I think I can resist a massage for 200 points."
+    her "No offence [genie_name], but I think I can resist a massage for 200 points."
     m "you sound confident. Care to raise the stakes?"
     her "Are you saying that I can earn more than 200 points?"
     m "five hundred."

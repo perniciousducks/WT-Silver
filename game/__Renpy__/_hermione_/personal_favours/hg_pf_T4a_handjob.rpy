@@ -186,7 +186,7 @@ label hg_pf_handjob_T1_repeat:
     m "How would you like to give me another handjob?"
 
     call her_main("...............","upset","angry")
-    call her_main("Will I be getting payed for it, [genie_name]?","open","angry")
+    call her_main("Will I be getting paid for it, [genie_name]?","open","angry")
     m "Of course. 45 points."
     call her_main(".........................","upset","angryL")
 
@@ -639,7 +639,7 @@ label hg_pf_handjob_2:
             call her_main("Not done yet!","scream","angryCl")
             m "Apologies."
             call her_main("Your penis is so big it almost scares me!","angry","down_raised")
-            g9 "You little mynx. You know exactly what to say..."
+            g9 "You little minx. You know exactly what to say..."
             call her_main("And yet I lust for it...","soft","ahegao")
             call her_main("Any woman would be happy to have your huge penis inside of her!")
             m "...you're good!"
@@ -876,7 +876,7 @@ label hg_pf_handjob_2_cumming:
     m "Oh yes!!!"
 
     stop music fadeout 1.0
-    g4 "{size=-5}(I think this is it! Should I give her a waring?){/size}"
+    g4 "{size=-5}(I think this is it! Should I give her a warning?){/size}"
 
     menu:
         m "..."

@@ -518,7 +518,7 @@ label purchase_forbidden_scroll(item):
     m "Ok, well how much is the scroll?"
     ger "300 gold coins."
     m "300! Why on earth is it so expensive?"
-    fre "Forbidden magic is quite a risky and expensive endeavor Professor, We'll sell it for no less than 300."
+    fre "Forbidden magic is quite a risky and expensive endeavour Professor, We'll sell it for no less than 300."
 
     menu:
         "-Buy the scroll ([item.cost] gold)":
@@ -592,7 +592,7 @@ label shop_potion_menu:
             if gold >= PotionOBJ.cost:
                 $ gold -= PotionOBJ.cost
                 $ potion_inv.add(PotionOBJ.id)
-                $ renpy.say(m, PotionOBJ.name+" aquired, although it's missing a key ingredient...")
+                $ renpy.say(m, PotionOBJ.name+" acquired, although it's missing a key ingredient...")
             else:
                 $ renpy.say(m, "I don't have enough gold.")
         jump shop_potion_menu
@@ -681,7 +681,7 @@ label purchase_deco(item):
     "[item.description]"
 
     if item.type == "outfit_token":
-        $ item_token_str = "A new \"%s\" outfit has been added to Hermiones' wardrobe." % item.name
+        $ item_token_str = "A new \"%s\" outfit has been added to Hermione's wardrobe." % item.name
         $ item_token_type = " outfit"
     elif item.type == "quest item":
         $ item_token_str = "\"%s\" has been added to your quest items." % item.name

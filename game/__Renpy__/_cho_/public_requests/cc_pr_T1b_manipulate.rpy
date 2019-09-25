@@ -223,7 +223,7 @@ label cc_pr_manipulate_T1_E2:
     m "A very well thought out strategy, girl!"
     call cho_main("I thought it would be enough to get his attention.","soft","narrow","base","mid")
     m "Which I assume you got straight away?"
-    call cho_main("No, Sir. But somebody elses...","angry","narrow","sad","mid")
+    call cho_main("No, Sir. But somebody else's...","angry","narrow","sad","mid")
     g9 "Intriguing!{w} Who else did you manage to snag?"
     call cho_main("Professor Slughorn, Sir.","angry","base","sad","mid")
     m "Who?"
@@ -276,10 +276,10 @@ label cc_pr_manipulate_T1_E3:
     m "You poor thing..."
     call cho_main("It's nothing, Sir. I'm more than capable at enduring pain!","soft","narrow","angry","R")
     m "A useful skill to have, I can imagine..."
-    call cho_main("I've become very tough, and grown quite resistent to all sorts of pain after years of playing Quidditch...","angry","narrow","angry","mid")
+    call cho_main("I've become very tough, and grown quite resistant to all sorts of pain after years of playing Quidditch...","angry","narrow","angry","mid")
     call play_sound("gulp")
     g4 "*gulp!*"
-    call cho_main("Anyway, Cedric helped me back up on my feet, but before he could even apoligize, I kissed him!","soft","narrow","base","R")
+    call cho_main("Anyway, Cedric helped me back up on my feet, but before he could even apologise, I kissed him!","soft","narrow","base","R")
     call cho_main("It just... happened...","horny","narrow","sad","downR")
     m "Well done, girl!"
     call cho_main("It was really nice, though.","soft","narrow","base","mid")
@@ -309,7 +309,7 @@ label cc_pr_manipulate_T2_intro_E1:
     call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
 
     call cho_main(face="angry", xpos="mid", ypos="base", trans="fade")
-    m "Good evening [cho_name], How did todays task go?"
+    m "Good evening [cho_name], How did today's task go?"
     call cho_main("I can't believe you convinced me to do this!","soft","narrow","angry","mid")
     m "So badly I take it?"
     call cho_main("No, it went perfectly...","angry","narrow","sad","down")

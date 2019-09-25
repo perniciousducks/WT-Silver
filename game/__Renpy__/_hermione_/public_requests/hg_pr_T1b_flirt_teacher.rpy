@@ -22,7 +22,7 @@ label hg_pr_flirt_teacher:
         call her_main("I am glad you finally decided to act, [genie_name]!","open","base")
         m "Huh?"
         call her_main("You are finally ready to investigate the teachers who made a habit out of buying favours from the students, aren't you?","normal","frown")
-        call her_main("I am honoured to pose as bait in this noble endeavor.","open","closed")
+        call her_main("I am honoured to pose as bait in this noble endeavour.","open","closed")
         m "Ehm... Yeah, that's exactly what I'm doing."
         call her_main("Splendid! You can count on me, [genie_name]!","normal","frown")
 

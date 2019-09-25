@@ -627,9 +627,9 @@ label cho_hermione_talk:
         call her_main("What about her...","annoyed","angry")
         m "Well, it has come to my attention that you’ve been spreading false rumours about her."
         call her_main("And? It’s well deserved in my opinion...","soft","annoyed")
-        m "Well, don’t you feel like it’s unbefitting of you to publically talk badly about another student."
+        m "Well, don’t you feel like it’s unbefitting of you to publicly talk badly about another student."
         call her_main("...","annoyed","down_raised")
-        g9 "Surely that isn’t something to expect from Gryffindors finest.."
+        g9 "Surely that isn’t something to expect from Gryffindor's finest.."
         call her_main("Did Cho put you up to this?","normal","suspicious")
         g4 "..."
         m "(She’s onto me!)"

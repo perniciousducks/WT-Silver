@@ -74,7 +74,7 @@ label clothing_store_chitchat:
         m "I see. Do you ever make custom orders?"
         maf "Not really, although it is my passion. Most of what I'm asked to make are standard black robes."
         m "So you're interested in making unique outfits?"
-        maf "Absolutely, although I would have to order the fabrics in. I don't really have a range of colors at the moment."
+        maf "Absolutely, although I would have to order the fabrics in. I don't really have a range of colours at the moment."
         maf "What did you have in mind?"
         m "A few things. I haven't decided on anything specific yet."
         maf "Well, while your making up your mind, feel free to browse the store."
@@ -339,9 +339,9 @@ label purchase_outfit(item):
         m "I'm afraid I can't say."
         maf "Well as long as it's not for a student..."
         maf "Did you have any style in mind?"
-        m "Prefrerebly a french maid."
+        m "Preferably a french maid."
         maf "..."
-        maf "Well I should have it available for pickup in a few days after I get the materials in."
+        maf "Well I should have it available for pick-up in a few days after I get the materials in."
         m "Thank you."
 
     if item == hg_nighty_silk_ITEM:
@@ -370,7 +370,7 @@ label purchase_outfit(item):
         if sorry_for_hesterics:
             m "Do you sell Ball dresses?"
             maf "Hmmm, we do although they're nothing special. Why?"
-            m "A 'girl' approached me with a problem. Apparently she's unable to aquire a dress for this years autumn ball."
+            m "A 'girl' approached me with a problem. Apparently she's unable to acquire a dress for this years autumn ball."
             maf "How tragic, well I'm sure that one of these cheap ones will suffice."
             m "I was thinking that I could have a custom one made. She is a very good girl."
         maf "I see. Would I be correct in assuming that this girls measurements are the same as the other outfits you've had me make?"
@@ -396,8 +396,8 @@ label purchase_outfit(item):
     if item == hg_dress_dancer_ITEM:
         m "Have you ever seen a burlesque show Madam?"
         maf "I've done more than that, I've designed a few of the outfits for them!"
-        m "Splendid, I was wondering if I could commision one."
-        maf "Most Certainly, any particular color in mind?"
+        m "Splendid, I was wondering if I could commission one."
+        maf "Most Certainly, any particular colour in mind?"
         m "Ideally red."
         maf "As you wish."
         m "Thank you very much."

@@ -16,7 +16,7 @@ label cc_pr_flirt_start: # Not in use.
         g9 "It gave me an idea!"
         cho "What is it?"
         g9 "I need you to bond with them more! Acquire a deeper connection to your fellow teammates!"
-        cho "I can see why that would be benefitial to us. To strengthen our camaradery..."
+        cho "I can see why that would be beneficial to us. To strengthen our camaraderie..."
         m "Yeah yeah... That's what I was going for."
         cho "And how would you suggest I do that, [cho_genie_name]?"
         g9 "Do what you girls do best! Flirt with them!"
@@ -37,7 +37,7 @@ label cc_pr_flirt_start: # Not in use.
 
     # Repeated
     else:
-        m "I need you to have an eye on the other Quiddich players again."
+        m "I need you to have an eye on the other Quidditch players again."
         g9 "Flirt with them a little bit. See how they behave around you..."
         cho "Of course, Sir."
         m "Please return after classes to tell me about it."

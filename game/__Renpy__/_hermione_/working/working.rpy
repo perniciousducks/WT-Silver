@@ -64,9 +64,9 @@ label maid_responses:
                 call her_main("Do I really have to keep doing this?","normal","glanceL")
                 m "What do you mean, [hermione_name]?"
                 call her_main("It's so degrading... I have to clean other students rooms!","open","down")
-                m "You can stop anytime."
+                m "You can stop any time."
                 call her_main("I can?","soft","concerned")
-                g9 "Certainly, I'll just get one of those Slytherin floosies that you are always on about."
+                g9 "Certainly, I'll just get one of those Slytherin floozies that you are always on about."
                 m "I'm sure that they'd jump at the chance to make some points for their house."
                 m "They'd probably even do it for next to nothing, if not free."
                 call her_main("Fine, I get your point. It's just, surely there are other ways for you to earn money [genie_name]?","upset","closed")
@@ -717,7 +717,7 @@ label inn_menu:
 label inn_intro:
     m "Hello."
     abe "Hello Professor..."
-    ">There is a sour tone in the mans voice."
+    ">There is a sour tone in the man's voice."
     m "So what do you sell here?"
     abe "What do you want Albus?"
     m "(Albus? He must know the Professor.)"

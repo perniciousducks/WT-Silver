@@ -59,7 +59,7 @@ label snape_duel_menu:
                 jump snape_ready
 
             call sna_main("Do you know how hard it is to progress with this game with no one to play against?","snape_03")
-            call sna_main("I even traded some of my potion ingredients to some wierd guy in knockturn alley for one of the old booster packs...","snape_01")
+            call sna_main("I even traded some of my potion ingredients to some weird guy in knockturn alley for one of the old booster packs...","snape_01")
             call sna_main("Turns out... that card I gave you, whilst not very powerful was quite a rare one.","snape_08")
             m "Sounds like a you problem."
             g9 "I've done fine by just winning cards..."
@@ -70,7 +70,7 @@ label snape_duel_menu:
             call sna_main("I suppose...","snape_09")
             m "How about we do a wager?"
             call sna_main("A wager?","snape_05")
-            g9 "Yes, how about just one token and a wager ontop of that to make it interesting."
+            g9 "Yes, how about just one token and a wager on top of that to make it interesting."
             call sna_main("...","snape_04")
             call sna_main("Fine, but only if it's on equal terms...","snape_10")
             g4 "What does that mean?"
@@ -94,8 +94,8 @@ label snape_duel_menu:
                 sna "Show me the bottle."
                 m "What?"
                 sna "I want to see the wine first."
-                m "I dont have one, right now..."
-                sna "Thats a shame, the wager will have to wait then."
+                m "I don't have one, right now..."
+                sna "That's a shame, the wager will have to wait then."
                 m "Damn...!"
                 m "(I should see if I could find some more wine in that cupboard...)"
                 jump snape_ready
@@ -105,8 +105,8 @@ label snape_duel_menu:
                 sna "Do you have it?"
                 m "What?"
                 sna "The wine of course!"
-                m "I dont..."
-                sna "Thats a shame, our wager will have to wait then."
+                m "I don't..."
+                sna "That's a shame, our wager will have to wait then."
                 m "Can't we just duel anyway? Im not intending to lose..."
                 sna "Neither am I."
                 sna "No wine, no duel."
@@ -142,7 +142,7 @@ label snape_duel_menu:
                 m "..."
                 m "Let's just play..."
             elif one_of_ten == 8:
-                call sna_main("I've been practicing, there's no way I'll lose.","snape_10")
+                call sna_main("I've been practising, there's no way I'll lose.","snape_10")
                 m "Are you sure about that?"
                 call sna_main("Yes, I came here to win...","snape_08")
             elif one_of_ten == 9:
@@ -256,7 +256,7 @@ label snape_third_duel:
     m "..."
     call sna_main("You don't say it like that anymore?","snape_05")
     m "No, that's lame."
-    call sna_main("You're not going to beat me again genie, I've practiced with the greatest Wizard cards player there is!","snape_02")
+    call sna_main("You're not going to beat me again genie, I've practised with the greatest Wizard cards player there is!","snape_02")
     m "Me?"
     call sna_main("I... no, of course not.","snape_14")
     call sna_main("Let's do this.","snape_17")
@@ -388,7 +388,7 @@ label snape_random_duel:
             call sna_main("... I let you win that one.","snape_03")
             m "Sure you did."
         elif random_choice == 3:
-            call sna_main("Damnit!","snape_17")
+            call sna_main("Dammit!","snape_17")
             g4 "Hey, chill out... it's just a game."
             call sna_main("Just a game?!","snape_18")
             call sna_main("Do you know what students came from the slytherin house are known for Genie?","snape_07")
@@ -443,7 +443,7 @@ label snape_special_duel:
 
     else:
         g9 "Yeeeeees!"
-        g4 "Thats it you whore! Take it!"
+        g4 "That's it you whore! Take it!"
         return "win"
 
 

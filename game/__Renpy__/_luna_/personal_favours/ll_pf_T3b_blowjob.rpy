@@ -703,7 +703,7 @@ label ll_pf_blowjob_T1_slapping: # Call label
     ">You place the tip of your cock against the airheaded girl's lips."
     m "Shhhh..."
     $ lunCG('up')
-    ">You slowly start rubbing the tip over her soft lips, a drop of precum smearing across them like lip-gloss."
+    ">You slowly start rubbing the tip over her soft lips, a drop of pre-cum smearing across them like lip-gloss."
     m "Why don't you start with a nice kiss..."
     lun "..."
     $ lunCG('dick','closed', 'open_tongue')
@@ -992,7 +992,7 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     $ lunCG('ahegao', 'seductive', pos=15)
     lun "*glck*{image=textheart}*glck*!!!*Gulp*{image=textheart}*glck*{image=textheart}"
     $ lunCG('dick', 'wide', pos=16)
-    ">Allowing your withering cock to come back to life, firing a inhumane volley of cum into the girls stomach."
+    ">Allowing your weakening cock to come back to life, firing a inhumane volley of cum into the girls stomach."
     $ lunCG('sucking', 'wide', 'sad', 'ahegao', pos=6, extra_3='cum_4')
     m "That's better! This is what a cumslut like you deserves!"
     $ lunCG(pos=10)
@@ -1348,7 +1348,7 @@ label ll_pf_blowjob_T1_summon:
     call her_main("It's Luna again isn't it?","smile","happyCl")
     m "..."
     call her_main("That hat better not have been involved!","smile","happyCl")
-    m "Scout's honor."
+    m "Scout's honour."
     call her_main("We'll see about that...","smile","happyCl")
 
     call hide_characters

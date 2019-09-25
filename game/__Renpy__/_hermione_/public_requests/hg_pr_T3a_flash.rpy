@@ -131,7 +131,7 @@ label end_hg_pr_flash:
             call her_main("(Standing there...)")
             call her_main("(Pressing my breasts against that window glass...)")
             call her_main("(I would probably just die of embarrassment right there on the spot...)","angry","down_raised")
-            call her_main("(No. Protecting the honor of the \"Gryffindor\" house is my number one priority.)","upset","closed")
+            call her_main("(No. Protecting the honour of the \"Gryffindor\" house is my number one priority.)","upset","closed")
             call her_main("(We must get the cup this year, no matter the cost...)")
             call her_main("(........)","angry","down_raised")
         else:

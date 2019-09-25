@@ -322,14 +322,14 @@ label give_ast_gift(gift_item):
 
     elif gift_item == ballgag_and_cuffs_ITEM:
         if ast_affection < 6:
-            call ast_main("Handcuffs? And what.... a ballgag?")
+            call ast_main("Handcuffs? And what.... a ball gag?")
             call give_gift(">You give the handcuffs to Astoria...", gift_item)
             call ast_main("I don't know what you're trying to insinuate.")
-            call ast_main("The cuffs can be useful but with the ballgag...")
+            call ast_main("The cuffs can be useful but with the ball gag...")
             call ast_main("I'd rather not.")
             call ast_mood(1)
         elif ast_affection > 5 and ast_affection < 12:
-            call ast_main("Handcuffs? And a Ballgag?")
+            call ast_main("Handcuffs? And a Ball gag?")
             call give_gift(">You give the handcuffs to Astoria...", gift_item)
             call ast_main("I can break these cuffs!")
             call ast_main("*HNNNNNGH!")
@@ -337,7 +337,7 @@ label give_ast_gift(gift_item):
             call ast_main("Do you have a key?")
             call ast_mood(0)
         else:
-            call ast_main("Handcuffs? And a Ballgag?")
+            call ast_main("Handcuffs? And a Ball gag?")
             call give_gift(">You give the handcuffs to Astoria...", gift_item)
             call ast_main("So I guess these are one of those BDSM items?")
             call ast_main("Colour me intrigued...")
@@ -366,7 +366,7 @@ label give_ast_gift(gift_item):
             call ast_main("anal plugs?")
             call give_gift(">You give the anal plugs to Astoria...", gift_item)
             call ast_main("You do know these hurts a bit if you're not used to them?")
-            nar "Astoria absentmindedly pockets the anal plug."
+            nar "Astoria absent-mindedly pockets the anal plug."
             call ast_main("Don't see why you'd give these out as if they were sweets...")
             call ast_mood(-1)
 
@@ -389,7 +389,7 @@ label give_ast_gift(gift_item):
             call ast_main("A strap-on?")
             call give_gift(">You give the strap-on to Astoria...", gift_item)
             call ast_main("I'll strap it on your forehead and make you into a sex unicorn!")
-            call ast_main("I read about people having sex ontop of a unicorn...")
+            call ast_main("I read about people having sex on top of a unicorn...")
             call ast_main("Bit of an odd segment that one was...")
             call ast_mood(-1)
         else:

@@ -125,7 +125,7 @@ label a_christmas_tale:
     pause.8
 
     call sna_main("I thought he couldn't use magic...",face="snape_05")
-    nar "You should've seen the look on Snapes face."
+    nar "You should've seen the look on Snape's face."
     hide screen bld1
     with d3
 

@@ -41,7 +41,7 @@ label cc_pf_talk_T1_intro_E1:
     m "Do you have a boyfriend, Miss Chang?"
     call cho_main("Excuse me?","open","wide","base","mid",trans="hpunch") # Shocked
     m "I asked if you have boyfriend. Anybody you fool around with?"
-    call cho_main("Me? Professor? He-{w=0.8} hav-{w=0.5} a boyfrind?","open","wide","base","R") # Reluctant, Embarassed
+    call cho_main("Me? Professor? He-{w=0.8} hav-{w=0.5} a boyfriend?","open","wide","base","R") # Reluctant, Embarassed
     g9 "Or a girlfriend! That would be even better, now that I think about it!"
     call cho_main("Sir that's-{w} that's not something a headmaster should be concerned about.","open","base","sad","L")
     call cho_main("And I don’t see how this information would be of importance for my training.","open","wide","raised","downR")
@@ -156,11 +156,11 @@ label cc_pf_talk_T1_intro_E1:
     call cho_main("We'd constantly be at each other's throats.","soft","narrow","angry","mid")
     g4 "Intriguing!"
     m "You are missing out, girl..." # Small text
-    g9 "{size=-4}Hatesex is the best!{/size}" # Small text
+    g9 "{size=-4}Hate-sex is the best!{/size}" # Small text
     call cho_main("I didn't quite hear that, Sir.","base","base","base","mid")
     m "Who else did you do it with?"
     call cho_main("Do it with?","soft","narrow","raised","mid") # Shocked
-    m "Smooshing, kissing, snogging,...{w} whatever you call it nowadays..."
+    m "Smooching, kissing, snogging,...{w} whatever you call it nowadays..."
     call cho_main("With all due respect, Professor, it's very odd that you'd ask me about those sort of things...","open","closed","base","mid")
     call cho_main("But,... you \"are\" helping me.{w} So I guess I owe you that much...","annoyed","base","base","R")
     g9 "That's what I wanted to hear."
@@ -271,7 +271,7 @@ label cc_pf_talk_T1_intro_E2:
     m "Tell me about yourself then."
     call cho_main("Of course, [cho_genie_name].","smile","base","base","mid")
     call cho_main("We did a couple more Quidditch session yesterday.{w} To get ready for our big game against \"Hufflepuff\".","open","narrow","base","mid")
-    call cho_main("Our team really believes that we have a chance to win this time!{w} They got a huge boost of confidence after I've told'em that the great \"Albus Dumbledore\" would be training us himself!","smile","base","base","mid")
+    call cho_main("Our team really believes that we have a chance to win this time!{w} They got a huge boost of confidence after I've told 'em that the great \"Albus Dumbledore\" would be training us himself!","smile","base","base","mid")
     m "Are you getting along with your team well?"
     call cho_main("I'd say so.{w} But there has been a time when...","soft","base","base","mid")
     call cho_main("Let's just say that it has been difficult for me at first. After all Quidditch is largely dominated by men...","open","narrow","sad","down")
@@ -692,7 +692,7 @@ label cc_pf_talk_T2_intro_E1:
     call cho_main("Trying to lift my skirt with first-year spells...","soft","narrow","angry","R")
     call cho_main("Stealing my underwear while I'm taking a shower after practice...","angry","narrow","angry","downR")
     if masturbating:
-        g4 "*Argh!* {size=-4}Dirty pantie muggers!{/size}"
+        g4 "*Argh!* {size=-4}Dirty panty muggers!{/size}"
     call cho_main("They even had the audaciousness to write{p=0.0}{size=+4}\"Cho, the Ravenclaw ho\"{/size}{p=0.6}on the blackboard during divination class...","soft","narrow","angry","mid")
     if masturbating:
         g4 "{size=-4}They have seen your future, you whore!{/size}"

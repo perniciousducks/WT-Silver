@@ -65,7 +65,7 @@ label snape_chitchat:
             
         elif one_of_ten == 10:
             call sna_main("Quidditch...","snape_04") 
-            call sna_main("What a waste of time and ressources!","snape_10") 
+            call sna_main("What a waste of time and resources!","snape_10") 
             call sna_main("","snape_04") 
         
     
@@ -243,7 +243,7 @@ label snape_chitchat:
             call sna_main("","snape_20") 
 
         elif one_of_ten == 3:
-            call sna_main("Something rather brilliant happened last night between me and this Slytherin mynx.","snape_20") 
+            call sna_main("Something rather brilliant happened last night between me and this Slytherin minx.","snape_20") 
             call sna_main("Long story short, all of my muscles ache and I still feel rather dehydrated...","snape_22") 
             call sna_main("","snape_13") 
 

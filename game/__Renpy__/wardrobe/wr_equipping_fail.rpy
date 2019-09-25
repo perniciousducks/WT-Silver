@@ -78,7 +78,7 @@ label equipping_failed:
                     m "Was that good enough for you?"
                     call her_main("(It's so easy to get points out of him!)","soft","baseL")
                     call her_main("Thank you,[genie_name].","open","closed")
-                    m "No poblem. Now put on... {w=0.9}what was it again?"
+                    m "No problem. Now put on... {w=0.9}what was it again?"
                     $ gryffindor += 15
                     $ her_mood = 0
                 "-Don't give her the points-":

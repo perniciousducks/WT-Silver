@@ -264,7 +264,7 @@ label hg_pr_handjob_T1_E3:
     call her_main("All boys are jerks! That is the problem, [genie_name]!","scream","angryCl")
     call her_main("I gave this one boy a good wanking...","open","down")
     her "And do you know how he thanked me?"
-    call her_main("He got his spunk allover me...","scream","angry", emote="01")
+    call her_main("He got his spunk all over me...","scream","angry", emote="01")
     call her_main("And he did that on purpose, I know he did!","scream","angryCl")
     call her_main("Nasty, good for nothing \"ravenclaws\"...","annoyed","worriedL")
     m "Well, I'd say a job well done."
@@ -352,7 +352,7 @@ label hg_pr_handjob_T2_E2:
     call play_music("playful_tension") # SEX THEME.
     her "Today I gave another handjob to one of my classmates..."
     call her_main("Me, Hermione Granger...","open","down")
-    call her_main("Giving free hanjobs in the school's restroom...","angry","down_raised")
+    call her_main("Giving free handjobs in the school's restroom...","angry","down_raised")
     m "Wait. What do you mean with \"free\"?"
     call her_main("Oh, of course... I get paid with house points for this...","angry","base")
     her "But nobody knows about that..."
@@ -428,7 +428,7 @@ label hg_pr_handjob_T2_E3:
     call her_main("But after that he said: \"Good job, slut\" and just left me there...","disgust","glance")
     call her_main("Such a mean thing to do...","annoyed","angryL")
     call her_main("It made me feel so cheap... and used.","upset","closed")
-    her "But it get's worse..."
+    her "But it gets worse..."
     her "......."
     call her_main("I think on some level it also made me feel good somehow...","angry","down_raised")
     her "All these favours I have been selling to you lately, [genie_name]..."
@@ -599,7 +599,7 @@ label hg_pr_handjob_T3_E3:
     call her_main("To be completely honest with you, sir... I did.","grin","dead")
     call her_main("It was exciting.","smile","angry")
     call her_main("God, there was so much.  My hands looked like a candle had dripped hot wax all over them.","grin","dead")
-    call her_main("I didn't know what to do I could't just go about the rest of class with huge globs of cum all over my hands.","angry","down_raised")
+    call her_main("I didn't know what to do I couldn't just go about the rest of class with huge globs of cum all over my hands.","angry","down_raised")
     her "So I decided to rub it all over the inside of my thighs to keep from having to stain my clothes."
     call her_main("Every time I walked I could smell their cum from between my legs.","silly","ahegao")
     m "That's quite an interesting story miss Granger."

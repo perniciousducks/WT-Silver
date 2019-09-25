@@ -244,7 +244,7 @@ label nt_pr_teach_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys. Guess who...
                 call ton_main("I had some fun with those two \"Gryffindor boys\" again...","horny","base","base","R")
                 call ton_main("Of course I didn't give them any points...","open","closed","base","mid")
                 call ton_main("I wouldn't want \"Gryffindor\" to have an unfair advantage.","horny","base","angry","mid")
-                call ton_main("They practicly begged me if they could do it for free anyway...","open","base","base","R")
+                call ton_main("They practically begged me if they could do it for free anyway...","open","base","base","R")
                 m "Well done, [tonks_name]... Until next time."
                 call ton_main("Have a good night, [ton_genie_name].","base","happyCl","base","mid")
                 if ton_reputation < 4: # Points til 4.
@@ -338,7 +338,7 @@ label nt_pr_teach_T1_E4: # Tier 1 - Event 4 - Slytherin girl
     call ton_main("(Not since I left here anyway...)","angry","base","worried","R")
     call ton_main("But today there was {b}the tastiest morsel{/b} I have ever seen in my class!","horny","base","base","ahegao")
     m "...................."
-    call ton_main("Now, I know when I'm being checked out, I can feel anyones eyes on me...","open","closed","base","mid")
+    call ton_main("Now, I know when I'm being checked out, I can feel anyone's eyes on me...","open","closed","base","mid")
     m "...................."
     call nar(">You nod, unconsciously... Gazing directly at her tits...")
     call ton_main("And most of the time I don't mind... I might even encourage it from time to time...","base","base","angry","mid")
@@ -424,7 +424,7 @@ label nt_pr_teach_T2_E1: # Tier 2 - Event 1 - Hufflepuff girl
     call ton_main("Oh... *Umm*... it wasn't a he...","base","base","base","down")
     call ton_main("I hope that's fine... I know I'm supposed to be balancing out the favours for the boys...","angry","base","worried","mid")
     m "Right..."
-    m "(I'd forgotten about Miss Grangers dumb \"M.R.M.\" thing...)"
+    m "(I'd forgotten about Miss Granger's dumb \"M.R.M.\" thing...)"
     m "(Does she even still run that?)"
     m "I wouldn't worry about that too much... As long as you're also buying from the boys, I don't think it should matter."
     call ton_main("Good... Because there was no way I could turn down this cute little \"Hufflepuff\"...","base","base","angry","ahegao")

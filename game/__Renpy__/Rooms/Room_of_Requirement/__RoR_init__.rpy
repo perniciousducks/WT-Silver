@@ -27,7 +27,7 @@ default mr_ev_AOC = mirror_stories(
     start_label = "an_odd_circumstance",
     authors = ["TeamSilver"],
     categories= ["Parody", "lewd"],
-    ach_desc = "Completed Hermiones Suck It personal favours",
+    ach_desc = "Completed Hermione's Suck It personal favours",
     content_characters = ["hermione"]
 )
 default mr_ev_ABTTD = mirror_stories(
@@ -62,7 +62,7 @@ default mr_ev_ABAS = mirror_stories(
 )
 default mr_ev_ADR = mirror_stories(
     name = "A Dark Room (Incomplete)",
-    story_description = "A minigame inspired by the textbased game \"A Dark Room\".\n>WIP! It is currently incomplete but in a playable state.",
+    story_description = "A minigame inspired by the text-based game \"A Dark Room\".\n>WIP! It is currently incomplete but in a playable state.",
     start_label = "start_dark_room_game",
     authors = ["TeamSilver"],
     categories= ["minigame"],

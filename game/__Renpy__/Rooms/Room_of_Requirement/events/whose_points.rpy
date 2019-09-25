@@ -28,7 +28,7 @@ label whose_points:
     $ renpy.play('sounds/applause01.ogg')
     call her_main("\"I hope I win! I need those housepoints.\"","base","squintL",ypos="head")
     play music "music/Under-the-Radar by PhobyAk.mp3" fadein 1 fadeout 1
-    m "First, let me introduce todays contestants."
+    m "First, let me introduce today's contestants."
     m "The curly haired harlot we all know and love. Give it up for Hermione."
     $ renpy.play('sounds/applause01.ogg')
     call her_main("...","grin","worried",cheeks="blush", xpos="500",ypos="base")
@@ -70,7 +70,7 @@ label whose_points:
     m "Looks like we have our first prompt."
     m "Things you might say in potions class... But also in your bedroom."
 
-    call her_main("This cauldron hasn't been used for years. It's all moldy and full of muck!","grin","worried",cheeks="blush", xpos="right", ypos="base")
+    call her_main("This cauldron hasn't been used for years. It's all mouldy and full of muck!","grin","worried",cheeks="blush", xpos="right", ypos="base")
 
     $ renpy.play('sounds/applause01.ogg')
     hat "Boo, there's no cauldrons in the bedroom!"

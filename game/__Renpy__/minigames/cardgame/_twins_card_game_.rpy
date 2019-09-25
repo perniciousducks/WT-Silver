@@ -76,7 +76,7 @@ label twins_second_duel:
         ger "I blame Trelawney on this, she said that luck would be on our side today..."
         fre "Well, a promise is a promise. Here's your reward..."
         ger "And we also heard about your wins against Snape so here's some extra tokens."
-        fre "Make sure to come back and spend those tokens in our tokenshop."
+        fre "Make sure to come back and spend those tokens in our token shop."
         $ card_rand_twins = renpy.random.choice([[card_fred, "fred"], [card_george, "george"]])
         $ unlocked_cards += [card_rand_twins[0]]
         call give_reward("You have received a special card!", "images/cardgame/t1/special/%s_v1.png" % str(card_rand_twins[1]))
@@ -108,7 +108,7 @@ label twins_random_duel:
         fre "Of course."
         m "Well, if it's a monetary reward you're looking for then..."
         m "How about if I lose then I give you 10 gold?"
-        ger "Let me just do some math real quick."
+        ger "Let me just do some maths real quick."
         ger "..."
         ger "...carry the one..."
         m "Finished?"
@@ -133,7 +133,7 @@ label twins_random_duel:
     elif twins_profit == 0.2:
         m "Ready for another wager?"
         ger "No, I think we've had quite enough of a dent in our profit margin..."
-        fre "We're almost half way to where we were before we introduced the cardgame."
+        fre "We're almost half way to where we were before we introduced the card game."
         g4 "Only half?"
         ger "Yes, we still need to think about growth."
         m "\"I should've asked for a cut to begin with.\""
@@ -194,7 +194,7 @@ label twins_random_duel:
         fre "We'll send you your cut once a week..."
         ger "The amount may vary obviously."
         fre "It all depends of how many sales we get that week."
-        fre "We're always looking to have someone help with promoting the shop and cardgame."
+        fre "We're always looking to have someone help with promoting the shop and card game."
         m "\"Sounds like something Hermione might be able to do.\""
         m "\"After some convincing...\""
         m "Okay, and I pick it up here or?"

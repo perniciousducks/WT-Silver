@@ -25,7 +25,7 @@ label cho_panties_response_T2:
         g4 "You are correct!{w} They are indeed covered in a thick load of filthy, nasty reeking semen!"
         g9 "Who could have done this?!"
         call cho_main("I don't know... why don't we inquire how they got here in the first place...","open","base","base","R")
-        call cho_main("Didn't I take off my panties while I was stipping for you?","soft","narrow","base","mid")
+        call cho_main("Didn't I take off my panties while I was stripping for you?","soft","narrow","base","mid")
         m "That is correct."
         call cho_main("And you had my panties this whole time?","soft","narrow","raised","mid")
         m "Yup."
@@ -34,7 +34,7 @@ label cho_panties_response_T2:
         call cho_main("So you admit that you did it?","soft","narrow","angry","mid")
         m "It's not my cum..."
         call cho_main("*Argh!*","angry","narrow","angry","mid", trans="hpunch")
-        call cho_main("Well who's is it then?{w} The house-elfes?","soft","narrow","base","mid")
+        call cho_main("Well who's is it then?{w} The house-elves?","soft","narrow","base","mid")
         m "*Uhm*...{w} Yes?"
         call cho_main("It's disgusting!","annoyed","narrow","base","down")
         call cho_main("I better get them cleaned immediately...","angry","narrow","sad","down")

@@ -86,7 +86,7 @@ label ball_ending_E1:
     pause 2
 
     call sna_main("The past several month were the best months of my life, Genie...","snape_26")
-    call sna_main("Thank you for that, you incredible traveler from another world...")
+    call sna_main("Thank you for that, you incredible traveller from another world...")
     call sna_main("Thank you, my friend...")
     m "I don't know what to say, Severus..."
     call sna_main("Then don't say anything...","snape_06")
@@ -182,7 +182,7 @@ label ball_ending_E1:
         show screen genie
         hide screen paperwork
         with d3
-        m "Hm... How shoud I adress her?"
+        m "Hm... How should I address her?"
 
         menu:
             m "Dear..."
@@ -215,8 +215,8 @@ label ball_ending_E1:
             m "...time to go back..."
             "\"home\"":
                 $ word_02 = "home"
-            "\"to the mothership\"":
-                $ word_02 = "to the mothership"
+            "\"to the mother-ship\"":
+                $ word_02 = "to the mother-ship"
             "\"to Dimension \"X\"":
                 $ word_02 = "to Dimension \"X\""
             "\"to my world\"":
@@ -279,8 +279,8 @@ label ball_ending_E1:
                 jump stupid_kent
             "\"Lord Voldemort\"":
                 $ word_04 = "Lord Voldemort"
-            "\"Traveler\"":
-                $ word_04 = "Traveler"
+            "\"Traveller\"":
+                $ word_04 = "Traveller"
 
         hide screen genie
         show screen paperwork
@@ -1160,7 +1160,7 @@ label ball_ending_E2:
         call bld("hide")
 
         call cg_scene("111")
-        her "I shall not go as far as to say that I do not deserve this honor..."
+        her "I shall not go as far as to say that I do not deserve this honour..."
         her "Because I think I do..."
         call cg_scene("112")
         her "But I am still very grateful to stand here before all of you tonight..."
@@ -1307,7 +1307,7 @@ label ball_ending_E2:
         call ctc
 
         call blktone
-        mal "(Now she just sorta stands there...)"
+        mal "(Now she just sort of stands there...)"
         mal2 "(Giving us a better look...?)"
         mal "(Do You think she is aware of her tit being visible at all?)"
         fem "(What a shameless display...)"
@@ -1685,7 +1685,7 @@ label ball_ending_E2:
         call cg_scene("142")
         her "{size=+5}*GULP!*{/size}"
 
-        sly2 "She did it agagin!"
+        sly2 "She did it again!"
         call cg_scene("140")
         her "That's because I didn't expect it... That's just a reflex!"
         sly1 "That's one hot reflex!"
@@ -2188,7 +2188,7 @@ label ball_ending_E2:
         fem "(She is a sperm addict! She must swallow half a cup of sperm every day...)"
         fem "(Because if she doesn't she goes into a sex-craze...)"
         mal2 "(.....)"
-        fem "(And when that happenes she cannot control herself and will gladly sleep with the first man she sees.)"
+        fem "(And when that happens she cannot control herself and will gladly sleep with the first man she sees.)"
         mal "(.............)"
         mal2 "(.....................)"
         fem "(Hm? Why are you staring at me like that?)"
@@ -2295,7 +2295,7 @@ label ball_ending_E2:
         her "A little..."
         m "Well, you are just precious then, aren't you?"
         her "ah......"
-        m "Arent't you, whore?!"
+        m "Aren't you, whore?!"
         her "Ah... Whatever you say, sir."
         m "Yes, you are precious, you slut!"
         call cg_scene("49")
@@ -2620,7 +2620,7 @@ label ball_ending_E2:
                 her "[genie_name]! My dress!"
                 g4 "What?"
                 her "Make sure you don't get any on my dress!"
-                g4 "Shut up about your dress, whore! You are ruining the momment!"
+                g4 "Shut up about your dress, whore! You are ruining the moment!"
                 call cg_scene("87")
                 her "{size=+5}I'm sorry! Your whore is sorry!!!!{/size}"
                 g4 "Yes! Much better!"
@@ -2669,7 +2669,7 @@ label ball_ending_E2:
                 her "[genie_name]! My dress!"
                 g4 "What?"
                 her "Make sure you don't get any on my dress!"
-                g4 "Shut up about your dress, whore! You are ruining the momment!"
+                g4 "Shut up about your dress, whore! You are ruining the moment!"
                 call cg_scene("85")
                 her "{size=+5}I'm sorry! Your whore is sorry!!!!{/size}"
                 g4 "Yes! Much better!"
@@ -2784,7 +2784,7 @@ label ball_ending_E2:
     $ ccg(layer3="173")
     pause.5
 
-    m "Good bye world of bizzare magic..."
+    m "Good bye world of bizarre magic..."
     m "Good bye my who--......"
     m "Good bye, Hermione..."
     m "............"

@@ -336,7 +336,7 @@ label DRgame_return_from_task: #renpy.say(None,"[i.name] has gotten ill.")
                 elif temp_item == 1:
                     renpy.say(None,"They only caught a small rabbit. There won't be much to eat it seems...")
                 else:
-                    renpy.say(None,"They were unsuccessfull and couldn't find any wild animals in the thick snow.")
+                    renpy.say(None,"They were unsuccessful and couldn't find any wild animals in the thick snow.")
 
             #Wood Chopping/Gathering
             if i.task == "chopping_wood" and weather_gen in [1,2,3,4] or i.force_task == True: #They were gathering wood/chopping wood.
@@ -418,7 +418,7 @@ label DRgame_random_event:
                             call sna_chibi("stand","door","base")
                             with d5
                             pause.8
-                            "The stranger is more than thankfull to you."
+                            "The stranger is more than thankful to you."
                             "He'd be happy to help gather wood or hunt meat."
                         "-Tell him to leave-":
                             "The stranger reluctantly leaves."
@@ -447,7 +447,7 @@ label DRgame_random_event:
                             call sna_chibi("stand","door","base")
                             with d5
                             pause.8
-                            "The stranger is more than thankfull to you."
+                            "The stranger is more than tankful to you."
                             "He'd be happy to help gather wood or hunt for meat."
                         "-Let him starve-":
                             "He quietly leaves."
@@ -492,7 +492,7 @@ label DRgame_random_event:
             "You hurried across the empty room towards the only way that went outside"
             "You unhinged the metal locks on the heavy door."
             call play_sound("bump")
-            "But the large door wouldn't move... It was barricated from the ouside..."
+            "But the large door wouldn't move... It was barricaded from the outside..."
             call play_sound("bump")
             pause.8
             call play_sound("bump")
@@ -522,7 +522,7 @@ label DRgame_random_event:
             if temp_name != "":
                 show screen blkfade
                 with d9
-                "A long faught battle against illness has been lost..."
+                "A long-fought battle against illness has been lost..."
                 pause 2
                 if DRplayer not in DRgame.characters:
                     "You died in the night..."
@@ -790,9 +790,9 @@ label DRgame_hunt_animals:
 
     "You returned from the hunt..."
     if temp_number <= 0:
-        "You were unsuccessfull, and couldn't find any wild animals in the thick snow."
+        "You were unsuccessful, and couldn't find any wild animals in the thick snow."
     elif temp_number == 1:
-        "You only catched a small rabbit."
+        "You only caught a small rabbit."
     elif temp_number == 2:
         "You found a wild chicken."
     else:
@@ -821,7 +821,7 @@ label dark_room_chair_left:
     else:
         "You read through the pages, glued to every word."
         if DRgame.characters == [DRplayer]:
-            "It helps you cope with your new found lonelyness..."
+            "It helps you cope with your new found loneliness..."
         if DRplayer.hp < 10:
             $ DRplayer.hp += 1
             "You feel a bit better..."
@@ -910,8 +910,8 @@ label dark_room_desk:
         "-[DRgame.meals] cooked meals-":
             "Meals don't spoil, but they take time to cook."
         "-[DRgame.leather] pieces of leather-":
-            "Leather from hunting deers."
-            "Craft a bow and some arrors to hunt them."
+            "Leather from hunting deer."
+            "Craft a bow and some arrows to hunt them."
         "-[DRgame.fur] pieces of fur-":
             "Leather from hunting small animals like foxes."
             "They can be caught easier with a knife, or by laying out traps."

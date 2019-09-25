@@ -22,7 +22,7 @@ label nothing_to_see_here_049:
     m "(Is quidditch like curling then?)"
     call cho_main("Oh...","annoyed","shocked","sad","downR")
     call cho_main("Then what's your solution?","open","narrow","angry","mid")
-    m "You said that the \'Slytherin\'s were playing dirty..."
+    m "You said that the \"Slytherins\" were playing dirty..."
     m "How about you fight fire with fire then?"
     call cho_main("So you think we should fight dirty too?","horny","narrow","base","mid")
     call cho_main("But how? The rules forbid almost all foul play.","pout","angry","sad","downR")

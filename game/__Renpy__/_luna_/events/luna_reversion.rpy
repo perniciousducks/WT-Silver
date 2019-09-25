@@ -169,9 +169,9 @@ label luna_revert_1: #Reversion event #DONE
     ">Luna starts moving her hands back and forth along the length of your cock."
     m "Yes, that's it..."
     call lun_main("...","base","suspicious","sad","down")
-    m "Mmmm, yes... not bad, [lun_name], have you been practicing?"
+    m "Mmmm, yes... not bad, [lun_name], have you been practising?"
     call lun_main("What? Of course not!","normal","wide","angry","mid")
-    m "well, I expect you to start practicing from now on!"
+    m "well, I expect you to start practising from now on!"
     call lun_main("on what?","normal","angry","raised","mid")
     m "My cock, of course!"
     call lun_main("[lun_genie_name]!","clench","mad","angry","mid")
@@ -321,7 +321,7 @@ label luna_revert_1: #Reversion event #DONE
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
     call her_main("{size=+15}petrificus totalus!{/size}","scream","angry",emote="01",trans="hpunch")
-    ">Hermione pulls out her wand with surprising speed and paralyzes Luna."
+    ">Hermione pulls out her wand with surprising speed and paralyses Luna."
     call lun_main("!!!","clench","wide","sad","mid")
     m "(Whoa...)"
     call her_main("Honestly, sir, what are you thinking!","annoyed","annoyed")
@@ -409,7 +409,7 @@ label luna_revert_1: #Reversion event #DONE
             call her_main("And let you jerk your disgusting old cock in front of her...","angry","angry")
             call her_main("For free?","annoyed","annoyed")
             ">You raise your hand to the air."
-            m "Scouts honor!"
+            m "Scouts honour!"
             call her_main("...","disgust","glance")
             m "Besides, surely you'd notice a jump in \"Ravenclaw's\" points?"
             call her_main("I suppose you're right...","annoyed","angryL")
@@ -662,7 +662,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
     call lun_main("{size=+15}petrificus totalus!{/size}","open","angry","mad","mid",trans="hpunch")
-    ">Luna pulls out her wand with surprising speed and paralyzes Hermione."
+    ">Luna pulls out her wand with surprising speed and paralyses Hermione."
     call her_main("!!!","soft","shocked")
     m "(Whoa...)"
     hide screen luna_main
@@ -670,7 +670,7 @@ label luna_revert_2: #Non-Reversion event #DONE
 
     $ luna_flip = 1
     call lun_main("","upset","mad","mad","mid",xpos="mid",ypos="base")
-    ">Luna turns back around to face you, leaving Hermione paralyzed in the middle of the room. "
+    ">Luna turns back around to face you, leaving Hermione paralysed in the middle of the room. "
     call lun_main("{size=+15}What is the meaning of this?{/size}","upset","angry","mad","mid")
     m "I don't know, Miss Granger must have come up here to ask for something."
     call lun_main("The door was locked!","clench","suspicious","angry","mid")
@@ -710,7 +710,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     with d3
 
     $ luna_flip = -1
-    call lun_main("How much have you wasted on this fat assed tart?","upset","mad","mad","mid")
+    call lun_main("How much have you wasted on this fat-assed tart?","upset","mad","mad","mid")
 
     $ point_estimate = (gryffindor-200)
     m "All up? probably about [point_estimate] points..."
@@ -757,7 +757,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     pause .1
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
-    ">Luna paralyzes Hermione for the second time."
+    ">Luna paralyses Hermione for the second time."
     call lun_main("","normal","mad","mad","mid")
     call her_main("!!!","angry","wide")
     call her_main("...","angry","angry")
@@ -818,7 +818,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     hide screen bld1
     with d3
 
-    ">Luna places her hands on Hermione's shoulders and gently forces her paralyzed body to her knees."
+    ">Luna places her hands on Hermione's shoulders and gently forces her paralysed body to her knees."
     call her_chibi("sit_naked","mid","base")
     call ctc
 
@@ -873,7 +873,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     $ hermione_kneel_leg = False
     ">Luna takes a step back from hermione's face."
     call lun_main("Such a pretty face...","base","seductive","sad","mid")
-    ">Luna places her thumb into hermione's paralyzed mouth, slowly opening it."
+    ">Luna places her thumb into hermione's paralysed mouth, slowly opening it."
     call her_kneel("...","open_tongue","angryL")
     ">She grabs a hold of her tongue and slowly pulls it out until it hangs from her mouth."
     call her_kneel("oahhh hiiieerr!!!","open_wide_tongue","angryCl")
@@ -905,7 +905,7 @@ label luna_revert_2: #Non-Reversion event #DONE
             ">You walk over to hermione's kneeling form and pick up her limber body."
             call lun_main("Hey! I wasn't finished with her!","base","seductive","base","down")
             m "Don't worry, I'm just repositioning her. You can still have your fun."
-            ">You carry hermione's stiff, paralyzed form over to your desk, placing her gently on top of it."
+            ">You carry hermione's stiff, paralysed form over to your desk, placing her gently on top of it."
             hide screen blkfade
 
             call lun_main("...","base","seductive","base","down")
@@ -1146,7 +1146,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     m "Wipe her memories?"
     call her_kneel("???","angry","worriedCl")
     call lun_main("Of course. I mean what we just did to her was a little questionable...","normal","angry","angry","mid")
-    call lun_main("A memory charm would proably be for the best.","base","mad","base","R")
+    call lun_main("A memory charm would probably be for the best.","base","mad","base","R")
     call her_kneel("!!!","annoyed","annoyed")
     m "(I think I've underestimated the magic at this school...)"
     m "Ah sure... why not..."

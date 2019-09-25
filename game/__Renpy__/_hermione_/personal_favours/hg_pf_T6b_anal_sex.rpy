@@ -294,7 +294,7 @@ label hg_anal_sex_1:
             call ctc
 
             call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}","silly","dead",ypos="head")
-            g4 "Yes!!! Allover your ass!"
+            g4 "Yes!!! All over your ass!"
             call her_main("Ah... It's so hot!","silly","ahegao")
             hide screen bld1
             with d1
@@ -312,7 +312,7 @@ label hg_anal_sex_1:
             m "But what?"
             call her_main("But in a good way... [genie_name].","silly","worried",cheeks="blush",tears="soft")
             m "In a good way, huh?"
-            g9 "Heh... You cute, little mynx."
+            g9 "Heh... You cute, little minx."
             call her_main("Can I get paid now, [genie_name]?","silly","worried",cheeks="blush",tears="soft")
 
             return
@@ -327,7 +327,7 @@ label hg_anal_sex_2:
     call bld
     m "How about another assfuck, [hermione_name]?"
     call her_main("Of course, [genie_name].","base","ahegao_raised", ypos="head")
-    g4 "*Hngh!* You little mynx!"
+    g4 "*Hngh!* You little minx!"
 
     stop music fadeout 1.0
     hide screen hermione_main

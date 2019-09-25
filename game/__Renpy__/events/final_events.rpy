@@ -553,7 +553,7 @@ label ball_quest_E5:
     m "I thought that you--"
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("[genie_name]!","angry","base", tears="soft")
-    g4 "What? What happened? Don't tell me it's the wrong color or something!"
+    g4 "What? What happened? Don't tell me it's the wrong colour or something!"
     call her_main("It's perfect, sir...*sob!*","angry","base", tears="soft")
     her "It's perfect... *sob!* ...I love it."
     m "You sure don't look like it..."

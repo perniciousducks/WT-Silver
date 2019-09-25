@@ -586,9 +586,9 @@ label hg_pp_polyjuice_T1_introCC:
             # her "Well, there's not much to tell you that you don't already know."
             # her "Lately I've been questioning my previous outlook on life in general."
             # m "In what way exactly?"
-            # her "Well, since we started our... mutually benefitial... what ever we call this..."
-            # her "The general atmosphere in our commonroom has been in an all time high because of how many house points we're racking in."
-            # m "That's good, you must feel a great sense of pride and acomplishment..."
+            # her "Well, since we started our... mutually beneficial... what ever we call this..."
+            # her "The general atmosphere in our common room has been in an all time high because of how many house points we're racking in."
+            # m "That's good, you must feel a great sense of pride and accomplishment..."
             # her "Of course, the only issue is that I would never be able to tell them I'm the one to thank for it..."
             # her "If they just had one look of my face they'd be able to tell what was up."
             # m "Speaking of face..."
@@ -657,7 +657,7 @@ label hg_pp_polyjuice_T1_introCC:
         # $ changeLuna("pout","wide","angry","mid")
         # her "What is your obsession with this crazy blonde girl?"
         # m "Now now, you're the one looking like her remember."
-        # m "Unless you're reffering to yourself there's nothing wrong with the way she looks."
+        # m "Unless you're referring to yourself there's nothing wrong with the way she looks."
         # $ changeLuna("pout","base","sad","mid")
         # her "..."
         # m "Now, I'd like to see those great assets of hers..."
@@ -667,7 +667,7 @@ label hg_pp_polyjuice_T1_introCC:
             # her "You didn't tell me what it was going to do [genie_name]."
             # m "Oh, yeah..."
             # her "I'm not going bare my... her chest... for you."
-            # m "Well you wont be recieveing any of those points..."
+            # m "Well you wont be receiving any of those points..."
             # her "..."
             # her "Yeah, that's still going to be a no, bye [genie_name]."
             # #Hermione walks out Scene end
@@ -697,11 +697,11 @@ label hg_pp_polyjuice_T1_introCC:
         # her "She has... imaginary friends and believes in things that can't possibly exist [genie_name]. She is absolutely mad."
         # m "Fortunately, I'm not really interested in her mental health. I am interested in her impressive, and quite real, chest."
         # if her_whoring <= #Lowish
-            # her "I can't belive what you're suggesting, you're asking me to show off another students breasts?"
+            # her "I can't believe what you're suggesting, you're asking me to show off another students breasts?"
             # m "Well, what else would you have me do? Look at your face?"
             # her "That's crossing the line [genie_name], I might not think very highly of Loony... Luna..."
             # her "But I'm not going bare my... her chest... for you."
-            # m "Then you wont be recieveing any of those points..."
+            # m "Then you wont be receiving any of those points..."
             # her "..."
             # her "Yeah, that's still going to be a no, bye [genie_name]."
             # #Hermione walks out Scene end

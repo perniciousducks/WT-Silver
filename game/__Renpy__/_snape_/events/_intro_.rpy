@@ -311,7 +311,7 @@ label snape_intro_E3:
             who2 "But you can never be too cautious with rumours about  \"you know who\" still being alive and all..."
         "\"Tall broody guy?\"":
             call sna_main("","snape_06")
-            who2 "Albus, lately you adopted a peculiar sense of humor, that I do not care for in a slightest..."
+            who2 "Albus, lately you adopted a peculiar sense of humour, that I do not care for in a slightest..."
             who2 "Maybe you should spend a little less time in the company of that big oaf Hagrid."
         "-\{Use magic to get the right answer\}-":
             $ d_flag_01 = True
@@ -406,7 +406,7 @@ label snape_intro_E3:
             $ d_points +=1
             call sna_main("\"Human\"?","snape_01",ypos="head", wand=True)
             call sna_main("Are you implying that you are {size=+5}not{/size} one?","snape_01", wand=True)
-            call sna_main("What are you then?! Dispell your cloaking charm immediately or else!","snape_01", wand=True)
+            call sna_main("What are you then?! Dispel your cloaking charm immediately or else!","snape_01", wand=True)
         "\"I mean you no harm, I swear!\"" if not d_flag_03:
             $ d_flag_03 = True
             $ d_points +=1

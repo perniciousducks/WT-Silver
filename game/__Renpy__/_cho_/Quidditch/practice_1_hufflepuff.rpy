@@ -127,7 +127,7 @@ label hufflepuff_practice_lost:
             call cho_main("Of course I am! And I don't intend to show them to the whole school!","annoyed","narrow","angry","mid")
             call cho_main("Just enough to let Cedric have a peek...","soft","narrow","angry","R")
             g4 "\"Just a peek\" won't do, [cho_name]! You have to reveal everything!"
-            g4 "If the entire school knows the color of your panties, that's when you have done your task well!"
+            g4 "If the entire school knows the colour of your panties, that's when you have done your task well!"
             call cho_main("You are asking too much of me, [cho_genie_name]! I'd never be able to do such a thing...","annoyed","narrow","base","mid")
             m "Clearly you just aren't ready yet. We'll get you to be more confident on your broom soon enough..."
             g9 "With your panties on display!"
@@ -263,7 +263,7 @@ label hufflepuff_practice_win_2:
     call cho_main("At the expense of my dignity!","quiver","base","raised","down")
     m "That's a...{w} yes?"
     call cho_main("Lee Jordan only used to say that I had a nice butt! But-","soft","base","sad","down")
-    call cho_main("But, Hermione! Her incompetece as a Quidditch commentator is unmeasurable!","open","base","raised","R")
+    call cho_main("But, Hermione! Her incompetence as a Quidditch commentator is unmeasurable!","open","base","raised","R")
     call cho_main("I almost miss Jordan's sexist remarks about my body...","open","closed","base","mid")
     g9 "I could tell Hermione to do the same if you'd like."
     call cho_main("Please don't, [cho_genie_name]! I was merely joking!","annoyed","narrow","angry","mid")

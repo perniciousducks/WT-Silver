@@ -60,7 +60,7 @@ label quidditch_commentator_event_1:
     call cho_main("Yeah, actually you're probably right...","angry","angry","angry","mid")
     m "Don't worry she'll do a-{w=1.0}{nw}"
     g4 "Wait... what did you say?"
-    call cho_main("I'm sure she'll do a heckin good job!","smile","angry","angry","mid")
+    call cho_main("I'm sure she'll do a heckin' good job!","smile","angry","angry","mid")
     call cho_main("(She'll flub the whole thing and everyone will laugh at her.)","smile","angry","angry","R") #Mischievous smile
     g9 "Well, great then. I'll ask her in that case!"
     call cho_main("(She'll be humiliated and no one will ever see her as anything but a showoff that knows nothing!)","quiver","angry","angry","down")

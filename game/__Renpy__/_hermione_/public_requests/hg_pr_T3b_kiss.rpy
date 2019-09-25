@@ -402,7 +402,7 @@ label hg_pr_kiss_T3_E1:
     her "Like I was saying..."
     call her_main("I kissed that girl from \"Slytherin\"...","open","base")
     call her_main("Normally I would never do it, of course...","annoyed","angryL")
-    her "Not with someone from that wretched house anyways..."
+    her "Not with someone from that wretched house any way..."
     call her_main("But she approached me first and practically begged me to do it with her...","annoyed","annoyed")
     call her_main("And today of all days...","annoyed","angryL")
     her "to be honest..."

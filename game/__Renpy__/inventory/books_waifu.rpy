@@ -60,7 +60,7 @@ define victoria_dates = [
 
 define leena_dates = [
     "{size=-2}You go to the school library. Apart from an unfamiliar dark haired girl in the corner you are the only visitor. You spend some time with reading a sci-fi novel.{/size}",
-    "{size=-2}You're at the library. There is that girl with the glasses again. You read your sci-fi book and catch the girl staring at you A couple of timesng. What's her problem?{/size}",
+    "{size=-2}You're at the library. There is that girl with the glasses again. You read your sci-fi book and catch the girl staring at you A couple of times. What's her problem?{/size}",
     "{size=-2}Seems like the girl is always here. You look at her properly for the first time: long dark hair, glasses, with a well-formed body. She is sort of cute, but this time she catches you staring.{/size}",
     "{size=-2}The girl is here, just as always. She looks very shy, so You decide to talk to her, but she just ignores you at first and then simply leaves. She's a weird one.{/size}",
     "{size=-2}The silent, dark haired girl is absent today, so You just take your usual seat. But There is a note from her in which She apologizes, then says that she actually likes you and apologizes again.{/size}",
@@ -83,7 +83,7 @@ define random_school = [
     "{size=-2}You go to the school stadium and relax on the bleachers, while you watch cheerleaders practice in the distance...{/size}",
     "{size=-2}You sneak to your secret place: the school building's rooftop and watch heavy clouds creep closer slowly high above, hoping that it's gonna rain tonight.{/size}",
     "{size=-2}You roam through the deserted school hallways and run into the janitor. He gives you the stink eye and goes on about his business. You head home.{/size}" ,
-    "{size=-2}You buy a chocolate bar from a vending machine, then sneak into one of the empty classrooms and spend a couple of hours with reading one of your favorite sci-fi novels.{/size}",
+    "{size=-2}You buy a chocolate bar from a vending machine, then sneak into one of the empty classrooms and spend a couple of hours with reading one of your favourite sci-fi novels.{/size}",
     "{size=-2}You roam through the deserted school hallways for a while. It's starting to rain. Your stepsister Shea is terrified of thunder so You hope for a stormy night.{/size}"
     ]
 
@@ -135,7 +135,7 @@ label waifu:
                         call epilogue
                         return
                     if victoria < 4:
-                        "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}School gym is full of all sorts of declarations for the tonights prom. What of time the whole thing is...{/size}"
+                        "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}School gym is full of all sorts of declarations for tonight's prom. What of time the whole thing is...{/size}"
                         "\"Chapter [Dear_Wifu_ITEM.progress]\"" "{size=-2}You return home and go to sleep early.{/size}"
                         call epilogue
                         return

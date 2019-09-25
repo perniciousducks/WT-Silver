@@ -12,7 +12,7 @@ label luna_favour_4: ###Luna handjob #DONE
         m "[lun_name]?"
         call lun_main("yes, [lun_genie_name]...","normal","base","angry","R")
         m "Would it be possible for me to buy another favour..."
-        call lun_main("Does it involve me cranking out that delicous cum from your wrinkly old balls?","base","angry","angry","R")
+        call lun_main("Does it involve me cranking out that delicious cum from your wrinkly old balls?","base","angry","angry","R")
         call lun_main("Hmmmm?","base","seductive","base","mid")
         m "Possibly..."
         call lun_main("mmmm... good boy...","base","mad","mad","mid")
@@ -96,7 +96,7 @@ label luna_favour_4: ###Luna handjob #DONE
                 $ luna_xpos = 390
                 call ctc
 
-                ">She quietly backs into you, just letting the tip of your cock touch her ass, a drop of precum sticks to her cheek."
+                ">She quietly backs into you, just letting the tip of your cock touch her ass, a drop of pre-cum sticks to her cheek."
                 call lun_main("Mmm, that's much better...","base","seductive","angry","R")
                 m "Gods yes."
                 call lun_main("...","base","happyCl","angry","R")
@@ -894,7 +894,7 @@ label luna_cum_addict_event:
     call lun_main("Not that, idiot!","normal","suspicious","mad","mid")
     call lun_main("Why did it contain so much magical energy?","normal","angry","angry","mid")
     call lun_main("We lovegoods are sensitive to magic, but the only thing I've ever experienced like this was when I was allowed in the same room as some essence of Djinn...","pout","angry","mad","R")
-    call lun_main("But everyone knows the Djinn were hunted to extinction millenia ago...","normal","mad","angry","mid")
+    call lun_main("But everyone knows the Djinn were hunted to extinction millennia ago...","normal","mad","angry","mid")
     g4 "(!!!)"
     m "Oh,{w=0.3} um..."
     m "Trade secret..."

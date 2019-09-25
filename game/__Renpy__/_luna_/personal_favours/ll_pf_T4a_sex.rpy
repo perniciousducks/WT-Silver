@@ -33,7 +33,7 @@ label ll_pf_sex_T1_intro:
     g9 "You don't say!"
     #call lun_main("When do you think you'll approach the rest of the wizarding world with this knowledge?","open","wide","base","mid")
     m "[lun_name], you weren't the only one thinking of something ingenious to get rid of those nasty beasts!"
-    g9 "I could teach you a thing or two as well!{w} After you've showen me your suggestion..."
+    g9 "I could teach you a thing or two as well!{w} After you've shown me your suggestion..."
     call lun_main("That's very exciting don't you think?{w} We can finally get rid of this scourge once and for all!","base","happyCl","base","mid")
     call lun_main("Everyone deserves to hear about it!","base","happyCl","base","mid")
 
@@ -44,7 +44,7 @@ label ll_pf_sex_T1_intro:
     m "Follow you? To where."
     call lun_main("Just down to the lake... It's not far.","base","base","sad","mid")
     g9 "The lake you say?"
-    m "Very desolate and quited...{w} It's perfect!"
+    m "Very desolate and quiet...{w} It's perfect!"
     call lun_main("I can give you a tour of the school while we're at it!","base","wink","base","mid")
     call lun_main("And once we are there you can tell me about your ideas!","base","wink","base","mid")
     g9 "Sounds like a plan!{w} lets go!"
@@ -544,7 +544,7 @@ label ll_pf_sex_T1_her_1: # Call label
     m "Awesome, I'm just gonna... take a nap..."
 
     ">With that the two of you doze off..."
-    ">When you wake you find only a Luna shaped cumstain on your desk."
+    ">When you wake you find only a Luna shaped cum stain on your desk."
     hide screen blkfade
     with d5
 
@@ -621,7 +621,7 @@ label ll_pf_sex_T1_her_2: # Call label
     ">Your cock explodes inside Luna, unleashing an avalanche of your thick seed into her tight little pussy."
     g9 "FUCK YES!!!"
     $ lunCG('open_tongue', 'wide', 'sad', 'ahegao')
-    lun "it's{image=textheart}Ican't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
+    lun "it's{image=textheart}I can't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
     $ lunCG('base', 'angry', '', 'ahegao')
     lun "..."
     $ lunCG('open', 'tired', '', 'ahegao')
@@ -748,7 +748,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     m "Awesome, I'm just gonna... take a nap..."
 
     ">With that the two of you doze off..."
-    ">When you wake you find only a Luna shaped cumstain on your desk."
+    ">When you wake you find only a Luna shaped cum stain on your desk."
 
     hide screen blkfade
     with d3
@@ -984,7 +984,7 @@ label ll_pf_sex_T1_ton_1: # Call label
             ">Luna quickly hops off the desk and smiles in front of your cock..."
             $ lunCG('open', 'wink', 'base', 'up', pos=1)
             lun "Need me to-"
-            g4 "Shutup!"
+            g4 "Shut up!"
             $ lunCG('base', 'base', 'sad', 'up')
             lun "..."
             g4 "Ugh... here it is you little whore!"
@@ -993,7 +993,7 @@ label ll_pf_sex_T1_ton_1: # Call label
             $ lunCG('open_tongue', 'seductive', 'sad', 'ahegao', extra_1='cum_3')
             lun "{image=textheart}{image=textheart}{image=textheart}"
             lun "{size=-5}thank you...{/size}"
-            ">Tonk's fingers noticeably begin to speed up."
+            ">Tonks' fingers noticeably begin to speed up."
             ton "Mmmm, damn... where were all the sluts like this when I was in school..."
 
         "-Fire it in her-":
@@ -1005,7 +1005,7 @@ label ll_pf_sex_T1_ton_1: # Call label
             call ton_main("Wow...","horny","base","raised","L")
             $ lunCG('open_tongue', 'furious', 'sad', 'right')
             lun "Ugh...{image=textheart} it's like he's... pumped me full of magic..."
-            ">Tonk's fingers noticeably begin to speed up."
+            ">Tonks' fingers noticeably begin to speed up."
             $ lunCG('open_tongue', 'furious', 'sad', 'ahegao')
             call ton_main("Mmmm, damn... where were all the sluts like this when I was in school...","horny","base","raised","L")
 
@@ -1260,7 +1260,7 @@ label ll_pf_sex_T1_ton_2: # Call label
             lun "{image=textheart}{image=textheart}{image=textheart}"
             $ lunCG('base', 'seductive', 'sad', 'up')
             lun "{size=-5}thank you...{/size}"
-            ">Tonk's fingers noticeably begin to speed up."
+            ">Tonks' fingers noticeably begin to speed up."
             $ lunCG('base', 'seductive', 'sad', 'left')
             call ton_main("Mmmm, damn... that's hot...","horny","base","base","L")
             m "Ready to take Miss Lovegood home?"
@@ -1357,7 +1357,7 @@ label ll_pf_sex_bedroom:
     hide screen ccg
 
     $ lunCG(pupil='up', eye='base', mouth='open_tongue', eyebrow='sad', cheeks='blush', extra_1='hand', extra_2='blank', extra_3='blank', overlay='overlay', tears='blank', body='base')
-    ">Led on by Luna's ignorant desperation you take the naive girl to her bed, reveling in its softness before guiding the needy slut onto your lap."
+    ">Led on by Luna's ignorant desperation you take the naive girl to her bed, revelling in its softness before guiding the needy slut onto your lap."
     hide screen blkfade
     with d3
 
@@ -1500,7 +1500,7 @@ label ll_pf_sex_bedroom:
     lun "Luna's eyes roll upwards into her head as the pleasure proves too much for her."
     g9 "Take this you greedy little whore!"
     $ lunCG('open_tongue', 'wide', 'sad', 'dick', extra_2='cum_1')
-    ">You begin to unload a gigantic load into the gleeful girl as she is almost too enamored in her own lust to notice."
+    ">You begin to unload a gigantic load into the gleeful girl as she is almost too enamoured in her own lust to notice."
     $ lunCG('open', 'angry', 'sad', 'ahegao')
     lun "ah..."
     $ lunCG('base', 'seductive', 'sad', 'dl')

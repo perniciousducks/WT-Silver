@@ -20,7 +20,7 @@ label an_odd_circumstance():
 
     nar "It was a normal night..."
     nar "I was sitting in my office as usual, slowly chipping away at some left over paper work..."
-    nar "Leaning back in my chair, I closed my eyes for a moment thinking back on todays events."
+    nar "Leaning back in my chair, I closed my eyes for a moment thinking back on today's events."
     nar "It'd been a weird one for sure... Not just appearing in this office but also the whole situation in general..."
     nar "I sat back up and hunched myself over the parchment."
     nar "Well, I guess it could be worse... Weather is... acceptable."
@@ -122,7 +122,7 @@ label an_odd_circumstance():
     call u_pause_ani
     her "*G-g-gah...*"
     nar "A string of saliva still attached between her mouth and my penis slowly found itself moving down and then disconnected, resting across the front of her chest."
-    nar "Now smiling, the girl started massaging my cock with a mixture of precum and her saliva..."
+    nar "Now smiling, the girl started massaging my cock with a mixture of pre-cum and her saliva..."
     nar "Feeling more relaxed about the whole situation I couldn't help but forget about any consequences and began to just enjoy myself."
     call u_play_ani
     nar "Without warning, her lips wrapped themselves back around my now throbbing cock..."

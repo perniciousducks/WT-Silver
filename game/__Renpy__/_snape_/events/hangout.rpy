@@ -179,7 +179,7 @@ label hang_with_snape_E1: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     call sna_main("..............","snape_31")
     call sna_main("She used to be just an annoyance, but these days...","snape_31")
     call sna_main("She's become a full-fledged menace...","snape_01")
-    call sna_main("That witch is officially my least favorite student in the entire school now...","snape_01")
+    call sna_main("That witch is officially my least favourite student in the entire school now...","snape_01")
     m "What about that Potter boy?"
     call sna_main("The Potter boy? Ha! Who's that!?","snape_34")
     call sna_main("No, I'm serious...","snape_01")
@@ -594,7 +594,7 @@ label hang_with_snape_E4:
 
     if hang_with_tonks.E1_complete:
         g9 "Way ahead of you!"
-        m "She's aleady offered to help with Granger."
+        m "She's already offered to help with Granger."
     else:
         m "Oh, I'm sure there's little to no persuasion needed."
         m "I have no doubt that she'd be well into the idea of convincing Granger to sell favours herself..."
@@ -931,7 +931,7 @@ label ss_he_story_intro_E9: # Replace this event.
     call sna_main("But wait, it gets worse.","snape_01")
     call sna_main("Apparently I am fluent in Russian now.","snape_05")
     g4 "Wait, what?"
-    call sna_main("And I am this miserable muggle guy who lives in this shithole of a town full of rundown buildings.","snape_06")
+    call sna_main("And I am this miserable muggle guy who lives in this shithole of a town full of run-down buildings.","snape_06")
     call sna_main("I try to make a living by drawing comics and creating games with \"Ren'Py\"...","snape_06")
     call sna_main("And that is so bizarre because I don't even know what a \"Ren'Py\" is!","snape_24")
     m "Hm... Then what happened?"
@@ -1042,7 +1042,7 @@ label ss_he_story_intro_E12:
     m "Although if your Albus friend really materialised in exactly the same spot I occupied before I casted the spell..."
     m "I suppose the princess could have him beheaded..."
     call sna_main("WHAT?!","snape_01")
-    m "But the probabilty of that happening is very slim..."
+    m "But the probability of that happening is very slim..."
     m "About five percent... Maybe ten... Twenty percent tops."
     call sna_main(".......................................................","snape_03")
     pause.1

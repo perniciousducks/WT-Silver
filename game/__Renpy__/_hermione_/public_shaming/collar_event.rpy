@@ -100,7 +100,7 @@ label slut_scene: #Locked to her being your slut
             m "Come on [hermione_name] you are a good slut aren't you."
             call her_main("...","open_wide_tongue","angryCl")
             hide screen hermione_main
-            ">Hermiones throat relaxes and allows you to enter."
+            ">Hermione's throat relaxes and allows you to enter."
             m "Ughhh! Your throat is so tight. You're such a filthy little slut aren't you?"
             call her_main("*Slurp!* *Gltch!* *Gulp!*","open_wide_tongue","base")
             hide screen hermione_main
@@ -331,14 +331,14 @@ label whore_scene: #(locked behind the public her_whoring flag)
     ">Hermione gets to her feet"
     m "Well seeing as how you said thank you I have a present for you."
     call her_main("A present?","open","concerned",cheeks="blush",tears="mascara")
-    m "Yes, it's a lovely piece of jewelery to commemorate your self-acceptance."
+    m "Yes, it's a lovely piece of jewellery to commemorate your self-acceptance."
 
     #sQuest "whore" collar reward
     call give_reward(">You present her the \"whore\" collar.\n \"whore\" collar added to your wardrobe.")
 
     call her_main("A collar? That says whore?","open","squint",cheeks="blush")
-    call her_main("How is this a piece of jewelery?","open","annoyed",cheeks="blush")
-    m "Well I expect you to wear it all the time, like a ring, so I guess that qualifies it as jewelery."
+    call her_main("How is this a piece of jewellery?","open","annoyed",cheeks="blush")
+    m "Well I expect you to wear it all the time, like a ring, so I guess that qualifies it as jewellery."
     call her_main("You expect me to wear this all the time? Not just in your office.","scream","angry",cheeks="blush",tears="messy")
     m "Of course. I already know what a whore you are, this is so that everyone else will know."
     call her_main("What will people think of me?","scream","worriedCl",cheeks="blush",tears="messy")

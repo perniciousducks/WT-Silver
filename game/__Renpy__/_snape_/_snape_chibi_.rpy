@@ -194,7 +194,10 @@ label update_sna_chibi:
 
 screen s_c_u():
     tag snape_chibi
-    add s_c_u_pic at Position(xpos=sna_chibi_xpos, ypos=sna_chibi_ypos) # (xpos=360, ypos=210)
+    if "/chibis/" in s_c_u_pic:
+        add s_c_u_pic xpos sna_chibi_xpos ypos sna_chibi_ypos zoom 0.5
+    else:
+        add s_c_u_pic xpos sna_chibi_xpos ypos sna_chibi_ypos
     zorder 3
 
 screen s_c_c_u(): # cum

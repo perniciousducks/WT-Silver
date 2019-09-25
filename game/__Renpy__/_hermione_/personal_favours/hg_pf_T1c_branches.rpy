@@ -29,6 +29,7 @@ label hg_pf_admire_breasts_transition:
     # Move to desk
     hide screen bld1
     call her_chibi("stand","mid","base")
+    with d3
     pause.2
 
     call chibi_walk_desk_blkfade("hermione")

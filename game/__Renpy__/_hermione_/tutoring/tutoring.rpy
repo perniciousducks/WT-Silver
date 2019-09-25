@@ -1940,16 +1940,16 @@ screen groping_05b():
 
 screen no_groping_05():
     tag favor
-    add "characters/hermione/chibis/grope_ass/back_d_05.png" at Position(xpos = -84, ypos = 10)
+    add "characters/hermione/chibis/grope_ass/back_d_05.png" xpos -84 ypos 10 zoom 0.5
     add "groping_05_blinking" at Position(xpos = -84, ypos = 10)
 
 screen no_groping_05_desk():
     tag favor
-    add "characters/hermione/chibis/fingering/02.png" at Position(xpos = -84, ypos = 10)
+    add "characters/hermione/chibis/fingering/02.png" xpos -84 ypos 10 zoom 0.5
 
 screen no_groping_06(): #Facing Genie.
     tag favor
-    add "characters/hermione/chibis/grope_ass/front_e_05.png" at Position(xpos = -84, ypos = 10)
+    add "characters/hermione/chibis/grope_ass/front_e_05.png" xpos -84 ypos 10 zoom 0.5
     add "groping_06_blinking" at Position(xpos = -84, ypos = 10)
 
 screen groping_06():
@@ -1964,11 +1964,11 @@ screen groping_06b():
 
 screen no_groping_laying_01():
     tag favor
-    add "characters/hermione/chibis/fingering/01.png" at Position(xpos = -84, ypos = 10)
+    add "characters/hermione/chibis/fingering/01.png" xpos -84 ypos 10 zoom 0.5
 
 screen no_groping_laying_02():
     tag favor
-    add "characters/hermione/chibis/fingering/b_01.png" at Position(xpos = -84, ypos = 10)
+    add "characters/hermione/chibis/fingering/b_01.png" xpos -84 ypos 10 zoom 0.5
 
 screen scr_her_fingering_naked(speed="normal"):
     tag favor
@@ -1992,6 +1992,8 @@ screen scr_her_sex_cum_outside(blink=0):
     add "ani_her_sex_cum_outside_naked" at Position(xpos = -84, ypos = 10)
 
 image groping_06: #Genie groping Hermione under her skirt. Hermione is facing Genie.
+    zoom 0.5
+    
     "characters/hermione/chibis/grope_ass/front_e_01.png"
     pause.2
     "characters/hermione/chibis/grope_ass/front_e_02.png"
@@ -2005,6 +2007,8 @@ image groping_06: #Genie groping Hermione under her skirt. Hermione is facing Ge
     repeat
 
 image groping_06b: #Genie groping Hermione under her skirt. Hermione is facing Genie.
+    zoom 0.5
+    
     "characters/hermione/chibis/grope_ass/front_e_01.png"
     pause.1
     "characters/hermione/chibis/grope_ass/front_e_02.png"
@@ -2018,6 +2022,8 @@ image groping_06b: #Genie groping Hermione under her skirt. Hermione is facing G
     repeat
 
 image groping_06_blinking: #Animation of Hermione blinking her eyes.
+    zoom 0.5
+    
     "images/animation/00.png"
     pause.1
     "characters/hermione/chibis/grope_ass/front_e_04.png"
@@ -2035,6 +2041,8 @@ image groping_06_blinking: #Animation of Hermione blinking her eyes.
     repeat
 
 image groping_05: #Genie groping Hermione under her skirt. Hermione is facing Genie.
+    zoom 0.5
+    
     "characters/hermione/chibis/grope_ass/back_d_01.png"
     pause.2
     "characters/hermione/chibis/grope_ass/back_d_02.png"
@@ -2048,6 +2056,8 @@ image groping_05: #Genie groping Hermione under her skirt. Hermione is facing Ge
     repeat
 
 image groping_05b: #Genie groping Hermione under her skirt. Hermione is facing Genie.
+    zoom 0.5
+    
     "characters/hermione/chibis/grope_ass/back_d_01.png"
     pause.1
     "characters/hermione/chibis/grope_ass/back_d_02.png"
@@ -2061,6 +2071,8 @@ image groping_05b: #Genie groping Hermione under her skirt. Hermione is facing G
     repeat
 
 image groping_05_blinking: #Animation of Hermione blinking her eyes.
+    zoom 0.5
+    
     "images/animation/00.png"
     pause.1
     "characters/hermione/chibis/grope_ass/back_d_04.png"
@@ -2078,6 +2090,8 @@ image groping_05_blinking: #Animation of Hermione blinking her eyes.
     repeat
 
 image ani_her_fingering_blinking: #Animation of Hermione blinking her eyes.
+    zoom 0.5
+    
     "images/animation/00.png"
     pause.1
     "characters/hermione/chibis/fingering/blink.png"
@@ -2095,6 +2109,8 @@ image ani_her_fingering_blinking: #Animation of Hermione blinking her eyes.
     repeat
 
 image ani_her_fingering_slow_naked:
+    zoom 0.5
+    
     "characters/hermione/chibis/fingering/n_01.png"
     pause.3
     "characters/hermione/chibis/fingering/n_02.png"
@@ -2106,6 +2122,8 @@ image ani_her_fingering_slow_naked:
     repeat
 
 image ani_her_fingering_naked:
+    zoom 0.5
+    
     "characters/hermione/chibis/fingering/n_01.png"
     pause.2
     "characters/hermione/chibis/fingering/n_02.png"
@@ -2117,6 +2135,8 @@ image ani_her_fingering_naked:
     repeat
 
 image ani_her_sex_slow_naked:
+    zoom 0.5
+    
     "characters/hermione/chibis/sex/n_01.png"
     pause.15
     "characters/hermione/chibis/sex/n_02.png"
@@ -2134,6 +2154,8 @@ image ani_her_sex_slow_naked:
     repeat
 
 image ani_her_sex_naked:
+    zoom 0.5
+    
     "characters/hermione/chibis/sex/n_01.png"
     pause.1
     "characters/hermione/chibis/sex/n_02.png"
@@ -2151,6 +2173,8 @@ image ani_her_sex_naked:
     repeat
 
 image ani_her_sex_fast_naked:
+    zoom 0.5
+    
     "characters/hermione/chibis/sex/n_01.png"
     pause.05
     "characters/hermione/chibis/sex/n_02.png"
@@ -2168,6 +2192,8 @@ image ani_her_sex_fast_naked:
     repeat
 
 image ani_her_sex_cum_outside_naked:
+    zoom 0.5
+    
     "characters/hermione/chibis/sex/sperm_n_01.png"
     pause.1
     "characters/hermione/chibis/sex/sperm_n_02.png"

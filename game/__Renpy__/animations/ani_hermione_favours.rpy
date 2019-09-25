@@ -5,6 +5,8 @@
 
 ### HERMIONE GIVING GENIE A HANDJOB ###
 image handjob_ani:
+    zoom 0.5
+    
     "characters/hermione/chibis/handjob/01.png"
     pause.1
     "characters/hermione/chibis/handjob/02.png"
@@ -21,6 +23,8 @@ image handjob_ani:
 
 ### HERMIONE HANDJOB CUMMING UNDER THE SHIRT ###
 image undershirt_cum_ani:
+    0.5
+    
     "characters/hermione/chibis/handjob/sperm_under_01.png"
     pause 1
     "characters/hermione/chibis/handjob/sperm_under_02.png"
@@ -51,6 +55,8 @@ image undershirt_cum_ani:
 
 ### HERMIONE HANDJOB CUMMING ON THE SHIRT ###
 image on_shirt_cum_ani:
+    0.5
+    
     "characters/hermione/chibis/handjob/sperm_on_00.png"
     pause.1
     "characters/hermione/chibis/handjob/sperm_on_01.png"
@@ -115,6 +121,8 @@ image on_shirt_cum_ani:
 
 ### HERMIONE GIVING A KISS TO GENIE'S COCK ###
 image kiss_ani:
+    zoom 0.5
+    
     "characters/hermione/chibis/handjob/kiss_01.png"
     pause.1
     "characters/hermione/chibis/handjob/kiss_02.png"
@@ -143,6 +151,8 @@ image kiss_ani:
 
 ### HERMIONE HANDJOB KISS DRINKING CUM FROM COCK ###
 image kiss_cum_ani:
+    zoom 0.5
+    
     "characters/hermione/chibis/handjob/sperm_kiss_01.png"
     pause.1
     "characters/hermione/chibis/handjob/sperm_kiss_02.png"
@@ -163,6 +173,8 @@ image kiss_cum_ani:
 
 #==========SEX===========#
 image sex_ani:#-----------------### HERMIONE SEX ###
+    zoom 0.5
+    
     "characters/hermione/chibis/sex/01.png"
     pause.1
     "characters/hermione/chibis/sex/02.png"
@@ -180,6 +192,8 @@ image sex_ani:#-----------------### HERMIONE SEX ###
     repeat
 
 image sex2_ani:#----------------### HERMIONE FAST SPEED SEX ###
+    zoom 0.5
+    
     "characters/hermione/chibis/sex/01.png"
     pause.05
     "characters/hermione/chibis/sex/02.png"
@@ -197,6 +211,8 @@ image sex2_ani:#----------------### HERMIONE FAST SPEED SEX ###
     repeat
 
 image sex_slow_ani:#------------### HERMIONE SEX LOW SPEED ###
+    zoom 0.5
+    
     "characters/hermione/chibis/sex/01.png"
     pause.15
     "characters/hermione/chibis/sex/02.png"
@@ -214,6 +230,8 @@ image sex_slow_ani:#------------### HERMIONE SEX LOW SPEED ###
     repeat
 
 image sex_cum_out_ani:#---------### HERMIONE SEX CUM OUTSIDE ###
+    zoom 0.5
+    
     "characters/hermione/chibis/sex/sperm_01.png"
     pause.1
     "characters/hermione/chibis/sex/sperm_02.png"
@@ -263,6 +281,8 @@ image sex_cum_out_ani:#---------### HERMIONE SEX CUM OUTSIDE ###
     repeat
 
 image sex_cum_out_blink_ani:#---### HERMIONE SEX CUM OUTSIDE BLINKING ###
+    zoom 0.5
+    
     "characters/hermione/chibis/sex/sperm_19.png"
     pause 1
     "characters/hermione/chibis/sex/sperm_24.png" #closed
@@ -280,6 +300,8 @@ image sex_cum_out_blink_ani:#---### HERMIONE SEX CUM OUTSIDE BLINKING ###
     repeat
 
 image sex_cum_in_ani:#----------### HERMIONE SEX CUM INSIDE ###
+    zoom 0.5
+    
     "characters/hermione/chibis/sex/creampie_01.png"
     pause.1
     "characters/hermione/chibis/sex/creampie_02.png"
@@ -329,6 +351,8 @@ image sex_cum_in_ani:#----------### HERMIONE SEX CUM INSIDE ###
     repeat
 
 image pause_sex:#---------------### HERMIONE PAUSE SEX ###
+    zoom 0.5
+    
     "characters/hermione/chibis/sex/03.png"
 
 
@@ -336,6 +360,8 @@ image pause_sex:#---------------### HERMIONE PAUSE SEX ###
 ### FAVORS ###
 ### GROPINGS ###
 image groping_01: #Genie groping Hermione under her skirt. Hermione is facing Genie.
+    zoom 0.5
+    
     "characters/hermione/chibis/grope_ass/front_01.png"
     pause.2
     "characters/hermione/chibis/grope_ass/front_02.png"
@@ -349,6 +375,8 @@ image groping_01: #Genie groping Hermione under her skirt. Hermione is facing Ge
     repeat
 
 image groping_02: #Genie groping Hermione under her skirt. Hermione's behind is facing Genie.
+    zoom 0.5
+    
     "characters/hermione/chibis/grope_ass/back_b_01.png"
     pause.2
     "characters/hermione/chibis/grope_ass/back_b_02.png"
@@ -363,6 +391,8 @@ image groping_02: #Genie groping Hermione under her skirt. Hermione's behind is 
 
 
 image groping_01_blinking: #Animation of Hermione blinking her eyes.
+    zoom 0.5
+    
     "images/animation/00.png"
     pause.1
     "characters/hermione/chibis/grope_ass/front_04.png"
@@ -380,6 +410,8 @@ image groping_01_blinking: #Animation of Hermione blinking her eyes.
     repeat
 
 image groping_02_blinking: #Animation of Hermione blinking her eyes.
+    zoom 0.5
+    
     "images/animation/00.png"
     pause.1
     "characters/hermione/chibis/grope_ass/back_b_04.png"
@@ -397,6 +429,8 @@ image groping_02_blinking: #Animation of Hermione blinking her eyes.
     repeat
 
 image fingering_blinking:
+    zoom 0.5
+    
     "images/animation/00.png"
     pause.1
     "characters/hermione/chibis/fingering/blink.png"
@@ -415,6 +449,8 @@ image fingering_blinking:
 
 ### GROPING TITS FULLY CLOTHED ###
 image groping_03_ani: #Genie groping Hermione under her skirt. Hermione is facing Genie.
+    zoom 0.5
+    
     "characters/hermione/chibis/grope_breasts/01.png"
     pause.2
     "characters/hermione/chibis/grope_breasts/02.png"
@@ -435,6 +471,8 @@ image groping_03_ani: #Genie groping Hermione under her skirt. Hermione is facin
 
 ### GROPING NAKED TITS ###
 image groping_naked_tits_ani: #Genie groping Hermione under her skirt. Hermione is facing Genie.
+    zoom 0.5
+    
     "characters/hermione/chibis/grope_breasts/bare_01.png"
     pause.2
     "characters/hermione/chibis/grope_breasts/bare_02.png"
@@ -454,6 +492,8 @@ image groping_naked_tits_ani: #Genie groping Hermione under her skirt. Hermione 
     repeat
 
 image groping_naked_tits_ani_01: #Genie groping Hermione under her skirt. Hermione is facing Genie.
+    zoom 0.5
+    
     "characters/hermione/chibis/grope_breasts/bare_n_01.png"
     pause.2
     "characters/hermione/chibis/grope_breasts/bare_n_02.png"
@@ -475,6 +515,8 @@ image groping_naked_tits_ani_01: #Genie groping Hermione under her skirt. Hermio
 
 ### JERKING OFF ###
 image jerking_off_ani: #Genie jerking off in front of top pulled up (shirt + vest) Hermione.
+    zoom 0.5
+    
     "characters/hermione/chibis/grope_breasts/masturbate_01.png"
     pause.2
     "characters/hermione/chibis/grope_breasts/masturbate_02.png"
@@ -488,6 +530,8 @@ image jerking_off_ani: #Genie jerking off in front of top pulled up (shirt + ves
 
 
 image desk_blinking: #Animation of Hermione blinking her eyes standing at genie's desk.
+    zoom 0.5
+    
     "images/animation/00.png"
     pause.1
     "characters/hermione/chibis/grope_breasts/blink.png"
@@ -506,6 +550,8 @@ image desk_blinking: #Animation of Hermione blinking her eyes standing at genie'
 
 
 image groping_ass_ani: #Genie groping Hermione's ass
+    zoom 0.5
+    
     "characters/genie/chibis/masturbating/b_01.png"
     pause.6
     "characters/genie/chibis/masturbating/b_02.png"
@@ -517,6 +563,8 @@ image groping_ass_ani: #Genie groping Hermione's ass
     repeat
 
 image jerking_off_02_ani: #Genie jerking off in front of dancing on a desk Hermione. (Difference is that the dick is aimed higher.)
+    zoom 0.5
+    
     "characters/genie/chibis/masturbating/01.png"
     pause.2
     "characters/genie/chibis/masturbating/02.png"
@@ -528,6 +576,8 @@ image jerking_off_02_ani: #Genie jerking off in front of dancing on a desk Hermi
     repeat
 
 image jerking_off_03_ani: #SNape jerking off in front of dancing on a desk Hermione.
+    zoom 0.5
+    
     "characters/snape/chibis/masturbating/01.png"
     pause.2
     "characters/snape/chibis/masturbating/02.png"

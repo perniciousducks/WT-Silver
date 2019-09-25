@@ -30,7 +30,7 @@ screen hermione_02_wf2(): #Hermione finishes rubbing the wand - eyes opened.
 #Lift top.
 screen hermione_chibi_lift_top():
     tag hermione_chibi
-    add "characters/hermione/chibis/lift_top/tits_00.png" at Position(xpos=her_chibi_xpos, ypos=her_chibi_ypos)
+    add "characters/hermione/chibis/lift_top/tits_00.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
     zorder her_chibi_zorder
 
 #Lift skirt.
@@ -38,11 +38,11 @@ screen hermione_chibi_lift_skirt():
     tag hermione_chibi
     if hermione_wear_panties:
         if hg_pf_admire_panties.counter <= 1:
-            add "characters/hermione/chibis/lift_skirt/panties_00.png" at Position(xpos=her_chibi_xpos, ypos=her_chibi_ypos)
+            add "characters/hermione/chibis/lift_skirt/panties_00.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
         else:
-            add "characters/hermione/chibis/lift_skirt/panties_01.png" at Position(xpos=her_chibi_xpos, ypos=her_chibi_ypos)
+            add "characters/hermione/chibis/lift_skirt/panties_01.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
     else:
-        add "characters/hermione/chibis/lift_skirt/panties_02.png" at Position(xpos=her_chibi_xpos, ypos=her_chibi_ypos)
+        add "characters/hermione/chibis/lift_skirt/panties_02.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
     zorder her_chibi_zorder
 
 #Drink potion.
@@ -59,7 +59,7 @@ screen ch_potion():
 screen groping_01(): # Grope Ass fully clothed - Flip = True (facing door)
     tag favor
     if hermione_wear_top == False and hermione_wear_bottom == False:
-        add "characters/hermione/chibis/fingering/02.png" at Position(xpos=-60, ypos=10)
+        add "characters/hermione/chibis/fingering/02.png" xpos -60 ypos 10 zoom 0.5
         add "fingering_blinking" at Position(xpos=-60, ypos=10)
     else:
         add "groping_01" at Position(xpos=-60, ypos=10)
@@ -74,7 +74,7 @@ screen groping_02(): # Grope Ass fully clothed - Flip = False
 
 screen no_groping_01(): # Hermione stands with you behind desk - Flip = True (facing door)
     tag favor
-    add "characters/hermione/chibis/grope_ass/front_05.png" at Position(xpos=-60, ypos=10)
+    add "characters/hermione/chibis/grope_ass/front_05.png" xpos -60 ypos 10 zoom 0.5
     add "groping_01_blinking" at Position(xpos=-60, ypos=10)
     zorder desk_zorder
 
@@ -82,12 +82,12 @@ screen no_groping_02(): # Hermione stands with you behind desk - Flip = False
     tag favor
     if hermione_wear_top == False and hermione_wear_bottom == False:
         if masturbating:
-            add "characters/hermione/chibis/fingering/back_n_solo.png" at Position(xpos=-60, ypos=10)
+            add "characters/hermione/chibis/fingering/back_n_solo.png" xpos -60 ypos 10 zoom 0.5
         else:
-            add "characters/hermione/chibis/fingering/back_n_idle.png" at Position(xpos=-60, ypos=10)
+            add "characters/hermione/chibis/fingering/back_n_idle.png" xpos -60 ypos 10 zoom 0.5
         add "fingering_blinking" at Position(xpos=-60, ypos=10)
     else:
-        add "characters/hermione/chibis/grope_ass/back_b_05.png" at Position(xpos=-60, ypos=10)
+        add "characters/hermione/chibis/grope_ass/back_b_05.png" xpos -60 ypos 10 zoom 0.5
         add "groping_02_blinking" at Position(xpos=-60, ypos=10)
     zorder desk_zorder
 
@@ -123,7 +123,7 @@ screen jerking_off_cum():
 ### ADMIRING TITS ###
 screen genie_and_tits_01(): #Genie sitting, looking ar naked tits. Hermione stands right in front of him. (Behind the desk even).
     tag favor
-    add "images/rooms/main_room/admire_tits_00.png" at Position(xpos=-60, ypos=10)
+    add "images/rooms/main_room/admire_tits_00.png" xpos -60 ypos 10 zoom 0.5
     zorder desk_zorder
 
 
@@ -133,9 +133,9 @@ screen hermione_chibi_ass(ani=None):
     tag favor
     if ani in ["admire_ass"]:
         if hermione_wear_top and hermione_wear_bottom:
-            add "characters/hermione/chibis/fingering/01.png" at Position(xpos=-60, ypos=10)
+            add "characters/hermione/chibis/fingering/01.png" xpos -60 ypos 10 zoom 0.5
         else: # Nude
-            add "characters/hermione/chibis/fingering/02.png" at Position(xpos=-60, ypos=10)
+            add "characters/hermione/chibis/fingering/02.png" xpos -60 ypos 10 zoom 0.5
         add "fingering_blinking" at Position(xpos=-60, ypos=10)
     zorder desk_zorder
 
@@ -151,18 +151,18 @@ screen hermione_chibi_hj(ani=None, xpos=230, ypos=0):
     if ani in ["hj"]:
         add "handjob_ani" xpos chibi_xpos ypos chibi_ypos
     elif ani in ["hj_pause"]:
-        add "characters/hermione/chibis/handjob/01.png" xpos chibi_xpos ypos chibi_ypos
+        add "characters/hermione/chibis/handjob/01.png" xpos chibi_xpos ypos chibi_ypos zoom 0.5
     elif ani in ["hj_kiss"]:
         add "kiss_ani" xpos chibi_xpos ypos chibi_ypos
 
     elif ani in ["hj_cumming_on"]:
         add "on_shirt_cum_ani" xpos chibi_xpos ypos chibi_ypos
     elif ani in ["hj_cumming_on_pause"]:
-        add "characters/hermione/chibis/handjob/sperm_on_21.png" xpos chibi_xpos ypos chibi_ypos
+        add "characters/hermione/chibis/handjob/sperm_on_21.png" xpos chibi_xpos ypos chibi_ypos zoom 0.5
     elif ani in ["hj_cumming_in"]:
         add "undershirt_cum_ani" xpos chibi_xpos ypos chibi_ypos
     elif ani in ["hj_cumming_in_pause"]:
-        add "characters/hermione/chibis/handjob/sperm_under_12.png" xpos chibi_xpos ypos chibi_ypos
+        add "characters/hermione/chibis/handjob/sperm_under_12.png" xpos chibi_xpos ypos chibi_ypos zoom 0.5
 
 
 
@@ -176,22 +176,22 @@ screen hermione_chibi_tj(ani=None, xpos=450, ypos=200):
     if ani in ["tj"]:
         add "titjob_ani" xpos chibi_xpos ypos chibi_ypos
     elif ani in ["tj_pause"]:
-        add "characters/hermione/chibis/titjob/tj_sex_01.png" xpos chibi_xpos ypos chibi_ypos
+        add "characters/hermione/chibis/titjob/tj_sex_01.png" xpos chibi_xpos ypos chibi_ypos zoom 0.5
 
     # Number offset so Hermione's Chibi doesn't move.
     elif ani in ["tj_idle"]:
-        add "characters/hermione/chibis/titjob/tj_cum_chest_01.png" xpos chibi_xpos-15 ypos chibi_ypos+16
+        add "characters/hermione/chibis/titjob/tj_cum_chest_01.png" xpos chibi_xpos-15 ypos chibi_ypos+16 zoom 0.5
     elif ani in ["tj_cumming_on"]:
         add "titjob_chest_ani" xpos chibi_xpos-15 ypos chibi_ypos+16
     elif ani in ["tj_cumming_on_pause"]:
-        add "characters/hermione/chibis/titjob/tj_cum_chest_25.png" xpos chibi_xpos-15 ypos chibi_ypos+16
+        add "characters/hermione/chibis/titjob/tj_cum_chest_25.png" xpos chibi_xpos-15 ypos chibi_ypos+16 zoom 0.5
 
     elif ani in ["tj_bj_pause"]:
-        add "characters/hermione/chibis/titjob/tj_cum_mouth_01.png" xpos chibi_xpos+27 ypos chibi_ypos+16
+        add "characters/hermione/chibis/titjob/tj_cum_mouth_01.png" xpos chibi_xpos+27 ypos chibi_ypos+16 zoom 0.5
     elif ani in ["tj_cumming_in"]:
         add "titjob_mouth_ani" xpos chibi_xpos+27 ypos chibi_ypos+16
     elif ani in ["tj_cumming_in_pause"]:
-        add "characters/hermione/chibis/titjob/tj_cum_mouth_09.png" xpos chibi_xpos+27 ypos chibi_ypos+16
+        add "characters/hermione/chibis/titjob/tj_cum_mouth_09.png" xpos chibi_xpos+27 ypos chibi_ypos+16 zoom 0.5
 
 
 
@@ -236,7 +236,7 @@ screen hermione_chibi_sex(ani=None): #x-70 y10
     elif ani in ["sex_creampie"]:
         add "sex_cum_in_ani" at Position(xpos=-70, ypos=10)
     elif ani in ["sex_creampie_pause"]:
-        add "characters/hermione/chibis/sex/creampie_19.png" at Position(xpos=-70, ypos=10)
+        add "characters/hermione/chibis/sex/creampie_19.png" xpos -70 ypos 10 zoom 0.5
 
     else:
         add "sex_ani" at Position(xpos=-70, ypos=10)
@@ -268,21 +268,24 @@ screen hermione_chibi_dance():
 ### SIT NAKED ###
 screen hermione_chibi_sit_naked_A():
     tag hermione_chibi
-    add "characters/hermione/chibis/sitting/sit_naked_blink.png" at Position(xpos=her_chibi_xpos, ypos=her_chibi_ypos)
+    add "characters/hermione/chibis/sitting/sit_naked_blink.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
     zorder her_chibi_zorder
 screen hermione_chibi_sit_naked_B():
     tag hermione_chibi
-    add "characters/hermione/chibis/sitting/sit_naked.png" at Position(xpos=her_chibi_xpos, ypos=her_chibi_ypos)
+    add "characters/hermione/chibis/sitting/sit_naked.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
     zorder her_chibi_zorder
 screen hermione_chibi_stand_no_shirt():
     tag hermione_chibi
-    add "characters/hermione/chibis/dance/03_no_shirt_03.png" at Position(xpos=her_chibi_xpos, ypos=her_chibi_ypos)
+    add "characters/hermione/chibis/dance/03_no_shirt_03.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
     zorder her_chibi_zorder
 
 ### UNIVERSAL SCREEN ###
 screen h_c_u():
     tag hermione_chibi
-    add h_c_u_pic at Position(xpos=her_chibi_xpos, ypos=her_chibi_ypos)
+    if "/chibis/" in h_c_u_pic:
+        add h_c_u_pic xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
+    else:
+        add h_c_u_pic xpos her_chibi_xpos ypos her_chibi_ypos
     zorder her_chibi_zorder
 
 

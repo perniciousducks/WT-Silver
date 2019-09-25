@@ -6,7 +6,12 @@
 ###  GENIE CHIBI UNIVERSAL SCREEN ###
 screen g_c_u():
     tag genie
-    add g_c_u_pic xpos gen_chibi_xpos ypos gen_chibi_ypos xzoom gen_chibi_flip
+    
+    # TODO: Replace g_c_w_h_a_t_t_h_e_f_u_c_k screens
+    if "/chibis/" in g_c_u_pic:
+        add g_c_u_pic xpos gen_chibi_xpos ypos gen_chibi_ypos xzoom gen_chibi_flip zoom 0.5
+    else:
+        add g_c_u_pic xpos gen_chibi_xpos ypos gen_chibi_ypos xzoom gen_chibi_flip
     zorder 3
 
 
@@ -76,14 +81,14 @@ screen done_reading(): #DONE READING THE BOOK.
     tag genie_chibi
     add "images/rooms/main_room/chair_left_with_shadow.png" xpos 180+140 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "images/rooms/main_room/desk_with_shadow.png" xpos 220+140 ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
-    add im.Flip("characters/genie/chibis/reading/07.png", horizontal=True) xpos 290+140 ypos 205
+    add im.Flip("characters/genie/chibis/reading/07.png", horizontal=True) xpos 290+140 ypos 205 zoom 0.5
     zorder 4 #Because otherwise the bird food would be on top.
 
 screen done_reading_near_fire(): #DONE READING THE BOOK BY THE FIRE.
     tag genie_chibi
     add "images/rooms/main_room/chair_left_with_shadow.png" xpos 180+140 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "images/rooms/main_room/desk_with_shadow.png" xpos 220+140 ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
-    add "characters/genie/chibis/reading/07.png" xpos 290+140 ypos 205
+    add "characters/genie/chibis/reading/07.png" xpos 290+140 ypos 205 zoom 0.5
 
     zorder 4 #Because otherwise the bird food would be on top.
 
@@ -116,7 +121,7 @@ screen genie_jerking_off_standing_cum():
 
 screen genie_stands_holds_dick():
     tag genie_chibi
-    add "characters/genie/chibis/masturbating/01.png" at Position(xpos=gen_chibi_xpos-270, ypos=gen_chibi_ypos-185)
+    add "characters/genie/chibis/masturbating/01.png" xpos gen_chibi_xpos-270 ypos gen_chibi_ypos-185 zoom 0.5
     zorder 2
 
 
@@ -129,7 +134,7 @@ screen genie_handjob():
 
 screen genie_handjob_pause():
     tag genie_chibi
-    add "characters/hermione/chibis/handjob/01.png" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
+    add "characters/hermione/chibis/handjob/01.png" xpos gen_chibi_xpos-230 ypos gen_chibi_ypos-185 zoom 0.5
     zorder 2
 
 screen genie_handjob_kiss():
@@ -142,7 +147,7 @@ screen genie_handjob_cum_on_shirt():
     zorder 2
 
 screen genie_handjob_cum_on_shirt_pause():
-    add "characters/hermione/chibis/handjob/sperm_on_21.png" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
+    add "characters/hermione/chibis/handjob/sperm_on_21.png" xpos gen_chibi_xpos-230 ypos gen_chibi_ypos-185 zoom 0.5
     zorder 2
 
 screen genie_handjob_cum_under_shirt():
@@ -157,7 +162,7 @@ screen genie_titjob():
 
 screen genie_titjob_pause():
     tag genie_chibi
-    add "characters/hermione/chibis/titjob/tj_cum_chest_01.png" at Position(xpos=gen_chibi_xpos-30, ypos=gen_chibi_ypos)
+    add "characters/hermione/chibis/titjob/tj_cum_chest_01.png" xpos gen_chibi_xpos-30 ypos gen_chibi_ypos zoom 0.5
 
 screen genie_titjob_cum_on_tits():
     tag genie_chibi

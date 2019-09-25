@@ -183,7 +183,7 @@ screen ast_stand():
         add ast_chibi_robe     xpos ast_chibi_xpos ypos ast_chibi_ypos xzoom ast_chibi_flip zoom (1.0/scaleratio)
         add ast_chibi_gloves     xpos ast_chibi_xpos ypos ast_chibi_ypos xzoom ast_chibi_flip zoom (1.0/scaleratio)
         if ast_cloth_pile:
-            add "characters/chibis/cloth_pile_r.png" xpos ast_pile_xpos ypos ast_pile_ypos
+            add "characters/chibis/cloth_pile_r.png" xpos ast_pile_xpos ypos ast_pile_ypos zoom 0.5
 
 
 screen ast_walk():
@@ -206,4 +206,4 @@ screen ast_walk():
         add ast_chibi_robe         xzoom ast_chibi_flip zoom (1.0/scaleratio)
         add ast_chibi_gloves       xzoom ast_chibi_flip zoom (1.0/scaleratio)
     if ast_cloth_pile:
-        add "characters/chibis/cloth_pile_r.png" xpos ast_pile_xpos ypos ast_pile_ypos
+        add "characters/chibis/cloth_pile_r.png" xpos ast_pile_xpos ypos ast_pile_ypos zoom 0.5

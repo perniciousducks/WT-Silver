@@ -169,7 +169,7 @@ screen cho_stand():
         add cho_chibi_robe     xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_gloves     xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
         if cho_cloth_pile:
-            add "characters/chibis/cloth_pile_r.png" xpos cho_pile_xpos ypos cho_pile_ypos
+            add "characters/chibis/cloth_pile_r.png" xpos cho_pile_xpos ypos cho_pile_ypos zoom 0.5
 
 screen cho_walk():
     tag cho_chibi
@@ -191,4 +191,4 @@ screen cho_walk():
         add cho_chibi_robe         xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_gloves       xzoom cho_chibi_flip zoom (1.0/scaleratio)
     if cho_cloth_pile:
-        add "characters/chibis/cloth_pile_r.png" xpos cho_pile_xpos ypos cho_pile_ypos
+        add "characters/chibis/cloth_pile_r.png" xpos cho_pile_xpos ypos cho_pile_ypos zoom 0.5

@@ -33,6 +33,8 @@ default astoria_cloth_pantyhose1 = cloth_class(char="astoria", category="legwear
 default astoria_outfit_last = outfit_class(name="Last worn items", group=[astoria_hair_base])
 
 default astoria_outfit_custom = outfit_class(name = "Default", group = [astoria_hair_base.clone(), astoria_cloth_schoolskirt1.clone(), astoria_cloth_topschool1.clone(), astoria_cloth_basicbra1.clone(), astoria_cloth_basicpanties1.clone()], unlocked=True)
+
+default astoria_outfit_default = outfit_class(name = "Default", group = [astoria_hair_base.clone(), astoria_cloth_schoolskirt1.clone(), astoria_cloth_topschool1.clone(), astoria_cloth_basicbra1.clone(), astoria_cloth_basicpanties1.clone()])
         
 label default_astoria_class_init:
 python:

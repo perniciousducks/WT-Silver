@@ -55,7 +55,7 @@ label duel:
 
     hide screen snape_glass
     hide screen bld1
-    with fade
+    with irisout
     call ctc
 
     call bld
@@ -519,24 +519,6 @@ label genie_lost:
         "-Give up-":
             pass
     $ MainMenu(confirm=False)
-
-### DUEL IMAGES ###
-
-### BROKEN GLASS ###
-image glass: # Animation that shows a broken glass effect when the duel starts.
-    "images/dueling/snape/01.png"
-    pause 1.3
-    "images/dueling/snape/02.png"
-    pause.3
-    "images/dueling/snape/03.png"
-    pause.3
-    "images/dueling/snape/04.png"
-    pause.3
-    "images/dueling/snape/05.png"
-    pause.3
-    "images/dueling/snape/06.png"
-    pause.3
-    "images/dueling/snape/07.png"
 
 ### Harry Potter DUEL ANIMATIONS ###
 

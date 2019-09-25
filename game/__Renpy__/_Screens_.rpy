@@ -128,7 +128,7 @@ screen package():
 
 screen dumbledore(): # DUMBLEDORE AND HIS DESK.
     tag chibi_genie
-    add "images/rooms/main_room/dum.png" at Position(xpos=370, ypos=336, xanchor="center", yanchor="center")
+    add "images/rooms/main_room/dum.png" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5 zoom 0.5
 
 
 

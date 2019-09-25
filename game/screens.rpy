@@ -638,7 +638,7 @@ screen preferences():
                     textbutton _("Map - [hkey_map]") action None
                     textbutton _("Work - [hkey_work]") action None
                     textbutton _("Books - [hkey_book]") action None
-                    textbutton _("Stats - [hkey_stats]") action None
+                    textbutton _("Characters - [hkey_stats]") action None
                     textbutton _("Inventory - [hkey_inventory]") action None
                     textbutton _("Sleep - [hkey_sleep]") action None
                     textbutton _("Jerk off - [hkey_fap]") action None

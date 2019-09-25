@@ -436,8 +436,9 @@ label snape_intro_E3:
     pause.1
 
 
+    hide screen bld1
     show screen snape_glass
-    pause 3
+    pause 2.3
 
     hide screen genie
     hide screen snape_defends

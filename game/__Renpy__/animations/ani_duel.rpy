@@ -2,19 +2,34 @@
 
 ### BROKEN GLASS ###
 image glass: # Animation that shows a broken glass effect when the duel starts.
-    "images/dueling/snape/01.png"
-    pause 1.3
-    "images/dueling/snape/02.png"
-    pause.3
-    "images/dueling/snape/03.png"
-    pause.3
-    "images/dueling/snape/04.png"
-    pause.3
-    "images/dueling/snape/05.png"
-    pause.3
-    "images/dueling/snape/06.png"
-    pause.3
-    "images/dueling/snape/07.png"
+
+    contains:
+        "images/dueling/snape/glass/gradient.png"
+    
+    contains:
+        pause 1.3
+        "images/dueling/snape/glass/01.png"
+        pause.1
+        "images/dueling/snape/glass/02.png"
+        pause.1
+        "images/dueling/snape/glass/03.png"
+        pause.1
+        "images/dueling/snape/glass/04.png"
+        pause.1
+        "images/dueling/snape/glass/05.png"
+        pause.1
+        "images/dueling/snape/glass/06.png"
+        pause.1
+        "images/dueling/snape/glass/07.png"
+        pause.1
+        "images/dueling/snape/glass/08.png"
+        pause.1
+        "images/dueling/snape/glass/09.png"
+        pause.1
+        "images/dueling/snape/glass/10.png"
+        
+    contains:
+        "images/dueling/snape/glass/crack.png"
 
 
 ### Harry Potter DUEL ANIMATIONS ###

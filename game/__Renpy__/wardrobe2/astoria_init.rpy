@@ -58,7 +58,7 @@ python:
             "eyes":     ["base", 8, 0, 0, False],
             "pupils":   ["mid", 7, 0, 0, False],
             "whites":   ["_white_", 6, 0, 0, False],
-            "mouth":    ["smile", 5, 0, 0, False]
+            "mouth":    ["smile", 13, 0, 0, False]
         }
 
         astoria_class.other = {

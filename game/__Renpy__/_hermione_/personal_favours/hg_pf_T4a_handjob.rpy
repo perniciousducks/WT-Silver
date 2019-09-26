@@ -961,7 +961,7 @@ label hg_pf_handjob_2_cumming:
             g4 "Here! Take this, whore!"
 
             call cum_block
-            call hg_chibi_transition("hj_cumming_out", trans="d5")
+            call hg_chibi_transition("hj_cumming_on", trans="d5")
             pause.8
             g4 "ARGH!"
 
@@ -979,7 +979,7 @@ label hg_pf_handjob_2_cumming:
             $ aftersperm = True
             call her_main(".......................","angry","wide")
 
-            call hg_chibi_transition("hj_cumming_out_pause", trans="d5")
+            call hg_chibi_transition("hj_cumming_on_pause", trans="d5")
             pause.8
 
             call bld
@@ -989,9 +989,10 @@ label hg_pf_handjob_2_cumming:
             $ uni_sperm = True
 
             call her_chibi("stand","mid","base")
-            call gen_chibi("stand","mid","base")
+            call gen_chibi("stand","desk","base")
 
-            call her_main("","soft","base", tears="soft", xpos="right", ypos="base", trans="fade")
+            call her_main("","soft","base", tears="soft", xpos="right", ypos="base")
+            with fade
             call ctc
 
             her ".........."

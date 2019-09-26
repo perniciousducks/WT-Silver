@@ -417,13 +417,10 @@ label tonks_intro_E3:
     pause.1
 
     show screen snape_glass
-    pause 3
-    show screen blkfade
-    with d5
+    pause 2.3
 
     hide screen snape_glass
-    hide screen blkfade
-    with d5
+    with irisout
     pause.1
 
     call gen_chibi("hide")

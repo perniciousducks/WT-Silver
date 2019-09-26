@@ -2,12 +2,12 @@
 
 init -1 python hide: 
     # Internal name and version
-    config.name    = "WT Silver EXPERIMENTAL VERSION"
+    config.name    = "WT Silver" # EXPERIMENTAL VERSION
     config.version = "1.37"
 
     # Window
     title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
-    config.window_title = "Witch Trainer (Silver) %s EXPERIMENTAL VERSION" % title_version
+    config.window_title = "Witch Trainer (Silver) %s" % title_version # EXPERIMENTAL VERSION
     config.window_icon = "interface/icon.png"
 
     # Window size

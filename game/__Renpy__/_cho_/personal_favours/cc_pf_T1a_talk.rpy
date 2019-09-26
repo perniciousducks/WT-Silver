@@ -271,7 +271,7 @@ label cc_pf_talk_T1_intro_E2:
     m "Tell me about yourself then."
     call cho_main("Of course, [cho_genie_name].","smile","base","base","mid")
     call cho_main("We did a couple more Quidditch session yesterday.{w} To get ready for our big game against \"Hufflepuff\".","open","narrow","base","mid")
-    call cho_main("Our team really believes that we have a chance to win this time!{w} They got a huge boost of confidence after I've told 'em that the great \"Albus Dumbledore\" would be training us himself!","smile","base","base","mid")
+    call cho_main("Our team really believes that we have a chance to win this time!{w} They got a huge boost of confidence after I told 'em that the great \"Albus Dumbledore\" would be training us himself!","smile","base","base","mid")
     m "Are you getting along with your team well?"
     call cho_main("I'd say so.{w} But there has been a time when...","soft","base","base","mid")
     call cho_main("Let's just say that it has been difficult for me at first. After all Quidditch is largely dominated by men...","open","narrow","sad","down")

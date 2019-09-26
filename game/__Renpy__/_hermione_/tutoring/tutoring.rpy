@@ -735,7 +735,7 @@ label l_tutoring:
         call her_main("And if I said stop?","annoyed","suspicious")
         g4 ".........."
         call her_main("Haha, you should have seen your face!","smile","angry",cheeks="blush")
-        call her_main("With all your recent lessons you can imagine that this area isn't a *no man's land* anymore.","smile","baseL")
+        call her_main("With all your recent lessons you can imagine that this area isn't a \"no man's land\" anymore.","smile","baseL")
         g4 "Have you slept..."
         call her_main("No I haven't! I'm not a harlot who offers her pussy to every boy around.","scream","closed",cheeks="blush")
         m "{size=-2}(Good, your pussy is mine alone!){/size}"

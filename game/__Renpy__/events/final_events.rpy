@@ -1,10 +1,11 @@
 
 #hermione asks genie about who will be in-charge of the ball
 label ball_quest_E1:
+    stop music fadeout 1.0
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call play_music("chipper_doodle")
     call her_main("[genie_name]?","soft","base", xpos="right", ypos="base")
     m "Miss Granger, how can I help you?"
     call her_main("Sir, have you made your decision yet on who will be in charge of the \"ABOC\" this year?","open","base")
@@ -341,10 +342,10 @@ label ball_quest_E1:
     m "A ball, huh?"
     m "I wonder if I will have to show up for that..."
 
-    $ event_chairman_happened = True
-    #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
+    $ ball_quest.E1_complete = True
+
     $ hermione_busy = True
-    $ hg_event_pause += 2 # Event happens in 2 days.
+    $ ss_event_pause += 2 # Next event happens in 2 days.
 
     jump main_room
 
@@ -352,11 +353,12 @@ label ball_quest_E1:
 #Snape confronts genie about his ABOC decision
 
 label ball_quest_E2:
+    stop music fadeout 1.0
 
-    play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
     call sna_walk(action="enter", xpos="mid", ypos="base", speed=3)
     pause.2
 
+    call play_music("snape_theme")
     call sna_main("Are you bloody insane?!","snape_01", xpos="base", ypos="base")
     m "You know, sometimes I think I may be..."
 
@@ -425,20 +427,20 @@ label ball_quest_E2:
         call nar(">Your relationship with him has improved.")
         $ sna_friendship +=1
 
-    $ snape_against_chairman_hap = True
-    # Turns TRUE after Snape comes and complains
-    # that appointing Hermione in the Autumn Ball committee was a mistake.
-    $ ss_event_pause += 5
-    $ hg_event_pause += 5
+    $ ss_event_pause += 2
+    $ hg_event_pause += 1
+
+    $ ball_quest.E2_complete = True
 
     jump night_start
 
 
 label ball_quest_E3:
+    stop music fadeout 1.0
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call play_music("chipper_doodle")
     call her_main("My parents sent me the wrong dress!","angry","base", tears="soft", xpos="right", ypos="base")
     m "are You kidding me!?"
     call her_main("They sent me the dress I wore to the ball last year...","angry","base", tears="soft")
@@ -478,18 +480,19 @@ label ball_quest_E3:
     m "Schoolgirls..."
 
     $ hermione_busy = True
-    $ have_no_dress_hap = True
-    # Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
     $ hg_event_pause += 1
+
+    $ ball_quest.E3_complete = True
 
     jump main_room
 
 
 label ball_quest_E4:
+    stop music fadeout 1.0
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
-    call play_music("chipper_doodle") # HERMIONE'S THEME.
+    call play_music("chipper_doodle")
     call bld
     m "Miss Granger?"
     call her_main("Sorry to disturb you sir...","open","worried", xpos="right", ypos="base")
@@ -504,8 +507,9 @@ label ball_quest_E4:
     m "Hm..?"
     call her_main("But that is not a big deal...","annoyed","down")
     her "I'm just overreacting..."
-    play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 # SAD THEME.
-    call her_main("I woN't be able to attend the ball this year... so what?","annoyed","down")
+
+    call play_music("despair")
+    call her_main("I won't be able to attend the ball this year... so what?","annoyed","down")
     call her_main("I spent countless hours with organizing the event...","normal","worriedCl")
     call her_main("I worked so hard... and...","open","worried", tears="soft")
     call her_main("And now I will not even be able to... to... *Sob!*","shock","baseL", cheeks="blush", tears="soft")
@@ -526,14 +530,10 @@ label ball_quest_E4:
     m "......................................."
     m "Hm..."
 
-    $ sorry_for_hesterics = True
-    # Turns TRUE after Hermione comes and apologizes for the day (event) before.
-
-    $ have_no_dress_hap = True
-    #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
-
     $ hermione_busy = True
     $ hg_event_pause += 1
+
+    $ ball_quest.E4_complete = True
 
     jump main_room
 
@@ -551,6 +551,7 @@ label ball_quest_E5:
     call her_main("{size=+7}A DRESS?!{/size}","angry","wide")
     with hpunch
     m "I thought that you--"
+
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("[genie_name]!","angry","base", tears="soft")
     g4 "What? What happened? Don't tell me it's the wrong colour or something!"
@@ -597,9 +598,11 @@ label ball_quest_E5:
     m "......................"
     m "Women..."
 
-    $ her_dress_wearable = True
+    $ ball_quest.gave_dress = True
     #Unlocks the dress in the wardrobe. Makes it wearable.
-    #$ gave_the_dress = True # Removed. Starts in "label ball_ending_start" now.
+    #$ ball_quest.started = True # Removed. Starts in "label ball_ending_start" now.
     $ hg_event_pause += 2
+
+    $ ball_quest.gave_dress = True
 
     jump main_room

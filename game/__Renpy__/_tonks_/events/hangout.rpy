@@ -22,23 +22,33 @@ label tonks_hangout:
     else:
         $ temp_txt = "evening"
 
-    # High Priority Events First!
 
-    # Events.
-    if hermione_intro.E5_complete and not hang_with_tonks.E1_complete:
-        jump hang_with_tonks_E1 # Persuade Hermione to sell favors.
+    ### Intro Events ###
 
-    if her_tier >= 2 and not tonks_requests_unlocked:
-        jump hang_with_tonks_E2 # Unlocks Public Requests.
+    # Hermione
+    if hermione_intro.E5_complete and not nt_he.hermione_E1:
+        jump nt_he_hermione_E1 # Persuade Hermione to sell favors.
 
-    if her_tier >= 2 and ton_friendship >= 20 and not hang_with_tonks.E3_complete:
+    # Susan
+    if her_tier >= 2 and ton_friendship >= 20 and not nt_he.susan_E1:
         $ ag_event_pause += 2 # Astoria intro happens in 2 days.
-        jump hang_with_tonks_E3 # Starts Susan/Astoria intro.
+        jump nt_he_susan_E1 # Starts Susan/Astoria intro.
 
-    if ton_reputation >= 4 and ton_friendship >= 20 and not hang_with_tonks.E4_complete:
-        jump hang_with_tonks_E4 # Tonks Tier 2 available.
+    # Astoria
+    if astoria_intro.E3_complete and not nt_he.astoria_E1:
+        jump nt_he_astoria_E1
 
-    # Tonks Auror Stories.
+
+    ### General Events ###
+
+    if her_tier >= 2 and not nt_he.favors_E1:
+        jump nt_he_favors_E1 # Unlocks Public Requests.
+    if ton_reputation >= 4 and ton_friendship >= 20 and not nt_he.favors_E2:
+        jump nt_he_favors_E2 # Tonks Tier 2 available.
+
+
+    ### Snape Stories ###
+
     $ random_number = renpy.random.randint(1, 3)
     if random_number == 1:
         if ton_support < 12:
@@ -194,36 +204,7 @@ label nt_he_firewhisky_E4:
 
 ### Events ###
 
-label hang_with_tonks_E1:
-    call ton_main("So, that Granger girl is causing you two trouble?","open","base","base","mid", ypos="head")
-    m "Quite a bit. She's not too thrilled on the idea of favour trading."
-    call ton_main("Maybe I can be of help with her?","base","base","wide","L")
-    call ton_main("I can be very convincing.","horny","base","raised","mid")
-    m "What are you suggesting?"
-    call ton_main("To persuade her into having a try of it herself, for a start...","open","base","base","R")
-    call ton_main("Convince her that trading favours isn't all bad.","base","base","base","mid")
-    m "That would indeed be very helpful. She's stubborn in that regard."
-    call ton_main("You don't have to tell me. She's been lecturing me about those \"sexual favours\" since the very day I got here...","open","base","base","R")
-    call ton_main("But I shouldn't complain about that...","base","base","base","mid")
-    call ton_main("Hearing those naughty words spill out of her gorgeous little mouth really gets me going!","horny","base","base","ahegao", hair="horny")
-    g9 "I can imagine so."
-    call ton_main("When she describes all the wrongdoings of those filthy \"Slytherin girls\"...","open","base","angry","mid")
-    call ton_main("How could I possibly get tired of that!","base","base","base","mid")
-    call ton_main("I'm very glad I decided to join you two.","open","base","base","down")
-    call ton_main("As an Auror It's just constant busy work...","open","base","angry","mid")
-    call ton_main("Not to mention the hours.","angry","base","upset","down")
-    call ton_main("And the mortality rate...","upset","base","worried","R")
-    call ton_main("If I'd realised the benefits of being a teacher at Hogwarts, I would have signed up straight away!","horny","base","base","ahegao")
-
-    ">You spend the [temp_txt] conspiring against Hermione with Tonks..."
-    ">You feel a faint bond forming between you two..."
-
-    $ hang_with_tonks.E1_complete = True
-
-    jump end_tonks_hangout_points
-
-
-label hang_with_tonks_E2:
+label nt_he_favors_E1:
     call ton_main("So, [ton_genie_name],... what's the going rate around here then?","open","base","base","mid", ypos="head")
     m "Going rate?"
     call ton_main("How much do you pay your students to fool around?","base","base","base","mid")
@@ -252,80 +233,12 @@ label hang_with_tonks_E2:
     $ tonks_requests_unlocked = True
     call popup("You can now ask Tonks to do \"Public Requests\" with her students!", "Congratulations!", "interface/icons/head/head_tonks_1.png")
 
-    $ hang_with_tonks.E2_complete = True
+    $ nt_he.favors_E1 = True
 
     jump end_tonks_hangout_points
 
 
-label hang_with_tonks_E3:
-    # Tonks introduces you to Susan.
-    # She's getting mocked because of her large breasts by the other students.
-    # Susan is ashamed of her large breasts, and for being a hufflepuff.
-    # Suggest that it might be a good idea to have Susan trained by you, to increase her confidence in herself and her body.
-
-    call ton_main(".................","base","base","worried","down", ypos="head")
-    m "Something on your mind?"
-    call ton_main("Yes, there's this student in my class. She seems to be having a bad time.","open","base","sad","mid")
-    m "Education isn't meant to be enjoyable."
-    call ton_main("It's not that, she's being bullied by the other students apparently...","open","base","sad","R")
-    m "For what reason?"
-    call ton_main("For being shy,...insecure,...","upset","closed","base","mid")
-    m "About what?"
-    call ton_main("About her massive tits!","upset","base","base","mid")
-    g4 "!!!"
-    m "Why would she be insecure about that?"
-    g9 "Surely that's something most girls would kill for!" #the pun sucks sorry, "massively proud" doesn't make sense
-    call ton_main("That's what I said...","open","closed","base","mid")
-    call ton_main("She didn't seem to think I was being genuine.","upset","base","worried","down")
-    m "They're probably just jealous of her."
-    call ton_main("Naturally... Even I'm jealous of those {b}milk-bags{/b} of hers!","open","base","angry","mid")
-    g9 "I definitely need to see them!"
-    call ton_main("That being said, I'm quite worried about her...","open","closed","worried","mid")
-    call ton_main("Lately she's been too shy to even answer the simplest of questions during my class.","open","base","sad","R")
-    call ton_main("She's lost quite a few points for her house that way.","upset","base","sad","mid")
-    call ton_main("Not in my lessons, of course. I'd never take points from \"Hufflepuff!\"","upset","base","worried","down")
-    g9 "Just send her my way and I'll drown her in house points!"
-    m "And show her that her bod-..."
-    g4 "*Ahem!* Show her that she's appreciated..."
-    call ton_main("That's what I was thinking...","open","base","base","mid")
-    g4 "Wait, you were?"
-    call ton_main("Of course, why else would I be telling you about her?","open","closed","angry","mid")
-    m "I don't know... banter?"
-    m "Snape sure as hell hasn't sent me any girls up here..."
-    call ton_main("I can teach him a thing or two about sharing - if you'd like...","horny","base","base","mid")
-    call ton_main("The more the merrier in my opinion...","smile","happyCl","base","mid")
-    m "You don't mean Snape and I..."
-    call ton_main("Of course not, don't be silly!","base","happyCl","base","mid")
-    call ton_main("Maybe he's afraid you'd steal them from him if you got the chance...","horny","base","angry","mid")
-    m "I have my doubts those girls he's talking about even exist..."
-    m "But don't tell him I said that."
-    call ton_main("I shall talk to Miss Bones.","open","closed","base","mid")
-
-    if letter_min_favors.read:
-        m "Bones... I think I've heard that name before..."
-        call ton_main("Her Aunt works at the ministry.","open","base","base","mid")
-        m "..."
-    else:
-        g9 "*He-He*... Bones."
-
-    call ton_main("I'm sure you'll find her less than bony...","base","base","angry","mid")
-    m "..."
-    call ton_main("But, you have to promise me that you won't go overboard with her!","angry","base","base","mid")
-    call ton_main("I'd rather not risk having her contact that aunt of hers...","open","base","base","R")
-    m "I can be slick and subtle when I want to..."
-    call ton_main("...","upset","base","worried","R")
-    call ton_main("You're making me regret this decision already...","open","closed","worried","mid")
-
-    ">As the hours pass, you convince Tonks to describe Susan's {b}massive tits{/b} to you..."
-    ">You are glued to every word she has to say about them..."
-
-    $ hang_with_tonks.E3_complete = True
-
-    jump end_tonks_hangout_points
-
-
-label hang_with_tonks_E4:
-
+label nt_he_favors_E2:
     call ton_main("You know, [ton_genie_name],... I've overheard a couple of students whispering about me...","open","base","base","mid", ypos="head")
     g9 "Finally..."
     call ton_main("And I walked past a group of boys the other day...","open","base","base","R")
@@ -345,7 +258,7 @@ label hang_with_tonks_E4:
 
     call popup("Tonks can now reach the next level!", "Congratulations!", "interface/icons/head/head_tonks_1.png", sound=False)
 
-    $ hang_with_tonks.E4_complete = True
+    $ nt_he.favors_E2 = True
 
     jump end_tonks_hangout_points
 

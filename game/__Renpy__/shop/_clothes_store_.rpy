@@ -362,13 +362,13 @@ label purchase_outfit(item):
         m "Thank you."
 
     if item == hg_dress_yule_ball_ITEM:
-        if not sorry_for_hesterics:
+        if not ball_quest.E4_complete:
             m "Do you sell Dresses?"
             maf "A dress? Are we talking ball dresses, or more burlesque?"
             m "Hmm... Balls actually."
             maf "How surprising."
             m "I was thinking that I could have a custom one made. For a very good girl of mine."
-        if sorry_for_hesterics:
+        if ball_quest.E4_complete:
             m "Do you sell Ball dresses?"
             maf "Hmmm, we do although they're nothing special. Why?"
             m "A 'girl' approached me with a problem. Apparently she's unable to acquire a dress for this years autumn ball."

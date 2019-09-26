@@ -492,6 +492,9 @@ label play_music(music=""):
         play music "music/Anguish.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["trance"]:
         play music "music/Under-the-Radar by PhobyAk.mp3" fadein 1 fadeout 1 if_changed
+    elif music in ["despair"]:
+        play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 if_changed
+
     else:
         python:
             try:

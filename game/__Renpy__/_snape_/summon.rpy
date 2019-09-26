@@ -23,10 +23,9 @@ label summon_snape:
             menu:
                 "-Ask him to help Tonks-" if astoria_intro.E1_complete and not astoria_intro.E3_complete:
 
-                    if astoria_intro.E2_snape and not astoria_intro.E2_hermione:
+                    if astoria_intro.E2_snape:
                         call sna_main("I'm still on the lookout, Genie.","snape_01")
-                        call sna_main("If I find the little maggot that casts those spells,...","snape_10")
-                        call sna_main("I will crush his bones!","snape_16")
+                        call sna_main("If I find the little maggot that casts those spells...","snape_10")
                         jump snape_ready
 
                     $ snape_busy = True

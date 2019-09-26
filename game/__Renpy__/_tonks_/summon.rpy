@@ -87,7 +87,7 @@ label summon_tonks:
 
 # Tonks level up
 label update_ton_tier:
-    if ton_tier == 1 and hang_with_tonks.E4_complete:
+    if ton_tier == 1 and nt_he.favors_E2:
         $ ton_level_up = 1
 
     return

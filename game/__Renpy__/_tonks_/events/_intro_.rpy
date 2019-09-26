@@ -324,6 +324,110 @@ label tonks_intro_E2:
     jump main_room
 
 
+### Snape Hangout Event 1 ###
+# You discuss Tonks and the Ministry with Snape.
+
+label ss_he_tonks_E1:
+    call sna_main(".........................","snape_31", ypos="head")
+    call sna_main("That bloody wench has outdone herself, once again!","snape_35")
+    m "Granger?"
+    call sna_main("Yes! She and her cursed letters!","snape_08")
+    call sna_main("I'm certain she was the one who informed the Ministry about our little escapades...","snape_16")
+    call sna_main("And now we have an Auror breathing down our necks... All thanks to that mischievous little whore!","snape_15")
+    m "................."
+    call sna_main("....................","snape_31")
+    m "On the subject of that Auror,..."
+    call sna_main("Nymphadora?","snape_39")
+    m "Yes, the Nympho."
+    m "She came by the other day..."
+    call sna_main("What?!","snape_36")
+    m "Twice, actually..."
+    call sna_main("And you're telling me about this... now?","snape_32")
+    call sna_main("I'm surprised you didn't blow our cover right there and then...","snape_16")
+    g9 "What can I say. I'm very good with the ladies!"
+    call sna_main("Or you are just too lucky for your own good, more likely...","snape_43")
+    m "That too, to a lesser extent..."
+
+    if jerked_off_during_hermione_intro:
+        call sna_main("Please tell me you didn't jerk off in front of her as well...","snape_03")
+        m "Well..."
+        call sna_main("Did you?","snape_01")
+        m "Not this time..."
+
+    call sna_main("Listen, we have to be even more cautious, now that there's an Auror making her rounds...","snape_10")
+    call sna_main("They are the ministry's private investigators.","snape_35")
+    call sna_main("One slip-up and they will have us locked up in no time!","snape_24")
+    m "\"Us?\"..."
+    m "What wrong did I do?"
+    call sna_main("You snapped the most talented, clever, and most beloved wizard that's ever lived out of existence!","snape_10")
+    m "Oh right...{w} Who again?"
+    call sna_main("Albus{w} Percival{w} Wulfric{w} Brian{w} Dumbledore!","snape_34")
+    m "..........................."
+    m "I thought I traded places with just one person..."
+    call sna_main("That \"is\" one person!","snape_30", trans="hpunch")
+    call sna_main("It's our headmaster's full name. And it's your name now!{w} You best make sure to remember it.","snape_34")
+    m "Yeah...{w}I'm not even going to try..."
+    call sna_main("Let's just hope this whole Ministry situation will solve itself...","snape_31")
+
+    call sna_main("Thankfully, out of all the people the ministry could have sent...","snape_06")
+    call sna_main("They brought that clumsy, good-for-nothing \"hufflepuff\"...","snape_35")
+    call sna_main("As long as we keep our heads down and act as if we've nothing to hide...","snape_03")
+    call sna_main("There will be nothing to worry about.","snape_09")
+    m "I have my doubts about that."
+    call sna_main("Let her continue her little investigation. And you can be as unhelpfully helpful as usual...","snape_04")
+    m "................."
+    m "And what if she's not going to leave that easily?"
+    m "Can you think of any spell, or potion to help us with that?"
+    call sna_main("And what would this potion or spell achieve exactly?","snape_05")
+    m "I don't know... Send her to the shadow realm or something?"
+    call sna_main("What on earth...","snape_03")
+    call sna_main("Actually, I'd rather not know...","snape_06")
+    call sna_main("No, and even if there was one... we're still dealing with a trained Auror here.","snape_01")
+    call sna_main("We should keep everything running as normal.","snape_35")
+    call sna_main("Or as normal as can be, without the real Albus...","snape_09")
+    m ".................."
+    call sna_main("Even if she finds any concrete proof of something going on, any involvement on our part should be kept quiet at all cost.","snape_01")
+    call sna_main("And as soon as she is out of here, I'll go back to drinking wine, whilst enjoying my student's company...","snape_40")
+    m "And Granger? What do you suggest we do with her?"
+    call sna_main("*Tzzzgh*-{w=0.6} Like that annoying brat can do any harm to us...","snape_25")
+    call sna_main("A girl her age would do anything for attention, is what I'd say...","snape_09")
+    call sna_main("Do you think some student's word would be as good as the headmaster's?","snape_02")
+    call sna_main("The Headmaster of the most respected educational institution in the country, no less...","snape_37")
+    g4 "I'm the headmaster of the most respected institution of the country!?!"
+    call sna_main("It is also the only magical institution...","snape_09")
+    m "...................................."
+
+    "You spend the remaining day with Snape, drenching your worries in plenty of wine..."
+
+    #m "So, what are your thoughts on this whole ministry situation?"
+    #sna "I can't say I have a very high opinion on how those fools run the place."
+    #sna "The Department of Magical Law Enforcement are a joke."
+    #sna "The only decent auror they have is Alistair Moody and he's more concerned dealing with dark magic than petty rumours to get involved with this investigation."
+    #sna "The minister of magic himself is a fool."
+    #sna "He might bring a good smile and spirits to the people during times of rebuilding after great loss."
+    #sna "But when it comes to making any worthwhile decisions or recognizing potential threats or misconduct..."
+    #m "I was talking mostly about our current predicament rather thant he ministry at large..."
+    #sna "I know..."
+    #m "..."
+    #m "Surely you must be slightly worried."
+    #sna "I have committed many crimes much worse than chatting up some students, all of which I should've been incarcerated for."
+    #sna "As I said, the current ministry is a shamble of what it once was... no change will come from this."
+    #sna "Cornelius fudge is more interested in how the ministry looks from the outside rather than expose existing issues and dealing with them."
+    #m "Such as?"
+    #sna "Well, apart from leaving Hogwarts completely in the hands of the headmaster..."
+    #sna "Corruption, illegal trades of magical artefacts and creatures. The list goes on..."
+    #sna "The only one showing any interest in the schools business is the Head of the Department of Magical law Enforcement herself."
+    #m "And that's not a problem because?"
+    #sna "Because in the end you'd see a dementor getting frisky with a human before any of these things aren't getting swept under the carpet."
+    #sna "You could put the tooth fairy in front of the minister and he'd still deny her existence if he were to have held that stance."
+    #sna "And the other fools at the ministry would do so as well even if they witnessed it themselves."
+
+    $ ss_he.tonks_E1 = True
+    $ ss_event_pause += 1
+
+    jump day_start
+
+
 label tonks_intro_E3:
     stop music fadeout 1.0
     call play_sound("knocking")
@@ -568,3 +672,170 @@ label tonks_intro_E3:
     $ nt_event_pause += 1
 
     jump main_room
+
+
+### Snape Hangout Event 2 ###
+# You inform Snape that Tonks is now an ally and has been made a teacher.
+
+label ss_he_tonks_E2:
+    call sna_main(".........................","snape_31", ypos="head")
+    call sna_main("So, here is the plan...","snape_03")
+    call sna_main("You get a shovel and a body-bag ready, and I'll do the \"Avada Kedavra\"!","snape_01")
+    m "\"Avra-ka-\"{w} What the fuck are you talking about?"
+    call sna_main("Tonks! We need to get rid of her! Immediately!","snape_10")
+    call sna_main("Otherwise things will never go back to how they were!","snape_03")
+    m "Have you lost your mind again?"
+    call sna_main("No, but I'm about to!","snape_01")
+    #call sna_main("I haven't had a mouth on my cock in so long...","snape_29")
+    #call sna_main("Please, Genie. I need a fix!","snape_19") # Weird look
+    #m "..................."
+    #call sna_main("...................","snape_19") # Weird look
+    #g4 "Would you stop looking at me like that!!!"
+    #call sna_main("What? Don't be ridiculous...","snape_14")
+    m "..................."
+    call sna_main("What a fool I was to believe that she'd be gone by now...","snape_31")
+    call sna_main("But of course not! ","snape_32")
+    call sna_main("{size=+5}Instead they made that mischievous {b}cunt{/b} a teacher!{/size}","snape_33", trans="hpunch") # Screaming
+    m "Actually, that was-..."
+    call sna_main("The whole universe has turned against me!","snape_43")
+    call sna_main("That bloody Ministry! Curse them!","snape_35")
+    call sna_main("Of course it was only a matter of time until they got themselves involved...","snape_06")
+    call sna_main("We had something good, Genie. And now it's over...","snape_26")
+
+    m "Well, lucky for us, it isn't over just yet..."
+    call sna_main("What's that supposed to mean? Are you concocting something?!","snape_25")
+    m "It's like you've said..."
+    g9 "The situation solved itself!"
+    m "She's going to join us."
+
+    call sna_main("Join us? Doing what?","snape_05")
+    g9 "Corrupting those precious little girls of course!"
+    call sna_main("And according to you, Tonks wants to help us break the \"Gryffindor-Bitch\" as well?","snape_34")
+    m "Yep."
+    call sna_main("Ha-ha-ha!{w} That's just fucking silly!","snape_28")
+    m "................"
+    call sna_main("Good one...","snape_45")
+    call sna_main("No seriously. What's going on?","snape_03")
+    m "She asked me if she could join us..."
+    call sna_main("A-ha-ha-ha-ha...","snape_28")
+    m "Who do you think made her a teacher in the first place?"
+    call sna_main("Stop it, please!!!","snape_42")
+    m "You don't believe me..."
+    call sna_main("Not a single word! A-Ha-ha-ha...","snape_28")
+    m "Fair enough..."
+    call sna_main("Ha-ha-ha-...{w=0.5}{nw}","snape_42")
+    call sna_main("*cough* {w=0.4}*cough* {w=0.6}*cough*{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8}{nw}","snape_17", trans="hpunch")
+    m "..............."
+    call sna_main("...................","snape_31")
+
+    call sna_main("But none of this makes any sense!","snape_03")
+    m "Well, as it turns out..."
+    call sna_main("She's a pervert!","snape_36") # Revelation
+    m "She's a-... wait, how did you?"
+    call sna_main("How could I've been so ignorant!","snape_08")
+    m "Am I missing something here, you're not a mind reader, are you?"
+    call sna_main("I'm a very skilled Occlumens, but no...","snape_31")
+    m "(Occlu-what?)"
+    m "Could you stop making up words..."
+    call sna_main("It's quite obvious in hindsight...","snape_35")
+    m "It{w=0.2}.{w=0.2}.{w=0.2}.{w=0.6} is?"
+    call sna_main("Why would the Ministry have sent a full-fledged Auror, to deal with some eccentric insinuations made by some petty student...","snape_16")
+    m "Shouldn't they?"
+    call sna_main("Just because of some silly rumour about teachers having sexual intercourse with their students?","snape_34")
+    m "And that's not a reasonable enough concern to send somebody to look into?"
+    call sna_main("It's the Ministry we're talking about...{w=0.8} They don't give a shit...","snape_30")
+    call sna_main("They wouldn't even believe it if \"you-know-who\" were to make a return...","snape_31")
+    m "Who?"
+    call sna_main("That Tonks had to be the only Ministry personnel that saw some truth in Granger's letters...","snape_35")
+    call sna_main("What if she specifically requested to be sent here to investigate?","snape_03")
+    m "She might have..."
+    call sna_main("So...{w=0.4} what does she want?","snape_04")
+    call sna_main("Surely she's taking the position for a reason...","snape_01")
+    m "It appears that she'd like to be part of this whole favour trading business, which is also why she asked to be made a teacher..."
+    m "And in return she'll keep things quiet with the ministry."
+
+    call sna_main("*Hmm*... Not having to worry about the Ministry anymore, you say...","snape_38")
+    call sna_main("And I'm supposed to believe that she'd be willing to do that for us?","snape_25")
+    call sna_main("How exactly did you end up in this situation with her?","snape_04")
+    m "I don't know... It just... happened."
+    m "She pretty much figured everything out by herself."
+    m "Straight away even guessed that I'm a Genie..."
+    call sna_main("So she knows everything? How did she?-","snape_03")
+    m "It appears the \"illusion charm\" wasn't perfect. She momentarily got a glimpse through it..."
+    call sna_main("That's impressive... perhaps I didn't give her enough credit...","snape_01")
+
+    call sna_main("If what you're telling me about her intentions are true...","snape_03")
+    call sna_main("Maybe she could even be persuaded to help with the Granger situation...","snape_05")
+
+    if nt_he.hermione_E1:
+        g9 "Way ahead of you!"
+        m "She's already offered to help with Granger."
+    else:
+        m "Oh, I'm sure there's little to no persuasion needed."
+        m "I have no doubt that she'd be well into the idea of convincing Granger to sell favours herself..."
+
+    call sna_main("What a wicked bitch!","snape_13")
+    call sna_main("If only we were selling favours back then...","snape_46")
+    call sna_main("You know what they say about students from \"Hufflepuff\"...","snape_20")
+    call sna_main("They are quite the \"hard-working\" bunch!","snape_21")
+    m "(...)"
+    m "I'm calling dibs on her!"
+    call sna_main("You do what?","snape_14")
+    m "Dibs, she's mine. I said it first..."
+    call sna_main("Are you twelve or something?","snape_04")
+    m "Over Ten thousand, actually."
+
+    $ ss_he.tonks_E2 = True
+    $ ss_event_pause += 1
+
+    jump day_start
+
+
+### Snape Hangout Event 3 ###
+# You tell Snape that you made Tonks the teacher for 'DAtDA'
+
+label ss_he_tonks_E3:
+    call bld
+    m "Our new partner in crime, is she getting on well?"
+    call sna_main("Tonks? I haven't seen her since last time we talked...","snape_09", ypos="head")
+    call sna_main("Shouldn't you know what that witch is up to? You made her a teacher, after all...","snape_01")
+    m "I'm sure she's still just settling down..."
+    call sna_main("Probably drinking booze down at Hogsmeade, more likely...","snape_35")
+    call sna_main("What subject is she even supposed to teach? What did you give her?","snape_03")
+    m "I have not the slightest clue..."
+    call sna_main("................","snape_38")
+    call sna_main("You know, I've been teaching \"Potions\" at this school for as long as I can remember...","snape_06")
+    call sna_main("Of course I'm the best they have.{w=0.8} And they don't call me \"Master of Potions\" for nothing!","snape_17")
+    call sna_main("But if we're honest, even a \"dim-witted Demiguise\" could teach potions to those simpletons...","snape_35")
+    m "..............."
+    call sna_main("But when it comes to \"Defence against the dark arts\"...","snape_03")
+    call sna_main("That's a subject that requires skill and cunning!","snape_02")
+    call sna_main("And a very competent and skilled teacher, to guide those hopeless souls through their lessons...","snape_40")
+    call sna_main("Now, If you were to assign me for that, and give Tonks my old subject to teach...","snape_20")
+    m "Yeah,...{w=0.4} I think I gave that role to her..."
+    call sna_main("{size=+5}You did what?!{/size}","snape_33", trans="hpunch")
+    m "\"Defence against-...something-something\"..."
+    call sna_main("You should have given me the \"defence against the dark arts\" position!","snape_34")
+    call sna_main("And she could've had something else,...like \"muggle studies\", or something.","snape_16")
+    m "First come, first served, I suppose..."
+    call sna_main("Curse you...","snape_08")
+    m "There wasn't really any room for me to argue with her..."
+    m "It was either that, or jail."
+    call sna_main("..................","snape_31")
+
+    call sna_main("I can't say that I trust her just yet...","snape_35")
+    call sna_main("Not before I get to slip in a couple drops of \"Veritaserum\" into her drink...","snape_03")
+    m "\"Veritaserum?\""
+    call sna_main("Truth potion!{w=0.4} I oftentimes use some on my \"very attractive Slytherins\"...","snape_02")
+    call sna_main("Only a single drop, and they'll tell me everything I want to know.","snape_41")
+    call sna_main("Very handy should you need information to blackmail someone...","snape_46")
+    call sna_main("Or learn everything about their secret fetishes...","snape_20")
+    g9 "Neat!"
+
+    "You take some time to muse about the fetishes Tonks might have..."
+    "For blackmailing,... or to have some fun..."
+
+    $ ss_he.tonks_E3 = True
+    $ ss_event_pause += 1
+
+    jump day_start

@@ -162,7 +162,7 @@ label hg_pr_blowjob_T1_E2:
 
     m "[hermione_name], did you complete your task?"
     show screen blktone
-    play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 # SAD THEME.
+    call play_music("despair")
     call her_main("[genie_name], I...","angry","down_raised")
     her "I tried, but..."
     call her_main("The boy turned me down, [genie_name]...","mad","worried", tears="soft")

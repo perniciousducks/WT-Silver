@@ -25,9 +25,6 @@ default sna_friendship = 0 #Get's +1 after every evening spent is Snape's compan
 default sna_friendship_maxed = False
 
 
-# Snape events
-default snape_invited_to_watch = False #Turns TRUE when Hermione is stripping and Snape walks in on you. Allows to invite him to watch her strip next time.
-
 # Chitchat with snape
 default chitchated_with_snape = False #Prevents you from chitchating more then once a day. Turns back to False every night.
 

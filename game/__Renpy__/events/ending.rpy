@@ -7,7 +7,6 @@ label ball_ending_start:
 
     menu:
         "Yes!":
-            $ gave_the_dress = True #Turns True when Hermione has the dress.
             m "[hermione_name], that ball you've mentioned..."
             m "When did you say it would start again?"
             call her_main("The autumn ball?!","grin","base")
@@ -20,20 +19,23 @@ label ball_ending_start:
             g9 "Maybe we could..."
             call her_main("Have some fun?","soft","glance")
             g9 "You can read my mind, girl."
+
+            $ ball_quest.started = True
+            $ ss_event_pause += 2
+
             jump hermione_favor_menu
+
         "No.":
             jump hermione_talk
 
 
 label ball_ending_E1:
-
-    $ ss_event_pause += 2
-
-    play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
+    stop music fadeout 1.0
 
     call sna_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
-    pause 1.5
+    pause.8
 
+    call play_music("snape_theme")
     call sna_main("Genie...","snape_01", xpos="base", ypos="base")
     m "Severus?"
     call sna_main("I think I may have figured out why your magic does not work the way it should...","snape_05")
@@ -113,7 +115,7 @@ label ball_ending_E1:
     call sna_walk(xpos="door", ypos="base", speed=3)
     pause.5
 
-    call sna_chibi("stand","door","base")
+    call sna_chibi("stand","door","base", flip=False)
     pause.5
 
     call sna_main("One more thing though...","snape_01", ypos="head")
@@ -137,8 +139,8 @@ label ball_ending_E1:
     call sna_main("Have a save trip home...")
     m "Thank you. Have fun with hosting the ball..."
     call sna_main("*Sigh*","snape_06")
-    pause.3
 
+    call hide_characters
     call bld("hide")
     pause.3
 
@@ -148,14 +150,15 @@ label ball_ending_E1:
     with d3
     pause.3
 
-    call sna_chibi("leave","door","base")
+    call sna_chibi("leave")
     with d3
     pause.8
 
     call bld
     m "............................"
     m "So this is it then...?"
-    play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 # SAD THEME.
+
+    call play_music("despair")
     m "Seems like my time in this world has come to an end..."
     m "......................."
 

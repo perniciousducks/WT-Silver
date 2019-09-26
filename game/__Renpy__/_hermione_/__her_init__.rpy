@@ -477,7 +477,6 @@ default her_shop_help_first = True
 # Rewards
 default autograph                  = False # Professor Lockhart's tattoo.
 default cat_ears_potion_return     = False
-default her_dress_wearable         = False
 default gave_hermione_gift         = False
 default hermione_wardrobe_unlocked = False
 

@@ -220,7 +220,7 @@ label hg_pr_grope_T1_E3:
     stop music fadeout 1.0
     her "I think he was more interested in {size=+5}me{/size} molesting {size=+5}him{/size}..."
     call her_main("He asked me to call him a \"sissy boy\"...","upset","wink")
-    play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 # SAD THEME.
+    call play_music("despair")
     call her_main("And he kept on reassuring me that he has a very small penis...","open","base")
     call her_main("He just kept repeating that *sob!*...","angry","base", tears="soft")
     call her_main("Why would anyone be like this?","angry","base", tears="soft")
@@ -323,7 +323,7 @@ label hg_pr_grope_T2_E3:
     call her_main("..........","clench","down_raised")
     m "What?"
     call her_main(".....................","normal","worriedCl")
-    play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 # SAD THEME.
+    call play_music("despair")
     call her_main("He started to touch my... feet, [genie_name].","scream","worriedCl")
     m "Huh?"
     m "Your \"Feet\"? Is that what kids call tits these days?"

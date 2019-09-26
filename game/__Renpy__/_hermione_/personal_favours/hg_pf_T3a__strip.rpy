@@ -716,7 +716,7 @@ label hg_pf_strip_T1_E2:
     m "Sure! The usual rate."
     call her_main("...................","annoyed","angryL")
 
-    if snape_invited_to_watch: #Turns TRUE after Dance Event 2 and the next Date with Snape.
+    if ss_he.hermione_strip: #Turns TRUE after Dance Event 2 and the next Date with Snape.
         m "(Hm... Should I invite Snape to watch as well?)"
 
         menu:
@@ -1030,7 +1030,7 @@ label hg_pf_strip_T2_E2:
 label hg_pf_strip_T2:
     menu:
         m "(...)"
-        "-Invite Snape to watch!-" if snape_invited_to_watch:
+        "-Invite Snape to watch!-" if ss_he.hermione_strip:
             jump hg_pf_strip_T2_Snape
 
         "-Ask her to lock the door.-":
@@ -1108,7 +1108,7 @@ label hg_pf_strip_T2:
     call her_main("...","base","glance", xpos="mid", ypos="base")
     m "Yes, very nice."
     call her_main("...","annoyed","down")
-    call nar("Hermione hastily starts pulling at her top...")
+    call nar(">Hermione hastily starts pulling at her top...")
     m "Slowly, please..."
     m "There's no rush."
     call her_main("I'm not!","open","angry")
@@ -1116,7 +1116,7 @@ label hg_pf_strip_T2:
     g9 "Would you like some help with it?"
     if her_tier <= 5:
         call her_main("No...","annoyed","angry")
-        call her_main("I can do it myself, [hermione_name].","open","closed")
+        call her_main("I can do it myself, [genie_name].","open","closed")
     else:
         call her_main("No, [genie_name].","base","glance")
         call her_main("Just enjoy the show...","soft","glance")

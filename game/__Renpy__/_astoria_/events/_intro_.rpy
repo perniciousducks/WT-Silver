@@ -2,6 +2,10 @@
 
 ### Astoria Intro ###
 
+### Event 1 ###
+# Tonks tells you about a student that has used the Imperius curse at school.
+# You need to ask Snape and Hermione to help find the student.
+
 label astoria_intro_E1:
     if "poster_1_store" not in tonks_mail_list:
         $ tonks_mail_list.append("poster_1_store")
@@ -276,6 +280,9 @@ label astoria_intro_E1:
     jump main_room
 
 
+### Event 2 - Hermione ###
+# You astk Hermione to find the student.
+
 label astoria_intro_E2_hermione:
     m "I require your help with something."
     m "Tonks came by earlier and informed me about a student making a ruckus."
@@ -351,7 +358,9 @@ label astoria_intro_E2_hermione:
     jump main_room
 
 
-#TELL SNAPE ABOUT THE LETTER #Done
+### Event 2 - Snape ###
+# You ask Snape to find the student.
+
 label astoria_intro_E2_snape:
     m "Tonks came by earlier and informed me about one of your students causing trouble."
     call sna_main("Really?","snape_03") #No xpos change.
@@ -405,6 +414,9 @@ label astoria_intro_E2_snape:
     jump main_room
 
 
+### Event 3 ###
+# Hermione brings Astoria to you.
+# Snape scolds her and Tonks gives her detention.
 
 label astoria_intro_E3:
     stop music fadeout 1.0
@@ -774,8 +786,10 @@ label astoria_intro_E3:
     jump main_room
 
 
+### Tonks Hangout Event 1 ###
+# Tonks wantes to teach Astoria the Imperius curse.
 
-label astoria_intro_E4: # Tonks hangout event.
+label nt_he_astoria_E1:
     ton "So about this girl."
     m "You're going to have to be more specific."
     ton "Astoria Greengrass."
@@ -872,8 +886,11 @@ label astoria_intro_E4: # Tonks hangout event.
     jump main_room
 
 
+### Event 4 ###
+# Astoria summon unlock.
+# If you pick the wrong choice Astoria won't return for a week and ignores you.
 
-label astoria_intro_E5:
+label astoria_intro_E4:
     stop music fadeout 1.0
     call play_sound("knocking")
     call bld

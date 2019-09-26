@@ -2,7 +2,11 @@
 
 ### Cho Intro ###
 
-label cho_intro_1:
+### Event 1 ###
+# Cho first events your office, complaining about Hermione.
+# Hermione enters and they have a fight.
+
+label cho_intro_E1:
     stop music fadeout 1.0
     call play_sound("knocking")
     call bld
@@ -23,9 +27,12 @@ label cho_intro_1:
     call play_sound("equip_inventory")
     m "Adjust my pants...{w} There we go."
 
+    $ d_flag_01 = False
+
     menu:
         "\"Who is it?\"":
-            $ cho_name_known = True
+            $ d_flag_01 = True
+
             call bld
             cho "Cho Chang, Sir."
             g4 "(Such a cute name... please be hot, please be hot...!)"
@@ -35,7 +42,6 @@ label cho_intro_1:
             m "Oh, right... Come in."
 
         "\"Come in!\"":
-            $ cho_name_known = False
             pass
 
 
@@ -47,7 +53,7 @@ label cho_intro_1:
     call ctc
 
     menu:
-        "\"Hello, Miss Chang.\"" if cho_name_known == True:
+        "\"Hello, Miss Chang.\"" if d_flag_01 == True:
             call cho_main("Hello to you too, Professor.", "open", "base", "raised", "L")
 
         "\"Hello, Princess.\"":
@@ -172,8 +178,10 @@ label cho_intro_1:
     call her_main("And why are you here exactly?","angry","annoyed")
 
     call cho_main("Oh, you know...{w=0.5} Just having a discussion with our dear headmaster...", "smile", "base", "base", "L")
+
     $ renpy.sound.play("sounds/card_punch4.mp3")
     call her_main("{size=-5}Bitch...{/size}","base","angryCl",trans="hpunch")
+
     $ renpy.sound.play("sounds/card_punch1.mp3")
     call cho_main("{size=-5}Whore...{/size}", "soft", "angry", "angry", "L",trans="hpunch")
     call her_main("...","normal","frown", cheeks="blush")
@@ -350,11 +358,16 @@ label cho_intro_1:
     $ her_mood += 6
     $ hermione_busy = True
 
+    $ cho_intro.E1_complete = True
+
     jump main_room
 
 
+### Event 2 ###
+# Cho complains about Hermione again.
+# You need to talk to Hermione and have her drop her Quidditch modement.
 
-label cho_intro_2:
+label cho_intro_E2:
     stop music fadeout 1.0
     call play_sound("door")
     call cho_chibi("stand","door","base")
@@ -422,30 +435,15 @@ label cho_intro_2:
     $ hermione_busy = True
     $ snape_busy = False
 
+    $ cho_intro.E2_complete = True
+
     jump main_room
 
 
+### Snape Hangout Event 1 ###
+# You tell Snape about Cho's visit.
 
-### Cut Snape dialogue
-### Could be used for something else...
-
-#    m "Has anything out of the ordinary happened to you lately?"
-#    sna "Just the usual..."
-#    m "Let me guess. That Granger girl is still driving you nuts..."
-#    sna "You know it."
-#    m "Getting it on with a couple of Slytherin sluts..."
-#    sna "You betcha."
-#    m "That Potter boy making you question your sexuality..."
-#    sna "Always."
-#    sna "!!!" # Shocked
-#    g9 "Gotcha!"
-#    sna "You obviously tricked me."
-#    sna "All \"Potter\" can make me feel is pain and suffering..."
-#    sna "With the only thing keeping me sane being my \"exclusively female\" sex-pets!"
-#    g9 "Keep telling yourself that..."
-
-label cho_snape_talk:
-
+label ss_he_cho_E1:
     call bld
     m "I had another girl visiting me the other day."
     call sna_main("I told you not to get involved with the outside world.","snape_09", ypos="head")
@@ -483,13 +481,17 @@ label cho_snape_talk:
     m "I thought of a couple of things."
     call sna_main("You have my attention!","snape_13")
 
+    $ d_flag_01 = False
+    $ d_flag_02 = False
+
     label discuss_cho_plan:
-        if "1" in cho_plan and "2" in cho_plan:
+        if d_flag_01 and d_flag_02:
             jump discussed_cho_plan
 
     menu:
-        "\"Help her win the Quidditch cup\"" if "1" not in cho_plan:
-            $ cho_plan.append("1")
+        "\"Help her win the Quidditch cup\"" if not d_flag_01:
+            $ d_flag_01 = True
+
             call sna_main("And help her win against Slytherin?","snape_16")
             call sna_main("I can't agree to that, Genie. As much as I'd like to see the Potter boy demoralised by losing to a girl...","snape_10")
             call sna_main("Or Malfoy for that matter... He's been way too cocky lately.","snape_08")
@@ -542,8 +544,9 @@ label cho_snape_talk:
 
             jump discuss_cho_plan
 
-        "\"Have her and Hermione go at each other\"" if "2" not in cho_plan:
-            $ cho_plan.append("2")
+        "\"Have her and Hermione go at each other\"" if not d_flag_02:
+            $ d_flag_02 = True
+
             call sna_main("Granger? Why her?","snape_05")
             m "They absolutely despise each other."
             call sna_main("They do?","snape_20")
@@ -591,7 +594,6 @@ label cho_snape_talk:
             jump discuss_cho_plan
 
 
-
     # Ending
     label discussed_cho_plan:
 
@@ -607,18 +609,22 @@ label cho_snape_talk:
     hide screen notes
     with d3
 
+    $ ss_he.cho_E1 = True
+
     jump day_start
 
 
+### Hermione Talk 1 ###
+# You talk to Hermione to drop her Quidditch movement. You then summon Cho.
+# Cho is now unlocked and you can summon her.
 
-### Talk with Hermione ###
-label cho_hermione_talk:
+label cho_intro_E3:
 
     call her_main("", xpos="mid", ypos="base",trans="fade")
 
     # Intro
-    if cho_intro_state == "talk_with_hermione":
-        $ cho_intro_state = "nagotiate_with_hermione"
+    if not cho_intro.E3_intro:
+        $ cho_intro.E3_intro = True
 
         m "I got some word about you that needs to be addressed..."
         call her_main("About what? Am I in trouble for anything?","soft","wide_stare")
@@ -874,8 +880,6 @@ label cho_hermione_talk:
     # You can now summon Cho Chang to your office.
     stop music fadeout 1.0
 
-    $ cho_intro_state = "complete"
-
     $ cho_unlocked = True
     $ achievement.unlock("unlockcho", True)
     call popup("{size=-4}You can now summon Cho into your office.{/size}", "Character unlocked!", "interface/icons/head/head_cho_1.png")
@@ -883,5 +887,7 @@ label cho_hermione_talk:
     # End of Intro.
     $ hermione_busy = True
     $ cho_busy = True
+
+    $ cho_intro.E3_complete = True
 
     jump main_room

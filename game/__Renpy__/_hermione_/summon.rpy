@@ -413,15 +413,15 @@ label hermione_talk:
                     jump hermione_talk
 
 
-        # About Luna.
+        ### Luna ###
         "-Ask for a new student-" if hat_known and not luna_known:
             $ luna_known = True
             jump hat_intro_2
 
 
-        # About Astoria.
+        ### Astoria ###
         "-Ask her to help Tonks-" if astoria_intro.E1_complete and not astoria_intro.E3_complete:
-            if astoria_intro.E2_hermione and not astoria_intro.E2_snape:
+            if astoria_intro.E2_hermione:
                 call her_main("I'm still looking for that student, [genie_name]!","open","closed")
                 call her_main("Trust in me, I will find that slytherin scum!","angry","angry")
                 jump hermione_talk
@@ -432,14 +432,16 @@ label hermione_talk:
             jump astoria_intro_E2_hermione
 
 
-        # About Cho.
-        "{color=#858585}-Solve the matter with Cho-{/color}" if cho_intro_state == "talk_with_snape": # Before talking to Snape.
+        ### Cho ###
+        "{color=#858585}-Solve the matter with Cho-{/color}" if cho_intro.E2_complete and not ss_he.cho_E1:
+            # Before talking to Snape.
             m "(I should ask Snape what to do about that Cho girl first. Just to be save.)"
             m "(I should ask him to hang out in the evening.)"
             jump hermione_talk
 
-        "-Solve the matter with Cho-" if cho_intro_state in ["talk_with_hermione","nagotiate_with_hermione"]: # After talking to Snape.
-            jump cho_hermione_talk
+        "-Solve the matter with Cho-" if ss_he.cho_E1 and not cho_intro.E3_complete:
+            # After talking to Snape.
+            jump cho_intro_E3
 
         "-Ask Hermione to commentate the game-" if quidditch_commentator == "talk_with_hermione":
             $ quidditch_commentator = "talk_with_cho"
@@ -602,7 +604,10 @@ label hermione_talk:
                 "-Never mind-":
                     jump hermione_talk
 
-        "-Start the Ending-" if her_dress_wearable: #Starts the ending of the game.
+        "-Give her the dress-" if ball_quest.E4_complete and hg_dress_yule_ball_ITEM.unlocked and not ball_quest.gave_dress:
+            jump ball_quest_E5
+
+        "-Start the Ending-" if ball_quest.gave_dress: #Starts the ending of the game.
             jump ball_ending_start
 
         "-Never mind":

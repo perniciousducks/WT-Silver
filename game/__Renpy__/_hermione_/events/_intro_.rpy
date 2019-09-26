@@ -2,6 +2,9 @@
 
 ### Hermione Intro ###
 
+### Event 1 ###
+# Fist visit of Hermione.
+
 label hermione_intro_E1:
     stop music fadeout 1.0
     pause 1
@@ -292,8 +295,100 @@ label hermione_intro_E1:
     jump main_room
 
 
-# Event 2
+### Snape Hangout Event 1 ###
+# Snape shares his opinion of Hermione with you.
 
+label ss_he_hermione_E1:
+    call sna_main("...........................","snape_31", ypos="head")
+    m "...............................?"
+    call sna_main("I hate her so much...","snape_08")
+
+    menu:
+        "\"Yeah! That bitch!\"":
+            call sna_main("Good to know that we are on the same page...","snape_01")
+            call sna_main("That girl...","snape_31")
+        "\"You hate who?\"":
+            call sna_main("Why would you ask that?","snape_01")
+            call sna_main("That Hermione girl of course!","snape_01")
+        "\"Is she that bad?\"":
+            call sna_main("She is the worst!","snape_01")
+
+    call sna_main("A top student...","snape_31")
+    call sna_main("Leads all sorts of extracurricular activities and clubs...","snape_08")
+    call sna_main("the president of the school's Student Representative Body...","snape_08")
+    call sna_main("Likely to become the head girl soon...","snape_08")
+    call sna_main("................","snape_31")
+    call sna_main("............","snape_08")
+    with hpunch
+    call sna_main("{size=+7}I hate that fucking witch!!!{/size}","snape_33")
+    g4 "{size=-4}(What the...?){/size}"
+    call sna_main("..............","snape_31")
+    call sna_main("She used to be just an annoyance, but these days...","snape_31")
+    call sna_main("She's become a full-fledged menace...","snape_01")
+    call sna_main("That witch is officially my least favourite student in the entire school now...","snape_01")
+    m "What about that Potter boy?"
+    call sna_main("The Potter boy? Ha! Who's that!?","snape_34")
+    call sna_main("No, I'm serious...","snape_01")
+    call sna_main("I will go as far as to say that Potter and his wretched father combined...","snape_01")
+    call sna_main("Have never caused me as much grief as this little witch does lately...","snape_01")
+    m "Now, now. We both know that's not true..."
+    call sna_main("Yeah... You're probably right...","snape_31")
+    call sna_main("That bastard James Potter really did a number on me--","snape_35")
+    call sna_main("Wait, how do you know this?","snape_34")
+    m "Well... I've read the books..."
+    call sna_main("What? What books?","snape_34")
+    m "Nah, never mind. I'm a genie, remember? I know things..."
+    call sna_main("Hm... And yet you need me to teach you stuff...","snape_37")
+    m "Well, I told you. My magic is acting up in your world..."
+    call sna_main("Sure, sure...","snape_37")
+    m "......"
+    m "She came by the other day..."
+    call sna_main("Who did?","snape_38")
+    m "The Hermione girl..."
+    call sna_main("What?!","snape_01")
+    call sna_main("I thought we agreed on the \"no human contact\" rule.","snape_31")
+    call sna_main("(Even though lately I've been wondering whether or not she is human at all...)","snape_35")
+    m "I know... She kinda forced her way in..."
+    call sna_main("I imagine she did...","snape_01")
+    call sna_main("What did she want?","snape_01")
+
+    if jerked_off_during_hermione_intro:
+        m "I'm not sure..."
+        call sna_main("??","snape_39")
+        m "I was jerking off the entire time she was talking..."
+        call sna_main("You've been...","snape_31")
+        call sna_main("... doing what?","snape_31")
+        m "Hey, don't judge me!"
+        m "You don't know what it's like to be cooped up in this tower like a prisoner!"
+        call sna_main("You... y-you....","snape_31")
+        call sna_main("......","snape_40")
+        call sna_main("Ha.... ha-ha... HA-HA-HA!!!","snape_28")
+        m "Wha..? What did I say?"
+        call sna_main("Ha-ha-ha! You are amazing!","snape_42")
+        call sna_main("Are all genies so... wonderfully nihilistic?","snape_37")
+        m "Yeah... We immortals tend to not give a fuck."
+        call sna_main("Understandable...","snape_37")
+        call sna_main("Unfortunately, us mere mortals cannot afford such a luxury...","snape_38")
+
+    else:
+        m "Not sure... She was talking a lot..."
+        m "Something about some \"greefeendo\" points... and..."
+        m "Er... I wasn't paying attention to be honest..."
+        call sna_main("Nah... Probably another load of self-righteous crap...","snape_01")
+        call sna_main("She is famous for that...","snape_35")
+
+    call sna_main("I have a class early tomorrow, so let us call it a night.","snape_35")
+    m "What about you teaching me magic and stuff?"
+    call sna_main("Yeah, absolutely...","snape_38")
+    call sna_main("Next time...","snape_38")
+    m "Alright..."
+
+    $ ss_he.hermione_E1 = True
+
+    jump day_start
+
+
+### Event 2 ###
 # Second visit from Hermione. Says she sent a letter to the Minestry.
 # Takes place after first special event with Snape, where he just complains about Hermione.
 
@@ -424,9 +519,160 @@ label hermione_intro_E2:
     jump main_room
 
 
+### Snape Hangout Event 2 ###
+# You scheme a plan to take down Hermione.
 
-# Event 3
+label ss_he_hermione_E2:
+    call bld
+    m "......................."
+    m "Hermione Granger came by again..."
+    call sna_main("Don't mention the witch's name when I'm off duty...","snape_01", ypos="head")
+    call sna_main("...............","snape_31")
+    call sna_main("Dammit! I am a grown man, Albus!","snape_08")
+    m "My name is not--"
+    call sna_main("An esteemed wizard...","snape_08")
+    m "Well, alright, let it out..."
+    call sna_main("How come one tiny...cunt, is able to cause me so much grief?!","snape_31")
+    call sna_main("I thought with you as my ally I will have a chance to--","snape_32")
+    m "To unclench?"
+    call sna_main("Yeah, that could be the word...","snape_31")
+    call sna_main("But all I did was give her more leverage to harass me with...","snape_43")
+    call sna_main("She's even turning the teachers against me now...","snape_43")
+    call sna_main(".................","snape_08")
+    call sna_main("She must go...","snape_35")
+    m "What do you mean?"
+    with hpunch
+    call sna_main("{size=+6}I will have to kill her!{/size}","snape_33")
+    g4 "Like, literally kill her?"
+    call sna_main("Do I have any other choice?","snape_34")
+    m "You're joking, right?"
+    call sna_main("Am I?!","snape_34")
+    call sna_main("Can you do this for me?","snape_39")
+    m "Em..."
+    m "As much I would \"enjoy\" murdering a teenage girl..."
+    m "Genies can't kill..."
+    call sna_main("Rats!","snape_35")
+    m "And we frown upon murderers..."
+    if jerked_off_during_hermione_intro:
+        call sna_main("Really? I thought you didn't give a fuck...","snape_44")
+        m "to a certain degree..."
+        call sna_main(".............","snape_35")
+    call sna_main("Well... don't mind me then...","snape_31")
+    call sna_main("I'm all talk...","snape_31")
+    call sna_main("I would never actually harm a student...","snape_31")
+    call sna_main("(...permanently that is.)","snape_08")
+    m "Listen, if she bugs you so much, why not just find a less radical way to deal with her?"
+    call sna_main("Nah... Flogging has been outlawed for years now...","snape_35")
+    m "That's not what I mean..."
+    call sna_main("Huh?","snape_01")
+    m "She is a top student, right?"
+    call sna_main("Yes, damn her. The girl is a hard worker, I will give her that.","snape_31")
+    m "She also has a reputation for being self-righteous."
+    call sna_main("Oh, yes!","snape_34")
+    m "And she thinks that she is better than everyone else..."
+    call sna_main("Where are you going with this?","snape_44")
+    m "Well, it seems like all of her power comes from her reputation..."
+    call sna_main("......................?","snape_39")
+    m "What if we take that away from her?"
+    call sna_main("That would shut her up I suppose...","snape_38")
+    call sna_main("But how? She's practically a saint.","snape_31")
+    call sna_main("Even students who hate her secretly admire her.","snape_35")
+    call sna_main("She hasn't failed a single test in her entire time here...","snape_31")
+    call sna_main("She is always ahead of the schedule...","snape_31")
+    call sna_main("Damn, how I hate it when she corrects me during my classes...","snape_08")
+    call sna_main("And thanks to her the \"Gryffindor\" house is way ahead of everybody else now...","snape_34")
+    call sna_main("Even \"Slytherin\" is no match for them this year...","snape_35")
+    call sna_main("........................","snape_43")
+    call sna_main("Dammit... I need more wine...","snape_34")
+    m "The wine can wait. Hear me out!"
+    call sna_main("Huh...?","snape_01")
 
+    $ d_flag_01 = False
+    $ d_flag_02 = False
+    $ d_flag_03 = False
+
+    label fuck_off:
+    m "Hm... Let us..."
+    menu:
+        m "..."
+        "{size=-3}\"Make sure she is not a top student any longer!\"{/size}" if not d_flag_01:
+            $ d_flag_01 = True
+            call sna_main("What? You mean grade her unfairly?","snape_01")
+            call sna_main("Nah... Dumbledore would never allow--","snape_31")
+            call sna_main("Wait a second!","snape_37")
+            m "Exactly!"
+            call sna_main("You're right! I can grade her tests unfairly! I could even persuade other teachers to do the same!","snape_02")
+            call sna_main("I could say that the order comes from you...","snape_02")
+            call sna_main("And when the real Dumbledore shows up I will pretend that I had no idea that he was away...","snape_45")
+            m "Works for me."
+            call sna_main("Er...","snape_38")
+            call sna_main("This is still you, genie, right?","snape_38")
+            m "Yeah, yeah, still here..."
+            call sna_main("OK, good.","snape_02")
+
+            if d_flag_01 and d_flag_02 and d_flag_03:
+                pass
+            else:
+                jump fuck_off
+
+        "{size=-3}\"Make sure \"Gryffindor\" loses the cup this year!\"{/size}" if not d_flag_02:
+            $ d_flag_02 = True
+            call sna_main("You mean to just start subtracting points from them for no good reason?","snape_01")
+            call sna_main("Oh, I like that!","snape_02")
+            call sna_main("There are a couple of \"Slytherin\" girls who are long overdue for receiving some extra house points as well.","snape_46")
+            call sna_main("Oh, this will work out magnificently!","snape_45")
+            call sna_main("You are a Genius!","snape_02")
+            m "Yes, I am a genius genie. What are the odds of that..."
+
+            if d_flag_01 and d_flag_02 and d_flag_03:
+                pass
+            else:
+                jump fuck_off
+
+        "{size=-3}\"Ruin her reputation!\"{/size}" if not d_flag_03:
+            $ d_flag_03 = True
+            call sna_main("Tarnish her reputation?","snape_01")
+            call sna_main("But the girl is incorruptible...","snape_01")
+            m "Nonsense!"
+            m "All we need to do is convince her that she needs to make some sacrifices \"for the greater good\"."
+            call sna_main("Oh, but of course...","snape_37")
+            call sna_main("She would gladly \"Get her hands dirty\" to save the honour of her precious \"Gryffindor\" house!","snape_47")
+            call sna_main("And when she does, we will have the leverage we need...","snape_37")
+
+            if d_flag_01 and d_flag_02 and d_flag_03:
+                pass
+            else:
+                jump fuck_off
+
+    call sna_main("This could actually work!","snape_37")
+    m "I think so too."
+    call sna_main("Oh, I feel so alive tonight!","snape_45")
+    call sna_main("Pour me another goblet!","snape_28")
+    call sna_main("Potions class will start late tomorrow!","snape_45")
+    m "....."
+    m "Don't you think this is a bit too brutal though?"
+    m "I mean, she's just a girl..."
+    call sna_main("Just a girl?","snape_36")
+    call sna_main("Oh no, no, no...","snape_36")
+    call sna_main("She is the embodiment of pure evil!","snape_32")
+    call sna_main("If we don't do this now...","snape_31")
+    call sna_main("One of those days I may just snap and \"Avada Kedavra\" her!","snape_08")
+    m "You'll do what?"
+    call sna_main("Murder her for real!","snape_32")
+    m "Alright, alright... got it."
+    m "Let's choose the lesser of two evils then."
+    call sna_main("Yes...","snape_35")
+    call sna_main("Now, pour me some more wine.","snape_34")
+
+    ">You spend the rest of the evening in Snape's company drinking your worries away."
+
+    $ ss_he.hermione_E2 = True
+    $ ss_event_pause += 1
+
+    jump day_start
+
+
+### Event 3 ###
 # Third visit, after second special date with Snape.
 # Hermione complains that she almost failed a test. (EVENING EVENT!)
 
@@ -551,9 +797,7 @@ label hermione_intro_E3:
     jump main_room
 
 
-
-# Event 4
-
+### Event 4 ###
 # Hermione complains that she did fail the test. (EVENING EVENT!)
 
 label hermione_intro_E4:
@@ -604,8 +848,7 @@ label hermione_intro_E4:
     jump day_start
 
 
-# Event 5
-
+### Event 5 ###
 # Hermione comes after her breakdown (when she failed the test).
 # She is asking for tutoring.
 # Tutoring unlocked!
@@ -706,13 +949,43 @@ label hermione_intro_E5:
     jump main_room
 
 
-# Event 6
+### Tonks Hangout Event ###
+# Tonks will help convince Hermione to buy favors.
 
+label nt_he_hermione_E1:
+    call ton_main("So, that Granger girl is causing you two trouble?","open","base","base","mid", ypos="head")
+    m "Quite a bit. She's not too thrilled on the idea of favour trading."
+    call ton_main("Maybe I can be of help with her?","base","base","wide","L")
+    call ton_main("I can be very convincing.","horny","base","raised","mid")
+    m "What are you suggesting?"
+    call ton_main("To persuade her into having a try of it herself, for a start...","open","base","base","R")
+    call ton_main("Convince her that trading favours isn't all bad.","base","base","base","mid")
+    m "That would indeed be very helpful. She's stubborn in that regard."
+    call ton_main("You don't have to tell me. She's been lecturing me about those \"sexual favours\" since the very day I got here...","open","base","base","R")
+    call ton_main("But I shouldn't complain about that...","base","base","base","mid")
+    call ton_main("Hearing those naughty words spill out of her gorgeous little mouth really gets me going!","horny","base","base","ahegao", hair="horny")
+    g9 "I can imagine so."
+    call ton_main("When she describes all the wrongdoings of those filthy \"Slytherin girls\"...","open","base","angry","mid")
+    call ton_main("How could I possibly get tired of that!","base","base","base","mid")
+    call ton_main("I'm very glad I decided to join you two.","open","base","base","down")
+    call ton_main("As an Auror It's just constant busy work...","open","base","angry","mid")
+    call ton_main("Not to mention the hours.","angry","base","upset","down")
+    call ton_main("And the mortality rate...","upset","base","worried","R")
+    call ton_main("If I'd realised the benefits of being a teacher at Hogwarts, I would have signed up straight away!","horny","base","base","ahegao")
+
+    ">You spend the [temp_txt] conspiring against Hermione with Tonks..."
+    ">You feel a faint bond forming between you two..."
+
+    $ nt_he.hermione_E1 = True
+
+    jump end_tonks_hangout_points
+
+
+### Event 6 ###
 # Hermione comes and asks to buy a favour from her.
 
 label hermione_intro_E6:
     stop music fadeout 1.0
-
     call play_sound("knocking")
     "*Knock-knock-knock!*"
 

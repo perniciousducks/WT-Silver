@@ -218,17 +218,17 @@ label skip_to_hermione:
     $ snape_intro.E4_complete   = True
     $ snape_intro.E5_complete   = True
 
-    $ hang_with_snape.E1_complete = True
-    $ hang_with_snape.E2_complete = True
-    $ hang_with_snape.E3_complete = True
-    $ hang_with_snape.E4_complete = True
-    $ hang_with_snape.E5_complete = True
+    $ ss_he.hermione_E1 = True
+    $ ss_he.hermione_E2 = True
+    $ ss_he.tonks_E1 = True
+    $ ss_he.tonks_E2 = True
+    $ ss_he.tonks_E3 = True
 
     $ tonks_intro.E1_complete = True
     $ tonks_intro.E2_complete = True
     $ tonks_intro.E3_complete = True
 
-    $ hang_with_tonks.E1_complete = True
+    $ nt_he.hermione_E1 = True
 
     $ hermione_intro.E1_complete = True
     $ hermione_intro.E2_complete = True

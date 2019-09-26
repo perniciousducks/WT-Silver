@@ -452,7 +452,7 @@ label update_wr_other_clothings_list:
 
         if hg_costume_yennefer_ITEM.unlocked:
             $ wr_neckwears.append("choker_leather")
-        if her_dress_wearable:
+        if ball_quest.gave_dress:
             $ wr_neckwears.append("banner_miss_hogwarts")
         #$ wr_neckwears.append("neck_goggles") #sQuest reward
         if collar == 1:

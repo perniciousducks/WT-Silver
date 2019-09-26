@@ -52,9 +52,7 @@ default has_cho_panties         = False
 default cho_panties_soaked      = False
 
 # Intro
-default cho_intro_state         = "event_1"
 default jerked_off_during_cho_intro = False
-default cho_plan                = [] # Talk with Snape about Cho.
 
 # Quidditch Training
 default cho_training_state      = "quiz_start"
@@ -124,9 +122,9 @@ default cc_pf_strip = event_class(title = "Inspect her body!", start_label = "cc
     ],
     iconset = [["heart_empty", "heart_green"]]
 )
-    
+
 default cc_favor_list = [cc_pf_talk, cc_pf_strip]
-        
+
 # Public requests
 # cc_pr = Cho Chang Public Request
 default cc_pr_manipulate = event_class(title = "Manipulate the enemy!", start_label = "cc_pr_manipulate_start",
@@ -145,7 +143,7 @@ default cc_pr_manipulate = event_class(title = "Manipulate the enemy!", start_la
     icons = ["huff", "slyt"], #if a tier doesn't need an icon replace with None
     iconset = [["star_empty", "star_yellow"]] # You have to add icons at least for first tier, the rest will be copied over automatically.
 )
-    
+
 default cc_requests_list = [cc_pr_manipulate]
 
 label reset_cho_progress:
@@ -172,9 +170,7 @@ label reset_cho_progress:
         "cho_panties_soaked",
 
         # Intro
-        "cho_intro_state",
         "jerked_off_during_cho_intro",
-        "cho_plan",
 
         # Quidditch Training
         "cho_training_state",

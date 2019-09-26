@@ -27,10 +27,10 @@ default uni_sperm     = False # Triggers universal sperm to show on hermione_mai
 default public_whore_ending = False # If TRUE the game will end with "Public Whore Ending".
 
 # Events
-default event_chairman_happened    = False # Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
-default snape_against_chairman_hap = False # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
-default have_no_dress_hap          = False # Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
-default sorry_for_hesterics        = False # Turns TRUE after Hermione comes and apologizes for the day (event) before.
+default ball_quest.E1_complete    = False # Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
+default ball_quest.E2_complete = False # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
+default ball_quest.E3_complete          = False # Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
+default ball_quest.E4_complete        = False # Turns TRUE after Hermione comes and apologizes for the day (event) before.
 
 # House points
 default slytherin  = 180
@@ -49,7 +49,7 @@ default found_voucher = False # Turns TRUE after you complete "My Dear Waifu" wi
 
 # Clothing
 default gave_miniskirt = False # Turns True when Hermione has the miniskirt.
-default gave_the_dress = False # Turns True when Hermione has the dress.
+default ball_quest.started = False # Turns True when Hermione has the dress.
 
 # Used to pause events/summons for a number of days
 default ss_event_pause  = 0

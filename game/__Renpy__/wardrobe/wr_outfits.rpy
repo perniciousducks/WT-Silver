@@ -406,18 +406,21 @@ label equip_her_outfit:
                     jump return_to_wardrobe
 
             if outfit_choice == hg_dress_yule_ball_ITEM:
-                if not have_no_dress_hap: # Dialogue for before she needs the dress.
+                if not ball_quest.E3_complete: # Dialogue for before she needs the dress.
                     m "Would you like to wear your new dress?"
                     call her_main("A dress? What would I need a dress for?","open","wink")
                     m "Well I just thought you'd look pretty in one so I--"
                     call her_main("I appreciate your concernes, [genie_name], but I'm not the type of girl who likes to wear dresses.","scream","wide")
                     call her_main("Especially in school. I have to refuse","normal","base")
                     jump return_to_wardrobe
-                elif have_no_dress_hap and not her_dress_wearable: # You gift Hermione her dress event. Does not trigger the countdown anymore. Talk to hermione to start the ending now.
+
+                elif ball_quest.E3_complete and not ball_quest.gave_dress:
+                    # You gift Hermione her dress event. Does not trigger the countdown anymore. Talk to hermione to start the ending now.
                     hide screen wardrobe
                     with d3
                     pause.5
                     jump ball_quest_E5
+
                 else:
                     m "Remember that dress I gave you?"
                     call her_main("Of course! How could I ever forget!","open","wide")
@@ -441,6 +444,16 @@ label equip_her_outfit:
             call screen wardrobe
 
         else: # No chit-chat
+
+            if outfit_choice == hg_dress_yule_ball_ITEM:
+                if ball_quest.E3_complete and not ball_quest.gave_dress:
+                    # You gift Hermione her dress event. Does not trigger the countdown anymore. Talk to hermione to start the ending now.
+                    $ hide_transitions = False
+                    hide screen wardrobe
+                    with d3
+                    pause.5
+                    jump ball_quest_E5
+
             $ hide_transitions = True
             hide screen hermione_main
 

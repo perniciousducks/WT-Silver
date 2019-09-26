@@ -38,7 +38,7 @@ screen exp_o_meter(fill, opacity, alt, alt_text):
                 add "interface/meter/50.png" alpha opacity
             else:
                 add "interface/meter/0.png" alpha opacity
-                
+
     if alt_text:
         text alt_text size 22 vertical True color "#FFF" outlines [ (2, "#000", 0, 0) ] xpos 70 ypos 340 yalign 0.5
 
@@ -654,7 +654,7 @@ label cho_quiz_2:
 
 
 # Ask Snape for Quidditch help.
-label ask_snape_for_quidditch_help:
+label ss_he_cho_E2:
 
     call bld
     m "So It looks like I might need some information about Quidditch..."

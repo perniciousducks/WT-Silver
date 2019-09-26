@@ -808,7 +808,7 @@ label hg_hidden_blowjob_luna:
     call her_main("[genie_name], what should I do?","shock","wide", ypos="head")
     m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
     lun "[lun_genie_name]? Are you there? I need to talk to you."
-    if lun_genie_name != in ["Sir","Professor","Dumbledore"]:
+    if lun_genie_name not in ["Sir","Professor","Dumbledore"]:
         call her_main("([lun_genie_name]?!)","soft","suspicious")
         call her_main("(Wait, it's Luna!)","disgust","wide")
     else:

@@ -107,7 +107,7 @@ label give_ton_gift(gift_item):
         call ton_friendship(1)
 
     elif gift_item == testral_strapon_ITEM:
-        call ton_main("Is that a strap-on?",mouth="open",eye="wide",brows="wide",pupils="wide",xpos="mid",ypos="base",trans="d5")
+        call ton_main("Is that a strap-on?",mouth="open",eyes="wide",eyebrows="wide",pupils="wide",xpos="mid",ypos="base",trans="d5")
         call give_gift(">You give the thestral strap-on to Tonks...", gift_item)
         call ton_main("This will be a perfect addition to my collection...",face="angry")
         call ton_main("Thank you, [ton_genie_name].",face="happy")

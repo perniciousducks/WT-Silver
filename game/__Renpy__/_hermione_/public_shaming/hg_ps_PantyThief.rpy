@@ -20,6 +20,9 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
     if her_whoring <=2:
         jump too_much
 
+    # Keep current clothing state until after event is completed
+    $ tmp_hermione_wear_panties = hermione_wear_panties
+
     if hg_ps_get_panties.points == 0 and her_whoring <= 5:
         stop music fadeout 10.0
 
@@ -54,6 +57,10 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         hide screen hermione_main
         with d3
         call nar(">Suddenly Hermione extends her arm to you...","start")
+        
+        $ hermione_wear_panties = False
+        call update_her_uniform
+
         call nar(">You see that she is clutching a little piece of fabric in her fist...","end")
         #">Her panties? You can't help but wonder when she managed to take them off..."
         m "??!"
@@ -68,7 +75,6 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         call her_main("Oh, and I will be back tonight to pick them up, [genie_name].","open","base")
         m "Of course. Your panties will be right here on my desk, waiting for you..."
         call her_main(".............","angry","worriedCl",emote="05")
-        jump hg_ps_get_panties_ends
 
     else:
         if hg_ps_get_panties.points >= 1:
@@ -78,6 +84,10 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         if her_whoring >= 12: #LEVEL 05
             hide screen hermione_main
             with d3
+
+            $ hermione_wear_panties = False
+            call update_her_uniform
+            
             call nar(">Hermione pulls her panties out of her pocket...")
             m "What?"
             call her_main("Yes, I had a feeling that you might ask for these today, [genie_name].","base","base")
@@ -86,11 +96,14 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         else:
             hide screen hermione_main
             with d3
+
+            $ hermione_wear_panties = False
+            call update_her_uniform
+
             call nar(">Hermione takes off her panties and hands them over to you...")
+        
         call nar(">Hermione's panties acquired.")
         call her_main("Well, the classes are about to start, so I'd better go now...","soft","base")
-
-    label hg_ps_get_panties_ends:
 
     call her_walk(action="leave", speed=2.5)
 
@@ -140,6 +153,10 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 her "Putting my panties back on!"
                 hide screen hermione_main
                 call nar(">Hermione hesitantly puts on her panties...","start")
+
+                $ hermione_wear_panties = True
+                call update_her_uniform
+
                 ">A tiny stream of cum trickles down one of her legs..."
                 call nar(">Hermione looks very uncomfortable...","end")
                 call her_main("......................","angry","worriedCl",emote="05")
@@ -165,6 +182,10 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         call her_main("Well, I suppose I could wear them one more time before putting them into laundry...","annoyed","down")
         hide screen hermione_main
         call nar(">Hermione puts the panties on...")
+
+        $ hermione_wear_panties = True
+        call update_her_uniform
+
         call her_main("(This feels funny...)","angry","worriedCl",emote="05")
         call her_main("Will this be all, [genie_name]?","upset","wink")
 
@@ -207,6 +228,9 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         hide screen hermione_main
         call nar(">Hermione swiftly slides her drenched panties on...")
 
+        $ hermione_wear_panties = True
+        call update_her_uniform
+
     elif her_whoring > 15: ###New variant of the event
         call her_main("My panties...","base","ahegao_raised",xpos="right",ypos="base")
         if hg_ps_get_panties.points >= 1:
@@ -225,6 +249,10 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 m "Right..."
                 hide screen hermione_main
                 call nar(">Hermione swiftly slides her drenched panties on...")
+
+                $ hermione_wear_panties = True
+                call update_her_uniform
+
                 call her_main("...","soft","ahegao")
             "\"Why don't you clean them now?\"":
                 $ cleaned_panties = True
@@ -259,6 +287,9 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
 
 label hg_ps_get_panties_complete:
     $ hg_ps_get_panties.complete = True
+    $ hermione_wear_panties = False
+    call update_her_uniform
+
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
@@ -400,6 +431,11 @@ label hg_ps_get_panties_complete:
     $ hg_ps_get_panties.points += 1
     $ hg_ps_get_panties.inProgress = False #False when favor is not in progress
     $ her_panties_soaked = False #TRUE if you jerked off in panties
+
+    # Restore clothing state from before the event
+    $ hermione_wear_panties = tmp_hermione_wear_panties
+    $ del tmp_hermione_wear_panties
+    call update_her_uniform
 
     # Stats
     $ hg_ps_get_panties.counter += 1

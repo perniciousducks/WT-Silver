@@ -89,7 +89,7 @@ label her_whoring_pages:
     $ diary_page_25 = "Wow. [genie_name] told me he wanted a {i}special{/i} blowjob today. I just thought he meant some more roleplay at first but it was so much more... He made sure to handcuff me before {b}fucking{/b} my throat raw. I don't think I've felt like more of a sex object in my entire life... It was... It was incredible... That might be the hardest I've orgasmed in my life... (What's wrong with me?)"
 
     #End of tit fuck tier 1
-    $ diary_page_26 = "I learned something new today... Normally when I write that it involves complex transfiguration or charms but today... It involved wrapping my breasts around my headmasters cock... (Dumbledore called it a tit-job?) Ugh... The lengths Dumbledore is going through to humiliate me... Not that it's working! I wasn't even embarrassed when he coated me in cum! (Should I be?)"
+    $ diary_page_26 = "I learned something new today... Normally when I write that it involves complex transfiguration or charms but today... It involved wrapping my breasts around my headmaster's cock... (Dumbledore called it a tit-job?) Ugh... The lengths Dumbledore is going through to humiliate me... Not that it's working! I wasn't even embarrassed when he coated me in cum! (Should I be?)"
     #End of tit fuck tier 2
     $ diary_page_27 = "Mmmm, Dumbledore wanted another titjob for his favour today... I would have said no... but he was so nice, complimenting my breasts... Besides, it's not like I had sex with him, I just rubbed my chest against him a little... And let him coat me in his cum... again... (I really am a dirty slut, aren't I?)"
     #End of tit fuck tier 3

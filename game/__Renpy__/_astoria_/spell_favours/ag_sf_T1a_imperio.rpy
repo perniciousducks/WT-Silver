@@ -263,7 +263,7 @@ label ag_se_imperio_sb_E2:
     with d3
     call ast_main("Of course! Anything to bring Bessy here down a peg.","smile","base","base","L",xpos="close",ypos="base")
     call ast_main("Although, you said that before I cast Imperio on her, so we might have to obliviate that if we want to keep this a secret.","upset","base","worried","L")
-    m "Tonks handle it afterwards just like last time..."
+    m "Tonks will handle it afterwards just like last time..."
     call ast_main("So what should we make her do today, [ast_genie_name]?","smile","base","base","mid")
     m "Something fun perhaps?"
     call ast_main("*Hmmm*...","annoyed","narrow","base","R")
@@ -396,7 +396,7 @@ label ag_se_imperio_sb_E2:
     call cast_spell("imperio")
     call ast_main("{size=+10}{b}Imperio!{/b}{/size}","scream","base","angry","L")
 
-    call nar(">Susan's becomes still as her flicker once more as the blank expression spreads across her face.")
+    call nar(">Susan's eyes flicker once more as the blank expression spreads across her face.")
     call ast_main("Let's delve deeper shall we...","grin","narrow","angry","L")
     m "W-what?"
     ast "Susy, can you hear me?"
@@ -933,7 +933,7 @@ label hornify_spell_1: #first level hornify spell
     m "Argh..."
     ">Your cock is riding the edge after Astoria's relentless assault."
     call ast_main("{b}Cum{/b}","base","base","base","base")
-    ">Astoria punctuates her sentence by pressing the crack of her butt hard against your cock and holding if there as she shakes her butt.."
+    ">Astoria punctuates her sentence by pressing her buttcrack hard against your cock and holding it there as she shakes her butt.."
     m "ARGH! FUCK YES!"
     ">That, combined with the sight of the innocent redhead cumming helplessly as she claws at her own tits prove too much for your poor cock..."
     m "FUCKING TAKE THIS YOU WHORES!"

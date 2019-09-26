@@ -447,7 +447,7 @@ label DRgame_random_event:
                             call sna_chibi("stand","door","base")
                             with d5
                             pause.8
-                            "The stranger is more than tankful to you."
+                            "The stranger is more than thankful to you."
                             "He'd be happy to help gather wood or hunt for meat."
                         "-Let him starve-":
                             "He quietly leaves."

@@ -7,10 +7,11 @@ init python:
             item.unlock()
 
         #TODO Find a better solution than outfit linking (probably just convert all clothes to new wardrobe system)
-        if item.id in outfit_linking:
+        if isinstance(item, item_class) and item.id in outfit_linking:
             var_name = outfit_linking[item.id]
             outfit = globals()[var_name]
             outfit.unlock()
+            
 
 ### CLOTHING STORE ###
 

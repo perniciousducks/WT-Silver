@@ -23,7 +23,7 @@ image handjob_ani:
 
 ### HERMIONE HANDJOB CUMMING UNDER THE SHIRT ###
 image undershirt_cum_ani:
-    0.5
+    zoom 0.5
     
     "characters/hermione/chibis/handjob/sperm_under_01.png"
     pause 1
@@ -55,7 +55,7 @@ image undershirt_cum_ani:
 
 ### HERMIONE HANDJOB CUMMING ON THE SHIRT ###
 image on_shirt_cum_ani:
-    0.5
+    zoom 0.5
     
     "characters/hermione/chibis/handjob/sperm_on_00.png"
     pause.1

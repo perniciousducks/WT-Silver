@@ -46,12 +46,8 @@ label door_menu(xx=723, yy=90):
 
     if _return[0] == "summon":
         if not _return[2]:
-            hide screen bld1
-            hide screen door_menu
             $ renpy.jump("summon_"+_return[1].lower())
         else:
-            show screen bld1
-            show screen door_menu(xx, yy)
             if daytime or _return[1] in ["Tonks", "Snape"]:
                 call nar(">"+_return[1]+" is currently busy. Try again later.")
             else:

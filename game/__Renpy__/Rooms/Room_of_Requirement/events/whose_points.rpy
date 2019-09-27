@@ -4,7 +4,7 @@
 
 label whose_points:
     call h_equip_temp_outfit(hg_standart_school_ITEM)
-    call room(hide_screens=True)
+    call hide_screens
     show screen whose_points_screen
     show screen blkfade
     with d3
@@ -241,12 +241,9 @@ label whose_points:
 
     "To be continued?"
 
-    if daytime:
-        call play_music("day_theme")
-    else:
-        call play_music("night_theme")
+    call music_block
 
     call h_unequip_temp_outfit()
-    call room(hide_screens=True)
+    call hide_screens
     call set_her_action("none")
     jump enter_room_of_req

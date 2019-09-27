@@ -98,7 +98,7 @@ label close_stats_screen:
 
     $ hide_transitions = False
 
-    jump day_main_menu
+    jump main_room_menu
 
 
 screen stat_menu(character=""):

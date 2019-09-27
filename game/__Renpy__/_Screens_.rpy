@@ -67,71 +67,6 @@ screen G_Flowers_out():  #  Genie flowers vanish
     add "vanish_effect_bouquet" xpos 198+140 ypos 235
     zorder 5
 
-
-
-screen animation_feather(): #Falling feather animation
-    add "feather" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5
-    zorder 2
-
-screen phoenix_food(): #Phoenix's food.
-    tag phoenix_food
-    add "images/rooms/_objects_/phoenix/food.png" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5
-    zorder 2
-
-
-screen fireplace(): #Used to display a fireplace in a different room. Not needed for main room. Included in screen "main_room".
-    tag fireplace
-    add fireplace_OBJ.get_room_image() xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
-    zorder 1
-
-screen fireplace_fire(): #Used to display fire without the fireplace.
-    tag fireplace_fire
-    add "fireplace_fire" xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos+25 xanchor 0.5 yanchor 0.5 #xpos 576 ypos 141
-    zorder 2
-    on "show" action Function(fireplace_event, True)
-    on "hide" action Function(fireplace_event, False)
-
-screen fireplace_glow():
-    tag fireplace_glow
-    add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.2
-    zorder 3
-
-init python:
-    def fireplace_event(has_fire):
-        if has_fire:
-            renpy.music.play("sounds/fire02.mp3", "bg_sounds", fadeout=1.0, fadein=1.0, if_changed=True)
-        else:
-            renpy.music.stop("bg_sounds", fadeout=1.0)
-
-screen desk(xposistion=360): #Desk only!
-    add "images/rooms/main_room/desk_with_shadow.png" xpos xposistion ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
-    zorder 2
-
-screen chair_left():
-    add "images/rooms/main_room/chair_left_with_shadow.png" xpos 332 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
-
-screen chair_right():
-    add "images/rooms/main_room/chair_right.png" xpos 793 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
-    zorder 1
-
-#Mail
-screen owl():
-    tag owl
-
-    if letter_queue_list != []: #Owl with letter.
-        add owl_OBJ.get_idle_image() xpos owl_OBJ.xpos ypos owl_OBJ.ypos xanchor 0.5 yanchor 1.0
-    else:
-        add owl_OBJ.get_room_image() xpos owl_OBJ.xpos ypos owl_OBJ.ypos xanchor 0.5 yanchor 1.0
-
-screen package():
-    add package_OBJ.get_room_image() xpos package_OBJ.xpos ypos package_OBJ.ypos xanchor 0.5 yanchor 1.0
-
-screen dumbledore(): # DUMBLEDORE AND HIS DESK.
-    tag chibi_genie
-    add "images/rooms/main_room/dum.png" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5 zoom 0.5
-
-
-
 screen universal_walk():
     tag chibi_walk
     add universal_walk_image at universal_chibi_walk(u_walk_x, u_walk_x2, u_walk_speed, u_walk_y)
@@ -152,9 +87,6 @@ screen bld2():
 screen ctc():
     add "ctc4"
     zorder 9
-
-screen points(): #House points screen.
-    use ui_top_bar
 
 screen gift():
     zorder 6

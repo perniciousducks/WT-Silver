@@ -44,7 +44,7 @@ init python:
     # Force change all default menus to use custom one w/ hotkeys
     menu = custom_menu
 
-# Add hotkeys to main_room_menu screen (_main_room_.rpy)
+# Add hotkeys to main_room screen (_main_room_.rpy)
 screen hotkeys_main():
     tag hotkeys_main
 
@@ -54,7 +54,7 @@ screen hotkeys_main():
         key hkey_work action Jump("paperwork")
     if store_intro_done:
         key hkey_book action Jump("read_book_menu")
-    key hkey_stats action [Hide("main_room_menu"), Jump("open_stat_menu")]
+    key hkey_stats action Jump("open_stat_menu")
     key hkey_inventory action Jump("inventory_menu")
     key hkey_fap action Jump("jerk_off")
 

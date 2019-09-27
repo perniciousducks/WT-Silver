@@ -1,144 +1,82 @@
-
-### Misc Labels ###
-label hide_all_screens:
-
-    #Sprites
-    call hide_characters
-
-    #Chibis
-    call her_chibi("hide")
-    call lun_chibi("hide")
-    call sus_chibi("hide")
-    call cho_chibi("hide")
-    call sna_chibi("hide")
-    call ton_chibi("hide")
-    call ast_chibi("hide")
-    call gen_chibi("hide")
-
-    #CGs
-    hide screen cg
-    hide screen ccg
-    hide screen blkback
-
-    #Main Room
-    hide screen main_room
-    hide screen main_room_overlay
-    hide screen weather
-    hide screen new_window #Hiding clear sky bg.
-
-    hide screen desk
-    hide screen chair_left
-    hide screen chair_right
-
-    hide screen fireplace
-    hide screen fireplace_fire
-    hide screen fireplace_glow
-
-    hide screen phoenix_food
-    hide screen animation_feather
-
-    hide screen with_snape #Genie hangs out with Snape in front of the fireplace.
-    hide screen with_tonks_animated
-    hide screen done_reading
-    hide screen done_reading_near_fire
-
-    hide screen package
-    hide screen owl
-
-    #Weasley Store
-    hide screen weasley_store_room
-
-    #Clothing Store
-    hide screen clothing_store_room
-
-    #Potions Room
-    hide screen potions_room
-
-    #7th Floor
-    hide screen floor_7th_door
-    hide screen room_of_req_door
-    hide screen floor_7th_screen
-    hide screen floor_7th_menu
-
-    #Room of Requirement
-    hide screen room_of_requirement
-    hide screen room_of_requirement_menu
-    hide screen room_of_requirement_overlay
-    hide screen candle_light_1
-    hide screen candle_light_2
-    hide screen whose_points_screen
-
-    #Quidditch pitch
-    hide screen quidditch_pitch
-    hide screen quidditch_pitch_overlay
-
-    #A Dark Room (minigame)
-    hide screen dark_room
-    hide screen DRgame_blktone
-
-    #General
-    hide screen main_room_menu
-    hide screen points
-    hide screen notes
-
-    #Filters
-    hide screen blktone
-    hide screen bld1
-
-    #Sounds
-    stop bg_sounds #Stops playing the fire SFX.
-
-    return
-
-
+# Hide all character images (not chibi)
 label hide_characters:
-
     hide screen hermione_main
     hide screen hermione_ass
     hide screen luna_main
     hide screen cho_chang
     hide screen astoria_main
     hide screen susan_main
-
     hide screen tonks_main
     hide screen snape_main
     hide screen genie_main
-
-    #Do not add transitions. Use one after return.
-
+    # Do not add transitions. Use one after return.
     return
 
+# Remove all displayables on layer 'screens'
+label hide_screens:
+    $ renpy.scene("screens")
+    return
 
+label stop_sound_effects:
+    stop bg_sounds fadeout 0.5
+    stop weather fadeout 0.5
+    return
 
-label room(room=None, hide_screens=True):
+label fireplace_sound:
+    if fire_in_fireplace:
+        play bg_sounds "sounds/fire02.mp3" fadeout 0.5 fadein 0.5 if_changed
+    else:
+        stop bg_sounds fadeout 0.5
+    return
+
+# Set the scene for a given room
+label room(room=None, hide_screens=True, stop_sound=True):
+
+    # Hide all screens (only room related screens are shown)
     if hide_screens:
-        call hide_all_screens
+        call hide_screens
+
+    # Stop sound effects (necessary when changing rooms)
+    if stop_sound:
+        call stop_sound_effects
 
     if room in ["main_room", "main"]:
         $ current_room = "main_room"
 
-        show screen weather
+        # Update sound effects
+        call weather_sound
+        call fireplace_sound
+
+        # Show main_room and (optional) objects
         show screen main_room
-        show screen main_room_overlay
         show screen chair_right
-        hide screen fireplace_fire
+        show screen fireplace
+
         if fire_in_fireplace:
             show screen fireplace_fire
-        show screen animation_feather
-        hide screen phoenix_food
+        else:
+            hide screen fireplace_fire
+
         if phoenix_is_fed:
             show screen phoenix_food
-        hide screen owl
+        else:
+            hide screen phoenix_food
+
         if letter_queue_list != [] and not owl_away:
             show screen owl
-        hide screen package
+        else:
+            hide screen owl
+
         if package_is_here:
             show screen package
+        else:
+            hide screen package
 
+        show screen genie
+
+        # User interface
         call house_points
-        show screen points
-
-        call gen_chibi("sit_behind_desk")
+        show screen ui_top_bar
 
     if room in ["weasley_store"]:
         $ current_room = "weasley_store"
@@ -176,26 +114,34 @@ label room(room=None, hide_screens=True):
     return
 
 
-
+# Return to main_room at resume point (after quests, before events)
+# Used to return from event sequences
 label main_room:
-    show screen blkfade
-
-    call room("main_room")
-
-    hide screen blkfade
+    call room("main_room", stop_sound=False)
     with d3
 
     call reset_menu_position
+    call music_block
 
     if daytime:
-        call play_music("day_theme")
-        pause.5
         jump day_resume
     else:
-        call play_music("night_theme")
-        pause.5
         jump night_resume
 
+
+# Return to main_room at menu point (after quests and events)
+# Used to return from main room interactions
+label main_room_menu:
+    call room("main_room", stop_sound=False)
+    with d3
+
+    call reset_menu_position
+    call music_block
+
+    if daytime:
+        jump day_main_menu
+    else:
+        jump night_main_menu
 
 
 label setup_fireplace_hangout(char=None):
@@ -503,7 +449,7 @@ label play_music(music=""):
                 pass
     return
 
-### MUSIC BLOCK ###
+# Play day/night theme
 label music_block:
     if daytime:
         call play_music("day_theme")
@@ -511,11 +457,8 @@ label music_block:
         call play_music("night_theme")
     return
 
-### YOU LUCK IMAGINATION ###
 label vague_idea:
-
     call nar(">You lack imagination for an idea of this caliber.")
-
     return
 
 label increase_house_points(house="Add house", points=0):

@@ -17,14 +17,17 @@ screen g_c_u():
 
 ###  GENIE'S CUM UNIVERSAL SCREEN ###
 screen g_c_c_u():
-    add g_c_c_u_pic at Position(xpos=genie_cum_chibi_xpos, ypos=genie_cum_chibi_ypos) #xpos=-65,ypos=5
+    add g_c_c_u_pic xpos genie_cum_chibi_xpos ypos genie_cum_chibi_ypos
     zorder 4
 
 
 screen genie(): #Sitting behind desk.
     tag genie_chibi
-    add "newanimation" at Position(xpos=370, ypos=336, xanchor="center", yanchor="center")
     zorder 1
+    if room_menu_active:
+        use genie_desk
+    else:
+        add "newanimation" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5
 
 
 screen rum_screen(): #Rummaging through the cumpboard.
@@ -32,7 +35,7 @@ screen rum_screen(): #Rummaging through the cumpboard.
     add "images/rooms/_objects_/cupboard/cupboard_open.png" xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
     
     if cupboard_deco:
-        add "images/rooms/_objects_/cupboard/cupboard_open" +str(cupboard_deco)+ ".png" at Position(xpos=cupboard_OBJ.xpos, ypos=cupboard_OBJ.ypos, xanchor="center", yanchor="center") #Pinup Girl
+        add "images/rooms/_objects_/cupboard/cupboard_open" +str(cupboard_deco)+ ".png"  xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5
     add "images/rooms/main_room/chair_left_with_shadow.png" xpos 332 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "images/rooms/main_room/desk_with_shadow.png" xpos 371 ypos 331 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "genie_rum_ani" xpos 160 ypos 110

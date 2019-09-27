@@ -1,82 +1,44 @@
+default room_menu_active = False
 
+# Main room menu screen (used to capture user interaction)
+screen main_room_menu():
+    tag room_menu
+    on "show" action SetVariable("room_menu_active", True)
+    on "hide" action SetVariable("room_menu_active", False)
 
-#Main Room Screen
-screen main_room():
+# Main room screen
+screen main_room(interact=True):
     tag room
+    zorder 0
+
+    # Hotkeys
+    if room_menu_active and day != 1 and not renpy.variant('android'):
+        use hotkeys_main
+    
+    use weather
+    
+    # Walls
     if daytime:
         add "images/rooms/_bg_/main_room_day.png" zoom 0.5
     else:
         add "images/rooms/_bg_/main_room_night.png" zoom 0.5
 
-    #Posters
+    # Poster
     if poster_OBJ.room_image:
         add poster_OBJ.get_room_image() xpos poster_OBJ.xpos ypos poster_OBJ.ypos xanchor 0.5 yanchor 0.5
 
+    # Trophy
     if trophy_OBJ.room_image:
         add trophy_OBJ.get_room_image() xpos trophy_OBJ.xpos ypos trophy_OBJ.ypos xanchor 0.5 yanchor 0.5
 
-    #Door
-    
-    if daytime:
-        add door_OBJ.get_room_image() xpos door_OBJ.xpos ypos door_OBJ.ypos xanchor 0.5 yanchor 0.5
-    else:
-        add door_night_OBJ.get_room_image() xpos door_night_OBJ.xpos ypos door_night_OBJ.ypos xanchor 0.5 yanchor 0.5
-
-    #Cupboard
-    add cupboard_OBJ.get_room_image() xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
-
-    #Fireplace #Fire gets added separately
-    add fireplace_OBJ.get_room_image() xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos xanchor 0.5 yanchor 0.5
-
-    #Candles
+    # Candles
     add candle_left_OBJ.get_room_image() xpos candle_left_OBJ.xpos ypos candle_left_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
     add candle_right_OBJ.get_room_image() xpos candle_right_OBJ.xpos ypos candle_right_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
     if not daytime:
         add "candle_fire_01" xpos candle_left_OBJ.xpos-110 ypos candle_left_OBJ.ypos-117
         add "candle_fire_02" xpos candle_right_OBJ.xpos-110 ypos candle_right_OBJ.ypos-117
 
-    #Phoenix Food & Feather gets added separately.
-    add phoenix_OBJ.get_room_image() xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5
-    
-    if letter_queue_list != [] and not owl_away:
-        add owl_OBJ.get_room_image() xpos owl_OBJ.xpos ypos owl_OBJ.ypos xanchor 0.5 yanchor 1.0
-
-    zorder 0
-
-
-#Main Room Overlay - (layer is on top of main_room_menu screen)
-screen main_room_overlay():
-    tag room_overlay_screen
-    zorder 3
-    #Decorations
-    #for i in deco_overlay_list:
-    #    add deco_overlay_list[i].get_room_image() xpos i.xpos ypos i.ypos xanchor 0.5 yanchor 0.5
-
-    # Phoenix deco
-    if phoenix_deco_OBJ.room_image:
-        add phoenix_deco_OBJ.get_room_image() xpos phoenix_deco_OBJ.xpos ypos phoenix_deco_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 410 ypos 75
-
-    #Fireplace
-    if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
-        use fireplace_glow
-
-    # Fireplace deco
-    if fireplace_deco_OBJ.room_image:
-        add fireplace_deco_OBJ.get_room_image() xpos fireplace_deco_OBJ.xpos ypos fireplace_deco_OBJ.ypos xanchor 0.5 yanchor 0.5
-
-    # Owl deco
-    if owl_deco_OBJ.room_image and renpy.get_screen("owl"):
-        add owl_deco_OBJ.get_room_image() xpos owl_deco_OBJ.xpos ypos owl_deco_OBJ.ypos xanchor 0.5 yanchor 1.0
-
-### Main Room Menu Screen ###
-screen main_room_menu():
-    tag room_menu
-    zorder 1
-    #Hotkeys
-    if day != 1 and not renpy.variant('android'):
-        use hotkeys_main
-
-    #Door
+    # Door
     imagebutton:
         focus_mask True
         xanchor "center"
@@ -97,8 +59,12 @@ screen main_room_menu():
             hovered SetVariable("tooltip", "Examine Door")
         unhovered SetVariable("tooltip", None)
         action [SetVariable("tooltip", None), Jump("door")]
+        sensitive room_menu_active
 
-    #Scrolls
+    # Cupboard
+    add cupboard_OBJ.get_room_image() xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
+
+    # Scrolls (interactive overlay)
     if renpy.variant('android'):
         imagemap:
             xpos cupboard_top_OBJ.xpos
@@ -108,9 +74,11 @@ screen main_room_menu():
             ground cupboard_top_OBJ.get_idle_image()
             if store_intro_done:
                 hover cupboard_top_OBJ.get_hover_image()
-                hotspot(77, 81, 70, 76) action [Hide("main_room_menu"), Jump("read_scroll_menu")]
+                hotspot (77, 81, 70, 76):
+                    action Jump("read_scroll_menu")
+                    sensitive room_menu_active
     else:
-        imagebutton: # CUPBOARD SCROLL
+        imagebutton:
             xpos cupboard_top_OBJ.xpos
             ypos cupboard_top_OBJ.ypos
             focus_mask True
@@ -121,9 +89,10 @@ screen main_room_menu():
                 hover cupboard_top_OBJ.get_hover_image()
                 hovered SetVariable("tooltip", "Scrolls")
                 unhovered SetVariable("tooltip", None)
-                action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("read_scroll_menu")]
+                action [SetVariable("tooltip", None), Jump("read_scroll_menu")]
+                sensitive room_menu_active
 
-    #Cupboard
+    # Cupboard (interactive overlay)
     if renpy.variant('android'):
         imagemap:
             xpos cupboard_OBJ.xpos
@@ -133,7 +102,9 @@ screen main_room_menu():
             ground cupboard_OBJ.get_idle_image()
             if not searched:
                 hover cupboard_OBJ.get_hover_image()
-                hotspot(73, 156, 72, 133) action [Hide("main_room_menu"), Jump("cupboard")]
+                hotspot (73, 156, 72, 133):
+                    action Jump("cupboard")
+                    sensitive room_menu_active
     else:
         imagebutton:
             xpos cupboard_OBJ.xpos
@@ -149,61 +120,11 @@ screen main_room_menu():
                 else:
                     hovered SetVariable("tooltip", "Examine Cupboard")
                 unhovered SetVariable("tooltip", None)
-                action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("cupboard")]
+                action [SetVariable("tooltip", None), Jump("cupboard")]
+                sensitive room_menu_active
 
-    #Mail
-    if package_is_here:
-        imagebutton: # THE PACKAGE
-            xpos package_OBJ.xpos
-            ypos package_OBJ.ypos
-            xanchor 0.5
-            yanchor 1.0
-            idle package_OBJ.get_idle_image()
-            hover package_OBJ.get_hover_image()
-            hovered SetVariable("tooltip", "Open package")
-            unhovered SetVariable("tooltip", None)
-            action [SetVariable("tooltip", None), Hide("main_room_menu"), Hide("package"), Jump("get_package")]
-
-    if letter_queue_list != [] and not owl_away:
-        imagebutton:
-            xpos owl_OBJ.xpos
-            ypos owl_OBJ.ypos
-            xanchor 0.5
-            yanchor 1.0
-            idle owl_OBJ.get_idle_image()
-            hover owl_OBJ.get_hover_image()
-            hovered SetVariable("tooltip", "Check mail\n{size=-4}"+num_to_word(len(letter_queue_list))+" new message(s){/size}")
-            unhovered SetVariable("tooltip", None)
-            action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("read_letter")]
-
-    #Genie
-    if renpy.variant('android'):
-        add "newanimation" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5
-        imagemap:
-            xpos 384
-            ypos 370
-            xanchor 0.5
-            yanchor 0.5
-            ground "images/rooms/main_room/desk_small_border.png"
-            hover yellowTint("images/rooms/main_room/desk_small_border.png")
-            hotspot(0, 10, 128, 160) action [Hide("main_room_menu"), Jump("desk")]
-    else:
-        imagebutton:
-            xpos 370
-            ypos 336
-            focus_mask True
-            xanchor 0.5
-            yanchor 0.5
-            idle "newanimation"
-            hover "newanimation_hover"
-            if desk_examined:
-                hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("tooltip", "Open desk")]
-            else:
-                hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("tooltip", "Examine Desk")]
-            unhovered [Hide("gui_tooltip"), SetVariable("tooltip", None)]
-            action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("desk")]
-
-    #Phoenix
+    #TODO Move phoenix to separate screen (check if usage needed in mirror stories)
+    # Phoenix
     imagebutton:
         xpos phoenix_OBJ.xpos
         ypos phoenix_OBJ.ypos
@@ -221,26 +142,162 @@ screen main_room_menu():
             else:
                 hovered SetVariable("tooltip", "Examine the bird")
             unhovered SetVariable("tooltip", None)
-            action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("phoenix")]
+            action [SetVariable("tooltip", None), Jump("phoenix")]
+            sensitive room_menu_active
 
-    #Fireplace
-    imagebutton:
-        xpos fireplace_OBJ.xpos
-        ypos fireplace_OBJ.ypos
-        focus_mask True
-        xanchor "center"
-        yanchor "center"
-        idle fireplace_OBJ.get_idle_image()
-        hover fireplace_OBJ.get_hover_image()
-        if fireplace_examined:
-            if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
-                hovered SetVariable("tooltip", "What's that glimmer?")
+    # Phoenix deco
+    if phoenix_deco_OBJ.room_image:
+        add phoenix_deco_OBJ.get_room_image() xpos phoenix_deco_OBJ.xpos ypos phoenix_deco_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 410 ypos 75
+
+    use phoenix_feather
+
+    # Decorations
+    # for i in deco_overlay_list:
+    #    add deco_overlay_list[i].get_room_image() xpos i.xpos ypos i.ypos xanchor 0.5 yanchor 0.5
+
+
+# Genie at desk
+screen genie_desk(interact=True):
+    tag genie_chibi # Uses same tag as chibi screens
+    if renpy.variant('android'):
+        add "newanimation" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5
+        imagemap:
+            xpos 384
+            ypos 370
+            xanchor 0.5
+            yanchor 0.5
+            ground "images/rooms/main_room/desk_small_border.png"
+            hover yellowTint("images/rooms/main_room/desk_small_border.png")
+            hotspot (0, 10, 128, 160):
+                action Jump("desk")
+                sensitive room_menu_active
+    else:
+        imagebutton:
+            xpos 370
+            ypos 336
+            focus_mask True
+            xanchor 0.5
+            yanchor 0.5
+            idle "newanimation"
+            hover "newanimation_hover"
+            if desk_examined:
+                hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("tooltip", "Open desk")]
             else:
-                if not fire_in_fireplace:
-                    hovered SetVariable("tooltip", "Light fire")
+                hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("tooltip", "Examine Desk")]
+            unhovered [Hide("gui_tooltip"), SetVariable("tooltip", None)]
+            action [SetVariable("tooltip", None), Jump("desk")]
+            sensitive room_menu_active
+
+# Phoenix
+screen phoenix_feather():
+    tag feather
+    add "feather" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5
+    zorder 2
+
+screen phoenix_food():
+    tag phoenix_food
+    add "images/rooms/_objects_/phoenix/food.png" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5
+    zorder 2
+
+# Fireplace
+screen fireplace(interact=True):
+    tag fireplace
+    zorder 1
+    if interact:
+        imagebutton:
+            xpos fireplace_OBJ.xpos
+            ypos fireplace_OBJ.ypos
+            focus_mask True
+            xanchor 0.5
+            yanchor 0.5
+            idle fireplace_OBJ.get_idle_image()
+            hover fireplace_OBJ.get_hover_image()
+            if fireplace_examined:
+                if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
+                    hovered SetVariable("tooltip", "What's that glimmer?")
                 else:
-                    hovered SetVariable("tooltip", "Extinguish fire")
-        else:
-            hovered SetVariable("tooltip", "Examine fireplace")
+                    if not fire_in_fireplace:
+                        hovered SetVariable("tooltip", "Light fire")
+                    else:
+                        hovered SetVariable("tooltip", "Extinguish fire")
+            else:
+                hovered SetVariable("tooltip", "Examine fireplace")
+            unhovered SetVariable("tooltip", None)
+            action [SetVariable("tooltip", None), Jump("fireplace")]
+            sensitive room_menu_active
+    else:
+        add fireplace_OBJ.get_room_image() xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
+
+    # Fireplace deco
+    if fireplace_deco_OBJ.room_image:
+        add fireplace_deco_OBJ.get_room_image() xpos fireplace_deco_OBJ.xpos ypos fireplace_deco_OBJ.ypos xanchor 0.5 yanchor 0.5
+
+    # Puzzle box appears in fireplace
+    if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
+        use fireplace_glow
+
+screen fireplace_fire():
+    tag fireplace_fire
+    zorder 2
+    add "fireplace_fire" xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos+25 xanchor 0.5 yanchor 0.5
+
+screen fireplace_glow():
+    tag fireplace_glow
+    zorder 3
+    add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.2
+
+# Furniture
+screen desk(xposistion=360): # Desk only
+    tag desk
+    zorder 2
+    add "images/rooms/main_room/desk_with_shadow.png" xpos xposistion ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
+
+screen dumbledore(): # Dumbledore and desk
+    tag dumbledore
+    add "images/rooms/main_room/dum.png" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5 zoom 0.5
+
+screen chair_left():
+    tag chair_left
+    zorder 0 # Show main_room first for correct order
+    add "images/rooms/main_room/chair_left_with_shadow.png" xpos 332 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+
+screen chair_right():
+    tag chair_right
+    zorder 0 # Show main_room first for correct order
+    add "images/rooms/main_room/chair_right.png" xpos 793 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+
+# Owl
+screen owl(interact=True):
+    tag owl
+    imagebutton:
+        xpos owl_OBJ.xpos
+        ypos owl_OBJ.ypos
+        xanchor 0.5
+        yanchor 1.0
+        idle owl_OBJ.get_idle_image()
+        hover owl_OBJ.get_hover_image()
+        hovered SetVariable("tooltip", "Check mail\n{size=-4}"+num_to_word(len(letter_queue_list))+" new message(s){/size}")
         unhovered SetVariable("tooltip", None)
-        action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("fireplace")]
+        action [SetVariable("tooltip", None), Jump("read_letter")]
+        sensitive room_menu_active
+    # add owl_OBJ.get_room_image() xpos owl_OBJ.xpos ypos owl_OBJ.ypos xanchor 0.5 yanchor 1.0
+
+    # Owl deco
+    if owl_deco_OBJ.room_image and renpy.get_screen("owl"):
+        add owl_deco_OBJ.get_room_image() xpos owl_deco_OBJ.xpos ypos owl_deco_OBJ.ypos xanchor 0.5 yanchor 1.0
+
+# Package
+screen package(interact=True):
+    tag package
+    imagebutton:
+        xpos package_OBJ.xpos
+        ypos package_OBJ.ypos
+        xanchor 0.5
+        yanchor 1.0
+        idle package_OBJ.get_idle_image()
+        hover package_OBJ.get_hover_image()
+        hovered SetVariable("tooltip", "Open package")
+        unhovered SetVariable("tooltip", None)
+        action [SetVariable("tooltip", None), Jump("get_package")]
+        sensitive room_menu_active
+    # add package_OBJ.get_room_image() xpos package_OBJ.xpos ypos package_OBJ.ypos xanchor 0.5 yanchor 1.0

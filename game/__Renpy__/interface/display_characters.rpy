@@ -101,7 +101,7 @@ label close_summon_characters:
     with fade
     pause.5
 
-    jump day_main_menu
+    jump main_room_menu
 
 label hide_summon_characters:
     hide screen summon_characters

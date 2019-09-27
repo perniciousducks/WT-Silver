@@ -1,8 +1,10 @@
 # Common logic for day/night cycle
 
-label common_start:
-    call hide_all_screens
+label common_start(set_daytime):
     show screen blkfade
+    with dissolve
+
+    $ daytime = set_daytime
 
     # Set interface color
     if not persistent.nightmode and daytime:
@@ -38,11 +40,7 @@ label common_start:
     call update_snape
     call update_genie
 
-    scene black
-
-    # Stop playing fire and weather sounds
-    stop bg_sounds
-    stop weather
+    #call stop_sound_effects
 
     # Play owl arrival sound once per day/night start
     if letter_queue_list != [] and not owl_away:
@@ -50,10 +48,10 @@ label common_start:
 
     $ show_weather()
 
-    call room("main_room", hide_screens=False) # Screens already get hidden above
+    call room("main_room", stop_sound=False)
 
     hide screen blkfade
-    with fade
+    with dissolve
     return
 
 label update_day_values:

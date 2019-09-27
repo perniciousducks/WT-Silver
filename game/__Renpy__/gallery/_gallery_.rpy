@@ -132,7 +132,7 @@ label open_gallery():
                 
     else:
         $ hide_transitions = False
-        jump day_main_menu
+        jump main_room_menu
         
     python:
         for i in xrange(outfits_displayed):

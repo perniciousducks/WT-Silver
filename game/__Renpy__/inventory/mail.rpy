@@ -300,14 +300,14 @@ label get_package:
                 renpy.block_rollback()
                 renpy.call("give_reward","You have received your ordered items:\n"+txt_gifts, "interface/icons/box_brown_"+str(random.randint(1, 4))+".png")
 
-
+    hide screen package
     hide screen blktone
     with d3
 
     $ package_is_here = False
     $ renpy.block_rollback()
 
-    call screen main_room_menu
+    jump main_room_menu
 
 init python:
 

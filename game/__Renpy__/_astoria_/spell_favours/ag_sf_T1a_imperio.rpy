@@ -1028,7 +1028,7 @@ label hornify_spell_1: #first level hornify spell
     ">With that, Astoria hops out of your office, leaving Susan alone to silently collect her clothes and leave, forgetting the whole incident only moments after closing the door."
     m "(I sort of feel bad for her...)"
     m "(No, there's boobs at stake, we have to forge on...)"
-    jump day_main_menu
+    jump main_room_menu
 
 
 
@@ -1204,7 +1204,7 @@ label hornify_spell_2: #second level hornify spell
     call ast_main("See ya, sir!","base","base","base","base")
     ">With that, Astoria turns and walk out the door on the way to tonks' office..."
     m "Hmmm..."
-    jump day_main_menu
+    jump main_room_menu
 
 
 
@@ -1443,7 +1443,7 @@ label hornify_spell_3: #third level hornify spell
     call ast_main("Ew... sir!","base","base","base","base")
     ">Astoria then rushes off to watch the flaming wreck that is Susan's social life..."
     m "..."
-    jump day_main_menu
+    jump main_room_menu
 
 
 

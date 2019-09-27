@@ -29,7 +29,7 @@ label start_dark_room_game:
     $ daytime = False
     $ interface_color = "gray"
 
-    call room(hide_screens=True)
+    call hide_screens
     pause 2
 
     centered "{size=+7}{color=#cbcbcb}A Dark Room{/color}{/size}"
@@ -87,6 +87,7 @@ label dark_room_main:
     else:
         $ weather_gen = renpy.random.randint(1, 6)
     $ show_weather()
+    call weather_sound
 
     pause 2
     centered "{size=+7}{color=#cbcbcb}Day [DRgame.day]{/color}{/size}"

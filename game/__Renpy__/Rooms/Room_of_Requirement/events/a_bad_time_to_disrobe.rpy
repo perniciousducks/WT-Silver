@@ -179,7 +179,7 @@ label a_bad_time_to_disrobe_part_1:
         $ interface_color = "gold"
     else:
         $ interface_color = "gray"
-    call room(hide_screens=True)
+    call hide_screens
     call reset_hermione
     call h_unequip_temp_outfit
     jump enter_room_of_req
@@ -346,7 +346,7 @@ label a_bad_time_to_disrobe_part_2:
     call blkfade
     centered "{size=+10}{color=#cbcbcb}The end{/color}{/size}"
 
-    call room(hide_screens=True)
+    call hide_screens
     $ daytime = temp_time
     if daytime:
         $ interface_color = "gold"

@@ -3,7 +3,7 @@ label door:
         if not door_examined:
             $ door_examined = True
             jump examine_door
-        jump day_main_menu
+        jump main_room_menu
 
     call update_character_map_locations
 
@@ -18,9 +18,9 @@ label door:
         # if hermione_busy:
             # if daytime:
                 # call nar(">Hermione is taking classes.")
-                # jump day_main_menu
+                # jump main_room_menu
             # call nar(">Hermione is already asleep.")
-            # jump night_main_menu
+            # jump main_room_menu
                 
         # if her_map_location == "forest":
             # jump hermione_map_BJ
@@ -32,9 +32,9 @@ label door:
         # if luna_busy:
             # if daytime:
                 # call nar(">Luna is taking classes.")
-                # jump day_main_menu
+                # jump main_room_menu
             # call nar(">Luna is already asleep.")
-            # jump night_main_menu
+            # jump main_room_menu
         # if not luna_reverted:
             # call play_music("dark_fog") # LUNA'S THEME (placeholder probably)
         # else:
@@ -47,9 +47,9 @@ label door:
         # if astoria_busy:
             # if daytime:
                 # call nar(">Astoria is taking classes.")
-                # jump day_main_menu
+                # jump main_room_menu
             # call nar(">Astoria is already asleep.")
-            # jump night_main_menu
+            # jump main_room_menu
         # call play_music("chipper_doodle")
         # jump summon_astoria
 
@@ -59,9 +59,9 @@ label door:
         # if susan_busy:
             # if daytime:
                 # call nar(">Susan is taking classes.")
-                # jump day_main_menu
+                # jump main_room_menu
             # call nar(">Susan is already asleep.")
-            # jump night_main_menu
+            # jump main_room_menu
         # jump summon_susan
 
 
@@ -70,9 +70,9 @@ label door:
         # if cho_busy:
             # if daytime:
                 # call nar(">Cho is taking classes.")
-                # jump day_main_menu
+                # jump main_room_menu
             # call nar(">Cho is already asleep.")
-            # jump night_main_menu
+            # jump main_room_menu
         # call play_music("cho_theme")
         # jump summon_cho
 
@@ -82,8 +82,8 @@ label door:
         # if snape_busy:
             # call nar(">Professor Snape is unavailable.")
             # if daytime:
-                # jump day_main_menu
-            # jump night_main_menu
+                # jump main_room_menu
+            # jump main_room_menu
         # call play_music("dark_fog") # SNAPE'S THEME
         # jump summon_snape
 
@@ -93,13 +93,13 @@ label door:
         # if tonks_busy:
             # call nar(">Tonks is unavailable.")
             # if daytime:
-                # jump day_main_menu
-            # jump night_main_menu
+                # jump main_room_menu
+            # jump main_room_menu
         # jump summon_tonks
 
     # #Close
     # else:
-        # jump day_main_menu
+        # jump main_room_menu
 
     # $ renpy.jump(_return)
 
@@ -161,4 +161,4 @@ label examine_door:
     call gen_chibi("sit_behind_desk")
     with d3
 
-    jump day_main_menu
+    jump main_room_menu

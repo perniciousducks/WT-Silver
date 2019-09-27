@@ -95,7 +95,7 @@ label maid_responses:
     $ hermione_busy = True
     $ current_job = 0
 
-    jump night_main_menu
+    jump main_room_menu
 
 
 
@@ -164,7 +164,7 @@ label barmaid_responses:
 
     $ hermione_busy = True
     $ current_job = 0
-    jump night_main_menu
+    jump main_room_menu
 
 
 
@@ -313,7 +313,7 @@ label gryffindor_cheer_responses:
 
     $ hermione_busy = True
     $ current_job = 0
-    jump night_main_menu
+    jump main_room_menu
 
 
 
@@ -458,7 +458,7 @@ label slytherin_cheer_responses:
     $ hermione_busy = True
     $ current_job = 0
     $ uni_sperm = False
-    jump night_main_menu
+    jump main_room_menu
 
 
 #Send Hermione to work, promoting the card game.
@@ -547,7 +547,7 @@ label hermione_helping_selling_cards:
         m "Well done [hermione_name], 15 points to Gryffindor."
         $ gryffindor += 15
         call h_unequip_temp_outfit()
-        jump night_main_menu
+        jump main_room_menu
 
     if random_choice == 1:
         call her_main("")
@@ -680,7 +680,7 @@ label hermione_helping_selling_cards:
         $ gryffindor += 30
 
     call h_unequip_temp_outfit()
-    jump night_main_menu
+    jump main_room_menu
 
 label inn_menu:
 

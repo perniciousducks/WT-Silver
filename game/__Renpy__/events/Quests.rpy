@@ -267,12 +267,7 @@ label quests:
 
     # All quest events should somehow end with a jump to the main room day/night cycle
     # If no quest event is triggered, resume normally from the main room
-    if daytime:
-        call play_music("day_theme")
-        jump day_resume
-    else:
-        call play_music("night_theme")
-        jump night_resume
+    jump main_room
 
 
 ### Quests flags ###

@@ -261,13 +261,14 @@ label achievement_menu(xx=150, yy=90):
         $ current_item = None
     else:
         $ hide_transitions = False
-        jump day_main_menu
+        jump main_room_menu
 
     jump achievement_menu_after_init
 
 screen achievement_menu(xx, yy):
     tag achievement_menu
     zorder 4
+    modal True
 
     use top_bar_close_button
 

@@ -31,6 +31,7 @@ init python:
         # (snowy)               w_g >= 5 + s_g == 1
         # (blizzard)            w_g >= 5 + s_g == 1 + l_g == 1
 
+    #TODO Rename: show_weather updates the weather state, doesn't show anything
     def show_weather():
         global weather_animations
         global weather_gen
@@ -53,8 +54,6 @@ init python:
             if snow_gen == 1 and lightning_gen == 1 and day >= 30:
                 blizzard = True
                 weather_animations.append("blizzard")
-                renpy.music.play("sounds/blizzard.ogg", "weather", fadeout=1.0, fadein=1.0)
-
             # Snow
             elif snow_gen == 1 and day >= 30:
                 snowing = True
@@ -69,7 +68,15 @@ init python:
             else:
                 raining = True
                 weather_animations.append("rain")
-                renpy.music.play("sounds/rain.mp3", "weather", fadeout=1.0, fadein=1.0)
+
+label weather_sound:
+    if blizzard:
+        play weather "sounds/blizzard.ogg" fadeout 0.5 fadein 0.5 if_changed
+    elif raining:
+        play weather "sounds/rain.mp3" fadeout 0.5 fadein 0.5 if_changed
+    else:
+        stop weather fadeout 0.5
+    return
 
 # Transforms
 transform cloud_move: #http://www.renpy.org/wiki/atl

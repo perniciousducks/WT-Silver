@@ -125,7 +125,6 @@ label prev_at_hogwarts:
     $ weather_gen = temp_weather
     $ show_weather()
 
-    call room(hide_screens=True)
     jump enter_room_of_req
 
 
@@ -481,7 +480,6 @@ label a_spaced_out_conversation:
         $ interface_color = "gold"
     else:
         $ interface_color = "gray"
-    call room(hide_screens=True)
     $ fire_in_fireplace = False
     hide screen fireplace_fire
     hide screen with_snape

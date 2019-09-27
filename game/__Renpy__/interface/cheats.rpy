@@ -294,4 +294,4 @@ label cheats:
                     jump cheats
 
         "-Never mind-":
-            jump day_main_menu
+            jump main_room_menu

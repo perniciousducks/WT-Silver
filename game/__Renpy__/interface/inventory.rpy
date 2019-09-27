@@ -97,13 +97,14 @@ label inventory_menu(xx=150, yy=90):
         $ current_item = None
     else:
         $ hide_transitions = False
-        jump day_main_menu
+        jump main_room_menu
 
     jump inventory_menu_after_init
 
 screen inventory_menu(xx, yy):
     tag inventory_menu
     zorder 4
+    modal True
 
     use top_bar_close_button
 

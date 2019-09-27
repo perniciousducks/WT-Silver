@@ -12,7 +12,7 @@ label fireplace:
         hide screen chair_left #Empty chair near the desk.
         hide screen desk
         with Dissolve(0.5)
-        jump day_main_menu
+        jump main_room_menu
 
     if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
         hide screen genie
@@ -56,4 +56,4 @@ label fireplace:
             $ stat_fireplace_counter += 1
             show screen fireplace_fire
 
-    jump day_main_menu
+    jump main_room_menu

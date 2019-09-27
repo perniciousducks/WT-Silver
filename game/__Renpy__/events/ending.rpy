@@ -461,7 +461,6 @@ label ball_ending_E2:
     hide screen notes
     hide screen done_reading
     hide screen done_reading_near_fire
-    hide screen main_room_menu
     with fade
     pause.1
 
@@ -2971,6 +2970,7 @@ label ball_ending_E3:
 
 
     $ show_weather()
+    call weather_sound
     show screen weather
 
     show screen main_room

@@ -4,7 +4,6 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
     show screen blkfade
     with d5
 
-    call room(hide_screens=True)
     call room("main_room")
     call reset_menu_position
 
@@ -31,7 +30,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         "":
             pass
         "Go back":
-            call room(hide_screens=True)
+            call hide_screens
             #Reset
             $ daytime = temp_time
             if daytime:

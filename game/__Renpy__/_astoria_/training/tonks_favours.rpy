@@ -22,7 +22,7 @@ label astoria_tonks_0: #First time astoria sent to tonks.
     m "That's it? She didn't ask you to do anything weird?"
     call ast_main("Not really...", "annoyed", "base","base", "R")
     call ast_main("Although she did have this look in her eyes... It was almost like she wanted to eat me...","open","narrow","worried","mid")
-    call ast_main("She's not a werewolf is she, [ast_genie_name]?","open","wide","wide","wide")
+    call ast_main("She's not a werewolf is she, [ast_genie_name]?","open","base","worried","mid")
     m "Holy shit! Are werewolves real here?"
     call ast_main("What do you mean here? Of course werewolves are real... We all learn that as children.","open","closed","base","mid")
     m "Just testing..."
@@ -30,17 +30,17 @@ label astoria_tonks_0: #First time astoria sent to tonks.
     m "(I hope...)"
     call ast_main("She better not be, [ast_genie_name]!", "upset","base","worried","down")
     m "I'm sure you'll get used to her."
-    call ast_main("Get used to her????","open","wide","wide","mid")
+    call ast_main("Get used to her????","open","base","worried","mid")
     call ast_main("I don't have to see her again do I?", "upset","base","worried","down")
     m "Well... If you want to keep learning new spells you might have to..."
-    call ast_main("*hmph*-- you haven't even taught me any yet!","clench","angry","angry","mid")
-    call ast_main("They're probably not even fun...", "annoyed", "angry","angry", "R")
+    call ast_main("*hmph*-- you haven't even taught me any yet!","clench","narrow","angry","mid")
+    call ast_main("They're probably not even fun...", "annoyed", "narrow","angry", "R")
 
     if not snape_gave_spellbook:
         m "(Right. I still need that spellbook.)"
         m "Next time, [astoria_name]."
         m "I've got... uhm-... I've got stuff to take care of, yes."
-        call ast_main("*I don't believe that one bit...", "annoyed", "angry","angry", "R")
+        call ast_main("*I don't believe that one bit...", "annoyed", "narrow","angry", "R")
     else:
         m "Why don't you come over here then and we can start reading over the first one."
         call ast_main("alright...","grin","base","base","mid")
@@ -53,7 +53,7 @@ label astoria_tonks_0: #First time astoria sent to tonks.
 label astoria_tonks_1:
     call play_music("fun")
     call play_sound("door")
-    call ast_main("","clench","angry","angry","mid",xpos="right",ypos="base")
+    call ast_main("","clench","narrow","angry","mid",xpos="right",ypos="base")
     pause.5
 
     call nar(">Astoria enters your office, a sullen look painted over her face.")
@@ -64,7 +64,7 @@ label astoria_tonks_1:
     call ast_main("She called my uniform conservative!", "upset","narrow","base","down")
     call ast_main("How can a uniform even have political beliefs?", "annoyed", "base","base", "R")
     call ast_main("Let alone conservative!","open","base","worried","down")
-    call ast_main("She's probably one of those loonies who complains on the--", "annoyed", "angry","angry", "L")
+    call ast_main("She's probably one of those loonies who complains on the--", "annoyed", "narrow","angry", "L")
     m "That's not what conservative means."
     call ast_main("Yes it is! I read it--","scream","closed","base","mid")
     m "It means she thinks your uniform hides too much skin..."
@@ -76,7 +76,7 @@ label astoria_tonks_1:
     call ast_main("Well first we got to her office.","open","base","base","mid")
     call ast_main("We were just chatting a bit.","open","base","base","R")
     call ast_main("About Candy, pets, school stuff, and if there are any boys I liked...", "annoyed", "base","base", "mid")
-    call ast_main("She even showed me a secret passage from here to to the kitchens I didn't even know of!","grin","angry","angry","mid")
+    call ast_main("She even showed me a secret passage from here to to the kitchens I didn't even know of!","grin","narrow","angry","mid")
     call ast_main("Anyways, when we got there, Ginny Weasley suddenly spurted out of her office!","upset","base","worried","down")
     m "(Ginny Weasley? Haven't I heard that name before?)"
     m "(Is that the Granger girl's Lesbo friend? I can't remember...)"
@@ -86,17 +86,17 @@ label astoria_tonks_1:
     call ast_main("And who I cast it on...","open","base","base","R")
     call ast_main("But I don't think she was very interested...","smile","base","base","down")
     call ast_main("She was more excited about my uniform.","upset","base","base","mid")
-    call ast_main("She said she'd just found out that as a teacher, she was allowed to choose uniforms for her students.", "annoyed", "angry","angry", "R")
+    call ast_main("She said she'd just found out that as a teacher, she was allowed to choose uniforms for her students.", "annoyed", "narrow","angry", "R")
     m "(We can do that?... Did that Granger lie to me?!?)"
     call ast_main("And that she wanted to make some changes to my uniform because it was too conservative!","upset","ahegao","ahegao","ahegao")
-    call ast_main("I told her I don't associate with any political party and ran out of there!","scream","angry","angry","R")
+    call ast_main("I told her I don't associate with any political party and ran out of there!","scream","narrow","angry","R")
     call ast_main("But if she just meant my vest was too thick I guess that's not too bad...", "upset","narrow","narrow","down")
     m "(I'm sure that's what she meant...)"
     call ast_main("Do I have to go back there sir?","upset","base","worried","mid")
     m "Only if you want to keep casting new spells..."
     call ast_main("Ugh...", "upset","ahegao","ahegao","ahegao")
-    call ast_main("Fine...", "annoyed", "angry","angry", "L")
-    call ast_main("Just make sure she keeps politics out of it!", "annoyed", "angry","angry", "mid")
+    call ast_main("Fine...", "annoyed", "narrow","angry", "L")
+    call ast_main("Just make sure she keeps politics out of it!", "annoyed", "narrow","angry", "mid")
     m "Will do..."
     call ast_main("Good! Now about those new spells...", "annoyed", "base","base", "R")
     m "We can start reading one now if you want."
@@ -116,13 +116,13 @@ label astoria_tonks_2:
     call nar(">Astoria happily walks into your office, humming a tune as she closes the door.")
     call ast_main("Hey, [ast_genie_name]!","grin","happyCl","base","mid")
     m "Hello, [astoria_name]... You seem chipper today."
-    call ast_main("Guess what?","grin","angry","angry","mid")
+    call ast_main("Guess what?","grin","narrow","angry","mid")
     m "What's that?"
-    call ast_main("Tonks wants me to be a model!","smile","angry","angry","down",cheeks="blush")
+    call ast_main("Tonks wants me to be a model!","smile","narrow","angry","down",cheeks="blush")
     m "A model?"
     call ast_main("Uh huh! Did you know she's actually a costume designer in her spare time?","open","base","base","mid")
     m "I did not..."
-    call ast_main("Well she is! And she thinks I've got what it takes to be a model!","grin","angry","angry","mid")
+    call ast_main("Well she is! And she thinks I've got what it takes to be a model!","grin","narrow","angry","mid")
     m "Really..."
     call ast_main("Yep! She even spent all day taking my measurements so she could start working on some special outfits for me!","grin","happyCl","base","mid")
     call ast_main("Plus she even said she'd start working on a new, cooler version of my uniform!","smile","base","base","mid")
@@ -131,8 +131,8 @@ label astoria_tonks_2:
     m "Sure is."
     call ast_main("And to think I thought she'd do something nasty...","open","base","base","R")
     m "I wouldn't put that past her just yet..."
-    call ast_main("Pfft, you're one to talk old man!", "annoyed", "angry","angry", "mid")
-    call ast_main("I bet you spent all day thinking about what we're going to do to Susan next didn't you?","grin","angry","angry","mid")
+    call ast_main("Pfft, you're one to talk old man!", "annoyed", "narrow","angry", "mid")
+    call ast_main("I bet you spent all day thinking about what we're going to do to Susan next didn't you?","grin","narrow","angry","mid")
     m "The thought might have crossed my mind..."
     call ast_main("Well if you wanna get to that we have to learn the new spell first, [ast_genie_name]!","open","base","base","L")
     call ast_main("Speaking of which...", "annoyed", "base","base", "R")
@@ -160,7 +160,7 @@ label astoria_tonks_3:
     call ast_main("All you need to do is sit on your bum and tell me how great I look!","open","closed","base","mid")
     call ast_main("Do you think you can manage that, [ast_genie_name]?","upset","narrow","narrow","mid")
     m "I will try..."
-    call ast_main("Great! Now lets get started!","grin","angry","angry","mid")
+    call ast_main("Great! Now lets get started!","grin","narrow","angry","mid")
 
     call popup("You can now access Susan & Astoria's wardrobe and change their appearance!", "Congratulations!", "interface/icons/head/head_astoria_2.png")
 
@@ -303,7 +303,7 @@ label astoria_tonks_random:
         m "So... how was your day?"
         call ast_main("It was amazing, [ast_genie_name]!!!","scream","wide","wide","wide")
         call ast_main("Tonks showed me her creature book! All the magical creatures she's encountered over her years as an Auror!","open","base","base","mid")
-        call ast_main("A giant, a werewolf, even a vampire!","grin","angry","angry","mid")
+        call ast_main("A giant, a werewolf, even a vampire!","grin","narrow","angry","mid")
         call ast_main("She's sooooo cool, [ast_genie_name]! The best teacher we've ever had here at this lame school!","grin","happyCl","base","mid")
         m "I'm glad to hear that."
         m "Want to cast some spells?"
@@ -313,22 +313,22 @@ label astoria_tonks_random:
     if random_number == 3:
         #call play_music("fun")
         call play_sound("door")
-        call ast_main("", "annoyed", "angry","angry", "R",xpos="right",ypos="base")
+        call ast_main("", "annoyed", "narrow","angry", "R",xpos="right",ypos="base")
         pause.8
 
         call ast_main("I hate her, [ast_genie_name]!","scream","closed","angry","mid")
         m "Tonks? Last time you said you liked her..."
-        call ast_main("That was before she wanted me to clean up her whole staffroom!","scream","angry","angry","mid")
-        call ast_main("Not to mention the horrible outfit she made me wear.","clench","angry","angry","R")
+        call ast_main("That was before she wanted me to clean up her whole staffroom!","scream","narrow","angry","mid")
+        call ast_main("Not to mention the horrible outfit she made me wear.","clench","narrow","angry","R")
         m "Wait, what outfit?"
-        call ast_main("I think she called it a maiden outfit, or something.", "annoyed", "angry","angry", "L")
-        call ast_main("I looked so stupid in it...", "annoyed", "angry","angry", "down")
+        call ast_main("I think she called it a maiden outfit, or something.", "annoyed", "narrow","angry", "L")
+        call ast_main("I looked so stupid in it...", "annoyed", "narrow","angry", "down")
         if astoria_tonks_3_completed:
             call ast_main("She said if I really wanted to be a model, I'll need to wear whatever I'm told to wear.","open","closed","base","mid")
             call ast_main("Even if it meant wearing nothing at all, [ast_genie_name]! Can you believe that?!","scream","wide","wide","wide")
         m "Hmm..."
         g9 "I would love to see you in that outfit too!"
-        call ast_main("Not a chance!","clench","angry","angry","mid")
+        call ast_main("Not a chance!","clench","narrow","angry","mid")
         call ast_main("Good night, [ast_genie_name]!","open","closed","base","mid")
         m "Wait, don't you want to--"
         hide screen astoria_main

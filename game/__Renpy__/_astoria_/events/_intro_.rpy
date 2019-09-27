@@ -250,7 +250,7 @@ label astoria_intro_E1:
     g9 "I wish I could have been there to stop it!"
     call ton_main("Of course you do...","open","closed","base","mid")
     call ton_main("That's sadly all the information I can share...","upset","base","worried","down")
-    call ton_main("Nobody that stood with her saw who might have cursed her...","open","base","worried","mid")
+    call ton_main("Nobody there saw who might have cursed her...","open","base","worried","mid")
 
     m "Should we get some help finding them?"
     call ton_main("*Hmmm*... That wouldn't be such a bad idea.","base","base","base","R")
@@ -497,7 +497,7 @@ label astoria_intro_E3:
     m "(Oh, you have no idea...)"
 
     call her_main("What's going to be her punishment, Sir?","grin","angry")
-    call ast_main("Punishment? I didn't do anything!", "annoyed", "wide","wide", "wide")
+    call ast_main("Punishment? I didn't do anything!","clench","base","worried","mid")
     call her_main("You know very well what you did!","angry","angryCl")
     call her_main("Sir, I overheard her boasting about it in the library - to a group of \"Slytherins.\"","annoyed","concerned")
     call her_main("By the sounds of it, she used Imperio to control another student!","annoyed","base")
@@ -528,20 +528,20 @@ label astoria_intro_E3:
     m "That is of no concern to you."
     #m "That's none of your concern." - either one works, pick your favourite
     her "Yes it is! And I demand to be rewarded!"
-    her "Given that I was the one who caught her, I think it's only fair!"
+    call her_main("Given that I was the one who caught her, I think it's only fair!","clench")
 
     m "(...)"
     menu:
         "\"Not now, Miss Granger...\"":
             m "We'll talk about your reward later..."
-            her "But!"
+            call her_main("But!", "open", "angry")
             m "No butts..." #is this deliberate?
             call her_main("*hmph*","annoyed","angryL")
             call her_main("Fine...","open","angryCl")
             $ her_mood += 12
 
         "\"How about some house points instead?\"":
-            her "*Hmm*..."
+            call her_main("*Hmm*...", "annoyed", "angryL")
             her "How many house points?"
 
             menu:
@@ -556,11 +556,11 @@ label astoria_intro_E3:
 
                 "\"You'll get 20.\"":
                     her "..."
-                    her "I suppose that's fair."
+                    call her_main("I suppose that's fair.", "annoyed", "base")
                     $ her_mood = 0
                     $ gryffindor += 20
 
-    her "In a few days, everyone at Hogwarts will know what happened to her..."
+    call her_main("In a few days, everyone at Hogwarts will know what happened to her...", "grin", "frown")
     her "When she's sent to Azkaban!"
     m "Nobody's going anywhere, except for you, Miss Granger..."
 
@@ -570,14 +570,14 @@ label astoria_intro_E3:
         m "You may leave..."
 
     her "..."
-    ast "*cough*... mudblood..." # Small text
-    her "*Tzzzs!*..."
+    ast "*cough*... {size=-4}mudblood...{/size}"
+    call her_main("*Tzzzs!*...", "annoyed")
     call her_main("I'll go back to class then...","annoyed","angryL")
     her "Good day, Professor."
 
     call her_walk(action="leave", speed=2.5)
 
-    ast "..."
+    call ast_main("...", "annoyed", "base","worried", "L")
     m "..."
 
     if d_flag_01:
@@ -642,18 +642,14 @@ label astoria_intro_E3:
     with d3
     pause.5
 
-    ton "Snape. How good to see you!"
-    sna "Save your compliments for someone else... I'm in a bit of a hurry."
+    call ton_main("Snape. How good to see you!", xpos="base")
+    call sna_main("Save your compliments for someone else... I'm in a bit of a hurry.", xpos="right", flip=True)
     ton "Still mad at me for taking your post?"
     ton "I'd be willing to compensate you for it, you know..."
-    sna "..." # Blush
+    call sna_main("...", "snape_12", flip=True) # Blush (14, 12, 18, 19)
 
-    menu: #what's the point of having a menu here, it doesn't change anything
-        m "..."
-        "-Cough-":
-            m "*Ahem*..."
-        "-...-":
-            pass
+    m "..."
+    m "*Ahem*..."
 
     sna "Would you mind?"
     ton "Sure...{image=textheart}"
@@ -669,21 +665,22 @@ label astoria_intro_E3:
     call ton_walk("desk","base", speed=2.8)
     pause.2
 
-    ton "Hello, Professor."
-    ton "Astoria? What are you doing here?" # horny
+    call ton_main("Hello, Professor.", xpos="mid")
+    call ast_main("", xpos="close")
+    call ton_main("Astoria? What are you doing here?", "horny", "base", "raised", flip=True)
     ton "You didn't cause any mischief, I hope."
-    ast "Of course not."
-    call ton_main("Wait, is she the one who's cursed Susan?","open","base","raised","L")
+    call ast_main("Of course not.")
+    call ton_main("Wait, is she the one who's cursed Susan?","open","base","raised","L", flip=False)
     m "Yep."
     ast "..."
     call ton_main("(Oh shit!)","open","base","raised","L")
 
     call ast_main("I'm really sorry! I promise I won't ever cast it again!","clench","closed","worried","mid")
-    call ton_main("Really? It was you who cast the spell?","open","base","worried","L")
+    call ton_main("Really? It was you who cast the spell?","open","base","worried","L", flip=True)
     m "..."
     call ton_main("It couldn't possibly have been someone as cute as you!","open","base","wide","L")
     ast "..." # Embarrassed, stares down.
-    call ast_main("Please don't send me to Azkaban!","scream","wide","wide","wide")
+    call ast_main("Please don't send me to Azkaban!","scream","base","worried","mid")
     call ton_main("Don't worry, It won't come to that...","base","base","base","L")
     call ton_main("The ministry isn't going to lock away such a cute little thing like yourself...","open","base","base","mid")
     call ton_main("{size=+2}Over a little harmless fun.{/size} {image=textheart}","horny","base","wide","L")

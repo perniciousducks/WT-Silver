@@ -791,17 +791,17 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("Probably almost as ready as you are to see me use it, Sir!","smile","narrow","angry","mid")
     m "Well if it's half as exciting as what the name suggests..."
     call ast_main("Then we'll have Susan begging for your dirty old cock in no time!","grin","narrow","angry","mid")
-    call ast_main("Maybe I should get a magical photo of her covered in cum!","smile","wide","wide","mid")
-    call ast_main("Imagine that in the school paper!","grin","angry","angry","mid")
+    call ast_main("Maybe I should get a magical photo of her covered in cum!","smile","base","worried","mid")
+    call ast_main("Imagine that in the school paper!","grin","narrow","angry","mid")
     m "Magic photos?"
-    call ast_main("Haven't you ever read a newspaper, sir? I thought that's all old people like you did!","upset","angry","angry","mid")
-    call ast_main("I wonder if I could take it just as you shoot it all over her...","smile","wide","wide","L")
+    call ast_main("Haven't you ever read a newspaper, sir? I thought that's all old people like you did!","upset","narrow","angry","mid")
+    call ast_main("I wonder if I could take it just as you shoot it all over her...","smile","base","worried","L")
     call ast_main("Imagine that for a front page scoop!","grin","narrow","narrow","mid")
     m "I'm not sure they'd run that story some how..."
-    call ast_main("You're the headmaster aren't you, sir? Make them run it!","smile","angry","angry","mid")
+    call ast_main("You're the headmaster aren't you, sir? Make them run it!","smile","narrow","angry","mid")
     m "Let's just focus on your magic for the moment, leave the journalism for later."
-    call ast_main("Hmph!", "annoyed", "angry","angry", "R")
-    call ast_main("If you want me to focus on magic then bring those boobs on legs up here so I have someone to practice on!", "annoyed", "angry","angry", "mid")
+    call ast_main("Hmph!", "annoyed", "narrow","angry", "R")
+    call ast_main("If you want me to focus on magic then bring those boobs on legs up here so I have someone to practice on!", "annoyed", "narrow","angry", "mid")
     m "Couldn't have said it better myself..."
     call ast_main("Hang on, wait!","smile","base","narrow","mid")
     ">Astoria runs around your desk and hops up on your lap..."
@@ -825,7 +825,7 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("IMPERIO!","scream","closed","angry","mid")
     ">With a puff of golden smoke Astoria's wand goes off, entrancing the poor redhead once more..."
     m "Hey, Isn't that the old spell?"
-    call ast_main("Of course it is sir! Can't you hear things at all?","pout","angry","angry","R")
+    call ast_main("Of course it is sir! Can't you hear things at all?","pout","narrow","angry","R")
     call ast_main("I cast it because I wanna change some stuff about bessy here.","smile","angry","narrow","mid")
     call ast_main("I think she can still cast spells at us if she wants...", "annoyed", "narrow","narrow", "mid")
     call ast_main("Plus I wanna be able to boss her around in class!","grin","happyCl","base","mid")
@@ -834,12 +834,12 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("From now on, you have to do whatever I say, whenever I say, OK?","open","narrow","narrow","mid")
     call sus_main("Yes...","open","base","worried","empty")
     call ast_main("Awesome!","grin","happyCl","base","mid")
-    call ast_main("And you can't ever cast a spell on me or the headmaster!","open","angry","angry","mid")
+    call ast_main("And you can't ever cast a spell on me or the headmaster!","open","narrow","angry","mid")
     call sus_main("Yes...","open","base","worried","empty")
     call ast_main("And you aren't allowed to play with yourself unless I say!","open","closed","angry","mid")
     call sus_main("Yes...","open","base","worried","empty")
     m "What was that for?"
-    call ast_main("Can you imagine how much a big boobed bimbo like Bessy here probably plays with herself?", "upset","angry","angry","R")
+    call ast_main("Can you imagine how much a big boobed bimbo like Bessy here probably plays with herself?", "upset","narrow","angry","R")
     call ast_main("I'm just doing her a favour by giving her some more free time...","smile","narrow","narrow","mid")
     m "..."
     call ast_main("OK, all done, you can go back to normal now Susy!","open","happyCl","base","mid")
@@ -850,10 +850,10 @@ label hornify_spell_1: #first level hornify spell
     m "Ugh... th-that's right..."
     call sus_main("Ok... so what's this experiment you needed me to help with?","upset","narrow","worried","mid")
     call ast_main("The headmaster and I want to test the effects of a new spell I just learned!","grin","narrow","narrow","mid")
-    call ast_main("And we needed someone to cast it on...","grin","angry","angry","angry")
+    call ast_main("And we needed someone to cast it on...","grin","narrow","angry","mid")
     call sus_main("What? I-I'm not so sure about that... What does it do?","open","suspicious","worried","wide")
     call ast_main("We're not really sure... All we know is that I have to target it somewhere on your body...","smile","angry","worried","mid")
-    call ast_main("Guess where?","grin","angry","angry","angry")
+    call ast_main("Guess where?","grin","narrow","angry","mid")
     call sus_main("You don't mean...","open","wide","worried","wide")
     call sus_main("I don't think I want to help with this experiment Dumbledore! I'm going to leave now...","open","worriedCl","worried","mid",flip=True)
     ">Susan turns to leave, but is compelled by Astoria's previous imperio to be unable to leave until excused..."
@@ -862,12 +862,12 @@ label hornify_spell_1: #first level hornify spell
     call sus_main("...","upset","narrow","worried","empty")
     ">Susan begrudgingly walks back in front of your desk, sullenly standing before you and Astoria."
     call sus_main("Whatever you two have done, my aunt-","scream","closed","angry","mid")
-    call ast_main("Shhh!","clench","angry","angry","angry")
+    call ast_main("Shhh!","clench","narrow","angry","mid")
     call sus_main("...","upset","narrow","worried","empty")
     call ast_main("That's better, now I can focus...","pout","narrow","base","L")
     call ast_main("ready sir?","smile","happyCl","base","mid")
     m "Ready as ever, [astoria_name]..."
-    call ast_main("HORNIFY BOOBS!","scream","angry","angry","angry")
+    call ast_main("HORNIFY BOOBS!","scream","narrow","angry","mid")
     ">With that, a thin bolt of pink electricity jumps from the end of Astoria's wand onto Susan's breasts before fading away into them..."
     call sus_main("!!!","open_tongue","wide","worried","empty")
     call sus_main("Ahhh! what have you done!","open","wide","worried","mid",cheeks="blush")

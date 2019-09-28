@@ -269,6 +269,10 @@ label ag_st_imperio_E1:
     call ton_chibi("hide")
     with d3
 
+    # Increase affection once (this is the first event)
+    if ag_st_imperio.counter == 1:
+        $ ast_affection += 1
+
     jump end_ag_st_imperio
 
 
@@ -592,6 +596,10 @@ label ag_st_imperio_E2:
             call bld
             m "And they say I'm the big, bad pervert..."
 
+            # Increase affection once (this is the second event)
+            if ag_st_imperio.counter == 2:
+                $ ast_affection += 1
+
             jump end_ag_st_imperio
 
 
@@ -741,6 +749,10 @@ label ag_st_imperio_E3:
     m "Fuck it..."
 
     $ ast_mood += 12
+
+    # Increase affection once (this is the third event)
+    if ag_st_imperio.counter == 3:
+        $ ast_affection += 1
 
     jump end_ag_st_imperio
 
@@ -1052,6 +1064,10 @@ label ag_st_imperio_E4:
 
     call bld
     g9 "I hope she's planned something big!"
+
+    # Increase affection once (this is the fourth event)
+    if ag_st_imperio.counter == 4:
+        $ ast_affection += 1
 
     jump end_ag_st_imperio
 
@@ -1645,6 +1661,10 @@ label ag_st_imperio_E5:
     $ astoria_busy = True
 
     $ tonks_class.wear("all") # Wear all stripped clothing
+
+    # Increase affection once (this is the fifth event)
+    if ag_st_imperio.counter == 5:
+        $ ast_affection += 1
 
     jump end_ag_st_imperio
 

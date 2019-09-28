@@ -207,6 +207,10 @@ label ag_se_imperio_sb_E1:
     hide screen bld1
     with d3
 
+    # Increase affection once (this is the first event)
+    if ag_st_imperio_sb.counter == 1:
+        $ ast_affection += 1
+
     jump end_ag_se_imperio_sb
 
 
@@ -480,6 +484,10 @@ label ag_se_imperio_sb_E2:
     m "Good night."
 
     call ast_walk(action="leave", speed=2.5)
+
+    # Increase affection once (this is the second event)
+    if ag_st_imperio_sb.counter == 2:
+        $ ast_affection += 1
 
     jump end_ag_se_imperio_sb
 
@@ -801,6 +809,10 @@ label ag_se_imperio_sb_E3:
     call bld
     call nar(">Astoria and Susan head out of your office... Astoria skipping happily, humming all the way.")
     m "(That girl is even worse than me...)"
+
+    # Increase affection once (this is the third event)
+    if ag_st_imperio_sb.counter == 3:
+        $ ast_affection += 1
 
     jump end_ag_se_imperio_sb
 

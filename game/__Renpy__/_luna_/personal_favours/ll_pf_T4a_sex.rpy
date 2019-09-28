@@ -671,21 +671,21 @@ label ll_pf_sex_T1_ast_1: # Call label
     hide screen blkfade
     with d5
 
-    call ast_main("Ready to practice ano-","smile","happyCl","base","mid", xpos=570, ypos=-150)
+    call ast_main("Ready to practice ano-","smile","closed","base","mid", xpos=570, ypos=-150)
     $ lunCG('open', 'wide', '', 'right')
     m "!!!"
     lun "!!!"
-    call ast_main("{size=+10}[ast_genie_name]!{/size} {b}What{/b} are you doing?","scream","wide","wide","mid")
+    call ast_main("{size=+10}[ast_genie_name]!{/size} {b}What{/b} are you doing?","scream","base","worried","mid")
     $ lunCG('base', 'wink', '', 'right')
     lun "Oh... hello, Astoria..."
     $ lunCG('pout', 'tired', 'sad', 'right')
-    call ast_main("I wasn't speaking to you, Lovegood! I thought we were only going to practice Imperio when we were together, [ast_genie_name]!","upset","narrow","angry","mid")
+    call ast_main("I wasn't speaking to you, Lovegood! I thought we were only going to practise Imperio when we were together, [ast_genie_name]!","upset","narrow","angry","mid")
     $ lunCG('base', 'seductive', '', 'dl')
-    call ast_main("It's no fair if you get to play around with other students on your own!", "annoyed", "closed","angry", "mid")
+    call ast_main("It's no fair that you get to play around with other students on your own!", "annoyed", "closed","angry", "mid")
     $ lunCG('open', 'angry', '', 'up')
     m "It's not what you think, Astoria..."
     $ lunCG('open', 'wide', '', 'ahegao')
-    call ast_main("What, so I'm supposed to think that Loony Luna just bent over and begged you to screw her?!", "upset","closed","narrow","mid")
+    call ast_main("What, so I'm supposed to think that Loony Luna just bent over and begged you to screw her?!", "upset","closed","angry","mid")
     $ lunCG(pupil='right')
     call ast_main("Speaking of which...", "annoyed", "closed","base", "mid")
     $ lunCG('base', 'tired', '', 'dl')
@@ -694,27 +694,27 @@ label ll_pf_sex_T1_ast_1: # Call label
     lun "Sorry... Astoria... but this... is an emergency..."
     $ lunCG('open_tongue', 'furious', '', 'up')
     lun "I had a wrackspurt attack and needed help to purge them..."
-    call ast_main("Wrackspurt?...", "annoyed", "narrow","narrow", "mid")
+    call ast_main("Wrackspurt?...", "annoyed", "narrow","angry", "mid")
     $ lunCG('base', 'seductive', '', 'right')
     call ast_main("Ugh... I always knew you \"ravenclaw\" girls were {b}special{/b}...", "upset","narrow","base","R")
     $ lunCG('open', 'wide', '', 'up')
-    call ast_main("But you really do take the cake, Luna...", "upset","narrow","narrow","mid")
+    call ast_main("But you really do take the cake, Luna...", "upset","narrow","angry","mid")
     $ lunCG('base', 'happyCl', 'sad', 'right')
     lun "Thank you, Astoria! I love cake."
     $ lunCG('open_tongue', 'furious', 'sad', 'up', extra_1='speed')
-    call ast_main("So, is she just like this then [ast_genie_name]?", "upset","narrow","narrow","mid")
+    call ast_main("So, is she just like this then [ast_genie_name]?", "upset","narrow","angry","mid")
     m "Pretty much..."
     $ lunCG('open', 'angry', '', 'up')
-    call ast_main("Well, I guess this is OK then...", "annoyed", "narrow","narrow", "R")
+    call ast_main("Well, I guess this is OK then...", "annoyed", "narrow","angry", "R")
     $ lunCG('open_tongue', 'furious', '', 'ahegao')
-    call ast_main("So long as you clean this room afterwards, it reeks in here!", "upset","narrow","narrow","mid")
+    call ast_main("So long as you clean this room afterwards, it reeks in here!", "upset","narrow","angry","mid")
     $ lunCG('base', 'angry', 'sad', 'right')
     lun "Isn't it {b}great{/b}..."
-    call ast_main("No! It smells gross! I can hardly breathe!", "upset","angry","narrow","mid")
+    call ast_main("No! It smells gross! I can hardly breathe!", "upset","narrow","angry","mid")
     $ lunCG('open', 'wide', 'base', 'up')
     lun "Those are probably the wrackspurts... We can teach you how to get rid of them if you'd like."
     $ lunCG('open', 'seductive', 'base', 'right')
-    call ast_main("No. thanks.","upset","angry","narrow","mid")
+    call ast_main("No. thanks.","upset","narrow","angry","mid")
     $ lunCG('base', 'furious', 'sad', 'right')
     lun "At least watch us finish then..."
     call ast_main("What? {b}Why{/b}?", "annoyed", "narrow","angry", "mid")
@@ -723,10 +723,10 @@ label ll_pf_sex_T1_ast_1: # Call label
     $ lunCG('open', 'furious', '', 'up')
     lun "It's just... the {b}best{/b}..."
     $ lunCG('base', 'wink', '', 'right')
-    call ast_main("You want me to watch while [ast_genie_name]-", "upset","wide","narrow","mid")
+    call ast_main("You want me to watch while he-", "upset","base","worried","mid")
     g4 "Argh... This is it whores!"
     $ lunCG('open_tongue', 'furious', '', 'ahegao', extra_2='cum_1')
-    call ast_main("!!!", "upset","wide","wide","mid")
+    call ast_main("!!!", "upset","base","worried","mid")
     lun "Yes!"
     g4 "ARGH!!!"
     ">You grab a tight hold of Luna's hips as you start to wildly fill her up with your cum."
@@ -767,7 +767,7 @@ label ll_pf_sex_T1_ast_2: # Call label
     #Starts shaming Luna about the smell of the room and her being a cumslut
     #Complains about all big boobed girls being sluts
     #Cum all over her as Astoria watches
-    $ lun_cg_path        = "images/CG/luna_desk2/"
+    $ lun_cg_path        = "images/CG/luna_fucking/"
     $ lun_cg_base        = lun_cg_path+"base_2.png"
     $ lun_cg_xpos        = -200
     $ astoria_scaleratio = 1.6
@@ -779,13 +779,13 @@ label ll_pf_sex_T1_ast_2: # Call label
     with d5
 
     call play_sound("door")
-    call ast_main("[ast_genie_name]!","smile","happyCl","base","mid", xpos=570, ypos=-150)
+    call ast_main("[ast_genie_name]!","smile","closed","base","mid", xpos=570, ypos=-150)
     lun "Ah... Astoria..."
-    call ast_main("Are you two going at it again?","upset","narrow","narrow","mid")
+    call ast_main("Are you two going at it again?","upset","narrow","angry","mid")
     m "Take a guess."
     $ lunCG(pupil='up', eye='furious', mouth='open_tongue', extra_1='speed')
     call ast_main("Ugh! How am I ever supposed to learn any magic if you two won't stop shagging like rabbits!", "annoyed", "narrow","angry", "mid")
-    $ lunCG('base', 'seductive', 'wide','right')
+    $ lunCG('base', 'seductive', '','right')
     lun "Ah..."
     m "I don't know Astoria, what you're watching here is pretty magical if you ask me."
     $ lunCG('open', 'seductive', '', 'up')
@@ -796,8 +796,8 @@ label ll_pf_sex_T1_ast_2: # Call label
     lun "Ah... yes... stay, Astoria..."
     $ lunCG('open', 'furious', 'base', 'ahegao')
     lun "You should... ah... learn how to get rid of wrackspurts."
-    call ast_main("Again with your made up mumbo jumbo?!","open","narrow","narrow","mid")
-    call ast_main("If you want to want to be gross with [ast_genie_name] just say so...", "upset","narrow","angry","R")
+    call ast_main("Again with your made up mumbo jumbo?!","open","narrow","angry","mid")
+    call ast_main("If you want to be gross with him, just say so...", "upset","narrow","angry","R")
     $ lunCG('open', 'wide', 'sad', 'right', tears='tears')
     lun "Ah... I'm serious..."
     $ lunCG('open_tongue', 'wide', '', 'up')
@@ -806,12 +806,12 @@ label ll_pf_sex_T1_ast_2: # Call label
     lun "I can barely... think about anything but {b}this{/b}... sometimes..."
     $ lunCG('base', 'angry', 'base', 'ahegao')
     call ast_main("You're just a big boobed bimbo!","scream","narrow","angry","mid")
-    call ast_main("{b}All{/b} of you big boobed girls are the same!", "upset","narrow","narrow","mid")
+    call ast_main("{b}All{/b} of you big boobed girls are the same!", "upset","narrow","angry","mid")
     $ lunCG('open', 'furious', 'sad', 'ahegao')
     lun "Ah..."
-    call ast_main("If it's not you fucking [ast_genie_name] every chance you can get it's Susan strutting around the halls.", "annoyed", "narrow","narrow", "R")
+    call ast_main("If it's not you fucking your headmaster every chance you can get it's Susan strutting around the halls.", "annoyed", "narrow","angry", "R")
     $ lunCG('base', 'angry', '', 'ahegao')
-    call ast_main("Or Hermione Granger wearing the sluttiest outfit she can find...","clench","narrow","narrow","L")
+    call ast_main("Or Hermione Granger wearing the sluttiest outfit she can find...","clench","narrow","angry","L")
     $ lunCG('base', 'seductive', '', 'right')
     call ast_main("It's ridiculous!","upset","narrow","angry","R")
     $ lunCG('base', 'wink', '', 'right')
@@ -820,17 +820,17 @@ label ll_pf_sex_T1_ast_2: # Call label
     g9 "ARGH! HERE IT COMES SLUTS!"
     $ lunCG('open_tongue', 'angry', '', 'ahegao')
     lun "Yes..."
-    call ast_main("I think I'm going to go...", "annoyed", "narrow","narrow", "R")
+    call ast_main("I think I'm going to go...", "annoyed", "narrow","angry", "R")
     $ lunCG('open', 'wide', 'sad', 'right')
     lun "Ah... No... stay..."
     $ lunCG('base', 'wide', '', 'ahegao')
     lun "You need to see... them..."
-    call ast_main("See who?", "annoyed", "narrow","narrow", "mid")
+    call ast_main("See who?", "annoyed", "narrow","angry", "mid")
     $ lunCG('base', 'wide', '', 'right')
     lun "The wrackspurts"
     g9 "HERE'S YOUR ROCKSPORTS SLUT!"
     g9 "ARGH!!!"
-    call ast_main("...", "upset","wide","wide","mid")
+    call ast_main("...", "upset","base","worried","mid")
     $ lunCG('open_tongue', 'furious', 'base', 'ahegao')
     ">Your cock explodes inside Luna, unleashing an avalanche of your thick seed into her tight little pussy."
     g9 "FUCK YES!!!"
@@ -838,11 +838,11 @@ label ll_pf_sex_T1_ast_2: # Call label
     lun "it's{image=textheart}I can't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
     $ lunCG('base', 'angry', '', 'ahegao')
     lun "..."
-    call ast_main("Wow...", "upset","wide","worried","mid")
+    call ast_main("Wow...", "upset","base","worried","mid")
     $ lunCG('open', 'tired', '', 'ahegao')
     lun "{image=textheart}ah...{image=textheart} Did you see... them?"
     call ast_main("Pffft", "upset","narrow","angry","mid")
-    call ast_main("The only thing I saw was a super slut getting banged by her gross old headmaster!","scream","narrow","narrow","mid")
+    call ast_main("The only thing I saw was a super slut getting banged by her gross old headmaster!","scream","narrow","angry","mid")
     $ lunCG('base', 'seductive', '', 'dl')
     lun "mmm{image=textheart}{image=textheart}"
     hide screen astoria_main

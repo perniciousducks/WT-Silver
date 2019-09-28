@@ -4,6 +4,7 @@ default astoria_ypos      = 0
 default astoria_zorder    = 5
 default astoria_flip      = 1
 default astoria_animation = None
+default use_astoria_head  = False
 
 # Chibi
 default ast_chibi_xpos      = 500

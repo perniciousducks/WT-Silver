@@ -403,7 +403,7 @@ label ss_he_tonks_E1:
     #sna "I can't say I have a very high opinion on how those fools run the place."
     #sna "The Department of Magical Law Enforcement are a joke."
     #sna "The only decent auror they have is Alistair Moody and he's more concerned dealing with dark magic than petty rumours to get involved with this investigation."
-    #sna "The minister of magic himself is a fool."
+    #sna "The minister for magic himself is a fool."
     #sna "He might bring a good smile and spirits to the people during times of rebuilding after great loss."
     #sna "But when it comes to making any worthwhile decisions or recognizing potential threats or misconduct..."
     #m "I was talking mostly about our current predicament rather thant he ministry at large..."

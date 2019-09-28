@@ -953,7 +953,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ lunCG('open', 'angry', 'mad', 'right')
     lun "I am not... a nymph!"
     $ lunCG('open', 'angry', 'sad', 'up')
-    call ton_main("Anyway... all this talk of how much you love your headmasters yummy cum...","base","base","raised","L")
+    call ton_main("Anyway... all this talk of how much you love your headmaster's yummy cum...","base","base","raised","L")
     $ lunCG('right')
     call ton_main("I want to see it...","horny","base","raised","L")
     $ lunCG('dl')
@@ -962,7 +962,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ lunCG('open', 'wide', 'base', 'right')
     lun "You do?"
     $ lunCG('open_tongue', 'angry', 'sad', 'ahegao')
-    call ton_main("Ugh... you bet... nothing like seeing your students soaking in their headmasters spunk...","base","base","raised","L")
+    call ton_main("Ugh... you bet... nothing like seeing your students soaking in their headmaster's spunk...","base","base","raised","L")
     lun "{image=textheart}{image=textheart}{image=textheart}"
     show screen blkfade
     with d3
@@ -1169,7 +1169,7 @@ label ll_pf_sex_T1_ton_2: # Call label
     $ lunCG('open', 'wide', 'sad', 'right')
     lun "But I'd be happy for the company! I always love to make new friends."
     $ lunCG('base', 'base', 'base', 'up')
-    call ton_main("I can see that... Will you also be wearing a fresh load of your headmasters cum while we walk?","horny","base","angry","mid")
+    call ton_main("I can see that... Will you also be wearing a fresh load of your headmaster's cum while we walk?","horny","base","angry","mid")
     $ lunCG('open', 'angry', 'sad', 'right')
     lun "Of course!"
     $ lunCG('open_tongue', 'sedctive', 'sad', 'ahegao')

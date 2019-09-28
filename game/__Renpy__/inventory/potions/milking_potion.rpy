@@ -773,7 +773,7 @@ label potion_scene_11_3: #Milking potion part 3
         m "Come on [hermione_name]... where's your sense of adventure?"
         call her_main("Adventure?","annoyed","annoyed")
         call her_main("Going into the chamber of secrets was an adventure sir...","open","suspicious")
-        call her_main("Standing in my headmasters office while he makes me drink some random potion he probably found in the gutter-","scream","angryCl")
+        call her_main("Standing in my headmaster's office while he makes me drink some random potion he probably found in the gutter-","scream","angryCl")
         call her_main("-That makes me have huge, {size=+3}lactating{/size}, {size=+5}tits{/size} and a giant {size=+10}{b}DICK{/b}{/size} is {size=+2}not {size=+2}an {size=+4}adventure!{/size}","scream","angry",emote="01")
         m "Don't forget about the magical milking machine..."
         call nar(">You hand hermione the milking harness.")

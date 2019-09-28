@@ -252,7 +252,7 @@ label forest_BJ_2:
     $ ccg2 = 18
     her "*slurp* *schkk* *shlrp*"
     $ ccg2 = 21
-    her "sucking all that cum out her headmasters fat, {size=+2}juicy,{/size} {size=+2}cock...{/size}{image=textheart}"
+    her "sucking all that cum out her headmaster's fat, {size=+2}juicy,{/size} {size=+2}cock...{/size}{image=textheart}"
     g9 "ARGH THAT's IT GIRL!"
     g9 "HERE IT COMES"
     $ ccg2 = 22

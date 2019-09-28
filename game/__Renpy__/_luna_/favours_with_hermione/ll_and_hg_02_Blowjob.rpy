@@ -711,7 +711,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         $ ccg2 = 48
         lun "I'm a slut for your cum..."
         $ ccg2 = 49
-        lun "I'm a nasty little cumslut who's addicted to her headmasters cum..."
+        lun "I'm a nasty little cumslut who's addicted to her headmaster's cum..."
         her "Well time for you to earn it then cumslut... open wide!"
 
         $ ccg2 = 9

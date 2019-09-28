@@ -283,7 +283,7 @@ label cho_intro_E1:
 
     # Not masturbating
     else:
-        m "Ladies, no arguing now... you’re in the headmasters office, surely there’s a time and place."
+        m "Ladies, no arguing now... you’re in the headmaster's office, surely there’s a time and place."
         call her_main("...","annoyed","glanceL")
         call cho_main("*Hmph* There’s no argument here...","angry","narrow","angry","L")
         call cho_main("I’m sure that Hermione’s reasons for interrupting are totally valid...","upset","closed","angry","mid")

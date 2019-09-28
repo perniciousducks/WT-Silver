@@ -44,7 +44,7 @@ label genie_house_elf:
     nar "Snape said as if that meant anything."
 
     nar "A look of confusion spread across the genies face which only made Snape smirk even more."
-    nar "He then composed himself after seeing this unusual expression on the headmasters face."
+    nar "He then composed himself after seeing this unusual expression on the headmaster's face."
 
     call sna_main("I keep forgetting that you don’t know these things.","snape_01", xpos="base", ypos="base")
     call sna_main("students learn it on day one.","snape_01", xpos="base", ypos="base")

@@ -62,8 +62,8 @@ label read_letter:
         menu:
             "-Read Letter-":
                 pass
-            "-Shoosh the bird away!-":
-                call shoosh_owl_away
+            "-Shoo the bird away!-":
+                call shoo_owl_away
                 jump main_room
 
     $ letter = letter_queue_list[0]
@@ -110,7 +110,7 @@ screen letter():
         spacing 40 xpos 410 ypos 80 xmaximum 250
         text letter.getLetterText()
 
-label shoosh_owl_away:
+label shoo_owl_away:
     show screen chair_left
     show screen desk
     call gen_chibi("standing_alt", "420", "160", flip=True) # Update position and sprite

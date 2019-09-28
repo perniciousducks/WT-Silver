@@ -31,7 +31,7 @@ label a_christmas_tale:
     show screen bld1
     with d3
     nar "It was the night before Christmas, with excitement at the school."
-    nar "But the headmasters room empty, now where is that fool?"
+    nar "But the headmaster's room empty, now where is that fool?"
     nar "The stockings were hung by the chimney with care,"
     nar "But no genie to be found. As if he'd never been there."
     hide screen bld1

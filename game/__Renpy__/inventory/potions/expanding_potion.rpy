@@ -148,7 +148,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call nar(">You start to pinch and pull her nipples.")
     call her_main("Ohhh...","soft","ahegao")
     call nar(">She starts grinding herself against your thigh.")
-    m "Well, well, well, you are sensitive now aren't you? Trying to grind out an orgasm on your headmasters leg, how shameless."
+    m "Well, well, well, you are sensitive now aren't you? Trying to grind out an orgasm on your headmaster's leg, how shameless."
     call her_main("...","grin","dead")
     m "Well let's see if we can do something about that."
     call nar(">You start alternating pinching and pulling her nipples hard, pulling the nipples out as far as you can and then pushing them back into her breast.")

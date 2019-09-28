@@ -64,7 +64,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call her_main("You're the cutest, nicest, zaniest girl at this school and I don't know what's happened to you recently but you need to just calm down and enjoy your life.","open","wink")
     call lun_main("but...","normal","wide","sad","down", cheeks="blush",tears="crying")
     call her_main("Shhh... It's ok...","soft","soft")
-    call her_main("Why don't we start by enjoying our headmasters big cock, hmmm?","grin","happy")
+    call her_main("Why don't we start by enjoying our headmaster's big cock, hmmm?","grin","happy")
     call her_main("Would that make you feel a little better?","smile","wink")
     call lun_main("y-yes...","base","seductive","sad","R", cheeks="blush",tears="crying")
     show screen blkfade

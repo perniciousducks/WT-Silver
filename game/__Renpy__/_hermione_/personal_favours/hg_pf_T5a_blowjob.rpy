@@ -1144,7 +1144,7 @@ label hg_hidden_blowjob_tonks:
     g4 "You can't give her that many points, [tonks_name]! She's already getting [current_payout] from me!"
     m "Do you even realise how many days I'll have to spend with Snape, of all people, to get even with Slytherin again, after this?"
     call ton_main("So what? The girl has clearly earned it!","open","base","angry","mid")
-    call ton_main("Sucking her headmasters cock...","horny","base","angry","down")
+    call ton_main("Sucking her headmaster's cock...","horny","base","angry","down")
     call ton_main("50 points could be yours, Miss granger!","open","base","raised","down")
     call ton_main("You only have to stick your gorgeous head out and say hi to me, and of course...","open","base","base","R")
     call ton_main("I promise I won't tell anybody.","base","base","base","down")

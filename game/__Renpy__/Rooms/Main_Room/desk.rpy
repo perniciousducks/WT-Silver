@@ -204,6 +204,7 @@ screen desk_menu():
             idle "interface/desk/book.png"
             hover "interface/desk/book_hover.png"
             hovered SetVariable("ball_hint", "book")
+            keysym hkey_book
             unhovered SetVariable("ball_hint", None)
             action Return("read_book_menu")
 
@@ -216,6 +217,7 @@ screen desk_menu():
         idle "interface/desk/tissues.png"
         hover "interface/desk/tissues_hover.png"
         hovered SetVariable("ball_hint", "jerk_off")
+        keysym hkey_fap
         unhovered SetVariable("ball_hint", None)
         action Return("jerk_off")
 
@@ -228,6 +230,7 @@ screen desk_menu():
             idle "interface/desk/work.png"
             hover "interface/desk/work_hover.png"
             hovered SetVariable("ball_hint", "work")
+            keysym hkey_work
             unhovered SetVariable("ball_hint", None)
             action Return("paperwork")
 
@@ -282,6 +285,7 @@ screen watch():
         idle "interface/desk/watch.png"
         hover "interface/desk/watch_hover.png"
         unhovered SetVariable("ball_hint", None)
+        keysym hkey_sleep
         if daytime:
             hovered SetVariable("ball_hint", "doze_off")
             action Return("night_start") #Skip to night

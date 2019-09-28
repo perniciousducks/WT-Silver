@@ -68,7 +68,7 @@ label store_chit_chat:
 
     # After talking to Snape about Cho.
     # If you haven't yet beaten the Quiz.
-    elif ss_he.Cho_E1 and quidditch_book_1_ITEM.unlocked == False and cho_quiz_complete == False:
+    elif ss_he.cho_E1 and quidditch_book_1_ITEM.unlocked == False and cho_quiz_complete == False:
         m "Boys..."
         twi "Hello again mr Dumbledore sir..."
         ger "What can we do for you?"

@@ -707,7 +707,7 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
 
 
         if body:
-            lun_cg_body     = lun_cg_path+"body_base.png"
+            lun_cg_body     = lun_cg_path+"luna_base.png"
         if cheeks:
             lun_cg_cheeks   = lun_cg_path+"c_"+str(cheeks)+".png"
         if mouth:

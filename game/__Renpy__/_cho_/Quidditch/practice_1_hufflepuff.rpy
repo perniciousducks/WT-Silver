@@ -61,7 +61,7 @@ label quidditch_match_return:
     # Cho enters.
     call play_sound("knocking")
     call bld
-    ">*knock* *knock* *knock*"
+    "*knock* *knock* *knock*"
 
     menu:
         "\"Come in!\"":

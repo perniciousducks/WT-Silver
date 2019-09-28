@@ -581,17 +581,18 @@ label astoria_intro_E3:
     m "..."
 
     if d_flag_01:
-        ast "Sir, weren't you going to summon Professor Snape?"
+        call ast_main("Sir, weren't you going to summon Professor Snape?", flip=False)
         m "Oh, that's right!"
         m "Give me a second..."
         ast "..."
         ast "(Better him than any of the other teachers...)"
 
-    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    $ sna_chibi_zorder = 4
+    call sna_walk(action="enter", xpos=550, ypos="base", speed=2)
 
     call play_music("snape_theme")
     call sna_main("You wanted to see me?","snape_03",xpos="base",ypos="base")
-    call ast_main("...", "annoyed", "base","worried", "R")
+    call ast_main("...", "annoyed", "base","worried", "R",flip=True)
     call sna_main("Astoria?!","snape_09")
     call sna_main("Why is one of my students in your office? Don't tell me you...","snape_09")
     m "It's not that sort of visit."
@@ -635,7 +636,7 @@ label astoria_intro_E3:
     m "..."
 
     # Snape leaves and runs into Tonks.
-    call sna_walk("door","base", speed=2.8)
+    call sna_walk(670,"base", speed=1.8)
 
     call play_sound("door")
     call ton_chibi("stand","door","base")
@@ -656,31 +657,35 @@ label astoria_intro_E3:
     sna "Stepping aside."
     ton "Oh, okay..."
 
+    call sna_walk("door","base", speed=1)
+
     call play_sound("door")
     hide screen bld1
     call sna_chibi("hide")
+    $ sna_chibi_zorder = 2 # Reset zorder
     with d3
     pause.5
 
     call ton_walk("desk","base", speed=2.8)
     pause.2
 
-    call ton_main("Hello, Professor.", xpos="mid")
-    call ast_main("", xpos="close")
-    call ton_main("Astoria? What are you doing here?", "horny", "base", "raised", flip=True)
+    call ton_main("Hello, Professor.", "base", "base", "base", xpos="mid")
+    call ast_main("", xpos="close", flip=False)
+    call ton_main("Astoria? What are you doing here?", "horny", "base", "raised", "L", flip=True)
     ton "You didn't cause any mischief, I hope."
     call ast_main("Of course not.")
-    call ton_main("Wait, is she the one who's cursed Susan?","open","base","raised","L", flip=False)
+    call ton_main("Wait, is she the one who's cursed Susan?","open","base","raised","mid")
     m "Yep."
     ast "..."
     call ton_main("(Oh shit!)","open","base","raised","L")
 
     call ast_main("I'm really sorry! I promise I won't ever cast it again!","clench","closed","worried","mid")
-    call ton_main("Really? It was you who cast the spell?","open","base","worried","L", flip=True)
+    call ton_main("Really? It was you who cast the spell?","open","base","worried","L")
     m "..."
     call ton_main("It couldn't possibly have been someone as cute as you!","open","base","wide","L")
     ast "..." # Embarrassed, stares down.
     call ast_main("Please don't send me to Azkaban!","scream","base","worried","mid")
+    call ast_main("",mouth="upset")
     call ton_main("Don't worry, It won't come to that...","base","base","base","L")
     call ton_main("The ministry isn't going to lock away such a cute little thing like yourself...","open","base","base","mid")
     call ton_main("{size=+2}Over a little harmless fun.{/size} {image=textheart}","horny","base","wide","L")
@@ -693,7 +698,7 @@ label astoria_intro_E3:
     call ton_main("So, you had some fun with Susan, I gather?","base","base","raised","L")
     call ton_main("Want to tell me what you made her do?","base","base","base","L")
     m "(Doesn't she already know that?)"
-    call ast_main("I might have made her show her boobs to some second years...","upset","wink","base","mid")
+    call ast_main("I might have made her show her boobs to some second years...","grin","narrow","base","mid")
     call ton_main("*ha-ha-ha-ha!*","base","base","wide","L")
     call ast_main("Just for a second!", "annoyed", "base","worried", "R")
     m "(what's going on here?)"
@@ -740,8 +745,9 @@ label astoria_intro_E3:
     ast "*Uhm*...{w=0.3} Good night then."
 
     # Astoria leaves.
+    call ast_walk(action="leave", speed=2.5)
 
-    call ton_main("She's {size=+5}so cute!{/size} Isn't she? {image=textheart}","base","base","wide","mid")
+    call ton_main("She's {size=+5}so cute!{/size} Isn't she? {image=textheart}","base","base","wide","mid", flip=False)
 
     if d_flag_01:
         m "You gave her 50 house points..."

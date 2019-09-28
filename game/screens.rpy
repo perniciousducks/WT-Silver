@@ -697,8 +697,8 @@ screen confirm(message, yes_action, no_action):
             hbox:
                 spacing 100
                 xalign .5
-                textbutton _("Yes") action yes_action
-                textbutton _("No") action no_action
+                textbutton _("Yes") action yes_action keysym "y"
+                textbutton _("No") action no_action keysym "n"
     # Right-click and escape answer "no".
     key "game_menu" action no_action
     zorder 6

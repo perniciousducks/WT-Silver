@@ -395,8 +395,8 @@ label ll_pf_sex_random: # Call label
         ### Random ###
         "\"I have no clue...\"" if astoria_unlocked or tonks_unlocked:
 
-            # Astoria
-            if random_number in [1,2,3] and astoria_unlocked:
+            # Astoria (must have started Imperio with Susan events)
+            if random_number in [1,2,3] and astoria_unlocked and ag_st_imperio.counter > 0:
                 if "astoria" not in seen_luna_sex_list:
                     $ seen_luna_sex_list.append("astoria")
                     call ll_pf_sex_T1_ast_1
@@ -424,7 +424,7 @@ label ll_pf_sex_random: # Call label
                 $ seen_luna_sex_list.append("hermione")
             call ll_pf_sex_T1_her_1
 
-        "\"Astoria, that brat!\"" if astoria_unlocked and game_difficulty <= 2:
+        "\"Astoria, that sadist!\"" if astoria_unlocked and game_difficulty <= 2:
             if "astoria" not in seen_luna_sex_list:
                 $ seen_luna_sex_list.append("astoria")
                 call ll_pf_sex_T1_ast_1
@@ -671,7 +671,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     hide screen blkfade
     with d5
 
-    call ast_main("Ready to practice ano-","smile","closed","base","mid", xpos=570, ypos=-150)
+    call ast_main("Ready to continue our impe...{w=0.4}{nw}","smile","closed","base","mid", xpos=570, ypos=-150)
     $ lunCG('open', 'wide', '', 'right')
     m "!!!"
     lun "!!!"
@@ -679,7 +679,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     $ lunCG('base', 'wink', '', 'right')
     lun "Oh... hello, Astoria..."
     $ lunCG('pout', 'tired', 'sad', 'right')
-    call ast_main("I wasn't speaking to you, Lovegood! I thought we were only going to practise Imperio when we were together, [ast_genie_name]!","upset","narrow","angry","mid")
+    call ast_main("I wasn't speaking to you, Lovegood! I thought I was the only one to cast imperio around here, [ast_genie_name]!","upset","narrow","angry","mid")
     $ lunCG('base', 'seductive', '', 'dl')
     call ast_main("It's no fair that you get to play around with other students on your own!", "annoyed", "closed","angry", "mid")
     $ lunCG('open', 'angry', '', 'up')
@@ -705,10 +705,15 @@ label ll_pf_sex_T1_ast_1: # Call label
     call ast_main("So, is she just like this then [ast_genie_name]?", "upset","narrow","angry","mid")
     m "Pretty much..."
     $ lunCG('open', 'angry', '', 'up')
-    call ast_main("Well, I guess this is OK then...", "annoyed", "narrow","angry", "R")
-    $ lunCG('open_tongue', 'furious', '', 'ahegao')
-    call ast_main("So long as you clean this room afterwards, it reeks in here!", "upset","narrow","angry","mid")
-    $ lunCG('base', 'angry', 'sad', 'right')
+
+    if ast_affection > 7: # Level estimated to coincide with second Imperio with Susan event
+        call ast_main("Well, I guess this is OK then...", "annoyed", "narrow","angry", "R")
+        $ lunCG('open_tongue', 'furious', '', 'ahegao')
+        call ast_main("So long as you clean this room afterwards, it reeks in here!", "upset","narrow","angry","mid")
+        $ lunCG('base', 'angry', 'sad', 'right')
+    else:
+        $ ast_mood += 5
+
     lun "Isn't it {b}great{/b}..."
     call ast_main("No! It smells gross! I can hardly breathe!", "upset","narrow","angry","mid")
     $ lunCG('open', 'wide', 'base', 'up')
@@ -742,7 +747,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     with d3
 
     ">You slump back into your chair, leaving Luna on your desk, leaking cum."
-    m "Like the show?"
+    m "enjoyed the show?"
     ">You look around but can't find any trace of the small witch..."
     call lun_main("*ah*... y-y-yea...","base","seductive","base","up", ypos="head")
     m "Awesome, I'm just gonna... take a nap..."
@@ -809,9 +814,13 @@ label ll_pf_sex_T1_ast_2: # Call label
     call ast_main("{b}All{/b} of you big boobed girls are the same!", "upset","narrow","angry","mid")
     $ lunCG('open', 'furious', 'sad', 'ahegao')
     lun "Ah..."
-    call ast_main("If it's not you fucking your headmaster every chance you can get it's Susan strutting around the halls.", "annoyed", "narrow","angry", "R")
+
+    #TODO Astoria could refer to other girls depending on whether they've achieved certain "status" (whoring level/completed event)
+    call ast_main("If it's not you fucking your headmaster every chance you can get it's Susan strutting around the halls...", "annoyed", "narrow","angry", "R")
     $ lunCG('base', 'angry', '', 'ahegao')
-    call ast_main("Or Hermione Granger wearing the sluttiest outfit she can find...","clench","narrow","angry","L")
+    if her_whoring >= 15:
+        call ast_main("Or Hermione Granger being the big-titted slut that she is...","clench","narrow","angry","L")
+    
     $ lunCG('base', 'seductive', '', 'right')
     call ast_main("It's ridiculous!","upset","narrow","angry","R")
     $ lunCG('base', 'wink', '', 'right')

@@ -62,7 +62,8 @@ label summon_tonks:
 
         # Gifts
         "-Gifts-" if not gave_tonks_gift:
-            call expression 'gift_menu' pass (return_label="tonks_requests")
+            call gift_menu
+            jump tonks_requests
 
         "{color=#858585}-Gifts-{/color}" if gave_tonks_gift:
             m "I already gave her a gift today."

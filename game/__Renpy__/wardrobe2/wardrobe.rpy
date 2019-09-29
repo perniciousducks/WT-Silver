@@ -36,7 +36,7 @@ screen gfx_effect(start_x, start_y, target_x, target_y, img, xanchor=0.5, yancho
     add img xanchor xanchor yanchor yanchor zoom zoom at moveto(start_x, start_y, target_x, target_y, duration)
     timer timer action Hide("gfx_effect")
 
-label t_wardrobe(return_label, char_label):
+label t_wardrobe(char_label):
     $ char_active = get_character_object(active_girl)
     $ char_nickname = char_active.char
     $ hide_transitions = True
@@ -123,7 +123,7 @@ label t_wardrobe(return_label, char_label):
                 $ char_active.wear("panties")
     elif _return == "studio":
         $ renpy.play('sounds/click3.mp3')
-        call expression 'studio' pass (studio_return=return_label, studio_char=char_label)
+        call studio(char_label)
     elif _return[0] == "equip":
         show screen t_wardrobe_menu(550, 50)
         if isinstance(_return[1], cloth_class) and _return[1].type in char_active.incompatible_wardrobe:
@@ -145,7 +145,7 @@ label t_wardrobe(return_label, char_label):
                 $ globals()[active_girl+"_outfit_last"].save()
                 $ char_active.equip(_return[1])
                 $ item_to_export = _return[1]
-                call expression 'studio' pass (studio_return=return_label, studio_char=char_label)
+                call studio(char_label)
             "Export to clipboard":
                 $ _return[1].outfit_export(False)
             "Back":
@@ -276,8 +276,7 @@ label t_wardrobe(return_label, char_label):
         $ char_active.clothes_compatible()
         if wardrobe_music_active:
             call play_music(active_girl+"_theme")
-        python:
-            renpy.jump(return_label)
+        return
     jump t_wardrobe_after_init
         
 screen t_wardrobe_menu(xx, yy):

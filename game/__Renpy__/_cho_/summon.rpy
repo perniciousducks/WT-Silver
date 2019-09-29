@@ -84,7 +84,8 @@ label summon_cho:
         # Wardrobe
         "-Wardrobe-" if cho_wardrobe_unlocked:
             call cho_main(xpos="wardrobe",ypos="base", face="neutral")
-            call expression 't_wardrobe' pass (return_label="cho_requests", char_label="cho_main")
+            call t_wardrobe("cho_main")
+            jump cho_requests
 
         "{color=#858585}-Hidden-{/color}" if not cho_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")

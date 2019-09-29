@@ -258,7 +258,7 @@ init python:
                     self.color.append([255, 255, 255, 255])
                     
             for i in xrange(len(self.color)):
-                self.color_default.append(self.color[i])
+                self.color_default.append(list(self.color[i]))
                 
             if self.layers != len(self.color):
                 raise Exception('Clothing: "color" list does not match the number of layers in cloth_class.')

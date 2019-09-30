@@ -1,3 +1,8 @@
+screen letter_on_desk():
+    zorder 3
+    
+    add "/images/rooms/_objects_/mail/letter_desk.png" zoom 0.5 xpos 334 ypos 356
+
 label desk:
     hide screen main_room_menu
 
@@ -14,6 +19,7 @@ label desk:
                 "-Read the letter-":
                     call bld
                     g9 "Of course I will!"
+                    hide screen letter_on_desk
 
             # First letter from Hermione
             $ letter_hg_1.mailLetter()

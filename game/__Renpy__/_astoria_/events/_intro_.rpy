@@ -650,6 +650,8 @@ label astoria_intro_E3:
     call sna_walk("660","base", speed=2)
 
     # Equip Tonks default clothing.
+    $ tonks_outfit_last.save() # Store current outfit.
+    $ tonks_class.equip(tonks_outfit_default)
 
     call play_sound("door")
     call ton_chibi("stand","780","base")
@@ -804,6 +806,9 @@ label astoria_intro_E3:
     m "(...)"
     m "(I feel like I'm actually starting to run this damn school.)"
     m "(This isn't what I signed up for...)"
+
+    # Reset Tonks.
+    $ tonks_class.equip(tonks_outfit_last)
 
     $ hermione_busy = True
     $ snape_busy = True

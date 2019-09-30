@@ -216,7 +216,7 @@ label ag_se_imperio_sb_E1:
     with d3
     pause.5
 
-    call ast_main("Come on Susy, time to give professor Tonks a visit","open","base","base","mid", ypos="head")
+    call ast_main("Come on Susy, time to give professor Tonks a visit.","open","base","base","mid", ypos="head")
     call sus_main("...","upset","narrow","worried","down", ypos="head")
 
     call sus_walk(action="leave", speed=2.5)

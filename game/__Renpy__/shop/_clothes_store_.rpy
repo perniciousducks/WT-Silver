@@ -78,7 +78,7 @@ label clothing_store_chitchat:
         maf "Absolutely, although I would have to order the fabrics in. I don't really have a range of colours at the moment."
         maf "What did you have in mind?"
         m "A few things. I haven't decided on anything specific yet."
-        maf "Well, while your making up your mind, feel free to browse the store."
+        maf "Well, while you're making up your mind, feel free to browse the store."
     else:
         maf "Well, what can I get for you today?"
 

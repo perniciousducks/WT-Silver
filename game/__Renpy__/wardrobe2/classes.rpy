@@ -117,14 +117,6 @@ init python:
                 # Mark each clothing piece from the group as unlocked/locked by default
                 for item in self.group:
                     item.unlock()
-                
-        def clone(self):
-            clothes = []
-            clothing = get_character_object(self.group[0].char).clothing
-            for key in clothing:
-                if not clothing[key][0] == None:
-                    clothes.append(clothing[key][0].clone())
-            return outfit_class(name=self.name, desc=self.desc, unlocked=self.unlocked, group=clothes)
             
         def save(self):
             char = self.group[0].char
@@ -346,14 +338,14 @@ init python:
         def unlock(self):
             if not self.unlocked:
                 self.unlocked = True
-                # Add cloth object to the character's clothing data
-                get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
+                # Add a copy of this object to the character's available clothing
+                get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self.clone())
             
         def clone(self):
-            dyes = []
-            for dye in self.color:
-                dyes.append([dye[0],dye[1],dye[2],dye[3]])
-            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=dyes, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix, layerfix=self.layerfix, whoring=self.whoring, bodyfix=self.bodyfix, incompatible=self.incompatible)
+            color = []
+            for c in self.color:
+                color.append(list(c))
+            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=color, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix, layerfix=self.layerfix, whoring=self.whoring, bodyfix=self.bodyfix, incompatible=self.incompatible)
                 
         def set_pose(self, pose):
             if pose == None:
@@ -865,6 +857,14 @@ init python:
                 if not self.clothing[type][4]:
                     return True
             return False
+
+        def create_outfit(self, name, desc, unlock=True):
+            clothes = []
+            clothing = self.clothing
+            for key in clothing:
+                if not clothing[key][0] == None:
+                    clothes.append(clothing[key][0].clone())
+            return outfit_class(name=name, desc=desc, unlocked=unlock, group=clothes)
                 
         def say(self, string, **kwargs):
             if kwargs:

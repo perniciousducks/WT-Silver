@@ -227,7 +227,7 @@ label ag_se_imperio_sb_E1:
     m "(Maybe leaving Tonks out of this was a bad idea...{w} Nah... {w=0.3} She's had her fun...)"
 
     # Increase affection once (this is the first event)
-    if ag_st_imperio_sb.counter == 1:
+    if ag_se_imperio_sb.counter == 1:
         $ ast_affection += 1
 
     jump end_ag_se_imperio_sb
@@ -524,7 +524,7 @@ label ag_se_imperio_sb_E2:
     pause.5
 
     # Increase affection once (this is the second event)
-    if ag_st_imperio_sb.counter == 2:
+    if ag_se_imperio_sb.counter == 2:
         $ ast_affection += 1
 
     jump end_ag_se_imperio_sb
@@ -861,7 +861,7 @@ label ag_se_imperio_sb_E3:
         call nar(">You can now access Susan't wardrobe!")
 
     # Increase affection once (this is the third event)
-    if ag_st_imperio_sb.counter == 3:
+    if ag_se_imperio_sb.counter == 3:
         $ ast_affection += 1
 
     jump end_ag_se_imperio_sb

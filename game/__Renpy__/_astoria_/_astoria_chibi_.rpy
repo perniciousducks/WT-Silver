@@ -9,7 +9,7 @@ label ast_chibi(action = "", xpos=ast_chibi_xpos, ypos=ast_chibi_ypos, flip=Fals
 
     if xpos != ast_chibi_xpos:
         if xpos == "mid":
-            $ ast_chibi_xpos = 540 # 560
+            $ ast_chibi_xpos = 540
         elif xpos in ("wardrobe","center","base","default"): #Don't use these when there are other chibis around (like Hermione's). Use "mid" instead.
             $ ast_chibi_xpos = 530
         elif xpos == "desk":
@@ -56,7 +56,7 @@ label ast_chibi(action = "", xpos=ast_chibi_xpos, ypos=ast_chibi_ypos, flip=Fals
         elif action == "reset":
             $ ast_chibi_animation = None
             $ update_chibi_image("astoria")
-            
+
         $ ast_chibi_xpos = ast_chibi_xpos-xoffset
 
         if flip: #Same variable that the main sprite is using. #1 == Default

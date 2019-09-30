@@ -426,10 +426,10 @@ label get_chibi_position(char=None):
         $ chibi_xpos   = her_chibi_xpos
         $ chibi_ypos   = her_chibi_ypos
         $ chibi_zorder = her_chibi_zorder
-    #elif char == "astoria":
-    #    $ chibi_xpos   = ast_chibi_xpos
-    #    $ chibi_ypos   = ast_chibi_ypos
-    #    $ chibi_zorder = ast_chibi_zorder
+    elif char == "astoria":
+        $ chibi_xpos   = ast_chibi_xpos
+        $ chibi_ypos   = ast_chibi_ypos
+        $ chibi_zorder = ast_chibi_zorder
     elif char == "susan":
         $ chibi_xpos   = sus_chibi_xpos
         $ chibi_ypos   = sus_chibi_ypos

@@ -48,9 +48,9 @@ label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
             $ susan_scaleratio = 2
 
             if susan_flip == -1: #Flipped
-                $ susan_xpos = 620
+                $ susan_xpos = 660
             else:
-                $ susan_xpos = 590
+                $ susan_xpos = -80
             $ susan_ypos = 230
             $ susan_zorder = 8
         else:

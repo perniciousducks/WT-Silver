@@ -1333,7 +1333,7 @@ label ag_st_imperio_E5:
     call ast_main("She's really doing everything I tell her!","smile","base","angry","mid")
     call ast_main("Look how easy it is, Professor!","smile","closed","base","mid", emote="03" ,trans="hpunch")
 
-    call nar(">Astoria joyfully jumps up and down on the spot, making a happy squeal...","start")
+    call nar(">Astoria joyfully jumps up and down on the spot, making a happy squeal...")
     call hide_characters
     hide screen bld1
     with d3
@@ -1346,7 +1346,7 @@ label ag_st_imperio_E5:
     pause.5
 
     show screen bld1
-    call nar(">Unknowingly dropping her wand...","end")
+    call nar(">Unknowingly dropping her wand...")
 
     call ton_main("","upset","base","base","R")
     m "*Uhm*..."

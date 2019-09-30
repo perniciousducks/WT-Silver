@@ -3,10 +3,13 @@
 ### Susan Imperio Events ###
 
 label ag_se_imperio_sb: # Move label
-
+    $ ast_chibi_zorder = 4 # In front of Susan.
     $ ag_se_imperio_sb.start()
 
     label end_ag_se_imperio_sb:
+
+    # Reset
+    $ ast_chibi_zorder = 3 # Default
 
     $ astoria_busy = True
     $ susan_busy = True
@@ -17,11 +20,12 @@ label ag_se_imperio_sb: # Move label
 
 label ag_se_imperio_sb_E1:
     call play_music("stop")
-
-    call sus_walk(action="enter", xpos="desk", ypos="base", speed=3)
+    call hide_characters
+    call ast_chibi("stand","530","base")
+    hide screen bld1
+    with d3
+    call sus_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
     pause.2
-    call ast_walk(xpos="530", ypos="base", speed=1.5)
-    pause.5
 
     call sus_main("Hello, [sus_genie_name]. You wanted to see me?.","open","base","worried","mid", xpos="right", ypos="base")
 
@@ -141,6 +145,7 @@ label ag_se_imperio_sb_E1:
     m "Just give me a minute..."
     pause.2
 
+    call play_music("stop")
     call hide_characters
     call ast_chibi("reset","530","base")
     hide screen bld1
@@ -156,8 +161,8 @@ label ag_se_imperio_sb_E1:
     with d3
     pause.1
 
+    call play_music("astoria_theme")
     g4 "(Damn it! Why did she do that?)"
-
     call sus_main("...","upset","base","worried","down")
     call ast_main("Put your clothes on, Susy.","smile","base","base","mid")
     call sus_main("...","upset","narrow","worried","mid")
@@ -243,10 +248,13 @@ label ag_se_imperio_sb_E2:
     m "..."
     call ast_main("...","annoyed","base","base","R")
 
-    call sus_walk(action="enter", xpos="desk", ypos="base", speed=3)
+    call hide_characters
+    call ast_chibi("stand","530","base")
+    hide screen bld1
+    with d3
+    call sus_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
     pause.2
-    call ast_walk(xpos="530", ypos="base", speed=1.5)
-    pause.5
+
 
     call sus_main("You wanted to see me, [sus_genie_name]?","open","base","worried","mid", xpos="right", ypos="base")
     call sus_main("Astoria? Why are you here?","open","base","worried","R")
@@ -498,6 +506,7 @@ label ag_se_imperio_sb_E2:
     call sus_main("","base","narrow","base","mid")
     pause.5
 
+    call play_music("stop")
     call hide_characters
     call ast_chibi("reset","530","base")
     call ast_walk("door","base", speed=2.5)
@@ -506,6 +515,7 @@ label ag_se_imperio_sb_E2:
     with d3
     pause.5
 
+    call play_music("astoria_theme")
     call ast_main("Come on Susy, time to give professor Tonks another visit","open","base","base","L", ypos="head")
     call sus_main("...","upset", ypos="head")
 
@@ -537,12 +547,14 @@ label ag_se_imperio_sb_E3:
     m "Shall I bring her up here?"
     call ast_main("Do you even need to ask?","smile","narrow","base","mid")
     m "I suppose not..."
-    call play_music("stop")
 
-    call sus_walk(action="enter", xpos="desk", ypos="base", speed=3)
+    call play_music("stop")
+    call hide_characters
+    call ast_chibi("stand","530","base")
+    hide screen bld1
+    with d3
+    call sus_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
     pause.2
-    call ast_walk(xpos="530", ypos="base", speed=1.5)
-    pause.5
 
     call sus_main("You wanted to see me sir?","open","base","worried","mid", xpos="right", ypos="base")
     call sus_main("Astoria?...","upset","base","worried","R")
@@ -807,6 +819,8 @@ label ag_se_imperio_sb_E3:
     call ast_main("Nice work, [ast_genie_name]...","open","closed","base","mid")
     call ast_main("You can come out now, Susy...","smile","narrow","base","down")
     sus "..."
+
+    call play_music("stop")
     hide screen astoria_main
     call blkfade
 
@@ -819,6 +833,7 @@ label ag_se_imperio_sb_E3:
     call sus_main("","upset","narrow","worried","L",xpos="right",ypos="base",trans="fade")
     call ctc
 
+    call play_music("astoria_theme")
     call ast_main("Oh my god! He absolutely covered you!","scream","base","base","mid",xpos="base",ypos="base")
     call sus_main("...","upset","narrow","base","L")
     call ast_main("I didn't know you had it in you, sir!","clench","base","base","mid")

@@ -252,6 +252,12 @@ label quests:
                 $ main_match_1_stage = "end"
                 jump hufflepuff_match_return
 
+    # Susan events not triggered by a date.
+    if sb_event_pause == 0:
+        if daytime:
+            if nt_he.susan_E1 and not susan_intro.E1_complete:
+                jump susan_intro_E1
+
     # Astoria events not triggered by a date.
     if ag_event_pause == 0:
         if daytime:
@@ -260,7 +266,7 @@ label quests:
             if nt_he.astoria_E1 and not astoria_intro.E4_complete:
                 jump astoria_intro_E4
         else:
-            if nt_he.susan_E1 and not astoria_intro.E1_complete:
+            if susan_intro.E1_complete and not astoria_intro.E1_complete:
                 jump astoria_intro_E1
 
 

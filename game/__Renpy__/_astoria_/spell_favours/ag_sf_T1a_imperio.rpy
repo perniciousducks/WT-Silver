@@ -16,78 +16,76 @@ label ag_se_imperio_sb: # Move label
 
 
 label ag_se_imperio_sb_E1:
-    call play_music("astoria_theme")
-    call blkfade
+    call play_music("stop")
 
-    call nar(">You summon Susan to your office.")
+    call sus_walk(action="enter", xpos="desk", ypos="base", speed=3)
+    pause.2
+    call ast_walk(xpos="530", ypos="base", speed=1.5)
     pause.5
-    call hide_blkfade
 
-    call sus_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
-    pause.8
+    call sus_main("Hello, [sus_genie_name]. You wanted to see me?.","open","base","worried","mid", xpos="right", ypos="base")
 
-    call sus_main("Hello, [sus_genie_name]. You wanted to see me?.","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
-    call ast_main("Hey [ast_susan_name]!","grin","narrow","base","L",xpos="base",ypos="base")
+    call play_music("astoria_theme")
+    call ast_main("Hey [ast_susan_name]!","grin","narrow","base","L", xpos="base", ypos="base")
     call sus_main("Astoria? What are you doing here?","open","base","worried","R")
-
     call ast_main("Oh, don't mind me...","base","base","base","R")
+
+    call ast_chibi(action="wand",xpos="530",ypos="base")
     call ast_main("I'm only here to put a curse on you.","grin","narrow","angry","mid")
     call sus_main("P-Put a curse on me?!!","open","wide","worried","wide")
+
+    call ast_chibi(action="wand_casting",xpos="530",ypos="base")
     call sus_main("No! Professor, do someth--","scream","wide","worried","mid")
 
-    call cast_spell("imperio")
-    call ast_main("{size=+10}{b}Imperio!{/b}{/size}","scream","base","angry","L")
+    # Astoria casts imperio.
+    stop music fadeout 2.0
+    hide screen tonks_main
+    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch")
 
-    call sus_main("W-what are you--","open","wide","worried","wide")
-    call nar("Susan's eyes flicker and a blank expression spreads across her face.")
-    call sus_main("--doing...","upset","base","base","up")
-    call sus_main("...","upset","narrow","base","up")
-    hide screen astoria_main
+    call hide_characters
+    hide screen bld1
     with d3
+    pause.2
+
+    # chibi spell animation.
+    call play_sound("spell")
+    call ast_chibi(action="wand_imperio",xpos="530",ypos="base")
+    with hpunch
+    pause.8
+
+    call play_music("trance")
+    call sus_main("W-what are you-","open","wide","worried","wide")
+    call nar("Susan's eyes flicker and a blank expression spreads across her face.")
+    call sus_main("-doing...","upset","base","base","up")
+    call sus_main("...","upset","narrow","base","up")
+
+    call ast_chibi(action="wand",xpos="530",ypos="base")
     call ast_main("OK, so what should we do now?","grin","base","angry","mid",xpos="close",ypos="base")
-    m "I don't know, Tonks usually did this part..."
-    call ast_main("But she's not here...{w} Which means we could do whatever we want [ast_genie_name]!","open","base","base","R")
-    call ast_main("So, what hidden desires could we push her towards...","grin","base","angry","L")
-    m "Hmmm?"
+    call ast_main("We could do whatever we want [ast_genie_name]!","open","base","base","R")
     m "How about we have her take her clothes off?"
-    call ast_main("[ast_genie_name]!","clench","closed","worried","mid")
+    call ast_main("All of them?!","clench","base","worried","mid")
     m "What? Didn't that work last time?"
     g9 "Maybe she secretly wants to be a exhibitionist!"
     call ast_main("I only made her take her top off.","open","base","base","mid")
     g9 "Then there you go!"
     call ast_main("OK...","smile","base","base","L")
-    call ast_main("Susy, are you listening?","open","closed","base","mid")
-    call sus_main("yes...","upset","narrow","worried","up")
+    call ast_main("Susan, are you listening?","open","closed","base","mid")
+    call sus_main("Yes...","upset","narrow","worried","up")
     call ast_main("Good, I want you to pay attention.","open","base","base","L")
     call sus_main("...","base","narrow","base","up")
-    call ast_main("And...",mouth="base",pupils="R")
-    call ast_main("Wait a second...",mouth="open",pupils="L")
-    call ast_main("What's the point if it's just you and I who see it!")
-    call ast_main("", mouth="base")
-    m "It's what worked last time... it's the perfect place to start."
-    m "Just say after me..."
-    m "Susan, act as you normally would..."
-    call ast_main("Susan, act as you normally would...",mouth="open")
-    m "But you have an uncontrollable urge to show us your boobs!"
-    ast "You..."
-    call ast_main("...", mouth="base",pupils="R")
-    m "Go on..."
-    call ast_main("But You have an... uncontrollable urge to show us...", mouth="open", pupils="L")
-    call sus_main("...","base","narrow","base","up")
-    call ast_main("Show us your...{w} your....{w} Show us your boobs!","clench","base","base","L")
-
-    call nar(">As Astoria utters the last part of the command Susan's body shifts a little and the blank expression fades away.")
+    call ast_main("And...","base","narrow","base","R")
+    call ast_main("Wait a second... [ast_genie_name], what's the point if it's just you and I who see it?","annoyed","base","base","mid")
+    g9 "It's the perfect place to start."
+    m "Now tell her to lift up her top..."
+    call ast_main("Very well, [ast_genie_name]...","clench","base","base","L")
+    call ast_main("Susan, I want you to show us your...{w} your...{w} Show us your boobs!","clench","base","base","L")
     call sus_main("...","base","narrow","base","mid")
 
-    call sus_main("So what did you... what did you want from...","open","base","base","down")
-    call sus_main("Oh no...","upset","narrow","worried","down")
-    call ast_main("Is something wrong, Susy?","grin","narrow","base","L")
+    call play_sound("gulp")
     call sus_main("*gulp*","upset","closed","worried","down")
-    call sus_main("Sir, would it be alright if I showed you my... b-boobs?","open","closed","worried","mid")
-    m "Your {b}boobs{/b}, Miss Bones?"
-    call ast_main("*Hi-hi-hi-hi*...","grin","base","angry","L")
-    call sus_main("I'm terribly sorry sir!","open","closed","base","mid")
-    call sus_main("Please don't look!!!","upset","closed","worried","mid")
+
+    call play_sound("gulp")
+    g4 "*Gulp!*"
 
     hide screen susan_main
     $ susan_wear_top = False
@@ -133,26 +131,32 @@ label ag_se_imperio_sb_E1:
     call sus_main("[ast_susan_name]!? W-why are you always being so mean to me?","open","wide","worried","wide")
     call ast_main("Pfft... you know...","annoyed","narrow","angry","R")
     call sus_main("A-... Are you just going to let her say that, s-sir?","scream","base","angry","mid")
-    g4 "What's that?{w} I was a little-- ugh...{w=0.4} distracted..."
+    g4 "What's that?"
+    m "I was a little...{w=0.4} *ugh*... distracted..."
 
     call nar(">You keep stroking your rock-hard cock whilst marvelling at Susan's heaving chest.")
     g4 "(So big, soft and squishy...)"
     call sus_main("Sir, what are you?-","upset","base","worried","down")
     call ast_main("Alright, I think you're enjoying this a little too much!","clench","base","angry","mid")
     m "Just give me a minute..."
+    pause.2
 
-    call cast_spell("imperio")
-    call ast_main("{size=+10}{b}Imperio!{/b}{/size}","scream","base","angry","L")
-    call ast_main("","base")
+    call hide_characters
+    call ast_chibi("reset","530","base")
+    hide screen bld1
+    with fade
+    pause.8
 
+    call ast_main("","annoyed","base","angry","R")
     call sus_main("W-w-what...","open","base","base","up")
+
     call nar(">Susan's eyes flicker once more as the blank expression spreads across her face.")
 
-    call gen_chibi("hide")
-    show screen genie
+    call gen_chibi("sit_behind_desk")
     with d3
     pause.1
-    m "(Damn it! Not again...)"
+
+    g4 "(Damn it! Why did she do that?)"
 
     call sus_main("...","upset","base","worried","down")
     call ast_main("Put your clothes on, Susy.","smile","base","base","mid")
@@ -189,23 +193,38 @@ label ag_se_imperio_sb_E1:
     call ast_main("Just call me for the next practice session!","smile","narrow","base","mid")
     m "Will do."
     m "Oh, please take Susan to professor Tonks' to be obliterated..."
-    call ast_main("Obliviated?","base","base","worried")
+    call ast_main("Obliviated?","base","base","worried","mid")
     m "Yeah, that!"
-    ast "Can't you do it?"
+    call ast_main("Can't you do it?","annoyed","base","base","mid")
     m "My wand casting hand is a bit tired for some reason..."
-    call ast_main("Fine...",mouth="annoyed",pupils="R")
-    call ast_main("Night then, Sir!","grin","closed","base","mid")
-    m "Good night..."
-    call ast_main("Come on Susy, time to give professor Tonks a visit","open","base","base","L")
-    call sus_main("...","upset","narrow","worried","down")
+    call ast_main("Fine...","annoyed","base","worried","R")
+    if daytime:
+        call ast_main("Have a nice day, Sir!","grin","closed","base","mid")
+        m "You too..."
+    else:
+        call ast_main("Night then, Sir!","grin","closed","base","mid")
+        m "Good night..."
+
+    call ast_walk("door","base", speed=2.5)
+    pause.2
+    call ast_chibi("stand","door","base", flip=False)
+    with d3
+    pause.5
+
+    call ast_main("Come on Susy, time to give professor Tonks a visit","open","base","base","mid", ypos="head")
+    call sus_main("...","upset","narrow","worried","down", ypos="head")
 
     call sus_walk(action="leave", speed=2.5)
 
     call ast_main("(This is so much fun!)","grin","closed","base","mid")
-    m "(Maybe leaving Tonks out of this was a bad idea...{w} Nah... {w=0.3} She's had her fun...)"
-    hide screen astoria_main
-    hide screen bld1
+
+    call play_sound("door")
+    call ast_chibi("hide")
     with d3
+    pause.5
+
+    call bld
+    m "(Maybe leaving Tonks out of this was a bad idea...{w} Nah... {w=0.3} She's had her fun...)"
 
     # Increase affection once (this is the first event)
     if ag_st_imperio_sb.counter == 1:
@@ -215,23 +234,25 @@ label ag_se_imperio_sb_E1:
 
 
 label ag_se_imperio_sb_E2:
-    call play_music("hermione_theme") #Should try astorias theme and see how it sounds
-    call ast_main("Let's try something else this time!","grin","narrow","base","mid",xpos="close",ypos="base",trans="fade")
+    call ast_main("Let's try something else this time!","grin","narrow","base","mid", xpos="close", ypos="base", trans="fade")
     g9 "Of course!"
     call ast_main("Great, I can't wait to see the look on Susan's dumb face...","grin","closed","base","mid")
     m "Let me just bring her up here."
-    call blkfade
 
-    call nar(">You summon Susan up to your office.")
+    call play_music("stop")
+    m "..."
+    call ast_main("...","annoyed","base","base","R")
+
+    call sus_walk(action="enter", xpos="desk", ypos="base", speed=3)
+    pause.2
+    call ast_walk(xpos="530", ypos="base", speed=1.5)
     pause.5
-    call hide_blkfade
 
-    call sus_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
-    pause.8
-
-    call sus_main("You wanted to see me, [sus_genie_name]?","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
+    call sus_main("You wanted to see me, [sus_genie_name]?","open","base","worried","mid", xpos="right", ypos="base")
     call sus_main("Astoria? Why are you here?","open","base","worried","R")
-    call ast_main("Oh... no reason...","annoyed","base","base","down")
+
+    call play_music("astoria_theme")
+    call ast_main("Oh... no reason...","annoyed","base","base","down", xpos="base", ypos="base")
     call sus_main("Is there something wrong, Professor?","upset","base","worried","mid")
     m "As a matter of fact there is..."
     call sus_main("R-really? Is this about me returning my books to the library a day late?","open","wide","base","wide")
@@ -246,39 +267,48 @@ label ag_se_imperio_sb_E2:
     g9 "Hiding away those glorious milk duds of yours is a serious offence!"
     call sus_main("","open","wide","base","wide")
     call ast_main("(Pffft, gloriously gross)","annoyed","base","angry","R")
-    call sus_main("P-professor Dumbledore! Why would you want me to do s-something like that!","scream","base","angry","mid",trans="hpunch") #Perhaps she should be a bit intrigued =Blush
+    call sus_main("P-professor Dumbledore! Why would you want me to do s-something like that!","scream","base","angry","mid", trans="hpunch") #Perhaps she should be a bit intrigued =Blush
+
+    call ast_chibi(action="wand",xpos="530",ypos="base")
     call sus_main("I think I better go...","upset","closed","worried","mid")
-    hide screen astoria_main
-    with d3
-    call ast_main("","grin","base","angry","L",xpos="base",ypos="base")
+    call ast_chibi(action="wand_casting",xpos="530",ypos="base")
+    call ast_main("","grin","base","angry","L")
     pause.5
 
-    call cast_spell("imperio")
-    call ast_main("{size=+10}{b}Imperio!{/b}{/size}","scream","base","angry","L")
+    # Astoria casts imperio.
+    stop music fadeout 2.0
+    hide screen tonks_main
+    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
 
-    call nar(">Susan's eyes flicker once more as the blank expression spreads across her face.")
-    call sus_main("What is--","open","wide","base","wide")
+    call hide_characters
+    hide screen bld1
+    with d3
+    pause.2
 
-    show screen blktone
-    call sus_main("...","upset","narrow","base","mid")
-    call ast_main("*ha-ha-ha-ha!*","grin","closed","base","mid")
+    # chibi spell animation.
+    call play_sound("spell")
+    call ast_chibi(action="wand_imperio",xpos="530",ypos="base")
+    with hpunch
+    pause.8
+
+    call play_music("trance")
+    call sus_main("...","upset","narrow","base","mid", xpos="right", ypos="base")
+    call ast_main("*ha-ha-ha-ha!*","grin","closed","base","mid", xpos="base", ypos="base")
     call ast_main("Her face was priceless when you said milk duds...","grin","base","base","L")
     m "You liked that?"
-    hide screen astoria_main
-    with d3
-    call ast_main("Of course! Anything to bring Bessy here down a peg.","smile","base","base","L",xpos="close",ypos="base")
-    call ast_main("Although, you said that before I cast Imperio on her, so we might have to obliviate that if we want to keep this a secret.","upset","base","worried","L")
-    m "Tonks will handle it afterwards just like last time..."
+    call ast_main("Of course! Anything to bring Bessy here down a peg.","smile","base","base","L")
+
+    call ast_chibi(action="wand",xpos="530",ypos="base")
     call ast_main("So what should we make her do today, [ast_genie_name]?","smile","base","base","mid")
-    m "Something fun perhaps?"
+    m "Something fun, perhaps?"
     call ast_main("*Hmmm*...","annoyed","narrow","base","R")
     m "Maybe something a little more... adventurous?"
     call ast_main("You mean like making her show you her milk duds?","upset","narrow","base","mid")
     m "Well if you insist..."
     call ast_main("*ugh*... you're such a filthy pervert!","clench","narrow","angry","mid")
-    m "We can do something else if you--"
+    m "We can do something else if you-"
     call ast_main("I didn't say no...","upset","closed","base","mid")
-    m "Oh... well how about you make it so--"
+    m "Oh... well how about you make it so-"
     call ast_main("I get to choose, [ast_genie_name]!","scream","closed","angry","mid")
     m "What? Why?"
     call ast_main("Because it's my spell and my wand!","open","narrow","angry","mid")
@@ -395,12 +425,6 @@ label ag_se_imperio_sb_E2:
 
     call nar(">As you shoot your massive load Susan's leg twitches slightly...")
 
-    call cast_spell("imperio")
-    call ast_main("{size=+10}{b}Imperio!{/b}{/size}","scream","base","angry","L")
-
-    call sus_main("","upset","narrow","base","mid")
-    call nar(">Susan's eyes flicker once more as the blank expression spreads across her face.")
-
     call ast_main("Let's delve deeper shall we...","grin","narrow","angry","L")
     m "W-what?"
     call ast_main("Susy, can you hear me?","open","base","base","L")
@@ -432,10 +456,10 @@ label ag_se_imperio_sb_E2:
     m "A closeted slut..."
     call ast_main("Excuse me?",mouth="open",eyebrows="worried")
     call ast_main("",mouth="upset")
-    m "Miss Greengrass... is there any other Hufflepuff students you know of selling favours?"
-    call ast_main("Why would I know or care what Hufflepuffs are doing?",mouth="clench")
+    m "Miss Greengrass... is there any other \"Hufflepuff\" students you know of selling favours?"
+    call ast_main("Why would I know or care what \"Hufflepuffs\" are doing?",mouth="clench")
     m "Just because she enjoys it doesn't mean it's not humiliating for her..."
-    m "What would the other Hufflepuffs think of her if she knew what you have her do?"
+    m "What would the other \"Hufflepuffs\" think of her if she knew what you have her do?"
     call sus_main("...", "upset","narrow","base","down")
     call ast_main("What do you mean?","upset","base","base")
     m "Ask her the right questions..."
@@ -474,16 +498,30 @@ label ag_se_imperio_sb_E2:
     call sus_main("","base","narrow","base","mid")
     pause.5
 
-    call ast_main("Come on Susy, time to give professor Tonks another visit","open","base","base","L")
-    call sus_main("...","upset")
+    call hide_characters
+    call ast_chibi("reset","530","base")
+    call ast_walk("door","base", speed=2.5)
+    pause.2
+    call ast_chibi("stand","door","base", flip=False)
+    with d3
+    pause.5
 
-    call sus_walk(action="leave", speed=2)
+    call ast_main("Come on Susy, time to give professor Tonks another visit","open","base","base","L", ypos="head")
+    call sus_main("...","upset", ypos="head")
 
-    call ast_main("Good night then, Sir!","grin","closed","base","mid")
-    m "Yes it was..."
-    m "Good night."
+    call sus_walk(action="leave", speed=2.5)
 
-    call ast_walk(action="leave", speed=2.5)
+    if daytime:
+        call ast_main("See you, [ast_genie_name]!","grin","closed","base","mid")
+        m "..."
+    else:
+        call ast_main("Good night then, Sir!","grin","closed","base","mid")
+        m "Good night."
+
+    call play_sound("door")
+    call ast_chibi("hide")
+    with d3
+    pause.5
 
     # Increase affection once (this is the second event)
     if ag_st_imperio_sb.counter == 2:
@@ -493,36 +531,52 @@ label ag_se_imperio_sb_E2:
 
 
 label ag_se_imperio_sb_E3:
-    call play_music("hermione_theme")
     call ast_main("","smile","base","base","mid",xpos="close",ypos="base",trans="fade")
     m "Ready for another go with the curse?"
     call ast_main("You bet [ast_genie_name]! I can't wait to see the look on Susy's stupid face this time!","grin","narrow","angry","down")
     m "Shall I bring her up here?"
     call ast_main("Do you even need to ask?","smile","narrow","base","mid")
     m "I suppose not..."
-    call blkfade
+    call play_music("stop")
 
-    call nar(">You summon Susan up to your office.")
+    call sus_walk(action="enter", xpos="desk", ypos="base", speed=3)
+    pause.2
+    call ast_walk(xpos="530", ypos="base", speed=1.5)
     pause.5
-    call hide_blkfade
 
-    call sus_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
-    pause.8
-
-    call sus_main("You wanted to see me sir?","open","base","worried","mid",xpos="mid",ypos="base",trans="fade")
+    call sus_main("You wanted to see me sir?","open","base","worried","mid", xpos="right", ypos="base")
     call sus_main("Astoria?...","upset","base","worried","R")
     call sus_main("What are you doing here?","upset","narrow","worried","R")
-    ast "Yeah yeah, whatever..."
+
+    call play_music("astoria_theme")
+    call ast_chibi(action="wand",xpos="530",ypos="base")
+    call ast_main("Yeah yeah, whatever...","open","base","base","R", xpos="base", ypos="base")
+
+    call ast_chibi(action="wand_casting",xpos="530",ypos="base")
     call sus_main("Well I'm not sure why I was brought here...","open","base","worried","mid")
 
-    call cast_spell("imperio")
-    call ast_main("{size=+10}{b}Imperio!{/b}{/size}","scream","base","angry","L")
+    # Astoria casts imperio.
+    stop music fadeout 2.0
+    hide screen tonks_main
+    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch")
 
-    call nar(">Susan's eyes flicker once more as the blank expression spreads across her face.")
-    call sus_main("Wait, wha--","open","wide","base","wide")
+    call hide_characters
+    hide screen bld1
+    with d3
+    pause.2
+
+    # chibi spell animation.
+    call play_sound("spell")
+    call ast_chibi(action="wand_imperio",xpos="530",ypos="base")
+    with hpunch
+    pause.8
+
+    call play_music("trance")
+    call sus_main("Wait, wha-","open","wide","base","wide")
     m "Couldn't even wait this time?"
-    ast "Quiet old man."
-    ast "Susan, I want you to keep listening to my commands and act normally as you take your top off!"
+    call ast_main("Quiet old man.","open","narrow","angry","mid")
+    call ast_chibi(action="wand",xpos="530",ypos="base")
+    call ast_main("Susan, I want you to keep listening to my commands and act normally as you take your top off!","smile","narrow","angry","L")
     g4 "!!!"
 
     hide screen susan_main
@@ -536,8 +590,7 @@ label ag_se_imperio_sb_E3:
     call sus_main("I promise it won't happen again...","upset","closed","worried","mid")
     g9 "Don't you worry about the books, Ms Bones!"
     call sus_main("T-Then what is it?","base","narrow","base","mid")
-
-    ast "Now, get those milk bags out!"
+    call ast_main("Just get those milk bags out!","clench","narrow","angry","L")
 
     hide screen susan_main
     $ susan_wear_bra = False
@@ -566,18 +619,12 @@ label ag_se_imperio_sb_E3:
     m "Ugh... I'm afraid not Susan..."
     call ast_main("","grin","narrow","angry","L",xpos="base",ypos="base")
     call sus_main("WHAT?!","scream","wide","base","wide")
-    call sus_main("W-w-w-well my aunt will just send you--","upset","narrow","angry","mid")
+    call sus_main("W-w-w-well my aunt will just send you-","upset","narrow","angry","mid")
 
-    call cast_spell("imperio")
-    call ast_main("{size=+10}{b}IMPERIO{/b}{/size}","scream","base","angry","L")
+    call nar(">Astoria strengthens her grip on her wand, increasing the effect the spell has on Susan.")
 
-    call nar(">Susan's eyes flicker once more as the blank expression spreads across her face.")
     call sus_main("to ...azkaban...","open","narrow","base","up")
-
-    show screen blktone
     call sus_main("...","upset","narrow","base","mid")
-    hide screen astoria_main
-    with d3
     call ast_main("Alright... that'll shut her up...{w} what should we make her do this time, [ast_genie_name]?","grin","base","base","mid",xpos="close",ypos="base")
     m "Hmmm... Are you actually going to let me choose this time or are you just asking to be annoying?"
     call ast_main("Hey! I am not annoying!","scream","closed","angry","mid",trans="hpunch")
@@ -615,8 +662,7 @@ label ag_se_imperio_sb_E3:
     call sus_main("...","upset","narrow","base","up")
     call ast_main("Now go, [ast_susan_name]!","grin","narrow","angry","mid")
 
-    hide screen astoria_main
-    hide screen susan_main
+    call hide_characters
     call sus_chibi("hide")
     hide screen blktone
     call blkfade
@@ -649,7 +695,7 @@ label ag_se_imperio_sb_E3:
     call ast_main("Time for you to wake up...","grin","narrow","angry","down")
     sus "..."
 
-    call play_music("hermione_theme")
+    call play_music("susan_theme")
     hide screen blktone
     hide screen bld1
     with d3
@@ -767,12 +813,13 @@ label ag_se_imperio_sb_E3:
     call nar(">Susan slowly crawls out from under your desk...")
 
     call sus_chibi("stand","desk","base")
+    call ast_chibi("reset","530","base")
     $ susan_face_covered = True
     hide screen blkfade
-    call sus_main("","upset","narrow","worried","L",xpos="mid",ypos="base",trans="fade")
+    call sus_main("","upset","narrow","worried","L",xpos="right",ypos="base",trans="fade")
     call ctc
 
-    call ast_main("Oh my god! He absolutely covered you!","scream","base","base","mid",xpos="close",ypos="base")
+    call ast_main("Oh my god! He absolutely covered you!","scream","base","base","mid",xpos="base",ypos="base")
     call sus_main("...","upset","narrow","base","L")
     call ast_main("I didn't know you had it in you, sir!","clench","base","base","mid")
     call ast_main("Nice work!","annoyed","base","base","mid")
@@ -787,27 +834,26 @@ label ag_se_imperio_sb_E3:
     $ susan_face_covered = False
     call sus_main("I hope you two are happy...","upset","narrow","base","down")
 
-    call sus_walk(action="leave", speed=2)
+    if daytime:
+        call ast_main("We're going to be late for classes, Susy!","annoyed","narrow","base","R")
+        call ast_main("Let's head to Tonks' study, shall we?...","smile","narrow","base","R")
+        sus "..."
+        m "See ya..."
+        call ast_main("Until next time, [ast_genie_name]!","grin","closed","base","mid")
+    else:
+        call ast_main("It's getting a bit late Susy, let's head to Tonks' study...","annoyed","narrow","base","R")
+        sus "..."
+        m "Ugh... uhm... good night."
+        call ast_main("Good night, [ast_genie_name]!","grin","closed","base","mid")
 
-    ast "Just a second Susan..."
-    sus "What?"
-
-    call cast_spell("imperio")
-    call ast_main("{size=+10}{b}IMPERIO{/b}{/size}","scream","base","angry","L")
-
-    call nar(">Susan's eyes flicker once more as the blank expression spreads across her face.")
-    call sus_main("Ohh...","open","narrow","base","up")
-
-    m "(I have created a monster...)"
-    call ast_main("It's getting a bit late Susy, let's head to Tonks' study...","annoyed","narrow","base","R")
-    sus "..."
-    m "Ugh... uhm... good night."
-    call ast_main("Good night, [ast_genie_name]!","grin","closed","base","mid")
-
-    call ast_walk(action="leave", speed=2.5)
+    call play_sound("door")
+    call ast_chibi("leave")
+    call sus_chibi("leave")
+    hide screen bld1
+    with d3
+    pause.8
 
     call bld
-    call nar(">Astoria and Susan head out of your office... Astoria skipping happily, humming all the way.")
     m "(That girl is even worse than me...)"
 
     # Increase affection once (this is the third event)

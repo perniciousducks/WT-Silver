@@ -6,7 +6,7 @@ default astoria_hair_short = cloth_class(char="astoria", category="head", subcat
 default astoria_hair_ann = cloth_class(char="astoria", category="head", subcat="hair", type="hair", id="ann_takamaki", layers=3, color=[[229, 198, 129, 255], [163, 125, 80, 255], [255, 209, 105, 255]], unlocked=False)
 
 # Hats and masks
-default astoria_mask_ann = cloth_class(char="astoria", category="head", subcat="hats", type="hat", id="ann_takamaki", layers=2, color=[[173, 18, 18, 255], [238, 188, 187, 255]], whoring=14, incompatible=["bottom", "bra", "garterbelt"], unlocked=False)
+default astoria_mask_ann = cloth_class(char="astoria", category="head", subcat="hats", type="hat", id="ann_takamaki", layers=2, color=[[173, 18, 18, 255], [238, 188, 187, 255]], whoring=14, unlocked=False)
 
 # Tops
 default astoria_cloth_topschool1 = cloth_class(char="astoria", category="tops", subcat="school", type="top", id="top_school_1", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [58, 115, 75, 255], [205, 205, 206, 255]])

@@ -10,14 +10,14 @@ label astoria_wardrobe_check(section, arg=None):
                     temp_count[2] += 1
                     if char_active.get_cloth(item.type) != None:
                         if not char_active.get_cloth(item.type).id == item.id:
-                            if ast_affection < 15:
+                            if ast_affection < 12:
                                 temp_count[1] += 1
 
         # Outfit outrage score check
-        if ast_affection < temp_count[0]*2:
+        if ast_affection < temp_count[0]:
             call ast_main("You're joking right? Why'd you think I would ever put this on...",face="annoyed")
             $ temp_score += 1
-        if temp_count[2] < 2 and ast_affection < 20:
+        if temp_count[2] < 2 and ast_affection < 12:
             if temp_score > 0:
                 call ast_main("...There's no underwear on that... What kind of pervert created this?",face="annoyed")
             else:
@@ -30,7 +30,7 @@ label astoria_wardrobe_check(section, arg=None):
         if temp_score > 0:
             call ast_main("Sorry, [ast_genie_name] but I can't wear that.",face="annoyed")
             #Hint
-            $ wardrobe_fail_hint(max(temp_count[0], 15, 20))
+            $ wardrobe_fail_hint(max(temp_count[0], 12, 20))
             return
     else:
         if section == "tabswitch":
@@ -48,7 +48,7 @@ label astoria_wardrobe_check(section, arg=None):
             return arg #IMPORTANT
         elif section == "touching":
             if arg == "boobs":
-                if ast_affection < 20:
+                if ast_affection < 14:
                     $ slap_mouse_away()
                     
                     $ random_number = renpy.random.randint(1, 7)
@@ -69,7 +69,7 @@ label astoria_wardrobe_check(section, arg=None):
                         call ast_main("Stop that!",face="annoyed")
                     return
             if arg == "pussy":
-                if ast_affection < 30:
+                if ast_affection < 18:
                     $ slap_mouse_away()
                     
                     $ random_number = renpy.random.randint(1, 6)
@@ -93,14 +93,14 @@ label astoria_wardrobe_check(section, arg=None):
             return
         elif section == "toggle":
             if arg in ("bra", "panties"):
-                if ast_affection < 15:
+                if ast_affection < 12:
                     $ random_number = renpy.random.randint(1, 2)
                     if random_number == 1:
                         call ast_main("*Eeeh* No?",face="angry")
                     elif random_number == 2:
                         call ast_main("I'd rather keep my underwear on...",face="angry")
                     #Hint
-                    $ wardrobe_fail_hint(15)
+                    $ wardrobe_fail_hint(12)
                     return
             elif arg in ("top", "bottom"):
                 if ast_affection < 10:
@@ -119,12 +119,12 @@ label astoria_wardrobe_check(section, arg=None):
             return
         elif section == "equip":
             if arg.type in ("bra", "panties"):
-                if ast_affection < 20:
+                if ast_affection < 12:
                     if char_active.get_cloth("bra"):
                         if arg.id == char_active.get_cloth("bra").id:
                             call ast_main("I'd rather not do that right now, [ast_genie_name].",face="angry")
                             #Hint
-                            $ wardrobe_fail_hint(20)
+                            $ wardrobe_fail_hint(12)
                             return
                     if char_active.get_cloth("panties"):
                         if arg.id == char_active.get_cloth("panties").id:
@@ -132,26 +132,26 @@ label astoria_wardrobe_check(section, arg=None):
                             nar "> Astoria starts giggling."
                             call ast_main("Yeah right...",face="angry")
                             #Hint
-                            $ wardrobe_fail_hint(20)
+                            $ wardrobe_fail_hint(12)
                             return
                 else:
                     if ast_affection < arg.whoring:
                         call astoria_wardrobe_too_much
                         return
             else:
-                if ast_affection < 30:
+                if ast_affection < 12:
                     if arg.type in ("top", "bottom"):
                         if char_active.get_cloth("top"):
                             if arg.id == char_active.get_cloth("top").id:
                                 call ast_main("I guess I could... but I'm not going to.",face="annoyed")
                                 #Hint
-                                $ wardrobe_fail_hint(30)
+                                $ wardrobe_fail_hint(12)
                                 return
                         if char_active.get_cloth("bottom"):
                             if arg.id == char_active.get_cloth("bottom").id:
                                 call ast_main("Hey, that's a great idea... but not in this universe.",face="angry")
                                 #Hint
-                                $ wardrobe_fail_hint(30)
+                                $ wardrobe_fail_hint(12)
                                 return
                 label astoria_wardrobe_too_much:
                 if ast_affection < arg.whoring:

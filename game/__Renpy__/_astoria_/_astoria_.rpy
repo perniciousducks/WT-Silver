@@ -106,7 +106,7 @@ label update_astoria:
     return
 
 label end_astoria_event:
-    #call astoria_chibi("hide") TODO: Fix me
+    call ast_chibi("hide")
     hide screen astoria_main
     with d3
     pause.5

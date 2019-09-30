@@ -464,7 +464,7 @@ init python:
             
         def reset_color(self):
             for i in xrange(len(self.color)):
-                self.color[i] = self.color_default[i]
+                self.color[i] = list(self.color_default[i])
             self.sprite_ico.cached = False
             self.cached = False
         

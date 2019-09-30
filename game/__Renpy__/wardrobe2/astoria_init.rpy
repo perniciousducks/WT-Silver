@@ -34,7 +34,7 @@ default astoria_cloth_basicpanties2 = cloth_class(char="astoria", category="pant
 
 # Legwear
 default astoria_cloth_pantyhose1 = cloth_class(char="astoria", category="legwear", subcat="stockings", type="stockings", id="pantyhose", layers=1, color=[[190, 146, 129, 255]])
-default astoria_cloth_stockingsann = cloth_class(char="astoria", category="legwear", subcat="stockings", type="stockings", id="ann_takamaki", layers=2, color=[[99, 42, 42, 255], [181, 135, 135, 255]], whoring=14, unlocked=False)
+default astoria_cloth_stockingsann = cloth_class(char="astoria", category="legwear", subcat="stockings", type="stockings", id="ann_takamaki", layers=2, color=[[99, 42, 42, 255], [181, 135, 135, 255]], whoring=14, unlocked=False, incompatible=["bottom"])
 
 # Gloves
 default astoria_cloth_glovesann = cloth_class(char="astoria", category="misc", subcat="gloves", type="gloves", id="ann_takamaki", layers=1, color=[[249, 139, 225, 255]], unlocked=False)

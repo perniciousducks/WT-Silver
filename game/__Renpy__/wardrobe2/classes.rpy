@@ -1,5 +1,6 @@
 init python:
-
+    import pygame
+    
     def get_character_object(key):
         return character_list.get(key)
             
@@ -338,8 +339,8 @@ init python:
         def unlock(self):
             if not self.unlocked:
                 self.unlocked = True
-                # Add a copy of this object to the character's available clothing
-                get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self.clone())
+                # Add cloth object to the character's clothing data
+                get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
             
         def clone(self):
             color = []
@@ -445,6 +446,12 @@ init python:
 
         def get_alpha(self, layer):
             return self.color[layer][3]/255.0
+            
+        def set_color_alt(self, l):
+            for i in xrange(len(l)):
+                self.color[i] = list(l[i])
+            self.sprite_ico.cached = False
+            self.cached = False
 
         def set_color(self, layer):
             if config.developer or cheat_wardrobe_alpha:
@@ -743,6 +750,12 @@ init python:
                             result = False
             return result
             
+        def get_cloth_object(self, category, subcat, id):
+            for object in self.clothing_dictlist[category][subcat]:
+                if object.id == id:
+                    return object
+            return None
+            
         def equip(self, object):
             if isinstance(object, outfit_class):
                 self.unequip("all")
@@ -754,8 +767,9 @@ init python:
                             if key not in self.incompatible_wardrobe:
                                 self.incompatible_wardrobe.append(key)
                             self.unequip(key)
-                    self.clothing[item.type][0] = item
+                    self.clothing[item.type][0] = self.get_cloth_object(item.category, item.subcat, item.id)
                     self.clothing[item.type][4] = False
+                    self.clothing[item.type][0].set_color_alt(item.color)
             else:
                 if self.clothing[object.type][0] == object and object.type != "hair":
                     self.unequip(object.type)

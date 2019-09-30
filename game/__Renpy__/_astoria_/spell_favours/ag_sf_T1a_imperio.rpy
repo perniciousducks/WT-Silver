@@ -874,6 +874,10 @@ label ag_se_imperio_sb_E3:
     if not susan_wardrobe_unlocked:
         $ susan_wardrobe_unlocked = True
         call nar(">You can now access Susan't wardrobe!")
+        
+        $ TBA_message("This concludes all events for Susan and Astoria as of version %s." % config.version)
+        if cheats_active:
+            $ TBA_message("If you want to use lewder clothes with Astoria you can up her affection level in the cheats menu in the top left corner.")
 
     # Increase affection once (this is the third event)
     if ag_se_imperio_sb.counter == 3:

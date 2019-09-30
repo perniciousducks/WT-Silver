@@ -24,7 +24,11 @@ label summon_astoria:
 
         # Spells
         "-Spells-":
-            jump astoria_spells
+            if ast_mood != 0:
+                call ast_main("I don't want to today...","annoyed","narrow","base","R")
+                jump astoria_requests
+            else:
+                jump astoria_spells
 
 
         # Wardrobe

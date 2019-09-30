@@ -818,98 +818,99 @@ label astoria_intro_E3:
 # Tonks wantes to teach Astoria the Imperius curse.
 
 label nt_he_astoria_E1:
-    ton "So about this girl."
+    call ton_main("So about this girl.","open","closed","base","mid")
     m "You're going to have to be more specific."
-    ton "Astoria Greengrass."
+    call ton_main("Astoria Greengrass.","open","base","base","mid")
     m "Ah yes, the hot-headed one."
-    ton "Yes, she's pretty cute isn't she..."
-    ton "I wouldn't mind giving her a thorough robe inspection if you know what I'm saying."
-    ton "This girl...{w} she's special...{w} different..."
+    call ton_main("Yes, she's pretty cute isn't she...","base","happyCl","base","mid")
+    call ton_main("I wouldn't mind giving her a thorough robe inspection - if you know what I'm saying.","horny","base","angry","mid", hair="horny")
+    call ton_main("This girl...{w=0.5} she's special...{w=0.8} different...","open","base","base","R", hair="neutral")
     m "You got the hots for this girl?"
-    ton "She's a Slytherin!"
+    call ton_main("She's a Slytherin!","angry","base","raised","mid")
     m "People keep saying that as if I'd know what the problem is."
-    ton "Oh yes... I guess I'm a teacher now so I should be more impartial..."
-    ton "Old habits I suppose."
-    ton "But no, it's not that."
-    ton "This girl is cursed... and it's quite a problem."
-    m "Don't you mean this cursed girl {i}is{/i} a problem?"
-    ton "No, she's cursed. Quite a hefty curse at that!"
-    m "..."
-    ton "Her family - the Greengrass family - is quite infamous in the wizarding world."
-    ton "They're known for being a very high class family of witches and wizards..."
-    ton "Some of them are very stuck-up and spoiled, for that reason."
-    ton "It's quite the norm for most pure blood families, actually."
+    call ton_main("Oh yes... I guess I'm a teacher now - so I should be more impartial...","upset","base","sad","down")
+    call ton_main("Old habits, I suppose.","open","base","worried","R")
+    call ton_main("But no, it's not that.","upset","base","worried","mid")
+
+    call ton_main("This girl you see, she's cursed... and it's quite a hefty curse at that!","open","base","sad","mid")
+    m "You don't say..."
+    #call ton_main("This girl is cursed... and it's quite a problem.","base","base","base","mid")
+    #m "Don't you mean this cursed girl {i}is{/i} a problem?"
+    #call ton_main("No, she's cursed. Quite a hefty curse at that!","base","base","base","mid")
+    #m "..."
+    call ton_main("Her family - the Greengrass family - is quite infamous in the wizarding world.","open","base","angry","mid")
+    call ton_main("They're known for being a very high class family of witches and wizards...","open","base","angry","R")
+    call ton_main("Some of them are very stuck-up and spoiled, for that reason.","upset","base","sad","R")
+    call ton_main("It's quite the norm for most pure blood families, actually.","open","closed","base","mid")
     m "Get to the point..."
-    ton "*Sigh*"
-    ton "One of Astoria's ancestors was put under a blood curse - and I fear that parts of this curse has trickled down the generations - and surfaced in Astoria."
+    call ton_main("*Sigh*","upset","base","worried","ahegao")
+    call ton_main("One of Astoria's ancestors was put under a blood curse - and I fear that parts of this curse has trickled down the generations - and surfaced in Astoria.","open","base","angry","mid")
     m "And what did this accursed curse do exactly?"
-    ton "Originally, its purpose was to bring down the family, and make them appear weak in the eyes of the wizarding community."
-    ton "Every now and then one of the family members would become frail and live a short life."
+    call ton_main("Originally, its purpose was to bring down the family, and make them appear weak in the eyes of the wizarding community.","open","base","angry","R")
+    call ton_main("Every now and then one of the family members would become frail and live a short life.","open","closed","sad","mid")
     m "Oh shit..."
-    ton "Yeah..."
+    call ton_main("Yeah...","upset","base","worried","down")
     m "Hey, at least it's not the other way round, am I right..."
     m "Immortality can be quite the curse too you know..."
-    ton "Yes, I can see how much you're hurting inside..."
-    ton "The opportunity to have sex with some of the most attractive women in all of history must really suck."
+    call ton_main("Yes, I can see how much you're hurting inside...","open","base","base","R")
+    call ton_main("The opportunity to have sex with some of the most attractive women in all of history must really suck.","open","base","raised","mid")
     m "I'll live with it..."
-    ton "Fortunately, this curse has faded after many generations, but in turn appears to have evolved into something else..."
+
+    call ton_main("Fortunately, this curse has faded after many generations, but in turn appears to have evolved into something else...","open","closed","base","mid")
     m "How would you know?"
-    ton "I'm an auror..."
+    call ton_main("I'm an auror...","base","base","base","mid")
     m "Is that your answer for everything now?"
-    ton "Just trust me..."
-    ton "The nature of it is quite familiar to me."
-    ton "I have strong reasons to believe that this girl is..."
-    ton "She's..."
+    call ton_main("Just trust me...","open","closed","base","mid")
+    call ton_main("The nature of it is quite familiar to me.","base","base","base","R")
+    call ton_main("I have strong reasons to believe that this girl is...","upset","base","angry","R")
+    call ton_main("She's...","upset","base","worried","down")
     m "She's what?"
-    ton "She's asexual!"
+    call ton_main("She's asexual!","angry","base","sad","mid")
     m "..."
-    ton "You don't believe me?"
+    call ton_main("You don't believe me?","upset","base","sad","mid")
     m "Oh no, I do believe you."
     m "..."
     m "Mind explaining to me what asexual's supposed to mean?"
-    ton "You don't know?"
-    ton "Well that's not too surprising - all things considered..."
-    ton "It means she feels no sexual feeling or attraction, to anything!"
+    call ton_main("You don't know?","open","base","raised","mid")
+    call ton_main("Well that's not too surprising - all things considered...","open","closed","worried","mid")
+    call ton_main("It means she feels no sexual feeling or attraction, to anything!","open","base","angry","mid")
     g4 "WHAT?!"
-    ton "I know!"
+    call ton_main("I know!","angry","base","sad","mid")
     m "By the great desert sands... That's a curse worse than death."
-    m "I thought the effect was supposed to have got weaker?"
-    ton "The curse has seemingly gone from killing off random members of their family, to preventing new members from being born."
-    m "That doesn't make any sense..."
-    m "But since when has magic made any fucking sense in this universe..."
-    ton "Hey, it makes perfect sense!"
-    ton "..."
-    ton "In any case, I'd like to keep an eye on her - if you don't mind."
+    call ton_main("The curse has seemingly gone from killing off random members of their family, to preventing new members from being born.","upset","base","base","R")
+    g4 "Wait, since when can spells change their outcome like that?"
+    m "Magic doesn't make any fucking sense in this universe..."
+    call ton_main("Hey, it makes perfect sense!","open","base","angry","mid")
+    call ton_main("...","upset","base","worried","R")
+    call ton_main("In any case, I'd like to keep an eye on her - if you don't mind.","open","base","angry","mid")
     m "Go right ahea-{w=0.8}{nw}"
-    ton "Maybe even teach her how to cast Imperio properly."
+    call ton_main("Maybe even teach her how to cast Imperio properly.","horny","base","base","R")
     m "..."
+    with hpunch
     g4 "Hold on a second...{w=0.8} what?!"
     g4 "You want to teach this {b}sadist{/b} how to cast those illegal curses?"
     m "That's what got us in all this trouble in the first place!"
-    ton "Don't worry, I'm just gonna teach her the basics..."
-    ton "She won't go out and curse students at random anymore... I won't allow that."
-    ton "But... Maybe this can help ignite that \"sexual urge\" - deep inside of her..."
-    ton "She clearly isn't ready to do it with some boy..."
-    ton "Or you, for that matter."
+    call ton_main("Don't worry, I'm just gonna teach her the basics...","open","closed","base","mid")
+    call ton_main("She won't go out and curse students at random anymore... I won't allow that.","open","base","angry","mid")
+    call ton_main("But... Maybe this can help ignite that \"sexual urge\" - deep inside of her...","angry","base","worried","R")
+    call ton_main("She clearly isn't ready to do it with some boy...","open","base","raised","mid")
+    call ton_main("Or you, for that matter.","upset","base","worried","R")
     m "If she's really cursed with \"Asexuality\" - then I don't want to have her anywhere close to me."
-    ton "It's not contagious, you numpty!"
-    ton "Have you not been paying attention? It's a family curse!"
+    call ton_main("It's not contagious, you numpty!","open","base","angry","mid")
+    call ton_main("Have you not been paying attention? It's a family curse!","angry","base","angry","mid")
     m "..."
-    ton "That being said, I'd rather have her do it with me..."
+    call ton_main("That being said, I'd rather have her do it with me...","horny","base","angry","mid", hair="horny")
     m "Are we still talking about the curse thingy?"
-    ton "Yes..."
+    call ton_main("Yes...","base","base","angry","mid")
     m "So your goal is to somehow awaken her sexuality, and get rid of this curse?"
-    ton "It might not be that easy, but I think it would be a good start."
-    ton "I must at least know if my theory is correct..."
-    m "I don't see how this Imperio thing plays into it, but if you say so..."
-    #m "But hold on... won't the ministry be down our necks again if an illegal curse is repeatedly cast at Hogwash?"
-    #ton "No, the ministry doesn't track magic inside the school walls illegal or not, curses are no different."
-    #ton "They rely on these things being reported by the school administration... or lately... by yours truly."
-    #ton "And to be frank... This place could blow up and I wouldn't care enough to report it to those assholes anymore."
-    #m "I hope that's not part of your plan..."
-    #ton "Not unless it's a pleasure explosion."
-    ton "I'll speak to Miss Greengrass."
-    ton "I doubt she'll have many objections..."
+    call ton_main("It might not be that easy, but I think it would be a good start.","open","base","base","L")
+    call ton_main("I must at least know if my theory is correct...","upset","base","sad","mid")
+    m "I don't see how this \"Imperio\" thing plays into it, but if you say so..."
+    call ton_main("I'll speak to Miss Greengrass.","open","base","base","mid")
+    call ton_main("I doubt she'll have many objections...","base","happyCl","base","mid")
+
+    ">You ask Tonks to explain asexuality to you some more..."
+    ">You still can't wrap your mind around the fact that such a horrible thing exists..."
 
     $ nt_he.astoria_E1 = True
 
@@ -959,66 +960,72 @@ label astoria_intro_E4:
 
             jump main_room
 
+    call ast_walk("desk","base", speed=2.8)
+    pause.2
 
-    ast "Hello, Professor."
-    ast "Professor Tonks told me to talk to you, Sir."
+    call play_music("astoria_theme")
+    call ast_main("Hello, Professor.","smile","base","base","mid", xpos="mid", ypos="base")
+    call ast_main("Professor Tonks told me to talk to you, Sir.","open","base","base","R")
     m "....................."
     m "She did?"
-    ast "Yes, Sir..."
+    call ast_main("Yes, Sir...","annoyed","base","base","mid")
     m "(Shit, was I supposed to do anything with her?)"
-    ast "...................."
+    call ast_main("....................","annoyed","base","base","R")
     m  "(Oh that's right. Freeing her from her curse...)"
-    ast "Sir, If there is nothing you need of me, then I'd like to leave..."
+    call ast_main("Sir, If there is nothing you need of me, then I'd like to leave...","open","narrow","base","mid")
 
     menu:
         m "..."
         "\"What about your detention?\"":
-            ast "Oh..."
+            call ast_main("Oh...","clench","base","base","down")
             m "If I recall correctly, we have yet to discuss your punishment."
-            ast "So you didn't forget about that..."
+            call ast_main("So you didn't forget about that...","clench","base","worried","mid")
             pass
 
         "\"You still need to be punished!\"":
-            ast "Punished?!"
-            ast "I thought I was only going to get detention?"
+            call ast_main("Punished?!","clench","base","base","mid")
+            call ast_main("I thought I was only going to get detention?","open","base","worried","mid")
             m "Yes, detention."
             pass
 
-        "\"Fine by me...\"":
-            ast "I'll head back to the dungeons, then..."
+        "\"Fine by me...\"": # Fails.
+            call ast_main("I'll head back to the dungeons then.","smile","base","base","R")
             m "See ya."
 
-            # Astoria leaves
+            # Astoria leaves.
+            call ast_walk(action="leave", speed=2.8)
 
             call bld
             m "I'd better not mention this to Tonks..."
             m "I'm sure she'll come back for her punishment."
 
             $ ag_event_pause += 7 # Returns a week later.
-            $ astoria_busy = True
 
             jump main_room
 
     m "It's just a couple of hours with your teacher."
     g9 "I'm sure you'll enjoy it!"
-    ast "If you say so, Sir."
-    ast "..."
-    ast "Would it be ok if I go there some other time?"
+    call ast_main("If you say so, Sir.","open","closed","base","mid")
+    call ast_main("...","annoyed","narrow","base","R")
+    call ast_main("Would it be ok if I go there some other time?","open","base","base","mid")
     m "Are you trying to weasel yourself out of your punishment?"
-    ast "No?"
-    ast "It's just that... I really don't have time right now..."
+    call ast_main("No?","annoyed","base","base","mid")
+    call ast_main("It's just that... I really don't have time right now...","open","base","base","down")
     m "..."
     m "I'll allow it. But just this once!"
-    ast "Thank you!"
+    call ast_main("Thank you!","smile","closed","base","mid")
     m "You're dismissed..."
-    ast "..."
+    call ast_main("...","grin","base","angry","R")
 
     # Astoria leaves.
     call ast_walk(action="leave", speed=2.5)
 
+    call bld
+    m "..."
+    g9 "I'd like to go on detention with that nympho myself!"
+    m "That girl can consider herself lucky..."
+
     $ astoria_busy = True
-    $ ag_event_pause  += 2
-    $ ag_summon_pause += 2 # You can't summon Astoria for a couple of days.
 
     $ astoria_unlocked = True
     $ achievement.unlock("unlockast", True)

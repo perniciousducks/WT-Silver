@@ -317,15 +317,15 @@ screen stats_menuitem(xx, yy):
                             elif current_category == "Astoria":
                                 use stat_bar(int(10-ast_mood/1.0), "-Mood-" , ast_mood_word, ast_mood)
                                 use stat_bar(int(1/1), "-Favour Tier-", "", 1)
-                                use stat_bar(int(ast_affection/0.9), "-Affection-", "", ast_affection) # TODO: Add word list
-                                use stat_bar(int(3/0.9), "-Reputation-", "Mischevious", 4) # TODO: Add word list and variable, starts at level 4
+                                use stat_bar(int(ast_affection/0.8), "-Affection-", "", ast_affection) # TODO: Add word list
+                                use stat_bar(int(3/0.9), "-Reputation-", "Mischievious", 4) # TODO: Add word list and variable, starts at level 4
                                 #use stat_bar(int(ast_training_counter/0.9), "-Spell training-" , "Not started", ast_training_counter) # TODO: Add word list
                             elif current_category == "Susan":
                                 use stat_bar(int(10-sus_mood/1.0), "-Mood-" , "Cheerful", sus_mood) # TODO: Add word list
                                 use stat_bar(int(1/0.9), "-Favour Tier-", "", 1) # TODO: Add Susan tier
                                 use stat_bar(int(sus_whoring/0.9), "-Confidence-", "Non-existent", sus_whoring) # TODO: Add word list
                                 use stat_bar(int(0/0.9), "-Reputation-", "Invisible", 0) # TODO: Add word list and variable
-                                use stat_bar(int(0), "{size=-10}-Assertivness Training-{/size}" , "Not started", 0) # TODO: Add word list
+                                use stat_bar(int(0), "{size=-10}-Assertiveness Training-{/size}" , "Not started", 0) # TODO: Add word list
             else:
                 if current_item["flag"]:
                     vbox:

@@ -401,6 +401,7 @@ label hg_pf_handjob_1:
 
             if hg_kiss.trigger == False:
                 $ achievement.unlock("herkiss")
+                $ hg_pf_handjob.change_icon(a="heart_yellow", b="heart_red")
             $ hg_kiss.triggered() # .trigger = True, .counter += 1
             pause 2
 

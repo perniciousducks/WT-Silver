@@ -305,6 +305,7 @@ label hg_pf_talk_T2:
 
         if hg_jerkoff.trigger == False:
             $ achievement.unlock("busted")
+            $ hg_pf_talk.change_icon(a="heart_yellow", b="heart_red")
         $ hg_jerkoff.triggered() # .trigger = True, .counter += 1
 
     else:

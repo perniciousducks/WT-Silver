@@ -71,8 +71,8 @@ label susan_intro_E1:
     call bld
     "*knock-knock-knock*"
 
-    sus "*Uhm*... Professor Dumbledore, Sir?"
-    sus "May I come in?"
+    who "*Uhm*... Professor Dumbledore, Sir?"
+    who "May I come in?"
     m "Another girl?"
 
     $ d_flag_01 = False
@@ -81,7 +81,7 @@ label susan_intro_E1:
     menu:
         m "..."
         "\"Come on in.\"":
-            sus "Thank you, Sir."
+            who "Thank you, Sir."
 
         "\"Who's there?\"":
             $ d_flag_01 = True # Knows name.
@@ -100,58 +100,61 @@ label susan_intro_E1:
 
         "\"Not now.\"":
             $ d_flag_02 = True # Susan walks in anyway.
-            sus "Okay, Sir."
+            who "Okay, Sir."
 
-    call sus_walk("mid","base", speed=3)
+    call sus_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
-    call play_music("susan_theme")
     call bld
-
     if d_flag_02:
         g4 "Didn't I say not now-"
     else:
         m "How can I help you-"
 
+    call play_music("susan_theme")
     call sus_main("","base","base","base","mid", xpos="right", ypos="base")
     pause.8
 
     # Boing sound?
-    m "(Damn! Look at them titties...)"
+    call play_sound("boing")
+    with hpunch
+    g4 "(Damn! Look at them titties...)"
 
     menu:
         "\"Hello, Gorgeous!\"":
-            sus "*Uhm*..." # Embarrassed.
-            sus "He- Hello..."
+            call sus_main("*Uhm*...","upset","base","base","down") # Embarrassed.
+            call sus_main("He- Hello...","open","base","worried","mid")
 
         "\"Susan! How great to see you!\"" if d_flag_01:
             g9 "Where have you been all my life?"
-            sus "I've been here at school for a couple of years now, Sir."
+            call sus_main("I've been here at school for a couple of years now, Sir.","open","base","worried","R")
 
         "\"My day just got a whole lot brighter!\"":
-            sus "Sir?"
+            call sus_main("Sir?","upset","base","worried","mid")
             m "(Or should say darker?)"
-            g9 "(Those tits must cast a huge-ass shadow...)"
+            show screen blktone
+            g4 "(Those tits must cast a huge-ass shadow...)"
+            hide screen blktone
 
-    sus "Professor Tonks said you wanted to see me?"
+    call sus_main("Professor Tonks said you wanted to see me?","base","base","base","mid")
     g9 "Did she now?"
     m "(I have to get that woman a drink for introducing me to this magnificently voluptuous creature...)"
     g9 "Well, how nice of her."
-    sus "Is there anything I can help you with, Professor?"
+    call sus_main("Is there anything I can help you with, Professor?","grin","base","base","mid")
     m "..."
-    sus "S- Sir?"
+    call sus_main("S- Sir?","open","base","worried","mid")
     m "(This must be that girl she wanted me to help with body confidence...)"
     m "Did professor Tonks tell you why I wanted to see you?"
-    sus "N-no...{w} I'm not in trouble am I?"
+    call sus_main("N-no...{w} I'm not in trouble am I?","upset","base","worried","down")
     m "Don't worry, I just needed to confirm something - You're free to go..."
-    sus "C-confirm something?"
-    sus "So I'm not in trouble then?"
+    call sus_main("C-confirm something?","open","narrow","worried","mid")
+    call sus_main("So I'm not in trouble then?","grin","base","base","mid")
     m "(This girl's got some confidence issues for sure...)"
     m "No miss Bones... You're not in any trouble."
-    sus "Very well..."
-    sus "I shall return to my dormitory then."
-    sus "Good-{w=0.4} Good day, Sir."
+    call sus_main("Very well...","base","base","base","mid")
+    call sus_main("I shall return to my dormitory then.","open","base","base","R")
+    call sus_main("Good-{w=0.4} Good day, Sir.","grin","base","base","mid")
 
-    call sus_walk(action="leave", speed=2.5)
+    call sus_walk(action="leave", speed=2)
 
     call bld
     m "..."

@@ -61,7 +61,7 @@ label ag_st_imperio:
     $ astoria_outfit_last.save() # Store current outfit.
 
     $ tonks_class.equip(tonks_outfit_default)
-    $ tonks_class.equip(astoria_outfit_default)
+    $ astoria_class.equip(astoria_outfit_default)
 
     $ ag_st_imperio.inProgress = True
 
@@ -77,7 +77,7 @@ label end_ag_st_imperio:
     with d3
 
     $ tonks_class.equip(tonks_outfit_last) # Equip player outfit.
-    $ tonks_class.equip(astoria_outfit_last) # Equip player outfit.
+    $ astoria_class.equip(astoria_outfit_last) # Equip player outfit.
 
     $ tonks_busy = True
     $ astoria_busy = True

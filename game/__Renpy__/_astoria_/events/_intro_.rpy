@@ -311,7 +311,7 @@ label astoria_intro_E2_hermione:
     call her_main("really? You're depending on me to find a criminal student within our school?","soft","down_raised",cheeks="blush")
     m "If it's not too much troub--"
     call her_main("I'd be honoured, [genie_name]!","scream","closed")
-    call her_main("It's no doubt the work of one of those despicable \'slytherins\'...","open","angryCl")
+    call her_main("It's no doubt the work of one of those despicable \"slytherins\"...","open","angryCl")
     call her_main("Nothing would give me greater pleasure than to see scum like that sent to \'Azkaban\'...","angry","angryL")
 
     # Genie already knows about Azkaban.
@@ -608,7 +608,7 @@ label astoria_intro_E3:
     m "It's not that sort of visit."
     call sna_main("Really? Then what's she doing here?","snape_01")
     m "She's the one who's been casting those curses."
-    call sna_main("Truthfully? A Slytherin?","snape_05")
+    call sna_main("Truthfully? A \"Slytherin?\"","snape_05")
     call sna_main("I expect better than this from my students, Miss Greengrass...","snape_10")
 
     call sna_main("The very first lesson I give you is don't-","snape_08")
@@ -826,7 +826,7 @@ label nt_he_astoria_E1:
     call ton_main("I wouldn't mind giving her a thorough robe inspection - if you know what I'm saying.","horny","base","angry","mid", hair="horny")
     call ton_main("This girl...{w=0.5} she's special...{w=0.8} different...","open","base","base","R", hair="neutral")
     m "You got the hots for this girl?"
-    call ton_main("She's a Slytherin!","angry","base","raised","mid")
+    call ton_main("She's a \"Slytherin!\"","angry","base","raised","mid")
     m "People keep saying that as if I'd know what the problem is."
     call ton_main("Oh yes... I guess I'm a teacher now - so I should be more impartial...","upset","base","sad","down")
     call ton_main("Old habits, I suppose.","open","base","worried","R")
@@ -878,7 +878,7 @@ label nt_he_astoria_E1:
     call ton_main("I know!","angry","base","sad","mid")
     m "By the great desert sands... That's a curse worse than death."
     call ton_main("The curse has seemingly gone from killing off random members of their family, to preventing new members from being born.","upset","base","base","R")
-    g4 "Wait, since when can spells change their outcome like that?"
+    #g4 "Wait, since when can spells change their outcome like that?"
     m "Magic doesn't make any fucking sense in this universe..."
     call ton_main("Hey, it makes perfect sense!","open","base","angry","mid")
     call ton_main("...","upset","base","worried","R")

@@ -39,7 +39,7 @@ label ag_se_imperio_sb_E1:
 
     # Astoria casts imperio.
     stop music fadeout 2.0
-    hide screen tonks_main
+    hide screen susan_main
     call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch")
 
     call hide_characters
@@ -277,7 +277,7 @@ label ag_se_imperio_sb_E2:
 
     # Astoria casts imperio.
     stop music fadeout 2.0
-    hide screen tonks_main
+    hide screen susan_main
     call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
 
     call hide_characters
@@ -557,7 +557,7 @@ label ag_se_imperio_sb_E3:
 
     # Astoria casts imperio.
     stop music fadeout 2.0
-    hide screen tonks_main
+    hide screen susan_main
     call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch")
 
     call hide_characters
@@ -855,6 +855,10 @@ label ag_se_imperio_sb_E3:
 
     call bld
     m "(That girl is even worse than me...)"
+
+    if not susan_wardrobe_unlocked:
+        $ susan_wardrobe_unlocked = True
+        call nar(">You can now access Susan't wardrobe!")
 
     # Increase affection once (this is the third event)
     if ag_st_imperio_sb.counter == 3:

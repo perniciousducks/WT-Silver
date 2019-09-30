@@ -744,7 +744,7 @@ label hg_pf_talk_tonks:
     call ton_main("That doesn't explain as to why you decided to contribute to this problem and do favours for your teachers as well.", mouth="open", eyes="base", pupils="mid", eyebrows="raised", hair="basic")
     call her_main("Well...", mouth="disgust", eye="baseL")
     call ton_main("There is no need for you to keep up an act if you changed your mind on it.", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="basic")
-    call ton_main("You can tell us. I most certainly won't judge you...", mouth="horny", eyes="base", pupils="mid", eyebrows="base", cheeks="cheeks_blush", hair="horny")
+    call ton_main("You can tell us. I most certainly won't judge you...", mouth="horny", eyes="base", pupils="mid", eyebrows="base", cheeks="blush", hair="horny")
     call her_main("I just...{w} Sometimes Gryffindor is just so far behind in points, I also only asked Professor Dumbledore for a favour once or twice...", mouth="soft", eye="down_raised")
     call ton_main("Oh, I see... and I suppose you're against the idea of doing favours for another teacher?", mouth="base", eyes="base", pupils="mid", eyebrows="upset", hair="horny")
     call her_main("I...", mouth="angry", eye="base")
@@ -822,7 +822,7 @@ label hg_pf_talk_tonks:
             call her_main("Especially that one time during care for magical creatures...", mouth="open", eye="base")
             call ton_main("Oh? You weren't studying centaurs were you?", mouth="horny", eyes="base", pupils="mid", eyebrows="raised", hair="horny")
             call her_main("No? Why would you assume that?", mouth="normal", eye="suspicious")
-            call ton_main("No reason... please continue...", mouth="open", eyes="base", pupils="R", eyebrows="raised", cheeks="cheeks_blush", hair="basic")
+            call ton_main("No reason... please continue...", mouth="open", eyes="base", pupils="R", eyebrows="raised", cheeks="blush", hair="basic")
             call ton_main("", mouth="base", eyes="base", pupils="mid", eyebrows="raised", hair="basic")
             call her_main("Well, I do hope that Hagrid is above this favour trading business. He sure seems like it during my classes with him.", mouth="open", eye="closed")
             call her_main("One of those Slytherin students was being quite rough with a Blast-ended skrewt making it go off on purpose...", mouth="annoyed", eye="baseL")
@@ -833,7 +833,7 @@ label hg_pf_talk_tonks:
                 m "(Yes, any minute now...)"
                 call her_main("I was just about to call her out on it as it started shaking violently.", mouth="open", eye="baseL")
                 g4 "(Yes, any second now...)"
-                call ton_main("Then what happened?", mouth="base", eyes="base", pupils="mid", eyebrows="base", cheeks="cheeks_blush", hair="basic")
+                call ton_main("Then what happened?", mouth="base", eyes="base", pupils="mid", eyebrows="base", cheeks="blush", hair="basic")
                 call her_main("I could momentarily see the concerned look on her face as the skrewt exploded right into it...", mouth="open", eye="down", cheeks="blush")
                 g4 "(Yes, take it right on your face you slut!)"
                 call cum_block
@@ -844,7 +844,7 @@ label hg_pf_talk_tonks:
                 call cum_block
                 g4 "{size=-5}*Argh!* YES!{/size}"
 
-                call ton_main("Are you okay professor? You're awfully quiet...", mouth="smile", eyes="base", pupils="mid", eyebrows="raised", cheeks="cheeks_blush", hair="basic")
+                call ton_main("Are you okay professor? You're awfully quiet...", mouth="smile", eyes="base", pupils="mid", eyebrows="raised", cheeks="blush", hair="basic")
                 call her_main("(.............)", mouth="soft", eye="base")
                 call hide_characters
                 call gen_chibi("came_on_desk")
@@ -856,7 +856,7 @@ label hg_pf_talk_tonks:
                 m "Fast...{w=0.4} blended...{w=0.4} fruits?"
                 call ton_main("Right...", mouth="open", eyes="closed", pupils="wide", eyebrows="sad", hair="basic")
                 call ton_main("Well, then.... I think we're{w=0.4} done here...", mouth="open", eyes="base", pupils="wide", eyebrows="base", hair="basic")
-                call her_main("...", mouth="normal", eye="baseL", cheeks="cheeks_blush")
+                call her_main("...", mouth="normal", eye="baseL", cheeks="blush")
                 if daytime:
                     call ton_main("I'll leave you two to it, have a good day Miss Granger.", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="basic")
                     call her_main("Good day, professor Tonks.", mouth="open", eye="base")
@@ -894,7 +894,7 @@ label hg_pf_talk_tonks:
             g4 "..."
             if masturbating:
                 call gen_chibi("sit_behind_desk")
-            call ton_main("...", mouth="smile", eyes="wink", pupils="mid", eyebrows="upset", cheeks="cheeks_blush", hair="basic")
+            call ton_main("...", mouth="smile", eyes="wink", pupils="mid", eyebrows="upset", cheeks="blush", hair="basic")
             call her_main("I...", mouth="angry", eye="happyCl")
             call ton_main("Go on, I'm sure the Headmaster doesn't mind. My lips are sealed.", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="basic")
             call her_main("Professor...", mouth="disgust", eye="down_raised")
@@ -954,7 +954,7 @@ label hg_pf_talk_tonks:
                         call cum_block
                         g4 "{size=-5}*Argh!* YES!{/size}"
 
-                        call ton_main("Seems like the headmaster enjoyed our little discussion...", mouth="smile", eyes="base", pupils="mid", eyebrows="raised", cheeks="cheeks_blush", hair="basic")
+                        call ton_main("Seems like the headmaster enjoyed our little discussion...", mouth="smile", eyes="base", pupils="mid", eyebrows="raised", cheeks="blush", hair="basic")
                         call her_main("(.............)", mouth="soft", eye="base")
                         call hide_characters
                         call gen_chibi("came_on_desk")
@@ -963,7 +963,7 @@ label hg_pf_talk_tonks:
                         call ton_main("What have you been doing back there?", mouth="open", eyes="base", pupils="wide", eyebrows="raised", hair="basic")
                         m "I-{w=0.5}{nw}"
                         call her_main("H-he isn't doing anything! Isn't that right, Professor?", mouth="angry", eye="base", cheeks="blush")
-                        call her_main("Just uhm...stretching your leg, as always.", mouth="crooked_smile", eye="happyCl", cheeks="cheeks_blush")
+                        call her_main("Just uhm...stretching your leg, as always.", mouth="crooked_smile", eye="happyCl", cheeks="blush")
                         call ton_main("Right...", mouth="open", eyes="base", pupils="R", eyebrows="base", hair="basic")
                         call ton_main("Well then, since my work here is done... I need to go back to my regular duties.", mouth="open", eyes="closed", pupils="R", eyebrows="base", hair="basic")
                         if daytime:

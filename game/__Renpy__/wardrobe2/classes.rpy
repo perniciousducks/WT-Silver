@@ -455,7 +455,10 @@ init python:
 
         def set_color(self, layer):
             if config.developer or cheat_wardrobe_alpha:
-                self.color[layer] = color_picker(self.color[layer], True, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
+                if self.type != "hair":
+                    self.color[layer] = color_picker(self.color[layer], True, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
+                else:
+                    self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
             else:
                 self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
             self.sprite_ico.cached = False

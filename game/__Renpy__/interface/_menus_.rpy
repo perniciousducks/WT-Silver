@@ -391,7 +391,12 @@ screen clothing_menu(menu_items, character, preview):
         if preview != None:
             add preview.get_image() xpos 600 ypos 0 zoom 1.0/scaleratio
         else:
-            add "interface/icons/outfits/mannequin_"+str(character)+".png" xpos 600 ypos 0 zoom 1.0/scaleratio
+            if character == 3:
+                add astoria_class.get_mannequin() xpos 600 ypos 0 zoom 1.0/scaleratio
+            elif character == 5:
+                add cho_class.get_mannequin() xpos 600 ypos 0 zoom 1.0/scaleratio
+            else:
+                add "interface/icons/outfits/mannequin_"+str(character)+".png" xpos 600 ypos 0 zoom 1.0/scaleratio
 
 
 

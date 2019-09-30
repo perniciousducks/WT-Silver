@@ -195,6 +195,7 @@ label clothing_shop_menu:
 
     elif _return == "Close":
         $ current_page = 0
+        $ item_choice = None
         jump close_clothing_store
 
     elif _return == "inc":
@@ -205,9 +206,11 @@ label clothing_shop_menu:
     elif _return == "left":
         $ current_page = 0
         $ character_choice += -1
+        $ item_choice = None
     elif _return == "right":
         $ current_page = 0
         $ character_choice += 1
+        $ item_choice = None
 
     jump clothing_shop_menu
 

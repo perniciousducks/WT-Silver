@@ -565,33 +565,37 @@ default luna_clothing_sets_list = [
 ]
 
 # Astoria Outfits
-default ag_boss_uniform_ITEM = costume_class(
-    id="ag_boss_uniform", name="Boss Uniform", type="outfit", items=["outfit","hair","hat"],
-    cost=500, wait_time=3, image="outfits/ag_boss_uniform", description=">A uniform I designed with an old friend of mine.\n Makes me wonder what happened to Hugo...",
-    # Layers
-    outfit_layers = ["bottoms/pants_uniform","tops/top_uniform"],
-    hair_layer    = "pigtails",
-    top_layers    = "boss_hat"
-)
-default ag_costume_lazy_town_ITEM = costume_class(
-    id="ag_costume_lazy_town", name="Lazy Town Outfit", type="outfit", items=["outfit","hair","bracelet"],
-    cost=120, wait_time=1, image="outfits/ag_lazy", description=">Nobody is lazy at Hogwarts!",
-    # Layers
-    outfit_layers = ["stockings/leggings_1","onepieces/onepiece_striped_1","gloves/wrist_bracelet_1"],
-    hair_layer    = "stephanie"
-)
-default ag_costume_lazy_town_short_ITEM = costume_class(
-    id="ag_costume_lazy_town_short", name="Short Lazy Town Outfit", type="outfit", items=["outfit","hair","bracelet"],  image="outfits/ag_lazy_short", unlockable=True,
-    # Layers
-    outfit_layers = ["stockings/leggings_1","onepieces/onepiece_striped_2","gloves/wrist_bracelet_1"],
-    hair_layer    = "stephanie"
-)
-default ag_dress_yule_ball_ITEM = costume_class(
-    id="ag_dress_yule_ball", name="Ball Dress", type="outfit", items=["outfit"],
-    cost=300, wait_time=4, image="outfits/ag_ball_dress", description=">A cute dress for your favourite princess!",
-    # Layers
-    outfit_layers = ["onepieces/onepiece_ball_dress"]
-)
+# default ag_boss_uniform_ITEM = costume_class(
+    # id="ag_boss_uniform", name="Boss Uniform", type="outfit", items=["outfit","hair","hat"],
+    # cost=500, wait_time=3, image="outfits/ag_boss_uniform", description=">A uniform I designed with an old friend of mine.\n Makes me wonder what happened to Hugo...",
+    # # Layers
+    # outfit_layers = ["bottoms/pants_uniform","tops/top_uniform"],
+    # hair_layer    = "pigtails",
+    # top_layers    = "boss_hat"
+# )
+# default ag_costume_lazy_town_ITEM = costume_class(
+    # id="ag_costume_lazy_town", name="Lazy Town Outfit", type="outfit", items=["outfit","hair","bracelet"],
+    # cost=120, wait_time=1, image="outfits/ag_lazy", description=">Nobody is lazy at Hogwarts!",
+    # # Layers
+    # outfit_layers = ["stockings/leggings_1","onepieces/onepiece_striped_1","gloves/wrist_bracelet_1"],
+    # hair_layer    = "stephanie"
+# )
+# default ag_costume_lazy_town_short_ITEM = costume_class(
+    # id="ag_costume_lazy_town_short", name="Short Lazy Town Outfit", type="outfit", items=["outfit","hair","bracelet"],  image="outfits/ag_lazy_short", unlockable=True,
+    # # Layers
+    # outfit_layers = ["stockings/leggings_1","onepieces/onepiece_striped_2","gloves/wrist_bracelet_1"],
+    # hair_layer    = "stephanie"
+# )
+# default ag_dress_yule_ball_ITEM = costume_class(
+    # id="ag_dress_yule_ball", name="Ball Dress", type="outfit", items=["outfit"],
+    # cost=300, wait_time=4, image="outfits/ag_ball_dress", description=">A cute dress for your favourite princess!",
+    # # Layers
+    # outfit_layers = ["onepieces/onepiece_ball_dress"]
+# )
+
+init offset = 1 # Initialize chunk after character class
+
+default ag_anntakamaki_ITEM = item_class(id="ag_ann_takamaki", name="Ann Takamaki Cosplay Outfit", type="outfit", items=["onepiece","gloves", "boots", "buttplug", "mask", "hairstyle"], image=astoria_outfit_anntakamaki, cost=600, wait_time=2, description=">The legend says that the one who wears it will\nlook like a different persona...")
 
 default astoria_outfits_list=[
     #ag_boss_uniform_ITEM,
@@ -604,16 +608,11 @@ default astoria_dresses_list=[
     #ag_dress_yule_ball_ITEM,
 ]
 
-# Astoria Sets
-default ag_lingerie_lace_ITEM = item_class(id="ag_lingerie_lace", name="Lace Lingerie", type="set", items=["bra","panties"], cost=80,  wait_time=1, image="outfits/ag_lingerie_lace", description=">A cute lace lingerie set.")
-default ag_lingerie_lewd_ITEM = item_class(id="ag_lingerie_lewd", name="Lewd Lingerie", type="set", items=["bra","panties"], cost=120, wait_time=1, image="outfits/ag_lingerie_lewd", description ="> A very rewealing lingerie set.")
-default ag_nighty_silk_ITEM   = item_class(id="ag_nighty_silk", name="Silk Nighty", type="set", items=["nighty","panties","stockings"], cost=140, wait_time=1, image="outfits/ag_nighty_silk", description=">+2 attack points while pillow-fighting!")
-
 default astoria_clothing_sets_list = [
-    #ag_lingerie_lace_ITEM,
-    #ag_lingerie_lewd_ITEM,
-    #ag_nighty_silk_ITEM,
+    ag_anntakamaki_ITEM
 ]
+
+init offset = 0 # Back to normal
 
 # Susan Outfits
 default susan_outfits_list = []
@@ -623,49 +622,36 @@ default susan_dresses_list = []
 # Susan Sets
 default susan_clothing_sets_list = []
 
-# Cho Outfits
-default cc_outfit_quidditch_ITEM = costume_class(
-    id="cc_outfit_quidditch", name="Quidditch Outfit", type="outfit", items=["outfit"], image="outfits/cc_quidditch", unlockable=True, outfit_layers = []
-)
+# Cho outfits
+init offset = 1
+
 default cc_dress_red_ITEM = costume_class(
     id="cc_dress_red", name="Traditional Dress in Red", type="outfit", items=["outfit"],
-    cost=100, wait_time=3, image="outfits/cc_dress_red", description=">A traditional dress inspired by chinese culture.",
+    cost=100, wait_time=3, image=cho_outfit_dress1, description=">A traditional dress inspired by chinese culture.",
     # Layers
     outfit_layers = ["onepieces/onepiece_ball_dress"]
 )
-default cc_dress_silver_ITEM = costume_class(
-    id="cc_dress_silver", name="Traditional Dress in Silver", type="outfit", items=["outfit"],
-    cost=100, wait_time=3, image="outfits/cc_dress_silver", description=">A traditional dress inspired by chinese culture."
-    # No layers
-)
-default cc_dress_black_ITEM = costume_class(
-    id="cc_dress_black", name="Traditional Dress in Black", type="outfit", items=["outfit"],
-    cost=100, wait_time=3, image="outfits/cc_dress_black", description=">A traditional dress inspired by chinese culture."
-    # No layers
-)
+
 default cc_outfit_sailor_white_ITEM = costume_class(
     id="cc_outfit_sailor_white", name="White Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"],
-    cost=240, wait_time=3, image="outfits/cc_sailor_white", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!",
-    # Layers
-    outfit_layers = ["panties/panties_bikini_2","stockings/stockings_sailor_1","tops/top_sailor_1","bottoms/skirt_sailor","../body/arms/arm_down_l_overlay"],
-    top_layers    = "bow_sailor_yellow"
+    cost=240, wait_time=3, image=cho_outfit_sailor, description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!"
 )
-default cc_outfit_sailor_black_ITEM = costume_class(
-    id="cc_outfit_sailor_black", name="Black Sailor Outfit", type="outfit", items=["outfit","top","skirt","thong","stockings","hat"],
-    cost=240, wait_time=3, image="outfits/cc_sailor_black", description=">Slutty sailor outfit. Unlocks all items as separate\n and re-colourable items!",
-    # Layers
-    outfit_layers = ["panties/panties_bikini_2","stockings/stockings_sailor_2","tops/top_sailor_2","bottoms/skirt_sailor","../body/arms/arm_down_l_overlay"],
-    top_layers    = "bow_sailor_red"
-)
+
 default cc_costume_misty_ITEM = costume_class(
     id="cc_costume_misty", name="Misty Costume", type="outfit", items=["outfit","top","pants","suspenders"],
-    cost=100, wait_time=2, image="outfits/cc_misty", description=">For trainers that want to be the very best!\n To train them is your cause!",
+    cost=100, wait_time=2, image=cho_outfit_misty, description=">For trainers that want to be the very best!\n To train them is your cause!",
     # Layers
     outfit_layers = ["tops/top_shirt_1","bottoms/pants_short_1","../body/arms/arm_down_l_overlay","accs/suspenders_1"]
 )
 
+# Cho Sets
+default cc_muggle_hot_ITEM = item_class(id="cc_muggle_hot", name="Hot Weather Clothing", type="set", items=["top","pants","stockings"], image=cho_outfit_trainee, unlockable=True)
+default cc_party_slut_ITEM = item_class(id="cc_party", name="Party Clothing", type="set", items=["bra","skirt"], image=cho_outfit_party, unlockable=True)
+
+default cc_lingerie_lace_ITEM = item_class(id="cc_lingerie_lace", name="Lace Lingerie", type="set", items=["bra","panties","garter","stockings","choker","earrings"], image=cho_outfit_lacelingerie, cost=500, wait_time=5, description=">This lingerie set turns even the toughest tomboy\n into a cute and sexy princess!")
+default cc_bikini_micro_ITEM  = item_class(id="cc_bikini_micro", name="Micro Bikini", type="set", items=["bra","panties"], image=cho_outfit_bikini, cost=69, wait_time=1, description=">The regular size bikinis are out of stock...")
+
 default cho_outfits_list = [
-    cc_outfit_quidditch_ITEM,
     cc_outfit_sailor_white_ITEM,
     # cc_outfit_sailor_black_ITEM
 ]
@@ -678,13 +664,6 @@ default cho_dresses_list = [
     # cc_dress_black_ITEM
 ]
 
-# Cho Sets
-default cc_muggle_hot_ITEM = item_class(id="cc_muggle_hot", name="Hot Weather Clothing", type="set", items=["top","pants","stockings"], image="outfits/cc_muggle_hot", unlockable=True)
-default cc_party_slut_ITEM = item_class(id="cc_party", name="Party Clothing",            type="set", items=["bra","skirt"],             image="outfits/cc_party", unlockable=True)
-
-default cc_lingerie_lace_ITEM = item_class(id="cc_lingerie_lace", name="Lace Lingerie", type="set", items=["bra","panties","garter","stockings","choker","earrings"], image="outfits/cc_lingerie_lace", cost=500, wait_time=5, description=">This lingerie set turns even the toughest tomboy\n into a cute and sexy princess!")
-default cc_bikini_micro_ITEM  = item_class(id="cc_bikini_micro", name="Micro Bikini",   type="set", items=["bra","panties"],                                          image="outfits/cc_bikini_micro", cost=69, wait_time=1, description=">The regular size bikinis are out of stock...")
-
 default cho_clothing_sets_list = [
     cc_muggle_hot_ITEM,
     cc_party_slut_ITEM,
@@ -692,17 +671,24 @@ default cho_clothing_sets_list = [
     cc_bikini_micro_ITEM,
 ]
 
+init offset = 0
+
 # Old outfits linked to new outfits (using the variable names)
+
+init offset = 2 # Initialize chunk after character class and character outfits
+
 default outfit_linking = {
-    # cc_outfit_quidditch_ITEM.id:    "cho_outfit_quidditch",
     cc_party_slut_ITEM.id:          "cho_outfit_party",
     cc_muggle_hot_ITEM.id:          "cho_outfit_trainee",
     cc_outfit_sailor_white_ITEM.id: "cho_outfit_sailor",
     cc_costume_misty_ITEM.id:       "cho_outfit_misty",
     cc_bikini_micro_ITEM.id:        "cho_outfit_bikini",
     cc_lingerie_lace_ITEM.id:       "cho_outfit_lacelingerie",
-    cc_dress_red_ITEM.id:           "cho_outfit_dress1"
+    cc_dress_red_ITEM.id:           "cho_outfit_dress1",
+    ag_anntakamaki_ITEM.id:         "astoria_outfit_anntakamaki"
 }
+
+init offset = 0 # back to normal
 
 # Tonks Outfits
 default tonks_outfits_list = []

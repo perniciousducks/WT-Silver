@@ -63,6 +63,29 @@ label cheats:
                     jump cheats_hermione
                 "-never mind-":
                     jump cheats
+                    
+        "-Astoria cheats-" if astoria_unlocked:
+            label cheats_astoria:
+            menu:
+                "-Reset Astoria's mood-" if ast_mood != 0:
+                    $ ast_mood = 0
+                    ">Astoria is no longer mad at you."
+                    jump cheats_astoria
+                "-Max Affection-" if ast_affection < 24:
+                    $ ast_affection = 24
+                    ">Astoria has hots for you."
+                    jump cheats_astoria
+
+                "-Increase Affection-" if ast_affection < 24:
+                    $ ast_affection += 1
+                    ">Astoria likes you more..."
+                    jump cheats_astoria
+                "-Decrease Affection-" if ast_affection > 0:
+                    $ ast_affection += -1
+                    "Astoria likes you less..."
+                    jump cheats_astoria
+                "-never mind-":
+                    jump cheats
 
         "-Luna Cheats-" if luna_unlocked:
             label cheats_luna:

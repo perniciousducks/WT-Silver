@@ -346,15 +346,6 @@ label hg_pf_talk_T3_intro_E1:
 
 
 label hg_pf_talk_T3_intro_E2:
-    m "Let's have another chat [hermione_name]."
-    call her_main("Okay...","base","base")
-
-    call hg_pf_talk_T3
-
-    jump end_hg_pf_talk
-
-
-label hg_pf_talk_T3_repeat:
     m "{size=-4}(Should I spice things up a bit?){/size}"
     menu:
         #"-Suggest inviting Snape-":
@@ -365,10 +356,24 @@ label hg_pf_talk_T3_repeat:
             # Start event chronologically
             $ hg_pf_talk_tonks.start()
         "-Decide against it-":
+            m "Let's have another chat [hermione_name]."
+            call her_main("Okay...","base","base")
 
-            m "Tell me about your day [hermione_name]."
-            her "Okay..."
+            call hg_pf_talk_T3
 
+    jump end_hg_pf_talk
+
+
+label hg_pf_talk_T3_repeat:
+    menu:
+        #"-Suggest inviting Snape-":
+        #    pass
+        #    #To be added
+        #    #$ hg_pf_talk_snape.start()
+        "-Suggest inviting Tonks-":
+            # Start event chronologically
+            $ hg_pf_talk_tonks.start()
+        "-Decide against it-":
             m "Tell me about your day, [hermione_name]."
             call her_main("Okay...","base","base")
 
@@ -891,7 +896,7 @@ label hg_pf_talk_tonks:
                     call her_main("Good night, professor Tonks.", mouth="open", eye="base")
                 call ton_main("Professor...", mouth="horny", eyes="base", pupils="mid", eyebrows="raised", hair="basic")
                 m "Miss Tonks..."
-                
+
                 call ton_walk(action="leave", speed=2.5)
 
             else:

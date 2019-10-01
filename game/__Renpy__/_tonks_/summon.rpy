@@ -42,11 +42,15 @@ label summon_tonks:
 
 
         # Fireplace Chats
-        "-Let's hang-" if (wine_ITEM.number >= 1 and nt_he_drink.counter == 0) or firewhisky_ITEM.number >= 1:
+        "-Let's hang-" if (wine_ITEM.number > 0 and nt_he_drink.counter == 0) or (firewhisky_ITEM.number > 0 and nt_he_drink.counter > 0):
             jump tonks_hangout
 
-        "{color=#858585}-Let's hang-{/color}" if firewhisky_ITEM.number < 1 and nt_he_drink.counter != 0:
+        "{color=#858585}-Let's hang-{/color}" if (firewhisky_ITEM.number < 1 and nt_he_drink.counter > 0):
             m "(I don't have any firewhisky...)"
+            jump tonks_requests
+
+        "{color=#858585}-Let's hang-{/color}" if (wine_ITEM.number < 1 and nt_he_drink.counter == 0):
+            m "(I don't have any wine...)"
             jump tonks_requests
 
         # Wardrobe

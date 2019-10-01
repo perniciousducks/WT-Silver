@@ -776,7 +776,7 @@ label hg_pf_talk_tonks:
             call ton_main("Such as?", mouth="open", eyes="base", pupils="mid", eyebrows="raised", hair="basic")
             call ton_main("", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="basic")
 
-            if slyth_matches_won < huffl_matches_won > 0:
+            if slyth_matches_won < huffl_matches_won and huffl_matches_won > 0:
                 call her_main("It's not even just the Slytherins doing it!", mouth="open", eye="angryCl")
                 call ton_main("Oh really?", mouth="base", eyes="base", pupils="mid", eyebrows="raised", hair="basic")
                 call her_main("Yes, that girl from Ravenclaw... Cho Chang, she was using some pretty dirty tactics during the first Quidditch match of the season!", mouth="open", eye="angry")
@@ -792,7 +792,7 @@ label hg_pf_talk_tonks:
                 call her_main("I wouldn't use the word interesting to describe it...", mouth="annoyed", eye="worried", cheeks="blush")
                 call ton_main("I'll make sure to show up to the next match to see what's going on for myself.", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="horny")
                 call her_main("Thank you professor...", mouth="open", eye="closed")
-            elif slyth_matches_won >= huffl_matches_won > 0: #This event will be pretty rare since most people would get Hermione to strip before the Slytherin match
+            elif slyth_matches_won >= huffl_matches_won and huffl_matches_won > 0: #This event will be pretty rare since most people would get Hermione to strip before the Slytherin match
                 call her_main("You're well aware that it's not just Slytherins that has been doing stuff like this...", mouth="open", eye="angryCl")
                 call ton_main("If you'd like to give an example...", mouth="open", eyes="base", pupils="mid", eyebrows="base", hair="basic")
                 call her_main("I'm talking about Cho Chang!", mouth="open", eye="angry")

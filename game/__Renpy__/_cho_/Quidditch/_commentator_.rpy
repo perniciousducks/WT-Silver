@@ -132,7 +132,7 @@ label quidditch_commentator_event_3:
     call cho_main("And little miss Granger wasn't even the slightest bit intimidated by her new obligation?","open","base","raised","mid")
     g9 "Not at all. She seemed rather joyous of her situation."
     call cho_main("Oh...","pout","base","sad","down") # Bit sad.
-    call cho_main("Well she just doesn't know what's coming towards her yet!","annoyed","angry","angry","mid") # Mischievious smile
+    call cho_main("Well she just doesn't know what's coming towards her yet!","annoyed","angry","angry","mid") # Mischievous smile
     call cho_main("{size=-4}I hope she gets hit by a bludger as well! I might even tell the boys to aim at her once or twice!{/size}","angry","angry","angry","R") # Small text.
     g9 "Make sure you tell everyone your great and very proactive headmaster sorted everything out..."
     call cho_main("Oh, I will. Thank you very much!","soft","base","base","mid")

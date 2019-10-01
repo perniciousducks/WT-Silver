@@ -126,7 +126,7 @@ label equip_her_outfit:
                     g9 "It is!"
                     if not birthday_happened:
                         $ birthday_happened = True
-                        call her_main("(I hightly doubt that...)","base","baseL")
+                        call her_main("(I highly doubt that...)","base","baseL")
                     else:
                         call her_main("(What a poor liar...)","base","baseL")
                     call her_main("Well in that case...","open","glance")

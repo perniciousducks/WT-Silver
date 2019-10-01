@@ -262,6 +262,7 @@ label hg_wager_bj:
                     m "And he didn't care, I don't see the problem here."
                     call her_main("You are unbelievable sometimes!", mouth="scream", eye="angry")
                     call her_main("I'm going now, don't expect me to do anything for you any time soon!", mouth="clench", eye="angry")
+                    $ her_mood += 10
                 else: #if whoring is higher than 20
                     call her_main("The old me would have been embarrassed by that...", mouth="clench", eye="concerned", cheeks="blush")
                     call her_main("But I thought it was hot!", mouth="grin", eye="happy", cheeks="blush")
@@ -600,12 +601,11 @@ label hg_wager_bj:
                             $ her_mood += 10
 
         $ hg_pf_blowjob.points += 1
+        $ hg_pf_blowjob.counter += 1
+        $ achievement.unlock("headlib")
     call blkfade
     call u_end_ani
     hide screen blkfade
-
-    # Stats
-    $ hg_pf_blowjob.counter += 1
 
     jump end_hermione_event
 

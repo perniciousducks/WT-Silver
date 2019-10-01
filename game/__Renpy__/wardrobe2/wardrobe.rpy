@@ -248,18 +248,27 @@ label t_wardrobe(return_label, char_label):
     elif _return[0] == "erozone":
         show screen t_wardrobe_menu(550, 50)
         if current_category:
-            show screen t_wardrobe_menuitem(20, 50)
+            if current_category == "outfits":
+                show screen t_wardrobe_outfit_menuitem(20, 50)
+            else:
+                show screen t_wardrobe_menuitem(20, 50)
         $ renpy.call(active_girl+"_wardrobe_check", "touching", _return[1])
         #call expression char_label pass (text="", face="horny")
     elif _return[0] == "toggle":
         show screen t_wardrobe_menu(550, 50)
         if current_category:
-            show screen t_wardrobe_menuitem(20, 50)
+            if current_category == "outfits":
+                show screen t_wardrobe_outfit_menuitem(20, 50)
+            else:
+                show screen t_wardrobe_menuitem(20, 50)
         $ renpy.call(active_girl+"_wardrobe_check", "toggle", _return[1])
     elif _return == "music":
         show screen t_wardrobe_menu(550, 50)
         if current_category:
-            show screen t_wardrobe_menuitem(20, 50)
+            if current_category == "outfits":
+                show screen t_wardrobe_outfit_menuitem(20, 50)
+            else:
+                show screen t_wardrobe_menuitem(20, 50)
         if wardrobe_music_active:
             $ wardrobe_music_active = False
             call play_music(active_girl+"_theme")

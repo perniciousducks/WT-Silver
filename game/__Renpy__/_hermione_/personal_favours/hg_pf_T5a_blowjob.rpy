@@ -582,6 +582,8 @@ label hg_pf_blowjob_1:
                 call her_main("Yes. I think I may skip supper tonight...","soft","ahegao")
 
             call her_main("Can I get paid now?","angry","wink")
+            
+            $ achievement.unlock("headlib")
 
         "-Don't bother-":
             call her_main("Yes, I love to suck and --","soft","ahegao", ypos="head")

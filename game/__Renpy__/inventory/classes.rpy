@@ -37,13 +37,9 @@ init -2 python:
             else:
                 return self.imagepath
 
-        # Need to simplify this
         def get_cost(self):
-            if self.type == "poster" or self.type == "trophy" or self.type == "outfit_token":
-                if self.cost == 1:
-                    return ""+str(self.cost)+" token"
-                else:
-                    return ""+str(self.cost)+" tokens"
+            if self.type in ("owl", "fireplace", "mail", "phoenix", "poster", "trophy", "outfit_token"):
+                return ""+str(self.cost)+" token" if self.cost == 1 else ""+str(self.cost)+" tokens"
             else:
                 return ""+str(self.cost)+" gold"
 

@@ -29,6 +29,10 @@ label hg_pf_titjob:
     call hide_characters
     show screen blkfade
     with d3
+    
+    $ face_on_cg = False
+    hide screen ccg
+    hide screen g_c_c_u
 
     # Update Hermione
     $ temp_save = aftersperm # Save

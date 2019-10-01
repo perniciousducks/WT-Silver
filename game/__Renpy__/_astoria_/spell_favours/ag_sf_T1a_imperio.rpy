@@ -862,6 +862,7 @@ label ag_se_imperio_sb_E3:
         call ast_main("Good night, [ast_genie_name]!","grin","closed","base","mid")
 
     call play_sound("door")
+    call hide_characters
     call ast_chibi("leave")
     call sus_chibi("leave")
     hide screen bld1
@@ -871,17 +872,17 @@ label ag_se_imperio_sb_E3:
     call bld
     m "(That girl is even worse than me...)"
 
-    if not susan_wardrobe_unlocked:
-        $ susan_wardrobe_unlocked = True
-        call nar(">You can now access Susan't wardrobe!")
+    $ susan_wardrobe_unlocked = True
+    if ast_affection < 24: # Save compatibility
+        $ ast_affection = 24
         
         $ TBA_message("This concludes all events for Susan and Astoria as of version %s." % config.version)
-        if cheats_active:
-            $ TBA_message("If you want to use lewder clothes with Astoria you can up her affection level in the cheats menu in the top left corner.")
+        $ TBA_message("Susan's wardrobe has been unlocked!")
+        $ TBA_message("Astoria's affection stat has been maxed out.\nYou can now use all of her wardrobe options.")
 
     # Increase affection once (this is the third event)
-    if ag_se_imperio_sb.counter == 3:
-        $ ast_affection += 1
+    #if ag_se_imperio_sb.counter == 3:
+    #    $ ast_affection += 1
 
     jump end_ag_se_imperio_sb
 

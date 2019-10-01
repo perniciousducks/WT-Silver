@@ -677,10 +677,9 @@ label hg_pf_hidden_blowjob:
         $ hg_hidden_bj_list.append("luna")
 
     #Random Pick.
-    else:
-        $ character_choice = renpy.random.choice(hg_hidden_bj_list)
+    $ character_choice = renpy.random.choice(hg_hidden_bj_list)
 
-    $ renpy.jump( (hg_hidden_blowjob_ + character_choice) )
+    $ renpy.jump("hg_hidden_blowjob_" + character_choice)
 
 
 
@@ -1024,6 +1023,10 @@ label hg_hidden_blowjob_tonks:
     $ hg_blowjob.nt_counter += 1
     $ her_mood += 10
 
+    # Setup
+    $ tonks_outfit_last.save() # Store current outfit.
+    $ tonks_class.equip(tonks_outfit_default)
+
     stop music fadeout 1.0
     call her_main("[genie_name], no! Please she will know that-","angry","angry", emote="01", ypos="head")
     m "*Shhhhsh*... Keep your voice down..."
@@ -1233,6 +1236,7 @@ label hg_hidden_blowjob_tonks:
     call ton_walk(action="leave", speed=2.5)
     pause.5
 
+    $ tonks_class.equip(tonks_outfit_last) # Equip custom outfit.
     $ hermione_flip = 1 #Default
 
     call play_music("playful_tension") # SEX THEME.

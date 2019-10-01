@@ -526,6 +526,8 @@ label hg_pf_talk_T3:
         call her_main("...","annoyed","base")
     return
 
+
+
 label hg_pf_talk_tonks_T3_intro_E1:
 
     m "[hermione_name], for today's favour I'd like to bring in a guest to join us."
@@ -551,10 +553,10 @@ label hg_pf_talk_tonks_T3_intro_E1:
     call her_main("Okay...", mouth="base", eye="base")
     m "Great, I'll call for her then..."
 
-    call blkfade
     call hg_pf_talk_tonks
 
     jump end_hg_pf_talk
+
 
 label hg_pf_talk_tonks_T3_E1:
 
@@ -566,26 +568,43 @@ label hg_pf_talk_tonks_T3_E1:
     m "Well, that will be up to Miss Tonks, [hermione_name]."
     call her_main("Fine..", mouth="base", eye="worriedL")
 
-    call blkfade
     call hg_pf_talk_tonks
 
     jump end_hg_pf_talk
 
+
 label hg_pf_talk_tonks:
+    call hide_characters
+    hide screen bld1
+    show screen blkfade
+    with d3
+
+    pause 1
+
     call play_sound("door")
     call ton_chibi("stand","500","base")
     call her_chibi("stand","desk","base")
-    pause 1.0
     hide screen blkfade
+    with d3
 
-    call her_main("Hello, Professor Tonks.", xpos="right", mouth="open", eye="closed")
-    call her_main("", mouth="base", eye="base")
+    # Setup
+    $ hermione_wear_top = True
+    $ hermione_wear_bottom = True
+    call update_her_uniform
+
+    $ tonks_outfit_last.save() # Store current outfit.
+    $ tonks_class.equip(tonks_outfit_default)
+    pause.8
+
+    call ton_main("","base","base","base","mid", hair="basic", xpos="600", ypos="base")
+    call her_main("Hello, Professor Tonks.","open","closed", xpos="right", ypos="base")
+    call her_main("","base","base")
     if daytime:
         m "Good day, Miss Tonks."
-        call ton_main("Good day, Professor.", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="basic", xpos="600")
+        call ton_main("Good day, Professor.", mouth="base", eyes="happyCl", pupils="mid", eyebrows="base", hair="basic")
     else:
         m "Good evening, Miss Tonks."
-        call ton_main("Good evening, Professor.", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="basic", xpos="600")
+        call ton_main("Good evening, Professor.", mouth="base", eyes="happyCl", pupils="mid", eyebrows="base", hair="basic")
     call ton_main("Hermione...", mouth="horny", eyes="base", pupils="wide", eyebrows="base", hair="horny")
     call ton_main("Is there some sort of special circumstance as to why the two of you summoned me here?", mouth="open", eyes="base", pupils="L", eyebrows="base", hair="basic")
     m "More or less."
@@ -599,6 +618,7 @@ label hg_pf_talk_tonks:
     call her_main("No, I'll talk about it if you like...", mouth="open", eye="down_raised", cheeks="blush")
     call ton_main("...", mouth="base", eyes="base", pupils="wide", eyebrows="base", hair="basic")
     m "Why don't we start with..."
+
     menu:
         "\"Those pesky Slytherin Sluts!\"":
             call ton_main("Yes, I've heard those Slytherin girls are up to no good...", mouth="open", eyes="base", pupils="wide", eyebrows="base", hair="basic")
@@ -696,6 +716,7 @@ label hg_pf_talk_tonks:
                     call her_main("(...a list ... what list...?)", mouth="open", eye="surprised", cheeks="blush")
                     call ton_main("Congratulations for being a \"top\" student.", mouth="horny", eyes="base", pupils="L", eyebrows="base", hair="horny")
                     call her_main("...", mouth="disgust", eye="glanceL", cheeks="blush")
+
             call ton_main("Don't be so shy girl, I'm happy that you took my advice to heart... it's also thanks to you that the ministry sent me here.", mouth="smile", eyes="base", pupils="mid", eyebrows="base", hair="basic")
             call her_main("I guess...", mouth="disgust", eye="down_raised", cheeks="blush")
             call her_main("I assure you that I was actually against the practice during the time of sending the letter...", mouth="annoyed", eye="down", cheeks="blush")
@@ -756,6 +777,7 @@ label hg_pf_talk_tonks:
     m "I think we've been trailing a bit off topic here..."
     call ton_main("Oh yes, perhaps...", mouth="base", eyes="base", pupils="L", eyebrows="base", hair="basic")
     m "Miss granger, why don't you tell us more about..."
+
     menu:
         "\"Those pesky Slytherin Sluts!\"":
             call her_main("What else would you like to know?", mouth="open", eye="base")
@@ -792,6 +814,7 @@ label hg_pf_talk_tonks:
                 call her_main("I wouldn't use the word interesting to describe it...", mouth="annoyed", eye="worried", cheeks="blush")
                 call ton_main("I'll make sure to show up to the next match to see what's going on for myself.", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="horny")
                 call her_main("Thank you professor...", mouth="open", eye="closed")
+
             elif slyth_matches_won >= huffl_matches_won and huffl_matches_won > 0: #This event will be pretty rare since most people would get Hermione to strip before the Slytherin match
                 call her_main("You're well aware that it's not just Slytherins that has been doing stuff like this...", mouth="open", eye="angryCl")
                 call ton_main("If you'd like to give an example...", mouth="open", eyes="base", pupils="mid", eyebrows="base", hair="basic")
@@ -801,6 +824,7 @@ label hg_pf_talk_tonks:
                 call her_main("Yes, I can't believe I chose to commentate those matches...", mouth="open", eye="closed")
                 call ton_main("If you're having such a problem I'm sure I could step in...", mouth="base", eyes="base", pupils="mid", eyebrows="upset", hair="basic")
                 call her_main("...", mouth="annoyed", eye="base")
+
             elif ag_se_imperio_sb.counter > 0:
                 call her_main("That Astoria girl, casting imperio on a student making her lift her top...", mouth="shock", eye="angryL")
                 call ton_main("Ah, yes that was unfortunate...", mouth="open", eyes="base", pupils="R", eyebrows="sad", hair="basic")
@@ -827,6 +851,7 @@ label hg_pf_talk_tonks:
             call ton_main("", mouth="base", eyes="base", pupils="mid", eyebrows="raised", hair="basic")
             call her_main("Well, I do hope that Hagrid is above this favour trading business. He sure seems like it during my classes with him.", mouth="open", eye="closed")
             call her_main("One of those Slytherin students was being quite rough with a Blast-ended skrewt making it go off on purpose...", mouth="annoyed", eye="baseL")
+
             if masturbating:
                 call her_main("She was slowly moving it up and down only agitating it a bit initially...", mouth="annoyed", eye="base")
                 g9 "(Yes I bet you'd love to do that with my cock.)"
@@ -866,6 +891,7 @@ label hg_pf_talk_tonks:
                     call her_main("Good night, professor Tonks.", mouth="open", eye="base")
                 call ton_main("Professor...", mouth="horny", eyes="base", pupils="mid", eyebrows="raised", hair="basic")
                 m "Miss Tonks..."
+                
                 call ton_walk(action="leave", speed=2.5)
 
             else:
@@ -887,7 +913,9 @@ label hg_pf_talk_tonks:
                     call her_main("Good night, professor Tonks.", mouth="open", eye="base")
                 call ton_main("Professor...", mouth="horny", eyes="base", pupils="mid", eyebrows="raised", hair="basic")
                 m "Miss Tonks..."
+
                 call ton_walk(action="leave", speed=2.5)
+
         "\"Yourself.\"":
             call her_main("Well...", mouth="angry", eye="down")
             call ton_main("Yes...", mouth="smile", eyes="base", pupils="mid", eyebrows="raised", hair="basic")
@@ -901,6 +929,7 @@ label hg_pf_talk_tonks:
             call her_main("Professor...", mouth="disgust", eye="down_raised")
             m "Miss Granger, your professor asked you a question..."
             call her_main("But I thought it was supposed to stay between just you and I...", mouth="disgust", eye="glance")
+
             menu:
                 "\"That's true\"":
                     m "Then let's end it here for today..."
@@ -915,9 +944,13 @@ label hg_pf_talk_tonks:
                     else:
                         call ton_main("I'll leave you two to it, have a good night Miss Granger.", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="basic")
                         call her_main("Good night, professor Tonks.", mouth="open", eye="base")
+
                     call ton_walk(action="leave", speed=2.5)
+
+                    call bld
                     m "(She ignored me...?)"
                     $ masturbating = False
+
                 "\"Tonks isn't some kind of snitch\"":
                     m "I'm sure we can take Miss Tonks by her word."
                     call her_main("But...", mouth="disgust", eye="concerned")
@@ -943,6 +976,7 @@ label hg_pf_talk_tonks:
                     call ton_main("And how did that make you feel?", mouth="smile", eyes="base", pupils="mid", eyebrows="base", hair="basic")
                     call her_main("Humiliated!", mouth="annoyed", eye="glanceL", cheeks="blush")
                     call ton_main("And your headmaster, did he enjoy it?", mouth="smile", eyes="base", pupils="L", eyebrows="base", hair="basic")
+
                     if masturbating:
                         g9 "(And soon your butt will be bouncing on my dick...)"
                         call her_main("He did seem to enjoy it.", mouth="open", eye="closed", cheeks="blush")
@@ -975,11 +1009,14 @@ label hg_pf_talk_tonks:
                             call her_main("Good night, professor Tonks.", mouth="open", eye="base")
                         call ton_main("Professor...", mouth="horny", eyes="base", pupils="mid", eyebrows="raised", hair="basic")
                         g9 "Miss Tonks..."
+
                         call ton_walk(action="leave", speed=2.5)
+
                     else:
                         m "I sure wa...{nw}"
                         call ton_main("I'm asking miss Granger.", mouth="upset", eyes="base", pupils="mid", eyebrows="base", hair="basic")
                         m "Oh, of course!"
+
                     call her_main("He did seem to enjoy it.", mouth="open", eye="closed", cheeks="blush")
                     call her_main("Maybe a bit too much even...", mouth="angry", eye="glanceL", cheeks="blush")
                     call ton_main("That just means you did a great job Miss Granger.", mouth="smile", eyes="base", pupils="mid", eyebrows="base", hair="basic")
@@ -1000,8 +1037,13 @@ label hg_pf_talk_tonks:
                     else:
                         call ton_main("I'll leave you two to it, have a good night Miss Granger.", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="basic")
                         call her_main("Good night, professor Tonks.", mouth="open", eye="base")
+
                     call ton_main("Professor...", mouth="horny", eyes="base", pupils="mid", eyebrows="raised", hair="basic")
                     g9 "Miss Tonks..."
+
                     call ton_walk(action="leave", speed=2.5)
+
+
+    $ tonks_class.equip(tonks_outfit_last) # Equip custom outfit.
 
     return

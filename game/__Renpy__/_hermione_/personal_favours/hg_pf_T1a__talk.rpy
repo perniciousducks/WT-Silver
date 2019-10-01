@@ -814,7 +814,7 @@ label hg_pf_talk_tonks:
                     m "(I'm sure it distracted the commentator as well...)"
                 else:
                     m "You were looking?"
-                    call her_main("...", mouth="annoyed", eyes="glanceL", cheeks="blush")
+                    call her_main("...", mouth="annoyed", eye="glanceL", cheeks="blush")
                 call ton_main("Hmm... sounds like watching Quidditch has gotten a lot more interesting since I was in school.", mouth="horny", eyes="base", pupils="mid", eyebrows="raised", hair="horny")
                 call her_main("I wouldn't use the word interesting to describe it...", mouth="annoyed", eye="worried", cheeks="blush")
                 call ton_main("I'll make sure to show up to the next match to see what's going on for myself.", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="horny")

@@ -69,7 +69,8 @@ label inventory_menu(xx=150, yy=90):
         else:
             $ current_item = _return[1]
     elif _return[0] == "use":
-        $ renpy.call(_return[1])
+        if current_item.number > 0:
+            $ renpy.call(_return[1])
     elif _return[0] == "category":
         $ current_category = _return[1]
         $ category_items = inventory_dict[current_category]

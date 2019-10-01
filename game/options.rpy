@@ -108,7 +108,7 @@ init -1 python hide:
     config.hard_rollback_limit = 100
     config.narrator_menu = True # If True, then display menu narration using narrator character
 
-    config.quit_action = Quit(False)
+    config.quit_action = Quit(True)
 
 # Save directory needs to be set in `python early` block
 python early: 

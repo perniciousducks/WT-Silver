@@ -224,7 +224,7 @@ label ag_se_imperio_sb_E1:
     call ast_main("(This is so much fun!)","grin","closed","base","mid")
 
     call play_sound("door")
-    call hide_character
+    call hide_characters
     call ast_chibi("hide")
     hide screen bld1
     with d3

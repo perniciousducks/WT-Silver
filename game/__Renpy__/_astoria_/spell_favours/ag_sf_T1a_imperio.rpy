@@ -224,7 +224,9 @@ label ag_se_imperio_sb_E1:
     call ast_main("(This is so much fun!)","grin","closed","base","mid")
 
     call play_sound("door")
+    call hide_character
     call ast_chibi("hide")
+    hide screen bld1
     with d3
     pause.5
 
@@ -529,7 +531,9 @@ label ag_se_imperio_sb_E2:
         m "Good night."
 
     call play_sound("door")
+    call hide_characters
     call ast_chibi("hide")
+    hide screen bld1
     with d3
     pause.5
 
@@ -875,7 +879,7 @@ label ag_se_imperio_sb_E3:
     $ susan_wardrobe_unlocked = True
     if ast_affection < 24: # Save compatibility
         $ ast_affection = 24
-        
+
         $ TBA_message("This concludes all events for Susan and Astoria as of version %s." % config.version)
         $ TBA_message("Susan's wardrobe has been unlocked!")
         $ TBA_message("Astoria's affection stat has been maxed out.\nYou can now use all of her wardrobe options.")

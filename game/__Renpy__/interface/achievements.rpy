@@ -38,10 +38,7 @@ define achievements_dict = {"unlockher": ["Characters", "Granger Danger", "Award
 init python:
     if persistent.achievements == None:
         persistent.achievements = achievements_dict.copy()
-        
-    def achievement_break():
-        persistent.achievements['unlockcho'][4] = "broken/path/to/file"
-        
+
     def achievement_fix(reset=False):
         """Try and fix broken achievements in persistent file by comparing dictionary values 
         and replacing them with correct values without resetting the achievement progress."""

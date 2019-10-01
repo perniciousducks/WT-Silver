@@ -15,6 +15,7 @@ label start:
     call temporary_post_default_init
 
     $ save_internal_version = config.version
+    $ achievement_fix()
 
     $ start_image_crop()
     #scene black

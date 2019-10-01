@@ -30,8 +30,8 @@ default broom_2000_ITEM        = item_class(id="broom_2000", name="Lady Speed St
 default sexdoll_ITEM           = item_class(id="sexdoll", name="Sex doll \"Joanne\"",          cost=350,type="toy", image="item_sexdoll", description="Sex doll \"Joanne\"... It's so realistic. Almost looks like a real human under the influence of a spell of some sort.")
 default anal_beads_ITEM        = item_class(id="anal_beads", name="Anal beads",                cost=65, type="toy", image="item_anal_beads", description="Anal beads engraved with a strange inscription \"Property of L.C.\".")
 
-default wine_ITEM       = item_class(id="wine", name="Wine",             cost=60, type="drink", image="item_wine", description="Add description. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
-default firewhisky_ITEM = item_class(id="firewhisky", name="firewhisky", cost=80, type="drink", image="item_whisky", description="Add description. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
+default wine_ITEM       = item_class(id="wine", name="Wine",             cost=60, type="drink", image="item_wine", description="For the more refined palate.\n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
+default firewhisky_ITEM = item_class(id="firewhisky", name="firewhisky", cost=80, type="drink", image="item_whisky", description="Great taste with a fiery burn.\n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
 
 default candy_gift_list = [
     lollipop_ITEM,

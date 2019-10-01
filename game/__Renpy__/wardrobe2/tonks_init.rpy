@@ -14,7 +14,7 @@ default tonks_cloth_top_corset = cloth_class(char="tonks", category="tops", subc
 # Bottoms
 default tonks_cloth_jeans         = cloth_class(char="tonks", category="bottoms", subcat="trousers", type="bottom", id="jeans", layers=1, color=[[51, 104, 105, 255]])
 default tonks_cloth_leggings      = cloth_class(char="tonks", category="bottoms", subcat="trousers", type="bottom", id="leggings", layers=1, color=[[45, 45, 48, 255]])
-default tonks_cloth_leggings_hole = cloth_class(char="tonks", category="bottoms", subcat="trousers", type="bottom", id="leggings_hole", layers=1, color=[[45, 45, 48, 255]])
+default tonks_cloth_leggings_hole = cloth_class(char="tonks", category="bottoms", subcat="trousers", type="bottom", id="leggings_hole", layers=1, color=[[45, 45, 48, 255]], whoring=60)
 
 # Underwear
 default tonks_cloth_panties_base = cloth_class(char="tonks", category="panties", subcat="panties", type="panties", id="base", layers=1, color=[[124, 42, 50, 255]])

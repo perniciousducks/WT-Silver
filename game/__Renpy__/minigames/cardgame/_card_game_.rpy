@@ -165,7 +165,7 @@ init python:
         global table_cards
         high_score = 0
         high_score_card = None
-        high_score_pos = 0
+        high_score_pos = (0,0)
         
         #Fix for not finding a card
         tuple_my = enemy_deck[0].getAIScore(table_cards, reverse, dobelt_number)

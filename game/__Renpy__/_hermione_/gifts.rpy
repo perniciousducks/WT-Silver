@@ -618,13 +618,13 @@ label give_her_gift(gift_item):
         if her_whoring <= 6  and her_whoring <= 11:
             call her_main("[genie_name]?! Drinking alcohol at school grounds is forbidden..","open","angry","angry","mid")
             call her_main("And you as a headmaster should know it!","upset","angry")
-            call her_mood(-10)
+            call her_mood(10)
         elif her_whoring <= 12 and her_whoring <= 17:
             call her_main("But, [genie_name].. I can't drink alcohol.","base","down")
             call her_main("I guess I could use it for some potion mixing though..","open","baseL")
             call give_gift(">You give the "+str(gift_item.name)+" bottle to Hermione...", gift_item)
             call her_main("","base","baseL")
-            call her_mood(5)
+            call her_mood(-5)
         elif her_whoring >= 18:
             call her_main("But, [genie_name].. You know I can't drink..","soft","mid", "worried", cheeks="blush")
             call her_main("I get drunk too fast and I might do something I'll regret later.","open","baseL", cheeks="blush")
@@ -633,7 +633,7 @@ label give_her_gift(gift_item):
         else:
             call give_gift(">You give the "+str(gift_item.name)+" bottle to Hermione...", gift_item)
             call her_main("Thank you, [genie_name], I'll ask Ginny to drink some with me later.","soft","mid", "worried", cheeks="blush")
-            call her_mood(20)
+            call her_mood(-20)
 
     hide screen hermione_main
     with d5

@@ -746,7 +746,7 @@ init python:
 
         def getAIScore(self, table_of_cards, reverse, dobelt_number):
             high_score = 0
-            position = 0
+            position = (0,0)
             wallscore = 3
             getcardscore = 12
             if reverse:

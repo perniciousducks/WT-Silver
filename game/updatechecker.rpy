@@ -51,5 +51,13 @@
             persistent.achievements['hertits'] = ["Characters", "Boobs Lover", "*ahem* I mean.. books, yes, books lover!", False, "interface/icons/head/head_hermione_2.png", False]
             persistent.achievements['headlib'] = ["Characters", "Head Librarian", "Did she just swallow it?", False, "interface/icons/head/head_hermione_2.png", False]
             persistent.achievements['nerdgasm'] = ["Characters", "Nerdgasm", "Had a very fulfilling moment with Hermione.", False, "interface/icons/head/head_hermione_2.png", False]
+            
+        if float(save_internal_version) < 1.371:
+            owl_OBJ.idle_image = "owl_letter"
+            tonks_cloth_garterbase = tonks_cloth_stockingsbase
+            
+            achievement_fix()
+            
+            save_internal_version = 1.371
         
     config.after_load_callbacks.append(update_savefile)

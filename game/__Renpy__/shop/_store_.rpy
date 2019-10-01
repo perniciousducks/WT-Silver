@@ -34,7 +34,7 @@ label open_weasley_store:
 
     pause.2
 
-    $ renpy.block_rollback()
+    #$ renpy.block_rollback()
 
     call store_chit_chat
 

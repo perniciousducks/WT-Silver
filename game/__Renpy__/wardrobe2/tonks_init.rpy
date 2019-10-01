@@ -22,16 +22,16 @@ default tonks_cloth_panties_base = cloth_class(char="tonks", category="panties",
 default tonks_cloth_bra_base = cloth_class(char="tonks", category="bras", subcat="bras", type="bra", id="bikini", layers=2, color=[[124, 42, 50, 255], [177, 168, 172, 255]])
 
 # Legwear
-default tonks_cloth_garterbase = cloth_class(char="tonks", category="legwear", subcat="stockings", type="stockings", id="auror", layers=2, color=[[45, 45, 48, 255], [177, 168, 172, 255]], armfix=True)
+default tonks_cloth_stockingsbase = cloth_class(char="tonks", category="legwear", subcat="stockings", type="stockings", id="auror", layers=2, color=[[45, 45, 48, 255], [177, 168, 172, 255]], armfix=True)
 
 # Robes
 default tonks_cloth_auror_coat = cloth_class(char="tonks", category="tops", subcat="robes", type="robe", id="auror_coat", layers=2, color=[[40, 40, 41, 255], [174, 165, 169, 255]], armfix=True)
 
 # Temporal save
 default tonks_outfit_last   = outfit_class(name="Last worn items", group=[tonks_hair_base])
-default tonks_outfit_custom = outfit_class(name="Default", group=[tonks_hair_base.clone(), tonks_cloth_leggings.clone(), tonks_cloth_top_auror.clone(), tonks_cloth_choker_beads.clone(), tonks_cloth_gloves_auror.clone(), tonks_cloth_auror_coat.clone(), tonks_cloth_garterbase.clone()], unlocked=True)
+default tonks_outfit_custom = outfit_class(name="Default", group=[tonks_hair_base.clone(), tonks_cloth_leggings.clone(), tonks_cloth_top_auror.clone(), tonks_cloth_choker_beads.clone(), tonks_cloth_gloves_auror.clone(), tonks_cloth_auror_coat.clone(), tonks_cloth_stockingsbase.clone()], unlocked=True)
 
-default tonks_outfit_default = outfit_class(name="Default", group=[tonks_hair_base.clone(), tonks_cloth_leggings.clone(), tonks_cloth_top_auror.clone(), tonks_cloth_choker_beads.clone(), tonks_cloth_gloves_auror.clone(), tonks_cloth_auror_coat.clone(), tonks_cloth_garterbase.clone()])
+default tonks_outfit_default = outfit_class(name="Default", group=[tonks_hair_base.clone(), tonks_cloth_leggings.clone(), tonks_cloth_top_auror.clone(), tonks_cloth_choker_beads.clone(), tonks_cloth_gloves_auror.clone(), tonks_cloth_auror_coat.clone(), tonks_cloth_stockingsbase.clone()])
 label default_tonks_class_init:
 python:
     # Because tonks_class must be defined before clothing, the default clothing can only be set afterwards, like so:
@@ -76,7 +76,7 @@ python:
             "bottom":     [tonks_cloth_leggings, 15, 0, 0, False],
             "garterbelt": [None, 14, 0, 0, False],
             "panties":    [None, 13, 0, 0, False],
-            "stockings":  [tonks_cloth_garterbase, 12, 0, 0, False],
+            "stockings":  [tonks_cloth_stockingsbase, 12, 0, 0, False],
             "buttplug":   [None, 0, 0, 0, False],
             "pubes":      [None, 11, 0, 0, False],
             "tattoo0":    [None, 10, 0, 0, False],

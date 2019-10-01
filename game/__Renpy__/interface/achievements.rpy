@@ -1,6 +1,4 @@
-init python:
-    if persistent.achievements == None:
-        persistent.achievements = {"unlockher": ["Characters", "Granger Danger", "Awarded for unlocking Hermione Granger.", False, "interface/icons/head/head_hermione_2.png", False],
+define achievements_dict = {"unlockher": ["Characters", "Granger Danger", "Awarded for unlocking Hermione Granger.", False, "interface/icons/head/head_hermione_2.png", False],
                                    "unlockcho": ["Characters", "Chang Dynasty", "Awarded for unlocking Cho Chang.", False, "interface/icons/head/head_cho_2.png", False],
                                    "unlocklun": ["Characters", "Looney Tunes", "Awarded for unlocking Luna Lovegood.", False, "interface/icons/head/head_luna_2.png", False],
                                    "unlockast": ["Characters", "Greenpeas", "Awarded for unlocking Astoria Greengrass.", False, "interface/icons/head/head_astoria_2.png", False],
@@ -37,6 +35,48 @@ init python:
                                    "hertits": ["Characters", "Boobs Lover", "*ahem* I mean.. books, yes, books lover!", False, "interface/icons/head/head_hermione_2.png", False],
                                    "headlib": ["Characters", "Head Librarian", "Did she just swallow it?", False, "interface/icons/head/head_hermione_2.png", False],
                                    "nerdgasm": ["Characters", "Nerdgasm", "Had a very fulfilling moment with Hermione.", False, "interface/icons/head/head_hermione_2.png", False]}
+init python:
+    if persistent.achievements == None:
+        persistent.achievements = achievements_dict.copy()
+        
+    def achievement_break():
+        persistent.achievements['unlockcho'][4] = "broken/path/to/file"
+        
+    def achievement_fix(reset=False):
+        """Try and fix broken achievements in persistent file by comparing dictionary values 
+        and replacing them with correct values without resetting the achievement progress."""
+        
+        for key, value in persistent.achievements.iteritems():
+            # Category
+            if value[0] != achievements_dict[key][0]:
+                value[0] = achievements_dict[key][0]
+                print "Fixing achievement \""+key+"\" val 0"
+                
+            # Name
+            if value[1] != achievements_dict[key][1]:
+                value[1] = achievements_dict[key][1]
+                print "Fixing achievement \""+key+"\" val 1"
+                
+            # Desc
+            if value[2] != achievements_dict[key][2]:
+                value[2] = achievements_dict[key][2]
+                print "Fixing achievement \""+key+"\" val 2"
+                
+            # Icon
+            if value[4] != achievements_dict[key][4]:
+                value[4] = achievements_dict[key][4]
+                print "Fixing achievement \""+key+"\" val 4"
+                
+            # Hidden status
+            if value[5] != achievements_dict[key][5]:
+                value[5] = achievements_dict[key][5]
+                print "Fixing achievement \""+key+"\" val 5"
+                
+            # Resets achievements
+            if reset:
+                value[3] = False
+        return True
+        
 
     class achievement_class(object):
         achievements = {}

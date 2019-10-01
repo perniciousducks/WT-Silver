@@ -354,6 +354,7 @@ label ag_st_imperio_E2:
             call ton_main("......................","base","base","base","ahegao")
 
             # Tonks turns around. (mirror sprite)
+            call ton_chibi("stand","desk","base", flip=True)
             call ton_main("","base","base","base","ahegao", xpos="500", ypos="base", flip=True)
             pause.8
 
@@ -406,11 +407,15 @@ label ag_st_imperio_E2:
             call ast_main("Fine...","annoyed","narrow","angry","R")
 
             # Tonks returns to normal
-            with fade
+            call hide_characters
+            call ton_chibi("stand","desk","base", flip=False)
             call ast_chibi(action="reset",xpos="530",ypos="base")
+            with fade
+            pause.8
 
             call play_music("astoria_theme")
-            call ton_main("Oh wow...","angry","base","worried","down")
+            call ast_main("","open","base","base","down", xpos="right", ypos="base")
+            call ton_main("Oh wow...","angry","base","worried","down", xpos="base", ypos="base", flip=False)
             call ton_main("You made me squeal like a pig!","smile","happyCl","base","mid")
             call ton_main("That was quite good!","base","base","base","mid")
             call ast_main("Thank you!","open","base","base","down")
@@ -484,6 +489,7 @@ label ag_st_imperio_E2:
             # Tonks returns to normal.
             pause.2
             call hide_characters
+            call ton_chibi("stand","desk","base", flip=False)
             call ast_chibi(action="reset",xpos="530",ypos="base")
             hide screen bld1
             with fade

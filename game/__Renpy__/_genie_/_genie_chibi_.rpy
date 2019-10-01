@@ -6,7 +6,7 @@
 ###  GENIE CHIBI UNIVERSAL SCREEN ###
 screen g_c_u():
     tag genie
-    
+
     # TODO: Replace g_c_w_h_a_t_t_h_e_f_u_c_k screens
     if "/chibis/" in g_c_u_pic:
         add g_c_u_pic xpos gen_chibi_xpos ypos gen_chibi_ypos xzoom gen_chibi_flip zoom 0.5
@@ -30,7 +30,7 @@ screen genie(): #Sitting behind desk.
 screen rum_screen(): #Rummaging through the cumpboard.
     tag genie_chibi
     add "images/rooms/_objects_/cupboard/cupboard_open.png" xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
-    
+
     if cupboard_deco:
         add "images/rooms/_objects_/cupboard/cupboard_open" +str(cupboard_deco)+ ".png" at Position(xpos=cupboard_OBJ.xpos, ypos=cupboard_OBJ.ypos, xanchor="center", yanchor="center") #Pinup Girl
     add "images/rooms/main_room/chair_left_with_shadow.png" xpos 332 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
@@ -291,10 +291,15 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
                 $ g_c_u_pic = "characters/genie/chibis/"+str(pic)+".png"
 
         show screen g_c_u
-        
+
     elif action in ["standing_alt"]:
+        if flip:
+            $ gen_chibi_flip = -1
+        else:
+            $ gen_chibi_flip = 1
+
         $ g_c_u_pic = "genie_stand_alternative"
-        
+
         show screen g_c_u
 
     #Jerking off solo.

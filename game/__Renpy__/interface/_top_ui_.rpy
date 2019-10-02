@@ -511,7 +511,7 @@ label decorate_room_menu:
                 $ fireplace_deco_OBJ.room_image = ""
                 $ owl_deco_OBJ.room_image = ""
                 $ owl_OBJ.room_image = "owl_idle"
-                $ owl_OBJ.idle_image = "owl_with_letter_blink"
+                $ owl_OBJ.idle_image = "owl_letter"
                 $ owl_OBJ.hover_image = "owl_hover"
             "No":
                 jump deco_menu

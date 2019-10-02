@@ -127,6 +127,7 @@ label start_wt:
     call room("main_room")
     call gen_chibi("hide")
     show screen dumbledore
+    show screen letter_on_desk # Gets hidden after examining desk
     hide screen blkfade
     with d3
     pause.1

@@ -95,7 +95,7 @@ default ag_se_imperio_sb = event_class(
         ]
     ],
     icons = [None], # If a tier doesn't need an icon replace with None
-    iconset = [["star_empty", "heart_yellow"]],
+    iconset = [["heart_empty", "heart_yellow"]],
     complete = True
 )
 

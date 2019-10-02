@@ -460,7 +460,7 @@ label ss_he_cho_E1:
 
         "\"I can’t remember. I got too distracted by her legs...\"":
             call sna_main("Can you describe her?","snape_05")
-            call sna_main("Hair colour, hight, her uniform colour? Anything?","snape_02")
+            call sna_main("Hair colour, height, her uniform colour? Anything?","snape_02")
             m "I believe she was asian."
             call sna_main("Cho Chang?","snape_10")
             m "Bless you."

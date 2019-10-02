@@ -34,7 +34,7 @@ label door_menu(xx=723, yy=90):
     $ current_sorting = door_show_busy
 
     label door_menu_after_init:
-    $ renpy.block_rollback()
+    #$ renpy.block_rollback()
 
     show screen bld1
     show screen door_menu(xx, yy)

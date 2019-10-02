@@ -8,7 +8,7 @@ label nt_he_susan_E1:
     call ton_main("Yes, there's this student in my class. She seems to be having a bad time.","open","base","sad","mid")
     m "Education isn't meant to be enjoyable."
     call ton_main("It's not that, she's being bullied by the other students apparently...","open","base","sad","R")
-    m "For what reason?"
+    m "Why is she being singled out?"
     call ton_main("For being shy,...insecure,...","upset","closed","base","mid")
     m "About what?"
     call ton_main("About her massive tits!","upset","base","base","mid")
@@ -31,7 +31,7 @@ label nt_he_susan_E1:
     g4 "Wait, you were?"
     call ton_main("Of course, why else would I be telling you about her?","open","closed","angry","mid")
     m "I don't know... banter?"
-    m "Snape sure as hell hasn't sent me any girls up here..."
+    m "Snape sure as hell hasn't sent me any girls..."
     call ton_main("I can teach him a thing or two about sharing - if you'd like...","horny","base","base","mid")
     call ton_main("The more the merrier in my opinion...","smile","happyCl","base","mid")
     m "You don't mean Snape and I..."
@@ -60,5 +60,113 @@ label nt_he_susan_E1:
     ">You are glued to every word she has to say about them..."
 
     $ nt_he.susan_E1 = True
+    $ sb_event_pause += 1 # New event the next day.
 
     jump end_tonks_hangout_points
+
+
+label susan_intro_E1:
+    stop music fadeout 1.0
+    call play_sound("knocking")
+    call bld
+    "*knock-knock-knock*"
+
+    who "*Uhm*... Professor Dumbledore, Sir?"
+    who "May I come in?"
+    m "Another girl?"
+
+    $ d_flag_01 = False
+    $ d_flag_02 = False
+
+    menu:
+        m "..."
+        "\"Come on in.\"":
+            who "Thank you, Sir."
+
+        "\"Who's there?\"":
+            $ d_flag_01 = True # Knows name.
+            sus "Sus-{w=0.6} Susan Bones, Sir."
+            g9 "Susan Bones who?"
+            sus "...I'm sorry?"
+            g9 "*Ha-ha-ha-ha!*"
+            show screen blktone
+            with d1
+            m "I'm a terrible person..."
+            hide screen blktone
+            with d1
+            sus "Professor?"
+            m "Yes, please come on in..."
+            sus "Thank you, Sir."
+
+        "\"Not now.\"":
+            $ d_flag_02 = True # Susan walks in anyway.
+            who "Okay, Sir."
+
+    call sus_walk(action="enter", xpos="mid", ypos="base", speed=2)
+
+    call bld
+    if d_flag_02:
+        g4 "Didn't I say not now-"
+    else:
+        m "How can I help you-"
+
+    call play_music("susan_theme")
+    call sus_main("","base","base","base","mid", xpos="right", ypos="base")
+    pause.8
+
+    # Boing sound?
+    call play_sound("boing")
+    with hpunch
+    g4 "(Damn! Look at them titties...)"
+
+    menu:
+        "\"Hello, Gorgeous!\"":
+            call sus_main("*Uhm*...","upset","base","base","down") # Embarrassed.
+            call sus_main("He- Hello...","open","base","worried","mid")
+
+        "\"Susan! How great to see you!\"" if d_flag_01:
+            g9 "Where have you been all my life?"
+            call sus_main("I've been here at school for a couple of years now, Sir.","open","base","worried","R")
+
+        "\"My day just got a whole lot brighter!\"":
+            call sus_main("Sir?","upset","base","worried","mid")
+            m "(Or should say darker?)"
+            show screen blktone
+            g4 "(Those tits must cast a huge-ass shadow...)"
+            hide screen blktone
+
+    call sus_main("Professor Tonks said you wanted to see me?","base","base","base","mid")
+    g9 "Did she now?"
+    m "(I have to get that woman a drink for introducing me to this magnificently voluptuous creature...)"
+    g9 "Well, how nice of her."
+    call sus_main("Is there anything I can help you with, Professor?","grin","base","base","mid")
+    m "..."
+    call sus_main("S- Sir?","open","base","worried","mid")
+    m "(This must be that girl she wanted me to help with body confidence...)"
+    m "Did professor Tonks tell you why I wanted to see you?"
+    call sus_main("N-no...{w} I'm not in trouble am I?","upset","base","worried","down")
+    m "Don't worry, I just needed to confirm something - You're free to go..."
+    call sus_main("C-confirm something?","open","narrow","worried","mid")
+    call sus_main("So I'm not in trouble then?","grin","base","base","mid")
+    m "(This girl's got some confidence issues for sure...)"
+    m "No miss Bones... You're not in any trouble."
+    call sus_main("Very well...","base","base","base","mid")
+    call sus_main("I shall return to my dormitory then.","open","base","base","R")
+    call sus_main("Good-{w=0.4} Good day, Sir.","grin","base","base","mid")
+
+    call sus_walk(action="leave", speed=2)
+
+    call bld
+    m "..."
+    m "Massive tits...{w=0.4} confirmed."
+
+    $ susan_busy = True
+
+    $ susan_unlocked = True
+    $ achievement.unlock("unlocksus", True)
+    call popup("{size=-4}You can now summon Susan into your office.{/size}", "Character unlocked!", "interface/icons/head/head_susan_1.png")
+
+    $ susan_intro.E1_complete = True
+    $ ag_event_pause += 2 # Astoria intro starts in 2 days.
+
+    jump main_room

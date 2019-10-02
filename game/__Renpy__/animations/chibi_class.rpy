@@ -119,7 +119,7 @@ init python:
             if astoria_class.get_worn("top"):
                 ast_chibi_top = imagepath+animation+"ag_top"+status+".png" if animation else imagepath+"ag_top.png"
 
-            if astoria_class.get_worn("bottom"):
+            if astoria_class.get_worn("bottom") or astoria_class.get_worn("top") and astoria_class.get_cloth("top").id == astoria_cloth_topann.id: # # #
                 ast_chibi_bottom = imagepath+animation+"ag_skirt"+status+".png" if animation else imagepath+"ag_skirt.png"
 
             if astoria_class.get_worn("robe") and not animation:

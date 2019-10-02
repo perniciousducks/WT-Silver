@@ -1,5 +1,6 @@
 init python:
-
+    import pygame
+    
     def get_character_object(key):
         return character_list.get(key)
             
@@ -117,14 +118,6 @@ init python:
                 # Mark each clothing piece from the group as unlocked/locked by default
                 for item in self.group:
                     item.unlock()
-                
-        def clone(self):
-            clothes = []
-            clothing = get_character_object(self.group[0].char).clothing
-            for key in clothing:
-                if not clothing[key][0] == None:
-                    clothes.append(clothing[key][0].clone())
-            return outfit_class(name=self.name, desc=self.desc, unlocked=self.unlocked, group=clothes)
             
         def save(self):
             char = self.group[0].char
@@ -155,6 +148,22 @@ init python:
                     item = [self.group[i], char.clothing[self.group[i].type][1]]
                     sprite_list.append(item)
                     sprite_list.append([self.group[i].get_skin(), 5])
+                    
+                    if self.group[i].bodyfix != None:
+                        for k, v in self.group[i].bodyfix.iteritems():
+                            sprite_list = [v if isinstance(x[0], basestring) and k in x[0] else x for x in sprite_list]
+                            
+                    if self.group[i].layerfix != {}:
+                        for k, v in self.group[i].layerfix.iteritems():
+                            if k == "outline_above":
+                                sprite_list.append([v[0], 150])
+                            elif k == "outline_below":
+                                sprite_list.append([v[0], -150])
+                            else:
+                                if v[1] == 1:
+                                    sprite_list.append([self.group[i].get_layerfix(k), 100+k])
+                                else:
+                                    sprite_list.append([self.group[i].get_layerfix(k), -100+k])
                         
                 # Sort sprite list by zorder based on character clothing zorder
                 sprite_list.sort(key=lambda x: x[1], reverse=False)
@@ -167,9 +176,14 @@ init python:
                 for sprite in sprite_list:                        
                     if isinstance(sprite[0], basestring):
                         self.sprite = Composite(
-                                    (1010, 1200),
-                                    (0,0), self.sprite, 
-                                    (0,0), im.MatrixColor(Image(sprite[0]), im.matrix.desaturate()))
+                                (1010, 1200),
+                                (0,0), self.sprite,
+                                (0,0), im.MatrixColor(Image(sprite[0]), im.matrix.desaturate()))
+                    elif isinstance(sprite[0], (im.Image, im.MatrixColor)):
+                        self.sprite = Composite(
+                                (1010, 1200),
+                                (0,0), self.sprite,
+                                (0,0), Image(sprite[0]))
                     else:
                         self.sprite = Composite(
                                 (1010, 1200),
@@ -217,6 +231,8 @@ init python:
             self.bodyfix = None
             self.incompatible = None
             
+            self.layerfix = {}
+            
             self.armfix = False
             self.armfix_L = []
             self.armfix_Lx = ""
@@ -258,7 +274,7 @@ init python:
                     self.color.append([255, 255, 255, 255])
                     
             for i in xrange(len(self.color)):
-                self.color_default.append(self.color[i])
+                self.color_default.append(list(self.color[i]))
                 
             if self.layers != len(self.color):
                 raise Exception('Clothing: "color" list does not match the number of layers in cloth_class.')
@@ -295,6 +311,8 @@ init python:
             # Check if armfix layers exist
             self.set_armfix()
             
+            self.set_layerfix()
+            
             # Set outline layer path
             self.outline = self.imagepath+"outline.png"
 
@@ -325,10 +343,10 @@ init python:
                 get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
             
         def clone(self):
-            dyes = []
-            for dye in self.color:
-                dyes.append([dye[0],dye[1],dye[2],dye[3]])
-            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=dyes, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix, whoring=self.whoring, bodyfix=self.bodyfix, incompatible=self.incompatible)
+            color = []
+            for c in self.color:
+                color.append(list(c))
+            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=color, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix, layerfix=self.layerfix, whoring=self.whoring, bodyfix=self.bodyfix, incompatible=self.incompatible)
                 
         def set_pose(self, pose):
             if pose == None:
@@ -369,6 +387,28 @@ init python:
                 return True
             return False
             
+        def set_layerfix(self, anim=False):
+            pose = self.pose
+            if anim:
+                pose += "/"+self.pose+"/"
+                
+            self.layerfix = {}
+            for layer in xrange(self.layers):
+                # Coloured Layer above all else
+                if renpy.loadable(self.imagepath+pose+str(layer)+"_above.png"):
+                    self.layerfix[layer] = [self.imagepath+pose+str(layer)+"_above.png", 1]
+                    
+                # Coloured Layer below all else
+                if renpy.loadable(self.imagepath+pose+str(layer)+"_below.png"):
+                    self.layerfix[layer] = [self.imagepath+pose+str(layer)+"_below.png", 0]
+                    
+            if renpy.loadable(self.imagepath+pose+"outline_above.png"):
+                self.layerfix['outline_above'] = [self.imagepath+pose+"outline_above.png", 2]
+                
+            if renpy.loadable(self.imagepath+pose+"outline_below.png"):
+                self.layerfix['outline_below'] = [self.imagepath+pose+"outline_below.png", 2]
+            return
+            
         def set_armfix(self, anim=False):
             pose = self.pose
             if anim:
@@ -406,10 +446,19 @@ init python:
 
         def get_alpha(self, layer):
             return self.color[layer][3]/255.0
+            
+        def set_color_alt(self, l):
+            for i in xrange(len(l)):
+                self.color[i] = list(l[i])
+            self.sprite_ico.cached = False
+            self.cached = False
 
         def set_color(self, layer):
             if config.developer or cheat_wardrobe_alpha:
-                self.color[layer] = color_picker(self.color[layer], True, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
+                if self.type != "hair":
+                    self.color[layer] = color_picker(self.color[layer], True, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
+                else:
+                    self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
             else:
                 self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
             self.sprite_ico.cached = False
@@ -417,7 +466,7 @@ init python:
             
         def reset_color(self):
             for i in xrange(len(self.color)):
-                self.color[i] = self.color_default[i]
+                self.color[i] = list(self.color_default[i])
             self.sprite_ico.cached = False
             self.cached = False
         
@@ -493,6 +542,9 @@ init python:
                         (0,0), self.armfix_Rx)
             return (armL, armR)
             
+        def get_layerfix(self, layer):
+            return Image(im.MatrixColor(self.layerfix[layer][0], self.get_matrixcolor(layer) * im.matrix.opacity(self.get_alpha(layer))))
+            
         def get_icon(self):
             return self.sprite_ico.get_image()
             
@@ -518,6 +570,7 @@ init python:
             self.pose = ""
             
             self.sprite = "empty"
+            self.mannequin_sprite = None
 
             self.__dict__.update(**kwargs)
             
@@ -700,6 +753,12 @@ init python:
                             result = False
             return result
             
+        def get_cloth_object(self, category, subcat, id):
+            for object in self.clothing_dictlist[category][subcat]:
+                if object.id == id:
+                    return object
+            return None
+            
         def equip(self, object):
             if isinstance(object, outfit_class):
                 self.unequip("all")
@@ -711,8 +770,9 @@ init python:
                             if key not in self.incompatible_wardrobe:
                                 self.incompatible_wardrobe.append(key)
                             self.unequip(key)
-                    self.clothing[item.type][0] = item
+                    self.clothing[item.type][0] = self.get_cloth_object(item.category, item.subcat, item.id)
                     self.clothing[item.type][4] = False
+                    self.clothing[item.type][0].set_color_alt(item.color)
             else:
                 if self.clothing[object.type][0] == object and object.type != "hair":
                     self.unequip(object.type)
@@ -814,6 +874,14 @@ init python:
                 if not self.clothing[type][4]:
                     return True
             return False
+
+        def create_outfit(self, name, desc, unlock=True):
+            clothes = []
+            clothing = self.clothing
+            for key in clothing:
+                if not clothing[key][0] == None:
+                    clothes.append(clothing[key][0].clone())
+            return outfit_class(name=name, desc=desc, unlocked=unlock, group=clothes)
                 
         def say(self, string, **kwargs):
             if kwargs:
@@ -827,6 +895,31 @@ init python:
                 if self.body[key][0]:
                     bodyparts.append(value) 
             return bodyparts
+            
+        def get_mannequin(self):
+            if not self.mannequin_sprite:
+                
+                # Create sprite list
+                sprite_list = []
+                
+                for key, value in self.body.iteritems():
+                    if self.body[key][0] and not self.body[key][4]:
+                        sprite_list.append(value)
+                        
+                # Sort sprite list by zorder based on zorder
+                sprite_list.sort(key=lambda x: x[1], reverse=False)
+
+                # Armfix
+                armfix = []
+                
+                # Build image
+                self.mannequin_sprite = Image("characters/dummy.png")
+                for sprite in sprite_list:                        
+                    self.mannequin_sprite = Composite(
+                            (1010, 1200),
+                            (0,0), self.mannequin_sprite,
+                            (0,0), im.MatrixColor(Image(sprite[0]), im.matrix.desaturate()))
+            return self.mannequin_sprite
             
         def get_image(self):
             if not self.cached or self.cache_override:                
@@ -863,6 +956,17 @@ init python:
                             for k, v in self.clothing[key][0].bodyfix.iteritems():
                                 # Temporarily replace a body part using list comprehension 
                                 sprite_list = [v if isinstance(x[0], basestring) and k in x[0] else x for x in sprite_list]
+                        if self.clothing[key][0].layerfix != {}:
+                            for k, v in self.clothing[key][0].layerfix.iteritems():
+                                if k == "outline_above":
+                                    sprite_list.append([v[0], 150, 0, 0, False])
+                                elif k == "outline_below":
+                                    sprite_list.append([v[0], -150, 0, 0, False])
+                                else:
+                                    if v[1] == 1:
+                                        sprite_list.append([self.clothing[key][0].get_layerfix(k), 100+k, 0, 0, False])
+                                    else:
+                                        sprite_list.append([self.clothing[key][0].get_layerfix(k), -100+k, 0, 0, False])
                         sprite_list.append(value)
                         sprite_list.append([self.clothing[key][0].get_skin(), 5, 0, 0, False])
                         
@@ -884,7 +988,7 @@ init python:
                 if sprite_list:
                     for sprite in sprite_list:
                         # Check if sprite is an imagepath or an object
-                        if isinstance(sprite[0], basestring):
+                        if isinstance(sprite[0], (basestring, im.Image, im.MatrixColor)):
                             self.sprite = Composite(
                                     (width, height),
                                     (0,0), self.sprite,

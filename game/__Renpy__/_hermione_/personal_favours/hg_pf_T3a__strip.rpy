@@ -699,6 +699,7 @@ label hg_pf_strip_T1_intro_E2:
 
     if hg_strip.trigger == False:
         $ achievement.unlock("herstrip")
+        $ hg_pf_strip.change_icon(a="heart_yellow", b="heart_red")
     $ hg_strip.triggered() # .trigger = True, .counter += 1
     $ hg_pf_strip.title = "Strip for Me!"
 

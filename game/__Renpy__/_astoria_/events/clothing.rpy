@@ -3,6 +3,9 @@
 #Door Events (Astoria wears random clothing.)
 
 label astoria_summon_setup:
+
+    $ astoria_wardrobe_unlocked = True
+
     call play_sound("door")
     call ast_chibi("stand","mid","base")
     with d3

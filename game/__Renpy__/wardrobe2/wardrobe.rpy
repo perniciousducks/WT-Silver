@@ -131,7 +131,7 @@ label t_wardrobe(char_label):
         else:
             $ renpy.call(active_girl+"_wardrobe_check", "equip", _return[1])
     elif _return == "addoutfit":
-        $ globals()[active_girl+"_outfit_custom"].clone()
+        $ get_character_object(active_girl).create_outfit("Custom", "A custom outfit")
         $ menu_items = char_active.outfits
         $ menu_items_length = len(menu_items)
     elif _return[0] == "deloutfit":
@@ -248,18 +248,27 @@ label t_wardrobe(char_label):
     elif _return[0] == "erozone":
         show screen t_wardrobe_menu(550, 50)
         if current_category:
-            show screen t_wardrobe_menuitem(20, 50)
+            if current_category == "outfits":
+                show screen t_wardrobe_outfit_menuitem(20, 50)
+            else:
+                show screen t_wardrobe_menuitem(20, 50)
         $ renpy.call(active_girl+"_wardrobe_check", "touching", _return[1])
         #call expression char_label pass (text="", face="horny")
     elif _return[0] == "toggle":
         show screen t_wardrobe_menu(550, 50)
         if current_category:
-            show screen t_wardrobe_menuitem(20, 50)
+            if current_category == "outfits":
+                show screen t_wardrobe_outfit_menuitem(20, 50)
+            else:
+                show screen t_wardrobe_menuitem(20, 50)
         $ renpy.call(active_girl+"_wardrobe_check", "toggle", _return[1])
     elif _return == "music":
         show screen t_wardrobe_menu(550, 50)
         if current_category:
-            show screen t_wardrobe_menuitem(20, 50)
+            if current_category == "outfits":
+                show screen t_wardrobe_outfit_menuitem(20, 50)
+            else:
+                show screen t_wardrobe_menuitem(20, 50)
         if wardrobe_music_active:
             $ wardrobe_music_active = False
             call play_music(active_girl+"_theme")

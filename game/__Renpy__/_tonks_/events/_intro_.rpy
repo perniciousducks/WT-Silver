@@ -500,9 +500,9 @@ label tonks_intro_E3:
             call ton_main("That can't be true!","open","base","worried","mid")
             m "You know who I am. You said it yourself earlier."
             m "(If only I could remember what she called me...)"
-        "The danger!":
-            call ton_main("What?","base","wide","wide","wide")
-            g4 "I am the one who knocks..."
+        #"The danger!":
+        #    call ton_main("What?","base","wide","wide","wide")
+        #    g4 "I am the one who knocks..."
 
     call ton_main("I've had enough of this!","angry","base","angry","mid")
     call ton_main("Reveal your true identity, dark wizard!","open","base","angry","mid")

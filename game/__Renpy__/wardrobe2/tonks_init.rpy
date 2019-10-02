@@ -14,7 +14,7 @@ default tonks_cloth_top_corset = cloth_class(char="tonks", category="tops", subc
 # Bottoms
 default tonks_cloth_jeans         = cloth_class(char="tonks", category="bottoms", subcat="trousers", type="bottom", id="jeans", layers=1, color=[[51, 104, 105, 255]])
 default tonks_cloth_leggings      = cloth_class(char="tonks", category="bottoms", subcat="trousers", type="bottom", id="leggings", layers=1, color=[[45, 45, 48, 255]])
-default tonks_cloth_leggings_hole = cloth_class(char="tonks", category="bottoms", subcat="trousers", type="bottom", id="leggings_hole", layers=1, color=[[45, 45, 48, 255]])
+default tonks_cloth_leggings_hole = cloth_class(char="tonks", category="bottoms", subcat="trousers", type="bottom", id="leggings_hole", layers=1, color=[[45, 45, 48, 255]], whoring=60)
 
 # Underwear
 default tonks_cloth_panties_base = cloth_class(char="tonks", category="panties", subcat="panties", type="panties", id="base", layers=1, color=[[124, 42, 50, 255]])
@@ -22,17 +22,16 @@ default tonks_cloth_panties_base = cloth_class(char="tonks", category="panties",
 default tonks_cloth_bra_base = cloth_class(char="tonks", category="bras", subcat="bras", type="bra", id="bikini", layers=2, color=[[124, 42, 50, 255], [177, 168, 172, 255]])
 
 # Legwear
-default tonks_cloth_garterbase = cloth_class(char="tonks", category="legwear", subcat="stockings", type="stockings", id="auror", layers=2, color=[[45, 45, 48, 255], [177, 168, 172, 255]], armfix=True)
+default tonks_cloth_stockingsbase = cloth_class(char="tonks", category="legwear", subcat="stockings", type="stockings", id="auror", layers=2, color=[[45, 45, 48, 255], [177, 168, 172, 255]], armfix=True)
 
 # Robes
 default tonks_cloth_auror_coat = cloth_class(char="tonks", category="tops", subcat="robes", type="robe", id="auror_coat", layers=2, color=[[40, 40, 41, 255], [174, 165, 169, 255]], armfix=True)
 
 # Temporal save
 default tonks_outfit_last   = outfit_class(name="Last worn items", group=[tonks_hair_base])
-default tonks_outfit_custom = outfit_class(name="Default", group=[tonks_hair_base.clone(), tonks_cloth_leggings_hole.clone(), tonks_cloth_top_auror.clone(), tonks_cloth_choker_beads.clone(), tonks_cloth_gloves_auror.clone(), tonks_cloth_auror_coat.clone()], unlocked=True)
+default tonks_outfit_custom = outfit_class(name="Default", group=[tonks_hair_base.clone(), tonks_cloth_leggings.clone(), tonks_cloth_top_auror.clone(), tonks_cloth_choker_beads.clone(), tonks_cloth_gloves_auror.clone(), tonks_cloth_auror_coat.clone(), tonks_cloth_stockingsbase.clone()], unlocked=True)
 
-default tonks_outfit_default = outfit_class(name="Default", group=[tonks_hair_base.clone(), tonks_cloth_leggings_hole.clone(), tonks_cloth_top_auror.clone(), tonks_cloth_choker_beads.clone(), tonks_cloth_gloves_auror.clone(), tonks_cloth_auror_coat.clone()])
-        
+default tonks_outfit_default = outfit_class(name="Default", group=[tonks_hair_base.clone(), tonks_cloth_leggings.clone(), tonks_cloth_top_auror.clone(), tonks_cloth_choker_beads.clone(), tonks_cloth_gloves_auror.clone(), tonks_cloth_auror_coat.clone(), tonks_cloth_stockingsbase.clone()])
 label default_tonks_class_init:
 python:
     # Because tonks_class must be defined before clothing, the default clothing can only be set afterwards, like so:
@@ -47,7 +46,7 @@ python:
             "legs":      [None, 2, 0, 0, False],
             "animation": [None, 2, 0, 0, False]
         }
-                    
+
         tonks_class.face = {
             "tears":    [None, 11, 0, 0, False],
             "cheeks":   [None, 10, 0, 0, False],
@@ -62,7 +61,7 @@ python:
             "cum":   [None, 15, 0, 0, False],
             "emote": [None, 30, 0, 0, False]
         }
-                    
+
         tonks_class.update_paths("body", "face", "other")
 
         tonks_class.clothing = {
@@ -75,9 +74,9 @@ python:
             "top":        [tonks_cloth_top_auror, 17, 0, 0, False],
             "bra":        [None, 16, 0, 0, False],
             "bottom":     [tonks_cloth_leggings, 15, 0, 0, False],
-            "garterbelt": [tonks_cloth_garterbase, 14, 0, 0, False],
+            "garterbelt": [None, 14, 0, 0, False],
             "panties":    [None, 13, 0, 0, False],
-            "stockings":  [None, 12, 0, 0, False],
+            "stockings":  [tonks_cloth_stockingsbase, 12, 0, 0, False],
             "buttplug":   [None, 0, 0, 0, False],
             "pubes":      [None, 11, 0, 0, False],
             "tattoo0":    [None, 10, 0, 0, False],

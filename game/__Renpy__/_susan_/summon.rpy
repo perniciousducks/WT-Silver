@@ -53,10 +53,6 @@ label summon_susan:
             call sus_main(xpos="wardrobe",ypos="base")
             call screen wardrobe
 
-        #"{color=#858585}-Wardrobe-{/color}" if susan_wardrobe_unlocked and not susan_imperio_influence:
-        #    call nar(">Susan isn't willing to let you change her appearance!")
-        #    jump susan_requests
-
         "{color=#858585}-Hidden-{/color}" if not susan_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")
             jump susan_requests

@@ -3,7 +3,7 @@
 init -1 python hide: 
     # Internal name and version
     config.name    = "WT Silver" # EXPERIMENTAL VERSION
-    config.version = "1.37"
+    config.version = "1.371"
 
     # Window
     title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
@@ -108,7 +108,7 @@ init -1 python hide:
     config.hard_rollback_limit = 100
     config.narrator_menu = True # If True, then display menu narration using narrator character
 
-    config.quit_action = Quit(False)
+    config.quit_action = Quit(True)
 
 # Save directory needs to be set in `python early` block
 python early: 

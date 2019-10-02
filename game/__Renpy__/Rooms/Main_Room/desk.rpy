@@ -1,3 +1,8 @@
+screen letter_on_desk():
+    zorder 3
+    
+    add "/images/rooms/_objects_/mail/letter_desk.png" zoom 0.5 xpos 334 ypos 356
+
 label desk:
     if day == 1:
         if not desk_examined:
@@ -12,6 +17,7 @@ label desk:
                 "-Read the letter-":
                     call bld
                     g9 "Of course I will!"
+                    hide screen letter_on_desk
 
             # First letter from Hermione
             $ letter_hg_1.mailLetter()
@@ -76,7 +82,12 @@ label desk:
             jump main_room_menu
     elif _return == "hermione" and not hermione_busy:
         if her_map_location == "forest":
-            jump hermione_map_BJ
+            call nar(">Hermione is currently at the Forbidden Forest.\n>Would you like to go there?")
+            menu:
+                "-Yes, pay her a visit.-":
+                    jump hermione_map_BJ
+                "-No, summon her to your office-":
+                    pass
 
         jump summon_hermione
 
@@ -90,10 +101,6 @@ label desk:
             call nar(">Luna is already asleep.")
             jump main_room_menu
     elif luna_known and _return == "luna" and not luna_busy:
-        if not luna_reverted:
-            call play_music("dark_fog") # LUNA'S THEME (placeholder probably)
-        else:
-            call play_music("chipper_doodle") # LUNA'S THEME (placeholder probably)
         jump summon_luna
 
 
@@ -106,7 +113,6 @@ label desk:
             call nar(">Astoria is already asleep.")
             jump main_room_menu
     elif not astoria_busy and _return == "astoria": #Summoning after intro events done.
-        call play_music("chipper_doodle")
         jump summon_astoria
 
 
@@ -131,7 +137,6 @@ label desk:
             call nar(">Cho is already asleep.")
             jump main_room_menu
     elif _return == "cho" and not cho_busy:
-        call play_music("chipper_doodle") # CHO'S THEME (placeholder probably)
         jump summon_cho
 
 
@@ -143,7 +148,6 @@ label desk:
         else:
             jump main_room_menu
     elif _return == "snape" and not snape_busy:
-        call play_music("dark_fog") # SNAPE'S THEME
         jump summon_snape
 
 

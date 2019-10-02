@@ -401,7 +401,7 @@ label demonstrate_tactic(position=""):
         else:
             m "(This might work!)"
             g4 "(Without the coat, and in those lovingly tight pants, her ass is right on display! Like a delicious piece of ham!)"
-            m "(If she keeps this hight and position, there is no way their seeker can keep his eyes away from her...)"
+            m "(If she keeps this height and position, there is no way their seeker can keep his eyes away from her...)"
             m "(Unless he isn't into asses...)"
 
     # The ~Panties~ position!

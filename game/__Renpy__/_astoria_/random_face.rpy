@@ -15,17 +15,17 @@ label set_ast_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
     #Face emotions
     if mouth != None:
         if mouth in ["neutral"]:
-            $ temp_mouth    = renpy.random.choice(["smile", "base"])
+            $ temp_mouth    = renpy.random.choice(["annoyed","base"])
         elif mouth in ["happy"]:
             $ temp_mouth    = renpy.random.choice(["smile","grin"])
         elif mouth in ["naughty","horny"]:
-            $ temp_mouth    = renpy.random.choice(["grin", "horny"])
+            $ temp_mouth    = renpy.random.choice(["grin","horny"])
         elif mouth in ["annoyed"]:
-            $ temp_mouth    = renpy.random.choice(["annoyed", "upset"])
+            $ temp_mouth    = renpy.random.choice(["annoyed"])
         elif mouth in ["disgusted"]:
-            $ temp_mouth    = renpy.random.choice(["clench","upset", "annoyed"])
+            $ temp_mouth    = renpy.random.choice(["clench","annoyed"])
         elif mouth in ["angry"]:
-            $ temp_mouth    = renpy.random.choice(["clench", "angry"])
+            $ temp_mouth    = renpy.random.choice(["clench","angry"])
 
     if eyes != None:
         if eyes in ["neutral"]:
@@ -33,13 +33,13 @@ label set_ast_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
         elif eyes in ["happy"]:
             $ temp_eyes     = renpy.random.choice(["base"])
         elif eyes in ["naughty","horny"]:
-            $ temp_eyes     = renpy.random.choice(["narrow", "base"])
+            $ temp_eyes     = renpy.random.choice(["narrow","base"])
         elif eyes in ["annoyed"]:
             $ temp_eyes     = renpy.random.choice(["narrow"])
         elif eyes in ["disgusted"]:
-            $ temp_eyes     = renpy.random.choice(["closed"])
+            $ temp_eyes     = renpy.random.choice(["narrow"])
         elif eyes in ["angry"]:
-            $ temp_eyes     = renpy.random.choice(["narrow", "base"])
+            $ temp_eyes     = renpy.random.choice(["narrow","base"])
 
     if eyebrows != None:
         if eyebrows in ["neutral"]:

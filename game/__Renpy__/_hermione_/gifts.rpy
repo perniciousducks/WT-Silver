@@ -2,73 +2,75 @@
 
 # Hermione Gift Menu
 
-label hermione_gift_menu:
-    call update_quest_items
+# Gift menus have been unified, this part is not used in the game anymore. I leave it as a reference since Hermione has some quest items that I could've forget about. -LL
 
-    python:
+# label hermione_gift_menu:
+    # call update_quest_items
 
-        category_list = []
-        category_list.append("ui_gifts")
-        category_list.append("ui_quest_items")
+    # python:
 
-        if current_category == None:
-            current_category = category_list[0]
-            category_choice = category_list[0]
+        # category_list = []
+        # category_list.append("ui_gifts")
+        # category_list.append("ui_quest_items")
 
-        item_list = []
-        if current_category == "ui_gifts":
-            menu_title = "Gift Items"
-            item_list.extend(candy_gift_list)
-            item_list.extend(mag_gift_list)
-            item_list.extend(drink_gift_list)
-            item_list.extend(toy_gift_list)
-        if current_category == "ui_quest_items":
-            menu_title = "Quest Items"
-            item_list.extend(her_quest_items_list)
+        # if current_category == None:
+            # current_category = category_list[0]
+            # category_choice = category_list[0]
 
-        #item_list = list(filter(lambda x: x.unlocked==False, item_list))
-    show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
+        # item_list = []
+        # if current_category == "ui_gifts":
+            # menu_title = "Gift Items"
+            # item_list.extend(candy_gift_list)
+            # item_list.extend(mag_gift_list)
+            # item_list.extend(drink_gift_list)
+            # item_list.extend(toy_gift_list)
+        # if current_category == "ui_quest_items":
+            # menu_title = "Quest Items"
+            # item_list.extend(her_quest_items_list)
 
-    $ _return = ui.interact()
+        # #item_list = list(filter(lambda x: x.unlocked==False, item_list))
+    # show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
 
-    hide screen bottom_menu
-    if category_choice != current_category:
-        $ current_category = _return
+    # $ _return = ui.interact()
 
-    elif isinstance(_return, item_class):
-        if _return in her_quest_items_list:
-            menu:
-                "Would you like to use this quest item?"
-                "\"(Yes, let's do it!)\"":
-                    $ quest_item = _return
-                    jump give_her_quest_item
-                "\"(Not right now.)\"":
-                    jump hermione_gift_menu
-        elif _return.number > 0:
-            call give_her_gift(_return)
-        else:
-            ">You don't own this item."
-            jump hermione_gift_menu
+    # hide screen bottom_menu
+    # if category_choice != current_category:
+        # $ current_category = _return
 
-        if her_mood != 0:
-            jump hermione_gift_menu
-        else:
-            jump hermione_requests
+    # elif isinstance(_return, item_class):
+        # if _return in her_quest_items_list:
+            # menu:
+                # "Would you like to use this quest item?"
+                # "\"(Yes, let's do it!)\"":
+                    # $ quest_item = _return
+                    # jump give_her_quest_item
+                # "\"(Not right now.)\"":
+                    # jump hermione_gift_menu
+        # elif _return.number > 0:
+            # call give_her_gift(_return)
+        # else:
+            # ">You don't own this item."
+            # jump hermione_gift_menu
 
-    elif _return == "Close":
-        $ current_page = 0
-        $ category_choice = None
-        hide screen bottom_menu
-        with d3
+        # if her_mood > 0:
+            # jump hermione_gift_menu
+        # else:
+            # jump hermione_requests
 
-        jump hermione_requests
+    # elif _return == "Close":
+        # $ current_page = 0
+        # $ category_choice = None
+        # hide screen bottom_menu
+        # with d3
 
-    elif _return == "inc":
-        $ current_page += 1
-    elif _return == "dec":
-        $ current_page += -1
+        # jump hermione_requests
 
-    jump hermione_gift_menu
+    # elif _return == "inc":
+        # $ current_page += 1
+    # elif _return == "dec":
+        # $ current_page += -1
+
+    # jump hermione_gift_menu
 
 
 
@@ -86,9 +88,6 @@ label give_her_quest_item: #(quest_item)
         $ collar = 5
         call update_quest_items
         jump hermione_gift_menu
-
-
-
 
 label give_her_gift(gift_item):
     hide screen hermione_main
@@ -618,13 +617,13 @@ label give_her_gift(gift_item):
         if her_whoring <= 6  and her_whoring <= 11:
             call her_main("[genie_name]?! Drinking alcohol at school grounds is forbidden..","open","angry","angry","mid")
             call her_main("And you as a headmaster should know it!","upset","angry")
-            call her_mood(-10)
+            call her_mood(10)
         elif her_whoring <= 12 and her_whoring <= 17:
             call her_main("But, [genie_name].. I can't drink alcohol.","base","down")
             call her_main("I guess I could use it for some potion mixing though..","open","baseL")
             call give_gift(">You give the "+str(gift_item.name)+" bottle to Hermione...", gift_item)
             call her_main("","base","baseL")
-            call her_mood(5)
+            call her_mood(-5)
         elif her_whoring >= 18:
             call her_main("But, [genie_name].. You know I can't drink..","soft","mid", "worried", cheeks="blush")
             call her_main("I get drunk too fast and I might do something I'll regret later.","open","baseL", cheeks="blush")
@@ -633,7 +632,7 @@ label give_her_gift(gift_item):
         else:
             call give_gift(">You give the "+str(gift_item.name)+" bottle to Hermione...", gift_item)
             call her_main("Thank you, [genie_name], I'll ask Ginny to drink some with me later.","soft","mid", "worried", cheeks="blush")
-            call her_mood(20)
+            call her_mood(-20)
 
     hide screen hermione_main
     with d5

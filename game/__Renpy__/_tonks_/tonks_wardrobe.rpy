@@ -4,7 +4,7 @@ label tonks_wardrobe_check(section, arg=None):
             temp_count = [0, 0, 0] # [0: required level, 1: underwear changed, 2: underwear equipped]
             temp_score = 0
             for item in arg.group:
-                if ton_friendship < item.whoring*2 and temp_count[0]*2 < item.whoring*2:
+                if ton_friendship < item.whoring and temp_count[0] < item.whoring:
                     temp_count[0] = item.whoring
                 if item.type in ("bra", "panties"):
                     temp_count[2] += 1
@@ -14,7 +14,7 @@ label tonks_wardrobe_check(section, arg=None):
                                 temp_count[1] += 1
 
         # Outfit outrage score check
-        if ton_friendship < temp_count[0]*2:
+        if ton_friendship < temp_count[0]:
             call ton_main("It looks lovely, but you'd have to prove yourself a bit more before I put that on...",face="annoyed",eyebrows="angry",mouth="smile")
             $ temp_score += 1
         if temp_count[2] < 2 and ton_friendship < 0: # Disabled underwear check
@@ -30,7 +30,7 @@ label tonks_wardrobe_check(section, arg=None):
         if temp_score > 0:
             call ton_main("Sorry, [ton_genie_name] but I can't wear that.",face="annoyed")
             #Hint
-            $ wardrobe_fail_hint(max(temp_count[0]*2, 15, 20))
+            $ wardrobe_fail_hint(max(temp_count[0], 15, 20))
             return
     else:
         if section == "tabswitch":
@@ -159,7 +159,7 @@ label tonks_wardrobe_check(section, arg=None):
                                 $ wardrobe_fail_hint(30)
                                 return
                 label tonks_wardrobe_too_much:
-                if ton_friendship < arg.whoring*2:
+                if ton_friendship < arg.whoring:
                     $ random_number = renpy.random.randint(1, 3)
                     if random_number == 1:
                         call ton_main("Not yet big boy, perhaps once this scheme of ours comes more into fruition...",face="annoyed",eyebrows="angry",mouth="smile")
@@ -169,7 +169,7 @@ label tonks_wardrobe_check(section, arg=None):
                         call ton_main("Hmm, what would you think of me if I wore this...? Later perhaps.",face="annoyed",eyebrows="raised",mouth="horny")
 
                     #Hint
-                    $ wardrobe_fail_hint(arg.whoring*2)
+                    $ wardrobe_fail_hint(arg.whoring)
                     return
 
     $ renpy.play('sounds/equip.ogg')

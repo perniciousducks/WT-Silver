@@ -74,12 +74,12 @@ label use_hermione_potion:
     if potion_choice == "love_potion":
         menu:
             ">Potions that change the user's mood or emotions."
-            "-Cum Addiction-" if daytime and potion_inv.has("p_cum_addiction"):
-                $ potion_inv.remove("p_cum_addiction")
-                $ renpy.jump( potion_lib.getJumpLabel("p_cum_addiction") )
-            "{color=#858585}-Cum Addiction-{/color}" if not daytime and potion_inv.has("p_cum_addiction"):
-                call wardrobe_fail("This potion can only be used during the day.")
-                jump return_to_wardrobe
+            # "-Cum Addiction-" if daytime and potion_inv.has("p_cum_addiction"):
+                # $ potion_inv.remove("p_cum_addiction")
+                # $ renpy.jump( potion_lib.getJumpLabel("p_cum_addiction") )
+            # "{color=#858585}-Cum Addiction-{/color}" if not daytime and potion_inv.has("p_cum_addiction"): # NOT YET READY!
+                # call wardrobe_fail("This potion can only be used during the day.")
+                # jump return_to_wardrobe
 
             "-Hypno potion-" if daytime and potion_inv.has("p_hypno"):
                 $ potion_inv.remove("p_hypno")

@@ -49,7 +49,11 @@ label tonks_hangout:
 
     ### Snape Stories ###
 
-    $ random_number = renpy.random.randint(1, 3)
+    if ton_support <= 5:
+        $ random_number = renpy.random.randint(1, 2)
+    else:
+        $ random_number = renpy.random.randint(1, 3)
+
     if random_number == 1:
         if ton_support < 12:
             $ ton_support += 1

@@ -54,7 +54,11 @@ label snape_hangout:
     ### Snape Stories ###
     # Events are located here.
 
-    $ random_number = renpy.random.randint(1, 3)
+    if sna_support <= 5:
+        $ random_number = renpy.random.randint(1, 2)
+    else:
+        $ random_number = renpy.random.randint(1, 3)
+
     if random_number == 1:
         if sna_support < 15:
             $ sna_support += 1

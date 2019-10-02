@@ -50,7 +50,8 @@ label stat_screen_character:
         call screen stat_menu("luna")
 
     elif charName == "astoria":
-        call ast_main("","smile","base","base","mid",xpos="wardrobe",ypos="base")
+        call set_ast_face(change="all")
+        call ast_main(xpos="wardrobe",ypos="base")
         call screen stat_menu("astoria")
 
     elif charName == "susan":
@@ -458,10 +459,16 @@ label update_stats:
     else:
         $ her_mood_word = "Very Angry"
 
-    #Astoria
+    ### Astoria ###
     #call astoria_clothing_level
     #$ ast_cuteness_word_list = ["Ugly Duckling", "Swot", "", "", "", "", "", "Cutypie", "", "", ""]
     #$ ast_cuteness_word = ast_cuteness_word_list[int(ast_clothing_level/10)]
+    # Mood
+    $ ast_mood_word_list = ["Cheerful", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]
+    if ast_mood >= 0 and ast_mood <= 10:
+        $ ast_mood_word = ast_mood_word_list[int(ast_mood/1.0)]
+    else:
+        $ ast_mood_word = "Very Angry"
 
     ### Cho ###
 

@@ -719,8 +719,10 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             show screen blkfade
             with d3
 
-            call gen_chibi("groping","desk","base")
-            call lun_chibi("stand","desk","base") #ADD replace "desk" with correct xpos number!
+            #TODO Fix chibi position here
+            $ luna_chibi_zorder = 2
+            call gen_chibi("standing_alt","desk","base")
+            call lun_chibi("stand",510,"base")
             show screen chair_left
             show screen desk
 
@@ -739,10 +741,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     with d3
 
                     hide screen genie
-                    $ gen_chibi_xpos = 40
-                    $ gen_chibi_ypos = 10
-                    $ g_c_u_pic = "groping_ass_ani"
-                    show screen g_c_u
+                    call gen_chibi("groping",460)
                     with fade
 
                     ">You reach out swiftly and grab both of her creamy tits..."

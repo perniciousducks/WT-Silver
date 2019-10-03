@@ -501,11 +501,10 @@ label hermione_talk:
                     else:
                         jump genie_change_fail
                 "-Custom Input-":
-                    $ temp_name = renpy.input("(Please enter the name.)")
+                    $ temp_name = renpy.input("(Please enter the name.)", genie_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
                     if temp_name == "":
-                        $ genie_name = "Sir"
-                        jump genie_change
+                        jump hermione_talk
                     if her_whoring >=20:
                         $ genie_name = temp_name
                         jump genie_change
@@ -592,10 +591,10 @@ label hermione_talk:
                     else:
                         jump hermione_change_fail
                 "-Custom Input-":
-                    $ temp_name = renpy.input("(Please enter the name.)")
+                    $ temp_name = renpy.input("(Please enter the name.)", hermione_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
                     if temp_name == "":
-                        $ temp_name = "Miss granger"
+                        jump hermione_talk
                     if her_whoring >=21:
                         $ hermione_name = temp_name
                         jump hermione_change

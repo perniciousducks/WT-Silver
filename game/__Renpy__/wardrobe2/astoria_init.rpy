@@ -24,6 +24,9 @@ default astoria_cloth_schoolskirt2 = cloth_class(char="astoria", category="botto
 default astoria_cloth_schoolskirt3 = cloth_class(char="astoria", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_3", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=8)
 default astoria_cloth_schoolskirt4 = cloth_class(char="astoria", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_4", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=12)
 
+default astoria_cloth_pants1 = cloth_class(char="astoria", category="bottoms", subcat="trousers", type="bottom", id="pants_1", layers=2, color=[[180, 180, 180, 255], [213, 161, 13, 255]])
+default astoria_cloth_shorts1 = cloth_class(char="astoria", category="bottoms", subcat="trousers", type="bottom", id="pants_1_short", layers=2, color=[[180, 180, 180, 255], [213, 161, 13, 255]], whoring=8)
+
 # Bras
 default astoria_cloth_basicbra1 = cloth_class(char="astoria", category="bras", subcat="bras", type="bra", id="basic_bra_1", layers=2, color=[[213, 62, 65, 255], [234, 236, 234, 255]])
 default astoria_cloth_basicbra2 = cloth_class(char="astoria", category="bras", subcat="bras", type="bra", id="basic_bra_2", layers=1, color=[[213, 62, 65, 255]])

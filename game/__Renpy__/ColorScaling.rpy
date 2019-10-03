@@ -1,4 +1,6 @@
 init python:
+    import threading
+        
     whitespace_dict = {}
     with renpy.file("BakedWhiteSpaceInfo.whitespace") as fp:
         line = fp.readline()

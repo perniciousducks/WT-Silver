@@ -1,9 +1,10 @@
-﻿# Ren'Py configuration
+# Ren'Py configuration
+define title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
 
 init -1 python hide: 
     # Internal name and version
     config.name    = "WT Silver" # EXPERIMENTAL VERSION
-    config.version = "1.371"
+    config.version = "1.372"
 
     # Window
     title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
@@ -117,6 +118,20 @@ python early:
 # Build configuration
 # https://www.renpy.org/doc/html/build.html
 init python hide: 
-    build.directory_name = "WT_Silver_%s" % config.version # Name directories and archive files
+    build.directory_name = "WT_Silver_%s" % title_version # Name directories and archive files
     build.executable_name = "WT Silver" # Name for executables
     build.include_update = False # If True, include update information into packages (allows the updater to run)
+    
+    build.classify("**.exe", None)
+    build.classify("**.psd", None)
+    build.classify("**.psd~", None)
+    build.classify("**.old", None)
+    build.classify('**.bak', None)
+    build.classify("**.kra", None)
+    build.classify("**.kra~", None)
+    build.classify("**.txt", None)
+    build.classify("**.xml", None)
+    build.classify('**/thumbs.db', None)
+    build.classify('saves/**', None)
+    build.classify('outfits/**', None)
+    

@@ -37,6 +37,7 @@ default ton_friendship     = 0 #Max is 100.
 default ton_support        = 0
 default ton_reputation     = 0
 default ton_clothing_level = 100
+default ton_mood           = 0 
 
 # Flags
 default tonks_busy              = False

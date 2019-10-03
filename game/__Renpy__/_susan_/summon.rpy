@@ -148,11 +148,10 @@ label susan_talk:
                     call sus_main("Uhm--... very well, [sus_genie_name].","upset","narrow","worried","R")
                     jump susan_talk
                 "-Custom Input-":
-                    $ temp_name = renpy.input("(Please enter the name.)")
+                    $ temp_name = renpy.input("(Please enter the name.)", sus_genie_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
                     if temp_name == "":
-                        $ sus_genie_name = "Sir"
-                        call sus_main("I will just call you [sus_genie_name] again.","base","base","base","mid")
+                        jump susan_talk
                     else:
                         $ sus_genie_name = temp_name
                         call sus_main("Uhm... ok. I will call you [sus_genie_name].","upset","narrow","base","L")
@@ -195,10 +194,10 @@ label susan_talk:
                     call sus_main("... alright, [sus_genie_name]...","upset","narrow","worried","R")
                     jump susan_talk
                 "-Custom Input-":
-                    $ temp_name = renpy.input("(Please enter the name.)")
+                    $ temp_name = renpy.input("(Please enter the name.)", susan_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
                     if temp_name == "":
-                        $ susan_name = "Miss Bones"
+                        jump susan_talk
                     else:
                         $ susan_name = temp_name
                         call sus_main("I don't like it, but--","open","closed","worried","mid")

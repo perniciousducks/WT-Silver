@@ -74,7 +74,7 @@ label ast_chibi(action = "", xpos=ast_chibi_xpos, ypos=ast_chibi_ypos, flip=Fals
 
 
 ### Astoria Chibi Walk ###
-
+default ast_speed = 2.0
 label ast_walk(xpos=walk_xpos, ypos=walk_ypos, speed=ast_speed, action="", loiter=True, redux_pause=0, hide_screens=True):
     if hide_screens:
         call hide_characters

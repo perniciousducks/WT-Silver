@@ -454,7 +454,7 @@ label reset_luna_progress:
         "lun_top_level",
         "lun_dom",
         "lun_sub",
-        "lags",
+
         "hat_known",
         "luna_known",
         "luna_busy",
@@ -463,7 +463,7 @@ label reset_luna_progress:
         "luna_herm_talk",
         "luna_reverted",
         "luna_addicted",
-        "ames",
+
         "lun_genie_name",
         "lun_name",
         "gave_luna_gift",

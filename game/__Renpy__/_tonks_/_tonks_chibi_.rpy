@@ -65,7 +65,7 @@ label ton_chibi(action = "", xpos=ton_chibi_xpos, ypos=ton_chibi_ypos, flip=Fals
 
 
 ### Tonks Chibi Walk ###
-
+default ton_speed = 2.0
 label ton_walk(xpos=walk_xpos, ypos=walk_ypos, speed=ton_speed, action="", loiter=True, redux_pause=0):
     call hide_characters
     call hide_chibi_effects

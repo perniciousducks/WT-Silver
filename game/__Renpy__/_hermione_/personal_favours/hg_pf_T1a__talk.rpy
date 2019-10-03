@@ -972,20 +972,29 @@ label hg_pf_talk_tonks:
                     call ton_main("I'd be happy with anything you'd like to tell me...", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="basic")
                     call her_main("Well... it's quite embarrassing.", mouth="open", eye="down", cheeks="blush")
                     call ton_main("Yes?", mouth="horny", eyes="base", pupils="mid", eyebrows="raised", hair="horny")
-                    call her_main("Well, he made me dance for him...", mouth="open", eye="glanceL", cheeks="blush")
-                    call ton_main("Yes... dance...", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="basic")
-                    if masturbating:
-                        m "(And you loved every second of it, that butt bouncing around...)"
+                    if hg_pf_strip.counter > 1:
+                        call her_main("Well, he made me dance for him...", mouth="open", eye="glanceL", cheeks="blush")
+                        call ton_main("Yes... dance...", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="basic")
+                        if masturbating:
+                            m "(And you loved every second of it, that butt bouncing around...)"
                     else:
-                        pass
+                        call her_main("Well, he made me show him my panties...", mouth="open", eye="glanceL", cheeks="blush")
+                        call ton_main("Panties, you say...", mouth="base", eyes="base", pupils="mid", eyebrows="base", hair="basic")
+                        if masturbating:
+                            m "(And you loved every second of it, I bet you were totally wet under those panties!)"
                     call ton_main("And how did that make you feel?", mouth="smile", eyes="base", pupils="mid", eyebrows="base", hair="basic")
                     call her_main("Humiliated!", mouth="annoyed", eye="glanceL", cheeks="blush")
                     call ton_main("And your headmaster, did he enjoy it?", mouth="smile", eyes="base", pupils="L", eyebrows="base", hair="basic")
 
                     if masturbating:
-                        g9 "(And soon your butt will be bouncing on my dick...)"
-                        call her_main("He did seem to enjoy it.", mouth="open", eye="closed", cheeks="blush")
-                        g4 "(And once we're done you wont be able to dance again!)"
+                        if hg_pf_strip.counter > 1:
+                            g9 "(And soon your butt will be bouncing on my dick...)"
+                            call her_main("He did seem to enjoy it.", mouth="open", eye="closed", cheeks="blush")
+                            g4 "(And once we're done you wont be able to dance again!)"
+                        else:
+                            g9 "(And soon your pussy will be bouncing on my dick...)"
+                            call her_main("He did seem to enjoy it.", mouth="open", eye="closed", cheeks="blush")
+                            g4 "(And once we're done you wont be able to sit ever again!)"
                         call cum_block
                         call gen_chibi("cumming_behind_desk")
                         with d3

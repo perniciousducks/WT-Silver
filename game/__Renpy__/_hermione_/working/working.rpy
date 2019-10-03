@@ -465,25 +465,8 @@ label slytherin_cheer_responses:
 
 label job_5:
     $ menu_x = 0.5 #Menu position is back to default. (Center).
-    $random_choice = renpy.random.randint(0,3)
-    if random_choice == 0:
-        call her_main("Why are the cards placed like that?","mad","down")
-        call her_main("...","normal","worriedCl", cheeks="blush")
-        call her_main("Fine...","open","down_raised", cheeks="blush")
-    elif random_choice == 1:
-        call her_main("...","normal","worried", cheeks="blush")
-        call her_main("Well, if it stops you from deducting those points.","open","worriedCl", cheeks="blush")
-        call her_main("I'll do it.","base","wink")
-    elif random_choice == 2:
-        call her_main("It's a bit revealing... but I'll do it.","smile","happy", cheeks="blush")
-        call her_main("For Gryffindor house obviously!","open","happyCl", cheeks="blush")
-    else:
-        call her_main("That doesn't leave a lot to the imagination...","smile","squint")
-        call her_main("At least the straps should cover my nipples...","open","wink")
-        call her_main("I'll do it...","normal","happy", cheeks="blush")
 
     if first_time_cardgame_work:
-        $ first_time_cardgame_work = False
         call her_main("But... why do you want me to help them promote their shop?","annoyed","closed")
         g9 "That is my business."
         call her_main("What do you want me to tell them then?","open","concerned")
@@ -494,6 +477,40 @@ label job_5:
         call her_main("I'll see you tonight.","open","base")
         m "Forgetting something?"
         call her_main("... Just hand it over.","disgust","down", cheeks="blush")
+        
+        if her_whoring < 15:
+            # Failstate
+            her "I know I said I'd help them but you want me to wear... this?"
+            m "Of course, is that going to be a problem?"
+            her "Yes!"
+            her "I can't believe you've done this."
+            her "Did you have this commissioned?"
+            m "The twins sold it to me..."
+            her "Of course they did..."
+            m "So it's a...{w=0.4}{nw}"
+            her "Of course it's a no!"
+            her_mood += 5
+            jump working_menu
+            
+        $ first_time_cardgame_work = False
+        $random_choice = renpy.random.randint(0,3)
+        
+        if random_choice == 0:
+            call her_main("Why are the cards placed like that?","mad","down")
+            call her_main("...","normal","worriedCl", cheeks="blush")
+            call her_main("Fine...","open","down_raised", cheeks="blush")
+        elif random_choice == 1:
+            call her_main("...","normal","worried", cheeks="blush")
+            call her_main("Well, if it stops you from deducting those points.","open","worriedCl", cheeks="blush")
+            call her_main("I'll do it.","base","wink")
+        elif random_choice == 2:
+            call her_main("It's a bit revealing... but I'll do it.","smile","happy", cheeks="blush")
+            call her_main("For Gryffindor house obviously!","open","happyCl", cheeks="blush")
+        else:
+            call her_main("That doesn't leave a lot to the imagination...","smile","squint")
+            call her_main("At least the straps should cover my nipples...","open","wink")
+            call her_main("I'll do it...","normal","happy", cheeks="blush")
+        
 
     show screen blkfade
     with d5
@@ -677,7 +694,7 @@ label hermione_helping_selling_cards:
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
         $ gold += 20
         m "Well done [hermione_name], 30 points to Gryffindor."
-        $ gryffindor += 30
+        $ gryffindor += 30s
 
     call h_unequip_temp_outfit()
     jump night_main_menu

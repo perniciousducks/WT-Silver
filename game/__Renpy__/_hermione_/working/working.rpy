@@ -480,16 +480,16 @@ label job_5:
         
         if her_whoring < 15:
             # Failstate
-            her "I know I said I'd help them but you want me to wear... this?"
+            call her_main("I know I said I'd help them but you want me to wear... this?", mouth="open", eye="angry")
             m "Of course, is that going to be a problem?"
-            her "Yes!"
+            call her_main("Yes!", mouth="angry", eye="angry")
             her "I can't believe you've done this."
-            her "Did you have this commissioned?"
+            call her_main("Did you have this commissioned?", mouth="open", eye="frown")
             m "The twins sold it to me..."
             her "Of course they did..."
             m "So it's a...{w=0.4}{nw}"
-            her "Of course it's a no!"
-            her_mood += 5
+            call her_main("Of course it's a no", mouth="shock", eye="angry")
+            $ her_mood += 5
             jump working_menu
             
         $ first_time_cardgame_work = False
@@ -694,7 +694,7 @@ label hermione_helping_selling_cards:
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
         $ gold += 20
         m "Well done [hermione_name], 30 points to Gryffindor."
-        $ gryffindor += 30s
+        $ gryffindor += 30
 
     call h_unequip_temp_outfit()
     jump night_main_menu

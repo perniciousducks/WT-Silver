@@ -215,19 +215,23 @@ label tonks_talk:
         "-Address me only as-":
             menu:
                 "-Sir-":
+                    label .sir: # Local label unavailable from global scope
                     $ ton_genie_name = "Sir"
                     call ton_main("Of course, [ton_genie_name].","base","base","base","mid")
                     jump tonks_talk
                 "-Dumbledore-":
+                    label .dumbledore:
                     $ ton_genie_name = "Dumbledore"
                     call ton_main("Sure thing, [ton_genie_name].","base","base","base","mid")
                     jump tonks_talk
                 "-Professor-":
+                    label .professor:
                     $ ton_genie_name = "Professor"
                     call ton_main("Alright, [ton_genie_name].","base","base","base","mid")
                     jump tonks_talk
 
                 "-Old man-":
+                    label .old_man:
                     $ ton_genie_name = "Old man"
                     call ton_main("I have to say, for your age you are in a really great shape...","horny","base","base","down")
                     m "That's part of the benefits of being immortal. Your body doesn't age..."
@@ -244,6 +248,7 @@ label tonks_talk:
                     jump tonks_talk
 
                 "-Genie-":
+                    label .genie:
                     $ ton_genie_name = "Genie"
                     call ton_main("Of course.","base","base","base","mid")
                     g9 "Sweet."
@@ -265,6 +270,7 @@ label tonks_talk:
                     jump tonks_talk
 
                 "-Lord Voldemort-":
+                    label .lord_voldemort:
                     $ ton_genie_name = "Lord Voldemort"
                     call ton_main("Bold of you to say his name out loud... Who even told you about the dark lord?","open","base","angry","mid")
                     m "I've read the stories..."
@@ -291,6 +297,7 @@ label tonks_talk:
                     jump tonks_talk
 
                 "-Daddy-":
+                    label .daddy:
                     $ ton_genie_name = "Daddy"
                     call ton_main("Well, you do look about thrice as old as me...","base","base","raised","mid")
                     call ton_main("Crazy to think you geezers gets to bang all those young, innocent witches here...","open","base","base","R")
@@ -299,7 +306,8 @@ label tonks_talk:
                     call ton_main("Oh, I don't mind at all, [ton_genie_name]!","horny","base","base","mid")
                     jump tonks_talk
 
-                "{color=#858585}-Master-{/color}" if ton_friendship < 60:
+                "{color=#858585}-Master-{/color}" if ton_friendship < 60:   
+                    label .master_fail:
                     call ton_main("No.","base","base","base","R")
                     m "What?- Why not?"
                     call ton_main("Because... that title has to be earned!","horny","base","angry","mid")
@@ -310,6 +318,7 @@ label tonks_talk:
                     m "...................."
                     jump tonks_talk
                 "-Master-" if ton_friendship >= 60:
+                    label .master:
                     $ ton_genie_name = "Master"
                     call ton_main("Yes, [ton_genie_name].","open","base","base","mid")
                     m "(...)"
@@ -320,12 +329,21 @@ label tonks_talk:
                     call ton_main("Thank you, [ton_genie_name].","base","base","base","down")
                     g9 "(I could get used to that.)"
                     jump tonks_talk
+                    
+                "{color=#858585}-Custom Input--{/color}" if ton_friendship < 60:
+                    m "(I don't think she's yet ready for that)"
+                    jump tonks_talk
 
-                "-Custom Input-" if cheats_active or ton_friendship >= 60:
-                    $ temp_name = renpy.input("(Please enter the name.)")
+                "-Custom Input-" if ton_friendship >= 60:
+                    $ temp_name = renpy.input("(Please enter the name.)", ton_genie_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
-                    if temp_name == "":
-                        pass
+                    
+                    if temp_name.lower() in ("sir", "dumbledore", "professor", "old man", "genie", "lord voldemort", "daddy", "master"):
+                        if temp_name.lower() == "master" and ton_friendship < 60:
+                            jump tonks_talk.master_fail
+                        $ renpy.jump("tonks_talk."+temp_name.lower().replace(" ", "_")) # Jump to local label
+                    elif temp_name == "":
+                        jump tonks_talk
                     else:
                         $ ton_genie_name = temp_name
                         call ton_main("Hmm, [ton_genie_name]... I like it.","horny","base","raised","mid")
@@ -338,11 +356,13 @@ label tonks_talk:
         "-From now on I will address you as-":
             menu:
                 "-Tonks-":
+                    label .tonks: # Local label unavailable from global scope.
                     $ tonks_name = "Tonks"
                     call ton_main("Sure, [ton_genie_name].","base","base","base","mid")
                     jump tonks_talk
                 "-Nymphadora-":
                     $ tonks_name = "Nymphadora"
+                    label .nymphadora:
                     call ton_main("*Ugh*-","angry","base","angry","R")
                     call ton_main("Really, [ton_genie_name]?","open","base","angry","mid")
                     call ton_main("I hate that name,...","open","base","worried","R")
@@ -350,12 +370,14 @@ label tonks_talk:
                     call ton_main("................","upset","base","angry","R")
                     jump tonks_talk
                 "-Nympho-":
+                    label .nympho:
                     $ tonks_name = "Nympho"
                     call ton_main("You think I'm a nympho, [ton_genie_name]?","horny","base","raised","mid")
                     call ton_main("Like a filthy, sex craved maniac? Who wouldn't shy away from fulfilling every single one of her fantasies?","open","base","worried","mid")
                     call ton_main("It fits quite well, actually.","base","base","base","ahegao")
                     jump tonks_talk
                 "-Fuck Puppet-":
+                    label .fuck_puppet:
                     $ tonks_name = "Fuck Puppet"
                     call ton_main("A fuck puppet?","open","base","raised","mid")
                     call ton_main("[ton_genie_name], did you know I can take the shape of every person or being imaginable?","horny","base","base","mid")
@@ -365,6 +387,7 @@ label tonks_talk:
                     call ton_main("Of course, [ton_genie_name].","horny","base","base","mid")
                     jump tonks_talk
                 "-Bitch-":
+                    label .bitch:
                     $ tonks_name = "Bitch"
                     call ton_main("Hihi--","base","base","base","R")
                     call ton_main("If only you knew...","horny","base","raised","ahegao")
@@ -373,6 +396,7 @@ label tonks_talk:
                     jump tonks_talk
 
                 "{color=#858585}-Cunt-{/color}" if ton_friendship < 60:
+                    label .cunt_fail:
                     call ton_main("[ton_genie_name], I'm used to getting insulted by my many previous lovers...","base","base","raised","mid")
                     call ton_main("Truth be told I bloody love it!","open_wide_tongue","base","base","ahegao")
                     call ton_main("But we aren't close enough for that yet, don't you think?","open","base","worried","mid")
@@ -382,18 +406,27 @@ label tonks_talk:
                     m "..........................."
                     jump tonks_talk
                 "-Cunt-" if ton_friendship >= 60:
+                    label .cunt:
                     $ tonks_name = "Cunt"
                     call ton_main("*Uuuh*, [ton_genie_name]...","base","base","raised","mid")
                     call ton_main("You better not call me that in front of a student...","open","base","base","mid")
                     g9 "What if I do?"
                     call ton_main("Do it, I dare you!","horny","base","base","mid", hair="horny")
                     jump tonks_talk
+                    
+                "{color=#858585}-Custom Input--{/color}" if ton_friendship < 60:
+                    m "(I don't think she's yet ready for that)"
+                    jump tonks_talk
 
-                "-Custom Input-":
-                    $ temp_name = renpy.input("(Please enter the name.)")
+                "-Custom Input-" if ton_friendship >= 60:
+                    $ temp_name = renpy.input("(Please enter the name.)", tonks_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
-                    if temp_name == "":
-                        pass
+                    if temp_name.lower() in ("tonks", "nymphadora", "nympho", "fuck puppet", "bitch", "cunt"):
+                        if temp_name.lower() == "cunt" and ton_friendship < 60:
+                            jump tonks_talk.cunt_fail
+                        $ renpy.jump("tonks_talk."+temp_name.lower().replace(" ", "_")) # Jump to local label
+                    elif temp_name == "":
+                        jump tonks_talk
                     else:
                         $ tonks_name = temp_name
                         call ton_main("Hmm...","base","base","base","R")

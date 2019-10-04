@@ -59,5 +59,11 @@
             achievement_fix()
             
             save_internal_version = 1.371
+            
+        if float(save_internal_version) < 1.372:
+            global ton_mood
+            ton_mood = 0
+            
+            save_internal_version = 1.372
         
     config.after_load_callbacks.append(update_savefile)

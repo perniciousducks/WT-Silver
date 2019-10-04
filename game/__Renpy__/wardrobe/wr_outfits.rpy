@@ -186,7 +186,7 @@ label equip_her_outfit:
                 call her_main("Wizard Cards?","open","base")
                 call her_main("Yes... What about it?","normal","narrow")
                 g9 "So, apparently since I've been so successful at it... I've received this outfit from trading in those tokens."
-                if her_whoring >= 11: #Success
+                if her_whoring >= 15: #Success
                     call her_main("Hmm, a bit tight it seems. The hat is cute though.","open","wink")
                     g9 "So you'll wear it?"
                     call her_main("...","normal","down")
@@ -205,7 +205,7 @@ label equip_her_outfit:
                     call her_main("Card master...","crooked_smile","wink")
                     m "(Damn it...)"
                     if cheats_active or game_difficulty <= 2:
-                        ">Try again at Whoring level 11."
+                        ">Try again at Whoring level 15."
                     jump return_to_wardrobe
 
             # Costumes

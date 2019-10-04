@@ -160,7 +160,7 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
 
     m "So, how are you finding the education industry?"
     call ton_main("Fun!","smile","happyCl","base","mid")
-    call ton_main("I never though lesson planning and marking tests would actually be enjoyable, but there's something rather cathartic to it...","open","base","base","mid")
+    call ton_main("I never thought lesson planning and marking tests would actually be enjoyable, but there's something rather cathartic to it...","open","base","base","mid")
     m "And your...other tasks?"
     call ton_main("Oh, of course messing around with our students is a nice bonus!","horny","base","base","mid")
     m "Speaking of..."
@@ -187,7 +187,7 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     call ton_main("His face lit right up, when I asked if he wanted to buy another favour...","base","base","base","mid")
     call ton_main("Perhaps cupping a feel of his teacher's tits!","horny","base","angry","mid")
     g9 "Naughty!"
-    call ton_main("He had such and awe-struck look on his face... looking pretty nervous at first...","angry","base","base","ahegao")
+    call ton_main("He had such an awe-struck look on his face... looking pretty nervous at first...","angry","base","base","ahegao")
     call ton_main("It made it difficult for me to tell where his mind was going, that cheeky bugger!","angry","closed","angry","mid")
     m "Which was?"
     call ton_main("Straight in for the motorboat!","base","base","angry","mid")
@@ -195,18 +195,18 @@ label nt_pr_grope_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     g9 "Did he do the noise as well?"
     call ton_main("No...{w} it was more like a hug if I'm being honest.","upset","base","angry","up")
     call ton_main("He just went in, face first into my cleavage, while locking his hands together behind my back.","open","base","angry","mid")
-    call ton_main("I thought I would've needed a lot more coaxing-into...","smile","happyCl","base","mid")
+    call ton_main("I thought he would've needed a lot more coaxing-into...","smile","happyCl","base","mid")
     m "I suppose guys might be a bit different in that regard..."
     m "So where did it go from there?"
     call ton_main("Nowhere, really...{w} He just stared nuzzling his face into my tits...","open","base","worried","L")
     call ton_main("Grinding himself against my thigh, while giving me the tightest hug of his life...","angry","base","base","ahegao")
-    m "Sound's like heaven..."
+    m "Sounds like heaven..."
     call ton_main("It was pretty cute if you ask me.","base","happyCl","base","mid")
     m "How long did this \"hug\" last exactly?"
     call ton_main("*Pfff*... Five...maybe ten minutes...","upset","base","angry","up")
-    call ton_main("Eventually, it all got a bit to much...and he broke-off the hug...","open","base","base","R")
-    call ton_main("Stammered a thanks, and ran-off.","angry","base","sad","down")
-    m "Did even get to reward any points?"
+    call ton_main("Eventually, it all got a bit too much...and he broke-off the hug...","open","base","base","R")
+    call ton_main("Stammered a thanks, and ran off.","angry","base","sad","down")
+    m "Did you even get to reward any points?"
     call ton_main("I did, even if he wasn't there to hear it...","base","happyCl","base","mid")
     m "Very good. That'll be all then."
     call ton_main("Have a good night, [ton_genie_name].","base","base","base","mid")

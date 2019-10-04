@@ -65,12 +65,12 @@ init python:
             self.pages = len(self.contents)-1
             return
             
-    def text_image_scale(tag, argument, contents):
-        cropped = crop_image_zoom(argument, 250, 160)
+    def text_image_scale(tag, argument):
+        cropped = crop_image_zoom(argument, 100, 160)
         img = Transform(cropped[0], zoom=cropped[1])
         return [(renpy.TEXT_DISPLAYABLE, img)]
             
-    config.custom_text_tags["tis"] = text_image_scale
+    config.self_closing_custom_text_tags["tis"] = text_image_scale
 
     book_test = book_readable_class(title="My book", contents=[
                 ["Examplar title", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque, felis eu eleifend efficitur, augue quam viverra ipsum, a interdum risus libero in mi. Nullam condimentum mi et justo tristique gravida. Nulla at nisi tristique, eleifend diam eu, scelerisque justo. Pellentesque mi risus, accumsan id magna congue, ultrices ultrices purus. Etiam vulputate augue nec lacinia cursus. Integer gravida lacus quis tristique sollicitudin. Aenean in cursus dui, ut mattis augue. Nam et condimentum massa. Cras porta, orci in blandit eleifend, nisl mi lacinia leo, eu consequat quam odio at sapien. Pellentesque volutpat, nulla ac venenatis cursus, mi ex iaculis leo, eget suscipit turpis nunc vitae tortor. Quisque accumsan quam sollicitudin tincidunt condimentum. Etiam sit amet risus ac sapien tincidunt bibendum id eget sapien. Suspendisse tempus volutpat nibh, sit amet ultrices eros dignissim eget. Integer semper faucibus mattis. Etiam mattis ipsum ac lectus volutpat, a euismod nisl feugiat. Aliquam lectus justo, interdum a porttitor a, aliquet vel augue. {tis=interface/icons/cards.png}{/tis}"],

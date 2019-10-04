@@ -55,8 +55,8 @@ label lun_chibi(action = "", xpos=luna_chibi_xpos, ypos=luna_chibi_ypos, flip=Fa
 
 
 ### LUNA CHIBI WALK ###
-
-label lun_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = her_speed, action = "", loiter = True, redux_pause = 0):
+default lun_speed = 2.0
+label lun_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = lun_speed, action = "", loiter = True, redux_pause = 0):
     hide screen bld1
     hide screen blktone
     call hide_characters
@@ -95,7 +95,7 @@ label lun_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = her_speed, action = 
         $ walk_xpos2 = int(pos2)
 
     $ luna_chibi_ypos = 250
-    $ luna_speed = speed #Speed of walking animation. (lower = faster)
+    $ lun_speed = speed #Speed of walking animation. (lower = faster)
 
     #Luna walks
     if walk_xpos >= walk_xpos2: #right to left
@@ -105,7 +105,7 @@ label lun_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = her_speed, action = 
         #    show screen luna_run
         #else:
         show screen luna_walk
-        $ tmp = luna_speed - redux_pause
+        $ tmp = lun_speed - redux_pause
         $ renpy.pause(tmp)
         $ luna_chibi_xpos = walk_xpos2
         #hide screen luna_fly
@@ -121,7 +121,7 @@ label lun_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = her_speed, action = 
         #    show screen luna_run_f
         #else:
         show screen luna_walk_f
-        $ tmp = luna_speed - redux_pause
+        $ tmp = lun_speed - redux_pause
         $ renpy.pause(tmp)
         $ luna_chibi_xpos = walk_xpos2
         #hide screen luna_fly_f

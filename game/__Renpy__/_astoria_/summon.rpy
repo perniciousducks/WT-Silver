@@ -130,22 +130,27 @@ label astoria_talk:
         "-Address me only as-":
             menu:
                 "-Sir-":
+                    label .sir:
                     $ ast_genie_name = "Sir"
                     call ast_main("Very well, [ast_genie_name].", face="neutral")
                     jump astoria_talk
                 "-Dumbledore-":
+                    label .dumbledore:
                     $ ast_genie_name = "Dumbledore"
                     call ast_main("Of course, [ast_genie_name].", face="neutral")
                     jump astoria_talk
                 "-Professor-":
+                    label .professor:
                     $ ast_genie_name = "Professor"
                     call ast_main("Of course, [ast_genie_name].", face="neutral")
                     jump astoria_talk
                 "-Old man-":
+                    label .old_man:
                     $ ast_genie_name = "Old man"
                     call ast_main("Alrighty, [ast_genie_name].", face="neutral")
                     jump astoria_talk
                 "-Genie-":
+                    label .genie:
                     $ ast_genie_name = "Genie"
                     call ast_main("What?! You are a genie? For real?", face="happy")
                     call ast_main("That's so cool!", face="happy")
@@ -154,6 +159,7 @@ label astoria_talk:
                     call ast_main("Oh... ok, [ast_genie_name].", face="neutral")
                     jump astoria_talk
                 "-Lord Voldemort-":
+                    label .lord_voldemort:
                     $ ast_genie_name = "Lord Voldemort"
                     call ast_main("Voldemort? Like that mean, evil wizard?", face="disgusted")
                     call ast_main("You aren't him, are you?", face="disgusted")
@@ -162,28 +168,52 @@ label astoria_talk:
                     call ast_main("[ast_genie_name].", face="happy")
                     jump astoria_talk
                 "-Daddy-":
+                    label .daddy:
                     $ ast_genie_name = "Daddy"
                     call ast_main("Daddy? Don't you think that's a little weird?", face="disgusted")
                     m "Not at all!"
                     call ast_main("Hmpf...", face="angry")
                     call ast_main("Alright, why not. Nobody knows about it anyways.", face="neutral")
                     jump astoria_talk
-                "-Master-":
+                "{color=#858585}-Master-{/color}" if ast_affection < 18:
+                    label .master_fail:
+                    $ ast_genie_name = "Dumby" # Tricked
+                    call ast_main("Hahahaha-- you want me to call you master?", face="happy")
+                    call ast_main("That's so dumb!", face="happy")
+                    call ast_main("Oh I know!", face="happy")
+                    call ast_main("How about I'll call you \"Dumby\" instead? It fits you really well.", face="happy")
+                    m "(...)"
+                    call ast_main("Hahahaha--", face="happy")
+                    m "Are you done now?"
+                    call ast_main("Yes... I'm sorry... {w=1.0}Dumby...", face="happy")
+                    g4 "(Damn brat! We'll see who will be laughing later.)"
+                    jump astoria_talk
+                "-Master-" if ast_affection >= 18:
+                    label .master:
                     $ ast_genie_name = "Master"
                     call ast_main("Hahahaha-- you want me to call you master?", face="happy")
                     call ast_main("That's so silly!", face="happy")
                     m "(...)"
                     call ast_main("Well alright... M-master--", face="happy")
-                    call ast_main("Hahahaha--", face="happy")
-                    m "Are you done now?."
-                    call ast_main("Yes... I'm sorry... I will try without laughing next time. Promised.", face="happy")
+                    call ast_main("Hahahaha--{w=1.0}{nw}", face="happy")
+                    with hpunch
+                    g4 "Shut it you ungrateful brat or there will be consequences!"
+                    call ast_main("I'm sorry... It won't happen again, master...", face="neutral")
                     jump astoria_talk
-                "-Custom Input-":
-                    $ temp_name = renpy.input("(Please enter the name.)")
+                "{color=#858585}-Custom Input-{/color}" if ast_affection < 18:
+                    m "(I don't think she's yet ready for that)"
+                    jump astoria_talk
+                    
+                "-Custom Input-" if ast_affection >= 18:
+                    $ temp_name = renpy.input("(Please enter the name.)", ast_genie_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
-                    if temp_name == "":
-                        $ ast_genie_name = "Sir"
-                        call ast_main("I will just call you [ast_genie_name] again.", face="neutral")
+                    
+                    if temp_name.lower() in ("sir", "dumbledore", "professor", "old man", "genie", "lord voldemort", "daddy", "master"):
+                        if temp_name.lower() == "master" and ast_affection < 18:
+                            jump astoria_talk.master_fail
+                        $ renpy.jump("astoria_talk."+temp_name.lower().replace(" ", "_")) # Jump to local label
+                    elif temp_name == "":
+                        jump astoria_talk
                     else:
                         $ ast_genie_name = temp_name
                         call ast_main("Uhm... ok. I will call you [ast_genie_name].", face="neutral")
@@ -195,34 +225,56 @@ label astoria_talk:
         "-From now on I will refer to you as-":
             menu:
                 "-Miss Greengrass-":
+                    label .miss_greengrass:
                     $ astoria_name = "Miss Greengrass"
                     call ast_main("Sure, [ast_genie_name].", face="happy")
                     jump astoria_talk
                 "-Girl-":
+                    label .girl:
                     $ astoria_name = "Girl"
                     call ast_main("Ok, [ast_genie_name].", face="neutral")
                     jump astoria_talk
                 "-Princess-":
+                    label .princess:
                     $ astoria_name = "Princess"
                     call ast_main("I really do feel like a princess!", face="happy")
                     call ast_main("After all, I can do whatever I want!", face="angry")
                     jump astoria_talk
                 "-Cutie-":
+                    label .cutie:
                     $ astoria_name = "Cutie"
                     call ast_main("Fine... If you really have to, [ast_genie_name].", face="disgusted")
                     jump astoria_talk
-                "-Slave-":
+                "{color=#858585}-Slave-{/color}" if ast_affection < 18:
+                    label .slave_fail:
+                    call ast_main("I'm not your slave, [ast_genie_name]!", face="angry")
+                    m "Of course you aren't! We are just playing a game, that's all..."
+                    call ast_main("Well, I don't like your games!", face="angry")
+                    call ast_main("Forget it!", face="angry")
+                    jump astoria_talk
+                "-Slave-" if ast_affection >= 18:
+                    label .slave:
                     $ astoria_name = "Slave"
                     call ast_main("I'm not your slave, [ast_genie_name]!", face="angry")
                     m "Of course you aren't! We are just playing a game, that's all..."
                     call ast_main("Oh I like games!", face="happy")
                     call ast_main("Alrighty then!", face="happy")
                     jump astoria_talk
-                "-Custom Input-":
-                    $ temp_name = renpy.input("(Please enter the name.)")
+                    
+                "{color=#858585}-Custom Input-{/color}" if ast_affection < 18:
+                    m "(I don't think she's yet ready for that)"
+                    jump astoria_talk
+                    
+                "-Custom Input-" if ast_affection >= 18:
+                    $ temp_name = renpy.input("(Please enter the name.)", astoria_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
-                    if temp_name == "":
-                        $ astoria_name = "Miss Greengrass"
+                    
+                    if temp_name.lower() in ("miss greengrass", "girl", "princess", "cutie", "slave"):
+                        if temp_name.lower() == "slave" and ast_affection < 18:
+                            jump astoria_talk.slave_fail
+                        $ renpy.jump("astoria_talk."+temp_name.lower().replace(" ", "_")) # Jump to local label
+                    elif temp_name == "":
+                        jump astoria_talk
                     else:
                         $ astoria_name = temp_name
                         call ast_main("That's a bit much, don't you think, [ast_genie_name]?", face="disgusted")

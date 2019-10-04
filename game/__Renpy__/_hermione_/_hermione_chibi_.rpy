@@ -454,7 +454,7 @@ label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "",
 # speed = time it will take for the chibi to move A to B in seconds. Lower value = faster walk.
 # loiter = flag that shows the standing chibi after the walk, default is True
 # redux_pause = value to decrease the time to pause before hideing the animation early
-
+default her_speed = 2.0
 label her_walk(xpos=walk_xpos, ypos=walk_ypos, speed=her_speed, action="", loiter=True, redux_pause=0):
     call hide_characters
     call hide_chibi_effects

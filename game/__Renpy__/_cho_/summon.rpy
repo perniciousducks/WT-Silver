@@ -186,8 +186,7 @@ label favor_not_ready:
     return
 
 label not_available:
-    $ ver = config.version[:4]+"."+config.version[4:6] if len(config.version) >=5 else config.version
-    call nar("This feature is currently not available in v[ver], and will be added in a later patch.")
+    $ TBA_message("This feature is currently not available as of version %s." % title_version)
     return
 
 
@@ -213,10 +212,11 @@ label cho_talk:
                 "\"Daddy\"":
                     $ cho_genie_name = "Daddy"
                 "-Custom Input-":
-                    $ temp_name = renpy.input("(Please enter the name.)")
+                    $ temp_name = renpy.input("(Please enter the name.)", cho_genie_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
+                    
                     if temp_name == "":
-                        $ cho_genie_name = "Sir"
+                        jump cho_talk
                     $ cho_genie_name = temp_name
                     call cho_main("If I really have to...",face="annoyed")
                     jump cho_talk
@@ -235,10 +235,11 @@ label cho_talk:
                 "\"Boy\"":
                     $ cho_name = "Boy"
                 "-Custom Input-":
-                    $ temp_name = renpy.input("(Please enter the name.)")
+                    $ temp_name = renpy.input("(Please enter the name.)", cho_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
+                    
                     if temp_name == "":
-                        $ temp_name = "Miss Chang"
+                        jump cho_talk
                     $ cho_name = temp_name
                     call cho_main("If you say so, [cho_genie_name].",face="neutral")
                     jump cho_talk

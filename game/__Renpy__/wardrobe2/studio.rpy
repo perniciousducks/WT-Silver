@@ -286,8 +286,7 @@ screen studio():
         frame:
             style "empty"
             pos (688, 512)
-            $ ver = config.version[:4]+"."+config.version[4:6] if len(config.version) >=5 else config.version
-            text "WT:S [ver]" size 12 color "#FFFFFF" outlines [(1, "#000000", 0, 0)] xanchor 1.0
+            text "WT:S [title_version]" size 12 color "#FFFFFF" outlines [(1, "#000000", 0, 0)] xanchor 1.0
     
     if not studio_hide:
         use character_studio

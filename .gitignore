@@ -246,3 +246,15 @@ game/BakeRemovedWhiteSpace\.exe
 #############
 
 .vscode/
+
+expression_editor.html
+
+fonts/creabbb-webfont.ttf
+
+fonts/creabbb-webfont.woff
+
+fonts/creabbb-webfont.woff2
+
+tln.min.css
+
+tln.min.js

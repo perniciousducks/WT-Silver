@@ -41,9 +41,9 @@ screen room_of_requirement_menu():
         ypos 180
         idle "images/rooms/room_of_requirement/mirror.png"
         hover "images/rooms/room_of_requirement/mirror_hover.png"
-        hovered SetVariable("tooltip", "Look into")
-        unhovered SetVariable("tooltip", None)
-        action [SetVariable("tooltip", None), Hide("room_of_requirement_menu"), Jump("mirror_menu")]
+        tooltip "Look into"
+       
+        action [Hide("room_of_requirement_menu"), Jump("mirror_menu")]
 
     imagebutton: # DOOR
         xpos 758+140
@@ -53,9 +53,9 @@ screen room_of_requirement_menu():
         yanchor "center"
         idle door_night_OBJ.get_room_image()
         hover door_night_OBJ.get_hover_image()
-        hovered SetVariable("tooltip", "Back to office")
-        unhovered SetVariable("tooltip", None)
-        action [SetVariable("tooltip", None), Jump("return_office")]
+        tooltip "Back to office"
+       
+        action Jump("return_office")
 
 screen genie_stand_mirror():
     tag genie_chibi_mirror
@@ -156,9 +156,9 @@ screen floor_7th_menu():
         ypos 105
         idle "images/rooms/_objects_/doors/front_door.png"
         hover "images/rooms/_objects_/doors/front_door_hover.png"
-        hovered SetVariable("tooltip", "Enter")
-        unhovered SetVariable("tooltip", None)
-        action [SetVariable("tooltip", None), Jump("enter_room_of_req")]
+        tooltip "Enter"
+       
+        action Jump("enter_room_of_req")
     zorder -1
 
 label enter_room_of_req:

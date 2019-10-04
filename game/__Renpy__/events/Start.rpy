@@ -12,8 +12,6 @@ label start_wt:
     $ menu_x = 0.5
     $ menu_y = 0.75
 
-    if not renpy.variant('android'):
-        show screen mouse_tooltip
     label choose_your_difficulty:
     menu:
         "Difficulty" ">How difficult do you want the game to be?"

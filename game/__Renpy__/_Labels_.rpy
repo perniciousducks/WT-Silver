@@ -12,9 +12,14 @@ label hide_characters:
     # Do not add transitions. Use one after return.
     return
 
-# Remove all displayables on layer 'screens'
 label hide_screens:
+    # Remove all displayables on layer 'screens'
     $ renpy.scene("screens")
+
+    # Screens that are never hidden
+    if not renpy.variant('android'):
+        show screen mouse_tooltip
+
     return
 
 label stop_sound_effects:

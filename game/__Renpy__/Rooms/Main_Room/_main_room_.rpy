@@ -54,11 +54,10 @@ screen main_room(interact=True):
             idle door_night_OBJ.get_idle_image()
             hover door_night_OBJ.get_hover_image()
         if door_examined:
-            hovered SetVariable("tooltip", "Summon")
+            tooltip "Summon"
         else:
-            hovered SetVariable("tooltip", "Examine Door")
-        unhovered SetVariable("tooltip", None)
-        action [SetVariable("tooltip", None), Jump("door")]
+            tooltip "Examine Door"
+        action Jump("door")
         sensitive room_menu_active
 
     # Cupboard
@@ -87,9 +86,8 @@ screen main_room(interact=True):
             idle cupboard_top_OBJ.get_idle_image()
             if store_intro_done:
                 hover cupboard_top_OBJ.get_hover_image()
-                hovered SetVariable("tooltip", "Scrolls")
-                unhovered SetVariable("tooltip", None)
-                action [SetVariable("tooltip", None), Jump("read_scroll_menu")]
+                tooltip "Scrolls"
+                action Jump("read_scroll_menu")
                 sensitive room_menu_active
 
     # Cupboard (interactive overlay)
@@ -116,11 +114,10 @@ screen main_room(interact=True):
             if not searched:
                 hover cupboard_OBJ.get_hover_image()
                 if cupboard_examined:
-                    hovered SetVariable("tooltip", "Rummage")
+                    tooltip "Rummage"
                 else:
-                    hovered SetVariable("tooltip", "Examine Cupboard")
-                unhovered SetVariable("tooltip", None)
-                action [SetVariable("tooltip", None), Jump("cupboard")]
+                    tooltip "Examine Cupboard"
+                action Jump("cupboard")
                 sensitive room_menu_active
 
     #TODO Move phoenix to separate screen (check if usage needed in mirror stories)
@@ -136,13 +133,12 @@ screen main_room(interact=True):
             hover phoenix_OBJ.get_hover_image()
             if bird_examined:
                 if not phoenix_is_fed:
-                    hovered SetVariable("tooltip", "Feed")
+                    tooltip "Feed"
                 else:
-                    hovered SetVariable("tooltip", "Pet")
+                    tooltip "Pet"
             else:
-                hovered SetVariable("tooltip", "Examine the bird")
-            unhovered SetVariable("tooltip", None)
-            action [SetVariable("tooltip", None), Jump("phoenix")]
+                tooltip "Examine the bird"
+            action Jump("phoenix")
             sensitive room_menu_active
 
     # Phoenix deco
@@ -181,11 +177,13 @@ screen genie_desk(interact=True):
             idle "newanimation"
             hover "newanimation_hover"
             if desk_examined:
-                hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("tooltip", "Open desk")]
+                tooltip "Open desk"
+                hovered Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210)
             else:
-                hovered [Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210), SetVariable("tooltip", "Examine Desk")]
-            unhovered [Hide("gui_tooltip"), SetVariable("tooltip", None)]
-            action [SetVariable("tooltip", None), Jump("desk")]
+                tooltip "Examine Desk"
+                hovered Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210)
+            unhovered Hide("gui_tooltip")
+            action Jump("desk")
             sensitive room_menu_active
 
 # Phoenix
@@ -214,16 +212,15 @@ screen fireplace(interact=True):
             hover fireplace_OBJ.get_hover_image()
             if fireplace_examined:
                 if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
-                    hovered SetVariable("tooltip", "What's that glimmer?")
+                    tooltip "What's that glimmer?"
                 else:
                     if not fire_in_fireplace:
-                        hovered SetVariable("tooltip", "Light fire")
+                        tooltip "Light fire"
                     else:
-                        hovered SetVariable("tooltip", "Extinguish fire")
+                        tooltip "Extinguish fire"
             else:
-                hovered SetVariable("tooltip", "Examine fireplace")
-            unhovered SetVariable("tooltip", None)
-            action [SetVariable("tooltip", None), Jump("fireplace")]
+                tooltip "Examine fireplace"
+            action Jump("fireplace")
             sensitive room_menu_active
     else:
         add fireplace_OBJ.get_room_image() xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
@@ -276,9 +273,8 @@ screen owl(interact=True):
         yanchor 1.0
         idle owl_OBJ.get_idle_image()
         hover owl_OBJ.get_hover_image()
-        hovered SetVariable("tooltip", "Check mail\n{size=-4}"+num_to_word(len(letter_queue_list))+" new message(s){/size}")
-        unhovered SetVariable("tooltip", None)
-        action [SetVariable("tooltip", None), Jump("read_letter")]
+        tooltip "Check mail\n{size=-4}"+num_to_word(len(letter_queue_list))+" new message(s){/size}"
+        action Jump("read_letter")
         sensitive room_menu_active
     # add owl_OBJ.get_room_image() xpos owl_OBJ.xpos ypos owl_OBJ.ypos xanchor 0.5 yanchor 1.0
 
@@ -296,8 +292,7 @@ screen package(interact=True):
         yanchor 1.0
         idle package_OBJ.get_idle_image()
         hover package_OBJ.get_hover_image()
-        hovered SetVariable("tooltip", "Open package")
-        unhovered SetVariable("tooltip", None)
-        action [SetVariable("tooltip", None), Jump("get_package")]
+        tooltip "Open package"
+        action Jump("get_package")
         sensitive room_menu_active
     # add package_OBJ.get_room_image() xpos package_OBJ.xpos ypos package_OBJ.ypos xanchor 0.5 yanchor 1.0

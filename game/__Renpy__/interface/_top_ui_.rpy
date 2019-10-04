@@ -18,7 +18,6 @@ label house_points:
     $ toggle_ui_lock = True
     $ toggle_points = False
     $ toggle_menu = False
-    $ tooltip = ""
 
     # Outline settings
     $ points_outline = [ (1, "#000", 0, 0) ]
@@ -85,10 +84,9 @@ screen ui_top_bar():
             if room_menu_active:
                 hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
                 if toggle_menu:
-                    hovered SetVariable("tooltip", "Close menu")
+                    tooltip "Close menu"
                 else:
-                    hovered SetVariable("tooltip", "Open menu")
-                unhovered SetVariable("tooltip", None)
+                    tooltip "Open menu"
                 activate_sound "sounds/click3.mp3"
                 action ToggleVariable("toggle_menu", True, False)
 
@@ -101,11 +99,10 @@ screen ui_top_bar():
                 hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.png")
                 if daytime:
                     action Jump("night_start")
-                    hovered SetVariable("tooltip", "Doze Off (s)")
+                    tooltip "Doze Off (s)"
                 else:
                     action Jump("day_start")
-                    hovered SetVariable("tooltip", "Sleep (s)")
-                unhovered SetVariable("tooltip", None)
+                    tooltip "Sleep (s)"
                 activate_sound "sounds/click3.mp3"
 
         hbox:
@@ -120,9 +117,8 @@ screen ui_top_bar():
                 idle "interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.png"
                 if room_menu_active:
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.png")
-                    hovered SetVariable("tooltip", "Achievements")
-                    unhovered SetVariable("tooltip", None)
-                    action [SetVariable("tooltip", None), Jump("achievement_menu")]
+                    tooltip "Achievements"
+                    action Jump("achievement_menu")
                     activate_sound "sounds/click3.mp3"
 
             # Stats button
@@ -130,9 +126,8 @@ screen ui_top_bar():
                 idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png"
                 if room_menu_active:
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
-                    hovered SetVariable("tooltip", "Characters (c)")
-                    unhovered SetVariable("tooltip", None)
-                    action [SetVariable("tooltip", None), Jump("open_stat_menu")]
+                    tooltip "Characters (c)"
+                    action Jump("open_stat_menu")
                     activate_sound "sounds/click3.mp3"
 
             # Inventory button
@@ -140,9 +135,8 @@ screen ui_top_bar():
                 idle "interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png"
                 if room_menu_active:
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png")
-                    hovered SetVariable("tooltip", "Inventory (i)")
-                    unhovered SetVariable("tooltip", None)
-                    action [SetVariable("tooltip", None), Jump("inventory_menu")]
+                    tooltip "Inventory (i)"
+                    action Jump("inventory_menu")
                     activate_sound "sounds/click3.mp3"
 
             # Work button
@@ -151,9 +145,8 @@ screen ui_top_bar():
                     idle "interface/topbar/buttons/"+str(interface_color)+"/ui_work.png"
                     if room_menu_active:
                         hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_work.png")
-                        hovered SetVariable("tooltip", "Work (w)")
-                        unhovered SetVariable("tooltip", None)
-                        action [SetVariable("tooltip", None), Jump("paperwork")]
+                        tooltip "Work (w)"
+                        action Jump("paperwork")
                         activate_sound "sounds/click3.mp3"
 
         ## Toggle UI lock button
@@ -172,26 +165,6 @@ screen ui_top_bar():
 
         # if tooltip and persistent.tooltip and not renpy.variant('android'):
             # text "{color=#FFF}{size=+4}[tooltip]{/size}{/color}" xalign 0.5 text_align 0.5 ypos 540
-
-#TODO Make tooltip follow mouse, see:
-# https://www.renpy.org/doc/html/screen_actions.html#tooltips
-# https://github.com/jsfehler/renpy-mouse-tooltip
-screen mouse_tooltip():
-    zorder 999
-    tag tooltip
-    
-    if persistent.tooltip and tooltip:
-        python:
-            x, y = renpy.get_mouse_pos()
-            xval = 1.0 if x > config.screen_width/2 else .0
-            yval = 1.0 if y > config.screen_height/2 else .0
-
-        frame:
-            style_prefix "dropdown_gm"
-            pos (x, y)
-            anchor (xval, yval)
-
-            text tooltip color "#FFF" size 14
 
 screen ui_points():
     tag ui
@@ -233,8 +206,9 @@ screen ui_points():
             if toggle_ui_lock and room_menu_active or renpy.get_screen("room_of_requirement_menu") or renpy.get_screen("floor_7th_menu"):
                 imagebutton:
                     idle "interface/topbar/hover_zone.png"
-                    hovered [SetVariable("toggle_points", True), SetVariable("tooltip", "House Points\n{size=-6}Click to toggle raw points display{/size}")]
-                    unhovered [SetVariable("toggle_points", False), SetVariable("tooltip", None)]
+                    tooltip "House Points\n{size=-6}Click to toggle raw points display{/size}"
+                    hovered SetVariable("toggle_points", True)
+                    unhovered SetVariable("toggle_points", False)
                     action ToggleVariable("persistent.toggle_points", True, False)
                     activate_sound "sounds/click3.mp3"
 
@@ -314,25 +288,22 @@ screen ui_menu():
             imagebutton:
                 idle image_alpha("interface/topbar/icon_discord.png")
                 hover "interface/topbar/icon_discord.png"
-                hovered [SetVariable("tooltip", "Visit {size=-6}SilverStudioGames{/size} discord")]
-                unhovered [SetVariable("tooltip", None)]
+                tooltip "Visit {size=-6}SilverStudioGames{/size} discord"
                 action OpenURL("https://discord.gg/7PD57yt")
                 activate_sound "sounds/click3.mp3"
             #Patreon
             imagebutton:
                 idle image_alpha("interface/topbar/icon_patreon.png")
                 hover "interface/topbar/icon_patreon.png"
-                hovered [SetVariable("tooltip", "Visit {size=-6}SilverStudioGames{/size} patreon")]
-                unhovered [SetVariable("tooltip", None)]
+                tooltip "Visit {size=-6}SilverStudioGames{/size} patreon"
                 action OpenURL("https://www.patreon.com/SilverStudioGames")
                 activate_sound "sounds/click3.mp3"
             #Bugfixes
             imagebutton:
                 idle image_alpha("interface/topbar/icon_bug.png")
                 hover "interface/topbar/icon_bug.png"
-                hovered [SetVariable("tooltip", "Open bugfix menu")]
-                unhovered [SetVariable("tooltip", None)]
-                action [SetVariable("toggle_menu", False), SetVariable("tooltip", None), Jump("bugfix_menu")]
+                tooltip "Open bugfix menu"
+                action [SetVariable("toggle_menu", False), Jump("bugfix_menu")]
                 activate_sound "sounds/click3.mp3"
 
 

@@ -12,7 +12,7 @@ label a_bad_time_to_disrobe:
 label a_bad_time_to_disrobe_part_1:
     $ temp_time = daytime
     $ daytime = True
-    $ interface_color = "gold"
+    call update_interface_color
 
     call play_music("stop")
     nar "In this story the genie has found an invisibility cloak."
@@ -62,7 +62,7 @@ label a_bad_time_to_disrobe_part_1:
     with d3
 
     $ daytime = False
-    $ interface_color = "gray"
+    call update_interface_color
     call music_block
 
     nar "Later that evening. Hermione returns."
@@ -104,7 +104,7 @@ label a_bad_time_to_disrobe_part_1:
     show screen quistion_pop_up("{color=#cbcbcb}Hermione will remember that{/color}")
     nar "Hermione returns the next morning, looking nervous but more determined than yesterday."
     $ daytime = True
-    $ interface_color = "gold"
+    call update_interface_color
     call music_block
 
     hide screen quistion_pop_up
@@ -122,7 +122,7 @@ label a_bad_time_to_disrobe_part_1:
     with d3
 
     $ daytime = False
-    $ interface_color = "gray"
+    call update_interface_color
     call music_block
 
     nar "Later that evening a distraught-looking Hermione enters the office. "
@@ -175,10 +175,7 @@ label a_bad_time_to_disrobe_part_1:
     "The End."
 
     $ daytime = temp_time
-    if daytime:
-        $ interface_color = "gold"
-    else:
-        $ interface_color = "gray"
+    call update_interface_color
     call hide_screens
     call reset_hermione
     call h_unequip_temp_outfit
@@ -187,7 +184,7 @@ label a_bad_time_to_disrobe_part_1:
 label a_bad_time_to_disrobe_part_2:
     $ temp_time = daytime
     $ daytime = True
-    $ interface_color = "gold"
+    call update_interface_color
 
     call play_music("stop")
     call room("main_room")
@@ -256,7 +253,7 @@ label a_bad_time_to_disrobe_part_2:
     with d3
 
     $ daytime = False
-    $ interface_color = "gray"
+    call update_interface_color
     call music_block
 
     nar "Later that evening"
@@ -348,10 +345,7 @@ label a_bad_time_to_disrobe_part_2:
 
     call hide_screens
     $ daytime = temp_time
-    if daytime:
-        $ interface_color = "gold"
-    else:
-        $ interface_color = "gray"
+    call update_interface_color
     call music_block
     call reset_hermione
     call set_her_action("none")

@@ -421,7 +421,7 @@ label ball_ending_E2:
         $ ball_ending_2 = public_whore_ending # Sets this to True or False
 
     # Scene Setup
-    $ interface_color = "gold"
+    call update_interface_color("gold")
 
     hide screen bld1
     hide screen blktone
@@ -2764,7 +2764,7 @@ label ball_ending_E2:
     centered "{size=+7}{color=#cbcbcb}Outskirts of hogwarts{/color}{/size}"
 
     ### Scene Setup ###
-    $ interface_color = "gray"
+    call update_interface_color("gray")
 
     hide screen cg # Single layer CG screen.
 
@@ -2948,7 +2948,7 @@ label ball_ending_E3:
     # Scene Setup
 
     $ daytime = True
-    $ interface_color = "gold"
+    call update_interface_color
 
     $ h_request_wear_hat = False
     $ hermione_wear_hat = False

@@ -76,7 +76,7 @@ screen ui_top_bar():
     use ui_points
 
     # Don't display buttons in certain rooms or on the first day
-    if current_room not in ["clothing_store", "weasley_store", "room_of_requirement", "7th_floor"] and day != 1:
+    if current_room not in ["clothing_store", "weasley_store", "room_of_requirement", "7th_floor"] and day > 1:
         # Menu button
         imagebutton:
             xpos 0
@@ -268,14 +268,14 @@ screen ui_menu():
             textbutton "Load" action ShowMenu("load") background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
             if cheats_active and game_difficulty <= 2 and day > 1:
                 textbutton "Cheats" action [SetVariable("toggle_menu", False), Jump("cheats")] background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
-            if day != 1 and renpy.variant('android'):
+            if day > 1 and renpy.variant('android'):
                 textbutton "Preferences" action ShowMenu("preferences") background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
-            if day != 1 and persistent.game_complete:
+            if day > 1 and persistent.game_complete:
                 textbutton "Gallery" action [SetVariable("toggle_menu", False), Jump("scene_gallery")] background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
-            if day != 1:
+            if day > 1:
                 textbutton "Decorate" action [SetVariable("toggle_menu", False), Jump("decorate_room_menu")] background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
 
-            #if day != 1 and config.developer:
+            #if day > 1 and config.developer:
             #    textbutton "{size=-11}Show Chars{/size}" action [SetVariable("toggle_menu", False), Jump("summon_characters")] background #000
 
         hbox:
@@ -315,8 +315,7 @@ label options_menu:
         "-Change Game Difficulty-" if game_difficulty <= 2:
             menu:
                 "-Enable Easy Difficulty-":
-                    $ game_difficulty = 1
-                    $ cheat_reading = True
+                    call adjust_game_difficulty(1)
                     "Game set to easy difficulty!"
                     "Increased gold reward from reports and other sources!"
                     "Rummaging through your cupboard is more rewarding!"
@@ -324,8 +323,7 @@ label options_menu:
                     "Hermione won't stay mad at you for as long!"
                     jump main_room_menu
                 "-Enable Normal Difficulty-":
-                    $ game_difficulty = 2
-                    $ cheat_reading = False
+                    call adjust_game_difficulty(2)
                     "Game set to normal difficulty!"
                     jump main_room_menu
                 "-Back-":

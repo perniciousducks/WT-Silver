@@ -694,15 +694,3 @@ init offset = 0 # back to normal
 default tonks_outfits_list = []
 default tonks_costumes_list = []
 default tonks_dresses_list = []
-
-label default_items_init:
-    #TODO Fix: game_difficulty adjustment does not affect item cost after game has started
-    if game_difficulty <= 1:
-        $ wine_ITEM.cost = 40
-        $ firewhisky_ITEM.cost = 60
-    elif game_difficulty == 2:
-        $ wine_ITEM.cost = 60
-        $ firewhisky_ITEM.cost = 80
-    else:
-        $ wine_ITEM.cost = 140
-        $ firewhisky_ITEM.cost = 160

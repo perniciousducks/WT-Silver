@@ -6,17 +6,7 @@ label common_start(set_daytime):
 
     $ daytime = set_daytime
 
-    # Set interface color
-    if not persistent.nightmode and daytime:
-        $ interface_color = "gold"
-        $ txt_style = "day_text"
-        $ btn_style = "daybtn"
-        $ btn_hover = "#e3ba7140"
-    else:
-        $ interface_color = "gray"
-        $ txt_style = "night_text"
-        $ btn_style = "nightbtn"
-        $ btn_hover = "#7d75aa40"
+    call update_interface_color
 
     # Set save filename
     $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
@@ -170,7 +160,7 @@ label update_day_values:
     $ day +=1
 
     # Change the weather
-    if day != 1:
+    if day > 1:
         $ weather_gen = renpy.random.randint(1, 6)
 
     # Change the weather for Quidditch Matches

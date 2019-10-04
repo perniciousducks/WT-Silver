@@ -1,8 +1,7 @@
 label an_odd_circumstance():
     $ temp_day = daytime
     $ daytime = False
-    $ temp_interface = interface_color
-    $ interface_color = "gray"
+    call update_interface_color
     call set_u_ani("blowjob_ani","hand_ani", 0,10)
     call room("main_room")
     show screen add_overlay
@@ -184,7 +183,7 @@ label an_odd_circumstance():
 
 
     $ daytime = temp_day
-    $ interface_color = temp_interface
+    call update_interface_color
 
     hide screen add_overlay
 

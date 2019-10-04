@@ -22,6 +22,23 @@ label hide_screens:
 
     return
 
+label update_interface_color(color=None):
+    if color in ["gold", "gray"]:
+        $ interface_color = color
+    elif not persistent.nightmode and daytime:
+        $ interface_color = "gold"
+    else:
+        $ interface_color = "gray"
+    if interface_color == "gold":
+        $ txt_style = "day_text"
+        $ btn_style = "daybtn"
+        $ btn_hover = "#e3ba7140"
+    else:
+        $ txt_style = "night_text"
+        $ btn_style = "nightbtn"
+        $ btn_hover = "#7d75aa40"
+    return
+
 label stop_sound_effects:
     stop bg_sounds fadeout 0.5
     stop weather fadeout 0.5
@@ -502,4 +519,22 @@ label chibi_walk_desk_blkfade(char=None):
 
     call blkfade
 
+    return
+
+label adjust_game_difficulty(dif=None):
+    if 1 <= dif <= 3:
+        $ game_difficulty = dif
+
+    if game_difficulty <= 1:
+        $ cheat_reading = True
+        $ wine_ITEM.cost = 40
+        $ firewhisky_ITEM.cost = 60
+    elif game_difficulty == 2:
+        $ cheat_reading = False
+        $ wine_ITEM.cost = 60
+        $ firewhisky_ITEM.cost = 80
+    else:
+        $ cheat_reading = False
+        $ wine_ITEM.cost = 140
+        $ firewhisky_ITEM.cost = 160
     return

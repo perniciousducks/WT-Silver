@@ -11,7 +11,7 @@ label a_christmas_tale:
 
     $ temp_time = daytime #Switch 'daytime' back to this at the end of the store.
     $ daytime = False #Night
-    $ interface_color = "gray"
+    call update_interface_color
     $ room_deco = "_deco_1" #Xmas deco
     $ gen_chibi_stand = "characters/misc/santa/santa_chibi.png"
 
@@ -179,10 +179,7 @@ label a_christmas_tale:
 
     #Reset
     $ daytime = temp_time
-    if daytime:
-        $ interface_color = "gold"
-    else:
-        $ interface_color = "gray"
+    call update_interface_color
     call update_gen_chibi
 
     #Unlock Xmas Deco

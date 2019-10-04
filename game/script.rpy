@@ -17,6 +17,8 @@ label start:
     $ save_internal_version = config.version
     $ achievement_fix()
 
+    $ restart_achievements_thread()
+
     $ start_image_crop()
     #scene black
     jump start_wt
@@ -30,8 +32,6 @@ label temporary_post_default_init:
     call default_cho_class_init
     call default_astoria_class_init
     call default_tonks_class_init
-    call default_cho_class_init
-    call default_items_init
 
 # Turns commentaries on/off in gallery
 default commentaries = False
@@ -64,6 +64,7 @@ define kissiris = Fade(0.2, 0.0, 0.8, color='#fb8dc8')
 define black_magic = Fade(0.2, 0.0, 0.5, color='#7f3590')
 define blackfade = Fade(0.9, 0.5, 1, color='#000000')
 
+#TODO Remove unused sound defines
 # Sounds
 define sd_boing1 = "sounds/boing.mp3"
 define sd_boing2 = "sounds/boing02.mp3"

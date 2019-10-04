@@ -2,10 +2,9 @@ label genie_house_elf:
     show screen blkfade
     
     $ temp_day = daytime
-    $ temp_color = interface_color
     $ temp_weather = weather_gen
     $ daytime = True
-    $ interface_color = "gold"
+    call update_interface_color
     $ weather_gen = 1
     $ show_weather()
     call room("main_room")
@@ -122,7 +121,7 @@ label genie_house_elf:
     "The end."
     
     $ daytime = temp_day
-    $ interface_color = temp_color
+    call update_interface_color
     $ weather_gen = temp_weather
     $ show_weather()
 

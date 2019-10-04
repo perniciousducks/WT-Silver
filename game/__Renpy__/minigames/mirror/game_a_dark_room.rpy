@@ -27,7 +27,7 @@ label start_dark_room_game:
     $ temp_time = daytime
 
     $ daytime = False
-    $ interface_color = "gray"
+    call update_interface_color
 
     call hide_screens
     pause 2

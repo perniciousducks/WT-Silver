@@ -33,10 +33,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
             call hide_screens
             #Reset
             $ daytime = temp_time
-            if daytime:
-                $ interface_color = "gold"
-            else:
-                $ interface_color = "gray"
+            call update_interface_color
             call update_gen_chibi
             jump enter_room_of_req
 
@@ -48,7 +45,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
 
     $ temp_time = daytime #Switch 'daytime' back to this at the end of the store.
     $ daytime = True
-    $ interface_color = "gold"
+    call update_interface_color
     call music_block
 
     #First Level
@@ -141,7 +138,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         centered "{size=+7}{color=#cbcbcb}Three hours later...{/color}{/size}"
 
         $ daytime = False
-        $ interface_color = "gray"
+        call update_interface_color
         call music_block
         show screen fireplace_fire
         pause 1.0
@@ -314,7 +311,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         stop music fadeout 1.0
         centered "{size=+7}{color=#cbcbcb}Four hours later...{/color}{/size}"
         $ daytime = False
-        $ interface_color = "gray"
+        call update_interface_color
         call music_block
         show screen fireplace_fire
         pause 1.0
@@ -448,7 +445,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         stop music fadeout 1.0
         centered "{size=+7}{color=#cbcbcb}Few hours later...{/color}{/size}"
         $ daytime = False
-        $ interface_color = "gray"
+        call update_interface_color
         call music_block
         show screen fireplace_fire
         pause 1.0
@@ -692,7 +689,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         stop music fadeout 1.0
         centered "{size=+7}{color=#cbcbcb}Some time later...{/color}{/size}"
         $ daytime = False
-        $ interface_color = "gray"
+        call update_interface_color
         call music_block
         show screen fireplace_fire
         pause 1.0

@@ -534,10 +534,16 @@ screen preferences():
                     label _("Difficulty")
                     hbox:
                         xalign 0.5
-                        textbutton _("Easy") text_size 14 text_color "#93b04c66" text_selected_color "#93b04c" xsize 80 action [SetVariable("game_difficulty", 1), SetVariable("cheat_reading", True)]
-                        textbutton _("Normal") text_size 14 xsize 80 action [SetVariable("game_difficulty", 2), SetVariable("cheat_reading", False), SelectedIf(game_difficulty==2)]
+                        textbutton _("Easy"):
+                            text_size 14 text_color "#93b04c66" text_selected_color "#93b04c" xsize 80
+                            action [Function(renpy.call_in_new_context, "adjust_game_difficulty", 1), SelectedIf(game_difficulty == 1)]
+                        textbutton _("Normal"):
+                            text_size 14 xsize 80
+                            action [Function(renpy.call_in_new_context, "adjust_game_difficulty", 2), SelectedIf(game_difficulty == 2)]
                         if persistent.game_complete:
-                            textbutton _("Hard") text_size 14 text_color "#7a000066" text_selected_color "#7a0000" xsize 80 action [SetVariable("game_difficulty", 3), SetVariable("cheat_reading", False), SelectedIf(game_difficulty==3)]
+                            textbutton _("Hard"):
+                                text_size 14 text_color "#7a000066" text_selected_color "#7a0000" xsize 80
+                                action [Function(renpy.call_in_new_context, "adjust_game_difficulty", 3), SelectedIf(game_difficulty == 3)]
 
             # Joystick settings aren't needed, I dont think anyone plays WT with it.
             #frame:

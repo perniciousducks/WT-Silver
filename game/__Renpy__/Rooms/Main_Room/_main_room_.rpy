@@ -12,7 +12,7 @@ screen main_room(interact=True):
     zorder 0
 
     # Hotkeys
-    if room_menu_active and day != 1 and not renpy.variant('android'):
+    if room_menu_active and day > 1 and not renpy.variant('android'):
         use hotkeys_main
     
     use weather

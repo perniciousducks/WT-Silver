@@ -528,7 +528,7 @@ label floor_7th:
     else:
         call blkfade
         call hide_screens
-        $ interface_color = "gray"
+        call update_interface_color("gray")
         show screen floor_7th_screen
 
         if unlocked_7th and first_time_7th:
@@ -801,10 +801,7 @@ label return_office:
     show screen blkfade
     with d3
 
-    if daytime:
-        $ interface_color = "gold"
-    else:
-        $ interface_color = "gray"
+    call update_interface_color
     pause.8
 
     jump main_room

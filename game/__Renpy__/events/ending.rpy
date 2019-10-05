@@ -13,7 +13,7 @@ label ball_ending_start:
             call her_main("I'm so excited!!! I can't wait for it!","grin","happyCl")
             call her_main("Just two more days, [genie_name]","base","glance")
             m "That soon, huh?"
-            call her_main("Yep! I still have a tonne of preparations to make though.","soft","baseL")
+            call her_main("Yep! I still have a tonne of preparation to do, though.","soft","baseL")
             m "Well then I better not keep you occupied any longer..."
             m "Unless..."
             g9 "Maybe we could..."
@@ -136,7 +136,7 @@ label ball_ending_E1:
     m "You didn't see \"flubber\"?\nGreat movie. Just came out."
     call sna_main("Can't say that I have...","snape_02")
     call sna_main("Alright then...","snape_06")
-    call sna_main("Have a save trip home...")
+    call sna_main("Have a safe trip home...")
     m "Thank you. Have fun with hosting the ball..."
     call sna_main("*Sigh*","snape_06")
 
@@ -170,7 +170,7 @@ label ball_ending_E1:
         m "But we did have a few special moments together..."
         m ".............."
         m "......................"
-        m "I doesn't feel right to leave her without saying goodbye properly..."
+        m "It doesn't feel right to leave her without saying goodbye properly..."
         m "And yet I don't want to miss my chance to sneak out unnoticed..."
         m "I don't like long goodbyes..."
         m "Hm..."

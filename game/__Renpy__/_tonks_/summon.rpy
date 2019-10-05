@@ -153,32 +153,32 @@ label tonks_talk:
     menu:
         # Temporarily disabled
         #
-        # "-Ask about outfit upgrades-":
-            # m "[tonks_name],..."
-            # m "Do you think you could change any of these outfits?"
-            # m "You know..."
-            # g9 "Make them sluttier!"
-            # call ton_main("Let me see...","base","base","base","down")
+        "-Ask about outfit upgrades-":
+            m "[tonks_name],..."
+            m "Do you think you could change any of these outfits?"
+            m "You know..."
+            g9 "Make them sluttier!"
+            call ton_main("Let me see...","base","base","base","down")
 
-            # #call check_tonks_clothing_upgrades #Adds items to the list. Picks one random item.
-            # if upgradable_clothing != []:
-                # $ ton_clothing_upgrades += 1
-                # call ton_main("Oh I really like this one.","open","base","raised","down")
-                # call ton_main("I could make some adjustments here...","base","base","raised","down")
-                # call ton_main("Maybe make this a bit shorter and...","horny","base","base","down")
-                # call ton_main("There you go, [ton_genie_name], all done.","base","base","base","mid")
-                # call unlock_clothing(text = ">A sexier variant of an outfit has been unlocked!", item = clothing_unlock)
-                # $ clothing_unlock.unlocked = True
-                # $ clothing_unlock = None
-                # g9 "Nice!"
-                # m "Thanks a ton!"
-                # call ton_main("Don't mention it, [ton_genie_name].","base","base","base","mid")
-                # jump tonks_requests
+            call check_tonks_clothing_upgrades #Adds items to the list. Picks one random item.
+            if upgradable_clothing != []:
+                $ ton_clothing_upgrades += 1
+                call ton_main("Oh I really like this one.","open","base","raised","down")
+                call ton_main("I could make some adjustments here...","base","base","raised","down")
+                call ton_main("Maybe make this a bit shorter and...","horny","base","base","down")
+                call ton_main("There you go, [ton_genie_name], all done.","base","base","base","mid")
+                call unlock_clothing(text = ">A sexier variant of an outfit has been unlocked!", item = clothing_unlock)
+                $ clothing_unlock.unlocked = True
+                $ clothing_unlock = None
+                g9 "Nice!"
+                m "Thanks a ton!"
+                call ton_main("Don't mention it, [ton_genie_name].","base","base","base","mid")
+                jump tonks_requests
 
-            # else:
-                # call ton_main("I'm sorry [ton_genie_name], but I don't think I can improved these outfits any further.","open","base","raised","mid")
-                # call ton_main("I will see what I can do should you get any new ones.","base","base","base","mid")
-                # jump tonks_requests
+            else:
+                call ton_main("I'm sorry [ton_genie_name], but I don't think I can improved these outfits any further.","open","base","raised","mid")
+                call ton_main("I will see what I can do should you get any new ones.","base","base","base","mid")
+                jump tonks_requests
 
         "-Get naked!-" if tonks_strip_happened and (not tonks_class.get_worn("top") or not tonks_class.get_worn("bottom") or not tonks_class.get_worn("robe")):
             m "Get naked, [tonks_name]!"
@@ -304,7 +304,7 @@ label tonks_talk:
                     call ton_main("Oh, I don't mind at all, [ton_genie_name]!","horny","base","base","mid")
                     jump tonks_talk
 
-                "{color=#858585}-Master-{/color}" if ton_friendship < 60:   
+                "{color=#858585}-Master-{/color}" if ton_friendship < 60:
                     label .master_fail:
                     call ton_main("No.","base","base","base","R")
                     m "What?- Why not?"
@@ -327,7 +327,7 @@ label tonks_talk:
                     call ton_main("Thank you, [ton_genie_name].","base","base","base","down")
                     g9 "(I could get used to that.)"
                     jump tonks_talk
-                    
+
                 "{color=#858585}-Custom Input--{/color}" if ton_friendship < 60:
                     m "(I don't think she's yet ready for that)"
                     jump tonks_talk
@@ -335,7 +335,7 @@ label tonks_talk:
                 "-Custom Input-" if ton_friendship >= 60:
                     $ temp_name = renpy.input("(Please enter the name.)", ton_genie_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
-                    
+
                     if temp_name.lower() in ("sir", "dumbledore", "professor", "old man", "genie", "lord voldemort", "daddy", "master"):
                         if temp_name.lower() == "master" and ton_friendship < 60:
                             jump tonks_talk.master_fail
@@ -411,7 +411,7 @@ label tonks_talk:
                     g9 "What if I do?"
                     call ton_main("Do it, I dare you!","horny","base","base","mid", hair="horny")
                     jump tonks_talk
-                    
+
                 "{color=#858585}-Custom Input--{/color}" if ton_friendship < 60:
                     m "(I don't think she's yet ready for that)"
                     jump tonks_talk

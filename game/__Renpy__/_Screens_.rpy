@@ -5,9 +5,8 @@
 label cg_scene(layer=None, folder=None, trans=None):
     hide screen cg
 
-    $ cg_path = "images/CG/"
     if folder != None:
-        $ cg_path = cg_path+folder+"/"
+        $ cg_path = "images/CG/"+folder+"/"
 
     if layer != None:
         $ cg_image = cg_path+layer+".png"

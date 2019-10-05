@@ -63,8 +63,8 @@ label cheats:
                     jump cheats_hermione
                 "-never mind-":
                     jump cheats
-                    
-        "-Astoria cheats-" if astoria_unlocked:
+
+        "-Astoria Cheats-" if astoria_unlocked:
             label cheats_astoria:
             menu:
                 "-Reset Astoria's mood-" if ast_mood != 0:
@@ -121,10 +121,6 @@ label cheats:
                 "-never mind-":
                     jump cheats
 
-        "-Mail ministry letter-" if her_whoring >= 2 and not letter_min_curses.read:
-            $ letter_min_curses.mailLetter()
-            ">Letter sent."
-            jump cheats
         # "-Astoria & Susan Cheats-" if astoria_unlocked:
             # label cheats_astoria:
             # menu:
@@ -222,11 +218,6 @@ label cheats:
             "200 points to Slytherin!"
             jump cheats
 
-        "-Map-" if day >= 5 and not map_unlocked:
-            "The marauder's map has been added to your inventory!"
-            $ map_unlocked = True
-            jump cheats
-
         "-Wardrobe transparency-":
             $ cheat_wardrobe_alpha = not cheat_wardrobe_alpha
             if cheat_wardrobe_alpha:
@@ -234,7 +225,7 @@ label cheats:
             else:
                 "Wardrobe transparency slider is disabled."
             jump cheats
-            
+
         "-{color=#7a0000}DEVROOM{/color}-" if config.developer:
             label devroom:
             menu:

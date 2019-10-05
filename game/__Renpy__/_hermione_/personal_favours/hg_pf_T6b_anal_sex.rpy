@@ -4,6 +4,8 @@
 
 # Intro
 label hg_anal_sex_1:
+    $ hg_pf_sex.change_icon(a="heart_yellow", b="heart_red")
+
     call hg_chibi_transition("admire_ass", flip=True, trans="d3")
     call bld
     m "[hermione_name]..."
@@ -322,6 +324,8 @@ label hg_anal_sex_1:
 ### Anal Sex Repeat ###
 
 label hg_anal_sex_2:
+    $ hg_pf_sex.change_icon(a="heart_yellow", b="heart_red")
+
     call hg_chibi_transition("admire_ass", flip=True, trans="d3")
 
     call bld

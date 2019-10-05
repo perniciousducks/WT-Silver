@@ -13,7 +13,7 @@ label ball_ending_start:
             call her_main("I'm so excited!!! I can't wait for it!","grin","happyCl")
             call her_main("Just two more days, [genie_name]","base","glance")
             m "That soon, huh?"
-            call her_main("Yep! I still have a ton op preparations to make though.","soft","baseL")
+            call her_main("Yep! I still have a tonne of preparations to make though.","soft","baseL")
             m "Well then I better not keep you occupied any longer..."
             m "Unless..."
             g9 "Maybe we could..."
@@ -422,6 +422,9 @@ label ball_ending_E2:
 
     # Scene Setup
     $ interface_color = "gold"
+    $ txt_style = "day_text"
+    $ btn_style = "daybtn"
+    $ btn_hover = "#e3ba7140"
 
     hide screen bld1
     hide screen blktone

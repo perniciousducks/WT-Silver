@@ -119,7 +119,7 @@ label give_her_gift(gift_item):
             call give_gift(">You give the candy to Hermione...",gift_item)
             call her_main("Thank you, [genie_name].","base","happyCl")
             call her_mood(-5)
-            
+
     elif gift_item == chocolate_ITEM:#chocolate
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("A chocolate bar?","base","base")
@@ -146,7 +146,7 @@ label give_her_gift(gift_item):
             call give_gift(">You give the chocolate to Hermione...", gift_item)
             call her_main("Thank you.","base","suspicious")
             call her_mood(-10)
-            
+
     elif gift_item == plush_owl_ITEM:#plush owl
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("A stuffed owl?","base","base")
@@ -177,7 +177,7 @@ label give_her_gift(gift_item):
             call her_main("I mean, thank you, [genie_name].","angry","worriedCl",emote="05")
             call give_gift(">You give the owl to Hermione...",gift_item)
             call her_mood(-4)
-            
+
     elif gift_item == butterbeer_ITEM:#butterbeer
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("Butterbeer?","base","base")
@@ -206,7 +206,7 @@ label give_her_gift(gift_item):
             call her_main("I shall drink this later with the boys.","base","base")
             call her_main("Err... I meant to say with the girls, of course.","open","baseL",cheeks="blush")
             call her_mood(-20)
-            
+
     elif gift_item == science_mag_ITEM:#edu mags
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("\"Popular magic\" magazines?","base","base")
@@ -234,7 +234,7 @@ label give_her_gift(gift_item):
             call give_gift(">You give an assortment of educational magazines to Hermione...",gift_item)
             call her_main("Thank you.","soft","baseL")
             call her_mood(0)
-            
+
     elif gift_item == girls_mag_ITEM:#girl mags
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("Hm?","soft","base")
@@ -260,7 +260,7 @@ label give_her_gift(gift_item):
             call give_gift(">You give an assortment of rather girly magazines to Hermione...",gift_item)
             call her_main("Thank you, [genie_name].","open","suspicious")
             call her_mood(-15)
-            
+
     elif gift_item == adult_mag_ITEM:#adult mags
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("Are that...?","open","base")
@@ -288,7 +288,7 @@ label give_her_gift(gift_item):
             call give_gift(">You give an assortment of adult magazines to Hermione...",gift_item)
             call her_main("thank you, [genie_name].","base","happyCl")
             call her_mood(-15)
-            
+
     elif gift_item == porn_mag_ITEM:#porn mags
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("Hm... What is this?","base","base")
@@ -318,7 +318,7 @@ label give_her_gift(gift_item):
             call her_main("Solely for research purposes of course...","open","baseL",cheeks="blush")
             call give_gift(">You give an assortment of porn magazines to Hermione...",gift_item)
             call her_mood(-15)
-            
+
     elif gift_item == krum_poster_ITEM:#krum poster
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("A Quidditch poster?","annoyed","down")
@@ -345,7 +345,7 @@ label give_her_gift(gift_item):
             call her_main("Can't wait to hang it over my bed!","smile","baseL")
             call her_main("The girls will go green with envy...","smile","glance")
             call her_mood(-25)
-            
+
     elif gift_item == sexy_lingerie_ITEM:#lingerie
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("lingerie?","angry","down_raised")
@@ -368,7 +368,7 @@ label give_her_gift(gift_item):
             call her_main("Oh... I mean, thank you, [genie_name].","angry","wink")
             call give_gift(">You give the lingerie to Hermione...",gift_item)
             call her_mood(-15)
-            
+
     elif gift_item == pink_condoms_ITEM:#condoms
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("Condoms?!","angry","wide")
@@ -390,7 +390,7 @@ label give_her_gift(gift_item):
             call her_main("I appreciate your concern, [genie_name]. Thank you.","base","glance")
             call give_gift(">You give a pack of condoms to Hermione...", gift_item)
             call her_mood(-4)
-            
+
     elif gift_item == vibrator_ITEM:#vibrator
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("A magic wand?","base","base")
@@ -421,7 +421,7 @@ label give_her_gift(gift_item):
             call give_gift(">You give the vibrator to Hermione...",gift_item)
             call her_main("Thank you, [genie_name].","base","down")
             call her_mood(-10)
-            
+
     elif gift_item == anal_lube_ITEM:#anal lube
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("I don't know what this is...","open","base")
@@ -448,7 +448,7 @@ label give_her_gift(gift_item):
             call her_main("Thank for looking out for us, [genie_name].","base","glance")
             call give_gift(">You give the jar to Hermione...",gift_item)
             call her_mood(-5)
-            
+
     elif gift_item == ballgag_and_cuffs_ITEM:#gag and cuffs
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("What is this?","angry","down_raised")
@@ -479,7 +479,7 @@ label give_her_gift(gift_item):
             call her_main("But a gift is a gift, right?","base","suspicious")
             call give_gift(">You give the ball gag and cuffs to Hermione...",gift_item)
             call her_mood(-15)
-            
+
     elif gift_item == anal_plugs_ITEM:#anal plugs
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("Hm...?","base","base")
@@ -509,7 +509,7 @@ label give_her_gift(gift_item):
             call her_main("But I shall never use them of course...","open","closed")
             call her_main("................","base","down")
             call her_mood(-10)
-            
+
     elif gift_item == testral_strapon_ITEM:#strap on
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("What is that?","angry","wide")
@@ -550,7 +550,7 @@ label give_her_gift(gift_item):
             call give_gift(">You give the strap-on to Hermione...",gift_item)
             call her_main("Thank you for the gift, [genie_name].","base","suspicious")
             call her_mood(-30)
-            
+
     elif gift_item == broom_2000_ITEM:#speed stick
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("A broom...?","base","base")
@@ -587,7 +587,7 @@ label give_her_gift(gift_item):
             call give_gift(">You give the broom to Hermione...",gift_item)
             call her_main("Thank you, [genie_name].","base","glance")
             call her_mood(-30)
-            
+
     elif gift_item == sexdoll_ITEM:#sex doll
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("Is this...","shock","wide")
@@ -612,7 +612,7 @@ label give_her_gift(gift_item):
             call give_gift(">You give the blow-up doll to Hermione...",gift_item)
             call her_main("Thank you, [genie_name].","base","baseL",cheeks="blush")
             call her_mood(-30)
-            
+
     elif gift_item == wine_ITEM or gift_item == firewhisky_ITEM:
         if her_whoring <= 6  and her_whoring <= 11:
             call her_main("[genie_name]?! Drinking alcohol at school grounds is forbidden..","open","angry","angry","mid")
@@ -631,7 +631,7 @@ label give_her_gift(gift_item):
             call her_mood(0)
         else:
             call give_gift(">You give the "+str(gift_item.name)+" bottle to Hermione...", gift_item)
-            call her_main("Thank you, [genie_name], I'll ask Ginny to drink some with me later.","soft","mid", cheeks="blush")
+            call her_main("Thank you, [genie_name], I'll ask Ginny to drink some with me later.","soft","base", cheeks="blush")
             call her_mood(-20)
 
     hide screen hermione_main
@@ -639,7 +639,7 @@ label give_her_gift(gift_item):
     call her_main(xpos="base",ypos="base",trans="d5")
 
     return
-    
+
 label her_mood(value=0):
     show screen blktone5
     with d3

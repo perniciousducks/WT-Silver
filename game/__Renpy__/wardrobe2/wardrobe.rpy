@@ -130,6 +130,7 @@ label t_wardrobe(return_label, char_label):
             $ renpy.play('sounds/fail.mp3')
         else:
             $ renpy.call(active_girl+"_wardrobe_check", "equip", _return[1])
+        $ char_active.reset_compatibility()
     elif _return == "addoutfit":
         $ get_character_object(active_girl).create_outfit("Custom", "A custom outfit")
         $ menu_items = char_active.outfits

@@ -65,5 +65,8 @@
             ton_mood = 0
             
             save_internal_version = 1.372
+            
+        if float(save_internal_version) < 1.373:
+            save_internal_version = 1.373
         
     config.after_load_callbacks.append(update_savefile)

@@ -753,6 +753,14 @@ init python:
                             result = False
             return result
             
+        def reset_compatibility(self):
+            self.incompatible_wardrobe = []
+            for value in self.clothing.itervalues():
+                if value[0] and value[0].incompatible != None:
+                    for key in value[0].incompatible:
+                        if key not in self.incompatible_wardrobe:
+                            self.incompatible_wardrobe.append(key)
+                        
         def get_cloth_object(self, category, subcat, id):
             for object in self.clothing_dictlist[category][subcat]:
                 if object.id == id:
@@ -763,16 +771,10 @@ init python:
             if isinstance(object, outfit_class):
                 self.unequip("all")
                 for item in object.group:
-                    # Check if item is compatible with other clothing pieces
-                    if item.incompatible != None:
-                        for key in item.incompatible:
-                            # Unequip incompatible item types
-                            if key not in self.incompatible_wardrobe:
-                                self.incompatible_wardrobe.append(key)
-                            self.unequip(key)
                     self.clothing[item.type][0] = self.get_cloth_object(item.category, item.subcat, item.id)
                     self.clothing[item.type][4] = False
                     self.clothing[item.type][0].set_color_alt(item.color)
+                self.reset_compatibility()
             else:
                 if self.clothing[object.type][0] == object and object.type != "hair":
                     self.unequip(object.type)

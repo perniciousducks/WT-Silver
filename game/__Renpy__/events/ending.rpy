@@ -325,6 +325,8 @@ label ball_ending_E1:
     call blkfade
 
     stop music fadeout 1.0
+    stop bg_sounds
+    stop weather
 
     centered "{size=+7}{color=#cbcbcb}Outskirts of hogwarts{/color}{/size}"
 

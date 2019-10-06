@@ -117,8 +117,6 @@ label quests:
         if not deck_unlocked:
             $ letter_deck.mailLetter()
 
-
-
     # Cardgame
     if day >= twins_cards_delay:
         if deck_unlocked and twins_first_win and not twins_cards_stocked:
@@ -126,7 +124,49 @@ label quests:
 
     if geniecard_level < 2 and snape_third_win and her_third_win and twins_second_win:
         $ letter_cardgame_t2.mailLetter()
+        
+        
+    # Cho events not triggered by a date.
+    if cc_event_pause == 0:
+        if daytime:
 
+            if huffl_matches_won == 1 and quidditch_commentator == "none":
+                $ lock_cho_practice = True
+                $ quidditch_commentator = "talk_with_hermione"
+                jump quidditch_commentator_event_1
+
+            if main_match_1_stage == "start":
+                $ main_match_1_stage = "return" # Triggers the return during the evening.
+                jump hufflepuff_match
+
+        else:
+            if cho_intro.E1_complete and not cho_intro.E2_complete:
+                jump cho_intro_E2
+
+            if quidditch_match_in_progress:
+                $ quidditch_match_in_progress = False
+                jump quidditch_match_return
+
+            if main_match_1_stage == "return":
+                $ main_match_1_stage = "end"
+                jump hufflepuff_match_return
+
+    # Susan events not triggered by a date.
+    if sb_event_pause == 0:
+        if daytime:
+            if nt_he.susan_E1 and not susan_intro.E1_complete:
+                jump susan_intro_E1
+
+    # Astoria events not triggered by a date.
+    if ag_event_pause == 0:
+        if daytime:
+            if astoria_intro.E2_hermione and astoria_intro.E2_snape and not astoria_intro.E3_complete:
+                jump astoria_intro_E3
+            if nt_he.astoria_E1 and not astoria_intro.E4_complete:
+                jump astoria_intro_E4
+        else:
+            if susan_intro.E1_complete and not astoria_intro.E1_complete:
+                jump astoria_intro_E1
 
     # Snape events not triggered by a date.
     if ss_event_pause == 0:
@@ -226,48 +266,6 @@ label quests:
                     $ ll_event_pause += renpy.random.randint(2, 4)
 
                     $ ll_pf_sex.start()
-
-    # Cho events not triggered by a date.
-    if cc_event_pause == 0:
-        if daytime:
-
-            if huffl_matches_won == 1 and quidditch_commentator == "none":
-                $ lock_cho_practice = True
-                $ quidditch_commentator = "talk_with_hermione"
-                jump quidditch_commentator_event_1
-
-            if main_match_1_stage == "start":
-                $ main_match_1_stage = "return" # Triggers the return during the evening.
-                jump hufflepuff_match
-
-        else:
-            if cho_intro.E1_complete and not cho_intro.E2_complete:
-                jump cho_intro_E2
-
-            if quidditch_match_in_progress:
-                $ quidditch_match_in_progress = False
-                jump quidditch_match_return
-
-            if main_match_1_stage == "return":
-                $ main_match_1_stage = "end"
-                jump hufflepuff_match_return
-
-    # Susan events not triggered by a date.
-    if sb_event_pause == 0:
-        if daytime:
-            if nt_he.susan_E1 and not susan_intro.E1_complete:
-                jump susan_intro_E1
-
-    # Astoria events not triggered by a date.
-    if ag_event_pause == 0:
-        if daytime:
-            if astoria_intro.E2_hermione and astoria_intro.E2_snape and not astoria_intro.E3_complete:
-                jump astoria_intro_E3
-            if nt_he.astoria_E1 and not astoria_intro.E4_complete:
-                jump astoria_intro_E4
-        else:
-            if susan_intro.E1_complete and not astoria_intro.E1_complete:
-                jump astoria_intro_E1
 
 
 

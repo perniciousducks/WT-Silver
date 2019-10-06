@@ -129,7 +129,34 @@ label update_tonks:
     $ tonks_class.get_cloth("hair").cached = False
 
     return
+    
+label check_tonks_clothing_upgrades:
 
+    $ upgradable_clothing = []
+    # Hermione
+    if hg_cheer_g_ITEM.unlocked and not hg_cheer_g_sexy_ITEM.unlocked:
+        $ upgradable_clothing.append(hg_cheer_g_sexy_ITEM)
+    if hg_cheer_s_ITEM.unlocked and not hg_cheer_s_sexy_ITEM.unlocked:
+        $ upgradable_clothing.append(hg_cheer_s_sexy_ITEM)
+    if hg_cheer_r_ITEM.unlocked and not hg_cheer_r_sexy_ITEM.unlocked:
+        $ upgradable_clothing.append(hg_cheer_r_sexy_ITEM)
+    if hg_cheer_h_ITEM.unlocked and not hg_cheer_h_sexy_ITEM.unlocked:
+        $ upgradable_clothing.append(hg_cheer_h_sexy_ITEM)
+    if hg_witch_ITEM.unlocked and not hg_witch_skimpy_ITEM.unlocked:
+        $ upgradable_clothing.append(hg_witch_skimpy_ITEM)
+
+    # Luna
+    if ll_stewardess_ITEM.unlocked and not ll_stewardess_short_ITEM.unlocked:
+        $ upgradable_clothing.append(ll_stewardess_short_ITEM)
+
+    # Astoria
+    #if ag_costume_lazy_town_ITEM.unlocked and not ag_costume_lazy_town_short_ITEM.unlocked:
+        #$ upgradable_clothing.append(ag_costume_lazy_town_short_ITEM)
+
+    if upgradable_clothing != []:
+        $ clothing_unlock = upgradable_clothing[ renpy.random.randint(0,len(upgradable_clothing)-1)]
+
+    return
 
 label end_tonks_event:
     call ton_chibi("hide")

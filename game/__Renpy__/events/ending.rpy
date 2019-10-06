@@ -3,7 +3,9 @@
 ### Yule Ball Ending ###
 
 label ball_ending_start:
-    call nar("Are you sure you wish to start this event?")
+    $ renpy.choice_for_skipping()
+    call nar("It would probably be a good idea to wrap things up with other girls before you start the ending and make sure you don't have any unfinished business in Hogwarts.")
+    call nar("Are you sure you wish to start the game ending event chain?")
 
     menu:
         "Yes!":
@@ -423,10 +425,9 @@ label ball_ending_E2:
         $ ball_ending_2 = public_whore_ending # Sets this to True or False
 
     # Scene Setup
+    $ daytime = True
     $ interface_color = "gold"
     $ txt_style = "day_text"
-    $ btn_style = "daybtn"
-    $ btn_hover = "#e3ba7140"
 
     hide screen bld1
     hide screen blktone
@@ -2770,7 +2771,9 @@ label ball_ending_E2:
     centered "{size=+7}{color=#cbcbcb}Outskirts of hogwarts{/color}{/size}"
 
     ### Scene Setup ###
+    $ daytime = False
     $ interface_color = "gray"
+    $ txt_style = "night_text"
 
     hide screen cg # Single layer CG screen.
 
@@ -2955,6 +2958,7 @@ label ball_ending_E3:
 
     $ daytime = True
     $ interface_color = "gold"
+    $ txt_style = "day_text"
 
     $ h_request_wear_hat = False
     $ hermione_wear_hat = False
@@ -3081,10 +3085,10 @@ label ball_ending_E3:
         hide screen letter
         call bld("hide")
 
-        call her_main( ".............................................................................................................................................................","disgust","shocked",cheeks="blush")
+        call her_main( "...........................................................................................................","disgust","shocked",cheeks="blush")
         dum_[1]"I assume the sender of this letter is that Genie fellow?"
         dum_[1]"The one who has been impersonating me for the past several months?"
-        call her_main( ".............................................................................................................................................................","disgust","shocked",cheeks="blush")
+        call her_main( "...........................................................................................................","disgust","shocked",cheeks="blush")
         dum_[1]"Well, now that I am back..."
         dum_[1]"I will be putting an end to all that \"favour-selling-business\" of course."
         call her_main("","scream","angry",emote="01")

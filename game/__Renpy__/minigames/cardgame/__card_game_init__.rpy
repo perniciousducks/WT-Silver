@@ -639,7 +639,7 @@ init python:
 
         for y in range(0,3):
             for x in range(0,3):
-                if table_cards[x][y].playercard:
+                if table_cards[x][y] and table_cards[x][y].playercard:
                     playerpoints += 1
         if playerpoints > 5:
             return "win"

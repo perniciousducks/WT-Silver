@@ -80,9 +80,10 @@ label hg_anal_sex_1:
                 $ ccg1 = "blank"
                 $ ccg2 = "blank"
                 $ ccg3 = "blank"
-                call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
                 show screen ccg
-            call hg_chibi_transition("sex_slow", trans="d5")
+                call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
+            else:
+                call hg_chibi_transition("sex_slow", trans="d5")
 
             call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!","scream","wide")
             g4 "Let us pump this little asshole full of semen then, shall we?"
@@ -135,9 +136,10 @@ label hg_anal_sex_1:
                 $ ccg1 = "blank"
                 $ ccg2 = "blank"
                 $ ccg3 = "blank"
-                call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
                 show screen ccg
-            call hg_chibi_transition("sex_slow", trans="d5")
+                call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
+            else:
+                call hg_chibi_transition("sex_slow", trans="d5")
 
             g4 "YES!!!"
             call her_main("My... my...","scream","wide")
@@ -179,9 +181,10 @@ label hg_anal_sex_1:
                 $ ccg1 = "blank"
                 $ ccg2 = "blank"
                 $ ccg3 = "blank"
-                call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
                 show screen ccg
-            call hg_chibi_transition("sex_slow", trans="fade")
+                call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
+            else:
+                call hg_chibi_transition("sex_slow", trans="fade")
             call ctc
 
             call her_main("Ah...","shock","baseL",cheeks="blush",tears="soft")
@@ -220,7 +223,10 @@ label hg_anal_sex_1:
             call cum_block
             g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
 
-            call hg_chibi_transition("sex_creampie", trans="d5")
+            if not use_cgs:
+                call hg_chibi_transition("sex_creampie", trans="d5")
+            else:
+                $ ccg3 = "s1"
             call cum_block
             call ctc
 
@@ -249,7 +255,8 @@ label hg_anal_sex_1:
             call ctc
 
             # AFTER CUM INSIDE
-            call hg_chibi_transition("sex_creampie_pause", trans="d5")
+            if not use_cgs:
+                call hg_chibi_transition("sex_creampie_pause", trans="d5")
 
             call her_main("*Sob!*...","angry","dead",cheeks="blush",tears="crying")
             m "Whew!... I think that was the last of it."
@@ -291,9 +298,13 @@ label hg_anal_sex_1:
             return
 
         "-Pull out and cum on Hermione-":
-            call hg_chibi_transition("sex_cumming_out", trans="d5")
+            if not use_cgs:
+                call hg_chibi_transition("sex_cumming_out", trans="d5")
+            else:
+                $ ccg3 = "s3"
             call cum_block
             call ctc
+            
 
             call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}","silly","dead",ypos="head")
             g4 "Yes!!! All over your ass!"
@@ -352,9 +363,11 @@ label hg_anal_sex_2:
         $ ccg1 = "blank"
         $ ccg2 = "blank"
         $ ccg3 = "blank"
-        call her_main("","open","closed",ypos="head")
         show screen ccg
-    call hg_chibi_transition("sex_slow", trans="d5")
+        hide screen blkfade
+        call her_main("","open","closed",ypos="head")
+    else:
+        call hg_chibi_transition("sex_slow", trans="d5")
 
     g4 "Oh, ye-es!"
     call her_main("Ah...","soft","ahegao")
@@ -378,7 +391,7 @@ label hg_anal_sex_2:
     call her_main("You misunderstood me [genie_name].","angry","base")
     call her_main("I meant to say, would you marry a girl {size=+5}like{/size} me?","angry","down_raised")
     call her_main("I would never propose to a man with his cock in my ass, [genie_name]...","angry","worriedCl",emote="05")
-    m "Good. Because I don't think any man would be able to say \"no\" to then."
+    m "Good. Because I don't think any man would be able to say \"no\" then."
     call her_main("Ah{image=textheart}...","open","closed")
     call her_main("What I meant... ah{image=textheart} {w} ...to say was ah{image=textheart}... {w}...do you think someone would ever ah{image=textheart}... {w} ...want to marry a girl like me?","angry","down_raised")
     m "Huh?"
@@ -447,7 +460,10 @@ label hg_anal_sex_2:
     menu:
         g4 "!!!"
         "-Fill Hermione up with cum-":
-            call hg_chibi_transition("sex_creampie", trans="d5")
+            if not use_cgs:
+                call hg_chibi_transition("sex_creampie", trans="d5")
+            else:
+                $ ccg3 = "s1"
             call cum_block
             call ctc
 
@@ -466,7 +482,10 @@ label hg_anal_sex_2:
             m "......"
 
         "-Cum all over Hermione-":
-            call hg_chibi_transition("sex_cumming_out", trans="d5")
+            if not use_cgs:
+                call hg_chibi_transition("sex_cumming_out", trans="d5")
+            else:
+                $ ccg3 = "s3"
             call cum_block
             call ctc
 

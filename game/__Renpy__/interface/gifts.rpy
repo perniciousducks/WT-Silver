@@ -43,7 +43,7 @@ label gift_menu:
             # Give gift
             call expression 'give_'+active_girl[:3]+'_gift' pass (gift_item=_return)
             if globals()[active_girl[:3]+"_mood"] <= 0:
-                $ renpy.jump(return_label)
+                return
         else:
             ">You don't own this item."
             jump gift_menu_after_init

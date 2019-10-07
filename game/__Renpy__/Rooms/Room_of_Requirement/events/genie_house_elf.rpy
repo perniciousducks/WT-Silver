@@ -1,13 +1,13 @@
 label genie_house_elf:
     show screen blkfade
-    call room("main_room")
+    
     $ temp_day = daytime
-    $ temp_color = interface_color
     $ temp_weather = weather_gen
     $ daytime = True
-    $ interface_color = "gold"
+    call update_interface_color
     $ weather_gen = 1
     $ show_weather()
+    call room("main_room")
     call music_block
     with d3
 
@@ -121,9 +121,8 @@ label genie_house_elf:
     "The end."
     
     $ daytime = temp_day
-    $ interface_color = temp_color
+    call update_interface_color
     $ weather_gen = temp_weather
     $ show_weather()
 
-    call room(hide_screens=True)
     jump enter_room_of_req

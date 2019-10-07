@@ -1,20 +1,12 @@
 # Common logic for day/night cycle
 
-label common_start:
-    call hide_all_screens
+label common_start(set_daytime):
     show screen blkfade
+    with dissolve
 
-    # Set interface color
-    if not persistent.nightmode and daytime:
-        $ interface_color = "gold"
-        $ txt_style = "day_text"
-        $ btn_style = "daybtn"
-        $ btn_hover = "#e3ba7140"
-    else:
-        $ interface_color = "gray"
-        $ txt_style = "night_text"
-        $ btn_style = "nightbtn"
-        $ btn_hover = "#7d75aa40"
+    $ daytime = set_daytime
+
+    call update_interface_color
 
     # Set save filename
     $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
@@ -38,11 +30,7 @@ label common_start:
     call update_snape
     call update_genie
 
-    scene black
-
-    # Stop playing fire and weather sounds
-    stop bg_sounds
-    stop weather
+    #call stop_sound_effects
 
     # Play owl arrival sound once per day/night start
     if letter_queue_list != [] and not owl_away:
@@ -50,10 +38,10 @@ label common_start:
 
     $ show_weather()
 
-    call room("main_room", hide_screens=False) # Screens already get hidden above
+    call room("main_room", stop_sound=False)
 
     hide screen blkfade
-    with fade
+    with dissolve
     return
 
 label update_day_values:
@@ -172,7 +160,7 @@ label update_day_values:
     $ day +=1
 
     # Change the weather
-    if day != 1:
+    if day > 1:
         $ weather_gen = renpy.random.randint(1, 6)
 
     # Change the weather for Quidditch Matches

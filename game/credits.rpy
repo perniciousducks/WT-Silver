@@ -37,7 +37,7 @@ label credits:
 
     show screen credits_screen
     with dissolve
-    $ interface_color = "gray"
+    call update_interface_color("gray")
     $ achievement.unlock("Credits")
     $ renpy.pause(credits_duration)
     hide screen credits_screen

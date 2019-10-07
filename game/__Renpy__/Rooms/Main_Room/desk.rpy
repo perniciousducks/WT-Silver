@@ -4,8 +4,6 @@ screen letter_on_desk():
     add "/images/rooms/_objects_/mail/letter_desk.png" zoom 0.5 xpos 334 ypos 356
 
 label desk:
-    hide screen main_room_menu
-
     if day == 1:
         if not desk_examined:
             $ desk_examined = True
@@ -45,7 +43,7 @@ label desk:
             call bld
             call letter_from_hermione_A
 
-        jump day_main_menu
+        jump main_room_menu
 
     #Define hints variable
     $ ball_hint = None
@@ -78,10 +76,10 @@ label desk:
     if _return == "hermione" and hermione_busy:
         if daytime:
             call nar(">Hermione is taking classes.")
-            jump day_main_menu
+            jump main_room_menu
         else:
             call nar(">Hermione is already asleep.")
-            jump night_main_menu
+            jump main_room_menu
     elif _return == "hermione" and not hermione_busy:
         if her_map_location == "forest":
             call nar(">Hermione is currently at the Forbidden Forest.\n>Would you like to go there?")
@@ -98,10 +96,10 @@ label desk:
     elif luna_known and _return == "luna" and luna_busy:
         if daytime:
             call nar(">Luna is taking classes.")
-            jump day_main_menu
+            jump main_room_menu
         else:
             call nar(">Luna is already asleep.")
-            jump night_main_menu
+            jump main_room_menu
     elif luna_known and _return == "luna" and not luna_busy:
         jump summon_luna
 
@@ -110,10 +108,10 @@ label desk:
     elif astoria_busy and _return == "astoria":
         if daytime:
             call nar(">Astoria is taking classes.")
-            jump day_main_menu
+            jump main_room_menu
         else:
             call nar(">Astoria is already asleep.")
-            jump night_main_menu
+            jump main_room_menu
     elif not astoria_busy and _return == "astoria": #Summoning after intro events done.
         jump summon_astoria
 
@@ -122,10 +120,10 @@ label desk:
     elif _return == "susan" and susan_busy:
         if daytime:
             call nar(">Susan is taking classes.")
-            jump day_main_menu
+            jump main_room_menu
         else:
             call nar(">Susan is already asleep.")
-            jump night_main_menu
+            jump main_room_menu
     elif _return == "susan" and not susan_busy:
         jump summon_susan
 
@@ -134,10 +132,10 @@ label desk:
     elif _return == "cho" and cho_busy:
         if daytime:
             call nar(">Cho is taking classes.")
-            jump day_main_menu
+            jump main_room_menu
         else:
             call nar(">Cho is already asleep.")
-            jump night_main_menu
+            jump main_room_menu
     elif _return == "cho" and not cho_busy:
         jump summon_cho
 
@@ -146,9 +144,9 @@ label desk:
     elif _return == "snape" and snape_busy:
         call nar(">Professor Snape is unavailable.")
         if daytime:
-            jump day_main_menu
+            jump main_room_menu
         else:
-            jump night_main_menu
+            jump main_room_menu
     elif _return == "snape" and not snape_busy:
         jump summon_snape
 
@@ -157,16 +155,16 @@ label desk:
     elif _return == "tonks" and tonks_busy:
         call nar(">Tonks is unavailable.")
         if daytime:
-            jump day_main_menu
+            jump main_room_menu
         else:
-            jump night_main_menu
+            jump main_room_menu
     elif _return == "tonks" and not tonks_busy:
         jump summon_tonks
 
 
     #Close
     elif _return == "Close":
-        jump day_main_menu
+        jump main_room_menu
 
     $ renpy.jump(_return)
 

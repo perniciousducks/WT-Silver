@@ -35,7 +35,7 @@ label duel:
     hide screen notes #A bunch of notes poping out with a "win" sound effect.
     hide screen genie
     hide screen owl
-    hide screen points
+    hide screen ui_top_bar
     hide screen ctc
     hide screen snape_defends
     hide screen blkfade

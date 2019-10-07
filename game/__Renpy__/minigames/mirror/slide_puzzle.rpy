@@ -32,7 +32,7 @@ label update_puzzle_slide:
 
     if p_move == "Close":
         hide screen exp_o_meter
-        call screen main_room_menu
+        jump main_room_menu
 
     $xposS = int(p_move/4)
     $yposS = int(p_move%4)

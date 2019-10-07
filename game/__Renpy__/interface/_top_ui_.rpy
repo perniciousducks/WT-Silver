@@ -18,7 +18,6 @@ label house_points:
     $ toggle_ui_lock = True
     $ toggle_points = False
     $ toggle_menu = False
-    $ tooltip = ""
 
     # Outline settings
     $ points_outline = [ (1, "#000", 0, 0) ]
@@ -50,6 +49,7 @@ label house_points:
 
     return
 
+
 #Close Button
 screen top_bar_close_button(xoffset=0, yoffset=0, close_var="Close"):
     imagebutton:
@@ -75,39 +75,34 @@ screen ui_top_bar():
     use ui_stats
     use ui_points
 
-    # Don't display buttons in the shops or on day 1
-    if not renpy.get_screen("clothing_store_room") and not renpy.get_screen("weasley_store_room") and not renpy.get_screen("room_of_requirement") and not renpy.get_screen("floor_7th_screen") and day != 1:
+    # Don't display buttons in certain rooms or on the first day
+    if current_room not in ["clothing_store", "weasley_store", "room_of_requirement", "7th_floor"] and day > 1:
         # Menu button
         imagebutton:
             xpos 0
             idle "interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png"
-            if renpy.get_screen("main_room_menu"):
+            if room_menu_active:
                 hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
-                hovered SetVariable("tooltip", "Open menu")
-                unhovered SetVariable("tooltip", None)
-                action [Hide("main_room_menu"), ToggleVariable("toggle_menu", True, False)]
+                if toggle_menu:
+                    tooltip "Close menu"
+                else:
+                    tooltip "Open menu"
                 activate_sound "sounds/click3.mp3"
-            elif not renpy.get_screen("main_room_menu") and toggle_menu:
-                hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_menu.png")
-                hovered SetVariable("tooltip", "Close menu")
-                unhovered SetVariable("tooltip", None)
-                action [Show("main_room_menu"), ToggleVariable("toggle_menu", True, False)]
-                activate_sound "sounds/click3.mp3"
+                action ToggleVariable("toggle_menu", True, False)
 
         # Sleep button
         imagebutton:
             xpos 1080
             xanchor 1.0
             idle "interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.png"
-            if renpy.get_screen("main_room_menu"):
+            if room_menu_active:
                 hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_sleep.png")
                 if daytime:
                     action Jump("night_start")
-                    hovered SetVariable("tooltip", "Doze Off (s)")
+                    tooltip "Doze Off (s)"
                 else:
                     action Jump("day_start")
-                    hovered SetVariable("tooltip", "Sleep (s)")
-                unhovered SetVariable("tooltip", None)
+                    tooltip "Sleep (s)"
                 activate_sound "sounds/click3.mp3"
 
         hbox:
@@ -116,45 +111,42 @@ screen ui_top_bar():
                 xpos 800
             else:
                 xpos 900
+
             # Achievements button
             imagebutton:
                 idle "interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.png"
-                if renpy.get_screen("main_room_menu"):
+                if room_menu_active:
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.png")
-                    hovered SetVariable("tooltip", "Achievements")
-                    unhovered SetVariable("tooltip", None)
-                    action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("achievement_menu")]
+                    tooltip "Achievements"
+                    action Jump("achievement_menu")
                     activate_sound "sounds/click3.mp3"
 
             # Stats button
             imagebutton:
                 idle "interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png"
-                if renpy.get_screen("main_room_menu"):
+                if room_menu_active:
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
-                    hovered SetVariable("tooltip", "Characters (c)")
-                    unhovered SetVariable("tooltip", None)
-                    action [SetVariable("tooltip", None), Hide("main_room_menu"), Jump("open_stat_menu")]
+                    tooltip "Characters (c)"
+                    action Jump("open_stat_menu")
                     activate_sound "sounds/click3.mp3"
 
             # Inventory button
             imagebutton:
                 idle "interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png"
-                if renpy.get_screen("main_room_menu"):
+                if room_menu_active:
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png")
-                    hovered SetVariable("tooltip", "Inventory (i)")
-                    unhovered SetVariable("tooltip", None)
-                    action [SetVariable("tooltip", None), Jump("inventory_menu")]
+                    tooltip "Inventory (i)"
+                    action Jump("inventory_menu")
                     activate_sound "sounds/click3.mp3"
 
             # Work button
             if letter_min_work.read:
                 imagebutton:
                     idle "interface/topbar/buttons/"+str(interface_color)+"/ui_work.png"
-                    if renpy.get_screen("main_room_menu"):
+                    if room_menu_active:
                         hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_work.png")
-                        hovered SetVariable("tooltip", "Work (w)")
-                        unhovered SetVariable("tooltip", None)
-                        action [SetVariable("tooltip", None), Jump("paperwork")]
+                        tooltip "Work (w)"
+                        action Jump("paperwork")
                         activate_sound "sounds/click3.mp3"
 
         ## Toggle UI lock button
@@ -173,23 +165,6 @@ screen ui_top_bar():
 
         # if tooltip and persistent.tooltip and not renpy.variant('android'):
             # text "{color=#FFF}{size=+4}[tooltip]{/size}{/color}" xalign 0.5 text_align 0.5 ypos 540
-
-screen mouse_tooltip():
-    zorder 999
-    tag tooltip
-
-    if persistent.tooltip and tooltip:
-        python:
-            x, y = renpy.get_mouse_pos()
-            xval = 1.0 if x > config.screen_width/2 else .0
-            yval = 1.0 if y > config.screen_height/2 else .0
-
-        frame:
-            style_prefix "dropdown_gm"
-            pos (x, y)
-            anchor (xval, yval)
-
-            text tooltip color "#FFF" size 14
 
 screen ui_points():
     tag ui
@@ -228,11 +203,12 @@ screen ui_points():
                 text "{size=16}{color=#FFF}[ravenclaw_place]{/color}{/size}" outlines points_outline xpos 98 ypos 10 xanchor 0.5
                 text "{size=16}{color=#FFF}[hufflepuff_place]{/color}{/size}" outlines points_outline xpos 139 ypos 10 xanchor 0.5
 
-            if toggle_ui_lock and renpy.get_screen("main_room_menu") or renpy.get_screen("room_of_requirement_menu") or renpy.get_screen("floor_7th_menu"):
+            if toggle_ui_lock and room_menu_active or renpy.get_screen("room_of_requirement_menu") or renpy.get_screen("floor_7th_menu"):
                 imagebutton:
                     idle "interface/topbar/hover_zone.png"
-                    hovered [SetVariable("toggle_points", True), SetVariable("tooltip", "House Points\n{size=-6}Click to toggle raw points display{/size}")]
-                    unhovered [SetVariable("toggle_points", False), SetVariable("tooltip", None)]
+                    tooltip "House Points\n{size=-6}Click to toggle raw points display{/size}"
+                    hovered SetVariable("toggle_points", True)
+                    unhovered SetVariable("toggle_points", False)
                     action ToggleVariable("persistent.toggle_points", True, False)
                     activate_sound "sounds/click3.mp3"
 
@@ -268,7 +244,7 @@ screen ui_stats():
 screen ui_menu():
     tag ui
 
-    button style "empty" action [SetVariable("toggle_menu", False), Show("main_room_menu")] keysym "game_menu"
+    button style "empty" action SetVariable("toggle_menu", False) keysym "game_menu"
 
     button:
         ypos 34
@@ -281,9 +257,9 @@ screen ui_menu():
         ypos 34
         xsize 102
         ysize 204
-        
+
         add "interface/topbar/"+str(interface_color)+"/menu.png"
-        
+
         vbox:
             xanchor 0.5
             xalign 0.5
@@ -292,14 +268,14 @@ screen ui_menu():
             textbutton "Load" action ShowMenu("load") background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
             if cheats_active and game_difficulty <= 2 and day > 1:
                 textbutton "Cheats" action [SetVariable("toggle_menu", False), Jump("cheats")] background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
-            if day != 1 and renpy.variant('android'):
+            if day > 1 and renpy.variant('android'):
                 textbutton "Preferences" action ShowMenu("preferences") background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
-            if day != 1 and persistent.game_complete:
+            if day > 1 and persistent.game_complete:
                 textbutton "Gallery" action [SetVariable("toggle_menu", False), Jump("scene_gallery")] background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
-            if day != 1:
+            if day > 1:
                 textbutton "Decorate" action [SetVariable("toggle_menu", False), Jump("decorate_room_menu")] background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
 
-            #if day != 1 and config.developer:
+            #if day > 1 and config.developer:
             #    textbutton "{size=-11}Show Chars{/size}" action [SetVariable("toggle_menu", False), Jump("summon_characters")] background #000
 
         hbox:
@@ -312,25 +288,22 @@ screen ui_menu():
             imagebutton:
                 idle image_alpha("interface/topbar/icon_discord.png")
                 hover "interface/topbar/icon_discord.png"
-                hovered [SetVariable("tooltip", "Visit {size=-6}SilverStudioGames{/size} discord")]
-                unhovered [SetVariable("tooltip", None)]
+                tooltip "Visit {size=-6}SilverStudioGames{/size} discord"
                 action OpenURL("https://discord.gg/7PD57yt")
                 activate_sound "sounds/click3.mp3"
             #Patreon
             imagebutton:
                 idle image_alpha("interface/topbar/icon_patreon.png")
                 hover "interface/topbar/icon_patreon.png"
-                hovered [SetVariable("tooltip", "Visit {size=-6}SilverStudioGames{/size} patreon")]
-                unhovered [SetVariable("tooltip", None)]
+                tooltip "Visit {size=-6}SilverStudioGames{/size} patreon"
                 action OpenURL("https://www.patreon.com/SilverStudioGames")
                 activate_sound "sounds/click3.mp3"
             #Bugfixes
             imagebutton:
                 idle image_alpha("interface/topbar/icon_bug.png")
                 hover "interface/topbar/icon_bug.png"
-                hovered [SetVariable("tooltip", "Open bugfix menu")]
-                unhovered [SetVariable("tooltip", None)]
-                action [SetVariable("toggle_menu", False), SetVariable("tooltip", None), Jump("bugfix_menu")]
+                tooltip "Open bugfix menu"
+                action [SetVariable("toggle_menu", False), Jump("bugfix_menu")]
                 activate_sound "sounds/click3.mp3"
 
 
@@ -342,31 +315,29 @@ label options_menu:
         "-Change Game Difficulty-" if game_difficulty <= 2:
             menu:
                 "-Enable Easy Difficulty-":
-                    $ game_difficulty = 1
-                    $ cheat_reading = True
+                    call adjust_game_difficulty(1)
                     "Game set to easy difficulty!"
                     "Increased gold reward from reports and other sources!"
                     "Rummaging through your cupboard is more rewarding!"
                     "Snape will be more generous with Slytherin-points!"
                     "Hermione won't stay mad at you for as long!"
-                    jump day_main_menu
+                    jump main_room_menu
                 "-Enable Normal Difficulty-":
-                    $ game_difficulty = 2
-                    $ cheat_reading = False
+                    call adjust_game_difficulty(2)
                     "Game set to normal difficulty!"
-                    jump day_main_menu
+                    jump main_room_menu
                 "-Back-":
-                    jump day_main_menu
+                    jump main_room_menu
         "-Replace Chibi animations with CG images-" if not use_cgs:
             ">The last two of Hermione's personal favours will use CG images."
             $ use_cgs = True
-            jump day_main_menu
+            jump main_room_menu
         "-Replace CG images with Chibi animations-" if use_cgs:
             ">The last two of Hermione's personal favours will now use chibi animations."
             $ use_cgs = False
-            jump day_main_menu
+            jump main_room_menu
         "-Never mind-":
-            jump day_main_menu
+            jump main_room_menu
 
 label bugfix_menu:
     menu:
@@ -394,7 +365,7 @@ label bugfix_menu:
             jump bugfix_menu
         "-Back-":
             pass
-    jump day_main_menu
+    jump main_room_menu
 
 label custom_save:
     $ temp_name = renpy.input("(Please enter the save name.)")
@@ -403,7 +374,7 @@ label custom_save:
         $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
     $ save_name = temp_name
     "Done."
-    jump day_main_menu
+    jump main_room_menu
 
 label scene_gallery:
     menu:
@@ -417,7 +388,7 @@ label scene_gallery:
             jump ball_ending_E2
 
         "-Never mind-":
-            jump day_main_menu
+            jump main_room_menu
 
 label return_gallery:
     call blkfade
@@ -484,7 +455,7 @@ label decorate_room_menu:
         hide screen bottom_menu
         with d3
 
-        jump day_main_menu
+        jump main_room_menu
     elif _return == "func":
         menu:
             "> Remove all decorations?"

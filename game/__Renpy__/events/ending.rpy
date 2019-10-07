@@ -426,8 +426,7 @@ label ball_ending_E2:
 
     # Scene Setup
     $ daytime = True
-    $ interface_color = "gold"
-    $ txt_style = "day_text"
+    call update_interface_color("gold")
 
     hide screen bld1
     hide screen blktone
@@ -467,7 +466,6 @@ label ball_ending_E2:
     hide screen notes
     hide screen done_reading
     hide screen done_reading_near_fire
-    hide screen main_room_menu
     with fade
     pause.1
 
@@ -2772,8 +2770,7 @@ label ball_ending_E2:
 
     ### Scene Setup ###
     $ daytime = False
-    $ interface_color = "gray"
-    $ txt_style = "night_text"
+    call update_interface_color("gray")
 
     hide screen cg # Single layer CG screen.
 
@@ -2957,8 +2954,7 @@ label ball_ending_E3:
     # Scene Setup
 
     $ daytime = True
-    $ interface_color = "gold"
-    $ txt_style = "day_text"
+    call update_interface_color
 
     $ h_request_wear_hat = False
     $ hermione_wear_hat = False
@@ -2980,6 +2976,7 @@ label ball_ending_E3:
 
 
     $ show_weather()
+    call weather_sound
     show screen weather
 
     show screen main_room

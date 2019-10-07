@@ -52,7 +52,7 @@
         # hide screen bottom_menu
         # with d3
 
-        # jump day_main_menu
+        # jump main_room_menu
 
     # elif _return == "inc":
         # $ current_page += 1

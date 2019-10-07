@@ -56,7 +56,8 @@ label summon_tonks:
         # Wardrobe
         "-Wardrobe-" if tonks_wardrobe_unlocked:
             call ton_main(xpos="wardrobe",ypos="base", face="neutral")
-            call expression 't_wardrobe' pass (return_label="tonks_requests", char_label="ton_main")
+            call t_wardrobe("ton_main")
+            jump tonks_requests
 
         "{color=#858585}-Hidden-{/color}" if not tonks_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")
@@ -65,7 +66,8 @@ label summon_tonks:
 
         # Gifts
         "-Gifts-" if not gave_tonks_gift:
-            call expression 'gift_menu' pass (return_label="tonks_requests")
+            call gift_menu
+            jump tonks_requests
 
         "{color=#858585}-Gifts-{/color}" if gave_tonks_gift:
             m "I already gave her a gift today."

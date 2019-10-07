@@ -36,7 +36,7 @@ screen gfx_effect(start_x, start_y, target_x, target_y, img, xanchor=0.5, yancho
     add img xanchor xanchor yanchor yanchor zoom zoom at moveto(start_x, start_y, target_x, target_y, duration)
     timer timer action Hide("gfx_effect")
 
-label t_wardrobe(return_label, char_label):
+label t_wardrobe(char_label):
     $ char_active = get_character_object(active_girl)
     $ char_nickname = char_active.char
     $ hide_transitions = True
@@ -96,8 +96,6 @@ label t_wardrobe(return_label, char_label):
     hide screen t_wardrobe_menuitem
     hide screen t_wardrobe_outfit_menuitem
     
-    $ tooltip = ""
-    
     if _return == "tabswitch":
         show screen t_wardrobe_menu(550, 50)
         $ renpy.call(active_girl+"_wardrobe_check", _return)
@@ -123,7 +121,7 @@ label t_wardrobe(return_label, char_label):
                 $ char_active.wear("panties")
     elif _return == "studio":
         $ renpy.play('sounds/click3.mp3')
-        call expression 'studio' pass (studio_return=return_label, studio_char=char_label)
+        call studio(char_label)
     elif _return[0] == "equip":
         show screen t_wardrobe_menu(550, 50)
         if isinstance(_return[1], cloth_class) and _return[1].type in char_active.incompatible_wardrobe:
@@ -146,7 +144,7 @@ label t_wardrobe(return_label, char_label):
                 $ globals()[active_girl+"_outfit_last"].save()
                 $ char_active.equip(_return[1])
                 $ item_to_export = _return[1]
-                call expression 'studio' pass (studio_return=return_label, studio_char=char_label)
+                call studio(char_label)
             "Export to clipboard":
                 $ _return[1].outfit_export(False)
             "Back":
@@ -286,8 +284,7 @@ label t_wardrobe(return_label, char_label):
         $ char_active.clothes_compatible()
         if wardrobe_music_active:
             call play_music(active_girl+"_theme")
-        python:
-            renpy.jump(return_label)
+        return
     jump t_wardrobe_after_init
         
 screen t_wardrobe_menu(xx, yy):
@@ -309,23 +306,52 @@ screen t_wardrobe_menu(xx, yy):
             if current_category == category:
                 add "interface/wardrobe/test/"+str(interface_color)+"/frame.png" xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
                 add "interface/wardrobe/test/"+char_active.char+"_"+category+".png" xpos 14+411*cat_row ypos 80+110*cat_col zoom 0.5
-                button xpos 14+411*cat_row ypos 80+110*cat_col xsize 90 ysize 96 style "empty" hover_background btn_hover action Return(["category", category])
+                button:
+                    style "empty"
+                    xpos 14+411*cat_row ypos 80+110*cat_col
+                    xsize 90 ysize 96
+                    hover_background btn_hover
+                    action Return(["category", category])
             else:
                 add "interface/wardrobe/test/"+str(interface_color)+"/frame.png" xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
                 add "interface/wardrobe/test/"+char_active.char+"_"+category+".png" xpos 61+329*cat_row ypos 80+110*cat_col zoom 0.5
-                button xpos 61+377*cat_row ypos 80+110*cat_col xsize 44 ysize 96 style "empty" hover_background btn_hover action Return(["category", wardrobe_categories_sorted[i]]) hovered SetVariable("tooltip", category) unhovered SetVariable("tooltip", None)
+                button:
+                    style "empty"
+                    xpos 61+377*cat_row ypos 80+110*cat_col
+                    xsize 44 ysize 96
+                    hover_background btn_hover
+                    tooltip category
+                    action Return(["category", wardrobe_categories_sorted[i]])
         
         frame xsize 340 ysize 548 xpos 100 style "empty" background bg_color_wardrobe
         
         add "interface/frames/"+str(interface_color)+"/circle.png" pos (373, 62)
-        button xsize 50 ysize 50 pos (373, 62) style "empty" background "interface/wardrobe/test/switch.png" hover_background image_hover("interface/wardrobe/test/switch.png") action Return("tabswitch") hovered SetVariable("tooltip", "Switch tabs") unhovered SetVariable("tooltip", None)
+        button:
+            style "empty"
+            xsize 50 ysize 50 pos (373, 62)
+            background "interface/wardrobe/test/switch.png"
+            hover_background image_hover("interface/wardrobe/test/switch.png")
+            tooltip "Switch tabs"
+            action Return("tabswitch")
 
         add "interface/frames/"+str(interface_color)+"/circle.png" pos (373, 117)
-        button xsize 50 ysize 50 pos (373, 117) style "empty" background "interface/wardrobe/test/outfits.png" hover_background image_hover("interface/wardrobe/test/outfits.png") action Return(["category", "outfits"]) hovered SetVariable("tooltip", "Outfits Manager") unhovered SetVariable("tooltip", None)
+        button:
+            style "empty"
+            xsize 50 ysize 50 pos (373, 117)
+            background "interface/wardrobe/test/outfits.png"
+            hover_background image_hover("interface/wardrobe/test/outfits.png")
+            tooltip "Outfits Manager"
+            action Return(["category", "outfits"])
 
         if not renpy.variant('android'):
             add "interface/frames/"+str(interface_color)+"/circle.png" pos (373, 172)
-            button xsize 50 ysize 50 pos (373, 172) style "empty" background "interface/wardrobe/test/studio.png" hover_background image_hover("interface/wardrobe/test/studio.png") action Return("studio") hovered SetVariable("tooltip", "Open Studio") unhovered SetVariable("tooltip", None)
+            button:
+                style "empty"
+                xsize 50 ysize 50 pos (373, 172)
+                background "interface/wardrobe/test/studio.png"
+                hover_background image_hover("interface/wardrobe/test/studio.png")
+                tooltip "Open Studio"
+                action Return("studio")
         
         #add "interface/wardrobe/test/"+str(interface_color)+"/icons_"+char_active.char+"_"+current_category+".png" xpos 13 ypos 80 zoom 0.5
 
@@ -339,11 +365,18 @@ screen t_wardrobe_menu(xx, yy):
                 spacing 2
                 for item in character_toggles:
                     $ curr_item = item[0]
-                    textbutton "{size=12}[curr_item]{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn(curr_item))+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 80 action Return(["toggle", curr_item])hovered SetVariable("tooltip", "Show/hide "+str(curr_item)) unhovered SetVariable("tooltip", None)
+                    textbutton "{size=12}[curr_item]{/size}":
+                        style "empty"
+                        background "interface/wardrobe/"+str(interface_color)+"/check_"+str(char_active.get_worn(curr_item))+".png"
+                        text_yanchor 0.5
+                        text_ypos 14 text_xpos 24
+                        ysize 24 xsize 80
+                        tooltip "Show/hide "+str(curr_item)
+                        action Return(["toggle", curr_item])
             vbox:
                 ypos 416
-                textbutton "{size=12}Music{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(wardrobe_music_active)+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("music") hovered SetVariable("tooltip", "Toggle music") unhovered SetVariable("tooltip", None)
-                textbutton "{size=12}BG Colour{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_true.png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("bg_color") hovered SetVariable("tooltip", "Change background colour") unhovered SetVariable("tooltip", None)
+                textbutton "{size=12}Music{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(wardrobe_music_active)+".png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("music") tooltip "Toggle music"
+                textbutton "{size=12}BG Colour{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_true.png" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("bg_color") tooltip "Change background colour"
             
         #Erogenous zones
         vbox:
@@ -407,14 +440,24 @@ screen t_wardrobe_menuitem(xx, yy):
                 spacing 2
                 
                 for i in xrange(current_item.layers):
-                    button xsize 32 ysize 44 background current_item.get_color_hex(i) action Return(["item_color", i]) hovered SetVariable("tooltip", "Change colour ("+str(i+1)+")") unhovered SetVariable("tooltip", None)
-            textbutton "R" xsize 32 ysize 44 xpos 422 ypos 31 background "#d3d3d3" action Return("item_reset") hovered SetVariable("tooltip", "Reset all colours") unhovered SetVariable("tooltip", None)
+                    button:
+                        xsize 32 ysize 44
+                        background current_item.get_color_hex(i)
+                        tooltip "Change colour ("+str(i+1)+")"
+                        action Return(["item_color", i])
+            textbutton "R" xsize 32 ysize 44 xpos 422 ypos 31 background "#d3d3d3" action Return("item_reset") tooltip "Reset all colours"
             
         # Add subcategory list
         if len(category_items) > 0:
             for i, subcategory in enumerate(category_items.keys()):
                 add "interface/wardrobe/test/icons/"+char_active.char+"/"+current_category+"_"+subcategory+".png" ypos 86 xpos 10+(90*i) zoom 0.2
-                button xsize 86 ysize 86 ypos 86 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", subcategory]) hovered SetVariable("tooltip", subcategory) unhovered SetVariable("tooltip", None)
+                button:
+                    style "empty"
+                    xsize 86 ysize 86
+                    ypos 86 xpos 10+(90*i)
+                    hover_background btn_hover
+                    tooltip subcategory
+                    action Return(["subcategory", subcategory])
             
         text "[current_category]: [current_subcategory]" xpos 24 ypos 44 size 16
         
@@ -432,20 +475,45 @@ screen t_wardrobe_menuitem(xx, yy):
                     
                     add menu_items[i].get_icon() zoom image_zoom xalign 0.5 yalign 0.5
                 if menu_items[i].id == char_active.get_equipped(current_category, current_subcategory, i):
-                    button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]]) hovered SetVariable("tooltip", "Take off") unhovered SetVariable("tooltip", None)
+                    button:
+                        style "empty"
+                        xsize 90 ysize 90
+                        xpos 10+90*(col) ypos 176+90*(row)
+                        hover_background btn_hover
+                        tooltip "Take off"
+                        action Return(["equip", menu_items[i]])
+                    
                     add "interface/topbar/icon_check.png" xpos 60+90*col ypos 225+90*row
                 else:   
-                    button xsize 90 ysize 90 style "empty" hover_background btn_hover xpos 10+90*(col) ypos 176+90*(row) action Return(["equip", menu_items[i]]) #hovered SetVariable("tooltip", "Put on") unhovered SetVariable("tooltip", None)
+                    button:
+                        style "empty"
+                        xsize 90 ysize 90
+                        xpos 10+90*(col) ypos 176+90*(row)
+                        hover_background btn_hover
+                        # tooltip "Put on"
+                        action Return(["equip", menu_items[i]])
                     
                 # Whoring req
                 if config.developer:
                     text "{color=#b20000}"+str(menu_items[i].whoring)+"{/color}" size 20 xpos 15+90*col ypos 180+90*row outlines [ (1, "#000", 0, 0) ]
                 if menu_items[i].incompatible != None:
-                    textbutton "{color=#b20000}!{/color}" background None text_size 20 xpos 64+90*col ypos 180+90*row text_outlines [ (1, "#000", 0, 0) ] hovered SetVariable("tooltip", "Incompatible with:\n"+"\n".join(str(k) for k in menu_items[i].incompatible)+"\n{size=-4}{color=#009999}Above items will be unequipped.{/color}{/size}") unhovered SetVariable("tooltip", None) action NullAction()
+                    textbutton "{color=#b20000}!{/color}":
+                        background None
+                        text_size 20
+                        xpos 64+90*col ypos 180+90*row
+                        text_outlines [ (1, "#000", 0, 0) ]
+                        tooltip "Incompatible with:\n"+"\n".join(str(k) for k in menu_items[i].incompatible)+"\n{size=-4}{color=#009999}Above items will be unequipped.{/color}{/size}"
+                        action NullAction()
                         
                 # Check current item compatibility, if fails forbid equipping
                 if menu_items[i].type in char_active.incompatible_wardrobe:
-                    textbutton "{color=#b20000}X{/color}" background None text_size 20 xpos 64+90*col ypos 180+90*row text_outlines [ (1, "#000", 0, 0) ] hovered SetVariable("tooltip", "Incompatible with your current setup.") unhovered SetVariable("tooltip", None) action NullAction()
+                    textbutton "{color=#b20000}X{/color}":
+                        background None
+                        text_size 20
+                        xpos 64+90*col ypos 180+90*row
+                        text_outlines [ (1, "#000", 0, 0) ]
+                        tooltip "Incompatible with your current setup."
+                        action NullAction()
                     
         # Add empty items
         for i in xrange(menu_items_length, items_shown):
@@ -499,7 +567,13 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
         # Add subcategory list
         for i, subcategory in enumerate(category_items):
             add "interface/wardrobe/test/icons/"+current_category+"_"+subcategory+".png" ypos 88 xpos 10+(90*i) zoom 0.2
-            button xsize 86 ysize 86 ypos 88 xpos 10+(90*i) style "empty" hover_background btn_hover action Return(["subcategory", subcategory]) hovered SetVariable("tooltip", subcategory) unhovered SetVariable("tooltip", None)
+            button:
+                style "empty"
+                xsize 86 ysize 86
+                ypos 88 xpos 10+(90*i)
+                hover_background btn_hover
+                tooltip subcategory
+                action Return(["subcategory", subcategory])
         
         # Add items
         for i in xrange(current_page*10, (current_page*10)+10):

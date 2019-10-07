@@ -1,7 +1,5 @@
 label day_start:
-    $ daytime = True
-
-    call common_start
+    call common_start(True)
 
     # Start Quests
     jump quests
@@ -12,15 +10,9 @@ label day_start:
     if hg_pr_sex_skip: # Hermione does not show up. This sends to label where she shows up next morning.
         $ hg_pr_sex.start() # hg_pr_sex_T1_intro_E2
 
-    label day_main_menu:
+    label day_main_menu: # Use `jump main_room_menu` instead of jumping directly to this label
 
-    ### MENU PLACEMENT ###
-    call reset_menu_position
-
-    call hide_characters
-    call gen_chibi("sit_behind_desk")
-    with d3
-
+    # Special first day event (examine objects in the room)
     if bird_examined and desk_examined and cupboard_examined and door_examined and fireplace_examined and not genie_intro.E2_complete:
         jump genie_intro_E2
 

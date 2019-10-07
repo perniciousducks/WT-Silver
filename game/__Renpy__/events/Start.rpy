@@ -8,12 +8,10 @@ label start_wt:
     show image "images/rooms/_bg_/castle.png"
     with d9
 
-    $ interface_color = "gray"
+    call update_interface_color("gray")
     $ menu_x = 0.5
     $ menu_y = 0.75
 
-    if not renpy.variant('android'):
-        show screen mouse_tooltip
     label choose_your_difficulty:
     menu:
         "Difficulty" ">How difficult do you want the game to be?"
@@ -22,8 +20,7 @@ label start_wt:
                 "Easy" "{cps=*2}>Increased gold and Slytherin-points gain.\nYou will always find items or gold in your cupboard.\nBad mood will decrease faster.\nBooks can be read in one go.{/cps}"
                 "-Confirm-":
                     ">Game set to easy!"
-                    $ game_difficulty = 1
-                    $ cheat_reading = True
+                    call adjust_game_difficulty(1)
                 "-Choose something else-":
                     jump choose_your_difficulty
         "-Play with normal difficulty-":
@@ -31,8 +28,7 @@ label start_wt:
                 "Normal" "{cps=*2}>Balanced gold and Slytherin-points gain.\nRandom chance of finding items or gold in your cupboard.\nBad mood will decrease gradually.\nBooks take time to read.{/cps}"
                 "-Confirm-":
                     ">Game set to normal!"
-                    $ game_difficulty = 2
-                    $ cheat_reading = False
+                    call adjust_game_difficulty(2)
                 "-Choose something else-":
                     jump choose_your_difficulty
         "-Play with hardcore difficulty-" if persistent.game_complete:
@@ -40,8 +36,7 @@ label start_wt:
                 "Hardcore" "{cps=*2}>Reduced gold and Slytherin-points gain.\nAll hints and guides are disabled.\nAdditional rewards and dialogue choices are added.{/cps}"
                 "-Confirm-":
                     ">Game set to hardcore!"
-                    $ game_difficulty = 3
-                    $ cheat_reading = False
+                    call adjust_game_difficulty(3)
                 "-Choose something else-":
                     jump choose_your_difficulty
 
@@ -94,10 +89,6 @@ label start_wt:
             "-Skip to Hermione-" if cheats_active or persistent.game_complete:
                 $ skip_to_hermione = True
 
-    # Run achievements thread
-    $ renpy.invoke_in_thread(update_achievements)
-    #show screen achievement_block()
-
     ### GAME STARTS HERE ###
     stop music fadeout 1
     hide image "images/rooms/_bg_/castle.png"
@@ -107,30 +98,21 @@ label start_wt:
 
     ### CHEATS / SKIPPING ###
     if skip_to_hermione:
-
-        call skip_to_hermione
-
-        $ wine_ITEM.number       += 5
-        $ firewhisky_ITEM.number += 5
-
-        $ rum_times = 6
-        $ day = 14
-
-        jump day_start
+        jump skip_to_hermione
 
     ### START ANIMATION ###
-    stop bg_sounds #Stops playing the fire SFX.
-    stop weather #Stops playing the rain SFX.
+    call stop_sound_effects
     $ weather_gen = 2
     $ show_weather()
-
+    $ daytime = True
+    call update_interface_color
     call room("main_room")
     call gen_chibi("hide")
     show screen dumbledore
     show screen letter_on_desk # Gets hidden after examining desk
     hide screen blkfade
     with d3
-    pause.1
+    pause 1
 
     call teleport("desk", poof_label="swap_dumb_genie")
 
@@ -255,4 +237,10 @@ label skip_to_hermione:
     $ tutoring_hermione_unlocked = True
     $ hermione_favors = True
 
-    return
+    $ wine_ITEM.number       += 5
+    $ firewhisky_ITEM.number += 5
+
+    $ rum_times = 6
+    $ day = 14
+
+    jump day_start

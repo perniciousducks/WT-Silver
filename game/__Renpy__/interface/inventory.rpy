@@ -98,13 +98,14 @@ label inventory_menu(xx=150, yy=90):
         $ current_item = None
     else:
         $ hide_transitions = False
-        jump day_main_menu
+        jump main_room_menu
 
     jump inventory_menu_after_init
 
 screen inventory_menu(xx, yy):
     tag inventory_menu
     zorder 4
+    modal True
 
     use top_bar_close_button
 
@@ -120,15 +121,26 @@ screen inventory_menu(xx, yy):
             pos (6, 41)
             for category in inventory_categories_sorted:
                 vbox:
-                    if current_category == category:
-                        textbutton category xsize 195 ysize 16 style "empty" background "interface/achievements/"+interface_color+"/highlight_left.png" text_xalign 0.5
-                    else:
-                        textbutton category xsize 195 ysize 16 style "empty" hover_background "interface/achievements/"+interface_color+"/highlight_left.png" text_xalign 0.5 action Return(["category", category])
+                    textbutton category:
+                        style "empty"
+                        xsize 195 ysize 16
+                        text_xalign 0.5
+                        if current_category == category:
+                            background "interface/achievements/"+interface_color+"/highlight_left.png"
+                        else:
+                            hover_background "interface/achievements/"+interface_color+"/highlight_left.png"
+                            action Return(["category", category])
                     add "interface/achievements/"+interface_color+"/spacer_left.png"
         vbox:
             pos (6, 384)
             button action NullAction() style "empty" xsize 195 ysize 32
-            textbutton "Sort by: [current_sorting]" style "empty" xsize 195 ysize 32 text_align (0.5, 0.5) text_size 12 hover_background btn_hover action Return("sort")
+            textbutton "Sort by: [current_sorting]":
+                style "empty"
+                xsize 195 ysize 32
+                text_align (0.5, 0.5)
+                text_size 12
+                hover_background btn_hover
+                action Return("sort")
 
 screen inventory_menuitem(xx, yy):
     tag inventory_menuitem
@@ -198,7 +210,12 @@ screen inventory_menuitem(xx, yy):
                             text str(menu_items[i].number) size 10 align (0.95, 0.95) anchor (1.0, 1.0) color "#FFFFFF" outlines [ (1, "#000", 0, 0) ]
                         #else:
                             #text str(menu_items[i].number) size 10 align (0.9, 0.9) color "#FFFFFF80" outlines [ (1, "#00000080", 0, 0) ]
-                    button xsize 46 ysize 46 style "empty" hover_background btn_hover action Return(["select", menu_items[i]]) hovered SetVariable("tooltip", menu_items[i].name) unhovered SetVariable("tooltip", None)
+                    button:
+                        style "empty"
+                        xsize 46 ysize 46
+                        hover_background btn_hover
+                        action Return(["select", menu_items[i]])
+                        tooltip menu_items[i].name
                     
         if menu_items_length <= 0:
             text "Nothing here yet" align (0.5, 0.5) anchor (0.5, 0.5) size 24

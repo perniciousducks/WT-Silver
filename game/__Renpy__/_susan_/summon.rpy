@@ -60,7 +60,8 @@ label summon_susan:
 
         # Gifts
         "-Gifts-" if not gave_susan_gift:
-            call expression 'gift_menu' pass (return_label="susan_requests")
+            call gift_menu
+            jump susan_requests
 
         "{color=#858585}-Gifts-{/color}" if gave_susan_gift:
             $ TBA_message()

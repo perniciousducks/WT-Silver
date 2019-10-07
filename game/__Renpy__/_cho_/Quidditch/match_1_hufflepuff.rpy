@@ -132,7 +132,7 @@ label hufflepuff_match:
 
     centered "{size=+7}{color=#cbcbcb}At the Quidditch pitch...{/color}{/size}"
 
-    call room("quidditch_pitch", True)
+    call room("quidditch_pitch")
     $ qp_mob = 2 # Controls number of people
     $ qp_mob_reaction = [None, None, None] # Reset reactions
     #call sna_chibi("stand", "210", -40, flip=True)
@@ -752,7 +752,7 @@ label hufflepuff_match:
     pause.5
     $ renpy.sound.play("sounds/steps_grass.mp3")
     "> You hurry back to your office before giving anyone a chance to talk to you."
-    call room("main_room", True)
+    call room("main_room")
     call gen_chibi("hide")
     show screen chair_left
     show screen desk

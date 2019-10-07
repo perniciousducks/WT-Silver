@@ -103,7 +103,8 @@ label summon_hermione:
 
         # Gifts
         "-Gifts-" if not gave_hermione_gift:
-            call expression 'gift_menu' pass (return_label="hermione_requests")
+            call gift_menu
+            jump hermione_requests
 
         "{color=#858585}-Gifts-{/color}" if gave_hermione_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."

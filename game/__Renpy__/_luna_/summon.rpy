@@ -63,7 +63,8 @@ label summon_luna:
 
         # Gifts
         "-Gifts-" if not gave_luna_gift:
-            call expression 'gift_menu' pass (return_label="luna_requests")
+            call gift_menu
+            jump luna_requests
 
         "{color=#858585}-Gifts-{/color}" if gave_luna_gift:
             $ TBA_message()

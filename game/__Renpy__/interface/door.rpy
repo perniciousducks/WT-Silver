@@ -54,7 +54,7 @@ label door_menu(xx=723, yy=90):
                 call nar(">"+_return[1]+" is currently asleep. Try again tomorrow.")
     else:
         $ hide_transitions = False
-        jump day_main_menu
+        jump main_room_menu
 
     jump door_menu_after_init
 

@@ -238,7 +238,7 @@ label read_book_menu:
     elif _return == "Close":
         $ current_page = 0
         hide screen desk_empty
-        jump day_main_menu
+        jump main_room_menu
 
     elif _return == "toggle1":
         $ toggle1_bool = not toggle1_bool
@@ -509,7 +509,7 @@ label read_scroll_menu:
 
     elif _return == "Close":
         $ current_page = 0
-        jump day_main_menu
+        jump main_room_menu
 
     elif _return == "toggle1":
         $ toggle1_bool = not toggle1_bool

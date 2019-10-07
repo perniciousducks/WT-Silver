@@ -1,7 +1,5 @@
 label night_start:
-    $ daytime = False
-
-    call common_start
+    call common_start(False)
 
     # Start Quests
     jump quests
@@ -59,19 +57,10 @@ label night_start:
     #if milking == -3:
         #call potion_scene_11_3_2 <- label does not exist
 
-
     #Atoria / Tonks event return.
     #if astoria_tonks_event_in_progress:
         #jump astoria_tonks_event <- label does not exist #These do not return to 'night_resume'!
 
-
-
-label night_main_menu:
-    ### MENU PLACEMENT ###
-    call reset_menu_position
-
-    call hide_characters
-    call gen_chibi("sit_behind_desk")
-    with d3
+    label night_main_menu: # Use `jump main_room_menu` instead of jumping directly to this label
 
     call screen main_room_menu

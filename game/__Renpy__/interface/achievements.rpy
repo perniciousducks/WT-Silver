@@ -298,13 +298,14 @@ label achievement_menu(xx=150, yy=90):
         $ current_item = None
     else:
         $ hide_transitions = False
-        jump day_main_menu
+        jump main_room_menu
 
     jump achievement_menu_after_init
 
 screen achievement_menu(xx, yy):
     tag achievement_menu
     zorder 4
+    modal True
 
     use top_bar_close_button
 
@@ -401,10 +402,16 @@ screen achievement_menuitem(xx, yy):
                             add image_zoom[0] zoom image_zoom[1] align (0.5, 0.5)
                     add "interface/achievements/glass_iconbox.png" pos (3, 2)
 
-                    if menu_items[i][1][5] and not menu_items[i][1][3]:
-                        button xsize 46 ysize 46 style "empty" hover_background btn_hover action Return(["select", menu_items[i]]) hovered SetVariable("tooltip", "???") unhovered SetVariable("tooltip", None)
-                    else:
-                        button xsize 46 ysize 46 style "empty" hover_background btn_hover action Return(["select", menu_items[i]]) hovered SetVariable("tooltip", menu_items[i][1][1]) unhovered SetVariable("tooltip", None)
+                    button:
+                        style "empty"
+                        xsize 46 ysize 46
+                        hover_background btn_hover
+                        action Return(["select", menu_items[i]])
+                        if menu_items[i][1][5] and not menu_items[i][1][3]:
+                            tooltip "???"
+                        else:
+                            tooltip str(menu_items[i][1][1])
+                            
 
         # Add empty items
         #for i in xrange(menu_items_length, items_shown):

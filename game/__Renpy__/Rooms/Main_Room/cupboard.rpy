@@ -17,7 +17,7 @@ label cupboard:
         m "Hm....."
         m "A cupboard..."
         m "Maybe I should rummage through this one later..."
-        jump day_main_menu
+        jump main_room_menu
 
 
     jump rummaging
@@ -47,7 +47,7 @@ label rummaging:
         $ potions += 1
         call give_reward(">You found some sort of potion...","interface/icons/item_potion.png")
 
-        jump main_room
+        jump main_room_menu
 
 
     # Map.
@@ -55,7 +55,7 @@ label rummaging:
         $ map_unlocked = True # Turns TRUE after you found the Dahr's oddities catalog in the cupboard.
         call give_reward(">You found a map of the school grounds...\n>You can now leave the office.","interface/icons/item_scroll.png")
 
-        jump main_room
+        jump main_room_menu
 
 
     # Dumbledore Card.
@@ -63,7 +63,7 @@ label rummaging:
         call give_reward("You have found a special card!", "images/cardgame/t1/special/dumbledore_v1.png")
         $ unlocked_cards += [card_dumbledore]
 
-        jump main_room
+        jump main_room_menu
 
 
 
@@ -111,10 +111,7 @@ label rummaging:
 
         call rum_block(random_choice)
 
-    if daytime:
-        jump day_main_menu
-    else:
-        jump night_main_menu
+    jump main_room_menu
 
 
 label rum_block(item = ""):

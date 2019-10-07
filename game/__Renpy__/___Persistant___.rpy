@@ -16,7 +16,6 @@ default daytime        = False
 default gold           = 0
 default rum_times      = 0 # Counts how many times have you rummaged the cupboard.
 default current_payout = 0
-default tooltip        = None
 
 # Hermione main screen flags
 default no_blinking   = False # When True - blinking animation is not displayed.

@@ -527,8 +527,8 @@ label floor_7th:
         jump desk
     else:
         call blkfade
-        call room(hide_screens=True)
-        $ interface_color = "gray"
+        call hide_screens
+        call update_interface_color("gray")
         show screen floor_7th_screen
 
         if unlocked_7th and first_time_7th:
@@ -781,7 +781,7 @@ label outskirts_of_hogwarts:
 
     centered "{size=+7}{color=#cbcbcb}Outskirts of hogwarts{/color}{/size}"
 
-    call room(hide_screens=True)
+    call hide_screens
 
     play music "sounds/night.mp3" fadein 1 fadeout 1 #NIGHT SOUNDS.
 
@@ -801,10 +801,7 @@ label return_office:
     show screen blkfade
     with d3
 
-    if daytime:
-        $ interface_color = "gold"
-    else:
-        $ interface_color = "gray"
+    call update_interface_color
     pause.8
 
     jump main_room

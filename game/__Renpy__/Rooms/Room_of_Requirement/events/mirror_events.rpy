@@ -20,7 +20,7 @@ label prev_at_hogwarts:
     $ day = 1
     $ gold = 0
     $ daytime = True
-    $ interface_color = "gold"
+    call update_interface_color
     $ weather_gen = 1
     $ show_weather()
 
@@ -121,19 +121,18 @@ label prev_at_hogwarts:
     $ day = temp_date
     $ gold = temp_gold
     $ daytime = temp_day
-    $ interface_color = temp_color
+    call update_interface_color
     $ weather_gen = temp_weather
     $ show_weather()
 
-    call room(hide_screens=True)
     jump enter_room_of_req
 
 
 
 label a_spaced_out_conversation:
     $ temp_time = daytime
-    $ interface_color = "gray"
     $ daytime = False
+    call update_interface_color
     $ fire_in_fireplace = True
 
     call room("main_room")
@@ -477,11 +476,7 @@ label a_spaced_out_conversation:
     "The End"
 
     $ daytime = temp_time
-    if daytime:
-        $ interface_color = "gold"
-    else:
-        $ interface_color = "gray"
-    call room(hide_screens=True)
+    call update_interface_color
     $ fire_in_fireplace = False
     hide screen fireplace_fire
     hide screen with_snape

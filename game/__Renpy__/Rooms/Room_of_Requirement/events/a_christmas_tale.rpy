@@ -3,7 +3,7 @@ label a_christmas_tale:
     with d5
     pause 2
 
-    call room(hide_screens=True)
+    call hide_screens
 
     centered "{size=+7}{color=#cbcbcb}A Christmas tale{/color}{/size}"
 
@@ -11,7 +11,7 @@ label a_christmas_tale:
 
     $ temp_time = daytime #Switch 'daytime' back to this at the end of the store.
     $ daytime = False #Night
-    $ interface_color = "gray"
+    call update_interface_color
     $ room_deco = "_deco_1" #Xmas deco
     $ gen_chibi_stand = "characters/misc/santa/santa_chibi.png"
 
@@ -20,7 +20,6 @@ label a_christmas_tale:
     show screen chair_left
     show screen desk
     show screen fireplace_fire
-    show screen main_room_overlay
 
     hide screen blkfade
     with d3
@@ -176,14 +175,11 @@ label a_christmas_tale:
     with d9
     pause 2
 
-    call room(hide_screens=True)
+    call hide_screens
 
     #Reset
     $ daytime = temp_time
-    if daytime:
-        $ interface_color = "gold"
-    else:
-        $ interface_color = "gray"
+    call update_interface_color
     call update_gen_chibi
 
     #Unlock Xmas Deco

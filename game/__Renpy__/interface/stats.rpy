@@ -77,13 +77,14 @@ label stats_menu(xx=150, yy=90):
             $ current_subcategory = _return[1]
     else:
         $ hide_transitions = False
-        jump day_main_menu
+        jump main_room_menu
 
     jump stats_menu_after_init
 
 screen stats_menu(xx, yy):
     tag stats_menu
     zorder 4
+    modal True
 
     use top_bar_close_button
     frame:

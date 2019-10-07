@@ -13,7 +13,6 @@ label wardrobe: #NOT IN USE
     if active_girl == "susan":
         call sus_main(xpos="wardrobe")
 
-    hide screen main_room_menu
     call screen wardrobe
 
 label reset_wardrobe_vars:
@@ -116,7 +115,6 @@ label update_wardrobe_color:
     if active_girl == "susan":
         call sus_main(xpos="wardrobe",ypos="base")
 
-    hide screen main_room_menu
     call screen wardrobe
 
 label wardrobe_update:
@@ -177,7 +175,6 @@ label wardrobe_update:
         call wr_sus_clothing_reset
         call sus_main(xpos="wardrobe",ypos="base")
 
-    hide screen main_room_menu
     call screen wardrobe
 
 label wr_her_clothing_reset:

@@ -56,7 +56,7 @@ init python:
         drags[0].snap(540, 300)
         return
 
-label studio(studio_return, studio_char):
+label studio(studio_char):
     call hide_characters
     
     python:
@@ -104,11 +104,11 @@ label studio(studio_return, studio_char):
         $ char_active.equip(studio_outfit_saves.get(active_girl))
         hide screen studio
         call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
-        call expression 't_wardrobe' pass (return_label=studio_return, char_label=studio_char)
+        return
     elif _return == "cancel":
         $ char_active.equip(studio_outfit_saves.get(active_girl))
         call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
-        call expression 't_wardrobe' pass (return_label=studio_return, char_label=studio_char)
+        return
     elif _return[0] == "body":
         $ studio_outfit_saves.get(active_girl).save()
         $ char_active.equip(studio_outfit_saves.get(active_girl))
@@ -217,7 +217,7 @@ label studio(studio_return, studio_char):
             $ studio_text_outline_color = get_hex_string(studio_text_outline_color[0]/255.0, studio_text_outline_color[1]/255.0, studio_text_outline_color[2]/255.0, studio_text_outline_color[3]/255.0)
     else:
         call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
-        call expression 't_wardrobe' pass (return_label=studio_return, char_label=studio_char)
+        return
         
     jump studio_after_init
 

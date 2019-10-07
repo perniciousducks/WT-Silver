@@ -1,4 +1,4 @@
-label gift_menu(return_label):
+label gift_menu:
     python:
         category_list = ["ui_gifts", "ui_quest_items"] #Max 5 items! #Use the item's name inside the 'interface/icons' folder.
         current_category = category_list[0]
@@ -54,8 +54,7 @@ label gift_menu(return_label):
     elif _return == "Close":
         hide screen bottom_menu
         with d3
-
-        $ renpy.jump(return_label)
+        return
 
     jump gift_menu_after_init
     

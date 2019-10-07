@@ -248,7 +248,7 @@ label flytest_cho:
     $ cho_class.animation(None) # <- change cho back to default
     $ cho_class.equip(cho_outfit_custom) # <- equip standard school outfit (This will probably get changed so the player equips his old outfit instead
     hide screen flytest
-    jump day_main_menu
+    jump main_room_menu
     
 
     

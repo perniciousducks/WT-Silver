@@ -339,8 +339,7 @@ label astoria_tonks_random:
 
         $ astoria_busy = True
 
-        call play_music("night_theme")
-        jump night_main_menu
+        jump main_room_menu
 
     #ADD more random Tonks events.
 

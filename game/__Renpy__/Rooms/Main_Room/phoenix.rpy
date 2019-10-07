@@ -14,7 +14,7 @@ label phoenix:
         hide screen chair_left #Empty chair near the desk.
         hide screen desk
         with d5
-        jump day_main_menu
+        jump main_room_menu
 
     if not phoenix_is_fed:
         $ phoenix_is_fed = True
@@ -25,16 +25,17 @@ label phoenix:
         $ phoenix_petted_counter += 1
         jump petting
 
-    call screen main_room_menu
+    jump main_room_menu
 
 ### FEEDING ###
 label feeding:
     hide screen genie
     show screen feeding
     with d3
-    pause 1
+    pause .5
 
     show screen phoenix_food
+    with d3
 
     $ random_number = renpy.random.randint(1, 3)
     if random_number == 1:
@@ -48,7 +49,7 @@ label feeding:
     hide screen feeding
     with d3
 
-    call screen main_room_menu
+    jump main_room_menu
 
 ### PETTING ###
 label petting:
@@ -65,10 +66,10 @@ label petting:
     elif random_number == 3:
         "Glad you aren't as noisy as Iago..."
     else:
-        pause.8
+        pause 2.4
 
     show screen genie
     hide screen petting
     with d3
 
-    call screen main_room_menu
+    jump main_room_menu

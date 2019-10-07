@@ -3,7 +3,6 @@ label deck_builder:
         for card in playerdeck:
             card.playercard = True
     label deck_builder_jump:
-    hide screen main_room_menu
     show screen deck_builder_screen
     $ renpy.block_rollback()
     $ _return = ui.interact()
@@ -20,7 +19,7 @@ label deck_builder:
     elif _return == "Close":
         $ selectcard = -1
         hide screen deck_builder_screen
-        jump day_main_menu
+        jump main_room_menu
     elif _return == "guide":
         $ selectcard = -1
         hide screen deck_builder_screen
@@ -275,10 +274,7 @@ label deck_builder_guide:
     #$ _return = ui.interact()
     
     #if _return == "back":
-    if daytime:
-        call play_music("day_theme")
-    else:
-        call play_music("night_theme")
+    call music_block
     
     hide screen deck_builder_tutorial
     jump deck_builder

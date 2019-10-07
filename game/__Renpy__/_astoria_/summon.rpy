@@ -34,7 +34,8 @@ label summon_astoria:
         # Wardrobe
         "-Wardrobe-" if astoria_wardrobe_unlocked:
             call ast_main(xpos="wardrobe", ypos="base", face="neutral")
-            call expression 't_wardrobe' pass (return_label="astoria_requests", char_label="ast_main")
+            call t_wardrobe("ast_main")
+            jump astoria_requests
 
         "{color=#858585}-Hidden-{/color}" if not astoria_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")
@@ -43,7 +44,8 @@ label summon_astoria:
 
         # Gifts
         "-Gifts-" if not gave_astoria_gift:
-            call expression 'gift_menu' pass (return_label="astoria_requests")
+            call gift_menu
+            jump astoria_requests
 
         "{color=#858585}-Gifts-{/color}" if gave_astoria_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."

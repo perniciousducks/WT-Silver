@@ -861,10 +861,10 @@ label hg_pf_talk_tonks:
                 m "Such-{w=0.5}{nw}"
             call ton_main("Such as?","horny","base","raised","L")
 
-            # Random choice of stuff  that has happened.
+            # Random choice of stuff that has happened.
             $ character_choice = []
-            $ character_choice.append("stytherins") # 'else' choice. List can't be empty.
-            if cho_tier == 2:
+            $ character_choice.append("slytherins") # 'else' choice. List can't be empty.
+            if cho_tier >= 2:
                 $ character_choice.append("cho_1")
             if cc_pf_strip.counter >= 2: # Cho stripped and Hermione saw it.
                 $ character_choice.append("cho_2")

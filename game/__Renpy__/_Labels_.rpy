@@ -386,7 +386,7 @@ label play_sound(sound=""):
     return
 
 
-
+#TODO One keyword per theme (use == instead of x in [..] checks, possibly define everything in a dictionary to simplify code further)
 label play_music(music=""):
     if music in ["stop","pause"]:
         stop music fadeout 1.0
@@ -399,7 +399,8 @@ label play_music(music=""):
         play music "music/11 Neville's Waltz.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["festive", "xmas"]:
         play music "music/07 Introducing Colin2.mp3" fadein 1 fadeout 1 if_changed
-
+    elif music == "quidditch":
+        play music "music/11 The Quidditch Match_original.mp3" fadein 1 fadeout 1 if_changed
     # Character Music
     elif music in ["snape", "snape_theme", "dark_fog"]:
         # Snape

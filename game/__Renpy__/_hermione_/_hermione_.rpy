@@ -2,9 +2,7 @@
 
 ### HERMIONE GRANGER ###
 
-label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
-    hide screen hermione_main
-    hide screen hermione_face
+label her_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
 
     #Flip
     if flip == False: #Default
@@ -12,10 +10,13 @@ label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=Non
     if flip == True: #Flipped
         $ hermione_flip = -1
 
+    #Reset
     if cheeks == None:
         $ cheeks = "blank"
     if tears == None:
         $ tears = "blank"
+    if extra == None:
+        $ extra = "blank"
     if emote == None:
         $ emote = "blank"
 
@@ -40,7 +41,6 @@ label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=Non
             $ hermione_scaleratio = 2
             $ hermione_zorder = 5
             $ use_hermione_head = False
-
         elif ypos in ["head"]:
             # Use ypos="head" to activate her head position.
             # Use ypos="base" to disable it.
@@ -63,36 +63,33 @@ label her_main(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=Non
                     $ hermione_xpos = 640
                 $ hermione_ypos = 230
                 $ hermione_zorder = 8
-
-        #elif ypos in ["suck"]:
-        #    $ use_hermione_head = True
-        #    $ hermione_scaleratio = 1.4
-        #    $ hermione_xpos = 500
-        #    $ hermione_ypos = 100
-        #    $ hermione_zorder = 8
-
         else:
             $ hermione_ypos = int(ypos)
 
     if face != None:
         if mouth == None:
             call set_her_face(mouth = face)
-        if eye == None:
+        if eyes == None:
             call set_her_face(eyes = face)
+        if eyebrows == None:
+            call set_her_face(eyebrows = face)
+        if pupils == None:
+            call set_her_face(pupils = face)
 
-    $ changeHermione(mouth, eye, cheeks, tears, extra, emote, hermione_xpos, hermione_ypos)
+    if animation != False:
+        $ hermione_animation = animation
+
+    python:
+        hermione_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
+        hermione_class.special(emote=emote)
 
     if use_hermione_head and face_on_cg: #Only her face. Used in CG scenes.
         show screen hermione_face
     else:
-        show screen hermione_main
-
-    show screen bld1 #Should be active anyways.
+        show screen hermione_main()
+    show screen bld1
 
     call transition(trans, True)
-
-    if text != "":
-        $ renpy.say(her, text)
 
     if use_hermione_head and not face_on_cg:
         hide screen hermione_main
@@ -125,82 +122,33 @@ label her_kneel(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=No
 
     return
 
-
-
-
 label update_hermione:
 
+    $ update_chibi_image("hermione")
     $ hermione_flip = 1
-    $ her_chibi_flip = 1
     $ use_hermione_head = False
 
-    call update_her_uniform
-    call update_her_body
-
     return
-
-label reset_hermione:
-
-    #Hermione clothing save state
-    call load_hermione_clothing_saves
-
-    $ hermione_expand_breasts = False
-    $ hermione_expand_ass = False
-    $ no_blinking      = False #When True - blinking animation is not displayed.
-    $ hermione_dribble = False
-    $ hermione_squirt  = False
-    $ aftersperm       = False #Show cum stains on Hermione's uniform.
-    $ uni_sperm        = False
-    $ sperm_on_tits    = False #Sperm on tits when Hermione pulls her shirt up.
-    $ hermione_wet_clothes = False
-
-    if hermione_action != "none":
-        call set_her_action("none","update")
+    
+label end_her_event:
+    call her_chibi("hide")
+    hide screen hermione_main
+    with d3
+    pause.5
 
     call update_hermione
+    
+    $ active_girl = None
+    $ hermione_busy = True
 
-    return
+    call music_block
+    jump main_room
 
-
-
-
-
-init python:
-    def changeHermione( mouth=None,
-                        eye=None,
-                        cheeks=None,
-                        tears=None,
-                        extra=None,
-                        emote=None,
-                        x_pos=None,
-                        y_pos=None):
-
-        ### DEFINE GLOBAL VARIABLES ###
-        global hermione_mouth
-        global hermione_eyes
-        global hermione_cheeks
-        global hermione_tears
-        global hermione_extra
-        global hermione_emote
-        global hermione_xpos
-        global hermione_ypos
-
-        ### FACE CONTROL ###
-        if mouth is not None:
-            hermione_mouth       = "characters/hermione/face/mouth/"+str(h_lipstick)+"/"+str(mouth)+".png"
-        if eye is not None:
-            hermione_eyes        = "characters/hermione/face/eyes/"+str(h_eye_color)+"/"+str(eye)+".png"
-        if cheeks is not None:
-            hermione_cheeks      = "characters/hermione/face/extras/cheeks_"+str(cheeks)+".png"
-        if tears is not None:
-            hermione_tears       = "characters/hermione/face/extras/tears_"+str(tears)+".png"
-        if extra is not None:
-            hermione_extra       = "characters/hermione/face/extras/"+str(extra)+".png"
-        if emote is not None:
-            hermione_emote       = "characters/emotes/"+str(emote)+".png"
-
-        ### POSITION CONTROL ###
-        if x_pos is not None:
-            hermione_xpos        = x_pos
-        if y_pos is not None:
-            hermione_ypos        = y_pos
+screen hermione_main():
+    tag hermione_main
+    zorder hermione_zorder
+    if hermione_animation != None:
+        add hermione_class.get_image() xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio) at hermione_animation
+    else:
+        add hermione_class.get_image() xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
+        

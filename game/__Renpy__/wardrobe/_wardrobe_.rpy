@@ -5,13 +5,8 @@ screen wardrobe():
     tag wardrobe_menu
     zorder 4
 
-    if active_girl == "hermione":
+    if active_girl in ["luna","susan"]:
         $ icon_ypos_offset = 0
-    if active_girl in ["luna","susan","cho","tonks"]:
-        $ icon_ypos_offset = 0
-        $ wardrobe_toggle_page = 4 #Force disables toggle pages.
-    if active_girl == "astoria": #She's too small! >.<
-        $ icon_ypos_offset = -20
         $ wardrobe_toggle_page = 4 #Force disables toggle pages.
 
     imagemap:
@@ -60,20 +55,10 @@ screen wardrobe():
 
         ## Always Active ##
         hotspot (745+280,10,45,45) clicked [SetVariable("wardrobe_page",0),Jump("close_wardrobe")]    #Close Wardrobe and set to default.
-        if active_girl == "hermione":
-            text ""+hermione_name xalign 0.5 xpos 820 ypos 57 size 20
-            hotspot (770,310,95,45) clicked Jump("touched_her_boobies") #Her Breasts
-            hotspot (795,460,40,30) clicked Jump("touched_her_crotch") #Her Crotch
         if active_girl == "luna":
             text ""+lun_name xalign 0.5 xpos 820 ypos 57 size 20
-        if active_girl == "astoria":
-            text ""+astoria_name xalign 0.5 xpos 820 ypos 57 size 20
         if active_girl == "susan":
             text ""+susan_name xalign 0.5 xpos 820 ypos 57 size 20
-        if active_girl == "cho":
-            text ""+cho_name xalign 0.5 xpos 820 ypos 57 size 20
-        if active_girl == "tonks":
-            text ""+tonks_name xalign 0.5 xpos 820 ypos 57 size 20
         text "Wardrobe" xpos 668 ypos 154+360 size 12
 
         hotspot (993,10,32,23) clicked Jump("hide_wardrobe")

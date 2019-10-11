@@ -1,8 +1,6 @@
 
 ## Potions ##
 label use_potion:
-    if active_girl == "hermione":
-        jump use_hermione_potion
     if active_girl == "luna":
         jump use_luna_potion
 

@@ -3,22 +3,18 @@
 #Door Events (Hermione wears random clothing.)
 
 label hermione_summon_setup:
-    call load_hermione_clothing_saves
-
-    $ hermione_wear_top         = True
-    $ hermione_wear_bottom      = True
-
     $ random_number = renpy.random.randint(1, 10)
 
     if not hermione_wardrobe_unlocked:
         $ hermione_wardrobe_unlocked = True
 
-        call set_her_action("hold_book") # This will only be used once in the game, here.
+        #call set_her_action("hold_book") # This will only be used once in the game, here.
 
         call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
         call play_music("hermione_theme")
-        call her_main("","base","base", xpos="mid", ypos="base")
+        call her_main("","base","base","base","mid", xpos="mid", ypos="base")
+        #call cho_main("","base","base","base","mid", xpos="mid", ypos="base", animation=moveFade) # reference
         call ctc
 
         m "(...)"
@@ -42,7 +38,7 @@ label hermione_summon_setup:
         with d5
         pause.5
 
-        call set_her_action("none","update")
+        #call set_her_action("none","update")
 
         g9 "{size=-2}And soon you'll love cock!{/size}"
         $ renpy.play('sounds/punch01.mp3') #Hermione lays books onto the floor.

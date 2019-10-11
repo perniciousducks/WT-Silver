@@ -21,9 +21,9 @@ label common_start(set_daytime):
     call house_points   # Updates points
 
     # Reset character appearances (chibis, clothing, etc.)
-    call reset_hermione
     call reset_luna
     call update_astoria
+    call update_hermione
     call update_susan
     call update_cho
     call update_tonks

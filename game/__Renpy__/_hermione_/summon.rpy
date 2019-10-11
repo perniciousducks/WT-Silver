@@ -86,15 +86,9 @@ label summon_hermione:
 
         # Wardrobe
         "-Wardrobe-" if hermione_wardrobe_unlocked: # Unlocks after first summoning her.
-            call load_hermione_clothing_saves
-
-            call reset_wardrobe_vars
-            call update_wr_color_list
-
-            $ hide_transitions = True
-            call her_main(xpos="wardrobe",ypos="base")
-            call screen wardrobe
-
+            call her_main(xpos="wardrobe", ypos="base", face="neutral")
+            call t_wardrobe("her_main")
+            jump hermione_requests
 
         # Cardgame
         "-Let's Duel- {image=interface/cards.png}" if snape_second_win:

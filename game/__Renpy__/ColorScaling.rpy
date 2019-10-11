@@ -57,7 +57,7 @@ init python:
                 break
 
 
-    class lazyload():
+    class lazyload(object):
         def __init__(self, images, colorlist, image_index, layercount):
             self.images = images
             self.colorlist = colorlist

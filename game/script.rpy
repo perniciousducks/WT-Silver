@@ -29,6 +29,7 @@ label after_load:
 
 #TODO Remove the necessity for post-default-init calls by fixing code
 label temporary_post_default_init:
+    call default_hermione_class_init
     call default_cho_class_init
     call default_astoria_class_init
     call default_tonks_class_init

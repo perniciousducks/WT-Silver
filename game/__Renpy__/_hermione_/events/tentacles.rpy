@@ -67,8 +67,10 @@ label tentacle_scene_intro: #Public tentacle scene
     $ tentacle_cosmetic = True
 
     if her_reputation > 15:
-        jump tentacle_1
-    jump tentacle_2
+        call tentacle_1
+    else:
+        call tentacle_2
+    return
 
 
 label tentacle_1: #Public tentacle scene
@@ -164,7 +166,7 @@ label tentacle_1: #Public tentacle scene
     $ tentacle_cosmetic = False
     $ hermione_busy = True
 
-    jump main_room
+    return
 
     #enter vagina
     #put flower to ear
@@ -258,7 +260,7 @@ label tentacle_2: #Enjoyable tentacle scene
     $ tentacle_cosmetic = False
     $ hermione_busy = True
 
-    jump main_room
+    return
 
 
 
@@ -329,3 +331,5 @@ label costume_scene_1: #Maid role-play
     m "Very well indeed! You've taken to role-play like a duck to water."
     m "40 points to Gryffindor."
     her "Thank you [genie_name]."
+
+    return

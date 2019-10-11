@@ -9,11 +9,6 @@
     
 screen say(who, what, side_image=None):
     zorder 30 #Otherwise the character sprite would be obscuring it.
-    
-    if side_image:
-        add side_image yalign 1.0 yanchor 1.0
-    else:
-        add SideImage() xalign 0.0 yalign 1.0 yanchor 1.0
 
     #Hotkeys
     use hotkeys_say
@@ -58,6 +53,11 @@ screen say(who, what, side_image=None):
     # Use the quick menu.
     if not hkey_chat_hidden and not who == None:
         use quick_menu
+        
+    if side_image:
+        add side_image yalign 1.0 yanchor 1.0 zoom 0.5
+    else:
+        add SideImage() xalign 0.0 yalign 1.0 yanchor 1.0 zoom 0.5
 
 ##############################################################################
 # Choice

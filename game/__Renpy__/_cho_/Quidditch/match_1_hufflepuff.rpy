@@ -54,8 +54,8 @@ label hufflepuff_match:
     m "And that’s today?"
     call sna_main("Indeed.","snape_03")
     m "(...)"
-    m "Wouldn’t the other teacher see me if I went?"
-    call sna_main("Don't worry. I’ve arranged to have us moved from the teachers' seats to the commentator both.","snape_24")
+    m "Wouldn’t the other teachers see me if I went?"
+    call sna_main("Don't worry. I’ve arranged to have us moved from the teachers' seats to the commentator booth.","snape_24")
     call sna_main("Just the two of us...","snape_23")
     m "And Miss Granger?"
     call sna_main("Granger...","snape_08")
@@ -225,7 +225,7 @@ label hufflepuff_match:
 
 
     # Speech
-    call her_main("And now, to say a few words and declare the games open, Professor Dumbledore!", mouth="open", eye="closed")
+    call her_main("And now, to say a few words and declare the games to be open, Professor Dumbledore!", mouth="open", eye="closed")
     call her_main("", mouth="base", eye="soft")
     call ctc
 
@@ -404,7 +404,7 @@ label hufflepuff_match:
     $ qp_mob_reaction[0] = "emo8"
     $ qp_mob_reaction[1] = "emo7"
     $ qp_mob_reaction[2] = "emo8"
-    ">After a moment of confusion the crowd cheers excitedly, desperate to see the match kickoff."
+    ">After a moment of confusion the crowd cheers excitedly, eager to see the match kickoff."
     $ qp_mob_reaction[0] = None
     $ qp_mob_reaction[1] = None
     $ qp_mob_reaction[2] = None
@@ -481,7 +481,7 @@ label hufflepuff_match:
     qcr "START THE GAME! START THE GAME!"
     ">Hermione’s voice eventually gets drowned out by the growing restlessness of the crowd."
     call her_main("", mouth="normal", eye="base",xpos="120",ypos="base",flip=True)
-    call her_main("Ugh, fine. If everyone wants us to begin play without knowing a SINGLE thing... then that’s OK! A good commentator knows when to accommodate for a crowd’s impatience!", mouth="open", eye="closed")
+    call her_main("Ugh, fine. If everyone wants us to begin playing without knowing a SINGLE thing... then that’s OK! A good commentator knows when to accommodate for a crowd’s impatience!", mouth="open", eye="closed")
     hide screen hermione_main
     call sna_main("{size=-4}This should be good.{/size}","snape_02",ypos="head") # Small text.
     $ qp_mob_reaction[0] = "emo8"
@@ -502,7 +502,7 @@ label hufflepuff_match:
     # Start of the Game
     $ renpy.sound.play("sounds/referee.mp3")
     play bg_sounds "music/11 The Quidditch Match_original.mp3"
-    ">A Grey haired woman then throws the quaffle into the air which signals the start of the match and the players quickly takes off!"
+    ">A Grey haired woman then throws the quaffle into the air which signals the start of the match and the players quickly take off!"
 
     call her_main("Oh, wow... They’re going quite f-fast...", mouth="normal", eye="shocked", flip=True,xpos="120",ypos="base")
     call her_main("", mouth="normal", eye="happyCl")
@@ -578,7 +578,7 @@ label hufflepuff_match:
     call sna_main("Surely you must have learnt how to read by now, Miss Granger?","snape_03",ypos="head")
     $ renpy.sound.play("sounds/ball_hit.mp3")
     $ qp_mob_reaction[2] = None
-    call her_main("Hey! I have excellent reading skills I’ll have you know...", mouth="mad", eye="angryL")
+    call her_main("Hey! I have excellent reading skills, I’ll have you know...", mouth="mad", eye="angryL")
     $ renpy.sound.play("sounds/crowd_cheer2.mp3")
     $ renpy.music.stop(fadeout=4)
     call her_main("...", mouth="normal", eye="angryCl")
@@ -646,14 +646,14 @@ label hufflepuff_match:
     call her_main("I’m trying to commentate the game!", mouth="mad", eye="frown")
     $ qp_mob_reaction[0] = None
     $ renpy.sound.play("sounds/ball_hit.mp3")
-    call sna_main("Yes, and I was starting to enjoy it, you are missing most of it by the way...","snape_20",ypos="head")
+    call sna_main("Yes, and I was starting to enjoy it. You are missing most of it by the way...","snape_20",ypos="head")
     call her_main("As a result of your yelling!", mouth="scream", eye="angryCl")
     call her_main("", mouth="normal", eye="AngryCl")
     call sna_main("Eyes forward... girl.","snape_13",ypos="head")
     hide screen hermione_main
     her "*Grrrrr*"
     call her_chibi("stand","375","105", flip=True)
-    ">Hermione’s eyes briefly meets with yours as if she can’t believe you’re letting Snape talk to her that way."
+    ">Hermione’s eyes briefly meet with yours as if she can’t believe you’re letting Snape talk to her that way."
     call sna_main("{size=-4}As I was saying... They’re the only reason I watch the bloody thing. Now, mind if I top that one off for you?{/size}","snape_20",ypos="head")
 
 
@@ -675,7 +675,7 @@ label hufflepuff_match:
     # Hooch should blow the whistle here.
     pause 1.0
     call hide_blkfade
-    her "What was that? Did somebody do a foul?"
+    her "What was that? Did somebody make a foul?"
     "You see Cho flying over to the commentator booth glaring at Hermione with a look of pure hatred."
     #call hide_blkfade
 
@@ -702,7 +702,7 @@ label hufflepuff_match:
     call her_main("", mouth="mad", eye="shocked")
     $ cho_class.set_body(armright="arm_down_r")
     $ cho_class.body['armright'][4] = True
-    call cho_main("My first ever win this season and you didn’t even notice it! No one did thanks to your dreadful commentating!", "scream", "closed", "angry", "L")
+    call cho_main("My first ever win this season and you didn’t even notice it! No one did, thanks to your dreadful commentating!", "scream", "closed", "angry", "L")
     call cho_main("", "upset", "angry", "angry", "down")
     call her_main("Oh...", mouth="normal", eye="shocked")
     call her_main("So should I announce it now?", mouth="open", eye="worriedCl")

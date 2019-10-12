@@ -18,7 +18,7 @@ label hg_pf_grope_breasts_T1:
 
     call her_main("(??!)", "base", "narrow", "base", "up", cheeks="blush")
     call play_music("playful_tension") #SEX THEME.
-    call her_main("[genie_name], what are you-?","angry","worriedCl", cheeks="blush",emote="05")
+    call her_main("[genie_name], what are you-?", "angry", "worriedCl", "worried", "mid", cheeks="blush",emote="05")
     call nar(">She tries to pull away again.")
     call nar(">You squeeze her tits like a vice.")
 
@@ -32,7 +32,7 @@ label hg_pf_grope_breasts_T1:
     call her_main("M-my happy place...?", "angry", "wink", "base", "mid")
     call nar(">You feel the girl's shapely breasts in your palms...")
 
-    call her_main("............................","shock","worriedCl", ypos="head")
+    call her_main("............................", "shock", "worriedCl", "worried", "mid", ypos="head")
 
     menu:
         "-Squeeze her tits with all of your strength-":
@@ -40,7 +40,7 @@ label hg_pf_grope_breasts_T1:
             call nar(">You put strength into your hold...")
             call her_main("my...........", "disgust", "narrow", "base", "down", cheeks="blush")
             call nar(">You squeeze her tits even harder...")
-            call her_main("[genie_name], you're hurting them...","shock","worriedCl")
+            call her_main("[genie_name], you're hurting them...", "shock", "worriedCl", "worried", "mid")
             m "Be quiet [hermione_name]..."
             call her_main("aw..............", "disgust", "narrow", "base", "down", cheeks="blush")
             call nar(">You squeeze her ample tits with all your strength.")
@@ -48,7 +48,7 @@ label hg_pf_grope_breasts_T1:
             call her_main("They're gonna burst! Please stop it!", "angry", "squint", "base", "mid", cheeks="blush")
             m "They are not going to burst, you silly girl..."
             call nar(">You loosen your grip a little...")
-            call her_main("It hurts...","shock","worriedCl")
+            call her_main("It hurts...", "shock", "worriedCl", "worried", "mid")
             m "You will be fine..."
             call her_main(".........", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
@@ -57,16 +57,16 @@ label hg_pf_grope_breasts_T1:
         "-Give her tits a tender massage-":
             $ her_mood += 3
             call nar(">You start massaging Hermione's beasts through her uniform...")
-            call her_main("[genie_name]...?","shock","worriedCl")
+            call her_main("[genie_name]...?", "shock", "worriedCl", "worried", "mid")
             m "The points, [hermione_name]... You need the points. Concentrate on that."
             call her_main("Yes...", "annoyed", "narrow", "angry", "R", cheeks="blush")
-            call her_main("Yes, for the honour of the \"gryffindor\" house...","angry","worriedCl", cheeks="blush")
+            call her_main("Yes, for the honour of the \"gryffindor\" house...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
             "*Squeeze-squeeze!*"
             call nar(">You keep massaging her tits...","start")
             call nar(">You give one of her breasts a few pinches trying to locate the nipple...","end")
-            call her_main("[genie_name]... you're pinching me...?","shock","worriedCl")
+            call her_main("[genie_name]... you're pinching me...?", "shock", "worriedCl", "worried", "mid")
             call nar(">Your attempts prove to be fruitless though. The fabric of the uniform is quite thick...")
-            call her_main("\"gryffindor\" ............","angry","worriedCl", cheeks="blush")
+            call her_main("\"gryffindor\" ............", "angry", "worriedCl", "worried", "mid", cheeks="blush")
 
             jump end_hg_pf_grope
 
@@ -170,16 +170,16 @@ label hg_pf_grope_breasts_T2_continue:
 
     call nar(">You squeeze one of the girl's tits tightly and give the other a couple of firm tugs.")
 
-    call her_main("Ah...","open","worriedCl")
+    call her_main("Ah...", "open", "worriedCl", "worried", "mid")
     m "Enjoying yourself, [hermione_name]?"
 
     call her_main("[genie_name], I am only doing this-", "upset", "closed", "base", "mid")
 
     call nar(">You squeeze both of her tits with force...")
 
-    call her_main("ah...","shock","worriedCl")
+    call her_main("ah...", "shock", "worriedCl", "worried", "mid")
     m "Tell me you like this, [hermione_name]!"
-    call her_main("[genie_name], I am only letting you do this to me because-","open","worriedCl")
+    call her_main("[genie_name], I am only letting you do this to me because-", "open", "worriedCl", "worried", "mid")
     m "I know, I know..."
     m "You are starting to sound like a broken record."
     call her_main("....", "annoyed", "narrow", "annoyed", "mid")
@@ -300,10 +300,10 @@ label hg_pf_grope_breasts_T3_clothed:
         "-Pull on them abruptly with force-":
             call nar(">You give Hermione's tits a sudden but firm pull...","start")
             with vpunch
-            call her_main("Ouch....","angry","worriedCl", cheeks="blush",emote="05")
+            call her_main("Ouch....", "angry", "worriedCl", "worried", "mid", cheeks="blush",emote="05")
             call nar(">You pull on her tits again. This time much stronger.","start")
             with vpunch
-            call her_main("Ouch! [genie_name], what are you trying to do...?","angry","worriedCl", cheeks="blush",emote="05")
+            call her_main("Ouch! [genie_name], what are you trying to do...?", "angry", "worriedCl", "worried", "mid", cheeks="blush",emote="05")
             call nar(">You jerk the girl down by her tits with all your strength...","start")
             with vpunch
             with vpunch
@@ -455,16 +455,16 @@ label hg_pf_grope_breasts_T5_naked:
     call her_main("Ah...", "soft", "narrow", "annoyed", "up")
     m "A bit sensitive today, aren't you?"
     call her_main("I suppose...", "base", "narrow", "base", "mid_soft")
-    call her_main("Ah...","open","worriedCl")
+    call her_main("Ah...", "open", "worriedCl", "worried", "mid")
     m "You like it when I squeeze them like this?"
     call her_main("I do, [genie_name]... Ah...", "base", "narrow", "base", "mid_soft")
     m "Heh..."
     m "What if I pinch your nipples?"
     call her_main("!!!", "angry", "base", "base", "mid")
-    call her_main("Ah! [genie_name]...","open","worriedCl")
+    call her_main("Ah! [genie_name]...", "open", "worriedCl", "worried", "mid")
     m "And what if I do this?"
     call nar(">You grab the girl by her hard nipples and start pulling...")
-    call her_main("Ah... Ah... Ah... [genie_name]...","shock","worriedCl")
+    call her_main("Ah... Ah... Ah... [genie_name]...", "shock", "worriedCl", "worried", "mid")
     m "What if I pull even harder?"
     with hpunch
 

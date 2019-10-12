@@ -155,7 +155,7 @@ label hg_pr_handjob_T1_E1:
     call her_main("[genie_name]?", "open", "base", "base", "mid")
     m "Did his \"wee-wee\" shoot white stuff at you, [hermione_name]?"
     call her_main("Well...","annoyed","worriedL")
-    call her_main("No, it did not...","normal","worriedCl")
+    call her_main("No, it did not...", "normal", "worriedCl", "worried", "mid")
 
     menu:
         "\"Well, this doesn't count then.\"":
@@ -242,7 +242,7 @@ label hg_pr_handjob_T1_E3:
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     show screen blktone
-    call her_main("Awful, [genie_name]. Simply awful...","scream","worriedCl", xpos="right", ypos="base")
+    call her_main("Awful, [genie_name]. Simply awful...", "scream", "worriedCl", "worried", "mid", xpos="right", ypos="base")
     m "You've got something... in your hair there..."
     call her_main("Huh?", "open", "base", "base", "mid")
     call her_main("Oh, no! I thought I got it all off...", "open", "base", "base", "R", cheeks="blush")
@@ -318,7 +318,7 @@ label hg_pr_handjob_T2_E1:
             call her_main("And now I will have to give him the wank off no matter what...", "angry", "narrow", "base", "down")
             m "Well, I didn't force you to give him that promise, did I?"
             call her_main("......", "angry", "base", "base", "mid")
-            call her_main("This is just not fair!","scream","worriedCl")
+            call her_main("This is just not fair!", "scream", "worriedCl", "worried", "mid")
 
             call her_walk(action="leave", speed=2.5)
 
@@ -385,7 +385,7 @@ label hg_pr_handjob_T2_E2:
             call her_main("...........", "annoyed", "narrow", "angry", "R")
 
         "\"Yes, that's exactly what you are.\"":
-            call her_main("I was afraid that you would say that, [genie_name]...","mad","worriedCl", tears="soft_blink")
+            call her_main("I was afraid that you would say that, [genie_name]...", "mad", "worriedCl", "worried", "mid", tears="soft_blink")
             her "But you are wrong, [genie_name]."
             call her_main("You of all people should understand that I take no pleasure in this...", "angry", "base", "base", "mid", tears="soft")
             call her_main("I just do what needs to be done...", "normal", "base", "base", "R", tears="soft")

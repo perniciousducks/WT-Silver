@@ -609,7 +609,7 @@ label ball_ending_E2:
     m "*Sigh....*"
     m "Fine, let's have it your way..."
     m "But you are abusing your power, girl!"
-    call her_main("*Giggle!*","crooked_smile","worriedCl",cheeks="blush")
+    call her_main("*Giggle!*", "crooked_smile", "worriedCl", "worried", "mid",cheeks="blush")
     m "And after we're done, we'll have that talk!"
 
     # SUCKING
@@ -885,7 +885,7 @@ label ball_ending_E2:
         g4 "{size=+5}Do I really?{/size}"
         call her_main("Oh... You mean the hair thing...?", "soft", "narrow", "base", "R_soft",cheeks="blush")
         m "Yes...\"the hair thing\"..."
-        call her_main("Well, what did you expect me to do, sir?","crooked_smile","worriedCl",cheeks="blush")
+        call her_main("Well, what did you expect me to do, sir?", "crooked_smile", "worriedCl", "worried", "mid",cheeks="blush")
         m "Literally anything..."
         g4 "...but {size=+7}THAT!{/size}"
         call her_main("But... I need to look my best for the coronation...", "open", "base", "base", "mid")
@@ -2241,7 +2241,7 @@ label ball_ending_E2:
         call her_main("Thank you, sir.", "soft", "narrow", "base", "R_soft",cheeks="blush",ypos="head")
         m "Swallowing my load in front of the entire school?"
         g9 "Very nice touch."
-        call her_main("........................................................","crooked_smile","worriedCl", cheeks="blush")
+        call her_main("........................................................", "crooked_smile", "worriedCl", "worried", "mid", cheeks="blush")
 
         call play_music("playful_tension") # SEX THEME.
 
@@ -3049,10 +3049,10 @@ label ball_ending_E3:
         dum_[1]"Miss Granger, I found this letter on my desk..."
         dum_[1]"It's addressed to you..."
         call her_main("A letter, sir?", "soft", "base", "base", "mid")
-        call her_main("Oh, of course! The one you wrote for me, sir.","grin","worriedCl",emote="05")
+        call her_main("Oh, of course! The one you wrote for me, sir.", "grin", "worriedCl", "worried", "mid",emote="05")
         dum_[1]"This letter is not from me, miss Granger."
         call her_main("It is not?", "annoyed", "squint", "base", "mid")
-        call her_main("Oh, I see...","grin","worriedCl",emote="05")
+        call her_main("Oh, I see...", "grin", "worriedCl", "worried", "mid",emote="05")
         call her_main("There is no need to be so shy about this, sir. It's alright.")
         dum_[1]"*ahem*... here it is."
         call her_main("Thank you, sir.", "base", "base", "base", "mid")

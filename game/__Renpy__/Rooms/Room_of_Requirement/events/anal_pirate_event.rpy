@@ -46,7 +46,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
         call her_main("...........","annoyed","worriedL")
         m "Time to get me ole canon out..."
-        call her_main(".................","angry","worriedCl",emote="05")
+        call her_main(".................", "angry", "worriedCl", "worried", "mid",emote="05")
         call blkfade
         call play_sound("climb_desk")
         pause 2
@@ -55,12 +55,12 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main("!!!", "angry", "wide", "base", "stare", ypos="head")
         call play_sound("slap")
         g4 "Blistering barnacles!"
-        call her_main("Ouch!","mad","worriedCl",tears="soft_blink")
+        call her_main("Ouch!", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
         m "Jus' try t' loosen up a wee, would ye?"
         call her_main("I be tryin'!", "angry", "base", "base", "mid",tears="soft")
         m "Aye, wha' if I do this..?"
         $ renpy.play('sounds/boing03.mp3')
-        call her_main("Ouch! Wha' are ye doin', captain?","mad","worriedCl",tears="soft_blink")
+        call her_main("Ouch! Wha' are ye doin', captain?", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
         m "Aye, this won't work either..."
         m "Hm..."
         m "Har har, I reckon I know wha' we should do."
@@ -72,27 +72,27 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Just set sail, captain?!", "angry", "wide", "base", "stare",ypos="head")
                 $ renpy.play('sounds/spit.mp3') #Sound of spiting.
                 g4 "*SPIT!*"
-                call her_main("What are ye doing you Seadog!","scream","worriedCl")
+                call her_main("What are ye doing you Seadog!", "scream", "worriedCl", "worried", "mid")
                 call her_main("No, cap'n, Belay that! Ye're nah in open waters--", "open", "base", "base", "mid")
                 m "No needs, raise the anchor! Heave Ho!"
                 $ renpy.play('sounds/gltch.mp3')
                 with hpunch
                 call her_main("ARGH!", "angry", "base", "base", "mid",tears="soft")
-                call her_main("Ouch! Ouch! Ouch!","mad","worriedCl",tears="soft_blink")
+                call her_main("Ouch! Ouch! Ouch!", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
                 g4 "Nigh-on in! Me ship has left ye harbour lass!"
-                call her_main("No, ye're hurtin' me! Ye be hurtin' me!","scream","worriedCl")
+                call her_main("No, ye're hurtin' me! Ye be hurtin' me!", "scream", "worriedCl", "worried", "mid")
                 g4 "Yo Ho Ho!"
-                call her_main("Blisterin' Barnacles! It hurts!","scream","worriedCl")
+                call her_main("Blisterin' Barnacles! It hurts!", "scream", "worriedCl", "worried", "mid")
                 g4 "Shut it, lass! I be approaching ye secret cavern!"
                 g4 "Yer cavern be so tight 'tis completely un-plunderable!"
-                call her_main("Then stop, Scallywag!","mad","worriedCl",tears="soft_blink")
+                call her_main("Then stop, Scallywag!", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
                 m "Neigh! We needs t' excavate yer cavern a wee!"
-                call her_main("But I don't wants ye t'!","mad","worriedCl",tears="soft_blink")
+                call her_main("But I don't wants ye t'!", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
                 m "Aye? How do ye expect scallywags t' farrg ye up yer arse then?"
-                call her_main("Wha' scallywags?","shock","worriedCl")
+                call her_main("Wha' scallywags?", "shock", "worriedCl", "worried", "mid")
                 g4 "Ye know... scallywags."
                 g4 "Argh, Blimey... Me canon be to wide now."
-                call her_main("Stop then! Avast, captain!","open","worriedCl")
+                call her_main("Stop then! Avast, captain!", "open", "worriedCl", "worried", "mid")
                 call her_main("Change course captain, I've changed me mind! I don't needs 90 galleon points!")
                 g4 "I reckon I be right on course..."
 
@@ -103,7 +103,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 g4 "Yo Ho Ho!!!"
                 call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!", "scream", "wide", "base", "stare")
                 g4 "Let us pump this wee cavern full o' seamen then, savvy?"
-                call her_main("Aye... , I jus' wants this t' end...","scream","worriedCl",cheeks="blush",tears="crying")
+                call her_main("Aye... , I jus' wants this t' end...", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="crying")
 
                 call blkfade
                 call her_chibi("hide") #HERMIONE
@@ -177,7 +177,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 #ON THE DESK
                 call her_main(".............", "open", "base", "base", "mid")
                 g4 "Aye! Sail, Ho!!"
-                call her_main("Ouch!","scream","worriedCl")
+                call her_main("Ouch!", "scream", "worriedCl", "worried", "mid")
                 m "Relax lass. Approaching harbour."
 
                 $ renpy.play('sounds/gltch.mp3')
@@ -186,7 +186,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "stare")
                 g4 "Argh!!!"
                 call her_main("Ye... ye...", "scream", "wide", "base", "stare")
-                call her_main("Ye ship be to great","shock","worriedCl")
+                call her_main("Ye ship be to great", "shock", "worriedCl", "worried", "mid")
                 g4 "Let us pump this wee cavern full o' seamen then, savvy?"
                 call her_main(".....................", "angry", "squint", "base", "mid",cheeks="blush")
 
@@ -308,7 +308,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "A grand, wicked pirate be plunderin' yer booty!"
                 call her_main("*SOB!* Yeees! *SOB!*", "scream", "squint", "base", "mid",cheeks="blush",tears="messy")
                 g4 "Take me seamen!"
-                call her_main("No, I'm scared! *SOB!*","scream","worriedCl",cheeks="blush",tears="messy")
+                call her_main("No, I'm scared! *SOB!*", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="messy")
 
         menu:
             "-Sink her vessel, fill her up-":
@@ -349,7 +349,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main(".......................", "full", "base", "base", "mid",tears="messy")
                 call her_main(".............")
                 $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
-                call her_main("{size=+7}*GULP!*{/size}","cum","worriedCl")
+                call her_main("{size=+7}*GULP!*{/size}", "cum", "worriedCl", "worried", "mid")
                 call her_main("*SOB!* I HATE YOU...", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
                 call her_main("{size=+5}I HATE YE'N AND YER RUSTY OLE CANON!{/size}", "scream", "base", "angry", "mid",cheeks="blush",tears="messy")
                 call her_main("{size=+5}I HATE YE'N! YE HEAR ME?!{/size}")
@@ -525,7 +525,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         m "Wha' be this natter o' settlin down then?"
         call her_main("Ye misunderstood me captain.", "angry", "base", "base", "mid")
         call her_main("I meant t' say, would ye stop plunderin for a lass {size=+5}like{/size} me?", "angry", "narrow", "base", "down")
-        call her_main("I would ne'er propose t' a scallywag wit' his pegleg in me arse, captain...","angry","worriedCl",emote="05")
+        call her_main("I would ne'er propose t' a scallywag wit' his pegleg in me arse, captain...", "angry", "worriedCl", "worried", "mid",emote="05")
         m "Good. 'cause I don't reckon any scallywag would be able t' say \"neigh\" to you lassie."
         call her_main("Ah{image=textheart}...", "open", "closed", "base", "mid")
         call her_main("Wha' I meant... ah{image=textheart} {w} ...t' say was ah{image=textheart}... {w}...do ye reckon any pirate would ever ah{image=textheart}... {w} ...leave th' sea fer a lass like me?", "angry", "narrow", "base", "down")
@@ -587,7 +587,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main("I'm cumming captain...{image=textheart}{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up")
         g4 "Agh! My cock!"
         g4 "Relax your muscles a little, would you?"
-        call her_main("BUT I'M CUMMING!{image=textheart}{image=textheart}{image=textheart}","open","worriedCl")
+        call her_main("BUT I'M CUMMING!{image=textheart}{image=textheart}{image=textheart}", "open", "worriedCl", "worried", "mid")
         g4 "Fine! 'ave it yer way wench!"
         with hpunch
         call her_main("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}", "scream", "wide", "base", "stare")
@@ -616,7 +616,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ renpy.play('sounds/cannon.mp3')
                 call cum_block
                 with hpunch
-                call her_main("Ah! I BE A WENCH!!!!{image=textheart}{image=textheart}{image=textheart}","scream","worriedCl",cheeks="blush",tears="crying")
+                call her_main("Ah! I BE A WENCH!!!!{image=textheart}{image=textheart}{image=textheart}", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="crying")
                 $ renpy.play('sounds/cannon.mp3')
                 with hpunch
                 m "Agh!"
@@ -645,7 +645,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
                 call her_main("Ah-aha! Ye're cummin'! {image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead",ypos="head")
                 g4 "{size=+7}Aye I do, wench{/size}"
-                call her_main("Blisterin' Barnacles, me too! Me too!","scream","worriedCl",cheeks="blush",tears="messy")
+                call her_main("Blisterin' Barnacles, me too! Me too!", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="messy")
                 g4 "{size=+7}FARRRGIN' WENCH!{/size}"
                 $ renpy.play('sounds/cannon.mp3')
                 call cum_block

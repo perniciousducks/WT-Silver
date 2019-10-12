@@ -74,7 +74,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         call her_main("...I hope nobody will notice that I have no underwear on today...","annoyed","worriedL")
         call her_main("Oh, and I will be back tonight to pick them up, [genie_name].", "open", "base", "base", "mid")
         m "Of course. Your panties will be right here on my desk, waiting for you..."
-        call her_main(".............","angry","worriedCl",emote="05")
+        call her_main(".............", "angry", "worriedCl", "worried", "mid",emote="05")
 
     else:
         if hg_ps_get_panties.points >= 1:
@@ -146,7 +146,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 her "[genie_name], you are joking, right?"
                 m "I am not..."
                 call her_main("B-but...", "open", "base", "base", "mid")
-                call her_main("........................................","normal","worriedCl")
+                call her_main("........................................", "normal", "worriedCl", "worried", "mid")
                 call her_main("(Must you always have your way, [genie_name]?)", "angry", "base", "angry", "mid")
                 m "What was that, [hermione_name]?"
                 call her_main("It's nothing, [genie_name].", "scream", "closed", "angry", "mid")
@@ -159,7 +159,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
 
                 ">A tiny stream of cum trickles down one of her legs..."
                 call nar(">Hermione looks very uncomfortable...","end")
-                call her_main("......................","angry","worriedCl",emote="05")
+                call her_main("......................", "angry", "worriedCl", "worried", "mid",emote="05")
             "\"Well, suit yourself...\"":
                 pass
 
@@ -186,7 +186,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         $ hermione_wear_panties = True
         call update_her_uniform
 
-        call her_main("(This feels funny...)","angry","worriedCl",emote="05")
+        call her_main("(This feels funny...)", "angry", "worriedCl", "worried", "mid",emote="05")
         call her_main("Will this be all, [genie_name]?", "upset", "wink", "base", "mid")
 
     if her_whoring >= 9 and her_whoring <= 15: #LEVEL 04+ (THIRD EVENT)
@@ -261,13 +261,13 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 call her_main("My mouth?!", "scream", "wide", "base", "mid")
                 m "What's the big deal? It wouldn't be the first time you've tasted my cum."
                 call her_main("It's a bit different! I wore these panties before I gave them to you.", "scream", "closed", "angry", "mid")
-                call her_main("Not to mention that your cum is all cold and slimy...","scream","worriedCl")
+                call her_main("Not to mention that your cum is all cold and slimy...", "scream", "worriedCl", "worried", "mid")
                 m "Well in that case hand them back."
                 call her_main("What? Can't I just put them on?", "angry", "wink", "base", "mid")
                 m "I'm afraid not, you clean them now or you hand them back."
                 call her_main("{size=-4}Fine...{/size}", "angry", "narrow", "base", "down")
                 m "What was that?"
-                call her_main("I said I'll clean them ok!","shock","worriedCl")
+                call her_main("I said I'll clean them ok!", "shock", "worriedCl", "worried", "mid")
                 m "Well..."
                 call her_main("...", "angry", "narrow", "base", "down")
                 call nar(">Hermione reluctantly puts her cum-soaked panties in her mouth.")
@@ -352,7 +352,7 @@ label hg_ps_get_panties_complete:
                         call her_main("(But we need the points...)", "annoyed", "narrow", "angry", "R")
                         call her_main("Can I have my payment now please?", "disgust", "narrow", "base", "mid_soft")
                         m "What about your panties?"
-                        call her_main("Oh, them too of course...","angry","worriedCl",emote="05")
+                        call her_main("Oh, them too of course...", "angry", "worriedCl", "worried", "mid",emote="05")
                         if her_panties_soaked:
                             jump hg_cum_on_panties_response
                         else:

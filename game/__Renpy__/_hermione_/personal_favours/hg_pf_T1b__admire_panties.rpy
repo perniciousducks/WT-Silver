@@ -233,7 +233,7 @@ label hg_pf_admire_panties_T2: # Call label
             call her_main("..............................", "soft", "base", "base", "mid")
             her "...........................?"
             call her_main("................................", "grin", "base", "base", "R")
-            call her_main("[genie_name], please... You are embarrassing me.","grin","worriedCl",emote="05")
+            call her_main("[genie_name], please... You are embarrassing me.", "grin", "worriedCl", "worried", "mid",emote="05")
             call ctc
 
             return
@@ -290,7 +290,7 @@ label hg_pf_admire_panties_T3_intro_E1:
                     m "Absolutely!"
                     $ current_payout +=10
                     m "Ten additional points to \"Gryffindor\"!"
-                    call her_main("Thank you, [genie_name]!","base","worriedCl")
+                    call her_main("Thank you, [genie_name]!", "base", "worriedCl", "worried", "mid")
                     call ctc
 
                 "\"Absolutely not!\"":
@@ -346,7 +346,7 @@ label hg_pf_admire_panties_T3_E1:
                     m "Absolutely!"
                     $ current_payout +=10
                     m "Ten additional points to \"Gryffindor\"!"
-                    call her_main("Thank you, [genie_name]!","base","worriedCl")
+                    call her_main("Thank you, [genie_name]!", "base", "worriedCl", "worried", "mid")
                     call ctc
 
                 "\"Absolutely not!\"":

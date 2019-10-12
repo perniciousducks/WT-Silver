@@ -175,7 +175,7 @@ label hg_pf_grope_T1_E1:
     menu:
         "\"I'm gonna molest your tits now.\"":
             call her_main("!!!", "soft", "wide", "worried", "shocked")
-            call her_main("S-Sir?!","disgust","worriedCl")
+            call her_main("S-Sir?!", "disgust", "worriedCl", "worried", "mid")
             call nar(">You reach out swiftly and grab both of her tits through her uniform...")
 
             jump hg_pf_grope_breasts_T1
@@ -231,7 +231,7 @@ label hg_pf_grope_T2_intro_E1:
     menu:
         "\"I'm gonna play with your tits now.\"":
             #call nar(">You reach out swiftly and grab both of her tits through her uniform...")
-            call her_main("[genie_name].....?","disgust","worriedCl")
+            call her_main("[genie_name].....?", "disgust", "worriedCl", "worried", "mid")
 
             jump hg_pf_grope_breasts_T2
 
@@ -258,7 +258,7 @@ label hg_pf_grope_T2_E1:
     menu:
         "\"I'm gonna molest your tits now.\"":
             #call nar(">You reach out swiftly and grab both of her tits through her uniform...")
-            call her_main("[genie_name].....?","disgust","worriedCl")
+            call her_main("[genie_name].....?", "disgust", "worriedCl", "worried", "mid")
 
             jump hg_pf_grope_breasts_T2
 

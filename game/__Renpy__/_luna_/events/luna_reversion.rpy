@@ -422,7 +422,7 @@ label luna_revert_1: #Reversion event #DONE
             m "Not one."
             call her_main("I suppose that's OK then...", "annoyed", "narrow", "angry", "R")
             call her_main("{size=-5}(Why don't I ever get paid in gold...){/size}", "annoyed", "narrow", "annoyed", "mid")
-            call her_main("{size=-5}(No, Hermione! If I did that I'd be a prostitute...){/size}","normal","worriedCl")
+            call her_main("{size=-5}(No, Hermione! If I did that I'd be a prostitute...){/size}", "normal", "worriedCl", "worried", "mid")
             call her_main("{size=-5}{image=textheart}{image=textheart}{image=textheart}{/size}", "grin", "narrow", "annoyed", "up")
 
     call her_main("Well regardless, she has to be punished.", "annoyed", "narrow", "annoyed", "mid")
@@ -695,7 +695,7 @@ label luna_revert_2: #Non-Reversion event #DONE
             call her_main("!!!", "angry", "wide", "base", "stare")
             m "(Is that bad?)"
             ">Hermione gives you a pleading look with her eyes."
-            call her_main("...","angry","worriedCl", tears="crying")
+            call her_main("...", "angry", "worriedCl", "worried", "mid", tears="crying")
             m "(Probably...)"
             m "Um..."
             call lun_main("Go on old man...","normal","suspicious","mad","mid")
@@ -1207,8 +1207,8 @@ label luna_revert_2: #Non-Reversion event #DONE
     call her_main("agh... what happened?", "open", "narrow", "worried", "down")
     call her_main("Was Luna lovegood here?", "upset", "wink", "base", "mid")
     m "Who?"
-    call her_main("never mind...","normal","worriedCl")
-    call her_main("I think I'm going go now [genie_name]...","angry","worriedCl",emote="05")
+    call her_main("never mind...", "normal", "worriedCl", "worried", "mid")
+    call her_main("I think I'm going go now [genie_name]...", "angry", "worriedCl", "worried", "mid",emote="05")
     m "Alright, well have a nice day."
     call her_main("ugh...", "disgust", "narrow", "base", "down")
     call her_main("(I could have sworn Luna was here...)","annoyed","worriedL")

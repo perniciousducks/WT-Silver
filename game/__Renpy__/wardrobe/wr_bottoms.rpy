@@ -232,7 +232,7 @@ label equip_bottom:
                     # if her_whoring < 5:
                         # call her_main("Pull my skirt down?!", "shock", "wide", "base", "stare")
                         # call her_main("I'm not pulling my skirt down for you, [genie_name].", "angry", "base", "angry", "mid")
-                        # call her_main("How can you even suggest such a thing!","angry","worriedCl")
+                        # call her_main("How can you even suggest such a thing!", "angry", "worriedCl", "worried", "mid")
                         # call her_main("(disgusting old fool...)", "annoyed", "narrow", "annoyed", "mid")
                     # else:
                         # call her_main("No, [genie_name].", "open", "closed", "base", "mid")
@@ -263,7 +263,7 @@ label equip_bottom:
                     # if her_whoring < 5:
                         # call her_main("Pull my skirt down?!", "shock", "wide", "base", "stare")
                         # call her_main("I'm not pulling my skirt down for you, [genie_name].", "angry", "base", "angry", "mid")
-                        # call her_main("How can you even suggest such a thing!","angry","worriedCl")
+                        # call her_main("How can you even suggest such a thing!", "angry", "worriedCl", "worried", "mid")
                         # call her_main("(disgusting old fool...)", "annoyed", "narrow", "annoyed", "mid")
                     # else:
                         # call her_main("No, [genie_name].", "open", "closed", "base", "mid")
@@ -292,7 +292,7 @@ label equip_bottom:
                     # if her_whoring < 5:
                         # call her_main("Pull my skirt down?!", "shock", "wide", "base", "stare")
                         # call her_main("I'm not pulling my skirt down for you, [genie_name].", "angry", "base", "angry", "mid")
-                        # call her_main("How can you even suggest such a thing!","angry","worriedCl")
+                        # call her_main("How can you even suggest such a thing!", "angry", "worriedCl", "worried", "mid")
                         # call her_main("(disgusting old fool...)", "annoyed", "narrow", "annoyed", "mid")
                     # else:
                         # call her_main("No, [genie_name].", "open", "closed", "base", "mid")
@@ -317,7 +317,7 @@ label equip_bottom:
                     # if her_whoring < 5:
                         # call her_main("Pull my skirt down?!", "shock", "wide", "base", "stare")
                         # call her_main("I'm not pulling my skirt down for you, [genie_name].", "angry", "base", "angry", "mid")
-                        # call her_main("How can you even suggest such a thing!","angry","worriedCl")
+                        # call her_main("How can you even suggest such a thing!", "angry", "worriedCl", "worried", "mid")
                         # call her_main("(disgusting old fool...)", "annoyed", "narrow", "annoyed", "mid")
                     # else:
                         # call her_main("No, [genie_name].", "open", "closed", "base", "mid")
@@ -349,7 +349,7 @@ label equip_bottom:
                             # call her_main("I'm a Gryffindor!", "annoyed", "narrow", "annoyed", "mid")
                             # if skirt_choice in ["skirt_cheer_s","skirt_cheer_sexy_s"]:
                                 # call her_main("(A muggle-born on top of that.)", "disgust", "narrow", "base", "down")
-                            # call her_main("I can't wear this!","open","worriedCl")
+                            # call her_main("I can't wear this!", "open", "worriedCl", "worried", "mid")
                             # m "Why not?"
                             # call her_main("I've already told you, I'm a Gryffindor!", "annoyed", "narrow", "annoyed", "up")
                             # m "(...)"
@@ -368,7 +368,7 @@ label equip_bottom:
                                 # g9 "Or bitch!"
                                 # g4 "Or... a whore!"
                                 # g4 "Or--"
-                                # call her_main("I get your point, [genie_name]!!!","scream","worriedCl",cheeks="blush")
+                                # call her_main("I get your point, [genie_name]!!!", "scream", "worriedCl", "worried", "mid",cheeks="blush")
                             # m "I'm giving you an opportunity to better your relationship with them!"
                             # m "Now are you going to wear this for me or not?..."
                             # call her_main("(...)", "annoyed", "narrow", "angry", "R")
@@ -494,7 +494,7 @@ label equip_bottom:
                         # call her_main("Glad to hear that, [genie_name].", "base", "narrow", "base", "mid_soft")
                 # else:
                     # if her_whoring < 5:
-                        # call her_main("No, [genie_name].","open","worriedCl")
+                        # call her_main("No, [genie_name].", "open", "worriedCl", "worried", "mid")
                         # call her_main("I will not wear trousers that short here in school!", "angry", "base", "worried", "mid")
                         # call her_main("(What is he thinking?!...)", "annoyed", "narrow", "angry", "R")
                     # else:
@@ -529,14 +529,14 @@ label equip_bottom:
                         # call her_main("[genie_name]!", "shock", "wide", "base", "stare")
                         # call her_main("You can't just hand underwear to your students!", "angry", "base", "worried", "mid")
                         # m "Underwear?"
-                        # call her_main("Yes, underwear! Panties!","open","worriedCl")
+                        # call her_main("Yes, underwear! Panties!", "open", "worriedCl", "worried", "mid")
                         # call her_main("What else can you possibly call this?", "annoyed", "narrow", "annoyed", "mid")
                         # m "That's a perfectly fine pair of jeans!"
                         # m "No need to make such a fuss about them!... Just put them on!"
-                        # call her_main("No I will not!","scream","worriedCl")
+                        # call her_main("No I will not!", "scream", "worriedCl", "worried", "mid")
                         # call her_main("(Not in a million years...)", "angry", "base", "angry", "mid")
                     # elif her_whoring < 11:
-                        # call her_main("I'm sorry, [genie_name].","open","worriedCl")
+                        # call her_main("I'm sorry, [genie_name].", "open", "worriedCl", "worried", "mid")
                         # call her_main("But I will not wear trousers that short on school grounds!", "angry", "base", "worried", "mid")
                         # call her_main("(What is he thinking?!...)", "annoyed", "narrow", "angry", "R")
                     # else:

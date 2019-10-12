@@ -133,7 +133,7 @@ label hg_pr_kiss_T1_E1:
     m "Tell me what happened, [hermione_name]."
     call her_main("No, I will not, [genie_name].", "annoyed", "narrow", "angry", "R")
     her "Not in a million years!"
-    call her_main("Why do I have to perform such ridiculous tasks anyway?!","shock","worriedCl")
+    call her_main("Why do I have to perform such ridiculous tasks anyway?!", "shock", "worriedCl", "worried", "mid")
     her "What is the point of all this?"
     call her_main("I hate this!", "scream", "closed", "angry", "mid")
     call her_main("...............", "annoyed", "narrow", "angry", "R")
@@ -293,7 +293,7 @@ label hg_pr_kiss_T2_E2:
     call her_main("Aggressive but confident...", "angry", "narrow", "base", "down")
     call her_main("Naturally a small group of spectators gathered up around us right away...", "upset", "closed", "base", "mid")
     call her_main("Mostly boys of course...", "open", "base", "base", "mid", cheeks="blush")
-    call her_main("Some of them even cheered us on...","open","worriedCl", cheeks="blush")
+    call her_main("Some of them even cheered us on...", "open", "worriedCl", "worried", "mid", cheeks="blush")
     call her_main(".....", "base", "squint", "base", "mid")
     her "By the way, the girl I kissed, [genie_name]..."
     m "Hm...?"

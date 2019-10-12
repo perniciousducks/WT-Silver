@@ -109,15 +109,15 @@ label hg_pf_handjob_T1_intro_E1:
     call her_main("[genie_name]!", "angry", "base", "angry", "mid")
     m "Just another favour. No big deal, right?"
     call her_main("......", "disgust", "narrow", "base", "mid_soft")
-    call her_main("{size=-7}I want 100 house points for this...{/size}","angry","worriedCl", emote="05")
+    call her_main("{size=-7}I want 100 house points for this...{/size}", "angry", "worriedCl", "worried", "mid", emote="05")
     m "Huh? What was that?"
-    call her_main("I want 100 house points for this!!!","scream","worriedCl")
-    call her_main("","clench","worriedCl")
+    call her_main("I want 100 house points for this!!!", "scream", "worriedCl", "worried", "mid")
+    call her_main("", "clench", "worriedCl", "worried", "mid")
     m "100 house points, huh?"
     m "And you will stroke my cock and everything?"
     call her_main("{size=-7}Yes...{/size}", "disgust", "narrow", "base", "mid_soft")
     m "Sorry, I couldn't hear you..."
-    call her_main("Yes, I said yes! I will stroke your cock, [genie_name]!","scream","worriedCl")
+    call her_main("Yes, I said yes! I will stroke your cock, [genie_name]!", "scream", "worriedCl", "worried", "mid")
     call her_main("", "upset", "narrow", "angry", "R")
 
     label back_to_handjob_choices:
@@ -253,7 +253,7 @@ label hg_pf_handjob_1:
     call play_music("playful_tension") # SEX THEME.
     call her_main("...........", "disgust", "narrow", "worried", "down", ypos="head")
     m "Whenever you're ready, [hermione_name]."
-    call her_main(".......................","disgust","worriedCl", ypos="head")
+    call her_main(".......................", "disgust", "worriedCl", "worried", "mid", ypos="head")
     pause.1
 
     call hg_chibi_transition("hj_pause", trans="d9")
@@ -263,7 +263,7 @@ label hg_pf_handjob_1:
 
     call bld
     m "Good. Now stroke it."
-    call her_main("Right...","angry","worriedCl", emote="05")
+    call her_main("Right...", "angry", "worriedCl", "worried", "mid", emote="05")
 
     call hg_chibi_transition("hj", trans="d5")
     call ctc
@@ -277,14 +277,14 @@ label hg_pf_handjob_1:
         call her_main("Are you about to finish, [genie_name]?!")
         m "About to finish?"
         m "Don't be ridiculous [hermione_name], we are just getting started."
-        call her_main("Oh...","angry","worriedCl", emote="05")
+        call her_main("Oh...", "angry", "worriedCl", "worried", "mid", emote="05")
         call her_main("......")
         call her_main("You will give me a warning though, won't you, [genie_name]?", "upset", "wink", "base", "mid")
 
     else:
-        call her_main("[genie_name]...?","angry","worriedCl", emote="05")
+        call her_main("[genie_name]...?", "angry", "worriedCl", "worried", "mid", emote="05")
         m "What is it?"
-        call her_main("Will you warn me before... uhm... you now...","angry","worriedCl", emote="05")
+        call her_main("Will you warn me before... uhm... you now...", "angry", "worriedCl", "worried", "mid", emote="05")
 
     $ d_flag_01 = False #If TRUE Genie promised to warn her.
 
@@ -292,14 +292,14 @@ label hg_pf_handjob_1:
         m "..."
         "\"Of course I'll let you know when it's time.\"":
             $ d_flag_01 = True #If TRUE Genie promised to warn her.
-            call her_main("Thank you, [genie_name].","normal","worriedCl")
+            call her_main("Thank you, [genie_name].", "normal", "worriedCl", "worried", "mid")
         "\"I myself don't always know when...\"":
             call her_main("Really? But I thought...", "open", "base", "base", "mid")
-            call her_main("Well, never mind then...","normal","worriedCl")
+            call her_main("Well, never mind then...", "normal", "worriedCl", "worried", "mid")
 
     call her_main("........", "open", "base", "base", "mid")
     m "............."
-    call her_main(".............","normal","worriedCl")
+    call her_main(".............", "normal", "worriedCl", "worried", "mid")
     call her_main("Err... [genie_name]?")
     m "Yes, what is it?"
     call her_main("How long do you think this will take?", "open", "base", "base", "mid")
@@ -369,7 +369,7 @@ label hg_pf_handjob_1:
             m "That's the point, [hermione_name]!"
             call her_main(".......","annoyed","worriedL")
             m "Don't you want to be done with this as soon as possible?"
-            call her_main("............","normal","worriedCl")
+            call her_main("............", "normal", "worriedCl", "worried", "mid")
             call her_main("A-ha.....", "open_wide_tongue", "base", "base", "mid")
             m "Good, [hermione_name]."
             call her_main("..............", "open_wide_tongue", "base", "base", "mid")
@@ -414,7 +414,7 @@ label hg_pf_handjob_1:
             m "Wasn't that bad, was it?"
             call her_main("No, I suppose not...", "upset", "wink", "base", "mid")
             m "Can you do it again, then?"
-            call her_main("I could...","normal","worriedCl")
+            call her_main("I could...", "normal", "worriedCl", "worried", "mid")
             m "Do it!"
             call her_main("Well, alright...", "open", "base", "base", "mid")
 
@@ -506,16 +506,16 @@ label hg_pf_handjob_1:
             m "...What the fuck just happened?"
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("I don't know... I suppose I just panicked...","angry","worriedCl", emote="05")
+            call her_main("I don't know... I suppose I just panicked...", "angry", "worriedCl", "worried", "mid", emote="05")
 
             if daytime:
-                call her_main("My classes are about to start and I didn't want you to ruin my uniform, [genie_name]...","angry","worriedCl", emote="05")
+                call her_main("My classes are about to start and I didn't want you to ruin my uniform, [genie_name]...", "angry", "worriedCl", "worried", "mid", emote="05")
                 m "So you'll go to classes like this now?"
                 m "With your clothes all sperm-soaked from the inside?"
                 call her_main("What choice do I have?", "angry", "narrow", "base", "down")
                 call her_main("I can't just skip a class...")
             else:
-                call her_main("At this hour The \"Gryffindor\" common room will be full of people...","angry","worriedCl", emote="05")
+                call her_main("At this hour The \"Gryffindor\" common room will be full of people...", "angry", "worriedCl", "worried", "mid", emote="05")
                 call her_main("I didn't want to have to return there all covered in your... spunk, [genie_name].")
                 call her_main("Oh, it's getting pretty late...", "angry", "base", "base", "mid")
                 m "So you will go like this, instead?"
@@ -577,7 +577,7 @@ label hg_pf_handjob_1:
 
             call her_main("..................", "disgust", "narrow", "worried", "down", tears="soft")
             m "Well, I think that's about it..."
-            call her_main("[genie_name]! What have you done?!","scream","worriedCl", trans="hpunch")
+            call her_main("[genie_name]! What have you done?!", "scream", "worriedCl", "worried", "mid", trans="hpunch")
             m "What?"
 
             if d_flag_01: #If TRUE Genie promised to warn her.
@@ -631,7 +631,7 @@ label hg_pf_handjob_2:
         "\"What do you think of my cock?\"":
             call her_main("Huh?", "open", "base", "base", "mid")
             call her_main("Oh, that's right...")
-            call her_main("I need to compliment your penis! I completely forgot about that!","angry","worriedCl", emote="05")
+            call her_main("I need to compliment your penis! I completely forgot about that!", "angry", "worriedCl", "worried", "mid", emote="05")
             m "Well, you don't have to--"
             call her_main("[genie_name], let me be honest with you...", "upset", "closed", "base", "mid")
             m "Yes?"
@@ -654,7 +654,7 @@ label hg_pf_handjob_2:
             m "OK, I think I've heard enough."
             call her_main("Too much?", "angry", "wink", "base", "mid")
             m "Yeah, just a bit."
-            call her_main("Sorry...","angry","worriedCl", emote="05")
+            call her_main("Sorry...", "angry", "worriedCl", "worried", "mid", emote="05")
             m "No biggie. Just keep on stroking it."
             call her_main(".................", "soft", "narrow", "annoyed", "up")
             call nar(">Hermione keeps on stroking your cock.","start")
@@ -779,9 +779,9 @@ label hg_pf_handjob_2_continue:
             m "Well, this wasn't that hard, was--"
             call her_main("I scream for my Mommy but she is still at work...","mad","worried", tears="soft")
             m "Huh?"
-            call her_main("My daddy takes me to my room...","normal","worriedCl")
+            call her_main("My daddy takes me to my room...", "normal", "worriedCl", "worried", "mid")
             call her_main("He throws me on my bed!")
-            call her_main("I cry \"No, daddy, please, I'm still a virgin!\"","scream","worriedCl")
+            call her_main("I cry \"No, daddy, please, I'm still a virgin!\"", "scream", "worriedCl", "worried", "mid")
 
             call hg_chibi_transition("hj_pause", trans="d5")
             pause.5
@@ -791,7 +791,7 @@ label hg_pf_handjob_2_continue:
             m "Uhm, [hermione_name]?"
             call her_main("Yes?", "angry", "base", "base", "mid", tears="soft")
             m "You are not stroking my cock anymore..."
-            call her_main("Oh, I am sorry, [genie_name].","grin","worriedCl", emote="05")
+            call her_main("Oh, I am sorry, [genie_name].", "grin", "worriedCl", "worried", "mid", emote="05")
             call her_main("I got lost in thought...")
 
             call hg_chibi_transition("hj", trans="d5")
@@ -1000,9 +1000,9 @@ label hg_pf_handjob_2_cumming:
             m "Well, I think that's about it..."
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("[genie_name]! What have you done?","scream","worriedCl")
+            call her_main("[genie_name]! What have you done?", "scream", "worriedCl", "worried", "mid")
             m "What?"
-            call her_main("You came all over me, [genie_name]...","scream","worriedCl")
+            call her_main("You came all over me, [genie_name]...", "scream", "worriedCl", "worried", "mid")
             call her_main("What a mess...", "angry", "narrow", "base", "down")
             call her_main("[genie_name], you should have warned me.", "upset", "closed", "base", "mid")
             m "It's your fault, [hermione_name]!"
@@ -1019,7 +1019,7 @@ label hg_pf_handjob_2_cumming:
             m "Open your mouth, [hermione_name]!"
             call her_main("What?!", "open", "wide", "base", "stare", ypos="head")
             g4 "Open your mouth, or I'll have to cover your clothes!"
-            call her_main(".....................","upset","worriedCl")
+            call her_main(".....................", "upset", "worriedCl", "worried", "mid")
 
             call hg_chibi_transition("hj_kiss", trans="kissiris")
             pause.8
@@ -1037,7 +1037,7 @@ label hg_pf_handjob_2_cumming:
             call her_main("*Gulp!-Gulp!-Gulp!*", "full_cum", "base", "worried", "mid")
             g4 "Argh... Yes!"
             call nar(">You notice that Hermione is barely able to keep up with the amount of hot cum your cock is pumping into her mouth.")
-            call her_main("*Gulp!-Gulp!-Gulp!*","full_cum","worriedCl")
+            call her_main("*Gulp!-Gulp!-Gulp!*", "full_cum", "worriedCl", "worried", "mid")
             g4 "Ah..."
             g4 "This feels great..."
             call her_main("*Gulp!* *Gulp!* *Gulp!*", "full_cum", "narrow", "annoyed", "up")
@@ -1051,7 +1051,7 @@ label hg_pf_handjob_2_cumming:
             call ctc
 
             her "........................................."
-            call her_main("GULP!!!","cum","worriedCl")
+            call her_main("GULP!!!", "cum", "worriedCl", "worried", "mid")
             call her_main("Gu-ah-a...", "open_wide_tongue", "narrow", "base", "down")
             call her_main("I swallowed it all, [genie_name]!", "grin", "narrow", "base", "dead")
             m "Good girl..."

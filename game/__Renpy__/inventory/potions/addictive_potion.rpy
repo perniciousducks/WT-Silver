@@ -51,7 +51,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
     if her_whoring <= 12 and hg_pp_cumaddict.fail_counter == 0: #Too low
         call her_chibi("drink_potion","mid","base")
         call nar(">Hermione cautiously takes a small sip of the potion.")
-        call her_main("","cum","worriedCl")
+        call her_main("", "cum", "worriedCl", "worried", "mid")
         pause .5
         call her_chibi("stand","mid","base")
 
@@ -93,7 +93,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
         if hg_pp_cumaddict.counter == 0: # First time
             call her_chibi("drink_potion","mid","base")
             call nar(">Hermione cautiously takes a small sip of the potion.")
-            call her_main("","cum","worriedCl")
+            call her_main("", "cum", "worriedCl", "worried", "mid")
             pause .5
             call her_chibi("stand","mid","base")
 
@@ -110,7 +110,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
 
     $ renpy.sound.play("sounds/gulp.mp3")
     call her_chibi("drink_potion","mid","base")
-    call her_main("","cum","worriedCl")
+    call her_main("", "cum", "worriedCl", "worried", "mid")
     pause .5
     call her_chibi("stand","mid","base")
 
@@ -137,7 +137,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
     call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
     pause.2
 
-    call her_main("What the hell did you do to me?","scream","worriedCl", xpos="mid", ypos="base", trans="hpunch")
+    call her_main("What the hell did you do to me?", "scream", "worriedCl", "worried", "mid", xpos="mid", ypos="base", trans="hpunch")
     m "Whatever are you talking about, [hermione_name]?"
     call her_main("Ughh, it doesn't matter, just let me suck it.","annoyed","worriedL")
     m "Why on earth would you want to do that? You're a top student, that doesn't sound appropriate."
@@ -151,7 +151,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             m "Perhaps if you asked nicely..."
             call her_main("Fine. Please let me suck your dick [genie_name].", "upset", "wink", "base", "mid")
             m "Hmmm, I don't think that was sincere enough."
-            call her_main("Please [genie_name], let me suck your big, thick dick. Pretty please.","angry","worriedCl",emote="05")
+            call her_main("Please [genie_name], let me suck your big, thick dick. Pretty please.", "angry", "worriedCl", "worried", "mid",emote="05")
             m "Much better."
     label hg_pp_cumaddict_sucking:
 
@@ -245,7 +245,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call nar(">Hermione quickly swallows the majority of your shaft. You can feel the tip of your head pressed against the entrance to her throat.")
             m "You'll have to do better than that if you want your reward [hermione_name]."
             call nar(">You place your hands on the back of her head pull her head into you.")
-            call her_main("{size=+7}!!!{/size}","scream","worriedCl")
+            call her_main("{size=+7}!!!{/size}", "scream", "worriedCl", "worried", "mid")
             with vpunch
             hide screen hermione_main
             call nar(">The sensation of entering her throat sends you over the edge.")
@@ -266,7 +266,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call nar(">She says nothing but quickens the pace of her masturbation.","start")
             call nar(">You finally pull out of keen mouth with a satisfactory pop.","end")
             call u_pause_ani
-            call her_main("It won't stop!","shock","worriedCl")
+            call her_main("It won't stop!", "shock", "worriedCl", "worried", "mid")
             hide screen hermione_main
             m "What won't?"
             call her_main("I-I can't stop cumming [genie_name]...", "angry", "base", "base", "mid")
@@ -287,7 +287,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call nar(">Hermiones eyes go blank as she starts swallowing down your load.")
             call cum_block
             m "That's it, swallow it down like a good girl. You earned your prize."
-            call her_main("*gulp* *gulp* *gulp* *gulp*","cum","worriedCl")
+            call her_main("*gulp* *gulp* *gulp* *gulp*", "cum", "worriedCl", "worried", "mid")
             hide screen hermione_main
             call nar(">As she swallows you notice her legs start to convulse as she starts to orgasm.")
             call her_main("*gulp* *gulp* *gulp* ", "full_cum", "narrow", "base", "dead")
@@ -297,7 +297,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             m "Very good girl. Almost entirely clean... except for a bit of cum on the tip."
             m "I can't dirty my robes now can I? Better wipe this off."
             call nar(">You wipe yourself clean on the tip of her nose.")
-            call her_main("...","cum","worriedCl")
+            call her_main("...", "cum", "worriedCl", "worried", "mid")
             hide screen hermione_main
             m "There, much better."
             call nar(">Her legs have not stopped quivering since you first came.")
@@ -334,11 +334,11 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             hide screen hermione_main
             m "Just from a facial? What sort of cumslut have you become Miss Granger?"
             m "What would your parents think? Looking at you covered in some old mans cum."
-            call her_main("No. Please stop, I'll-","angry","worriedCl",emote="05")
+            call her_main("No. Please stop, I'll-", "angry", "worriedCl", "worried", "mid",emote="05")
             with vpunch
             hide screen hermione_main
             m "They'd be ashamed at what you've become. A whore who gets off from being used as a toy."
-            call her_main("I-I'm cumming again [genie_name]. It won't stop...","scream","worriedCl")
+            call her_main("I-I'm cumming again [genie_name]. It won't stop...", "scream", "worriedCl", "worried", "mid")
             hide screen hermione_main
             call nar(">Hermione's voice trails off as she pass out from the over stimulation.")
 
@@ -391,7 +391,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
 
             call nar(">The effect is instantaneous.","end")
             $ aftersperm = True
-            call her_main("{size=-4}I-I'm cumming...{/size}","cum","worriedCl")
+            call her_main("{size=-4}I-I'm cumming...{/size}", "cum", "worriedCl", "worried", "mid")
             hide screen hermione_main
             m "What was that?"
             call her_main("I'm cumming!", "silly", "narrow", "base", "dead")
@@ -412,7 +412,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
         "-Carry her back to her room as is-":
             call nar(">You pick her limp body up and carry her to her room.","start")
             call nar(">As you enter the dormitory you hear her talk in her sleep.","end")
-            call her_main("Of course I swallow... just form a line...","open","worriedCl")
+            call her_main("Of course I swallow... just form a line...", "open", "worriedCl", "worried", "mid")
             hide screen hermione_main
             call nar(">You place her carefully back into her bed.")
             m "Sleep tight, slut."
@@ -453,7 +453,7 @@ label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
     pause.2
 
-    call her_main("Take off your pants! No questions!","scream","worriedCl", xpos="mid", ypos="base", trans="hpunch")
+    call her_main("Take off your pants! No questions!", "scream", "worriedCl", "worried", "mid", xpos="mid", ypos="base", trans="hpunch")
     m "Hold on a minute, what are you-....{w=0.5}{nw}"
     call her_main("Shut it, just let me suck it.","annoyed","worriedL")
     m "...."
@@ -610,7 +610,7 @@ label potion_scene_3_3_1: #Hypno potion
     with d3
     hide screen hermione_stand
     call nar(">Hermione cautiously starts drinking the potion.")
-    call her_main("","cum","worriedCl")
+    call her_main("", "cum", "worriedCl", "worried", "mid")
     pause .5
     call her_chibi("stand","mid","base")
 
@@ -651,7 +651,7 @@ label potion_scene_3_3_1: #Hypno potion
     m "You walked in here about 2 minutes ago."
     call her_main("Huh, I must have forgotten, silly old me.", "base", "happy", "base", "mid")
     call her_main("So professor, what am I doing here?", "base", "narrow", "worried", "down")
-    call her_main("Aaaaaaah!!!!","shock","worriedCl",cheeks="blush")
+    call her_main("Aaaaaaah!!!!", "shock", "worriedCl", "worried", "mid",cheeks="blush")
     call her_main("What happened to my outfit?!", "shock", "narrow", "base", "down")
     call her_main("I can't be seen wearing all this stuff!!!", "disgust", "narrow", "worried", "down")
 
@@ -731,7 +731,7 @@ label potion_scene_3_3_1: #Hypno potion
             call her_main("Is there anything you want from me mistah... I'll do anything!{image=textheart}", "soft", "narrow", "base", "mid_soft")
         "-Where is your badge, cumslut?!-" if cum_badge_ITEM.unlocked:
             call her_main("Oh no I forgot that!", "soft", "wide", "base", "stare")
-            call her_main("I'm soooo sorry!!!","shock","worriedCl",cheeks="blush")
+            call her_main("I'm soooo sorry!!!", "shock", "worriedCl", "worried", "mid",cheeks="blush")
             call her_main("It's this one, isn't it...", "soft", "narrow", "worried", "down")
             call nar("Hermione conjures an -I {image=textheart} Cum- badge, which magically attaches itself to her breasts.")
 
@@ -750,8 +750,8 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("(...)", "annoyed", "base", "angry", "mid")
     call her_main("(And here I hoped he'd just ask to fuck...)", "annoyed", "narrow", "angry", "R")
     call her_main("(Questions are so boooring! I hope they are at least naughty...)", "annoyed", "narrow", "annoyed", "up")
-    call her_main("Are those questions going to be hard, mistah?","grin","worriedCl",emote="05")
-    call her_main("I don't like hard questions.","grin","worriedCl")
+    call her_main("Are those questions going to be hard, mistah?", "grin", "worriedCl", "worried", "mid",emote="05")
+    call her_main("I don't like hard questions.", "grin", "worriedCl", "worried", "mid")
     m "Don't worry they'll be nice and easy for you."
     call her_main("yay!", "smile", "happyCl", "base", "mid")
     m "First question, Who are you?"
@@ -795,7 +795,7 @@ label potion_scene_3_3_1: #Hypno potion
 
     call her_main("I know everyone who sees me naked is happy!", "base", "narrow", "base", "mid_soft")
     m "You've certainly made me happy."
-    call her_main("Thanks mistah professor sir! That makes me so happy{image=textheart}!","grin","worriedCl")
+    call her_main("Thanks mistah professor sir! That makes me so happy{image=textheart}!", "grin", "worriedCl", "worried", "mid")
     m "(I don't think I can stand her saying the word happy much more...)"
     m "Now Hermione, I want you to touch your breasts."
     call nar(">Hermione moves her hands up to her breasts")
@@ -803,14 +803,14 @@ label potion_scene_3_3_1: #Hypno potion
 
     call her_main("Like this? This feels sooooo gooood!", "base", "narrow", "worried", "down")
     call her_main("It's like mah hands are moving on their own...", "soft", "narrow", "annoyed", "up")
-    call her_main("It's soooo goodd but It's weeeiiird... I need something... anything...","open","worriedCl")
+    call her_main("It's soooo goodd but It's weeeiiird... I need something... anything...", "open", "worriedCl", "worried", "mid")
     m "Would you like to touch yourself down there?"
-    call her_main("Yes mistah [genie_name]. please.","shock","worriedCl")
+    call her_main("Yes mistah [genie_name]. please.", "shock", "worriedCl", "worried", "mid")
 
     menu:
         "-make her beg-":
             m "I want you to beg."
-            call her_main("Please mistah sir...","shock","worriedCl")
+            call her_main("Please mistah sir...", "shock", "worriedCl", "worried", "mid")
             m "Please what?"
             call her_main("Ohmigawd Please let me touch myself down there... I'll do anything...","clench","worried",cheeks="blush",tears="soft")
             m "Anything?"
@@ -875,7 +875,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("Are you going to cum?", "open_tongue", "narrow", "base", "up",cheeks="blush")
     call set_her_action("pinch")
     call her_main("Please do it on my face!", "open_tongue", "narrow", "base", "up",cheeks="blush")
-    call her_main("No wait my tits...","scream","worriedCl",cheeks="blush")
+    call her_main("No wait my tits...", "scream", "worriedCl", "worried", "mid",cheeks="blush")
     call set_her_action("covering")
     call her_main("No wait my face!", "silly", "narrow", "base", "up",cheeks="blush")
 
@@ -916,7 +916,7 @@ label potion_scene_3_3_1: #Hypno potion
 
     call her_main("Can we do it again! Please! Pretty please! Pretty please with cum on top!", "silly", "narrow", "base", "dead")
     m "Not today."
-    call her_main("Awwwwww.","shock","worriedCl")
+    call her_main("Awwwwww.", "shock", "worriedCl", "worried", "mid")
 
     hide screen hermione_main
     call blkfade

@@ -199,7 +199,7 @@ label hg_pr_flirt_T1_E2:
 
     menu:
         "\"Well, at least you are trying.\"":
-            call her_main("Apparently flirting is not my forte...","angry","worriedCl", emote="05")
+            call her_main("Apparently flirting is not my forte...", "angry", "worriedCl", "worried", "mid", emote="05")
 
             jump end_hg_pr_flirt
 
@@ -207,7 +207,7 @@ label hg_pr_flirt_T1_E2:
             stop music fadeout 1.0
             call her_main("You are not going to pay me, [genie_name]?", "open", "base", "worried", "mid")
             call her_main("But, you promised!", "angry", "base", "base", "mid", tears="soft")
-            call her_main("................","mad","worriedCl", tears="soft_blink")
+            call her_main("................", "mad", "worriedCl", "worried", "mid", tears="soft_blink")
 
             call her_walk(action="leave", speed=2.5)
 
@@ -272,9 +272,9 @@ label hg_pr_flirt_T2_E1:
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Well, to my surprise he accepted it...", "smile", "happyCl", "base", "mid")
     her "He let me finish the assignment for him..."
-    call her_main("While I was working he made a couple of inappropriate comments, but I just smiled in response...","angry","worriedCl", emote="05")
+    call her_main("While I was working he made a couple of inappropriate comments, but I just smiled in response...", "angry", "worriedCl", "worried", "mid", emote="05")
     m "So, basically, he was the one doing the flirting..."
-    call her_main("well... yes.","grin","worriedCl", emote="05")
+    call her_main("well... yes.", "grin", "worriedCl", "worried", "mid", emote="05")
     call her_main("But, despite my better judgment, I did encourage his improper behaviour...", "base", "base", "base", "mid")
     m "By being quiet?"
     her "Yes, [genie_name]..."
@@ -283,10 +283,10 @@ label hg_pr_flirt_T2_E1:
     m "What else do you have for me?"
     call her_main("Right...", "annoyed", "narrow", "angry", "R")
     her "Later in a corridor these two other guys complimented my appearance in a very vulgar manner..."
-    call her_main("But I just smiled at them...","angry","worriedCl", emote="05")
+    call her_main("But I just smiled at them...", "angry", "worriedCl", "worried", "mid", emote="05")
     m "You were on the receiving end again, then..."
     m "This is not what I ordered you to do, [hermione_name]."
-    call her_main("I know, [genie_name]!","angry","worriedCl", emote="05")
+    call her_main("I know, [genie_name]!", "angry", "worriedCl", "worried", "mid", emote="05")
     call her_main("But I am so busy. Between the \"MRM\" meetings and the classes...", "annoyed", "narrow", "angry", "R")
     her "I barely have any time--"
     m "Is this all you got for me this time then?"
@@ -324,7 +324,7 @@ label hg_pr_flirt_T2_E2:
     call her_main("I think I did, [genie_name]... To my own astonishment...", "open", "base", "base", "mid")
     call her_main("There was something about his \"devil-may-care\" attitude...", "base", "base", "base", "mid")
     call her_main("He was so confident and calm and...", "base", "happyCl", "base", "mid")
-    call her_main("I still loathe the \"Slytherin\" house of course!","angry","worriedCl", emote="05")
+    call her_main("I still loathe the \"Slytherin\" house of course!", "angry", "worriedCl", "worried", "mid", emote="05")
     call her_main("But...", "annoyed", "narrow", "worried", "down")
     her "Maybe some of the students got there by mistake?"
     call her_main("Could the \"sorting hat\" make... miscalculations?","open","worriedL")
@@ -358,10 +358,10 @@ label hg_pr_flirt_T2_E3:
     call her_main("That last one was quite smart and well-mannered too.", "base", "happyCl", "base", "mid")
     her "............................"
     her "................"
-    call her_main("But I still refuse to change my opinion about the \"Slytherin\" house, [genie_name].","angry","worriedCl", emote="05")
+    call her_main("But I still refuse to change my opinion about the \"Slytherin\" house, [genie_name].", "angry", "worriedCl", "worried", "mid", emote="05")
     m "I'm not asking you to, [hermione_name]."
     her "I am only doing this to help my own house!"
-    call her_main("The proud house of \"Gryffndor\"!","scream","worriedCl")
+    call her_main("The proud house of \"Gryffndor\"!", "scream", "worriedCl", "worried", "mid")
     m "Alright, alright. Calm down, [hermione_name]."
     call her_main("", "base", "happyCl", "base", "mid")
 
@@ -405,7 +405,7 @@ label hg_pr_flirt_T3_E1:
     her "I just swallow my pride and smile in response."
     m "Hm..."
     m "So, if for example, somebody were to call you a \"whore\" you would just smile at them?"
-    call her_main("Well, yes, [genie_name]...","angry","worriedCl", emote="05")
+    call her_main("Well, yes, [genie_name]...", "angry", "worriedCl", "worried", "mid", emote="05")
     m "Yeah, I'm sure that wins them over."
     m "Great job, [hermione_name]."
     call her_main("", "grin", "base", "base", "R")
@@ -431,10 +431,10 @@ label hg_pr_flirt_T3_E2:
     her "So adorable..."
     m "Well, I didn't send you to harass little kids, [hermione_name]."
     call her_main("I didn't haras--", "disgust", "narrow", "base", "mid_soft")
-    call her_main("[genie_name]! Seven flirts and two dates amount to something, don't they?","angry","worriedCl", emote="05")
+    call her_main("[genie_name]! Seven flirts and two dates amount to something, don't they?", "angry", "worriedCl", "worried", "mid", emote="05")
     m "Oh, absolutely."
     call her_main("Then I would like to receive my payment now...", "scream", "closed", "angry", "mid")
-    call her_main("","normal","worriedCl")
+    call her_main("", "normal", "worriedCl", "worried", "mid")
 
     jump end_hg_pr_flirt
 
@@ -444,7 +444,7 @@ label hg_pr_flirt_T3_E3:
     call hg_pr_flirt_intro
 
     stop music fadeout 1.0
-    call her_main("[genie_name], I am sorry, but...","normal","worriedCl")
+    call her_main("[genie_name], I am sorry, but...", "normal", "worriedCl", "worried", "mid")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("I hate those \"Slytherin\" tramps, [genie_name]!", "angry", "base", "angry", "mid")
     m "Tell me what happened."
@@ -455,9 +455,9 @@ label hg_pr_flirt_T3_E3:
 
     menu:
         "\"Fine. I'll let it go for today.\"":
-            call her_main("Thank you, [genie_name].","normal","worriedCl")
+            call her_main("Thank you, [genie_name].", "normal", "worriedCl", "worried", "mid")
             m "No luck with the flirting today then?"
-            call her_main("Oh, quite the opposite, [genie_name].","angry","worriedCl", emote="05")
+            call her_main("Oh, quite the opposite, [genie_name].", "angry", "worriedCl", "worried", "mid", emote="05")
             call play_music("playful_tension") # SEX THEME.
             her "One of the boys actually took me to the \"Slytherin\" common room today..."
             call her_main("There were at least a dozen of them there...", "normal", "base", "base", "mid")

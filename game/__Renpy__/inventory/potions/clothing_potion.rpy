@@ -58,20 +58,20 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         call nar(">Hermione bursts into your office.")
         call her_main("How could you [genie_name]!", "angry", "base", "base", "mid",tears="soft")
         call her_main("I am the laughing stock of the entire school!", "angry", "base", "base", "mid",tears="soft")
-        call her_main("Now everyone knows what I look like naked!","mad","worriedCl",tears="soft_blink")
+        call her_main("Now everyone knows what I look like naked!", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
         m "Tell me about what happened."
         call her_main("Tell you about what happened? I'm never speaking to you again.", "angry", "base", "base", "mid",tears="soft")
         $ her_mood += 20
 
     elif her_whoring <= 13: #Mildly aggravated
         call nar(">Hermione comes into your office quickly without knocking.")
-        call her_main("Again?","angry","worriedCl",emote="05")
+        call her_main("Again?", "angry", "worriedCl", "worried", "mid",emote="05")
         m "What's this about [hermione_name]?"
         call her_main("Why would you make my clothes invisible again?", "open", "base", "base", "mid")
         m "Why not?"
         call her_main("Ugh, you're such a pig.","annoyed","worriedL")
         m "Tell me about what happened."
-        call her_main("...","normal","worriedCl")
+        call her_main("...", "normal", "worriedCl", "worried", "mid")
         call her_main("Fine, but I expect an extra 10 points.", "open", "base", "base", "mid")
         m "As you wish."
         call her_main("Well I started off with potions class as usual when I started to feel like all eyes were on me.", "disgust", "narrow", "base", "mid_soft")

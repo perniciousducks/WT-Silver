@@ -497,11 +497,11 @@ label job_5:
         
         if random_choice == 0:
             call her_main("Why are the cards placed like that?", "mad", "narrow", "worried", "down")
-            call her_main("...","normal","worriedCl", cheeks="blush")
+            call her_main("...", "normal", "worriedCl", "worried", "mid", cheeks="blush")
             call her_main("Fine...", "open", "narrow", "base", "down", cheeks="blush")
         elif random_choice == 1:
             call her_main("...","normal","worried", cheeks="blush")
-            call her_main("Well, if it stops you from deducting those points.","open","worriedCl", cheeks="blush")
+            call her_main("Well, if it stops you from deducting those points.", "open", "worriedCl", "worried", "mid", cheeks="blush")
             call her_main("I'll do it.", "base", "wink", "base", "mid")
         elif random_choice == 2:
             call her_main("It's a bit revealing... but I'll do it.","smile","happy", cheeks="blush")
@@ -717,7 +717,7 @@ label inn_menu:
 
             hide screen hermione_main
             $ hermione_wear_robe = False
-            call her_main("","normal","worriedCl")
+            call her_main("", "normal", "worriedCl", "worried", "mid")
             pause
 
             hide screen hermione_main

@@ -26,7 +26,7 @@ label equip_misc_item:
 
             # $ hide_transitions = False #activates dissolve in her_main
 
-            # call her_main("You want me to make my clothes see through?","normal","worriedCl")
+            # call her_main("You want me to make my clothes see through?", "normal", "worriedCl", "worried", "mid")
             # m "Just a little bit."
             # call her_main("Fine...", "open", "squint", "base", "mid")
             # call her_main("How much should I drink?","annoyed","worriedL")
@@ -37,7 +37,7 @@ label equip_misc_item:
                 # "-Just a sip-":
                     # $ transparency = 0.9
                     # if wardrobe_chitchat_active:
-                        # call her_main("(at least This shouldn't be too noticeable.)","normal","worriedCl")
+                        # call her_main("(at least This shouldn't be too noticeable.)", "normal", "worriedCl", "worried", "mid")
                 # "-20 percent-" if her_whoring >= 15:
                     # $ transparency = 0.8
                 # "-30 percent-" if her_whoring >= 15:
@@ -131,7 +131,7 @@ label equip_misc_item:
                 # $ hide_transitions = False #activates dissolve in her_main
 
                 # call her_main("Are you sure this is the medium size one?", "soft", "wink", "base", "mid")
-                # call her_main("(It still looks so big.)","angry","worriedCl")
+                # call her_main("(It still looks so big.)", "angry", "worriedCl", "worried", "mid")
                 # call her_main("Fine, I'll wear it... Just give me a second...", "disgust", "narrow", "worried", "down")
                 # hide screen hermione_main
                 # with d5
@@ -149,7 +149,7 @@ label equip_misc_item:
                 # g9 "The giant one!"
                 # call her_main("...", "annoyed", "base", "angry", "mid")
                 # call her_main("(Why am I not surprised...)", "annoyed", "narrow", "angry", "R")
-                # call her_main("(This is going to hurt...)","angry","worriedCl",cheeks="blush")
+                # call her_main("(This is going to hurt...)", "angry", "worriedCl", "worried", "mid",cheeks="blush")
                 # call her_main("Fine... Let me put it on.", "base", "base", "base", "R")
                 # g9 "Don't you mean... \"in\"?"
                 # call her_main("...", "annoyed", "squint", "angry", "mid")

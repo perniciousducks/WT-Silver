@@ -847,10 +847,10 @@ label hermione_change:
                     jump hermione_talk
             call her_main("Why would you even suggest calling me such a thing..", "scream", "squint", "angry", "mid")
             call her_main("It's like the most offensive thing you could call someone like...", "shock", "squint", "angry", "mid", tears="soft")
-            call her_main("like...", "open","worriedCl", tears="soft_blink")
+            call her_main("like...", "open", "worriedCl", "worried", "mid", tears="soft_blink")
             call her_main("Someone like...", "open", "narrow", "worried", "down", tears="mascara_crying")
             call her_main("me...", "disgust", "narrow", "worried", "down", tears="mascara_soft")
-            call her_main("", "disgust","worriedCl", tears="mascara")
+            call her_main("", "disgust", "worriedCl", "worried", "mid", tears="mascara")
             menu:
                 "-Try to calm her down-":
                     call her_main("", "disgust", "narrow", "worried", "mid_soft", tears="mascara")
@@ -869,15 +869,15 @@ label hermione_change:
                     $ her_mood = 0
                 "-Tell her she deserves it-":
                     g4 "You deserve to be called a slut, a whore and a mudblood... just look at you."
-                    call her_main("...", "scream","worriedCl", tears="mascara_soft_blink")
-                    call her_main("", "disgust","worriedCl", tears="mascara_soft")
+                    call her_main("...", "scream", "worriedCl", "worried", "mid", tears="mascara_soft_blink")
+                    call her_main("", "disgust", "worriedCl", "worried", "mid", tears="mascara_soft")
                     g4 "You walk into my office and sell your body for the soul reason that it will make Gryffindor happy to win the house cup."
-                    call her_main("...", "open","worriedCl", tears="mascara_soft_blink")
-                    call her_main("", "disgust","worriedCl", tears="mascara_soft")
+                    call her_main("...", "open", "worriedCl", "worried", "mid", tears="mascara_soft_blink")
+                    call her_main("", "disgust", "worriedCl", "worried", "mid", tears="mascara_soft")
                     g4 "Bending over onto my desk and let yourself be taken like a some common harlot..."
                     call her_main("I...", "disgust", "narrow", "worried", "mid_soft", tears="mascara_soft")
                     g4 "Letting your headmaster thrust himself upon you and taking my load like your life depended on it..."
-                    call her_main("...", "normal","worriedCl", tears="mascara_soft")
+                    call her_main("...", "normal", "worriedCl", "worried", "mid", tears="mascara_soft")
                     call her_main("", "normal", "narrow", "worried", "mid_soft", tears="mascara")
                     m "I bet you don't even care about the points anymore..."
                     call her_main("Well...", "normal", "narrow", "worried", "down", tears="mascara")

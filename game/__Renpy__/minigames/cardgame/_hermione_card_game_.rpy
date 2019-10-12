@@ -263,7 +263,7 @@ label hermione_random_duel:
     m "You do know what this means, don't you?"
     call her_main("...", "normal", "base", "worried", "mid")
     g9 "This means I'm going to have to deduct 20 points from Gryffindor house."
-    call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's 20 house points missing...","open","worriedCl")
+    call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's 20 house points missing...", "open", "worriedCl", "worried", "mid")
     m "Well, in that case..."
 
     menu:
@@ -287,7 +287,7 @@ label hermione_random_duel:
     m "No, sorry miss Granger... Minus 20 points to Gryffindor..."
     call her_main("...", "disgust", "narrow", "worried", "down")
     call her_main("Fine, that's fair...", "open", "narrow", "base", "down")
-    call her_main("But I'm done playing for today...","normal","worriedCl", cheeks="blush")
+    call her_main("But I'm done playing for today...", "normal", "worriedCl", "worried", "mid", cheeks="blush")
     $ gryffindor -= 20
 
     call play_sound("door")

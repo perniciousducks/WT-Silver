@@ -292,7 +292,7 @@ label astoria_intro_E2_hermione:
     call her_main("AN unforgivable CURSE!!!", "scream", "wide", "base", "stare", trans="hpunch")
     call her_main("AT our school?!", "shock", "wide", "base", "mid")
     call her_main("SOMEONE COULD BE DEAD!", "scream", "wide", "base", "R")
-    call her_main("OR TORTURED!!","disgust","worriedCl")
+    call her_main("OR TORTURED!!", "disgust", "worriedCl", "worried", "mid")
     call her_main("OR WORSE!!!","disgust","worriedL")
     m "really?"
     call her_main("Those are the only things that can happen with an unforgivable curse, [genie_name]!", "angry", "base", "worried", "mid")

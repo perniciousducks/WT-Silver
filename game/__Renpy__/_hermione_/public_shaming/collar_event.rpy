@@ -13,8 +13,8 @@ label collar_scene:
     call her_main("Susan Bones is telling everyone in the school that I'm a slut!", "open", "closed", "angry", "mid")
     m "Why is this Miss Bones calling you a slut?"
     call her_main("Because she found out what we are doing! She's telling everyone that I'm your slut!", "soft", "base", "base", "mid",tears="soft")
-    call her_main("My reputation is ruined! What will people think when they find out what I've been doing with my ninety year old Professor?","mad","worriedCl",tears="soft_blink")
-    call her_main("I'll be known as a slut for the the rest of my life!","scream","worriedCl")
+    call her_main("My reputation is ruined! What will people think when they find out what I've been doing with my ninety year old Professor?", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
+    call her_main("I'll be known as a slut for the the rest of my life!", "scream", "worriedCl", "worried", "mid")
     her "I'll never be able to get a good job..."
     her "My friends will hate me..."
     call her_main("Please, You don't think I'm a slut do you [genie_name]?", "open", "base", "base", "mid")
@@ -38,9 +38,9 @@ label slut_scene: #Locked to her being your slut
     m "You won't. You'll have to embrace it."
     call her_main("What?", "angry", "base", "base", "mid",tears="soft")
     m "There's no coming back for a slut like this. Even if I leave you'll just find some other cock to please."
-    call her_main("Sir... please.","angry","worriedCl",emote="05")
+    call her_main("Sir... please.", "angry", "worriedCl", "worried", "mid",emote="05")
     m "Don't act like you don't already know this. You know that deep down you're a filthy slut."
-    call her_main("I am not!","scream","worriedCl")
+    call her_main("I am not!", "scream", "worriedCl", "worried", "mid")
     m "Suck my cock."
     call her_main("...What?", "open", "base", "base", "mid")
     m "I said suck. My. Cock. Slut."
@@ -75,12 +75,12 @@ label slut_scene: #Locked to her being your slut
     call her_main("What? This is bad enough, just let me suck \nyour cock.", "upset", "wink", "base", "mid")
     hide screen hermione_main
     m "Sluts beg for cock. And seeing as how you're a slut, I expect you to beg."
-    call her_main("...","normal","worriedCl")
+    call her_main("...", "normal", "worriedCl", "worried", "mid")
     hide screen hermione_main
     call her_main("Please [genie_name], let me suck your cock.", "open", "base", "base", "mid")
     hide screen hermione_main
     m "Hmmm that was almost good enough. Try again, a little harder."
-    call her_main("Pretty please [genie_name], please let me suck\nyour big beautiful cock.","scream","worriedCl")
+    call her_main("Pretty please [genie_name], please let me suck\nyour big beautiful cock.", "scream", "worriedCl", "worried", "mid")
     hide screen hermione_main
     m "Good girl."
 
@@ -117,7 +117,7 @@ label slut_scene: #Locked to her being your slut
             show screen h_c_u
             hide screen g_c_u
             with d3
-            call her_main("{size=+10}I'm a slut!{/size}","scream","worriedCl")
+            call her_main("{size=+10}I'm a slut!{/size}", "scream", "worriedCl", "worried", "mid")
             hide screen hermione_main
             m "Yes you are."
             ">You impale her back into your cock."
@@ -153,7 +153,7 @@ label slut_scene: #Locked to her being your slut
             hide screen g_c_u
             with d3
             ">She takes you out of her mouth."
-            call her_main("...yes. I am a massive slut.","normal","worriedCl")
+            call her_main("...yes. I am a massive slut.", "normal", "worriedCl", "worried", "mid")
             hide screen hermione_main
             m "Good to hear you finally admit it. Now, back in the mouth."
             call her_main("Yes [genie_name]", "smile", "narrow", "base", "mid_soft")
@@ -234,11 +234,11 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("What? What's the difference?", "angry", "base", "base", "mid")
     m "A slut is someone who enjoys sex. A whore is someone who's addicted to it."
     m "You don't care where you get it do you? As long as someone uses you couldn't care less."
-    call her_main("I-I-I-","open","worriedCl")
+    call her_main("I-I-I-", "open", "worriedCl", "worried", "mid")
     m "You even fucked your best friends didn't you?"
     m "I bet you begged them to do it as well."
     m "Look at what you've become, nothing more than the school toy. Willing to give everyone a go."
-    call her_main("Sir please, you're being too mean...","shock","worriedCl")
+    call her_main("Sir please, you're being too mean...", "shock", "worriedCl", "worried", "mid")
     m "Oh is the little whore getting upset? Don't worry, I'll make you feel all better."
     her "How?"
     m "Come over here and bend over."
@@ -275,7 +275,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     ">You take a firm grip of her hips and thrust into her sopping pussy."
     m "Ugh you're still so tight."
     m "I thought that you would have loosened up after all the guys you've fucked."
-    call her_main("[genie_name]...","open","worriedCl")
+    call her_main("[genie_name]...", "open", "worriedCl", "worried", "mid")
     hide screen hermione_main
     m "Don't try and act innocent with me [hermione_name]. I know what you do in the dormitories after dark."
     m "Just admit what you are."
@@ -295,7 +295,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("...", "angry", "wink", "base", "mid")
     hide screen hermione_main
     m "Tell me girl."
-    call her_main("I beg every boy that fucks me to cum inside!","shock","worriedCl")
+    call her_main("I beg every boy that fucks me to cum inside!", "shock", "worriedCl", "worried", "mid")
     hide screen hermione_main
     m "What a fucking whore."
     call her_main("I-I'm cumming.", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
@@ -341,7 +341,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     m "Well I expect you to wear it all the time, like a ring, so I guess that qualifies it as jewellery."
     call her_main("You expect me to wear this all the time? Not just in your office.", "scream", "base", "angry", "mid",cheeks="blush",tears="messy")
     m "Of course. I already know what a whore you are, this is so that everyone else will know."
-    call her_main("What will people think of me?","scream","worriedCl",cheeks="blush",tears="messy")
+    call her_main("What will people think of me?", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="messy")
     m "They'll think the truth, that you're a shameless whore."
     call her_main("...Hmmph", "angry", "squint", "base", "mid",cheeks="blush")
     m "Well whatever you think, I expect you to put it on and then get out of my office."
@@ -377,7 +377,7 @@ label slave_scene:
     m "When was the last time you even said no to me?"
     call her_main("Well, I...","annoyed","worriedL")
     m "Exactly, you've become my slave and you didn't even realise it."
-    call her_main("Just because I care about my house doesn't mean that-","angry","worriedCl",emote="05")
+    call her_main("Just because I care about my house doesn't mean that-", "angry", "worriedCl", "worried", "mid",emote="05")
     m "Please, when was the last time you even cared about getting your points?"
     m "You just want to please me. Those points are an excuse you tell yourself so you don't have to acknowledge what you are."
     m "Now be a good girl and bend over the desk."
@@ -462,7 +462,7 @@ label slave_scene:
     call her_main("Please master, may I cum?", "angry", "wide", "base", "stare")
     hide screen hermione_main
     m "Not until I do."
-    call her_main("Please hurry.","open","worriedCl")
+    call her_main("Please hurry.", "open", "worriedCl", "worried", "mid")
     hide screen hermione_main
     m "Well put some effort in then girl. If you want me to cum then you better start acting like it."
     ">Hermione starts pushing back against you and rotating her hips as you thrust into her."
@@ -547,7 +547,7 @@ label good_girl_scene:
 
     m "Of course you aren't Miss Granger."
     m "You're just doing everything you can to help your friends."
-    call her_main("*sob* Really [genie_name]?","open","worriedCl")
+    call her_main("*sob* Really [genie_name]?", "open", "worriedCl", "worried", "mid")
     m "Really. You wouldn't have done any of this if the point system was fair would you?"
     call her_main("*sob* I guess not...", "angry", "base", "base", "mid")
     m "I'm sure once Miss Bones realizes what you are doing this for she will understand."

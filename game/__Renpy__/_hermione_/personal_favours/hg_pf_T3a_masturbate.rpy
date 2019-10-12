@@ -11,12 +11,12 @@ label hg_pf_strip_fingering_intro:
         m "Do you ever touch yourself?"
         call her_main("What? why?", "upset", "wink", "base", "mid")
         m "Do you?"
-        call her_main("[genie_name]!","scream","worriedCl")
+        call her_main("[genie_name]!", "scream", "worriedCl", "worried", "mid")
         m "It's a simple question [hermione_name]..."
-        call her_main("......","normal","worriedCl")
-        call her_main("{size=-5}I do...{/size}","angry","worriedCl", emote="05")
+        call her_main("......", "normal", "worriedCl", "worried", "mid")
+        call her_main("{size=-5}I do...{/size}", "angry", "worriedCl", "worried", "mid", emote="05")
         m "Huh? What was that?"
-        call her_main("I said that I do alright!!!","scream","worriedCl")
+        call her_main("I said that I do alright!!!", "scream", "worriedCl", "worried", "mid")
         m "Hmmmm, I'm not sure I believe you..."
         call her_main("What? why would I lie?","annoyed","worriedL")
         m "I'm not sure..."
@@ -34,7 +34,7 @@ label hg_pf_strip_fingering_intro:
         m "Are you feeling horny?"
         call her_main("maybe A little, [genie_name].", "base", "narrow", "base", "mid_soft")
         m "Ah, well perhaps we can fix that..."
-        call her_main("[genie_name]...","open","worriedCl")
+        call her_main("[genie_name]...", "open", "worriedCl", "worried", "mid")
 
         g9 "Why don't you play with that slutty little pussy of yours!"
         call her_main("{image=textheart}{image=textheart}{image=textheart}", "grin", "narrow", "annoyed", "up")
@@ -58,7 +58,7 @@ label hg_pf_strip_T2_fingering:
     call her_main("Do you want me to... start?", "soft", "wink", "base", "mid")
     m "Yes, my dear."
     call her_main("...........", "disgust", "narrow", "base", "down")
-    call her_main("(I can't believe I'm going to do this...)","normal","worriedCl")
+    call her_main("(I can't believe I'm going to do this...)", "normal", "worriedCl", "worried", "mid")
 
     call set_her_action("covering_top")
     #if hg_masturbated.trigger == False:
@@ -69,7 +69,7 @@ label hg_pf_strip_T2_fingering:
     g9 "Nice..."
     call her_main("........", "upset", "wink", "base", "mid")
     m "............."
-    call her_main(".............","normal","worriedCl")
+    call her_main(".............", "normal", "worriedCl", "worried", "mid")
     call her_main("umm... [genie_name]?")
     m "Yes, what is it?"
     call her_main("How long do I have to keep doing this?", "open", "base", "base", "mid")
@@ -102,21 +102,21 @@ label hg_pf_strip_T2_fingering:
             call her_main("ah...{image=textheart}{image=textheart}{image=textheart}", "soft", "narrow", "annoyed", "up")
             call her_main("My classmates win the house cup...", "angry", "wink", "base", "mid")
             m "Are you sure that's the only reason slut?"
-            call her_main("I don't know--","normal","worriedCl")
-            call her_main("ah-a{image=textheart}...","open","worriedCl")
+            call her_main("I don't know--", "normal", "worriedCl", "worried", "mid")
+            call her_main("ah-a{image=textheart}...", "open", "worriedCl", "worried", "mid")
             call her_main("I don't know what you mean, [genie_name]...", "angry", "narrow", "base", "down")
             m "It seems to me that you might be enjoying this a little too much..."
-            call her_main("I am not, [genie_name]!","open","worriedCl")
+            call her_main("I am not, [genie_name]!", "open", "worriedCl", "worried", "mid")
             m "Really?"
-            call her_main("......................","normal","worriedCl")
+            call her_main("......................", "normal", "worriedCl", "worried", "mid")
             m "Then why is your pussy so wet slut?"
             call ctc
 
-            call her_main("ah...{image=textheart}","open","worriedCl")
+            call her_main("ah...{image=textheart}", "open", "worriedCl", "worried", "mid")
             m "ha! just Admit it, you enjoy being called a slut!"
-            call her_main("I do not!","normal","worriedCl")
-            call her_main("Aha...{image=textheart}","open","worriedCl")
-            call her_main("I'm just thinking about how happy everyone will be when we win!","shock","worriedCl")
+            call her_main("I do not!", "normal", "worriedCl", "worried", "mid")
+            call her_main("Aha...{image=textheart}", "open", "worriedCl", "worried", "mid")
+            call her_main("I'm just thinking about how happy everyone will be when we win!", "shock", "worriedCl", "worried", "mid")
             m "and what if they find out how you earned the points?"
             call her_main("what?!", "shock", "wide", "base", "stare")
             m "then it wouldn't just be me degrading you..."
@@ -131,8 +131,8 @@ label hg_pf_strip_T2_fingering:
             call her_main("if harry and ron knew...", "angry", "narrow", "base", "down")
             call her_main("i'd... ah...{image=textheart}", "soft", "narrow", "annoyed", "up")
             m "You'd what [hermione_name]?"
-            call her_main("I'd...","open","worriedCl")
-            call her_main("I'd...{image=textheart}","shock","worriedCl")
+            call her_main("I'd...", "open", "worriedCl", "worried", "mid")
+            call her_main("I'd...{image=textheart}", "shock", "worriedCl", "worried", "mid")
             call her_main("I...{image=textheart}{image=textheart}{image=textheart}", "grin", "narrow", "annoyed", "up")
 
         "\"Play with your breasts\"":
@@ -210,7 +210,7 @@ label hg_pf_strip_T2_fingering:
             call her_main("...", "open_tongue", "narrow", "base", "up", cheeks="blush")
             call set_her_action("covering")
 
-            call her_main("Mmmm...{image=textheart}","scream","worriedCl", cheeks="blush")
+            call her_main("Mmmm...{image=textheart}", "scream", "worriedCl", "worried", "mid", cheeks="blush")
 
 
     call her_main("Ah...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
@@ -218,7 +218,7 @@ label hg_pf_strip_T2_fingering:
     call her_main("a-almost...","clench","worried", cheeks="blush", tears="soft")
     call her_main("I just need a bit longer...")
     m "well you better hurry..."
-    call her_main("Ah... i know, [genie_name].","mad","worriedCl", tears="soft_blink")
+    call her_main("Ah... i know, [genie_name].", "mad", "worriedCl", "worried", "mid", tears="soft_blink")
     call her_main("...........", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "is everything alright?"
     call her_main("................", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
@@ -233,8 +233,8 @@ label hg_pf_strip_T2_fingering:
             m "Well then I guess \"Slytherin\" will have to win the house cup this year."
             call her_main("B-but--", "scream", "wide", "base", "stare")
             m "now, now [hermione_name], a deals a deal."
-            call her_main("Really?","open","worriedCl")
-            call her_main("but I'm trying [genie_name]...","shock","worriedCl")
+            call her_main("Really?", "open", "worriedCl", "worried", "mid")
+            call her_main("but I'm trying [genie_name]...", "shock", "worriedCl", "worried", "mid")
             m "try harder..."
             call nar(">Hermione starts grinding furiously against hand")
             call her_main("*SOB!* i can't...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
@@ -254,7 +254,7 @@ label hg_pf_strip_T2_fingering:
             call her_main("Really?", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
             m "I'm sure you're just a little nervous."
             call her_main("Thank you [genie_name].","clench","worried", cheeks="blush", tears="soft")
-            call her_main("I promise to try harder next time.","scream","worriedCl", cheeks="blush", tears="messy")
+            call her_main("I promise to try harder next time.", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
 
             jump end_hg_pf_strip
 
@@ -276,21 +276,21 @@ label hg_pf_strip_T3_fingering:
     g9 "Nice..."
     call her_main("........", "grin", "narrow", "annoyed", "up")
 
-    call her_main("A-ha... {image=textheart}ah...","open","worriedCl")
-    call her_main("Ah... {image=textheart}-aha...","open","worriedCl")
+    call her_main("A-ha... {image=textheart}ah...", "open", "worriedCl", "worried", "mid")
+    call her_main("Ah... {image=textheart}-aha...", "open", "worriedCl", "worried", "mid")
     m "..."
-    call her_main("Ah-ah...","open","worriedCl")
+    call her_main("Ah-ah...", "open", "worriedCl", "worried", "mid")
     m "......................"
-    call her_main("Ah... ah...{image=textheart}","open","worriedCl")
+    call her_main("Ah... ah...{image=textheart}", "open", "worriedCl", "worried", "mid")
     call her_main("Ah... [genie_name]?", "soft", "happy", "base", "R")
     m "What is it?"
-    call her_main("Ah... Do you.... like this?","open","worriedCl")
+    call her_main("Ah... Do you.... like this?", "open", "worriedCl", "worried", "mid")
     m "Do I like watching \"you\" finger your slutty little pussy?"
     m "Very much so, [hermione_name]. Why?"
-    call her_main("{image=textheart}{image=textheart}{image=textheart}","normal","worriedCl")
-    call her_main("Ah... You're just so quiet...","open","worriedCl")
+    call her_main("{image=textheart}{image=textheart}{image=textheart}", "normal", "worriedCl", "worried", "mid")
+    call her_main("Ah... You're just so quiet...", "open", "worriedCl", "worried", "mid")
     m "Do you need a little more encouragement?"
-    call her_main("Ah... yes... please....{image=textheart}","open","worriedCl")
+    call her_main("Ah... yes... please....{image=textheart}", "open", "worriedCl", "worried", "mid")
     m "Tch... You nasty whore!"
     call her_main("yes [genie_name], ah...{image=textheart}", "grin", "narrow", "base", "angry", "mid", "up", cheeks="blush")
     call her_main("please... ah... more...{image=textheart}", "grin", "base", "angry", "mid", cheeks="blush")
@@ -351,14 +351,14 @@ label hg_pf_strip_T4_fingering:
     m "Try going a little deeper with your fingers."
     call her_main("Alright [genie_name]...", "base", "happyCl", "base", "mid")
     $ hermione_dribble = True
-    call her_main("Ah... ah...{image=textheart}","open","worriedCl")
-    call her_main("Ah... [genie_name]...{image=textheart}","open","worriedCl")
+    call her_main("Ah... ah...{image=textheart}", "open", "worriedCl", "worried", "mid")
+    call her_main("Ah... [genie_name]...{image=textheart}", "open", "worriedCl", "worried", "mid")
 
     menu:
         m "..."
         "\"What are you thinking about?\"":
-            call her_main("Huh?","open","worriedCl", cheeks="blush")
-            call her_main("Oh, um... nothing...","upset","worriedCl", cheeks="blush")
+            call her_main("Huh?", "open", "worriedCl", "worried", "mid", cheeks="blush")
+            call her_main("Oh, um... nothing...", "upset", "worriedCl", "worried", "mid", cheeks="blush")
             m "[hermione_name]..."
             call her_main("[genie_name], please, it's too embarrassing...", "disgust", "narrow", "base", "down", cheeks="blush")
             g4 "Well now I have to hear it."
@@ -408,7 +408,7 @@ label hg_pf_strip_T4_fingering:
             call her_main("Ah...{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up")
             call her_main("Fingering my pussy...", "silly", "narrow", "annoyed", "up")
             call her_main("Ah... ah...{image=textheart}", "grin", "narrow", "annoyed", "up")
-            call her_main("Ah... Do you.... like this [genie_name]?","shock","worriedCl")
+            call her_main("Ah... Do you.... like this [genie_name]?", "shock", "worriedCl", "worried", "mid")
             call her_main("Watching me Ah...{image=textheart} degrade myself?", "silly", "narrow", "base", "dead")
             m "Very much, [hermione_name]. Just keep going..."
             call her_main("{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead")
@@ -484,8 +484,8 @@ label hg_pf_strip_T4_fingering:
             $ g_c_u_pic = "groping_naked_tits_ani"
             call set_her_action("fingering")
 
-            call her_main("[genie_name]!","shock","worriedCl")
-            call her_main("This wasn't part of the deal!","open","worriedCl")
+            call her_main("[genie_name]!", "shock", "worriedCl", "worried", "mid")
+            call her_main("This wasn't part of the deal!", "open", "worriedCl", "worried", "mid")
             call her_main("I don't think we should...", "annoyed", "narrow", "angry", "R", cheeks="blush")
             m "Don't worry [hermione_name], You can keep playing with yourself."
             m "This is just to hurry things along."
@@ -493,7 +493,7 @@ label hg_pf_strip_T4_fingering:
             call her_main("I suppose I can... ah{image=textheart} allow it...", "base", "base", "base", "R", cheeks="blush")
             call nar(">You give her tits a couple of firm squeezes...")
             m "Just admit that you love it."
-            call her_main("Ah... fine...{image=textheart}","open","worriedCl", cheeks="blush")
+            call her_main("Ah... fine...{image=textheart}", "open", "worriedCl", "worried", "mid", cheeks="blush")
             call her_main("{size=-5}I like it...{/size}", "soft", "narrow", "annoyed", "up")
             m "What was that [hermione_name]?"
             call her_main(".......")
@@ -521,7 +521,7 @@ label hg_pf_strip_T4_fingering:
         "-Finger her-":
             $ g_c_u_pic = "groping_06"
             call nar(">You run your hands up and down Hermione's legs...")
-            call her_main("!!!","open","worriedCl")
+            call her_main("!!!", "open", "worriedCl", "worried", "mid")
             call nar(">And slowly move your hands towards her pussy...")
             call her_main(".................", "silly", "narrow", "base", "dead")
             m "That's it [hermione_name]..."

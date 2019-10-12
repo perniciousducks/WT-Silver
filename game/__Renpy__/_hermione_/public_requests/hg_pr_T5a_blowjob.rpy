@@ -49,7 +49,7 @@ label hg_pr_blowjob:
         m "Yes, that's how it's usually done..."
         call her_main("[genie_name], I...", "upset", "closed", "base", "mid")
         call her_main("I refuse to sell you a depraved favour like that, [genie_name].","open","annoyed", cheeks="blush")
-        call her_main("Can't I just kiss another girl instead?","open","worriedCl")
+        call her_main("Can't I just kiss another girl instead?", "open", "worriedCl", "worried", "mid")
         her "I do not mind that..."
         m "[hermione_name], please stop wasting my time..."
         m "If you are not in the mood to sell favours today..."
@@ -280,7 +280,7 @@ label hg_pr_blowjob_T2_E2:
     call her_main("Or raped my face rather I suppose...", "open", "narrow", "worried", "down")
     her "And--"
     play sound "sounds/burp.mp3"
-    call her_main("*Burp!*...","shock","worriedCl")
+    call her_main("*Burp!*...", "shock", "worriedCl", "worried", "mid")
     call her_main("Excuse me.", "angry", "narrow", "base", "down")
     call her_main("He came so much I was barely able to swallow it all...", "scream", "base", "angry", "mid", emote="01")
     her "Bloody bastard!"
@@ -301,7 +301,7 @@ label hg_pr_blowjob_T2_E2:
     play sound "sounds/burp.mp3"
     call her_main("*Burp!*...", "shock", "wide", "base", "stare")
     call her_main("Excuse me, [genie_name].", "angry", "narrow", "base", "down")
-    call her_main("{size=-3}(He just kept on cumming... My stomach feels so full...){/size}","angry","worriedCl", emote="05")
+    call her_main("{size=-3}(He just kept on cumming... My stomach feels so full...){/size}", "angry", "worriedCl", "worried", "mid", emote="05")
     call her_main("Can I get my payment now, please?", "open", "base", "base", "mid")
 
     jump end_hg_pr_blowjob

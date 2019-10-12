@@ -552,10 +552,11 @@ label nt_he_story_intro_E10:
 
 
 label nt_he_story_E11:
+    $ tonks_morph_known = True
     call bld
     m "Tell me more about your time at Hogwarts, as a student..."
     call ton_main("Of course, [ton_genie_name].","base","base","base","mid", ypos="head")
-    call ton_main("Well, as you may or may not know. I'm an metamorphmagus.","open","base","base","R") #metamorphmagus is a latin based word, therefore "-us" is the singular version and "-i" is the plural
+    call ton_main("Well, as you may or may not know. I'm a metamorphmagus.","open","base","base","R") #metamorphmagus is a latin based word, therefore "-us" is the singular version and "-i" is the plural
     call ton_main("It means I can change my physical appearance at will.","base","base","angry","mid")
     m "Sounds useful."
     call ton_main("It can be.","base","base","base","L")

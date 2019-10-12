@@ -21,13 +21,13 @@ label hg_pr_flirt_teacher:
         call her_main("I will do my best, [genie_name]!", "base", "base", "base", "mid")
         call her_main("I am glad you finally decided to act, [genie_name]!", "open", "base", "base", "mid")
         m "Huh?"
-        call her_main("You are finally ready to investigate the teachers who made a habit out of buying favours from the students, aren't you?","normal","frown")
+        call her_main("You are finally ready to investigate the teachers who made a habit out of buying favours from the students, aren't you?", "normal", "squint", "angry", "mid")
         call her_main("I am honoured to pose as bait in this noble endeavour.", "open", "closed", "base", "mid")
         m "Ehm... Yeah, that's exactly what I'm doing."
-        call her_main("Splendid! You can count on me, [genie_name]!","normal","frown")
+        call her_main("Splendid! You can count on me, [genie_name]!", "normal", "squint", "angry", "mid")
 
     else:
-        call her_main("I shall provide you with a detailed report later tonight, [genie_name].","normal","frown")
+        call her_main("I shall provide you with a detailed report later tonight, [genie_name].", "normal", "squint", "angry", "mid")
         m "I will be waiting..."
 
     her "Well, I'd better go now. Classes are about to start..."
@@ -95,7 +95,7 @@ label hg_pr_flirt_teacher_T1_E1: # Flitwick
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Well, I tried flirting with Professor Flitwick...","open","worriedL")
-    call her_main("But it didn't really work...","annoyed","frown")
+    call her_main("But it didn't really work...", "annoyed", "squint", "angry", "mid")
     call her_main("..............................", "annoyed", "narrow", "angry", "R")
     m "How exciting..."
     m "Is this all you have for me today, [hermione_name]?"
@@ -107,7 +107,7 @@ label hg_pr_flirt_teacher_T1_E1: # Flitwick
     m "Don't we all?"
     call her_main("What?", "open", "base", "base", "mid")
     m "I said, don't we all hate it and must be outraged by the a man like Professor Flick-flick."
-    call her_main("Er... It's \"Professor Flitwick\", [genie_name].","normal","frown")
+    call her_main("Er... It's \"Professor Flitwick\", [genie_name].", "normal", "squint", "angry", "mid")
     m "Right. Putting him on my \"Naughty boys list\" as we speak."
     call her_main("......................","annoyed","suspicious")
     m "Well, I hate to admit it but you did a lousy job of today's favour, [hermione_name]."
@@ -156,11 +156,11 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     m "Severus? Interesting..."
     m "How did it go?"
-    call her_main("It was awful [genie_name]...","normal","frown")
+    call her_main("It was awful [genie_name]...", "normal", "squint", "angry", "mid")
     her "I am sorry, but I really hate professor Snape, [genie_name]!"
     m "I'm sure the feeling is mutual..."
     m "Tell me what happened."
-    call her_main("Nothing happened, [genie_name]. He just laughed at me...","annoyed","frown")
+    call her_main("Nothing happened, [genie_name]. He just laughed at me...", "annoyed", "squint", "angry", "mid")
     call her_main("I may not have much feminine charm, but I tried to be nice...","annoyed","worriedL")
     call her_main("And he just started laughing in my face!", "scream", "closed", "angry", "mid")
     call her_main("...it is really scary to see professor Snape laugh...","angry","worriedCl", emote="05")
@@ -209,7 +209,7 @@ label hg_pr_flirt_teacher_T1_E3: # Filch
     her "He was surprisingly sweet."
     her "But I don't think he is \"dirty\", [genie_name]."
     m "Gotcha... Mr.Fil{size=+7}TH{/size} is off the list then."
-    call her_main("It's \"Mr.Filch\", [genie_name]...","normal","frown")
+    call her_main("It's \"Mr.Filch\", [genie_name]...", "normal", "squint", "angry", "mid")
     m "What did I say?"
 
     jump end_hg_pr_flirt_teacher
@@ -358,7 +358,7 @@ label hg_pr_flirt_teacher_T2_E3: # Filch
             jump end_hg_pr_flirt_teacher
 
         "\"Favour failed! No points for you!\"":
-            call her_main("But [genie_name]?","normal","frown")
+            call her_main("But [genie_name]?", "normal", "squint", "angry", "mid")
             m "You are dismissed, [hermione_name]."
             call her_main(".........................................", "angry", "base", "angry", "mid")
 
@@ -452,7 +452,7 @@ label hg_pr_flirt_teacher_T3_E2: # Snape +CG
     call her_main("Yes... It's when you stare at a man's crotch and imagine that you are looking at something you want badly...", "open", "closed", "angry", "mid", ypos="head")
     m "Where do you get this stuff?"
     call her_main("Women's magazines...","open","worriedL", ypos="head")
-    call her_main("Well, anyway, it worked, [genie_name].","normal","frown", ypos="head")
+    call her_main("Well, anyway, it worked, [genie_name].", "normal", "squint", "angry", "mid", ypos="head")
 
     hide screen blkfade
     show screen snape_groping
@@ -478,7 +478,7 @@ label hg_pr_flirt_teacher_T3_E3: # Lockhart
     call hg_pr_flirt_teacher_intro
 
     stop music fadeout 1.0
-    call her_main("Professor Lockhart!","annoyed","frown")
+    call her_main("Professor Lockhart!", "annoyed", "squint", "angry", "mid")
     m "Got it! Adding him to the \"Naughty list\"!"
     call her_main("No, [genie_name], it's not that...","open","worried")
     call her_main("Or...", "annoyed", "narrow", "angry", "R")

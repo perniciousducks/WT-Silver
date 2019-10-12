@@ -449,7 +449,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main(".............","open","suspicious")
         m "Care t' guess wha' th' destination will be?"
         m "You have t' guess three times to find out."
-        call her_main("...........","annoyed","frown")
+        call her_main("...........", "annoyed", "squint", "angry", "mid")
         call her_main("Booty plundering?","disgust","glance")
         g4 "Wha..........?!"
         g4 "How did ye...?"

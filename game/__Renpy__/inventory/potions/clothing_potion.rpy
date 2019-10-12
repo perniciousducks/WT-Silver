@@ -4,8 +4,8 @@
 
 label potion_scene_4: #Transparent uniform
     m "[hermione_name], I have another potion for you."
-    call her_main("I'm not sure that I like these potions [genie_name].","normal","frown")
-    call her_main("Especially after the time you tried to turn me into a cat.","annoyed","frown")
+    call her_main("I'm not sure that I like these potions [genie_name].", "normal", "squint", "angry", "mid")
+    call her_main("Especially after the time you tried to turn me into a cat.", "annoyed", "squint", "angry", "mid")
     m "To be fair I was trying to turn you into another girl..."
     call her_main("That's not much better [genie_name].", "angry", "base", "angry", "mid")
     m "Isn't it?"
@@ -14,7 +14,7 @@ label potion_scene_4: #Transparent uniform
     m "I promise that this potion won't affect your body in any way."
     call her_main("Well then what on earth is it going to do?", "angry", "base", "angry", "mid")
     m "As always [hermione_name], you'll ha-"
-    call her_main("Have to wait and see. I know.","normal","frown")
+    call her_main("Have to wait and see. I know.", "normal", "squint", "angry", "mid")
 
     call her_chibi("drink_potion","mid","base")
 

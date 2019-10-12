@@ -184,7 +184,7 @@ label cho_intro_E1:
 
     $ renpy.sound.play("sounds/card_punch1.mp3")
     call cho_main("{size=-5}Whore...{/size}", "soft", "angry", "angry", "L",trans="hpunch")
-    call her_main("...","normal","frown", cheeks="blush")
+    call her_main("...", "normal", "squint", "angry", "mid", cheeks="blush")
     call cho_main("...", "base", "angry", "base", "L")
     call her_main("So...{p=0.4}what have you been discussing? Anything I should know?","open","suspicious", cheeks="blush")
     call cho_main("Oh, it’s nothing that you need to worry your pretty little head about...", "smile", "wide", "angry", "L")
@@ -349,7 +349,7 @@ label cho_intro_E1:
     call her_main("I knew it!", "angry", "base", "angry", "mid")
     g4 "Now, if you could just listen for a second!"
     call her_main("I don’t want to hear it!", "open", "closed", "base", "mid")
-    call her_main("I’m leaving.","normal","frown")
+    call her_main("I’m leaving.", "normal", "squint", "angry", "mid")
 
     # Hermione leaves
     call her_walk(action="leave", speed=2.5)
@@ -663,7 +663,7 @@ label cho_intro_E3:
         call her_main("You'd be surprised just how few female-", "soft", "closed", "base", "mid")
         m "I'll give you ten house points."
         call her_main("Ten points?", "soft", "wide", "base", "stare",trans="hpunch")
-        call her_main("Sir do you even realize how much time it took me to do all that research?","angry","frown")
+        call her_main("Sir do you even realize how much time it took me to do all that research?", "angry", "squint", "angry", "mid")
         m "Twenty?"
         call her_main("Two hundred!", "angry", "closed", "angry", "mid")
         g4 "Two hundred? Are you nuts?"

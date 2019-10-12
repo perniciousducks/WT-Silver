@@ -534,7 +534,7 @@ label hg_pf_anal_sex_old: # Writing not in use
     call her_main(".............","open","suspicious")
     m "Care to guess what the favour will be?"
     m "You have three attempts to find out."
-    call her_main("...........","annoyed","frown")
+    call her_main("...........", "annoyed", "squint", "angry", "mid")
     call her_main("Anal sex?","disgust","glance")
     g4 "Wha..........?!"
     g4 "How did you...?"

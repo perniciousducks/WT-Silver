@@ -53,7 +53,7 @@ label hg_pf_strip_T2_Snape:
         m "Oh, I just think you could use a bigger audience for your striptease performance."
         call her_main("My striptease performance...?!!", "shock", "wide", "base", "stare")
         call her_main("With all due respect, [genie_name]...", "angry", "base", "angry", "mid")
-        call her_main("{size=-5}(Which I have oh so little left for you...){/size}","normal","frown")
+        call her_main("{size=-5}(Which I have oh so little left for you...){/size}", "normal", "squint", "angry", "mid")
         call her_main("I refuse to degrade myself for professor Snape's amusement!", "scream", "closed", "angry", "mid")
         m "No, no, you got it all wrong, [hermione_name]."
         call her_main("Hm..?", "soft", "base", "base", "mid")
@@ -268,7 +268,7 @@ label hg_pf_strip_T2_Snape:
             g4 "Do what you are paid for and start stripping already!!!"
             call her_main("......", "angry", "closed", "angry", "mid", emote="01")
             call sna_main(".............","snape_05")
-            call her_main("...","mad","frown")
+            call her_main("...", "mad", "squint", "angry", "mid")
 
     pause.2
 

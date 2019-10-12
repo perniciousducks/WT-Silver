@@ -19,7 +19,7 @@ label hg_pr_handjob:
 
         if her_tier < 4 or her_reputation < 12:
             m "[hermione_name], I want you to do something different today..."
-            call her_main("...?","normal","frown")
+            call her_main("...?", "normal", "squint", "angry", "mid")
             m "I want you to give a handjob to one of your classmates."
             jump too_much
 
@@ -139,7 +139,7 @@ label hg_pr_handjob_T1_E1:
     m "[hermione_name], how did it go?"
     show screen blktone
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Quite awful... of course...","annoyed","frown")
+    call her_main("Quite awful... of course...", "annoyed", "squint", "angry", "mid")
     m "Just tell me what happened, [hermione_name]..."
     call her_main("I made a complete fool out of myself, that's what happened, [genie_name].","disgust","glance")
     her "....."
@@ -489,7 +489,7 @@ label hg_pr_handjob_T3_intro_E1:
     m "Did you now? Do tell..."
     call play_music("playful_tension") # SEX THEME.
     her "Yes, I did a bad thing... a very bad thing..."
-    call her_main("A very bad and foolish thing...","annoyed","frown")
+    call her_main("A very bad and foolish thing...", "annoyed", "squint", "angry", "mid")
     her "..."
     m "...................."
     her "......................"

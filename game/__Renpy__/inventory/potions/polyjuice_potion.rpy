@@ -53,7 +53,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
                 call her_main("If it makes you happy, [genie_name].", "smile", "base", "base", "mid")
                 call her_main("...","annoyed","down_raised")
             elif her_whoring >= 6:
-                call her_main("And what kind of potion is it? It looks gross...","normal","frown")
+                call her_main("And what kind of potion is it? It looks gross...", "normal", "squint", "angry", "mid")
                 m "Well, wouldn't it spoil half the enjoyment of it if I told you?"
                 call her_main("Depends whose enjoyment you're talking about...","open","suspicious")
                 m "20 points."
@@ -65,7 +65,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
                 m "For Gryffindor?"
                 call her_main("Fine...", "open", "closed", "base", "mid")
             else: #Fail
-                call her_main("And what kind of potion is it? It looks gross...","normal","frown")
+                call her_main("And what kind of potion is it? It looks gross...", "normal", "squint", "angry", "mid")
                 m "Well, wouldn't it spoil half the enjoyment of it if I told you?"
                 her "I'm not going to drink some random potion for your amusement."
                 m "There's some points in it for you of course."

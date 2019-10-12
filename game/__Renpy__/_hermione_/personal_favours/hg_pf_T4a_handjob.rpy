@@ -809,14 +809,14 @@ label hg_pf_handjob_2_continue:
             m "Means that they can only be spread to the same species."
             call her_main("............","open","suspicious")
             m "Also I hear that many women do enjoy getting \"knotted\" quite a bit."
-            call her_main("What does getting \"knotted\" mean?","normal","frown")
+            call her_main("What does getting \"knotted\" mean?", "normal", "squint", "angry", "mid")
             m "Ehm... Well..."
             m "Ah, it doesn't matter."
             m "Just say the thing!"
             call her_main("Fine!", "normal", "base", "base", "mid")
             call her_main("Sometimes I get lonely and let my dog mount me.","open","suspicious")
             m "That sounded so fake..."
-            call her_main("Because we don't even own a dog!","normal","frown")
+            call her_main("Because we don't even own a dog!", "normal", "squint", "angry", "mid")
             m "Fine, whatever, let's just move on then..."
 
         "{size=-4}\"-Manual user input-\"{/size}":

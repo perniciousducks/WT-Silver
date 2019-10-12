@@ -191,7 +191,7 @@ label potion_scene_2_2: #ass expansion
     m "[hermione_name], I have another potion for you to try today."
     call her_main("Another one? Where are you getting these?","open","suspicious")
     m "That's of no concern to you. What should concern you is the 20 points that you are able to earn should you drink it."
-    call her_main("...Fine, give me the bottle.","normal","frown")
+    call her_main("...Fine, give me the bottle.", "normal", "squint", "angry", "mid")
     call nar(">She takes a quizzical smell of the bottle.")
     call her_main("At least this one smells good.", "base", "base", "base", "mid")
 

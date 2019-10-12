@@ -12,7 +12,7 @@ label ball_quest_E1:
     m "\"ABOC\"?"
     call her_main("The \"Autumn Ball Organization Committee\", sir...", "open", "closed", "base", "mid")
     m "Ehm... Sure..."
-    call her_main("Please excuse me if I am being too direct with this, sir...","normal","frown")
+    call her_main("Please excuse me if I am being too direct with this, sir...", "normal", "squint", "angry", "mid")
     call her_main("But I think you should put me in charge.", "open", "closed", "angry", "mid")
     her "I did it last year and it was the best organised \"autumn ball\" Hogwarts has had in years."
     call her_main("You said so yourself, sir. Do you remember?", "normal", "base", "base", "mid")
@@ -26,7 +26,7 @@ label ball_quest_E1:
             jump one_thing
 
         "\"No. Professor Snape shall be in charge!\"":
-            call her_main("Professor Snape, sir?","normal","frown")
+            call her_main("Professor Snape, sir?", "normal", "squint", "angry", "mid")
             her "But, traditionally organizing and hosting the ball is the responsibility of the students..."
             her "Teachers are only present as the guests of honour..."
             m "Well of course... I was just kidding."
@@ -34,7 +34,7 @@ label ball_quest_E1:
             label one_thing:
                 call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
             m "There is one condition, though..."
-            call her_main("A conditions, [genie_name]?","normal","frown")
+            call her_main("A conditions, [genie_name]?", "normal", "squint", "angry", "mid")
 
             $ d_flag_04 = False
             label no_sleeping_with_professor:

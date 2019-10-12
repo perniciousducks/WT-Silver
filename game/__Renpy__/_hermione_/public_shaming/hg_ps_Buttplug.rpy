@@ -432,7 +432,7 @@ label hg_ps_buttplug_complete:
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             show screen blktone
             $ sc34CG(1, 8)
-            call her_main("It was awful... of course...","annoyed","frown",xpos="base",ypos="base")
+            call her_main("It was awful... of course...", "annoyed", "squint", "angry", "mid",xpos="base",ypos="base")
             m "Just tell me what happened, [hermione_name]..."
             call her_main("I've never been so uncomfortable in my life [genie_name]!","disgust","glance")
             call her_main("I wasn't able to focus on anything all day!", "annoyed", "narrow", "annoyed", "mid")
@@ -697,7 +697,7 @@ label hg_ps_buttplug_complete:
             m "[hermione_name], how was it?"
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             show screen blktone
-            call her_main("It was awful... simply awful...","annoyed","frown",xpos="right",ypos="base")
+            call her_main("It was awful... simply awful...", "annoyed", "squint", "angry", "mid",xpos="right",ypos="base")
             m "what happened, [hermione_name]..."
             call her_main("It was that nasty professor snape, [genie_name]!", "annoyed", "narrow", "angry", "R")
             call her_main("I've never been so embarrassed in my life!", "annoyed", "narrow", "annoyed", "mid")

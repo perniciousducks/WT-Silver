@@ -117,14 +117,14 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         call her_main("Hm....?","annoyed","down",xpos="right",ypos="base")
         call her_main("[genie_name]? What is this?", "angry", "base", "angry", "mid")
         her "What have you done to them?"
-        call her_main("They are covered in something slimy...","normal","frown")
+        call her_main("They are covered in something slimy...", "normal", "squint", "angry", "mid")
 
         menu:
             "\"An experiment went wrong\"":
                 call her_main("An experiment went wrong, [genie_name]?", "open", "base", "base", "mid")
                 m "Yes... Or maybe I should rather say..."
                 g9 "\"An experiment went very right\"? He-he..."
-                call her_main(".....................?","normal","frown")
+                call her_main(".....................?", "normal", "squint", "angry", "mid")
                 her "What kind of experiment was it?"
                 m "What? Oh..."
                 m "Some top secret research I'm conducting."

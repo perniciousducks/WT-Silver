@@ -129,7 +129,7 @@ label give_her_gift(gift_item):
             call her_mood(-10)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
             call her_main("A chocolate bar?", "normal", "base", "base", "mid")
-            call her_main("Hm...","annoyed","frown")
+            call her_main("Hm...", "annoyed", "squint", "angry", "mid")
             call her_main("That thing about fairies...")
             call her_main("That is a joke of some sort, right?","open","worried")
             call give_gift(">You give the chocolate to Hermione...", gift_item)
@@ -376,7 +376,7 @@ label give_her_gift(gift_item):
             call her_main("[genie_name], I wouldn't even know what to do with them...", "scream", "closed", "angry", "mid")
             call her_mood(6)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
-            call her_main("...Condoms?","normal","frown")
+            call her_main("...Condoms?", "normal", "squint", "angry", "mid")
             call her_main("Ehm... Is this a part of some new Hogwarts sex ed program or something?", "open", "closed", "angry", "mid")
             call her_main("No, [genie_name]... It feels wrong to accept a thing like this from you...", "open", "base", "base", "R",cheeks="blush")
             call her_mood(0)
@@ -556,14 +556,14 @@ label give_her_gift(gift_item):
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("A broom...?", "base", "base", "base", "mid")
             call her_main("Hm...", "normal", "base", "base", "mid")
-            call her_main("What is that silly-looking thing attached to it?","normal","frown")
+            call her_main("What is that silly-looking thing attached to it?", "normal", "squint", "angry", "mid")
             call her_main("Is it like a saddle...?","open","suspicious")
             call give_gift(">You give the broom to Hermione...",gift_item)
             call her_main("Thank you for the gift, [genie_name].","open","worried")
             call her_mood(-20)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
             call her_main("A broom...?", "base", "base", "base", "mid")
-            call her_main("Hm...","normal","frown")
+            call her_main("Hm...", "normal", "squint", "angry", "mid")
             call her_main("It's a sex-toy of some sort, isn't it?", "angry", "base", "angry", "mid")
             call her_main("But it is so well crafted...","open","down")
             call give_gift(">You give the broom to Hermione...",gift_item)

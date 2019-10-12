@@ -379,7 +379,7 @@ label slytherin_cheer_responses:
                 call her_main("Exhausting... Those Slytherin pigs insisted that I cheer for their entire practice session.", "open", "closed", "angry", "mid")
                 her "They were hardly playing the game by the end. They were just standing there watching me."
                 m "Well what was your routine?"
-                call her_main("Mostly star jumps while I cheered \"Go Slytherin!\".","annoyed","frown")
+                call her_main("Mostly star jumps while I cheered \"Go Slytherin!\".", "annoyed", "squint", "angry", "mid")
                 m "So you were just jumping up and down? That doesn't seem like a very intricate cheer."
                 call her_main("It isn't but it's what they insisted I do.", "annoyed", "narrow", "angry", "R")
                 m "Well it definitely sounds like you earned your points."
@@ -416,7 +416,7 @@ label slytherin_cheer_responses:
                 m "Well what would you have me do?"
                 call her_main("Speak to Professor Snape, tell him to chastise them. They'll listen to him...", "angry", "base", "angry", "mid")
                 m "Very well, I'll speak to him. Although I'm not sure it will have the effect you're hoping for."
-                call her_main("It better, otherwise I wont put my full effort into this...","normal","frown")
+                call her_main("It better, otherwise I wont put my full effort into this...", "normal", "squint", "angry", "mid")
                 m "{size=-5}I'm sure that'll show them.{/size}"
                 call her_main("What was that [genie_name]?","open","suspicious")
                 m "Nothing [hermione_name], I'll speak to Professor Snape tonight..."
@@ -709,7 +709,7 @@ label inn_menu:
             m "I present you you're new barmaid."
             $ hermione_wear_robe = True
             call set_hermione_outfit(hg_outfit_maid_OBJ)
-            call her_main("","normal","frown")
+            call her_main("", "normal", "squint", "angry", "mid")
             call ctc
 
             abe "Well go on then girl, take the robe off."

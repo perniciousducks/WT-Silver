@@ -144,7 +144,7 @@ label hg_pf_talk_T1: # Call label
     else:
         m "(Professor Sprout... He-he, what a ridiculous name...)"
 
-    call her_main("Did you say something, [genie_name]?","normal","frown")
+    call her_main("Did you say something, [genie_name]?", "normal", "squint", "angry", "mid")
     m "It's nothing, keep going..."
     call her_main("Well, some students are making fun of professor Quirell behind his back...", "open", "base", "base", "mid")
 
@@ -173,7 +173,7 @@ label hg_pf_talk_T1: # Call label
     m "Yes, yes, I'm totally listening..."
     m "This is all very self-righteous, er..."
     m "I mean, very invigorating and stuff..."
-    call her_main("..........................","normal","frown")
+    call her_main("..........................", "normal", "squint", "angry", "mid")
 
     return
 
@@ -239,7 +239,7 @@ label hg_pf_talk_T2:
             call her_main("You are not.....?","open","worried")
             call her_main("Are you...?","annoyed","worriedL")
             m "What? Oh, it's nothing. Keep going."
-            call her_main("Hm...","normal","frown")
+            call her_main("Hm...", "normal", "squint", "angry", "mid")
             m "{size=-4}(Is she onto me? Nah...){/size}"
 
         "-Participate in the conversation-":
@@ -554,9 +554,9 @@ label hg_pf_talk_T3:
 label hg_pf_talk_tonks_T3_intro_E1:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name], for today's favour I'd like to bring in a guest to join us."
-    call her_main("What? Didn't we decide it was going to be between just you and I?","open","frown")
+    call her_main("What? Didn't we decide it was going to be between just you and I?", "open", "squint", "angry", "mid")
     m "Well, why only the two of us when there was the option to bring another person in?"
-    call her_main("The option to?","normal","frown")
+    call her_main("The option to?", "normal", "squint", "angry", "mid")
     call her_main("Sorry, I'm not following...","normal","suspicious")
     m "[hermione_name], what is your opinion of Miss Tonks?"
     call her_main("Well, she's a very talented witch... You'd have to be to become an auror.", "open", "closed", "base", "mid")
@@ -684,7 +684,7 @@ label hg_pf_talk_tonks:
             call her_main("It was if a snail had dragged themselves across one of the seats.", "annoyed", "base", "base", "R", cheeks="blush")
             call her_main("I had to insist on staying after class - and I spent a good 10 minutes scourgifying everything.","disgust","down", cheeks="blush")
             call ton_main("Why bother, the elves would've done it anyway.","open","base","base","R")
-            call her_main("About that-{w=0.6}{nw}","open","frown")
+            call her_main("About that-{w=0.6}{nw}", "open", "squint", "angry", "mid")
             call ton_main("Actually, let's save that topic for another time...","open","happyCl","base","mid")
             call ton_main("Is there anything else you could tell us about these... naughty \"Slytherin\" girls?","horny","base","angry","mid", hair="horny")
             call her_main("Of course!", "open", "closed", "angry", "mid")
@@ -710,7 +710,7 @@ label hg_pf_talk_tonks:
             call ton_main("Yes, I would love to hear a bit more about what's going on with you Miss Granger...","horny","base","base","L", hair="horny")
             call ton_main("When I took the teaching position, you and I had a bit of a discussion, didn't we?","base","base","angry","L")
             call ton_main("From what I've been hearing on the Portrait vine, you have been selling a few favours yourself to professor Dumbledore here...","base","base","angry","mid")
-            call her_main("I have not!","shock","frown", cheeks="blush")
+            call her_main("I have not!", "shock", "squint", "angry", "mid", cheeks="blush")
 
             menu:
                 "-Start jerking off-":
@@ -730,7 +730,7 @@ label hg_pf_talk_tonks:
                     $ masturbating = False
 
             call ton_main("","horny","base","base","down")
-            call her_main("","annoyed","frown", cheeks="blush")
+            call her_main("", "annoyed", "squint", "angry", "mid", cheeks="blush")
 
             if masturbating:
                 g9 "(Oh yes you have, you naughty slut...)"
@@ -739,7 +739,7 @@ label hg_pf_talk_tonks:
                 $ tmp_word = num_to_word(tmp_val) # Sum up all favour counters and turn them into a word.
 
                 m "{size=-4}...[tmp_word]...{/size}"
-                call her_main("huh?","open","frown", cheeks="blush")
+                call her_main("huh?", "open", "squint", "angry", "mid", cheeks="blush")
                 m "You sold me exactly [tmp_word] favours."
                 call her_main("B-but that's-{w=1.0}{nw}","angry","happy", cheeks="blush")
                 if tmp_val < 10:

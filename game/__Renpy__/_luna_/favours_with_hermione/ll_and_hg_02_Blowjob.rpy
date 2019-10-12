@@ -50,7 +50,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("I told you that was the rule number one! Besides, you nearly bit it clean in half...", "angry", "wide", "base", "stare")
         g4 "!!!"
         m "you know what, I think I'll be fine without one..."
-        call her_main("oh no... you already asked for one. besides, she needs the experience.","annoyed","frown")
+        call her_main("oh no... you already asked for one. besides, she needs the experience.", "annoyed", "squint", "angry", "mid")
         m "Can't she have a little more practice?"
         $ luna_flip = 1
         call lun_main("stop complaining... I don't bite hard anymore.","normal","angry","mad","R")

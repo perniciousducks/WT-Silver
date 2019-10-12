@@ -152,7 +152,7 @@ label equip_misc_item:
                 # call her_main("(This is going to hurt...)","angry","worriedCl",cheeks="blush")
                 # call her_main("Fine... Let me put it on.", "base", "base", "base", "R")
                 # g9 "Don't you mean... \"in\"?"
-                # call her_main("...","annoyed","frown")
+                # call her_main("...", "annoyed", "squint", "angry", "mid")
                 # hide screen hermione_main
                 # with d5
                 # pause.2

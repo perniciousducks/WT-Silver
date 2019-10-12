@@ -71,10 +71,10 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("Isn't that right sir?","upset","angry","mad","R")
         m "Oh, um yes of course I can get that easily..."
         m "(What the hell is veribatium?)"
-        call her_main("!!!","annoyed","frown") #angry face
-        call her_main("surely you know there's no need for that sir!","normal","frown") #angry face
+        call her_main("!!!", "annoyed", "squint", "angry", "mid") #angry face
+        call her_main("surely you know there's no need for that sir!", "normal", "squint", "angry", "mid") #angry face
         m "..."
-        call her_main("...","annoyed","frown")
+        call her_main("...", "annoyed", "squint", "angry", "mid")
         call lun_main("...","base","angry","base","mid")
         call her_main("Fine! I admit it!","scream","worriedCl")
         call lun_main("See... Isn't it better to tell the truth?","base","mad","sad","mid")

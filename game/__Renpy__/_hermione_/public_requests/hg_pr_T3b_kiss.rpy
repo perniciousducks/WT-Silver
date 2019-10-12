@@ -17,7 +17,7 @@ label hg_pr_kiss:
     #Intro.
     if hg_pr_kiss.counter == 0:
         m "Have You ever kissed another girl, [hermione_name]?"
-        call her_main("?!","normal","frown")
+        call her_main("?!", "normal", "squint", "angry", "mid")
 
         if her_tier < 3 or her_reputation < 6:
             jump too_much
@@ -32,9 +32,9 @@ label hg_pr_kiss:
         m "Go find a cute little thing and plant a \"smooch\" on her!"
         call her_main("[genie_name], but I am--","open","worried")
         m "Dismissed, [hermione_name]."
-        call her_main("[genie_name]!......","normal","frown")
+        call her_main("[genie_name]!......", "normal", "squint", "angry", "mid")
         m "I said you're dismissed."
-        call her_main("*Humph!*...","annoyed","frown")
+        call her_main("*Humph!*...", "annoyed", "squint", "angry", "mid")
 
     elif her_tier < 4:
         m "[hermione_name], forty five house points are up for grabs today!"
@@ -48,7 +48,7 @@ label hg_pr_kiss:
         call her_main("Oh, is that all?", "angry", "base", "angry", "mid") # :(
         m "Yes... Pretty basic stuff for you, right?"
         m "And you will be getting forty five house points afterwards of course."
-        call her_main(".............","normal","frown")
+        call her_main(".............", "normal", "squint", "angry", "mid")
         m "So... Are you up for it?"
         call her_main("I will see what I can do, [genie_name]...", "annoyed", "narrow", "angry", "R")
         m "Great. See you after your classes then."
@@ -395,7 +395,7 @@ label hg_pr_kiss_T3_E1:
     m "\"Housophobic\"...?"
     m "No, wait, I got it!"
     m "\"Housophobe\"!"
-    call her_main("Stop it, [genie_name]. I am not any of those weird words...","normal","frown")
+    call her_main("Stop it, [genie_name]. I am not any of those weird words...", "normal", "squint", "angry", "mid")
     her "\"Slytherins\" are evil and annoying. Nobody likes them, and that is a fact!"
     m "Fine, whatever. Back to the \"girl-kissing\" then."
     call her_main("...............","annoyed","worriedL")

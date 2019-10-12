@@ -64,7 +64,7 @@ label l_tutoring:
         call her_main("Sir?", "soft", "base", "base", "R")
         g4 "It's time to talk about your future, child."
         stop music fadeout 1.0
-        call her_main("I'm not a child anymore, professor!","normal","frown")
+        call her_main("I'm not a child anymore, professor!", "normal", "squint", "angry", "mid")
         m "In a way you're right, but..."
         her "..........."
         m "I can tutor you, but you need to understand certain things about magic."
@@ -143,7 +143,7 @@ label l_tutoring:
         call her_main("Yes, you're right! It's my mission! I'll do my best, professor.", "grin", "base", "angry", "mid",cheeks="blush")
         g9 "{size=-2}(She is so naive, it's adorable.){/size}"
         m "Good, now time to go to bed, child."
-        call her_main("{size=-2}(Tsh... Like I'm going to bed at this time, I need to study more.){/size}","normal","frown")
+        call her_main("{size=-2}(Tsh... Like I'm going to bed at this time, I need to study more.){/size}", "normal", "squint", "angry", "mid")
         hide screen hermione_main
         call nar("You dismiss Hermione.")
 

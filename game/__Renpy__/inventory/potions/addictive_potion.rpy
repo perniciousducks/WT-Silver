@@ -26,19 +26,19 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
                 her "And you'll pay me if I drink this?"
                 m "Of course...{w} I'll give you 30 points for Gryffindor house."
     else:
-        call her_main("What does this one do?","normal","frown")
+        call her_main("What does this one do?", "normal", "squint", "angry", "mid")
         m "As always, it's going to be a surprise."
         if whoring <= 17: #Under when she stops caring about points too Much
                 her "And you'll pay me if I drink this?"
                 m "Of course...{w} I'll give you 30 points for Gryffindor house."
 
     if hg_pp_polyjuice.counter > 0:
-        call her_main("You're not going to try to transform me into a cat again are you [genie_name]?","normal","frown")
-        call her_main("","normal","frown")
+        call her_main("You're not going to try to transform me into a cat again are you [genie_name]?", "normal", "squint", "angry", "mid")
+        call her_main("", "normal", "squint", "angry", "mid")
         m "Of course not, now would you kindly drink the potion?"
     elif hg_pp_expansion.counter > 0:
-        call her_main("You're not going to make my breasts expand again are you [genie_name]?","normal","frown")
-        call her_main("","normal","frown")
+        call her_main("You're not going to make my breasts expand again are you [genie_name]?", "normal", "squint", "angry", "mid")
+        call her_main("", "normal", "squint", "angry", "mid")
         m "Of course not, now would you kindly drink the potion?"
     else:
         m "Now would you kindly drink the potion?"
@@ -600,10 +600,10 @@ label potion_scene_3_2_3: #Hyper sensitive pussy
 
 label potion_scene_3_3_1: #Hypno potion
     m "[hermione_name], I have another special potion for you today."
-    call her_main("Who are you even buying these off?","normal","frown")
+    call her_main("Who are you even buying these off?", "normal", "squint", "angry", "mid")
     m "A good magician never tells."
-    call her_main("Magician? You're a wizard, and this better not have any long-term side effects.","normal","frown")
-    call her_main("I'm still coughing up fur balls every now again from that polyjuice potion.","normal","frown")
+    call her_main("Magician? You're a wizard, and this better not have any long-term side effects.", "normal", "squint", "angry", "mid")
+    call her_main("I'm still coughing up fur balls every now again from that polyjuice potion.", "normal", "squint", "angry", "mid")
     m "Of course it won't, now would you kindly drink the potion."
     call her_main("...", "annoyed", "narrow", "angry", "R")
     call her_chibi("drink_potion","mid","base")

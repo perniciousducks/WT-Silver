@@ -32,7 +32,7 @@
                     # $ her_mood = 0
                 # "-Don't give her the points-":
                     # m "I don't think so, missy!"
-                    # call her_main("...","annoyed","frown")
+                    # call her_main("...", "annoyed", "squint", "angry", "mid")
                     # call her_main("Fine!", "angry", "base", "angry", "mid")
                     # call her_main("I don't want them anyway!","annoyed","down")
                     # m "You sure?"

@@ -656,7 +656,7 @@ label hermione_change:
             call her_main("","base","happy", cheeks="blush")
     elif temp_name == "Little Girl":
         if her_whoring >=7 and her_whoring < 9:
-            call her_main("What's going on with with these silly nicknames of yours all of a sudden?","normal","frown")
+            call her_main("What's going on with with these silly nicknames of yours all of a sudden?", "normal", "squint", "angry", "mid")
             m "What do you mean by silly?"
             call her_main("It makes it sound as if I'm your...","soft","worriedL")
             call her_main("Ugh, forget I said anything...","open","down_raised",cheeks="blush")
@@ -689,7 +689,7 @@ label hermione_change:
             call her_main("", "base", "base", "base", "mid")
     elif temp_name == "Pet":
         if her_whoring >= 11 and her_whoring < 13:
-            call her_main("You want to call me.... {w=0.5}a pet?","normal","frown")
+            call her_main("You want to call me.... {w=0.5}a pet?", "normal", "squint", "angry", "mid")
             m "Yes."
             call her_main(".... {w=0.5}.... {w=0.5}.... {w=0.5}....", "normal", "happy", "base", "mid")
             call her_main("","normal","suspicious")
@@ -845,8 +845,8 @@ label hermione_change:
                         #"-Leaf bud-":
                         #    jump hermione_talk
                     jump hermione_talk
-            call her_main("Why would you even suggest calling me such a thing..", "scream","frown")
-            call her_main("It's like the most offensive thing you could call someone like...", "shock","frown", tears="soft")
+            call her_main("Why would you even suggest calling me such a thing..", "scream", "squint", "angry", "mid")
+            call her_main("It's like the most offensive thing you could call someone like...", "shock", "squint", "angry", "mid", tears="soft")
             call her_main("like...", "open","worriedCl", tears="soft_blink")
             call her_main("Someone like...", "open","down", tears="mascara_crying")
             call her_main("me...", "disgust","down", tears="mascara_soft")

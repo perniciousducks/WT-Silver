@@ -56,7 +56,7 @@ label hg_pr_flirt:
         her "But why must I do this at all?"
         m "Nobody is forcing you, [hermione_name]..."
         call her_main("You don't need to remind me of that, [genie_name]...", "angry", "base", "angry", "mid")
-        call her_main("Alright if I must... [genie_name]...","normal","frown")
+        call her_main("Alright if I must... [genie_name]...", "normal", "squint", "angry", "mid")
 
     else:
         m "I need you to flirt with some boys from \"Slytherin\" today."
@@ -132,16 +132,16 @@ label hg_pr_flirt_T1_E1:
     m "And?"
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("He showed me his tongue and ran off, [genie_name].","normal","frown")
+    call her_main("He showed me his tongue and ran off, [genie_name].", "normal", "squint", "angry", "mid")
     m "Did you try to lure him in with a lolipop?"
     call her_main("I did not, [genie_name]...","open","worriedL")
     her "The thought never crossed my mind, but--"
     m "That was a joke, [hermione_name]."
-    call her_main("[genie_name]?","normal","frown")
+    call her_main("[genie_name]?", "normal", "squint", "angry", "mid")
     m "I didn't send you out there to harass little kids!"
-    call her_main(".............","annoyed","frown")
+    call her_main(".............", "annoyed", "squint", "angry", "mid")
     m "I told you to flirt with boys {size=+5}your{/size} age!"
-    call her_main("I wanted to at first, but...","normal","frown")
+    call her_main("I wanted to at first, but...", "normal", "squint", "angry", "mid")
     call her_main("I guess I got scared...", "annoyed", "narrow", "angry", "R")
     her "I mean I despise those \"Slytherins\" way too much to flirt with them, [genie_name]!"
     call her_main("I would have to fight my gag-reflex the entire time!", "angry", "base", "angry", "mid")
@@ -155,9 +155,9 @@ label hg_pr_flirt_T1_E1:
 
         "\"Favour failed! No points for you!\"":
             stop music fadeout 1.0
-            call her_main("I understand...","normal","frown")
+            call her_main("I understand...", "normal", "squint", "angry", "mid")
             m "Get out of my sight..."
-            call her_main("Yes, [genie_name]...Sorry, [genie_name]...","annoyed","frown")
+            call her_main("Yes, [genie_name]...Sorry, [genie_name]...", "annoyed", "squint", "angry", "mid")
 
             call her_walk(action="leave", speed=2.5)
 
@@ -182,7 +182,7 @@ label hg_pr_flirt_T1_E2:
     her "So I told him that I would report him."
     m "A truly captivating story..."
     m "Anything else?"
-    call her_main("Yes, there was also this one student at the library...","annoyed","frown")
+    call her_main("Yes, there was also this one student at the library...", "annoyed", "squint", "angry", "mid")
     her "He was obviously struggling with a problem..."
     her "So I offered my help..."
     m "And?"
@@ -191,7 +191,7 @@ label hg_pr_flirt_T1_E2:
     call her_main("Of course, [genie_name].", "open", "closed", "angry", "mid")
     m "*sigh*"
     m "Anything else?"
-    call her_main("Well, there was one more incident but the outcome was pretty much the same...","annoyed","frown")
+    call her_main("Well, there was one more incident but the outcome was pretty much the same...", "annoyed", "squint", "angry", "mid")
     m "\"The Gryffindor whore\"?"
     call her_main(".........yes, [genie_name].","disgust","glance")
     m "You are doing it all wrong, [hermione_name]."
@@ -331,7 +331,7 @@ label hg_pr_flirt_T2_E2:
 
     menu:
         "\"Just take your points and go!\"":
-            call her_main("................","normal","frown")
+            call her_main("................", "normal", "squint", "angry", "mid")
 
         "\"The almighty hat is never wrong!\"":
             call her_main("Yes, of course... Everybody knows that...", "soft", "base", "base", "R")

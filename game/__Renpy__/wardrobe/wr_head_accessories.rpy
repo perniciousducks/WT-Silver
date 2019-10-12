@@ -65,8 +65,8 @@ label equip_makeup:
                     # call her_main("Sure, [genie_name].", "soft", "base", "base", "mid")
                     # call her_main("Let me just put on a few dots on...","base","glance")
                 # else:
-                    # call her_main("Hmm","normal","frown")
-                    # call her_main("I suppose I can put an few dots...","annoyed","frown")
+                    # call her_main("Hmm", "normal", "squint", "angry", "mid")
+                    # call her_main("I suppose I can put an few dots...", "annoyed", "squint", "angry", "mid")
 
             # #Fake Cum
             # if makeup_choice == "fake_cum":
@@ -98,8 +98,8 @@ label equip_makeup:
                         # call her_main("Fake cum...?","open","worried")
                         # call her_main("You cannot be serious, [genie_name]!", "open", "base", "base", "mid")
                         # m "What's wrong? It's not real..."
-                        # call her_main("[genie_name] I am not going to smear myself with cum, real or not, and then parade around the school!","normal","frown")
-                        # call her_main("I absolutely refuse!","annoyed","frown")
+                        # call her_main("[genie_name] I am not going to smear myself with cum, real or not, and then parade around the school!", "normal", "squint", "angry", "mid")
+                        # call her_main("I absolutely refuse!", "annoyed", "squint", "angry", "mid")
                     # ">She won't cover herself in cum just yet."
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 20."
@@ -202,9 +202,9 @@ label equip_head_accessory:
 
                 # if her_whoring < 11:
                     # call her_main("Reading glasses...?","open","worried")
-                    # call her_main("But I can see just fine, [genie_name].","normal","frown")
+                    # call her_main("But I can see just fine, [genie_name].", "normal", "squint", "angry", "mid")
                     # m "Don't worry, they have fake lenses."
-                    # call her_main("I suppose I could wear them...","annoyed","frown")
+                    # call her_main("I suppose I could wear them...", "annoyed", "squint", "angry", "mid")
                     # call her_main("Let me put them on real quick.", "base", "base", "base", "mid")
                 # else:
                     # call her_main("Sure, [genie_name].", "soft", "base", "base", "mid")
@@ -218,7 +218,7 @@ label equip_head_accessory:
                     # call her_main("Vintage glasses...?","open","worried")
                     # call her_main("I don't need to wear glasses, [genie_name]. I can see just fine!", "open", "closed", "base", "mid")
                     # m "They aren't real glasses. These lenses are fake."
-                    # call her_main("I see... I suppose I could wear them...","annoyed","frown")
+                    # call her_main("I see... I suppose I could wear them...", "annoyed", "squint", "angry", "mid")
                     # call her_main("Let me put them on real quick.", "base", "base", "base", "mid")
                 # else:
                     # call her_main("Sure, [genie_name].", "soft", "base", "base", "mid")
@@ -289,7 +289,7 @@ label equip_head_accessory:
             # if head_accessory_choice == "tiara":
 
                 # call her_main("A tiara...?","open","worried")
-                # call her_main("I suppose I can wear it...","annoyed","frown")
+                # call her_main("I suppose I can wear it...", "annoyed", "squint", "angry", "mid")
                 # call her_main("let me just go put it on.","base","glance")
 
             # hide screen hermione_main

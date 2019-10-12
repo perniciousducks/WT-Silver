@@ -564,7 +564,7 @@ label astoria_intro_E3:
                     $ gryffindor += 20
 
     call her_main("In a few days, everyone at Hogwarts will know what happened to her...", "grin", "base", "angry", "mid")
-    call her_main("When she's sent to Azkaban!","soft","frown")
+    call her_main("When she's sent to Azkaban!", "soft", "squint", "angry", "mid")
     m "Nobody's going anywhere, except for you, Miss Granger..."
 
     if d_flag_01:

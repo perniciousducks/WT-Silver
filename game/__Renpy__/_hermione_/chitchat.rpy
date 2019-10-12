@@ -76,7 +76,7 @@ label chit_chat:
         elif one_of_ten == 4:
             call her_main("Despite the questionable nature of the favours you have been buying from me lately, sir...", "open", "closed", "angry", "mid")
             her "I am grateful to you for your help..."
-            call her_main("Gryffindor needs those points now more than ever...","annoyed","frown")
+            call her_main("Gryffindor needs those points now more than ever...", "annoyed", "squint", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 5:
@@ -116,9 +116,9 @@ label chit_chat:
         if one_of_ten == 1:
             call her_main("Do you remember when you asked me to show you my panties for the first time sir?", "open", "closed", "angry", "mid")
             her "I was so furious with you then..."
-            call her_main("Now I see that I was just being selfish...","annoyed","frown")
+            call her_main("Now I see that I was just being selfish...", "annoyed", "squint", "angry", "mid")
             her "After all, the honour of my house is at stake here..."
-            call her_main("And that shall be my one and only concern!","normal","frown")
+            call her_main("And that shall be my one and only concern!", "normal", "squint", "angry", "mid")
 
         elif one_of_ten == 2:
             call her_main("The rate at which the Slytherin house has been gaining points lately is simply ridiculous.", "open", "closed", "angry", "mid")
@@ -174,7 +174,7 @@ label chit_chat:
 
         elif one_of_ten == 2:
             call her_main("Thank you for buying all those favours from me, sir.", "open", "closed", "angry", "mid")
-            call her_main("Some of them were borderline inappropriate, sure...","normal","frown")
+            call her_main("Some of them were borderline inappropriate, sure...", "normal", "squint", "angry", "mid")
             call her_main("But I don't mind sacrificing my dignity if it will allow Gryffindor to compete with Slytherin on equal ground.", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
@@ -185,7 +185,7 @@ label chit_chat:
         elif one_of_ten == 4:
             call her_main("Sir, there is something about professor Snape that I think you should know...", "open", "base", "base", "mid")
             call her_main(".................","open","worriedL")
-            call her_main(".........................","annoyed","frown")
+            call her_main(".........................", "annoyed", "squint", "angry", "mid")
             call her_main("uhm... Never mind...", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
@@ -222,7 +222,7 @@ label chit_chat:
     ### WHORING LEVEL 05 ###
     if her_whoring >= 12 and her_whoring <= 14:
         if one_of_ten == 1:
-            call her_main("Sir, with all due respect...","normal","frown")
+            call her_main("Sir, with all due respect...", "normal", "squint", "angry", "mid")
             her "Professor Snape's debauchery is getting out of hand!"
             call her_main("You must do something, sir.","open","worried")
             call her_main("", "normal", "base", "base", "mid")
@@ -242,7 +242,7 @@ label chit_chat:
 
         elif one_of_ten == 5:
             call her_main("My least favourite subject?","open","suspicious")
-            call her_main("Divination.","annoyed","frown")
+            call her_main("Divination.", "annoyed", "squint", "angry", "mid")
 
         elif one_of_ten == 6:
             call her_main("My father used to say: \"Magic is just science we don't understand yet\".", "open", "base", "base", "mid")

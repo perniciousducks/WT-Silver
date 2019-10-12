@@ -295,7 +295,7 @@ label forest_BJ_2:
     call her_main("{size=+10}You just came down my throat in front of moaning myrtle!{/size}", "scream", "closed", "angry", "mid")
     call her_main("She's going to tell everyone about this now!", "annoyed", "base", "angry", "mid")
     m "So? Doesn't everyone sort of know by now anyway?"
-    call her_main("Argh! That's not the point and you know it!","annoyed","frown")
+    call her_main("Argh! That's not the point and you know it!", "annoyed", "squint", "angry", "mid")
     call her_main("You can't keep treating me like your {image=textheart}dirty{image=textheart} little {b}cumdump{/b} to use as you please!","angry","suspicious")
     call her_main("To coat in your filthy nasty {b}{image=textheart}cum{image=textheart}{/b}...","angry","dead")
     call her_main("In front of whoever, or whatever, you want...", "angry", "narrow", "annoyed", "up")

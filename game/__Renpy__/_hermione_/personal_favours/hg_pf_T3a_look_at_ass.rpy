@@ -56,7 +56,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
                 call her_main("And you most certainly must not touch yourself!","scream","worriedCl")
 
             "\"I will give you 40 points to see your ass.\"":
-                call her_main("Forty?","annoyed","frown")
+                call her_main("Forty?", "annoyed", "squint", "angry", "mid")
                 call her_main("Well alright then...", "annoyed", "narrow", "angry", "R")
                 call her_main("but if you expect to touch me it'll cost you extra...","annoyed","down")
                 call her_main("at least one hundred points", "annoyed", "narrow", "angry", "R")
@@ -251,7 +251,7 @@ label hg_pr_strip_T2_admire_rear:
             call her_main(".....................", "base", "closed", "base", "mid", ypos="head")
         "-\"Your ass is alright...\"-":
             ">You Look at her ass some more whilst making some disapproving tuts..."
-            call her_main(".....................","annoyed","frown", ypos="head")
+            call her_main(".....................", "annoyed", "squint", "angry", "mid", ypos="head")
             $ her_mood += 3
 
     call nar(">You stare at her ass for a while longer...")

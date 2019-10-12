@@ -429,9 +429,9 @@ label luna_revert_1: #Reversion event #DONE
     m "Wait, she's being punished?"
     call her_main("Of course!", "annoyed", "narrow", "angry", "R")
     call her_main("Seeing as how you didn't give \"Ravenclaw\" any points you haven't done anything wrong.","annoyed","suspicious")
-    call her_main("But her...","annoyed","frown")
+    call her_main("But her...", "annoyed", "squint", "angry", "mid")
     ">Hermione glares at the still frozen Luna Lovegood."
-    call her_main("...","annoyed","frown")
+    call her_main("...", "annoyed", "squint", "angry", "mid")
     call her_main("She needs a punishment.", "smile", "base", "angry", "mid")
     m "What are you thinking?"
     call her_main("Hmmm...", "annoyed", "narrow", "angry", "R")

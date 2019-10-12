@@ -118,7 +118,7 @@ label give_her_gift(gift_item):
             call her_main("A lollipop?", "base", "base", "base", "mid")
             call her_main("Clever girls use candy like this as a \"weapon\".", "smile", "base", "base", "R")
             call give_gift(">You give the candy to Hermione...",gift_item)
-            call her_main("Thank you, [genie_name].","base","happyCl")
+            call her_main("Thank you, [genie_name].", "base", "happyCl", "base", "mid")
             call her_mood(-5)
 
     elif gift_item == chocolate_ITEM:#chocolate
@@ -282,12 +282,12 @@ label give_her_gift(gift_item):
             call her_main("I shall throw these away myself...", "annoyed", "narrow", "annoyed", "mid")
             call her_mood(-8)
         elif her_whoring >= 18: # Lv 7+
-            call her_main("The New edition of \"L.o.v.e.\"!!!","smile","happyCl")
+            call her_main("The New edition of \"L.o.v.e.\"!!!", "smile", "happyCl", "base", "mid")
             call her_main("Err.. I mean, adult magazines?", "angry", "wink", "base", "mid")
             call her_main("This is a little inappropriate...")
-            call her_main("But I will take them...","base","happyCl")
+            call her_main("But I will take them...", "base", "happyCl", "base", "mid")
             call give_gift(">You give an assortment of adult magazines to Hermione...",gift_item)
-            call her_main("thank you, [genie_name].","base","happyCl")
+            call her_main("thank you, [genie_name].", "base", "happyCl", "base", "mid")
             call her_mood(-15)
 
     elif gift_item == porn_mag_ITEM:#porn mags

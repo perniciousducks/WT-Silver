@@ -370,7 +370,7 @@ label potion_scene_11_3: #Milking potion part 3
 
     #option 2 (Permanent expansion)
     m "[hermione_name], feel like a milkshake?"
-    call her_main("Really? Strawberry, please!","smile","happyCl",emote="06")
+    call her_main("Really? Strawberry, please!", "smile", "happyCl", "base", "mid",emote="06")
     m "I've only got vanilla, sorry..."
     call nar(">You hand her the cloudy potion.","start")
     call nar(">Hermione cautiously smells the mixture.","end")
@@ -387,7 +387,7 @@ label potion_scene_11_3: #Milking potion part 3
         call her_main("Is it Strawberry?", "soft", "narrow", "annoyed", "up")
         m "WHy don't you have a taste and find out?"
         call her_main("Alright then...","open","suspicious")
-        call her_main("(I hope it's Strawberry!)","smile","happyCl",emote="06")
+        call her_main("(I hope it's Strawberry!)", "smile", "happyCl", "base", "mid",emote="06")
     else:
         m "Just drink it..."
         call her_main("*hmph* fine...","open","suspicious")
@@ -580,7 +580,7 @@ label potion_scene_11_3: #Milking potion part 3
                 call her_main("well...", "soft", "happy", "base", "R")
                 call her_main("Are you going to finish it?", "smile", "base", "angry", "mid")
                 call nar(">You finish the cannister in one final mouthful.")
-                call her_main("...","smile","happyCl")
+                call her_main("...", "smile", "happyCl", "base", "mid")
                 call nar(">She slowly screws the cannister back into milker.")
 
                 $ milking = 1

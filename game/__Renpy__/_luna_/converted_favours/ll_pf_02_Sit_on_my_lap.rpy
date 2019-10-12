@@ -1255,7 +1255,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         call ctc
 
         call her_main("hello Professor!", "base", "closed", "base", "mid")
-        call her_main("hey luna! oh, has he got you on lap dance duty today then?","smile","happyCl",emote="06")
+        call her_main("hey luna! oh, has he got you on lap dance duty today then?", "smile", "happyCl", "base", "mid",emote="06")
         call lun_main("if you can even call it that...","normal","seductive","angry","R")
         call lun_main("most of the time he just makes me grind up against him while he creams his robe...","base","base","base","down")
         call lun_main("I feel bad for the elves who have to clean it up...","base","mad","angry","down")

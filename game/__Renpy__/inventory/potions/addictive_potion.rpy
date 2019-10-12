@@ -615,7 +615,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_chibi("stand","mid","base")
 
     call her_main("This isn't bad at all.", "base", "happy", "base", "mid")
-    call her_main("I feel...","base","happyCl")
+    call her_main("I feel...", "base", "happyCl", "base", "mid")
     m "You feel what?"
     call her_main("I-I feel grea--", "annoyed", "narrow", "worried", "down")
     call nar(">Hermione's eyes go blank and she stares forward blankly.")
@@ -681,7 +681,7 @@ label potion_scene_3_3_1: #Hypno potion
         call her_main("I bet you like watching me strip mistah{image=textheart}", "smile", "narrow", "base", "mid_soft")
 
     call her_main("I'm not sure what under-thingies I should wear though...", "annoyed", "narrow", "base", "down")
-    call her_main("Definitely something in pink!!!","smile","happyCl")
+    call her_main("Definitely something in pink!!!", "smile", "happyCl", "base", "mid")
     hide screen hermione_main
     call blkfade
 
@@ -721,7 +721,7 @@ label potion_scene_3_3_1: #Hypno potion
     call hide_blkfade
     call ctc
 
-    call her_main("Do you like it mistah?","grin","happyCl")
+    call her_main("Do you like it mistah?", "grin", "happyCl", "base", "mid")
 
     menu:
         g9"!!!"
@@ -742,7 +742,7 @@ label potion_scene_3_3_1: #Hypno potion
             call load_hermione_clothing_saves
             call update_her_uniform
 
-            call her_main("Yay! Do you like it?","grin","happyCl")
+            call her_main("Yay! Do you like it?", "grin", "happyCl", "base", "mid")
             call her_main("Anything else you want from me mistah?... I'll do anything!{image=textheart}", "soft", "narrow", "base", "mid_soft")
 
 
@@ -753,22 +753,22 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("Are those questions going to be hard, mistah?","grin","worriedCl",emote="05")
     call her_main("I don't like hard questions.","grin","worriedCl")
     m "Don't worry they'll be nice and easy for you."
-    call her_main("yay!","smile","happyCl")
+    call her_main("yay!", "smile", "happyCl", "base", "mid")
     m "First question, Who are you?"
-    call her_main("That's an easy one! I'm Hermione Granger, the prettiest girl in the whole school!","smile","happyCl",emote="06")
+    call her_main("That's an easy one! I'm Hermione Granger, the prettiest girl in the whole school!", "smile", "happyCl", "base", "mid",emote="06")
     m "And what are your hobbies?"
-    call her_main("Doing my makeup{image=textheart}, dancing{image=textheart} and dressing happy{image=textheart}!","base","happyCl")
+    call her_main("Doing my makeup{image=textheart}, dancing{image=textheart} and dressing happy{image=textheart}!", "base", "happyCl", "base", "mid")
     m "Dressing happy?"
     call her_main("You know, wearing nice things to make other people happy!{image=textheart}", "base", "narrow", "base", "up")
     m "You like making people happy?"
-    call her_main("Of course mistah professor, making people happy{image=textheart} makes me happy{image=textheart}!","smile","happyCl")
-    call her_main("Once I finish school I want to get a job where all I do is make people happy{image=textheart}!","base","happyCl")
+    call her_main("Of course mistah professor, making people happy{image=textheart} makes me happy{image=textheart}!", "smile", "happyCl", "base", "mid")
+    call her_main("Once I finish school I want to get a job where all I do is make people happy{image=textheart}!", "base", "happyCl", "base", "mid")
     m "Ok, final question;"
     m "How would you like to make yourself happy?"
     call her_main("Make myself happy?", "annoyed", "narrow", "worried", "down")
-    call her_main("But I'm already happy, silly!","base","happyCl")
+    call her_main("But I'm already happy, silly!", "base", "happyCl", "base", "mid")
     m "Even happier."
-    call her_main("Even happier? {size=+10}YAY!{/size}","smile","happyCl",emote="06")
+    call her_main("Even happier? {size=+10}YAY!{/size}", "smile", "happyCl", "base", "mid",emote="06")
     call her_main("So how am I going to be happier? Am I going to get naked?", "grin", "base", "base", "R")
     m "That'd be a good start."
     call her_main("{image=textheart}AAAAAAWWWEEESOOOOOOOOMMME!{image=textheart}", "grin", "narrow", "annoyed", "up")
@@ -836,7 +836,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("could you please cum on me?", "open_tongue", "narrow", "base", "up",cheeks="blush")
     m "Well if it makes you happy."
     call nar(">you stand up and head towards her.")
-    call her_main("thank you, thank you thank you! You're the best headmaster {size=+5}EVER!{/size}","smile","happyCl",emote="06")
+    call her_main("thank you, thank you thank you! You're the best headmaster {size=+5}EVER!{/size}", "smile", "happyCl", "base", "mid",emote="06")
 
     hide screen hermione_main
     call blkfade
@@ -858,7 +858,7 @@ label potion_scene_3_3_1: #Hypno potion
     m "Do what?"
     call her_main("Stop themselves from coming here and getting you to cover them in yummy cummy!", "annoyed", "narrow", "worried", "down")
     call set_her_action("covering")
-    call her_main("I mean I can barely stop mahself coming here everyday!","smile","happyCl")
+    call her_main("I mean I can barely stop mahself coming here everyday!", "smile", "happyCl", "base", "mid")
     m "That's it..."
     call set_her_action("pinch")
     call her_main("Hmmm, I just luv playin' with mah boobies{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "base", "up")
@@ -934,7 +934,7 @@ label potion_scene_3_3_1: #Hypno potion
     m "I think you need to have a little nap and let this wear off."
     call her_main("whatever you say sir!", "annoyed", "closed", "base", "mid")
     call set_her_action("none","skip_update")
-    call her_main("And thanks again!{image=textheart} You're the best!","smile","happyCl",emote="06")
+    call her_main("And thanks again!{image=textheart} You're the best!", "smile", "happyCl", "base", "mid",emote="06")
 
     call her_walk(action="leave", speed=2.5)
 

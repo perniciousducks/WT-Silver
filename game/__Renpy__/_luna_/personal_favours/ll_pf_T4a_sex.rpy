@@ -460,7 +460,7 @@ label ll_pf_sex_T1_her_1: # Call label
     with d5
 
     call play_sound("door")
-    call her_main("[genie_name], I hope you're not too busy to ben-","smile","happyCl", xpos=550, ypos=-140)
+    call her_main("[genie_name], I hope you're not too busy to ben-", "smile", "happyCl", "base", "mid", xpos=550, ypos=-140)
     call her_main("[genie_name], Luna! What are you two doing?!","soft","shocked", trans="hpunch")
     m "ah... Isn't it obvious?"
     call her_main("Ugh... Why are you two fucking then?", "scream", "base", "angry", "mid")
@@ -554,8 +554,8 @@ label ll_pf_sex_T1_her_1: # Call label
 # Hermione repeatable part
 label ll_pf_sex_T1_her_2: # Call label
 
-    call her_main("[genie_name], I really need a good-","smile","happyCl")
-    call her_main("Oh... Hello, Luna.","smile","happyCl")
+    call her_main("[genie_name], I really need a good-", "smile", "happyCl", "base", "mid")
+    call her_main("Oh... Hello, Luna.", "smile", "happyCl", "base", "mid")
     her "Figures I'd find you up here..."
     m "Why's that?"
     lun "..."

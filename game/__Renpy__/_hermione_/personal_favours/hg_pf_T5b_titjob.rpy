@@ -162,7 +162,7 @@ label hg_pf_titjob_T1_intro_E1:
             call her_main("100 house points?!","scream","wide_stare")
             call her_main("This might be enough to put \"Gryffindor\" in the lead!", "smile", "wide", "base", "stare")
             m "So,...is that a yes?"
-            call her_main("Yes, [genie_name]!","smile","happyCl")
+            call her_main("Yes, [genie_name]!", "smile", "happyCl", "base", "mid")
             call her_main("I shall do my best...", "soft", "narrow", "base", "mid_soft", emote="06")
 
     jump hg_pf_titjob_1
@@ -222,7 +222,7 @@ label hg_pf_titjob_T2_intro_E2:
     call her_main("For 45 house points?", "soft", "narrow", "base", "mid_soft")
     m "Yes, [hermione_name]."
     call her_main("(...)", "annoyed", "base", "base", "R")
-    call her_main("Very well then...","smile","happyCl")
+    call her_main("Very well then...", "smile", "happyCl", "base", "mid")
     g9 "Splendid!"
 
     jump hg_pf_titjob_2
@@ -593,7 +593,7 @@ label hg_pf_titjob_2:
     m "Yes, yes, like that..."
     m "*Hmm*... You are getting pretty good at this."
     $ ccg1 = 21
-    call her_main("Thank you, [genie_name].","base","happyCl")
+    call her_main("Thank you, [genie_name].", "base", "happyCl", "base", "mid")
     call her_main("I figured with how kind you've been it's the least I could do...")
 
     menu:
@@ -682,7 +682,7 @@ label hg_pf_titjob_2:
 
         "\"This is really good. Did you practice?\"":
             $ ccg1 = 22
-            call her_main("*Hmm?*...","base","happyCl", ypos="head")
+            call her_main("*Hmm?*...", "base", "happyCl", "base", "mid", ypos="head")
             $ ccg1 = 21
             call her_main("Sort of...{w=0.3} Well not on another cock...", "angry", "wink", "base", "mid")
             m "On what then?"
@@ -710,7 +710,7 @@ label hg_pf_titjob_2:
             call her_main("Ginny seemed to enjoy it a lot as well...", "base", "narrow", "base", "up")
             g4 "She enjoyed it?"
             $ ccg1 = 22
-            call her_main("Of course she did!","base","happyCl")
+            call her_main("Of course she did!", "base", "happyCl", "base", "mid")
             $ ccg1 = 23
             call her_main("Who wouldn't love feeling my perfect tits...", "base", "closed", "base", "mid")
             call her_main("Although I think she might have enjoyed it...", "open", "narrow", "worried", "down")
@@ -906,7 +906,7 @@ label hg_pf_titjob_2_cumming:
             m "So you're fine with swallowing now?"
             call her_main("What?", "open", "narrow", "worried", "down")
             call her_main("Oh. I suppose so...", "grin", "base", "base", "R")
-            call her_main("I mean it doesn't taste that bad and it means that I don't have to clean up afterwards.","base","happyCl")
+            call her_main("I mean it doesn't taste that bad and it means that I don't have to clean up afterwards.", "base", "happyCl", "base", "mid")
             m "Hm... Are you sure you don't want people seeing your tits covered in cum..."
             call her_main("What? Walk around school covered in your cum, [genie_name]?", "angry", "wink", "base", "mid")
 

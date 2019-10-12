@@ -671,7 +671,7 @@ label cho_intro_E3:
         m "Then what else?"
         call her_main("Uhm...", "annoyed", "base", "base", "R")
         m "You’re testing my patience Miss Granger..."
-        call her_main("Oh, I know!{p=0.5}I want a seat in the teacher stands during the Quidditch matches!","smile","happyCl")
+        call her_main("Oh, I know!{p=0.5}I want a seat in the teacher stands during the Quidditch matches!", "smile", "happyCl", "base", "mid")
         call her_main("Cho would be so jealous if she saw me sitting near the commentator and teachers...", "grin", "narrow", "base", "mid_soft")
         m "So, you want both 200 points and a seat in the teacher stands..."
         call her_main("Yes...", "base", "happy", "base", "mid_soft")
@@ -682,7 +682,7 @@ label cho_intro_E3:
                 m "Anything else?"
                 call her_main("Well...", "soft", "happy", "base", "R")
                 m "Don’t push your luck..."
-                call her_main("No, I think that should do...","smile","happyCl")
+                call her_main("No, I think that should do...", "smile", "happyCl", "base", "mid")
                 m "200 points to gryffindor...{p=0.6}Happy?"
                 $ gryffindor += 200
 

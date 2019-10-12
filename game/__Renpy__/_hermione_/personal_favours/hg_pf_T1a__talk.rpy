@@ -40,7 +40,7 @@ label hg_pf_talk:
         m "If you say so."
 
     if hg_pf_talk.counter == 1: #First time.
-        call her_main("Another [current_payout] points... The Guys will be so happy!","base","happyCl")
+        call her_main("Another [current_payout] points... The Guys will be so happy!", "base", "happyCl", "base", "mid")
 
     if her_mood != 0:
         call her_main("Will this be all then?", "annoyed", "base", "angry", "mid")
@@ -411,7 +411,7 @@ label hg_pf_talk_T3:
     call her_main("As I'm a muggle born I've been considering dropping the subject. It's a waste of time.", "base", "base", "base", "mid")
     call her_main("Although since I failed that test I feel like I need all the extra points I can get...", "open", "narrow", "worried", "down")
     call her_main("Her views on muggle and wizarding relations and the fact that we're not that different is also quite refreshing...", "base", "happy", "base", "mid_soft")
-    call her_main("Not that the Slytherins aren't constantly trying to disrupt her classes...","annoyed","happyCl")
+    call her_main("Not that the Slytherins aren't constantly trying to disrupt her classes...", "annoyed", "happyCl", "base", "mid")
     if masturbating:
         m "*Hmm* I bet they were...."
         call her_main("*UGH* Do you have to keep touching yourself professor?", "disgust", "narrow", "worried", "down", cheeks="blush")
@@ -430,7 +430,7 @@ label hg_pf_talk_T3:
     call her_main("But since most of the Slytherins are pure-blood they were handling her items with little to no care.", "mad", "base", "base", "R")
     call her_main("So when they weren't silently insulting her about her views they were constantly making suggestive remarks about the objects asking where she'd insert that one...","annoyed","worriedL")
     call her_main("She's quite oblivious to it most of the time but the constant giggling from the Slytherin girls is very distracting and annoying.", "open", "narrow", "worried", "down", cheeks="blush")
-    call her_main("It didn't help when they discovered what professor Burbage actually believed to be a back massager...","angry","happyCl", cheeks="blush")
+    call her_main("It didn't help when they discovered what professor Burbage actually believed to be a back massager...", "angry", "happyCl", "base", "mid", cheeks="blush")
     m "I mean, that's what it says on the box..."
     g4 "Wait, how do you know what people usually use them for?"
     call her_main("...","disgust","shocked", cheeks="blush")
@@ -456,7 +456,7 @@ label hg_pf_talk_T3:
         m "To what?"
         her "To pleasure yourself..."
         m "And are you using one of these devices?"
-        call her_main("Of...{w=0.5} of course I'm not!{w=0.5} Muggle electronics don't work at Hogwarts!","base","happyCl", cheeks="blush")
+        call her_main("Of...{w=0.5} of course I'm not!{w=0.5} Muggle electronics don't work at Hogwarts!", "base", "happyCl", "base", "mid", cheeks="blush")
         g9 "So you have one at home then?"
         call her_main("I...", "normal", "narrow", "worried", "down", cheeks="blush")
         g9 "(I knew it, you dirty slut!)"

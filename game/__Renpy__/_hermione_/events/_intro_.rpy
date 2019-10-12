@@ -1276,7 +1276,7 @@ label hermione_intro_E6:
         call her_main("{size=-4}(Students show teachers their tongues all the time...){/size}", "soft", "base", "base", "R")
         call her_main("{size=-4}(Although that's usually when the teacher is not looking...){/size}", "base", "narrow", "base", "R_soft")
         call her_main("{size=-4}(But there is nothing wrong with what I did today...){/size}", "disgust", "narrow", "worried", "down")
-        call her_main("{size=-4}(I earned my house extra points...){/size}","smile","happyCl")
+        call her_main("{size=-4}(I earned my house extra points...){/size}", "smile", "happyCl", "base", "mid")
 
     if current_favor == "stand_there":
         call her_main("{size=-4}(I can just stand there and let the professor look at me...){/size}", "annoyed", "base", "base", "R", ypos="head")
@@ -1285,13 +1285,13 @@ label hermione_intro_E6:
     if current_favor == "silly_face":
         call her_main("{size=-4}(Stupid face...){/size}","silly","silly", ypos="head")
         call her_main("{size=-4}(Stupid face...){/size}", "silly", "happy", "base", "mid_soft")
-        call her_main("{size=-4}(I need to practice this.){/size}","base","happyCl")
+        call her_main("{size=-4}(I need to practice this.){/size}", "base", "happyCl", "base", "mid")
 
     if current_favor == "bad_girl":
         call her_main("{size=-4}(I'm a bad girl...){/size}", "angry", "base", "angry", "mid", ypos="head")
         call her_main("{size=-4}(I am very bad...){/size}", "soft", "base", "angry", "mid")
-        call her_main("{size=-4}(Yes, I can say things like that easily...){/size}","smile","happyCl")
-        call her_main("{size=-4}(There is nothing wrong with that... nothing at all...){/size}","base","happyCl")
+        call her_main("{size=-4}(Yes, I can say things like that easily...){/size}", "smile", "happyCl", "base", "mid")
+        call her_main("{size=-4}(There is nothing wrong with that... nothing at all...){/size}", "base", "happyCl", "base", "mid")
 
     call her_chibi("leave")
 

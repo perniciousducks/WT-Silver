@@ -555,7 +555,7 @@ label good_girl_scene:
     m "I do, you're a good girl Miss Granger."
     call her_main("Thank you [genie_name].", "base", "base", "base", "mid")
     m "Once Gryffindor wins the house cup no one will even remember what they said about you they'll be so grateful."
-    call her_main("Yes, you're right [genie_name]. I suppose that I was just overreacting.","base","happyCl")
+    call her_main("Yes, you're right [genie_name]. I suppose that I was just overreacting.", "base", "happyCl", "base", "mid")
     m "Don't worry about it."
     call her_main("Before I go...", "grin", "base", "base", "R")
     call her_main("Do you think that you could buy a favour off of me?", "smile", "narrow", "base", "mid_soft")

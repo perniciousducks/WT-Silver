@@ -460,7 +460,7 @@ label hg_wager_bj:
 
                                         m "Get out of there... life decisions."
                                         call u_pause_ani
-                                        call her_main("Happy?","normal","happyCl", cheeks="blush")
+                                        call her_main("Happy?", "normal", "happyCl", "base", "mid", cheeks="blush")
                                         m "I just lost the game and one of my bottles of wine..."
                                         call her_main("And a higher than average amount of 2 to 5ml by the looks of it...", "open", "narrow", "worried", "down", cheeks="blush")
                                         g9 "That is true..."
@@ -478,7 +478,7 @@ label hg_wager_bj:
                                         call sna_walk(action="leave", speed=3)
 
                                         call u_pause_ani
-                                        call her_main("Happy?","normal","happyCl", cheeks="blush")
+                                        call her_main("Happy?", "normal", "happyCl", "base", "mid", cheeks="blush")
                                         g4 "What are you talking about? How could I be happy in a moment like this..."
                                         call her_main("But I just made you...","open","worried", cheeks="blush")
                                         g4 "I just lost that god damn game cause I couldn't concentrate!"

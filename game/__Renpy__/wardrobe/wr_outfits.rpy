@@ -420,7 +420,7 @@ label equip_outfit:
                 # else:
                     # m "Remember that dress I gave you?"
                     # call her_main("Of course! How could I ever forget!", "open", "wide", "base", "stare")
-                    # call her_main("Thank you so much, [genie_name]!","grin","happyCl")
+                    # call her_main("Thank you so much, [genie_name]!", "grin", "happyCl", "base", "mid")
                     # her "You got me a new ball dress?"
                     # m "Indeed I did, but you'll have to earn it."
                     # call her_main("Of course!", "angry", "wide", "base", "stare")

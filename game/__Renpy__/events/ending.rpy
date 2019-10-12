@@ -12,7 +12,7 @@ label ball_ending_start:
             m "[hermione_name], that ball you've mentioned..."
             m "When did you say it would start again?"
             call her_main("The autumn ball?!", "grin", "base", "base", "mid")
-            call her_main("I'm so excited!!! I can't wait for it!","grin","happyCl")
+            call her_main("I'm so excited!!! I can't wait for it!", "grin", "happyCl", "base", "mid")
             call her_main("Just two more days, [genie_name]", "base", "narrow", "base", "mid_soft")
             m "That soon, huh?"
             call her_main("Yep! I still have a tonne of preparation to do, though.", "soft", "base", "base", "R")

@@ -48,7 +48,7 @@ label hg_pf_admire_panties:
 
     if hg_pf_admire_panties.counter == 1: #First time.
         call her_main("Another [current_payout] points...", "base", "narrow", "worried", "down")
-        call her_main("Can't wait to tell the guys!","smile","happyCl")
+        call her_main("Can't wait to tell the guys!", "smile", "happyCl", "base", "mid")
         call her_main("Only that I can't actually tell them about any of this...", "annoyed", "narrow", "angry", "R")
 
     call her_main("Will this be all then?", "open", "base", "base", "mid")

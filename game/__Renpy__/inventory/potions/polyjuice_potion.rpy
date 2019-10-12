@@ -236,10 +236,10 @@ label hg_pp_polyjuice_T1_intro:
                 g4 "Oh good heavens!"
                 m "It's like your whole mouth has become a vibrator."
                 call u_pause_ani
-                call her_main("I can't help it [genie_name], when someone touches my ears I just purr.","base","happyCl")
+                call her_main("I can't help it [genie_name], when someone touches my ears I just purr.", "base", "happyCl", "base", "mid")
                 hide screen hermione_main
                 m "It feels amazing, now cock back in the mouth girl."
-                call her_main("Yes [genie_name].","smile","happyCl",emote="06")
+                call her_main("Yes [genie_name].", "smile", "happyCl", "base", "mid",emote="06")
                 call u_play_ani
                 hide screen hermione_main
                 with d3
@@ -459,10 +459,10 @@ label hg_pp_polyjuice_T1_introCC:
         m "It's like your whole mouth has become a vibrator."
         $ g_c_u_pic = "hand_ani"
         with d3
-        call her_main("I can't help it [genie_name], whenever \nanything touches my ears I just purr.","base","happyCl")
+        call her_main("I can't help it [genie_name], whenever \nanything touches my ears I just purr.", "base", "happyCl", "base", "mid")
         hide screen hermione_main
         m "It feels amazing, now cock back in the mouth girl."
-        call her_main("Yes [genie_name].","smile","happyCl",emote="06")
+        call her_main("Yes [genie_name].", "smile", "happyCl", "base", "mid",emote="06")
         $ g_c_u_pic = "blowjob_ani"
         with d3
         hide screen hermione_main

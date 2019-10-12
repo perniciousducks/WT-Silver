@@ -1224,7 +1224,7 @@ label ll_pf_blowjob_T1_summon:
     $ lun_cg_ypos_abs     = -100
     show screen luncg
 
-    call her_main("You wanted to see me [genie_name]?","smile","happyCl", xpos=550, ypos=-140, trans="fade")
+    call her_main("You wanted to see me [genie_name]?", "smile", "happyCl", "base", "mid", xpos=550, ypos=-140, trans="fade")
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
     m "Mmmmm... That I did..."
     $ lunCG(pupil='ahegao', eye='angry', pos=13)
@@ -1345,16 +1345,16 @@ label ll_pf_blowjob_T1_summon:
     #TODO Make Hermione's posing fit better with the dialogue (until walk around desk)
     call her_main("It has to be a Gryffindor! They're the only ones brave enough to try this...", "open", "happy", "base", "mid_soft")
     lun "*glck* *slrp* *glck*"
-    call her_main("Ginny, is that you?! I told you to stay away from Dumbledore!","smile","happyCl")
+    call her_main("Ginny, is that you?! I told you to stay away from Dumbledore!", "smile", "happyCl", "base", "mid")
     m "Wrong, they're in the blue house."
-    call her_main("A ravenclaw? But which ravenclaw girl would be stupid enough to-","smile","happyCl")
-    call her_main("...","smile","happyCl")
+    call her_main("A ravenclaw? But which ravenclaw girl would be stupid enough to-", "smile", "happyCl", "base", "mid")
+    call her_main("...", "smile", "happyCl", "base", "mid")
     lun "*glck* *slrp* *glck*"
-    call her_main("It's Luna again isn't it?","smile","happyCl")
+    call her_main("It's Luna again isn't it?", "smile", "happyCl", "base", "mid")
     m "..."
-    call her_main("That hat better not have been involved!","smile","happyCl")
+    call her_main("That hat better not have been involved!", "smile", "happyCl", "base", "mid")
     m "Scout's honour."
-    call her_main("We'll see about that...","smile","happyCl")
+    call her_main("We'll see about that...", "smile", "happyCl", "base", "mid")
 
     call hide_characters
     show screen blkfade
@@ -1478,12 +1478,12 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG('', 'seductive', '', 'ahegao')
     lun "*glp* *glp* *glp*"
     $ lunCG('sucking', 'angry', 'angry', 'ahegao')
-    call her_main("I guess that answers that...","smile","happyCl")
-    call her_main("I think I better be going then.","smile","happyCl")
+    call her_main("I guess that answers that...", "smile", "happyCl", "base", "mid")
+    call her_main("I think I better be going then.", "smile", "happyCl", "base", "mid")
     m "Ugh... yes... good... bye..."
     $ lunCG('sucking', 'seductive', 'sad', 'ahegao', pos=7)
     lun "*glck* *slrp* *glck*"
-    call her_main("Have a nice day you two!","smile","happyCl")
+    call her_main("Have a nice day you two!", "smile", "happyCl", "base", "mid")
     $ lunCG('sucking', 'seductive', 'sad', 'dick', pos=3)
 
 

@@ -270,7 +270,7 @@ label hg_pr_flirt_T2_E1:
     her "He was obviously struggling with some assignment, so I offered my help..."
     m "And?"
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Well, to my surprise he accepted it...","smile","happyCl")
+    call her_main("Well, to my surprise he accepted it...", "smile", "happyCl", "base", "mid")
     her "He let me finish the assignment for him..."
     call her_main("While I was working he made a couple of inappropriate comments, but I just smiled in response...","angry","worriedCl", emote="05")
     m "So, basically, he was the one doing the flirting..."
@@ -294,7 +294,7 @@ label hg_pr_flirt_T2_E1:
     her "On my way here I ran into Draco Malfoy, [genie_name]."
     m "No way!!! (No idea who that is...)"
     her "I forced myself to be friendly with him and..."
-    call her_main("We ended up having a decent conversation for a change.","base","happyCl")
+    call her_main("We ended up having a decent conversation for a change.", "base", "happyCl", "base", "mid")
     m "I see... That \"Dark-oh\" guy..."
     m "Was he looking at your legs at all?"
     call her_main("What?", "open", "base", "base", "mid")
@@ -323,7 +323,7 @@ label hg_pr_flirt_T2_E2:
     m "Did you enjoy yourself, [hermione_name]?"
     call her_main("I think I did, [genie_name]... To my own astonishment...", "open", "base", "base", "mid")
     call her_main("There was something about his \"devil-may-care\" attitude...", "base", "base", "base", "mid")
-    call her_main("He was so confident and calm and...","base","happyCl")
+    call her_main("He was so confident and calm and...", "base", "happyCl", "base", "mid")
     call her_main("I still loathe the \"Slytherin\" house of course!","angry","worriedCl", emote="05")
     call her_main("But...", "annoyed", "narrow", "worried", "down")
     her "Maybe some of the students got there by mistake?"
@@ -348,14 +348,14 @@ label hg_pr_flirt_T2_E3:
     call hg_pr_flirt_intro
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Five guys, [genie_name]!","smile","happyCl")
+    call her_main("Five guys, [genie_name]!", "smile", "happyCl", "base", "mid")
     m "Really?"
-    call her_main("Yes!","base","happyCl")
-    call her_main("This one guy this morning.","base","happyCl")
+    call her_main("Yes!", "base", "happyCl", "base", "mid")
+    call her_main("This one guy this morning.", "base", "happyCl", "base", "mid")
     her "Then another two right after the first period."
     her "And then another one before the third period."
     call her_main("And after that I had a surprisingly pleasant conversation with one more.", "grin", "base", "base", "R")
-    call her_main("That last one was quite smart and well-mannered too.","base","happyCl")
+    call her_main("That last one was quite smart and well-mannered too.", "base", "happyCl", "base", "mid")
     her "............................"
     her "................"
     call her_main("But I still refuse to change my opinion about the \"Slytherin\" house, [genie_name].","angry","worriedCl", emote="05")
@@ -363,7 +363,7 @@ label hg_pr_flirt_T2_E3:
     her "I am only doing this to help my own house!"
     call her_main("The proud house of \"Gryffndor\"!","scream","worriedCl")
     m "Alright, alright. Calm down, [hermione_name]."
-    call her_main("","base","happyCl")
+    call her_main("", "base", "happyCl", "base", "mid")
 
     jump end_hg_pr_flirt
 
@@ -383,25 +383,25 @@ label hg_pr_flirt_T3_E1:
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     hide screen blkfade
-    call her_main("Eleven boys, [genie_name]!","smile","happyCl", xpos="right", ypos="base", trans="d5")
+    call her_main("Eleven boys, [genie_name]!", "smile", "happyCl", "base", "mid", xpos="right", ypos="base", trans="d5")
     m "Eleven? Really? Your personal best, [hermione_name]."
-    call her_main("Yes.","base","happyCl")
+    call her_main("Yes.", "base", "happyCl", "base", "mid")
     call her_main("Let's see...", "grin", "base", "base", "R")
     her "Those two handsome guys right before the first period started..."
     call her_main("Then I exchanged a few rather inappropriate messages with this other guy, during the the first period.", "smile", "narrow", "base", "mid_soft")
     call her_main("After that there was this one other guy...", "grin", "base", "base", "R")
     call her_main("Then those three guys...", "annoyed", "narrow", "worried", "down")
-    call her_main("Then one more right before the last period...","base","happyCl")
-    call her_main("And finally this last guy that walked me right to your tower, [genie_name]...","smile","happyCl")
+    call her_main("Then one more right before the last period...", "base", "happyCl", "base", "mid")
+    call her_main("And finally this last guy that walked me right to your tower, [genie_name]...", "smile", "happyCl", "base", "mid")
     m "So, eleven then?"
     m "Those \"Slytherin\" boys are really starting to like you, huh?"
     $ sc34CG(2, 7, 1, 2)
-    call her_main("I suppose so...","base","happyCl")
+    call her_main("I suppose so...", "base", "happyCl", "base", "mid")
     call her_main("Well, not all of them were nice to me at first...", "annoyed", "narrow", "worried", "down")
     call her_main("But I use this trick to \"tame\" them.", "smile", "narrow", "base", "mid_soft")
     m "A trick?"
     $ sc34CG(2, 6, 1, 1)
-    call her_main("Yes... Whenever a boy from \"Slytherin\" is being mean to me or calls me a name...","base","happyCl")
+    call her_main("Yes... Whenever a boy from \"Slytherin\" is being mean to me or calls me a name...", "base", "happyCl", "base", "mid")
     her "I just swallow my pride and smile in response."
     m "Hm..."
     m "So, if for example, somebody were to call you a \"whore\" you would just smile at them?"
@@ -421,11 +421,11 @@ label hg_pr_flirt_T3_E2:
     call hg_pr_flirt_intro
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Two dates, seven quite pleasant conversations...","smile","happyCl",xpos="right",ypos="base")
+    call her_main("Two dates, seven quite pleasant conversations...", "smile", "happyCl", "base", "mid",xpos="right",ypos="base")
     call her_main("And I even let this one guy kiss me...", "grin", "base", "base", "R")
     m "Quite impressive, [hermione_name]."
-    call her_main("I think so too, [genie_name]. Thank you.","base","happyCl")
-    call her_main("Oh, and there was also this little freshman kid...","smile","happyCl")
+    call her_main("I think so too, [genie_name]. Thank you.", "base", "happyCl", "base", "mid")
+    call her_main("Oh, and there was also this little freshman kid...", "smile", "happyCl", "base", "mid")
     her "I tried to flirt with him too, but we ended up just chatting..."
     her "He kept calling me \"Miss Hermione\"..."
     her "So adorable..."
@@ -471,7 +471,7 @@ label hg_pr_flirt_T3_E3:
             her "Anyway, I had to leave..."
             m "I see..."
             m "Well, I say you deserve your points anyway, [hermione_name]."
-            call her_main("","base","happyCl")
+            call her_main("", "base", "happyCl", "base", "mid")
 
             jump end_hg_pr_flirt
 

@@ -223,7 +223,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
             "\"I don't care. Do what you want.\"":
                 her "Why not put them on one more time?"
 
-        call her_main("I am only doing this to give my house a fair chance at winning the cup this year...","base","happyCl")
+        call her_main("I am only doing this to give my house a fair chance at winning the cup this year...", "base", "happyCl", "base", "mid")
         m "Right..."
         hide screen hermione_main
         call nar(">Hermione swiftly slides her drenched panties on...")
@@ -244,7 +244,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         menu:
             "\"Yes! Put them on now, [hermione_name]!\"":
                 her "Yes [genie_name]..."
-                call her_main("I am only doing this to give my house a fair chance at winning the cup this year.","smile","happyCl")
+                call her_main("I am only doing this to give my house a fair chance at winning the cup this year.", "smile", "happyCl", "base", "mid")
                 call her_main("I don't like how it feels at all...", "base", "narrow", "base", "up")
                 m "Right..."
                 hide screen hermione_main

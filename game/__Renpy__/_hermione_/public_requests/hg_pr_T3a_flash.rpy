@@ -100,7 +100,7 @@ label hg_pr_flash:
         m "Of course."
         call her_main("Why would I complain about a simple task like this then?", "open", "closed", "base", "mid")
         her "Thirty five house points is a fair prices for a few seconds of excitement... err..."
-        call her_main("...I mean, embarrassment.","base","happyCl")
+        call her_main("...I mean, embarrassment.", "base", "happyCl", "base", "mid")
         m "{size=-3}(She changed this much already?){/size}"
         g9 "{size=-3}(I'm so good at this training thing that it's starting to get creepy!){/size}"
         call her_main("Classes are about to start... I'd better leave now.", "base", "base", "base", "mid")

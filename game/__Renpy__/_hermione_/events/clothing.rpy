@@ -21,7 +21,7 @@ label hermione_summon_setup:
         call her_main("Is anything wrong, [genie_name]?", "soft", "base", "base", "mid")
         g4 "Why are you holding all those... \"things\"?"
         call her_main("My books?", "open", "narrow", "worried", "down")
-        call her_main("I wasn't sure which ones I'd need, so I brought all of them!","grin","happyCl")
+        call her_main("I wasn't sure which ones I'd need, so I brought all of them!", "grin", "happyCl", "base", "mid")
         m "Brought them for what?"
         call her_main("My tutoring lessons...","soft","suspicious")
         call her_main("I hope you're still planning to lecture me, [genie_name].", "annoyed", "base", "base", "mid")

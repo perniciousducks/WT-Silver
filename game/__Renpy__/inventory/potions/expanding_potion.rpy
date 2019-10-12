@@ -13,7 +13,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_chibi("drink_potion","mid","base")
 
     call nar(">She drinks the potion at a leisurely pace.")
-    call her_main("Ahhh.","base","happyCl")
+    call her_main("Ahhh.", "base", "happyCl", "base", "mid")
     call her_main("", "smile", "narrow", "base", "mid_soft")
     call her_chibi("stand","mid","base")
 

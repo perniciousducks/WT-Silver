@@ -1007,7 +1007,7 @@ label hg_pf_strip_T2_intro_E2:
     m "[hermione_name], would you like to provide me with about another strip show?"
     m "(I'm bored as fuck in here after all...)"
     call her_main("*Hmm*...", "annoyed", "base", "base", "R", xpos="base", ypos="base")
-    call her_main("Sure! Why not...","base","happyCl")
+    call her_main("Sure! Why not...", "base", "happyCl", "base", "mid")
     g9 "Yes?"
     call her_main("I've been practising a bit more. Mainly just my dancing.", "soft", "narrow", "worried", "down")
     m "Very good. I'd love to see your progress."

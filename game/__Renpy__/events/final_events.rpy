@@ -326,7 +326,7 @@ label ball_quest_E1:
     with d5
     call ctc
 
-    call her_main("So I am officially in charge of this year's \"Autumn Ball Organization Committee\" now?","base","happyCl", xpos="right", ypos="base")
+    call her_main("So I am officially in charge of this year's \"Autumn Ball Organization Committee\" now?", "base", "happyCl", "base", "mid", xpos="right", ypos="base")
     m "That you are."
     her "Thank you sir! You will not regret this, I promise!"
     m "{size=-4}(Why would I?){/size}"

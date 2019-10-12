@@ -160,7 +160,7 @@ label hg_pf_strip_T2_Snape:
     pause.2
     call her_main("...............................", "grin", "base", "base", "R", xpos="mid", ypos="base")
     m "Oh, I am sure she is very sorry about that..."
-    call her_main("{size=-4}(Not even a little bit!){/size}","base","happyCl")
+    call her_main("{size=-4}(Not even a little bit!){/size}", "base", "happyCl", "base", "mid")
     m "And will make up for it today, won't you, [hermione_name]?"
     pause.2
 

@@ -93,7 +93,7 @@ label hg_pr_handjob:
         call her_main("Yes... I mean, it's just a handjob...", "grin", "base", "base", "R")
         m "Great. Go have fun then!"
         m "And report back to me after your classes, as usual."
-        call her_main("Of course, [genie_name].","base","happyCl")
+        call her_main("Of course, [genie_name].", "base", "happyCl", "base", "mid")
 
     call her_walk(action="leave", speed=2.5)
 
@@ -332,7 +332,7 @@ label hg_pr_handjob_T2_E1:
             call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
             her "I knew you would understand."
             m "Just make sure you finish your job properly this time."
-            call her_main("Of course, [genie_name]. I will give him the wank of his life, I promise!","base","happyCl")
+            call her_main("Of course, [genie_name]. I will give him the wank of his life, I promise!", "base", "happyCl", "base", "mid")
 
             jump end_hg_pr_handjob
 

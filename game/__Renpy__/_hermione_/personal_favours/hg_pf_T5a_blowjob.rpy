@@ -415,10 +415,10 @@ label hg_pf_blowjob_1:
             call her_main("*Slurp--")
 
             call hg_chibi_transition("bj_pause")
-            call her_main("Yes, I believe they are...","smile","happyCl")
-            call her_main("With me being an excellent student despite being muggle-born and all...","base","happyCl")
+            call her_main("Yes, I believe they are...", "smile", "happyCl", "base", "mid")
+            call her_main("With me being an excellent student despite being muggle-born and all...", "base", "happyCl", "base", "mid")
             call her_main("Although at first they were against sending me to some \"Bogus boarding school\".", "angry", "base", "base", "mid")
-            call her_main("Took some effort to convince them that \"Hogwarts\" is a respectable institution.","base","happyCl")
+            call her_main("Took some effort to convince them that \"Hogwarts\" is a respectable institution.", "base", "happyCl", "base", "mid")
             m "Yes, a respectable institution indeed."
             m "Cock back in your mouth [hermione_name]."
 
@@ -452,7 +452,7 @@ label hg_pf_blowjob_1:
             m "But I want to see how much you know."
             m "To test your knowledge on the subject."
             call nar(">As soon as you mention \"test\" Hermione's eyes light up with excitement.")
-            call her_main("OK. But I need a moment gather my thoughts...","smile","happyCl", emote="06")
+            call her_main("OK. But I need a moment gather my thoughts...", "smile", "happyCl", "base", "mid", emote="06")
 
             call hg_chibi_transition("bj", trans="d3")
             pause.8
@@ -1786,7 +1786,7 @@ label hg_pf_blowjob_2:
             call her_main("But can you cum in my mouth?", "angry", "wink", "base", "mid")
             call her_main("{size=-4}Please...{/size} I promise I won't waste a drop.", "soft", "narrow", "annoyed", "up")
             m "I think that can be arranged "
-            call her_main("Thank you [genie_name]!","smile","happyCl", cheeks="blush", emote="06")
+            call her_main("Thank you [genie_name]!", "smile", "happyCl", "base", "mid", cheeks="blush", emote="06")
             call hg_chibi_transition("bj")
             call nar(">Hermione devours your cock with renewed vigour.")
             call her_main("*Slurp!* *Gulp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")

@@ -147,8 +147,8 @@ label hg_pf_handjob_T1_intro_E1:
             call her_main("100 house points?!","scream","wide_stare")
             her "This will definitely put \"Gryffindor\" in the lead!"
             m "Is that a \"yes\" then?"
-            call her_main("Of course!","smile","happyCl")
-            call her_main("If it will bring \"Gryffindor\" 100 house points, I don't mind touching your... thing a little.","smile","happyCl", emote="06")
+            call her_main("Of course!", "smile", "happyCl", "base", "mid")
+            call her_main("If it will bring \"Gryffindor\" 100 house points, I don't mind touching your... thing a little.", "smile", "happyCl", "base", "mid", emote="06")
             pass
 
     jump hg_pf_handjob_1
@@ -312,7 +312,7 @@ label hg_pf_handjob_1:
         call her_main("It's due tomorrow, and it's getting pretty late...")
 
     m "Do you need the points or not?"
-    call her_main("I do, [genie_name]! I'm sorry...","base","happyCl")
+    call her_main("I do, [genie_name]! I'm sorry...", "base", "happyCl", "base", "mid")
     call her_main("I will just keep on stroking it then...")
     m "Well, there is something you could do to speed up the process..."
     call her_main("Really? What is it [genie_name]?", "base", "base", "base", "mid")
@@ -622,7 +622,7 @@ label hg_pf_handjob_2:
     with hpunch
     g4 "{size=+5}Yes, yes, like that...{/size}"
     m "Hm... You are getting pretty good at this."
-    call her_main("Thank you, [genie_name].","base","happyCl")
+    call her_main("Thank you, [genie_name].", "base", "happyCl", "base", "mid")
     call her_main("I figured the better I do this, the sooner it'll be over.")
     m "Hm..."
 
@@ -698,16 +698,16 @@ label hg_pf_handjob_2:
                     m "Perfect."
 
         "\"This is really good. Did you practice?\"":
-            call her_main("Hm?","base","happyCl")
+            call her_main("Hm?", "base", "happyCl", "base", "mid")
             call her_main("Sort of... Well not really...")
             call her_main("I had a talk with the girls, and...", "angry", "wink", "base", "mid")
             m "About handjobs?"
-            call her_main("Among other things...","smile","happyCl", emote="06")
+            call her_main("Among other things...", "smile", "happyCl", "base", "mid", emote="06")
             m "So those girls of yours, they know a lot about such things?"
             call her_main("Actually, yes. I was surprised myself.", "shock", "wide", "base", "stare")
             call her_main("All sorts of weird sexual things seem to be happening lately in our school...", "grin", "base", "base", "R")
             call her_main("Can't say I approve of that...")
-            call her_main("But they did teach me quite a few... tricks.","base","happyCl")
+            call her_main("But they did teach me quite a few... tricks.", "base", "happyCl", "base", "mid")
             m "Really? Like what?"
             call her_main("Well, let's see...", "base", "narrow", "worried", "down")
             call her_main("If I put one of my hands here...")
@@ -716,7 +716,7 @@ label hg_pf_handjob_2:
             call her_main("Does it?", "angry", "wink", "base", "mid")
             call her_main("So Ginny was right about this one...", "grin", "base", "base", "R")
             g4 "What did you just say?"
-            call her_main("Ginny Weasley, she taught me this one.","base","happyCl")
+            call her_main("Ginny Weasley, she taught me this one.", "base", "happyCl", "base", "mid")
             m "Oh, right..."
             call her_main("She said any boy would fall in love with me if I did this to him...", "base", "narrow", "worried", "down")
             call her_main("There is also this thing when I form a ring with my fingers...")
@@ -729,10 +729,10 @@ label hg_pf_handjob_2:
             with hpunch
             with kissiris
             g4 "Oh!!! By the great desert sands, yes!"
-            call her_main("Really? That good?","smile","happyCl", emote="06")
+            call her_main("Really? That good?", "smile", "happyCl", "base", "mid", emote="06")
             call her_main("What if I keep doing this but stick my finger here and press a little...", "base", "narrow", "worried", "down")
             g4 "[hermione_name], you are killing me!"
-            call her_main("Really? Really?!","smile","happyCl", emote="06")
+            call her_main("Really? Really?!", "smile", "happyCl", "base", "mid", emote="06")
             call her_main("This is actually quite fun!")
             call her_main("Err... I mean...", "angry", "wink", "base", "mid")
             call her_main("I am only doing this to help my house of course...")
@@ -945,7 +945,7 @@ label hg_pf_handjob_2_cumming:
             m "Will you be alright in those clothes?"
             call her_main("What?", "open", "narrow", "worried", "down")
             call her_main("Oh. Yes, I will be fine...", "grin", "base", "base", "R")
-            call her_main("It may soak through a little here and there, but I doubt that anyone will notice.","base","happyCl")
+            call her_main("It may soak through a little here and there, but I doubt that anyone will notice.", "base", "happyCl", "base", "mid")
             m "Hm... You could just put it in your mouth next time, and avoid the trouble..."
             call her_main("And swallow your hot spunk like that, [genie_name]?", "angry", "wink", "base", "mid")
             m "Would keep your clothes clean."

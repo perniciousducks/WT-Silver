@@ -151,7 +151,7 @@ label hg_pf_strip_T2_fingering:
             $ hermione_dribble = True
             call her_main("Ah... y-yes...{image=textheart}", "grin", "narrow", "annoyed", "up")
             call set_her_action("covering_top")
-            call her_main("Mmmm...","smile","happyCl")
+            call her_main("Mmmm...", "smile", "happyCl", "base", "mid")
             m "That's it..."
             call set_her_action("lift_breasts")
             call her_main("[genie_name], do you mind...", "base", "narrow", "base", "up")
@@ -349,7 +349,7 @@ label hg_pf_strip_T4_fingering:
 
     m "Yes, yes, like that..."
     m "Try going a little deeper with your fingers."
-    call her_main("Alright [genie_name]...","base","happyCl")
+    call her_main("Alright [genie_name]...", "base", "happyCl", "base", "mid")
     $ hermione_dribble = True
     call her_main("Ah... ah...{image=textheart}","open","worriedCl")
     call her_main("Ah... [genie_name]...{image=textheart}","open","worriedCl")

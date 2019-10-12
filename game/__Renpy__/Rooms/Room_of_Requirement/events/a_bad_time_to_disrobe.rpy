@@ -78,7 +78,7 @@ label a_bad_time_to_disrobe_part_1:
     call her_main("I..I don't have any beans on me sir.", "soft", "slit", "low", "stare")
     m "\"Is this girl for real?\""
     m "It's just an expression, tell me... did you complete your assignment?"
-    call her_main("I did sir. I snuck into the boys dormitory using the cloak as you suggested.","soft","happyCl")
+    call her_main("I did sir. I snuck into the boys dormitory using the cloak as you suggested.", "soft", "happyCl", "base", "mid")
     m "Naked?"
     call her_main("Naked..ish", "disgust", "base", "base", "R")
     m "How can you be naked...ish?"

@@ -352,8 +352,8 @@ label hg_pr_kiss_T2_E3:
     call her_main("I suppose...", "angry", "narrow", "base", "down")
     call her_main("I mean, only because of the favours you buy from me, [genie_name]...", "upset", "closed", "base", "mid")
     m "Good... Tell me more."
-    call her_main("Well, as you know, I am quite popular...","smile","happyCl", emote="06")
-    call her_main("So all I had to do is just mention that I would not mind doing it today...","base","happyCl")
+    call her_main("Well, as you know, I am quite popular...", "smile", "happyCl", "base", "mid", emote="06")
+    call her_main("So all I had to do is just mention that I would not mind doing it today...", "base", "happyCl", "base", "mid")
     her "And I had half a dozen girls lined up instantly..."
     call her_main("I chose a girl from \"Gryffindor\" of course...", "base", "base", "base", "mid")
     call her_main("And we put on a little show right in the middle of the classroom...", "open", "base", "base", "mid")

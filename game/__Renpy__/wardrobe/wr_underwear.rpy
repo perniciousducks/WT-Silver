@@ -90,7 +90,7 @@ label equip_bra:
                         # g9 "Great! That's good enough for me!"
                         # call her_main("(I hope I won't regret this...)", "disgust", "narrow", "worried", "down")
                     # else:
-                        # call her_main("Of course!","grin","happyCl")
+                        # call her_main("Of course!", "grin", "happyCl", "base", "mid")
                         # m "Really?"
                         # call her_main("Of course, I sometimes do sunbathing during breaktime.", "open", "closed", "base", "mid")
                         # call her_main("I'll just lie down in the grass and unwind for a bit. I'll even take off my top at times so I won't get any tan-lines!", "smile", "base", "base", "mid")
@@ -411,7 +411,7 @@ label equip_panties:
                         # g9 "Great! That's good enough for me!"
                         # call her_main("(I hope I won't regret this...)", "disgust", "narrow", "worried", "down")
                     # else:
-                        # call her_main("Of course!","grin","happyCl")
+                        # call her_main("Of course!", "grin", "happyCl", "base", "mid")
                         # m "Really?"
                         # call her_main("Yeah I sometimes do sunbathing during breaktime.", "open", "closed", "base", "mid")
                         # call her_main("I'll just lie down in the grass and unwind for a bit. I'll even take off my top at times so I won't get any tan-lines!", "smile", "base", "base", "mid")

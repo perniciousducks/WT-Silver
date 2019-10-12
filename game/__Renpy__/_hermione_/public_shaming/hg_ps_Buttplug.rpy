@@ -165,7 +165,7 @@ label hg_ps_buttplug:
             call her_main("Of course not! That thing would tear me--", "scream", "closed", "angry", "mid")
             ">you pull out the small butt plug"
             m "How about this one then?"
-            call her_main("Oh, ok then!","smile","happyCl",emote="06")
+            call her_main("Oh, ok then!", "smile", "happyCl", "base", "mid",emote="06")
             m "You'll do it that easily?"
             call her_main("Well for fifty five house points I'd be crazy not to.", "base", "closed", "base", "mid")
             call her_main("Plus I don't hate the way it feels", "open", "base", "base", "R")
@@ -203,7 +203,7 @@ label hg_ps_buttplug:
             call set_her_buttplug("plug_a_on") #Updates clothing and body.
 
             call her_main("{image=textheart}ah{image=textheart}...", "grin", "narrow", "annoyed", "up")
-            call her_main("I will, [genie_name]. Thank you.","base","happyCl")
+            call her_main("I will, [genie_name]. Thank you.", "base", "happyCl", "base", "mid")
 
         elif her_whoring <= 19 and buttplug_size == 2: # LEVEL 06 FIRST EVENT.
             $ buttplug_2_worn = True

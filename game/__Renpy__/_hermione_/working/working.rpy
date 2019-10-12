@@ -193,7 +193,7 @@ label job_3:
     pause.8
 
     g9 "You look great!"
-    call her_main("Thank you...","base","happyCl")
+    call her_main("Thank you...", "base", "happyCl", "base", "mid")
     m "Off you go then..."
 
     call her_walk(action="leave", speed=2)
@@ -249,7 +249,7 @@ label gryffindor_cheer_responses:
                 m "{size=-5}I'm sure that wasn't the only thing you've helped stay up...{/size}"
                 call her_main("What was that [genie_name]?","open","suspicious")
                 m "I was just saying that I'm sure you did a stand up job."
-                call her_main("I think so...","base","happyCl")
+                call her_main("I think so...", "base", "happyCl", "base", "mid")
                 m "Well, did they pay you for raising their \"spirits\"?"
                 call her_main("Of course they did.", "open", "base", "base", "mid")
                 ">You receive [payment] gold coins."
@@ -258,7 +258,7 @@ label gryffindor_cheer_responses:
                 m "You seem very chipper today."
                 call her_main("Of course I am, we won!", "base", "base", "base", "mid")
                 m "Won?"
-                call her_main("We won! We beat Slytherin in a practice match.","smile","happyCl")
+                call her_main("We won! We beat Slytherin in a practice match.", "smile", "happyCl", "base", "mid")
                 m "You seem a little bit overexcited for just a practice match."
                 call her_main("Well it was such a great game. Not to mention that we got to rub it in those Slytherin students faces afterwards.", "smile", "base", "base", "R")
                 g9 "Well I'm glad that you are enjoying your work."
@@ -271,7 +271,7 @@ label gryffindor_cheer_responses:
                 m "Welcome back [hermione_name], how was your day?"
                 call her_main("We won! We managed to beat Slytherin.", "base", "base", "base", "mid")
                 m "That must have been very exhilarating. I'm sure your cheering gave the extra motivation needed to win."
-                call her_main("I think it did [genie_name]. They were all very excited to receive their reward for winning the game.","base","happyCl")
+                call her_main("I think it did [genie_name]. They were all very excited to receive their reward for winning the game.", "base", "happyCl", "base", "mid")
 
                 menu:
                     "-Reward?-":
@@ -302,7 +302,7 @@ label gryffindor_cheer_responses:
             call her_main("Here's your payment [genie_name].", "soft", "base", "base", "R")
             m "Well done [hermione_name], 20 points to Gryffindor."
 
-    call her_main("Thank you, [genie_name].","base","happyCl")
+    call her_main("Thank you, [genie_name].", "base", "happyCl", "base", "mid")
     ">You receive [payment] gold coins."
     $ gryffindor+= 20
     $ gold += payment
@@ -343,7 +343,7 @@ label job_4:
     pause.8
 
     g4 "You look incredible!"
-    call her_main("Thank you...","base","happyCl")
+    call her_main("Thank you...", "base", "happyCl", "base", "mid")
     m "Off you go then..."
 
     call her_walk(action="leave", speed=2)
@@ -505,7 +505,7 @@ label job_5:
             call her_main("I'll do it.", "base", "wink", "base", "mid")
         elif random_choice == 2:
             call her_main("It's a bit revealing... but I'll do it.","smile","happy", cheeks="blush")
-            call her_main("For Gryffindor house obviously!","open","happyCl", cheeks="blush")
+            call her_main("For Gryffindor house obviously!", "open", "happyCl", "base", "mid", cheeks="blush")
         else:
             call her_main("That doesn't leave a lot to the imagination...", "smile", "happy", "base", "mid")
             call her_main("At least the straps should cover my nipples...", "open", "wink", "base", "mid")
@@ -545,7 +545,7 @@ label hermione_helping_selling_cards:
         call her_main("Still not that comfortable wearing the outfit you provided though so I just stood behind the shop counter today.", "open", "closed", "base", "mid")
         call her_main("Apparently we sold a lot more items than usual though.","base","happy", cheeks="blush")
         g9 "Great news, I bet the twins are ecstatic."
-        call her_main("Indeed, It was nice seeing them in such high spirits.","open","happyCl", cheeks="blush")
+        call her_main("Indeed, It was nice seeing them in such high spirits.", "open", "happyCl", "base", "mid", cheeks="blush")
         call her_main("Whilst I might not agree with all their business methods I think they might become great salesmen some day.", "base", "happy", "base", "mid")
         g9 "Seems to me like they are already..."
         m "So, how come you had such a surge in new customers?"
@@ -624,7 +624,7 @@ label hermione_helping_selling_cards:
         call her_main("In any case, they seemed... happy, they bought a bunch of things so that makes me...", "normal", "base", "base", "mid")
         call her_main("Happy as well...", "angry", "closed", "base", "mid", cheeks="blush")
         g9 "A job well done then, I bet the twins are very grateful for your contribution."
-        call her_main("Thank you.","annoyed","happyCl", cheeks="blush")
+        call her_main("Thank you.", "annoyed", "happyCl", "base", "mid", cheeks="blush")
         call her_main("Anyway...", "base", "base", "base", "mid")
         call her_main("Here's your payment.", "open", "base", "base", "mid")
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
@@ -682,7 +682,7 @@ label hermione_helping_selling_cards:
         call her_main("Much like how you should always put the most lucrative cheap items at the counter to make the customer....", "open", "base", "base", "mid")
         g4 "Get on with it."
         call her_main("Fine...", "annoyed", "narrow", "base", "R_soft", cheeks="blush")
-        call her_main("I read that by putting the customer in a state of peace and happiness it would make them more susceptible to making hasty decisions.","smile","happyCl", cheeks="blush")
+        call her_main("I read that by putting the customer in a state of peace and happiness it would make them more susceptible to making hasty decisions.", "smile", "happyCl", "base", "mid", cheeks="blush")
         g9 "Didn't think you'd be interested in such... unorthodox sales tactics..."
         call her_main("I was curious to see if it would work more than anything else.", "base", "closed", "base", "mid", cheeks="blush")
         call her_main("I tried it out to test the legitimacy of the claims in that book of theirs...", "open", "base", "base", "mid")

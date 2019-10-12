@@ -53,7 +53,7 @@ label hg_pf_admire_breasts:
         call her_main("..................","annoyed","worriedL")
         call her_main("Thank you, [genie_name]...", "soft", "base", "base", "mid")
     else:
-        call her_main("..................","base","happyCl")
+        call her_main("..................", "base", "happyCl", "base", "mid")
         call her_main("Thank you, [genie_name]...", "soft", "narrow", "base", "mid_soft")
 
     if daytime:
@@ -336,7 +336,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
 
                     call her_main(".................", "annoyed", "wide", "base", "stare")
                     call her_main("A hundred points...", "annoyed", "base", "base", "R")
-                    call her_main("So be it...","smile","happyCl")
+                    call her_main("So be it...", "smile", "happyCl", "base", "mid")
 
                     pass
 

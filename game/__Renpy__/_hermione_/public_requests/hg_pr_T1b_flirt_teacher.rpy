@@ -116,7 +116,7 @@ label hg_pr_flirt_teacher_T1_E1: # Flitwick
     menu:
         "\"Here are your point's though.\"":
             call her_main("Really?","angry","worried")
-            call her_main("Thank you so much [genie_name]!","smile","happyCl")
+            call her_main("Thank you so much [genie_name]!", "smile", "happyCl", "base", "mid")
 
             jump end_hg_pr_flirt_teacher
 
@@ -256,13 +256,13 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
     $ hermione_tattoos_list.append("thigh/signature") #LOCKHEART TATTOO
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("I had an amazing day, [genie_name]!","smile","happyCl", emote="06")
+    call her_main("I had an amazing day, [genie_name]!", "smile", "happyCl", "base", "mid", emote="06")
     m "Do tell, [hermione_name]..."
     call her_main("I had a class with professor Lockhart today...", "grin", "base", "base", "R")
     her "[genie_name] Lockhart is so charming and smart and..."
     call her_main("And perfect...", "base", "narrow", "base", "up")
     m "Please spare me your schoolgirl crush, [hermione_name]."
-    call her_main("[genie_name] Lockhart was even kind enough to give me his autograph...","smile","happyCl", emote="06")
+    call her_main("[genie_name] Lockhart was even kind enough to give me his autograph...", "smile", "happyCl", "base", "mid", emote="06")
     m "How kind of him indeed."
     call her_main("Yes, I can't wait to show it to the girls!", "grin", "base", "base", "R")
     m "Hm... Can I see it?"
@@ -285,7 +285,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
 
             menu:
                 "\"Fine. Here are your points.\"":
-                    call her_main("Thank you for understanding, [genie_name].","base","happyCl")
+                    call her_main("Thank you for understanding, [genie_name].", "base", "happyCl", "base", "mid")
 
                     jump end_hg_pr_flirt_teacher
 
@@ -323,7 +323,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
                     jump end_hg_pr_flirt_teacher
 
         "\"Fine... Here are your points.\"":
-            call her_main("Thank you for understanding, [genie_name].","base","happyCl")
+            call her_main("Thank you for understanding, [genie_name].", "base", "happyCl", "base", "mid")
 
             jump end_hg_pr_flirt_teacher
 
@@ -422,7 +422,7 @@ label hg_pr_flirt_teacher_T3_E1: # Filch
     m "\"Take care of the creepy janitor-guy and his crooked cock.\"..."
     m "Yes, first thing tomorrow."
     call her_main("Thank you [genie_name].", "open", "closed", "base", "mid")
-    call her_main("Can I have my points now?","smile","happyCl")
+    call her_main("Can I have my points now?", "smile", "happyCl", "base", "mid")
 
     jump end_hg_pr_flirt_teacher
 

@@ -394,7 +394,7 @@ label chit_chat:
 
         elif one_of_ten == 4:
             call her_main("Jump and scream for the Gryffindor team!", "open", "closed", "base", "mid")
-            call her_main("So daring and bold, sporting red and gold!","smile","happyCl",emote="06")
+            call her_main("So daring and bold, sporting red and gold!", "smile", "happyCl", "base", "mid",emote="06")
             call her_main("", "base", "base", "base", "mid")
 
         elif one_of_ten == 5:
@@ -446,7 +446,7 @@ label chit_chat:
         
         elif one_of_ten == 4:
             call her_main("Jump and scream for the Gryffindor team!", "open", "closed", "base", "mid") 
-            call her_main("So daring and bold, sporting red and gold!","smile","happyCl",emote="06") 
+            call her_main("So daring and bold, sporting red and gold!", "smile", "happyCl", "base", "mid",emote="06") 
             call her_main("", "base", "base", "base", "mid") 
 
         elif one_of_ten == 5:

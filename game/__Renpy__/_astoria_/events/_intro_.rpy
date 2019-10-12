@@ -287,7 +287,7 @@ label astoria_intro_E2_hermione:
     m "I require your help with something."
     m "Tonks came by earlier and informed me about a student making a ruckus."
     m "I- *uhm*...{w} She thought maybe you could be of help finding them?"
-    call her_main("Of course, Sir.","base","happyCl")
+    call her_main("Of course, Sir.", "base", "happyCl", "base", "mid")
     m "Apparently a student got hit by an \"unforgivable curse\" here at the school."
     call her_main("AN unforgivable CURSE!!!", "scream", "wide", "base", "stare", trans="hpunch")
     call her_main("AT our school?!","shock","wide_stare")
@@ -319,10 +319,10 @@ label astoria_intro_E2_hermione:
     #call her_main("...Is this another test sir?", "open", "wink", "base", "mid")
     #m "Sure..."
     #call her_main("Of course! I know everything about it!", "smile", "happy", "base", "mid_soft")
-    #call her_main("It's the prison of the damned... An impenetrable rocky outcrop surrounded by the harsh North Sea...","open","happyCl")
+    #call her_main("It's the prison of the damned... An impenetrable rocky outcrop surrounded by the harsh North Sea...", "open", "happyCl", "base", "mid")
     #call her_main("the guards are the deathly eaters of all happy thoughts and emotions known as dementors...", "open", "narrow", "angry", "R")
     #call her_main("They endlessly patrol the prison, devouring all hope from the prisoners, driving them mad within a few days...", "open", "base", "angry", "mid")
-    #call her_main("Tormenting them relentlessly for the rest of their miserable lives...","grin","happyCl")
+    #call her_main("Tormenting them relentlessly for the rest of their miserable lives...", "grin", "happyCl", "base", "mid")
     #call her_main("And the perfect place to house all those dirty \'slytherins\'!", "angry", "base", "angry", "mid")
 
     menu:
@@ -340,7 +340,7 @@ label astoria_intro_E2_hermione:
             m "Not unless they've killed someone..."
             call her_main("Really? So there's still a chance?", "base", "narrow", "base", "mid_soft")
             m "Only if you find a body..."
-            call her_main("yay!","smile","happyCl")
+            call her_main("yay!", "smile", "happyCl", "base", "mid")
 
     call her_main("Consider it done, [genie_name]!", "open", "closed", "base", "mid")
 

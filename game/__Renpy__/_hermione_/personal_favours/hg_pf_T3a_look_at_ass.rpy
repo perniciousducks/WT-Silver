@@ -974,7 +974,7 @@ label end_hg_show_ass:
         her "Thank you, [genie_name]..."
 
     else:
-        call her_main("..................","base","happyCl")
+        call her_main("..................", "base", "happyCl", "base", "mid")
 
 
     if daytime:

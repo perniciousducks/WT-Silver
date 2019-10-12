@@ -19,7 +19,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     $ luna_xpos = 300
     $ luna_flip = -1
     call her_main("Hey Luna!!!", "grin", "wink", "base", "mid")
-    call her_main("[genie_name].","normal","happyCl")
+    call her_main("[genie_name].", "normal", "happyCl", "base", "mid")
     call her_main("So what's he want from us today?", "smile", "narrow", "base", "mid_soft")
     call her_main("Another blowjob?", "grin", "base", "base", "R")
     call lun_main("He hasn't even asked yet.","base","seductive","sad","R")
@@ -520,7 +520,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     pause.2
 
     call nar(">With a flick of Hermione's wand, Luna's clothes slither back onto her naked form.")
-    call her_main("Wingardium Leviosaaaaa!","open","happyCl")
+    call her_main("Wingardium Leviosaaaaa!", "open", "happyCl", "base", "mid")
 
     hide screen luna_blink
     with d3

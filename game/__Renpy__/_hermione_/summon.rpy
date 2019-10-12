@@ -321,7 +321,7 @@ label hermione_favor_menu:
                             jump silver_requests_root
                         elif her_whoring >=16 and not hermione_favors_convinced == 1:
                             call her_main("I guess you're right...", "open", "happy", "base", "mid_soft")
-                            call her_main("I'll do it... but just this once okay?","grin","happyCl")
+                            call her_main("I'll do it... but just this once okay?", "grin", "happyCl", "base", "mid")
                             $ hermione_favors_convinced = 1
                             jump silver_requests_root
                         else:
@@ -639,7 +639,7 @@ label hermione_change:
             call her_main("*tsk* ...", "soft", "narrow", "base", "R_soft")
             call her_main("", "normal", "narrow", "base", "R_soft")
         elif her_whoring >= 5 and her_whoring < 19:
-            call her_main("I can be a bit nerdy sometimes I suppose..","angry","happyCl", emote="05")
+            call her_main("I can be a bit nerdy sometimes I suppose..", "angry", "happyCl", "base", "mid", emote="05")
             call her_main("", "base", "base", "base", "mid")
         elif her_whoring >= 19:
             call her_main("I don't read as much as I used to anymore.", "grin", "narrow", "base", "R_soft", emote="05")
@@ -685,7 +685,7 @@ label hermione_change:
         elif her_whoring >= 13:
             call her_main ("Yes... My prince.","smile","happy")
             m "..."
-            call her_main("I-I mean, [genie_name].","smile","happyCl", emote="05")
+            call her_main("I-I mean, [genie_name].", "smile", "happyCl", "base", "mid", emote="05")
             call her_main("", "base", "base", "base", "mid")
     elif temp_name == "Pet":
         if her_whoring >= 11 and her_whoring < 13:
@@ -714,7 +714,7 @@ label hermione_change:
             call her_main("...","soft","worriedL",cheeks="blush")
             g9 "Okay then..."
         elif her_whoring >= 17:
-            call her_main("Alright.","base","happyCl",cheeks="blush")
+            call her_main("Alright.", "base", "happyCl", "base", "mid",cheeks="blush")
             call her_main("","base","happy",cheeks="blush")
     elif temp_name == "Slut":
         if her_whoring >=15 and her_whoring < 17:
@@ -731,14 +731,14 @@ label hermione_change:
         elif her_whoring >= 17:
             call her_main("I guess if you have to call me that sure...", "base", "narrow", "base", "down",cheeks="blush")
         elif her_whoring >= 19:
-            call her_main("I don't mind...","smile","happyCl",cheeks="blush")
+            call her_main("I don't mind...", "smile", "happyCl", "base", "mid",cheeks="blush")
     elif temp_name == "Cumslut":
         if her_whoring >= 17 and her_whoring < 19:
             call her_main("A cumslut?!","open","surprised")
             m "Something wrong?"
             call her_main("You have to even ask?", "soft", "narrow", "worried", "down", cheeks="blush")
             call her_main("This is so degrading...", "normal", "narrow", "base", "down",cheeks="blush")
-            call her_main("\"But I kinda am a slut begging for cum aren't I...\"","base","happyCl",cheeks="blush")
+            call her_main("\"But I kinda am a slut begging for cum aren't I...\"", "base", "happyCl", "base", "mid",cheeks="blush")
         elif her_whoring >= 19:
             call her_main("...", "soft", "narrow", "base", "up")
             call her_main("\"When did I start enjoying it so much...\"", "open", "narrow", "base", "up",cheeks="blush")

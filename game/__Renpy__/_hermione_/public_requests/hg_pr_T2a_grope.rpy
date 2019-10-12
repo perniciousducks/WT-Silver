@@ -288,7 +288,7 @@ label hg_pr_grope_T2_E2:
             jump end_hg_pr_grope
 
         "\"Kudos on doing this during class.\"":
-            call her_main("Thank you, [genie_name].","base","happyCl")
+            call her_main("Thank you, [genie_name].", "base", "happyCl", "base", "mid")
             m "I say you deserve to get paid."
 
             jump end_hg_pr_grope

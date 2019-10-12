@@ -470,7 +470,7 @@ label hg_ps_cumslut_Scene_3:
     call her_main("Are you serious?", "shock", "wide", "base", "stare")
     call her_main("Can I?", "grin", "narrow", "annoyed", "up")
     m "well-"
-    call her_main("I was going to ask you if I could seeing as how it made you so happy last time [genie_name].","smile","happyCl",emote="06")
+    call her_main("I was going to ask you if I could seeing as how it made you so happy last time [genie_name].", "smile", "happyCl", "base", "mid",emote="06")
     call her_main("I'll even do it for free if that would make you happier!", "base", "narrow", "base", "up")
     m "really?"
     m "Well let's get started then!"

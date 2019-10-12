@@ -380,10 +380,10 @@ label equip_bottom:
                         # else: #20+
                             # if skirt_choice in ["skirt_cheer_s","skirt_cheer_sexy_s"]:
                                 # call her_main("Of course I will wear it!", "smile", "base", "angry", "mid")
-                                # call her_main("Gimme-Gimme--Gimme!!!","smile","happyCl")
+                                # call her_main("Gimme-Gimme--Gimme!!!", "smile", "happyCl", "base", "mid")
                                 # call her_main("(I'm definitely going to root for them on the next game!)", "soft", "base", "base", "R",cheeks="blush")
                                 # call her_main("(If they are winning I won't have to wear this thing long anyway!)", "base", "narrow", "base", "mid_soft")
-                                # call her_main("Whoooo, go Slytherin!","smile","happyCl")
+                                # call her_main("Whoooo, go Slytherin!", "smile", "happyCl", "base", "mid")
                             # else:
                                 # call her_main("If I really have to...", "annoyed", "narrow", "annoyed", "mid")
                                 # call her_main("Let me just change it.", "soft", "base", "base", "R")
@@ -485,7 +485,7 @@ label equip_bottom:
                     # if her_whoring < 20:
                         # call her_main("(These trousers look so short...)", "disgust", "narrow", "base", "down")
                         # call her_main("(My ass is gonna be on display the whole time in those...)", "open_tongue", "narrow", "base", "up",cheeks="blush")
-                        # call her_main("Alright, [genie_name].","smile","happyCl")
+                        # call her_main("Alright, [genie_name].", "smile", "happyCl", "base", "mid")
                         # call her_main("Let me just change it.", "base", "narrow", "base", "mid_soft")
                     # else: #20+
                         # call her_main("Alright, [genie_name].", "soft", "base", "base", "R")
@@ -514,7 +514,7 @@ label equip_bottom:
                     # if her_whoring < 23:
                         # call her_main("(These trousers are so short...)", "disgust", "narrow", "base", "down")
                         # call her_main("(I'm such a pervert!)", "open_tongue", "narrow", "base", "up",cheeks="blush")
-                        # call her_main("Alright, [genie_name].","smile","happyCl")
+                        # call her_main("Alright, [genie_name].", "smile", "happyCl", "base", "mid")
                         # call her_main("Let me just change it.", "base", "narrow", "base", "mid_soft")
                     # else:
                         # call her_main("Alright, [genie_name].", "soft", "base", "base", "R")

@@ -229,7 +229,7 @@ label hg_pr_blowjob_T2_intro_E1:
 
     m "[hermione_name], how did it go?"
     show screen blktone
-    call her_main("Splendid, [genie_name]. Simply splendid.","base","happyCl")
+    call her_main("Splendid, [genie_name]. Simply splendid.", "base", "happyCl", "base", "mid")
     m "Really? Do tell."
     call play_music("playful_tension") # SEX THEME.
     call her_main("Today I did something I wanted to do for such a long time now...", "base", "narrow", "base", "up")
@@ -246,7 +246,7 @@ label hg_pr_blowjob_T2_intro_E1:
     call her_main("Sucking on their cocks...", "open_wide_tongue", "narrow", "annoyed", "up")
     call her_main("Like some nasty little slut...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "Are you in love with those boys, [hermione_name]?"
-    call her_main("I don't know, [genie_name]... Maybe...","base","happyCl")
+    call her_main("I don't know, [genie_name]... Maybe...", "base", "happyCl", "base", "mid")
     her "Could I get paid now please?"
     m "Sure..."
 
@@ -290,7 +290,7 @@ label hg_pr_blowjob_T2_E2:
     m "All this \"favour selling business\" will have to stop immediately."
     call her_main("Oh...?", "open", "base", "base", "R", cheeks="blush")
     her ".................."
-    call her_main("Please, never mind what I just said then...","base","happyCl")
+    call her_main("Please, never mind what I just said then...", "base", "happyCl", "base", "mid")
     m "Are you sure? You look pretty messed up."
     her "No, no. It's nothing really..."
     her "After all I was the one who offered him a free blowjob..."

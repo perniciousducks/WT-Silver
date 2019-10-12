@@ -222,7 +222,7 @@ label potion_scene_11_2: #Milking potion part 2
     call nar(">You notice hermione's breasts slight to swell slightly.")
     call her_main("[genie_name], they're growing rather quickly!","angry","worriedCl",cheeks="blush",emote="05")
     m "This is all perfectly normal."
-    call her_main("please...","disgust","shocked",cheeks="blush")
+    call her_main("please...", "disgust", "wide", "worried", "shocked",cheeks="blush")
 
     $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_large.png"
     with hpunch
@@ -618,7 +618,7 @@ label potion_scene_11_3: #Milking potion part 3
         m "I'm not sure how... I think it only shuts off when it's full?"
         call her_main("well I don't think it's going to be able to get much more-", "upset", "closed", "base", "mid")
         call nar(">You hear the harness start to whir, like a vacuum cleaner caught on carpet.")
-        call her_main("!!!","disgust","shocked",cheeks="blush")
+        call her_main("!!!", "disgust", "wide", "worried", "shocked",cheeks="blush")
         call nar(">You hear a strange click come from the harness.")
         "*Zzzzkkk*"
 

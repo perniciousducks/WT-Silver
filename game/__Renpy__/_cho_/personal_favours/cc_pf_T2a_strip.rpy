@@ -930,9 +930,9 @@ label cc_pf_strip_T1_intro_E3:
     pause.5
 
     call her_main("You wanted to see me, Sir?", "soft", "closed", "base", "mid", ypos="head")
-    call her_main("Cho?","soft","shocked", ypos="head")
+    call her_main("Cho?", "soft", "wide", "worried", "shocked", ypos="head")
     call cho_main("Hey there, Granger!","horny","narrow","angry","mid", ypos="head", flip=True) # Grinning
-    call her_main("What? Why are you-","disgust","shocked", ypos="head")
+    call her_main("What? Why are you-", "disgust", "wide", "worried", "shocked", ypos="head")
 
     call her_walk(xpos="660",ypos="base", speed=2)
 

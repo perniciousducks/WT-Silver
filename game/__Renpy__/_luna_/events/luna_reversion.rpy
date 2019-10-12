@@ -663,7 +663,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
     call lun_main("{size=+15}petrificus totalus!{/size}","open","angry","mad","mid",trans="hpunch")
     ">Luna pulls out her wand with surprising speed and paralyses Hermione."
-    call her_main("!!!","soft","shocked")
+    call her_main("!!!", "soft", "wide", "worried", "shocked")
     m "(Whoa...)"
     hide screen luna_main
     with d3

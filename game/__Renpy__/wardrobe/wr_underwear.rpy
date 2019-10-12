@@ -65,7 +65,7 @@ label equip_bra:
                         # call her_main("Let me put it on for you.", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # if her_whoring < 5:
-                        # call her_main("A bra?","shock","shocked")
+                        # call her_main("A bra?", "shock", "wide", "worried", "shocked")
                         # call her_main("Why on earth would you buy me a bra, [genie_name]?", "disgust", "narrow", "worried", "down")
                         # m "So you can... uhm... wear it?"
                         # call her_main("Wear it? Are you out of your mind?", "angry", "base", "angry", "mid")
@@ -120,7 +120,7 @@ label equip_bra:
                     # call her_main("Anything for you, [genie_name].", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # if her_whoring < 8:
-                        # call her_main("What? [genie_name] why would you give me a bra?","shock","shocked")
+                        # call her_main("What? [genie_name] why would you give me a bra?", "shock", "wide", "worried", "shocked")
                         # m "So you can wear it for me?"
                         # call her_main("No! I'm not going to wear bras for you!", "angry", "base", "angry", "mid")
                         # call her_main("What is this even made of? I's so rubbery...", "disgust", "narrow", "worried", "down")
@@ -156,7 +156,7 @@ label equip_bra:
                     # call her_main("(Not that I'd want to!)", "base", "narrow", "annoyed", "up")
                 # else: #Fail
                     # if her_whoring < 8:
-                        # call her_main("What? [genie_name] why would you give me a bra?","shock","shocked")
+                        # call her_main("What? [genie_name] why would you give me a bra?", "shock", "wide", "worried", "shocked")
                         # m "So you could wear it for me?"
                         # call her_main("No! I'm not going to wear bras for you!", "angry", "base", "angry", "mid")
                         # m "But this one has those pretty frills!"
@@ -387,7 +387,7 @@ label equip_panties:
                         # call her_main("Let me put them on for you.", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # if her_whoring < 5:
-                        # call her_main("Panties?!","shock","shocked")
+                        # call her_main("Panties?!", "shock", "wide", "worried", "shocked")
                         # call her_main("Why on earth would you buy me panties, [genie_name]?", "disgust", "narrow", "worried", "down")
                         # m "So you can... uhm... wear them?"
                         # call her_main("Wear them? Are you out of your mind?", "angry", "base", "angry", "mid")
@@ -441,7 +441,7 @@ label equip_panties:
                     # call her_main("Anything for you, [genie_name].", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # if her_whoring < 8:
-                        # call her_main("What? [genie_name] why would you give me panties?","shock","shocked")
+                        # call her_main("What? [genie_name] why would you give me panties?", "shock", "wide", "worried", "shocked")
                         # m "So you can wear them for me?"
                         # call her_main("No! I'm not going to wear panties for you!", "angry", "base", "angry", "mid")
                         # call her_main("What are these panties even made of? They're so rubbery...", "disgust", "narrow", "worried", "down")
@@ -477,7 +477,7 @@ label equip_panties:
                     # call her_main("(Not that I'd want to!)", "base", "narrow", "annoyed", "up")
                 # else: #Fail
                     # if her_whoring < 8:
-                        # call her_main("What? [genie_name] why would you give me panties?","shock","shocked")
+                        # call her_main("What? [genie_name] why would you give me panties?", "shock", "wide", "worried", "shocked")
                         # m "So you could wear them for me?"
                         # call her_main("No! I'm not going to wear panties for you!", "angry", "base", "angry", "mid")
                         # m "But this one has those pretty frills!"

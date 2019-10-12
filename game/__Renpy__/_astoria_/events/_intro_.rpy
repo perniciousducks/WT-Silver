@@ -519,7 +519,7 @@ label astoria_intro_E3:
     menu:
         m "(...)"
         "You're dismissed, Miss Granger!":
-            call her_main("What?!","open","shocked")
+            call her_main("What?!", "open", "wide", "worried", "shocked")
             pass
 
         "Go and fetch Snape!":

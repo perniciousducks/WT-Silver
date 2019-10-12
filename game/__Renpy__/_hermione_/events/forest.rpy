@@ -38,7 +38,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     menu:
         "-Let her get back to her botany-":
             m "Well I better leave you be then..."
-            call her_main("Really?","upset","shocked")
+            call her_main("Really?", "upset", "wide", "worried", "shocked")
             "You mean you don't want to..."
             m "Maybe some other time."
             call her_main("...", "upset", "narrow", "worried", "down")

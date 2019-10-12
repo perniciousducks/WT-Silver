@@ -28,7 +28,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         m "How much will it cost for you to get naked and show me that perfect ass of yours?"
         stop music fadeout 1.0
         if her_whoring < 12:
-            call her_main("Get naked and show you my...?","angry","shocked")
+            call her_main("Get naked and show you my...?", "angry", "wide", "worried", "shocked")
             jump too_much
         else:
             call her_main("Get naked and show you my...?", "open", "base", "base", "mid")

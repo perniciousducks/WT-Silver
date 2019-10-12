@@ -11,7 +11,7 @@ label hg_anal_sex_1:
     m "[hermione_name]..."
     call her_main("[genie_name]..?","annoyed","suspicious", ypos="head")
     m "How familiar you are with the term \"Anal Sex\"?"
-    call her_main("What?!","soft","shocked")
+    call her_main("What?!", "soft", "wide", "worried", "shocked")
     m "I asked you a question..."
     call her_main("90 house points...", "annoyed", "narrow", "annoyed", "mid")
     m "Seriously?"

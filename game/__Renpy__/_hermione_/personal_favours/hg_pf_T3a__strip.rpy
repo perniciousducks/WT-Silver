@@ -522,7 +522,7 @@ label hg_pf_strip_T1_intro_E2:
             call her_main("", "disgust", "wide", "base", "stare")
             pause.2
             call slap_her #Calls slapping sound and visual.
-            call her_main("","shock","shocked")
+            call her_main("", "shock", "wide", "worried", "shocked")
             pause.2
 
         "-Slap them!-":
@@ -532,7 +532,7 @@ label hg_pf_strip_T1_intro_E2:
             pause.2
             g9 "{size=-4}(Yes, just slap them around a little...){/size}"
             call slap_her #Calls slapping sound and visual.
-            call her_main("","shock","shocked")
+            call her_main("", "shock", "wide", "worried", "shocked")
             pause.2
 
         "-Bite on them!":
@@ -555,14 +555,14 @@ label hg_pf_strip_T1_intro_E2:
             call her_main("","shock","worriedCl")
             pause.2
             g9 "{size=-4}(Yes, motorboating these titties is be the best!){/size}"
-            call her_main("","shock","shocked")
+            call her_main("", "shock", "wide", "worried", "shocked")
             pause.2
 
     call nar(">While you are having fun with her tits, Hermione keeps on dancing...","start")
 
-    call her_main("(Dancing naked in front of the headmaster...)","soft","shocked")
-    call her_main("(Letting him touch my breasts...)","disgust","shocked")
-    call her_main("(If my parents knew about this they would lose their minds...)","soft","shocked")
+    call her_main("(Dancing naked in front of the headmaster...)", "soft", "wide", "worried", "shocked")
+    call her_main("(Letting him touch my breasts...)", "disgust", "wide", "worried", "shocked")
+    call her_main("(If my parents knew about this they would lose their minds...)", "soft", "wide", "worried", "shocked")
     call her_main("(Especially my father...)", "annoyed", "closed", "base", "mid")
     ">Hermione is starting to shake her tits again..."
     call her_main("(Hermione Granger - the stripper...)")

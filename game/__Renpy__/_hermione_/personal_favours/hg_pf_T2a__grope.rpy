@@ -174,7 +174,7 @@ label hg_pf_grope_T1_E1:
 
     menu:
         "\"I'm gonna molest your tits now.\"":
-            call her_main("!!!","soft","shocked")
+            call her_main("!!!", "soft", "wide", "worried", "shocked")
             call her_main("S-Sir?!","disgust","worriedCl")
             call nar(">You reach out swiftly and grab both of her tits through her uniform...")
 

@@ -7,7 +7,7 @@ label hg_pf_grope_breasts_T1:
     call hg_chibi_transition("grope_breasts", trans="d7")
     pause.8
 
-    call her_main("!!!","normal","shocked")
+    call her_main("!!!", "normal", "wide", "worried", "shocked")
     call nar(">Hermione takes a hesitant step back...")
 
     call her_main("!!!?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head", trans="hpunch")

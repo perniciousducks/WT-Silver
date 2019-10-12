@@ -433,7 +433,7 @@ label hg_pf_talk_T3:
     call her_main("It didn't help when they discovered what professor Burbage actually believed to be a back massager...", "angry", "happyCl", "base", "mid", cheeks="blush")
     m "I mean, that's what it says on the box..."
     g4 "Wait, how do you know what people usually use them for?"
-    call her_main("...","disgust","shocked", cheeks="blush")
+    call her_main("...", "disgust", "wide", "worried", "shocked", cheeks="blush")
     g9 "Well?"
     call her_main("I...","annoyed","worriedCl", cheeks="blush")
     call her_main("Well, it's obvious to anyone with common sense isn't it!", "open", "narrow", "angry", "R", cheeks="blush")

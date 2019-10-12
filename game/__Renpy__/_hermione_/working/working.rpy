@@ -480,15 +480,15 @@ label job_5:
         
         if her_whoring < 15:
             # Failstate
-            call her_main("I know I said I'd help them but you want me to wear... this?", mouth="open", eye="angry")
+            call her_main("I know I said I'd help them but you want me to wear... this?", "open", "base", "angry", "mid")
             m "Of course, is that going to be a problem?"
-            call her_main("Yes!", mouth="angry", eye="angry")
+            call her_main("Yes!", "angry", "base", "angry", "mid")
             her "I can't believe you've done this."
-            call her_main("Did you have this commissioned?", mouth="open", eye="frown")
+            call her_main("Did you have this commissioned?", "open", "squint", "angry", "mid")
             m "The twins sold it to me..."
             her "Of course they did..."
             m "So it's a...{w=0.4}{nw}"
-            call her_main("Of course it's a no", mouth="shock", eye="angry")
+            call her_main("Of course it's a no", "shock", "base", "angry", "mid")
             $ her_mood += 5
             jump working_menu
             

@@ -2,27 +2,27 @@ label hg_wager_bj:
     g9 "Well if you want to avoid losing the points you could come over here and get on your knees."
     g9 "And put my dick in your mouth!"
     if her_whoring < 15:
-        call her_main("I don't want to lose those points, but that is too much!", mouth="angry", eye="angry")
-        call her_main("Isn't there anything else I could do?", mouth="open", eye="base")
+        call her_main("I don't want to lose those points, but that is too much!", "angry", "base", "angry", "mid")
+        call her_main("Isn't there anything else I could do?", "open", "base", "base", "mid")
         g4 "You're no fun!"
         g9 "Come over here and let me give your butt a squeeze, then I'll only deduct 10 points from Gryffindor."
         if her_whoring < 9:
-            call her_main("No! what kind of girl do you take me for [genie_name]!", mouth="scream", eye="angry")
+            call her_main("No! what kind of girl do you take me for [genie_name]!", "scream", "base", "angry", "mid")
             m "Fine, 20 points from Gryffindor!"
             $ gryffindor -= 20
             pause.5
             call her_chibi("leave","door","base")
         else:
-            call her_main("Okay, I can do that...", mouth="open", eye="soft", cheeks="blush")
-            call her_main("", mouth="base", eye="soft")
+            call her_main("Okay, I can do that...", "open", "base", "base", "mid_soft", cheeks="blush")
+            call her_main("", "base", "base", "base", "mid_soft")
             g9 "Well, get over here then!"
             call chibi_walk_desk_blkfade("hermione")
             call blkfade
             hide screen genie
-            call her_main("Should I turn around, [genie_name]?", mouth="open", eye="worriedCl")
-            call her_main("", mouth="upset", eye="worried")
+            call her_main("Should I turn around, [genie_name]?", "open", "worriedCl", "worried", "mid")
+            call her_main("", "upset", "base", "worried", "mid")
             m "No, not this time."
-            call her_main("Okay then...", mouth="annoyed", eye="glanceL")
+            call her_main("Okay then...", "annoyed", "narrow", "base", "R_soft")
             show screen no_groping_01
             with d1
             $ menu_x = 0.5
@@ -31,8 +31,8 @@ label hg_wager_bj:
             call ctc
             show screen groping_01
             m "Have you been working out [hermione_name]? This feels great!"
-            call her_main("No... can we just get this over with?", mouth="annoyed", eye="glance")
-            call her_main("{size=-5}All this because of a stupid card game{/size}.", mouth="upset", eye="worriedCl")
+            call her_main("No... can we just get this over with?", "annoyed", "narrow", "base", "mid_soft")
+            call her_main("{size=-5}All this because of a stupid card game{/size}.", "upset", "worriedCl", "worried", "mid")
             m "I know, we should definitely do this again."
 
             if hg_strip.trigger: #If snape walked in during the dance favour.
@@ -42,16 +42,16 @@ label hg_wager_bj:
 
                 call sna_main( "Hello Geni...", face="snape_09")
                 call sna_main( "What do we have here?!?", face="snape_20")
-                call her_main("{size=+5}Professor Snape?!{/size}", mouth="shock", eye="shocked", xpos="left",ypos="base")
-                call her_main("It's not what it looks like!", mouth="scream", eye="wideL")
+                call her_main("{size=+5}Professor Snape?!{/size}", "shock", "wide", "worried", "shocked", xpos="left",ypos="base")
+                call her_main("It's not what it looks like!", "scream", "wide", "base", "R")
                 hide screen hermione_main
                 call sna_main( "So you're not having your headmaster feel you up?", face="snape_05")
                 call sna_main( "And enjoying it, by the looks of it!", face="snape_02")
-                call her_main("I knew playing another round of cards wasn't a good idea...", mouth="mad", eye="worriedCl", cheeks="blush")
-                call her_main("...", mouth="annoyed", eye="annoyed", cheeks="blush")
-                call her_main("Take your hands off me now!!", mouth="scream", eye="angryCl", cheeks="blush")
+                call her_main("I knew playing another round of cards wasn't a good idea...", "mad", "worriedCl", "worried", "mid", cheeks="blush")
+                call her_main("...", "annoyed", "narrow", "annoyed", "mid", cheeks="blush")
+                call her_main("Take your hands off me now!!", "scream", "closed", "angry", "mid", cheeks="blush")
                 m "Fine, calm down miss Granger"
-                call her_main("Don't tell me to calm down!!!", mouth="scream", eye="angry", cheeks="blush")
+                call her_main("Don't tell me to calm down!!!", "scream", "base", "angry", "mid", cheeks="blush")
                 hide screen hermione_main
                 call sna_main("Don't feel as if you have to stop on my behalf.", face="snape_01")
                 m "Fine, I'll stop... But I'm still taking 20 points from Gryffindor!"
@@ -61,7 +61,7 @@ label hg_wager_bj:
                 call her_chibi("stand","410","base", flip=True)
                 call sna_main("The perfect Hermione Granger letting her headmaster feel her up over a card game and some house points!", face="snape_02")
                 call sna_main("How sweet...", face="snape_03")
-                call her_main("Can I leave now?", mouth="annoyed", eye="down", flip=True)
+                call her_main("Can I leave now?", "annoyed", "narrow", "worried", "down", flip=True)
                 m "You are excused miss Granger, but I will be taking 20 points from Gryffindor."
                 $ gryffindor -= 20 #should take gryffindor points and then hermione leaves
 
@@ -80,11 +80,11 @@ label hg_wager_bj:
                 call sna_walk(action="leave", speed=3)
 
             else : #If she hasn't stripped twice.
-                call her_main("No, it's bad enough doing this to gain house points, it's much worse to prevent losing them!", mouth="clench", eye="angryL")
+                call her_main("No, it's bad enough doing this to gain house points, it's much worse to prevent losing them!", "clench", "narrow", "angry", "R")
                 m "You don't enjoy it? Even a little?"
-                call her_main("No, Sir. I'm just doing this to fix the problem I created...", mouth="disgust", eye="glance")
+                call her_main("No, Sir. I'm just doing this to fix the problem I created...", "disgust", "narrow", "base", "mid_soft")
                 m "Well, to each their own, I am enjoying this very much!"
-                call her_main("Are you done yet?", mouth="disgust", eye="glanceL")
+                call her_main("Are you done yet?", "disgust", "narrow", "base", "R_soft")
                 m "Fine, I'll let you go..."
                 show screen no_groping_01
                 m "I'll only take 10 points from Gryffindor as we agreed."
@@ -95,7 +95,7 @@ label hg_wager_bj:
                 call her_chibi("stand","mid","base")
                 call gen_chibi("sit_behind_desk")
                 call hide_blkfade
-                call her_main("Thank you, [genie_name].", mouth="open", eye="base")
+                call her_main("Thank you, [genie_name].", "open", "base", "base", "mid")
                 hide screen hermione_main
                 with d3
 
@@ -103,12 +103,12 @@ label hg_wager_bj:
 
     else: #If her whoring is higher than 15 (when she can do blowjob favour)
         call set_u_ani("blowjob_ani","hand_ani", 0,10)
-        call her_main("Gryffindor really can't afford to lose 20 points...", mouth="soft", eye="worried")
-        call her_main("Okay then, I'll do it.", mouth="open", eye="closed")
+        call her_main("Gryffindor really can't afford to lose 20 points...", "soft", "base", "worried", "mid")
+        call her_main("Okay then, I'll do it.", "open", "closed", "base", "mid")
         if hg_pf_blowjob.points > 0: #if shes done the blowjob favour these show
-            call her_main("Not like I haven't done it before.", mouth="base", eye="happy", cheeks="blush")
+            call her_main("Not like I haven't done it before.", "base", "happy", "base", "mid_soft", cheeks="blush")
             if her_whoring > 18:
-                call her_main("And it does feel good having my mouth full of your cock...", mouth="soft", eye="happyCl", cheeks="blush")
+                call her_main("And it does feel good having my mouth full of your cock...", "soft", "happyCl", "base", "mid", cheeks="blush")
         m "Get over here then!"
         call chibi_walk_desk_blkfade("hermione")
         call play_music("playful_tension")
@@ -121,15 +121,15 @@ label hg_wager_bj:
         hide screen blkfade
         with fade
         call ctc
-        call her_main("*Urk*, *Slurp*, *Gobble*",ypos="head", mouth="open_wide_tongue", eye="closed") #should have her head showing while sucking his cock.
+        call her_main("*Urk*, *Slurp*, *Gobble*",ypos="head", "open_wide_tongue", "closed", "base", "mid") #should have her head showing while sucking his cock.
         m "Oh, that's great!"
         g4 "Put some work into it."
-        call her_main("*Gulp*, *Gobble*, *Gltch*", mouth="open_wide_tongue", eye="concerned")
+        call her_main("*Gulp*, *Gobble*, *Gltch*", "open_wide_tongue", "narrow", "worried", "mid_soft")
         m "Your mouth feels amazing, you're a natural!"
         call u_pause_ani
-        call her_main("I'm glad you like it [genie_name].", mouth="open", eye="squint", cheeks="blush")
+        call her_main("I'm glad you like it [genie_name].", "open", "happy", "base", "mid", cheeks="blush")
         call u_play_ani
-        call her_main("*Gobble*, *Slurp*, *Gobble*", mouth="open_wide_tongue", eye="closed", cheeks="blush")
+        call her_main("*Gobble*, *Slurp*, *Gobble*", "open_wide_tongue", "closed", "base", "mid", cheeks="blush")
 
         call play_music("dark_fog")#Snape walks in
 
@@ -144,12 +144,12 @@ label hg_wager_bj:
         m "{size=-5}Don't stop, [hermione_name]...{/size}"
         g4 "What do you mean, rematch? I beat you fair and square!"
         call u_play_ani
-        call her_main("*Slurp*, *Gulp*, *Urk*", ypos="head", mouth="open_wide_tongue", eye="worriedCl", cheeks="blush")
+        call her_main("*Slurp*, *Gulp*, *Urk*", ypos="head", "open_wide_tongue", "worriedCl", "worried", "mid", cheeks="blush")
         call sna_main("I'm certain you were cheating, my deck is way better than yours.", face="snape_06")
         call sna_main("Hold on... what's that noise?", face="snape_03")
         m "Probably ghosts...{w} This place must be haunted."
         g9 "And I'm better than you, just accept it."
-        call her_main("*Gulp*, *Gobble*, *Gltch*", mouth="open_wide_tongue", eye="worriedCl", cheeks="blush")
+        call her_main("*Gulp*, *Gobble*, *Gltch*", "open_wide_tongue", "worriedCl", "worried", "mid", cheeks="blush")
         call sna_main("{size=-5}That doesn't sound like any ghost I've ever heard...{/size}", face="snape_01")
         call sna_main("Are you sure?", face="snape_05")
         call her_main("*Slurp*, *Gobble*, *Urk*")
@@ -157,7 +157,7 @@ label hg_wager_bj:
         m "Yes, definitely ghosts..."
         g9 "Are you changing the subject now because you can't accept the fact I beat you at wizard cards!"
         g4 "{size=-5}I'm about to cum [hermione_name]!{/size}"
-        call her_main("*Gurk*, *Gulp*, *Gulp*", mouth="open_wide_tongue", eye="worried", cheeks="blush")
+        call her_main("*Gurk*, *Gulp*, *Gulp*", "open_wide_tongue", "base", "worried", "mid", cheeks="blush")
         call sna_main("No, something is going on here, what are you doing?", face="snape_07")
         m "...Just standing at my desk."
         hide screen snape_main
@@ -171,19 +171,19 @@ label hg_wager_bj:
                 call u_play_ani
                 call cum_block
                 g4 "{size=+7}ARGH!{/size}"
-                call her_main("...", mouth="full", eye="surprised")
+                call her_main("...", "full", "wide", "worried", "stare")
                 call sna_main("...", face="snape_25")
                 g4 "..."
                 call sna_main("Hmm...{w} it seems the weird sound is gone.", face="snape_04")
                 m "Oh... yes, seems like it..."
                 call sna_main("I bet it was peeves again...", face="snape_16")
                 call sna_main("I’ll leave you to it then...", face="snape_03")
-                call her_main("...", mouth="full_cum", eye="down_raised", cheeks="blush")
+                call her_main("...", "full_cum", "narrow", "base", "down", cheeks="blush")
 
                 call sna_walk(xpos="door", ypos="base", speed=3) #snape walks to the door, pauses on gulp sound
 
                 $ renpy.play('sounds/gulp.mp3')
-                call her_main("{image=textheart}*Gulp* {image=textheart}", mouth="cum", eye="ahegao")
+                call her_main("{image=textheart}*Gulp* {image=textheart}", "cum", "narrow", "annoyed", "up")
                 call sna_main("...", face="snape_07", flip=True)
                 pause.2
                 call blkfade
@@ -201,7 +201,7 @@ label hg_wager_bj:
                 call sna_main("I knew something was wrong from the start, you can't hide from me, now reveal yourself or prepare to die!", face="snape_30", wand=True)
                 if not hg_strip.trigger: #if hermione hasn't stripped twice
                     m "What are you doing Severus?"
-                    call her_main("...", mouth="soft", eye="worried", cheeks="blush")
+                    call her_main("...", "soft", "base", "worried", "mid", cheeks="blush")
                     m "You're being very strange..."
                     g9 "I didn’t know you cared so much about my well being..."
                     call sna_main("I thought...{w} never mind, I'll just go.", face="snape_14", wand=True)
@@ -223,14 +223,14 @@ label hg_wager_bj:
                     call sna_chibi("stand","460","base")
                     $ renpy.music.play("music/Dark Fog.mp3")
                     if her_whoring > 20:
-                        call her_main("Hello, Professor Snape.", mouth="cum", eye="base", xpos="left", ypos="base", flip=True)
-                        call her_main("I was just giving the headmaster some help with an ‘itch'", mouth="soft", eye="soft", flip=True)
+                        call her_main("Hello, Professor Snape.", "cum", "base", "base", "mid", xpos="left", ypos="base", flip=True)
+                        call her_main("I was just giving the headmaster some help with an ‘itch'", "soft", "base", "base", "mid_soft", flip=True)
                         call sna_main("I see... I was expecting a poor excuse, your honesty is admirable...", face="snape_02")
-                        call her_main("...", mouth="base", eye="soft", cheeks="blush", flip=True)
+                        call her_main("...", "base", "base", "base", "mid_soft", cheeks="blush", flip=True)
                         call sna_main("Well, in that case I hope you don't mind giving me a scratc...{w=1.0}{nw}", face="snape_13")
                     else: #whoring of 20 or less
-                        call her_main("Oh, hello there professor...", mouth="cum", eye="worried", cheeks="blush", xpos="left", ypos="base", flip=True)
-                        call her_main("I was just helping the headmaster with some cleaning under his desk.", mouth="open", eye="worriedCl", cheeks="blush")
+                        call her_main("Oh, hello there professor...", "cum", "base", "worried", "mid", cheeks="blush", xpos="left", ypos="base", flip=True)
+                        call her_main("I was just helping the headmaster with some cleaning under his desk.", "open", "worriedCl", "worried", "mid", cheeks="blush")
                         $ random_choice = renpy.random.randint(0, 2)
                         if random_choice == 0:
                             call sna_main("Sure... And I live a double life as a death eater...", face="snape_02")
@@ -241,7 +241,7 @@ label hg_wager_bj:
                     m "I believe that your work is done Miss Granger, I'll refrain from deducting those points...."
                     call sna_main("Avoiding house point deductions are we? Is it that simple to get in your pants miss Granger?", face="snape_01")
                     call sna_main("If I had known...", face="snape_20")
-                    call her_main("In your dreams...!", mouth="mad", eye="annoyed")
+                    call her_main("In your dreams...!", "mad", "narrow", "annoyed", "mid")
                     call sna_main("In any case, you're a lucky man... Albus.", face="snape_13")
                     call sna_main("I'll leave you two to it....", face="snape_02")
                     call sna_chibi("stand","mid","base",flip=True) #snape turns and leaves
@@ -255,31 +255,31 @@ label hg_wager_bj:
                 m "Well, that was something..."
                 $ uni_sperm = False
                 if her_whoring < 20: #if she has lower whoring than 21
-                    call her_main("That was mortifying!", mouth="angry", eye="angryCl")
-                    call her_main("How could you make me keep going?!?", mouth="angry", eye="angry")
+                    call her_main("That was mortifying!", "angry", "closed", "angry", "mid")
+                    call her_main("How could you make me keep going?!?", "angry", "base", "angry", "mid")
                     m "Well, you were down there already, how could I not?"
                     call her_main("Well, he found out anyway!", eye="angryCl")
                     m "And he didn't care, I don't see the problem here."
-                    call her_main("You are unbelievable sometimes!", mouth="scream", eye="angry")
-                    call her_main("I'm going now, don't expect me to do anything for you any time soon!", mouth="clench", eye="angry")
+                    call her_main("You are unbelievable sometimes!", "scream", "base", "angry", "mid")
+                    call her_main("I'm going now, don't expect me to do anything for you any time soon!", "clench", "base", "angry", "mid")
                     $ her_mood += 10
                 else: #if whoring is higher than 20
-                    call her_main("The old me would have been embarrassed by that...", mouth="clench", eye="concerned", cheeks="blush")
-                    call her_main("But I thought it was hot!", mouth="grin", eye="happy", cheeks="blush")
+                    call her_main("The old me would have been embarrassed by that...", "clench", "narrow", "worried", "mid_soft", cheeks="blush")
+                    call her_main("But I thought it was hot!", "grin", "happy", "base", "mid_soft", cheeks="blush")
                     g9 "I'll bet you did!"
-                    call her_main("I can't believe that just happened!", mouth="smile", eye="soft")
+                    call her_main("I can't believe that just happened!", "smile", "base", "base", "mid_soft")
                     m "Well you did a great job, I'll try to win even harder now!"
-                    call her_main("Well anyway, I must be going. Good bye [genie_name].", mouth="open", eye="base")
+                    call her_main("Well anyway, I must be going. Good bye [genie_name].", "open", "base", "base", "mid")
             "-Tell Him the ghost is gone-":
                 g4 "Wait..."
-                call her_main("*Glick*?", mouth="open_wide_tongue", eye="wideL")
+                call her_main("*Glick*?", "open_wide_tongue", "wide", "base", "R")
                 m "No, I think I should be able to exorcise these spirits myself..."
                 call sna_main("You can do that?",face="snape_11")
                 if her_whoring > 20:
-                    call her_main("*Slurp*, *Slurp*, *Gobble*", mouth="open_wide_tongue", eye="ahegao", cheeks="blush")
+                    call her_main("*Slurp*, *Slurp*, *Gobble*", "open_wide_tongue", "narrow", "annoyed", "up", cheeks="blush")
                     g4 "Ghh, of...{w=0.3} of course I can..."
                     call sna_main("I didn't think you could still use your powers like that...", face="snape_01")
-                    call her_main("*Gltch*, *Slurp*, *Gobble*", mouth="open_wide_tongue", eye="ahegao_squint", cheeks="blush")
+                    call her_main("*Gltch*, *Slurp*, *Gobble*", "open_wide_tongue", "squint", "worried", "up", cheeks="blush")
                     g4 "What?{w} Oh, yeah...{w=0.2} of course I can, I've exercised plenty..."
                     call her_main("*Gulp*, *Gulp*, *Gobble*")
                     g4 "ARGH...{w} plenty!"
@@ -287,14 +287,14 @@ label hg_wager_bj:
                     menu:
                         "-Try to get him to Leave-":
                             g4 "Fine? Yes, I just need some concentration...{w} It'd be easier if you left me to it, the final expulsion could become quite messy..."
-                            call her_main("*...?*", mouth="open_wide_tongue", eye="ahegao_raised", cheeks="blush")
+                            call her_main("*...?*", "open_wide_tongue", "narrow", "base", "up", cheeks="blush")
                             call sna_main("Well, I'd love to see that...","snape_02")
                             g4 "No...{w=0.4} Gngh...{w=0.2} Trust me, You don't...{w=0.4} Now, if you could..."
                             call sna_main("Fine, but you're going to have to teach me how to do that later...","snape_01")
                             g4 "Not sure if that's...."
                             call her_main("*Slurp*, *Slurp*, *Gobble*")
                             g4 "Oh, holy spirit that resides in this place..."
-                            call her_main("*Slurp*, *Slurp*, *Urk*", mouth="open_wide_tongue", eye="ahegao_squint", cheeks="blush")
+                            call her_main("*Slurp*, *Slurp*, *Urk*", "open_wide_tongue", "squint", "worried", "up", cheeks="blush")
                             g4 "Please help me release this anguish...{w} I mean, let me help release you from this anguish."
                             call sna_main("Well, you seem to know what you're doing so I'll leave you to it...","snape_05")
                             hide screen bld1
@@ -309,20 +309,20 @@ label hg_wager_bj:
                             call cum_block
                             pause 1
                             call u_pause_ani
-                            call her_main("*Mmmh!!*", mouth="full_cum", eye="wide", cheeks="blush")
+                            call her_main("*Mmmh!!*", "full_cum", "wide", "base", "stare", cheeks="blush")
                             $ renpy.play('sounds/gulp.mp3')
-                            call her_main("{image=textheart}*Gulp* {image=textheart}", mouth="cum", eye="ahegao")
+                            call her_main("{image=textheart}*Gulp* {image=textheart}", "cum", "narrow", "annoyed", "up")
                             m "Who said you could continue?"
-                            call her_main("From my perspective it looks like you appreciated the initiative...", mouth="cum", eye="soft")
+                            call her_main("From my perspective it looks like you appreciated the initiative...", "cum", "base", "base", "mid_soft")
                             m "..."
                             m "Fine, I won't deduct those points..."
-                            call her_main("Thank you...", mouth="smile", eye="base")
+                            call her_main("Thank you...", "smile", "base", "base", "mid")
                             call blkfade
                             call u_end_ani
                             call her_chibi("stand","mid","base")
                             call gen_chibi("sit_behind_desk")
                             hide screen blkfade
-                            call her_main("In that case I'll take my leave...", mouth="smile", eye="happy", ypos="base")
+                            call her_main("In that case I'll take my leave...", "smile", "happy", "base", "mid_soft", ypos="base")
                             call her_chibi("leave","door","base")
                             g9 "That girl..."
                         "-Let her keep going and deal with the aftermath-":
@@ -331,10 +331,10 @@ label hg_wager_bj:
                             call sna_main("Is there anything I could assist with?","snape_04")
                             with hpunch
                             g4 "{size=+7}What?!?{/size}"
-                            call her_main("...?", mouth="open_wide_tongue", eye="surprised", cheeks="blush")
+                            call her_main("...?", "open_wide_tongue", "wide", "worried", "stare", cheeks="blush")
                             call sna_main("With the exorcism...", face="snape_05")
                             m "Oh..."
-                            call her_main("*Slurp*, *Slurp*, *Slurp*", mouth="open_wide_tongue", eye="worriedCl", cheeks="blush")
+                            call her_main("*Slurp*, *Slurp*, *Slurp*", "open_wide_tongue", "worriedCl", "worried", "mid", cheeks="blush")
                             m "No... It's all good... I can feel the ghostly presence being expelled as we speak..."
                             g4 "Now take this you whore!"
                             call set_u_ani("cum_in_mouth_ani", "hand_ani", 0, 10)
@@ -358,23 +358,23 @@ label hg_wager_bj:
 
                             m "You can come out now [hermione_name]..."
                             call u_pause_ani
-                            call her_main("Thank you for your ghostly residue, [genie_name]", mouth="cum", eye="concerned")
+                            call her_main("Thank you for your ghostly residue, [genie_name]", "cum", "narrow", "worried", "mid_soft")
                             m "You're welcome, I can't believe he bought it..."
-                            call her_main("What do you expect from the head of Slytherin?", mouth="crooked_smile", eye="glanceL")
+                            call her_main("What do you expect from the head of Slytherin?", "crooked_smile", "narrow", "base", "R_soft")
                             m "yes...{w=0.3} Well...{w=0.3} I think that's enough for today."
                             call blkfade
                             call u_end_ani
                             call her_chibi("stand","mid","base")
                             call gen_chibi("sit_behind_desk")
                             hide screen blkfade
-                            call her_main("", mouth="base", eye="happy", ypos="base")
+                            call her_main("", "base", "happy", "base", "mid_soft", ypos="base")
                             m "You've done more than enough to save those points."
-                            call her_main("Thank you, [genie_name]", mouth="smile", eye="happy")
+                            call her_main("Thank you, [genie_name]", "smile", "happy", "base", "mid_soft")
                             if daytime: #should play if day time
-                                call her_main("Good bye.", mouth="open", eye="base")
+                                call her_main("Good bye.", "open", "base", "base", "mid")
                                 m "Bye, [hermione_name]"
                             else:
-                                call her_main("Good night.", mouth="open", eye="base")
+                                call her_main("Good night.", "open", "base", "base", "mid")
                                 m "Good night, [hermione_name]"
                             $ uni_sperm = False
                         "-Try something crazy- {image=interface/cards.png}":
@@ -385,7 +385,7 @@ label hg_wager_bj:
                             jump bj_duel_game
                 else: #whoring not higher than 21
                     call u_pause_ani
-                    call her_main("*Mmphaa...*", mouth="open_tongue", eye="ahegao")
+                    call her_main("*Mmphaa...*", "open_tongue", "narrow", "annoyed", "up")
                     m "Hold on...{w} Yes, I think the ghostly presence has departed..."
                     call sna_main("Already?",face="snape_05")
                     g4 "Yes, they must've felt how powerful my exorcistic abilities were and moved on somewhere else..."
@@ -400,7 +400,7 @@ label hg_wager_bj:
                         "-Hmm.. Actually.. {image=interface/cards.png}":
                             g9 "I don't see why not... I don't have anything else going on at the moment..."
                             label bj_duel_game:
-                            call her_main("...", mouth="open_wide_tongue", eye="annoyed")
+                            call her_main("...", "open_wide_tongue", "narrow", "annoyed", "mid")
                             call u_play_ani
                             call her_main("*Slurp*, *Slurp*, *Gobble*")
                             g4 "Gngh..."
@@ -580,22 +580,22 @@ label hg_wager_bj:
 
                     m "..."
                     g4 "...Why did you stop?"
-                    call her_main("What?", mouth="annoyed", eye="annoyed")
-                    call her_main("I thought you wanted me to...", mouth="clench", eye="down")
+                    call her_main("What?", "annoyed", "narrow", "annoyed", "mid")
+                    call her_main("I thought you wanted me to...", "clench", "narrow", "worried", "down")
                     m "If I wanted you to then I would've said so..."
-                    call her_main("I could continue if you want me to...", mouth="soft", eye="soft")
+                    call her_main("I could continue if you want me to...", "soft", "base", "base", "mid_soft")
                     m "No, the mood's ruined now..."
-                    call her_main("Are you still taking those points away?", mouth="open", eye="base")
+                    call her_main("Are you still taking those points away?", "open", "base", "base", "mid")
                     menu:
                         "-No-":
                             m "No, you're excused..."
-                            call her_main("Thank you professor...", mouth="smile", eye="happy")
+                            call her_main("Thank you professor...", "smile", "happy", "base", "mid_soft")
                         "-Yes-":
                             g4 "Of course I am, you didn't finish the job!"
-                            call her_main("...", mouth="annoyed", eye="wide")
-                            call her_main("But, Snape was going to...", mouth="open", eye="worriedCl")
-                            call her_main("...", mouth="upset", eye="down")
-                            call her_main("Fine...", mouth="clench", eye="annoyed")
+                            call her_main("...", "annoyed", "wide", "base", "stare")
+                            call her_main("But, Snape was going to...", "open", "worriedCl", "worried", "mid")
+                            call her_main("...", "upset", "narrow", "worried", "down")
+                            call her_main("Fine...", "clench", "narrow", "annoyed", "mid")
                             m "20 Points from Gryffindor!"
                             $ gryffindor -= 20
                             $ her_mood += 10

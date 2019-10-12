@@ -183,32 +183,32 @@ label hufflepuff_match:
     call her_walk(xpos="375", ypos="105", speed=2)
     pause.5
     call her_main("Good Morning everyone, and welcome to the i-inaugural-","soft","worried", flip=True,xpos="120",ypos="base")
-    call her_main("", mouth="normal", eye="worried")
+    call her_main("", "normal", "base", "worried", "mid")
     call sna_main("Speak up girl! And would it kill you to enunciate?!","snape_03",ypos="head")
     call her_main("*Grrr*", "mad", "narrow", "angry", "R")
-    call her_main("", mouth="open", eye="angryCl")
+    call her_main("", "open", "closed", "angry", "mid")
     call her_main("Welcome to the first Quidditch game of the season...{fast}", "open", "base", "worried", "mid")
     $ qp_mob = 3
     call sna_main("Better... You’ve advanced from Troll to Dreadful....","snape_09",ypos="head")
-    call her_main("", mouth="normal", eye="closed")
+    call her_main("", "normal", "closed", "base", "mid")
     m "{size=-4}Troll?{/size}" # Small text.
     call sna_main("{size=-4}Those are grades we give out to our students, for decidedly poor performances, like Granger’s...{/size}","snape_01",ypos="head")
-    call her_main("...", mouth="mad", eye="angry")
+    call her_main("...", "mad", "base", "angry", "mid")
     with hpunch
     
     stop bg_sounds fadeout 4
     
-    call her_main("{size=+5}Quiet Please!{/size}", mouth="scream", eye="angry")
-    call her_main("...", mouth="normal", eye="angryCl")
+    call her_main("{size=+5}Quiet Please!{/size}", "scream", "base", "angry", "mid")
+    call her_main("...", "normal", "closed", "angry", "mid")
     
     play bg_sounds "sounds/crowd_low.mp3" fadein 2
     
-    call her_main("Thank you...", mouth="open", eye="happy")
-    call her_main("L-let's begin!", mouth="base", eye="base")
+    call her_main("Thank you...", "open", "happy", "base", "mid_soft")
+    call her_main("L-let's begin!", "base", "base", "base", "mid")
 
     call play_music("quidditch")
 
-    call her_main("Hufflepuff versus Ravenclaw!", mouth="smile", eye="soft")
+    call her_main("Hufflepuff versus Ravenclaw!", "smile", "base", "base", "mid_soft")
     $ qp_mob_reaction[0] = "emo8"
     $ qp_mob_reaction[1] = "emo7"
     $ qp_mob_reaction[2] = "emo8"
@@ -216,8 +216,8 @@ label hufflepuff_match:
     ">A loud cheer roars from the grandstands."
 
     # Speech
-    call her_main("And now, to say a few words and declare the games open, Professor Dumbledore!", mouth="open", eye="closed")
-    call her_main("", mouth="base", eye="soft")
+    call her_main("And now, to say a few words and declare the games to be open, Professor Dumbledore!", "open", "closed", "base", "mid")
+    call her_main("", "base", "base", "base", "mid_soft")
     call ctc
 
     hide screen hermione_main
@@ -417,23 +417,23 @@ label hufflepuff_match:
     pause.8
 
     call her_main("Ugh... thank you for that, professor Dumbledore...", "soft", "narrow", "base", "R_soft", flip=True,xpos="120",ypos="base")
-    call her_main("Now, to get this game underway!", mouth="open", eye="closed")
+    call her_main("Now, to get this game underway!", "open", "closed", "base", "mid")
 
     # Player Introduction
-    call her_main("First, let’s welcome everyone’s favourite underdogs, Ravenclaw!", mouth="base", eye="squintL")
+    call her_main("First, let’s welcome everyone’s favourite underdogs, Ravenclaw!", "base", "happy", "base", "R")
     $ renpy.sound.play("sounds/crowd_stomping.mp3")
     $ qp_mob_reaction[0] = "emo8"
     $ qp_mob_reaction[1] = "emo7"
-    call her_main("", mouth="base", eye="base")
+    call her_main("", "base", "base", "base", "mid")
     ">The blue grandstand shakes violently with enthusiasm."
     call sna_main("At least try to sound like you’re awake, Miss Granger.","snape_03",ypos="head")
-    call her_main("...", mouth="normal", eye="angryCl", cheeks="blush")
+    call her_main("...", "normal", "closed", "angry", "mid", cheeks="blush")
     $ qp_mob_reaction[0] = None
     $ qp_mob_reaction[1] = None
-    call her_main("And coming onto the field to face them are the equally impressive, Hufflepuff!", mouth="open", eye="base", cheeks="blush")
+    call her_main("And coming onto the field to face them are the equally impressive, Hufflepuff!", "open", "base", "base", "mid", cheeks="blush")
     $ renpy.sound.play("sounds/crowd_cheer2.mp3")
     $ qp_mob_reaction[2] = "emo8"
-    call her_main("", mouth="base", eye="base", cheeks="blush")
+    call her_main("", "base", "base", "base", "mid", cheeks="blush")
     ">The yellow grandstand bursts into a mix of applause and whistles."
     hide screen hermione_main
     call sna_main("Back down to Troll...","snape_09",ypos="head")
@@ -442,14 +442,14 @@ label hufflepuff_match:
     $ qp_mob_reaction[2] = None
     call her_chibi("stand","375","105", flip=True)
     call her_main("", flip=True,xpos="120",ypos="base")
-    call her_main("It appears we’ve got an interesting game ahead of us. If I’m not mistaken, there’s some history between our seekers, Cho Chang and Cedric Diggory...", mouth="crooked_smile", eye="closed")
-    call her_main("", mouth="smile", eye="happy")
+    call her_main("It appears we’ve got an interesting game ahead of us. If I’m not mistaken, there’s some history between our seekers, Cho Chang and Cedric Diggory...", "crooked_smile", "closed", "base", "mid")
+    call her_main("", "smile", "happy", "base", "mid_soft")
     ">Even though they are far down below on the pitch, you can clearly see Cho and Cedric glaring up at Hermione."
-    call her_main("Given how essential the seekers role are in Quidditch, their complex past might cost one of them the game...", mouth="open", eye="soft")
+    call her_main("Given how essential the seekers role are in Quidditch, their complex past might cost one of them the game...", "open", "base", "base", "mid_soft")
     call sna_main("Complex past...","snape_01",ypos="head")
-    call her_main("", mouth="base", eye="closed")
+    call her_main("", "base", "closed", "base", "mid")
     call sna_main("I practically caught them chew each other’s tongues off at one point.","snape_02",ypos="head")
-    call her_main("Speaking of important, I just realised that as the inaugural game, I should cover the rules of the game for any first-years watching.", mouth="open", eye="squintL")
+    call her_main("Speaking of important, I just realised that as the inaugural game, I should cover the rules of the game for any first-years watching.", "open", "happy", "base", "R")
     
     # Reading the rules
     stop music fadeout 4
@@ -461,10 +461,10 @@ label hufflepuff_match:
     $ renpy.sound.play("sounds/sniff.mp3")
     her "..."
     play bg_sounds "sounds/wind_long_loop.mp3" fadein 2
-    call her_main("The capturing of the snitch is worth 150 points-", mouth="open", eye="down_raised", flip=True,xpos="120",ypos="base")
+    call her_main("The capturing of the snitch is worth 150 points-", "open", "narrow", "base", "down", flip=True,xpos="120",ypos="base")
     $ qp_mob_reaction[0] = "th"
     $ renpy.sound.play("sounds/murmur.mp3")
-    call her_main("The game may not conclude until it has been caught, or an agreement is made between both capt-", mouth="open", eye="base")
+    call her_main("The game may not conclude until it has been caught, or an agreement is made between both capt-", "open", "base", "base", "mid")
     $ qp_mob_reaction[1] = "an"
     play bg_sounds "sounds/crowd.mp3" fadein 8 fadeout 2
     hide screen hermione_main
@@ -473,8 +473,8 @@ label hufflepuff_match:
     mal2 "Yeh! Start the game!"
     qcr "START THE GAME! START THE GAME!"
     ">Hermione’s voice eventually gets drowned out by the growing restlessness of the crowd."
-    call her_main("", mouth="normal", eye="base",xpos="120",ypos="base",flip=True)
-    call her_main("Ugh, fine. If everyone wants us to begin play without knowing a SINGLE thing... then that’s OK! A good commentator knows when to accommodate for a crowd’s impatience!", mouth="open", eye="closed")
+    call her_main("", "normal", "base", "base", "mid",xpos="120",ypos="base",flip=True)
+    call her_main("Ugh, fine. If everyone wants us to begin playing without knowing a SINGLE thing... then that’s OK! A good commentator knows when to accommodate for a crowd’s impatience!", "open", "closed", "base", "mid")
     hide screen hermione_main
     call sna_main("{size=-4}This should be good.{/size}","snape_02",ypos="head") # Small text.
     $ qp_mob_reaction[0] = "emo8"
@@ -486,8 +486,8 @@ label hufflepuff_match:
     $ qp_mob_reaction[1] = None
     $ qp_mob_reaction[2] = None
     play bg_sounds "sounds/crowd_low.mp3" fadein 0.5 fadeout 0.5
-    call her_main("Now then...", mouth="open", eye="closed", cheeks="blush", flip=True,xpos="120",ypos="base")
-    call her_main("Let’s begin!", mouth="base", eye="happy", cheeks="blush")
+    call her_main("Now then...", "open", "closed", "base", "mid", cheeks="blush", flip=True,xpos="120",ypos="base")
+    call her_main("Let’s begin!", "base", "happy", "base", "mid_soft", cheeks="blush")
     hide screen hermione_main
 
     # Start of the Game
@@ -495,31 +495,31 @@ label hufflepuff_match:
     call play_music("quidditch")
     ">A Grey haired woman then throws the quaffle into the air which signals the start of the match and the players quickly take off!"
 
-    call her_main("Oh, wow... They’re going quite f-fast...", mouth="normal", eye="shocked", flip=True,xpos="120",ypos="base")
-    call her_main("", mouth="normal", eye="happyCl")
+    call her_main("Oh, wow... They’re going quite f-fast...", "normal", "wide", "worried", "shocked", flip=True,xpos="120",ypos="base")
+    call her_main("", "normal", "happyCl", "base", "mid")
     call sna_main("Great commentary there girl... You might want to let them know the colour of the grass next...","snape_10",ypos="head")
     $ renpy.sound.play("sounds/ball_hit.mp3")
-    call her_main("Um, I’m not sure if anyone’s scored yet...", mouth="normal", eye="squint")
-    call her_main("Wait, that guy has the quaffle... I think...", mouth="open", eye="suspicious")
-    call her_main("Scratch that last bit, he has a stick so he must be a beater!", mouth="mad", eye="squint")
+    call her_main("Um, I’m not sure if anyone’s scored yet...", "normal", "happy", "base", "mid")
+    call her_main("Wait, that guy has the quaffle... I think...", "open", "squint", "base", "mid")
+    call her_main("Scratch that last bit, he has a stick so he must be a beater!", "mad", "happy", "base", "mid")
 
     # Cho’s Skirt gets addressed
     show screen hufflepuff_match_cho_chase(1.0, 1.0)
     play bg_sounds "sounds/snitchloop.ogg" fadein 2 fadeout 2
-    call her_main("Higher up, Cho seems to have caught an eye on the snitch and is chasing after it, directly followed by Cedric who...", mouth="open", eye="narrow")
+    call her_main("Higher up, Cho seems to have caught an eye on the snitch and is chasing after it, directly followed by Cedric who...", "open", "slit", "low", "stare")
     show screen hufflepuff_match_cho_chase(1.0, 0.5)
-    call her_main("Hold on a minute... Is Cho wearing a skirt?", mouth="scream", eye="surprised")
+    call her_main("Hold on a minute... Is Cho wearing a skirt?", "scream", "wide", "worried", "stare")
     $ renpy.sound.play("sounds/crowd_gasp.mp3")
     stop music fadeout 4
     $ qp_mob_reaction[0] = "emo02"
     $ qp_mob_reaction[1] = "excl"
     $ qp_mob_reaction[2] = "sur"
-    call her_main("", mouth="open", eye="shocked", cheeks="blush")
+    call her_main("", "open", "wide", "worried", "shocked", cheeks="blush")
     qcr "!!!" # [screenshake?]
     play bg_sounds "sounds/crowd.mp3" fadein 2
     mal "..."
     $ renpy.sound.play("sounds/murmur.mp3")
-    call her_main("", mouth="open", eye="happyCl", cheeks="blush")
+    call her_main("", "open", "happyCl", "base", "mid", cheeks="blush")
     mal "She totally is!"
     $ renpy.sound.play("sounds/giggle2_loud.mp3")
     hide screen hermione_main
@@ -560,22 +560,22 @@ label hufflepuff_match:
     # Back to commentating
     call play_music("quidditch")
     play bg_sounds "sounds/crowd_low.mp3" fadein 0.5 fadeout 0.5
-    call her_main("...", mouth="normal", eye="frown", flip=True,xpos="120",ypos="base")
-    call her_main("Oh, apparently Ravenclaw scored during that... \"captivating\" bit of distraction...", mouth="open", eye="annoyed")
+    call her_main("...", "normal", "squint", "angry", "mid", flip=True,xpos="120",ypos="base")
+    call her_main("Oh, apparently Ravenclaw scored during that... \"captivating\" bit of distraction...", "open", "narrow", "annoyed", "mid")
     g9 "Sarcasm much?"
-    call her_main("", mouth="normal", eye="closed")
+    call her_main("", "normal", "closed", "base", "mid")
     call sna_main("...","snape_13",ypos="head") # [Smirk]
-    call her_main("I think it’s 10-20!", mouth="open", eye="squint")
-    call her_main("Or is that 20-10... I’m not sure, aren’t they both home teams...", mouth="annoyed", eye="suspicious")
+    call her_main("I think it’s 10-20!", "open", "happy", "base", "mid")
+    call her_main("Or is that 20-10... I’m not sure, aren’t they both home teams...", "annoyed", "squint", "base", "mid")
     call sna_main("Surely you must have learnt how to read by now, Miss Granger?","snape_03",ypos="head")
     $ renpy.sound.play("sounds/ball_hit.mp3")
     $ qp_mob_reaction[2] = None
-    call her_main("Hey! I have excellent reading skills, I’ll have you know...", mouth="mad", eye="angryL")
+    call her_main("Hey! I have excellent reading skills, I’ll have you know...", "mad", "narrow", "angry", "R")
     $ renpy.sound.play("sounds/crowd_cheer2.mp3")
 
-    call her_main("...", mouth="normal", eye="angryCl")
+    call her_main("...", "normal", "closed", "angry", "mid")
     $ qp_mob_reaction[1] = None
-    call her_main("Wait, now it’s... 20-30... I think...", mouth="annoyed", eye="squint")
+    call her_main("Wait, now it’s... 20-30... I think...", "annoyed", "happy", "base", "mid")
     $ renpy.sound.play("sounds/murmur.mp3")
     $ qp_mob_reaction[0] = "th"
     mal "Has this girl ever commentated even once in her life?"
@@ -583,12 +583,12 @@ label hufflepuff_match:
     mal2 "She can’t help herself answering questions in class...."
     mal2 "I suppose the rule book was more for her benefit than ours."
     $ qp_mob_reaction[2] = "emo03"
-    call her_main("", mouth="annoyed", eye="closed")
+    call her_main("", "annoyed", "closed", "base", "mid")
     mal "Then how’d she get the role over Lee Jordan?"
     mal2 "I heard he had an accident with a rogue bludger."
     $ renpy.sound.play("sounds/cough_male.mp3")
     mal "..."
-    call her_main("Wow... that snitch is darting around like nobody’s business-", mouth="base", eye="base")
+    call her_main("Wow... that snitch is darting around like nobody’s business-", "base", "base", "base", "mid")
     $ qp_mob_reaction[0] = None
     hide screen hermione_main
 
@@ -631,14 +631,14 @@ label hufflepuff_match:
     call sna_main("See, I told you!","snape_22",ypos="head")
     call her_chibi("stand","375","105", flip=False)
     $ qp_mob_reaction[2] = None
-    call her_main("Professors, could you please keep it down a little?", mouth="normal", eye="angry", flip=False,xpos="80",ypos="base")
+    call her_main("Professors, could you please keep it down a little?", "normal", "base", "angry", "mid", flip=False,xpos="80",ypos="base")
     call sna_main("Why? It’s not like we’re interrupting anything important.","snape_18",ypos="head")
     $ qp_mob_reaction[1] = None
-    call her_main("I’m trying to commentate the game!", mouth="mad", eye="frown")
+    call her_main("I’m trying to commentate the game!", "mad", "squint", "angry", "mid")
     $ qp_mob_reaction[0] = None
     $ renpy.sound.play("sounds/ball_hit.mp3")
     call sna_main("Yes, and I was starting to enjoy it. You are missing most of it by the way...","snape_20",ypos="head")
-    call her_main("As a result of your yelling!", mouth="scream", eye="angryCl")
+    call her_main("As a result of your yelling!", "scream", "closed", "angry", "mid")
     call her_main("", mouth="normal", eye="AngryCl")
     call sna_main("Eyes forward... girl.","snape_13",ypos="head")
     hide screen hermione_main
@@ -650,7 +650,7 @@ label hufflepuff_match:
     $ qp_mob_reaction[0] = "th"
     $ qp_mob_reaction[2] = "emo8"
     $ renpy.sound.play("sounds/crowd_cheer.mp3", fadein=3)
-    call her_main("So, I think... that Hufflepuff just scored another goal? They might even be unstoppable at this point!", mouth="open", eye="base", flip=True,xpos="120",ypos="base")
+    call her_main("So, I think... that Hufflepuff just scored another goal? They might even be unstoppable at this point!", "open", "base", "base", "mid", flip=True,xpos="120",ypos="base")
     # Fade to black
     stop bg_sounds fadeout 4
     stop music fadeout 4
@@ -675,39 +675,39 @@ label hufflepuff_match:
     pause 1.5
     show screen bld2
     call cho_main("Hey, Granger!", "open", "angry", "angry", "L", ypos=-200)
-    call her_main("What do you want? Shouldn’t you be busy with,{w=0.3} I don’t know...", mouth="open", eye="angry", flip=True,xpos="120",ypos="base")
+    call her_main("What do you want? Shouldn’t you be busy with,{w=0.3} I don’t know...", "open", "base", "angry", "mid", flip=True,xpos="120",ypos="base")
     call cho_main("", "pout", "angry", "raised", "L")
-    call her_main("playing the game?", mouth="smile", eye="closed")
+    call her_main("playing the game?", "smile", "closed", "base", "mid")
     call cho_main("The game is over, you dipstick!", "scream", "angry", "angry", "L")
     call cho_main("", "pout", "angry", "raised", "L")
-    call her_main("What? Already?", mouth="shock", eye="surprised")
+    call her_main("What? Already?", "shock", "wide", "worried", "stare")
     call cho_main("", "upset", "angry", "angry", "L")
-    call her_main("But who caught the Snitch?", mouth="open", eye="wide")
+    call her_main("But who caught the Snitch?", "open", "wide", "base", "stare")
     call cho_main("", "open", "angry", "angry", "L")
     $ cho_class.set_body(armright="arm_snitch_r")
     with d3
     ">Cho waves the snitch in front of her."
-    call her_main("", mouth="mad", eye="shocked")
+    call her_main("", "mad", "wide", "worried", "shocked")
     $ cho_class.set_body(armright="arm_down_r")
     $ cho_class.body['armright'][4] = True
     call cho_main("My first ever win this season and you didn’t even notice it! No one did, thanks to your dreadful commentating!", "scream", "closed", "angry", "L")
     call cho_main("", "upset", "angry", "angry", "down")
-    call her_main("Oh...", mouth="normal", eye="shocked")
-    call her_main("So should I announce it now?", mouth="open", eye="worriedCl")
+    call her_main("Oh...", "normal", "wide", "worried", "shocked")
+    call her_main("So should I announce it now?", "open", "worriedCl", "worried", "mid")
     call sna_main("Obviousl-","snape_12",ypos="head")
     call cho_main("{size=+10}YES!{/size}", "scream", "angry", "angry", "L", trans="vpunch")
-    call her_main("", mouth="normal", eye="worried")
+    call her_main("", "normal", "base", "worried", "mid")
     call cho_main("{size=+6}WHAT ARE YOU EVEN WAITING FOR?{/size}", "scream", "angry", "raised", "L", trans="hpunch")
     call cho_main("", "upset", "angry", "angry", "down")
-    call her_main("Don’t scream at me like that, bitch!", mouth="scream", eye="angry", trans="hpunch")
+    call her_main("Don’t scream at me like that, bitch!", "scream", "base", "angry", "mid", trans="hpunch")
     call cho_main("", "angry", "shocked", "angry", "L")
-    call her_main("", mouth="normal", eye="angry")
+    call her_main("", "normal", "base", "angry", "mid")
     call cho_main("{size=+6}WHAT DID YOU JUST CALL ME?!!!{/size}", "scream", "shocked", "angry", "L", trans="vpunch")
     call cho_main("", "angry", "shocked", "angry", "L")
-    call her_main("Everyone, Ravenclaw wins!", mouth="grin", eye="happy")
-    call her_main("Cho Chang managed to catch it, the snitch that is...", mouth="smile", eye="happyCl")
+    call her_main("Everyone, Ravenclaw wins!", "grin", "happy", "base", "mid_soft")
+    call her_main("Cho Chang managed to catch it, the snitch that is...", "smile", "happyCl", "base", "mid")
     call cho_main("", "scream", "shocked", "raised", "L")
-    call her_main("With the help of her ridiculously short skirt!", mouth="crooked_smile", eye="angry")
+    call her_main("With the help of her ridiculously short skirt!", "crooked_smile", "base", "angry", "mid")
     cho "{size=+10}!!!{/size}"
     $ qp_mob_reaction[0] = "emo8"
     $ qp_mob_reaction[1] = "emo7"

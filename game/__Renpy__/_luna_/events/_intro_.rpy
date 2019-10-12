@@ -65,11 +65,11 @@ label hat_intro:
 
 label hat_intro_2: #Bringing in Hermione
     m "[hermione_name], I wanted to talk to you about something."
-    call her_main("What's that [genie_name]?","open","base")
+    call her_main("What's that [genie_name]?", "open", "base", "base", "mid")
     m "Do you feel that any of your friends are in the wrong house?"
-    call her_main("What do you mean In the wrong house?","soft","base")
+    call her_main("What do you mean In the wrong house?", "soft", "base", "base", "mid")
     m "well, do you know anyone who'd be better suited being in a different house?"
-    call her_main("That's a weird question [genie_name].","open","base")
+    call her_main("That's a weird question [genie_name].", "open", "base", "base", "mid")
     call her_main("I suppose that Neville Longbottom isn't very courageous, Maybe he'd be better off in \"Hufflepuff\"...","open","suspicious")
     m "(Probably don't want him...)"
     m "Anyone else come to mind?"

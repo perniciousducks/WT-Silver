@@ -37,7 +37,7 @@ label hg_pf_sex:
     if her_mood != 0:
         call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
     else:
-        call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
 
     # Points
@@ -86,11 +86,11 @@ label hg_pf_sex_fail:
 # Event 3 (r) - Regular or anal sex
 
 label hg_pf_sex_T1_intro_E1:
-    call her_main("","base","base", xpos="right", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="right", ypos="base", trans="fade")
     m "[hermione_name]?"
-    call her_main("[genie_name]?","soft","base")
+    call her_main("[genie_name]?", "soft", "base", "base", "mid")
     m "The favour I will be buying from you today..."
-    call her_main(".......?","base","base")
+    call her_main(".......?", "base", "base", "base", "mid")
     m "How should I put this delicately...?"
     call her_main("Is it sex, [genie_name]?","base","suspicious")
     m "Well, yes. How did you...?"
@@ -109,7 +109,7 @@ label hg_pf_sex_T1_intro_E1:
 
 
 label hg_pf_sex_T1_intro_E2:
-    call her_main("","base","base", xpos="right", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="right", ypos="base", trans="fade")
     m "[hermione_name]..."
     m "Last night I had a dream..."
     g9 "You were lying on my desk and I was fucking your tight pussy like a madman..."
@@ -125,11 +125,11 @@ label hg_pf_sex_T1_intro_E2:
 
 
 label hg_pf_sex_T1_intro_E3:
-    call her_main("","base","base", xpos="right", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="right", ypos="base", trans="fade")
     m "[hermione_name], are you keeping your pussy wet and ready for me?"
     call her_main("[genie_name]!","scream","angryCl")
     m "Just say \"I do\" and come over here, [hermione_name]."
-    call her_main("...........","open","base")
+    call her_main("...........", "open", "base", "base", "mid")
     call her_main("I do....","angry","down_raised")
     stop music fadeout 1.0
 
@@ -157,11 +157,11 @@ label hg_pf_sex_T1_intro_E3:
 
 
 label hg_pf_sex_T1_E3: # repeats
-    call her_main("","base","base", xpos="right", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="right", ypos="base", trans="fade")
     m "[hermione_name], are you keeping your pussy wet and ready for me?"
     call her_main("[genie_name]!","scream","angryCl")
     m "Just say \"I do\" and come over here, [hermione_name]."
-    call her_main("...........","open","base")
+    call her_main("...........", "open", "base", "base", "mid")
     call her_main("I do....","angry","down_raised")
     stop music fadeout 1.0
 
@@ -230,7 +230,7 @@ label hg_sex_1:
     g4 "Your pussy... It's so tight."
     call her_main("................","normal","worriedCl")
     m "You alright?"
-    call her_main("A-ha... It's too big...","angry","base", tears="soft")
+    call her_main("A-ha... It's too big...", "angry", "base", "base", "mid", tears="soft")
     call her_main("You will rip me apart, [genie_name]!")
     m "Nonsense! My cock is of a regular size."
     m "It's not my fault that you are so tiny."
@@ -263,10 +263,10 @@ label hg_sex_1:
 
         "\"So... What's new in your life?\"":
             #$ ccg2 = 14
-            call her_main("...[genie_name]?","open","base")
+            call her_main("...[genie_name]?", "open", "base", "base", "mid")
             m "Just trying to have a polite conversation."
             #$ ccg2 = 17
-            call her_main("Ah-ah... But... ah...","open","base")
+            call her_main("Ah-ah... But... ah...", "open", "base", "base", "mid")
             m "Any news from your folks?"
             call her_main("My parents?","angry","worriedCl", emote="05")
             call her_main("[genie_name], please, I cannot talk...","open","worriedCl")
@@ -276,12 +276,12 @@ label hg_sex_1:
             call her_main("I am only doing this for the points, [genie_name]...","open","worriedCl")
             m "Oh, I see..."
             m "So you are like a prostitute then."
-            call her_main("What?","angry","base")
+            call her_main("What?", "angry", "base", "base", "mid")
             m "Well I pay you to have sex with me. How would you call that?"
             call her_main("...........","angry","down_raised")
             #$ ccg2 = 19
             call her_main("I am not a prostitute...","open","worriedCl")
-            call her_main("Why are you being so mean to me, [genie_name]?","angry","base", tears="soft")
+            call her_main("Why are you being so mean to me, [genie_name]?", "angry", "base", "base", "mid", tears="soft")
             m "I think you like it when I'm mean."
             call her_main("I do not!","mad","worried", tears="soft")
             m "Really? Then why is your pussy so wet?"
@@ -300,7 +300,7 @@ label hg_sex_1:
             call her_main("Ah-ah...","open","worriedCl")
             m "......................"
             call her_main("Ah... ah...","open","worriedCl")
-            call her_main("Ah... [genie_name]?","open","base")
+            call her_main("Ah... [genie_name]?", "open", "base", "base", "mid")
             m "What is it?"
             #$ ccg2 = 17
             call her_main("Ah... Do you.... like it?","open","worriedCl")
@@ -311,12 +311,12 @@ label hg_sex_1:
             m "Just enjoying the moment, [hermione_name]."
             m "What about you? You alright?"
             call her_main("Ah... yes...","open","worriedCl")
-            call her_main("It hurts a little though, ah...","open","base")
+            call her_main("It hurts a little though, ah...", "open", "base", "base", "mid")
             call her_main("Your penis is too big... ah...","open","worriedCl")
             m "Hm..."
             m "You need me to slow down or something?"
             #$ ccg2 = 20
-            call her_main("No, [genie_name]... You don't have to...","open","base")
+            call her_main("No, [genie_name]... You don't have to...", "open", "base", "base", "mid")
             call her_main("Please, don't mind me... Enjoy your moment.","normal","worriedCl")
             call her_main("I will... ah... Get used to it eventually... ah...")
             m "As you say, [hermione_name]."
@@ -460,7 +460,7 @@ label hg_sex_1:
             call her_main("Witchers?","open","worriedCl")
             m "Sure... You are a witch, that makes me a witcher, right?"
             m "And everyone knows that witchers are infertile..."
-            call her_main("[genie_name], you make no sense...","angry","base")
+            call her_main("[genie_name], you make no sense...", "angry", "base", "base", "mid")
             call her_main("Can I please just get paid now...?")
 
             return

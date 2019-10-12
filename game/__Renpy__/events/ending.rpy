@@ -11,7 +11,7 @@ label ball_ending_start:
         "Yes!":
             m "[hermione_name], that ball you've mentioned..."
             m "When did you say it would start again?"
-            call her_main("The autumn ball?!","grin","base")
+            call her_main("The autumn ball?!", "grin", "base", "base", "mid")
             call her_main("I'm so excited!!! I can't wait for it!","grin","happyCl")
             call her_main("Just two more days, [genie_name]","base","glance")
             m "That soon, huh?"
@@ -555,7 +555,7 @@ label ball_ending_E2:
     m "(There she is!)"
 
     mal "Hermione, hey..."
-    call her_main("Oh, hello.","base","base",ypos="head")
+    call her_main("Oh, hello.", "base", "base", "base", "mid",ypos="head")
     mal "You look... so beautiful tonight, Hermione."
     call her_main("Thank you, you are too sweet.","base","closed")
     mal2 "Can I have the next dance?"
@@ -570,11 +570,11 @@ label ball_ending_E2:
     stop music fadeout 3.0
     m "Here is my chance!"
     m "(Pst! Girl!)"
-    call her_main("???","upset","base")
+    call her_main("???", "upset", "base", "base", "mid")
     m "(Girl, it's me! Over here!)"
-    call her_main("[genie_name]?","open","base")
+    call her_main("[genie_name]?", "open", "base", "base", "mid")
     m "(Shush! Keep your voice down and follow me.)"
-    call her_main("Oh?","open","base")
+    call her_main("Oh?", "open", "base", "base", "mid")
     pause.1
 
     hide screen blktone8
@@ -583,10 +583,10 @@ label ball_ending_E2:
     call cg_scene("02", trans="fade")
     call ctc
 
-    call her_main("Sir, what is going on? Why are you... lurking in the shadows?","upset","base")
+    call her_main("Sir, what is going on? Why are you... lurking in the shadows?", "upset", "base", "base", "mid")
     m "Just be quiet and listen for a second! Can you do that for me?"
     call play_music("playful_tension") # SEX THEME.
-    call her_main("Yes, sir...","upset","base")
+    call her_main("Yes, sir...", "upset", "base", "base", "mid")
     m "Well, here is the thing then..."
     m "There is something you need to kn--"
     call her_main("Of course sir!","grin","squint",cheeks="blush")
@@ -888,10 +888,10 @@ label ball_ending_E2:
         call her_main("Well, what did you expect me to do, sir?","crooked_smile","worriedCl",cheeks="blush")
         m "Literally anything..."
         g4 "...but {size=+7}THAT!{/size}"
-        call her_main("But... I need to look my best for the coronation...","open","base")
+        call her_main("But... I need to look my best for the coronation...", "open", "base", "base", "mid")
         m "And a hairdo full of cum is supposed to ensure that?"
         call her_main("Well... yes...","soft","glanceL",cheeks="blush")
-        call her_main("You see, cum is a great hair fixative and--","open","base")
+        call her_main("You see, cum is a great hair fixative and--", "open", "base", "base", "mid")
 
         stop music fadeout 1.0
         sna "Miss Granger..................?"
@@ -1120,13 +1120,13 @@ label ball_ending_E2:
         call sna_main("You decided to show up after all?","snape_04")
         call sna_main("What an unpleasant surprise...","snape_03")
 
-        call her_main("Professor...","upset","base",ypos="head")
+        call her_main("Professor...", "upset", "base", "base", "mid",ypos="head")
         call sna_main("Well, go ahead then...","snape_10")
         call sna_main("Here is the tiara...")
 
         $ h_hat                    = "tiara"
         $ h_request_wear_hat       = True
-        call her_main("Professor...","upset","base",ypos="head")
+        call her_main("Professor...", "upset", "base", "base", "mid",ypos="head")
 
         call sna_main("And the stage is yours...")
         call her_main("Thank you, professor.","base","closed")
@@ -2250,14 +2250,14 @@ label ball_ending_E2:
         call hide_blkfade
 
         m "Alright, girl. Let's have that talk now..."
-        call her_main("....................","upset","base")
+        call her_main("....................", "upset", "base", "base", "mid")
         m "There is something I need to tell you..."
         m "Not sure where to start though..."
         m "........................................"
         m "Well, first of all I am--"
-        call her_main("Sir, I think I know exactly what you are about to say.","open","base")
+        call her_main("Sir, I think I know exactly what you are about to say.", "open", "base", "base", "mid")
         m "You do?"
-        call her_main("Of course.","open","base")
+        call her_main("Of course.", "open", "base", "base", "mid")
         call her_main("One hasty blowjob is not nearly enough to repay my debt to you, am I right?","base","glance",cheeks="blush")
         m "What? No, that's not what I--"
         call her_main("It's fine, sir. Really.","base","glance",cheeks="blush")
@@ -2269,7 +2269,7 @@ label ball_ending_E2:
         g4 "*Low growl!*"
         g4 "Come here, whore!"
         g4 "Suppose I might as well fuck you one last time!"
-        call her_main("(One last time?)","upset","base")
+        call her_main("(One last time?)", "upset", "base", "base", "mid")
         call ctc
 
 
@@ -3048,14 +3048,14 @@ label ball_ending_E3:
         call her_main("It's not like I actually enjoyed it or anything, you know...","annoyed","annoyed")
         dum_[1]"Miss Granger, I found this letter on my desk..."
         dum_[1]"It's addressed to you..."
-        call her_main("A letter, sir?","soft","base")
+        call her_main("A letter, sir?", "soft", "base", "base", "mid")
         call her_main("Oh, of course! The one you wrote for me, sir.","grin","worriedCl",emote="05")
         dum_[1]"This letter is not from me, miss Granger."
         call her_main("It is not?","annoyed","suspicious")
         call her_main("Oh, I see...","grin","worriedCl",emote="05")
         call her_main("There is no need to be so shy about this, sir. It's alright.")
         dum_[1]"*ahem*... here it is."
-        call her_main("Thank you, sir.","base","base")
+        call her_main("Thank you, sir.", "base", "base", "base", "mid")
         call her_main("Let's see....","annoyed","down")
         hide screen hermione_main
         with d3

@@ -37,7 +37,7 @@ label hg_pf_grope:
     if her_mood != 0:
         call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
     else:
-        call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "This will do for now."
     if her_tier <= 3:
@@ -58,7 +58,7 @@ label hg_pf_grope:
         her "Thank you, [genie_name]..."
     elif her_tier <= 4:
         call her_main("..................","base","baseL")
-        call her_main("Thank you, [genie_name]...","soft","base")
+        call her_main("Thank you, [genie_name]...", "soft", "base", "base", "mid")
     else:
         call her_main("..................","soft","ahegao")
         call her_main("Thank you, [genie_name]...","soft","glance")
@@ -194,7 +194,7 @@ label hg_pf_grope_T1_E1:
 
 label hg_pf_grope_T2_intro_E1:
     m "[hermione_name]..."
-    call her_main("[genie_name]?","base","base")
+    call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "How would you like to earn some house points today?"
     call her_main("And what would I need to do to earn them?","annoyed","annoyed")
     m "Oh nothing too out of the ordinary."
@@ -204,7 +204,7 @@ label hg_pf_grope_T2_intro_E1:
     her "Nothing like that, [genie_name]."
     m "Well, how about you come closer and bare your tits for me...?"
     g9 "I feel like playing with them a little..."
-    call her_main("!!!","open","base")
+    call her_main("!!!", "open", "base", "base", "mid")
     m "Or your but..."
     g9 "I'd like to give it a good squeeze."
 
@@ -244,7 +244,7 @@ label hg_pf_grope_T2_intro_E1:
 
 label hg_pf_grope_T2_E1:
     m "[hermione_name]..."
-    call her_main("[genie_name]?","base","base")
+    call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "How would you like to earn some house points today?"
     call her_main("And what would I need to do to earn them?","annoyed","annoyed")
     g9 "Get squeezed!"
@@ -277,7 +277,7 @@ label hg_pf_grope_T2_E1:
 
 label hg_pf_grope_T3_intro_E1:
     m "[hermione_name]..."
-    call her_main("[genie_name]?","base","base")
+    call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "Would you like to join me again?"
     g9 "Behind my desk."
     call her_main("Are you going to grope me again, [genie_name]?","soft","glance")
@@ -313,7 +313,7 @@ label hg_pf_grope_T3_intro_E2:
 
     call her_main("[genie_name].....?","soft","down", ypos="head")
     m "Yes?"
-    call her_main("Are you going to grope my breasts again?","soft","base")
+    call her_main("Are you going to grope my breasts again?", "soft", "base", "base", "mid")
     call her_main("Or my bum?....","soft","glance")
     m "*Hmm*..."
 

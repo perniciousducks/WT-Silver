@@ -432,9 +432,9 @@ label hg_wager_bj:
                                 call her_main("So I assume I'm not losing those points anymore?","open","concerned")
                                 m "Definitely not..."
                                 if daytime:
-                                    call her_main("Great, good bye for now then [genie_name]...","base","base")
+                                    call her_main("Great, good bye for now then [genie_name]...", "base", "base", "base", "mid")
                                 else:
-                                    call her_main("Great, good night then... [genie_name].","base","base")
+                                    call her_main("Great, good night then... [genie_name].", "base", "base", "base", "mid")
                                 m "{size=-8}That girl is crazy...{/size}"
                             elif duel_response == "loss" or duel_response == "Close":
                                 call sna_main("Yes... I knew I'd make you bust this time!", face="snape_02")
@@ -507,14 +507,14 @@ label hg_wager_bj:
                                         $ her_mood += 25
                                     "-Let her go-":
                                         m "No, I feel like I've reached a net gain somehow during this whole ordeal..."
-                                        call her_main("...","normal","base")
+                                        call her_main("...", "normal", "base", "base", "mid")
                                         m "A net gain is when...{nw}"
                                         call her_main("I know what it means...","open","glance")
                                         m "Right."
                                         if daytime:
-                                            call her_main("good day to you then sir.","base","base")
+                                            call her_main("good day to you then sir.", "base", "base", "base", "mid")
                                         else:
-                                            call her_main("Good night then...","base","base")
+                                            call her_main("Good night then...", "base", "base", "base", "mid")
                             else:
                                 call sna_main("...", face="snape_18")
                                 g4 "Did I say that aloud?"
@@ -558,9 +558,9 @@ label hg_wager_bj:
                                 call her_main("That's not...","normal","down_raised")
                                 call her_main("Thank you...","open","closed")
                                 if daytime:
-                                    call her_main("Good bye then [genie_name].","base","base")
+                                    call her_main("Good bye then [genie_name].", "base", "base", "base", "mid")
                                 else:
-                                    call her_main("Good night then [genie_name].","base","base")
+                                    call her_main("Good night then [genie_name].", "base", "base", "base", "mid")
                             call blkfade
                             call u_end_ani
                             hide screen blkfade

@@ -44,7 +44,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         m "You've been practising?"
         call her_main("of course! {p}although she still has a lot to learn...","upset","closed")
         call lun_main("It wasn't that bad...","pout","angry","sad","mid")
-        call her_main("ugh... let's just say you'll be glad she's had the practice.","angry","base")
+        call her_main("ugh... let's just say you'll be glad she's had the practice.", "angry", "base", "base", "mid")
         call her_main("My dildo still has bite marks on it from her first attempt.","angry","down_raised")
         call lun_main("Well how was I supposed to know the teeth aren't supposed to touch...","upset","angry","angry","R")
         call her_main("I told you that was the rule number one! Besides, you nearly bit it clean in half...","angry","wide")
@@ -301,7 +301,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         $ luna_gold += 75
         $ gold -= 150
         m "And here's 75 gold each."
-        call her_main("Thank you [genie_name]!","base","base")
+        call her_main("Thank you [genie_name]!", "base", "base", "base", "mid")
         call lun_main("...","normal","angry","angry","R")
         call her_main("Luna! Don't be rude.","angry","angry")
         call lun_main("...Thanks [lun_genie_name].","normal","seductive","sad","R")
@@ -606,7 +606,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         $ luna_gold += 75
         $ gold -= 150
         m "And here's 75 gold each."
-        call her_main("Thank you [genie_name]!","base","base")
+        call her_main("Thank you [genie_name]!", "base", "base", "base", "mid")
         call lun_main("...","normal","angry","angry","R")
         call her_main("...","disgust","down_raised")
         call lun_main("...Thank you sir.","normal","seductive","sad","R")
@@ -887,7 +887,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         $ luna_gold += 75
         $ gold -= 150
         m "And here's 75 gold each."
-        call her_main("Thank you [genie_name]! Any time you want to fuck luna's slutty little throat again just let us know!","base","base")
+        call her_main("Thank you [genie_name]! Any time you want to fuck luna's slutty little throat again just let us know!", "base", "base", "base", "mid")
         call lun_main("...Thank you sir.","base","seductive","sad","down", cheeks="blush",tears="mascara")
         call her_main("Well, we better be off sir, we still have a lot of studying to do!","grin","baseL")
         call her_main("(Not to mention more practice with the {b}big{/b} dildo...)","soft","squintL")

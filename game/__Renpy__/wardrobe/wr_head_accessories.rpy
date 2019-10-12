@@ -29,7 +29,7 @@ label equip_makeup:
         # if makeup_choice != h_lipstick:
             # $ hide_transitions = False #activates dissolve in her_main
 
-            # call her_main("You want me to put on lipstick?","soft","base")
+            # call her_main("You want me to put on lipstick?", "soft", "base", "base", "mid")
             # m "Just a little bit."
 
             # call her_main("Alright then...","base","glance")
@@ -62,7 +62,7 @@ label equip_makeup:
             # if makeup_choice == "freckles":
                 # m "Would you apply some makeup for me? I think freckles would look cute on you."
                 # if her_whoring >= 14:
-                    # call her_main("Sure, [genie_name].","soft","base")
+                    # call her_main("Sure, [genie_name].", "soft", "base", "base", "mid")
                     # call her_main("Let me just put on a few dots on...","base","glance")
                 # else:
                     # call her_main("Hmm","normal","frown")
@@ -74,11 +74,11 @@ label equip_makeup:
 
                 # if her_whoring >= 20:
                     # if her_whoring < 24:
-                        # call her_main("Fake cum...?","soft","base")
+                        # call her_main("Fake cum...?", "soft", "base", "base", "mid")
                         # call her_main("...","annoyed","suspicious")
                         # call her_main("well as long as it's not real...","base","glance")
                     # else: #24
-                        # call her_main("Hm...?","soft","base")
+                        # call her_main("Hm...?", "soft", "base", "base", "mid")
                         # call her_main("Do you want me to cover myself in fake cum, [genie_name]?","annoyed","suspicious")
                         # call her_main("Or just my face?","annoyed","suspicious")
                         # menu:
@@ -96,7 +96,7 @@ label equip_makeup:
                         # jump too_much
                     # else: #8-19
                         # call her_main("Fake cum...?","open","worried")
-                        # call her_main("You cannot be serious, [genie_name]!","open","base")
+                        # call her_main("You cannot be serious, [genie_name]!", "open", "base", "base", "mid")
                         # m "What's wrong? It's not real..."
                         # call her_main("[genie_name] I am not going to smear myself with cum, real or not, and then parade around the school!","normal","frown")
                         # call her_main("I absolutely refuse!","annoyed","frown")
@@ -138,12 +138,12 @@ label equip_makeup:
             # #Freckles
             # if makeup_choice == "freckles":
                 # m "Could you remove those freckles again?"
-                # call her_main("Alright. Let me just wipe it off.","base","base")
+                # call her_main("Alright. Let me just wipe it off.", "base", "base", "base", "mid")
 
             # #Fake Cum
             # if makeup_choice == "fake_cum":
                 # m "Could you take that cum off your head again?"
-                # call her_main("Alright. Let me wipe it off.","base","base")
+                # call her_main("Alright. Let me wipe it off.", "base", "base", "base", "mid")
 
             # hide screen hermione_main
             # with d3
@@ -205,9 +205,9 @@ label equip_head_accessory:
                     # call her_main("But I can see just fine, [genie_name].","normal","frown")
                     # m "Don't worry, they have fake lenses."
                     # call her_main("I suppose I could wear them...","annoyed","frown")
-                    # call her_main("Let me put them on real quick.","base","base")
+                    # call her_main("Let me put them on real quick.", "base", "base", "base", "mid")
                 # else:
-                    # call her_main("Sure, [genie_name].","soft","base")
+                    # call her_main("Sure, [genie_name].", "soft", "base", "base", "mid")
                     # call her_main("I will wear them for you.","base","glance")
 
             # #Vintage Glasses
@@ -219,9 +219,9 @@ label equip_head_accessory:
                     # call her_main("I don't need to wear glasses, [genie_name]. I can see just fine!","open","closed")
                     # m "They aren't real glasses. These lenses are fake."
                     # call her_main("I see... I suppose I could wear them...","annoyed","frown")
-                    # call her_main("Let me put them on real quick.","base","base")
+                    # call her_main("Let me put them on real quick.", "base", "base", "base", "mid")
                 # else:
-                    # call her_main("Sure, [genie_name].","soft","base")
+                    # call her_main("Sure, [genie_name].", "soft", "base", "base", "mid")
                     # call her_main("I don't mind looking a bit nerdy...","open","baseL")
                     # call her_main("Let me put them on for you.","base","glance")
 
@@ -242,7 +242,7 @@ label equip_head_accessory:
                         # call her_main("Let me put them on for you.","base","glance")
                 # else:
                     # call her_main("Cat-ears...?","open","worried")
-                    # call her_main("Really, [genie_name]?!","open","base")
+                    # call her_main("Really, [genie_name]?!", "open", "base", "base", "mid")
                     # m "What's wrong? They're cute..."
                     # call her_main("I'm not going to wear cat ears, [genie_name]!","annoyed","angryL")
                     # m "Fine. Forget it..."
@@ -258,7 +258,7 @@ label equip_head_accessory:
 
                 # if her_whoring >= 11:
                     # if h_hair_style != "updo":
-                        # call her_main("Elf-ears...?","soft","base")
+                        # call her_main("Elf-ears...?", "soft", "base", "base", "mid")
                         # call her_main("You wouldn't even be able to see them beneath all my hair...","open","closed")
                         # m "You are right..."
                         # m "Could you change your hair too then? Show off your cute little ears?"
@@ -266,7 +266,7 @@ label equip_head_accessory:
                     # if her_whoring < 17:
                         # call her_main("...","annoyed","suspicious")
                         # call her_main("I suppose they're not too noticeable...","base","glance")
-                        # call her_main("Alright. I will wear them.","soft","base")
+                        # call her_main("Alright. I will wear them.", "soft", "base", "base", "mid")
                         # call her_main("Let me put them on real quick.","soft","baseL")
                     # else:
                         # call her_main("...","annoyed","down")
@@ -274,7 +274,7 @@ label equip_head_accessory:
                         # call her_main("Alright, [genie_name]. I will wear them for you.","base","glance")
                 # else:
                     # call her_main("elf-ears...?","open","worried")
-                    # call her_main("I refuse, [genie_name]!","open","base")
+                    # call her_main("I refuse, [genie_name]!", "open", "base", "base", "mid")
                     # m "Why not? Don't you support the house elves or something..."
                     # call her_main("It's not about...","annoyed","angryL")
                     # call her_main("I'm not going to wear these ridiculous ears for you, [genie_name]!","annoyed","angryL")
@@ -343,27 +343,27 @@ label equip_head_accessory:
             # #Reading Glasses
             # if head_accessory_choice == "reading_glasses_black":
                 # m "Could you take off those reading glasses?"
-                # call her_main("Sure. Let me take them off.","base","base")
+                # call her_main("Sure. Let me take them off.", "base", "base", "base", "mid")
 
             # #Vintage Glasses
             # if head_accessory_choice == "vintage_glasses_black":
                 # m "Could you take off those glasses again?"
-                # call her_main("Alright. I will take them off.","base","base")
+                # call her_main("Alright. I will take them off.", "base", "base", "base", "mid")
 
             # #Cat Ears
             # if head_accessory_choice == "cat_ears":
                 # m "Could you take off those cat-ears again?"
-                # call her_main("Sure. Let me take them off.","base","base")
+                # call her_main("Sure. Let me take them off.", "base", "base", "base", "mid")
 
             # #Elf Ears
             # if head_accessory_choice == "elf_ears":
                 # m "Could you take those ears off again?"
-                # call her_main("Alright. Let take them off.","base","base")
+                # call her_main("Alright. Let take them off.", "base", "base", "base", "mid")
 
             # #Tiara
             # if head_accessory_choice == "tiara":
                 # m "Could you take off that tiara?"
-                # call her_main("Sure. I will take it off.","base","base")
+                # call her_main("Sure. I will take it off.", "base", "base", "base", "mid")
 
             # hide screen hermione_main
             # with d3

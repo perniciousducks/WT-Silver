@@ -48,7 +48,7 @@ label l_tutoring:
     $ d_flag_01 = False
 
     if her_tutoring == 0:   # Whoring lvl 0
-        call her_main("Again, thank you for doing this for me, sir...","open","base",xpos="base",ypos="base",trans="fade")
+        call her_main("Again, thank you for doing this for me, sir...", "open", "base", "base", "mid",xpos="base",ypos="base",trans="fade")
         call her_main("Shall I go and fetch my books?","open","suspicious")
         m "What?"
         call her_main("My Books, [genie_name]. I need to study them more for my tests.","soft","baseL")
@@ -73,23 +73,23 @@ label l_tutoring:
         call her_main("Yes?","soft","baseL")
         m "Certain emotions like love and hate, pleasure and pain..."
         g9 "{size=-2}(If she falls for that, I'm a true genius!){/size}"
-        call her_main("I've been studying magic for years and I've never heard of such a thing.","normal","base")
+        call her_main("I've been studying magic for years and I've never heard of such a thing.", "normal", "base", "base", "mid")
         g4 "{size=-2}(Shit.){/size}"
         m "And that's exactly why you're still a child. You still have much to learn about magic."
-        call her_main("Please stop that, professor. Nobody considers me a child anymore.","open","base")
+        call her_main("Please stop that, professor. Nobody considers me a child anymore.", "open", "base", "base", "mid")
         m "Yes, technically..."
-        call her_main("Technically?!","open","base")
+        call her_main("Technically?!", "open", "base", "base", "mid")
         g4 "Enough of this. You came to me to ask for my help, and if it starts like that..."
         call her_main("Yes, I suppose you are right...","angry","angry")
-        call her_main("Alright, I'm ready to study hard with you!","base","base")
+        call her_main("Alright, I'm ready to study hard with you!", "base", "base", "base", "mid")
         g9 "{size=-2}(Yes!){/size}"
         call her_main("What was that?","open","annoyed",cheeks="blush")
         m "Uh, yes I'm glad you're beginning to understand, child."
         her "..........."
         m "Alright, I want you to take some time and think about what I've said. Next time we'll start with your first lesson."
-        call her_main("Can't we start now?","open","base")
+        call her_main("Can't we start now?", "open", "base", "base", "mid")
         m "Miss Granger, you're not the only student I must take care of."
-        call her_main("You're tutoring someone else?","open","base")
+        call her_main("You're tutoring someone else?", "open", "base", "base", "mid")
         m "{size=-2}(If only...){/size}"
         m "I must take care of all the students of this school."
         m "But yes, there is another girl who needs..."
@@ -97,7 +97,7 @@ label l_tutoring:
         g9 "That is none of your business, miss Granger."
         call her_main("Yes, professor. I'm sorry, but with all the recent events I'm a little on edge.","angry","angry")
         m "Apology accepted, and now goodnight!"
-        call her_main("Good night, professor, and thanks again for taking some of your precious time to help me.","base","base")
+        call her_main("Good night, professor, and thanks again for taking some of your precious time to help me.", "base", "base", "base", "mid")
         hide screen hermione_main
 
         call nar("You dismiss Hermione.")
@@ -113,16 +113,16 @@ label l_tutoring:
         jump day_start
 
     if her_tutoring == 1:   # Whoring lvl 1
-        call her_main("","base","base",xpos="base",ypos="base",trans="fade")
+        call her_main("", "base", "base", "base", "mid",xpos="base",ypos="base",trans="fade")
         m "Miss Granger, time for your first lesson."
         call her_main("Yes, professor.","soft","baseL")
         m "Have you thought about what we discussed?"
-        call her_main("Not really, I'm not sure what you mean by \"emotions\".","normal","base")
+        call her_main("Not really, I'm not sure what you mean by \"emotions\".", "normal", "base", "base", "mid")
         g9 "{size=-2}(You'll learn soon enough, girl.){/size}"
         m "For example, what was your state of mind when you heard those rumours about the Slytherin girls?"
         call her_main("Please don't bring that up, sir! it really makes me mad!","scream","wide")
         m "And what is this feeling?"
-        call her_main("...{w=0.5}an emotion, I suppose...","normal","base")
+        call her_main("...{w=0.5}an emotion, I suppose...", "normal", "base", "base", "mid")
         m "Yes, and don't you have emotions you prefer over others?"
         call her_main("When I have the best score at a test.","smile","happyCl")
         m "{size=-2}(This girl is a monomaniac...){/size}"
@@ -130,7 +130,7 @@ label l_tutoring:
         call her_main("Yes! Studying and reading books.","smile","happyCl")
         g4 "{size=-2}(By all the ancient gods...){/size}"
         m "Things are not going in the right direction..."
-        call her_main("And what direction is that, sir?","normal","base")
+        call her_main("And what direction is that, sir?", "normal", "base", "base", "mid")
         g9 "{size=-2}(You impaled on my cock!){/size}"
         m "Adulthood, Miss Granger, adulthood..."
         call her_main("I am by far the most mature of my peers, professor. What more can you ask?","open","closed")
@@ -138,7 +138,7 @@ label l_tutoring:
         m "I'm tired of all this, and I have work to do. Goodnight, child."
         call her_main("Tutoring one of those filthy Slytherin girls, maybe?","open","annoyed",cheeks="blush")
         m "Maybe that's the right direction, think about what all those girls do with professors."
-        call her_main("But...{w=0.5} that's so wrong...{w=0.8} I don't know if I want to think about that.","open","base")
+        call her_main("But...{w=0.5} that's so wrong...{w=0.8} I don't know if I want to think about that.", "open", "base", "base", "mid")
         m "If you want to progress and to restore the Gryffindor pride, you must!"
         call her_main("Yes, you're right! It's my mission! I'll do my best, professor.","grin","angry",cheeks="blush")
         g9 "{size=-2}(She is so naive, it's adorable.){/size}"
@@ -160,7 +160,7 @@ label l_tutoring:
     elif her_tutoring == 2:   # Whoring lvl 2
         m "So, have you thought about emotions and their usefulness in the practice of magic?"
         call her_main("Yes, first I tried to cast a spell while thinking of the behaviour of those Slytherin girls.","open","closed")
-        call her_main("It made me so angry and confused that I lost my focus and failed miserably.","annoyed","base")
+        call her_main("It made me so angry and confused that I lost my focus and failed miserably.", "annoyed", "base", "base", "mid")
         call her_main("I don't think it helps at all.","annoyed","suspicious")
         m "That's your problem Miss Granger, you think you already know the answer and don't follow my instructions."
         m "I don't care about the behaviour of those girls."
@@ -170,19 +170,19 @@ label l_tutoring:
         call her_main(".........","annoyed","ahegao")
         call her_main("Sorry about that, {w=0.5}again.","open","suspicious")
         m "I need you to focus on what those girls do with professors, not their behaviour in general."
-        call her_main("But...","open","base",cheeks="blush")
+        call her_main("But...", "open", "base", "base", "mid",cheeks="blush")
         m "Last time you were talking about your sacred duty and at the first hurdle you hesitate."
         call her_main("{size=-2}(\"Sacred\"? Don't exaggerate, old man){/size}","annoyed","down")
         call her_main("{size=-2}(Or not! Maybe I'll be remembered later for being the saviour of Gryffindor house!){/size}","open","worriedCl",cheeks="blush")
         call her_main("Yes, you're right! It {b}is{/b} my sacred duty!","smile","baseL")
         g9 "{size=-2}(It works every time, it's too easy... She looks so proud of herself.){/size}"
-        call her_main("I'll do my best, professor!","open","base",cheeks="blush")
+        call her_main("I'll do my best, professor!", "open", "base", "base", "mid",cheeks="blush")
         g9 "I'm excited too... uh, I'm sure you will."
         call her_main("I'm glad you have such high confidence in me.","grin","worriedCl")
         m "And I'm glad you're starting to believe in this. I think you have the potential to master this branch of magic."
         call her_main("You seem tired, professor.","open","suspicious")
         g11 "{size=-2}(Tired of waiting to annihilate your ass.){/size}"
-        call her_main("Yes, professor?","annoyed","base")
+        call her_main("Yes, professor?", "annoyed", "base", "base", "mid")
         g9 "Yes we can!"
         m "Uh, I mean, I'm sure I'll tire you out soon enough, Miss Granger. How about you get some sleep?"
         call her_main("Sleep? I must study first.","open","closed")
@@ -203,7 +203,7 @@ label l_tutoring:
         jump day_start
 
     elif her_tutoring == 3:   # Whoring lvl 3
-        call her_main("Sir, I want to apologize for doubting you.","open","base")
+        call her_main("Sir, I want to apologize for doubting you.", "open", "base", "base", "mid")
         m "Yes?"
         call her_main("Your \"atypical\" method works!","angry","worriedCl",emote="05")
         m "{size=-2}(Impossible!){/size}"
@@ -216,7 +216,7 @@ label l_tutoring:
         m "You've never felt such a sensation before?"
         call her_main("Generally I get angry and rush to stop such behaviour.","clench","worried",cheeks="blush",tears="soft")
         call her_main("But yesterday, I don't know, I just watched without interrupting them.","open","worriedCl",cheeks="blush")
-        call her_main("And when I pictured it, as you told me to, it worked.","open","base",cheeks="blush")
+        call her_main("And when I pictured it, as you told me to, it worked.", "open", "base", "base", "mid",cheeks="blush")
         call her_main("I feel at the same level as those harlots, I'm so ashamed.","angry","angry",cheeks="blush")
         m "But you succeeded."
         g9 "{size=-2}(To my surprise...){/size}"
@@ -232,7 +232,7 @@ label l_tutoring:
         g11 "{size=-2}(Yeah, yeah, come on...){/size}"
         call her_main("... and I heard muffled sounds.","base","baseL",cheeks="blush")
         call her_main("I was hoping to catch a teacher doing bad things with one of those Slytherin whores.","annoyed","angryL",cheeks="blush")
-        call her_main("I slowly headed towards the sounds and I discovered two girls in an alcove.","open","base",cheeks="blush")
+        call her_main("I slowly headed towards the sounds and I discovered two girls in an alcove.", "open", "base", "base", "mid",cheeks="blush")
         call her_main("I remained hidden to observe them.","grin","wink",cheeks="blush")
         g11 "{size=-2}(Come on!){/size}"
         call her_main("Yes, professor?","base","ahegao_raised",cheeks="blush")
@@ -253,7 +253,7 @@ label l_tutoring:
         call her_main("To my shame, yes. Like I said before, I felt kind of warm inside.","annoyed","angryL",cheeks="blush")
         call her_main("Like when I have to pee but... different. Better.","disgust","down_raised",cheeks="blush")
         m "This good sensation... next time you experience it, let it come."
-        call her_main("But...","open","base",cheeks="blush")
+        call her_main("But...", "open", "base", "base", "mid",cheeks="blush")
         m "It's the only way to get better, Miss Granger."
         m "If you suppress it, it won't work."
         call her_main("Ok...{w=0.3} I'll try my best.","annoyed","angryL",cheeks="blush")
@@ -263,7 +263,7 @@ label l_tutoring:
         g11 "{size=-2}(With the possible exception of you!){/size}"
         m "Anyway, you've done well. I think it will be enough for this lesson."
         m "Remember what I've told you, and good night!"
-        call her_main("Good night, professor.","base","base")
+        call her_main("Good night, professor.", "base", "base", "base", "mid")
         hide screen hermione_main
         call nar("You dismiss Hermione.")
 
@@ -286,7 +286,7 @@ label l_tutoring:
         call her_main("Yes, professor!","smile","happyCl")
         call her_main("Like an explorer in the wild jungle, I tracked those two filthy animals.","base","concerned",cheeks="blush",tears="soft")
         call her_main("With success, sir!","smile","happyCl",cheeks="blush",emote="06")
-        call her_main("Hogwarts has so many dark and discreet corners...","annoyed","base")
+        call her_main("Hogwarts has so many dark and discreet corners...", "annoyed", "base", "base", "mid")
         call her_main("Believe me, it wasn't easy, professor.","base","concerned",cheeks="blush",tears="soft")
         m "I'm sure you gave it your best."
         m "But right now I await your report."
@@ -299,13 +299,13 @@ label l_tutoring:
         call her_main("","annoyed","suspicious")
         m "And that's it? No \"this behaviour must be severely punished\"?"
         m "Are you attracted to girls of this sort, Miss Granger?"
-        call her_main("What? Lesbians? I'm not... I... No way, I...","open","base",cheeks="blush")
+        call her_main("What? Lesbians? I'm not... I... No way, I...", "open", "base", "base", "mid",cheeks="blush")
         m "Alright, alright, back to your report, if you please."
         call her_main("{size=-2}(I'm not a lesbian...{w=0.3} I think...){/size}","disgust","down_raised",cheeks="blush")
         call her_main("{size=-2}(Hermione, girl, pull yourself together! You're not a harlot!){/size}","mad","wide",cheeks="blush")
         call her_main("No, I'm not!","annoyed","closed",cheeks="blush")
         m "Excuse me?"
-        call her_main("Uh... Yes, my report. My {b}scientific{/b} report.","open","base",cheeks="blush")
+        call her_main("Uh... Yes, my report. My {b}scientific{/b} report.", "open", "base", "base", "mid",cheeks="blush")
         m "{size=-2}(Yeah, we get it...){/size}"
         call her_main("So, like before, they started by kissing passionately.","open","worriedCl",cheeks="blush")
         call her_main("With the tongue and everything!","open","baseL",cheeks="blush")
@@ -321,7 +321,7 @@ label l_tutoring:
                 call ctc
             "Do nothing.":
                 pass
-        call her_main("","open","base",cheeks="blush")
+        call her_main("", "open", "base", "base", "mid",cheeks="blush")
         g9 "And? And?"
         call her_main("They pulled up their shirts and caressed each other's breasts.","open","worriedCl",cheeks="blush")
         call her_main("{size=-2}(Their beautiful and tempting breasts...){/size}","open","ahegao_raised",cheeks="blush")
@@ -362,7 +362,7 @@ label l_tutoring:
         call her_main("Maybe...","annoyed","angryL",cheeks="blush")
         m "Anyway, I hope it was revealing."
         call her_main("\"Revealing\"? I'm not sure what you mean by that.","open","suspicious")
-        call her_main("You're the headmaster, act as such!","open","base")
+        call her_main("You're the headmaster, act as such!", "open", "base", "base", "mid")
         call her_main("Do all you can to stop those acts of debauchery!")
         call her_main("","annoyed","angryL")
         m "Yes, of course."
@@ -403,7 +403,7 @@ label l_tutoring:
         m "Oh you don't have to go that far in one go."
         call her_main("I'm not sure I want to go there at all.","open","closed")
         m "How many times do I have to remind you why you're doing this?"
-        call her_main("Yes but...","open","base")
+        call her_main("Yes but...", "open", "base", "base", "mid")
         m "But what?"
         call her_main("A girl like me shouldn't stoop to such practices.","annoyed","suspicious")
         m "A girl like you should use all means at their disposal in order to excel."
@@ -440,7 +440,7 @@ label l_tutoring:
         call nar(">You start to caress her thigh.")
         call her_main("Professor...","open","worriedCl",cheeks="blush")
         m "And you felt those emotions without even touching yourself."
-        call her_main("Yes...","open","base",cheeks="blush")
+        call her_main("Yes...", "open", "base", "base", "mid",cheeks="blush")
         g9 "{size=-2}(What a slut!){/size}"
         if her_whoring <= 12 or hermione_wear_bra:
             call nar(">You move forward to her panties.")
@@ -533,7 +533,7 @@ label l_tutoring:
         call nar(">You keep massaging her tits...")
         call her_main("","open","worriedCl",cheeks="blush")
         call nar(">You feel her nipples becoming hard.")
-        call her_main("Yes but...{w=0.3} Professor, it's inappropriate for a girl of good education!","open","base",cheeks="blush")
+        call her_main("Yes but...{w=0.3} Professor, it's inappropriate for a girl of good education!", "open", "base", "base", "mid",cheeks="blush")
         m "Don't let old prejudices weigh you down. You're a girl with great potential."
         call nar(">You gently squeeze her nipples through the fabric.")
         call her_main("Ah, thank you professor.","open","ahegao_raised",cheeks="blush")
@@ -1121,7 +1121,7 @@ label l_tutoring:
         m "I haven't even given you your gift yet!"
         m "I'll just put it where you'll be sure to find it."
         m "So, can we start the lesson?"
-        call her_main("Yes for Merlin's sake!","open","base",cheeks="blush")
+        call her_main("Yes for Merlin's sake!", "open", "base", "base", "mid",cheeks="blush")
         m "But before that..."
         call her_main("If you say another word I swear I will go back to my dorm right now!","scream","angry",cheeks="blush",emote="01")
         call nar(">You suddenly insert the anal plug.")
@@ -1492,10 +1492,10 @@ label l_tutoring:
 
         call her_walk(xpos="mid", ypos="base", speed=2.5)
 
-        call her_main("{size=-4}*panting*{/size} Oh good, you're still here.","open","base",cheeks="blush",xpos="right",ypos="base")
+        call her_main("{size=-4}*panting*{/size} Oh good, you're still here.", "open", "base", "base", "mid",cheeks="blush",xpos="right",ypos="base")
         m "Is it safe to assume you have honoured my request this time?"
         call her_main("I thought it was obvious.","open","squint",cheeks="blush")
-        call her_main("I even had to hide in an alcove to avoid getting noticed on my way here!","open","base",cheeks="blush")
+        call her_main("I even had to hide in an alcove to avoid getting noticed on my way here!", "open", "base", "base", "mid",cheeks="blush")
         call her_main("It was so embarrassing!","open","worriedCl",cheeks="blush")
         call her_main("{size=-2}(And exciting!){/size}","open","worriedCl",cheeks="blush")
         m "Are you sure you're not wearing anything underneath?"
@@ -1662,7 +1662,7 @@ label l_tutoring:
 
         call bld
         m "Sweet dreams my little princess."
-        call her_main("You too, professor.","open","base",cheeks="blush",xpos="right",ypos="base")
+        call her_main("You too, professor.", "open", "base", "base", "mid",cheeks="blush",xpos="right",ypos="base")
         g9 "They are always sweet with you around."
         call her_main("Thank you.","base","ahegao_raised",cheeks="blush")
         m "And next time bring your books, I'll help you with your revisions."

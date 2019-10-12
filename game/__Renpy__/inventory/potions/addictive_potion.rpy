@@ -269,7 +269,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call her_main("It won't stop!","shock","worriedCl")
             hide screen hermione_main
             m "What won't?"
-            call her_main("I-I can't stop cumming [genie_name]...","angry","base")
+            call her_main("I-I can't stop cumming [genie_name]...", "angry", "base", "base", "mid")
             hide screen hermione_main
             call nar(">The stimulation proves too much and she passes out.")
 
@@ -325,7 +325,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call her_main("{size=+5}!!!{/size}","soft","ahegao")
             hide screen hermione_main
             call nar(">Hermione immediately starts masturbating shamelessly in front of you.")
-            call her_main("{size=+5}I'm cumming{/size}","angry","base")
+            call her_main("{size=+5}I'm cumming{/size}", "angry", "base", "base", "mid")
             with vpunch
             hide screen hermione_main
             m "What was that [hermione_name]?"
@@ -344,7 +344,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
 
         "-Cum on the floor-":
             m "I'm cumming, whore!"
-            call her_main("mmmmmmmm...","open_wide_tongue","base")
+            call her_main("mmmmmmmm...", "open_wide_tongue", "base", "base", "mid")
             hide screen hermione_main
             call nar(">She goes to bury her face into her crouch but you put your palm on her forehead and push her away.")
             call u_pause_ani
@@ -357,7 +357,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call her_main("PROFESSOR! Why would you waste that?","angry","down_raised")
             hide screen hermione_main
             m "It's not wasted [hermione_name], your reward is right there waiting for you."
-            call her_main("I'm not going to eat that. The floor in here is disgusting.","angry","base")
+            call her_main("I'm not going to eat that. The floor in here is disgusting.", "angry", "base", "base", "mid")
             hide screen hermione_main
             m "Well you can always wait until tomorrow morning then."
             call her_main("TOMORROW MORNING!? I can't wait that long! Can't you just cum again?","angry","wide")
@@ -375,13 +375,13 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
                     call nar(">She scoops up as much as she can into her palm and quickly moves it to her mouth.","start")
                 "-Make her lick it up-":
                     m "Not with your fingers [hermione_name]."
-                    call her_main("What do you mean not with my fingers? How else am I supposed to eat it?","angry","base")
+                    call her_main("What do you mean not with my fingers? How else am I supposed to eat it?", "angry", "base", "base", "mid")
                     hide screen hermione_main
                     m "You have a perfectly good tongue, I suggest that you put it to use."
                     call her_main("You expect me to LICK your old cum off the floor?","angry","down_raised")
                     hide screen hermione_main
                     m "I do. Unless of course you would prefer to go back to your room hungry and unsatisfied."
-                    call her_main("...","angry","base")
+                    call her_main("...", "angry", "base", "base", "mid")
                     hide screen hermione_main
                     call nar(">She bends over with her head to the floor.")
                     $ aftersperm = True
@@ -930,7 +930,7 @@ label potion_scene_3_3_1: #Hypno potion
 
     call her_main("Well ok... I suppose I'll head to class then.","open","down")
     m "About that. I think it'd be better if you went back to your dorm."
-    call her_main("Why's that mistah [genie_name] sir?","annoyed","base")
+    call her_main("Why's that mistah [genie_name] sir?", "annoyed", "base", "base", "mid")
     m "I think you need to have a little nap and let this wear off."
     call her_main("whatever you say sir!","annoyed","closed")
     call set_her_action("none","skip_update")
@@ -955,7 +955,7 @@ label potion_scene_3_3_1: #Hypno potion
 
 label potion_scene_3_4_1:
     m "How long until your next class [hermione_name]?"
-    call her_main("about fifteen minutes sir.","open","base")
+    call her_main("about fifteen minutes sir.", "open", "base", "base", "mid")
     m "in that case I think you might have to be a little late."
     call her_main("what? why?","open","worried")
     g4 "Well, it might be a bit hard for you to attend class with my cock buried in your tight little pussy."

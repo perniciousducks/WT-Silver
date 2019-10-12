@@ -45,7 +45,7 @@ label hg_pf_strip:
     if her_mood != 0:
         call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
     else:
-        call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
 
     # Points
@@ -357,10 +357,10 @@ label hg_pf_strip_T1_intro_E1: # Complete
             jump end_hg_pf_strip
 
         "\"Sure. You will receive no points though.\"":
-            call her_main("[genie_name]... I may not be very good at this...","open","base", tears="mascara_crying")
+            call her_main("[genie_name]... I may not be very good at this...", "open", "base", "base", "mid", tears="mascara_crying")
             call her_main("But I did my best... I think I deserve some--", tears="mascara_crying")
             m "Just make sure you try harder next time, [hermione_name]."
-            call her_main("Next time?!","open","base", tears="mascara_crying")
+            call her_main("Next time?!", "open", "base", "base", "mid", tears="mascara_crying")
             call her_main("I assure you, [genie_name], there will be no next time...","angry","angry", cheeks="blush", tears="mascara")
             m "We'll see..."
             call her_main("Tsk!","disgust","glance", tears="mascara")
@@ -813,8 +813,8 @@ label hg_pf_strip_T1_E2:
 
         "{size=-3}\"Your father would disown you!\"{/size}":
             call her_main("You are probably right, [genie_name]...","angry","worriedCl", emote="05")
-            call her_main("(Oh father, I am so sorry...)","angry","base", tears="soft")
-            call her_main("he must never find out...","angry","base", tears="soft")
+            call her_main("(Oh father, I am so sorry...)", "angry", "base", "base", "mid", tears="soft")
+            call her_main("he must never find out...", "angry", "base", "base", "mid", tears="soft")
 
         "{size=-3}\"Your father would love to watch you strip!\"{/size}":
             call her_main("He would not! He would be ashamed of me!","normal","worriedCl")
@@ -995,7 +995,7 @@ label hg_pf_strip_T2_intro_E1:
     her "I would really rather not, [genie_name]..."
     m "Why? You are getting quite good at it."
     call her_main(".........................","annoyed","annoyed")
-    call her_main("Thirty five house points?","open","base")
+    call her_main("Thirty five house points?", "open", "base", "base", "mid")
     g9 "Sure!"
     call her_main("Very well, then...","base","baseL")
 
@@ -1020,7 +1020,7 @@ label hg_pf_strip_T2_intro_E2:
 label hg_pf_strip_T2_E2:
     m "[hermione_name], would you like to strip for me again?"
     if her_tier <= 5:
-        call her_main("Of course, [genie_name]...","base","base", xpos="base", ypos="base")
+        call her_main("Of course, [genie_name]...", "base", "base", "base", "mid", xpos="base", ypos="base")
     else:
         call her_main("I'd love to, [genie_name]!","open_tongue","ahegao", xpos="base", ypos="base")
 
@@ -1046,7 +1046,7 @@ label hg_pf_strip_T2:
     if lock_door: # Locks door.
 
         if her_tier <= 5:
-            call her_main("Of course...","base","base")
+            call her_main("Of course...", "base", "base", "base", "mid")
         else:
             call her_main("(How boring...)","annoyed","ahegao")
 
@@ -1142,7 +1142,7 @@ label hg_pf_strip_T2:
         call her_main("Must you be so vulgar, [genie_name]?","annoyed","closed")
         call her_main("..............","annoyed","down")
 
-        call her_main("[genie_name]?","open","base")
+        call her_main("[genie_name]?", "open", "base", "base", "mid")
         m "Huh?"
         call her_main("Can I ask you a question?","upset","wink")
         m "Go ahead..."
@@ -1163,22 +1163,22 @@ label hg_pf_strip_T2:
             "\"Be quiet and keep on dancing!\"":
                 call her_main("But you said I could ask you a question...","annoyed","annoyed")
                 m "And you did, didn't you?"
-                call her_main("!!!............","open","base")
+                call her_main("!!!............", "open", "base", "base", "mid")
                 call her_main("....................................","annoyed","annoyed")
                 m "Now, hush and take your skirt off."
                 call her_main("........","annoyed","angryL")
 
             "\"Yes... a very long time ago...\"":
                 m "Yes... a very long time ago..."
-                call her_main("!!!!!??..............................","open","base")
+                call her_main("!!!!!??..............................", "open", "base", "base", "mid")
                 m "Her name was Eden..."
-                call her_main("Was she beautiful?","base","base")
+                call her_main("Was she beautiful?", "base", "base", "base", "mid")
                 m "She was so much more than that..."
                 m "She was smart, green and perfect..."
                 call her_main("She was... \"green\"...?","open","down")
                 call her_main("Are you making fun of me, [genie_name]?","angry","angry")
                 m "Oh, you humans know nothing of true love..."
-                call her_main(".....................................?","soft","base")
+                call her_main(".....................................?", "soft", "base", "base", "mid")
                 m "Err... I mean, take off that skirt, [hermione_name]!"
                 call her_main(".................","annoyed","angryL")
 
@@ -1186,13 +1186,13 @@ label hg_pf_strip_T2:
                 call her_main("You don't have to be vulgar, [genie_name].","annoyed","angryL")
                 m "Oh, but I mean it!"
                 call her_main("[genie_name], please!","disgust","glance")
-                call her_main("I am one of your students!","soft","base")
+                call her_main("I am one of your students!", "soft", "base", "base", "mid")
                 call her_main("And you are older than my father!","grin","worriedCl", emote="05")
                 m "{size=-4}(You have no idea, girl.){/size}"
-                call her_main("Although some scientists insist that what we consider \"love\" is actually nothing but a chemical reaction...","soft","base")
+                call her_main("Although some scientists insist that what we consider \"love\" is actually nothing but a chemical reaction...", "soft", "base", "base", "mid")
                 call her_main("And when a man is experiencing sexual arousal, the same type of hormones--","open","closed")
                 m "[hermione_name]!"
-                call her_main("Yes, [genie_name]?","soft","base")
+                call her_main("Yes, [genie_name]?", "soft", "base", "base", "mid")
                 m "Did you forget where you are?"
                 call her_main("Oh, my apologies, [genie_name]... I get distracted sometimes.","grin","worriedCl", emote="05")
                 m "Take off your skirt already, would you?!"

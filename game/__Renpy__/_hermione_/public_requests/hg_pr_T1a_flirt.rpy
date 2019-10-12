@@ -36,12 +36,12 @@ label hg_pr_flirt:
         her "But, please, can't be another house?"
         call her_main("The \"Gryffindors\" maybe?","upset","wink")
         m "I am only trying to protect your reputation, [hermione_name]."
-        call her_main("[genie_name]?","soft","base")
+        call her_main("[genie_name]?", "soft", "base", "base", "mid")
         m "Do you value the opinion the \"Slytherin\" students have of you?"
         call her_main("I couldn't care less about the opinions of those Neanderthals.","scream","angryCl")
         m "What about the students of the \"Gryffindor\" house?"
         call her_main("Their opinion means the world to me--","annoyed","worriedL")
-        call her_main("Oh, I see...","base","base")
+        call her_main("Oh, I see...", "base", "base", "base", "mid")
         m "Exactly... Just looking out for you [hermione_name]."
         her "Em... Thank you [genie_name]..."
 
@@ -49,7 +49,7 @@ label hg_pr_flirt:
         m "I need you to go make some new friends at \"Slytherin\" house."
         her "You mean you need me to flirt with the \"Slytherin\" boys again [genie_name]?"
         m "That's exactly what I need you to do today, [hermione_name]."
-        call her_main("Must I really do this [genie_name]?","open","base")
+        call her_main("Must I really do this [genie_name]?", "open", "base", "base", "mid")
         m "We have been through this, [hermione_name]."
         m "Going to the \"Slytherin\" boys is in your best interests."
         call her_main("Yes, I know, [genie_name].","open","angryCl")
@@ -148,7 +148,7 @@ label hg_pr_flirt_T1_E1:
 
     menu:
         "\"Fine. Just try harder next time.\"":
-            call her_main("Thank you, [genie_name].","base","base")
+            call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
             her "I will, I promise!"
 
             jump end_hg_pr_flirt
@@ -206,7 +206,7 @@ label hg_pr_flirt_T1_E2:
         "\"Favour failed! No points of you!\"":
             stop music fadeout 1.0
             call her_main("You are not going to pay me, [genie_name]?","open","worried")
-            call her_main("But, you promised!","angry","base", tears="soft")
+            call her_main("But, you promised!", "angry", "base", "base", "mid", tears="soft")
             call her_main("................","mad","worriedCl", tears="soft_blink")
 
             call her_walk(action="leave", speed=2.5)
@@ -275,7 +275,7 @@ label hg_pr_flirt_T2_E1:
     call her_main("While I was working he made a couple of inappropriate comments, but I just smiled in response...","angry","worriedCl", emote="05")
     m "So, basically, he was the one doing the flirting..."
     call her_main("well... yes.","grin","worriedCl", emote="05")
-    call her_main("But, despite my better judgment, I did encourage his improper behaviour...","base","base")
+    call her_main("But, despite my better judgment, I did encourage his improper behaviour...", "base", "base", "base", "mid")
     m "By being quiet?"
     her "Yes, [genie_name]..."
     her "I mean, this does amount to something, right?"
@@ -297,7 +297,7 @@ label hg_pr_flirt_T2_E1:
     call her_main("We ended up having a decent conversation for a change.","base","happyCl")
     m "I see... That \"Dark-oh\" guy..."
     m "Was he looking at your legs at all?"
-    call her_main("What?","open","base")
+    call her_main("What?", "open", "base", "base", "mid")
     m "Did he stare at your legs or not, [hermione_name]?"
     call her_main("Em... He might have...","upset","wink")
     m "What about your tits?"
@@ -321,8 +321,8 @@ label hg_pr_flirt_T2_E2:
     her "This angry-looking guy from \"Slytherin\" came up to me and asked me out on a date..."
     call her_main("I told him \"no\" at first, but we ended up taking a walk together.","soft","baseL")
     m "Did you enjoy yourself, [hermione_name]?"
-    call her_main("I think I did, [genie_name]... To my own astonishment...","open","base")
-    call her_main("There was something about his \"devil-may-care\" attitude...","base","base")
+    call her_main("I think I did, [genie_name]... To my own astonishment...", "open", "base", "base", "mid")
+    call her_main("There was something about his \"devil-may-care\" attitude...", "base", "base", "base", "mid")
     call her_main("He was so confident and calm and...","base","happyCl")
     call her_main("I still loathe the \"Slytherin\" house of course!","angry","worriedCl", emote="05")
     call her_main("But...","annoyed","down")
@@ -460,7 +460,7 @@ label hg_pr_flirt_T3_E3:
             call her_main("Oh, quite the opposite, [genie_name].","angry","worriedCl", emote="05")
             call play_music("playful_tension") # SEX THEME.
             her "One of the boys actually took me to the \"Slytherin\" common room today..."
-            call her_main("There were at least a dozen of them there...","normal","base")
+            call her_main("There were at least a dozen of them there...", "normal", "base", "base", "mid")
             call her_main("All of the boys knew who I was...","open","angryCl")
             her "I was the center of attention at first..."
             call her_main("And it felt sort of wonderful...","base","ahegao_raised")

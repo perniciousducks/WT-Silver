@@ -26,7 +26,7 @@ default hg_pp_polyjuice = event_class(
 
 label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her into another girl)
     m "[hermione_name]?"
-    call her_main("Yes, [genie_name]?","base","base")
+    call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     if hg_pp_polyjuice.counter < 1: # Add counter check for all potions instead
         m "So, are you ready to try out one of my potions?"
         her "As ready as I'll ever be..."
@@ -50,7 +50,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
                 m "And there's some points in it for you as well..."
         else:
             if her_whoring >= 12:
-                call her_main("If it makes you happy, [genie_name].","smile","base")
+                call her_main("If it makes you happy, [genie_name].", "smile", "base", "base", "mid")
                 call her_main("...","annoyed","down_raised")
             elif her_whoring >= 6:
                 call her_main("And what kind of potion is it? It looks gross...","normal","frown")
@@ -101,19 +101,19 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
         her "In that case I'll be back after class..."
         her "Can't wait for the effects to kick in... it was bad enough the first time..."
         m "I'm sure another extra 10 points should make it worth it, [hermione_name], 30 points to Gryffindor."
-        call her_main("Thank you [genie_name].","base","base")
+        call her_main("Thank you [genie_name].", "base", "base", "base", "mid")
         call nar(">Hermione heads off to class.")
         $ gryffindor += 30
     else:
-        call her_main("Now will you at least tell me what this potion does?","angry","base",tears="soft")
+        call her_main("Now will you at least tell me what this potion does?", "angry", "base", "base", "mid",tears="soft")
         m "It should be noticeable any second now..."
         call her_main("Well? Is it supposed to make my breasts bigger? They don't feel any bigger.","annoyed","down")
         m "No. Hmmmm, it mustn't have worked."
         call her_main("What was it supposed to do?","annoyed","ahegao")
         m "There's no point in telling you now. It was going to be a surprise."
-        call her_main("Is that all [genie_name]?","soft","base")
+        call her_main("Is that all [genie_name]?", "soft", "base", "base", "mid")
         m "Yes, [hermione_name], 20 points to Gryffindor."
-        call her_main("Thank you [genie_name].","base","base")
+        call her_main("Thank you [genie_name].", "base", "base", "base", "mid")
         call nar(">Hermione heads off to class.")
         $ gryffindor += 20
 
@@ -167,7 +167,7 @@ label hg_pp_polyjuice_T1_intro:
 
                 g9 "By sucking my cock, obviously."
                 call her_main("Right now? I look like a cat! Why would you ask me at a time like this?","angry","wide")
-                call her_main("You're not some sort of pervert who likes animals are you?","angry","base")
+                call her_main("You're not some sort of pervert who likes animals are you?", "angry", "base", "base", "mid")
                 m "Of course not, I just think that you have a very unique look at the moment and that it would be a shame not to do anything with it."
                 call her_main("Fine, just promise me you aren't going to do anything weird.","upset","closed")
                 m "I promise. Now, kneel."
@@ -190,7 +190,7 @@ label hg_pp_polyjuice_T1_intro:
 
                 m "Good girl."
                 m "Now open wide."
-                call her_main("...","open_wide_tongue","base")
+                call her_main("...", "open_wide_tongue", "base", "base", "mid")
                 call u_play_ani
 
                 ">Hermione takes you into her mouth"
@@ -365,7 +365,7 @@ label hg_pp_polyjuice_T1_introCC:
         her "Okay then..."
     else:
         call her_main("Like this? I look like a cat! Why would you ask me at a time like this?","angry","wide")
-        call her_main("You're not some sort of pervert who likes animals are you?","angry","base")
+        call her_main("You're not some sort of pervert who likes animals are you?", "angry", "base", "base", "mid")
         m "Of course not, I just think that you have a very unique look at the moment and that it would be a shame not to do anything with it."
         call her_main("Fine, just promise me you aren't going to do anything weird.","upset","closed")
         m "I promise. Now, kneel."
@@ -374,7 +374,7 @@ label hg_pp_polyjuice_T1_introCC:
 
     ">Hermione walks over and kneels before you."
     m "Good girl."
-    call her_main("...","open_wide_tongue","base")
+    call her_main("...", "open_wide_tongue", "base", "base", "mid")
     ">Hermione takes you into her mouth"                ###Have the chibi scene of her sucking
     hide screen hermione_main
     hide screen genie
@@ -526,7 +526,7 @@ label hg_pp_polyjuice_T1_introCC:
 
 # label potion_scene_1_2: #Luna potion
     # m "Might I offer you a drink?"
-    # call her_main("You're not trying to get me drunk on Butterbeer again are you?","normal","base",xpos="right",ypos="base")
+    # call her_main("You're not trying to get me drunk on Butterbeer again are you?", "normal", "base", "base", "mid",xpos="right",ypos="base")
     # m "Nothing of the sort, just a harmless little potion."
     # call nar(">You hand her the potion bottle.")
     # if is_first_potion:
@@ -616,7 +616,7 @@ label hg_pp_polyjuice_T1_introCC:
             # call her_main("Excuse me. That is hardly appropriate for a headmaster.","open_tongue","glance")
             # m "No, I'm serious. You should really see the look on your face."
         # else:
-            # call her_main("Not really. I realise there are other things I can excel in.","base","base")
+            # call her_main("Not really. I realise there are other things I can excel in.", "base", "base", "base", "mid")
             # m "Like sucking cocks for house points"
             # call her_main("Professor!","scream","angryCl")
             # m "Oh don't be so modest. If sucking dick was a class, you'd be Magna Cum Laude."

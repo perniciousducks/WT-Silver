@@ -56,23 +56,23 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
     show screen bld1
     if her_whoring <= 7: #Very angry and embarrassed
         call nar(">Hermione bursts into your office.")
-        call her_main("How could you [genie_name]!","angry","base",tears="soft")
-        call her_main("I am the laughing stock of the entire school!","angry","base",tears="soft")
+        call her_main("How could you [genie_name]!", "angry", "base", "base", "mid",tears="soft")
+        call her_main("I am the laughing stock of the entire school!", "angry", "base", "base", "mid",tears="soft")
         call her_main("Now everyone knows what I look like naked!","mad","worriedCl",tears="soft_blink")
         m "Tell me about what happened."
-        call her_main("Tell you about what happened? I'm never speaking to you again.","angry","base",tears="soft")
+        call her_main("Tell you about what happened? I'm never speaking to you again.", "angry", "base", "base", "mid",tears="soft")
         $ her_mood += 20
 
     elif her_whoring <= 13: #Mildly aggravated
         call nar(">Hermione comes into your office quickly without knocking.")
         call her_main("Again?","angry","worriedCl",emote="05")
         m "What's this about [hermione_name]?"
-        call her_main("Why would you make my clothes invisible again?","open","base")
+        call her_main("Why would you make my clothes invisible again?", "open", "base", "base", "mid")
         m "Why not?"
         call her_main("Ugh, you're such a pig.","annoyed","worriedL")
         m "Tell me about what happened."
         call her_main("...","normal","worriedCl")
-        call her_main("Fine, but I expect an extra 10 points.","open","base")
+        call her_main("Fine, but I expect an extra 10 points.", "open", "base", "base", "mid")
         m "As you wish."
         call her_main("Well I started off with potions class as usual when I started to feel like all eyes were on me.","disgust","glance")
         m "I wonder why."
@@ -101,22 +101,22 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "Are you sure that you didn't enjoy it?"
         call her_main("How could I. I had to stand there as my friends and peers all saw me naked.","annoyed","suspicious")
         m "You finished your speech?"
-        call her_main("Certainly, I had to make sure that everyone knew my views on morality.","soft","base")
+        call her_main("Certainly, I had to make sure that everyone knew my views on morality.", "soft", "base", "base", "mid")
         m "Well I'm sure they have a crystal clear view of it now."
         call her_main("Hmmph, are you done?","annoyed","angryL")
         m "Yes, you may go now."
-        call her_main("Good bye [genie_name].","open","base")
+        call her_main("Good bye [genie_name].", "open", "base", "base", "mid")
 
     else: #Highly aroused (doesn't even acknowledge that her clothes are see-through)
         call nar(">Hermione enters the office casually.")
         m "Hello [hermione_name], how was your day today?"
-        call her_main("Fine [genie_name]. Why do you ask?","base","base")
+        call her_main("Fine [genie_name]. Why do you ask?", "base", "base", "base", "mid")
         m "No reason. Anything unusual happen today?"
         call her_main("Hmmmm, now that you mention it I suppose that boys in class were a little more forward than usual.","open","worriedL")
         m "How so?"
         call her_main("Well nothing serious, just small stuff like calling me names, groping me.","soft","baseL")
         m "Groping you? What on earth could have provoked them to do that?"
-        call her_main("I don't know [genie_name]. I can't imagine any reason that I would be attracting attention today...","base","base")
+        call her_main("I don't know [genie_name]. I can't imagine any reason that I would be attracting attention today...", "base", "base", "base", "mid")
         m "You're getting off on this aren't you?"
         call her_main("...","smile","baseL")
         call her_main("I've never been so turned on in my life. Having all eyes on me. Having every boy imagine doing unspeakable things to me.","soft","ahegao")

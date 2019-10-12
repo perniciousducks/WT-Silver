@@ -8,16 +8,16 @@ label collar_scene:
 
     call nar(">Hermione bursts into the room crying")
 
-    call her_main("[genie_name], am I a slut?","angry","base",tears="soft",xpos="right",ypos="base")
+    call her_main("[genie_name], am I a slut?", "angry", "base", "base", "mid",tears="soft",xpos="right",ypos="base")
     m "What are you talking about?"
     call her_main("Susan Bones is telling everyone in the school that I'm a slut!","open","angryCl")
     m "Why is this Miss Bones calling you a slut?"
-    call her_main("Because she found out what we are doing! She's telling everyone that I'm your slut!","soft","base",tears="soft")
+    call her_main("Because she found out what we are doing! She's telling everyone that I'm your slut!", "soft", "base", "base", "mid",tears="soft")
     call her_main("My reputation is ruined! What will people think when they find out what I've been doing with my ninety year old Professor?","mad","worriedCl",tears="soft_blink")
     call her_main("I'll be known as a slut for the the rest of my life!","scream","worriedCl")
     her "I'll never be able to get a good job..."
     her "My friends will hate me..."
-    call her_main("Please, You don't think I'm a slut do you [genie_name]?","open","base")
+    call her_main("Please, You don't think I'm a slut do you [genie_name]?", "open", "base", "base", "mid")
 
     menu:
         "-You are a slut-":
@@ -32,17 +32,17 @@ label collar_scene:
 label slut_scene: #Locked to her being your slut
 
     m "Of course you're a slut."
-    call her_main("!!!","angry","base",tears="soft")
+    call her_main("!!!", "angry", "base", "base", "mid",tears="soft")
     m "You come here nearly every day and do unspeakable things. A normal girl doesn't let her headmaster fuck her in the ass."
     call her_main("I knew it... How will I be able to live this down?","mad","worried",tears="soft")
     m "You won't. You'll have to embrace it."
-    call her_main("What?","angry","base",tears="soft")
+    call her_main("What?", "angry", "base", "base", "mid",tears="soft")
     m "There's no coming back for a slut like this. Even if I leave you'll just find some other cock to please."
     call her_main("Sir... please.","angry","worriedCl",emote="05")
     m "Don't act like you don't already know this. You know that deep down you're a filthy slut."
     call her_main("I am not!","scream","worriedCl")
     m "Suck my cock."
-    call her_main("...What?","open","base")
+    call her_main("...What?", "open", "base", "base", "mid")
     m "I said suck. My. Cock. Slut."
     call her_main("...","annoyed","worriedL")
     hide screen hermione_main
@@ -77,7 +77,7 @@ label slut_scene: #Locked to her being your slut
     m "Sluts beg for cock. And seeing as how you're a slut, I expect you to beg."
     call her_main("...","normal","worriedCl")
     hide screen hermione_main
-    call her_main("Please [genie_name], let me suck your cock.","open","base")
+    call her_main("Please [genie_name], let me suck your cock.", "open", "base", "base", "mid")
     hide screen hermione_main
     m "Hmmm that was almost good enough. Try again, a little harder."
     call her_main("Pretty please [genie_name], please let me suck\nyour big beautiful cock.","scream","worriedCl")
@@ -102,7 +102,7 @@ label slut_scene: #Locked to her being your slut
             hide screen hermione_main
             ">Hermione's throat relaxes and allows you to enter."
             m "Ughhh! Your throat is so tight. You're such a filthy little slut aren't you?"
-            call her_main("*Slurp!* *Gltch!* *Gulp!*","open_wide_tongue","base")
+            call her_main("*Slurp!* *Gltch!* *Gulp!*", "open_wide_tongue", "base", "base", "mid")
             hide screen hermione_main
             m "I asked you a question slut."
             call her_main("hhyyym aaaa hhhhtttt","open_wide_tongue","angry")
@@ -200,7 +200,7 @@ label slut_scene: #Locked to her being your slut
     $ collar = 2
     call update_her_uniform
 
-    call her_main("Can I at least get a towel or something to \nclean my face?","angry","base")
+    call her_main("Can I at least get a towel or something to \nclean my face?", "angry", "base", "base", "mid")
     hide screen hermione_main
     m "Why? Everyone already knows what a slut you are, walking back to your room with a bit of cum on your face is hardly going to change that."
     call her_main("You can't be serious?!","upset","closed")
@@ -231,7 +231,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     m "You're not a slut [hermione_name]."
     call her_main("Thank you si-","mad","worried",tears="soft")
     m "You're worse than a slut, you're a whore."
-    call her_main("What? What's the difference?","angry","base")
+    call her_main("What? What's the difference?", "angry", "base", "base", "mid")
     m "A slut is someone who enjoys sex. A whore is someone who's addicted to it."
     m "You don't care where you get it do you? As long as someone uses you couldn't care less."
     call her_main("I-I-I-","open","worriedCl")
@@ -242,7 +242,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     m "Oh is the little whore getting upset? Don't worry, I'll make you feel all better."
     her "How?"
     m "Come over here and bend over."
-    call her_main("You can't be serious? After what you just said?","angry","base")
+    call her_main("You can't be serious? After what you just said?", "angry", "base", "base", "mid")
     m "I am serious, now be a good little whore and bend over my desk and I'll give you what you want."
     call her_main("...","angry","down_raised")
 
@@ -367,7 +367,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
 label slave_scene:
 
     m "Don't be silly [hermione_name], you're not a slut."
-    call her_main("Thank yo-","base","base")
+    call her_main("Thank yo-", "base", "base", "base", "mid")
     m "You're a slave."
     call her_main("I'm a what?","upset","wink")
     m "You're a slave Miss Granger. Specifically, my slave."
@@ -381,7 +381,7 @@ label slave_scene:
     m "Please, when was the last time you even cared about getting your points?"
     m "You just want to please me. Those points are an excuse you tell yourself so you don't have to acknowledge what you are."
     m "Now be a good girl and bend over the desk."
-    call her_main("...","angry","base")
+    call her_main("...", "angry", "base", "base", "mid")
 
     call chibi_walk_desk_blkfade("hermione")
 
@@ -422,21 +422,21 @@ label slave_scene:
     "You unleash a firm slap across her buttocks."
     m "That's not who I am to you [hermione_name]. To you I am your master."
     m "Do you understand now?"
-    call her_main("Yes.","angry","base",tears="soft")
+    call her_main("Yes.", "angry", "base", "base", "mid",tears="soft")
     hide screen hermione_main
 
     call slap_her
 
     " You give her another powerful slap that leaves a bright red mark."
     m "Yes what?"
-    call her_main("Yes master.","angry","base",tears="soft")
+    call her_main("Yes master.", "angry", "base", "base", "mid",tears="soft")
 
     $ genie_name = "Master"
 
     hide screen hermione_main
     m "Good, you're a fast learner."
     m "Now if I'm your master then what does that make you?"
-    call her_main("{size=-7}a slave{/size}","soft","base",tears="soft")
+    call her_main("{size=-7}a slave{/size}", "soft", "base", "base", "mid",tears="soft")
     m "What was that, I couldn't quite make that out."
     call her_main("A slave.","mad","worried",tears="soft")
 
@@ -486,7 +486,7 @@ label slave_scene:
     m "That's it girl."
     ">Hermione closes her eyes as she rides out the last of her orgasm."
     m "On your knees girl."
-    call her_main("W-w-what? Why?","angry","base")
+    call her_main("W-w-what? Why?", "angry", "base", "base", "mid")
     hide screen hermione_main
     m "Because I said so. Now get off the table and on to your knees."
     call her_main("Yes master.","angry","down_raised")
@@ -549,11 +549,11 @@ label good_girl_scene:
     m "You're just doing everything you can to help your friends."
     call her_main("*sob* Really [genie_name]?","open","worriedCl")
     m "Really. You wouldn't have done any of this if the point system was fair would you?"
-    call her_main("*sob* I guess not...","angry","base")
+    call her_main("*sob* I guess not...", "angry", "base", "base", "mid")
     m "I'm sure once Miss Bones realizes what you are doing this for she will understand."
     call her_main("Do you really think so [genie_name]?","angry","down_raised")
     m "I do, you're a good girl Miss Granger."
-    call her_main("Thank you [genie_name].","base","base")
+    call her_main("Thank you [genie_name].", "base", "base", "base", "mid")
     m "Once Gryffindor wins the house cup no one will even remember what they said about you they'll be so grateful."
     call her_main("Yes, you're right [genie_name]. I suppose that I was just overreacting.","base","happyCl")
     m "Don't worry about it."
@@ -569,7 +569,7 @@ label good_girl_scene:
     call set_her_action("lift_top")
     call ctc
 
-    call her_main("Do you like them [genie_name]","annoyed","base")
+    call her_main("Do you like them [genie_name]", "annoyed", "base", "base", "mid")
     m "Of course I do, they're lovely."
     call her_main("Thank you [genie_name], you're always so kind.","base","closed")
     ">She lowers her top."

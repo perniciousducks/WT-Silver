@@ -80,7 +80,7 @@ label equip_body_accessory:
             # if body_accessory_choice == "badge_spew":
                 # m "Would you wear this badge for me?"
                 # if her_whoring >= 0:
-                    # call her_main("A S.P.E.W. badge?","base","base")
+                    # call her_main("A S.P.E.W. badge?", "base", "base", "base", "mid")
                     # call her_main("I'll wear this with pride [genie_name].","open","closed")
 
             # #I <3 Cum Badge
@@ -89,20 +89,20 @@ label equip_body_accessory:
 
                 # if her_whoring >= 20:
                     # if her_whoring < 24:
-                        # call her_main("Hm...?","soft","base")
+                        # call her_main("Hm...?", "soft", "base", "base", "mid")
                         # call her_main("An \"I love cum\" badge?","annoyed","suspicious")
                         # call her_main("{size=-5}(I suppose that it's not a complete lie...){/size}","base","down")
                         # call her_main("Alright, I'll wear it.","base","glance")
                     # else: #24
                         # call her_main("An \"I love cum\" badge?","annoyed","suspicious")
-                        # call her_main("Sure, [genie_name]!","soft","base")
+                        # call her_main("Sure, [genie_name]!", "soft", "base", "base", "mid")
                         # call her_main("Let me put it on for you.","base","glance")
                 # else:
                     # if her_whoring < 8:
                         # jump too_much
                     # else: #8-19
                         # call her_main("An I love cum badge...?","open","worried")
-                        # call her_main("You cannot be serious, [genie_name]!","open","base")
+                        # call her_main("You cannot be serious, [genie_name]!", "open", "base", "base", "mid")
                         # m "What's wrong?"
                         # call her_main("I am not going to wear a badge that says that{w=0.5} {b}I{/b}{w=0.5} {b}love{/b}{w=0.5} {b}cum!{/b}","normal","frown")
                         # call her_main("I absolutely refuse!","annoyed","frown")

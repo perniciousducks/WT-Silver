@@ -301,7 +301,7 @@ label astoria_intro_E2_hermione:
     m "Well, one's been cast somewhere on the school."
     m "and I need your help finding out who did it..."
     call her_main("Why do you need my help?","soft","wink")
-    call her_main("Surely you're able to detect them?","base","base")
+    call her_main("Surely you're able to detect them?", "base", "base", "base", "mid")
     m "Unfortunately not... I must have been... asleep... when the thing happened..."
     m "I missed my chance, so to speak..."
     call her_main("So how do you expect me to find out who did it?","soft","baseL")
@@ -335,7 +335,7 @@ label astoria_intro_E2_hermione:
             call her_main("What are you talking about, [genie_name]?","open","baseL",cheeks="blush")
             call her_main("Everyone knows that life in Azkaban is the punishment for casting an unforgivable curse...","open","closed")
             m "I've been given special permission to punish them as I see fit."
-            call her_main("Oh...","annoyed","base")
+            call her_main("Oh...", "annoyed", "base", "base", "mid")
             call her_main("So no Azkaban?","soft","baseL")
             m "Not unless they've killed someone..."
             call her_main("Really? So there's still a chance?","base","glance")
@@ -484,7 +484,7 @@ label astoria_intro_E3:
     call ast_walk("500","base", speed=2.5)
 
     call play_music("playful")
-    call her_main("","base","base", xpos="base", ypos="base", flip=False)
+    call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base", flip=False)
     call ast_main("...","annoyed","base","worried","R", xpos="right", ypos="base")
 
     m "..."
@@ -502,10 +502,10 @@ label astoria_intro_E3:
     call ast_main("Punishment? I didn't do anything!","clench","base","worried","mid")
     call her_main("You know very well what you did!","angry","angryCl")
     call her_main("Sir, I overheard her boasting about it in the library - to a group of \"Slytherins.\"","annoyed","concerned")
-    call her_main("By the sounds of it, she used Imperio to control another student!","annoyed","base")
+    call her_main("By the sounds of it, she used Imperio to control another student!", "annoyed", "base", "base", "mid")
     call ast_main("I did not!","annoyed","base","worried","L")
 
-    call her_main("Shall I go fetch a vial of veritaserum from Professor Snape, sir?","grin","base")
+    call her_main("Shall I go fetch a vial of veritaserum from Professor Snape, sir?", "grin", "base", "base", "mid")
     call ast_main("V-veritaserum?!","clench","base","worried","mid")
     call ast_main("That's illegal!","clench","base","base","mid")
     call her_main("Not when you've been casting unforgivable curses - you evil little witch!","grin","angry")
@@ -526,7 +526,7 @@ label astoria_intro_E3:
             $ d_flag_01 = True
             pass
 
-    call her_main("But Sir, I'd really like to know what her punishment is going to be!","angry","base")
+    call her_main("But Sir, I'd really like to know what her punishment is going to be!", "angry", "base", "base", "mid")
 
     m "That's none of your concern."
     call her_main("Yes it is! And I demand to be rewarded!","angry","angryCl")

@@ -519,7 +519,7 @@ label hg_pf_grope_ass_T2_fail:
             g4 "Someone may hear you!"
             call her_main("Good! I want them to hear!","scream","worriedCl", cheeks="blush", tears="messy")
             m "Why would you want that? I already paid you!"
-            call her_main("Oh... right...","angry","base", cheeks="blush", tears="mascara")
+            call her_main("Oh... right...", "angry", "base", "base", "mid", cheeks="blush", tears="mascara")
             call her_main("But I hate you! I hate you [genie_name]!","scream","angryCl", cheeks="blush", tears="mascara")
 
         "\"You're bluffing, [hermione_name]!\"":
@@ -559,7 +559,7 @@ label hg_pf_grope_ass_T3:
             jump hg_pf_grope_ass_T3_back
 
         "\"No. Just stand still, [hermione_name].\"":
-            call her_main("As you say, [genie_name]...","soft","base", cheeks="blush", ypos="head")
+            call her_main("As you say, [genie_name]...", "soft", "base", "base", "mid", cheeks="blush", ypos="head")
             jump hg_pf_grope_ass_T3_front
 
 
@@ -576,7 +576,7 @@ label hg_pf_grope_ass_T3_front:
     call her_main("I'm doing this to earn points for my house, it has nothing to do with personal enjoyment...","soft","down", cheeks="blush") #looks down
     m "Is that so?"
     m "Then why aren't you looking into my eyes when you say that..."
-    call her_main("I...","disgust","base", cheeks="blush") #looks back up
+    call her_main("I...", "disgust", "base", "base", "mid", cheeks="blush") #looks back up
 
     call hg_chibi_transition("grope_ass", flip=False, trans="d7")
     pause.8
@@ -589,7 +589,7 @@ label hg_pf_grope_ass_T3_front:
     call her_main(".........................","upset","worriedCl", cheeks="blush")
 
     call nar(">And give her Ass a good squeeze...")
-    call her_main(".................","soft","base", cheeks="blush")
+    call her_main(".................", "soft", "base", "base", "mid", cheeks="blush")
     m "You're looking at me this time..."
     call her_main("Isn't that what you wanted, [genie_name]...","open","worried", cheeks="blush")
 
@@ -657,7 +657,7 @@ label hg_pf_grope_ass_T3_back:
     call her_main("How does what feel?","open","glance")
     m "How does it feel to be presenting your butt to your headmaster?"
     call her_main("I don't know how to answer that, [genie_name]...","clench","down_raised", cheeks="blush")
-    call her_main("Do I have to give you a response?","open","base", cheeks="blush")
+    call her_main("Do I have to give you a response?", "open", "base", "base", "mid", cheeks="blush")
     m "Well, you don't have to..."
     call her_main("It feels weird...{w} but...","disgust","down", cheeks="blush")
     g9 "Butt?" #fucks sake
@@ -826,7 +826,7 @@ label hg_pf_grope_ass_T4: # Not in the game yet.
             jump hg_pf_grope_ass_T4_back
 
         "\"No. Just stand still, [hermione_name].\"":
-            call her_main("As you say, [genie_name]...","soft","base", cheeks="blush", ypos="head")
+            call her_main("As you say, [genie_name]...", "soft", "base", "base", "mid", cheeks="blush", ypos="head")
             jump hg_pf_grope_ass_T4_front
 
 

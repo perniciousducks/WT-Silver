@@ -1275,7 +1275,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("(I bloody hate her!)","angry","angry","angry","L")
 
             call her_main("If you don't mind, Sir.","open","baseL")
-            call her_main("I'd like to leave now.","soft","base")
+            call her_main("I'd like to leave now.", "soft", "base", "base", "mid")
             call cho_main("By all means, just go already.","soft","narrow","angry","R")
             call her_main("Did something not go as you expected?","smile","baseL")
             call her_main("Did you think having me here when you exposed yourself would make me jealous...","soft","closed")
@@ -1354,7 +1354,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("","base","narrow","angry","L")
             call her_main("Because she just so happens to be standing there, butt naked!{w} In your office!","angry","angryCl")
             m "I'd like you to rate Miss Chang's figure, truthfully, and to the best of your ability."
-            call her_main("Really? Do I have to?","annoyed","base")
+            call her_main("Really? Do I have to?", "annoyed", "base", "base", "mid")
             g9 "You do! I'd really like to hear your opinion on Miss Chang's shamelessly exposed body!"
             call cho_main("*Mhmm*","base","closed","base","mid") # Self assured.
             call her_main("Fine...","soft","angryL")

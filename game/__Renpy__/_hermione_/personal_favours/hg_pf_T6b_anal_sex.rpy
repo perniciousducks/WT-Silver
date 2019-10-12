@@ -31,7 +31,7 @@ label hg_anal_sex_1:
     g4 "Oh, come on!"
     call her_main("Ouch!","mad","worriedCl",tears="soft_blink")
     m "Just try to loosen up a little, would you?"
-    call her_main("I'm trying!","angry","base",tears="soft")
+    call her_main("I'm trying!", "angry", "base", "base", "mid",tears="soft")
     m "Ok, what if I do this..?"
     call her_main("Ouch! What are you doing, [genie_name]?","mad","worriedCl",tears="soft_blink")
     m "Yeah, this won't work either..."
@@ -46,10 +46,10 @@ label hg_anal_sex_1:
             $ renpy.play('sounds/spit.mp3') #Sound of spiting.
             g4 "*SPIT!*"
             call her_main("Eeeeeew!","scream","worriedCl")
-            call her_main("No, [genie_name], wait! Maybe if I just relax--","open","base")
+            call her_main("No, [genie_name], wait! Maybe if I just relax--", "open", "base", "base", "mid")
             m "No need, here I come!"
             with hpunch
-            call her_main("ARGH!","angry","base",tears="soft")
+            call her_main("ARGH!", "angry", "base", "base", "mid",tears="soft")
             call her_main("Ouch! Ouch! Ouch!","mad","worriedCl",tears="soft_blink")
             g4 "Almost in!"
             call her_main("No, you're hurting me! You are hurting me!","scream","worriedCl")
@@ -105,7 +105,7 @@ label hg_anal_sex_1:
             g4 "ARGH!"
 
         "\"Suck me off first. Lubricate my cock!\"":
-            call her_main("Oh... Alright...","open","base",ypos="head")
+            call her_main("Oh... Alright...", "open", "base", "base", "mid",ypos="head")
             call play_music("playful_tension") # SEX THEME.
 
             # Blowjob
@@ -120,7 +120,7 @@ label hg_anal_sex_1:
             # Sex
             call hg_chibi_transition("sex_pause", trans="fade")
 
-            call her_main(".............","open","base")
+            call her_main(".............", "open", "base", "base", "mid")
             g4 "Yes! Almost!"
             call her_main("Ouch!","scream","worriedCl")
             m "Relax. Almost in."
@@ -243,7 +243,7 @@ label hg_anal_sex_1:
             with hpunch
             play sound "sounds/burp.mp3"
             call her_main("{size=+7}*BURP!*!!!!!{/size}","full","surprised",tears="messy")
-            call her_main(".......................","full","base",tears="messy")
+            call her_main(".......................", "full", "base", "base", "mid",tears="messy")
             call her_main(".............")
             $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
             call her_main("{size=+7}*GULP!*{/size}","cum","worriedCl")
@@ -350,7 +350,7 @@ label hg_anal_sex_2:
 
     call her_main("........","annoyed","worriedL")
     m "Hm..."
-    call her_main("...........","open","base")
+    call her_main("...........", "open", "base", "base", "mid")
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
     with kissiris
@@ -381,14 +381,14 @@ label hg_anal_sex_2:
     call her_main("Ah...")
     call her_main("[genie_name]?","base","glance")
     m "Yes, whore?"
-    call her_main("Em...","angry","base")
+    call her_main("Em...", "angry", "base", "base", "mid")
     call her_main("Would you marry me, [genie_name]?","angry","down_raised")
     with hpunch
     g4 "{size=+9} WHAT?!{/size}"
     g4 "Don't tell me you're pregnant, [hermione_name]!"
     call her_main("I couldn't get pregnant the way we are doing it, [genie_name]...","angry","wink")
     m "What is this talk of marriage then?"
-    call her_main("You misunderstood me [genie_name].","angry","base")
+    call her_main("You misunderstood me [genie_name].", "angry", "base", "base", "mid")
     call her_main("I meant to say, would you marry a girl {size=+5}like{/size} me?","angry","down_raised")
     call her_main("I would never propose to a man with his cock in my ass, [genie_name]...","angry","worriedCl",emote="05")
     m "Good. Because I don't think any man would be able to say \"no\" then."
@@ -398,16 +398,16 @@ label hg_anal_sex_2:
     call her_main("I mean, with all that was happening lately... ah{image=textheart}...","angry","down_raised")
     call her_main("I can't help but feel unclean... damaged even.")
     call her_main("And in a no way innocent...")
-    call her_main("Who would want a wife like that?","angry","base")
+    call her_main("Who would want a wife like that?", "angry", "base", "base", "mid")
 
     menu:
         m "..."
         "\"I would marry you in a heartbeat!\"":
-            call her_main("What?","open","base",ypos="head")
+            call her_main("What?", "open", "base", "base", "mid",ypos="head")
             m "Well, hypothetically speaking of course..."
             call her_main("...of course...{image=textheart}","base","baseL")
             call her_main("..............","base","squint")
-            call her_main("But why do you say that, [genie_name]?","soft","base")
+            call her_main("But why do you say that, [genie_name]?", "soft", "base", "base", "mid")
             m "Huh?"
             m "What do you mean \"why\", whore?"
             m "You are young and attractive..."
@@ -529,7 +529,7 @@ label hg_anal_sex_2:
 
 label hg_pf_anal_sex_old: # Writing not in use
     m "[hermione_name]?"
-    call her_main("[genie_name]?","soft","base")
+    call her_main("[genie_name]?", "soft", "base", "base", "mid")
     m "I will be buying another favour from you today..."
     call her_main(".............","open","suspicious")
     m "Care to guess what the favour will be?"

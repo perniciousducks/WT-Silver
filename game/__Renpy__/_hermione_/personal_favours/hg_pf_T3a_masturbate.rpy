@@ -7,7 +7,7 @@ label hg_pf_strip_fingering_intro:
     # Intro
     if hg_masturbated.trigger == False:
         m "[hermione_name]..."
-        call her_main("Yes, [genie_name]?","base","base", xpos="mid", ypos="base")
+        call her_main("Yes, [genie_name]?", "base", "base", "base", "mid", xpos="mid", ypos="base")
         m "Do you ever touch yourself?"
         call her_main("What? why?","upset","wink")
         m "Do you?"
@@ -30,7 +30,7 @@ label hg_pf_strip_fingering_intro:
     # Repeat
     else:
         m "[hermione_name]..."
-        call her_main("Yes, [genie_name]?","base","base", xpos="mid", ypos="base")
+        call her_main("Yes, [genie_name]?", "base", "base", "base", "mid", xpos="mid", ypos="base")
         m "Are you feeling horny?"
         call her_main("maybe A little, [genie_name].","base","glance")
         m "Ah, well perhaps we can fix that..."
@@ -54,7 +54,7 @@ label hg_pf_strip_T2_fingering:
     call hg_pf_strip_fingering_intro
 
     call play_music("playful_tension") # SEX THEME.
-    call her_main("...........","upset","base")
+    call her_main("...........", "upset", "base", "base", "mid")
     call her_main("Do you want me to... start?","soft","wink")
     m "Yes, my dear."
     call her_main("...........","disgust","down_raised")
@@ -72,13 +72,13 @@ label hg_pf_strip_T2_fingering:
     call her_main(".............","normal","worriedCl")
     call her_main("umm... [genie_name]?")
     m "Yes, what is it?"
-    call her_main("How long do I have to keep doing this?","open","base")
+    call her_main("How long do I have to keep doing this?", "open", "base", "base", "mid")
     m "Until you finish [hermione_name]..."
 
     if daytime:
-        call her_main("But my classes are about to start, [genie_name]...","soft","base")
+        call her_main("But my classes are about to start, [genie_name]...", "soft", "base", "base", "mid")
     else:
-        call her_main("But it's getting late, [genie_name]...","soft","base")
+        call her_main("But it's getting late, [genie_name]...", "soft", "base", "base", "mid")
 
     call her_main("I'm not sure if I'll be able to finish... in time.","disgust","down_raised")
     m "Do you need the points or not?"
@@ -127,7 +127,7 @@ label hg_pf_strip_T2_fingering:
             call her_main("ah...{image=textheart}{image=textheart}{image=textheart}","grin","ahegao")
             call her_main("[genie_name], please... don't tell anyone...","angry","wink")
             call nar(">Hermione keeps on grinding her hips against her hand...")
-            call her_main("they can't find out...","angry","base")
+            call her_main("they can't find out...", "angry", "base", "base", "mid")
             call her_main("if harry and ron knew...","angry","down_raised")
             call her_main("i'd... ah...{image=textheart}","soft","ahegao")
             m "You'd what [hermione_name]?"
@@ -326,7 +326,7 @@ label hg_pf_strip_T3_fingering:
 
 label hg_pf_strip_T4_fingering:
     m "[hermione_name]?"
-    call her_main("[genie_name]?","base","base")
+    call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "You don't mind pleasuring yourself in front of me, do you?"
     if her_whoring <= 16:
         call her_main("As long as I am being paid...","grin","baseL")

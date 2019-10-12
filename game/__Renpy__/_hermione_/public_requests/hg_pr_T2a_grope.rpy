@@ -18,9 +18,9 @@ label hg_pr_grope:
     #Intro.
     if hg_pr_grope.counter == 0:
         m "[hermione_name]?"
-        call her_main("[genie_name]?","base","base")
+        call her_main("[genie_name]?", "base", "base", "base", "mid")
         m "You do like boys your age, don't you?"
-        call her_main("...?","normal","base")
+        call her_main("...?", "normal", "base", "base", "mid")
         m "one of your classmates maybe?"
         call her_main("Well...","open","worriedL")
         her "Must I really discuss things like this with you, [genie_name]?"
@@ -28,20 +28,20 @@ label hg_pr_grope:
         m "Sure, I understand. I don't need to know the details..."
         m "But here is what I need you to do today, [hermione_name]."
         m "Go confront that boy you fancy. The one you think is \"just so dreamy\"..."
-        call her_main(".......?","open","base")
+        call her_main(".......?", "open", "base", "base", "mid")
         m "And let him touch you..."
 
         if her_tier < 2 or her_reputation < 3:
             jump too_much
 
-        call her_main("Let him... touch me, [genie_name]?","open","base")
+        call her_main("Let him... touch me, [genie_name]?", "open", "base", "base", "mid")
         m "Yes, touch you. The way boys touch girls?"
         m "How old are you, [hermione_name]? You look mature enough..."
         m "Haven't you had \"the talk\" with your parents already?"
         call her_main("\"The talk\", [genie_name]?","angry","worriedCl", emote="05")
         m "Yes, \"the talk\"! About how boys are different than the girls...?"
         m "Boys have a \"pee-pee\" and girls like to put that  \"pee-pee\" in their mouths?"
-        call her_main("!!!","normal","base")
+        call her_main("!!!", "normal", "base", "base", "mid")
         call her_main("What kind of demented parent would have such a talk with their child?","angry","angry")
         m "{size=-3}I wish mine did.{/size}"
         call her_main("I beg your pardon, [genie_name]?","annoyed","suspicious")
@@ -61,7 +61,7 @@ label hg_pr_grope:
 
     elif her_tier < 3:
         m "[hermione_name]?"
-        call her_main("[genie_name]?","base","base")
+        call her_main("[genie_name]?", "base", "base", "base", "mid")
         m "How about you go let one of your classmates molest you a little again?"
         call her_main("........","upset","closed")
         m "Twenty five house points, [hermione_name]."
@@ -76,19 +76,19 @@ label hg_pr_grope:
 
     elif her_tier < 4:
         m "[hermione_name], I need you to go out there, and make one of your classmates molest you a little."
-        call her_main("I understand, [genie_name]...","base","base")
+        call her_main("I understand, [genie_name]...", "base", "base", "base", "mid")
         m "Off you go then."
         her "..........."
 
     else:
         m "[hermione_name], I need you to go out there..."
         m "Find a handsome guy and force yourself on him!"
-        call her_main("You mean like...","base","base")
+        call her_main("You mean like...", "base", "base", "base", "mid")
         call her_main("In a sexual way, [genie_name]?","angry","wink")
         m "What? No, I mean just let him get under your uniform that's all..."
         call her_main("Oh, I see...","grin","worriedCl", emote="05")
         call her_main("I wonder who it should be this time...","grin","baseL")
-        call her_main("More than one boy, is not a problem, is it, [genie_name]?","angry","base")
+        call her_main("More than one boy, is not a problem, is it, [genie_name]?", "angry", "base", "base", "mid")
         m "A problem? Of course not!"
         m "If anything - it is encouraged."
         call her_main("Great. I will see you after the classes then, [genie_name]. As usual.","angry","wink")
@@ -127,7 +127,7 @@ label hg_pr_grope_intro:
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
-    call her_main("Good evening, [genie_name].","base","base",xpos="right",ypos="base")
+    call her_main("Good evening, [genie_name].", "base", "base", "base", "mid",xpos="right",ypos="base")
     m "[hermione_name]..."
     m "Did you complete your task?"
     her "I did as you asked [genie_name]..."
@@ -162,7 +162,7 @@ label hg_pr_grope_T1_E1:
 
     m "So? Tell me more."
     her "Well, there is not much to tell..."
-    call her_main("I told that one guy I know that he could touch me a little if he wants...","open","base")
+    call her_main("I told that one guy I know that he could touch me a little if he wants...", "open", "base", "base", "mid")
     call her_main("He thought I was joking at first...","annoyed","worriedL")
     call her_main("So embarrassing...","normal","worriedCl")
     m "So, did he cop a feel or not?"
@@ -172,7 +172,7 @@ label hg_pr_grope_T1_E1:
     call her_main("Ehm... My legs...","annoyed","worriedL")
     her "And my breasts a little I suppose..."
     m "That's all?"
-    call her_main("Yes, [genie_name]...","open","base")
+    call her_main("Yes, [genie_name]...", "open", "base", "base", "mid")
     call her_main("It's getting late... I think I'd better leave now...","normal","worriedCl")
     call her_main("I'm sorry, [genie_name]...","angry","worriedCl", emote="05")
     m "Nothing to be sorry about, [hermione_name]."
@@ -191,7 +191,7 @@ label hg_pr_grope_T1_E2:
     m "Tell me where you were touched today..."
     call play_music("playful_tension") # SEX THEME.
     her "Ehm..."
-    call her_main("Well he touched me under my skirt a little...","angry","base")
+    call her_main("Well he touched me under my skirt a little...", "angry", "base", "base", "mid")
     her "Then I let him rub my..."
     call her_main("...my pussy through the panties, [genie_name].","angry","down_raised")
     m "Very good. Then what happened?"
@@ -208,11 +208,11 @@ label hg_pr_grope_T1_E3:
     call hg_pr_grope_intro
 
     call play_music("playful_tension") # SEX THEME.
-    call her_main("I led this one guy from \"Hufflepuff\" to an empty classroom and I told him that he can touch me if he wants.","open","base")
+    call her_main("I led this one guy from \"Hufflepuff\" to an empty classroom and I told him that he can touch me if he wants.", "open", "base", "base", "mid")
     her "That I don't mind..."
     call her_main("...........","annoyed","worriedL")
     m "And?"
-    call her_main("Well, he did touch me a little at first...","open","base")
+    call her_main("Well, he did touch me a little at first...", "open", "base", "base", "mid")
     call her_main("......","normal","worriedCl")
     m "Don't make me pull every word out of you, [hermione_name]!"
     m "Then what happened?"
@@ -221,16 +221,16 @@ label hg_pr_grope_T1_E3:
     her "I think he was more interested in {size=+5}me{/size} molesting {size=+5}him{/size}..."
     call her_main("He asked me to call him a \"sissy boy\"...","upset","wink")
     call play_music("despair")
-    call her_main("And he kept on reassuring me that he has a very small penis...","open","base")
-    call her_main("He just kept repeating that *sob!*...","angry","base", tears="soft")
-    call her_main("Why would anyone be like this?","angry","base", tears="soft")
+    call her_main("And he kept on reassuring me that he has a very small penis...", "open", "base", "base", "mid")
+    call her_main("He just kept repeating that *sob!*...", "angry", "base", "base", "mid", tears="soft")
+    call her_main("Why would anyone be like this?", "angry", "base", "base", "mid", tears="soft")
     her "*Sob!* I Could not stay in his company a moment longer, so I just ran."
     m "I'm sorry to hear this..."
-    call her_main("It was truly awful, [genie_name]...","angry","base", tears="soft")
+    call her_main("It was truly awful, [genie_name]...", "angry", "base", "base", "mid", tears="soft")
     m "There, there..."
     call her_main("*Sob!*","normal","baseL", tears="soft")
     m "Will ten extra points make you feel better?"
-    call her_main("Huh? That would be very sweet of you [genie_name].","soft","base", tears="soft")
+    call her_main("Huh? That would be very sweet of you [genie_name].", "soft", "base", "base", "mid", tears="soft")
     m "Of course... Ten extra points to \"Gryffindor\"."
     call her_main("Thank you [genie_name]...","clench","worried", cheeks="blush", tears="soft")
     m "And the rest of your payment..."
@@ -254,7 +254,7 @@ label hg_pr_grope_T2_E1:
     m "Well done, [hermione_name]."
     call her_main("Will I be getting my points now?","upset","wink")
     m "In a minute, [hermione_name]. I have a question I would like to ask you before that."
-    call her_main("???","open","base")
+    call her_main("???", "open", "base", "base", "mid")
     m "Did you enjoy it?"
     m "Did it feel good to be touched by that boy?"
     call her_main("Oh...","open","closed")
@@ -281,7 +281,7 @@ label hg_pr_grope_T2_E2:
 
     menu:
         "\"You can do better than that, [hermione_name].\"":
-            call her_main("Yes, I know, [genie_name]. I am sorry.","open","base")
+            call her_main("Yes, I know, [genie_name]. I am sorry.", "open", "base", "base", "mid")
             m "Just make sure you try harder next time."
             her "I will, [genie_name]."
 
@@ -305,14 +305,14 @@ label hg_pr_grope_T2_E3:
     call her_main("I don't want to talk about it, [genie_name]...","annoyed","angryL")
     m "What happened, [hermione_name]. Spit it out."
     call her_main(".................","annoyed","annoyed")
-    call her_main("But... it's so embarrassing...","open","base")
+    call her_main("But... it's so embarrassing...", "open", "base", "base", "mid")
     call her_main("Do I really have to, [genie_name]?","normal","worriedCl")
     m "Yes, I happen to love embarrassing things!"
     call her_main(".................","annoyed","angryL")
     her "Well, alright..."
     her "I approached this one guy that I always found attractive..."
     her "Managed to muster up enough courage to ask him to follow me..."
-    call her_main("Normally I wouldn't dare...","open","base")
+    call her_main("Normally I wouldn't dare...", "open", "base", "base", "mid")
     her "But the fact that I was doing this as a task entrusted to me by someone else..."
     her "made it easier somehow..."
     m "Happy to help, [hermione_name]."
@@ -330,8 +330,8 @@ label hg_pr_grope_T2_E3:
     call her_main("I'd wish, [genie_name]...","disgust","glance")
     her "He asked me to take off my shoes..."
     her "Then he..."
-    call her_main("He started to smell my toes, [genie_name]!","angry","base", tears="soft")
-    call her_main("I felt so... violated!","angry","base", tears="soft")
+    call her_main("He started to smell my toes, [genie_name]!", "angry", "base", "base", "mid", tears="soft")
+    call her_main("I felt so... violated!", "angry", "base", "base", "mid", tears="soft")
     m "So he didn't touch your tits, or your butt?"
     call her_main("No, [genie_name]... *sob!*","shock","down_raised", cheeks="blush", tears="crying")
     m "Alright, then what happened?"
@@ -356,7 +356,7 @@ label hg_pr_grope_T3_E1:
 
     stop music fadeout 1.0
     call her_main("......","annoyed","worriedL")
-    call her_main("Well...","open","base")
+    call her_main("Well...", "open", "base", "base", "mid")
     her "During the potions class today..."
     her "I wrote a note on a piece of paper..."
     her "I was about to slide it to my lab partner when..."
@@ -384,7 +384,7 @@ label hg_pr_grope_T3_E1:
     $ sc34CG(2, 16, 6, 9)
     call ctc
 
-    call her_main("And then I let them touch me...","angry","base")
+    call her_main("And then I let them touch me...", "angry", "base", "base", "mid")
     $ sc34CG(2, 17, 6, 9)
     call her_main("They touched me everywhere, [genie_name]...")
     m "\"Everywhere\", huh?"
@@ -410,7 +410,7 @@ label hg_pr_grope_T3_E2:
 
     call hg_pr_grope_intro
 
-    call her_main("Actually something quite unexpected happened to me today, [genie_name]...","base","base")
+    call her_main("Actually something quite unexpected happened to me today, [genie_name]...", "base", "base", "base", "mid")
     her "Right after the Defence Against the Dark Arts class..."
     her "This stocky \"Hufflepuff \" boy came up to me..."
     call play_music("playful_tension") # SEX THEME.
@@ -440,18 +440,18 @@ label hg_pr_grope_T3_E3:
     call her_main("uhm...","upset","wink")
     her "I sort of... got caught while I was letting this one boy fondle my breasts..."
     m "You got caught? By one of the teachers?"
-    call her_main("No, [genie_name]...","base","base")
+    call her_main("No, [genie_name]...", "base", "base", "base", "mid")
     call her_main("By the boy's girlfriend...","smile","baseL")
     m "Interesting..."
-    call her_main("She was furious with him at first...","angry","base")
+    call her_main("She was furious with him at first...", "angry", "base", "base", "mid")
     call her_main("But then...","angry","wink")
     call her_main("Ehm... She started to touch my breasts as well...","base","down")
     call her_main("Almost the same way her boyfriend did just a moment ago...","smile","angry")
     her "Then she turned to him and she said..."
     call her_main("\"I love you baby, and I want to share everything with you...\"","open","closed")
     her "\"...And that includes your whores.\""
-    call her_main("I did not appreciate being called a whore of course...","angry","base")
-    call her_main("But that was such a sweet and romantic gesture...","base","base")
+    call her_main("I did not appreciate being called a whore of course...", "angry", "base", "base", "mid")
+    call her_main("But that was such a sweet and romantic gesture...", "base", "base", "base", "mid")
     her "Wouldn't you agree, [genie_name]?"
     m "Totally..."
     m "Seems that true love {size=+5}does{/size} exist after all."

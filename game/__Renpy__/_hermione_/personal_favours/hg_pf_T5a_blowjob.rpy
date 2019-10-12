@@ -43,7 +43,7 @@ label hg_pf_blowjob:
     if her_mood != 0:
         call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
     else:
-        call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     if her_tier < 6:
         m "Yes, [hermione_name]. [current_payout] points to \"Gryffindor\"."
@@ -79,9 +79,9 @@ label hg_pf_blowjob:
 ### Fail Events ###
 
 label hg_pf_blowjob_fail:
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
-    call her_main("Yes, [genie_name]?","base","base")
+    call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "I plan to grant \"Gryffindor\" 55 house points today..."
     m "If you suck me off..."
 
@@ -97,9 +97,9 @@ label hg_pf_blowjob_fail:
 # Event 2 (r) - Repeat.
 
 label hg_pf_blowjob_T0_fail_intro:
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
-    call her_main("Yes, [genie_name]?","base","base")
+    call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "I plan to grant \"Gryffindor\" 55 house points today..."
     m "If you suck me off..."
     call her_main("Suck you...{w}off?","disgust","wide_stare")
@@ -135,9 +135,9 @@ label hg_pf_blowjob_T0_fail_intro:
 
 
 label hg_pf_blowjob_T0_fail_repeat:
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
-    call her_main("Yes, [genie_name]?","base","base")
+    call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "I plan to grant \"Gryffindor\" 55 house points today..."
     call her_main("And let me guess...","open","angryCl")
     call her_main("You'd like me to \"suck you off\" for it?","open","angry")
@@ -175,16 +175,16 @@ label hg_pf_blowjob_T0_fail_repeat:
 # Event 3 (r) - Normal blowjob with choices.
 
 label hg_pf_blowjob_T1_intro_E1:
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
-    call her_main("Yes, [genie_name]?","base","base")
+    call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "I plan to grant \"Gryffindor\" 55 house points today..."
     m "If you suck me off..."
     call her_main("Oh...","open","down")
     call her_main("Alright.","base","down")
     m "Really? Just like that?"
     call her_main("Yes. I know I'm supposed feel outraged...","angry","down_raised")
-    call her_main("But somehow I do not...","angry","base")
+    call her_main("But somehow I do not...", "angry", "base", "base", "mid")
     call her_main("I suppose I am just glad that I can help out my house...","base","down")
     call her_main("And if to do that I must put your penis in my mouth so be it...","upset","closed")
     m "Well, alright then."
@@ -197,9 +197,9 @@ label hg_pf_blowjob_T1_intro_E1:
 
 
 label hg_pf_blowjob_T1_intro_E2:
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
-    call her_main("[genie_name]?","base","base")
+    call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "How about another blowjob?"
 
     call play_music("playful_tension") # SEX THEME.
@@ -219,13 +219,13 @@ label hg_pf_blowjob_T1_intro_E2:
 
         "\"Ehm... I am sorry?\"":
             stop music fadeout 1.0
-            call her_main("*Giggle*","base","base")
+            call her_main("*Giggle*", "base", "base", "base", "mid")
             m "Huh?"
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("I got you... [genie_name].","grin","worriedCl", emote="05")
             m "What?"
 
-    call her_main("Well, so much has happened lately...","base","base")
+    call her_main("Well, so much has happened lately...", "base", "base", "base", "mid")
     her "I had so many new experiences that kind of changed the way I look at things..."
     her "So I was just trying to imagine how the \"old me\" would've reacted to this."
     m "So..."
@@ -239,7 +239,7 @@ label hg_pf_blowjob_T1_intro_E2:
 
 
 label hg_pf_blowjob_T1_repeat:
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     call play_music("playful_tension") # SEX THEME.
     m "How would you like to give me another blowjob, [hermione_name]?"
     call her_main("I suppose I can do that...","base","down")
@@ -256,10 +256,10 @@ label hg_pf_blowjob_T1_repeat:
 # Event 3 (r) - Blowjob with choices.
 
 label hg_pf_blowjob_T2_intro_E1:
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "Tell me, [hermione_name]..."
     g9 "Have you been behaving yourself lately?"
-    call her_main("Me? Of course, [genie_name].","open","base")
+    call her_main("Me? Of course, [genie_name].", "open", "base", "base", "mid")
     call her_main("I'm always trying to behave my best at school-","open","baseL")
 
     call her_main("Oh...{w} I mean... No, Sir!","soft","ahegao")
@@ -293,7 +293,7 @@ label hg_pf_blowjob_T2_intro_E1:
 
 
 label hg_pf_blowjob_T2_hidden_repeat:
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     call play_music("playful_tension") # SEX THEME.
     m "Suck my dick, [hermione_name]."
     call her_main("Anything for you, [genie_name]...","base","glance")
@@ -302,7 +302,7 @@ label hg_pf_blowjob_T2_hidden_repeat:
 
 
 label hg_pf_blowjob_T2_repeat:
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     call play_music("playful_tension") # SEX THEME.
     m "Suck my dick, [hermione_name]."
     call her_main("Anything for you, [genie_name]...","base","glance")
@@ -364,7 +364,7 @@ label hg_pf_blowjob_1:
             call her_main("*Gulp--","sucking","ahegao_mad")
 
             call hg_chibi_transition("bj_pause")
-            call her_main("That's not what we stand for, [genie_name].","angry","base")
+            call her_main("That's not what we stand for, [genie_name].", "angry", "base", "base", "mid")
             m "What do you mean?"
             call her_main("The \"MRM\" is about gender equality.","open","closed")
             call her_main("We are not as much against selling sexual favours to the teachers...")
@@ -395,19 +395,19 @@ label hg_pf_blowjob_1:
             call her_main("*Slurp--","sucking","ahegao")
 
             call hg_chibi_transition("bj_pause")
-            call her_main("This one time we had a meeting right after I sold you another favour, [genie_name].","angry","base")
+            call her_main("This one time we had a meeting right after I sold you another favour, [genie_name].", "angry", "base", "base", "mid")
             call her_main("I had to give a speech with my uniform all messy and stained.")
             call her_main("It felt awful that I had to do that...")
             m "You did enjoy it a little bit though..."
             call her_main("Well...","angry","down_raised")
             m "Just admit it."
-            call her_main("...............","angry","base")
+            call her_main("...............", "angry", "base", "base", "mid")
             m "Yes, I knew it. You took pleasure in it, you little perv."
             call her_main("I suppose it was embarrassing and exciting at the same time...","angry","down_raised")
             call her_main("And it made me feel even worse about myself.")
             m "You poor thing."
             m "Cock back in the mouth."
-            call her_main("Yes, [genie_name].","angry","base")
+            call her_main("Yes, [genie_name].", "angry", "base", "base", "mid")
             call hg_chibi_transition("bj", trans="d3")
             pause.8
 
@@ -417,7 +417,7 @@ label hg_pf_blowjob_1:
             call hg_chibi_transition("bj_pause")
             call her_main("Yes, I believe they are...","smile","happyCl")
             call her_main("With me being an excellent student despite being muggle-born and all...","base","happyCl")
-            call her_main("Although at first they were against sending me to some \"Bogus boarding school\".","angry","base")
+            call her_main("Although at first they were against sending me to some \"Bogus boarding school\".", "angry", "base", "base", "mid")
             call her_main("Took some effort to convince them that \"Hogwarts\" is a respectable institution.","base","happyCl")
             m "Yes, a respectable institution indeed."
             m "Cock back in your mouth [hermione_name]."
@@ -495,7 +495,7 @@ label hg_pf_blowjob_1:
             m "But to be honest..."
             m "\"Daring, nerve, fire, recklessness\"..."
             m "That sort of describes your personality quite well..."
-            call her_main("[genie_name]...","base","base")
+            call her_main("[genie_name]...", "base", "base", "base", "mid")
 
             call hg_chibi_transition("bj", trans="d3")
             pause.8
@@ -517,7 +517,7 @@ label hg_pf_blowjob_1:
     call her_main("*Slurp-Slurp-Slurp!*","sucking","ahegao_mad")
 
     call hg_chibi_transition("bj_pause")
-    call her_main("I truly am a slut and deeply enjoy sucking your cock.","angry","base")
+    call her_main("I truly am a slut and deeply enjoy sucking your cock.", "angry", "base", "base", "mid")
     m "Oh, yes, yes... Say more things like that."
 
     call hg_chibi_transition("bj", trans="d3")
@@ -599,19 +599,19 @@ label hg_pf_blowjob_1:
             g4 "Don't you move now, [hermione_name]."
             g4 "Yes, just be still and take it."
             g4 "Argh! You little slut! You make me cum hard, [hermione_name]!"
-            call her_main("..............","angry","base", tears="soft")
+            call her_main("..............", "angry", "base", "base", "mid", tears="soft")
             m "Whew..."
 
             call hg_chibi_transition("bj_cumming_out_blink")
             call her_main("..............","normal","worriedCl")
             m "Alright, I'm done..."
-            call her_main(".................","open","base")
+            call her_main(".................", "open", "base", "base", "mid")
 
             if daytime:
                 her "My classes are about to start..."
 
             m "Just wipe it off and you'll be alright."
-            call her_main("............","open","base")
+            call her_main("............", "open", "base", "base", "mid")
             m "Unless, you don't want to."
             call her_main("Huh?","angry","worriedCl", emote="05")
             m "And would rather go outside looking like this."
@@ -701,9 +701,9 @@ label hg_hidden_blowjob_snape:
     "*Knock-knock-knock!*"
 
     sna "Are you there? I need to talk to you."
-    call her_main("(It's professor Snape!)","sucking","base")
+    call her_main("(It's professor Snape!)", "sucking", "base", "base", "mid")
     call hg_chibi_transition("bj_pause")
-    call her_main("[genie_name], please, send him away, I beg you!","angry","base")
+    call her_main("[genie_name], please, send him away, I beg you!", "angry", "base", "base", "mid")
 
     menu:
         m "..."
@@ -711,7 +711,7 @@ label hg_hidden_blowjob_snape:
             pass
 
         "\"I am busy right now, Severus.\"":
-            call her_main("Thank you, [genie_name].","angry","base", ypos="head")
+            call her_main("Thank you, [genie_name].", "angry", "base", "base", "mid", ypos="head")
             sna "Busy? With what?"
             sna "All you do is sit on you arse all day."
             sna "I really need to talk to you about something."
@@ -822,7 +822,7 @@ label hg_hidden_blowjob_luna:
             pass
 
         "\"I am busy right now, [lun_name].\"":
-            call her_main("Thank you, [genie_name].","angry","base", ypos="head")
+            call her_main("Thank you, [genie_name].", "angry", "base", "base", "mid", ypos="head")
             lun "Oh... well, I'll visit you later then, [lun_genie_name]."
             if daytime:
                 lun "Have a good day!"
@@ -976,7 +976,7 @@ label hg_hidden_blowjob_tonks:
             pass
 
         "\"I am busy right now, [tonks_name].\"":
-            call her_main("Thank you, [genie_name].","soft","base", ypos="head")
+            call her_main("Thank you, [genie_name].", "soft", "base", "base", "mid", ypos="head")
             ton "Busy?"
             ton "Could it be..."
             ton "Is Snape with you?"
@@ -1319,15 +1319,15 @@ label hg_hidden_blowjob_cumming:
 
     if her_tier <= 5:
         call her_main("uhm...","angry","down_raised", ypos="head")
-        call her_main("I eat cockroaches?","angry","base")
+        call her_main("I eat cockroaches?", "angry", "base", "base", "mid")
         m "What the fuck?"
-        call her_main("T-they are pretty nasty, [genie_name]...","angry","base")
+        call her_main("T-they are pretty nasty, [genie_name]...", "angry", "base", "base", "mid")
         m "No, [hermione_name], I mean something dirty!"
         m "And don't you dare to say \"mud\"!"
         m "I mean dirty in a sexual way!"
         call her_main("Oh... Ehm...","angry","down_raised")
         m "Ah, never mind, the moment is gone..."
-        call her_main("Ehm... I'm sorry, [genie_name].","angry","base")
+        call her_main("Ehm... I'm sorry, [genie_name].", "angry", "base", "base", "mid")
         m "Yeah, whatever. Make it up to me by sucking my cock harder."
         call her_main("Of course, [genie_name].","upset","closed")
 
@@ -1390,7 +1390,7 @@ label hg_hidden_blowjob_cumming:
             call her_main("........")
             $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
             call her_main("*GULP!*","cum","worriedCl")
-            call her_main("Gua-ha...","open_wide_tongue","base")
+            call her_main("Gua-ha...", "open_wide_tongue", "base", "base", "mid")
             m "You alright?"
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("Yes, [genie_name]...","grin","dead")
@@ -1630,7 +1630,7 @@ label hg_pf_blowjob_2:
 
                     $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
                     call her_main("*GULP!*","cum","worriedCl")
-                    call her_main("Gua-ha...","open_wide_tongue","base")
+                    call her_main("Gua-ha...", "open_wide_tongue", "base", "base", "mid")
                     m "How was that?"
 
                     call play_music("chipper_doodle") # HERMIONE'S THEME.

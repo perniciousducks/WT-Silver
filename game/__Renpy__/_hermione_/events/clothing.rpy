@@ -13,18 +13,18 @@ label hermione_summon_setup:
         call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
         call play_music("hermione_theme")
-        call her_main("","base","base","base","mid", xpos="mid", ypos="base")
+        call her_main("","base", "base", "base", "base", "mid","mid", xpos="mid", ypos="base")
         #call cho_main("","base","base","base","mid", xpos="mid", ypos="base", animation=moveFade) # reference
         call ctc
 
         m "(...)"
-        call her_main("Is anything wrong, [genie_name]?","soft","base")
+        call her_main("Is anything wrong, [genie_name]?", "soft", "base", "base", "mid")
         g4 "Why are you holding all those... \"things\"?"
         call her_main("My books?","open","down")
         call her_main("I wasn't sure which ones I'd need, so I brought all of them!","grin","happyCl")
         m "Brought them for what?"
         call her_main("My tutoring lessons...","soft","suspicious")
-        call her_main("I hope you're still planning to lecture me, [genie_name].","annoyed","base")
+        call her_main("I hope you're still planning to lecture me, [genie_name].", "annoyed", "base", "base", "mid")
         g9 "Oh, I'll give you a lecture for sure."
         m "But we're going to have to do it my way.{w}\nThere's no need for those books."
         call her_main("No need?","normal","worried")
@@ -48,13 +48,13 @@ label hermione_summon_setup:
         with d5
         pause.2
 
-        call her_main("Yes?","soft","base",trans="d5")
+        call her_main("Yes?", "soft", "base", "base", "mid",trans="d5")
         m "I didn't say anything..."
         call her_main("If you say so, [genie_name].","open","baseL")
-        call her_main("Is it ok if we could start right away with the lessons?","soft","base")
+        call her_main("Is it ok if we could start right away with the lessons?", "soft", "base", "base", "mid")
         m "Well... Of course..."
 
-        call her_main("","base","base", xpos="base", ypos="base",trans="fade")
+        call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base",trans="fade")
 
         return
 
@@ -89,14 +89,14 @@ label hermione_summon_setup:
                 with d3
 
                 call play_music("hermione_theme")
-                call her_main("","base","base", xpos="base", ypos="base")
+                call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
                 call ctc
 
                 g4 "(Wow! Look at her!)"
                 g9 "That's quite a sexy outfit, [hermione_name]!"
                 if her_whoring < 11:
                     call her_main("Uhm... Thank you, [genie_name].","soft","baseL")
-                    call her_main("I normally don't wear something like this.","open","base")
+                    call her_main("I normally don't wear something like this.", "open", "base", "base", "mid")
                     call her_main("(Showing so much cleavage...)","disgust","down", cheeks="blush")
                     call her_main("But the weather is just too hot today.","base","baseL")
                     g9 "You should wear this more often!"
@@ -110,7 +110,7 @@ label hermione_summon_setup:
                 with d3
 
                 call play_music("hermione_theme")
-                call her_main("","base","base", xpos="base", ypos="base")
+                call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
 
             #Unlocks rewards.
             call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_hot_ITEM)
@@ -139,7 +139,7 @@ label hermione_summon_setup:
                 with d3
 
                 call play_music("hermione_theme")
-                call her_main("","base","base", xpos="base", ypos="base")
+                call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
                 call ctc
 
                 m "..."
@@ -154,11 +154,11 @@ label hermione_summon_setup:
                 else:
                     call her_main("I can't have my nipples poking out all the time, [genie_name]! It's distracting!","annoyed","angryL")
 
-                call her_main("","soft","base")
+                call her_main("", "soft", "base", "base", "mid")
                 pause.2
                 m "Alright,... It looks cute on you."
                 m "You can keep it on for now."
-                call her_main("Thank you, [genie_name].","base","base")
+                call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
 
                 $ h_request_wear_top = True
                 $ h_request_wear_bottom = True
@@ -173,7 +173,7 @@ label hermione_summon_setup:
                 with d3
 
                 call play_music("hermione_theme")
-                call her_main("","base","base", xpos="base", ypos="base")
+                call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
 
             #Unlocks rewards.
             call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_accs_wool_g_ITEM)
@@ -204,7 +204,7 @@ label hermione_summon_setup:
                 call ctc
 
                 m "Damn girl. You look drenched..."
-                call her_main("I'm sorry, [genie_name], but... It's raining cats and dogs out there!","open","base")
+                call her_main("I'm sorry, [genie_name], but... It's raining cats and dogs out there!", "open", "base", "base", "mid")
                 call her_main("I couldn't find my robe so I just put on a sweater and some jeans...","open","baseL")
                 call her_main("I hope you don't mind my uniform not being up for standards. I didn't want it to get wet.","disgust","down")
                 m "It's fine, [hermione_name]."
@@ -221,7 +221,7 @@ label hermione_summon_setup:
                 with d3
 
                 call play_music("hermione_theme")
-                call her_main("","base","base", xpos="base", ypos="base")
+                call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
 
             #Unlocks rewards.
             call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_rainy_ITEM)
@@ -239,7 +239,7 @@ label hermione_summon_setup:
             if her_mood > 1:
                 call her_main("","annoyed","baseL", xpos="base", ypos="base")
             else:
-                call her_main("","base","base", xpos="base", ypos="base")
+                call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
 
             if not h_request_wear_robe:
                 pause.5 #Shows Hermione with robe for a bit.
@@ -266,12 +266,12 @@ label hermione_summon_setup:
                 with d3
 
                 call play_music("hermione_theme")
-                call her_main("","base","base", xpos="base", ypos="base")
+                call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
                 call ctc
 
                 m "New outfit?"
                 call her_main("Yes, [genie_name]. I brought it with me from home. It's a bit too cold for just my normal uniform...","open","baseL")
-                call her_main("Do you like it?","soft","base")
+                call her_main("Do you like it?", "soft", "base", "base", "mid")
                 g9 "I do, [hermione_name]. It's cute."
                 $ her_mood -= 10
                 if her_mood < 0:
@@ -284,7 +284,7 @@ label hermione_summon_setup:
                 with d3
 
                 call play_music("hermione_theme")
-                call her_main("","base","base", xpos="base", ypos="base")
+                call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
 
             #Unlocks rewards.
             call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_ITEM)
@@ -309,12 +309,12 @@ label hermione_summon_setup:
                 with d3
 
                 call play_music("hermione_theme")
-                call her_main("","base","base", xpos="base", ypos="base")
+                call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
                 call ctc
 
                 m "That's quite the cute outfit, [hermione_name]."
                 call her_main("Thank you, [genie_name]. I made some changes to the old one...","open","baseL")
-                call her_main("Do you like it?","soft","base")
+                call her_main("Do you like it?", "soft", "base", "base", "mid")
                 g9 "Very much so, [hermione_name]. I love the breast window."
                 $ her_mood -= 10
                 if her_mood < 0:
@@ -327,7 +327,7 @@ label hermione_summon_setup:
                 with d3
 
                 call play_music("hermione_theme")
-                call her_main("","base","base", xpos="base", ypos="base")
+                call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
 
             #Unlocks rewards.
             call unlock_clothing(text = ">New clothing items for Hermione have been unlocked!", item = hg_muggle_cold_sexy_ITEM)

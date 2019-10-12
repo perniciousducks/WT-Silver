@@ -168,9 +168,9 @@ label forest_BJ_2:
     pause.1
     call her_main("{size=+10}[genie_name]!{/size}","shock","wide",xpos="right",ypos="base",trans="hpunch")
     call her_main("Ugh... Don't startle me like that!","annoyed","baseL")
-    call her_main("And yes, I've been collecting some mushroom samples.","soft","base")
+    call her_main("And yes, I've been collecting some mushroom samples.", "soft", "base", "base", "mid")
     m "Cool..."
-    call her_main("So what are you doing out here?","base","base")
+    call her_main("So what are you doing out here?", "base", "base", "base", "mid")
     call her_main("I thought you didn't leave your office anymore?","soft","suspicious")
     m "Oh, you know me... Always looking to connect with my students..."
     call her_main("Mhmmm... So that's what you're down here for then? To {i}connect{/i}?","base","squint")

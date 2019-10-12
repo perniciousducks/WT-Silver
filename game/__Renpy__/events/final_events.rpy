@@ -6,18 +6,18 @@ label ball_quest_E1:
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call play_music("chipper_doodle")
-    call her_main("[genie_name]?","soft","base", xpos="right", ypos="base")
+    call her_main("[genie_name]?", "soft", "base", "base", "mid", xpos="right", ypos="base")
     m "Miss Granger, how can I help you?"
-    call her_main("Sir, have you made your decision yet on who will be in charge of the \"ABOC\" this year?","open","base")
+    call her_main("Sir, have you made your decision yet on who will be in charge of the \"ABOC\" this year?", "open", "base", "base", "mid")
     m "\"ABOC\"?"
     call her_main("The \"Autumn Ball Organization Committee\", sir...","open","closed")
     m "Ehm... Sure..."
     call her_main("Please excuse me if I am being too direct with this, sir...","normal","frown")
     call her_main("But I think you should put me in charge.","open","angryCl")
     her "I did it last year and it was the best organised \"autumn ball\" Hogwarts has had in years."
-    call her_main("You said so yourself, sir. Do you remember?","normal","base")
+    call her_main("You said so yourself, sir. Do you remember?", "normal", "base", "base", "mid")
     m "Right, of course..."
-    call her_main("So, is this a yes?","base","base")
+    call her_main("So, is this a yes?", "base", "base", "base", "mid")
     her "Does this mean I will be in charge again this year?"
 
     menu:
@@ -32,7 +32,7 @@ label ball_quest_E1:
             m "Well of course... I was just kidding."
             m "You shall be in charge, [hermione_name]..."
             label one_thing:
-                call her_main("Thank you, [genie_name].","base","base")
+                call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
             m "There is one condition, though..."
             call her_main("A conditions, [genie_name]?","normal","frown")
 
@@ -86,7 +86,7 @@ label ball_quest_E1:
 
 
             if d_flag_01 or d_flag_02 or d_flag_03:
-                call her_main("What?!","open","base")
+                call her_main("What?!", "open", "base", "base", "mid")
                 m "What?"
                 call her_main("[genie_name]!","angry","angry")
                 m "What?"
@@ -99,7 +99,7 @@ label ball_quest_E1:
                 m "Entrusting the thing to somebody else would be a crime, you know that."
                 call her_main("..........","annoyed","angryL")
                 m "Don't you care about your classmates at all?"
-                call her_main("What?","open","base")
+                call her_main("What?", "open", "base", "base", "mid")
                 m "Put your selfishness aside for once, would you?"
                 call her_main("My... selfishness?","annoyed","worriedL")
                 m "Your classmates deserve the best organised ball possible!"
@@ -137,7 +137,7 @@ label ball_quest_E1:
                     pause.5
 
                     show screen blktone
-                    call her_main("","annoyed","base")
+                    call her_main("", "annoyed", "base", "base", "mid")
                     call ctc
 
                     m "Very good miss Granger..."
@@ -168,7 +168,7 @@ label ball_quest_E1:
                     pause.5
 
                     show screen blktone
-                    call her_main("","annoyed","base")
+                    call her_main("", "annoyed", "base", "base", "mid")
                     call ctc
 
                     call her_main("","base","worriedCl")
@@ -441,9 +441,9 @@ label ball_quest_E3:
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call play_music("chipper_doodle")
-    call her_main("My parents sent me the wrong dress!","angry","base", tears="soft", xpos="right", ypos="base")
+    call her_main("My parents sent me the wrong dress!", "angry", "base", "base", "mid", tears="soft", xpos="right", ypos="base")
     m "are You kidding me!?"
-    call her_main("They sent me the dress I wore to the ball last year...","angry","base", tears="soft")
+    call her_main("They sent me the dress I wore to the ball last year...", "angry", "base", "base", "mid", tears="soft")
     m "Those inconsiderate bastards!"
     call her_main("Are you making fun of me sir?","mad","worried", tears="soft")
     m "Can you blame me?"
@@ -499,7 +499,7 @@ label ball_quest_E4:
     call her_main("I came to apologize for my...","open","worriedL")
     her "...my hysterical behaviour yesterday."
     m "Sure thing, don't worry about it."
-    call her_main("Thank you, sir.","open","base")
+    call her_main("Thank you, sir.", "open", "base", "base", "mid")
     call her_main("Still, I cannot help but feel awful for causing a scene...","open","angryCl")
     m "So the issue has been resolved then?"
     call her_main("Not really...","open","worried")
@@ -547,15 +547,15 @@ label ball_quest_E5:
 
     call give_reward(">You give the ball gown to Hermione...","interface/icons/box_red_1.png")
 
-    call her_main("Hm...? What is this?","base","base")
+    call her_main("Hm...? What is this?", "base", "base", "base", "mid")
     call her_main("{size=+7}A DRESS?!{/size}","angry","wide")
     with hpunch
     m "I thought that you--"
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("[genie_name]!","angry","base", tears="soft")
+    call her_main("[genie_name]!", "angry", "base", "base", "mid", tears="soft")
     g4 "What? What happened? Don't tell me it's the wrong colour or something!"
-    call her_main("It's perfect, sir...*sob!*","angry","base", tears="soft")
+    call her_main("It's perfect, sir...*sob!*", "angry", "base", "base", "mid", tears="soft")
     her "It's perfect... *sob!* ...I love it."
     m "You sure don't look like it..."
     her "I am sorry, sir... *Sob!*"

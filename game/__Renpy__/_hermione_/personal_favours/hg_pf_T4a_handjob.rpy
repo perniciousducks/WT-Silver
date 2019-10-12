@@ -43,7 +43,7 @@ label hg_pf_handjob:
     if her_mood != 0:
         call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
     else:
-        call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
 
     # Points
@@ -82,9 +82,9 @@ label hg_pf_handjob:
 ### Fail Events ###
 
 label hg_pf_handjob_fail:
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]."
-    call her_main("Yes, [genie_name]?","base","base")
+    call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "Do you know what a \"handjob\" is?"
 
     $ hg_pf_handjob.counter -= 1
@@ -100,9 +100,9 @@ label hg_pf_handjob_fail:
 # Event 3 (r) -
 
 label hg_pf_handjob_T1_intro_E1:
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]."
-    call her_main("Yes, [genie_name]?","base","base")
+    call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "Do you know what a \"handjob\" is?"
     call her_main("Why?","annoyed","annoyed")
     m "I feel like getting one..."
@@ -156,9 +156,9 @@ label hg_pf_handjob_T1_intro_E1:
 
 
 label hg_pf_handjob_T1_intro_E2:
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
-    call her_main("Yes, [genie_name]?","base","base")
+    call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "Do you know what a \"handjob\" is?"
     call her_main("You have asked me that already, [genie_name].","disgust","glance")
     m "Ah, that's right."
@@ -180,9 +180,9 @@ label hg_pf_handjob_T1_intro_E2:
 
 
 label hg_pf_handjob_T1_repeat:
-    call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
-    call her_main("[genie_name]?","base","base")
+    call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "How would you like to give me another handjob?"
 
     call her_main("...............","upset","angry")
@@ -200,9 +200,9 @@ label hg_pf_handjob_T1_repeat:
 # Event 3 (r) -
 
 label hg_pf_handjob_T2_intro_E1:
-    call her_main("[genie_name]?","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("[genie_name]?", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
-    call her_main("[genie_name]?","base","base")
+    call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "You don't mind giving me another handjob, do you?"
     call her_main("*Uhm*...","upset","down")
     call her_main("As long as I am getting paid...","grin","baseL")
@@ -212,9 +212,9 @@ label hg_pf_handjob_T2_intro_E1:
 
 
 label hg_pf_handjob_T2_intro_E2:
-    call her_main("[genie_name]?","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("[genie_name]?", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
-    call her_main("[genie_name]?","base","base")
+    call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "You don't mind giving me another handjob, do you?"
     call her_main("I guess not, [genie_name]...","grin","down")
     call her_main("...................","clench","baseL")
@@ -223,9 +223,9 @@ label hg_pf_handjob_T2_intro_E2:
 
 
 label hg_pf_handjob_T2_repeat:
-    call her_main("[genie_name]?","base","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("[genie_name]?", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
-    call her_main("[genie_name]?","base","base")
+    call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "You don't mind giving me another handjob, do you?"
     call her_main("Of course not, [genie_name]...","grin","baseL")
 
@@ -294,15 +294,15 @@ label hg_pf_handjob_1:
             $ d_flag_01 = True #If TRUE Genie promised to warn her.
             call her_main("Thank you, [genie_name].","normal","worriedCl")
         "\"I myself don't always know when...\"":
-            call her_main("Really? But I thought...","open","base")
+            call her_main("Really? But I thought...", "open", "base", "base", "mid")
             call her_main("Well, never mind then...","normal","worriedCl")
 
-    call her_main("........","open","base")
+    call her_main("........", "open", "base", "base", "mid")
     m "............."
     call her_main(".............","normal","worriedCl")
     call her_main("Err... [genie_name]?")
     m "Yes, what is it?"
-    call her_main("How long do you think this will take?","open","base")
+    call her_main("How long do you think this will take?", "open", "base", "base", "mid")
     m "Why?"
 
     if daytime:
@@ -315,7 +315,7 @@ label hg_pf_handjob_1:
     call her_main("I do, [genie_name]! I'm sorry...","base","happyCl")
     call her_main("I will just keep on stroking it then...")
     m "Well, there is something you could do to speed up the process..."
-    call her_main("Really? What is it [genie_name]?","base","base")
+    call her_main("Really? What is it [genie_name]?", "base", "base", "base", "mid")
 
     menu:
         m "..."
@@ -355,30 +355,30 @@ label hg_pf_handjob_1:
             g4 "{size=-4}(Here it comes! Should I warn her?){/size}"
 
         "\"Stick your tongue out and look at me!\"":
-            call her_main("What?","base","base")
+            call her_main("What?", "base", "base", "base", "mid")
             m "Just do it, slut."
             call her_main("Like this?","open_wide_tongue","squintL")
             m "Yes, good. Keep looking into my eyes and stroke my cock."
-            call her_main(".....................","open_wide_tongue","base")
+            call her_main(".....................", "open_wide_tongue", "base", "base", "mid")
             m "Yes... Good..."
-            call her_main("...........","open_wide_tongue","base")
+            call her_main("...........", "open_wide_tongue", "base", "base", "mid")
             call her_main("...........")
-            call her_main("I can't keep my mouth open for so long, [genie_name]. I will start to drool...","open","base")
+            call her_main("I can't keep my mouth open for so long, [genie_name]. I will start to drool...", "open", "base", "base", "mid")
             m "But I want you to drool..."
-            call her_main("What? But I will look silly!","open","base")
+            call her_main("What? But I will look silly!", "open", "base", "base", "mid")
             m "That's the point, [hermione_name]!"
             call her_main(".......","annoyed","worriedL")
             m "Don't you want to be done with this as soon as possible?"
             call her_main("............","normal","worriedCl")
-            call her_main("A-ha.....","open_wide_tongue","base")
+            call her_main("A-ha.....", "open_wide_tongue", "base", "base", "mid")
             m "Good, [hermione_name]."
-            call her_main("..............","open_wide_tongue","base")
+            call her_main("..............", "open_wide_tongue", "base", "base", "mid")
             m "Yes, keep on stroking my cock."
-            call her_main("..................","open_wide_tongue","base")
+            call her_main("..................", "open_wide_tongue", "base", "base", "mid")
             g4 "Oh... I just want to slide my cock into that wet hole of a mouth of yours!"
             call her_main(".................","open_wide_tongue","angryCl")
             m "No, keep on looking at me!"
-            call her_main(".....................","open_wide_tongue","base")
+            call her_main(".....................", "open_wide_tongue", "base", "base", "mid")
             m "Yes, you little slut!"
             call her_main("......................","open_wide_tongue","angry")
             m "I want to cum in that mouth, yes..."
@@ -416,7 +416,7 @@ label hg_pf_handjob_1:
             m "Can you do it again, then?"
             call her_main("I could...","normal","worriedCl")
             m "Do it!"
-            call her_main("Well, alright...","open","base")
+            call her_main("Well, alright...", "open", "base", "base", "mid")
 
             $ renpy.play('sounds/kiss.mp3')
             call hg_chibi_transition("hj_kiss", trans="kissiris")
@@ -432,7 +432,7 @@ label hg_pf_handjob_1:
             pause.5
 
             m "Good... Now do it again and just stay there for a while."
-            call her_main("You mean with my lips touching your... cock, [genie_name]?","open","base")
+            call her_main("You mean with my lips touching your... cock, [genie_name]?", "open", "base", "base", "mid")
             call her_main("No, I will look stupid...","annoyed","worriedL")
             m "Don't be silly, [hermione_name]. Nobody is watching."
             call her_main("You are, [genie_name].","open","down")
@@ -475,7 +475,7 @@ label hg_pf_handjob_1:
             call her_main("What? So soon?!","shock","wide")
             g4 "{size=+5}Yeah, you did a great job!!!{/size}"
             g4 "{size=+5}You little whore!!!{/size}"
-            call her_main("No, [genie_name], wait, I--","angry","base")
+            call her_main("No, [genie_name], wait, I--", "angry", "base", "base", "mid")
             g4 "{size=+5}Too late for that, slut!{/size}"
             call her_main("*whimper*","angry","down_raised")
             g4 "{size=+5}ARGH! YES!!!{/size}"
@@ -517,7 +517,7 @@ label hg_pf_handjob_1:
             else:
                 call her_main("At this hour The \"Gryffindor\" common room will be full of people...","angry","worriedCl", emote="05")
                 call her_main("I didn't want to have to return there all covered in your... spunk, [genie_name].")
-                call her_main("Oh, it's getting pretty late...","angry","base")
+                call her_main("Oh, it's getting pretty late...", "angry", "base", "base", "mid")
                 m "So you will go like this, instead?"
                 m "With your clothes all sperm-soaked from the inside?"
                 call her_main("What choice do I have?","angry","down_raised")
@@ -534,7 +534,7 @@ label hg_pf_handjob_1:
             pause.5
 
             call her_main("Ew... Your sperm, [genie_name]...","angry","down_raised")
-            call her_main("It's everywhere under my uniform...","angry","base")
+            call her_main("It's everywhere under my uniform...", "angry", "base", "base", "mid")
             m "Just put it in your mouth next time."
             call her_main("I... don't think so, [genie_name].","annoyed","annoyed")
             call her_main("I really need to go. Can I just get paid now?")
@@ -629,7 +629,7 @@ label hg_pf_handjob_2:
     menu:
         m "..."
         "\"What do you think of my cock?\"":
-            call her_main("Huh?","open","base")
+            call her_main("Huh?", "open", "base", "base", "mid")
             call her_main("Oh, that's right...")
             call her_main("I need to compliment your penis! I completely forgot about that!","angry","worriedCl", emote="05")
             m "Well, you don't have to--"
@@ -662,11 +662,11 @@ label hg_pf_handjob_2:
             m "Yes, yes... Like that."
 
         "\"Call yourself a whore!\"":
-            call her_main("Excuse me?","open","base")
+            call her_main("Excuse me?", "open", "base", "base", "mid")
             call her_main("Oh, that's right! I'm supposed to degrade myself, right?","annoyed","suspicious")
             m "Well, you don't have to, but..."
             call her_main("That's alright, I don't mind.","upset","closed")
-            call her_main("Alright then! I am a whore!","base","base")
+            call her_main("Alright then! I am a whore!", "base", "base", "base", "mid")
             m "Good. Glad we established that."
             m "Now I want you to say..."
 
@@ -679,7 +679,7 @@ label hg_pf_handjob_2:
                     m "Yes! Good!"
                 "\"I live to suck cock!\"":
                     call her_main("Em...","angry","wink")
-                    call her_main("I live to suck penis, er... I mean cock...","base","base")
+                    call her_main("I live to suck penis, er... I mean cock...", "base", "base", "base", "mid")
                     m "Really? Well why don't you suck on this one then?"
                     call her_main("[genie_name], I am just repeating after you...","smile","angry")
                     m "Really? Could've fooled me...."
@@ -771,7 +771,7 @@ label hg_pf_handjob_2_continue:
             call her_main(".......")
             m "I see. And in those fantasies of yours..."
             m "Who is doing the raping?"
-            call her_main("My father...?","angry","base")
+            call her_main("My father...?", "angry", "base", "base", "mid")
             m "Do you enjoy it?"
             call her_main("No. I cry and beg for him to stop!","angry","down_raised")
             m "Heh... Nice."
@@ -787,9 +787,9 @@ label hg_pf_handjob_2_continue:
             pause.5
 
             call her_main("But He doesn't listen! He rips my panties off!","grin","dead")
-            call her_main("I beg him to stop! I scream and I scream!","angry","base", tears="soft")
+            call her_main("I beg him to stop! I scream and I scream!", "angry", "base", "base", "mid", tears="soft")
             m "Uhm, [hermione_name]?"
-            call her_main("Yes?","angry","base", tears="soft")
+            call her_main("Yes?", "angry", "base", "base", "mid", tears="soft")
             m "You are not stroking my cock anymore..."
             call her_main("Oh, I am sorry, [genie_name].","grin","worriedCl", emote="05")
             call her_main("I got lost in thought...")
@@ -797,7 +797,7 @@ label hg_pf_handjob_2_continue:
             call hg_chibi_transition("hj", trans="d5")
             pause.5
 
-            call her_main("But everything I just said is not true of course!","open","base")
+            call her_main("But everything I just said is not true of course!", "open", "base", "base", "mid")
             call her_main("I never have fantasies like that!")
             m "Right."
 
@@ -813,7 +813,7 @@ label hg_pf_handjob_2_continue:
             m "Ehm... Well..."
             m "Ah, it doesn't matter."
             m "Just say the thing!"
-            call her_main("Fine!","normal","base")
+            call her_main("Fine!", "normal", "base", "base", "mid")
             call her_main("Sometimes I get lonely and let my dog mount me.","open","suspicious")
             m "That sounded so fake..."
             call her_main("Because we don't even own a dog!","normal","frown")
@@ -835,7 +835,7 @@ label hg_pf_handjob_2_continue:
                 call her_main("I could just call myself a \"Whore\" again, as usual...","annoyed","worriedL")
                 m "Yes. A great suggestion."
                 call her_main("...............","annoyed","baseL")
-                call her_main("[tmp_name]","base","base")
+                call her_main("[tmp_name]", "base", "base", "base", "mid")
                 m "A bit louder..."
                 call her_main("[tmp_name]!!!","scream","angryCl")
                 g9 "He-he..."
@@ -938,9 +938,9 @@ label hg_pf_handjob_2_cumming:
             pause.8
 
             if daytime:
-                call her_main("Well, I think I'd better go now... my Classes are about to start.","base","base", xpos="right", ypos="base")
+                call her_main("Well, I think I'd better go now... my Classes are about to start.", "base", "base", "base", "mid", xpos="right", ypos="base")
             else:
-                call her_main("Well, I think I'd better go now...  It's getting late.","base","base", xpos="right", ypos="base")
+                call her_main("Well, I think I'd better go now...  It's getting late.", "base", "base", "base", "mid", xpos="right", ypos="base")
 
             m "Will you be alright in those clothes?"
             call her_main("What?","open","down")
@@ -992,7 +992,7 @@ label hg_pf_handjob_2_cumming:
             call her_chibi("stand","mid","base")
             call gen_chibi("stand","desk","base")
 
-            call her_main("","soft","base", tears="soft", xpos="right", ypos="base")
+            call her_main("", "soft", "base", "base", "mid", tears="soft", xpos="right", ypos="base")
             with fade
             call ctc
 
@@ -1006,7 +1006,7 @@ label hg_pf_handjob_2_cumming:
             call her_main("What a mess...","angry","down_raised")
             call her_main("[genie_name], you should have warned me.","upset","closed")
             m "It's your fault, [hermione_name]!"
-            call her_main("My fault?","angry","base")
+            call her_main("My fault?", "angry", "base", "base", "mid")
             m "Yes! You got me going too well..."
             m "I forgot about everything else..."
             call her_main("Oh...","angry","wink")
@@ -1066,7 +1066,7 @@ label hg_pf_handjob_2_cumming:
                 call her_main("I can just go and spend some time with the guys in the common room now and nobody will know...","base","down")
 
             m "Yes... With your belly full of semen..."
-            call her_main("[genie_name]!","angry","base")
+            call her_main("[genie_name]!", "angry", "base", "base", "mid")
             her "...Can I just get paid now, please, [genie_name]?"
 
     jump end_hg_pf_handjob

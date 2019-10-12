@@ -305,7 +305,7 @@ label hg_pf_admire_breasts_T3_promise:
 
             her "Thank-"
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("...........","annoyed","base")
+            call her_main("...........", "annoyed", "base", "base", "mid")
             call her_main("You are being inappropriate, [genie_name].","annoyed","annoyed")
 
             return
@@ -513,10 +513,10 @@ label hg_pf_admire_breasts_T4_promise: # Call label
 
     menu:
         "\"You have great tits, [hermione_name].\"":
-            call her_main("You really think so [genie_name]?","annoyed","base")
+            call her_main("You really think so [genie_name]?", "annoyed", "base", "base", "mid")
             call her_main("I am glad you like them, [genie_name]...","base","closed")
         "\"Your tits are alright I suppose...\"":
-            call her_main("Huh?","annoyed","base")
+            call her_main("Huh?", "annoyed", "base", "base", "mid")
             her "Does this mean you don't like them, [genie_name]?"
             call her_main("I'm sorry...","disgust","down_raised")
 
@@ -744,7 +744,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             hide screen blkfade
             with d5
 
-            call her_main("","base","base")
+            call her_main("", "base", "base", "base", "mid")
             call ctc
             her "Well, this should do for now..."
             hide screen hermione_main
@@ -801,7 +801,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             hide screen blkfade
             with d5
 
-            call her_main("","base","base")
+            call her_main("", "base", "base", "base", "mid")
             call ctc
 
             her "Well, this should do for now..."

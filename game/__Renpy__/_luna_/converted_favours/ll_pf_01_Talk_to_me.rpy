@@ -703,7 +703,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         $ luna_gold += 25
         m "and here's your gold."
         ">You hand Luna and hermione 25 gold each."
-        call her_main("Thank you [genie_name]!","base","base")
+        call her_main("Thank you [genie_name]!", "base", "base", "base", "mid")
         call lun_main("...Thank you sir.","normal","seductive","sad","R")
         ">Luna and hermione leave your office, talking as they go."
 

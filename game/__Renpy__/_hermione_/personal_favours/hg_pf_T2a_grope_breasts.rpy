@@ -90,7 +90,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
     if hg_strip.trigger:
         menu:
             "\"First, lift up your top\"":
-                call her_main("Sir?!","clench","base")
+                call her_main("Sir?!", "clench", "base", "base", "mid")
                 m "What? It's not like I haven't seen them before..."
                 call her_main("But!","clench","down_raised")
                 call play_music("playful_tension") # SEX THEME.
@@ -250,7 +250,7 @@ label hg_pf_grope_breasts_T3_naked:
     m "Did you like it?"
     call her_main("...Of course, not, [genie_name].","annoyed","closed")
     m "Let's try this again, then."
-    call her_main("What?","annoyed","base")
+    call her_main("What?", "annoyed", "base", "base", "mid")
     call slap_her
 
     call her_main("!!!","scream","wide", cheeks="blush")
@@ -324,23 +324,23 @@ label hg_pf_grope_breasts_T3_continue:
 
     call nar(">You squeeze her tits a few more times, then give them a firm tug...")
 
-    call her_main("Ah... [genie_name]...","open","base")
+    call her_main("Ah... [genie_name]...", "open", "base", "base", "mid")
     m "What? You do enjoy this, don't you?"
-    call her_main("No... I...","open","base")
+    call her_main("No... I...", "open", "base", "base", "mid")
     m "Don't you lie to your headmaster, [hermione_name]!"
 
     call nar(">You squeeze her tits again...")
 
     call her_main("Ah...","open","down")
     call her_main("I am not lying, [genie_name]...","open","down")
-    call her_main("Why would I enjoy this?","open","base")
+    call her_main("Why would I enjoy this?", "open", "base", "base", "mid")
     m "I don't know [hermione_name]. You tell me."
 
     call nar(">You keep massaging her breasts...")
 
-    call her_main("Ah... I...","open","base")
+    call her_main("Ah... I...", "open", "base", "base", "mid")
     m "Yes, what is it?"
-    call her_main("It's... It's nothing, [genie_name]...","angry","base")
+    call her_main("It's... It's nothing, [genie_name]...", "angry", "base", "base", "mid")
     m "Oh, I think it's something."
     m "I think you like me squeezing your tits like this."
     call her_main("[genie_name], please...","angry","down_raised")
@@ -350,14 +350,14 @@ label hg_pf_grope_breasts_T3_continue:
     else:
         call her_main("It's getting late...","angry","down_raised")
 
-    call her_main("Can I go now, [genie_name]? Please?","angry","base")
+    call her_main("Can I go now, [genie_name]? Please?", "angry", "base", "base", "mid")
 
     m "Sure, go ahead..."
     pause 2
     call her_main("...............","angry","down_raised")
     pause.2
 
-    call her_main("[genie_name], your are still... Holding me...","angry","base")
+    call her_main("[genie_name], your are still... Holding me...", "angry", "base", "base", "mid")
     m "Oh, right... my bad...."
 
     call nar(">You let go of Hermione's breasts...")
@@ -401,7 +401,7 @@ label hg_pf_grope_breasts_T4_naked: # No top.
     call her_main("[genie_name], why did you do that?","grin","glance", cheeks="blush")
     m "Dunno... Seemed like a good idea..."
     m "Did you like it?"
-    call her_main("..........","annoyed","base")
+    call her_main("..........", "annoyed", "base", "base", "mid")
     call her_main("I am not a pervert...")
     call nar(">You give Hermione's tits another loud smack!")
     call slap_her
@@ -460,7 +460,7 @@ label hg_pf_grope_breasts_T5_naked:
     call her_main("I do, [genie_name]... Ah...","base","glance")
     m "Heh..."
     m "What if I pinch your nipples?"
-    call her_main("!!!","angry","base")
+    call her_main("!!!", "angry", "base", "base", "mid")
     call her_main("Ah! [genie_name]...","open","worriedCl")
     m "And what if I do this?"
     call nar(">You grab the girl by her hard nipples and start pulling...")

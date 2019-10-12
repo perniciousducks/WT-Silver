@@ -6,10 +6,10 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     m "Guess what I have for you today."
     call her_main("Is it another foul tasting potion that will try transform me into a hideous animal?","open","angryCl")
     m "Well I mean this one smells nice."
-    call her_main("Will it taste nice though?","open","base")
+    call her_main("Will it taste nice though?", "open", "base", "base", "mid")
     m "Only one way to find out."
     call nar(">You hand her the potion and she brings it up to her nose.")
-    call her_main("Well you're right, it does smell good. Let's find out if it tastes good...","base","base")
+    call her_main("Well you're right, it does smell good. Let's find out if it tastes good...", "base", "base", "base", "mid")
     call her_chibi("drink_potion","mid","base")
 
     call nar(">She drinks the potion at a leisurely pace.")
@@ -25,14 +25,14 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("I don't think so [genie_name], you're only paying me for drinking the potion.","open","closed")
     call her_main("If you expect to see me without my shirt on then you'll have to try a little harder.","base","suspicious")
     m "Oh I wouldn't be so sure of that."
-    call her_main("So is that what it does? Makes me show you my breasts? Is it some sort of mind control potion?","base","base")
+    call her_main("So is that what it does? Makes me show you my breasts? Is it some sort of mind control potion?", "base", "base", "base", "mid")
     m "Mind control? Where's the fun in that? No, this is something much more entertaining."
     call her_main("Well it better happen soon otherwise I'm lea-","annoyed","angryL")
     call nar(">You notice her breasts start to expand ever so slightly.") #Start using facial expressions mixed with Captain Nemo art
     call her_main("...","annoyed","annoyed")
     call her_main("As I said, something better happen soon or I'm leaving.","annoyed","worriedL")
     m "I wouldn't worry about it, from the looks of it, it's already started."
-    call her_main("Why, what's wrong with me?","open","base")
+    call her_main("Why, what's wrong with me?", "open", "base", "base", "mid")
     m "There's nothing wrong with you. If anything, it's an improvement."
     call her_main("What is?","annoyed","annoyed")
     call nar(">She starts patting down her body. Checking to see if she has grown any new ears or a tail.")
@@ -41,7 +41,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("!!!","angry","down_raised")
     call her_main("Have my breasts gotten bigger?","angry","wide")
     m "About time you noticed."
-    call her_main("Why would you make my breasts bigger? They're already big enough!","angry","base")
+    call her_main("Why would you make my breasts bigger? They're already big enough!", "angry", "base", "base", "mid")
     m "You know what they say, can't have too much of a good thing."
     call her_main("It's the other way around [genie_name].","annoyed","annoyed")
     m "Is it? Well I prefer my version."
@@ -102,7 +102,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("Well...","upset","wink",xpos="mid",ypos="base")
     call nar(">You reach out and grab her breasts through her stretched shirt.")
     call her_main("!!!","angry","wide")
-    call her_main("Please be gentle [genie_name]. They seem to be much more sensitve than usual, it must be the potion.","angry","base")
+    call her_main("Please be gentle [genie_name]. They seem to be much more sensitve than usual, it must be the potion.", "angry", "base", "base", "mid")
     m "Well I'll take that into account..."
     call nar(">You take a breast in each hand and start kneading them with your fingers.")
     call her_main("...","open","closed")
@@ -193,7 +193,7 @@ label potion_scene_2_2: #ass expansion
     m "That's of no concern to you. What should concern you is the 20 points that you are able to earn should you drink it."
     call her_main("...Fine, give me the bottle.","normal","frown")
     call nar(">She takes a quizzical smell of the bottle.")
-    call her_main("At least this one smells good.","base","base")
+    call her_main("At least this one smells good.", "base", "base", "base", "mid")
 
     call her_chibi("drink_potion","mid","base")
     pause 2
@@ -205,7 +205,7 @@ label potion_scene_2_2: #ass expansion
 
     call her_main("Ahhh, that was good! So what was it?","grin","worriedCl",emote="05")
     m "The effects should be visible soon enough."
-    call her_main("Well can you at least give me a hint?","open","base")
+    call her_main("Well can you at least give me a hint?", "open", "base", "base", "mid")
     m "Let's just say that it's a redistribution of ass{w}ets." ###Added {w} instead of your ...
     call her_main("What do you mean by--","annoyed","angryL")
     call nar(">Hermione goes white as she starts to feel her body churn.")
@@ -365,7 +365,7 @@ label potion_scene_2_2: #ass expansion
             m "Not your asshole, [hermione_name], I intend to fuck your entire ass!"
             call nar(">You grab a firm hold of her cheeks and pull them apart, allowing your shaft to rest in between, on top of her asshole.")
             m "A perfect fit wouldn't you say?"
-            call her_main("What do you-","angry","base")
+            call her_main("What do you-", "angry", "base", "base", "mid")
             hide screen hermione_main
             call nar(">You squeeze her ass-cheeks back together around your cock and start pumping in between them.")
             call her_main("!!!","grin","ahegao")

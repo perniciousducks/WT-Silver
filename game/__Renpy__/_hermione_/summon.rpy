@@ -609,7 +609,7 @@ label hermione_talk:
 
 
 label genie_change:
-    call her_main("Ok, from now on I'll call you [genie_name].","base","base")
+    call her_main("Ok, from now on I'll call you [genie_name].", "base", "base", "base", "mid")
     jump hermione_talk
 
 label genie_change_fail:
@@ -619,10 +619,10 @@ label genie_change_fail:
 label hermione_change:
     if temp_name == "Miss Granger":
         if her_whoring <=0:
-            call her_main("Sure, [genie_name].","base","base")
+            call her_main("Sure, [genie_name].", "base", "base", "base", "mid")
         else:
             call her_main("You don't have to be so formal, [genie_name], you know?","base","closed")
-            call her_main("","base","base")
+            call her_main("", "base", "base", "base", "mid")
     elif temp_name == "Girl":
         if her_whoring >=1 and her_whoring < 3:
             call her_main("This girl thing again?","annoyed","squint")
@@ -640,17 +640,17 @@ label hermione_change:
             call her_main("","normal","glanceL")
         elif her_whoring >= 5 and her_whoring < 19:
             call her_main("I can be a bit nerdy sometimes I suppose..","angry","happyCl", emote="05")
-            call her_main("","base","base")
+            call her_main("", "base", "base", "base", "mid")
         elif her_whoring >= 19:
             call her_main("I don't read as much as I used to anymore.","grin","glanceL", emote="05")
             call her_main("","base","glance")
     elif temp_name == "Good Girl":
         if her_whoring >=5 and her_whoring < 7:
             call her_main("Well, I do try my best, [genie_name].","base","closed")
-            call her_main("","base","base")
+            call her_main("", "base", "base", "base", "mid")
         elif her_whoring >=7 and her_whoring < 19:
             call her_main("I'm not sure if I'd qualify, but fine.","annoyed","wink")
-            call her_main("","normal","base")
+            call her_main("", "normal", "base", "base", "mid")
         elif her_whoring >=19:
             call her_main("I could act like a good girl if you really want me to...","smile","wink", cheeks="blush")
             call her_main("","base","happy", cheeks="blush")
@@ -672,21 +672,21 @@ label hermione_change:
             call her_main("I guess I am a bit.","soft","down")
             call her_main("I did fail that test after all...","disgust","down_raised")
             call her_main("","normal","concerned")
-            call her_main("","normal","base")
+            call her_main("", "normal", "base", "base", "mid")
         elif her_whoring >=11 and her_whoring < 17:
             call her_main("I may be a little bit naughty at times.","base","SquintL",cheeks="blush")
         elif her_whoring >=17:
             call her_main("I may be a little bit naughty at times.","base","SquintL",cheeks="blush")
-            call her_main("","base","base", cheeks="blush")
+            call her_main("", "base", "base", "base", "mid", cheeks="blush")
     elif temp_name == "Princess":
         if her_whoring >= 11 and her_whoring < 13:
             call her_main("That would make you my prince wouldn't it?","open","baseL",cheeks="blush")
-            call her_main("","base","base", cheeks="blush")
+            call her_main("", "base", "base", "base", "mid", cheeks="blush")
         elif her_whoring >= 13:
             call her_main ("Yes... My prince.","smile","happy")
             m "..."
             call her_main("I-I mean, [genie_name].","smile","happyCl", emote="05")
-            call her_main("","base","base")
+            call her_main("", "base", "base", "base", "mid")
     elif temp_name == "Pet":
         if her_whoring >= 11 and her_whoring < 13:
             call her_main("You want to call me.... {w=0.5}a pet?","normal","frown")
@@ -702,7 +702,7 @@ label hermione_change:
             call her_main ("","smile","happy")
             m "Don't do that..."
             call her_main ("Such a party pooper.","annoyed","happyCl")
-            call her_main("","base","base")
+            call her_main("", "base", "base", "base", "mid")
     elif temp_name == "Bitch":
         if her_whoring >=13 and her_whoring < 15:
             call her_main("Isn't this a bit inappropriate [genie_name]?","mad","down")
@@ -757,13 +757,13 @@ label hermione_change:
             menu:
                 "-Say its fine-":
                     m "Fine, I won't call you that..."
-                    call her_main("You won't?","open","base")
-                    call her_main("","soft","base")
+                    call her_main("You won't?", "open", "base", "base", "mid")
+                    call her_main("", "soft", "base", "base", "mid")
                     m "Of course..."
                     call her_main("I am glad we're on the same page on this one, [genie_name].","open","closed")
                     call her_main("","base","closed")
                     m "In fact, from this point forward you don't have to call me [genie_name] or exchange any favours..."
-                    call her_main("","soft","base", emote="04")
+                    call her_main("", "soft", "base", "base", "mid", emote="04")
                     m "Lets just void this whole... deal of yours shall we."
                     call her_main("B-but, [genie_name]?!","mad","wide_stare", emote="02")
                     call her_main("","mad","wide_stare")
@@ -820,15 +820,15 @@ label hermione_change:
                     menu:
                         "-Mass flood-":
                             g4 "I said mass flood!"
-                            call her_main("Mass flood?", "soft","base")
+                            call her_main("Mass flood?", "soft", "base", "base", "mid")
                             m "Are you deaf or something?"
                             if raining:
-                                call her_main("I was pretty sure you said-...", "open","base")
+                                call her_main("I was pretty sure you said-...", "open", "base", "base", "mid")
                                 call her_main("", "normal","baseL")
                                 m "Look outside the window, its raining is it not?"
                                 call her_main("I{w=0.5}... {w=0.5}Yes, you are right [genie_name].", "normal","closed")
                                 m "Of course I am."
-                                call her_main("So what did you want to talk about?", "base","base")
+                                call her_main("So what did you want to talk about?", "base", "base", "base", "mid")
                             else:
                                 call her_main("[genie_name], but its not raining..", "normal","closed")
                                 call her_main("", "disgust","down_raised", cheeks="blush")
@@ -838,7 +838,7 @@ label hermione_change:
                                 call her_main("...", "soft","down", cheeks="blush")
                         "-Mad stud-":
                             g4 "I said mad stud!"
-                            call her_main("Mad stud?", "soft","base")
+                            call her_main("Mad stud?", "soft", "base", "base", "mid")
                             g9 "My dick, your ass, bud."
                             call her_main("really...", "disgust","glance", cheeks="blush")
                             call her_main("You can be so childish sometimes, [genie_name]...", "annoyed","glanceL", cheeks="blush")
@@ -899,7 +899,7 @@ label hermione_change:
 label hermione_change_fail:
     if temp_name == "Girl":
         call her_main("I would prefer if we kept using our formal names and titles, [genie_name].","open","closed")
-        call her_main("","normal","base")
+        call her_main("", "normal", "base", "base", "mid")
     elif temp_name == "Nerd":
         call her_main("I would prefer if you didn't, [genie_name].","open","angryCl")
         call her_main("{size=-4}And I'm not a nerd...{/size}","annoyed","worried")

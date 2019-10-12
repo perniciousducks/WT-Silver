@@ -24,20 +24,20 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
 
         call bld
         m "[hermione_name]?"
-        call her_main("Yes, [genie_name]...","normal","base")
+        call her_main("Yes, [genie_name]...", "normal", "base", "base", "mid")
         m "How much will it cost for you to get naked and show me that perfect ass of yours?"
         stop music fadeout 1.0
         if her_whoring < 12:
             call her_main("Get naked and show you my...?","angry","shocked")
             jump too_much
         else:
-            call her_main("Get naked and show you my...?","open","base")
+            call her_main("Get naked and show you my...?", "open", "base", "base", "mid")
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         call her_main("[genie_name]!","scream","angryCl")
         m "Come on..."
         m "It's not like I haven't seen it all before."
-        call her_main("......","open","base")
+        call her_main("......", "open", "base", "base", "mid")
         call her_main(".............","annoyed","worriedL")
         call her_main("40 house points, [genie_name].","normal","worriedCl")
         m "So if I give you 40 house points, [hermione_name]..."
@@ -48,7 +48,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         menu:
             "\"Fine. 50 points are yours. Show me!\"":
                 $ current_payout = 50
-                call her_main("Really?","open","base")
+                call her_main("Really?", "open", "base", "base", "mid")
                 m "Well?"
                 call her_main("...","annoyed","worriedL")
                 her "You have to promise me not to touch, [genie_name]..."
@@ -260,7 +260,7 @@ label hg_pr_strip_T2_admire_rear:
     m "Alright, you can get dressed now [hermione_name]..."
 
     if her_whoring < 15 or her_mood > 1:
-        call her_main(".............","annoyed","base")
+        call her_main(".............", "annoyed", "base", "base", "mid")
     else:
         call her_main(".............","base","closed")
 
@@ -410,7 +410,7 @@ label hg_pr_strip_T3_admire_rear:
     m "Alright, you can get dressed now [hermione_name]..."
 
     if her_mood > 1:
-        call her_main(".............","annoyed","base")
+        call her_main(".............", "annoyed", "base", "base", "mid")
     else:
         call her_main(".............","base","closed")
 
@@ -548,11 +548,11 @@ label hg_pr_strip_T4_admire_rear:
 
     menu:
         "\"You have an amazing ass, [hermione_name].\"":
-            call her_main("You really think so [genie_name]?","annoyed","base", ypos="head")
+            call her_main("You really think so [genie_name]?", "annoyed", "base", "base", "mid", ypos="head")
             call her_main("I am glad you like it, [genie_name]...","base","closed")
         "\"Your ass is ok... I suppose...\"":
-            call her_main("Huh?","annoyed","base", ypos="head")
-            call her_main("Does this mean you don't like it, [genie_name]?","annoyed","base")
+            call her_main("Huh?", "annoyed", "base", "base", "mid", ypos="head")
+            call her_main("Does this mean you don't like it, [genie_name]?", "annoyed", "base", "base", "mid")
             call her_main("I'm sorry... I'll try to work out some more.","disgust","down_raised")
 
     call nar(">You stare at her ass for a while longer...")

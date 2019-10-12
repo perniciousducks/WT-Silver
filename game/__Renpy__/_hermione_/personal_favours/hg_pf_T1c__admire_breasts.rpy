@@ -51,7 +51,7 @@ label hg_pf_admire_breasts:
         call her_main("Thank you, [genie_name]...","open","baseL")
     elif her_tier <= 5:
         call her_main("..................","annoyed","worriedL")
-        call her_main("Thank you, [genie_name]...","soft","base")
+        call her_main("Thank you, [genie_name]...", "soft", "base", "base", "mid")
     else:
         call her_main("..................","base","happyCl")
         call her_main("Thank you, [genie_name]...","soft","glance")
@@ -106,10 +106,10 @@ label hg_pf_admire_breasts:
 # Event 3 (r) - Hermione will lift up her top.
 
 label hg_pf_admire_breasts_T1_intro_E1:
-    call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "[hermione_name]?"
-    call her_main("Yes, [genie_name]...","normal","base")
+    call her_main("Yes, [genie_name]...", "normal", "base", "base", "mid")
     m "Has anyone ever told you what sweet-looking breasts you have?"
     stop music fadeout 1.0
     call her_main("!!!","shock","wide")
@@ -186,7 +186,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
 
 
 label hg_pf_admire_breasts_T1_intro_E2:
-    call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "[hermione_name], Is it just me?"
     g9 "Or is it getting really hot in here?!"
@@ -207,7 +207,7 @@ label hg_pf_admire_breasts_T1_intro_E2:
 
             call her_main("How many points did you say I'd get for this?","open","angry")
             m "[current_payout] points. Just like last time."
-            call her_main("But last time I didn't need to show you my bra!","clench","base")
+            call her_main("But last time I didn't need to show you my bra!", "clench", "base", "base", "mid")
             m "You're correct, Miss Granger."
             m "But as you've already pointed our correctly..."
             g9 "That was last time!"
@@ -244,7 +244,7 @@ label hg_pf_admire_breasts_T1_intro_E2:
 
 
 label hg_pf_admire_breasts_T1_E2:
-    call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "[hermione_name], how would you like to lift up your top for me?"
     call her_main("Will I be getting points for this, Sir?","annoyed","angry")
@@ -287,20 +287,20 @@ label hg_pf_admire_breasts_T1: # Call label
 # Event 3 (r) - Hermione will lift up her top.
 
 label hg_pf_admire_breasts_T2_intro_E1:
-    call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "[hermione_name]?"
-    call her_main("Yes, [genie_name]...","normal","base")
+    call her_main("Yes, [genie_name]...", "normal", "base", "base", "mid")
     m "How much will it cost me to see your tits?"
 
     stop music fadeout 1.0
-    call her_main("How much will it cost you to...?","open","base")
+    call her_main("How much will it cost you to...?", "open", "base", "base", "mid")
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("[genie_name]!","scream","angryCl")
     m "Hm... I thought your house could use some extra points..."
     m "But I guess I was wrong..."
-    call her_main(".........?","open","base")
+    call her_main(".........?", "open", "base", "base", "mid")
     m "Please don't mind me..."
     m "All I want to do is help you..."
     call her_main(".............","annoyed","worriedL")
@@ -313,7 +313,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
     menu:
         "\"Wait. 200 points are yours. Show me!\"":
             $ current_payout = 200
-            call her_main("Really?","open","base")
+            call her_main("Really?", "open", "base", "base", "mid")
             m "Well?"
             call her_main("......................................","annoyed","worriedL")
             her "You have to promise me not to touch them, [genie_name]."
@@ -363,7 +363,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
 
 
 label hg_pf_admire_breasts_T2_intro_E2:
-    call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "[hermione_name], how would you like to show me your breasts again?"
 
@@ -386,7 +386,7 @@ label hg_pf_admire_breasts_T2_intro_E2:
 
 
 label hg_pf_admire_breasts_T2_E2:
-    call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     g9 "[hermione_name], I would very much like to see your breasts again!"
     call her_main(".............","annoyed","worriedL")
@@ -416,7 +416,7 @@ label hg_pf_admire_breasts_T2_E2:
 # Event 2 (r) - Hermione will lift up her top.
 
 label hg_pf_admire_breasts_T3_intro_E1:
-    call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?","annoyed","angryL")
@@ -432,7 +432,7 @@ label hg_pf_admire_breasts_T3_intro_E1:
 
 
 label hg_pf_admire_breasts_T3_E1:
-    call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "I need to see your tits, [hermione_name]."
     call her_main("Are you only going to watch, [genie_name]?","angry","worriedCl", cheeks="blush")
@@ -462,7 +462,7 @@ label hg_pf_admire_breasts_T3_E1:
 # Event 3 (r) - Hermione will lift up her top.
 
 label hg_pf_admire_breasts_T4_intro_E1:
-    call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?","soft","glance")
@@ -479,7 +479,7 @@ label hg_pf_admire_breasts_T4_intro_E1:
 
 
 label hg_pf_admire_breasts_T4_E1:
-    call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "I need to see your tits, [hermione_name]."
     call her_main("Of course [genie_name].","base","ahegao_raised", cheeks="blush")
@@ -491,7 +491,7 @@ label hg_pf_admire_breasts_T4_E1:
 
 
 label hg_pf_admire_breasts_T4_E2:
-    call her_main("","normal","base", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "I need to see your tits, [hermione_name]."
     call her_main("Of course [genie_name]","base","ahegao_raised", cheeks="blush")

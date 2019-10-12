@@ -56,12 +56,12 @@ label hg_pf_strip_T2_Snape:
         call her_main("{size=-5}(Which I have oh so little left for you...){/size}","normal","frown")
         call her_main("I refuse to degrade myself for professor Snape's amusement!","scream","angryCl")
         m "No, no, you got it all wrong, [hermione_name]."
-        call her_main("Hm..?","soft","base")
+        call her_main("Hm..?", "soft", "base", "base", "mid")
         m "I want to prove that professor Snape is dirty, and I need your help."
         call her_main("!!!","shock","wide")
         m "Yes, I want to catch him in the act!"
         call her_main("[genie_name], I didn't realise...","open","worried")
-        call her_main("I see now...","base","base")
+        call her_main("I see now...", "base", "base", "base", "mid")
         her "I am sorry for doubting you [genie_name]..."
         m "No biggie. Now go find professor Snape and bring him here."
         call her_main("Right away [genie_name]!","smile","angry")
@@ -78,7 +78,7 @@ label hg_pf_strip_T2_Snape:
         call her_main("...professor Snape?","annoyed","suspicious")
         her "may I ask, why, [genie_name]?"
         m "Oh, I just want you to dance for us."
-        call her_main("!!!","open","base")
+        call her_main("!!!", "open", "base", "base", "mid")
         m "I want to prove that professor Snape is dirty, and I need your help."
         call her_main("But didn't we already establish that last time I did this?","annoyed","worriedL")
         m "Well, ehm... sure..."
@@ -223,7 +223,7 @@ label hg_pf_strip_T2_Snape:
 
         "\"Severus, you started this.\"":
             call sna_main("What? Me?!","snape_10")
-            call her_main("Thank you, [genie_name].","base","base")
+            call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
             call sna_main("Albus, you are spoiling the girl! She must be taught a lesson!","snape_08")
             m "...............Severus."
             g4 "Did you hit your head?!"
@@ -236,7 +236,7 @@ label hg_pf_strip_T2_Snape:
             m "[hermione_name], are you going to strip or are you going to climb on my desk to give us a better view?"
             call her_main("Ehm...","open","down")
             m "Take of your skirt, [hermione_name]!"
-            call her_main("Yes, [genie_name]...","soft","base")
+            call her_main("Yes, [genie_name]...", "soft", "base", "base", "mid")
 
         "\"Both of you, calm the fuck down.\"":
             m "You, tall-dark-and-handsome, calm down a bit, would you?"
@@ -292,7 +292,7 @@ label hg_pf_strip_T2_Snape:
     menu:
         m "..."
         "\"Severus, what about that Potter boy?\"":
-            call her_main("(.....?)","soft","base")
+            call her_main("(.....?)", "soft", "base", "base", "mid")
             call sna_main("What about him?","snape_09")
             m "Is he still causing you grief?"
             call sna_main("Oh...","snape_09")
@@ -300,7 +300,7 @@ label hg_pf_strip_T2_Snape:
             call sna_main("To be honest I never really had a problem with the boy himself...","snape_06")
             sna "Although I did plan to make his life here miserable because of his father..."
             call sna_main("But lately I have way more interesting projects to occupy myself with...","snape_02")
-            call her_main("...................","soft","base")
+            call her_main("...................", "soft", "base", "base", "mid")
 
         "\"Severus, what about the Weasleys?\"":
             call sna_main("What about them?","snape_09")
@@ -310,7 +310,7 @@ label hg_pf_strip_T2_Snape:
             m "You seem surprisingly indifferent about that..."
             call sna_main("That's because I know that they will get what they deserve eventually...","snape_05")
             m "Revenge? Cool! What do you have in mind?"
-            call her_main("!!!","soft","base")
+            call her_main("!!!", "soft", "base", "base", "mid")
             call sna_main("Hm... Can't discuss this with \"the enemy\" present.","snape_06")
             call her_main("Tsk!","annoyed","angryL")
             call sna_main("All I can say is that it involves their beloved little sister Ginny...","snape_13")

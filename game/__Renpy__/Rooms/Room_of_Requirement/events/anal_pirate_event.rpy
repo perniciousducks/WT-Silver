@@ -57,7 +57,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         g4 "Blistering barnacles!"
         call her_main("Ouch!","mad","worriedCl",tears="soft_blink")
         m "Jus' try t' loosen up a wee, would ye?"
-        call her_main("I be tryin'!","angry","base",tears="soft")
+        call her_main("I be tryin'!", "angry", "base", "base", "mid",tears="soft")
         m "Aye, wha' if I do this..?"
         $ renpy.play('sounds/boing03.mp3')
         call her_main("Ouch! Wha' are ye doin', captain?","mad","worriedCl",tears="soft_blink")
@@ -73,11 +73,11 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ renpy.play('sounds/spit.mp3') #Sound of spiting.
                 g4 "*SPIT!*"
                 call her_main("What are ye doing you Seadog!","scream","worriedCl")
-                call her_main("No, cap'n, Belay that! Ye're nah in open waters--","open","base")
+                call her_main("No, cap'n, Belay that! Ye're nah in open waters--", "open", "base", "base", "mid")
                 m "No needs, raise the anchor! Heave Ho!"
                 $ renpy.play('sounds/gltch.mp3')
                 with hpunch
-                call her_main("ARGH!","angry","base",tears="soft")
+                call her_main("ARGH!", "angry", "base", "base", "mid",tears="soft")
                 call her_main("Ouch! Ouch! Ouch!","mad","worriedCl",tears="soft_blink")
                 g4 "Nigh-on in! Me ship has left ye harbour lass!"
                 call her_main("No, ye're hurtin' me! Ye be hurtin' me!","scream","worriedCl")
@@ -149,7 +149,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 g4 "ARGH!"
 
             "\"Lather me canon balls first. Lubricate me pegleg!\"":
-                call her_main("Oh... Alright...","open","base",ypos="head")
+                call her_main("Oh... Alright...", "open", "base", "base", "mid",ypos="head")
                 play music "music/pirate.mp3" fadein 1 fadeout 1
                 play bg_sounds "sounds/CreakingShip.mp3"
 
@@ -175,7 +175,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call blkfade
 
                 #ON THE DESK
-                call her_main(".............","open","base")
+                call her_main(".............", "open", "base", "base", "mid")
                 g4 "Aye! Sail, Ho!!"
                 call her_main("Ouch!","scream","worriedCl")
                 m "Relax lass. Approaching harbour."
@@ -346,7 +346,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 with hpunch
                 play sound "sounds/burp.mp3"
                 call her_main("{size=+7}*BURP!*!!!!!{/size}","full","surprised",tears="messy")
-                call her_main(".......................","full","base",tears="messy")
+                call her_main(".......................", "full", "base", "base", "mid",tears="messy")
                 call her_main(".............")
                 $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
                 call her_main("{size=+7}*GULP!*{/size}","cum","worriedCl")
@@ -444,7 +444,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     #Second time event.
     elif pathvalue == 1:
         m "lass?"
-        call her_main("captain?","soft","base")
+        call her_main("captain?", "soft", "base", "base", "mid")
         m "I shall be takin' ye on another voyage today..."
         call her_main(".............","open","suspicious")
         m "Care t' guess wha' th' destination will be?"
@@ -473,7 +473,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
         call her_main("........","annoyed","worriedL",ypos="head")
         m "Hm..."
-        call her_main("...........","open","base")
+        call her_main("...........", "open", "base", "base", "mid")
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
@@ -516,14 +516,14 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Ah...")
         call her_main("captain?","base","glance")
         m "Aye, wench?"
-        call her_main("Em...","angry","base")
+        call her_main("Em...", "angry", "base", "base", "mid")
         call her_main("Would ye settle down fer me, captain?","angry","down_raised")
         with hpunch
         g4 "{size=+9} WHAT?!{/size}"
         g4 "Don't tell me ye're expecting cargo, lass!"
         call her_main("Ye seamen don't put no cargo in me bilge, captain...","angry","wink")
         m "Wha' be this natter o' settlin down then?"
-        call her_main("Ye misunderstood me captain.","angry","base")
+        call her_main("Ye misunderstood me captain.", "angry", "base", "base", "mid")
         call her_main("I meant t' say, would ye stop plunderin for a lass {size=+5}like{/size} me?","angry","down_raised")
         call her_main("I would ne'er propose t' a scallywag wit' his pegleg in me arse, captain...","angry","worriedCl",emote="05")
         m "Good. 'cause I don't reckon any scallywag would be able t' say \"neigh\" to you lassie."
@@ -533,16 +533,16 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main("I mean, wit' all that booty plunderin happenin' lately... ah{image=textheart}...","angry","down_raised")
         call her_main("I can nah help but feel like me hull is scratched... leakin even.")
         call her_main("'n in a no way untarnished...")
-        call her_main("Who would wants t' settle fer a lass like that.","angry","base")
+        call her_main("Who would wants t' settle fer a lass like that.", "angry", "base", "base", "mid")
 
         menu:
             m "..."
             "\"I would leave me ship in a heartbeat!\"":
-                call her_main("What?","open","base",ypos="head")
+                call her_main("What?", "open", "base", "base", "mid",ypos="head")
                 m "Aye, if only a lass like ye would board me ship..."
                 call her_main("...Aye...{image=textheart}","base","baseL")
                 call her_main("..............","base","squint")
-                call her_main("Aye if only a lass like I, cap'n? So, why neigh me?","soft","base")
+                call her_main("Aye if only a lass like I, cap'n? So, why neigh me?", "soft", "base", "base", "mid")
                 m "Huh?"
                 m "Wha' do ye mean \"why\", wench?"
                 m "Ye be right out of harbour 'n ye only just set sail..."
@@ -693,7 +693,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     call hide_blkfade
 
 
-    call her_main("Thank you, captain...","grin","base",xpos="right",ypos="base", cheeks="blush")
+    call her_main("Thank you, captain...", "grin", "base", "base", "mid",xpos="right",ypos="base", cheeks="blush")
 
     call her_walk(action="leave", speed=2.7)
 

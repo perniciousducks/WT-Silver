@@ -82,7 +82,7 @@ label hg_pr_blowjob:
         m "Do you believe in horoscopes?"
         call her_main("Not even a little bit, [genie_name]...","annoyed","angryL")
         m "Well, maybe you should..."
-        call her_main("...?","open","base")
+        call her_main("...?", "open", "base", "base", "mid")
         m "Because I got yours right here and it says..."
         m "\"Dedicate today to something you do well\"..."
         call her_main("Something I do well...?","soft","baseL")
@@ -166,7 +166,7 @@ label hg_pr_blowjob_T1_E2:
     call her_main("[genie_name], I...","angry","down_raised")
     her "I tried, but..."
     call her_main("The boy turned me down, [genie_name]...","mad","worried", tears="soft")
-    call her_main("I cannot believe that actually happened...","angry","base", tears="soft")
+    call her_main("I cannot believe that actually happened...", "angry", "base", "base", "mid", tears="soft")
     her "I am one of the top students in this school!"
     her "One of the most popular ones too..."
     call her_main("And he turns me down?","angry","angry", tears="soft")
@@ -302,7 +302,7 @@ label hg_pr_blowjob_T2_E2:
     call her_main("*Burp!*...","shock","wide")
     call her_main("Excuse me, [genie_name].","angry","down_raised")
     call her_main("{size=-3}(He just kept on cumming... My stomach feels so full...){/size}","angry","worriedCl", emote="05")
-    call her_main("Can I get my payment now, please?","open","base")
+    call her_main("Can I get my payment now, please?", "open", "base", "base", "mid")
 
     jump end_hg_pr_blowjob
 

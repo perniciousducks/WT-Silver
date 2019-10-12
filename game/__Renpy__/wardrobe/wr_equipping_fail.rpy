@@ -15,7 +15,7 @@
             # call her_main("I'm sorry [genie_name],...","open","closed")
             # call her_main("But I don't feel like dressing up for you today.","open","worriedL")
             # m "Any chance I could convince you otherwise?"
-            # call her_main("Hmm...","annoyed","base") #very upset, default
+            # call her_main("Hmm...", "annoyed", "base", "base", "mid") #very upset, default
             # call her_main("I want 5 house points! And that's no guarantee that I'm actually going to wear...","open","closed")
             # call her_main("Whatever it is you want me to put on.","annoyed","annoyed")
 
@@ -25,7 +25,7 @@
                     # m "ahe--hem..."
                     # m "Five points for Gryffindor!"
                     # m "Was that good enough for you?"
-                    # call her_main("...","normal","base")
+                    # call her_main("...", "normal", "base", "base", "mid")
                     # call her_main("Thank you, [genie_name].","soft","baseL")
                     # m "Great, now I forgot what I wanted you to wear..."
                     # $ gryffindor += 5
@@ -67,7 +67,7 @@
             # call her_main("I'm still mad at you for what you did!","open","worriedL")
             # m "Will you wear it if I give Gryffindor some points?"
             # call her_main("...","annoyed","suspicious")
-            # call her_main("Fifteen house points!","open","base")
+            # call her_main("Fifteen house points!", "open", "base", "base", "mid")
             # call her_main("And maybe I will wear it.-- Only maybe!","open","baseL")
 
             # menu:

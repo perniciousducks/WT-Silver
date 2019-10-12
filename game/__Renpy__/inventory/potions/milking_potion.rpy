@@ -15,7 +15,7 @@ label potion_scene_11: #Milking potion
 label potion_scene_11_1: #Milking potion part 1
     m "[hermione_name], how would you like to try a nice little potion?"
     call her_main("...","open","angryCl")
-    call her_main("If I had the option I'd prefer not to...","open","base")
+    call her_main("If I had the option I'd prefer not to...", "open", "base", "base", "mid")
     m "well-"
     call her_main("but unfortunately, \"Slytherin\" winning the house cup this year isn't an option!","scream","angryCl")
     m "So you'll drink the potion then?"
@@ -48,7 +48,7 @@ label potion_scene_11_1: #Milking potion part 1
     call her_main("Hmmm...","base","glance")
     call her_main("And what sort of \'effects\' would that be?","open","suspicious")
     m "You may notice a some minor swelling in those nice tits of yours."
-    call her_main("...","base","base")
+    call her_main("...", "base", "base", "base", "mid")
     call her_main("Is this milk going to make by breasts bigger [genie_name]?","annoyed","frown")
     m "That's one half of it."
     call her_main("...","normal","frown")
@@ -278,7 +278,7 @@ label potion_scene_11_2: #Milking potion part 2
     call her_main("can we just get this over with...","annoyed","angryL")
     m "Um... It's enchanted..."
     "(Does it have an on switch)"
-    call her_main("Wait... This is an enchanted item? Please don't turn it on-","angry","base")
+    call her_main("Wait... This is an enchanted item? Please don't turn it on-", "angry", "base", "base", "mid")
     call nar(">You hear a faint noise as the harness on hermione's chest springs to life.")
 
     $ milking = 2
@@ -330,7 +330,7 @@ label potion_scene_11_2: #Milking potion part 2
     call hide_blkfade
 
     m "Feel better?"
-    call her_main("Surprisingly yes...","annoyed","base")
+    call her_main("Surprisingly yes...", "annoyed", "base", "base", "mid")
     call her_main("They even seem like they've shrunk a little bit.","open","down")
     call her_main("So you're sure they're not going to leak anymore?","open","suspicious")
     m "oh um, no of course not..."
@@ -564,7 +564,7 @@ label potion_scene_11_3: #Milking potion part 3
                 call her_main("Do you want to drink it then, [genie_name]?","angry","wink")
                 m "Waste not, want not!"
                 call her_main("...","angry","wide")
-                call her_main("well, here you are then...","angry","base")
+                call her_main("well, here you are then...", "angry", "base", "base", "mid")
 
                 $ milking = 5
                 call set_her_action("milk_breasts")
@@ -786,7 +786,7 @@ label potion_scene_11_3: #Milking potion part 3
         m "Really, really."
         call her_main("Ugh, fine... (the stuff I put up with)","annoyed","angryL")
         call nar(">hermione takes it from your hands and goes to put it on.")
-        call her_main("Where's my stupid dick supposed to go...","angry","base")
+        call her_main("Where's my stupid dick supposed to go...", "angry", "base", "base", "mid")
         call her_main("It's in the way of the cannister.","angry","down_raised")
         m "Try sticking it into the bottom of the cannister."
         call her_main("What... why would that-","annoyed","annoyed")

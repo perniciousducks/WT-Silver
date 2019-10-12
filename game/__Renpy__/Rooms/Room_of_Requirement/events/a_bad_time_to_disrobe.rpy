@@ -28,17 +28,17 @@ label a_bad_time_to_disrobe_part_1:
     call bld
     m "Miss Granger. Have you ever been excited about the thought of being caught?"
 
-    call her_main("Caught?","base","base",xpos="right",ypos="base")
-    call her_main("In what way professor?","base","base")
+    call her_main("Caught?", "base", "base", "base", "mid",xpos="right",ypos="base")
+    call her_main("In what way professor?", "base", "base", "base", "mid")
 
     m "Well, for today's favour I have a prop for you to use."
 
-    call her_main("A prop sir?","base","base")
+    call her_main("A prop sir?", "base", "base", "base", "mid")
 
     m "Yes, I'd like you to put this invisibility cloak on and sneak into one of the boy only areas of the school."
 
-    call her_main("Well, I guess that would be fine...","base","base")
-    call her_main("Seems a bit different than your usual requests.","base","base")
+    call her_main("Well, I guess that would be fine...", "base", "base", "base", "mid")
+    call her_main("Seems a bit different than your usual requests.", "base", "base", "base", "mid")
 
     m "You'd be naked of course."
 
@@ -73,7 +73,7 @@ label a_bad_time_to_disrobe_part_1:
 
     call bld
     g9 "I'll take that cloak back if you don't mind."
-    call her_main("Certainly.","base","base",xpos="right",ypos="base")
+    call her_main("Certainly.", "base", "base", "base", "mid",xpos="right",ypos="base")
     m "Now, spill the beans."
     call her_main("I..I don't have any beans on me sir.","soft","narrow")
     m "\"Is this girl for real?\""
@@ -82,11 +82,11 @@ label a_bad_time_to_disrobe_part_1:
     m "Naked?"
     call her_main("Naked..ish","disgust","baseL")
     m "How can you be naked...ish?"
-    call her_main("Well, I had my underwear on, I'd be cold otherwise","base","base")
+    call her_main("Well, I had my underwear on, I'd be cold otherwise", "base", "base", "base", "mid")
     m "Cold? You'd have the cloak on you..."
     m "What happened next then?"
-    call her_main("Well, a few of the boys were in there.","base","base")
-    call her_main("They were playing wizards chess...","base","base")
+    call her_main("Well, a few of the boys were in there.", "base", "base", "base", "mid")
+    call her_main("They were playing wizards chess...", "base", "base", "base", "mid")
     call her_main("Pretty poorly in fact.","disgust","wink")
 
     m "..."
@@ -115,7 +115,7 @@ label a_bad_time_to_disrobe_part_1:
 
     call her_main("I see that you have the cloak ready for me sir.","base","baseL",xpos="right",ypos="base")
     m "Indeed, I'm expecting better from you today girl."
-    call her_main("I won't disappoint you sir!","grin","base")
+    call her_main("I won't disappoint you sir!", "grin", "base", "base", "mid")
     m "I'll be the judge of that..."
 
     show screen day_to_night
@@ -133,18 +133,18 @@ label a_bad_time_to_disrobe_part_1:
     hide screen day_to_night
     with d3
 
-    call her_main("...","upset","base", tears="mascara_soft",xpos="right",ypos="base")
+    call her_main("...", "upset", "base", "base", "mid", tears="mascara_soft",xpos="right",ypos="base")
     m "What happened? Where's your shirt?"
-    call her_main("What does it look like?","upset","base", tears="mascara_soft")
+    call her_main("What does it look like?", "upset", "base", "base", "mid", tears="mascara_soft")
     m "Well, I know what it looks like..."
-    call her_main("I didn't want to disappoint, sir, so I did what you asked...","soft","base", tears="mascara_soft")
-    call her_main("I went into the girls changing room at the quidditch pitch and put my clothes in one of the lockers.","base","base", tears="mascara_soft")
+    call her_main("I didn't want to disappoint, sir, so I did what you asked...", "soft", "base", "base", "mid", tears="mascara_soft")
+    call her_main("I went into the girls changing room at the quidditch pitch and put my clothes in one of the lockers.", "base", "base", "base", "mid", tears="mascara_soft")
     m "Well done. And then?"
-    call her_main("I took the cloak and snuck into the boys changing room...","base","base", tears="mascara")
-    call her_main("I stood next to the doorway so that they wouldn't bump into me.","base","base", tears="mascara")
+    call her_main("I took the cloak and snuck into the boys changing room...", "base", "base", "base", "mid", tears="mascara")
+    call her_main("I stood next to the doorway so that they wouldn't bump into me.", "base", "base", "base", "mid", tears="mascara")
     m "Great idea... and no one noticed?"
-    call her_main("Well, at first... This damn cloak is too small.","angry","base", tears="mascara")
-    call her_main("I thought I would be short enough to fit under it...","base","base", tears="mascara")
+    call her_main("Well, at first... This damn cloak is too small.", "angry", "base", "base", "mid", tears="mascara")
+    call her_main("I thought I would be short enough to fit under it...", "base", "base", "base", "mid", tears="mascara")
     call her_main("I didn't notice that my feet were visible...","upset","angry", tears="mascara")
     m "\"Well, that's a shame.\""
     call her_main("One of the boys saw me shuffle and moved to see what it was so I tried to get away but I slipped...and...and.","upset","shocked_raised", tears="mascara")
@@ -163,12 +163,12 @@ label a_bad_time_to_disrobe_part_1:
     m "Just trying to lighten the mood."
     m "Here's an extra 5 points for a Job well done, miss Granger."
     g9 "35 points to Gryffindor!"
-    call her_main("Thank you professor....","grin","base", tears="mascara")
+    call her_main("Thank you professor....", "grin", "base", "base", "mid", tears="mascara")
 
     call her_walk (xpos="door", ypos="base", speed=2.5)
 
-    call her_main("\"He's right, they wouldn't recognize me if I didn't show my face...\"","base","base", cheeks="blush", tears="mascara",ypos="head")
-    call her_main("\"would they?\"","base","base", cheeks="blush", tears="mascara",ypos="head")
+    call her_main("\"He's right, they wouldn't recognize me if I didn't show my face...\"", "base", "base", "base", "mid", cheeks="blush", tears="mascara",ypos="head")
+    call her_main("\"would they?\"", "base", "base", "base", "mid", cheeks="blush", tears="mascara",ypos="head")
 
     call her_chibi("leave")
 
@@ -195,11 +195,11 @@ label a_bad_time_to_disrobe_part_2:
     call music_block
     call bld
     m "Good afternoon miss Granger."
-    call her_main("Good afternoon professor, what can I do for you today?","base","base",xpos="right",ypos="base")
+    call her_main("Good afternoon professor, what can I do for you today?", "base", "base", "base", "mid",xpos="right",ypos="base")
     m "Glad you asked, I've got another task for you."
     call her_main("And what task may that be professor.","soft","baseL")
     m "Well miss Granger, I think somebody owes me a invisibility cloak."
-    call her_main("Oh, do you want me to collect it from somebody?","open","base")
+    call her_main("Oh, do you want me to collect it from somebody?", "open", "base", "base", "mid")
     m "That somebody is you miss Granger..."
     m "You left my cloak at the scene of the crime."
     call her_main("What crime professor, what have you gotten me into?","upset","annoyed")
@@ -210,7 +210,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("I said, I do remember.","normal","baseL")
     m "Right, well. Good invisibility cloaks are pretty hard to come by..."
     m "\"I think...\""
-    call her_main("No they're not... they're mass produced as far as I know.","annoyed","base")
+    call her_main("No they're not... they're mass produced as far as I know.", "annoyed", "base", "base", "mid")
     call her_main("By house elves I bet...","disgust","angryCl")
     m "Hey now, I know they might be small but I wouldn't call them elves."
     m "In any case, the cloak has more of a sentimental value to me... lots of memories."
@@ -219,13 +219,13 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("Fine, I'll do it... even though I hold you partly responsible for the situation that lead to me dropping it.","annoyed","angryCl")
     m "Great, let's not dwell on the past then."
     call her_main("...","normal","annoyed")
-    call her_main("Do you happen to have any idea of where it is?","open","base")
+    call her_main("Do you happen to have any idea of where it is?", "open", "base", "base", "mid")
     m "Well, it hasn't been reported as found so unless someone stole it there's only one place it could be."
     call her_main("The boys changing room?","base","down")
     g9 "The boys changing room."
-    call her_main("And how many house points?","base","base")
+    call her_main("And how many house points?", "base", "base", "base", "mid")
     m "For what exactly?"
-    call her_main("Retrieving the cloak of course.","annoyed","base")
+    call her_main("Retrieving the cloak of course.", "annoyed", "base", "base", "mid")
     m "You're demanding house points, for your own mistakes miss Granger?"
     call her_main("But I thought...","upset","worried")
     m "..."
@@ -237,12 +237,12 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("But... what if they recognize me sir?","open","worried")
     m "You'd already know if they had recognised you..."
     call her_main("\"That's true...\"","soft","soft", cheeks="blush")
-    call her_main("And then what, you want me to just walk away?","base","base", cheeks="blush")
+    call her_main("And then what, you want me to just walk away?", "base", "base", "base", "mid", cheeks="blush")
     m "You can figure it out yourself miss Granger. Once you have the cloak it shouldn't be an issue getting away."
-    call her_main("And I want...","open","base")
+    call her_main("And I want...", "open", "base", "base", "mid")
     m "I'll give you 40 house points for it."
     call her_main("\"I was going to ask for 30.\"","soft","squintL", cheeks="blush")
-    call her_main("I'll do it...","base","base")
+    call her_main("I'll do it...", "base", "base", "base", "mid")
     g9 "Great, you're doing a great service to your house and making an old man very happy."
     call her_main("By getting your cloak back right?","base","worried")
     m "Right..."
@@ -282,19 +282,19 @@ label a_bad_time_to_disrobe_part_2:
     m "Your face is glowing miss Granger, I can tell when you're being untruthful."
     call her_main("It is? I didn't even notice...","normal","down_raised", cheeks="blush")
     m "You're going to have to elaborate if you'd like those house points."
-    call her_main("Oh... okay, I'l just go ahead then...","mad","base")
+    call her_main("Oh... okay, I'l just go ahead then...", "mad", "base", "base", "mid")
     m "Let me get the popcorn."
-    call her_main("popcorn? Where would you get popcorn from in this office?","annoyed","base")
+    call her_main("popcorn? Where would you get popcorn from in this office?", "annoyed", "base", "base", "mid")
     g9 "Magic cupboard."
     call her_main("Right... well, I'll just start in that case shall I?","base","glanceL")
-    call her_main("...","base","base", cheeks="blush")
+    call her_main("...", "base", "base", "base", "mid", cheeks="blush")
     call her_main("So... I went to the boys changing room when they were in quidditch practice.","open","down")
     m "*CRUNCH*"
     call her_main("It's very messy in there... I thought the girls changing room was bad...","base","down_raised")
     m "*CRUNCH* *Chew* *Chew*"
     m "*CRUNCH*"
     call her_main("Anyway... so I rummaged around in that mess...","annoyed","worried")
-    call her_main("I knew it had to have been somewhere between the showers and the doorway...","base","base")
+    call her_main("I knew it had to have been somewhere between the showers and the doorway...", "base", "base", "base", "mid")
     call her_main("After looking around for a while I noticed that the cloak had been pushed under one of the benches lining the wall.","open","down")
     call her_main("So I grabbed it and I thought I might as well disrobe and hide in the shower room with the cloak on.","base","down_raised")
     call her_main("But as I was stuffing my clothes in one of the lockers a boy walked in.","clench","worried")
@@ -303,11 +303,11 @@ label a_bad_time_to_disrobe_part_2:
     g4 "*Cough* *Cough*... sorry."
     call her_main("It is hard to talk about this as it is without your chewing distracting me.","annoyed","angry")
     call her_main("Anyhow...","base","angryL")
-    call her_main("I expected the team to be going for at least another 30 minutes.","open","base")
+    call her_main("I expected the team to be going for at least another 30 minutes.", "open", "base", "base", "mid")
     call her_main("But that's when the boy walked in...","normal","closed")
     call her_main("And I panicked and threw the cloak over myself and hid in one of the toilets.","open","worriedL")
     m "Smart."
-    call her_main("...","base","base", cheeks="blush")
+    call her_main("...", "base", "base", "base", "mid", cheeks="blush")
     call her_main("Well, it would've been if I had remembered to lock it.","base","down_raised")
     g9 "Not that smart..."
     call her_main("Do you want me to continue or not?","annoyed","annoyed")

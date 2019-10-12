@@ -36,7 +36,7 @@ label hg_pf_admire_panties:
     if her_tier <= 2:
         call her_main("..................","annoyed","baseL", xpos="mid", ypos="base", trans="fade")
     elif her_tier <= 5:
-        call her_main("","base","base", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     else:
         call her_main("","smile","glance", xpos="mid", ypos="base", trans="fade")
 
@@ -51,7 +51,7 @@ label hg_pf_admire_panties:
         call her_main("Can't wait to tell the guys!","smile","happyCl")
         call her_main("Only that I can't actually tell them about any of this...","annoyed","angryL")
 
-    call her_main("Will this be all then?","open","base")
+    call her_main("Will this be all then?", "open", "base", "base", "mid")
     m "Yes, you can go now."
 
     if daytime:
@@ -96,16 +96,16 @@ label hg_pf_admire_panties:
 label hg_pf_admire_panties_T1_intro_E1:
     m "Nothing drastic, really..."
     m "I just want you to show me your panties."
-    call her_main("My... panties...?","open","base")
+    call her_main("My... panties...?", "open", "base", "base", "mid")
     call her_main("[genie_name]!","angry","angry")
     m "I know, I know, this a little weird..."
     call her_main("{size=+7}A little !?{/size}","shock","wide")
     her "This is completely inappropriate!"
     m "Listen, we need to go through this phase before we get to the good stuff, alright?"
-    call her_main("The \"good stuff\"? [genie_name], I don't understand...","open","base")
+    call her_main("The \"good stuff\"? [genie_name], I don't understand...", "open", "base", "base", "mid")
     m "What don't you understand, [hermione_name]?"
     m "Do you need these points or not?"
-    call her_main("I do...","open","base")
+    call her_main("I do...", "open", "base", "base", "mid")
     m "Lift up your skirt then..."
     call her_main(".............","angry","angry")
 
@@ -211,7 +211,7 @@ label hg_pf_admire_panties_T2: # Call label
 
     call play_music("playful_tension")
     show screen blktone
-    call her_main("Here, [genie_name]...","base","base", xpos="mid", ypos="base")
+    call her_main("Here, [genie_name]...", "base", "base", "base", "mid", xpos="mid", ypos="base")
     call ctc
 
     menu:
@@ -230,7 +230,7 @@ label hg_pf_admire_panties_T2: # Call label
             return
 
         "-Keep looking into her eyes-":
-            call her_main("..............................","soft","base")
+            call her_main("..............................", "soft", "base", "base", "mid")
             her "...........................?"
             call her_main("................................","grin","baseL")
             call her_main("[genie_name], please... You are embarrassing me.","grin","worriedCl",emote="05")

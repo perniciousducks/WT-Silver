@@ -48,7 +48,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         m "Well, there you go then!"
         call her_main("Huh?","disgust","glance")
         m "Beat them at their own game!"
-        call her_main("What?","open","base")
+        call her_main("What?", "open", "base", "base", "mid")
         m "Yes! Don't just put the \"Gryffindor\" house back on top..."
         m "But do it by beating them at their own game!"
         call her_main("[genie_name]...","open","worried")
@@ -72,7 +72,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         her "My classes are about to start, so I should probably go now..."
         call her_main("...........","normal","baseL",tears="soft")
         call her_main("...I hope nobody will notice that I have no underwear on today...","annoyed","worriedL")
-        call her_main("Oh, and I will be back tonight to pick them up, [genie_name].","open","base")
+        call her_main("Oh, and I will be back tonight to pick them up, [genie_name].", "open", "base", "base", "mid")
         m "Of course. Your panties will be right here on my desk, waiting for you..."
         call her_main(".............","angry","worriedCl",emote="05")
 
@@ -90,7 +90,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
             
             call nar(">Hermione pulls her panties out of her pocket...")
             m "What?"
-            call her_main("Yes, I had a feeling that you might ask for these today, [genie_name].","base","base")
+            call her_main("Yes, I had a feeling that you might ask for these today, [genie_name].", "base", "base", "base", "mid")
             m "A feeling?"
             call her_main("Well, to be completely honest I just do not bother to wear them much anymore...","grin","baseL")
         else:
@@ -103,7 +103,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
             call nar(">Hermione takes off her panties and hands them over to you...")
         
         call nar(">Hermione's panties acquired.")
-        call her_main("Well, the classes are about to start, so I'd better go now...","soft","base")
+        call her_main("Well, the classes are about to start, so I'd better go now...", "soft", "base", "base", "mid")
 
     call her_walk(action="leave", speed=2.5)
 
@@ -121,7 +121,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
 
         menu:
             "\"An experiment went wrong\"":
-                call her_main("An experiment went wrong, [genie_name]?","open","base")
+                call her_main("An experiment went wrong, [genie_name]?", "open", "base", "base", "mid")
                 m "Yes... Or maybe I should rather say..."
                 g9 "\"An experiment went very right\"? He-he..."
                 call her_main(".....................?","normal","frown")
@@ -136,7 +136,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
 
         call her_main("Well, these will require some serious cleaning before I can put them on again...","annoyed","down")
         m "Or you could put them on now."
-        call her_main("What?","open","base")
+        call her_main("What?", "open", "base", "base", "mid")
         call her_main("I really would rather not, [genie_name]...","soft","baseL")
 
         menu:
@@ -145,7 +145,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 call her_main("What?","scream","wide_stare")
                 her "[genie_name], you are joking, right?"
                 m "I am not..."
-                call her_main("B-but...","open","base")
+                call her_main("B-but...", "open", "base", "base", "mid")
                 call her_main("........................................","normal","worriedCl")
                 call her_main("(Must you always have your way, [genie_name]?)","angry","angry")
                 m "What was that, [hermione_name]?"
@@ -198,7 +198,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         her "And they smell funny..."
         call her_main("Hm... That smell...","annoyed","worriedL")
         her "It's familiar somehow..."
-        call her_main("What exactly did you do to them, [genie_name]?","base","base")
+        call her_main("What exactly did you do to them, [genie_name]?", "base", "base", "base", "mid")
 
         menu:
             "\"An experiment went wrong\"":
@@ -256,7 +256,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 call her_main("...","soft","ahegao")
             "\"Why don't you clean them now?\"":
                 $ cleaned_panties = True
-                call her_main("Clean them How? You don't have a wash basin in here.","open","base")
+                call her_main("Clean them How? You don't have a wash basin in here.", "open", "base", "base", "mid")
                 m "You're right, you'll have to use your mouth then."
                 call her_main("My mouth?!","scream","wide_stare")
                 m "What's the big deal? It wouldn't be the first time you've tasted my cum."
@@ -293,7 +293,7 @@ label hg_ps_get_panties_complete:
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
-    call her_main("Good evening, [genie_name]...","base","base",xpos="right",ypos="base")
+    call her_main("Good evening, [genie_name]...", "base", "base", "base", "mid",xpos="right",ypos="base")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
 
     menu:
@@ -311,12 +311,12 @@ label hg_ps_get_panties_complete:
                 $ hg_ps_get_panties.level = 1 #Event hearts level (0-3)
 
                 $ sc34CG(1, 10)
-                call her_main("Oh...","soft","base",xpos="base",ypos="base")
+                call her_main("Oh...", "soft", "base", "base", "mid",xpos="base",ypos="base")
                 her "Quite ordinary actually..."
                 call her_main("Although... I couldn't help but worry that somebody would notice somehow...","soft","baseL")
                 call her_main(".....","annoyed","worriedL")
                 hide screen sccg
-                call her_main("Can I have my panties back now?","open","base",xpos="right",ypos="base",trans="fade")
+                call her_main("Can I have my panties back now?", "open", "base", "base", "mid",xpos="right",ypos="base",trans="fade")
                 m "Of course..."
                 hide screen hermione_main
                 with d3
@@ -324,7 +324,7 @@ label hg_ps_get_panties_complete:
                 if her_panties_soaked:
                     jump hg_cum_on_panties_response
                 else:
-                    call her_main("And my payment?","open","base")
+                    call her_main("And my payment?", "open", "base", "base", "mid")
                     m "Yes, yes..."
 
             elif her_whoring >= 6 and her_whoring <= 8: #WHORING LVL 03. EVENT LEVEL 02.
@@ -332,7 +332,7 @@ label hg_ps_get_panties_complete:
                 $ hg_ps_get_panties.level = 2 #Event hearts level (0-3)
 
                 $ sc34CG(1, 5)
-                call her_main("Oh...","soft","base",xpos="base",ypos="base")
+                call her_main("Oh...", "soft", "base", "base", "mid",xpos="base",ypos="base")
                 her "It was quite ordinary really..."
                 her "I spent some time with my classmates..."
                 her "And we had a short \"MRM\" meeting after that..."
@@ -344,7 +344,7 @@ label hg_ps_get_panties_complete:
                 menu:
                     "\"You little hypocrite!\"":
                         $ her_mood +=5
-                        call her_main("[genie_name]?","open","base")
+                        call her_main("[genie_name]?", "open", "base", "base", "mid")
                         m "You sold your panties to me this morning..."
                         m "And a couple of hours later you already publicly condemned that exact behaviour..."
                         #m "What would you call this?"
@@ -362,7 +362,7 @@ label hg_ps_get_panties_complete:
                         her "We need those points badly..."
                         her "It is not my fault that the system is so corrupted..."
                         call her_main("I shall remain a symbol of righteousness to my peers, no matter what!","open","closed")
-                        call her_main("Can I have my panties back now, please?","open","base")
+                        call her_main("Can I have my panties back now, please?", "open", "base", "base", "mid")
                         if her_panties_soaked:
                             jump hg_cum_on_panties_response
                         else:
@@ -379,7 +379,7 @@ label hg_ps_get_panties_complete:
                 her "It was oddly empowering to have no underwear on..."
                 her "Hm..."
                 hide screen sccg
-                call her_main("Can I have my panties back now please?","base","base",xpos="right",ypos="base",trans="fade")
+                call her_main("Can I have my panties back now please?", "base", "base", "base", "mid",xpos="right",ypos="base",trans="fade")
                 m "Of course..."
                 hide screen hermione_main
                 with d3
@@ -387,7 +387,7 @@ label hg_ps_get_panties_complete:
                 if her_panties_soaked:
                     jump hg_cum_on_panties_response
                 else:
-                    call her_main("And my payment?","base","base")
+                    call her_main("And my payment?", "base", "base", "base", "mid")
                     m "Yes, yes..."
 
     label back_from_soaked:

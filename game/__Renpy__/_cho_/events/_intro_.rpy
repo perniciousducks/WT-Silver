@@ -312,7 +312,7 @@ label cho_intro_E1:
         gen "*Sn{cps=8}oooooooreeee*{/cps}{w=2.0}{nw}"
         call her_main("Professor!","scream","angryCl",trans="hpunch")
         g4 "*Grunt* {size=-4}Huh, what?{/size}"
-        call her_main("I always have a valid reason for coming here, don’t I?","base","base")
+        call her_main("I always have a valid reason for coming here, don’t I?", "base", "base", "base", "mid")
         m "Of course you-{w=0.6}{nw}"
         call cho_main("Always? So you \"do\" come here often!","smile","narrow","base","L")
         call her_main("So what...","angry","angryCl")
@@ -657,7 +657,7 @@ label cho_intro_E3:
         m "Quidditch-...{w} something something...{w} movement."
 
     if her_whoring < 4: # If you haven't groped her breasts or ass yet.
-        call her_main("My \"Quidditch equality movement\"?","soft","base")
+        call her_main("My \"Quidditch equality movement\"?", "soft", "base", "base", "mid")
         call her_main("But Sir, I'm on the verge of a breakthrough with it!","soft","closed")
         call her_main("I worked very hard on gathering all records of past Quidditch matches, throughout the complete history of Quidditch!","open","wink")
         call her_main("You'd be surprised just how few female-","soft","closed")
@@ -715,14 +715,14 @@ label cho_intro_E3:
 
 
     elif her_whoring < 21:
-        call her_main("Oh... My \"Quidditch equality movement\"?","soft","base")
+        call her_main("Oh... My \"Quidditch equality movement\"?", "soft", "base", "base", "mid")
         m "That's the one."
         call her_main("It never really got off the ground...","open","baseL")
         call her_main("No pun intended...","base","closed")
         m "(...)"
         call her_main("To be honest, I don’t have that much time apart from my visits here and studying...","open","down")
         call her_main("I might consider dropping it.","base","baseL")
-        call her_main("Even though it would take away the immense pleasure of seeing Cho getting all worked up about it...","grin","base")
+        call her_main("Even though it would take away the immense pleasure of seeing Cho getting all worked up about it...", "grin", "base", "base", "mid")
         m "(...)"
         call her_main("There is something I'd like from you in return, [genie_name].{p=0.8}Or else I'll' just continue with it!","base","glance")
         m "Go on girl."
@@ -743,7 +743,7 @@ label cho_intro_E3:
         call her_main("Very well then.","soft","closed")
         m "50 points, to the Gryffindor house..."
         $ gryffindor += 50
-        call her_main("Thank you, [genie_name].","base","base")
+        call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
 
     else:
         call her_main("My what?","open","glance")

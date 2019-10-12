@@ -53,7 +53,7 @@ label hg_pr_sex:
     else:
         m "[hermione_name]..."
         m "I need you to go have sex with another classmate of yours."
-        call her_main("Again, [genie_name]?","angry","base")
+        call her_main("Again, [genie_name]?", "angry", "base", "base", "mid")
         m "Yes. And you will get 75 points again as well."
         call her_main("Well, alright...","annoyed","annoyed")
 
@@ -177,7 +177,7 @@ label hg_pr_sex_T1_E4:
     her "I am getting paid well for performing such tasks..."
     her "So I have no right to complain, but..."
     m "Hm...?"
-    call her_main("My reputation is starting to suffer and it troubles me, [genie_name]...","open","base", cheeks="blush")
+    call her_main("My reputation is starting to suffer and it troubles me, [genie_name]...", "open", "base", "base", "mid", cheeks="blush")
     m "Your reputation?"
     call her_main("Well, yes... ehm...","open","baseL", cheeks="blush")
     m ".............."

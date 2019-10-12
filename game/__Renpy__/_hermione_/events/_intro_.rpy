@@ -1174,7 +1174,7 @@ label hermione_intro_E6:
         call her_main("A silly face then...","grin","worriedCl", emote="05")
         her "Let's see..."
         label stupid_faces:
-        call her_main("How about this one?","silly","silly")
+        call her_main("How about this one?", "silly", "base", "base", "squint")
 
         menu:
             "\"Good! Very stupid! I mean, silly.\"":
@@ -1283,7 +1283,7 @@ label hermione_intro_E6:
         call her_main("{size=-4}(There is nothing wrong with that... nothing at all...){/size}", "open", "closed", "base", "mid")
 
     if current_favor == "silly_face":
-        call her_main("{size=-4}(Stupid face...){/size}","silly","silly", ypos="head")
+        call her_main("{size=-4}(Stupid face...){/size}", "silly", "base", "base", "squint", ypos="head")
         call her_main("{size=-4}(Stupid face...){/size}", "silly", "happy", "base", "mid_soft")
         call her_main("{size=-4}(I need to practice this.){/size}", "base", "happyCl", "base", "mid")
 

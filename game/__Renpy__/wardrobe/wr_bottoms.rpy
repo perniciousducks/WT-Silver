@@ -69,7 +69,7 @@ label equip_bottom:
                 # else: #20+
                     # call her_main("Are you serious?","angry","wink")
                     # call her_main("That thing is soooooo ugly!","annoyed","ahegao")
-                    # call her_main("I'm gonna get laughed at! No one wears skirts that long in Hogwarts!","disgust","narrow")
+                    # call her_main("I'm gonna get laughed at! No one wears skirts that long in Hogwarts!", "disgust", "slit", "low", "stare")
                     # m "No, [hermione_name]. Wear the long one..."
                     # call her_main("Fine... Just let me change it...","disgust","glance")
 
@@ -225,7 +225,7 @@ label equip_bottom:
                     # else: #20+
                         # call her_main("Are you serious?","angry","wink")
                         # call her_main("That thing is soooooo ugly!","annoyed","ahegao")
-                        # call her_main("I'm gonna get laughed at! No one wears skirts that long in Hogwarts!","disgust","narrow")
+                        # call her_main("I'm gonna get laughed at! No one wears skirts that long in Hogwarts!", "disgust", "slit", "low", "stare")
                         # m "No, [hermione_name]. Wear the long one..."
                         # call her_main("Fine... Just let me change it...","disgust","glance")
                 # else:
@@ -375,7 +375,7 @@ label equip_bottom:
                             # call her_main("Fine, [genie_name]... Let me just put it on.","annoyed","annoyed")
                         # elif her_whoring < 20:
                             # call her_main("Fine, [genie_name].","soft","ahegao")
-                            # call her_main("(How humiliating to wear this as a Gryffindor...)","disgust","narrow")
+                            # call her_main("(How humiliating to wear this as a Gryffindor...)", "disgust", "slit", "low", "stare")
                             # call her_main("Let me just change it.", "soft", "base", "base", "R")
                         # else: #20+
                             # if skirt_choice in ["skirt_cheer_s","skirt_cheer_sexy_s"]:

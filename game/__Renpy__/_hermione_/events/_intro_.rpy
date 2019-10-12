@@ -1183,7 +1183,7 @@ label hermione_intro_E6:
                 pass
 
         call her_main(".........","annoyed","angryL")
-        call her_main("What about this one then?","disgust","narrow")
+        call her_main("What about this one then?", "disgust", "slit", "low", "stare")
 
         menu:
             "\"Ha-ha! You look like an idiot!\"":

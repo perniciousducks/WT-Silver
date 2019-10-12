@@ -26,7 +26,7 @@ label equip_outfit:
             # if outfit_choice == hg_outfit_maid_ITEM:
                 # m "Do you know what a maid is?"
                 # call her_main("Of course I know...", "open", "base", "base", "mid")
-                # call her_main("Wait, why would you ask me that?","normal","narrow")
+                # call her_main("Wait, why would you ask me that?", "normal", "slit", "low", "stare")
                 # g9 "I would like you to be my maid."
                 # if her_whoring >= 11: #Success
                     # call her_main("Your maid? Does that mean I have to wear one of those silly outfits?","open","wink")
@@ -180,7 +180,7 @@ label equip_outfit:
             # if outfit_choice == hg_gamble_slut_ITEM:
                 # m "You know that card game that we've been playing?"
                 # call her_main("Wizard Cards?", "open", "base", "base", "mid")
-                # call her_main("Yes... What about it?","normal","narrow")
+                # call her_main("Yes... What about it?", "normal", "slit", "low", "stare")
                 # g9 "So, apparently since I've been so successful at it... I've received this outfit from trading in those tokens."
                 # if her_whoring >= 15: #Success
                     # call her_main("Hmm, a bit tight it seems. The hat is cute though.","open","wink")
@@ -229,12 +229,12 @@ label equip_outfit:
                     # call her_main("I can name you hundreds! All witches I admire and look up to!","grin","closed")
                     # m "(Who?)"
                     # m "No no, I'm talking about Comic books! Superheroes!"
-                    # call her_main("Oh...","soft","narrow")
+                    # call her_main("Oh...", "soft", "slit", "low", "stare")
                     # call her_main("[genie_name], how do you even know about such things? Comics?","soft","wink")
                     # g9 "I know all about human activities and pleasures!"
                     # call her_main("Muggle activities? Well of course, somebody as wise as you would be knowledged about all sorts of things.", "open", "base", "base", "R")
-                    # call her_main("I myself don't think too highly of comic books, [genie_name].","soft","narrow")
-                    # call her_main("Not to mention the contumelious treatment and over-sexualisation of female heroines.","soft","narrow")
+                    # call her_main("I myself don't think too highly of comic books, [genie_name].", "soft", "slit", "low", "stare")
+                    # call her_main("Not to mention the contumelious treatment and over-sexualisation of female heroines.", "soft", "slit", "low", "stare")
                     # call her_main("It's disgusting...","open","closed")
                     # call her_main("I have to refuse, [genie_name]!","annoyed","angry")
                     # if cheats_active or game_difficulty <= 2:
@@ -313,7 +313,7 @@ label equip_outfit:
 
             # if outfit_choice in [hg_witch_ITEM,hg_witch_skimpy_ITEM]:
                 # m "[hermione_name], have you ever heard about witches?"
-                # call her_main("[genie_name]? I am a witch?","soft","narrow")
+                # call her_main("[genie_name]? I am a witch?", "soft", "slit", "low", "stare")
                 # m "Oh right,..."
                 # m "To my defense, you don't look much like one..."
                 # call her_main("I don't? How are witches supposed to look?", "open", "base", "base", "mid")
@@ -324,7 +324,7 @@ label equip_outfit:
                     # call nar(">You hand her the outfit.")
                     # call her_main("It looks really old-fashioned...","disgust","down")
                     # if outfit_choice == hg_witch_skimpy_ITEM:
-                        # call her_main("And why is there a hole down there?","disgust","narrow")
+                        # call her_main("And why is there a hole down there?", "disgust", "slit", "low", "stare")
                         # g9 "It's great, isn't it!"
                         # call her_main("No it isn't! Do you really expect me to show of my pussy like that, to everyone?","angry","angry")
                         # m "Well, only to me..."

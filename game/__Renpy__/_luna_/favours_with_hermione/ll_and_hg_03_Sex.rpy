@@ -26,7 +26,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call lun_main("I wanted you to be here for it.","base","suspicious","sad","mid")
     call her_main("you mean...","shock","happy")
     call her_main("Awww that's so sweet Luna.","grin","soft")
-    call her_main("You better ask her nicely sir!","mad","narrow")
+    call her_main("You better ask her nicely sir!", "mad", "slit", "low", "stare")
     m "You don't even know what-"
     call her_main("Everyone knows what you're going to ask for next sir.","open","closed")
     call her_main("At least try and make it a little romantic for her...","smile","soft")
@@ -532,7 +532,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call her_main("Well I better be off, [genie_name], it's getting a little late.","grin","happy",xpos="base",ypos="base")
 
     m "Goodnight, [hermione_name]."
-    call her_main("Goodnight {size=-5}daddy{/size}...","grin","narrow")
+    call her_main("Goodnight {size=-5}daddy{/size}...", "grin", "slit", "low", "stare")
     hide screen hermione_main
     with d3
     pause.2

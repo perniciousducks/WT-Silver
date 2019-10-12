@@ -272,7 +272,7 @@ label potion_scene_11_2: #Milking potion part 2
     $ milking = 1
     call set_her_action("milk_breasts")
 
-    call her_main("There! Happy now!","disgust","narrow",xpos="right",ypos="base")
+    call her_main("There! Happy now!", "disgust", "slit", "low", "stare",xpos="right",ypos="base")
     m "I mean if you could moo that would really Complete the picture..."
     call her_main("...","angry","angry")
     call her_main("can we just get this over with...","annoyed","angryL")

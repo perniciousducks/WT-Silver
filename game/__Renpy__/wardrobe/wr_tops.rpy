@@ -343,7 +343,7 @@ label equip_top:
                             # call her_main("Fine, [genie_name]... Let me just put it on.","annoyed","annoyed")
                         # elif her_whoring < 20:
                             # call her_main("Fine, [genie_name].","soft","ahegao")
-                            # call her_main("(How humiliating to wear this as a Gryffindor...)","disgust","narrow")
+                            # call her_main("(How humiliating to wear this as a Gryffindor...)", "disgust", "slit", "low", "stare")
                             # call her_main("Let me just change it.", "soft", "base", "base", "R")
                         # else: #20+
                             # if top_choice in ["top_cheer_s","top_cheer_sexy_s"]:
@@ -608,7 +608,7 @@ label equip_top:
                         # call her_main("It is a really nice-looking jacket, after all...","annoyed","down")
                         # call her_main("Just... do you expect me to leave it open the whole time?","angry","wink")
                         # m "Naturally, [hermione_name]."
-                        # call her_main("With just my bra beneath it?","disgust","narrow")
+                        # call her_main("With just my bra beneath it?", "disgust", "slit", "low", "stare")
                         # g9 "You betcha!"
                         # call her_main("(Can't believe I'm agreeing to this...)","angry","angry")
                         # call her_main("Fine, [genie_name]. I will wear it open.","annoyed","annoyed")

@@ -76,7 +76,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
         call nar(">Hermione takes a whiff of the potion contents.")
         $ renpy.play('sounds/sniff.mp3')
         pause 0.5
-        call her_main("*Ughhh*{w=0.5}{nw}", "disgust","narrow")
+        call her_main("*Ughhh*{w=0.5}{nw}", "disgust", "slit", "low", "stare")
         with hpunch
         call her_main("This isn't a potion! This is just a bottle full of your cum!","scream","angryCl")
         g4 "How did you know?"
@@ -98,7 +98,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
             call her_chibi("stand","mid","base")
 
             call her_main("Is this bottle full of your cum?","disgust","angryCl")
-            call her_main("Ughhh and it's cold as well.","disgust","narrow")
+            call her_main("Ughhh and it's cold as well.", "disgust", "slit", "low", "stare")
             m "So it just tastes like cum to you?"
             call her_main("Of course it does, what else would it taste like?","angry","angry")
             call nar(">Hermione starts unconsciously licking her lips.")

@@ -75,7 +75,7 @@ label a_bad_time_to_disrobe_part_1:
     g9 "I'll take that cloak back if you don't mind."
     call her_main("Certainly.", "base", "base", "base", "mid",xpos="right",ypos="base")
     m "Now, spill the beans."
-    call her_main("I..I don't have any beans on me sir.","soft","narrow")
+    call her_main("I..I don't have any beans on me sir.", "soft", "slit", "low", "stare")
     m "\"Is this girl for real?\""
     m "It's just an expression, tell me... did you complete your assignment?"
     call her_main("I did sir. I snuck into the boys dormitory using the cloak as you suggested.","soft","happyCl")

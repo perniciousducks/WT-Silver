@@ -75,7 +75,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
 
     $ renpy.sound.play("sounds/sniff.mp3")
     call nar(">Hermione takes a whiff of the thick potion.")
-    call her_main("It smells disgusting. Like mud and wet dog fur.","disgust","narrow")
+    call her_main("It smells disgusting. Like mud and wet dog fur.", "disgust", "slit", "low", "stare")
     call her_main("Do I really have to drink this?","open","worried")
     m "You do. I suggest holding your nose if the smell is too much."
     call her_main("For Gryffindor.","mad","worriedCl",tears="soft_blink")
@@ -91,7 +91,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
     pause.5
     call her_chibi("stand","mid","base")
     pause.2
-    call her_main("Blehgh.","disgust","narrow")
+    call her_main("Blehgh.", "disgust", "slit", "low", "stare")
     m "Well done."
 
     if hg_pp_polyjuice.counter > 0:
@@ -575,7 +575,7 @@ label hg_pp_polyjuice_T1_introCC:
     # call her_chibi("stand","mid","base")
     # pause.2
 
-    # call her_main("Blehgh.","disgust","narrow")
+    # call her_main("Blehgh.", "disgust", "slit", "low", "stare")
     # if polyjuice_drunk:
         # her "Pinching my nose barely helps..."
         # her "So, do I leave or?"

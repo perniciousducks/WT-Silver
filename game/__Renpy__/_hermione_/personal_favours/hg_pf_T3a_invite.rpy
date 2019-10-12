@@ -17,11 +17,11 @@ label hg_pf_strip_T1_Snape: # Fails
     her "May I ask, why, [genie_name]?"
     m "Oh, I just think you could use a bigger audience for your striptease performance."
     call her_main("My striptease performance...?!!", "shock", "wide", "base", "stare")
-    call her_main("Are you completely out of your mind, [genie_name]?","angry","angry")
-    call her_main("Wasn't it enough that I've had to embarrass myself in front my teacher once before?","open","angry")
+    call her_main("Are you completely out of your mind, [genie_name]?", "angry", "base", "angry", "mid")
+    call her_main("Wasn't it enough that I've had to embarrass myself in front my teacher once before?", "open", "base", "angry", "mid")
     call her_main("And now you expect me to do it again,... but willingly?!","scream","angryCl")
     m "Short answer... yes."
-    call her_main("I'm leaving!","angry","angry")
+    call her_main("I'm leaving!", "angry", "base", "angry", "mid")
 
     call her_walk(action="leave", speed=2.5)
 
@@ -52,7 +52,7 @@ label hg_pf_strip_T2_Snape:
         her "May I ask, why, [genie_name]?"
         m "Oh, I just think you could use a bigger audience for your striptease performance."
         call her_main("My striptease performance...?!!", "shock", "wide", "base", "stare")
-        call her_main("With all due respect, [genie_name]...","angry","angry")
+        call her_main("With all due respect, [genie_name]...", "angry", "base", "angry", "mid")
         call her_main("{size=-5}(Which I have oh so little left for you...){/size}","normal","frown")
         call her_main("I refuse to degrade myself for professor Snape's amusement!","scream","angryCl")
         m "No, no, you got it all wrong, [hermione_name]."
@@ -64,7 +64,7 @@ label hg_pf_strip_T2_Snape:
         call her_main("I see now...", "base", "base", "base", "mid")
         her "I am sorry for doubting you [genie_name]..."
         m "No biggie. Now go find professor Snape and bring him here."
-        call her_main("Right away [genie_name]!","smile","angry")
+        call her_main("Right away [genie_name]!", "smile", "base", "angry", "mid")
 
     else:
         hide screen blktone
@@ -83,7 +83,7 @@ label hg_pf_strip_T2_Snape:
         call her_main("But didn't we already establish that last time I did this?","annoyed","worriedL")
         m "Well, ehm... sure..."
         m "But I will need more proof if I am to take this issue to the ministry of magic!"
-        call her_main(".....","angry","angry")
+        call her_main(".....", "angry", "base", "angry", "mid")
         m "So, what do you say [hermione_name]?"
         m "One more dance for the greater good?"
         call her_main("Well, alright...","disgust","glance")
@@ -198,7 +198,7 @@ label hg_pf_strip_T2_Snape:
     g9 "{size=-5}( \"snape'o'doodle\, heh... that's funny.){/size}"
     call her_main(".............","grin","worriedCl", emote="05")
     call sna_main("Yes, I know what are you calling me behind my back, you wretched girl!","snape_08")
-    call her_main("Well, maybe that's because you deserve it... Snivellus.","scream","angry", emote="01")
+    call her_main("Well, maybe that's because you deserve it... Snivellus.", "scream", "base", "angry", "mid", emote="01")
     call sna_main("What?!","snape_10")
     call sna_main("How dare you....?")
     call sna_main("Who do you think you are? You filthy mu--","snape_15")
@@ -213,7 +213,7 @@ label hg_pf_strip_T2_Snape:
         m "..."
         "\"[hermione_name], show some respect!\"":
             $ her_mood += 9
-            call her_main("What?","annoyed","angry")
+            call her_main("What?", "annoyed", "base", "angry", "mid")
             call her_main("But [genie_name]!")
             m "Young lady, you {size=+4}will{/size} calm down now."
             call her_main("Tsk!","disgust","glance")
@@ -497,7 +497,7 @@ label hg_pf_strip_T2_Snape_masturbate:
     call her_main("No! I refuse to dance with those things pointed at me!","angry","worriedCl")
     call her_main("You need to put them away or the dance is over!")
     m "You aren't in any position to give us orders, [hermione_name]."
-    call her_main("that was not an order, [genie_name]. It was an ultimatum.","clench","angry", emote="01")
+    call her_main("that was not an order, [genie_name]. It was an ultimatum.", "clench", "base", "angry", "mid", emote="01")
 
     menu:
         m "..."
@@ -690,7 +690,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         call her_main("{size=+5}WHAT?!!!{/size}", "shock", "wide", "base", "stare")
         call sna_main("Yes... Quite a few things could use some improvement actually.","snape_09")
         call play_music("chipper_doodle") # HERMIONE'S THEME.
-        call her_main("I cannot believe this!","clench","angry", emote="01")
+        call her_main("I cannot believe this!", "clench", "base", "angry", "mid", emote="01")
         pause.5
 
         call hide_characters
@@ -714,7 +714,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         $ flip = True # Flips hermione_main screen.
         $ u_sperm = "characters/hermione/face/auto_05.png"
 
-        call her_main("I demand a higher grade than that!","soft","angry", xpos="right", ypos="base")
+        call her_main("I demand a higher grade than that!", "soft", "base", "angry", "mid", xpos="right", ypos="base")
         call sna_main("You do not demand a grade miss Granger, you earn it.","snape_09")
         call her_main("I did earn it!", "open", "base", "base", "R")
         call her_main("And could you at least have the decency to stop touching yourself, professor!","annoyed","angryL")

@@ -75,7 +75,7 @@ label hg_pf_grope_breasts_T1:
             call nar(">You unhand the girl's breasts...")
             call her_main("Thank you...", "soft", "closed", "base", "mid", cheeks="blush")
             m "But you didn't earn them today..."
-            call her_main("...............","annoyed","angry", cheeks="blush")
+            call her_main("...............", "annoyed", "base", "angry", "mid", cheeks="blush")
 
             jump end_hg_pf_grope
 
@@ -138,7 +138,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
     call hg_chibi_transition("stand","desk","base", flip=False, trans="fade")
     pause.5
 
-    call her_main("You are a mean and demented old man!","angry","angry", cheeks="blush", tears="soft", xpos="mid", ypos="base")
+    call her_main("You are a mean and demented old man!", "angry", "base", "angry", "mid", cheeks="blush", tears="soft", xpos="mid", ypos="base")
     m "............"
 
     call her_walk(action="leave", speed=3)

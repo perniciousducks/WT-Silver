@@ -49,7 +49,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call nar(">Her breast swell up again.")
     call her_main("You can't be serious. At this rate they're going to rip my shirt.", "angry", "wide", "base", "stare")
     m "Well they should stop there."
-    call her_main("Good, they're big enough as is.","angry","angry")
+    call her_main("Good, they're big enough as is.", "angry", "base", "angry", "mid")
 
     menu:
         "-Send her to class-":
@@ -65,7 +65,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
             m "Just tell them that you are still developing. I'm sure that they're used to enormous breasts anyway, what's a few extra sizes."
             call her_main("...Fine. Just promise me that they won't get any bigger.", "upset", "closed", "base", "mid")
             m "I can't promise that, your still in school. A lot of girls don't stop growing until their 30."
-            call her_main("You know what I mean [genie_name].","scream","angry",emote="01")
+            call her_main("You know what I mean [genie_name].", "scream", "base", "angry", "mid",emote="01")
             m "I'm afraid that I don't [hermione_name], now you'd best hurry if you don't want to be late."
             call her_main("...Yes [genie_name].","annoyed","annoyed")
 
@@ -116,7 +116,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     with vpunch
 
     call her_main("!!!", "angry", "wide", "base", "stare")
-    call her_main("You said that they wouldn't get any bigger! Now how would you explain this?!","scream","angry",emote="01")
+    call her_main("You said that they wouldn't get any bigger! Now how would you explain this?!", "scream", "base", "angry", "mid",emote="01")
     m "Don't worry about that [hermione_name], worry about earning your 40 points."
     call her_main("Just hurry up.","annoyed","annoyed")
     menu: #Will add titfuck here

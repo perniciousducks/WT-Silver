@@ -33,10 +33,10 @@
                 # "-Don't give her the points-":
                     # m "I don't think so, missy!"
                     # call her_main("...","annoyed","frown")
-                    # call her_main("Fine!","angry","angry")
+                    # call her_main("Fine!", "angry", "base", "angry", "mid")
                     # call her_main("I don't want them anyway!","annoyed","down")
                     # m "You sure?"
-                    # call her_main("Tzzz--","angry","angry")
+                    # call her_main("Tzzz--", "angry", "base", "angry", "mid")
         # else:
             # hide screen hermione_main
             # with d3
@@ -84,10 +84,10 @@
                 # "-Don't give her the points-":
                     # m "I'm already giving you new clothing! Isn't that enough?"
                     # call her_main("No it's not enough, [genie_name]!", "open", "closed", "base", "mid")
-                    # call her_main("I want those points!","angry","angry")
+                    # call her_main("I want those points!", "angry", "base", "angry", "mid")
                     # call her_main("(You can shove those clothes up your ass...)","annoyed","angryL")
                     # m "I'm not giving you the points, [hermione_name]."
-                    # call her_main("Tzzz--","angry","angry")
+                    # call her_main("Tzzz--", "angry", "base", "angry", "mid")
                     # call her_main("Well then wear your... {w=0.5}-stuff yourself!","scream","angryCl")
                     # m "Wouldn't look good on me..."
                     # call her_main("I don't care.","annoyed","annoyed")

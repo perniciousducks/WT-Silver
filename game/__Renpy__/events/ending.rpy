@@ -3088,7 +3088,7 @@ label ball_ending_E3:
         call her_main( "...........................................................................................................","disgust","shocked",cheeks="blush")
         dum_[1]"Well, now that I am back..."
         dum_[1]"I will be putting an end to all that \"favour-selling-business\" of course."
-        call her_main("","scream","angry",emote="01")
+        call her_main("", "scream", "base", "angry", "mid",emote="01")
         pause.1
         with hpunch
         call play_music("hermione")
@@ -3097,7 +3097,7 @@ label ball_ending_E3:
         dum_[1]"The same way you always did, miss Granger."
         call her_main("Huh...?","open","annoyed",cheeks="blush")
         dum_[1]"With hard work."
-        call her_main("That's just stupid!","angry","angry",cheeks="blush")
+        call her_main("That's just stupid!", "angry", "base", "angry", "mid",cheeks="blush")
         dum_[2] "Miss Granger, would you mind to guard your tongue when--"
 
         ### TITS ###
@@ -3109,8 +3109,8 @@ label ball_ending_E3:
         call ctc
 
         dum_[3] "{size=+4}!!!{/size}"
-        call her_main("Or would you rather see my pussy, sir?","scream","angry",emote="01")
-        call her_main("","annoyed","angry")
+        call her_main("Or would you rather see my pussy, sir?", "scream", "base", "angry", "mid",emote="01")
+        call her_main("", "annoyed", "base", "angry", "mid")
 
         hide screen hermione_main
         $ hermione_wear_panties = False
@@ -3123,7 +3123,7 @@ label ball_ending_E3:
         her "I am willing to do anything to get those points, sir!"
 
         call set_her_action("")
-        call her_main("And I mean {size=+9}ANYTHING!!!{/size}","scream","angry",emote="01", trans="hpunch")
+        call her_main("And I mean {size=+9}ANYTHING!!!{/size}", "scream", "base", "angry", "mid",emote="01", trans="hpunch")
 
         call chibi_walk_desk_blkfade("hermione")
 

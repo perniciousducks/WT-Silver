@@ -30,25 +30,25 @@ label hg_pr_handjob:
         with hpunch
         call her_main("{size=+5}What?!!{/size}", "shock", "wide", "base", "stare")
         call play_music("chipper_doodle") # HERMIONE'S THEME.
-        call her_main("Now you have done it, [genie_name]! You crossed the line!","angry","angry")
+        call her_main("Now you have done it, [genie_name]! You crossed the line!", "angry", "base", "angry", "mid")
         her "I know I did sell you a couple of rather questionable favours in the past..."
         with vpunch
-        call her_main("{size=+5}But THIS?!{/size}","scream","angry", emote="01")
+        call her_main("{size=+5}But THIS?!{/size}", "scream", "base", "angry", "mid", emote="01")
         her "I cannot believe that you would ask one of your pupils to... to..."
-        call her_main("We are done here, [genie_name]!","angry","angry", emote="01")
+        call her_main("We are done here, [genie_name]!", "angry", "base", "angry", "mid", emote="01")
         m "Alright, alright, calm down, would you?"
         call her_main("I most certainly would not, [genie_name]! This is beyond inappropriate!","scream","angryCl")
         m "Alright, fine, maybe I really did cross some sort of line this time..."
-        call her_main("You think [genie_name]?! You think!!?","angry","angry")
+        call her_main("You think [genie_name]?! You think!!?", "angry", "base", "angry", "mid")
         m "Yes, I apologize..."
         call her_main(".........","annoyed","annoyed")
         m "How about we try something less... engaging instead?"
         call her_main("............", "upset", "closed", "base", "mid")
         m "I'll be willing to grant \"Gryffindor\" fifty five points."
         m "All I ask in return is..."
-        call her_main("..........?","angry","angry", cheeks="blush")
+        call her_main("..........?", "angry", "base", "angry", "mid", cheeks="blush")
         m "...that you go out there and give some lucky boy a handjob..."
-        call her_main("!!!......","angry","angry")
+        call her_main("!!!......", "angry", "base", "angry", "mid")
         m "Oh, come on... Just a harmless handjob."
         call her_main("...","disgust","glance")
         m "Fifty five house points..."
@@ -264,7 +264,7 @@ label hg_pr_handjob_T1_E3:
     call her_main("All boys are jerks! That is the problem, [genie_name]!","scream","angryCl")
     call her_main("I gave this one boy a good wanking...","open","down")
     her "And do you know how he thanked me?"
-    call her_main("He got his spunk all over me...","scream","angry", emote="01")
+    call her_main("He got his spunk all over me...", "scream", "base", "angry", "mid", emote="01")
     call her_main("And he did that on purpose, I know he did!","scream","angryCl")
     call her_main("Nasty, good for nothing \"ravenclaws\"...","annoyed","worriedL")
     m "Well, I'd say a job well done."
@@ -456,7 +456,7 @@ label hg_pr_handjob_T2_E3:
         "\"Yes! All goes according to plan!\"":
             call her_main("What?", "angry", "wide", "base", "stare")
             m "What?"
-            call her_main("[genie_name], did you just say \"All goes according to plan\"?","angry","angry", cheeks="blush")
+            call her_main("[genie_name], did you just say \"All goes according to plan\"?", "angry", "base", "angry", "mid", cheeks="blush")
             m "Did I?"
             m "Oh, yes, of course."
             m "ensuring that \"Gryffindor\" gets the house cup this year."
@@ -597,7 +597,7 @@ label hg_pr_handjob_T3_E3:
     her "Their cocks simply exploded with spunk."
     m "You enjoyed it, didn't you?"
     call her_main("To be completely honest with you, sir... I did.","grin","dead")
-    call her_main("It was exciting.","smile","angry")
+    call her_main("It was exciting.", "smile", "base", "angry", "mid")
     call her_main("God, there was so much.  My hands looked like a candle had dripped hot wax all over them.","grin","dead")
     call her_main("I didn't know what to do I couldn't just go about the rest of class with huge globs of cum all over my hands.","angry","down_raised")
     her "So I decided to rub it all over the inside of my thighs to keep from having to stain my clothes."

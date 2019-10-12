@@ -97,7 +97,7 @@ label hg_pf_admire_panties_T1_intro_E1:
     m "Nothing drastic, really..."
     m "I just want you to show me your panties."
     call her_main("My... panties...?", "open", "base", "base", "mid")
-    call her_main("[genie_name]!","angry","angry")
+    call her_main("[genie_name]!", "angry", "base", "angry", "mid")
     m "I know, I know, this a little weird..."
     call her_main("{size=+7}A little !?{/size}", "shock", "wide", "base", "stare")
     her "This is completely inappropriate!"
@@ -107,7 +107,7 @@ label hg_pf_admire_panties_T1_intro_E1:
     m "Do you need these points or not?"
     call her_main("I do...", "open", "base", "base", "mid")
     m "Lift up your skirt then..."
-    call her_main(".............","angry","angry")
+    call her_main(".............", "angry", "base", "angry", "mid")
 
     call hg_pf_admire_panties_T1
 
@@ -117,9 +117,9 @@ label hg_pf_admire_panties_T1_intro_E1:
 label hg_pf_admire_panties_T1_E1:
     m "Nothing drastic, really..."
     m "I just want you to show me your panties."
-    call her_main("This again?","angry","angry")
+    call her_main("This again?", "angry", "base", "angry", "mid")
     m "Yes. Now lift up your skirt..."
-    call her_main(".............","angry","angry")
+    call her_main(".............", "angry", "base", "angry", "mid")
 
     call hg_pf_admire_panties_T1
 
@@ -140,7 +140,7 @@ label hg_pf_admire_panties_T1: # Call label
 
     call play_music("playful_tension")
     show screen blktone
-    call her_main(".....................","angry","angry", xpos="mid", ypos="base")
+    call her_main(".....................", "angry", "base", "angry", "mid", xpos="mid", ypos="base")
     call ctc
 
     menu:
@@ -298,7 +298,7 @@ label hg_pf_admire_panties_T3_intro_E1:
                     call her_main("Why not!?","scream","angryCl")
                     m "Sluts aren't paid."
                     m "That's what makes them sluts."
-                    call her_main("well are you even going to pay me [current_payout] points?","annoyed","angry")
+                    call her_main("well are you even going to pay me [current_payout] points?", "annoyed", "base", "angry", "mid")
                     m "Are you a slut or are you a prostitute?"
                     her "{size=-4}...a slut {/size}"
                     m "Good girl."
@@ -354,7 +354,7 @@ label hg_pf_admire_panties_T3_E1:
                     call her_main("Why not!?","scream","angryCl")
                     m "Sluts aren't paid."
                     m "That's what makes them sluts."
-                    call her_main("Well are you even going to pay me [current_payout] points?","annoyed","angry")
+                    call her_main("Well are you even going to pay me [current_payout] points?", "annoyed", "base", "angry", "mid")
                     m "Are you a slut or are you a prostitute?"
                     her "{size=-4}...a slut {/size}"
                     m "Good girl."

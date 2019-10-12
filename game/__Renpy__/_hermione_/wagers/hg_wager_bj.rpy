@@ -489,7 +489,7 @@ label hg_wager_bj:
                                         g4 "You should be happy that I'm not deducting more!"
                                         g4 "20 points from Gryffindor!"
                                         $ gryffindor -= 20
-                                        call her_main("...","base","angry")
+                                        call her_main("...", "base", "base", "angry", "mid")
                                         call her_main("What ever...","open","angryCl")
                                         $ her_mood += 15
                                     "-Deduct even more-":
@@ -499,7 +499,7 @@ label hg_wager_bj:
                                         $ gryffindor -= 40
                                         call her_main("What, you can't do that!","shock","surprised")
                                         g4 "Of course I can, I'm the headmaster!"
-                                        call her_main("I can't believe you've done this...","mad","angry")
+                                        call her_main("I can't believe you've done this...", "mad", "base", "angry", "mid")
                                         m "Suck it up..."
                                         call her_main("{size=-5}That's what I did...{/size}","open","annoyed", cheeks="blush")
                                         m "Excuse me?"

@@ -44,7 +44,7 @@ label equip_outfit:
                     # m "No points,..."
                     # g9 "But I've got this cute outfit for you!"
                     # call her_main("No thank you, [genie_name]...", "open", "closed", "base", "mid")
-                    # call her_main("Outfits don't win house cups...","soft","angry")
+                    # call her_main("Outfits don't win house cups...", "soft", "base", "angry", "mid")
                     # m "(Damn her...)"
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 11."
@@ -162,7 +162,7 @@ label equip_outfit:
                     # if her_whoring < 5:
                         # call her_main("What?", "shock", "wide", "base", "stare")
                         # call her_main("Are you out of your mind, [genie_name]?","open","angryCl")
-                        # call her_main("Never ask me something like this again!","angry","angry")
+                        # call her_main("Never ask me something like this again!", "angry", "base", "angry", "mid")
                     # else:
                         # call her_main("Typical...", "open", "closed", "base", "mid")
                         # call her_main("I'm sorry, [genie_name]. But this just sounds like just another one of your silly ideas...","open","annoyed")
@@ -170,7 +170,7 @@ label equip_outfit:
                     # if not birthday_happened:
                         # call her_main("Birthday or not, I would never do such a thing! For anyone!","scream","angryCl")
                     # else:
-                        # call her_main("It's not your birthday!","scream","angry")
+                        # call her_main("It's not your birthday!", "scream", "base", "angry", "mid")
                         # m "Alright, alright... No need to scream like that."
                     # call her_main("(What a perv...)","annoyed","angryL")
                     # if cheats_active or game_difficulty <= 2:
@@ -221,7 +221,7 @@ label equip_outfit:
                     # if outfit_choice == hg_costume_power_girl_ITEM:
                         # call her_main("Although... That cleavage on her is a bit much.","disgust","down")
                         # g9 "But that's the best part!"
-                        # call her_main("Why doesn't that suprise me. That you would think so...","annoyed","angry")
+                        # call her_main("Why doesn't that suprise me. That you would think so...", "annoyed", "base", "angry", "mid")
                     # call her_main("Just let me put it on...","smile","glance")
                 # else: #Fail
                     # call her_main("Of course!","open","worriedL")
@@ -236,7 +236,7 @@ label equip_outfit:
                     # call her_main("I myself don't think too highly of comic books, [genie_name].", "soft", "slit", "low", "stare")
                     # call her_main("Not to mention the contumelious treatment and over-sexualisation of female heroines.", "soft", "slit", "low", "stare")
                     # call her_main("It's disgusting...", "open", "closed", "base", "mid")
-                    # call her_main("I have to refuse, [genie_name]!","annoyed","angry")
+                    # call her_main("I have to refuse, [genie_name]!", "annoyed", "base", "angry", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 11."
                     # jump return_to_wardrobe
@@ -326,7 +326,7 @@ label equip_outfit:
                     # if outfit_choice == hg_witch_skimpy_ITEM:
                         # call her_main("And why is there a hole down there?", "disgust", "slit", "low", "stare")
                         # g9 "It's great, isn't it!"
-                        # call her_main("No it isn't! Do you really expect me to show of my pussy like that, to everyone?","angry","angry")
+                        # call her_main("No it isn't! Do you really expect me to show of my pussy like that, to everyone?", "angry", "base", "angry", "mid")
                         # m "Well, only to me..."
                         # m "I believe you can cover it up with a spell or something..."
                         # call her_main("Oh...","annoyed","down")
@@ -350,7 +350,7 @@ label equip_outfit:
                 # call her_main("A new outfit? You mean as a gift?","open","wink")
                 # m "Yes. It's a character from a video-ga--"
                 # show screen blktone
-                # call her_main("...","normal","angry")
+                # call her_main("...", "normal", "base", "angry", "mid")
                 # m "I mean... she's a famous, ugh,... witch?"
                 # hide screen blktone
                 # call her_main("...", "smile", "base", "base", "mid")

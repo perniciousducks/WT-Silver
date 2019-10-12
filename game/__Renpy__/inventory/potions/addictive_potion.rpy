@@ -80,7 +80,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
         with hpunch
         call her_main("This isn't a potion! This is just a bottle full of your cum!","scream","angryCl")
         g4 "How did you know?"
-        call her_main("It reeks of semen ","angry","angry")
+        call her_main("It reeks of semen ", "angry", "base", "angry", "mid")
         her "I can't believe you were going to make me drink that..."
         her "I'm leaving..."
         call her_walk(action="leave", speed=2)
@@ -100,7 +100,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
             call her_main("Is this bottle full of your cum?","disgust","angryCl")
             call her_main("Ughhh and it's cold as well.", "disgust", "slit", "low", "stare")
             m "So it just tastes like cum to you?"
-            call her_main("Of course it does, what else would it taste like?","angry","angry")
+            call her_main("Of course it does, what else would it taste like?", "angry", "base", "angry", "mid")
             call nar(">Hermione starts unconsciously licking her lips.")
             her "I can't believe you were going to make me drink that..."
             call nar(">Without thinking of what she's doing she downs the rest of the potion.")
@@ -141,7 +141,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
     m "Whatever are you talking about, [hermione_name]?"
     call her_main("Ughh, it doesn't matter, just let me suck it.","annoyed","worriedL")
     m "Why on earth would you want to do that? You're a top student, that doesn't sound appropriate."
-    call her_main("You know exactly what you did to me. Now let me suck your filthy old cock.","angry","angry")
+    call her_main("You know exactly what you did to me. Now let me suck your filthy old cock.", "angry", "base", "angry", "mid")
 
     menu:
         "-Let her suck your dick-":
@@ -385,7 +385,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
                     hide screen hermione_main
                     call nar(">She bends over with her head to the floor.")
                     $ aftersperm = True
-                    call her_main("(This is so degrading...)","open_wide_tongue","angry")
+                    call her_main("(This is so degrading...)", "open_wide_tongue", "base", "angry", "mid")
                     hide screen hermione_main
                     call nar(">She puts her tongue out licks your cum.","start")
 
@@ -747,7 +747,7 @@ label potion_scene_3_3_1: #Hypno potion
 
 
     m "I'm just going to ask you a few questions."
-    call her_main("(...)","annoyed","angry")
+    call her_main("(...)", "annoyed", "base", "angry", "mid")
     call her_main("(And here I hoped he'd just ask to fuck...)","annoyed","angryL")
     call her_main("(Questions are so boooring! I hope they are at least naughty...)", "annoyed", "narrow", "annoyed", "up")
     call her_main("Are those questions going to be hard, mistah?","grin","worriedCl",emote="05")

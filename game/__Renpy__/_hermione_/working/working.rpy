@@ -75,7 +75,7 @@ label maid_responses:
                 call her_main("Hmmph. Can I at least get my points now?","angry","angryCl")
                 m "Certainly, 10 points to Gryffindor."
             else:
-                call her_main("I think you need to start enforcing harsher punishment for sexual harassment.","mad","angry")
+                call her_main("I think you need to start enforcing harsher punishment for sexual harassment.", "mad", "base", "angry", "mid")
                 call her_main("Hmmph... Can I at least get my points now?","angry","angryCl")
                 m "Certainly, 10 points to Gryffindor."
         "-Dismiss her-":
@@ -414,7 +414,7 @@ label slytherin_cheer_responses:
                 m "You kept dancing while they groped you?"
                 call her_main("Of course, I'm there to complete a job. I'm not getting distracted just because of a few boys.","open","angryCl")
                 m "Well what would you have me do?"
-                call her_main("Speak to Professor Snape, tell him to chastise them. They'll listen to him...","angry","angry")
+                call her_main("Speak to Professor Snape, tell him to chastise them. They'll listen to him...", "angry", "base", "angry", "mid")
                 m "Very well, I'll speak to him. Although I'm not sure it will have the effect you're hoping for."
                 call her_main("It better, otherwise I wont put my full effort into this...","normal","frown")
                 m "{size=-5}I'm sure that'll show them.{/size}"
@@ -612,7 +612,7 @@ label hermione_helping_selling_cards:
         call her_main("...","angry","angryCL", cheeks="blush")
         call her_main("I've played enough not to be beaten by a new player I thought.","mad","angryL", cheeks="blush")
         g9 "Of course, you've played against me after all..."
-        call her_main("...","base","angry")
+        call her_main("...", "base", "base", "angry", "mid")
         m "Sorry, go on."
         call her_main("Well, I managed to get a bunch of people into the card game so practice day is still on the schedule.","annoyed","angryCl")
         g9 "That's good!"
@@ -644,15 +644,15 @@ label hermione_helping_selling_cards:
         call her_main("Apparently... someone had gone around spreading the rumour that the winner would...","normal","down")
         call her_main("Get a go with me if they won the tournament...","annoyed","down_raised", cheeks="blush")
         g9 "And did they?"
-        call her_main("Of course that was never on the table...","base","angry", cheeks="blush")
+        call her_main("Of course that was never on the table...", "base", "base", "angry", "mid", cheeks="blush")
         g9 "On a desk then?"
         call her_main("Well...", "annoyed", "base", "base", "mid", cheeks="blush")
         call her_main("The winner did end up standing there with such an expectant look on his face after everyone had left...","open","down", cheeks="blush")
         m "..."
         call her_main("So I told him that whatever he was expecting it wasn't happening.","angry","angryL", cheeks="blush")
         call her_main("He seemed so disheartened so I felt a bit bad about the whole thing...","open","angryCl")
-        call her_main("So, since I didn't want to bring his feeling of victory down I figured since some students had spread the rumour they'd assume the worst anyway...","open","angry", cheeks="blush")
-        call her_main("So I put my hand down his pants and fiddled around a bit whilst letting the guy get a peek behind my suspenders.","grin","angry", cheeks="blush")
+        call her_main("So, since I didn't want to bring his feeling of victory down I figured since some students had spread the rumour they'd assume the worst anyway...", "open", "base", "angry", "mid", cheeks="blush")
+        call her_main("So I put my hand down his pants and fiddled around a bit whilst letting the guy get a peek behind my suspenders.", "grin", "base", "angry", "mid", cheeks="blush")
         g9 "Good on you!"
         call her_main("You don't think that was a bit much?", "annoyed", "base", "base", "mid", cheeks="blush")
         g9 "No! That was the right thing to do in that situation."

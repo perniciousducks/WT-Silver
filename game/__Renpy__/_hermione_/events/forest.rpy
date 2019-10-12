@@ -289,18 +289,18 @@ label forest_BJ_2:
     hide screen blkfade
     with d3
 
-    call her_main("I can't believe you just did that?","shock","angry")
+    call her_main("I can't believe you just did that?", "shock", "base", "angry", "mid")
     m "really? After everything we've done?"
     call her_main("It's a figure of speech! And More importantly...","angry","angryCl")
     call her_main("{size=+10}You just came down my throat in front of moaning myrtle!{/size}","scream","angryCl")
-    call her_main("She's going to tell everyone about this now!","annoyed","angry")
+    call her_main("She's going to tell everyone about this now!", "annoyed", "base", "angry", "mid")
     m "So? Doesn't everyone sort of know by now anyway?"
     call her_main("Argh! That's not the point and you know it!","annoyed","frown")
     call her_main("You can't keep treating me like your {image=textheart}dirty{image=textheart} little {b}cumdump{/b} to use as you please!","angry","suspicious")
     call her_main("To coat in your filthy nasty {b}{image=textheart}cum{image=textheart}{/b}...","angry","dead")
     call her_main("In front of whoever, or whatever, you want...", "angry", "narrow", "annoyed", "up")
     call her_main("...","angry","dead")
-    call her_main("Well... I hope you've learned your lesson!", "angry", "narrow", "angry", "up")
+    call her_main("Well... I hope you've learned your lesson!", "angry", "narrow", "base", "angry", "mid", "up")
     call her_main("I'm going to go back and...", "angry", "narrow", "base", "up")
     call her_main("ge-Clean! myself off...", "open", "squint", "worried", "up")
     call her_main("And remember...", "open", "narrow", "base", "up")

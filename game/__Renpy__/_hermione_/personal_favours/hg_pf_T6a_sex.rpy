@@ -35,7 +35,7 @@ label hg_pf_sex:
 
     hide screen blkfade
     if her_mood != 0:
-        call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans="fade")
     else:
         call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
@@ -114,7 +114,7 @@ label hg_pf_sex_T1_intro_E2:
     m "Last night I had a dream..."
     g9 "You were lying on my desk and I was fucking your tight pussy like a madman..."
     call her_main("In that dream, [genie_name]...", "upset", "closed", "base", "mid", xpos="right", ypos="base")
-    call her_main("Did I happen to receive 65 house points afterwards?","angry","angry")
+    call her_main("Did I happen to receive 65 house points afterwards?", "angry", "base", "angry", "mid")
     g9 "Why yes, you did, [hermione_name]."
     call her_main("...............................","disgust","glance")
     her "Let me just take my panties off..."
@@ -198,7 +198,7 @@ label hg_sex_1:
     call her_main(".............", "upset", "closed", "base", "mid", ypos="head")
     call her_main("!!!!!!!!!!!!!!!", "angry", "wide", "base", "stare")
     m "Relax, [hermione_name]. I'm Just gonna take off your panties."
-    call her_main("..............","angry","angry")
+    call her_main("..............", "angry", "base", "angry", "mid")
     m "Are you ready?"
     call her_main("No...","annoyed","annoyed")
     m "Good girl."

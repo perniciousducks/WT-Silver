@@ -321,9 +321,9 @@ label astoria_intro_E2_hermione:
     #call her_main("Of course! I know everything about it!", "smile", "happy", "base", "mid_soft")
     #call her_main("It's the prison of the damned... An impenetrable rocky outcrop surrounded by the harsh North Sea...","open","happyCl")
     #call her_main("the guards are the deathly eaters of all happy thoughts and emotions known as dementors...","open","angryL")
-    #call her_main("They endlessly patrol the prison, devouring all hope from the prisoners, driving them mad within a few days...","open","angry")
+    #call her_main("They endlessly patrol the prison, devouring all hope from the prisoners, driving them mad within a few days...", "open", "base", "angry", "mid")
     #call her_main("Tormenting them relentlessly for the rest of their miserable lives...","grin","happyCl")
-    #call her_main("And the perfect place to house all those dirty \'slytherins\'!","angry","angry")
+    #call her_main("And the perfect place to house all those dirty \'slytherins\'!", "angry", "base", "angry", "mid")
 
     menu:
         m "(...)"
@@ -491,14 +491,14 @@ label astoria_intro_E3:
     m "And who's this?"
     call her_main("Astoria Greengrass, Sir.","soft","annoyed", xpos="560", ypos="base") # Hermione moves closer.
     call her_main("You asked me to bring you the person who cast the unforgivable curse, Sir.","soft","annoyed")
-    call her_main("And here she is.","grin","angry")
+    call her_main("And here she is.", "grin", "base", "angry", "mid")
     m "I thought it would be some angsty teen who listens to death metal - or something..."
     m "Not some little girl..."
     call ast_main("I am not a little girl!","clench","narrow","angry","mid")
     call ast_main("You're just ancient!","annoyed","narrow","angry","R")
     m "(Oh, you have no idea...)"
 
-    call her_main("What's going to be her punishment, Sir?","soft","angry")
+    call her_main("What's going to be her punishment, Sir?", "soft", "base", "angry", "mid")
     call ast_main("Punishment? I didn't do anything!","clench","base","worried","mid")
     call her_main("You know very well what you did!","angry","angryCl")
     call her_main("Sir, I overheard her boasting about it in the library - to a group of \"Slytherins.\"","annoyed","concerned")
@@ -508,7 +508,7 @@ label astoria_intro_E3:
     call her_main("Shall I go fetch a vial of veritaserum from Professor Snape, sir?", "grin", "base", "base", "mid")
     call ast_main("V-veritaserum?!","clench","base","worried","mid")
     call ast_main("That's illegal!","clench","base","base","mid")
-    call her_main("Not when you've been casting unforgivable curses - you evil little witch!","grin","angry")
+    call her_main("Not when you've been casting unforgivable curses - you evil little witch!", "grin", "base", "angry", "mid")
     call ast_main("Fine!","clench","closed","angry","mid")
     call ast_main("I'll tell you what happened, Sir...", "open","narrow","base","mid")
     call ast_main("But only if this \"Gryffindor\" leaves!","annoyed","narrow","base","mid")
@@ -530,7 +530,7 @@ label astoria_intro_E3:
 
     m "That's none of your concern."
     call her_main("Yes it is! And I demand to be rewarded!","angry","angryCl")
-    call her_main("Given that I was the one who caught her, I think it's only fair!","annoyed","angry")
+    call her_main("Given that I was the one who caught her, I think it's only fair!", "annoyed", "base", "angry", "mid")
 
     m "(...)"
     menu:
@@ -544,13 +544,13 @@ label astoria_intro_E3:
 
         "\"How about some house points instead?\"":
             call her_main("*Hmm*...","annoyed","angryL")
-            call her_main("How many house points?","soft","angry")
+            call her_main("How many house points?", "soft", "base", "angry", "mid")
 
             menu:
                 m "(...)"
                 "\"How about 10?\"":
                     call her_main("10?","disgust","worried")
-                    call her_main("I expected more for this, Professor!","open","angry")
+                    call her_main("I expected more for this, Professor!", "open", "base", "angry", "mid")
                     m "Take 'em or leave 'em..."
                     call her_main("...","annoyed","angryL")
                     call her_main("Very well...", "open", "closed", "base", "mid")
@@ -563,7 +563,7 @@ label astoria_intro_E3:
                     $ her_mood = 0
                     $ gryffindor += 20
 
-    call her_main("In a few days, everyone at Hogwarts will know what happened to her...","grin","angry")
+    call her_main("In a few days, everyone at Hogwarts will know what happened to her...", "grin", "base", "angry", "mid")
     call her_main("When she's sent to Azkaban!","soft","frown")
     m "Nobody's going anywhere, except for you, Miss Granger..."
 
@@ -576,7 +576,7 @@ label astoria_intro_E3:
     call ast_main("*cough*... {size=-4}mudblood...{/size}","annoyed","narrow","angry","L")
     call her_main("*Tzzzs!*...","angry","angryCl")
     call her_main("I'll go back to class then...","annoyed","angryL")
-    call her_main("Good day, Professor.","open","angry")
+    call her_main("Good day, Professor.", "open", "base", "angry", "mid")
     stop music fadeout 2.0
 
     call her_walk(action="leave", speed=2.5)

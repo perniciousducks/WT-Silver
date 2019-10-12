@@ -36,14 +36,14 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         her "No, I am interested. I am.... it's just..."
         her "You need my...."
         call play_music("chipper_doodle") # HERMIONE'S THEME.
-        call her_main("...panties, [genie_name]?","angry","angry")
+        call her_main("...panties, [genie_name]?", "angry", "base", "angry", "mid")
         m "Yes I do..."
         call her_main("May I ask what you are planning to do with them...?","disgust","glance")
         m "Ehm...I'm conducting research..."
         her "But this is kind of inappropriate, don't you think?"
         m "But don't you hate it that some of the girls from \"Slytherin\"..."
         m "Are selling favours for house points, [hermione_name]?"
-        call her_main("Yes I do!","angry","angry")
+        call her_main("Yes I do!", "angry", "base", "angry", "mid")
         call her_main("(Those \"Slytherin\" tramps have no dignity.)","annoyed","angryL")
         m "Well, there you go then!"
         call her_main("Huh?","disgust","glance")
@@ -115,7 +115,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
 label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
     if her_whoring >= 3 and her_whoring <= 5: # LEVEL 02
         call her_main("Hm....?","annoyed","down",xpos="right",ypos="base")
-        call her_main("[genie_name]? What is this?","angry","angry")
+        call her_main("[genie_name]? What is this?", "angry", "base", "angry", "mid")
         her "What have you done to them?"
         call her_main("They are covered in something slimy...","normal","frown")
 
@@ -129,7 +129,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 m "What? Oh..."
                 m "Some top secret research I'm conducting."
                 m "I can't discuss it with a student."
-                call her_main("................................","angry","angry")
+                call her_main("................................", "angry", "base", "angry", "mid")
             "\"You gave them to me like this!\"":
                 her "I most certainly did not, [genie_name]!"
                 her ".........................."
@@ -147,7 +147,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 m "I am not..."
                 call her_main("B-but...", "open", "base", "base", "mid")
                 call her_main("........................................","normal","worriedCl")
-                call her_main("(Must you always have your way, [genie_name]?)","angry","angry")
+                call her_main("(Must you always have your way, [genie_name]?)", "angry", "base", "angry", "mid")
                 m "What was that, [hermione_name]?"
                 call her_main("It's nothing, [genie_name].","scream","angryCl")
                 her "Putting my panties back on!"

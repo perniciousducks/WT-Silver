@@ -122,7 +122,7 @@ label chit_chat:
 
         elif one_of_ten == 2:
             call her_main("The rate at which the Slytherin house has been gaining points lately is simply ridiculous.","open","angryCl")
-            call her_main("I think professor Snape might be behind it.","angry","angry")
+            call her_main("I think professor Snape might be behind it.", "angry", "base", "angry", "mid")
             call her_main("You should look into this, sir.","open","angryCl")
             call her_main("", "normal", "base", "base", "mid")
 
@@ -133,7 +133,7 @@ label chit_chat:
             call her_main("It's just that we have another test soon...", "soft", "base", "base", "R")
 
         elif one_of_ten == 4:
-            call her_main("I dislike the entire house of Slytherin with all my heart, sir.","angry","angry")
+            call her_main("I dislike the entire house of Slytherin with all my heart, sir.", "angry", "base", "angry", "mid")
 
         elif one_of_ten == 5:
             call her_main("Hogwarts has really become a second home to me lately...", "open", "closed", "base", "mid")
@@ -179,7 +179,7 @@ label chit_chat:
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 3:
-            call her_main("Quidditch is stupid!","angry","angry")
+            call her_main("Quidditch is stupid!", "angry", "base", "angry", "mid")
             call her_main("There. I said it.","annoyed","suspicious")
 
         elif one_of_ten == 4:
@@ -200,8 +200,8 @@ label chit_chat:
             call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 7:
-            call her_main("Slytherins...","angry","angry",emote="01")
-            call her_main("","angry","angry")
+            call her_main("Slytherins...", "angry", "base", "angry", "mid",emote="01")
+            call her_main("", "angry", "base", "angry", "mid")
 
         elif one_of_ten == 8:
             call her_main("I've been spending so much time in your office lately, sir...","open","worriedL")
@@ -282,7 +282,7 @@ label chit_chat:
         elif one_of_ten == 3:
             call her_main("it Doesn't matter how many times you ask me this, sir...", "open", "base", "base", "mid")
             her "The answer shall remain the same..."
-            call her_main("I have nothing but resentment for the \"Slytherins\"!","angry","angry")
+            call her_main("I have nothing but resentment for the \"Slytherins\"!", "angry", "base", "angry", "mid")
             call her_main("","annoyed","angryL")
 
         elif one_of_ten == 4:
@@ -374,7 +374,7 @@ label chit_chat:
 
         elif one_of_ten == 10:
             call her_main("Would you like to see my tits today, sir?","smile","glance")
-            call her_main("25 house points, please.","smile","angry")
+            call her_main("25 house points, please.", "smile", "base", "angry", "mid")
             call her_main("", "upset", "closed", "base", "mid")
 
 
@@ -411,7 +411,7 @@ label chit_chat:
         elif one_of_ten == 8:
             call her_main("Sir, could you put your penis in my mouth?", "angry", "base", "base", "mid")
             call her_main("Sir, I am begging you...", "open_wide_tongue", "narrow", "annoyed", "up")
-            call her_main("Fifty five points, please!","smile","angry")
+            call her_main("Fifty five points, please!", "smile", "base", "angry", "mid")
             call her_main("","angry","wink")
 
         elif one_of_ten == 9:
@@ -468,7 +468,7 @@ label chit_chat:
         elif one_of_ten == 8:
             call her_main("Sir, could you put your penis in my mouth?", "angry", "base", "base", "mid") 
             call her_main("Sir, I am begging you...", "open_wide_tongue", "narrow", "annoyed", "up") 
-            call her_main("Fifty five points, please!","smile","angry")
+            call her_main("Fifty five points, please!", "smile", "base", "angry", "mid")
             call her_main("(Although I wouldn't mind doing it for free..).", "smile", "narrow", "annoyed", "up")
 
         elif one_of_ten == 9:

@@ -33,7 +33,7 @@ label hg_pr_flash:
 
         her "[genie_name]!"
         call play_music("chipper_doodle") # HERMIONE'S THEME.
-        call her_main("This is a completely new level of inappropriate, even for you, [genie_name]!","angry","angry")
+        call her_main("This is a completely new level of inappropriate, even for you, [genie_name]!", "angry", "base", "angry", "mid")
         her "How can you ask one of your pupils to perform such a task?"
         m "So that's how you feel then? I see..."
         m "I suppose I will be awarding those points to some other house instead ..."
@@ -45,7 +45,7 @@ label hg_pr_flash:
         m "Is it really?"
         m "Why don't you show it to me then?"
         m "Yes. Show me how important it is to you exactly, [hermione_name]."
-        call her_main("But this is inappropriate...","angry","angry")
+        call her_main("But this is inappropriate...", "angry", "base", "angry", "mid")
         m "Are we really in any position to discuss what is appropriate and what is not at this point?"
         call her_main("..................","annoyed","angryL")
         m "I would say that ship has sailed a long time ago..."
@@ -301,9 +301,9 @@ label hg_pr_flash_T2_E1:
     m "And yet you keep on coming back..."
     call her_main("............................","angry","down_raised")
     m "I think you may actually be taking some twisted form of pleasure from this."
-    call her_main("What?","angry","angry")
+    call her_main("What?", "angry", "base", "angry", "mid")
     m "Shame on you, [hermione_name]. Shame on you."
-    call her_main("[genie_name], I never...!","angry","angry")
+    call her_main("[genie_name], I never...!", "angry", "base", "angry", "mid")
     m "Enough of this. Did you complete your task or not?"
     call her_main("Yes I did...", "upset", "closed", "base", "mid")
     m "And?"
@@ -477,12 +477,12 @@ label hg_pr_flash_T3_E2:
     her "And started to squeeze them..."
     her "then she started to kiss my breasts passionately..."
     m "............"
-    call her_main("to kiss and suck on my nipples...","smile","angry")
+    call her_main("to kiss and suck on my nipples...", "smile", "base", "angry", "mid")
     call her_main("And I couldn't help myself - I started to moan...","base","glance")
     m ".............."
     call her_main("And then the boy took out his throbbing cock...","base","suspicious")
     her "And sprayed his hot spunk all over me and Ginny!"
-    call her_main("And then me and Ginny, we licked his hot sperm off of our young bodies...","smile","angry")
+    call her_main("And then me and Ginny, we licked his hot sperm off of our young bodies...", "smile", "base", "angry", "mid")
     m ".............."
     m "Are you making this up, [hermione_name]?"
     call her_main("...maybe.","grin","worriedCl",emote="05")

@@ -312,15 +312,15 @@ label luna_revert_1: #Reversion event #DONE
     call her_main("...", "shock", "wide", "base", "stare")
     call her_main("{size=+5}WHAT{/size}","annoyed","annoyed")
     call lun_main("","upset","wide","sad","down")
-    call her_main("{size=+10}THE{/size}","angry","angry")
+    call her_main("{size=+10}THE{/size}", "angry", "base", "angry", "mid")
     call lun_main("","upset","wide","sad","R")
-    call her_main("{size=+15}FRICK!{/size}","scream","angry",emote="01")
+    call her_main("{size=+15}FRICK!{/size}", "scream", "base", "angry", "mid",emote="01")
     call lun_main("It's not what it looks-","clench","seductive","sad","R")
     show screen white
     pause .1
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
-    call her_main("{size=+15}petrificus totalus!{/size}","scream","angry",emote="01",trans="hpunch")
+    call her_main("{size=+15}petrificus totalus!{/size}", "scream", "base", "angry", "mid",emote="01",trans="hpunch")
     ">Hermione pulls out her wand with surprising speed and paralyses Luna."
     call lun_main("!!!","clench","wide","sad","mid")
     m "(Whoa...)"
@@ -328,40 +328,40 @@ label luna_revert_1: #Reversion event #DONE
     call her_main("If you need your filthy old cock jerked so badly you should just call me!","annoyed","angryL")
     call lun_main("???","upset","wide","sad","R")
     call her_main("But to be doing this with Luna Lovegood...","annoyed","annoyed")
-    call her_main("She's not even a {size=+5}\"Gryffindor\"!{/size}","angry","angry")
+    call her_main("She's not even a {size=+5}\"Gryffindor\"!{/size}", "angry", "base", "angry", "mid")
     m "I wasn't pay-"
-    call her_main("Shut up!","scream","angry",emote="01")
+    call her_main("Shut up!", "scream", "base", "angry", "mid",emote="01")
     call her_main("How did you even get Luna to agree to this, sir?","annoyed","annoyed")
-    call her_main("I don't even think she knows what house she's in half the time.","angry","angry")
+    call her_main("I don't even think she knows what house she's in half the time.", "angry", "base", "angry", "mid")
     call her_main("I can't imagine her sense of house pride is large enough to warrant this...","annoyed","annoyed")
     call lun_main("","normal","wide","sad","down")
     m "I can explain this..."
-    call her_main("Really? {p}Go on...","angry","angry")
+    call her_main("Really? {p}Go on...", "angry", "base", "angry", "mid")
     m "Well I was sitting here alone in my office."
     m "(What else can I do...)"
     m "When all of a sudden this weird hat on the shelf behind me starts talking!"
     call her_main("...","annoyed","suspicious")
-    call her_main("Are you serious, sir?","annoyed","angry")
+    call her_main("Are you serious, sir?", "annoyed", "base", "angry", "mid")
     m "I knew you wouldn't believe-"
-    call her_main("Of course I believe you! It's the sorting hat!","angry","angry")
+    call her_main("Of course I believe you! It's the sorting hat!", "angry", "base", "angry", "mid")
     m "(I keep forgetting that this place is magic...)"
     m "Yes, well... the \"sorting\" hat mentioned that it may have made a mistake with the sorting of some students."
     hat "..."
     m "So it offered to use \"Legitimancy\" or something to fix-"
     call her_main("You performed Legilimency?", "angry", "wide", "base", "stare")
-    call her_main("On a {size=+5}student{/size}!?","scream","angry",emote="01")
+    call her_main("On a {size=+5}student{/size}!?", "scream", "base", "angry", "mid",emote="01")
     m "It's not that bad, surely..."
     call her_main("Sir, it's bad enough to use Legilimency to read someone's mind...","annoyed","annoyed")
     call her_main("but to use it to change their mind...","annoyed","annoyed")
-    call her_main("I didn't even think it was possible...","angry","angry")
+    call her_main("I didn't even think it was possible...", "angry", "base", "angry", "mid")
     m "So it's ok then?"
-    call her_main("It's pretty frickin' far from OK...","scream","angry",emote="01")
+    call her_main("It's pretty frickin' far from OK...", "scream", "base", "angry", "mid",emote="01")
     call her_main("You have to Change her back!","annoyed","annoyed")
     m "Really? But this has been pretty fun."
-    call her_main("I can't even believe I have to tell you how wrong this is sir!","angry","angry")
+    call her_main("I can't even believe I have to tell you how wrong this is sir!", "angry", "base", "angry", "mid")
     call her_main("Change her back now or I tell the ministry everything.","scream","angryCl")
     m "What about your house-"
-    call her_main("{size=+10}NOW!{/size}","scream","angry",emote="01")
+    call her_main("{size=+10}NOW!{/size}", "scream", "base", "angry", "mid",emote="01")
     m "Alright, alright, sheesh..."
     m "{size=-5}(these bitches be crazy!){/size}"
     m "Let me just get the hat."
@@ -374,7 +374,7 @@ label luna_revert_1: #Reversion event #DONE
     m "There."
     call her_main("Well, change her back!","annoyed","annoyed")
     hat "Are you sure? She seemed much more entertaining this way..."
-    call her_main("Do. {size=+5}it. {size=+5}NOW!{/size}","angry","angry")
+    call her_main("Do. {size=+5}it. {size=+5}NOW!{/size}", "angry", "base", "angry", "mid")
     hat "Alright, alright. Sheesh."
     hat "You don't seem this bossy when you're in here normally..."
     call lun_main("!!!","upset","wide","sad","mid")
@@ -397,8 +397,8 @@ label luna_revert_1: #Reversion event #DONE
     m "What? Miss Lovesgood is back to normal..."
     call her_main("You're not getting away with this, sir.","annoyed","annoyed")
     m "I'm not sure what you're referring to?"
-    call her_main("What I'm referring to?","angry","angry")
-    call her_main("Luna Lovegood is {size=+10}COVERED {/size}in your cum!","angry","angry",emote="01")
+    call her_main("What I'm referring to?", "angry", "base", "angry", "mid")
+    call her_main("Luna Lovegood is {size=+10}COVERED {/size}in your cum!", "angry", "base", "angry", "mid",emote="01")
     m "Oh..."
     call her_main("more importantly, How many points did you pay her?","annoyed","annoyed")
 
@@ -406,7 +406,7 @@ label luna_revert_1: #Reversion event #DONE
         "\"None\"":
             call her_main("What?","disgust","glance")
             call her_main("I'm supposed to believe that she came up to your office...","annoyed","annoyed")
-            call her_main("And let you jerk your disgusting old cock in front of her...","angry","angry")
+            call her_main("And let you jerk your disgusting old cock in front of her...", "angry", "base", "angry", "mid")
             call her_main("For free?","annoyed","annoyed")
             ">You raise your hand to the air."
             m "Scouts honour!"
@@ -432,15 +432,15 @@ label luna_revert_1: #Reversion event #DONE
     call her_main("But her...","annoyed","frown")
     ">Hermione glares at the still frozen Luna Lovegood."
     call her_main("...","annoyed","frown")
-    call her_main("She needs a punishment.","smile","angry")
+    call her_main("She needs a punishment.", "smile", "base", "angry", "mid")
     m "What are you thinking?"
     call her_main("Hmmm...","annoyed","angryL")
     call her_main("Sorting hat!","annoyed","annoyed")
     hat "W-w-what? I'm trying to go to sleep..."
-    call her_main("How long until Luna's back to normal?","soft","angry")
+    call her_main("How long until Luna's back to normal?", "soft", "base", "angry", "mid")
     hat "I'm not exactly sure... Probably twenty minutes."
     hat "Until then she'll pretty much be in a fairly lucid and suggestible state."
-    call her_main("Good...","smile","angry")
+    call her_main("Good...", "smile", "base", "angry", "mid")
     show screen white
     pause .1
     hide screen white
@@ -465,7 +465,7 @@ label luna_revert_1: #Reversion event #DONE
     call lun_walk("mid","leave",2)
 
     call her_main("Well, now that that's over...","annoyed","angryL")
-    call her_main("I think I'll be leaving as well...","annoyed","angry")
+    call her_main("I think I'll be leaving as well...", "annoyed", "base", "angry", "mid")
     m "Don't you want to stay a little longer?"
     call her_main("I don't think so, sir...","disgust","glance")
 
@@ -653,10 +653,10 @@ label luna_revert_2: #Non-Reversion event #DONE
     call her_main("...","scream","wide_stare")
     call her_main("{size=+5}WHAT{/size}","annoyed","annoyed")
     call lun_main("","normal","angry","angry","mid")
-    call her_main("{size=+10}THE{/size}","angry","angry")
+    call her_main("{size=+10}THE{/size}", "angry", "base", "angry", "mid")
     call lun_main("","normal","mad","angry","mid")
-    call her_main("{size=+15}FRICK!{/size}","scream","angry",emote="01")
-    call her_main("What on earth is going on-","angry","angry")
+    call her_main("{size=+15}FRICK!{/size}", "scream", "base", "angry", "mid",emote="01")
+    call her_main("What on earth is going on-", "angry", "base", "angry", "mid")
     show screen white
     pause .1
     hide screen white
@@ -741,17 +741,17 @@ label luna_revert_2: #Non-Reversion event #DONE
     ">Another flash of light as Hermione becomes unpetrified."
     call lun_main("","base","seductive","base","R",xpos="mid",ypos="base")
     call her_main("Professor! What is the meaning of this!","scream","angryCl")
-    call her_main("And what were the two of you doing before I got here?","angry","angry")
+    call her_main("And what were the two of you doing before I got here?", "angry", "base", "angry", "mid")
     call lun_main("oh... I was just helping out Professor Dumbledore...","normal","seductive","base","down")
     call her_main("helping out how?","annoyed","annoyed")
     call lun_main("just to relieve some... tension. {p}Don't worry he isn't going to pay me in points... *tssk*","base","angry","base","R")
-    call her_main("what?","angry","angry",emote="01")
+    call her_main("what?", "angry", "base", "angry", "mid",emote="01")
     call her_main("[genie_name]! What are you doing!","scream","angryCl")
     m "Ah...."
     call lun_main("don't blame him. It's not his fault you fail to satisfy...","base","mad","angry","mid")
     call her_main("You... you...","annoyed","annoyed")
-    call her_main("{size=+10}You Stupid whore!{/size}","angry","angry")
-    call her_main("{size=+15}You're nothing more than a prostit-{/size}","angry","angry",emote="01")
+    call her_main("{size=+10}You Stupid whore!{/size}", "angry", "base", "angry", "mid")
+    call her_main("{size=+15}You're nothing more than a prostit-{/size}", "angry", "base", "angry", "mid",emote="01")
     call lun_main("{size=+15}petrificus totalus!{/size}","open","mad","mad","mid", trans="hpunch")
     show screen white
     pause .1
@@ -760,7 +760,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     ">Luna paralyses Hermione for the second time."
     call lun_main("","normal","mad","mad","mid")
     call her_main("!!!", "angry", "wide", "base", "stare")
-    call her_main("...","angry","angry")
+    call her_main("...", "angry", "base", "angry", "mid")
     ">Hermione stares at Luna with a blind rage."
     m "Should you really be doing that?"
     hide screen luna_main

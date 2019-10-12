@@ -41,7 +41,7 @@ label hg_pr_sex:
             jump too_much
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
-        call her_main("..............","angry","angry")
+        call her_main("..............", "angry", "base", "angry", "mid")
         call her_main("I had the feeling that we would get to this sooner or later...","disgust","glance")
         call her_main("But...","annoyed","angryL")
         her "..................."

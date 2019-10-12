@@ -45,7 +45,7 @@ label hg_pf_titjob:
 
     hide screen blkfade
     if her_mood != 0:
-        call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans="fade")
     else:
         call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
@@ -111,7 +111,7 @@ label hg_pf_titjob_T1_intro_E1:
     call her_main("A \"titjob?\"","annoyed","annoyed")
     m "It's where you wrap those \"fat tits\" of yours around a cock,..."
     g9 "And then shake them up and down, and up and...{w=0.5}{nw}"
-    call her_main("[genie_name]!","angry","angry")
+    call her_main("[genie_name]!", "angry", "base", "angry", "mid")
     m "So have you ever given a boy a titjob?"
     call her_main("...............","disgust","glance")
     call her_main("{size=-7}No...{/size}","angry","worriedCl", emote="05")
@@ -120,8 +120,8 @@ label hg_pf_titjob_T1_intro_E1:
     g9 "Well then, today is your lucky day!"
     call her_main("Lucky? In what way would you consider it lucky?","disgust","glance")
     m "It's not every day that you learn something new."
-    call her_main("I'm at a school... I get taught hundreds of things each day...","annoyed","angry")
-    call her_main("And giving \"titjobs\" isn't one of them...","angry","angry")
+    call her_main("I'm at a school... I get taught hundreds of things each day...", "annoyed", "base", "angry", "mid")
+    call her_main("And giving \"titjobs\" isn't one of them...", "angry", "base", "angry", "mid")
     m "At least this is something you'll be able to use in the real world."
     call her_main("If you say so, [genie_name]...","annoyed","angryL")
     call her_main("{size=-7}I want 100 points for this...{/size}","angry","worriedCl", emote="05")
@@ -135,12 +135,12 @@ label hg_pf_titjob_T1_intro_E1:
         "\"You'll get 15 house points.\"" if her_mood == 0:
             $ her_mood += 7
             call her_main("[genie_name], are you seriously expecting me to give you a titjob...","angry","angryCl")
-            call her_main("For 15 meagre points?!","scream","angry")
-            call her_main("","clench","angry")
+            call her_main("For 15 meagre points?!", "scream", "base", "angry", "mid")
+            call her_main("", "clench", "base", "angry", "mid")
             m "How about 20? Does that sound fair?"
-            call her_main("I don't know who you think I am, but I'm not doing something like this for only 15 points!","open","angry")
+            call her_main("I don't know who you think I am, but I'm not doing something like this for only 15 points!", "open", "base", "angry", "mid")
             m "I promise I won't even cum on them..."
-            call her_main("And you believe that \"that\" would change my mind?","scream","angry")
+            call her_main("And you believe that \"that\" would change my mind?", "scream", "base", "angry", "mid")
             m "I had hoped so..."
             call her_main("No.{w} You need to make me a better offer...or I'll be leaving...","annoyed","angryL")
             m "Fair enough..."
@@ -153,7 +153,7 @@ label hg_pf_titjob_T1_intro_E1:
             call her_main("That is a yes, [genie_name]...", "open", "closed", "base", "mid")
             call her_main("45 points seem like a fair amount for-...", "open", "base", "base", "R")
             g9 "For a titjob!"
-            call her_main("(...)","annoyed","angry")
+            call her_main("(...)", "annoyed", "base", "angry", "mid")
 
         "\"You'll get 100 house points.\"":
             call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -177,11 +177,11 @@ label hg_pf_titjob_T1_repeat:
     m "I'm just going to rub my cock between those precious little tits of yours..."
     call her_main("This again...","angry","angryCl")
     call her_main("(...)","annoyed","angryL")
-    call her_main("For 45 house points?","open","angry")
+    call her_main("For 45 house points?", "open", "base", "angry", "mid")
     m "45 house points, as always..."
     call her_main("(...)","annoyed","angryL")
     call her_main("Very well, [genie_name]", "open", "closed", "base", "mid")
-    call her_main("But you have to promise me that you'll make it quick...","annoyed","angry")
+    call her_main("But you have to promise me that you'll make it quick...", "annoyed", "base", "angry", "mid")
     g9 "..............."
 
     jump hg_pf_titjob_1
@@ -379,7 +379,7 @@ label hg_pf_titjob_1:
             $ ccg1 = 10
             call her_main("He shot several ropes of cum under the table, even covering my legs and feet with it!", "open_tongue", "narrow", "annoyed", "up")
             g4 "!!!"
-            call her_main("Come on, [genie_name]! Cover me as well! Cum all over my tits!","grin","angry")
+            call her_main("Come on, [genie_name]! Cover me as well! Cum all over my tits!", "grin", "base", "angry", "mid")
 
         "\"Stick out your tongue!\"":
             $ ccg1 = 5
@@ -421,9 +421,9 @@ label hg_pf_titjob_1:
             g4 "That's it, slut! Taste it!"
             call her_main(".....................","open_wide_tongue","angryCl")
             m "Yes, you big-titted whore!"
-            call her_main("......................","open_wide_tongue","angry")
+            call her_main("......................", "open_wide_tongue", "base", "angry", "mid")
             g4 "I want to cum in that little slutty mouth of yours..."
-            call her_main("................","open_wide_tongue","angry")
+            call her_main("................", "open_wide_tongue", "base", "angry", "mid")
 
     with hpunch
     g4 "{size=-4}(Here it comes! Where should I aim for?){/size}"
@@ -475,7 +475,7 @@ label hg_pf_titjob_1:
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ ccg1 = 15
-            call her_main("*Ptui*...","open_wide_tongue_cum","angry", trans="hpunch")
+            call her_main("*Ptui*...", "open_wide_tongue_cum", "base", "angry", "mid", trans="hpunch")
 
             $ u_sperm = "characters/hermione/face/auto_06.png"
             $ uni_sperm = True
@@ -507,7 +507,7 @@ label hg_pf_titjob_1:
             m "Then there wouldn't have been any clean up."
             call her_main("Swallow? All of that?","angry","down_raised")
             call her_main("I don't think I have enough room in my stomach...")
-            call her_main("Could I please have my points now, [genie_name]?","soft","angry")
+            call her_main("Could I please have my points now, [genie_name]?", "soft", "base", "angry", "mid")
             $ aftersperm = True
 
         "\"(Cover her tits!)\"":

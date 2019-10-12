@@ -44,16 +44,16 @@ label hg_ps_buttplug:
         with hpunch
         call her_main("{size=+5}What?!!{/size}", "shock", "wide", "base", "stare")
         call play_music("chipper_doodle") # HERMIONE'S THEME.
-        call her_main("You expect me to put that massive thing in my...","angry","angry")
+        call her_main("You expect me to put that massive thing in my...", "angry", "base", "angry", "mid")
         her "and then parade myself around the school!"
         m "It just looks like a fake tail, No one will be able to tell what it really is."
         call her_main("{size=+5}That's not the point!{/size}","scream","angryCl")
         her "I'm not going to put that ridiculous thing anywhere near my butt!"
-        call her_main("We are done here, [genie_name]!","angry","angry",emote="01")
+        call her_main("We are done here, [genie_name]!", "angry", "base", "angry", "mid",emote="01")
         m "Alright, alright, calm down..."
         call her_main("I most certainly will not, [genie_name]! That thing is beyond absurd!","scream","angryCl")
         m "Alright, fine, maybe I underestimated how large it is..."
-        call her_main("You think [genie_name]?! I'd like to see you try and fit it up your-","angry","angry")
+        call her_main("You think [genie_name]?! I'd like to see you try and fit it up your-", "angry", "base", "angry", "mid")
         m "alright, alright..."
         call her_main(".........","annoyed","annoyed")
         m "How about we try one a little less... ambitious."
@@ -63,7 +63,7 @@ label hg_ps_buttplug:
         call her_main("..........?","annoyed","suspicious")
         call nar(">You pull out the small butt plug from your desk.")
         m "...is that you wear this to class..."
-        call her_main("!!!......","angry","angry")
+        call her_main("!!!......", "angry", "base", "angry", "mid")
         m "Oh, come on... Just a harmless little baby one."
         call her_main("...","disgust","glance")
         m "Fifty five house points..."
@@ -90,13 +90,13 @@ label hg_ps_buttplug:
         m "Can't you tell it's a butt plug? They shouldn't be new to you at this point."
         call her_main("...","annoyed","annoyed")
         call play_music("chipper_doodle") # HERMIONE'S THEME.
-        call her_main("Why does it have a such a large tail attached to it...","annoyed","angry")
+        call her_main("Why does it have a such a large tail attached to it...", "annoyed", "base", "angry", "mid")
         her "you can't expect me to wear that around the school!"
         m "I can and do, unless you want our little trading game to come to a halt..."
         call her_main("but it's so long! everyone will be able to see it!","normal","worriedCl")
         m "That's the point, [hermione_name]..."
         call her_main("...........","angry","worriedCl",emote="05")
-        call her_main("I want 100 points.","annoyed","angry")
+        call her_main("I want 100 points.", "annoyed", "base", "angry", "mid")
 
         menu:
             "\"Fine, but I expect you to put it in now.\"":
@@ -131,7 +131,7 @@ label hg_ps_buttplug:
             "\"You'll get 70.\"":
                 $ current_payout = 70
                 call her_main("Hmmmph...","annoyed","angryL")
-                call her_main("Alright then, just don't expect me to show it to you!","angry","angry")
+                call her_main("Alright then, just don't expect me to show it to you!", "angry", "base", "angry", "mid")
                 m "So long as you wear it to class then you'll get your 70 points."
                 ">You hand her the butt plug."
                 call her_main("Will that be all [genie_name]?.","annoyed","annoyed")
@@ -318,7 +318,7 @@ label hg_ps_buttplug:
             call her_main("This is too much sir! even your cock wasn't this {b}thick{/b}...","open","angryL")
             m "Nothing a little spit won't solve!"
             call her_main("Don't be ridiculous! This is beyond spit!", "open", "closed", "base", "mid")
-            call her_main("Unless you have some sort of actual {i}lubricant{/i} in your possession, I don't think I'll be letting this thing anywhere near me...","open","angry")
+            call her_main("Unless you have some sort of actual {i}lubricant{/i} in your possession, I don't think I'll be letting this thing anywhere near me...", "open", "base", "angry", "mid")
 
             menu:
                 "-Use anal lube-" if anal_lube_ITEM.number >= 1:
@@ -331,11 +331,11 @@ label hg_ps_buttplug:
                     call give_gift(">You hand hermione the jar of anal lubricant.",anal_lube_ITEM)
 
                     call her_main("!!!", "clench", "wide", "base", "stare")
-                    call her_main("I wasn't serious, [genie_name]!","scream","angry")
+                    call her_main("I wasn't serious, [genie_name]!", "scream", "base", "angry", "mid")
                     m "Now, now. No one likes a liar."
                     call her_main("I didn't promise anything! Besides, I didn't actually expect you to have a jar of lube in your desk.","open","angryL")
                     m "I bought it for just such an occasion..."
-                    call her_main("...","annoyed","angry")
+                    call her_main("...", "annoyed", "base", "angry", "mid")
                     call her_main("ugh... fine. I'll {b}try{/b} to fit it in.","disgust","down")
                     call her_main("but I'm not promising anything!", "open", "closed", "base", "mid")
                     m "That's all I ask."
@@ -487,7 +487,7 @@ label hg_ps_buttplug_complete:
             call her_main("Relieve myself...","annoyed","worriedL")
             call her_main("When all of a sudden that annoying ghost poked her head through the door!","scream","angryCl")
             call her_main("As it if wasn't bad enough that she saw me...","open","down")
-            call her_main("She then started yelling \'Hermione has a butt plug\' to everyone in the toilets!","scream","angry",emote="01")
+            call her_main("She then started yelling \'Hermione has a butt plug\' to everyone in the toilets!", "scream", "base", "angry", "mid",emote="01")
             call her_main("Luckily the stalls where empty! Imagine if they weren't!","annoyed","annoyed")
             m "Well, it certainly sounds like you've earned your points."
 
@@ -651,7 +651,7 @@ label hg_ps_buttplug_complete:
             her "I turned around and there was Colin Creevey..."
             her "with the biggest grin on his face!"
             m "You let your photo be taken?!"
-            call her_main("I didn't let anything of the sort happen! It was without my consent!","scream","angry",emote="01")
+            call her_main("I didn't let anything of the sort happen! It was without my consent!", "scream", "base", "angry", "mid",emote="01")
             call her_main("I even made him promise not to show anyone the photo...","open","down")
             her "...in exchange I did have to let him take a few more..."
             her "but he insisted that he wouldn't show anyone else..."
@@ -845,7 +845,7 @@ label hg_ps_buttplug_complete:
             show screen blktone
             call her_main("Awful, I was attacked by a group of rabid students, [genie_name].","scream","angryCl",xpos="right",ypos="base")
             m "Attacked? By How many?"
-            call her_main("six first years, [genie_name]...","annoyed","angry")
+            call her_main("six first years, [genie_name]...", "annoyed", "base", "angry", "mid")
             m "you were attacked by first years?"
             call play_music("playful_tension") # SEX THEME.
             call her_main("I may have been exaggerating slightly...","open","worriedL")
@@ -935,7 +935,7 @@ label hg_ps_buttplug_complete:
             show screen blktone
             call her_main("Awful, I was attacked by a group of rabid students, [genie_name].","scream","angryCl",xpos="right",ypos="base")
             m "Attacked? By How many?"
-            call her_main("six first years, [genie_name]...","annoyed","angry")
+            call her_main("six first years, [genie_name]...", "annoyed", "base", "angry", "mid")
             m "you were attacked by first years?"
             call play_music("playful_tension") # SEX THEME.
             call her_main("I may have been exaggerating slightly...","open","worriedL")

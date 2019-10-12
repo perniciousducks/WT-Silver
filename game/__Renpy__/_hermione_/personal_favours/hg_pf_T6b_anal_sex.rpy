@@ -248,7 +248,7 @@ label hg_anal_sex_1:
             $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
             call her_main("{size=+7}*GULP!*{/size}","cum","worriedCl")
             call her_main("*SOB!* I HATE YOU...","angry","suspicious",cheeks="blush",tears="messy")
-            call her_main("{size=+5}I HATE YOU AND YOUR NASTY OLD COCK?{/size}","scream","angry",cheeks="blush",tears="messy")
+            call her_main("{size=+5}I HATE YOU AND YOUR NASTY OLD COCK?{/size}", "scream", "base", "angry", "mid",cheeks="blush",tears="messy")
             call her_main("{size=+5}I HATE YOU! YOU HEAR ME?!{/size}")
             g4 "Agh...Shut it, whore!"
             call her_main("*sob!* *Sob!*...","angry","suspicious",cheeks="blush",tears="messy")
@@ -538,5 +538,5 @@ label hg_pf_anal_sex_old: # Writing not in use
     call her_main("Anal sex?","disgust","glance")
     g4 "Wha..........?!"
     g4 "How did you...?"
-    call her_main("Just a lucky guess, [genie_name]...","angry","angry")
+    call her_main("Just a lucky guess, [genie_name]...", "angry", "base", "angry", "mid")
     m "Sometimes you scare me, [hermione_name]..."

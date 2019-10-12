@@ -1333,7 +1333,7 @@ label ll_pf_blowjob_T1_summon:
     call her_main("Hmmmm... It's not a slytherin is it?","upset","suspicious")
     m "Which colour are they again?"
     $ lunCG(pos=14)
-    call her_main("The green ones you decrepit old perv!","open","angry")
+    call her_main("The green ones you decrepit old perv!", "open", "base", "angry", "mid")
     $ lunCG(pos=9)
     lun "*glck* *slrp* *glck*"
     $ lunCG('', '', '', 'up', pos=15)

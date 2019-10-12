@@ -143,7 +143,7 @@ label give_her_gift(gift_item):
             call her_mood(-10)
         elif her_whoring >= 18: # Lv 7+
             call her_main("A chocolate bar?", "base", "base", "base", "mid")
-            call her_main("You spoil me, [genie_name].","smile","angry")
+            call her_main("You spoil me, [genie_name].", "smile", "base", "angry", "mid")
             call give_gift(">You give the chocolate to Hermione...", gift_item)
             call her_main("Thank you.","base","suspicious")
             call her_mood(-10)
@@ -268,12 +268,12 @@ label give_her_gift(gift_item):
             call her_main("Adult magazines, [genie_name]?", "open", "base", "base", "mid")
             call her_main("Given to me by An esteemed wizard of your status?","annoyed","angryL")
             call her_main("[genie_name], surely you could find a more productive way to spend your free time.","disgust","glance")
-            call her_main("And I most definitely would not have use for those...","angry","angry")
+            call her_main("And I most definitely would not have use for those...", "angry", "base", "angry", "mid")
             call her_mood(7)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
-            call her_main("Adult magazines?","angry","angry")
+            call her_main("Adult magazines?", "angry", "base", "angry", "mid")
             call her_main("[genie_name], I have no interest in things like that.","annoyed","angryL")
-            call her_main("And how is this an appropriate present for one of your students, [genie_name]?","angry","angry")
+            call her_main("And how is this an appropriate present for one of your students, [genie_name]?", "angry", "base", "angry", "mid")
             call her_mood(3)
         elif her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
             call her_main("Adult magazines?", "open", "base", "base", "mid")
@@ -294,13 +294,13 @@ label give_her_gift(gift_item):
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("Hm... What is this?", "base", "base", "base", "mid")
             call her_main("[genie_name], those are porn magazines!", "scream", "wide", "base", "stare")
-            call her_main("Shame on you, [genie_name]!","angry","angry",cheeks="blush")
+            call her_main("Shame on you, [genie_name]!", "angry", "base", "angry", "mid",cheeks="blush")
             call her_mood(15)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
             call her_main("Porn magazines?", "shock", "wide", "base", "stare")
             call her_main("[genie_name], what do you expect me to do with those?","open","down")
             call her_main("Research them?","annoyed","annoyed")
-            call her_main("Despicable!","scream","angry",emote="01")
+            call her_main("Despicable!", "scream", "base", "angry", "mid",emote="01")
             call her_mood(8)
         elif her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
             call her_main("That's hardcore porn, [genie_name].", "open", "base", "base", "mid")
@@ -398,7 +398,7 @@ label give_her_gift(gift_item):
             call her_main("No, it doesn't look like--", "soft", "base", "base", "mid")
             call her_main(".........?")
             call her_main("!!!", "angry", "wide", "base", "stare")
-            call her_main("[genie_name]!","angry","angry",cheeks="blush")
+            call her_main("[genie_name]!", "angry", "base", "angry", "mid",cheeks="blush")
             call her_main("This is just beyond inappropriate!","scream","angryCl")
             call her_mood(10)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
@@ -426,7 +426,7 @@ label give_her_gift(gift_item):
     elif gift_item == anal_lube_ITEM:#anal lube
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("I don't know what this is...", "open", "base", "base", "mid")
-            call her_main("But I have the feeling that the jar is full of something vile and inappropriate...","angry","angry")
+            call her_main("But I have the feeling that the jar is full of something vile and inappropriate...", "angry", "base", "angry", "mid")
             call her_main("No, thank you, [genie_name].")
             call her_mood(6)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
@@ -456,7 +456,7 @@ label give_her_gift(gift_item):
             call her_main("Is this like one of those adult toys?","angry","suspicious",cheeks="blush")
             call her_main("What woman in her right mind would subject herself to a humiliation like that?","scream","angryCl")
             call her_main("And what possible use could I have for such objects?","open","annoyed",cheeks="blush")
-            call her_main("This is just insulting, [genie_name]...","angry","angry",cheeks="blush")
+            call her_main("This is just insulting, [genie_name]...", "angry", "base", "angry", "mid",cheeks="blush")
             call her_mood(10)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
             call her_main("[genie_name], do you not realise how inappropriate it would be for me to accept a present like that?","open","annoyed",cheeks="blush")
@@ -490,7 +490,7 @@ label give_her_gift(gift_item):
             call her_mood(-8)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
             call her_main("[genie_name], are those adult toys of some sort?","open","annoyed",cheeks="blush")
-            call her_main("those are some of those anal things, aren't they?","angry","angry",cheeks="blush")
+            call her_main("those are some of those anal things, aren't they?", "angry", "base", "angry", "mid",cheeks="blush")
             call her_main("[genie_name] this is nothing but a weapon meant to oppress women!")
             call her_main("Despicable!", "upset", "closed", "base", "mid")
             call her_mood(15)
@@ -525,10 +525,10 @@ label give_her_gift(gift_item):
             call her_main("That is...","angry","down_raised")
             call her_main("But it doesn't even look... human...")
             call her_main("I mean...","annoyed","angryL")
-            call her_main("[genie_name], do you have no shame?!","scream","angry",emote="01")
+            call her_main("[genie_name], do you have no shame?!", "scream", "base", "angry", "mid",emote="01")
             call her_main("Presenting a thing like that to a pupil?!")
             call her_main("..................","open","down")
-            call her_main("Please put it away, [genie_name].","angry","angry")
+            call her_main("Please put it away, [genie_name].", "angry", "base", "angry", "mid")
             call her_mood(15)
         elif her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
             call her_main("That thing...","angry","down_raised")
@@ -564,7 +564,7 @@ label give_her_gift(gift_item):
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
             call her_main("A broom...?", "base", "base", "base", "mid")
             call her_main("Hm...","normal","frown")
-            call her_main("It's a sex-toy of some sort, isn't it?","angry","angry")
+            call her_main("It's a sex-toy of some sort, isn't it?", "angry", "base", "angry", "mid")
             call her_main("But it is so well crafted...","open","down")
             call give_gift(">You give the broom to Hermione...",gift_item)
             call her_main("Thank you, [genie_name].", "upset", "closed", "base", "mid")
@@ -616,8 +616,8 @@ label give_her_gift(gift_item):
 
     elif gift_item == wine_ITEM or gift_item == firewhisky_ITEM:
         if her_whoring <= 6  and her_whoring <= 11:
-            call her_main("[genie_name]?! Drinking alcohol at school grounds is forbidden..","open","angry","angry","mid")
-            call her_main("And you as a headmaster should know it!","upset","angry")
+            call her_main("[genie_name]?! Drinking alcohol at school grounds is forbidden..","open", "angry", "base", "angry", "mid","mid")
+            call her_main("And you as a headmaster should know it!", "upset", "base", "angry", "mid")
             call her_mood(10)
         elif her_whoring <= 12 and her_whoring <= 17:
             call her_main("But, [genie_name].. I can't drink alcohol.","base","down")

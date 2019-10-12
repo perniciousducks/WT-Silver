@@ -137,7 +137,7 @@ label hermione_intro_E1:
             $ masturbating = False
 
     m "Yes, keep on going, dear."
-    call her_main("\"Yes\"?! So you think it's fair?","angry","angry")
+    call her_main("\"Yes\"?! So you think it's fair?", "angry", "base", "angry", "mid")
     m "Oh, of course not, I meant \"no\". But keep on going anyway..."
     call her_main("That's a relief. I'm glad that you agree with me, professor...", "normal", "base", "base", "mid")
     call her_main("As I was saying, the whole issue is simply ridiculous and I cannot believe that it is taking place in our day and age!","open","angryCl")
@@ -465,7 +465,7 @@ label hermione_intro_E2:
     her "Yes! We, the proud students of Hogwarts, detest sexism..."
     her "No individual shall be treated differently based on his or her gender."
     m "But--"
-    call her_main("Please, let me finish, professor!","angry","angry")
+    call her_main("Please, let me finish, professor!", "angry", "base", "angry", "mid")
     call her_main("I'm organizing the \"Men's rights movement\" in our school!","open","angryCl")
     g4 "Oh boy, this is just so typical!"
     g4 "Blame everything on--"
@@ -1220,7 +1220,7 @@ label hermione_intro_E6:
                 her "What does this have to do with anything?"
                 m "You are overanalysing this, girl."
                 m "Just say that you need to be punished!"
-                call her_main("Fine. I need to be punished!","angry","angry")
+                call her_main("Fine. I need to be punished!", "angry", "base", "angry", "mid")
                 call her_main("{size=-5}(And I truly do think so sometimes...){/size}","normal","worriedCl")
                 m "That's a good girl."
                 call her_main("................??","upset","wink")
@@ -1230,7 +1230,7 @@ label hermione_intro_E6:
             "\"Do you want to get spanked?\"":
                 call her_main("Do I want to...","open","worried")
                 call her_main("Get s-spanked??", "angry", "wide", "base", "stare")
-                call her_main("Tsk!","angry","angry")
+                call her_main("Tsk!", "angry", "base", "angry", "mid")
                 call her_main("Professor, I don't think I'm comfortable with--","open","angryCl")
                 m "Apologies, let me rephrase the question..."
                 m "How badly do you need those points?"
@@ -1288,8 +1288,8 @@ label hermione_intro_E6:
         call her_main("{size=-4}(I need to practice this.){/size}","base","happyCl")
 
     if current_favor == "bad_girl":
-        call her_main("{size=-4}(I'm a bad girl...){/size}","angry","angry", ypos="head")
-        call her_main("{size=-4}(I am very bad...){/size}","soft","angry")
+        call her_main("{size=-4}(I'm a bad girl...){/size}", "angry", "base", "angry", "mid", ypos="head")
+        call her_main("{size=-4}(I am very bad...){/size}", "soft", "base", "angry", "mid")
         call her_main("{size=-4}(Yes, I can say things like that easily...){/size}","smile","happyCl")
         call her_main("{size=-4}(There is nothing wrong with that... nothing at all...){/size}","base","happyCl")
 

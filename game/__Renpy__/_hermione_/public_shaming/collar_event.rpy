@@ -105,7 +105,7 @@ label slut_scene: #Locked to her being your slut
             call her_main("*Slurp!* *Gltch!* *Gulp!*", "open_wide_tongue", "base", "base", "mid")
             hide screen hermione_main
             m "I asked you a question slut."
-            call her_main("hhyyym aaaa hhhhtttt","open_wide_tongue","angry")
+            call her_main("hhyyym aaaa hhhhtttt", "open_wide_tongue", "base", "angry", "mid")
             hide screen hermione_main
             ">You increase the speed in her throat."
             m "What was that [hermione_name]? I couldn't hear you over you sucking my cock. Try speaking a little louder."
@@ -339,7 +339,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("A collar? That says whore?", "open", "happy", "base", "mid",cheeks="blush")
     call her_main("How is this a piece of jewellery?","open","annoyed",cheeks="blush")
     m "Well I expect you to wear it all the time, like a ring, so I guess that qualifies it as jewellery."
-    call her_main("You expect me to wear this all the time? Not just in your office.","scream","angry",cheeks="blush",tears="messy")
+    call her_main("You expect me to wear this all the time? Not just in your office.", "scream", "base", "angry", "mid",cheeks="blush",tears="messy")
     m "Of course. I already know what a whore you are, this is so that everyone else will know."
     call her_main("What will people think of me?","scream","worriedCl",cheeks="blush",tears="messy")
     m "They'll think the truth, that you're a shameless whore."
@@ -371,7 +371,7 @@ label slave_scene:
     m "You're a slave."
     call her_main("I'm a what?","upset","wink")
     m "You're a slave Miss Granger. Specifically, my slave."
-    call her_main("What are you talking about? I'm not your slave.","angry","angry")
+    call her_main("What are you talking about? I'm not your slave.", "angry", "base", "angry", "mid")
     m "Are you sure? You come in here whenever I summon you, eager to do whatever I say."
     m "Just begging to do anything to please me."
     m "When was the last time you even said no to me?"
@@ -579,7 +579,7 @@ label good_girl_scene:
 
     m "50 points to Gryffindor."
     $ gryffindor += 50
-    call her_main("Thank you [genie_name]. Have a nice night.","smile","angry")
+    call her_main("Thank you [genie_name]. Have a nice night.", "smile", "base", "angry", "mid")
     m "You too [hermione_name]."
 
     $ collar = 4

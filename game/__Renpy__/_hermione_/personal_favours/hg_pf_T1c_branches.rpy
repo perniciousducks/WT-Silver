@@ -42,7 +42,7 @@ label hg_pf_admire_breasts_transition:
     if her_tier <= 2:
         call her_main("............","annoyed","angryL", cheeks="blush", xpos="mid", ypos="base")
         m "Very good..."
-        call her_main(".....","annoyed","angry", cheeks="blush")
+        call her_main(".....", "annoyed", "base", "angry", "mid", cheeks="blush")
         call ctc
 
         show screen blktone
@@ -144,9 +144,9 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("No, [genie_name], please! You mustn't do this...","shock","worriedCl")
     m "This won't take long, just stand still."
-    call her_main("[genie_name], I didn't agree to this!","angry","angry", cheeks="blush")
+    call her_main("[genie_name], I didn't agree to this!", "angry", "base", "angry", "mid", cheeks="blush")
     with hpunch
-    call her_main("You must unhand me now!!!","scream","angry", cheeks="blush",emote="01")
+    call her_main("You must unhand me now!!!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
 
     # End Groping
     call blkfade
@@ -160,8 +160,8 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
     call her_main("I think I'd better go...","angry","worriedCl", cheeks="blush", xpos="mid", ypos="base")
     m "Go ahead, [hermione_name]. You are not getting paid if you do..."
     call her_main("But I showed you my...","angry","worriedCl", cheeks="blush")
-    call her_main("And you touched me...","angry","angry", cheeks="blush")
-    call her_main("And I am getting nothing?","scream","angry", cheeks="blush",emote="01")
+    call her_main("And you touched me...", "angry", "base", "angry", "mid", cheeks="blush")
+    call her_main("And I am getting nothing?", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
     m "You are dismissed, [hermione_name]..."
     call her_main("Gr..................","angry","worriedCl", cheeks="blush")
     call her_main("{size=-5}(Burn in hell, you wretched old-{/size}","angry","worriedCl", cheeks="blush")
@@ -210,7 +210,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
     call her_main("You must... Put it away...","disgust","down_raised", cheeks="blush")
     m "Stop whining [hermione_name]. I'm not touching you, am I?"
     call her_main("But...","angry","worriedCl", cheeks="blush")
-    call her_main("But I didn't agree to this!","angry","angry", cheeks="blush")
+    call her_main("But I didn't agree to this!", "angry", "base", "angry", "mid", cheeks="blush")
     call her_main("I...","angry","worriedCl", cheeks="blush")
     call her_main("I think I'd better leave now!","angry","worriedCl", cheeks="blush")
 
@@ -221,7 +221,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
             call her_main("After {size=+5}this{/size}? Are you kidding me, [genie_name]?", "scream", "wide", "base", "stare", cheeks="blush")
             call her_main("I showed you my...", "scream", "wide", "base", "stare", cheeks="blush")
             call her_main("..........","annoyed","angryL", cheeks="blush")
-            call her_main("I am not going to sell you a single favour anymore, [genie_name]!","angry","angry", cheeks="blush")
+            call her_main("I am not going to sell you a single favour anymore, [genie_name]!", "angry", "base", "angry", "mid", cheeks="blush")
             call blkfade
 
             ">Hermione pulls away from you and covers up..."
@@ -248,7 +248,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
             $ her_mood += 35
 
             ">You start jerking your cock furiously!"
-            call her_main("No, [genie_name], stop!","scream","angry", cheeks="blush",emote="01")
+            call her_main("No, [genie_name], stop!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
             ">You jerk it even faster!"
             call her_main("[genie_name], think I will be leaving now...","annoyed","angryL", cheeks="blush")
             g4 "No, wait, I'm almost there!"
@@ -400,7 +400,7 @@ label hg_pf_admire_breasts_T3_masturbate:
     call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
     call her_main("Not to... em...", "open", "base", "base", "R", cheeks="blush")
     call her_main("Not to discharge...","annoyed","angryL", cheeks="blush")
-    call her_main("Not in front of me, [genie_name]...","angry","angry")
+    call her_main("Not in front of me, [genie_name]...", "angry", "base", "angry", "mid")
     m "Fine, whatever..."
     m "Oh, you little slut. You nasty little slut!"
     call her_main(".......................","angry","worriedCl", cheeks="blush")
@@ -436,7 +436,7 @@ label hg_pf_admire_breasts_T3_masturbate:
             call ctc
 
             $ sperm_on_tits = True
-            call her_main("[genie_name], no, you promised!","scream","angry", cheeks="blush",emote="01")
+            call her_main("[genie_name], no, you promised!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
             g4 "Oh, this is great, yes..."
             $ no_blinking = False #When True - blinking animation is not displayed.
             hide screen jerking_off_cum
@@ -471,7 +471,7 @@ label hg_pf_admire_breasts_T3_masturbate:
 
             hide screen blkfade
             with d5
-            call her_main("","angry","angry")
+            call her_main("", "angry", "base", "angry", "mid")
             call ctc
 
             her "How could you do this to me, [genie_name]?!"
@@ -583,7 +583,7 @@ label hg_pf_admire_breasts_T4_touch: # Call label
     else:
         call her_main("[genie_name], you promised not to touch...","angry","worriedCl", cheeks="blush")
         m "I know, I know... But it's hard to resist..."
-        call her_main(".................","angry","angry", cheeks="blush")
+        call her_main(".................", "angry", "base", "angry", "mid", cheeks="blush")
 
     call her_main("....................ah...{image=textheart}", "base", "narrow", "base", "up", cheeks="blush")
     call her_main("[genie_name], you need to stop now...", "base", "narrow", "base", "up", cheeks="blush")

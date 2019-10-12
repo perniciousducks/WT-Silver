@@ -145,7 +145,7 @@ label a_bad_time_to_disrobe_part_1:
     m "Great idea... and no one noticed?"
     call her_main("Well, at first... This damn cloak is too small.", "angry", "base", "base", "mid", tears="mascara")
     call her_main("I thought I would be short enough to fit under it...", "base", "base", "base", "mid", tears="mascara")
-    call her_main("I didn't notice that my feet were visible...","upset","angry", tears="mascara")
+    call her_main("I didn't notice that my feet were visible...", "upset", "base", "angry", "mid", tears="mascara")
     m "\"Well, that's a shame.\""
     call her_main("One of the boys saw me shuffle and moved to see what it was so I tried to get away but I slipped...and...and.","upset","shocked_raised", tears="mascara")
     g11 "And what?"
@@ -299,9 +299,9 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("So I grabbed it and I thought I might as well disrobe and hide in the shower room with the cloak on.","base","down_raised")
     call her_main("But as I was stuffing my clothes in one of the lockers a boy walked in.","clench","worried")
     m "*CRUNCH*"
-    call her_main("Professor!","scream","angry")
+    call her_main("Professor!", "scream", "base", "angry", "mid")
     g4 "*Cough* *Cough*... sorry."
-    call her_main("It is hard to talk about this as it is without your chewing distracting me.","annoyed","angry")
+    call her_main("It is hard to talk about this as it is without your chewing distracting me.", "annoyed", "base", "angry", "mid")
     call her_main("Anyhow...","base","angryL")
     call her_main("I expected the team to be going for at least another 30 minutes.", "open", "base", "base", "mid")
     call her_main("But that's when the boy walked in...", "normal", "closed", "base", "mid")

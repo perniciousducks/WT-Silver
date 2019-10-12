@@ -342,11 +342,11 @@ label cho_intro_E1:
 
     call her_chibi("stand","mid","base",flip=False)
 
-    call her_main("...","annoyed","angry", xpos="base", ypos="base",flip=False)
+    call her_main("...", "annoyed", "base", "angry", "mid", xpos="base", ypos="base",flip=False)
     m "..."
     call her_main("You’re selling favours to her aren’t you?","soft","glance")
     m "I’m...{p=0.8}{nw}"
-    call her_main("I knew it!","angry","angry")
+    call her_main("I knew it!", "angry", "base", "angry", "mid")
     g4 "Now, if you could just listen for a second!"
     call her_main("I don’t want to hear it!", "open", "closed", "base", "mid")
     call her_main("I’m leaving.","normal","frown")
@@ -630,7 +630,7 @@ label cho_intro_E3:
         call her_main("About what? Am I in trouble for anything?","soft","wide_stare")
         m "Miss Chang..."
         call her_main("Oh...", "annoyed", "narrow", "base", "up")
-        call her_main("What about her...","annoyed","angry")
+        call her_main("What about her...", "annoyed", "base", "angry", "mid")
         m "Well, it has come to my attention that you’ve been spreading false rumours about her."
         call her_main("And? It’s well deserved in my opinion...","soft","annoyed")
         m "Well, don’t you feel like it’s unbefitting of you to publicly talk badly about another student."
@@ -640,7 +640,7 @@ label cho_intro_E3:
         g4 "..."
         m "(She’s onto me!)"
         m "Of course not... it was another teacher, actually."
-        call her_main("Who was it?","open","angry")
+        call her_main("Who was it?", "open", "base", "angry", "mid")
         m "Not important..."
         call her_main("It was Snape wasn’t it...","annoyed","glance")
         g4 "(She’s good!)"
@@ -697,7 +697,7 @@ label cho_intro_E3:
                 m "And you believe that I'd just throw point at you because of that?"
                 call her_main("{size=-4}It was worth a try...{/size}","annoyed","down")
                 m "Try to remember this, Miss Granger. You can't rip me off that easily."
-                call her_main("Tzzzz- I don't need your points anyway.","angry","angry")
+                call her_main("Tzzzz- I don't need your points anyway.", "angry", "base", "angry", "mid")
                 g9 "You may leave now."
                 call her_main("I will!{w} Good day, Sir!","open","angryCl")
 
@@ -765,7 +765,7 @@ label cho_intro_E3:
     m "I thought that cup was so important to you?"
     call her_main("I couldn’t care less about it, [genie_name].", "open", "closed", "base", "mid")
     call her_main("The only cup that is worth winning is the \"house cup\".","open","glanceL")
-    call her_main("They’re completely different...","annoyed","angry")
+    call her_main("They’re completely different...", "annoyed", "base", "angry", "mid")
     m "Totally different..."
 
     if her_whoring < 18:
@@ -774,14 +774,14 @@ label cho_intro_E3:
 
     if her_whoring < 8:
         call her_main("They're given the privilege of attending one of the most prestigious wizarding schools in the world...","open","angryL")
-        call her_main("And they're wasting their time with some silly sports game that will get them nowhere...","open","angry")
+        call her_main("And they're wasting their time with some silly sports game that will get them nowhere...", "open", "base", "angry", "mid")
         m "Yes. Because why enjoy yourself when you could study instead..."
         call her_main("Exactly!", "normal", "closed", "base", "mid")
         m "(She's so predictable.)"
 
     m "Well... The quidditch teams are none of your concern anymore..."
     m "You'll tell Cho that you are sorry about your previous interferences."
-    call her_main("(...)","annoyed","angry")
+    call her_main("(...)", "annoyed", "base", "angry", "mid")
     m "And that the \"Quidditch equality movement\" will be...{w}\n\"no more\"."
 
     if her_whoring < 18:
@@ -835,14 +835,14 @@ label cho_intro_E3:
     m "Actually, I still think granting more people the ability to-"
     call cho_main("*Shhush!*, Professor!{p=0.6}I’d like to hear it from her.","pout","narrow","angry","mid")
     call cho_main("I'm going to enjoy this!","horny","narrow","base","L")
-    call her_main("...","annoyed","angry")
+    call her_main("...", "annoyed", "base", "angry", "mid")
     call her_main("*Sigh*{p=0.6}I will end my movement. And I won't interfere with Quidditch again...", "open", "closed", "base", "mid") #[Looking bored]
     call cho_main("This is amazing! I feel as if it's my birthday!","smile","base","base","mid")
     call her_main("After all, Quidditch is a huge waste of everyone's time.{p=0.6}Including mine...","soft","glanceL") #[Still looking bored]
     call cho_main("You're just jealous that I’m better than you at something.","smile","angry","angry","L")
     call her_main("I am not jealous!","angry","angryCl")
     m "You may go now, Miss Granger."
-    call her_main("(...)","annoyed","angry")
+    call her_main("(...)", "annoyed", "base", "angry", "mid")
     call her_main("Until next time, Sir.", "normal", "closed", "base", "mid")
     call her_main("...","annoyed","glanceL")
 
@@ -853,7 +853,7 @@ label cho_intro_E3:
     with d3
     pause.2
 
-    call her_main("*glare*","normal","angry", ypos="head")
+    call her_main("*glare*", "normal", "base", "angry", "mid", ypos="head")
     # Add Cho glaring back with her 'head' image.
 
     call her_chibi("stand","door","base",flip=True)

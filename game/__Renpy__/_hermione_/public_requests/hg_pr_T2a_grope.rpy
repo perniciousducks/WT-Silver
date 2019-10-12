@@ -42,7 +42,7 @@ label hg_pr_grope:
         m "Yes, \"the talk\"! About how boys are different than the girls...?"
         m "Boys have a \"pee-pee\" and girls like to put that  \"pee-pee\" in their mouths?"
         call her_main("!!!", "normal", "base", "base", "mid")
-        call her_main("What kind of demented parent would have such a talk with their child?","angry","angry")
+        call her_main("What kind of demented parent would have such a talk with their child?", "angry", "base", "angry", "mid")
         m "{size=-3}I wish mine did.{/size}"
         call her_main("I beg your pardon, [genie_name]?","annoyed","suspicious")
         m "*Khem!* I said, a responsible and caring one!"
@@ -57,7 +57,7 @@ label hg_pr_grope:
         her "...."
         call her_main("Well, so be it then...","disgust","glance")
         m "Great..."
-        call her_main("I'd better go now. The classes are about to start...","angry","angry")
+        call her_main("I'd better go now. The classes are about to start...", "angry", "base", "angry", "mid")
 
     elif her_tier < 3:
         m "[hermione_name]?"
@@ -368,7 +368,7 @@ label hg_pr_grope_T3_E1:
     her "It said: \"You can touch my butt if you want. I bet professor Snape would never notice.\""
     call her_main("Everyone was laughing...","angry","down_raised")
     her "It was so embarrassing I wanted to die..."
-    call her_main("I really hate professor Snape, [genie_name]...","angry","angry")
+    call her_main("I really hate professor Snape, [genie_name]...", "angry", "base", "angry", "mid")
     m "What happened then?"
     call her_main("Nothing...","open","down")
 
@@ -446,7 +446,7 @@ label hg_pr_grope_T3_E3:
     call her_main("She was furious with him at first...", "angry", "base", "base", "mid")
     call her_main("But then...","angry","wink")
     call her_main("Ehm... She started to touch my breasts as well...","base","down")
-    call her_main("Almost the same way her boyfriend did just a moment ago...","smile","angry")
+    call her_main("Almost the same way her boyfriend did just a moment ago...", "smile", "base", "angry", "mid")
     her "Then she turned to him and she said..."
     call her_main("\"I love you baby, and I want to share everything with you...\"", "open", "closed", "base", "mid")
     her "\"...And that includes your whores.\""

@@ -31,7 +31,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call her_main("Everyone knows what you're going to ask for next sir.", "open", "closed", "base", "mid")
     call her_main("At least try and make it a little romantic for her...","smile","soft")
     m "Romantic?"
-    call her_main("Work something out!","open","angry")
+    call her_main("Work something out!", "open", "base", "angry", "mid")
     call lun_main("You really don't need to worry about it [lun_genie_name]...","normal","base","sad","down")
     call her_main("Shh! You're first time needs to be at least a little bit special Luna!","upset","angryL")
     m "..."
@@ -58,7 +58,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     with d3
 
     ">Instead, you notice a bright red mark starting to form across Luna's face."
-    call her_main("You need to stop thinking that right now!","open","angry")
+    call her_main("You need to stop thinking that right now!", "open", "base", "angry", "mid")
     call lun_main("but I'm not as-","pout","base","sad","R", cheeks="blush")
     call her_main("Luna... you have to Stop measuring yourself against other people.","open","wink")
     call her_main("You're the cutest, nicest, zaniest girl at this school and I don't know what's happened to you recently but you need to just calm down and enjoy your life.","open","wink")

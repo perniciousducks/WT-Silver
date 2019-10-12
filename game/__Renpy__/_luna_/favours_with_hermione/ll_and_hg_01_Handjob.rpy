@@ -79,13 +79,13 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("Fine! I admit it!","scream","worriedCl")
         call lun_main("See... Isn't it better to tell the truth?","base","mad","sad","mid")
         call her_main("...","normal","worriedCl")
-        call her_main("So is that why I've been brought here? To be ridiculed!?","angry","angry")
+        call her_main("So is that why I've been brought here? To be ridiculed!?", "angry", "base", "angry", "mid")
         call her_main("I'm not ashamed of what I've done for my house!","annoyed","annoyed")
         call lun_main("No, you've been brought here to sell dumbledore one of those favours.","base","seductive","angry","mid")
         call her_main("What?","upset","wink")
         call her_main("Why are you here then?", "soft", "base", "base", "mid")
         call lun_main("To help you.","base","angry","sad","mid")
-        call her_main("...","annoyed","angry")
+        call her_main("...", "annoyed", "base", "angry", "mid")
         call her_main("Help how?","disgust","glance")
         call lun_main("Why don't you take your clothes off and I'll show you...","base","mad","sad","mid")
         call her_main("[genie_name]... please...","scream","worriedCl")
@@ -102,7 +102,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
 
-        call her_main("Feel free to humiliate me!","angry","angry",tears="crying")
+        call her_main("Feel free to humiliate me!", "angry", "base", "angry", "mid",tears="crying")
         ">Hermione angrily removes her skirt."
 
         call set_her_action("strip")
@@ -390,9 +390,9 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         call her_main("[genie_name], what on earth was that all about?!","scream","angryCl")
         call her_main("Why on earth was Luna in here?","annoyed","angryL")
-        call her_main("how on earth does she know about me selling favours?","angry","angry")
+        call her_main("how on earth does she know about me selling favours?", "angry", "base", "angry", "mid")
         if luna_addicted == True:
-            call her_main("And {size=+5}why on earth{/size} does she love the taste of your cum?","angry","angry",emote="01")
+            call her_main("And {size=+5}why on earth{/size} does she love the taste of your cum?", "angry", "base", "angry", "mid",emote="01")
         m "I can explain everything..."
         call her_main("Please do...","annoyed","annoyed")
         m "do you remember how you yourself described Luna lovegood as crazy?"
@@ -422,7 +422,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             call her_main("what about the her loving the taste of your sperm?","angry","suspicious",cheeks="blush")
             m "Honestly I'm not really sure about that."
             m "I think that's just her being weird..."
-        call her_main("...","annoyed","angry")
+        call her_main("...", "annoyed", "base", "angry", "mid")
         call her_main("ugh, fine...", "annoyed", "base", "base", "R")
         call her_main("I guess...","annoyed","angryL",cheeks="blush")
         m "So you don't mind helping out with her in the future?"
@@ -501,7 +501,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "Can you blame me?"
         call her_main("I suppose not...", "grin", "base", "base", "R")
         call lun_main("well then...","normal","mad","angry","mid")
-        call her_main("what?","annoyed","angry")
+        call her_main("what?", "annoyed", "base", "angry", "mid")
         call lun_main("hurry up and strip so we can get this over with...","normal","suspicious","angry","R")
         call her_main("Why do I always have to strip?","scream","angryCl")
         call lun_main("because I said so...","upset","suspicious","base","mid")
@@ -520,7 +520,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                 call lun_main("Fine... But I expect extra for this [lun_genie_name]!","normal","base","angry","R")
             "-agree with Luna-":
                 m "Now, now, Listen to luna [hermione_name]."
-                call her_main("What? Why?","angry","angry")
+                call her_main("What? Why?", "angry", "base", "angry", "mid")
                 m "Well, if we're being honest, it's mainly because I want to see your naked body again..."
                 call her_main("oh... well alright then.", "base", "happy", "base", "mid")
                 call lun_main("and you don't want to see me naked?","normal","mad","angry","mid")

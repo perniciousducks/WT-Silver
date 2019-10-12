@@ -135,7 +135,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
 label hg_pp_polyjuice_T1_intro:
     call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
 
-    call her_main("How could you do this to me [genie_name]?","angry","angry", xpos="mid", ypos="base", trans="hpunch")
+    call her_main("How could you do this to me [genie_name]?", "angry", "base", "angry", "mid", xpos="mid", ypos="base", trans="hpunch")
     her "Try and turn me into a cat!"
     call her_main("In the middle of class!","annoyed","worriedL")
     m "I didn't try and turn you into a cat [hermione_name]."
@@ -159,7 +159,7 @@ label hg_pp_polyjuice_T1_intro:
                 with d3
                 her ".......?"
                 call her_walk(xpos="desk", speed=2.5)
-                call her_main("What is it, [genie_name]?","upset","angry")
+                call her_main("What is it, [genie_name]?", "upset", "base", "angry", "mid")
                 call her_main("Haven't you humiliated me enough?", "annoyed", "closed", "base", "mid")
                 call her_main("", "annoyed", "base", "base", "R")
                 m "Would you like to earn 75 additional points?"
@@ -202,7 +202,7 @@ label hg_pp_polyjuice_T1_intro:
 
                 call u_pause_ani
 
-                call her_main("It's because of your stupid potion, it made my tongue all rough.","open_wide_tongue","angry")
+                call her_main("It's because of your stupid potion, it made my tongue all rough.", "open_wide_tongue", "base", "angry", "mid")
                 call her_main("Do you want to stop?", "grin", "base", "base", "R")
                 hide screen hermione_main
                 m "No, keep going, just try not to focus on the tongue work too much."
@@ -324,7 +324,7 @@ label hg_pp_polyjuice_T1_introCC:
             her "I'm not sure..."
     else:
         $ her_know_polyjuice = True
-        call her_main("How could you do this to me [genie_name]?","angry","angry", xpos="mid", ypos="base", trans="hpunch")
+        call her_main("How could you do this to me [genie_name]?", "angry", "base", "angry", "mid", xpos="mid", ypos="base", trans="hpunch")
         her "Try and turn me into a cat!"
         call her_main("In the middle of class!","annoyed","worriedL")
         m "I didn't try and turn you into a cat [hermione_name]."
@@ -408,7 +408,7 @@ label hg_pp_polyjuice_T1_introCC:
         her "*Slurp?*"
         $ g_c_u_pic = "hand_ani"
         with d3
-        call her_main("It's because of your stupid potion, it's \nmade my tongue all rough.","open_wide_tongue","angry")
+        call her_main("It's because of your stupid potion, it's \nmade my tongue all rough.", "open_wide_tongue", "base", "angry", "mid")
         call her_main("Do you want to stop?", "grin", "base", "base", "R")
         hide screen hermione_main
         m "No, keep going, just try not to focus on the tongue work too much."

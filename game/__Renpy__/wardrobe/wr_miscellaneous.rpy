@@ -147,7 +147,7 @@ label equip_misc_item:
 
                 # call her_main("The big one?", "soft", "base", "base", "mid")
                 # g9 "The giant one!"
-                # call her_main("...","annoyed","angry")
+                # call her_main("...", "annoyed", "base", "angry", "mid")
                 # call her_main("(Why am I not surprised...)","annoyed","angryL")
                 # call her_main("(This is going to hurt...)","angry","worriedCl",cheeks="blush")
                 # call her_main("Fine... Let me put it on.", "base", "base", "base", "R")

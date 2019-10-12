@@ -418,7 +418,7 @@ label hermione_talk:
         "-Ask her to help Tonks-" if astoria_intro.E1_complete and not astoria_intro.E3_complete:
             if astoria_intro.E2_hermione:
                 call her_main("I'm still looking for that student, [genie_name]!", "open", "closed", "base", "mid")
-                call her_main("Trust in me, I will find that slytherin scum!","angry","angry")
+                call her_main("Trust in me, I will find that slytherin scum!", "angry", "base", "angry", "mid")
                 jump hermione_talk
 
             $ hermione_busy = True
@@ -791,7 +791,7 @@ label hermione_change:
                     call her_main("[genie_name]... This is blackmailing!","scream","angryCl")
                     call her_main("","mad","angryCl")
                     m "It is?"
-                    call her_main("What else would it be?","mad","angry",cheeks="blush")
+                    call her_main("What else would it be?", "mad", "base", "angry", "mid",cheeks="blush")
                     g9 "Negotiations..."
                     call her_main("You...","clench","angryCl",cheeks="blush")
                     m "That's not an answer..."
@@ -916,12 +916,12 @@ label hermione_change_fail:
             call her_main("*sigh*", "annoyed", "closed", "base", "mid")
             call her_main("", "normal", "base", "base", "R")
     elif temp_name == "Bad Girl":
-        call her_main("I am not a [temp_name]!","open","angry")
+        call her_main("I am not a [temp_name]!", "open", "base", "angry", "mid")
         if her_whoring >= 7:
             call her_main("\"Or am I...?\"", "disgust", "base", "base", "R")
             call her_main("", "normal", "base", "base", "R")
     elif temp_name == "Princess":
-        call her_main("This is inappropriate, [genie_name]!","open","angry")
+        call her_main("This is inappropriate, [genie_name]!", "open", "base", "angry", "mid")
         if her_whoring >= 9:
             call her_main("\"It sounds nice though...\"", "base", "base", "base", "R")
     elif temp_name == "Pet":
@@ -930,5 +930,5 @@ label hermione_change_fail:
             call her_main("\"Why would he even suggest that?\"", "annoyed", "base", "base", "R")
     else:
         call her_main("I won't let you call me that!","shock","angryCl")
-        call her_main("","normal","angry")
+        call her_main("", "normal", "base", "angry", "mid")
     jump hermione_talk

@@ -26,7 +26,7 @@ label hg_pr_kiss:
         call her_main("I am not a... lesbian, [genie_name].", "open", "base", "base", "mid")
         m "Silly girl... You don't need to be a lesbian to kiss girls."
         m "I mean, I do it and I am not a lesbian either."
-        call her_main("...............","angry","angry")
+        call her_main("...............", "angry", "base", "angry", "mid")
         her "[genie_name]--"
         m "No, \"[genie_name]s\"! This is your task for today!"
         m "Go find a cute little thing and plant a \"smooch\" on her!"
@@ -45,7 +45,7 @@ label hg_pr_kiss:
         m "\"Depraved\"??! When did I ever--?"
         call her_main("Really, [genie_name]?","open","angryCl")
         m "Fine, fine... But all I want you to do today is to make out with another girl."
-        call her_main("Oh, is that all?","angry","angry") # :(
+        call her_main("Oh, is that all?", "angry", "base", "angry", "mid") # :(
         m "Yes... Pretty basic stuff for you, right?"
         m "And you will be getting forty five house points afterwards of course."
         call her_main(".............","normal","frown")
@@ -129,7 +129,7 @@ label hg_pr_kiss_T1_E1:
     m "did you do it or not?"
     call her_main("...no I did not, [genie_name]...","annoyed","angryL")
     her "All I did was making a complete fool out of myself..."
-    call her_main("In front of the entire class...","angry","angry")
+    call her_main("In front of the entire class...", "angry", "base", "angry", "mid")
     m "Tell me what happened, [hermione_name]."
     call her_main("No, I will not, [genie_name].","annoyed","angryL")
     her "Not in a million years!"
@@ -261,7 +261,7 @@ label hg_pr_kiss_T2_E1:
     call her_main("\"Little kids\"? [genie_name], please...","smile","glance")
     her "You should have seen that girl..."
     her "A little petite? Maybe... But definitely not a \"kid\"."
-    call her_main("And I assure you that she was anything but confused.","smile","angry")
+    call her_main("And I assure you that she was anything but confused.", "smile", "base", "angry", "mid")
     her "In fact, at the end of our \"Study session\" she got rather obnoxious..."
     call her_main("And it sort of felt as if she was taking advantage of me...", "open", "base", "base", "mid")
     m "Oh... Well, in that case..."
@@ -301,7 +301,7 @@ label hg_pr_kiss_T2_E2:
     her "I know that other students make fun of her sometimes..."
     call her_main("But today changed everything...","base","suspicious")
     her "I Single-handedly turned that girl from a social outcast..."
-    call her_main("Into \"that lesbian girl who made out with Hermione Granger\"!","smile","angry")
+    call her_main("Into \"that lesbian girl who made out with Hermione Granger\"!", "smile", "base", "angry", "mid")
     m "Wow... You are just like some kind of hero or something..."
     call her_main("I suppose I am, [genie_name]...","base","glance")
     her "I changed that poor girl's life..."
@@ -343,7 +343,7 @@ label hg_pr_kiss_T2_E3:
             call her_main("Oh...", "upset", "closed", "base", "mid")
 
         "\"Kissing girls? Where?!!\"":
-            call her_main("Tsk!......................","angry","angry", emote="01")
+            call her_main("Tsk!......................", "angry", "base", "angry", "mid", emote="01")
 
     call her_main("Well, I am only asking you this, [genie_name], because...","open","down")
     call her_main("...it is sort of becoming a new trend in our school...", "angry", "base", "base", "mid")
@@ -413,7 +413,7 @@ label hg_pr_kiss_T3_E1:
     her "Or it could also be that someone from the school staff bought this favour from her..."
     call her_main("The same way you buy favours from me, [genie_name]...","open","annoyed", cheeks="blush")
     m "(Snape?)"
-    call her_main("If that is the case I am sure that it was professor Snape...","angry","angry")
+    call her_main("If that is the case I am sure that it was professor Snape...", "angry", "base", "angry", "mid")
     m "What? He would never..."
     call her_main("You should really investigate Professor Snape's activities, [genie_name]...","annoyed","angryL")
     m "Of course..."
@@ -434,9 +434,9 @@ label hg_pr_kiss_T3_E1:
     m "I imagine they do..."
     call her_main("So she spat into my mouth...", "open", "closed", "base", "mid")
     her "And then I spat into hers..."
-    call her_main("Although I would much rather spit in her face!","angry","angry", cheeks="blush")
+    call her_main("Although I would much rather spit in her face!", "angry", "base", "angry", "mid", cheeks="blush")
     call her_main("Then she returned my spit...","annoyed","angryL")
-    call her_main("And I had to fight the urge to slap her smug face for doing that...","angry","angry", cheeks="blush")
+    call her_main("And I had to fight the urge to slap her smug face for doing that...", "angry", "base", "angry", "mid", cheeks="blush")
     call her_main("But I don't think the boys would appreciate that...", "upset", "closed", "base", "mid")
     m "Well... You would be surprised..."
     call her_main("In any case, After that we kissed some more...","base","down")

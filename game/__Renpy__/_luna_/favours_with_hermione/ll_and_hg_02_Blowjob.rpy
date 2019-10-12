@@ -303,7 +303,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         m "And here's 75 gold each."
         call her_main("Thank you [genie_name]!", "base", "base", "base", "mid")
         call lun_main("...","normal","angry","angry","R")
-        call her_main("Luna! Don't be rude.","angry","angry")
+        call her_main("Luna! Don't be rude.", "angry", "base", "angry", "mid")
         call lun_main("...Thanks [lun_genie_name].","normal","seductive","sad","R")
         call her_main("...","disgust","down_raised")
         call her_main("Well, we better be off sir, we still have a lot of studying to do!", "grin", "base", "base", "R")

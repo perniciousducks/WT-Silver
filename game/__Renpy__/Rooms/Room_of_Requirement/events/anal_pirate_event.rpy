@@ -351,7 +351,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
                 call her_main("{size=+7}*GULP!*{/size}","cum","worriedCl")
                 call her_main("*SOB!* I HATE YOU...","angry","suspicious",cheeks="blush",tears="messy")
-                call her_main("{size=+5}I HATE YE'N AND YER RUSTY OLE CANON!{/size}","scream","angry",cheeks="blush",tears="messy")
+                call her_main("{size=+5}I HATE YE'N AND YER RUSTY OLE CANON!{/size}", "scream", "base", "angry", "mid",cheeks="blush",tears="messy")
                 call her_main("{size=+5}I HATE YE'N! YE HEAR ME?!{/size}")
                 g4 "Agh... Dead men tell no tales, wench!"
                 call her_main("*sob!* *Sob!*...","angry","suspicious",cheeks="blush",tears="messy")
@@ -453,7 +453,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Booty plundering?","disgust","glance")
         g4 "Wha..........?!"
         g4 "How did ye...?"
-        call her_main("You seem like a booty pirate kind of a man. captain...","angry","angry")
+        call her_main("You seem like a booty pirate kind of a man. captain...", "angry", "base", "angry", "mid")
         m "I'm not sure you know what that means, lass..."
         hide screen hermione_main
         with d3

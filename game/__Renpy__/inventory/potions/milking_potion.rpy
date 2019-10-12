@@ -96,14 +96,14 @@ label potion_scene_11_1: #Milking potion part 1
     call her_main("I can't be expected to go to class looking like this!","annoyed","worriedL")
     m "Why not? I don't think they're that much bigger than normal."
     call her_main("Are you kidding me?","disgust","glance")
-    call her_main("They're {size=+5}humongous!{/size}","angry","angry")
+    call her_main("They're {size=+5}humongous!{/size}", "angry", "base", "angry", "mid")
     m "Well if you want them to go back to normal..."
     call her_main("What? Do you have an antidote?", "grin", "base", "base", "R")
     m "Not an antidote, but I do have a method that would alleviate the swelling."
-    call her_main("...","annoyed","angry")
+    call her_main("...", "annoyed", "base", "angry", "mid")
     call her_main("I'm listening...","annoyed","frown")
     m "Well as far as I can tell, your breasts are swelling due to an excess supply of milk."
-    call her_main("...","annoyed","angry")
+    call her_main("...", "annoyed", "base", "angry", "mid")
     m "If we somehow got it all out of there, I'm sure they'd revert to normal size in no time at all."
     call her_main("...","scream","wide_stare")
     call her_main("You can't be serious!","annoyed","annoyed")
@@ -248,7 +248,7 @@ label potion_scene_11_2: #Milking potion part 2
     pause
     $ ccg1 = 2
     call her_main("[genie_name], this is ridiculous!","open","worriedCl",cheeks="blush")
-    call her_main("do they have to be so big?","angry","angry",cheeks="blush")
+    call her_main("do they have to be so big?", "angry", "base", "angry", "mid",cheeks="blush")
     m "Yes."
     $ ccg1 = 3
     call her_main("...","annoyed","annoyed")
@@ -274,7 +274,7 @@ label potion_scene_11_2: #Milking potion part 2
 
     call her_main("There! Happy now!", "disgust", "slit", "low", "stare",xpos="right",ypos="base")
     m "I mean if you could moo that would really Complete the picture..."
-    call her_main("...","angry","angry")
+    call her_main("...", "angry", "base", "angry", "mid")
     call her_main("can we just get this over with...","annoyed","angryL")
     m "Um... It's enchanted..."
     "(Does it have an on switch)"
@@ -406,7 +406,7 @@ label potion_scene_11_3: #Milking potion part 3
     m "Did you really think it would be?"
     call her_main("I mean... Sort of?","annoyed","down")
     call her_main("you are a wizard after all...","annoyed","down")
-    call her_main("the house-elves make me a milkshake whenever i ask...","annoyed","angry")
+    call her_main("the house-elves make me a milkshake whenever i ask...", "annoyed", "base", "angry", "mid")
     m "Speaking of milkshakes!"
     call nar(">You notice hermione's breasts start to swell...")
     call her_main("Ugh... this always feels so weird...","angry","down_raised")
@@ -578,7 +578,7 @@ label potion_scene_11_3: #Milking potion part 3
                 m "More than water from an oasis!"
                 call her_main("...","annoyed","angryL")
                 call her_main("well...", "soft", "happy", "base", "R")
-                call her_main("Are you going to finish it?","smile","angry")
+                call her_main("Are you going to finish it?", "smile", "base", "angry", "mid")
                 call nar(">You finish the cannister in one final mouthful.")
                 call her_main("...","smile","happyCl")
                 call nar(">She slowly screws the cannister back into milker.")
@@ -625,7 +625,7 @@ label potion_scene_11_3: #Milking potion part 3
         call cum_block
         $ hermione_squirt = True
 
-        call her_main("Ah!!!", "grin", "narrow", "angry", "up",cheeks="blush")
+        call her_main("Ah!!!", "grin", "narrow", "base", "angry", "mid", "up",cheeks="blush")
         call nar(">You see a small squirt of milk come out of hermione's nipples.")
         $ hermione_squirt = False
 
@@ -768,18 +768,18 @@ label potion_scene_11_3: #Milking potion part 3
 
         call her_main("You damn {size=+10}pervert!{/size}","shock","worriedCl",cheeks="blush")
         g9 "Woah! Nice..."
-        call her_main("Nice? How is this nice?","scream","angry",emote="01")
-        call her_main("I have a damn {size=+10}cock!{/size}","angry","angry",emote="01")
+        call her_main("Nice? How is this nice?", "scream", "base", "angry", "mid",emote="01")
+        call her_main("I have a damn {size=+10}cock!{/size}", "angry", "base", "angry", "mid",emote="01")
         m "Come on [hermione_name]... where's your sense of adventure?"
         call her_main("Adventure?","annoyed","annoyed")
         call her_main("Going into the chamber of secrets was an adventure sir...","open","suspicious")
         call her_main("Standing in my headmaster's office while he makes me drink some random potion he probably found in the gutter-","scream","angryCl")
-        call her_main("-That makes me have huge, {size=+3}lactating{/size}, {size=+5}tits{/size} and a giant {size=+10}{b}DICK{/b}{/size} is {size=+2}not {size=+2}an {size=+4}adventure!{/size}","scream","angry",emote="01")
+        call her_main("-That makes me have huge, {size=+3}lactating{/size}, {size=+5}tits{/size} and a giant {size=+10}{b}DICK{/b}{/size} is {size=+2}not {size=+2}an {size=+4}adventure!{/size}", "scream", "base", "angry", "mid",emote="01")
         m "Don't forget about the magical milking machine..."
         call nar(">You hand hermione the milking harness.")
         m "Surely this makes it an adventure..."
         call her_main("What do you expect me to do with this?","annoyed","frown")
-        call her_main("It's hardly going to be able to get rid of this {size=+10}DICK{/size} now is it.","angry","angry")
+        call her_main("It's hardly going to be able to get rid of this {size=+10}DICK{/size} now is it.", "angry", "base", "angry", "mid")
         m "Actually, it should."
         m "(I hope it does anyway... Snape did say it was magic.)"
         call her_main("really?","annoyed","annoyed")
@@ -967,25 +967,25 @@ label potion_scene_11_1_2: #Milking potion part 1 night time
 
     call her_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
 
-    call her_main("Professor! why didn't you warn me about this!","angry","angry",xpos="right",ypos="base")
+    call her_main("Professor! why didn't you warn me about this!", "angry", "base", "angry", "mid",xpos="right",ypos="base")
 
     m "About what? I told you your breasts would expand."
-    call her_main("Look at my shirt!","angry","angry",emote="01")
+    call her_main("Look at my shirt!", "angry", "base", "angry", "mid",emote="01")
     m "Hmmm, seems like you had a bit of an accident."
     call her_main("An accident?","open","suspicious")
-    call her_main("I've been leaking milk all day!","scream","angry",emote="01")
+    call her_main("I've been leaking milk all day!", "scream", "base", "angry", "mid",emote="01")
     m "It doesn't seem that bad..."
     call her_main("This is the third shirt that I've had to wear today!","open","angryCl")
-    call her_main("All the others are soaked through!","angry","angry")
+    call her_main("All the others are soaked through!", "angry", "base", "angry", "mid")
     call her_main("Even my vest is soaked...","annoyed","frown")
     m "Well I did offer to relieve your issue..."
-    call her_main("by milking me like some sort of... animal!","angry","angry")
+    call her_main("by milking me like some sort of... animal!", "angry", "base", "angry", "mid")
     call her_main("I'm upset you'd even think that would be a possibility.","angry","annoyed",emote="01")
     m "Well it would have solved your \'problem\'."
     call her_main("...","open","suspicious")
     call her_main("Well I expect to be paid extra after this humiliation.","annoyed","annoyed")
     m "how much?"
-    call her_main("30 points.","annoyed","angry")
+    call her_main("30 points.", "annoyed", "base", "angry", "mid")
     m "Fine, 30 points to \"gryffindor\"."
     $ gryffindor += 30
     call her_main("*hmph*","annoyed","annoyed")

@@ -57,14 +57,14 @@ label hg_pr_blowjob:
         call her_main("But I need the points, [genie_name]. You know that.", "upset", "closed", "base", "mid")
         m "It's as the saying goes, [hermione_name]..."
         m "\"If you won't suck a dick for it - you don't need it.\""
-        call her_main("Tch...","angry","angry", cheeks="blush")
+        call her_main("Tch...", "angry", "base", "angry", "mid", cheeks="blush")
         her "............................"
         m ".........................................."
         call her_main("...alright.","annoyed","angryL")
         her "I'll do it..."
         m "Go do it, then!"
         m "Report back to me after your classes."
-        call her_main("...","angry","angry", cheeks="blush")
+        call her_main("...", "angry", "base", "angry", "mid", cheeks="blush")
         her "....."
         her "......."
         m "You may leave, [hermione_name]."
@@ -148,7 +148,7 @@ label hg_pr_blowjob_T1_E1:
     m "Did you swallow?"
     call her_main("...........................","annoyed","annoyed")
     m "[hermione_name], did you swallow the load properly?"
-    call her_main("Yes I did, [genie_name].","angry","angry")
+    call her_main("Yes I did, [genie_name].", "angry", "base", "angry", "mid")
     m "Well, I suppose that will do for now..."
 
     jump end_hg_pr_blowjob
@@ -169,12 +169,12 @@ label hg_pr_blowjob_T1_E2:
     call her_main("I cannot believe that actually happened...", "angry", "base", "base", "mid", tears="soft")
     her "I am one of the top students in this school!"
     her "One of the most popular ones too..."
-    call her_main("And he turns me down?","angry","angry", tears="soft")
+    call her_main("And he turns me down?", "angry", "base", "angry", "mid", tears="soft")
     her "Why would he insult me like that?!"
     m "So you're insulted because that boy refused to put his cock in your mouth?"
-    call her_main("Wouldn't you be, [genie_name]?","angry","angry", tears="crying")
+    call her_main("Wouldn't you be, [genie_name]?", "angry", "base", "angry", "mid", tears="crying")
     m "I think I would get over it rather quickly..."
-    call her_main("He rejected me [genie_name]...","angry","angry", cheeks="blush")
+    call her_main("He rejected me [genie_name]...", "angry", "base", "angry", "mid", cheeks="blush")
     her "Who does he think he is?!"
     call her_main("With all due respect, [genie_name], you wouldn't understand...","open","annoyed", cheeks="blush")
     m "Well, in any case. I can't pay you for this."
@@ -267,7 +267,7 @@ label hg_pr_blowjob_T2_E2:
     $ u_sperm = "characters/hermione/face/auto_08.png"
 
     show screen blktone
-    call her_main("","angry","angry",xpos="right",ypos="base")
+    call her_main("", "angry", "base", "angry", "mid",xpos="right",ypos="base")
     call ctc
 
     m "[hermione_name]..."
@@ -282,9 +282,9 @@ label hg_pr_blowjob_T2_E2:
     play sound "sounds/burp.mp3"
     call her_main("*Burp!*...","shock","worriedCl")
     call her_main("Excuse me.","angry","down_raised")
-    call her_main("He came so much I was barely able to swallow it all...","scream","angry", emote="01")
+    call her_main("He came so much I was barely able to swallow it all...", "scream", "base", "angry", "mid", emote="01")
     her "Bloody bastard!"
-    call her_main("You think I could file a complaint, [genie_name]?","angry","angry", cheeks="blush")
+    call her_main("You think I could file a complaint, [genie_name]?", "angry", "base", "angry", "mid", cheeks="blush")
     m "Hm... I suppose..."
     m "But keep in mind that the moment we bring the ministry into this..."
     m "All this \"favour selling business\" will have to stop immediately."

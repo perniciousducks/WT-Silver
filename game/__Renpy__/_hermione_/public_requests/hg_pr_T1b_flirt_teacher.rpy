@@ -128,7 +128,7 @@ label hg_pr_flirt_teacher_T1_E1: # Flitwick
             stop music fadeout 1.0
             call her_main("How unbecoming of a school headmaster!","scream","worriedCl")
             m "You are dismissed, [hermione_name]."
-            call her_main("Tsk!","angry","angry", emote="01")
+            call her_main("Tsk!", "angry", "base", "angry", "mid", emote="01")
 
             call her_walk(action="leave", speed=2.5)
 
@@ -166,7 +166,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
     call her_main("...it is really scary to see professor Snape laugh...","angry","worriedCl", emote="05")
     her "........"
     her "I am awful at flirting, I am sorry [genie_name]..."
-    call her_main("But I know that professor Snape is \"dirty\"!","angry","angry")
+    call her_main("But I know that professor Snape is \"dirty\"!", "angry", "base", "angry", "mid")
     her "If you were to send someone else to him the outcome would be different, I know it!"
     m "Someone else?"
     call her_main("Yes! Someone with more experience at this...","upset","wink")
@@ -293,7 +293,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
                     call her_main("What?!","scream","wide_stare")
                     call her_main("...............","annoyed","down")
                     call her_main("..................","annoyed","worriedL")
-                    call her_main("Well, alright, but only to clear my idol's name...","angry","angry")
+                    call her_main("Well, alright, but only to clear my idol's name...", "angry", "base", "angry", "mid")
                     pause.5
 
                     call her_main("Here....","disgust","down_raised",cheeks="blush",xpos="mid",ypos="base",trans="fade")
@@ -315,7 +315,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
 
                     call set_her_action("none")
 
-                    call her_main("","angry","angry")
+                    call her_main("", "angry", "base", "angry", "mid")
                     call ctc
 
                     $ her_mood += 9
@@ -360,7 +360,7 @@ label hg_pr_flirt_teacher_T2_E3: # Filch
         "\"Favour failed! No points for you!\"":
             call her_main("But [genie_name]?","normal","frown")
             m "You are dismissed, [hermione_name]."
-            call her_main(".........................................","angry","angry")
+            call her_main(".........................................", "angry", "base", "angry", "mid")
 
             call her_walk(action="leave", speed=2.5)
 
@@ -413,7 +413,7 @@ label hg_pr_flirt_teacher_T3_E1: # Filch
     m "Huh?"
     call her_main("Well, aren't you going to do something about this?", "open", "base", "base", "mid")
     m "Well..."
-    call her_main("What if I am not the first victim..?","angry","angry")
+    call her_main("What if I am not the first victim..?", "angry", "base", "angry", "mid")
     her "Some unfortunate freshman could be traumatised for life!"
     m "And who wouldn't be really?"
     call her_main("Does this mean you will take action, [genie_name]?", "open", "base", "base", "mid")
@@ -432,7 +432,7 @@ label hg_pr_flirt_teacher_T3_E2: # Snape +CG
     call hg_pr_flirt_teacher_intro
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Professor Snape!","angry","angry", emote="01")
+    call her_main("Professor Snape!", "angry", "base", "angry", "mid", emote="01")
     m "Ehm... Yeah, I'm pretty sure it's Dumbledore or something..."
     call her_main("[genie_name], please, you need to listen to me!", "open", "base", "base", "mid")
     m "Yes, yes, [hermione_name], I'm listening."
@@ -459,7 +459,7 @@ label hg_pr_flirt_teacher_T3_E2: # Snape +CG
     with fade
     call ctc
 
-    call her_main("As soon as the class was over, professor Snape grabbed my buttocks, [genie_name]!","angry","angry", ypos="head")
+    call her_main("As soon as the class was over, professor Snape grabbed my buttocks, [genie_name]!", "angry", "base", "angry", "mid", ypos="head")
     m "The fiend!"
     m "Did you enjoy it, though?"
     call her_main("[genie_name], I am only doing this--","scream","angryCl", ypos="head")

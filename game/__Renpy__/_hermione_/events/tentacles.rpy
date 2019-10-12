@@ -296,7 +296,7 @@ label costume_scene_1: #Maid role-play
     call her_main("Is there anything you need cleaned today sir?","smile","glance")
     m "At least try to do the accent."
     call her_main("...","smile","glance")
-    call her_main("Is there anything that you need cleaned today Monsieur?","mad","angry",cheeks="blush")
+    call her_main("Is there anything that you need cleaned today Monsieur?", "mad", "base", "angry", "mid",cheeks="blush")
     m "Much better."
     call her_main("Thank you Monsieur.","smile","glance")
     m "Now as for your cleaning I think that the fireplace could you a good dusting."

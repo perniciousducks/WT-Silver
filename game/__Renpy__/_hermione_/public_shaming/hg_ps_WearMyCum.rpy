@@ -43,10 +43,10 @@ label hg_ps_cumslut: #Walk around school covered in genies cum
 label hg_ps_cumslut_Scene_1:
     $ hg_ps_cumslut.inProgress = True
     call her_main("What?!?", "shock", "wide", "base", "stare")
-    call her_main("You can't be serious!","angry","angry")
+    call her_main("You can't be serious!", "angry", "base", "angry", "mid")
     call her_main("It's bad enough that I let you cum on me in private!","annoyed","annoyed")
     call her_main("But in public?","angry","annoyed",emote="01")
-    call her_main("I think I better leave...","annoyed","angry")
+    call her_main("I think I better leave...", "annoyed", "base", "angry", "mid")
     m "Wait, wait, wait."
     m "What about if nobody could see it?"
     call her_main("Well I suppose that would be alright...","annoyed","annoyed")
@@ -136,7 +136,7 @@ label hg_ps_cumslut_Scene_1:
 
             call her_main("Well, this shouldn't be too bad...","upset","wink",xpos="right",ypos="base")
             m "I'm sure no one will notice."
-            call her_main("They better not.","angry","angry")
+            call her_main("They better not.", "angry", "base", "angry", "mid")
 
         "\"Just keep on jerking [hermione_name]!\"": # Cum on skirt
             $ cum_location = 2
@@ -235,7 +235,7 @@ label hg_ps_cumslut_Scene_1:
     m "If you return to this office after classes without any cum on you, Slytherin will get 200 points."
     call her_main("{size=+10}200! That is not fair!{/size}", "shock", "wide", "base", "stare")
     m "It's Only unfair if you clean it off."
-    call her_main("...","angry","angry")
+    call her_main("...", "angry", "base", "angry", "mid")
 
     call her_walk(action="leave", speed=2.5)
 
@@ -247,7 +247,7 @@ label hg_ps_cumslut_Scene_1:
 label hg_ps_cumslut_Scene_2:
     $ hg_ps_cumslut.inProgress = True
     call her_main("Again?", "shock", "wide", "base", "stare")
-    call her_main("You can not be serious!","angry","angry")
+    call her_main("You can not be serious!", "angry", "base", "angry", "mid")
     call her_main("I already let you do this to me once, isn't that enough?","annoyed","annoyed")
     m "It's enough when I say it's enough."
     m "Besides, was it really such an issue last time?"

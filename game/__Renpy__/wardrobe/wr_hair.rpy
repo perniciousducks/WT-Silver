@@ -233,7 +233,7 @@ label change_hair:
                         # call her_main("I really love it!","smile","happyCl")
                         # call her_main("Let me go change it for you.","base","glance")
                 # else:
-                    # call her_main("What?!","angry","angry")
+                    # call her_main("What?!", "angry", "base", "angry", "mid")
                     # call her_main("I'm not going to walk around school parading as some Slytherin joke-mascot!","scream","angryCl")
                     # call her_main("I definitely refuse!","annoyed","annoyed")
                     # if cheats_active or game_difficulty <= 2:
@@ -249,7 +249,7 @@ label change_hair:
                 # else:
                     # if her_whoring < 5:
                         # call her_main("I'm not going to dye my hair blue for you, [genie_name]!","open","angryCl")
-                        # call her_main("If you want your own parrot, then you should just buy one!","angry","angry")
+                        # call her_main("If you want your own parrot, then you should just buy one!", "angry", "base", "angry", "mid")
                         # if cheats_active or game_difficulty <= 2:
                             # ">Try again at Whoring level 11."
                         # jump return_to_wardrobe
@@ -285,8 +285,8 @@ label change_hair:
                     # call her_main("Hi-hi--","smile","happyCl")
                     # call her_main("Let me go change.","base","glance")
                 # else:
-                    # call her_main("Dye my hair...","angry","angry") #mad, angry
-                    # call her_main("Dye my hair Pink?... {w=0.9}Pink?!","angry","angry",emote="01")
+                    # call her_main("Dye my hair...", "angry", "base", "angry", "mid") #mad, angry
+                    # call her_main("Dye my hair Pink?... {w=0.9}Pink?!", "angry", "base", "angry", "mid",emote="01")
                     # call her_main("I can't dye my hair pink, [genie_name]!","scream","worriedCl")
                     # call her_main("(What does he think I am? Some cheap dress-up doll?)","annoyed","angryL")
                     # call her_main("It's an ugly colour anyway.", "open", "closed", "base", "mid")
@@ -404,7 +404,7 @@ label change_hair:
             # m "I do, [hermione_name]"
             # call her_main("I prefer wearing my hair open like this.", "open", "closed", "base", "mid")
             # call her_main("Makes it easier to grab and pull...","base","glance")
-            # call her_main("Like a leash!","smile","angry")
+            # call her_main("Like a leash!", "smile", "base", "angry", "mid")
             # g4 "You dirty slut!"
         # else:
             # call her_main("Do you like it, [genie_name]?","base","glance")

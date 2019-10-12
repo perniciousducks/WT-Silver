@@ -41,7 +41,7 @@ label hg_pf_handjob:
 
     hide screen blkfade
     if her_mood != 0:
-        call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans="fade")
     else:
         call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
@@ -106,7 +106,7 @@ label hg_pf_handjob_T1_intro_E1:
     m "Do you know what a \"handjob\" is?"
     call her_main("Why?","annoyed","annoyed")
     m "I feel like getting one..."
-    call her_main("[genie_name]!","angry","angry")
+    call her_main("[genie_name]!", "angry", "base", "angry", "mid")
     m "Just another favour. No big deal, right?"
     call her_main("......","disgust","glance")
     call her_main("{size=-7}I want 100 house points for this...{/size}","angry","worriedCl", emote="05")
@@ -170,9 +170,9 @@ label hg_pf_handjob_T1_intro_E2:
     g9 "The favour being you playing with my cock!"
     call her_main("..............","disgust","glance")
     m "Oh, come on. For the honour of the \"Gryffindors\"?"
-    call her_main(".............","angry","angry")
+    call her_main(".............", "angry", "base", "angry", "mid")
     g9 "Play with my cock for the honour of the \"Gryffindors\", [hermione_name]!"
-    call her_main("Stop saying that, [genie_name]...","scream","angry", emote="01")
+    call her_main("Stop saying that, [genie_name]...", "scream", "base", "angry", "mid", emote="01")
     m "Come on [hermione_name], it's not like I'm asking you to do this for free."
     call her_main(".......","annoyed","angryL")
 
@@ -185,8 +185,8 @@ label hg_pf_handjob_T1_repeat:
     call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "How would you like to give me another handjob?"
 
-    call her_main("...............","upset","angry")
-    call her_main("Will I be getting paid for it, [genie_name]?","open","angry")
+    call her_main("...............", "upset", "base", "angry", "mid")
+    call her_main("Will I be getting paid for it, [genie_name]?", "open", "base", "angry", "mid")
     m "Of course. 45 points."
     call her_main(".........................","upset","angryL")
 
@@ -320,7 +320,7 @@ label hg_pf_handjob_1:
     menu:
         m "..."
         "\"Tell me how much of a whore you are!\"":
-            call her_main("What?","angry","angry")
+            call her_main("What?", "angry", "base", "angry", "mid")
             call her_main("But I'm not...")
             m "No need to be honest, [hermione_name]."
             m "Just make things up."
@@ -380,16 +380,16 @@ label hg_pf_handjob_1:
             m "No, keep on looking at me!"
             call her_main(".....................", "open_wide_tongue", "base", "base", "mid")
             m "Yes, you little slut!"
-            call her_main("......................","open_wide_tongue","angry")
+            call her_main("......................", "open_wide_tongue", "base", "angry", "mid")
             m "I want to cum in that mouth, yes..."
-            call her_main("................","open_wide_tongue","angry")
+            call her_main("................", "open_wide_tongue", "base", "angry", "mid")
             with hpunch
             g4 "{size=-4}(Here it comes! Should I warn her?){/size}"
 
         "\"Give my cock a kiss!\"":
-            call her_main("Excuse me?","angry","angry")
+            call her_main("Excuse me?", "angry", "base", "angry", "mid")
             m "You know, just a little kiss, right on the tip."
-            call her_main(".............","angry","angry")
+            call her_main(".............", "angry", "base", "angry", "mid")
             call her_main("...with my lips?", "shock", "wide", "base", "stare")
             m "Sure... That will speed things up, I'm telling you."
             call her_main("*sigh!*..............","open","down")
@@ -583,7 +583,7 @@ label hg_pf_handjob_1:
             if d_flag_01: #If TRUE Genie promised to warn her.
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
                 $ her_mood += 11
-                call her_main("You promised to give me a warning, [genie_name]!","angry","angry")
+                call her_main("You promised to give me a warning, [genie_name]!", "angry", "base", "angry", "mid")
                 m "Oh, that's right... My bad."
                 call her_main("My uniform is ruined...","annoyed","angryL")
                 her "...I would like to get paid now."
@@ -635,7 +635,7 @@ label hg_pf_handjob_2:
             m "Well, you don't have to--"
             call her_main("[genie_name], let me be honest with you...", "upset", "closed", "base", "mid")
             m "Yes?"
-            call her_main("You have the biggest penis I have ever seen!","smile","angry")
+            call her_main("You have the biggest penis I have ever seen!", "smile", "base", "angry", "mid")
             m "Well I suppo--"
             call her_main("Not done yet!","scream","angryCl")
             m "Apologies."
@@ -681,7 +681,7 @@ label hg_pf_handjob_2:
                     call her_main("Em...","angry","wink")
                     call her_main("I live to suck penis, er... I mean cock...", "base", "base", "base", "mid")
                     m "Really? Well why don't you suck on this one then?"
-                    call her_main("[genie_name], I am just repeating after you...","smile","angry")
+                    call her_main("[genie_name], I am just repeating after you...", "smile", "base", "angry", "mid")
                     m "Really? Could've fooled me...."
                     call her_main("....................","angry","wink")
                     m ".................."
@@ -761,9 +761,9 @@ label hg_pf_handjob_2_continue:
         m "..."
         "{size=-4}\"I fantasize about being raped by my father.\"{/size}":
             $ her_mood += 11
-            call her_main("I do not!","angry","angry")
+            call her_main("I do not!", "angry", "base", "angry", "mid")
             m "I know. Just say it."
-            call her_main("My father? That's disgusting, [genie_name]!","angry","angry", emote="01")
+            call her_main("My father? That's disgusting, [genie_name]!", "angry", "base", "angry", "mid", emote="01")
             m "Humour me."
             call her_main("...........","annoyed","annoyed")
             call her_main("Well...","open","down")

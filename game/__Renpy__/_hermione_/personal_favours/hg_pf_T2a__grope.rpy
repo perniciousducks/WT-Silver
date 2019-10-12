@@ -35,7 +35,7 @@ label hg_pf_grope:
 
     hide screen blkfade
     if her_mood != 0:
-        call her_main("","annoyed","angry", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans="fade")
     else:
         call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
@@ -114,9 +114,9 @@ label hg_pf_grope_T0_fail_intro:
 
 label hg_pf_grope_T0_fail_repeat:
     g9 "[hermione_name], I'd like to grope you a little!"
-    call her_main("This again...?","angry","angry")
+    call her_main("This again...?", "angry", "base", "angry", "mid")
     call her_main("I've told you before, [genie_name], absolutely not!!","scream","angryCl")
-    call her_main("Merlin's beard...","angry","angry")
+    call her_main("Merlin's beard...", "angry", "base", "angry", "mid")
     m "Please?"
     call her_main("I'm leaving! Good day, Sir!", "soft", "closed", "base", "mid")
 
@@ -165,7 +165,7 @@ label hg_pf_grope_T1_intro_E1:
 label hg_pf_grope_T1_E1:
     stop music fadeout 2.0
     m "Come closer [hermione_name]... Hop around my desk..."
-    call her_main("...............","annoyed","angry")
+    call her_main("...............", "annoyed", "base", "angry", "mid")
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 

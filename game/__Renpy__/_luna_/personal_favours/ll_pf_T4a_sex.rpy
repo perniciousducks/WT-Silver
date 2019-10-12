@@ -463,24 +463,24 @@ label ll_pf_sex_T1_her_1: # Call label
     call her_main("[genie_name], I hope you're not too busy to ben-","smile","happyCl", xpos=550, ypos=-140)
     call her_main("[genie_name], Luna! What are you two doing?!","soft","shocked", trans="hpunch")
     m "ah... Isn't it obvious?"
-    call her_main("Ugh... Why are you two fucking then?","scream","angry")
+    call her_main("Ugh... Why are you two fucking then?", "scream", "base", "angry", "mid")
     lun "Mmmm... we're getting rid... of some nasty wrackspurts!"
     call her_main("You're still going on about that? I told you before, you're just horny!","angry","angryCl")
     $ lunCG(mouth="open", eye="seductive", eyebrow="base", pupil="right")
     lun "Stop... *ah*... being so closed... minded Hermione..."
     lun "I bet you... didn't even realise that... Dumbledore was a genie at first!"
-    call her_main("My goodness, you're such an {b}idiot{/b}!","disgust","angry")
+    call her_main("My goodness, you're such an {b}idiot{/b}!", "disgust", "base", "angry", "mid")
     lun "Don't be mean Hermione... is it the wrackspurts that are bothering you?"
     lun "I'm sure that we can teach you how to get rid of them by yourself!"
-    call her_main("I know how to play with myself...","annoyed","angry")
+    call her_main("I know how to play with myself...", "annoyed", "base", "angry", "mid")
     $ lunCG(mouth="open", eye="base", eyebrow="base", pupil="right")
     lun "oh..."
     lun "Well if you just want to watch us, I don't mind..."
-    call her_main("Don't you have any shame!?","soft","angry")
+    call her_main("Don't you have any shame!?", "soft", "base", "angry", "mid")
     $ lunCG(mouth="open_tongue", eye="base", eyebrow="base", pupil="ahegao")
     lun "mmmm... why should I be ashamed... this feels so {b}good{/b}..."
     call her_main("I know it feels good... but you shouldn't let other people watch you do it...","annoyed","angryL")
-    call her_main("Imagine if the whole school found out!","soft","angry")
+    call her_main("Imagine if the whole school found out!", "soft", "base", "angry", "mid")
     $ lunCG(mouth="open", eye="seductive", eyebrow="base", pupil="ahegao")
     lun "Oh, that would be {b}fantastic{/b}!"
     lun "Imagine me... being the person to teach the world how the dispel wrackspurts!"
@@ -496,11 +496,11 @@ label ll_pf_sex_T1_her_1: # Call label
     call her_main("*Uh-huh*... You've just Dumbledore's dumb, blonde bimbo...","soft","angryL")
     $ lunCG(mouth="open", eye="seductive", eyebrow="base", pupil="ahegao")
     lun "..."
-    call her_main("Well, I think I better give you two some alone time...","soft","angry")
+    call her_main("Well, I think I better give you two some alone time...", "soft", "base", "angry", "mid")
     $ lunCG(mouth="open", eye="wink", eyebrow="base", pupil="right")
     lun "You don't want to stay?"
     call her_main("I need to take care of something... Until then...","soft","down_raised")
-    call her_main("Why don't you just let him empty his balls in you...","angry","angry")
+    call her_main("Why don't you just let him empty his balls in you...", "angry", "base", "angry", "mid")
     call hide_characters
     show screen blkfade
     with d5

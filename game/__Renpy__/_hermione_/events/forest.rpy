@@ -300,7 +300,7 @@ label forest_BJ_2:
     call her_main("To coat in your filthy nasty {b}{image=textheart}cum{image=textheart}{/b}...","angry","dead")
     call her_main("In front of whoever, or whatever, you want...", "angry", "narrow", "annoyed", "up")
     call her_main("...","angry","dead")
-    call her_main("Well... I hope you've learned your lesson!","angry","ahegao_mad")
+    call her_main("Well... I hope you've learned your lesson!", "angry", "narrow", "angry", "up")
     call her_main("I'm going to go back and...","angry","ahegao_raised")
     call her_main("ge-Clean! myself off...","open","ahegao_squint")
     call her_main("And remember...","open","ahegao_raised")

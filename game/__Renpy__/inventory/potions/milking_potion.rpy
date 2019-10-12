@@ -625,7 +625,7 @@ label potion_scene_11_3: #Milking potion part 3
         call cum_block
         $ hermione_squirt = True
 
-        call her_main("Ah!!!","grin","ahegao_mad",cheeks="blush")
+        call her_main("Ah!!!", "grin", "narrow", "angry", "up",cheeks="blush")
         call nar(">You see a small squirt of milk come out of hermione's nipples.")
         $ hermione_squirt = False
 

@@ -1018,7 +1018,7 @@ label hg_pf_grope_ass_T4_back:
     call her_main("-wait I juuuus-!!!", "base", "base", "base", "R", cheeks="blush", ypos="head")
     call nar(">Her voice trails off to a squeak as you start to knead her big, round ass")
     m "Hm? what's that? i couldn't hear you, [hermione_name]."
-    call her_main("You bastard{image=textheart}","grin","ahegao_mad", cheeks="blush")
+    call her_main("You bastard{image=textheart}", "grin", "narrow", "angry", "up", cheeks="blush")
     call nar(">Hermione's body quivers as her hips roll")
     m "Well, someone's enjoying herself."
     call her_main("Well, you know me, [genie_name]...","base","ahegao_raised", cheeks="blush")
@@ -1096,7 +1096,7 @@ label hg_pf_grope_T4_continue:
             m "are you enjoying yourself, [hermione_name]?"
             call her_main("yes! I love how you spank me!","grin","dead", cheeks="blush", tears="messy")
             call her_main("I love how you grope me!","scream","worriedCl", cheeks="blush", tears="crying")
-            call her_main("I love how you play with my little fuckholes!","grin","ahegao_mad", cheeks="blush", tears="messy")
+            call her_main("I love how you play with my little fuckholes!", "grin", "narrow", "angry", "up", cheeks="blush", tears="messy")
             call her_main("ohgodohgodohgod","scream","surprised", cheeks="blush", tears="messy")
             ">Hermione tries to scream as her body bucks and the orgasm takes her, but can't get enough air to do more then moan."
             call her_main("oooooooh...{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up")

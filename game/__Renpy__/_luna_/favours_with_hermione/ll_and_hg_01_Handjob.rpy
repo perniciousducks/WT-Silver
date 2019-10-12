@@ -401,7 +401,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "And I'm attempting to cure her of her previous condition..."
         m "(I hope she believes this schlock...)"
         call her_main("Really?", "shock", "wide", "base", "stare")
-        call her_main("But isn't messing around with her mind a little...","soft","squintL")
+        call her_main("But isn't messing around with her mind a little...", "soft", "happy", "base", "R")
         call her_main("unethical?","angry","down_raised")
         m "Yes, well normally you'd be right, but this is more of a curing of an existing mental condition."
         m "Think about it like I'm trying to cure her of Asperger's disease."
@@ -457,7 +457,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                 call her_main("I don't know, [genie_name]... She is my friend...","clench","down_raised")
 
         m "Anyway, thanks for your help today."
-        call her_main("anything for my friends [genie_name]...","soft","squintL")
+        call her_main("anything for my friends [genie_name]...", "soft", "happy", "base", "R")
         m "(Does that mean me?)"
         m "Yes, well, 60 points to \"gryffindor\"!"
         $ gryffindor += 60
@@ -662,7 +662,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("tell her i'm better!","upset","suspicious","mad","up")
         g9 "mmmm"
         call her_main("I'm not sure he can hear you... He must be enjoying himself too much.","open","down")
-        call her_main("speaking of which... are you ready [genie_name]?","soft","squintL")
+        call her_main("speaking of which... are you ready [genie_name]?", "soft", "happy", "base", "R")
         g9 "Ugh... yes... here it comes sluts!"
         call her_main("well why don't I show Luna here how to give a proper handjob.","base","down")
         call lun_main("...","normal","seductive","sad","R")

@@ -305,7 +305,7 @@ label hermione_favor_menu:
                         label hermione_favors_convinced_check:
                         if her_whoring >=20:
                             m "If you do it now it could secu-..."
-                            call her_main("I'll do it!","smile","squintL")
+                            call her_main("I'll do it!", "smile", "happy", "base", "R")
                             m "Just like that?!"
                             call her_main("Yes... just like that.","smile","closed")
                             g9 "That's my [hermione_name] right there!"
@@ -626,7 +626,7 @@ label hermione_change:
     elif temp_name == "Girl":
         if her_whoring >=1 and her_whoring < 3:
             call her_main("This girl thing again?", "annoyed", "happy", "base", "mid")
-            call her_main("*sigh*...","soft","squintL")
+            call her_main("*sigh*...", "soft", "happy", "base", "R")
         elif her_whoring >=3:
             call her_main("Fine... I don't mind.", "soft", "base", "base", "R")
     elif temp_name == "Nerd":
@@ -674,9 +674,9 @@ label hermione_change:
             call her_main("","normal","concerned")
             call her_main("", "normal", "base", "base", "mid")
         elif her_whoring >=11 and her_whoring < 17:
-            call her_main("I may be a little bit naughty at times.","base","SquintL",cheeks="blush")
+            call her_main("I may be a little bit naughty at times.", "base", "happy", "base", "R",cheeks="blush")
         elif her_whoring >=17:
-            call her_main("I may be a little bit naughty at times.","base","SquintL",cheeks="blush")
+            call her_main("I may be a little bit naughty at times.", "base", "happy", "base", "R",cheeks="blush")
             call her_main("", "base", "base", "base", "mid", cheeks="blush")
     elif temp_name == "Princess":
         if her_whoring >= 11 and her_whoring < 13:

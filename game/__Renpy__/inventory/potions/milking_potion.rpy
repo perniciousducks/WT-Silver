@@ -185,7 +185,7 @@ label potion_scene_11_2: #Milking potion part 2
     call her_main("Hmmm...","annoyed","down")
     call her_main("well how are you going to solve the milk problem, [genie_name]?","open","down")
     call her_main("Am I going to have to stand here...","base","ahegao_raised")
-    call her_main("With my shirt off...","soft","squintL")
+    call her_main("With my shirt off...", "soft", "happy", "base", "R")
 
     call set_her_action("lift_top")
     pause.5
@@ -343,7 +343,7 @@ label potion_scene_11_2: #Milking potion part 2
 
     call her_main("Thank you sir...","open","suspicious")
     call her_main("(Although I still have to head to class with these huge things...)","annoyed","angryL")
-    call her_main("(not that I mind the extra attention...)","soft","squintL")
+    call her_main("(not that I mind the extra attention...)", "soft", "happy", "base", "R")
 
     $ milking = 0
 
@@ -475,7 +475,7 @@ label potion_scene_11_3: #Milking potion part 3
 
         call her_main("...","upset","worriedCl",cheeks="blush")
         m "are you sure you can't moo?..."
-        call her_main("...","soft","squintL")
+        call her_main("...", "soft", "happy", "base", "R")
         call her_main("{size=-5}moo...{/size}", "open", "base", "base", "R")
         m "what was that?"
         call her_main("I'm not saying it again, [genie_name]... {size=-5}once is enough...{/size}","annoyed","angryL")
@@ -486,7 +486,7 @@ label potion_scene_11_3: #Milking potion part 3
         $ milking = 2
         call set_her_action("milk_breasts")
 
-        call her_main("!!!","soft","squintL")
+        call her_main("!!!", "soft", "happy", "base", "R")
         call her_main("Ugh... it feels different this time...","open","worriedCl")
         call her_main("like there's so much more in my breasts...","shock","worriedCl")
         call her_main("and it all wants to come out...","silly","dead")
@@ -529,7 +529,7 @@ label potion_scene_11_3: #Milking potion part 3
                 m "fresh out..."
                 call her_main("...","annoyed","angryL")
                 m "I'm afraid you'll have to drink it yourself."
-                call her_main("...","soft","squintL")
+                call her_main("...", "soft", "happy", "base", "R")
                 call her_main("{size=-5}alright...{/size}", "open", "base", "base", "R")
                 m "Really?"
                 call her_main("It's not like I can go to class leaking milk again...","annoyed","angryL")
@@ -577,7 +577,7 @@ label potion_scene_11_3: #Milking potion part 3
                 call her_main("really? You liked my milk?", "open", "base", "base", "R")
                 m "More than water from an oasis!"
                 call her_main("...","annoyed","angryL")
-                call her_main("well...","soft","squintL")
+                call her_main("well...", "soft", "happy", "base", "R")
                 call her_main("Are you going to finish it?","smile","angry")
                 call nar(">You finish the cannister in one final mouthful.")
                 call her_main("...","smile","happyCl")

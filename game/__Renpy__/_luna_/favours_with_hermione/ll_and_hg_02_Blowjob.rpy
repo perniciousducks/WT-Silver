@@ -68,7 +68,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call lun_main("do I have to?","pout","seductive","sad","R")
         call her_main("I told you that appearance is everything, remember?","annoyed","closed")
         call lun_main("ugh... fine.","normal","seductive","sad","down")
-        call her_main("Good! I'll get naked as well then, just to make it fair!","soft","squintL")
+        call her_main("Good! I'll get naked as well then, just to make it fair!", "soft", "happy", "base", "R")
         m "(I think the two of them might be getting a little too friendly...)"
         call lun_main("...","base","base","base","R", cheeks="blush")
         show screen blkfade
@@ -307,7 +307,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call lun_main("...Thanks [lun_genie_name].","normal","seductive","sad","R")
         call her_main("...","disgust","down_raised")
         call her_main("Well, we better be off sir, we still have a lot of studying to do!", "grin", "base", "base", "R")
-        call her_main("(Not to mention more practice with the dildo...)","soft","squintL")
+        call her_main("(Not to mention more practice with the dildo...)", "soft", "happy", "base", "R")
         call her_main("Come on Luna!", "open", "base", "base", "R")
         call lun_main("...","base","base","base","R")
         ">Luna and hermione leave the office together, chattering happily as the door closes."
@@ -354,7 +354,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("I made sure she studied transfiguration and herbology first though...","grin","worriedCl",emote="05")
         $ luna_flip = 1
         call lun_main("can we stop talking and get started already!","normal","angry","mad","R", cheeks="blush")
-        call her_main("See, I told you she was eager!","soft","squintL")
+        call her_main("See, I told you she was eager!", "soft", "happy", "base", "R")
         m "I can hardly believe it..."
         call lun_main("shut up! both of you!","normal","wide","angry","R", cheeks="blush")
         m "..."
@@ -611,7 +611,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("...","disgust","down_raised")
         call lun_main("...Thank you sir.","normal","seductive","sad","R")
         call her_main("Well, we better be off sir, we still have a lot of studying to do!", "grin", "base", "base", "R")
-        call her_main("(Not to mention more practice with the dildo...)","soft","squintL")
+        call her_main("(Not to mention more practice with the dildo...)", "soft", "happy", "base", "R")
         call her_main("Come on Luna!", "open", "base", "base", "R")
         call lun_main("...","base","base","base","R")
         ">Luna and hermione leave the office together, chattering happily as the door closes."
@@ -648,7 +648,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("believe me sir, she's been practising really hard!", "open", "base", "base", "R")
         call her_main("You should have seen her genie... she almost got my 7 inch dildo in all the way...","grin","ahegao")
         call lun_main("...","normal","angry","sad","R", cheeks="blush")
-        call her_main("well half of the way...","soft","squintL")
+        call her_main("well half of the way...", "soft", "happy", "base", "R")
         call her_main("but I'm sure she'll manage with the real thing...", "grin", "base", "base", "R")
         $ luna_flip = 1
         call lun_main("can we stop talking and get started already!","base","angry","angry","R", cheeks="blush")
@@ -890,7 +890,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("Thank you [genie_name]! Any time you want to fuck luna's slutty little throat again just let us know!", "base", "base", "base", "mid")
         call lun_main("...Thank you sir.","base","seductive","sad","down", cheeks="blush",tears="mascara")
         call her_main("Well, we better be off sir, we still have a lot of studying to do!", "grin", "base", "base", "R")
-        call her_main("(Not to mention more practice with the {b}big{/b} dildo...)","soft","squintL")
+        call her_main("(Not to mention more practice with the {b}big{/b} dildo...)", "soft", "happy", "base", "R")
         call her_main("Come on Luna!", "open", "base", "base", "R")
         call lun_main("...","base","base","sad","down", cheeks="blush",tears="mascara")
         ">Luna and hermione leave the office together, chattering happily as the door closes."

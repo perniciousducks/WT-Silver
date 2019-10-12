@@ -241,7 +241,7 @@ label a_bad_time_to_disrobe_part_2:
     m "You can figure it out yourself miss Granger. Once you have the cloak it shouldn't be an issue getting away."
     call her_main("And I want...", "open", "base", "base", "mid")
     m "I'll give you 40 house points for it."
-    call her_main("\"I was going to ask for 30.\"","soft","squintL", cheeks="blush")
+    call her_main("\"I was going to ask for 30.\"", "soft", "happy", "base", "R", cheeks="blush")
     call her_main("I'll do it...", "base", "base", "base", "mid")
     g9 "Great, you're doing a great service to your house and making an old man very happy."
     call her_main("By getting your cloak back right?","base","worried")

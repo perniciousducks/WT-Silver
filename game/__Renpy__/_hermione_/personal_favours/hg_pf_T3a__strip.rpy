@@ -1301,7 +1301,7 @@ label hg_pf_strip_T2_watch:
             m "Yes! You have a lot of talent for this!"
             call her_main("Thank you [genie_name].","silly","worriedCl", emote="05")
         "{size=-3}\"Hm... This was quite awful...\"{/size}":
-            call her_main("Oh... I'm sorry...","soft","squintL")
+            call her_main("Oh... I'm sorry...", "soft", "happy", "base", "R")
             m "That's OK... You just need to practice more..."
             call her_main("Em... I will keep that in mind, [genie_name]...", "open", "base", "base", "R")
         "{size=-3}\".................................................\"{/size}":
@@ -1457,7 +1457,7 @@ label hg_pf_strip_T2_masturbate:
         call her_main("it's so hot...","angry","worriedCl", ypos="head")
         call gen_chibi("hold_dick","behind_desk","behind_desk")
         m "Aha... Yeah... This feels great..."
-        call her_main("You came all over me...","soft","squintL")
+        call her_main("You came all over me...", "soft", "happy", "base", "R")
         call her_main("I am your pupil and...")
         call her_main("You just came on me...","grin","ahegao")
         g9 "I know! Pretty exciting stuff, huh?!"
@@ -1465,7 +1465,7 @@ label hg_pf_strip_T2_masturbate:
         call her_main("You should have restrained yourself like a proper headmaster would!")
         m "Really? What did you expect me to do?"
         m "Aim at the wall or just put it back in my trousers and start cumming?"
-        call her_main("........","soft","squintL")
+        call her_main("........", "soft", "happy", "base", "R")
         call her_main("Still, you should not have...","soft","angry")
         call her_main("I agreed to perform a striptease for you...","open","closed")
         call her_main("But I didn't agree to be defiled like this.")
@@ -1580,7 +1580,7 @@ label hg_pf_strip_T2_masturbate:
                     call play_music("chipper_doodle") # HERMIONE'S THEME.
                     call her_main("!!!?", "shock", "wide", "base", "stare")
                     call her_main("I danced for you, [genie_name]...")
-                    call her_main("I degraded myself for your amusement...","soft","squintL")
+                    call her_main("I degraded myself for your amusement...", "soft", "happy", "base", "R")
                     call her_main("I let you cum on me...", "open", "base", "base", "R")
                     with hpunch
                     call her_main("And I get NOTHING?!","clench","angry", emote="01")

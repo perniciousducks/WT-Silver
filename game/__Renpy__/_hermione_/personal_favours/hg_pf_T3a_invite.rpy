@@ -434,7 +434,7 @@ label hg_pf_strip_T2_Snape_watch:
 
     show screen bld1
     call sna_main("Good job, you harlot!","snape_22")
-    call her_main(".............","soft","squintL")
+    call her_main(".............", "soft", "happy", "base", "R")
 
     if daytime:
         call sna_main("Well, my class is about to start so I will be leaving now.","snape_22")

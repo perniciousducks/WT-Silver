@@ -454,13 +454,13 @@ label luna_revert_1: #Reversion event #DONE
     call her_main("Nothing... Professor Dumbledore and I just needed your help.","base","down")
     call lun_main("What with?","upset","angry","sad","mid")
     call lun_main("And what's this stuff on-","normal","mad","sad","R")
-    call her_main("Shhh, that doesn't matter right now.","soft","squintL")
+    call her_main("Shhh, that doesn't matter right now.", "soft", "happy", "base", "R")
     call her_main("Just head back to your common room...", "open", "base", "base", "R")
     m "is that really-"
     ">Hermione glares at you."
     call her_main("...","annoyed","annoyed")
     call lun_main("Alright, I'll go back to my common room...","upset","suspicious","sad","mid")
-    call her_main("That's right...","soft","squintL")
+    call her_main("That's right...", "soft", "happy", "base", "R")
 
     call lun_walk("mid","leave",2)
 

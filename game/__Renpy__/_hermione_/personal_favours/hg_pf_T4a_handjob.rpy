@@ -357,7 +357,7 @@ label hg_pf_handjob_1:
         "\"Stick your tongue out and look at me!\"":
             call her_main("What?", "base", "base", "base", "mid")
             m "Just do it, slut."
-            call her_main("Like this?","open_wide_tongue","squintL")
+            call her_main("Like this?", "open_wide_tongue", "happy", "base", "R")
             m "Yes, good. Keep looking into my eyes and stroke my cock."
             call her_main(".....................", "open_wide_tongue", "base", "base", "mid")
             m "Yes... Good..."

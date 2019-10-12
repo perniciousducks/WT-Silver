@@ -120,7 +120,7 @@ label hg_pf_strip_T2_fingering:
             m "and what if they find out how you earned the points?"
             call her_main("what?!", "shock", "wide", "base", "stare")
             m "then it wouldn't just be me degrading you..."
-            call her_main("...","soft","squintL")
+            call her_main("...", "soft", "happy", "base", "R")
             m "It would be the whole school."
             call her_main("ah...{image=textheart}","silly","dead")
             m "Little. miss. slut."
@@ -142,8 +142,8 @@ label hg_pf_strip_T2_fingering:
             call her_main("I'm not sure if I should--","clench","down_raised")
             m "There's another 10 points for \"gryffindor\" in it for you..."
             $ current_payout += 10
-            call her_main("...","soft","squintL")
-            call her_main("......","soft","squintL")
+            call her_main("...", "soft", "happy", "base", "R")
+            call her_main("......", "soft", "happy", "base", "R")
             call set_her_action("lift_breasts")
 
             call her_main("ah...{image=textheart}", "open", "base", "base", "R")
@@ -282,7 +282,7 @@ label hg_pf_strip_T3_fingering:
     call her_main("Ah-ah...","open","worriedCl")
     m "......................"
     call her_main("Ah... ah...{image=textheart}","open","worriedCl")
-    call her_main("Ah... [genie_name]?","soft","squintL")
+    call her_main("Ah... [genie_name]?", "soft", "happy", "base", "R")
     m "What is it?"
     call her_main("Ah... Do you.... like this?","open","worriedCl")
     m "Do I like watching \"you\" finger your slutty little pussy?"
@@ -375,7 +375,7 @@ label hg_pf_strip_T4_fingering:
             call set_her_action("covering")
 
             call her_main("He refused to let me answer any questions for a week after that.","base","down")
-            call her_main("But it was worth it...","soft","squintL")
+            call her_main("But it was worth it...", "soft", "happy", "base", "R")
             call her_main("The look on his face when he realised he was wrong...{image=textheart}","soft","ahegao")
             call set_her_action("pinch")
 

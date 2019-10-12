@@ -680,7 +680,7 @@ label cho_intro_E3:
             m "(...)"
             "\"Very well...\"":
                 m "Anything else?"
-                call her_main("Well...","soft","squintL")
+                call her_main("Well...", "soft", "happy", "base", "R")
                 m "Don’t push your luck..."
                 call her_main("No, I think that should do...","smile","happyCl")
                 m "200 points to gryffindor...{p=0.6}Happy?"

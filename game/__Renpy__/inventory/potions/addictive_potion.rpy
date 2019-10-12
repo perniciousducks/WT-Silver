@@ -959,7 +959,7 @@ label potion_scene_3_4_1:
     m "in that case I think you might have to be a little late."
     call her_main("what? why?","open","worried")
     g4 "Well, it might be a bit hard for you to attend class with my cock buried in your tight little pussy."
-    call her_main("Oh...","soft","squintL")
+    call her_main("Oh...", "soft", "happy", "base", "R")
     m "That's not going to be a problem is it [hermione_name]?"
     call her_main("of course not [genie_name]! Let me just take my clothes off...","grin","ahegao")
 

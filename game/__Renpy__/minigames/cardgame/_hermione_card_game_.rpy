@@ -201,7 +201,7 @@ label hermione_random_duel:
     m "Ready for another game of cards?"
 
     if her_whoring < 8:
-        call her_main("You've already challenged me though...","open","squintL")
+        call her_main("You've already challenged me though...", "open", "happy", "base", "R")
         call her_main("and I lost.","annoyed","down")
         g9 "What if we made it a wager..."
         call her_main("Like gambling? No thank you!","clench","annoyed")
@@ -213,19 +213,19 @@ label hermione_random_duel:
         m "\"Seem like she's a bit to pure minded to accept any kind of wager right now...\""
         jump hermione_requests
     else:
-        call her_main("You've already challenged me though...","open","squintL")
+        call her_main("You've already challenged me though...", "open", "happy", "base", "R")
         call her_main("and I lost.","annoyed","down")
         g9 "What if we made it a wager..."
         call her_main("Gambling you mean?","open","worried")
         m "Not for money obviously."
         call her_main("What are you suggesting then?","base","happy", cheeks="blush")
         m "Well, I was thinking house points."
-        call her_main("House points...","normal","squintL")
+        call her_main("House points...", "normal", "happy", "base", "R")
         call her_main("How would this work then?", "open", "happy", "base", "mid")
         m "Well, if you win I'll give you 10 points to Gryffindor."
         call her_main("Only 10?","annoyed","Glance")
         m "20 then..."
-        call her_main("And if I lose?","open","SquintL")
+        call her_main("And if I lose?", "open", "happy", "base", "R")
         m "I'll take the same amount away."
         m "\"As if she's going to let that happen...\""
         call her_main("...","normal","WorriedCl", cheeks="blush")
@@ -275,7 +275,7 @@ label hermione_random_duel:
             call her_main("I can do that...","base","worried", cheeks="blush")
             call her_main("But not today if that's okay with you.","open","down")
             g9 "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
-            call her_main("...","normal","squintL", cheeks="blush")
+            call her_main("...", "normal", "happy", "base", "R", cheeks="blush")
             call her_main("Did you need anything else?","open","soft", cheeks="blush")
             call give_reward("Hermione can now work by helping the twins promote the card game.", "interface/icons/icon_gambler_hat.png")
             jump hermione_requests

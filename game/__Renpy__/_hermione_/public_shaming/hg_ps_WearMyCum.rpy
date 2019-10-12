@@ -824,14 +824,14 @@ label hg_ps_cumslut_complete_3:
         call her_main("I kept your cum on me all day.", "base", "base", "base", "mid")
         menu:
             "\"Good Work!\"":
-                call her_main("Thank you, [genie_name]. Is that everything?","soft","squintL")
+                call her_main("Thank you, [genie_name]. Is that everything?", "soft", "happy", "base", "R")
                 m "yes [hermione_name], you can go clean up now."
                 call her_main("clean up?", "open", "base", "base", "R")
                 m "Only if you want to..."
                 call her_main("thank you [genie_name]!","grin","ahegao")
             "\"Tell me about your day.\"":
                 $ sc34CG(1, 17, 6)
-                call her_main("My day...","soft","squintL")
+                call her_main("My day...", "soft", "happy", "base", "R")
                 call her_main("It was a normal day [genie_name]. Well what is normal for me now.","soft","ahegao")
                 call her_main("I got called names again, and some of the boys groped me.","grin","dead")
                 call her_main("Susan Bones even said she liked how I looked in my shirt.","base","down")

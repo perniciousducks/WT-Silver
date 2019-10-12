@@ -231,7 +231,7 @@ label hg_pf_titjob_T2_intro_E2:
 label hg_pf_titjob_T2_repeat:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name], how would you like wrapping those perfect tits of yours around my cock again?"
-    call her_main("As long as I am getting paid...","soft","squintL")
+    call her_main("As long as I am getting paid...", "soft", "happy", "base", "R")
     g9 "Well, then... Time to earn those points!"
     call her_main("{image=textheart}{image=textheart}{image=textheart}","base","ahegao_raised")
 
@@ -715,9 +715,9 @@ label hg_pf_titjob_2:
             call her_main("Who wouldn't love feeling my perfect tits...","base","closed")
             call her_main("Although I think she might have enjoyed it...","open","down")
             $ ccg1 = 22
-            call her_main("A little too much...","soft","squintL")
+            call her_main("A little too much...", "soft", "happy", "base", "R")
             m "How so?"
-            call her_main("Well...","soft","squintL")
+            call her_main("Well...", "soft", "happy", "base", "R")
             call her_main("She might have started...")
             $ ccg1 = 23
             call her_main("Playing with herself...","grin","ahegao")
@@ -773,7 +773,7 @@ label hg_pf_titjob_2_continue:
             call her_main("I press my tits into him...","soft","ahegao")
             m "Do you think he enjoys it?"
             call her_main("I'm not sure...", "annoyed", "base", "base", "mid")
-            call her_main("I think so...","soft","squintL")
+            call her_main("I think so...", "soft", "happy", "base", "R")
             $ ccg1 = 23
             call her_main("He always seems to cover his crotch afterwards...","base","closed")
             call her_main("He even says I'm too old for hugs...","annoyed","closed")
@@ -784,7 +784,7 @@ label hg_pf_titjob_2_continue:
             call her_main("Pressing into him...","soft","ahegao")
             m "That's it slut."
             $ ccg1 = 22
-            call her_main("Then I give him a kiss on the forehead...","soft","squintL")
+            call her_main("Then I give him a kiss on the forehead...", "soft", "happy", "base", "R")
             $ ccg1 = 23
             call her_main("Making sure that he can see down my blouse...","grin","worriedCl", emote="05")
             call her_main("{image=textheart}{image=textheart}{image=textheart}")
@@ -915,7 +915,7 @@ label hg_pf_titjob_2_cumming:
                 call her_main("I don't plan on getting a reputation as a cum-loving whore...","angry","wink")
                 call her_main("Not like those \"Slytherin\" girls...","angry","angryL")
             else:
-                call her_main("*Hmm*...","soft","squintL")
+                call her_main("*Hmm*...", "soft", "happy", "base", "R")
                 call her_main("Maybe if you ask nicely...","soft","glance")
             call her_main("Will that be all, [genie_name]?","base","closed")
             $ aftersperm = False

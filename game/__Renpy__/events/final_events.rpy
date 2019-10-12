@@ -259,13 +259,13 @@ label ball_quest_E1:
                     call ctc
 
                     g9 "Ni-i-i-ce!"
-                    call her_main("","soft","squintL")
+                    call her_main("", "soft", "happy", "base", "R")
                     call ctc
                     her "*Sob!*"
                     m "Huh?"
 
                     call her_main("Oh, please, don't mind me, sir.", "open", "base", "base", "R",)
-                    call her_main("Just enjoy the... {w}the... {w}the view...","soft","squintL")
+                    call her_main("Just enjoy the... {w}the... {w}the view...", "soft", "happy", "base", "R")
                     m "Are you... crying?"
                     call her_main("*Sob!* No, not really, sir... *sob!*...","angry","worriedCl")
                     her "It is just that I am standing here before my headmaster completely naked... *SOB!*"

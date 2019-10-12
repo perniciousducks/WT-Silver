@@ -284,7 +284,7 @@ label gryffindor_cheer_responses:
                         m "Who doesn't love a queue..."
                         m "So they queued up... And then?"
                         call her_main("Well I did what I said I would, I'm not the kind of person to lie am I?","annoyed","worriedL")
-                        call her_main("So, I gave them the reward I promised... And surely you of all people would know how a blowjob works.","annoyed","squintL")
+                        call her_main("So, I gave them the reward I promised... And surely you of all people would know how a blowjob works.", "annoyed", "happy", "base", "R")
                         m "That's not quite what I meant."
                         m "You just look rather..."
                         m "Clean, that's all."
@@ -549,7 +549,7 @@ label hermione_helping_selling_cards:
         call her_main("Whilst I might not agree with all their business methods I think they might become great salesmen some day.", "base", "happy", "base", "mid")
         g9 "Seems to me like they are already..."
         m "So, how come you had such a surge in new customers?"
-        call her_main("No idea, maybe the card game got more people interested in browsing the rest of their stock.","annoyed","squintL")
+        call her_main("No idea, maybe the card game got more people interested in browsing the rest of their stock.", "annoyed", "happy", "base", "R")
         call her_main("They actually had some problems with people stealing things before I started working there though.","open","closed")
         m "And this stopped after you started working there?"
         call her_main("Well, probably not because of it. They put in some anti thieving measures.", "base", "base", "base", "mid")
@@ -607,7 +607,7 @@ label hermione_helping_selling_cards:
         m "I see, so I expect the responsibility fell on you as you're the one meant to promote the game?"
         call her_main("Yes... I thought it was a great idea so if it ended up not working out then it would look very bad on my part.","normal","closed")
         m "So, you had to stop the practice sessions?"
-        call her_main("No, that's not why I'm annoyed...","annoyed","squintL")
+        call her_main("No, that's not why I'm annoyed...", "annoyed", "happy", "base", "R")
         call her_main("In my haste to find a solution I thought it would be a great idea to play a few rounds of strip cards to get more people interested.","open","down_raised", cheeks="blush")
         call her_main("...","angry","angryCL", cheeks="blush")
         call her_main("I've played enough not to be beaten by a new player I thought.","mad","angryL", cheeks="blush")
@@ -620,7 +620,7 @@ label hermione_helping_selling_cards:
         call her_main("I lost pretty quickly...","normal","closed", cheeks="blush")
         call her_main("It turned out they had been cheating the whole time...", "normal", "base", "base", "mid", cheeks="blush")
         g9 "Well, cheaters never prosper..."
-        call her_main("That's not true in this case... they prospered alright.","open","squintL", cheeks="blush")
+        call her_main("That's not true in this case... they prospered alright.", "open", "happy", "base", "R", cheeks="blush")
         call her_main("In any case, they seemed... happy, they bought a bunch of things so that makes me...", "normal", "base", "base", "mid")
         call her_main("Happy as well...","angry","closed", cheeks="blush")
         g9 "A job well done then, I bet the twins are very grateful for your contribution."
@@ -636,7 +636,7 @@ label hermione_helping_selling_cards:
         m "Hello, [hermione_name], how was your day?"
         call her_main("Great, they held a card game tournament today.", "base", "base", "base", "mid")
         g4 "Wait, a tournament? How come I wasn't invited?"
-        call her_main("It was students only obviously...","open","squintL")
+        call her_main("It was students only obviously...", "open", "happy", "base", "R")
         m "Oh... of course."
         call her_main("There were way more participants than I expected seeing that there was an entry fee.","base","closed", cheeks="blush")
         m "Must've been a great prize pool then..."
@@ -676,7 +676,7 @@ label hermione_helping_selling_cards:
         call her_main("There's a good explanation for this.","normal","down_raised", cheeks="blush")
         m "..."
         m "Go on."
-        call her_main("Oh, sorry... Well, I was trying out a new sales tactic...","open","squintL", cheeks="blush")
+        call her_main("Oh, sorry... Well, I was trying out a new sales tactic...", "open", "happy", "base", "R", cheeks="blush")
         m "Something the twins came up with I assume?"
         call her_main("No, I read about it in one of their books actually.","grin","happy")
         call her_main("Much like how you should always put the most lucrative cheap items at the counter to make the customer....", "open", "base", "base", "mid")

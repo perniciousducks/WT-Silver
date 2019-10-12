@@ -646,7 +646,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         call her_main("shhh...","open","closed")
         m "go on..."
         ">you speed up your stroking."
-        call her_main("the other evening, luna and I were busy studying after class as usual...","soft","squintL")
+        call her_main("the other evening, luna and I were busy studying after class as usual...", "soft", "happy", "base", "R")
         $ luna_flip = 1
         call lun_main("...","upset","wide","sad","down", cheeks="blush")
         m "..."
@@ -666,7 +666,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         g4 "{size=+4}(agh... almost there...){/size}"
         $ luna_flip = 1
         call her_main("she held it there for nearly a minute...", "open", "base", "base", "R")
-        call her_main("a few of them even said hello to us...","soft","squintL")
+        call her_main("a few of them even said hello to us...", "soft", "happy", "base", "R")
         call her_main("they didn't suspect a thing...","soft","ahegao")
         call lun_main("not until you started touching me under the desk!","normal","wide","angry","R", cheeks="blush")
         g4 "{size=+4}*Argh!* yes you whores!{/size}"

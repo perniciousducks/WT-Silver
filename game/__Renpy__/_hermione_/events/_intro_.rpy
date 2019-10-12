@@ -1125,7 +1125,7 @@ label hermione_intro_E6:
                 her "Alright, I will try to do better, sir..."
                 call her_main("How about this?","open","worried")
                 call her_main("A-a-ah..................", "scream", "base", "base", "R")
-                call her_main("............................","open_wide_tongue","squintL")
+                call her_main("............................", "open_wide_tongue", "happy", "base", "R")
                 call her_main("......................................","open_wide_tongue","down_raised")
                 her "..................................................."
                 her "...................................................................."

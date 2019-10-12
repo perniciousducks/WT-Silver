@@ -26,7 +26,7 @@ label whose_points:
     g9 "Just like at Hogwarts."
 
     $ renpy.play('sounds/applause01.ogg')
-    call her_main("\"I hope I win! I need those housepoints.\"","base","squintL",ypos="head")
+    call her_main("\"I hope I win! I need those housepoints.\"", "base", "happy", "base", "R",ypos="head")
     play music "music/Under-the-Radar by PhobyAk.mp3" fadein 1 fadeout 1
     m "First, let me introduce today's contestants."
     m "The curly haired harlot we all know and love. Give it up for Hermione."

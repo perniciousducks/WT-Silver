@@ -344,7 +344,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     call her_main("I'm just out here to admire the moon!", "base", "base", "base", "R")
     m "What moon?"
     ">Hermione frantically looks to the cloudy sky, unable to even glimpse the moon through the impenetrable greyness."
-    call her_main("Oh... um...","open","squintL")
+    call her_main("Oh... um...", "open", "happy", "base", "R")
     m "It's alright for you to admit that you're a dirty little cumslut, miss granger."
     call her_main("It's not like that!","upset","annoyed")
     call her_main("{size=-10}I just like sucking your dick, OK...{/size}","upset","glanceL")

@@ -31,7 +31,7 @@ label hg_pr_flirt:
         call her_main("Flirt?!", "shock", "wide", "base", "stare")
         call her_main("[genie_name]!", "angry", "base", "angry", "mid")
         call her_main("I'm not even going to ask why you'd be interested in this, [genie_name]...", "annoyed", "squint", "base", "mid")
-        call her_main("But why \"Slytherin\"?","open","worried")
+        call her_main("But why \"Slytherin\"?", "open", "base", "worried", "mid")
         her "If you need me to be flirtatious today, I think I can manage that..."
         her "But, please, can't be another house?"
         call her_main("The \"Gryffindors\" maybe?", "upset", "wink", "base", "mid")
@@ -205,7 +205,7 @@ label hg_pr_flirt_T1_E2:
 
         "\"Favour failed! No points of you!\"":
             stop music fadeout 1.0
-            call her_main("You are not going to pay me, [genie_name]?","open","worried")
+            call her_main("You are not going to pay me, [genie_name]?", "open", "base", "worried", "mid")
             call her_main("But, you promised!", "angry", "base", "base", "mid", tears="soft")
             call her_main("................","mad","worriedCl", tears="soft_blink")
 
@@ -316,7 +316,7 @@ label hg_pr_flirt_T2_E2:
     call her_main("Well...","open","worriedL")
     her "This morning I did flirt with this one guy..."
     call her_main("Then after the second period there was this other guy...", "soft", "base", "base", "R")
-    call her_main("And then something bizarre happened...","angry","worried")
+    call her_main("And then something bizarre happened...", "angry", "base", "worried", "mid")
     call play_music("playful_tension") # SEX THEME.
     her "This angry-looking guy from \"Slytherin\" came up to me and asked me out on a date..."
     call her_main("I told him \"no\" at first, but we ended up taking a walk together.", "soft", "base", "base", "R")

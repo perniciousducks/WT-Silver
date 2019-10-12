@@ -28,7 +28,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
 
         $ hg_ps_get_panties.level = 1 #Event hearts level (0-3)
 
-        call her_main("W-what?","open","worried")
+        call her_main("W-what?", "open", "base", "worried", "mid")
         her "My... panties...?"
         her "[genie_name], this is..."
         m "This is the favour I will be buying from you today, [hermione_name]..."
@@ -51,7 +51,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         call her_main("What?", "open", "base", "base", "mid")
         m "Yes! Don't just put the \"Gryffindor\" house back on top..."
         m "But do it by beating them at their own game!"
-        call her_main("[genie_name]...","open","worried")
+        call her_main("[genie_name]...", "open", "base", "worried", "mid")
         m "As headmaster, I cannot play favourites. But you know how I feel about \"Gryffindor\"..."
         m "I wish I could give you the points but that would ruin the system..."
         hide screen hermione_main

@@ -94,7 +94,7 @@ label whose_points:
     hide screen luna_main
     with d3
 
-    call her_main("How's that worth more than mine...","annoyed","worried")
+    call her_main("How's that worth more than mine...", "annoyed", "base", "worried", "mid")
     hide screen hermione_main
     with d3
 
@@ -145,7 +145,7 @@ label whose_points:
     hide screen luna_main
     with d3
 
-    call her_main("\"Seems like pleasing the judge is the way to go. Only one round left...\"","annoyed","worried")
+    call her_main("\"Seems like pleasing the judge is the way to go. Only one round left...\"", "annoyed", "base", "worried", "mid")
     hide screen hermione_main
     with d3
 
@@ -197,7 +197,7 @@ label whose_points:
     call set_her_action(action="lift_top")
 
     $ renpy.sound.play("sounds/crowd_gasp.mp3")
-    call her_main("...","smile","worried")
+    call her_main("...", "smile", "base", "worried", "mid")
 
 
     g9 "500 points to Gryffindor!"
@@ -209,7 +209,7 @@ label whose_points:
 
     m "Well, that's all for this episode of whose points is it anyway."
 
-    call her_main("I win, all the points for me!","smile","worried")
+    call her_main("I win, all the points for me!", "smile", "base", "worried", "mid")
     hide screen hermione_main
     with d3
 
@@ -220,7 +220,7 @@ label whose_points:
 
     m "And remember the points doesn't matter!"
 
-    call her_main("Wait, they don't?!? I thought they were house points!","annoyed","worried")
+    call her_main("Wait, they don't?!? I thought they were house points!", "annoyed", "base", "worried", "mid")
     hide screen hermione_main
     with d3
 

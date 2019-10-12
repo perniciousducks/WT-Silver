@@ -27,7 +27,7 @@ label hermione_summon_setup:
         call her_main("I hope you're still planning to lecture me, [genie_name].", "annoyed", "base", "base", "mid")
         g9 "Oh, I'll give you a lecture for sure."
         m "But we're going to have to do it my way.{w}\nThere's no need for those books."
-        call her_main("No need?","normal","worried")
+        call her_main("No need?", "normal", "base", "worried", "mid")
         m "No."
         call her_main("Too bad, I love books.", "annoyed", "narrow", "worried", "down")
         hide screen hermione_main

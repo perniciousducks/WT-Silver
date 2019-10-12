@@ -295,7 +295,7 @@ label astoria_intro_E2_hermione:
     call her_main("OR TORTURED!!","disgust","worriedCl")
     call her_main("OR WORSE!!!","disgust","worriedL")
     m "really?"
-    call her_main("Those are the only things that can happen with an unforgivable curse, [genie_name]!","angry","worried")
+    call her_main("Those are the only things that can happen with an unforgivable curse, [genie_name]!", "angry", "base", "worried", "mid")
     m "of course... I'm just making sure you were aware of them..."
     call her_main("It's the first lesson we ever received in defence against the dark arts.", "open", "closed", "base", "mid")
     m "Well, one's been cast somewhere on the school."
@@ -549,7 +549,7 @@ label astoria_intro_E3:
             menu:
                 m "(...)"
                 "\"How about 10?\"":
-                    call her_main("10?","disgust","worried")
+                    call her_main("10?", "disgust", "base", "worried", "mid")
                     call her_main("I expected more for this, Professor!", "open", "base", "angry", "mid")
                     m "Take 'em or leave 'em..."
                     call her_main("...", "annoyed", "narrow", "angry", "R")

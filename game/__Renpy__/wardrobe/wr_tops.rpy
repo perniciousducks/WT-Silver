@@ -438,7 +438,7 @@ label equip_top:
                                 # call her_main("(Could it be...!)", "soft", "wide", "base", "stare")
                                 # call her_main("[genie_name], do you have a rat problem?", "open", "closed", "base", "mid")
                                 # m "A rat problem?"
-                                # call her_main("Yes, rats! They are everywhere in Hogwarts.","open","worried")
+                                # call her_main("Yes, rats! They are everywhere in Hogwarts.", "open", "base", "worried", "mid")
                                 # call her_main("And I'm not talking about pet rats.", "disgust", "narrow", "base", "mid_soft")
                                 # m "(People here keep rats as their pet?)"
                                 # call her_main("You should talk with Mr. Filch. He will surely know what to do about it!", "open", "closed", "base", "mid")
@@ -447,7 +447,7 @@ label equip_top:
                                 # g9 "The skimpy one!"
                                 # call her_main("The skimpy one?", "shock", "wide", "base", "stare")
                                 # call her_main("Are you out of your mind, [genie_name]?","scream","worriedCl")
-                                # call her_main("I'm not going to walk around looking like those... Slytherins!","angry","worried")
+                                # call her_main("I'm not going to walk around looking like those... Slytherins!", "angry", "base", "worried", "mid")
                                 # m "But it's a Gryffindor uniform!"
                                 # call her_main("That has nothing to do with it!", "angry", "base", "angry", "mid")
                                 # call her_main("(stupid sluts... always distracting our team with their breasts...)", "annoyed", "narrow", "annoyed", "mid")
@@ -576,7 +576,7 @@ label equip_top:
                         # m "(Wonder if I can still get my money back...)"
                     # elif her_whoring < 11:
                         # call her_main("I can't believe you are asking me this, [genie_name]", "angry", "base", "angry", "mid")
-                        # call her_main("A leather jacket?... On me?","angry","worried")
+                        # call her_main("A leather jacket?... On me?", "angry", "base", "worried", "mid")
                         # call her_main("Not even a Slytherin would wear something like that!", "open", "closed", "base", "mid")
                         # call her_main("I definitely refuse!", "annoyed", "narrow", "annoyed", "mid")
                     # else:
@@ -631,7 +631,7 @@ label equip_top:
                         # m "(Wonder if I can still get my money back...)"
                     # elif her_whoring < 11:
                         # call her_main("I can't believe you are asking me this, [genie_name]", "angry", "base", "angry", "mid")
-                        # call her_main("A leather jacket?... On me?","angry","worried")
+                        # call her_main("A leather jacket?... On me?", "angry", "base", "worried", "mid")
                         # call her_main("Not even a Slytherin would wear something like that!", "open", "closed", "base", "mid")
                         # call her_main("I definitely refuse!", "annoyed", "narrow", "annoyed", "mid")
                     # else:
@@ -685,7 +685,7 @@ label equip_top:
                         # call her_main("It most certainly is not!", "annoyed", "narrow", "annoyed", "mid")
                         # m "If you say so..."
                         # call her_main("Keep this offensive... thing for yourself, [genie_name].", "scream", "closed", "angry", "mid")
-                        # call her_main("I'm not going to wear it!","angry","worried")
+                        # call her_main("I'm not going to wear it!", "angry", "base", "worried", "mid")
                     # else: #11-19
                         # call her_main("No, [genie_name]!", "open", "closed", "base", "mid")
                         # call her_main("I'm not going to wear a shirt like this on school grounds!","open","worriedL")

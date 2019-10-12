@@ -101,7 +101,7 @@ label equip_body_accessory:
                     # if her_whoring < 8:
                         # jump too_much
                     # else: #8-19
-                        # call her_main("An I love cum badge...?","open","worried")
+                        # call her_main("An I love cum badge...?", "open", "base", "worried", "mid")
                         # call her_main("You cannot be serious, [genie_name]!", "open", "base", "base", "mid")
                         # m "What's wrong?"
                         # call her_main("I am not going to wear a badge that says that{w=0.5} {b}I{/b}{w=0.5} {b}love{/b}{w=0.5} {b}cum!{/b}", "normal", "squint", "angry", "mid")

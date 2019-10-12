@@ -89,7 +89,7 @@ label hg_pf_strip_fail:
 label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail anyway.
     call bld
     m "[hermione_name], I need you to dance for me a little."
-    call her_main("You want me to...","open","worried")
+    call her_main("You want me to...", "open", "base", "worried", "mid")
     call her_main("...dance for you, [genie_name]?", "open", "wink", "base", "mid")
     m "Yes... You think you could manage that?"
     call her_main("Ehm... I suppose so...", "soft", "base", "base", "R")
@@ -173,7 +173,7 @@ label hg_pf_strip_T0_fail_repeat:
 label hg_pf_strip_T1_intro_E1: # Complete
     call bld
     m "[hermione_name], I need you to dance for me a little."
-    call her_main("You want me to...","open","worried")
+    call her_main("You want me to...", "open", "base", "worried", "mid")
     call her_main("...dance for you, [genie_name]?", "open", "wink", "base", "mid")
     m "Yes... You think you could manage that?"
     call her_main("Ehm... I suppose so...", "soft", "base", "base", "R")

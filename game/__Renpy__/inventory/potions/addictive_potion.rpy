@@ -469,7 +469,7 @@ label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the 
             call her_main("{size=+5}I'm sorry!{/size}", "scream", "closed", "angry", "mid")
             call her_main("Please let me suck your dick [genie_name]...", "annoyed", "closed", "base", "mid")
             m "Hmmm, I don't think that was sincere enough."
-            call her_main("Please [genie_name], let me suck your big, thick dick. Pretty please.","soft","worried")
+            call her_main("Please [genie_name], let me suck your big, thick dick. Pretty please.", "soft", "base", "worried", "mid")
             m "Much better."
     jump hg_pp_cumaddict_sucking # <-- Jumps to blowjob section from the intro, you can replace it with new writing if you'd like.
 
@@ -957,7 +957,7 @@ label potion_scene_3_4_1:
     m "How long until your next class [hermione_name]?"
     call her_main("about fifteen minutes sir.", "open", "base", "base", "mid")
     m "in that case I think you might have to be a little late."
-    call her_main("what? why?","open","worried")
+    call her_main("what? why?", "open", "base", "worried", "mid")
     g4 "Well, it might be a bit hard for you to attend class with my cock buried in your tight little pussy."
     call her_main("Oh...", "soft", "happy", "base", "R")
     m "That's not going to be a problem is it [hermione_name]?"

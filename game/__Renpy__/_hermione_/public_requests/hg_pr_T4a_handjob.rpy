@@ -570,7 +570,7 @@ label hg_pr_handjob_T3_E3:
     m "[hermione_name], did you complete your task?"
     show screen blktone
     call her_main("Yes I did, [genie_name].", "base", "base", "base", "mid")
-    call her_main("But, ehm...","open","worried")
+    call her_main("But, ehm...", "open", "base", "worried", "mid")
     m "...?"
     call her_main("Well, I did not just wank off one of my classmates...", "open", "base", "base", "mid")
     her "I.............."

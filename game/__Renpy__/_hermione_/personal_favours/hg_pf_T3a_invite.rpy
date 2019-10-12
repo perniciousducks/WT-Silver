@@ -60,7 +60,7 @@ label hg_pf_strip_T2_Snape:
         m "I want to prove that professor Snape is dirty, and I need your help."
         call her_main("!!!", "shock", "wide", "base", "stare")
         m "Yes, I want to catch him in the act!"
-        call her_main("[genie_name], I didn't realise...","open","worried")
+        call her_main("[genie_name], I didn't realise...", "open", "base", "worried", "mid")
         call her_main("I see now...", "base", "base", "base", "mid")
         her "I am sorry for doubting you [genie_name]..."
         m "No biggie. Now go find professor Snape and bring him here."

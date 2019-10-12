@@ -187,7 +187,7 @@ label hufflepuff_match:
     call sna_main("Speak up girl! And would it kill you to enunciate?!","snape_03",ypos="head")
     call her_main("*Grrr*", "mad", "narrow", "angry", "R")
     call her_main("", mouth="open", eye="angryCl")
-    call her_main("Welcome to the first Quidditch game of the season...{fast}","open","worried")
+    call her_main("Welcome to the first Quidditch game of the season...{fast}", "open", "base", "worried", "mid")
     $ qp_mob = 3
     call sna_main("Better... You’ve advanced from Troll to Dreadful....","snape_09",ypos="head")
     call her_main("", mouth="normal", eye="closed")

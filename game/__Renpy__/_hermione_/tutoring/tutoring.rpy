@@ -1696,7 +1696,7 @@ label l_tutoring:
         call hide_blkfade
         call ctc
 
-        call her_main("Revisions are a serious matter, [genie_name]!","open","worried")
+        call her_main("Revisions are a serious matter, [genie_name]!", "open", "base", "worried", "mid")
         m "{size=-2}(My cock in your ass is a serious matter...){/size}"
         m "In this regard, I kinda lied, it's more of a mock exam than revisions."
         call her_main("What a surprise!", "annoyed", "narrow", "base", "up",cheeks="blush")

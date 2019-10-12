@@ -502,7 +502,7 @@ label ball_quest_E4:
     call her_main("Thank you, sir.", "open", "base", "base", "mid")
     call her_main("Still, I cannot help but feel awful for causing a scene...", "open", "closed", "angry", "mid")
     m "So the issue has been resolved then?"
-    call her_main("Not really...","open","worried")
+    call her_main("Not really...", "open", "base", "worried", "mid")
     call her_main("Not at all actually...", "annoyed", "narrow", "angry", "R")
     m "Hm..?"
     call her_main("But that is not a big deal...", "annoyed", "narrow", "worried", "down")

@@ -1034,7 +1034,7 @@ label hg_pf_handjob_2_cumming:
             call cum_block
             g4 "Argh! You little whore!"
             g4 "Yes, you slut! Drink my cum! Drink all of it!"
-            call her_main("*Gulp!-Gulp!-Gulp!*","full_cum","worried")
+            call her_main("*Gulp!-Gulp!-Gulp!*", "full_cum", "base", "worried", "mid")
             g4 "Argh... Yes!"
             call nar(">You notice that Hermione is barely able to keep up with the amount of hot cum your cock is pumping into her mouth.")
             call her_main("*Gulp!-Gulp!-Gulp!*","full_cum","worriedCl")

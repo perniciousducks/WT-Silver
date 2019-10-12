@@ -234,7 +234,7 @@ label gryffindor_cheer_responses:
                 m "Well done, [hermione_name], 20 points to Gryffindor."
             elif day_random >= 3 and day_random <= 5:
                 m "Hello, [hermione_name], how was your day?"
-                call her_main("Tiring. This cheering thing really is quite exhausting.","open","worried")
+                call her_main("Tiring. This cheering thing really is quite exhausting.", "open", "base", "worried", "mid")
                 m "Anything interesting happen?"
                 call her_main("Not unless you count me almost dropping my pom pom.", "normal", "base", "base", "mid")
                 m "I don't... Well, did they pay you?"
@@ -399,7 +399,7 @@ label slytherin_cheer_responses:
                 m "How did everything go today?"
                 call her_main("Very well. In fact I think I might be doing too well.","annoyed","worriedL")
                 m "How so?"
-                call her_main("I think that my cheering is having too much of an positive effect.","open","worried")
+                call her_main("I think that my cheering is having too much of an positive effect.", "open", "base", "worried", "mid")
                 call her_main("I'm not sure that I want the Slytherin team to improve, let alone because of me...","open","worriedL")
                 m "Just think about how you're helping your house in other ways."
                 call her_main("I suppose you're right [genie_name].", "open", "base", "base", "mid")

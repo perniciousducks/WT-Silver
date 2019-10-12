@@ -967,7 +967,7 @@ label hg_hidden_blowjob_tonks:
     m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
     ton "[ton_genie_name]? Is it ok if I come in?"
     call her_main("(It's Professor Tonks!)","clench","worriedCl")
-    call her_main("Please, [genie_name], don't let her in!","open","worried")
+    call her_main("Please, [genie_name], don't let her in!", "open", "base", "worried", "mid")
     call her_main("I don't want my teacher to see me like this!", "shock", "narrow", "worried", "down")
 
     menu:

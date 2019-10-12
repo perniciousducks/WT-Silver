@@ -131,7 +131,7 @@ label give_her_gift(gift_item):
             call her_main("A chocolate bar?", "normal", "base", "base", "mid")
             call her_main("Hm...", "annoyed", "squint", "angry", "mid")
             call her_main("That thing about fairies...")
-            call her_main("That is a joke of some sort, right?","open","worried")
+            call her_main("That is a joke of some sort, right?", "open", "base", "worried", "mid")
             call give_gift(">You give the chocolate to Hermione...", gift_item)
             call her_main("Thank you...", "soft", "base", "base", "mid")
             call her_mood(-10)
@@ -156,7 +156,7 @@ label give_her_gift(gift_item):
             call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
             call her_mood(-7)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
-            call her_main("A plush toy?","open","worried")
+            call her_main("A plush toy?", "open", "base", "worried", "mid")
             call her_main("I like it!", "base", "base", "base", "mid")
             call give_gift(">You give the owl to Hermione...",gift_item)
             call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
@@ -188,7 +188,7 @@ label give_her_gift(gift_item):
             call her_main("Thank you.", "base", "base", "base", "mid")
             call her_mood(-3)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
-            call her_main("Butterbeer, [genie_name]?","open","worried")
+            call her_main("Butterbeer, [genie_name]?", "open", "base", "worried", "mid")
             call her_main("To let you in on a little secret, [genie_name]...", "open", "base", "base", "mid")
             call her_main("I'm a big fan of this completely harmless beverage.", "base", "base", "base", "mid")
             call give_gift(">You give the bottle to Hermione...",gift_item)
@@ -231,7 +231,7 @@ label give_her_gift(gift_item):
         elif her_whoring >= 18: # Lv 7+
             call her_main("Ehm...","open","worriedL")
             call her_main("To be honest, magazines like that lost their appeal to me completely lately...", "open", "squint", "base", "mid")
-            call her_main("But I don't mind taking them off you hands anyway, [genie_name].","open","worried")
+            call her_main("But I don't mind taking them off you hands anyway, [genie_name].", "open", "base", "worried", "mid")
             call give_gift(">You give an assortment of educational magazines to Hermione...",gift_item)
             call her_main("Thank you.", "soft", "base", "base", "R")
             call her_mood(0)
@@ -416,7 +416,7 @@ label give_her_gift(gift_item):
             call give_gift(">You give the vibrator to Hermione...",gift_item)
             call her_mood(0)
         elif her_whoring >= 18: # Lv 7+
-            call her_main("This vibrator...","open","worried")
+            call her_main("This vibrator...", "open", "base", "worried", "mid")
             call her_main("It's... calling out for me...","open","worriedL")
             call her_main("But not in a dirty way, [genie_name].", "disgust", "narrow", "base", "mid_soft")
             call give_gift(">You give the vibrator to Hermione...",gift_item)
@@ -559,7 +559,7 @@ label give_her_gift(gift_item):
             call her_main("What is that silly-looking thing attached to it?", "normal", "squint", "angry", "mid")
             call her_main("Is it like a saddle...?", "open", "squint", "base", "mid")
             call give_gift(">You give the broom to Hermione...",gift_item)
-            call her_main("Thank you for the gift, [genie_name].","open","worried")
+            call her_main("Thank you for the gift, [genie_name].", "open", "base", "worried", "mid")
             call her_mood(-20)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
             call her_main("A broom...?", "base", "base", "base", "mid")

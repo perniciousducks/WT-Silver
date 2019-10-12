@@ -95,7 +95,7 @@ label equip_makeup:
                     # if her_whoring < 8:
                         # jump too_much
                     # else: #8-19
-                        # call her_main("Fake cum...?","open","worried")
+                        # call her_main("Fake cum...?", "open", "base", "worried", "mid")
                         # call her_main("You cannot be serious, [genie_name]!", "open", "base", "base", "mid")
                         # m "What's wrong? It's not real..."
                         # call her_main("[genie_name] I am not going to smear myself with cum, real or not, and then parade around the school!", "normal", "squint", "angry", "mid")
@@ -201,7 +201,7 @@ label equip_head_accessory:
                 # m "Could you wear those reading glasses for me?"
 
                 # if her_whoring < 11:
-                    # call her_main("Reading glasses...?","open","worried")
+                    # call her_main("Reading glasses...?", "open", "base", "worried", "mid")
                     # call her_main("But I can see just fine, [genie_name].", "normal", "squint", "angry", "mid")
                     # m "Don't worry, they have fake lenses."
                     # call her_main("I suppose I could wear them...", "annoyed", "squint", "angry", "mid")
@@ -215,7 +215,7 @@ label equip_head_accessory:
                 # m "Could you wear these vintage glasses for me?"
 
                 # if her_whoring < 11:
-                    # call her_main("Vintage glasses...?","open","worried")
+                    # call her_main("Vintage glasses...?", "open", "base", "worried", "mid")
                     # call her_main("I don't need to wear glasses, [genie_name]. I can see just fine!", "open", "closed", "base", "mid")
                     # m "They aren't real glasses. These lenses are fake."
                     # call her_main("I see... I suppose I could wear them...", "annoyed", "squint", "angry", "mid")
@@ -231,7 +231,7 @@ label equip_head_accessory:
 
                 # if her_whoring >= 11:
                     # if her_whoring < 17:
-                        # call her_main("Cat-ears, [genie_name]?","open","worried")
+                        # call her_main("Cat-ears, [genie_name]?", "open", "base", "worried", "mid")
                         # call her_main("(They do look cute...)", "base", "narrow", "base", "mid_soft")
                         # call her_main("...", "annoyed", "narrow", "worried", "down") #annoyed, down
                         # m "So, are you going to wear them or not?"
@@ -241,7 +241,7 @@ label equip_head_accessory:
                         # call her_main("(And they even match my hair!)", "base", "narrow", "worried", "down")
                         # call her_main("Let me put them on for you.", "base", "narrow", "base", "mid_soft")
                 # else:
-                    # call her_main("Cat-ears...?","open","worried")
+                    # call her_main("Cat-ears...?", "open", "base", "worried", "mid")
                     # call her_main("Really, [genie_name]?!", "open", "base", "base", "mid")
                     # m "What's wrong? They're cute..."
                     # call her_main("I'm not going to wear cat ears, [genie_name]!", "annoyed", "narrow", "angry", "R")
@@ -273,7 +273,7 @@ label equip_head_accessory:
                         # call her_main("They do look cute...", "base", "narrow", "worried", "down")
                         # call her_main("Alright, [genie_name]. I will wear them for you.", "base", "narrow", "base", "mid_soft")
                 # else:
-                    # call her_main("elf-ears...?","open","worried")
+                    # call her_main("elf-ears...?", "open", "base", "worried", "mid")
                     # call her_main("I refuse, [genie_name]!", "open", "base", "base", "mid")
                     # m "Why not? Don't you support the house elves or something..."
                     # call her_main("It's not about...", "annoyed", "narrow", "angry", "R")
@@ -288,7 +288,7 @@ label equip_head_accessory:
             # #Tiara
             # if head_accessory_choice == "tiara":
 
-                # call her_main("A tiara...?","open","worried")
+                # call her_main("A tiara...?", "open", "base", "worried", "mid")
                 # call her_main("I suppose I can wear it...", "annoyed", "squint", "angry", "mid")
                 # call her_main("let me just go put it on.", "base", "narrow", "base", "mid_soft")
 

@@ -62,15 +62,15 @@ label potion_scene_11_1: #Milking potion part 1
     call her_main("I'm falling behind enough as it is...","annoyed","worriedL")
     m "Really?"
     call her_main("Yes... I think it's all this fooling around sir.","normal","worriedCl")
-    call her_main("I nearly got a \"b\" in biology the other day...","angry","worried")
+    call her_main("I nearly got a \"b\" in biology the other day...", "angry", "base", "worried", "mid")
     m "Well speaking of biology..."
     call nar(">You notice hermione's breasts slight to swell slightly.")
     call her_main("!!!", "angry", "wide", "base", "stare")
-    call her_main("[genie_name], they're growing rather quickly!","angry","worried")
+    call her_main("[genie_name], they're growing rather quickly!", "angry", "base", "worried", "mid")
     m "This is all perfectly normal."
     call her_main("...", "open", "squint", "base", "mid")
     call nar(">Hermione's breasts start to visibly swell again.")
-    call her_main("Ugh... it feels like my organs are sliding into my chest...","angry","worried")
+    call her_main("Ugh... it feels like my organs are sliding into my chest...", "angry", "base", "worried", "mid")
     call her_main("This isn't going to cause any ongoing issues is it?", "annoyed", "squint", "angry", "mid")
     m "O-o-of course not..."
     call her_main("...", "normal", "squint", "angry", "mid")
@@ -92,7 +92,7 @@ label potion_scene_11_1: #Milking potion part 1
         else:
             call nar(">You watch in awe as Hermione's breasts start to rapidly expand!")
 
-    call her_main("[genie_name], this is ridiculous!","angry","worried")
+    call her_main("[genie_name], this is ridiculous!", "angry", "base", "worried", "mid")
     call her_main("I can't be expected to go to class looking like this!","annoyed","worriedL")
     m "Why not? I don't think they're that much bigger than normal."
     call her_main("Are you kidding me?", "disgust", "narrow", "base", "mid_soft")

@@ -227,14 +227,14 @@ label a_bad_time_to_disrobe_part_2:
     m "For what exactly?"
     call her_main("Retrieving the cloak of course.", "annoyed", "base", "base", "mid")
     m "You're demanding house points, for your own mistakes miss Granger?"
-    call her_main("But I thought...","upset","worried")
+    call her_main("But I thought...", "upset", "base", "worried", "mid")
     m "..."
     call her_main("...", "upset", "narrow", "worried", "down")
     m "Fine, but only if we continue where we left of."
     call her_main("With my butt out?!?", "disgust", "wide", "worried", "stare")
     m "With your bu..."
     m "No, well... yes, but this time you'll be prepared."
-    call her_main("But... what if they recognize me sir?","open","worried")
+    call her_main("But... what if they recognize me sir?", "open", "base", "worried", "mid")
     m "You'd already know if they had recognised you..."
     call her_main("\"That's true...\"", "soft", "base", "base", "mid_soft", cheeks="blush")
     call her_main("And then what, you want me to just walk away?", "base", "base", "base", "mid", cheeks="blush")
@@ -244,7 +244,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("\"I was going to ask for 30.\"", "soft", "happy", "base", "R", cheeks="blush")
     call her_main("I'll do it...", "base", "base", "base", "mid")
     g9 "Great, you're doing a great service to your house and making an old man very happy."
-    call her_main("By getting your cloak back right?","base","worried")
+    call her_main("By getting your cloak back right?", "base", "base", "worried", "mid")
     m "Right..."
 
     call her_walk(action="leave", speed=2.5)
@@ -293,11 +293,11 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("It's very messy in there... I thought the girls changing room was bad...", "base", "narrow", "base", "down")
     m "*CRUNCH* *Chew* *Chew*"
     m "*CRUNCH*"
-    call her_main("Anyway... so I rummaged around in that mess...","annoyed","worried")
+    call her_main("Anyway... so I rummaged around in that mess...", "annoyed", "base", "worried", "mid")
     call her_main("I knew it had to have been somewhere between the showers and the doorway...", "base", "base", "base", "mid")
     call her_main("After looking around for a while I noticed that the cloak had been pushed under one of the benches lining the wall.", "open", "narrow", "worried", "down")
     call her_main("So I grabbed it and I thought I might as well disrobe and hide in the shower room with the cloak on.", "base", "narrow", "base", "down")
-    call her_main("But as I was stuffing my clothes in one of the lockers a boy walked in.","clench","worried")
+    call her_main("But as I was stuffing my clothes in one of the lockers a boy walked in.", "clench", "base", "worried", "mid")
     m "*CRUNCH*"
     call her_main("Professor!", "scream", "base", "angry", "mid")
     g4 "*Cough* *Cough*... sorry."

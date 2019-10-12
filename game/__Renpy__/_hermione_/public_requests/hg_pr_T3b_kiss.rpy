@@ -30,7 +30,7 @@ label hg_pr_kiss:
         her "[genie_name]--"
         m "No, \"[genie_name]s\"! This is your task for today!"
         m "Go find a cute little thing and plant a \"smooch\" on her!"
-        call her_main("[genie_name], but I am--","open","worried")
+        call her_main("[genie_name], but I am--", "open", "base", "worried", "mid")
         m "Dismissed, [hermione_name]."
         call her_main("[genie_name]!......", "normal", "squint", "angry", "mid")
         m "I said you're dismissed."
@@ -117,7 +117,7 @@ label hg_pr_kiss_T1_E1:
     m "[hermione_name]..."
     m "Did you succeed in completing your task?"
     show screen blktone
-    call her_main("I...","open","worried")
+    call her_main("I...", "open", "base", "worried", "mid")
     m "I told you to make out with another girl..."
     m "Did you do it?"
     call her_main("I...","open","worriedL")
@@ -214,10 +214,10 @@ label hg_pr_kiss_T1_E3:
             m "Because you are not getting paid you insolent, little witch."
             stop music fadeout 1.0
             call her_main("What?", "normal", "base", "base", "mid")
-            call her_main("[genie_name], you can't do that!","open","worried")
+            call her_main("[genie_name], you can't do that!", "open", "base", "worried", "mid")
             m "Dismissed."
             call her_main("B-but--","open","worriedL")
-            call her_main("[genie_name], please!","open","worried")
+            call her_main("[genie_name], please!", "open", "base", "worried", "mid")
             her "The girl was from \"Hufflepuff\" and--"
             m "Too late for that, [hermione_name]."
             m "You are dismissed."

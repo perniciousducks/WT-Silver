@@ -81,7 +81,7 @@ label hg_pf_talk_T1_intro_E1:
     pause.8
 
     m "Well?"
-    call her_main("Em... very well...","open","worried")
+    call her_main("Em... very well...", "open", "base", "worried", "mid")
     call nar(">Hermione is feeling confused...")
     call her_main("...................", "annoyed", "narrow", "angry", "R")
 
@@ -99,7 +99,7 @@ label hg_pf_talk_T1_E1:
     pause.8
 
     m "Yes?"
-    call her_main("Em... very well...","open","worried")
+    call her_main("Em... very well...", "open", "base", "worried", "mid")
 
     call hg_pf_talk_T1
 
@@ -236,7 +236,7 @@ label hg_pf_talk_T2:
             pause.8
 
             call her_main("[genie_name], what are you doing?", "open", "base", "base", "mid")
-            call her_main("You are not.....?","open","worried")
+            call her_main("You are not.....?", "open", "base", "worried", "mid")
             call her_main("Are you...?","annoyed","worriedL")
             m "What? Oh, it's nothing. Keep going."
             call her_main("Hm...", "normal", "squint", "angry", "mid")
@@ -258,7 +258,7 @@ label hg_pf_talk_T2:
 
     if masturbating:
         call her_main("And these two other girls...","annoyed","worriedL")
-        call her_main("There is a rumour that they are actually sleeping with professor snape...","annoyed","worried")
+        call her_main("There is a rumour that they are actually sleeping with professor snape...", "annoyed", "base", "worried", "mid")
         m "{size=-4}(Yes... Those nasty \"slytherin\" sluts!){/size}"
         call her_main("Also, there was this one girl who gave a teacher a handjob, right during class...", "base", "base", "base", "mid")
         m "{size=-4}(Yes... This is good stuff, go on!){/size}"
@@ -332,7 +332,7 @@ label hg_pf_talk_T2:
 
 label hg_pf_talk_T3_intro_E1:
     m "Let's have another chat, [hermione_name]."
-    call her_main("Okay...","annoyed","worried")
+    call her_main("Okay...", "annoyed", "base", "worried", "mid")
     m "I'd like you to tell me a bit about your day."
     call her_main("Are you going to...{w=0.8} touch yourself again sir?", "open", "squint", "base", "mid")
     m "I can't guarantee I won't...."
@@ -509,7 +509,7 @@ label hg_pf_talk_T3:
         m "Loosen up a bit won't you, I'll figure something out don't you worry..."
         call her_main("{size=-4}I am not-{/size}","annoyed","worriedCl")
 
-        call her_main("(...................)","disgust","worried")
+        call her_main("(...................)", "disgust", "base", "worried", "mid")
         m "You've done well today [hermione_name]..."
         call her_main("You've soiled your entire desk!", "mad", "wide", "base", "stare")
         m "I'm sure it will be cleaned at one point or another..."
@@ -697,7 +697,7 @@ label hg_pf_talk_tonks:
             call ton_main("(She'd get double from me... easily...)","horny","base","sad","R")
             m "..."
             call ton_main("Now, we can't have that, can we...","base","base","sad","mid")
-            call her_main("I know... It angers me to the core...","annoyed","worried")
+            call her_main("I know... It angers me to the core...", "annoyed", "base", "worried", "mid")
             call ton_main("","upset","base","sad","L", hair="basic")
             call her_main("Everyone has been working so hard towards winning the cup... I have been working so hard...","open","worried", cheeks="blush")
             call her_main("The way it is right now doesn't promote fairness at all.", "annoyed", "narrow", "worried", "down")
@@ -706,7 +706,7 @@ label hg_pf_talk_tonks:
             call ton_main("","base","base","worried","L")
 
         "\"Yourself, Miss Granger!\"":
-            call her_main("What?!","soft","worried")
+            call her_main("What?!", "soft", "base", "worried", "mid")
             call ton_main("Yes, I would love to hear a bit more about what's going on with you Miss Granger...","horny","base","base","L", hair="horny")
             call ton_main("When I took the teaching position, you and I had a bit of a discussion, didn't we?","base","base","angry","L")
             call ton_main("From what I've been hearing on the Portrait vine, you have been selling a few favours yourself to professor Dumbledore here...","base","base","angry","mid")
@@ -782,7 +782,7 @@ label hg_pf_talk_tonks:
             call her_main("That is why I created the \"M.R.M\"!", "open", "happy", "base", "mid_soft")
             call ton_main("Yes. The \"Men's Reign Movement\"...","open","closed","base","mid")
             call ton_main("","base","base","base","mid")
-            call her_main("But-...{w=0.5} that's not what \"M.R.M\" stands for!","angry","worried")
+            call her_main("But-...{w=0.5} that's not what \"M.R.M\" stands for!", "angry", "base", "worried", "mid")
             call her_main("It's the \"Men's Rights Movement!\"", "open", "closed", "base", "mid")
             call her_main("I've told you both about it... In detail!", "annoyed", "base", "angry", "mid")
             call ton_main("I see... I probably wrote it down and put it somewhere in my...{w=0.8} extensive notes folder...","upset","base","sad","R")

@@ -90,7 +90,7 @@ label hg_ps_cumslut_Scene_1:
     m "You're doing this because I asked you to."
     call her_main("But if I don't, Gryffindor will lose the house cup.","shock","worriedCl")
     m "And?"
-    call her_main("Harry and Ron will be so disappointed...","angry","worried")
+    call her_main("Harry and Ron will be so disappointed...", "angry", "base", "worried", "mid")
     m "So that's why you are doing this? For those two boys?"
     call her_main("Sort of... I'm not sure that they'd be too upset though.","annoyed","worriedL")
     m "Are you sure it's not because you love it."
@@ -210,7 +210,7 @@ label hg_ps_cumslut_Scene_1:
             call her_main("Why would you say something like that!","mad","worriedCl",tears="soft_blink")
             call her_main("If I hadn't moved at the last second my face would be covered!", "angry", "base", "base", "mid",tears="soft")
             m "You didn't have to listen to me."
-            call her_main("What?","angry","worried")
+            call her_main("What?", "angry", "base", "worried", "mid")
             m "I only said that you had to have my cum on you."
             m "I never said where."
             call her_main("You mean I didn't have to...","annoyed","worriedL")
@@ -295,7 +295,7 @@ label hg_ps_cumslut_Scene_2:
     m "What is your other reason then?"
     call her_main("if I don't, Gryffindor will lose the house cup.","shock","worriedCl")
     m "That lie again?"
-    call her_main("It's not a lie...","angry","worried")
+    call her_main("It's not a lie...", "angry", "base", "worried", "mid")
     m "So you'd rather win the house cup than make me happy?"
     call her_main("Maybe... Can't I do both?","annoyed","worriedL")
     m "You can..."
@@ -434,7 +434,7 @@ label hg_ps_cumslut_Scene_2:
             call her_main("Why would you ask me to do that!","mad","worriedCl",tears="soft_blink")
             call her_main("I'm completely covered in your cum!", "angry", "base", "base", "mid",tears="soft")
             m "You didn't have to listen to me."
-            call her_main("...","angry","worried")
+            call her_main("...", "angry", "base", "worried", "mid")
             m "I only said that you had to have my cum on you."
             m "I never said where."
             call her_main("You told me to do it though...","annoyed","worriedL")

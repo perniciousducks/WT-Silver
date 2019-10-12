@@ -230,7 +230,7 @@ label hg_ps_buttplug:
                 call her_main("Don't you worry about us getting caught?", "annoyed", "base", "base", "mid")
                 m "Why would I?"
                 call her_main("Well it's just that making me wear something like this is drawing a lot of attention...","open","worriedL")
-                call her_main("and what if someone realises that it's you who's making me do all this...","open","worried")
+                call her_main("and what if someone realises that it's you who's making me do all this...", "open", "base", "worried", "mid")
                 m "and who is going to suspect the great albis dumbledorf?"
                 call her_main("...I suppose no one...","annoyed","worriedL")
                 m "Then don't worry about it. If anyone asks just tell them you're going through an exhibitionist stage."
@@ -636,7 +636,7 @@ label hg_ps_buttplug_complete:
             m "[hermione_name], did you complete your task?"
             show screen blktone
             call her_main("Yes I did, [genie_name].", "base", "base", "base", "mid",xpos="right",ypos="base")
-            call her_main("But, umm...","open","worried")
+            call her_main("But, umm...", "open", "base", "worried", "mid")
             m "...?"
             call her_main("Well, I may have gotten a bit more attention than I had hoped for...", "disgust", "narrow", "base", "down")
             call her_main("...............", "clench", "narrow", "base", "down")
@@ -903,7 +903,7 @@ label hg_ps_buttplug_complete:
             her "...imagine that... a slytherin, licking something that was inside my..."
             her "It was incredible... I could barely stand while it happened..."
             m "did you find out who it was?"
-            call her_main("I did [genie_name].","open","worried")
+            call her_main("I did [genie_name].", "open", "base", "worried", "mid")
             call her_main("It was at lunch, in the great hall.", "open", "closed", "base", "mid")
             call her_main("I was walking past the slytherin table on my way to sit down...", "open", "closed", "base", "mid")
             call her_main("when I saw that little... vixen, astoria greengrass.", "base", "squint", "base", "mid")
@@ -991,7 +991,7 @@ label hg_ps_buttplug_complete:
             her "...imagine that... a slytherin, licking something that was in my..."
             her "It was incredible... I could barely stand while it happened..."
             m "did you find out who it was?"
-            call her_main("I did [genie_name].","open","worried")
+            call her_main("I did [genie_name].", "open", "base", "worried", "mid")
             call her_main("It was at lunch, in the great hall.", "open", "closed", "base", "mid")
             call her_main("I was walking past the slytherin table on my way to sit down...", "open", "closed", "base", "mid")
             call her_main("when I saw that little... vixen, astoria greengrass.", "base", "squint", "base", "mid")

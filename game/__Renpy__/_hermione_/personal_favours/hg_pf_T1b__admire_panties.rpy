@@ -175,7 +175,7 @@ label hg_pf_admire_panties_T2_intro_E1:
     m "Nothing drastic, really..."
     m "I just want you to show me your panties."
     if hg_pf_admire_panties.counter == 0:
-        call her_main("My Panties?!","clench","worried")
+        call her_main("My Panties?!", "clench", "base", "worried", "mid")
     else:
         call her_main("Oh... again?","annoyed","worriedL")
     m "Just do it..."

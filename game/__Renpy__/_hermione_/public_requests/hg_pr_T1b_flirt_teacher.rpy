@@ -99,7 +99,7 @@ label hg_pr_flirt_teacher_T1_E1: # Flitwick
     call her_main("..............................", "annoyed", "narrow", "angry", "R")
     m "How exciting..."
     m "Is this all you have for me today, [hermione_name]?"
-    call her_main("Y-yes...","open","worried")
+    call her_main("Y-yes...", "open", "base", "worried", "mid")
     her "But [genie_name], I know for a fact that professor Flitwick is \"dirty\"!"
     her "Everyone knows that because of his height..."
     call her_main("He sometimes... ehm...", "soft", "base", "base", "R")
@@ -115,14 +115,14 @@ label hg_pr_flirt_teacher_T1_E1: # Flitwick
 
     menu:
         "\"Here are your point's though.\"":
-            call her_main("Really?","angry","worried")
+            call her_main("Really?", "angry", "base", "worried", "mid")
             call her_main("Thank you so much [genie_name]!", "smile", "happyCl", "base", "mid")
 
             jump end_hg_pr_flirt_teacher
 
         "\"No points for you!\"":
 
-            call her_main("But [genie_name], I did my best!","angry","worried")
+            call her_main("But [genie_name], I did my best!", "angry", "base", "worried", "mid")
             call her_main("You are going back on your promise [genie_name]!","mad","worried", tears="soft")
             m "......................."
             stop music fadeout 1.0
@@ -146,7 +146,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
     call her_main("..................", "soft", "base", "base", "R")
     her "............................"
     m "[hermione_name]?"
-    call her_main("Yes, [genie_name]... I'm sorry... I just...","open","worried")
+    call her_main("Yes, [genie_name]... I'm sorry... I just...", "open", "base", "worried", "mid")
     call her_main("............", "soft", "base", "base", "R")
     m "Did you do what I asked you to do?"
     call her_main("I tried, [genie_name]. I really did...", "open", "base", "base", "mid")
@@ -202,7 +202,7 @@ label hg_pr_flirt_teacher_T1_E3: # Filch
     call her_main("I tried to flirt with mr.Filch, [genie_name]...","open","worriedL")
     m "I see. {size=-5}(No idea who that is.){/size}"
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Yes, I know that technically mr.Filch is not a teacher...","open","worried")
+    call her_main("Yes, I know that technically mr.Filch is not a teacher...", "open", "base", "worried", "mid")
     m "Huh?"
     call her_main("But he is part of the school's staff...", "base", "base", "base", "mid")
     her "And we did hit it off quite well too!"
@@ -480,10 +480,10 @@ label hg_pr_flirt_teacher_T3_E3: # Lockhart
     stop music fadeout 1.0
     call her_main("Professor Lockhart!", "annoyed", "squint", "angry", "mid")
     m "Got it! Adding him to the \"Naughty list\"!"
-    call her_main("No, [genie_name], it's not that...","open","worried")
+    call her_main("No, [genie_name], it's not that...", "open", "base", "worried", "mid")
     call her_main("Or...", "annoyed", "narrow", "angry", "R")
     her "I'm not sure..."
-    call her_main("I used to adore him...","open","worried")
+    call her_main("I used to adore him...", "open", "base", "worried", "mid")
     call her_main("But he...", "soft", "base", "base", "R")
     her "He just..."
     call her_main("How is this possible?","mad","worriedCl", tears="soft_blink")
@@ -499,7 +499,7 @@ label hg_pr_flirt_teacher_T3_E3: # Lockhart
     m "What did Professor Lockhart do to you?"
     call her_main("Ehm... Nothing, [genie_name]...", "soft", "base", "base", "R")
     m "Nothing?!"
-    call her_main("Yes, I sort of cornered mr.Lockhart today...","open","worried")
+    call her_main("Yes, I sort of cornered mr.Lockhart today...", "open", "base", "worried", "mid")
     call her_main("And I also may have sort of made a pass at him...", "open", "base", "base", "mid")
     m "Seriously?"
     call her_main("Yes... Not sure what had gotten into me, [genie_name]...","angry","worriedCl", emote="05")
@@ -517,7 +517,7 @@ label hg_pr_flirt_teacher_T3_E3: # Lockhart
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("I made him cry, [genie_name]...","angry","worriedCl", emote="05")
     m "..............wait.......what?"
-    call her_main("He gave me a bewildered look and then started to sob...","angry","worried")
+    call her_main("He gave me a bewildered look and then started to sob...", "angry", "base", "worried", "mid")
     her "He looked like he was genuinely afraid of me, [genie_name]."
     call her_main("I think...","annoyed","worriedL")
     her "I think mr.Lockhart might be afraid of women..."

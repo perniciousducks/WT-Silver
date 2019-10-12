@@ -93,9 +93,9 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "Well, that'd take away from the suspense wouldn't it?"
         call her_main("Hmmmm, well at least ask what I'm doing before you give me the potion.","open","worriedL")
         m "Why, what did you have to do today that was so important?"
-        call her_main("I had to give a speech for languages!","angry","worried")
+        call her_main("I had to give a speech for languages!", "angry", "base", "worried", "mid")
         call her_main("Do you have any idea how inappropriate it was giving a speech on morality in front of the entire class-", "open", "closed", "base", "mid")
-        call her_main("{size=+5}As my clothes became transparent!{/size}","angry","worried")
+        call her_main("{size=+5}As my clothes became transparent!{/size}", "angry", "base", "worried", "mid")
         m "Well I imagine it depends on what side of morality you were arguing."
         call her_main("It doesn't matter.", "open", "closed", "base", "mid")
         m "Are you sure that you didn't enjoy it?"

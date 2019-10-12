@@ -472,7 +472,7 @@ label hermione_intro_E2:
     stop music fadeout 1.0
     m "Wait, did you say {size=+5}MEN'S{/size} rights movement?"
     call play_music("chipper_doodle")
-    call her_main("You have no idea how hard it is to be a boy in our school these days...","open","worried")
+    call her_main("You have no idea how hard it is to be a boy in our school these days...", "open", "base", "worried", "mid")
     menu:
         "\"Didn't see this one coming...\"":
             call her_main("No, you did not, because you, refuse to listen to us, sir!", "open", "closed", "angry", "mid")
@@ -733,7 +733,7 @@ label hermione_intro_E3:
     m "Is that so...?"
     call her_main("Yes, professor. Something went terribly wrong today...", "normal", "squint", "angry", "mid")
     call her_main(".................................", "annoyed", "narrow", "angry", "R")
-    call her_main("But what if it didn't?","open","worried")
+    call her_main("But what if it didn't?", "open", "base", "worried", "mid")
     her "What if all the tests will be this difficult from now on?"
 
     menu:
@@ -746,9 +746,9 @@ label hermione_intro_E3:
     call her_main("How will this make me look?", "angry", "base", "base", "mid", tears="soft")
     call her_main("I will know for sure when we get the results though...", "normal", "base", "base", "R", tears="soft")
     call her_main("Yes, I'm sure everyone else failed as well...", "soft", "base", "base", "R")
-    call her_main("I mean, they must have, right?","open","worried")
+    call her_main("I mean, they must have, right?", "open", "base", "worried", "mid")
     call her_main(".....................", "soft", "base", "base", "R")
-    call her_main("....right?","open","worried")
+    call her_main("....right?", "open", "base", "worried", "mid")
 
     label cant_say:
     menu:
@@ -880,8 +880,8 @@ label hermione_intro_E5:
                         call her_main("It...", "open", "base", "base", "mid")
                         her "Expired, sir?"
                         her "B-but...."
-                        call her_main("But I require tutoring, and you are the smartest wizard I know...","open","worried")
-                        call her_main("Please, sir. I really need your help.","angry","worried")
+                        call her_main("But I require tutoring, and you are the smartest wizard I know...", "open", "base", "worried", "mid")
+                        call her_main("Please, sir. I really need your help.", "angry", "base", "worried", "mid")
                         menu:
                             "\"Show me your tits and it's a deal!\"":
                                 call her_main("m-my...?", "angry", "wide", "base", "stare")
@@ -916,7 +916,7 @@ label hermione_intro_E5:
             "\"I suppose that is possible.\"":
                 pass
             "\"Hm... I'm quite busy actually.\"":
-                call her_main("Sir, please, you are the smartest wizard I know!","open","worried")
+                call her_main("Sir, please, you are the smartest wizard I know!", "open", "base", "worried", "mid")
                 m "{size=-4}(You have no idea, little witch.){/size}"
                 m "Well, it could be arranged, I suppose..."
 
@@ -1123,7 +1123,7 @@ label hermione_intro_E6:
             "\"Not good enough. You can do better\"":
                 call her_main("...............", "annoyed", "narrow", "angry", "R")
                 her "Alright, I will try to do better, sir..."
-                call her_main("How about this?","open","worried")
+                call her_main("How about this?", "open", "base", "worried", "mid")
                 call her_main("A-a-ah..................", "scream", "base", "base", "R")
                 call her_main("............................", "open_wide_tongue", "happy", "base", "R")
                 call her_main("......................................", "open_wide_tongue", "narrow", "base", "down")
@@ -1211,7 +1211,7 @@ label hermione_intro_E6:
         menu:
             g9 "..."
             "\"Do you need to be punished?\"":
-                call her_main("Do I need to... be punished?","open","worried")
+                call her_main("Do I need to... be punished?", "open", "base", "worried", "mid")
                 call her_main("Ehm...", "soft", "base", "base", "R")
                 her "....................."
                 call her_main("Well, I am not perfect, if that's what you mean, sir...", "annoyed", "narrow", "angry", "R")
@@ -1228,7 +1228,7 @@ label hermione_intro_E6:
                 call her_main("n-no , sir...","annoyed","worriedL")
                 m "Alrighty, then..."
             "\"Do you want to get spanked?\"":
-                call her_main("Do I want to...","open","worried")
+                call her_main("Do I want to...", "open", "base", "worried", "mid")
                 call her_main("Get s-spanked??", "angry", "wide", "base", "stare")
                 call her_main("Tsk!", "angry", "base", "angry", "mid")
                 call her_main("Professor, I don't think I'm comfortable with--", "open", "closed", "angry", "mid")
@@ -1255,7 +1255,7 @@ label hermione_intro_E6:
 
     menu:
         "\"I don't think that's a good idea.\"":
-            call her_main("Please, professor...","angry","worried")
+            call her_main("Please, professor...", "angry", "base", "worried", "mid")
             her "We really need those points..."
             m "......."
             call her_main("You are an esteemed wizard and to be honest...","annoyed","worriedL")

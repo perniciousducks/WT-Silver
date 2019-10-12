@@ -216,7 +216,7 @@ label hermione_random_duel:
         call her_main("You've already challenged me though...", "open", "happy", "base", "R")
         call her_main("and I lost.", "annoyed", "narrow", "worried", "down")
         g9 "What if we made it a wager..."
-        call her_main("Gambling you mean?","open","worried")
+        call her_main("Gambling you mean?", "open", "base", "worried", "mid")
         m "Not for money obviously."
         call her_main("What are you suggesting then?","base","happy", cheeks="blush")
         m "Well, I was thinking house points."
@@ -261,7 +261,7 @@ label hermione_random_duel:
     m "Seems like I've won this one [hermione_name]."
     call her_main ("I noticed...","normal","worriedL")
     m "You do know what this means, don't you?"
-    call her_main("...","normal","worried")
+    call her_main("...", "normal", "base", "worried", "mid")
     g9 "This means I'm going to have to deduct 20 points from Gryffindor house."
     call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's 20 house points missing...","open","worriedCl")
     m "Well, in that case..."

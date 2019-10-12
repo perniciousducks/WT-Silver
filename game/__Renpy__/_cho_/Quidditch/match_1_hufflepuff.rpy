@@ -216,7 +216,7 @@ label hufflepuff_match:
     ">A loud cheer roars from the grandstands."
 
     # Speech
-    call her_main("And now, to say a few words and declare the games to be open, Professor Dumbledore!", "open", "closed", "base", "mid")
+    call her_main("And now, to say a few words and declare the games open, Professor Dumbledore!", "open", "closed", "base", "mid")
     call her_main("", "base", "base", "base", "mid_soft")
     call ctc
 
@@ -473,8 +473,8 @@ label hufflepuff_match:
     mal2 "Yeh! Start the game!"
     qcr "START THE GAME! START THE GAME!"
     ">Hermione’s voice eventually gets drowned out by the growing restlessness of the crowd."
-    call her_main("", "normal", "base", "base", "mid",xpos="120",ypos="base",flip=True)
-    call her_main("Ugh, fine. If everyone wants us to begin playing without knowing a SINGLE thing... then that’s OK! A good commentator knows when to accommodate for a crowd’s impatience!", "open", "closed", "base", "mid")
+    call her_main("", "normal", "base", "base", "mid", xpos="120",ypos="base",flip=True)
+    call her_main("Ugh, fine. If everyone wants us to begin play without knowing a SINGLE thing... then that’s OK! A good commentator knows when to accommodate for a crowd’s impatience!", "open", "closed", "base", "mid")
     hide screen hermione_main
     call sna_main("{size=-4}This should be good.{/size}","snape_02",ypos="head") # Small text.
     $ qp_mob_reaction[0] = "emo8"

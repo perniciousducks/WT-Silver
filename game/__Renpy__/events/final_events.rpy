@@ -448,7 +448,7 @@ label ball_quest_E3:
     call her_main("Are you making fun of me sir?","mad","worried", tears="soft")
     m "Can you blame me?"
     call her_main("I will become the laughingstock of Hogwarts! *Sob!*","clench","worried", cheeks="blush", tears="soft")
-    call her_main("My reputation is as good as ruined! *Sob!*","angry","dead", cheeks="blush", tears="crying")
+    call her_main("My reputation is as good as ruined! *Sob!*", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
     m "Seriously? After all the favours you sold me you care about a thing like this?"
     call her_main("Wearing the same dress to the \"Autumn Ball\" for two years in a row would be more humiliating than any favour I sold you so far, sir.","shock","down_raised", cheeks="blush", tears="crying")
     with hpunch
@@ -460,7 +460,7 @@ label ball_quest_E3:
     her "Forgive me sir..."
     call her_main("I don't know why I am telling you all of this...","shock","down_raised", cheeks="blush", tears="crying")
     m "................"
-    call her_main("......................*sob!*","angry","dead", cheeks="blush", tears="crying")
+    call her_main("......................*sob!*", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
     call her_main("I think I'd better go now...*sob*","angry","suspicious", cheeks="blush", tears="messy")
     m "Well, don't let me keep you a moment longer, miss Granger...."
 

@@ -888,10 +888,10 @@ label hermione_change:
                     call her_main("", "base", "narrow", "base", "up", tears="mascara")
                     m "And I {b}will{/b} call you however I want!"
                     call her_main("Yes, [genie_name], I understand.", "silly", "narrow", "base", "up", tears="mascara")
-                    call her_main("I am your toy{w=0.6}, your fuckslut{w=0.6}, your cocksleeve, your -...", "grin","dead", tears="mascara")
+                    call her_main("I am your toy{w=0.6}, your fuckslut{w=0.6}, your cocksleeve, your -...", "grin", "narrow", "base", "dead", tears="mascara")
                     m "Yes, that you are but its enough..."
-                    call her_main("I fully belong to you... [genie_name].", "silly","dead", tears="mascara")
-                    call her_main("", "grin","dead", tears="mascara")
+                    call her_main("I fully belong to you... [genie_name].", "silly", "narrow", "base", "dead", tears="mascara")
+                    call her_main("", "grin", "narrow", "base", "dead", tears="mascara")
                     $ her_mood = 0
     $ hermione_name = temp_name
     jump hermione_talk

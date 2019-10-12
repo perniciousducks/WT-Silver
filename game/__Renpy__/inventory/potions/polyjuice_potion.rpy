@@ -260,13 +260,13 @@ label hg_pp_polyjuice_T1_intro:
                 call ctc
 
                 with d3
-                call her_main("","full_cum","dead")
+                call her_main("", "full_cum", "narrow", "base", "dead")
                 pause .1
                 call her_main("*gulp* *Purr* *Purr*","cum","worriedCl")
-                call her_main("","full_cum","dead")
+                call her_main("", "full_cum", "narrow", "base", "dead")
                 pause .1
                 call her_main("*gulp* *Purr* *gulp*","cum","worriedCl")
-                call her_main("","full_cum","dead")
+                call her_main("", "full_cum", "narrow", "base", "dead")
                 pause .1
                 call her_main("*Purr* *gulp* *gulp*","cum","worriedCl")
                 #
@@ -483,13 +483,13 @@ label hg_pp_polyjuice_T1_introCC:
 #This scene looks a bit weird
     $ g_c_u_pic = "cum_in_mouth_ani"
     with d3
-    call her_main("","full_cum","dead")
+    call her_main("", "full_cum", "narrow", "base", "dead")
     pause .1
     call her_main("*gulp* *Purr* *Purr*","cum","worriedCl")
-    call her_main("","full_cum","dead")
+    call her_main("", "full_cum", "narrow", "base", "dead")
     pause .1
     call her_main("*gulp* *Purr* *gulp*","cum","worriedCl")
-    call her_main("","full_cum","dead")
+    call her_main("", "full_cum", "narrow", "base", "dead")
     pause .1
     call her_main("*Purr* *gulp* *gulp*","cum","worriedCl")
     call nar(">You pull your cock out of her purring mouth.")

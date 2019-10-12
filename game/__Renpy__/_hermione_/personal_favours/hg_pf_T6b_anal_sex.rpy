@@ -98,7 +98,7 @@ label hg_anal_sex_1:
             g9 "Yes you are!"
             call her_main("*Sob!* I am a whore...","angry","suspicious",cheeks="blush")
             call her_main("I love to suck cock...")
-            call her_main("And now my tiny asshole is getting ripped to pieces... *Sob!*","angry","dead",cheeks="blush",tears="crying")
+            call her_main("And now my tiny asshole is getting ripped to pieces... *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             g4 "Yes! Yes!"
             g4 "Agrh! Yes!"
             call her_main("No! Is it getting bigger?! I'm scared!","open","surprised",cheeks="blush",tears="messy")
@@ -201,12 +201,12 @@ label hg_anal_sex_1:
             call her_main("Because this is painful...","clench","worried",cheeks="blush",tears="soft")
             call her_main("And I just want you to cum sooner, [genie_name]...")
             m "So you stifle your cries of pain?"
-            call her_main("yes [genie_name]. *Sob!*","angry","dead",cheeks="blush",tears="crying")
+            call her_main("yes [genie_name]. *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             m "Don't do that."
             m "Sob, scream and cry as much as you wish!"
             call her_main("B-but--","clench","worried",cheeks="blush",tears="soft")
             m "That will make me cum sooner."
-            call her_main("Really? *Sob!*","angry","dead",cheeks="blush",tears="crying")
+            call her_main("Really? *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             call her_main("*Sob!* It hurts! *Sob!* It hurts so much! *Sob!*", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "Yes, yes..."
             call her_main("*SOB!*","angry","suspicious",cheeks="blush",tears="messy")
@@ -258,14 +258,14 @@ label hg_anal_sex_1:
             if not use_cgs:
                 call hg_chibi_transition("sex_creampie_pause", trans="d5")
 
-            call her_main("*Sob!*...","angry","dead",cheeks="blush",tears="crying")
+            call her_main("*Sob!*...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             m "Whew!... I think that was the last of it."
             m "You alright?"
-            call her_main("Yes... *Sob!*","angry","dead",cheeks="blush",tears="crying")
+            call her_main("Yes... *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             m "Are You crying?"
-            call her_main("My butt hurts, but I am alright, [genie_name]...","angry","dead",cheeks="blush",tears="crying")
+            call her_main("My butt hurts, but I am alright, [genie_name]...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             m "Well, you took my dick stoically, I must say..."
-            call her_main("Thank you [genie_name]...","angry","dead",cheeks="blush",tears="crying")
+            call her_main("Thank you [genie_name]...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             hide screen bld1
             with d1
             call ctc
@@ -306,7 +306,7 @@ label hg_anal_sex_1:
             call ctc
             
 
-            call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}","silly","dead",ypos="head")
+            call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead",ypos="head")
             g4 "Yes!!! All over your ass!"
             call her_main("Ah... It's so hot!", "silly", "narrow", "annoyed", "up")
             hide screen bld1
@@ -417,14 +417,14 @@ label hg_anal_sex_2:
             m "Ehm, I mean, [hermione_name]."
             call her_main("No, \"whore\" is good. Call me that, [genie_name].", "silly", "narrow", "annoyed", "up")
             m "There, you see? You are a great catch, I'm telling you, whore."
-            call her_main("Ah...{image=textheart} Thank you, [genie_name].","angry","dead",cheeks="blush",tears="crying")
+            call her_main("Ah...{image=textheart} Thank you, [genie_name].", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             m "Huh?"
             m "Are you crying?"
 
         "\"Marriage is out of the picture for you.\"":
             call her_main("That's what I thought...","shock","down_raised",cheeks="blush",tears="crying",ypos="head")
             m "Oh... I just love that little asshole of yours!"
-            call her_main(".....................","angry","dead",cheeks="blush",tears="crying")
+            call her_main(".....................", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             call her_main("Yes... After all the things I had to do for my house...")
             call her_main("...no one will ever want me...","angry","suspicious",cheeks="blush",tears="messy")
             m "Oh, they will want you alright!"
@@ -440,13 +440,13 @@ label hg_anal_sex_2:
             m "Now wiggle that little ass of yours a little."
             call her_main("Like this?","silly","worried",cheeks="blush",tears="soft")
             m  "Yes, that's a good whore."
-            call her_main("I am a whore, aren't I?","silly","dead")
+            call her_main("I am a whore, aren't I?", "silly", "narrow", "base", "dead")
             m "You just sold me your asshole for 90 house points. How would you call that?"
             call her_main("Yes, yes...{image=textheart} I am a whore...{image=textheart}","silly","worried",cheeks="blush",tears="soft")
             m "Are you crying?"
 
 
-    call her_main("Among other things, [genie_name]...{image=textheart}{image=textheart}{image=textheart}","silly","dead",ypos="head")
+    call her_main("Among other things, [genie_name]...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead",ypos="head")
     m "Among other things?"
     call her_main("I'm cumming [genie_name]...{image=textheart}{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up")
     g4 "Agh! My cock!"
@@ -492,11 +492,11 @@ label hg_anal_sex_2:
             $ uni_sperm = True
             $ u_sperm = "characters/hermione/face/auto_08.png"
 
-            call her_main("Ah-aha! You're cumming! {image=textheart}{image=textheart}{image=textheart}","silly","dead",ypos="head")
+            call her_main("Ah-aha! You're cumming! {image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead",ypos="head")
             g4 "{size=+7}Yes I do, whore!{/size}"
             call her_main("Ah, me too! Me too!","scream","worriedCl",cheeks="blush",tears="messy")
             g4 "{size=+7}FUCKING SLUT!{/size}"
-            call her_main("Ah...{image=textheart} your cum...{image=textheart}","angry","dead",cheeks="blush",tears="crying")
+            call her_main("Ah...{image=textheart} your cum...{image=textheart}", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             call her_main("I'm so full...{image=textheart}{image=textheart}{image=textheart}")
             g4 "Yes!!! All over your ass!"
             call her_main("Ah... It's so hot!", "silly", "narrow", "annoyed", "up")
@@ -512,11 +512,11 @@ label hg_anal_sex_2:
     call hg_chibi_transition("sex_pause", trans="fade")
 
     m "Well, this was intense..."
-    call her_main("Ah-ha...{image=textheart} ah...{image=textheart}","grin","dead",cheeks="blush",tears="messy",ypos="head",flip=False)
+    call her_main("Ah-ha...{image=textheart} ah...{image=textheart}", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy",ypos="head",flip=False)
     m "Are You alright, [hermione_name]?"
-    call her_main("I think so... I'm not sure...","grin","dead",cheeks="blush",tears="messy")
-    call her_main("I think I may still be cumming, [genie_name].","grin","dead",cheeks="blush",tears="messy")
-    call her_main("Or maybe not...","grin","dead",cheeks="blush",tears="messy")
+    call her_main("I think so... I'm not sure...", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
+    call her_main("I think I may still be cumming, [genie_name].", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
+    call her_main("Or maybe not...", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
     call her_main("Everything is in a daze... and my legs feel so weak...")
     call her_main("Can I just get paid now, [genie_name]?")
 

@@ -122,7 +122,7 @@ label hg_pr_sex_T1_intro_E2:
     call her_main("Yes, we were best friends for such a long time...", "base", "base", "base", "R", cheeks="blush")
     call play_music("playful_tension") # SEX THEME.
     call her_main("But last night the boys made me their little plaything...","base","glance")
-    call her_main("And I did not mind it one bit...","grin","dead")
+    call her_main("And I did not mind it one bit...", "grin", "narrow", "base", "dead")
     her "They did everything they wanted to do to me..."
     her "And everything I wanted to be done to me has been done..."
     call her_main(".................", "soft", "narrow", "annoyed", "up")

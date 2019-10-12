@@ -596,9 +596,9 @@ label hg_pr_handjob_T3_E3:
     her "Because they did not just cum."
     her "Their cocks simply exploded with spunk."
     m "You enjoyed it, didn't you?"
-    call her_main("To be completely honest with you, sir... I did.","grin","dead")
+    call her_main("To be completely honest with you, sir... I did.", "grin", "narrow", "base", "dead")
     call her_main("It was exciting.", "smile", "base", "angry", "mid")
-    call her_main("God, there was so much.  My hands looked like a candle had dripped hot wax all over them.","grin","dead")
+    call her_main("God, there was so much.  My hands looked like a candle had dripped hot wax all over them.", "grin", "narrow", "base", "dead")
     call her_main("I didn't know what to do I couldn't just go about the rest of class with huge globs of cum all over my hands.","angry","down_raised")
     her "So I decided to rub it all over the inside of my thighs to keep from having to stain my clothes."
     call her_main("Every time I walked I could smell their cum from between my legs.", "silly", "narrow", "annoyed", "up")
@@ -607,7 +607,7 @@ label hg_pr_handjob_T3_E3:
     with d5
 
     show screen blktone
-    call her_main("I definitely want them both at the same time.","silly","dead")
+    call her_main("I definitely want them both at the same time.", "silly", "narrow", "base", "dead")
     m "..."
     call her_main("Yeah, two huge cocks exploding massive loads of cum everywhere.", "silly", "narrow", "annoyed", "up")
     m "........"

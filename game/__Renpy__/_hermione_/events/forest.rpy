@@ -297,14 +297,14 @@ label forest_BJ_2:
     m "So? Doesn't everyone sort of know by now anyway?"
     call her_main("Argh! That's not the point and you know it!", "annoyed", "squint", "angry", "mid")
     call her_main("You can't keep treating me like your {image=textheart}dirty{image=textheart} little {b}cumdump{/b} to use as you please!","angry","suspicious")
-    call her_main("To coat in your filthy nasty {b}{image=textheart}cum{image=textheart}{/b}...","angry","dead")
+    call her_main("To coat in your filthy nasty {b}{image=textheart}cum{image=textheart}{/b}...", "angry", "narrow", "base", "dead")
     call her_main("In front of whoever, or whatever, you want...", "angry", "narrow", "annoyed", "up")
-    call her_main("...","angry","dead")
+    call her_main("...", "angry", "narrow", "base", "dead")
     call her_main("Well... I hope you've learned your lesson!", "angry", "narrow", "base", "angry", "mid", "up")
     call her_main("I'm going to go back and...", "angry", "narrow", "base", "up")
     call her_main("ge-Clean! myself off...", "open", "squint", "worried", "up")
     call her_main("And remember...", "open", "narrow", "base", "up")
-    call her_main("no {size=-1}more... {size=-1}{b}cum{/b}... {size=-1}all... {size=-1}over... {size=-1}me... {size=-1}please...{image=textheart}{image=textheart}{image=textheart}{/size}","angry","dead")
+    call her_main("no {size=-1}more... {size=-1}{b}cum{/b}... {size=-1}all... {size=-1}over... {size=-1}me... {size=-1}please...{image=textheart}{image=textheart}{image=textheart}{/size}", "angry", "narrow", "base", "dead")
     show screen blkfade
     with d3
 
@@ -350,7 +350,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     call her_main("{size=-10}I just like sucking your dick, OK...{/size}","upset","glanceL")
     m "So you don't want me to cover you in cum like the cumslut you are?"
     call her_main("...","base","down")
-    call her_main("Ugh...","base","dead")
+    call her_main("Ugh...", "base", "narrow", "base", "dead")
     show screen blkfade
     with d3
 
@@ -858,7 +858,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     call her_main("(I got my hair all sticky for nothing...)","upset","down")
     m "So are you going to clean yourself up and get dressed?"
     call her_main("I'll get dressed...", "soft", "base", "base", "R")
-    call her_main("but If it's all the same to you, I might leave the cum on...","base","dead")
+    call her_main("but If it's all the same to you, I might leave the cum on...", "base", "narrow", "base", "dead")
     m "Good girl..."
     show screen blkfade
     with d3

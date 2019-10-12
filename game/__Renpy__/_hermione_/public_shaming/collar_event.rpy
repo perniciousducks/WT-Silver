@@ -285,10 +285,10 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("I'm a whore.", "silly", "narrow", "annoyed", "up")
     hide screen hermione_main
     m "Very good, now beg me."
-    call her_main("Beg you to what?","silly","dead")
+    call her_main("Beg you to what?", "silly", "narrow", "base", "dead")
     hide screen hermione_main
     m "Beg me to cum inside your pussy, whore."
-    call her_main("Please fill my little pussy with your thick cum.","grin","dead")
+    call her_main("Please fill my little pussy with your thick cum.", "grin", "narrow", "base", "dead")
     hide screen hermione_main
     m "That's a good little whore, who else have you told that to?"
     m "Is it just me or do you beg every other boy you meet to cum inside you?"
@@ -308,13 +308,13 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("!!!","scream","surprised",cheeks="blush",tears="messy")
     hide screen hermione_main
     m "That's it, take it all you fucking slut."
-    call her_main("...","grin","dead",cheeks="blush",tears="messy")
+    call her_main("...", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
     hide screen hermione_main
     m "Well aren't you going to at least be grateful."
     call her_main("...Thank you [genie_name].", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
     hide screen hermione_main
     m "Thank you for what?"
-    call her_main("Thank you for ... cumming in my pussy.","grin","dead",cheeks="blush",tears="messy")
+    call her_main("Thank you for ... cumming in my pussy.", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
     hide screen hermione_main
     m "You're welcome girl. A good whore should always be grateful."
     call her_main("Yes [genie_name].", "grin", "closed", "base", "mid",cheeks="blush",tears="mascara")
@@ -354,7 +354,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     $ collar = 3
     call update_her_uniform
 
-    call her_main("Goodbye [genie_name].","angry","dead",cheeks="blush",tears="crying")
+    call her_main("Goodbye [genie_name].", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
     m "Goodbye whore."
 
     call her_walk(action="leave", speed=2.5)
@@ -481,7 +481,7 @@ label slave_scene:
 
     ">Slap!"
     m "What was that girl? It almost sounded like you didn't call me master."
-    call her_main("Thank you master, thank you master.","grin","dead")
+    call her_main("Thank you master, thank you master.", "grin", "narrow", "base", "dead")
     hide screen hermione_main
     m "That's it girl."
     ">Hermione closes her eyes as she rides out the last of her orgasm."

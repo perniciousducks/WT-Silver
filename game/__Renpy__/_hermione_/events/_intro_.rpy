@@ -817,7 +817,7 @@ label hermione_intro_E4:
     her "..............................."
     m "Miss Granger?!!"
 
-    call her_main("","upset","dead", tears="mascara", xpos="right", ypos="base")
+    call her_main("", "upset", "narrow", "base", "dead", tears="mascara", xpos="right", ypos="base")
     call ctc
 
     her "Huh?"

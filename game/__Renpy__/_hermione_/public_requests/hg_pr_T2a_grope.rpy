@@ -335,7 +335,7 @@ label hg_pr_grope_T2_E3:
     m "So he didn't touch your tits, or your butt?"
     call her_main("No, [genie_name]... *sob!*","shock","down_raised", cheeks="blush", tears="crying")
     m "Alright, then what happened?"
-    call her_main("Nothing! I couldn't bear the humiliation... I just ran...","angry","dead", cheeks="blush", tears="crying")
+    call her_main("Nothing! I couldn't bear the humiliation... I just ran...", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
     her "I even left my shoes behind and had to come back later to pick them up..."
     call her_main("*Sob!*............","angry","suspicious", cheeks="blush", tears="messy")
     m "Hm..."

@@ -431,7 +431,7 @@ label slytherin_cheer_responses:
                 call her_main("Well that's not how it started. I was initially just giving them a bit of a dance in the locker room...","angry","down_raised")
                 her "And one thing led to another."
                 m "Fine, I don't want to hear it. How much did they pay you for this \"cheering\"?"
-                call her_main("Pay me?","silly","dead")
+                call her_main("Pay me?", "silly", "narrow", "base", "dead")
                 m "You are supposed to be paid for this [hermione_name]."
                 call her_main("Oh... I must have forgotten. Sorry [genie_name]", "base", "base", "base", "R",cheeks="blush")
                 m "Fine, but you aren't getting any points."
@@ -668,7 +668,7 @@ label hermione_helping_selling_cards:
         $ gryffindor += 25
     else:
         $ uni_sperm = True
-        call her_main("","cum","dead")
+        call her_main("", "cum", "narrow", "base", "dead")
         m "What happened to you?"
         call her_main("What do you mean...", "open", "narrow", "worried", "mid_soft")
         call her_main("Oh, that...","base","down", cheeks="blush")

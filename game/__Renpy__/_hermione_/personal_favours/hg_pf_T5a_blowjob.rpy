@@ -564,13 +564,13 @@ label hg_pf_blowjob_1:
             m "Well, I think that's it."
             call her_main("..............","cum","worriedCl")
             m "Are you alright there, [hermione_name]?"
-            call her_main("Yes, [genie_name]...","grin","dead")
+            call her_main("Yes, [genie_name]...", "grin", "narrow", "base", "dead")
             call her_main("You came so much...")
             m "You managed to swallow it all though."
-            call her_main("Yes... I thought I would choke...","grin","dead")
+            call her_main("Yes... I thought I would choke...", "grin", "narrow", "base", "dead")
             call her_main("But I made a promise to myself that I won't let go of your penis no matter what!")
             m "Good girl."
-            call her_main("Thank you, [genie_name].","grin","dead")
+            call her_main("Thank you, [genie_name].", "grin", "narrow", "base", "dead")
             call her_main("But, still... You came so much...")
             call her_main("I almost feel as if I just got fed...", "soft", "narrow", "annoyed", "up")
             call her_main("My stomach is so full...")
@@ -1270,13 +1270,13 @@ label hg_hidden_blowjob_cumming:
         "\"I Plan to splatter your face with cum!\"":
             call her_main("I see...", "soft", "narrow", "annoyed", "up", ypos="head")
             m "Why do you ask?"
-            call her_main("Oh... I just read in a book that semen contains a lot of antioxidants...","grin","dead")
+            call her_main("Oh... I just read in a book that semen contains a lot of antioxidants...", "grin", "narrow", "base", "dead")
             call her_main("It's good for the skin...")
             m "Great. One facial coming up."
             m "Back to work now."
 
         "\"I Plan to fill your mouth with cum!\"":
-            call her_main("I see...","grin","dead", ypos="head")
+            call her_main("I see...", "grin", "narrow", "base", "dead", ypos="head")
             m "Why do you ask?"
             call her_main("Well, I am trying to watch my calorie-intake...", "soft", "narrow", "annoyed", "up")
             call her_main("I just wonder how much calories your load contains, [genie_name].")
@@ -1298,10 +1298,10 @@ label hg_hidden_blowjob_cumming:
 
             $ random_number = renpy.random.randint(1, 2)
             if random_number == 1:
-                call her_main("I would like you to cum on my face, [genie_name].","grin","dead")
+                call her_main("I would like you to cum on my face, [genie_name].", "grin", "narrow", "base", "dead")
                 call her_main("I read that it's good for the skin.")
             else:
-                call her_main("I would like you to cum in my mouth.","grin","dead")
+                call her_main("I would like you to cum in my mouth.", "grin", "narrow", "base", "dead")
                 call her_main("You usually cum so much so I think I will be able to just skip my next meal...")
                 call her_main("And do some homework instead.")
 
@@ -1338,7 +1338,7 @@ label hg_hidden_blowjob_cumming:
         call her_main("It's all I can think about [genie_name].","base","down")
         call her_main("Sucking your dirty old cock...")
         m "Well you better get back to it then [hermione_name]"
-        call her_main("Thank you, [genie_name].","grin","dead")
+        call her_main("Thank you, [genie_name].", "grin", "narrow", "base", "dead")
         m "You're welcome, cumslut."
         call her_main("...", "base", "narrow", "base", "up")
 
@@ -1385,7 +1385,7 @@ label hg_hidden_blowjob_cumming:
             m "You can let go now..."
 
             call hg_chibi_transition("bj_pause")
-            call her_main("...........................","full_cum","dead", xpos="mid", ypos="base")
+            call her_main("...........................", "full_cum", "narrow", "base", "dead", xpos="mid", ypos="base")
             call her_main("................")
             call her_main("........")
             $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
@@ -1393,12 +1393,12 @@ label hg_hidden_blowjob_cumming:
             call her_main("Gua-ha...", "open_wide_tongue", "base", "base", "mid")
             m "You alright?"
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("Yes, [genie_name]...","grin","dead")
+            call her_main("Yes, [genie_name]...", "grin", "narrow", "base", "dead")
             m "Going to skip your next meal?"
-            call her_main("I think so...","grin","dead")
+            call her_main("I think so...", "grin", "narrow", "base", "dead")
             call her_main("You always cum so much, [genie_name]...")
             m "Heh... And who's fault is that??"
-            call her_main(".............","grin","dead") #Smile.
+            call her_main(".............", "grin", "narrow", "base", "dead") #Smile.
             call her_main("Can I get paid now?")
 
             if her_tier >= 6:
@@ -1412,7 +1412,7 @@ label hg_hidden_blowjob_cumming:
         "-Cum on her face-":
             call hg_chibi_transition("bj_pause")
             g4 "Ready for your facial, [hermione_name]?"
-            call her_main("Yes [genie_name]!","grin","dead", ypos="head")
+            call her_main("Yes [genie_name]!", "grin", "narrow", "base", "dead", ypos="head")
             g4 "Here it comes then!"
 
             call cum_block
@@ -1430,15 +1430,15 @@ label hg_hidden_blowjob_cumming:
 
             call her_main("[genie_name]...", "cumshot", "wide", "base", "stare")
             g4 "All over your fucking face!"
-            call her_main("*Aaah!*","grin","dead")
+            call her_main("*Aaah!*", "grin", "narrow", "base", "dead")
 
             call hg_chibi_transition("bj_cumming_out_blink")
             m "Well, I'm done."
-            call her_main("....................................","grin","dead")
+            call her_main("....................................", "grin", "narrow", "base", "dead")
             m "I said it's over, [hermione_name]."
-            call her_main("Yes, I heard you [genie_name]...","grin","dead")
+            call her_main("Yes, I heard you [genie_name]...", "grin", "narrow", "base", "dead")
             m "So... Aren't you going to clean up?"
-            call her_main("In a moment...","grin","dead")
+            call her_main("In a moment...", "grin", "narrow", "base", "dead")
             call her_main("I'm giving my skin time to soak in the anti-oxidants...")
             m "Hm... I find this quite hot..."
             m "Take your time, [hermione_name]..."
@@ -1459,7 +1459,7 @@ label hg_hidden_blowjob_cumming:
             call her_main("I take it you enjoyed yourself, [genie_name]?","angry","wink", xpos="mid", ypos="base")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "Yes I did, [hermione_name]."
-            call her_main("Good, so Can I get paid now?","grin","dead")
+            call her_main("Good, so Can I get paid now?", "grin", "narrow", "base", "dead")
 
             if her_tier >= 6:
                 m "What, even after I just gave you a salon treatment?"
@@ -1510,7 +1510,7 @@ label hg_pf_blowjob_2:
             call her_main("My father?","angry","wink", ypos="head")
             m "Anything wrong with that?"
             call her_main("I suppose not...","base","down")
-            call her_main("I mean it's just pretending...","grin","dead")
+            call her_main("I mean it's just pretending...", "grin", "narrow", "base", "dead")
             m "Great. Dick back in mouth then."
 
             call hg_chibi_transition("bj")
@@ -1535,50 +1535,50 @@ label hg_pf_blowjob_2:
             call hg_chibi_transition("bj_pause")
             call her_main("I even wish that mum left you sometimes...","annoyed","down")
             call hg_chibi_transition("bj")
-            call her_main("*Gobble!* *Slurp!* *lick!*","sucking","dead")
+            call her_main("*Gobble!* *Slurp!* *lick!*", "sucking", "narrow", "base", "dead")
             m "Why's that?"
             call hg_chibi_transition("bj_pause")
-            call her_main("So that I'm the only one to get your dick...","soft","dead")
+            call her_main("So that I'm the only one to get your dick...", "soft", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
             call hg_chibi_transition("bj_pause")
-            call her_main("You'll come home every day...","soft","dead")
+            call her_main("You'll come home every day...", "soft", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
             call hg_chibi_transition("bj_pause")
-            call her_main("Throw me onto my bed...","grin","dead")
+            call her_main("Throw me onto my bed...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
             call hg_chibi_transition("bj_pause")
-            call her_main("and use me...","grin","dead")
+            call her_main("and use me...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
             call hg_chibi_transition("bj_pause")
-            call her_main("however you want...","grin","dead")
+            call her_main("however you want...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
             call hg_chibi_transition("bj_pause")
-            call her_main("for as long as you want...","grin","dead")
+            call her_main("for as long as you want...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
             call hg_chibi_transition("bj_pause")
-            call her_main("you won't even ask...","grin","dead")
+            call her_main("you won't even ask...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
             call hg_chibi_transition("bj_pause")
-            call her_main("you'll just take me...","grin","dead")
+            call her_main("you'll just take me...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","dead")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "dead")
             call hg_chibi_transition("bj_pause")
-            call her_main("even though I say no...","grin","dead")
+            call her_main("even though I say no...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
             m "That's it princess, Almost there..."
             call hg_chibi_transition("bj_pause")
             call her_main("Where do you want to cum today daddy?", "soft", "narrow", "annoyed", "up")
             call her_main("Are you going to cover my face?", "soft", "narrow", "annoyed", "up")
-            call her_main("Or make me swallow your big load?","grin","dead")
-            call her_main("{size=-4}Even if I don't want to...{/size}","grin","dead")
+            call her_main("Or make me swallow your big load?", "grin", "narrow", "base", "dead")
+            call her_main("{size=-4}Even if I don't want to...{/size}", "grin", "narrow", "base", "dead")
             m "Let's find out shall we?"
             call her_main("Yes daddy...", "soft", "narrow", "annoyed", "up")
             call hg_chibi_transition("bj")
@@ -1593,7 +1593,7 @@ label hg_pf_blowjob_2:
             g4 "Make daddy proud!"
             call her_main("!!! *Gobble-goble-slurp-goble!* !!!", "sucking", "narrow", "annoyed", "up")
             g4 "Yes, like that!"
-            call her_main("{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}","sucking","dead")
+            call her_main("{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}", "sucking", "narrow", "base", "dead")
             g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
             g4 "Ghr!!!"
 
@@ -1624,7 +1624,7 @@ label hg_pf_blowjob_2:
                     call bld
                     m "Well, I think that's it."
                     m "You can let go now..."
-                    call her_main("...........................","full_cum","dead", ypos="head")
+                    call her_main("...........................", "full_cum", "narrow", "base", "dead", ypos="head")
                     call her_main("................")
                     call her_main("........")
 
@@ -1634,19 +1634,19 @@ label hg_pf_blowjob_2:
                     m "How was that?"
 
                     call play_music("chipper_doodle") # HERMIONE'S THEME.
-                    call her_main("So tasty...","grin","dead")
+                    call her_main("So tasty...", "grin", "narrow", "base", "dead")
                     m "Really?"
-                    call her_main("Yes daddy...","grin","dead")
+                    call her_main("Yes daddy...", "grin", "narrow", "base", "dead")
                     call her_main("It's always tasty with you...")
                     m "Heh... is that so?"
-                    call her_main(".............","grin","dead")
+                    call her_main(".............", "grin", "narrow", "base", "dead")
                     call nar(">She leans forward and gives your wilting cock a small kiss.")
                     call her_main("Thanks, daddy!","base","glance")
 
                 "-Cum on her face-":
                     call hg_chibi_transition("bj_pause")
                     g4 "Ready for your cum-load, princess slut?"
-                    call her_main("Yes daddy!","grin","dead", ypos="head")
+                    call her_main("Yes daddy!", "grin", "narrow", "base", "dead", ypos="head")
                     g4 "Here it comes then!"
 
                     call cum_block
@@ -1655,7 +1655,7 @@ label hg_pf_blowjob_2:
 
                     call bld
                     g4 "{size=+7}Slut!{/size}"
-                    call her_main("!!?","cumshot","dead")
+                    call her_main("!!?", "cumshot", "narrow", "base", "dead")
                     call ctc
 
                     $ uni_sperm = True
@@ -1663,18 +1663,18 @@ label hg_pf_blowjob_2:
 
                     call her_main("Daddy...", "cumshot", "wide", "base", "stare")
                     g4 "That's it, princess!"
-                    call her_main("Aaah!","grin","dead")
+                    call her_main("Aaah!", "grin", "narrow", "base", "dead")
 
                     call hg_chibi_transition("bj_cumming_out_blink", trans="d5")
                     pause.8
 
                     call bld
                     m "Well, I'm done."
-                    call her_main("....................................","grin","dead")
+                    call her_main("....................................", "grin", "narrow", "base", "dead")
                     m "I said it's over, [hermione_name]."
-                    call her_main("Yes, I heard you, daddy...","grin","dead")
+                    call her_main("Yes, I heard you, daddy...", "grin", "narrow", "base", "dead")
                     m "So... Aren't you going to clean up?"
-                    call her_main("In a minute...","grin","dead")
+                    call her_main("In a minute...", "grin", "narrow", "base", "dead")
                     call her_main("I'm just savouring the moment...")
                     m "Hm..."
                     m "Take your time, [hermione_name]..."
@@ -1704,7 +1704,7 @@ label hg_pf_blowjob_2:
             call hg_chibi_transition("bj")
             call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
             m "That's it.."
-            call her_main("*Slurp!* *Gulp!* *Slurp!*","sucking","dead")
+            call her_main("*Slurp!* *Gulp!* *Slurp!*", "sucking", "narrow", "base", "dead")
             m "Tell me how much you love my cock."
             call her_main("*Slurp!* *Gobble!* *Slurp!*", "sucking", "narrow", "base", "up")
             call hg_chibi_transition("bj_pause")
@@ -1723,7 +1723,7 @@ label hg_pf_blowjob_2:
                 call hg_chibi_transition("bj")
                 call her_main("*lick!* *Slurp!* *Slurp!*", "sucking", "narrow", "base", "up")
                 call hg_chibi_transition("bj_pause")
-                call her_main("Just your {p}perfect, {p}beautiful {p}{size=-4}cock{/size}","grin","dead")
+                call her_main("Just your {p}perfect, {p}beautiful {p}{size=-4}cock{/size}", "grin", "narrow", "base", "dead")
                 call hg_chibi_transition("bj")
                 call her_main("*Gobble!* *Slurp!* *lick!*", "sucking", "narrow", "annoyed", "up")
 
@@ -1732,51 +1732,51 @@ label hg_pf_blowjob_2:
                 call her_main("Even when you make me suck another boys dick...", "base", "narrow", "base", "up")
                 call her_main("I still imagine that it's yours...", "base", "narrow", "base", "up")
                 call hg_chibi_transition("bj")
-                call her_main("*lick!* *Slurp!* *Slurp!*","sucking","dead")
+                call her_main("*lick!* *Slurp!* *Slurp!*", "sucking", "narrow", "base", "dead")
                 call hg_chibi_transition("bj_pause")
                 call her_main("Imagine that it's your cum sliding down my throat...", "soft", "narrow", "annoyed", "up")
                 call hg_chibi_transition("bj")
-                call her_main("*Gobble!* *Slurp!* *lick!*","sucking","dead")
+                call her_main("*Gobble!* *Slurp!* *lick!*", "sucking", "narrow", "base", "dead")
                 call hg_chibi_transition("bj_pause")
-                call her_main("Imagine that it's your hot load shot across my face...","grin","dead")
+                call her_main("Imagine that it's your hot load shot across my face...", "grin", "narrow", "base", "dead")
                 call hg_chibi_transition("bj")
                 call her_main("*Gobble!* *Slurp!* *lick!*", "sucking", "narrow", "base", "up")
 
             m "Is that so?"
             call hg_chibi_transition("bj_pause")
-            call her_main("Yes [genie_name]...","soft","dead")
+            call her_main("Yes [genie_name]...", "soft", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
             call hg_chibi_transition("bj_pause")
-            call her_main("Sometimes...","soft","dead")
+            call her_main("Sometimes...", "soft", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","dead")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "dead")
             call hg_chibi_transition("bj_pause")
-            call her_main("After you make me suck your perfect cock...","grin","dead")
+            call her_main("After you make me suck your perfect cock...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
             call hg_chibi_transition("bj_pause")
-            call her_main("I won't brush my teeth...","grin","dead")
+            call her_main("I won't brush my teeth...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "angry", "mid", "up")
             call hg_chibi_transition("bj_pause")
-            call her_main("just so I can go to sleep...","grin","dead")
+            call her_main("just so I can go to sleep...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
             call hg_chibi_transition("bj_pause")
-            call her_main("with that perfect taste in my mouth...","grin","dead")
+            call her_main("with that perfect taste in my mouth...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
-            call her_main("*Gobble!* *lick!* *Gobble!*","sucking","dead")
+            call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "dead")
             call hg_chibi_transition("bj_pause")
-            call her_main("and when I do brush my teeth...","grin","dead")
+            call her_main("and when I do brush my teeth...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "base", "up")
             call hg_chibi_transition("bj_pause")
-            call her_main("Your beautiful cock is all I can think about...","grin","dead")
+            call her_main("Your beautiful cock is all I can think about...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*","sucking","down")
             call hg_chibi_transition("bj_pause")
-            call her_main("I even started to moan while brushing them...","grin","dead")
+            call her_main("I even started to moan while brushing them...", "grin", "narrow", "base", "dead")
             call hg_chibi_transition("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
             m "That's it cock slut, Almost there..."
@@ -1828,14 +1828,14 @@ label hg_pf_blowjob_2:
             m "You can let go now..."
 
             call hg_chibi_transition("bj_pause")
-            call her_main("...........................","full_cum","dead", tears="mascara", xpos="mid", ypos="base", trans="fade")
-            call her_main("................","full_cum","dead", tears="mascara")
-            call her_main("........","full_cum","dead", tears="mascara")
+            call her_main("...........................", "full_cum", "narrow", "base", "dead", tears="mascara", xpos="mid", ypos="base", trans="fade")
+            call her_main("................", "full_cum", "narrow", "base", "dead", tears="mascara")
+            call her_main("........", "full_cum", "narrow", "base", "dead", tears="mascara")
             m "How was that?"
             call her_main("...")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "Are you going to swallow?"
-            call her_main("*Shakes her head side to side*","full_cum","dead", tears="mascara")
+            call her_main("*Shakes her head side to side*", "full_cum", "narrow", "base", "dead", tears="mascara")
 
             if daytime:
                 m "So you're going to go to class with a mouth full of my cum?"

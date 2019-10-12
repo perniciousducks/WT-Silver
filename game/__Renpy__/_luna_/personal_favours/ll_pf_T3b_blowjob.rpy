@@ -1437,7 +1437,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=4)
-    call her_main("Do you think they wouldn't be able to hear it?","grin","dead")
+    call her_main("Do you think they wouldn't be able to hear it?", "grin", "narrow", "base", "dead")
     $ lunCG(pos=8)
     call her_main("To {b}smell{/b} it?","open_tongue","dead_mad")
     $ lunCG('', 'mad', '', 'ahegao', pos=14)

@@ -609,7 +609,7 @@ label hg_pf_titjob_2:
             call her_main("[genie_name], If you say that I have the perfect tits...", "soft", "narrow", "annoyed", "up")
             call nar(">She squeezes her tits around your cock.")
             $ ccg1 = 22
-            call her_main("This, has to be the perfect cock!","grin","dead")
+            call her_main("This, has to be the perfect cock!", "grin", "narrow", "base", "dead")
             g9 "Perfect you say?"
             call her_main("The size...","soft","down")
             call her_main("The shape...","base","down")
@@ -664,7 +664,7 @@ label hg_pf_titjob_2:
                     $ ccg1 = 24
                     call her_main("I am a shameless cumslut.", "soft", "narrow", "annoyed", "up")
                     $ ccg1 = 21
-                    call her_main("A dirty little slut who's addicted to the taste of my headmaster's cum...","grin","dead")
+                    call her_main("A dirty little slut who's addicted to the taste of my headmaster's cum...", "grin", "narrow", "base", "dead")
                     m "Yes! Good!"
 
                 "\"I love being covered in cum!\"":
@@ -675,7 +675,7 @@ label hg_pf_titjob_2:
                     call her_main("smelly...")
                     call her_main("cum...")
                     $ ccg1 = 23
-                    call her_main("...................................","grin","dead")
+                    call her_main("...................................", "grin", "narrow", "base", "dead")
                     $ ccg1 = 21
                     call her_main("How was that, [genie_name]?","angry","wink")
                     m "Perfect."
@@ -779,7 +779,7 @@ label hg_pf_titjob_2_continue:
             call her_main("He even says I'm too old for hugs...", "annoyed", "closed", "base", "mid")
             call her_main("But I make sure to give him a big one every night before I go to bed...")
             call her_main("So that he'll think of me...","base","down")
-            call her_main("And how good I felt...","grin","dead")
+            call her_main("And how good I felt...", "grin", "narrow", "base", "dead")
             $ ccg1 = 24
             call her_main("Pressing into him...", "soft", "narrow", "annoyed", "up")
             m "That's it slut."
@@ -807,13 +807,13 @@ label hg_pf_titjob_2_continue:
             $ ccg1 = 23
             call her_main("Other times I'll just wear my vest with nothing on underneath...")
             m "And how do you feel..."
-            call her_main("So good...","silly","dead")
+            call her_main("So good...", "silly", "narrow", "base", "dead")
             call her_main("One time when I was walking back from your office at night I was barely covering them...","angry","wink")
             call her_main("And as I rounded a corner...", "soft", "narrow", "annoyed", "up")
             $ ccg1 = 24
             call her_main("A second year boy ran head first into them...", "grin", "narrow", "annoyed", "up")
             m "Head first into your tits?"
-            call her_main("All I could see was the top of his head...","grin","dead")
+            call her_main("All I could see was the top of his head...", "grin", "narrow", "base", "dead")
             m "What did he do?"
             call her_main("He tried to pull away...")
             m "Tried?"
@@ -873,11 +873,11 @@ label hg_pf_titjob_2_cumming:
 
             call her_main("!!!!!!!!!!!", "full", "wide", "base", "stare")
             g4 "Argh! You whore!"
-            call her_main("{image=textheart}{image=textheart}{image=textheart}","full_cum","dead")
+            call her_main("{image=textheart}{image=textheart}{image=textheart}", "full_cum", "narrow", "base", "dead")
             call cum_block
 
             g4 "Argh! you big-titted slut! Take it all!"
-            call her_main("...............","full_cum","dead")
+            call her_main("...............", "full_cum", "narrow", "base", "dead")
             m "............"
 
             call hg_chibi_transition("tj_cumming_in_pause", trans="d5")
@@ -885,9 +885,9 @@ label hg_pf_titjob_2_cumming:
 
             call bld
             m "Ok, I think I am done..."
-            call her_main("..............","full_cum","dead")
-            call her_main("........","full_cum","dead")
-            call her_main("...","full_cum","dead")
+            call her_main("..............", "full_cum", "narrow", "base", "dead")
+            call her_main("........", "full_cum", "narrow", "base", "dead")
+            call her_main("...", "full_cum", "narrow", "base", "dead")
 
             $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
             $ ccg1 = 27

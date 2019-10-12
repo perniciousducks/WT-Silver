@@ -277,7 +277,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 m "Make sure you get them nice and clean now..."
                 call her_main("*gulp*","full_cum","down",cheeks="blush")
                 m "That's it. Do you think they're clean yet."
-                call her_main("*Mmmhhhmmm*","full_cum","dead")
+                call her_main("*Mmmhhhmmm*", "full_cum", "narrow", "base", "dead")
                 m "Well then you can probably take them out of your mouth."
                 call her_main("*Ahhhhh*", "open_wide_tongue", "narrow", "annoyed", "up")
                 m "There, nice and clean."
@@ -412,7 +412,7 @@ label hg_ps_get_panties_complete:
         call her_main("Thank you for what?","angry","wink")
         m "For my cum"
         call her_main("...","base","down")
-        call her_main("Thank you for your cum [genie_name]...","grin","dead")
+        call her_main("Thank you for your cum [genie_name]...", "grin", "narrow", "base", "dead")
         m "You may go now."
         her "Good night, [genie_name]."
     else:

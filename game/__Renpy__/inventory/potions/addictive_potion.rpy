@@ -282,7 +282,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call cum_block
             call u_play_ani
             $ aftersperm = True
-            call her_main("mmmmmmm... *gulp* *gulp*","full_cum","dead")
+            call her_main("mmmmmmm... *gulp* *gulp*", "full_cum", "narrow", "base", "dead")
             hide screen hermione_main
             call nar(">Hermiones eyes go blank as she starts swallowing down your load.")
             call cum_block
@@ -290,7 +290,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call her_main("*gulp* *gulp* *gulp* *gulp*","cum","worriedCl")
             hide screen hermione_main
             call nar(">As she swallows you notice her legs start to convulse as she starts to orgasm.")
-            call her_main("*gulp* *gulp* *gulp* ","full_cum","dead")
+            call her_main("*gulp* *gulp* *gulp* ", "full_cum", "narrow", "base", "dead")
             hide screen hermione_main
             call nar(">You finally remove your shaft from her hungry mouth.")
             call u_pause_ani
@@ -302,7 +302,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             m "There, much better."
             call nar(">Her legs have not stopped quivering since you first came.")
             m "Well aren't you going to say anything [hermione_name]?"
-            call her_main("Thank you maste-","silly","dead")
+            call her_main("Thank you maste-", "silly", "narrow", "base", "dead")
             hide screen hermione_main
             call nar(">She collapses into a heap on the ground with her legs still shaking.")
 
@@ -371,7 +371,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
 
             menu:
                 "-Watch her-":
-                    call her_main("","full_cum","dead")
+                    call her_main("", "full_cum", "narrow", "base", "dead")
                     call nar(">She scoops up as much as she can into her palm and quickly moves it to her mouth.","start")
                 "-Make her lick it up-":
                     m "Not with your fingers [hermione_name]."
@@ -394,7 +394,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call her_main("{size=-4}I-I'm cumming...{/size}","cum","worriedCl")
             hide screen hermione_main
             m "What was that?"
-            call her_main("I'm cumming!","silly","dead")
+            call her_main("I'm cumming!", "silly", "narrow", "base", "dead")
             with vpunch
             hide screen hermione_main
             call nar(">Hermione's hand shoots under her skirt as she starts violently orgasming.")
@@ -619,14 +619,14 @@ label potion_scene_3_3_1: #Hypno potion
     m "You feel what?"
     call her_main("I-I feel grea--","annoyed","down")
     call nar(">Hermione's eyes go blank and she stares forward blankly.")
-    call her_main("What am I?","grin","dead")
+    call her_main("What am I?", "grin", "narrow", "base", "dead")
     m "Uhm..."
     m "(Should have thought of something. At least the potion seems to work. Lets see...)"
     menu:
         "-You're an airheaded bimbo-":
             show screen blktone
     #call set_h_hair(hair_style="B",color=2)
-    call her_main("I am an airheaded bimbo who only wants to make people happy...","soft","dead")
+    call her_main("I am an airheaded bimbo who only wants to make people happy...", "soft", "narrow", "base", "dead")
     menu:
         "-You love being covered in my cum-":
             pass
@@ -634,11 +634,11 @@ label potion_scene_3_3_1: #Hypno potion
     $ cum_badge_ITEM.unlocked = True
     call set_her_body_accessory("badge_cum")
 
-    call her_main("I love being covered in your cum...","soft","dead")
+    call her_main("I love being covered in your cum...", "soft", "narrow", "base", "dead")
     menu:
         "-Your breasts are incredibly sensitive to pleasure-":
             pass
-    call her_main("My breasts are incredibly sensitive to pleasure......","soft","dead")
+    call her_main("My breasts are incredibly sensitive to pleasure......", "soft", "narrow", "base", "dead")
     pause.5
 
     hide screen blktone
@@ -820,7 +820,7 @@ label potion_scene_3_3_1: #Hypno potion
             m "More."
             call her_main("geez, I'm a dumb bimbo fuckbunny... that just wants to feel happy...", "silly", "narrow", "annoyed", "up")
             m "And what makes you happy?"
-            call her_main("Making you happy{image=textheart} [genie_name].","silly","dead")
+            call her_main("Making you happy{image=textheart} [genie_name].", "silly", "narrow", "base", "dead")
             m "Good girl."
         "-let her touch herself-":
             m "Go on then."
@@ -914,7 +914,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("That felt {size=+5}SOOOOO!{/size} good!", "silly", "narrow", "annoyed", "up")
     call set_her_action("lift_breasts")
 
-    call her_main("Can we do it again! Please! Pretty please! Pretty please with cum on top!","silly","dead")
+    call her_main("Can we do it again! Please! Pretty please! Pretty please with cum on top!", "silly", "narrow", "base", "dead")
     m "Not today."
     call her_main("Awwwwww.","shock","worriedCl")
 

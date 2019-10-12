@@ -675,7 +675,7 @@ label l_tutoring:
         else:
             ">You quickly move your hand toward her pussy and rub it furiously."
 
-        call her_main("Yes! {image=textheart}","angry","dead",cheeks="blush",tears="crying")
+        call her_main("Yes! {image=textheart}", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
         her "I... I..."
         g9 "Came, my dear."
 
@@ -1168,12 +1168,12 @@ label l_tutoring:
         g9 "Faster? No problem!"
         hide screen groping_05
         show screen groping_05b
-        call her_main("Aaah, you're killing me {image=textheart}.","angry","dead",cheeks="blush",tears="crying")
+        call her_main("Aaah, you're killing me {image=textheart}.", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
         call her_main("{size=-2}(And I love it){/size}","silly","worried",cheeks="blush",tears="soft")
         m "More fingers?"
         call her_main("No more pleassse.", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
         m "Actually, it wasn't a question."
-        call her_main("If you keep this pace I will...","angry","dead",cheeks="blush",tears="crying")
+        call her_main("If you keep this pace I will...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
         call nar(">You feel her muscles tighten on your fingers.")
         call her_main("Come!!", "open_wide_tongue", "narrow", "base", "angry", "mid", "up",cheeks="blush")
         g9 "Good girl."
@@ -1355,7 +1355,7 @@ label l_tutoring:
         call nar(">You start fingering her pussy with your other hand. She is panting heavily.")
         call her_main("Ah... ah... like that yesss {image=textheart}.", "open_wide_tongue", "narrow", "base", "angry", "mid", "up",cheeks="blush")
         call nar(">You suddenly pull out all the beads.")
-        call her_main("Ahhhhhh!!","grin","dead",cheeks="blush",tears="messy")
+        call her_main("Ahhhhhh!!", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
         call nar(">And insert four fingers in her ass.")
         call her_main("I'm cumming old bastard, I cumming!", "silly", "narrow", "base", "up",cheeks="blush")
         m "If you must..."
@@ -1365,8 +1365,8 @@ label l_tutoring:
         call her_main("Agaaain aaah {image=textheart}.", "open_wide_tongue", "narrow", "base", "angry", "mid", "up",cheeks="blush")
         g11 "Sorry my little anal whore but I'm starting to get tired."
         call her_main("Don't you dare stop now!", "scream", "base", "angry", "mid",cheeks="blush",tears="messy")
-        call her_main("Just a little more pleassse {image=textheart}.","grin","dead",cheeks="blush",tears="messy")
-        call her_main("Because I will...","grin","dead",cheeks="blush",tears="messy")
+        call her_main("Just a little more pleassse {image=textheart}.", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
+        call her_main("Because I will...", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
         call her_main("Come again!!", "open_wide_tongue", "narrow", "base", "angry", "mid", "up",cheeks="blush")
         hide screen hermione_main
         call blkfade
@@ -1630,7 +1630,7 @@ label l_tutoring:
         call her_main("Sweet Circe, aah, aah, that's too much! {image=textheart}", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
         m "Nothing is too much for my little whore."
         call nar(">You increase the pace of both hands.")
-        call her_main("No, no, yes, yessss! {image=textheart}","grin","dead",cheeks="blush",tears="messy")
+        call her_main("No, no, yes, yessss! {image=textheart}", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
         call nar(">Most of the bottle is inside her now, leaving just enough to get a good grip.")
         m "Push the bottle, push it!"
         call nar(">Whenever she pushes it back you do the same in the other direction.")
@@ -1645,7 +1645,7 @@ label l_tutoring:
         call hide_blkfade
         call ctc
 
-        call her_main("*Panting* *panting*","grin","dead",cheeks="blush",tears="messy",ypos="head")
+        call her_main("*Panting* *panting*", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy",ypos="head")
         call her_main("P-professor...{w=0.3} I'm so happy right now.", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
         g9 "Glad to hear it."
         hide screen hermione_main
@@ -1797,7 +1797,7 @@ label l_tutoring:
         call her_main("Mooore!", "open_wide_tongue", "narrow", "base", "angry", "mid", "up",cheeks="blush")
         play sound sd_slap
         with hpunch
-        call her_main("I'm about to...","angry","dead",cheeks="blush",tears="crying")
+        call her_main("I'm about to...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
         play sound sd_slap
         with hpunch
         pause.1

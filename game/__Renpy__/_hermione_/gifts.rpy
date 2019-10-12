@@ -365,7 +365,7 @@ label give_her_gift(gift_item):
             call her_mood(-7)
         elif her_whoring >= 18: # Lv 7+
             call her_main("sexy lingerie?","base","down")
-            call her_main("Do You think it will make me look like one of the witches in those adult magazines, [genie_name]?","grin","dead")
+            call her_main("Do You think it will make me look like one of the witches in those adult magazines, [genie_name]?", "grin", "narrow", "base", "dead")
             call her_main("Oh... I mean, thank you, [genie_name].","angry","wink")
             call give_gift(">You give the lingerie to Hermione...",gift_item)
             call her_mood(-15)
@@ -545,7 +545,7 @@ label give_her_gift(gift_item):
             call her_main("Is it really modelled after a thestral?", "open", "base", "base", "R",cheeks="blush")
             call her_main("But the creatures are invisible...", "open", "happy", "base", "mid",cheeks="blush")
             call her_main("..................","angry","down_raised")
-            call her_main("Breathtaking...","grin","dead")
+            call her_main("Breathtaking...", "grin", "narrow", "base", "dead")
             call her_main("Not in the way you think, [genie_name]...", "upset", "closed", "base", "mid")
             call her_main("I am merely admiring the craftsmanship...", "open", "closed", "base", "mid")
             call give_gift(">You give the strap-on to Hermione...",gift_item)

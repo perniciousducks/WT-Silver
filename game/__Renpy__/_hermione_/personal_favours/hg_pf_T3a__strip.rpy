@@ -566,7 +566,7 @@ label hg_pf_strip_T1_intro_E2:
     call her_main("(Especially my father...)", "annoyed", "closed", "base", "mid")
     ">Hermione is starting to shake her tits again..."
     call her_main("(Hermione Granger - the stripper...)")
-    call her_main("(Forgive me father...)","annoyed","dead")
+    call her_main("(Forgive me father...)", "annoyed", "narrow", "base", "dead")
 
     ">Hermione puts her hands on her tits and starts squeezing them..."
     ">You can only assume that she means to look seductive, but she just looks awkward and ashamed."
@@ -1353,7 +1353,7 @@ label hg_pf_strip_T2_masturbate:
     show screen blktone
     call her_main("Time for the finishing act I suppose...", "annoyed", "closed", "base", "mid")
     m "Yes, [hermione_name]! Take them off!"
-    call her_main("........","annoyed","dead")
+    call her_main("........", "annoyed", "narrow", "base", "dead")
     if h_request_wear_panties or hermione_wear_panties:
         call nar(">Hermione bends over slightly and slides her panties down...")
 
@@ -1370,7 +1370,7 @@ label hg_pf_strip_T2_masturbate:
 
     call nar(">None the less you decide to show her some appreciation...","start")
     call nar(">By stroking your cock even faster!","end")
-    call her_main("..........","annoyed","dead")
+    call her_main("..........", "annoyed", "narrow", "base", "dead")
     call nar(">Suddenly Hermione breaks into a whole series of rather complex pirouettes...")
     m "{size=-4}(This looks quite impressive actually...){/size}"
 

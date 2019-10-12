@@ -1294,7 +1294,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         m "Yes..."
         call lun_main("mmmmm, he's so hard...","base","seductive","sad","down", cheeks="blush")
         call set_her_action("pinch")
-        call her_main("I can imagine","grin","dead")
+        call her_main("I can imagine", "grin", "narrow", "base", "dead")
         m "ugh..."
         call lun_main("he's probably going to cum soon...","base","mad","sad","R", cheeks="blush")
         m "probably..."

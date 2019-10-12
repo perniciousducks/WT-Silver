@@ -142,7 +142,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 g9 "Yes ye be!"
                 call her_main("*Sob!* I be a wench...","angry","suspicious",cheeks="blush")
                 call her_main("I love t' suck ye pegleg...")
-                call her_main("'n now me wee asshole be gettin' ripped t' pieces... *Sob!*","angry","dead",cheeks="blush",tears="crying")
+                call her_main("'n now me wee asshole be gettin' ripped t' pieces... *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 g4 "Shiver Me Timbers!"
                 g4 "Agrh! Thar She Blows!"
                 call her_main("No! Be it gettin' bigger?! I be like a harpoon!","open","surprised",cheeks="blush",tears="messy")
@@ -295,12 +295,12 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("'cause 'tis cavern be too shallow for ye ship...","clench","worried",cheeks="blush",tears="soft")
                 call her_main("'n I jus' wants ye t' cum sooner, captain...")
                 m "So ye stifle yer cries o' pain?"
-                call her_main("Aye captain. *Sob!*","angry","dead",cheeks="blush",tears="crying")
+                call her_main("Aye captain. *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 m "Nah on me ship lass."
                 m "Sob, scream 'n cry as much as ye wish!"
                 call her_main("B-but--","clench","worried",cheeks="blush",tears="soft")
                 m "That shall make me canon ready t' fire in ye broadside."
-                call her_main("be this true? *Sob!*","angry","dead",cheeks="blush",tears="crying")
+                call her_main("be this true? *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 call her_main("*Sob!* Me hull! *Sob!* It be taking in water! *Sob!*", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "Aye, ye ship be sinking... ye booty be mine."
                 call her_main("*SOB!*","angry","suspicious",cheeks="blush",tears="messy")
@@ -363,14 +363,14 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
                 $ g_c_u_pic = "ani_her_sex_cum_inside_blink"
 
-                call her_main("*Sob!*...","angry","dead",cheeks="blush",tears="crying")
+                call her_main("*Sob!*...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 m "Whew!... I reckon me gunpowder needs restocking in the next harbour.' it be."
                 m "Ye afloat lass?"
-                call her_main("Aye... *Sob!*","angry","dead",cheeks="blush",tears="crying")
+                call her_main("Aye... *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 m "Is that sea water in ye eyes?"
-                call her_main("Me bilge is flooded, but me pumps be workin, captain...","angry","dead",cheeks="blush",tears="crying")
+                call her_main("Me bilge is flooded, but me pumps be workin, captain...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 m "Aye, ye took me canonfire broadside, Ye be a well built vessel ..."
-                call her_main("Thank ye captain...","angry","dead",cheeks="blush",tears="crying")
+                call her_main("Thank ye captain...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 hide screen bld1
                 with d3
                 call ctc
@@ -415,7 +415,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ uni_sperm = True
                 $ u_sperm = "characters/hermione/face/auto_08.png"
 
-                call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}","silly","dead",ypos="head")
+                call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead",ypos="head")
                 g4 "Aye!!! All over yer hold!"
                 call her_main("Ah... No, me hull!", "silly", "narrow", "annoyed", "up")
                 hide screen bld1
@@ -552,7 +552,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Ehm, I mean, lass."
                 call her_main("No, \"wench\" be good. you be calling me that more, captain.", "silly", "narrow", "annoyed", "up")
                 m "Thar, ye see? Ye be a great catch, I be tellin' ye, wench."
-                call her_main("Ah...{image=textheart} Thank you, captain.","angry","dead",cheeks="blush",tears="crying")
+                call her_main("Ah...{image=textheart} Thank you, captain.", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 m "Huh?"
                 m "Ye helm be leakin."
                 pass
@@ -560,7 +560,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
             "\"A pirate not plunderin t' be wit' ye be o' th' picture\"":
                 call her_main("I be thinkin that...","shock","down_raised",cheeks="blush",tears="crying",ypos="head")
                 m "Oh... I jus' love that wee cavern o' yers!"
-                call her_main(".....................","angry","dead",cheeks="blush",tears="crying")
+                call her_main(".....................", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 call her_main("Aye... Aft all th' thin's I had t' do fer me crew...")
                 call her_main("...nah one we pirate would leave th' sea fer me...","angry","suspicious",cheeks="blush",tears="messy")
                 m "Oh, they be leavin th's sea fer ye alright!"
@@ -576,13 +576,13 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Now wiggle that wee arse o' yers a wee."
                 call her_main("Like this?","silly","worried",cheeks="blush",tears="soft")
                 m  "Aye, that be a good wench."
-                call her_main("I be a wench, aren't I?","silly","dead")
+                call her_main("I be a wench, aren't I?", "silly", "narrow", "base", "dead")
                 m "Ye jus' sold me yer asshole fer 90 galleon points. What ye be calling that?"
                 call her_main("Yes, yes...{image=textheart} I be nothing but a wench...{image=textheart}","silly","worried",cheeks="blush",tears="soft")
                 m "Ye helm be leakin."
                 pass
 
-        call her_main("Not only me helm, captain...{image=textheart}{image=textheart}{image=textheart}","silly","dead")
+        call her_main("Not only me helm, captain...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead")
         m "Not just ye helm?"
         call her_main("I'm cumming captain...{image=textheart}{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up")
         g4 "Agh! My cock!"
@@ -643,14 +643,14 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ uni_sperm = True
                 $ u_sperm = "characters/hermione/face/auto_08.png"
 
-                call her_main("Ah-aha! Ye're cummin'! {image=textheart}{image=textheart}{image=textheart}","silly","dead",ypos="head")
+                call her_main("Ah-aha! Ye're cummin'! {image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead",ypos="head")
                 g4 "{size=+7}Aye I do, wench{/size}"
                 call her_main("Blisterin' Barnacles, me too! Me too!","scream","worriedCl",cheeks="blush",tears="messy")
                 g4 "{size=+7}FARRRGIN' WENCH!{/size}"
                 $ renpy.play('sounds/cannon.mp3')
                 call cum_block
                 with hpunch
-                call her_main("Ah...{image=textheart} yer cum...{image=textheart}","angry","dead",cheeks="blush",tears="crying")
+                call her_main("Ah...{image=textheart} yer cum...{image=textheart}", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 call her_main("Ye covered me whole deck{image=textheart}{image=textheart}{image=textheart}")
                 g4 "Aye!!! All o'er yer hull!"
                 $ renpy.play('sounds/cannon.mp3')
@@ -666,11 +666,11 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         $ face_on_cg = False
 
         m "Well, tis been intense..."
-        call her_main("Ah-ha...{image=textheart} ah...{image=textheart}","grin","dead",cheeks="blush",tears="messy",ypos="head")
+        call her_main("Ah-ha...{image=textheart} ah...{image=textheart}", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy",ypos="head")
         m "Ye be fine lass?"
-        call her_main("I reckon so... I be nah sure...","grin","dead",cheeks="blush",tears="messy")
-        call her_main("I reckon I may still be leakin', captain.","grin","dead",cheeks="blush",tears="messy")
-        call her_main("Or maybe nah...","grin","dead",cheeks="blush",tears="messy")
+        call her_main("I reckon so... I be nah sure...", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
+        call her_main("I reckon I may still be leakin', captain.", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
+        call her_main("Or maybe nah...", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
         call her_main("Everythin' be in a daze... 'n me legs feel so weak...")
         if her_whoring < 24:
             her "Can I jus' get paid now, captain?"

@@ -418,7 +418,7 @@ label hg_pf_grope_breasts_T4_naked: # No top.
     call nar(">Hermione's tits bounce all over the place, completely out of control")
     call her_main("A-ah!!! Ah!!! A-a-aha!!!", "silly", "narrow", "annoyed", "up", cheeks="blush", tears="soft")
     m "You enjoy this. Admit it."
-    call her_main("...........","base","dead", cheeks="blush", tears="soft")
+    call her_main("...........", "base", "narrow", "base", "dead", cheeks="blush", tears="soft")
     call nar(">You smack her tits again.")
 
     call slap_her
@@ -471,7 +471,7 @@ label hg_pf_grope_breasts_T5_naked:
     call her_main("Ah... [genie_name], please...", "scream", "wide", "base", "stare")
     call nar(">Hermione clutches the edge of your desk to keep herself from taking a step towards you...")
     m "Good girl..."
-    call her_main("*Panting heavily*","grin","dead")
+    call her_main("*Panting heavily*", "grin", "narrow", "base", "dead")
     m "Do you enjoy this?"
     call her_main("You are hurting me, [genie_name]...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "But do you enjoy it?"

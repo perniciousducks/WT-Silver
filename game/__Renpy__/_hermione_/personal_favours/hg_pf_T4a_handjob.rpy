@@ -693,7 +693,7 @@ label hg_pf_handjob_2:
                     call her_main("I love to swallow cum!", "soft", "narrow", "annoyed", "up")
                     call her_main("It is truly the best to swallow cum!")
                     call her_main("I love it!")
-                    call her_main("...................................","grin","dead")
+                    call her_main("...................................", "grin", "narrow", "base", "dead")
                     call her_main("How was that, [genie_name]?","angry","wink")
                     m "Perfect."
 
@@ -786,7 +786,7 @@ label hg_pf_handjob_2_continue:
             call hg_chibi_transition("hj_pause", trans="d5")
             pause.5
 
-            call her_main("But He doesn't listen! He rips my panties off!","grin","dead")
+            call her_main("But He doesn't listen! He rips my panties off!", "grin", "narrow", "base", "dead")
             call her_main("I beg him to stop! I scream and I scream!", "angry", "base", "base", "mid", tears="soft")
             m "Uhm, [hermione_name]?"
             call her_main("Yes?", "angry", "base", "base", "mid", tears="soft")
@@ -1011,7 +1011,7 @@ label hg_pf_handjob_2_cumming:
             m "I forgot about everything else..."
             call her_main("Oh...","angry","wink")
             her "Well, what's done is done..."
-            call her_main("I will just wipe it off and hope that nobody will notice...","grin","dead")
+            call her_main("I will just wipe it off and hope that nobody will notice...", "grin", "narrow", "base", "dead")
             call her_main("Can I get my payment now?","angry","wink")
 
         "\"(Cum in her mouth!)\"" if hg_blowjob.trigger == True: # Has done blowjobs already.
@@ -1047,16 +1047,16 @@ label hg_pf_handjob_2_cumming:
             call her_chibi("stand","desk","base")
             call gen_chibi("sit_behind_desk")
 
-            call her_main("","full_cum","dead", xpos="right", ypos="base", trans="fade")
+            call her_main("", "full_cum", "narrow", "base", "dead", xpos="right", ypos="base", trans="fade")
             call ctc
 
             her "........................................."
             call her_main("GULP!!!","cum","worriedCl")
             call her_main("Gu-ah-a...","open_wide_tongue","down_raised")
-            call her_main("I swallowed it all, [genie_name]!","grin","dead")
+            call her_main("I swallowed it all, [genie_name]!", "grin", "narrow", "base", "dead")
             m "Good girl..."
-            call her_main("At one point I thought I was going to choke...","open","dead")
-            call her_main("There was so much of it...","soft","dead")
+            call her_main("At one point I thought I was going to choke...", "open", "narrow", "base", "dead")
+            call her_main("There was so much of it...", "soft", "narrow", "base", "dead")
             m "Well, the deed is done, and your uniform is perfectly clean."
             call her_main("Yes! I know! It's So much easier this way!","base","down")
 

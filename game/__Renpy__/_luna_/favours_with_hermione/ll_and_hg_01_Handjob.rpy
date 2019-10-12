@@ -1074,7 +1074,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "(mmmm...)"
         $ luna_xpos = 530
         call lun_main("mmmmm... you taste even better...","base","happyCl","sad","mid")
-        call her_main("...","grin","dead")
+        call her_main("...", "grin", "narrow", "base", "dead")
         ">Hermione stands still, letting luna slowly wipe the cum from her face..."
         $ u_sperm = "characters/hermione/face/auto_08.png"
         call her_main("that's it... make sure you get it all...","base","down")

@@ -612,7 +612,7 @@ label hg_ps_buttplug_complete:
             $ sc34CG(1, 16, 3)
             call her_main("block out everything else...","base","down")
             $ sc34CG(1, 17, 2)
-            call her_main("...embrace it...","grin","dead")
+            call her_main("...embrace it...", "grin", "narrow", "base", "dead")
             m "and how did you do that?"
             call her_main("well if I rock my hips while I'm sitting in class it's almost enough...","base","glance")
             $ sc34CG(1, 16, 3)
@@ -685,7 +685,7 @@ label hg_ps_buttplug_complete:
             call her_main("Of course not, [genie_name].", "base", "base", "base", "R",cheeks="blush")
             m "Then why do it?"
             call her_main("Well, it just sort of just happened...", "open", "happy", "base", "mid",cheeks="blush")
-            call her_main("plus the look on their faces when they noticed it...","grin","dead")
+            call her_main("plus the look on their faces when they noticed it...", "grin", "narrow", "base", "dead")
             call her_main("they could barely hide their...", "soft", "narrow", "annoyed", "up")
             m "So you like being seen then?"
             call her_main("well...", "open", "base", "base", "R")
@@ -783,7 +783,7 @@ label hg_ps_buttplug_complete:
             call her_main("maybe... it felt so good that it was hard to keep it hidden.", "soft", "narrow", "annoyed", "up")
             her "But I think that just made her want to touch it more..."
             m "Hm..."
-            call her_main("I don't think I've ever had a better lesson...","grin","dead")
+            call her_main("I don't think I've ever had a better lesson...", "grin", "narrow", "base", "dead")
             m "Well it sounds like you've earned your points and then some."
 
         elif one_out_of_three == 2: ### EVENT (B)
@@ -802,7 +802,7 @@ label hg_ps_buttplug_complete:
             call her_main("Well, we decided to skip herbology class together...", "open", "base", "base", "R")
             call play_music("playful_tension") # SEX THEME.
             call her_main("And then she sort of grabbed it...", "grin", "narrow", "annoyed", "up")
-            call her_main("And she just played with it so aggressively...","grin","dead")
+            call her_main("And she just played with it so aggressively...", "grin", "narrow", "base", "dead")
             her "I was a mess afterwards..."
             g9 "And did you return the favour?"
 
@@ -868,11 +868,11 @@ label hg_ps_buttplug_complete:
             call her_main(".......","base","down")
             m "So did you enjoy it?"
             call her_main("..........", "angry", "base", "base", "mid")
-            call her_main("Truthfully [genie_name].... It was the most one of the most pleasurable experiences of my life...","grin","dead")
+            call her_main("Truthfully [genie_name].... It was the most one of the most pleasurable experiences of my life...", "grin", "narrow", "base", "dead")
             call her_main("all their hands touching it...", "soft", "narrow", "annoyed", "up")
             call her_main("taking turns...", "grin", "narrow", "annoyed", "up")
             call her_main("all the while it was vibrating away...","base","down")
-            call her_main("I nearly passed out.","silly","dead")
+            call her_main("I nearly passed out.", "silly", "narrow", "base", "dead")
             call her_main("I even tried to make them stop...", "silly", "narrow", "annoyed", "up")
             call her_main("but they just kept going...", "grin", "narrow", "annoyed", "up")
             m "Nice work, [hermione_name]."
@@ -958,11 +958,11 @@ label hg_ps_buttplug_complete:
             call her_main(".......","base","down")
             m "So did you enjoy it?"
             call her_main("..........", "angry", "base", "base", "mid")
-            call her_main("Truthfully [genie_name].... It was the most one of the most pleasurable experiences of my life...","grin","dead")
+            call her_main("Truthfully [genie_name].... It was the most one of the most pleasurable experiences of my life...", "grin", "narrow", "base", "dead")
             call her_main("all their hands touching it...", "soft", "narrow", "annoyed", "up")
             call her_main("taking turns...", "grin", "narrow", "annoyed", "up")
             call her_main("all the while it was vibrating away...","base","down")
-            call her_main("I nearly passed out.","silly","dead")
+            call her_main("I nearly passed out.", "silly", "narrow", "base", "dead")
             call her_main("I even tried to make them stop...", "silly", "narrow", "annoyed", "up")
             call her_main("but they just kept going...", "grin", "narrow", "annoyed", "up")
             m "Nice work, [hermione_name]."

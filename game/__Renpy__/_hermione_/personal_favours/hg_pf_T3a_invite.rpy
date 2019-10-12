@@ -439,14 +439,14 @@ label hg_pf_strip_T2_Snape_watch:
     if daytime:
         call sna_main("Well, my class is about to start so I will be leaving now.","snape_22")
         sna "Don't you have potion class with me today, Miss Granger?"
-        call her_main("Yes, [genie_name]...","annoyed","dead")
+        call her_main("Yes, [genie_name]...", "annoyed", "narrow", "base", "dead")
         call sna_main("Well, don't be late, girl...","snape_22")
     else:
         call sna_main("Well, it is getting rather late. I think I will be leaving now.","snape_22")
         sna "Good night, Albus."
         m "Severus."
         call sna_main("Harlot.","snape_22")
-        call her_main("Professor...","annoyed","dead")
+        call her_main("Professor...", "annoyed", "narrow", "base", "dead")
 
     call ctc
 
@@ -456,7 +456,7 @@ label hg_pf_strip_T2_Snape_watch:
 
     ">Professor Snape leaves..."
     stop music fadeout 1.0
-    call her_main("....................","annoyed","dead", ypos="head")
+    call her_main("....................", "annoyed", "narrow", "base", "dead", ypos="head")
     pause.5
     ">.................{w}.................{w}.................{w}................."
 
@@ -547,7 +547,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         hide screen blkfade
         with d5
 
-        call her_main("....................","annoyed","dead", xpos="mid", ypos="base")
+        call her_main("....................", "annoyed", "narrow", "base", "dead", xpos="mid", ypos="base")
         call ctc
 
         call her_main("...Can I get paid now... [genie_name]...?","normal","worriedCl")
@@ -679,11 +679,11 @@ label hg_pf_strip_T2_Snape_masturbate:
         call her_main(".................", "grin", "narrow", "annoyed", "up")
 
         call sna_main("Your performance was acceptable, miss Granger...","snape_20")
-        call her_main("Thank you................","annoyed","dead")
+        call her_main("Thank you................", "annoyed", "narrow", "base", "dead")
         call sna_main("But if I were to grade it...","snape_19")
-        call her_main("...........","annoyed","dead")
+        call her_main("...........", "annoyed", "narrow", "base", "dead")
         call sna_main("Hm....","snape_22")
-        call her_main("............","annoyed","dead")
+        call her_main("............", "annoyed", "narrow", "base", "dead")
         call sna_main("\"{size=+5}F+{/size}\"!","snape_10")
         stop music
 

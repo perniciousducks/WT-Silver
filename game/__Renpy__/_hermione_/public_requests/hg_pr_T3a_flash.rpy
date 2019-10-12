@@ -138,7 +138,7 @@ label end_hg_pr_flash:
             call her_main("\"Slytherin\"...", "upset", "closed", "base", "mid", ypos="head")
 
     else:
-        call her_main(".........................","grin","dead", ypos="head")
+        call her_main(".........................", "grin", "narrow", "base", "dead", ypos="head")
 
     hide screen blktone
     call her_chibi(action="leave")

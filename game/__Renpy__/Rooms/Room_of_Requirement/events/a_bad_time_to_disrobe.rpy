@@ -269,9 +269,9 @@ label a_bad_time_to_disrobe_part_2:
     call her_walk(xpos="desk", ypos="base", speed=2.5)
     pause.5
 
-    call her_main("...","normal","dead", cheeks="blush",xpos="right",ypos="base")
+    call her_main("...", "normal", "narrow", "base", "dead", cheeks="blush",xpos="right",ypos="base")
     m "Mission success?"
-    call her_main("...","normal","dead", cheeks="blush")
+    call her_main("...", "normal", "narrow", "base", "dead", cheeks="blush")
     m "Miss Granger?"
     call her_main("Oh, hello professor, yes. Here's your cloak back.","base","down")
     m "..."
@@ -334,7 +334,7 @@ label a_bad_time_to_disrobe_part_2:
 
     call her_walk(xpos="door", ypos="base", speed=2.5)
 
-    call her_main("\"I'm glad I had time to clean the cloak before walking in here...\"","base","dead", cheeks="blush",ypos="head")
+    call her_main("\"I'm glad I had time to clean the cloak before walking in here...\"", "base", "narrow", "base", "dead", cheeks="blush",ypos="head")
     call her_main("\"That thing was massive...\"","normal","down",ypos="head")
     call her_main("\"What am I thinking? snap out of it...\"","base","worriedCl", cheeks="blush",ypos="head")
 

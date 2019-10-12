@@ -509,7 +509,7 @@ label hg_ps_cumslut_Scene_3:
     m "it would help..."
     call her_main("well... do you know how much I've been thinking about this? How much I wanted to ask you to cover me again?","base","down")
     call her_main("I've become such a slut [genie_name], it's all I've been able to think about... going to class covered in your {image=textheart}cum{image=textheart}", "grin", "narrow", "annoyed", "up")
-    call her_main("I Imagine it staining my uniform, so much that I can never wash it out. I imagine being covered in your cum constantly. So everyone knows who and what I am.","grin","dead")
+    call her_main("I Imagine it staining my uniform, so much that I can never wash it out. I imagine being covered in your cum constantly. So everyone knows who and what I am.", "grin", "narrow", "base", "dead")
     call her_main("not just A slut... a cumslut...", "soft", "narrow", "annoyed", "up")
     call her_main("Your {image=textheart}cum{image=textheart}slut...", "silly", "narrow", "annoyed", "up")
     g9 "That did it slut!"
@@ -521,7 +521,7 @@ label hg_ps_cumslut_Scene_3:
             call her_main("Please cover my tits with your sticky cum! I need it, [genie_name]!", "grin", "narrow", "annoyed", "up",ypos="head")
             ">Hermionely keeps jerking your cock, her eyes focused intently on it."
             g4 "Get ready whore, here i come!"
-            call her_main("...","silly","dead")
+            call her_main("...", "silly", "narrow", "base", "dead")
             ">Hermione leans forward, lining up her tits directly with your cock."
             g9 "{size=+5}ARGH! YES!!! RIGHT in between your TITS!{/size}"
 
@@ -545,7 +545,7 @@ label hg_ps_cumslut_Scene_3:
             call her_main("......", "soft", "narrow", "annoyed", "up")
             pause
             #$ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
-            call her_main("It's so warm...{image=textheart}","grin","dead")
+            call her_main("It's so warm...{image=textheart}", "grin", "narrow", "base", "dead")
             m "That it is."
             call her_main("If it's alright with you, I think I better head to class now...","base","down")
 
@@ -590,7 +590,7 @@ label hg_ps_cumslut_Scene_3:
     call bld
     m "I’ll see you after classes. And as before, if you come back without any cum on you, I’ll be very disappointed."
     call her_main("of course [genie_name]...", "soft", "narrow", "annoyed", "up",xpos="right",ypos="base")
-    call her_main("(I can't wait to see the look on peoples faces...)","grin","dead")
+    call her_main("(I can't wait to see the look on peoples faces...)", "grin", "narrow", "base", "dead")
 
     call her_walk(action="leave", speed=2.5)
 
@@ -662,7 +662,7 @@ label hg_ps_cumslut_complete_1:
         $ u_sperm = "characters/hermione/face/auto_12.png"
         $ uni_sperm = True
 
-        call her_main("...I did it [genie_name].","upset","dead",tears="mascara",xpos="right",ypos="base")
+        call her_main("...I did it [genie_name].", "upset", "narrow", "base", "dead",tears="mascara",xpos="right",ypos="base")
         call her_main("I kept your cum on me {p}all day.","upset","worriedCl",tears="mascara_soft_blink")
 
         menu:
@@ -759,12 +759,12 @@ label hg_ps_cumslut_complete_2:
         $ u_sperm = "characters/hermione/face/auto_07.png"
         $ uni_sperm = True
 
-        call her_main("...I did it, [genie_name].","annoyed","dead",tears="mascara",xpos="right",ypos="base")
-        call her_main("I kept your cum on me {p}all day.","annoyed","dead",tears="mascara")
+        call her_main("...I did it, [genie_name].", "annoyed", "narrow", "base", "dead",tears="mascara",xpos="right",ypos="base")
+        call her_main("I kept your cum on me {p}all day.", "annoyed", "narrow", "base", "dead",tears="mascara")
 
         menu:
             "\"Good Work!\"":
-                call her_main("...","annoyed","dead",tears="mascara")
+                call her_main("...", "annoyed", "narrow", "base", "dead",tears="mascara")
                 m "Well [hermione_name], you may leave now."
                 call her_main("Did I at least make you happy?","open","annoyed",tears="mascara")
                 m "You did."
@@ -815,7 +815,7 @@ label hg_ps_cumslut_complete_3:
                 m "did anyone else notice?"
                 call her_main("I couldn't say [genie_name]... I was too distracted by the smell...","angry","wink")
                 m "Very well, goodnight [hermione_name]."
-                call her_main("Good night [genie_name].","grin","dead")
+                call her_main("Good night [genie_name].", "grin", "narrow", "base", "dead")
     else: #Cum on face
         $ u_sperm = "characters/hermione/face/auto_07.png"
         $ uni_sperm = True
@@ -833,10 +833,10 @@ label hg_ps_cumslut_complete_3:
                 $ sc34CG(1, 17, 6)
                 call her_main("My day...", "soft", "happy", "base", "R")
                 call her_main("It was a normal day [genie_name]. Well what is normal for me now.", "soft", "narrow", "annoyed", "up")
-                call her_main("I got called names again, and some of the boys groped me.","grin","dead")
+                call her_main("I got called names again, and some of the boys groped me.", "grin", "narrow", "base", "dead")
                 call her_main("Susan Bones even said she liked how I looked in my shirt.","base","down")
                 m "And how did that make you feel?"
-                call her_main("Excited, I almost came when Moaning Myrtle started yelling to everyone about your cum on my shirt.","silly","dead")
+                call her_main("Excited, I almost came when Moaning Myrtle started yelling to everyone about your cum on my shirt.", "silly", "narrow", "base", "dead")
                 m "Truly?"
                 call her_main("Of course, it made me even happier knowing that it makes you happy.","base","down")
                 m "that you did..."

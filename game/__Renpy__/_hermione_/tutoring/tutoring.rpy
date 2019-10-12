@@ -193,7 +193,7 @@ label l_tutoring:
 
         call her_walk(xpos="door", ypos="base", speed=2)
 
-        call her_main("{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about.){/size}","base","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about.){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Probably all the problems caused by those harlots.){/size}","base","glance",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Well, I will never be like them, so no need to worry.){/size}","silly","glance",cheeks="blush",ypos="head")
 
@@ -251,7 +251,7 @@ label l_tutoring:
         g9 "{size=-2}(\"Educational purposes\"... ha-ha, I've never heard a worse excuse!){/size}"
         m "And during all this time you didn't feel a certain need?"
         call her_main("To my shame, yes. Like I said before, I felt kind of warm inside.", "annoyed", "narrow", "angry", "R",cheeks="blush")
-        call her_main("Like when I have to pee but... different. Better.","disgust","down_raised",cheeks="blush")
+        call her_main("Like when I have to pee but... different. Better.", "disgust", "narrow", "base", "down",cheeks="blush")
         m "This good sensation... next time you experience it, let it come."
         call her_main("But...", "open", "base", "base", "mid",cheeks="blush")
         m "It's the only way to get better, Miss Granger."
@@ -269,7 +269,7 @@ label l_tutoring:
 
         call her_walk(xpos="door", ypos="base", speed=2)
 
-        call her_main("{size=-4}(Well, I'll try to investigate those two girls again.){/size}","disgust","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Well, I'll try to investigate those two girls again.){/size}", "disgust", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Like a real anthropologist!){/size}","base","glance",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Yes, that's right. Hermione the anthropologist!){/size}","base","worriedCl",cheeks="blush",ypos="head")
 
@@ -301,7 +301,7 @@ label l_tutoring:
         m "Are you attracted to girls of this sort, Miss Granger?"
         call her_main("What? Lesbians? I'm not... I... No way, I...", "open", "base", "base", "mid",cheeks="blush")
         m "Alright, alright, back to your report, if you please."
-        call her_main("{size=-2}(I'm not a lesbian...{w=0.3} I think...){/size}","disgust","down_raised",cheeks="blush")
+        call her_main("{size=-2}(I'm not a lesbian...{w=0.3} I think...){/size}", "disgust", "narrow", "base", "down",cheeks="blush")
         call her_main("{size=-2}(Hermione, girl, pull yourself together! You're not a harlot!){/size}", "mad", "wide", "base", "stare",cheeks="blush")
         call her_main("No, I'm not!", "annoyed", "closed", "base", "mid",cheeks="blush")
         m "Excuse me?"
@@ -370,7 +370,7 @@ label l_tutoring:
         her "{size=-2}(Old pervert...){/size}"
         m "You said that those girls became wet."
         g9 "Weren't you a little too?"
-        call her_main("When I went to bed I noticed it, yes.","disgust","down_raised",cheeks="blush")
+        call her_main("When I went to bed I noticed it, yes.", "disgust", "narrow", "base", "down",cheeks="blush")
         call her_main("Apparently bad fluids are released from your body when you have faced such acts.", "mad", "wide", "base", "stare",cheeks="blush")
         m "No, they aren't bad. It happens when you're excited."
         call her_main("No way! I can control myself!","scream","worriedCl",cheeks="blush",tears="soft_blink")
@@ -384,7 +384,7 @@ label l_tutoring:
         call her_walk(xpos="door", ypos="base", speed=2)
 
         call her_main("{size=-4}(I enjoyed it too much. Maybe I'm becoming a pervert as well){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(I lost control, it won't happen again!){/size}","shock","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(I lost control, it won't happen again!){/size}", "shock", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Good thing I'm not a degenerate like those filthy girls!){/size}","base","glance",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
@@ -470,9 +470,9 @@ label l_tutoring:
 
         call her_walk(xpos="door", ypos="base", speed=2.5)
 
-        call her_main("{size=-4}(This is wrong...){/size}","disgust","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(This is wrong...){/size}", "disgust", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I shouldn't listen to him.){/size}","angry","worriedCl",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(And yet...){/size}","base","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(And yet...){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
 
@@ -652,7 +652,7 @@ label l_tutoring:
         call hide_blkfade
         call ctc
 
-        call her_main("Professor, what are you doing?","disgust","down_raised",cheeks="blush")
+        call her_main("Professor, what are you doing?", "disgust", "narrow", "base", "down",cheeks="blush")
         g9 "Teaching you, dear, teaching you."
         m "Doesn't it feel good?"
         call her_main("A little...", "base", "closed", "base", "mid")
@@ -717,7 +717,7 @@ label l_tutoring:
         call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(I'm such a slut...){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(Cumming in front of my professor...){/size}","base","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Cumming in front of my professor...){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I definitely need to do that again!){/size}","base","glance",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
@@ -1053,7 +1053,7 @@ label l_tutoring:
 
         call her_walk(xpos="door", ypos="base", speed=2.5)
 
-        call her_main("{size=-4}(Rest...){/size}","base","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Rest...){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Not before I've played with this marvelous toy again){/size}","base","glance",cheeks="blush",ypos="head")
         call her_main("{size=-4}(And again){/size}","silly","glance",cheeks="blush",ypos="head")
 
@@ -1462,7 +1462,7 @@ label l_tutoring:
 
         call her_main("{size=-4}(Sucking his cock without getting any points!){/size}", "annoyed", "narrow", "angry", "R",cheeks="blush",ypos="head")
         call her_main("{size=-4}(If he hadn't made me come so hard...){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(*sigh* Although I guess it's not that high a price...){/size}","base","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(*sigh* Although I guess it's not that high a price...){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
 
@@ -1863,7 +1863,7 @@ label l_tutoring:
 
         call her_walk(xpos="door", ypos="base", speed=2.5)
 
-        call her_main("{size=-4}(\"my beloved prince\"...){/size}","base","down_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(\"my beloved prince\"...){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(He's hardly Prince Charming but...){/size}","base","glance",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I doubt Prince Charming could fuck me half as well as he can!){/size}", "grin", "narrow", "base", "up",cheeks="blush",ypos="head")
 

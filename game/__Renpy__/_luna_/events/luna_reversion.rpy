@@ -308,7 +308,7 @@ label luna_revert_1: #Reversion event #DONE
     $ luna_r_arm = 2
 
     call lun_main("...","upset","wide","sad","mid", xpos="mid",ypos="base")
-    call her_main("But I really need a good-.","angry","down_raised")
+    call her_main("But I really need a good-.", "angry", "narrow", "base", "down")
     call her_main("...", "shock", "wide", "base", "stare")
     call her_main("{size=+5}WHAT{/size}", "annoyed", "narrow", "annoyed", "mid")
     call lun_main("","upset","wide","sad","down")
@@ -643,7 +643,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
     call her_main("[genie_name], I hope you don't mind me coming in unannounced...", "angry", "closed", "base", "mid",xpos="base",ypos="base")
-    call her_main("But I really need a good-.","angry","down_raised")
+    call her_main("But I really need a good-.", "angry", "narrow", "base", "down")
 
     $ luna_flip = -1
     $ luna_r_arm = 2
@@ -776,7 +776,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     call her_main("!!!", "angry", "wide", "base", "stare")
     m "Punish her?"
     call lun_main("Of course! For what she said.","smile","seductive","angry","mid")
-    call her_main("...","clench","down_raised")
+    call her_main("...", "clench", "narrow", "base", "down")
     call lun_main("You're not going to let her get away with that are you?","upset","angry","mad","mid")
 
     menu:
@@ -1210,7 +1210,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     call her_main("never mind...","normal","worriedCl")
     call her_main("I think I'm going go now [genie_name]...","angry","worriedCl",emote="05")
     m "Alright, well have a nice day."
-    call her_main("ugh...","disgust","down_raised")
+    call her_main("ugh...", "disgust", "narrow", "base", "down")
     call her_main("(I could have sworn Luna was here...)","annoyed","worriedL")
     call her_main("(Wait, what was I doing here...)","annoyed","suspicious")
     call reset_luna

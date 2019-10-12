@@ -45,7 +45,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("of course! {p}although she still has a lot to learn...", "upset", "closed", "base", "mid")
         call lun_main("It wasn't that bad...","pout","angry","sad","mid")
         call her_main("ugh... let's just say you'll be glad she's had the practice.", "angry", "base", "base", "mid")
-        call her_main("My dildo still has bite marks on it from her first attempt.","angry","down_raised")
+        call her_main("My dildo still has bite marks on it from her first attempt.", "angry", "narrow", "base", "down")
         call lun_main("Well how was I supposed to know the teeth aren't supposed to touch...","upset","angry","angry","R")
         call her_main("I told you that was the rule number one! Besides, you nearly bit it clean in half...", "angry", "wide", "base", "stare")
         g4 "!!!"
@@ -76,7 +76,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
 
         ">hermione and luna slowly strip together, slowly placing their clothes in matching piles on your desk."
         ">Eventually Luna kneels before you, gazing up into your eyes while hermione stands behind her, examining her actions."
-        call her_main("that's it... eye contact is very important.","disgust","down_raised")
+        call her_main("that's it... eye contact is very important.", "disgust", "narrow", "base", "down")
         $ ccg_folder = "luna_bj"
         $ ccg1 = "herm"
         $ ccg3 = "gene"
@@ -305,7 +305,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call lun_main("...","normal","angry","angry","R")
         call her_main("Luna! Don't be rude.", "angry", "base", "angry", "mid")
         call lun_main("...Thanks [lun_genie_name].","normal","seductive","sad","R")
-        call her_main("...","disgust","down_raised")
+        call her_main("...", "disgust", "narrow", "base", "down")
         call her_main("Well, we better be off sir, we still have a lot of studying to do!", "grin", "base", "base", "R")
         call her_main("(Not to mention more practice with the dildo...)", "soft", "happy", "base", "R")
         call her_main("Come on Luna!", "open", "base", "base", "R")
@@ -608,7 +608,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         m "And here's 75 gold each."
         call her_main("Thank you [genie_name]!", "base", "base", "base", "mid")
         call lun_main("...","normal","angry","angry","R")
-        call her_main("...","disgust","down_raised")
+        call her_main("...", "disgust", "narrow", "base", "down")
         call lun_main("...Thank you sir.","normal","seductive","sad","R")
         call her_main("Well, we better be off sir, we still have a lot of studying to do!", "grin", "base", "base", "R")
         call her_main("(Not to mention more practice with the dildo...)", "soft", "happy", "base", "R")

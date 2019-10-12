@@ -1235,7 +1235,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             g9 "Share with us your two most compelling arguments..."
             call her_main("Sir?","soft","wink")
             call cho_main("He's talking about your \"tits\", you dimwit!","angry","closed","angry","mid")
-            call her_main("(...)","clench","down_raised") # Embarrassed
+            call her_main("(...)", "clench", "narrow", "base", "down") # Embarrassed
             call cho_main("","annoyed","narrow","angry","mid")
             g9 "Yes Miss Granger!{w} Your very round{w}, handsomely sphered{w}, perfectly sized{w}, very voluptuous and-"
             call her_main("I got it, Professor!","clench","worriedCl")

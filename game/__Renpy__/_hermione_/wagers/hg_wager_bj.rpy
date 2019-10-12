@@ -464,7 +464,7 @@ label hg_wager_bj:
                                         m "I just lost the game and one of my bottles of wine..."
                                         call her_main("And a higher than average amount of 2 to 5ml by the looks of it...", "open", "narrow", "worried", "down", cheeks="blush")
                                         g9 "That is true..."
-                                        call her_main("are you still deducting those points [genie_name].","normal","down_raised", cheeks="blush")
+                                        call her_main("are you still deducting those points [genie_name].", "normal", "narrow", "base", "down", cheeks="blush")
                                     "-Don't give him anything-":
                                         m "Get out..."
                                         call sna_main("Someone's a sore loser...", face="snape_13")
@@ -555,7 +555,7 @@ label hg_wager_bj:
                                 g9 "Oh yes, the points!"
                                 g9 "20 points to gryffindor..."
                                 $ gryffindor += 20
-                                call her_main("That's not...","normal","down_raised")
+                                call her_main("That's not...", "normal", "narrow", "base", "down")
                                 call her_main("Thank you...", "open", "closed", "base", "mid")
                                 if daytime:
                                     call her_main("Good bye then [genie_name].", "base", "base", "base", "mid")

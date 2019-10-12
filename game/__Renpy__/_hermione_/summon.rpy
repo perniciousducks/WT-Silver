@@ -316,7 +316,7 @@ label hermione_favor_menu:
 
                         if her_whoring >=18:
                             call her_main("You really know how to talk me through, [genie_name].", "soft", "narrow", "worried", "down")
-                            call her_main("Okay I agree.","open","down_raised")
+                            call her_main("Okay I agree.", "open", "narrow", "base", "down")
                             $ hermione_favors_convinced = 2
                             jump silver_requests_root
                         elif her_whoring >=16 and not hermione_favors_convinced == 1:
@@ -659,10 +659,10 @@ label hermione_change:
             call her_main("What's going on with with these silly nicknames of yours all of a sudden?", "normal", "squint", "angry", "mid")
             m "What do you mean by silly?"
             call her_main("It makes it sound as if I'm your...","soft","worriedL")
-            call her_main("Ugh, forget I said anything...","open","down_raised",cheeks="blush")
+            call her_main("Ugh, forget I said anything...", "open", "narrow", "base", "down",cheeks="blush")
             call her_main("", "normal", "base", "base", "R", cheeks="blush")
         elif her_whoring >=9 and her_whoring < 19:
-            call her_main("Bit of an odd request but...","normal","down_raised",)
+            call her_main("Bit of an odd request but...", "normal", "narrow", "base", "down",)
             call her_main("I like it...","soft","glanceL",cheeks="blush")
             call her_main("","base","glanceL",cheeks="blush")
         elif her_whoring >= 19:
@@ -670,7 +670,7 @@ label hermione_change:
     elif temp_name == "Bad Girl":
         if her_whoring >=9 and her_whoring < 11:
             call her_main("I guess I am a bit.", "soft", "narrow", "worried", "down")
-            call her_main("I did fail that test after all...","disgust","down_raised")
+            call her_main("I did fail that test after all...", "disgust", "narrow", "base", "down")
             call her_main("", "normal", "narrow", "worried", "mid_soft")
             call her_main("", "normal", "base", "base", "mid")
         elif her_whoring >=11 and her_whoring < 17:
@@ -729,7 +729,7 @@ label hermione_change:
             m "..."
             call her_main("", "normal", "narrow", "angry", "R")
         elif her_whoring >= 17:
-            call her_main("I guess if you have to call me that sure...","base","down_raised",cheeks="blush")
+            call her_main("I guess if you have to call me that sure...", "base", "narrow", "base", "down",cheeks="blush")
         elif her_whoring >= 19:
             call her_main("I don't mind...","smile","happyCl",cheeks="blush")
     elif temp_name == "Cumslut":
@@ -737,7 +737,7 @@ label hermione_change:
             call her_main("A cumslut?!","open","surprised")
             m "Something wrong?"
             call her_main("You have to even ask?", "soft", "narrow", "worried", "down", cheeks="blush")
-            call her_main("This is so degrading...","normal","down_raised",cheeks="blush")
+            call her_main("This is so degrading...", "normal", "narrow", "base", "down",cheeks="blush")
             call her_main("\"But I kinda am a slut begging for cum aren't I...\"","base","happyCl",cheeks="blush")
         elif her_whoring >= 19:
             call her_main("...", "soft", "narrow", "base", "up")
@@ -831,7 +831,7 @@ label hermione_change:
                                 call her_main("So what did you want to talk about?", "base", "base", "base", "mid")
                             else:
                                 call her_main("[genie_name], but its not raining..", "normal", "closed", "base", "mid")
-                                call her_main("", "disgust","down_raised", cheeks="blush")
+                                call her_main("", "disgust", "narrow", "base", "down", cheeks="blush")
                                 g9 "Last time I had my dick in you it felt like a mass flood."
                                 call her_main("[genie_name]...", "disgust", "closed", "base", "mid", cheeks="blush")
                                 g9 "What? Its true, I swear!"

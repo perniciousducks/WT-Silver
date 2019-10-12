@@ -308,7 +308,7 @@ label astoria_intro_E2_hermione:
     m "I'm certain that it's the work of another student..."
     m "(or Snape has finally snapped...)"
     m "so I'll need you to go undercover to find out who."
-    call her_main("really? You're depending on me to find a criminal student within our school?","soft","down_raised",cheeks="blush")
+    call her_main("really? You're depending on me to find a criminal student within our school?", "soft", "narrow", "base", "down",cheeks="blush")
     m "If it's not too much troub--"
     call her_main("I'd be honoured, [genie_name]!", "scream", "closed", "base", "mid")
     call her_main("It's no doubt the work of one of those despicable \"slytherins\"...", "open", "closed", "angry", "mid")

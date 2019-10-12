@@ -345,7 +345,7 @@ label hg_pf_handjob_1:
             m "You are doing a great job, though. Keep at it!"
             call her_main(".....", "open", "narrow", "worried", "down")
             call her_main("I love cock...")
-            call her_main("And I love... spunk...","clench","down_raised")
+            call her_main("And I love... spunk...", "clench", "narrow", "base", "down")
             call her_main("And semen... and sperm...")
             call her_main("I love to drink sperm...")
             call her_main("I want you to feed me your sperm, [genie_name]!","open_tongue","glance")
@@ -477,7 +477,7 @@ label hg_pf_handjob_1:
             g4 "{size=+5}You little whore!!!{/size}"
             call her_main("No, [genie_name], wait, I--", "angry", "base", "base", "mid")
             g4 "{size=+5}Too late for that, slut!{/size}"
-            call her_main("*whimper*","angry","down_raised")
+            call her_main("*whimper*", "angry", "narrow", "base", "down")
             g4 "{size=+5}ARGH! YES!!!{/size}"
             call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
 
@@ -502,7 +502,7 @@ label hg_pf_handjob_1:
             m "..........................."
             call her_main(".......................", "angry", "wide", "base", "stare")
             m "....................?"
-            call her_main(".......................","angry","down_raised")
+            call her_main(".......................", "angry", "narrow", "base", "down")
             m "...What the fuck just happened?"
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -512,7 +512,7 @@ label hg_pf_handjob_1:
                 call her_main("My classes are about to start and I didn't want you to ruin my uniform, [genie_name]...","angry","worriedCl", emote="05")
                 m "So you'll go to classes like this now?"
                 m "With your clothes all sperm-soaked from the inside?"
-                call her_main("What choice do I have?","angry","down_raised")
+                call her_main("What choice do I have?", "angry", "narrow", "base", "down")
                 call her_main("I can't just skip a class...")
             else:
                 call her_main("At this hour The \"Gryffindor\" common room will be full of people...","angry","worriedCl", emote="05")
@@ -520,7 +520,7 @@ label hg_pf_handjob_1:
                 call her_main("Oh, it's getting pretty late...", "angry", "base", "base", "mid")
                 m "So you will go like this, instead?"
                 m "With your clothes all sperm-soaked from the inside?"
-                call her_main("What choice do I have?","angry","down_raised")
+                call her_main("What choice do I have?", "angry", "narrow", "base", "down")
 
             call ctc
             call blkfade
@@ -533,7 +533,7 @@ label hg_pf_handjob_1:
             call hide_blkfade
             pause.5
 
-            call her_main("Ew... Your sperm, [genie_name]...","angry","down_raised")
+            call her_main("Ew... Your sperm, [genie_name]...", "angry", "narrow", "base", "down")
             call her_main("It's everywhere under my uniform...", "angry", "base", "base", "mid")
             m "Just put it in your mouth next time."
             call her_main("I... don't think so, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
@@ -639,7 +639,7 @@ label hg_pf_handjob_2:
             m "Well I suppo--"
             call her_main("Not done yet!", "scream", "closed", "angry", "mid")
             m "Apologies."
-            call her_main("Your penis is so big it almost scares me!","angry","down_raised")
+            call her_main("Your penis is so big it almost scares me!", "angry", "narrow", "base", "down")
             g9 "You little minx. You know exactly what to say..."
             call her_main("And yet I lust for it...", "soft", "narrow", "annoyed", "up")
             call her_main("Any woman would be happy to have your huge penis inside of her!")
@@ -722,7 +722,7 @@ label hg_pf_handjob_2:
             call her_main("There is also this thing when I form a ring with my fingers...")
             call her_main("And then I put one finger here...")
             m "Hm... I don't feel anything..."
-            call her_main("Really?","angry","down_raised")
+            call her_main("Really?", "angry", "narrow", "base", "down")
             call her_main("Hm...")
             call her_main("Oh! That's right!", "base", "narrow", "worried", "down")
             call her_main("The finger goes here! Silly me!")
@@ -773,9 +773,9 @@ label hg_pf_handjob_2_continue:
             m "Who is doing the raping?"
             call her_main("My father...?", "angry", "base", "base", "mid")
             m "Do you enjoy it?"
-            call her_main("No. I cry and beg for him to stop!","angry","down_raised")
+            call her_main("No. I cry and beg for him to stop!", "angry", "narrow", "base", "down")
             m "Heh... Nice."
-            call her_main(".......","angry","down_raised")
+            call her_main(".......", "angry", "narrow", "base", "down")
             m "Well, this wasn't that hard, was--"
             call her_main("I scream for my Mommy but she is still at work...","mad","worried", tears="soft")
             m "Huh?"
@@ -1003,7 +1003,7 @@ label hg_pf_handjob_2_cumming:
             call her_main("[genie_name]! What have you done?","scream","worriedCl")
             m "What?"
             call her_main("You came all over me, [genie_name]...","scream","worriedCl")
-            call her_main("What a mess...","angry","down_raised")
+            call her_main("What a mess...", "angry", "narrow", "base", "down")
             call her_main("[genie_name], you should have warned me.", "upset", "closed", "base", "mid")
             m "It's your fault, [hermione_name]!"
             call her_main("My fault?", "angry", "base", "base", "mid")
@@ -1052,7 +1052,7 @@ label hg_pf_handjob_2_cumming:
 
             her "........................................."
             call her_main("GULP!!!","cum","worriedCl")
-            call her_main("Gu-ah-a...","open_wide_tongue","down_raised")
+            call her_main("Gu-ah-a...", "open_wide_tongue", "narrow", "base", "down")
             call her_main("I swallowed it all, [genie_name]!", "grin", "narrow", "base", "dead")
             m "Good girl..."
             call her_main("At one point I thought I was going to choke...", "open", "narrow", "base", "dead")

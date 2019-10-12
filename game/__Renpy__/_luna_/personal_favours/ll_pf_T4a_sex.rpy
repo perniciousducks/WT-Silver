@@ -499,7 +499,7 @@ label ll_pf_sex_T1_her_1: # Call label
     call her_main("Well, I think I better give you two some alone time...", "soft", "base", "angry", "mid")
     $ lunCG(mouth="open", eye="wink", eyebrow="base", pupil="right")
     lun "You don't want to stay?"
-    call her_main("I need to take care of something... Until then...","soft","down_raised")
+    call her_main("I need to take care of something... Until then...", "soft", "narrow", "base", "down")
     call her_main("Why don't you just let him empty his balls in you...", "angry", "base", "angry", "mid")
     call hide_characters
     show screen blkfade

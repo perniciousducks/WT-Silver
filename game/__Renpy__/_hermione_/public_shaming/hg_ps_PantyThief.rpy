@@ -265,11 +265,11 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 m "Well in that case hand them back."
                 call her_main("What? Can't I just put them on?","angry","wink")
                 m "I'm afraid not, you clean them now or you hand them back."
-                call her_main("{size=-4}Fine...{/size}","angry","down_raised")
+                call her_main("{size=-4}Fine...{/size}", "angry", "narrow", "base", "down")
                 m "What was that?"
                 call her_main("I said I'll clean them ok!","shock","worriedCl")
                 m "Well..."
-                call her_main("...","angry","down_raised")
+                call her_main("...", "angry", "narrow", "base", "down")
                 call nar(">Hermione reluctantly puts her cum-soaked panties in her mouth.")
                 call her_main("Mmmmhhhhh!", "full", "slit", "worried", "ahegao")
                 m "That's it, not as bas as you thought now is it?"
@@ -407,7 +407,7 @@ label hg_ps_get_panties_complete:
     elif her_panties_soaked and her_whoring >= 15:
         $ hg_ps_get_panties.level = 4 #Event hearts level (0-4)
         m "You can go now."
-        call her_main("yes, [genie_name]","angry","down_raised")
+        call her_main("yes, [genie_name]", "angry", "narrow", "base", "down")
         m "After you say thank you. "
         call her_main("Thank you for what?","angry","wink")
         m "For my cum"

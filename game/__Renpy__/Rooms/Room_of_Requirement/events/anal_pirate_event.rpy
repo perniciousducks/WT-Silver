@@ -290,7 +290,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Oh... aye... ye secret cavern be great..."
                 call her_main("...........", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "Oh... Ye cavern be perfect, lass..."
-                call her_main("................","shock","down_raised",cheeks="blush",tears="crying")
+                call her_main("................", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
                 m "Why are ye bein' so quiet lass?"
                 call her_main("'cause 'tis cavern be too shallow for ye ship...","clench","worried",cheeks="blush",tears="soft")
                 call her_main("'n I jus' wants ye t' cum sooner, captain...")
@@ -517,20 +517,20 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main("captain?","base","glance")
         m "Aye, wench?"
         call her_main("Em...", "angry", "base", "base", "mid")
-        call her_main("Would ye settle down fer me, captain?","angry","down_raised")
+        call her_main("Would ye settle down fer me, captain?", "angry", "narrow", "base", "down")
         with hpunch
         g4 "{size=+9} WHAT?!{/size}"
         g4 "Don't tell me ye're expecting cargo, lass!"
         call her_main("Ye seamen don't put no cargo in me bilge, captain...","angry","wink")
         m "Wha' be this natter o' settlin down then?"
         call her_main("Ye misunderstood me captain.", "angry", "base", "base", "mid")
-        call her_main("I meant t' say, would ye stop plunderin for a lass {size=+5}like{/size} me?","angry","down_raised")
+        call her_main("I meant t' say, would ye stop plunderin for a lass {size=+5}like{/size} me?", "angry", "narrow", "base", "down")
         call her_main("I would ne'er propose t' a scallywag wit' his pegleg in me arse, captain...","angry","worriedCl",emote="05")
         m "Good. 'cause I don't reckon any scallywag would be able t' say \"neigh\" to you lassie."
         call her_main("Ah{image=textheart}...", "open", "closed", "base", "mid")
-        call her_main("Wha' I meant... ah{image=textheart} {w} ...t' say was ah{image=textheart}... {w}...do ye reckon any pirate would ever ah{image=textheart}... {w} ...leave th' sea fer a lass like me?","angry","down_raised")
+        call her_main("Wha' I meant... ah{image=textheart} {w} ...t' say was ah{image=textheart}... {w}...do ye reckon any pirate would ever ah{image=textheart}... {w} ...leave th' sea fer a lass like me?", "angry", "narrow", "base", "down")
         m "Huh?"
-        call her_main("I mean, wit' all that booty plunderin happenin' lately... ah{image=textheart}...","angry","down_raised")
+        call her_main("I mean, wit' all that booty plunderin happenin' lately... ah{image=textheart}...", "angry", "narrow", "base", "down")
         call her_main("I can nah help but feel like me hull is scratched... leakin even.")
         call her_main("'n in a no way untarnished...")
         call her_main("Who would wants t' settle fer a lass like that.", "angry", "base", "base", "mid")
@@ -558,7 +558,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 pass
 
             "\"A pirate not plunderin t' be wit' ye be o' th' picture\"":
-                call her_main("I be thinkin that...","shock","down_raised",cheeks="blush",tears="crying",ypos="head")
+                call her_main("I be thinkin that...", "shock", "narrow", "base", "down",cheeks="blush",tears="crying",ypos="head")
                 m "Oh... I jus' love that wee cavern o' yers!"
                 call her_main(".....................", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 call her_main("Aye... Aft all th' thin's I had t' do fer me crew...")

@@ -286,7 +286,7 @@ label hermione_random_duel:
 
     m "No, sorry miss Granger... Minus 20 points to Gryffindor..."
     call her_main("...", "disgust", "narrow", "worried", "down")
-    call her_main("Fine, that's fair...","open","down_raised")
+    call her_main("Fine, that's fair...", "open", "narrow", "base", "down")
     call her_main("But I'm done playing for today...","normal","worriedCl", cheeks="blush")
     $ gryffindor -= 20
 

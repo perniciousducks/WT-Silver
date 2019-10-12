@@ -96,7 +96,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         call set_her_action("None")
         pause.2
 
-        call her_main("{size=-5}(I can't believe I'm going to strip for him...){/size}","disgust","down_raised", cheeks="blush")
+        call her_main("{size=-5}(I can't believe I'm going to strip for him...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
         m "That's it [hermione_name], now your skirt..."
         call her_main("............", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
@@ -346,8 +346,8 @@ label hg_pr_strip_T2_masturbate_rear:
     call her_main("[genie_name], how much longer do I have to stand here?","shock","worriedCl")
     call nar(">You keep stroking your hard cock...")
     m "Not too much longer now..."
-    call her_main("[genie_name]...","disgust","down_raised", cheeks="blush")
-    call her_main("You're not... touching yourself are you...?","disgust","down_raised", cheeks="blush")
+    call her_main("[genie_name]...", "disgust", "narrow", "base", "down", cheeks="blush")
+    call her_main("You're not... touching yourself are you...?", "disgust", "narrow", "base", "down", cheeks="blush")
     m "ah... of course not [hermione_name]. you know I'd never do... such a thing..."
     call her_main("hmmm.....","angry","worriedCl", cheeks="blush")
     call her_main("well if you did do such a thing...", "angry", "base", "angry", "mid", cheeks="blush")
@@ -441,12 +441,12 @@ label hg_pr_strip_T3_grope_rear:
         call her_main("But as the headmaster of this school...", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call her_main("I don't know if you should be...", "annoyed", "narrow", "angry", "R", cheeks="blush")
     m "Don't you like it...?"
-    call her_main("What?","disgust","down_raised", cheeks="blush")
+    call her_main("What?", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Don't you like it how I squeeze and pull your cheeks?"
-    call her_main("...............","disgust","down_raised", cheeks="blush")
+    call her_main("...............", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Admit it, you like it a little bit..."
     m "Maybe even a lot..."
-    call her_main("{size=-5}(It feels so weird to let him grope me...){/size}","disgust","down_raised", cheeks="blush")
+    call her_main("{size=-5}(It feels so weird to let him grope me...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
     call her_main("[genie_name], I am letting you do this to me to help my house!","shock","worriedCl")
     call her_main("It doesn't matter how good it feels...","shock","worriedCl")
     m "So you admit that it does feel good."
@@ -514,10 +514,10 @@ label hg_pr_strip_T3_masturbate_rear:
     m "Blame yourself [hermione_name]..."
     m "Or rather, blame that perfect little ass of yours!"
     call her_main("..................","shock","worriedCl")
-    call her_main("(his cock is so big...)","disgust","down_raised", cheeks="blush")
+    call her_main("(his cock is so big...)", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Yes... Yes, like that..."
     m "Try shaking it a little..."
-    call her_main("..............","disgust","down_raised", cheeks="blush")
+    call her_main("..............", "disgust", "narrow", "base", "down", cheeks="blush")
     call her_main("Well, so be it...", "open", "base", "base", "R", cheeks="blush")
     call her_main("You can keep touching yourself, [genie_name]...", "open", "base", "base", "R", cheeks="blush")
     call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
@@ -553,7 +553,7 @@ label hg_pr_strip_T4_admire_rear:
         "\"Your ass is ok... I suppose...\"":
             call her_main("Huh?", "annoyed", "base", "base", "mid", ypos="head")
             call her_main("Does this mean you don't like it, [genie_name]?", "annoyed", "base", "base", "mid")
-            call her_main("I'm sorry... I'll try to work out some more.","disgust","down_raised")
+            call her_main("I'm sorry... I'll try to work out some more.", "disgust", "narrow", "base", "down")
 
     call nar(">You stare at her ass for a while longer...")
     call ctc
@@ -584,11 +584,11 @@ label hg_pr_strip_T4_grope_rear:
     with fade
     call ctc
 
-    call her_main("But...","disgust","down_raised", cheeks="blush", ypos="head")
+    call her_main("But...", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
     call her_main("ah...{image=textheart}","shock","worriedCl")
 
     if current_payout < 100:
-        call her_main("I didn't agree to this...","disgust","down_raised", cheeks="blush")
+        call her_main("I didn't agree to this...", "disgust", "narrow", "base", "down", cheeks="blush")
     else:
         call her_main("please [genie_name], not so rough...{image=textheart}","shock","worriedCl")
 
@@ -714,7 +714,7 @@ label hg_pr_strip_T4_masturbate_rear:
         call her_main("..................","shock","worriedCl")
         m "Yes... Yes, like that..."
         m "Yes, with your ass all naked..."
-        call her_main("..............","disgust","down_raised", cheeks="blush")
+        call her_main("..............", "disgust", "narrow", "base", "down", cheeks="blush")
         call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
         call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
         call her_main("Not to... ehm...", "open", "base", "base", "R", cheeks="blush")
@@ -722,10 +722,10 @@ label hg_pr_strip_T4_masturbate_rear:
         call her_main("Not on me, [genie_name]...", "annoyed", "narrow", "angry", "R", cheeks="blush")
         m "Fine, whatever..."
         m "Oh, you little slut. You nasty little slut!"
-        call her_main(".......................","disgust","down_raised", cheeks="blush")
+        call her_main(".......................", "disgust", "narrow", "base", "down", cheeks="blush")
         call nar(">You start to stroke your cock even harder...")
         g4 "Yes, I know you want this! Yes!"
-        call her_main("................","disgust","down_raised", cheeks="blush")
+        call her_main("................", "disgust", "narrow", "base", "down", cheeks="blush")
 
     call hg_show_ass_cumming
 
@@ -776,7 +776,7 @@ label hg_show_ass_cumming:
                 call bld
                 m "Oh, this was quite amazing..."
 
-                call her_main("","disgust","down_raised", xpos="right", ypos="base")
+                call her_main("", "disgust", "narrow", "base", "down", xpos="right", ypos="base")
                 pause.5
 
                 her "the floor..."
@@ -823,7 +823,7 @@ label hg_show_ass_cumming:
 
                 call bld
                 m "Oh, this was quite amazing..."
-                call her_main("","disgust","down_raised", xpos="right", ypos="base")
+                call her_main("", "disgust", "narrow", "base", "down", xpos="right", ypos="base")
                 pause.5
 
                 if her_whoring < 15:
@@ -832,7 +832,7 @@ label hg_show_ass_cumming:
                 else:
                     call her_main("[genie_name], how could you...?","angry","suspicious", cheeks="blush")
                     call her_main("My ass...", "disgust", "narrow", "worried", "down")
-                    call her_main("It's covered....","disgust","down_raised")
+                    call her_main("It's covered....", "disgust", "narrow", "base", "down")
 
                 m "Don't worry, I will give you your house points, [hermione_name]."
                 m "You did good."
@@ -859,11 +859,11 @@ label hg_show_ass_cumming:
             "-Hold it in-":
                 g4 "Oh, alright..."
                 g4 "I'd better stop now I suppose..."
-                call her_main("...............","disgust","down_raised", cheeks="blush", ypos="head")
-                call her_main("Ehm... I mean I know I said not to cum on me...","disgust","down_raised", cheeks="blush")
+                call her_main("...............", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
+                call her_main("Ehm... I mean I know I said not to cum on me...", "disgust", "narrow", "base", "down", cheeks="blush")
                 m "Huh?"
                 call her_main("But I wouldn't mind if you ...","shock","worriedCl")
-                call her_main("Came...","disgust","down_raised", cheeks="blush")
+                call her_main("Came...", "disgust", "narrow", "base", "down", cheeks="blush")
                 call her_main("On my ass--", "base", "base", "base", "R", cheeks="blush")
                 g4 "Argh! You whore!"
                 call her_main("???", "mad", "wide", "base", "stare", cheeks="blush")
@@ -924,7 +924,7 @@ label hg_show_ass_cumming:
 
         call bld
         m "Oh, this was quite amazing..."
-        call her_main("","disgust","down_raised", xpos="right", ypos="base")
+        call her_main("", "disgust", "narrow", "base", "down", xpos="right", ypos="base")
         pause.5
         her "My ass is covered though..."
         m "Don't worry, it still looks great, [hermione_name]."
@@ -986,11 +986,11 @@ label end_hg_show_ass:
 
     #First event.
     if her_whoring < 15:
-        call her_main("(How degrading... why do i keep agreeing to this...?)","disgust","down_raised", cheeks="blush", ypos="head")
+        call her_main("(How degrading... why do i keep agreeing to this...?)", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
 
     #Second event.
     elif her_whoring < 18:
-        call her_main("........................","disgust","down_raised", cheeks="blush", ypos="head")
+        call her_main("........................", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
 
     #Third event.
     elif her_whoring >= 18 and aftersperm:

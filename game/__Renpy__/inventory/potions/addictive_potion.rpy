@@ -354,7 +354,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call nar(">After a few quick pumps you point your dick at the floor and explode.")
             call cum_block
             # Need to find proper animation
-            call her_main("PROFESSOR! Why would you waste that?","angry","down_raised")
+            call her_main("PROFESSOR! Why would you waste that?", "angry", "narrow", "base", "down")
             hide screen hermione_main
             m "It's not wasted [hermione_name], your reward is right there waiting for you."
             call her_main("I'm not going to eat that. The floor in here is disgusting.", "angry", "base", "base", "mid")
@@ -378,7 +378,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
                     call her_main("What do you mean not with my fingers? How else am I supposed to eat it?", "angry", "base", "base", "mid")
                     hide screen hermione_main
                     m "You have a perfectly good tongue, I suggest that you put it to use."
-                    call her_main("You expect me to LICK your old cum off the floor?","angry","down_raised")
+                    call her_main("You expect me to LICK your old cum off the floor?", "angry", "narrow", "base", "down")
                     hide screen hermione_main
                     m "I do. Unless of course you would prefer to go back to your room hungry and unsatisfied."
                     call her_main("...", "angry", "base", "base", "mid")
@@ -652,7 +652,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("Huh, I must have forgotten, silly old me.", "base", "happy", "base", "mid")
     call her_main("So professor, what am I doing here?", "base", "narrow", "worried", "down")
     call her_main("Aaaaaaah!!!!","shock","worriedCl",cheeks="blush")
-    call her_main("What happened to my outfit?!","shock","down_raised")
+    call her_main("What happened to my outfit?!", "shock", "narrow", "base", "down")
     call her_main("I can't be seen wearing all this stuff!!!", "disgust", "narrow", "worried", "down")
 
     if hermione_wear_top:
@@ -680,7 +680,7 @@ label potion_scene_3_3_1: #Hypno potion
 
         call her_main("I bet you like watching me strip mistah{image=textheart}","smile","glance")
 
-    call her_main("I'm not sure what under-thingies I should wear though...","annoyed","down_raised")
+    call her_main("I'm not sure what under-thingies I should wear though...", "annoyed", "narrow", "base", "down")
     call her_main("Definitely something in pink!!!","smile","happyCl")
     hide screen hermione_main
     call blkfade

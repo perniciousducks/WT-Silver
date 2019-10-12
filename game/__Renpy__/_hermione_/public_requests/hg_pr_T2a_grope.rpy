@@ -193,7 +193,7 @@ label hg_pr_grope_T1_E2:
     her "Ehm..."
     call her_main("Well he touched me under my skirt a little...", "angry", "base", "base", "mid")
     her "Then I let him rub my..."
-    call her_main("...my pussy through the panties, [genie_name].","angry","down_raised")
+    call her_main("...my pussy through the panties, [genie_name].", "angry", "narrow", "base", "down")
     m "Very good. Then what happened?"
     call her_main("Then he sort of started to touch himself [genie_name]...","open","worriedCl")
     her "So, I decided to leave..."
@@ -320,7 +320,7 @@ label hg_pr_grope_T2_E3:
     her "We found a secluded spot behind one of the book shelves..."
     her "And I told him that he can touch me wherever he wants..."
     her "And...."
-    call her_main("..........","clench","down_raised")
+    call her_main("..........", "clench", "narrow", "base", "down")
     m "What?"
     call her_main(".....................","normal","worriedCl")
     call play_music("despair")
@@ -333,7 +333,7 @@ label hg_pr_grope_T2_E3:
     call her_main("He started to smell my toes, [genie_name]!", "angry", "base", "base", "mid", tears="soft")
     call her_main("I felt so... violated!", "angry", "base", "base", "mid", tears="soft")
     m "So he didn't touch your tits, or your butt?"
-    call her_main("No, [genie_name]... *sob!*","shock","down_raised", cheeks="blush", tears="crying")
+    call her_main("No, [genie_name]... *sob!*", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     m "Alright, then what happened?"
     call her_main("Nothing! I couldn't bear the humiliation... I just ran...", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
     her "I even left my shoes behind and had to come back later to pick them up..."
@@ -366,7 +366,7 @@ label hg_pr_grope_T3_E1:
     m "What did the note say?"
     call her_main("Well...", "open", "narrow", "worried", "down")
     her "It said: \"You can touch my butt if you want. I bet professor Snape would never notice.\""
-    call her_main("Everyone was laughing...","angry","down_raised")
+    call her_main("Everyone was laughing...", "angry", "narrow", "base", "down")
     her "It was so embarrassing I wanted to die..."
     call her_main("I really hate professor Snape, [genie_name]...", "angry", "base", "angry", "mid")
     m "What happened then?"

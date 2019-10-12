@@ -130,10 +130,10 @@ label end_hg_pr_flash:
             call her_main("(What if Harry or Ron saw me like that?)", "angry", "wide", "base", "stare")
             call her_main("(Standing there...)")
             call her_main("(Pressing my breasts against that window glass...)")
-            call her_main("(I would probably just die of embarrassment right there on the spot...)","angry","down_raised")
+            call her_main("(I would probably just die of embarrassment right there on the spot...)", "angry", "narrow", "base", "down")
             call her_main("(No. Protecting the honour of the \"Gryffindor\" house is my number one priority.)", "upset", "closed", "base", "mid")
             call her_main("(We must get the cup this year, no matter the cost...)")
-            call her_main("(........)","angry","down_raised")
+            call her_main("(........)", "angry", "narrow", "base", "down")
         else:
             call her_main("\"Slytherin\"...", "upset", "closed", "base", "mid", ypos="head")
 
@@ -256,11 +256,11 @@ label hg_pr_flash_T1_E3:
     m "Good job."
     m "How did he react to the sight of your naked tits?"
     $ sc34CG(3, 8)
-    call her_main("I'm not sure...","angry","down_raised")
+    call her_main("I'm not sure...", "angry", "narrow", "base", "down")
     $ sc34CG(3, 9)
     call her_main("He looked rather shocked I suppose...", "angry", "base", "base", "mid")
     $ sc34CG(3, 10)
-    call her_main("After I showed him my breasts it got too embarrassing for me to stay there any longer...","angry","down_raised")
+    call her_main("After I showed him my breasts it got too embarrassing for me to stay there any longer...", "angry", "narrow", "base", "down")
     $ sc34CG(3, 11)
     call her_main("So I just gathered all my books and left...", "angry", "base", "base", "mid")
     $ sc34CG(3, 6)
@@ -282,9 +282,9 @@ label hg_pr_flash_T2_E1:
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name]. Did you complete your task?"
     call her_main("Yes I did, [genie_name].","upset","wink")
-    call her_main(".............","angry","down_raised")
+    call her_main(".............", "angry", "narrow", "base", "down")
     m "Well? How did it go?"
-    call her_main("................","angry","down_raised")
+    call her_main("................", "angry", "narrow", "base", "down")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Just for the record, [genie_name]...", "annoyed", "narrow", "angry", "R")
     m "Hm?"
@@ -299,7 +299,7 @@ label hg_pr_flash_T2_E1:
     m "Nevertheless, you can stop selling me these favours at any moment, [hermione_name]."
     call her_main("I suppose...", "annoyed", "narrow", "angry", "R")
     m "And yet you keep on coming back..."
-    call her_main("............................","angry","down_raised")
+    call her_main("............................", "angry", "narrow", "base", "down")
     m "I think you may actually be taking some twisted form of pleasure from this."
     call her_main("What?", "angry", "base", "angry", "mid")
     m "Shame on you, [hermione_name]. Shame on you."
@@ -339,7 +339,7 @@ label hg_pr_flash_T2_E2:
     m "When you are being coy like this..."
     m "It only makes me more curious. You know that, right?"
     call her_main("Aww...", "angry", "base", "base", "mid")
-    call her_main("Well... Ehm...","angry","down_raised")
+    call her_main("Well... Ehm...", "angry", "narrow", "base", "down")
     her "Well, alright, here it goes..."
     call her_main("I flashed my tits to that \"Slytherin\" underclassman in a corridor...","scream","worriedCl")
     her "But I was standing too close to him..."
@@ -350,7 +350,7 @@ label hg_pr_flash_T2_E2:
     call her_main("He made me promise to meet him after my classes...", "angry", "base", "base", "mid")
     her "And let him..."
     call her_main("\"Play with my tits\" some more...","open","worriedCl")
-    call her_main("You see, that is why I hate \"slytherin\" boys, [genie_name]...","angry","down_raised")
+    call her_main("You see, that is why I hate \"slytherin\" boys, [genie_name]...", "angry", "narrow", "base", "down")
     her "They don't have a shred of honour.."
     her "..."
     m "Did you keep your promise?"
@@ -377,13 +377,13 @@ label hg_pr_flash_T2_E3:
     m "Hm...?"
     call play_music("playful_tension") # SEX THEME.
     her "Instead I just went to the library window and..."
-    call her_main("...I just pulled my shirt up and pressed my bare breasts against the glass...","angry","down_raised")
+    call her_main("...I just pulled my shirt up and pressed my bare breasts against the glass...", "angry", "narrow", "base", "down")
     her "I stood there like that for several seconds..."
     her "To make sure that at least someone sees me from the outside..."
     call her_main("I hope this still counts, [genie_name]...", "angry", "base", "base", "mid")
     m "Hm..."
     m "How many students would you say saw you standing behind that window?"
-    call her_main("I am not sure, [genie_name]... A couple maybe...?","angry","down_raised")
+    call her_main("I am not sure, [genie_name]... A couple maybe...?", "angry", "narrow", "base", "down")
     m "\"Maybe\"?"
     call her_main("I don't know, [genie_name]...","open","worriedCl",cheeks="blush")
     her "To be honest I kept my eyes closed..."
@@ -426,11 +426,11 @@ label hg_pr_flash_T3_E1:
     $ sc34CG(3, 12)
     call her_main("trying to get some studying done...", "open", "narrow", "worried", "down")
     her "I don't think there were many people around..."
-    call her_main("Or at least I hope so...","angry","down_raised")
+    call her_main("Or at least I hope so...", "angry", "narrow", "base", "down")
     $ sc34CG(3, 13)
     call her_main("But they definitely saw my breasts, [genie_name]...", "angry", "base", "base", "mid")
     $ sc34CG(3, 7)
-    call her_main("eventually A few first years seemed to notice...","angry","down_raised")
+    call her_main("eventually A few first years seemed to notice...", "angry", "narrow", "base", "down")
     $ sc34CG(3, 10)
     call her_main("I had to leave pretty quickly after that...", "angry", "base", "base", "mid")
     m "Hm..."

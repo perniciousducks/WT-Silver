@@ -1245,7 +1245,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=14)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
     $ lunCG(pos=6)
-    call her_main("Do you want me to suck your cock?","base","down_raised")
+    call her_main("Do you want me to suck your cock?", "base", "narrow", "base", "down")
     $ lunCG(pos=12)
     call her_main("Or maybe you want to bend me over your desk again{image=textheart}{image=textheart}{image=textheart}...", "smile", "squint", "angry", "mid")
     $ lunCG(pos=8)
@@ -1263,7 +1263,7 @@ label ll_pf_blowjob_T1_summon:
     pause.5
 
     show screen blktone
-    call her_main("","soft","down_raised")
+    call her_main("", "soft", "narrow", "base", "down")
     call ctc
     $ lunCG('sucking', 'seductive', 'sad', 'dick', pos=13)
     m "Ugh... that's it, slut..."
@@ -1283,7 +1283,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=15)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=15)
-    call her_main("...","smile","down_raised")
+    call her_main("...", "smile", "narrow", "base", "down")
     $ lunCG(pos=10)
     ">Hermione stares at your desk while stripping down to nothing."
     pause.2
@@ -1314,7 +1314,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=15)
     $ hermione_wear_panties = False
     call set_her_action("covering")
-    call her_main("So... who's hiding under the desk?","smile","down_raised")
+    call her_main("So... who's hiding under the desk?", "smile", "narrow", "base", "down")
     $ lunCG(pos=9)
     lun "*glck* *slrp* *glck*"
     m "Ugh... what do you mean?"
@@ -1323,7 +1323,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG('', 'wide', '', 'dl', pos=9)
     lun "*glck* *slrp* *glck*"
     $ lunCG('', '', '', 'dick', pos=12)
-    call her_main("I'm just curious who you managed to get...","soft","down_raised")
+    call her_main("I'm just curious who you managed to get...", "soft", "narrow", "base", "down")
     $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=13)
@@ -1445,7 +1445,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=4)
     call her_main("But maybe that's what you two want...", "grin", "narrow", "worried", "down")
     $ lunCG(pos=8)
-    call her_main("Maybe you were waiting for someone else to walk in and catch you...","grin","down_raised")
+    call her_main("Maybe you were waiting for someone else to walk in and catch you...", "grin", "narrow", "base", "down")
     $ lunCG(pos=12)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=16)

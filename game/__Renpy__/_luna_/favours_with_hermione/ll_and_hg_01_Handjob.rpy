@@ -319,7 +319,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             call lun_main("*gulp*","base","seductive","sad","empty")
             ">Eventually she finally gets the last strand into her mouth."
             $ uni_sperm = False
-            call her_main("...","disgust","down_raised")
+            call her_main("...", "disgust", "narrow", "base", "down")
             call lun_main("...","full","happyCl","sad","mid")
             call lun_main("*gulp*","base","seductive","sad","empty")
             call her_main("...","annoyed","worriedL")
@@ -402,7 +402,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "(I hope she believes this schlock...)"
         call her_main("Really?", "shock", "wide", "base", "stare")
         call her_main("But isn't messing around with her mind a little...", "soft", "happy", "base", "R")
-        call her_main("unethical?","angry","down_raised")
+        call her_main("unethical?", "angry", "narrow", "base", "down")
         m "Yes, well normally you'd be right, but this is more of a curing of an existing mental condition."
         m "Think about it like I'm trying to cure her of Asperger's disease."
         call her_main("Actually sir, Asperger's has been reclassified as part of the autism spectrum and is no longer considered it's own disease.", "open", "closed", "base", "mid")
@@ -453,8 +453,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                 m "I'm not so sure about that. She seemed pretty harsh today."
                 call her_main("hmmm, you're probably right.", "annoyed", "base", "base", "mid")
                 m "Maybe you should fight fire with fire?"
-                call her_main("And be mean in return?","disgust","down_raised")
-                call her_main("I don't know, [genie_name]... She is my friend...","clench","down_raised")
+                call her_main("And be mean in return?", "disgust", "narrow", "base", "down")
+                call her_main("I don't know, [genie_name]... She is my friend...", "clench", "narrow", "base", "down")
 
         m "Anyway, thanks for your help today."
         call her_main("anything for my friends [genie_name]...", "soft", "happy", "base", "R")
@@ -684,7 +684,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         ">Luna then collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."
         call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","angry","angry","mid")
         call lun_main("it's not nasty!","base","seductive","angry","mid")
-        call her_main("oh that's right... I almost forgot how much of a cumslut you are.","angry","down_raised")
+        call her_main("oh that's right... I almost forgot how much of a cumslut you are.", "angry", "narrow", "base", "down")
         call lun_main("I am not!","normal","angry","angry","up")
         call her_main("so you're not going to eat all of that \'delicious\' cum on your face then?","base","suspicious")
         call lun_main("...","base","seductive","angry","mid")
@@ -765,7 +765,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         ">Luna slowly lists her marks across all subjects, most of them bordering on a pass and fail with the exception of divination."
         call her_main("what? so low? How do you expect to get a job at the ministry of magic with marks like that?","scream","wide_stare")
         call lun_main("...","normal","suspicious","sad","down")
-        call her_main("at this rate you'll have to get a job in the muggle world.","disgust","down_raised")
+        call her_main("at this rate you'll have to get a job in the muggle world.", "disgust", "narrow", "base", "down")
         call lun_main("you think I don't know that? why do you think I agreed to all this in the first place...","upset","angry","angry","mid")
         call lun_main("Just stop humiliating me and list your stupid demand!","upset","mad","angry","mid")
         call lun_main("What is it anyway? Do you expect me to walk around the school half naked?","upset","suspicious","angry","R")

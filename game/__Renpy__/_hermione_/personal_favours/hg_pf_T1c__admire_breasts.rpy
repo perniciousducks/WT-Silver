@@ -66,11 +66,11 @@ label hg_pf_admire_breasts:
     call her_walk(xpos="door", ypos="base", speed=3)
 
     if her_tier <= 1 and hg_pf_admire_breasts.points == 1:
-        call her_main("........................","disgust","down_raised", cheeks="blush", ypos="head")
+        call her_main("........................", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
     elif her_tier <= 2 and hg_pf_admire_breasts.points == 1:
-        call her_main("(How humiliating... What have I become...?)","disgust","down_raised", cheeks="blush", ypos="head")
+        call her_main("(How humiliating... What have I become...?)", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
     elif her_tier <= 2:
-        call her_main("........................","disgust","down_raised", cheeks="blush", ypos="head")
+        call her_main("........................", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
     elif her_tier <= 3 and hg_pf_admire_breasts.points == 1:
         call her_main("{size=-5}(That was so humiliating...){/size}", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
         call her_main("{size=-5}(No, Hermione, you silly girl!){/size}", "angry", "base", "angry", "mid", cheeks="blush", ypos="head")
@@ -345,7 +345,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
                     $ her_mood += 9
 
                     call her_main("...............", "annoyed", "narrow", "worried", "down")
-                    call her_main("Well, so be it...","clench","down_raised")
+                    call her_main("Well, so be it...", "clench", "narrow", "base", "down")
 
                     pass
 
@@ -467,7 +467,7 @@ label hg_pf_admire_breasts_T4_intro_E1:
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?","soft","glance")
     m "Did I ever tell you what magnificent tits you have?"
-    call her_main("............","clench","down_raised", cheeks="blush")
+    call her_main("............", "clench", "narrow", "base", "down", cheeks="blush")
     call her_main("Why do you have to be so vulgar, [genie_name]?!","clench","worriedCl", cheeks="blush")
     m "Just take the compliment and show them to me..."
     call her_main("Yes, [genie_name]...", "base", "narrow", "worried", "down", cheeks="blush")

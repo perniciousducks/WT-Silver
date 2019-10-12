@@ -67,7 +67,7 @@ label equip_misc_item:
 
             # if wardrobe_chitchat_active:
                 # if her_whoring < 18:
-                    # call her_main("What do you want to change?","disgust","down_raised")
+                    # call her_main("What do you want to change?", "disgust", "narrow", "base", "down")
                 # else:
                     # call her_main("What would you like to change?", "base", "narrow", "worried", "down")
 
@@ -116,7 +116,7 @@ label equip_misc_item:
 
                 # call her_main("You want me to use a butt plug? Again?","angry","wink")
                 # call her_main("(...)", "annoyed", "narrow", "annoyed", "up")
-                # call her_main("(It's small enough. Shouldn't be too bad...)","disgust","down_raised")
+                # call her_main("(It's small enough. Shouldn't be too bad...)", "disgust", "narrow", "base", "down")
                 # call her_main("Alright,... Let me put it in real quick...", "base", "base", "base", "mid")
                 # hide screen hermione_main
                 # with d5

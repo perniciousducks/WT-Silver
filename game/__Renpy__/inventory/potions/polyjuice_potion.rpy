@@ -51,7 +51,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
         else:
             if her_whoring >= 12:
                 call her_main("If it makes you happy, [genie_name].", "smile", "base", "base", "mid")
-                call her_main("...","annoyed","down_raised")
+                call her_main("...", "annoyed", "narrow", "base", "down")
             elif her_whoring >= 6:
                 call her_main("And what kind of potion is it? It looks gross...", "normal", "squint", "angry", "mid")
                 m "Well, wouldn't it spoil half the enjoyment of it if I told you?"

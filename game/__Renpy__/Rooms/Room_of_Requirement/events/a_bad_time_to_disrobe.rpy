@@ -280,7 +280,7 @@ label a_bad_time_to_disrobe_part_2:
     m "And what about your assignment. How did it go?"
     call her_main("Oh... yes, it went very well thank you... no hurdles in any way.","soft","worriedL", cheeks="blush")
     m "Your face is glowing miss Granger, I can tell when you're being untruthful."
-    call her_main("It is? I didn't even notice...","normal","down_raised", cheeks="blush")
+    call her_main("It is? I didn't even notice...", "normal", "narrow", "base", "down", cheeks="blush")
     m "You're going to have to elaborate if you'd like those house points."
     call her_main("Oh... okay, I'l just go ahead then...", "mad", "base", "base", "mid")
     m "Let me get the popcorn."
@@ -290,13 +290,13 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("...", "base", "base", "base", "mid", cheeks="blush")
     call her_main("So... I went to the boys changing room when they were in quidditch practice.", "open", "narrow", "worried", "down")
     m "*CRUNCH*"
-    call her_main("It's very messy in there... I thought the girls changing room was bad...","base","down_raised")
+    call her_main("It's very messy in there... I thought the girls changing room was bad...", "base", "narrow", "base", "down")
     m "*CRUNCH* *Chew* *Chew*"
     m "*CRUNCH*"
     call her_main("Anyway... so I rummaged around in that mess...","annoyed","worried")
     call her_main("I knew it had to have been somewhere between the showers and the doorway...", "base", "base", "base", "mid")
     call her_main("After looking around for a while I noticed that the cloak had been pushed under one of the benches lining the wall.", "open", "narrow", "worried", "down")
-    call her_main("So I grabbed it and I thought I might as well disrobe and hide in the shower room with the cloak on.","base","down_raised")
+    call her_main("So I grabbed it and I thought I might as well disrobe and hide in the shower room with the cloak on.", "base", "narrow", "base", "down")
     call her_main("But as I was stuffing my clothes in one of the lockers a boy walked in.","clench","worried")
     m "*CRUNCH*"
     call her_main("Professor!", "scream", "base", "angry", "mid")
@@ -308,14 +308,14 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("And I panicked and threw the cloak over myself and hid in one of the toilets.","open","worriedL")
     m "Smart."
     call her_main("...", "base", "base", "base", "mid", cheeks="blush")
-    call her_main("Well, it would've been if I had remembered to lock it.","base","down_raised")
+    call her_main("Well, it would've been if I had remembered to lock it.", "base", "narrow", "base", "down")
     g9 "Not that smart..."
     call her_main("Do you want me to continue or not?", "annoyed", "narrow", "annoyed", "mid")
     m "You're the one receiving the points here, I'm just providing the means of earning them."
     call her_main("...", "normal", "narrow", "worried", "down")
-    call her_main("As I was saying...","base","down_raised")
+    call her_main("As I was saying...", "base", "narrow", "base", "down")
     call her_main("I went into one of the toilets and I heard the boy shuffling outside.", "base", "closed", "base", "mid")
-    call her_main("The room was so small so I tried to back into a corner, but as he came in I knew it wasn't going to work...","base","down_raised", cheeks="blush")
+    call her_main("The room was so small so I tried to back into a corner, but as he came in I knew it wasn't going to work...", "base", "narrow", "base", "down", cheeks="blush")
     call her_main("So I prayed he wasn't about to sit down and instead I positioned myself above the toilet with my legs around the base.","clench","worriedCl")
     m "And did he sit down or not?"
     call her_main("No, but he was close enough for me to feel his...", "mad", "squint", "worried", "up")

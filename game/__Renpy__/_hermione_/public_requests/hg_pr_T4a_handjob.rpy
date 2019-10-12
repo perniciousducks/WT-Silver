@@ -63,7 +63,7 @@ label hg_pr_handjob:
         m "Today's favour shall be..."
         call her_main(".........", "angry", "base", "base", "mid")
         m "A Handjob to the boy of your choosing!"
-        call her_main("...again?","angry","down_raised")
+        call her_main("...again?", "angry", "narrow", "base", "down")
         m "Sure, why not?"
         m "And another fifty five house points for the \"Gryffindor\" house of course."
         call her_main("..........","annoyed","worriedL")
@@ -82,7 +82,7 @@ label hg_pr_handjob:
         call her_main("hm..........", "annoyed", "narrow", "annoyed", "mid")
         her "Fifty five house points?"
         m "Naturally."
-        call her_main("Well, alright... I'll see what I can do...","angry","down_raised")
+        call her_main("Well, alright... I'll see what I can do...", "angry", "narrow", "base", "down")
 
     else:
         call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -165,7 +165,7 @@ label hg_pr_handjob_T1_E1:
             m "If you didn't make him cum then that wasn't a proper handjob. Period."
             call her_main("But... But what was it then...?", "angry", "base", "base", "mid")
             m "How should I know? A cock massage?"
-            call her_main("Aww...","angry","down_raised")
+            call her_main("Aww...", "angry", "narrow", "base", "down")
             her "But I really tried my best..."
             m "No handjob - no payment, [hermione_name]."
             call her_main(".....", "angry", "base", "base", "mid")
@@ -184,7 +184,7 @@ label hg_pr_handjob_T1_E1:
             $ current_payout = 27 #Used when haggling about price of th favour.
             call her_main("Oh...?", "open", "base", "base", "mid")
             m "Is that a Problem, [hermione_name]?"
-            call her_main("No [genie_name]... It's only fair I suppose...","angry","down_raised")
+            call her_main("No [genie_name]... It's only fair I suppose...", "angry", "narrow", "base", "down")
             m "Of course it is!"
 
             jump end_hg_pr_handjob
@@ -217,14 +217,14 @@ label hg_pr_handjob_T1_E2:
     m "What's the matter, [hermione_name]?"
     m "Doubting the honesty of your fellow \"Gryffindors\"?"
     call her_main("Of course not, [genie_name].", "upset", "closed", "base", "mid")
-    call her_main("...........................","angry","down_raised")
+    call her_main("...........................", "angry", "narrow", "base", "down")
     call her_main("Still... Performing this sort of task could really damage my reputation...", "angry", "base", "base", "mid")
     m "Is this your way of asking for a raise, [hermione_name]?"
     m "Fifty Five points is as high as I can go with this one."
-    call her_main("Oh... Of course...","angry","down_raised")
+    call her_main("Oh... Of course...", "angry", "narrow", "base", "down")
     m "Unless, you've changed your mind about having sex with one of your classmates?"
     call her_main("What?", "shock", "wide", "base", "stare")
-    call her_main("[genie_name], I am not a prostitute!","angry","down_raised")
+    call her_main("[genie_name], I am not a prostitute!", "angry", "narrow", "base", "down")
     m "Well, in that case..."
 
     jump end_hg_pr_handjob
@@ -305,7 +305,7 @@ label hg_pr_handjob_T2_E1:
     call her_main("No, [genie_name]. Not yet...", "angry", "base", "base", "mid")
     her "I am going to meet him as soon as we are done here, [genie_name]."
     m "Hm..."
-    call her_main("So if you could just give those points in advance...","angry","down_raised")
+    call her_main("So if you could just give those points in advance...", "angry", "narrow", "base", "down")
     her "I would go meet with the boy right away and..."
     call her_main("And give him a proper handjob...", "open", "base", "base", "R", cheeks="blush")
 
@@ -315,7 +315,7 @@ label hg_pr_handjob_T2_E1:
             call her_main("B-but...", "open", "base", "base", "mid", cheeks="blush")
             call her_main("But I gave him my word...", "angry", "wide", "base", "stare")
             her "I swore on Godric Gryffindor's name..."
-            call her_main("And now I will have to give him the wank off no matter what...","angry","down_raised")
+            call her_main("And now I will have to give him the wank off no matter what...", "angry", "narrow", "base", "down")
             m "Well, I didn't force you to give him that promise, did I?"
             call her_main("......", "angry", "base", "base", "mid")
             call her_main("This is just not fair!","scream","worriedCl")
@@ -352,13 +352,13 @@ label hg_pr_handjob_T2_E2:
     call play_music("playful_tension") # SEX THEME.
     her "Today I gave another handjob to one of my classmates..."
     call her_main("Me, Hermione Granger...", "open", "narrow", "worried", "down")
-    call her_main("Giving free handjobs in the school's restroom...","angry","down_raised")
+    call her_main("Giving free handjobs in the school's restroom...", "angry", "narrow", "base", "down")
     m "Wait. What do you mean with \"free\"?"
     call her_main("Oh, of course... I get paid with house points for this...", "angry", "base", "base", "mid")
     her "But nobody knows about that..."
     her "And to everyone else this just looks like some harlot who does this for fun..."
     call her_main("They must think I am a slut...", "open", "narrow", "worried", "down")
-    call her_main("..............","clench","down_raised")
+    call her_main("..............", "clench", "narrow", "base", "down")
     call her_main("Do you think I'm a slut, [genie_name]?", "open", "happy", "base", "mid", cheeks="blush")
 
     menu:
@@ -369,13 +369,13 @@ label hg_pr_handjob_T2_E2:
             call her_main("I am not taking pleasure in this sort of activity...", "soft", "narrow", "annoyed", "up")
             call her_main("Because if I would...", "annoyed", "narrow", "angry", "R")
             her "That would mean I really am a slut..."
-            call her_main("And I am not...","angry","down_raised")
+            call her_main("And I am not...", "angry", "narrow", "base", "down")
             her "......"
             her "I am not a slut..."
 
         "\"A slut? No... Not yet.\"":
             call her_main("\"Not yet\"??!", "angry", "base", "base", "mid")
-            call her_main("..........","angry","down_raised")
+            call her_main("..........", "angry", "narrow", "base", "down")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("Well, of course!","scream","wide_stare")
             call her_main("You are right, as usual, [genie_name]!", "soft", "base", "base", "mid")
@@ -430,7 +430,7 @@ label hg_pr_handjob_T2_E3:
     call her_main("It made me feel so cheap... and used.", "upset", "closed", "base", "mid")
     her "But it gets worse..."
     her "......."
-    call her_main("I think on some level it also made me feel good somehow...","angry","down_raised")
+    call her_main("I think on some level it also made me feel good somehow...", "angry", "narrow", "base", "down")
     her "All these favours I have been selling to you lately, [genie_name]..."
     call her_main("...it's starting to affect me.", "angry", "base", "base", "mid")
     her "[genie_name], what is happening to me?"
@@ -508,10 +508,10 @@ label hg_pr_handjob_T3_intro_E1:
     her "...I sucked him off, [genie_name]."
     her "I did not plan to... but..."
     call her_main("Ron is always so nice to me...","clench","worried", cheeks="blush", tears="soft")
-    call her_main("And I wanted to thank him...*Sob!*","shock","down_raised", cheeks="blush", tears="crying")
+    call her_main("And I wanted to thank him...*Sob!*", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     call her_main("And now Ginny will kill me! *Sob!*", "angry", "base", "base", "mid", tears="soft")
     her "She will kill me, [genie_name]!"
-    call her_main("And if she does not I will probably die of shame anyway.","shock","down_raised", cheeks="blush", tears="crying")
+    call her_main("And if she does not I will probably die of shame anyway.", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     her "No, no, no... How will I ever face her...?"
     m "Calm down, [hermione_name]."
     m "I assure you, this is not something a boy would be eager to brag about to his sister."
@@ -574,12 +574,12 @@ label hg_pr_handjob_T3_E3:
     m "...?"
     call her_main("Well, I did not just wank off one of my classmates...", "open", "base", "base", "mid")
     her "I.............."
-    call her_main("...............","clench","down_raised")
+    call her_main("...............", "clench", "narrow", "base", "down")
     m "Spit it out, [hermione_name]. The suspense is killing me."
     call play_music("playful_tension") # SEX THEME.
     call her_main("I sort of did it during class...", "open", "narrow", "worried", "down")
     m "Impressive..."
-    call her_main("Sir, you don't understand.  Let me try and explain.","angry","down_raised")
+    call her_main("Sir, you don't understand.  Let me try and explain.", "angry", "narrow", "base", "down")
     hide screen blktone
     with d3
     her "I don't even know what came over me."
@@ -599,7 +599,7 @@ label hg_pr_handjob_T3_E3:
     call her_main("To be completely honest with you, sir... I did.", "grin", "narrow", "base", "dead")
     call her_main("It was exciting.", "smile", "base", "angry", "mid")
     call her_main("God, there was so much.  My hands looked like a candle had dripped hot wax all over them.", "grin", "narrow", "base", "dead")
-    call her_main("I didn't know what to do I couldn't just go about the rest of class with huge globs of cum all over my hands.","angry","down_raised")
+    call her_main("I didn't know what to do I couldn't just go about the rest of class with huge globs of cum all over my hands.", "angry", "narrow", "base", "down")
     her "So I decided to rub it all over the inside of my thighs to keep from having to stain my clothes."
     call her_main("Every time I walked I could smell their cum from between my legs.", "silly", "narrow", "annoyed", "up")
     m "That's quite an interesting story miss Granger."

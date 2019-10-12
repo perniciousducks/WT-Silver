@@ -255,7 +255,7 @@ label hg_pf_admire_panties_T3_intro_E1:
     else:
         m "[hermione_name], I'd like you to show me your panties again, if that's not too much trouble."
     call her_main("Oh...", "open", "narrow", "worried", "down")
-    call her_main("Okay...","base","down_raised", cheeks="blush")
+    call her_main("Okay...", "base", "narrow", "base", "down", cheeks="blush")
 
     call hide_characters
     hide screen bld1
@@ -314,7 +314,7 @@ label hg_pf_admire_panties_T3_intro_E1:
 label hg_pf_admire_panties_T3_E1:
     m "[hermione_name], I'd like you to show me your panties again if possible."
     call her_main("Oh...", "open", "narrow", "worried", "down")
-    call her_main("Well, that might be an issue...","base","down_raised", cheeks="blush")
+    call her_main("Well, that might be an issue...", "base", "narrow", "base", "down", cheeks="blush")
 
     call hide_characters
     hide screen bld1
@@ -399,7 +399,7 @@ label hg_pf_admire_panties_T3_E2:
 
     m "[hermione_name], show me those cute panties of yours again."
     call her_main("Oh...", "open", "narrow", "worried", "down")
-    call her_main("Okay...","base","down_raised", cheeks="blush")
+    call her_main("Okay...", "base", "narrow", "base", "down", cheeks="blush")
 
     call hide_characters
     hide screen bld1

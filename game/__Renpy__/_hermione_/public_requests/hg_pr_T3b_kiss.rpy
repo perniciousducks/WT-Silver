@@ -287,10 +287,10 @@ label hg_pr_kiss_T2_E2:
     call her_main("She said that we should go to the girls' restroom for that...", "open", "narrow", "worried", "down")
     her "But I just kissed her right there in the corridor..."
     call her_main("And she kissed me back but...", "open", "base", "base", "mid")
-    call her_main("It got weird really fast...","angry","down_raised")
+    call her_main("It got weird really fast...", "angry", "narrow", "base", "down")
     her "The way she kissed me..."
     call her_main("She did it like a boy would, [genie_name]...", "angry", "base", "base", "mid")
-    call her_main("Aggressive but confident...","angry","down_raised")
+    call her_main("Aggressive but confident...", "angry", "narrow", "base", "down")
     call her_main("Naturally a small group of spectators gathered up around us right away...", "upset", "closed", "base", "mid")
     call her_main("Mostly boys of course...", "open", "base", "base", "mid", cheeks="blush")
     call her_main("Some of them even cheered us on...","open","worriedCl", cheeks="blush")
@@ -326,7 +326,7 @@ label hg_pr_kiss_T2_E3:
     menu:
         m "..."
         "\"Who knows? Boys are weird.\"":
-            call her_main("Yes, they are, aren't they...?","angry","down_raised")
+            call her_main("Yes, they are, aren't they...?", "angry", "narrow", "base", "down")
             m "Yes, yes..."
             m "And that is why young girls such as yourself...."
             m "Are often interested in a much older gentleman..."
@@ -349,7 +349,7 @@ label hg_pr_kiss_T2_E3:
     call her_main("...it is sort of becoming a new trend in our school...", "angry", "base", "base", "mid")
     her "Some girls are willing to do this simply to catch the attention of the boy they fancy..."
     m "Are you one of those girls, [hermione_name]?"
-    call her_main("I suppose...","angry","down_raised")
+    call her_main("I suppose...", "angry", "narrow", "base", "down")
     call her_main("I mean, only because of the favours you buy from me, [genie_name]...", "upset", "closed", "base", "mid")
     m "Good... Tell me more."
     call her_main("Well, as you know, I am quite popular...","smile","happyCl", emote="06")

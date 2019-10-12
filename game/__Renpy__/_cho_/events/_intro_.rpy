@@ -634,7 +634,7 @@ label cho_intro_E3:
         m "Well, it has come to my attention that you’ve been spreading false rumours about her."
         call her_main("And? It’s well deserved in my opinion...", "soft", "narrow", "annoyed", "mid")
         m "Well, don’t you feel like it’s unbefitting of you to publicly talk badly about another student."
-        call her_main("...","annoyed","down_raised")
+        call her_main("...", "annoyed", "narrow", "base", "down")
         g9 "Surely that isn’t something to expect from Gryffindor's finest.."
         call her_main("Did Cho put you up to this?","normal","suspicious")
         g4 "..."
@@ -752,7 +752,7 @@ label cho_intro_E3:
         call her_main("Oh. I barely even remember that I did that.","annoyed","glanceL")
         m "So it wouldn't be an issue for you to drop it?"
         call her_main("I guess so...", "soft", "narrow", "worried", "down")
-        call her_main("Although, if I were to drop it...","open","down_raised")
+        call her_main("Although, if I were to drop it...", "open", "narrow", "base", "down")
         m "Yes?"
         call her_main("I want a seat in the teacher stands during Quidditch matches though!","grin","glance")
         m "I’m sure that could be arranged..."

@@ -104,7 +104,7 @@ label ball_quest_E1:
                 call her_main("My... selfishness?","annoyed","worriedL")
                 m "Your classmates deserve the best organised ball possible!"
                 m "And only {size=+5}YOU{/size} can give them that!"
-                call her_main("...that is true actually.","angry","down_raised")
+                call her_main("...that is true actually.", "angry", "narrow", "base", "down")
                 m "People depend on you, girl!"
 
                 if d_flag_01:
@@ -142,7 +142,7 @@ label ball_quest_E1:
 
                     m "Very good miss Granger..."
                     m "Your ample tits are always a welcome sight..."
-                    call her_main("....................","disgust","down_raised")
+                    call her_main("....................", "disgust", "narrow", "base", "down")
                     call ctc
 
                     hide screen hermione_main
@@ -450,7 +450,7 @@ label ball_quest_E3:
     call her_main("I will become the laughingstock of Hogwarts! *Sob!*","clench","worried", cheeks="blush", tears="soft")
     call her_main("My reputation is as good as ruined! *Sob!*", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
     m "Seriously? After all the favours you sold me you care about a thing like this?"
-    call her_main("Wearing the same dress to the \"Autumn Ball\" for two years in a row would be more humiliating than any favour I sold you so far, sir.","shock","down_raised", cheeks="blush", tears="crying")
+    call her_main("Wearing the same dress to the \"Autumn Ball\" for two years in a row would be more humiliating than any favour I sold you so far, sir.", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     with hpunch
     g4 "You've gotta be kidding me..."
     call her_main("Oh, you wouldn't understand...","angry","suspicious", cheeks="blush", tears="messy")
@@ -458,7 +458,7 @@ label ball_quest_E3:
     m "I beg your pardon?"
     call her_main("I mean... ehm...","open","surprised", cheeks="blush", tears="messy")
     her "Forgive me sir..."
-    call her_main("I don't know why I am telling you all of this...","shock","down_raised", cheeks="blush", tears="crying")
+    call her_main("I don't know why I am telling you all of this...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     m "................"
     call her_main("......................*sob!*", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
     call her_main("I think I'd better go now...*sob*","angry","suspicious", cheeks="blush", tears="messy")
@@ -513,7 +513,7 @@ label ball_quest_E4:
     call her_main("I spent countless hours with organizing the event...","normal","worriedCl")
     call her_main("I worked so hard... and...","open","worried", tears="soft")
     call her_main("And now I will not even be able to... to... *Sob!*", "shock", "base", "base", "R", cheeks="blush", tears="soft")
-    call her_main("To... *SOB!*","shock","down_raised", cheeks="blush", tears="crying")
+    call her_main("To... *SOB!*", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     call her_main("Excuse me sir!","angry","suspicious", cheeks="blush", tears="messy")
     hide screen hermione_main
     hide screen bld1
@@ -560,7 +560,7 @@ label ball_quest_E5:
     m "You sure don't look like it..."
     her "I am sorry, sir... *Sob!*"
     call her_main("I... I am just...","clench","worried", cheeks="blush", tears="soft")
-    call her_main("I am so happy...","shock","down_raised", cheeks="blush", tears="crying")
+    call her_main("I am so happy...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     her "Thank you, sir. Thank you so much."
     call her_main("I cannot believe that you would do something like that for me...","angry","suspicious", cheeks="blush", tears="messy")
     m "Well, I did. Now stop crying."
@@ -569,11 +569,11 @@ label ball_quest_E5:
     m "What?"
     call her_main("Because I will do it!","open","surprised", cheeks="blush", tears="messy")
     her "And I will swallow and everything!"
-    call her_main("And you wouldn't have to pay me a single house point!","shock","down_raised", cheeks="blush", tears="crying")
+    call her_main("And you wouldn't have to pay me a single house point!", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     m "uhm... Maybe some other time..."
     m "This is not the type of crying I find arousing..."
     call her_main("I'm sorry, sir. I'm such a mess...","angry","suspicious", cheeks="blush", tears="messy")
-    call her_main("But this is so unexpected...","shock","down_raised", cheeks="blush", tears="crying")
+    call her_main("But this is so unexpected...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     her "You made me so happy, sir...*sob!*"
     call her_main("Thank you sir! *SOB!* Thank you! *SOB!*","angry","suspicious", cheeks="blush", tears="messy")
     m "Well... err... there, there..."

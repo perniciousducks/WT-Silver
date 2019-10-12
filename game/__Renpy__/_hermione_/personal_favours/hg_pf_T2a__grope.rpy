@@ -73,7 +73,7 @@ label hg_pf_grope:
     call her_walk(xpos="door", ypos="base", speed=2.5)
 
     if her_tier > 5:
-        call her_main("(What about my points?)","disgust","down_raised", cheeks="blush", ypos="head")
+        call her_main("(What about my points?)", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
         if her_whoring < 24:
             call her_main("(I'll just ask him about it next time...)", "annoyed", "narrow", "angry", "R", ypos="head")
         else:
@@ -138,7 +138,7 @@ label hg_pf_grope_T0_fail_repeat:
 label hg_pf_grope_T1_intro_E1:
     stop music fadeout 2.0
     m "Come closer [hermione_name]... Hop around my desk..."
-    call her_main("*Uhm*... very well, Sir.","disgust","down_raised")
+    call her_main("*Uhm*... very well, Sir.", "disgust", "narrow", "base", "down")
 
     call chibi_walk_desk_blkfade("hermione")
 
@@ -282,7 +282,7 @@ label hg_pf_grope_T3_intro_E1:
     g9 "Behind my desk."
     call her_main("Are you going to grope me again, [genie_name]?","soft","glance")
     g9 "You just read my mind!"
-    call her_main("...................","disgust","down_raised")
+    call her_main("...................", "disgust", "narrow", "base", "down")
 
     call chibi_walk_desk_blkfade("hermione")
 

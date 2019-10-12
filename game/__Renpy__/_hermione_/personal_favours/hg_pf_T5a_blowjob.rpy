@@ -110,7 +110,7 @@ label hg_pf_blowjob_T0_fail_intro:
         call her_main("Yes, but...", "disgust", "narrow", "worried", "down")
         call her_main("That was something different entirely...","disgust","worriedCl")
         m "How so?"
-        call her_main("All I wanted was to get done with that favour early, so I...","open","down_raised")
+        call her_main("All I wanted was to get done with that favour early, so I...", "open", "narrow", "base", "down")
         call her_main("I helped...","disgust","worriedL")
         g9 "By sucking on my cock! Indeed you did!"
         call her_main("No! I was merely stroking it...and...","silly","worriedCl")
@@ -121,7 +121,7 @@ label hg_pf_blowjob_T0_fail_intro:
         g9 "But I'm always open to try out new things!"
         call her_main("Are you out of your mind?!", "scream", "closed", "angry", "mid")
 
-    call her_main("I should leave...","disgust","down_raised", cheeks="blush")
+    call her_main("I should leave...", "disgust", "narrow", "base", "down", cheeks="blush")
 
     call her_walk(action="leave", speed=2.5)
 
@@ -183,12 +183,12 @@ label hg_pf_blowjob_T1_intro_E1:
     call her_main("Oh...", "open", "narrow", "worried", "down")
     call her_main("Alright.", "base", "narrow", "worried", "down")
     m "Really? Just like that?"
-    call her_main("Yes. I know I'm supposed feel outraged...","angry","down_raised")
+    call her_main("Yes. I know I'm supposed feel outraged...", "angry", "narrow", "base", "down")
     call her_main("But somehow I do not...", "angry", "base", "base", "mid")
     call her_main("I suppose I am just glad that I can help out my house...", "base", "narrow", "worried", "down")
     call her_main("And if to do that I must put your penis in my mouth so be it...", "upset", "closed", "base", "mid")
     m "Well, alright then."
-    call her_main("Although, now when I say it out loud like this...","angry","down_raised")
+    call her_main("Although, now when I say it out loud like this...", "angry", "narrow", "base", "down")
     m "Too late! You already said \"yes\"!"
     call her_main("I know...","grin","worriedCl", emote="05")
     call chibi_walk_desk_blkfade("hermione")
@@ -278,7 +278,7 @@ label hg_pf_blowjob_T2_intro_E1:
     g4 "Yes! You dirty slut!"
     g4 "Girls like you need to be punished!"
     g9 "Don't you think so too, Miss Granger?"
-    call her_main("...............................","clench","down_raised", cheeks="blush")
+    call her_main("...............................", "clench", "narrow", "base", "down", cheeks="blush")
     call her_main("Yes, [genie_name]...","soft","glance", cheeks="blush")
     call her_main("I need to be punished!","base","glance")
     g4 "Beg me for it, you slut!"
@@ -342,7 +342,7 @@ label hg_pf_blowjob_1:
             call her_main("*Slurp?*")
 
             call hg_chibi_transition("bj_pause")
-            call her_main("Oh, well...","angry","down_raised")
+            call her_main("Oh, well...", "angry", "narrow", "base", "down")
             call her_main("We are still active, but...")
 
             call hg_chibi_transition("bj")
@@ -399,11 +399,11 @@ label hg_pf_blowjob_1:
             call her_main("I had to give a speech with my uniform all messy and stained.")
             call her_main("It felt awful that I had to do that...")
             m "You did enjoy it a little bit though..."
-            call her_main("Well...","angry","down_raised")
+            call her_main("Well...", "angry", "narrow", "base", "down")
             m "Just admit it."
             call her_main("...............", "angry", "base", "base", "mid")
             m "Yes, I knew it. You took pleasure in it, you little perv."
-            call her_main("I suppose it was embarrassing and exciting at the same time...","angry","down_raised")
+            call her_main("I suppose it was embarrassing and exciting at the same time...", "angry", "narrow", "base", "down")
             call her_main("And it made me feel even worse about myself.")
             m "You poor thing."
             m "Cock back in the mouth."
@@ -1318,14 +1318,14 @@ label hg_hidden_blowjob_cumming:
     call hg_chibi_transition("bj_pause")
 
     if her_tier <= 5:
-        call her_main("uhm...","angry","down_raised", ypos="head")
+        call her_main("uhm...", "angry", "narrow", "base", "down", ypos="head")
         call her_main("I eat cockroaches?", "angry", "base", "base", "mid")
         m "What the fuck?"
         call her_main("T-they are pretty nasty, [genie_name]...", "angry", "base", "base", "mid")
         m "No, [hermione_name], I mean something dirty!"
         m "And don't you dare to say \"mud\"!"
         m "I mean dirty in a sexual way!"
-        call her_main("Oh... Ehm...","angry","down_raised")
+        call her_main("Oh... Ehm...", "angry", "narrow", "base", "down")
         m "Ah, never mind, the moment is gone..."
         call her_main("Ehm... I'm sorry, [genie_name].", "angry", "base", "base", "mid")
         m "Yeah, whatever. Make it up to me by sucking my cock harder."
@@ -1782,7 +1782,7 @@ label hg_pf_blowjob_2:
             m "That's it cock slut, Almost there..."
             call hg_chibi_transition("bj_pause")
             call her_main("Where do you want to cum today [genie_name]?", "soft", "narrow", "annoyed", "up")
-            call her_main("I know it's greedy of me to ask...","angry","down_raised")
+            call her_main("I know it's greedy of me to ask...", "angry", "narrow", "base", "down")
             call her_main("But can you cum in my mouth?","angry","wink")
             call her_main("{size=-4}Please...{/size} I promise I won't waste a drop.", "soft", "narrow", "annoyed", "up")
             m "I think that can be arranged "
@@ -1856,7 +1856,7 @@ label hg_pf_facefuck_1: # Bondage facefuck scene
 
     call play_music("playful_tension") #HERMIONE
     m "I think it's time for another blowjob, [hermione_name]."
-    call her_main("Of course [genie_name]...","base","down_raised", xpos="mid", ypos="base")
+    call her_main("Of course [genie_name]...", "base", "narrow", "base", "down", xpos="mid", ypos="base")
     m "Not just any blowjob though."
     call her_main("Oh? What's so special about this one?", "soft", "narrow", "worried", "mid_soft")
     m "Nothing much... You will have to have your hands tied behind your back though."

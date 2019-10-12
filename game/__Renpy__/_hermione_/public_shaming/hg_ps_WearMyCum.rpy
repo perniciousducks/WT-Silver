@@ -83,7 +83,7 @@ label hg_ps_cumslut_Scene_1:
 
     call her_main("Why are you making me do this, [genie_name]?", "angry", "base", "base", "mid",ypos="head")
     m "What do you mean?"
-    call her_main("Why are you making me jerk you off...","angry","down_raised")
+    call her_main("Why are you making me jerk you off...", "angry", "narrow", "base", "down")
     call her_main("So that you can cum on me...", "soft", "narrow", "annoyed", "up")
     call her_main("And make me wear it around the school?","open","worriedCl")
     m "I'm not making you do anything."
@@ -98,7 +98,7 @@ label hg_ps_cumslut_Scene_1:
     m "Coming in here whenever I summon you."
     m "Doing whatever I tell you, whenever I tell you."
     m "Doing slutty things in front of your peers because I tell you."
-    call her_main("...","disgust","down_raised")
+    call her_main("...", "disgust", "narrow", "base", "down")
     m "I'll tell you what, I'll make things interesting."
     m "So long as I cum on you and you wear it around classes today, Gryffindor will get 50 points."
     call her_main("How does that make it interesting?","disgust","glance")
@@ -179,7 +179,7 @@ label hg_ps_cumslut_Scene_1:
             m "Get ready slut, here it comes!"
             call her_main("...","scream","wide_stare",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
-            call her_main("I can't...","clench","down_raised")
+            call her_main("I can't...", "clench", "narrow", "base", "down")
 
             call nar(">Hermione moves your cock away from her face at the last second.","start")
             call nar(">You erupt over the top of her head, covering her hair in your spunk.","end")
@@ -286,7 +286,7 @@ label hg_ps_cumslut_Scene_2:
     call her_main("Why are you asking me to do this [genie_name]?", "angry", "base", "base", "mid",ypos="head")
     m "This question again?"
     m "Let me answer your question with one of my own."
-    call her_main("Ok...","angry","down_raised")
+    call her_main("Ok...", "angry", "narrow", "base", "down")
     m "Why are you jerking me off [hermione_name]?"
     call her_main("Because you asked me to...", "soft", "narrow", "annoyed", "up")
     m "And is that the only reason?"
@@ -313,7 +313,7 @@ label hg_ps_cumslut_Scene_2:
     call her_main("You're making me choose? Between getting 80 points for doing nothing.", "annoyed", "narrow", "annoyed", "mid")
     call her_main("Or getting paid nothing for wearing your cum around the school.","angry","annoyed",emote="01")
     m "Indeed I am [hermione_name]."
-    call her_main("{size=-5}Ok...{/size}","disgust","down_raised")
+    call her_main("{size=-5}Ok...{/size}", "disgust", "narrow", "base", "down")
     m "Well hurry up [hermione_name], classes will start soon, best make your decision."
     call nar(">She starts jerking your cock with renewed vigour.")
     call her_main("...","annoyed","suspicious")
@@ -405,7 +405,7 @@ label hg_ps_cumslut_Scene_2:
             m "Get ready slut, here it comes!"
             call her_main("...","scream","wide_stare",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
-            call her_main("...","clench","down_raised")
+            call her_main("...", "clench", "narrow", "base", "down")
             call nar(">You erupt onto her face, dousing her in your spunk.")
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.

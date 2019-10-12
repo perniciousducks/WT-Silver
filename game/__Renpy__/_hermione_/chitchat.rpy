@@ -139,7 +139,7 @@ label chit_chat:
             call her_main("Hogwarts has really become a second home to me lately...", "open", "closed", "base", "mid")
             call her_main("I don't even miss my parents nearly as much anymore...", "annoyed", "narrow", "worried", "down")
             call her_main("Come to think of it I don't miss them at all...", "angry", "wide", "base", "stare")
-            call her_main("I'm an awful daughter...","angry","down_raised")
+            call her_main("I'm an awful daughter...", "angry", "narrow", "base", "down")
 
         elif one_of_ten == 6:
             call her_main("*Yawn!* I read about this technique that supposedly allows you to cut your sleep time in half...", "annoyed", "narrow", "annoyed", "up")
@@ -230,7 +230,7 @@ label chit_chat:
         elif one_of_ten == 2:
             call her_main("I am willing to go to great lengths to insure the superiority of my house...", "open", "closed", "angry", "mid")
             her "But that does not mean that I take pleasure in selling myself out to you in exchange for house points, sir."
-            call her_main("{size=-4}(Like some sort of prostitute-witch...){/size}","angry","down_raised")
+            call her_main("{size=-4}(Like some sort of prostitute-witch...){/size}", "angry", "narrow", "base", "down")
 
         elif one_of_ten == 3:
             call her_main("What will it be today, sir?", "annoyed", "narrow", "annoyed", "mid")
@@ -277,7 +277,7 @@ label chit_chat:
         elif one_of_ten == 2:
             call her_main("I can't help but feel bad for the house elves who do my laundry...", "open", "base", "base", "mid")
             call her_main("I mean, all those dreadful semen stains...", "open", "narrow", "worried", "down")
-            call her_main("","angry","down_raised")
+            call her_main("", "angry", "narrow", "base", "down")
 
         elif one_of_ten == 3:
             call her_main("it Doesn't matter how many times you ask me this, sir...", "open", "base", "base", "mid")
@@ -298,7 +298,7 @@ label chit_chat:
 
         elif one_of_ten == 6:
             call her_main("Gryffindor shall get the house cup this year!", "open", "closed", "angry", "mid")
-            call her_main("{size=-4}(Even if it should cost me my dignity...){/size}","angry","down_raised")
+            call her_main("{size=-4}(Even if it should cost me my dignity...){/size}", "angry", "narrow", "base", "down")
             call her_main("", "upset", "closed", "base", "mid")
 
         elif one_of_ten == 7:

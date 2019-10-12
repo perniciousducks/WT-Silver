@@ -56,7 +56,7 @@ label equip_bra:
                 # if her_whoring >= 11: #Success
                     # if her_whoring < 17:
                         # call her_main("Hmm...", "annoyed", "narrow", "worried", "down")
-                        # call her_main("It looks decent enough...","annoyed","down_raised")
+                        # call her_main("It looks decent enough...", "annoyed", "narrow", "base", "down")
                         # call her_main("Alright, I'll wear it.", "open", "base", "base", "R")
                         # call her_main("Give me a second to put it on.", "base", "base", "base", "mid")
                     # else:
@@ -378,7 +378,7 @@ label equip_panties:
                 # if her_whoring >= 11: #Success
                     # if her_whoring < 17:
                         # call her_main("Hmm...", "annoyed", "narrow", "worried", "down")
-                        # call her_main("They looks decent enough...","annoyed","down_raised")
+                        # call her_main("They looks decent enough...", "annoyed", "narrow", "base", "down")
                         # call her_main("Fine, I'll wear them.", "open", "base", "base", "R")
                         # call her_main("Give me a second to put them on.", "base", "base", "base", "mid")
                     # else:

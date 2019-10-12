@@ -26,7 +26,7 @@ label hg_pf_grope_breasts_T1:
     g4 "Then stand still, [hermione_name]!"
     call her_main("B-but...", "soft", "wide", "base", "stare")
     m "All I want to do is squeeze your tits a little, then you will get your points!"
-    call her_main("B-but... this is...","disgust","down_raised", cheeks="blush")
+    call her_main("B-but... this is...", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Just stand still..."
     m "go to your happy place or something..."
     call her_main("M-my happy place...?","angry","wink")
@@ -38,11 +38,11 @@ label hg_pf_grope_breasts_T1:
         "-Squeeze her tits with all of your strength-":
             $ her_mood += 6
             call nar(">You put strength into your hold...")
-            call her_main("my...........","disgust","down_raised", cheeks="blush")
+            call her_main("my...........", "disgust", "narrow", "base", "down", cheeks="blush")
             call nar(">You squeeze her tits even harder...")
             call her_main("[genie_name], you're hurting them...","shock","worriedCl")
             m "Be quiet [hermione_name]..."
-            call her_main("aw..............","disgust","down_raised", cheeks="blush")
+            call her_main("aw..............", "disgust", "narrow", "base", "down", cheeks="blush")
             call nar(">You squeeze her ample tits with all your strength.")
             call her_main("Ah! It hurts!","angry","suspicious", cheeks="blush")
             call her_main("They're gonna burst! Please stop it!","angry","suspicious", cheeks="blush")
@@ -92,10 +92,10 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
             "\"First, lift up your top\"":
                 call her_main("Sir?!", "clench", "base", "base", "mid")
                 m "What? It's not like I haven't seen them before..."
-                call her_main("But!","clench","down_raised")
+                call her_main("But!", "clench", "narrow", "base", "down")
                 call play_music("playful_tension") # SEX THEME.
                 m "I just want to massage them a little..."
-                call her_main("...............................","annoyed","down_raised")
+                call her_main("...............................", "annoyed", "narrow", "base", "down")
                 call her_main("Promise me you will be gentle with them.","soft","glance")
                 m "Sure..."
 
@@ -155,9 +155,9 @@ label hg_pf_grope_breasts_T2_continue:
     #show screen groping_naked_tits
     call ctc
 
-    call her_main("..............................","angry","down_raised")
+    call her_main("..............................", "angry", "narrow", "base", "down")
     m "You have great tits, [hermione_name]..."
-    call her_main("....................................","angry","down_raised")
+    call her_main("....................................", "angry", "narrow", "base", "down")
     m "You like it when I squeeze them like this?"
     call her_main("Excuse me, [genie_name], but you are confusing me with one of those lowly harlots again...", "upset", "closed", "base", "mid")
     call her_main("I am only letting you fondle me because I am getting paid for it...", "upset", "closed", "base", "mid")
@@ -256,7 +256,7 @@ label hg_pf_grope_breasts_T3_naked:
     call her_main("!!!", "scream", "wide", "base", "stare", cheeks="blush")
     call her_main("Ouch! Stop hurting me!")
     m "Admit that you enjoy it and I will."
-    call her_main("But I don't...","disgust","down_raised")
+    call her_main("But I don't...", "disgust", "narrow", "base", "down")
     call her_main("And if you plan to keep on doing this to me, [genie_name]...")
     call her_main("...then I think I should leave.", "annoyed", "narrow", "annoyed", "mid")
     m "Fine, fine..."
@@ -343,18 +343,18 @@ label hg_pf_grope_breasts_T3_continue:
     call her_main("It's... It's nothing, [genie_name]...", "angry", "base", "base", "mid")
     m "Oh, I think it's something."
     m "I think you like me squeezing your tits like this."
-    call her_main("[genie_name], please...","angry","down_raised")
+    call her_main("[genie_name], please...", "angry", "narrow", "base", "down")
 
     if daytime:
-        call her_main("Classes are about to start...","angry","down_raised")
+        call her_main("Classes are about to start...", "angry", "narrow", "base", "down")
     else:
-        call her_main("It's getting late...","angry","down_raised")
+        call her_main("It's getting late...", "angry", "narrow", "base", "down")
 
     call her_main("Can I go now, [genie_name]? Please?", "angry", "base", "base", "mid")
 
     m "Sure, go ahead..."
     pause 2
-    call her_main("...............","angry","down_raised")
+    call her_main("...............", "angry", "narrow", "base", "down")
     pause.2
 
     call her_main("[genie_name], your are still... Holding me...", "angry", "base", "base", "mid")

@@ -110,7 +110,7 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
     pause.2
 
     m "Hm..."
-    call her_main("{size=-5}(...........................................){/size}","disgust","down_raised", cheeks="blush", ypos="head")
+    call her_main("{size=-5}(...........................................){/size}", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
     call her_main("{size=-5}(This is silly...){/size}", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call nar(">Hermione looks embarrassed but she keeps on \"dancing\"...")
     m "..................."
@@ -123,7 +123,7 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
     show screen blktone
     call her_main("??!", "mad", "wide", "base", "stare", cheeks="blush")
     m "Take off those clothes..."
-    call her_main("You want me to...?","disgust","down_raised", cheeks="blush")
+    call her_main("You want me to...?", "disgust", "narrow", "base", "down", cheeks="blush")
 
     hide screen blktone
     call her_main("[genie_name]!", "angry", "base", "angry", "mid", cheeks="blush")
@@ -194,7 +194,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     pause.2
 
     m "Hm..."
-    call her_main("{size=-5}(...........................................){/size}","disgust","down_raised", cheeks="blush", ypos="head")
+    call her_main("{size=-5}(...........................................){/size}", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
     call her_main("{size=-5}(This is silly...){/size}", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call nar(">Hermione looks embarrassed but she keeps on \"dancing\"...")
     m "..................."
@@ -211,7 +211,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     m "Now start taking off those clothes."
 
     show screen blktone
-    call her_main("You want me to... strip for you...?","disgust","down_raised", cheeks="blush")
+    call her_main("You want me to... strip for you...?", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Yes. And I expect you to do it today, [hermione_name]."
     call her_main("[genie_name]!","angry","worriedCl", cheeks="blush")
     m "Don't you raise your voice at me, [hermione_name]!"
@@ -220,7 +220,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     m "I am doing you a favour!"
     m "If you don't need the points, please feel free to leave."
     call her_main(".....................", "angry", "base", "angry", "mid")
-    call her_main(".......................................","disgust","down_raised", cheeks="blush")
+    call her_main(".......................................", "disgust", "narrow", "base", "down", cheeks="blush")
 
     hide screen blktone
     call nar(">Hermione is starting to dance again...")
@@ -233,7 +233,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
 
     if hermione_wear_top and (h_top == "top_1" or h_top == "top_6"):
         m "Start with the vest."
-        call her_main(".............................................................","disgust","down_raised", cheeks="blush")
+        call her_main(".............................................................", "disgust", "narrow", "base", "down", cheeks="blush")
         call nar(">Hermione gives you a confused look and then takes off her vest...")
     else:
         call nar(">Hermione gives you a confused look...")
@@ -428,7 +428,7 @@ label hg_pf_strip_T1_intro_E2:
 
     call her_main("So be it then!", "scream", "base", "angry", "mid", emote="01")
     call her_main("Just...", "open", "narrow", "worried", "down")
-    call her_main("*groan*","clench","down_raised")
+    call her_main("*groan*", "clench", "narrow", "base", "down")
 
     if hermione_wear_top and (h_top == "top_1" or h_top == "top_6"):
         call nar(">Her vest seems to be stuck somehow, but the girl keeps pulling on at the fabric with anger...")
@@ -680,7 +680,7 @@ label hg_pf_strip_T1_intro_E2:
 
     call her_walk(xpos="mid", ypos="base", speed=1.5)
 
-    call her_main("................................","disgust","down_raised", ypos="head")
+    call her_main("................................", "disgust", "narrow", "base", "down", ypos="head")
     pause.2
 
     # Reset Hermione
@@ -792,7 +792,7 @@ label hg_pf_strip_T1_E2:
 
     call play_music("playful_tension") # SEX THEME.
     call her_main("..............", "open", "narrow", "worried", "down")
-    call her_main("What if my parents were to find out about this, [genie_name]?","disgust","down_raised")
+    call her_main("What if my parents were to find out about this, [genie_name]?", "disgust", "narrow", "base", "down")
     call her_main("Mother would never understand...")
     call her_main("As for my father...","upset","wink")
 
@@ -887,7 +887,7 @@ label hg_pf_strip_T1_watch:
     with d5
     call ctc
 
-    call her_main("I'm sorry, Sir. Was this good enough?...","disgust","down_raised", emote="05", ypos="head")
+    call her_main("I'm sorry, Sir. Was this good enough?...", "disgust", "narrow", "base", "down", emote="05", ypos="head")
 
     menu:
         m "..."
@@ -1113,7 +1113,7 @@ label hg_pf_strip_T2:
     m "Slowly, please..."
     m "There's no rush."
     call her_main("I'm not!", "open", "base", "angry", "mid")
-    call her_main("It's just... it's stuck.","disgust","down_raised")
+    call her_main("It's just... it's stuck.", "disgust", "narrow", "base", "down")
     g9 "Would you like some help with it?"
     if her_tier <= 5:
         call her_main("No...", "annoyed", "base", "angry", "mid")

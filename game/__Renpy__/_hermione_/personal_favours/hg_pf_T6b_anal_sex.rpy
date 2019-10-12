@@ -196,7 +196,7 @@ label hg_anal_sex_1:
             m "Oh... yes... this feels great..."
             call her_main("...........", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "Oh... So tight..."
-            call her_main("................","shock","down_raised",cheeks="blush",tears="crying")
+            call her_main("................", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
             m "Why are you being so quiet [hermione_name]?"
             call her_main("Because this is painful...","clench","worried",cheeks="blush",tears="soft")
             call her_main("And I just want you to cum sooner, [genie_name]...")
@@ -382,20 +382,20 @@ label hg_anal_sex_2:
     call her_main("[genie_name]?","base","glance")
     m "Yes, whore?"
     call her_main("Em...", "angry", "base", "base", "mid")
-    call her_main("Would you marry me, [genie_name]?","angry","down_raised")
+    call her_main("Would you marry me, [genie_name]?", "angry", "narrow", "base", "down")
     with hpunch
     g4 "{size=+9} WHAT?!{/size}"
     g4 "Don't tell me you're pregnant, [hermione_name]!"
     call her_main("I couldn't get pregnant the way we are doing it, [genie_name]...","angry","wink")
     m "What is this talk of marriage then?"
     call her_main("You misunderstood me [genie_name].", "angry", "base", "base", "mid")
-    call her_main("I meant to say, would you marry a girl {size=+5}like{/size} me?","angry","down_raised")
+    call her_main("I meant to say, would you marry a girl {size=+5}like{/size} me?", "angry", "narrow", "base", "down")
     call her_main("I would never propose to a man with his cock in my ass, [genie_name]...","angry","worriedCl",emote="05")
     m "Good. Because I don't think any man would be able to say \"no\" then."
     call her_main("Ah{image=textheart}...", "open", "closed", "base", "mid")
-    call her_main("What I meant... ah{image=textheart} {w} ...to say was ah{image=textheart}... {w}...do you think someone would ever ah{image=textheart}... {w} ...want to marry a girl like me?","angry","down_raised")
+    call her_main("What I meant... ah{image=textheart} {w} ...to say was ah{image=textheart}... {w}...do you think someone would ever ah{image=textheart}... {w} ...want to marry a girl like me?", "angry", "narrow", "base", "down")
     m "Huh?"
-    call her_main("I mean, with all that was happening lately... ah{image=textheart}...","angry","down_raised")
+    call her_main("I mean, with all that was happening lately... ah{image=textheart}...", "angry", "narrow", "base", "down")
     call her_main("I can't help but feel unclean... damaged even.")
     call her_main("And in a no way innocent...")
     call her_main("Who would want a wife like that?", "angry", "base", "base", "mid")
@@ -422,7 +422,7 @@ label hg_anal_sex_2:
             m "Are you crying?"
 
         "\"Marriage is out of the picture for you.\"":
-            call her_main("That's what I thought...","shock","down_raised",cheeks="blush",tears="crying",ypos="head")
+            call her_main("That's what I thought...", "shock", "narrow", "base", "down",cheeks="blush",tears="crying",ypos="head")
             m "Oh... I just love that little asshole of yours!"
             call her_main(".....................", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             call her_main("Yes... After all the things I had to do for my house...")

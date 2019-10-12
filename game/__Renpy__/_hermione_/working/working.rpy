@@ -289,7 +289,7 @@ label gryffindor_cheer_responses:
                         m "You just look rather..."
                         m "Clean, that's all."
                         call her_main("Oh, well...", "base", "narrow", "worried", "down",cheeks="blush")
-                        call her_main("I didn't want to make a mess","soft","down_raised",cheeks="blush")
+                        call her_main("I didn't want to make a mess", "soft", "narrow", "base", "down",cheeks="blush")
                         call her_main("Anyhow, I'm glad I did it. I can't wait to rub it in Astoria's face tomorrow...", "smile", "base", "base", "mid")
                         m "I'm glad you think it was worth it. Did they pay you?"
                     "-Okay-":
@@ -422,13 +422,13 @@ label slytherin_cheer_responses:
                 m "Nothing [hermione_name], I'll speak to Professor Snape tonight..."
             else:#Comes back with cum on her
                 m "What the hell happened to you?"
-                call her_main("I did my job [genie_name].","angry","down_raised")
+                call her_main("I did my job [genie_name].", "angry", "narrow", "base", "down")
                 m "What are you talking about? You were supposed to be a cheerleader."
                 m "You know, cheering..."
                 m "And all that."
                 call her_main("I am [genie_name]. I just performed a different type of cheer today.", "soft", "narrow", "annoyed", "up")
                 m "And by that you mean jerking off the entire Slytherin team?"
-                call her_main("Well that's not how it started. I was initially just giving them a bit of a dance in the locker room...","angry","down_raised")
+                call her_main("Well that's not how it started. I was initially just giving them a bit of a dance in the locker room...", "angry", "narrow", "base", "down")
                 her "And one thing led to another."
                 m "Fine, I don't want to hear it. How much did they pay you for this \"cheering\"?"
                 call her_main("Pay me?", "silly", "narrow", "base", "dead")
@@ -498,7 +498,7 @@ label job_5:
         if random_choice == 0:
             call her_main("Why are the cards placed like that?", "mad", "narrow", "worried", "down")
             call her_main("...","normal","worriedCl", cheeks="blush")
-            call her_main("Fine...","open","down_raised", cheeks="blush")
+            call her_main("Fine...", "open", "narrow", "base", "down", cheeks="blush")
         elif random_choice == 1:
             call her_main("...","normal","worried", cheeks="blush")
             call her_main("Well, if it stops you from deducting those points.","open","worriedCl", cheeks="blush")
@@ -608,7 +608,7 @@ label hermione_helping_selling_cards:
         call her_main("Yes... I thought it was a great idea so if it ended up not working out then it would look very bad on my part.", "normal", "closed", "base", "mid")
         m "So, you had to stop the practice sessions?"
         call her_main("No, that's not why I'm annoyed...", "annoyed", "happy", "base", "R")
-        call her_main("In my haste to find a solution I thought it would be a great idea to play a few rounds of strip cards to get more people interested.","open","down_raised", cheeks="blush")
+        call her_main("In my haste to find a solution I thought it would be a great idea to play a few rounds of strip cards to get more people interested.", "open", "narrow", "base", "down", cheeks="blush")
         call her_main("...", "angry", "closed", "angry", "mid", cheeks="blush")
         call her_main("I've played enough not to be beaten by a new player I thought.", "mad", "narrow", "angry", "R", cheeks="blush")
         g9 "Of course, you've played against me after all..."
@@ -642,7 +642,7 @@ label hermione_helping_selling_cards:
         m "Must've been a great prize pool then..."
         call her_main("That's the weird thing. The prize pool only amounted do about half of the total entry fee amount.", "open", "base", "base", "mid")
         call her_main("Apparently... someone had gone around spreading the rumour that the winner would...", "normal", "narrow", "worried", "down")
-        call her_main("Get a go with me if they won the tournament...","annoyed","down_raised", cheeks="blush")
+        call her_main("Get a go with me if they won the tournament...", "annoyed", "narrow", "base", "down", cheeks="blush")
         g9 "And did they?"
         call her_main("Of course that was never on the table...", "base", "base", "angry", "mid", cheeks="blush")
         g9 "On a desk then?"
@@ -673,7 +673,7 @@ label hermione_helping_selling_cards:
         call her_main("What do you mean...", "open", "narrow", "worried", "mid_soft")
         call her_main("Oh, that...", "base", "narrow", "worried", "down", cheeks="blush")
         m "Yes, that..."
-        call her_main("There's a good explanation for this.","normal","down_raised", cheeks="blush")
+        call her_main("There's a good explanation for this.", "normal", "narrow", "base", "down", cheeks="blush")
         m "..."
         m "Go on."
         call her_main("Oh, sorry... Well, I was trying out a new sales tactic...", "open", "happy", "base", "R", cheeks="blush")

@@ -144,7 +144,7 @@ label hg_pr_blowjob_T1_E1:
     her "And that's it..."
     m "Hm... I see..."
     m "..............."
-    call her_main("....................................","angry","down_raised")
+    call her_main("....................................", "angry", "narrow", "base", "down")
     m "Did you swallow?"
     call her_main("...........................", "annoyed", "narrow", "annoyed", "mid")
     m "[hermione_name], did you swallow the load properly?"
@@ -163,7 +163,7 @@ label hg_pr_blowjob_T1_E2:
     m "[hermione_name], did you complete your task?"
     show screen blktone
     call play_music("despair")
-    call her_main("[genie_name], I...","angry","down_raised")
+    call her_main("[genie_name], I...", "angry", "narrow", "base", "down")
     her "I tried, but..."
     call her_main("The boy turned me down, [genie_name]...","mad","worried", tears="soft")
     call her_main("I cannot believe that actually happened...", "angry", "base", "base", "mid", tears="soft")
@@ -207,12 +207,12 @@ label hg_pr_blowjob_T1_E3:
     call play_music("playful_tension") # SEX THEME.
     her "I gave a proper blowjob to this handsome boy from \"Ravenclaw\"..."
     call her_main("And he was such a gentleman about it...", "open", "narrow", "worried", "down")
-    call her_main("He even warned me when he was about to cum.","angry","down_raised")
+    call her_main("He even warned me when he was about to cum.", "angry", "narrow", "base", "down")
     m "A true gentleman indeed."
     m "Did you swallow?"
     call her_main("Of course I did, [genie_name].", "upset", "closed", "base", "mid")
     her "I told you - I gave the boy a proper blowjob."
-    call her_main("The least I could do for someone who treated me with respect for a change...","angry","down_raised")
+    call her_main("The least I could do for someone who treated me with respect for a change...", "angry", "narrow", "base", "down")
     m "Well, in that case."
 
     jump end_hg_pr_blowjob
@@ -281,7 +281,7 @@ label hg_pr_blowjob_T2_E2:
     her "And--"
     play sound "sounds/burp.mp3"
     call her_main("*Burp!*...","shock","worriedCl")
-    call her_main("Excuse me.","angry","down_raised")
+    call her_main("Excuse me.", "angry", "narrow", "base", "down")
     call her_main("He came so much I was barely able to swallow it all...", "scream", "base", "angry", "mid", emote="01")
     her "Bloody bastard!"
     call her_main("You think I could file a complaint, [genie_name]?", "angry", "base", "angry", "mid", cheeks="blush")
@@ -300,7 +300,7 @@ label hg_pr_blowjob_T2_E2:
     her "Can I just--"
     play sound "sounds/burp.mp3"
     call her_main("*Burp!*...", "shock", "wide", "base", "stare")
-    call her_main("Excuse me, [genie_name].","angry","down_raised")
+    call her_main("Excuse me, [genie_name].", "angry", "narrow", "base", "down")
     call her_main("{size=-3}(He just kept on cumming... My stomach feels so full...){/size}","angry","worriedCl", emote="05")
     call her_main("Can I get my payment now, please?", "open", "base", "base", "mid")
 
@@ -324,7 +324,7 @@ label hg_pr_blowjob_T2_E3:
     g4 "What happened to you, [hermione_name]?"
     g4 "All I asked you to do was to give a blowjob to one of your classmates."
     call play_music("playful_tension") # SEX THEME.
-    call her_main("That... that was exactly what I did, [genie_name].","angry","down_raised")
+    call her_main("That... that was exactly what I did, [genie_name].", "angry", "narrow", "base", "down")
     m "[hermione_name], you are covered in cum head to toe."
     call her_main("I am?", "soft", "narrow", "annoyed", "up")
     her "Oh... Did I forget to clean myself up?"

@@ -38,14 +38,14 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call nar(">She starts patting down her body. Checking to see if she has grown any new ears or a tail.")
     call her_main("I don't see what you could be...", "open", "narrow", "worried", "down")
     call nar(">She grabs her breasts to check them.")
-    call her_main("!!!","angry","down_raised")
+    call her_main("!!!", "angry", "narrow", "base", "down")
     call her_main("Have my breasts gotten bigger?", "angry", "wide", "base", "stare")
     m "About time you noticed."
     call her_main("Why would you make my breasts bigger? They're already big enough!", "angry", "base", "base", "mid")
     m "You know what they say, can't have too much of a good thing."
     call her_main("It's the other way around [genie_name].", "annoyed", "narrow", "annoyed", "mid")
     m "Is it? Well I prefer my version."
-    call her_main("Well how big are they supposed to-","angry","down_raised")
+    call her_main("Well how big are they supposed to-", "angry", "narrow", "base", "down")
     call nar(">Her breast swell up again.")
     call her_main("You can't be serious. At this rate they're going to rip my shirt.", "angry", "wide", "base", "stare")
     m "Well they should stop there."
@@ -61,7 +61,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
             m "Room? It's time for class [hermione_name]. What do you think Professor Snape will say once he hears that you skipped class?"
             call her_main("Well I can't be expected to go like this.","disgust","glance")
             m "Why not? Everything is covered."
-            call her_main("Barely. And what will people think of me.","angry","down_raised")
+            call her_main("Barely. And what will people think of me.", "angry", "narrow", "base", "down")
             m "Just tell them that you are still developing. I'm sure that they're used to enormous breasts anyway, what's a few extra sizes."
             call her_main("...Fine. Just promise me that they won't get any bigger.", "upset", "closed", "base", "mid")
             m "I can't promise that, your still in school. A lot of girls don't stop growing until their 30."
@@ -109,7 +109,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     m "They're certainly much larger than usual."
     call her_main("...yes", "soft", "narrow", "annoyed", "up")
     call nar(">You continue massaging them gently through her shirt. Pulling them apart and then pressing them into one another.")
-    call her_main("...It feels like they're getting-","angry","down_raised")
+    call her_main("...It feels like they're getting-", "angry", "narrow", "base", "down")
     call ctc
 
     call set_her_action("expand_breasts")
@@ -227,17 +227,17 @@ label potion_scene_2_2: #ass expansion
     call her_main("", "soft", "wide", "base", "stare")
     call ctc
 
-    call her_main("Something is happening with my body, [genie_name]!","open","down_raised")
+    call her_main("Something is happening with my body, [genie_name]!", "open", "narrow", "base", "down")
     call ctc
 
     call set_her_action("expand_ass")
     with vpunch
 
-    call her_main("","angry","down_raised")
+    call her_main("", "angry", "narrow", "base", "down")
     call ctc
 
 
-    call her_main("ughhh, my ass has gotten bigger!","angry","down_raised")
+    call her_main("ughhh, my ass has gotten bigger!", "angry", "narrow", "base", "down")
     call her_main("Is that what this potion's supposed to do? Making my ass big?", "upset", "closed", "base", "mid")
     m "Evidently."
     call her_main("Why does my ass feel so good?", "soft", "narrow", "annoyed", "up") #new
@@ -313,7 +313,7 @@ label potion_scene_2_2: #ass expansion
                     call her_main("Please...","open","worriedCl")
                     m "Please what?"
                     call nar(">You insert a second finger.")
-                    call her_main("Please... stop... you'll break me...","angry","down_raised")
+                    call her_main("Please... stop... you'll break me...", "angry", "narrow", "base", "down")
                     call nar(">You grab her hip with one hand and keep finger fucking her asshole.")
                     call her_main("...","shock","worriedCl")
                     call her_main("...","scream","worriedCl")
@@ -324,7 +324,7 @@ label potion_scene_2_2: #ass expansion
                     m "Good girl."
 
             m "Well you best be off to class."
-            call her_main("...With my butt looking like this?","angry","down_raised")
+            call her_main("...With my butt looking like this?", "angry", "narrow", "base", "down")
             m "I'm sure no one will be able to tell \nwith your skirt on. Now hurry up \nI have things to attend to."
             $ hermione_zorder = 5
             call blkfade

@@ -19,7 +19,7 @@ label hg_pf_admire_breasts_transition:
     call bld
     if her_tier <= 2:
         m "Hm..."
-        call her_main("{size=-5}(My breasts are completely exposed...){/size}","disgust","down_raised", cheeks="blush", ypos="head")
+        call her_main("{size=-5}(My breasts are completely exposed...){/size}", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
         m "Come closer [hermione_name], let me take a better look..."
     else:
         m "Hm..."
@@ -206,8 +206,8 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
     call nar(">You stare at Hermione's breasts with hunger...")
     call her_main("[genie_name], what are you...?","shock","worriedCl")
     call nar(">You keep stroking your hard cock...")
-    call her_main("[genie_name], no...","disgust","down_raised", cheeks="blush")
-    call her_main("You must... Put it away...","disgust","down_raised", cheeks="blush")
+    call her_main("[genie_name], no...", "disgust", "narrow", "base", "down", cheeks="blush")
+    call her_main("You must... Put it away...", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Stop whining [hermione_name]. I'm not touching you, am I?"
     call her_main("But...","angry","worriedCl", cheeks="blush")
     call her_main("But I didn't agree to this!", "angry", "base", "angry", "mid", cheeks="blush")
@@ -336,11 +336,11 @@ label hg_pf_admire_breasts_T3_touch:
     call her_main("I didn't agree to this, [genie_name]...", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call her_main("I don't think you should...", "annoyed", "narrow", "angry", "R", cheeks="blush")
     m "Don't you like it...?"
-    call her_main("What?","disgust","down_raised", cheeks="blush")
+    call her_main("What?", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Don't you like it how I squeeze and pull on your breasts?"
-    call her_main("...............","disgust","down_raised", cheeks="blush")
+    call her_main("...............", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Admit it, you like it a little bit..."
-    call her_main("{size=-5}(So strange to see my breasts in someone else's hands...){/size}","disgust","down_raised", cheeks="blush")
+    call her_main("{size=-5}(So strange to see my breasts in someone else's hands...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
     call her_main("[genie_name], I am letting you do this to me to help my house out, nothing more!","shock","worriedCl")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Please, unhand me now!", "annoyed", "narrow", "angry", "R", cheeks="blush")
@@ -391,10 +391,10 @@ label hg_pf_admire_breasts_T3_masturbate:
     m "just stand still, [hermione_name]."
     m "It will be over soon."
     call her_main("..................","shock","worriedCl")
-    call her_main("(It's so big...)","disgust","down_raised", cheeks="blush")
+    call her_main("(It's so big...)", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Yes... Yes, like this..."
     m "Yes, with your tits all naked..."
-    call her_main("..............","disgust","down_raised", cheeks="blush")
+    call her_main("..............", "disgust", "narrow", "base", "down", cheeks="blush")
     call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
     call her_main("You can keep touching yourself, [genie_name]...", "open", "base", "base", "R", cheeks="blush")
     call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
@@ -446,7 +446,7 @@ label hg_pf_admire_breasts_T3_masturbate:
             m "Oh, this was quite amazing..."
             show screen blktone8
             with d3
-            call her_main("","disgust","down_raised", xpos="mid", ypos="base")
+            call her_main("", "disgust", "narrow", "base", "down", xpos="mid", ypos="base")
             call ctc
 
             her "My uniform..."
@@ -518,7 +518,7 @@ label hg_pf_admire_breasts_T4_promise: # Call label
         "\"Your tits are alright I suppose...\"":
             call her_main("Huh?", "annoyed", "base", "base", "mid")
             her "Does this mean you don't like them, [genie_name]?"
-            call her_main("I'm sorry...","disgust","down_raised")
+            call her_main("I'm sorry...", "disgust", "narrow", "base", "down")
 
     call blktone
     ">You stare at her breasts for a while longer..."
@@ -562,9 +562,9 @@ label hg_pf_admire_breasts_T4_touch: # Call label
 
     call bld
     m "Relax, [hermione_name]. Just stand still!"
-    call her_main("But...","disgust","down_raised", cheeks="blush")
+    call her_main("But...", "disgust", "narrow", "base", "down", cheeks="blush")
     call her_main("ah...{image=textheart}","shock","worriedCl")
-    call her_main("I didn't agree to this...","disgust","down_raised", cheeks="blush")
+    call her_main("I didn't agree to this...", "disgust", "narrow", "base", "down", cheeks="blush")
     m "But you like it, don't you?"
 
     if her_whoring >= 17:
@@ -649,7 +649,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         call her_main("..................","shock","worriedCl")
         m "Yes... Yes, like this..."
         m "Yes, with your tits all naked..."
-        call her_main("..............","disgust","down_raised", cheeks="blush")
+        call her_main("..............", "disgust", "narrow", "base", "down", cheeks="blush")
         call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
         call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
         call her_main("Not to... ehm...", "open", "base", "base", "R", cheeks="blush")
@@ -657,10 +657,10 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         call her_main("Not in front of me, [genie_name]...", "annoyed", "narrow", "angry", "R", cheeks="blush")
         m "Fine, whatever..."
         m "Oh, you little slut. You nasty little slut!"
-        call her_main(".......................","disgust","down_raised", cheeks="blush")
+        call her_main(".......................", "disgust", "narrow", "base", "down", cheeks="blush")
         call nar(">You start to stroke your cock even harder...")
         g4 "Yes, I know you want this! Yes!"
-        call her_main("................","disgust","down_raised", cheeks="blush")
+        call her_main("................", "disgust", "narrow", "base", "down", cheeks="blush")
 
     else: # Different posing than above.
         call her_main("ah...", "base", "narrow", "base", "up", cheeks="blush")
@@ -688,11 +688,11 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         "-Hold it in-":
             g4 "Oh, alright..."
             g4 "I'd better stop now I suppose..."
-            call her_main("...............","disgust","down_raised", cheeks="blush", ypos="head")
-            call her_main("Ehm... I read that that is bad for you, [genie_name]...","disgust","down_raised", cheeks="blush")
+            call her_main("...............", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
+            call her_main("Ehm... I read that that is bad for you, [genie_name]...", "disgust", "narrow", "base", "down", cheeks="blush")
             m "Huh?"
             call her_main("It is bad for your health to just hold it in like this...","shock","worriedCl")
-            call her_main("Em...","disgust","down_raised", cheeks="blush")
+            call her_main("Em...", "disgust", "narrow", "base", "down", cheeks="blush")
             call her_main("If you want to you can--", "base", "base", "base", "R", cheeks="blush")
             g4 "Argh! You whore!"
             call her_main("???", "mad", "wide", "base", "stare", cheeks="blush")
@@ -719,7 +719,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             m "Oh, this was quite amazing..."
             show screen blktone8
             with d3
-            call her_main("","disgust","down_raised", xpos="mid", ypos="base")
+            call her_main("", "disgust", "narrow", "base", "down", xpos="mid", ypos="base")
             call ctc
 
             her "My uniform is ruined though..."
@@ -778,7 +778,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             m "Oh, this was quite amazing..."
 
             show screen blktone8
-            call her_main("","disgust","down_raised", xpos="mid", ypos="base")
+            call her_main("", "disgust", "narrow", "base", "down", xpos="mid", ypos="base")
             call ctc
 
             her "My uniform is ruined though..."

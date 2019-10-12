@@ -1126,7 +1126,7 @@ label hermione_intro_E6:
                 call her_main("How about this?","open","worried")
                 call her_main("A-a-ah..................", "scream", "base", "base", "R")
                 call her_main("............................", "open_wide_tongue", "happy", "base", "R")
-                call her_main("......................................","open_wide_tongue","down_raised")
+                call her_main("......................................", "open_wide_tongue", "narrow", "base", "down")
                 her "..................................................."
                 her "...................................................................."
                 call her_main(".......................................................................................................", "open_wide_tongue", "closed", "angry", "mid")

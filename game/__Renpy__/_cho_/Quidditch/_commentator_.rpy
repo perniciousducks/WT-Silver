@@ -93,7 +93,7 @@ label quidditch_commentator_event_2:
     call her_main("I'd be honoured, sir!","scream","closed",trans="hpunch")
     call her_main("Quidditch has always been one of my passions, to be able to commentate it...","open","angry")
     call her_main("Not to mention getting to make all the announcements...", "smile", "base", "base", "R")
-    call her_main("The speeches...","grin","squint")
+    call her_main("The speeches...", "grin", "happy", "base", "mid")
 
     if her_whoring < 18:
         call her_main("The paper...","soft","ahegao")
@@ -103,7 +103,7 @@ label quidditch_commentator_event_2:
 
     call her_main("I accept!","scream","angryCl",trans="hpunch")
     g4 "I thought you just said you didn't..."
-    call her_main("Cho will be so mad!","crooked_smile","squint")
+    call her_main("Cho will be so mad!", "crooked_smile", "happy", "base", "mid")
     m "I see..."
     g9 "Congratulations then, [hermione_name]! You got the j..."
     call her_main("Ah!!! I better start lear...{w=0.8} I mean, preparing my opening speech!","open","wide_stare",trans="hpunch")

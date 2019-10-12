@@ -1327,7 +1327,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=13)
-    call her_main("Anyone I know?","smile","squint")
+    call her_main("Anyone I know?", "smile", "happy", "base", "mid")
     m "I believe... argh... you've met..."
     $ lunCG(pos=7)
     call her_main("Hmmmm... It's not a slytherin is it?","upset","suspicious")
@@ -1455,9 +1455,9 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=7)
-    call her_main("Imagine if it was a first year? What would you do then?","grin","squint")
+    call her_main("Imagine if it was a first year? What would you do then?", "grin", "happy", "base", "mid")
     $ lunCG(pos=9)
-    call her_main("Would you do the right thing and send them away?","smile","squint")
+    call her_main("Would you do the right thing and send them away?", "smile", "happy", "base", "mid")
     $ lunCG('', 'mad', '', 'dick', pos=11)
     lun "*glck* *slrp* *glck*"
     call her_main("Or would you make them stay...","grin","suspicious")

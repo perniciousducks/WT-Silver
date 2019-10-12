@@ -243,7 +243,7 @@ label l_tutoring:
         call her_main("They began to...","open","worriedCl",cheeks="blush")
         call her_main("They began to touch their breasts!", "scream", "wide", "base", "stare",cheeks="blush")
         m "They were naked, I hope?"
-        call her_main("What?","open","squint",cheeks="blush")
+        call her_main("What?", "open", "happy", "base", "mid",cheeks="blush")
         her "No, fortunately they were dressed."
         call her_main("How can such a thing happen in our beloved school!","angry","angry",cheeks="blush")
         m "But you kept watching, didn't you?"
@@ -931,7 +931,7 @@ label l_tutoring:
 
         call her_main("{size=-2}(Thinking of the headmaster masturbating makes me wet already {image=textheart}){/size}",xpos="mid",ypos="base")
         call her_main("{size=-2}(I've become such a whore. Not that I don't enjoy it...){/size}","smile","angry",cheeks="blush")
-        call her_main("So... where do we start?","open","squint",cheeks="blush")
+        call her_main("So... where do we start?", "open", "happy", "base", "mid",cheeks="blush")
 
         if hermione_wear_bra:
             m "Take off your shirt and bra, I want to see your tits."
@@ -977,7 +977,7 @@ label l_tutoring:
         call ctc
 
         her "Good idea."
-        call her_main("Sometimes I wish I could do this with others girls.","open","squint",cheeks="blush")
+        call her_main("Sometimes I wish I could do this with others girls.", "open", "happy", "base", "mid",cheeks="blush")
         call her_main("Masturbate naked in front of each other.","open","ahegao_raised",cheeks="blush")
         if hermione_wear_panties:
             g9 "Yes go on, take off your panties!"
@@ -1401,7 +1401,7 @@ label l_tutoring:
         call her_chibi("stand","door","base")
         pause.5
 
-        call her_main("Professor!","open","squint",cheeks="blush")
+        call her_main("Professor!", "open", "happy", "base", "mid",cheeks="blush")
         call her_main(".........","base","ahegao_raised",cheeks="blush")
         call her_main("Can I have points for this?", "mad", "wide", "base", "stare",cheeks="blush")
         g11 "Now!"
@@ -1494,7 +1494,7 @@ label l_tutoring:
 
         call her_main("{size=-4}*panting*{/size} Oh good, you're still here.", "open", "base", "base", "mid",cheeks="blush",xpos="right",ypos="base")
         m "Is it safe to assume you have honoured my request this time?"
-        call her_main("I thought it was obvious.","open","squint",cheeks="blush")
+        call her_main("I thought it was obvious.", "open", "happy", "base", "mid",cheeks="blush")
         call her_main("I even had to hide in an alcove to avoid getting noticed on my way here!", "open", "base", "base", "mid",cheeks="blush")
         call her_main("It was so embarrassing!","open","worriedCl",cheeks="blush")
         call her_main("{size=-2}(And exciting!){/size}","open","worriedCl",cheeks="blush")
@@ -1507,10 +1507,10 @@ label l_tutoring:
             $ hermione_robe = "characters/hermione/clothes/robe/robe_3_g.png"
         elif h_robe in slytherin_robe_list:
             $ hermione_robe = "characters/hermione/clothes/robe/robe_3_s.png"
-        call her_main("","open","squint",cheeks="blush")
+        call her_main("", "open", "happy", "base", "mid",cheeks="blush")
         call ctc
 
-        call her_main("Does this answer your question?","open","squint",cheeks="blush")
+        call her_main("Does this answer your question?", "open", "happy", "base", "mid",cheeks="blush")
         m "Not really. It's hard to tell from this distance. I mean, it's so dark..."
         call her_main("...","annoyed","ahegao_raised")
         pause.2
@@ -1546,7 +1546,7 @@ label l_tutoring:
         call her_main("{size=-2}(Good thing I practised by myself, otherwise...){/size}","angry","worriedCl",cheeks="blush")
         g4 "Now stop making up excuses!"
         m "I can see you rubbing your thighs from excitement!"
-        call her_main("I thought it was so dark in here...","open","squint",cheeks="blush")
+        call her_main("I thought it was so dark in here...", "open", "happy", "base", "mid",cheeks="blush")
         call her_main("Humm, okay, but you better start out easy on me.","annoyed","suspicious")
         g9 "I'm always gentle with you my dear child."
         call her_main("Yeah, obviously...","annoyed","ahegao")
@@ -1586,7 +1586,7 @@ label l_tutoring:
         m "Bend over the desk my dear little witch."
         call her_main("{size=-2}(It starts with my dear little witch and ends up with my dear anal whore...){/size}","annoyed","ahegao_raised",cheeks="blush")
         call her_main("{size=-2}(*sigh* men...){/size}","annoyed","ahegao_raised",cheeks="blush")
-        call her_main("As you wish my dear {b}old{/b} headmaster.","open","squint",cheeks="blush")
+        call her_main("As you wish my dear {b}old{/b} headmaster.", "open", "happy", "base", "mid",cheeks="blush")
         m "{size=-2}(If you knew how old I actually am...){/size}"
         hide screen hermione_main
         call blkfade
@@ -1616,7 +1616,7 @@ label l_tutoring:
         m "Oh, I don't know."
         call her_main("Thank you for letting me discover such pleasures.","open","worriedCl",cheeks="blush")
         g9 "{b}My{/b} pleasure."
-        call her_main("It's even better when it's mutual, isn't it?","open","squint",cheeks="blush")
+        call her_main("It's even better when it's mutual, isn't it?", "open", "happy", "base", "mid",cheeks="blush")
         m "Hmm, yes you're right. I'm glad you feel that way."
         call her_main("Now a little deeper please.", "soft", "base", "base", "R",cheeks="blush")
         call nar(">You push the whole bottle neck up inside her asshole.")
@@ -1772,7 +1772,7 @@ label l_tutoring:
         call her_main("Ahh yesss {image=textheart}.","open_tongue","ahegao_raised",cheeks="blush")
         call her_main("I'm such a whore, I love sex even for free.", "mad", "wide", "base", "stare",cheeks="blush")
         g9 "You know it!"
-        call her_main("Don't make it a habit.","open","squint",cheeks="blush")
+        call her_main("Don't make it a habit.", "open", "happy", "base", "mid",cheeks="blush")
         m "......"
         call nar(">You pull out your cock and roughly shove it back inside.")
         with hpunch

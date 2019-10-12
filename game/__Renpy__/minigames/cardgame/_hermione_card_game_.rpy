@@ -221,7 +221,7 @@ label hermione_random_duel:
         call her_main("What are you suggesting then?","base","happy", cheeks="blush")
         m "Well, I was thinking house points."
         call her_main("House points...","normal","squintL")
-        call her_main("How would this work then?","open","squint")
+        call her_main("How would this work then?", "open", "happy", "base", "mid")
         m "Well, if you win I'll give you 10 points to Gryffindor."
         call her_main("Only 10?","annoyed","Glance")
         m "20 then..."
@@ -270,7 +270,7 @@ label hermione_random_duel:
         "-Send Hermione to work, promoting the card game.-" if not cardgame_work:
             $ cardgame_work = True
             g9 "In that case, I think I have a good idea for a job..."
-            call her_main("A job?","open","squint")
+            call her_main("A job?", "open", "happy", "base", "mid")
             m "Yes, I'd like you to start helping the twins promote the card game..."
             call her_main("I can do that...","base","worried", cheeks="blush")
             call her_main("But not today if that's okay with you.","open","down")

@@ -282,13 +282,13 @@ label hermione_favor_menu:
         if hermione_favors_convinced:
             call her_main("But we're in the lead already....","base","soft")
             if her_whoring >=20 and hermione_favors_convinced == 2:
-                call her_main("But I'll do anything for you, [genie_name]...","smile","squint")
+                call her_main("But I'll do anything for you, [genie_name]...", "smile", "happy", "base", "mid")
                 jump silver_requests_root
             elif her_whoring >=18 and hermione_favors_convinced == 2:
                 call her_main("I guess you do have a way with words,[genie_name]... I'll do it.","soft","wink")
                 jump silver_requests_root
             elif her_whoring >=16:
-                call her_main("I have told you before, [genie_name], it was just a one time thing....","open","squint")
+                call her_main("I have told you before, [genie_name], it was just a one time thing....", "open", "happy", "base", "mid")
                 m "What about tomorrow though?"
                 call her_main ("What about tomorrow?","base","squint")
                 g9 "I made a graph detailing the current daily average points Slytherin gain... doesn't look that great."
@@ -300,7 +300,7 @@ label hermione_favor_menu:
                 menu:
                     "-Change her mind-":
                         m "Are you sure it's not within your house best interests?"
-                        call her_main("What do you mean?","base","squint")
+                        call her_main("What do you mean?", "base", "happy", "base", "mid")
                         g9 "Think about the future..."
                         label hermione_favors_convinced_check:
                         if her_whoring >=20:
@@ -625,7 +625,7 @@ label hermione_change:
             call her_main("", "base", "base", "base", "mid")
     elif temp_name == "Girl":
         if her_whoring >=1 and her_whoring < 3:
-            call her_main("This girl thing again?","annoyed","squint")
+            call her_main("This girl thing again?", "annoyed", "happy", "base", "mid")
             call her_main("*sigh*...","soft","squintL")
         elif her_whoring >=3:
             call her_main("Fine... I don't mind.", "soft", "base", "base", "R")
@@ -691,7 +691,7 @@ label hermione_change:
         if her_whoring >= 11 and her_whoring < 13:
             call her_main("You want to call me.... {w=0.5}a pet?","normal","frown")
             m "Yes."
-            call her_main(".... {w=0.5}.... {w=0.5}.... {w=0.5}....","normal","squint")
+            call her_main(".... {w=0.5}.... {w=0.5}.... {w=0.5}....", "normal", "happy", "base", "mid")
             call her_main("","normal","suspicious")
             m ".... {w=0.5}.... {w=0.5}...."
             call her_main("May I at least know why?","open","suspicious")

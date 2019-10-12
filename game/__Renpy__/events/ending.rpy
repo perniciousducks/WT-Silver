@@ -589,7 +589,7 @@ label ball_ending_E2:
     call her_main("Yes, sir...", "upset", "base", "base", "mid")
     m "Well, here is the thing then..."
     m "There is something you need to kn--"
-    call her_main("Of course sir!","grin","squint",cheeks="blush")
+    call her_main("Of course sir!", "grin", "happy", "base", "mid",cheeks="blush")
     m "What?"
     call her_main("Let's just make this quick, alright?","soft","glanceL",cheeks="blush")
     g4 "Let's make what quick?"

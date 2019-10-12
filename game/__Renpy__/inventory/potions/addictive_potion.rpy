@@ -614,7 +614,7 @@ label potion_scene_3_3_1: #Hypno potion
     pause .5
     call her_chibi("stand","mid","base")
 
-    call her_main("This isn't bad at all.","base","squint")
+    call her_main("This isn't bad at all.", "base", "happy", "base", "mid")
     call her_main("I feel...","base","happyCl")
     m "You feel what?"
     call her_main("I-I feel grea--","annoyed","down")
@@ -649,7 +649,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("I am?","upset","wink")
     call her_main("How did I get here?","upset","wink")
     m "You walked in here about 2 minutes ago."
-    call her_main("Huh, I must have forgotten, silly old me.","base","squint")
+    call her_main("Huh, I must have forgotten, silly old me.", "base", "happy", "base", "mid")
     call her_main("So professor, what am I doing here?","base","down")
     call her_main("Aaaaaaah!!!!","shock","worriedCl",cheeks="blush")
     call her_main("What happened to my outfit?!","shock","down_raised")

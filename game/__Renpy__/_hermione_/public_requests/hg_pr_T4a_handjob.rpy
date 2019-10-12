@@ -359,7 +359,7 @@ label hg_pr_handjob_T2_E2:
     her "And to everyone else this just looks like some harlot who does this for fun..."
     call her_main("They must think I am a slut...","open","down")
     call her_main("..............","clench","down_raised")
-    call her_main("Do you think I'm a slut, [genie_name]?","open","squint", cheeks="blush")
+    call her_main("Do you think I'm a slut, [genie_name]?", "open", "happy", "base", "mid", cheeks="blush")
 
     menu:
         "\"What? Of course not, [hermione_name]!\"":
@@ -437,20 +437,20 @@ label hg_pr_handjob_T2_E3:
 
     menu:
         "\"This is nothing. Stop overthinking it!\"":
-            call her_main(".......","open","squint", cheeks="blush")
+            call her_main(".......", "open", "happy", "base", "mid", cheeks="blush")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("You are probably right, [genie_name]. As usual...", "base", "base", "base", "R", cheeks="blush")
             her "This does not have to mean anything..."
 
         "\"That is a natural response...\"":
-            call her_main("It is?","open","squint", cheeks="blush")
+            call her_main("It is?", "open", "happy", "base", "mid", cheeks="blush")
             m "Of course."
             m "You are a girl and he is a boy..."
             m "You got excited and it made you feel good..."
             call her_main("Hm...", "base", "base", "base", "R", cheeks="blush")
             m "Now if you were to give a handjob and feel completely indifferent about it..."
             m "...that would be... unnatural."
-            call her_main("I think you are right, [genie_name].","open","squint", cheeks="blush")
+            call her_main("I think you are right, [genie_name].", "open", "happy", "base", "mid", cheeks="blush")
             call her_main("As usual.", "base", "base", "base", "R", cheeks="blush") # :)
 
         "\"Yes! All goes according to plan!\"":
@@ -549,7 +549,7 @@ label hg_pr_handjob_T3_E2:
     m "You don't expect me to multiply your payment by seven or anything, do you?"
     call her_main("Of course not, [genie_name].", "base", "base", "base", "R", cheeks="blush")
     m "Than why do it?"
-    call her_main("Well, it sort of just happened...","open","squint", cheeks="blush")
+    call her_main("Well, it sort of just happened...", "open", "happy", "base", "mid", cheeks="blush")
     her "I was wanking off this one boy..."
     her "And another boy walked in on us..."
     her "He called his friends..."

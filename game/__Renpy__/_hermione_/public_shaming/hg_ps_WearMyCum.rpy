@@ -106,7 +106,7 @@ label hg_ps_cumslut_Scene_1:
     call nar(">You fell her hands tense around your cock.")
     call her_main("You're letting me choose?", "smile", "base", "base", "R")
     m "Anywhere, as long as it's on you. It can be your shoes for all I care."
-    call her_main("Ok...","base","squint")
+    call her_main("Ok...", "base", "happy", "base", "mid")
     m "Well hurry up [hermione_name], classes will start soon."
     call nar(">She starts jerking your cock with renewed vigour.")
     m "So where are you going to hide it?"
@@ -299,7 +299,7 @@ label hg_ps_cumslut_Scene_2:
     m "So you'd rather win the house cup than make me happy?"
     call her_main("Maybe... Can't I do both?","annoyed","worriedL")
     m "You can..."
-    call her_main("Good","base","squint")
+    call her_main("Good", "base", "happy", "base", "mid")
     m "But I want you to be honest."
     m "So I'm going to give you a choice."
     m "You can stop jerking me off right now, leave the room and I'll give you the 80 points. However, I'll be very upset."
@@ -613,7 +613,7 @@ label hg_ps_cumslut_complete_1:
 
     if cum_location == 1: #Cum under shirt
         $ aftersperm = True
-        call her_main("...I did it, [genie_name].","base","squint",xpos="right",ypos="base")
+        call her_main("...I did it, [genie_name].", "base", "happy", "base", "mid",xpos="right",ypos="base")
         call her_main("I kept your cum on me all day.", "base", "base", "base", "R")
 
         menu:
@@ -706,7 +706,7 @@ label hg_ps_cumslut_complete_2:
         $ u_sperm = "characters/hermione/face/auto_13.png"
         $ uni_sperm = True
 
-        call her_main("...I did it, [genie_name].","base","squint",xpos="right",ypos="base")
+        call her_main("...I did it, [genie_name].", "base", "happy", "base", "mid",xpos="right",ypos="base")
         call her_main("I kept your cum on me all day.", "base", "base", "base", "R")
 
         menu:

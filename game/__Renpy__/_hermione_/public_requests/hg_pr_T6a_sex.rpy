@@ -112,9 +112,9 @@ label hg_pr_sex_T1_intro_E2:
     m "[hermione_name], you missed your debriefing yesterday."
     call her_main("Yes, [genie_name], I apologize... *yawn*...","open","closed")
     m "Care to explain yourself?"
-    call her_main("Of course, [genie_name].","open","squint", cheeks="blush")
+    call her_main("Of course, [genie_name].", "open", "happy", "base", "mid", cheeks="blush")
     call her_main("It is sort of embarrassing, though...", "base", "base", "base", "R", cheeks="blush")
-    call her_main("I spent the last night with two of my friends...","open","squint", cheeks="blush")
+    call her_main("I spent the last night with two of my friends...", "open", "happy", "base", "mid", cheeks="blush")
     m "A slumber party with some girlfriends, huh?"
     call her_main("Girlfriends?","angry","wink")
     call her_main("No, [genie_name]. Harry and Ron are boys...", "open", "base", "base", "R", cheeks="blush")

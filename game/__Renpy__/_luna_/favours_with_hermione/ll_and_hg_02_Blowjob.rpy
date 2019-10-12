@@ -350,7 +350,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("I told you to stop acting so cold Luna!", "grin", "base", "base", "R")
         call her_main("You should have heard her [genie_name]... She was practically begging for more lessons...", "open", "base", "base", "R")
         call lun_main("...","base","seductive","sad","down", cheeks="blush")
-        call her_main("she insisted I spend all of our last study session teaching her about proper tongue work...","base","squint")
+        call her_main("she insisted I spend all of our last study session teaching her about proper tongue work...", "base", "happy", "base", "mid")
         call her_main("I made sure she studied transfiguration and herbology first though...","grin","worriedCl",emote="05")
         $ luna_flip = 1
         call lun_main("can we stop talking and get started already!","normal","angry","mad","R", cheeks="blush")

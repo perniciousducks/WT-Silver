@@ -507,7 +507,7 @@ label job_5:
             call her_main("It's a bit revealing... but I'll do it.","smile","happy", cheeks="blush")
             call her_main("For Gryffindor house obviously!","open","happyCl", cheeks="blush")
         else:
-            call her_main("That doesn't leave a lot to the imagination...","smile","squint")
+            call her_main("That doesn't leave a lot to the imagination...", "smile", "happy", "base", "mid")
             call her_main("At least the straps should cover my nipples...","open","wink")
             call her_main("I'll do it...","normal","happy", cheeks="blush")
         
@@ -541,12 +541,12 @@ label hermione_helping_selling_cards:
         $ her_shop_help_first = False
         call her_main("")
         m "Hello, [hermione_name], how was your day?"
-        call her_main("Good...","normal","squint")
+        call her_main("Good...", "normal", "happy", "base", "mid")
         call her_main("Still not that comfortable wearing the outfit you provided though so I just stood behind the shop counter today.","open","closed")
         call her_main("Apparently we sold a lot more items than usual though.","base","happy", cheeks="blush")
         g9 "Great news, I bet the twins are ecstatic."
         call her_main("Indeed, It was nice seeing them in such high spirits.","open","happyCl", cheeks="blush")
-        call her_main("Whilst I might not agree with all their business methods I think they might become great salesmen some day.","base","squint")
+        call her_main("Whilst I might not agree with all their business methods I think they might become great salesmen some day.", "base", "happy", "base", "mid")
         g9 "Seems to me like they are already..."
         m "So, how come you had such a surge in new customers?"
         call her_main("No idea, maybe the card game got more people interested in browsing the rest of their stock.","annoyed","squintL")
@@ -572,7 +572,7 @@ label hermione_helping_selling_cards:
         call her_main("It was fine, the outfit is a bit chilly though.","normal","happy")
         m "So, no other complications?"
         call her_main("Well...","soft","down", cheeks="blush")
-        call her_main("The twins asked me to give out some free promotional starter packs.","open","squint", cheeks="blush")
+        call her_main("The twins asked me to give out some free promotional starter packs.", "open", "happy", "base", "mid", cheeks="blush")
         m "Yes?"
         m "Sounds like a great way to get people into playing..."
         call her_main("Well, I didn't have anywhere to store the packs as you could imagine.","base","down", cheeks="blush")
@@ -601,7 +601,7 @@ label hermione_helping_selling_cards:
         call her_main("Just a bit annoyed, that's all.","annoyed","closed")
         m "With?"
         call her_main("Myself...","open","worriedL", cheeks="blush")
-        call her_main("We've set up a practice day where you get to borrow a deck of cards to get more people into the game.","normal","squint")
+        call her_main("We've set up a practice day where you get to borrow a deck of cards to get more people into the game.", "normal", "happy", "base", "mid")
         g9 "Sounds like a good idea, get people invested."
         call her_main("Well, that was fine and all until the amount of new people interested started to slow down.","open","down")
         m "I see, so I expect the responsibility fell on you as you're the one meant to promote the game?"

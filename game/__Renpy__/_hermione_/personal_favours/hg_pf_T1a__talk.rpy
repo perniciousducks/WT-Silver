@@ -584,7 +584,7 @@ label hg_pf_talk_tonks_T3_intro_E1:
 label hg_pf_talk_tonks_T3_E1:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "Let's call Miss Tonks up for this one shall we."
-    call her_main("For what?","open","squint")
+    call her_main("For what?", "open", "happy", "base", "mid")
     m "For today's favour of course!"
     call her_main("...","annoyed","glance")
     call her_main("Will I get any extra points for this?", "open", "base", "base", "mid")

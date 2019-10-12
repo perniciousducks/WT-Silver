@@ -543,7 +543,7 @@ label hg_ps_buttplug_complete:
             call her_main("But it just made herbology worse...","open","down")
             $ sc34CG(1, 11, 1)
             call her_main("I was forced into touching myself in the middle of class...","clench","down_raised")
-            call her_main("Do you think anyone noticed, [genie_name]?","open","squint",cheeks="blush")
+            call her_main("Do you think anyone noticed, [genie_name]?", "open", "happy", "base", "mid",cheeks="blush")
             $ sc34CG(1, 9, 1)
 
             menu:
@@ -684,7 +684,7 @@ label hg_ps_buttplug_complete:
             m "So you intentionally showed it to a group of boys? You don't expect me to grant you extra points for showing them, do you?"
             call her_main("Of course not, [genie_name].", "base", "base", "base", "R",cheeks="blush")
             m "Then why do it?"
-            call her_main("Well, it just sort of just happened...","open","squint",cheeks="blush")
+            call her_main("Well, it just sort of just happened...", "open", "happy", "base", "mid",cheeks="blush")
             call her_main("plus the look on their faces when they noticed it...","grin","dead")
             call her_main("they could barely hide their...","soft","ahegao")
             m "So you like being seen then?"
@@ -807,7 +807,7 @@ label hg_ps_buttplug_complete:
             g9 "And did you return the favour?"
 
             if hg_pr_kiss.counter >= 1:
-                call her_main("Err... maybe...","open","squint",cheeks="blush")
+                call her_main("Err... maybe...", "open", "happy", "base", "mid",cheeks="blush")
                 m "What did you do?"
                 call her_main("well I don't want to say too much [genie_name].", "base", "base", "base", "R",cheeks="blush") # :)
                 her "but after she saw what it was doing to me..."

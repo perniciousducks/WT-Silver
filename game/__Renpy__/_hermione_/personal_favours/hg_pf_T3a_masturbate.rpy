@@ -420,7 +420,7 @@ label hg_pf_strip_T4_fingering:
 
             call her_main("ah...{image=textheart}","angry","wink")
             m "Now lift them up."
-            call her_main("[genie_name]...","open","squint", cheeks="blush")
+            call her_main("[genie_name]...", "open", "happy", "base", "mid", cheeks="blush")
             m "do it, [hermione_name]."
             call her_main("...", "open", "base", "base", "R", cheeks="blush")
             call set_her_action("lift_breasts_naked")
@@ -508,7 +508,7 @@ label hg_pf_strip_T4_fingering:
             call her_main(".......")
             call her_main("[genie_name]... I know it's greedy of me...", "base", "base", "base", "R", cheeks="blush")
             call her_main("ah...{image=textheart}","base","down")
-            call her_main("but could you touch me... down there...","open","squint", cheeks="blush")
+            call her_main("but could you touch me... down there...", "open", "happy", "base", "mid", cheeks="blush")
             m "What's was that [hermione_name]? You'll have to speak up."
             call her_main("Please finger me...","open","ahegao_raised", cheeks="blush")
             m "Once more, a little louder this time."

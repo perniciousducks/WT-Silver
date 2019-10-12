@@ -406,7 +406,7 @@ label hg_anal_sex_2:
             call her_main("What?", "open", "base", "base", "mid",ypos="head")
             m "Well, hypothetically speaking of course..."
             call her_main("...of course...{image=textheart}", "base", "base", "base", "R")
-            call her_main("..............","base","squint")
+            call her_main("..............", "base", "happy", "base", "mid")
             call her_main("But why do you say that, [genie_name]?", "soft", "base", "base", "mid")
             m "Huh?"
             m "What do you mean \"why\", whore?"

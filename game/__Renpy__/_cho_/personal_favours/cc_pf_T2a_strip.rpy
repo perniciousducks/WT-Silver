@@ -949,7 +949,7 @@ label cc_pf_strip_T1_intro_E3:
     call cho_main("Are you sure about that? I believe there are some people that would think otherwise...","angry","narrow","base","mid")
     call cho_main("Your friends...{w} the other students...{w} our teachers...","soft","narrow","angry","L")
     call cho_main("Maybe even the ministry?","smile","narrow","angry","L")
-    call her_main("You wouldn't dare!!!","upset","squint")
+    call her_main("You wouldn't dare!!!", "upset", "happy", "base", "mid")
     call cho_main("Indeed, I wouldn't.","soft","closed","base","mid")
     call cho_main("And neither would you!","smile","narrow","angry","L")
     call cho_main("Which is why we brought you here...","open","base","base","mid")

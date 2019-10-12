@@ -541,7 +541,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("What?", "open", "base", "base", "mid",ypos="head")
                 m "Aye, if only a lass like ye would board me ship..."
                 call her_main("...Aye...{image=textheart}", "base", "base", "base", "R")
-                call her_main("..............","base","squint")
+                call her_main("..............", "base", "happy", "base", "mid")
                 call her_main("Aye if only a lass like I, cap'n? So, why neigh me?", "soft", "base", "base", "mid")
                 m "Huh?"
                 m "Wha' do ye mean \"why\", wench?"

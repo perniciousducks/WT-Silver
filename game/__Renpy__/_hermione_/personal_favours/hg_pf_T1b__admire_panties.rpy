@@ -216,7 +216,7 @@ label hg_pf_admire_panties_T2: # Call label
 
     menu:
         "\"You don't look too embarrassed...\"":
-            call her_main("That's not true...","base","squint")
+            call her_main("That's not true...", "base", "happy", "base", "mid")
             call her_main("But this is a small price to pay if the \"Gryffindors\" keep the cup this year.", "base", "base", "base", "R")
             her "I know everyone will be so happy..."
             call ctc
@@ -224,7 +224,7 @@ label hg_pf_admire_panties_T2: # Call label
             return
 
         "\"I like your panties...\"":
-            call her_main("Thank you, [genie_name]...","base","squint")
+            call her_main("Thank you, [genie_name]...", "base", "happy", "base", "mid")
             call ctc
 
             return

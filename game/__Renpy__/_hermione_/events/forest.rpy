@@ -173,7 +173,7 @@ label forest_BJ_2:
     call her_main("So what are you doing out here?", "base", "base", "base", "mid")
     call her_main("I thought you didn't leave your office anymore?","soft","suspicious")
     m "Oh, you know me... Always looking to connect with my students..."
-    call her_main("Mhmmm... So that's what you're down here for then? To {i}connect{/i}?","base","squint")
+    call her_main("Mhmmm... So that's what you're down here for then? To {i}connect{/i}?", "base", "happy", "base", "mid")
     m "Always..."
     call her_main("Fine... Just let me take my robe off...", "base", "base", "base", "R")
     show screen blkfade
@@ -601,7 +601,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
 
     m "[hermione_name]..."
     call her_main("About time you got here, [genie_name]!","upset","annoyed",xpos="right",ypos="base",trans="d5")
-    call her_main("Do you know how long I've been waiting out here in the cold?","annoyed","squint")
+    call her_main("Do you know how long I've been waiting out here in the cold?", "annoyed", "happy", "base", "mid")
 
     menu:
         "-Apologise-":

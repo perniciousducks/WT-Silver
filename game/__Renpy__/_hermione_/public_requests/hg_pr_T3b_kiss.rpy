@@ -476,7 +476,7 @@ label hg_pr_kiss_T3_E2:
     call her_main("And Ginny returned my kiss with such passion...","base","glance")
     her "that we sort of ended up doing more than just kissing..."
     g9 "And afterwards you had a pillow fight in lingerie?"
-    call her_main("Err... No...","open","squint", cheeks="blush")
+    call her_main("Err... No...", "open", "happy", "base", "mid", cheeks="blush")
     m "What did you do then?"
     call her_main("I am not telling you, [genie_name].", "base", "base", "base", "R", cheeks="blush") # :)
     her "You sent me out to kiss a girl..."

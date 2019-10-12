@@ -295,10 +295,10 @@ label hg_pf_titjob_1:
     $ ccg1 = 6
     if hg_pf_titjob.counter == 1:
         call her_main("...", "base", "base", "base", "mid")
-        call her_main("Does it... feel good?","base","squint")
+        call her_main("Does it... feel good?", "base", "happy", "base", "mid")
         m "Good?"
         m "It feels amazing."
-        call her_main("Oh...","base","squint")
+        call her_main("Oh...", "base", "happy", "base", "mid")
         call her_main("......")
         call her_main("Thank you [genie_name].", "base", "base", "base", "R")
 
@@ -314,7 +314,7 @@ label hg_pf_titjob_1:
         "\"I promise not to cover that sweet little face of yours...\"":
             $ d_flag_01 = True #If TRUE Genie promised to warn her.
             $ ccg1 = 6
-            call her_main("Thank you, [genie_name].","base","squint")
+            call her_main("Thank you, [genie_name].", "base", "happy", "base", "mid")
         "\"Hmmmm...{w=0.3} We'll see how I feel later...\"":
             $ ccg1 = 8
             call her_main("*Hmmmmph*...","annoyed","annoyed")
@@ -354,7 +354,7 @@ label hg_pf_titjob_1:
             call her_main("There was this one time in the library...", "smile", "base", "base", "R")
             call her_main("It was empty, apart from this first year boy sitting across from me...")
             m "*Heh*... good.{w=0.3} Go on..."
-            call her_main("Well, it was quite hot that day, so I decided to take my vest off...","base","squint")
+            call her_main("Well, it was quite hot that day, so I decided to take my vest off...", "base", "happy", "base", "mid")
             g4 "Yes! Very hot indeed..."
             call her_main("He was trying to act sly, but I could tell that he kept sneaking glances at them...", "base", "base", "base", "R")
             call her_main("So I began undoing the buttons... Slowly at first, not enough for him to suspect anything...","base","glance")
@@ -691,7 +691,7 @@ label hg_pf_titjob_2:
             m "A friend of yours?"
             call her_main("yes. I asked if she had any tips for this sort of thing...", "base", "base", "base", "R")
             $ ccg1 = 21
-            call her_main("She said the best way to improve was practice...","base","squint")
+            call her_main("She said the best way to improve was practice...", "base", "happy", "base", "mid")
             m "Practice on what?"
             $ ccg1 = 22
             call her_main("On Ginny", "smile", "base", "base", "R")

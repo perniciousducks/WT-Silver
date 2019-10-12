@@ -1275,7 +1275,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         call her_main("so the only reason you'd bring me up here to show of my tits...","base","glance")
         call her_main("is so you can get a look as well...","base","suspicious")
         call her_main("not that I mind...", "smile", "base", "base", "R")
-        call her_main("I just want you to be honest...","base","squint")
+        call her_main("I just want you to be honest...", "base", "happy", "base", "mid")
         call lun_main("...","normal","mad","sad","R", cheeks="blush")
         call lun_main("Fine...","upset","mad","sad","down", cheeks="blush")
         call her_main("say it...","base","suspicious")

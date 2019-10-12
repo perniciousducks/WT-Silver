@@ -164,7 +164,7 @@ label hg_pf_strip_T2_Snape:
     m "And will make up for it today, won't you, [hermione_name]?"
     pause.2
 
-    call her_main("Uhm... Yes, [genie_name].","base","squint")
+    call her_main("Uhm... Yes, [genie_name].", "base", "happy", "base", "mid")
     pause.2
 
 

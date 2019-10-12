@@ -336,7 +336,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     #sQuest "whore" collar reward
     call give_reward(">You present her the \"whore\" collar.\n \"whore\" collar added to your wardrobe.")
 
-    call her_main("A collar? That says whore?","open","squint",cheeks="blush")
+    call her_main("A collar? That says whore?", "open", "happy", "base", "mid",cheeks="blush")
     call her_main("How is this a piece of jewellery?","open","annoyed",cheeks="blush")
     m "Well I expect you to wear it all the time, like a ring, so I guess that qualifies it as jewellery."
     call her_main("You expect me to wear this all the time? Not just in your office.","scream","angry",cheeks="blush",tears="messy")

@@ -282,10 +282,10 @@ label ball_quest_E1:
                     g4 "(What the...?)"
                     call her_main("Sir, I am begging you!", "angry", "base", "angry", "mid", cheeks="blush", tears="messy")
                     m "Kind of sounds like an order--"
-                    call her_main("I need it!","angry","dead_mad", cheeks="blush", tears="messy")
+                    call her_main("I need it!", "angry", "narrow", "angry", "dead", cheeks="blush", tears="messy")
                     her "...I need to shamelessly present my naked body before you like this!"
                     m ".............?"
-                    call her_main("I need to feel this embarrassment and humiliation! *SOB!*","upset","dead_mad", cheeks="blush", tears="messy")
+                    call her_main("I need to feel this embarrassment and humiliation! *SOB!*", "upset", "narrow", "angry", "dead", cheeks="blush", tears="messy")
                     call her_main("The fate of the \"Autumn ball\" depends on this...", "grin", "narrow", "base", "angry", "mid", "up", cheeks="blush", tears="messy")
                     her "So, sir, please..."
                     call her_main("Keep looking at my naked breasts, and my pussy...", "grin", "base", "angry", "mid", cheeks="blush", tears="messy")

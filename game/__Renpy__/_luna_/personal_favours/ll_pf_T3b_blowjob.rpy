@@ -1433,13 +1433,13 @@ label ll_pf_blowjob_T1_summon:
     #Hermione starts touching herself
     call set_her_action("fingering")
     $ lunCG('', 'angry', '', 'up', pos=8)
-    call her_main("What if someone else walked in while this was going on?","grin","dead_mad")
+    call her_main("What if someone else walked in while this was going on?", "grin", "narrow", "angry", "dead")
     $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=4)
     call her_main("Do you think they wouldn't be able to hear it?", "grin", "narrow", "base", "dead")
     $ lunCG(pos=8)
-    call her_main("To {b}smell{/b} it?","open_tongue","dead_mad")
+    call her_main("To {b}smell{/b} it?", "open_tongue", "narrow", "angry", "dead")
     $ lunCG('', 'mad', '', 'ahegao', pos=14)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=4)
@@ -1449,9 +1449,9 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=12)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=16)
-    call her_main("Is that what you wanted [genie_name]? Some cute little thing to walk in and unknowingly be forced into watching you cum in front of them...","smile","dead_mad")
+    call her_main("Is that what you wanted [genie_name]? Some cute little thing to walk in and unknowingly be forced into watching you cum in front of them...", "smile", "narrow", "angry", "dead")
     $ lunCG('', 'wide', '', 'up', pos=13)
-    call her_main("To be forced into breathing in this thick musk...","disgust","dead_mad")
+    call her_main("To be forced into breathing in this thick musk...", "disgust", "narrow", "angry", "dead")
     $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=7)

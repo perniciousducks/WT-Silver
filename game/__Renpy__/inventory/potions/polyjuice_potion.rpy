@@ -139,7 +139,7 @@ label hg_pp_polyjuice_T1_intro:
     her "Try and turn me into a cat!"
     call her_main("In the middle of class!","annoyed","worriedL")
     m "I didn't try and turn you into a cat [hermione_name]."
-    call her_main("Then why do I have ears and a tail?","scream","angryCl")
+    call her_main("Then why do I have ears and a tail?", "scream", "closed", "angry", "mid")
     m "I have no idea. The potion I gave you was supposed to turn you into a different girl."
     call her_main("What!? You didn't use polyjuice potion did you [genie_name]?", "shock", "wide", "base", "stare")
     m "What's that?"
@@ -328,7 +328,7 @@ label hg_pp_polyjuice_T1_introCC:
         her "Try and turn me into a cat!"
         call her_main("In the middle of class!","annoyed","worriedL")
         m "I didn't try and turn you into a cat [hermione_name]."
-        call her_main("Then why do I have ears and a tail?","scream","angryCl")
+        call her_main("Then why do I have ears and a tail?", "scream", "closed", "angry", "mid")
         m "I have no idea. The potion I gave you was supposed to turn you into a different girl."
         call her_main("What!? You didn't use polyjuice potion did you [genie_name]?", "shock", "wide", "base", "stare")
         m "What's that?"
@@ -607,7 +607,7 @@ label hg_pp_polyjuice_T1_introCC:
         # m "Troubling indeed."
 
         # if her_whoring <= 13:
-            # call her_main("It is! [genie_name], I used to be at the top of the class. My scores were impeccable. ","scream","angryCl")
+            # call her_main("It is! [genie_name], I used to be at the top of the class. My scores were impeccable. ", "scream", "closed", "angry", "mid")
             # m "And how are your scores now?"
             # call her_main("Well I'm still at the top... Just not by as much.","annoyed","angryL")
             # m "Well, there are times when academic excellence shouldn't be your primary concern."
@@ -618,11 +618,11 @@ label hg_pp_polyjuice_T1_introCC:
         # else:
             # call her_main("Not really. I realise there are other things I can excel in.", "base", "base", "base", "mid")
             # m "Like sucking cocks for house points"
-            # call her_main("Professor!","scream","angryCl")
+            # call her_main("Professor!", "scream", "closed", "angry", "mid")
             # m "Oh don't be so modest. If sucking dick was a class, you'd be Magna Cum Laude."
-            # call her_main("Thank you professor. You know, there's time to earn some more points before class. If you're feeling generous I could...","scream","angryCl")
+            # call her_main("Thank you professor. You know, there's time to earn some more points before class. If you're feeling generous I could...", "scream", "closed", "angry", "mid")
             # m "I'd have to know on whose face I'll be cumming though "
-            # call her_main("What do you mean? ...My face of course... I mean ...*urp*","scream","angryCl")
+            # call her_main("What do you mean? ...My face of course... I mean ...*urp*", "scream", "closed", "angry", "mid")
 
     # hide screen hermione_main
     # with hpunch

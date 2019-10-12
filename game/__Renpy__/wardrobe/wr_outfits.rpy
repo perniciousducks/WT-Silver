@@ -161,14 +161,14 @@ label equip_outfit:
                     # m "Yes. But first you need to get naked."
                     # if her_whoring < 5:
                         # call her_main("What?", "shock", "wide", "base", "stare")
-                        # call her_main("Are you out of your mind, [genie_name]?","open","angryCl")
+                        # call her_main("Are you out of your mind, [genie_name]?", "open", "closed", "angry", "mid")
                         # call her_main("Never ask me something like this again!", "angry", "base", "angry", "mid")
                     # else:
                         # call her_main("Typical...", "open", "closed", "base", "mid")
                         # call her_main("I'm sorry, [genie_name]. But this just sounds like just another one of your silly ideas...","open","annoyed")
                     # m "But,... my birthday!"
                     # if not birthday_happened:
-                        # call her_main("Birthday or not, I would never do such a thing! For anyone!","scream","angryCl")
+                        # call her_main("Birthday or not, I would never do such a thing! For anyone!", "scream", "closed", "angry", "mid")
                     # else:
                         # call her_main("It's not your birthday!", "scream", "base", "angry", "mid")
                         # m "Alright, alright... No need to scream like that."
@@ -302,7 +302,7 @@ label equip_outfit:
                     # call her_main("Uhm... who?","soft","wink")
                     # m "She's a video game character."
                     # call her_main("What?", "scream", "wide", "base", "stare")
-                    # call her_main("In that case, absolutely not!","scream","angryCl")
+                    # call her_main("In that case, absolutely not!", "scream", "closed", "angry", "mid")
                     # m "Why not?"
                     # call her_main("Video games are for idiots.","annoyed","angryL")
                     # m "..."

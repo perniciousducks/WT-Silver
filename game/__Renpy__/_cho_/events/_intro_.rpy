@@ -180,7 +180,7 @@ label cho_intro_E1:
     call cho_main("Oh, you know...{w=0.5} Just having a discussion with our dear headmaster...", "smile", "base", "base", "L")
 
     $ renpy.sound.play("sounds/card_punch4.mp3")
-    call her_main("{size=-5}Bitch...{/size}","base","angryCl",trans="hpunch")
+    call her_main("{size=-5}Bitch...{/size}", "base", "closed", "angry", "mid",trans="hpunch")
 
     $ renpy.sound.play("sounds/card_punch1.mp3")
     call cho_main("{size=-5}Whore...{/size}", "soft", "angry", "angry", "L",trans="hpunch")
@@ -278,7 +278,7 @@ label cho_intro_E1:
         pause.8
 
         call cho_main("{size=-4}You have fun now... getting at that wand of his...{/size}","angry","narrow","angry","L", ypos="head")
-        call her_main("*Tzzzh!*...","clench","angryCl", ypos="head")
+        call her_main("*Tzzzh!*...", "clench", "closed", "angry", "mid", ypos="head")
 
 
     # Not masturbating
@@ -310,12 +310,12 @@ label cho_intro_E1:
         call her_main("They are, for a fact. Completely legitimate... you tell her Professor!","clench","angryL",trans="hpunch")
         $ renpy.sound.play("sounds/snore3.mp3")
         gen "*Sn{cps=8}oooooooreeee*{/cps}{w=2.0}{nw}"
-        call her_main("Professor!","scream","angryCl",trans="hpunch")
+        call her_main("Professor!", "scream", "closed", "angry", "mid",trans="hpunch")
         g4 "*Grunt* {size=-4}Huh, what?{/size}"
         call her_main("I always have a valid reason for coming here, don’t I?", "base", "base", "base", "mid")
         m "Of course you-{w=0.6}{nw}"
         call cho_main("Always? So you \"do\" come here often!","smile","narrow","base","L")
-        call her_main("So what...","angry","angryCl")
+        call her_main("So what...", "angry", "closed", "angry", "mid")
         m "Ladies, I think it’s time to-{w=0.8}{nw}"
         call cho_main("Don’t worry about it Sir, I was just about to leave anyway...","soft","narrow","angry","mid")
         call her_main("...","annoyed","angryL")
@@ -665,7 +665,7 @@ label cho_intro_E3:
         call her_main("Ten points?", "soft", "wide", "base", "stare",trans="hpunch")
         call her_main("Sir do you even realize how much time it took me to do all that research?","angry","frown")
         m "Twenty?"
-        call her_main("Two hundred!","angry","angryCl")
+        call her_main("Two hundred!", "angry", "closed", "angry", "mid")
         g4 "Two hundred? Are you nuts?"
         call her_main("And just points isn’t going to cut it...", "open", "closed", "base", "mid")
         m "Then what else?"
@@ -699,7 +699,7 @@ label cho_intro_E3:
                 m "Try to remember this, Miss Granger. You can't rip me off that easily."
                 call her_main("Tzzzz- I don't need your points anyway.", "angry", "base", "angry", "mid")
                 g9 "You may leave now."
-                call her_main("I will!{w} Good day, Sir!","open","angryCl")
+                call her_main("I will!{w} Good day, Sir!", "open", "closed", "angry", "mid")
 
                 call her_walk(action="leave", speed=2.5)
 
@@ -761,7 +761,7 @@ label cho_intro_E3:
     call her_main("[genie_name], may I ask.{p=0.6}What exactly were you and Cho talking about when I entered your office?", "open", "base", "base", "R")
     m "Oh. She just wanted my help with Quidditch."
     call her_main("Pffff-{p=0.4}Why doesn't it surprise me that she'd need your help with it.","grin","glanceL")
-    call her_main("How else could she possibly win that stupid Quidditch cup...","soft","angryCl")
+    call her_main("How else could she possibly win that stupid Quidditch cup...", "soft", "closed", "angry", "mid")
     m "I thought that cup was so important to you?"
     call her_main("I couldn’t care less about it, [genie_name].", "open", "closed", "base", "mid")
     call her_main("The only cup that is worth winning is the \"house cup\".","open","glanceL")
@@ -840,7 +840,7 @@ label cho_intro_E3:
     call cho_main("This is amazing! I feel as if it's my birthday!","smile","base","base","mid")
     call her_main("After all, Quidditch is a huge waste of everyone's time.{p=0.6}Including mine...","soft","glanceL") #[Still looking bored]
     call cho_main("You're just jealous that I’m better than you at something.","smile","angry","angry","L")
-    call her_main("I am not jealous!","angry","angryCl")
+    call her_main("I am not jealous!", "angry", "closed", "angry", "mid")
     m "You may go now, Miss Granger."
     call her_main("(...)", "annoyed", "base", "angry", "mid")
     call her_main("Until next time, Sir.", "normal", "closed", "base", "mid")

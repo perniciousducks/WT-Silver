@@ -359,7 +359,7 @@ label luna_revert_1: #Reversion event #DONE
     call her_main("You have to Change her back!","annoyed","annoyed")
     m "Really? But this has been pretty fun."
     call her_main("I can't even believe I have to tell you how wrong this is sir!", "angry", "base", "angry", "mid")
-    call her_main("Change her back now or I tell the ministry everything.","scream","angryCl")
+    call her_main("Change her back now or I tell the ministry everything.", "scream", "closed", "angry", "mid")
     m "What about your house-"
     call her_main("{size=+10}NOW!{/size}", "scream", "base", "angry", "mid",emote="01")
     m "Alright, alright, sheesh..."
@@ -378,7 +378,7 @@ label luna_revert_1: #Reversion event #DONE
     hat "Alright, alright. Sheesh."
     hat "You don't seem this bossy when you're in here normally..."
     call lun_main("!!!","upset","wide","sad","mid")
-    call her_main("{size=+5}Shut up!{/size}","scream","angryCl")
+    call her_main("{size=+5}Shut up!{/size}", "scream", "closed", "angry", "mid")
     hat "One boring old Lovegood, coming right up."
     call lun_main("???","upset","wide","sad","R")
     call lun_main("......","normal","wide","sad","down")
@@ -446,7 +446,7 @@ label luna_revert_1: #Reversion event #DONE
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
     call lun_main("","soft","wide","raised","mid",trans="hpunch")
-    call her_main("liquescimus corporis!","scream","angryCl")
+    call her_main("liquescimus corporis!", "scream", "closed", "angry", "mid")
     ">Another flash of light as Luna becomes unpetrified."
     call lun_main("Ugh... where am I?","normal","suspicious","sad","R")
     call her_main("Shhh, it's alright.","base","glance")
@@ -740,13 +740,13 @@ label luna_revert_2: #Non-Reversion event #DONE
     call lun_main("liquescimus corporis!","open","seductive","angry","mid")
     ">Another flash of light as Hermione becomes unpetrified."
     call lun_main("","base","seductive","base","R",xpos="mid",ypos="base")
-    call her_main("Professor! What is the meaning of this!","scream","angryCl")
+    call her_main("Professor! What is the meaning of this!", "scream", "closed", "angry", "mid")
     call her_main("And what were the two of you doing before I got here?", "angry", "base", "angry", "mid")
     call lun_main("oh... I was just helping out Professor Dumbledore...","normal","seductive","base","down")
     call her_main("helping out how?","annoyed","annoyed")
     call lun_main("just to relieve some... tension. {p}Don't worry he isn't going to pay me in points... *tssk*","base","angry","base","R")
     call her_main("what?", "angry", "base", "angry", "mid",emote="01")
-    call her_main("[genie_name]! What are you doing!","scream","angryCl")
+    call her_main("[genie_name]! What are you doing!", "scream", "closed", "angry", "mid")
     m "Ah...."
     call lun_main("don't blame him. It's not his fault you fail to satisfy...","base","mad","angry","mid")
     call her_main("You... you...","annoyed","annoyed")

@@ -57,7 +57,7 @@ label hg_ps_cumslut_Scene_1:
     m "30 points."
     call her_main("30! I expect at least 70 for such a filthy act!","scream","worriedCl")
     m "40."
-    call her_main("60!","scream","angryCl")
+    call her_main("60!", "scream", "closed", "angry", "mid")
     m "50 points, final offer."
     call her_main("Ok, I'll do it.","annoyed","worriedL")
     m "Really?"
@@ -205,7 +205,7 @@ label hg_ps_cumslut_Scene_1:
 
             call her_main("How could you!","scream","worriedCl")
             m "How could I?"
-            call her_main("You told me to let you cum on my face!","scream","angryCl")
+            call her_main("You told me to let you cum on my face!", "scream", "closed", "angry", "mid")
             m "I did."
             call her_main("Why would you say something like that!","mad","worriedCl",tears="soft_blink")
             call her_main("If I hadn't moved at the last second my face would be covered!", "angry", "base", "base", "mid",tears="soft")
@@ -259,7 +259,7 @@ label hg_ps_cumslut_Scene_2:
     m "20 points."
     call her_main("20! we agreed on 50 last time!","scream","worriedCl")
     m "40."
-    call her_main("70!","scream","angryCl")
+    call her_main("70!", "scream", "closed", "angry", "mid")
     m "50 points, final offer."
     call her_main("80 and I'll let people see it.","base","glance")
     m "Really?"
@@ -429,7 +429,7 @@ label hg_ps_cumslut_Scene_2:
 
             call her_main("How could you!","scream","worriedCl")
             m "How could I?"
-            call her_main("You came all over my face!","scream","angryCl")
+            call her_main("You came all over my face!", "scream", "closed", "angry", "mid")
             m "I did."
             call her_main("Why would you ask me to do that!","mad","worriedCl",tears="soft_blink")
             call her_main("I'm completely covered in your cum!", "angry", "base", "base", "mid",tears="soft")
@@ -679,7 +679,7 @@ label hg_ps_cumslut_complete_1:
                 call her_main("This was the worst day of my life!","scream","worriedCl",tears="mascara_soft_blink")
                 call her_main("I've never been so ashamed!","angry","worriedCl",emote="05",tears="mascara_soft_blink")
                 m "Did your friends treat you poorly?"
-                call her_main("No! That's the worst part!","scream","angryCl",tears="mascara_soft_blink")
+                call her_main("No! That's the worst part!", "scream", "closed", "angry", "mid",tears="mascara_soft_blink")
                 call her_main("I expected to be an outcast, to sit by myself and not have Ginny or Luna talk to me.","annoyed","worriedL",tears="mascara_soft_blink")
                 call her_main("But they didn't even acknowledge the fact that I was covered in cum!","annoyed","angryL",tears="mascara_soft_blink")
                 call her_main("They acted as if nothing was wrong.","mad","worriedCl",tears="mascara_soft_blink")
@@ -774,7 +774,7 @@ label hg_ps_cumslut_complete_2:
                 call her_main("My day...","normal","worriedCl",tears="mascara",xpos="base",ypos="base")
                 call her_main("It was completely normal.","scream","worriedCl",tears="mascara")
                 m "Really? Nothing strange happened at all?"
-                call her_main("No. Everyone treated me how I deserved to be treated.","scream","angryCl",tears="mascara")
+                call her_main("No. Everyone treated me how I deserved to be treated.", "scream", "closed", "angry", "mid",tears="mascara")
                 m "And how's that?"
                 call her_main("Like a slut.","annoyed","worriedL",tears="mascara")
                 call her_main("Boys cat called me.","annoyed","angryL",tears="mascara")

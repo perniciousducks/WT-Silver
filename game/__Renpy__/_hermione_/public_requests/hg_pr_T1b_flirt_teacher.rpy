@@ -162,7 +162,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
     m "Tell me what happened."
     call her_main("Nothing happened, [genie_name]. He just laughed at me...","annoyed","frown")
     call her_main("I may not have much feminine charm, but I tried to be nice...","annoyed","worriedL")
-    call her_main("And he just started laughing in my face!","scream","angryCl")
+    call her_main("And he just started laughing in my face!", "scream", "closed", "angry", "mid")
     call her_main("...it is really scary to see professor Snape laugh...","angry","worriedCl", emote="05")
     her "........"
     her "I am awful at flirting, I am sorry [genie_name]..."
@@ -341,7 +341,7 @@ label hg_pr_flirt_teacher_T2_E3: # Filch
     call her_main("I feel like he really opened up to me, [genie_name].", "base", "base", "base", "mid")
     m "Right..."
     m "This, mr.Fli{size=+7}nt{/size}--"
-    call her_main("It's mr.Filch, [genie_name].","open","angryCl")
+    call her_main("It's mr.Filch, [genie_name].", "open", "closed", "angry", "mid")
     m "Yeah, whatever... Is he a teacher here then?"
     her "Mr.Filch? A teacher? No, [genie_name]..."
     call her_main("He is the caretaker...", "base", "base", "base", "mid")
@@ -436,7 +436,7 @@ label hg_pr_flirt_teacher_T3_E2: # Snape +CG
     m "Ehm... Yeah, I'm pretty sure it's Dumbledore or something..."
     call her_main("[genie_name], please, you need to listen to me!", "open", "base", "base", "mid")
     m "Yes, yes, [hermione_name], I'm listening."
-    call her_main("I just confirmed that professor Snape is corrupted and \"dirty\", [genie_name]!","open","angryCl")
+    call her_main("I just confirmed that professor Snape is corrupted and \"dirty\", [genie_name]!", "open", "closed", "angry", "mid")
     m "Tell me what happened."
 
     hide screen hermione_main
@@ -449,7 +449,7 @@ label hg_pr_flirt_teacher_T3_E2: # Snape +CG
     call her_main("And I've been eyeing his crotch...", "soft", "base", "base", "R", ypos="head")
     m "You..."
     m "Eyed his crotch?"
-    call her_main("Yes... It's when you stare at a man's crotch and imagine that you are looking at something you want badly...","open","angryCl", ypos="head")
+    call her_main("Yes... It's when you stare at a man's crotch and imagine that you are looking at something you want badly...", "open", "closed", "angry", "mid", ypos="head")
     m "Where do you get this stuff?"
     call her_main("Women's magazines...","open","worriedL", ypos="head")
     call her_main("Well, anyway, it worked, [genie_name].","normal","frown", ypos="head")
@@ -462,7 +462,7 @@ label hg_pr_flirt_teacher_T3_E2: # Snape +CG
     call her_main("As soon as the class was over, professor Snape grabbed my buttocks, [genie_name]!", "angry", "base", "angry", "mid", ypos="head")
     m "The fiend!"
     m "Did you enjoy it, though?"
-    call her_main("[genie_name], I am only doing this--","scream","angryCl", ypos="head")
+    call her_main("[genie_name], I am only doing this--", "scream", "closed", "angry", "mid", ypos="head")
     m "Go \"Gryffindors\"! honour and all that. Yes, I remember."
     call ctc
 

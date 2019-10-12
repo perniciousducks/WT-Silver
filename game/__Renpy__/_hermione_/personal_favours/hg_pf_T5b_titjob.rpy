@@ -134,7 +134,7 @@ label hg_pf_titjob_T1_intro_E1:
         m "(...)"
         "\"You'll get 15 house points.\"" if her_mood == 0:
             $ her_mood += 7
-            call her_main("[genie_name], are you seriously expecting me to give you a titjob...","angry","angryCl")
+            call her_main("[genie_name], are you seriously expecting me to give you a titjob...", "angry", "closed", "angry", "mid")
             call her_main("For 15 meagre points?!", "scream", "base", "angry", "mid")
             call her_main("", "clench", "base", "angry", "mid")
             m "How about 20? Does that sound fair?"
@@ -175,7 +175,7 @@ label hg_pf_titjob_T1_repeat:
     call her_main("What would I have to do to earn them?", "open", "base", "base", "R")
     g9 "Nothing you aren't already experienced with!"
     m "I'm just going to rub my cock between those precious little tits of yours..."
-    call her_main("This again...","angry","angryCl")
+    call her_main("This again...", "angry", "closed", "angry", "mid")
     call her_main("(...)","annoyed","angryL")
     call her_main("For 45 house points?", "open", "base", "angry", "mid")
     m "45 house points, as always..."
@@ -419,7 +419,7 @@ label hg_pf_titjob_1:
 
             call nar(">Your thrusts ends up going into her drooling mouth.")
             g4 "That's it, slut! Taste it!"
-            call her_main(".....................","open_wide_tongue","angryCl")
+            call her_main(".....................", "open_wide_tongue", "closed", "angry", "mid")
             m "Yes, you big-titted whore!"
             call her_main("......................", "open_wide_tongue", "base", "angry", "mid")
             g4 "I want to cum in that little slutty mouth of yours..."
@@ -621,9 +621,9 @@ label hg_pf_titjob_2:
             call her_main("Perfect taste...", "soft", "narrow", "annoyed", "up")
             m "..."
             $ ccg1 = 25
-            call her_main("I think your perfect cock should be shared around the school.","scream","angryCl")
+            call her_main("I think your perfect cock should be shared around the school.", "scream", "closed", "angry", "mid")
             m "Well, I wouldn't go that far-"
-            call her_main("Listen to me, [genie_name]!","angry","angryCl")
+            call her_main("Listen to me, [genie_name]!", "angry", "closed", "angry", "mid")
             call her_main("I think it should be worshipped as part of the school curriculum!", "soft", "narrow", "annoyed", "up")
             $ ccg1 = 24
             call her_main("Girls will be required to come in and bask in it's glory!", "open_tongue", "narrow", "annoyed", "up")

@@ -19,7 +19,7 @@ label hg_pf_strip_T1_Snape: # Fails
     call her_main("My striptease performance...?!!", "shock", "wide", "base", "stare")
     call her_main("Are you completely out of your mind, [genie_name]?", "angry", "base", "angry", "mid")
     call her_main("Wasn't it enough that I've had to embarrass myself in front my teacher once before?", "open", "base", "angry", "mid")
-    call her_main("And now you expect me to do it again,... but willingly?!","scream","angryCl")
+    call her_main("And now you expect me to do it again,... but willingly?!", "scream", "closed", "angry", "mid")
     m "Short answer... yes."
     call her_main("I'm leaving!", "angry", "base", "angry", "mid")
 
@@ -54,7 +54,7 @@ label hg_pf_strip_T2_Snape:
         call her_main("My striptease performance...?!!", "shock", "wide", "base", "stare")
         call her_main("With all due respect, [genie_name]...", "angry", "base", "angry", "mid")
         call her_main("{size=-5}(Which I have oh so little left for you...){/size}","normal","frown")
-        call her_main("I refuse to degrade myself for professor Snape's amusement!","scream","angryCl")
+        call her_main("I refuse to degrade myself for professor Snape's amusement!", "scream", "closed", "angry", "mid")
         m "No, no, you got it all wrong, [hermione_name]."
         call her_main("Hm..?", "soft", "base", "base", "mid")
         m "I want to prove that professor Snape is dirty, and I need your help."
@@ -202,11 +202,11 @@ label hg_pf_strip_T2_Snape:
     call sna_main("What?!","snape_10")
     call sna_main("How dare you....?")
     call sna_main("Who do you think you are? You filthy mu--","snape_15")
-    call her_main("[genie_name], one of your staff is verbally abusing me!","scream","angryCl")
+    call her_main("[genie_name], one of your staff is verbally abusing me!", "scream", "closed", "angry", "mid")
     call her_main("Are you going to allow this?")
     call sna_main("Verbally abusing...?! You have some nerve, girl!","snape_08")
     call sna_main("Albus, will you allow her to talk back to a teacher like that?","snape_10")
-    call her_main("[genie_name]!","scream","angryCl")
+    call her_main("[genie_name]!", "scream", "closed", "angry", "mid")
     call sna_main("Albus!","snape_10")
 
     menu:
@@ -266,7 +266,7 @@ label hg_pf_strip_T2_Snape:
             call her_main("(That B-Bi--", "shock", "wide", "base", "stare")
             g4 "And you,... stripper-whore!"
             g4 "Do what you are paid for and start stripping already!!!"
-            call her_main("......","angry","angryCl", emote="01")
+            call her_main("......", "angry", "closed", "angry", "mid", emote="01")
             call sna_main(".............","snape_05")
             call her_main("...","mad","frown")
 

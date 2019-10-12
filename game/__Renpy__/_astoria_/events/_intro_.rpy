@@ -311,7 +311,7 @@ label astoria_intro_E2_hermione:
     call her_main("really? You're depending on me to find a criminal student within our school?","soft","down_raised",cheeks="blush")
     m "If it's not too much troub--"
     call her_main("I'd be honoured, [genie_name]!", "scream", "closed", "base", "mid")
-    call her_main("It's no doubt the work of one of those despicable \"slytherins\"...","open","angryCl")
+    call her_main("It's no doubt the work of one of those despicable \"slytherins\"...", "open", "closed", "angry", "mid")
     call her_main("Nothing would give me greater pleasure than to see scum like that sent to \'Azkaban\'...","angry","angryL")
 
     # Genie already knows about Azkaban.
@@ -500,7 +500,7 @@ label astoria_intro_E3:
 
     call her_main("What's going to be her punishment, Sir?", "soft", "base", "angry", "mid")
     call ast_main("Punishment? I didn't do anything!","clench","base","worried","mid")
-    call her_main("You know very well what you did!","angry","angryCl")
+    call her_main("You know very well what you did!", "angry", "closed", "angry", "mid")
     call her_main("Sir, I overheard her boasting about it in the library - to a group of \"Slytherins.\"","annoyed","concerned")
     call her_main("By the sounds of it, she used Imperio to control another student!", "annoyed", "base", "base", "mid")
     call ast_main("I did not!","annoyed","base","worried","L")
@@ -512,7 +512,7 @@ label astoria_intro_E3:
     call ast_main("Fine!","clench","closed","angry","mid")
     call ast_main("I'll tell you what happened, Sir...", "open","narrow","base","mid")
     call ast_main("But only if this \"Gryffindor\" leaves!","annoyed","narrow","base","mid")
-    call her_main("Not a chance!","angry","angryCl")
+    call her_main("Not a chance!", "angry", "closed", "angry", "mid")
 
     $ d_flag_01 = False
 
@@ -529,7 +529,7 @@ label astoria_intro_E3:
     call her_main("But Sir, I'd really like to know what her punishment is going to be!", "angry", "base", "base", "mid")
 
     m "That's none of your concern."
-    call her_main("Yes it is! And I demand to be rewarded!","angry","angryCl")
+    call her_main("Yes it is! And I demand to be rewarded!", "angry", "closed", "angry", "mid")
     call her_main("Given that I was the one who caught her, I think it's only fair!", "annoyed", "base", "angry", "mid")
 
     m "(...)"
@@ -539,7 +539,7 @@ label astoria_intro_E3:
             call her_main("But!","disgust","down")
             m "No butts..." # deliberate.
             call her_main("*hmph*","annoyed","angryL")
-            call her_main("Fine...","open","angryCl")
+            call her_main("Fine...", "open", "closed", "angry", "mid")
             $ her_mood += 12
 
         "\"How about some house points instead?\"":
@@ -574,7 +574,7 @@ label astoria_intro_E3:
 
     call her_main("...","annoyed","angryL")
     call ast_main("*cough*... {size=-4}mudblood...{/size}","annoyed","narrow","angry","L")
-    call her_main("*Tzzzs!*...","angry","angryCl")
+    call her_main("*Tzzzs!*...", "angry", "closed", "angry", "mid")
     call her_main("I'll go back to class then...","annoyed","angryL")
     call her_main("Good day, Professor.", "open", "base", "angry", "mid")
     stop music fadeout 2.0

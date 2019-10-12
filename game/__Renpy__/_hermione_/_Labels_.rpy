@@ -30,7 +30,7 @@ label very_no:
     stop music fadeout 2.0
     call her_main("Absolutely not!","annoyed","angryL",xpos="mid",trans="fade")
     her "I'll show you that my integrity and honour as a Gryffindor cannot be bought!"
-    call her_main("I'm leaving this instant.","scream","angryCl")
+    call her_main("I'm leaving this instant.", "scream", "closed", "angry", "mid")
 
     call her_walk(action="leave", speed=2.5)
 

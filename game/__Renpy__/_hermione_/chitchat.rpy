@@ -9,16 +9,16 @@ label chit_chat:
     ### WHORING LEVEL 01 ###
     if her_whoring >= 0 and her_whoring <= 2:
         if one_of_ten == 1:
-            call her_main("Maybe, if I'd work harder, I could squeeze a few more classes into my schedule...","open","angryCl")
+            call her_main("Maybe, if I'd work harder, I could squeeze a few more classes into my schedule...", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 2:
-            call her_main("Actually, I don't mind being called a \"know-it-all\".","open","angryCl")
+            call her_main("Actually, I don't mind being called a \"know-it-all\".", "open", "closed", "angry", "mid")
             her "I think it's rather flattering..."
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 3:
-            call her_main("The basilisk, also known as the king of serpents.","open","angryCl")
+            call her_main("The basilisk, also known as the king of serpents.", "open", "closed", "angry", "mid")
             her "Herpo the Foul was the first to breed a Basilisk."
             her "He accomplished that by--"
             call her_main("Oh, I'm sorry, professor, we have another test tomorrow...","open","worriedL")
@@ -32,15 +32,15 @@ label chit_chat:
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 5:
-            call her_main("So far professor Trelawney did not taught me a single piece of any actual knowledge, sir.","open","angryCl")
+            call her_main("So far professor Trelawney did not taught me a single piece of any actual knowledge, sir.", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 6:
-            call her_main("If only more students were honest, responsible and diligent like me.","open","angryCl")
+            call her_main("If only more students were honest, responsible and diligent like me.", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 7:
-            call her_main("How can some people be so ignorant to the world's problems?","open","angryCl")
+            call her_main("How can some people be so ignorant to the world's problems?", "open", "closed", "angry", "mid")
             her "Personally, I think that every single one of us should work harder to make our world a better place."
             call her_main("", "normal", "base", "base", "mid")
 
@@ -61,7 +61,7 @@ label chit_chat:
     ### WHORING LEVEL 02 ###
     if her_whoring >= 3 and her_whoring <= 5:
         if one_of_ten == 1:
-            call her_main("I read somewhere that a full moon often makes it easier to concentrate at a task at hand...","open","angryCl")
+            call her_main("I read somewhere that a full moon often makes it easier to concentrate at a task at hand...", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 2:
@@ -74,22 +74,22 @@ label chit_chat:
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 4:
-            call her_main("Despite the questionable nature of the favours you have been buying from me lately, sir...","open","angryCl")
+            call her_main("Despite the questionable nature of the favours you have been buying from me lately, sir...", "open", "closed", "angry", "mid")
             her "I am grateful to you for your help..."
             call her_main("Gryffindor needs those points now more than ever...","annoyed","frown")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 5:
-            call her_main("Why Quidditch is so popular among the girls is simply beyond me...","open","angryCl")
+            call her_main("Why Quidditch is so popular among the girls is simply beyond me...", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 6:
-            call her_main("The \"Men's Rights Movement\" is steadily gaining popularity.","open","angryCl")
+            call her_main("The \"Men's Rights Movement\" is steadily gaining popularity.", "open", "closed", "angry", "mid")
             her "It's very fulfilling to know that you are helping to improve our society."
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 7:
-            call her_main("The Hogwarts school library is considered to be quite extensive...","open","angryCl")
+            call her_main("The Hogwarts school library is considered to be quite extensive...", "open", "closed", "angry", "mid")
             call her_main("Still, I can't help but wish that it'd be bigger...","open","suspicious")
             call her_main("", "normal", "base", "base", "mid")
 
@@ -106,7 +106,7 @@ label chit_chat:
             call her_main("I just wanted you to know that, sir...", "upset", "closed", "base", "mid")
 
         elif one_of_ten == 10:
-            call her_main("The \"Autumn Ball\" is still several months away...","open","angryCl")
+            call her_main("The \"Autumn Ball\" is still several months away...", "open", "closed", "angry", "mid")
             call her_main("But some girls are already discussing what kind of dress they are going to wear...","open","worried")
             call her_main("","annoyed","annoyed")
 
@@ -114,16 +114,16 @@ label chit_chat:
     ### WHORING LEVEL 03 ###
     if her_whoring >= 6 and her_whoring <= 8:
         if one_of_ten == 1:
-            call her_main("Do you remember when you asked me to show you my panties for the first time sir?","open","angryCl")
+            call her_main("Do you remember when you asked me to show you my panties for the first time sir?", "open", "closed", "angry", "mid")
             her "I was so furious with you then..."
             call her_main("Now I see that I was just being selfish...","annoyed","frown")
             her "After all, the honour of my house is at stake here..."
             call her_main("And that shall be my one and only concern!","normal","frown")
 
         elif one_of_ten == 2:
-            call her_main("The rate at which the Slytherin house has been gaining points lately is simply ridiculous.","open","angryCl")
+            call her_main("The rate at which the Slytherin house has been gaining points lately is simply ridiculous.", "open", "closed", "angry", "mid")
             call her_main("I think professor Snape might be behind it.", "angry", "base", "angry", "mid")
-            call her_main("You should look into this, sir.","open","angryCl")
+            call her_main("You should look into this, sir.", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 3:
@@ -146,7 +146,7 @@ label chit_chat:
             call her_main("It don't think it's working though.... *Yawn!*","annoyed","down")
 
         elif one_of_ten == 7:
-            call her_main("Even after I graduate from Hogwarts I plan to keep on working hard.","open","angryCl")
+            call her_main("Even after I graduate from Hogwarts I plan to keep on working hard.", "open", "closed", "angry", "mid")
             call her_main("If I give it my all I can make this world a better place, I know it!", "open", "base", "base", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
@@ -155,7 +155,7 @@ label chit_chat:
             call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 9:
-            call her_main("Some of the less travelled school corridors are not very well lit and rather dusty...","open","angryCl")
+            call her_main("Some of the less travelled school corridors are not very well lit and rather dusty...", "open", "closed", "angry", "mid")
             her "Please take care of this, sir..."
             call her_main("", "normal", "base", "base", "mid")
 
@@ -173,9 +173,9 @@ label chit_chat:
             call her_main("It's as if people don't even care!","annoyed","angryL")
 
         elif one_of_ten == 2:
-            call her_main("Thank you for buying all those favours from me, sir.","open","angryCl")
+            call her_main("Thank you for buying all those favours from me, sir.", "open", "closed", "angry", "mid")
             call her_main("Some of them were borderline inappropriate, sure...","normal","frown")
-            call her_main("But I don't mind sacrificing my dignity if it will allow Gryffindor to compete with Slytherin on equal ground.","open","angryCl")
+            call her_main("But I don't mind sacrificing my dignity if it will allow Gryffindor to compete with Slytherin on equal ground.", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 3:
@@ -186,11 +186,11 @@ label chit_chat:
             call her_main("Sir, there is something about professor Snape that I think you should know...", "open", "base", "base", "mid")
             call her_main(".................","open","worriedL")
             call her_main(".........................","annoyed","frown")
-            call her_main("uhm... Never mind...","open","angryCl")
+            call her_main("uhm... Never mind...", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 5:
-            call her_main("Some of the Slytherin girls sell sexual favours almost openly these days...","open","angryCl")
+            call her_main("Some of the Slytherin girls sell sexual favours almost openly these days...", "open", "closed", "angry", "mid")
             call her_main("You need to put an end to such practices, sir.", "open", "base", "base", "mid")
             call her_main("(I can barely keep up...)","annoyed","angryL")
 
@@ -228,7 +228,7 @@ label chit_chat:
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 2:
-            call her_main("I am willing to go to great lengths to insure the superiority of my house...","open","angryCl")
+            call her_main("I am willing to go to great lengths to insure the superiority of my house...", "open", "closed", "angry", "mid")
             her "But that does not mean that I take pleasure in selling myself out to you in exchange for house points, sir."
             call her_main("{size=-4}(Like some sort of prostitute-witch...){/size}","angry","down_raised")
 
@@ -250,7 +250,7 @@ label chit_chat:
             call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 7:
-            call her_main("Despite everything...","open","angryCl")
+            call her_main("Despite everything...", "open", "closed", "angry", "mid")
             call her_main("I am thankful that you keep on buying favours from me, sir...","open","worriedL")
             call her_main("", "soft", "base", "base", "R")
 
@@ -297,7 +297,7 @@ label chit_chat:
             call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 6:
-            call her_main("Gryffindor shall get the house cup this year!","open","angryCl")
+            call her_main("Gryffindor shall get the house cup this year!", "open", "closed", "angry", "mid")
             call her_main("{size=-4}(Even if it should cost me my dignity...){/size}","angry","down_raised")
             call her_main("", "upset", "closed", "base", "mid")
 
@@ -329,7 +329,7 @@ label chit_chat:
     ### WHORING LEVEL 07 ###
     if her_whoring >= 18 and her_whoring <= 20:
         if one_of_ten == 1:
-            call her_main("Just let me know what will be required of me today, sir.","open","angryCl")
+            call her_main("Just let me know what will be required of me today, sir.", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 2:
@@ -358,7 +358,7 @@ label chit_chat:
             call her_main("", "soft", "base", "base", "mid")
 
         elif one_of_ten == 8:
-            call her_main("Add ashwinder egg to cauldron...","open","angryCl")
+            call her_main("Add ashwinder egg to cauldron...", "open", "closed", "angry", "mid")
             her "Then add horseshoe reddish and heat..."
             her "Then juice a squill bulb..."
             call her_main("Or was it a dash of thyme first?","open","worriedL")

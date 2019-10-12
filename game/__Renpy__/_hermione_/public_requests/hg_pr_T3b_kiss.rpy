@@ -43,7 +43,7 @@ label hg_pr_kiss:
         call her_main("It depends...", "normal", "base", "base", "mid")
         her "Will I have to do something depraved again?"
         m "\"Depraved\"??! When did I ever--?"
-        call her_main("Really, [genie_name]?","open","angryCl")
+        call her_main("Really, [genie_name]?", "open", "closed", "angry", "mid")
         m "Fine, fine... But all I want you to do today is to make out with another girl."
         call her_main("Oh, is that all?", "angry", "base", "angry", "mid") # :(
         m "Yes... Pretty basic stuff for you, right?"
@@ -135,12 +135,12 @@ label hg_pr_kiss_T1_E1:
     her "Not in a million years!"
     call her_main("Why do I have to perform such ridiculous tasks anyway?!","shock","worriedCl")
     her "What is the point of all this?"
-    call her_main("I hate this!","scream","angryCl")
+    call her_main("I hate this!", "scream", "closed", "angry", "mid")
     call her_main("...............","annoyed","angryL")
     her "................."
     m ".............."
     m "You are not getting paid, you know that, right?"
-    call her_main("I don't care...","scream","angryCl")
+    call her_main("I don't care...", "scream", "closed", "angry", "mid")
 
     call her_walk(action="leave", speed=2.5)
 
@@ -190,7 +190,7 @@ label hg_pr_kiss_T1_E3:
     m "Good. Tell me how it went."
     call her_main("It went well, [genie_name].", "open", "closed", "base", "mid")
     m "Great. Give me the details."
-    call her_main("What would you like to know, [genie_name]?","open","angryCl")
+    call her_main("What would you like to know, [genie_name]?", "open", "closed", "angry", "mid")
     m "Tell me everything! Was the girl pretty?"
     m "Did she return your kiss?"
     call her_main("She was relatively pretty, [genie_name].","open","suspicious")
@@ -199,7 +199,7 @@ label hg_pr_kiss_T1_E3:
     call her_main("Anything else, [genie_name]?","open","suspicious")
     m "...."
     m "Why are you being difficult, [hermione_name]?"
-    call her_main("With all due respect, [genie_name]...","open","angryCl")
+    call her_main("With all due respect, [genie_name]...", "open", "closed", "angry", "mid")
     her "You told me to make out with another girl, and I did..."
     call her_main("Now, I would like to get paid if you would be so kind.", "normal", "base", "base", "mid")
     m "......................"
@@ -209,7 +209,7 @@ label hg_pr_kiss_T1_E3:
             jump end_hg_pr_kiss
 
         "\"I don't appreciate your attitude, [hermione_name].\"":
-            call her_main("Well, that is unfortunate, [genie_name].","open","angryCl")
+            call her_main("Well, that is unfortunate, [genie_name].", "open", "closed", "angry", "mid")
             m "Sure is..."
             m "Because you are not getting paid you insolent, little witch."
             stop music fadeout 1.0

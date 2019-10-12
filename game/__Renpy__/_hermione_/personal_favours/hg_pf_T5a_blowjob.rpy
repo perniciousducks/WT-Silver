@@ -119,7 +119,7 @@ label hg_pf_blowjob_T0_fail_intro:
     else:
         m "Preferably..."
         g9 "But I'm always open to try out new things!"
-        call her_main("Are you out of your mind?!","scream","angryCl")
+        call her_main("Are you out of your mind?!", "scream", "closed", "angry", "mid")
 
     call her_main("I should leave...","disgust","down_raised", cheeks="blush")
 
@@ -139,7 +139,7 @@ label hg_pf_blowjob_T0_fail_repeat:
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "I plan to grant \"Gryffindor\" 55 house points today..."
-    call her_main("And let me guess...","open","angryCl")
+    call her_main("And let me guess...", "open", "closed", "angry", "mid")
     call her_main("You'd like me to \"suck you off\" for it?", "open", "base", "angry", "mid")
     g9 "That is correct!"
     call her_main("I refuse...", "open", "closed", "base", "mid")

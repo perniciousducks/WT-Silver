@@ -37,7 +37,7 @@ label hg_pr_handjob:
         her "I cannot believe that you would ask one of your pupils to... to..."
         call her_main("We are done here, [genie_name]!", "angry", "base", "angry", "mid", emote="01")
         m "Alright, alright, calm down, would you?"
-        call her_main("I most certainly would not, [genie_name]! This is beyond inappropriate!","scream","angryCl")
+        call her_main("I most certainly would not, [genie_name]! This is beyond inappropriate!", "scream", "closed", "angry", "mid")
         m "Alright, fine, maybe I really did cross some sort of line this time..."
         call her_main("You think [genie_name]?! You think!!?", "angry", "base", "angry", "mid")
         m "Yes, I apologize..."
@@ -75,7 +75,7 @@ label hg_pr_handjob:
         m "Ready to go have sex with one of your classmates yet?"
         stop music fadeout 1.0
         call her_main("What?","scream","wide_stare")
-        call her_main("Of course not! I would never--","scream","angryCl")
+        call her_main("Of course not! I would never--", "scream", "closed", "angry", "mid")
         m "How about a handjob then?"
         call her_main("...............","annoyed","angryL")
         m "Oh come on. You did it before."
@@ -261,11 +261,11 @@ label hg_pr_handjob_T1_E3:
     call her_main("I did, [genie_name]...","annoyed","angryL")
     m "What's the problem, then?"
     call her_main("..........","annoyed","worriedL")
-    call her_main("All boys are jerks! That is the problem, [genie_name]!","scream","angryCl")
+    call her_main("All boys are jerks! That is the problem, [genie_name]!", "scream", "closed", "angry", "mid")
     call her_main("I gave this one boy a good wanking...","open","down")
     her "And do you know how he thanked me?"
     call her_main("He got his spunk all over me...", "scream", "base", "angry", "mid", emote="01")
-    call her_main("And he did that on purpose, I know he did!","scream","angryCl")
+    call her_main("And he did that on purpose, I know he did!", "scream", "closed", "angry", "mid")
     call her_main("Nasty, good for nothing \"ravenclaws\"...","annoyed","worriedL")
     m "Well, I'd say a job well done."
 

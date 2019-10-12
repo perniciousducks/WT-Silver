@@ -88,7 +88,7 @@
                     # call her_main("(You can shove those clothes up your ass...)","annoyed","angryL")
                     # m "I'm not giving you the points, [hermione_name]."
                     # call her_main("Tzzz--", "angry", "base", "angry", "mid")
-                    # call her_main("Well then wear your... {w=0.5}-stuff yourself!","scream","angryCl")
+                    # call her_main("Well then wear your... {w=0.5}-stuff yourself!", "scream", "closed", "angry", "mid")
                     # m "Wouldn't look good on me..."
                     # call her_main("I don't care.","annoyed","annoyed")
         # else:
@@ -120,7 +120,7 @@
             # call her_main("No--", "open", "closed", "base", "mid",xpos="base") #525=default Hermione xpos
             # call her_main("...","annoyed","annoyed")
             # m "I just want you to wear--"
-            # call her_main("I SAID NO, [genie_name]!","scream","angryCl")
+            # call her_main("I SAID NO, [genie_name]!", "scream", "closed", "angry", "mid")
             # call her_main("tzzzz...","annoyed","angryL")
             # g4 "Fine! {w=0.9}Forget it."
         # else:

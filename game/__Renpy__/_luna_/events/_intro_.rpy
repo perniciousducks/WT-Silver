@@ -75,7 +75,7 @@ label hat_intro_2: #Bringing in Hermione
     m "Anyone else come to mind?"
     call her_main("I don't think so...","open","worriedL")
     m "Oh well, just-"
-    call her_main("Wait, I know! Luna Lovegood!","scream","angryCl")
+    call her_main("Wait, I know! Luna Lovegood!", "scream", "closed", "angry", "mid")
     m "And why is that?"
     call her_main("Well, surely you've seen her grades [genie_name]...", "open", "closed", "base", "mid")
     call her_main("Suffice to say, she's hardly \"Ravenclaw\" material. She'd probably be better suited to \"Hufflepuff\" as well.","annoyed","suspicious")

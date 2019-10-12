@@ -149,7 +149,7 @@ label l_tutoring:
 
         call her_walk(xpos="door", ypos="base", speed=2)
 
-        call her_main("{size=-4}(Filthy whores...){/size}","angry","angryCl",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Filthy whores...){/size}", "angry", "closed", "angry", "mid",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Oh, I should not talk like that...{w=0.5} but it feels so good!){/size}","base","worriedCl",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")

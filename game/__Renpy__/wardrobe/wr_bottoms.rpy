@@ -440,7 +440,7 @@ label equip_bottom:
                         # call her_main("That was just an exception, [genie_name]. Girls are supposed to wear skirts here at Hogwarts!", "open", "closed", "base", "mid")
                         # call her_main("At all times!", "open", "base", "base", "mid")
                         # m "So what you are telling me is, you broke the rules?"
-                        # call her_main("No I did not, [genie_name]!","clench","angryCl")
+                        # call her_main("No I did not, [genie_name]!", "clench", "closed", "angry", "mid")
                         # call her_main("(I had no choice...)","annoyed","angryL")
                         # m "Stop with the excuses and put on those jeans, [hermione_name]."
                         # call her_main("Fine, [genie_name]. If I have to.", "open", "closed", "base", "mid")

@@ -34,7 +34,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
             call her_main("Get naked and show you my...?", "open", "base", "base", "mid")
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
-        call her_main("[genie_name]!","scream","angryCl")
+        call her_main("[genie_name]!", "scream", "closed", "angry", "mid")
         m "Come on..."
         m "It's not like I haven't seen it all before."
         call her_main("......", "open", "base", "base", "mid")

@@ -273,7 +273,7 @@ label hg_pr_blowjob_T2_E2:
     m "[hermione_name]..."
     m "You look like hell..."
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("[genie_name], I have been raped.","scream","angryCl")
+    call her_main("[genie_name], I have been raped.", "scream", "closed", "angry", "mid")
     m "Seriously?"
     call her_main("Yes, [genie_name].","annoyed","annoyed")
     her "That nasty boy from \"Slytherin\" raped me..."

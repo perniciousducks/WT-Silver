@@ -47,11 +47,11 @@ label hg_ps_buttplug:
         call her_main("You expect me to put that massive thing in my...", "angry", "base", "angry", "mid")
         her "and then parade myself around the school!"
         m "It just looks like a fake tail, No one will be able to tell what it really is."
-        call her_main("{size=+5}That's not the point!{/size}","scream","angryCl")
+        call her_main("{size=+5}That's not the point!{/size}", "scream", "closed", "angry", "mid")
         her "I'm not going to put that ridiculous thing anywhere near my butt!"
         call her_main("We are done here, [genie_name]!", "angry", "base", "angry", "mid",emote="01")
         m "Alright, alright, calm down..."
-        call her_main("I most certainly will not, [genie_name]! That thing is beyond absurd!","scream","angryCl")
+        call her_main("I most certainly will not, [genie_name]! That thing is beyond absurd!", "scream", "closed", "angry", "mid")
         m "Alright, fine, maybe I underestimated how large it is..."
         call her_main("You think [genie_name]?! I'd like to see you try and fit it up your-", "angry", "base", "angry", "mid")
         m "alright, alright..."
@@ -162,7 +162,7 @@ label hg_ps_buttplug:
             m "Ready to try out the dragon yet?"
             stop music fadeout 1.0
             call her_main("What?","scream","wide_stare",xpos="right",ypos="base")
-            call her_main("Of course not! That thing would tear me--","scream","angryCl")
+            call her_main("Of course not! That thing would tear me--", "scream", "closed", "angry", "mid")
             ">you pull out the small butt plug"
             m "How about this one then?"
             call her_main("Oh, ok then!","smile","happyCl",emote="06")
@@ -485,7 +485,7 @@ label hg_ps_buttplug_complete:
             call her_main("That pesky little ghost!","annoyed","angryL")
             call her_main("This thing left me so frustrated that in my free period I went to the girls toilets to...","annoyed","angryL")
             call her_main("Relieve myself...","annoyed","worriedL")
-            call her_main("When all of a sudden that annoying ghost poked her head through the door!","scream","angryCl")
+            call her_main("When all of a sudden that annoying ghost poked her head through the door!", "scream", "closed", "angry", "mid")
             call her_main("As it if wasn't bad enough that she saw me...","open","down")
             call her_main("She then started yelling \'Hermione has a butt plug\' to everyone in the toilets!", "scream", "base", "angry", "mid",emote="01")
             call her_main("Luckily the stalls where empty! Imagine if they weren't!","annoyed","annoyed")
@@ -744,7 +744,7 @@ label hg_ps_buttplug_complete:
             call her_main("when something else touches it...","annoyed","angryL")
             m "Wouldn't your skirt set it off then?"
             call her_main("I think it has to be alive...","annoyed","worriedL")
-            call her_main("All I know is that when my cat crookshanks swatted at it went off!","scream","angryCl")
+            call her_main("All I know is that when my cat crookshanks swatted at it went off!", "scream", "closed", "angry", "mid")
             m "How bad was it?"
             call her_main("It was ridiculous! I was barely able to stand...","open","worriedCl")
             call her_main("but then crookshanks thought it was some sort of game... he wouldn't leave it alone...","shock","worriedCl")
@@ -843,7 +843,7 @@ label hg_ps_buttplug_complete:
                 jump buttplug_magic_show
             m "[hermione_name], how was your day?"
             show screen blktone
-            call her_main("Awful, I was attacked by a group of rabid students, [genie_name].","scream","angryCl",xpos="right",ypos="base")
+            call her_main("Awful, I was attacked by a group of rabid students, [genie_name].", "scream", "closed", "angry", "mid",xpos="right",ypos="base")
             m "Attacked? By How many?"
             call her_main("six first years, [genie_name]...", "annoyed", "base", "angry", "mid")
             m "you were attacked by first years?"
@@ -933,7 +933,7 @@ label hg_ps_buttplug_complete:
         if one_out_of_three == 1: #Groped by first years again...
             m "[hermione_name], how was your day?"
             show screen blktone
-            call her_main("Awful, I was attacked by a group of rabid students, [genie_name].","scream","angryCl",xpos="right",ypos="base")
+            call her_main("Awful, I was attacked by a group of rabid students, [genie_name].", "scream", "closed", "angry", "mid",xpos="right",ypos="base")
             m "Attacked? By How many?"
             call her_main("six first years, [genie_name]...", "annoyed", "base", "angry", "mid")
             m "you were attacked by first years?"

@@ -13,7 +13,7 @@ label ball_quest_E1:
     call her_main("The \"Autumn Ball Organization Committee\", sir...", "open", "closed", "base", "mid")
     m "Ehm... Sure..."
     call her_main("Please excuse me if I am being too direct with this, sir...","normal","frown")
-    call her_main("But I think you should put me in charge.","open","angryCl")
+    call her_main("But I think you should put me in charge.", "open", "closed", "angry", "mid")
     her "I did it last year and it was the best organised \"autumn ball\" Hogwarts has had in years."
     call her_main("You said so yourself, sir. Do you remember?", "normal", "base", "base", "mid")
     m "Right, of course..."
@@ -180,7 +180,7 @@ label ball_quest_E1:
                     g4 "I am your headmaster! Do you have no shame?!"
                     call her_main("What?! But--", "angry", "base", "angry", "mid", cheeks="blush")
                     g9 "He-he... Relax, girl. I'm just kidding."
-                    call her_main("[genie_name], that was just mean.","scream","angryCl")
+                    call her_main("[genie_name], that was just mean.", "scream", "closed", "angry", "mid")
                     g9 "He-he..."
                     call her_main(".....................................", "annoyed", "base", "angry", "mid")
                     m "I do like your shaved little pussy though..."
@@ -500,7 +500,7 @@ label ball_quest_E4:
     her "...my hysterical behaviour yesterday."
     m "Sure thing, don't worry about it."
     call her_main("Thank you, sir.", "open", "base", "base", "mid")
-    call her_main("Still, I cannot help but feel awful for causing a scene...","open","angryCl")
+    call her_main("Still, I cannot help but feel awful for causing a scene...", "open", "closed", "angry", "mid")
     m "So the issue has been resolved then?"
     call her_main("Not really...","open","worried")
     call her_main("Not at all actually...","annoyed","angryL")

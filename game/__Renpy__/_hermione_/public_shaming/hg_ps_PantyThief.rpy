@@ -149,7 +149,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 call her_main("........................................","normal","worriedCl")
                 call her_main("(Must you always have your way, [genie_name]?)", "angry", "base", "angry", "mid")
                 m "What was that, [hermione_name]?"
-                call her_main("It's nothing, [genie_name].","scream","angryCl")
+                call her_main("It's nothing, [genie_name].", "scream", "closed", "angry", "mid")
                 her "Putting my panties back on!"
                 hide screen hermione_main
                 call nar(">Hermione hesitantly puts on her panties...","start")
@@ -260,7 +260,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 m "You're right, you'll have to use your mouth then."
                 call her_main("My mouth?!","scream","wide_stare")
                 m "What's the big deal? It wouldn't be the first time you've tasted my cum."
-                call her_main("It's a bit different! I wore these panties before I gave them to you.","scream","angryCl")
+                call her_main("It's a bit different! I wore these panties before I gave them to you.", "scream", "closed", "angry", "mid")
                 call her_main("Not to mention that your cum is all cold and slimy...","scream","worriedCl")
                 m "Well in that case hand them back."
                 call her_main("What? Can't I just put them on?","angry","wink")
@@ -393,7 +393,7 @@ label hg_ps_get_panties_complete:
     label back_from_soaked:
     if her_panties_soaked and her_whoring >= 9 and her_whoring < 15 :
         m "You can go now."
-        call her_main("What about my points?","scream","angryCl")
+        call her_main("What about my points?", "scream", "closed", "angry", "mid")
         m "You still want points after I just gave you a gift?"
         her "What gift?"
         m "You're wearing it"

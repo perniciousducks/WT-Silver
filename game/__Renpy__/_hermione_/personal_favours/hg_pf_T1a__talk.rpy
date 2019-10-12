@@ -217,11 +217,11 @@ label hg_pf_talk_T2:
     call her_main("To be honest, [genie_name], there should be none...","open","angryL")
     call her_main("\"Gryffindor\" would have been in the lead if not for those \"Slytherin\" harlots...", "annoyed", "base", "angry", "mid")
     call her_main("The things I hear those girls do - simply to get a few extra points...","angry","angryL")
-    call her_main("How despicable!","open","angryCl")
+    call her_main("How despicable!", "open", "closed", "angry", "mid")
     m "What does this make you then, [hermione_name]?"
     call her_main("Exactly!", "normal", "base", "base", "mid")
     m "Huh?"
-    call her_main("I have to work even harder to compensate for the damage those nasty girls are doing...","open","angryCl")
+    call her_main("I have to work even harder to compensate for the damage those nasty girls are doing...", "open", "closed", "angry", "mid")
     call her_main("Thank you for helping me out, [genie_name].", "normal", "base", "base", "mid")
 
     menu:
@@ -437,7 +437,7 @@ label hg_pf_talk_T3:
     g9 "Well?"
     call her_main("I...","annoyed","worriedCl", cheeks="blush")
     call her_main("Well, it's obvious to anyone with common sense isn't it!","open","angryL", cheeks="blush")
-    call her_main("Even those Slytherin girls quickly realised what people use it for... and they're thicker than polyjuice potion!","mad","angryCl", cheeks="blush")
+    call her_main("Even those Slytherin girls quickly realised what people use it for... and they're thicker than polyjuice potion!", "mad", "closed", "angry", "mid", cheeks="blush")
     if masturbating:
         m "(I bet you wouldn't mind nicking it for yourself...)"
     else:
@@ -531,11 +531,11 @@ label hg_pf_talk_T3:
         call her_main("Do you take me for some sort of exhibitionist?", "mad", "wide", "base", "stare", cheeks="blush")
         m "Sorry?"
         call her_main("Don't you sorry me...{w=0.5} you expect me to get my fanny out and casually just shove it in there for the whole class to see?", "angry", "base", "angry", "mid", cheeks="blush")
-        call her_main("I'm sure they would love that and find it more than educational...","base","angryCl", cheeks="blush")
+        call her_main("I'm sure they would love that and find it more than educational...", "base", "closed", "angry", "mid", cheeks="blush")
         with hpunch
         call her_main("How{w=0.8} {size=+6}dare{/size} you suggest-", "open", "base", "angry", "mid", cheeks="blush")
         m "What are you talking about? Weren't we talking about back massagers?"
-        call her_main("-I'd just tear my clothes off and...","open","angryCl", cheeks="blush")
+        call her_main("-I'd just tear my clothes off and...", "open", "closed", "angry", "mid", cheeks="blush")
         $ renpy.sound.play("sounds/glass_shatter.mp3")
         call her_main("...", "mad", "wide", "base", "stare", cheeks="blush")
         her "I...{w} I'm sorry professor!"
@@ -648,7 +648,7 @@ label hg_pf_talk_tonks:
     menu:
         "\"Those pesky Slytherin Sluts!\"":
             call ton_main("Yes, I've heard those Slytherin girls are up to no good...","horny","base","angry","mid")
-            call her_main("They are! Where do I begin?","open","angryCl", cheeks="blush")
+            call her_main("They are! Where do I begin?", "open", "closed", "angry", "mid", cheeks="blush")
 
             menu:
                 "-Start jerking off-":
@@ -676,7 +676,7 @@ label hg_pf_talk_tonks:
             call her_main("But we could all see her moving her hips!", "annoyed", "base", "base", "R", cheeks="blush")
             call ton_main("Interesting...","horny","base","angry","mid")
             call ton_main("Any other incidents, Miss Granger?","open","base","raised","L")
-            call her_main("More than I could count!","open","angryCl")
+            call her_main("More than I could count!", "open", "closed", "angry", "mid")
             call ton_main("","angry","base","base","mid")
             call her_main("I'm almost certain one of the girls wasn't wearing any underwear in class - which is completely unhygienic.","angry","concerned")
             if not hermione_wear_panties:
@@ -687,11 +687,11 @@ label hg_pf_talk_tonks:
             call her_main("About that-{w=0.6}{nw}","open","frown")
             call ton_main("Actually, let's save that topic for another time...","open","happyCl","base","mid")
             call ton_main("Is there anything else you could tell us about these... naughty \"Slytherin\" girls?","horny","base","angry","mid", hair="horny")
-            call her_main("Of course!","open","angryCl")
+            call her_main("Of course!", "open", "closed", "angry", "mid")
             call her_main("I could go on for hours about the vile things they've been up to...","annoyed","annoyed")
             call ton_main("I'm not in a rush.","smile","happyCl","base","mid")
             call ton_main("But even if I was, it can wait until later.","horny","base","raised","L")
-            call her_main("Well, that girl...{w=0.3} Pansy Parkinson...","open","angryCl")
+            call her_main("Well, that girl...{w=0.3} Pansy Parkinson...", "open", "closed", "angry", "mid")
             call her_main("She just lets Snape grab her ass whenever he wants... and  gives her 5 points each time...", "annoyed", "base", "angry", "mid")
             call ton_main("Only 5 measly points?","open","base","sad","R")
             call ton_main("(She'd get double from me... easily...)","horny","base","sad","R")
@@ -803,7 +803,7 @@ label hg_pf_talk_tonks:
         call her_main("I suppose...","annoyed","glanceL")
     call ton_main("So your problem was never that the girls of this school are engaging in illicit, sexual favours with their teachers...","open","base","worried","L")
     call ton_main("It's that the boys aren't able to do the same?","upset","base","sad","L")
-    call her_main("Exactly!","open","angryCl")
+    call her_main("Exactly!", "open", "closed", "angry", "mid")
     call ton_main("Why didn't you say so during our talk earlier, Miss Granger?","open","closed","sad","mid")
     call ton_main("I can easily sort out that problem!","horny","base","base","L", hair="horny")
     call her_main("I {i}did{/i} mention it!","angry","worriedCl")
@@ -874,7 +874,7 @@ label hg_pf_talk_tonks:
             $ random_choice = renpy.random.choice(character_choice)
 
             if random_choice == "cho_1": # After winning against Hufflepuff.
-                call her_main("It's not even just the \"Slytherins\" doing it!","open","angryCl")
+                call her_main("It's not even just the \"Slytherins\" doing it!", "open", "closed", "angry", "mid")
                 call ton_main("Oh really?","base","base","raised","L")
                 call her_main("Yes, that girl from \"Ravenclaw\"...{w=0.6} Cho Chang...", "open", "base", "angry", "mid")
                 call her_main("She was using some pretty dirty tactics - during the first Quidditch match of the season!", "angry", "base", "angry", "mid")
@@ -892,7 +892,7 @@ label hg_pf_talk_tonks:
                 call her_main("Thank you professor...", "open", "closed", "base", "mid")
 
             elif random_choice == "cho_2": # After Cho stripped for you.
-                call her_main("You're well aware that it's not just \"Slytherins\" that have been doing stuff like this...","open","angryCl")
+                call her_main("You're well aware that it's not just \"Slytherins\" that have been doing stuff like this...", "open", "closed", "angry", "mid")
                 call ton_main("If you'd like to give an example...","base","base","base","L")
                 call her_main("I'm talking about Cho Chang!", "open", "base", "angry", "mid")
                 call ton_main("Ah yes, the \"Ravenclaw\" seeker...","base","base","raised","mid")

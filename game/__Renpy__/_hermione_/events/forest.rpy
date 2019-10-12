@@ -291,8 +291,8 @@ label forest_BJ_2:
 
     call her_main("I can't believe you just did that?", "shock", "base", "angry", "mid")
     m "really? After everything we've done?"
-    call her_main("It's a figure of speech! And More importantly...","angry","angryCl")
-    call her_main("{size=+10}You just came down my throat in front of moaning myrtle!{/size}","scream","angryCl")
+    call her_main("It's a figure of speech! And More importantly...", "angry", "closed", "angry", "mid")
+    call her_main("{size=+10}You just came down my throat in front of moaning myrtle!{/size}", "scream", "closed", "angry", "mid")
     call her_main("She's going to tell everyone about this now!", "annoyed", "base", "angry", "mid")
     m "So? Doesn't everyone sort of know by now anyway?"
     call her_main("Argh! That's not the point and you know it!","annoyed","frown")
@@ -607,7 +607,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
         "-Apologise-":
             m "Sorry about that..."
             m "I'll try and be on time for our blowjobs from now on."
-            call her_main("Good... It's the least you can do...","base","angryCl")
+            call her_main("Good... It's the least you can do...", "base", "closed", "angry", "mid")
         "-Tell her to come to your office instead-":
             m "You know where my office is..."
             call her_main("Hmph...","upset","angryL")

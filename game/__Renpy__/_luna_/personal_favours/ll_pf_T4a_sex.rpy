@@ -465,7 +465,7 @@ label ll_pf_sex_T1_her_1: # Call label
     m "ah... Isn't it obvious?"
     call her_main("Ugh... Why are you two fucking then?", "scream", "base", "angry", "mid")
     lun "Mmmm... we're getting rid... of some nasty wrackspurts!"
-    call her_main("You're still going on about that? I told you before, you're just horny!","angry","angryCl")
+    call her_main("You're still going on about that? I told you before, you're just horny!", "angry", "closed", "angry", "mid")
     $ lunCG(mouth="open", eye="seductive", eyebrow="base", pupil="right")
     lun "Stop... *ah*... being so closed... minded Hermione..."
     lun "I bet you... didn't even realise that... Dumbledore was a genie at first!"

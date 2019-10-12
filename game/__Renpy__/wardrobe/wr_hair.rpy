@@ -234,7 +234,7 @@ label change_hair:
                         # call her_main("Let me go change it for you.","base","glance")
                 # else:
                     # call her_main("What?!", "angry", "base", "angry", "mid")
-                    # call her_main("I'm not going to walk around school parading as some Slytherin joke-mascot!","scream","angryCl")
+                    # call her_main("I'm not going to walk around school parading as some Slytherin joke-mascot!", "scream", "closed", "angry", "mid")
                     # call her_main("I definitely refuse!","annoyed","annoyed")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 11."
@@ -248,7 +248,7 @@ label change_hair:
                     # call her_main("Let me go change.","base","glance")
                 # else:
                     # if her_whoring < 5:
-                        # call her_main("I'm not going to dye my hair blue for you, [genie_name]!","open","angryCl")
+                        # call her_main("I'm not going to dye my hair blue for you, [genie_name]!", "open", "closed", "angry", "mid")
                         # call her_main("If you want your own parrot, then you should just buy one!", "angry", "base", "angry", "mid")
                         # if cheats_active or game_difficulty <= 2:
                             # ">Try again at Whoring level 11."

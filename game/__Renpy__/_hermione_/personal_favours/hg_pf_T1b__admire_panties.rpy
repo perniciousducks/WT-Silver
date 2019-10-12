@@ -295,7 +295,7 @@ label hg_pf_admire_panties_T3_intro_E1:
 
                 "\"Absolutely not!\"":
                     $ her_mood +=5
-                    call her_main("Why not!?","scream","angryCl")
+                    call her_main("Why not!?", "scream", "closed", "angry", "mid")
                     m "Sluts aren't paid."
                     m "That's what makes them sluts."
                     call her_main("well are you even going to pay me [current_payout] points?", "annoyed", "base", "angry", "mid")
@@ -351,7 +351,7 @@ label hg_pf_admire_panties_T3_E1:
 
                 "\"Absolutely not!\"":
                     $ her_mood +=5
-                    call her_main("Why not!?","scream","angryCl")
+                    call her_main("Why not!?", "scream", "closed", "angry", "mid")
                     m "Sluts aren't paid."
                     m "That's what makes them sluts."
                     call her_main("Well are you even going to pay me [current_payout] points?", "annoyed", "base", "angry", "mid")

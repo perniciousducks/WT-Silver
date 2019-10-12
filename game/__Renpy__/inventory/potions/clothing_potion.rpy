@@ -9,7 +9,7 @@ label potion_scene_4: #Transparent uniform
     m "To be fair I was trying to turn you into another girl..."
     call her_main("That's not much better [genie_name].", "angry", "base", "angry", "mid")
     m "Isn't it?"
-    call her_main("Well at least promise me that this one isn't going to embarrass me in the middle of class.","open","angryCl")
+    call her_main("Well at least promise me that this one isn't going to embarrass me in the middle of class.", "open", "closed", "angry", "mid")
     call her_main("My reputation is suffering enough as it is. I don't need these constant potions causing me to transform in front of my peers.","annoyed","angryL")
     m "I promise that this potion won't affect your body in any way."
     call her_main("Well then what on earth is it going to do?", "angry", "base", "angry", "mid")
@@ -19,7 +19,7 @@ label potion_scene_4: #Transparent uniform
     call her_chibi("drink_potion","mid","base")
 
     call nar(">Hermione quickly drinks the potion.") #new
-    call her_main("","open","angryCl")
+    call her_main("", "open", "closed", "angry", "mid")
 
     call her_chibi("stand","mid","base")
 

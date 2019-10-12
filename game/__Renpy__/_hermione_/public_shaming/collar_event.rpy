@@ -10,7 +10,7 @@ label collar_scene:
 
     call her_main("[genie_name], am I a slut?", "angry", "base", "base", "mid",tears="soft",xpos="right",ypos="base")
     m "What are you talking about?"
-    call her_main("Susan Bones is telling everyone in the school that I'm a slut!","open","angryCl")
+    call her_main("Susan Bones is telling everyone in the school that I'm a slut!", "open", "closed", "angry", "mid")
     m "Why is this Miss Bones calling you a slut?"
     call her_main("Because she found out what we are doing! She's telling everyone that I'm your slut!", "soft", "base", "base", "mid",tears="soft")
     call her_main("My reputation is ruined! What will people think when they find out what I've been doing with my ninety year old Professor?","mad","worriedCl",tears="soft_blink")
@@ -98,7 +98,7 @@ label slut_scene: #Locked to her being your slut
             call her_main("eeettsss hhooooo hhhhggggg!","open_wide_tongue","down_raised")
             hide screen hermione_main
             m "Come on [hermione_name] you are a good slut aren't you."
-            call her_main("...","open_wide_tongue","angryCl")
+            call her_main("...", "open_wide_tongue", "closed", "angry", "mid")
             hide screen hermione_main
             ">Hermione's throat relaxes and allows you to enter."
             m "Ughhh! Your throat is so tight. You're such a filthy little slut aren't you?"
@@ -137,13 +137,13 @@ label slut_scene: #Locked to her being your slut
             call her_main("*Slurp!* *Gulp!* *Slurp!*","open_wide_tongue","down_raised")
             hide screen hermione_main
             m "You love being used as someone else's plaything."
-            call her_main("*Gulp!* *Gobble!* *Gobble!*","open_wide_tongue","angryCl")
+            call her_main("*Gulp!* *Gobble!* *Gobble!*", "open_wide_tongue", "closed", "angry", "mid")
             hide screen hermione_main
             m "You might act upset that people will find out what you are."
             call her_main("*Gulp!* *Gobble!* *Slurp!*","open_tongue","glance")
             hide screen hermione_main
             m "But deep down, you're just glad that you don't have to act like you're not a massive slut."
-            call her_main("*Slurp!* *Gobble!*","open_wide_tongue","angryCl")
+            call her_main("*Slurp!* *Gobble!*", "open_wide_tongue", "closed", "angry", "mid")
             hide screen hermione_main
             m "Aren't you"
             call her_main("...","open_wide_tongue","down_raised")

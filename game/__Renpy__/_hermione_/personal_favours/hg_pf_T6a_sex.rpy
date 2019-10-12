@@ -127,7 +127,7 @@ label hg_pf_sex_T1_intro_E2:
 label hg_pf_sex_T1_intro_E3:
     call her_main("", "base", "base", "base", "mid", xpos="right", ypos="base", trans="fade")
     m "[hermione_name], are you keeping your pussy wet and ready for me?"
-    call her_main("[genie_name]!","scream","angryCl")
+    call her_main("[genie_name]!", "scream", "closed", "angry", "mid")
     m "Just say \"I do\" and come over here, [hermione_name]."
     call her_main("...........", "open", "base", "base", "mid")
     call her_main("I do....","angry","down_raised")
@@ -159,7 +159,7 @@ label hg_pf_sex_T1_intro_E3:
 label hg_pf_sex_T1_E3: # repeats
     call her_main("", "base", "base", "base", "mid", xpos="right", ypos="base", trans="fade")
     m "[hermione_name], are you keeping your pussy wet and ready for me?"
-    call her_main("[genie_name]!","scream","angryCl")
+    call her_main("[genie_name]!", "scream", "closed", "angry", "mid")
     m "Just say \"I do\" and come over here, [hermione_name]."
     call her_main("...........", "open", "base", "base", "mid")
     call her_main("I do....","angry","down_raised")

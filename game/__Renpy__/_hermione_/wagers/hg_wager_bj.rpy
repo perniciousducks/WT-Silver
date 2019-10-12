@@ -483,14 +483,14 @@ label hg_wager_bj:
                                         call her_main("But I just made you...","open","worried", cheeks="blush")
                                         g4 "I just lost that god damn game cause I couldn't concentrate!"
                                         call her_main("Well, I did what you asked me!","mad","angryL", cheeks="blush")
-                                        call her_main("So I'd very much appreciate if you didn't deduct those points","open","angryCl", cheeks="blush")
+                                        call her_main("So I'd very much appreciate if you didn't deduct those points", "open", "closed", "angry", "mid", cheeks="blush")
                                 menu:
                                     "-Only deduct the 20-":
                                         g4 "You should be happy that I'm not deducting more!"
                                         g4 "20 points from Gryffindor!"
                                         $ gryffindor -= 20
                                         call her_main("...", "base", "base", "angry", "mid")
-                                        call her_main("What ever...","open","angryCl")
+                                        call her_main("What ever...", "open", "closed", "angry", "mid")
                                         $ her_mood += 15
                                     "-Deduct even more-":
                                         m "Oh, don't you worry..."

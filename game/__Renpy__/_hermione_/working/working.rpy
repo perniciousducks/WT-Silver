@@ -72,11 +72,11 @@ label maid_responses:
                 call her_main("Fine, I get your point. It's just, surely there are other ways for you to earn money [genie_name]?", "upset", "closed", "base", "mid")
                 call her_main("I mean you're the school headmaster, can't you just file some reports and get paid by the ministry?", "base", "base", "base", "R")
                 m "I can, it's just not as enjoyable."
-                call her_main("Hmmph. Can I at least get my points now?","angry","angryCl")
+                call her_main("Hmmph. Can I at least get my points now?", "angry", "closed", "angry", "mid")
                 m "Certainly, 10 points to Gryffindor."
             else:
                 call her_main("I think you need to start enforcing harsher punishment for sexual harassment.", "mad", "base", "angry", "mid")
-                call her_main("Hmmph... Can I at least get my points now?","angry","angryCl")
+                call her_main("Hmmph... Can I at least get my points now?", "angry", "closed", "angry", "mid")
                 m "Certainly, 10 points to Gryffindor."
         "-Dismiss her-":
             call her_main("Here's your payment.", "base", "base", "base", "mid")
@@ -280,7 +280,7 @@ label gryffindor_cheer_responses:
                         m "You gave every team member a blowjob after the game?"
                         call her_main("And the water boy...","smile","glance")
                         m "How did you even manage that? Did have to crawl around the locker room on your knees?"
-                        call her_main("Of course not, they all patiently waited on their turn...","scream","angryCl")
+                        call her_main("Of course not, they all patiently waited on their turn...", "scream", "closed", "angry", "mid")
                         m "Who doesn't love a queue..."
                         m "So they queued up... And then?"
                         call her_main("Well I did what I said I would, I'm not the kind of person to lie am I?","annoyed","worriedL")
@@ -376,7 +376,7 @@ label slytherin_cheer_responses:
         "-Ask her how her day was-":
             if day_random <= 2:
                 m "How was your day today [hermione_name]?"
-                call her_main("Exhausting... Those Slytherin pigs insisted that I cheer for their entire practice session.","open","angryCl")
+                call her_main("Exhausting... Those Slytherin pigs insisted that I cheer for their entire practice session.", "open", "closed", "angry", "mid")
                 her "They were hardly playing the game by the end. They were just standing there watching me."
                 m "Well what was your routine?"
                 call her_main("Mostly star jumps while I cheered \"Go Slytherin!\".","annoyed","frown")
@@ -390,7 +390,7 @@ label slytherin_cheer_responses:
                 m "You didn't talk to anyone?"
                 call her_main("I make a point of trying to avoid Slytherin student as best I can. ","annoyed","angryL")
                 m "Are they really that unbearable?"
-                call her_main("Yes...","open","angryCl")
+                call her_main("Yes...", "open", "closed", "angry", "mid")
                 m "Well, you earned your points."
                 m "30 points to Gryffindor."
             elif day_random >= 6 and day_random <= 8:
@@ -407,12 +407,12 @@ label slytherin_cheer_responses:
                 call her_main("Yes [genie_name].", "base", "base", "base", "mid")
                 m "Well done [hermione_name], 20 points to Gryffindor."
             elif day_random >=9 and her_reputation > 15:
-                call her_main("[genie_name], something must be done about those Slytherin boys...","open","angryCl")
+                call her_main("[genie_name], something must be done about those Slytherin boys...", "open", "closed", "angry", "mid")
                 call her_main("It's bad enough that I have to cheer for them but they are being a little bit touchy.","annoyed","angryL")
                 m "Touchy?"
-                call her_main("Yes, they keep groping me. It's highly inappropriate and it interrupts my routine.","scream","angryCl")
+                call her_main("Yes, they keep groping me. It's highly inappropriate and it interrupts my routine.", "scream", "closed", "angry", "mid")
                 m "You kept dancing while they groped you?"
-                call her_main("Of course, I'm there to complete a job. I'm not getting distracted just because of a few boys.","open","angryCl")
+                call her_main("Of course, I'm there to complete a job. I'm not getting distracted just because of a few boys.", "open", "closed", "angry", "mid")
                 m "Well what would you have me do?"
                 call her_main("Speak to Professor Snape, tell him to chastise them. They'll listen to him...", "angry", "base", "angry", "mid")
                 m "Very well, I'll speak to him. Although I'm not sure it will have the effect you're hoping for."
@@ -583,7 +583,7 @@ label hermione_helping_selling_cards:
         call her_main("I did get a bit agitated at one point actually...", "open", "closed", "base", "mid", cheeks="blush")
         g4 "They didn't fire you did they?"
         call her_main("No!","mad","wide_stare")
-        call her_main("The customer was quite apologetic actually and bought a bunch of things.","smile","angryCl")
+        call her_main("The customer was quite apologetic actually and bought a bunch of things.", "smile", "closed", "angry", "mid")
         call her_main("The twins obviously took the credit for getting such a big sale and seemed rather pleased with themselves.","crooked_smile","annoyed")
         call her_main("I'm fine with them believing they had anything to do with it though.", "smile", "closed", "base", "mid")
         m "How noble of you..."
@@ -609,12 +609,12 @@ label hermione_helping_selling_cards:
         m "So, you had to stop the practice sessions?"
         call her_main("No, that's not why I'm annoyed...", "annoyed", "happy", "base", "R")
         call her_main("In my haste to find a solution I thought it would be a great idea to play a few rounds of strip cards to get more people interested.","open","down_raised", cheeks="blush")
-        call her_main("...","angry","angryCL", cheeks="blush")
+        call her_main("...", "angry", "closed", "angry", "mid", cheeks="blush")
         call her_main("I've played enough not to be beaten by a new player I thought.","mad","angryL", cheeks="blush")
         g9 "Of course, you've played against me after all..."
         call her_main("...", "base", "base", "angry", "mid")
         m "Sorry, go on."
-        call her_main("Well, I managed to get a bunch of people into the card game so practice day is still on the schedule.","annoyed","angryCl")
+        call her_main("Well, I managed to get a bunch of people into the card game so practice day is still on the schedule.", "annoyed", "closed", "angry", "mid")
         g9 "That's good!"
         call her_main("Though I might reconsider the whole strip card idea...","angry","down", cheeks="blush")
         call her_main("I lost pretty quickly...", "normal", "closed", "base", "mid", cheeks="blush")
@@ -650,7 +650,7 @@ label hermione_helping_selling_cards:
         call her_main("The winner did end up standing there with such an expectant look on his face after everyone had left...","open","down", cheeks="blush")
         m "..."
         call her_main("So I told him that whatever he was expecting it wasn't happening.","angry","angryL", cheeks="blush")
-        call her_main("He seemed so disheartened so I felt a bit bad about the whole thing...","open","angryCl")
+        call her_main("He seemed so disheartened so I felt a bit bad about the whole thing...", "open", "closed", "angry", "mid")
         call her_main("So, since I didn't want to bring his feeling of victory down I figured since some students had spread the rumour they'd assume the worst anyway...", "open", "base", "angry", "mid", cheeks="blush")
         call her_main("So I put my hand down his pants and fiddled around a bit whilst letting the guy get a peek behind my suspenders.", "grin", "base", "angry", "mid", cheeks="blush")
         g9 "Good on you!"
@@ -688,7 +688,7 @@ label hermione_helping_selling_cards:
         call her_main("I tried it out to test the legitimacy of the claims in that book of theirs...", "open", "base", "base", "mid")
         m "of course..."
         m "And how many times did you test this... theory of yours."
-        call her_main("There's no conclusion to be made by just testing a theory once [genie_name].","normal","angryCl")
+        call her_main("There's no conclusion to be made by just testing a theory once [genie_name].", "normal", "closed", "angry", "mid")
         call her_main("Anyway...", "open", "base", "base", "mid")
         call her_main("Here's your payment.", "open", "base", "base", "mid")
         call give_reward("You have received 20 gold", "interface/icons/gold.png")

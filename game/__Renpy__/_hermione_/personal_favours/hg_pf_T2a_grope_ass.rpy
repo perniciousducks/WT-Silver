@@ -9,11 +9,11 @@ label hg_pf_grope_ass_T1:
     call her_main("[genie_name]!?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
     m "Relax, [hermione_name]. It will be the easiest [current_payout] points you've ever made, I promise."
     m "All I am going to do is squeeze your little butt a couple of times..."
-    call her_main("No! I demand you to stop!","scream","angryCl", cheeks="blush")
+    call her_main("No! I demand you to stop!", "scream", "closed", "angry", "mid", cheeks="blush")
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="d5")
 
-    call her_main("This is inappropriate, [genie_name]................","angry","angryCl", cheeks="blush")
+    call her_main("This is inappropriate, [genie_name]................", "angry", "closed", "angry", "mid", cheeks="blush")
     m "Nobody needs to know how exactly you got the points..."
     call her_main("But....", "annoyed", "base", "angry", "mid")
     m "Do it for \"Gryffimdor\"..."
@@ -75,7 +75,7 @@ label hg_pf_grope_ass_T1_back:
 
     call her_main(".............","annoyed","angryL", cheeks="blush")
     call her_main("...........................", "annoyed", "base", "angry", "mid", cheeks="blush")
-    call her_main("[genie_name], I would like to be done with this sooner rather than later...","soft","angryCl", cheeks="blush")
+    call her_main("[genie_name], I would like to be done with this sooner rather than later...", "soft", "closed", "angry", "mid", cheeks="blush")
     m "Don't rush me [hermione_name]... Let me savour the moment..."
     call her_main(".............................","annoyed","angryL", cheeks="blush")
 
@@ -106,7 +106,7 @@ label hg_pf_grope_ass_T1_back:
     # Slap her!
     call slap_her #Calls slapping sound and visual.
     call her_main("!!!!!!!!!!!!!", "scream", "wide", "base", "stare", cheeks="blush")
-    call her_main("[genie_name], what are you doing!?","angry","angryCl", cheeks="blush")
+    call her_main("[genie_name], what are you doing!?", "angry", "closed", "angry", "mid", cheeks="blush")
     call her_main("You said all you were going to do is touch!", "angry", "base", "angry", "mid", cheeks="blush")
 
     menu:
@@ -121,7 +121,7 @@ label hg_pf_grope_ass_T1_back:
 
     # Slap her!
     call slap_her #Calls slapping sound and visual.
-    call her_main("Ouch! It hurts!","angry","angryCl", cheeks="blush")
+    call her_main("Ouch! It hurts!", "angry", "closed", "angry", "mid", cheeks="blush")
     call her_main("This is so demeaning!", "angry", "base", "angry", "mid", cheeks="blush")
     call her_main("You said all you were going to do is touch...", "angry", "base", "angry", "mid", cheeks="blush")
     g4 "Just stand still, [hermione_name]!"
@@ -141,9 +141,9 @@ label hg_pf_grope_ass_T1_back:
             m "What else do you want? More points?"
             call her_main("Yes, I believe I'm owed at least that much!", "angry", "base", "angry", "mid", cheeks="blush")
             m "[current_payout] is what we agreed on. You won't get any more than that."
-            call her_main("*tzzh*... Fine!","clench","angryCl", cheeks="blush")
+            call her_main("*tzzh*... Fine!", "clench", "closed", "angry", "mid", cheeks="blush")
             call her_main("Keep your points.", "angry", "base", "angry", "mid", cheeks="blush")
-            call her_main("All of them! I don't even want them anymore.","scream","angryCl", cheeks="blush")
+            call her_main("All of them! I don't even want them anymore.", "scream", "closed", "angry", "mid", cheeks="blush")
             m "Are you sure about that?"
             call her_main("I'm leaving. Good day, Sir.", "angry", "base", "angry", "mid", cheeks="blush")
 
@@ -520,7 +520,7 @@ label hg_pf_grope_ass_T2_fail:
             call her_main("Good! I want them to hear!","scream","worriedCl", cheeks="blush", tears="messy")
             m "Why would you want that? I already paid you!"
             call her_main("Oh... right...", "angry", "base", "base", "mid", cheeks="blush", tears="mascara")
-            call her_main("But I hate you! I hate you [genie_name]!","scream","angryCl", cheeks="blush", tears="mascara")
+            call her_main("But I hate you! I hate you [genie_name]!", "scream", "closed", "angry", "mid", cheeks="blush", tears="mascara")
 
         "\"You're bluffing, [hermione_name]!\"":
             $ her_mood += 27

@@ -1352,7 +1352,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("(...)","annoyed","narrow","angry","L")
             m "Are you sure about that? I've seen you staring..."
             call cho_main("","base","narrow","angry","L")
-            call her_main("Because she just so happens to be standing there, butt naked!{w} In your office!","angry","angryCl")
+            call her_main("Because she just so happens to be standing there, butt naked!{w} In your office!", "angry", "closed", "angry", "mid")
             m "I'd like you to rate Miss Chang's figure, truthfully, and to the best of your ability."
             call her_main("Really? Do I have to?", "annoyed", "base", "base", "mid")
             g9 "You do! I'd really like to hear your opinion on Miss Chang's shamelessly exposed body!"
@@ -1380,7 +1380,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("Stealing them from Madam Pomfrey, are you?","smile","narrow","angry","mid")
             call her_main("I do not!!!", "open", "wide", "base", "stare")
             m "Girls, we all know what really counts is how we appear on the inside."
-            call her_main("","angry","angryCl")
+            call her_main("", "angry", "closed", "angry", "mid")
             call cho_main("Oh- Shut up!","angry","narrow","angry","mid")
             call her_main("Professor, you're the one who continuously asks us to expose ourselves!", "soft", "base", "angry", "mid")
             m "Well yes. I also never claimed that \"I\" was pretty on the inside."
@@ -1397,7 +1397,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("Sir, I’d like to leave now.", "open", "base", "angry", "mid")
 
             call cho_main("Already missing your books, are you?","annoyed","narrow","base","L")
-            call her_main("I am not.{w} And I don't appreciate being made fun of!","angry","angryCl")
+            call her_main("I am not.{w} And I don't appreciate being made fun of!", "angry", "closed", "angry", "mid")
 
             if daytime:
                 call her_main("Good day, Sir.", "soft", "base", "angry", "mid")

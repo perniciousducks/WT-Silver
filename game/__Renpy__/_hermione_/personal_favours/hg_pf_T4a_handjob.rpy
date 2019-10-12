@@ -376,7 +376,7 @@ label hg_pf_handjob_1:
             m "Yes, keep on stroking my cock."
             call her_main("..................", "open_wide_tongue", "base", "base", "mid")
             g4 "Oh... I just want to slide my cock into that wet hole of a mouth of yours!"
-            call her_main(".................","open_wide_tongue","angryCl")
+            call her_main(".................", "open_wide_tongue", "closed", "angry", "mid")
             m "No, keep on looking at me!"
             call her_main(".....................", "open_wide_tongue", "base", "base", "mid")
             m "Yes, you little slut!"
@@ -637,18 +637,18 @@ label hg_pf_handjob_2:
             m "Yes?"
             call her_main("You have the biggest penis I have ever seen!", "smile", "base", "angry", "mid")
             m "Well I suppo--"
-            call her_main("Not done yet!","scream","angryCl")
+            call her_main("Not done yet!", "scream", "closed", "angry", "mid")
             m "Apologies."
             call her_main("Your penis is so big it almost scares me!","angry","down_raised")
             g9 "You little minx. You know exactly what to say..."
             call her_main("And yet I lust for it...", "soft", "narrow", "annoyed", "up")
             call her_main("Any woman would be happy to have your huge penis inside of her!")
             m "...you're good!"
-            call her_main("There is more!","scream","angryCl")
+            call her_main("There is more!", "scream", "closed", "angry", "mid")
             m "By all means..."
-            call her_main("I think your magnificent cock is a blessing to this world!","scream","angryCl")
+            call her_main("I think your magnificent cock is a blessing to this world!", "scream", "closed", "angry", "mid")
             m "Well, I wouldn't go that far--"
-            call her_main("Listen to me, [genie_name]!","scream","angryCl")
+            call her_main("Listen to me, [genie_name]!", "scream", "closed", "angry", "mid")
             call her_main("I think a statue dedicated to your magnificent penis shall be erected in every city!")
             call her_main("So that people of the world could worship your phallus freely!")
             m "OK, I think I've heard enough."
@@ -837,13 +837,13 @@ label hg_pf_handjob_2_continue:
                 call her_main("...............", "annoyed", "base", "base", "R")
                 call her_main("[tmp_name]", "base", "base", "base", "mid")
                 m "A bit louder..."
-                call her_main("[tmp_name]!!!","scream","angryCl")
+                call her_main("[tmp_name]!!!", "scream", "closed", "angry", "mid")
                 g9 "He-he..."
             elif one_out_of_three == 1:
                 call her_main("I don't want to say that...","annoyed","worriedL")
                 m "Oh, just do it, [hermione_name]."
                 call her_main("...........","annoyed","worriedL")
-                call her_main("[tmp_name]","scream","angryCl")
+                call her_main("[tmp_name]", "scream", "closed", "angry", "mid")
                 g9 "He-he..."
             elif one_out_of_three == 2:
                 call her_main("Huh?","annoyed","worriedL")
@@ -851,13 +851,13 @@ label hg_pf_handjob_2_continue:
                 m "Just say it."
                 call her_main("......","annoyed","worriedL")
                 m "Come on, humour me."
-                call her_main("[tmp_name]","scream","angryCl")
+                call her_main("[tmp_name]", "scream", "closed", "angry", "mid")
                 g9 "He-he..."
             elif one_out_of_three == 3:
                 call her_main("...........","annoyed","worriedL")
                 call her_main("Do I really have to?")
                 m "Just say it."
-                call her_main("[tmp_name]","scream","angryCl")
+                call her_main("[tmp_name]", "scream", "closed", "angry", "mid")
                 g9 "He-he..."
 
     jump hg_pf_handjob_2_cumming

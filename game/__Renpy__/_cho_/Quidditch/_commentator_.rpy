@@ -101,7 +101,7 @@ label quidditch_commentator_event_2:
     else:
         call her_main("Everybody will be focused on me...", "soft", "narrow", "annoyed", "up")
 
-    call her_main("I accept!","scream","angryCl",trans="hpunch")
+    call her_main("I accept!", "scream", "closed", "angry", "mid",trans="hpunch")
     g4 "I thought you just said you didn't..."
     call her_main("Cho will be so mad!", "crooked_smile", "happy", "base", "mid")
     m "I see..."

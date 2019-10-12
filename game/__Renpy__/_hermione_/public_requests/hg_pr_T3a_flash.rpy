@@ -288,7 +288,7 @@ label hg_pr_flash_T2_E1:
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Just for the record, [genie_name]...","annoyed","angryL")
     m "Hm?"
-    call her_main("I think that forcing your pupils to do things like this...","scream","angryCl")
+    call her_main("I think that forcing your pupils to do things like this...", "scream", "closed", "angry", "mid")
     call her_main("Is beneath an esteemed wizard such as yourself...", "upset", "closed", "base", "mid")
     m "\"Forcing\"? Nobody is forcing you to do anything, [hermione_name]."
     m "You came to me, remember?"

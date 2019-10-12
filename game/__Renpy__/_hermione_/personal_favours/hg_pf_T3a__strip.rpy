@@ -127,11 +127,11 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
 
     hide screen blktone
     call her_main("[genie_name]!", "angry", "base", "angry", "mid", cheeks="blush")
-    call her_main("This is ridiculous on a whole other level!","angry","angryCl", cheeks="blush")
+    call her_main("This is ridiculous on a whole other level!", "angry", "closed", "angry", "mid", cheeks="blush")
     call her_main("I won't let myself be forced to become some cheap stripper!!!", "mad", "wide", "base", "stare", cheeks="blush")
     m "Nobody is forcing you to do this."
     m "If you don't need the points, please feel free to leave."
-    call her_main("Yes. I believe you're right Sir.","soft","angryCl")
+    call her_main("Yes. I believe you're right Sir.", "soft", "closed", "angry", "mid")
     call her_main("Stripping for you won't be worth \"any\" amount of points!", "angry", "base", "angry", "mid")
     call her_main("I will be leaving now!", "annoyed", "base", "angry", "mid")
 
@@ -151,7 +151,7 @@ label hg_pf_strip_T0_fail_repeat:
     call her_main("No! I will not!", "scream", "base", "angry", "mid")
     call her_main("And I'd appreciate it if you'd stop making such outrageous requests...", "annoyed", "base", "angry", "mid")
     m "You will get points for it..."
-    call her_main("Shove those points up your-","angry","angryCl")
+    call her_main("Shove those points up your-", "angry", "closed", "angry", "mid")
     call her_main("I will be leaving now...", "annoyed", "base", "angry", "mid")
     call her_main("Good day, Sir...","annoyed","angryL")
 
@@ -390,11 +390,11 @@ label hg_pf_strip_T1_intro_E2:
     call her_main("Well, why not?","disgust","glance")
     call her_main("Yes, I don't see why not!", "scream", "base", "angry", "mid", emote="01")
     m "Hm...? {size=-4}(Look at her, so eager all of a sudden...){/size}"
-    call her_main("After all, as a pupil I am meant to obey your every order, isn't that right, [genie_name]?!","scream","angryCl")
+    call her_main("After all, as a pupil I am meant to obey your every order, isn't that right, [genie_name]?!", "scream", "closed", "angry", "mid")
     m "...................."
-    call her_main("If the Headmaster tells me to strip for him, Then I shall strip!!!","scream","angryCl")
+    call her_main("If the Headmaster tells me to strip for him, Then I shall strip!!!", "scream", "closed", "angry", "mid")
     call her_main("Do I find this extremely inappropriate, disgraceful and humiliating?", "angry", "base", "angry", "mid")
-    call her_main("Of course not. What nonsense!","scream","angryCl")
+    call her_main("Of course not. What nonsense!", "scream", "closed", "angry", "mid")
     m ".............."
     call her_main("Ha! Might as well do this the proper way!", "angry", "base", "angry", "mid")
 
@@ -419,7 +419,7 @@ label hg_pf_strip_T1_intro_E2:
     with fade
     pause.5
 
-    call her_main("If I must degrade myself in order to protect the honour of my house...","scream","angryCl", xpos="mid", ypos="base")
+    call her_main("If I must degrade myself in order to protect the honour of my house...", "scream", "closed", "angry", "mid", xpos="mid", ypos="base")
 
     if hermione_wear_top and (h_top == "top_1" or h_top == "top_6"):
         call nar(">Hermione is starting to take off her vest...")
@@ -450,7 +450,7 @@ label hg_pf_strip_T1_intro_E2:
         call nar(">The girl seems to contemplate about which piece of clothing she should take off first...")
         pause.1
 
-    call her_main("The skirt is next, right?","scream","angryCl")
+    call her_main("The skirt is next, right?", "scream", "closed", "angry", "mid")
 
     menu:
         m "..."
@@ -501,7 +501,7 @@ label hg_pf_strip_T1_intro_E2:
 
     call set_her_action("lift_breasts")
 
-    call her_main("Shall I shake my breasts for you like one of those harlots?","scream","angryCl")
+    call her_main("Shall I shake my breasts for you like one of those harlots?", "scream", "closed", "angry", "mid")
     m "Well---"
     call her_main("Of course! Why wouldn't I degrade myself for your pleasure?!")
     call her_main("This is completely {size=+7}acceptable!{/size}", "scream", "base", "angry", "mid", emote="01")
@@ -581,7 +581,7 @@ label hg_pf_strip_T1_intro_E2:
 
     call her_main("Well, I hope you enjoyed yourself, [genie_name]!","open","annoyed")
     m "What?"
-    call her_main("I would like to get paid now...","open","angryCl")
+    call her_main("I would like to get paid now...", "open", "closed", "angry", "mid")
     m "Aren't you forgetting something, [hermione_name]?"
     call her_main("[genie_name]...?","open","annoyed")
     m "Your panties...?"

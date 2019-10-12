@@ -4,7 +4,7 @@
 
 label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifucking won't be written (ayylmao)
     m "Guess what I have for you today."
-    call her_main("Is it another foul tasting potion that will try transform me into a hideous animal?","open","angryCl")
+    call her_main("Is it another foul tasting potion that will try transform me into a hideous animal?", "open", "closed", "angry", "mid")
     m "Well I mean this one smells nice."
     call her_main("Will it taste nice though?", "open", "base", "base", "mid")
     m "Only one way to find out."

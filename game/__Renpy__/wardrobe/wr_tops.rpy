@@ -684,7 +684,7 @@ label equip_top:
                         # m "It's just something the kids say nowadays!"
                         # call her_main("It most certainly is not!","annoyed","annoyed")
                         # m "If you say so..."
-                        # call her_main("Keep this offensive... thing for yourself, [genie_name].","scream","angryCl")
+                        # call her_main("Keep this offensive... thing for yourself, [genie_name].", "scream", "closed", "angry", "mid")
                         # call her_main("I'm not going to wear it!","angry","worried")
                     # else: #11-19
                         # call her_main("No, [genie_name]!", "open", "closed", "base", "mid")
@@ -718,7 +718,7 @@ label equip_top:
                     # else:
                         # call her_main("Another one of your way too revealing tops?", "disgust", "base", "angry", "mid")
                         # g9 "Yes, glad you noticed! Now if you don't mind just-"
-                        # call her_main("I'm not going to wear it! You can see everything in this! My nipples would poke right through it!!!","scream","angryCl")
+                        # call her_main("I'm not going to wear it! You can see everything in this! My nipples would poke right through it!!!", "scream", "closed", "angry", "mid")
                         # m "I wouldn't mind if they did..."
                         # call her_main("That's just... typical!", "clench", "base", "angry", "mid")
                         # call her_main("You disgust me, [genie_name]!", "clench", "base", "angry", "mid")

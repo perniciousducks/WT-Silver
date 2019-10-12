@@ -140,7 +140,7 @@ label equip_bra:
                         # m "That bra is perfectly fine!"
                         # call her_main("Where did you even get this one? From an adult shop?", "annoyed", "base", "angry", "mid")
                         # g4 "That's none of your concern!"
-                        # call her_main("Tzzz!","clench","angryCl")
+                        # call her_main("Tzzz!", "clench", "closed", "angry", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 17."
                     # jump return_to_wardrobe
@@ -173,10 +173,10 @@ label equip_bra:
                         # call her_main("No, [genie_name]. They are way too sexual!", "open", "base", "angry", "mid")
                         # g4 "What? How could you say such a thing?"
                         # m "That bra is perfectly normal!"
-                        # call her_main("There is a giant hole in it!","scream","angryCl")
+                        # call her_main("There is a giant hole in it!", "scream", "closed", "angry", "mid")
                         # m "Okay, fine... No need to scream."
                         # m "I see your point."
-                        # call her_main("Tzzz!","clench","angryCl")
+                        # call her_main("Tzzz!", "clench", "closed", "angry", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 20."
                     # jump return_to_wardrobe
@@ -202,7 +202,7 @@ label equip_bra:
                         # call her_main("Here, you can have these back. I'll have the situation settled by tomorrow! You can count on me.", "base", "base", "angry", "mid")
                         # m "Damn it..."
                     # else:
-                        # call her_main("You want me to put these bits of tape on my tits?","open","angryCl")
+                        # call her_main("You want me to put these bits of tape on my tits?", "open", "closed", "angry", "mid")
                         # call her_main("That's ridiculous!", "scream", "base", "angry", "mid")
                         # m "What's so bad about it? Your breasts are covered..."
                         # call her_main("It would look as if I had a target on them!","disgust","down")
@@ -235,7 +235,7 @@ label equip_bra:
                         # call her_main("Another one of your way too revealing tops?", "disgust", "base", "angry", "mid")
                         # g9 "Yes, but I want you to wear it as a bra!"
                         # call her_main("What?!", "open", "wide", "base", "stare")
-                        # call her_main("But you can see everything in this! My nipples would poke right through it!!!","scream","angryCl")
+                        # call her_main("But you can see everything in this! My nipples would poke right through it!!!", "scream", "closed", "angry", "mid")
                         # m "I wouldn't mind if they did..."
                         # call her_main("That's just... typical!", "clench", "base", "angry", "mid")
                         # call her_main("You disgust me, [genie_name]!", "clench", "base", "angry", "mid")
@@ -461,7 +461,7 @@ label equip_panties:
                         # m "Those panties is perfectly normal!"
                         # call her_main("Where did you even get this one? From an adult shop?", "annoyed", "base", "angry", "mid")
                         # g4 "That's none of your concern!"
-                        # call her_main("Tzzz!","clench","angryCl")
+                        # call her_main("Tzzz!", "clench", "closed", "angry", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 17."
                     # jump return_to_wardrobe
@@ -494,10 +494,10 @@ label equip_panties:
                         # call her_main("No, [genie_name]. They are way too sexual!", "open", "base", "angry", "mid")
                         # g4 "What? How could you say such a thing?"
                         # m "Those panties is perfectly normal!"
-                        # call her_main("There is a giant hole in it!","scream","angryCl")
+                        # call her_main("There is a giant hole in it!", "scream", "closed", "angry", "mid")
                         # m "Okay, fine... No need to scream."
                         # m "I see your point."
-                        # call her_main("Tzzz!","clench","angryCl")
+                        # call her_main("Tzzz!", "clench", "closed", "angry", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 20."
                     # jump return_to_wardrobe
@@ -525,7 +525,7 @@ label equip_panties:
                         # g9 "Even better! I can see through the net!"
                         # call her_main("What?!", "open", "wide", "base", "stare")
                         # call her_main("This doesn't even cover anything!!!", "soft", "wide", "base", "stare")
-                        # call her_main("[genie_name], this is disgusting!","scream","angryCl")
+                        # call her_main("[genie_name], this is disgusting!", "scream", "closed", "angry", "mid")
                         # call her_main("You can have them back you freak...", "clench", "base", "angry", "mid")
                         # m "Okay- Jeesh... No need to make a scene..."
                     # if cheats_active or game_difficulty <= 2:

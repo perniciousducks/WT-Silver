@@ -47,7 +47,7 @@ label a_bad_time_to_disrobe_part_1:
     m "You'll be wearing the cloak..."
     m "No one would even know you were there."
 
-    call her_main("{size=7}35 points...{/size}","annoyed","angryCl")
+    call her_main("{size=7}35 points...{/size}", "annoyed", "closed", "angry", "mid")
 
     m "25 points you said? sounds good to me."
 
@@ -211,12 +211,12 @@ label a_bad_time_to_disrobe_part_2:
     m "Right, well. Good invisibility cloaks are pretty hard to come by..."
     m "\"I think...\""
     call her_main("No they're not... they're mass produced as far as I know.", "annoyed", "base", "base", "mid")
-    call her_main("By house elves I bet...","disgust","angryCl")
+    call her_main("By house elves I bet...", "disgust", "closed", "angry", "mid")
     m "Hey now, I know they might be small but I wouldn't call them elves."
     m "In any case, the cloak has more of a sentimental value to me... lots of memories."
     g9 "\"Like the time where your butt fell out of it.\""
     g9 "Oh, the memories... you must retrieve it for me."
-    call her_main("Fine, I'll do it... even though I hold you partly responsible for the situation that lead to me dropping it.","annoyed","angryCl")
+    call her_main("Fine, I'll do it... even though I hold you partly responsible for the situation that lead to me dropping it.", "annoyed", "closed", "angry", "mid")
     m "Great, let's not dwell on the past then."
     call her_main("...","normal","annoyed")
     call her_main("Do you happen to have any idea of where it is?", "open", "base", "base", "mid")
@@ -323,7 +323,7 @@ label a_bad_time_to_disrobe_part_2:
     m "His what? miss Granger..."
     call her_main("Well... His Penis brushed up against my butt.", "annoyed", "closed", "base", "mid", cheeks="blush")
     m "How did he manage that?"
-    call her_main("The boy wasn't in there to relieve himself in the way I assumed...","open","angryCl", cheeks="blush")
+    call her_main("The boy wasn't in there to relieve himself in the way I assumed...", "open", "closed", "angry", "mid", cheeks="blush")
     call her_main("I guess he wasn't paying attention to what sensation he was feeling on the tip of his...","normal","worried", cheeks="blush")
     call her_main("Anyway...","open","worriedL", cheeks="blush")
     m "..."

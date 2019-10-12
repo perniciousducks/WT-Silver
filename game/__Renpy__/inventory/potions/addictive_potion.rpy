@@ -55,7 +55,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
         pause .5
         call her_chibi("stand","mid","base")
 
-        call her_main("This isn't a potion! This is just a bottle full of your cum!","scream","angryCl")
+        call her_main("This isn't a potion! This is just a bottle full of your cum!", "scream", "closed", "angry", "mid")
         m "Wait, how could you tell if there's cum in there?"
         her "So you did put cum in there!"
         m "I didn't say that..."
@@ -78,7 +78,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
         pause 0.5
         call her_main("*Ughhh*{w=0.5}{nw}", "disgust", "slit", "low", "stare")
         with hpunch
-        call her_main("This isn't a potion! This is just a bottle full of your cum!","scream","angryCl")
+        call her_main("This isn't a potion! This is just a bottle full of your cum!", "scream", "closed", "angry", "mid")
         g4 "How did you know?"
         call her_main("It reeks of semen ", "angry", "base", "angry", "mid")
         her "I can't believe you were going to make me drink that..."
@@ -97,7 +97,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
             pause .5
             call her_chibi("stand","mid","base")
 
-            call her_main("Is this bottle full of your cum?","disgust","angryCl")
+            call her_main("Is this bottle full of your cum?", "disgust", "closed", "angry", "mid")
             call her_main("Ughhh and it's cold as well.", "disgust", "slit", "low", "stare")
             m "So it just tastes like cum to you?"
             call her_main("Of course it does, what else would it taste like?", "angry", "base", "angry", "mid")
@@ -466,7 +466,7 @@ label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the 
             m "Maybe if you apologised..."
             call her_main("......","upset","wink")
             m "No? Well in that case...{w=0.5}{nw}"
-            call her_main("{size=+5}I'm sorry!{/size}","scream","angryCl")
+            call her_main("{size=+5}I'm sorry!{/size}", "scream", "closed", "angry", "mid")
             call her_main("Please let me suck your dick [genie_name]...", "annoyed", "closed", "base", "mid")
             m "Hmmm, I don't think that was sincere enough."
             call her_main("Please [genie_name], let me suck your big, thick dick. Pretty please.","soft","worried")

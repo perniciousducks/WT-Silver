@@ -38,7 +38,7 @@ label hg_pr_flirt:
         m "I am only trying to protect your reputation, [hermione_name]."
         call her_main("[genie_name]?", "soft", "base", "base", "mid")
         m "Do you value the opinion the \"Slytherin\" students have of you?"
-        call her_main("I couldn't care less about the opinions of those Neanderthals.","scream","angryCl")
+        call her_main("I couldn't care less about the opinions of those Neanderthals.", "scream", "closed", "angry", "mid")
         m "What about the students of the \"Gryffindor\" house?"
         call her_main("Their opinion means the world to me--","annoyed","worriedL")
         call her_main("Oh, I see...", "base", "base", "base", "mid")
@@ -52,7 +52,7 @@ label hg_pr_flirt:
         call her_main("Must I really do this [genie_name]?", "open", "base", "base", "mid")
         m "We have been through this, [hermione_name]."
         m "Going to the \"Slytherin\" boys is in your best interests."
-        call her_main("Yes, I know, [genie_name].","open","angryCl")
+        call her_main("Yes, I know, [genie_name].", "open", "closed", "angry", "mid")
         her "But why must I do this at all?"
         m "Nobody is forcing you, [hermione_name]..."
         call her_main("You don't need to remind me of that, [genie_name]...", "angry", "base", "angry", "mid")
@@ -178,7 +178,7 @@ label hg_pr_flirt_T1_E2:
     call her_main("He called me a \"Gryffindor whore\", [genie_name]!", "angry", "base", "angry", "mid", emote="01")
     m "I see..."
     m "What did you do then?"
-    call her_main("Well, that was not the proper way to address a fellow \"Hogwarts\" student...","open","angryCl")
+    call her_main("Well, that was not the proper way to address a fellow \"Hogwarts\" student...", "open", "closed", "angry", "mid")
     her "So I told him that I would report him."
     m "A truly captivating story..."
     m "Anything else?"
@@ -188,7 +188,7 @@ label hg_pr_flirt_T1_E2:
     m "And?"
     call her_main("He called me a \"Patronizing Gryffindor Whore\", [genie_name]...", "angry", "base", "angry", "mid", emote="01")
     m "Did you threaten to report him as well?"
-    call her_main("Of course, [genie_name].","open","angryCl")
+    call her_main("Of course, [genie_name].", "open", "closed", "angry", "mid")
     m "*sigh*"
     m "Anything else?"
     call her_main("Well, there was one more incident but the outcome was pretty much the same...","annoyed","frown")
@@ -433,7 +433,7 @@ label hg_pr_flirt_T3_E2:
     call her_main("I didn't haras--","disgust","glance")
     call her_main("[genie_name]! Seven flirts and two dates amount to something, don't they?","angry","worriedCl", emote="05")
     m "Oh, absolutely."
-    call her_main("Then I would like to receive my payment now...","scream","angryCl")
+    call her_main("Then I would like to receive my payment now...", "scream", "closed", "angry", "mid")
     call her_main("","normal","worriedCl")
 
     jump end_hg_pr_flirt
@@ -461,7 +461,7 @@ label hg_pr_flirt_T3_E3:
             call play_music("playful_tension") # SEX THEME.
             her "One of the boys actually took me to the \"Slytherin\" common room today..."
             call her_main("There were at least a dozen of them there...", "normal", "base", "base", "mid")
-            call her_main("All of the boys knew who I was...","open","angryCl")
+            call her_main("All of the boys knew who I was...", "open", "closed", "angry", "mid")
             her "I was the center of attention at first..."
             call her_main("And it felt sort of wonderful...", "base", "narrow", "base", "up")
             call play_music("chipper_doodle") # HERMIONE'S THEME.

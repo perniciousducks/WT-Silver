@@ -115,7 +115,7 @@ label hg_pf_grope_T0_fail_intro:
 label hg_pf_grope_T0_fail_repeat:
     g9 "[hermione_name], I'd like to grope you a little!"
     call her_main("This again...?", "angry", "base", "angry", "mid")
-    call her_main("I've told you before, [genie_name], absolutely not!!","scream","angryCl")
+    call her_main("I've told you before, [genie_name], absolutely not!!", "scream", "closed", "angry", "mid")
     call her_main("Merlin's beard...", "angry", "base", "angry", "mid")
     m "Please?"
     call her_main("I'm leaving! Good day, Sir!", "soft", "closed", "base", "mid")

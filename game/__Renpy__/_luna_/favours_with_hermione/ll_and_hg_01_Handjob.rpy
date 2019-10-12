@@ -506,7 +506,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("Why do I always have to strip?","scream","angryCl")
         call lun_main("because I said so...","upset","suspicious","base","mid")
         call lun_main("unless you don't want to...","normal","angry","base","R")
-        call her_main("I suppose I don't mind. It just seems a little unfair that it's only me though...","annoyed","ahegao")
+        call her_main("I suppose I don't mind. It just seems a little unfair that it's only me though...", "annoyed", "narrow", "annoyed", "up")
         call lun_main("tough.","upset","suspicious","mad","mid")
 
         menu:
@@ -677,7 +677,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ luna_cum = 12
         $ luna_wear_cum = True
         call lun_main("mmmmm...","base","wide","sad","mid")
-        call her_main("that's it, just let out all that {b}nasty{/b} cum.","grin","ahegao")
+        call her_main("that's it, just let out all that {b}nasty{/b} cum.", "grin", "narrow", "annoyed", "up")
         $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
         $ genie_base = "characters/genie/base/open.png"
         $ luna_cum = 12
@@ -825,7 +825,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         hide screen blkfade
         with d3
 
-        call her_main("this is going to be so much FUN!","grin","ahegao")
+        call her_main("this is going to be so much FUN!", "grin", "narrow", "annoyed", "up")
 
         call her_walk(action="leave", speed=2.5)
 
@@ -1070,7 +1070,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ luna_xpos = 500
         $ luna_r_arm = 2
         ">Luna moves closer to Hermione before picking up a strand of cum with her finger and moving it to her mouth."
-        call her_main("go on...","soft","ahegao")
+        call her_main("go on...", "soft", "narrow", "annoyed", "up")
         m "(mmmm...)"
         $ luna_xpos = 530
         call lun_main("mmmmm... you taste even better...","base","happyCl","sad","mid")

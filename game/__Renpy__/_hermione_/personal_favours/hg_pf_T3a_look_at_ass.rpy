@@ -563,7 +563,7 @@ label hg_pr_strip_T4_admire_rear:
     if her_mood > 1:
         call her_main(".............","upset","down")
     else:
-        call her_main(".............","base","ahegao")
+        call her_main(".............", "base", "narrow", "annoyed", "up")
 
     jump end_hg_pf_strip
 

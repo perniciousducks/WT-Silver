@@ -505,7 +505,7 @@ label give_her_gift(gift_item):
             call her_main("I have no use for things like that, [genie_name]...", "angry", "base", "base", "mid")
             call her_main("They are so pretty though...","angry","wink")
             call her_main(".....................","angry","down_raised")
-            call her_main("Well, alright. I shall take them off your hands if I must, [genie_name].","soft","ahegao")
+            call her_main("Well, alright. I shall take them off your hands if I must, [genie_name].", "soft", "narrow", "annoyed", "up")
             call give_gift(">You give the anal plugs to Hermione...",gift_item)
             call her_main("But I shall never use them of course...", "open", "closed", "base", "mid")
             call her_main("................","base","down")

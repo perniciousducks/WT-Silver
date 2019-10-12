@@ -388,11 +388,11 @@ label hg_pr_grope_T3_E1:
     $ sc34CG(2, 17, 6, 9)
     call her_main("They touched me everywhere, [genie_name]...")
     m "\"Everywhere\", huh?"
-    call her_main("Yes... Everywhere, [genie_name]...","soft","ahegao")
+    call her_main("Yes... Everywhere, [genie_name]...", "soft", "narrow", "annoyed", "up")
     call her_main("There were hands under my skirt, under my shirt...","base","glance")
     $ sc34CG(2, 16, 6, 9)
     call her_main("And then I started to breathe heavily...")
-    call her_main("So one of them just put his hand over my mouth...","soft","ahegao")
+    call her_main("So one of them just put his hand over my mouth...", "soft", "narrow", "annoyed", "up")
     her "And their hands were so... thorough..."
     $ sc34CG(2, 17, 6, 9)
     call her_main("My head started to spin...")

@@ -60,7 +60,7 @@ label hg_pf_grope:
         call her_main("..................", "base", "base", "base", "R")
         call her_main("Thank you, [genie_name]...", "soft", "base", "base", "mid")
     else:
-        call her_main("..................","soft","ahegao")
+        call her_main("..................", "soft", "narrow", "annoyed", "up")
         call her_main("Thank you, [genie_name]...","soft","glance")
 
     if daytime:
@@ -352,13 +352,13 @@ label hg_pf_grope_T3_E2:
 
     menu:
         "\"I'm gonna molest your tits now.\"":
-            call her_main("Yes, Sir.","base","ahegao")
+            call her_main("Yes, Sir.", "base", "narrow", "annoyed", "up")
             call nar(">You reach out swiftly and grab both of her tits through her uniform...")
 
             jump hg_pf_grope_breasts_T3
 
         "\"I'm gonna play with your butt now.\"":
-            call her_main("Yes, Sir.","soft","ahegao")
+            call her_main("Yes, Sir.", "soft", "narrow", "annoyed", "up")
             call nar(">You reach out and place your hand under her skirt...")
 
             jump hg_pf_grope_ass_T3

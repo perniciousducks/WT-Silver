@@ -417,7 +417,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
                 call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}","silly","dead",ypos="head")
                 g4 "Aye!!! All over yer hold!"
-                call her_main("Ah... No, me hull!","silly","ahegao")
+                call her_main("Ah... No, me hull!", "silly", "narrow", "annoyed", "up")
                 hide screen bld1
                 with d3
                 $ renpy.play('sounds/cannon.mp3')
@@ -479,7 +479,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         with kissiris
         call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare")
         g4 "Oh, ye-es!"
-        call her_main("Ah...","soft","ahegao")
+        call her_main("Ah...", "soft", "narrow", "annoyed", "up")
         m "It seems like yer cavern be a bit more welcomin', lass."
         call her_main("Ah... It still be a bit tight.","base","glance")
         call her_main("'n , jus' call me \"wench\", captain.","base","suspicious")
@@ -550,7 +550,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Ah...{image=textheart}", "open", "closed", "base", "mid")
                 m "Ye will make some lucky scallywag a mighty happy one, some day, wench."
                 m "Ehm, I mean, lass."
-                call her_main("No, \"wench\" be good. you be calling me that more, captain.","silly","ahegao")
+                call her_main("No, \"wench\" be good. you be calling me that more, captain.", "silly", "narrow", "annoyed", "up")
                 m "Thar, ye see? Ye be a great catch, I be tellin' ye, wench."
                 call her_main("Ah...{image=textheart} Thank you, captain.","angry","dead",cheeks="blush",tears="crying")
                 m "Huh?"
@@ -584,7 +584,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
         call her_main("Not only me helm, captain...{image=textheart}{image=textheart}{image=textheart}","silly","dead")
         m "Not just ye helm?"
-        call her_main("I'm cumming captain...{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","ahegao")
+        call her_main("I'm cumming captain...{image=textheart}{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up")
         g4 "Agh! My cock!"
         g4 "Relax your muscles a little, would you?"
         call her_main("BUT I'M CUMMING!{image=textheart}{image=textheart}{image=textheart}","open","worriedCl")
@@ -611,7 +611,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
                 call her_main("!!!", "scream", "wide", "base", "stare",ypos="head")
                 m "Shiver me timbers! Argh!"
-                call her_main("Ah!{image=textheart} 'tis fillin' me up!{image=textheart} me bilge is takin in water!{image=textheart}","silly","ahegao")
+                call her_main("Ah!{image=textheart} 'tis fillin' me up!{image=textheart} me bilge is takin in water!{image=textheart}", "silly", "narrow", "annoyed", "up")
                 m "'tis nah water, wench!"
                 $ renpy.play('sounds/cannon.mp3')
                 call cum_block
@@ -655,7 +655,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 g4 "Aye!!! All o'er yer hull!"
                 $ renpy.play('sounds/cannon.mp3')
                 with hpunch
-                call her_main("Shiver me timbers... 'tis so hot!","silly","ahegao")
+                call her_main("Shiver me timbers... 'tis so hot!", "silly", "narrow", "annoyed", "up")
                 hide screen bld1
                 with d3
                 call ctc

@@ -641,7 +641,7 @@ label hg_pf_handjob_2:
             m "Apologies."
             call her_main("Your penis is so big it almost scares me!","angry","down_raised")
             g9 "You little minx. You know exactly what to say..."
-            call her_main("And yet I lust for it...","soft","ahegao")
+            call her_main("And yet I lust for it...", "soft", "narrow", "annoyed", "up")
             call her_main("Any woman would be happy to have your huge penis inside of her!")
             m "...you're good!"
             call her_main("There is more!","scream","angryCl")
@@ -656,7 +656,7 @@ label hg_pf_handjob_2:
             m "Yeah, just a bit."
             call her_main("Sorry...","angry","worriedCl", emote="05")
             m "No biggie. Just keep on stroking it."
-            call her_main(".................","soft","ahegao")
+            call her_main(".................", "soft", "narrow", "annoyed", "up")
             call nar(">Hermione keeps on stroking your cock.","start")
             call nar(">She is doing a great job of it too.","end")
             m "Yes, yes... Like that."
@@ -674,7 +674,7 @@ label hg_pf_handjob_2:
                 m "..."
                 "\"I am a worthless slut!\"":
                     call her_main("Of course.","angry","wink")
-                    call her_main("I am a worthless slut.","soft","ahegao")
+                    call her_main("I am a worthless slut.", "soft", "narrow", "annoyed", "up")
                     call her_main("A dirty little slut, that's what I am.")
                     m "Yes! Good!"
                 "\"I live to suck cock!\"":
@@ -690,7 +690,7 @@ label hg_pf_handjob_2:
                     m "You hesitated there for a moment."
                     call her_main("Yes, I know....","angry","wink")
                     call her_main("Let me try again...")
-                    call her_main("I love to swallow cum!","soft","ahegao")
+                    call her_main("I love to swallow cum!", "soft", "narrow", "annoyed", "up")
                     call her_main("It is truly the best to swallow cum!")
                     call her_main("I love it!")
                     call her_main("...................................","grin","dead")
@@ -910,7 +910,7 @@ label hg_pf_handjob_2_cumming:
             call her_main("Yes, [genie_name]! Just let it out!","base","down", xpos="right", ypos="base")
             g4 "Argh! Fucking slut!"
             call her_main("Ah!! It's so hot!","smile","glance")
-            call her_main("And it's getting everywhere! So much of it!","soft","ahegao")
+            call her_main("And it's getting everywhere! So much of it!", "soft", "narrow", "annoyed", "up")
             call her_main("...[genie_name].")
             g4 "Argh!!!"
             m "............"
@@ -921,7 +921,7 @@ label hg_pf_handjob_2_cumming:
             m "I think I am done..."
             call her_main("Ah, alright...","angry","wink")
             call her_main("..............","base","down")
-            call her_main("You came so much this time, [genie_name]...","soft","ahegao")
+            call her_main("You came so much this time, [genie_name]...", "soft", "narrow", "annoyed", "up")
             call ctc
 
             call hide_characters
@@ -1040,7 +1040,7 @@ label hg_pf_handjob_2_cumming:
             call her_main("*Gulp!-Gulp!-Gulp!*","full_cum","worriedCl")
             g4 "Ah..."
             g4 "This feels great..."
-            call her_main("*Gulp!* *Gulp!* *Gulp!*","full_cum","ahegao")
+            call her_main("*Gulp!* *Gulp!* *Gulp!*", "full_cum", "narrow", "annoyed", "up")
             m "I think that's it, [hermione_name]..."
             m "You can let go now..."
 

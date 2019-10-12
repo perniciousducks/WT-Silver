@@ -379,9 +379,9 @@ label equip_outfit:
                     # m "Giuchie, Giuchie, ya-ya..."
                     # call her_main("Da-Da","soft","glanceL")
                     # m "Mocha Chocalata..."
-                    # call her_main("Ya-Ya","soft","ahegao")
+                    # call her_main("Ya-Ya", "soft", "narrow", "annoyed", "up")
                     # g9 "Voulez vous coucher avec moi?"
-                    # call her_main("............","open_tongue","ahegao")
+                    # call her_main("............", "open_tongue", "narrow", "annoyed", "up")
                     # m "Girl?..."
                     # call her_main("....................","open_tongue","ahegao_intense")
                     # m "(Did she just break?)"

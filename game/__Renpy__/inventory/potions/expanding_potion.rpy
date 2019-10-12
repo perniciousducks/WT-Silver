@@ -107,7 +107,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call nar(">You take a breast in each hand and start kneading them with your fingers.")
     call her_main("...", "open", "closed", "base", "mid")
     m "They're certainly much larger than usual."
-    call her_main("...yes","soft","ahegao")
+    call her_main("...yes", "soft", "narrow", "annoyed", "up")
     call nar(">You continue massaging them gently through her shirt. Pulling them apart and then pressing them into one another.")
     call her_main("...It feels like they're getting-","angry","down_raised")
     call ctc
@@ -135,7 +135,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call nar(">You take her exposed breasts back into your hands and continue massaging")
 
     call her_main("sir... they seem to have become more sensitive...","base","ahegao_raised")
-    call her_main("Please don't do anything sudden.","soft","ahegao")
+    call her_main("Please don't do anything sudden.", "soft", "narrow", "annoyed", "up")
     m "Like this?"
     call nar(">You take both nipple between your thumb and index finger.")
     call her_main("!!!", "scream", "wide", "base", "stare")
@@ -146,7 +146,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call nar(">You feel her push her crotch against your thigh.")
     m "Feeling a little aroused are we?"
     call nar(">You start to pinch and pull her nipples.")
-    call her_main("Ohhh...","soft","ahegao")
+    call her_main("Ohhh...", "soft", "narrow", "annoyed", "up")
     call nar(">She starts grinding herself against your thigh.")
     m "Well, well, well, you are sensitive now aren't you? Trying to grind out an orgasm on your headmaster's leg, how shameless."
     call her_main("...","grin","dead")
@@ -172,7 +172,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call hide_blkfade
     pause.5
 
-    call her_main("Will... that be all [genie_name]?","soft","ahegao")
+    call her_main("Will... that be all [genie_name]?", "soft", "narrow", "annoyed", "up")
     m "Yes [hermione_name]. You can go now."
     pause.2
 
@@ -210,7 +210,7 @@ label potion_scene_2_2: #ass expansion
     call her_main("What do you mean by--","annoyed","angryL")
     call nar(">Hermione goes white as she starts to feel her body churn.")
     call her_main("What's going on. It feels like my insides are moving.", "angry", "wide", "base", "stare")
-    call her_main("And my ass, it feels so... good.","soft","ahegao")
+    call her_main("And my ass, it feels so... good.", "soft", "narrow", "annoyed", "up")
     call nar(">You start to notice her ass increase in size.") #Use bigger butt from Captain Nemo
     call her_main("It feels too sensitive... I have to take my skirt off", "angry", "wide", "base", "stare") #changed so to too
 
@@ -240,7 +240,7 @@ label potion_scene_2_2: #ass expansion
     call her_main("ughhh, my ass has gotten bigger!","angry","down_raised")
     call her_main("Is that what this potion's supposed to do? Making my ass big?", "upset", "closed", "base", "mid")
     m "Evidently."
-    call her_main("Why does my ass feel so good?","soft","ahegao") #new
+    call her_main("Why does my ass feel so good?", "soft", "narrow", "annoyed", "up") #new
     call nar(">Hermione keeps rubbing her ass, rolling her fingers across her expanded buttocks.")
     m "Hmmm, it's not supposed to, but I guess every case is different."
     call her_main("It's just so sensitive... [genie_name] do you think that you could... massage me?","grin","dead")
@@ -278,11 +278,11 @@ label potion_scene_2_2: #ass expansion
             m "Let's see how sensitive you really are."
             call nar(">You start teasing the entrance with your finger, circling the entrance slowly.")
             call her_main("!!!","shock","worriedCl")
-            call her_main("[genie_name] please... I'm too sensitive. If you do that, \nI'm not sure I'll be able to control myself.","soft","ahegao")
+            call her_main("[genie_name] please... I'm too sensitive. If you do that, \nI'm not sure I'll be able to control myself.", "soft", "narrow", "annoyed", "up")
             hide screen hermione_main
             m "Well in that case..."
             call nar(">You slowly pull your finger away from her asshole.")
-            call her_main("Thank yo-","soft","ahegao")
+            call her_main("Thank yo-", "soft", "narrow", "annoyed", "up")
             call nar(">And then fully insert it.")
             call her_main("...", "angry", "wide", "base", "stare")
             her "..."
@@ -368,11 +368,11 @@ label potion_scene_2_2: #ass expansion
             call her_main("What do you-", "angry", "base", "base", "mid")
             hide screen hermione_main
             call nar(">You squeeze her ass-cheeks back together around your cock and start pumping in between them.")
-            call her_main("!!!","grin","ahegao")
+            call her_main("!!!", "grin", "narrow", "annoyed", "up")
             hide screen hermione_main
             m "Fuck, your ass is so soft. It's like fucking a pillow."
             call her_main("Ahhh...","silly","worried",cheeks="blush",tears="soft")
-            call her_main("Please, [genie_name]...","silly","ahegao")
+            call her_main("Please, [genie_name]...", "silly", "narrow", "annoyed", "up")
             hide screen hermione_main
             m "Ughh, this feels so good, we might have to make this permanent."
             call her_main("Permanent?", "shock", "base", "base", "R",cheeks="blush",tears="soft")
@@ -386,7 +386,7 @@ label potion_scene_2_2: #ass expansion
             hide screen hermione_main
             call nar(">You feel her asshole start quiver as you glide over it.")
             m "Of course you wouldn't, you're enjoying this more than I am, aren't you?"
-            call her_main("...yes... I'm loving... you using my ass as your toy...","silly","ahegao")
+            call her_main("...yes... I'm loving... you using my ass as your toy...", "silly", "narrow", "annoyed", "up")
             hide screen hermione_main
             m "That's it girl, here I come!"
             call nar(">With one final thrust you cum, covering her fat ass with your seed.")
@@ -428,7 +428,7 @@ label potion_scene_2_2: #ass expansion
             #call her_main("Yes [genie_name].","angry","suspicious",cheeks="blush")
             m "Oh I almost forgot, 20 points to Gryffindor!"
             $ gryffindor += 20
-            call her_main("Oh... right, the points. Thank you.","grin","ahegao")
+            call her_main("Oh... right, the points. Thank you.", "grin", "narrow", "annoyed", "up")
             call nar(">Hermione picks up her skirt and attempts to put it on. Her ass is so huge that it barely covers half of it.")
 
             call nar(">Your cum is still visible on her ass.")

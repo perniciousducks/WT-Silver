@@ -603,9 +603,9 @@ label hg_pf_strip_T2_Snape_masturbate:
         call nar(">Hermione suddenly breaks into a series of rather complex pirouettes.")
         call sna_main("Yes, such grace...","snape_19")
         call sna_main("That lithe, young body!","snape_20")
-        call her_main(".........","grin","ahegao")
+        call her_main(".........", "grin", "narrow", "annoyed", "up")
         call sna_main("Oh, yes!","snape_20")
-        call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","grin","ahegao")
+        call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}", "grin", "narrow", "annoyed", "up")
         call nar(">Hermione seems very focused on her dancing routine...")
         call sna_main("Yes, and now another pirouette!","snape_19")
         call sna_main("Magnificent!")
@@ -663,7 +663,7 @@ label hg_pf_strip_T2_Snape_masturbate:
 
         call sna_main("Oh... Yes...","snape_21")
         g4 "Little slut!"
-        call her_main("...............................","grin","ahegao")
+        call her_main("...............................", "grin", "narrow", "annoyed", "up")
 
         $ s_c_c_u_pic = "characters/snape/chibis/masturbating/sperm_18.png"
         $ g_c_c_u_pic = "characters/genie/chibis/masturbating/sperm_wide_18.png"
@@ -676,7 +676,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         pause.2
 
         call sna_main("Yes... We should do this more often.","snape_22")
-        call her_main(".................","grin","ahegao")
+        call her_main(".................", "grin", "narrow", "annoyed", "up")
 
         call sna_main("Your performance was acceptable, miss Granger...","snape_20")
         call her_main("Thank you................","annoyed","dead")

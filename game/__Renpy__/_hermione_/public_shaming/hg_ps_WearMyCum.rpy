@@ -84,7 +84,7 @@ label hg_ps_cumslut_Scene_1:
     call her_main("Why are you making me do this, [genie_name]?", "angry", "base", "base", "mid",ypos="head")
     m "What do you mean?"
     call her_main("Why are you making me jerk you off...","angry","down_raised")
-    call her_main("So that you can cum on me...","soft","ahegao")
+    call her_main("So that you can cum on me...", "soft", "narrow", "annoyed", "up")
     call her_main("And make me wear it around the school?","open","worriedCl")
     m "I'm not making you do anything."
     m "You're doing this because I asked you to."
@@ -167,7 +167,7 @@ label hg_ps_cumslut_Scene_1:
             call gen_chibi("cumming_on_shirt_pause")
             call ctc
 
-            call her_main("Will that be all [genie_name].","annoyed","ahegao")
+            call her_main("Will that be all [genie_name].", "annoyed", "narrow", "annoyed", "up")
             m "I don't suppose you could kiss it for good luck?"
             call her_main("I don't think so.","annoyed","angryL")
             m "Well then that should be all then [hermione_name]."
@@ -288,7 +288,7 @@ label hg_ps_cumslut_Scene_2:
     m "Let me answer your question with one of my own."
     call her_main("Ok...","angry","down_raised")
     m "Why are you jerking me off [hermione_name]?"
-    call her_main("Because you asked me to...","soft","ahegao")
+    call her_main("Because you asked me to...", "soft", "narrow", "annoyed", "up")
     m "And is that the only reason?"
     call her_main("No...","open","worriedCl")
     m "Are you sure?"
@@ -352,7 +352,7 @@ label hg_ps_cumslut_Scene_2:
             call gen_chibi("cumming_on_shirt_pause")
             call ctc
 
-            call her_main("Will that be all [genie_name].","annoyed","ahegao")
+            call her_main("Will that be all [genie_name].", "annoyed", "narrow", "annoyed", "up")
             m "I don't suppose you could kiss it for good luck?"
             call her_main("...{p}...","base","ahegao_raised")
 
@@ -394,7 +394,7 @@ label hg_ps_cumslut_Scene_2:
             call gen_chibi("cumming_on_shirt_pause")
             call ctc
 
-            call her_main("It's all over me.","annoyed","ahegao")
+            call her_main("It's all over me.", "annoyed", "narrow", "annoyed", "up")
             m "That it is."
             call her_main("I think I should go now...","annoyed","down")
 
@@ -454,7 +454,7 @@ label hg_ps_cumslut_Scene_2:
 
     call bld
     m "Oh and one last thing before you head to class."
-    call her_main("Yes...","soft","ahegao",xpos="right",ypos="base")
+    call her_main("Yes...", "soft", "narrow", "annoyed", "up",xpos="right",ypos="base")
     m "If you return to this office after classes without any cum on you, I'll be very upset."
     call her_main("Yes [genie_name].","base","ahegao_raised")
     m "Have fun. Say hi to your friends for me."
@@ -468,7 +468,7 @@ label hg_ps_cumslut_Scene_2:
 label hg_ps_cumslut_Scene_3:
     $ hg_ps_cumslut.inProgress = True
     call her_main("Are you serious?", "shock", "wide", "base", "stare")
-    call her_main("Can I?","grin","ahegao")
+    call her_main("Can I?", "grin", "narrow", "annoyed", "up")
     m "well-"
     call her_main("I was going to ask you if I could seeing as how it made you so happy last time [genie_name].","smile","happyCl",emote="06")
     call her_main("I'll even do it for free if that would make you happier!","base","ahegao_raised")
@@ -496,7 +496,7 @@ label hg_ps_cumslut_Scene_3:
 
     call bld
     m "Gods, you're good at this, [hermione_name]!"
-    call her_main("Thank you... I've been thinking about what you asked me last time...","soft","ahegao",ypos="head")
+    call her_main("Thank you... I've been thinking about what you asked me last time...", "soft", "narrow", "annoyed", "up",ypos="head")
     m "Last time?"
     call her_main("about why I do this... sell you these sort of favours.", "upset", "closed", "base", "mid")
     call her_main("At the start it was just to get points, so that \'gryffindor\' could win the house cup...","angry","wink")
@@ -508,17 +508,17 @@ label hg_ps_cumslut_Scene_3:
     call her_main("Do you need some extra encouragement?", "open", "closed", "base", "mid")
     m "it would help..."
     call her_main("well... do you know how much I've been thinking about this? How much I wanted to ask you to cover me again?","base","down")
-    call her_main("I've become such a slut [genie_name], it's all I've been able to think about... going to class covered in your {image=textheart}cum{image=textheart}","grin","ahegao")
+    call her_main("I've become such a slut [genie_name], it's all I've been able to think about... going to class covered in your {image=textheart}cum{image=textheart}", "grin", "narrow", "annoyed", "up")
     call her_main("I Imagine it staining my uniform, so much that I can never wash it out. I imagine being covered in your cum constantly. So everyone knows who and what I am.","grin","dead")
-    call her_main("not just A slut... a cumslut...","soft","ahegao")
-    call her_main("Your {image=textheart}cum{image=textheart}slut...","silly","ahegao")
+    call her_main("not just A slut... a cumslut...", "soft", "narrow", "annoyed", "up")
+    call her_main("Your {image=textheart}cum{image=textheart}slut...", "silly", "narrow", "annoyed", "up")
     g9 "That did it slut!"
     g4 "HERE IT COMES!!!"
-    call her_main("Shoot it wherever you want [genie_name]...","open_wide_tongue","ahegao")
+    call her_main("Shoot it wherever you want [genie_name]...", "open_wide_tongue", "narrow", "annoyed", "up")
     menu:
         "\"take it on your tits!\"": # Cum on shirt front
             $ cum_location = 7
-            call her_main("Please cover my tits with your sticky cum! I need it, [genie_name]!","grin","ahegao",ypos="head")
+            call her_main("Please cover my tits with your sticky cum! I need it, [genie_name]!", "grin", "narrow", "annoyed", "up",ypos="head")
             ">Hermionely keeps jerking your cock, her eyes focused intently on it."
             g4 "Get ready whore, here i come!"
             call her_main("...","silly","dead")
@@ -542,7 +542,7 @@ label hg_ps_cumslut_Scene_3:
 
             call bld
             m "That's it, all over you slut."
-            call her_main("......","soft","ahegao")
+            call her_main("......", "soft", "narrow", "annoyed", "up")
             pause
             #$ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
             call her_main("It's so warm...{image=textheart}","grin","dead")
@@ -553,9 +553,9 @@ label hg_ps_cumslut_Scene_3:
             $ cum_location = 8
             ">Hermione bends down and place your cock in front of her face."
             m "Get ready slut, here it comes!"
-            call her_main("Please give it to me! I need it, [genie_name]!","grin","ahegao",ypos="head")
+            call her_main("Please give it to me! I need it, [genie_name]!", "grin", "narrow", "annoyed", "up",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
-            call her_main("...","open_wide_tongue","ahegao")
+            call her_main("...", "open_wide_tongue", "narrow", "annoyed", "up")
             ">You erupt onto her face, dousing her in your thick spunk."
 
             call cum_block
@@ -571,7 +571,7 @@ label hg_ps_cumslut_Scene_3:
             with d3
             call ctc
 
-            call her_main("{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","ahegao",xpos="right",ypos="base")
+            call her_main("{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up",xpos="right",ypos="base")
             m "Yes... I Feel so much better now..."
             call her_main("me too...","normal","worriedCl")
 
@@ -589,7 +589,7 @@ label hg_ps_cumslut_Scene_3:
 
     call bld
     m "I’ll see you after classes. And as before, if you come back without any cum on you, I’ll be very disappointed."
-    call her_main("of course [genie_name]...","soft","ahegao",xpos="right",ypos="base")
+    call her_main("of course [genie_name]...", "soft", "narrow", "annoyed", "up",xpos="right",ypos="base")
     call her_main("(I can't wait to see the look on peoples faces...)","grin","dead")
 
     call her_walk(action="leave", speed=2.5)
@@ -811,7 +811,7 @@ label hg_ps_cumslut_complete_3:
                 call her_main("It was actually quite frustrating [genie_name]...","annoyed","angryL")
                 m "frustrating?"
                 call her_main("yes! Having to spend the whole day smelling your delicous cum but not being able to taste any of it!", "open", "base", "base", "R")
-                call her_main("It was like looking at a glass of water in the desert...","soft","ahegao")
+                call her_main("It was like looking at a glass of water in the desert...", "soft", "narrow", "annoyed", "up")
                 m "did anyone else notice?"
                 call her_main("I couldn't say [genie_name]... I was too distracted by the smell...","angry","wink")
                 m "Very well, goodnight [hermione_name]."
@@ -828,11 +828,11 @@ label hg_ps_cumslut_complete_3:
                 m "yes [hermione_name], you can go clean up now."
                 call her_main("clean up?", "open", "base", "base", "R")
                 m "Only if you want to..."
-                call her_main("thank you [genie_name]!","grin","ahegao")
+                call her_main("thank you [genie_name]!", "grin", "narrow", "annoyed", "up")
             "\"Tell me about your day.\"":
                 $ sc34CG(1, 17, 6)
                 call her_main("My day...", "soft", "happy", "base", "R")
-                call her_main("It was a normal day [genie_name]. Well what is normal for me now.","soft","ahegao")
+                call her_main("It was a normal day [genie_name]. Well what is normal for me now.", "soft", "narrow", "annoyed", "up")
                 call her_main("I got called names again, and some of the boys groped me.","grin","dead")
                 call her_main("Susan Bones even said she liked how I looked in my shirt.","base","down")
                 m "And how did that make you feel?"
@@ -840,7 +840,7 @@ label hg_ps_cumslut_complete_3:
                 m "Truly?"
                 call her_main("Of course, it made me even happier knowing that it makes you happy.","base","down")
                 m "that you did..."
-                call her_main("...{image=textheart}","grin","ahegao")
+                call her_main("...{image=textheart}", "grin", "narrow", "annoyed", "up")
                 call her_main("thank you [genie_name]. well, goodnight.", "open", "base", "base", "R")
                 m "goodnight [hermione_name]."
     hide screen sccg

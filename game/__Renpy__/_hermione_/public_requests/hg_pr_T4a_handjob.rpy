@@ -366,7 +366,7 @@ label hg_pr_handjob_T2_E2:
             call her_main("..............", "base", "base", "base", "R", cheeks="blush")
             call her_main("You are right, [genie_name]...","base","down")
             her "I am making this sacrifice for the glory of the \"Gryffindor\" house."
-            call her_main("I am not taking pleasure in this sort of activity...","soft","ahegao")
+            call her_main("I am not taking pleasure in this sort of activity...", "soft", "narrow", "annoyed", "up")
             call her_main("Because if I would...","annoyed","angryL")
             her "That would mean I really am a slut..."
             call her_main("And I am not...","angry","down_raised")
@@ -555,7 +555,7 @@ label hg_pr_handjob_T3_E2:
     her "He called his friends..."
     call her_main("One thing lead to another...","base","glance")
     m "And you ended up jerking off five cocks..."
-    call her_main("...yes.","soft","ahegao")
+    call her_main("...yes.", "soft", "narrow", "annoyed", "up")
     m "Well done, miss Granger."
     call her_main("","base","glance")
 
@@ -601,7 +601,7 @@ label hg_pr_handjob_T3_E3:
     call her_main("God, there was so much.  My hands looked like a candle had dripped hot wax all over them.","grin","dead")
     call her_main("I didn't know what to do I couldn't just go about the rest of class with huge globs of cum all over my hands.","angry","down_raised")
     her "So I decided to rub it all over the inside of my thighs to keep from having to stain my clothes."
-    call her_main("Every time I walked I could smell their cum from between my legs.","silly","ahegao")
+    call her_main("Every time I walked I could smell their cum from between my legs.", "silly", "narrow", "annoyed", "up")
     m "That's quite an interesting story miss Granger."
     hide screen dual_hand_job
     with d5
@@ -609,9 +609,9 @@ label hg_pr_handjob_T3_E3:
     show screen blktone
     call her_main("I definitely want them both at the same time.","silly","dead")
     m "..."
-    call her_main("Yeah, two huge cocks exploding massive loads of cum everywhere.","silly","ahegao")
+    call her_main("Yeah, two huge cocks exploding massive loads of cum everywhere.", "silly", "narrow", "annoyed", "up")
     m "........"
-    call her_main(".......","silly","ahegao")
+    call her_main(".......", "silly", "narrow", "annoyed", "up")
     m "Ehm....."
     call her_main("Oh god, I'm sorry [genie_name], I was thinking of something else.", "angry", "wide", "base", "stare")
     m "Yes... sure, OK."

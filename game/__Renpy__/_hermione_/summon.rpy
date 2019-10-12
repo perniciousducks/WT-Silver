@@ -742,7 +742,7 @@ label hermione_change:
         elif her_whoring >= 19:
             call her_main("...","soft","ahegao_raised")
             call her_main("\"When did I start enjoying it so much...\"","open","ahegao_raised",cheeks="blush")
-            call her_main("\"That taste, the texture..\"", "open","ahegao",cheeks="blush")
+            call her_main("\"That taste, the texture..\"", "open", "narrow", "annoyed", "up",cheeks="blush")
             call her_main("\"..So warm, sticky and...\"","silly","ahegao_raised",cheeks="blush")
             m "Are you okay there, [temp_name]?"
             call her_main("Wha-", "mad", "wide", "base", "stare")
@@ -881,9 +881,9 @@ label hermione_change:
                     call her_main("", "normal","concerned", tears="mascara")
                     m "I bet you don't even care about the points anymore..."
                     call her_main("Well...", "normal","down", tears="mascara")
-                    call her_main("", "normal","ahegao", tears="mascara")
+                    call her_main("", "normal", "narrow", "annoyed", "up", tears="mascara")
                     m "You are nothing more than a whore..."
-                    call her_main("", "base","ahegao", tears="mascara")
+                    call her_main("", "base", "narrow", "annoyed", "up", tears="mascara")
                     g9 "{size=+4}{b}MY{/b}{/size} whore!"
                     call her_main("", "base","ahegao_raised", tears="mascara")
                     m "And I {b}will{/b} call you however I want!"

@@ -253,7 +253,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 $ hermione_wear_panties = True
                 call update_her_uniform
 
-                call her_main("...","soft","ahegao")
+                call her_main("...", "soft", "narrow", "annoyed", "up")
             "\"Why don't you clean them now?\"":
                 $ cleaned_panties = True
                 call her_main("Clean them How? You don't have a wash basin in here.", "open", "base", "base", "mid")
@@ -279,9 +279,9 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 m "That's it. Do you think they're clean yet."
                 call her_main("*Mmmhhhmmm*","full_cum","dead")
                 m "Well then you can probably take them out of your mouth."
-                call her_main("*Ahhhhh*","open_wide_tongue","ahegao")
+                call her_main("*Ahhhhh*", "open_wide_tongue", "narrow", "annoyed", "up")
                 m "There, nice and clean."
-                call her_main("*Yes [genie_name]*","soft","ahegao")
+                call her_main("*Yes [genie_name]*", "soft", "narrow", "annoyed", "up")
     $ achievement.unlock("pantiesfap")
     jump back_from_soaked
 

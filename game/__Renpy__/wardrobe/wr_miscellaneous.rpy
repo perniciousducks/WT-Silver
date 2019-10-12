@@ -115,7 +115,7 @@ label equip_misc_item:
                 # $ hide_transitions = False #activates dissolve in her_main
 
                 # call her_main("You want me to use a butt plug? Again?","angry","wink")
-                # call her_main("(...)","annoyed","ahegao")
+                # call her_main("(...)", "annoyed", "narrow", "annoyed", "up")
                 # call her_main("(It's small enough. Shouldn't be too bad...)","disgust","down_raised")
                 # call her_main("Alright,... Let me put it in real quick...", "base", "base", "base", "mid")
                 # hide screen hermione_main
@@ -166,7 +166,7 @@ label equip_misc_item:
                 # $ hide_transitions = False #activates dissolve in her_main
 
                 # call her_main("You want me to take the butt plug out?","angry","wink")
-                # call her_main("(I was just getting used to it...)","annoyed","ahegao")
+                # call her_main("(I was just getting used to it...)", "annoyed", "narrow", "annoyed", "up")
                 # call her_main("Well alright then...", "base", "base", "base", "mid")
                 # hide screen hermione_main
                 # with d5

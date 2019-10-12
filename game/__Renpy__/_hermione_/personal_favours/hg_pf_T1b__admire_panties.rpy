@@ -387,7 +387,7 @@ label hg_pf_admire_panties_T3_E1:
             call her_main("I hope you like them...", "soft", "base", "base", "R")
 
         "\"No, keep them off!\"":
-            call her_main("Of course, [genie_name].","soft","ahegao")
+            call her_main("Of course, [genie_name].", "soft", "narrow", "annoyed", "up")
             call ctc
 
             $ h_request_wear_panties = False
@@ -451,7 +451,7 @@ label hg_pf_admire_panties_T3_E2:
                 call her_main("I hope you like them...", "soft", "base", "base", "R")
 
             "\"No, keep them off!\"":
-                call her_main("Of course, [genie_name].","soft","ahegao")
+                call her_main("Of course, [genie_name].", "soft", "narrow", "annoyed", "up")
                 call ctc
 
                 $ h_request_wear_panties = False
@@ -465,7 +465,7 @@ label hg_pf_admire_panties_T3_E2:
 
         menu:
             "\"Yes, Take them off!\"":
-                call her_main("Alright, [genie_name].","soft","ahegao")
+                call her_main("Alright, [genie_name].", "soft", "narrow", "annoyed", "up")
                 m "And keep them off from now on!"
                 call her_main("Whatever you want, [genie_name].","base","glance")
                 hide screen hermione_main

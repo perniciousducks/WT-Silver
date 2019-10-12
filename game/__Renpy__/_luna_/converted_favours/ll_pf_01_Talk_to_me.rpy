@@ -667,7 +667,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         $ luna_flip = 1
         call her_main("she held it there for nearly a minute...", "open", "base", "base", "R")
         call her_main("a few of them even said hello to us...", "soft", "happy", "base", "R")
-        call her_main("they didn't suspect a thing...","soft","ahegao")
+        call her_main("they didn't suspect a thing...", "soft", "narrow", "annoyed", "up")
         call lun_main("not until you started touching me under the desk!","normal","wide","angry","R", cheeks="blush")
         g4 "{size=+4}*Argh!* yes you whores!{/size}"
         hide screen luna_main

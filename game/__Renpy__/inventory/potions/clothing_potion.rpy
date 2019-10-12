@@ -119,7 +119,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         call her_main("I don't know [genie_name]. I can't imagine any reason that I would be attracting attention today...", "base", "base", "base", "mid")
         m "You're getting off on this aren't you?"
         call her_main("...", "smile", "base", "base", "R")
-        call her_main("I've never been so turned on in my life. Having all eyes on me. Having every boy imagine doing unspeakable things to me.","soft","ahegao")
+        call her_main("I've never been so turned on in my life. Having all eyes on me. Having every boy imagine doing unspeakable things to me.", "soft", "narrow", "annoyed", "up")
         call her_main("Snape made me stand out the front of class after I talked back to him.","base","down")
         call her_main("I think that I orgasmed just from the looks people gave me.","grin","dead")
         m "Well done [hermione_name]. You're becoming quite the slut."

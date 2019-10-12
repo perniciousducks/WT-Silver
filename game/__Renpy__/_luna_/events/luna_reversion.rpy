@@ -423,7 +423,7 @@ label luna_revert_1: #Reversion event #DONE
             call her_main("I suppose that's OK then...","annoyed","angryL")
             call her_main("{size=-5}(Why don't I ever get paid in gold...){/size}","annoyed","annoyed")
             call her_main("{size=-5}(No, Hermione! If I did that I'd be a prostitute...){/size}","normal","worriedCl")
-            call her_main("{size=-5}{image=textheart}{image=textheart}{image=textheart}{/size}","grin","ahegao")
+            call her_main("{size=-5}{image=textheart}{image=textheart}{image=textheart}{/size}", "grin", "narrow", "annoyed", "up")
 
     call her_main("Well regardless, she has to be punished.","annoyed","annoyed")
     m "Wait, she's being punished?"

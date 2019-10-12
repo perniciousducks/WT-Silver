@@ -235,15 +235,15 @@ label hg_pr_blowjob_T2_intro_E1:
     call her_main("Today I did something I wanted to do for such a long time now...","base","ahegao_raised")
     her "But never could muster up enough courage for..."
     m "Hm..?"
-    call her_main("Today I sucked off my two best friends in the entire world!","soft","ahegao")
+    call her_main("Today I sucked off my two best friends in the entire world!", "soft", "narrow", "annoyed", "up")
     call her_main("And it was every bit as exciting as I thought it would be.","base","down")
     call her_main("I made their cocks all sloppy with saliva...","grin","dead")
     her "I sucked on their balls too..."
-    call her_main("But the best part was to see their faces...","silly","ahegao")
+    call her_main("But the best part was to see their faces...", "silly", "narrow", "annoyed", "up")
     her "The boys could not believe it was actually happening..."
     call her_main("To be honest, neither could I...","silly","dead")
     her "I, Hermione granger - the girl they knew for years..."
-    call her_main("Sucking on their cocks...","open_wide_tongue","ahegao")
+    call her_main("Sucking on their cocks...", "open_wide_tongue", "narrow", "annoyed", "up")
     call her_main("Like some nasty little slut...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "Are you in love with those boys, [hermione_name]?"
     call her_main("I don't know, [genie_name]... Maybe...","base","happyCl")
@@ -326,13 +326,13 @@ label hg_pr_blowjob_T2_E3:
     call play_music("playful_tension") # SEX THEME.
     call her_main("That... that was exactly what I did, [genie_name].","angry","down_raised")
     m "[hermione_name], you are covered in cum head to toe."
-    call her_main("I am?","soft","ahegao")
+    call her_main("I am?", "soft", "narrow", "annoyed", "up")
     her "Oh... Did I forget to clean myself up?"
     call her_main("How embarrassing...","base","glance")
     her "That thing at the boy's restroom sort of escalated I suppose..."
     her "Before I knew what happened I was surrounded with hard throbbing cocks..."
     call her_main("Oh... Just talking about it makes me shiver with excitement... err..","silly","dead")
-    call her_main("...I mean, with fear... no, not fear...","grin","ahegao")
+    call her_main("...I mean, with fear... no, not fear...", "grin", "narrow", "annoyed", "up")
     call her_main("Embarrassment?", "base", "base", "base", "R", cheeks="blush")
     m "Are you asking me?"
     call her_main("Oh, excuse me, [genie_name]... I feel a little lightheaded...","grin","dead")

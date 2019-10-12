@@ -40,7 +40,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call lun_main("not quite...","base","angry","base","R")
         call her_main("so he's finally asked for a blowjob then?","base","down")
         call lun_main("Mhmmm.","base","seductive","base","mid")
-        call her_main("great! I was hoping he'd ask for one soon. practising on a dildo is one thing, but there's no substitute for the real deal!","soft","ahegao")
+        call her_main("great! I was hoping he'd ask for one soon. practising on a dildo is one thing, but there's no substitute for the real deal!", "soft", "narrow", "annoyed", "up")
         m "You've been practising?"
         call her_main("of course! {p}although she still has a lot to learn...", "upset", "closed", "base", "mid")
         call lun_main("It wasn't that bad...","pout","angry","sad","mid")
@@ -344,7 +344,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("hey luna! what does he want this time? Another blowjob?","base","suspicious")
         call lun_main("Mhmmm...","base","seductive","base","mid")
         call her_main("great!!!","base","down")
-        call her_main("You're going to love it [genie_name], she's been practising every chance she could since last time!","soft","ahegao")
+        call her_main("You're going to love it [genie_name], she's been practising every chance she could since last time!", "soft", "narrow", "annoyed", "up")
         m "really? I didn't expect her to be so enthusiastic..."
         call lun_main("*hmph* it's not like I'm excited about this...","normal","seductive","angry","R")
         call her_main("I told you to stop acting so cold Luna!", "grin", "base", "base", "R")
@@ -646,7 +646,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         m "really? are you sure she's ready for that?"
         call lun_main("*hmph* of course I am...","pout","angry","angry","R")
         call her_main("believe me sir, she's been practising really hard!", "open", "base", "base", "R")
-        call her_main("You should have seen her genie... she almost got my 7 inch dildo in all the way...","grin","ahegao")
+        call her_main("You should have seen her genie... she almost got my 7 inch dildo in all the way...", "grin", "narrow", "annoyed", "up")
         call lun_main("...","normal","angry","sad","R", cheeks="blush")
         call her_main("well half of the way...", "soft", "happy", "base", "R")
         call her_main("but I'm sure she'll manage with the real thing...", "grin", "base", "base", "R")
@@ -654,7 +654,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call lun_main("can we stop talking and get started already!","base","angry","angry","R", cheeks="blush")
         call her_main("See, I told you she was ready!","grin","worriedCl")
         m "I can hardly believe it..."
-        call her_main("Alright... let's get started then.","grin","ahegao")
+        call her_main("Alright... let's get started then.", "grin", "narrow", "annoyed", "up")
         call lun_main("finally...","base","seductive","sad","R", cheeks="blush")
         show screen blkfade
         with d3

@@ -2023,7 +2023,7 @@ label ball_ending_E2:
         sly1 "Yeah, let's go!"
         sly2 "Bye, mudblood whore!"
         sly1 "Yeah, thank you for being such a slut!"
-        call her_main("..........................","soft","ahegao", cheeks="blush", tears="mascara_soft", ypos="head")
+        call her_main("..........................", "soft", "narrow", "annoyed", "up", cheeks="blush", tears="mascara_soft", ypos="head")
 
         call play_sound("footsteps")
         call cg_scene("02")
@@ -2040,26 +2040,26 @@ label ball_ending_E2:
         g4 "I'm not ancient, you young punks!"
         m "Although I suppose in a way I am..."
 
-        call her_main("..........................","soft","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_main("..........................", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Whore! Why so quiet?"
-        call her_main("I...","silly","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_main("I...", "silly", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         call her_main("I am... not sure...")
-        call her_main("What...? What is.......","soft","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_main("What...? What is.......", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Come on, girl. Pull yourself together!"
         call her_main("I... I... What?","open","concerned",cheeks="blush",tears="mascara_soft")
         call her_main("I don't understand... I...")
         m "Hm..."
         m "I will be leaving now."
-        call her_main("Leaving...?","soft","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_main("Leaving...?", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Yes. Maybe you should too..."
         m "Go clean yourself up and rest or something."
         call her_main("But I can't leave... No... I must...","open","concerned",cheeks="blush",tears="mascara_soft")
         call her_main("The formal dance... I must...")
         m "A dance? You can't dance in this condition."
-        call her_main("No! I am the ball queen! I must....","soft","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_main("No! I am the ball queen! I must....", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Well, suit yourself."
         m "I'm leaving..."
-        call her_main("Good bye... sir...","soft","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_main("Good bye... sir...", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "............."
         m "Farewell, girl."
         call ctc
@@ -2086,7 +2086,7 @@ label ball_ending_E2:
     else:
         call sna_main("Miss Granger...?","snape_03", ypos="head")
         call sna_main("You decided to show up after all? What an unpleasant surprise...","snape_04")
-        call her_main("...............................","full","ahegao",cheeks="blush",tears="mascara", ypos="head")
+        call her_main("...............................", "full", "narrow", "annoyed", "up",cheeks="blush",tears="mascara", ypos="head")
         call sna_main("What happened to your face, girl?","snape_13")
         call her_main(".......................................","full","down",cheeks="blush",tears="mascara")
         call sna_main("Hm... Well, go ahead then...","snape_13")
@@ -2556,7 +2556,7 @@ label ball_ending_E2:
         with hpunch
         pause.3
 
-        call her_main("...........","angry","ahegao",cheeks="blush",tears="messy", ypos="head")
+        call her_main("...........", "angry", "narrow", "annoyed", "up",cheeks="blush",tears="messy", ypos="head")
         m "There..."
 
 
@@ -2687,17 +2687,17 @@ label ball_ending_E2:
         with d9
 
         stop music fadeout 1.0
-        call her_main("Ah...","silly","ahegao",cheeks="blush",tears="mascara_soft", ypos="head")
+        call her_main("Ah...", "silly", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft", ypos="head")
         call her_main("I can... barely... stand...")
         g4 "I know what you mean, girl."
         g4 "This was our most intense fuck session yet!"
-        call her_main("Yes... I never knew I could...","silly","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_main("Yes... I never knew I could...", "silly", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         call her_main("...orgasm so hard...")
-        call her_main("Sir... That thing you wanted to discuss with me...","soft","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_main("Sir... That thing you wanted to discuss with me...", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Yeah... You know what? I actually wrote you a little letter on the matter..."
         call her_main("A letter?","open","concerned",cheeks="blush",tears="mascara_soft")
         m "Yeah... It should explain a couple of things..."
-        call her_main("Oh... Alright...","silly","ahegao",cheeks="blush",tears="mascara_soft")
+        call her_main("Oh... Alright...", "silly", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Just read it tomorrow morning..."
         m "Or whenever..."
         m "Or don't read it at all, I don't care..."

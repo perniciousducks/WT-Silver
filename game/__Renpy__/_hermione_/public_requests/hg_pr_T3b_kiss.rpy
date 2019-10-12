@@ -57,7 +57,7 @@ label hg_pr_kiss:
     elif her_tier < 5:
         m "[hermione_name], forty five house points are up for grabs today!"
         m "Are you interested?"
-        call her_main("I suppose...","annoyed","ahegao")
+        call her_main("I suppose...", "annoyed", "narrow", "annoyed", "up")
         m "Great. All you need to do is make out with another girl."
         call her_main("I see...","annoyed","down")
         m "Up for the task, [hermione_name]?"

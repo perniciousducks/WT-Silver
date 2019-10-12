@@ -490,7 +490,7 @@ label ll_pf_sex_T1_her_1: # Call label
     #">Hermione's hands drift in between her legs..."
     call her_main("*Ugh*... I can't believe how fucking {b}dirty{/b} you are...","soft","glanceL")
     call her_main("I just thought you were an idiot...","disgust","glance")
-    call her_main("But now... I see you've been a bimbo this whole time without even realizing...","upset","ahegao")
+    call her_main("But now... I see you've been a bimbo this whole time without even realizing...", "upset", "narrow", "annoyed", "up")
     $ lunCG(mouth="open", eye="base", eyebrow="sad", pupil="right")
     lun "A bimbo?"
     call her_main("*Uh-huh*... You've just Dumbledore's dumb, blonde bimbo...","soft","angryL")

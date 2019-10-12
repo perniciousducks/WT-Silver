@@ -109,7 +109,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
         m "It should be noticeable any second now..."
         call her_main("Well? Is it supposed to make my breasts bigger? They don't feel any bigger.","annoyed","down")
         m "No. Hmmmm, it mustn't have worked."
-        call her_main("What was it supposed to do?","annoyed","ahegao")
+        call her_main("What was it supposed to do?", "annoyed", "narrow", "annoyed", "up")
         m "There's no point in telling you now. It was going to be a surprise."
         call her_main("Is that all [genie_name]?", "soft", "base", "base", "mid")
         m "Yes, [hermione_name], 20 points to Gryffindor."

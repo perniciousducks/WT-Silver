@@ -167,7 +167,7 @@ label l_tutoring:
         call her_main("What? Professor! You don't care?!","scream","wide_stare")
         g9 "{size=-2}(Oh, I do care, just not in the way you think.){/size}"
         m "For this exercise, Miss Granger, for this exercise. Don't get on your high horse."
-        call her_main(".........","annoyed","ahegao")
+        call her_main(".........", "annoyed", "narrow", "annoyed", "up")
         call her_main("Sorry about that, {w=0.5}again.","open","suspicious")
         m "I need you to focus on what those girls do with professors, not their behaviour in general."
         call her_main("But...", "open", "base", "base", "mid",cheeks="blush")
@@ -739,7 +739,7 @@ label l_tutoring:
         g4 "Have you slept..."
         call her_main("No I haven't! I'm not a harlot who offers her pussy to every boy around.", "scream", "closed", "base", "mid",cheeks="blush")
         m "{size=-2}(Good, your pussy is mine alone!){/size}"
-        call her_main("","annoyed","ahegao")
+        call her_main("", "annoyed", "narrow", "annoyed", "up")
         g9 "{size=-2}(Although I may agree to share it with other girls...){/size}"
         m "I'm happy you're behaving honourably, Miss Granger."
         call her_main("Ha, who'd have guessed!","annoyed","angryL",cheeks="blush")
@@ -1267,7 +1267,7 @@ label l_tutoring:
         call her_main("I suppose you want me to try them out?","smile","happyCl")
         her "Or would you rather try them out on me yourself?"
         g9 "Oh yes."
-        call her_main("I don't even know why I'm asking...","annoyed","ahegao")
+        call her_main("I don't even know why I'm asking...", "annoyed", "narrow", "annoyed", "up")
         her "{size=-2}(Old pervert...){/size}"
         call her_main("{size=-2}({b}My{/b} old pervert){/size}","open","worriedCl",cheeks="blush")
 
@@ -1549,7 +1549,7 @@ label l_tutoring:
         call her_main("I thought it was so dark in here...", "open", "happy", "base", "mid",cheeks="blush")
         call her_main("Humm, okay, but you better start out easy on me.","annoyed","suspicious")
         g9 "I'm always gentle with you my dear child."
-        call her_main("Yeah, obviously...","annoyed","ahegao")
+        call her_main("Yeah, obviously...", "annoyed", "narrow", "annoyed", "up")
         m "{size=-2}(It's not as if you don't like it rough){/size}"
         m "Alright, my desk, you, naked, now!"
 
@@ -1571,7 +1571,7 @@ label l_tutoring:
         call her_main("You're crazy for my body, aren't you?",xpos="mid",ypos="base")
         m "Why do you ask..."
         call her_main("Because a girl likes to be complimented, professor!","annoyed","suspicious")
-        call her_main("Especially when she's about to do these kinds of things!","annoyed","ahegao")
+        call her_main("Especially when she's about to do these kinds of things!", "annoyed", "narrow", "annoyed", "up")
         m "I meant, of course you have a amazing body! That's not up to question."
         call her_main("Best in the school?","base","ahegao_raised",cheeks="blush")
         m "......{w=0.3} Yeah, yeah, best in the school."
@@ -1776,7 +1776,7 @@ label l_tutoring:
         m "......"
         call nar(">You pull out your cock and roughly shove it back inside.")
         with hpunch
-        call her_main("Aaaaah {image=textheart}.","open","ahegao",cheeks="blush")
+        call her_main("Aaaaah {image=textheart}.", "open", "narrow", "annoyed", "up",cheeks="blush")
         call her_main("I love being sodomised savagely by my headmaster.","silly","ahegao_raised",cheeks="blush")
         call nar(">And again.")
         with hpunch

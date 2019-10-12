@@ -377,7 +377,7 @@ label hg_pf_titjob_1:
             call her_main("And my...{w=0.3} tits...","soft","glance")
             call her_main("He just kept staring at them...not even trying to hide what he was doing...")
             $ ccg1 = 10
-            call her_main("He shot several ropes of cum under the table, even covering my legs and feet with it!","open_tongue","ahegao")
+            call her_main("He shot several ropes of cum under the table, even covering my legs and feet with it!", "open_tongue", "narrow", "annoyed", "up")
             g4 "!!!"
             call her_main("Come on, [genie_name]! Cover me as well! Cum all over my tits!","grin","angry")
 
@@ -606,7 +606,7 @@ label hg_pf_titjob_2:
             $ ccg1 = 23
             call her_main("It's magnificent!", "upset", "closed", "base", "mid")
             m "go on..."
-            call her_main("[genie_name], If you say that I have the perfect tits...","soft","ahegao")
+            call her_main("[genie_name], If you say that I have the perfect tits...", "soft", "narrow", "annoyed", "up")
             call nar(">She squeezes her tits around your cock.")
             $ ccg1 = 22
             call her_main("This, has to be the perfect cock!","grin","dead")
@@ -616,17 +616,17 @@ label hg_pf_titjob_2:
             call her_main("Everything about it...","base","glance")
             $ ccg1 = 24
             call nar("Hermione tilts her head down and licks the tip of your cock.")
-            call her_main("...........","open_tongue","ahegao")
+            call her_main("...........", "open_tongue", "narrow", "annoyed", "up")
             $ ccg1 = 23
-            call her_main("Perfect taste...","soft","ahegao")
+            call her_main("Perfect taste...", "soft", "narrow", "annoyed", "up")
             m "..."
             $ ccg1 = 25
             call her_main("I think your perfect cock should be shared around the school.","scream","angryCl")
             m "Well, I wouldn't go that far-"
             call her_main("Listen to me, [genie_name]!","angry","angryCl")
-            call her_main("I think it should be worshipped as part of the school curriculum!","soft","ahegao")
+            call her_main("I think it should be worshipped as part of the school curriculum!", "soft", "narrow", "annoyed", "up")
             $ ccg1 = 24
-            call her_main("Girls will be required to come in and bask in it's glory!","open_tongue","ahegao")
+            call her_main("Girls will be required to come in and bask in it's glory!", "open_tongue", "narrow", "annoyed", "up")
             m "OK, I think I've heard enough."
             $ ccg1 = 21
 
@@ -641,7 +641,7 @@ label hg_pf_titjob_2:
             call hg_chibi_transition("tj", trans="d5")
             pause.8
 
-            call her_main(".................","soft","ahegao")
+            call her_main(".................", "soft", "narrow", "annoyed", "up")
             call nar(">Hermione keeps on stroking your cock.","start")
             $ ccg1 = 25
             call nar(">Letting some spit dribble down to help lubricate it.","end")
@@ -652,7 +652,7 @@ label hg_pf_titjob_2:
             $ ccg1 = 22
             call her_main("Excuse me?", "open", "base", "base", "mid", ypos="head")
             $ ccg1 = 23
-            call her_main("Oh...{w} I am a big-titted whore!","soft","ahegao")
+            call her_main("Oh...{w} I am a big-titted whore!", "soft", "narrow", "annoyed", "up")
             m "Good. Glad we established that."
             m "Now I want you to say..."
 
@@ -662,14 +662,14 @@ label hg_pf_titjob_2:
                     $ ccg1 = 22
                     call her_main("Of course.","base","down", ypos="head")
                     $ ccg1 = 24
-                    call her_main("I am a shameless cumslut.","soft","ahegao")
+                    call her_main("I am a shameless cumslut.", "soft", "narrow", "annoyed", "up")
                     $ ccg1 = 21
                     call her_main("A dirty little slut who's addicted to the taste of my headmaster's cum...","grin","dead")
                     m "Yes! Good!"
 
                 "\"I love being covered in cum!\"":
                     $ ccg1 = 24
-                    call her_main("I love being covered in cum!","soft","ahegao", ypos="head")
+                    call her_main("I love being covered in cum!", "soft", "narrow", "annoyed", "up", ypos="head")
                     call her_main("hot...")
                     call her_main("sticky...")
                     call her_main("smelly...")
@@ -720,13 +720,13 @@ label hg_pf_titjob_2:
             call her_main("Well...", "soft", "happy", "base", "R")
             call her_main("She might have started...")
             $ ccg1 = 23
-            call her_main("Playing with herself...","grin","ahegao")
+            call her_main("Playing with herself...", "grin", "narrow", "annoyed", "up")
             with hpunch
             with kissiris
             g4 "Yes, keep going slut"
             call her_main("As I was \"Practising\" on her arm she might have...", "open", "base", "base", "R")
             $ ccg1 = 24
-            call her_main("cum...","soft","ahegao")
+            call her_main("cum...", "soft", "narrow", "annoyed", "up")
             g4 "[hermione_name], you little slut!"
             $ ccg1 = 23
             call her_main("It was just practice!","grin","worriedCl", emote="05")
@@ -761,7 +761,7 @@ label hg_pf_titjob_2_continue:
             call her_main("I do not!","angry","down_raised", ypos="head")
             m "I know. Just say it."
             $ ccg1 = 22
-            call her_main("My father? That's gross, [genie_name]! How could you suggest that I want to fu-","soft","ahegao")
+            call her_main("My father? That's gross, [genie_name]! How could you suggest that I want to fu-", "soft", "narrow", "annoyed", "up")
             m "Come on... Just make something up."
             call her_main("...........","angry","wink")
             call her_main("Well...","open","down")
@@ -770,7 +770,7 @@ label hg_pf_titjob_2_continue:
             call her_main(".......")
             m "Go on [hermione_name]..."
             $ ccg1 = 22
-            call her_main("I press my tits into him...","soft","ahegao")
+            call her_main("I press my tits into him...", "soft", "narrow", "annoyed", "up")
             m "Do you think he enjoys it?"
             call her_main("I'm not sure...", "annoyed", "base", "base", "mid")
             call her_main("I think so...", "soft", "happy", "base", "R")
@@ -781,7 +781,7 @@ label hg_pf_titjob_2_continue:
             call her_main("So that he'll think of me...","base","down")
             call her_main("And how good I felt...","grin","dead")
             $ ccg1 = 24
-            call her_main("Pressing into him...","soft","ahegao")
+            call her_main("Pressing into him...", "soft", "narrow", "annoyed", "up")
             m "That's it slut."
             $ ccg1 = 22
             call her_main("Then I give him a kiss on the forehead...", "soft", "happy", "base", "R")
@@ -796,7 +796,7 @@ label hg_pf_titjob_2_continue:
 
         "{size=-4}\"I love teasing my schoolmates with my perfect tits.\"{/size}":
             $ ccg1 = 23
-            call her_main("I love teasing my schoolmates with my perfect tits...","soft","ahegao", ypos="head")
+            call her_main("I love teasing my schoolmates with my perfect tits...", "soft", "narrow", "annoyed", "up", ypos="head")
             m "Of course you do..."
             call her_main("I love the jealous looks from the other girls...","base","down")
             m "I bet they're jealous..."
@@ -809,9 +809,9 @@ label hg_pf_titjob_2_continue:
             m "And how do you feel..."
             call her_main("So good...","silly","dead")
             call her_main("One time when I was walking back from your office at night I was barely covering them...","angry","wink")
-            call her_main("And as I rounded a corner...","soft","ahegao")
+            call her_main("And as I rounded a corner...", "soft", "narrow", "annoyed", "up")
             $ ccg1 = 24
-            call her_main("A second year boy ran head first into them...","grin","ahegao")
+            call her_main("A second year boy ran head first into them...", "grin", "narrow", "annoyed", "up")
             m "Head first into your tits?"
             call her_main("All I could see was the top of his head...","grin","dead")
             m "What did he do?"
@@ -826,10 +826,10 @@ label hg_pf_titjob_2_continue:
             $ ccg1 = 22
             call her_main("I think I might have broken him though...","base","down")
             $ ccg1 = 21
-            call her_main("Because when I let him go he said nothing. He just stepped back slowly and walked away.","soft","ahegao")
+            call her_main("Because when I let him go he said nothing. He just stepped back slowly and walked away.", "soft", "narrow", "annoyed", "up")
             m "I bet I know where he went..."
             $ ccg1 = 23
-            call her_main("so do i...","soft","ahegao")
+            call her_main("so do i...", "soft", "narrow", "annoyed", "up")
 
     jump hg_pf_titjob_2_cumming
 
@@ -841,7 +841,7 @@ label hg_pf_titjob_2_cumming:
     m "*Hmm*..."
     m "I love your slutty tits.!"
     $ ccg1 = 22
-    call her_main("Thank you [genie_name].","soft","ahegao", ypos="head")
+    call her_main("Thank you [genie_name].", "soft", "narrow", "annoyed", "up", ypos="head")
     $ ccg1 = 23
     call her_main("Shall I rub them some more then?")
     call nar(">Hermione presses her tits together against your cock and starts rubbing it very quickly...")
@@ -972,8 +972,8 @@ label hg_pf_titjob_2_cumming:
             $ ccg1 = 37
             call her_main("I'll just wipe it off and hope that nobody will notice...", "upset", "closed", "base", "mid")
             m "You could lick them clean..."
-            call her_main("You want me to lick your cum off my tits?","soft","ahegao")
-            call her_main("I don't think so, [genie_name]...","soft","ahegao")
+            call her_main("You want me to lick your cum off my tits?", "soft", "narrow", "annoyed", "up")
+            call her_main("I don't think so, [genie_name]...", "soft", "narrow", "annoyed", "up")
             call her_main("{size=-5}Maybe next time...{/size}", "soft", "base", "base", "R")
             call her_main("Will that be all, [genie_name]?", "base", "closed", "base", "mid")
             $ aftersperm = True

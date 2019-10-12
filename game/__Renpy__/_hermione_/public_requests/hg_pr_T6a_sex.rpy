@@ -125,7 +125,7 @@ label hg_pr_sex_T1_intro_E2:
     call her_main("And I did not mind it one bit...","grin","dead")
     her "They did everything they wanted to do to me..."
     her "And everything I wanted to be done to me has been done..."
-    call her_main(".................","soft","ahegao")
+    call her_main(".................", "soft", "narrow", "annoyed", "up")
     call her_main("Will I get paid for this, [genie_name]?","angry","wink")
 
     jump end_hg_pr_sex

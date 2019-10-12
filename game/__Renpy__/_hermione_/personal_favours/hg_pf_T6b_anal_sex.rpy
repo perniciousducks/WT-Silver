@@ -308,7 +308,7 @@ label hg_anal_sex_1:
 
             call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}","silly","dead",ypos="head")
             g4 "Yes!!! All over your ass!"
-            call her_main("Ah... It's so hot!","silly","ahegao")
+            call her_main("Ah... It's so hot!", "silly", "narrow", "annoyed", "up")
             hide screen bld1
             with d1
             call ctc
@@ -370,7 +370,7 @@ label hg_anal_sex_2:
         call hg_chibi_transition("sex_slow", trans="d5")
 
     g4 "Oh, ye-es!"
-    call her_main("Ah...","soft","ahegao")
+    call her_main("Ah...", "soft", "narrow", "annoyed", "up")
     m "It seems like your butthole became a bit more welcoming, [hermione_name]."
     call her_main("Ah... It still hurts a little.","base","glance")
     call her_main("And please, just call me \"whore\", [genie_name].","base","suspicious")
@@ -415,7 +415,7 @@ label hg_anal_sex_2:
             call her_main("Ah...{image=textheart}", "open", "closed", "base", "mid")
             m "You will make some lucky guy a very happy man one day, whore."
             m "Ehm, I mean, [hermione_name]."
-            call her_main("No, \"whore\" is good. Call me that, [genie_name].","silly","ahegao")
+            call her_main("No, \"whore\" is good. Call me that, [genie_name].", "silly", "narrow", "annoyed", "up")
             m "There, you see? You are a great catch, I'm telling you, whore."
             call her_main("Ah...{image=textheart} Thank you, [genie_name].","angry","dead",cheeks="blush",tears="crying")
             m "Huh?"
@@ -448,7 +448,7 @@ label hg_anal_sex_2:
 
     call her_main("Among other things, [genie_name]...{image=textheart}{image=textheart}{image=textheart}","silly","dead",ypos="head")
     m "Among other things?"
-    call her_main("I'm cumming [genie_name]...{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","ahegao")
+    call her_main("I'm cumming [genie_name]...{image=textheart}{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up")
     g4 "Agh! My cock!"
     g4 "Relax your muscles a little, would you?"
     call her_main("BUT I'M CUMMING!{image=textheart}{image=textheart}{image=textheart}","open","worriedCl")
@@ -472,7 +472,7 @@ label hg_anal_sex_2:
 
             call her_main("!!!", "scream", "wide", "base", "stare",ypos="head")
             m "Yes! Argh!"
-            call her_main("Ah!{image=textheart} It's filling me up!{image=textheart} I can feel it!{image=textheart}","silly","ahegao")
+            call her_main("Ah!{image=textheart} It's filling me up!{image=textheart} I can feel it!{image=textheart}", "silly", "narrow", "annoyed", "up")
             m "Shut up, whore!"
             call her_main("Ah! I AM A WHORE!!!!{image=textheart}{image=textheart}{image=textheart}","scream","worriedCl",cheeks="blush",tears="crying")
             m "Agh!"
@@ -499,7 +499,7 @@ label hg_anal_sex_2:
             call her_main("Ah...{image=textheart} your cum...{image=textheart}","angry","dead",cheeks="blush",tears="crying")
             call her_main("I'm so full...{image=textheart}{image=textheart}{image=textheart}")
             g4 "Yes!!! All over your ass!"
-            call her_main("Ah... It's so hot!","silly","ahegao")
+            call her_main("Ah... It's so hot!", "silly", "narrow", "annoyed", "up")
 
 
     #Ending

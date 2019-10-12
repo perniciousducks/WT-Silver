@@ -142,7 +142,7 @@ label chit_chat:
             call her_main("I'm an awful daughter...","angry","down_raised")
 
         elif one_of_ten == 6:
-            call her_main("*Yawn!* I read about this technique that supposedly allows you to cut your sleep time in half...","annoyed","ahegao")
+            call her_main("*Yawn!* I read about this technique that supposedly allows you to cut your sleep time in half...", "annoyed", "narrow", "annoyed", "up")
             call her_main("It don't think it's working though.... *Yawn!*","annoyed","down")
 
         elif one_of_ten == 7:
@@ -410,7 +410,7 @@ label chit_chat:
 
         elif one_of_ten == 8:
             call her_main("Sir, could you put your penis in my mouth?", "angry", "base", "base", "mid")
-            call her_main("Sir, I am begging you...","open_wide_tongue","ahegao")
+            call her_main("Sir, I am begging you...", "open_wide_tongue", "narrow", "annoyed", "up")
             call her_main("Fifty five points, please!","smile","angry")
             call her_main("","angry","wink")
 
@@ -463,13 +463,13 @@ label chit_chat:
         elif one_of_ten == 7:
             call her_main("Considering the nature of the favours you keep buying from me sir...", "open", "closed", "base", "mid") 
             call her_main("I seldom bother to put on underwear at all anymore...","open","worried")
-            call her_main("(Not that I complain anyway..)","soft","ahegao") 
+            call her_main("(Not that I complain anyway..)", "soft", "narrow", "annoyed", "up") 
         
         elif one_of_ten == 8:
             call her_main("Sir, could you put your penis in my mouth?", "angry", "base", "base", "mid") 
-            call her_main("Sir, I am begging you...","open_wide_tongue","ahegao") 
+            call her_main("Sir, I am begging you...", "open_wide_tongue", "narrow", "annoyed", "up") 
             call her_main("Fifty five points, please!","smile","angry")
-            call her_main("(Although I wouldn't mind doing it for free..).","smile","ahegao")
+            call her_main("(Although I wouldn't mind doing it for free..).", "smile", "narrow", "annoyed", "up")
 
         elif one_of_ten == 9:
             call her_main("Remember when I told you about this one article...", "open", "closed", "base", "mid") 

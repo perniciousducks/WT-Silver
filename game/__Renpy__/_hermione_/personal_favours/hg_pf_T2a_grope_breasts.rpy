@@ -416,7 +416,7 @@ label hg_pf_grope_breasts_T4_naked: # No top.
     call slap_her
 
     call nar(">Hermione's tits bounce all over the place, completely out of control")
-    call her_main("A-ah!!! Ah!!! A-a-aha!!!","silly","ahegao", cheeks="blush", tears="soft")
+    call her_main("A-ah!!! Ah!!! A-a-aha!!!", "silly", "narrow", "annoyed", "up", cheeks="blush", tears="soft")
     m "You enjoy this. Admit it."
     call her_main("...........","base","dead", cheeks="blush", tears="soft")
     call nar(">You smack her tits again.")
@@ -425,7 +425,7 @@ label hg_pf_grope_breasts_T4_naked: # No top.
     call slap_her
     call slap_her
 
-    call her_main("A-ah! Yes! I do, I do! A-ah...","silly","ahegao", cheeks="blush", tears="soft")
+    call her_main("A-ah! Yes! I do, I do! A-ah...", "silly", "narrow", "annoyed", "up", cheeks="blush", tears="soft")
     call her_main("...does this mean I'm a pervert, [genie_name]?","angry","worried", cheeks="blush", tears="soft")
     m "What?"
     m "Stop being silly, [hermione_name]."
@@ -436,7 +436,7 @@ label hg_pf_grope_breasts_T4_naked: # No top.
     call nar(">You give her tits one more slap!")
     call slap_her
 
-    call her_main("A-ah... Yes... Thank you, [genie_name].","silly","ahegao", cheeks="blush", tears="soft")
+    call her_main("A-ah... Yes... Thank you, [genie_name].", "silly", "narrow", "annoyed", "up", cheeks="blush", tears="soft")
     m "Well... Enough with the slapping for now..."
 
     return
@@ -452,7 +452,7 @@ label hg_pf_grope_breasts_T5_naked:
     call ctc
 
     show screen blktone
-    call her_main("Ah...","soft","ahegao")
+    call her_main("Ah...", "soft", "narrow", "annoyed", "up")
     m "A bit sensitive today, aren't you?"
     call her_main("I suppose...","base","glance")
     call her_main("Ah...","open","worriedCl")

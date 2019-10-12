@@ -96,10 +96,10 @@ label quidditch_commentator_event_2:
     call her_main("The speeches...", "grin", "happy", "base", "mid")
 
     if her_whoring < 18:
-        call her_main("The paper...","soft","ahegao")
+        call her_main("The paper...", "soft", "narrow", "annoyed", "up")
         call her_main("The {image=textheart}{i}preparation{/i}{image=textheart}...","open_tongue","ahegao_raised")
     else:
-        call her_main("Everybody will be focused on me...","soft","ahegao")
+        call her_main("Everybody will be focused on me...", "soft", "narrow", "annoyed", "up")
 
     call her_main("I accept!","scream","angryCl",trans="hpunch")
     g4 "I thought you just said you didn't..."

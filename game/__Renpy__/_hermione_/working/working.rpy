@@ -426,7 +426,7 @@ label slytherin_cheer_responses:
                 m "What are you talking about? You were supposed to be a cheerleader."
                 m "You know, cheering..."
                 m "And all that."
-                call her_main("I am [genie_name]. I just performed a different type of cheer today.","soft","ahegao")
+                call her_main("I am [genie_name]. I just performed a different type of cheer today.", "soft", "narrow", "annoyed", "up")
                 m "And by that you mean jerking off the entire Slytherin team?"
                 call her_main("Well that's not how it started. I was initially just giving them a bit of a dance in the locker room...","angry","down_raised")
                 her "And one thing led to another."
@@ -578,7 +578,7 @@ label hermione_helping_selling_cards:
         call her_main("Well, I didn't have anywhere to store the packs as you could imagine.","base","down", cheeks="blush")
         call her_main("So I had to resort to putting them behind my suspenders and the top of my stockings...", "open", "closed", "base", "mid", cheeks="blush")
         call her_main("And one customer got a bit...", "normal", "closed", "base", "mid", cheeks="blush")
-        call her_main("Touchy.","base","ahegao", cheeks="blush")
+        call her_main("Touchy.", "base", "narrow", "annoyed", "up", cheeks="blush")
         m "I see..."
         call her_main("I did get a bit agitated at one point actually...", "open", "closed", "base", "mid", cheeks="blush")
         g4 "They didn't fire you did they?"

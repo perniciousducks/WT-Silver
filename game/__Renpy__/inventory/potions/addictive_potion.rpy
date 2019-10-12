@@ -322,7 +322,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call nar(">You start pumping your cock quickly and explode all over the young witch's face")
             m "Take it you filthy cum slut!"
             call cum_block
-            call her_main("{size=+5}!!!{/size}","soft","ahegao")
+            call her_main("{size=+5}!!!{/size}", "soft", "narrow", "annoyed", "up")
             hide screen hermione_main
             call nar(">Hermione immediately starts masturbating shamelessly in front of you.")
             call her_main("{size=+5}I'm cumming{/size}", "angry", "base", "base", "mid")
@@ -398,7 +398,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             with vpunch
             hide screen hermione_main
             call nar(">Hermione's hand shoots under her skirt as she starts violently orgasming.")
-            call her_main("What's wrong with me [genie_name]?","silly","ahegao")
+            call her_main("What's wrong with me [genie_name]?", "silly", "narrow", "annoyed", "up")
             hide screen hermione_main
             m "A lot of things [hermione_name], considering you just ate my cum off the ground."
             call her_main("I can't stop cumming...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
@@ -664,10 +664,10 @@ label potion_scene_3_3_1: #Hypno potion
         call set_her_action("none","skip_update")
         pause.5
 
-        call her_main("That's soooooo much better!","soft","ahegao")
+        call her_main("That's soooooo much better!", "soft", "narrow", "annoyed", "up")
 
     if hermione_wear_bottom:
-        call her_main("It really suuuuucks that I have to wear anything at all in this boring nunnery...","annoyed","ahegao")
+        call her_main("It really suuuuucks that I have to wear anything at all in this boring nunnery...", "annoyed", "narrow", "annoyed", "up")
         call her_main("(Why can't I wear something shorter. A skirt, but...)")
         call her_main("(A reeealy short one!!!{image=textheart}{image=textheart}{image=textheart})",face="horny")
 
@@ -726,7 +726,7 @@ label potion_scene_3_3_1: #Hypno potion
     menu:
         g9"!!!"
         "-You look amazing!-":
-            call her_main("Thank youuuuu!!!{image=textheart}{image=textheart}{image=textheart}","grin","ahegao")
+            call her_main("Thank youuuuu!!!{image=textheart}{image=textheart}{image=textheart}", "grin", "narrow", "annoyed", "up")
             call her_main("Aaaaanyway...", "open", "base", "base", "R")
             call her_main("Is there anything you want from me mistah... I'll do anything!{image=textheart}","soft","glance")
         "-Where is your badge, cumslut?!-" if cum_badge_ITEM.unlocked:
@@ -749,7 +749,7 @@ label potion_scene_3_3_1: #Hypno potion
     m "I'm just going to ask you a few questions."
     call her_main("(...)","annoyed","angry")
     call her_main("(And here I hoped he'd just ask to fuck...)","annoyed","angryL")
-    call her_main("(Questions are so boooring! I hope they are at least naughty...)","annoyed","ahegao")
+    call her_main("(Questions are so boooring! I hope they are at least naughty...)", "annoyed", "narrow", "annoyed", "up")
     call her_main("Are those questions going to be hard, mistah?","grin","worriedCl",emote="05")
     call her_main("I don't like hard questions.","grin","worriedCl")
     m "Don't worry they'll be nice and easy for you."
@@ -771,7 +771,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("Even happier? {size=+10}YAY!{/size}","smile","happyCl",emote="06")
     call her_main("So how am I going to be happier? Am I going to get naked?", "grin", "base", "base", "R")
     m "That'd be a good start."
-    call her_main("{image=textheart}AAAAAAWWWEEESOOOOOOOOMMME!{image=textheart}","grin","ahegao")
+    call her_main("{image=textheart}AAAAAAWWWEEESOOOOOOOOMMME!{image=textheart}", "grin", "narrow", "annoyed", "up")
 
     call set_her_action("lift_top")
     pause.5
@@ -783,7 +783,7 @@ label potion_scene_3_3_1: #Hypno potion
 
     call her_main("You know they don't let us walk around naked at school?","annoyed","angryL")
     m "Really? I can't imagine why not."
-    call her_main("I know right? It's like so dumb! Everyone would just be happier{image=textheart} if they got to be naked.","soft","ahegao")
+    call her_main("I know right? It's like so dumb! Everyone would just be happier{image=textheart} if they got to be naked.", "soft", "narrow", "annoyed", "up")
 
     call set_her_action("lift_skirt")
     pause.5
@@ -802,7 +802,7 @@ label potion_scene_3_3_1: #Hypno potion
     call set_her_action("lift_breasts")
 
     call her_main("Like this? This feels sooooo gooood!","base","down")
-    call her_main("It's like mah hands are moving on their own...","soft","ahegao")
+    call her_main("It's like mah hands are moving on their own...", "soft", "narrow", "annoyed", "up")
     call her_main("It's soooo goodd but It's weeeiiird... I need something... anything...","open","worriedCl")
     m "Would you like to touch yourself down there?"
     call her_main("Yes mistah [genie_name]. please.","shock","worriedCl")
@@ -816,21 +816,21 @@ label potion_scene_3_3_1: #Hypno potion
             m "Anything?"
             call her_main("Anything. I just need to feel happy...","silly","worried",cheeks="blush",tears="soft")
             m "Tell me what you are and I'll let you."
-            call her_main("I'm Hermione, the school slut.","grin","ahegao")
+            call her_main("I'm Hermione, the school slut.", "grin", "narrow", "annoyed", "up")
             m "More."
-            call her_main("geez, I'm a dumb bimbo fuckbunny... that just wants to feel happy...","silly","ahegao")
+            call her_main("geez, I'm a dumb bimbo fuckbunny... that just wants to feel happy...", "silly", "narrow", "annoyed", "up")
             m "And what makes you happy?"
             call her_main("Making you happy{image=textheart} [genie_name].","silly","dead")
             m "Good girl."
         "-let her touch herself-":
             m "Go on then."
-            call her_main("Thank you soooo{image=textheart} much [genie_name]!","silly","ahegao")
+            call her_main("Thank you soooo{image=textheart} much [genie_name]!", "silly", "narrow", "annoyed", "up")
 
     call set_her_action("covering")
-    call her_main("This is soooo goood","grin","ahegao")
+    call her_main("This is soooo goood", "grin", "narrow", "annoyed", "up")
     call her_main("Mistah [genie_name] can you please do something for me?","grin","wink",cheeks="blush")
     m "What's that?"
-    call her_main("If it's not tooo much trouble could you...","silly","ahegao")
+    call her_main("If it's not tooo much trouble could you...", "silly", "narrow", "annoyed", "up")
     call nar(">Hermione starts pinching her nipple.")
     call set_her_action("pinch")
     call her_main("could you please cum on me?","open_tongue","ahegao_raised",cheeks="blush")
@@ -909,9 +909,9 @@ label potion_scene_3_3_1: #Hypno potion
             call her_main("{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised",cheeks="blush")
 
     call gen_chibi("hold_dick","desk","base")
-    call her_main("...","grin","ahegao")
+    call her_main("...", "grin", "narrow", "annoyed", "up")
     $ hermione_dribble = True
-    call her_main("That felt {size=+5}SOOOOO!{/size} good!","silly","ahegao")
+    call her_main("That felt {size=+5}SOOOOO!{/size} good!", "silly", "narrow", "annoyed", "up")
     call set_her_action("lift_breasts")
 
     call her_main("Can we do it again! Please! Pretty please! Pretty please with cum on top!","silly","dead")
@@ -961,7 +961,7 @@ label potion_scene_3_4_1:
     g4 "Well, it might be a bit hard for you to attend class with my cock buried in your tight little pussy."
     call her_main("Oh...", "soft", "happy", "base", "R")
     m "That's not going to be a problem is it [hermione_name]?"
-    call her_main("of course not [genie_name]! Let me just take my clothes off...","grin","ahegao")
+    call her_main("of course not [genie_name]! Let me just take my clothes off...", "grin", "narrow", "annoyed", "up")
 
     show screen blkfade
     with d3

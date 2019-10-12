@@ -492,7 +492,7 @@ label hg_pr_flash_T3_E2:
     m "Dull or not..."
     m "I only want to know what actually happened..."
     m "Keep your fantasies to yourself, [hermione_name]."
-    call her_main("As you wish, [genie_name].","annoyed","ahegao")
+    call her_main("As you wish, [genie_name].", "annoyed", "narrow", "annoyed", "up")
     her "My friend Ginny walked in on my flashing my tits to that guy."
     her "But She promised me that she won't tell anyone."
     call her_main("And that's all that happened, [genie_name]...", "soft", "base", "base", "mid")

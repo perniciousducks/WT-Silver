@@ -38,7 +38,7 @@ label hg_pf_admire_breasts:
     elif her_tier <= 5:
         call her_main("", "base", "base", "base", "R", xpos="mid", ypos="base", trans="fade")
     else:
-        call her_main("","base","ahegao", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "base", "narrow", "annoyed", "up", xpos="mid", ypos="base", trans="fade")
 
 
     # Points

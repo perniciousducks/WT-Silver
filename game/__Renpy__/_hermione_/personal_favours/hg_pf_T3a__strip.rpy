@@ -1022,7 +1022,7 @@ label hg_pf_strip_T2_E2:
     if her_tier <= 5:
         call her_main("Of course, [genie_name]...", "base", "base", "base", "mid", xpos="base", ypos="base")
     else:
-        call her_main("I'd love to, [genie_name]!","open_tongue","ahegao", xpos="base", ypos="base")
+        call her_main("I'd love to, [genie_name]!", "open_tongue", "narrow", "annoyed", "up", xpos="base", ypos="base")
 
     jump hg_pf_strip_T2
 
@@ -1048,7 +1048,7 @@ label hg_pf_strip_T2:
         if her_tier <= 5:
             call her_main("Of course...", "base", "base", "base", "mid")
         else:
-            call her_main("(How boring...)","annoyed","ahegao")
+            call her_main("(How boring...)", "annoyed", "narrow", "annoyed", "up")
 
         call hide_characters
         hide screen bld1
@@ -1459,7 +1459,7 @@ label hg_pf_strip_T2_masturbate:
         m "Aha... Yeah... This feels great..."
         call her_main("You came all over me...", "soft", "happy", "base", "R")
         call her_main("I am your pupil and...")
-        call her_main("You just came on me...","grin","ahegao")
+        call her_main("You just came on me...", "grin", "narrow", "annoyed", "up")
         g9 "I know! Pretty exciting stuff, huh?!"
         call her_main("Nothing of that sort!", "open", "base", "base", "R")
         call her_main("You should have restrained yourself like a proper headmaster would!")

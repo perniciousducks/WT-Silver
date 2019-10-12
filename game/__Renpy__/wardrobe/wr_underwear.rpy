@@ -153,7 +153,7 @@ label equip_bra:
                     # m "You don't mind wearing this, even in classes?"
                     # call her_main("Why? Oh right, the holes...","soft","down")
                     # call her_main("I can just cover myself with some books if I have to...", "open", "closed", "base", "mid")
-                    # call her_main("(Not that I'd want to!)","base","ahegao")
+                    # call her_main("(Not that I'd want to!)", "base", "narrow", "annoyed", "up")
                 # else: #Fail
                     # if her_whoring < 8:
                         # call her_main("What? [genie_name] why would you give me a bra?","shock","shocked")
@@ -186,7 +186,7 @@ label equip_bra:
                 # if her_whoring >= 20: #Success
                     # call her_main("Pasties?... My tits might as well be completely exposed if I were to wear those...","soft","down")
                     # g9 "Just leaving enough to the imagination!"
-                    # call her_main("Hmm... I can already see the boys imagine doing all kinds of things with them...","open","ahegao")
+                    # call her_main("Hmm... I can already see the boys imagine doing all kinds of things with them...", "open", "narrow", "annoyed", "up")
                     # call her_main("They always tell me how great my breasts look!","base","glance")
                 # else: #Fail
                     # if her_whoring < 11:
@@ -474,7 +474,7 @@ label equip_panties:
                     # m "Really? You don't mind wearing them, even in classes?"
                     # call her_main("Why? Oh right, there is a hole in it...","soft","down")
                     # call her_main("I can just cover myself with some books if I have to...", "open", "closed", "base", "mid")
-                    # call her_main("(Not that I'd want to!)","base","ahegao")
+                    # call her_main("(Not that I'd want to!)", "base", "narrow", "annoyed", "up")
                 # else: #Fail
                     # if her_whoring < 8:
                         # call her_main("What? [genie_name] why would you give me panties?","shock","shocked")

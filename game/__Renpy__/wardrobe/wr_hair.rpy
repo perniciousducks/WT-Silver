@@ -100,7 +100,7 @@ label change_hair:
                 # m "I want you to change your hair back to brown."
                 # if her_whoring < 5:
                     # call her_main("Gladly, [genie_name].", "open", "closed", "base", "mid")
-                    # call her_main("(I hate having people stare at me...)","annoyed","ahegao")
+                    # call her_main("(I hate having people stare at me...)", "annoyed", "narrow", "annoyed", "up")
                     # call her_main("I will go and change it.", "base", "base", "base", "R")
                 # elif her_whoring < 11:
                     # call her_main("Of course, [genie_name].", "open", "base", "base", "mid")
@@ -159,7 +159,7 @@ label change_hair:
                         # call her_main("Oh wow, it looks pretty. I really like it!", "soft", "base", "base", "mid")
                         # call her_main("It will make me look just like Ginny!","smile","happyCl")
                         # call her_main("(although she's a bit shorter than me,... and her hair isn't as curly.)", "annoyed", "base", "base", "mid")
-                        # call her_main("(I wonder if the teachers will notice should we switch places in class...)","grin","ahegao")
+                        # call her_main("(I wonder if the teachers will notice should we switch places in class...)", "grin", "narrow", "annoyed", "up")
                         # call her_main("(Only one way to find out!)","smile","glance")
                         # call her_main("Let me go change it!","base","glance")
                     # else: #20+
@@ -270,7 +270,7 @@ label change_hair:
                 # else:
                     # call her_main("Purple?","angry","wink")
                     # call her_main("I do like the colour, but...", "soft", "base", "base", "R")
-                    # call her_main("I don't think I want to wear it on my head...","annoyed","ahegao")
+                    # call her_main("I don't think I want to wear it on my head...", "annoyed", "narrow", "annoyed", "up")
                     # call her_main("I have to refuse, [genie_name].", "normal", "base", "base", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 11."

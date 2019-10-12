@@ -39,7 +39,7 @@ label equip_makeup:
             # $ h_lipstick = makeup_choice
 
         # else: #Nude
-            # call her_main("You want me to take the lipstick off?","annoyed","ahegao")
+            # call her_main("You want me to take the lipstick off?", "annoyed", "narrow", "annoyed", "up")
             # call her_main("Alright then...","annoyed","down")
             # hide screen hermione_main
             # with d5
@@ -84,7 +84,7 @@ label equip_makeup:
                         # menu:
                             # "-Covered-":
                                 # $ makeup_choice = "fake_cum_2"
-                                # call her_main("Mmmm, thank you [genie_name]...","grin","ahegao")
+                                # call her_main("Mmmm, thank you [genie_name]...", "grin", "narrow", "annoyed", "up")
                             # "-Face-":
                                 # $ makeup_choice = "fake_cum_3"
                                 # call her_main("Oh. Alright then [genie_name]...","upset","concerned")

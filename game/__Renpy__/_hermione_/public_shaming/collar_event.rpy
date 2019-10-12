@@ -279,10 +279,10 @@ label whore_scene: #(locked behind the public her_whoring flag)
     hide screen hermione_main
     m "Don't try and act innocent with me [hermione_name]. I know what you do in the dormitories after dark."
     m "Just admit what you are."
-    call her_main("{size=-5}I'm a whore.{/size}","grin","ahegao")
+    call her_main("{size=-5}I'm a whore.{/size}", "grin", "narrow", "annoyed", "up")
     hide screen hermione_main
     m "What was that, I couldn't hear you ever the sound of me fucking you."
-    call her_main("I'm a whore.","silly","ahegao")
+    call her_main("I'm a whore.", "silly", "narrow", "annoyed", "up")
     hide screen hermione_main
     m "Very good, now beg me."
     call her_main("Beg you to what?","silly","dead")
@@ -474,7 +474,7 @@ label slave_scene:
     call her_main("I'm cumming!", "scream", "wide", "base", "stare")
     hide screen hermione_main
     ">You continue to shoot ropes of cum into her asshole."
-    call her_main("Thank you sir.","soft","ahegao")
+    call her_main("Thank you sir.", "soft", "narrow", "annoyed", "up")
     hide screen hermione_main
 
     call slap_her

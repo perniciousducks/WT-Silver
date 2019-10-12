@@ -339,9 +339,6 @@ label hermione_summon_setup:
     call her_chibi("stand","mid","base")
     with d3
 
-    call load_hermione_clothing_saves
-    call update_her_uniform
-
     #Hermione greeting.
     call play_music("hermione_theme")
     if her_mood >= 1:

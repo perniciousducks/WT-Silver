@@ -838,7 +838,7 @@ label potion_scene_11_3: #Milking potion part 3
         call her_main("please... let it turn off...","angry","suspicious",cheeks="blush",tears="messy")
         m "(What did snape say again? untellable extension ham?)"
         m "Well i should have mentioned something about that cannister being extended invisibly...."
-        call her_main("Did you put an undetectable extension charm on this cannister?","open","surprised",cheeks="blush",tears="messy")
+        call her_main("Did you put an undetectable extension charm on this cannister?", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
         call her_main("{size=+5}did you?!{/size}","scream","suspicious",cheeks="blush",tears="messy")
         m "Possibly."
         call her_main("no...","scream","worriedCl",cheeks="blush",tears="messy")

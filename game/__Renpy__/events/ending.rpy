@@ -563,7 +563,7 @@ label ball_ending_E2:
     mal2 "Like hell you were!"
     mal "Alright, pal! That does it!"
     mal2 "I'm not your \"pal\", buddy!"
-    call her_main("..............","open","surprised")
+    call her_main("..............", "open", "wide", "worried", "stare")
     show screen blktone8
     with d3
 
@@ -898,7 +898,7 @@ label ball_ending_E2:
         sna "You are about to miss your own coronation, girl!"
         sna "(Not that I care...)"
 
-        call her_main("The coronation! I must go now!","open","surprised")
+        call her_main("The coronation! I must go now!", "open", "wide", "worried", "stare")
         call play_sound("running")
         pause 3
 
@@ -2280,7 +2280,7 @@ label ball_ending_E2:
         with hpunch
         with kissiris
 
-        call her_main("{size=+5}Ahh!!!{/size}","open","surprised",cheeks="blush",tears="soft")
+        call her_main("{size=+5}Ahh!!!{/size}", "open", "wide", "worried", "stare",cheeks="blush",tears="soft")
         g4 "Oh, yes!"
 
         call cg_scene("46")
@@ -2444,17 +2444,17 @@ label ball_ending_E2:
 
         ### INSERTION ###
 
-        call her_main("Ah...","open","surprised",cheeks="blush",tears="soft", ypos="head")
+        call her_main("Ah...", "open", "wide", "worried", "stare",cheeks="blush",tears="soft", ypos="head")
         call her_main("Sir, no. You must listen to me--", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
 
-        call her_main("{size=+7}!!!!!!!!!!!!!!!!!{/size}","scream","surprised",cheeks="blush",tears="soft")
+        call her_main("{size=+7}!!!!!!!!!!!!!!!!!{/size}", "scream", "wide", "worried", "stare",cheeks="blush",tears="soft")
         call her_main("My...{w} My...{w} My...")
         m "Shut it, girl! You are being loud."
         with hpunch
-        call her_main("{size=+7}My anus!!!!!!!!!!!!!{/size}","scream","surprised",cheeks="blush",tears="soft")
+        call her_main("{size=+7}My anus!!!!!!!!!!!!!{/size}", "scream", "wide", "worried", "stare",cheeks="blush",tears="soft")
         g4 "Dammit, girl. I said, be quiet."
 
         call cg_scene("63")

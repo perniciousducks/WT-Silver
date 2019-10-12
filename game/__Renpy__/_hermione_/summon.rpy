@@ -718,7 +718,7 @@ label hermione_change:
             call her_main("","base","happy",cheeks="blush")
     elif temp_name == "Slut":
         if her_whoring >=15 and her_whoring < 17:
-            call her_main("[genie_name]?!","shock","surprised")
+            call her_main("[genie_name]?!", "shock", "wide", "worried", "stare")
             call her_main("You can't just call someone that!", "mad", "wide", "base", "stare")
             m "It'll just be between us..."
             call her_main("...","disgust","suspicious")
@@ -734,7 +734,7 @@ label hermione_change:
             call her_main("I don't mind...", "smile", "happyCl", "base", "mid",cheeks="blush")
     elif temp_name == "Cumslut":
         if her_whoring >= 17 and her_whoring < 19:
-            call her_main("A cumslut?!","open","surprised")
+            call her_main("A cumslut?!", "open", "wide", "worried", "stare")
             m "Something wrong?"
             call her_main("You have to even ask?", "soft", "narrow", "worried", "down", cheeks="blush")
             call her_main("This is so degrading...", "normal", "narrow", "base", "down",cheeks="blush")
@@ -768,7 +768,7 @@ label hermione_change:
                     call her_main("B-but, [genie_name]?!","mad","wide_stare", emote="02")
                     call her_main("","mad","wide_stare")
                     m "I must apologize {b}Miss Granger{/b}, I thought we had come to some kind of agreeable arrangement by now..."
-                    call her_main("But I...","mad","surprised")
+                    call her_main("But I...", "mad", "wide", "worried", "stare")
                     m "...I should have known better to believe that this sort of thing would work out..."
                     call her_main("Maybe I coul-...","clench","WorriedCl")
                     m "...I thought we both had what we wanted..."

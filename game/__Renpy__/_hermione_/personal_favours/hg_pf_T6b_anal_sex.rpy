@@ -101,7 +101,7 @@ label hg_anal_sex_1:
             call her_main("And now my tiny asshole is getting ripped to pieces... *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             g4 "Yes! Yes!"
             g4 "Agrh! Yes!"
-            call her_main("No! Is it getting bigger?! I'm scared!","open","surprised",cheeks="blush",tears="messy")
+            call her_main("No! Is it getting bigger?! I'm scared!", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             g4 "ARGH!"
 
         "\"Suck me off first. Lubricate my cock!\"":
@@ -230,19 +230,19 @@ label hg_anal_sex_1:
             call cum_block
             call ctc
 
-            call her_main("AH! IT'S FILLING ME UP!{image=textheart}{image=textheart}{image=textheart}","open","surprised",cheeks="blush",tears="messy")
+            call her_main("AH! IT'S FILLING ME UP!{image=textheart}{image=textheart}{image=textheart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             g4 "Yes, you whore! Yes!"
             call her_main("It hurts, it hurts!","angry","suspicious",cheeks="blush",tears="messy")
             g4 "Shut up!"
             with hpunch
-            call her_main("No, I am already full! Stop cumming, you bastard!","scream","surprised",cheeks="blush",tears="messy")
+            call her_main("No, I am already full! Stop cumming, you bastard!", "scream", "wide", "worried", "stare",cheeks="blush",tears="messy")
             g4 "Shut the fuck up, slut! I am not done yet!"
             call her_main("No! Please! My stomach! I will explode!","scream","suspicious",cheeks="blush",tears="messy")
             g4 "ARGH!"
-            call her_main("No, I think I will throw up...","open","surprised",cheeks="blush",tears="messy")
+            call her_main("No, I think I will throw up...", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             with hpunch
             play sound "sounds/burp.mp3"
-            call her_main("{size=+7}*BURP!*!!!!!{/size}","full","surprised",tears="messy")
+            call her_main("{size=+7}*BURP!*!!!!!{/size}", "full", "wide", "worried", "stare",tears="messy")
             call her_main(".......................", "full", "base", "base", "mid",tears="messy")
             call her_main(".............")
             $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
@@ -428,10 +428,10 @@ label hg_anal_sex_2:
             call her_main("Yes... After all the things I had to do for my house...")
             call her_main("...no one will ever want me...","angry","suspicious",cheeks="blush",tears="messy")
             m "Oh, they will want you alright!"
-            call her_main("What? But you said...","open","surprised",cheeks="blush",tears="messy")
+            call her_main("What? But you said...", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             m "Marriage, [hermione_name]. Marriage is impossible for you."
             m "But as a man-pleaser you are a great catch!"
-            call her_main("Really?","open","surprised",cheeks="blush",tears="messy")
+            call her_main("Really?", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             m "Are you kidding me?!"
             m "Young, hot and slutty. You could have any man you want!"
             m "Or a wizard or whatever you are into..."
@@ -476,7 +476,7 @@ label hg_anal_sex_2:
             m "Shut up, whore!"
             call her_main("Ah! I AM A WHORE!!!!{image=textheart}{image=textheart}{image=textheart}","scream","worriedCl",cheeks="blush",tears="crying")
             m "Agh!"
-            call her_main("Ah...{image=textheart} your cum, [genie_name]...{image=textheart}","open","surprised",cheeks="blush",tears="messy")
+            call her_main("Ah...{image=textheart} your cum, [genie_name]...{image=textheart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             m "Yes, yes..."
             call her_main("Ah...{image=textheart}","angry","suspicious",cheeks="blush",tears="messy")
             m "......"

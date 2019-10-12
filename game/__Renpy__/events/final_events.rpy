@@ -456,7 +456,7 @@ label ball_quest_E3:
     call her_main("Oh, you wouldn't understand...","angry","suspicious", cheeks="blush", tears="messy")
     call her_main("You're just like my father!", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
     m "I beg your pardon?"
-    call her_main("I mean... ehm...","open","surprised", cheeks="blush", tears="messy")
+    call her_main("I mean... ehm...", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
     her "Forgive me sir..."
     call her_main("I don't know why I am telling you all of this...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     m "................"
@@ -565,9 +565,9 @@ label ball_quest_E5:
     call her_main("I cannot believe that you would do something like that for me...","angry","suspicious", cheeks="blush", tears="messy")
     m "Well, I did. Now stop crying."
     call her_main("I can't, sir. I am so happy and so grateful...","scream","worriedCl", cheeks="blush", tears="messy")
-    call her_main("Do you want me to suck your cock, sir?","open","surprised", cheeks="blush", tears="messy")
+    call her_main("Do you want me to suck your cock, sir?", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
     m "What?"
-    call her_main("Because I will do it!","open","surprised", cheeks="blush", tears="messy")
+    call her_main("Because I will do it!", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
     her "And I will swallow and everything!"
     call her_main("And you wouldn't have to pay me a single house point!", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     m "uhm... Maybe some other time..."

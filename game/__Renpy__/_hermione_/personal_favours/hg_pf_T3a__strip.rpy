@@ -332,7 +332,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     call her_main("It's stuck...","angry","worriedCl", cheeks="blush")
     call her_main("It won't budge...","angry","worriedCl", cheeks="blush")
     call her_main("Why won't it budge?! *sob*","angry","worriedCl", cheeks="blush")
-    call her_main("No, I can't do this, [genie_name]! *sob*","open","surprised", cheeks="blush", tears="messy")
+    call her_main("No, I can't do this, [genie_name]! *sob*", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
     m "What?"
     call her_main("I thought I could, but...","angry","suspicious", cheeks="blush", trans="fade")
     call her_main("Stripping for points, [genie_name]?","angry","suspicious", cheeks="blush")

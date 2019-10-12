@@ -149,7 +149,7 @@ label a_bad_time_to_disrobe_part_1:
     m "\"Well, that's a shame.\""
     call her_main("One of the boys saw me shuffle and moved to see what it was so I tried to get away but I slipped...and...and.", "upset", "wide", "base", "shocked", tears="mascara")
     g11 "And what?"
-    call her_main("And I slipped and my butt fell out!","scream","surprised", tears="mascara")
+    call her_main("And I slipped and my butt fell out!", "scream", "wide", "worried", "stare", tears="mascara")
 
     g9 "{size=18}30 POINTS TO....{/size}"
 
@@ -231,7 +231,7 @@ label a_bad_time_to_disrobe_part_2:
     m "..."
     call her_main("...", "upset", "narrow", "worried", "down")
     m "Fine, but only if we continue where we left of."
-    call her_main("With my butt out?!?","disgust","surprised")
+    call her_main("With my butt out?!?", "disgust", "wide", "worried", "stare")
     m "With your bu..."
     m "No, well... yes, but this time you'll be prepared."
     call her_main("But... what if they recognize me sir?","open","worried")

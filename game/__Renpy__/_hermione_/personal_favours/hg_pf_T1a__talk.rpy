@@ -761,7 +761,7 @@ label hg_pf_talk_tonks:
                 else:
                     call ton_main("Wow! Who would have thought you're the girl from top of the list.","smile","happyCl","base","mid")
                     call ton_main("Colour me surprised, looks like they were telling the truth after all.","horny","base","angry","L", hair="horny")
-                    call her_main("(...a list ... what list...?)","angry","surprised", cheeks="blush")
+                    call her_main("(...a list ... what list...?)", "angry", "wide", "worried", "stare", cheeks="blush")
                     call ton_main("Congratulations for being a \"top\" student.","horny","base","raised","L")
                     call her_main("...", "disgust", "narrow", "base", "R_soft", cheeks="blush")
 

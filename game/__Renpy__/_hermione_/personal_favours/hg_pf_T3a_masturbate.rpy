@@ -251,7 +251,7 @@ label hg_pf_strip_T2_fingering:
 
         "-Forgive her-":
             m "It's alright, [hermione_name]."
-            call her_main("Really?","open","surprised", cheeks="blush", tears="messy")
+            call her_main("Really?", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
             m "I'm sure you're just a little nervous."
             call her_main("Thank you [genie_name].","clench","worried", cheeks="blush", tears="soft")
             call her_main("I promise to try harder next time.","scream","worriedCl", cheeks="blush", tears="messy")

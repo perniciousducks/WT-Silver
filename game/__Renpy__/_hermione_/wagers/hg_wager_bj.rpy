@@ -497,7 +497,7 @@ label hg_wager_bj:
                                         call her_main("...")
                                         g4 "40 points from Gryffindor!"
                                         $ gryffindor -= 40
-                                        call her_main("What, you can't do that!","shock","surprised")
+                                        call her_main("What, you can't do that!", "shock", "wide", "worried", "stare")
                                         g4 "Of course I can, I'm the headmaster!"
                                         call her_main("I can't believe you've done this...", "mad", "base", "angry", "mid")
                                         m "Suck it up..."

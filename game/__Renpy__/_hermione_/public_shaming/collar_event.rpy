@@ -298,14 +298,14 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("I beg every boy that fucks me to cum inside!","shock","worriedCl")
     hide screen hermione_main
     m "What a fucking whore."
-    call her_main("I-I'm cumming.","open","surprised",cheeks="blush",tears="messy")
+    call her_main("I-I'm cumming.", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
     hide screen hermione_main
     m "Well I think I might join you then."
     ">You increase your pumping of her pussy."
     m "Here's your cum, whore. You earned it."
     ">You push yourself all the way in and start shooting off into her womb."
     $ g_c_u_pic = "sex_cum_in_ani"
-    call her_main("!!!","scream","surprised",cheeks="blush",tears="messy")
+    call her_main("!!!", "scream", "wide", "worried", "stare",cheeks="blush",tears="messy")
     hide screen hermione_main
     m "That's it, take it all you fucking slut."
     call her_main("...", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")

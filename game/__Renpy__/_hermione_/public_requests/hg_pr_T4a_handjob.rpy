@@ -537,13 +537,13 @@ label hg_pr_handjob_T3_E2:
     m "[hermione_name], did you complete your task?"
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     show screen blktone
-    call her_main("Yes, I did [genie_name]...","base","suspicious")
+    call her_main("Yes, I did [genie_name]...", "base", "squint", "base", "mid")
     her "More than once actually..."
     m "More than once?"
     call her_main("Five times, [genie_name]...", "base", "narrow", "base", "mid_soft")
     her "I got carried away a little I suppose..."
     m "What do you mean \"five times\", [hermione_name]?"
-    call her_main("I mean I wanked off five boys today, [genie_name].","base","suspicious")
+    call her_main("I mean I wanked off five boys today, [genie_name].", "base", "squint", "base", "mid")
     m "Very impressive, [hermione_name]."
     call her_main("Thank you, [genie_name].", "base", "narrow", "base", "mid_soft")
     m "You don't expect me to multiply your payment by seven or anything, do you?"

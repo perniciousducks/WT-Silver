@@ -13,7 +13,7 @@ label hg_pf_strip_T1_Snape: # Fails
 
     call her_main("Of course, [genie_name].", "open", "closed", "base", "mid", xpos="base", ypos="base")
     m "But before that, do you think you could go and fetch professor Snape for me?"
-    call her_main("...Professor Snape?","annoyed","suspicious")
+    call her_main("...Professor Snape?", "annoyed", "squint", "base", "mid")
     her "May I ask, why, [genie_name]?"
     m "Oh, I just think you could use a bigger audience for your striptease performance."
     call her_main("My striptease performance...?!!", "shock", "wide", "base", "stare")
@@ -48,7 +48,7 @@ label hg_pf_strip_T2_Snape:
 
         call her_main("Of course, [genie_name].", "open", "closed", "base", "mid", xpos="base", ypos="base")
         m "But before that, do you think you could go and fetch professor Snape for me?"
-        call her_main("...professor Snape?","annoyed","suspicious")
+        call her_main("...professor Snape?", "annoyed", "squint", "base", "mid")
         her "May I ask, why, [genie_name]?"
         m "Oh, I just think you could use a bigger audience for your striptease performance."
         call her_main("My striptease performance...?!!", "shock", "wide", "base", "stare")
@@ -75,7 +75,7 @@ label hg_pf_strip_T2_Snape:
 
         call her_main("Of course, [genie_name].", "open", "closed", "base", "mid", xpos="base", ypos="base")
         m "But before that, do you think you could go and fetch professor Snape again?"
-        call her_main("...professor Snape?","annoyed","suspicious")
+        call her_main("...professor Snape?", "annoyed", "squint", "base", "mid")
         her "may I ask, why, [genie_name]?"
         m "Oh, I just want you to dance for us."
         call her_main("!!!", "open", "base", "base", "mid")

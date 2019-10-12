@@ -23,7 +23,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("Well what am I supposed to do until then?", "base", "narrow", "base", "mid_soft")
     m "You could show me your tits."
     call her_main("I don't think so [genie_name], you're only paying me for drinking the potion.", "open", "closed", "base", "mid")
-    call her_main("If you expect to see me without my shirt on then you'll have to try a little harder.","base","suspicious")
+    call her_main("If you expect to see me without my shirt on then you'll have to try a little harder.", "base", "squint", "base", "mid")
     m "Oh I wouldn't be so sure of that."
     call her_main("So is that what it does? Makes me show you my breasts? Is it some sort of mind control potion?", "base", "base", "base", "mid")
     m "Mind control? Where's the fun in that? No, this is something much more entertaining."
@@ -189,7 +189,7 @@ label potion_scene_2_1_2: #Hermione comes back after having her breasts expand i
 
 label potion_scene_2_2: #ass expansion
     m "[hermione_name], I have another potion for you to try today."
-    call her_main("Another one? Where are you getting these?","open","suspicious")
+    call her_main("Another one? Where are you getting these?", "open", "squint", "base", "mid")
     m "That's of no concern to you. What should concern you is the 20 points that you are able to earn should you drink it."
     call her_main("...Fine, give me the bottle.", "normal", "squint", "angry", "mid")
     call nar(">She takes a quizzical smell of the bottle.")
@@ -379,7 +379,7 @@ label potion_scene_2_2: #ass expansion
             hide screen hermione_main
             m "You wouldn't mind, would you?"
             m "Having me use your ass a sex-toy everyday."
-            call her_main("...","angry","suspicious",cheeks="blush")
+            call her_main("...", "angry", "squint", "base", "mid",cheeks="blush")
             hide screen hermione_main
             m "I asked you a question, [hermione_name]."
             call her_main("... no [genie_name]...", "silly", "narrow", "base", "dead")
@@ -423,9 +423,9 @@ label potion_scene_2_2: #ass expansion
             pause.5
 
             show screen bld1
-            call her_main("...With my butt looking like this?","angry","suspicious",cheeks="blush")
+            call her_main("...With my butt looking like this?", "angry", "squint", "base", "mid",cheeks="blush")
             m "I'm sure no one will be able to tell with your skirt on. Now hurry up, I feel like a nap.'"
-            #call her_main("Yes [genie_name].","angry","suspicious",cheeks="blush")
+            #call her_main("Yes [genie_name].", "angry", "squint", "base", "mid",cheeks="blush")
             m "Oh I almost forgot, 20 points to Gryffindor!"
             $ gryffindor += 20
             call her_main("Oh... right, the points. Thank you.", "grin", "narrow", "annoyed", "up")

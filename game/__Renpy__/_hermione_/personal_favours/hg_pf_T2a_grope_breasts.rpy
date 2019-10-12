@@ -22,7 +22,7 @@ label hg_pf_grope_breasts_T1:
     call nar(">She tries to pull away again.")
     call nar(">You squeeze her tits like a vice.")
 
-    call her_main("[genie_name], you're hurting me!","angry","suspicious", cheeks="blush")
+    call her_main("[genie_name], you're hurting me!", "angry", "squint", "base", "mid", cheeks="blush")
     g4 "Then stand still, [hermione_name]!"
     call her_main("B-but...", "soft", "wide", "base", "stare")
     m "All I want to do is squeeze your tits a little, then you will get your points!"
@@ -44,8 +44,8 @@ label hg_pf_grope_breasts_T1:
             m "Be quiet [hermione_name]..."
             call her_main("aw..............", "disgust", "narrow", "base", "down", cheeks="blush")
             call nar(">You squeeze her ample tits with all your strength.")
-            call her_main("Ah! It hurts!","angry","suspicious", cheeks="blush")
-            call her_main("They're gonna burst! Please stop it!","angry","suspicious", cheeks="blush")
+            call her_main("Ah! It hurts!", "angry", "squint", "base", "mid", cheeks="blush")
+            call her_main("They're gonna burst! Please stop it!", "angry", "squint", "base", "mid", cheeks="blush")
             m "They are not going to burst, you silly girl..."
             call nar(">You loosen your grip a little...")
             call her_main("It hurts...","shock","worriedCl")
@@ -492,16 +492,16 @@ label hg_pf_grope_breasts_T5_naked:
     call her_main("Oh...?", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "What is it? You look disappointed."
     m "I will pay you of course..."
-    call her_main("That's not it, [genie_name]...","angry","suspicious", cheeks="blush")
-    call her_main("It's...","angry","suspicious", cheeks="blush")
+    call her_main("That's not it, [genie_name]...", "angry", "squint", "base", "mid", cheeks="blush")
+    call her_main("It's...", "angry", "squint", "base", "mid", cheeks="blush")
 
     if daytime:
         call her_main("It's just that I still have some time left before I have to leave for the classes and...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     else:
         call her_main("It's not really that late yet, is it?", "shock", "base", "base", "R", cheeks="blush", tears="soft")
 
-    call her_main("uhm...","angry","suspicious", cheeks="blush")
-    call her_main("...................","angry","suspicious", cheeks="blush")
+    call her_main("uhm...", "angry", "squint", "base", "mid", cheeks="blush")
+    call her_main("...................", "angry", "squint", "base", "mid", cheeks="blush")
     m "You want me to hurt you some more, don't you?"
 
     if her_whoring < 18:

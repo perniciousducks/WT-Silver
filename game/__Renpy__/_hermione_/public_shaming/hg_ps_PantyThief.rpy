@@ -178,7 +178,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         call nar(">Hermione gives her cum-soaked underwear a quizzical look...")
         call her_main("Seems like these will require some serious cleaning before I can put them on again...", "annoyed", "narrow", "worried", "down")
         m "Why not put them on now?"
-        call her_main("Hm....?","annoyed","suspicious")
+        call her_main("Hm....?", "annoyed", "squint", "base", "mid")
         call her_main("Well, I suppose I could wear them one more time before putting them into laundry...", "annoyed", "narrow", "worried", "down")
         hide screen hermione_main
         call nar(">Hermione puts the panties on...")
@@ -401,7 +401,7 @@ label hg_ps_get_panties_complete:
         m "if you'd prefer the points then just take them off"
         call her_main("well... I am already wearing them","annoyed","worriedL")
         m "then say thank you for the gift"
-        call her_main("Thank you, [genie_name]...","annoyed","suspicious")
+        call her_main("Thank you, [genie_name]...", "annoyed", "squint", "base", "mid")
         m "You can go now."
         her "Good night, [genie_name]."
     elif her_panties_soaked and her_whoring >= 15:

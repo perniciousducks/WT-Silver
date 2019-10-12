@@ -186,7 +186,7 @@ label cho_intro_E1:
     call cho_main("{size=-5}Whore...{/size}", "soft", "angry", "angry", "L",trans="hpunch")
     call her_main("...", "normal", "squint", "angry", "mid", cheeks="blush")
     call cho_main("...", "base", "angry", "base", "L")
-    call her_main("So...{p=0.4}what have you been discussing? Anything I should know?","open","suspicious", cheeks="blush")
+    call her_main("So...{p=0.4}what have you been discussing? Anything I should know?", "open", "squint", "base", "mid", cheeks="blush")
     call cho_main("Oh, it’s nothing that you need to worry your pretty little head about...", "smile", "wide", "angry", "L")
     m "(This could take a while...)"
 
@@ -329,7 +329,7 @@ label cho_intro_E1:
 
         call cho_main("Professor, please do consider what we discussed earlier...","soft","closed","base","mid", ypos="head")
         m "Of course."
-        call her_main("Hmmm?","normal","suspicious", ypos="head")
+        call her_main("Hmmm?", "normal", "squint", "base", "mid", ypos="head")
 
 
     # Cho leaves
@@ -636,7 +636,7 @@ label cho_intro_E3:
         m "Well, don’t you feel like it’s unbefitting of you to publicly talk badly about another student."
         call her_main("...", "annoyed", "narrow", "base", "down")
         g9 "Surely that isn’t something to expect from Gryffindor's finest.."
-        call her_main("Did Cho put you up to this?","normal","suspicious")
+        call her_main("Did Cho put you up to this?", "normal", "squint", "base", "mid")
         g4 "..."
         m "(She’s onto me!)"
         m "Of course not... it was another teacher, actually."
@@ -651,7 +651,7 @@ label cho_intro_E3:
     # Repeat
     else:
         m "[hermione_name], there is something we need to talk about."
-        call her_main("Is it about Cho again?","annoyed","suspicious")
+        call her_main("Is it about Cho again?", "annoyed", "squint", "base", "mid")
         m "Yes indeed."
         m "I’d like you to stop your..."
         m "Quidditch-...{w} something something...{w} movement."

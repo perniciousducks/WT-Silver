@@ -632,7 +632,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         pause
         call lun_main("That's better isn't it?","normal","angry","sad","mid")
         call lun_main("Just listen to our voices while you stroke yourself...","base","mad","angry","mid")
-        call her_main("mmmm... he loves it when you tell him a story...","base","suspicious")
+        call her_main("mmmm... he loves it when you tell him a story...", "base", "squint", "base", "mid")
         call lun_main("Really? What sort?","base","seductive","sad","R")
         call her_main("how about the time we nearly got caught during blowjob practice...", "base", "narrow", "worried", "down")
         $ luna_flip = -1
@@ -659,7 +659,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         g4 "{size=+4}(agh...){/size}"
         g4 "{size=+4}yes...{/size}"
         call her_main("she hid all 6 inches of it in her mouth... down her throat...", "base", "narrow", "base", "mid_soft")
-        call her_main("just so we wouldn't get found out...","base","suspicious")
+        call her_main("just so we wouldn't get found out...", "base", "squint", "base", "mid")
         $ luna_flip = -1
         call lun_main("well what else was I supposed to do...","open","wide","sad","mid", cheeks="blush")
         g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
@@ -693,7 +693,7 @@ label luna_favour_1: ###TALK TO ME #DONE
 
         call lun_main("next time just make one up...","upset","seductive","angry","R")
         m "ah..."
-        call her_main("come on luna, we've got to earn our payment, speaking of...","base","suspicious")
+        call her_main("come on luna, we've got to earn our payment, speaking of...", "base", "squint", "base", "mid")
 
         m "Alright, alright. Here's your gold and points."
         $ gryffindor += 15

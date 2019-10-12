@@ -109,7 +109,7 @@ label hg_pr_flirt_teacher_T1_E1: # Flitwick
     m "I said, don't we all hate it and must be outraged by the a man like Professor Flick-flick."
     call her_main("Er... It's \"Professor Flitwick\", [genie_name].", "normal", "squint", "angry", "mid")
     m "Right. Putting him on my \"Naughty boys list\" as we speak."
-    call her_main("......................","annoyed","suspicious")
+    call her_main("......................", "annoyed", "squint", "base", "mid")
     m "Well, I hate to admit it but you did a lousy job of today's favour, [hermione_name]."
     call her_main("................................", "annoyed", "narrow", "angry", "R")
 
@@ -230,12 +230,12 @@ label hg_pr_flirt_teacher_T2_E1: # Slughorn
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("There were plenty of girls...", "open", "closed", "base", "mid")
     her "But all of them were much younger then me..."
-    call her_main("Almost every guest was a freshman...","annoyed","suspicious")
+    call her_main("Almost every guest was a freshman...", "annoyed", "squint", "base", "mid")
     call her_main("We had tea and some cake...", "open", "closed", "base", "mid")
     her "Everything was pretty harmless..."
     m "Did you flirt with the man or not?"
     her "I did..."
-    call her_main("Or at least I tried...","annoyed","suspicious")
+    call her_main("Or at least I tried...", "annoyed", "squint", "base", "mid")
     her "Professor Slughorn seems to be more interested in much younger girls..."
     m "You almost sound jealous, [hermione_name]."
     call her_main("What?!", "angry", "wide", "base", "stare")

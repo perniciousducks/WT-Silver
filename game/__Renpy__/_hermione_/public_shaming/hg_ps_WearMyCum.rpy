@@ -53,7 +53,7 @@ label hg_ps_cumslut_Scene_1:
     call her_main("But what's the point if they can't see it?","annoyed","worriedL")
     m "You'll know it's there."
     call her_main("Hmmmm...", "annoyed", "narrow", "angry", "R") #Haggle here
-    call her_main("How much will I be paid?","annoyed","suspicious")
+    call her_main("How much will I be paid?", "annoyed", "squint", "base", "mid")
     m "30 points."
     call her_main("30! I expect at least 70 for such a filthy act!","scream","worriedCl")
     m "40."
@@ -255,7 +255,7 @@ label hg_ps_cumslut_Scene_2:
     call her_main("But will it still be hidden this time?","annoyed","worriedL")
     m "That's up to you."
     call her_main("Hmmmm...", "annoyed", "narrow", "angry", "R") #Haggle here
-    call her_main("How much will I be paid this time then?","annoyed","suspicious")
+    call her_main("How much will I be paid this time then?", "annoyed", "squint", "base", "mid")
     m "20 points."
     call her_main("20! we agreed on 50 last time!","scream","worriedCl")
     m "40."
@@ -316,7 +316,7 @@ label hg_ps_cumslut_Scene_2:
     call her_main("{size=-5}Ok...{/size}", "disgust", "narrow", "base", "down")
     m "Well hurry up [hermione_name], classes will start soon, best make your decision."
     call nar(">She starts jerking your cock with renewed vigour.")
-    call her_main("...","annoyed","suspicious")
+    call her_main("...", "annoyed", "squint", "base", "mid")
     call her_main("You better appreciate this.", "annoyed", "narrow", "angry", "R")
     m "Oh I'm appreciating it!"
     call her_main("Really?", "open", "base", "base", "mid")
@@ -502,7 +502,7 @@ label hg_ps_cumslut_Scene_3:
     call her_main("At the start it was just to get points, so that \'gryffindor\' could win the house cup...", "angry", "wink", "base", "mid")
     call her_main("but lately...", "base", "narrow", "worried", "down")
     call her_main("...it’s been more than that... now I do it to make you happy, [genie_name].", "base", "narrow", "base", "mid_soft")
-    call her_main("Because making you happy, makes me happy...","base","suspicious")
+    call her_main("Because making you happy, makes me happy...", "base", "squint", "base", "mid")
     m "That's great... but what would really make me happy right now is you focusing a little more on the task at hand..."
     call her_main("Oh! Of course, [genie_name]...","open","worriedCl")
     call her_main("Do you need some extra encouragement?", "open", "closed", "base", "mid")
@@ -800,7 +800,7 @@ label hg_ps_cumslut_complete_3:
         $ u_sperm = "characters/hermione/face/auto_06.png"
         $ uni_sperm = True
         ">Hermione returns to your office, her shirt still covered in cum."
-        call her_main("...I did it [genie_name].","open","suspicious")
+        call her_main("...I did it [genie_name].", "open", "squint", "base", "mid")
         call her_main("I kept your cum on me all day.","grin","worriedCl",emote="05")
         menu:
             "\"Good Work!\"":
@@ -820,7 +820,7 @@ label hg_ps_cumslut_complete_3:
         $ u_sperm = "characters/hermione/face/auto_07.png"
         $ uni_sperm = True
         ">Hermione returns to your office."
-        call her_main("I did it, [genie_name].","open","suspicious")
+        call her_main("I did it, [genie_name].", "open", "squint", "base", "mid")
         call her_main("I kept your cum on me all day.", "base", "base", "base", "mid")
         menu:
             "\"Good Work!\"":

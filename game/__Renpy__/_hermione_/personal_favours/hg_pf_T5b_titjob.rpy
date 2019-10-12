@@ -803,7 +803,7 @@ label hg_pf_titjob_2_continue:
             $ ccg1 = 21
             call her_main("I love teasing Ron and harry during breakfast...", "base", "narrow", "base", "mid_soft")
             $ ccg1 = 22
-            call her_main("Sometimes I'll walk around with only one button done up...","base","suspicious")
+            call her_main("Sometimes I'll walk around with only one button done up...", "base", "squint", "base", "mid")
             $ ccg1 = 23
             call her_main("Other times I'll just wear my vest with nothing on underneath...")
             m "And how do you feel..."
@@ -821,7 +821,7 @@ label hg_pf_titjob_2_continue:
             call her_main("Well I may have held him there...", "base", "narrow", "base", "mid_soft")
             call her_main("Just for a little bit...", "base", "narrow", "worried", "down")
             $ ccg1 = 23
-            call her_main("Just to tell him it was okay...","base","suspicious")
+            call her_main("Just to tell him it was okay...", "base", "squint", "base", "mid")
             m "You little slut."
             $ ccg1 = 22
             call her_main("I think I might have broken him though...", "base", "narrow", "worried", "down")

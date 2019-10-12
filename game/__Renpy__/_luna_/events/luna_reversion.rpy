@@ -340,7 +340,7 @@ label luna_revert_1: #Reversion event #DONE
     m "Well I was sitting here alone in my office."
     m "(What else can I do...)"
     m "When all of a sudden this weird hat on the shelf behind me starts talking!"
-    call her_main("...","annoyed","suspicious")
+    call her_main("...", "annoyed", "squint", "base", "mid")
     call her_main("Are you serious, sir?", "annoyed", "base", "angry", "mid")
     m "I knew you wouldn't believe-"
     call her_main("Of course I believe you! It's the sorting hat!", "angry", "base", "angry", "mid")
@@ -428,7 +428,7 @@ label luna_revert_1: #Reversion event #DONE
     call her_main("Well regardless, she has to be punished.", "annoyed", "narrow", "annoyed", "mid")
     m "Wait, she's being punished?"
     call her_main("Of course!", "annoyed", "narrow", "angry", "R")
-    call her_main("Seeing as how you didn't give \"Ravenclaw\" any points you haven't done anything wrong.","annoyed","suspicious")
+    call her_main("Seeing as how you didn't give \"Ravenclaw\" any points you haven't done anything wrong.", "annoyed", "squint", "base", "mid")
     call her_main("But her...", "annoyed", "squint", "angry", "mid")
     ">Hermione glares at the still frozen Luna Lovegood."
     call her_main("...", "annoyed", "squint", "angry", "mid")
@@ -1212,7 +1212,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     m "Alright, well have a nice day."
     call her_main("ugh...", "disgust", "narrow", "base", "down")
     call her_main("(I could have sworn Luna was here...)","annoyed","worriedL")
-    call her_main("(Wait, what was I doing here...)","annoyed","suspicious")
+    call her_main("(Wait, what was I doing here...)", "annoyed", "squint", "base", "mid")
     call reset_luna
 
     call her_walk(action="leave", speed=2.5)

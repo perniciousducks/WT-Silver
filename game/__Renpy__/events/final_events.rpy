@@ -75,7 +75,7 @@ label ball_quest_E1:
                     her "But sleeping with my headmaster?"
                     call her_main("That is where I draw the line, sir.", "angry", "base", "angry", "mid", cheeks="blush")
                     m "Got it. Let's just forget I said anything."
-                    call her_main("{size=-5}(I wish I could...){/size}","angry","suspicious", cheeks="blush")
+                    call her_main("{size=-5}(I wish I could...){/size}", "angry", "squint", "base", "mid", cheeks="blush")
                     jump no_sleeping_with_professor
 
                 "\"Never mind. the Position is yours.\"":
@@ -453,7 +453,7 @@ label ball_quest_E3:
     call her_main("Wearing the same dress to the \"Autumn Ball\" for two years in a row would be more humiliating than any favour I sold you so far, sir.", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     with hpunch
     g4 "You've gotta be kidding me..."
-    call her_main("Oh, you wouldn't understand...","angry","suspicious", cheeks="blush", tears="messy")
+    call her_main("Oh, you wouldn't understand...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     call her_main("You're just like my father!", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
     m "I beg your pardon?"
     call her_main("I mean... ehm...", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
@@ -461,13 +461,13 @@ label ball_quest_E3:
     call her_main("I don't know why I am telling you all of this...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     m "................"
     call her_main("......................*sob!*", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
-    call her_main("I think I'd better go now...*sob*","angry","suspicious", cheeks="blush", tears="messy")
+    call her_main("I think I'd better go now...*sob*", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     m "Well, don't let me keep you a moment longer, miss Granger...."
 
     call her_walk(xpos="door", ypos="base", speed=2)
     pause.3
 
-    call her_main("(My life is ruined...)","angry","suspicious", cheeks="blush", tears="messy", ypos="head")
+    call her_main("(My life is ruined...)", "angry", "squint", "base", "mid", cheeks="blush", tears="messy", ypos="head")
     pause.1
 
     call her_chibi(action="leave")
@@ -514,7 +514,7 @@ label ball_quest_E4:
     call her_main("I worked so hard... and...","open","worried", tears="soft")
     call her_main("And now I will not even be able to... to... *Sob!*", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     call her_main("To... *SOB!*", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
-    call her_main("Excuse me sir!","angry","suspicious", cheeks="blush", tears="messy")
+    call her_main("Excuse me sir!", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     hide screen hermione_main
     hide screen bld1
     with d3
@@ -562,7 +562,7 @@ label ball_quest_E5:
     call her_main("I... I am just...","clench","worried", cheeks="blush", tears="soft")
     call her_main("I am so happy...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     her "Thank you, sir. Thank you so much."
-    call her_main("I cannot believe that you would do something like that for me...","angry","suspicious", cheeks="blush", tears="messy")
+    call her_main("I cannot believe that you would do something like that for me...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     m "Well, I did. Now stop crying."
     call her_main("I can't, sir. I am so happy and so grateful...","scream","worriedCl", cheeks="blush", tears="messy")
     call her_main("Do you want me to suck your cock, sir?", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
@@ -572,16 +572,16 @@ label ball_quest_E5:
     call her_main("And you wouldn't have to pay me a single house point!", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     m "uhm... Maybe some other time..."
     m "This is not the type of crying I find arousing..."
-    call her_main("I'm sorry, sir. I'm such a mess...","angry","suspicious", cheeks="blush", tears="messy")
+    call her_main("I'm sorry, sir. I'm such a mess...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     call her_main("But this is so unexpected...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     her "You made me so happy, sir...*sob!*"
-    call her_main("Thank you sir! *SOB!* Thank you! *SOB!*","angry","suspicious", cheeks="blush", tears="messy")
+    call her_main("Thank you sir! *SOB!* Thank you! *SOB!*", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     m "Well... err... there, there..."
     m "Better stop crying before you stain that new dress of yours with those tears..."
     call her_main("My new dress! *SOB!*","scream","worriedCl", cheeks="blush", tears="messy")
     m "Alright, you know what? Just get out of my office."
     m "Just take your dress and leave."
-    call her_main("Of course... I am sorry, sir!","angry","suspicious", cheeks="blush", tears="messy")
+    call her_main("Of course... I am sorry, sir!", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     hide screen hermione_main
     hide screen bld1
     with d3

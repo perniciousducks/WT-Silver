@@ -44,7 +44,7 @@ label hg_pr_grope:
         call her_main("!!!", "normal", "base", "base", "mid")
         call her_main("What kind of demented parent would have such a talk with their child?", "angry", "base", "angry", "mid")
         m "{size=-3}I wish mine did.{/size}"
-        call her_main("I beg your pardon, [genie_name]?","annoyed","suspicious")
+        call her_main("I beg your pardon, [genie_name]?", "annoyed", "squint", "base", "mid")
         m "*Khem!* I said, a responsible and caring one!"
         m "Well, in any case. That is your task for today, [hermione_name]."
         m "Find a way to persuade one of your classmates to fondle you a little..."
@@ -274,7 +274,7 @@ label hg_pr_grope_T2_E2:
     her "During the herbology class today..."
     call her_main("I let this one boy slide his hand under my skirt...", "upset", "wink", "base", "mid")
     her "So while Professor Sprout explained the differences between \"mandrake\" and \"mandragore\"..."
-    call her_main("Something I already knew of course...","open","suspicious")
+    call her_main("Something I already knew of course...", "open", "squint", "base", "mid")
     call her_main("I let my lab partner massage my buttocks...", "upset", "wink", "base", "mid")
     her "And that is all..."
     m "Hm..."
@@ -337,11 +337,11 @@ label hg_pr_grope_T2_E3:
     m "Alright, then what happened?"
     call her_main("Nothing! I couldn't bear the humiliation... I just ran...", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
     her "I even left my shoes behind and had to come back later to pick them up..."
-    call her_main("*Sob!*............","angry","suspicious", cheeks="blush", tears="messy")
+    call her_main("*Sob!*............", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     m "Hm..."
     m "Well, you did get molested..."
     m "Although in a rather unconventional manner..."
-    call her_main("*Sob!* I wish he would have just touched my breasts like a descent boy would, [genie_name]... *Sob!*","angry","suspicious", cheeks="blush", tears="messy")
+    call her_main("*Sob!* I wish he would have just touched my breasts like a descent boy would, [genie_name]... *Sob!*", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     m "There, there..."
     m "You earned you pay today..."
 

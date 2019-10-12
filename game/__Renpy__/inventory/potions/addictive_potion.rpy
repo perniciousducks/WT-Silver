@@ -120,7 +120,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
     m "Ok, [hermione_name], I'll make sure to warn you next time."
     call her_main("Is that all then, [genie_name]?", "annoyed", "narrow", "angry", "R")
     m "Yes [hermione_name], that will be all."
-    call her_main("Thank you, [genie_name].","open","suspicious")
+    call her_main("Thank you, [genie_name].", "open", "squint", "base", "mid")
     call nar(">Hermione hurriedly leaves the room with the remainder of the potion firmly in her grasp.")
 
     hide screen hermione_main
@@ -231,7 +231,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
     hide screen hermione_main
     call u_play_ani
     m "Whatever you say [hermione_name]. Now if you want your reward you better get back to work."
-    call her_main("","base","suspicious")
+    call her_main("", "base", "squint", "base", "mid")
     call u_pause_ani
     her "..."
     hide screen hermione_main

@@ -55,7 +55,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
             call her_main("Oh thank goodness... I thought you were going to murder me for a second there...", "base", "happyCl", "base", "mid",trans="hpunch")
             m "What? How could you think such a thing!"
             m "I don't know if I'll be able to-"
-            call her_main("How about I make it up to you with my mouth then, hmmm?","base","suspicious")
+            call her_main("How about I make it up to you with my mouth then, hmmm?", "base", "squint", "base", "mid")
             m "Done."
             $ forest_BJ_progress = 2
 
@@ -171,7 +171,7 @@ label forest_BJ_2:
     call her_main("And yes, I've been collecting some mushroom samples.", "soft", "base", "base", "mid")
     m "Cool..."
     call her_main("So what are you doing out here?", "base", "base", "base", "mid")
-    call her_main("I thought you didn't leave your office anymore?","soft","suspicious")
+    call her_main("I thought you didn't leave your office anymore?", "soft", "squint", "base", "mid")
     m "Oh, you know me... Always looking to connect with my students..."
     call her_main("Mhmmm... So that's what you're down here for then? To {i}connect{/i}?", "base", "happy", "base", "mid")
     m "Always..."
@@ -296,7 +296,7 @@ label forest_BJ_2:
     call her_main("She's going to tell everyone about this now!", "annoyed", "base", "angry", "mid")
     m "So? Doesn't everyone sort of know by now anyway?"
     call her_main("Argh! That's not the point and you know it!", "annoyed", "squint", "angry", "mid")
-    call her_main("You can't keep treating me like your {image=textheart}dirty{image=textheart} little {b}cumdump{/b} to use as you please!","angry","suspicious")
+    call her_main("You can't keep treating me like your {image=textheart}dirty{image=textheart} little {b}cumdump{/b} to use as you please!", "angry", "squint", "base", "mid")
     call her_main("To coat in your filthy nasty {b}{image=textheart}cum{image=textheart}{/b}...", "angry", "narrow", "base", "dead")
     call her_main("In front of whoever, or whatever, you want...", "angry", "narrow", "annoyed", "up")
     call her_main("...", "angry", "narrow", "base", "dead")

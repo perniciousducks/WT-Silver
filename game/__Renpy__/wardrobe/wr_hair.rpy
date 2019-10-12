@@ -150,7 +150,7 @@ label change_hair:
                         # m "..."
                         # call her_main("(...?)", "angry", "wink", "base", "mid")
                         # m "Of course! That Weasely... uhh--sister...?"
-                        # call her_main("Yes, [genie_name].","open","suspicious")
+                        # call her_main("Yes, [genie_name].", "open", "squint", "base", "mid")
                         # m "(I wonder if she is hot...)"
                         # m "(The girl says she is a redhead...)"
                         # g9 "(She has to be!)"
@@ -201,7 +201,7 @@ label change_hair:
                         # call her_main("I really like that colour!", "smile", "happyCl", "base", "mid")
                         # call her_main("Let me just change it.", "base", "narrow", "base", "mid_soft")
                 # else:
-                    # call her_main("Black, [genie_name]?","open","suspicious")
+                    # call her_main("Black, [genie_name]?", "open", "squint", "base", "mid")
                     # call her_main("Black isn't really my colour.", "soft", "base", "base", "R")
                     # call her_main("I don't think it will suit me, [genie_name].", "open", "closed", "base", "mid")
                     # call her_main("I have to refuse.", "normal", "base", "base", "mid")
@@ -254,7 +254,7 @@ label change_hair:
                             # ">Try again at Whoring level 11."
                         # jump return_to_wardrobe
                     # else: #5-10
-                        # call her_main("Really, [genie_name]?","annoyed","suspicious")
+                        # call her_main("Really, [genie_name]?", "annoyed", "squint", "base", "mid")
                         # call her_main("You want me to look like a lesbian that bad?","open","annoyed",cheeks="blush")
                         # call her_main("I'm going to refuse!", "annoyed", "base", "base", "R")
                         # if cheats_active or game_difficulty <= 2:

@@ -75,12 +75,12 @@ label equip_makeup:
                 # if her_whoring >= 20:
                     # if her_whoring < 24:
                         # call her_main("Fake cum...?", "soft", "base", "base", "mid")
-                        # call her_main("...","annoyed","suspicious")
+                        # call her_main("...", "annoyed", "squint", "base", "mid")
                         # call her_main("well as long as it's not real...", "base", "narrow", "base", "mid_soft")
                     # else: #24
                         # call her_main("Hm...?", "soft", "base", "base", "mid")
-                        # call her_main("Do you want me to cover myself in fake cum, [genie_name]?","annoyed","suspicious")
-                        # call her_main("Or just my face?","annoyed","suspicious")
+                        # call her_main("Do you want me to cover myself in fake cum, [genie_name]?", "annoyed", "squint", "base", "mid")
+                        # call her_main("Or just my face?", "annoyed", "squint", "base", "mid")
                         # menu:
                             # "-Covered-":
                                 # $ makeup_choice = "fake_cum_2"
@@ -264,7 +264,7 @@ label equip_head_accessory:
                         # m "Could you change your hair too then? Show off your cute little ears?"
 
                     # if her_whoring < 17:
-                        # call her_main("...","annoyed","suspicious")
+                        # call her_main("...", "annoyed", "squint", "base", "mid")
                         # call her_main("I suppose they're not too noticeable...", "base", "narrow", "base", "mid_soft")
                         # call her_main("Alright. I will wear them.", "soft", "base", "base", "mid")
                         # call her_main("Let me put them on real quick.", "soft", "base", "base", "R")

@@ -363,9 +363,9 @@ label hg_pr_strip_T2_masturbate_rear:
 
             call nar(">Hermione starts looking at you from the corner of her eye ...")
 
-            call her_main("Are you ready to...","angry","suspicious", cheeks="blush")
+            call her_main("Are you ready to...", "angry", "squint", "base", "mid", cheeks="blush")
             g4 "Almost there [hermione_name]!"
-            call her_main("Do it, [genie_name]... cum for me...","angry","suspicious", cheeks="blush", tears="messy")
+            call her_main("Do it, [genie_name]... cum for me...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
 
         "-Start jerking your cock faster-":
             call nar(">You start jerking your cock furiously!")
@@ -373,8 +373,8 @@ label hg_pr_strip_T2_masturbate_rear:
             call nar(">You jerk it even faster!")
             call her_main("you're going to do it aren't you...", "annoyed", "narrow", "angry", "R", cheeks="blush")
             g4 "almost there slut!"
-            call her_main("make me stand here...","angry","suspicious", cheeks="blush")
-            call her_main("while you cum all over me!","angry","suspicious", cheeks="blush")
+            call her_main("make me stand here...", "angry", "squint", "base", "mid", cheeks="blush")
+            call her_main("while you cum all over me!", "angry", "squint", "base", "mid", cheeks="blush")
 
     call hg_show_ass_cumming
 
@@ -763,7 +763,7 @@ label hg_show_ass_cumming:
                 hide screen jerking_off_cum
                 with d3
 
-                call her_main("[genie_name], you came so much...","angry","suspicious", cheeks="blush")
+                call her_main("[genie_name], you came so much...", "angry", "squint", "base", "mid", cheeks="blush")
 
                 hide screen hermione_ass
                 call gen_chibi("stand","desk","base")
@@ -830,7 +830,7 @@ label hg_show_ass_cumming:
                     call her_main("How could you do this to me, [genie_name]?!", "scream", "base", "angry", "mid")
                     call her_main("My ass is covered in cum!", "angry", "base", "angry", "mid")
                 else:
-                    call her_main("[genie_name], how could you...?","angry","suspicious", cheeks="blush")
+                    call her_main("[genie_name], how could you...?", "angry", "squint", "base", "mid", cheeks="blush")
                     call her_main("My ass...", "disgust", "narrow", "worried", "down")
                     call her_main("It's covered....", "disgust", "narrow", "base", "down")
 

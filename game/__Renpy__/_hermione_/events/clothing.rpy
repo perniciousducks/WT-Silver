@@ -23,7 +23,7 @@ label hermione_summon_setup:
         call her_main("My books?", "open", "narrow", "worried", "down")
         call her_main("I wasn't sure which ones I'd need, so I brought all of them!", "grin", "happyCl", "base", "mid")
         m "Brought them for what?"
-        call her_main("My tutoring lessons...","soft","suspicious")
+        call her_main("My tutoring lessons...", "soft", "squint", "base", "mid")
         call her_main("I hope you're still planning to lecture me, [genie_name].", "annoyed", "base", "base", "mid")
         g9 "Oh, I'll give you a lecture for sure."
         m "But we're going to have to do it my way.{w}\nThere's no need for those books."

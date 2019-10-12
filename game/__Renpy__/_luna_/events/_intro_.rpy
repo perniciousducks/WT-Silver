@@ -70,7 +70,7 @@ label hat_intro_2: #Bringing in Hermione
     call her_main("What do you mean In the wrong house?", "soft", "base", "base", "mid")
     m "well, do you know anyone who'd be better suited being in a different house?"
     call her_main("That's a weird question [genie_name].", "open", "base", "base", "mid")
-    call her_main("I suppose that Neville Longbottom isn't very courageous, Maybe he'd be better off in \"Hufflepuff\"...","open","suspicious")
+    call her_main("I suppose that Neville Longbottom isn't very courageous, Maybe he'd be better off in \"Hufflepuff\"...", "open", "squint", "base", "mid")
     m "(Probably don't want him...)"
     m "Anyone else come to mind?"
     call her_main("I don't think so...","open","worriedL")
@@ -78,12 +78,12 @@ label hat_intro_2: #Bringing in Hermione
     call her_main("Wait, I know! Luna Lovegood!", "scream", "closed", "angry", "mid")
     m "And why is that?"
     call her_main("Well, surely you've seen her grades [genie_name]...", "open", "closed", "base", "mid")
-    call her_main("Suffice to say, she's hardly \"Ravenclaw\" material. She'd probably be better suited to \"Hufflepuff\" as well.","annoyed","suspicious")
+    call her_main("Suffice to say, she's hardly \"Ravenclaw\" material. She'd probably be better suited to \"Hufflepuff\" as well.", "annoyed", "squint", "base", "mid")
     m "Fantastic. Could you please tell her to come to my office later this afternoon?"
     call her_main("Why? You're not going to ask her for favours are you?", "annoyed", "narrow", "annoyed", "mid")
     m "Nothing of the sort. This is strictly school business."
     call her_main("...", "annoyed", "narrow", "annoyed", "mid")
-    call her_main("Fine... Just don't do anything too bad...","annoyed","suspicious")
+    call her_main("Fine... Just don't do anything too bad...", "annoyed", "squint", "base", "mid")
     m "Scouts honour!"
     call her_main("Well if that's all then, [genie_name], I better head to class.", "open", "closed", "base", "mid")
 

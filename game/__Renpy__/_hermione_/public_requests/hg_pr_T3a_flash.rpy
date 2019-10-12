@@ -77,10 +77,10 @@ label hg_pr_flash:
         m "Alright, let me rephrase this..."
         m "What would you say is the most common application for the female mammary glands?"
         call her_main("Oh...", "soft", "base", "base", "mid")
-        call her_main("Production of milk?","annoyed","suspicious")
+        call her_main("Production of milk?", "annoyed", "squint", "base", "mid")
         m "Good. What else do women use their tits for?"
         call her_main("Hm..", "soft", "base", "base", "R")
-        call her_main("...to attract men?","annoyed","suspicious")
+        call her_main("...to attract men?", "annoyed", "squint", "base", "mid")
         m "Yes. Let's concentrate on that."
         m "I need you to go out there..."
         m "Find some lucky bastard..."
@@ -388,7 +388,7 @@ label hg_pr_flash_T2_E3:
     call her_main("I don't know, [genie_name]...","open","worriedCl",cheeks="blush")
     her "To be honest I kept my eyes closed..."
     m "How do you know that anyone saw you at all then, [hermione_name]?"
-    call her_main("I heard someone shout: \"Look! At that window over there!\".","angry","suspicious",cheeks="blush")
+    call her_main("I heard someone shout: \"Look! At that window over there!\".", "angry", "squint", "base", "mid",cheeks="blush")
     her "When I heard that I covered up and quickly left..."
     call her_main("....", "angry", "base", "base", "mid")
     m "Hm..."
@@ -480,7 +480,7 @@ label hg_pr_flash_T3_E2:
     call her_main("to kiss and suck on my nipples...", "smile", "base", "angry", "mid")
     call her_main("And I couldn't help myself - I started to moan...", "base", "narrow", "base", "mid_soft")
     m ".............."
-    call her_main("And then the boy took out his throbbing cock...","base","suspicious")
+    call her_main("And then the boy took out his throbbing cock...", "base", "squint", "base", "mid")
     her "And sprayed his hot spunk all over me and Ginny!"
     call her_main("And then me and Ginny, we licked his hot sperm off of our young bodies...", "smile", "base", "angry", "mid")
     m ".............."

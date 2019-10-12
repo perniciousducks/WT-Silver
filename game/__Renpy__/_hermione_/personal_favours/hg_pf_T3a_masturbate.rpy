@@ -25,7 +25,7 @@ label hg_pf_strip_fingering_intro:
         call her_main("well I suppose I could.", "open", "narrow", "worried", "down")
         call her_main("But you better keep your hands to yourself...", "open", "narrow", "worried", "down")
         m "Witcher's promise."
-        call her_main("...","annoyed","suspicious")
+        call her_main("...", "annoyed", "squint", "base", "mid")
 
     # Repeat
     else:
@@ -241,7 +241,7 @@ label hg_pf_strip_T2_fingering:
             m "well then, 0 points to \"Gryffindor\"..."
             call her_main("{size=-5}After all...{/size} Really [genie_name]?","clench","worried", cheeks="blush", tears="soft")
             call her_main("After I stood here and...", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
-            call her_main("..........","angry","suspicious", cheeks="blush", tears="messy")
+            call her_main("..........", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
             call nar(">Hermione wipes the tears from her eyes.")
             call her_main("I am not going to sell you a single favour anymore, [genie_name]!", "angry", "base", "angry", "mid", cheeks="blush")
 

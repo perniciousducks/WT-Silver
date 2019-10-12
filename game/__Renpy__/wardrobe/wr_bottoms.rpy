@@ -123,7 +123,7 @@ label equip_bottom:
                         # call her_main("I have to refuse, [genie_name].", "normal", "base", "base", "mid")
                     # else:
                         # call her_main("That's way too short, [genie_name]!", "open", "closed", "base", "mid")
-                        # call her_main("I have to refuse!","annoyed","suspicious")
+                        # call her_main("I have to refuse!", "annoyed", "squint", "base", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 8."
                     # jump return_to_wardrobe
@@ -147,7 +147,7 @@ label equip_bottom:
                         # call her_main("I have to refuse, [genie_name].", "normal", "base", "base", "mid")
                     # else:
                         # call her_main("That's way too short, [genie_name]!", "open", "closed", "base", "mid")
-                        # call her_main("I have to refuse!","annoyed","suspicious")
+                        # call her_main("I have to refuse!", "annoyed", "squint", "base", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 14."
                     # jump return_to_wardrobe
@@ -395,7 +395,7 @@ label equip_bottom:
                         # if skirt_choice in ["skirt_cheer_h","skirt_cheer_sexy_h"]:
                             # call her_main("In yellow?", "shock", "wide", "base", "stare")
                         # call her_main("Are you serious, [genie_name]?", "angry", "base", "angry", "mid")
-                        # call her_main("Are you sure you didn't just pick the wrong colour for me?","annoyed","suspicious")
+                        # call her_main("Are you sure you didn't just pick the wrong colour for me?", "annoyed", "squint", "base", "mid")
                         # if skirt_choice in ["skirt_cheer_s","skirt_cheer_sexy_s"]:
                             # m "(Something tells me she doesn't want to wear green stuff.)"
                             # m "(Is she allergic to grasshoppers or something?)"

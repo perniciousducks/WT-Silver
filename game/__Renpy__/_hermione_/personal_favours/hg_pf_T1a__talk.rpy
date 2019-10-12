@@ -76,8 +76,8 @@ label hg_pf_talk_T1_intro_E1:
 
     m "Alright then..."
     m "Just tell me some news about you."
-    call her_main("Ehm... Alright...","open","suspicious")
-    call her_main("I just stand here and talk then...? Like this?","base","suspicious", xpos="mid", ypos="base", trans="fade")
+    call her_main("Ehm... Alright...", "open", "squint", "base", "mid")
+    call her_main("I just stand here and talk then...? Like this?", "base", "squint", "base", "mid", xpos="mid", ypos="base", trans="fade")
     pause.8
 
     m "Well?"
@@ -95,7 +95,7 @@ label hg_pf_talk_T1_E1:
 
     m "Alright then..."
     m "Just tell me some news about you."
-    call her_main("Here in the middle, right? I remember...","open","suspicious", xpos="mid", ypos="base", trans="fade")
+    call her_main("Here in the middle, right? I remember...", "open", "squint", "base", "mid", xpos="mid", ypos="base", trans="fade")
     pause.8
 
     m "Yes?"
@@ -334,7 +334,7 @@ label hg_pf_talk_T3_intro_E1:
     m "Let's have another chat, [hermione_name]."
     call her_main("Okay...","annoyed","worried")
     m "I'd like you to tell me a bit about your day."
-    call her_main("Are you going to...{w=0.8} touch yourself again sir?","open","suspicious")
+    call her_main("Are you going to...{w=0.8} touch yourself again sir?", "open", "squint", "base", "mid")
     m "I can't guarantee I won't...."
     m "You will be awarded with house points - as usual."
     call her_main("...", "mad", "narrow", "worried", "down", cheeks="blush") #mad Blush
@@ -395,8 +395,8 @@ label hg_pf_talk_T3:
             call gen_chibi("jerking_behind_desk")
             with d3
             pause.8
-            call her_main("[genie_name], I hoped we wouldn't do this again...","open","suspicious")
-            call her_main(" Are you actually... Masturbating again?","disgust","suspicious")
+            call her_main("[genie_name], I hoped we wouldn't do this again...", "open", "squint", "base", "mid")
+            call her_main(" Are you actually... Masturbating again?", "disgust", "squint", "base", "mid")
             m "Me? I'd never do such a thing. Ever..."
             m "Anyhow... Don't forget why you're here, [hermione_name]. To earn some points..."
 
@@ -557,7 +557,7 @@ label hg_pf_talk_tonks_T3_intro_E1:
     call her_main("What? Didn't we decide it was going to be between just you and I?", "open", "squint", "angry", "mid")
     m "Well, why only the two of us when there was the option to bring another person in?"
     call her_main("The option to?", "normal", "squint", "angry", "mid")
-    call her_main("Sorry, I'm not following...","normal","suspicious")
+    call her_main("Sorry, I'm not following...", "normal", "squint", "base", "mid")
     m "[hermione_name], what is your opinion of Miss Tonks?"
     call her_main("Well, she's a very talented witch... You'd have to be to become an auror.", "open", "closed", "base", "mid")
     m "Wouldn't it be great if we could have another chat with each other?"

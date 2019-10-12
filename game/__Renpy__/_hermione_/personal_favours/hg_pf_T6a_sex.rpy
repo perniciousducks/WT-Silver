@@ -92,7 +92,7 @@ label hg_pf_sex_T1_intro_E1:
     m "The favour I will be buying from you today..."
     call her_main(".......?", "base", "base", "base", "mid")
     m "How should I put this delicately...?"
-    call her_main("Is it sex, [genie_name]?","base","suspicious")
+    call her_main("Is it sex, [genie_name]?", "base", "squint", "base", "mid")
     m "Well, yes. How did you...?"
     call her_main("Not a terribly difficult deduction all things considered...", "base", "narrow", "base", "mid_soft")
     m "You don't mind then?"

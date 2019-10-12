@@ -28,7 +28,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     #Intro
     if pathvalue == 0:
         m "lass...I'd like you to roleplay with me."
-        call her_main("captain..?","annoyed","suspicious")
+        call her_main("captain..?", "annoyed", "squint", "base", "mid")
         m "How familiar ye be wit' th' term \" Swabbing ye poop deck\"?"
 
 
@@ -140,7 +140,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 #$ ccg2 = 6
                 call her_main("I be a wench??","clench","worried",cheeks="blush",tears="soft")
                 g9 "Yes ye be!"
-                call her_main("*Sob!* I be a wench...","angry","suspicious",cheeks="blush")
+                call her_main("*Sob!* I be a wench...", "angry", "squint", "base", "mid",cheeks="blush")
                 call her_main("I love t' suck ye pegleg...")
                 call her_main("'n now me wee asshole be gettin' ripped t' pieces... *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 g4 "Shiver Me Timbers!"
@@ -188,7 +188,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Ye... ye...", "scream", "wide", "base", "stare")
                 call her_main("Ye ship be to great","shock","worriedCl")
                 g4 "Let us pump this wee cavern full o' seamen then, savvy?"
-                call her_main(".....................","angry","suspicious",cheeks="blush")
+                call her_main(".....................", "angry", "squint", "base", "mid",cheeks="blush")
 
 
                 # SEX
@@ -219,7 +219,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main(".....................", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "Ye be fine thar, wench?"
                 call her_main("Blisterin' Barnacles... Ye be... turnin' me folds inside out... captain.","clench","worried",cheeks="blush",tears="soft")
-                call her_main("Me stitches be breaking","angry","suspicious",cheeks="blush")
+                call her_main("Me stitches be breaking", "angry", "squint", "base", "mid",cheeks="blush")
                 m "Aye..."
                 m "Maybe me canon needs swabbin'...?"
                 m "Go below deck, lass. swabb me canon some more."
@@ -286,7 +286,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("It still be hurting...","clench","worried",cheeks="blush",tears="soft")
                 call her_main("But th' storm has passed.")
                 m "I'll adjust th' sails fer now..."
-                call her_main("Ah... I be greatful, captain.","angry","suspicious",cheeks="blush")
+                call her_main("Ah... I be greatful, captain.", "angry", "squint", "base", "mid",cheeks="blush")
                 m "Oh... aye... ye secret cavern be great..."
                 call her_main("...........", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "Oh... Ye cavern be perfect, lass..."
@@ -303,10 +303,10 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("be this true? *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 call her_main("*Sob!* Me hull! *Sob!* It be taking in water! *Sob!*", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "Aye, ye ship be sinking... ye booty be mine."
-                call her_main("*SOB!*","angry","suspicious",cheeks="blush",tears="messy")
+                call her_main("*SOB!*", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
                 m "Ye poor wee sprog..."
                 m "A grand, wicked pirate be plunderin' yer booty!"
-                call her_main("*SOB!* Yeees! *SOB!*","scream","suspicious",cheeks="blush",tears="messy")
+                call her_main("*SOB!* Yeees! *SOB!*", "scream", "squint", "base", "mid",cheeks="blush",tears="messy")
                 g4 "Take me seamen!"
                 call her_main("No, I'm scared! *SOB!*","scream","worriedCl",cheeks="blush",tears="messy")
 
@@ -331,13 +331,13 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
                 call her_main("AH! ME BILGE IS FILLING UP! Sink Me!{image=textheart}{image=textheart}{image=textheart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 g4 "Aye, ye wench! I be shooting me canons!"
-                call her_main("Me hull is splintering, spare me Captain!","angry","suspicious",cheeks="blush",tears="messy")
+                call her_main("Me hull is splintering, spare me Captain!", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
                 g4 "Ye're nah sunk yet!"
                 $ renpy.play('sounds/cannon.mp3')
                 with hpunch
                 call her_main("No, I be already full! Stop cummin', ye bastard!", "scream", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 g4 "Shut th' farrg up, wench! Ye still be afloat!"
-                call her_main("No! Me stomach! Me ship will capsize!","scream","suspicious",cheeks="blush",tears="messy")
+                call her_main("No! Me stomach! Me ship will capsize!", "scream", "squint", "base", "mid",cheeks="blush",tears="messy")
                 $ renpy.play('sounds/cannon.mp3')
                 with hpunch
                 g4 "ARGH!"
@@ -350,11 +350,11 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main(".............")
                 $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
                 call her_main("{size=+7}*GULP!*{/size}","cum","worriedCl")
-                call her_main("*SOB!* I HATE YOU...","angry","suspicious",cheeks="blush",tears="messy")
+                call her_main("*SOB!* I HATE YOU...", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
                 call her_main("{size=+5}I HATE YE'N AND YER RUSTY OLE CANON!{/size}", "scream", "base", "angry", "mid",cheeks="blush",tears="messy")
                 call her_main("{size=+5}I HATE YE'N! YE HEAR ME?!{/size}")
                 g4 "Agh... Dead men tell no tales, wench!"
-                call her_main("*sob!* *Sob!*...","angry","suspicious",cheeks="blush",tears="messy")
+                call her_main("*sob!* *Sob!*...", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
 
                 # AFTER CUM INSIDE
                 hide screen bld1
@@ -446,7 +446,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         m "lass?"
         call her_main("captain?", "soft", "base", "base", "mid")
         m "I shall be takin' ye on another voyage today..."
-        call her_main(".............","open","suspicious")
+        call her_main(".............", "open", "squint", "base", "mid")
         m "Care t' guess wha' th' destination will be?"
         m "You have t' guess three times to find out."
         call her_main("...........", "annoyed", "squint", "angry", "mid")
@@ -482,7 +482,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Ah...", "soft", "narrow", "annoyed", "up")
         m "It seems like yer cavern be a bit more welcomin', lass."
         call her_main("Ah... It still be a bit tight.", "base", "narrow", "base", "mid_soft")
-        call her_main("'n , jus' call me \"wench\", captain.","base","suspicious")
+        call her_main("'n , jus' call me \"wench\", captain.", "base", "squint", "base", "mid")
         g4 "Agh! Ye wench! Ye always get me wit' yer words!"
 
         call her_chibi("hide")
@@ -562,7 +562,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Oh... I jus' love that wee cavern o' yers!"
                 call her_main(".....................", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 call her_main("Aye... Aft all th' thin's I had t' do fer me crew...")
-                call her_main("...nah one we pirate would leave th' sea fer me...","angry","suspicious",cheeks="blush",tears="messy")
+                call her_main("...nah one we pirate would leave th' sea fer me...", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
                 m "Oh, they be leavin th's sea fer ye alright!"
                 call her_main("Wha'? But ye said...", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 m "T' plunder yer cave, lass. But they'd go back t' sea."
@@ -622,7 +622,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Agh!"
                 call her_main("Ah...{image=textheart} yer seamen, captain...{image=textheart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 m "Aye, my semen..."
-                call her_main("Ah...{image=textheart}","angry","suspicious",cheeks="blush",tears="messy")
+                call her_main("Ah...{image=textheart}", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
                 m "......"
                 hide screen bld1
                 with d3

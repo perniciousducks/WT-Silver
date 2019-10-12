@@ -161,7 +161,7 @@ label hg_pr_kiss_T1_E2:
     show screen blktone
     call her_main("I did, [genie_name]...", "open", "closed", "base", "mid")
     m "Good. Give me the details."
-    call her_main("Well, I kissed a girl. Just like you told me to, [genie_name].","annoyed","suspicious")
+    call her_main("Well, I kissed a girl. Just like you told me to, [genie_name].", "annoyed", "squint", "base", "mid")
     m "I guess it was embarrassing for you, girl?"
     call her_main("Very much so, [genie_name].", "annoyed", "narrow", "angry", "R")
     m "Did you enjoy it though?"
@@ -193,10 +193,10 @@ label hg_pr_kiss_T1_E3:
     call her_main("What would you like to know, [genie_name]?", "open", "closed", "angry", "mid")
     m "Tell me everything! Was the girl pretty?"
     m "Did she return your kiss?"
-    call her_main("She was relatively pretty, [genie_name].","open","suspicious")
+    call her_main("She was relatively pretty, [genie_name].", "open", "squint", "base", "mid")
     her "And she did return my kiss..."
     call her_main("...........", "annoyed", "closed", "base", "mid")
-    call her_main("Anything else, [genie_name]?","open","suspicious")
+    call her_main("Anything else, [genie_name]?", "open", "squint", "base", "mid")
     m "...."
     m "Why are you being difficult, [hermione_name]?"
     call her_main("With all due respect, [genie_name]...", "open", "closed", "angry", "mid")
@@ -294,12 +294,12 @@ label hg_pr_kiss_T2_E2:
     call her_main("Naturally a small group of spectators gathered up around us right away...", "upset", "closed", "base", "mid")
     call her_main("Mostly boys of course...", "open", "base", "base", "mid", cheeks="blush")
     call her_main("Some of them even cheered us on...","open","worriedCl", cheeks="blush")
-    call her_main(".....","base","suspicious")
+    call her_main(".....", "base", "squint", "base", "mid")
     her "By the way, the girl I kissed, [genie_name]..."
     m "Hm...?"
     call her_main("She is one of those unpopular kids...", "open", "closed", "base", "mid")
     her "I know that other students make fun of her sometimes..."
-    call her_main("But today changed everything...","base","suspicious")
+    call her_main("But today changed everything...", "base", "squint", "base", "mid")
     her "I Single-handedly turned that girl from a social outcast..."
     call her_main("Into \"that lesbian girl who made out with Hermione Granger\"!", "smile", "base", "angry", "mid")
     m "Wow... You are just like some kind of hero or something..."
@@ -379,7 +379,7 @@ label hg_pr_kiss_T3_E1:
     m "Did you complete your task, girl?"
     call her_main("I did, [genie_name].", "soft", "base", "base", "mid")
     m "I'm all ears..."
-    call her_main("Well, I kissed that annoying blond girl from \"Slytherin\"...","annoyed","suspicious")
+    call her_main("Well, I kissed that annoying blond girl from \"Slytherin\"...", "annoyed", "squint", "base", "mid")
     m "Hm... \"annoying\", huh?"
     m "Because she happens to be from \"Slytherin\"."
     call her_main("Precisely so, [genie_name].", "open", "closed", "base", "mid")

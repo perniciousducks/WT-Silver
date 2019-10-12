@@ -89,7 +89,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
 
     elif her_whoring <= 20: #Slightly aroused
         call nar(">Hermione enters your office")
-        call her_main("Can you at least warn me next time?","open","suspicious")
+        call her_main("Can you at least warn me next time?", "open", "squint", "base", "mid")
         m "Well, that'd take away from the suspense wouldn't it?"
         call her_main("Hmmmm, well at least ask what I'm doing before you give me the potion.","open","worriedL")
         m "Why, what did you have to do today that was so important?"
@@ -99,7 +99,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "Well I imagine it depends on what side of morality you were arguing."
         call her_main("It doesn't matter.", "open", "closed", "base", "mid")
         m "Are you sure that you didn't enjoy it?"
-        call her_main("How could I. I had to stand there as my friends and peers all saw me naked.","annoyed","suspicious")
+        call her_main("How could I. I had to stand there as my friends and peers all saw me naked.", "annoyed", "squint", "base", "mid")
         m "You finished your speech?"
         call her_main("Certainly, I had to make sure that everyone knew my views on morality.", "soft", "base", "base", "mid")
         m "Well I'm sure they have a crystal clear view of it now."

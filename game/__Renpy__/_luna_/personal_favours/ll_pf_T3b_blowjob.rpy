@@ -1228,7 +1228,7 @@ label ll_pf_blowjob_T1_summon:
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
     m "Mmmmm... That I did..."
     $ lunCG(pupil='ahegao', eye='angry', pos=13)
-    call her_main("Ugh... This room reeks! Open a window or something...","disgust","suspicious")
+    call her_main("Ugh... This room reeks! Open a window or something...", "disgust", "squint", "base", "mid")
     m "The window doesn't shut."
     $ lunCG(pos=6)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
@@ -1241,7 +1241,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=13)
     call her_main("oh...", "smile", "narrow", "worried", "mid_soft")
     $ lunCG(pos=8)
-    call her_main("What will it be today then [genie_name]?","smile","suspicious")
+    call her_main("What will it be today then [genie_name]?", "smile", "squint", "base", "mid")
     $ lunCG(pos=14)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
     $ lunCG(pos=6)
@@ -1278,7 +1278,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=15)
     m "Oh fuck yes... just like that..."
     $ lunCG(pos=11)
-    call her_main("Is something going-","upset","suspicious")
+    call her_main("Is something going-", "upset", "squint", "base", "mid")
     m "Shut up and get naked [hermione_name]!"
     $ lunCG(pos=15)
     lun "*glck* *slrp* *glck*"
@@ -1330,7 +1330,7 @@ label ll_pf_blowjob_T1_summon:
     call her_main("Anyone I know?", "smile", "happy", "base", "mid")
     m "I believe... argh... you've met..."
     $ lunCG(pos=7)
-    call her_main("Hmmmm... It's not a slytherin is it?","upset","suspicious")
+    call her_main("Hmmmm... It's not a slytherin is it?", "upset", "squint", "base", "mid")
     m "Which colour are they again?"
     $ lunCG(pos=14)
     call her_main("The green ones you decrepit old perv!", "open", "base", "angry", "mid")
@@ -1417,11 +1417,11 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG('', '', '', 'ahegao', pos=13)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=5)
-    call her_main("So what? You called me up here to give you a little show while Luna Lovegood sucks you off all day?","upset","suspicious")
+    call her_main("So what? You called me up here to give you a little show while Luna Lovegood sucks you off all day?", "upset", "squint", "base", "mid")
     $ lunCG(pos=8)
     m "Pretty much... It was getting a little boring with just the two of us..."
     $ lunCG(pos=13)
-    call her_main("Ugh... You're such a pig!","base","suspicious")
+    call her_main("Ugh... You're such a pig!", "base", "squint", "base", "mid")
     $ lunCG('', 'angry', '', 'dick', pos=6)
     m "So you don't want to earn some points for your house?"
     $ lunCG(pos=14)
@@ -1460,7 +1460,7 @@ label ll_pf_blowjob_T1_summon:
     call her_main("Would you do the right thing and send them away?", "smile", "happy", "base", "mid")
     $ lunCG('', 'mad', '', 'dick', pos=11)
     lun "*glck* *slrp* *glck*"
-    call her_main("Or would you make them stay...","grin","suspicious")
+    call her_main("Or would you make them stay...", "grin", "squint", "base", "mid")
     $ lunCG(pos=13)
     g4 "Mmmm...."
     $ lunCG(pos=15)

@@ -3051,7 +3051,7 @@ label ball_ending_E3:
         call her_main("A letter, sir?", "soft", "base", "base", "mid")
         call her_main("Oh, of course! The one you wrote for me, sir.","grin","worriedCl",emote="05")
         dum_[1]"This letter is not from me, miss Granger."
-        call her_main("It is not?","annoyed","suspicious")
+        call her_main("It is not?", "annoyed", "squint", "base", "mid")
         call her_main("Oh, I see...","grin","worriedCl",emote="05")
         call her_main("There is no need to be so shy about this, sir. It's alright.")
         dum_[1]"*ahem*... here it is."

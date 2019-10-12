@@ -758,7 +758,7 @@ label hermione_intro_E3:
             call her_main("I cannot believe this is happening!","mad","worriedCl", tears="soft_blink")
         "{size=-3}\"You could prepare better if I were to tutor you.\"{/size}":
             $ tutoring_offer_made = True
-            call her_main("hm...","annoyed","suspicious")
+            call her_main("hm...", "annoyed", "squint", "base", "mid")
             call her_main("Yes, that could help I suppose...", "soft", "base", "base", "R")
             call her_main("I appreciate your offer, professor, but...", "open", "base", "base", "mid")
             call her_main("The best tutor is a book, and I have the entire Hogwarts library at my disposal.", "open", "closed", "base", "mid")
@@ -771,7 +771,7 @@ label hermione_intro_E3:
             m "You need to put my co-"
             call her_main("Huh?", "soft", "base", "base", "mid")
             m "{size=-4}(No, I can't actually say that...){/size}"
-            call her_main("......?","annoyed","suspicious")
+            call her_main("......?", "annoyed", "squint", "base", "mid")
             jump cant_say
 
     m "............"
@@ -864,7 +864,7 @@ label hermione_intro_E5:
 
     m "How can I help you today, miss Granger?"
     call her_main("Well, first of all, I am terribly sorry about yesterday's display, sir...", "open", "closed", "angry", "mid")
-    call her_main("I've never failed a test in my life, so I wasn't sure how to react...","open","suspicious")
+    call her_main("I've never failed a test in my life, so I wasn't sure how to react...", "open", "squint", "base", "mid")
     call her_main("But I'm all better now...", "open", "closed", "angry", "mid")
     m "I see..."
     her "I will not take much of your time, I promise..."
@@ -1111,7 +1111,7 @@ label hermione_intro_E6:
         m "Yes, girl. Open your mouth, and show me your tongue."
         call her_main("{size=-7}(What a weirdo...){/size}", "annoyed", "narrow", "angry", "R")
         call her_main("Ehm... well, alright then...", "normal", "squint", "angry", "mid")
-        call her_main("Here...","open","suspicious")
+        call her_main("Here...", "open", "squint", "base", "mid")
         call her_main(".............", "open_tongue", "narrow", "base", "mid_soft")
         her "............."
         call her_main(".................", "open_tongue", "narrow", "angry", "R")

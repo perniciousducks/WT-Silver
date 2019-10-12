@@ -810,7 +810,7 @@ label hg_hidden_blowjob_luna:
     m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
     lun "[lun_genie_name]? Are you there? I need to talk to you."
     if lun_genie_name not in ["Sir","Professor","Dumbledore"]:
-        call her_main("([lun_genie_name]?!)","soft","suspicious")
+        call her_main("([lun_genie_name]?!)", "soft", "squint", "base", "mid")
         call her_main("(Wait, it's Luna!)", "disgust", "wide", "base", "stare")
     else:
         call her_main("(It's Luna!)", "disgust", "wide", "base", "stare")
@@ -1332,7 +1332,7 @@ label hg_hidden_blowjob_cumming:
         call her_main("Of course, [genie_name].", "upset", "closed", "base", "mid")
 
     else:
-        call her_main("I'm a slut, [genie_name].","base","suspicious", ypos="head")
+        call her_main("I'm a slut, [genie_name].", "base", "squint", "base", "mid", ypos="head")
         call her_main("A slut for your cum.", "base", "narrow", "base", "mid_soft")
         m "That's it, [hermione_name]."
         call her_main("It's all I can think about [genie_name].", "base", "narrow", "worried", "down")
@@ -1406,7 +1406,7 @@ label hg_hidden_blowjob_cumming:
                     m "What, even after I just gave you lunch?"
                 else:
                     m "What, even after I fed you dinner"
-                call her_main(".............","annoyed","suspicious") #Smile.
+                call her_main(".............", "annoyed", "squint", "base", "mid") #Smile.
                 call her_main("Fine, I suppose this was worth a meal")
 
         "-Cum on her face-":
@@ -1464,7 +1464,7 @@ label hg_hidden_blowjob_cumming:
             if her_tier >= 6:
                 m "What, even after I just gave you a salon treatment?"
                 m "Women pay a lot of money for a good facial."
-                call her_main(".............","annoyed","suspicious") #Smile.
+                call her_main(".............", "annoyed", "squint", "base", "mid") #Smile.
                 call her_main("Fine, but my skin better look better tomorrow.")
 
     jump end_hg_pf_blowjob

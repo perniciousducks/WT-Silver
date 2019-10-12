@@ -90,7 +90,7 @@ label chit_chat:
 
         elif one_of_ten == 7:
             call her_main("The Hogwarts school library is considered to be quite extensive...", "open", "closed", "angry", "mid")
-            call her_main("Still, I can't help but wish that it'd be bigger...","open","suspicious")
+            call her_main("Still, I can't help but wish that it'd be bigger...", "open", "squint", "base", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 8:
@@ -163,7 +163,7 @@ label chit_chat:
             call her_main("I've read about this thing called \"Time-Turner\".", "open", "base", "base", "mid")
             her "It allows the user to control the flow of time..."
             call her_main("Having a device like that would do wonders for my schedule...", "open", "closed", "base", "mid")
-            call her_main("","annoyed","suspicious")
+            call her_main("", "annoyed", "squint", "base", "mid")
 
 
     ### WHORING LEVEL 04 ###
@@ -180,7 +180,7 @@ label chit_chat:
 
         elif one_of_ten == 3:
             call her_main("Quidditch is stupid!", "angry", "base", "angry", "mid")
-            call her_main("There. I said it.","annoyed","suspicious")
+            call her_main("There. I said it.", "annoyed", "squint", "base", "mid")
 
         elif one_of_ten == 4:
             call her_main("Sir, there is something about professor Snape that I think you should know...", "open", "base", "base", "mid")
@@ -196,7 +196,7 @@ label chit_chat:
 
         elif one_of_ten == 6:
             call her_main("Life works in mysterious ways...","open","worriedL")
-            call her_main("Wouldn't you agree, sir?","open","suspicious")
+            call her_main("Wouldn't you agree, sir?", "open", "squint", "base", "mid")
             call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 7:
@@ -241,7 +241,7 @@ label chit_chat:
             call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 5:
-            call her_main("My least favourite subject?","open","suspicious")
+            call her_main("My least favourite subject?", "open", "squint", "base", "mid")
             call her_main("Divination.", "annoyed", "squint", "angry", "mid")
 
         elif one_of_ten == 6:

@@ -692,9 +692,9 @@ label hermione_change:
             call her_main("You want to call me.... {w=0.5}a pet?", "normal", "squint", "angry", "mid")
             m "Yes."
             call her_main(".... {w=0.5}.... {w=0.5}.... {w=0.5}....", "normal", "happy", "base", "mid")
-            call her_main("","normal","suspicious")
+            call her_main("", "normal", "squint", "base", "mid")
             m ".... {w=0.5}.... {w=0.5}...."
-            call her_main("May I at least know why?","open","suspicious")
+            call her_main("May I at least know why?", "open", "squint", "base", "mid")
             m "No."
             call her_main("....","annoyed","worried")
         elif her_whoring >= 13:
@@ -721,7 +721,7 @@ label hermione_change:
             call her_main("[genie_name]?!", "shock", "wide", "worried", "stare")
             call her_main("You can't just call someone that!", "mad", "wide", "base", "stare")
             m "It'll just be between us..."
-            call her_main("...","disgust","suspicious")
+            call her_main("...", "disgust", "squint", "base", "mid")
             m "Nothing to add?"
             call her_main("", "clench", "closed", "base", "mid", emote="01")
             m "So you'll let me call you that or not?"

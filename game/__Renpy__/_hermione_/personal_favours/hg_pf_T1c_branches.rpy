@@ -230,10 +230,10 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
             call set_her_action("none","update")
             call hg_chibi_transition("stand","desk","base", flip=False, trans="fade")
 
-            call her_main("I am not setting a foot into your office ever again, [genie_name]!","angry","suspicious", cheeks="blush", xpos="mid", ypos="base")
+            call her_main("I am not setting a foot into your office ever again, [genie_name]!", "angry", "squint", "base", "mid", cheeks="blush", xpos="mid", ypos="base")
 
             g4 "Come on, now. Just say something dirty! I'm almost there!"
-            call her_main("You are a horrible person, [genie_name]...","angry","suspicious", cheeks="blush", tears="messy")
+            call her_main("You are a horrible person, [genie_name]...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
 
             call her_walk(action="leave", speed=2)
 
@@ -254,11 +254,11 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
             g4 "No, wait, I'm almost there!"
             call set_her_action("none","update")
 
-            call her_main("Ew! [genie_name]!","angry","suspicious", cheeks="blush")
+            call her_main("Ew! [genie_name]!", "angry", "squint", "base", "mid", cheeks="blush")
 
             call hg_chibi_transition("stand","desk","base", flip=False, trans="fade")
 
-            call her_main("I'm leaving!","angry","suspicious", cheeks="blush")
+            call her_main("I'm leaving!", "angry", "squint", "base", "mid", cheeks="blush")
 
             call her_walk(action="leave", speed=2)
 
@@ -442,7 +442,7 @@ label hg_pf_admire_breasts_T3_masturbate:
             hide screen jerking_off_cum
             with d3
 
-            call her_main("[genie_name], how could you...?","angry","suspicious", cheeks="blush")
+            call her_main("[genie_name], how could you...?", "angry", "squint", "base", "mid", cheeks="blush")
             m "Oh, this was quite amazing..."
             show screen blktone8
             with d3

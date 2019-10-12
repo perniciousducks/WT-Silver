@@ -343,7 +343,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     m "Of course. I already know what a whore you are, this is so that everyone else will know."
     call her_main("What will people think of me?","scream","worriedCl",cheeks="blush",tears="messy")
     m "They'll think the truth, that you're a shameless whore."
-    call her_main("...Hmmph","angry","suspicious",cheeks="blush")
+    call her_main("...Hmmph", "angry", "squint", "base", "mid",cheeks="blush")
     m "Well whatever you think, I expect you to put it on and then get out of my office."
     call her_main("...Fine", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
     ">She places the collar around her neck and tightens it."
@@ -510,7 +510,7 @@ label slave_scene:
     call her_main("What's this?", "base", "narrow", "base", "mid_soft")
     hide screen hermione_main
     m "This is a collar, so that everyone will know that you're my slut."
-    call her_main("Do I have to wear this all the time?","base","suspicious")
+    call her_main("Do I have to wear this all the time?", "base", "squint", "base", "mid")
     hide screen hermione_main
     m "Yes you do."
     call her_main("...", "angry", "narrow", "base", "down")

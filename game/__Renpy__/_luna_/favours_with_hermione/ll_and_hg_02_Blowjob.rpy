@@ -36,7 +36,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         pause.8
 
         call her_main("hello Professor...", "base", "closed", "base", "mid")
-        call her_main("oh, hi luna! what's he got you up here for today? Another handjob?","base","suspicious")
+        call her_main("oh, hi luna! what's he got you up here for today? Another handjob?", "base", "squint", "base", "mid")
         call lun_main("not quite...","base","angry","base","R")
         call her_main("so he's finally asked for a blowjob then?", "base", "narrow", "worried", "down")
         call lun_main("Mhmmm.","base","seductive","base","mid")
@@ -291,7 +291,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("We think it would be more fair if we're both paid points and gold.", "base", "closed", "base", "mid")
         m "Really? I'm surprised miss lovegood would agree to that."
         call lun_main("Well I didn't want to-","normal","angry","mad","R")
-        call her_main("...","annoyed","suspicious")
+        call her_main("...", "annoyed", "squint", "base", "mid")
         call lun_main("But... hermione convinced me.","base","suspicious","sad","R")
         m "Alright then..."
         m "(It's not like I care who gets these worthless points)"
@@ -341,7 +341,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         pause.8
 
         call her_main("hello Professor!", "base", "closed", "base", "mid")
-        call her_main("hey luna! what does he want this time? Another blowjob?","base","suspicious")
+        call her_main("hey luna! what does he want this time? Another blowjob?", "base", "squint", "base", "mid")
         call lun_main("Mhmmm...","base","seductive","base","mid")
         call her_main("great!!!", "base", "narrow", "worried", "down")
         call her_main("You're going to love it [genie_name], she's been practising every chance she could since last time!", "soft", "narrow", "annoyed", "up")
@@ -639,7 +639,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         pause.8
 
         call her_main("hello Professor!", "base", "closed", "base", "mid")
-        call her_main("hey luna! another blowjob?","base","suspicious")
+        call her_main("hey luna! another blowjob?", "base", "squint", "base", "mid")
         call lun_main("Mhmmm...","base","angry","base","R")
         call her_main("yay!!!","grin","worriedCl")
         call her_main("we can finally practice deepthroating!", "base", "narrow", "base", "mid_soft")

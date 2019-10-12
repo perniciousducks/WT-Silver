@@ -247,7 +247,7 @@ label gryffindor_cheer_responses:
                 m "How did everything go today?"
                 call her_main("Very well thank you, all the boys said that I helped keep their spirits up.", "open", "base", "base", "mid")
                 m "{size=-5}I'm sure that wasn't the only thing you've helped stay up...{/size}"
-                call her_main("What was that [genie_name]?","open","suspicious")
+                call her_main("What was that [genie_name]?", "open", "squint", "base", "mid")
                 m "I was just saying that I'm sure you did a stand up job."
                 call her_main("I think so...", "base", "happyCl", "base", "mid")
                 m "Well, did they pay you for raising their \"spirits\"?"
@@ -386,7 +386,7 @@ label slytherin_cheer_responses:
                 m "30 points to Gryffindor."
             elif day_random >= 3 and day_random <= 5:
                 m "How was your day today [hermione_name]?"
-                call her_main("Uneventful. I completed my routine and then went back to my room...","open","suspicious")
+                call her_main("Uneventful. I completed my routine and then went back to my room...", "open", "squint", "base", "mid")
                 m "You didn't talk to anyone?"
                 call her_main("I make a point of trying to avoid Slytherin student as best I can. ", "annoyed", "narrow", "angry", "R")
                 m "Are they really that unbearable?"
@@ -418,7 +418,7 @@ label slytherin_cheer_responses:
                 m "Very well, I'll speak to him. Although I'm not sure it will have the effect you're hoping for."
                 call her_main("It better, otherwise I wont put my full effort into this...", "normal", "squint", "angry", "mid")
                 m "{size=-5}I'm sure that'll show them.{/size}"
-                call her_main("What was that [genie_name]?","open","suspicious")
+                call her_main("What was that [genie_name]?", "open", "squint", "base", "mid")
                 m "Nothing [hermione_name], I'll speak to Professor Snape tonight..."
             else:#Comes back with cum on her
                 m "What the hell happened to you?"

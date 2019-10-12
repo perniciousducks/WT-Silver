@@ -38,7 +38,7 @@ label hg_ps_buttplug:
 
         $ buttplug_1_worn = True
 
-        call her_main("and what is that supposed to be? Some sort of animals tail?","open","suspicious")
+        call her_main("and what is that supposed to be? Some sort of animals tail?", "open", "squint", "base", "mid")
         m "Not exactly, it's a butt plug. I want you to put it in while you attend class today."
         stop music
         with hpunch
@@ -60,7 +60,7 @@ label hg_ps_buttplug:
         call her_main("............", "upset", "closed", "base", "mid")
         m "I'm willing to give \"Gryffindor\" fifty five points."
         m "and All I ask for..."
-        call her_main("..........?","annoyed","suspicious")
+        call her_main("..........?", "annoyed", "squint", "base", "mid")
         call nar(">You pull out the small butt plug from your desk.")
         m "...is that you wear this to class..."
         call her_main("!!!......", "angry", "base", "angry", "mid")
@@ -86,7 +86,7 @@ label hg_ps_buttplug:
 
         $ buttplug_2_worn = True
 
-        call her_main("and what is this supposed to be?","open","suspicious")
+        call her_main("and what is this supposed to be?", "open", "squint", "base", "mid")
         m "Can't you tell it's a butt plug? They shouldn't be new to you at this point."
         call her_main("...", "annoyed", "narrow", "annoyed", "mid")
         call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -258,7 +258,7 @@ label hg_ps_buttplug:
                         m "Any more and people might get suspicious."
                         call her_main("hmmmm I suppose you're right...", "annoyed", "narrow", "angry", "R")
                         call her_main("but as a present i'll show you anyway...", "base", "narrow", "worried", "down")
-                        call her_main("although you better appreciate it...","base","suspicious")
+                        call her_main("although you better appreciate it...", "base", "squint", "base", "mid")
                         m "I'm sure I will."
                 ">You hand her the butt plug."
                 call her_main("well... here goes...", "base", "narrow", "worried", "down")
@@ -616,7 +616,7 @@ label hg_ps_buttplug_complete:
             m "and how did you do that?"
             call her_main("well if I rock my hips while I'm sitting in class it's almost enough...", "base", "narrow", "base", "mid_soft")
             $ sc34CG(1, 16, 3)
-            call her_main("but if I sit of the edge of my chair while I rock my hips...","base","suspicious")
+            call her_main("but if I sit of the edge of my chair while I rock my hips...", "base", "squint", "base", "mid")
             $ sc34CG(1, 17, 2)
             call her_main("{image=textheart}{image=textheart}{image=textheart}", "soft", "narrow", "annoyed", "up")
             m "So you worked out how to pleasure yourself in class."
@@ -663,7 +663,7 @@ label hg_ps_buttplug_complete:
             her "Everyone would know what I was wearing..."
             call her_main("Any time someone saw me they'd think about whether or not it was in...", "base", "narrow", "worried", "down")
             m "That's quite the thought process."
-            call her_main("Yes, well I certainly don't want that happening...","base","suspicious")
+            call her_main("Yes, well I certainly don't want that happening...", "base", "squint", "base", "mid")
             m "I'm sure..."
             call her_main("", "base", "narrow", "base", "mid_soft")
             m "It sounds like a job well done [hermione_name]."
@@ -672,14 +672,14 @@ label hg_ps_buttplug_complete:
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "[hermione_name], did you complete your task?"
             show screen blktone
-            call her_main("Yes, I did [genie_name]...","base","suspicious",xpos="right",ypos="base")
+            call her_main("Yes, I did [genie_name]...", "base", "squint", "base", "mid",xpos="right",ypos="base")
             m "Did anyone notice?"
             her "maybe a few third years..."
             m "well go on."
             call her_main("It was the stairs...", "base", "narrow", "base", "mid_soft")
             her "I may have gotten a little carried away with myself..."
             m "What happened, [hermione_name]?"
-            call her_main("Well as I was walking to divination class I ended up in front of a group of third year students...","base","suspicious")
+            call her_main("Well as I was walking to divination class I ended up in front of a group of third year students...", "base", "squint", "base", "mid")
             call her_main("And seeing as how they were behind me on the stairs they may have been able to... see it.", "base", "narrow", "base", "mid_soft")
             m "So you intentionally showed it to a group of boys? You don't expect me to grant you extra points for showing them, do you?"
             call her_main("Of course not, [genie_name].", "base", "base", "base", "R",cheeks="blush")
@@ -906,7 +906,7 @@ label hg_ps_buttplug_complete:
             call her_main("I did [genie_name].","open","worried")
             call her_main("It was at lunch, in the great hall.", "open", "closed", "base", "mid")
             call her_main("I was walking past the slytherin table on my way to sit down...", "open", "closed", "base", "mid")
-            call her_main("when I saw that little... vixen, astoria greengrass.","base","suspicious")
+            call her_main("when I saw that little... vixen, astoria greengrass.", "base", "squint", "base", "mid")
             her "she couldn't take her eyes off of it..."
             call her_main("imagine that... astoria greengrass... pureblood, licking my...", "grin", "narrow", "annoyed", "up")
             call her_main("{image=textheart}........{image=textheart}", "soft", "narrow", "annoyed", "up")
@@ -917,13 +917,13 @@ label hg_ps_buttplug_complete:
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "[hermione_name], did you complete your task?"
             show screen blktone
-            call her_main("Yes, I did [genie_name]...","base","suspicious",xpos="right",ypos="base")
+            call her_main("Yes, I did [genie_name]...", "base", "squint", "base", "mid",xpos="right",ypos="base")
             m "Anything interesting happen?"
             her "do you know that Patil twins [genie_name]?"
             m "no but do continue."
             call her_main("well they were walking down the hall behind me...", "base", "narrow", "base", "mid_soft")
             her "I swear I could hear them whispering to each other..."
-            call her_main("and I thought I may as well give them something to talk about...","base","suspicious")
+            call her_main("and I thought I may as well give them something to talk about...", "base", "squint", "base", "mid")
             call her_main("So I stopped, kept my knees straight and bent over as far as I could...", "base", "narrow", "base", "mid_soft")
             m "You exposed yourself just like that?"
             call her_main(".......", "base", "base", "base", "R",cheeks="blush")
@@ -994,7 +994,7 @@ label hg_ps_buttplug_complete:
             call her_main("I did [genie_name].","open","worried")
             call her_main("It was at lunch, in the great hall.", "open", "closed", "base", "mid")
             call her_main("I was walking past the slytherin table on my way to sit down...", "open", "closed", "base", "mid")
-            call her_main("when I saw that little... vixen, astoria greengrass.","base","suspicious")
+            call her_main("when I saw that little... vixen, astoria greengrass.", "base", "squint", "base", "mid")
             her "she couldn't take her eyes off of it..."
             call her_main("imagine that... astoria greengrass... pureblood, licking my...", "grin", "narrow", "annoyed", "up")
             call her_main("{image=textheart}........{image=textheart}", "soft", "narrow", "annoyed", "up")
@@ -1005,13 +1005,13 @@ label hg_ps_buttplug_complete:
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "[hermione_name], did you complete your task?"
             show screen blktone
-            call her_main("Yes, I did [genie_name]...","base","suspicious",xpos="right",ypos="base")
+            call her_main("Yes, I did [genie_name]...", "base", "squint", "base", "mid",xpos="right",ypos="base")
             m "Anything interesting happen?"
             her "do you know that Patil twins [genie_name]?"
             m "no but do continue."
             call her_main("well they were walking down the hall behind me...", "base", "narrow", "base", "mid_soft")
             her "I swear I could hear them whispering to each other..."
-            call her_main("and I thought I may as well give them something to talk about...","base","suspicious")
+            call her_main("and I thought I may as well give them something to talk about...", "base", "squint", "base", "mid")
             call her_main("So I stopped, kept my knees straight and bent over as far as I could...", "base", "narrow", "base", "mid_soft")
             m "You exposed yourself just like that?"
             call her_main(".......", "base", "base", "base", "R",cheeks="blush")

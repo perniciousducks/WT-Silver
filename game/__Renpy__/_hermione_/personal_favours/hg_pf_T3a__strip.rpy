@@ -334,10 +334,10 @@ label hg_pf_strip_T1_intro_E1: # Complete
     call her_main("Why won't it budge?! *sob*","angry","worriedCl", cheeks="blush")
     call her_main("No, I can't do this, [genie_name]! *sob*", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
     m "What?"
-    call her_main("I thought I could, but...","angry","suspicious", cheeks="blush", trans="fade")
-    call her_main("Stripping for points, [genie_name]?","angry","suspicious", cheeks="blush")
-    call her_main("People look up to me in this school!","angry","suspicious", cheeks="blush")
-    call her_main("I have a reputation...*sob*","angry","suspicious", cheeks="blush")
+    call her_main("I thought I could, but...", "angry", "squint", "base", "mid", cheeks="blush", trans="fade")
+    call her_main("Stripping for points, [genie_name]?", "angry", "squint", "base", "mid", cheeks="blush")
+    call her_main("People look up to me in this school!", "angry", "squint", "base", "mid", cheeks="blush")
+    call her_main("I have a reputation...*sob*", "angry", "squint", "base", "mid", cheeks="blush")
     call her_main("And If I do this...", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
     show screen blkfade
     with d5
@@ -348,7 +348,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     call her_chibi("stand","desk","base")
 
     hide screen blkfade
-    call her_main("[genie_name], I think I'd better go now... *Sob!*","angry","suspicious", cheeks="blush", tears="messy", trans="fade")
+    call her_main("[genie_name], I think I'd better go now... *Sob!*", "angry", "squint", "base", "mid", cheeks="blush", tears="messy", trans="fade")
 
     menu:
         "\"Alright. I had fun. Here are your points.\"":
@@ -770,7 +770,7 @@ label hg_pf_strip_T1_E2:
     call ctc
 
     call her_main("Just for the record...", "open", "closed", "base", "mid", xpos="mid", ypos="base")
-    call her_main("I still consider this a highly inappropriate favour to be buying from one of your students, [genie_name].","annoyed","suspicious")
+    call her_main("I still consider this a highly inappropriate favour to be buying from one of your students, [genie_name].", "annoyed", "squint", "base", "mid")
     m "Right. And an equally inappropriate favour to be selling to your headmaster. Wouldn't you agree?"
     call her_main("..........", "annoyed", "narrow", "angry", "R")
 

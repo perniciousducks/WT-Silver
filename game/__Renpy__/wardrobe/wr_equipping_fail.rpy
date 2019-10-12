@@ -66,7 +66,7 @@
             # call her_main("No, [genie_name]...", "open", "closed", "base", "mid",xpos="base") #525=default Hermione xpos
             # call her_main("I'm still mad at you for what you did!","open","worriedL")
             # m "Will you wear it if I give Gryffindor some points?"
-            # call her_main("...","annoyed","suspicious")
+            # call her_main("...", "annoyed", "squint", "base", "mid")
             # call her_main("Fifteen house points!", "open", "base", "base", "mid")
             # call her_main("And maybe I will wear it.-- Only maybe!", "open", "base", "base", "R")
 

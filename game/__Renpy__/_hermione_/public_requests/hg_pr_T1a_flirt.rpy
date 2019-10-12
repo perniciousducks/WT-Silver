@@ -30,7 +30,7 @@ label hg_pr_flirt:
         m "I actually mean that I need you to flirt with them..."
         call her_main("Flirt?!", "shock", "wide", "base", "stare")
         call her_main("[genie_name]!", "angry", "base", "angry", "mid")
-        call her_main("I'm not even going to ask why you'd be interested in this, [genie_name]...","annoyed","suspicious")
+        call her_main("I'm not even going to ask why you'd be interested in this, [genie_name]...", "annoyed", "squint", "base", "mid")
         call her_main("But why \"Slytherin\"?","open","worried")
         her "If you need me to be flirtatious today, I think I can manage that..."
         her "But, please, can't be another house?"

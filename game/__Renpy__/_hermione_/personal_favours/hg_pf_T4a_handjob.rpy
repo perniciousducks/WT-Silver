@@ -663,7 +663,7 @@ label hg_pf_handjob_2:
 
         "\"Call yourself a whore!\"":
             call her_main("Excuse me?", "open", "base", "base", "mid")
-            call her_main("Oh, that's right! I'm supposed to degrade myself, right?","annoyed","suspicious")
+            call her_main("Oh, that's right! I'm supposed to degrade myself, right?", "annoyed", "squint", "base", "mid")
             m "Well, you don't have to, but..."
             call her_main("That's alright, I don't mind.", "upset", "closed", "base", "mid")
             call her_main("Alright then! I am a whore!", "base", "base", "base", "mid")
@@ -803,18 +803,18 @@ label hg_pf_handjob_2_continue:
 
         "{size=-4}\"Sometimes I get lonely and let my dog mount me.\"{/size}":
             call her_main("What?!", "angry", "wide", "base", "stare")
-            call her_main("That's disgusting.","annoyed","suspicious")
+            call her_main("That's disgusting.", "annoyed", "squint", "base", "mid")
             call her_main("Dogs carry {size=+5}STD{/size}s, [genie_name].", "open", "closed", "base", "mid")
             m "Actually, human and canine {size=+5}STD{/size}s are species specific..."
             m "Means that they can only be spread to the same species."
-            call her_main("............","open","suspicious")
+            call her_main("............", "open", "squint", "base", "mid")
             m "Also I hear that many women do enjoy getting \"knotted\" quite a bit."
             call her_main("What does getting \"knotted\" mean?", "normal", "squint", "angry", "mid")
             m "Ehm... Well..."
             m "Ah, it doesn't matter."
             m "Just say the thing!"
             call her_main("Fine!", "normal", "base", "base", "mid")
-            call her_main("Sometimes I get lonely and let my dog mount me.","open","suspicious")
+            call her_main("Sometimes I get lonely and let my dog mount me.", "open", "squint", "base", "mid")
             m "That sounded so fake..."
             call her_main("Because we don't even own a dog!", "normal", "squint", "angry", "mid")
             m "Fine, whatever, let's just move on then..."

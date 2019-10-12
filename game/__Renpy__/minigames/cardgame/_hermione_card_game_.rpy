@@ -206,7 +206,7 @@ label hermione_random_duel:
         g9 "What if we made it a wager..."
         call her_main("Like gambling? No thank you!", "clench", "narrow", "annoyed", "mid")
         m "It's not gambling, just a friendly house point wager..."
-        call her_main("Sounds like gambling to me...","normal","suspicious")
+        call her_main("Sounds like gambling to me...", "normal", "squint", "base", "mid")
         m "So, how about it?"
         call her_main("I'll pass, [genie_name]...","open","worriedL")
 

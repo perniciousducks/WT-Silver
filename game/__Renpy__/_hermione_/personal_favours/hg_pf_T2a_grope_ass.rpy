@@ -174,7 +174,7 @@ label hg_pf_grope_ass_T1_back:
             g4 "There! It's done!"
             call her_main("Gr...........", "angry", "base", "angry", "mid", cheeks="blush")
             call her_main("........................", "angry", "base", "angry", "mid", cheeks="blush")
-            call her_main("This is not fair...","angry","suspicious", cheeks="blush", tears="messy")
+            call her_main("This is not fair...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
             m "What? Hey, wait, don't you start crying on me..."
             call her_main("I hate you, [genie_name]! I hate you!","scream","worriedCl", cheeks="blush", tears="messy")
 
@@ -1068,7 +1068,7 @@ label hg_pf_grope_T4_continue:
             ">you speed up slightly..."
             call her_main("{image=textheart}-My duty-{image=textheart}", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
             ">you start rubbing her clit..."
-            call her_main("!!{image=textheart}-Gryffindor-{image=textheart}","angry","suspicious", cheeks="blush", tears="messy")
+            call her_main("!!{image=textheart}-Gryffindor-{image=textheart}", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
             m "we can, of course, stop right here, unfulfilled. If that's what you really want."
             call her_main("...", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
             m "well?"
@@ -1119,7 +1119,7 @@ label hg_pf_grope_T4_continue:
             ">you speed up slightly"
             call her_main("{image=textheart}-my duty-{image=textheart}", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
             ">you rotate thumb as you go"
-            call her_main("!!{image=textheart}-gryffindor-{image=textheart}","angry","suspicious", cheeks="blush", tears="messy")
+            call her_main("!!{image=textheart}-gryffindor-{image=textheart}", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
             m "we can, of course, stop right here, unfulfilled. if that's what you really want."
             call her_main("...", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
             m "well?"
@@ -1156,7 +1156,7 @@ label hg_pf_grope_T4_continue:
             m "you're cumming again?"
 
             call slap_her
-            call her_main("yes!","scream","suspicious", cheeks="blush", tears="messy")
+            call her_main("yes!", "scream", "squint", "base", "mid", cheeks="blush", tears="messy")
             m "you're cumming from being spanked again?"
 
             call slap_her

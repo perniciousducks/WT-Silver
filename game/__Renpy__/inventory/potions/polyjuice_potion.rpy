@@ -55,9 +55,9 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
             elif her_whoring >= 6:
                 call her_main("And what kind of potion is it? It looks gross...", "normal", "squint", "angry", "mid")
                 m "Well, wouldn't it spoil half the enjoyment of it if I told you?"
-                call her_main("Depends whose enjoyment you're talking about...","open","suspicious")
+                call her_main("Depends whose enjoyment you're talking about...", "open", "squint", "base", "mid")
                 m "20 points."
-                call her_main("Hmmm, can't you tell me what kind of potion it is?","annoyed","suspicious")
+                call her_main("Hmmm, can't you tell me what kind of potion it is?", "annoyed", "squint", "base", "mid")
                 call her_main("Polyjuice? Amortentia? Babbling Beverage? Felix Felicis?","grin","worriedCl",emote="05")
                 m "That's going to have to stay a secret [hermione_name]."
                 call her_main("...", "annoyed", "narrow", "worried", "down")
@@ -163,7 +163,7 @@ label hg_pp_polyjuice_T1_intro:
                 call her_main("Haven't you humiliated me enough?", "annoyed", "closed", "base", "mid")
                 call her_main("", "annoyed", "base", "base", "R")
                 m "Would you like to earn 75 additional points?"
-                call her_main("75 points? How?","annoyed","suspicious")
+                call her_main("75 points? How?", "annoyed", "squint", "base", "mid")
 
                 g9 "By sucking my cock, obviously."
                 call her_main("Right now? I look like a cat! Why would you ask me at a time like this?", "angry", "wide", "base", "stare")
@@ -356,7 +356,7 @@ label hg_pp_polyjuice_T1_introCC:
             pass
 
     m "Wait [hermione_name], how would you like to earn 75 additional points?"
-    call her_main("75 points? How?","annoyed","suspicious")
+    call her_main("75 points? How?", "annoyed", "squint", "base", "mid")
     m "By sucking my cock."
     if polyjuice_drunk:
         her "Again?"
@@ -533,7 +533,7 @@ label hg_pp_polyjuice_T1_introCC:
         # first_potion = False
         # her "I can't believe you're making me drink random potions..."
     # else:
-        # call her_main("Another of your mysterious potions?","open","suspicious")
+        # call her_main("Another of your mysterious potions?", "open", "squint", "base", "mid")
     # if polyjuice_drunk:
         # her "Yuck... another polyjuice potion..."
         # her "Do I really have to drink it again?"
@@ -550,7 +550,7 @@ label hg_pp_polyjuice_T1_introCC:
     # else:
         # her "Let me guess, you won't tell me what it does and I'll embarrass myself in front of the whole class?"
         # m "Not at all."
-        # call her_main("That's new.","annoyed","suspicious")
+        # call her_main("That's new.", "annoyed", "squint", "base", "mid")
         # her "... and somehow worrying"
         # her "So what exactly is it then?"
         # m "It's your regular, run-off-the-mill Polyjuice Potion."
@@ -611,7 +611,7 @@ label hg_pp_polyjuice_T1_introCC:
             # m "And how are your scores now?"
             # call her_main("Well I'm still at the top... Just not by as much.", "annoyed", "narrow", "angry", "R")
             # m "Well, there are times when academic excellence shouldn't be your primary concern."
-            # call her_main("Hmmph, and what /should/ be my primary concern then?","annoyed","suspicious")
+            # call her_main("Hmmph, and what /should/ be my primary concern then?", "annoyed", "squint", "base", "mid")
             # m "Currently. I'd say your face is pretty high on the list"
             # call her_main("Excuse me. That is hardly appropriate for a headmaster.", "open_tongue", "narrow", "base", "mid_soft")
             # m "No, I'm serious. You should really see the look on your face."

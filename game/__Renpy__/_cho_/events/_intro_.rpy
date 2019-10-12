@@ -674,7 +674,7 @@ label cho_intro_E3:
         call her_main("Oh, I know!{p=0.5}I want a seat in the teacher stands during the Quidditch matches!","smile","happyCl")
         call her_main("Cho would be so jealous if she saw me sitting near the commentator and teachers...","grin","glance")
         m "So, you want both 200 points and a seat in the teacher stands..."
-        call her_main("Yes...","base","happy")
+        call her_main("Yes...", "base", "happy", "base", "mid_soft")
 
         menu:
             m "(...)"

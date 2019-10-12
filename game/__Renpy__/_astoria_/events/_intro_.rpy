@@ -318,7 +318,7 @@ label astoria_intro_E2_hermione:
     #m "And what's Azkaban?"
     #call her_main("...Is this another test sir?","open","wink")
     #m "Sure..."
-    #call her_main("Of course! I know everything about it!","smile","happy")
+    #call her_main("Of course! I know everything about it!", "smile", "happy", "base", "mid_soft")
     #call her_main("It's the prison of the damned... An impenetrable rocky outcrop surrounded by the harsh North Sea...","open","happyCl")
     #call her_main("the guards are the deathly eaters of all happy thoughts and emotions known as dementors...","open","angryL")
     #call her_main("They endlessly patrol the prison, devouring all hope from the prisoners, driving them mad within a few days...","open","angry")

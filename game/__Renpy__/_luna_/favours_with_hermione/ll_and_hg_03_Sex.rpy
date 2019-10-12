@@ -24,7 +24,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call her_main("Another blowjob?", "grin", "base", "base", "R")
     call lun_main("He hasn't even asked yet.","base","seductive","sad","R")
     call lun_main("I wanted you to be here for it.","base","suspicious","sad","mid")
-    call her_main("you mean...","shock","happy")
+    call her_main("you mean...", "shock", "happy", "base", "mid_soft")
     call her_main("Awww that's so sweet Luna.","grin","soft")
     call her_main("You better ask her nicely sir!", "mad", "slit", "low", "stare")
     m "You don't even know what-"
@@ -64,7 +64,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call her_main("You're the cutest, nicest, zaniest girl at this school and I don't know what's happened to you recently but you need to just calm down and enjoy your life.","open","wink")
     call lun_main("but...","normal","wide","sad","down", cheeks="blush",tears="crying")
     call her_main("Shhh... It's ok...","soft","soft")
-    call her_main("Why don't we start by enjoying our headmaster's big cock, hmmm?","grin","happy")
+    call her_main("Why don't we start by enjoying our headmaster's big cock, hmmm?", "grin", "happy", "base", "mid_soft")
     call her_main("Would that make you feel a little better?","smile","wink")
     call lun_main("y-yes...","base","seductive","sad","R", cheeks="blush",tears="crying")
     show screen blkfade
@@ -507,7 +507,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call her_main("I think you broke her...","grin","wink")
     m "She's fine..."
     m "If I remember correctly, you had a similar response on your first time as well..."
-    call her_main("[genie_name]!","shock","happy")
+    call her_main("[genie_name]!", "shock", "happy", "base", "mid_soft")
     m "Anyway, are you able to take call her back to her room?"
     call her_main("I'm not allowed in the Ravenclaw common room...","base","glanceL")
     call her_main("I guess I'll just have to take her back to my room...","grin","down_raised")

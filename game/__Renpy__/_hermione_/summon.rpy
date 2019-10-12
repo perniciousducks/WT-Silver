@@ -320,7 +320,7 @@ label hermione_favor_menu:
                             $ hermione_favors_convinced = 2
                             jump silver_requests_root
                         elif her_whoring >=16 and not hermione_favors_convinced == 1:
-                            call her_main("I guess you're right...","open","happy")
+                            call her_main("I guess you're right...", "open", "happy", "base", "mid_soft")
                             call her_main("I'll do it... but just this once okay?","grin","happyCl")
                             $ hermione_favors_convinced = 1
                             jump silver_requests_root

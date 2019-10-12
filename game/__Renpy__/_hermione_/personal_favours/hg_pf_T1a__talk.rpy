@@ -410,7 +410,7 @@ label hg_pf_talk_T3:
     call her_main("Professor Burbage babbled on about things she doesn't understand as usual.", "open", "base", "base", "R")
     call her_main("As I'm a muggle born I've been considering dropping the subject. It's a waste of time.", "base", "base", "base", "mid")
     call her_main("Although since I failed that test I feel like I need all the extra points I can get...","open","down")
-    call her_main("Her views on muggle and wizarding relations and the fact that we're not that different is also quite refreshing...","base","happy")
+    call her_main("Her views on muggle and wizarding relations and the fact that we're not that different is also quite refreshing...", "base", "happy", "base", "mid_soft")
     call her_main("Not that the Slytherins aren't constantly trying to disrupt her classes...","annoyed","happyCl")
     if masturbating:
         m "*Hmm* I bet they were...."
@@ -525,7 +525,7 @@ label hg_pf_talk_T3:
         call her_main("I had never seen them more interested in muggle studies in fact!","disgust","angryL", cheeks="blush")
         m "I bet..."
         m "So, since you're muggle born and all..."
-        call her_main("Yes?","open","happy")
+        call her_main("Yes?", "open", "happy", "base", "mid_soft")
         m "I hope you properly demonstrated how to use it to them."
         call her_main("What? Why on earth do you think I would do that?", "shock", "wide", "base", "stare", cheeks="blush")
         call her_main("Do you take me for some sort of exhibitionist?", "mad", "wide", "base", "stare", cheeks="blush")
@@ -779,7 +779,7 @@ label hg_pf_talk_tonks:
             call ton_main("So, how has that been working for you so far, Miss Granger?","open","base","base","L", hair="basic")
             call ton_main("How is morale amongst the \"Gryffindors\", now?","base","base","raised","L")
             call her_main("It's great! Although... I still believe that it isn't fair...", "soft", "base", "base", "mid", cheeks="blush")
-            call her_main("That is why I created the \"M.R.M\"!","open","happy")
+            call her_main("That is why I created the \"M.R.M\"!", "open", "happy", "base", "mid_soft")
             call ton_main("Yes. The \"Men's Reign Movement\"...","open","closed","base","mid")
             call ton_main("","base","base","base","mid")
             call her_main("But-...{w=0.5} that's not what \"M.R.M\" stands for!","angry","worried")

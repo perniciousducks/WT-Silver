@@ -96,7 +96,7 @@ label a_bad_time_to_disrobe_part_1:
     m "No, I know you can do better."
     call her_main("Fine! I'll do better next time. Double points! I'll show you!","angry","angryL")
     m "That's the spirit. Your house will thank you when you beat the Slytherins by the end of the year."
-    call her_main("Thank you professor... I'll remember that for next time.", "grin", "happy")
+    call her_main("Thank you professor... I'll remember that for next time.", "grin", "happy", "base", "mid_soft")
 
     show screen blkfade
     with d3

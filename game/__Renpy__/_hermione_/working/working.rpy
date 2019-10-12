@@ -569,7 +569,7 @@ label hermione_helping_selling_cards:
     if random_choice == 1:
         call her_main("")
         m "Hello, [hermione_name], how was your day?"
-        call her_main("It was fine, the outfit is a bit chilly though.","normal","happy")
+        call her_main("It was fine, the outfit is a bit chilly though.", "normal", "happy", "base", "mid_soft")
         m "So, no other complications?"
         call her_main("Well...","soft","down", cheeks="blush")
         call her_main("The twins asked me to give out some free promotional starter packs.", "open", "happy", "base", "mid", cheeks="blush")
@@ -660,7 +660,7 @@ label hermione_helping_selling_cards:
         g9 "You most likely ended up making that guys night."
         call her_main("More like month... seeing how much he...","open","down", cheeks="blush")
         call her_main("Anyway...", "normal", "base", "base", "mid")
-        call her_main("glad you agree.","base","happy")
+        call her_main("glad you agree.", "base", "happy", "base", "mid_soft")
         call her_main("Here's your payment.", "open", "base", "base", "mid")
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
         $ gold += 20
@@ -678,7 +678,7 @@ label hermione_helping_selling_cards:
         m "Go on."
         call her_main("Oh, sorry... Well, I was trying out a new sales tactic...", "open", "happy", "base", "R", cheeks="blush")
         m "Something the twins came up with I assume?"
-        call her_main("No, I read about it in one of their books actually.","grin","happy")
+        call her_main("No, I read about it in one of their books actually.", "grin", "happy", "base", "mid_soft")
         call her_main("Much like how you should always put the most lucrative cheap items at the counter to make the customer....", "open", "base", "base", "mid")
         g4 "Get on with it."
         call her_main("Fine...","annoyed","glanceL", cheeks="blush")

@@ -229,7 +229,7 @@ label hermione_random_duel:
         m "I'll take the same amount away."
         m "\"As if she's going to let that happen...\""
         call her_main("...","normal","WorriedCl", cheeks="blush")
-        call her_main("Okay... In that case to make it fair, let's add these extra rules...","open","happy")
+        call her_main("Okay... In that case to make it fair, let's add these extra rules...", "open", "happy", "base", "mid_soft")
 
     label hermione_random_duel_rematch:
 

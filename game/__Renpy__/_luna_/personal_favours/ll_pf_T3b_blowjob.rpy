@@ -1343,7 +1343,7 @@ label ll_pf_blowjob_T1_summon:
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=13)
     #TODO Make Hermione's posing fit better with the dialogue (until walk around desk)
-    call her_main("It has to be a Gryffindor! They're the only ones brave enough to try this...","open","happy")
+    call her_main("It has to be a Gryffindor! They're the only ones brave enough to try this...", "open", "happy", "base", "mid_soft")
     lun "*glck* *slrp* *glck*"
     call her_main("Ginny, is that you?! I told you to stay away from Dumbledore!","smile","happyCl")
     m "Wrong, they're in the blue house."

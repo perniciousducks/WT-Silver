@@ -990,7 +990,7 @@ label hg_hidden_blowjob_tonks:
             call hg_chibi_transition("bj", trans="d5")
             pause.8
 
-            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_squint")
+            call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "squint", "worried", "up")
             m "He isn't here, actually. But I will let him know..."
             ton "So, are you with a student then, hmm?"
             call her_main("{size=-4}(.......... *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
@@ -998,11 +998,11 @@ label hg_hidden_blowjob_tonks:
 
             if ag_st_imperio.tier >= 3:
                 ton "Is it the blonde girl? Or..."
-                call her_main("{size=-4}(Blonde!?! *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_squint")
+                call her_main("{size=-4}(Blonde!?! *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "squint", "worried", "up")
                 call her_main("{size=-4}(*Slurp*... *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
             elif ag_st_imperio.tier >= 5:
                 ton "You aren't shagging that busty red head, are you?"
-                call her_main("{size=-4}(Busty who? *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_squint")
+                call her_main("{size=-4}(Busty who? *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "squint", "worried", "up")
                 call her_main("{size=-4}(Is she talking about Susan? *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "narrow", "annoyed", "up")
 
             m "That's non of your concern, Miss Tonks!"
@@ -1128,7 +1128,7 @@ label hg_hidden_blowjob_tonks:
     call hg_chibi_transition("bj")
     call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "slit", "worried", "ahegao")
     call ton_main("Very well...","base","base","raised","R", xpos="right", ypos="base")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_squint")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "squint", "worried", "up")
 
     call ton_main("Is that really, {w}Miss Hermione Granger,{w} back there?","horny","base","base","mid")
     call ton_main("That's so hard to believe!","open","base","raised","L")
@@ -1185,7 +1185,7 @@ label hg_hidden_blowjob_tonks:
     else:
         call ton_main("I'd love to join you back there, Miss Granger...","base","base","base","down")
         call ton_main("Suck your Headmaster's dick with you!","horny","base","angry","mid")
-        call her_main("{size=-4}(She'd do what?... *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_squint")
+        call her_main("{size=-4}(She'd do what?... *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "squint", "worried", "up")
         g9 "You can both have it!"
 
     call ton_main("I'm sorry, [ton_genie_name]... I'm already pre-occupied with something...","open","base","worried","R")
@@ -1253,7 +1253,7 @@ label hg_hidden_blowjob_cumming:
     pause.8
 
     $ hermione_flip = 1 #Default
-    call her_main("*Slurp!* *Slurp!* *Gulp!*","sucking","ahegao_squint", ypos="head")
+    call her_main("*Slurp!* *Slurp!* *Gulp!*", "sucking", "squint", "worried", "up", ypos="head")
     ">Hermione keeps sucking on your cock with a rather fierce determination."
     ">Her technique is lacking but she makes up for it with the effort she puts it."
 

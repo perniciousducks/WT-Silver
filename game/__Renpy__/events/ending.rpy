@@ -1416,7 +1416,7 @@ label ball_ending_E2:
         call her_main("Sir?!","base","glance",cheeks="blush")
         g4 "I want to fuck you so badly! Come over here!"
         call play_music("playful_tension") # SEX THEME.
-        call her_main("Of course, sir...","silly","ahegao_squint",cheeks="blush")
+        call her_main("Of course, sir...", "silly", "squint", "worried", "up",cheeks="blush")
 
 
         ### INSERTION ###

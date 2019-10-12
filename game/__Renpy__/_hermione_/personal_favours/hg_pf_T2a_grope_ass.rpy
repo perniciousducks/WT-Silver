@@ -738,7 +738,7 @@ label hg_pf_grope_ass_T3_continue:
 
                     call her_main("Ah....","silly","glance", cheeks="blush")
                     call her_main("It's inside of me...", "disgust", "narrow", "worried", "down", cheeks="blush")
-                    call her_main("No, [genie_name], you must stop now...","disgust","soft", cheeks="blush")
+                    call her_main("No, [genie_name], you must stop now...", "disgust", "base", "base", "mid_soft", cheeks="blush")
                     m "Why? You don't like it?"
                     call her_main("It doesn't matter whether I like this or not, [genie_name].","soft","glance", cheeks="blush")
                     call nar(">You take your fingers out and move them across her slit...")

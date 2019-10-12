@@ -280,7 +280,7 @@ label hermione_favor_menu:
         show screen hermione_main
         with d3
         if hermione_favors_convinced:
-            call her_main("But we're in the lead already....","base","soft")
+            call her_main("But we're in the lead already....", "base", "base", "base", "mid_soft")
             if her_whoring >=20 and hermione_favors_convinced == 2:
                 call her_main("But I'll do anything for you, [genie_name]...", "smile", "happy", "base", "mid")
                 jump silver_requests_root

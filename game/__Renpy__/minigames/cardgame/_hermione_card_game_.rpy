@@ -276,7 +276,7 @@ label hermione_random_duel:
             call her_main("But not today if that's okay with you.", "open", "narrow", "worried", "down")
             g9 "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
             call her_main("...", "normal", "happy", "base", "R", cheeks="blush")
-            call her_main("Did you need anything else?","open","soft", cheeks="blush")
+            call her_main("Did you need anything else?", "open", "base", "base", "mid_soft", cheeks="blush")
             call give_reward("Hermione can now work by helping the twins promote the card game.", "interface/icons/icon_gambler_hat.png")
             jump hermione_requests
         "-Ask for a blowjob instead-":

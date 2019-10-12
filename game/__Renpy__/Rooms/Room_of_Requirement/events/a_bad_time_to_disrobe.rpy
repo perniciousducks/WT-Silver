@@ -236,7 +236,7 @@ label a_bad_time_to_disrobe_part_2:
     m "No, well... yes, but this time you'll be prepared."
     call her_main("But... what if they recognize me sir?","open","worried")
     m "You'd already know if they had recognised you..."
-    call her_main("\"That's true...\"","soft","soft", cheeks="blush")
+    call her_main("\"That's true...\"", "soft", "base", "base", "mid_soft", cheeks="blush")
     call her_main("And then what, you want me to just walk away?", "base", "base", "base", "mid", cheeks="blush")
     m "You can figure it out yourself miss Granger. Once you have the cloak it shouldn't be an issue getting away."
     call her_main("And I want...", "open", "base", "base", "mid")
@@ -330,7 +330,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("I'd like my points now.", "base", "narrow", "worried", "down")
     m "Certainly miss Granger..."
     m "40 points to Gryffindor!"
-    call her_main("Thank you professor...","soft","soft")
+    call her_main("Thank you professor...", "soft", "base", "base", "mid_soft")
 
     call her_walk(xpos="door", ypos="base", speed=2.5)
 

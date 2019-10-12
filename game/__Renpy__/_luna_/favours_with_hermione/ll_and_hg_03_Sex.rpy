@@ -25,11 +25,11 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call lun_main("He hasn't even asked yet.","base","seductive","sad","R")
     call lun_main("I wanted you to be here for it.","base","suspicious","sad","mid")
     call her_main("you mean...", "shock", "happy", "base", "mid_soft")
-    call her_main("Awww that's so sweet Luna.","grin","soft")
+    call her_main("Awww that's so sweet Luna.", "grin", "base", "base", "mid_soft")
     call her_main("You better ask her nicely sir!", "mad", "slit", "low", "stare")
     m "You don't even know what-"
     call her_main("Everyone knows what you're going to ask for next sir.", "open", "closed", "base", "mid")
-    call her_main("At least try and make it a little romantic for her...","smile","soft")
+    call her_main("At least try and make it a little romantic for her...", "smile", "base", "base", "mid_soft")
     m "Romantic?"
     call her_main("Work something out!", "open", "base", "angry", "mid")
     call lun_main("You really don't need to worry about it [lun_genie_name]...","normal","base","sad","down")
@@ -63,7 +63,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call her_main("Luna... you have to Stop measuring yourself against other people.","open","wink")
     call her_main("You're the cutest, nicest, zaniest girl at this school and I don't know what's happened to you recently but you need to just calm down and enjoy your life.","open","wink")
     call lun_main("but...","normal","wide","sad","down", cheeks="blush",tears="crying")
-    call her_main("Shhh... It's ok...","soft","soft")
+    call her_main("Shhh... It's ok...", "soft", "base", "base", "mid_soft")
     call her_main("Why don't we start by enjoying our headmaster's big cock, hmmm?", "grin", "happy", "base", "mid_soft")
     call her_main("Would that make you feel a little better?","smile","wink")
     call lun_main("y-yes...","base","seductive","sad","R", cheeks="blush",tears="crying")

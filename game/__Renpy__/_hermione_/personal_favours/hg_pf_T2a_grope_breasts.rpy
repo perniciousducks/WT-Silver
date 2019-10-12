@@ -50,7 +50,7 @@ label hg_pf_grope_breasts_T1:
             call nar(">You loosen your grip a little...")
             call her_main("It hurts...","shock","worriedCl")
             m "You will be fine..."
-            call her_main(".........","annoyed","angryL", cheeks="blush")
+            call her_main(".........", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
             jump end_hg_pf_grope
 
@@ -59,7 +59,7 @@ label hg_pf_grope_breasts_T1:
             call nar(">You start massaging Hermione's beasts through her uniform...")
             call her_main("[genie_name]...?","shock","worriedCl")
             m "The points, [hermione_name]... You need the points. Concentrate on that."
-            call her_main("Yes...","annoyed","angryL", cheeks="blush")
+            call her_main("Yes...", "annoyed", "narrow", "angry", "R", cheeks="blush")
             call her_main("Yes, for the honour of the \"gryffindor\" house...","angry","worriedCl", cheeks="blush")
             "*Squeeze-squeeze!*"
             call nar(">You keep massaging her tits...","start")

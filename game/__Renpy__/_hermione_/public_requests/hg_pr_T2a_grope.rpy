@@ -48,12 +48,12 @@ label hg_pr_grope:
         m "*Khem!* I said, a responsible and caring one!"
         m "Well, in any case. That is your task for today, [hermione_name]."
         m "Find a way to persuade one of your classmates to fondle you a little..."
-        call her_main("..........","annoyed","angryL")
+        call her_main("..........", "annoyed", "narrow", "angry", "R")
         m "You are a pretty girl, it shouldn't be too hard."
         her "....................."
         call her_main("How many points would I receive after completing such a task, [genie_name]?","disgust","glance")
         m "Hm... Twenty five should do..."
-        call her_main("Twenty five house points...","annoyed","angryL")
+        call her_main("Twenty five house points...", "annoyed", "narrow", "angry", "R")
         her "...."
         call her_main("Well, so be it then...","disgust","glance")
         m "Great..."
@@ -65,11 +65,11 @@ label hg_pr_grope:
         m "How about you go let one of your classmates molest you a little again?"
         call her_main("........", "upset", "closed", "base", "mid")
         m "Twenty five house points, [hermione_name]."
-        call her_main("[genie_name], it's just...","annoyed","angryL")
+        call her_main("[genie_name], it's just...", "annoyed", "narrow", "angry", "R")
         call her_main("I do not understand why I must do things like that...","annoyed","annoyed")
         m "To help out your house?"
         call her_main("That's not what I meant...","disgust","glance")
-        call her_main("Oh, never mind...","annoyed","angryL")
+        call her_main("Oh, never mind...", "annoyed", "narrow", "angry", "R")
         her "The classes are about to start, I'd better go..."
         m "Will you do it?"
         call her_main("I don't know... Maybe...","disgust","glance")
@@ -145,7 +145,7 @@ label hg_pr_grope_intro:
 
     if her_whoring < 9:
         stop music fadeout 3.0
-        call her_main("......","annoyed","angryL")
+        call her_main("......", "annoyed", "narrow", "angry", "R")
         call her_main("Well... Em...", "soft", "base", "base", "R")
         m "Speak up, [hermione_name]."
         m "Did you let some lucky guy feel you up or what?"
@@ -186,7 +186,7 @@ label hg_pr_grope_T1_E2:
     call hg_pr_grope_intro
 
     stop music fadeout 3.0
-    call her_main("But it was all very awkward and embarrassing...","annoyed","angryL")
+    call her_main("But it was all very awkward and embarrassing...", "annoyed", "narrow", "angry", "R")
     m "That's the whole point of it, [hermione_name]."
     m "Tell me where you were touched today..."
     call play_music("playful_tension") # SEX THEME.
@@ -299,16 +299,16 @@ label hg_pr_grope_T2_E3:
     call hg_pr_grope_intro
 
     stop music fadeout 1.0
-    call her_main(".................","annoyed","angryL")
+    call her_main(".................", "annoyed", "narrow", "angry", "R")
     m "???"
     call play_music("playful_tension") # SEX THEME.
-    call her_main("I don't want to talk about it, [genie_name]...","annoyed","angryL")
+    call her_main("I don't want to talk about it, [genie_name]...", "annoyed", "narrow", "angry", "R")
     m "What happened, [hermione_name]. Spit it out."
     call her_main(".................","annoyed","annoyed")
     call her_main("But... it's so embarrassing...", "open", "base", "base", "mid")
     call her_main("Do I really have to, [genie_name]?","normal","worriedCl")
     m "Yes, I happen to love embarrassing things!"
-    call her_main(".................","annoyed","angryL")
+    call her_main(".................", "annoyed", "narrow", "angry", "R")
     her "Well, alright..."
     her "I approached this one guy that I always found attractive..."
     her "Managed to muster up enough courage to ask him to follow me..."
@@ -361,7 +361,7 @@ label hg_pr_grope_T3_E1:
     her "I wrote a note on a piece of paper..."
     her "I was about to slide it to my lab partner when..."
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Professor Snape snatched it right out of my hand...","annoyed","angryL")
+    call her_main("Professor Snape snatched it right out of my hand...", "annoyed", "narrow", "angry", "R")
     call her_main("He then read it out loud before the entire class...","annoyed","annoyed")
     m "What did the note say?"
     call her_main("Well...","open","down")

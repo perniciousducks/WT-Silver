@@ -218,7 +218,7 @@ label hg_pf_strip_T2_Snape:
             m "Young lady, you {size=+4}will{/size} calm down now."
             call her_main("Tsk!","disgust","glance")
             m "And take off your skirt already, would you?"
-            call her_main(".......","annoyed","angryL")
+            call her_main(".......", "annoyed", "narrow", "angry", "R")
             call sna_main("...........","snape_13")
 
         "\"Severus, you started this.\"":
@@ -241,12 +241,12 @@ label hg_pf_strip_T2_Snape:
         "\"Both of you, calm the fuck down.\"":
             m "You, tall-dark-and-handsome, calm down a bit, would you?"
             call sna_main("I beg your pardon?","snape_03")
-            call her_main("Yes! You tell him profess--","annoyed","angryL")
+            call her_main("Yes! You tell him profess--", "annoyed", "narrow", "angry", "R")
             m "You as well, you perverted little minx!"
             m "Calm down and take your skirt off already."
             call her_main("I am not perverted...","annoyed","annoyed")
             m "The skirt, [hermione_name]!"
-            call her_main("......","annoyed","angryL")
+            call her_main("......", "annoyed", "narrow", "angry", "R")
             call sna_main(".............","snape_13")
 
         "-HARDCORE-" if game_difficulty >= 3: #Hardcore difficulty dialogue.
@@ -312,7 +312,7 @@ label hg_pf_strip_T2_Snape:
             m "Revenge? Cool! What do you have in mind?"
             call her_main("!!!", "soft", "base", "base", "mid")
             call sna_main("Hm... Can't discuss this with \"the enemy\" present.","snape_06")
-            call her_main("Tsk!","annoyed","angryL")
+            call her_main("Tsk!", "annoyed", "narrow", "angry", "R")
             call sna_main("All I can say is that it involves their beloved little sister Ginny...","snape_13")
             m "Ginny? Hm... What a curious name for a girl..."
             m "............."
@@ -324,7 +324,7 @@ label hg_pf_strip_T2_Snape:
 
         "\"How would you grade Hermione's butt?\"":
             call sna_main("miss Granger's buttocks?","snape_05")
-            call her_main("!!!............","annoyed","angryL")
+            call her_main("!!!............", "annoyed", "narrow", "angry", "R")
             m "Sure! As you would grade a paper."
             call sna_main("Hm...","snape_13")
             pause.1
@@ -574,7 +574,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         m "So, how would you grade her tits?"
         call her_main("......", "open", "wide", "base", "stare")
         call sna_main("Hm......","snape_13")
-        call her_main("........","annoyed","angryL")
+        call her_main("........", "annoyed", "narrow", "angry", "R")
         call sna_main("\"B+\"!","snape_12")
         call her_main("!!!", "open", "wide", "base", "stare")
         m "Really?"
@@ -717,7 +717,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         call her_main("I demand a higher grade than that!", "soft", "base", "angry", "mid", xpos="right", ypos="base")
         call sna_main("You do not demand a grade miss Granger, you earn it.","snape_09")
         call her_main("I did earn it!", "open", "base", "base", "R")
-        call her_main("And could you at least have the decency to stop touching yourself, professor!","annoyed","angryL")
+        call her_main("And could you at least have the decency to stop touching yourself, professor!", "annoyed", "narrow", "angry", "R")
         call sna_main("Tch...","snape_12")
         hide screen hermione_main
         with d3

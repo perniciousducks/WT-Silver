@@ -50,7 +50,7 @@ label hg_pr_kiss:
         m "And you will be getting forty five house points afterwards of course."
         call her_main(".............","normal","frown")
         m "So... Are you up for it?"
-        call her_main("I will see what I can do, [genie_name]...","annoyed","angryL")
+        call her_main("I will see what I can do, [genie_name]...", "annoyed", "narrow", "angry", "R")
         m "Great. See you after your classes then."
         call her_main("................","annoyed","annoyed")
 
@@ -127,16 +127,16 @@ label hg_pr_kiss_T1_E1:
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     her "It was awkward and embarrassing..."
     m "did you do it or not?"
-    call her_main("...no I did not, [genie_name]...","annoyed","angryL")
+    call her_main("...no I did not, [genie_name]...", "annoyed", "narrow", "angry", "R")
     her "All I did was making a complete fool out of myself..."
     call her_main("In front of the entire class...", "angry", "base", "angry", "mid")
     m "Tell me what happened, [hermione_name]."
-    call her_main("No, I will not, [genie_name].","annoyed","angryL")
+    call her_main("No, I will not, [genie_name].", "annoyed", "narrow", "angry", "R")
     her "Not in a million years!"
     call her_main("Why do I have to perform such ridiculous tasks anyway?!","shock","worriedCl")
     her "What is the point of all this?"
     call her_main("I hate this!", "scream", "closed", "angry", "mid")
-    call her_main("...............","annoyed","angryL")
+    call her_main("...............", "annoyed", "narrow", "angry", "R")
     her "................."
     m ".............."
     m "You are not getting paid, you know that, right?"
@@ -163,7 +163,7 @@ label hg_pr_kiss_T1_E2:
     m "Good. Give me the details."
     call her_main("Well, I kissed a girl. Just like you told me to, [genie_name].","annoyed","suspicious")
     m "I guess it was embarrassing for you, girl?"
-    call her_main("Very much so, [genie_name].","annoyed","angryL")
+    call her_main("Very much so, [genie_name].", "annoyed", "narrow", "angry", "R")
     m "Did you enjoy it though?"
     call her_main("*Humph!*...","annoyed","annoyed")
     m "So you kissed a girl and you liked it?"
@@ -172,7 +172,7 @@ label hg_pr_kiss_T1_E2:
     call her_main("Yes...","disgust","glance")
     her "It was a proper deep kiss, if that's what you want to know."
     her "Can I just get my payment now?"
-    call her_main("Please, [genie_name]...","annoyed","angryL")
+    call her_main("Please, [genie_name]...", "annoyed", "narrow", "angry", "R")
     m "Well, alright..."
 
     jump end_hg_pr_kiss
@@ -320,7 +320,7 @@ label hg_pr_kiss_T2_E3:
     m "Yes, [hermione_name]?"
     call her_main("May I ask you a question, [genie_name]?", "open", "base", "base", "mid")
     m "By all means."
-    call her_main("Ehm...","annoyed","angryL")
+    call her_main("Ehm...", "annoyed", "narrow", "angry", "R")
     call her_main("Why are boys so into watching girls make out with each other, [genie_name]?","disgust","glance")
 
     menu:
@@ -401,10 +401,10 @@ label hg_pr_kiss_T3_E1:
     call her_main("...............","annoyed","worriedL")
     her "Like I was saying..."
     call her_main("I kissed that girl from \"Slytherin\"...", "open", "base", "base", "mid")
-    call her_main("Normally I would never do it, of course...","annoyed","angryL")
+    call her_main("Normally I would never do it, of course...", "annoyed", "narrow", "angry", "R")
     her "Not with someone from that wretched house any way..."
     call her_main("But she approached me first and practically begged me to do it with her...","annoyed","annoyed")
-    call her_main("And today of all days...","annoyed","angryL")
+    call her_main("And today of all days...", "annoyed", "narrow", "angry", "R")
     her "to be honest..."
     call her_main("She was quite attractive...","annoyed","annoyed")
     call her_main("For someone from \"slytherin\" that is...", "upset", "closed", "base", "mid")
@@ -415,7 +415,7 @@ label hg_pr_kiss_T3_E1:
     m "(Snape?)"
     call her_main("If that is the case I am sure that it was professor Snape...", "angry", "base", "angry", "mid")
     m "What? He would never..."
-    call her_main("You should really investigate Professor Snape's activities, [genie_name]...","annoyed","angryL")
+    call her_main("You should really investigate Professor Snape's activities, [genie_name]...", "annoyed", "narrow", "angry", "R")
     m "Of course..."
     m "Putting him on my \"naughty boys list\" as we speak..."
     call her_main("..........","disgust","glance")
@@ -435,7 +435,7 @@ label hg_pr_kiss_T3_E1:
     call her_main("So she spat into my mouth...", "open", "closed", "base", "mid")
     her "And then I spat into hers..."
     call her_main("Although I would much rather spit in her face!", "angry", "base", "angry", "mid", cheeks="blush")
-    call her_main("Then she returned my spit...","annoyed","angryL")
+    call her_main("Then she returned my spit...", "annoyed", "narrow", "angry", "R")
     call her_main("And I had to fight the urge to slap her smug face for doing that...", "angry", "base", "angry", "mid", cheeks="blush")
     call her_main("But I don't think the boys would appreciate that...", "upset", "closed", "base", "mid")
     m "Well... You would be surprised..."

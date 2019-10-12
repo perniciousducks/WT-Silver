@@ -40,18 +40,18 @@ label hg_pr_flash:
         m "\"Slytherin\" perhaps?"
         call her_main("................","disgust","glance")
         m "But, you know, no pressure..."
-        call her_main("[genie_name]...","annoyed","angryL")
+        call her_main("[genie_name]...", "annoyed", "narrow", "angry", "R")
         her "The fate of my house is very important to me, but..."
         m "Is it really?"
         m "Why don't you show it to me then?"
         m "Yes. Show me how important it is to you exactly, [hermione_name]."
         call her_main("But this is inappropriate...", "angry", "base", "angry", "mid")
         m "Are we really in any position to discuss what is appropriate and what is not at this point?"
-        call her_main("..................","annoyed","angryL")
+        call her_main("..................", "annoyed", "narrow", "angry", "R")
         m "I would say that ship has sailed a long time ago..."
         call her_main("..............","disgust","glance")
         m "All I ask you to do is to give some lucky boy a quick peek..."
-        call her_main("But why? Why must I do things like this, [genie_name]?","annoyed","angryL")
+        call her_main("But why? Why must I do things like this, [genie_name]?", "annoyed", "narrow", "angry", "R")
         m "A minute of your time for 25 house points..."
         m "A pretty nifty deal, wouldn't you agree?"
         her "I suppose..."
@@ -63,10 +63,10 @@ label hg_pr_flash:
         m "No, to your classmates..."
         call her_main("Oh...", "angry", "base", "base", "mid")
         m "Yes, go do that and then report back to me..."
-        call her_main("Will I get paid for this?","annoyed","angryL")
+        call her_main("Will I get paid for this?", "annoyed", "narrow", "angry", "R")
         m "Of course you will get paid for this, [hermione_name]. Don't be silly."
         m "Thirty five house points. The usual rate..."
-        call her_main(".................","annoyed","angryL")
+        call her_main(".................", "annoyed", "narrow", "angry", "R")
         call her_main("Well alright... I will see what I can do, [genie_name]...","disgust","glance")
 
     elif her_tier < 5:
@@ -87,7 +87,7 @@ label hg_pr_flash:
         m "And flash him your tits..."
         call her_main("{size=-3}(I just knew that this was exactly where this conversation was heading...){/size}","disgust","glance")
         m "What was that, [hermione_name]?"
-        call her_main("I said I'd better go then, [genie_name].","annoyed","angryL")
+        call her_main("I said I'd better go then, [genie_name].", "annoyed", "narrow", "angry", "R")
         her "my classes are about to start..."
         m "Thirty five house points will be waiting for you here upon your return, [hermione_name]."
         call her_main("..............","annoyed","annoyed")
@@ -203,7 +203,7 @@ label hg_pr_flash_T1_E2:
     her "Well, I decided to try and flash them to this \"hufflepuff\" boy..."
     call her_main("I've been waiting for the right moment...","open","down")
     her "I was worried that something would go wrong..."
-    call her_main("And, of course, everything that could - did...","annoyed","angryL")
+    call her_main("And, of course, everything that could - did...", "annoyed", "narrow", "angry", "R")
     call her_main("When I tried to expose myself to the boy...", "open", "base", "base", "mid")
     her "At first I only pulled up my vest..."
     her "Then I tried to pull my shirt up as well..."
@@ -286,7 +286,7 @@ label hg_pr_flash_T2_E1:
     m "Well? How did it go?"
     call her_main("................","angry","down_raised")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Just for the record, [genie_name]...","annoyed","angryL")
+    call her_main("Just for the record, [genie_name]...", "annoyed", "narrow", "angry", "R")
     m "Hm?"
     call her_main("I think that forcing your pupils to do things like this...", "scream", "closed", "angry", "mid")
     call her_main("Is beneath an esteemed wizard such as yourself...", "upset", "closed", "base", "mid")
@@ -297,7 +297,7 @@ label hg_pr_flash_T2_E1:
     call her_main("...I....","annoyed","worriedL")
     call her_main("I never said \"sexual\"...", "open", "base", "base", "mid")
     m "Nevertheless, you can stop selling me these favours at any moment, [hermione_name]."
-    call her_main("I suppose...","annoyed","angryL")
+    call her_main("I suppose...", "annoyed", "narrow", "angry", "R")
     m "And yet you keep on coming back..."
     call her_main("............................","angry","down_raised")
     m "I think you may actually be taking some twisted form of pleasure from this."

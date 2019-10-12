@@ -727,7 +727,7 @@ label hermione_change:
             m "So you'll let me call you that or not?"
             call her_main("{size=+5}FINE!{/size}", "clench", "closed", "angry", "mid", emote="01")
             m "..."
-            call her_main("","normal","angryL")
+            call her_main("", "normal", "narrow", "angry", "R")
         elif her_whoring >= 17:
             call her_main("I guess if you have to call me that sure...","base","down_raised",cheeks="blush")
         elif her_whoring >= 19:
@@ -795,7 +795,7 @@ label hermione_change:
                     g9 "Negotiations..."
                     call her_main("You...", "clench", "closed", "angry", "mid",cheeks="blush")
                     m "That's not an answer..."
-                    call her_main("{size=-10}Okay..{/size}","soft","angryL",cheeks="blush")
+                    call her_main("{size=-10}Okay..{/size}", "soft", "narrow", "angry", "R",cheeks="blush")
                     m "What was that? I didn't hear you."
                     call her_main("I said yes, you can call me a slytherin whore... or whatever.","normal","annoyed", cheeks="blush")
                     call her_main("Happy now?!", "open", "closed", "angry", "mid", cheeks="blush")

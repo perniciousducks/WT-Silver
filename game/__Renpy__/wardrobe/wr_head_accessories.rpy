@@ -244,7 +244,7 @@ label equip_head_accessory:
                     # call her_main("Cat-ears...?","open","worried")
                     # call her_main("Really, [genie_name]?!", "open", "base", "base", "mid")
                     # m "What's wrong? They're cute..."
-                    # call her_main("I'm not going to wear cat ears, [genie_name]!","annoyed","angryL")
+                    # call her_main("I'm not going to wear cat ears, [genie_name]!", "annoyed", "narrow", "angry", "R")
                     # m "Fine. Forget it..."
 
                     # ">She won't wear cat-ears just yet."
@@ -276,8 +276,8 @@ label equip_head_accessory:
                     # call her_main("elf-ears...?","open","worried")
                     # call her_main("I refuse, [genie_name]!", "open", "base", "base", "mid")
                     # m "Why not? Don't you support the house elves or something..."
-                    # call her_main("It's not about...","annoyed","angryL")
-                    # call her_main("I'm not going to wear these ridiculous ears for you, [genie_name]!","annoyed","angryL")
+                    # call her_main("It's not about...", "annoyed", "narrow", "angry", "R")
+                    # call her_main("I'm not going to wear these ridiculous ears for you, [genie_name]!", "annoyed", "narrow", "angry", "R")
                     # call her_main("...", "annoyed", "base", "base", "R")
 
                     # ">She won't wear cat-ears just yet."

@@ -41,7 +41,7 @@ label hg_pf_grope:
 
     m "This will do for now."
     if her_tier <= 3:
-        call her_main("................","annoyed","angryL", cheeks="blush")
+        call her_main("................", "annoyed", "narrow", "angry", "R", cheeks="blush")
     else:
         call her_main("................", face="horny", cheeks="blush")
 
@@ -75,7 +75,7 @@ label hg_pf_grope:
     if her_tier > 5:
         call her_main("(What about my points?)","disgust","down_raised", cheeks="blush", ypos="head")
         if her_whoring < 24:
-            call her_main("(I'll just ask him about it next time...)","annoyed","angryL", ypos="head")
+            call her_main("(I'll just ask him about it next time...)", "annoyed", "narrow", "angry", "R", ypos="head")
         else:
             call her_main("(Eh, who cares...)", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
         pause.5
@@ -169,7 +169,7 @@ label hg_pf_grope_T1_E1:
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
-    call her_main("[genie_name].....?","annoyed","angryL", ypos="head")
+    call her_main("[genie_name].....?", "annoyed", "narrow", "angry", "R", ypos="head")
     m "..."
 
     menu:
@@ -214,7 +214,7 @@ label hg_pf_grope_T2_intro_E1:
     m "I know... You are from \"Gryfonmon\"... or something..." #<- GRYFFINDOR MISSPELLED ON PERPOUSE
     call her_main("And if I don't feel like it I don't have to sell you a single favour, [genie_name]!","annoyed","worriedL")
     m "Of course..."
-    call her_main("...................","annoyed","angryL")
+    call her_main("...................", "annoyed", "narrow", "angry", "R")
     m "I'll give you 35 house points for this."
     call her_main(".......................","disgust","glance")
     her "All you are going to do is watch, [genie_name]?"
@@ -225,7 +225,7 @@ label hg_pf_grope_T2_intro_E1:
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
-    call her_main("[genie_name].....?","annoyed","angryL", ypos="head")
+    call her_main("[genie_name].....?", "annoyed", "narrow", "angry", "R", ypos="head")
     m "..."
 
     menu:
@@ -248,11 +248,11 @@ label hg_pf_grope_T2_E1:
     m "How would you like to earn some house points today?"
     call her_main("And what would I need to do to earn them?","annoyed","annoyed")
     g9 "Get squeezed!"
-    call her_main("....................................","annoyed","angryL")
+    call her_main("....................................", "annoyed", "narrow", "angry", "R")
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
-    call her_main("[genie_name].....?","annoyed","angryL", ypos="head")
+    call her_main("[genie_name].....?", "annoyed", "narrow", "angry", "R", ypos="head")
     m "..."
 
     menu:

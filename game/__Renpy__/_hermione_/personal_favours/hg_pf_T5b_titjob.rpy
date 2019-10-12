@@ -116,18 +116,18 @@ label hg_pf_titjob_T1_intro_E1:
     call her_main("...............","disgust","glance")
     call her_main("{size=-7}No...{/size}","angry","worriedCl", emote="05")
     m "*Hmmm?*... What was that?"
-    call her_main("Of course I haven't...","open","angryL")
+    call her_main("Of course I haven't...", "open", "narrow", "angry", "R")
     g9 "Well then, today is your lucky day!"
     call her_main("Lucky? In what way would you consider it lucky?","disgust","glance")
     m "It's not every day that you learn something new."
     call her_main("I'm at a school... I get taught hundreds of things each day...", "annoyed", "base", "angry", "mid")
     call her_main("And giving \"titjobs\" isn't one of them...", "angry", "base", "angry", "mid")
     m "At least this is something you'll be able to use in the real world."
-    call her_main("If you say so, [genie_name]...","annoyed","angryL")
+    call her_main("If you say so, [genie_name]...", "annoyed", "narrow", "angry", "R")
     call her_main("{size=-7}I want 100 points for this...{/size}","angry","worriedCl", emote="05")
     m "Speak up, [hermione_name]."
     call her_main("I want 100 points!","scream","worriedCl")
-    call her_main("","annoyed","angryL")
+    call her_main("", "annoyed", "narrow", "angry", "R")
 
     label back_to_titjob_choices:
     menu:
@@ -142,7 +142,7 @@ label hg_pf_titjob_T1_intro_E1:
             m "I promise I won't even cum on them..."
             call her_main("And you believe that \"that\" would change my mind?", "scream", "base", "angry", "mid")
             m "I had hoped so..."
-            call her_main("No.{w} You need to make me a better offer...or I'll be leaving...","annoyed","angryL")
+            call her_main("No.{w} You need to make me a better offer...or I'll be leaving...", "annoyed", "narrow", "angry", "R")
             m "Fair enough..."
             jump back_to_titjob_choices
 
@@ -176,10 +176,10 @@ label hg_pf_titjob_T1_repeat:
     g9 "Nothing you aren't already experienced with!"
     m "I'm just going to rub my cock between those precious little tits of yours..."
     call her_main("This again...", "angry", "closed", "angry", "mid")
-    call her_main("(...)","annoyed","angryL")
+    call her_main("(...)", "annoyed", "narrow", "angry", "R")
     call her_main("For 45 house points?", "open", "base", "angry", "mid")
     m "45 house points, as always..."
-    call her_main("(...)","annoyed","angryL")
+    call her_main("(...)", "annoyed", "narrow", "angry", "R")
     call her_main("Very well, [genie_name]", "open", "closed", "base", "mid")
     call her_main("But you have to promise me that you'll make it quick...", "annoyed", "base", "angry", "mid")
     g9 "..............."
@@ -494,7 +494,7 @@ label hg_pf_titjob_1:
             call her_main("*Ugh*... You came so much!","angry","worriedCl", emote="05")
             call her_main("I had to swallow most of it...","disgust","down_raised", emote="05")
             g9 "You did a great job, [hermione_name]!"
-            call her_main("I don't want to hear it...","angry","angryL", emote="05")
+            call her_main("I don't want to hear it...", "angry", "narrow", "angry", "R", emote="05")
             if daytime:
                 call her_main("I can't go to class like this...","angry","worriedCl", emote="05")
                 call her_main("I'm covered in semen...","disgust","down_raised", emote="05")
@@ -551,7 +551,7 @@ label hg_pf_titjob_1:
                 call her_main("How am I supposed to go back to the \"Gryffindor common room\" like this?!","angry","worriedCl")
             m "Just wipe it off..."
             call her_main("...........................","angry","down")
-            call her_main("I would like to get paid now, [genie_name]...","annoyed","angryL")
+            call her_main("I would like to get paid now, [genie_name]...", "annoyed", "narrow", "angry", "R")
 
             $ aftersperm = True
 
@@ -913,7 +913,7 @@ label hg_pf_titjob_2_cumming:
             if her_tier < 6:
                 call her_main("With all due respect, [genie_name]...", "upset", "closed", "base", "mid")
                 call her_main("I don't plan on getting a reputation as a cum-loving whore...","angry","wink")
-                call her_main("Not like those \"Slytherin\" girls...","angry","angryL")
+                call her_main("Not like those \"Slytherin\" girls...", "angry", "narrow", "angry", "R")
             else:
                 call her_main("*Hmm*...", "soft", "happy", "base", "R")
                 call her_main("Maybe if you ask nicely...","soft","glance")

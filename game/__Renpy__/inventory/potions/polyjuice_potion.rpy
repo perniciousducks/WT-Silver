@@ -144,7 +144,7 @@ label hg_pp_polyjuice_T1_intro:
     call her_main("What!? You didn't use polyjuice potion did you [genie_name]?", "shock", "wide", "base", "stare")
     m "What's that?"
     call her_main("There's no point playing dumb [genie_name].","annoyed","annoyed")
-    call her_main("Well at least I know that it will wear off by morning.","annoyed","angryL")
+    call her_main("Well at least I know that it will wear off by morning.", "annoyed", "narrow", "angry", "R")
 
     if her_whoring >= 17:
         call her_walk(xpos="door", speed=2)
@@ -206,7 +206,7 @@ label hg_pp_polyjuice_T1_intro:
                 call her_main("Do you want to stop?", "grin", "base", "base", "R")
                 hide screen hermione_main
                 m "No, keep going, just try not to focus on the tongue work too much."
-                call her_main("Okay, [genie_name].","annoyed","angryL")
+                call her_main("Okay, [genie_name].", "annoyed", "narrow", "angry", "R")
                 hide screen hermione_main
 
                 call u_play_ani
@@ -333,7 +333,7 @@ label hg_pp_polyjuice_T1_introCC:
         call her_main("What!? You didn't use polyjuice potion did you [genie_name]?", "shock", "wide", "base", "stare")
         m "What's that?"
         call her_main("There's no point playing dumb [genie_name].","annoyed","annoyed")
-        call her_main("Well at least I know that it will wear off by morning.","annoyed","angryL")
+        call her_main("Well at least I know that it will wear off by morning.", "annoyed", "narrow", "angry", "R")
 
 
     menu:
@@ -413,7 +413,7 @@ label hg_pp_polyjuice_T1_introCC:
         hide screen hermione_main
         m "No, keep going, just try not to focus on the tongue work too much."
 
-    call her_main("Of course [genie_name].","annoyed","angryL")
+    call her_main("Of course [genie_name].", "annoyed", "narrow", "angry", "R")
     hide screen hermione_main
     $ g_c_u_pic = "blowjob_ani"
     with d3
@@ -609,7 +609,7 @@ label hg_pp_polyjuice_T1_introCC:
         # if her_whoring <= 13:
             # call her_main("It is! [genie_name], I used to be at the top of the class. My scores were impeccable. ", "scream", "closed", "angry", "mid")
             # m "And how are your scores now?"
-            # call her_main("Well I'm still at the top... Just not by as much.","annoyed","angryL")
+            # call her_main("Well I'm still at the top... Just not by as much.", "annoyed", "narrow", "angry", "R")
             # m "Well, there are times when academic excellence shouldn't be your primary concern."
             # call her_main("Hmmph, and what /should/ be my primary concern then?","annoyed","suspicious")
             # m "Currently. I'd say your face is pretty high on the list"

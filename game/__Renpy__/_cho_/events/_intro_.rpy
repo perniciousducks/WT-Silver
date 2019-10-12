@@ -217,7 +217,7 @@ label cho_intro_E1:
         call nar("You pull your cock out and and begin masturbating... focusing on the now heated argument between the two girls in front of you.")
 
         show screen cho_chang
-        call her_main("Oh yeah, well... I bet it can’t be anything good seeing how you usually act around men...","mad","angryL")
+        call her_main("Oh yeah, well... I bet it can’t be anything good seeing how you usually act around men...", "mad", "narrow", "angry", "R")
         call cho_main("What’s that supposed to mean?!?", "scream", "angry", "angry", "L")
         call her_main("You know exactly what I mean... I heard about how you were flaunting those...things of yours at Seamus Finnigan.","crooked_smile","glanceL")
         with hpunch
@@ -307,7 +307,7 @@ label cho_intro_E1:
         call cho_main("Well I’m sure that your reasons for being here are totally legitimate...","soft","narrow","base","L",trans="hpunch")
         $ renpy.sound.play("sounds/snore2.mp3")
         gen "......{w=0.5}*Snore*{w=1.0}{nw}"
-        call her_main("They are, for a fact. Completely legitimate... you tell her Professor!","clench","angryL",trans="hpunch")
+        call her_main("They are, for a fact. Completely legitimate... you tell her Professor!", "clench", "narrow", "angry", "R",trans="hpunch")
         $ renpy.sound.play("sounds/snore3.mp3")
         gen "*Sn{cps=8}oooooooreeee*{/cps}{w=2.0}{nw}"
         call her_main("Professor!", "scream", "closed", "angry", "mid",trans="hpunch")
@@ -318,7 +318,7 @@ label cho_intro_E1:
         call her_main("So what...", "angry", "closed", "angry", "mid")
         m "Ladies, I think it’s time to-{w=0.8}{nw}"
         call cho_main("Don’t worry about it Sir, I was just about to leave anyway...","soft","narrow","angry","mid")
-        call her_main("...","annoyed","angryL")
+        call her_main("...", "annoyed", "narrow", "angry", "R")
 
         # Cho walks to the door and stops.
         call cho_walk("door", "base", speed=2.5)
@@ -739,7 +739,7 @@ label cho_intro_E3:
         m "I’d say fifty would be more appropriate in this instance..."
         call her_main("Sir, it took a lot of effort to gather all those records of past Quidditch matches, throughout the whole history of Quidditch.", "open", "closed", "base", "mid")
         g4 "fifty points..."
-        call her_main("(...)","annoyed","angryL")
+        call her_main("(...)", "annoyed", "narrow", "angry", "R")
         call her_main("Very well then.", "soft", "closed", "base", "mid")
         m "50 points, to the Gryffindor house..."
         $ gryffindor += 50
@@ -773,7 +773,7 @@ label cho_intro_E3:
         call her_main("Why are students even allowed to play this silly sport at our School?","annoyed","annoyed")
 
     if her_whoring < 8:
-        call her_main("They're given the privilege of attending one of the most prestigious wizarding schools in the world...","open","angryL")
+        call her_main("They're given the privilege of attending one of the most prestigious wizarding schools in the world...", "open", "narrow", "angry", "R")
         call her_main("And they're wasting their time with some silly sports game that will get them nowhere...", "open", "base", "angry", "mid")
         m "Yes. Because why enjoy yourself when you could study instead..."
         call her_main("Exactly!", "normal", "closed", "base", "mid")
@@ -826,7 +826,7 @@ label cho_intro_E3:
     call cho_main("Hello, Sir.{p=0.6}You've called for me?","base","base","base","mid", xpos="base", ypos="base")
     call her_main("", "normal", "closed", "base", "mid", xpos="450", ypos="base")
     call cho_main("Granger...","soft","narrow","angry","L")
-    call her_main("Chang...","annoyed","angryL")
+    call her_main("Chang...", "annoyed", "narrow", "angry", "R")
     m "Go on, girl. Tell her."
     call cho_main("Tell me what?","smile","angry","angry","mid")
     call her_main("...", "annoyed", "narrow", "base", "up")

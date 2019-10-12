@@ -170,7 +170,7 @@ label chit_chat:
     if her_whoring >= 9 and her_whoring <= 11:
         if one_of_ten == 1:
             call her_main("My \"men's rights movement\" has been losing its popularity lately...","open","worried")
-            call her_main("It's as if people don't even care!","annoyed","angryL")
+            call her_main("It's as if people don't even care!", "annoyed", "narrow", "angry", "R")
 
         elif one_of_ten == 2:
             call her_main("Thank you for buying all those favours from me, sir.", "open", "closed", "angry", "mid")
@@ -192,7 +192,7 @@ label chit_chat:
         elif one_of_ten == 5:
             call her_main("Some of the Slytherin girls sell sexual favours almost openly these days...", "open", "closed", "angry", "mid")
             call her_main("You need to put an end to such practices, sir.", "open", "base", "base", "mid")
-            call her_main("(I can barely keep up...)","annoyed","angryL")
+            call her_main("(I can barely keep up...)", "annoyed", "narrow", "angry", "R")
 
         elif one_of_ten == 6:
             call her_main("Life works in mysterious ways...","open","worriedL")
@@ -283,7 +283,7 @@ label chit_chat:
             call her_main("it Doesn't matter how many times you ask me this, sir...", "open", "base", "base", "mid")
             her "The answer shall remain the same..."
             call her_main("I have nothing but resentment for the \"Slytherins\"!", "angry", "base", "angry", "mid")
-            call her_main("","annoyed","angryL")
+            call her_main("", "annoyed", "narrow", "angry", "R")
 
         elif one_of_ten == 4:
             call her_main("When I think about all the favours I sold you over these last months, sir...", "open", "base", "base", "mid")
@@ -343,7 +343,7 @@ label chit_chat:
 
         elif one_of_ten == 4:
             call her_main("What is it sir? Do you have another present for me?", "base", "base", "base", "mid")
-            call her_main("Oh... I see...","annoyed","angryL")
+            call her_main("Oh... I see...", "annoyed", "narrow", "angry", "R")
 
         elif one_of_ten == 5:
             call her_main("I am doing well, thank you for asking.", "base", "base", "base", "mid")
@@ -370,7 +370,7 @@ label chit_chat:
             call her_main("Do You think I am wearing enough make-up, sir?", "open", "base", "base", "mid")
             her "Wearing too much would look vulgar..."
             call her_main("But wearing too little would make me look plain...", "soft", "base", "base", "R")
-            call her_main("I don't want to look plain!","annoyed","angryL")
+            call her_main("I don't want to look plain!", "annoyed", "narrow", "angry", "R")
 
         elif one_of_ten == 10:
             call her_main("Would you like to see my tits today, sir?","smile","glance")

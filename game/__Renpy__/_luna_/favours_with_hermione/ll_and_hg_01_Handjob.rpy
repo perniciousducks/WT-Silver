@@ -389,14 +389,14 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         hide screen hermione_kneel
 
         call her_main("[genie_name], what on earth was that all about?!", "scream", "closed", "angry", "mid")
-        call her_main("Why on earth was Luna in here?","annoyed","angryL")
+        call her_main("Why on earth was Luna in here?", "annoyed", "narrow", "angry", "R")
         call her_main("how on earth does she know about me selling favours?", "angry", "base", "angry", "mid")
         if luna_addicted == True:
             call her_main("And {size=+5}why on earth{/size} does she love the taste of your cum?", "angry", "base", "angry", "mid",emote="01")
         m "I can explain everything..."
         call her_main("Please do...","annoyed","annoyed")
         m "do you remember how you yourself described Luna lovegood as crazy?"
-        call her_main("Of course. Everyone knows she's Loony Luna.","annoyed","angryL")
+        call her_main("Of course. Everyone knows she's Loony Luna.", "annoyed", "narrow", "angry", "R")
         m "Well I was testing out some new magic..."
         m "And I'm attempting to cure her of her previous condition..."
         m "(I hope she believes this schlock...)"
@@ -409,7 +409,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "..."
         m "(Of course she'd know that...)"
         m "Well anyway, my point is there's nothing untoward happening."
-        call her_main("...","annoyed","angryL")
+        call her_main("...", "annoyed", "narrow", "angry", "R")
         call her_main("Alright then...", "open", "closed", "base", "mid")
         call her_main("But why is she so mean?","open","worriedCl")
         m "I'm not sure. Maybe that's the true her."
@@ -424,7 +424,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             m "I think that's just her being weird..."
         call her_main("...", "annoyed", "base", "angry", "mid")
         call her_main("ugh, fine...", "annoyed", "base", "base", "R")
-        call her_main("I guess...","annoyed","angryL",cheeks="blush")
+        call her_main("I guess...", "annoyed", "narrow", "angry", "R",cheeks="blush")
         m "So you don't mind helping out with her in the future?"
         call her_main("What? I have to spend more time with her?", "soft", "wide", "base", "stare")
         call her_main("But she's weird...","open","worriedCl",cheeks="blush")
@@ -494,7 +494,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("Hello [genie_name]...", "base", "base", "base", "mid",xpos="right",ypos="base")
         call her_main("Hello Luna...","open","suspicious")
         call lun_main("Hermione...","normal","suspicious","angry","mid")
-        call her_main("What are you doing here?","annoyed","angryL")
+        call her_main("What are you doing here?", "annoyed", "narrow", "angry", "R")
         call lun_main("Getting ready to Jerk dumbledore off onto your face...","base","seductive","angry","mid")
         call her_main("Oh...", "annoyed", "base", "base", "mid")
         call her_main("again?","upset","wink")
@@ -776,7 +776,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("what?","normal","wide","sad","mid")
         call lun_main("why would you of all people need a study buddy? Aren't your grades perfect?","normal","suspicious","angry","mid")
         call her_main("of course... but that's not why I want a study buddy.", "soft", "base", "base", "R")
-        call her_main("It gets lonely in the library sometimes...","annoyed","angryL")
+        call her_main("It gets lonely in the library sometimes...", "annoyed", "narrow", "angry", "R")
         call her_main("Plus I've always wanted a ravenclaw to study with, but all the other girls refuse to even talk to me.","open","worried")
         call her_main("and harry and ron have just started staring at my tits the whole time.", "open", "closed", "angry", "mid")
         call her_main("{size=-5}not that I really mind...{/size}", "base", "narrow", "base", "up")
@@ -1177,7 +1177,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     $ gold -= 150
                     m "150 gold for Luna."
                     call lun_main("thanks [lun_genie_name]...","normal","seductive","base","R")
-                    call her_main("...","annoyed","angryL")
+                    call her_main("...", "annoyed", "narrow", "angry", "R")
                     m "if that's all, I think I need a nap."
                     call her_main("alright then...", "base", "base", "base", "mid")
                     ">Hermione and Luna get dressed before leaving your office together."

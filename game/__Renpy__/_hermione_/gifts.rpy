@@ -266,13 +266,13 @@ label give_her_gift(gift_item):
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("Are that...?", "open", "base", "base", "mid")
             call her_main("Adult magazines, [genie_name]?", "open", "base", "base", "mid")
-            call her_main("Given to me by An esteemed wizard of your status?","annoyed","angryL")
+            call her_main("Given to me by An esteemed wizard of your status?", "annoyed", "narrow", "angry", "R")
             call her_main("[genie_name], surely you could find a more productive way to spend your free time.","disgust","glance")
             call her_main("And I most definitely would not have use for those...", "angry", "base", "angry", "mid")
             call her_mood(7)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
             call her_main("Adult magazines?", "angry", "base", "angry", "mid")
-            call her_main("[genie_name], I have no interest in things like that.","annoyed","angryL")
+            call her_main("[genie_name], I have no interest in things like that.", "annoyed", "narrow", "angry", "R")
             call her_main("And how is this an appropriate present for one of your students, [genie_name]?", "angry", "base", "angry", "mid")
             call her_mood(3)
         elif her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
@@ -433,7 +433,7 @@ label give_her_gift(gift_item):
             call her_main("Hm...","annoyed","down")
             call her_main("I think I know what this is...","disgust","glance")
             call her_main("But why would you give something like this to one of your pupils, [genie_name]?")
-            call her_main("No, thank you.","annoyed","angryL")
+            call her_main("No, thank you.", "annoyed", "narrow", "angry", "R")
             call her_mood(2)
         elif her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
             call her_main("Anal lubricant?","angry","down_raised")
@@ -524,7 +524,7 @@ label give_her_gift(gift_item):
             call her_main("!!!", "angry", "wide", "base", "stare")
             call her_main("That is...","angry","down_raised")
             call her_main("But it doesn't even look... human...")
-            call her_main("I mean...","annoyed","angryL")
+            call her_main("I mean...", "annoyed", "narrow", "angry", "R")
             call her_main("[genie_name], do you have no shame?!", "scream", "base", "angry", "mid",emote="01")
             call her_main("Presenting a thing like that to a pupil?!")
             call her_main("..................","open","down")

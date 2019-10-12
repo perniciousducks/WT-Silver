@@ -118,7 +118,7 @@ label hg_pf_handjob_T1_intro_E1:
     call her_main("{size=-7}Yes...{/size}","disgust","glance")
     m "Sorry, I couldn't hear you..."
     call her_main("Yes, I said yes! I will stroke your cock, [genie_name]!","scream","worriedCl")
-    call her_main("","upset","angryL")
+    call her_main("", "upset", "narrow", "angry", "R")
 
     label back_to_handjob_choices:
 
@@ -126,14 +126,14 @@ label hg_pf_handjob_T1_intro_E1:
         m "..."
         "\"You will get 15 house points.\"" if her_mood != 0:
             $ her_mood += 7
-            call her_main("For 15 house points I suppose I could let you molest me a little, but that is all you'll be getting, [genie_name].","annoyed","angryL")
+            call her_main("For 15 house points I suppose I could let you molest me a little, but that is all you'll be getting, [genie_name].", "annoyed", "narrow", "angry", "R")
             her "I will not stoop as low as to sell handjobs for 15 house points."
             her "That is just insulting, [genie_name]."
             jump back_to_handjob_choices
 
         "\"you will get 45 house points.\"":
             $ her_mood += 7
-            call her_main(".....","annoyed","angryL")
+            call her_main(".....", "annoyed", "narrow", "angry", "R")
             call her_main("45 house points...?","open","down")
             her "This could put \"Gryffindor\" back in the lead..."
             m "Is that a \"yes\"?"
@@ -166,7 +166,7 @@ label hg_pf_handjob_T1_intro_E2:
     call her_main("[genie_name], you are being vulgar again...", "upset", "closed", "base", "mid")
     m "Fine, fine."
     m "[hermione_name], I would like to buy another favour from you today."
-    call her_main("Of course, [genie_name].","annoyed","angryL")
+    call her_main("Of course, [genie_name].", "annoyed", "narrow", "angry", "R")
     g9 "The favour being you playing with my cock!"
     call her_main("..............","disgust","glance")
     m "Oh, come on. For the honour of the \"Gryffindors\"?"
@@ -174,7 +174,7 @@ label hg_pf_handjob_T1_intro_E2:
     g9 "Play with my cock for the honour of the \"Gryffindors\", [hermione_name]!"
     call her_main("Stop saying that, [genie_name]...", "scream", "base", "angry", "mid", emote="01")
     m "Come on [hermione_name], it's not like I'm asking you to do this for free."
-    call her_main(".......","annoyed","angryL")
+    call her_main(".......", "annoyed", "narrow", "angry", "R")
 
     jump hg_pf_handjob_1
 
@@ -188,7 +188,7 @@ label hg_pf_handjob_T1_repeat:
     call her_main("...............", "upset", "base", "angry", "mid")
     call her_main("Will I be getting paid for it, [genie_name]?", "open", "base", "angry", "mid")
     m "Of course. 45 points."
-    call her_main(".........................","upset","angryL")
+    call her_main(".........................", "upset", "narrow", "angry", "R")
 
     jump hg_pf_handjob_1
 
@@ -334,7 +334,7 @@ label hg_pf_handjob_1:
             call her_main("I am the biggest whore in England!","annoyed","annoyed")
             call her_main("I try to act innocent, but in truth all I think about is cock!")
             m "Yes, you little slut!"
-            call her_main("Yes! I am a slut!","annoyed","angryL")
+            call her_main("Yes! I am a slut!", "annoyed", "narrow", "angry", "R")
             call her_main("I crave cock all the time.")
             m "Very nice!"
             m "But, like I said, you don't have to be honest."
@@ -439,7 +439,7 @@ label hg_pf_handjob_1:
             m "But that's the whole point!"
             call her_main("......","annoyed","annoyed")
             m "It will make me cum in no time!"
-            call her_main("...............","annoyed","angryL")
+            call her_main("...............", "annoyed", "narrow", "angry", "R")
             m "And then you can just get out and and take care of your business today."
             call her_main(".............","disgust","glance")
             call her_main("Well, alright then....","open","down")
@@ -585,18 +585,18 @@ label hg_pf_handjob_1:
                 $ her_mood += 11
                 call her_main("You promised to give me a warning, [genie_name]!", "angry", "base", "angry", "mid")
                 m "Oh, that's right... My bad."
-                call her_main("My uniform is ruined...","annoyed","angryL")
+                call her_main("My uniform is ruined...", "annoyed", "narrow", "angry", "R")
                 her "...I would like to get paid now."
 
             else:
                 if daytime:
-                    call her_main("My uniform is ruined now!","annoyed","angryL")
+                    call her_main("My uniform is ruined now!", "annoyed", "narrow", "angry", "R")
                     call her_main("My classes are about to start and I can't go looking like this!","open","down")
                     m "Of course you can, just wipe it off or something..."
                     m "Nobody will even notice."
                     call her_main("...I would like to get paid now.","annoyed","annoyed")
                 else:
-                    call her_main("My uniform is ruined!","annoyed","angryL")
+                    call her_main("My uniform is ruined!", "annoyed", "narrow", "angry", "R")
                     her "Am I supposed to go back to the \"Gryffindor\" common room looking like this?!"
                     m "Why not? You look hot, [hermione_name]!"
                     call her_main("[genie_name]!!!","annoyed","annoyed")

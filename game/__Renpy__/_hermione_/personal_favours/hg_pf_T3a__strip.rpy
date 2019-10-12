@@ -111,10 +111,10 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
 
     m "Hm..."
     call her_main("{size=-5}(...........................................){/size}","disgust","down_raised", cheeks="blush", ypos="head")
-    call her_main("{size=-5}(This is silly...){/size}","annoyed","angryL", cheeks="blush")
+    call her_main("{size=-5}(This is silly...){/size}", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call nar(">Hermione looks embarrassed but she keeps on \"dancing\"...")
     m "..................."
-    call her_main("{size=-5}(...........................................){/size}","annoyed","angryL", cheeks="blush")
+    call her_main("{size=-5}(...........................................){/size}", "annoyed", "narrow", "angry", "R", cheeks="blush")
     m "Alright, you can start undressing now."
 
     call her_chibi("stand","mid","base") #Hermione stands still.
@@ -153,7 +153,7 @@ label hg_pf_strip_T0_fail_repeat:
     m "You will get points for it..."
     call her_main("Shove those points up your-", "angry", "closed", "angry", "mid")
     call her_main("I will be leaving now...", "annoyed", "base", "angry", "mid")
-    call her_main("Good day, Sir...","annoyed","angryL")
+    call her_main("Good day, Sir...", "annoyed", "narrow", "angry", "R")
 
     call her_walk(action="leave", speed=2.5)
 
@@ -195,10 +195,10 @@ label hg_pf_strip_T1_intro_E1: # Complete
 
     m "Hm..."
     call her_main("{size=-5}(...........................................){/size}","disgust","down_raised", cheeks="blush", ypos="head")
-    call her_main("{size=-5}(This is silly...){/size}","annoyed","angryL", cheeks="blush")
+    call her_main("{size=-5}(This is silly...){/size}", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call nar(">Hermione looks embarrassed but she keeps on \"dancing\"...")
     m "..................."
-    call her_main("{size=-5}(...........................................){/size}","annoyed","angryL", cheeks="blush")
+    call her_main("{size=-5}(...........................................){/size}", "annoyed", "narrow", "angry", "R", cheeks="blush")
     m "Alright, you can start undressing now."
 
     call her_chibi("stand","mid","base") #Hermione stands still.
@@ -379,13 +379,13 @@ label hg_pf_strip_T1_intro_E2:
     m "[hermione_name], I need you to dance for me."
     call her_main("That again, [genie_name]...?","disgust","glance")
     m "You will get paid accordingly of course..."
-    call her_main("............................","annoyed","angryL")
-    call her_main("And you expect me to... ehm...","annoyed","angryL")
+    call her_main("............................", "annoyed", "narrow", "angry", "R")
+    call her_main("And you expect me to... ehm...", "annoyed", "narrow", "angry", "R")
     m "Take your clothes off. Naturally."
     stop music fadeout 1.0
 
     show screen blktone
-    call her_main("......................","annoyed","angryL")
+    call her_main("......................", "annoyed", "narrow", "angry", "R")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Well, why not?","disgust","glance")
     call her_main("Yes, I don't see why not!", "scream", "base", "angry", "mid", emote="01")
@@ -715,7 +715,7 @@ label hg_pf_strip_T1_E2:
     call her_main(".........................","annoyed","annoyed")
     call her_main("Thirty five house points?","open","down")
     m "Sure! The usual rate."
-    call her_main("...................","annoyed","angryL")
+    call her_main("...................", "annoyed", "narrow", "angry", "R")
 
     if ss_he.hermione_strip: #Turns TRUE after Dance Event 2 and the next Date with Snape.
         m "(Hm... Should I invite Snape to watch as well?)"
@@ -753,7 +753,7 @@ label hg_pf_strip_T1_E2:
     call her_walk(xpos="mid", ypos="base", speed=3)
     pause.2
 
-    call her_main("Just in case...","annoyed","angryL", ypos="head")
+    call her_main("Just in case...", "annoyed", "narrow", "angry", "R", ypos="head")
     stop music fadeout 1.0
 
     call her_walk(xpos="desk", ypos="base", speed=3, redux_pause=2, loiter=False)
@@ -772,7 +772,7 @@ label hg_pf_strip_T1_E2:
     call her_main("Just for the record...", "open", "closed", "base", "mid", xpos="mid", ypos="base")
     call her_main("I still consider this a highly inappropriate favour to be buying from one of your students, [genie_name].","annoyed","suspicious")
     m "Right. And an equally inappropriate favour to be selling to your headmaster. Wouldn't you agree?"
-    call her_main("..........","annoyed","angryL")
+    call her_main("..........", "annoyed", "narrow", "angry", "R")
 
 
     # Talk off top
@@ -900,7 +900,7 @@ label hg_pf_strip_T1_watch:
             $ her_mood += 4
             call her_main("............", "annoyed", "base", "angry", "mid")
             m "You just need to practice more..."
-            call her_main("Whatever..........","annoyed","angryL")
+            call her_main("Whatever..........", "annoyed", "narrow", "angry", "R")
         "{size=-3}\".................................................\"{/size}":
             call her_main(".......................","silly","worriedCl", emote="05")
             call her_chibi("sit_naked_shocked","on_desk","on_desk")
@@ -941,7 +941,7 @@ label hg_pf_strip_T1_masturbate:
         "\"I said, keep on dancing, [hermione_name]!\"":
             stop music fadeout 1.0
 
-            call her_main("No, [genie_name]!","annoyed","angryL", ypos="head")
+            call her_main("No, [genie_name]!", "annoyed", "narrow", "angry", "R", ypos="head")
             m "Huh?"
             show screen blkfade
             with d5
@@ -964,7 +964,7 @@ label hg_pf_strip_T1_masturbate:
             jump end_hg_pf_strip
 
         "\"Fine. There is no need for drama!\"":
-            call her_main("......................","annoyed","angryL", ypos="head")
+            call her_main("......................", "annoyed", "narrow", "angry", "R", ypos="head")
             pause.1
 
             hide screen chair_left
@@ -1078,7 +1078,7 @@ label hg_pf_strip_T2:
             m "Nonsense. No such thing will happen..."
             call her_main("It happened once already!", "angry", "base", "angry", "mid")
             m "Stop being such a fuzzy and get over here..."
-            call her_main("..................","annoyed","angryL")
+            call her_main("..................", "annoyed", "narrow", "angry", "R")
 
             stop music fadeout 1.0
             call her_walk(xpos="desk", ypos="base", speed=2, redux_pause=1, loiter=False)
@@ -1166,7 +1166,7 @@ label hg_pf_strip_T2:
                 call her_main("!!!............", "open", "base", "base", "mid")
                 call her_main("....................................","annoyed","annoyed")
                 m "Now, hush and take your skirt off."
-                call her_main("........","annoyed","angryL")
+                call her_main("........", "annoyed", "narrow", "angry", "R")
 
             "\"Yes... a very long time ago...\"":
                 m "Yes... a very long time ago..."
@@ -1180,10 +1180,10 @@ label hg_pf_strip_T2:
                 m "Oh, you humans know nothing of true love..."
                 call her_main(".....................................?", "soft", "base", "base", "mid")
                 m "Err... I mean, take off that skirt, [hermione_name]!"
-                call her_main(".................","annoyed","angryL")
+                call her_main(".................", "annoyed", "narrow", "angry", "R")
 
             "\"I feel like I'm in love right now!\"":
-                call her_main("You don't have to be vulgar, [genie_name].","annoyed","angryL")
+                call her_main("You don't have to be vulgar, [genie_name].", "annoyed", "narrow", "angry", "R")
                 m "Oh, but I mean it!"
                 call her_main("[genie_name], please!","disgust","glance")
                 call her_main("I am one of your students!", "soft", "base", "base", "mid")
@@ -1339,14 +1339,14 @@ label hg_pf_strip_T2_masturbate:
             $ d_flag_07 = False #Did not promise to hold it.
             m "\"Not to finish\"? That would be like torture!"
             m "Please keep your sadistic urges to yourself, [hermione_name]."
-            call her_main("I don't have any... sadistic urges, [genie_name]!","annoyed","angryL")
+            call her_main("I don't have any... sadistic urges, [genie_name]!", "annoyed", "narrow", "angry", "R")
             call her_main("I just don't want to...")
             g9 "Yes... Those are some nice tits you have..."
             call her_main("............","angry","worriedCl")
             g9 "A-ah... Yes..."
             call her_main("..........","angry","worriedCl")
             call her_main("Fine! Have it your way, [genie_name]!","angry","worriedCl")
-            call her_main("{size=-5}(As usual...){/size}","annoyed","angryL")
+            call her_main("{size=-5}(As usual...){/size}", "annoyed", "narrow", "angry", "R")
 
 
     call nar(">You keep on wanking while you watch Hermione's dance...")
@@ -1439,7 +1439,7 @@ label hg_pf_strip_T2_masturbate:
         m "Oh, calm down, [hermione_name]."
         m "You earned your points today."
         m "Now, just get dressed and leave before somebody discovers you like this."
-        call her_main("*sob!*........................","shock","angryL", tears="messy")
+        call her_main("*sob!*........................", "shock", "narrow", "angry", "R", tears="messy")
         show screen blkfade
         with d5
 
@@ -1447,7 +1447,7 @@ label hg_pf_strip_T2_masturbate:
         $ aftersperm = True #Aftersperm layer is displayed.
         stop music fadeout 5.0
         ">.................{w}.................{w}.................{w}................."
-        call her_main("...Can I just get paid now, [genie_name]... please?","annoyed","angryL")
+        call her_main("...Can I just get paid now, [genie_name]... please?", "annoyed", "narrow", "angry", "R")
 
         $ her_mood += 30
 
@@ -1486,7 +1486,7 @@ label hg_pf_strip_T2_masturbate:
             call her_chibi("sit_naked","on_desk","on_desk")
             show screen g_c_c_u
 
-            call her_main(".............","annoyed","angryL")
+            call her_main(".............", "annoyed", "narrow", "angry", "R")
             call her_main("I'll take it.", "soft", "base", "angry", "mid")
             $ her_mood += 30
             $ current_payout = 36
@@ -1507,7 +1507,7 @@ label hg_pf_strip_T2_masturbate:
             call her_chibi("sit_naked","on_desk","on_desk")
             show screen g_c_c_u
 
-            call her_main("...............","annoyed","angryL")
+            call her_main("...............", "annoyed", "narrow", "angry", "R")
             call her_main("Well, alright... Better than nothing I suppose...", "soft", "base", "angry", "mid")
             $ her_mood += 11
             hide screen bld1

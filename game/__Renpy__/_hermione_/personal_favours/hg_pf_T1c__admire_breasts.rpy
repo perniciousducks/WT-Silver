@@ -121,7 +121,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
     call her_main("[genie_name], I refuse to bare my breasts for you!", "open", "closed", "angry", "mid")
     call her_main("How could you even suggest such a thing?!", "angry", "base", "angry", "mid")
     m "Don't you want to earn some house points?"
-    call her_main("Yes... But not in a way such as this!","angry","angryL")
+    call her_main("Yes... But not in a way such as this!", "angry", "narrow", "angry", "R")
 
     m "I will award \"Gryffindor\" [current_payout] whole house points if you remove your top."
     g9 "Isn't that a steal?"
@@ -143,7 +143,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
             m "No buts! You are dismissed."
             call her_main("Please, [genie_name]. I need those points!","disgust","worriedCl")
             m "Then might I suggest you put in some work to earn them..."
-            call her_main("(................)","annoyed","angryL")
+            call her_main("(................)", "annoyed", "narrow", "angry", "R")
             m "Have a nice day, Miss Granger."
             call her_main("(................)", "annoyed", "base", "angry", "mid")
             call her_main("Fine! I'm leaving...", "open", "closed", "angry", "mid")
@@ -157,14 +157,14 @@ label hg_pf_admire_breasts_T1_intro_E1:
             jump main_room
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("(................)","annoyed","angryL")
+    call her_main("(................)", "annoyed", "narrow", "angry", "R")
     pause.4
 
     # Change Top
     hide screen hermione_main
     $ h_top = "top_2_g"
     call update_her_uniform
-    call her_main("","annoyed","angryL")
+    call her_main("", "annoyed", "narrow", "angry", "R")
     call ctc
 
     m "*Hmmmmm*"
@@ -327,7 +327,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
             call her_main("[genie_name], I am not going to expose myself for a meagre five points!", "angry", "base", "angry", "mid",emote="01")
             m "Well, your tits sure aren't worth 200, [hermione_name]!"
             call her_main("(They aren't?)","annoyed","down")
-            call her_main("Maybe one hundred - then?","annoyed","angryL")
+            call her_main("Maybe one hundred - then?", "annoyed", "narrow", "angry", "R")
 
             menu:
                 "\"Fine. 100 it is! Bare them already!":
@@ -374,9 +374,9 @@ label hg_pf_admire_breasts_T2_intro_E2:
     call her_main(".............","annoyed","worriedL")
 
     call her_main("Very well, [genie_name].", "angry", "base", "angry", "mid")
-    call her_main("But you better keep your hands to yourself!","annoyed","angryL", cheeks="blush")
-    call her_main("Don't you dare touch them!","annoyed","angryL", cheeks="blush")
-    call her_main("You need to promise me, [genie_name]!","annoyed","angryL", cheeks="blush")
+    call her_main("But you better keep your hands to yourself!", "annoyed", "narrow", "angry", "R", cheeks="blush")
+    call her_main("Don't you dare touch them!", "annoyed", "narrow", "angry", "R", cheeks="blush")
+    call her_main("You need to promise me, [genie_name]!", "annoyed", "narrow", "angry", "R", cheeks="blush")
     m "Of course. I promise I won't touch..."
 
     $ current_payout = 25
@@ -393,8 +393,8 @@ label hg_pf_admire_breasts_T2_E2:
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Very well, [genie_name].", "angry", "base", "angry", "mid")
-    call her_main("But you are not allowed to touch them!","annoyed","angryL", cheeks="blush")
-    call her_main("Promise me, [genie_name]!","annoyed","angryL", cheeks="blush")
+    call her_main("But you are not allowed to touch them!", "annoyed", "narrow", "angry", "R", cheeks="blush")
+    call her_main("Promise me, [genie_name]!", "annoyed", "narrow", "angry", "R", cheeks="blush")
     m "Of course. I promise..."
 
     $ current_payout = 25
@@ -419,10 +419,10 @@ label hg_pf_admire_breasts_T3_intro_E1:
     call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "[hermione_name]?"
-    call her_main("Yes, [genie_name]?","annoyed","angryL")
+    call her_main("Yes, [genie_name]?", "annoyed", "narrow", "angry", "R")
     m "I need to see your tits."
-    call her_main("............","annoyed","angryL", cheeks="blush")
-    call her_main("Do you promise not to touch, [genie_name]?","annoyed","angryL", cheeks="blush")
+    call her_main("............", "annoyed", "narrow", "angry", "R", cheeks="blush")
+    call her_main("Do you promise not to touch, [genie_name]?", "annoyed", "narrow", "angry", "R", cheeks="blush")
     m "Of course."
 
     $ current_payout = 25

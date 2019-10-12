@@ -52,7 +52,7 @@ label hg_ps_cumslut_Scene_1:
     call her_main("Well I suppose that would be alright...","annoyed","annoyed")
     call her_main("But what's the point if they can't see it?","annoyed","worriedL")
     m "You'll know it's there."
-    call her_main("Hmmmm...","annoyed","angryL") #Haggle here
+    call her_main("Hmmmm...", "annoyed", "narrow", "angry", "R") #Haggle here
     call her_main("How much will I be paid?","annoyed","suspicious")
     m "30 points."
     call her_main("30! I expect at least 70 for such a filthy act!","scream","worriedCl")
@@ -61,7 +61,7 @@ label hg_ps_cumslut_Scene_1:
     m "50 points, final offer."
     call her_main("Ok, I'll do it.","annoyed","worriedL")
     m "Really?"
-    call her_main("As long as nobody can see it then I don't see the big issue.","annoyed","angryL")
+    call her_main("As long as nobody can see it then I don't see the big issue.", "annoyed", "narrow", "angry", "R")
     m "Splendid. Care to give me a hand?"
     call her_main("...","base","down")
 
@@ -169,7 +169,7 @@ label hg_ps_cumslut_Scene_1:
 
             call her_main("Will that be all [genie_name].", "annoyed", "narrow", "annoyed", "up")
             m "I don't suppose you could kiss it for good luck?"
-            call her_main("I don't think so.","annoyed","angryL")
+            call her_main("I don't think so.", "annoyed", "narrow", "angry", "R")
             m "Well then that should be all then [hermione_name]."
 
         "\"Take it on your face slut!\"":
@@ -254,7 +254,7 @@ label hg_ps_cumslut_Scene_2:
     call her_main("Well I guess not...", "annoyed", "base", "base", "mid")
     call her_main("But will it still be hidden this time?","annoyed","worriedL")
     m "That's up to you."
-    call her_main("Hmmmm...","annoyed","angryL") #Haggle here
+    call her_main("Hmmmm...", "annoyed", "narrow", "angry", "R") #Haggle here
     call her_main("How much will I be paid this time then?","annoyed","suspicious")
     m "20 points."
     call her_main("20! we agreed on 50 last time!","scream","worriedCl")
@@ -317,7 +317,7 @@ label hg_ps_cumslut_Scene_2:
     m "Well hurry up [hermione_name], classes will start soon, best make your decision."
     call nar(">She starts jerking your cock with renewed vigour.")
     call her_main("...","annoyed","suspicious")
-    call her_main("You better appreciate this.","annoyed","angryL")
+    call her_main("You better appreciate this.", "annoyed", "narrow", "angry", "R")
     m "Oh I'm appreciating it!"
     call her_main("Really?", "open", "base", "base", "mid")
     g9 "You're about to see how much I'm appreciating it!"
@@ -681,7 +681,7 @@ label hg_ps_cumslut_complete_1:
                 m "Did your friends treat you poorly?"
                 call her_main("No! That's the worst part!", "scream", "closed", "angry", "mid",tears="mascara_soft_blink")
                 call her_main("I expected to be an outcast, to sit by myself and not have Ginny or Luna talk to me.","annoyed","worriedL",tears="mascara_soft_blink")
-                call her_main("But they didn't even acknowledge the fact that I was covered in cum!","annoyed","angryL",tears="mascara_soft_blink")
+                call her_main("But they didn't even acknowledge the fact that I was covered in cum!", "annoyed", "narrow", "angry", "R",tears="mascara_soft_blink")
                 call her_main("They acted as if nothing was wrong.","mad","worriedCl",tears="mascara_soft_blink")
                 call her_main("I even tried to provoke a response from Ginny by asking her what she thought of my hair!", "angry", "base", "base", "mid",tears="mascara_soft")
                 m "And what was her reaction?"
@@ -718,7 +718,7 @@ label hg_ps_cumslut_complete_2:
                 m "Luna?"
                 call her_main("Luna Lovegood, sir.", "soft", "base", "base", "mid")
                 m "What happened with miss Lovegood?"
-                call her_main("She kept trying to tell me that a Cornish pixie had given me a present.","annoyed","angryL")
+                call her_main("She kept trying to tell me that a Cornish pixie had given me a present.", "annoyed", "narrow", "angry", "R")
                 m "A cornish pixie had given you a present?"
                 call her_main("I didn't know what she was talking about either. Cornish pixies are nasty little things that would never do anything nice.","disgust","glance")
                 m "Well what happened after that?"
@@ -777,7 +777,7 @@ label hg_ps_cumslut_complete_2:
                 call her_main("No. Everyone treated me how I deserved to be treated.", "scream", "closed", "angry", "mid",tears="mascara")
                 m "And how's that?"
                 call her_main("Like a slut.","annoyed","worriedL",tears="mascara")
-                call her_main("Boys cat called me.","annoyed","angryL",tears="mascara")
+                call her_main("Boys cat called me.", "annoyed", "narrow", "angry", "R",tears="mascara")
                 call her_main("Put me down.","mad","worriedCl",tears="soft_blink",tears="mascara")
                 call her_main("Snape made me stand out the front of the class During defense against the dark arts.", "angry", "base", "base", "mid",tears="mascara_soft")
                 m "What did he make you do in front of the class?"
@@ -808,7 +808,7 @@ label hg_ps_cumslut_complete_3:
                 m "Yes [hermione_name], you may leave now. "
             "\"Tell me about your day.\"":
                 $ sc34CG(1, 17, 7)
-                call her_main("It was actually quite frustrating [genie_name]...","annoyed","angryL")
+                call her_main("It was actually quite frustrating [genie_name]...", "annoyed", "narrow", "angry", "R")
                 m "frustrating?"
                 call her_main("yes! Having to spend the whole day smelling your delicous cum but not being able to taste any of it!", "open", "base", "base", "R")
                 call her_main("It was like looking at a glass of water in the desert...", "soft", "narrow", "annoyed", "up")

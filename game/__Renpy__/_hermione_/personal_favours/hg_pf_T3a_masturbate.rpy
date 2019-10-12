@@ -21,7 +21,7 @@ label hg_pf_strip_fingering_intro:
         call her_main("What? why would I lie?","annoyed","worriedL")
         m "I'm not sure..."
         m "But don't worry, I'm sure a quick little demonstration will erase any doubts..."
-        call her_main("......","annoyed","angryL")
+        call her_main("......", "annoyed", "narrow", "angry", "R")
         call her_main("well I suppose I could.","open","down")
         call her_main("But you better keep your hands to yourself...","open","down")
         m "Witcher's promise."
@@ -191,7 +191,7 @@ label hg_pf_strip_T2_fingering:
             call her_main("[genie_name]!", "mad", "base", "angry", "mid", cheeks="blush")
             m "What?"
             $ hermione_dribble = True
-            call her_main("It's not {size=-5}slutty...{/size}","annoyed","angryL", cheeks="blush")
+            call her_main("It's not {size=-5}slutty...{/size}", "annoyed", "narrow", "angry", "R", cheeks="blush")
             m "Are you sure? Because from where I'm sitting it looks nice and wet."
             call her_main("Ah...{image=textheart}", "base", "narrow", "base", "up", cheeks="blush")
             call her_main("It's just sweat, [genie_name]...", "open", "base", "base", "R", cheeks="blush")
@@ -486,7 +486,7 @@ label hg_pf_strip_T4_fingering:
 
             call her_main("[genie_name]!","shock","worriedCl")
             call her_main("This wasn't part of the deal!","open","worriedCl")
-            call her_main("I don't think we should...","annoyed","angryL", cheeks="blush")
+            call her_main("I don't think we should...", "annoyed", "narrow", "angry", "R", cheeks="blush")
             m "Don't worry [hermione_name], You can keep playing with yourself."
             m "This is just to hurry things along."
             call her_main("Ah...{image=textheart} Well, as long as it's just to make this end faster...", "open", "narrow", "base", "up", cheeks="blush")

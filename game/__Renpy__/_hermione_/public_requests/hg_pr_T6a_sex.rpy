@@ -43,7 +43,7 @@ label hg_pr_sex:
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         call her_main("..............", "angry", "base", "angry", "mid")
         call her_main("I had the feeling that we would get to this sooner or later...","disgust","glance")
-        call her_main("But...","annoyed","angryL")
+        call her_main("But...", "annoyed", "narrow", "angry", "R")
         her "..................."
         m "If you do this, \"Gryffindor\" will be getting seventy five points tonight."
         call her_main("Well, then I will do it, [genie_name].","annoyed","annoyed")
@@ -152,7 +152,7 @@ label hg_pr_sex_T1_E3:
     m "What did you do afterwards?"
     m "Pulled up your panties and went about your business as if nothing happened?"
     call her_main("My panties?","open","down")
-    call her_main("I rarely bother to wear them anymore, [genie_name].","annoyed","angryL")
+    call her_main("I rarely bother to wear them anymore, [genie_name].", "annoyed", "narrow", "angry", "R")
     m "Oh really?"
     call her_main("Yes... I find not wearing any underwear very empowering.","annoyed","annoyed")
     m "Good for you, [hermione_name]."
@@ -171,7 +171,7 @@ label hg_pr_sex_T1_E4:
     call her_main("I took one of the \"Ravenclaw\" boys to the girl's restroom...","base","down")
     her "...and let him have his way with me in one of the stalls."
     m "Well done, [hermione_name]."
-    call her_main(".....................","annoyed","angryL")
+    call her_main(".....................", "annoyed", "narrow", "angry", "R")
     m "I said you did great. What's the matter?"
     call her_main("Ehm... well...", "open", "base", "base", "R", cheeks="blush")
     her "I am getting paid well for performing such tasks..."

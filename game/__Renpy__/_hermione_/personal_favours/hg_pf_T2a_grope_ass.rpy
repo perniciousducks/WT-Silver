@@ -19,7 +19,7 @@ label hg_pf_grope_ass_T1:
     m "Do it for \"Gryffimdor\"..."
     call her_main("(These [current_payout] points could really make a difference...)","disgust","down_raised", cheeks="blush")
     call her_main("(Darn it.....!)","angry","worriedCl", cheeks="blush")
-    call her_main("(...............................)","annoyed","angryL", cheeks="blush")
+    call her_main("(...............................)", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
     call her_main("Can I at least turn around then, Sir?", "soft", "base", "angry", "mid", cheeks="blush")
 
@@ -55,7 +55,7 @@ label hg_pf_grope_ass_T1_front:
     m "Wouldn't it be worse if I didn't want to look at you?"
     call her_main("*ARGH* Whatever!!!", "scream", "base", "angry", "mid", cheeks="blush")
 
-    call her_main("Good day, Sir.","disgust","angryL", cheeks="blush")
+    call her_main("Good day, Sir.", "disgust", "narrow", "angry", "R", cheeks="blush")
 
     call her_walk(action="leave", speed=2.5)
 
@@ -68,16 +68,16 @@ label hg_pf_grope_ass_T1_front:
 label hg_pf_grope_ass_T1_back:
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="d7")
 
-    call her_main("As you say, [genie_name]...","annoyed","angryL", cheeks="blush")
+    call her_main("As you say, [genie_name]...", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
     call hg_chibi_transition("stand_behind_desk", flip=True, trans="d5")
     call ctc
 
-    call her_main(".............","annoyed","angryL", cheeks="blush")
+    call her_main(".............", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call her_main("...........................", "annoyed", "base", "angry", "mid", cheeks="blush")
     call her_main("[genie_name], I would like to be done with this sooner rather than later...", "soft", "closed", "angry", "mid", cheeks="blush")
     m "Don't rush me [hermione_name]... Let me savour the moment..."
-    call her_main(".............................","annoyed","angryL", cheeks="blush")
+    call her_main(".............................", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
     menu:
         m "Hm..."
@@ -95,7 +95,7 @@ label hg_pf_grope_ass_T1_back:
 
     menu:
         "\"Fine, fine... I just couldn't resist....\"":
-            call her_main(".......................","annoyed","angryL", cheeks="blush")
+            call her_main(".......................", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
             jump hg_pf_grope_ass_T1_continue
 
@@ -111,7 +111,7 @@ label hg_pf_grope_ass_T1_back:
 
     menu:
         "\"Fine, fine... I just couldn't resist....\"":
-            call her_main(".......................","annoyed","angryL", cheeks="blush")
+            call her_main(".......................", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
             jump hg_pf_grope_ass_T1_continue
 
@@ -207,7 +207,7 @@ label hg_pf_grope_ass_T1_continue:
     # show screen groping_02
     call ctc
 
-    call her_main("..............","annoyed","angryL", cheeks="blush")
+    call her_main("..............", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call nar("*squeeze* *squeeze* *squeeze*...")
 
     call her_main(".........................", "annoyed", "base", "angry", "mid", cheeks="blush")
@@ -219,7 +219,7 @@ label hg_pf_grope_ass_T1_continue:
     call her_main("Please let go of me, Sir.", "soft", "base", "angry", "mid", cheeks="blush")
     m "Fine..."
     call nar(">You give her butt one last squeeze...")
-    call her_main("...................","annoyed","angryL", cheeks="blush")
+    call her_main("...................", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
     jump end_hg_pf_grope
 
@@ -242,7 +242,7 @@ label hg_pf_grope_ass_T2:
             jump hg_pf_grope_ass_T2_back
 
         "\"No. Just stand still, [hermione_name].\"":
-            call her_main("As you say, [genie_name]...","annoyed","angryL", cheeks="blush", ypos="head")
+            call her_main("As you say, [genie_name]...", "annoyed", "narrow", "angry", "R", cheeks="blush", ypos="head")
 
             jump hg_pf_grope_ass_T2_front
 
@@ -256,9 +256,9 @@ label hg_pf_grope_ass_T2_front:
     call her_main("[genie_name], please hurry up, before someone discovers us like this...", "soft", "base", "base", "R", cheeks="blush", ypos="head")
     m "What's the problem, [hermione_name]?"
     m "You know you are doing this for your house."
-    call her_main("I do know.","annoyed","angryL", cheeks="blush")
-    call her_main("But not everyone would see it that way...","annoyed","angryL", cheeks="blush")
-    call her_main("So let us be done with this as quick as possible...","annoyed","angryL", cheeks="blush")
+    call her_main("I do know.", "annoyed", "narrow", "angry", "R", cheeks="blush")
+    call her_main("But not everyone would see it that way...", "annoyed", "narrow", "angry", "R", cheeks="blush")
+    call her_main("So let us be done with this as quick as possible...", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call her_main("Please...", "open", "base", "base", "R", cheeks="blush")
     m "Well, if you insist..."
     show screen groping_01
@@ -269,7 +269,7 @@ label hg_pf_grope_ass_T2_front:
     call her_main("nothing, [genie_name]. Your hands are cold, that's all...", "open", "base", "base", "R", cheeks="blush")
 
     call nar(">You run your hands up and down Hermione's legs...")
-    call her_main(".........................","annoyed","angryL", cheeks="blush")
+    call her_main(".........................", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
     call nar(">And give her Ass a good squeeze...")
     call her_main(".................","angry","worriedCl", cheeks="blush")
@@ -303,12 +303,12 @@ label hg_pf_grope_ass_T2_front:
             call nar(">Hermione maintains eye contact as she's been told...","end")
 
             call her_main("....................", "angry", "base", "angry", "mid")
-            call her_main("...............................","annoyed","angryL", cheeks="blush")
+            call her_main("...............................", "annoyed", "narrow", "angry", "R", cheeks="blush")
             m "What did I tell you about looking away?"
             call her_main("Yes, I remember...","angry","worriedCl", cheeks="blush")
             call her_main(".................................", "angry", "base", "angry", "mid")
-            call her_main("...................................","annoyed","angryL", cheeks="blush")
-            call her_main("..................................................","annoyed","angryL", cheeks="blush")
+            call her_main("...................................", "annoyed", "narrow", "angry", "R", cheeks="blush")
+            call her_main("..................................................", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
             call nar(">You keep enjoying the sensation of her soft buttocks under your fingertips...")
             call her_main(".....................", "angry", "base", "angry", "mid")
@@ -411,7 +411,7 @@ label hg_pf_grope_ass_T2_continue:
         m "Hm..."
         "\"I have my reasons...\"":
             call her_main("Oh...","disgust","down_raised", cheeks="blush")
-            call her_main("Hm...","annoyed","angryL", cheeks="blush")
+            call her_main("Hm...", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
         "\"In the name of science of course!\"":
             call her_main("Really?!", "soft", "wide", "base", "stare")
@@ -419,7 +419,7 @@ label hg_pf_grope_ass_T2_continue:
             m "Yeah, sure, I'm researching ehm... er..."
             m "Well, you wouldn't understand, this is some pretty advanced wizardry stuff..."
             call her_main("I see...", "soft", "wide", "base", "stare")
-            call her_main("Well, if it is for research then I am glad to be of help...","annoyed","angryL")
+            call her_main("Well, if it is for research then I am glad to be of help...", "annoyed", "narrow", "angry", "R")
 
         "-Just squeeze her butt cheeks tighter-":
             call nar(">You give Hermione's butt cheeks a couple of extra firm squeezes.")
@@ -668,8 +668,8 @@ label hg_pf_grope_ass_T3_back:
     call her_main("!!!", "mad", "wide", "base", "stare", cheeks="blush")
     call her_main("[genie_name]!", "clench", "base", "angry", "mid", cheeks="blush")
     m "Sorry..."
-    call her_main("...","annoyed","angryL", cheeks="blush")
-    call her_main("You should've warned me...","soft","angryL", cheeks="blush") #annoyed
+    call her_main("...", "annoyed", "narrow", "angry", "R", cheeks="blush")
+    call her_main("You should've warned me...", "soft", "narrow", "angry", "R", cheeks="blush") #annoyed
 
     call nar(">Hermione goes quiet as you begin massaging her butt cheeks...")
     call her_main("...", "base", "closed", "base", "mid", cheeks="blush")
@@ -842,9 +842,9 @@ label hg_pf_grope_ass_T4_front:
     m "What's the problem, [hermione_name]?"
 
     if daytime:
-        call her_main("I don't have long before class.","annoyed","angryL", cheeks="blush")
+        call her_main("I don't have long before class.", "annoyed", "narrow", "angry", "R", cheeks="blush")
     else:
-        call her_main("I don't have long before others notice im missing.","annoyed","angryL", cheeks="blush")
+        call her_main("I don't have long before others notice im missing.", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
     m "do you enjoy this so much?"
     call her_main("I wouldn't phrase it like that...","annoyed","wink", cheeks="blush")

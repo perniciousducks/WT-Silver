@@ -44,7 +44,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         m "But don't you hate it that some of the girls from \"Slytherin\"..."
         m "Are selling favours for house points, [hermione_name]?"
         call her_main("Yes I do!", "angry", "base", "angry", "mid")
-        call her_main("(Those \"Slytherin\" tramps have no dignity.)","annoyed","angryL")
+        call her_main("(Those \"Slytherin\" tramps have no dignity.)", "annoyed", "narrow", "angry", "R")
         m "Well, there you go then!"
         call her_main("Huh?","disgust","glance")
         m "Beat them at their own game!"
@@ -337,7 +337,7 @@ label hg_ps_get_panties_complete:
                 her "I spent some time with my classmates..."
                 her "And we had a short \"MRM\" meeting after that..."
                 call her_main("I gave a short speech on \"Why it is wrong to sell sexual favours in exchange for house points\"...", "open", "closed", "base", "mid")
-                call her_main("I felt bad that I had to give the speech without any underwear on...","annoyed","angryL")
+                call her_main("I felt bad that I had to give the speech without any underwear on...", "annoyed", "narrow", "angry", "R")
                 hide screen sccg
                 call her_main(xpos="right",ypos="base",trans="fade")
 
@@ -348,8 +348,8 @@ label hg_ps_get_panties_complete:
                         m "You sold your panties to me this morning..."
                         m "And a couple of hours later you already publicly condemned that exact behaviour..."
                         #m "What would you call this?"
-                        #call her_main("I know you are right, [genie_name]...","annoyed","angryL")
-                        call her_main("(But we need the points...)","annoyed","angryL")
+                        #call her_main("I know you are right, [genie_name]...", "annoyed", "narrow", "angry", "R")
+                        call her_main("(But we need the points...)", "annoyed", "narrow", "angry", "R")
                         call her_main("Can I have my payment now please?","disgust","glance")
                         m "What about your panties?"
                         call her_main("Oh, them too of course...","angry","worriedCl",emote="05")

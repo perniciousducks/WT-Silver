@@ -695,7 +695,7 @@ label hermione_intro_E3:
     call her_main("","annoyed","frown", xpos="base", ypos="base")
     call ctc
 
-    call her_main("Good evening, Professor.","annoyed","angryL")
+    call her_main("Good evening, Professor.", "annoyed", "narrow", "angry", "R")
 
     menu:
         "\"-stare full of hatred-\"":
@@ -711,11 +711,11 @@ label hermione_intro_E3:
     call her_main("Something... bizarre has happened today...", "open", "closed", "angry", "mid")
     call her_main("I'm not sure how to describe this...","normal","frown")
     call her_main("................................","annoyed","frown")
-    call her_main("I think I almost failed a test...","annoyed","angryL")
+    call her_main("I think I almost failed a test...", "annoyed", "narrow", "angry", "R")
 
     menu:
         "\"That happens to students sometimes.\"":
-            call her_main("To other students, yes. But not to me, sir!","annoyed","angryL")
+            call her_main("To other students, yes. But not to me, sir!", "annoyed", "narrow", "angry", "R")
             call her_main("Never to me...", "soft", "base", "base", "R")
         "\"(Way to go, Snape!)\"":
             call her_main("Excuse me?", "normal", "base", "base", "mid")
@@ -732,7 +732,7 @@ label hermione_intro_E3:
     her "If I \"almost\" fail a test, the rest of the students will definitely fail it."
     m "Is that so...?"
     call her_main("Yes, professor. Something went terribly wrong today...","normal","frown")
-    call her_main(".................................","annoyed","angryL")
+    call her_main(".................................", "annoyed", "narrow", "angry", "R")
     call her_main("But what if it didn't?","open","worried")
     her "What if all the tests will be this difficult from now on?"
 
@@ -777,7 +777,7 @@ label hermione_intro_E3:
     m "............"
     call her_main("I'm sorry, professor, I'm probably just overreacting anyway...","grin","worriedCl", emote="05")
     call her_main("But you must understand that my reputation is at stake here!", "open", "base", "base", "mid")
-    call her_main("There's gotta be something wrong with the test...","annoyed","angryL")
+    call her_main("There's gotta be something wrong with the test...", "annoyed", "narrow", "angry", "R")
     her "And although the entire class might have failed, I probably still got the most points on the test..."
     her "As usual..."
     call her_main("Well, I'd better go now. We have another \"MRM\" meeting today.", "open", "closed", "angry", "mid")
@@ -1109,19 +1109,19 @@ label hermione_intro_E6:
     if current_favor == "show_tongue":
         call her_main("M-my... tongue, sir?","grin","worriedCl", emote="05")
         m "Yes, girl. Open your mouth, and show me your tongue."
-        call her_main("{size=-7}(What a weirdo...){/size}","annoyed","angryL")
+        call her_main("{size=-7}(What a weirdo...){/size}", "annoyed", "narrow", "angry", "R")
         call her_main("Ehm... well, alright then...","normal","frown")
         call her_main("Here...","open","suspicious")
         call her_main(".............","open_tongue","glance")
         her "............."
-        call her_main(".................","open_tongue","angryL")
+        call her_main(".................", "open_tongue", "narrow", "angry", "R")
         call ctc
 
         menu:
             "\"Very good. Here are your points.\"":
                 pass
             "\"Not good enough. You can do better\"":
-                call her_main("...............","annoyed","angryL")
+                call her_main("...............", "annoyed", "narrow", "angry", "R")
                 her "Alright, I will try to do better, sir..."
                 call her_main("How about this?","open","worried")
                 call her_main("A-a-ah..................", "scream", "base", "base", "R")
@@ -1151,7 +1151,7 @@ label hermione_intro_E6:
                 call her_main("Thank you, professor Dumbledore...", "open", "base", "base", "R",cheeks="blush")
             "\"You have a nice body, miss Granger...\"":
                 call her_main("!!?", "soft", "wide", "base", "stare")
-                call her_main("..............","annoyed","angryL",cheeks="blush")
+                call her_main("..............", "annoyed", "narrow", "angry", "R",cheeks="blush")
                 call her_main("Thank you, professor...")
             "\"That's enough. Here are your points...\"":
                 show screen hermione_stand #Hermione stands still.
@@ -1182,7 +1182,7 @@ label hermione_intro_E6:
             "\"Not stupid enough.\"":
                 pass
 
-        call her_main(".........","annoyed","angryL")
+        call her_main(".........", "annoyed", "narrow", "angry", "R")
         call her_main("What about this one then?", "disgust", "slit", "low", "stare")
 
         menu:
@@ -1191,7 +1191,7 @@ label hermione_intro_E6:
             "\"No, not stupid enough.\"":
                 pass
 
-        call her_main(".........","annoyed","angryL")
+        call her_main(".........", "annoyed", "narrow", "angry", "R")
         call her_main("What if I do it like this?", "full", "slit", "worried", "ahegao")
 
         menu:
@@ -1214,7 +1214,7 @@ label hermione_intro_E6:
                 call her_main("Do I need to... be punished?","open","worried")
                 call her_main("Ehm...", "soft", "base", "base", "R")
                 her "....................."
-                call her_main("Well, I am not perfect, if that's what you mean, sir...","annoyed","angryL")
+                call her_main("Well, I am not perfect, if that's what you mean, sir...", "annoyed", "narrow", "angry", "R")
                 call her_main("But do I need to be punished... hm?", "soft", "base", "base", "R")
                 call her_main("Is this really for me to decide...? I mean...","normal","frown")
                 her "What does this have to do with anything?"

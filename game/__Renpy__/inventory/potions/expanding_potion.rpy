@@ -27,7 +27,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     m "Oh I wouldn't be so sure of that."
     call her_main("So is that what it does? Makes me show you my breasts? Is it some sort of mind control potion?", "base", "base", "base", "mid")
     m "Mind control? Where's the fun in that? No, this is something much more entertaining."
-    call her_main("Well it better happen soon otherwise I'm lea-","annoyed","angryL")
+    call her_main("Well it better happen soon otherwise I'm lea-", "annoyed", "narrow", "angry", "R")
     call nar(">You notice her breasts start to expand ever so slightly.") #Start using facial expressions mixed with Captain Nemo art
     call her_main("...","annoyed","annoyed")
     call her_main("As I said, something better happen soon or I'm leaving.","annoyed","worriedL")
@@ -84,7 +84,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     m "Now how would you like to earn some additional points?"
     call her_main("I want an extra 40.","annoyed","annoyed")
     m "I haven't even told you what I want to-"
-    call her_main("If you want to touch my breasts it will be an extra 40 points.","annoyed","angryL")
+    call her_main("If you want to touch my breasts it will be an extra 40 points.", "annoyed", "narrow", "angry", "R")
     m "Deal."
 
     call chibi_walk_desk_blkfade("hermione")
@@ -207,7 +207,7 @@ label potion_scene_2_2: #ass expansion
     m "The effects should be visible soon enough."
     call her_main("Well can you at least give me a hint?", "open", "base", "base", "mid")
     m "Let's just say that it's a redistribution of ass{w}ets." ###Added {w} instead of your ...
-    call her_main("What do you mean by--","annoyed","angryL")
+    call her_main("What do you mean by--", "annoyed", "narrow", "angry", "R")
     call nar(">Hermione goes white as she starts to feel her body churn.")
     call her_main("What's going on. It feels like my insides are moving.", "angry", "wide", "base", "stare")
     call her_main("And my ass, it feels so... good.", "soft", "narrow", "annoyed", "up")

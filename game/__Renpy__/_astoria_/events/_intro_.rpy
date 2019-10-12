@@ -312,7 +312,7 @@ label astoria_intro_E2_hermione:
     m "If it's not too much troub--"
     call her_main("I'd be honoured, [genie_name]!", "scream", "closed", "base", "mid")
     call her_main("It's no doubt the work of one of those despicable \"slytherins\"...", "open", "closed", "angry", "mid")
-    call her_main("Nothing would give me greater pleasure than to see scum like that sent to \'Azkaban\'...","angry","angryL")
+    call her_main("Nothing would give me greater pleasure than to see scum like that sent to \'Azkaban\'...", "angry", "narrow", "angry", "R")
 
     # Genie already knows about Azkaban.
     #m "And what's Azkaban?"
@@ -320,7 +320,7 @@ label astoria_intro_E2_hermione:
     #m "Sure..."
     #call her_main("Of course! I know everything about it!", "smile", "happy", "base", "mid_soft")
     #call her_main("It's the prison of the damned... An impenetrable rocky outcrop surrounded by the harsh North Sea...","open","happyCl")
-    #call her_main("the guards are the deathly eaters of all happy thoughts and emotions known as dementors...","open","angryL")
+    #call her_main("the guards are the deathly eaters of all happy thoughts and emotions known as dementors...", "open", "narrow", "angry", "R")
     #call her_main("They endlessly patrol the prison, devouring all hope from the prisoners, driving them mad within a few days...", "open", "base", "angry", "mid")
     #call her_main("Tormenting them relentlessly for the rest of their miserable lives...","grin","happyCl")
     #call her_main("And the perfect place to house all those dirty \'slytherins\'!", "angry", "base", "angry", "mid")
@@ -464,7 +464,7 @@ label astoria_intro_E3:
     call her_chibi("stand","desk",flip=True)
     pause.5
 
-    call her_main("Get in here, Astoria!","annoyed","angryL", ypos="head", flip=True)
+    call her_main("Get in here, Astoria!", "annoyed", "narrow", "angry", "R", ypos="head", flip=True)
     ast "{size=+2}{b}No!{/b}{/size}"
     call her_main("Do you want to make this worse?", "scream", "closed", "base", "mid", trans="hpunch")
     ast "no..."
@@ -538,12 +538,12 @@ label astoria_intro_E3:
             m "We'll talk about your reward later..."
             call her_main("But!","disgust","down")
             m "No butts..." # deliberate.
-            call her_main("*hmph*","annoyed","angryL")
+            call her_main("*hmph*", "annoyed", "narrow", "angry", "R")
             call her_main("Fine...", "open", "closed", "angry", "mid")
             $ her_mood += 12
 
         "\"How about some house points instead?\"":
-            call her_main("*Hmm*...","annoyed","angryL")
+            call her_main("*Hmm*...", "annoyed", "narrow", "angry", "R")
             call her_main("How many house points?", "soft", "base", "angry", "mid")
 
             menu:
@@ -552,7 +552,7 @@ label astoria_intro_E3:
                     call her_main("10?","disgust","worried")
                     call her_main("I expected more for this, Professor!", "open", "base", "angry", "mid")
                     m "Take 'em or leave 'em..."
-                    call her_main("...","annoyed","angryL")
+                    call her_main("...", "annoyed", "narrow", "angry", "R")
                     call her_main("Very well...", "open", "closed", "base", "mid")
                     $ her_mood += 6
                     $ gryffindor += 10
@@ -572,10 +572,10 @@ label astoria_intro_E3:
     else:
         m "You may leave..."
 
-    call her_main("...","annoyed","angryL")
+    call her_main("...", "annoyed", "narrow", "angry", "R")
     call ast_main("*cough*... {size=-4}mudblood...{/size}","annoyed","narrow","angry","L")
     call her_main("*Tzzzs!*...", "angry", "closed", "angry", "mid")
-    call her_main("I'll go back to class then...","annoyed","angryL")
+    call her_main("I'll go back to class then...", "annoyed", "narrow", "angry", "R")
     call her_main("Good day, Professor.", "open", "base", "angry", "mid")
     stop music fadeout 2.0
 

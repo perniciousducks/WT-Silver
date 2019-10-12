@@ -94,7 +94,7 @@ label a_bad_time_to_disrobe_part_1:
     m "I expect better from you by now."
     call her_main("So, no points then?", "angry", "annoyed")
     m "No, I know you can do better."
-    call her_main("Fine! I'll do better next time. Double points! I'll show you!","angry","angryL")
+    call her_main("Fine! I'll do better next time. Double points! I'll show you!", "angry", "narrow", "angry", "R")
     m "That's the spirit. Your house will thank you when you beat the Slytherins by the end of the year."
     call her_main("Thank you professor... I'll remember that for next time.", "grin", "happy", "base", "mid_soft")
 
@@ -302,7 +302,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("Professor!", "scream", "base", "angry", "mid")
     g4 "*Cough* *Cough*... sorry."
     call her_main("It is hard to talk about this as it is without your chewing distracting me.", "annoyed", "base", "angry", "mid")
-    call her_main("Anyhow...","base","angryL")
+    call her_main("Anyhow...", "base", "narrow", "angry", "R")
     call her_main("I expected the team to be going for at least another 30 minutes.", "open", "base", "base", "mid")
     call her_main("But that's when the boy walked in...", "normal", "closed", "base", "mid")
     call her_main("And I panicked and threw the cloak over myself and hid in one of the toilets.","open","worriedL")

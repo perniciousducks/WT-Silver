@@ -381,14 +381,14 @@ label slytherin_cheer_responses:
                 m "Well what was your routine?"
                 call her_main("Mostly star jumps while I cheered \"Go Slytherin!\".","annoyed","frown")
                 m "So you were just jumping up and down? That doesn't seem like a very intricate cheer."
-                call her_main("It isn't but it's what they insisted I do.","annoyed","angryL")
+                call her_main("It isn't but it's what they insisted I do.", "annoyed", "narrow", "angry", "R")
                 m "Well it definitely sounds like you earned your points."
                 m "30 points to Gryffindor."
             elif day_random >= 3 and day_random <= 5:
                 m "How was your day today [hermione_name]?"
                 call her_main("Uneventful. I completed my routine and then went back to my room...","open","suspicious")
                 m "You didn't talk to anyone?"
-                call her_main("I make a point of trying to avoid Slytherin student as best I can. ","annoyed","angryL")
+                call her_main("I make a point of trying to avoid Slytherin student as best I can. ", "annoyed", "narrow", "angry", "R")
                 m "Are they really that unbearable?"
                 call her_main("Yes...", "open", "closed", "angry", "mid")
                 m "Well, you earned your points."
@@ -408,7 +408,7 @@ label slytherin_cheer_responses:
                 m "Well done [hermione_name], 20 points to Gryffindor."
             elif day_random >=9 and her_reputation > 15:
                 call her_main("[genie_name], something must be done about those Slytherin boys...", "open", "closed", "angry", "mid")
-                call her_main("It's bad enough that I have to cheer for them but they are being a little bit touchy.","annoyed","angryL")
+                call her_main("It's bad enough that I have to cheer for them but they are being a little bit touchy.", "annoyed", "narrow", "angry", "R")
                 m "Touchy?"
                 call her_main("Yes, they keep groping me. It's highly inappropriate and it interrupts my routine.", "scream", "closed", "angry", "mid")
                 m "You kept dancing while they groped you?"
@@ -610,7 +610,7 @@ label hermione_helping_selling_cards:
         call her_main("No, that's not why I'm annoyed...", "annoyed", "happy", "base", "R")
         call her_main("In my haste to find a solution I thought it would be a great idea to play a few rounds of strip cards to get more people interested.","open","down_raised", cheeks="blush")
         call her_main("...", "angry", "closed", "angry", "mid", cheeks="blush")
-        call her_main("I've played enough not to be beaten by a new player I thought.","mad","angryL", cheeks="blush")
+        call her_main("I've played enough not to be beaten by a new player I thought.", "mad", "narrow", "angry", "R", cheeks="blush")
         g9 "Of course, you've played against me after all..."
         call her_main("...", "base", "base", "angry", "mid")
         m "Sorry, go on."
@@ -649,7 +649,7 @@ label hermione_helping_selling_cards:
         call her_main("Well...", "annoyed", "base", "base", "mid", cheeks="blush")
         call her_main("The winner did end up standing there with such an expectant look on his face after everyone had left...","open","down", cheeks="blush")
         m "..."
-        call her_main("So I told him that whatever he was expecting it wasn't happening.","angry","angryL", cheeks="blush")
+        call her_main("So I told him that whatever he was expecting it wasn't happening.", "angry", "narrow", "angry", "R", cheeks="blush")
         call her_main("He seemed so disheartened so I felt a bit bad about the whole thing...", "open", "closed", "angry", "mid")
         call her_main("So, since I didn't want to bring his feeling of victory down I figured since some students had spread the rumour they'd assume the worst anyway...", "open", "base", "angry", "mid", cheeks="blush")
         call her_main("So I put my hand down his pants and fiddled around a bit whilst letting the guy get a peek behind my suspenders.", "grin", "base", "angry", "mid", cheeks="blush")

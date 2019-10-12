@@ -85,7 +85,7 @@
                     # m "I'm already giving you new clothing! Isn't that enough?"
                     # call her_main("No it's not enough, [genie_name]!", "open", "closed", "base", "mid")
                     # call her_main("I want those points!", "angry", "base", "angry", "mid")
-                    # call her_main("(You can shove those clothes up your ass...)","annoyed","angryL")
+                    # call her_main("(You can shove those clothes up your ass...)", "annoyed", "narrow", "angry", "R")
                     # m "I'm not giving you the points, [hermione_name]."
                     # call her_main("Tzzz--", "angry", "base", "angry", "mid")
                     # call her_main("Well then wear your... {w=0.5}-stuff yourself!", "scream", "closed", "angry", "mid")
@@ -121,7 +121,7 @@
             # call her_main("...","annoyed","annoyed")
             # m "I just want you to wear--"
             # call her_main("I SAID NO, [genie_name]!", "scream", "closed", "angry", "mid")
-            # call her_main("tzzzz...","annoyed","angryL")
+            # call her_main("tzzzz...", "annoyed", "narrow", "angry", "R")
             # g4 "Fine! {w=0.9}Forget it."
         # else:
             # hide screen hermione_main

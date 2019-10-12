@@ -46,7 +46,7 @@ label equip_bra:
                     # call her_main("Why not?!", "shock", "wide", "base", "stare")
                     # call her_main("Why would you even requests something like that from one of your students?", "angry", "base", "angry", "mid")
                     # call her_main("I see no reason why I should ever change my bra for you...", "open", "closed", "base", "mid")
-                    # call her_main("(Disgusting...)","annoyed","angryL")
+                    # call her_main("(Disgusting...)", "annoyed", "narrow", "angry", "R")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 11."
                     # jump return_to_wardrobe
@@ -77,7 +77,7 @@ label equip_bra:
                         # m "Why not? It's a really nice one!"
                         # m "And it's so soft..."
                         # m "I'd wear it myself but I lack the tits..."
-                        # call her_main("(Disgusting perv...)","clench","angryL")
+                        # call her_main("(Disgusting perv...)", "clench", "narrow", "angry", "R")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 11."
                     # jump return_to_wardrobe
@@ -127,7 +127,7 @@ label equip_bra:
                         # m "It's-"
                         # call her_main("I don't care! You can have it back!", "open", "closed", "base", "mid")
                         # m "Fine. Maybe another time then..."
-                        # call her_main("(Weirdo...)","annoyed","angryL")
+                        # call her_main("(Weirdo...)", "annoyed", "narrow", "angry", "R")
                     # elif her_whoring < 11:
                         # call her_main("Please, [genie_name]...", "open", "closed", "base", "mid")
                         # call her_main("Stop buying me bras...", "annoyed", "base", "angry", "mid")
@@ -162,7 +162,7 @@ label equip_bra:
                         # m "But this one has those pretty frills!"
                         # call her_main("I don't care! You can keep it!", "open", "closed", "base", "mid")
                         # m "Fine. Maybe another time then..."
-                        # call her_main("(Pervert...)","annoyed","angryL")
+                        # call her_main("(Pervert...)", "annoyed", "narrow", "angry", "R")
                     # elif her_whoring < 14:
                         # call her_main("Please, [genie_name]...", "open", "closed", "base", "mid")
                         # call her_main("Stop buying me bras...", "annoyed", "base", "angry", "mid")
@@ -368,7 +368,7 @@ label equip_panties:
                     # call her_main("Why not?!", "shock", "wide", "base", "stare")
                     # call her_main("Why would you even requests something like that from one of your students?", "angry", "base", "angry", "mid")
                     # call her_main("I see no reason why I should ever change my panties for you...", "open", "closed", "base", "mid")
-                    # call her_main("(Disgusting...)","annoyed","angryL")
+                    # call her_main("(Disgusting...)", "annoyed", "narrow", "angry", "R")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 11."
                     # jump return_to_wardrobe
@@ -398,7 +398,7 @@ label equip_panties:
                         # call her_main("No, [genie_name]!", "annoyed", "closed", "base", "mid")
                         # m "Why not? They're really nice and soft!"
                         # m "I'd wear it myself but I lack a great ass..."
-                        # call her_main("(Disgusting perv...)","clench","angryL")
+                        # call her_main("(Disgusting perv...)", "clench", "narrow", "angry", "R")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 11."
                     # jump return_to_wardrobe
@@ -448,7 +448,7 @@ label equip_panties:
                         # m "It's-"
                         # call her_main("I don't care! You can have them back!", "open", "closed", "base", "mid")
                         # m "Fine. Maybe another time then..."
-                        # call her_main("(Pervert...)","annoyed","angryL")
+                        # call her_main("(Pervert...)", "annoyed", "narrow", "angry", "R")
                     # elif her_whoring < 11:
                         # call her_main("Please, [genie_name]...", "open", "closed", "base", "mid")
                         # call her_main("Stop buying me panties...", "annoyed", "base", "angry", "mid")
@@ -483,7 +483,7 @@ label equip_panties:
                         # m "But this one has those pretty frills!"
                         # call her_main("I don't care! You can keep them!", "open", "closed", "base", "mid")
                         # m "Fine. Maybe another time then..."
-                        # call her_main("(Pervert...)","annoyed","angryL")
+                        # call her_main("(Pervert...)", "annoyed", "narrow", "angry", "R")
                     # elif her_whoring < 14:
                         # call her_main("Please, [genie_name]...", "open", "closed", "base", "mid")
                         # call her_main("Stop buying me panties...", "annoyed", "base", "angry", "mid")
@@ -517,7 +517,7 @@ label equip_panties:
                         # call her_main("[genie_name], I've told you before, gifting your students panties is not ok!", "clench", "closed", "base", "mid")
                         # m "You haven't even looked at them!"
                         # call her_main("Because I don't need to.", "open", "base", "angry", "mid")
-                        # call her_main("(And I also don't want to!)","annoyed","angryL")
+                        # call her_main("(And I also don't want to!)", "annoyed", "narrow", "angry", "R")
                         # call her_main("You can keep them...", "annoyed", "base", "angry", "mid")
                         # m "(She'll wear them sooner or later...)"
                     # else:

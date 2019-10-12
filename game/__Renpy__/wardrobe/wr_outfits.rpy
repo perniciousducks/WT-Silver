@@ -38,7 +38,7 @@ label equip_outfit:
                     # call her_main("Alright...", "smile", "base", "base", "mid")
                 # else: #Fail
                     # call her_main("Your maid? [genie_name] isn't it the house elves job to clean up the rooms?", "open", "base", "base", "mid")
-                    # call her_main("(Not that I approve of this horrible house-elf enslavement...)","annoyed","angryL")
+                    # call her_main("(Not that I approve of this horrible house-elf enslavement...)", "annoyed", "narrow", "angry", "R")
                     # call her_main("I have more important things to attend to. I have no time to clean up behind you...", "open", "closed", "base", "mid")
                     # call her_main("Unless... there are some points in it for me...", "soft", "base", "base", "R")
                     # m "No points,..."
@@ -172,7 +172,7 @@ label equip_outfit:
                     # else:
                         # call her_main("It's not your birthday!", "scream", "base", "angry", "mid")
                         # m "Alright, alright... No need to scream like that."
-                    # call her_main("(What a perv...)","annoyed","angryL")
+                    # call her_main("(What a perv...)", "annoyed", "narrow", "angry", "R")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 20."
                     # jump return_to_wardrobe
@@ -192,7 +192,7 @@ label equip_outfit:
                     # call her_main("Perhaps...", "smile", "base", "base", "mid")
                 # else: #Fail
                     # call her_main("And what? [genie_name] You're expecting me to just wear this thing because you've won it?", "open", "base", "base", "mid")
-                    # call her_main("(Does he think he can play me like he plays cards?)","annoyed","angryL")
+                    # call her_main("(Does he think he can play me like he plays cards?)", "annoyed", "narrow", "angry", "R")
                     # call her_main("Now, if you excuse me I have more important things to do...", "open", "closed", "base", "mid")
                     # call her_main("Unless you needed anything else?", "soft", "base", "base", "R")
                     # m "..."
@@ -304,7 +304,7 @@ label equip_outfit:
                     # call her_main("What?", "scream", "wide", "base", "stare")
                     # call her_main("In that case, absolutely not!", "scream", "closed", "angry", "mid")
                     # m "Why not?"
-                    # call her_main("Video games are for idiots.","annoyed","angryL")
+                    # call her_main("Video games are for idiots.", "annoyed", "narrow", "angry", "R")
                     # m "..."
                     # m "(No they aren't...)"
                     # if cheats_active or game_difficulty <= 2:

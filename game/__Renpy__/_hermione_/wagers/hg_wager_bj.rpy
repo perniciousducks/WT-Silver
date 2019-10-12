@@ -482,7 +482,7 @@ label hg_wager_bj:
                                         g4 "What are you talking about? How could I be happy in a moment like this..."
                                         call her_main("But I just made you...","open","worried", cheeks="blush")
                                         g4 "I just lost that god damn game cause I couldn't concentrate!"
-                                        call her_main("Well, I did what you asked me!","mad","angryL", cheeks="blush")
+                                        call her_main("Well, I did what you asked me!", "mad", "narrow", "angry", "R", cheeks="blush")
                                         call her_main("So I'd very much appreciate if you didn't deduct those points", "open", "closed", "angry", "mid", cheeks="blush")
                                 menu:
                                     "-Only deduct the 20-":
@@ -503,7 +503,7 @@ label hg_wager_bj:
                                         m "Suck it up..."
                                         call her_main("{size=-5}That's what I did...{/size}","open","annoyed", cheeks="blush")
                                         m "Excuse me?"
-                                        call her_main("Never mind...","clench","angryL")
+                                        call her_main("Never mind...", "clench", "narrow", "angry", "R")
                                         $ her_mood += 25
                                     "-Let her go-":
                                         m "No, I feel like I've reached a net gain somehow during this whole ordeal..."

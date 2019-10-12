@@ -479,7 +479,7 @@ label ll_pf_sex_T1_her_1: # Call label
     call her_main("Don't you have any shame!?", "soft", "base", "angry", "mid")
     $ lunCG(mouth="open_tongue", eye="base", eyebrow="base", pupil="ahegao")
     lun "mmmm... why should I be ashamed... this feels so {b}good{/b}..."
-    call her_main("I know it feels good... but you shouldn't let other people watch you do it...","annoyed","angryL")
+    call her_main("I know it feels good... but you shouldn't let other people watch you do it...", "annoyed", "narrow", "angry", "R")
     call her_main("Imagine if the whole school found out!", "soft", "base", "angry", "mid")
     $ lunCG(mouth="open", eye="seductive", eyebrow="base", pupil="ahegao")
     lun "Oh, that would be {b}fantastic{/b}!"
@@ -493,7 +493,7 @@ label ll_pf_sex_T1_her_1: # Call label
     call her_main("But now... I see you've been a bimbo this whole time without even realizing...", "upset", "narrow", "annoyed", "up")
     $ lunCG(mouth="open", eye="base", eyebrow="sad", pupil="right")
     lun "A bimbo?"
-    call her_main("*Uh-huh*... You've just Dumbledore's dumb, blonde bimbo...","soft","angryL")
+    call her_main("*Uh-huh*... You've just Dumbledore's dumb, blonde bimbo...", "soft", "narrow", "angry", "R")
     $ lunCG(mouth="open", eye="seductive", eyebrow="base", pupil="ahegao")
     lun "..."
     call her_main("Well, I think I better give you two some alone time...", "soft", "base", "angry", "mid")

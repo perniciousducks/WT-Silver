@@ -325,7 +325,7 @@ label luna_revert_1: #Reversion event #DONE
     call lun_main("!!!","clench","wide","sad","mid")
     m "(Whoa...)"
     call her_main("Honestly, sir, what are you thinking!","annoyed","annoyed")
-    call her_main("If you need your filthy old cock jerked so badly you should just call me!","annoyed","angryL")
+    call her_main("If you need your filthy old cock jerked so badly you should just call me!", "annoyed", "narrow", "angry", "R")
     call lun_main("???","upset","wide","sad","R")
     call her_main("But to be doing this with Luna Lovegood...","annoyed","annoyed")
     call her_main("She's not even a {size=+5}\"Gryffindor\"!{/size}", "angry", "base", "angry", "mid")
@@ -369,7 +369,7 @@ label luna_revert_1: #Reversion event #DONE
     hat "Ughh... Gently does it now."
     call her_main("Put it on her head.","annoyed","annoyed")
     hat "Well if it isn't Miss Granger..."
-    call her_main("...","annoyed","angryL")
+    call her_main("...", "annoyed", "narrow", "angry", "R")
     ">You place the sorting hat gently on top of Luna's head."
     m "There."
     call her_main("Well, change her back!","annoyed","annoyed")
@@ -389,7 +389,7 @@ label luna_revert_1: #Reversion event #DONE
     call her_main("Are you certain?","annoyed","annoyed")
     hat "Yes, I'm sure of it. Can I go back up on the shelf now?"
     call her_main("Fine...","annoyed","annoyed")
-    call her_main("But if you every try anything else like this again...","annoyed","angryL")
+    call her_main("But if you every try anything else like this again...", "annoyed", "narrow", "angry", "R")
     call her_main("...","annoyed","annoyed")
     ">You decide to place the hat back on the top of the cupboard."
     m "There, all better. now we can forget this whole thing ever happened."
@@ -412,29 +412,29 @@ label luna_revert_1: #Reversion event #DONE
             m "Scouts honour!"
             call her_main("...","disgust","glance")
             m "Besides, surely you'd notice a jump in \"Ravenclaw's\" points?"
-            call her_main("I suppose you're right...","annoyed","angryL")
-            call her_main("If the sorting hat had manipulated her then doing this isn't out of the question.","annoyed","angryL")
-            call her_main("{size=-5}(But for her to do it so willingly...){/size}","annoyed","angryL")
+            call her_main("I suppose you're right...", "annoyed", "narrow", "angry", "R")
+            call her_main("If the sorting hat had manipulated her then doing this isn't out of the question.", "annoyed", "narrow", "angry", "R")
+            call her_main("{size=-5}(But for her to do it so willingly...){/size}", "annoyed", "narrow", "angry", "R")
         "\"I paid her in gold.\"":
             call her_main("Gold?","disgust","glance")
             m "Gold."
             call her_main("So, no points?","annoyed","annoyed")
             m "Not one."
-            call her_main("I suppose that's OK then...","annoyed","angryL")
+            call her_main("I suppose that's OK then...", "annoyed", "narrow", "angry", "R")
             call her_main("{size=-5}(Why don't I ever get paid in gold...){/size}","annoyed","annoyed")
             call her_main("{size=-5}(No, Hermione! If I did that I'd be a prostitute...){/size}","normal","worriedCl")
             call her_main("{size=-5}{image=textheart}{image=textheart}{image=textheart}{/size}", "grin", "narrow", "annoyed", "up")
 
     call her_main("Well regardless, she has to be punished.","annoyed","annoyed")
     m "Wait, she's being punished?"
-    call her_main("Of course!","annoyed","angryL")
+    call her_main("Of course!", "annoyed", "narrow", "angry", "R")
     call her_main("Seeing as how you didn't give \"Ravenclaw\" any points you haven't done anything wrong.","annoyed","suspicious")
     call her_main("But her...","annoyed","frown")
     ">Hermione glares at the still frozen Luna Lovegood."
     call her_main("...","annoyed","frown")
     call her_main("She needs a punishment.", "smile", "base", "angry", "mid")
     m "What are you thinking?"
-    call her_main("Hmmm...","annoyed","angryL")
+    call her_main("Hmmm...", "annoyed", "narrow", "angry", "R")
     call her_main("Sorting hat!","annoyed","annoyed")
     hat "W-w-what? I'm trying to go to sleep..."
     call her_main("How long until Luna's back to normal?", "soft", "base", "angry", "mid")
@@ -464,7 +464,7 @@ label luna_revert_1: #Reversion event #DONE
 
     call lun_walk("mid","leave",2)
 
-    call her_main("Well, now that that's over...","annoyed","angryL")
+    call her_main("Well, now that that's over...", "annoyed", "narrow", "angry", "R")
     call her_main("I think I'll be leaving as well...", "annoyed", "base", "angry", "mid")
     m "Don't you want to stay a little longer?"
     call her_main("I don't think so, sir...","disgust","glance")
@@ -722,7 +722,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     m "you know. For \"gryffiedoore\"..."
     call lun_main("...","normal","seductive","raised","mid")
     call lun_main("hahahaha!","smile","happyCl","base","mid")
-    call her_main("...","annoyed","angryL")
+    call her_main("...", "annoyed", "narrow", "angry", "R")
     m "..."
     hide screen luna_main
     with d3

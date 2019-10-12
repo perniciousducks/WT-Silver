@@ -10,7 +10,7 @@ label potion_scene_4: #Transparent uniform
     call her_main("That's not much better [genie_name].", "angry", "base", "angry", "mid")
     m "Isn't it?"
     call her_main("Well at least promise me that this one isn't going to embarrass me in the middle of class.", "open", "closed", "angry", "mid")
-    call her_main("My reputation is suffering enough as it is. I don't need these constant potions causing me to transform in front of my peers.","annoyed","angryL")
+    call her_main("My reputation is suffering enough as it is. I don't need these constant potions causing me to transform in front of my peers.", "annoyed", "narrow", "angry", "R")
     m "I promise that this potion won't affect your body in any way."
     call her_main("Well then what on earth is it going to do?", "angry", "base", "angry", "mid")
     m "As always [hermione_name], you'll ha-"
@@ -76,12 +76,12 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "As you wish."
         call her_main("Well I started off with potions class as usual when I started to feel like all eyes were on me.","disgust","glance")
         m "I wonder why."
-        call her_main("As I was saying I was completing potions class and felt like everyone wouldn't take their eyes off of me.","annoyed","angryL")
+        call her_main("As I was saying I was completing potions class and felt like everyone wouldn't take their eyes off of me.", "annoyed", "narrow", "angry", "R")
         call her_main("I didn't think anything of it until I was approached by Professor Snape at the end of the lesson.","annoyed","annoyed")
         call her_main("He normally criticises me during potions class. Stuff like getting dosages wrong, things that I know are correct.","annoyed","worriedL")
         m "Back to the story [hermione_name]."
         call her_main("Well when he commented that he liked my outfit I was suspicious. I thought that perhaps he was talking about my shirt until I looked down and saw that everything was see through.","disgust","glance")
-        call her_main("But I just ignored him, finished class and ran here.","annoyed","angryL")
+        call her_main("But I just ignored him, finished class and ran here.", "annoyed", "narrow", "angry", "R")
         m "You just finished class?"
         call her_main("Of course, I can't afford to miss potions class. I'm doing poorly enough without missing class.","annoyed","annoyed")
         m "Well fair enough. You may go now."
@@ -103,7 +103,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "You finished your speech?"
         call her_main("Certainly, I had to make sure that everyone knew my views on morality.", "soft", "base", "base", "mid")
         m "Well I'm sure they have a crystal clear view of it now."
-        call her_main("Hmmph, are you done?","annoyed","angryL")
+        call her_main("Hmmph, are you done?", "annoyed", "narrow", "angry", "R")
         m "Yes, you may go now."
         call her_main("Good bye [genie_name].", "open", "base", "base", "mid")
 

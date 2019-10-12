@@ -46,7 +46,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
 
     $ renpy.sound.play("sounds/bottle.mp3")
 
-    call her_main("...","annoyed","angryL")
+    call her_main("...", "annoyed", "narrow", "angry", "R")
 
     if her_whoring <= 12 and hg_pp_cumaddict.fail_counter == 0: #Too low
         call her_chibi("drink_potion","mid","base")
@@ -118,7 +118,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
     m "What do you mean next time?"
     call her_main("Well, you're such a pervert you'll probably try and do this again. At least warn me so it's not such a shock.","annoyed","annoyed")
     m "Ok, [hermione_name], I'll make sure to warn you next time."
-    call her_main("Is that all then, [genie_name]?","annoyed","angryL")
+    call her_main("Is that all then, [genie_name]?", "annoyed", "narrow", "angry", "R")
     m "Yes [hermione_name], that will be all."
     call her_main("Thank you, [genie_name].","open","suspicious")
     call nar(">Hermione hurriedly leaves the room with the remainder of the potion firmly in her grasp.")
@@ -180,7 +180,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
     hide screen hermione_main
     call u_play_ani
     her "*Slurp!* *Slurp!* *Slurp!*"    ###start sucking etc....
-    call her_main("","annoyed","angryL")
+    call her_main("", "annoyed", "narrow", "angry", "R")
     call u_pause_ani
     her "Being this aroused."
     hide screen hermione_main
@@ -605,7 +605,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("Magician? You're a wizard, and this better not have any long-term side effects.","normal","frown")
     call her_main("I'm still coughing up fur balls every now again from that polyjuice potion.","normal","frown")
     m "Of course it won't, now would you kindly drink the potion."
-    call her_main("...","annoyed","angryL")
+    call her_main("...", "annoyed", "narrow", "angry", "R")
     call her_chibi("drink_potion","mid","base")
     with d3
     hide screen hermione_stand
@@ -748,7 +748,7 @@ label potion_scene_3_3_1: #Hypno potion
 
     m "I'm just going to ask you a few questions."
     call her_main("(...)", "annoyed", "base", "angry", "mid")
-    call her_main("(And here I hoped he'd just ask to fuck...)","annoyed","angryL")
+    call her_main("(And here I hoped he'd just ask to fuck...)", "annoyed", "narrow", "angry", "R")
     call her_main("(Questions are so boooring! I hope they are at least naughty...)", "annoyed", "narrow", "annoyed", "up")
     call her_main("Are those questions going to be hard, mistah?","grin","worriedCl",emote="05")
     call her_main("I don't like hard questions.","grin","worriedCl")
@@ -781,7 +781,7 @@ label potion_scene_3_3_1: #Hypno potion
     call set_her_action("none","skip_update")
     pause.5
 
-    call her_main("You know they don't let us walk around naked at school?","annoyed","angryL")
+    call her_main("You know they don't let us walk around naked at school?", "annoyed", "narrow", "angry", "R")
     m "Really? I can't imagine why not."
     call her_main("I know right? It's like so dumb! Everyone would just be happier{image=textheart} if they got to be naked.", "soft", "narrow", "annoyed", "up")
 

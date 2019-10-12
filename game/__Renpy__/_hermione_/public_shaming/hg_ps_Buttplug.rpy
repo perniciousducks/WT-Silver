@@ -67,12 +67,12 @@ label hg_ps_buttplug:
         m "Oh, come on... Just a harmless little baby one."
         call her_main("...","disgust","glance")
         m "Fifty five house points..."
-        call her_main("..............","annoyed","angryL")
+        call her_main("..............", "annoyed", "narrow", "angry", "R")
         call her_main("Fine.","annoyed","annoyed")
         m "Fantastic."
         m "Will you be putting it in now then?"
-        call her_main("........","annoyed","angryL")
-        call her_main("I'll put it in in the girls bathroom [genie_name]","annoyed","angryL")
+        call her_main("........", "annoyed", "narrow", "angry", "R")
+        call her_main("I'll put it in in the girls bathroom [genie_name]", "annoyed", "narrow", "angry", "R")
         m "Hmmm... we'll i'll See you tonight then."
 
     #Second Event.
@@ -130,13 +130,13 @@ label hg_ps_buttplug:
 
             "\"You'll get 70.\"":
                 $ current_payout = 70
-                call her_main("Hmmmph...","annoyed","angryL")
+                call her_main("Hmmmph...", "annoyed", "narrow", "angry", "R")
                 call her_main("Alright then, just don't expect me to show it to you!", "angry", "base", "angry", "mid")
                 m "So long as you wear it to class then you'll get your 70 points."
                 ">You hand her the butt plug."
                 call her_main("Will that be all [genie_name]?.","annoyed","annoyed")
                 m "Yes [hermione_name], see you tonight."
-                call her_main("{size=-5}(cheap bastard...){/size}","annoyed","angryL")
+                call her_main("{size=-5}(cheap bastard...){/size}", "annoyed", "narrow", "angry", "R")
 
 
     else: # <================================================================================ NOT FIRST TIME
@@ -151,7 +151,7 @@ label hg_ps_buttplug:
             m "And another fifty five house points for the \"Gryffindor\" house of course."
             call her_main("..........","annoyed","worriedL")
             m "So... Are you ok with that, [hermione_name]?"
-            call her_main("I suppose so...","annoyed","angryL")
+            call her_main("I suppose so...", "annoyed", "narrow", "angry", "R")
             ">You hand her the butt plug."
             m "Fantastic! See you after class."
 
@@ -215,7 +215,7 @@ label hg_ps_buttplug:
             m "why not? This will be the easiest fifty five points you'll ever earn!"
             call her_main("..........","annoyed","worriedL")
             m "Do you have a problem with it, [hermione_name]?"
-            call her_main("I suppose not...","annoyed","angryL")
+            call her_main("I suppose not...", "annoyed", "narrow", "angry", "R")
             ">You hand her the butt plug."
             m "Fantastic! See you after class."
 
@@ -256,7 +256,7 @@ label hg_ps_buttplug:
                         call her_main("thank you [genie_name], you won't regret it...", "open", "base", "base", "R")
                     "\"Fifty five is all I can do.\"":
                         m "Any more and people might get suspicious."
-                        call her_main("hmmmm I suppose you're right...","annoyed","angryL")
+                        call her_main("hmmmm I suppose you're right...", "annoyed", "narrow", "angry", "R")
                         call her_main("but as a present i'll show you anyway...","base","down")
                         call her_main("although you better appreciate it...","base","suspicious")
                         m "I'm sure I will."
@@ -315,7 +315,7 @@ label hg_ps_buttplug:
             m "I have confidence in you! Besides, you were pretty great when you were taking my cock up your ass!"
             call her_main("[genie_name]!","shock","wide_stare",cheeks="blush")
             m "Come on..."
-            call her_main("This is too much sir! even your cock wasn't this {b}thick{/b}...","open","angryL")
+            call her_main("This is too much sir! even your cock wasn't this {b}thick{/b}...", "open", "narrow", "angry", "R")
             m "Nothing a little spit won't solve!"
             call her_main("Don't be ridiculous! This is beyond spit!", "open", "closed", "base", "mid")
             call her_main("Unless you have some sort of actual {i}lubricant{/i} in your possession, I don't think I'll be letting this thing anywhere near me...", "open", "base", "angry", "mid")
@@ -333,7 +333,7 @@ label hg_ps_buttplug:
                     call her_main("!!!", "clench", "wide", "base", "stare")
                     call her_main("I wasn't serious, [genie_name]!", "scream", "base", "angry", "mid")
                     m "Now, now. No one likes a liar."
-                    call her_main("I didn't promise anything! Besides, I didn't actually expect you to have a jar of lube in your desk.","open","angryL")
+                    call her_main("I didn't promise anything! Besides, I didn't actually expect you to have a jar of lube in your desk.", "open", "narrow", "angry", "R")
                     m "I bought it for just such an occasion..."
                     call her_main("...", "annoyed", "base", "angry", "mid")
                     call her_main("ugh... fine. I'll {b}try{/b} to fit it in.","disgust","down")
@@ -437,10 +437,10 @@ label hg_ps_buttplug_complete:
             call her_main("I've never been so uncomfortable in my life [genie_name]!","disgust","glance")
             call her_main("I wasn't able to focus on anything all day!","annoyed","annoyed")
             m "Why's that?"
-            call her_main("Whenever I was sitting down in class it just kept prodding me...","annoyed","angryL")
+            call her_main("Whenever I was sitting down in class it just kept prodding me...", "annoyed", "narrow", "angry", "R")
             her "So naturally I had to adjust the way I was sitting, [genie_name]..."
             $ sc34CG(1, 9)
-            call her_main("but that just made it worse...","annoyed","angryL")
+            call her_main("but that just made it worse...", "annoyed", "narrow", "angry", "R")
             m "Do you think anyone else noticed you?"
             call her_main("I've got no idea...","annoyed","annoyed")
             $ sc34CG(1, 10)
@@ -482,8 +482,8 @@ label hg_ps_buttplug_complete:
             m "What happened?"
             call her_main("Moaning Myrtle happened!","normal","worriedCl")
             m "Moaning Mittle?"
-            call her_main("That pesky little ghost!","annoyed","angryL")
-            call her_main("This thing left me so frustrated that in my free period I went to the girls toilets to...","annoyed","angryL")
+            call her_main("That pesky little ghost!", "annoyed", "narrow", "angry", "R")
+            call her_main("This thing left me so frustrated that in my free period I went to the girls toilets to...", "annoyed", "narrow", "angry", "R")
             call her_main("Relieve myself...","annoyed","worriedL")
             call her_main("When all of a sudden that annoying ghost poked her head through the door!", "scream", "closed", "angry", "mid")
             call her_main("As it if wasn't bad enough that she saw me...","open","down")
@@ -581,7 +581,7 @@ label hg_ps_buttplug_complete:
             her "tried to take notes."
             her "all in all it was a fairly regular day..."
             $ sc34CG(1, 13)
-            call her_main("Well as regular as it could have been with a plug up my butt.","annoyed","angryL")
+            call her_main("Well as regular as it could have been with a plug up my butt.", "annoyed", "narrow", "angry", "R")
             m "and Nobody noticed?"
             call her_main("I don't think so, [genie_name].","annoyed","annoyed")
             $ sc34CG(1, 11)
@@ -647,7 +647,7 @@ label hg_ps_buttplug_complete:
             call her_main("Well I was in the library minding my own business...", "annoyed", "closed", "base", "mid")
             her "When I went to get a copy of Zygmunt Budge's book of potions."
             call her_main("as it was on the bottom shelf I had to kneel down to reach it...", "annoyed", "base", "base", "mid")
-            call her_main("When all of a sudden I heard the flash of a camera!","annoyed","angryL")
+            call her_main("When all of a sudden I heard the flash of a camera!", "annoyed", "narrow", "angry", "R")
             her "I turned around and there was Colin Creevey..."
             her "with the biggest grin on his face!"
             m "You let your photo be taken?!"
@@ -699,10 +699,10 @@ label hg_ps_buttplug_complete:
             show screen blktone
             call her_main("It was awful... simply awful...","annoyed","frown",xpos="right",ypos="base")
             m "what happened, [hermione_name]..."
-            call her_main("It was that nasty professor snape, [genie_name]!","annoyed","angryL")
+            call her_main("It was that nasty professor snape, [genie_name]!", "annoyed", "narrow", "angry", "R")
             call her_main("I've never been so embarrassed in my life!","annoyed","annoyed")
             m "What did he do?"
-            call her_main("Well in potions class I may have corrected him about the proper way to crush a Sopophorous bean...","annoyed","angryL")
+            call her_main("Well in potions class I may have corrected him about the proper way to crush a Sopophorous bean...", "annoyed", "narrow", "angry", "R")
             her "so he made me stand out the front and show him the \'correct\' way..."
             call her_main("and what's worse is that he made me do it facing away from the class...","annoyed","annoyed")
             m "Do you think anyone saw it?"
@@ -739,9 +739,9 @@ label hg_ps_buttplug_complete:
             m "What happened?"
             call her_main("Why did you not tell me this \'thing\' was cursed!","normal","worriedCl")
             m "Cursed?"
-            call her_main("It vibrates!","annoyed","angryL")
+            call her_main("It vibrates!", "annoyed", "narrow", "angry", "R")
             m "Really? When?"
-            call her_main("when something else touches it...","annoyed","angryL")
+            call her_main("when something else touches it...", "annoyed", "narrow", "angry", "R")
             m "Wouldn't your skirt set it off then?"
             call her_main("I think it has to be alive...","annoyed","worriedL")
             call her_main("All I know is that when my cat crookshanks swatted at it went off!", "scream", "closed", "angry", "mid")
@@ -824,16 +824,16 @@ label hg_ps_buttplug_complete:
         elif one_out_of_three == 3: ### EVENT (C) called a slut by slytherin
             m "[hermione_name], did you complete your task?"
             show screen blktone
-            call her_main("Yes, [genie_name]. I did.","annoyed","angryL",xpos="right",ypos="base")
+            call her_main("Yes, [genie_name]. I did.", "annoyed", "narrow", "angry", "R",xpos="right",ypos="base")
             m "Great. Tell me more."
             call play_music("playful_tension") # SEX THEME.
             call her_main("Well, there's not much to tell...","open","down")
             her "I attended classes..."
             her "studied for the upcoming potions exam..."
-            call her_main("it was a normal day except for a group of those nasty \"slytherin\" tramps...","annoyed","angryL")
+            call her_main("it was a normal day except for a group of those nasty \"slytherin\" tramps...", "annoyed", "narrow", "angry", "R")
             call her_main("I was minding my business on the way to class when they called me a \"butt slut\".","angry","down_raised")
             m "did you say anything back to them?"
-            call her_main("and sink to their level...","annoyed","angryL")
+            call her_main("and sink to their level...", "annoyed", "narrow", "angry", "R")
             m "Well I suppose it's for the best."
 
 
@@ -850,9 +850,9 @@ label hg_ps_buttplug_complete:
             call play_music("playful_tension") # SEX THEME.
             call her_main("I may have been exaggerating slightly...","open","worriedL")
             m "what happened?"
-            call her_main("well I was sitting in the library, minding my own business...","annoyed","angryL")
+            call her_main("well I was sitting in the library, minding my own business...", "annoyed", "narrow", "angry", "R")
             call her_main("when all of a sudden a group of first year students came from nowhere asking me all these questions...","angry","worriedCl")
-            call her_main("\"is it fluffy\"...","annoyed","angryL")
+            call her_main("\"is it fluffy\"...", "annoyed", "narrow", "angry", "R")
             call her_main("\"why are you wearing it\"...","angry","down_raised")
             call her_main("\"does it feel nice\"...","base","down")
             call her_main("\"can we touch it\"...","base","down")
@@ -862,7 +862,7 @@ label hg_ps_buttplug_complete:
             call her_main("but in exchange I may have had to let them touch it...","open","down")
             call her_main("{image=textheart}{image=textheart}{image=textheart}", "soft", "narrow", "annoyed", "up")
             m "So you let a group of innocent first years touch your butt plug..."
-            call her_main("It sounds sinister when you put it like that.","annoyed","angryL")
+            call her_main("It sounds sinister when you put it like that.", "annoyed", "narrow", "angry", "R")
             her "All I did was take them to a secluded part of the library and let them touch my tail..."
             m "Well that's alright then..."
             call her_main(".......","base","down")
@@ -940,9 +940,9 @@ label hg_ps_buttplug_complete:
             call play_music("playful_tension") # SEX THEME.
             call her_main("I may have been exaggerating slightly...","open","worriedL")
             m "what happened?"
-            call her_main("well I was sitting in the library, minding my own business...","annoyed","angryL")
+            call her_main("well I was sitting in the library, minding my own business...", "annoyed", "narrow", "angry", "R")
             call her_main("when all of a sudden a group of first year students came from nowhere asking me all these questions...","angry","worriedCl")
-            call her_main("\"is it fluffy\"...","annoyed","angryL")
+            call her_main("\"is it fluffy\"...", "annoyed", "narrow", "angry", "R")
             call her_main("\"why are you wearing it\"...","angry","down_raised")
             call her_main("\"does it feel nice\"...","base","down")
             call her_main("\"can we touch it\"...","base","down")
@@ -952,7 +952,7 @@ label hg_ps_buttplug_complete:
             call her_main("but in exchange I may have had to let them touch it...","open","down")
             call her_main("{image=textheart}{image=textheart}{image=textheart}", "soft", "narrow", "annoyed", "up")
             m "So you let a group of innocent first years touch your butt plug..."
-            call her_main("It sounds sinister when you put it like that.","annoyed","angryL")
+            call her_main("It sounds sinister when you put it like that.", "annoyed", "narrow", "angry", "R")
             her "All I did was take them to a secluded part of the library and let them touch my tail..."
             m "Well that's alright then..."
             call her_main(".......","base","down")

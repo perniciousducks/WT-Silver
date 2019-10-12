@@ -610,7 +610,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
             call her_main("Good... It's the least you can do...", "base", "closed", "angry", "mid")
         "-Tell her to come to your office instead-":
             m "You know where my office is..."
-            call her_main("Hmph...","upset","angryL")
+            call her_main("Hmph...", "upset", "narrow", "angry", "R")
 
     show screen blkfade
     with d3

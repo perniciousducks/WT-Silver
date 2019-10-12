@@ -150,14 +150,14 @@ label hg_pf_blowjob_T0_fail_repeat:
         call her_main("Are you talking about the kiss I gave it?", "open", "base", "angry", "mid")
         call her_main("That was something different entirely...", "open", "closed", "base", "mid")
         m "How so?"
-        call her_main("I wanted to get done with that favour early, so I helped a bit.","open","angryL")
+        call her_main("I wanted to get done with that favour early, so I helped a bit.", "open", "narrow", "angry", "R")
         g9 "By sucking on my cock! Indeed you did!"
         call her_main("It was nothing more than a short kiss...", "annoyed", "base", "angry", "mid")
         m "Still counts as a blowjob..."
 
     call her_main("[genie_name], I've told you this last time...", "open", "closed", "base", "mid")
     call her_main("I refuse to do this sort of thing...", "normal", "base", "angry", "mid")
-    call her_main("I have to go now...","annoyed","angryL")
+    call her_main("I have to go now...", "annoyed", "narrow", "angry", "R")
 
     call her_walk(action="leave", speed=2.5)
 

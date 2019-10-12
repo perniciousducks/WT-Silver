@@ -1338,7 +1338,7 @@ label ll_pf_blowjob_T1_summon:
     lun "*glck* *slrp* *glck*"
     $ lunCG('', '', '', 'up', pos=15)
     m "Mmmm... she's not a slytherin then..."
-    call her_main("Hmmm... She certainly doesn't have any shame by the sounds of it, so she's not a hufflepuff...","upset","angryL")
+    call her_main("Hmmm... She certainly doesn't have any shame by the sounds of it, so she's not a hufflepuff...", "upset", "narrow", "angry", "R")
     $ lunCG(pos=10)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=13)
@@ -1429,7 +1429,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=8)
     lun "*glck* *slrp* *glck*"
     $ lunCG('', 'wide', '', 'up', pos=12)
-    call her_main("You hadn't even locked your door!","grin","angryL")
+    call her_main("You hadn't even locked your door!", "grin", "narrow", "angry", "R")
     #Hermione starts touching herself
     call set_her_action("fingering")
     $ lunCG('', 'angry', '', 'up', pos=8)

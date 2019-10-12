@@ -96,7 +96,7 @@ label hg_pr_flirt_teacher_T1_E1: # Flitwick
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Well, I tried flirting with Professor Flitwick...","open","worriedL")
     call her_main("But it didn't really work...","annoyed","frown")
-    call her_main("..............................","annoyed","angryL")
+    call her_main("..............................", "annoyed", "narrow", "angry", "R")
     m "How exciting..."
     m "Is this all you have for me today, [hermione_name]?"
     call her_main("Y-yes...","open","worried")
@@ -111,7 +111,7 @@ label hg_pr_flirt_teacher_T1_E1: # Flitwick
     m "Right. Putting him on my \"Naughty boys list\" as we speak."
     call her_main("......................","annoyed","suspicious")
     m "Well, I hate to admit it but you did a lousy job of today's favour, [hermione_name]."
-    call her_main("................................","annoyed","angryL")
+    call her_main("................................", "annoyed", "narrow", "angry", "R")
 
     menu:
         "\"Here are your point's though.\"":
@@ -152,7 +152,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
     call her_main("I tried, [genie_name]. I really did...", "open", "base", "base", "mid")
     m "Who did you try to flirt with?"
     call her_main(".........", "soft", "base", "base", "R")
-    call her_main("Professor Snape, [genie_name].","annoyed","angryL")
+    call her_main("Professor Snape, [genie_name].", "annoyed", "narrow", "angry", "R")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     m "Severus? Interesting..."
     m "How did it go?"
@@ -183,7 +183,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
             jump end_hg_pr_flirt_teacher
 
         "\"...But you get no points this time\"":
-            call her_main("But I did my best...","annoyed","angryL")
+            call her_main("But I did my best...", "annoyed", "narrow", "angry", "R")
             call her_main("And I feel so humiliated now...","angry","worriedCl", emote="05")
             call her_main("But I understand and won't argue with your decision...","normal","worriedCl")
 
@@ -239,7 +239,7 @@ label hg_pr_flirt_teacher_T2_E1: # Slughorn
     her "Professor Slughorn seems to be more interested in much younger girls..."
     m "You almost sound jealous, [hermione_name]."
     call her_main("What?!", "angry", "wide", "base", "stare")
-    call her_main("That is preposterous!","annoyed","angryL")
+    call her_main("That is preposterous!", "annoyed", "narrow", "angry", "R")
     m "Here are your points..."
     her "...................."
 
@@ -270,7 +270,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
     m "The Autograph, [hermione_name]. Can I see it?"
     call her_main("Well... Em... It's in a rather private area, [genie_name].","upset","wink")
     m "What? Well, then professor Goldenheart surely is \"dirty\"!"
-    call her_main("It's professor Lockhart, [genie_name]...","annoyed","angryL")
+    call her_main("It's professor Lockhart, [genie_name]...", "annoyed", "narrow", "angry", "R")
     her "And... Ehm..."
     her "Well, it's not {size=+5}that{/size} private..."
     m "Show it to me then!"
@@ -481,7 +481,7 @@ label hg_pr_flirt_teacher_T3_E3: # Lockhart
     call her_main("Professor Lockhart!","annoyed","frown")
     m "Got it! Adding him to the \"Naughty list\"!"
     call her_main("No, [genie_name], it's not that...","open","worried")
-    call her_main("Or...","annoyed","angryL")
+    call her_main("Or...", "annoyed", "narrow", "angry", "R")
     her "I'm not sure..."
     call her_main("I used to adore him...","open","worried")
     call her_main("But he...", "soft", "base", "base", "R")

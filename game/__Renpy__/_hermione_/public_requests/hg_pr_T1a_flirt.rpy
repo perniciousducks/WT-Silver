@@ -142,7 +142,7 @@ label hg_pr_flirt_T1_E1:
     call her_main(".............","annoyed","frown")
     m "I told you to flirt with boys {size=+5}your{/size} age!"
     call her_main("I wanted to at first, but...","normal","frown")
-    call her_main("I guess I got scared...","annoyed","angryL")
+    call her_main("I guess I got scared...", "annoyed", "narrow", "angry", "R")
     her "I mean I despise those \"Slytherins\" way too much to flirt with them, [genie_name]!"
     call her_main("I would have to fight my gag-reflex the entire time!", "angry", "base", "angry", "mid")
 
@@ -195,7 +195,7 @@ label hg_pr_flirt_T1_E2:
     m "\"The Gryffindor whore\"?"
     call her_main(".........yes, [genie_name].","disgust","glance")
     m "You are doing it all wrong, [hermione_name]."
-    call her_main("I am sorry, [genie_name]. I thought this would be easy...","annoyed","angryL")
+    call her_main("I am sorry, [genie_name]. I thought this would be easy...", "annoyed", "narrow", "angry", "R")
 
     menu:
         "\"Well, at least you are trying.\"":
@@ -227,7 +227,7 @@ label hg_pr_flirt_T1_E3:
     stop music fadeout 1.0
     call her_main("Well, the \"Slytherin\" quidditch team was practising in the stadium today...","open","worriedL")
     her "I thought I could sneak into the bleachers and cheer them on..."
-    call her_main("But...","annoyed","angryL")
+    call her_main("But...", "annoyed", "narrow", "angry", "R")
     m "Yes?"
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -236,7 +236,7 @@ label hg_pr_flirt_T1_E3:
     call her_main("And one of them even exposed herself in an inappropriate manner to the players, [genie_name]...", "angry", "base", "angry", "mid")
     her "I cannot believe our school accepts such behaviour..."
     m "So... how did this captivating drama end?"
-    call her_main("I just left [genie_name]...","annoyed","angryL")
+    call her_main("I just left [genie_name]...", "annoyed", "narrow", "angry", "R")
 
     menu:
         m "Hm..."
@@ -247,7 +247,7 @@ label hg_pr_flirt_T1_E3:
 
         "\"Favour failed! No points for you!\"":
             stop music fadeout 1.0
-            call her_main("I don't feel like I deserved any this time anyway...","annoyed","angryL")
+            call her_main("I don't feel like I deserved any this time anyway...", "annoyed", "narrow", "angry", "R")
 
             call her_walk(action="leave", speed=2.5)
 
@@ -281,16 +281,16 @@ label hg_pr_flirt_T2_E1:
     her "I mean, this does amount to something, right?"
     m "Meh..."
     m "What else do you have for me?"
-    call her_main("Right...","annoyed","angryL")
+    call her_main("Right...", "annoyed", "narrow", "angry", "R")
     her "Later in a corridor these two other guys complimented my appearance in a very vulgar manner..."
     call her_main("But I just smiled at them...","angry","worriedCl", emote="05")
     m "You were on the receiving end again, then..."
     m "This is not what I ordered you to do, [hermione_name]."
     call her_main("I know, [genie_name]!","angry","worriedCl", emote="05")
-    call her_main("But I am so busy. Between the \"MRM\" meetings and the classes...","annoyed","angryL")
+    call her_main("But I am so busy. Between the \"MRM\" meetings and the classes...", "annoyed", "narrow", "angry", "R")
     her "I barely have any time--"
     m "Is this all you got for me this time then?"
-    call her_main("No, [genie_name].","annoyed","angryL")
+    call her_main("No, [genie_name].", "annoyed", "narrow", "angry", "R")
     her "On my way here I ran into Draco Malfoy, [genie_name]."
     m "No way!!! (No idea who that is...)"
     her "I forced myself to be friendly with him and..."
@@ -448,10 +448,10 @@ label hg_pr_flirt_T3_E3:
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("I hate those \"Slytherin\" tramps, [genie_name]!", "angry", "base", "angry", "mid")
     m "Tell me what happened."
-    call her_main("I don't want to talk about it...","annoyed","angryL")
+    call her_main("I don't want to talk about it...", "annoyed", "narrow", "angry", "R")
     m "Tell me what happened, [hermione_name]!"
     call her_main("I don't want to talk about it, [genie_name].", "angry", "base", "angry", "mid", emote="01")
-    call her_main("Please don't make me...","annoyed","angryL")
+    call her_main("Please don't make me...", "annoyed", "narrow", "angry", "R")
 
     menu:
         "\"Fine. I'll let it go for today.\"":
@@ -467,7 +467,7 @@ label hg_pr_flirt_T3_E3:
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("Then a bunch of those \"Slytherin\" harlots stumbled in and...","disgust","glance")
             m "And?"
-            call her_main("Well, they started saying stuff and doing things...","annoyed","angryL")
+            call her_main("Well, they started saying stuff and doing things...", "annoyed", "narrow", "angry", "R")
             her "Anyway, I had to leave..."
             m "I see..."
             m "Well, I say you deserve your points anyway, [hermione_name]."

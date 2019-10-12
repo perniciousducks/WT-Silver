@@ -152,7 +152,7 @@ label hermione_summon_setup:
                 elif her_whoring < 18:
                     call her_main("{size=-5}People can see my... my nipples...{/size}","disgust","down", cheeks="blush")
                 else:
-                    call her_main("I can't have my nipples poking out all the time, [genie_name]! It's distracting!","annoyed","angryL")
+                    call her_main("I can't have my nipples poking out all the time, [genie_name]! It's distracting!", "annoyed", "narrow", "angry", "R")
 
                 call her_main("", "soft", "base", "base", "mid")
                 pause.2

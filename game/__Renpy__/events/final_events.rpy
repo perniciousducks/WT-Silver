@@ -97,7 +97,7 @@ label ball_quest_E1:
                 call her_main("It's the \"Autumn Ball\", sir...", "upset", "closed", "base", "mid")
                 m "Oh, come on..."
                 m "Entrusting the thing to somebody else would be a crime, you know that."
-                call her_main("..........","annoyed","angryL")
+                call her_main("..........", "annoyed", "narrow", "angry", "R")
                 m "Don't you care about your classmates at all?"
                 call her_main("What?", "open", "base", "base", "mid")
                 m "Put your selfishness aside for once, would you?"
@@ -222,7 +222,7 @@ label ball_quest_E1:
                     call her_walk(xpos="mid", ypos="base", speed=3)
                     pause.2
 
-                    call her_main("Just in case...","annoyed","angryL")
+                    call her_main("Just in case...", "annoyed", "narrow", "angry", "R")
                     call ctc
 
                     m ".........................."
@@ -269,7 +269,7 @@ label ball_quest_E1:
                     m "Are you... crying?"
                     call her_main("*Sob!* No, not really, sir... *sob!*...","angry","worriedCl")
                     her "It is just that I am standing here before my headmaster completely naked... *SOB!*"
-                    call her_main("These are the tears of shame, sir.","shock","angryL", tears="messy")
+                    call her_main("These are the tears of shame, sir.", "shock", "narrow", "angry", "R", tears="messy")
                     her "I can't help it! *Sob!*"
                     m "Are you sure that you are ok with this?"
                     call her_main("Yes, yes, sir, please.... *Sob!*", "soft", "base", "angry", "mid", tears="messy")
@@ -303,7 +303,7 @@ label ball_quest_E1:
                     call ctc
 
                     m "Just put your clothes back on, Miss Granger. You're making me feel uncomfortable."
-                    call her_main("As you wish, sir...","annoyed","angryL", tears="messy")
+                    call her_main("As you wish, sir...", "annoyed", "narrow", "angry", "R", tears="messy")
 
                     call ctc
 
@@ -503,7 +503,7 @@ label ball_quest_E4:
     call her_main("Still, I cannot help but feel awful for causing a scene...", "open", "closed", "angry", "mid")
     m "So the issue has been resolved then?"
     call her_main("Not really...","open","worried")
-    call her_main("Not at all actually...","annoyed","angryL")
+    call her_main("Not at all actually...", "annoyed", "narrow", "angry", "R")
     m "Hm..?"
     call her_main("But that is not a big deal...","annoyed","down")
     her "I'm just overreacting..."

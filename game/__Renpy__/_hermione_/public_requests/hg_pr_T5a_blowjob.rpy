@@ -60,7 +60,7 @@ label hg_pr_blowjob:
         call her_main("Tch...", "angry", "base", "angry", "mid", cheeks="blush")
         her "............................"
         m ".........................................."
-        call her_main("...alright.","annoyed","angryL")
+        call her_main("...alright.", "annoyed", "narrow", "angry", "R")
         her "I'll do it..."
         m "Go do it, then!"
         m "Report back to me after your classes."
@@ -80,7 +80,7 @@ label hg_pr_blowjob:
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         m "[hermione_name]..."
         m "Do you believe in horoscopes?"
-        call her_main("Not even a little bit, [genie_name]...","annoyed","angryL")
+        call her_main("Not even a little bit, [genie_name]...", "annoyed", "narrow", "angry", "R")
         m "Well, maybe you should..."
         call her_main("...?", "open", "base", "base", "mid")
         m "Because I got yours right here and it says..."
@@ -89,7 +89,7 @@ label hg_pr_blowjob:
         m "Go suck on some cocks, [hermione_name]."
         call her_main(".....................","annoyed","annoyed") # :(
         m "Report back to me after your classes as usual..."
-        call her_main("Of course...","annoyed","angryL")
+        call her_main("Of course...", "annoyed", "narrow", "angry", "R")
 
     call her_walk(action="leave", speed=2.5)
 
@@ -139,7 +139,7 @@ label hg_pr_blowjob_T1_E1:
     show screen blktone
     call her_main("I have completed your task, [genie_name].","disgust","glance",xpos="right",ypos="base")
     m "Good. Tell me more."
-    call her_main("What is there to tell, [genie_name]?","annoyed","angryL")
+    call her_main("What is there to tell, [genie_name]?", "annoyed", "narrow", "angry", "R")
     her "I sucked off one of my classmates today..."
     her "And that's it..."
     m "Hm... I see..."
@@ -181,7 +181,7 @@ label hg_pr_blowjob_T1_E2:
     call her_main("Of course... I would not expect you to, [genie_name].","annoyed","annoyed", tears="soft")
     her "I failed to complete my task and deserve no praise of any kind..."
     her "And should you pay me out of pity..."
-    call her_main("Then That would only worsen the insult...","annoyed","angryL")
+    call her_main("Then That would only worsen the insult...", "annoyed", "narrow", "angry", "R")
     m "Hm... In that case, maybe I should pay you anyway..."
     call her_main("No, [genie_name]. I would not accept it...","annoyed","annoyed")
     m "Hm... Well, this will be all then."
@@ -202,7 +202,7 @@ label hg_pr_blowjob_T1_E3:
 
     m "[hermione_name], how did it go?"
     show screen blktone
-    call her_main("I still find the idea of selling a favour like this appalling, [genie_name].","annoyed","angryL",xpos="right",ypos="base")
+    call her_main("I still find the idea of selling a favour like this appalling, [genie_name].", "annoyed", "narrow", "angry", "R",xpos="right",ypos="base")
     call her_main("But other than that it well surprising well...","annoyed","annoyed")
     call play_music("playful_tension") # SEX THEME.
     her "I gave a proper blowjob to this handsome boy from \"Ravenclaw\"..."

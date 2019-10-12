@@ -79,7 +79,7 @@ label hg_pr_flash:
         call her_main("Oh...", "soft", "base", "base", "mid")
         call her_main("Production of milk?","annoyed","suspicious")
         m "Good. What else do women use their tits for?"
-        call her_main("Hm..","soft","baseL")
+        call her_main("Hm..", "soft", "base", "base", "R")
         call her_main("...to attract men?","annoyed","suspicious")
         m "Yes. Let's concentrate on that."
         m "I need you to go out there..."
@@ -464,16 +464,16 @@ label hg_pr_flash_T3_E2:
     her "I was flashing my tits to this boy in the \"Gryffindor\" common room..."
     call her_main("When my friend, Ginny walked in on us...", "open", "base", "base", "mid")
     m "Another boy?"
-    call her_main("A boy? No, Ginny is a girl's name, [genie_name].","soft","baseL")
+    call her_main("A boy? No, Ginny is a girl's name, [genie_name].", "soft", "base", "base", "R")
     m "....."
     call her_main("Ginny Weasley, [genie_name].", "open", "base", "base", "mid")
     m "Alright, fine, continue..."
-    call her_main("uhm...","soft","baseL")
+    call her_main("uhm...", "soft", "base", "base", "R")
     her "......."
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("*Giggle*","grin","worriedCl",emote="05")
     m "Hm...?"
-    call her_main("Then Ginny grabbed my breasts...","smile","baseL")
+    call her_main("Then Ginny grabbed my breasts...", "smile", "base", "base", "R")
     her "And started to squeeze them..."
     her "then she started to kiss my breasts passionately..."
     m "............"

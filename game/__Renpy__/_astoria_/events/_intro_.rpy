@@ -304,7 +304,7 @@ label astoria_intro_E2_hermione:
     call her_main("Surely you're able to detect them?", "base", "base", "base", "mid")
     m "Unfortunately not... I must have been... asleep... when the thing happened..."
     m "I missed my chance, so to speak..."
-    call her_main("So how do you expect me to find out who did it?","soft","baseL")
+    call her_main("So how do you expect me to find out who did it?", "soft", "base", "base", "R")
     m "I'm certain that it's the work of another student..."
     m "(or Snape has finally snapped...)"
     m "so I'll need you to go undercover to find out who."
@@ -328,15 +328,15 @@ label astoria_intro_E2_hermione:
     menu:
         m "(...)"
         "\"just find her...\"":
-            call her_main("Very well, Sir...","soft","baseL")
+            call her_main("Very well, Sir...", "soft", "base", "base", "R")
 
         "\"No one's getting sent to Azkaban...\"":
             m "By the gods, [hermione_name], what's wrong with you?"
-            call her_main("What are you talking about, [genie_name]?","open","baseL",cheeks="blush")
+            call her_main("What are you talking about, [genie_name]?", "open", "base", "base", "R",cheeks="blush")
             call her_main("Everyone knows that life in Azkaban is the punishment for casting an unforgivable curse...","open","closed")
             m "I've been given special permission to punish them as I see fit."
             call her_main("Oh...", "annoyed", "base", "base", "mid")
-            call her_main("So no Azkaban?","soft","baseL")
+            call her_main("So no Azkaban?", "soft", "base", "base", "R")
             m "Not unless they've killed someone..."
             call her_main("Really? So there's still a chance?","base","glance")
             m "Only if you find a body..."
@@ -558,7 +558,7 @@ label astoria_intro_E3:
                     $ gryffindor += 10
 
                 "\"You'll get 20.\"":
-                    call her_main("...","annoyed","baseL")
+                    call her_main("...", "annoyed", "base", "base", "R")
                     call her_main("I suppose that's fair.","open","closed")
                     $ her_mood = 0
                     $ gryffindor += 20

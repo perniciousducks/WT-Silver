@@ -85,7 +85,7 @@ label hg_pr_blowjob:
         call her_main("...?", "open", "base", "base", "mid")
         m "Because I got yours right here and it says..."
         m "\"Dedicate today to something you do well\"..."
-        call her_main("Something I do well...?","soft","baseL")
+        call her_main("Something I do well...?", "soft", "base", "base", "R")
         m "Go suck on some cocks, [hermione_name]."
         call her_main(".....................","annoyed","annoyed") # :(
         m "Report back to me after your classes as usual..."
@@ -244,7 +244,7 @@ label hg_pr_blowjob_T2_intro_E1:
     call her_main("To be honest, neither could I...","silly","dead")
     her "I, Hermione granger - the girl they knew for years..."
     call her_main("Sucking on their cocks...","open_wide_tongue","ahegao")
-    call her_main("Like some nasty little slut...","shock","baseL", cheeks="blush", tears="soft")
+    call her_main("Like some nasty little slut...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "Are you in love with those boys, [hermione_name]?"
     call her_main("I don't know, [genie_name]... Maybe...","base","happyCl")
     her "Could I get paid now please?"
@@ -288,7 +288,7 @@ label hg_pr_blowjob_T2_E2:
     m "Hm... I suppose..."
     m "But keep in mind that the moment we bring the ministry into this..."
     m "All this \"favour selling business\" will have to stop immediately."
-    call her_main("Oh...?","open","baseL", cheeks="blush")
+    call her_main("Oh...?", "open", "base", "base", "R", cheeks="blush")
     her ".................."
     call her_main("Please, never mind what I just said then...","base","happyCl")
     m "Are you sure? You look pretty messed up."
@@ -333,7 +333,7 @@ label hg_pr_blowjob_T2_E3:
     her "Before I knew what happened I was surrounded with hard throbbing cocks..."
     call her_main("Oh... Just talking about it makes me shiver with excitement... err..","silly","dead")
     call her_main("...I mean, with fear... no, not fear...","grin","ahegao")
-    call her_main("Embarrassment?","base","baseL", cheeks="blush")
+    call her_main("Embarrassment?", "base", "base", "base", "R", cheeks="blush")
     m "Are you asking me?"
     call her_main("Oh, excuse me, [genie_name]... I feel a little lightheaded...","grin","dead")
     her "I think I need to go lie down for a while..."

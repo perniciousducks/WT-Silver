@@ -50,7 +50,7 @@ label hermione_summon_setup:
 
         call her_main("Yes?", "soft", "base", "base", "mid",trans="d5")
         m "I didn't say anything..."
-        call her_main("If you say so, [genie_name].","open","baseL")
+        call her_main("If you say so, [genie_name].", "open", "base", "base", "R")
         call her_main("Is it ok if we could start right away with the lessons?", "soft", "base", "base", "mid")
         m "Well... Of course..."
 
@@ -95,10 +95,10 @@ label hermione_summon_setup:
                 g4 "(Wow! Look at her!)"
                 g9 "That's quite a sexy outfit, [hermione_name]!"
                 if her_whoring < 11:
-                    call her_main("Uhm... Thank you, [genie_name].","soft","baseL")
+                    call her_main("Uhm... Thank you, [genie_name].", "soft", "base", "base", "R")
                     call her_main("I normally don't wear something like this.", "open", "base", "base", "mid")
                     call her_main("(Showing so much cleavage...)","disgust","down", cheeks="blush")
-                    call her_main("But the weather is just too hot today.","base","baseL")
+                    call her_main("But the weather is just too hot today.", "base", "base", "base", "R")
                     g9 "You should wear this more often!"
                 else:
                     call her_main("Thank you, [genie_name].","base","glance")
@@ -145,7 +145,7 @@ label hermione_summon_setup:
                 m "..."
                 m "[hermione_name],..."
                 m "What's with all these clothes you are wearing?"
-                call her_main("It's a bit cold outside, [genie_name]... and my...","soft","baseL", cheeks="blush")
+                call her_main("It's a bit cold outside, [genie_name]... and my...", "soft", "base", "base", "R", cheeks="blush")
 
                 if her_whoring < 11:
                     call her_main("I better not mention it...","disgust","down", cheeks="blush")
@@ -205,11 +205,11 @@ label hermione_summon_setup:
 
                 m "Damn girl. You look drenched..."
                 call her_main("I'm sorry, [genie_name], but... It's raining cats and dogs out there!", "open", "base", "base", "mid")
-                call her_main("I couldn't find my robe so I just put on a sweater and some jeans...","open","baseL")
+                call her_main("I couldn't find my robe so I just put on a sweater and some jeans...", "open", "base", "base", "R")
                 call her_main("I hope you don't mind my uniform not being up for standards. I didn't want it to get wet.","disgust","down")
                 m "It's fine, [hermione_name]."
                 g9 "Besides, I wouldn't mind seeing you in jeans more often!"
-                call her_main("Thank you, [genie_name].","normal","baseL")
+                call her_main("Thank you, [genie_name].", "normal", "base", "base", "R")
                 $ her_mood -= 10
                 if her_mood < 0:
                     $ her_mood = 0
@@ -237,7 +237,7 @@ label hermione_summon_setup:
 
             call play_music("hermione_theme")
             if her_mood > 1:
-                call her_main("","annoyed","baseL", xpos="base", ypos="base")
+                call her_main("", "annoyed", "base", "base", "R", xpos="base", ypos="base")
             else:
                 call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
 
@@ -270,7 +270,7 @@ label hermione_summon_setup:
                 call ctc
 
                 m "New outfit?"
-                call her_main("Yes, [genie_name]. I brought it with me from home. It's a bit too cold for just my normal uniform...","open","baseL")
+                call her_main("Yes, [genie_name]. I brought it with me from home. It's a bit too cold for just my normal uniform...", "open", "base", "base", "R")
                 call her_main("Do you like it?", "soft", "base", "base", "mid")
                 g9 "I do, [hermione_name]. It's cute."
                 $ her_mood -= 10
@@ -313,7 +313,7 @@ label hermione_summon_setup:
                 call ctc
 
                 m "That's quite the cute outfit, [hermione_name]."
-                call her_main("Thank you, [genie_name]. I made some changes to the old one...","open","baseL")
+                call her_main("Thank you, [genie_name]. I made some changes to the old one...", "open", "base", "base", "R")
                 call her_main("Do you like it?", "soft", "base", "base", "mid")
                 g9 "Very much so, [hermione_name]. I love the breast window."
                 $ her_mood -= 10

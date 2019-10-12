@@ -158,7 +158,7 @@ label hg_pf_strip_T2_Snape:
     call sna_main(" The Students are causing me grief...","snape_06")
     call sna_main("In fact, miss Granger here managed to cause me more stress than any other student...","snape_03")
     pause.2
-    call her_main("...............................","grin","baseL", xpos="mid", ypos="base")
+    call her_main("...............................", "grin", "base", "base", "R", xpos="mid", ypos="base")
     m "Oh, I am sure she is very sorry about that..."
     call her_main("{size=-4}(Not even a little bit!){/size}","base","happyCl")
     m "And will make up for it today, won't you, [hermione_name]?"
@@ -716,7 +716,7 @@ label hg_pf_strip_T2_Snape_masturbate:
 
         call her_main("I demand a higher grade than that!","soft","angry", xpos="right", ypos="base")
         call sna_main("You do not demand a grade miss Granger, you earn it.","snape_09")
-        call her_main("I did earn it!","open","baseL")
+        call her_main("I did earn it!", "open", "base", "base", "R")
         call her_main("And could you at least have the decency to stop touching yourself, professor!","annoyed","angryL")
         call sna_main("Tch...","snape_12")
         hide screen hermione_main

@@ -121,7 +121,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                     $ ccg1 = "blank"
                     $ ccg2 = "blank"
                     $ ccg3 = "blank"
-                    call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
+                    call her_main("", "shock", "base", "base", "R",cheeks="blush",tears="soft",ypos="head")
                     show screen ccg
 
                 hide screen blktone
@@ -134,9 +134,9 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 #SCHUSH!
                 g4 "Agh... Ye wants this voyage t' end sooner?"
                 g4 "I smell mutiny, do ye want to walk the plank?"
-                call her_main("*sob!* How?","shock","baseL",cheeks="blush",tears="soft")
+                call her_main("*sob!* How?", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 g4 "Ye know..."
-                call her_main("Aye...","shock","baseL",cheeks="blush",tears="soft")
+                call her_main("Aye...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 #$ ccg2 = 6
                 call her_main("I be a wench??","clench","worried",cheeks="blush",tears="soft")
                 g9 "Yes ye be!"
@@ -207,7 +207,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                     $ ccg1 = "blank"
                     $ ccg2 = "blank"
                     $ ccg3 = "blank"
-                    call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
+                    call her_main("", "shock", "base", "base", "R",cheeks="blush",tears="soft",ypos="head")
                     show screen ccg
 
                 hide screen blktone
@@ -216,7 +216,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 with fade
                 call ctc
 
-                call her_main(".....................","shock","baseL",cheeks="blush",tears="soft")
+                call her_main(".....................", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "Ye be fine thar, wench?"
                 call her_main("Blisterin' Barnacles... Ye be... turnin' me folds inside out... captain.","clench","worried",cheeks="blush",tears="soft")
                 call her_main("Me stitches be breaking","angry","suspicious",cheeks="blush")
@@ -224,10 +224,10 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Maybe me canon needs swabbin'...?"
                 m "Go below deck, lass. swabb me canon some more."
                 call her_main("Wha'? But...","clench","worried",cheeks="blush",tears="soft")
-                call her_main("But it be rusty... 'tis been in me bilge.","shock","baseL",cheeks="blush",tears="soft")
+                call her_main("But it be rusty... 'tis been in me bilge.", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "Aye, 'tis been abaft, but that's nah nigh ye bilge."
                 m "Heave ho landlubber or me ship be sinkin', lass. Swab me canon some more."
-                call her_main("...........","shock","baseL",cheeks="blush",tears="soft")
+                call her_main("...........", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 call blkfade
 
                 #SUCKING
@@ -272,7 +272,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                     $ ccg1 = "blank"
                     $ ccg2 = "blank"
                     $ ccg3 = "blank"
-                    call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
+                    call her_main("", "shock", "base", "base", "R",cheeks="blush",tears="soft",ypos="head")
                     show screen ccg
 
                 hide screen blktone
@@ -281,14 +281,14 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 with fade
                 call ctc
 
-                call her_main("Ah...","shock","baseL",cheeks="blush",tears="soft")
+                call her_main("Ah...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "We be smooth sailing lass?"
                 call her_main("It still be hurting...","clench","worried",cheeks="blush",tears="soft")
                 call her_main("But th' storm has passed.")
                 m "I'll adjust th' sails fer now..."
                 call her_main("Ah... I be greatful, captain.","angry","suspicious",cheeks="blush")
                 m "Oh... aye... ye secret cavern be great..."
-                call her_main("...........","shock","baseL",cheeks="blush",tears="soft")
+                call her_main("...........", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "Oh... Ye cavern be perfect, lass..."
                 call her_main("................","shock","down_raised",cheeks="blush",tears="crying")
                 m "Why are ye bein' so quiet lass?"
@@ -301,7 +301,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("B-but--","clench","worried",cheeks="blush",tears="soft")
                 m "That shall make me canon ready t' fire in ye broadside."
                 call her_main("be this true? *Sob!*","angry","dead",cheeks="blush",tears="crying")
-                call her_main("*Sob!* Me hull! *Sob!* It be taking in water! *Sob!*","shock","baseL",cheeks="blush",tears="soft")
+                call her_main("*Sob!* Me hull! *Sob!* It be taking in water! *Sob!*", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "Aye, ye ship be sinking... ye booty be mine."
                 call her_main("*SOB!*","angry","suspicious",cheeks="blush",tears="messy")
                 m "Ye poor wee sprog..."
@@ -379,7 +379,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ face_on_cg = False
                 hide screen hermione_main
 
-                call her_main("I apologize for saying that I hate you, captain...","base","baseL",cheeks="blush",tears="mascara",ypos="head")
+                call her_main("I apologize for saying that I hate you, captain...", "base", "base", "base", "R",cheeks="blush",tears="mascara",ypos="head")
                 call her_main("And your canon is not rusty...",cheeks="blush",tears="mascara")
                 call her_main("I don't know what's gotten into me...","grin","concerned",cheeks="blush",tears="mascara")
                 g9 "My canonfire!"
@@ -434,7 +434,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Well, I'm done... You can get off my ship now."
                 call her_main("Yes, captain...","silly","worried",cheeks="blush",tears="soft",ypos="head")
                 m "You feeling alright?"
-                call her_main("Yes, captain. It still hurts a little, but...","shock","baseL",cheeks="blush",tears="soft")
+                call her_main("Yes, captain. It still hurts a little, but...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "But what?"
                 call her_main("But in a good way... captain.","silly","worried",cheeks="blush",tears="soft")
                 m "In a good way, huh?"
@@ -540,7 +540,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
             "\"I would leave me ship in a heartbeat!\"":
                 call her_main("What?", "open", "base", "base", "mid",ypos="head")
                 m "Aye, if only a lass like ye would board me ship..."
-                call her_main("...Aye...{image=textheart}","base","baseL")
+                call her_main("...Aye...{image=textheart}", "base", "base", "base", "R")
                 call her_main("..............","base","squint")
                 call her_main("Aye if only a lass like I, cap'n? So, why neigh me?", "soft", "base", "base", "mid")
                 m "Huh?"

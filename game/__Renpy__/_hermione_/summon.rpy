@@ -628,7 +628,7 @@ label hermione_change:
             call her_main("This girl thing again?","annoyed","squint")
             call her_main("*sigh*...","soft","squintL")
         elif her_whoring >=3:
-            call her_main("Fine... I don't mind.","soft","baseL")
+            call her_main("Fine... I don't mind.", "soft", "base", "base", "R")
     elif temp_name == "Nerd":
         if her_whoring >=3 and her_whoring < 5:
             call her_main("*sigh* I just enjoy books, that's all.","annoyed","down")
@@ -660,7 +660,7 @@ label hermione_change:
             m "What do you mean by silly?"
             call her_main("It makes it sound as if I'm your...","soft","worriedL")
             call her_main("Ugh, forget I said anything...","open","down_raised",cheeks="blush")
-            call her_main("","normal","baseL", cheeks="blush")
+            call her_main("", "normal", "base", "base", "R", cheeks="blush")
         elif her_whoring >=9 and her_whoring < 19:
             call her_main("Bit of an odd request but...","normal","down_raised",)
             call her_main("I like it...","soft","glanceL",cheeks="blush")
@@ -680,7 +680,7 @@ label hermione_change:
             call her_main("", "base", "base", "base", "mid", cheeks="blush")
     elif temp_name == "Princess":
         if her_whoring >= 11 and her_whoring < 13:
-            call her_main("That would make you my prince wouldn't it?","open","baseL",cheeks="blush")
+            call her_main("That would make you my prince wouldn't it?", "open", "base", "base", "R",cheeks="blush")
             call her_main("", "base", "base", "base", "mid", cheeks="blush")
         elif her_whoring >= 13:
             call her_main ("Yes... My prince.","smile","happy")
@@ -746,7 +746,7 @@ label hermione_change:
             call her_main("\"..So warm, sticky and...\"","silly","ahegao_raised",cheeks="blush")
             m "Are you okay there, [temp_name]?"
             call her_main("Wha-","mad","wide")
-            call her_main("Of course I am!","smile","baseL",cheeks="blush")
+            call her_main("Of course I am!", "smile", "base", "base", "R",cheeks="blush")
     elif temp_name == "Slytherin Whore":
         if her_whoring >=19 and her_whoring < 21:
             call her_main("Do you really have to call me that, [genie_name]?","disgust","worried")
@@ -824,7 +824,7 @@ label hermione_change:
                             m "Are you deaf or something?"
                             if raining:
                                 call her_main("I was pretty sure you said-...", "open", "base", "base", "mid")
-                                call her_main("", "normal","baseL")
+                                call her_main("", "normal", "base", "base", "R")
                                 m "Look outside the window, its raining is it not?"
                                 call her_main("I{w=0.5}... {w=0.5}Yes, you are right [genie_name].", "normal","closed")
                                 m "Of course I am."
@@ -908,26 +908,26 @@ label hermione_change_fail:
     elif temp_name == "Good Girl":
         call her_main("I'm not letting you call me that, [genie_name]!","open","angryCl")
         if her_whoring >= 3:
-            call her_main("\"Although its kinda cute he said that...\"","base","baseL")
+            call her_main("\"Although its kinda cute he said that...\"", "base", "base", "base", "R")
     elif temp_name == "Little Girl":
         call her_main("I won't let you call me that, [genie_name]!","open","angryCl")
         if her_whoring >= 5:
             call her_main("\"I hope they'd grow out more...\"","disgust","down")
             call her_main("*sigh*","annoyed","closed")
-            call her_main("","normal","baseL")
+            call her_main("", "normal", "base", "base", "R")
     elif temp_name == "Bad Girl":
         call her_main("I am not a [temp_name]!","open","angry")
         if her_whoring >= 7:
-            call her_main("\"Or am I...?\"","disgust","baseL")
-            call her_main("","normal","baseL")
+            call her_main("\"Or am I...?\"", "disgust", "base", "base", "R")
+            call her_main("", "normal", "base", "base", "R")
     elif temp_name == "Princess":
         call her_main("This is inappropriate, [genie_name]!","open","angry")
         if her_whoring >= 9:
-            call her_main("\"It sounds nice though...\"","base","baseL")
+            call her_main("\"It sounds nice though...\"", "base", "base", "base", "R")
     elif temp_name == "Pet":
         call her_main("Are you joking, [genie_name]?","open","worried")
         if her_whoring >= 11:
-            call her_main("\"Why would he even suggest that?\"","annoyed","baseL")
+            call her_main("\"Why would he even suggest that?\"", "annoyed", "base", "base", "R")
     else:
         call her_main("I won't let you call me that!","shock","angryCl")
         call her_main("","normal","angry")

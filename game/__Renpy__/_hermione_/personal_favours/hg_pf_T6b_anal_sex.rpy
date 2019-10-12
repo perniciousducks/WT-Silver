@@ -81,7 +81,7 @@ label hg_anal_sex_1:
                 $ ccg2 = "blank"
                 $ ccg3 = "blank"
                 show screen ccg
-                call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
+                call her_main("", "shock", "base", "base", "R",cheeks="blush",tears="soft",ypos="head")
             else:
                 call hg_chibi_transition("sex_slow", trans="d5")
 
@@ -90,9 +90,9 @@ label hg_anal_sex_1:
             call her_main("Yes... Please, I just want this to end...","scream","worriedCl",cheeks="blush",tears="crying")
             g4 "Agh... You want this to end sooner?"
             g4 "Help me out then!"
-            call her_main("*sob!* How?","shock","baseL",cheeks="blush",tears="soft")
+            call her_main("*sob!* How?", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             g4 "You know..."
-            call her_main("Oh...","shock","baseL",cheeks="blush",tears="soft")
+            call her_main("Oh...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             #$ ccg2 = 6
             call her_main("I am a whore??","clench","worried",cheeks="blush",tears="soft")
             g9 "Yes you are!"
@@ -137,7 +137,7 @@ label hg_anal_sex_1:
                 $ ccg2 = "blank"
                 $ ccg3 = "blank"
                 show screen ccg
-                call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
+                call her_main("", "shock", "base", "base", "R",cheeks="blush",tears="soft",ypos="head")
             else:
                 call hg_chibi_transition("sex_slow", trans="d5")
 
@@ -148,7 +148,7 @@ label hg_anal_sex_1:
             call her_main(".....................","angry","suspicious",cheeks="blush")
             call ctc
 
-            call her_main(".....................","shock","baseL",cheeks="blush",tears="soft")
+            call her_main(".....................", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "You alright there, slut?"
             call her_main("Ah... You are... stretching me out from the inside... [genie_name].","clench","worried",cheeks="blush",tears="soft")
             call her_main("And it still hurts...","angry","suspicious",cheeks="blush")
@@ -156,10 +156,10 @@ label hg_anal_sex_1:
             m "Maybe not enough lubrication...?"
             m "Come on down, [hermione_name]. Suck my dick some more."
             call her_main("What? But...","clench","worried",cheeks="blush",tears="soft")
-            call her_main("But it's dirty... It's been inside already.","shock","baseL",cheeks="blush",tears="soft")
+            call her_main("But it's dirty... It's been inside already.", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "Yes, it's been inside, but that doesn't mean it's dirty now."
             m "Come on, [hermione_name]. Suck my cock some more."
-            call her_main("...........","shock","baseL",cheeks="blush",tears="soft")
+            call her_main("...........", "shock", "base", "base", "R",cheeks="blush",tears="soft")
 
             # Blowjob
             hide screen ccg
@@ -182,19 +182,19 @@ label hg_anal_sex_1:
                 $ ccg2 = "blank"
                 $ ccg3 = "blank"
                 show screen ccg
-                call her_main("","shock","baseL",cheeks="blush",tears="soft",ypos="head")
+                call her_main("", "shock", "base", "base", "R",cheeks="blush",tears="soft",ypos="head")
             else:
                 call hg_chibi_transition("sex_slow", trans="fade")
             call ctc
 
-            call her_main("Ah...","shock","baseL",cheeks="blush",tears="soft")
+            call her_main("Ah...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "Better now?"
             call her_main("It still hurts...","clench","worried",cheeks="blush",tears="soft")
             call her_main("But I think I will be fine...")
             m "I'll take it slow for now..."
             call her_main("Ah... thank you, [genie_name].","angry","suspicious",cheeks="blush")
             m "Oh... yes... this feels great..."
-            call her_main("...........","shock","baseL",cheeks="blush",tears="soft")
+            call her_main("...........", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "Oh... So tight..."
             call her_main("................","shock","down_raised",cheeks="blush",tears="crying")
             m "Why are you being so quiet [hermione_name]?"
@@ -207,7 +207,7 @@ label hg_anal_sex_1:
             call her_main("B-but--","clench","worried",cheeks="blush",tears="soft")
             m "That will make me cum sooner."
             call her_main("Really? *Sob!*","angry","dead",cheeks="blush",tears="crying")
-            call her_main("*Sob!* It hurts! *Sob!* It hurts so much! *Sob!*","shock","baseL",cheeks="blush",tears="soft")
+            call her_main("*Sob!* It hurts! *Sob!* It hurts so much! *Sob!*", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "Yes, yes..."
             call her_main("*SOB!*","angry","suspicious",cheeks="blush",tears="messy")
             m "You poor little kid..."
@@ -275,7 +275,7 @@ label hg_anal_sex_1:
             call hg_chibi_transition("sex_creampie_pause", trans="d5")
             pause.8
 
-            call her_main("I apologize for saying that I hate you, [genie_name]...","base","baseL",cheeks="blush",tears="mascara",ypos="head",flip=False)
+            call her_main("I apologize for saying that I hate you, [genie_name]...", "base", "base", "base", "R",cheeks="blush",tears="mascara",ypos="head",flip=False)
             call her_main("And your cock is not nasty...",cheeks="blush",tears="mascara")
             call her_main("I don't know what's gotten into me...","grin","concerned",cheeks="blush",tears="mascara")
             g9 "My dick!"
@@ -321,7 +321,7 @@ label hg_anal_sex_1:
             m "Well, I'm done... You can get off my desk now."
             call her_main("Yes, [genie_name]...","silly","worried",cheeks="blush",tears="soft",ypos="head",flip=False)
             m "You feeling alright?"
-            call her_main("Yes, [genie_name]. It still hurts a little, but...","shock","baseL",cheeks="blush",tears="soft")
+            call her_main("Yes, [genie_name]. It still hurts a little, but...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "But what?"
             call her_main("But in a good way... [genie_name].","silly","worried",cheeks="blush",tears="soft")
             m "In a good way, huh?"
@@ -405,7 +405,7 @@ label hg_anal_sex_2:
         "\"I would marry you in a heartbeat!\"":
             call her_main("What?", "open", "base", "base", "mid",ypos="head")
             m "Well, hypothetically speaking of course..."
-            call her_main("...of course...{image=textheart}","base","baseL")
+            call her_main("...of course...{image=textheart}", "base", "base", "base", "R")
             call her_main("..............","base","squint")
             call her_main("But why do you say that, [genie_name]?", "soft", "base", "base", "mid")
             m "Huh?"

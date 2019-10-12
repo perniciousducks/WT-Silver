@@ -70,7 +70,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         her "Your speech was so moving..."
         her "You are so right, [genie_name]! I shall beat them at their own game!"
         her "My classes are about to start, so I should probably go now..."
-        call her_main("...........","normal","baseL",tears="soft")
+        call her_main("...........", "normal", "base", "base", "R",tears="soft")
         call her_main("...I hope nobody will notice that I have no underwear on today...","annoyed","worriedL")
         call her_main("Oh, and I will be back tonight to pick them up, [genie_name].", "open", "base", "base", "mid")
         m "Of course. Your panties will be right here on my desk, waiting for you..."
@@ -92,7 +92,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
             m "What?"
             call her_main("Yes, I had a feeling that you might ask for these today, [genie_name].", "base", "base", "base", "mid")
             m "A feeling?"
-            call her_main("Well, to be completely honest I just do not bother to wear them much anymore...","grin","baseL")
+            call her_main("Well, to be completely honest I just do not bother to wear them much anymore...", "grin", "base", "base", "R")
         else:
             hide screen hermione_main
             with d3
@@ -137,7 +137,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         call her_main("Well, these will require some serious cleaning before I can put them on again...","annoyed","down")
         m "Or you could put them on now."
         call her_main("What?", "open", "base", "base", "mid")
-        call her_main("I really would rather not, [genie_name]...","soft","baseL")
+        call her_main("I really would rather not, [genie_name]...", "soft", "base", "base", "R")
 
         menu:
             "\"Put them on or lose the points!\"":
@@ -204,7 +204,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
             "\"An experiment went wrong\"":
                 her "An experiment, huh?"
                 her "Of what nature?"
-                call her_main("No, don't answer that... I think I know...","smile","baseL")
+                call her_main("No, don't answer that... I think I know...", "smile", "base", "base", "R")
             "\"You gave them to me like this!\"":
                 her "I don't think so, [genie_name]."
                 her "But it's alright if you don't want to tell me, [genie_name]..."
@@ -213,7 +213,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 call her_main("I knew it...","smile","glance")
                 her "They reek of semen!"
 
-        call her_main("Hm...","grin","baseL")
+        call her_main("Hm...", "grin", "base", "base", "R")
         her "Seems like these will require some serious cleaning before I can put them on..."
         call her_main("Unless you want me to put them on now, [genie_name]...?","smile","glance")
 
@@ -237,7 +237,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
             her "You came all over them again..."
         else:
             her "You came all over them..."
-        call her_main("Hm...","grin","baseL")
+        call her_main("Hm...", "grin", "base", "base", "R")
         her "Seems like these will require some serious cleaning before I can put them on..."
         call her_main("Unless you want me to put them on now, [genie_name]...?","smile","glance")
 
@@ -313,7 +313,7 @@ label hg_ps_get_panties_complete:
                 $ sc34CG(1, 10)
                 call her_main("Oh...", "soft", "base", "base", "mid",xpos="base",ypos="base")
                 her "Quite ordinary actually..."
-                call her_main("Although... I couldn't help but worry that somebody would notice somehow...","soft","baseL")
+                call her_main("Although... I couldn't help but worry that somebody would notice somehow...", "soft", "base", "base", "R")
                 call her_main(".....","annoyed","worriedL")
                 hide screen sccg
                 call her_main("Can I have my panties back now?", "open", "base", "base", "mid",xpos="right",ypos="base",trans="fade")

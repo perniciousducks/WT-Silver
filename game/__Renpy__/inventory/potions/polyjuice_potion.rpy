@@ -161,7 +161,7 @@ label hg_pp_polyjuice_T1_intro:
                 call her_walk(xpos="desk", speed=2.5)
                 call her_main("What is it, [genie_name]?","upset","angry")
                 call her_main("Haven't you humiliated me enough?","annoyed","closed")
-                call her_main("","annoyed","baseL")
+                call her_main("", "annoyed", "base", "base", "R")
                 m "Would you like to earn 75 additional points?"
                 call her_main("75 points? How?","annoyed","suspicious")
 
@@ -203,7 +203,7 @@ label hg_pp_polyjuice_T1_intro:
                 call u_pause_ani
 
                 call her_main("It's because of your stupid potion, it made my tongue all rough.","open_wide_tongue","angry")
-                call her_main("Do you want to stop?","grin","baseL")
+                call her_main("Do you want to stop?", "grin", "base", "base", "R")
                 hide screen hermione_main
                 m "No, keep going, just try not to focus on the tongue work too much."
                 call her_main("Okay, [genie_name].","annoyed","angryL")
@@ -280,7 +280,7 @@ label hg_pp_polyjuice_T1_intro:
                 m "One last thing."
                 m "Who's a good girl?"
                 call her_main("..........","annoyed","worriedL")
-                call her_main("I am...","smile","baseL")
+                call her_main("I am...", "smile", "base", "base", "R")
 
                 show screen blkfade with d3
 
@@ -409,7 +409,7 @@ label hg_pp_polyjuice_T1_introCC:
         $ g_c_u_pic = "hand_ani"
         with d3
         call her_main("It's because of your stupid potion, it's \nmade my tongue all rough.","open_wide_tongue","angry")
-        call her_main("Do you want to stop?","grin","baseL")
+        call her_main("Do you want to stop?", "grin", "base", "base", "R")
         hide screen hermione_main
         m "No, keep going, just try not to focus on the tongue work too much."
 
@@ -503,7 +503,7 @@ label hg_pp_polyjuice_T1_introCC:
     m "One last thing."
     m "Who's a good girl?"
     call her_main("..........","annoyed","worriedL")
-    call her_main("I am...","smile","baseL")
+    call her_main("I am...", "smile", "base", "base", "R")
 
     call hide_characters
     call her_chibi("hide")
@@ -557,7 +557,7 @@ label hg_pp_polyjuice_T1_introCC:
         # call her_main("Ugh. Those taste like muck.","normal","worriedCl")
         # her "...and what will it turn me into?"
         # m "That, Miss Granger, is a secret."
-        # call her_main("Typical.","normal","baseL",tears="soft")
+        # call her_main("Typical.", "normal", "base", "base", "R",tears="soft")
         # m "It'll taste a lot sweeter if you imagine all the points you'll earn for Gryffindor."
         # m "How much of a lead did Slytherin have on you again?"
         # her "You're right, [genie_name]. I can't let Gryffindor down!"

@@ -1219,10 +1219,10 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
         "\"Not even close.\"":
             $ cho_mood += 15
             call cho_main("Not even clo-","soft","wide","base","mid")
-            call her_main("","smile","baseL")
+            call her_main("", "smile", "base", "base", "R")
             call cho_main("Professor, could you please repeat that for me?","angry","closed","angry","mid")
             m "Hermione's body is superior."
-            call her_main("No surprise there...","base","baseL")
+            call her_main("No surprise there...", "base", "base", "base", "R")
             call cho_main("No!{w} It clearly isn't!","scream","angry","angry","mid", trans="hpunch")
             call cho_main("Are you mad, old man?","angry","narrow","angry","mid")
             call her_main("Don't use that tone with the headmaster...","soft","closed")
@@ -1274,10 +1274,10 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("Any time, Professor.","soft","glance")
             call cho_main("(I bloody hate her!)","angry","angry","angry","L")
 
-            call her_main("If you don't mind, Sir.","open","baseL")
+            call her_main("If you don't mind, Sir.", "open", "base", "base", "R")
             call her_main("I'd like to leave now.", "soft", "base", "base", "mid")
             call cho_main("By all means, just go already.","soft","narrow","angry","R")
-            call her_main("Did something not go as you expected?","smile","baseL")
+            call her_main("Did something not go as you expected?", "smile", "base", "base", "R")
             call her_main("Did you think having me here when you exposed yourself would make me jealous...","soft","closed")
             call cho_main("(...)","annoyed","angry","angry","L")
             call her_main("Thank you for inviting me, Professor.","soft","glance")
@@ -1360,7 +1360,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("Fine...","soft","angryL")
             call her_main("\"Poor\", I'd say...","soft","closed")
             call cho_main("How dare you!{w} You snobby skunk!","scream","angry","angry","L", trans="hpunch")
-            call her_main("","base","baseL")
+            call her_main("", "base", "base", "base", "R")
             m "(Is that better or worse than \"troll\"?)" # Snape explained school ratings during the match.
             call cho_main("Our Professor asked you to rate my body truthfully!","angry","angry","angry","L")
             call her_main("Which I did!{w} And it's at \"dreadful\" now!","soft","closed")

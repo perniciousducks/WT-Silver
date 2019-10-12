@@ -43,7 +43,7 @@ label hg_pf_sex:
     # Points
     m "Yes, [hermione_name]. [current_payout] points to the \"Gryffindor\" house."
     $ gryffindor += current_payout
-    call her_main("Thank you, [genie_name]...","soft","baseL")
+    call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R")
 
 
     # Hermione leaves
@@ -577,7 +577,7 @@ label hg_sex_2:
     call slap_her
 
     #$ ccg2 = 24
-    call her_main("Aa-a-ah!{image=textheart}{image=textheart}{image=textheart}","shock","baseL", cheeks="blush", tears="soft")
+    call her_main("Aa-a-ah!{image=textheart}{image=textheart}{image=textheart}", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "You liked that one, huh?"
     call slap_her
 
@@ -611,7 +611,7 @@ label hg_sex_2:
     call her_main("..............","silly","dead")
     call nar(">You start fucking Hermione with renewed determination!")
     #$ ccg2 = 34
-    call her_main("Ah! No! I can't...{image=textheart} I...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","shock","baseL", cheeks="blush", tears="soft", ypos="head")
+    call her_main("Ah! No! I can't...{image=textheart} I...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}", "shock", "base", "base", "R", cheeks="blush", tears="soft", ypos="head")
     m "Shut it whore!"
     g4 "Argh!"
 
@@ -637,7 +637,7 @@ label hg_sex_2:
             g4 "I'm Not done yet, bitch!"
             g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
             call cum_block
-            call her_main("AH! MY BELLY!","shock","baseL", cheeks="blush", tears="soft")
+            call her_main("AH! MY BELLY!", "shock", "base", "base", "R", cheeks="blush", tears="soft")
             g4 "{size=+5}SLUT!{/size}"
 
             hide screen bld1
@@ -721,7 +721,7 @@ label hg_sex_2:
 label hg_sex_luna:
     m "[hermione_name]..."
     m "I have a favour to ask of you..."
-    call her_main("Is it sex? {size=-2}Please let it be sex...{/size}","smile","baseL")
+    call her_main("Is it sex? {size=-2}Please let it be sex...{/size}", "smile", "base", "base", "R")
     m "You certainly seem eager."
     call her_main(".......","base","glance")
     call her_main("Well I may have made some plans...","base","down")
@@ -846,7 +846,7 @@ label hg_sex_luna:
     m "Well, I think I will follow your example then."
     call her_main("..............","silly","dead")
     call nar(">You start fucking Hermione with renewed determination!")
-    call her_main("Ah! No! I can't...{image=textheart} not in front of...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","shock","baseL", cheeks="blush", tears="soft")
+    call her_main("Ah! No! I can't...{image=textheart} not in front of...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "Shut it whore!"
     lun "Yes sir."
     g4 "Argh!"

@@ -607,7 +607,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         pause.8
 
         call her_main("hello Professor!","base","happyCl")
-        call her_main("hi luna! what's he want now? another blowjob.","grin","baseL")
+        call her_main("hi luna! what's he want now? another blowjob.", "grin", "base", "base", "R")
         call lun_main("no, he just wants to talk...","base","seductive","angry","mid")
         call her_main("really?","upset","wink")
         call lun_main("I mean he says talk...","normal","angry","mad","R")
@@ -640,7 +640,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         m "What happened?"
         $ luna_flip = 1
         call lun_main("It's too embarrassing! I'm not telling him that one!","open","wide","sad","R")
-        call her_main("well I don't mind...","open","baseL")
+        call her_main("well I don't mind...", "open", "base", "base", "R")
         $ luna_flip = -1
         call lun_main("please hermione...","normal","wide","sad","mid")
         call her_main("shhh...","open","closed")
@@ -650,7 +650,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         $ luna_flip = 1
         call lun_main("...","upset","wide","sad","down", cheeks="blush")
         m "..."
-        call her_main("we'd just finished up basic spells revision so we moved onto blowjobs as usual...","open","baseL")
+        call her_main("we'd just finished up basic spells revision so we moved onto blowjobs as usual...", "open", "base", "base", "R")
         call lun_main("...","normal","wide","sad","R", cheeks="blush")
         m "{size=-2}(mmmm...){/size}"
         call her_main("it was going well when all of a sudden a few second years came into the common room...","angry","wink")
@@ -665,7 +665,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
         g4 "{size=+4}(agh... almost there...){/size}"
         $ luna_flip = 1
-        call her_main("she held it there for nearly a minute...","open","baseL")
+        call her_main("she held it there for nearly a minute...", "open", "base", "base", "R")
         call her_main("a few of them even said hello to us...","soft","squintL")
         call her_main("they didn't suspect a thing...","soft","ahegao")
         call lun_main("not until you started touching me under the desk!","normal","wide","angry","R", cheeks="blush")

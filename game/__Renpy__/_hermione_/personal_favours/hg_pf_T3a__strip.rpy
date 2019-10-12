@@ -50,7 +50,7 @@ label hg_pf_strip:
 
     # Points
     m "[current_payout] to the \"Gryffindor\" house."
-    call her_main("Thank you, [genie_name]...","soft","baseL")
+    call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R")
 
 
     # Hermione leaves
@@ -92,7 +92,7 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
     call her_main("You want me to...","open","worried")
     call her_main("...dance for you, [genie_name]?","open","wink")
     m "Yes... You think you could manage that?"
-    call her_main("Ehm... I suppose so...","soft","baseL")
+    call her_main("Ehm... I suppose so...", "soft", "base", "base", "R")
     her "Am I getting paid for this?"
     m "Of course, [hermione_name]!"
     call her_main("So... Just a little dancing then...","annoyed","worriedL")
@@ -176,7 +176,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     call her_main("You want me to...","open","worried")
     call her_main("...dance for you, [genie_name]?","open","wink")
     m "Yes... You think you could manage that?"
-    call her_main("Ehm... I suppose so...","soft","baseL")
+    call her_main("Ehm... I suppose so...", "soft", "base", "base", "R")
     her "Am I getting paid for this?"
     m "Of course, [hermione_name]!"
     call her_main("So... Just a little dancing then...","annoyed","worriedL")
@@ -352,7 +352,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
 
     menu:
         "\"Alright. I had fun. Here are your points.\"":
-            call her_main("Really? I didn't ruin it completely then?","soft","baseL", tears="soft")
+            call her_main("Really? I didn't ruin it completely then?", "soft", "base", "base", "R", tears="soft")
 
             jump end_hg_pf_strip
 
@@ -997,7 +997,7 @@ label hg_pf_strip_T2_intro_E1:
     call her_main(".........................","annoyed","annoyed")
     call her_main("Thirty five house points?", "open", "base", "base", "mid")
     g9 "Sure!"
-    call her_main("Very well, then...","base","baseL")
+    call her_main("Very well, then...", "base", "base", "base", "R")
 
     jump hg_pf_strip_T2
 
@@ -1006,7 +1006,7 @@ label hg_pf_strip_T2_intro_E1:
 label hg_pf_strip_T2_intro_E2:
     m "[hermione_name], would you like to provide me with about another strip show?"
     m "(I'm bored as fuck in here after all...)"
-    call her_main("*Hmm*...","annoyed","baseL", xpos="base", ypos="base")
+    call her_main("*Hmm*...", "annoyed", "base", "base", "R", xpos="base", ypos="base")
     call her_main("Sure! Why not...","base","happyCl")
     g9 "Yes?"
     call her_main("I've been practising a bit more. Mainly just my dancing.","soft","down")
@@ -1154,7 +1154,7 @@ label hg_pf_strip_T2:
             "\"Don't be ridiculous! Love is a lie!\"":
                 call her_main("I am sorry you think that way, [genie_name]!","annoyed","worriedL")
                 call her_main("But you couldn't be more wrong!","annoyed","annoyed")
-                call her_main("I believe that true love is what makes the earth turn!","base","baseL")
+                call her_main("I believe that true love is what makes the earth turn!", "base", "base", "base", "R")
                 m "Actually the conservation of angular momentum is responsible for that."
                 call her_main("Huh?","upset","wink")
                 m "Never mind. Just take off your skirt already?"
@@ -1303,7 +1303,7 @@ label hg_pf_strip_T2_watch:
         "{size=-3}\"Hm... This was quite awful...\"{/size}":
             call her_main("Oh... I'm sorry...","soft","squintL")
             m "That's OK... You just need to practice more..."
-            call her_main("Em... I will keep that in mind, [genie_name]...","open","baseL")
+            call her_main("Em... I will keep that in mind, [genie_name]...", "open", "base", "base", "R")
         "{size=-3}\".................................................\"{/size}":
             call her_main(".......................","silly","worriedCl", emote="05")
             call her_chibi("sit_naked_shocked","on_desk","on_desk")
@@ -1461,7 +1461,7 @@ label hg_pf_strip_T2_masturbate:
         call her_main("I am your pupil and...")
         call her_main("You just came on me...","grin","ahegao")
         g9 "I know! Pretty exciting stuff, huh?!"
-        call her_main("Nothing of that sort!","open","baseL")
+        call her_main("Nothing of that sort!", "open", "base", "base", "R")
         call her_main("You should have restrained yourself like a proper headmaster would!")
         m "Really? What did you expect me to do?"
         m "Aim at the wall or just put it back in my trousers and start cumming?"
@@ -1581,7 +1581,7 @@ label hg_pf_strip_T2_masturbate:
                     call her_main("!!!?","shock","wide")
                     call her_main("I danced for you, [genie_name]...")
                     call her_main("I degraded myself for your amusement...","soft","squintL")
-                    call her_main("I let you cum on me...","open","baseL")
+                    call her_main("I let you cum on me...", "open", "base", "base", "R")
                     with hpunch
                     call her_main("And I get NOTHING?!","clench","angry", emote="01")
                     m "You are dismissed, [hermione_name]!"

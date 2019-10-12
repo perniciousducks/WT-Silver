@@ -70,7 +70,7 @@ label maid_responses:
                 m "I'm sure that they'd jump at the chance to make some points for their house."
                 m "They'd probably even do it for next to nothing, if not free."
                 call her_main("Fine, I get your point. It's just, surely there are other ways for you to earn money [genie_name]?","upset","closed")
-                call her_main("I mean you're the school headmaster, can't you just file some reports and get paid by the ministry?","base","baseL")
+                call her_main("I mean you're the school headmaster, can't you just file some reports and get paid by the ministry?", "base", "base", "base", "R")
                 m "I can, it's just not as enjoyable."
                 call her_main("Hmmph. Can I at least get my points now?","angry","angryCl")
                 m "Certainly, 10 points to Gryffindor."
@@ -174,7 +174,7 @@ label job_3:
     if her_whoring <= 6:
         her "*Humph!*..."
     elif her_whoring <= 15:
-        call her_main("Yes, [genie_name]...","normal","baseL")
+        call her_main("Yes, [genie_name]...", "normal", "base", "base", "R")
     else:
         call her_main("As you wish, [genie_name].", "open", "base", "base", "mid")
 
@@ -260,11 +260,11 @@ label gryffindor_cheer_responses:
                 m "Won?"
                 call her_main("We won! We beat Slytherin in a practice match.","smile","happyCl")
                 m "You seem a little bit overexcited for just a practice match."
-                call her_main("Well it was such a great game. Not to mention that we got to rub it in those Slytherin students faces afterwards.","smile","baseL")
+                call her_main("Well it was such a great game. Not to mention that we got to rub it in those Slytherin students faces afterwards.", "smile", "base", "base", "R")
                 g9 "Well I'm glad that you are enjoying your work."
                 call her_main("I am [genie_name]. Given that most of the \"work\" I've done to help my house is kept private, it feels good to be able to do something public once.", "open", "base", "base", "mid")
                 m "Not to mention you get paid for it..."
-                call her_main("Oh, right, Here you are...","soft","baseL")
+                call her_main("Oh, right, Here you are...", "soft", "base", "base", "R")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
             else:
@@ -276,7 +276,7 @@ label gryffindor_cheer_responses:
                 menu:
                     "-Reward?-":
                         m "What reward did you promise them?"
-                        call her_main("Well I was quite keen to ensure our victory against Slytherin that I may have promised that I would give each of them a blowjob if they won.","grin","baseL")
+                        call her_main("Well I was quite keen to ensure our victory against Slytherin that I may have promised that I would give each of them a blowjob if they won.", "grin", "base", "base", "R")
                         m "You gave every team member a blowjob after the game?"
                         call her_main("And the water boy...","smile","glance")
                         m "How did you even manage that? Did have to crawl around the locker room on your knees?"
@@ -299,7 +299,7 @@ label gryffindor_cheer_responses:
                 m "Well done [hermione_name], 20 points to Gryffindor."
 
         "-Dismiss her-":
-            call her_main("Here's your payment [genie_name].","soft","baseL")
+            call her_main("Here's your payment [genie_name].", "soft", "base", "base", "R")
             m "Well done [hermione_name], 20 points to Gryffindor."
 
     call her_main("Thank you, [genie_name].","base","happyCl")
@@ -433,7 +433,7 @@ label slytherin_cheer_responses:
                 m "Fine, I don't want to hear it. How much did they pay you for this \"cheering\"?"
                 call her_main("Pay me?","silly","dead")
                 m "You are supposed to be paid for this [hermione_name]."
-                call her_main("Oh... I must have forgotten. Sorry [genie_name]","base","baseL",cheeks="blush")
+                call her_main("Oh... I must have forgotten. Sorry [genie_name]", "base", "base", "base", "R",cheeks="blush")
                 m "Fine, but you aren't getting any points."
                 call her_main("Of course [genie_name]. Will that be all?", "base", "base", "base", "mid")
                 m "Yes, you're free to go now."

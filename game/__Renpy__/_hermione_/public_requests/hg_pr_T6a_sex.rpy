@@ -113,13 +113,13 @@ label hg_pr_sex_T1_intro_E2:
     call her_main("Yes, [genie_name], I apologize... *yawn*...","open","closed")
     m "Care to explain yourself?"
     call her_main("Of course, [genie_name].","open","squint", cheeks="blush")
-    call her_main("It is sort of embarrassing, though...","base","baseL", cheeks="blush")
+    call her_main("It is sort of embarrassing, though...", "base", "base", "base", "R", cheeks="blush")
     call her_main("I spent the last night with two of my friends...","open","squint", cheeks="blush")
     m "A slumber party with some girlfriends, huh?"
     call her_main("Girlfriends?","angry","wink")
-    call her_main("No, [genie_name]. Harry and Ron are boys...","open","baseL", cheeks="blush")
+    call her_main("No, [genie_name]. Harry and Ron are boys...", "open", "base", "base", "R", cheeks="blush")
     m "Hm..."
-    call her_main("Yes, we were best friends for such a long time...","base","baseL", cheeks="blush")
+    call her_main("Yes, we were best friends for such a long time...", "base", "base", "base", "R", cheeks="blush")
     call play_music("playful_tension") # SEX THEME.
     call her_main("But last night the boys made me their little plaything...","base","glance")
     call her_main("And I did not mind it one bit...","grin","dead")
@@ -173,13 +173,13 @@ label hg_pr_sex_T1_E4:
     m "Well done, [hermione_name]."
     call her_main(".....................","annoyed","angryL")
     m "I said you did great. What's the matter?"
-    call her_main("Ehm... well...","open","baseL", cheeks="blush")
+    call her_main("Ehm... well...", "open", "base", "base", "R", cheeks="blush")
     her "I am getting paid well for performing such tasks..."
     her "So I have no right to complain, but..."
     m "Hm...?"
     call her_main("My reputation is starting to suffer and it troubles me, [genie_name]...", "open", "base", "base", "mid", cheeks="blush")
     m "Your reputation?"
-    call her_main("Well, yes... ehm...","open","baseL", cheeks="blush")
+    call her_main("Well, yes... ehm...", "open", "base", "base", "R", cheeks="blush")
     m ".............."
     call her_main("No, sorry, please disregard what I just said, [genie_name].","upset","closed")
     m "Hm..."

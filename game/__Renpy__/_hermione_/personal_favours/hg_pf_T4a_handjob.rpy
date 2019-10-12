@@ -53,7 +53,7 @@ label hg_pf_handjob:
     else:
         m "You may leave now, [hermione_name]."
 
-    call her_main("Thank you, [genie_name]...","soft","baseL")
+    call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R")
 
     if daytime:
         her "I better go. My classes are about to start."
@@ -205,7 +205,7 @@ label hg_pf_handjob_T2_intro_E1:
     call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "You don't mind giving me another handjob, do you?"
     call her_main("*Uhm*...","upset","down")
-    call her_main("As long as I am getting paid...","grin","baseL")
+    call her_main("As long as I am getting paid...", "grin", "base", "base", "R")
     m "Well, then. Time to earn those points."
 
     jump hg_pf_handjob_2
@@ -217,7 +217,7 @@ label hg_pf_handjob_T2_intro_E2:
     call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "You don't mind giving me another handjob, do you?"
     call her_main("I guess not, [genie_name]...","grin","down")
-    call her_main("...................","clench","baseL")
+    call her_main("...................", "clench", "base", "base", "R")
 
     jump hg_pf_handjob_2
 
@@ -227,7 +227,7 @@ label hg_pf_handjob_T2_repeat:
     m "[hermione_name]?"
     call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "You don't mind giving me another handjob, do you?"
-    call her_main("Of course not, [genie_name]...","grin","baseL")
+    call her_main("Of course not, [genie_name]...", "grin", "base", "base", "R")
 
     jump hg_pf_handjob_2
 
@@ -615,7 +615,7 @@ label hg_pf_handjob_2:
     call hg_chibi_transition("hj", trans="fade")
     pause.8
 
-    call her_main("Do you like it when I do it like this, [genie_name]?","grin","baseL", ypos="head")
+    call her_main("Do you like it when I do it like this, [genie_name]?", "grin", "base", "base", "R", ypos="head")
     g9 "Actually, yes! Very nice!"
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -705,7 +705,7 @@ label hg_pf_handjob_2:
             call her_main("Among other things...","smile","happyCl", emote="06")
             m "So those girls of yours, they know a lot about such things?"
             call her_main("Actually, yes. I was surprised myself.","shock","wide")
-            call her_main("All sorts of weird sexual things seem to be happening lately in our school...","grin","baseL")
+            call her_main("All sorts of weird sexual things seem to be happening lately in our school...", "grin", "base", "base", "R")
             call her_main("Can't say I approve of that...")
             call her_main("But they did teach me quite a few... tricks.","base","happyCl")
             m "Really? Like what?"
@@ -714,7 +714,7 @@ label hg_pf_handjob_2:
             call her_main("And another one here...")
             m "Oh, I see... Yes, this feels quite good."
             call her_main("Does it?","angry","wink")
-            call her_main("So Ginny was right about this one...","grin","baseL")
+            call her_main("So Ginny was right about this one...", "grin", "base", "base", "R")
             g4 "What did you just say?"
             call her_main("Ginny Weasley, she taught me this one.","base","happyCl")
             m "Oh, right..."
@@ -834,7 +834,7 @@ label hg_pf_handjob_2_continue:
                 m "(...)"
                 call her_main("I could just call myself a \"Whore\" again, as usual...","annoyed","worriedL")
                 m "Yes. A great suggestion."
-                call her_main("...............","annoyed","baseL")
+                call her_main("...............", "annoyed", "base", "base", "R")
                 call her_main("[tmp_name]", "base", "base", "base", "mid")
                 m "A bit louder..."
                 call her_main("[tmp_name]!!!","scream","angryCl")
@@ -944,7 +944,7 @@ label hg_pf_handjob_2_cumming:
 
             m "Will you be alright in those clothes?"
             call her_main("What?","open","down")
-            call her_main("Oh. Yes, I will be fine...","grin","baseL")
+            call her_main("Oh. Yes, I will be fine...", "grin", "base", "base", "R")
             call her_main("It may soak through a little here and there, but I doubt that anyone will notice.","base","happyCl")
             m "Hm... You could just put it in your mouth next time, and avoid the trouble..."
             call her_main("And swallow your hot spunk like that, [genie_name]?","angry","wink")

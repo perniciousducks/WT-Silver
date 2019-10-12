@@ -101,17 +101,17 @@ label change_hair:
                 # if her_whoring < 5:
                     # call her_main("Gladly, [genie_name].","open","closed")
                     # call her_main("(I hate having people stare at me...)","annoyed","ahegao")
-                    # call her_main("I will go and change it.","base","baseL")
+                    # call her_main("I will go and change it.", "base", "base", "base", "R")
                 # elif her_whoring < 11:
                     # call her_main("Of course, [genie_name].", "open", "base", "base", "mid")
                     # call her_main("Let me go change it.", "base", "base", "base", "mid")
                 # elif her_whoring < 20:
-                    # call her_main("Sure, [genie_name].","soft","baseL")
+                    # call her_main("Sure, [genie_name].", "soft", "base", "base", "R")
                     # call her_main("Let me just change it.","base","glance")
                 # else: #20+
                     # call her_main("Brown, [genie_name]?","upset","wink")
                     # call her_main("(But I liked having my hair stand out...)","annoyed","down")
-                    # call her_main("Fine, [genie_name]... {w=0.9}let me go change it.","base","baseL")
+                    # call her_main("Fine, [genie_name]... {w=0.9}let me go change it.", "base", "base", "base", "R")
 
             # #Blonde #Done
             # elif hair_color_choice == "blonde":
@@ -123,7 +123,7 @@ label change_hair:
                         # call her_main("Ok, [genie_name]... {w=0.9}Let me go change it.", "base", "base", "base", "mid")
                     # elif her_whoring < 20:
                         # call her_main("Blonde?", "base", "base", "base", "mid")
-                        # call her_main("Alright, [genie_name].","soft","baseL")
+                        # call her_main("Alright, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me just change it real quick.","base","glance")
                     # else: #20+
                         # call her_main("That barely even looks like blonde!","annoyed","down")
@@ -154,7 +154,7 @@ label change_hair:
                         # m "(I wonder if she is hot...)"
                         # m "(The girl says she is a redhead...)"
                         # g9 "(She has to be!)"
-                        # call her_main("I will go and change my hair, [genie_name].","open","baseL")
+                        # call her_main("I will go and change my hair, [genie_name].", "open", "base", "base", "R")
                     # elif her_whoring < 20:
                         # call her_main("Oh wow, it looks pretty. I really like it!", "soft", "base", "base", "mid")
                         # call her_main("It will make me look just like Ginny!","smile","happyCl")
@@ -182,7 +182,7 @@ label change_hair:
                     # call her_main("Let me go change it real quick.", "base", "base", "base", "mid")
                 # else:
                     # call her_main("That's a bit much don't you think?","angry","worriedCl")
-                    # call her_main("(I'm not dying my hair red to look like some harlot.)","annoyed","baseL")
+                    # call her_main("(I'm not dying my hair red to look like some harlot.)", "annoyed", "base", "base", "R")
                     # call her_main("I have to refuse, [genie_name]!", "normal", "base", "base", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 8."
@@ -194,15 +194,15 @@ label change_hair:
                 # if her_whoring >= 8:
                     # if her_whoring < 17:
                         # call her_main("Black, [genie_name]?","annoyed","down")
-                        # call her_main("(It does look nice.)","annoyed","baseL")
-                        # call her_main("I will try it! Let me go and change it.","soft","baseL")
+                        # call her_main("(It does look nice.)", "annoyed", "base", "base", "R")
+                        # call her_main("I will try it! Let me go and change it.", "soft", "base", "base", "R")
                     # else: #17+
                         # call her_main("Sure, [genie_name]!","base","glance")
                         # call her_main("I really like that colour!","smile","happyCl")
                         # call her_main("Let me just change it.","base","glance")
                 # else:
                     # call her_main("Black, [genie_name]?","open","suspicious")
-                    # call her_main("Black isn't really my colour.","soft","baseL")
+                    # call her_main("Black isn't really my colour.", "soft", "base", "base", "R")
                     # call her_main("I don't think it will suit me, [genie_name].","open","closed")
                     # call her_main("I have to refuse.", "normal", "base", "base", "mid")
                     # if cheats_active or game_difficulty <= 2:
@@ -216,20 +216,20 @@ label change_hair:
                 # g9 "Slytherin Green!"
                 # if her_whoring >= 11:
                     # if her_whoring < 17:
-                        # call her_main("Sure, why not.","soft","baseL") #soft, baseL
+                        # call her_main("Sure, why not.", "soft", "base", "base", "R") #soft, baseL
                         # call her_main("Green is just a colour, [genie_name]!", "open", "base", "base", "mid")
                         # call her_main("Wear it on my head doesn't mean I support Slytherin!","open","closed")
                         # call her_main("(It will look awfully suspicious for a Gryffindor though...)","annoyed","worriedL")
                         # call her_main("Just let me go change it.", "base", "base", "base", "mid")
                     # else: #17+
                         # call her_main("Yes, [genie_name].", "base", "base", "base", "mid")
-                        # call her_main("To tell you a secret...","soft","baseL")
+                        # call her_main("To tell you a secret...", "soft", "base", "base", "R")
                         # call her_main("Green is my favourite colour.","base","glance")
                         # m "Really? what about red?"
-                        # call her_main("Hmm... no, [genie_name].","annoyed","baseL")
+                        # call her_main("Hmm... no, [genie_name].", "annoyed", "base", "base", "R")
                         # call her_main("Red is such an aggressive colour.","open","down")
-                        # call her_main("Green one the other hand is soft and sweet...","soft","baseL")
-                        # call her_main("It always reminds me of nature, grassy fields in the summer, the smell of flowers everywhere...","open","baseL")
+                        # call her_main("Green one the other hand is soft and sweet...", "soft", "base", "base", "R")
+                        # call her_main("It always reminds me of nature, grassy fields in the summer, the smell of flowers everywhere...", "open", "base", "base", "R")
                         # call her_main("I really love it!","smile","happyCl")
                         # call her_main("Let me go change it for you.","base","glance")
                 # else:
@@ -244,7 +244,7 @@ label change_hair:
             # elif hair_color_choice == "blue":
                 # m "Would you dye your hair blue for me?"
                 # if her_whoring >= 11:
-                    # call her_main("Sure, [genie_name].","soft","baseL")
+                    # call her_main("Sure, [genie_name].", "soft", "base", "base", "R")
                     # call her_main("Let me go change.","base","glance")
                 # else:
                     # if her_whoring < 5:
@@ -256,7 +256,7 @@ label change_hair:
                     # else: #5-10
                         # call her_main("Really, [genie_name]?","annoyed","suspicious")
                         # call her_main("You want me to look like a lesbian that bad?","open","annoyed",cheeks="blush")
-                        # call her_main("I'm going to refuse!","annoyed","baseL")
+                        # call her_main("I'm going to refuse!", "annoyed", "base", "base", "R")
                         # if cheats_active or game_difficulty <= 2:
                             # ">Try again at Whoring level 11."
                         # jump return_to_wardrobe
@@ -265,11 +265,11 @@ label change_hair:
             # elif hair_color_choice == "purple":
                 # m "Would you dye your hair purple for me?"
                 # if her_whoring >= 11:
-                    # call her_main("Sure, [genie_name].","soft","baseL")
+                    # call her_main("Sure, [genie_name].", "soft", "base", "base", "R")
                     # call her_main("Let me go change.","base","glance")
                 # else:
                     # call her_main("Purple?","angry","wink")
-                    # call her_main("I do like the colour, but...","soft","baseL")
+                    # call her_main("I do like the colour, but...", "soft", "base", "base", "R")
                     # call her_main("I don't think I want to wear it on my head...","annoyed","ahegao")
                     # call her_main("I have to refuse, [genie_name].", "normal", "base", "base", "mid")
                     # if cheats_active or game_difficulty <= 2:
@@ -281,7 +281,7 @@ label change_hair:
                 # m "Would you dye your hair pink for me?"
                 # if her_whoring >= 14:
                     # call her_main("Of course, [genie_name]!","smile","glance")
-                    # call her_main("I love pink!!!","soft","baseL")
+                    # call her_main("I love pink!!!", "soft", "base", "base", "R")
                     # call her_main("Hi-hi--","smile","happyCl")
                     # call her_main("Let me go change.","base","glance")
                 # else:
@@ -299,12 +299,12 @@ label change_hair:
             # elif hair_color_choice == "gray":
                 # m "Dye your hair white for me."
                 # if her_whoring >= 17:
-                    # call her_main("Alright, [genie_name].","smile","baseL")
+                    # call her_main("Alright, [genie_name].", "smile", "base", "base", "R")
                     # call her_main("Let me go change.","base","glance")
                 # else:
                     # call her_main("No, [genie_name].","open","closed")
                     # call her_main("I'm not going to run around school looking like some grandma!","annoyed","annoyed")
-                    # call her_main("I refuse!","annoyed","baseL")
+                    # call her_main("I refuse!", "annoyed", "base", "base", "R")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 17."
                     # jump return_to_wardrobe
@@ -388,7 +388,7 @@ label change_hair:
     # if her_whoring < 5:
         # call her_main("Like this, [genie_name]?", "soft", "base", "base", "mid")
         # m "This look really suits you, [hermione_name]."
-        # call her_main("Thank you, [genie_name].","base","baseL",cheeks="blush")
+        # call her_main("Thank you, [genie_name].", "base", "base", "base", "R",cheeks="blush")
     # elif her_whoring < 11:
         # call her_main("...","base","happyCl")
         # call her_main("Do you like it, [genie_name]?","grin","wink",cheeks="blush")
@@ -415,9 +415,9 @@ label change_hair:
             # call her_main("[genie_name] you should know that I already used some rather expensive lotion this morning and--","open","closed")
             # m "I just want to shower them in my cum, girl..."
             # call her_main("Oh-", "soft", "base", "base", "mid")
-            # call her_main("...","soft","baseL",cheeks="blush")
+            # call her_main("...", "soft", "base", "base", "R",cheeks="blush")
             # call her_main("(What a great idea.)","base","happyCl")
-            # call her_main("Maybe next time, [genie_name].","smile","baseL")
+            # call her_main("Maybe next time, [genie_name].", "smile", "base", "base", "R")
 
     # return
 

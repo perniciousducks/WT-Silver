@@ -59,7 +59,7 @@ label equip_misc_item:
                 # "-All of it-" if her_whoring >= 24:
                     # $ transparency = 0.1
                     # if wardrobe_chitchat_active:
-                        # call her_main("(...)","grin","baseL")
+                        # call her_main("(...)", "grin", "base", "base", "R")
                 # "-remove it-":
                     # $ transparency = 1
                 # "-That's enough-":
@@ -150,7 +150,7 @@ label equip_misc_item:
                 # call her_main("...","annoyed","angry")
                 # call her_main("(Why am I not surprised...)","annoyed","angryL")
                 # call her_main("(This is going to hurt...)","angry","worriedCl",cheeks="blush")
-                # call her_main("Fine... Let me put it on.","base","baseL")
+                # call her_main("Fine... Let me put it on.", "base", "base", "base", "R")
                 # g9 "Don't you mean... \"in\"?"
                 # call her_main("...","annoyed","frown")
                 # hide screen hermione_main

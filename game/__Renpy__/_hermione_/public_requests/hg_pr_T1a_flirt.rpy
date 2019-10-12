@@ -15,7 +15,7 @@ label hg_pr_flirt:
 
     call her_main(face="happy", xpos="right", ypos="base", trans="fade")
     m "[hermione_name]?"
-    call her_main("Yes?","soft","baseL")
+    call her_main("Yes?", "soft", "base", "base", "R")
 
     #Intro.
     if hg_pr_flirt.counter == 0 and her_whoring < 6:
@@ -24,7 +24,7 @@ label hg_pr_flirt:
         m "What is your opinion on the boys of the \"Slytherin\" house?"
         call her_main("I detest them, [genie_name].","angry","angry")
         m "Well, too bad. Because I want you to get really friendly with a few of them today."
-        call her_main("If I must...","soft","baseL")
+        call her_main("If I must...", "soft", "base", "base", "R")
         her "Yes, I think I can manage to be civil with them for one day."
         m "Yes, and when I say \"get friendly with them...\""
         m "I actually mean that I need you to flirt with them..."
@@ -315,11 +315,11 @@ label hg_pr_flirt_T2_E2:
     stop music fadeout 1.0
     call her_main("Well...","open","worriedL")
     her "This morning I did flirt with this one guy..."
-    call her_main("Then after the second period there was this other guy...","soft","baseL")
+    call her_main("Then after the second period there was this other guy...", "soft", "base", "base", "R")
     call her_main("And then something bizarre happened...","angry","worried")
     call play_music("playful_tension") # SEX THEME.
     her "This angry-looking guy from \"Slytherin\" came up to me and asked me out on a date..."
-    call her_main("I told him \"no\" at first, but we ended up taking a walk together.","soft","baseL")
+    call her_main("I told him \"no\" at first, but we ended up taking a walk together.", "soft", "base", "base", "R")
     m "Did you enjoy yourself, [hermione_name]?"
     call her_main("I think I did, [genie_name]... To my own astonishment...", "open", "base", "base", "mid")
     call her_main("There was something about his \"devil-may-care\" attitude...", "base", "base", "base", "mid")
@@ -334,10 +334,10 @@ label hg_pr_flirt_T2_E2:
             call her_main("................","normal","frown")
 
         "\"The almighty hat is never wrong!\"":
-            call her_main("Yes, of course... Everybody knows that...","soft","baseL")
+            call her_main("Yes, of course... Everybody knows that...", "soft", "base", "base", "R")
 
         "\"Could what make what?\"":
-            call her_main("Oh, never mind me, [genie_name].","soft","baseL")
+            call her_main("Oh, never mind me, [genie_name].", "soft", "base", "base", "R")
             her "Everyone knows that the \"Sorting Hat\" is never wrong."
 
     jump end_hg_pr_flirt
@@ -354,7 +354,7 @@ label hg_pr_flirt_T2_E3:
     call her_main("This one guy this morning.","base","happyCl")
     her "Then another two right after the first period."
     her "And then another one before the third period."
-    call her_main("And after that I had a surprisingly pleasant conversation with one more.","grin","baseL")
+    call her_main("And after that I had a surprisingly pleasant conversation with one more.", "grin", "base", "base", "R")
     call her_main("That last one was quite smart and well-mannered too.","base","happyCl")
     her "............................"
     her "................"
@@ -386,10 +386,10 @@ label hg_pr_flirt_T3_E1:
     call her_main("Eleven boys, [genie_name]!","smile","happyCl", xpos="right", ypos="base", trans="d5")
     m "Eleven? Really? Your personal best, [hermione_name]."
     call her_main("Yes.","base","happyCl")
-    call her_main("Let's see...","grin","baseL")
+    call her_main("Let's see...", "grin", "base", "base", "R")
     her "Those two handsome guys right before the first period started..."
     call her_main("Then I exchanged a few rather inappropriate messages with this other guy, during the the first period.","smile","glance")
-    call her_main("After that there was this one other guy...","grin","baseL")
+    call her_main("After that there was this one other guy...", "grin", "base", "base", "R")
     call her_main("Then those three guys...","annoyed","down")
     call her_main("Then one more right before the last period...","base","happyCl")
     call her_main("And finally this last guy that walked me right to your tower, [genie_name]...","smile","happyCl")
@@ -408,7 +408,7 @@ label hg_pr_flirt_T3_E1:
     call her_main("Well, yes, [genie_name]...","angry","worriedCl", emote="05")
     m "Yeah, I'm sure that wins them over."
     m "Great job, [hermione_name]."
-    call her_main("","grin","baseL")
+    call her_main("", "grin", "base", "base", "R")
     show screen blkfade
     hide screen sccg
     with d5
@@ -422,7 +422,7 @@ label hg_pr_flirt_T3_E2:
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Two dates, seven quite pleasant conversations...","smile","happyCl",xpos="right",ypos="base")
-    call her_main("And I even let this one guy kiss me...","grin","baseL")
+    call her_main("And I even let this one guy kiss me...", "grin", "base", "base", "R")
     m "Quite impressive, [hermione_name]."
     call her_main("I think so too, [genie_name]. Thank you.","base","happyCl")
     call her_main("Oh, and there was also this little freshman kid...","smile","happyCl")

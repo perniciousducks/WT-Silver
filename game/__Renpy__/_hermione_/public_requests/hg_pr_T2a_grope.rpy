@@ -87,7 +87,7 @@ label hg_pr_grope:
         call her_main("In a sexual way, [genie_name]?","angry","wink")
         m "What? No, I mean just let him get under your uniform that's all..."
         call her_main("Oh, I see...","grin","worriedCl", emote="05")
-        call her_main("I wonder who it should be this time...","grin","baseL")
+        call her_main("I wonder who it should be this time...", "grin", "base", "base", "R")
         call her_main("More than one boy, is not a problem, is it, [genie_name]?", "angry", "base", "base", "mid")
         m "A problem? Of course not!"
         m "If anything - it is encouraged."
@@ -146,7 +146,7 @@ label hg_pr_grope_intro:
     if her_whoring < 9:
         stop music fadeout 3.0
         call her_main("......","annoyed","angryL")
-        call her_main("Well... Em...","soft","baseL")
+        call her_main("Well... Em...", "soft", "base", "base", "R")
         m "Speak up, [hermione_name]."
         m "Did you let some lucky guy feel you up or what?"
 
@@ -228,7 +228,7 @@ label hg_pr_grope_T1_E3:
     m "I'm sorry to hear this..."
     call her_main("It was truly awful, [genie_name]...", "angry", "base", "base", "mid", tears="soft")
     m "There, there..."
-    call her_main("*Sob!*","normal","baseL", tears="soft")
+    call her_main("*Sob!*", "normal", "base", "base", "R", tears="soft")
     m "Will ten extra points make you feel better?"
     call her_main("Huh? That would be very sweet of you [genie_name].", "soft", "base", "base", "mid", tears="soft")
     m "Of course... Ten extra points to \"Gryffindor\"."
@@ -441,7 +441,7 @@ label hg_pr_grope_T3_E3:
     her "I sort of... got caught while I was letting this one boy fondle my breasts..."
     m "You got caught? By one of the teachers?"
     call her_main("No, [genie_name]...", "base", "base", "base", "mid")
-    call her_main("By the boy's girlfriend...","smile","baseL")
+    call her_main("By the boy's girlfriend...", "smile", "base", "base", "R")
     m "Interesting..."
     call her_main("She was furious with him at first...", "angry", "base", "base", "mid")
     call her_main("But then...","angry","wink")

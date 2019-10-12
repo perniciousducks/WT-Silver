@@ -210,7 +210,7 @@ label hg_pf_grope_breasts_T3:
 
         "\"No, leave it on.\"":
             m "I want to massage them while you are fully dressed..."
-            call her_main("Oh, I see...","base","baseL", cheeks="blush", ypos="head")
+            call her_main("Oh, I see...", "base", "base", "base", "R", cheeks="blush", ypos="head")
             jump hg_pf_grope_breasts_T3_clothed
 
 
@@ -279,15 +279,15 @@ label hg_pf_grope_breasts_T3_clothed:
 
     menu:
         "\"Do you enjoy this, [hermione_name]?\"":
-            call her_main("What...?","base","baseL", cheeks="blush")
-            call her_main("Oh, I don't mind it...","base","baseL", cheeks="blush")
+            call her_main("What...?", "base", "base", "base", "R", cheeks="blush")
+            call her_main("Oh, I don't mind it...", "base", "base", "base", "R", cheeks="blush")
             "*squeeze-squeeze-squeeze*"
             call nar(">You keep massaging her soft tits...")
 
             if her_tier <= 5:
                 call her_main("I mean, this isn't a big deal, as long as I am getting paid...","base","ahegao_raised", cheeks="blush")
                 call nar(">You keep on massaging her tits through her uniform...")
-                call her_main("A small price to pay for the honour of my house, really......{image=textheart}","soft","baseL", cheeks="blush")
+                call her_main("A small price to pay for the honour of my house, really......{image=textheart}", "soft", "base", "base", "R", cheeks="blush")
             else:
                 m "Really? It seems to me as if you love it."
                 call her_main("I wouldn't say that I love it...","base","ahegao_raised", cheeks="blush")
@@ -308,8 +308,8 @@ label hg_pf_grope_breasts_T3_clothed:
             with vpunch
             with vpunch
             call nar(">Hermione almost loses balance...","end")
-            call her_main("*Panting* What are you doing, [genie_name]...?","open","baseL", cheeks="blush")
-            call her_main("You don't need to be so rough with me....{image=textheart}","base","baseL", cheeks="blush")
+            call her_main("*Panting* What are you doing, [genie_name]...?", "open", "base", "base", "R", cheeks="blush")
+            call her_main("You don't need to be so rough with me....{image=textheart}", "base", "base", "base", "R", cheeks="blush")
 
             jump hg_pf_grope_breasts_T3_continue
 
@@ -473,7 +473,7 @@ label hg_pf_grope_breasts_T5_naked:
     m "Good girl..."
     call her_main("*Panting heavily*","grin","dead")
     m "Do you enjoy this?"
-    call her_main("You are hurting me, [genie_name]...","shock","baseL", cheeks="blush", tears="soft")
+    call her_main("You are hurting me, [genie_name]...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "But do you enjoy it?"
 
     if her_whoring < 18:
@@ -489,28 +489,28 @@ label hg_pf_grope_breasts_T5_naked:
     call hide_blktone
 
     m "This will be all for today, [hermione_name]..."
-    call her_main("Oh...?","shock","baseL", cheeks="blush", tears="soft")
+    call her_main("Oh...?", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "What is it? You look disappointed."
     m "I will pay you of course..."
     call her_main("That's not it, [genie_name]...","angry","suspicious", cheeks="blush")
     call her_main("It's...","angry","suspicious", cheeks="blush")
 
     if daytime:
-        call her_main("It's just that I still have some time left before I have to leave for the classes and...","shock","baseL", cheeks="blush", tears="soft")
+        call her_main("It's just that I still have some time left before I have to leave for the classes and...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     else:
-        call her_main("It's not really that late yet, is it?","shock","baseL", cheeks="blush", tears="soft")
+        call her_main("It's not really that late yet, is it?", "shock", "base", "base", "R", cheeks="blush", tears="soft")
 
     call her_main("uhm...","angry","suspicious", cheeks="blush")
     call her_main("...................","angry","suspicious", cheeks="blush")
     m "You want me to hurt you some more, don't you?"
 
     if her_whoring < 18:
-        call her_main("I don't \"want to\"... ","shock","baseL", cheeks="blush", tears="soft")
+        call her_main("I don't \"want to\"... ", "shock", "base", "base", "R", cheeks="blush", tears="soft")
         call her_main("But if you insist [genie_name]...","silly","worried", cheeks="blush", tears="soft")
         m "Well, I do insist... apparently."
     else:
-        call her_main("Yes please, [genie_name]!","shock","baseL", cheeks="blush", tears="soft")
-        call her_main("I'll even let you do it for free...","shock","baseL", cheeks="blush", tears="soft")
+        call her_main("Yes please, [genie_name]!", "shock", "base", "base", "R", cheeks="blush", tears="soft")
+        call her_main("I'll even let you do it for free...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
         m "Well, in that case..."
 
     call her_main("Ah...","silly","worried", cheeks="blush", tears="soft")

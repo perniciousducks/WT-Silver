@@ -104,7 +104,7 @@ label hg_ps_cumslut_Scene_1:
     call her_main("How does that make it interesting?","disgust","glance")
     m "Because I'll let you choose where I cum."
     call nar(">You fell her hands tense around your cock.")
-    call her_main("You're letting me choose?","smile","baseL")
+    call her_main("You're letting me choose?", "smile", "base", "base", "R")
     m "Anywhere, as long as it's on you. It can be your shoes for all I care."
     call her_main("Ok...","base","squint")
     m "Well hurry up [hermione_name], classes will start soon."
@@ -614,7 +614,7 @@ label hg_ps_cumslut_complete_1:
     if cum_location == 1: #Cum under shirt
         $ aftersperm = True
         call her_main("...I did it, [genie_name].","base","squint",xpos="right",ypos="base")
-        call her_main("I kept your cum on me all day.","base","baseL")
+        call her_main("I kept your cum on me all day.", "base", "base", "base", "R")
 
         menu:
             "\"50 Points to gryffindor!\"":
@@ -707,7 +707,7 @@ label hg_ps_cumslut_complete_2:
         $ uni_sperm = True
 
         call her_main("...I did it, [genie_name].","base","squint",xpos="right",ypos="base")
-        call her_main("I kept your cum on me all day.","base","baseL")
+        call her_main("I kept your cum on me all day.", "base", "base", "base", "R")
 
         menu:
             "\"Good Work!\"":
@@ -810,7 +810,7 @@ label hg_ps_cumslut_complete_3:
                 $ sc34CG(1, 17, 7)
                 call her_main("It was actually quite frustrating [genie_name]...","annoyed","angryL")
                 m "frustrating?"
-                call her_main("yes! Having to spend the whole day smelling your delicous cum but not being able to taste any of it!","open","baseL")
+                call her_main("yes! Having to spend the whole day smelling your delicous cum but not being able to taste any of it!", "open", "base", "base", "R")
                 call her_main("It was like looking at a glass of water in the desert...","soft","ahegao")
                 m "did anyone else notice?"
                 call her_main("I couldn't say [genie_name]... I was too distracted by the smell...","angry","wink")
@@ -826,7 +826,7 @@ label hg_ps_cumslut_complete_3:
             "\"Good Work!\"":
                 call her_main("Thank you, [genie_name]. Is that everything?","soft","squintL")
                 m "yes [hermione_name], you can go clean up now."
-                call her_main("clean up?","open","baseL")
+                call her_main("clean up?", "open", "base", "base", "R")
                 m "Only if you want to..."
                 call her_main("thank you [genie_name]!","grin","ahegao")
             "\"Tell me about your day.\"":
@@ -841,7 +841,7 @@ label hg_ps_cumslut_complete_3:
                 call her_main("Of course, it made me even happier knowing that it makes you happy.","base","down")
                 m "that you did..."
                 call her_main("...{image=textheart}","grin","ahegao")
-                call her_main("thank you [genie_name]. well, goodnight.","open","baseL")
+                call her_main("thank you [genie_name]. well, goodnight.", "open", "base", "base", "R")
                 m "goodnight [hermione_name]."
     hide screen sccg
     with fade

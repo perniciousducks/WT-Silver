@@ -57,7 +57,7 @@ label hg_pf_grope:
         call her_main("..................","annoyed","worriedL")
         her "Thank you, [genie_name]..."
     elif her_tier <= 4:
-        call her_main("..................","base","baseL")
+        call her_main("..................", "base", "base", "base", "R")
         call her_main("Thank you, [genie_name]...", "soft", "base", "base", "mid")
     else:
         call her_main("..................","soft","ahegao")
@@ -307,7 +307,7 @@ label hg_pf_grope_T3_intro_E1:
 label hg_pf_grope_T3_intro_E2:
     m "[hermione_name]. Come here and join me..."
     g9 "I feel like playing with you a little."
-    call her_main("Yes, Sir...","soft","baseL")
+    call her_main("Yes, Sir...", "soft", "base", "base", "R")
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 

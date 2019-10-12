@@ -71,7 +71,7 @@ label hg_pr_kiss:
         call her_main("Sure, why not?", "base", "base", "base", "mid")
         m "Great."
         m "I want you to make out with another girl today."
-        call her_main("Alright.","soft","baseL")
+        call her_main("Alright.", "soft", "base", "base", "R")
         call her_main("I know a couple of girls who are hungry for attention and wouldn't mind putting on a little show.","smile","glance")
         m "Great. See you after your classes then."
 
@@ -245,7 +245,7 @@ label hg_pr_kiss_T2_E1:
     m "Well, don't just stand there. Give me the details."
     call her_main("Ehm, alright...", "open", "base", "base", "mid")
     her "The girl was from \"Ravenclaw\"..."
-    call her_main("I think she may have been an underclassman, but I did not ask...","soft","baseL")
+    call her_main("I think she may have been an underclassman, but I did not ask...", "soft", "base", "base", "R")
     her "We got to talking about boys..."
     call her_main("And she told me that she never kissed one...","open","closed")
     her "And that she is worried that she might be very bad at it..."
@@ -255,7 +255,7 @@ label hg_pr_kiss_T2_E1:
     call her_main("Making out...", "base", "base", "base", "mid")
     call her_main("She caught on real quick... I think she could be really good at it with some practice...", "open", "base", "base", "mid")
     call her_main("Also she was quite adorable...", "base", "base", "base", "mid")
-    call her_main("She kept calling me \"[hermione_name]\"...","smile","baseL")
+    call her_main("She kept calling me \"[hermione_name]\"...", "smile", "base", "base", "R")
     m "Hm..."
     m "I Don't recall sending you out with a task to confuse little kids, [hermione_name]."
     call her_main("\"Little kids\"? [genie_name], please...","smile","glance")
@@ -389,7 +389,7 @@ label hg_pr_kiss_T3_E1:
     call her_main("...a \"housist\", [genie_name]?","annoyed","annoyed")
     m "Well, you know... It's like \"sexist\" or \"ageist\"..."
     m "You just put an \"ist\" after something and it automatically becomes a bad thing..."
-    call her_main("\"housist\" is not an actual word, [genie_name]...","soft","baseL")
+    call her_main("\"housist\" is not an actual word, [genie_name]...", "soft", "base", "base", "R")
     m "It's not? Well, give it time..."
     call her_main(".............?","annoyed","annoyed")
     m "\"Housophobic\"...?"
@@ -446,7 +446,7 @@ label hg_pr_kiss_T3_E1:
     m "Home assignments... Classes..."
     m "Schoolgirls \"snowballing\" in the courtyard..."
     m "Well done, [hermione_name]."
-    call her_main("","grin","baseL")
+    call her_main("", "grin", "base", "base", "R")
 
     jump end_hg_pr_kiss
 
@@ -459,11 +459,11 @@ label hg_pr_kiss_T3_E2:
     m "[hermione_name], did you complete your task?"
     show screen blktone
     call her_main("I did, [genie_name].","open","closed")
-    call her_main("Only... ehm...","grin","baseL")
+    call her_main("Only... ehm...", "grin", "base", "base", "R")
     m "What is it?"
     call her_main("Well... I have this friend...", "base", "base", "base", "mid")
     her "Her name is Ginny Weasley..."
-    call her_main("And... uhm...","base","baseL", cheeks="blush")
+    call her_main("And... uhm...", "base", "base", "base", "R", cheeks="blush")
     her "I'm Not sure how to say this..."
     m "Just say it, [hermione_name]."
     call her_main("Well, we decided to skip the potions class together...", "open", "base", "base", "mid")
@@ -472,13 +472,13 @@ label hg_pr_kiss_T3_E2:
     her "And we got to talking about boys..."
     m "Naturally..."
     call play_music("playful_tension") # SEX THEME.
-    call her_main("And then I sort of kissed her...","open","baseL", cheeks="blush")
+    call her_main("And then I sort of kissed her...", "open", "base", "base", "R", cheeks="blush")
     call her_main("And Ginny returned my kiss with such passion...","base","glance")
     her "that we sort of ended up doing more than just kissing..."
     g9 "And afterwards you had a pillow fight in lingerie?"
     call her_main("Err... No...","open","squint", cheeks="blush")
     m "What did you do then?"
-    call her_main("I am not telling you, [genie_name].","base","baseL", cheeks="blush") # :)
+    call her_main("I am not telling you, [genie_name].", "base", "base", "base", "R", cheeks="blush") # :)
     her "You sent me out to kiss a girl..."
     her "And I did just that."
     call her_main("The rest shall remain private.","angry","wink")

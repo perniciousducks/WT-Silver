@@ -36,7 +36,7 @@ label hg_pf_admire_breasts:
     if her_tier <= 2:
         call her_main("..................","annoyed","worriedL", xpos="mid", ypos="base", trans="fade")
     elif her_tier <= 5:
-        call her_main("","base","baseL", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "base", "base", "base", "R", xpos="mid", ypos="base", trans="fade")
     else:
         call her_main("","base","ahegao", xpos="mid", ypos="base", trans="fade")
 
@@ -48,7 +48,7 @@ label hg_pf_admire_breasts:
 
     if her_tier <= 2:
         call her_main("..................","annoyed","worriedL")
-        call her_main("Thank you, [genie_name]...","open","baseL")
+        call her_main("Thank you, [genie_name]...", "open", "base", "base", "R")
     elif her_tier <= 5:
         call her_main("..................","annoyed","worriedL")
         call her_main("Thank you, [genie_name]...", "soft", "base", "base", "mid")
@@ -335,7 +335,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
                     $ her_mood = 0
 
                     call her_main(".................","annoyed","wide")
-                    call her_main("A hundred points...","annoyed","baseL")
+                    call her_main("A hundred points...", "annoyed", "base", "base", "R")
                     call her_main("So be it...","smile","happyCl")
 
                     pass

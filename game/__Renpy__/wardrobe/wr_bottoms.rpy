@@ -54,7 +54,7 @@ label equip_bottom:
             # if skirt_choice == "skirt_1":
                 # m "Would you wear your school skirt for me? The very long one."
                 # if her_whoring < 8:
-                    # call her_main("Of course, [genie_name].","soft","baseL")
+                    # call her_main("Of course, [genie_name].", "soft", "base", "base", "R")
                     # call her_main("Let me go and change real quick.", "base", "base", "base", "mid")
                 # elif her_whoring < 11:
                     # call her_main("Alright... sure, why not.","base","down")
@@ -85,7 +85,7 @@ label equip_bottom:
                         # call her_main("Sure, why not.","base","down")
                         # call her_main("Let me go and change real quick.", "base", "base", "base", "mid")
                     # elif her_whoring < 20:
-                        # call her_main("Of course, [genie_name].","soft","baseL")
+                        # call her_main("Of course, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me just change real quick.","base","glance")
                     # else: #20+
                         # call her_main("...that old thing?","annoyed","angryL")
@@ -109,12 +109,12 @@ label equip_bottom:
                         # call her_main("Alright... sure, why not.","base","down")
                         # call her_main("Let me go and change real quick.", "base", "base", "base", "mid")
                     # elif her_whoring < 20:
-                        # call her_main("Of course, [genie_name].","soft","baseL")
+                        # call her_main("Of course, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me go and change real quick.","base","glance")
                     # else: #20+
                         # call her_main("(...)","annoyed","annoyed")
                         # call her_main("(At least it is short enough...)","annoyed","ahegao")
-                        # call her_main("OK, [genie_name].","soft","baseL")
+                        # call her_main("OK, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me just change real quick.","base","glance")
                 # else:
                     # if her_whoring < 5:
@@ -133,12 +133,12 @@ label equip_bottom:
                 # m "Would you wear your school skirt for me? But make it a bit shorter would you."
                 # if her_whoring >= 14:
                     # if her_whoring < 20:
-                        # call her_main("Sure, why not.","soft","baseL")
+                        # call her_main("Sure, why not.", "soft", "base", "base", "R")
                         # call her_main("Let me change it real quick.","base","glance")
                     # else: #20+
                         # call her_main("(...)","annoyed","annoyed")
                         # call her_main("(At least it is short enough...)","annoyed","ahegao")
-                        # call her_main("OK, [genie_name].","soft","baseL")
+                        # call her_main("OK, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me just change real quick.","base","glance")
                 # else:
                     # if her_whoring < 5:
@@ -157,11 +157,11 @@ label equip_bottom:
                 # m "Would you wear your school skirt for me? The shortest one you have."
                 # if her_whoring >= 17:
                     # if her_whoring < 23:
-                        # call her_main("Of course, [genie_name].","soft","baseL")
+                        # call her_main("Of course, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me just change real quick.","base","glance")
                     # else: #23+
                         # call her_main("(That old thing?)","annoyed","down")
-                        # call her_main("Can't I wear something a little shorter?","open","baseL",cheeks="blush")
+                        # call her_main("Can't I wear something a little shorter?", "open", "base", "base", "R",cheeks="blush")
                         # m "I don't think they make anything shorter."
                         # call her_main("I guess This will just have to do then...","open","ahegao_raised",cheeks="blush")
                         # call her_main("Let me go change...","base","ahegao_raised",cheeks="blush")
@@ -183,7 +183,7 @@ label equip_bottom:
                 # m "Would you wear your school skirt for me? But open up the front a bit."
                 # if her_whoring >= 17:
                     # if her_whoring < 20:
-                        # call her_main("Of course, [genie_name].","soft","baseL")
+                        # call her_main("Of course, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me just change real quick.","base","glance")
                     # else: #20+
                         # call her_main("...that old thing?","annoyed","angryL")
@@ -252,12 +252,12 @@ label equip_bottom:
                         # call her_main("Alright... sure, why not.","base","down")
                         # call her_main("Let me go and change real quick.", "base", "base", "base", "mid")
                     # elif her_whoring < 20:
-                        # call her_main("Of course, [genie_name].","soft","baseL")
+                        # call her_main("Of course, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me go and change real quick.","base","glance")
                     # else: #20+
                         # call her_main("(...)","annoyed","annoyed")
                         # call her_main("(At least it is short enough...)","annoyed","ahegao")
-                        # call her_main("OK, [genie_name].","soft","baseL")
+                        # call her_main("OK, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me just change real quick.","base","glance")
                 # else:
                     # if her_whoring < 5:
@@ -281,12 +281,12 @@ label equip_bottom:
                 # m "Would you wear your school skirt for me? But make it a bit shorter would you. And pull it down a bit."
                 # if her_whoring >= 17:
                     # if her_whoring < 20:
-                        # call her_main("Of course, [genie_name].","soft","baseL")
+                        # call her_main("Of course, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me go and change real quick.","base","glance")
                     # else: #20+
                         # call her_main("(...)","annoyed","annoyed")
                         # call her_main("(At least it is short enough...)","annoyed","ahegao")
-                        # call her_main("OK, [genie_name].","soft","baseL")
+                        # call her_main("OK, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me just change real quick.","base","glance")
                 # else:
                     # if her_whoring < 5:
@@ -376,17 +376,17 @@ label equip_bottom:
                         # elif her_whoring < 20:
                             # call her_main("Fine, [genie_name].","soft","ahegao")
                             # call her_main("(How humiliating to wear this as a Gryffindor...)","disgust","narrow")
-                            # call her_main("Let me just change it.","soft","baseL")
+                            # call her_main("Let me just change it.", "soft", "base", "base", "R")
                         # else: #20+
                             # if skirt_choice in ["skirt_cheer_s","skirt_cheer_sexy_s"]:
                                 # call her_main("Of course I will wear it!","smile","angry")
                                 # call her_main("Gimme-Gimme--Gimme!!!","smile","happyCl")
-                                # call her_main("(I'm definitely going to root for them on the next game!)","soft","baseL",cheeks="blush")
+                                # call her_main("(I'm definitely going to root for them on the next game!)", "soft", "base", "base", "R",cheeks="blush")
                                 # call her_main("(If they are winning I won't have to wear this thing long anyway!)","base","glance")
                                 # call her_main("Whoooo, go Slytherin!","smile","happyCl")
                             # else:
                                 # call her_main("If I really have to...","annoyed","annoyed")
-                                # call her_main("Let me just change it.","soft","baseL")
+                                # call her_main("Let me just change it.", "soft", "base", "base", "R")
                     # else:
                         # if skirt_choice in ["skirt_cheer_s","skirt_cheer_sexy_s"]:
                             # call her_main("In green?","shock","wide")
@@ -411,7 +411,7 @@ label equip_bottom:
                     # m "Could you wear your cheerleader skirt for me?"
                     # if her_whoring >= 5:
                         # if her_whoring < 11:
-                            # call her_main("Of course, [genie_name]!","soft","baseL",cheeks="blush")
+                            # call her_main("Of course, [genie_name]!", "soft", "base", "base", "R",cheeks="blush")
                             # call her_main("Let me go change.", "base", "base", "base", "mid")
                         # else:
                             # call her_main("Alright, [genie_name]!", "soft", "base", "base", "mid")
@@ -420,7 +420,7 @@ label equip_bottom:
                         # call her_main("I don't know, [genie_name].","annoyed","down")
                         # call her_main("I'm not the cheerleader type!","angry","wink")
                         # call her_main("While I like the idea of supporting my house in Quidditch...","open","closed")
-                        # call her_main("My priority is to secure this years house cup instead!","open","baseL")
+                        # call her_main("My priority is to secure this years house cup instead!", "open", "base", "base", "R")
                         # call her_main("I have to refuse, [genie_name].", "soft", "base", "base", "mid")
                         # if cheats_active or game_difficulty <= 2:
                             # ">Try again at Whoring level 5."
@@ -446,7 +446,7 @@ label equip_bottom:
                         # call her_main("Fine, [genie_name]. If I have to.","open","closed")
                         # call her_main("(Just hope those Slytherins will stop calling me mudblood because of this...)","annoyed","angryL")
                     # elif her_whoring < 11:
-                        # call her_main("Sure, [genie_name].","soft","baseL")
+                        # call her_main("Sure, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me go change.", "base", "base", "base", "mid")
                     # else:
                         # call her_main("But they are so long, [genie_name]!","annoyed","ahegao")
@@ -462,17 +462,17 @@ label equip_bottom:
                 # m "Could you wear those trousers for me?"
                 # if her_whoring >= 5:
                     # if her_whoring < 11:
-                        # call her_main("Sure, [genie_name].","soft","baseL")
+                        # call her_main("Sure, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me go change.", "base", "base", "base", "mid")
                     # else: #20+
-                        # call her_main("Alright, [genie_name].","soft","baseL")
+                        # call her_main("Alright, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("(They are sooo tight,... I can barely even fit my ass into them...)","soft","ahegao")
                         # call her_main("Let me put them on for you.","base","glance")
                 # else:
-                    # call her_main("I'm sorry, [genie_name].","soft","baseL")
+                    # call her_main("I'm sorry, [genie_name].", "soft", "base", "base", "R")
                     # call her_main("But I don't think I should wear trousers like those on school grounds...","open","closed")
                     # call her_main("(They look really nice though...)","base","down")
-                    # call her_main("(Maybe next time...)","base","baseL")
+                    # call her_main("(Maybe next time...)", "base", "base", "base", "R")
                     # call her_main("I have to refuse.", "soft", "base", "base", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 5."
@@ -488,7 +488,7 @@ label equip_bottom:
                         # call her_main("Alright, [genie_name].","smile","happyCl")
                         # call her_main("Let me just change it.","base","glance")
                     # else: #20+
-                        # call her_main("Alright, [genie_name].","soft","baseL")
+                        # call her_main("Alright, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("I bet you love how my ass looks in those.","smile","glance")
                         # g9 "You bet I do!"
                         # call her_main("Glad to hear that, [genie_name].","base","glance")
@@ -498,10 +498,10 @@ label equip_bottom:
                         # call her_main("I will not wear trousers that short here in school!","angry","worried")
                         # call her_main("(What is he thinking?!...)","annoyed","angryL")
                     # else:
-                        # call her_main("I'm sorry, [genie_name].","soft","baseL")
+                        # call her_main("I'm sorry, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("But I don't think I should wear trousers like those on school grounds...","open","closed")
                         # call her_main("(They look really nice though...)","base","down")
-                        # call her_main("(Maybe next time...)","base","baseL")
+                        # call her_main("(Maybe next time...)", "base", "base", "base", "R")
                         # call her_main("I have to refuse.", "soft", "base", "base", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 17."
@@ -517,7 +517,7 @@ label equip_bottom:
                         # call her_main("Alright, [genie_name].","smile","happyCl")
                         # call her_main("Let me just change it.","base","glance")
                     # else:
-                        # call her_main("Alright, [genie_name].","soft","baseL")
+                        # call her_main("Alright, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("I bet you love how my ass looks in those.","smile","glance")
                         # g9 "You bet I do!"
                         # call her_main("Glad to hear that, [genie_name].","base","glance")
@@ -540,10 +540,10 @@ label equip_bottom:
                         # call her_main("But I will not wear trousers that short on school grounds!","angry","worried")
                         # call her_main("(What is he thinking?!...)","annoyed","angryL")
                     # else:
-                        # call her_main("I'm sorry, [genie_name].","soft","baseL")
+                        # call her_main("I'm sorry, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("But I don't think I should wear trousers like those on school grounds...","open","closed")
                         # call her_main("(They look really nice though...)","base","down")
-                        # call her_main("(Maybe next time...)","base","baseL")
+                        # call her_main("(Maybe next time...)", "base", "base", "base", "R")
                         # call her_main("I have to refuse.", "soft", "base", "base", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 17."

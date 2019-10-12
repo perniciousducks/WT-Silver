@@ -186,7 +186,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
     hide screen hermione_main
     call u_play_ani
     her "*Slurp!* *Gobble!* *Slurp!*"
-    call her_main("","grin","baseL")
+    call her_main("", "grin", "base", "base", "R")
     call u_pause_ani
     her "With no way to relieve myself."
     her "I tried everything."
@@ -401,7 +401,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             call her_main("What's wrong with me [genie_name]?","silly","ahegao")
             hide screen hermione_main
             m "A lot of things [hermione_name], considering you just ate my cum off the ground."
-            call her_main("I can't stop cumming...","shock","baseL",cheeks="blush",tears="soft")
+            call her_main("I can't stop cumming...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             hide screen hermione_main
             call nar(">Hermione loses conciousness.")
 
@@ -727,7 +727,7 @@ label potion_scene_3_3_1: #Hypno potion
         g9"!!!"
         "-You look amazing!-":
             call her_main("Thank youuuuu!!!{image=textheart}{image=textheart}{image=textheart}","grin","ahegao")
-            call her_main("Aaaaanyway...","open","baseL")
+            call her_main("Aaaaanyway...", "open", "base", "base", "R")
             call her_main("Is there anything you want from me mistah... I'll do anything!{image=textheart}","soft","glance")
         "-Where is your badge, cumslut?!-" if cum_badge_ITEM.unlocked:
             call her_main("Oh no I forgot that!","soft","wide")
@@ -769,7 +769,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("But I'm already happy, silly!","base","happyCl")
     m "Even happier."
     call her_main("Even happier? {size=+10}YAY!{/size}","smile","happyCl",emote="06")
-    call her_main("So how am I going to be happier? Am I going to get naked?","grin","baseL")
+    call her_main("So how am I going to be happier? Am I going to get naked?", "grin", "base", "base", "R")
     m "That'd be a good start."
     call her_main("{image=textheart}AAAAAAWWWEEESOOOOOOOOMMME!{image=textheart}","grin","ahegao")
 

@@ -146,7 +146,7 @@ label hg_pf_strip_T2_fingering:
             call her_main("......","soft","squintL")
             call set_her_action("lift_breasts")
 
-            call her_main("ah...{image=textheart}","open","baseL")
+            call her_main("ah...{image=textheart}", "open", "base", "base", "R")
             m "There... Isn't that better?"
             $ hermione_dribble = True
             call her_main("Ah... y-yes...{image=textheart}","grin","ahegao")
@@ -178,7 +178,7 @@ label hg_pf_strip_T2_fingering:
             call set_her_action("lift_breasts")
 
             call her_main("Maybe....","open_tongue","ahegao_raised", cheeks="blush")
-            call her_main("I'm not sure...","open","baseL", cheeks="blush")
+            call her_main("I'm not sure...", "open", "base", "base", "R", cheeks="blush")
             call set_her_action("covering_top")
 
             call her_main("{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised", cheeks="blush")
@@ -194,12 +194,12 @@ label hg_pf_strip_T2_fingering:
             call her_main("It's not {size=-5}slutty...{/size}","annoyed","angryL", cheeks="blush")
             m "Are you sure? Because from where I'm sitting it looks nice and wet."
             call her_main("Ah...{image=textheart}","base","ahegao_raised", cheeks="blush")
-            call her_main("It's just sweat, [genie_name]...","open","baseL", cheeks="blush")
+            call her_main("It's just sweat, [genie_name]...", "open", "base", "base", "R", cheeks="blush")
             m "Whatever you say..."
             call her_main("...............","base","ahegao_raised", cheeks="blush")
             m "{size=-5}Slut.{/size}"
             call her_main("{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised", cheeks="blush")
-            call her_main("Sir... please...","open","baseL", cheeks="blush")
+            call her_main("Sir... please...", "open", "base", "base", "R", cheeks="blush")
             call set_her_action("pinch")
 
             call nar(">Hermione starts gently fingering herself.")
@@ -213,13 +213,13 @@ label hg_pf_strip_T2_fingering:
             call her_main("Mmmm...{image=textheart}","scream","worriedCl", cheeks="blush")
 
 
-    call her_main("Ah...","shock","baseL", cheeks="blush", tears="soft")
+    call her_main("Ah...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "almost there [hermione_name]?"
     call her_main("a-almost...","clench","worried", cheeks="blush", tears="soft")
     call her_main("I just need a bit longer...")
     m "well you better hurry..."
     call her_main("Ah... i know, [genie_name].","mad","worriedCl", tears="soft_blink")
-    call her_main("...........","shock","baseL", cheeks="blush", tears="soft")
+    call her_main("...........", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "is everything alright?"
     call her_main("................","shock","down_raised", cheeks="blush", tears="crying")
     m "Why are you being so quiet [hermione_name]?"
@@ -314,7 +314,7 @@ label hg_pf_strip_T3_fingering:
     call her_main(".............","soft","ahegao")
     call nar(">Hermione takes a minute to collect herself.")
     m "You feeling alright?"
-    call her_main("Yes, [genie_name]... I just need a little longer...","shock","baseL", cheeks="blush", tears="soft")
+    call her_main("Yes, [genie_name]... I just need a little longer...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "take your time."
     call her_main("ah... {image=textheart}","silly","worried", cheeks="blush", tears="soft")
 
@@ -329,12 +329,12 @@ label hg_pf_strip_T4_fingering:
     call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "You don't mind pleasuring yourself in front of me, do you?"
     if her_whoring <= 16:
-        call her_main("As long as I am being paid...","grin","baseL")
+        call her_main("As long as I am being paid...", "grin", "base", "base", "R")
         m "That's the spirit!"
     else:
-        call her_main("I mean I have done it once today already...","grin","baseL")
+        call her_main("I mean I have done it once today already...", "grin", "base", "base", "R")
         m "Once more for good luck then!"
-        call her_main("If you insist...{image=textheart}","open","baseL", cheeks="blush")
+        call her_main("If you insist...{image=textheart}", "open", "base", "base", "R", cheeks="blush")
 
     call her_main("...","base","glance")
     call set_her_action("covering")
@@ -344,7 +344,7 @@ label hg_pf_strip_T4_fingering:
     $ hg_masturbated.triggered() # .trigger = True, .counter += 1
 
     stop music fadeout 3.0
-    call her_main("Do you like it when I do it like this, [genie_name]?","grin","baseL")
+    call her_main("Do you like it when I do it like this, [genie_name]?", "grin", "base", "base", "R")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
 
     m "Yes, yes, like that..."
@@ -362,7 +362,7 @@ label hg_pf_strip_T4_fingering:
             m "[hermione_name]..."
             call her_main("[genie_name], please, it's too embarrassing...","disgust","down_raised", cheeks="blush")
             g4 "Well now I have to hear it."
-            call her_main("OK... but you have to promise not to tell anyone!","open","baseL", cheeks="blush")
+            call her_main("OK... but you have to promise not to tell anyone!", "open", "base", "base", "R", cheeks="blush")
             m "Witcher's honour."
             call her_main("......","annoyed","annoyed")
             m "[hermione_name]..."
@@ -415,14 +415,14 @@ label hg_pf_strip_T4_fingering:
 
         "\"Play with your tits some more!\"":
             call her_main("Hm?","soft","ahegao")
-            call her_main("alright... if you insist...","open","baseL", cheeks="blush")
+            call her_main("alright... if you insist...", "open", "base", "base", "R", cheeks="blush")
             call set_her_action("pinch")
 
             call her_main("ah...{image=textheart}","angry","wink")
             m "Now lift them up."
             call her_main("[genie_name]...","open","squint", cheeks="blush")
             m "do it, [hermione_name]."
-            call her_main("...","open","baseL", cheeks="blush")
+            call her_main("...", "open", "base", "base", "R", cheeks="blush")
             call set_her_action("lift_breasts_naked")
 
             call her_main("Mmmm...","grin","ahegao_mad", cheeks="blush")
@@ -431,7 +431,7 @@ label hg_pf_strip_T4_fingering:
             call her_main("ah...","silly","dead")
             m "So do you like playing with those tits of yours, [hermione_name]?"
             call her_main("I do, [genie_name]... ah...{image=textheart}","soft","ahegao")
-            call her_main("I don't know why...","base","baseL", cheeks="blush")
+            call her_main("I don't know why...", "base", "base", "base", "R", cheeks="blush")
             call set_her_action("pinch")
 
             call her_main("But I love it...{image=textheart}{image=textheart}","base","down")
@@ -490,7 +490,7 @@ label hg_pf_strip_T4_fingering:
             m "Don't worry [hermione_name], You can keep playing with yourself."
             m "This is just to hurry things along."
             call her_main("Ah...{image=textheart} Well, as long as it's just to make this end faster...","open","ahegao_raised", cheeks="blush")
-            call her_main("I suppose I can... ah{image=textheart} allow it...","base","baseL", cheeks="blush")
+            call her_main("I suppose I can... ah{image=textheart} allow it...", "base", "base", "base", "R", cheeks="blush")
             call nar(">You give her tits a couple of firm squeezes...")
             m "Just admit that you love it."
             call her_main("Ah... fine...{image=textheart}","open","worriedCl", cheeks="blush")
@@ -506,7 +506,7 @@ label hg_pf_strip_T4_fingering:
             m "Mmmm"
             call nar(">You keep on massaging the girl's breasts...")
             call her_main(".......")
-            call her_main("[genie_name]... I know it's greedy of me...","base","baseL", cheeks="blush")
+            call her_main("[genie_name]... I know it's greedy of me...", "base", "base", "base", "R", cheeks="blush")
             call her_main("ah...{image=textheart}","base","down")
             call her_main("but could you touch me... down there...","open","squint", cheeks="blush")
             m "What's was that [hermione_name]? You'll have to speak up."

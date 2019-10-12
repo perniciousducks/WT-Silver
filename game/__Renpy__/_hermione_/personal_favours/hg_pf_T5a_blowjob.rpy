@@ -54,7 +54,7 @@ label hg_pf_blowjob:
     if mouth_full_of_cum:
         call her_main("...","full_cum","ahegao", cheeks="blush", tears="mascara")
     else:
-        call her_main("Thank you, [genie_name]...","soft","baseL")
+        call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R")
 
     # Hermione leaves
     call her_walk(xpos="door", ypos="base", speed=2.5)
@@ -260,7 +260,7 @@ label hg_pf_blowjob_T2_intro_E1:
     m "Tell me, [hermione_name]..."
     g9 "Have you been behaving yourself lately?"
     call her_main("Me? Of course, [genie_name].", "open", "base", "base", "mid")
-    call her_main("I'm always trying to behave my best at school-","open","baseL")
+    call her_main("I'm always trying to behave my best at school-", "open", "base", "base", "R")
 
     call her_main("Oh...{w} I mean... No, Sir!","soft","ahegao")
     call play_music("playful_tension") # SEX THEME.
@@ -447,7 +447,7 @@ label hg_pf_blowjob_1:
             call her_main("*Slurp--")
 
             call hg_chibi_transition("bj_pause")
-            call her_main("What can I say that you don't already know, [genie_name]?","soft","baseL")
+            call her_main("What can I say that you don't already know, [genie_name]?", "soft", "base", "base", "R")
             m "Yes... Ehm... I know everything of course."
             m "But I want to see how much you know."
             m "To test your knowledge on the subject."

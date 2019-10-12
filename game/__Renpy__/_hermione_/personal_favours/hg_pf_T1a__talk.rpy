@@ -36,7 +36,7 @@ label hg_pf_talk:
         m "[current_payout] points to \"Gryffindor\", [hermione_name]. Well done."
         her "Oh, don't worry about the points, [genie_name]. We were just having a nice talk."
         m "Really? What about \"Gryffindor\" winning the cup?"
-        call her_main("It's only [current_payout] points...","soft","baseL")
+        call her_main("It's only [current_payout] points...", "soft", "base", "base", "R")
         m "If you say so."
 
     if hg_pf_talk.counter == 1: #First time.
@@ -135,7 +135,7 @@ label hg_pf_talk_T1: # Call label
 
     call her_main("Come to think of it, I don't feel like talking about it anymore...","annoyed","down")
     m "Alright, what else has happened lately?"
-    call her_main("Em... Well, I'm doing pretty well at herbology...","annoyed","baseL")
+    call her_main("Em... Well, I'm doing pretty well at herbology...", "annoyed", "base", "base", "R")
     call her_main("I mean, I always score the top marks, but I have been studying really hard anyway...","open","closed")
     call her_main("And now I sort of feel like sometimes I know more than professor Sprout herself...", "base", "base", "base", "mid")
 
@@ -155,7 +155,7 @@ label hg_pf_talk_T1: # Call label
         m ".................."
 
     call her_main("Oh, and my \"Men's Rights Movement\" group is gaining popularity...", "open", "base", "base", "mid")
-    call her_main("I'm very happy about that...","smile","baseL")
+    call her_main("I'm very happy about that...", "smile", "base", "base", "R")
     call her_main("I think, given time, we will be able to make a real difference...","open","closed")
     call her_main("It is so invigorating to know that you are doing the right thing!", "base", "base", "base", "mid")
     call her_main("Wouldn't you agree, professor?", "base", "base", "base", "mid")
@@ -201,7 +201,7 @@ label hg_pf_talk_T2_E1:
         call her_main("Another talk, [hermione_name]?", "soft", "base", "base", "mid")
         call her_main("(I hope he doesn't do \"that\" again...)","disgust","down_raised")
     else:
-        call her_main("Of course, Sir.","soft","baseL")
+        call her_main("Of course, Sir.", "soft", "base", "base", "R")
 
     call hg_pf_talk_T2
 
@@ -212,7 +212,7 @@ label hg_pf_talk_T2:
     call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     call her_main("My life has been quite uneventful lately, to be honest...","annoyed","angryL")
-    call her_main("Hm...","annoyed","baseL")
+    call her_main("Hm...", "annoyed", "base", "base", "R")
     call her_main("There is a fierce competition going on between the \"Slytherin\" and the \"Gryffindor\" house.","open","closed")
     call her_main("To be honest, [genie_name], there should be none...","open","angryL")
     call her_main("\"Gryffindor\" would have been in the lead if not for those \"Slytherin\" harlots...","annoyed","angry")
@@ -264,8 +264,8 @@ label hg_pf_talk_T2:
         m "{size=-4}(Yes... This is good stuff, go on!){/size}"
         call her_main("And this other girl, she sucked off a teacher!","annoyed","worriedL")
         m "{size=-4}(Yes! Yes!){/size}"
-        call her_main("And another girl let a teacher cum in her mouth...","smile","baseL")
-        call her_main("And she swallowed it all and loved it!","soft","baseL")
+        call her_main("And another girl let a teacher cum in her mouth...", "smile", "base", "base", "R")
+        call her_main("And she swallowed it all and loved it!", "soft", "base", "base", "R")
         m "{size=-4}(Wait... Is she making this up?){/size}"
         call her_main("I'm a nasty girl too, you know...","smile","glance")
         g4 "What?!"
@@ -312,7 +312,7 @@ label hg_pf_talk_T2:
         call her_main("We need to put an end to this behaviour, [genie_name]!","open","closed")
         m "Yeah, sure..."
         call her_main("So you agree with me then?","base","glance")
-        call her_main("I think we need to implement a new penalty system to punish girls who are known to sell favours...","open","baseL")
+        call her_main("I think we need to implement a new penalty system to punish girls who are known to sell favours...", "open", "base", "base", "R")
         m "(All I heard was \"punish girls\"...)"
         call her_main("This will also help the boys in our school to feel less discriminated against!","open","closed")
         m "The boys?"
@@ -407,7 +407,7 @@ label hg_pf_talk_T3:
     call her_main("Well...","open","closed")
     her "Today started off fairly normal..."
     call her_main("We had muggle studies.", "base", "base", "base", "mid")
-    call her_main("Professor Burbage babbled on about things she doesn't understand as usual.","open","baseL")
+    call her_main("Professor Burbage babbled on about things she doesn't understand as usual.", "open", "base", "base", "R")
     call her_main("As I'm a muggle born I've been considering dropping the subject. It's a waste of time.", "base", "base", "base", "mid")
     call her_main("Although since I failed that test I feel like I need all the extra points I can get...","open","down")
     call her_main("Her views on muggle and wizarding relations and the fact that we're not that different is also quite refreshing...","base","happy")
@@ -427,7 +427,7 @@ label hg_pf_talk_T3:
     else:
         m "Maybe I should have a look at her collection myself."
     call her_main("There's obviously nothing that stands out as odd to me in any way.", "open", "base", "base", "mid", cheeks="blush")
-    call her_main("But since most of the Slytherins are pure-blood they were handling her items with little to no care.","mad","baseL")
+    call her_main("But since most of the Slytherins are pure-blood they were handling her items with little to no care.", "mad", "base", "base", "R")
     call her_main("So when they weren't silently insulting her about her views they were constantly making suggestive remarks about the objects asking where she'd insert that one...","annoyed","worriedL")
     call her_main("She's quite oblivious to it most of the time but the constant giggling from the Slytherin girls is very distracting and annoying.","open","down", cheeks="blush")
     call her_main("It didn't help when they discovered what professor Burbage actually believed to be a back massager...","angry","happyCl", cheeks="blush")
@@ -567,10 +567,10 @@ label hg_pf_talk_tonks_T3_intro_E1:
     m "She was the one that suggested you try selling some favours yourself, was it not?"
     call her_main("Well...","disgust","down_raised")
     m "I think it could be quite nice to have a little conversation - all of us together."
-    call her_main("Just a conversation then?","open","baseL")
+    call her_main("Just a conversation then?", "open", "base", "base", "R")
     m "Yes, just a conversation..."
     m "And you'd be awarded points of course."
-    call her_main("...","annoyed","baseL")
+    call her_main("...", "annoyed", "base", "base", "R")
     call her_main("Would I be getting any extra points for this?", "open", "base", "base", "mid")
     m "Well, that will be up to Miss Tonks, [hermione_name]."
     call her_main("Okay...", "base", "base", "base", "mid")
@@ -639,7 +639,7 @@ label hg_pf_talk_tonks:
     m "That you most kindly brought to Miss Tonks' attention."
     call her_main("Oh, those...","open","down")
     m "Unless you've suddenly changed your mind on that sort of thing?"
-    call her_main("...","normal","baseL")
+    call her_main("...", "normal", "base", "base", "R")
     call her_main("No, I'll talk about it - if you like...","open","down_raised", cheeks="blush")
     call her_main("", "normal", "base", "base", "mid", cheeks="blush")
     call ton_main("...","horny","base","base","mid", hair="horny")
@@ -672,8 +672,8 @@ label hg_pf_talk_tonks:
             call ton_main("In the middle of class?","angry","wide","wide","wide")
             call her_main("Yes...","disgust","down", cheeks="blush")
             call ton_main("Oh my...","base","base","sad","mid", hair="horny")
-            call her_main("She was just sitting on his lap while he taught from his desk...","open","baseL", cheeks="blush")
-            call her_main("But we could all see her moving her hips!","annoyed","baseL", cheeks="blush")
+            call her_main("She was just sitting on his lap while he taught from his desk...", "open", "base", "base", "R", cheeks="blush")
+            call her_main("But we could all see her moving her hips!", "annoyed", "base", "base", "R", cheeks="blush")
             call ton_main("Interesting...","horny","base","angry","mid")
             call ton_main("Any other incidents, Miss Granger?","open","base","raised","L")
             call her_main("More than I could count!","open","angryCl")
@@ -681,7 +681,7 @@ label hg_pf_talk_tonks:
             call her_main("I'm almost certain one of the girls wasn't wearing any underwear in class - which is completely unhygienic.","angry","concerned")
             if not hermione_wear_panties:
                 m "(Is she even wearing any herself right now?...)"
-            call her_main("It was if a snail had dragged themselves across one of the seats.","annoyed","baseL", cheeks="blush")
+            call her_main("It was if a snail had dragged themselves across one of the seats.", "annoyed", "base", "base", "R", cheeks="blush")
             call her_main("I had to insist on staying after class - and I spent a good 10 minutes scourgifying everything.","disgust","down", cheeks="blush")
             call ton_main("Why bother, the elves would've done it anyway.","open","base","base","R")
             call her_main("About that-{w=0.6}{nw}","open","frown")
@@ -769,7 +769,7 @@ label hg_pf_talk_tonks:
             call ton_main("After all, it's thanks to you that the ministry sent me here.","base","base","base","L")
             call her_main("I guess...","disgust","down_raised", cheeks="blush")
             call her_main("I assure you that I was actually against the practice - during the time of sending the letter...","annoyed","down", cheeks="blush")
-            call her_main("At least, until we had our talk about it, Professor.","soft","baseL", cheeks="blush")
+            call her_main("At least, until we had our talk about it, Professor.", "soft", "base", "base", "R", cheeks="blush")
             if masturbating:
                 m "(And we've only just started...)"
             call her_main("To help my house catch up in points. Doing it to help Gryffindor...","soft","down", cheeks="blush")
@@ -812,7 +812,7 @@ label hg_pf_talk_tonks:
         m "..."
     call ton_main("Hold on...","open","closed","base","mid")
     call ton_main("That doesn't explain as to why {i}you{/i} decided to contribute to this problem - and do favours for your teachers as well.","open","base","raised","L")
-    call her_main("Well...","disgust","baseL")
+    call her_main("Well...", "disgust", "base", "base", "R")
     call ton_main("There is no need for you to keep up an act - if you changed your mind on it.","base","base","base","mid")
     call ton_main("You can tell us. I most certainly won't judge you...","horny","base","base","L", cheeks="blush", hair="horny")
     call her_main("I just...{w=0.6} Sometimes \"Gryffindor\" is just so far behind in points...","soft","down_raised")
@@ -823,7 +823,7 @@ label hg_pf_talk_tonks:
         call her_main("*Hmpf*...","annoyed","angryL", cheeks="blush")
     call ton_main("And I suppose you're against the idea of doing favours for another teacher?","horny","base","raised","L", hair="horny")
     call her_main("I...","angry","down", cheeks="blush")
-    call her_main("*Umm*... maybe I could?","soft","baseL", cheeks="blush")
+    call her_main("*Umm*... maybe I could?", "soft", "base", "base", "R", cheeks="blush")
     call her_main("I haven't actively considered it...","soft","glance", cheeks="blush")
     if masturbating:
         g4 "(Yes! You want to make out with your slutty teacher, don't you!)"
@@ -844,7 +844,7 @@ label hg_pf_talk_tonks:
         "\"Those pesky Slytherin Sluts!\"":
             call her_main("What else would you like to know?", "open", "base", "base", "mid")
             m "What other classes do you have here?"
-            call her_main("I'm not sure what you mean, Professor...","annoyed","baseL")
+            call her_main("I'm not sure what you mean, Professor...", "annoyed", "base", "base", "R")
             call ton_main("I think what your headmaster is getting at...","open","closed","base","mid")
             call ton_main("Is there any other... uncouth behaviour going on outside of the dungeons?","upset","base","angry","L", hair="horny")
             call ton_main("You've only mentioned potions and alchemy class thus far.","base","base","base","L")
@@ -921,7 +921,7 @@ label hg_pf_talk_tonks:
                 call ton_main("Ah, yes that was unfortunate...","upset","base","sad","R", hair="basic")
                 if masturbating:
                     g4 "(And hot...)"
-                call her_main("I take it that has been dealt with?","normal","baseL")
+                call her_main("I take it that has been dealt with?", "normal", "base", "base", "R")
                 call ton_main("Yes, there's no need for you to worry about her, miss Granger...","smile","happyCl","worried","mid", hair="basic")
                 call ton_main("She has been properly reprimanded - and both professor Dumbledore and I have taken it upon ourselves to work on her behaviour.","horny","base","base","mid", hair="horny")
                 #if first training done:
@@ -936,7 +936,7 @@ label hg_pf_talk_tonks:
             else:
                 call her_main("...","annoyed","down", cheeks="blush")
                 call ton_main("Miss Granger?","base","base","raised","L")
-                call her_main("*Uhm*...","annoyed","baseL", cheeks="blush")
+                call her_main("*Uhm*...", "annoyed", "base", "base", "R", cheeks="blush")
                 call her_main("Well, I could prick any of the girls in \"Slytherin\", really...","soft","angryL")
 
             call her_main("It is quite astonishing to what level those \"Slytherins\" would go - to get the teachers going...","annoyed","angry")
@@ -945,7 +945,7 @@ label hg_pf_talk_tonks:
             call her_main("No? Why would you assume that?","normal","wink")
             call ton_main("No reason... please continue...","open","base","raised","R", cheeks="blush", hair="horny")
             call ton_main("","base","base","raised","mid", hair="basic")
-            call her_main("Well, I do hope that Hagrid is above this favour trading business. He sure seems like it during my classes with him.","open","baseL")
+            call her_main("Well, I do hope that Hagrid is above this favour trading business. He sure seems like it during my classes with him.", "open", "base", "base", "R")
             call her_main("One of those \"Slytherin\" students was being quite rough with a Blast-ended skrewt... making it go off on purpose...","annoyed","down")
 
             if masturbating:
@@ -953,7 +953,7 @@ label hg_pf_talk_tonks:
                 g9 "(Yes I bet you'd love to do that with my cock.)"
                 call her_main("But once she got going - you could really see how it could just go off any minute...", "open", "base", "base", "mid")
                 g4 "(Yes, any minute now...)"
-                call her_main("I was just about to call her out on it, as it started shaking violently.","open","baseL")
+                call her_main("I was just about to call her out on it, as it started shaking violently.", "open", "base", "base", "R")
                 g4 "(Yes, any second now...)"
                 call ton_main("Then what happened?","open","base","raised","L", cheeks="blush")
                 call her_main("I could momentarily see the concerned look on her face, as the skrewt exploded right into it...","open","down", cheeks="blush")
@@ -985,13 +985,13 @@ label hg_pf_talk_tonks:
                 m "Fast...{w=0.4} blended...{w=0.6} fruits?"
                 call ton_main("Right...","open","closed","sad","mid", hair="basic")
                 call ton_main("Well, then... I think we're done here...","upset","base","sad","R")
-                call her_main("...","normal","baseL", cheeks="blush")
+                call her_main("...", "normal", "base", "base", "R", cheeks="blush")
                 if daytime:
                     call ton_main("I'll leave you two to it, have a good day, Miss Granger.","base","base","base","L")
-                    call her_main("Good day, professor Tonks.","soft","baseL")
+                    call her_main("Good day, professor Tonks.", "soft", "base", "base", "R")
                 else:
                     call ton_main("I'll leave you two to it, have a good night, Miss Granger.","base","base","base","L")
-                    call her_main("Good night, professor Tonks.","soft","baseL")
+                    call her_main("Good night, professor Tonks.", "soft", "base", "base", "R")
                 call ton_main("Professor...","horny","base","raised","mid")
                 m "Miss Tonks..."
 
@@ -999,7 +999,7 @@ label hg_pf_talk_tonks:
 
             else:
                 call ton_main("Oh no, those poor things!","upset","base","sad","mid", hair="basic")
-                call her_main("...","annoyed","baseL")
+                call her_main("...", "annoyed", "base", "base", "R")
                 call ton_main("That's not how you're supposed to care for a Blast-ended skrewt...","open","closed","angry","mid")
                 call ton_main("Wait, what is a Blast-ended skrewt actually?","upset","base","sad","L")
                 call her_main("It's some crossbreed that Hagrid made... I don't know exactly how he managed it...","annoyed","down")
@@ -1012,10 +1012,10 @@ label hg_pf_talk_tonks:
                 call ton_main("I'll leave you two to it...","base","base","base","mid")
                 if daytime:
                     call ton_main("Have a good day, Miss Granger.","base","base","base","L")
-                    call her_main("Good day, professor Tonks.","open","baseL")
+                    call her_main("Good day, professor Tonks.", "open", "base", "base", "R")
                 else:
                     call ton_main("Have a good night, Miss Granger.","base","base","base","L")
-                    call her_main("Good night, professor Tonks.","open","baseL")
+                    call her_main("Good night, professor Tonks.", "open", "base", "base", "R")
                 call ton_main("Professor...","horny","base","raised","mid")
                 m "Miss Tonks..."
 
@@ -1046,10 +1046,10 @@ label hg_pf_talk_tonks:
                     call ton_main("I'll leave you two to it...","base","base","base","mid")
                     if daytime:
                         call ton_main("Have a good day, Miss Granger.","base","base","base","L")
-                        call her_main("Good day, professor Tonks.","open","baseL")
+                        call her_main("Good day, professor Tonks.", "open", "base", "base", "R")
                     else:
                         call ton_main("Have a good night, Miss Granger.","base","base","base","L")
-                        call her_main("Good night, professor Tonks.","open","baseL")
+                        call her_main("Good night, professor Tonks.", "open", "base", "base", "R")
 
                     call ton_walk(action="leave", speed=2.5)
 
@@ -1069,7 +1069,7 @@ label hg_pf_talk_tonks:
                     if masturbating:
                         call gen_chibi("jerk_off_behind_desk")
                         m "(This should be good...)"
-                    call her_main("W-...What would you like to know about then?","open","baseL", cheeks="blush")
+                    call her_main("W-...What would you like to know about then?", "open", "base", "base", "R", cheeks="blush")
                     call ton_main("I'd be happy with anything you'd like to tell me...","base","base","base","L")
                     call her_main("Well... it's quite embarrassing.","disgust","down", cheeks="blush")
                     call ton_main("Yes?","horny","base","raised","L")
@@ -1108,7 +1108,7 @@ label hg_pf_talk_tonks:
                         call bld
                         g4 "{size=-5}*Argh!* YES!{/size}"
 
-                        call her_main("","annoyed","baseL")
+                        call her_main("", "annoyed", "base", "base", "R")
                         call ton_main("Seems like the headmaster enjoyed our little discussion...","horny","base","angry","mid", hair="horny")
                         call her_main("(.............)", "soft", "base", "base", "mid")
 
@@ -1134,7 +1134,7 @@ label hg_pf_talk_tonks:
                         call her_main("Maybe a bit too much even...","angry","glanceL", cheeks="blush")
                         call ton_main("That just means you did a great job, Miss Granger.","base","base","base","L")
                         call ton_main("Your house surely benefited even more from it.","horny","base","raised","L")
-                        call her_main("True...","soft","baseL", cheeks="blush")
+                        call her_main("True...", "soft", "base", "base", "R", cheeks="blush")
                         call ton_main("Well, I do believe we're done here...","open","closed","base","mid", hair="basic")
                         call ton_main("You've done a great, job Miss Granger.","open","base","base","L")
                         call ton_main("The \"Gryffindor\" house should be proud to have you.","base","base","base","mid")
@@ -1146,10 +1146,10 @@ label hg_pf_talk_tonks:
                     call ton_main("I'll leave you two to it...","base","base","base","mid", hair="basic")
                     if daytime:
                         call ton_main("Have a good day, Miss Granger.","base","base","base","L")
-                        call her_main("Good day, professor Tonks.","open","baseL")
+                        call her_main("Good day, professor Tonks.", "open", "base", "base", "R")
                     else:
                         call ton_main("Have a good night, Miss Granger.","base","base","base","L")
-                        call her_main("Good night, professor Tonks.","open","baseL")
+                        call her_main("Good night, professor Tonks.", "open", "base", "base", "R")
                     call ton_main("Professor...","horny","base","raised","mid")
                     m "Miss Tonks..."
 

@@ -80,7 +80,7 @@ label a_bad_time_to_disrobe_part_1:
     m "It's just an expression, tell me... did you complete your assignment?"
     call her_main("I did sir. I snuck into the boys dormitory using the cloak as you suggested.","soft","happyCl")
     m "Naked?"
-    call her_main("Naked..ish","disgust","baseL")
+    call her_main("Naked..ish", "disgust", "base", "base", "R")
     m "How can you be naked...ish?"
     call her_main("Well, I had my underwear on, I'd be cold otherwise", "base", "base", "base", "mid")
     m "Cold? You'd have the cloak on you..."
@@ -113,7 +113,7 @@ label a_bad_time_to_disrobe_part_1:
     hide screen blkfade
     with d3
 
-    call her_main("I see that you have the cloak ready for me sir.","base","baseL",xpos="right",ypos="base")
+    call her_main("I see that you have the cloak ready for me sir.", "base", "base", "base", "R",xpos="right",ypos="base")
     m "Indeed, I'm expecting better from you today girl."
     call her_main("I won't disappoint you sir!", "grin", "base", "base", "mid")
     m "I'll be the judge of that..."
@@ -197,7 +197,7 @@ label a_bad_time_to_disrobe_part_2:
     m "Good afternoon miss Granger."
     call her_main("Good afternoon professor, what can I do for you today?", "base", "base", "base", "mid",xpos="right",ypos="base")
     m "Glad you asked, I've got another task for you."
-    call her_main("And what task may that be professor.","soft","baseL")
+    call her_main("And what task may that be professor.", "soft", "base", "base", "R")
     m "Well miss Granger, I think somebody owes me a invisibility cloak."
     call her_main("Oh, do you want me to collect it from somebody?", "open", "base", "base", "mid")
     m "That somebody is you miss Granger..."
@@ -207,7 +207,7 @@ label a_bad_time_to_disrobe_part_2:
     m "Or have you forgotten already?"
     call her_main("{size=7}I've tried to.{/size}","upset","worriedL")
     m "Sorry?"
-    call her_main("I said, I do remember.","normal","baseL")
+    call her_main("I said, I do remember.", "normal", "base", "base", "R")
     m "Right, well. Good invisibility cloaks are pretty hard to come by..."
     m "\"I think...\""
     call her_main("No they're not... they're mass produced as far as I know.", "annoyed", "base", "base", "mid")

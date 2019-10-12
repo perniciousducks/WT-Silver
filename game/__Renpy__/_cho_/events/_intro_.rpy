@@ -174,7 +174,7 @@ label cho_intro_E1:
     call her_chibi("stand","570","base",flip=True)
 
     call cho_main("","annoyed","angry","angry","R", xpos="base", ypos="base")
-    call her_main("Cho,{w} How nice to see you here...","open","baseL", xpos="mid", ypos="base",flip=True)
+    call her_main("Cho,{w} How nice to see you here...", "open", "base", "base", "R", xpos="mid", ypos="base",flip=True)
     call her_main("And why are you here exactly?","angry","annoyed")
 
     call cho_main("Oh, you know...{w=0.5} Just having a discussion with our dear headmaster...", "smile", "base", "base", "L")
@@ -669,7 +669,7 @@ label cho_intro_E3:
         g4 "Two hundred? Are you nuts?"
         call her_main("And just points isn’t going to cut it...","open","closed")
         m "Then what else?"
-        call her_main("Uhm...","annoyed","baseL")
+        call her_main("Uhm...", "annoyed", "base", "base", "R")
         m "You’re testing my patience Miss Granger..."
         call her_main("Oh, I know!{p=0.5}I want a seat in the teacher stands during the Quidditch matches!","smile","happyCl")
         call her_main("Cho would be so jealous if she saw me sitting near the commentator and teachers...","grin","glance")
@@ -717,24 +717,24 @@ label cho_intro_E3:
     elif her_whoring < 21:
         call her_main("Oh... My \"Quidditch equality movement\"?", "soft", "base", "base", "mid")
         m "That's the one."
-        call her_main("It never really got off the ground...","open","baseL")
+        call her_main("It never really got off the ground...", "open", "base", "base", "R")
         call her_main("No pun intended...","base","closed")
         m "(...)"
         call her_main("To be honest, I don’t have that much time apart from my visits here and studying...","open","down")
-        call her_main("I might consider dropping it.","base","baseL")
+        call her_main("I might consider dropping it.", "base", "base", "base", "R")
         call her_main("Even though it would take away the immense pleasure of seeing Cho getting all worked up about it...", "grin", "base", "base", "mid")
         m "(...)"
         call her_main("There is something I'd like from you in return, [genie_name].{p=0.8}Or else I'll' just continue with it!","base","glance")
         m "Go on girl."
         m "Tell me what you want."
         m "What you really{w}, really want..."
-        call her_main("Very well, [genie_name].","soft","baseL")
+        call her_main("Very well, [genie_name].", "soft", "base", "base", "R")
         call her_main("I'll tell you what I want!","open","closed")
         call her_main("What I really, really want!","grin","glance")
         g9 "{size=-4}Nice!{/size}"
         call her_main("I’d like a seat in the teacher stands, during the Quidditch matches..","open","closed")
         m "Is that all?"
-        call her_main("Oh, and a hundred points for Gryffindor...","grin","baseL")
+        call her_main("Oh, and a hundred points for Gryffindor...", "grin", "base", "base", "R")
         m "(...)"
         m "I’d say fifty would be more appropriate in this instance..."
         call her_main("Sir, it took a lot of effort to gather all those records of past Quidditch matches, throughout the whole history of Quidditch.","open","closed")
@@ -758,7 +758,7 @@ label cho_intro_E3:
         m "I’m sure that could be arranged..."
         call her_main("Thank you, [genie_name].","base","glance")
 
-    call her_main("[genie_name], may I ask.{p=0.6}What exactly were you and Cho talking about when I entered your office?","open","baseL")
+    call her_main("[genie_name], may I ask.{p=0.6}What exactly were you and Cho talking about when I entered your office?", "open", "base", "base", "R")
     m "Oh. She just wanted my help with Quidditch."
     call her_main("Pffff-{p=0.4}Why doesn't it surprise me that she'd need your help with it.","grin","glanceL")
     call her_main("How else could she possibly win that stupid Quidditch cup...","soft","angryCl")
@@ -785,7 +785,7 @@ label cho_intro_E3:
     m "And that the \"Quidditch equality movement\" will be...{w}\n\"no more\"."
 
     if her_whoring < 18:
-        call her_main("Do I really have to do all that?","upset","baseL")
+        call her_main("Do I really have to do all that?", "upset", "base", "base", "R")
         m "If you want to keep on buying favours from me."
         call her_main("Ugh-{p=0.4}Very well, I guess...","soft","down")
     else:

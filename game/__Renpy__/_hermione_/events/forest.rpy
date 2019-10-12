@@ -31,7 +31,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     call her_main("[genie_name]! I, ugh, I wasn't doing anything bad, I swear!","open","wideL",xpos="right",ypos="base",trans="d5")
     m "..."
     call her_main("Ugh, fine! If you must know, I was out here gathering up some mastick resin.","upset","down")
-    call her_main("I know Students aren't {i}technically{/i} supposed to touch the stuff since it's normally just used to make belch powder...","annoyed","baseL")
+    call her_main("I know Students aren't {i}technically{/i} supposed to touch the stuff since it's normally just used to make belch powder...", "annoyed", "base", "base", "R")
     call her_main("But I'm using it in my research for a non addictive analgesic!","open","closed")
     m "Whatever..."
 
@@ -167,7 +167,7 @@ label forest_BJ_2:
     m "More late night gardening?"
     pause.1
     call her_main("{size=+10}[genie_name]!{/size}","shock","wide",xpos="right",ypos="base",trans="hpunch")
-    call her_main("Ugh... Don't startle me like that!","annoyed","baseL")
+    call her_main("Ugh... Don't startle me like that!", "annoyed", "base", "base", "R")
     call her_main("And yes, I've been collecting some mushroom samples.", "soft", "base", "base", "mid")
     m "Cool..."
     call her_main("So what are you doing out here?", "base", "base", "base", "mid")
@@ -175,7 +175,7 @@ label forest_BJ_2:
     m "Oh, you know me... Always looking to connect with my students..."
     call her_main("Mhmmm... So that's what you're down here for then? To {i}connect{/i}?","base","squint")
     m "Always..."
-    call her_main("Fine... Just let me take my robe off...","base","baseL")
+    call her_main("Fine... Just let me take my robe off...", "base", "base", "base", "R")
     show screen blkfade
     with d3
 
@@ -337,11 +337,11 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     with d3
 
     m "Aren't you usually out her to collect some forbidden plant, [hermione_name]?"
-    call her_main("Not always... Sometimes I just come out her to enjoy the cool air...","soft","baseL",xpos="right",ypos="base",trans="d5")
+    call her_main("Not always... Sometimes I just come out her to enjoy the cool air...", "soft", "base", "base", "R",xpos="right",ypos="base",trans="d5")
     m "I see..."
     m "So you're not waiting out here for your headmaster to arrive, just so you can suck his cock in public?"
     call her_main("What! o-of course not!","base","down")
-    call her_main("I'm just out here to admire the moon!","base","baseL")
+    call her_main("I'm just out here to admire the moon!", "base", "base", "base", "R")
     m "What moon?"
     ">Hermione frantically looks to the cloudy sky, unable to even glimpse the moon through the impenetrable greyness."
     call her_main("Oh... um...","open","squintL")
@@ -857,7 +857,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     call her_main("you mean she didn't see any of...","upset","annoyed")
     call her_main("(I got my hair all sticky for nothing...)","upset","down")
     m "So are you going to clean yourself up and get dressed?"
-    call her_main("I'll get dressed...","soft","baseL")
+    call her_main("I'll get dressed...", "soft", "base", "base", "R")
     call her_main("but If it's all the same to you, I might leave the cum on...","base","dead")
     m "Good girl..."
     show screen blkfade

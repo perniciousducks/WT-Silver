@@ -114,18 +114,18 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "No reason. Anything unusual happen today?"
         call her_main("Hmmmm, now that you mention it I suppose that boys in class were a little more forward than usual.","open","worriedL")
         m "How so?"
-        call her_main("Well nothing serious, just small stuff like calling me names, groping me.","soft","baseL")
+        call her_main("Well nothing serious, just small stuff like calling me names, groping me.", "soft", "base", "base", "R")
         m "Groping you? What on earth could have provoked them to do that?"
         call her_main("I don't know [genie_name]. I can't imagine any reason that I would be attracting attention today...", "base", "base", "base", "mid")
         m "You're getting off on this aren't you?"
-        call her_main("...","smile","baseL")
+        call her_main("...", "smile", "base", "base", "R")
         call her_main("I've never been so turned on in my life. Having all eyes on me. Having every boy imagine doing unspeakable things to me.","soft","ahegao")
         call her_main("Snape made me stand out the front of class after I talked back to him.","base","down")
         call her_main("I think that I orgasmed just from the looks people gave me.","grin","dead")
         m "Well done [hermione_name]. You're becoming quite the slut."
         call her_main("Thank you [genie_name]. Is that all?","base","glance")
         m "Yes, you can go now slut."
-        call her_main("{image=textheart}","smile","baseL")
+        call her_main("{image=textheart}", "smile", "base", "base", "R")
 
     call reset_her_transparency
     $ transparent_quest = False

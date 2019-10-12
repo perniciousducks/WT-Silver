@@ -26,7 +26,7 @@
                     # m "Five points for Gryffindor!"
                     # m "Was that good enough for you?"
                     # call her_main("...", "normal", "base", "base", "mid")
-                    # call her_main("Thank you, [genie_name].","soft","baseL")
+                    # call her_main("Thank you, [genie_name].", "soft", "base", "base", "R")
                     # m "Great, now I forgot what I wanted you to wear..."
                     # $ gryffindor += 5
                     # $ her_mood = 0
@@ -68,7 +68,7 @@
             # m "Will you wear it if I give Gryffindor some points?"
             # call her_main("...","annoyed","suspicious")
             # call her_main("Fifteen house points!", "open", "base", "base", "mid")
-            # call her_main("And maybe I will wear it.-- Only maybe!","open","baseL")
+            # call her_main("And maybe I will wear it.-- Only maybe!", "open", "base", "base", "R")
 
             # menu:
                 # "-Give her the points-":
@@ -76,7 +76,7 @@
                     # m "Fifteen points..."
                     # g4 "for Gryffindor!"
                     # m "Was that good enough for you?"
-                    # call her_main("(It's so easy to get points out of him!)","soft","baseL")
+                    # call her_main("(It's so easy to get points out of him!)", "soft", "base", "base", "R")
                     # call her_main("Thank you,[genie_name].","open","closed")
                     # m "No problem. Now put on... {w=0.9}what was it again?"
                     # $ gryffindor += 15

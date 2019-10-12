@@ -57,7 +57,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
             m "Well that's all for today, 20 points to Gryffindor."
             call her_main("That's all? You're not going to make me do something else?","shock","wide")
             m "Why would I, I asked you to drink a potion and you drank it. You're free to leave."
-            call her_main("Thank you [genie_name], I'll head back to my room.","smile","baseL")
+            call her_main("Thank you [genie_name], I'll head back to my room.", "smile", "base", "base", "R")
             m "Room? It's time for class [hermione_name]. What do you think Professor Snape will say once he hears that you skipped class?"
             call her_main("Well I can't be expected to go like this.","disgust","glance")
             m "Why not? Everything is covered."
@@ -375,7 +375,7 @@ label potion_scene_2_2: #ass expansion
             call her_main("Please, [genie_name]...","silly","ahegao")
             hide screen hermione_main
             m "Ughh, this feels so good, we might have to make this permanent."
-            call her_main("Permanent?","shock","baseL",cheeks="blush",tears="soft")
+            call her_main("Permanent?", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             hide screen hermione_main
             m "You wouldn't mind, would you?"
             m "Having me use your ass a sex-toy everyday."

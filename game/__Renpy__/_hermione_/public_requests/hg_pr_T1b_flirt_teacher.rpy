@@ -102,7 +102,7 @@ label hg_pr_flirt_teacher_T1_E1: # Flitwick
     call her_main("Y-yes...","open","worried")
     her "But [genie_name], I know for a fact that professor Flitwick is \"dirty\"!"
     her "Everyone knows that because of his height..."
-    call her_main("He sometimes... ehm...","soft","baseL")
+    call her_main("He sometimes... ehm...", "soft", "base", "base", "R")
     call her_main("He likes to look up girl's skirts, [genie_name]!","annoyed","worriedL")
     m "Don't we all?"
     call her_main("What?", "open", "base", "base", "mid")
@@ -143,15 +143,15 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
 
     call hg_pr_flirt_teacher_intro
 
-    call her_main("..................","soft","baseL")
+    call her_main("..................", "soft", "base", "base", "R")
     her "............................"
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]... I'm sorry... I just...","open","worried")
-    call her_main("............","soft","baseL")
+    call her_main("............", "soft", "base", "base", "R")
     m "Did you do what I asked you to do?"
     call her_main("I tried, [genie_name]. I really did...", "open", "base", "base", "mid")
     m "Who did you try to flirt with?"
-    call her_main(".........","soft","baseL")
+    call her_main(".........", "soft", "base", "base", "R")
     call her_main("Professor Snape, [genie_name].","annoyed","angryL")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     m "Severus? Interesting..."
@@ -258,13 +258,13 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("I had an amazing day, [genie_name]!","smile","happyCl", emote="06")
     m "Do tell, [hermione_name]..."
-    call her_main("I had a class with professor Lockhart today...","grin","baseL")
+    call her_main("I had a class with professor Lockhart today...", "grin", "base", "base", "R")
     her "[genie_name] Lockhart is so charming and smart and..."
     call her_main("And perfect...","base","ahegao_raised")
     m "Please spare me your schoolgirl crush, [hermione_name]."
     call her_main("[genie_name] Lockhart was even kind enough to give me his autograph...","smile","happyCl", emote="06")
     m "How kind of him indeed."
-    call her_main("Yes, I can't wait to show it to the girls!","grin","baseL")
+    call her_main("Yes, I can't wait to show it to the girls!", "grin", "base", "base", "R")
     m "Hm... Can I see it?"
     call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "The Autograph, [hermione_name]. Can I see it?"
@@ -336,7 +336,7 @@ label hg_pr_flirt_teacher_T2_E3: # Filch
     call her_main("Well, I spent quite some time by flirting with mr.Filch today.", "soft", "base", "base", "mid",xpos="right",ypos="base")
     call her_main("What a well read and exceptionally well mannered gentleman mr.Filch is.","open","closed")
     m "........"
-    call her_main("But I don't think anyone knows him like that...","soft","baseL")
+    call her_main("But I don't think anyone knows him like that...", "soft", "base", "base", "R")
     her "I don't think anyone knows mr.Filch like I do."
     call her_main("I feel like he really opened up to me, [genie_name].", "base", "base", "base", "mid")
     m "Right..."
@@ -444,9 +444,9 @@ label hg_pr_flirt_teacher_T3_E2: # Snape +CG
     call blkfade
 
     call her_main("Well, during classes today...", "open", "base", "base", "mid", ypos="head")
-    call her_main("I have been doing my best to attract professor Snape's attention...","open","baseL", ypos="head")
+    call her_main("I have been doing my best to attract professor Snape's attention...", "open", "base", "base", "R", ypos="head")
     call her_main("I have been giving him \"dreamy looks\"...","open","down", ypos="head")
-    call her_main("And I've been eyeing his crotch...","soft","baseL", ypos="head")
+    call her_main("And I've been eyeing his crotch...", "soft", "base", "base", "R", ypos="head")
     m "You..."
     m "Eyed his crotch?"
     call her_main("Yes... It's when you stare at a man's crotch and imagine that you are looking at something you want badly...","open","angryCl", ypos="head")
@@ -484,7 +484,7 @@ label hg_pr_flirt_teacher_T3_E3: # Lockhart
     call her_main("Or...","annoyed","angryL")
     her "I'm not sure..."
     call her_main("I used to adore him...","open","worried")
-    call her_main("But he...","soft","baseL")
+    call her_main("But he...", "soft", "base", "base", "R")
     her "He just..."
     call her_main("How is this possible?","mad","worriedCl", tears="soft_blink")
     her "I can't believe this..."
@@ -497,7 +497,7 @@ label hg_pr_flirt_teacher_T3_E3: # Lockhart
     g4 "What was it, [hermione_name]? Speak up!"
     call her_main("Huh?", "open", "base", "base", "mid")
     m "What did Professor Lockhart do to you?"
-    call her_main("Ehm... Nothing, [genie_name]...","soft","baseL")
+    call her_main("Ehm... Nothing, [genie_name]...", "soft", "base", "base", "R")
     m "Nothing?!"
     call her_main("Yes, I sort of cornered mr.Lockhart today...","open","worried")
     call her_main("And I also may have sort of made a pass at him...", "open", "base", "base", "mid")

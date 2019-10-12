@@ -34,7 +34,7 @@ label hg_pf_admire_panties:
 
     hide screen blkfade
     if her_tier <= 2:
-        call her_main("..................","annoyed","baseL", xpos="mid", ypos="base", trans="fade")
+        call her_main("..................", "annoyed", "base", "base", "R", xpos="mid", ypos="base", trans="fade")
     elif her_tier <= 5:
         call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     else:
@@ -217,7 +217,7 @@ label hg_pf_admire_panties_T2: # Call label
     menu:
         "\"You don't look too embarrassed...\"":
             call her_main("That's not true...","base","squint")
-            call her_main("But this is a small price to pay if the \"Gryffindors\" keep the cup this year.","base","baseL")
+            call her_main("But this is a small price to pay if the \"Gryffindors\" keep the cup this year.", "base", "base", "base", "R")
             her "I know everyone will be so happy..."
             call ctc
 
@@ -232,7 +232,7 @@ label hg_pf_admire_panties_T2: # Call label
         "-Keep looking into her eyes-":
             call her_main("..............................", "soft", "base", "base", "mid")
             her "...........................?"
-            call her_main("................................","grin","baseL")
+            call her_main("................................", "grin", "base", "base", "R")
             call her_main("[genie_name], please... You are embarrassing me.","grin","worriedCl",emote="05")
             call ctc
 
@@ -268,7 +268,7 @@ label hg_pf_admire_panties_T3_intro_E1:
     with d3
     pause.8
 
-    call her_main("..........................","base","baseL", cheeks="blush", ypos="head")
+    call her_main("..........................", "base", "base", "base", "R", cheeks="blush", ypos="head")
     g4 "!!?"
 
     show screen blktone
@@ -364,7 +364,7 @@ label hg_pf_admire_panties_T3_E1:
             pass
 
 
-    call her_main("I could put my panties back on for you, if you'd like that, Sir?","open","baseL")
+    call her_main("I could put my panties back on for you, if you'd like that, Sir?", "open", "base", "base", "R")
 
     menu:
         "\"Yes, put them back on!\"":
@@ -384,7 +384,7 @@ label hg_pf_admire_panties_T3_E1:
             call her_main("","base","glance")
             call ctc
 
-            call her_main("I hope you like them...","soft","baseL")
+            call her_main("I hope you like them...", "soft", "base", "base", "R")
 
         "\"No, keep them off!\"":
             call her_main("Of course, [genie_name].","soft","ahegao")
@@ -423,9 +423,9 @@ label hg_pf_admire_panties_T3_E2:
     # No Panties.
     if not hermione_wear_panties:
         g9 "Where are your panties, [hermione_name]?"
-        call her_main("I have them here in my pocket...","open","baseL")
-        call her_main("Most of the time I just leave them in the \"Gryffindor\" common room...","open","baseL")
-        call her_main("But I got them with me this time.","open","baseL")
+        call her_main("I have them here in my pocket...", "open", "base", "base", "R")
+        call her_main("Most of the time I just leave them in the \"Gryffindor\" common room...", "open", "base", "base", "R")
+        call her_main("But I got them with me this time.", "open", "base", "base", "R")
         call ctc
 
         call her_main("If you'd like, Sir, I could put my panties back on for you.","soft","glance")
@@ -448,7 +448,7 @@ label hg_pf_admire_panties_T3_E2:
                 call her_main("","base","glance")
                 call ctc
 
-                call her_main("I hope you like them...","soft","baseL")
+                call her_main("I hope you like them...", "soft", "base", "base", "R")
 
             "\"No, keep them off!\"":
                 call her_main("Of course, [genie_name].","soft","ahegao")
@@ -461,7 +461,7 @@ label hg_pf_admire_panties_T3_E2:
         m "Indeed I do, [hermione_name]..."
         call ctc
 
-        call her_main("I could take them off, if you'd like that, [genie_name].","open","baseL")
+        call her_main("I could take them off, if you'd like that, [genie_name].", "open", "base", "base", "R")
 
         menu:
             "\"Yes, Take them off!\"":

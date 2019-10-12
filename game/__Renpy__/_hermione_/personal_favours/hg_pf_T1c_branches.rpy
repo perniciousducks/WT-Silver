@@ -357,7 +357,7 @@ label hg_pf_admire_breasts_T3_touch:
     call hg_chibi_transition(xpos="desk", ypos="base")
     pause.8
 
-    call her_main(".............","soft","baseL", cheeks="blush")
+    call her_main(".............", "soft", "base", "base", "R", cheeks="blush")
     call her_main("Can I get paid now please?","angry","worriedCl", cheeks="blush",emote="05")
     m "Sure..."
 
@@ -395,10 +395,10 @@ label hg_pf_admire_breasts_T3_masturbate:
     m "Yes... Yes, like this..."
     m "Yes, with your tits all naked..."
     call her_main("..............","disgust","down_raised", cheeks="blush")
-    call her_main("well, so be it...","open","baseL", cheeks="blush")
-    call her_main("You can keep touching yourself, [genie_name]...","open","baseL", cheeks="blush")
-    call her_main("But you must promise me not to...","soft","baseL", cheeks="blush")
-    call her_main("Not to... em...","open","baseL", cheeks="blush")
+    call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
+    call her_main("You can keep touching yourself, [genie_name]...", "open", "base", "base", "R", cheeks="blush")
+    call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
+    call her_main("Not to... em...", "open", "base", "base", "R", cheeks="blush")
     call her_main("Not to discharge...","annoyed","angryL", cheeks="blush")
     call her_main("Not in front of me, [genie_name]...","angry","angry")
     m "Fine, whatever..."
@@ -568,7 +568,7 @@ label hg_pf_admire_breasts_T4_touch: # Call label
     m "But you like it, don't you?"
 
     if her_whoring >= 17:
-        call her_main("I love it [genie_name]!{image=textheart}","open","baseL", cheeks="blush")
+        call her_main("I love it [genie_name]!{image=textheart}", "open", "base", "base", "R", cheeks="blush")
     else:
         call her_main("I do not, [genie_name]!{image=textheart}","shock","worriedCl")
 
@@ -577,7 +577,7 @@ label hg_pf_admire_breasts_T4_touch: # Call label
     call hide_blktone
 
     if her_whoring >= 17:
-        call her_main("[genie_name], you promised not to touch...","base","baseL", cheeks="blush")
+        call her_main("[genie_name], you promised not to touch...", "base", "base", "base", "R", cheeks="blush")
         m "I know, I know... But it's hard to resist..."
         call her_main(".................","base","ahegao_raised", cheeks="blush")
     else:
@@ -593,16 +593,16 @@ label hg_pf_admire_breasts_T4_touch: # Call label
 
     call her_main("[genie_name]... please, stop this...","open","ahegao_raised", cheeks="blush")
     m "Why? Because you like it too much?"
-    call her_main("No it's not that...","base","baseL", cheeks="blush")
-    call her_main("I mean...","open","baseL", cheeks="blush")
+    call her_main("No it's not that...", "base", "base", "base", "R", cheeks="blush")
+    call her_main("I mean...", "open", "base", "base", "R", cheeks="blush")
 
     call nar(">You pull the tits in opposite directions and then squish them together...")
 
     call her_main("Ah...{image=textheart} [genie_name], I really need to go...","base","ahegao_raised", cheeks="blush")
     if daytime:
-        call her_main("That's right... the classes are about to start...","open","baseL", cheeks="blush")
+        call her_main("That's right... the classes are about to start...", "open", "base", "base", "R", cheeks="blush")
     else:
-        call her_main("It is getting late...","open","baseL", cheeks="blush")
+        call her_main("It is getting late...", "open", "base", "base", "R", cheeks="blush")
 
     m "Well, alright..."
     call blkfade
@@ -614,7 +614,7 @@ label hg_pf_admire_breasts_T4_touch: # Call label
     call play_music("chipper_doodle") # HERMIONE'S THEME.
 
     if her_whoring >= 17:
-        call her_main("Please don't think I forgot that you broke your promise, [genie_name].","base","baseL", cheeks="blush")
+        call her_main("Please don't think I forgot that you broke your promise, [genie_name].", "base", "base", "base", "R", cheeks="blush")
     else:
         call her_main("Please don't think I forgot that you broke your promise, [genie_name].","annoyed","angryL", cheeks="blush")
 
@@ -650,9 +650,9 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         m "Yes... Yes, like this..."
         m "Yes, with your tits all naked..."
         call her_main("..............","disgust","down_raised", cheeks="blush")
-        call her_main("well, so be it...","open","baseL", cheeks="blush")
-        call her_main("But you must promise me not to...","soft","baseL", cheeks="blush")
-        call her_main("Not to... ehm...","open","baseL", cheeks="blush")
+        call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
+        call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
+        call her_main("Not to... ehm...", "open", "base", "base", "R", cheeks="blush")
         call her_main("Not to discharge...","annoyed","angryL", cheeks="blush")
         call her_main("Not in front of me, [genie_name]...","annoyed","angryL", cheeks="blush")
         m "Fine, whatever..."
@@ -664,15 +664,15 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
 
     else: # Different posing than above.
         call her_main("ah...","base","ahegao_raised", cheeks="blush")
-        call her_main("It's so big...","open","baseL", cheeks="blush")
-        call her_main("You just couldn't help yourself, could you [genie_name]?","base","baseL", cheeks="blush")
+        call her_main("It's so big...", "open", "base", "base", "R", cheeks="blush")
+        call her_main("You just couldn't help yourself, could you [genie_name]?", "base", "base", "base", "R", cheeks="blush")
         call her_main("..................","base","ahegao_raised", cheeks="blush")
         m "Yes... Yes, like this..."
         m "Yes, with your tits all naked..."
         call her_main("..............","base","ahegao_raised", cheeks="blush")
-        call her_main("well, so be it...","open","baseL", cheeks="blush")
-        call her_main("But you must promise me not to...","soft","baseL", cheeks="blush")
-        call her_main("Not to... ehm...","open","baseL", cheeks="blush")
+        call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
+        call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
+        call her_main("Not to... ehm...", "open", "base", "base", "R", cheeks="blush")
         call her_main("Not to cum on me, [genie_name]...","base","ahegao_raised", cheeks="blush")
         m "Fine, whatever..."
         m "Oh, you little slut. You nasty little slut!"
@@ -693,7 +693,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             m "Huh?"
             call her_main("It is bad for your health to just hold it in like this...","shock","worriedCl")
             call her_main("Em...","disgust","down_raised", cheeks="blush")
-            call her_main("If you want to you can--","base","baseL", cheeks="blush")
+            call her_main("If you want to you can--", "base", "base", "base", "R", cheeks="blush")
             g4 "Argh! You whore!"
             call her_main("???","mad","wide", cheeks="blush")
 
@@ -715,7 +715,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             hide screen jerking_off_cum
             with d5
 
-            call her_main("Well, what's done is done I suppose...","base","baseL", cheeks="blush")
+            call her_main("Well, what's done is done I suppose...", "base", "base", "base", "R", cheeks="blush")
             m "Oh, this was quite amazing..."
             show screen blktone8
             with d3

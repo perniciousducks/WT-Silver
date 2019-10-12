@@ -716,7 +716,7 @@ label hermione_intro_E3:
     menu:
         "\"That happens to students sometimes.\"":
             call her_main("To other students, yes. But not to me, sir!","annoyed","angryL")
-            call her_main("Never to me...","soft","baseL")
+            call her_main("Never to me...", "soft", "base", "base", "R")
         "\"(Way to go, Snape!)\"":
             call her_main("Excuse me?", "normal", "base", "base", "mid")
             m "What?"
@@ -744,10 +744,10 @@ label hermione_intro_E3:
 
     call her_main("And the worst part is that I think I might be the only one who failed...", "angry", "base", "base", "mid", tears="soft")
     call her_main("How will this make me look?", "angry", "base", "base", "mid", tears="soft")
-    call her_main("I will know for sure when we get the results though...","normal","baseL", tears="soft")
-    call her_main("Yes, I'm sure everyone else failed as well...","soft","baseL")
+    call her_main("I will know for sure when we get the results though...", "normal", "base", "base", "R", tears="soft")
+    call her_main("Yes, I'm sure everyone else failed as well...", "soft", "base", "base", "R")
     call her_main("I mean, they must have, right?","open","worried")
-    call her_main(".....................","soft","baseL")
+    call her_main(".....................", "soft", "base", "base", "R")
     call her_main("....right?","open","worried")
 
     label cant_say:
@@ -759,7 +759,7 @@ label hermione_intro_E3:
         "{size=-3}\"You could prepare better if I were to tutor you.\"{/size}":
             $ tutoring_offer_made = True
             call her_main("hm...","annoyed","suspicious")
-            call her_main("Yes, that could help I suppose...","soft","baseL")
+            call her_main("Yes, that could help I suppose...", "soft", "base", "base", "R")
             call her_main("I appreciate your offer, professor, but...", "open", "base", "base", "mid")
             call her_main("The best tutor is a book, and I have the entire Hogwarts library at my disposal.","open","closed")
             call her_main("I don't think it would be necessary, sir. But...", "soft", "base", "base", "mid")
@@ -1032,7 +1032,7 @@ label hermione_intro_E6:
     call her_walk(action="enter", xpos="mid", ypos="base", speed=3)
 
     call play_music("day_theme")
-    call her_main("Good day, professor...","soft","baseL", xpos="base", ypos="base")
+    call her_main("Good day, professor...", "soft", "base", "base", "R", xpos="base", ypos="base")
     her "........................"
     call her_main("........................","annoyed","worriedL")
     her "........................"
@@ -1124,7 +1124,7 @@ label hermione_intro_E6:
                 call her_main("...............","annoyed","angryL")
                 her "Alright, I will try to do better, sir..."
                 call her_main("How about this?","open","worried")
-                call her_main("A-a-ah..................","scream","baseL")
+                call her_main("A-a-ah..................", "scream", "base", "base", "R")
                 call her_main("............................","open_wide_tongue","squintL")
                 call her_main("......................................","open_wide_tongue","down_raised")
                 her "..................................................."
@@ -1142,13 +1142,13 @@ label hermione_intro_E6:
         #show screen hermione_stand_f <- screen does not exist
         with d7
 
-        call her_main(".................................","annoyed","baseL",flip=True)
+        call her_main(".................................", "annoyed", "base", "base", "R",flip=True)
 
         menu:
             m "Hm..."
             "\"The uniform suits you, miss Granger...\"":
-                call her_main("............","soft","baseL",cheeks="blush")
-                call her_main("Thank you, professor Dumbledore...","open","baseL",cheeks="blush")
+                call her_main("............", "soft", "base", "base", "R",cheeks="blush")
+                call her_main("Thank you, professor Dumbledore...", "open", "base", "base", "R",cheeks="blush")
             "\"You have a nice body, miss Granger...\"":
                 call her_main("!!?","soft","wide")
                 call her_main("..............","annoyed","angryL",cheeks="blush")
@@ -1212,10 +1212,10 @@ label hermione_intro_E6:
             g9 "..."
             "\"Do you need to be punished?\"":
                 call her_main("Do I need to... be punished?","open","worried")
-                call her_main("Ehm...","soft","baseL")
+                call her_main("Ehm...", "soft", "base", "base", "R")
                 her "....................."
                 call her_main("Well, I am not perfect, if that's what you mean, sir...","annoyed","angryL")
-                call her_main("But do I need to be punished... hm?","soft","baseL")
+                call her_main("But do I need to be punished... hm?", "soft", "base", "base", "R")
                 call her_main("Is this really for me to decide...? I mean...","normal","frown")
                 her "What does this have to do with anything?"
                 m "You are overanalysing this, girl."
@@ -1273,13 +1273,13 @@ label hermione_intro_E6:
 
     if current_favor == "show_tongue":
         call her_main("{size=-4}(Hm...){/size}","annoyed","down", ypos="head")
-        call her_main("{size=-4}(Students show teachers their tongues all the time...){/size}","soft","baseL")
+        call her_main("{size=-4}(Students show teachers their tongues all the time...){/size}", "soft", "base", "base", "R")
         call her_main("{size=-4}(Although that's usually when the teacher is not looking...){/size}","base","glanceL")
         call her_main("{size=-4}(But there is nothing wrong with what I did today...){/size}","disgust","down")
         call her_main("{size=-4}(I earned my house extra points...){/size}","smile","happyCl")
 
     if current_favor == "stand_there":
-        call her_main("{size=-4}(I can just stand there and let the professor look at me...){/size}","annoyed","baseL", ypos="head")
+        call her_main("{size=-4}(I can just stand there and let the professor look at me...){/size}", "annoyed", "base", "base", "R", ypos="head")
         call her_main("{size=-4}(There is nothing wrong with that... nothing at all...){/size}","open","closed")
 
     if current_favor == "silly_face":

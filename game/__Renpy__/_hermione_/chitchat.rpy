@@ -130,7 +130,7 @@ label chit_chat:
             call her_main("Ashwinder eggs, rose thorns, moonstone...","open","worriedL")
             call her_main("Huh? Am I thinking out loud again?","open","worried")
             call her_main("I apologize...","grin","worriedCl",emote="05")
-            call her_main("It's just that we have another test soon...","soft","baseL")
+            call her_main("It's just that we have another test soon...", "soft", "base", "base", "R")
 
         elif one_of_ten == 4:
             call her_main("I dislike the entire house of Slytherin with all my heart, sir.","angry","angry")
@@ -152,7 +152,7 @@ label chit_chat:
 
         elif one_of_ten == 8:
             call her_main("Somehow I have the feeling that this year will become a pivotal turning point in my life...","open","worried")
-            call her_main("","soft","baseL")
+            call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 9:
             call her_main("Some of the less travelled school corridors are not very well lit and rather dusty...","open","angryCl")
@@ -197,7 +197,7 @@ label chit_chat:
         elif one_of_ten == 6:
             call her_main("Life works in mysterious ways...","open","worriedL")
             call her_main("Wouldn't you agree, sir?","open","suspicious")
-            call her_main("","soft","baseL")
+            call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 7:
             call her_main("Slytherins...","angry","angry",emote="01")
@@ -238,7 +238,7 @@ label chit_chat:
         elif one_of_ten == 4:
             call her_main("lately I have not been studying nearly as much as I used to...","open","worried")
             call her_main("Am I losing my motivation?","open","worriedL")
-            call her_main("","soft","baseL")
+            call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 5:
             call her_main("My least favourite subject?","open","suspicious")
@@ -247,12 +247,12 @@ label chit_chat:
         elif one_of_ten == 6:
             call her_main("My father used to say: \"Magic is just science we don't understand yet\".", "open", "base", "base", "mid")
             call her_main("He couldn't be more wrong of course...","open","worriedL")
-            call her_main("","soft","baseL")
+            call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 7:
             call her_main("Despite everything...","open","angryCl")
             call her_main("I am thankful that you keep on buying favours from me, sir...","open","worriedL")
-            call her_main("","soft","baseL")
+            call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 8:
             call her_main("It's quite cold outside today, isn't it?", "open", "base", "base", "mid")
@@ -264,7 +264,7 @@ label chit_chat:
 
         elif one_of_ten == 10:
             call her_main("People hardly show up for my \"men's rights movement\" meetings at all anymore...","open","worriedL")
-            call her_main("","soft","baseL")
+            call her_main("", "soft", "base", "base", "R")
 
 
     ### WHORING LEVEL 06 ###
@@ -294,7 +294,7 @@ label chit_chat:
             call her_main("I still dedicate a lot of my time to studying...", "open", "base", "base", "mid")
             her "But not nearly as much of it as I used to..."
             call her_main("Somehow I just don't enjoy studying at all anymore...","open","worried")
-            call her_main("","soft","baseL")
+            call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 6:
             call her_main("Gryffindor shall get the house cup this year!","open","angryCl")
@@ -321,7 +321,7 @@ label chit_chat:
 
         elif one_of_ten == 10:
             call her_main("My favourite subject?", "open", "base", "base", "mid")
-            call her_main("Hm...","soft","baseL")
+            call her_main("Hm...", "soft", "base", "base", "R")
             call her_main("I suppose that would be \"charms\"...", "open", "base", "base", "mid")
             call her_main("", "soft", "base", "base", "mid")
 
@@ -335,11 +335,11 @@ label chit_chat:
         elif one_of_ten == 2:
             call her_main("I barely study at all anymore...","open","worried")
             her "Despite that my popularity among the other students seems to be growing..."
-            call her_main("Hm...","soft","baseL")
+            call her_main("Hm...", "soft", "base", "base", "R")
 
         elif one_of_ten == 3:
             call her_main("I wouldn't say \"no\" to a bottle of butterbeer right about now...","smile","glance")
-            call her_main("","grin","baseL")
+            call her_main("", "grin", "base", "base", "R")
 
         elif one_of_ten == 4:
             call her_main("What is it sir? Do you have another present for me?", "base", "base", "base", "mid")
@@ -362,14 +362,14 @@ label chit_chat:
             her "Then add horseshoe reddish and heat..."
             her "Then juice a squill bulb..."
             call her_main("Or was it a dash of thyme first?","open","worriedL")
-            call her_main("..............","soft","baseL")
+            call her_main("..............", "soft", "base", "base", "R")
             call her_main("Oh, who cares?","grin","worriedCl",emote="05")
             call her_main("", "base", "base", "base", "mid")
 
         elif one_of_ten == 9:
             call her_main("Do You think I am wearing enough make-up, sir?", "open", "base", "base", "mid")
             her "Wearing too much would look vulgar..."
-            call her_main("But wearing too little would make me look plain...","soft","baseL")
+            call her_main("But wearing too little would make me look plain...", "soft", "base", "base", "R")
             call her_main("I don't want to look plain!","annoyed","angryL")
 
         elif one_of_ten == 10:
@@ -381,8 +381,8 @@ label chit_chat:
     ### WHORING LEVEL 08+ ###
     if her_whoring == 21:
         if one_of_ten == 1:
-            call her_main("Do You have any adult magazines you don't need, sir?","open","baseL",cheeks="blush")
-            call her_main("","base","baseL",cheeks="blush")
+            call her_main("Do You have any adult magazines you don't need, sir?", "open", "base", "base", "R",cheeks="blush")
+            call her_main("", "base", "base", "base", "R",cheeks="blush")
 
         elif one_of_ten == 2:
             call her_main("If you need anything [genie_name], just ask okay?", "open", "base", "base", "mid")
@@ -399,7 +399,7 @@ label chit_chat:
 
         elif one_of_ten == 5:
             call her_main("I hope the ball goes smoothly...","open","worriedL")
-            call her_main("","soft","baseL")
+            call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 6:
             call her_main("I wonder what Ginny is going to wear for the ball...", "base", "base", "base", "mid")
@@ -428,15 +428,15 @@ label chit_chat:
 
     if her_whoring >= 22:
         if one_of_ten == 1:
-            call her_main("If you ever need some \"help\", sir, please let me know.","open_wide_tongue","baseL",cheeks="blush")
+            call her_main("If you ever need some \"help\", sir, please let me know.", "open_wide_tongue", "base", "base", "R",cheeks="blush")
             her "-She suggestively jerks her hand-"
-            call her_main("","base","baseL",cheeks="blush") 
+            call her_main("", "base", "base", "base", "R",cheeks="blush") 
 
         elif one_of_ten == 2:
             call her_main("I am sorry to bother you with this, sir...", "open", "base", "base", "mid") 
             her "But do you have any condoms?"
             call her_main("Sadly the ones I've bought are already gone...","annoyed","worriedCl",emote="05")
-            call her_main("","base","baseL")
+            call her_main("", "base", "base", "base", "R")
                  
         elif one_of_ten == 3:
             call her_main("It's been getting so cold lately...", "open", "base", "base", "mid") 
@@ -451,7 +451,7 @@ label chit_chat:
 
         elif one_of_ten == 5:
             call her_main("Sir, I have a favour to ask...","base","worried") 
-            call her_main("Could help me with the dress later, sir?","base","baseL")
+            call her_main("Could help me with the dress later, sir?", "base", "base", "base", "R")
             call her_main("I could use some of your... insight","soft","glance",cheeks="blush")
             call her_main("", "base","glance")
 

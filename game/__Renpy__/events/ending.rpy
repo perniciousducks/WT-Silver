@@ -15,7 +15,7 @@ label ball_ending_start:
             call her_main("I'm so excited!!! I can't wait for it!","grin","happyCl")
             call her_main("Just two more days, [genie_name]","base","glance")
             m "That soon, huh?"
-            call her_main("Yep! I still have a tonne of preparation to do, though.","soft","baseL")
+            call her_main("Yep! I still have a tonne of preparation to do, though.", "soft", "base", "base", "R")
             m "Well then I better not keep you occupied any longer..."
             m "Unless..."
             g9 "Maybe we could..."

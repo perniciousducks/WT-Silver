@@ -222,7 +222,7 @@ label equip_head_accessory:
                     # call her_main("Let me put them on real quick.", "base", "base", "base", "mid")
                 # else:
                     # call her_main("Sure, [genie_name].", "soft", "base", "base", "mid")
-                    # call her_main("I don't mind looking a bit nerdy...","open","baseL")
+                    # call her_main("I don't mind looking a bit nerdy...", "open", "base", "base", "R")
                     # call her_main("Let me put them on for you.","base","glance")
 
             # #Cat Ears
@@ -235,7 +235,7 @@ label equip_head_accessory:
                         # call her_main("(They do look cute...)","base","glance")
                         # call her_main("...","annoyed","down") #annoyed, down
                         # m "So, are you going to wear them or not?"
-                        # call her_main("Fine, [genie_name]. Let me just put them on real quick.","soft","baseL")
+                        # call her_main("Fine, [genie_name]. Let me just put them on real quick.", "soft", "base", "base", "R")
                     # else:
                         # call her_main("They do look cute...","base","glance")
                         # call her_main("(And they even match my hair!)","base","down")
@@ -267,7 +267,7 @@ label equip_head_accessory:
                         # call her_main("...","annoyed","suspicious")
                         # call her_main("I suppose they're not too noticeable...","base","glance")
                         # call her_main("Alright. I will wear them.", "soft", "base", "base", "mid")
-                        # call her_main("Let me put them on real quick.","soft","baseL")
+                        # call her_main("Let me put them on real quick.", "soft", "base", "base", "R")
                     # else:
                         # call her_main("...","annoyed","down")
                         # call her_main("They do look cute...","base","down")
@@ -278,7 +278,7 @@ label equip_head_accessory:
                     # m "Why not? Don't you support the house elves or something..."
                     # call her_main("It's not about...","annoyed","angryL")
                     # call her_main("I'm not going to wear these ridiculous ears for you, [genie_name]!","annoyed","angryL")
-                    # call her_main("...","annoyed","baseL")
+                    # call her_main("...", "annoyed", "base", "base", "R")
 
                     # ">She won't wear cat-ears just yet."
                     # if cheats_active or game_difficulty <= 2:

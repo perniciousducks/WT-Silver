@@ -176,7 +176,7 @@ label slut_scene: #Locked to her being your slut
     ">One string of your cum even goes up her nostril."
     m "Who's a slut?"
     $ g_c_u_pic = "cum_on_face_blink_ani"
-    call her_main("I am...","grin","baseL")
+    call her_main("I am...", "grin", "base", "base", "R")
     hide screen hermione_main
     m "Good, well now that we've established that I have a present for you."
     call her_main("A present? What is it?","base","down")
@@ -414,7 +414,7 @@ label slave_scene:
     call her_main("You.","open","down")
     hide screen hermione_main
     m "Good, and who am I?"
-    call her_main("Professor Dumbledore.","grin","baseL")
+    call her_main("Professor Dumbledore.", "grin", "base", "base", "R")
     hide screen hermione_main
 
     call slap_her
@@ -557,7 +557,7 @@ label good_girl_scene:
     m "Once Gryffindor wins the house cup no one will even remember what they said about you they'll be so grateful."
     call her_main("Yes, you're right [genie_name]. I suppose that I was just overreacting.","base","happyCl")
     m "Don't worry about it."
-    call her_main("Before I go...","grin","baseL")
+    call her_main("Before I go...", "grin", "base", "base", "R")
     call her_main("Do you think that you could buy a favour off of me?","smile","glance")
     m "Sure, what would you like to do?"
     call her_main("Well I suppose that I could show you my breasts.","base","down")

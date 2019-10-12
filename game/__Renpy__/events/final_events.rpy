@@ -264,7 +264,7 @@ label ball_quest_E1:
                     her "*Sob!*"
                     m "Huh?"
 
-                    call her_main("Oh, please, don't mind me, sir.","open","baseL",)
+                    call her_main("Oh, please, don't mind me, sir.", "open", "base", "base", "R",)
                     call her_main("Just enjoy the... {w}the... {w}the view...","soft","squintL")
                     m "Are you... crying?"
                     call her_main("*Sob!* No, not really, sir... *sob!*...","angry","worriedCl")
@@ -331,7 +331,7 @@ label ball_quest_E1:
     her "Thank you sir! You will not regret this, I promise!"
     m "{size=-4}(Why would I?){/size}"
     m "{size=-4}(I couldn't care less about the whole thing...){/size}"
-    call her_main("Well, I'd better go now. I have so many arrangements to make!","grin","baseL")
+    call her_main("Well, I'd better go now. I have so many arrangements to make!", "grin", "base", "base", "R")
     m "By all means, Miss Granger. Have a nice day."
 
     call her_walk(action="leave", speed=2)
@@ -512,7 +512,7 @@ label ball_quest_E4:
     call her_main("I won't be able to attend the ball this year... so what?","annoyed","down")
     call her_main("I spent countless hours with organizing the event...","normal","worriedCl")
     call her_main("I worked so hard... and...","open","worried", tears="soft")
-    call her_main("And now I will not even be able to... to... *Sob!*","shock","baseL", cheeks="blush", tears="soft")
+    call her_main("And now I will not even be able to... to... *Sob!*", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     call her_main("To... *SOB!*","shock","down_raised", cheeks="blush", tears="crying")
     call her_main("Excuse me sir!","angry","suspicious", cheeks="blush", tears="messy")
     hide screen hermione_main

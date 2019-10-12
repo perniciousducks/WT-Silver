@@ -1274,7 +1274,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         call her_main("from the looks of it you don't need any help cranking a nice big load out of [genie_name]...","open","down")
         call her_main("so the only reason you'd bring me up here to show of my tits...","base","glance")
         call her_main("is so you can get a look as well...","base","suspicious")
-        call her_main("not that I mind...","smile","baseL")
+        call her_main("not that I mind...", "smile", "base", "base", "R")
         call her_main("I just want you to be honest...","base","squint")
         call lun_main("...","normal","mad","sad","R", cheeks="blush")
         call lun_main("Fine...","upset","mad","sad","down", cheeks="blush")
@@ -1289,7 +1289,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         ">Luna slows down, but starts grinding her mound hard against your cock."
         call her_main("now why don't you too perverts just sit back and relax...","base","down")
         call set_her_action("lift_breasts")
-        call her_main("while I give you something fun to look at ok?","grin","baseL")
+        call her_main("while I give you something fun to look at ok?", "grin", "base", "base", "R")
         call lun_main("yes hermione...","base","base","sad","mid", cheeks="blush")
         m "Yes..."
         call lun_main("mmmmm, he's so hard...","base","seductive","sad","down", cheeks="blush")
@@ -1307,7 +1307,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         ">you swear you can feel her wetness seeping through your robe."
         m "ah..."
         call set_her_action("pinch")
-        call her_main("good...","open","baseL")
+        call her_main("good...", "open", "base", "base", "R")
         call lun_main("ah...","base","angry","sad","up", cheeks="blush")
         ">Luna starts rubbing hard against your lap."
         m "{size=-2}(mmmm...){/size}"

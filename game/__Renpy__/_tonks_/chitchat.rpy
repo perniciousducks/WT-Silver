@@ -8,20 +8,17 @@ label tonks_chit_chat:
     $ renpy.dynamic("chitchat_choices")
     $ chitchat_choices = set(range(1, 32))
 
-    # Don't about Metamorphmagi if Genie doesn't know
+    # Don't talk about Metamorphmagi if Genie doesn't know Tonks is one
     if not tonks_morph_known:
         $ chitchat_choices -= set([4, 9, 24, 29, 30])
 
-    # Don't talk about Susan if Genie doesn't know her
+    # Don't talk about Susan if Genie doesn't know her yet
     if not susan_unlocked:
         $ chitchat_choices -= set([1])
 
     $ random_number = renpy.random.choice(list(chitchat_choices))
 
     # Chitchats
-    if not tonks_morph_known and random_number in [4, 9, 24, 29, 30]:
-        $ random_number += 1
-
     if random_number == 1:
         call ton_main("Susan is such a lovely girl...","open","base","base","mid")
         call ton_main("But she really isn't very confident in her body...","open","base","raised","R")
@@ -37,7 +34,7 @@ label tonks_chit_chat:
         call ton_main("I hope she's as much into points as the rest.","horny","base","raised","mid")
 
     elif random_number == 4:
-        call ton_main("Metamorphmagi can't change their clothes when morphing... ","open","base","base","mid")
+        call ton_main("Since Metamophmagi can change their skin, I sometimes just don't bother with wearing clothes.","open","base","base","mid")
         call ton_main("I once changed the colour of my skin and made it look like a tight shirt...","open","base","base","R")
         call ton_main("I might have worked topless once or twice...","horny","base","raised","mid")
 

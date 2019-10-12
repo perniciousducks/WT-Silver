@@ -194,8 +194,8 @@ label l_tutoring:
         call her_walk(xpos="door", ypos="base", speed=2)
 
         call her_main("{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about.){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(Probably all the problems caused by those harlots.){/size}","base","glance",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(Well, I will never be like them, so no need to worry.){/size}","silly","glance",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Probably all the problems caused by those harlots.){/size}", "base", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Well, I will never be like them, so no need to worry.){/size}", "silly", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
 
@@ -270,7 +270,7 @@ label l_tutoring:
         call her_walk(xpos="door", ypos="base", speed=2)
 
         call her_main("{size=-4}(Well, I'll try to investigate those two girls again.){/size}", "disgust", "narrow", "base", "down",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(Like a real anthropologist!){/size}","base","glance",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Like a real anthropologist!){/size}", "base", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Yes, that's right. Hermione the anthropologist!){/size}","base","worriedCl",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
@@ -385,7 +385,7 @@ label l_tutoring:
 
         call her_main("{size=-4}(I enjoyed it too much. Maybe I'm becoming a pervert as well){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I lost control, it won't happen again!){/size}", "shock", "narrow", "base", "down",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(Good thing I'm not a degenerate like those filthy girls!){/size}","base","glance",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Good thing I'm not a degenerate like those filthy girls!){/size}", "base", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
 
@@ -691,7 +691,7 @@ label l_tutoring:
         show screen genie_and_hermione
         call hide_blkfade
 
-        call her_main("Is the lesson over professor?","grin","glance",cheeks="blush",tears="mascara")
+        call her_main("Is the lesson over professor?", "grin", "narrow", "base", "mid_soft",cheeks="blush",tears="mascara")
         m "Not if you don't want it to be."
         her "Maybe it's enough for tonight."
         call her_main("After all, you have a lot of work to do.", "grin", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
@@ -718,7 +718,7 @@ label l_tutoring:
 
         call her_main("{size=-4}(I'm such a slut...){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Cumming in front of my professor...){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(I definitely need to do that again!){/size}","base","glance",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(I definitely need to do that again!){/size}", "base", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
 
@@ -856,16 +856,16 @@ label l_tutoring:
         show screen no_groping_01
         call hide_blkfade
 
-        call her_main("I'm sure this lesson will be of great help tonight.","grin","glance",cheeks="blush",tears="mascara")
+        call her_main("I'm sure this lesson will be of great help tonight.", "grin", "narrow", "base", "mid_soft",cheeks="blush",tears="mascara")
         call her_main("And the other nights {image=textheart}.","silly","worried",cheeks="blush",tears="soft")
         m "Always glad to help my little witch in her studies."
-        call her_main("\"Studies\", yes, that's right.","grin","glance",cheeks="blush",tears="mascara")
+        call her_main("\"Studies\", yes, that's right.", "grin", "narrow", "base", "mid_soft",cheeks="blush",tears="mascara")
         m "And to aid your studies I have even more scientific materials."
 
         call give_gift(">You give an assortment of porn magazines to Hermione.",porn_mag_ITEM)
 
         call her_main("I promise to study them every night until I commit their lessons to memory!", "grin", "closed", "base", "mid",cheeks="blush",tears="mascara")
-        call her_main("Thank you and good night professor.","grin","glance",cheeks="blush",tears="mascara")
+        call her_main("Thank you and good night professor.", "grin", "narrow", "base", "mid_soft",cheeks="blush",tears="mascara")
         m "Good night, my favourite little witch."
 
         hide screen hermione_main
@@ -1054,8 +1054,8 @@ label l_tutoring:
         call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(Rest...){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(Not before I've played with this marvelous toy again){/size}","base","glance",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(And again){/size}","silly","glance",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Not before I've played with this marvelous toy again){/size}", "base", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(And again){/size}", "silly", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
 
@@ -1215,7 +1215,7 @@ label l_tutoring:
         call her_main("It was very...{w=0.5} enlightening.", "grin", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
         call her_main("But please, try to go easy on me next time.", "grin", "closed", "base", "mid",cheeks="blush",tears="mascara")
         g9 "I have absolutely no idea what you mean by that."
-        call her_main("Good night professor.","grin","glance",cheeks="blush",tears="mascara")
+        call her_main("Good night professor.", "grin", "narrow", "base", "mid_soft",cheeks="blush",tears="mascara")
         m "Good night, my dear anal whore."
         call her_main("Professor...", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
 
@@ -1225,7 +1225,7 @@ label l_tutoring:
 
         call her_main("{size=-4}(Finally tonight I'll just go to bed){/size}","base","worriedCl",cheeks="blush",ypos="head")
         call her_main("{size=-4}(That was a little too intense){/size}","angry","worriedCl",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(Not that I'm complaining...){/size}","silly","glance",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Not that I'm complaining...){/size}", "silly", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
 
@@ -1379,8 +1379,8 @@ label l_tutoring:
         pause.5
 
         call her_main("*Pant* *pant*", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
-        call her_main("I feel completely ravaged but happy.","grin","glance",cheeks="blush",tears="mascara")
-        call her_main("Thank you professor, for letting me discover such great sensations.","grin","glance",cheeks="blush",tears="mascara")
+        call her_main("I feel completely ravaged but happy.", "grin", "narrow", "base", "mid_soft",cheeks="blush",tears="mascara")
+        call her_main("Thank you professor, for letting me discover such great sensations.", "grin", "narrow", "base", "mid_soft",cheeks="blush",tears="mascara")
         call her_main("But I'm exhausted so good night.", "grin", "closed", "base", "mid",cheeks="blush",tears="mascara")
         hide screen hermione_main
         call blkfade
@@ -1523,7 +1523,7 @@ label l_tutoring:
         call her_main("", "base", "closed", "base", "mid",cheeks="blush",trans="d5")
         call ctc
 
-        call her_main("Is that better?","base","glance",cheeks="blush")
+        call her_main("Is that better?", "base", "narrow", "base", "mid_soft",cheeks="blush")
         g9 "Oh yes, definitely. Well done, my girl."
 
         hide screen hermione_main
@@ -1671,7 +1671,7 @@ label l_tutoring:
         call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(Yes, sweet dreams...){/size}","base","worriedCl",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(Sweet and wet!){/size}","silly","glance",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Sweet and wet!){/size}", "silly", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
 
@@ -1864,7 +1864,7 @@ label l_tutoring:
         call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(\"my beloved prince\"...){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(He's hardly Prince Charming but...){/size}","base","glance",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(He's hardly Prince Charming but...){/size}", "base", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I doubt Prince Charming could fuck me half as well as he can!){/size}", "grin", "narrow", "base", "up",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")

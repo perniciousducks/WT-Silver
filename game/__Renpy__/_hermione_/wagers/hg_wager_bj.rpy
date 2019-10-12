@@ -427,7 +427,7 @@ label hg_wager_bj:
                                 call sna_walk(action="leave", speed=3)
 
                                 call u_pause_ani
-                                call her_main("So, no rematch then?","crooked_smile","glance")
+                                call her_main("So, no rematch then?", "crooked_smile", "narrow", "base", "mid_soft")
                                 g9 "As I said, at least not for another 30 minutes..."
                                 call her_main("So I assume I'm not losing those points anymore?", "open", "narrow", "worried", "mid_soft")
                                 m "Definitely not..."
@@ -509,7 +509,7 @@ label hg_wager_bj:
                                         m "No, I feel like I've reached a net gain somehow during this whole ordeal..."
                                         call her_main("...", "normal", "base", "base", "mid")
                                         m "A net gain is when...{nw}"
-                                        call her_main("I know what it means...","open","glance")
+                                        call her_main("I know what it means...", "open", "narrow", "base", "mid_soft")
                                         m "Right."
                                         if daytime:
                                             call her_main("good day to you then sir.", "base", "base", "base", "mid")
@@ -544,7 +544,7 @@ label hg_wager_bj:
                                 if not tried_rollback:
                                     hide screen rollback_check
                                     $ renpy.block_rollback()
-                                    call her_main("If I do what back?","annoyed","glance")
+                                    call her_main("If I do what back?", "annoyed", "narrow", "base", "mid_soft")
                                     m "Never mind..."
                                 else:
                                     $ achievement.unlock("flashback")

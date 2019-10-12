@@ -96,7 +96,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
                 call play_music("playful_tension") # SEX THEME.
                 m "I just want to massage them a little..."
                 call her_main("...............................", "annoyed", "narrow", "base", "down")
-                call her_main("Promise me you will be gentle with them.","soft","glance")
+                call her_main("Promise me you will be gentle with them.", "soft", "narrow", "base", "mid_soft")
                 m "Sure..."
 
                 $ hermione_wear_bra = False
@@ -398,7 +398,7 @@ label hg_pf_grope_breasts_T4_naked: # No top.
 
     #elif her_whoring >= 15:
     call her_main("Ah!!!", "scream", "wide", "base", "stare", cheeks="blush")
-    call her_main("[genie_name], why did you do that?","grin","glance", cheeks="blush")
+    call her_main("[genie_name], why did you do that?", "grin", "narrow", "base", "mid_soft", cheeks="blush")
     m "Dunno... Seemed like a good idea..."
     m "Did you like it?"
     call her_main("..........", "annoyed", "base", "base", "mid")
@@ -454,10 +454,10 @@ label hg_pf_grope_breasts_T5_naked:
     show screen blktone
     call her_main("Ah...", "soft", "narrow", "annoyed", "up")
     m "A bit sensitive today, aren't you?"
-    call her_main("I suppose...","base","glance")
+    call her_main("I suppose...", "base", "narrow", "base", "mid_soft")
     call her_main("Ah...","open","worriedCl")
     m "You like it when I squeeze them like this?"
-    call her_main("I do, [genie_name]... Ah...","base","glance")
+    call her_main("I do, [genie_name]... Ah...", "base", "narrow", "base", "mid_soft")
     m "Heh..."
     m "What if I pinch your nipples?"
     call her_main("!!!", "angry", "base", "base", "mid")

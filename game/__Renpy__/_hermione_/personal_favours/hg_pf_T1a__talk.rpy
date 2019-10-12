@@ -267,10 +267,10 @@ label hg_pf_talk_T2:
         call her_main("And another girl let a teacher cum in her mouth...", "smile", "base", "base", "R")
         call her_main("And she swallowed it all and loved it!", "soft", "base", "base", "R")
         m "{size=-4}(Wait... Is she making this up?){/size}"
-        call her_main("I'm a nasty girl too, you know...","smile","glance")
+        call her_main("I'm a nasty girl too, you know...", "smile", "narrow", "base", "mid_soft")
         g4 "What?!"
-        call her_main("I just want to suck a cock...","soft","glance")
-        call her_main("I want men to cum on my face like in those magazines I saw!","open_tongue","glance")
+        call her_main("I just want to suck a cock...", "soft", "narrow", "base", "mid_soft")
+        call her_main("I want men to cum on my face like in those magazines I saw!", "open_tongue", "narrow", "base", "mid_soft")
         g4 "{size=-4}(You little slut! That did it!) *Argh!*{/size}"
 
         call cum_block
@@ -311,7 +311,7 @@ label hg_pf_talk_T2:
     else:
         call her_main("We need to put an end to this behaviour, [genie_name]!", "open", "closed", "base", "mid")
         m "Yeah, sure..."
-        call her_main("So you agree with me then?","base","glance")
+        call her_main("So you agree with me then?", "base", "narrow", "base", "mid_soft")
         call her_main("I think we need to implement a new penalty system to punish girls who are known to sell favours...", "open", "base", "base", "R")
         m "(All I heard was \"punish girls\"...)"
         call her_main("This will also help the boys in our school to feel less discriminated against!", "open", "closed", "base", "mid")
@@ -495,10 +495,10 @@ label hg_pf_talk_T3:
         pause.5
 
         if her_tier <= 4:
-            call her_main("*Yuck!*...","annoyed","glance", ypos="head")
+            call her_main("*Yuck!*...", "annoyed", "narrow", "base", "mid_soft", ypos="head")
         call bld
         m "That felt amazing..."
-        call her_main("...","base","glance", xpos="mid", ypos="base")
+        call her_main("...", "base", "narrow", "base", "mid_soft", xpos="mid", ypos="base")
         g9 "You shouldn't hold it in, [hermione_name]... It could help you relax a bit."
         m "All great wizards do it..."
         call her_main("(.........)", "annoyed", "narrow", "angry", "R")
@@ -586,7 +586,7 @@ label hg_pf_talk_tonks_T3_E1:
     m "Let's call Miss Tonks up for this one shall we."
     call her_main("For what?", "open", "happy", "base", "mid")
     m "For today's favour of course!"
-    call her_main("...","annoyed","glance")
+    call her_main("...", "annoyed", "narrow", "base", "mid_soft")
     call her_main("Will I get any extra points for this?", "open", "base", "base", "mid")
     m "Well, that will be up to Miss Tonks, [hermione_name]."
     call her_main("Fine..","base","worriedL")
@@ -824,7 +824,7 @@ label hg_pf_talk_tonks:
     call ton_main("And I suppose you're against the idea of doing favours for another teacher?","horny","base","raised","L", hair="horny")
     call her_main("I...", "angry", "narrow", "worried", "down", cheeks="blush")
     call her_main("*Umm*... maybe I could?", "soft", "base", "base", "R", cheeks="blush")
-    call her_main("I haven't actively considered it...","soft","glance", cheeks="blush")
+    call her_main("I haven't actively considered it...", "soft", "narrow", "base", "mid_soft", cheeks="blush")
     if masturbating:
         g4 "(Yes! You want to make out with your slutty teacher, don't you!)"
     call ton_main("Don't think I'm judging you, Miss Granger.","upset","base","worried","L", hair="basic")
@@ -852,7 +852,7 @@ label hg_pf_talk_tonks:
                 g9 "(Where did those bad teachers touch you?)"
             else:
                 m "Yes, that!"
-            call her_main("Well, of course there is... Even if they might not be as successful...","soft","glance")
+            call her_main("Well, of course there is... Even if they might not be as successful...", "soft", "narrow", "base", "mid_soft")
             call her_main("With all the teachers, there are plenty of filthy tactics being used - all over the school.", "annoyed", "base", "angry", "mid")
             if masturbating:
                 g4 "(Filthy, huh?)"
@@ -1033,7 +1033,7 @@ label hg_pf_talk_tonks:
             call ton_main("My lips are sealed.{image=textheart}","horny","base","base","mid")
             call her_main("Professor...", "disgust", "narrow", "base", "down")
             m "Miss Granger, your professor asked you a question..."
-            call her_main("But, I thought it was supposed to stay between just you and I...","disgust","glance")
+            call her_main("But, I thought it was supposed to stay between just you and I...", "disgust", "narrow", "base", "mid_soft")
 
             menu:
                 "\"That's true\"":

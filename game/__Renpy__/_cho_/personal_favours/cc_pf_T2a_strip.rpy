@@ -1227,7 +1227,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("Are you mad, old man?","angry","narrow","angry","mid")
             call her_main("Don't use that tone with the headmaster...", "soft", "closed", "base", "mid")
             call cho_main("Nobody asked you!","angry","angry","angry","L")
-            call her_main("He's the wisest wizard at our school...{w} Surely his word should be final...","smile","glance")
+            call her_main("He's the wisest wizard at our school...{w} Surely his word should be final...", "smile", "narrow", "base", "mid_soft")
             m "I'd use the word astute but I'll take wise..."
             call cho_main("Why are you siding with her all of a sudden?","annoyed","narrow","angry","mid")
             m "Good question."
@@ -1240,15 +1240,15 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             g9 "Yes Miss Granger!{w} Your very round{w}, handsomely sphered{w}, perfectly sized{w}, very voluptuous and-"
             call her_main("I got it, Professor!","clench","worriedCl")
             call cho_main("(Cow tits...)","annoyed","narrow","angry","R")
-            call her_main("Here...","base","glance")
+            call her_main("Here...", "base", "narrow", "base", "mid_soft")
 
             # Hermione lifts her top
             call set_her_action("lift_top")
 
-            call her_main("","base","glance")
+            call her_main("", "base", "narrow", "base", "mid_soft")
             call ctc
 
-            call her_main("Have a good look.","soft","glance")
+            call her_main("Have a good look.", "soft", "narrow", "base", "mid_soft")
             call cho_main("(...)","annoyed","narrow","angry","downR") # Tries to look away.
             call her_main("And you'd better take in what a real pair looks like, slut.", "smile", "narrow", "angry", "R")
             call cho_main("I'd rather not, or I might barf...","soft","narrow","angry","R") #
@@ -1258,20 +1258,20 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 "\"Ten points to Gryffindor!\"":
                     $ gryffindor += 10
                     call cho_main("(...)","annoyed","narrow","angry","mid")
-                    call her_main("Thank you.","soft","glance")
+                    call her_main("Thank you.", "soft", "narrow", "base", "mid_soft")
 
                 "\"Fifty points to Gryffindor!\"":
                     $ cho_mood += 10
                     $ gryffindor += 50
                     call cho_main("(Fifty?!)","soft","wide","base","mid") # Shocked
-                    call her_main("Thank you.","soft","glance")
+                    call her_main("Thank you.", "soft", "narrow", "base", "mid_soft")
                     call cho_main("","angry","closed","angry","mid")
 
             g9 "For exposing those magnificent breasts."
 
             call set_her_action("none")
 
-            call her_main("Any time, Professor.","soft","glance")
+            call her_main("Any time, Professor.", "soft", "narrow", "base", "mid_soft")
             call cho_main("(I bloody hate her!)","angry","angry","angry","L")
 
             call her_main("If you don't mind, Sir.", "open", "base", "base", "R")
@@ -1280,8 +1280,8 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("Did something not go as you expected?", "smile", "base", "base", "R")
             call her_main("Did you think having me here when you exposed yourself would make me jealous...", "soft", "closed", "base", "mid")
             call cho_main("(...)","annoyed","angry","angry","L")
-            call her_main("Thank you for inviting me, Professor.","soft","glance")
-            call her_main("I \"did\" enjoy this little obscene \"freak-show\" you arranged for me...","grin","glance")
+            call her_main("Thank you for inviting me, Professor.", "soft", "narrow", "base", "mid_soft")
+            call her_main("I \"did\" enjoy this little obscene \"freak-show\" you arranged for me...", "grin", "narrow", "base", "mid_soft")
             call cho_main("You'll regret this, Granger!","angry","narrow","angry","L")
 
             if daytime:

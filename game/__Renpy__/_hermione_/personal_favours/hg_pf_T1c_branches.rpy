@@ -58,12 +58,12 @@ label hg_pf_admire_breasts_transition:
         call ctc
 
     else:
-        call her_main("","base","glance", cheeks="blush", xpos="mid", ypos="base")
+        call her_main("", "base", "narrow", "base", "mid_soft", cheeks="blush", xpos="mid", ypos="base")
         call ctc
 
         m "Very good..."
         call play_music("playful_tension") # SEX THEME.
-        call her_main("............","base","glance", cheeks="blush")
+        call her_main("............", "base", "narrow", "base", "mid_soft", cheeks="blush")
         call ctc
 
     return

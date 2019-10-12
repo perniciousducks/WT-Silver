@@ -100,13 +100,13 @@ label equip_outfit:
                 # g9 "Santa Claus is going to town!"
                 # if her_whoring >= 17: #Success
                     # call her_main("Oh...", "soft", "base", "base", "R")
-                    # call her_main("Am I on the naughty list, Mr. Santa?","soft","glance",cheeks="blush")
+                    # call her_main("Am I on the naughty list, Mr. Santa?", "soft", "narrow", "base", "mid_soft",cheeks="blush")
                     # g4 "You are!"
-                    # call her_main("Does that mean I'm not getting any presents?","base","glance")
+                    # call her_main("Does that mean I'm not getting any presents?", "base", "narrow", "base", "mid_soft")
                     # m "No [hermione_name],..."
                     # g9 "Santa is gonna stuff your stockings real good!"
                     # m "But first, put on that outfit, would you..."
-                    # call her_main("Of course.","base","glance")
+                    # call her_main("Of course.", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # call her_main("Don't you mean, is coming to town?", "open", "wink", "base", "mid")
                     # g9 "Damn right he's going to cum!"
@@ -118,24 +118,24 @@ label equip_outfit:
             # if outfit_choice == hg_outfit_present_ITEM:
                 # if her_whoring >= 20: #Success
                     # m "[hermione_name], did you know today is my birthday?"
-                    # call her_main("Oh really, [genie_name]? Your birthday?","base","glance")
+                    # call her_main("Oh really, [genie_name]? Your birthday?", "base", "narrow", "base", "mid_soft")
                     # g9 "It is!"
                     # if not birthday_happened:
                         # $ birthday_happened = True
                         # call her_main("(I highly doubt that...)", "base", "base", "base", "R")
                     # else:
                         # call her_main("(What a poor liar...)", "base", "base", "base", "R")
-                    # call her_main("Well in that case...","open","glance")
+                    # call her_main("Well in that case...", "open", "narrow", "base", "mid_soft")
                     # call her_main("What does our birthday boy wish for his special day?", "open", "closed", "base", "mid")
-                    # call her_main("You can have anything you want!","soft","glance")
+                    # call her_main("You can have anything you want!", "soft", "narrow", "base", "mid_soft")
                     # g4 "(Hot damn!)"
                     # g9 "How about your body?"
-                    # call her_main("Hmm... my body?","base","glance")
+                    # call her_main("Hmm... my body?", "base", "narrow", "base", "mid_soft")
                     # call her_main("... completely naked... wrapped in a tight ribbon for you to unwrap...","open","glanceL")
-                    # call her_main("... and play with...","open_tongue","glance")
-                    # call her_main("I bet you would like that, [genie_name]?","base","glance")
+                    # call her_main("... and play with...", "open_tongue", "narrow", "base", "mid_soft")
+                    # call her_main("I bet you would like that, [genie_name]?", "base", "narrow", "base", "mid_soft")
                     # g9 "Indeed I would!"
-                    # call her_main("Well then, Happy Birthday, [genie_name].","soft","glance")
+                    # call her_main("Well then, Happy Birthday, [genie_name].", "soft", "narrow", "base", "mid_soft")
                 # else:
                     # m "[hermione_name], did you know it's my birthday today?"
                     # if not birthday_happened:
@@ -222,7 +222,7 @@ label equip_outfit:
                         # call her_main("Although... That cleavage on her is a bit much.", "disgust", "narrow", "worried", "down")
                         # g9 "But that's the best part!"
                         # call her_main("Why doesn't that suprise me. That you would think so...", "annoyed", "base", "angry", "mid")
-                    # call her_main("Just let me put it on...","smile","glance")
+                    # call her_main("Just let me put it on...", "smile", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # call her_main("Of course!","open","worriedL")
                     # call her_main("Rowena Ravenclaw, Helga Hufflepuff, Isolt Sayre, Joan of Arc,...","open","worriedL")
@@ -362,7 +362,7 @@ label equip_outfit:
                         # call her_main("(I really like her necklace...)", "smile", "narrow", "worried", "down")
                     # if outfit_choice == hg_costume_yennefer_ITEM:
                         # call her_main("(I really like her scarf...)", "smile", "narrow", "worried", "down")
-                    # call her_main("Let me put it on real quick.","smile","glance")
+                    # call her_main("Let me put it on real quick.", "smile", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # call her_main("It's a corset, [genie_name]!", "open", "wink", "base", "mid")
                     # m "So what?"

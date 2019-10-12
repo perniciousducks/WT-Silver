@@ -264,7 +264,7 @@ label hg_pf_blowjob_T2_intro_E1:
 
     call her_main("Oh...{w} I mean... No, Sir!", "soft", "narrow", "annoyed", "up")
     call play_music("playful_tension") # SEX THEME.
-    call her_main("I've been a very, very bad girl, [genie_name]!","soft","glance")
+    call her_main("I've been a very, very bad girl, [genie_name]!", "soft", "narrow", "base", "mid_soft")
     g9 "..............."
     m "Tell me, what wrongs did you do, [hermione_name]?"
     call her_main("*Uhm*...", "disgust", "narrow", "worried", "down")
@@ -273,17 +273,17 @@ label hg_pf_blowjob_T2_intro_E1:
     call her_main("And not just to earn those points...","disgust","worriedCl")
     m "What? Why else?"
     call her_main("I did it because I like doing it...","disgust","glanceL")
-    call her_main("I like sucking cock, [genie_name]!","soft","glance", cheeks="blush")
+    call her_main("I like sucking cock, [genie_name]!", "soft", "narrow", "base", "mid_soft", cheeks="blush")
 
     g4 "Yes! You dirty slut!"
     g4 "Girls like you need to be punished!"
     g9 "Don't you think so too, Miss Granger?"
     call her_main("...............................", "clench", "narrow", "base", "down", cheeks="blush")
-    call her_main("Yes, [genie_name]...","soft","glance", cheeks="blush")
-    call her_main("I need to be punished!","base","glance")
+    call her_main("Yes, [genie_name]...", "soft", "narrow", "base", "mid_soft", cheeks="blush")
+    call her_main("I need to be punished!", "base", "narrow", "base", "mid_soft")
     g4 "Beg me for it, you slut!"
-    call her_main("Please punish me with your cock, [genie_name]!","soft","glance")
-    call her_main("I beg you!","soft","glance")
+    call her_main("Please punish me with your cock, [genie_name]!", "soft", "narrow", "base", "mid_soft")
+    call her_main("I beg you!", "soft", "narrow", "base", "mid_soft")
     g4 "Come here, you dirty little minx!"
     call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "annoyed", "up")
 
@@ -296,7 +296,7 @@ label hg_pf_blowjob_T2_hidden_repeat:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     call play_music("playful_tension") # SEX THEME.
     m "Suck my dick, [hermione_name]."
-    call her_main("Anything for you, [genie_name]...","base","glance")
+    call her_main("Anything for you, [genie_name]...", "base", "narrow", "base", "mid_soft")
 
     jump hg_pf_hidden_blowjob
 
@@ -305,7 +305,7 @@ label hg_pf_blowjob_T2_repeat:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     call play_music("playful_tension") # SEX THEME.
     m "Suck my dick, [hermione_name]."
-    call her_main("Anything for you, [genie_name]...","base","glance")
+    call her_main("Anything for you, [genie_name]...", "base", "narrow", "base", "mid_soft")
 
     jump hg_pf_blowjob_2
 
@@ -1333,7 +1333,7 @@ label hg_hidden_blowjob_cumming:
 
     else:
         call her_main("I'm a slut, [genie_name].","base","suspicious", ypos="head")
-        call her_main("A slut for your cum.","base","glance")
+        call her_main("A slut for your cum.", "base", "narrow", "base", "mid_soft")
         m "That's it, [hermione_name]."
         call her_main("It's all I can think about [genie_name].", "base", "narrow", "worried", "down")
         call her_main("Sucking your dirty old cock...")
@@ -1641,7 +1641,7 @@ label hg_pf_blowjob_2:
                     m "Heh... is that so?"
                     call her_main(".............", "grin", "narrow", "base", "dead")
                     call nar(">She leans forward and gives your wilting cock a small kiss.")
-                    call her_main("Thanks, daddy!","base","glance")
+                    call her_main("Thanks, daddy!", "base", "narrow", "base", "mid_soft")
 
                 "-Cum on her face-":
                     call hg_chibi_transition("bj_pause")

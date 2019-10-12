@@ -42,7 +42,7 @@ label hg_pr_sex:
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         call her_main("..............", "angry", "base", "angry", "mid")
-        call her_main("I had the feeling that we would get to this sooner or later...","disgust","glance")
+        call her_main("I had the feeling that we would get to this sooner or later...", "disgust", "narrow", "base", "mid_soft")
         call her_main("But...", "annoyed", "narrow", "angry", "R")
         her "..................."
         m "If you do this, \"Gryffindor\" will be getting seventy five points tonight."
@@ -121,7 +121,7 @@ label hg_pr_sex_T1_intro_E2:
     m "Hm..."
     call her_main("Yes, we were best friends for such a long time...", "base", "base", "base", "R", cheeks="blush")
     call play_music("playful_tension") # SEX THEME.
-    call her_main("But last night the boys made me their little plaything...","base","glance")
+    call her_main("But last night the boys made me their little plaything...", "base", "narrow", "base", "mid_soft")
     call her_main("And I did not mind it one bit...", "grin", "narrow", "base", "dead")
     her "They did everything they wanted to do to me..."
     her "And everything I wanted to be done to me has been done..."

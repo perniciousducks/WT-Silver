@@ -325,7 +325,7 @@ label hermione_favor_menu:
                             $ hermione_favors_convinced = 1
                             jump silver_requests_root
                         else:
-                            call her_main("I could...","soft","glance")
+                            call her_main("I could...", "soft", "narrow", "base", "mid_soft")
                             call her_main("But I don't want to.", "normal", "closed", "base", "mid")
                             jump hermione_requests
                     "-Forget it-":
@@ -633,7 +633,7 @@ label hermione_change:
         if her_whoring >=3 and her_whoring < 5:
             call her_main("*sigh* I just enjoy books, that's all.", "annoyed", "narrow", "worried", "down")
             m "I'm sure you'll find other things to enjoy soon enough..."
-            call her_main("Like what exactly?","normal","glance")
+            call her_main("Like what exactly?", "normal", "narrow", "base", "mid_soft")
             m "Nothing to worry about, things will work out..."
             g9 "Nerd..."
             call her_main("*tsk* ...","soft","glanceL")
@@ -643,7 +643,7 @@ label hermione_change:
             call her_main("", "base", "base", "base", "mid")
         elif her_whoring >= 19:
             call her_main("I don't read as much as I used to anymore.","grin","glanceL", emote="05")
-            call her_main("","base","glance")
+            call her_main("", "base", "narrow", "base", "mid_soft")
     elif temp_name == "Good Girl":
         if her_whoring >=5 and her_whoring < 7:
             call her_main("Well, I do try my best, [genie_name].", "base", "closed", "base", "mid")
@@ -840,7 +840,7 @@ label hermione_change:
                             g4 "I said mad stud!"
                             call her_main("Mad stud?", "soft", "base", "base", "mid")
                             g9 "My dick, your ass, bud."
-                            call her_main("really...", "disgust","glance", cheeks="blush")
+                            call her_main("really...", "disgust", "narrow", "base", "mid_soft", cheeks="blush")
                             call her_main("You can be so childish sometimes, [genie_name]...", "annoyed","glanceL", cheeks="blush")
                         #"-Leaf bud-":
                         #    jump hermione_talk

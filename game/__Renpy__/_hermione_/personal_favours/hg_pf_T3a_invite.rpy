@@ -86,7 +86,7 @@ label hg_pf_strip_T2_Snape:
         call her_main(".....", "angry", "base", "angry", "mid")
         m "So, what do you say [hermione_name]?"
         m "One more dance for the greater good?"
-        call her_main("Well, alright...","disgust","glance")
+        call her_main("Well, alright...", "disgust", "narrow", "base", "mid_soft")
         m "Good. Go find professor Snape then."
 
     call her_walk(action="leave", speed=2.5)
@@ -216,7 +216,7 @@ label hg_pf_strip_T2_Snape:
             call her_main("What?", "annoyed", "base", "angry", "mid")
             call her_main("But [genie_name]!")
             m "Young lady, you {size=+4}will{/size} calm down now."
-            call her_main("Tsk!","disgust","glance")
+            call her_main("Tsk!", "disgust", "narrow", "base", "mid_soft")
             m "And take off your skirt already, would you?"
             call her_main(".......", "annoyed", "narrow", "angry", "R")
             call sna_main("...........","snape_13")

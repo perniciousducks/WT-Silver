@@ -72,7 +72,7 @@ label hg_pr_blowjob:
 
     elif her_tier < 6:
         m "Go give some lucky boy another blowjob, [hermione_name]."
-        call her_main("......Again?","disgust","glance")
+        call her_main("......Again?", "disgust", "narrow", "base", "mid_soft")
         m "Yes, again."
         call her_main("..........", "annoyed", "narrow", "annoyed", "mid")
 
@@ -137,7 +137,7 @@ label hg_pr_blowjob_T1_E1:
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     m "You know the drill, [hermione_name]. Start talking."
     show screen blktone
-    call her_main("I have completed your task, [genie_name].","disgust","glance",xpos="right",ypos="base")
+    call her_main("I have completed your task, [genie_name].", "disgust", "narrow", "base", "mid_soft",xpos="right",ypos="base")
     m "Good. Tell me more."
     call her_main("What is there to tell, [genie_name]?", "annoyed", "narrow", "angry", "R")
     her "I sucked off one of my classmates today..."
@@ -328,7 +328,7 @@ label hg_pr_blowjob_T2_E3:
     m "[hermione_name], you are covered in cum head to toe."
     call her_main("I am?", "soft", "narrow", "annoyed", "up")
     her "Oh... Did I forget to clean myself up?"
-    call her_main("How embarrassing...","base","glance")
+    call her_main("How embarrassing...", "base", "narrow", "base", "mid_soft")
     her "That thing at the boy's restroom sort of escalated I suppose..."
     her "Before I knew what happened I was surrounded with hard throbbing cocks..."
     call her_main("Oh... Just talking about it makes me shiver with excitement... err..", "silly", "narrow", "base", "dead")
@@ -338,7 +338,7 @@ label hg_pr_blowjob_T2_E3:
     call her_main("Oh, excuse me, [genie_name]... I feel a little lightheaded...", "grin", "narrow", "base", "dead")
     her "I think I need to go lie down for a while..."
     m "Don't forget to take a shower first."
-    call her_main("A shower? Why?","base","glance")
+    call her_main("A shower? Why?", "base", "narrow", "base", "mid_soft")
     m "Never mind..."
     call ctc
 

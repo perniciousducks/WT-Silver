@@ -38,7 +38,7 @@ label hg_pf_admire_panties:
     elif her_tier <= 5:
         call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     else:
-        call her_main("","smile","glance", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "smile", "narrow", "base", "mid_soft", xpos="mid", ypos="base", trans="fade")
 
 
     # Points
@@ -272,7 +272,7 @@ label hg_pf_admire_panties_T3_intro_E1:
     g4 "!!?"
 
     show screen blktone
-    call her_main("","base","glance", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "narrow", "base", "mid_soft", xpos="mid", ypos="base", trans="fade")
     call ctc
 
     # No Panties!
@@ -282,7 +282,7 @@ label hg_pf_admire_panties_T3_intro_E1:
     menu:
         "\"You little slut!\"":
             her "Hm..."
-            call her_main("I suppose I am...","base","glance")
+            call her_main("I suppose I am...", "base", "narrow", "base", "mid_soft")
             her "Do I get extra points for that?"
 
             menu:
@@ -328,7 +328,7 @@ label hg_pf_admire_panties_T3_E1:
     pause.8
 
     show screen blktone
-    call her_main("","base","glance", xpos="mid", ypos="base")
+    call her_main("", "base", "narrow", "base", "mid_soft", xpos="mid", ypos="base")
     call ctc
 
     # No Panties!
@@ -338,7 +338,7 @@ label hg_pf_admire_panties_T3_E1:
     menu:
         "\"You little slut!\"":
             her "Hm..."
-            call her_main("I suppose I am...","base","glance")
+            call her_main("I suppose I am...", "base", "narrow", "base", "mid_soft")
             her "Do I get extra points this time?"
 
             menu:
@@ -368,7 +368,7 @@ label hg_pf_admire_panties_T3_E1:
 
     menu:
         "\"Yes, put them back on!\"":
-            call her_main("Alright, [genie_name].","base","glance")
+            call her_main("Alright, [genie_name].", "base", "narrow", "base", "mid_soft")
             hide screen hermione_main
             with d3
             ">Hermione puts on her panties."
@@ -381,7 +381,7 @@ label hg_pf_admire_panties_T3_E1:
             call her_chibi("lift_skirt")
             call set_her_action("lift_skirt")
 
-            call her_main("","base","glance")
+            call her_main("", "base", "narrow", "base", "mid_soft")
             call ctc
 
             call her_main("I hope you like them...", "soft", "base", "base", "R")
@@ -417,7 +417,7 @@ label hg_pf_admire_panties_T3_E2:
     pause.8
 
     show screen blktone
-    call her_main("","base","glance", xpos="mid", ypos="base")
+    call her_main("", "base", "narrow", "base", "mid_soft", xpos="mid", ypos="base")
     call ctc
 
     # No Panties.
@@ -428,11 +428,11 @@ label hg_pf_admire_panties_T3_E2:
         call her_main("But I got them with me this time.", "open", "base", "base", "R")
         call ctc
 
-        call her_main("If you'd like, Sir, I could put my panties back on for you.","soft","glance")
+        call her_main("If you'd like, Sir, I could put my panties back on for you.", "soft", "narrow", "base", "mid_soft")
 
         menu:
             "\"Yes, put them back on!\"":
-                call her_main("Alright, [genie_name].","base","glance")
+                call her_main("Alright, [genie_name].", "base", "narrow", "base", "mid_soft")
                 hide screen hermione_main
                 with d3
                 ">Hermione puts on her panties."
@@ -445,7 +445,7 @@ label hg_pf_admire_panties_T3_E2:
                 call her_chibi("lift_skirt")
                 call set_her_action("lift_skirt")
 
-                call her_main("","base","glance")
+                call her_main("", "base", "narrow", "base", "mid_soft")
                 call ctc
 
                 call her_main("I hope you like them...", "soft", "base", "base", "R")
@@ -457,7 +457,7 @@ label hg_pf_admire_panties_T3_E2:
                 $ h_request_wear_panties = False
 
     else:
-        call her_main("Do you like them, [genie_name]?","base","glance")
+        call her_main("Do you like them, [genie_name]?", "base", "narrow", "base", "mid_soft")
         m "Indeed I do, [hermione_name]..."
         call ctc
 
@@ -467,7 +467,7 @@ label hg_pf_admire_panties_T3_E2:
             "\"Yes, Take them off!\"":
                 call her_main("Alright, [genie_name].", "soft", "narrow", "annoyed", "up")
                 m "And keep them off from now on!"
-                call her_main("Whatever you want, [genie_name].","base","glance")
+                call her_main("Whatever you want, [genie_name].", "base", "narrow", "base", "mid_soft")
                 hide screen hermione_main
                 with d3
                 call nar(">Hermione takes off her panties.")
@@ -482,13 +482,13 @@ label hg_pf_admire_panties_T3_E2:
                 call her_chibi("lift_skirt")
                 call set_her_action("lift_skirt")
 
-                call her_main("","base","glance")
+                call her_main("", "base", "narrow", "base", "mid_soft")
                 call ctc
 
                 call her_main("I hope you like it, [genie_name]...", "angry", "wink", "base", "mid")
 
             "\"No, keep them on!\"":
-                call her_main("Sure, [genie_name].","base","glance")
+                call her_main("Sure, [genie_name].", "base", "narrow", "base", "mid_soft")
                 call ctc
 
                 $ h_request_wear_panties = True

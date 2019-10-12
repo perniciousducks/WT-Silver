@@ -70,7 +70,7 @@ label ball_quest_E1:
                     call her_main("Please, let me finish, sir.", "scream", "base", "angry", "mid",emote="01")
                     m "Right..."
                     call her_main("I know that you are a rather wise man yourself, sir.", "angry", "base", "angry", "mid")
-                    call her_main("So, please... understand this...","disgust","glance")
+                    call her_main("So, please... understand this...", "disgust", "narrow", "base", "mid_soft")
                     her "I may be willing to sacrifice my pride and even my dignity for the sake of my house..."
                     her "But sleeping with my headmaster?"
                     call her_main("That is where I draw the line, sir.", "angry", "base", "angry", "mid", cheeks="blush")
@@ -90,7 +90,7 @@ label ball_quest_E1:
                 m "What?"
                 call her_main("[genie_name]!", "angry", "base", "angry", "mid")
                 m "What?"
-                call her_main("You are abusing your power, sir. Again!","disgust","glance")
+                call her_main("You are abusing your power, sir. Again!", "disgust", "narrow", "base", "mid_soft")
                 m "Seriously? After all those favours you sold me?"
                 call her_main("Those were for the sake of my house, sir.", "annoyed", "narrow", "annoyed", "mid")
                 m "Well this one is for the sake of the \"Autumn prom\"."
@@ -116,7 +116,7 @@ label ball_quest_E1:
 
                 call her_main("You are completely right, [genie_name]!", "open", "narrow", "worried", "down")
                 call her_main("I must do this. Everyone depends on me.", "upset", "closed", "base", "mid")
-                call her_main("Just give me a second please...","base","glance")
+                call her_main("Just give me a second please...", "base", "narrow", "base", "mid_soft")
                 hide screen hermione_main
                 with d5
                 m "............"

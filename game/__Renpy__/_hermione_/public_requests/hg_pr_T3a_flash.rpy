@@ -38,7 +38,7 @@ label hg_pr_flash:
         m "So that's how you feel then? I see..."
         m "I suppose I will be awarding those points to some other house instead ..."
         m "\"Slytherin\" perhaps?"
-        call her_main("................","disgust","glance")
+        call her_main("................", "disgust", "narrow", "base", "mid_soft")
         m "But, you know, no pressure..."
         call her_main("[genie_name]...", "annoyed", "narrow", "angry", "R")
         her "The fate of my house is very important to me, but..."
@@ -49,7 +49,7 @@ label hg_pr_flash:
         m "Are we really in any position to discuss what is appropriate and what is not at this point?"
         call her_main("..................", "annoyed", "narrow", "angry", "R")
         m "I would say that ship has sailed a long time ago..."
-        call her_main("..............","disgust","glance")
+        call her_main("..............", "disgust", "narrow", "base", "mid_soft")
         m "All I ask you to do is to give some lucky boy a quick peek..."
         call her_main("But why? Why must I do things like this, [genie_name]?", "annoyed", "narrow", "angry", "R")
         m "A minute of your time for 25 house points..."
@@ -67,7 +67,7 @@ label hg_pr_flash:
         m "Of course you will get paid for this, [hermione_name]. Don't be silly."
         m "Thirty five house points. The usual rate..."
         call her_main(".................", "annoyed", "narrow", "angry", "R")
-        call her_main("Well alright... I will see what I can do, [genie_name]...","disgust","glance")
+        call her_main("Well alright... I will see what I can do, [genie_name]...", "disgust", "narrow", "base", "mid_soft")
 
     elif her_tier < 5:
         m "[hermione_name]. I have a question for you."
@@ -85,7 +85,7 @@ label hg_pr_flash:
         m "I need you to go out there..."
         m "Find some lucky bastard..."
         m "And flash him your tits..."
-        call her_main("{size=-3}(I just knew that this was exactly where this conversation was heading...){/size}","disgust","glance")
+        call her_main("{size=-3}(I just knew that this was exactly where this conversation was heading...){/size}", "disgust", "narrow", "base", "mid_soft")
         m "What was that, [hermione_name]?"
         call her_main("I said I'd better go then, [genie_name].", "annoyed", "narrow", "angry", "R")
         her "my classes are about to start..."
@@ -96,7 +96,7 @@ label hg_pr_flash:
         m "[hermione_name] I need you to go out there and flash your tits to one of your classmates."
         call her_main("I will do my best [genie_name].", "open", "closed", "base", "mid")
         m "Really? Just like that? No complaints or anything?"
-        call her_main("I am getting paid for this, am I not?","base","glance")
+        call her_main("I am getting paid for this, am I not?", "base", "narrow", "base", "mid_soft")
         m "Of course."
         call her_main("Why would I complain about a simple task like this then?", "open", "closed", "base", "mid")
         her "Thirty five house points is a fair prices for a few seconds of excitement... err..."
@@ -478,7 +478,7 @@ label hg_pr_flash_T3_E2:
     her "then she started to kiss my breasts passionately..."
     m "............"
     call her_main("to kiss and suck on my nipples...", "smile", "base", "angry", "mid")
-    call her_main("And I couldn't help myself - I started to moan...","base","glance")
+    call her_main("And I couldn't help myself - I started to moan...", "base", "narrow", "base", "mid_soft")
     m ".............."
     call her_main("And then the boy took out his throbbing cock...","base","suspicious")
     her "And sprayed his hot spunk all over me and Ginny!"
@@ -486,7 +486,7 @@ label hg_pr_flash_T3_E2:
     m ".............."
     m "Are you making this up, [hermione_name]?"
     call her_main("...maybe.","grin","worriedCl",emote="05")
-    call her_main("I just thought that you would like to hear something like that, [genie_name]...","base","glance")
+    call her_main("I just thought that you would like to hear something like that, [genie_name]...", "base", "narrow", "base", "mid_soft")
     m "What I would like to hear, [hermione_name], is the truth."
     call her_main("Even if it's incredibly dull, [genie_name]?", "open", "closed", "base", "mid")
     m "Dull or not..."
@@ -531,6 +531,6 @@ label hg_pr_flash_T3_E3:
     m "But, [hermione_name]..."
     call her_main("Yes, [genie_name]?", "open", "base", "base", "mid")
     g9 "That was very well done."
-    call her_main("Thank you, [genie_name].","base","glance")
+    call her_main("Thank you, [genie_name].", "base", "narrow", "base", "mid_soft")
 
     jump end_hg_pr_flash

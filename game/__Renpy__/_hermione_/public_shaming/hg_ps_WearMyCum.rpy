@@ -101,7 +101,7 @@ label hg_ps_cumslut_Scene_1:
     call her_main("...", "disgust", "narrow", "base", "down")
     m "I'll tell you what, I'll make things interesting."
     m "So long as I cum on you and you wear it around classes today, Gryffindor will get 50 points."
-    call her_main("How does that make it interesting?","disgust","glance")
+    call her_main("How does that make it interesting?", "disgust", "narrow", "base", "mid_soft")
     m "Because I'll let you choose where I cum."
     call nar(">You fell her hands tense around your cock.")
     call her_main("You're letting me choose?", "smile", "base", "base", "R")
@@ -261,7 +261,7 @@ label hg_ps_cumslut_Scene_2:
     m "40."
     call her_main("70!", "scream", "closed", "angry", "mid")
     m "50 points, final offer."
-    call her_main("80 and I'll let people see it.","base","glance")
+    call her_main("80 and I'll let people see it.", "base", "narrow", "base", "mid_soft")
     m "Really?"
     call her_main("As long as it isn't too obvious.", "base", "narrow", "worried", "down")
     m "Deal."
@@ -501,7 +501,7 @@ label hg_ps_cumslut_Scene_3:
     call her_main("about why I do this... sell you these sort of favours.", "upset", "closed", "base", "mid")
     call her_main("At the start it was just to get points, so that \'gryffindor\' could win the house cup...", "angry", "wink", "base", "mid")
     call her_main("but lately...", "base", "narrow", "worried", "down")
-    call her_main("...it’s been more than that... now I do it to make you happy, [genie_name].","base","glance")
+    call her_main("...it’s been more than that... now I do it to make you happy, [genie_name].", "base", "narrow", "base", "mid_soft")
     call her_main("Because making you happy, makes me happy...","base","suspicious")
     m "That's great... but what would really make me happy right now is you focusing a little more on the task at hand..."
     call her_main("Oh! Of course, [genie_name]...","open","worriedCl")
@@ -720,11 +720,11 @@ label hg_ps_cumslut_complete_2:
                 m "What happened with miss Lovegood?"
                 call her_main("She kept trying to tell me that a Cornish pixie had given me a present.", "annoyed", "narrow", "angry", "R")
                 m "A cornish pixie had given you a present?"
-                call her_main("I didn't know what she was talking about either. Cornish pixies are nasty little things that would never do anything nice.","disgust","glance")
+                call her_main("I didn't know what she was talking about either. Cornish pixies are nasty little things that would never do anything nice.", "disgust", "narrow", "base", "mid_soft")
                 m "Well what happened after that?"
-                call her_main("Well I asked her what she was talking about and then she ran her finger up my leg, scooping up some of your cum!","smile","glance")
+                call her_main("Well I asked her what she was talking about and then she ran her finger up my leg, scooping up some of your cum!", "smile", "narrow", "base", "mid_soft")
                 m "Really?"
-                call her_main("That's not the worst part. She then proceded to taste it!","open_tongue","glance")
+                call her_main("That's not the worst part. She then proceded to taste it!", "open_tongue", "narrow", "base", "mid_soft")
                 m "I don't believe you."
                 call her_main("I was as shocked as you were.", "open", "closed", "base", "mid")
                 m "Well you have certainly made this old man very happy."

@@ -45,7 +45,7 @@ label potion_scene_11_1: #Milking potion part 1
     call her_main("But there's no need to insult me.", "normal", "squint", "angry", "mid")
     m "(what did I say?)"
     m "Yes, well, you should notice the effects starting to manifest soon enough."
-    call her_main("Hmmm...","base","glance")
+    call her_main("Hmmm...", "base", "narrow", "base", "mid_soft")
     call her_main("And what sort of \'effects\' would that be?","open","suspicious")
     m "You may notice a some minor swelling in those nice tits of yours."
     call her_main("...", "base", "base", "base", "mid")
@@ -95,7 +95,7 @@ label potion_scene_11_1: #Milking potion part 1
     call her_main("[genie_name], this is ridiculous!","angry","worried")
     call her_main("I can't be expected to go to class looking like this!","annoyed","worriedL")
     m "Why not? I don't think they're that much bigger than normal."
-    call her_main("Are you kidding me?","disgust","glance")
+    call her_main("Are you kidding me?", "disgust", "narrow", "base", "mid_soft")
     call her_main("They're {size=+5}humongous!{/size}", "angry", "base", "angry", "mid")
     m "Well if you want them to go back to normal..."
     call her_main("What? Do you have an antidote?", "grin", "base", "base", "R")

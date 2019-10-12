@@ -101,7 +101,7 @@ label hermione_summon_setup:
                     call her_main("But the weather is just too hot today.", "base", "base", "base", "R")
                     g9 "You should wear this more often!"
                 else:
-                    call her_main("Thank you, [genie_name].","base","glance")
+                    call her_main("Thank you, [genie_name].", "base", "narrow", "base", "mid_soft")
 
             else:
                 call update_her_uniform

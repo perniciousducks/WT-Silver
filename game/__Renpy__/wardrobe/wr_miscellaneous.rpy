@@ -100,7 +100,7 @@ label equip_misc_item:
                 # call her_main()
                 # pause.8
                 # call her_main("All done!",face="happy")
-                # call her_main("Would you like me to drink a bit more?","base","glance")
+                # call her_main("Would you like me to drink a bit more?", "base", "narrow", "base", "mid_soft")
             # else:
                 # call her_main(face="happy")
 

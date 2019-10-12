@@ -338,7 +338,7 @@ label chit_chat:
             call her_main("Hm...", "soft", "base", "base", "R")
 
         elif one_of_ten == 3:
-            call her_main("I wouldn't say \"no\" to a bottle of butterbeer right about now...","smile","glance")
+            call her_main("I wouldn't say \"no\" to a bottle of butterbeer right about now...", "smile", "narrow", "base", "mid_soft")
             call her_main("", "grin", "base", "base", "R")
 
         elif one_of_ten == 4:
@@ -373,7 +373,7 @@ label chit_chat:
             call her_main("I don't want to look plain!", "annoyed", "narrow", "angry", "R")
 
         elif one_of_ten == 10:
-            call her_main("Would you like to see my tits today, sir?","smile","glance")
+            call her_main("Would you like to see my tits today, sir?", "smile", "narrow", "base", "mid_soft")
             call her_main("25 house points, please.", "smile", "base", "angry", "mid")
             call her_main("", "upset", "closed", "base", "mid")
 
@@ -416,9 +416,9 @@ label chit_chat:
 
         elif one_of_ten == 9:
             call her_main("I have read this one article about the positive effects of semen on a woman's skin...", "open", "closed", "base", "mid")
-            call her_main("I wonder where their information is coming from...","base","glance")
+            call her_main("I wonder where their information is coming from...", "base", "narrow", "base", "mid_soft")
             call her_main("Did the magazine conduct research of some sort?", "angry", "wink", "base", "mid")
-            call her_main("","base","glance")
+            call her_main("", "base", "narrow", "base", "mid_soft")
 
         elif one_of_ten == 10:
             call her_main("It goes like this...", "open", "closed", "base", "mid")
@@ -442,7 +442,7 @@ label chit_chat:
             call her_main("It's been getting so cold lately...", "open", "base", "base", "mid") 
             call her_main("I hope it's going to start snowing soon...", "base", "base", "base", "mid")
             call her_main("You will let me wear a coat at least right?","angry","worriedCl",emote="05")
-            call her_main("","base","glance")
+            call her_main("", "base", "narrow", "base", "mid_soft")
         
         elif one_of_ten == 4:
             call her_main("Jump and scream for the Gryffindor team!", "open", "closed", "base", "mid") 
@@ -452,13 +452,13 @@ label chit_chat:
         elif one_of_ten == 5:
             call her_main("Sir, I have a favour to ask...","base","worried") 
             call her_main("Could help me with the dress later, sir?", "base", "base", "base", "R")
-            call her_main("I could use some of your... insight","soft","glance",cheeks="blush")
-            call her_main("", "base","glance")
+            call her_main("I could use some of your... insight", "soft", "narrow", "base", "mid_soft",cheeks="blush")
+            call her_main("", "base", "narrow", "base", "mid_soft")
 
         elif one_of_ten == 6:
             call her_main("I can't believe I was such a prude before.","angry","worried")
-            call her_main("Meeting you was the best thing that has happened to me, sir.","smile","glance")
-            call her_main("", "base","glance")
+            call her_main("Meeting you was the best thing that has happened to me, sir.", "smile", "narrow", "base", "mid_soft")
+            call her_main("", "base", "narrow", "base", "mid_soft")
         
         elif one_of_ten == 7:
             call her_main("Considering the nature of the favours you keep buying from me sir...", "open", "closed", "base", "mid") 
@@ -474,10 +474,10 @@ label chit_chat:
         elif one_of_ten == 9:
             call her_main("Remember when I told you about this one article...", "open", "closed", "base", "mid") 
             her "It was about the positive effects of semen on a woman's skin."
-            call her_main("I tested it recently...","base","glance") 
-            call her_main("And it actually works!","smile","glance")
+            call her_main("I tested it recently...", "base", "narrow", "base", "mid_soft") 
+            call her_main("And it actually works!", "smile", "narrow", "base", "mid_soft")
             call her_main("My skin definitely is getting softer.", "smile", "closed", "base", "mid") 
-            call her_main("","base","glance") 
+            call her_main("", "base", "narrow", "base", "mid_soft") 
 
         elif one_of_ten == 10:
             call her_main("It goes like this...", "open", "closed", "base", "mid") 

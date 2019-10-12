@@ -61,7 +61,7 @@ label hg_pf_grope:
         call her_main("Thank you, [genie_name]...", "soft", "base", "base", "mid")
     else:
         call her_main("..................", "soft", "narrow", "annoyed", "up")
-        call her_main("Thank you, [genie_name]...","soft","glance")
+        call her_main("Thank you, [genie_name]...", "soft", "narrow", "base", "mid_soft")
 
     if daytime:
         her "Now if you don't mind, I'd better go. My classes are about to start."
@@ -208,7 +208,7 @@ label hg_pf_grope_T2_intro_E1:
     m "Or your but..."
     g9 "I'd like to give it a good squeeze."
 
-    call her_main("[genie_name]! Don't you think this is too much?","disgust","glance")
+    call her_main("[genie_name]! Don't you think this is too much?", "disgust", "narrow", "base", "mid_soft")
     m "You think?"
     her "I am not one of those harlots from \"Slytherin\", you know..."
     m "I know... You are from \"Gryfonmon\"... or something..." #<- GRYFFINDOR MISSPELLED ON PERPOUSE
@@ -216,7 +216,7 @@ label hg_pf_grope_T2_intro_E1:
     m "Of course..."
     call her_main("...................", "annoyed", "narrow", "angry", "R")
     m "I'll give you 35 house points for this."
-    call her_main(".......................","disgust","glance")
+    call her_main(".......................", "disgust", "narrow", "base", "mid_soft")
     her "All you are going to do is watch, [genie_name]?"
     m "Well, I feel more like touching, actually..."
     her "...................................."
@@ -280,7 +280,7 @@ label hg_pf_grope_T3_intro_E1:
     call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "Would you like to join me again?"
     g9 "Behind my desk."
-    call her_main("Are you going to grope me again, [genie_name]?","soft","glance")
+    call her_main("Are you going to grope me again, [genie_name]?", "soft", "narrow", "base", "mid_soft")
     g9 "You just read my mind!"
     call her_main("...................", "disgust", "narrow", "base", "down")
 
@@ -314,7 +314,7 @@ label hg_pf_grope_T3_intro_E2:
     call her_main("[genie_name].....?", "soft", "narrow", "worried", "down", ypos="head")
     m "Yes?"
     call her_main("Are you going to grope my breasts again?", "soft", "base", "base", "mid")
-    call her_main("Or my bum?....","soft","glance")
+    call her_main("Or my bum?....", "soft", "narrow", "base", "mid_soft")
     m "*Hmm*..."
 
     menu:
@@ -333,12 +333,12 @@ label hg_pf_grope_T3_intro_E2:
 
 label hg_pf_grope_T3_E2:
     g9 "[hermione_name]. Come here and let me grope you!"
-    call her_main("Of course, [genie_name]...","base","glance")
+    call her_main("Of course, [genie_name]...", "base", "narrow", "base", "mid_soft")
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
     call her_main("Are you going to grope my breasts today, Sir?","soft","glanceL", ypos="head")
-    call her_main("Or my bum?....","soft","glance")
+    call her_main("Or my bum?....", "soft", "narrow", "base", "mid_soft")
 
     m "*Hmm*... What would you like?"
     if one_out_of_three == 1:

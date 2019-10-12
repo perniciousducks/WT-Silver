@@ -14,13 +14,13 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
 
     call nar(">She drinks the potion at a leisurely pace.")
     call her_main("Ahhh.","base","happyCl")
-    call her_main("","smile","glance")
+    call her_main("", "smile", "narrow", "base", "mid_soft")
     call her_chibi("stand","mid","base")
 
     her "That wasn't actually that bad."
     call her_main("So, now that I've had the potion, will you tell me what it's supposed to do.", "angry", "wink", "base", "mid")
     m "No need to ruin the fun, it should take effect relatively quickly."
-    call her_main("Well what am I supposed to do until then?","base","glance")
+    call her_main("Well what am I supposed to do until then?", "base", "narrow", "base", "mid_soft")
     m "You could show me your tits."
     call her_main("I don't think so [genie_name], you're only paying me for drinking the potion.", "open", "closed", "base", "mid")
     call her_main("If you expect to see me without my shirt on then you'll have to try a little harder.","base","suspicious")
@@ -59,7 +59,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
             m "Why would I, I asked you to drink a potion and you drank it. You're free to leave."
             call her_main("Thank you [genie_name], I'll head back to my room.", "smile", "base", "base", "R")
             m "Room? It's time for class [hermione_name]. What do you think Professor Snape will say once he hears that you skipped class?"
-            call her_main("Well I can't be expected to go like this.","disgust","glance")
+            call her_main("Well I can't be expected to go like this.", "disgust", "narrow", "base", "mid_soft")
             m "Why not? Everything is covered."
             call her_main("Barely. And what will people think of me.", "angry", "narrow", "base", "down")
             m "Just tell them that you are still developing. I'm sure that they're used to enormous breasts anyway, what's a few extra sizes."

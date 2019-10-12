@@ -16,7 +16,7 @@ label hg_anal_sex_1:
     call her_main("90 house points...", "annoyed", "narrow", "annoyed", "mid")
     m "Seriously?"
     call her_main("Yes!","mad","worriedCl")
-    call her_main(".............................","disgust","glance")
+    call her_main(".............................", "disgust", "narrow", "base", "mid_soft")
     m "Well alright then. 90 house points it is."
 
     stop music fadeout 1.0
@@ -285,7 +285,7 @@ label hg_anal_sex_1:
             call her_main("A little...", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
             call her_main("I also feel full and warm inside...", "grin", "closed", "base", "mid",cheeks="blush",tears="mascara")
             m "You plan to keep it in? My cum I mean."
-            call her_main("Yes...","grin","glance",cheeks="blush",tears="mascara")
+            call her_main("Yes...", "grin", "narrow", "base", "mid_soft",cheeks="blush",tears="mascara")
 
             if daytime:
                 call her_main("I hope it won't start leaking during my classes...",cheeks="blush",tears="mascara")
@@ -372,14 +372,14 @@ label hg_anal_sex_2:
     g4 "Oh, ye-es!"
     call her_main("Ah...", "soft", "narrow", "annoyed", "up")
     m "It seems like your butthole became a bit more welcoming, [hermione_name]."
-    call her_main("Ah... It still hurts a little.","base","glance")
+    call her_main("Ah... It still hurts a little.", "base", "narrow", "base", "mid_soft")
     call her_main("And please, just call me \"whore\", [genie_name].","base","suspicious")
     g4 "Agh! You slut! You always get me with your words!"
 
     call play_music("playful_tension") # SEX THEME.
     call her_main("Ah... Ah...", "open", "closed", "base", "mid")
     call her_main("Ah...")
-    call her_main("[genie_name]?","base","glance")
+    call her_main("[genie_name]?", "base", "narrow", "base", "mid_soft")
     m "Yes, whore?"
     call her_main("Em...", "angry", "base", "base", "mid")
     call her_main("Would you marry me, [genie_name]?", "angry", "narrow", "base", "down")
@@ -535,7 +535,7 @@ label hg_pf_anal_sex_old: # Writing not in use
     m "Care to guess what the favour will be?"
     m "You have three attempts to find out."
     call her_main("...........", "annoyed", "squint", "angry", "mid")
-    call her_main("Anal sex?","disgust","glance")
+    call her_main("Anal sex?", "disgust", "narrow", "base", "mid_soft")
     g4 "Wha..........?!"
     g4 "How did you...?"
     call her_main("Just a lucky guess, [genie_name]...", "angry", "base", "angry", "mid")

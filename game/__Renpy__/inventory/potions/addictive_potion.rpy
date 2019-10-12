@@ -174,7 +174,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
     show screen bld1
     call u_play_ani
     call nar(">As soon as you remove your cock from your robe Hermione is on top of you.")
-    call her_main("","disgust","glance")
+    call her_main("", "disgust", "narrow", "base", "mid_soft")
     call u_pause_ani
     her "Do you have any idea how hard it was sitting through classes today?"
     hide screen hermione_main
@@ -193,7 +193,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
     hide screen hermione_main
     call u_play_ani
     her "*Gobble!* *Slurp!* *Slurp!*"
-    call her_main("","smile","glance")
+    call her_main("", "smile", "narrow", "base", "mid_soft")
     call u_pause_ani
     her "I even masturbated in the girls bathroom."
     hide screen hermione_main
@@ -213,13 +213,13 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
     her "*Slurp!* *Gulp!* *Gulp!*"
     m "My my, someone is becoming quite the slut wouldn't you say [hermione_name]"
     her "*Slurp!* *Gulp!* *Slurp!*"
-    call her_main("","open_tongue","glance")
+    call her_main("", "open_tongue", "narrow", "base", "mid_soft")
     call u_pause_ani
     her "You know why this is happening to me."
     hide screen hermione_main
     call u_play_ani
     her "*Slurp!* *Slurp!* *Gulp!*"
-    call her_main("","smile","glance")
+    call her_main("", "smile", "narrow", "base", "mid_soft")
     call u_pause_ani
     her "Whatever was in that delicious potion you made me drink this morning."
     hide screen hermione_main
@@ -678,7 +678,7 @@ label potion_scene_3_3_1: #Hypno potion
         call set_her_action("none","skip_update")
         pause.5
 
-        call her_main("I bet you like watching me strip mistah{image=textheart}","smile","glance")
+        call her_main("I bet you like watching me strip mistah{image=textheart}", "smile", "narrow", "base", "mid_soft")
 
     call her_main("I'm not sure what under-thingies I should wear though...", "annoyed", "narrow", "base", "down")
     call her_main("Definitely something in pink!!!","smile","happyCl")
@@ -717,7 +717,7 @@ label potion_scene_3_3_1: #Hypno potion
     call update_her_uniform
 
     pause.5
-    call her_main("","base","glance")
+    call her_main("", "base", "narrow", "base", "mid_soft")
     call hide_blkfade
     call ctc
 
@@ -728,7 +728,7 @@ label potion_scene_3_3_1: #Hypno potion
         "-You look amazing!-":
             call her_main("Thank youuuuu!!!{image=textheart}{image=textheart}{image=textheart}", "grin", "narrow", "annoyed", "up")
             call her_main("Aaaaanyway...", "open", "base", "base", "R")
-            call her_main("Is there anything you want from me mistah... I'll do anything!{image=textheart}","soft","glance")
+            call her_main("Is there anything you want from me mistah... I'll do anything!{image=textheart}", "soft", "narrow", "base", "mid_soft")
         "-Where is your badge, cumslut?!-" if cum_badge_ITEM.unlocked:
             call her_main("Oh no I forgot that!", "soft", "wide", "base", "stare")
             call her_main("I'm soooo sorry!!!","shock","worriedCl",cheeks="blush")
@@ -743,7 +743,7 @@ label potion_scene_3_3_1: #Hypno potion
             call update_her_uniform
 
             call her_main("Yay! Do you like it?","grin","happyCl")
-            call her_main("Anything else you want from me mistah?... I'll do anything!{image=textheart}","soft","glance")
+            call her_main("Anything else you want from me mistah?... I'll do anything!{image=textheart}", "soft", "narrow", "base", "mid_soft")
 
 
     m "I'm just going to ask you a few questions."
@@ -793,7 +793,7 @@ label potion_scene_3_3_1: #Hypno potion
     call set_her_action("none","skip_update")
     pause.5
 
-    call her_main("I know everyone who sees me naked is happy!","base","glance")
+    call her_main("I know everyone who sees me naked is happy!", "base", "narrow", "base", "mid_soft")
     m "You've certainly made me happy."
     call her_main("Thanks mistah professor sir! That makes me so happy{image=textheart}!","grin","worriedCl")
     m "(I don't think I can stand her saying the word happy much more...)"

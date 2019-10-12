@@ -38,7 +38,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         call her_main("...panties, [genie_name]?", "angry", "base", "angry", "mid")
         m "Yes I do..."
-        call her_main("May I ask what you are planning to do with them...?","disgust","glance")
+        call her_main("May I ask what you are planning to do with them...?", "disgust", "narrow", "base", "mid_soft")
         m "Ehm...I'm conducting research..."
         her "But this is kind of inappropriate, don't you think?"
         m "But don't you hate it that some of the girls from \"Slytherin\"..."
@@ -46,7 +46,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         call her_main("Yes I do!", "angry", "base", "angry", "mid")
         call her_main("(Those \"Slytherin\" tramps have no dignity.)", "annoyed", "narrow", "angry", "R")
         m "Well, there you go then!"
-        call her_main("Huh?","disgust","glance")
+        call her_main("Huh?", "disgust", "narrow", "base", "mid_soft")
         m "Beat them at their own game!"
         call her_main("What?", "open", "base", "base", "mid")
         m "Yes! Don't just put the \"Gryffindor\" house back on top..."
@@ -210,12 +210,12 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 her "But it's alright if you don't want to tell me, [genie_name]..."
                 her "I think I know exactly what happened to them..."
             "\"I came all over them!\"":
-                call her_main("I knew it...","smile","glance")
+                call her_main("I knew it...", "smile", "narrow", "base", "mid_soft")
                 her "They reek of semen!"
 
         call her_main("Hm...", "grin", "base", "base", "R")
         her "Seems like these will require some serious cleaning before I can put them on..."
-        call her_main("Unless you want me to put them on now, [genie_name]...?","smile","glance")
+        call her_main("Unless you want me to put them on now, [genie_name]...?", "smile", "narrow", "base", "mid_soft")
 
         menu:
             "\"Yes! Put them on now, [hermione_name]!\"":
@@ -239,7 +239,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
             her "You came all over them..."
         call her_main("Hm...", "grin", "base", "base", "R")
         her "Seems like these will require some serious cleaning before I can put them on..."
-        call her_main("Unless you want me to put them on now, [genie_name]...?","smile","glance")
+        call her_main("Unless you want me to put them on now, [genie_name]...?", "smile", "narrow", "base", "mid_soft")
 
         menu:
             "\"Yes! Put them on now, [hermione_name]!\"":
@@ -350,7 +350,7 @@ label hg_ps_get_panties_complete:
                         #m "What would you call this?"
                         #call her_main("I know you are right, [genie_name]...", "annoyed", "narrow", "angry", "R")
                         call her_main("(But we need the points...)", "annoyed", "narrow", "angry", "R")
-                        call her_main("Can I have my payment now please?","disgust","glance")
+                        call her_main("Can I have my payment now please?", "disgust", "narrow", "base", "mid_soft")
                         m "What about your panties?"
                         call her_main("Oh, them too of course...","angry","worriedCl",emote="05")
                         if her_panties_soaked:

@@ -193,7 +193,7 @@ label hg_pr_flirt_T1_E2:
     m "Anything else?"
     call her_main("Well, there was one more incident but the outcome was pretty much the same...", "annoyed", "squint", "angry", "mid")
     m "\"The Gryffindor whore\"?"
-    call her_main(".........yes, [genie_name].","disgust","glance")
+    call her_main(".........yes, [genie_name].", "disgust", "narrow", "base", "mid_soft")
     m "You are doing it all wrong, [hermione_name]."
     call her_main("I am sorry, [genie_name]. I thought this would be easy...", "annoyed", "narrow", "angry", "R")
 
@@ -388,7 +388,7 @@ label hg_pr_flirt_T3_E1:
     call her_main("Yes.","base","happyCl")
     call her_main("Let's see...", "grin", "base", "base", "R")
     her "Those two handsome guys right before the first period started..."
-    call her_main("Then I exchanged a few rather inappropriate messages with this other guy, during the the first period.","smile","glance")
+    call her_main("Then I exchanged a few rather inappropriate messages with this other guy, during the the first period.", "smile", "narrow", "base", "mid_soft")
     call her_main("After that there was this one other guy...", "grin", "base", "base", "R")
     call her_main("Then those three guys...", "annoyed", "narrow", "worried", "down")
     call her_main("Then one more right before the last period...","base","happyCl")
@@ -398,7 +398,7 @@ label hg_pr_flirt_T3_E1:
     $ sc34CG(2, 7, 1, 2)
     call her_main("I suppose so...","base","happyCl")
     call her_main("Well, not all of them were nice to me at first...", "annoyed", "narrow", "worried", "down")
-    call her_main("But I use this trick to \"tame\" them.","smile","glance")
+    call her_main("But I use this trick to \"tame\" them.", "smile", "narrow", "base", "mid_soft")
     m "A trick?"
     $ sc34CG(2, 6, 1, 1)
     call her_main("Yes... Whenever a boy from \"Slytherin\" is being mean to me or calls me a name...","base","happyCl")
@@ -430,7 +430,7 @@ label hg_pr_flirt_T3_E2:
     her "He kept calling me \"Miss Hermione\"..."
     her "So adorable..."
     m "Well, I didn't send you to harass little kids, [hermione_name]."
-    call her_main("I didn't haras--","disgust","glance")
+    call her_main("I didn't haras--", "disgust", "narrow", "base", "mid_soft")
     call her_main("[genie_name]! Seven flirts and two dates amount to something, don't they?","angry","worriedCl", emote="05")
     m "Oh, absolutely."
     call her_main("Then I would like to receive my payment now...", "scream", "closed", "angry", "mid")
@@ -465,7 +465,7 @@ label hg_pr_flirt_T3_E3:
             her "I was the center of attention at first..."
             call her_main("And it felt sort of wonderful...", "base", "narrow", "base", "up")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("Then a bunch of those \"Slytherin\" harlots stumbled in and...","disgust","glance")
+            call her_main("Then a bunch of those \"Slytherin\" harlots stumbled in and...", "disgust", "narrow", "base", "mid_soft")
             m "And?"
             call her_main("Well, they started saying stuff and doing things...", "annoyed", "narrow", "angry", "R")
             her "Anyway, I had to leave..."
@@ -476,7 +476,7 @@ label hg_pr_flirt_T3_E3:
             jump end_hg_pr_flirt
 
         "\"Tell me now, or lose the points!\"":
-            call her_main("[genie_name], please, I don't want to discuss this with you, [genie_name].","disgust","glance")
+            call her_main("[genie_name], please, I don't want to discuss this with you, [genie_name].", "disgust", "narrow", "base", "mid_soft")
             m "No one is forcing you, [hermione_name]."
             m "You are free to leave."
             call her_main("{size=-4}(Stubborn old man!){/size}", "angry", "base", "angry", "mid")

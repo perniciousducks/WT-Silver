@@ -92,11 +92,11 @@ label equip_body_accessory:
                         # call her_main("Hm...?", "soft", "base", "base", "mid")
                         # call her_main("An \"I love cum\" badge?","annoyed","suspicious")
                         # call her_main("{size=-5}(I suppose that it's not a complete lie...){/size}", "base", "narrow", "worried", "down")
-                        # call her_main("Alright, I'll wear it.","base","glance")
+                        # call her_main("Alright, I'll wear it.", "base", "narrow", "base", "mid_soft")
                     # else: #24
                         # call her_main("An \"I love cum\" badge?","annoyed","suspicious")
                         # call her_main("Sure, [genie_name]!", "soft", "base", "base", "mid")
-                        # call her_main("Let me put it on for you.","base","glance")
+                        # call her_main("Let me put it on for you.", "base", "narrow", "base", "mid_soft")
                 # else:
                     # if her_whoring < 8:
                         # jump too_much

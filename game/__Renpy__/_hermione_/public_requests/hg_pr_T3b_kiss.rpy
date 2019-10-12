@@ -72,7 +72,7 @@ label hg_pr_kiss:
         m "Great."
         m "I want you to make out with another girl today."
         call her_main("Alright.", "soft", "base", "base", "R")
-        call her_main("I know a couple of girls who are hungry for attention and wouldn't mind putting on a little show.","smile","glance")
+        call her_main("I know a couple of girls who are hungry for attention and wouldn't mind putting on a little show.", "smile", "narrow", "base", "mid_soft")
         m "Great. See you after your classes then."
 
     call her_walk(action="leave", speed=2.5)
@@ -167,9 +167,9 @@ label hg_pr_kiss_T1_E2:
     m "Did you enjoy it though?"
     call her_main("*Humph!*...", "annoyed", "narrow", "annoyed", "mid")
     m "So you kissed a girl and you liked it?"
-    call her_main("Yes...","disgust","glance")
+    call her_main("Yes...", "disgust", "narrow", "base", "mid_soft")
     m "Did your tongues touch?"
-    call her_main("Yes...","disgust","glance")
+    call her_main("Yes...", "disgust", "narrow", "base", "mid_soft")
     her "It was a proper deep kiss, if that's what you want to know."
     her "Can I just get my payment now?"
     call her_main("Please, [genie_name]...", "annoyed", "narrow", "angry", "R")
@@ -258,7 +258,7 @@ label hg_pr_kiss_T2_E1:
     call her_main("She kept calling me \"[hermione_name]\"...", "smile", "base", "base", "R")
     m "Hm..."
     m "I Don't recall sending you out with a task to confuse little kids, [hermione_name]."
-    call her_main("\"Little kids\"? [genie_name], please...","smile","glance")
+    call her_main("\"Little kids\"? [genie_name], please...", "smile", "narrow", "base", "mid_soft")
     her "You should have seen that girl..."
     her "A little petite? Maybe... But definitely not a \"kid\"."
     call her_main("And I assure you that she was anything but confused.", "smile", "base", "angry", "mid")
@@ -303,7 +303,7 @@ label hg_pr_kiss_T2_E2:
     her "I Single-handedly turned that girl from a social outcast..."
     call her_main("Into \"that lesbian girl who made out with Hermione Granger\"!", "smile", "base", "angry", "mid")
     m "Wow... You are just like some kind of hero or something..."
-    call her_main("I suppose I am, [genie_name]...","base","glance")
+    call her_main("I suppose I am, [genie_name]...", "base", "narrow", "base", "mid_soft")
     her "I changed that poor girl's life..."
     m "Now you are just pulling on my heartstrings..."
 
@@ -321,7 +321,7 @@ label hg_pr_kiss_T2_E3:
     call her_main("May I ask you a question, [genie_name]?", "open", "base", "base", "mid")
     m "By all means."
     call her_main("Ehm...", "annoyed", "narrow", "angry", "R")
-    call her_main("Why are boys so into watching girls make out with each other, [genie_name]?","disgust","glance")
+    call her_main("Why are boys so into watching girls make out with each other, [genie_name]?", "disgust", "narrow", "base", "mid_soft")
 
     menu:
         m "..."
@@ -418,7 +418,7 @@ label hg_pr_kiss_T3_E1:
     call her_main("You should really investigate Professor Snape's activities, [genie_name]...", "annoyed", "narrow", "angry", "R")
     m "Of course..."
     m "Putting him on my \"naughty boys list\" as we speak..."
-    call her_main("..........","disgust","glance")
+    call her_main("..........", "disgust", "narrow", "base", "mid_soft")
     m "What happened next, [hermione_name]?"
     call her_main("Oh, right...", "open", "narrow", "worried", "down")
     her "Well, we made out for a while..."
@@ -428,7 +428,7 @@ label hg_pr_kiss_T3_E1:
     call her_main("So we decided to \"snowball\" a little...", "base", "narrow", "worried", "down")
     m "I'm sorry, you decided to do what?"
     call her_main("To \"snowball\", [genie_name].", "angry", "wink", "base", "mid")
-    call her_main("It is when one girl spits into another girl's mouth...","base","glance")
+    call her_main("It is when one girl spits into another girl's mouth...", "base", "narrow", "base", "mid_soft")
     her "We call it \"snowballing\"..."
     her "The boys really go crazy from that for some reason..."
     m "I imagine they do..."
@@ -473,7 +473,7 @@ label hg_pr_kiss_T3_E2:
     m "Naturally..."
     call play_music("playful_tension") # SEX THEME.
     call her_main("And then I sort of kissed her...", "open", "base", "base", "R", cheeks="blush")
-    call her_main("And Ginny returned my kiss with such passion...","base","glance")
+    call her_main("And Ginny returned my kiss with such passion...", "base", "narrow", "base", "mid_soft")
     her "that we sort of ended up doing more than just kissing..."
     g9 "And afterwards you had a pillow fight in lingerie?"
     call her_main("Err... No...", "open", "happy", "base", "mid", cheeks="blush")
@@ -483,7 +483,7 @@ label hg_pr_kiss_T3_E2:
     her "And I did just that."
     call her_main("The rest shall remain private.", "angry", "wink", "base", "mid")
     m "Now you are just being cruel, you little witch."
-    call her_main("My points please.","smile","glance")
+    call her_main("My points please.", "smile", "narrow", "base", "mid_soft")
     m "Fine..."
 
     jump end_hg_pr_kiss

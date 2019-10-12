@@ -216,7 +216,7 @@ label hg_pp_polyjuice_T1_intro:
 
                 call u_pause_ani
 
-                call her_main("Of course [genie_name].","base","glance")
+                call her_main("Of course [genie_name].", "base", "narrow", "base", "mid_soft")
 
                 hide screen hermione_main
                 call u_play_ani
@@ -271,7 +271,7 @@ label hg_pp_polyjuice_T1_intro:
                 call her_main("*Purr* *gulp* *gulp*","cum","worriedCl")
                 #
                 call nar(">You pull your cock out of her purring mouth.")
-                call her_main("Mmmmm, it might be this potion but that tasted good...","base","glance")
+                call her_main("Mmmmm, it might be this potion but that tasted good...", "base", "narrow", "base", "mid_soft")
                 hide screen hermione_main
                 m "Well, you certainly earned your 75 points."
                 $ gryffindor += 75
@@ -422,7 +422,7 @@ label hg_pp_polyjuice_T1_introCC:
     m "So you still went to all your classes?"
     $ g_c_u_pic = "hand_ani"
     with d3
-    call her_main("Of course [genie_name].","base","glance")
+    call her_main("Of course [genie_name].", "base", "narrow", "base", "mid_soft")
     hide screen hermione_main
     $ g_c_u_pic = "blowjob_ani"
     with d3
@@ -493,7 +493,7 @@ label hg_pp_polyjuice_T1_introCC:
     pause .1
     call her_main("*Purr* *gulp* *gulp*","cum","worriedCl")
     call nar(">You pull your cock out of her purring mouth.")
-    call her_main("Mmmmm, it might be this potion but that tasted \ngood...","base","glance")
+    call her_main("Mmmmm, it might be this potion but that tasted \ngood...", "base", "narrow", "base", "mid_soft")
     hide screen hermione_main
     m "Well, you certainly earned your 75 points."
     $ gryffindor += 75
@@ -613,7 +613,7 @@ label hg_pp_polyjuice_T1_introCC:
             # m "Well, there are times when academic excellence shouldn't be your primary concern."
             # call her_main("Hmmph, and what /should/ be my primary concern then?","annoyed","suspicious")
             # m "Currently. I'd say your face is pretty high on the list"
-            # call her_main("Excuse me. That is hardly appropriate for a headmaster.","open_tongue","glance")
+            # call her_main("Excuse me. That is hardly appropriate for a headmaster.", "open_tongue", "narrow", "base", "mid_soft")
             # m "No, I'm serious. You should really see the look on your face."
         # else:
             # call her_main("Not really. I realise there are other things I can excel in.", "base", "base", "base", "mid")

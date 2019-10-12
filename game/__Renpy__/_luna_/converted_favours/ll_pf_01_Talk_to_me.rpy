@@ -613,11 +613,11 @@ label luna_favour_1: ###TALK TO ME #DONE
         call lun_main("I mean he says talk...","normal","angry","mad","R")
         call lun_main("but I think we both know he wants to sit there and stroke that filthy old cock of his while we do all the talking.","base","seductive","angry","mid")
         call her_main("typical...", "base", "narrow", "worried", "down")
-        call her_main("so what did you want me here for?","base","glance")
+        call her_main("so what did you want me here for?", "base", "narrow", "base", "mid_soft")
         call lun_main("I figured you could lend a hand... plus this way we both get paid.","normal","angry","angry","R")
         call her_main("Aw, that's so sweet luna!","base","worriedCl")
         call lun_main("Well, it's more like I want a lesson on dirty talk...","normal","mad","sad","R")
-        call her_main("whatever you say... now I think it's about time you started stroking that cock of yours don't you [genie_name]?","base","glance")
+        call her_main("whatever you say... now I think it's about time you started stroking that cock of yours don't you [genie_name]?", "base", "narrow", "base", "mid_soft")
         $ luna_flip = 1
         call lun_main("yeah, come on [lun_genie_name]...","base","seductive","sad","mid")
         m "I'm not going to say no to that am I?"
@@ -658,7 +658,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         call her_main("it was incredible sir... she swallowed the whole thing...", "base", "narrow", "worried", "down")
         g4 "{size=+4}(agh...){/size}"
         g4 "{size=+4}yes...{/size}"
-        call her_main("she hid all 6 inches of it in her mouth... down her throat...","base","glance")
+        call her_main("she hid all 6 inches of it in her mouth... down her throat...", "base", "narrow", "base", "mid_soft")
         call her_main("just so we wouldn't get found out...","base","suspicious")
         $ luna_flip = -1
         call lun_main("well what else was I supposed to do...","open","wide","sad","mid", cheeks="blush")
@@ -682,7 +682,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         with d3
 
         call lun_main("...","base","seductive","sad","mid", cheeks="blush")
-        call her_main("I told you he liked stories...","base","glance")
+        call her_main("I told you he liked stories...", "base", "narrow", "base", "mid_soft")
         show screen genie_jerking_sperm_02
         with d3
         g4 "ah, shit, why does this feels so good..."

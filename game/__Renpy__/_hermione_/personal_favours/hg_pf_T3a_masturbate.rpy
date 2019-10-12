@@ -32,7 +32,7 @@ label hg_pf_strip_fingering_intro:
         m "[hermione_name]..."
         call her_main("Yes, [genie_name]?", "base", "base", "base", "mid", xpos="mid", ypos="base")
         m "Are you feeling horny?"
-        call her_main("maybe A little, [genie_name].","base","glance")
+        call her_main("maybe A little, [genie_name].", "base", "narrow", "base", "mid_soft")
         m "Ah, well perhaps we can fix that..."
         call her_main("[genie_name]...","open","worriedCl")
 
@@ -336,7 +336,7 @@ label hg_pf_strip_T4_fingering:
         m "Once more for good luck then!"
         call her_main("If you insist...{image=textheart}", "open", "base", "base", "R", cheeks="blush")
 
-    call her_main("...","base","glance")
+    call her_main("...", "base", "narrow", "base", "mid_soft")
     call set_her_action("covering")
 
     #if hg_masturbated.trigger == False:

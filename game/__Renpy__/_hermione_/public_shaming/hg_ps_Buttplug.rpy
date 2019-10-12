@@ -65,7 +65,7 @@ label hg_ps_buttplug:
         m "...is that you wear this to class..."
         call her_main("!!!......", "angry", "base", "angry", "mid")
         m "Oh, come on... Just a harmless little baby one."
-        call her_main("...","disgust","glance")
+        call her_main("...", "disgust", "narrow", "base", "mid_soft")
         m "Fifty five house points..."
         call her_main("..............", "annoyed", "narrow", "angry", "R")
         call her_main("Fine.", "annoyed", "narrow", "annoyed", "mid")
@@ -367,7 +367,7 @@ label hg_ps_buttplug:
                     call her_main(".............", "disgust", "narrow", "annoyed", "up")
                     m "Are you alright, [hermione_name]?"
                     call her_main("..........................", "soft", "narrow", "base", "up")
-                    call her_main("ah... y-yes...","open","glance")
+                    call her_main("ah... y-yes...", "open", "narrow", "base", "mid_soft")
                     m "Fantastic! I'll see you after class then."
                     call her_main(".............", "disgust", "narrow", "worried", "down",cheeks="blush")
                     call nar(">Hermione slowly leaves your office, barely able to walk in a straight line.")
@@ -383,7 +383,7 @@ label hg_ps_buttplug:
                     call set_her_buttplug("plug_b_on") #Updates clothing and body.
 
                     call her_main("{image=textheart}ah{image=textheart}...", "silly", "narrow", "annoyed", "up")
-                    call her_main("Thank you, [genie_name].","base","glance")
+                    call her_main("Thank you, [genie_name].", "base", "narrow", "base", "mid_soft")
                     call her_main("{size=-5}({image=textheart}it feels so good... I might have to buy my own...{image=textheart}){/size}", "soft", "narrow", "annoyed", "up")
                     hide screen hermione_main
                     with d3
@@ -408,7 +408,7 @@ label hg_ps_buttplug:
             call set_her_buttplug("plug_c_on") #Updates clothing and body.
 
             call her_main("{image=textheart}ah{image=textheart}ah...", "grin", "narrow", "annoyed", "up")
-            call her_main("Thank you, [genie_name]!","base","glance")
+            call her_main("Thank you, [genie_name]!", "base", "narrow", "base", "mid_soft")
             call her_main("{size=-5}({image=textheart}it feels so good... I might have to buy my own...{image=textheart}){/size}", "soft", "narrow", "annoyed", "up")
 
     call her_walk(action="leave", speed=2.5)
@@ -434,7 +434,7 @@ label hg_ps_buttplug_complete:
             $ sc34CG(1, 8)
             call her_main("It was awful... of course...", "annoyed", "squint", "angry", "mid",xpos="base",ypos="base")
             m "Just tell me what happened, [hermione_name]..."
-            call her_main("I've never been so uncomfortable in my life [genie_name]!","disgust","glance")
+            call her_main("I've never been so uncomfortable in my life [genie_name]!", "disgust", "narrow", "base", "mid_soft")
             call her_main("I wasn't able to focus on anything all day!", "annoyed", "narrow", "annoyed", "mid")
             m "Why's that?"
             call her_main("Whenever I was sitting down in class it just kept prodding me...", "annoyed", "narrow", "angry", "R")
@@ -499,7 +499,7 @@ label hg_ps_buttplug_complete:
             call her_main("Of course.", "open", "base", "base", "mid",xpos="right",ypos="base")
             m "Did anyone notice?"
             call her_main("Yes... well I might have...", "base", "narrow", "worried", "down")
-            call her_main("shown someone...","base","glance")
+            call her_main("shown someone...", "base", "narrow", "base", "mid_soft")
             her "I was in the library fetching some books when I saw Luna..."
             her "She was reading at a desk..."
             call her_main("So I decided to walk over to her and have a chat...", "grin", "base", "base", "R")
@@ -518,7 +518,7 @@ label hg_ps_buttplug_complete:
             call her_main("No, [genie_name]...", "soft", "happy", "base", "R")
             her "But when I turned back around she didn't make eye contact..."
             m "Hm..."
-            call her_main("I don't think I've seen anyone blush so hard...","base","glance")
+            call her_main("I don't think I've seen anyone blush so hard...", "base", "narrow", "base", "mid_soft")
             m "Well it sounds like you've earned your points and then some."
 
         elif one_out_of_three == 2: ### EVENT (B)
@@ -556,7 +556,7 @@ label hg_ps_buttplug_complete:
                     call her_main("very quiet...", "soft", "narrow", "annoyed", "up")
                     call her_main("barely making a sound...", "grin", "base", "base", "R")
                     hide screen sccg
-                    call her_main("[genie_name], can I get paid now, please?","base","glance",xpos="right",ypos="base",trans="fade")
+                    call her_main("[genie_name], can I get paid now, please?", "base", "narrow", "base", "mid_soft",xpos="right",ypos="base",trans="fade")
                     her "......"
                 "\"Of course they did!\"":
                     $ sc34CG(1, 13, 2)
@@ -614,7 +614,7 @@ label hg_ps_buttplug_complete:
             $ sc34CG(1, 17, 2)
             call her_main("...embrace it...", "grin", "narrow", "base", "dead")
             m "and how did you do that?"
-            call her_main("well if I rock my hips while I'm sitting in class it's almost enough...","base","glance")
+            call her_main("well if I rock my hips while I'm sitting in class it's almost enough...", "base", "narrow", "base", "mid_soft")
             $ sc34CG(1, 16, 3)
             call her_main("but if I sit of the edge of my chair while I rock my hips...","base","suspicious")
             $ sc34CG(1, 17, 2)
@@ -665,7 +665,7 @@ label hg_ps_buttplug_complete:
             m "That's quite the thought process."
             call her_main("Yes, well I certainly don't want that happening...","base","suspicious")
             m "I'm sure..."
-            call her_main("","base","glance")
+            call her_main("", "base", "narrow", "base", "mid_soft")
             m "It sounds like a job well done [hermione_name]."
 
         elif one_out_of_three == 3:
@@ -676,11 +676,11 @@ label hg_ps_buttplug_complete:
             m "Did anyone notice?"
             her "maybe a few third years..."
             m "well go on."
-            call her_main("It was the stairs...","base","glance")
+            call her_main("It was the stairs...", "base", "narrow", "base", "mid_soft")
             her "I may have gotten a little carried away with myself..."
             m "What happened, [hermione_name]?"
             call her_main("Well as I was walking to divination class I ended up in front of a group of third year students...","base","suspicious")
-            call her_main("And seeing as how they were behind me on the stairs they may have been able to... see it.","base","glance")
+            call her_main("And seeing as how they were behind me on the stairs they may have been able to... see it.", "base", "narrow", "base", "mid_soft")
             m "So you intentionally showed it to a group of boys? You don't expect me to grant you extra points for showing them, do you?"
             call her_main("Of course not, [genie_name].", "base", "base", "base", "R",cheeks="blush")
             m "Then why do it?"
@@ -725,7 +725,7 @@ label hg_ps_buttplug_complete:
             call her_main("well they were so kind...", "open", "base", "base", "R")
             call her_main("and they could already see most of it...", "base", "narrow", "worried", "down")
             m "Did they say anything to you?"
-            call her_main("No... But the looks on their faces...","base","glance")
+            call her_main("No... But the looks on their faces...", "base", "narrow", "base", "mid_soft")
             m "Well, it sounds like a job well done..."
 
         elif one_out_of_three == 3: ### EVENT (C) cat swatting it
@@ -767,7 +767,7 @@ label hg_ps_buttplug_complete:
             m "Anything interesting happen?"
             call her_main("Yes... well I might have...", "base", "narrow", "worried", "down")
             call her_main("had someone...","base","worriedCl")
-            call her_main("touch it...","base","glance")
+            call her_main("touch it...", "base", "narrow", "base", "mid_soft")
             m "hmmmm..."
             call her_main("It was luna lovegood again.", "grin", "base", "base", "R")
             call her_main("We ended up sitting next to each other in class.", "soft", "base", "base", "R")
@@ -921,10 +921,10 @@ label hg_ps_buttplug_complete:
             m "Anything interesting happen?"
             her "do you know that Patil twins [genie_name]?"
             m "no but do continue."
-            call her_main("well they were walking down the hall behind me...","base","glance")
+            call her_main("well they were walking down the hall behind me...", "base", "narrow", "base", "mid_soft")
             her "I swear I could hear them whispering to each other..."
             call her_main("and I thought I may as well give them something to talk about...","base","suspicious")
-            call her_main("So I stopped, kept my knees straight and bent over as far as I could...","base","glance")
+            call her_main("So I stopped, kept my knees straight and bent over as far as I could...", "base", "narrow", "base", "mid_soft")
             m "You exposed yourself just like that?"
             call her_main(".......", "base", "base", "base", "R",cheeks="blush")
             m "Very good, [hermione_name]!"
@@ -1009,10 +1009,10 @@ label hg_ps_buttplug_complete:
             m "Anything interesting happen?"
             her "do you know that Patil twins [genie_name]?"
             m "no but do continue."
-            call her_main("well they were walking down the hall behind me...","base","glance")
+            call her_main("well they were walking down the hall behind me...", "base", "narrow", "base", "mid_soft")
             her "I swear I could hear them whispering to each other..."
             call her_main("and I thought I may as well give them something to talk about...","base","suspicious")
-            call her_main("So I stopped, kept my knees straight and bent over as far as I could...","base","glance")
+            call her_main("So I stopped, kept my knees straight and bent over as far as I could...", "base", "narrow", "base", "mid_soft")
             m "You exposed yourself just like that?"
             call her_main(".......", "base", "base", "base", "R",cheeks="blush")
             m "Very good, [hermione_name]!"

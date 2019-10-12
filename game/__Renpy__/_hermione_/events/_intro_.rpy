@@ -1112,7 +1112,7 @@ label hermione_intro_E6:
         call her_main("{size=-7}(What a weirdo...){/size}", "annoyed", "narrow", "angry", "R")
         call her_main("Ehm... well, alright then...", "normal", "squint", "angry", "mid")
         call her_main("Here...","open","suspicious")
-        call her_main(".............","open_tongue","glance")
+        call her_main(".............", "open_tongue", "narrow", "base", "mid_soft")
         her "............."
         call her_main(".................", "open_tongue", "narrow", "angry", "R")
         call ctc

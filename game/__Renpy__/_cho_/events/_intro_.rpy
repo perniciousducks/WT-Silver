@@ -344,7 +344,7 @@ label cho_intro_E1:
 
     call her_main("...", "annoyed", "base", "angry", "mid", xpos="base", ypos="base",flip=False)
     m "..."
-    call her_main("You’re selling favours to her aren’t you?","soft","glance")
+    call her_main("You’re selling favours to her aren’t you?", "soft", "narrow", "base", "mid_soft")
     m "I’m...{p=0.8}{nw}"
     call her_main("I knew it!", "angry", "base", "angry", "mid")
     g4 "Now, if you could just listen for a second!"
@@ -642,7 +642,7 @@ label cho_intro_E3:
         m "Of course not... it was another teacher, actually."
         call her_main("Who was it?", "open", "base", "angry", "mid")
         m "Not important..."
-        call her_main("It was Snape wasn’t it...","annoyed","glance")
+        call her_main("It was Snape wasn’t it...", "annoyed", "narrow", "base", "mid_soft")
         g4 "(She’s good!)"
         m "Well, I’d like you to stop and that’s all that matters..."
         m "And that includes the..."
@@ -672,7 +672,7 @@ label cho_intro_E3:
         call her_main("Uhm...", "annoyed", "base", "base", "R")
         m "You’re testing my patience Miss Granger..."
         call her_main("Oh, I know!{p=0.5}I want a seat in the teacher stands during the Quidditch matches!","smile","happyCl")
-        call her_main("Cho would be so jealous if she saw me sitting near the commentator and teachers...","grin","glance")
+        call her_main("Cho would be so jealous if she saw me sitting near the commentator and teachers...", "grin", "narrow", "base", "mid_soft")
         m "So, you want both 200 points and a seat in the teacher stands..."
         call her_main("Yes...", "base", "happy", "base", "mid_soft")
 
@@ -686,7 +686,7 @@ label cho_intro_E3:
                 m "200 points to gryffindor...{p=0.6}Happy?"
                 $ gryffindor += 200
 
-                call her_main("If I'm truly honest with you Sir,{p=0.6}My plans weren’t that popular with the Quidditch teams in any case.","soft","glance")
+                call her_main("If I'm truly honest with you Sir,{p=0.6}My plans weren’t that popular with the Quidditch teams in any case.", "soft", "narrow", "base", "mid_soft")
                 m "I can’t imagine why..."
                 pass
 
@@ -724,13 +724,13 @@ label cho_intro_E3:
         call her_main("I might consider dropping it.", "base", "base", "base", "R")
         call her_main("Even though it would take away the immense pleasure of seeing Cho getting all worked up about it...", "grin", "base", "base", "mid")
         m "(...)"
-        call her_main("There is something I'd like from you in return, [genie_name].{p=0.8}Or else I'll' just continue with it!","base","glance")
+        call her_main("There is something I'd like from you in return, [genie_name].{p=0.8}Or else I'll' just continue with it!", "base", "narrow", "base", "mid_soft")
         m "Go on girl."
         m "Tell me what you want."
         m "What you really{w}, really want..."
         call her_main("Very well, [genie_name].", "soft", "base", "base", "R")
         call her_main("I'll tell you what I want!", "open", "closed", "base", "mid")
-        call her_main("What I really, really want!","grin","glance")
+        call her_main("What I really, really want!", "grin", "narrow", "base", "mid_soft")
         g9 "{size=-4}Nice!{/size}"
         call her_main("I’d like a seat in the teacher stands, during the Quidditch matches..", "open", "closed", "base", "mid")
         m "Is that all?"
@@ -746,7 +746,7 @@ label cho_intro_E3:
         call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
 
     else:
-        call her_main("My what?","open","glance")
+        call her_main("My what?", "open", "narrow", "base", "mid_soft")
         m "Your Quidditch movement."
         m "Regarding the male and female roles in Quidditch..."
         call her_main("Oh. I barely even remember that I did that.","annoyed","glanceL")
@@ -754,9 +754,9 @@ label cho_intro_E3:
         call her_main("I guess so...", "soft", "narrow", "worried", "down")
         call her_main("Although, if I were to drop it...", "open", "narrow", "base", "down")
         m "Yes?"
-        call her_main("I want a seat in the teacher stands during Quidditch matches though!","grin","glance")
+        call her_main("I want a seat in the teacher stands during Quidditch matches though!", "grin", "narrow", "base", "mid_soft")
         m "I’m sure that could be arranged..."
-        call her_main("Thank you, [genie_name].","base","glance")
+        call her_main("Thank you, [genie_name].", "base", "narrow", "base", "mid_soft")
 
     call her_main("[genie_name], may I ask.{p=0.6}What exactly were you and Cho talking about when I entered your office?", "open", "base", "base", "R")
     m "Oh. She just wanted my help with Quidditch."

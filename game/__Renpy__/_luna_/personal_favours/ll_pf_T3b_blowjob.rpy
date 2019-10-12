@@ -1319,7 +1319,7 @@ label ll_pf_blowjob_T1_summon:
     lun "*glck* *slrp* *glck*"
     m "Ugh... what do you mean?"
     $ lunCG(pos=16)
-    call her_main("Please, I can hear them sucking you off from here.","smile","glance")
+    call her_main("Please, I can hear them sucking you off from here.", "smile", "narrow", "base", "mid_soft")
     $ lunCG('', 'wide', '', 'dl', pos=9)
     lun "*glck* *slrp* *glck*"
     $ lunCG('', '', '', 'dick', pos=12)
@@ -1466,7 +1466,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=15)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=16)
-    call her_main("Make them watch while you bust your seventh load of the day down Luna's throat!","grin","glance")
+    call her_main("Make them watch while you bust your seventh load of the day down Luna's throat!", "grin", "narrow", "base", "mid_soft")
     $ lunCG(pos=14)
     g4 "ARGHH, this is it you sluts!"
     $ lunCG('sucking', 'wide', 'sad', 'right', pos=16)

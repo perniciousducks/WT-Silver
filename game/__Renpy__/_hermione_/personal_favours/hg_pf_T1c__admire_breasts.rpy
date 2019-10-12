@@ -54,7 +54,7 @@ label hg_pf_admire_breasts:
         call her_main("Thank you, [genie_name]...", "soft", "base", "base", "mid")
     else:
         call her_main("..................","base","happyCl")
-        call her_main("Thank you, [genie_name]...","soft","glance")
+        call her_main("Thank you, [genie_name]...", "soft", "narrow", "base", "mid_soft")
 
     if daytime:
         her "Now if you don't mind I'd better go. my classes are about to start."
@@ -465,7 +465,7 @@ label hg_pf_admire_breasts_T4_intro_E1:
     call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "[hermione_name]?"
-    call her_main("Yes, [genie_name]?","soft","glance")
+    call her_main("Yes, [genie_name]?", "soft", "narrow", "base", "mid_soft")
     m "Did I ever tell you what magnificent tits you have?"
     call her_main("............", "clench", "narrow", "base", "down", cheeks="blush")
     call her_main("Why do you have to be so vulgar, [genie_name]?!","clench","worriedCl", cheeks="blush")

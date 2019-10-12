@@ -51,11 +51,11 @@ label hg_pr_grope:
         call her_main("..........", "annoyed", "narrow", "angry", "R")
         m "You are a pretty girl, it shouldn't be too hard."
         her "....................."
-        call her_main("How many points would I receive after completing such a task, [genie_name]?","disgust","glance")
+        call her_main("How many points would I receive after completing such a task, [genie_name]?", "disgust", "narrow", "base", "mid_soft")
         m "Hm... Twenty five should do..."
         call her_main("Twenty five house points...", "annoyed", "narrow", "angry", "R")
         her "...."
-        call her_main("Well, so be it then...","disgust","glance")
+        call her_main("Well, so be it then...", "disgust", "narrow", "base", "mid_soft")
         m "Great..."
         call her_main("I'd better go now. The classes are about to start...", "angry", "base", "angry", "mid")
 
@@ -68,11 +68,11 @@ label hg_pr_grope:
         call her_main("[genie_name], it's just...", "annoyed", "narrow", "angry", "R")
         call her_main("I do not understand why I must do things like that...", "annoyed", "narrow", "annoyed", "mid")
         m "To help out your house?"
-        call her_main("That's not what I meant...","disgust","glance")
+        call her_main("That's not what I meant...", "disgust", "narrow", "base", "mid_soft")
         call her_main("Oh, never mind...", "annoyed", "narrow", "angry", "R")
         her "The classes are about to start, I'd better go..."
         m "Will you do it?"
-        call her_main("I don't know... Maybe...","disgust","glance")
+        call her_main("I don't know... Maybe...", "disgust", "narrow", "base", "mid_soft")
 
     elif her_tier < 4:
         m "[hermione_name], I need you to go out there, and make one of your classmates molest you a little."
@@ -327,7 +327,7 @@ label hg_pr_grope_T2_E3:
     call her_main("He started to touch my... feet, [genie_name].","scream","worriedCl")
     m "Huh?"
     m "Your \"Feet\"? Is that what kids call tits these days?"
-    call her_main("I'd wish, [genie_name]...","disgust","glance")
+    call her_main("I'd wish, [genie_name]...", "disgust", "narrow", "base", "mid_soft")
     her "He asked me to take off my shoes..."
     her "Then he..."
     call her_main("He started to smell my toes, [genie_name]!", "angry", "base", "base", "mid", tears="soft")
@@ -389,7 +389,7 @@ label hg_pr_grope_T3_E1:
     call her_main("They touched me everywhere, [genie_name]...")
     m "\"Everywhere\", huh?"
     call her_main("Yes... Everywhere, [genie_name]...", "soft", "narrow", "annoyed", "up")
-    call her_main("There were hands under my skirt, under my shirt...","base","glance")
+    call her_main("There were hands under my skirt, under my shirt...", "base", "narrow", "base", "mid_soft")
     $ sc34CG(2, 16, 6, 9)
     call her_main("And then I started to breathe heavily...")
     call her_main("So one of them just put his hand over my mouth...", "soft", "narrow", "annoyed", "up")
@@ -397,7 +397,7 @@ label hg_pr_grope_T3_E1:
     $ sc34CG(2, 17, 6, 9)
     call her_main("My head started to spin...")
     $ sc34CG(2, 16, 6, 9)
-    call her_main("It was most exhilarating, [genie_name].","base","glance")
+    call her_main("It was most exhilarating, [genie_name].", "base", "narrow", "base", "mid_soft")
     m "Very good, [hermione_name]. Very good indeed."
 
     show screen blkfade
@@ -415,12 +415,12 @@ label hg_pr_grope_T3_E2:
     her "This stocky \"Hufflepuff \" boy came up to me..."
     call play_music("playful_tension") # SEX THEME.
     call her_main("He said someone told him that I let boys touch me...", "angry", "wink", "base", "mid")
-    call her_main("Normally I would deny everything...","base","glance")
+    call her_main("Normally I would deny everything...", "base", "narrow", "base", "mid_soft")
     her "But I decided not to waste the opportunity..."
     call her_main("I took the boy to a quiet spot and let him touch me...", "base", "narrow", "base", "up")
     her "I let him run his hands up and down my thighs..."
     her "I let him fondle my breasts..."
-    call her_main("All the usual things...","base","glance")
+    call her_main("All the usual things...", "base", "narrow", "base", "mid_soft")
     m "Well done, [hermione_name]."
 
     jump end_hg_pr_grope

@@ -50,7 +50,7 @@ label hg_pr_handjob:
         m "...that you go out there and give some lucky boy a handjob..."
         call her_main("!!!......", "angry", "base", "angry", "mid")
         m "Oh, come on... Just a harmless handjob."
-        call her_main("...","disgust","glance")
+        call her_main("...", "disgust", "narrow", "base", "mid_soft")
         m "Fifty five house points..."
         call her_main("..............", "annoyed", "narrow", "angry", "R")
         call her_main("I am glad that you came to your senses, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
@@ -141,7 +141,7 @@ label hg_pr_handjob_T1_E1:
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Quite awful... of course...", "annoyed", "squint", "angry", "mid")
     m "Just tell me what happened, [hermione_name]..."
-    call her_main("I made a complete fool out of myself, that's what happened, [genie_name].","disgust","glance")
+    call her_main("I made a complete fool out of myself, that's what happened, [genie_name].", "disgust", "narrow", "base", "mid_soft")
     her "....."
     m "..."
     call her_main("..........","annoyed","worriedL")
@@ -396,7 +396,7 @@ label hg_pr_handjob_T2_E2:
     her "I did not?"
     call her_main("[genie_name], I gave a handjob to one of my classmates today...", "open", "base", "base", "mid", cheeks="blush")
     her "I wanked his cock until he came..."
-    call her_main("Is that not what you told me to do?","disgust","glance")
+    call her_main("Is that not what you told me to do?", "disgust", "narrow", "base", "mid_soft")
     m "That's exactly what I told you to do, [hermione_name]."
     call her_main("Then I would like to get paid now, please.", "annoyed", "closed", "base", "mid")
     m "........"
@@ -425,7 +425,7 @@ label hg_pr_handjob_T2_E3:
     call her_main("Thank you, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
     call her_main("So, as I was saying...", "annoyed", "narrow", "angry", "R")
     her "I wanked his cock until he came..."
-    call her_main("But after that he said: \"Good job, slut\" and just left me there...","disgust","glance")
+    call her_main("But after that he said: \"Good job, slut\" and just left me there...", "disgust", "narrow", "base", "mid_soft")
     call her_main("Such a mean thing to do...", "annoyed", "narrow", "angry", "R")
     call her_main("It made me feel so cheap... and used.", "upset", "closed", "base", "mid")
     her "But it gets worse..."
@@ -540,12 +540,12 @@ label hg_pr_handjob_T3_E2:
     call her_main("Yes, I did [genie_name]...","base","suspicious")
     her "More than once actually..."
     m "More than once?"
-    call her_main("Five times, [genie_name]...","base","glance")
+    call her_main("Five times, [genie_name]...", "base", "narrow", "base", "mid_soft")
     her "I got carried away a little I suppose..."
     m "What do you mean \"five times\", [hermione_name]?"
     call her_main("I mean I wanked off five boys today, [genie_name].","base","suspicious")
     m "Very impressive, [hermione_name]."
-    call her_main("Thank you, [genie_name].","base","glance")
+    call her_main("Thank you, [genie_name].", "base", "narrow", "base", "mid_soft")
     m "You don't expect me to multiply your payment by seven or anything, do you?"
     call her_main("Of course not, [genie_name].", "base", "base", "base", "R", cheeks="blush")
     m "Than why do it?"
@@ -553,11 +553,11 @@ label hg_pr_handjob_T3_E2:
     her "I was wanking off this one boy..."
     her "And another boy walked in on us..."
     her "He called his friends..."
-    call her_main("One thing lead to another...","base","glance")
+    call her_main("One thing lead to another...", "base", "narrow", "base", "mid_soft")
     m "And you ended up jerking off five cocks..."
     call her_main("...yes.", "soft", "narrow", "annoyed", "up")
     m "Well done, miss Granger."
-    call her_main("","base","glance")
+    call her_main("", "base", "narrow", "base", "mid_soft")
 
     jump end_hg_pr_handjob
 

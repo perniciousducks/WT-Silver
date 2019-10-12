@@ -363,7 +363,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
             call her_main("Next time?!", "open", "base", "base", "mid", tears="mascara_crying")
             call her_main("I assure you, [genie_name], there will be no next time...", "angry", "base", "angry", "mid", cheeks="blush", tears="mascara")
             m "We'll see..."
-            call her_main("Tsk!","disgust","glance", tears="mascara")
+            call her_main("Tsk!", "disgust", "narrow", "base", "mid_soft", tears="mascara")
 
             call her_walk(action="leave", speed=2.5)
 
@@ -377,7 +377,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
 label hg_pf_strip_T1_intro_E2:
     call bld
     m "[hermione_name], I need you to dance for me."
-    call her_main("That again, [genie_name]...?","disgust","glance")
+    call her_main("That again, [genie_name]...?", "disgust", "narrow", "base", "mid_soft")
     m "You will get paid accordingly of course..."
     call her_main("............................", "annoyed", "narrow", "angry", "R")
     call her_main("And you expect me to... ehm...", "annoyed", "narrow", "angry", "R")
@@ -387,7 +387,7 @@ label hg_pf_strip_T1_intro_E2:
     show screen blktone
     call her_main("......................", "annoyed", "narrow", "angry", "R")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Well, why not?","disgust","glance")
+    call her_main("Well, why not?", "disgust", "narrow", "base", "mid_soft")
     call her_main("Yes, I don't see why not!", "scream", "base", "angry", "mid", emote="01")
     m "Hm...? {size=-4}(Look at her, so eager all of a sudden...){/size}"
     call her_main("After all, as a pupil I am meant to obey your every order, isn't that right, [genie_name]?!", "scream", "closed", "angry", "mid")
@@ -477,7 +477,7 @@ label hg_pf_strip_T1_intro_E2:
 
     m "{size=-4}(Wow, she is getting really worked up over this...){/size}"
     m "{size=-4}(Maybe it was still too early to--{/size}"
-    call her_main("My shirt?!!","disgust","glance")
+    call her_main("My shirt?!!", "disgust", "narrow", "base", "mid_soft")
 
     $ hermione_wear_bra = True
     call set_her_action("lift_top")
@@ -709,7 +709,7 @@ label hg_pf_strip_T1_intro_E2:
 
 label hg_pf_strip_T1_E2:
     m "[hermione_name], how about another strip?"
-    call her_main("..............","disgust","glance", xpos="base", ypos="base")
+    call her_main("..............", "disgust", "narrow", "base", "mid_soft", xpos="base", ypos="base")
     her "I would really rather not, [genie_name]..."
     m "Why? You are getting quite good at it."
     call her_main(".........................", "annoyed", "narrow", "annoyed", "mid")
@@ -991,7 +991,7 @@ label hg_pf_strip_T1_masturbate:
 
 label hg_pf_strip_T2_intro_E1:
     m "[hermione_name], how about another strip?"
-    call her_main("..............","disgust","glance", xpos="base", ypos="base")
+    call her_main("..............", "disgust", "narrow", "base", "mid_soft", xpos="base", ypos="base")
     her "I would really rather not, [genie_name]..."
     m "Why? You are getting quite good at it."
     call her_main(".........................", "annoyed", "narrow", "annoyed", "mid")
@@ -1011,7 +1011,7 @@ label hg_pf_strip_T2_intro_E2:
     g9 "Yes?"
     call her_main("I've been practising a bit more. Mainly just my dancing.", "soft", "narrow", "worried", "down")
     m "Very good. I'd love to see your progress."
-    call her_main("Of course, [genie_name]...","base","glance")
+    call her_main("Of course, [genie_name]...", "base", "narrow", "base", "mid_soft")
 
     jump hg_pf_strip_T2
 
@@ -1087,7 +1087,7 @@ label hg_pf_strip_T2:
             pass
 
         else:
-            call her_main("Yes, [genie_name].","base","glance")
+            call her_main("Yes, [genie_name].", "base", "narrow", "base", "mid_soft")
 
             stop music fadeout 1.0
             pass
@@ -1106,7 +1106,7 @@ label hg_pf_strip_T2:
     call ctc
 
     call play_music("playful_tension") # SEX THEME.
-    call her_main("...","base","glance", xpos="mid", ypos="base")
+    call her_main("...", "base", "narrow", "base", "mid_soft", xpos="mid", ypos="base")
     m "Yes, very nice."
     call her_main("...", "annoyed", "narrow", "worried", "down")
     call nar(">Hermione hastily starts pulling at her top...")
@@ -1119,8 +1119,8 @@ label hg_pf_strip_T2:
         call her_main("No...", "annoyed", "base", "angry", "mid")
         call her_main("I can do it myself, [genie_name].", "open", "closed", "base", "mid")
     else:
-        call her_main("No, [genie_name].","base","glance")
-        call her_main("Just enjoy the show...","soft","glance")
+        call her_main("No, [genie_name].", "base", "narrow", "base", "mid_soft")
+        call her_main("Just enjoy the show...", "soft", "narrow", "base", "mid_soft")
         g9 "I will, [hermione_name]."
     call her_main("...", "base", "narrow", "worried", "down")
     call nar(">Hermione pulls her shirt over her head...")
@@ -1185,7 +1185,7 @@ label hg_pf_strip_T2:
             "\"I feel like I'm in love right now!\"":
                 call her_main("You don't have to be vulgar, [genie_name].", "annoyed", "narrow", "angry", "R")
                 m "Oh, but I mean it!"
-                call her_main("[genie_name], please!","disgust","glance")
+                call her_main("[genie_name], please!", "disgust", "narrow", "base", "mid_soft")
                 call her_main("I am one of your students!", "soft", "base", "base", "mid")
                 call her_main("And you are older than my father!","grin","worriedCl", emote="05")
                 m "{size=-4}(You have no idea, girl.){/size}"
@@ -1253,7 +1253,7 @@ label hg_pf_strip_T2_watch:
     call nar(">But she looks rather ridiculous in her attempts to act like a professional stripper...","end")
     call ctc
 
-    call her_main("..........","base","glance")
+    call her_main("..........", "base", "narrow", "base", "mid_soft")
 
     call nar(">Suddenly Hermione breaks into a whole series of rather complex pirouettes...")
     m "{size=-4}(This looks quite impressive actually...){/size}"
@@ -1297,7 +1297,7 @@ label hg_pf_strip_T2_watch:
         m "..."
         "{size=-3}\"Good job, [hermione_name]! You sure know how to dance!\"{/size}":
             m "Good job [hermione_name]!"
-            call her_main("Really?","base","glance")
+            call her_main("Really?", "base", "narrow", "base", "mid_soft")
             m "Yes! You have a lot of talent for this!"
             call her_main("Thank you [genie_name].","silly","worriedCl", emote="05")
         "{size=-3}\"Hm... This was quite awful...\"{/size}":
@@ -1545,7 +1545,7 @@ label hg_pf_strip_T2_masturbate:
 
             call her_main("Oh, I don't know what to say...", "open", "wide", "base", "stare")
             m "I enjoyed your performance [hermione_name]."
-            call her_main("Thank you [genie_name]...","base","glance")
+            call her_main("Thank you [genie_name]...", "base", "narrow", "base", "mid_soft")
             m "I also enjoyed plastering your agile little body with cum..."
             call her_main("[genie_name]......","silly","worriedCl", emote="05")
             m "So, just allow me to show my appreciation."

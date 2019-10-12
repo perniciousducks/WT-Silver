@@ -278,7 +278,7 @@ label gryffindor_cheer_responses:
                         m "What reward did you promise them?"
                         call her_main("Well I was quite keen to ensure our victory against Slytherin that I may have promised that I would give each of them a blowjob if they won.", "grin", "base", "base", "R")
                         m "You gave every team member a blowjob after the game?"
-                        call her_main("And the water boy...","smile","glance")
+                        call her_main("And the water boy...", "smile", "narrow", "base", "mid_soft")
                         m "How did you even manage that? Did have to crawl around the locker room on your knees?"
                         call her_main("Of course not, they all patiently waited on their turn...", "scream", "closed", "angry", "mid")
                         m "Who doesn't love a queue..."
@@ -437,14 +437,14 @@ label slytherin_cheer_responses:
                 m "Fine, but you aren't getting any points."
                 call her_main("Of course [genie_name]. Will that be all?", "base", "base", "base", "mid")
                 m "Yes, you're free to go now."
-                call her_main("Thank you, [genie_name].","base","glance")
+                call her_main("Thank you, [genie_name].", "base", "narrow", "base", "mid_soft")
                 jump end_her_working_no_payment
         "-Dismiss her-":
             call her_main("Here's your payment.", "open", "base", "base", "mid")
             ">You receive [payment] gold coins."
             m "Well done [hermione_name], 30 points to Gryffindor."
 
-    call her_main("Thank you, [genie_name].","base","glance")
+    call her_main("Thank you, [genie_name].", "base", "narrow", "base", "mid_soft")
     ">You receive [payment] gold coins."
     $ gryffindor+= 30
     $ gold += payment

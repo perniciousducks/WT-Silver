@@ -33,7 +33,7 @@ label equip_bra:
                 # m "Would you wear this bra for me?"
                 # if her_whoring >= 11: #Success
                     # if her_whoring < 17:
-                        # call her_main("Of course, [genie_name].","base","glance")
+                        # call her_main("Of course, [genie_name].", "base", "narrow", "base", "mid_soft")
                     # else:
                         # call her_main("That old thing?", "disgust", "narrow", "worried", "down")
                         # call her_main("It looks so mundane...", "annoyed", "narrow", "worried", "down")
@@ -62,7 +62,7 @@ label equip_bra:
                     # else:
                         # call her_main("Of course, [genie_name]! I love that one!", "grin", "closed", "base", "mid")
                         # call her_main("It's so soft and comfy!", "grin", "base", "base", "mid")
-                        # call her_main("Let me put it on for you.","base","glance")
+                        # call her_main("Let me put it on for you.", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # if her_whoring < 5:
                         # call her_main("A bra?","shock","shocked")
@@ -94,7 +94,7 @@ label equip_bra:
                         # m "Really?"
                         # call her_main("Of course, I sometimes do sunbathing during breaktime.", "open", "closed", "base", "mid")
                         # call her_main("I'll just lie down in the grass and unwind for a bit. I'll even take off my top at times so I won't get any tan-lines!", "smile", "base", "base", "mid")
-                        # call her_main("I'm always attracting a crowd... Seems like the boys quite like ogling at me.","base","glance")
+                        # call her_main("I'm always attracting a crowd... Seems like the boys quite like ogling at me.", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # call her_main("Bikinis?", "soft", "wink", "base", "mid")
                     # call her_main("I mostly wear a bathing suit when I'm out swimming.", "open", "base", "base", "R")
@@ -117,7 +117,7 @@ label equip_bra:
                     # call her_main("And you'd like me to wear it?", "open", "base", "base", "mid")
                     # m "Yes please."
                     # call her_main("Very well...", "base", "base", "base", "R")
-                    # call her_main("Anything for you, [genie_name].","base","glance")
+                    # call her_main("Anything for you, [genie_name].", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # if her_whoring < 8:
                         # call her_main("What? [genie_name] why would you give me a bra?","shock","shocked")
@@ -149,7 +149,7 @@ label equip_bra:
                 # m "[hermione_name], I bought a new bra for you."
                 # if her_whoring >= 20: #Success
                     # m "I'd like you to wear it!"
-                    # call her_main("Of course, [genie_name].","base","glance")
+                    # call her_main("Of course, [genie_name].", "base", "narrow", "base", "mid_soft")
                     # m "You don't mind wearing this, even in classes?"
                     # call her_main("Why? Oh right, the holes...", "soft", "narrow", "worried", "down")
                     # call her_main("I can just cover myself with some books if I have to...", "open", "closed", "base", "mid")
@@ -187,7 +187,7 @@ label equip_bra:
                     # call her_main("Pasties?... My tits might as well be completely exposed if I were to wear those...", "soft", "narrow", "worried", "down")
                     # g9 "Just leaving enough to the imagination!"
                     # call her_main("Hmm... I can already see the boys imagine doing all kinds of things with them...", "open", "narrow", "annoyed", "up")
-                    # call her_main("They always tell me how great my breasts look!","base","glance")
+                    # call her_main("They always tell me how great my breasts look!", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # if her_whoring < 11:
                         # call her_main("Do you ask this from every girl, [genie_name]?", "open", "wink", "base", "mid")
@@ -216,10 +216,10 @@ label equip_bra:
                 # g9 "I've got something for you! Try it out!"
                 # if her_whoring >= 20: #Success
                     # call her_main("Wow. Fishnets?", "smile", "narrow", "worried", "down")
-                    # call her_main("That's so naughty!","grin","glance")
+                    # call her_main("That's so naughty!", "grin", "narrow", "base", "mid_soft")
                     # g9 "Glad you like it!"
                     # call her_main("I do, [genie_name]!", "soft", "base", "base", "R")
-                    # call her_main("Let me take off my bra and put these on instead.","base","glance")
+                    # call her_main("Let me take off my bra and put these on instead.", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # if her_whoring < 5:
                         # call her_main("What? Oh, what's this?", "soft", "base", "base", "mid")
@@ -228,7 +228,7 @@ label equip_bra:
                         # call her_main("This isn't really a hobby I considered pursuing, [genie_name]...", "open", "base", "base", "R")
                         # call her_main("But if you say it would help me with my grades then I'll try my best.", "soft", "narrow", "worried", "down")
                         # m "Wait, what?"
-                        # call her_main("I will go down to the lake later and try it out, if that's ok with you, [genie_name].","base","glance")
+                        # call her_main("I will go down to the lake later and try it out, if that's ok with you, [genie_name].", "base", "narrow", "base", "mid_soft")
                         # m "(...)"
                         # m "(Wait, is she expecting to catch fish with it...?)"
                     # else:
@@ -355,7 +355,7 @@ label equip_panties:
                 # m "Could you wear your normal panties again for me?"
                 # if her_whoring >= 11: #Success
                     # if her_whoring < 17:
-                        # call her_main("Of course, [genie_name].","base","glance")
+                        # call her_main("Of course, [genie_name].", "base", "narrow", "base", "mid_soft")
                     # else:
                         # call her_main("These old things?", "disgust", "narrow", "worried", "down")
                         # call her_main("They look so boring...", "annoyed", "narrow", "worried", "down")
@@ -384,7 +384,7 @@ label equip_panties:
                     # else:
                         # call her_main("Of course, [genie_name]! I love those!", "grin", "closed", "base", "mid")
                         # call her_main("They're so soft and comfy!", "grin", "base", "base", "mid")
-                        # call her_main("Let me put them on for you.","base","glance")
+                        # call her_main("Let me put them on for you.", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # if her_whoring < 5:
                         # call her_main("Panties?!","shock","shocked")
@@ -415,7 +415,7 @@ label equip_panties:
                         # m "Really?"
                         # call her_main("Yeah I sometimes do sunbathing during breaktime.", "open", "closed", "base", "mid")
                         # call her_main("I'll just lie down in the grass and unwind for a bit. I'll even take off my top at times so I won't get any tan-lines!", "smile", "base", "base", "mid")
-                        # call her_main("I'm always attracting a crowd... Seems like the boys quite like ogling at me.","base","glance")
+                        # call her_main("I'm always attracting a crowd... Seems like the boys quite like ogling at me.", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # call her_main("Bikinis?", "soft", "wink", "base", "mid")
                     # call her_main("I mostly wear a bathing suit when I'm out swimming.", "open", "base", "base", "R")
@@ -438,7 +438,7 @@ label equip_panties:
                     # call her_main("And you'd like me to wear them?", "open", "base", "base", "mid")
                     # m "Yes please."
                     # call her_main("Very well...", "base", "base", "base", "R")
-                    # call her_main("Anything for you, [genie_name].","base","glance")
+                    # call her_main("Anything for you, [genie_name].", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # if her_whoring < 8:
                         # call her_main("What? [genie_name] why would you give me panties?","shock","shocked")
@@ -470,7 +470,7 @@ label equip_panties:
                 # m "[hermione_name], I bought some new panties for you."
                 # if her_whoring >= 20: #Success
                     # m "I'd like you to wear them."
-                    # call her_main("Of course, [genie_name].","base","glance")
+                    # call her_main("Of course, [genie_name].", "base", "narrow", "base", "mid_soft")
                     # m "Really? You don't mind wearing them, even in classes?"
                     # call her_main("Why? Oh right, there is a hole in it...", "soft", "narrow", "worried", "down")
                     # call her_main("I can just cover myself with some books if I have to...", "open", "closed", "base", "mid")
@@ -506,10 +506,10 @@ label equip_panties:
                 # g9 "I have something for you! Try it out!"
                 # if her_whoring >= 20: #Success
                     # call her_main("Wow. Fishnet Panties?", "smile", "narrow", "worried", "down")
-                    # call her_main("That's so naughty!","grin","glance")
+                    # call her_main("That's so naughty!", "grin", "narrow", "base", "mid_soft")
                     # g9 "Glad you like them!"
                     # call her_main("I do, [genie_name].", "soft", "base", "base", "R")
-                    # call her_main("Let me put them on real quick.","base","glance")
+                    # call her_main("Let me put them on real quick.", "base", "narrow", "base", "mid_soft")
                 # else: #Fail
                     # if her_whoring < 11:
                         # call her_main("Don't tell me it's panties again...", "annoyed", "base", "angry", "mid")

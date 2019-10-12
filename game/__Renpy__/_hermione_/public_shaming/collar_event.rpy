@@ -131,7 +131,7 @@ label slut_scene: #Locked to her being your slut
             hide screen h_c_u
             with d3
             m "See, don't you feel better now that you have a cock in your mouth?"
-            call her_main("mmmmmmm","open_tongue","glance")
+            call her_main("mmmmmmm", "open_tongue", "narrow", "base", "mid_soft")
             hide screen hermione_main
             m "Admit it, you love this."
             call her_main("*Slurp!* *Gulp!* *Slurp!*", "open_wide_tongue", "narrow", "base", "down")
@@ -140,7 +140,7 @@ label slut_scene: #Locked to her being your slut
             call her_main("*Gulp!* *Gobble!* *Gobble!*", "open_wide_tongue", "closed", "angry", "mid")
             hide screen hermione_main
             m "You might act upset that people will find out what you are."
-            call her_main("*Gulp!* *Gobble!* *Slurp!*","open_tongue","glance")
+            call her_main("*Gulp!* *Gobble!* *Slurp!*", "open_tongue", "narrow", "base", "mid_soft")
             hide screen hermione_main
             m "But deep down, you're just glad that you don't have to act like you're not a massive slut."
             call her_main("*Slurp!* *Gobble!*", "open_wide_tongue", "closed", "angry", "mid")
@@ -156,7 +156,7 @@ label slut_scene: #Locked to her being your slut
             call her_main("...yes. I am a massive slut.","normal","worriedCl")
             hide screen hermione_main
             m "Good to hear you finally admit it. Now, back in the mouth."
-            call her_main("Yes [genie_name]","smile","glance")
+            call her_main("Yes [genie_name]", "smile", "narrow", "base", "mid_soft")
             hide screen hermione_main
             ">Hermione takes you back into her mouth with renewed effort."
             show screen g_c_u
@@ -209,7 +209,7 @@ label slut_scene: #Locked to her being your slut
     call her_main("...yes [genie_name].", "open", "closed", "base", "mid")
     hide screen hermione_main
     m "Well get going."
-    call her_main("Good night [genie_name].","base","glance")
+    call her_main("Good night [genie_name].", "base", "narrow", "base", "mid_soft")
     hide screen hermione_main
     m "Good night. {w}Slut."
     call her_main("...", "base", "narrow", "worried", "down")
@@ -507,7 +507,7 @@ label slave_scene:
     #sQuest "slave" collar reward
     call give_reward(">You present her the \"slave\" collar.\n \"slave\" collar added to your wardrobe.")
 
-    call her_main("What's this?","base","glance")
+    call her_main("What's this?", "base", "narrow", "base", "mid_soft")
     hide screen hermione_main
     m "This is a collar, so that everyone will know that you're my slut."
     call her_main("Do I have to wear this all the time?","base","suspicious")
@@ -529,7 +529,7 @@ label slave_scene:
     call her_main("Thank you master. Will I be getting any points \ntoday?", "base", "narrow", "worried", "down")
     hide screen hermione_main
     m "Hahaha, of course not. Slaves aren't paid girl, that's what makes them slaves."
-    call her_main("I suppose your right.","base","glance")
+    call her_main("I suppose your right.", "base", "narrow", "base", "mid_soft")
 
     hide screen hermione_main
     call gen_chibi("sit_behind_desk")
@@ -558,12 +558,12 @@ label good_girl_scene:
     call her_main("Yes, you're right [genie_name]. I suppose that I was just overreacting.","base","happyCl")
     m "Don't worry about it."
     call her_main("Before I go...", "grin", "base", "base", "R")
-    call her_main("Do you think that you could buy a favour off of me?","smile","glance")
+    call her_main("Do you think that you could buy a favour off of me?", "smile", "narrow", "base", "mid_soft")
     m "Sure, what would you like to do?"
     call her_main("Well I suppose that I could show you my breasts.", "base", "narrow", "worried", "down")
     call her_main("For 50 points of course...", "angry", "wink", "base", "mid")
     m "That seems fair."
-    call her_main("Thank you [genie_name].","base","glance")
+    call her_main("Thank you [genie_name].", "base", "narrow", "base", "mid_soft")
     ">Hermione slowly lifts her top."
 
     call set_her_action("lift_top")

@@ -338,7 +338,7 @@ label astoria_intro_E2_hermione:
             call her_main("Oh...", "annoyed", "base", "base", "mid")
             call her_main("So no Azkaban?", "soft", "base", "base", "R")
             m "Not unless they've killed someone..."
-            call her_main("Really? So there's still a chance?","base","glance")
+            call her_main("Really? So there's still a chance?", "base", "narrow", "base", "mid_soft")
             m "Only if you find a body..."
             call her_main("yay!","smile","happyCl")
 

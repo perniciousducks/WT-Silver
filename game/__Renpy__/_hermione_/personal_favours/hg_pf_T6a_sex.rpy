@@ -94,7 +94,7 @@ label hg_pf_sex_T1_intro_E1:
     m "How should I put this delicately...?"
     call her_main("Is it sex, [genie_name]?","base","suspicious")
     m "Well, yes. How did you...?"
-    call her_main("Not a terribly difficult deduction all things considered...","base","glance")
+    call her_main("Not a terribly difficult deduction all things considered...", "base", "narrow", "base", "mid_soft")
     m "You don't mind then?"
     call her_main("Of course, I mind, [genie_name]!", "upset", "closed", "base", "mid")
     her "I am not a prostitute!"
@@ -116,7 +116,7 @@ label hg_pf_sex_T1_intro_E2:
     call her_main("In that dream, [genie_name]...", "upset", "closed", "base", "mid", xpos="right", ypos="base")
     call her_main("Did I happen to receive 65 house points afterwards?", "angry", "base", "angry", "mid")
     g9 "Why yes, you did, [hermione_name]."
-    call her_main("...............................","disgust","glance")
+    call her_main("...............................", "disgust", "narrow", "base", "mid_soft")
     her "Let me just take my panties off..."
 
     call hg_sex_2
@@ -509,7 +509,7 @@ label hg_sex_2:
     #$ ccg2 = 10
     call her_main("Ah...{image=textheart}{image=textheart}", "silly", "narrow", "annoyed", "up")
     m "Yes! Do you like it when I fuck you like this?"
-    call her_main("Yes, [genie_name]...","base","glance", ypos="head")
+    call her_main("Yes, [genie_name]...", "base", "narrow", "base", "mid_soft", ypos="head")
 
     menu:
         g4 "..."
@@ -723,7 +723,7 @@ label hg_sex_luna:
     m "I have a favour to ask of you..."
     call her_main("Is it sex? {size=-2}Please let it be sex...{/size}", "smile", "base", "base", "R")
     m "You certainly seem eager."
-    call her_main(".......","base","glance")
+    call her_main(".......", "base", "narrow", "base", "mid_soft")
     call her_main("Well I may have made some plans...", "base", "narrow", "worried", "down")
     her "but I can't tell you what..."
     m "well as long as you bend over my desk I don't really care..."
@@ -756,7 +756,7 @@ label hg_sex_luna:
     g4 "Agh, you whore!"
     call her_main("Ah...{image=textheart}{image=textheart}", "silly", "narrow", "annoyed", "up")
     m "Yes! Do you like it when I fuck you like this?"
-    call her_main("Yes, [genie_name]...","base","glance")
+    call her_main("Yes, [genie_name]...", "base", "narrow", "base", "mid_soft")
 
     call play_sound("knocking")
     call nar(">You hear a knock at the door.")

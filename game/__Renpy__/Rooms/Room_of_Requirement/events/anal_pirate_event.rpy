@@ -34,7 +34,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
         call her_main("90 galleon points...", "annoyed", "narrow", "annoyed", "mid")
         m "Wha'?"
-        call her_main(".............................","disgust","glance")
+        call her_main(".............................", "disgust", "narrow", "base", "mid_soft")
         m "Ah, well then lass. 90 galleon points 'tis."
         call blkfade
         hide screen hermione_main
@@ -389,7 +389,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("A little...", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
                 call her_main("I also feel full and warm inside...", "grin", "closed", "base", "mid",cheeks="blush",tears="mascara")
                 m "You plan to keep it in? My cum I mean."
-                call her_main("Aye..","grin","glance",cheeks="blush",tears="mascara")
+                call her_main("Aye..", "grin", "narrow", "base", "mid_soft",cheeks="blush",tears="mascara")
 
                 if daytime:
                     call her_main("I hope I won't spring a leak during my classes...",cheeks="blush",tears="mascara")
@@ -450,7 +450,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         m "Care t' guess wha' th' destination will be?"
         m "You have t' guess three times to find out."
         call her_main("...........", "annoyed", "squint", "angry", "mid")
-        call her_main("Booty plundering?","disgust","glance")
+        call her_main("Booty plundering?", "disgust", "narrow", "base", "mid_soft")
         g4 "Wha..........?!"
         g4 "How did ye...?"
         call her_main("You seem like a booty pirate kind of a man. captain...", "angry", "base", "angry", "mid")
@@ -481,7 +481,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         g4 "Oh, ye-es!"
         call her_main("Ah...", "soft", "narrow", "annoyed", "up")
         m "It seems like yer cavern be a bit more welcomin', lass."
-        call her_main("Ah... It still be a bit tight.","base","glance")
+        call her_main("Ah... It still be a bit tight.", "base", "narrow", "base", "mid_soft")
         call her_main("'n , jus' call me \"wench\", captain.","base","suspicious")
         g4 "Agh! Ye wench! Ye always get me wit' yer words!"
 
@@ -514,7 +514,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         #INSERTION
         call her_main("Ah... Ah...", "open", "closed", "base", "mid")
         call her_main("Ah...")
-        call her_main("captain?","base","glance")
+        call her_main("captain?", "base", "narrow", "base", "mid_soft")
         m "Aye, wench?"
         call her_main("Em...", "angry", "base", "base", "mid")
         call her_main("Would ye settle down fer me, captain?", "angry", "narrow", "base", "down")

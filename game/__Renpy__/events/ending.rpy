@@ -13,13 +13,13 @@ label ball_ending_start:
             m "When did you say it would start again?"
             call her_main("The autumn ball?!", "grin", "base", "base", "mid")
             call her_main("I'm so excited!!! I can't wait for it!","grin","happyCl")
-            call her_main("Just two more days, [genie_name]","base","glance")
+            call her_main("Just two more days, [genie_name]", "base", "narrow", "base", "mid_soft")
             m "That soon, huh?"
             call her_main("Yep! I still have a tonne of preparation to do, though.", "soft", "base", "base", "R")
             m "Well then I better not keep you occupied any longer..."
             m "Unless..."
             g9 "Maybe we could..."
-            call her_main("Have some fun?","soft","glance")
+            call her_main("Have some fun?", "soft", "narrow", "base", "mid_soft")
             g9 "You can read my mind, girl."
 
             $ ball_quest.started = True
@@ -593,7 +593,7 @@ label ball_ending_E2:
     m "What?"
     call her_main("Let's just make this quick, alright?","soft","glanceL",cheeks="blush")
     g4 "Let's make what quick?"
-    call her_main("You want me to thank you for the dress now, don't you, sir?","base","glance",cheeks="blush")
+    call her_main("You want me to thank you for the dress now, don't you, sir?", "base", "narrow", "base", "mid_soft",cheeks="blush")
     m "The dress? No, no that's not why I am here."
     call her_main("It is fine, sir. I do not mind.","soft","glanceL",cheeks="blush")
     m "Listen to me, girl! I am not who you think--"
@@ -602,7 +602,7 @@ label ball_ending_E2:
     call her_main("Just a little will do. Please. I'm begging you...", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
     g4 "Damn you, you damn witch!"
     g4 "Stop this! I really need to talk to you!"
-    call her_main("Well of course, sir.","base","glance",cheeks="blush")
+    call her_main("Well of course, sir.", "base", "narrow", "base", "mid_soft",cheeks="blush")
     call her_main("Put your dick in my mouth and talk to me.", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
     call her_main("Talk dirty to me...")
     g4 "*growl!*"
@@ -1413,7 +1413,7 @@ label ball_ending_E2:
         g4 "Not right now, whore!"
         call blkfade
 
-        call her_main("Sir?!","base","glance",cheeks="blush")
+        call her_main("Sir?!", "base", "narrow", "base", "mid_soft",cheeks="blush")
         g4 "I want to fuck you so badly! Come over here!"
         call play_music("playful_tension") # SEX THEME.
         call her_main("Of course, sir...", "silly", "squint", "worried", "up",cheeks="blush")
@@ -2258,12 +2258,12 @@ label ball_ending_E2:
         call her_main("Sir, I think I know exactly what you are about to say.", "open", "base", "base", "mid")
         m "You do?"
         call her_main("Of course.", "open", "base", "base", "mid")
-        call her_main("One hasty blowjob is not nearly enough to repay my debt to you, am I right?","base","glance",cheeks="blush")
+        call her_main("One hasty blowjob is not nearly enough to repay my debt to you, am I right?", "base", "narrow", "base", "mid_soft",cheeks="blush")
         m "What? No, that's not what I--"
-        call her_main("It's fine, sir. Really.","base","glance",cheeks="blush")
+        call her_main("It's fine, sir. Really.", "base", "narrow", "base", "mid_soft",cheeks="blush")
         call her_main("Let me just pull my panties down a little...","soft","glanceL",cheeks="blush")
         g4 "Damn you girl! Will you let me finish!?"
-        call her_main("Of course sir...","base","glance",cheeks="blush")
+        call her_main("Of course sir...", "base", "narrow", "base", "mid_soft",cheeks="blush")
         m "Huh?"
         call her_main("Just make sure you don't hit my dress, alright?", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
         g4 "*Low growl!*"
@@ -3093,7 +3093,7 @@ label ball_ending_E3:
         with hpunch
         call play_music("hermione")
         her "{size=+7}What?!!{/size}"
-        call her_main("How am I supposed to win any points then?","disgust","glance")
+        call her_main("How am I supposed to win any points then?", "disgust", "narrow", "base", "mid_soft")
         dum_[1]"The same way you always did, miss Granger."
         call her_main("Huh...?","open","annoyed",cheeks="blush")
         dum_[1]"With hard work."

@@ -173,7 +173,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
     her "Someone..."
     her "Someone, uhm..."
     m "Sluttier?"
-    call her_main("Yes, I suppose...","disgust","glance")
+    call her_main("Yes, I suppose...", "disgust", "narrow", "base", "mid_soft")
     m "Don't you give up, [hermione_name]. We will make a slut err--"
     m "I mean a woman out of you yet!"
     call her_main("...................", "annoyed", "narrow", "annoyed", "mid")
@@ -274,7 +274,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
     her "And... Ehm..."
     her "Well, it's not {size=+5}that{/size} private..."
     m "Show it to me then!"
-    call her_main("No, [genie_name]! That would be inappropriate!","disgust","glance")
+    call her_main("No, [genie_name]! That would be inappropriate!", "disgust", "narrow", "base", "mid_soft")
 
     menu:
         "{size=-3}\"Lockhart will be out of this school in no time!\"{/size}":

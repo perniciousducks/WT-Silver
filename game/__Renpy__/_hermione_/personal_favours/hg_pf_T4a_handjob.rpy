@@ -108,14 +108,14 @@ label hg_pf_handjob_T1_intro_E1:
     m "I feel like getting one..."
     call her_main("[genie_name]!", "angry", "base", "angry", "mid")
     m "Just another favour. No big deal, right?"
-    call her_main("......","disgust","glance")
+    call her_main("......", "disgust", "narrow", "base", "mid_soft")
     call her_main("{size=-7}I want 100 house points for this...{/size}","angry","worriedCl", emote="05")
     m "Huh? What was that?"
     call her_main("I want 100 house points for this!!!","scream","worriedCl")
     call her_main("","clench","worriedCl")
     m "100 house points, huh?"
     m "And you will stroke my cock and everything?"
-    call her_main("{size=-7}Yes...{/size}","disgust","glance")
+    call her_main("{size=-7}Yes...{/size}", "disgust", "narrow", "base", "mid_soft")
     m "Sorry, I couldn't hear you..."
     call her_main("Yes, I said yes! I will stroke your cock, [genie_name]!","scream","worriedCl")
     call her_main("", "upset", "narrow", "angry", "R")
@@ -160,7 +160,7 @@ label hg_pf_handjob_T1_intro_E2:
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "Do you know what a \"handjob\" is?"
-    call her_main("You have asked me that already, [genie_name].","disgust","glance")
+    call her_main("You have asked me that already, [genie_name].", "disgust", "narrow", "base", "mid_soft")
     m "Ah, that's right."
     m "Well, I want you to play with my cock again."
     call her_main("[genie_name], you are being vulgar again...", "upset", "closed", "base", "mid")
@@ -168,7 +168,7 @@ label hg_pf_handjob_T1_intro_E2:
     m "[hermione_name], I would like to buy another favour from you today."
     call her_main("Of course, [genie_name].", "annoyed", "narrow", "angry", "R")
     g9 "The favour being you playing with my cock!"
-    call her_main("..............","disgust","glance")
+    call her_main("..............", "disgust", "narrow", "base", "mid_soft")
     m "Oh, come on. For the honour of the \"Gryffindors\"?"
     call her_main(".............", "angry", "base", "angry", "mid")
     g9 "Play with my cock for the honour of the \"Gryffindors\", [hermione_name]!"
@@ -341,16 +341,16 @@ label hg_pf_handjob_1:
             call her_main("What?", "shock", "wide", "base", "stare")
             call her_main("[genie_name], those things I say are not true!", "upset", "wink", "base", "mid")
             g9 "Heh... I know. I'm just messing with you."
-            call her_main("[genie_name]!","disgust","glance")
+            call her_main("[genie_name]!", "disgust", "narrow", "base", "mid_soft")
             m "You are doing a great job, though. Keep at it!"
             call her_main(".....", "open", "narrow", "worried", "down")
             call her_main("I love cock...")
             call her_main("And I love... spunk...", "clench", "narrow", "base", "down")
             call her_main("And semen... and sperm...")
             call her_main("I love to drink sperm...")
-            call her_main("I want you to feed me your sperm, [genie_name]!","open_tongue","glance")
+            call her_main("I want you to feed me your sperm, [genie_name]!", "open_tongue", "narrow", "base", "mid_soft")
             g4 "!!!"
-            call her_main("Or better yet, pump me full of it, [genie_name]!","smile","glance")
+            call her_main("Or better yet, pump me full of it, [genie_name]!", "smile", "narrow", "base", "mid_soft")
             with hpunch
             g4 "{size=-4}(Here it comes! Should I warn her?){/size}"
 
@@ -441,7 +441,7 @@ label hg_pf_handjob_1:
             m "It will make me cum in no time!"
             call her_main("...............", "annoyed", "narrow", "angry", "R")
             m "And then you can just get out and and take care of your business today."
-            call her_main(".............","disgust","glance")
+            call her_main(".............", "disgust", "narrow", "base", "mid_soft")
             call her_main("Well, alright then....", "open", "narrow", "worried", "down")
             call nar(">Hermione reaches down with her lips again...","start")
             call nar(">She touches the tip of your cock with her lips and keeps them there...","end")
@@ -909,7 +909,7 @@ label hg_pf_handjob_2_cumming:
             call nar(">The sensation of her skin under your engorged cock almost makes you lightheaded...")
             call her_main("Yes, [genie_name]! Just let it out!", "base", "narrow", "worried", "down", xpos="right", ypos="base")
             g4 "Argh! Fucking slut!"
-            call her_main("Ah!! It's so hot!","smile","glance")
+            call her_main("Ah!! It's so hot!", "smile", "narrow", "base", "mid_soft")
             call her_main("And it's getting everywhere! So much of it!", "soft", "narrow", "annoyed", "up")
             call her_main("...[genie_name].")
             g4 "Argh!!!"

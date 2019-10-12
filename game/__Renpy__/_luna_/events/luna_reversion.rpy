@@ -404,19 +404,19 @@ label luna_revert_1: #Reversion event #DONE
 
     menu:
         "\"None\"":
-            call her_main("What?","disgust","glance")
+            call her_main("What?", "disgust", "narrow", "base", "mid_soft")
             call her_main("I'm supposed to believe that she came up to your office...", "annoyed", "narrow", "annoyed", "mid")
             call her_main("And let you jerk your disgusting old cock in front of her...", "angry", "base", "angry", "mid")
             call her_main("For free?", "annoyed", "narrow", "annoyed", "mid")
             ">You raise your hand to the air."
             m "Scouts honour!"
-            call her_main("...","disgust","glance")
+            call her_main("...", "disgust", "narrow", "base", "mid_soft")
             m "Besides, surely you'd notice a jump in \"Ravenclaw's\" points?"
             call her_main("I suppose you're right...", "annoyed", "narrow", "angry", "R")
             call her_main("If the sorting hat had manipulated her then doing this isn't out of the question.", "annoyed", "narrow", "angry", "R")
             call her_main("{size=-5}(But for her to do it so willingly...){/size}", "annoyed", "narrow", "angry", "R")
         "\"I paid her in gold.\"":
-            call her_main("Gold?","disgust","glance")
+            call her_main("Gold?", "disgust", "narrow", "base", "mid_soft")
             m "Gold."
             call her_main("So, no points?", "annoyed", "narrow", "annoyed", "mid")
             m "Not one."
@@ -449,7 +449,7 @@ label luna_revert_1: #Reversion event #DONE
     call her_main("liquescimus corporis!", "scream", "closed", "angry", "mid")
     ">Another flash of light as Luna becomes unpetrified."
     call lun_main("Ugh... where am I?","normal","suspicious","sad","R")
-    call her_main("Shhh, it's alright.","base","glance")
+    call her_main("Shhh, it's alright.", "base", "narrow", "base", "mid_soft")
     call lun_main("Hermione? What's happening?","normal","suspicious","sad","mid")
     call her_main("Nothing... Professor Dumbledore and I just needed your help.", "base", "narrow", "worried", "down")
     call lun_main("What with?","upset","angry","sad","mid")
@@ -467,7 +467,7 @@ label luna_revert_1: #Reversion event #DONE
     call her_main("Well, now that that's over...", "annoyed", "narrow", "angry", "R")
     call her_main("I think I'll be leaving as well...", "annoyed", "base", "angry", "mid")
     m "Don't you want to stay a little longer?"
-    call her_main("I don't think so, sir...","disgust","glance")
+    call her_main("I don't think so, sir...", "disgust", "narrow", "base", "mid_soft")
 
     call her_walk(action="leave", speed=2.5)
 

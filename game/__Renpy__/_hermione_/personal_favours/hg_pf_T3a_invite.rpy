@@ -80,7 +80,7 @@ label hg_pf_strip_T2_Snape:
         m "Oh, I just want you to dance for us."
         call her_main("!!!", "open", "base", "base", "mid")
         m "I want to prove that professor Snape is dirty, and I need your help."
-        call her_main("But didn't we already establish that last time I did this?","annoyed","worriedL")
+        call her_main("But didn't we already establish that last time I did this?", "annoyed", "base", "worried", "R")
         m "Well, ehm... sure..."
         m "But I will need more proof if I am to take this issue to the ministry of magic!"
         call her_main(".....", "angry", "base", "angry", "mid")
@@ -748,7 +748,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         call her_chibi("stand","desk","base")
         pause.2
 
-        call her_main("Well...","annoyed","worriedL", xpos="mid", ypos="base")
+        call her_main("Well...", "annoyed", "base", "worried", "R", xpos="mid", ypos="base")
         her "Was our mission a success, [genie_name]?"
 
         menu:

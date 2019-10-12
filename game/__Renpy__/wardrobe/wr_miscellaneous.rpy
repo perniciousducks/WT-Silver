@@ -29,7 +29,7 @@ label equip_misc_item:
             # call her_main("You want me to make my clothes see through?", "normal", "worriedCl", "worried", "mid")
             # m "Just a little bit."
             # call her_main("Fine...", "open", "squint", "base", "mid")
-            # call her_main("How much should I drink?","annoyed","worriedL")
+            # call her_main("How much should I drink?", "annoyed", "base", "worried", "R")
 
             # label make_item_transparent:
 

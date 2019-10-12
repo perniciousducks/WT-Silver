@@ -59,7 +59,7 @@ label potion_scene_11_1: #Milking potion part 1
     m "That's one way to put it."
     call her_main("...", "normal", "squint", "angry", "mid")
     call her_main("Well how long is it supposed to last? I do have classes today.", "annoyed", "narrow", "angry", "R")
-    call her_main("I'm falling behind enough as it is...","annoyed","worriedL")
+    call her_main("I'm falling behind enough as it is...", "annoyed", "base", "worried", "R")
     m "Really?"
     call her_main("Yes... I think it's all this fooling around sir.", "normal", "worriedCl", "worried", "mid")
     call her_main("I nearly got a \"b\" in biology the other day...", "angry", "base", "worried", "mid")
@@ -93,7 +93,7 @@ label potion_scene_11_1: #Milking potion part 1
             call nar(">You watch in awe as Hermione's breasts start to rapidly expand!")
 
     call her_main("[genie_name], this is ridiculous!", "angry", "base", "worried", "mid")
-    call her_main("I can't be expected to go to class looking like this!","annoyed","worriedL")
+    call her_main("I can't be expected to go to class looking like this!", "annoyed", "base", "worried", "R")
     m "Why not? I don't think they're that much bigger than normal."
     call her_main("Are you kidding me?", "disgust", "narrow", "base", "mid_soft")
     call her_main("They're {size=+5}humongous!{/size}", "angry", "base", "angry", "mid")

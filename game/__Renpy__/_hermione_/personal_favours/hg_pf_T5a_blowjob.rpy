@@ -111,11 +111,11 @@ label hg_pf_blowjob_T0_fail_intro:
         call her_main("That was something different entirely...", "disgust", "worriedCl", "worried", "mid")
         m "How so?"
         call her_main("All I wanted was to get done with that favour early, so I...", "open", "narrow", "base", "down")
-        call her_main("I helped...","disgust","worriedL")
+        call her_main("I helped...", "disgust", "base", "worried", "R")
         g9 "By sucking on my cock! Indeed you did!"
         call her_main("No! I was merely stroking it...and...", "silly", "worriedCl", "worried", "mid")
         call her_main("I gave it a short kiss, but...", "disgust", "narrow", "worried", "down", cheeks="blush")
-        call her_main("I'm sorry [genie_name], but I don't think I can do \"that!\"","open","worriedL", cheeks="blush")
+        call her_main("I'm sorry [genie_name], but I don't think I can do \"that!\"", "open", "base", "worried", "R", cheeks="blush")
     else:
         m "Preferably..."
         g9 "But I'm always open to try out new things!"

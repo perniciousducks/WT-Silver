@@ -237,7 +237,7 @@ label hg_pf_talk_T2:
 
             call her_main("[genie_name], what are you doing?", "open", "base", "base", "mid")
             call her_main("You are not.....?", "open", "base", "worried", "mid")
-            call her_main("Are you...?","annoyed","worriedL")
+            call her_main("Are you...?", "annoyed", "base", "worried", "R")
             m "What? Oh, it's nothing. Keep going."
             call her_main("Hm...", "normal", "squint", "angry", "mid")
             m "{size=-4}(Is she onto me? Nah...){/size}"
@@ -257,12 +257,12 @@ label hg_pf_talk_T2:
     call her_main("Yes...", "open", "closed", "base", "mid")
 
     if masturbating:
-        call her_main("And these two other girls...","annoyed","worriedL")
+        call her_main("And these two other girls...", "annoyed", "base", "worried", "R")
         call her_main("There is a rumour that they are actually sleeping with professor snape...", "annoyed", "base", "worried", "mid")
         m "{size=-4}(Yes... Those nasty \"slytherin\" sluts!){/size}"
         call her_main("Also, there was this one girl who gave a teacher a handjob, right during class...", "base", "base", "base", "mid")
         m "{size=-4}(Yes... This is good stuff, go on!){/size}"
-        call her_main("And this other girl, she sucked off a teacher!","annoyed","worriedL")
+        call her_main("And this other girl, she sucked off a teacher!", "annoyed", "base", "worried", "R")
         m "{size=-4}(Yes! Yes!){/size}"
         call her_main("And another girl let a teacher cum in her mouth...", "smile", "base", "base", "R")
         call her_main("And she swallowed it all and loved it!", "soft", "base", "base", "R")
@@ -428,7 +428,7 @@ label hg_pf_talk_T3:
         m "Maybe I should have a look at her collection myself."
     call her_main("There's obviously nothing that stands out as odd to me in any way.", "open", "base", "base", "mid", cheeks="blush")
     call her_main("But since most of the Slytherins are pure-blood they were handling her items with little to no care.", "mad", "base", "base", "R")
-    call her_main("So when they weren't silently insulting her about her views they were constantly making suggestive remarks about the objects asking where she'd insert that one...","annoyed","worriedL")
+    call her_main("So when they weren't silently insulting her about her views they were constantly making suggestive remarks about the objects asking where she'd insert that one...", "annoyed", "base", "worried", "R")
     call her_main("She's quite oblivious to it most of the time but the constant giggling from the Slytherin girls is very distracting and annoying.", "open", "narrow", "worried", "down", cheeks="blush")
     call her_main("It didn't help when they discovered what professor Burbage actually believed to be a back massager...", "angry", "happyCl", "base", "mid", cheeks="blush")
     m "I mean, that's what it says on the box..."
@@ -519,7 +519,7 @@ label hg_pf_talk_T3:
 
     else:
         m "Yes?"
-        call her_main("They're...{w=0.5} they're back massagers, it says so on the box... you said so yourself.","open","worriedL", cheeks="blush")
+        call her_main("They're...{w=0.5} they're back massagers, it says so on the box... you said so yourself.", "open", "base", "worried", "R", cheeks="blush")
         m "Then what's the problem with the Slytherin girls having a go with it?"
         call her_main("Nothing! I'm sure they found it very educational!", "angry", "worriedCl", "worried", "mid", cheeks="blush")
         call her_main("I had never seen them more interested in muggle studies in fact!", "disgust", "narrow", "angry", "R", cheeks="blush")
@@ -589,7 +589,7 @@ label hg_pf_talk_tonks_T3_E1:
     call her_main("...", "annoyed", "narrow", "base", "mid_soft")
     call her_main("Will I get any extra points for this?", "open", "base", "base", "mid")
     m "Well, that will be up to Miss Tonks, [hermione_name]."
-    call her_main("Fine..","base","worriedL")
+    call her_main("Fine..", "base", "base", "worried", "R")
 
     call hg_pf_talk_tonks
 

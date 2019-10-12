@@ -61,7 +61,7 @@ label hg_pr_kiss:
         m "Great. All you need to do is make out with another girl."
         call her_main("I see...", "annoyed", "narrow", "worried", "down")
         m "Up for the task, [hermione_name]?"
-        call her_main("I suppose...","annoyed","worriedL")
+        call her_main("I suppose...", "annoyed", "base", "worried", "R")
         m "Great. See you after your classes then."
 
     else:
@@ -120,10 +120,10 @@ label hg_pr_kiss_T1_E1:
     call her_main("I...", "open", "base", "worried", "mid")
     m "I told you to make out with another girl..."
     m "Did you do it?"
-    call her_main("I...","open","worriedL")
+    call her_main("I...", "open", "base", "worried", "R")
     her "I tried, [genie_name]. I really did."
     m "And?"
-    call her_main("Well...","annoyed","worriedL")
+    call her_main("Well...", "annoyed", "base", "worried", "R")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     her "It was awkward and embarrassing..."
     m "did you do it or not?"
@@ -216,7 +216,7 @@ label hg_pr_kiss_T1_E3:
             call her_main("What?", "normal", "base", "base", "mid")
             call her_main("[genie_name], you can't do that!", "open", "base", "worried", "mid")
             m "Dismissed."
-            call her_main("B-but--","open","worriedL")
+            call her_main("B-but--", "open", "base", "worried", "R")
             call her_main("[genie_name], please!", "open", "base", "worried", "mid")
             her "The girl was from \"Hufflepuff\" and--"
             m "Too late for that, [hermione_name]."
@@ -358,7 +358,7 @@ label hg_pr_kiss_T2_E3:
     call her_main("I chose a girl from \"Gryffindor\" of course...", "base", "base", "base", "mid")
     call her_main("And we put on a little show right in the middle of the classroom...", "open", "base", "base", "mid")
     m "Good... Tongue and everything?"
-    call her_main("Tongue and everything, [genie_name].","annoyed","worriedL")
+    call her_main("Tongue and everything, [genie_name].", "annoyed", "base", "worried", "R")
     m "Nicely done."
     call her_main("", "base", "base", "base", "mid")
 
@@ -398,7 +398,7 @@ label hg_pr_kiss_T3_E1:
     call her_main("Stop it, [genie_name]. I am not any of those weird words...", "normal", "squint", "angry", "mid")
     her "\"Slytherins\" are evil and annoying. Nobody likes them, and that is a fact!"
     m "Fine, whatever. Back to the \"girl-kissing\" then."
-    call her_main("...............","annoyed","worriedL")
+    call her_main("...............", "annoyed", "base", "worried", "R")
     her "Like I was saying..."
     call her_main("I kissed that girl from \"Slytherin\"...", "open", "base", "base", "mid")
     call her_main("Normally I would never do it, of course...", "annoyed", "narrow", "angry", "R")

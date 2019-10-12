@@ -66,7 +66,7 @@ label hg_pr_handjob:
         call her_main("...again?", "angry", "narrow", "base", "down")
         m "Sure, why not?"
         m "And another fifty five house points for the \"Gryffindor\" house of course."
-        call her_main("..........","annoyed","worriedL")
+        call her_main("..........", "annoyed", "base", "worried", "R")
         m "So... Are you up for that, [hermione_name]?"
         call her_main("I will see what I can do...", "annoyed", "narrow", "angry", "R")
         m "Splendid!"
@@ -144,7 +144,7 @@ label hg_pr_handjob_T1_E1:
     call her_main("I made a complete fool out of myself, that's what happened, [genie_name].", "disgust", "narrow", "base", "mid_soft")
     her "....."
     m "..."
-    call her_main("..........","annoyed","worriedL")
+    call her_main("..........", "annoyed", "base", "worried", "R")
     call her_main("I don't want to talk about it...", "annoyed", "narrow", "angry", "R")
     her "You told me to go and touch a boy's penis and I did just that, [genie_name]."
     call her_main("Please, just let me have my points now, [genie_name]...", "open", "base", "base", "mid")
@@ -154,7 +154,7 @@ label hg_pr_handjob_T1_E1:
     m "Did you make him cum, then?"
     call her_main("[genie_name]?", "open", "base", "base", "mid")
     m "Did his \"wee-wee\" shoot white stuff at you, [hermione_name]?"
-    call her_main("Well...","annoyed","worriedL")
+    call her_main("Well...", "annoyed", "base", "worried", "R")
     call her_main("No, it did not...", "normal", "worriedCl", "worried", "mid")
 
     menu:
@@ -260,13 +260,13 @@ label hg_pr_handjob_T1_E3:
     m "Hm... So I suppose you have completed your task?"
     call her_main("I did, [genie_name]...", "annoyed", "narrow", "angry", "R")
     m "What's the problem, then?"
-    call her_main("..........","annoyed","worriedL")
+    call her_main("..........", "annoyed", "base", "worried", "R")
     call her_main("All boys are jerks! That is the problem, [genie_name]!", "scream", "closed", "angry", "mid")
     call her_main("I gave this one boy a good wanking...", "open", "narrow", "worried", "down")
     her "And do you know how he thanked me?"
     call her_main("He got his spunk all over me...", "scream", "base", "angry", "mid", emote="01")
     call her_main("And he did that on purpose, I know he did!", "scream", "closed", "angry", "mid")
-    call her_main("Nasty, good for nothing \"ravenclaws\"...","annoyed","worriedL")
+    call her_main("Nasty, good for nothing \"ravenclaws\"...", "annoyed", "base", "worried", "R")
     m "Well, I'd say a job well done."
 
     jump end_hg_pr_handjob
@@ -286,11 +286,11 @@ label hg_pr_handjob_T2_E1:
     call her_main("Ehm...", "open", "base", "base", "mid",xpos="right",ypos="base")
     her "Not yet, [genie_name]..."
     m "Not yet?"
-    call her_main("Yes... Let me explain, [genie_name]...","annoyed","worriedL")
+    call her_main("Yes... Let me explain, [genie_name]...", "annoyed", "base", "worried", "R")
     call her_main("uhm... Well...", "open", "base", "base", "mid")
     her "I was wanking this one boy off in one of the empty classrooms..."
     her "And that nasty ghost Peeves walked in..."
-    call her_main("Or rather flew in on us...","annoyed","worriedL")
+    call her_main("Or rather flew in on us...", "annoyed", "base", "worried", "R")
     call her_main("And as soon as he realised what I was doing to the boy...", "open", "base", "base", "mid")
     her "He started to yell obscenities at us..."
     her "So we had to leave in a hurry..."
@@ -345,7 +345,7 @@ label hg_pr_handjob_T2_E2:
     m "[hermione_name], did you complete your task?"
     show screen blktone
     call her_main("I did, [genie_name]...", "open", "closed", "base", "mid",xpos="right",ypos="base")
-    call her_main("Although I am still not sure how I feel about all of this...","annoyed","worriedL")
+    call her_main("Although I am still not sure how I feel about all of this...", "annoyed", "base", "worried", "R")
     m "You personal feelings are of no concern to me, [hermione_name]."
     m "Just tell me how it went."
     call her_main("Well, there is not much to tell. [genie_name]...", "open", "base", "base", "mid")
@@ -485,7 +485,7 @@ label hg_pr_handjob_T3_intro_E1:
     show screen blktone
     call her_main("[genie_name]...","open","worried", xpos="right", ypos="base")
     m "[hermione_name]..."
-    call her_main("I did a bad thing today, [genie_name]...","open","worriedL")
+    call her_main("I did a bad thing today, [genie_name]...", "open", "base", "worried", "R")
     m "Did you now? Do tell..."
     call play_music("playful_tension") # SEX THEME.
     her "Yes, I did a bad thing... a very bad thing..."
@@ -520,7 +520,7 @@ label hg_pr_handjob_T3_intro_E1:
     call her_main("Hm...", "normal", "base", "base", "R", tears="soft")
     call her_main("You are probably right, [genie_name]...", "soft", "base", "base", "mid", tears="soft")
     her "And I made Ron give me his word that he will keep the whole incident a secret..."
-    call her_main("So, I think I should just trust him to keep his word...","open","worriedL")
+    call her_main("So, I think I should just trust him to keep his word...", "open", "base", "worried", "R")
     call her_main("..........", "soft", "base", "base", "R")
     her "..."
     call her_main("Will I get paid for this, [genie_name]?", "base", "base", "base", "mid")

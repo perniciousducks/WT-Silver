@@ -224,8 +224,8 @@ label equip_outfit:
                         # call her_main("Why doesn't that suprise me. That you would think so...", "annoyed", "base", "angry", "mid")
                     # call her_main("Just let me put it on...", "smile", "narrow", "base", "mid_soft")
                 # else: #Fail
-                    # call her_main("Of course!","open","worriedL")
-                    # call her_main("Rowena Ravenclaw, Helga Hufflepuff, Isolt Sayre, Joan of Arc,...","open","worriedL")
+                    # call her_main("Of course!", "open", "base", "worried", "R")
+                    # call her_main("Rowena Ravenclaw, Helga Hufflepuff, Isolt Sayre, Joan of Arc,...", "open", "base", "worried", "R")
                     # call her_main("I can name you hundreds! All witches I admire and look up to!", "grin", "closed", "base", "mid")
                     # m "(Who?)"
                     # m "No no, I'm talking about Comic books! Superheroes!"
@@ -289,7 +289,7 @@ label equip_outfit:
             # if outfit_choice == hg_costume_lara_croft_ITEM:
                 # m "[hermione_name]..."
                 # m "I'd like you to dress up."
-                # call her_main("As what?","open","worriedL")
+                # call her_main("As what?", "open", "base", "worried", "R")
                 # g9 "As the greatest british female archaeologist who's ever lived!"
                 # call her_main("Gertrude Bell?", "grin", "closed", "base", "mid")
                 # m "What?"

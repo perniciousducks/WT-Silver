@@ -132,7 +132,7 @@ label change_hair:
                         # call her_main("Fine,... Let me go change it.", "annoyed", "narrow", "annoyed", "mid")
                 # else:
                     # call her_main("No thank you, [genie_name].", "open", "closed", "base", "mid")
-                    # call her_main("I like my hair how it is.","open","worriedL")
+                    # call her_main("I like my hair how it is.", "open", "base", "worried", "R")
                     # call her_main("I have to refuse!", "normal", "base", "base", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 5."
@@ -168,7 +168,7 @@ label change_hair:
                         # call her_main("Let me go change it for you.", "soft", "base", "base", "mid")
                 # else:
                     # call her_main("No thank you, [genie_name].", "open", "closed", "base", "mid")
-                    # call her_main("I like my hair how it is.","open","worriedL")
+                    # call her_main("I like my hair how it is.", "open", "base", "worried", "R")
                     # call her_main("I have to refuse!", "normal", "base", "base", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 5."
@@ -219,7 +219,7 @@ label change_hair:
                         # call her_main("Sure, why not.", "soft", "base", "base", "R") #soft, baseL
                         # call her_main("Green is just a colour, [genie_name]!", "open", "base", "base", "mid")
                         # call her_main("Wear it on my head doesn't mean I support Slytherin!", "open", "closed", "base", "mid")
-                        # call her_main("(It will look awfully suspicious for a Gryffindor though...)","annoyed","worriedL")
+                        # call her_main("(It will look awfully suspicious for a Gryffindor though...)", "annoyed", "base", "worried", "R")
                         # call her_main("Just let me go change it.", "base", "base", "base", "mid")
                     # else: #17+
                         # call her_main("Yes, [genie_name].", "base", "base", "base", "mid")

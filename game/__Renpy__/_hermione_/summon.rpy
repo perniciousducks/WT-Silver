@@ -658,7 +658,7 @@ label hermione_change:
         if her_whoring >=7 and her_whoring < 9:
             call her_main("What's going on with with these silly nicknames of yours all of a sudden?", "normal", "squint", "angry", "mid")
             m "What do you mean by silly?"
-            call her_main("It makes it sound as if I'm your...","soft","worriedL")
+            call her_main("It makes it sound as if I'm your...", "soft", "base", "worried", "R")
             call her_main("Ugh, forget I said anything...", "open", "narrow", "base", "down",cheeks="blush")
             call her_main("", "normal", "base", "base", "R", cheeks="blush")
         elif her_whoring >=9 and her_whoring < 19:
@@ -711,7 +711,7 @@ label hermione_change:
         elif her_whoring >= 15 and her_whoring < 17:
             call her_main("...", "normal", "narrow", "worried", "down",cheeks="blush")
             m "Any objections?"
-            call her_main("...","soft","worriedL",cheeks="blush")
+            call her_main("...", "soft", "base", "worried", "R",cheeks="blush")
             g9 "Okay then..."
         elif her_whoring >= 17:
             call her_main("Alright.", "base", "happyCl", "base", "mid",cheeks="blush")
@@ -904,7 +904,7 @@ label hermione_change_fail:
         call her_main("I would prefer if you didn't, [genie_name].", "open", "closed", "angry", "mid")
         call her_main("{size=-4}And I'm not a nerd...{/size}", "annoyed", "base", "worried", "mid")
         if her_whoring >= 1:
-            call her_main("\"I think...\"","annoyed","worriedL")
+            call her_main("\"I think...\"", "annoyed", "base", "worried", "R")
     elif temp_name == "Good Girl":
         call her_main("I'm not letting you call me that, [genie_name]!", "open", "closed", "angry", "mid")
         if her_whoring >= 3:

@@ -54,7 +54,7 @@ label hg_pf_grope:
         m "You may leave now, [hermione_name]."
 
     if her_tier <= 2:
-        call her_main("..................","annoyed","worriedL")
+        call her_main("..................", "annoyed", "base", "worried", "R")
         her "Thank you, [genie_name]..."
     elif her_tier <= 4:
         call her_main("..................", "base", "base", "base", "R")
@@ -145,7 +145,7 @@ label hg_pf_grope_T1_intro_E1:
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
     pause.5
 
-    call her_main("[genie_name].....?","annoyed","worriedL", ypos="head")
+    call her_main("[genie_name].....?", "annoyed", "base", "worried", "R", ypos="head")
     m "..."
 
     menu:
@@ -212,7 +212,7 @@ label hg_pf_grope_T2_intro_E1:
     m "You think?"
     her "I am not one of those harlots from \"Slytherin\", you know..."
     m "I know... You are from \"Gryfonmon\"... or something..." #<- GRYFFINDOR MISSPELLED ON PERPOUSE
-    call her_main("And if I don't feel like it I don't have to sell you a single favour, [genie_name]!","annoyed","worriedL")
+    call her_main("And if I don't feel like it I don't have to sell you a single favour, [genie_name]!", "annoyed", "base", "worried", "R")
     m "Of course..."
     call her_main("...................", "annoyed", "narrow", "angry", "R")
     m "I'll give you 35 house points for this."

@@ -30,7 +30,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("Well it better happen soon otherwise I'm lea-", "annoyed", "narrow", "angry", "R")
     call nar(">You notice her breasts start to expand ever so slightly.") #Start using facial expressions mixed with Captain Nemo art
     call her_main("...", "annoyed", "narrow", "annoyed", "mid")
-    call her_main("As I said, something better happen soon or I'm leaving.","annoyed","worriedL")
+    call her_main("As I said, something better happen soon or I'm leaving.", "annoyed", "base", "worried", "R")
     m "I wouldn't worry about it, from the looks of it, it's already started."
     call her_main("Why, what's wrong with me?", "open", "base", "base", "mid")
     m "There's nothing wrong with you. If anything, it's an improvement."

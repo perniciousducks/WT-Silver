@@ -34,7 +34,7 @@ label hg_pf_admire_breasts:
 
     hide screen blkfade
     if her_tier <= 2:
-        call her_main("..................","annoyed","worriedL", xpos="mid", ypos="base", trans="fade")
+        call her_main("..................", "annoyed", "base", "worried", "R", xpos="mid", ypos="base", trans="fade")
     elif her_tier <= 5:
         call her_main("", "base", "base", "base", "R", xpos="mid", ypos="base", trans="fade")
     else:
@@ -47,10 +47,10 @@ label hg_pf_admire_breasts:
     stop music fadeout 10.0
 
     if her_tier <= 2:
-        call her_main("..................","annoyed","worriedL")
+        call her_main("..................", "annoyed", "base", "worried", "R")
         call her_main("Thank you, [genie_name]...", "open", "base", "base", "R")
     elif her_tier <= 5:
-        call her_main("..................","annoyed","worriedL")
+        call her_main("..................", "annoyed", "base", "worried", "R")
         call her_main("Thank you, [genie_name]...", "soft", "base", "base", "mid")
     else:
         call her_main("..................", "base", "happyCl", "base", "mid")
@@ -260,14 +260,14 @@ label hg_pf_admire_breasts_T1_E2:
 
 label hg_pf_admire_breasts_T1: # Call label
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main(".............","annoyed","worriedL")
+    call her_main(".............", "annoyed", "base", "worried", "R")
     pause.4
 
     # Lift top
     $ hermione_wear_bra = True
     call set_her_action("lift_top")
 
-    call her_main("","annoyed","worriedL")
+    call her_main("", "annoyed", "base", "worried", "R")
     call ctc
 
     m "............."
@@ -303,7 +303,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
     call her_main(".........?", "open", "base", "base", "mid")
     m "Please don't mind me..."
     m "All I want to do is help you..."
-    call her_main(".............","annoyed","worriedL")
+    call her_main(".............", "annoyed", "base", "worried", "R")
     call her_main("200 house points, [genie_name].", "normal", "worriedCl", "worried", "mid")
     m "So if I give you 200 house points, [hermione_name]..."
     m "You will shamelessly bare your melons before me?"
@@ -315,7 +315,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
             $ current_payout = 200
             call her_main("Really?", "open", "base", "base", "mid")
             m "Well?"
-            call her_main("......................................","annoyed","worriedL")
+            call her_main("......................................", "annoyed", "base", "worried", "R")
             her "You have to promise me not to touch them, [genie_name]."
             m "Sure, sure..."
             call her_main("I am only doing this for the honour of my house, [genie_name]!", "scream", "worriedCl", "worried", "mid")
@@ -371,7 +371,7 @@ label hg_pf_admire_breasts_T2_intro_E2:
     call her_main("I'd rather not, [genie_name]...", "annoyed", "narrow", "annoyed", "mid")
     m "Are you sure?"
     g9 "You could earn 25 house points for it!"
-    call her_main(".............","annoyed","worriedL")
+    call her_main(".............", "annoyed", "base", "worried", "R")
 
     call her_main("Very well, [genie_name].", "angry", "base", "angry", "mid")
     call her_main("But you better keep your hands to yourself!", "annoyed", "narrow", "angry", "R", cheeks="blush")
@@ -389,7 +389,7 @@ label hg_pf_admire_breasts_T2_E2:
     call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     g9 "[hermione_name], I would very much like to see your breasts again!"
-    call her_main(".............","annoyed","worriedL")
+    call her_main(".............", "annoyed", "base", "worried", "R")
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Very well, [genie_name].", "angry", "base", "angry", "mid")

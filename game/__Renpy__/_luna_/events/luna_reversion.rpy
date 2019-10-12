@@ -1211,7 +1211,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     call her_main("I think I'm going go now [genie_name]...", "angry", "worriedCl", "worried", "mid",emote="05")
     m "Alright, well have a nice day."
     call her_main("ugh...", "disgust", "narrow", "base", "down")
-    call her_main("(I could have sworn Luna was here...)","annoyed","worriedL")
+    call her_main("(I could have sworn Luna was here...)", "annoyed", "base", "worried", "R")
     call her_main("(Wait, what was I doing here...)", "annoyed", "squint", "base", "mid")
     call reset_luna
 

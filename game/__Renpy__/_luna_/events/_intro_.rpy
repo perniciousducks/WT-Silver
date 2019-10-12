@@ -73,7 +73,7 @@ label hat_intro_2: #Bringing in Hermione
     call her_main("I suppose that Neville Longbottom isn't very courageous, Maybe he'd be better off in \"Hufflepuff\"...", "open", "squint", "base", "mid")
     m "(Probably don't want him...)"
     m "Anyone else come to mind?"
-    call her_main("I don't think so...","open","worriedL")
+    call her_main("I don't think so...", "open", "base", "worried", "R")
     m "Oh well, just-"
     call her_main("Wait, I know! Luna Lovegood!", "scream", "closed", "angry", "mid")
     m "And why is that?"

@@ -44,7 +44,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call h_equip_temp_outfit(hg_outfit_pirate_ITEM)
         call hide_blkfade
 
-        call her_main("...........","annoyed","worriedL")
+        call her_main("...........", "annoyed", "base", "worried", "R")
         m "Time to get me ole canon out..."
         call her_main(".................", "angry", "worriedCl", "worried", "mid",emote="05")
         call blkfade
@@ -471,7 +471,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
         stop music fadeout 1.0
 
-        call her_main("........","annoyed","worriedL",ypos="head")
+        call her_main("........", "annoyed", "base", "worried", "R",ypos="head")
         m "Hm..."
         call her_main("...........", "open", "base", "base", "mid")
         $ renpy.play('sounds/gltch.mp3')

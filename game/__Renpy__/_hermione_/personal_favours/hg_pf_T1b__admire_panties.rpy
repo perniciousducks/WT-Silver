@@ -177,9 +177,9 @@ label hg_pf_admire_panties_T2_intro_E1:
     if hg_pf_admire_panties.counter == 0:
         call her_main("My Panties?!", "clench", "base", "worried", "mid")
     else:
-        call her_main("Oh... again?","annoyed","worriedL")
+        call her_main("Oh... again?", "annoyed", "base", "worried", "R")
     m "Just do it..."
-    call her_main("..................","annoyed","worriedL")
+    call her_main("..................", "annoyed", "base", "worried", "R")
 
     call hg_pf_admire_panties_T2
 
@@ -189,8 +189,8 @@ label hg_pf_admire_panties_T2_intro_E1:
 label hg_pf_admire_panties_T2_E1:
     call her_main("What will it be, [genie_name]?")
     m "I'd like you to show me your panties again."
-    call her_main("..................","annoyed","worriedL")
-    call her_main("Alright...","open","worriedL")
+    call her_main("..................", "annoyed", "base", "worried", "R")
+    call her_main("Alright...", "open", "base", "worried", "R")
 
     call hg_pf_admire_panties_T2
 

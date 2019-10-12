@@ -69,7 +69,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "What's this about [hermione_name]?"
         call her_main("Why would you make my clothes invisible again?", "open", "base", "base", "mid")
         m "Why not?"
-        call her_main("Ugh, you're such a pig.","annoyed","worriedL")
+        call her_main("Ugh, you're such a pig.", "annoyed", "base", "worried", "R")
         m "Tell me about what happened."
         call her_main("...", "normal", "worriedCl", "worried", "mid")
         call her_main("Fine, but I expect an extra 10 points.", "open", "base", "base", "mid")
@@ -78,20 +78,20 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "I wonder why."
         call her_main("As I was saying I was completing potions class and felt like everyone wouldn't take their eyes off of me.", "annoyed", "narrow", "angry", "R")
         call her_main("I didn't think anything of it until I was approached by Professor Snape at the end of the lesson.", "annoyed", "narrow", "annoyed", "mid")
-        call her_main("He normally criticises me during potions class. Stuff like getting dosages wrong, things that I know are correct.","annoyed","worriedL")
+        call her_main("He normally criticises me during potions class. Stuff like getting dosages wrong, things that I know are correct.", "annoyed", "base", "worried", "R")
         m "Back to the story [hermione_name]."
         call her_main("Well when he commented that he liked my outfit I was suspicious. I thought that perhaps he was talking about my shirt until I looked down and saw that everything was see through.", "disgust", "narrow", "base", "mid_soft")
         call her_main("But I just ignored him, finished class and ran here.", "annoyed", "narrow", "angry", "R")
         m "You just finished class?"
         call her_main("Of course, I can't afford to miss potions class. I'm doing poorly enough without missing class.", "annoyed", "narrow", "annoyed", "mid")
         m "Well fair enough. You may go now."
-        call her_main("Hmmph. Goodbye [genie_name].","annoyed","worriedL")
+        call her_main("Hmmph. Goodbye [genie_name].", "annoyed", "base", "worried", "R")
 
     elif her_whoring <= 20: #Slightly aroused
         call nar(">Hermione enters your office")
         call her_main("Can you at least warn me next time?", "open", "squint", "base", "mid")
         m "Well, that'd take away from the suspense wouldn't it?"
-        call her_main("Hmmmm, well at least ask what I'm doing before you give me the potion.","open","worriedL")
+        call her_main("Hmmmm, well at least ask what I'm doing before you give me the potion.", "open", "base", "worried", "R")
         m "Why, what did you have to do today that was so important?"
         call her_main("I had to give a speech for languages!", "angry", "base", "worried", "mid")
         call her_main("Do you have any idea how inappropriate it was giving a speech on morality in front of the entire class-", "open", "closed", "base", "mid")
@@ -112,7 +112,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "Hello [hermione_name], how was your day today?"
         call her_main("Fine [genie_name]. Why do you ask?", "base", "base", "base", "mid")
         m "No reason. Anything unusual happen today?"
-        call her_main("Hmmmm, now that you mention it I suppose that boys in class were a little more forward than usual.","open","worriedL")
+        call her_main("Hmmmm, now that you mention it I suppose that boys in class were a little more forward than usual.", "open", "base", "worried", "R")
         m "How so?"
         call her_main("Well nothing serious, just small stuff like calling me names, groping me.", "soft", "base", "base", "R")
         m "Groping you? What on earth could have provoked them to do that?"

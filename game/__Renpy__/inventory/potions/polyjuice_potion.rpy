@@ -137,7 +137,7 @@ label hg_pp_polyjuice_T1_intro:
 
     call her_main("How could you do this to me [genie_name]?", "angry", "base", "angry", "mid", xpos="mid", ypos="base", trans="hpunch")
     her "Try and turn me into a cat!"
-    call her_main("In the middle of class!","annoyed","worriedL")
+    call her_main("In the middle of class!", "annoyed", "base", "worried", "R")
     m "I didn't try and turn you into a cat [hermione_name]."
     call her_main("Then why do I have ears and a tail?", "scream", "closed", "angry", "mid")
     m "I have no idea. The potion I gave you was supposed to turn you into a different girl."
@@ -279,7 +279,7 @@ label hg_pp_polyjuice_T1_intro:
                 call her_main("Thank you [genie_name]. Will that be all.", "base", "narrow", "base", "up")
                 m "One last thing."
                 m "Who's a good girl?"
-                call her_main("..........","annoyed","worriedL")
+                call her_main("..........", "annoyed", "base", "worried", "R")
                 call her_main("I am...", "smile", "base", "base", "R")
 
                 show screen blkfade with d3
@@ -326,7 +326,7 @@ label hg_pp_polyjuice_T1_introCC:
         $ her_know_polyjuice = True
         call her_main("How could you do this to me [genie_name]?", "angry", "base", "angry", "mid", xpos="mid", ypos="base", trans="hpunch")
         her "Try and turn me into a cat!"
-        call her_main("In the middle of class!","annoyed","worriedL")
+        call her_main("In the middle of class!", "annoyed", "base", "worried", "R")
         m "I didn't try and turn you into a cat [hermione_name]."
         call her_main("Then why do I have ears and a tail?", "scream", "closed", "angry", "mid")
         m "I have no idea. The potion I gave you was supposed to turn you into a different girl."
@@ -502,7 +502,7 @@ label hg_pp_polyjuice_T1_introCC:
     call her_main("Thank you [genie_name]. Will that be all.", "base", "narrow", "base", "up")
     m "One last thing."
     m "Who's a good girl?"
-    call her_main("..........","annoyed","worriedL")
+    call her_main("..........", "annoyed", "base", "worried", "R")
     call her_main("I am...", "smile", "base", "base", "R")
 
     call hide_characters

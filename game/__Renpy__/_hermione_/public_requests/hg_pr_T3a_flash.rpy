@@ -177,9 +177,9 @@ label hg_pr_flash_T1_E1:
     m "I see..."
     m "Well, I can't just give you the points for nothing, [hermione_name]."
     call her_main("Of course, [genie_name]... I understand...", "open", "closed", "base", "mid")
-    call her_main("I shall try harder next time... I promise...","annoyed","worriedL")
+    call her_main("I shall try harder next time... I promise...", "annoyed", "base", "worried", "R")
     m "Then I will just put these thirty five points aside for now..."
-    call her_main("Thank you, [genie_name]...","annoyed","worriedL")
+    call her_main("Thank you, [genie_name]...", "annoyed", "base", "worried", "R")
     her "..."
     her "I'd better go now."
 
@@ -197,7 +197,7 @@ label hg_pr_flash_T1_E2:
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name], did you complete your task?"
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Ehm... Sort of...","annoyed","worriedL")
+    call her_main("Ehm... Sort of...", "annoyed", "base", "worried", "R")
     m "Sort of?"
     call her_main("Yes... uhm...", "open", "base", "base", "mid")
     her "Well, I decided to try and flash them to this \"hufflepuff\" boy..."
@@ -218,7 +218,7 @@ label hg_pr_flash_T1_E2:
     call her_main("Well, I think he may have seen one of them...", "open", "base", "base", "mid")
     her "But from the way he was looking at me..."
     her "I doubt that he understood that the whole commotion was for his benefit."
-    call her_main("......................","annoyed","worriedL")
+    call her_main("......................", "annoyed", "base", "worried", "R")
     call her_main("I'm sorry, [genie_name]...", "open", "base", "base", "mid")
     m "That's alright..."
     m "I wouldn't expect you to perform perfectly this early in your training..."
@@ -241,7 +241,7 @@ label hg_pr_flash_T1_E3:
 
     show screen blktone
     hide screen blkfade
-    call her_main("Yes I did, [genie_name].","annoyed","worriedL", xpos="base", ypos="base", trans="fade")
+    call her_main("Yes I did, [genie_name].", "annoyed", "base", "worried", "R", xpos="base", ypos="base", trans="fade")
     m "Good. Tell me more."
     $ sc34CG(3, 4)
     call her_main("Ehm... There is not much to tell, really...", "open", "base", "base", "mid")
@@ -294,7 +294,7 @@ label hg_pr_flash_T2_E1:
     m "You came to me, remember?"
     call her_main("..........", "open", "base", "base", "mid")
     m "You begged me to buy a sexual favour from you."
-    call her_main("...I....","annoyed","worriedL")
+    call her_main("...I....", "annoyed", "base", "worried", "R")
     call her_main("I never said \"sexual\"...", "open", "base", "base", "mid")
     m "Nevertheless, you can stop selling me these favours at any moment, [hermione_name]."
     call her_main("I suppose...", "annoyed", "narrow", "angry", "R")
@@ -439,7 +439,7 @@ label hg_pr_flash_T3_E1:
     call her_main("Hard to say, [genie_name]...", "open", "base", "base", "mid")
     call her_main("Two dozen boys or so I suppose...")
     $ sc34CG(3, 12)
-    call her_main("A few girls as well...","annoyed","worriedL")
+    call her_main("A few girls as well...", "annoyed", "base", "worried", "R")
     $ sc34CG(3, 11)
     call her_main("I think the school librarian may have seen me too...")
     m "Hm... Well, I'd say that's a job well done."
@@ -512,13 +512,13 @@ label hg_pr_flash_T3_E3:
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Yes I did, [genie_name]...", "base", "base", "base", "mid")
     m "Alright, tell me how did it go."
-    call her_main("Well, let's see...","annoyed","worriedL")
+    call her_main("Well, let's see...", "annoyed", "base", "worried", "R")
     her "First I flashed them to that one boy from \"Ravenclaw\"..."
     call her_main("Then to that upperclassman from \"Hufflepuff\"...", "open", "base", "base", "mid")
     call her_main("Then there was this other boy from \"Ravenclaw\".", "base", "base", "base", "mid")
     m "???"
     call her_main("After that I flashed my tits to some \"Gryffindor\" underclassman by mistake...", "angry", "worriedCl", "worried", "mid",emote="05")
-    call her_main("No, wait...  the boy from \"Gryffindor\" was after that other boy...","annoyed","worriedL")
+    call her_main("No, wait...  the boy from \"Gryffindor\" was after that other boy...", "annoyed", "base", "worried", "R")
     m "How many boys did you flash your tits to today, [hermione_name]?"
     call her_main("Half a dozen or so?", "angry", "base", "base", "mid")
     call her_main("I had an opening in my schedule...", "angry", "wink", "base", "mid")
@@ -527,7 +527,7 @@ label hg_pr_flash_T3_E3:
     m "And there are no extra credits..."
     call her_main("Oh...?", "open", "base", "base", "mid")
     m "You are still getting your usual payment, [hermione_name], and that's it."
-    call her_main("Oh... I see...","annoyed","worriedL")
+    call her_main("Oh... I see...", "annoyed", "base", "worried", "R")
     m "But, [hermione_name]..."
     call her_main("Yes, [genie_name]?", "open", "base", "base", "mid")
     g9 "That was very well done."

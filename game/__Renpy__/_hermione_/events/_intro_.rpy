@@ -885,7 +885,7 @@ label hermione_intro_E5:
                         menu:
                             "\"Show me your tits and it's a deal!\"":
                                 call her_main("m-my...?", "angry", "wide", "base", "stare")
-                                call her_main("............","annoyed","worriedL")
+                                call her_main("............", "annoyed", "base", "worried", "R")
                                 her "....."
                                 with hpunch
                                 call her_main("{size=+5}Professor Dumbledore!!!{/size}", "scream", "closed", "angry", "mid")
@@ -896,7 +896,7 @@ label hermione_intro_E5:
                                 call her_main("What...?", "open", "base", "base", "mid")
                                 call her_main("Oh, of course. I'm so silly sometimes. Sorry about the yelling, sir.", "grin", "worriedCl", "worried", "mid", emote="05")
                                 m "My offer is still valid. If you want me to then I can tutor you."
-                                call her_main("..............","annoyed","worriedL")
+                                call her_main("..............", "annoyed", "base", "worried", "R")
                             "\"Well, alright, alright...\"":
                                 pass
                     "\"Oh, that's right. Great.\"":
@@ -930,7 +930,7 @@ label hermione_intro_E5:
     m "No way!"
     her "I have a list of suspects already but I will get back to you on this later...."
     m "Ehm... alright..."
-    call her_main("Oh, my classes are about to start. I'd better go...","open","worriedL")
+    call her_main("Oh, my classes are about to start. I'd better go...", "open", "base", "worried", "R")
 
     call her_walk(action="leave", speed=2)
 
@@ -1034,14 +1034,14 @@ label hermione_intro_E6:
     call play_music("day_theme")
     call her_main("Good day, professor...", "soft", "base", "base", "R", xpos="base", ypos="base")
     her "........................"
-    call her_main("........................","annoyed","worriedL")
+    call her_main("........................", "annoyed", "base", "worried", "R")
     her "........................"
     call her_main("Ehm......", "open", "base", "base", "mid")
-    call her_main(".................","annoyed","worriedL")
+    call her_main(".................", "annoyed", "base", "worried", "R")
     m "What is it, miss Granger?"
     call her_main("Well, ehm...", "open", "base", "base", "mid")
     her "You see... The \"Gryffindor\" house is not in the lead anymore..."
-    call her_main("And... everyone is working so hard...","annoyed","worriedL")
+    call her_main("And... everyone is working so hard...", "annoyed", "base", "worried", "R")
     her "And they look up to me for help but I don't know what to do..."
     m "............................"
     her "Professor Dumbledore...."
@@ -1225,7 +1225,7 @@ label hermione_intro_E6:
                 m "That's a good girl."
                 call her_main("................??", "upset", "wink", "base", "mid")
                 m "Now that wasn't hard at all, was it?"
-                call her_main("n-no , sir...","annoyed","worriedL")
+                call her_main("n-no , sir...", "annoyed", "base", "worried", "R")
                 m "Alrighty, then..."
             "\"Do you want to get spanked?\"":
                 call her_main("Do I want to...", "open", "base", "worried", "mid")
@@ -1258,7 +1258,7 @@ label hermione_intro_E6:
             call her_main("Please, professor...", "angry", "base", "worried", "mid")
             her "We really need those points..."
             m "......."
-            call her_main("You are an esteemed wizard and to be honest...","annoyed","worriedL")
+            call her_main("You are an esteemed wizard and to be honest...", "annoyed", "base", "worried", "R")
             her "The only person in this school whom I don't mind asking for this..."
             m "Well, when you put it that way..."
         "\"That's a possibility...\"":

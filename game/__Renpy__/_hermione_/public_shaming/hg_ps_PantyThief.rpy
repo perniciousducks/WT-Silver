@@ -71,7 +71,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         her "You are so right, [genie_name]! I shall beat them at their own game!"
         her "My classes are about to start, so I should probably go now..."
         call her_main("...........", "normal", "base", "base", "R",tears="soft")
-        call her_main("...I hope nobody will notice that I have no underwear on today...","annoyed","worriedL")
+        call her_main("...I hope nobody will notice that I have no underwear on today...", "annoyed", "base", "worried", "R")
         call her_main("Oh, and I will be back tonight to pick them up, [genie_name].", "open", "base", "base", "mid")
         m "Of course. Your panties will be right here on my desk, waiting for you..."
         call her_main(".............", "angry", "worriedCl", "worried", "mid",emote="05")
@@ -196,7 +196,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         else:
             her "They are covered in something slimy..."
         her "And they smell funny..."
-        call her_main("Hm... That smell...","annoyed","worriedL")
+        call her_main("Hm... That smell...", "annoyed", "base", "worried", "R")
         her "It's familiar somehow..."
         call her_main("What exactly did you do to them, [genie_name]?", "base", "base", "base", "mid")
 
@@ -314,7 +314,7 @@ label hg_ps_get_panties_complete:
                 call her_main("Oh...", "soft", "base", "base", "mid",xpos="base",ypos="base")
                 her "Quite ordinary actually..."
                 call her_main("Although... I couldn't help but worry that somebody would notice somehow...", "soft", "base", "base", "R")
-                call her_main(".....","annoyed","worriedL")
+                call her_main(".....", "annoyed", "base", "worried", "R")
                 hide screen sccg
                 call her_main("Can I have my panties back now?", "open", "base", "base", "mid",xpos="right",ypos="base",trans="fade")
                 m "Of course..."
@@ -375,7 +375,7 @@ label hg_ps_get_panties_complete:
                 $ sc34CG(1, 11)
                 call her_main("Another ordinary day at hogwarts...", "open", "closed", "base", "mid",xpos="base",ypos="base")
                 her "Nothing worth mentioning happened today..."
-                call her_main("Although I have to admit...","annoyed","worriedL")
+                call her_main("Although I have to admit...", "annoyed", "base", "worried", "R")
                 her "It was oddly empowering to have no underwear on..."
                 her "Hm..."
                 hide screen sccg
@@ -399,7 +399,7 @@ label hg_ps_get_panties_complete:
         m "You're wearing it"
         her "What, semen soaked panties?"
         m "if you'd prefer the points then just take them off"
-        call her_main("well... I am already wearing them","annoyed","worriedL")
+        call her_main("well... I am already wearing them", "annoyed", "base", "worried", "R")
         m "then say thank you for the gift"
         call her_main("Thank you, [genie_name]...", "annoyed", "squint", "base", "mid")
         m "You can go now."

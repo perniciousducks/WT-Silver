@@ -21,12 +21,12 @@ label chit_chat:
             call her_main("The basilisk, also known as the king of serpents.", "open", "closed", "angry", "mid")
             her "Herpo the Foul was the first to breed a Basilisk."
             her "He accomplished that by--"
-            call her_main("Oh, I'm sorry, professor, we have another test tomorrow...","open","worriedL")
+            call her_main("Oh, I'm sorry, professor, we have another test tomorrow...", "open", "base", "worried", "R")
             her "I Just want to make sure that I'm ready..."
             call her_main("", "base", "base", "base", "mid")
 
         elif one_of_ten == 4:
-            call her_main("If my body wouldn't require sleep...","open","worriedL")
+            call her_main("If my body wouldn't require sleep...", "open", "base", "worried", "R")
             call her_main("I would be able to spend twice as much time with studying!?", "angry", "wide", "base", "stare")
             call her_main("I wonder if there's a spell for that...", "open", "base", "base", "mid")
             call her_main("", "normal", "base", "base", "mid")
@@ -45,11 +45,11 @@ label chit_chat:
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 8:
-            call her_main("It's been raining quite a lot lately...","open","worriedL")
+            call her_main("It's been raining quite a lot lately...", "open", "base", "worried", "R")
             call her_main("", "base", "base", "base", "mid")
 
         elif one_of_ten == 9:
-            call her_main("Very few people know this...","open","worriedL")
+            call her_main("Very few people know this...", "open", "base", "worried", "R")
             call her_main("...But I really like chocolate.", "base", "base", "base", "mid")
             call her_main("", "base", "base", "base", "mid")
 
@@ -69,7 +69,7 @@ label chit_chat:
             call her_main("", "base", "base", "base", "mid")
 
         elif one_of_ten == 3:
-            call her_main("A peculiar rumour concerning professor Snape has been circulating in the school lately...","open","worriedL")
+            call her_main("A peculiar rumour concerning professor Snape has been circulating in the school lately...", "open", "base", "worried", "R")
             call her_main("No, I probably shouldn't...", "soft", "base", "base", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
@@ -94,10 +94,10 @@ label chit_chat:
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 8:
-            call her_main("As one of the top students in this school I have a reputation to keep...","open","worriedL")
+            call her_main("As one of the top students in this school I have a reputation to keep...", "open", "base", "worried", "R")
             her "People look up to me..."
             call her_main("...So, your discretion is very appreciated, sir.", "open", "base", "base", "mid")
-            call her_main("","annoyed","worriedL")
+            call her_main("", "annoyed", "base", "worried", "R")
 
         elif one_of_ten == 9:
             call her_main("That favour I sold you the other say, sir...", "open", "base", "worried", "mid")
@@ -127,7 +127,7 @@ label chit_chat:
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 3:
-            call her_main("Ashwinder eggs, rose thorns, moonstone...","open","worriedL")
+            call her_main("Ashwinder eggs, rose thorns, moonstone...", "open", "base", "worried", "R")
             call her_main("Huh? Am I thinking out loud again?", "open", "base", "worried", "mid")
             call her_main("I apologize...", "grin", "worriedCl", "worried", "mid",emote="05")
             call her_main("It's just that we have another test soon...", "soft", "base", "base", "R")
@@ -184,7 +184,7 @@ label chit_chat:
 
         elif one_of_ten == 4:
             call her_main("Sir, there is something about professor Snape that I think you should know...", "open", "base", "base", "mid")
-            call her_main(".................","open","worriedL")
+            call her_main(".................", "open", "base", "worried", "R")
             call her_main(".........................", "annoyed", "squint", "angry", "mid")
             call her_main("uhm... Never mind...", "open", "closed", "angry", "mid")
             call her_main("", "normal", "base", "base", "mid")
@@ -195,7 +195,7 @@ label chit_chat:
             call her_main("(I can barely keep up...)", "annoyed", "narrow", "angry", "R")
 
         elif one_of_ten == 6:
-            call her_main("Life works in mysterious ways...","open","worriedL")
+            call her_main("Life works in mysterious ways...", "open", "base", "worried", "R")
             call her_main("Wouldn't you agree, sir?", "open", "squint", "base", "mid")
             call her_main("", "soft", "base", "base", "R")
 
@@ -204,7 +204,7 @@ label chit_chat:
             call her_main("", "angry", "base", "angry", "mid")
 
         elif one_of_ten == 8:
-            call her_main("I've been spending so much time in your office lately, sir...","open","worriedL")
+            call her_main("I've been spending so much time in your office lately, sir...", "open", "base", "worried", "R")
             call her_main("If I'm not careful some people may think that I have become your pet...", "open", "base", "worried", "mid")
             call her_main("I meant to say the teacher's pet...", "angry", "worriedCl", "worried", "mid",emote="05")
             call her_main("", "normal", "worriedCl", "worried", "mid")
@@ -215,7 +215,7 @@ label chit_chat:
             call her_main("", "normal", "base", "base", "mid")
 
         elif one_of_ten == 10:
-            call her_main("Is it weird that my best friends are boys?","open","worriedL")
+            call her_main("Is it weird that my best friends are boys?", "open", "base", "worried", "R")
             call her_main("", "base", "base", "base", "mid")
 
 
@@ -237,7 +237,7 @@ label chit_chat:
 
         elif one_of_ten == 4:
             call her_main("lately I have not been studying nearly as much as I used to...", "open", "base", "worried", "mid")
-            call her_main("Am I losing my motivation?","open","worriedL")
+            call her_main("Am I losing my motivation?", "open", "base", "worried", "R")
             call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 5:
@@ -246,12 +246,12 @@ label chit_chat:
 
         elif one_of_ten == 6:
             call her_main("My father used to say: \"Magic is just science we don't understand yet\".", "open", "base", "base", "mid")
-            call her_main("He couldn't be more wrong of course...","open","worriedL")
+            call her_main("He couldn't be more wrong of course...", "open", "base", "worried", "R")
             call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 7:
             call her_main("Despite everything...", "open", "closed", "angry", "mid")
-            call her_main("I am thankful that you keep on buying favours from me, sir...","open","worriedL")
+            call her_main("I am thankful that you keep on buying favours from me, sir...", "open", "base", "worried", "R")
             call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 8:
@@ -263,7 +263,7 @@ label chit_chat:
             call her_main("", "soft", "base", "base", "mid")
 
         elif one_of_ten == 10:
-            call her_main("People hardly show up for my \"men's rights movement\" meetings at all anymore...","open","worriedL")
+            call her_main("People hardly show up for my \"men's rights movement\" meetings at all anymore...", "open", "base", "worried", "R")
             call her_main("", "soft", "base", "base", "R")
 
 
@@ -310,7 +310,7 @@ label chit_chat:
             call her_main("I used to look down on girls who spend too much time with worrying about the way they look...", "open", "base", "base", "mid")
             her "But I was wrong to do so..."
             her "I am starting to understand how important it really is for a girl to look pretty."
-            call her_main("...............","annoyed","worriedL")
+            call her_main("...............", "annoyed", "base", "worried", "R")
             call her_main("I've been on a diet lately...", "angry", "wink", "base", "mid")
             call her_main("", "angry", "worriedCl", "worried", "mid",emote="05")
             call her_main("", "normal", "worriedCl", "worried", "mid")
@@ -350,7 +350,7 @@ label chit_chat:
 
         elif one_of_ten == 6:
             call her_main("Do I look fat to you sir?", "open", "base", "worried", "mid")
-            call her_main("I wonder if the diet is working...","annoyed","worriedL")
+            call her_main("I wonder if the diet is working...", "annoyed", "base", "worried", "R")
 
         elif one_of_ten == 7:
             call her_main("I remember that I used to say that books were my friends...", "open", "closed", "base", "mid")
@@ -361,7 +361,7 @@ label chit_chat:
             call her_main("Add ashwinder egg to cauldron...", "open", "closed", "angry", "mid")
             her "Then add horseshoe reddish and heat..."
             her "Then juice a squill bulb..."
-            call her_main("Or was it a dash of thyme first?","open","worriedL")
+            call her_main("Or was it a dash of thyme first?", "open", "base", "worried", "R")
             call her_main("..............", "soft", "base", "base", "R")
             call her_main("Oh, who cares?", "grin", "worriedCl", "worried", "mid",emote="05")
             call her_main("", "base", "base", "base", "mid")
@@ -398,7 +398,7 @@ label chit_chat:
             call her_main("", "base", "base", "base", "mid")
 
         elif one_of_ten == 5:
-            call her_main("I hope the ball goes smoothly...","open","worriedL")
+            call her_main("I hope the ball goes smoothly...", "open", "base", "worried", "R")
             call her_main("", "soft", "base", "base", "R")
 
         elif one_of_ten == 6:

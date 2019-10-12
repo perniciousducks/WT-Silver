@@ -283,7 +283,7 @@ label gryffindor_cheer_responses:
                         call her_main("Of course not, they all patiently waited on their turn...", "scream", "closed", "angry", "mid")
                         m "Who doesn't love a queue..."
                         m "So they queued up... And then?"
-                        call her_main("Well I did what I said I would, I'm not the kind of person to lie am I?","annoyed","worriedL")
+                        call her_main("Well I did what I said I would, I'm not the kind of person to lie am I?", "annoyed", "base", "worried", "R")
                         call her_main("So, I gave them the reward I promised... And surely you of all people would know how a blowjob works.", "annoyed", "happy", "base", "R")
                         m "That's not quite what I meant."
                         m "You just look rather..."
@@ -397,10 +397,10 @@ label slytherin_cheer_responses:
                 m "Hello [hermione_name]."
                 call her_main("Hello [genie_name].", "normal", "base", "base", "mid")
                 m "How did everything go today?"
-                call her_main("Very well. In fact I think I might be doing too well.","annoyed","worriedL")
+                call her_main("Very well. In fact I think I might be doing too well.", "annoyed", "base", "worried", "R")
                 m "How so?"
                 call her_main("I think that my cheering is having too much of an positive effect.", "open", "base", "worried", "mid")
-                call her_main("I'm not sure that I want the Slytherin team to improve, let alone because of me...","open","worriedL")
+                call her_main("I'm not sure that I want the Slytherin team to improve, let alone because of me...", "open", "base", "worried", "R")
                 m "Just think about how you're helping your house in other ways."
                 call her_main("I suppose you're right [genie_name].", "open", "base", "base", "mid")
                 m "Of course I am... Now, did they pay you?"
@@ -600,7 +600,7 @@ label hermione_helping_selling_cards:
         call her_main("Well, I'm not actually angry...", "open", "base", "base", "mid")
         call her_main("Just a bit annoyed, that's all.", "annoyed", "closed", "base", "mid")
         m "With?"
-        call her_main("Myself...","open","worriedL", cheeks="blush")
+        call her_main("Myself...", "open", "base", "worried", "R", cheeks="blush")
         call her_main("We've set up a practice day where you get to borrow a deck of cards to get more people into the game.", "normal", "happy", "base", "mid")
         g9 "Sounds like a good idea, get people invested."
         call her_main("Well, that was fine and all until the amount of new people interested started to slow down.", "open", "narrow", "worried", "down")

@@ -174,7 +174,7 @@ label equip_bottom:
                         # call her_main("How... How short?!", "shock", "wide", "base", "stare")
                         # call her_main("Is that another one of your silly jokes, [genie_name]?", "angry", "base", "worried", "mid")
                         # call her_main("No, please, don't tell me.", "open", "closed", "base", "mid")
-                        # call her_main("I don't even want to know...","annoyed","worriedL")
+                        # call her_main("I don't even want to know...", "annoyed", "base", "worried", "R")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 17."
                     # jump return_to_wardrobe
@@ -200,7 +200,7 @@ label equip_bottom:
                         # call her_main("Open up the front?!", "shock", "wide", "base", "stare")
                         # call her_main("Is that another one of your silly jokes, [genie_name]?", "angry", "base", "worried", "mid")
                         # call her_main("No, please, don't tell me.", "open", "closed", "base", "mid")
-                        # call her_main("I don't even want to know...","annoyed","worriedL")
+                        # call her_main("I don't even want to know...", "annoyed", "base", "worried", "R")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 17."
                     # jump return_to_wardrobe

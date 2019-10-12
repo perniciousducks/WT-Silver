@@ -44,7 +44,7 @@ label slut_scene: #Locked to her being your slut
     m "Suck my cock."
     call her_main("...What?", "open", "base", "base", "mid")
     m "I said suck. My. Cock. Slut."
-    call her_main("...","annoyed","worriedL")
+    call her_main("...", "annoyed", "base", "worried", "R")
     hide screen hermione_main
     with d3
 
@@ -375,7 +375,7 @@ label slave_scene:
     m "Are you sure? You come in here whenever I summon you, eager to do whatever I say."
     m "Just begging to do anything to please me."
     m "When was the last time you even said no to me?"
-    call her_main("Well, I...","annoyed","worriedL")
+    call her_main("Well, I...", "annoyed", "base", "worried", "R")
     m "Exactly, you've become my slave and you didn't even realise it."
     call her_main("Just because I care about my house doesn't mean that-", "angry", "worriedCl", "worried", "mid",emote="05")
     m "Please, when was the last time you even cared about getting your points?"

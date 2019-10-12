@@ -38,7 +38,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         m "Come on..."
         m "It's not like I haven't seen it all before."
         call her_main("......", "open", "base", "base", "mid")
-        call her_main(".............","annoyed","worriedL")
+        call her_main(".............", "annoyed", "base", "worried", "R")
         call her_main("40 house points, [genie_name].", "normal", "worriedCl", "worried", "mid")
         m "So if I give you 40 house points, [hermione_name]..."
         m "You will shamelessly strip naked and present your lovely ass?"
@@ -50,7 +50,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
                 $ current_payout = 50
                 call her_main("Really?", "open", "base", "base", "mid")
                 m "Well?"
-                call her_main("...","annoyed","worriedL")
+                call her_main("...", "annoyed", "base", "worried", "R")
                 her "You have to promise me not to touch, [genie_name]..."
                 m "Sure, sure..."
                 call her_main("And you most certainly must not touch yourself!", "scream", "worriedCl", "worried", "mid")
@@ -65,7 +65,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
                     "\"Fine. 100 it is! strip already!":
                         $ current_payout = 100
                         her "................."
-                        call her_main("(I didn't think he'd agree to this...)","annoyed","worriedL")
+                        call her_main("(I didn't think he'd agree to this...)", "annoyed", "base", "worried", "R")
                         call her_main("W-Well alright then...", "normal", "worriedCl", "worried", "mid")
                     "\"40 house points it is then\"":
                         $ current_payout = 40
@@ -970,7 +970,7 @@ label end_hg_show_ass:
         m "The \"Gryffindor\" house gets [current_payout] points!"
         stop music fadeout 10.0
 
-        call her_main("..................","annoyed","worriedL")
+        call her_main("..................", "annoyed", "base", "worried", "R")
         her "Thank you, [genie_name]..."
 
     else:

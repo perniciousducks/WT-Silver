@@ -114,7 +114,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
     pause .5
     call her_chibi("stand","mid","base")
 
-    call her_main("At least warn me next time you make me drink your cum, [genie_name].","open","worriedL")
+    call her_main("At least warn me next time you make me drink your cum, [genie_name].", "open", "base", "worried", "R")
     m "What do you mean next time?"
     call her_main("Well, you're such a pervert you'll probably try and do this again. At least warn me so it's not such a shock.", "annoyed", "narrow", "annoyed", "mid")
     m "Ok, [hermione_name], I'll make sure to warn you next time."
@@ -139,7 +139,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
 
     call her_main("What the hell did you do to me?", "scream", "worriedCl", "worried", "mid", xpos="mid", ypos="base", trans="hpunch")
     m "Whatever are you talking about, [hermione_name]?"
-    call her_main("Ughh, it doesn't matter, just let me suck it.","annoyed","worriedL")
+    call her_main("Ughh, it doesn't matter, just let me suck it.", "annoyed", "base", "worried", "R")
     m "Why on earth would you want to do that? You're a top student, that doesn't sound appropriate."
     call her_main("You know exactly what you did to me. Now let me suck your filthy old cock.", "angry", "base", "angry", "mid")
 
@@ -455,7 +455,7 @@ label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the 
 
     call her_main("Take off your pants! No questions!", "scream", "worriedCl", "worried", "mid", xpos="mid", ypos="base", trans="hpunch")
     m "Hold on a minute, what are you-....{w=0.5}{nw}"
-    call her_main("Shut it, just let me suck it.","annoyed","worriedL")
+    call her_main("Shut it, just let me suck it.", "annoyed", "base", "worried", "R")
     m "...."
 
     menu:

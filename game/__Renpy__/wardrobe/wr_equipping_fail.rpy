@@ -13,7 +13,7 @@
             # m "[hermione_name]..."
             # m "Would you wear this--"
             # call her_main("I'm sorry [genie_name],...", "open", "closed", "base", "mid")
-            # call her_main("But I don't feel like dressing up for you today.","open","worriedL")
+            # call her_main("But I don't feel like dressing up for you today.", "open", "base", "worried", "R")
             # m "Any chance I could convince you otherwise?"
             # call her_main("Hmm...", "annoyed", "base", "base", "mid") #very upset, default
             # call her_main("I want 5 house points! And that's no guarantee that I'm actually going to wear...", "open", "closed", "base", "mid")
@@ -64,7 +64,7 @@
             # m "[hermione_name]..."
             # m "I'd like you to wear--"
             # call her_main("No, [genie_name]...", "open", "closed", "base", "mid",xpos="base") #525=default Hermione xpos
-            # call her_main("I'm still mad at you for what you did!","open","worriedL")
+            # call her_main("I'm still mad at you for what you did!", "open", "base", "worried", "R")
             # m "Will you wear it if I give Gryffindor some points?"
             # call her_main("...", "annoyed", "squint", "base", "mid")
             # call her_main("Fifteen house points!", "open", "base", "base", "mid")

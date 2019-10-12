@@ -205,7 +205,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("What crime professor, what have you gotten me into?", "upset", "narrow", "annoyed", "mid")
     m "I'm talking about when you went to visit the boys changing room."
     m "Or have you forgotten already?"
-    call her_main("{size=7}I've tried to.{/size}","upset","worriedL")
+    call her_main("{size=7}I've tried to.{/size}", "upset", "base", "worried", "R")
     m "Sorry?"
     call her_main("I said, I do remember.", "normal", "base", "base", "R")
     m "Right, well. Good invisibility cloaks are pretty hard to come by..."
@@ -278,7 +278,7 @@ label a_bad_time_to_disrobe_part_2:
     m "And?"
     call her_main("And what?", "normal", "worriedCl", "worried", "mid")
     m "And what about your assignment. How did it go?"
-    call her_main("Oh... yes, it went very well thank you... no hurdles in any way.","soft","worriedL", cheeks="blush")
+    call her_main("Oh... yes, it went very well thank you... no hurdles in any way.", "soft", "base", "worried", "R", cheeks="blush")
     m "Your face is glowing miss Granger, I can tell when you're being untruthful."
     call her_main("It is? I didn't even notice...", "normal", "narrow", "base", "down", cheeks="blush")
     m "You're going to have to elaborate if you'd like those house points."
@@ -305,7 +305,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("Anyhow...", "base", "narrow", "angry", "R")
     call her_main("I expected the team to be going for at least another 30 minutes.", "open", "base", "base", "mid")
     call her_main("But that's when the boy walked in...", "normal", "closed", "base", "mid")
-    call her_main("And I panicked and threw the cloak over myself and hid in one of the toilets.","open","worriedL")
+    call her_main("And I panicked and threw the cloak over myself and hid in one of the toilets.", "open", "base", "worried", "R")
     m "Smart."
     call her_main("...", "base", "base", "base", "mid", cheeks="blush")
     call her_main("Well, it would've been if I had remembered to lock it.", "base", "narrow", "base", "down")
@@ -325,7 +325,7 @@ label a_bad_time_to_disrobe_part_2:
     m "How did he manage that?"
     call her_main("The boy wasn't in there to relieve himself in the way I assumed...", "open", "closed", "angry", "mid", cheeks="blush")
     call her_main("I guess he wasn't paying attention to what sensation he was feeling on the tip of his...","normal","worried", cheeks="blush")
-    call her_main("Anyway...","open","worriedL", cheeks="blush")
+    call her_main("Anyway...", "open", "base", "worried", "R", cheeks="blush")
     m "..."
     call her_main("I'd like my points now.", "base", "narrow", "worried", "down")
     m "Certainly miss Granger..."

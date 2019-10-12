@@ -367,7 +367,7 @@ label hg_pf_handjob_1:
             m "But I want you to drool..."
             call her_main("What? But I will look silly!", "open", "base", "base", "mid")
             m "That's the point, [hermione_name]!"
-            call her_main(".......","annoyed","worriedL")
+            call her_main(".......", "annoyed", "base", "worried", "R")
             m "Don't you want to be done with this as soon as possible?"
             call her_main("............", "normal", "worriedCl", "worried", "mid")
             call her_main("A-ha.....", "open_wide_tongue", "base", "base", "mid")
@@ -433,7 +433,7 @@ label hg_pf_handjob_1:
 
             m "Good... Now do it again and just stay there for a while."
             call her_main("You mean with my lips touching your... cock, [genie_name]?", "open", "base", "base", "mid")
-            call her_main("No, I will look stupid...","annoyed","worriedL")
+            call her_main("No, I will look stupid...", "annoyed", "base", "worried", "R")
             m "Don't be silly, [hermione_name]. Nobody is watching."
             call her_main("You are, [genie_name].", "open", "narrow", "worried", "down")
             m "But that's the whole point!"
@@ -832,7 +832,7 @@ label hg_pf_handjob_2_continue:
             if tmp_name == "":
                 $ tmp_name="I'm a whore"
                 m "(...)"
-                call her_main("I could just call myself a \"Whore\" again, as usual...","annoyed","worriedL")
+                call her_main("I could just call myself a \"Whore\" again, as usual...", "annoyed", "base", "worried", "R")
                 m "Yes. A great suggestion."
                 call her_main("...............", "annoyed", "base", "base", "R")
                 call her_main("[tmp_name]", "base", "base", "base", "mid")
@@ -840,21 +840,21 @@ label hg_pf_handjob_2_continue:
                 call her_main("[tmp_name]!!!", "scream", "closed", "angry", "mid")
                 g9 "He-he..."
             elif one_out_of_three == 1:
-                call her_main("I don't want to say that...","annoyed","worriedL")
+                call her_main("I don't want to say that...", "annoyed", "base", "worried", "R")
                 m "Oh, just do it, [hermione_name]."
-                call her_main("...........","annoyed","worriedL")
+                call her_main("...........", "annoyed", "base", "worried", "R")
                 call her_main("[tmp_name]", "scream", "closed", "angry", "mid")
                 g9 "He-he..."
             elif one_out_of_three == 2:
-                call her_main("Huh?","annoyed","worriedL")
+                call her_main("Huh?", "annoyed", "base", "worried", "R")
                 call her_main("What does That have to do with anything?")
                 m "Just say it."
-                call her_main("......","annoyed","worriedL")
+                call her_main("......", "annoyed", "base", "worried", "R")
                 m "Come on, humour me."
                 call her_main("[tmp_name]", "scream", "closed", "angry", "mid")
                 g9 "He-he..."
             elif one_out_of_three == 3:
-                call her_main("...........","annoyed","worriedL")
+                call her_main("...........", "annoyed", "base", "worried", "R")
                 call her_main("Do I really have to?")
                 m "Just say it."
                 call her_main("[tmp_name]", "scream", "closed", "angry", "mid")

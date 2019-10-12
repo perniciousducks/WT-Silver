@@ -377,7 +377,7 @@ label l_tutoring:
         call her_main("", "angry", "base", "angry", "mid",cheeks="blush")
         m "No one can control their base desires."
         m "Consider this well, and enjoy your night, Miss Granger."
-        call her_main("Good night, professor.","annoyed","worriedL")
+        call her_main("Good night, professor.", "annoyed", "base", "worried", "R")
         hide screen hermione_main
         call nar("You dismiss Hermione.")
 
@@ -456,7 +456,7 @@ label l_tutoring:
         m "Oh, because I need you to think about all this before we meet again."
         call her_main("But...", "mad", "wide", "base", "stare",cheeks="blush")
         m "Good night, my dear."
-        call her_main("Good night, professor.","annoyed","worriedL")
+        call her_main("Good night, professor.", "annoyed", "base", "worried", "R")
 
         hide screen hermione_main
         call blkfade

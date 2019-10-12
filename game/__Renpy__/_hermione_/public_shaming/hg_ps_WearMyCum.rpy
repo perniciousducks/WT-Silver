@@ -50,7 +50,7 @@ label hg_ps_cumslut_Scene_1:
     m "Wait, wait, wait."
     m "What about if nobody could see it?"
     call her_main("Well I suppose that would be alright...", "annoyed", "narrow", "annoyed", "mid")
-    call her_main("But what's the point if they can't see it?","annoyed","worriedL")
+    call her_main("But what's the point if they can't see it?", "annoyed", "base", "worried", "R")
     m "You'll know it's there."
     call her_main("Hmmmm...", "annoyed", "narrow", "angry", "R") #Haggle here
     call her_main("How much will I be paid?", "annoyed", "squint", "base", "mid")
@@ -59,7 +59,7 @@ label hg_ps_cumslut_Scene_1:
     m "40."
     call her_main("60!", "scream", "closed", "angry", "mid")
     m "50 points, final offer."
-    call her_main("Ok, I'll do it.","annoyed","worriedL")
+    call her_main("Ok, I'll do it.", "annoyed", "base", "worried", "R")
     m "Really?"
     call her_main("As long as nobody can see it then I don't see the big issue.", "annoyed", "narrow", "angry", "R")
     m "Splendid. Care to give me a hand?"
@@ -92,7 +92,7 @@ label hg_ps_cumslut_Scene_1:
     m "And?"
     call her_main("Harry and Ron will be so disappointed...", "angry", "base", "worried", "mid")
     m "So that's why you are doing this? For those two boys?"
-    call her_main("Sort of... I'm not sure that they'd be too upset though.","annoyed","worriedL")
+    call her_main("Sort of... I'm not sure that they'd be too upset though.", "annoyed", "base", "worried", "R")
     m "Are you sure it's not because you love it."
     call her_main("What?", "upset", "wink", "base", "mid")
     m "Coming in here whenever I summon you."
@@ -213,7 +213,7 @@ label hg_ps_cumslut_Scene_1:
             call her_main("What?", "angry", "base", "worried", "mid")
             m "I only said that you had to have my cum on you."
             m "I never said where."
-            call her_main("You mean I didn't have to...","annoyed","worriedL")
+            call her_main("You mean I didn't have to...", "annoyed", "base", "worried", "R")
             m "Not at all."
 
     hide screen hermione_main
@@ -252,7 +252,7 @@ label hg_ps_cumslut_Scene_2:
     m "It's enough when I say it's enough."
     m "Besides, was it really such an issue last time?"
     call her_main("Well I guess not...", "annoyed", "base", "base", "mid")
-    call her_main("But will it still be hidden this time?","annoyed","worriedL")
+    call her_main("But will it still be hidden this time?", "annoyed", "base", "worried", "R")
     m "That's up to you."
     call her_main("Hmmmm...", "annoyed", "narrow", "angry", "R") #Haggle here
     call her_main("How much will I be paid this time then?", "annoyed", "squint", "base", "mid")
@@ -297,7 +297,7 @@ label hg_ps_cumslut_Scene_2:
     m "That lie again?"
     call her_main("It's not a lie...", "angry", "base", "worried", "mid")
     m "So you'd rather win the house cup than make me happy?"
-    call her_main("Maybe... Can't I do both?","annoyed","worriedL")
+    call her_main("Maybe... Can't I do both?", "annoyed", "base", "worried", "R")
     m "You can..."
     call her_main("Good", "base", "happy", "base", "mid")
     m "But I want you to be honest."
@@ -437,7 +437,7 @@ label hg_ps_cumslut_Scene_2:
             call her_main("...", "angry", "base", "worried", "mid")
             m "I only said that you had to have my cum on you."
             m "I never said where."
-            call her_main("You told me to do it though...","annoyed","worriedL")
+            call her_main("You told me to do it though...", "annoyed", "base", "worried", "R")
 
     hide screen hermione_main
     call blkfade
@@ -643,11 +643,11 @@ label hg_ps_cumslut_complete_1:
         menu:
             "\"50 Points to gryffindor!\"":
                 $ gryffindor += 50
-                call her_main("Thank you [genie_name], will that be all?","annoyed","worriedL")
+                call her_main("Thank you [genie_name], will that be all?", "annoyed", "base", "worried", "R")
                 m "Yes [hermione_name], you may leave now. "
             "\"Tell me about your day.\"":
                 $ sc34CG(1, 10, 2)
-                call her_main("It was a pretty normal day, I had potions class and then transfiguration.","annoyed","worriedL",xpos="base",ypos="base")
+                call her_main("It was a pretty normal day, I had potions class and then transfiguration.", "annoyed", "base", "worried", "R",xpos="base",ypos="base")
                 m "And do you think that anyone noticed?"
                 call her_main("I think a few people did [genie_name]. I could hear The first years all whispering as I walked past.", "grin", "worriedCl", "worried", "mid")
                 m "And how did you feel?"
@@ -680,7 +680,7 @@ label hg_ps_cumslut_complete_1:
                 call her_main("I've never been so ashamed!", "angry", "worriedCl", "worried", "mid",emote="05",tears="mascara_soft_blink")
                 m "Did your friends treat you poorly?"
                 call her_main("No! That's the worst part!", "scream", "closed", "angry", "mid",tears="mascara_soft_blink")
-                call her_main("I expected to be an outcast, to sit by myself and not have Ginny or Luna talk to me.","annoyed","worriedL",tears="mascara_soft_blink")
+                call her_main("I expected to be an outcast, to sit by myself and not have Ginny or Luna talk to me.", "annoyed", "base", "worried", "R",tears="mascara_soft_blink")
                 call her_main("But they didn't even acknowledge the fact that I was covered in cum!", "annoyed", "narrow", "angry", "R",tears="mascara_soft_blink")
                 call her_main("They acted as if nothing was wrong.", "mad", "worriedCl", "worried", "mid",tears="mascara_soft_blink")
                 call her_main("I even tried to provoke a response from Ginny by asking her what she thought of my hair!", "angry", "base", "base", "mid",tears="mascara_soft")
@@ -741,11 +741,11 @@ label hg_ps_cumslut_complete_2:
 
         menu:
             "\"Good Work!\"":
-                call her_main("Thank you [genie_name], will that be all?","annoyed","worriedL")
+                call her_main("Thank you [genie_name], will that be all?", "annoyed", "base", "worried", "R")
                 m "Yes [hermione_name], you may leave now. "
             "\"Tell me about your day.\"":
                 $ sc34CG(1, 14, 7)
-                call her_main("It was a pretty normal day, I had Defense against the dark arts class and then herbology.","annoyed","worriedL",xpos="base",ypos="base")
+                call her_main("It was a pretty normal day, I had Defense against the dark arts class and then herbology.", "annoyed", "base", "worried", "R",xpos="base",ypos="base")
                 m "And do you think that anyone noticed?"
                 call her_main("I think most people did [genie_name]. I'm not sure if they all knew it was cum though.", "grin", "worriedCl", "worried", "mid")
                 m "And how did you feel?"
@@ -776,7 +776,7 @@ label hg_ps_cumslut_complete_2:
                 m "Really? Nothing strange happened at all?"
                 call her_main("No. Everyone treated me how I deserved to be treated.", "scream", "closed", "angry", "mid",tears="mascara")
                 m "And how's that?"
-                call her_main("Like a slut.","annoyed","worriedL",tears="mascara")
+                call her_main("Like a slut.", "annoyed", "base", "worried", "R",tears="mascara")
                 call her_main("Boys cat called me.", "annoyed", "narrow", "angry", "R",tears="mascara")
                 call her_main("Put me down.", "mad", "worriedCl", "worried", "mid",tears="soft_blink",tears="mascara")
                 call her_main("Snape made me stand out the front of the class During defense against the dark arts.", "angry", "base", "base", "mid",tears="mascara_soft")

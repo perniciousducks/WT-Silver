@@ -208,7 +208,7 @@ label hermione_random_duel:
         m "It's not gambling, just a friendly house point wager..."
         call her_main("Sounds like gambling to me...", "normal", "squint", "base", "mid")
         m "So, how about it?"
-        call her_main("I'll pass, [genie_name]...","open","worriedL")
+        call her_main("I'll pass, [genie_name]...", "open", "base", "worried", "R")
 
         m "\"Seem like she's a bit to pure minded to accept any kind of wager right now...\""
         jump hermione_requests

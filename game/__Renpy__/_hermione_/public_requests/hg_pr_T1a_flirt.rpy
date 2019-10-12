@@ -40,7 +40,7 @@ label hg_pr_flirt:
         m "Do you value the opinion the \"Slytherin\" students have of you?"
         call her_main("I couldn't care less about the opinions of those Neanderthals.", "scream", "closed", "angry", "mid")
         m "What about the students of the \"Gryffindor\" house?"
-        call her_main("Their opinion means the world to me--","annoyed","worriedL")
+        call her_main("Their opinion means the world to me--", "annoyed", "base", "worried", "R")
         call her_main("Oh, I see...", "base", "base", "base", "mid")
         m "Exactly... Just looking out for you [hermione_name]."
         her "Em... Thank you [genie_name]..."
@@ -124,7 +124,7 @@ label hg_pr_flirt_T1_E1:
     m "How many boys did you flirt with today, [hermione_name]?"
     call blktone
     stop music fadeout 1.0
-    call her_main("Well...","open","worriedL")
+    call her_main("Well...", "open", "base", "worried", "R")
     her "There was this one freshman boy..."
     her "........."
     m "I'm listening..."
@@ -134,7 +134,7 @@ label hg_pr_flirt_T1_E1:
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("He showed me his tongue and ran off, [genie_name].", "normal", "squint", "angry", "mid")
     m "Did you try to lure him in with a lolipop?"
-    call her_main("I did not, [genie_name]...","open","worriedL")
+    call her_main("I did not, [genie_name]...", "open", "base", "worried", "R")
     her "The thought never crossed my mind, but--"
     m "That was a joke, [hermione_name]."
     call her_main("[genie_name]?", "normal", "squint", "angry", "mid")
@@ -173,7 +173,7 @@ label hg_pr_flirt_T1_E2:
     m "How many boys did you flirt with today, [hermione_name]?"
     call blktone
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Well, I tried to compliment an upperclassman...","open","worriedL")
+    call her_main("Well, I tried to compliment an upperclassman...", "open", "base", "worried", "R")
     m "Did he appreciate it?"
     call her_main("He called me a \"Gryffindor whore\", [genie_name]!", "angry", "base", "angry", "mid", emote="01")
     m "I see..."
@@ -225,7 +225,7 @@ label hg_pr_flirt_T1_E3:
     m "How many boys did you flirt with today, [hermione_name]?"
     call blktone
     stop music fadeout 1.0
-    call her_main("Well, the \"Slytherin\" quidditch team was practising in the stadium today...","open","worriedL")
+    call her_main("Well, the \"Slytherin\" quidditch team was practising in the stadium today...", "open", "base", "worried", "R")
     her "I thought I could sneak into the bleachers and cheer them on..."
     call her_main("But...", "annoyed", "narrow", "angry", "R")
     m "Yes?"
@@ -266,7 +266,7 @@ label hg_pr_flirt_T2_E1:
     #elif her_whoring >= 3 and her_whoring < 6:
 
     stop music fadeout 1.0
-    call her_main("Well, there was this one guy at the library...","open","worriedL")
+    call her_main("Well, there was this one guy at the library...", "open", "base", "worried", "R")
     her "He was obviously struggling with some assignment, so I offered my help..."
     m "And?"
     call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -303,7 +303,7 @@ label hg_pr_flirt_T2_E1:
     m "What about your tits?"
     call her_main("[genie_name]!!!", "angry", "base", "angry", "mid")
     m "Fine. You get your points. Keep up the good work."
-    call her_main("","annoyed","worriedL")
+    call her_main("", "annoyed", "base", "worried", "R")
 
     jump end_hg_pr_flirt
 
@@ -313,7 +313,7 @@ label hg_pr_flirt_T2_E2:
     call hg_pr_flirt_intro
 
     stop music fadeout 1.0
-    call her_main("Well...","open","worriedL")
+    call her_main("Well...", "open", "base", "worried", "R")
     her "This morning I did flirt with this one guy..."
     call her_main("Then after the second period there was this other guy...", "soft", "base", "base", "R")
     call her_main("And then something bizarre happened...", "angry", "base", "worried", "mid")
@@ -327,7 +327,7 @@ label hg_pr_flirt_T2_E2:
     call her_main("I still loathe the \"Slytherin\" house of course!", "angry", "worriedCl", "worried", "mid", emote="05")
     call her_main("But...", "annoyed", "narrow", "worried", "down")
     her "Maybe some of the students got there by mistake?"
-    call her_main("Could the \"sorting hat\" make... miscalculations?","open","worriedL")
+    call her_main("Could the \"sorting hat\" make... miscalculations?", "open", "base", "worried", "R")
 
     menu:
         "\"Just take your points and go!\"":

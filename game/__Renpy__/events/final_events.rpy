@@ -101,7 +101,7 @@ label ball_quest_E1:
                 m "Don't you care about your classmates at all?"
                 call her_main("What?", "open", "base", "base", "mid")
                 m "Put your selfishness aside for once, would you?"
-                call her_main("My... selfishness?","annoyed","worriedL")
+                call her_main("My... selfishness?", "annoyed", "base", "worried", "R")
                 m "Your classmates deserve the best organised ball possible!"
                 m "And only {size=+5}YOU{/size} can give them that!"
                 call her_main("...that is true actually.", "angry", "narrow", "base", "down")
@@ -496,7 +496,7 @@ label ball_quest_E4:
     call bld
     m "Miss Granger?"
     call her_main("Sorry to disturb you sir...","open","worried", xpos="right", ypos="base")
-    call her_main("I came to apologize for my...","open","worriedL")
+    call her_main("I came to apologize for my...", "open", "base", "worried", "R")
     her "...my hysterical behaviour yesterday."
     m "Sure thing, don't worry about it."
     call her_main("Thank you, sir.", "open", "base", "base", "mid")

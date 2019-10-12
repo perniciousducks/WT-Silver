@@ -20,7 +20,7 @@ label hg_anal_sex_1:
     m "Well alright then. 90 house points it is."
 
     stop music fadeout 1.0
-    call her_main("...........","annoyed","worriedL")
+    call her_main("...........", "annoyed", "base", "worried", "R")
     m "Let's see..."
     call her_main(".................", "angry", "worriedCl", "worried", "mid",emote="05")
     m "Hm..."
@@ -348,7 +348,7 @@ label hg_anal_sex_2:
     hide screen hermione_main
     call blkfade
 
-    call her_main("........","annoyed","worriedL")
+    call her_main("........", "annoyed", "base", "worried", "R")
     m "Hm..."
     call her_main("...........", "open", "base", "base", "mid")
     $ renpy.play('sounds/gltch.mp3')

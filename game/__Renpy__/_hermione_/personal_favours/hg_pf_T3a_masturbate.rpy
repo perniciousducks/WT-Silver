@@ -18,7 +18,7 @@ label hg_pf_strip_fingering_intro:
         m "Huh? What was that?"
         call her_main("I said that I do alright!!!", "scream", "worriedCl", "worried", "mid")
         m "Hmmmm, I'm not sure I believe you..."
-        call her_main("What? why would I lie?","annoyed","worriedL")
+        call her_main("What? why would I lie?", "annoyed", "base", "worried", "R")
         m "I'm not sure..."
         m "But don't worry, I'm sure a quick little demonstration will erase any doubts..."
         call her_main("......", "annoyed", "narrow", "angry", "R")

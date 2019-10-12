@@ -95,7 +95,7 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
     call her_main("Ehm... I suppose so...", "soft", "base", "base", "R")
     her "Am I getting paid for this?"
     m "Of course, [hermione_name]!"
-    call her_main("So... Just a little dancing then...","annoyed","worriedL")
+    call her_main("So... Just a little dancing then...", "annoyed", "base", "worried", "R")
     m "Whenever you're ready..."
     her "................."
     hide screen hermione_main
@@ -179,7 +179,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     call her_main("Ehm... I suppose so...", "soft", "base", "base", "R")
     her "Am I getting paid for this?"
     m "Of course, [hermione_name]!"
-    call her_main("So... Just a little dancing then...","annoyed","worriedL")
+    call her_main("So... Just a little dancing then...", "annoyed", "base", "worried", "R")
     m "Whenever you're ready..."
     her "................."
     hide screen hermione_main
@@ -822,7 +822,7 @@ label hg_pf_strip_T1_E2:
             call her_main("absolutely! My father is a man of integrity!", "scream", "worriedCl", "worried", "mid")
             m "But he {size=+4}is{/size} a {size=+4}man{/size}, right?"
             call her_main(".....................", "annoyed", "narrow", "annoyed", "mid")
-            call her_main("My father must never know about this...","annoyed","worriedL")
+            call her_main("My father must never know about this...", "annoyed", "base", "worried", "R")
 
 
     # Take off skirt
@@ -895,7 +895,7 @@ label hg_pf_strip_T1_watch:
             m "Good job [hermione_name]!"
             call her_main("..............", "disgust", "narrow", "worried", "down")
             m "You have a lot of talent for this!"
-            call her_main("Thank you [genie_name].","soft","worriedL", emote="05")
+            call her_main("Thank you [genie_name].", "soft", "base", "worried", "R", emote="05")
         "{size=-3}\"Hm... This was quite awful...\"{/size}":
             $ her_mood += 4
             call her_main("............", "annoyed", "base", "angry", "mid")
@@ -1152,7 +1152,7 @@ label hg_pf_strip_T2:
         menu:
             m "..."
             "\"Don't be ridiculous! Love is a lie!\"":
-                call her_main("I am sorry you think that way, [genie_name]!","annoyed","worriedL")
+                call her_main("I am sorry you think that way, [genie_name]!", "annoyed", "base", "worried", "R")
                 call her_main("But you couldn't be more wrong!", "annoyed", "narrow", "annoyed", "mid")
                 call her_main("I believe that true love is what makes the earth turn!", "base", "base", "base", "R")
                 m "Actually the conservation of angular momentum is responsible for that."
@@ -1196,7 +1196,7 @@ label hg_pf_strip_T2:
                 m "Did you forget where you are?"
                 call her_main("Oh, my apologies, [genie_name]... I get distracted sometimes.", "grin", "worriedCl", "worried", "mid", emote="05")
                 m "Take off your skirt already, would you?!"
-                call her_main("Right...","annoyed","worriedL")
+                call her_main("Right...", "annoyed", "base", "worried", "R")
 
 
     # Take off skirt

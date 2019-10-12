@@ -42,7 +42,7 @@ label hg_ps_cumslut: #Walk around school covered in genies cum
 
 label hg_ps_cumslut_Scene_1:
     $ hg_ps_cumslut.inProgress = True
-    call her_main("What?!?","shock","wide")
+    call her_main("What?!?", "shock", "wide", "base", "stare")
     call her_main("You can't be serious!","angry","angry")
     call her_main("It's bad enough that I let you cum on me in private!","annoyed","annoyed")
     call her_main("But in public?","angry","annoyed",emote="01")
@@ -115,7 +115,7 @@ label hg_ps_cumslut_Scene_1:
     m "Well you better think of some place soon!"
     call her_main("Why's that?","angry","wink")
     g9 "Because I'm about to cum!"
-    call her_main("Already? Where should I-","angry","wide")
+    call her_main("Already? Where should I-", "angry", "wide", "base", "stare")
 
     menu:
         "-Stay Silent-": # Cum under shirt
@@ -130,7 +130,7 @@ label hg_ps_cumslut_Scene_1:
             call cum_block
             pause.5
 
-            call her_main("!!!!!!!!!!!","shock","wide",ypos="head")
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare",ypos="head")
 
             $ aftersperm = True
 
@@ -157,7 +157,7 @@ label hg_ps_cumslut_Scene_1:
             $ u_sperm = "characters/hermione/face/auto_11.png"
             $ uni_sperm = True
 
-            call her_main("!!!!!!!!!!!","shock","wide",xpos="right",ypos="base")
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare",xpos="right",ypos="base")
             m "That's it, all over you slut."
             call her_main("...","annoyed","down")
 
@@ -193,7 +193,7 @@ label hg_ps_cumslut_Scene_1:
             $ u_sperm = "characters/hermione/face/auto_12.png"
             $ uni_sperm = True
 
-            call her_main("!!!!!!!!!!!","shock","wide",xpos="right",ypos="base")
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare",xpos="right",ypos="base")
             m "Yes... I Feel so much better now..."
             call her_main("..............","normal","worriedCl")
 
@@ -233,7 +233,7 @@ label hg_ps_cumslut_Scene_1:
     m "Oh and one last thing before you head to class."
     call her_main("Yes...","annoyed","annoyed",xpos="right",ypos="base")
     m "If you return to this office after classes without any cum on you, Slytherin will get 200 points."
-    call her_main("{size=+10}200! That is not fair!{/size}","shock","wide")
+    call her_main("{size=+10}200! That is not fair!{/size}", "shock", "wide", "base", "stare")
     m "It's Only unfair if you clean it off."
     call her_main("...","angry","angry")
 
@@ -246,7 +246,7 @@ label hg_ps_cumslut_Scene_1:
 
 label hg_ps_cumslut_Scene_2:
     $ hg_ps_cumslut.inProgress = True
-    call her_main("Again?","shock","wide")
+    call her_main("Again?", "shock", "wide", "base", "stare")
     call her_main("You can not be serious!","angry","angry")
     call her_main("I already let you do this to me once, isn't that enough?","annoyed","annoyed")
     m "It's enough when I say it's enough."
@@ -321,7 +321,7 @@ label hg_ps_cumslut_Scene_2:
     m "Oh I'm appreciating it!"
     call her_main("Really?", "open", "base", "base", "mid")
     g9 "You're about to see how much I'm appreciating it!"
-    call her_main("What, Already? Where should I-","angry","wide")
+    call her_main("What, Already? Where should I-", "angry", "wide", "base", "stare")
 
     menu:
         "-Stay Silent-": # Legs
@@ -341,7 +341,7 @@ label hg_ps_cumslut_Scene_2:
             $ u_sperm = "characters/hermione/face/auto_13.png"
             $ uni_sperm = True
 
-            call her_main("!!!!!!!!!!!","shock","wide",xpos="right",ypos="base")
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare",xpos="right",ypos="base")
 
             m "That's it, all over your milky thighs."
             call her_main("...","annoyed","down")
@@ -384,7 +384,7 @@ label hg_ps_cumslut_Scene_2:
             $ u_sperm = "characters/hermione/face/auto_06.png"
             $ uni_sperm = True
 
-            call her_main("!!!!!!!!!!!","shock","wide",xpos="right",ypos="base")
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare",xpos="right",ypos="base")
             m "That's it, all over you slut."
             call her_main("...","annoyed","down")
 
@@ -417,7 +417,7 @@ label hg_ps_cumslut_Scene_2:
             $ u_sperm = "characters/hermione/face/auto_07.png"
             $ uni_sperm = True
 
-            call her_main("!!!!!!!!!!!","shock","wide",xpos="right",ypos="base")
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare",xpos="right",ypos="base")
             m "Yes... I Feel so much better now..."
             call her_main("..............","normal","worriedCl")
 
@@ -467,7 +467,7 @@ label hg_ps_cumslut_Scene_2:
 
 label hg_ps_cumslut_Scene_3:
     $ hg_ps_cumslut.inProgress = True
-    call her_main("Are you serious?","shock","wide")
+    call her_main("Are you serious?", "shock", "wide", "base", "stare")
     call her_main("Can I?","grin","ahegao")
     m "well-"
     call her_main("I was going to ask you if I could seeing as how it made you so happy last time [genie_name].","smile","happyCl",emote="06")

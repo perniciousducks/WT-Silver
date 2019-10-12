@@ -289,7 +289,7 @@ label astoria_intro_E2_hermione:
     m "I- *uhm*...{w} She thought maybe you could be of help finding them?"
     call her_main("Of course, Sir.","base","happyCl")
     m "Apparently a student got hit by an \"unforgivable curse\" here at the school."
-    call her_main("AN unforgivable CURSE!!!","scream","wide", trans="hpunch")
+    call her_main("AN unforgivable CURSE!!!", "scream", "wide", "base", "stare", trans="hpunch")
     call her_main("AT our school?!","shock","wide_stare")
     call her_main("SOMEONE COULD BE DEAD!","scream","wideL")
     call her_main("OR TORTURED!!","disgust","worriedCl")

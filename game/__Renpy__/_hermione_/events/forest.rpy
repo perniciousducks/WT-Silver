@@ -166,7 +166,7 @@ label forest_BJ_2:
 
     m "More late night gardening?"
     pause.1
-    call her_main("{size=+10}[genie_name]!{/size}","shock","wide",xpos="right",ypos="base",trans="hpunch")
+    call her_main("{size=+10}[genie_name]!{/size}", "shock", "wide", "base", "stare",xpos="right",ypos="base",trans="hpunch")
     call her_main("Ugh... Don't startle me like that!", "annoyed", "base", "base", "R")
     call her_main("And yes, I've been collecting some mushroom samples.", "soft", "base", "base", "mid")
     m "Cool..."
@@ -853,7 +853,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
 
     call her_main("Wait, where's Myrtle?","angry","concerned")
     m "Oh, she left as soon as I gave her the OK to blab on about you."
-    call her_main("WHAT?","scream","wide")
+    call her_main("WHAT?", "scream", "wide", "base", "stare")
     call her_main("you mean she didn't see any of...","upset","annoyed")
     call her_main("(I got my hair all sticky for nothing...)","upset","down")
     m "So are you going to clean yourself up and get dressed?"

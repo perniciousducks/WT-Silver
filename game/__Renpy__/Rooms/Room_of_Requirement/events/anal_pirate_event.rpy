@@ -52,7 +52,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         pause 2
         m "Hm..."
         $ renpy.play('sounds/boing02.mp3')
-        call her_main("!!!","angry","wide", ypos="head")
+        call her_main("!!!", "angry", "wide", "base", "stare", ypos="head")
         call play_sound("slap")
         g4 "Blistering barnacles!"
         call her_main("Ouch!","mad","worriedCl",tears="soft_blink")
@@ -69,7 +69,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
             "\"I reckon I'll raise the anchor 'n jus' set sail!\"":
                 play music "music/pirate.mp3" fadein 1 fadeout 1
                 play bg_sounds "sounds/CreakingShip.mp3"
-                call her_main("Just set sail, captain?!","angry","wide",ypos="head")
+                call her_main("Just set sail, captain?!", "angry", "wide", "base", "stare",ypos="head")
                 $ renpy.play('sounds/spit.mp3') #Sound of spiting.
                 g4 "*SPIT!*"
                 call her_main("What are ye doing you Seadog!","scream","worriedCl")
@@ -99,9 +99,9 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ renpy.play('sounds/gltch.mp3')
                 with hpunch
                 with kissiris
-                call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}","scream","wide")
+                call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "stare")
                 g4 "Yo Ho Ho!!!"
-                call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!","scream","wide")
+                call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!", "scream", "wide", "base", "stare")
                 g4 "Let us pump this wee cavern full o' seamen then, savvy?"
                 call her_main("Aye... , I jus' wants this t' end...","scream","worriedCl",cheeks="blush",tears="crying")
 
@@ -183,9 +183,9 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ renpy.play('sounds/gltch.mp3')
                 with hpunch
                 with kissiris
-                call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}","scream","wide")
+                call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "stare")
                 g4 "Argh!!!"
-                call her_main("Ye... ye...","scream","wide")
+                call her_main("Ye... ye...", "scream", "wide", "base", "stare")
                 call her_main("Ye ship be to great","shock","worriedCl")
                 g4 "Let us pump this wee cavern full o' seamen then, savvy?"
                 call her_main(".....................","angry","suspicious",cheeks="blush")
@@ -314,7 +314,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
             "-Sink her vessel, fill her up-":
                 g4 "Argh!"
                 $ renpy.play('sounds/fuse.mp3')
-                call her_main("No! AH!","scream","wide",ypos="head")
+                call her_main("No! AH!", "scream", "wide", "base", "stare",ypos="head")
                 $ renpy.play('sounds/cannon.mp3')
                 call cum_block
                 g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
@@ -477,7 +477,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
-        call her_main("Ooooohhhhhhhhhhhh....{image=textheart}","scream","wide")
+        call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare")
         g4 "Oh, ye-es!"
         call her_main("Ah...","soft","ahegao")
         m "It seems like yer cavern be a bit more welcomin', lass."
@@ -590,7 +590,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main("BUT I'M CUMMING!{image=textheart}{image=textheart}{image=textheart}","open","worriedCl")
         g4 "Fine! 'ave it yer way wench!"
         with hpunch
-        call her_main("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}","scream","wide")
+        call her_main("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}", "scream", "wide", "base", "stare")
         g4 "{size=+7}Argh!{/size}"
 
         $ renpy.play('sounds/fuse.mp3')
@@ -609,7 +609,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ uni_sperm = True
                 $ u_sperm = "characters/hermione/face/auto_08.png"
 
-                call her_main("!!!","scream","wide",ypos="head")
+                call her_main("!!!", "scream", "wide", "base", "stare",ypos="head")
                 m "Shiver me timbers! Argh!"
                 call her_main("Ah!{image=textheart} 'tis fillin' me up!{image=textheart} me bilge is takin in water!{image=textheart}","silly","ahegao")
                 m "'tis nah water, wench!"

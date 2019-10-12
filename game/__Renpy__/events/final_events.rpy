@@ -59,7 +59,7 @@ label ball_quest_E1:
                 "\"You will have to sleep with me.\"" if not d_flag_04:
                     $ her_mood += 17
                     $ d_flag_04 = True
-                    call her_main("I will have to... sleep...?","angry","wide")
+                    call her_main("I will have to... sleep...?", "angry", "wide", "base", "stare")
                     call her_main("...................","angry","angry", cheeks="blush")
                     call play_music("chipper_doodle") # HERMIONE'S THEME.
                     her "I am not stupid, sir... Quite the opposite in fact."
@@ -273,7 +273,7 @@ label ball_quest_E1:
                     her "I can't help it! *Sob!*"
                     m "Are you sure that you are ok with this?"
                     call her_main("Yes, yes, sir, please.... *Sob!*","soft","angry", tears="messy")
-                    call her_main("Please keep on looking at my naked body... *Sob!*","shock","wide", tears="messy")
+                    call her_main("Please keep on looking at my naked body... *Sob!*", "shock", "wide", "base", "stare", tears="messy")
 
                     call her_main("","angry","angry", cheeks="blush", tears="messy")
                     call set_her_action("lift_breasts")
@@ -548,7 +548,7 @@ label ball_quest_E5:
     call give_reward(">You give the ball gown to Hermione...","interface/icons/box_red_1.png")
 
     call her_main("Hm...? What is this?", "base", "base", "base", "mid")
-    call her_main("{size=+7}A DRESS?!{/size}","angry","wide")
+    call her_main("{size=+7}A DRESS?!{/size}", "angry", "wide", "base", "stare")
     with hpunch
     m "I thought that you--"
 

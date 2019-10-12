@@ -47,7 +47,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("ugh... let's just say you'll be glad she's had the practice.", "angry", "base", "base", "mid")
         call her_main("My dildo still has bite marks on it from her first attempt.","angry","down_raised")
         call lun_main("Well how was I supposed to know the teeth aren't supposed to touch...","upset","angry","angry","R")
-        call her_main("I told you that was the rule number one! Besides, you nearly bit it clean in half...","angry","wide")
+        call her_main("I told you that was the rule number one! Besides, you nearly bit it clean in half...", "angry", "wide", "base", "stare")
         g4 "!!!"
         m "you know what, I think I'll be fine without one..."
         call her_main("oh no... you already asked for one. besides, she needs the experience.","annoyed","frown")

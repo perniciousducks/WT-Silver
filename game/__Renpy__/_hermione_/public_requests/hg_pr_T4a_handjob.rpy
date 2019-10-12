@@ -28,7 +28,7 @@ label hg_pr_handjob:
         m "I want you to go out there and have sex with one of your classmates."
         stop music
         with hpunch
-        call her_main("{size=+5}What?!!{/size}","shock","wide")
+        call her_main("{size=+5}What?!!{/size}", "shock", "wide", "base", "stare")
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         call her_main("Now you have done it, [genie_name]! You crossed the line!","angry","angry")
         her "I know I did sell you a couple of rather questionable favours in the past..."
@@ -160,7 +160,7 @@ label hg_pr_handjob_T1_E1:
     menu:
         "\"Well, this doesn't count then.\"":
             stop music fadeout 4.0
-            call her_main("What?","angry","wide")
+            call her_main("What?", "angry", "wide", "base", "stare")
             her "But, [genie_name], I..."
             m "If you didn't make him cum then that wasn't a proper handjob. Period."
             call her_main("But... But what was it then...?", "angry", "base", "base", "mid")
@@ -223,7 +223,7 @@ label hg_pr_handjob_T1_E2:
     m "Fifty Five points is as high as I can go with this one."
     call her_main("Oh... Of course...","angry","down_raised")
     m "Unless, you've changed your mind about having sex with one of your classmates?"
-    call her_main("What?","shock","wide")
+    call her_main("What?", "shock", "wide", "base", "stare")
     call her_main("[genie_name], I am not a prostitute!","angry","down_raised")
     m "Well, in that case..."
 
@@ -313,7 +313,7 @@ label hg_pr_handjob_T2_E1:
         "\"No. You failed this favour, [hermione_name].\"":
             stop music fadeout 3.0
             call her_main("B-but...", "open", "base", "base", "mid", cheeks="blush")
-            call her_main("But I gave him my word...","angry","wide")
+            call her_main("But I gave him my word...", "angry", "wide", "base", "stare")
             her "I swore on Godric Gryffindor's name..."
             call her_main("And now I will have to give him the wank off no matter what...","angry","down_raised")
             m "Well, I didn't force you to give him that promise, did I?"
@@ -454,7 +454,7 @@ label hg_pr_handjob_T2_E3:
             call her_main("As usual.", "base", "base", "base", "R", cheeks="blush") # :)
 
         "\"Yes! All goes according to plan!\"":
-            call her_main("What?","angry","wide")
+            call her_main("What?", "angry", "wide", "base", "stare")
             m "What?"
             call her_main("[genie_name], did you just say \"All goes according to plan\"?","angry","angry", cheeks="blush")
             m "Did I?"
@@ -613,7 +613,7 @@ label hg_pr_handjob_T3_E3:
     m "........"
     call her_main(".......","silly","ahegao")
     m "Ehm....."
-    call her_main("Oh god, I'm sorry [genie_name], I was thinking of something else.","angry","wide")
+    call her_main("Oh god, I'm sorry [genie_name], I was thinking of something else.", "angry", "wide", "base", "stare")
     m "Yes... sure, OK."
     call her_main("", "base", "base", "base", "mid")
 

@@ -112,9 +112,9 @@ label hg_pf_admire_breasts_T1_intro_E1:
     call her_main("Yes, [genie_name]...", "normal", "base", "base", "mid")
     m "Has anyone ever told you what sweet-looking breasts you have?"
     stop music fadeout 1.0
-    call her_main("!!!","shock","wide")
+    call her_main("!!!", "shock", "wide", "base", "stare")
     g9 "How much would it cost me for you to lift up your top?"
-    call her_main("My top?!","shock","wide")
+    call her_main("My top?!", "shock", "wide", "base", "stare")
     g9 "And show me what's underneath..."
     call her_main("Why would I-?!","angry","wide_stare")
 
@@ -139,7 +139,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
 
         "\"That won't be enough, [hermione_name]...\"":
             g4 "I'm not giving \"Gryffindor\" [current_payout] whole points because you took off a vest..."
-            call her_main("But-","open","wide")
+            call her_main("But-", "open", "wide", "base", "stare")
             m "No buts! You are dismissed."
             call her_main("Please, [genie_name]. I need those points!","disgust","worriedCl")
             m "Then might I suggest you put in some work to earn them..."
@@ -196,7 +196,7 @@ label hg_pf_admire_breasts_T1_intro_E2:
     g9 "And your shirt! Take that off as well!"
     call her_main("Sir, this is a very inappropriate thing to ask of me!!!","scream","angryCl")
     m "Yeah, yeah... What else is new..."
-    call her_main("Sir!!!","clench","wide")
+    call her_main("Sir!!!", "clench", "wide", "base", "stare")
     m "Please. All I'm asking for is to get a little peek..."
     call her_main("A peek at what?","open","angry")
 
@@ -221,7 +221,7 @@ label hg_pf_admire_breasts_T1_intro_E2:
             pass
 
         "\"Your tits!\"":
-            call her_main("W-what?","shock","wide")
+            call her_main("W-what?", "shock", "wide", "base", "stare")
             g9 "Your breasts, Miss Granger. I would very much like to see them!"
             call her_main("M-My-... my breasts?!","angry","angry")
 
@@ -334,7 +334,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
                     $ current_payout = 100
                     $ her_mood = 0
 
-                    call her_main(".................","annoyed","wide")
+                    call her_main(".................", "annoyed", "wide", "base", "stare")
                     call her_main("A hundred points...", "annoyed", "base", "base", "R")
                     call her_main("So be it...","smile","happyCl")
 

@@ -42,7 +42,7 @@ label hg_ps_buttplug:
         m "Not exactly, it's a butt plug. I want you to put it in while you attend class today."
         stop music
         with hpunch
-        call her_main("{size=+5}What?!!{/size}","shock","wide")
+        call her_main("{size=+5}What?!!{/size}", "shock", "wide", "base", "stare")
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         call her_main("You expect me to put that massive thing in my...","angry","angry")
         her "and then parade myself around the school!"
@@ -121,7 +121,7 @@ label hg_ps_buttplug:
                 call set_her_buttplug("plug_b_on") #Updates clothing and body.
 
                 with hpunch
-                call her_main("{size=+5}!!!!{/size}","shock","wide")
+                call her_main("{size=+5}!!!!{/size}", "shock", "wide", "base", "stare")
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
                 call her_main(".............", "angry", "base", "base", "mid")
                 call her_main("...","angry","down_raised")
@@ -330,7 +330,7 @@ label hg_ps_buttplug:
 
                     call give_gift(">You hand hermione the jar of anal lubricant.",anal_lube_ITEM)
 
-                    call her_main("!!!","clench","wide")
+                    call her_main("!!!", "clench", "wide", "base", "stare")
                     call her_main("I wasn't serious, [genie_name]!","scream","angry")
                     m "Now, now. No one likes a liar."
                     call her_main("I didn't promise anything! Besides, I didn't actually expect you to have a jar of lube in your desk.","open","angryL")
@@ -346,13 +346,13 @@ label hg_ps_buttplug:
                     call her_main("(There's no way this thing will fit.)","disgust","down_raised")
                     call nar(">Hermione slowly places the lubed up butt plug to her anus.")
                     call her_main("I'm telling you, [genie_name], this isn't going to-","open","closed")
-                    call her_main("{size=+10}!!!{/size}","soft","wide",cheeks="blush",trans="hpunch")
+                    call her_main("{size=+10}!!!{/size}", "soft", "wide", "base", "stare",cheeks="blush",trans="hpunch")
                     call her_main("{size=+10}It's moving!{/size}","disgust","worriedCl")
                     m "Really?"
                     call her_main("{size=+5}ugh...{/size}","disgust","worriedCl")
                     call her_main("{size=+5}it's forcing it's way inside me....{/size}","open","shocked")
                     call her_main("ah...","shock","worriedCl")
-                    call her_main("it's...{p}it's...","open","wide")
+                    call her_main("it's...{p}it's...", "open", "wide", "base", "stare")
 
                     call play_sound("pop")
                     $ hermione_dribble = True

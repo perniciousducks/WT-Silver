@@ -1131,7 +1131,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             #cho "You see, Granger..."
             #cho "Tits aren't everything!"
 
-            call her_main("What?!","open","wide")
+            call her_main("What?!", "open", "wide", "base", "stare")
             call cho_main("See, I told you! How could he pick a walking bush on legs over this!","smile","narrow","angry","L")
             call her_main("","angry","angry")
             call cho_main("Now tell her. Tell her why my body is superior compared to hers.","soft","closed","base","mid")
@@ -1378,7 +1378,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("Maybe once your Quidditch endeavours all fail, you can apply for a profession to model male underwear...","soft","closed")
             call cho_main("I wonder where you're getting \"your\" undergarments from...","soft","closed","base","mid")
             call cho_main("Stealing them from Madam Pomfrey, are you?","smile","narrow","angry","mid")
-            call her_main("I do not!!!","open","wide")
+            call her_main("I do not!!!", "open", "wide", "base", "stare")
             m "Girls, we all know what really counts is how we appear on the inside."
             call her_main("","angry","angryCl")
             call cho_main("Oh- Shut up!","angry","narrow","angry","mid")
@@ -1388,7 +1388,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("Despicable...","angry","angryL")
             call cho_main("Don't worry, Granger!","soft","narrow","angry","L")
             call cho_main("If you were to start doing hourly exercises, our Professor might even be attracted to you by the end of the year...","soft","closed","raised","mid")
-            call her_main("Hourly exercises?","soft","wide") # Shocked
+            call her_main("Hourly exercises?", "soft", "wide", "base", "stare") # Shocked
             call cho_main("But I wouldn't say all hope is lost!","smile","narrow","angry","L")
             call cho_main("While your figure might be a bit repulsive on the eyes...","soft","closed","base","mid")
             call cho_main("I don't mind looking at those \"huge melons\" of yours.","soft","narrow","base","L")

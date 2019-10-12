@@ -719,7 +719,7 @@ label hermione_change:
     elif temp_name == "Slut":
         if her_whoring >=15 and her_whoring < 17:
             call her_main("[genie_name]?!","shock","surprised")
-            call her_main("You can't just call someone that!","mad","wide")
+            call her_main("You can't just call someone that!", "mad", "wide", "base", "stare")
             m "It'll just be between us..."
             call her_main("...","disgust","suspicious")
             m "Nothing to add?"
@@ -745,7 +745,7 @@ label hermione_change:
             call her_main("\"That taste, the texture..\"", "open","ahegao",cheeks="blush")
             call her_main("\"..So warm, sticky and...\"","silly","ahegao_raised",cheeks="blush")
             m "Are you okay there, [temp_name]?"
-            call her_main("Wha-","mad","wide")
+            call her_main("Wha-", "mad", "wide", "base", "stare")
             call her_main("Of course I am!", "smile", "base", "base", "R",cheeks="blush")
     elif temp_name == "Slytherin Whore":
         if her_whoring >=19 and her_whoring < 21:
@@ -787,7 +787,7 @@ label hermione_change:
                 "-Threaten her-":
                     g4 "Either accept my offer or Gryffindor lose five hundred points..."
                     with hpunch
-                    call her_main("FIVE HUNDRED?!","shock","wide")
+                    call her_main("FIVE HUNDRED?!", "shock", "wide", "base", "stare")
                     call her_main("[genie_name]... This is blackmailing!","scream","angryCl")
                     call her_main("","mad","angryCl")
                     m "It is?"
@@ -808,7 +808,7 @@ label hermione_change:
             call her_main("Why do I even bother... *sigh*","soft","glanceL",cheeks="blush")
     elif temp_name == "Mudblood":
         if her_whoring >= 21:
-            call her_main("A{w=0.5}...{w=0.5} {size=+6}{b}{cps=20}mud{w=0.5}blood{/cps}{/b}?!{/size}", "shock","wide")
+            call her_main("A{w=0.5}...{w=0.5} {size=+6}{b}{cps=20}mud{w=0.5}blood{/cps}{/b}?!{/size}", "shock", "wide", "base", "stare")
             call her_main("Did I hear you right, [genie_name]?!", "normal","wide_stare")
             menu:
                 "-Confirm-":

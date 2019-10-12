@@ -39,7 +39,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("I don't see what you could be...","open","down")
     call nar(">She grabs her breasts to check them.")
     call her_main("!!!","angry","down_raised")
-    call her_main("Have my breasts gotten bigger?","angry","wide")
+    call her_main("Have my breasts gotten bigger?", "angry", "wide", "base", "stare")
     m "About time you noticed."
     call her_main("Why would you make my breasts bigger? They're already big enough!", "angry", "base", "base", "mid")
     m "You know what they say, can't have too much of a good thing."
@@ -47,7 +47,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     m "Is it? Well I prefer my version."
     call her_main("Well how big are they supposed to-","angry","down_raised")
     call nar(">Her breast swell up again.")
-    call her_main("You can't be serious. At this rate they're going to rip my shirt.","angry","wide")
+    call her_main("You can't be serious. At this rate they're going to rip my shirt.", "angry", "wide", "base", "stare")
     m "Well they should stop there."
     call her_main("Good, they're big enough as is.","angry","angry")
 
@@ -55,7 +55,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
         "-Send her to class-":
             m "You're right, I suppose they are big enough."
             m "Well that's all for today, 20 points to Gryffindor."
-            call her_main("That's all? You're not going to make me do something else?","shock","wide")
+            call her_main("That's all? You're not going to make me do something else?", "shock", "wide", "base", "stare")
             m "Why would I, I asked you to drink a potion and you drank it. You're free to leave."
             call her_main("Thank you [genie_name], I'll head back to my room.", "smile", "base", "base", "R")
             m "Room? It's time for class [hermione_name]. What do you think Professor Snape will say once he hears that you skipped class?"
@@ -101,7 +101,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
 
     call her_main("Well...","upset","wink",xpos="mid",ypos="base")
     call nar(">You reach out and grab her breasts through her stretched shirt.")
-    call her_main("!!!","angry","wide")
+    call her_main("!!!", "angry", "wide", "base", "stare")
     call her_main("Please be gentle [genie_name]. They seem to be much more sensitve than usual, it must be the potion.", "angry", "base", "base", "mid")
     m "Well I'll take that into account..."
     call nar(">You take a breast in each hand and start kneading them with your fingers.")
@@ -115,7 +115,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call set_her_action("expand_breasts")
     with vpunch
 
-    call her_main("!!!","angry","wide")
+    call her_main("!!!", "angry", "wide", "base", "stare")
     call her_main("You said that they wouldn't get any bigger! Now how would you explain this?!","scream","angry",emote="01")
     m "Don't worry about that [hermione_name], worry about earning your 40 points."
     call her_main("Just hurry up.","annoyed","annoyed")
@@ -138,7 +138,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("Please don't do anything sudden.","soft","ahegao")
     m "Like this?"
     call nar(">You take both nipple between your thumb and index finger.")
-    call her_main("!!!","scream","wide")
+    call her_main("!!!", "scream", "wide", "base", "stare")
     call her_main("Please stop... it's too much, it's like my nipples are on fire.","shock","worriedCl")
     m "Shhhh, just be still, it'll all be over soon."
     call nar(">You start rolling her nipples in between your fingers.")
@@ -152,7 +152,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("...","grin","dead")
     m "Well let's see if we can do something about that."
     call nar(">You start alternating pinching and pulling her nipples hard, pulling the nipples out as far as you can and then pushing them back into her breast.")
-    call her_main("!!!","scream","wide")
+    call her_main("!!!", "scream", "wide", "base", "stare")
     her "I-I-I'm cumming!"
     call nar(">She starts grinding hard against your leg as a wet spot starts to form on her skirt.")
     m "What a naughty little girl."
@@ -209,10 +209,10 @@ label potion_scene_2_2: #ass expansion
     m "Let's just say that it's a redistribution of ass{w}ets." ###Added {w} instead of your ...
     call her_main("What do you mean by--","annoyed","angryL")
     call nar(">Hermione goes white as she starts to feel her body churn.")
-    call her_main("What's going on. It feels like my insides are moving.","angry","wide")
+    call her_main("What's going on. It feels like my insides are moving.", "angry", "wide", "base", "stare")
     call her_main("And my ass, it feels so... good.","soft","ahegao")
     call nar(">You start to notice her ass increase in size.") #Use bigger butt from Captain Nemo
-    call her_main("It feels too sensitive... I have to take my skirt off","angry","wide") #changed so to too
+    call her_main("It feels too sensitive... I have to take my skirt off", "angry", "wide", "base", "stare") #changed so to too
 
     $ hermione_wear_panties = False
     call set_her_action("lift_skirt")
@@ -224,7 +224,7 @@ label potion_scene_2_2: #ass expansion
     call her_main("","silly","ahegao_intense",cheeks="blush")
     pause.8
 
-    call her_main("","soft","wide")
+    call her_main("", "soft", "wide", "base", "stare")
     call ctc
 
     call her_main("Something is happening with my body, [genie_name]!","open","down_raised")
@@ -284,10 +284,10 @@ label potion_scene_2_2: #ass expansion
             call nar(">You slowly pull your finger away from her asshole.")
             call her_main("Thank yo-","soft","ahegao")
             call nar(">And then fully insert it.")
-            call her_main("...","angry","wide")
+            call her_main("...", "angry", "wide", "base", "stare")
             her "..."
             her "..."
-            call her_main("{size=-10}I'm cumming{/size}","scream","wide")
+            call her_main("{size=-10}I'm cumming{/size}", "scream", "wide", "base", "stare")
             hide screen hermione_main
             m "What was that?"
             call nar(">You start turning your finger.")
@@ -299,7 +299,7 @@ label potion_scene_2_2: #ass expansion
             call her_main("!!!","shock","worriedCl")
             call her_main("I'm cumming again!","open","worriedCl")
             m "So soon?"
-            call her_main("I can't stop! Please [genie_name], please, no more!","angry","wide")
+            call her_main("I can't stop! Please [genie_name], please, no more!", "angry", "wide", "base", "stare")
 
             menu:
                 "-Stop-":
@@ -355,7 +355,7 @@ label potion_scene_2_2: #ass expansion
             hide screen groping_02
             show screen ch_hotdog
             with d3
-            call her_main("!!!","angry","wide")
+            call her_main("!!!", "angry", "wide", "base", "stare")
             call her_main("What are you going to do [genie_name]?","angry","wink")
             hide screen hermione_main
             m "Well seeing as how your ass has become so fucking huge I thought I may as well put it to good use."

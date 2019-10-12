@@ -196,7 +196,7 @@ label hg_sex_1:
     pause.5
 
     call her_main(".............","upset","closed", ypos="head")
-    call her_main("!!!!!!!!!!!!!!!","angry","wide")
+    call her_main("!!!!!!!!!!!!!!!", "angry", "wide", "base", "stare")
     m "Relax, [hermione_name]. I'm Just gonna take off your panties."
     call her_main("..............","angry","angry")
     m "Are you ready?"
@@ -221,7 +221,7 @@ label hg_sex_1:
         call her_main("","normal","worriedCl", ypos="head", trans="d5")
     else:
         call hg_chibi_transition(action="sex", trans="d5")
-    call her_main("Ooooohhhhhhhhhhhh....{image=textheart}","scream","wide")
+    call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare")
     hide screen bld1
     call ctc
 
@@ -337,12 +337,12 @@ label hg_sex_1:
     g4 "Ght! {image=textheart} Yes, you always say the right things, [hermione_name]!"
     call her_main("Ah...{image=textheart} ah...{image=textheart}{image=textheart}","shock","worriedCl")
     #$ ccg2 = 24
-    call her_main("{size=+7}!!!!!!!!!!!!!!!{/size}{image=textheart}{image=textheart}{image=textheart}","scream","wide", trans="hpunch")
+    call her_main("{size=+7}!!!!!!!!!!!!!!!{/size}{image=textheart}{image=textheart}{image=textheart}", "scream", "wide", "base", "stare", trans="hpunch")
     m "Huh? You alright?"
     call nar(">Hermione's legs are shaking...")
     m "[hermione_name]?"
     #$ ccg2 = 28
-    call her_main("{image=textheart}{image=textheart}{image=textheart}I think I'm cumming, [genie_name]!{image=textheart}{image=textheart}{image=textheart}","scream","wide")
+    call her_main("{image=textheart}{image=textheart}{image=textheart}I think I'm cumming, [genie_name]!{image=textheart}{image=textheart}{image=textheart}", "scream", "wide", "base", "stare")
     g9 "Tch... You nasty slut!"
     #$ ccg2 = 29
     call her_main("AAH! I can't hold it!","silly","dead")
@@ -353,7 +353,7 @@ label hg_sex_1:
         call hg_chibi_transition(action="sex_fast", trans="d5")
 
     #$ ccg2 = 30
-    call her_main("NO! STOP! PLEASE!","scream","wide", trans="hpunch")
+    call her_main("NO! STOP! PLEASE!", "scream", "wide", "base", "stare", trans="hpunch")
     g4 "Who told you you could cum, slut? This is your punishment!"
     call her_main("[genie_name], no, ah-a!{image=textheart}","open","worriedCl")
     #$ ccg2 = 31
@@ -491,7 +491,7 @@ label hg_sex_2:
     else:
         call hg_chibi_transition(action="sex", trans="fade")
     
-    call her_main("Ooooohhhhhhhhhhhh....{image=textheart}","scream","wide", ypos="head")
+    call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare", ypos="head")
     hide screen bld1
     call ctc
 
@@ -524,7 +524,7 @@ label hg_sex_2:
             call her_main("Ah...{image=textheart}{image=textheart}","open","worriedCl")
             m "Yes, my little princess..."
             #$ ccg2 = 15
-            call her_main("What?","angry","wide")
+            call her_main("What?", "angry", "wide", "base", "stare")
             call her_main("No, please don't call me that... ah...{image=textheart}","angry","down_raised")
             call her_main("My daddy used to call me his little princess when I was little...")
             m "Well, right now I am your daddy!"
@@ -654,7 +654,7 @@ label hg_sex_2:
             call her_main("Yes... I...","silly","dead")
             #$ ccg2 = 41
             call her_main("I feel so full...","open_wide_tongue","ahegao")
-            call her_main("!!!","scream","wide")
+            call her_main("!!!", "scream", "wide", "base", "stare")
             call her_main("You came inside of me, [genie_name]!")
             m "I sure did."
             call her_main("You shouldn't have...","open","worriedCl")
@@ -736,7 +736,7 @@ label hg_sex_luna:
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
     with kissiris
-    call her_main("Ooooohhhhhhhhhhhh....{image=textheart}","scream","wide", ypos="head") #HERMIONE
+    call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare", ypos="head") #HERMIONE
 
     call hg_chibi_transition(action="sex", trans="fade")
     call ctc

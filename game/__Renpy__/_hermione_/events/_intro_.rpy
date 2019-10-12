@@ -248,7 +248,7 @@ label hermione_intro_E1:
         with d3
         pause 3
 
-        call her_main("Professor?! What is going on...?","angry","wide")
+        call her_main("Professor?! What is going on...?", "angry", "wide", "base", "stare")
 
         g4 "Ah... YESSSSS.....!"
         her "???"
@@ -884,7 +884,7 @@ label hermione_intro_E5:
                         call her_main("Please, sir. I really need your help.","angry","worried")
                         menu:
                             "\"Show me your tits and it's a deal!\"":
-                                call her_main("m-my...?","angry","wide")
+                                call her_main("m-my...?", "angry", "wide", "base", "stare")
                                 call her_main("............","annoyed","worriedL")
                                 her "....."
                                 with hpunch
@@ -1150,7 +1150,7 @@ label hermione_intro_E6:
                 call her_main("............", "soft", "base", "base", "R",cheeks="blush")
                 call her_main("Thank you, professor Dumbledore...", "open", "base", "base", "R",cheeks="blush")
             "\"You have a nice body, miss Granger...\"":
-                call her_main("!!?","soft","wide")
+                call her_main("!!?", "soft", "wide", "base", "stare")
                 call her_main("..............","annoyed","angryL",cheeks="blush")
                 call her_main("Thank you, professor...")
             "\"That's enough. Here are your points...\"":
@@ -1229,7 +1229,7 @@ label hermione_intro_E6:
                 m "Alrighty, then..."
             "\"Do you want to get spanked?\"":
                 call her_main("Do I want to...","open","worried")
-                call her_main("Get s-spanked??","angry","wide")
+                call her_main("Get s-spanked??", "angry", "wide", "base", "stare")
                 call her_main("Tsk!","angry","angry")
                 call her_main("Professor, I don't think I'm comfortable with--","open","angryCl")
                 m "Apologies, let me rephrase the question..."

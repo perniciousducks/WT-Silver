@@ -46,13 +46,13 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call update_her_uniform
 
         call her_main("hello Prof-", "soft", "base", "base", "R",xpos="right",ypos="base")
-        call her_main("Luna! what are you doing here?","angry","wide")
+        call her_main("Luna! what are you doing here?", "angry", "wide", "base", "stare")
         call lun_main("same thing as you...","base","seductive","angry","mid")
         call her_main("Oh, um... you must be here to... help Professor dumbledore then...","open","worriedL")
         call lun_main("Mhmmm...","base","angry","sad","mid")
         call her_main("So, ugh... what does dumbledore need our help with?","open","worried")
         call lun_main("Probably emptying those nasty balls of his...","upset","mad","angry","mid")
-        call her_main("!!!","angry","wide")
+        call her_main("!!!", "angry", "wide", "base", "stare")
         call her_main("Luna! what are you talking about?","angry","worried")
         call her_main("are you feeling ok?","annoyed","worriedL")
         call lun_main("come on now hermione... it wouldn't be the first time you've helped old dumbledore like this?","base","angry","angry","R")
@@ -65,7 +65,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("Really?","upset","angry","raised","mid")
         call her_main("Of course not! I'm shocked you even have to ask!","annoyed","worriedL")
         call lun_main("So you're comfortable saying that after you've had a sip of some veritaserum?","normal","mad","mad","mid")
-        call her_main("!!!","angry","wide")
+        call her_main("!!!", "angry", "wide", "base", "stare")
         call her_main("O-O-Of course... but as you know, that potion's banned...","open","closed")
         call lun_main("Not for the illustrious Professor dumbledore!","base","seductive","sad","R")
         call lun_main("Isn't that right sir?","upset","angry","mad","R")
@@ -113,7 +113,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "Ye-"
         call lun_main("almost...","base","seductive","sad","down")
         call lun_main("now why don't you get on your knees...","upset","angry","angry","mid")
-        call her_main("!!!","angry","wide",tears="crying")
+        call her_main("!!!", "angry", "wide", "base", "stare",tears="crying")
         call her_main("please, luna... I'm {size=-2}sorry {size=-2}about {size=-2}what I said to you the other day...{/size}","annoyed","down",tears="crying")
         call lun_main("then kneel...","normal","suspicious","sad","mid")
 
@@ -306,7 +306,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             $ luna_xpos = 600
             $ luna_r_arm = 2
             ">Luna moves closer to Hermione before picking up a strand of cum with her finger and moving it to her mouth."
-            call her_main("!!!","angry","wide")
+            call her_main("!!!", "angry", "wide", "base", "stare")
             m "(woah...)"
             $ luna_xpos = 630
             call lun_main("mmmmm... you taste even better...","base","happyCl","sad","mid")
@@ -400,7 +400,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "Well I was testing out some new magic..."
         m "And I'm attempting to cure her of her previous condition..."
         m "(I hope she believes this schlock...)"
-        call her_main("Really?","shock","wide")
+        call her_main("Really?", "shock", "wide", "base", "stare")
         call her_main("But isn't messing around with her mind a little...","soft","squintL")
         call her_main("unethical?","angry","down_raised")
         m "Yes, well normally you'd be right, but this is more of a curing of an existing mental condition."
@@ -426,13 +426,13 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("ugh, fine...", "annoyed", "base", "base", "R")
         call her_main("I guess...","annoyed","angryL",cheeks="blush")
         m "So you don't mind helping out with her in the future?"
-        call her_main("What? I have to spend more time with her?","soft","wide")
+        call her_main("What? I have to spend more time with her?", "soft", "wide", "base", "stare")
         call her_main("But she's weird...","open","worriedCl",cheeks="blush")
         m "We can work on that. Besides, don't you want to help out one of your friends?"
         call her_main("Hmmm, I suppose that you're right [genie_name].","annoyed","closed")
         call her_main("I can't imagine that the daydreaming Luna would do too well in the real world.","open","squint",cheeks="blush")
         call her_main("and as her friend It's my responsibility to try and save her from that!", "open", "base", "base", "R",cheeks="blush")
-        call her_main("!!!","soft","wide")
+        call her_main("!!!", "soft", "wide", "base", "stare")
         call her_main("Maybe we could even have study sessions together!", "grin", "base", "base", "R")
         call her_main("I've always wanted someone to study with! Normally it's only ever Harry and I'm pretty sure he's just there to stare at my boobs...","annoyed","annoyed")
         call her_main("(Not that I mind...)", "open", "base", "base", "R")

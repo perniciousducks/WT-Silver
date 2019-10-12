@@ -103,7 +103,7 @@ label hg_pf_grope:
 
 label hg_pf_grope_T0_fail_intro:
     m "[hermione_name], would you mind if I play with your tits a little?"
-    call her_main("Play with...?","shock","wide")
+    call her_main("Play with...?", "shock", "wide", "base", "stare")
     call her_main("My tits?!","angry","wide_stare")
     g9 "Or your butt! I haven't fully decided yet!"
 
@@ -150,7 +150,7 @@ label hg_pf_grope_T1_intro_E1:
 
     menu:
         "\"I'm gonna molest your tits now.\"":
-            call her_main("What? What do you mean, [genie_name]-","soft","wide")
+            call her_main("What? What do you mean, [genie_name]-", "soft", "wide", "base", "stare")
             call nar(">You reach out swiftly and grab both of her tits through her uniform...")
 
             jump hg_pf_grope_breasts_T1

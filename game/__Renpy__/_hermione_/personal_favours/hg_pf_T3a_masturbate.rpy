@@ -118,7 +118,7 @@ label hg_pf_strip_T2_fingering:
             call her_main("Aha...{image=textheart}","open","worriedCl")
             call her_main("I'm just thinking about how happy everyone will be when we win!","shock","worriedCl")
             m "and what if they find out how you earned the points?"
-            call her_main("what?!","shock","wide")
+            call her_main("what?!", "shock", "wide", "base", "stare")
             m "then it wouldn't just be me degrading you..."
             call her_main("...","soft","squintL")
             m "It would be the whole school."
@@ -231,7 +231,7 @@ label hg_pf_strip_T2_fingering:
     menu:
         "-Chastise her-":
             m "Well then I guess \"Slytherin\" will have to win the house cup this year."
-            call her_main("B-but--","scream","wide")
+            call her_main("B-but--", "scream", "wide", "base", "stare")
             m "now, now [hermione_name], a deals a deal."
             call her_main("Really?","open","worriedCl")
             call her_main("but I'm trying [genie_name]...","shock","worriedCl")

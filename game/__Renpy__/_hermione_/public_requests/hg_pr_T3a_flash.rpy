@@ -26,7 +26,7 @@ label hg_pr_flash:
         stop music fadeout 1.0
         call her_main("...?", "open", "base", "base", "mid")
         m "You know, flash your breasts to some boys..."
-        call her_main("?!!","shock","wide")
+        call her_main("?!!", "shock", "wide", "base", "stare")
 
         if her_tier < 3 or her_reputation < 6:
             jump too_much
@@ -127,7 +127,7 @@ label end_hg_pr_flash:
 
         if one_out_of_three == 3:
             call her_main("(I can't believe I did that today...)","upset","closed", ypos="head")
-            call her_main("(What if Harry or Ron saw me like that?)","angry","wide")
+            call her_main("(What if Harry or Ron saw me like that?)", "angry", "wide", "base", "stare")
             call her_main("(Standing there...)")
             call her_main("(Pressing my breasts against that window glass...)")
             call her_main("(I would probably just die of embarrassment right there on the spot...)","angry","down_raised")

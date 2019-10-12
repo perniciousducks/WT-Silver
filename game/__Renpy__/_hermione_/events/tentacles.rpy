@@ -266,7 +266,7 @@ label tentacle_2: #Enjoyable tentacle scene
 
 ###COSTUME SCENES
 label costume_scene_1: #Maid role-play
-    call her_main("A costume? What on earth do you need me to dress up for?","angry","wide")
+    call her_main("A costume? What on earth do you need me to dress up for?", "angry", "wide", "base", "stare")
     m "[hermione_name], have you ever heard of the term role-play?"
     call her_main("role-play?","smile","glance")
     m "It's where you pretend to be someone you're not."

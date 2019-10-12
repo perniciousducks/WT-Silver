@@ -132,7 +132,7 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
     call blkfade
 
     ">You reach out and dig your fingers into the girl's ample flesh..."
-    call her_main("[genie_name], what are you doing?","mad","wide", cheeks="blush", ypos="head")
+    call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
 
     # Start Groping
     call hg_chibi_transition("grope_breasts")
@@ -187,7 +187,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
     call blkfade
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("[genie_name]?!!","angry","wide", ypos="head")
+    call her_main("[genie_name]?!!", "angry", "wide", "base", "stare", ypos="head")
     m "Just stand still, [hermione_name]..."
 
     # Start Jerking Off.
@@ -218,8 +218,8 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
         "\"Leave now, and you'll get no points!\"":
             $ her_mood += 30
 
-            call her_main("After {size=+5}this{/size}? Are you kidding me, [genie_name]?","scream","wide", cheeks="blush")
-            call her_main("I showed you my...","scream","wide", cheeks="blush")
+            call her_main("After {size=+5}this{/size}? Are you kidding me, [genie_name]?", "scream", "wide", "base", "stare", cheeks="blush")
+            call her_main("I showed you my...", "scream", "wide", "base", "stare", cheeks="blush")
             call her_main("..........","annoyed","angryL", cheeks="blush")
             call her_main("I am not going to sell you a single favour anymore, [genie_name]!","angry","angry", cheeks="blush")
             call blkfade
@@ -325,7 +325,7 @@ label hg_pf_admire_breasts_T3_touch:
     call blkfade
 
     ">You reach out and dig your fingers into the girl's ample flesh..."
-    call her_main("[genie_name], what are you doing?","mad","wide", cheeks="blush", ypos="head")
+    call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
 
     # Start Groping
     call hg_chibi_transition("grope_breasts")
@@ -374,7 +374,7 @@ label hg_pf_admire_breasts_T3_masturbate:
 
     ">You take your cock out and start stroking it..."
 
-    call her_main("[genie_name]?","angry","wide", ypos="head")
+    call her_main("[genie_name]?", "angry", "wide", "base", "stare", ypos="head")
     ">You stare at Hermione's breasts with hunger..."
 
     #Start Jerking Off.
@@ -423,7 +423,7 @@ label hg_pf_admire_breasts_T3_masturbate:
         "-Just start cumming-":
             #call play_music("chipper_doodle") # HERMIONE'S THEME.
             g4 "Argh! You whore!"
-            call her_main("Proff- ??","scream","wide", cheeks="blush")
+            call her_main("Proff- ??", "scream", "wide", "base", "stare", cheeks="blush")
             call cum_block
             g4 "Argh! YES!"
             hide screen bld1
@@ -554,7 +554,7 @@ label hg_pf_admire_breasts_T4_touch: # Call label
     call blkfade
 
     ">You reach out and dig your fingers into the girl's ample flesh..."
-    call her_main("[genie_name], what are you doing?","mad","wide", cheeks="blush", ypos="head")
+    call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
 
     # Start Groping
     call hg_chibi_transition("grope_breasts")
@@ -695,7 +695,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             call her_main("Em...","disgust","down_raised", cheeks="blush")
             call her_main("If you want to you can--", "base", "base", "base", "R", cheeks="blush")
             g4 "Argh! You whore!"
-            call her_main("???","mad","wide", cheeks="blush")
+            call her_main("???", "mad", "wide", "base", "stare", cheeks="blush")
 
             call cum_block
 
@@ -753,7 +753,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
 
         "-Just start cumming-":
             g4 "Argh! You whore!"
-            call her_main("???","mad","wide", cheeks="blush", ypos="head")
+            call her_main("???", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
 
             call cum_block
 

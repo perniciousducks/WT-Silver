@@ -171,7 +171,7 @@ label equip_bottom:
                         # call her_main("But that would be against the Hogwarts rules for proper school attire!","open","closed")
                         # call her_main("I have to refuse, [genie_name].", "normal", "base", "base", "mid")
                     # else:
-                        # call her_main("How... How short?!","shock","wide")
+                        # call her_main("How... How short?!", "shock", "wide", "base", "stare")
                         # call her_main("Is that another one of your silly jokes, [genie_name]?","angry","worried")
                         # call her_main("No, please, don't tell me.","open","closed")
                         # call her_main("I don't even want to know...","annoyed","worriedL")
@@ -197,7 +197,7 @@ label equip_bottom:
                         # call her_main("But that would be against the Hogwarts rules for proper school attire!","open","closed")
                         # call her_main("I have to refuse, [genie_name].", "normal", "base", "base", "mid")
                     # else:
-                        # call her_main("Open up the front?!","shock","wide")
+                        # call her_main("Open up the front?!", "shock", "wide", "base", "stare")
                         # call her_main("Is that another one of your silly jokes, [genie_name]?","angry","worried")
                         # call her_main("No, please, don't tell me.","open","closed")
                         # call her_main("I don't even want to know...","annoyed","worriedL")
@@ -230,7 +230,7 @@ label equip_bottom:
                         # call her_main("Fine... Just let me change it...","disgust","glance")
                 # else:
                     # if her_whoring < 5:
-                        # call her_main("Pull my skirt down?!","shock","wide")
+                        # call her_main("Pull my skirt down?!", "shock", "wide", "base", "stare")
                         # call her_main("I'm not pulling my skirt down for you, [genie_name].","angry","angry")
                         # call her_main("How can you even suggest such a thing!","angry","worriedCl")
                         # call her_main("(disgusting old fool...)","annoyed","annoyed")
@@ -261,7 +261,7 @@ label equip_bottom:
                         # call her_main("Let me just change real quick.","base","glance")
                 # else:
                     # if her_whoring < 5:
-                        # call her_main("Pull my skirt down?!","shock","wide")
+                        # call her_main("Pull my skirt down?!", "shock", "wide", "base", "stare")
                         # call her_main("I'm not pulling my skirt down for you, [genie_name].","angry","angry")
                         # call her_main("How can you even suggest such a thing!","angry","worriedCl")
                         # call her_main("(disgusting old fool...)","annoyed","annoyed")
@@ -290,7 +290,7 @@ label equip_bottom:
                         # call her_main("Let me just change real quick.","base","glance")
                 # else:
                     # if her_whoring < 5:
-                        # call her_main("Pull my skirt down?!","shock","wide")
+                        # call her_main("Pull my skirt down?!", "shock", "wide", "base", "stare")
                         # call her_main("I'm not pulling my skirt down for you, [genie_name].","angry","angry")
                         # call her_main("How can you even suggest such a thing!","angry","worriedCl")
                         # call her_main("(disgusting old fool...)","annoyed","annoyed")
@@ -315,7 +315,7 @@ label equip_bottom:
                     # call her_main("Shame...","annoyed","down")
                 # else:
                     # if her_whoring < 5:
-                        # call her_main("Pull my skirt down?!","shock","wide")
+                        # call her_main("Pull my skirt down?!", "shock", "wide", "base", "stare")
                         # call her_main("I'm not pulling my skirt down for you, [genie_name].","angry","angry")
                         # call her_main("How can you even suggest such a thing!","angry","worriedCl")
                         # call her_main("(disgusting old fool...)","annoyed","annoyed")
@@ -389,11 +389,11 @@ label equip_bottom:
                                 # call her_main("Let me just change it.", "soft", "base", "base", "R")
                     # else:
                         # if skirt_choice in ["skirt_cheer_s","skirt_cheer_sexy_s"]:
-                            # call her_main("In green?","shock","wide")
+                            # call her_main("In green?", "shock", "wide", "base", "stare")
                         # if skirt_choice in ["skirt_cheer_r","skirt_cheer_sexy_r"]:
-                            # call her_main("In blue?","shock","wide")
+                            # call her_main("In blue?", "shock", "wide", "base", "stare")
                         # if skirt_choice in ["skirt_cheer_h","skirt_cheer_sexy_h"]:
-                            # call her_main("In yellow?","shock","wide")
+                            # call her_main("In yellow?", "shock", "wide", "base", "stare")
                         # call her_main("Are you serious, [genie_name]?","angry","angry")
                         # call her_main("Are you sure you didn't just pick the wrong colour for me?","annoyed","suspicious")
                         # if skirt_choice in ["skirt_cheer_s","skirt_cheer_sexy_s"]:
@@ -526,7 +526,7 @@ label equip_bottom:
                         # call her_main("What?!...","angry","angry")
                         # call her_main("What?!... What is this?","angry","angry",emote="01")
                         # m "I just said those are--"
-                        # call her_main("[genie_name]!","shock","wide")
+                        # call her_main("[genie_name]!", "shock", "wide", "base", "stare")
                         # call her_main("You can't just hand underwear to your students!","angry","worried")
                         # m "Underwear?"
                         # call her_main("Yes, underwear! Panties!","open","worriedCl")

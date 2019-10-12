@@ -43,7 +43,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call lun_main("I...","base","wide","sad","R")
     call lun_main("I......","normal","wide","sad","R")
     call lun_main("I can't!","upset","wide","sad","down")
-    call her_main("What?","shock","wide")
+    call her_main("What?", "shock", "wide", "base", "stare")
     call her_main("Why not Luna? We've talked about this...","soft","worried")
     call her_main("We even spent all last weekend \'practising\'...","normal","worriedL")
     call lun_main("I know...","pout","base","mad","R")

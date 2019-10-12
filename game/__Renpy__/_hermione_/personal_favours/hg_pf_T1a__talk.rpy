@@ -511,7 +511,7 @@ label hg_pf_talk_T3:
 
         call her_main("(...................)","disgust","worried")
         m "You've done well today [hermione_name]..."
-        call her_main("You've soiled your entire desk!","mad","wide")
+        call her_main("You've soiled your entire desk!", "mad", "wide", "base", "stare")
         m "I'm sure it will be cleaned at one point or another..."
         call her_main("Gross...","normal","worriedCl", cheeks="blush")
         call her_main("May I have my points now?","open","down", cheeks="blush")
@@ -527,8 +527,8 @@ label hg_pf_talk_T3:
         m "So, since you're muggle born and all..."
         call her_main("Yes?","open","happy")
         m "I hope you properly demonstrated how to use it to them."
-        call her_main("What? Why on earth do you think I would do that?","shock","wide", cheeks="blush")
-        call her_main("Do you take me for some sort of exhibitionist?","mad","wide", cheeks="blush")
+        call her_main("What? Why on earth do you think I would do that?", "shock", "wide", "base", "stare", cheeks="blush")
+        call her_main("Do you take me for some sort of exhibitionist?", "mad", "wide", "base", "stare", cheeks="blush")
         m "Sorry?"
         call her_main("Don't you sorry me...{w=0.5} you expect me to get my fanny out and casually just shove it in there for the whole class to see?","angry","angry", cheeks="blush")
         call her_main("I'm sure they would love that and find it more than educational...","base","angryCl", cheeks="blush")
@@ -537,7 +537,7 @@ label hg_pf_talk_T3:
         m "What are you talking about? Weren't we talking about back massagers?"
         call her_main("-I'd just tear my clothes off and...","open","angryCl", cheeks="blush")
         $ renpy.sound.play("sounds/glass_shatter.mp3")
-        call her_main("...","mad","wide", cheeks="blush")
+        call her_main("...", "mad", "wide", "base", "stare", cheeks="blush")
         her "I...{w} I'm sorry professor!"
         g9 "I didn't take you for such a naughty girl, [hermione_name]!"
         g9 "Here we were having an innocent conversation about back massagers and you spring all this on me."

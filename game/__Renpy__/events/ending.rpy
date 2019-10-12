@@ -2707,7 +2707,7 @@ label ball_ending_E2:
         m "I wrote you a letter, so what?"
         call her_main("I think it's sweet.............","base","worried",cheeks="blush",tears="mascara")
         g4 "I said, stop gawking at me girl. I thought you were late for your dance or something!"
-        call her_main("THE DANCE!","open","wide",cheeks="blush",tears="mascara")
+        call her_main("THE DANCE!", "open", "wide", "base", "stare",cheeks="blush",tears="mascara")
         call her_main("I'm sorry, I have to go!")
         call her_main("I will see you later, sir!")
 

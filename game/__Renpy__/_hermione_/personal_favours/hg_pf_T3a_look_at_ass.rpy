@@ -275,7 +275,7 @@ label hg_pr_strip_T2_grope_rear:
 
     call hg_chibi_transition("grope_ass", flip=True, trans="d5")
 
-    call her_main("[genie_name], what are you doing?","mad","wide", cheeks="blush", ypos="head")
+    call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
     m "Relax, [hermione_name]. Just stand still!"
 
     show screen blktone
@@ -339,7 +339,7 @@ label hg_pr_strip_T2_masturbate_rear:
 
     show screen blktone
     show screen hermione_ass
-    call her_main("Are you enjoying the view [genie_name]","angry","wide", ypos="head")
+    call her_main("Are you enjoying the view [genie_name]", "angry", "wide", "base", "stare", ypos="head")
     m "yes I am [hermione_name]. just stand still and let me look a little longer..."
 
     call nar(">You stare at Hermione's ass with hunger...")
@@ -356,8 +356,8 @@ label hg_pr_strip_T2_masturbate_rear:
 
     menu:
         "\"Of course not\"":
-            call her_main("good.","scream","wide", cheeks="blush")
-            call her_main("I mean seeing as how I stripped naked and showed you my...","scream","wide", cheeks="blush")
+            call her_main("good.", "scream", "wide", "base", "stare", cheeks="blush")
+            call her_main("I mean seeing as how I stripped naked and showed you my...", "scream", "wide", "base", "stare", cheeks="blush")
             call her_main("..........","annoyed","angryL", cheeks="blush")
             call her_main("not {size=-5}cumming{/size} on me is the least you could do...","angry","angry", cheeks="blush")
 
@@ -425,7 +425,7 @@ label hg_pr_strip_T3_grope_rear:
 
     call hg_chibi_transition("grope_ass", flip=True, trans="d5")
 
-    call her_main("[genie_name], what are you doing?","mad","wide", cheeks="blush", ypos="head")
+    call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
     m "Relax, [hermione_name]. Just stand still!"
 
     show screen blktone
@@ -505,7 +505,7 @@ label hg_pr_strip_T3_masturbate_rear:
 
     show screen blktone
     show screen hermione_ass
-    call her_main("Are you enjoying the view [genie_name]","angry","wide", ypos="head")
+    call her_main("Are you enjoying the view [genie_name]", "angry", "wide", "base", "stare", ypos="head")
     m "I'm enjoying it immensely"
     call her_main("[genie_name], are you... touching yourself...","shock","worriedCl")
     m "Don't blame me [hermione_name]..."
@@ -576,7 +576,7 @@ label hg_pr_strip_T4_grope_rear:
 
     call hg_chibi_transition("grope_ass", flip=True, trans="d5")
 
-    call her_main("[genie_name], what are you doing?","mad","wide", cheeks="blush", ypos="head")
+    call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
     m "Relax, [hermione_name]. Just stand still!"
 
     show screen blktone
@@ -749,7 +749,7 @@ label hg_show_ass_cumming:
                 call blkfade
 
                 g4 "Argh! You fat-assed slut!"
-                call her_main("Proff-- ??","scream","wide", cheeks="blush", ypos="head")
+                call her_main("Proff-- ??", "scream", "wide", "base", "stare", cheeks="blush", ypos="head")
                 call cum_block
 
                 g4 "Argh! YES!"
@@ -797,7 +797,7 @@ label hg_show_ass_cumming:
                 call blkfade
 
                 g4 "Argh! You fat-assed whore!"
-                call her_main("Proff-- ??","scream","wide", cheeks="blush", ypos="head")
+                call her_main("Proff-- ??", "scream", "wide", "base", "stare", cheeks="blush", ypos="head")
                 call cum_block
 
                 g4 "Argh! YES!"
@@ -866,7 +866,7 @@ label hg_show_ass_cumming:
                 call her_main("Came...","disgust","down_raised", cheeks="blush")
                 call her_main("On my ass--", "base", "base", "base", "R", cheeks="blush")
                 g4 "Argh! You whore!"
-                call her_main("???","mad","wide", cheeks="blush")
+                call her_main("???", "mad", "wide", "base", "stare", cheeks="blush")
                 call cum_block
 
                 g4 "Argh! YES!"
@@ -890,7 +890,7 @@ label hg_show_ass_cumming:
 
             "-Just start cumming-":
                 g4 "Argh! You fat-assed whore!"
-                call her_main("???","mad","wide", cheeks="blush", ypos="head")
+                call her_main("???", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
                 call cum_block
 
                 g4 "Argh! YES!"

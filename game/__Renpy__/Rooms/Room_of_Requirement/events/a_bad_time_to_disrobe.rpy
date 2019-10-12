@@ -42,7 +42,7 @@ label a_bad_time_to_disrobe_part_1:
 
     m "You'd be naked of course."
 
-    call her_main("Naked!?! But what if someone saw me?","open","wide")
+    call her_main("Naked!?! But what if someone saw me?", "open", "wide", "base", "stare")
 
     m "You'll be wearing the cloak..."
     m "No one would even know you were there."

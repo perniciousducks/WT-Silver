@@ -160,7 +160,7 @@ label hg_pf_titjob_T1_intro_E1:
             $ current_payout = 100
             $ her_mood = 0
             call her_main("100 house points?!","scream","wide_stare")
-            call her_main("This might be enough to put \"Gryffindor\" in the lead!","smile","wide")
+            call her_main("This might be enough to put \"Gryffindor\" in the lead!", "smile", "wide", "base", "stare")
             m "So,...is that a yes?"
             call her_main("Yes, [genie_name]!","smile","happyCl")
             call her_main("I shall do my best...","soft","glance", emote="06")
@@ -438,12 +438,12 @@ label hg_pf_titjob_1:
 
             call hg_chibi_transition("tj_pause", trans="d5")
 
-            call her_main("What? already?!","shock","wide", ypos="head")
+            call her_main("What? already?!", "shock", "wide", "base", "stare", ypos="head")
             g4 "{size=+5}Yeah, your tits felt great!!!{/size}"
             g4 "{size=+5}You little whore!!!{/size}"
             call her_main("No, [genie_name], wait, not on my face!", "angry", "base", "base", "mid")
             g4 "{size=+5}Open wide, you slut!!{/size}"
-            call her_main("Not in my mou-","scream","wide")
+            call her_main("Not in my mou-", "scream", "wide", "base", "stare")
             $ ccg1 = 12
 
             stop music fadeout 1.0
@@ -452,7 +452,7 @@ label hg_pf_titjob_1:
             pause.8
 
             call nar(">You grab the back of Hermione's head and force your cock into her open mouth...")
-            call her_main("!!!","shock","wide")
+            call her_main("!!!", "shock", "wide", "base", "stare")
             call cum_block
 
             g4 "{size=+5}ARGH! YES!!! Take it!{/size}"
@@ -518,7 +518,7 @@ label hg_pf_titjob_1:
 
             call hg_chibi_transition("tj_pause", trans="d5")
 
-            call her_main("WHAT?!","shock","wide", ypos="head")
+            call her_main("WHAT?!", "shock", "wide", "base", "stare", ypos="head")
             g4 "Take this slut!"
 
             stop music fadeout 1.0
@@ -538,7 +538,7 @@ label hg_pf_titjob_1:
 
             call hg_chibi_transition("tj_cumming_on_pause", trans="d9")
 
-            call her_main(".......................","angry","wide")
+            call her_main(".......................", "angry", "wide", "base", "stare")
             m "Well, I think that's about it..."
             call her_main("..........", "soft", "base", "base", "mid",tears="soft")
 
@@ -871,7 +871,7 @@ label hg_pf_titjob_2_cumming:
             call hg_chibi_transition("tj_cumming_in", trans="d5")
             pause.8
 
-            call her_main("!!!!!!!!!!!","full","wide")
+            call her_main("!!!!!!!!!!!", "full", "wide", "base", "stare")
             g4 "Argh! You whore!"
             call her_main("{image=textheart}{image=textheart}{image=textheart}","full_cum","dead")
             call cum_block
@@ -928,7 +928,7 @@ label hg_pf_titjob_2_cumming:
             with hpunch
             g4 "ARGH!"
             $ ccg1 = 25
-            call her_main("What? Already?!","shock","wide", ypos="head")
+            call her_main("What? Already?!", "shock", "wide", "base", "stare", ypos="head")
             g4 "Yeah, your tits felt great slut!"
             call cum_block
 
@@ -941,10 +941,10 @@ label hg_pf_titjob_2_cumming:
 
             $ u_sperm = "characters/hermione/face/auto_06.png"
             $ uni_sperm = True
-            call her_main("!!!!!!!!!!!","shock","wide")
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
 
             $ ccg1 = 31
-            call her_main(".......................","angry","wide")
+            call her_main(".......................", "angry", "wide", "base", "stare")
 
             $ ccg1 = 32
             call hg_chibi_transition("tj_cumming_on_pause", trans="d9")
@@ -967,7 +967,7 @@ label hg_pf_titjob_2_cumming:
             m "Yes! It's those perfect tits of yours..."
             m "They just felt too good..."
             $ ccg1 = 36
-            call her_main("Oh...","shock","wide")
+            call her_main("Oh...", "shock", "wide", "base", "stare")
             call her_main("Well, I suppose it's not too bad then...","soft","down_raised")
             $ ccg1 = 37
             call her_main("I'll just wipe it off and hope that nobody will notice...","upset","closed")

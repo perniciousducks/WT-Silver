@@ -91,7 +91,7 @@ label slut_scene: #Locked to her being your slut
             show screen g_c_u
             hide screen h_c_u
             with d3
-            call her_main("!!!","shock","wide")
+            call her_main("!!!", "shock", "wide", "base", "stare")
             hide screen hermione_main
             ">You feel her push back against your legs."
             m "Now, now [hermione_name] good sluts know how to deepthroat. Just relax your throat."
@@ -109,7 +109,7 @@ label slut_scene: #Locked to her being your slut
             hide screen hermione_main
             ">You increase the speed in her throat."
             m "What was that [hermione_name]? I couldn't hear you over you sucking my cock. Try speaking a little louder."
-            call her_main("hhhhyyyyyym aaaaaaa hhhhhhhhttttttt!","shock","wide")
+            call her_main("hhhhyyyyyym aaaaaaa hhhhhhhhttttttt!", "shock", "wide", "base", "stare")
             hide screen hermione_main
             ">The vibration from her throat on your penis is amazing."
             m "Once more, so that I can hear you."
@@ -186,7 +186,7 @@ label slut_scene: #Locked to her being your slut
     #sQuest "slave" collar reward
     call give_reward(">You present her the \"slut\" collar.\n \"slut\" collar added to your wardrobe.")
 
-    call her_main("This isn't a necklace, this is a collar with slut \nwritten on it! I can't wear this!","angry","wide")
+    call her_main("This isn't a necklace, this is a collar with slut \nwritten on it! I can't wear this!", "angry", "wide", "base", "stare")
     hide screen hermione_main
     m "You can and will wear this."
     m "You are MY slut and you will do well to remember it. Now put it on and get out of my office."
@@ -268,7 +268,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("Please fuck me...","mad","worried",tears="soft")
     hide screen hermione_main
     m "I'm not sure I quite heard that. You'll have to speak up."
-    call her_main("{size=+5}Please fuck my cunt{/size}","scream","wide")
+    call her_main("{size=+5}Please fuck my cunt{/size}", "scream", "wide", "base", "stare")
     hide screen hermione_main
     m "Seeing as how you asked nicely."
     $ g_c_u_pic = "sex_ani"
@@ -459,7 +459,7 @@ label slave_scene:
 
     ">You give her a fierce slap to her left buttock."
     m "You will come when I give you permission and not a second sooner."
-    call her_main("Please master, may I cum?","angry","wide")
+    call her_main("Please master, may I cum?", "angry", "wide", "base", "stare")
     hide screen hermione_main
     m "Not until I do."
     call her_main("Please hurry.","open","worriedCl")
@@ -471,7 +471,7 @@ label slave_scene:
     m "Ughhh"
     $ g_c_u_pic = "sex_cum_in_ani"
     ">You roar as you cum inside her tight hole."
-    call her_main("I'm cumming!","scream","wide")
+    call her_main("I'm cumming!", "scream", "wide", "base", "stare")
     hide screen hermione_main
     ">You continue to shoot ropes of cum into her asshole."
     call her_main("Thank you sir.","soft","ahegao")

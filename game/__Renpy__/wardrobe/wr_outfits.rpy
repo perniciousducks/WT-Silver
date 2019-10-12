@@ -131,7 +131,7 @@ label equip_outfit:
                     # g4 "(Hot damn!)"
                     # g9 "How about your body?"
                     # call her_main("Hmm... my body?", "base", "narrow", "base", "mid_soft")
-                    # call her_main("... completely naked... wrapped in a tight ribbon for you to unwrap...","open","glanceL")
+                    # call her_main("... completely naked... wrapped in a tight ribbon for you to unwrap...", "open", "narrow", "base", "R_soft")
                     # call her_main("... and play with...", "open_tongue", "narrow", "base", "mid_soft")
                     # call her_main("I bet you would like that, [genie_name]?", "base", "narrow", "base", "mid_soft")
                     # g9 "Indeed I would!"
@@ -377,7 +377,7 @@ label equip_outfit:
             # if outfit_choice == hg_dress_dancer_ITEM:
                 # if her_whoring >= 11: #Success
                     # m "Giuchie, Giuchie, ya-ya..."
-                    # call her_main("Da-Da","soft","glanceL")
+                    # call her_main("Da-Da", "soft", "narrow", "base", "R_soft")
                     # m "Mocha Chocalata..."
                     # call her_main("Ya-Ya", "soft", "narrow", "annoyed", "up")
                     # g9 "Voulez vous coucher avec moi?"

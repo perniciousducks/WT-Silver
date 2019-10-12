@@ -286,7 +286,7 @@ label a_bad_time_to_disrobe_part_2:
     m "Let me get the popcorn."
     call her_main("popcorn? Where would you get popcorn from in this office?", "annoyed", "base", "base", "mid")
     g9 "Magic cupboard."
-    call her_main("Right... well, I'll just start in that case shall I?","base","glanceL")
+    call her_main("Right... well, I'll just start in that case shall I?", "base", "narrow", "base", "R_soft")
     call her_main("...", "base", "base", "base", "mid", cheeks="blush")
     call her_main("So... I went to the boys changing room when they were in quidditch practice.", "open", "narrow", "worried", "down")
     m "*CRUNCH*"

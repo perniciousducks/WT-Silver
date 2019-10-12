@@ -1290,7 +1290,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 call her_main("Have a good night, Professor.", "soft", "closed", "base", "mid")
 
             m "(...)"
-            call her_main("See you in class Chang!","grin","glanceL")
+            call her_main("See you in class Chang!", "grin", "narrow", "base", "R_soft")
             call cho_main("*Tzzzz!*","angry","closed","angry","mid")
             call cho_main("Cow...","annoyed","narrow","angry","R")
 

@@ -591,11 +591,11 @@ label ball_ending_E2:
     m "There is something you need to kn--"
     call her_main("Of course sir!", "grin", "happy", "base", "mid",cheeks="blush")
     m "What?"
-    call her_main("Let's just make this quick, alright?","soft","glanceL",cheeks="blush")
+    call her_main("Let's just make this quick, alright?", "soft", "narrow", "base", "R_soft",cheeks="blush")
     g4 "Let's make what quick?"
     call her_main("You want me to thank you for the dress now, don't you, sir?", "base", "narrow", "base", "mid_soft",cheeks="blush")
     m "The dress? No, no that's not why I am here."
-    call her_main("It is fine, sir. I do not mind.","soft","glanceL",cheeks="blush")
+    call her_main("It is fine, sir. I do not mind.", "soft", "narrow", "base", "R_soft",cheeks="blush")
     m "Listen to me, girl! I am not who you think--"
     call her_main("Please, sir, let me suck on your cock a little.", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
     g4 "Gh--!!!"
@@ -877,20 +877,20 @@ label ball_ending_E2:
         pause.5
 
         m "What on earth just happened, girl?!"
-        call her_main("What do you mean, sir?","soft","glanceL",cheeks="blush", ypos="head")
+        call her_main("What do you mean, sir?", "soft", "narrow", "base", "R_soft",cheeks="blush", ypos="head")
         call cg_scene("02")
         call hide_blkfade
 
         m "Do I really need to point this out to you, girl?"
         g4 "{size=+5}Do I really?{/size}"
-        call her_main("Oh... You mean the hair thing...?","soft","glanceL",cheeks="blush")
+        call her_main("Oh... You mean the hair thing...?", "soft", "narrow", "base", "R_soft",cheeks="blush")
         m "Yes...\"the hair thing\"..."
         call her_main("Well, what did you expect me to do, sir?","crooked_smile","worriedCl",cheeks="blush")
         m "Literally anything..."
         g4 "...but {size=+7}THAT!{/size}"
         call her_main("But... I need to look my best for the coronation...", "open", "base", "base", "mid")
         m "And a hairdo full of cum is supposed to ensure that?"
-        call her_main("Well... yes...","soft","glanceL",cheeks="blush")
+        call her_main("Well... yes...", "soft", "narrow", "base", "R_soft",cheeks="blush")
         call her_main("You see, cum is a great hair fixative and--", "open", "base", "base", "mid")
 
         stop music fadeout 1.0
@@ -1408,7 +1408,7 @@ label ball_ending_E2:
         call hide_blkfade
         call ctc
 
-        call her_main("[genie_name]...","soft","glanceL",cheeks="blush",ypos="head")
+        call her_main("[genie_name]...", "soft", "narrow", "base", "R_soft",cheeks="blush",ypos="head")
         call her_main("There was something you wanted to discuss with me?")
         g4 "Not right now, whore!"
         call blkfade
@@ -2238,7 +2238,7 @@ label ball_ending_E2:
         stop music fadeout 1.0
         m "Great speech..."
         m "Very arousing... Ehm, I mean inspiring."
-        call her_main("Thank you, sir.","soft","glanceL",cheeks="blush",ypos="head")
+        call her_main("Thank you, sir.", "soft", "narrow", "base", "R_soft",cheeks="blush",ypos="head")
         m "Swallowing my load in front of the entire school?"
         g9 "Very nice touch."
         call her_main("........................................................","crooked_smile","worriedCl", cheeks="blush")
@@ -2261,7 +2261,7 @@ label ball_ending_E2:
         call her_main("One hasty blowjob is not nearly enough to repay my debt to you, am I right?", "base", "narrow", "base", "mid_soft",cheeks="blush")
         m "What? No, that's not what I--"
         call her_main("It's fine, sir. Really.", "base", "narrow", "base", "mid_soft",cheeks="blush")
-        call her_main("Let me just pull my panties down a little...","soft","glanceL",cheeks="blush")
+        call her_main("Let me just pull my panties down a little...", "soft", "narrow", "base", "R_soft",cheeks="blush")
         g4 "Damn you girl! Will you let me finish!?"
         call her_main("Of course sir...", "base", "narrow", "base", "mid_soft",cheeks="blush")
         m "Huh?"

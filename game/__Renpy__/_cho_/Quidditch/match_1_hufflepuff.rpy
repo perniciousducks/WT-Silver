@@ -416,7 +416,7 @@ label hufflepuff_match:
     with d3
     pause.8
 
-    call her_main("Ugh... thank you for that, professor Dumbledore...","soft","glanceL", flip=True,xpos="120",ypos="base")
+    call her_main("Ugh... thank you for that, professor Dumbledore...", "soft", "narrow", "base", "R_soft", flip=True,xpos="120",ypos="base")
     call her_main("Now, to get this game underway!", mouth="open", eye="closed")
 
     # Player Introduction

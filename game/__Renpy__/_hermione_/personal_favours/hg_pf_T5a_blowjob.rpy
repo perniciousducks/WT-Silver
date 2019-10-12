@@ -272,7 +272,7 @@ label hg_pf_blowjob_T2_intro_E1:
     g9 "Yes you did!"
     call her_main("And not just to earn those points...","disgust","worriedCl")
     m "What? Why else?"
-    call her_main("I did it because I like doing it...","disgust","glanceL")
+    call her_main("I did it because I like doing it...", "disgust", "narrow", "base", "R_soft")
     call her_main("I like sucking cock, [genie_name]!", "soft", "narrow", "base", "mid_soft", cheeks="blush")
 
     g4 "Yes! You dirty slut!"

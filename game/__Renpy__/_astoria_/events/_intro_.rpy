@@ -455,7 +455,7 @@ label astoria_intro_E3:
     call play_music("hermione_theme")
     call her_main("Hello sir.","normal","happy", xpos="mid", ypos="base")
     m "I thought you said you weren't alone?"
-    call her_main("I'm not.","annoyed","glanceL")
+    call her_main("I'm not.", "annoyed", "narrow", "base", "R_soft")
     hide screen hermione_main
     hide screen bld1
     with d3

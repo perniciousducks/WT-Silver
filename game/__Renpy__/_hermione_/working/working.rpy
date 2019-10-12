@@ -61,7 +61,7 @@ label maid_responses:
                 her "I suppose..."
                 m "10 points to Gryffindor"
             elif day_random <= 8:
-                call her_main("Do I really have to keep doing this?","normal","glanceL")
+                call her_main("Do I really have to keep doing this?", "normal", "narrow", "base", "R_soft")
                 m "What do you mean, [hermione_name]?"
                 call her_main("It's so degrading... I have to clean other students rooms!", "open", "narrow", "worried", "down")
                 m "You can stop any time."
@@ -681,7 +681,7 @@ label hermione_helping_selling_cards:
         call her_main("No, I read about it in one of their books actually.", "grin", "happy", "base", "mid_soft")
         call her_main("Much like how you should always put the most lucrative cheap items at the counter to make the customer....", "open", "base", "base", "mid")
         g4 "Get on with it."
-        call her_main("Fine...","annoyed","glanceL", cheeks="blush")
+        call her_main("Fine...", "annoyed", "narrow", "base", "R_soft", cheeks="blush")
         call her_main("I read that by putting the customer in a state of peace and happiness it would make them more susceptible to making hasty decisions.","smile","happyCl", cheeks="blush")
         g9 "Didn't think you'd be interested in such... unorthodox sales tactics..."
         call her_main("I was curious to see if it would work more than anything else.", "base", "closed", "base", "mid", cheeks="blush")

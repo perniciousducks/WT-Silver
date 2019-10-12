@@ -376,7 +376,7 @@ label hg_ps_buttplug:
                     call nar(">You do not have this item.")
                     m "afraid not..."
                     call her_main("well then i think I better be off to class then.", "open", "closed", "base", "mid")
-                    call her_main("{size=-2}unless {size=-2}you {size=-2}have {size=-2}the {size=-2}smaller {size=-2}one?{/size}{image=textheart}","soft","glanceL",cheeks="blush")
+                    call her_main("{size=-2}unless {size=-2}you {size=-2}have {size=-2}the {size=-2}smaller {size=-2}one?{/size}{image=textheart}", "soft", "narrow", "base", "R_soft",cheeks="blush")
                     g9 "It just so happens that I do!"
                     call nar(">You hand her the butt plug.")
 

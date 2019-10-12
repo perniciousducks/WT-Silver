@@ -1274,7 +1274,7 @@ label hermione_intro_E6:
     if current_favor == "show_tongue":
         call her_main("{size=-4}(Hm...){/size}", "annoyed", "narrow", "worried", "down", ypos="head")
         call her_main("{size=-4}(Students show teachers their tongues all the time...){/size}", "soft", "base", "base", "R")
-        call her_main("{size=-4}(Although that's usually when the teacher is not looking...){/size}","base","glanceL")
+        call her_main("{size=-4}(Although that's usually when the teacher is not looking...){/size}", "base", "narrow", "base", "R_soft")
         call her_main("{size=-4}(But there is nothing wrong with what I did today...){/size}", "disgust", "narrow", "worried", "down")
         call her_main("{size=-4}(I earned my house extra points...){/size}","smile","happyCl")
 

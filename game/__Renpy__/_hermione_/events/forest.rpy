@@ -347,7 +347,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     call her_main("Oh... um...", "open", "happy", "base", "R")
     m "It's alright for you to admit that you're a dirty little cumslut, miss granger."
     call her_main("It's not like that!", "upset", "narrow", "annoyed", "mid")
-    call her_main("{size=-10}I just like sucking your dick, OK...{/size}","upset","glanceL")
+    call her_main("{size=-10}I just like sucking your dick, OK...{/size}", "upset", "narrow", "base", "R_soft")
     m "So you don't want me to cover you in cum like the cumslut you are?"
     call her_main("...", "base", "narrow", "worried", "down")
     call her_main("Ugh...", "base", "narrow", "base", "dead")

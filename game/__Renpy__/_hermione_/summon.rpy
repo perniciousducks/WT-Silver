@@ -636,13 +636,13 @@ label hermione_change:
             call her_main("Like what exactly?", "normal", "narrow", "base", "mid_soft")
             m "Nothing to worry about, things will work out..."
             g9 "Nerd..."
-            call her_main("*tsk* ...","soft","glanceL")
-            call her_main("","normal","glanceL")
+            call her_main("*tsk* ...", "soft", "narrow", "base", "R_soft")
+            call her_main("", "normal", "narrow", "base", "R_soft")
         elif her_whoring >= 5 and her_whoring < 19:
             call her_main("I can be a bit nerdy sometimes I suppose..","angry","happyCl", emote="05")
             call her_main("", "base", "base", "base", "mid")
         elif her_whoring >= 19:
-            call her_main("I don't read as much as I used to anymore.","grin","glanceL", emote="05")
+            call her_main("I don't read as much as I used to anymore.", "grin", "narrow", "base", "R_soft", emote="05")
             call her_main("", "base", "narrow", "base", "mid_soft")
     elif temp_name == "Good Girl":
         if her_whoring >=5 and her_whoring < 7:
@@ -663,8 +663,8 @@ label hermione_change:
             call her_main("", "normal", "base", "base", "R", cheeks="blush")
         elif her_whoring >=9 and her_whoring < 19:
             call her_main("Bit of an odd request but...", "normal", "narrow", "base", "down",)
-            call her_main("I like it...","soft","glanceL",cheeks="blush")
-            call her_main("","base","glanceL",cheeks="blush")
+            call her_main("I like it...", "soft", "narrow", "base", "R_soft",cheeks="blush")
+            call her_main("", "base", "narrow", "base", "R_soft",cheeks="blush")
         elif her_whoring >= 19:
             call her_main("Yes, [genie_name].", "base", "narrow", "worried", "mid_soft",cheeks="blush")
     elif temp_name == "Bad Girl":
@@ -805,7 +805,7 @@ label hermione_change:
         elif her_whoring >= 21:
             call her_main("Please, [genie_name], couldn't you call me something else instead?","open","worried")
             m "But where's fun in that?"
-            call her_main("Why do I even bother... *sigh*","soft","glanceL",cheeks="blush")
+            call her_main("Why do I even bother... *sigh*", "soft", "narrow", "base", "R_soft",cheeks="blush")
     elif temp_name == "Mudblood":
         if her_whoring >= 21:
             call her_main("A{w=0.5}...{w=0.5} {size=+6}{b}{cps=20}mud{w=0.5}blood{/cps}{/b}?!{/size}", "shock", "wide", "base", "stare")
@@ -841,7 +841,7 @@ label hermione_change:
                             call her_main("Mad stud?", "soft", "base", "base", "mid")
                             g9 "My dick, your ass, bud."
                             call her_main("really...", "disgust", "narrow", "base", "mid_soft", cheeks="blush")
-                            call her_main("You can be so childish sometimes, [genie_name]...", "annoyed","glanceL", cheeks="blush")
+                            call her_main("You can be so childish sometimes, [genie_name]...", "annoyed", "narrow", "base", "R_soft", cheeks="blush")
                         #"-Leaf bud-":
                         #    jump hermione_talk
                     jump hermione_talk

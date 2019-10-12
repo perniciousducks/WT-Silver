@@ -337,16 +337,16 @@ label hg_pf_grope_T3_E2:
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
-    call her_main("Are you going to grope my breasts today, Sir?","soft","glanceL", ypos="head")
+    call her_main("Are you going to grope my breasts today, Sir?", "soft", "narrow", "base", "R_soft", ypos="head")
     call her_main("Or my bum?....", "soft", "narrow", "base", "mid_soft")
 
     m "*Hmm*... What would you like?"
     if one_out_of_three == 1:
-        call her_main("I wouldn't mind it if you massaged my breasts a little...","soft","glanceL")
+        call her_main("I wouldn't mind it if you massaged my breasts a little...", "soft", "narrow", "base", "R_soft")
     elif one_out_of_three == 2:
         call her_main("I wouldn't mind it if you caressed my bum a bit, Sir...", "soft", "narrow", "worried", "down")
     else:
-        call her_main("I wouldn't mind either today, Sir.","soft","glanceL")
+        call her_main("I wouldn't mind either today, Sir.", "soft", "narrow", "base", "R_soft")
 
     m "Very well then..."
 

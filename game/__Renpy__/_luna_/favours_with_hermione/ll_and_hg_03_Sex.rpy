@@ -509,10 +509,10 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     m "If I remember correctly, you had a similar response on your first time as well..."
     call her_main("[genie_name]!", "shock", "happy", "base", "mid_soft")
     m "Anyway, are you able to take call her back to her room?"
-    call her_main("I'm not allowed in the Ravenclaw common room...","base","glanceL")
+    call her_main("I'm not allowed in the Ravenclaw common room...", "base", "narrow", "base", "R_soft")
     call her_main("I guess I'll just have to take her back to my room...", "grin", "narrow", "base", "down")
     m "I'm sure that's the only reason why..."
-    call her_main("I don't have any idea what you're talking about sir...","base","glanceL")
+    call her_main("I don't have any idea what you're talking about sir...", "base", "narrow", "base", "R_soft")
 
     $ luna_wear_top = True
     $ luna_wear_bottom = True

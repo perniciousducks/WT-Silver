@@ -617,7 +617,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("This isn't bad at all.", "base", "happy", "base", "mid")
     call her_main("I feel...","base","happyCl")
     m "You feel what?"
-    call her_main("I-I feel grea--","annoyed","down")
+    call her_main("I-I feel grea--", "annoyed", "narrow", "worried", "down")
     call nar(">Hermione's eyes go blank and she stares forward blankly.")
     call her_main("What am I?", "grin", "narrow", "base", "dead")
     m "Uhm..."
@@ -650,10 +650,10 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("How did I get here?","upset","wink")
     m "You walked in here about 2 minutes ago."
     call her_main("Huh, I must have forgotten, silly old me.", "base", "happy", "base", "mid")
-    call her_main("So professor, what am I doing here?","base","down")
+    call her_main("So professor, what am I doing here?", "base", "narrow", "worried", "down")
     call her_main("Aaaaaaah!!!!","shock","worriedCl",cheeks="blush")
     call her_main("What happened to my outfit?!","shock","down_raised")
-    call her_main("I can't be seen wearing all this stuff!!!","disgust","down")
+    call her_main("I can't be seen wearing all this stuff!!!", "disgust", "narrow", "worried", "down")
 
     if hermione_wear_top:
 
@@ -732,7 +732,7 @@ label potion_scene_3_3_1: #Hypno potion
         "-Where is your badge, cumslut?!-" if cum_badge_ITEM.unlocked:
             call her_main("Oh no I forgot that!", "soft", "wide", "base", "stare")
             call her_main("I'm soooo sorry!!!","shock","worriedCl",cheeks="blush")
-            call her_main("It's this one, isn't it...","soft","down")
+            call her_main("It's this one, isn't it...", "soft", "narrow", "worried", "down")
             call nar("Hermione conjures an -I {image=textheart} Cum- badge, which magically attaches itself to her breasts.")
 
             $ h_request_wear_body_accs = True
@@ -765,7 +765,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("Once I finish school I want to get a job where all I do is make people happy{image=textheart}!","base","happyCl")
     m "Ok, final question;"
     m "How would you like to make yourself happy?"
-    call her_main("Make myself happy?","annoyed","down")
+    call her_main("Make myself happy?", "annoyed", "narrow", "worried", "down")
     call her_main("But I'm already happy, silly!","base","happyCl")
     m "Even happier."
     call her_main("Even happier? {size=+10}YAY!{/size}","smile","happyCl",emote="06")
@@ -801,7 +801,7 @@ label potion_scene_3_3_1: #Hypno potion
     call nar(">Hermione moves her hands up to her breasts")
     call set_her_action("lift_breasts")
 
-    call her_main("Like this? This feels sooooo gooood!","base","down")
+    call her_main("Like this? This feels sooooo gooood!", "base", "narrow", "worried", "down")
     call her_main("It's like mah hands are moving on their own...", "soft", "narrow", "annoyed", "up")
     call her_main("It's soooo goodd but It's weeeiiird... I need something... anything...","open","worriedCl")
     m "Would you like to touch yourself down there?"
@@ -854,9 +854,9 @@ label potion_scene_3_3_1: #Hypno potion
     call set_her_action("covering")
     call her_main("...", "base", "narrow", "base", "up")
     call set_her_action("pinch")
-    call her_main("I don't know how other girls do it...","annoyed","down")
+    call her_main("I don't know how other girls do it...", "annoyed", "narrow", "worried", "down")
     m "Do what?"
-    call her_main("Stop themselves from coming here and getting you to cover them in yummy cummy!","annoyed","down")
+    call her_main("Stop themselves from coming here and getting you to cover them in yummy cummy!", "annoyed", "narrow", "worried", "down")
     call set_her_action("covering")
     call her_main("I mean I can barely stop mahself coming here everyday!","smile","happyCl")
     m "That's it..."
@@ -928,7 +928,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_chibi("stand","desk","base")
     call hide_blkfade
 
-    call her_main("Well ok... I suppose I'll head to class then.","open","down")
+    call her_main("Well ok... I suppose I'll head to class then.", "open", "narrow", "worried", "down")
     m "About that. I think it'd be better if you went back to your dorm."
     call her_main("Why's that mistah [genie_name] sir?", "annoyed", "base", "base", "mid")
     m "I think you need to have a little nap and let this wear off."

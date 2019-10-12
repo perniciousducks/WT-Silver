@@ -278,7 +278,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
             call her_main("{size=-5}(.........................................){/size}","angry","worriedCl", cheeks="blush")
             call nar(">Hermione keeps on dancing...")
             m "Alright, your shirt is next!"
-            call her_main("My shirt....?","disgust","down", cheeks="blush")
+            call her_main("My shirt....?", "disgust", "narrow", "worried", "down", cheeks="blush")
             hide screen hermione_main
             with d3
 
@@ -427,7 +427,7 @@ label hg_pf_strip_T1_intro_E2:
         call nar(">Hermione is starting to take off her top...")
 
     call her_main("So be it then!", "scream", "base", "angry", "mid", emote="01")
-    call her_main("Just...","open","down")
+    call her_main("Just...", "open", "narrow", "worried", "down")
     call her_main("*groan*","clench","down_raised")
 
     if hermione_wear_top and (h_top == "top_1" or h_top == "top_6"):
@@ -456,7 +456,7 @@ label hg_pf_strip_T1_intro_E2:
         m "..."
         "\"Yes, that's right. Take it off!\"":
             call her_main("Of course!")
-            call her_main("Here it goes!","open","down")
+            call her_main("Here it goes!", "open", "narrow", "worried", "down")
             pause.1
         "\"You need to calm down, [hermione_name]. \"":
             call her_main("Well, {size=+7}EXCUSE ME{/size}, [genie_name]!")
@@ -713,7 +713,7 @@ label hg_pf_strip_T1_E2:
     her "I would really rather not, [genie_name]..."
     m "Why? You are getting quite good at it."
     call her_main(".........................", "annoyed", "narrow", "annoyed", "mid")
-    call her_main("Thirty five house points?","open","down")
+    call her_main("Thirty five house points?", "open", "narrow", "worried", "down")
     m "Sure! The usual rate."
     call her_main("...................", "annoyed", "narrow", "angry", "R")
 
@@ -791,7 +791,7 @@ label hg_pf_strip_T1_E2:
     g9 "Yes! The tits!"
 
     call play_music("playful_tension") # SEX THEME.
-    call her_main("..............","open","down")
+    call her_main("..............", "open", "narrow", "worried", "down")
     call her_main("What if my parents were to find out about this, [genie_name]?","disgust","down_raised")
     call her_main("Mother would never understand...")
     call her_main("As for my father...","upset","wink")
@@ -893,7 +893,7 @@ label hg_pf_strip_T1_watch:
         m "..."
         "{size=-3}\"Good job, [hermione_name]! You sure know how to dance!\"{/size}":
             m "Good job [hermione_name]!"
-            call her_main("..............","disgust","down")
+            call her_main("..............", "disgust", "narrow", "worried", "down")
             m "You have a lot of talent for this!"
             call her_main("Thank you [genie_name].","soft","worriedL", emote="05")
         "{size=-3}\"Hm... This was quite awful...\"{/size}":
@@ -1009,7 +1009,7 @@ label hg_pf_strip_T2_intro_E2:
     call her_main("*Hmm*...", "annoyed", "base", "base", "R", xpos="base", ypos="base")
     call her_main("Sure! Why not...","base","happyCl")
     g9 "Yes?"
-    call her_main("I've been practising a bit more. Mainly just my dancing.","soft","down")
+    call her_main("I've been practising a bit more. Mainly just my dancing.", "soft", "narrow", "worried", "down")
     m "Very good. I'd love to see your progress."
     call her_main("Of course, [genie_name]...","base","glance")
 
@@ -1108,7 +1108,7 @@ label hg_pf_strip_T2:
     call play_music("playful_tension") # SEX THEME.
     call her_main("...","base","glance", xpos="mid", ypos="base")
     m "Yes, very nice."
-    call her_main("...","annoyed","down")
+    call her_main("...", "annoyed", "narrow", "worried", "down")
     call nar(">Hermione hastily starts pulling at her top...")
     m "Slowly, please..."
     m "There's no rush."
@@ -1122,7 +1122,7 @@ label hg_pf_strip_T2:
         call her_main("No, [genie_name].","base","glance")
         call her_main("Just enjoy the show...","soft","glance")
         g9 "I will, [hermione_name]."
-    call her_main("...","base","down")
+    call her_main("...", "base", "narrow", "worried", "down")
     call nar(">Hermione pulls her shirt over her head...")
 
     $ hermione_wear_bra = False
@@ -1140,7 +1140,7 @@ label hg_pf_strip_T2:
 
     if her_tier <= 4:
         call her_main("Must you be so vulgar, [genie_name]?", "annoyed", "closed", "base", "mid")
-        call her_main("..............","annoyed","down")
+        call her_main("..............", "annoyed", "narrow", "worried", "down")
 
         call her_main("[genie_name]?", "open", "base", "base", "mid")
         m "Huh?"
@@ -1175,7 +1175,7 @@ label hg_pf_strip_T2:
                 call her_main("Was she beautiful?", "base", "base", "base", "mid")
                 m "She was so much more than that..."
                 m "She was smart, green and perfect..."
-                call her_main("She was... \"green\"...?","open","down")
+                call her_main("She was... \"green\"...?", "open", "narrow", "worried", "down")
                 call her_main("Are you making fun of me, [genie_name]?", "angry", "base", "angry", "mid")
                 m "Oh, you humans know nothing of true love..."
                 call her_main(".....................................?", "soft", "base", "base", "mid")

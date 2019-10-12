@@ -59,7 +59,7 @@ label hg_pr_kiss:
         m "Are you interested?"
         call her_main("I suppose...", "annoyed", "narrow", "annoyed", "up")
         m "Great. All you need to do is make out with another girl."
-        call her_main("I see...","annoyed","down")
+        call her_main("I see...", "annoyed", "narrow", "worried", "down")
         m "Up for the task, [hermione_name]?"
         call her_main("I suppose...","annoyed","worriedL")
         m "Great. See you after your classes then."
@@ -284,7 +284,7 @@ label hg_pr_kiss_T2_E2:
     her "There is this one girl who is into girls..."
     her "I thought she would be the ideal candidate for my task..."
     her "so I told her that I am curious and that I would like to kiss her..."
-    call her_main("She said that we should go to the girls' restroom for that...","open","down")
+    call her_main("She said that we should go to the girls' restroom for that...", "open", "narrow", "worried", "down")
     her "But I just kissed her right there in the corridor..."
     call her_main("And she kissed me back but...", "open", "base", "base", "mid")
     call her_main("It got weird really fast...","angry","down_raised")
@@ -345,7 +345,7 @@ label hg_pr_kiss_T2_E3:
         "\"Kissing girls? Where?!!\"":
             call her_main("Tsk!......................", "angry", "base", "angry", "mid", emote="01")
 
-    call her_main("Well, I am only asking you this, [genie_name], because...","open","down")
+    call her_main("Well, I am only asking you this, [genie_name], because...", "open", "narrow", "worried", "down")
     call her_main("...it is sort of becoming a new trend in our school...", "angry", "base", "base", "mid")
     her "Some girls are willing to do this simply to catch the attention of the boy they fancy..."
     m "Are you one of those girls, [hermione_name]?"
@@ -420,12 +420,12 @@ label hg_pr_kiss_T3_E1:
     m "Putting him on my \"naughty boys list\" as we speak..."
     call her_main("..........","disgust","glance")
     m "What happened next, [hermione_name]?"
-    call her_main("Oh, right...","open","down")
+    call her_main("Oh, right...", "open", "narrow", "worried", "down")
     her "Well, we made out for a while..."
     her "She was very... passionate."
     call her_main("So I imagine it was quite a spectacle...","angry","wink")
     her "The boys were cheering and whistling..."
-    call her_main("So we decided to \"snowball\" a little...","base","down")
+    call her_main("So we decided to \"snowball\" a little...", "base", "narrow", "worried", "down")
     m "I'm sorry, you decided to do what?"
     call her_main("To \"snowball\", [genie_name].","angry","wink")
     call her_main("It is when one girl spits into another girl's mouth...","base","glance")
@@ -439,7 +439,7 @@ label hg_pr_kiss_T3_E1:
     call her_main("And I had to fight the urge to slap her smug face for doing that...", "angry", "base", "angry", "mid", cheeks="blush")
     call her_main("But I don't think the boys would appreciate that...", "upset", "closed", "base", "mid")
     m "Well... You would be surprised..."
-    call her_main("In any case, After that we kissed some more...","base","down")
+    call her_main("In any case, After that we kissed some more...", "base", "narrow", "worried", "down")
     her "And then the break was over..."
     call her_main("And we had to run to class...","angry","wink")
     m "*Sigh...* Nonchalant and innocent schooldays..."

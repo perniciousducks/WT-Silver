@@ -40,7 +40,7 @@ label equip_makeup:
 
         # else: #Nude
             # call her_main("You want me to take the lipstick off?", "annoyed", "narrow", "annoyed", "up")
-            # call her_main("Alright then...","annoyed","down")
+            # call her_main("Alright then...", "annoyed", "narrow", "worried", "down")
             # hide screen hermione_main
             # with d5
 
@@ -89,7 +89,7 @@ label equip_makeup:
                                 # $ makeup_choice = "fake_cum_3"
                                 # call her_main("Oh. Alright then [genie_name]...", "upset", "narrow", "worried", "mid_soft")
 
-                        # call her_main("{size=-5}(It's a shame this isn't real...){/size}","base","down")
+                        # call her_main("{size=-5}(It's a shame this isn't real...){/size}", "base", "narrow", "worried", "down")
                         # call her_main("Fine, I'll do it [genie_name].","base","glance")
                 # else:
                     # if her_whoring < 8:
@@ -233,12 +233,12 @@ label equip_head_accessory:
                     # if her_whoring < 17:
                         # call her_main("Cat-ears, [genie_name]?","open","worried")
                         # call her_main("(They do look cute...)","base","glance")
-                        # call her_main("...","annoyed","down") #annoyed, down
+                        # call her_main("...", "annoyed", "narrow", "worried", "down") #annoyed, down
                         # m "So, are you going to wear them or not?"
                         # call her_main("Fine, [genie_name]. Let me just put them on real quick.", "soft", "base", "base", "R")
                     # else:
                         # call her_main("They do look cute...","base","glance")
-                        # call her_main("(And they even match my hair!)","base","down")
+                        # call her_main("(And they even match my hair!)", "base", "narrow", "worried", "down")
                         # call her_main("Let me put them on for you.","base","glance")
                 # else:
                     # call her_main("Cat-ears...?","open","worried")
@@ -269,8 +269,8 @@ label equip_head_accessory:
                         # call her_main("Alright. I will wear them.", "soft", "base", "base", "mid")
                         # call her_main("Let me put them on real quick.", "soft", "base", "base", "R")
                     # else:
-                        # call her_main("...","annoyed","down")
-                        # call her_main("They do look cute...","base","down")
+                        # call her_main("...", "annoyed", "narrow", "worried", "down")
+                        # call her_main("They do look cute...", "base", "narrow", "worried", "down")
                         # call her_main("Alright, [genie_name]. I will wear them for you.","base","glance")
                 # else:
                     # call her_main("elf-ears...?","open","worried")

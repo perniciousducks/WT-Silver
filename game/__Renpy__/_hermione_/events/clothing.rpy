@@ -20,7 +20,7 @@ label hermione_summon_setup:
         m "(...)"
         call her_main("Is anything wrong, [genie_name]?", "soft", "base", "base", "mid")
         g4 "Why are you holding all those... \"things\"?"
-        call her_main("My books?","open","down")
+        call her_main("My books?", "open", "narrow", "worried", "down")
         call her_main("I wasn't sure which ones I'd need, so I brought all of them!","grin","happyCl")
         m "Brought them for what?"
         call her_main("My tutoring lessons...","soft","suspicious")
@@ -29,7 +29,7 @@ label hermione_summon_setup:
         m "But we're going to have to do it my way.{w}\nThere's no need for those books."
         call her_main("No need?","normal","worried")
         m "No."
-        call her_main("Too bad, I love books.","annoyed","down")
+        call her_main("Too bad, I love books.", "annoyed", "narrow", "worried", "down")
         hide screen hermione_main
         with d5
         pause.2
@@ -97,7 +97,7 @@ label hermione_summon_setup:
                 if her_whoring < 11:
                     call her_main("Uhm... Thank you, [genie_name].", "soft", "base", "base", "R")
                     call her_main("I normally don't wear something like this.", "open", "base", "base", "mid")
-                    call her_main("(Showing so much cleavage...)","disgust","down", cheeks="blush")
+                    call her_main("(Showing so much cleavage...)", "disgust", "narrow", "worried", "down", cheeks="blush")
                     call her_main("But the weather is just too hot today.", "base", "base", "base", "R")
                     g9 "You should wear this more often!"
                 else:
@@ -148,9 +148,9 @@ label hermione_summon_setup:
                 call her_main("It's a bit cold outside, [genie_name]... and my...", "soft", "base", "base", "R", cheeks="blush")
 
                 if her_whoring < 11:
-                    call her_main("I better not mention it...","disgust","down", cheeks="blush")
+                    call her_main("I better not mention it...", "disgust", "narrow", "worried", "down", cheeks="blush")
                 elif her_whoring < 18:
-                    call her_main("{size=-5}People can see my... my nipples...{/size}","disgust","down", cheeks="blush")
+                    call her_main("{size=-5}People can see my... my nipples...{/size}", "disgust", "narrow", "worried", "down", cheeks="blush")
                 else:
                     call her_main("I can't have my nipples poking out all the time, [genie_name]! It's distracting!", "annoyed", "narrow", "angry", "R")
 
@@ -200,13 +200,13 @@ label hermione_summon_setup:
                 with d3
 
                 call play_music("hermione_theme")
-                call her_main("","disgust","down", xpos="base", ypos="base")
+                call her_main("", "disgust", "narrow", "worried", "down", xpos="base", ypos="base")
                 call ctc
 
                 m "Damn girl. You look drenched..."
                 call her_main("I'm sorry, [genie_name], but... It's raining cats and dogs out there!", "open", "base", "base", "mid")
                 call her_main("I couldn't find my robe so I just put on a sweater and some jeans...", "open", "base", "base", "R")
-                call her_main("I hope you don't mind my uniform not being up for standards. I didn't want it to get wet.","disgust","down")
+                call her_main("I hope you don't mind my uniform not being up for standards. I didn't want it to get wet.", "disgust", "narrow", "worried", "down")
                 m "It's fine, [hermione_name]."
                 g9 "Besides, I wouldn't mind seeing you in jeans more often!"
                 call her_main("Thank you, [genie_name].", "normal", "base", "base", "R")

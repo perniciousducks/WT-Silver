@@ -179,7 +179,7 @@ label slut_scene: #Locked to her being your slut
     call her_main("I am...", "grin", "base", "base", "R")
     hide screen hermione_main
     m "Good, well now that we've established that I have a present for you."
-    call her_main("A present? What is it?","base","down")
+    call her_main("A present? What is it?", "base", "narrow", "worried", "down")
     hide screen hermione_main
     m "It's a lovely necklace to help remember who you are."
 
@@ -212,7 +212,7 @@ label slut_scene: #Locked to her being your slut
     call her_main("Good night [genie_name].","base","glance")
     hide screen hermione_main
     m "Good night. {w}Slut."
-    call her_main("...","base","down")
+    call her_main("...", "base", "narrow", "worried", "down")
 
     call her_walk(action="leave", speed=2.5)
 
@@ -262,7 +262,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     m "See what a good little whore you are. Now if you ask nicely I'll fuck you."
     call her_main("...","angry","down_raised")
     hide screen hermione_main
-    call her_main("Please [genie_name].","open","down")
+    call her_main("Please [genie_name].", "open", "narrow", "worried", "down")
     hide screen hermione_main
     m "Please what?"
     call her_main("Please fuck me...","mad","worried",tears="soft")
@@ -411,7 +411,7 @@ label slave_scene:
     m "Good, make sure you keep your ass nice and tight for me."
     ">You pick up speed and begin to fuck her ass in earnest."
     m "Now tell me girl. Who do you belong to?"
-    call her_main("You.","open","down")
+    call her_main("You.", "open", "narrow", "worried", "down")
     hide screen hermione_main
     m "Good, and who am I?"
     call her_main("Professor Dumbledore.", "grin", "base", "base", "R")
@@ -500,7 +500,7 @@ label slave_scene:
     show screen h_c_u
     ">Hermione pulls herself of the table and kneels in front of you."
     m "Tell me what you are."
-    call her_main("Master's slave.","base","down")
+    call her_main("Master's slave.", "base", "narrow", "worried", "down")
     hide screen hermione_main
     m "That's a good answer. And because you are such a good girl I'm going to give you a present."
 
@@ -526,7 +526,7 @@ label slave_scene:
     call update_her_uniform
 
     m "That look suits you girl."
-    call her_main("Thank you master. Will I be getting any points \ntoday?","base","down")
+    call her_main("Thank you master. Will I be getting any points \ntoday?", "base", "narrow", "worried", "down")
     hide screen hermione_main
     m "Hahaha, of course not. Slaves aren't paid girl, that's what makes them slaves."
     call her_main("I suppose your right.","base","glance")
@@ -560,7 +560,7 @@ label good_girl_scene:
     call her_main("Before I go...", "grin", "base", "base", "R")
     call her_main("Do you think that you could buy a favour off of me?","smile","glance")
     m "Sure, what would you like to do?"
-    call her_main("Well I suppose that I could show you my breasts.","base","down")
+    call her_main("Well I suppose that I could show you my breasts.", "base", "narrow", "worried", "down")
     call her_main("For 50 points of course...","angry","wink")
     m "That seems fair."
     call her_main("Thank you [genie_name].","base","glance")

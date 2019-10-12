@@ -724,10 +724,10 @@ label hg_sex_luna:
     call her_main("Is it sex? {size=-2}Please let it be sex...{/size}", "smile", "base", "base", "R")
     m "You certainly seem eager."
     call her_main(".......","base","glance")
-    call her_main("Well I may have made some plans...","base","down")
+    call her_main("Well I may have made some plans...", "base", "narrow", "worried", "down")
     her "but I can't tell you what..."
     m "well as long as you bend over my desk I don't really care..."
-    call her_main("{image=textheart}{image=textheart}{image=textheart}","base","down")
+    call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "worried", "down")
     stop music fadeout 1.0
     hide screen hermione_main
     call blkfade

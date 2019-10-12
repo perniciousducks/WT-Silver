@@ -315,7 +315,7 @@ label hermione_favor_menu:
                         m "If you do it, you could secure the win for you household you know..."
 
                         if her_whoring >=18:
-                            call her_main("You really know how to talk me through, [genie_name].","soft","down")
+                            call her_main("You really know how to talk me through, [genie_name].", "soft", "narrow", "worried", "down")
                             call her_main("Okay I agree.","open","down_raised")
                             $ hermione_favors_convinced = 2
                             jump silver_requests_root
@@ -631,7 +631,7 @@ label hermione_change:
             call her_main("Fine... I don't mind.", "soft", "base", "base", "R")
     elif temp_name == "Nerd":
         if her_whoring >=3 and her_whoring < 5:
-            call her_main("*sigh* I just enjoy books, that's all.","annoyed","down")
+            call her_main("*sigh* I just enjoy books, that's all.", "annoyed", "narrow", "worried", "down")
             m "I'm sure you'll find other things to enjoy soon enough..."
             call her_main("Like what exactly?","normal","glance")
             m "Nothing to worry about, things will work out..."
@@ -669,7 +669,7 @@ label hermione_change:
             call her_main("Yes, [genie_name].", "base", "narrow", "worried", "mid_soft",cheeks="blush")
     elif temp_name == "Bad Girl":
         if her_whoring >=9 and her_whoring < 11:
-            call her_main("I guess I am a bit.","soft","down")
+            call her_main("I guess I am a bit.", "soft", "narrow", "worried", "down")
             call her_main("I did fail that test after all...","disgust","down_raised")
             call her_main("", "normal", "narrow", "worried", "mid_soft")
             call her_main("", "normal", "base", "base", "mid")
@@ -705,11 +705,11 @@ label hermione_change:
             call her_main("", "base", "base", "base", "mid")
     elif temp_name == "Bitch":
         if her_whoring >=13 and her_whoring < 15:
-            call her_main("Isn't this a bit inappropriate [genie_name]?","mad","down")
+            call her_main("Isn't this a bit inappropriate [genie_name]?", "mad", "narrow", "worried", "down")
             m "And doing favours for house points isn't?"
             call her_main ("Fine...","base","down_raised",cheeks="blush")
         elif her_whoring >= 15 and her_whoring < 17:
-            call her_main("...","normal","down",cheeks="blush")
+            call her_main("...", "normal", "narrow", "worried", "down",cheeks="blush")
             m "Any objections?"
             call her_main("...","soft","worriedL",cheeks="blush")
             g9 "Okay then..."
@@ -736,7 +736,7 @@ label hermione_change:
         if her_whoring >= 17 and her_whoring < 19:
             call her_main("A cumslut?!","open","surprised")
             m "Something wrong?"
-            call her_main("You have to even ask?","soft","down", cheeks="blush")
+            call her_main("You have to even ask?", "soft", "narrow", "worried", "down", cheeks="blush")
             call her_main("This is so degrading...","normal","down_raised",cheeks="blush")
             call her_main("\"But I kinda am a slut begging for cum aren't I...\"","base","happyCl",cheeks="blush")
         elif her_whoring >= 19:
@@ -750,7 +750,7 @@ label hermione_change:
     elif temp_name == "Slytherin Whore":
         if her_whoring >=19 and her_whoring < 21:
             call her_main("Do you really have to call me that, [genie_name]?","disgust","worried")
-            call her_main("Referring to me as a bitch or a slut for your own amusement is one thing...","mad","down",cheeks="blush")
+            call her_main("Referring to me as a bitch or a slut for your own amusement is one thing...", "mad", "narrow", "worried", "down",cheeks="blush")
             call her_main("You're aware of how much I loathe Slytherin.", "open", "narrow", "worried", "mid_soft")
             call her_main("And I'm definitely not a whore...", "soft", "closed", "base", "mid")
             her "I refuse!"
@@ -772,7 +772,7 @@ label hermione_change:
                     m "...I should have known better to believe that this sort of thing would work out..."
                     call her_main("Maybe I coul-...","clench","WorriedCl")
                     m "...I thought we both had what we wanted..."
-                    call her_main("List-...","soft","down")
+                    call her_main("List-...", "soft", "narrow", "worried", "down")
                     call her_main("", "normal", "closed", "angry", "mid")
                     m "...Might as well hand in my resignation with the ministry and..."
                     with hpunch
@@ -781,9 +781,9 @@ label hermione_change:
                     m "..."
                     call her_main("Now please, [genie_name]... Let's just forget this conversation ever happened.","disgust","worried")
                     m "Are you sure that's what you want, [temp_name]?"
-                    call her_main("... Yes.","disgust","down", emote="05")
+                    call her_main("... Yes.", "disgust", "narrow", "worried", "down", emote="05")
                     m "\"This girl really is beyond redemption...\""
-                    call her_main("","base","down")
+                    call her_main("", "base", "narrow", "worried", "down")
                 "-Threaten her-":
                     g4 "Either accept my offer or Gryffindor lose five hundred points..."
                     with hpunch
@@ -835,7 +835,7 @@ label hermione_change:
                                 g9 "Last time I had my dick in you it felt like a mass flood."
                                 call her_main("[genie_name]...", "disgust", "closed", "base", "mid", cheeks="blush")
                                 g9 "What? Its true, I swear!"
-                                call her_main("...", "soft","down", cheeks="blush")
+                                call her_main("...", "soft", "narrow", "worried", "down", cheeks="blush")
                         "-Mad stud-":
                             g4 "I said mad stud!"
                             call her_main("Mad stud?", "soft", "base", "base", "mid")
@@ -848,8 +848,8 @@ label hermione_change:
             call her_main("Why would you even suggest calling me such a thing..", "scream", "squint", "angry", "mid")
             call her_main("It's like the most offensive thing you could call someone like...", "shock", "squint", "angry", "mid", tears="soft")
             call her_main("like...", "open","worriedCl", tears="soft_blink")
-            call her_main("Someone like...", "open","down", tears="mascara_crying")
-            call her_main("me...", "disgust","down", tears="mascara_soft")
+            call her_main("Someone like...", "open", "narrow", "worried", "down", tears="mascara_crying")
+            call her_main("me...", "disgust", "narrow", "worried", "down", tears="mascara_soft")
             call her_main("", "disgust","worriedCl", tears="mascara")
             menu:
                 "-Try to calm her down-":
@@ -880,7 +880,7 @@ label hermione_change:
                     call her_main("...", "normal","worriedCl", tears="mascara_soft")
                     call her_main("", "normal", "narrow", "worried", "mid_soft", tears="mascara")
                     m "I bet you don't even care about the points anymore..."
-                    call her_main("Well...", "normal","down", tears="mascara")
+                    call her_main("Well...", "normal", "narrow", "worried", "down", tears="mascara")
                     call her_main("", "normal", "narrow", "annoyed", "up", tears="mascara")
                     m "You are nothing more than a whore..."
                     call her_main("", "base", "narrow", "annoyed", "up", tears="mascara")
@@ -912,7 +912,7 @@ label hermione_change_fail:
     elif temp_name == "Little Girl":
         call her_main("I won't let you call me that, [genie_name]!", "open", "closed", "angry", "mid")
         if her_whoring >= 5:
-            call her_main("\"I hope they'd grow out more...\"","disgust","down")
+            call her_main("\"I hope they'd grow out more...\"", "disgust", "narrow", "worried", "down")
             call her_main("*sigh*", "annoyed", "closed", "base", "mid")
             call her_main("", "normal", "base", "base", "R")
     elif temp_name == "Bad Girl":

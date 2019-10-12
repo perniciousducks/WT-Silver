@@ -536,7 +536,7 @@ label astoria_intro_E3:
     menu:
         "\"Not now, Miss Granger...\"":
             m "We'll talk about your reward later..."
-            call her_main("But!","disgust","down")
+            call her_main("But!", "disgust", "narrow", "worried", "down")
             m "No butts..." # deliberate.
             call her_main("*hmph*", "annoyed", "narrow", "angry", "R")
             call her_main("Fine...", "open", "closed", "angry", "mid")

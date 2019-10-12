@@ -49,11 +49,11 @@ label equip_misc_item:
                 # "-60 percent-" if her_whoring >= 21:
                     # $ transparency = 0.4
                     # if wardrobe_chitchat_active:
-                        # call her_main("(...)","base","down")
+                        # call her_main("(...)", "base", "narrow", "worried", "down")
                 # "-70 percent-" if her_whoring >= 21:
                     # $ transparency = 0.3
                     # if wardrobe_chitchat_active:
-                        # call her_main("(...)","base","down")
+                        # call her_main("(...)", "base", "narrow", "worried", "down")
                 # "-80 percent-" if her_whoring >= 21:
                     # $ transparency = 0.2
                 # "-All of it-" if her_whoring >= 24:
@@ -69,7 +69,7 @@ label equip_misc_item:
                 # if her_whoring < 18:
                     # call her_main("What do you want to change?","disgust","down_raised")
                 # else:
-                    # call her_main("What would you like to change?","base","down")
+                    # call her_main("What would you like to change?", "base", "narrow", "worried", "down")
 
             # menu:
                 # ">Which item would you like to make transparent?\n>Only items she's currently wearing are listed here."
@@ -132,7 +132,7 @@ label equip_misc_item:
 
                 # call her_main("Are you sure this is the medium size one?","soft","wink")
                 # call her_main("(It still looks so big.)","angry","worriedCl")
-                # call her_main("Fine, I'll wear it... Just give me a second...","disgust","down")
+                # call her_main("Fine, I'll wear it... Just give me a second...", "disgust", "narrow", "worried", "down")
                 # hide screen hermione_main
                 # with d5
                 # pause.2

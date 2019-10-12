@@ -91,7 +91,7 @@ label equip_body_accessory:
                     # if her_whoring < 24:
                         # call her_main("Hm...?", "soft", "base", "base", "mid")
                         # call her_main("An \"I love cum\" badge?","annoyed","suspicious")
-                        # call her_main("{size=-5}(I suppose that it's not a complete lie...){/size}","base","down")
+                        # call her_main("{size=-5}(I suppose that it's not a complete lie...){/size}", "base", "narrow", "worried", "down")
                         # call her_main("Alright, I'll wear it.","base","glance")
                     # else: #24
                         # call her_main("An \"I love cum\" badge?","annoyed","suspicious")
@@ -144,12 +144,12 @@ label equip_body_accessory:
             # #S.P.E.W Basge
             # if body_accessory_choice == "badge_spew":
                 # m "Could you remove that Spew badge again?"
-                # call her_main("Alright. Let me take it off.","annoyed","down")
+                # call her_main("Alright. Let me take it off.", "annoyed", "narrow", "worried", "down")
 
             # #I <3 Cum Badge
             # if body_accessory_choice == "badge_cum":
                 # m "Could you remove that Cum badge again?"
-                # call her_main("Alright. Let me take it off.","annoyed","down")
+                # call her_main("Alright. Let me take it off.", "annoyed", "narrow", "worried", "down")
 
             # hide screen hermione_main
             # with d3

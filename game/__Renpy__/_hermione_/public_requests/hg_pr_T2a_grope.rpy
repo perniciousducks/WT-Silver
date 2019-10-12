@@ -216,7 +216,7 @@ label hg_pr_grope_T1_E3:
     call her_main("......","normal","worriedCl")
     m "Don't make me pull every word out of you, [hermione_name]!"
     m "Then what happened?"
-    call her_main("Well...","open","down")
+    call her_main("Well...", "open", "narrow", "worried", "down")
     stop music fadeout 1.0
     her "I think he was more interested in {size=+5}me{/size} molesting {size=+5}him{/size}..."
     call her_main("He asked me to call him a \"sissy boy\"...","upset","wink")
@@ -316,7 +316,7 @@ label hg_pr_grope_T2_E3:
     her "But the fact that I was doing this as a task entrusted to me by someone else..."
     her "made it easier somehow..."
     m "Happy to help, [hermione_name]."
-    call her_main("I led him to the library...","open","down")
+    call her_main("I led him to the library...", "open", "narrow", "worried", "down")
     her "We found a secluded spot behind one of the book shelves..."
     her "And I told him that he can touch me wherever he wants..."
     her "And...."
@@ -364,13 +364,13 @@ label hg_pr_grope_T3_E1:
     call her_main("Professor Snape snatched it right out of my hand...", "annoyed", "narrow", "angry", "R")
     call her_main("He then read it out loud before the entire class...", "annoyed", "narrow", "annoyed", "mid")
     m "What did the note say?"
-    call her_main("Well...","open","down")
+    call her_main("Well...", "open", "narrow", "worried", "down")
     her "It said: \"You can touch my butt if you want. I bet professor Snape would never notice.\""
     call her_main("Everyone was laughing...","angry","down_raised")
     her "It was so embarrassing I wanted to die..."
     call her_main("I really hate professor Snape, [genie_name]...", "angry", "base", "angry", "mid")
     m "What happened then?"
-    call her_main("Nothing...","open","down")
+    call her_main("Nothing...", "open", "narrow", "worried", "down")
 
     call play_music("playful_tension") # SEX THEME.
     hide screen hermione_main
@@ -445,7 +445,7 @@ label hg_pr_grope_T3_E3:
     m "Interesting..."
     call her_main("She was furious with him at first...", "angry", "base", "base", "mid")
     call her_main("But then...","angry","wink")
-    call her_main("Ehm... She started to touch my breasts as well...","base","down")
+    call her_main("Ehm... She started to touch my breasts as well...", "base", "narrow", "worried", "down")
     call her_main("Almost the same way her boyfriend did just a moment ago...", "smile", "base", "angry", "mid")
     her "Then she turned to him and she said..."
     call her_main("\"I love you baby, and I want to share everything with you...\"", "open", "closed", "base", "mid")

@@ -206,7 +206,7 @@ label hg_pr_blowjob_T1_E3:
     call her_main("But other than that it well surprising well...", "annoyed", "narrow", "annoyed", "mid")
     call play_music("playful_tension") # SEX THEME.
     her "I gave a proper blowjob to this handsome boy from \"Ravenclaw\"..."
-    call her_main("And he was such a gentleman about it...","open","down")
+    call her_main("And he was such a gentleman about it...", "open", "narrow", "worried", "down")
     call her_main("He even warned me when he was about to cum.","angry","down_raised")
     m "A true gentleman indeed."
     m "Did you swallow?"
@@ -236,7 +236,7 @@ label hg_pr_blowjob_T2_intro_E1:
     her "But never could muster up enough courage for..."
     m "Hm..?"
     call her_main("Today I sucked off my two best friends in the entire world!", "soft", "narrow", "annoyed", "up")
-    call her_main("And it was every bit as exciting as I thought it would be.","base","down")
+    call her_main("And it was every bit as exciting as I thought it would be.", "base", "narrow", "worried", "down")
     call her_main("I made their cocks all sloppy with saliva...", "grin", "narrow", "base", "dead")
     her "I sucked on their balls too..."
     call her_main("But the best part was to see their faces...", "silly", "narrow", "annoyed", "up")
@@ -277,7 +277,7 @@ label hg_pr_blowjob_T2_E2:
     m "Seriously?"
     call her_main("Yes, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
     her "That nasty boy from \"Slytherin\" raped me..."
-    call her_main("Or raped my face rather I suppose...","open","down")
+    call her_main("Or raped my face rather I suppose...", "open", "narrow", "worried", "down")
     her "And--"
     play sound "sounds/burp.mp3"
     call her_main("*Burp!*...","shock","worriedCl")

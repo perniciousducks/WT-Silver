@@ -197,7 +197,7 @@ label hg_pf_grope_breasts_T3:
     call hg_chibi_transition("stand_behind_desk", trans="d7")
     pause.8
 
-    call her_main("............","base","down", cheeks="blush", ypos="head")
+    call her_main("............", "base", "narrow", "worried", "down", cheeks="blush", ypos="head")
 
     call play_music("playful_tension") # SEX THEME.
     call nar(">Hermione is starting to pull her uniform up...")
@@ -320,7 +320,7 @@ label hg_pf_grope_breasts_T3_continue:
     #show screen groping_naked_tits
     call ctc
 
-    call her_main("Ah...","open","down")
+    call her_main("Ah...", "open", "narrow", "worried", "down")
 
     call nar(">You squeeze her tits a few more times, then give them a firm tug...")
 
@@ -331,8 +331,8 @@ label hg_pf_grope_breasts_T3_continue:
 
     call nar(">You squeeze her tits again...")
 
-    call her_main("Ah...","open","down")
-    call her_main("I am not lying, [genie_name]...","open","down")
+    call her_main("Ah...", "open", "narrow", "worried", "down")
+    call her_main("I am not lying, [genie_name]...", "open", "narrow", "worried", "down")
     call her_main("Why would I enjoy this?", "open", "base", "base", "mid")
     m "I don't know [hermione_name]. You tell me."
 
@@ -406,7 +406,7 @@ label hg_pf_grope_breasts_T4_naked: # No top.
     call nar(">You give Hermione's tits another loud smack!")
     call slap_her
 
-    call her_main("A-ah!!!","silly","down", cheeks="blush")
+    call her_main("A-ah!!!", "silly", "narrow", "worried", "down", cheeks="blush")
     m "Tell me you like it!"
     her "[genie_name]... I..."
     call nar(">You unleash a whole series of slaps!")

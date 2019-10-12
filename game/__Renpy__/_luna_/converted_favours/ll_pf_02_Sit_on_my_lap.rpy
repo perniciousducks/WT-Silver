@@ -1266,12 +1266,12 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         call her_main("mmmm, what did you have in mind?","base","suspicious")
         call lun_main("Playing with those nice tits of your would probably do it...","base","base","sad","R")
         m "ah... yes..."
-        call her_main("probably...","base","down")
+        call her_main("probably...", "base", "narrow", "worried", "down")
         call her_main("but are you sure it's just him who wants a show?","base","suspicious")
         call lun_main("what?","open","wide","sad","mid", cheeks="blush")
         ">Luna starts grinding even faster."
         call lun_main("what are you talking about?","normal","wide","sad","down", cheeks="blush")
-        call her_main("from the looks of it you don't need any help cranking a nice big load out of [genie_name]...","open","down")
+        call her_main("from the looks of it you don't need any help cranking a nice big load out of [genie_name]...", "open", "narrow", "worried", "down")
         call her_main("so the only reason you'd bring me up here to show of my tits...","base","glance")
         call her_main("is so you can get a look as well...","base","suspicious")
         call her_main("not that I mind...", "smile", "base", "base", "R")
@@ -1287,7 +1287,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         call her_main("see, that's not so hard now is it?","base","suspicious")
         call lun_main("no...","base","seductive","sad","mid", cheeks="blush")
         ">Luna slows down, but starts grinding her mound hard against your cock."
-        call her_main("now why don't you too perverts just sit back and relax...","base","down")
+        call her_main("now why don't you too perverts just sit back and relax...", "base", "narrow", "worried", "down")
         call set_her_action("lift_breasts")
         call her_main("while I give you something fun to look at ok?", "grin", "base", "base", "R")
         call lun_main("yes hermione...","base","base","sad","mid", cheeks="blush")
@@ -1300,7 +1300,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         m "probably..."
         call her_main("and what about you?","base","glance")
         call set_her_action("covering")
-        call her_main("how do you feel?","base","down")
+        call her_main("how do you feel?", "base", "narrow", "worried", "down")
         call lun_main("so good...","base","seductive","sad","down", cheeks="blush")
         call lun_main("...","base","mad","sad","up", cheeks="blush")
         ">luna tilts her hips back, grinding as much of her sex against you as possible..."
@@ -1349,7 +1349,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         call her_main("feel better you two?","base","glance")
         call lun_main("yes...","base","mad","sad","up", cheeks="blush")
         m "ah... you sluts..."
-        call her_main("well come on then luna, we've got some studying to do. Can you pay us now, [genie_name]?","base","down")
+        call her_main("well come on then luna, we've got some studying to do. Can you pay us now, [genie_name]?", "base", "narrow", "worried", "down")
 
         m "Alright, alright. Here's your gold and points."
         $ gryffindor += 25

@@ -110,7 +110,7 @@ label change_hair:
                     # call her_main("Let me just change it.","base","glance")
                 # else: #20+
                     # call her_main("Brown, [genie_name]?","upset","wink")
-                    # call her_main("(But I liked having my hair stand out...)","annoyed","down")
+                    # call her_main("(But I liked having my hair stand out...)", "annoyed", "narrow", "worried", "down")
                     # call her_main("Fine, [genie_name]... {w=0.9}let me go change it.", "base", "base", "base", "R")
 
             # #Blonde #Done
@@ -119,14 +119,14 @@ label change_hair:
                 # if her_whoring >= 5:
                     # if her_whoring < 11:
                         # call her_main("Blonde?...","upset","wink")
-                        # call her_main("(It looks decent enough... {w=0.9}maybe I should try something new once in a while...)","annoyed","down")
+                        # call her_main("(It looks decent enough... {w=0.9}maybe I should try something new once in a while...)", "annoyed", "narrow", "worried", "down")
                         # call her_main("Ok, [genie_name]... {w=0.9}Let me go change it.", "base", "base", "base", "mid")
                     # elif her_whoring < 20:
                         # call her_main("Blonde?", "base", "base", "base", "mid")
                         # call her_main("Alright, [genie_name].", "soft", "base", "base", "R")
                         # call her_main("Let me just change it real quick.","base","glance")
                     # else: #20+
-                        # call her_main("That barely even looks like blonde!","annoyed","down")
+                        # call her_main("That barely even looks like blonde!", "annoyed", "narrow", "worried", "down")
                         # call her_main("Don't you have anything brighter?","angry","wink")
                         # m "You going to wear it or not?"
                         # call her_main("Fine,... Let me go change it.", "annoyed", "narrow", "annoyed", "mid")
@@ -144,7 +144,7 @@ label change_hair:
                 # if her_whoring >= 5:
                     # if her_whoring < 11:
                         # call her_main("Red, [genie_name]?", "open", "base", "base", "mid")
-                        # call her_main("It looks a lot like Ginny's hair-colour...","base","down")
+                        # call her_main("It looks a lot like Ginny's hair-colour...", "base", "narrow", "worried", "down")
                         # m "Genie?"
                         # call her_main("Ginny Weasley, [genie_name].", "open", "closed", "base", "mid")
                         # m "..."
@@ -193,7 +193,7 @@ label change_hair:
                 # m "Would you dye your hair black for me?"
                 # if her_whoring >= 8:
                     # if her_whoring < 17:
-                        # call her_main("Black, [genie_name]?","annoyed","down")
+                        # call her_main("Black, [genie_name]?", "annoyed", "narrow", "worried", "down")
                         # call her_main("(It does look nice.)", "annoyed", "base", "base", "R")
                         # call her_main("I will try it! Let me go and change it.", "soft", "base", "base", "R")
                     # else: #17+
@@ -227,7 +227,7 @@ label change_hair:
                         # call her_main("Green is my favourite colour.","base","glance")
                         # m "Really? what about red?"
                         # call her_main("Hmm... no, [genie_name].", "annoyed", "base", "base", "R")
-                        # call her_main("Red is such an aggressive colour.","open","down")
+                        # call her_main("Red is such an aggressive colour.", "open", "narrow", "worried", "down")
                         # call her_main("Green one the other hand is soft and sweet...", "soft", "base", "base", "R")
                         # call her_main("It always reminds me of nature, grassy fields in the summer, the smell of flowers everywhere...", "open", "base", "base", "R")
                         # call her_main("I really love it!","smile","happyCl")

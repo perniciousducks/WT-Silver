@@ -151,7 +151,7 @@ label hg_pr_sex_T1_E3:
     m "I see..."
     m "What did you do afterwards?"
     m "Pulled up your panties and went about your business as if nothing happened?"
-    call her_main("My panties?","open","down")
+    call her_main("My panties?", "open", "narrow", "worried", "down")
     call her_main("I rarely bother to wear them anymore, [genie_name].", "annoyed", "narrow", "angry", "R")
     m "Oh really?"
     call her_main("Yes... I find not wearing any underwear very empowering.", "annoyed", "narrow", "annoyed", "mid")
@@ -168,7 +168,7 @@ label hg_pr_sex_T1_E4:
     m "[hermione_name], did you complete your task?"
     call play_music("playful_tension") # SEX THEME.
     call her_main("I did, [genie_name].", "upset", "closed", "base", "mid")
-    call her_main("I took one of the \"Ravenclaw\" boys to the girl's restroom...","base","down")
+    call her_main("I took one of the \"Ravenclaw\" boys to the girl's restroom...", "base", "narrow", "worried", "down")
     her "...and let him have his way with me in one of the stalls."
     m "Well done, [hermione_name]."
     call her_main(".....................", "annoyed", "narrow", "angry", "R")

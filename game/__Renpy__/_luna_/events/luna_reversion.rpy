@@ -451,7 +451,7 @@ label luna_revert_1: #Reversion event #DONE
     call lun_main("Ugh... where am I?","normal","suspicious","sad","R")
     call her_main("Shhh, it's alright.","base","glance")
     call lun_main("Hermione? What's happening?","normal","suspicious","sad","mid")
-    call her_main("Nothing... Professor Dumbledore and I just needed your help.","base","down")
+    call her_main("Nothing... Professor Dumbledore and I just needed your help.", "base", "narrow", "worried", "down")
     call lun_main("What with?","upset","angry","sad","mid")
     call lun_main("And what's this stuff on-","normal","mad","sad","R")
     call her_main("Shhh, that doesn't matter right now.", "soft", "happy", "base", "R")
@@ -1204,7 +1204,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     call lun_walk("mid","leave",2)
 
     m "[hermione_name]? Are you OK?"
-    call her_main("agh... what happened?","open","down")
+    call her_main("agh... what happened?", "open", "narrow", "worried", "down")
     call her_main("Was Luna lovegood here?","upset","wink")
     m "Who?"
     call her_main("never mind...","normal","worriedCl")

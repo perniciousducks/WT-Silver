@@ -30,7 +30,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     m "Miss Granger? What are you doing out here at this time of night?"
     call her_main("[genie_name]! I, ugh, I wasn't doing anything bad, I swear!","open","wideL",xpos="right",ypos="base",trans="d5")
     m "..."
-    call her_main("Ugh, fine! If you must know, I was out here gathering up some mastick resin.","upset","down")
+    call her_main("Ugh, fine! If you must know, I was out here gathering up some mastick resin.", "upset", "narrow", "worried", "down")
     call her_main("I know Students aren't {i}technically{/i} supposed to touch the stuff since it's normally just used to make belch powder...", "annoyed", "base", "base", "R")
     call her_main("But I'm using it in my research for a non addictive analgesic!", "open", "closed", "base", "mid")
     m "Whatever..."
@@ -41,7 +41,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
             call her_main("Really?","upset","shocked")
             "You mean you don't want to..."
             m "Maybe some other time."
-            call her_main("...","upset","down")
+            call her_main("...", "upset", "narrow", "worried", "down")
             show screen blkfade
             with d3
             ">You turn away from the miffed young girl."
@@ -340,7 +340,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     call her_main("Not always... Sometimes I just come out her to enjoy the cool air...", "soft", "base", "base", "R",xpos="right",ypos="base",trans="d5")
     m "I see..."
     m "So you're not waiting out here for your headmaster to arrive, just so you can suck his cock in public?"
-    call her_main("What! o-of course not!","base","down")
+    call her_main("What! o-of course not!", "base", "narrow", "worried", "down")
     call her_main("I'm just out here to admire the moon!", "base", "base", "base", "R")
     m "What moon?"
     ">Hermione frantically looks to the cloudy sky, unable to even glimpse the moon through the impenetrable greyness."
@@ -349,7 +349,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     call her_main("It's not like that!", "upset", "narrow", "annoyed", "mid")
     call her_main("{size=-10}I just like sucking your dick, OK...{/size}","upset","glanceL")
     m "So you don't want me to cover you in cum like the cumslut you are?"
-    call her_main("...","base","down")
+    call her_main("...", "base", "narrow", "worried", "down")
     call her_main("Ugh...", "base", "narrow", "base", "dead")
     show screen blkfade
     with d3
@@ -855,7 +855,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     m "Oh, she left as soon as I gave her the OK to blab on about you."
     call her_main("WHAT?", "scream", "wide", "base", "stare")
     call her_main("you mean she didn't see any of...", "upset", "narrow", "annoyed", "mid")
-    call her_main("(I got my hair all sticky for nothing...)","upset","down")
+    call her_main("(I got my hair all sticky for nothing...)", "upset", "narrow", "worried", "down")
     m "So are you going to clean yourself up and get dressed?"
     call her_main("I'll get dressed...", "soft", "base", "base", "R")
     call her_main("but If it's all the same to you, I might leave the cum on...", "base", "narrow", "base", "dead")

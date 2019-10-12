@@ -60,7 +60,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
                 call her_main("Hmmm, can't you tell me what kind of potion it is?","annoyed","suspicious")
                 call her_main("Polyjuice? Amortentia? Babbling Beverage? Felix Felicis?","grin","worriedCl",emote="05")
                 m "That's going to have to stay a secret [hermione_name]."
-                call her_main("...","annoyed","down")
+                call her_main("...", "annoyed", "narrow", "worried", "down")
                 m "Well [hermione_name], what do you say? Will you drink a harmless little potion?"
                 m "For Gryffindor?"
                 call her_main("Fine...", "open", "closed", "base", "mid")
@@ -107,7 +107,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
     else:
         call her_main("Now will you at least tell me what this potion does?", "angry", "base", "base", "mid",tears="soft")
         m "It should be noticeable any second now..."
-        call her_main("Well? Is it supposed to make my breasts bigger? They don't feel any bigger.","annoyed","down")
+        call her_main("Well? Is it supposed to make my breasts bigger? They don't feel any bigger.", "annoyed", "narrow", "worried", "down")
         m "No. Hmmmm, it mustn't have worked."
         call her_main("What was it supposed to do?", "annoyed", "narrow", "annoyed", "up")
         m "There's no point in telling you now. It was going to be a surprise."

@@ -612,7 +612,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         call her_main("really?","upset","wink")
         call lun_main("I mean he says talk...","normal","angry","mad","R")
         call lun_main("but I think we both know he wants to sit there and stroke that filthy old cock of his while we do all the talking.","base","seductive","angry","mid")
-        call her_main("typical...","base","down")
+        call her_main("typical...", "base", "narrow", "worried", "down")
         call her_main("so what did you want me here for?","base","glance")
         call lun_main("I figured you could lend a hand... plus this way we both get paid.","normal","angry","angry","R")
         call her_main("Aw, that's so sweet luna!","base","worriedCl")
@@ -634,7 +634,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         call lun_main("Just listen to our voices while you stroke yourself...","base","mad","angry","mid")
         call her_main("mmmm... he loves it when you tell him a story...","base","suspicious")
         call lun_main("Really? What sort?","base","seductive","sad","R")
-        call her_main("how about the time we nearly got caught during blowjob practice...","base","down")
+        call her_main("how about the time we nearly got caught during blowjob practice...", "base", "narrow", "worried", "down")
         $ luna_flip = -1
         call lun_main("What? Not that one!","open","wide","sad","mid")
         m "What happened?"
@@ -655,7 +655,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         m "{size=-2}(mmmm...){/size}"
         call her_main("it was going well when all of a sudden a few second years came into the common room...","angry","wink")
         call lun_main("you said it was going to be empty!","normal","wide","sad","mid", cheeks="blush")
-        call her_main("it was incredible sir... she swallowed the whole thing...","base","down")
+        call her_main("it was incredible sir... she swallowed the whole thing...", "base", "narrow", "worried", "down")
         g4 "{size=+4}(agh...){/size}"
         g4 "{size=+4}yes...{/size}"
         call her_main("she hid all 6 inches of it in her mouth... down her throat...","base","glance")

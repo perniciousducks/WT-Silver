@@ -173,7 +173,7 @@ label hg_pr_flash_T1_E1:
     m "Just tell me what happened, [hermione_name]."
     call her_main("That is the thing, [genie_name]...", "open", "base", "base", "mid")
     her "Nothing happened..."
-    call her_main("I just couldn't bring myself to do it...","open","down")
+    call her_main("I just couldn't bring myself to do it...", "open", "narrow", "worried", "down")
     m "I see..."
     m "Well, I can't just give you the points for nothing, [hermione_name]."
     call her_main("Of course, [genie_name]... I understand...", "open", "closed", "base", "mid")
@@ -201,7 +201,7 @@ label hg_pr_flash_T1_E2:
     m "Sort of?"
     call her_main("Yes... uhm...", "open", "base", "base", "mid")
     her "Well, I decided to try and flash them to this \"hufflepuff\" boy..."
-    call her_main("I've been waiting for the right moment...","open","down")
+    call her_main("I've been waiting for the right moment...", "open", "narrow", "worried", "down")
     her "I was worried that something would go wrong..."
     call her_main("And, of course, everything that could - did...", "annoyed", "narrow", "angry", "R")
     call her_main("When I tried to expose myself to the boy...", "open", "base", "base", "mid")
@@ -307,7 +307,7 @@ label hg_pr_flash_T2_E1:
     m "Enough of this. Did you complete your task or not?"
     call her_main("Yes I did...", "upset", "closed", "base", "mid")
     m "And?"
-    call her_main("And that is all I am going to say...","open","down")
+    call her_main("And that is all I am going to say...", "open", "narrow", "worried", "down")
     call her_main("........", "upset", "closed", "base", "mid")
     m ".........."
     her "........"
@@ -424,7 +424,7 @@ label hg_pr_flash_T3_E1:
     call her_main("Pulled my shirt up...")
     call her_main("And then I just sat there like that for a while...", "open", "base", "base", "mid")
     $ sc34CG(3, 12)
-    call her_main("trying to get some studying done...","open","down")
+    call her_main("trying to get some studying done...", "open", "narrow", "worried", "down")
     her "I don't think there were many people around..."
     call her_main("Or at least I hope so...","angry","down_raised")
     $ sc34CG(3, 13)

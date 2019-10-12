@@ -1269,7 +1269,7 @@ label ll_pf_blowjob_T1_summon:
     m "Ugh... that's it, slut..."
     $ lunCG(pos=8)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
-    call her_main("...","smile","down")
+    call her_main("...", "smile", "narrow", "worried", "down")
     m "Mmmm... Make them jiggle!"
     $ lunCG(pupil='up', eye='wide', pos=16)
     ">You start bucking your hips to facefuck Luna while Hermione unknowingly encourages you on..."
@@ -1443,7 +1443,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG('', 'mad', '', 'ahegao', pos=14)
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=4)
-    call her_main("But maybe that's what you two want...","grin","down")
+    call her_main("But maybe that's what you two want...", "grin", "narrow", "worried", "down")
     $ lunCG(pos=8)
     call her_main("Maybe you were waiting for someone else to walk in and catch you...","grin","down_raised")
     $ lunCG(pos=12)

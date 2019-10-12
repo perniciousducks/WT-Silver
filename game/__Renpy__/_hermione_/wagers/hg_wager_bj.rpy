@@ -462,7 +462,7 @@ label hg_wager_bj:
                                         call u_pause_ani
                                         call her_main("Happy?","normal","happyCl", cheeks="blush")
                                         m "I just lost the game and one of my bottles of wine..."
-                                        call her_main("And a higher than average amount of 2 to 5ml by the looks of it...","open","down", cheeks="blush")
+                                        call her_main("And a higher than average amount of 2 to 5ml by the looks of it...", "open", "narrow", "worried", "down", cheeks="blush")
                                         g9 "That is true..."
                                         call her_main("are you still deducting those points [genie_name].","normal","down_raised", cheeks="blush")
                                     "-Don't give him anything-":
@@ -548,9 +548,9 @@ label hg_wager_bj:
                                     m "Never mind..."
                                 else:
                                     $ achievement.unlock("flashback")
-                                    call her_main("........","annoyed","down")
+                                    call her_main("........", "annoyed", "narrow", "worried", "down")
                                 m "We're done for today [hermione_name]."
-                                call her_main("What about the points...","annoyed","down")
+                                call her_main("What about the points...", "annoyed", "narrow", "worried", "down")
                                 g4 "Points?"
                                 g9 "Oh yes, the points!"
                                 g9 "20 points to gryffindor..."

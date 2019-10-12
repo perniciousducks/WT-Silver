@@ -288,13 +288,13 @@ label hg_pf_grope_T3_intro_E1:
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
-    call her_main("[genie_name].....?","base","down", ypos="head")
+    call her_main("[genie_name].....?", "base", "narrow", "worried", "down", ypos="head")
     m "..."
 
     menu:
         "\"I'm gonna molest your tits now.\"":
             #call nar(">You reach out swiftly and grab both of her tits through her uniform...")
-            call her_main("..........","base","down")
+            call her_main("..........", "base", "narrow", "worried", "down")
 
             jump hg_pf_grope_breasts_T3
 
@@ -311,7 +311,7 @@ label hg_pf_grope_T3_intro_E2:
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
-    call her_main("[genie_name].....?","soft","down", ypos="head")
+    call her_main("[genie_name].....?", "soft", "narrow", "worried", "down", ypos="head")
     m "Yes?"
     call her_main("Are you going to grope my breasts again?", "soft", "base", "base", "mid")
     call her_main("Or my bum?....","soft","glance")
@@ -319,13 +319,13 @@ label hg_pf_grope_T3_intro_E2:
 
     menu:
         "\"I'm gonna play with your tits today.\"":
-            call her_main("Of course, Sir.","base","down")
+            call her_main("Of course, Sir.", "base", "narrow", "worried", "down")
             call nar(">You reach out swiftly and grab both of her tits through her uniform...")
 
             jump hg_pf_grope_breasts_T3
 
         "\"I'm gonna play with your butt today.\"":
-            call her_main("Of course, Sir.","base","down")
+            call her_main("Of course, Sir.", "base", "narrow", "worried", "down")
             call nar(">You reach out and place your hand under her skirt...")
             jump hg_pf_grope_ass_T3
 
@@ -344,7 +344,7 @@ label hg_pf_grope_T3_E2:
     if one_out_of_three == 1:
         call her_main("I wouldn't mind it if you massaged my breasts a little...","soft","glanceL")
     elif one_out_of_three == 2:
-        call her_main("I wouldn't mind it if you caressed my bum a bit, Sir...","soft","down")
+        call her_main("I wouldn't mind it if you caressed my bum a bit, Sir...", "soft", "narrow", "worried", "down")
     else:
         call her_main("I wouldn't mind either today, Sir.","soft","glanceL")
 

@@ -153,7 +153,7 @@ label a_bad_time_to_disrobe_part_1:
 
     g9 "{size=18}30 POINTS TO....{/size}"
 
-    call her_main("I'm not done!","open","down", tears="mascara")
+    call her_main("I'm not done!", "open", "narrow", "worried", "down", tears="mascara")
     m "Sorry, you carry on my dear!"
     call her_main("I ran out and grabbed what I could of my clothes... I think the boy may have seen me.", "soft", "narrow", "worried", "mid_soft", tears="mascara")
     call her_main("Professor.... I'm beginning to have second thoughts about this cloak idea.", "soft", "narrow", "worried", "mid_soft", tears="mascara")
@@ -221,7 +221,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("...", "normal", "narrow", "annoyed", "mid")
     call her_main("Do you happen to have any idea of where it is?", "open", "base", "base", "mid")
     m "Well, it hasn't been reported as found so unless someone stole it there's only one place it could be."
-    call her_main("The boys changing room?","base","down")
+    call her_main("The boys changing room?", "base", "narrow", "worried", "down")
     g9 "The boys changing room."
     call her_main("And how many house points?", "base", "base", "base", "mid")
     m "For what exactly?"
@@ -229,7 +229,7 @@ label a_bad_time_to_disrobe_part_2:
     m "You're demanding house points, for your own mistakes miss Granger?"
     call her_main("But I thought...","upset","worried")
     m "..."
-    call her_main("...","upset","down")
+    call her_main("...", "upset", "narrow", "worried", "down")
     m "Fine, but only if we continue where we left of."
     call her_main("With my butt out?!?","disgust","surprised")
     m "With your bu..."
@@ -273,7 +273,7 @@ label a_bad_time_to_disrobe_part_2:
     m "Mission success?"
     call her_main("...", "normal", "narrow", "base", "dead", cheeks="blush")
     m "Miss Granger?"
-    call her_main("Oh, hello professor, yes. Here's your cloak back.","base","down")
+    call her_main("Oh, hello professor, yes. Here's your cloak back.", "base", "narrow", "worried", "down")
     m "..."
     m "And?"
     call her_main("And what?","normal","worriedCl")
@@ -288,14 +288,14 @@ label a_bad_time_to_disrobe_part_2:
     g9 "Magic cupboard."
     call her_main("Right... well, I'll just start in that case shall I?","base","glanceL")
     call her_main("...", "base", "base", "base", "mid", cheeks="blush")
-    call her_main("So... I went to the boys changing room when they were in quidditch practice.","open","down")
+    call her_main("So... I went to the boys changing room when they were in quidditch practice.", "open", "narrow", "worried", "down")
     m "*CRUNCH*"
     call her_main("It's very messy in there... I thought the girls changing room was bad...","base","down_raised")
     m "*CRUNCH* *Chew* *Chew*"
     m "*CRUNCH*"
     call her_main("Anyway... so I rummaged around in that mess...","annoyed","worried")
     call her_main("I knew it had to have been somewhere between the showers and the doorway...", "base", "base", "base", "mid")
-    call her_main("After looking around for a while I noticed that the cloak had been pushed under one of the benches lining the wall.","open","down")
+    call her_main("After looking around for a while I noticed that the cloak had been pushed under one of the benches lining the wall.", "open", "narrow", "worried", "down")
     call her_main("So I grabbed it and I thought I might as well disrobe and hide in the shower room with the cloak on.","base","down_raised")
     call her_main("But as I was stuffing my clothes in one of the lockers a boy walked in.","clench","worried")
     m "*CRUNCH*"
@@ -312,7 +312,7 @@ label a_bad_time_to_disrobe_part_2:
     g9 "Not that smart..."
     call her_main("Do you want me to continue or not?", "annoyed", "narrow", "annoyed", "mid")
     m "You're the one receiving the points here, I'm just providing the means of earning them."
-    call her_main("...","normal","down")
+    call her_main("...", "normal", "narrow", "worried", "down")
     call her_main("As I was saying...","base","down_raised")
     call her_main("I went into one of the toilets and I heard the boy shuffling outside.", "base", "closed", "base", "mid")
     call her_main("The room was so small so I tried to back into a corner, but as he came in I knew it wasn't going to work...","base","down_raised", cheeks="blush")
@@ -327,7 +327,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("I guess he wasn't paying attention to what sensation he was feeling on the tip of his...","normal","worried", cheeks="blush")
     call her_main("Anyway...","open","worriedL", cheeks="blush")
     m "..."
-    call her_main("I'd like my points now.","base","down")
+    call her_main("I'd like my points now.", "base", "narrow", "worried", "down")
     m "Certainly miss Granger..."
     m "40 points to Gryffindor!"
     call her_main("Thank you professor...","soft","soft")
@@ -335,7 +335,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_walk(xpos="door", ypos="base", speed=2.5)
 
     call her_main("\"I'm glad I had time to clean the cloak before walking in here...\"", "base", "narrow", "base", "dead", cheeks="blush",ypos="head")
-    call her_main("\"That thing was massive...\"","normal","down",ypos="head")
+    call her_main("\"That thing was massive...\"", "normal", "narrow", "worried", "down",ypos="head")
     call her_main("\"What am I thinking? snap out of it...\"","base","worriedCl", cheeks="blush",ypos="head")
 
     call her_chibi("leave")

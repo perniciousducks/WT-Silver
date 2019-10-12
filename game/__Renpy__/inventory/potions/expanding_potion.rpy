@@ -36,7 +36,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     m "There's nothing wrong with you. If anything, it's an improvement."
     call her_main("What is?", "annoyed", "narrow", "annoyed", "mid")
     call nar(">She starts patting down her body. Checking to see if she has grown any new ears or a tail.")
-    call her_main("I don't see what you could be...","open","down")
+    call her_main("I don't see what you could be...", "open", "narrow", "worried", "down")
     call nar(">She grabs her breasts to check them.")
     call her_main("!!!","angry","down_raised")
     call her_main("Have my breasts gotten bigger?", "angry", "wide", "base", "stare")
@@ -342,12 +342,12 @@ label potion_scene_2_2: #ass expansion
             pause.5
 
             show screen bld1
-            call her_main("Yes [genie_name].","base","down")
+            call her_main("Yes [genie_name].", "base", "narrow", "worried", "down")
             m "Oh I almost forgot, 20 points to Gryffindor!"
             $ gryffindor += 20
             call her_main("Oh... right, the points. Thank you.", "grin", "narrow", "base", "dead")
             call nar(">Hermione picks up her skirt and attempts to put it on. Her ass is so huge that it barely covers half of it.")
-            call her_main("...","open","down")
+            call her_main("...", "open", "narrow", "worried", "down")
 
         "-Hot dog her-" if her_whoring >= 17:
             m "Bend over [hermione_name]."

@@ -38,7 +38,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("hello Professor...", "base", "closed", "base", "mid")
         call her_main("oh, hi luna! what's he got you up here for today? Another handjob?","base","suspicious")
         call lun_main("not quite...","base","angry","base","R")
-        call her_main("so he's finally asked for a blowjob then?","base","down")
+        call her_main("so he's finally asked for a blowjob then?", "base", "narrow", "worried", "down")
         call lun_main("Mhmmm.","base","seductive","base","mid")
         call her_main("great! I was hoping he'd ask for one soon. practising on a dildo is one thing, but there's no substitute for the real deal!", "soft", "narrow", "annoyed", "up")
         m "You've been practising?"
@@ -62,7 +62,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         g4 "But if you bite my cock off you're both getting expelled!"
         call lun_main("Pffft... as if you could have us expelled for failing to give a good blowjob...","base","angry","angry","R")
         m "Watch me..."
-        call her_main("can we just get started?","base","down")
+        call her_main("can we just get started?", "base", "narrow", "worried", "down")
         m "..."
         call her_main("good... now take off your clothes luna.", "open", "closed", "base", "mid")
         call lun_main("do I have to?","pout","seductive","sad","R")
@@ -286,7 +286,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("Hmmm, I'm not sure if you're ready for that just yet...","grin","worriedCl")
         call lun_main("Whatever... now about our payment [lun_genie_name]...","normal","suspicious","angry","R")
         m "Yes, yes. How does 60 points to \"gryffindor\" for Hermione and 150 gold for you sound?"
-        call her_main("Actually we wanted to talk to you about that [genie_name]...","base","down")
+        call her_main("Actually we wanted to talk to you about that [genie_name]...", "base", "narrow", "worried", "down")
         call her_main("Luna and I have been talking, and we're not sure it's fair that we both are paid in separate currencies.","base","worriedCl")
         call her_main("We think it would be more fair if we're both paid points and gold.", "base", "closed", "base", "mid")
         m "Really? I'm surprised miss lovegood would agree to that."
@@ -343,7 +343,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("hello Professor!", "base", "closed", "base", "mid")
         call her_main("hey luna! what does he want this time? Another blowjob?","base","suspicious")
         call lun_main("Mhmmm...","base","seductive","base","mid")
-        call her_main("great!!!","base","down")
+        call her_main("great!!!", "base", "narrow", "worried", "down")
         call her_main("You're going to love it [genie_name], she's been practising every chance she could since last time!", "soft", "narrow", "annoyed", "up")
         m "really? I didn't expect her to be so enthusiastic..."
         call lun_main("*hmph* it's not like I'm excited about this...","normal","seductive","angry","R")
@@ -358,7 +358,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         m "I can hardly believe it..."
         call lun_main("shut up! both of you!","normal","wide","angry","R", cheeks="blush")
         m "..."
-        call her_main("Alright... let's get started then.","base","down")
+        call her_main("Alright... let's get started then.", "base", "narrow", "worried", "down")
         call lun_main("finally...","base","seductive","sad","down", cheeks="blush")
         show screen blkfade
         with d3

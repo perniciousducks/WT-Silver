@@ -114,7 +114,7 @@ label ball_quest_E1:
                 elif d_flag_03:
                     m "So I suggest that you stop being selfish and get naked for me!"
 
-                call her_main("You are completely right, [genie_name]!","open","down")
+                call her_main("You are completely right, [genie_name]!", "open", "narrow", "worried", "down")
                 call her_main("I must do this. Everyone depends on me.", "upset", "closed", "base", "mid")
                 call her_main("Just give me a second please...","base","glance")
                 hide screen hermione_main
@@ -505,11 +505,11 @@ label ball_quest_E4:
     call her_main("Not really...","open","worried")
     call her_main("Not at all actually...", "annoyed", "narrow", "angry", "R")
     m "Hm..?"
-    call her_main("But that is not a big deal...","annoyed","down")
+    call her_main("But that is not a big deal...", "annoyed", "narrow", "worried", "down")
     her "I'm just overreacting..."
 
     call play_music("despair")
-    call her_main("I won't be able to attend the ball this year... so what?","annoyed","down")
+    call her_main("I won't be able to attend the ball this year... so what?", "annoyed", "narrow", "worried", "down")
     call her_main("I spent countless hours with organizing the event...","normal","worriedCl")
     call her_main("I worked so hard... and...","open","worried", tears="soft")
     call her_main("And now I will not even be able to... to... *Sob!*", "shock", "base", "base", "R", cheeks="blush", tears="soft")

@@ -185,7 +185,7 @@ label hg_pf_strip_T2_Snape:
 
     call ctc
 
-    call her_main("...................","open","down")
+    call her_main("...................", "open", "narrow", "worried", "down")
     call sna_main("Hm... You are being suspiciously quiet, Miss Granger.","snape_05")
     call her_main("{size=-4}(Oh no! Is he onto us?){/size}", "shock", "wide", "base", "stare")
     call her_main("I'm just doing what the headmaster told me to, Professor Snape...","grin","worriedCl", emote="05")
@@ -234,7 +234,7 @@ label hg_pf_strip_T2_Snape:
             g4 "Severus!"
             call sna_main("Alright, alright, I see your point...","snape_17")
             m "[hermione_name], are you going to strip or are you going to climb on my desk to give us a better view?"
-            call her_main("Ehm...","open","down")
+            call her_main("Ehm...", "open", "narrow", "worried", "down")
             m "Take of your skirt, [hermione_name]!"
             call her_main("Yes, [genie_name]...", "soft", "base", "base", "mid")
 
@@ -284,7 +284,7 @@ label hg_pf_strip_T2_Snape:
     call ctc
 
     sna "Hm..."
-    call her_main("........................","open","down")
+    call her_main("........................", "open", "narrow", "worried", "down")
     m "Yes, much better!"
 
     call nar(">Hermione keeps on dancing, while she's Wearing nothing but her shirt now...")
@@ -320,7 +320,7 @@ label hg_pf_strip_T2_Snape:
             call sna_main("!!?","snape_08")
             call sna_main("Albus, please, not in front of the girl!","snape_17")
             m "Alright, alright..."
-            call her_main("{size=-5}(Ginny...){/size}","open","down")
+            call her_main("{size=-5}(Ginny...){/size}", "open", "narrow", "worried", "down")
 
         "\"How would you grade Hermione's butt?\"":
             call sna_main("miss Granger's buttocks?","snape_05")
@@ -331,7 +331,7 @@ label hg_pf_strip_T2_Snape:
             call nar(">Professor Snape gives Hermione's buttocks an appraising look...")
             call her_main(".........?","upset","wink")
             call sna_main("I would say...","snape_13")
-            call her_main("............?!","base","down")
+            call her_main("............?!", "base", "narrow", "worried", "down")
             call sna_main("Yes... \"{size=+5}F-{/size}\".","snape_09")
             call her_main("(What?!)", "shock", "wide", "base", "stare")
             call sna_main("Unsatisfactory...","snape_09")

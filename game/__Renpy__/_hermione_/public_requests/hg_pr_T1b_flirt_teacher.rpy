@@ -291,7 +291,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
 
                 "\"Show me or I won't pay you!\"":
                     call her_main("What?!","scream","wide_stare")
-                    call her_main("...............","annoyed","down")
+                    call her_main("...............", "annoyed", "narrow", "worried", "down")
                     call her_main("..................","annoyed","worriedL")
                     call her_main("Well, alright, but only to clear my idol's name...", "angry", "base", "angry", "mid")
                     pause.5
@@ -445,7 +445,7 @@ label hg_pr_flirt_teacher_T3_E2: # Snape +CG
 
     call her_main("Well, during classes today...", "open", "base", "base", "mid", ypos="head")
     call her_main("I have been doing my best to attract professor Snape's attention...", "open", "base", "base", "R", ypos="head")
-    call her_main("I have been giving him \"dreamy looks\"...","open","down", ypos="head")
+    call her_main("I have been giving him \"dreamy looks\"...", "open", "narrow", "worried", "down", ypos="head")
     call her_main("And I've been eyeing his crotch...", "soft", "base", "base", "R", ypos="head")
     m "You..."
     m "Eyed his crotch?"

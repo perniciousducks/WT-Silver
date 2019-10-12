@@ -2088,13 +2088,13 @@ label ball_ending_E2:
         call sna_main("You decided to show up after all? What an unpleasant surprise...","snape_04")
         call her_main("...............................", "full", "narrow", "annoyed", "up",cheeks="blush",tears="mascara", ypos="head")
         call sna_main("What happened to your face, girl?","snape_13")
-        call her_main(".......................................","full","down",cheeks="blush",tears="mascara")
+        call her_main(".......................................", "full", "narrow", "worried", "down",cheeks="blush",tears="mascara")
         call sna_main("Hm... Well, go ahead then...","snape_13")
         call sna_main("Here is the tiara...","snape_13")
 
         $ h_hat                    = "tiara"
         $ h_request_wear_hat       = True
-        call her_main(".......................................","full","down",cheeks="blush",tears="mascara")
+        call her_main(".......................................", "full", "narrow", "worried", "down",cheeks="blush",tears="mascara")
 
         call sna_main("And the stage is yours...","snape_13")
         pause.7
@@ -3056,7 +3056,7 @@ label ball_ending_E3:
         call her_main("There is no need to be so shy about this, sir. It's alright.")
         dum_[1]"*ahem*... here it is."
         call her_main("Thank you, sir.", "base", "base", "base", "mid")
-        call her_main("Let's see....","annoyed","down")
+        call her_main("Let's see....", "annoyed", "narrow", "worried", "down")
         hide screen hermione_main
         with d3
         stop music fadeout 7.0

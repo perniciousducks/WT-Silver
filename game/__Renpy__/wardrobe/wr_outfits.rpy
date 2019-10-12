@@ -31,7 +31,7 @@ label equip_outfit:
                 # if her_whoring >= 11: #Success
                     # call her_main("Your maid? Does that mean I have to wear one of those silly outfits?","open","wink")
                     # g9 "Absolutely!"
-                    # call her_main("...","normal","down")
+                    # call her_main("...", "normal", "narrow", "worried", "down")
                     # call her_main("Fine...", "open", "base", "base", "R")
                     # call her_main("And you expect me to clean up for you too?","open","wink")
                     # m "No, actually. Just put on the outfit."
@@ -185,7 +185,7 @@ label equip_outfit:
                 # if her_whoring >= 15: #Success
                     # call her_main("Hmm, a bit tight it seems. The hat is cute though.","open","wink")
                     # g9 "So you'll wear it?"
-                    # call her_main("...","normal","down")
+                    # call her_main("...", "normal", "narrow", "worried", "down")
                     # call her_main("Fine...", "open", "base", "base", "R")
                     # call her_main("You did beat me fair and square...","open","wink")
                     # m "Great, perhaps you'll win next rematch..."
@@ -219,7 +219,7 @@ label equip_outfit:
                     # m "You will?"
                     # call her_main("Of course! I like her. She's a great role model for young girls, after all!", "open", "closed", "base", "mid")
                     # if outfit_choice == hg_costume_power_girl_ITEM:
-                        # call her_main("Although... That cleavage on her is a bit much.","disgust","down")
+                        # call her_main("Although... That cleavage on her is a bit much.", "disgust", "narrow", "worried", "down")
                         # g9 "But that's the best part!"
                         # call her_main("Why doesn't that suprise me. That you would think so...", "annoyed", "base", "angry", "mid")
                     # call her_main("Just let me put it on...","smile","glance")
@@ -295,7 +295,7 @@ label equip_outfit:
                 # m "What?"
                 # m "No... I'm talking about Lara Croft..."
                 # if her_whoring >= 17:
-                    # call her_main("...","annoyed","down")
+                    # call her_main("...", "annoyed", "narrow", "worried", "down")
                     # call her_main("Fine, if I have to.", "open", "closed", "base", "mid")
                     # call her_main("Let me go and change.", "annoyed", "base", "base", "R")
                 # else:
@@ -322,18 +322,18 @@ label equip_outfit:
                 # if her_whoring >= 17: #Success
                     # m "Here it is."
                     # call nar(">You hand her the outfit.")
-                    # call her_main("It looks really old-fashioned...","disgust","down")
+                    # call her_main("It looks really old-fashioned...", "disgust", "narrow", "worried", "down")
                     # if outfit_choice == hg_witch_skimpy_ITEM:
                         # call her_main("And why is there a hole down there?", "disgust", "slit", "low", "stare")
                         # g9 "It's great, isn't it!"
                         # call her_main("No it isn't! Do you really expect me to show of my pussy like that, to everyone?", "angry", "base", "angry", "mid")
                         # m "Well, only to me..."
                         # m "I believe you can cover it up with a spell or something..."
-                        # call her_main("Oh...","annoyed","down")
+                        # call her_main("Oh...", "annoyed", "narrow", "worried", "down")
                         # call her_main("You should have told me that first!", "annoyed", "narrow", "annoyed", "mid")
                     # else:
                         # g9 "It's great, isn't it!"
-                        # call her_main("Not really...","annoyed","down")
+                        # call her_main("Not really...", "annoyed", "narrow", "worried", "down")
                     # g9 "Just put it on, my little witch."
                     # call her_main("Fine... Give me a minute...", "smile", "base", "base", "R")
                 # else: #Fail
@@ -357,11 +357,11 @@ label equip_outfit:
                 # m "(Phew, that was close...)"
                 # call nar(">You hand her the outfit.")
                 # if her_whoring >= 11: #Success
-                    # call her_main("It does look nice...","soft","down")
+                    # call her_main("It does look nice...", "soft", "narrow", "worried", "down")
                     # if outfit_choice == hg_costume_elizabeth_ITEM:
-                        # call her_main("(I really like her necklace...)","smile","down")
+                        # call her_main("(I really like her necklace...)", "smile", "narrow", "worried", "down")
                     # if outfit_choice == hg_costume_yennefer_ITEM:
-                        # call her_main("(I really like her scarf...)","smile","down")
+                        # call her_main("(I really like her scarf...)", "smile", "narrow", "worried", "down")
                     # call her_main("Let me put it on real quick.","smile","glance")
                 # else: #Fail
                     # call her_main("It's a corset, [genie_name]!","open","wink")

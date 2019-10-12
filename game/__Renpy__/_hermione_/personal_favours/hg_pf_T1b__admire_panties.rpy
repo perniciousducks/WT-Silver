@@ -47,7 +47,7 @@ label hg_pf_admire_panties:
         m "[current_payout] points to \"Gryffindor\", [hermione_name]. Well done."
 
     if hg_pf_admire_panties.counter == 1: #First time.
-        call her_main("Another [current_payout] points...","base","down")
+        call her_main("Another [current_payout] points...", "base", "narrow", "worried", "down")
         call her_main("Can't wait to tell the guys!","smile","happyCl")
         call her_main("Only that I can't actually tell them about any of this...", "annoyed", "narrow", "angry", "R")
 
@@ -254,7 +254,7 @@ label hg_pf_admire_panties_T3_intro_E1:
         m "[hermione_name], I'd like you to show me your panties, if that's not too much trouble."
     else:
         m "[hermione_name], I'd like you to show me your panties again, if that's not too much trouble."
-    call her_main("Oh...","open","down")
+    call her_main("Oh...", "open", "narrow", "worried", "down")
     call her_main("Okay...","base","down_raised", cheeks="blush")
 
     call hide_characters
@@ -277,7 +277,7 @@ label hg_pf_admire_panties_T3_intro_E1:
 
     # No Panties!
     g4 "Where are your panties, [hermione_name]?"
-    call her_main("Oh, lately I just don't feel like wearing them...","base","down", cheeks="blush")
+    call her_main("Oh, lately I just don't feel like wearing them...", "base", "narrow", "worried", "down", cheeks="blush")
 
     menu:
         "\"You little slut!\"":
@@ -313,7 +313,7 @@ label hg_pf_admire_panties_T3_intro_E1:
 
 label hg_pf_admire_panties_T3_E1:
     m "[hermione_name], I'd like you to show me your panties again if possible."
-    call her_main("Oh...","open","down")
+    call her_main("Oh...", "open", "narrow", "worried", "down")
     call her_main("Well, that might be an issue...","base","down_raised", cheeks="blush")
 
     call hide_characters
@@ -333,7 +333,7 @@ label hg_pf_admire_panties_T3_E1:
 
     # No Panties!
     g9 "No panties again, [hermione_name]?"
-    call her_main("Well... what's the point if they're just going to be in the way all the time...","base","down", cheeks="blush")
+    call her_main("Well... what's the point if they're just going to be in the way all the time...", "base", "narrow", "worried", "down", cheeks="blush")
 
     menu:
         "\"You little slut!\"":
@@ -398,7 +398,7 @@ label hg_pf_admire_panties_T3_E1:
 label hg_pf_admire_panties_T3_E2:
 
     m "[hermione_name], show me those cute panties of yours again."
-    call her_main("Oh...","open","down")
+    call her_main("Oh...", "open", "narrow", "worried", "down")
     call her_main("Okay...","base","down_raised", cheeks="blush")
 
     call hide_characters

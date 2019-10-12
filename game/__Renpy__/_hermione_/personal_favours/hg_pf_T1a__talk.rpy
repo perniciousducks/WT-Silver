@@ -133,7 +133,7 @@ label hg_pf_talk_T1: # Call label
             m "Yes, what a tragedy that was..."
             call her_main("Exactly! I'm glad you understand, [genie_name].", "open", "base", "angry", "mid")
 
-    call her_main("Come to think of it, I don't feel like talking about it anymore...","annoyed","down")
+    call her_main("Come to think of it, I don't feel like talking about it anymore...", "annoyed", "narrow", "worried", "down")
     m "Alright, what else has happened lately?"
     call her_main("Em... Well, I'm doing pretty well at herbology...", "annoyed", "base", "base", "R")
     call her_main("I mean, I always score the top marks, but I have been studying really hard anyway...", "open", "closed", "base", "mid")
@@ -337,7 +337,7 @@ label hg_pf_talk_T3_intro_E1:
     call her_main("Are you going to...{w=0.8} touch yourself again sir?","open","suspicious")
     m "I can't guarantee I won't...."
     m "You will be awarded with house points - as usual."
-    call her_main("...","mad","down", cheeks="blush") #mad Blush
+    call her_main("...", "mad", "narrow", "worried", "down", cheeks="blush") #mad Blush
     m "You've not walked out the door so please, tell me about your day."
 
     call hg_pf_talk_T3
@@ -409,12 +409,12 @@ label hg_pf_talk_T3:
     call her_main("We had muggle studies.", "base", "base", "base", "mid")
     call her_main("Professor Burbage babbled on about things she doesn't understand as usual.", "open", "base", "base", "R")
     call her_main("As I'm a muggle born I've been considering dropping the subject. It's a waste of time.", "base", "base", "base", "mid")
-    call her_main("Although since I failed that test I feel like I need all the extra points I can get...","open","down")
+    call her_main("Although since I failed that test I feel like I need all the extra points I can get...", "open", "narrow", "worried", "down")
     call her_main("Her views on muggle and wizarding relations and the fact that we're not that different is also quite refreshing...", "base", "happy", "base", "mid_soft")
     call her_main("Not that the Slytherins aren't constantly trying to disrupt her classes...","annoyed","happyCl")
     if masturbating:
         m "*Hmm* I bet they were...."
-        call her_main("*UGH* Do you have to keep touching yourself professor?","disgust","down", cheeks="blush")
+        call her_main("*UGH* Do you have to keep touching yourself professor?", "disgust", "narrow", "worried", "down", cheeks="blush")
         m "Just keep talking [hermione_name]..."
         call her_main("Fine...", "annoyed", "narrow", "angry", "R", cheeks="blush")
     else:
@@ -429,7 +429,7 @@ label hg_pf_talk_T3:
     call her_main("There's obviously nothing that stands out as odd to me in any way.", "open", "base", "base", "mid", cheeks="blush")
     call her_main("But since most of the Slytherins are pure-blood they were handling her items with little to no care.", "mad", "base", "base", "R")
     call her_main("So when they weren't silently insulting her about her views they were constantly making suggestive remarks about the objects asking where she'd insert that one...","annoyed","worriedL")
-    call her_main("She's quite oblivious to it most of the time but the constant giggling from the Slytherin girls is very distracting and annoying.","open","down", cheeks="blush")
+    call her_main("She's quite oblivious to it most of the time but the constant giggling from the Slytherin girls is very distracting and annoying.", "open", "narrow", "worried", "down", cheeks="blush")
     call her_main("It didn't help when they discovered what professor Burbage actually believed to be a back massager...","angry","happyCl", cheeks="blush")
     m "I mean, that's what it says on the box..."
     g4 "Wait, how do you know what people usually use them for?"
@@ -445,20 +445,20 @@ label hg_pf_talk_T3:
     g9 "Why don't {size=+4}you{/size} tell me since you seem so knowledgeable about the subject..."
     call her_main("Sorry?","mad","worried", cheeks="blush")
     m "What {size=+4}would{/size}{w=0.6} they use those massagers for?"
-    call her_main("Well, you know...","open","down", cheeks="blush")
+    call her_main("Well, you know...", "open", "narrow", "worried", "down", cheeks="blush")
     m "Pretend that I don't."
     call her_main("...","normal","down_raised", cheeks="blush")
 
     if masturbating:
         call her_main("They'd use it for what you're doing...","open","worriedCl")
         m "Which is..."
-        call her_main("Well, you'd insert it...{w=0.5} and use it to...","normal","down", cheeks="blush")
+        call her_main("Well, you'd insert it...{w=0.5} and use it to...", "normal", "narrow", "worried", "down", cheeks="blush")
         m "To what?"
         her "To pleasure yourself..."
         m "And are you using one of these devices?"
         call her_main("Of...{w=0.5} of course I'm not!{w=0.5} Muggle electronics don't work at Hogwarts!","base","happyCl", cheeks="blush")
         g9 "So you have one at home then?"
-        call her_main("I...","normal","down", cheeks="blush")
+        call her_main("I...", "normal", "narrow", "worried", "down", cheeks="blush")
         g9 "(I knew it, you dirty slut!)"
         call her_main("I don't have to talk about my personal health to you!", "open", "narrow", "angry", "R", cheeks="blush")
         g9 "I bet you use it any chance you get when nobody is around!"
@@ -484,7 +484,7 @@ label hg_pf_talk_T3:
             $ her_mood = +7
             call her_main("[genie_name]...{w} did you just..?","disgust","down_raised", ypos="head")
         else:
-            call her_main("[genie_name]...{w} did you just..?","soft","down", ypos="head")
+            call her_main("[genie_name]...{w} did you just..?", "soft", "narrow", "worried", "down", ypos="head")
 
         call hide_characters
         hide screen bld1
@@ -514,7 +514,7 @@ label hg_pf_talk_T3:
         call her_main("You've soiled your entire desk!", "mad", "wide", "base", "stare")
         m "I'm sure it will be cleaned at one point or another..."
         call her_main("Gross...","normal","worriedCl", cheeks="blush")
-        call her_main("May I have my points now?","open","down", cheeks="blush")
+        call her_main("May I have my points now?", "open", "narrow", "worried", "down", cheeks="blush")
         m "Of course..."
 
     else:
@@ -637,7 +637,7 @@ label hg_pf_talk_tonks:
     call her_main("", "base", "base", "base", "mid")
     m "Now, I thought we could have a chat about these favour trading allegations..." #changed 'think' to 'thought'
     m "That you most kindly brought to Miss Tonks' attention."
-    call her_main("Oh, those...","open","down")
+    call her_main("Oh, those...", "open", "narrow", "worried", "down")
     m "Unless you've suddenly changed your mind on that sort of thing?"
     call her_main("...", "normal", "base", "base", "R")
     call her_main("No, I'll talk about it - if you like...","open","down_raised", cheeks="blush")
@@ -670,7 +670,7 @@ label hg_pf_talk_tonks:
             call ton_main("","horny","base","base","down")
             call her_main("There's the time Tracey Davis gave Slughorn a lap dance, in the middle of class!", "annoyed", "narrow", "angry", "R", cheeks="blush")
             call ton_main("In the middle of class?","angry","wide","wide","wide")
-            call her_main("Yes...","disgust","down", cheeks="blush")
+            call her_main("Yes...", "disgust", "narrow", "worried", "down", cheeks="blush")
             call ton_main("Oh my...","base","base","sad","mid", hair="horny")
             call her_main("She was just sitting on his lap while he taught from his desk...", "open", "base", "base", "R", cheeks="blush")
             call her_main("But we could all see her moving her hips!", "annoyed", "base", "base", "R", cheeks="blush")
@@ -682,7 +682,7 @@ label hg_pf_talk_tonks:
             if not hermione_wear_panties:
                 m "(Is she even wearing any herself right now?...)"
             call her_main("It was if a snail had dragged themselves across one of the seats.", "annoyed", "base", "base", "R", cheeks="blush")
-            call her_main("I had to insist on staying after class - and I spent a good 10 minutes scourgifying everything.","disgust","down", cheeks="blush")
+            call her_main("I had to insist on staying after class - and I spent a good 10 minutes scourgifying everything.", "disgust", "narrow", "worried", "down", cheeks="blush")
             call ton_main("Why bother, the elves would've done it anyway.","open","base","base","R")
             call her_main("About that-{w=0.6}{nw}", "open", "squint", "angry", "mid")
             call ton_main("Actually, let's save that topic for another time...","open","happyCl","base","mid")
@@ -700,7 +700,7 @@ label hg_pf_talk_tonks:
             call her_main("I know... It angers me to the core...","annoyed","worried")
             call ton_main("","upset","base","sad","L", hair="basic")
             call her_main("Everyone has been working so hard towards winning the cup... I have been working so hard...","open","worried", cheeks="blush")
-            call her_main("The way it is right now doesn't promote fairness at all.","annoyed","down")
+            call her_main("The way it is right now doesn't promote fairness at all.", "annoyed", "narrow", "worried", "down")
             call ton_main("I can see how that could be a problem...","open","closed","base","mid")
             call her_main("It's a huge problem!", "angry", "base", "angry", "mid")
             call ton_main("","base","base","worried","L")
@@ -768,11 +768,11 @@ label hg_pf_talk_tonks:
             call ton_main("Don't be so shy, girl. I'm happy that you took my advice to heart...","open","base","base","L", hair="basic")
             call ton_main("After all, it's thanks to you that the ministry sent me here.","base","base","base","L")
             call her_main("I guess...","disgust","down_raised", cheeks="blush")
-            call her_main("I assure you that I was actually against the practice - during the time of sending the letter...","annoyed","down", cheeks="blush")
+            call her_main("I assure you that I was actually against the practice - during the time of sending the letter...", "annoyed", "narrow", "worried", "down", cheeks="blush")
             call her_main("At least, until we had our talk about it, Professor.", "soft", "base", "base", "R", cheeks="blush")
             if masturbating:
                 m "(And we've only just started...)"
-            call her_main("To help my house catch up in points. Doing it to help Gryffindor...","soft","down", cheeks="blush")
+            call her_main("To help my house catch up in points. Doing it to help Gryffindor...", "soft", "narrow", "worried", "down", cheeks="blush")
             if masturbating:
                 g9 "(And because you love it...)"
             call ton_main("Well, if you can't beat them...","horny","base","base","R", hair="horny")
@@ -787,7 +787,7 @@ label hg_pf_talk_tonks:
             call her_main("I've told you both about it... In detail!", "annoyed", "base", "angry", "mid")
             call ton_main("I see... I probably wrote it down and put it somewhere in my...{w=0.8} extensive notes folder...","upset","base","sad","R")
             m "{size=-5}(*Heh!* It's like looking at myself in a mirror...){/size}" # Small text
-            call her_main("(...)","annoyed","down")
+            call her_main("(...)", "annoyed", "narrow", "worried", "down")
             call her_main("The \"M.R.M\" is there to provide male students with the same fairness, righteousness, and just benefits that girls are receiving at the school.", "open", "closed", "base", "mid")
             call her_main("I felt its creation was necessary...", "annoyed", "base", "base", "mid")
 
@@ -822,7 +822,7 @@ label hg_pf_talk_tonks:
         m "[tmp_word] times..."
         call her_main("*Hmpf*...", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call ton_main("And I suppose you're against the idea of doing favours for another teacher?","horny","base","raised","L", hair="horny")
-    call her_main("I...","angry","down", cheeks="blush")
+    call her_main("I...", "angry", "narrow", "worried", "down", cheeks="blush")
     call her_main("*Umm*... maybe I could?", "soft", "base", "base", "R", cheeks="blush")
     call her_main("I haven't actively considered it...","soft","glance", cheeks="blush")
     if masturbating:
@@ -912,7 +912,7 @@ label hg_pf_talk_tonks:
                 else:
                     g9 "The latter!"
                 call ton_main("Oh my... What girl would do such a shameful thing...","open","base","sad","mid")
-                call her_main("...","disgust","down", cheeks="blush")
+                call her_main("...", "disgust", "narrow", "worried", "down", cheeks="blush")
                 call ton_main("Are you blushing, Miss Granger?","base","base","angry","L")
                 call her_main("...","disgust","down_raised", cheeks="blush")
 
@@ -928,13 +928,13 @@ label hg_pf_talk_tonks:
                 if masturbating:
                     g9 "(If only there was a reason to give you some punishment...)"
                     "*fap-fap-fap*"
-                call her_main("I see...","normal","down")
+                call her_main("I see...", "normal", "narrow", "worried", "down")
                 call her_main("Well, that's good to hear...", "open", "closed", "base", "mid")
                 call her_main("I would have just handed her over to the authorities, if it was up to me...", "open", "base", "angry", "mid")
                 call her_main("Anyway...", "open", "closed", "base", "mid")
 
             else:
-                call her_main("...","annoyed","down", cheeks="blush")
+                call her_main("...", "annoyed", "narrow", "worried", "down", cheeks="blush")
                 call ton_main("Miss Granger?","base","base","raised","L")
                 call her_main("*Uhm*...", "annoyed", "base", "base", "R", cheeks="blush")
                 call her_main("Well, I could prick any of the girls in \"Slytherin\", really...", "soft", "narrow", "angry", "R")
@@ -946,7 +946,7 @@ label hg_pf_talk_tonks:
             call ton_main("No reason... please continue...","open","base","raised","R", cheeks="blush", hair="horny")
             call ton_main("","base","base","raised","mid", hair="basic")
             call her_main("Well, I do hope that Hagrid is above this favour trading business. He sure seems like it during my classes with him.", "open", "base", "base", "R")
-            call her_main("One of those \"Slytherin\" students was being quite rough with a Blast-ended skrewt... making it go off on purpose...","annoyed","down")
+            call her_main("One of those \"Slytherin\" students was being quite rough with a Blast-ended skrewt... making it go off on purpose...", "annoyed", "narrow", "worried", "down")
 
             if masturbating:
                 call her_main("She was slowly moving it up and down, only agitating it a bit initially...", "annoyed", "base", "base", "mid")
@@ -956,7 +956,7 @@ label hg_pf_talk_tonks:
                 call her_main("I was just about to call her out on it, as it started shaking violently.", "open", "base", "base", "R")
                 g4 "(Yes, any second now...)"
                 call ton_main("Then what happened?","open","base","raised","L", cheeks="blush")
-                call her_main("I could momentarily see the concerned look on her face, as the skrewt exploded right into it...","open","down", cheeks="blush")
+                call her_main("I could momentarily see the concerned look on her face, as the skrewt exploded right into it...", "open", "narrow", "worried", "down", cheeks="blush")
                 call ton_main("","horny","base","angry","mid", cheeks="blush", hair="horny")
                 g4 "(Yes, take it right on your face you slut!)"
 
@@ -1002,7 +1002,7 @@ label hg_pf_talk_tonks:
                 call her_main("...", "annoyed", "base", "base", "R")
                 call ton_main("That's not how you're supposed to care for a Blast-ended skrewt...","open","closed","angry","mid")
                 call ton_main("Wait, what is a Blast-ended skrewt actually?","upset","base","sad","L")
-                call her_main("It's some crossbreed that Hagrid made... I don't know exactly how he managed it...","annoyed","down")
+                call her_main("It's some crossbreed that Hagrid made... I don't know exactly how he managed it...", "annoyed", "narrow", "worried", "down")
                 call ton_main("Sounds to me that this Hagrid fellow has been doing some illegal breeding...","upset","base","raised","mid")
                 m "*Ahem*..."
                 call ton_main("Although, all things considered!","open","closed","base","mid")
@@ -1022,7 +1022,7 @@ label hg_pf_talk_tonks:
                 call ton_walk(action="leave", speed=2.5)
 
         "\"Yourself.\"":
-            call her_main("Well...","angry","down")
+            call her_main("Well...", "angry", "narrow", "worried", "down")
             call ton_main("Yes...","base","base","raised","L")
             call ton_main("What does our Headmaster ask of you? To earn those house points.","horny","base","angry","mid", hair="horny")
             g4 "..."
@@ -1071,7 +1071,7 @@ label hg_pf_talk_tonks:
                         m "(This should be good...)"
                     call her_main("W-...What would you like to know about then?", "open", "base", "base", "R", cheeks="blush")
                     call ton_main("I'd be happy with anything you'd like to tell me...","base","base","base","L")
-                    call her_main("Well... it's quite embarrassing.","disgust","down", cheeks="blush")
+                    call her_main("Well... it's quite embarrassing.", "disgust", "narrow", "worried", "down", cheeks="blush")
                     call ton_main("Yes?","horny","base","raised","L")
                     if hg_pf_strip.counter > 1:
                         call her_main("Well, he made me dance for him...","open","glanceL", cheeks="blush")

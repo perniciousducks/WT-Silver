@@ -695,7 +695,7 @@ label cho_intro_E3:
                 m "Because you are being unreasonable."
                 call her_main("But you made it sound like it was something important to you!", "disgust", "narrow", "worried", "mid_soft")
                 m "And you believe that I'd just throw point at you because of that?"
-                call her_main("{size=-4}It was worth a try...{/size}","annoyed","down")
+                call her_main("{size=-4}It was worth a try...{/size}", "annoyed", "narrow", "worried", "down")
                 m "Try to remember this, Miss Granger. You can't rip me off that easily."
                 call her_main("Tzzzz- I don't need your points anyway.", "angry", "base", "angry", "mid")
                 g9 "You may leave now."
@@ -720,7 +720,7 @@ label cho_intro_E3:
         call her_main("It never really got off the ground...", "open", "base", "base", "R")
         call her_main("No pun intended...", "base", "closed", "base", "mid")
         m "(...)"
-        call her_main("To be honest, I don’t have that much time apart from my visits here and studying...","open","down")
+        call her_main("To be honest, I don’t have that much time apart from my visits here and studying...", "open", "narrow", "worried", "down")
         call her_main("I might consider dropping it.", "base", "base", "base", "R")
         call her_main("Even though it would take away the immense pleasure of seeing Cho getting all worked up about it...", "grin", "base", "base", "mid")
         m "(...)"
@@ -751,7 +751,7 @@ label cho_intro_E3:
         m "Regarding the male and female roles in Quidditch..."
         call her_main("Oh. I barely even remember that I did that.","annoyed","glanceL")
         m "So it wouldn't be an issue for you to drop it?"
-        call her_main("I guess so...","soft","down")
+        call her_main("I guess so...", "soft", "narrow", "worried", "down")
         call her_main("Although, if I were to drop it...","open","down_raised")
         m "Yes?"
         call her_main("I want a seat in the teacher stands during Quidditch matches though!","grin","glance")
@@ -787,7 +787,7 @@ label cho_intro_E3:
     if her_whoring < 18:
         call her_main("Do I really have to do all that?", "upset", "base", "base", "R")
         m "If you want to keep on buying favours from me."
-        call her_main("Ugh-{p=0.4}Very well, I guess...","soft","down")
+        call her_main("Ugh-{p=0.4}Very well, I guess...", "soft", "narrow", "worried", "down")
     else:
         call her_main("Sure, whatever...","open","glanceL")
 
@@ -799,7 +799,7 @@ label cho_intro_E3:
 
     # Hermione quickly gets dressed.
     if hermione_wear_top == False or hermione_wear_bottom == False:
-        call her_main("Wait, she can't see me like this!","disgust","down")
+        call her_main("Wait, she can't see me like this!", "disgust", "narrow", "worried", "down")
 
         hide screen hermione_main
         with d3

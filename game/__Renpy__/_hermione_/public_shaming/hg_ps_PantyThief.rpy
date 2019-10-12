@@ -114,7 +114,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
 
 label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
     if her_whoring >= 3 and her_whoring <= 5: # LEVEL 02
-        call her_main("Hm....?","annoyed","down",xpos="right",ypos="base")
+        call her_main("Hm....?", "annoyed", "narrow", "worried", "down",xpos="right",ypos="base")
         call her_main("[genie_name]? What is this?", "angry", "base", "angry", "mid")
         her "What have you done to them?"
         call her_main("They are covered in something slimy...", "normal", "squint", "angry", "mid")
@@ -134,7 +134,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 her "I most certainly did not, [genie_name]!"
                 her ".........................."
 
-        call her_main("Well, these will require some serious cleaning before I can put them on again...","annoyed","down")
+        call her_main("Well, these will require some serious cleaning before I can put them on again...", "annoyed", "narrow", "worried", "down")
         m "Or you could put them on now."
         call her_main("What?", "open", "base", "base", "mid")
         call her_main("I really would rather not, [genie_name]...", "soft", "base", "base", "R")
@@ -164,8 +164,8 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 pass
 
     if her_whoring >= 6 and her_whoring <= 8: # LEVEL 03 (SECOND EVENT)
-        call her_main("My panties...","annoyed","down",xpos="right",ypos="base")
-        call her_main("What happened to them [genie_name]?","annoyed","down")
+        call her_main("My panties...", "annoyed", "narrow", "worried", "down",xpos="right",ypos="base")
+        call her_main("What happened to them [genie_name]?", "annoyed", "narrow", "worried", "down")
 
         menu:
             "\"An experiment went wrong.\"":
@@ -176,10 +176,10 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
 
         hide screen hermione_main
         call nar(">Hermione gives her cum-soaked underwear a quizzical look...")
-        call her_main("Seems like these will require some serious cleaning before I can put them on again...","annoyed","down")
+        call her_main("Seems like these will require some serious cleaning before I can put them on again...", "annoyed", "narrow", "worried", "down")
         m "Why not put them on now?"
         call her_main("Hm....?","annoyed","suspicious")
-        call her_main("Well, I suppose I could wear them one more time before putting them into laundry...","annoyed","down")
+        call her_main("Well, I suppose I could wear them one more time before putting them into laundry...", "annoyed", "narrow", "worried", "down")
         hide screen hermione_main
         call nar(">Hermione puts the panties on...")
 
@@ -190,7 +190,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         call her_main("Will this be all, [genie_name]?","upset","wink")
 
     if her_whoring >= 9 and her_whoring <= 15: #LEVEL 04+ (THIRD EVENT)
-        call her_main("My panties...","annoyed","down",xpos="right",ypos="base")
+        call her_main("My panties...", "annoyed", "narrow", "worried", "down",xpos="right",ypos="base")
         if her_panties_soaked:
             her "They are covered in something slimy again..."
         else:
@@ -275,7 +275,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 m "That's it, not as bas as you thought now is it?"
                 call her_main("...", "full", "slit", "low", "stare")
                 m "Make sure you get them nice and clean now..."
-                call her_main("*gulp*","full_cum","down",cheeks="blush")
+                call her_main("*gulp*", "full_cum", "narrow", "worried", "down",cheeks="blush")
                 m "That's it. Do you think they're clean yet."
                 call her_main("*Mmmhhhmmm*", "full_cum", "narrow", "base", "dead")
                 m "Well then you can probably take them out of your mouth."
@@ -411,7 +411,7 @@ label hg_ps_get_panties_complete:
         m "After you say thank you. "
         call her_main("Thank you for what?","angry","wink")
         m "For my cum"
-        call her_main("...","base","down")
+        call her_main("...", "base", "narrow", "worried", "down")
         call her_main("Thank you for your cum [genie_name]...", "grin", "narrow", "base", "dead")
         m "You may go now."
         her "Good night, [genie_name]."

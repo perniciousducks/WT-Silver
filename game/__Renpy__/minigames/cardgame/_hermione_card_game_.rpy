@@ -202,7 +202,7 @@ label hermione_random_duel:
 
     if her_whoring < 8:
         call her_main("You've already challenged me though...", "open", "happy", "base", "R")
-        call her_main("and I lost.","annoyed","down")
+        call her_main("and I lost.", "annoyed", "narrow", "worried", "down")
         g9 "What if we made it a wager..."
         call her_main("Like gambling? No thank you!", "clench", "narrow", "annoyed", "mid")
         m "It's not gambling, just a friendly house point wager..."
@@ -214,7 +214,7 @@ label hermione_random_duel:
         jump hermione_requests
     else:
         call her_main("You've already challenged me though...", "open", "happy", "base", "R")
-        call her_main("and I lost.","annoyed","down")
+        call her_main("and I lost.", "annoyed", "narrow", "worried", "down")
         g9 "What if we made it a wager..."
         call her_main("Gambling you mean?","open","worried")
         m "Not for money obviously."
@@ -273,7 +273,7 @@ label hermione_random_duel:
             call her_main("A job?", "open", "happy", "base", "mid")
             m "Yes, I'd like you to start helping the twins promote the card game..."
             call her_main("I can do that...","base","worried", cheeks="blush")
-            call her_main("But not today if that's okay with you.","open","down")
+            call her_main("But not today if that's okay with you.", "open", "narrow", "worried", "down")
             g9 "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
             call her_main("...", "normal", "happy", "base", "R", cheeks="blush")
             call her_main("Did you need anything else?","open","soft", cheeks="blush")
@@ -285,7 +285,7 @@ label hermione_random_duel:
             pass
 
     m "No, sorry miss Granger... Minus 20 points to Gryffindor..."
-    call her_main("...","disgust","down")
+    call her_main("...", "disgust", "narrow", "worried", "down")
     call her_main("Fine, that's fair...","open","down_raised")
     call her_main("But I'm done playing for today...","normal","worriedCl", cheeks="blush")
     $ gryffindor -= 20

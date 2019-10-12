@@ -58,7 +58,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
             "\"I will give you 40 points to see your ass.\"":
                 call her_main("Forty?", "annoyed", "squint", "angry", "mid")
                 call her_main("Well alright then...", "annoyed", "narrow", "angry", "R")
-                call her_main("but if you expect to touch me it'll cost you extra...","annoyed","down")
+                call her_main("but if you expect to touch me it'll cost you extra...", "annoyed", "narrow", "worried", "down")
                 call her_main("at least one hundred points", "annoyed", "narrow", "angry", "R")
 
                 menu:
@@ -561,7 +561,7 @@ label hg_pr_strip_T4_admire_rear:
     m "Alright, you can get dressed now [hermione_name]..."
 
     if her_mood > 1:
-        call her_main(".............","upset","down")
+        call her_main(".............", "upset", "narrow", "worried", "down")
     else:
         call her_main(".............", "base", "narrow", "annoyed", "up")
 
@@ -831,7 +831,7 @@ label hg_show_ass_cumming:
                     call her_main("My ass is covered in cum!", "angry", "base", "angry", "mid")
                 else:
                     call her_main("[genie_name], how could you...?","angry","suspicious", cheeks="blush")
-                    call her_main("My ass...","disgust","down")
+                    call her_main("My ass...", "disgust", "narrow", "worried", "down")
                     call her_main("It's covered....","disgust","down_raised")
 
                 m "Don't worry, I will give you your house points, [hermione_name]."

@@ -326,7 +326,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
             call her_main("Five?!","scream","wide_stare")
             call her_main("[genie_name], I am not going to expose myself for a meagre five points!", "angry", "base", "angry", "mid",emote="01")
             m "Well, your tits sure aren't worth 200, [hermione_name]!"
-            call her_main("(They aren't?)","annoyed","down")
+            call her_main("(They aren't?)", "annoyed", "narrow", "worried", "down")
             call her_main("Maybe one hundred - then?", "annoyed", "narrow", "angry", "R")
 
             menu:
@@ -344,7 +344,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
                     $ current_payout = 25
                     $ her_mood += 9
 
-                    call her_main("...............","annoyed","down")
+                    call her_main("...............", "annoyed", "narrow", "worried", "down")
                     call her_main("Well, so be it...","clench","down_raised")
 
                     pass
@@ -470,7 +470,7 @@ label hg_pf_admire_breasts_T4_intro_E1:
     call her_main("............","clench","down_raised", cheeks="blush")
     call her_main("Why do you have to be so vulgar, [genie_name]?!","clench","worriedCl", cheeks="blush")
     m "Just take the compliment and show them to me..."
-    call her_main("Yes, [genie_name]...","base","down", cheeks="blush")
+    call her_main("Yes, [genie_name]...", "base", "narrow", "worried", "down", cheeks="blush")
 
     $ current_payout = 25
 

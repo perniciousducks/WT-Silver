@@ -34,7 +34,7 @@
                     # m "I don't think so, missy!"
                     # call her_main("...", "annoyed", "squint", "angry", "mid")
                     # call her_main("Fine!", "angry", "base", "angry", "mid")
-                    # call her_main("I don't want them anyway!","annoyed","down")
+                    # call her_main("I don't want them anyway!", "annoyed", "narrow", "worried", "down")
                     # m "You sure?"
                     # call her_main("Tzzz--", "angry", "base", "angry", "mid")
         # else:

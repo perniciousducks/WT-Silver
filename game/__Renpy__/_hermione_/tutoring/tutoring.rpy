@@ -172,7 +172,7 @@ label l_tutoring:
         m "I need you to focus on what those girls do with professors, not their behaviour in general."
         call her_main("But...", "open", "base", "base", "mid",cheeks="blush")
         m "Last time you were talking about your sacred duty and at the first hurdle you hesitate."
-        call her_main("{size=-2}(\"Sacred\"? Don't exaggerate, old man){/size}","annoyed","down")
+        call her_main("{size=-2}(\"Sacred\"? Don't exaggerate, old man){/size}", "annoyed", "narrow", "worried", "down")
         call her_main("{size=-2}(Or not! Maybe I'll be remembered later for being the saviour of Gryffindor house!){/size}","open","worriedCl",cheeks="blush")
         call her_main("Yes, you're right! It {b}is{/b} my sacred duty!", "smile", "base", "base", "R")
         g9 "{size=-2}(It works every time, it's too easy... She looks so proud of herself.){/size}"
@@ -409,7 +409,7 @@ label l_tutoring:
         m "A girl like you should use all means at their disposal in order to excel."
         her "..........."
         call her_main("Alright, but this must remain between us.", "annoyed", "narrow", "angry", "R",cheeks="blush")
-        call her_main("You cannot disclose this to other professors, especially professor Snape!","annoyed","down")
+        call her_main("You cannot disclose this to other professors, especially professor Snape!", "annoyed", "narrow", "worried", "down")
         m "Oh, I have no intention of shar.. speaking of you with professor Snape."
         g9 "{size=-2}(You're mine.){/size}"
         call her_main("Well, what must I do now?", "open", "closed", "base", "mid")
@@ -1239,7 +1239,7 @@ label l_tutoring:
         m "You weren't this excited last time when I gave you a present..."
         call her_main("Oh don't worry, it was just a moment of weakness.", "smile", "base", "angry", "mid",cheeks="blush")
         her "I'm ready now!"
-        call her_main("{size=-2}(My body perhaps not...){/size}","annoyed","down")
+        call her_main("{size=-2}(My body perhaps not...){/size}", "annoyed", "narrow", "worried", "down")
         m "Did you have fun with your anal plug?"
         call her_main("Y-yes... I wear it sometimes...", "base", "narrow", "base", "up",cheeks="blush")
         call her_main("But I cut the tail!", "annoyed", "narrow", "angry", "R",cheeks="blush")

@@ -88,7 +88,7 @@ label hg_pr_handjob:
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         m "[hermione_name]..."
         m "What do you think about giving one of your classmates another handjob?"
-        call her_main("I don't mind, [genie_name].","annoyed","down")
+        call her_main("I don't mind, [genie_name].", "annoyed", "narrow", "worried", "down")
         m "Really?"
         call her_main("Yes... I mean, it's just a handjob...", "grin", "base", "base", "R")
         m "Great. Go have fun then!"
@@ -191,7 +191,7 @@ label hg_pr_handjob_T1_E1:
 
         "\"Well, you did try. Here are the points.\"":
             call her_main("Really?", "angry", "base", "base", "mid")
-            call her_main("Thank you, [genie_name]!","open","down")
+            call her_main("Thank you, [genie_name]!", "open", "narrow", "worried", "down")
             call her_main("I promise, I will try harder next time!", "base", "base", "base", "mid")
             call her_main("Ehm... Should you request a similar favour in the future, I mean...","upset","wink")
 
@@ -262,7 +262,7 @@ label hg_pr_handjob_T1_E3:
     m "What's the problem, then?"
     call her_main("..........","annoyed","worriedL")
     call her_main("All boys are jerks! That is the problem, [genie_name]!", "scream", "closed", "angry", "mid")
-    call her_main("I gave this one boy a good wanking...","open","down")
+    call her_main("I gave this one boy a good wanking...", "open", "narrow", "worried", "down")
     her "And do you know how he thanked me?"
     call her_main("He got his spunk all over me...", "scream", "base", "angry", "mid", emote="01")
     call her_main("And he did that on purpose, I know he did!", "scream", "closed", "angry", "mid")
@@ -297,7 +297,7 @@ label hg_pr_handjob_T2_E1:
     m "I see..."
     call her_main("That is not all, [genie_name]...", "annoyed", "narrow", "angry", "R")
     m "Go on..."
-    call her_main("Well, I sort of made a promise to the boy...","open","down")
+    call her_main("Well, I sort of made a promise to the boy...", "open", "narrow", "worried", "down")
     her "I promised to meet him after my classes and..."
     call her_main("...and finish what I have started...", "annoyed", "narrow", "annoyed", "mid")
     m "I see..."
@@ -351,20 +351,20 @@ label hg_pr_handjob_T2_E2:
     call her_main("Well, there is not much to tell. [genie_name]...", "open", "base", "base", "mid")
     call play_music("playful_tension") # SEX THEME.
     her "Today I gave another handjob to one of my classmates..."
-    call her_main("Me, Hermione Granger...","open","down")
+    call her_main("Me, Hermione Granger...", "open", "narrow", "worried", "down")
     call her_main("Giving free handjobs in the school's restroom...","angry","down_raised")
     m "Wait. What do you mean with \"free\"?"
     call her_main("Oh, of course... I get paid with house points for this...", "angry", "base", "base", "mid")
     her "But nobody knows about that..."
     her "And to everyone else this just looks like some harlot who does this for fun..."
-    call her_main("They must think I am a slut...","open","down")
+    call her_main("They must think I am a slut...", "open", "narrow", "worried", "down")
     call her_main("..............","clench","down_raised")
     call her_main("Do you think I'm a slut, [genie_name]?", "open", "happy", "base", "mid", cheeks="blush")
 
     menu:
         "\"What? Of course not, [hermione_name]!\"":
             call her_main("..............", "base", "base", "base", "R", cheeks="blush")
-            call her_main("You are right, [genie_name]...","base","down")
+            call her_main("You are right, [genie_name]...", "base", "narrow", "worried", "down")
             her "I am making this sacrifice for the glory of the \"Gryffindor\" house."
             call her_main("I am not taking pleasure in this sort of activity...", "soft", "narrow", "annoyed", "up")
             call her_main("Because if I would...", "annoyed", "narrow", "angry", "R")
@@ -577,7 +577,7 @@ label hg_pr_handjob_T3_E3:
     call her_main("...............","clench","down_raised")
     m "Spit it out, [hermione_name]. The suspense is killing me."
     call play_music("playful_tension") # SEX THEME.
-    call her_main("I sort of did it during class...","open","down")
+    call her_main("I sort of did it during class...", "open", "narrow", "worried", "down")
     m "Impressive..."
     call her_main("Sir, you don't understand.  Let me try and explain.","angry","down_raised")
     hide screen blktone
@@ -592,7 +592,7 @@ label hg_pr_handjob_T3_E3:
     her "It was wrapped around another thick hot cock too."
     m "You gave two boys handjobs at the same time?!"
     call her_main("Yes Sir.","angry","wink")
-    call her_main("And I think I gave them the wank of their life too...","base","down")
+    call her_main("And I think I gave them the wank of their life too...", "base", "narrow", "worried", "down")
     her "Because they did not just cum."
     her "Their cocks simply exploded with spunk."
     m "You enjoyed it, didn't you?"

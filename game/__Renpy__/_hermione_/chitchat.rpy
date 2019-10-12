@@ -102,7 +102,7 @@ label chit_chat:
         elif one_of_ten == 9:
             call her_main("That favour I sold you the other say, sir...","open","worried")
             call her_main(".......","normal","worriedCl")
-            call her_main("I only agreed to it because the needs of my house always come first.","open","down")
+            call her_main("I only agreed to it because the needs of my house always come first.", "open", "narrow", "worried", "down")
             call her_main("I just wanted you to know that, sir...", "upset", "closed", "base", "mid")
 
         elif one_of_ten == 10:
@@ -137,13 +137,13 @@ label chit_chat:
 
         elif one_of_ten == 5:
             call her_main("Hogwarts has really become a second home to me lately...", "open", "closed", "base", "mid")
-            call her_main("I don't even miss my parents nearly as much anymore...","annoyed","down")
+            call her_main("I don't even miss my parents nearly as much anymore...", "annoyed", "narrow", "worried", "down")
             call her_main("Come to think of it I don't miss them at all...", "angry", "wide", "base", "stare")
             call her_main("I'm an awful daughter...","angry","down_raised")
 
         elif one_of_ten == 6:
             call her_main("*Yawn!* I read about this technique that supposedly allows you to cut your sleep time in half...", "annoyed", "narrow", "annoyed", "up")
-            call her_main("It don't think it's working though.... *Yawn!*","annoyed","down")
+            call her_main("It don't think it's working though.... *Yawn!*", "annoyed", "narrow", "worried", "down")
 
         elif one_of_ten == 7:
             call her_main("Even after I graduate from Hogwarts I plan to keep on working hard.", "open", "closed", "angry", "mid")
@@ -270,13 +270,13 @@ label chit_chat:
     ### WHORING LEVEL 06 ###
     if her_whoring >= 15 and her_whoring <= 17:
         if one_of_ten == 1:
-            call her_main("Would you like me to show you my breasts today, sir?","open","down")
+            call her_main("Would you like me to show you my breasts today, sir?", "open", "narrow", "worried", "down")
             call her_main("Yes... I would willingly expose myself to you, professor...", "base", "narrow", "base", "up")
             call her_main("That's how selfless I am!", "annoyed", "narrow", "annoyed", "mid")
 
         elif one_of_ten == 2:
             call her_main("I can't help but feel bad for the house elves who do my laundry...", "open", "base", "base", "mid")
-            call her_main("I mean, all those dreadful semen stains...","open","down")
+            call her_main("I mean, all those dreadful semen stains...", "open", "narrow", "worried", "down")
             call her_main("","angry","down_raised")
 
         elif one_of_ten == 3:
@@ -287,7 +287,7 @@ label chit_chat:
 
         elif one_of_ten == 4:
             call her_main("When I think about all the favours I sold you over these last months, sir...", "open", "base", "base", "mid")
-            call her_main("Although I do feel a little bit embarrassed...","open","down")
+            call her_main("Although I do feel a little bit embarrassed...", "open", "narrow", "worried", "down")
             call her_main("I also feel very proud of myself.", "upset", "closed", "base", "mid")
 
         elif one_of_ten == 5:

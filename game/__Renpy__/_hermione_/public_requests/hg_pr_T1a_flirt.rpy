@@ -325,7 +325,7 @@ label hg_pr_flirt_T2_E2:
     call her_main("There was something about his \"devil-may-care\" attitude...", "base", "base", "base", "mid")
     call her_main("He was so confident and calm and...","base","happyCl")
     call her_main("I still loathe the \"Slytherin\" house of course!","angry","worriedCl", emote="05")
-    call her_main("But...","annoyed","down")
+    call her_main("But...", "annoyed", "narrow", "worried", "down")
     her "Maybe some of the students got there by mistake?"
     call her_main("Could the \"sorting hat\" make... miscalculations?","open","worriedL")
 
@@ -390,14 +390,14 @@ label hg_pr_flirt_T3_E1:
     her "Those two handsome guys right before the first period started..."
     call her_main("Then I exchanged a few rather inappropriate messages with this other guy, during the the first period.","smile","glance")
     call her_main("After that there was this one other guy...", "grin", "base", "base", "R")
-    call her_main("Then those three guys...","annoyed","down")
+    call her_main("Then those three guys...", "annoyed", "narrow", "worried", "down")
     call her_main("Then one more right before the last period...","base","happyCl")
     call her_main("And finally this last guy that walked me right to your tower, [genie_name]...","smile","happyCl")
     m "So, eleven then?"
     m "Those \"Slytherin\" boys are really starting to like you, huh?"
     $ sc34CG(2, 7, 1, 2)
     call her_main("I suppose so...","base","happyCl")
-    call her_main("Well, not all of them were nice to me at first...","annoyed","down")
+    call her_main("Well, not all of them were nice to me at first...", "annoyed", "narrow", "worried", "down")
     call her_main("But I use this trick to \"tame\" them.","smile","glance")
     m "A trick?"
     $ sc34CG(2, 6, 1, 1)

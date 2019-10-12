@@ -291,7 +291,7 @@ label ball_quest_E1:
                     call her_main("Keep looking at my naked breasts, and my pussy...","grin","angry", cheeks="blush", tears="messy")
                     call ctc
 
-                    call her_main("Yes! Make my skin burn with shame, sir... *Sob!*","open","ahegao_raised", cheeks="blush", tears="messy")
+                    call her_main("Yes! Make my skin burn with shame, sir... *Sob!*", "open", "narrow", "base", "up", cheeks="blush", tears="messy")
                     m "Ehm... right... Ok..."
                     m "Listen, I think this will do..."
                     call set_her_action("pinch")

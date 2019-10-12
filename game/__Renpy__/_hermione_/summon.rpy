@@ -740,10 +740,10 @@ label hermione_change:
             call her_main("This is so degrading...","normal","down_raised",cheeks="blush")
             call her_main("\"But I kinda am a slut begging for cum aren't I...\"","base","happyCl",cheeks="blush")
         elif her_whoring >= 19:
-            call her_main("...","soft","ahegao_raised")
-            call her_main("\"When did I start enjoying it so much...\"","open","ahegao_raised",cheeks="blush")
+            call her_main("...", "soft", "narrow", "base", "up")
+            call her_main("\"When did I start enjoying it so much...\"", "open", "narrow", "base", "up",cheeks="blush")
             call her_main("\"That taste, the texture..\"", "open", "narrow", "annoyed", "up",cheeks="blush")
-            call her_main("\"..So warm, sticky and...\"","silly","ahegao_raised",cheeks="blush")
+            call her_main("\"..So warm, sticky and...\"", "silly", "narrow", "base", "up",cheeks="blush")
             m "Are you okay there, [temp_name]?"
             call her_main("Wha-", "mad", "wide", "base", "stare")
             call her_main("Of course I am!", "smile", "base", "base", "R",cheeks="blush")
@@ -885,9 +885,9 @@ label hermione_change:
                     m "You are nothing more than a whore..."
                     call her_main("", "base", "narrow", "annoyed", "up", tears="mascara")
                     g9 "{size=+4}{b}MY{/b}{/size} whore!"
-                    call her_main("", "base","ahegao_raised", tears="mascara")
+                    call her_main("", "base", "narrow", "base", "up", tears="mascara")
                     m "And I {b}will{/b} call you however I want!"
-                    call her_main("Yes, [genie_name], I understand.", "silly","ahegao_raised", tears="mascara")
+                    call her_main("Yes, [genie_name], I understand.", "silly", "narrow", "base", "up", tears="mascara")
                     call her_main("I am your toy{w=0.6}, your fuckslut{w=0.6}, your cocksleeve, your -...", "grin","dead", tears="mascara")
                     m "Yes, that you are but its enough..."
                     call her_main("I fully belong to you... [genie_name].", "silly","dead", tears="mascara")

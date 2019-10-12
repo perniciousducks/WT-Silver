@@ -77,7 +77,7 @@ label hg_pf_grope:
         if her_whoring < 24:
             call her_main("(I'll just ask him about it next time...)","annoyed","angryL", ypos="head")
         else:
-            call her_main("(Eh, who cares...)","base","ahegao_raised", cheeks="blush", ypos="head")
+            call her_main("(Eh, who cares...)", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
         pause.5
 
     call her_chibi(action="leave")

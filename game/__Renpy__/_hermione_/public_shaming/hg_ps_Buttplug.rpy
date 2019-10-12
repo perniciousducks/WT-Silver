@@ -366,7 +366,7 @@ label hg_ps_buttplug:
 
                     call her_main(".............", "disgust", "narrow", "annoyed", "up")
                     m "Are you alright, [hermione_name]?"
-                    call her_main("..........................","soft","ahegao_raised")
+                    call her_main("..........................", "soft", "narrow", "base", "up")
                     call her_main("ah... y-yes...","open","glance")
                     m "Fantastic! I'll see you after class then."
                     call her_main(".............","disgust","down",cheeks="blush")
@@ -512,7 +512,7 @@ label hg_ps_buttplug_complete:
             call her_main("then I turned around in front of her...","base","down")
             her "and bent over..."
             her "...keeping my knees straight..."
-            call her_main("...giving her a full view...","base","ahegao_raised")
+            call her_main("...giving her a full view...", "base", "narrow", "base", "up")
             m "I see..."
             m "Did she say anything?"
             call her_main("No, [genie_name]...", "soft", "happy", "base", "R")
@@ -596,7 +596,7 @@ label hg_ps_buttplug_complete:
             show screen blktone
             call her_main("Yes I did, [genie_name].", "base", "base", "base", "mid",xpos="right",ypos="base")
             m "Well? How was your day?"
-            call her_main("great, [genie_name]...","base","ahegao_raised")
+            call her_main("great, [genie_name]...", "base", "narrow", "base", "up")
             m "go on..."
             call play_music("playful_tension") # SEX THEME.
             $ sc34CG(1, 14, 1)
@@ -608,7 +608,7 @@ label hg_ps_buttplug_complete:
             call her_main("But that didn't work at all...","upset","wink")
             call her_main("I was just too... distracted...","base","down")
             $ sc34CG(1, 15, 2)
-            call her_main("So I thought to myself that I've just got to focus on it...","base","ahegao_raised")
+            call her_main("So I thought to myself that I've just got to focus on it...", "base", "narrow", "base", "up")
             $ sc34CG(1, 16, 3)
             call her_main("block out everything else...","base","down")
             $ sc34CG(1, 17, 2)

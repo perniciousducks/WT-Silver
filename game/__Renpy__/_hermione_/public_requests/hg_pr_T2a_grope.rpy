@@ -417,7 +417,7 @@ label hg_pr_grope_T3_E2:
     call her_main("He said someone told him that I let boys touch me...","angry","wink")
     call her_main("Normally I would deny everything...","base","glance")
     her "But I decided not to waste the opportunity..."
-    call her_main("I took the boy to a quiet spot and let him touch me...","base","ahegao_raised")
+    call her_main("I took the boy to a quiet spot and let him touch me...", "base", "narrow", "base", "up")
     her "I let him run his hands up and down my thighs..."
     her "I let him fondle my breasts..."
     call her_main("All the usual things...","base","glance")
@@ -434,7 +434,7 @@ label hg_pr_grope_T3_E3:
     call her_main("Well...","upset","wink")
     her "I did what you told me to do, [genie_name]..."
     her "But... it sort of... ehm..."
-    call her_main("Well, it sort of escalated into something else...","base","ahegao_raised")
+    call her_main("Well, it sort of escalated into something else...", "base", "narrow", "base", "up")
     call play_music("playful_tension") # SEX THEME.
     m "Hm?"
     call her_main("uhm...","upset","wink")

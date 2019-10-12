@@ -232,7 +232,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         call update_her_uniform
 
     elif her_whoring > 15: ###New variant of the event
-        call her_main("My panties...","base","ahegao_raised",xpos="right",ypos="base")
+        call her_main("My panties...", "base", "narrow", "base", "up",xpos="right",ypos="base")
         if hg_ps_get_panties.points >= 1:
             her "You came all over them again..."
         else:
@@ -245,7 +245,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
             "\"Yes! Put them on now, [hermione_name]!\"":
                 her "Yes [genie_name]..."
                 call her_main("I am only doing this to give my house a fair chance at winning the cup this year.","smile","happyCl")
-                call her_main("I don't like how it feels at all...","base","ahegao_raised")
+                call her_main("I don't like how it feels at all...", "base", "narrow", "base", "up")
                 m "Right..."
                 hide screen hermione_main
                 call nar(">Hermione swiftly slides her drenched panties on...")

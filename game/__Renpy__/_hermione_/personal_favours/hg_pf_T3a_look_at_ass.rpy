@@ -141,7 +141,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
             call her_main("Are you only going to watch, [genie_name]?","angry","worriedCl", cheeks="blush")
             m "Of course..."
         else:
-            call her_main("anything for you [genie_name]","base","ahegao_raised", cheeks="blush")
+            call her_main("anything for you [genie_name]", "base", "narrow", "base", "up", cheeks="blush")
         call ctc
 
 
@@ -605,7 +605,7 @@ label hg_pr_strip_T4_grope_rear:
         if current_payout < 100:
             call her_main("[genie_name], you promised not to touch...", "base", "base", "base", "R", cheeks="blush")
             m "I know, I know... but admit it, you wanted me to..."
-            call her_main(".................{image=textheart}{image=textheart}{image=textheart}","base","ahegao_raised", cheeks="blush")
+            call her_main(".................{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "base", "up", cheeks="blush")
         else:
             call her_main("[genie_name], please...{image=textheart}", "base", "base", "base", "R", cheeks="blush")
     else:
@@ -613,20 +613,20 @@ label hg_pr_strip_T4_grope_rear:
         m "I know, I know... but admit it, you wanted me to..."
         call her_main("ah{image=textheart}... of course not [genie_name]{image=textheart}","angry","angry", cheeks="blush")
 
-    call her_main("mmmm.......................{image=textheart}","base","ahegao_raised", cheeks="blush")
-    call her_main("[genie_name], you need to stop now...","base","ahegao_raised", cheeks="blush")
+    call her_main("mmmm.......................{image=textheart}", "base", "narrow", "base", "up", cheeks="blush")
+    call her_main("[genie_name], you need to stop now...", "base", "narrow", "base", "up", cheeks="blush")
     m "Just a bit longer..."
 
     call nar(">You keep on groping her ass cheeks...")
 
-    call her_main("[genie_name]... please, stop this...","open","ahegao_raised", cheeks="blush")
+    call her_main("[genie_name]... please, stop this...", "open", "narrow", "base", "up", cheeks="blush")
     m "Why? Because you like it too much?"
     call her_main("No it's not that...", "base", "base", "base", "R", cheeks="blush")
     call her_main("I mean...", "open", "base", "base", "R", cheeks="blush")
 
     call nar(">You pull the cheeks apart in opposite directions and then squish them together...")
 
-    call her_main("Ah...{image=textheart} [genie_name], I really need to go... before I-","base","ahegao_raised", cheeks="blush")
+    call her_main("Ah...{image=textheart} [genie_name], I really need to go... before I-", "base", "narrow", "base", "up", cheeks="blush")
 
     if daytime:
         call her_main("am late for class... they're about to start...", "open", "base", "base", "R", cheeks="blush")
@@ -682,27 +682,27 @@ label hg_pr_strip_T4_masturbate_rear:
 
     show screen blktone
     show screen hermione_ass
-    call her_main("[genie_name]?","base","ahegao_raised", cheeks="blush", ypos="head")
+    call her_main("[genie_name]?", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
 
     if her_whoring >= 21:
-        call her_main("ah...","base","ahegao_raised", cheeks="blush")
+        call her_main("ah...", "base", "narrow", "base", "up", cheeks="blush")
         call nar(">Hermione looks back and sees you stroking your cock.")
         call her_main("It's so big...", "open", "base", "base", "R", cheeks="blush")
         call her_main("You just couldn't help yourself, could you [genie_name]?", "base", "base", "base", "R", cheeks="blush")
-        call her_main("..................","base","ahegao_raised", cheeks="blush")
+        call her_main("..................", "base", "narrow", "base", "up", cheeks="blush")
         m "Yes... Yes, like that..."
         m "Yes, shake that ass [hermione_name]..."
-        call her_main("..............","base","ahegao_raised", cheeks="blush")
+        call her_main("..............", "base", "narrow", "base", "up", cheeks="blush")
         call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
         call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
         call her_main("Not to... ehm...", "open", "base", "base", "R", cheeks="blush")
-        call her_main("Not to cum... on me, [genie_name]...","base","ahegao_raised", cheeks="blush")
+        call her_main("Not to cum... on me, [genie_name]...", "base", "narrow", "base", "up", cheeks="blush")
         m "Fine, whatever..."
         m "Oh, you little slut. You nasty little slut!"
-        call her_main(".......................","base","ahegao_raised", cheeks="blush")
+        call her_main(".......................", "base", "narrow", "base", "up", cheeks="blush")
         ">You start to stroke your cock even harder..."
         g4 "Yes, I know you want this! Yes!"
-        call her_main("................","base","ahegao_raised", cheeks="blush")
+        call her_main("................", "base", "narrow", "base", "up", cheeks="blush")
 
     else:
         call her_main("[genie_name], actually I never agreed to this...","shock","worriedCl")
@@ -962,7 +962,7 @@ label end_hg_show_ass:
 
     if her_whoring < 24:
         if her_whoring < 18:
-            call her_main("Can I have my payment now?","base","ahegao_raised", cheeks="blush")
+            call her_main("Can I have my payment now?", "base", "narrow", "base", "up", cheeks="blush")
             if current_payout < 100:
                 $ her_mood +=7
 
@@ -994,14 +994,14 @@ label end_hg_show_ass:
 
     #Third event.
     elif her_whoring >= 18 and aftersperm:
-        call her_main("{size=-5}(That was so exhilarating...){/size}","base","ahegao_raised", cheeks="blush", ypos="head")
-        call her_main("{size=-5}(i wonder what he'll ask me to do next...?){/size}","open","ahegao_raised", cheeks="blush", ypos="head")
+        call her_main("{size=-5}(That was so exhilarating...){/size}", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
+        call her_main("{size=-5}(i wonder what he'll ask me to do next...?){/size}", "open", "narrow", "base", "up", cheeks="blush", ypos="head")
 
     else:
-        call her_main("{size=-5}(That was so exhilarating...) {/size}", "base", "ahegao_raised", cheeks="blush", ypos="head")
+        call her_main("{size=-5}(That was so exhilarating...) {/size}", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
         call her_main("{size=-5}(No, Hermione, you silly girl!) {/size}", "angry", "angry", cheeks="blush", ypos="head")
         call her_main("{size=-5}(it was shameful! good girls don't get turned on by stripping for their headmaster!) {/size}", "angry", "angry", cheeks="blush", ypos="head")
-        call her_main(".................................","base","ahegao_raised", cheeks="blush", ypos="head")
+        call her_main(".................................", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
 
     call her_chibi(action="leave")
 

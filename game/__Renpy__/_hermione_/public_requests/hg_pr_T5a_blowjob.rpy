@@ -232,7 +232,7 @@ label hg_pr_blowjob_T2_intro_E1:
     call her_main("Splendid, [genie_name]. Simply splendid.","base","happyCl")
     m "Really? Do tell."
     call play_music("playful_tension") # SEX THEME.
-    call her_main("Today I did something I wanted to do for such a long time now...","base","ahegao_raised")
+    call her_main("Today I did something I wanted to do for such a long time now...", "base", "narrow", "base", "up")
     her "But never could muster up enough courage for..."
     m "Hm..?"
     call her_main("Today I sucked off my two best friends in the entire world!", "soft", "narrow", "annoyed", "up")
@@ -316,7 +316,7 @@ label hg_pr_blowjob_T2_E3:
     $ u_sperm = "characters/hermione/face/auto_10.png"
 
     show screen blktone
-    call her_main("","base","ahegao_raised",xpos="right",ypos="base")
+    call her_main("", "base", "narrow", "base", "up",xpos="right",ypos="base")
     call ctc
 
     her "Good evening, [genie_name]..."

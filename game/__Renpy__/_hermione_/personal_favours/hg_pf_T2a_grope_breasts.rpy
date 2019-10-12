@@ -16,7 +16,7 @@ label hg_pf_grope_breasts_T1:
 
     call nar(">Hermione tries to pull away from you, but you hold her firmly by her breasts...")
 
-    call her_main("(??!)","base","ahegao_raised", cheeks="blush")
+    call her_main("(??!)", "base", "narrow", "base", "up", cheeks="blush")
     call play_music("playful_tension") #SEX THEME.
     call her_main("[genie_name], what are you-?","angry","worriedCl", cheeks="blush",emote="05")
     call nar(">She tries to pull away again.")
@@ -275,7 +275,7 @@ label hg_pf_grope_breasts_T3_clothed:
 
     "*squeeze-squeeze-squeeze*"
 
-    call her_main("................","base","ahegao_raised", cheeks="blush")
+    call her_main("................", "base", "narrow", "base", "up", cheeks="blush")
 
     menu:
         "\"Do you enjoy this, [hermione_name]?\"":
@@ -285,15 +285,15 @@ label hg_pf_grope_breasts_T3_clothed:
             call nar(">You keep massaging her soft tits...")
 
             if her_tier <= 5:
-                call her_main("I mean, this isn't a big deal, as long as I am getting paid...","base","ahegao_raised", cheeks="blush")
+                call her_main("I mean, this isn't a big deal, as long as I am getting paid...", "base", "narrow", "base", "up", cheeks="blush")
                 call nar(">You keep on massaging her tits through her uniform...")
                 call her_main("A small price to pay for the honour of my house, really......{image=textheart}", "soft", "base", "base", "R", cheeks="blush")
             else:
                 m "Really? It seems to me as if you love it."
-                call her_main("I wouldn't say that I love it...","base","ahegao_raised", cheeks="blush")
+                call her_main("I wouldn't say that I love it...", "base", "narrow", "base", "up", cheeks="blush")
                 call nar(">You keep on massaging her tits through her uniform...")
                 m "What would you say then, [hermione_name]?"
-                call her_main("I just like it, {size=-4}a lot{image=textheart}{/size}","base","ahegao_raised", cheeks="blush")
+                call her_main("I just like it, {size=-4}a lot{image=textheart}{/size}", "base", "narrow", "base", "up", cheeks="blush")
 
             jump hg_pf_grope_breasts_T3_continue
 

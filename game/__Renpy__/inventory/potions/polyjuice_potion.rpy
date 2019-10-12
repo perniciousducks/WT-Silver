@@ -276,7 +276,7 @@ label hg_pp_polyjuice_T1_intro:
                 m "Well, you certainly earned your 75 points."
                 $ gryffindor += 75
                 with d3
-                call her_main("Thank you [genie_name]. Will that be all.","base","ahegao_raised")
+                call her_main("Thank you [genie_name]. Will that be all.", "base", "narrow", "base", "up")
                 m "One last thing."
                 m "Who's a good girl?"
                 call her_main("..........","annoyed","worriedL")
@@ -499,7 +499,7 @@ label hg_pp_polyjuice_T1_introCC:
     $ gryffindor += 75
     $ g_c_u_pic = "hand_ani"
     with d3
-    call her_main("Thank you [genie_name]. Will that be all.","base","ahegao_raised")
+    call her_main("Thank you [genie_name]. Will that be all.", "base", "narrow", "base", "up")
     m "One last thing."
     m "Who's a good girl?"
     call her_main("..........","annoyed","worriedL")

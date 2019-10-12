@@ -301,9 +301,9 @@ label forest_BJ_2:
     call her_main("In front of whoever, or whatever, you want...", "angry", "narrow", "annoyed", "up")
     call her_main("...","angry","dead")
     call her_main("Well... I hope you've learned your lesson!", "angry", "narrow", "angry", "up")
-    call her_main("I'm going to go back and...","angry","ahegao_raised")
+    call her_main("I'm going to go back and...", "angry", "narrow", "base", "up")
     call her_main("ge-Clean! myself off...","open","ahegao_squint")
-    call her_main("And remember...","open","ahegao_raised")
+    call her_main("And remember...", "open", "narrow", "base", "up")
     call her_main("no {size=-1}more... {size=-1}{b}cum{/b}... {size=-1}all... {size=-1}over... {size=-1}me... {size=-1}please...{image=textheart}{image=textheart}{image=textheart}{/size}","angry","dead")
     show screen blkfade
     with d3

@@ -406,7 +406,7 @@ label slave_scene:
     ">You thrust your full length into her in one motion."
     $ g_c_u_pic = "sex_ani"
     m "You're very tight today, are you enjoying this?"
-    call her_main("Yes [genie_name], I'm loving this.","base","ahegao_raised")
+    call her_main("Yes [genie_name], I'm loving this.", "base", "narrow", "base", "up")
     hide screen hermione_main
     m "Good, make sure you keep your ass nice and tight for me."
     ">You pick up speed and begin to fuck her ass in earnest."

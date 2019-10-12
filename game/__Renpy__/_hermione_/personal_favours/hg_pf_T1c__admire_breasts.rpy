@@ -72,15 +72,15 @@ label hg_pf_admire_breasts:
     elif her_tier <= 2:
         call her_main("........................","disgust","down_raised", cheeks="blush", ypos="head")
     elif her_tier <= 3 and hg_pf_admire_breasts.points == 1:
-        call her_main("{size=-5}(That was so humiliating...){/size}","base","ahegao_raised", cheeks="blush", ypos="head")
+        call her_main("{size=-5}(That was so humiliating...){/size}", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
         call her_main("{size=-5}(No, Hermione, you silly girl!){/size}","angry","angry", cheeks="blush", ypos="head")
         call her_main("{size=-5}(We are doing this to protect the honour of our house!){/size}","angry","angry", cheeks="blush", ypos="head")
-        call her_main(".................................","base","ahegao_raised", cheeks="blush", ypos="head")
+        call her_main(".................................", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
     elif aftersperm:
-        call her_main("{size=-5}(That was so exhilarating...){/size}","base","ahegao_raised", cheeks="blush", ypos="head")
-        call her_main("{size=-5}(I wonder if anyone will notice my uniform!){/size}","open","ahegao_raised", cheeks="blush", ypos="head")
-        call her_main("{size=-5}(What will people think of me?){/size}","open","ahegao_raised", cheeks="blush", ypos="head")
-        call her_main(".................................","base","ahegao_raised", cheeks="blush", ypos="head")
+        call her_main("{size=-5}(That was so exhilarating...){/size}", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
+        call her_main("{size=-5}(I wonder if anyone will notice my uniform!){/size}", "open", "narrow", "base", "up", cheeks="blush", ypos="head")
+        call her_main("{size=-5}(What will people think of me?){/size}", "open", "narrow", "base", "up", cheeks="blush", ypos="head")
+        call her_main(".................................", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
 
     call her_chibi(action="leave")
 
@@ -482,7 +482,7 @@ label hg_pf_admire_breasts_T4_E1:
     call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "I need to see your tits, [hermione_name]."
-    call her_main("Of course [genie_name].","base","ahegao_raised", cheeks="blush")
+    call her_main("Of course [genie_name].", "base", "narrow", "base", "up", cheeks="blush")
 
     $ current_payout = 25
 
@@ -494,7 +494,7 @@ label hg_pf_admire_breasts_T4_E2:
     call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     m "I need to see your tits, [hermione_name]."
-    call her_main("Of course [genie_name]","base","ahegao_raised", cheeks="blush")
+    call her_main("Of course [genie_name]", "base", "narrow", "base", "up", cheeks="blush")
 
     $ current_payout = 25
 

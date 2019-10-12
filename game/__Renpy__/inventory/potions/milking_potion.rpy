@@ -184,7 +184,7 @@ label potion_scene_11_2: #Milking potion part 2
     m "Yes, well, you should notice it start to affect you soon."
     call her_main("Hmmm...","annoyed","down")
     call her_main("well how are you going to solve the milk problem, [genie_name]?","open","down")
-    call her_main("Am I going to have to stand here...","base","ahegao_raised")
+    call her_main("Am I going to have to stand here...", "base", "narrow", "base", "up")
     call her_main("With my shirt off...", "soft", "happy", "base", "R")
 
     call set_her_action("lift_top")
@@ -284,10 +284,10 @@ label potion_scene_11_2: #Milking potion part 2
     $ milking = 2
     call set_her_action("milk_breasts")
 
-    call her_main("!!!","base","ahegao_raised",cheeks="blush")
+    call her_main("!!!", "base", "narrow", "base", "up",cheeks="blush")
     call her_main("{size=+5}OFF! TURN OFF!{/size}","shock","worriedCl")
     m "I think you need to wait until it's done."
-    call her_main("Ugh...","open_tongue","ahegao_raised",cheeks="blush")
+    call her_main("Ugh...", "open_tongue", "narrow", "base", "up",cheeks="blush")
     call her_main("I can't...","open","worriedCl")
     call her_main("It's too much...","open","worriedCl")
     m "What's wrong?"

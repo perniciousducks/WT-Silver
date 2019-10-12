@@ -367,7 +367,7 @@ label slytherin_cheer_responses:
 
     if day_random >=9 and her_reputation > 15:
         $ uni_sperm = True
-        call her_main("","base","ahegao_raised",xpos="right",ypos="base")
+        call her_main("", "base", "narrow", "base", "up",xpos="right",ypos="base")
     else:
         call her_main("", "base", "base", "base", "mid",xpos="right",ypos="base")
     pause.5

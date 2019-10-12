@@ -233,7 +233,7 @@ label hg_pf_titjob_T2_repeat:
     m "[hermione_name], how would you like wrapping those perfect tits of yours around my cock again?"
     call her_main("As long as I am getting paid...", "soft", "happy", "base", "R")
     g9 "Well, then... Time to earn those points!"
-    call her_main("{image=textheart}{image=textheart}{image=textheart}","base","ahegao_raised")
+    call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "base", "up")
 
     jump hg_pf_titjob_2
 
@@ -363,7 +363,7 @@ label hg_pf_titjob_1:
             call her_main("By the third button, he couldn't take his eyes off me...","base","down")
             call her_main("And when I got to the fourth,...I saw him move his hands under the desk...")
             m "Really?"
-            call her_main("Yes... I could almost hear him...{w=0.3}\"doing it\"...","base","ahegao_raised")
+            call her_main("Yes... I could almost hear him...{w=0.3}\"doing it\"...", "base", "narrow", "base", "up")
             $ ccg1 = 10
             call her_main("I even gave him a glimpse of my bra...", "open", "base", "base", "R")
             g9 "Do you have no shame?"
@@ -400,7 +400,7 @@ label hg_pf_titjob_1:
             call her_main("Perfect, you say?", "open_tongue", "base", "base", "mid")
             m "As perfect as any mortal, [hermione_name]!"
             $ ccg1 = 11
-            call her_main(".......","base","ahegao_raised")
+            call her_main(".......", "base", "narrow", "base", "up")
             m "Try to get it as close to the tip of my cock as you can..."
             call her_main("............","normal","worriedCl")
             call her_main("A-ha.....", "open_wide_tongue", "base", "base", "mid")
@@ -707,7 +707,7 @@ label hg_pf_titjob_2:
             m "*Mmm*... Yes, this feels quite good."
             call her_main("Does it?","angry","wink")
             $ ccg1 = 21
-            call her_main("Ginny seemed to enjoy it a lot as well...","base","ahegao_raised")
+            call her_main("Ginny seemed to enjoy it a lot as well...", "base", "narrow", "base", "up")
             g4 "She enjoyed it?"
             $ ccg1 = 22
             call her_main("Of course she did!","base","happyCl")

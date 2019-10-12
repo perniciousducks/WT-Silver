@@ -629,7 +629,7 @@ label cho_intro_E3:
         m "I got some word about you that needs to be addressed..."
         call her_main("About what? Am I in trouble for anything?","soft","wide_stare")
         m "Miss Chang..."
-        call her_main("Oh...","annoyed","ahegao_raised")
+        call her_main("Oh...", "annoyed", "narrow", "base", "up")
         call her_main("What about her...","annoyed","angry")
         m "Well, it has come to my attention that you’ve been spreading false rumours about her."
         call her_main("And? It’s well deserved in my opinion...","soft","annoyed")
@@ -829,7 +829,7 @@ label cho_intro_E3:
     call her_main("Chang...","annoyed","angryL")
     m "Go on, girl. Tell her."
     call cho_main("Tell me what?","smile","angry","angry","mid")
-    call her_main("...","annoyed","ahegao_raised")
+    call her_main("...", "annoyed", "narrow", "base", "up")
     call her_main("About my \"Quidditch equality movement\"...", "normal", "closed", "base", "mid")
     call cho_main("Did our Professor finally convince you what a terrible idea it would be?","soft","narrow","angry","mid")
     m "Actually, I still think granting more people the ability to-"

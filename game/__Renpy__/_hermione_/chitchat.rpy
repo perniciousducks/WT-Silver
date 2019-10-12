@@ -271,7 +271,7 @@ label chit_chat:
     if her_whoring >= 15 and her_whoring <= 17:
         if one_of_ten == 1:
             call her_main("Would you like me to show you my breasts today, sir?","open","down")
-            call her_main("Yes... I would willingly expose myself to you, professor...","base","ahegao_raised")
+            call her_main("Yes... I would willingly expose myself to you, professor...", "base", "narrow", "base", "up")
             call her_main("That's how selfless I am!","annoyed","annoyed")
 
         elif one_of_ten == 2:

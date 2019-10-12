@@ -134,7 +134,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
 
     call nar(">You take her exposed breasts back into your hands and continue massaging")
 
-    call her_main("sir... they seem to have become more sensitive...","base","ahegao_raised")
+    call her_main("sir... they seem to have become more sensitive...", "base", "narrow", "base", "up")
     call her_main("Please don't do anything sudden.", "soft", "narrow", "annoyed", "up")
     m "Like this?"
     call nar(">You take both nipple between your thumb and index finger.")

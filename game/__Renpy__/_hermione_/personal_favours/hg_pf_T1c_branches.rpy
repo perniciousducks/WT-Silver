@@ -579,26 +579,26 @@ label hg_pf_admire_breasts_T4_touch: # Call label
     if her_whoring >= 17:
         call her_main("[genie_name], you promised not to touch...", "base", "base", "base", "R", cheeks="blush")
         m "I know, I know... But it's hard to resist..."
-        call her_main(".................","base","ahegao_raised", cheeks="blush")
+        call her_main(".................", "base", "narrow", "base", "up", cheeks="blush")
     else:
         call her_main("[genie_name], you promised not to touch...","angry","worriedCl", cheeks="blush")
         m "I know, I know... But it's hard to resist..."
         call her_main(".................","angry","angry", cheeks="blush")
 
-    call her_main("....................ah...{image=textheart}","base","ahegao_raised", cheeks="blush")
-    call her_main("[genie_name], you need to stop now...","base","ahegao_raised", cheeks="blush")
+    call her_main("....................ah...{image=textheart}", "base", "narrow", "base", "up", cheeks="blush")
+    call her_main("[genie_name], you need to stop now...", "base", "narrow", "base", "up", cheeks="blush")
     m "Just a bit longer..."
 
     call nar(">You keep on massaging the girl's breasts...")
 
-    call her_main("[genie_name]... please, stop this...","open","ahegao_raised", cheeks="blush")
+    call her_main("[genie_name]... please, stop this...", "open", "narrow", "base", "up", cheeks="blush")
     m "Why? Because you like it too much?"
     call her_main("No it's not that...", "base", "base", "base", "R", cheeks="blush")
     call her_main("I mean...", "open", "base", "base", "R", cheeks="blush")
 
     call nar(">You pull the tits in opposite directions and then squish them together...")
 
-    call her_main("Ah...{image=textheart} [genie_name], I really need to go...","base","ahegao_raised", cheeks="blush")
+    call her_main("Ah...{image=textheart} [genie_name], I really need to go...", "base", "narrow", "base", "up", cheeks="blush")
     if daytime:
         call her_main("That's right... the classes are about to start...", "open", "base", "base", "R", cheeks="blush")
     else:
@@ -630,7 +630,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
     call blkfade
 
     ">You take your cock out and start stroking it..."
-    call her_main("[genie_name]?","base","ahegao_raised", cheeks="blush", ypos="head")
+    call her_main("[genie_name]?", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
     ">You stare at Hermione's breasts with hunger..."
 
     # Start Jerking off.
@@ -663,23 +663,23 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         call her_main("................","disgust","down_raised", cheeks="blush")
 
     else: # Different posing than above.
-        call her_main("ah...","base","ahegao_raised", cheeks="blush")
+        call her_main("ah...", "base", "narrow", "base", "up", cheeks="blush")
         call her_main("It's so big...", "open", "base", "base", "R", cheeks="blush")
         call her_main("You just couldn't help yourself, could you [genie_name]?", "base", "base", "base", "R", cheeks="blush")
-        call her_main("..................","base","ahegao_raised", cheeks="blush")
+        call her_main("..................", "base", "narrow", "base", "up", cheeks="blush")
         m "Yes... Yes, like this..."
         m "Yes, with your tits all naked..."
-        call her_main("..............","base","ahegao_raised", cheeks="blush")
+        call her_main("..............", "base", "narrow", "base", "up", cheeks="blush")
         call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
         call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
         call her_main("Not to... ehm...", "open", "base", "base", "R", cheeks="blush")
-        call her_main("Not to cum on me, [genie_name]...","base","ahegao_raised", cheeks="blush")
+        call her_main("Not to cum on me, [genie_name]...", "base", "narrow", "base", "up", cheeks="blush")
         m "Fine, whatever..."
         m "Oh, you little slut. You nasty little slut!"
-        call her_main(".......................","base","ahegao_raised", cheeks="blush")
+        call her_main(".......................", "base", "narrow", "base", "up", cheeks="blush")
         call nar(">You start to stroke your cock even harder...")
         g4 "Yes, I know you want this! Yes!"
-        call her_main("................","base","ahegao_raised", cheeks="blush")
+        call her_main("................", "base", "narrow", "base", "up", cheeks="blush")
 
 
     # Genie cums.

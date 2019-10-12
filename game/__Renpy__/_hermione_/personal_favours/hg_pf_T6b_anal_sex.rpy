@@ -341,7 +341,7 @@ label hg_anal_sex_2:
 
     call bld
     m "How about another assfuck, [hermione_name]?"
-    call her_main("Of course, [genie_name].","base","ahegao_raised", ypos="head")
+    call her_main("Of course, [genie_name].", "base", "narrow", "base", "up", ypos="head")
     g4 "*Hngh!* You little minx!"
 
     stop music fadeout 1.0

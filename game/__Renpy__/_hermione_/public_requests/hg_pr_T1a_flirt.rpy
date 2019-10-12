@@ -463,7 +463,7 @@ label hg_pr_flirt_T3_E3:
             call her_main("There were at least a dozen of them there...", "normal", "base", "base", "mid")
             call her_main("All of the boys knew who I was...","open","angryCl")
             her "I was the center of attention at first..."
-            call her_main("And it felt sort of wonderful...","base","ahegao_raised")
+            call her_main("And it felt sort of wonderful...", "base", "narrow", "base", "up")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("Then a bunch of those \"Slytherin\" harlots stumbled in and...","disgust","glance")
             m "And?"

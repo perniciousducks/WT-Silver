@@ -354,7 +354,7 @@ label hg_ps_cumslut_Scene_2:
 
             call her_main("Will that be all [genie_name].", "annoyed", "narrow", "annoyed", "up")
             m "I don't suppose you could kiss it for good luck?"
-            call her_main("...{p}...","base","ahegao_raised")
+            call her_main("...{p}...", "base", "narrow", "base", "up")
 
             hide screen hermione_main
             hide screen bld1
@@ -456,7 +456,7 @@ label hg_ps_cumslut_Scene_2:
     m "Oh and one last thing before you head to class."
     call her_main("Yes...", "soft", "narrow", "annoyed", "up",xpos="right",ypos="base")
     m "If you return to this office after classes without any cum on you, I'll be very upset."
-    call her_main("Yes [genie_name].","base","ahegao_raised")
+    call her_main("Yes [genie_name].", "base", "narrow", "base", "up")
     m "Have fun. Say hi to your friends for me."
     call her_main("...", "base", "closed", "base", "mid")
 
@@ -471,7 +471,7 @@ label hg_ps_cumslut_Scene_3:
     call her_main("Can I?", "grin", "narrow", "annoyed", "up")
     m "well-"
     call her_main("I was going to ask you if I could seeing as how it made you so happy last time [genie_name].","smile","happyCl",emote="06")
-    call her_main("I'll even do it for free if that would make you happier!","base","ahegao_raised")
+    call her_main("I'll even do it for free if that would make you happier!", "base", "narrow", "base", "up")
     m "really?"
     m "Well let's get started then!"
 

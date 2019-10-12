@@ -163,8 +163,8 @@ label equip_bottom:
                         # call her_main("(That old thing?)","annoyed","down")
                         # call her_main("Can't I wear something a little shorter?", "open", "base", "base", "R",cheeks="blush")
                         # m "I don't think they make anything shorter."
-                        # call her_main("I guess This will just have to do then...","open","ahegao_raised",cheeks="blush")
-                        # call her_main("Let me go change...","base","ahegao_raised",cheeks="blush")
+                        # call her_main("I guess This will just have to do then...", "open", "narrow", "base", "up",cheeks="blush")
+                        # call her_main("Let me go change...", "base", "narrow", "base", "up",cheeks="blush")
                 # else:
                     # if her_whoring < 5:
                         # call her_main("I'm sorry, [genie_name].", "base", "base", "base", "mid")
@@ -484,7 +484,7 @@ label equip_bottom:
                 # if her_whoring >= 17:
                     # if her_whoring < 20:
                         # call her_main("(These trousers look so short...)","disgust","down_raised")
-                        # call her_main("(My ass is gonna be on display the whole time in those...)","open_tongue","ahegao_raised",cheeks="blush")
+                        # call her_main("(My ass is gonna be on display the whole time in those...)", "open_tongue", "narrow", "base", "up",cheeks="blush")
                         # call her_main("Alright, [genie_name].","smile","happyCl")
                         # call her_main("Let me just change it.","base","glance")
                     # else: #20+
@@ -513,7 +513,7 @@ label equip_bottom:
                 # if her_whoring >= 17:
                     # if her_whoring < 23:
                         # call her_main("(These trousers are so short...)","disgust","down_raised")
-                        # call her_main("(I'm such a pervert!)","open_tongue","ahegao_raised",cheeks="blush")
+                        # call her_main("(I'm such a pervert!)", "open_tongue", "narrow", "base", "up",cheeks="blush")
                         # call her_main("Alright, [genie_name].","smile","happyCl")
                         # call her_main("Let me just change it.","base","glance")
                     # else:

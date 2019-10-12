@@ -260,7 +260,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
     m "Do tell, [hermione_name]..."
     call her_main("I had a class with professor Lockhart today...", "grin", "base", "base", "R")
     her "[genie_name] Lockhart is so charming and smart and..."
-    call her_main("And perfect...","base","ahegao_raised")
+    call her_main("And perfect...", "base", "narrow", "base", "up")
     m "Please spare me your schoolgirl crush, [hermione_name]."
     call her_main("[genie_name] Lockhart was even kind enough to give me his autograph...","smile","happyCl", emote="06")
     m "How kind of him indeed."

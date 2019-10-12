@@ -205,7 +205,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
     hide screen hermione_main
     call u_play_ani
     her "*Slurp!* *Gulp!* *Slurp!*"
-    call her_main("","base","ahegao_raised")
+    call her_main("", "base", "narrow", "base", "up")
     call u_pause_ani
     her "All I could think about was the taste of your filthy cum."
     hide screen hermione_main
@@ -759,7 +759,7 @@ label potion_scene_3_3_1: #Hypno potion
     m "And what are your hobbies?"
     call her_main("Doing my makeup{image=textheart}, dancing{image=textheart} and dressing happy{image=textheart}!","base","happyCl")
     m "Dressing happy?"
-    call her_main("You know, wearing nice things to make other people happy!{image=textheart}","base","ahegao_raised")
+    call her_main("You know, wearing nice things to make other people happy!{image=textheart}", "base", "narrow", "base", "up")
     m "You like making people happy?"
     call her_main("Of course mistah professor, making people happy{image=textheart} makes me happy{image=textheart}!","smile","happyCl")
     call her_main("Once I finish school I want to get a job where all I do is make people happy{image=textheart}!","base","happyCl")
@@ -833,7 +833,7 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("If it's not tooo much trouble could you...", "silly", "narrow", "annoyed", "up")
     call nar(">Hermione starts pinching her nipple.")
     call set_her_action("pinch")
-    call her_main("could you please cum on me?","open_tongue","ahegao_raised",cheeks="blush")
+    call her_main("could you please cum on me?", "open_tongue", "narrow", "base", "up",cheeks="blush")
     m "Well if it makes you happy."
     call nar(">you stand up and head towards her.")
     call her_main("thank you, thank you thank you! You're the best headmaster {size=+5}EVER!{/size}","smile","happyCl",emote="06")
@@ -852,7 +852,7 @@ label potion_scene_3_3_1: #Hypno potion
     call ctc
 
     call set_her_action("covering")
-    call her_main("...","base","ahegao_raised")
+    call her_main("...", "base", "narrow", "base", "up")
     call set_her_action("pinch")
     call her_main("I don't know how other girls do it...","annoyed","down")
     m "Do what?"
@@ -861,23 +861,23 @@ label potion_scene_3_3_1: #Hypno potion
     call her_main("I mean I can barely stop mahself coming here everyday!","smile","happyCl")
     m "That's it..."
     call set_her_action("pinch")
-    call her_main("Hmmm, I just luv playin' with mah boobies{image=textheart}{image=textheart}{image=textheart}","base","ahegao_raised")
-    call her_main("They're just so soft...","open","ahegao_raised",cheeks="blush")
+    call her_main("Hmmm, I just luv playin' with mah boobies{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "base", "up")
+    call her_main("They're just so soft...", "open", "narrow", "base", "up",cheeks="blush")
     call set_her_action("covering")
-    call her_main("And they feel soo good. They're really sensi--","base","ahegao_raised",cheeks="blush")
-    call her_main("Sensi---","base","ahegao_raised",cheeks="blush")
+    call her_main("And they feel soo good. They're really sensi--", "base", "narrow", "base", "up",cheeks="blush")
+    call her_main("Sensi---", "base", "narrow", "base", "up",cheeks="blush")
     call set_her_action("pinch")
-    call her_main("What's the word?","annoyed","ahegao_raised",cheeks="blush")
+    call her_main("What's the word?", "annoyed", "narrow", "base", "up",cheeks="blush")
     m "Sensitive."
     call set_her_action("covering")
-    call her_main("That's right they're really sensitive!","silly","ahegao_raised",cheeks="blush")
+    call her_main("That's right they're really sensitive!", "silly", "narrow", "base", "up",cheeks="blush")
     m "So am I..."
-    call her_main("Are you going to cum?","open_tongue","ahegao_raised",cheeks="blush")
+    call her_main("Are you going to cum?", "open_tongue", "narrow", "base", "up",cheeks="blush")
     call set_her_action("pinch")
-    call her_main("Please do it on my face!","open_tongue","ahegao_raised",cheeks="blush")
+    call her_main("Please do it on my face!", "open_tongue", "narrow", "base", "up",cheeks="blush")
     call her_main("No wait my tits...","scream","worriedCl",cheeks="blush")
     call set_her_action("covering")
-    call her_main("No wait my face!","silly","ahegao_raised",cheeks="blush")
+    call her_main("No wait my face!", "silly", "narrow", "base", "up",cheeks="blush")
 
     menu:
         "-Cum on her face-":
@@ -888,7 +888,7 @@ label potion_scene_3_3_1: #Hypno potion
             $ uni_sperm = True
             g4 "that's it, all over your face."
             call set_her_action("pinch")
-            call her_main("...{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised",cheeks="blush")
+            call her_main("...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "up",cheeks="blush")
         "-Cum on her tits-":
             g4 "Here it comes fuckbunny!"
             call her_main("{image=textheart}{image=textheart}{image=textheart}", "shock", "wide", "base", "stare",cheeks="blush")
@@ -897,7 +897,7 @@ label potion_scene_3_3_1: #Hypno potion
             $ uni_sperm = True
             g4 "All over your tits."
             call set_her_action("pinch")
-            call her_main("It's so warm...{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised",cheeks="blush")
+            call her_main("It's so warm...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "up",cheeks="blush")
         "-cover her in cum-":
             g4 "Here it comes whore!"
             call her_main("{image=textheart}{image=textheart}{image=textheart}", "shock", "wide", "base", "stare",cheeks="blush")
@@ -906,7 +906,7 @@ label potion_scene_3_3_1: #Hypno potion
             $ uni_sperm = True
             g4 "that's right slut, All over you."
             call set_her_action("pinch")
-            call her_main("{image=textheart}{image=textheart}{image=textheart}","silly","ahegao_raised",cheeks="blush")
+            call her_main("{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "up",cheeks="blush")
 
     call gen_chibi("hold_dick","desk","base")
     call her_main("...", "grin", "narrow", "annoyed", "up")

@@ -462,7 +462,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
     #Third time event.
     elif pathvalue == 2:
         m "How about another booty plunderin, lass?"
-        call her_main("Of course, captain.","base","ahegao_raised")
+        call her_main("Of course, captain.", "base", "narrow", "base", "up")
         g9 "Raise anchor, you little tart!"
 
         hide screen hermione_main

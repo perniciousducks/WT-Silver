@@ -235,7 +235,7 @@ label l_tutoring:
         call her_main("I slowly headed towards the sounds and I discovered two girls in an alcove.", "open", "base", "base", "mid",cheeks="blush")
         call her_main("I remained hidden to observe them.","grin","wink",cheeks="blush")
         g11 "{size=-2}(Come on!){/size}"
-        call her_main("Yes, professor?","base","ahegao_raised",cheeks="blush")
+        call her_main("Yes, professor?", "base", "narrow", "base", "up",cheeks="blush")
         m "Yes, no, please continue."
         call her_main("They were kissing passionately.","open","worriedCl",cheeks="blush")
         g9 "And? And?"
@@ -290,7 +290,7 @@ label l_tutoring:
         call her_main("Believe me, it wasn't easy, professor.","base","concerned",cheeks="blush",tears="soft")
         m "I'm sure you gave it your best."
         m "But right now I await your report."
-        call her_main("Yes, but before that I want to clarify that my report is purely for scientific purposes.","base","ahegao_raised",cheeks="blush")
+        call her_main("Yes, but before that I want to clarify that my report is purely for scientific purposes.", "base", "narrow", "base", "up",cheeks="blush")
         m "{size=-2}(Sure...){/size}"
         call her_main("So I tracked down those two tarts to an area in the attic.", "open", "closed", "base", "mid")
         call her_main("Which, by the way, seems to be the meeting place for girls of this... sort.","annoyed","suspicious")
@@ -324,15 +324,15 @@ label l_tutoring:
         call her_main("", "open", "base", "base", "mid",cheeks="blush")
         g9 "And? And?"
         call her_main("They pulled up their shirts and caressed each other's breasts.","open","worriedCl",cheeks="blush")
-        call her_main("{size=-2}(Their beautiful and tempting breasts...){/size}","open","ahegao_raised",cheeks="blush")
-        call her_main("Later those nasty girls raised their skirts and started to touch each other \"there\" while kissing.","silly","ahegao_raised",cheeks="blush")
-        call her_main("{size=-2}(I can't believe I said that!){/size}","base","ahegao_raised",cheeks="blush",tears="sweat")
-        call her_main("They were very excited, and I could see their panties become wet.","open","ahegao_raised",cheeks="blush")
-        call her_main("Disgusting.","annoyed","ahegao_raised",cheeks="blush")
+        call her_main("{size=-2}(Their beautiful and tempting breasts...){/size}", "open", "narrow", "base", "up",cheeks="blush")
+        call her_main("Later those nasty girls raised their skirts and started to touch each other \"there\" while kissing.", "silly", "narrow", "base", "up",cheeks="blush")
+        call her_main("{size=-2}(I can't believe I said that!){/size}", "base", "narrow", "base", "up",cheeks="blush",tears="sweat")
+        call her_main("They were very excited, and I could see their panties become wet.", "open", "narrow", "base", "up",cheeks="blush")
+        call her_main("Disgusting.", "annoyed", "narrow", "base", "up",cheeks="blush")
         if d_flag_01:
             g9 "{size=-2}(Yes... yes...){/size}"
         call her_main("One of the girls went crazy and inserted her fingers into the other's \"thing\" and worked them furiously.","silly","worried",cheeks="blush",tears="soft")
-        call her_main("Soon imitated by her girlfriend.","silly","ahegao_raised",cheeks="blush")
+        call her_main("Soon imitated by her girlfriend.", "silly", "narrow", "base", "up",cheeks="blush")
         call her_main("Those whores came so hard I'm sure they heard the screams on the other side of the grounds!", "open_wide_tongue", "narrow", "angry", "up",cheeks="blush")
         if d_flag_01:
             her "{size=-2}(And I had to bite my lip, or else they would've heard me too...){/size}"
@@ -383,7 +383,7 @@ label l_tutoring:
 
         call her_walk(xpos="door", ypos="base", speed=2)
 
-        call her_main("{size=-4}(I enjoyed it too much. Maybe I'm becoming a pervert as well){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(I enjoyed it too much. Maybe I'm becoming a pervert as well){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I lost control, it won't happen again!){/size}","shock","down_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Good thing I'm not a degenerate like those filthy girls!){/size}","base","glance",cheeks="blush",ypos="head")
 
@@ -436,7 +436,7 @@ label l_tutoring:
         m "But when you looked at these girls, you felt certain emotions."
         call her_main("Yes and ?","grin","wink",cheeks="blush")
         m "You didn't feel the need to touch yourself?"
-        call her_main("Yes... but I resisted.","base","ahegao_raised",cheeks="blush")
+        call her_main("Yes... but I resisted.", "base", "narrow", "base", "up",cheeks="blush")
         call nar(">You start to caress her thigh.")
         call her_main("Professor...","open","worriedCl",cheeks="blush")
         m "And you felt those emotions without even touching yourself."
@@ -536,7 +536,7 @@ label l_tutoring:
         call her_main("Yes but...{w=0.3} Professor, it's inappropriate for a girl of good education!", "open", "base", "base", "mid",cheeks="blush")
         m "Don't let old prejudices weigh you down. You're a girl with great potential."
         call nar(">You gently squeeze her nipples through the fabric.")
-        call her_main("Ah, thank you professor.","open","ahegao_raised",cheeks="blush")
+        call her_main("Ah, thank you professor.", "open", "narrow", "base", "up",cheeks="blush")
         m "A girl with a brilliant mind."
         call nar(">You increase your grip on her nipples.")
         m "A girl who will become a woman of exception."
@@ -578,7 +578,7 @@ label l_tutoring:
         call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(\"My little witch?\"){/size}","annoyed","angryL",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(Why not, after all...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Why not, after all...){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
 
@@ -659,13 +659,13 @@ label l_tutoring:
         m "Your hard nipples say the contrary."
         m "I can stop if you want."
         call her_main("Yeah sure!","grin","angry",cheeks="blush")
-        call her_main("Suck them professor.","silly","ahegao_raised",cheeks="blush")
+        call her_main("Suck them professor.", "silly", "narrow", "base", "up",cheeks="blush")
         g9 "As you wish, princess."
-        call her_main("","silly","ahegao_raised",cheeks="blush")
+        call her_main("", "silly", "narrow", "base", "up",cheeks="blush")
         call nar(">You suck her nipples with devotion.")
-        call her_main("Yes {image=textheart} like that.","silly","ahegao_raised",cheeks="blush",tears="sweat")
+        call her_main("Yes {image=textheart} like that.", "silly", "narrow", "base", "up",cheeks="blush",tears="sweat")
         call nar(">You start to chew on her nipples.")
-        call her_main("Ah, noo, don't...","open_tongue","ahegao_raised",cheeks="blush")
+        call her_main("Ah, noo, don't...", "open_tongue", "narrow", "base", "up",cheeks="blush")
         call nar(">You chew on them even harder.")
         call her_main("Not that hard, I will...", "open_wide_tongue", "narrow", "angry", "up",cheeks="blush")
         g9 "{size=-2}(Time for the grand finale!){/size}"
@@ -716,7 +716,7 @@ label l_tutoring:
 
         call her_walk(xpos="door", ypos="base", speed=2.5)
 
-        call her_main("{size=-4}(I'm such a slut...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(I'm such a slut...){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Cumming in front of my professor...){/size}","base","down_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I definitely need to do that again!){/size}","base","glance",cheeks="blush",ypos="head")
 
@@ -785,7 +785,7 @@ label l_tutoring:
         call ctc
 
         if hermione_wear_panties:
-            call her_main("You love my pussy don't you?","base","ahegao_raised",cheeks="blush")
+            call her_main("You love my pussy don't you?", "base", "narrow", "base", "up",cheeks="blush")
             g9 "Oh yes, I love your smell, especially when you're wet."
             call her_main("Professor...","angry","worriedCl",cheeks="blush",emote="05")
             hide screen no_groping_01
@@ -794,7 +794,7 @@ label l_tutoring:
             call nar(">You caress her clit.")
             call her_main("Professor!", "mad", "wide", "base", "stare",cheeks="blush")
         else:
-            call her_main("You love my panties don't you?","base","ahegao_raised",cheeks="blush")
+            call her_main("You love my panties don't you?", "base", "narrow", "base", "up",cheeks="blush")
             g9 "Oh yes, I love their smell, especially when you're wet."
             call her_main("Professor...","angry","worriedCl",cheeks="blush",emote="05")
             hide screen no_groping_01
@@ -827,10 +827,10 @@ label l_tutoring:
         call her_main("Yes, you're probably right.","grin","angry",cheeks="blush")
         m "Probably?!"
         call nar(">While you're moving your finger in her pussy, you take over her clit with your thumb.")
-        call her_main("Haa {image=textheart}, I'm only your humble student, I wouldn't know such naughty things.","silly","ahegao_raised",cheeks="blush")
+        call her_main("Haa {image=textheart}, I'm only your humble student, I wouldn't know such naughty things.", "silly", "narrow", "base", "up",cheeks="blush")
         m "One finger is rarely enough even with a tight pussy like yours."
         call nar(">You insert a second finger in her tight and warm pussy...")
-        call her_main("Yesss {image=textheart}, I'll try to remember your teachings.","silly","ahegao_raised",cheeks="blush")
+        call her_main("Yesss {image=textheart}, I'll try to remember your teachings.", "silly", "narrow", "base", "up",cheeks="blush")
         call nar(">You increase the pace and feel her pussy tighten on your fingers.")
         m "Maybe a third finger?"
         call her_main("Don't be so bold.","grin","angry",cheeks="blush",tears="soft")
@@ -840,7 +840,7 @@ label l_tutoring:
         show screen groping_06b
         with d3
 
-        call her_main("Noo {image=textheart}{w=0.2} not so fast I will...","open_tongue","ahegao_raised",cheeks="blush")
+        call her_main("Noo {image=textheart}{w=0.2} not so fast I will...", "open_tongue", "narrow", "base", "up",cheeks="blush")
         call nar(">You increase your pace even more.")
         call her_main("I will I will...", "open_wide_tongue", "narrow", "angry", "up",cheeks="blush")
         g9 "Time to get serious."
@@ -882,7 +882,7 @@ label l_tutoring:
 
         call her_walk(xpos="door", ypos="base", speed=2.5)
 
-        call her_main("{size=-4}(Favourite...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(Favourite...){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
         call her_main("{size=-4}(There's another one?){/size}", "mad", "wide", "base", "stare",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I'll do my best to remain his favourite!){/size}","base","worriedCl",cheeks="blush",ypos="head")
 
@@ -962,7 +962,7 @@ label l_tutoring:
         g9 "Oh yes..."
         her "Having watched the other girls I now know why."
         her "Those breasts are so tempting."
-        call her_main("Big or small, I want to hold them in my hands and suck the nipples.","open_tongue","ahegao_raised",cheeks="blush")
+        call her_main("Big or small, I want to hold them in my hands and suck the nipples.", "open_tongue", "narrow", "base", "up",cheeks="blush")
         g9 "Me too, me too!"
         m "Now remove your skirt!"
         pause.5
@@ -978,7 +978,7 @@ label l_tutoring:
 
         her "Good idea."
         call her_main("Sometimes I wish I could do this with others girls.", "open", "happy", "base", "mid",cheeks="blush")
-        call her_main("Masturbate naked in front of each other.","open","ahegao_raised",cheeks="blush")
+        call her_main("Masturbate naked in front of each other.", "open", "narrow", "base", "up",cheeks="blush")
         if hermione_wear_panties:
             g9 "Yes go on, take off your panties!"
             her "Your wish is my command."
@@ -994,19 +994,19 @@ label l_tutoring:
             $ u_tears_pic = "characters/hermione/face/e_her_tears_02b.png"
             call ctc
 
-            call her_main("And mine is to touch another girl's pussy.","silly","ahegao_raised",cheeks="blush")
+            call her_main("And mine is to touch another girl's pussy.", "silly", "narrow", "base", "up",cheeks="blush")
         else:
-            call her_main("Touch her pussy like I'm touching mine now.","silly","ahegao_raised",cheeks="blush")
+            call her_main("Touch her pussy like I'm touching mine now.", "silly", "narrow", "base", "up",cheeks="blush")
 
         call set_her_action("pinch")
         pause.5
 
-        call her_main("Caress it.","open_tongue","ahegao_raised",cheeks="blush")
+        call her_main("Caress it.", "open_tongue", "narrow", "base", "up",cheeks="blush")
 
         call set_her_action("fingering")
         pause.2
 
-        call her_main("Insert my fingers into her wet pussy.","open_tongue","ahegao_raised",cheeks="blush")
+        call her_main("Insert my fingers into her wet pussy.", "open_tongue", "narrow", "base", "up",cheeks="blush")
         g11 "Yes, yes! Now the vibrator!"
 
         hide screen hermione_main
@@ -1079,7 +1079,7 @@ label l_tutoring:
         m "So, anal stimulation..."
         call her_main("Ah! I knew you would say that.","smile","angry",cheeks="blush")
         her "{size=-2}(Once again, not that I mind...){/size}"
-        call her_main("{size=-2}(I'm such a whore, even the Slytherin girls can't compete...){/size}","base","ahegao_raised",cheeks="blush")
+        call her_main("{size=-2}(I'm such a whore, even the Slytherin girls can't compete...){/size}", "base", "narrow", "base", "up",cheeks="blush")
         m "Come again, Miss Granger?"
         call her_main("In this school nobody can compete with me, right professor?","smile","happyCl",cheeks="blush",emote="06")
         call her_main("In any field!","smile","angry",cheeks="blush")
@@ -1110,10 +1110,10 @@ label l_tutoring:
         show screen blktone
         call her_main("It's you and your dirty talk!","annoyed","angryL",cheeks="blush",xpos="mid",ypos="base")
         her "Talking about anal insertions, asshole licking and... and..."
-        call her_main("Fisting!","open","ahegao_raised",cheeks="blush")
+        call her_main("Fisting!", "open", "narrow", "base", "up",cheeks="blush")
         m "I never mentioned any of that."
-        call her_main("Oh. You didn't?","annoyed","ahegao_raised",cheeks="blush")
-        call her_main("Well maybe you didn't but you {b}were{/b} thinking about it!","base","ahegao_raised",cheeks="blush")
+        call her_main("Oh. You didn't?", "annoyed", "narrow", "base", "up",cheeks="blush")
+        call her_main("Well maybe you didn't but you {b}were{/b} thinking about it!", "base", "narrow", "base", "up",cheeks="blush")
         g9 "Maybe."
         g9 "Your ass is so luscious I could eat it."
         call her_main("My point exactly!","angry","worriedCl",cheeks="blush")
@@ -1125,7 +1125,7 @@ label l_tutoring:
         m "But before that..."
         call her_main("If you say another word I swear I will go back to my dorm right now!","scream","angry",cheeks="blush",emote="01")
         call nar(">You suddenly insert the anal plug.")
-        call her_main("Yesss {image=textheart} like that!","silly","ahegao_raised",cheeks="blush")
+        call her_main("Yesss {image=textheart} like that!", "silly", "narrow", "base", "up",cheeks="blush")
         call nar(">You remove it just as quickly while giving her butt a loud slap.")
 
         play sound sd_boing1
@@ -1133,7 +1133,7 @@ label l_tutoring:
         play sound sd_slap
         with hpunch
 
-        call her_main("Yessss more {image=textheart}.","open_tongue","ahegao_raised",cheeks="blush")
+        call her_main("Yessss more {image=textheart}.", "open_tongue", "narrow", "base", "up",cheeks="blush")
         g9 "As you wish, princess."
         call nar(">You promptly insert and remove it.")
 
@@ -1142,7 +1142,7 @@ label l_tutoring:
         play sound sd_slap
         with hpunch
 
-        call her_main("More!!","open_tongue","ahegao_raised",cheeks="blush")
+        call her_main("More!!", "open_tongue", "narrow", "base", "up",cheeks="blush")
 
         play sound sd_boing1
         pause.1
@@ -1186,7 +1186,7 @@ label l_tutoring:
         hide screen groping_05b
         show screen no_groping_05
         m "I think you've had enough for one night."
-        call her_main("Yes I... I better go.","open_tongue","ahegao_raised",cheeks="blush")
+        call her_main("Yes I... I better go.", "open_tongue", "narrow", "base", "up",cheeks="blush")
         m "You forgot your gift."
         call nar(">You promptly insert the butt plug.")
         with hpunch
@@ -1234,21 +1234,21 @@ label l_tutoring:
 
     elif her_tutoring == 11:
         m "[hermione_name], I have something for you."
-        call her_main("Another gift for me?","base","ahegao_raised",cheeks="blush")
+        call her_main("Another gift for me?", "base", "narrow", "base", "up",cheeks="blush")
         call her_main("Please, please.","open","worriedCl",cheeks="blush")
         m "You weren't this excited last time when I gave you a present..."
         call her_main("Oh don't worry, it was just a moment of weakness.","smile","angry",cheeks="blush")
         her "I'm ready now!"
         call her_main("{size=-2}(My body perhaps not...){/size}","annoyed","down")
         m "Did you have fun with your anal plug?"
-        call her_main("Y-yes... I wear it sometimes...","base","ahegao_raised",cheeks="blush")
+        call her_main("Y-yes... I wear it sometimes...", "base", "narrow", "base", "up",cheeks="blush")
         call her_main("But I cut the tail!","annoyed","angryL",cheeks="blush")
         her "{size=-2}(No way I could walk around like that...){/size}"
         m "And you like it?"
         call her_main("It's very...{w=0.5} stimulating. It helps me whenever I cast a spell.","base","concerned",cheeks="blush",tears="soft")
         m "Tell me the truth Miss Granger, you wear it all the time, don't you?"
         call her_main("Nooo...","annoyed","angryL",cheeks="blush")
-        call her_main("Maybe...","open_tongue","ahegao_raised",cheeks="blush")
+        call her_main("Maybe...", "open_tongue", "narrow", "base", "up",cheeks="blush")
         her "........"
         m "Don't be ashamed, it's alright my little whore."
         call her_main("I wear it all the time and...{w=0.3} I love it!","smile","happyCl",cheeks="blush",emote="06")
@@ -1280,11 +1280,11 @@ label l_tutoring:
         call set_her_action("None")
         pause.5
 
-        call her_main("My tits are the best in all of Hogwarts!","silly","ahegao_raised",cheeks="blush")
+        call her_main("My tits are the best in all of Hogwarts!", "silly", "narrow", "base", "up",cheeks="blush")
         m "Have you been with many girls to say that?"
         call her_main("I wish...", "grin", "narrow", "angry", "up",cheeks="blush")
         g9 "I can tutor you on that too."
-        call her_main("Maybe we should finish this lesson first.","base","ahegao_raised",cheeks="blush")
+        call her_main("Maybe we should finish this lesson first.", "base", "narrow", "base", "up",cheeks="blush")
         m "Oh, we have time."
         call her_main("Speaking of that...","base","concerned",cheeks="blush",tears="soft")
 
@@ -1311,30 +1311,30 @@ label l_tutoring:
 
         call her_main("Can we start now?","grin","angry",cheeks="blush")
         g9 "I suppose you want them in your ass?"
-        call her_main("Naturally.","base","ahegao_raised",cheeks="blush")
+        call her_main("Naturally.", "base", "narrow", "base", "up",cheeks="blush")
         call her_main("{size=-2}(I'll try them in my pussy later tonight){/size}", "base", "closed", "base", "mid")
         hide screen no_groping_05
         show screen groping_05
         call nar(">You push the first bead in with ease.")
         her "Hmmm {image=textheart}"
         m "How many do you think you can take, my dear?"
-        call her_main("How many have you got?","base","ahegao_raised",cheeks="blush")
+        call her_main("How many have you got?", "base", "narrow", "base", "up",cheeks="blush")
         g9 "That's the spirit!"
         call nar(">You push another one inside with little resistance.")
-        call her_main("Yess {image=textheart}, one more please.","open","ahegao_raised",cheeks="blush")
+        call her_main("Yess {image=textheart}, one more please.", "open", "narrow", "base", "up",cheeks="blush")
         call nar(">You feel the beads sink deeper when you push the third one inside.")
         call her_main("Ohhh, they're... they're moving {image=textheart}.", "grin", "narrow", "angry", "up",cheeks="blush")
         call nar(">The fourth takes some work before it pops in.")
-        call her_main("Ah {image=textheart} ah {image=textheart}.","silly","ahegao_raised",cheeks="blush")
+        call her_main("Ah {image=textheart} ah {image=textheart}.", "silly", "narrow", "base", "up",cheeks="blush")
         call nar(">You push the last one forcefully inside.")
-        call her_main("Ahhhhh {image=textheart}, delightful.","open_tongue","ahegao_raised",cheeks="blush")
+        call her_main("Ahhhhh {image=textheart}, delightful.", "open_tongue", "narrow", "base", "up",cheeks="blush")
         her "They're so deep in my ass... almost like your cock."
         g9 "I can..."
         call her_main("No you can't! My butthole is too tight for both.", "annoyed", "closed", "base", "mid",cheeks="blush")
         call her_main("{size=-2}(But it's such a good idea){/size}", "grin", "narrow", "angry", "up",cheeks="blush")
         m "I'm sure there's still room for at least one finger."
         call nar(">You finger her butthole gently.")
-        call her_main("Ahh... {image=textheart}{w=0.5} aah...{image=textheart}","silly","ahegao_raised",cheeks="blush")
+        call her_main("Ahh... {image=textheart}{w=0.5} aah...{image=textheart}", "silly", "narrow", "base", "up",cheeks="blush")
         call her_main("W-What did I say...", "grin", "narrow", "angry", "up",cheeks="blush")
         call nar(">You wiggle the finger inside.")
         call her_main("You never listen, old pervert.", "grin", "narrow", "angry", "up",cheeks="blush")
@@ -1345,7 +1345,7 @@ label l_tutoring:
         g9 "In that case, one more finger."
         call nar(">She shivers when you insert a second finger.")
         call her_main("Ahh noo... no more please.","grin","angry",cheeks="blush")
-        call her_main("My butthole is stretched so wide!","open","ahegao_raised",cheeks="blush")
+        call her_main("My butthole is stretched so wide!", "open", "narrow", "base", "up",cheeks="blush")
         g9 "Your butthole is doing great."
         call nar(">You finger her butthole fiercely.")
         hide screen groping_05
@@ -1357,7 +1357,7 @@ label l_tutoring:
         call nar(">You suddenly pull out all the beads.")
         call her_main("Ahhhhhh!!","grin","dead",cheeks="blush",tears="messy")
         call nar(">And insert four fingers in her ass.")
-        call her_main("I'm cumming old bastard, I cumming!","silly","ahegao_raised",cheeks="blush")
+        call her_main("I'm cumming old bastard, I cumming!", "silly", "narrow", "base", "up",cheeks="blush")
         m "If you must..."
         call nar(">You continue to work her ass while you finger her pussy.")
         her "No don't I..."
@@ -1402,7 +1402,7 @@ label l_tutoring:
         pause.5
 
         call her_main("Professor!", "open", "happy", "base", "mid",cheeks="blush")
-        call her_main(".........","base","ahegao_raised",cheeks="blush")
+        call her_main(".........", "base", "narrow", "base", "up",cheeks="blush")
         call her_main("Can I have points for this?", "mad", "wide", "base", "stare",cheeks="blush")
         g11 "Now!"
         hide screen hermione_main
@@ -1454,14 +1454,14 @@ label l_tutoring:
 
         call her_main("Sir, I still think I deserve some...","annoyed","angryL",cheeks="blush")
         m "Good night, my dear child."
-        call her_main(".........","annoyed","ahegao_raised",cheeks="blush")
+        call her_main(".........", "annoyed", "narrow", "base", "up",cheeks="blush")
         call her_main("Good night, professor.", "annoyed", "closed", "base", "mid",cheeks="blush")
         call nar("You dismiss Hermione.")
 
         call her_walk(xpos="door", ypos="base", speed=2.5)
 
         call her_main("{size=-4}(Sucking his cock without getting any points!){/size}","annoyed","angryL",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(If he hadn't made me come so hard...){/size}","base","ahegao_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(If he hadn't made me come so hard...){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
         call her_main("{size=-4}(*sigh* Although I guess it's not that high a price...){/size}","base","down_raised",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
@@ -1512,7 +1512,7 @@ label l_tutoring:
 
         call her_main("Does this answer your question?", "open", "happy", "base", "mid",cheeks="blush")
         m "Not really. It's hard to tell from this distance. I mean, it's so dark..."
-        call her_main("...","annoyed","ahegao_raised")
+        call her_main("...", "annoyed", "narrow", "base", "up")
         pause.2
 
         hide screen hermione_main
@@ -1538,11 +1538,11 @@ label l_tutoring:
         g9 "......."
         call her_main("Do you mean...{w=0.3} no, no way professor!", "scream", "wide", "base", "stare",cheeks="blush")
         m "Oh, rest assured, we won't start with the bottom end."
-        call her_main("Still, professor, this is so dirty...","silly","ahegao_raised",cheeks="blush")
-        call her_main("{size=-2}(And exciting){/size}","silly","ahegao_raised",cheeks="blush")
+        call her_main("Still, professor, this is so dirty...", "silly", "narrow", "base", "up",cheeks="blush")
+        call her_main("{size=-2}(And exciting){/size}", "silly", "narrow", "base", "up",cheeks="blush")
         call her_main("Moreover, my butthole isn't stretched enough.", "annoyed", "closed", "base", "mid",cheeks="blush")
         g4 "Are you kidding me, with all your training!"
-        call her_main("And what a training!","annoyed","ahegao_raised",cheeks="blush")
+        call her_main("And what a training!", "annoyed", "narrow", "base", "up",cheeks="blush")
         call her_main("{size=-2}(Good thing I practised by myself, otherwise...){/size}","angry","worriedCl",cheeks="blush")
         g4 "Now stop making up excuses!"
         m "I can see you rubbing your thighs from excitement!"
@@ -1573,7 +1573,7 @@ label l_tutoring:
         call her_main("Because a girl likes to be complimented, professor!","annoyed","suspicious")
         call her_main("Especially when she's about to do these kinds of things!", "annoyed", "narrow", "annoyed", "up")
         m "I meant, of course you have a amazing body! That's not up to question."
-        call her_main("Best in the school?","base","ahegao_raised",cheeks="blush")
+        call her_main("Best in the school?", "base", "narrow", "base", "up",cheeks="blush")
         m "......{w=0.3} Yeah, yeah, best in the school."
         call her_main("I can tell you're lying!","mad","angry",cheeks="blush")
         m "Miss Granger, I've lived for a very long time and believe me, I have seen few women with a body like yours."
@@ -1584,8 +1584,8 @@ label l_tutoring:
         call her_main("Feel free to do use my body as you please.","angry","worriedCl",cheeks="blush")
         m "{size=-2}(*sigh* women...){/size}"
         m "Bend over the desk my dear little witch."
-        call her_main("{size=-2}(It starts with my dear little witch and ends up with my dear anal whore...){/size}","annoyed","ahegao_raised",cheeks="blush")
-        call her_main("{size=-2}(*sigh* men...){/size}","annoyed","ahegao_raised",cheeks="blush")
+        call her_main("{size=-2}(It starts with my dear little witch and ends up with my dear anal whore...){/size}", "annoyed", "narrow", "base", "up",cheeks="blush")
+        call her_main("{size=-2}(*sigh* men...){/size}", "annoyed", "narrow", "base", "up",cheeks="blush")
         call her_main("As you wish my dear {b}old{/b} headmaster.", "open", "happy", "base", "mid",cheeks="blush")
         m "{size=-2}(If you knew how old I actually am...){/size}"
         hide screen hermione_main
@@ -1608,11 +1608,11 @@ label l_tutoring:
         call hide_blkfade
         call ctc
 
-        call her_main("Hmmm, yes like that.","base","ahegao_raised",cheeks="blush")
+        call her_main("Hmmm, yes like that.", "base", "narrow", "base", "up",cheeks="blush")
         call her_main("My pussy feels lonely without your care.","grin","wink",cheeks="blush")
         call nar(">You start to finger her pussy too.")
         m "Poor little thing."
-        call her_main("What's better in life than this professor?","open","ahegao_raised",cheeks="blush")
+        call her_main("What's better in life than this professor?", "open", "narrow", "base", "up",cheeks="blush")
         m "Oh, I don't know."
         call her_main("Thank you for letting me discover such pleasures.","open","worriedCl",cheeks="blush")
         g9 "{b}My{/b} pleasure."
@@ -1620,8 +1620,8 @@ label l_tutoring:
         m "Hmm, yes you're right. I'm glad you feel that way."
         call her_main("Now a little deeper please.", "soft", "base", "base", "R",cheeks="blush")
         call nar(">You push the whole bottle neck up inside her asshole.")
-        call her_main("Ohhh, yesss! {image=textheart}","open","ahegao_raised",cheeks="blush")
-        call her_main("More, faster!","open","ahegao_raised",cheeks="blush")
+        call her_main("Ohhh, yesss! {image=textheart}", "open", "narrow", "base", "up",cheeks="blush")
+        call her_main("More, faster!", "open", "narrow", "base", "up",cheeks="blush")
         show screen scr_her_fingering_naked()
         call nar(">You rotate the bottle while going back and forth deeper and deeper.")
         call her_main("Yessss, don't forget my pussy {image=textheart}.", "grin", "narrow", "angry", "up",cheeks="blush")
@@ -1664,7 +1664,7 @@ label l_tutoring:
         m "Sweet dreams my little princess."
         call her_main("You too, professor.", "open", "base", "base", "mid",cheeks="blush",xpos="right",ypos="base")
         g9 "They are always sweet with you around."
-        call her_main("Thank you.","base","ahegao_raised",cheeks="blush")
+        call her_main("Thank you.", "base", "narrow", "base", "up",cheeks="blush")
         m "And next time bring your books, I'll help you with your revisions."
         call nar("You dismiss Hermione.")
 
@@ -1699,9 +1699,9 @@ label l_tutoring:
         call her_main("Revisions are a serious matter, [genie_name]!","open","worried")
         m "{size=-2}(My cock in your ass is a serious matter...){/size}"
         m "In this regard, I kinda lied, it's more of a mock exam than revisions."
-        call her_main("What a surprise!","annoyed","ahegao_raised",cheeks="blush")
+        call her_main("What a surprise!", "annoyed", "narrow", "base", "up",cheeks="blush")
         m "I need to make sure you've been working out your butthole."
-        call her_main("........","annoyed","ahegao_raised",cheeks="blush")
+        call her_main("........", "annoyed", "narrow", "base", "up",cheeks="blush")
         g9 "With my cock."
         call her_main("I see...", "annoyed", "base", "base", "R")
         call her_main("I'm not against that but I bet I'll gain no points for this?","annoyed","angryL",cheeks="blush")
@@ -1759,17 +1759,17 @@ label l_tutoring:
 
         call her_main("Ah, you brute {image=textheart}.", "grin", "narrow", "angry", "up",cheeks="blush")
         m "Your butthole is the perfect fit, not too tight and not too stretched!"
-        call her_main("You've trained me well...","silly","ahegao_raised",cheeks="blush")
+        call her_main("You've trained me well...", "silly", "narrow", "base", "up",cheeks="blush")
         call nar(">You caress her clit while fucking her.")
-        call her_main("Mmmh, yes {image=textheart}.","open","ahegao_raised",cheeks="blush")
+        call her_main("Mmmh, yes {image=textheart}.", "open", "narrow", "base", "up",cheeks="blush")
         g9 "You love it don't you?"
-        call her_main("Your cock in my ass, oh yes.","base","ahegao_raised",cheeks="blush")
+        call her_main("Your cock in my ass, oh yes.", "base", "narrow", "base", "up",cheeks="blush")
         m "Even without points?"
         call her_main("Don't make me regret agreeing to this.","upset","worriedCl",cheeks="blush")
         m "Say you love it even without points."
         show screen scr_her_sex()
         call nar(">You increase the pace.")
-        call her_main("Ahh yesss {image=textheart}.","open_tongue","ahegao_raised",cheeks="blush")
+        call her_main("Ahh yesss {image=textheart}.", "open_tongue", "narrow", "base", "up",cheeks="blush")
         call her_main("I'm such a whore, I love sex even for free.", "mad", "wide", "base", "stare",cheeks="blush")
         g9 "You know it!"
         call her_main("Don't make it a habit.", "open", "happy", "base", "mid",cheeks="blush")
@@ -1777,7 +1777,7 @@ label l_tutoring:
         call nar(">You pull out your cock and roughly shove it back inside.")
         with hpunch
         call her_main("Aaaaah {image=textheart}.", "open", "narrow", "annoyed", "up",cheeks="blush")
-        call her_main("I love being sodomised savagely by my headmaster.","silly","ahegao_raised",cheeks="blush")
+        call her_main("I love being sodomised savagely by my headmaster.", "silly", "narrow", "base", "up",cheeks="blush")
         call nar(">And again.")
         with hpunch
         her "Yessss {image=textheart}."
@@ -1831,18 +1831,18 @@ label l_tutoring:
         call bld
         m "*sigh* that was, that was..."
         call her_main("Marvellous {image=textheart}.", "smile", "base", "base", "R")
-        call her_main("I'm so glad you agreed to tutor me, professor...","silly","ahegao_raised",cheeks="blush")
+        call her_main("I'm so glad you agreed to tutor me, professor...", "silly", "narrow", "base", "up",cheeks="blush")
         call her_main("Your lessons have changed my life so much!","smile","angry",cheeks="blush")
         g9 "{size=-2}(Victory!){/size}"
         call her_main("But if you think you can fuck me all the time without giving me points...","annoyed","angryL",cheeks="blush")
-        call her_main("You're dreaming!","annoyed","ahegao_raised",cheeks="blush")
+        call her_main("You're dreaming!", "annoyed", "narrow", "base", "up",cheeks="blush")
         m "{size=-2}(Ohhh...){/size}"
         m "Even occasionally?"
         her "......."
         call her_main("Only if you are well-behaved...", "soft", "base", "base", "R",cheeks="blush")
         g9 "I'm the most well-behaved professor in the whole school!"
         call her_main("Sure.","annoyed","angryL",cheeks="blush")
-        call her_main("{size=-2}(At least, you're not the worst...){/size}","annoyed","ahegao_raised",cheeks="blush")
+        call her_main("{size=-2}(At least, you're not the worst...){/size}", "annoyed", "narrow", "base", "up",cheeks="blush")
         m "Good night my, [hermione_name]."
         call her_main("Good night my, [genie_name].", "base", "base", "base", "R",cheeks="blush")
 
@@ -1865,7 +1865,7 @@ label l_tutoring:
 
         call her_main("{size=-4}(\"my beloved prince\"...){/size}","base","down_raised",cheeks="blush",ypos="head")
         call her_main("{size=-4}(He's hardly Prince Charming but...){/size}","base","glance",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(I doubt Prince Charming could fuck me half as well as he can!){/size}","grin","ahegao_raised",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(I doubt Prince Charming could fuck me half as well as he can!){/size}", "grin", "narrow", "base", "up",cheeks="blush",ypos="head")
 
         call her_chibi(action="leave")
 

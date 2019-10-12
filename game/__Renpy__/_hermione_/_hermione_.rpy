@@ -90,6 +90,8 @@ label her_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
     show screen bld1
 
     call transition(trans, True)
+    
+    $ hermione_class.say(text)
 
     if use_hermione_head and not face_on_cg:
         hide screen hermione_main

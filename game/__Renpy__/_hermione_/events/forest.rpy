@@ -28,7 +28,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     with d3
 
     m "Miss Granger? What are you doing out here at this time of night?"
-    call her_main("[genie_name]! I, ugh, I wasn't doing anything bad, I swear!","open","wideL",xpos="right",ypos="base",trans="d5")
+    call her_main("[genie_name]! I, ugh, I wasn't doing anything bad, I swear!", "open", "wide", "base", "R",xpos="right",ypos="base",trans="d5")
     m "..."
     call her_main("Ugh, fine! If you must know, I was out here gathering up some mastick resin.", "upset", "narrow", "worried", "down")
     call her_main("I know Students aren't {i}technically{/i} supposed to touch the stuff since it's normally just used to make belch powder...", "annoyed", "base", "base", "R")
@@ -50,7 +50,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
             return
         "-Ask for a blowjob-":
             m "Well, seeing that we're all alone out here..."
-            call her_main("Oh... I, um, guess we are...","open","wideL")
+            call her_main("Oh... I, um, guess we are...", "open", "wide", "base", "R")
             m "Wanna fool around?"
             call her_main("Oh thank goodness... I thought you were going to murder me for a second there...", "base", "happyCl", "base", "mid",trans="hpunch")
             m "What? How could you think such a thing!"

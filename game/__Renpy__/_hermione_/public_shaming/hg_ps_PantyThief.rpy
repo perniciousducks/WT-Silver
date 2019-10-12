@@ -187,7 +187,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         call update_her_uniform
 
         call her_main("(This feels funny...)","angry","worriedCl",emote="05")
-        call her_main("Will this be all, [genie_name]?","upset","wink")
+        call her_main("Will this be all, [genie_name]?", "upset", "wink", "base", "mid")
 
     if her_whoring >= 9 and her_whoring <= 15: #LEVEL 04+ (THIRD EVENT)
         call her_main("My panties...", "annoyed", "narrow", "worried", "down",xpos="right",ypos="base")
@@ -263,7 +263,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 call her_main("It's a bit different! I wore these panties before I gave them to you.", "scream", "closed", "angry", "mid")
                 call her_main("Not to mention that your cum is all cold and slimy...","scream","worriedCl")
                 m "Well in that case hand them back."
-                call her_main("What? Can't I just put them on?","angry","wink")
+                call her_main("What? Can't I just put them on?", "angry", "wink", "base", "mid")
                 m "I'm afraid not, you clean them now or you hand them back."
                 call her_main("{size=-4}Fine...{/size}", "angry", "narrow", "base", "down")
                 m "What was that?"
@@ -409,7 +409,7 @@ label hg_ps_get_panties_complete:
         m "You can go now."
         call her_main("yes, [genie_name]", "angry", "narrow", "base", "down")
         m "After you say thank you. "
-        call her_main("Thank you for what?","angry","wink")
+        call her_main("Thank you for what?", "angry", "wink", "base", "mid")
         m "For my cum"
         call her_main("...", "base", "narrow", "worried", "down")
         call her_main("Thank you for your cum [genie_name]...", "grin", "narrow", "base", "dead")

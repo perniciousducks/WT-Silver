@@ -59,7 +59,7 @@ label hg_pr_flash:
 
     elif her_tier < 4:
         m "I think you need to show off your tits some more, [hermione_name]."
-        call her_main("You mean to you, [genie_name]?","upset","wink")
+        call her_main("You mean to you, [genie_name]?", "upset", "wink", "base", "mid")
         m "No, to your classmates..."
         call her_main("Oh...", "angry", "base", "base", "mid")
         m "Yes, go do that and then report back to me..."
@@ -73,7 +73,7 @@ label hg_pr_flash:
         m "[hermione_name]. I have a question for you."
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         m "Why do you think women have breasts?"
-        call her_main("...what do you mean, [genie_name]?","upset","wink")
+        call her_main("...what do you mean, [genie_name]?", "upset", "wink", "base", "mid")
         m "Alright, let me rephrase this..."
         m "What would you say is the most common application for the female mammary glands?"
         call her_main("Oh...", "soft", "base", "base", "mid")
@@ -281,7 +281,7 @@ label hg_pr_flash_T2_E1:
     show screen blktone
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name]. Did you complete your task?"
-    call her_main("Yes I did, [genie_name].","upset","wink")
+    call her_main("Yes I did, [genie_name].", "upset", "wink", "base", "mid")
     call her_main(".............", "angry", "narrow", "base", "down")
     m "Well? How did it go?"
     call her_main("................", "angry", "narrow", "base", "down")
@@ -414,7 +414,7 @@ label hg_pr_flash_T3_E1:
     $ sc34CG(3, 5)
 
     hide screen blkfade
-    call her_main("Well... I had to spend a big portion of the day in the school library...","upset","wink", xpos="base", ypos="base", trans="fade")
+    call her_main("Well... I had to spend a big portion of the day in the school library...", "upset", "wink", "base", "mid", xpos="base", ypos="base", trans="fade")
     call her_main("So I didn't really have the time to perform your task properly, [genie_name]...")
     m "Hm...?"
     $ sc34CG(3, 6)
@@ -521,7 +521,7 @@ label hg_pr_flash_T3_E3:
     call her_main("No, wait...  the boy from \"Gryffindor\" was after that other boy...","annoyed","worriedL")
     m "How many boys did you flash your tits to today, [hermione_name]?"
     call her_main("Half a dozen or so?", "angry", "base", "base", "mid")
-    call her_main("I had an opening in my schedule...","angry","wink")
+    call her_main("I had an opening in my schedule...", "angry", "wink", "base", "mid")
     her "So I decided to go for some extra credit with your assignment, [genie_name]."
     m "This is not an assignment, [hermione_name]..."
     m "And there are no extra credits..."

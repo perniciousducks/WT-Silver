@@ -601,7 +601,7 @@ label hg_pp_polyjuice_T1_introCC:
         # her "I was wrong, not muck. Snot. It's as thick as Trollsnot."
         # m "As long as you keep it down, you'll earn Gryffindor a great deal of points."
         # her "And I will."
-        # call her_main("So what now? I just go to class?","upset","wink")
+        # call her_main("So what now? I just go to class?", "upset", "wink", "base", "mid")
         # m "Not yet, tell me something about yourself."
         # call her_main("Well, ever since I started my \"Extracurricular activities\" with you my attendance and grades have started slipping.", "open", "closed", "base", "mid")
         # m "Troubling indeed."

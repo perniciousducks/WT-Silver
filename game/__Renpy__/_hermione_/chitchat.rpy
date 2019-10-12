@@ -311,7 +311,7 @@ label chit_chat:
             her "But I was wrong to do so..."
             her "I am starting to understand how important it really is for a girl to look pretty."
             call her_main("...............","annoyed","worriedL")
-            call her_main("I've been on a diet lately...","angry","wink")
+            call her_main("I've been on a diet lately...", "angry", "wink", "base", "mid")
             call her_main("","angry","worriedCl",emote="05")
             call her_main("","normal","worriedCl")
 
@@ -412,12 +412,12 @@ label chit_chat:
             call her_main("Sir, could you put your penis in my mouth?", "angry", "base", "base", "mid")
             call her_main("Sir, I am begging you...", "open_wide_tongue", "narrow", "annoyed", "up")
             call her_main("Fifty five points, please!", "smile", "base", "angry", "mid")
-            call her_main("","angry","wink")
+            call her_main("", "angry", "wink", "base", "mid")
 
         elif one_of_ten == 9:
             call her_main("I have read this one article about the positive effects of semen on a woman's skin...", "open", "closed", "base", "mid")
             call her_main("I wonder where their information is coming from...","base","glance")
-            call her_main("Did the magazine conduct research of some sort?","angry","wink")
+            call her_main("Did the magazine conduct research of some sort?", "angry", "wink", "base", "mid")
             call her_main("","base","glance")
 
         elif one_of_ten == 10:

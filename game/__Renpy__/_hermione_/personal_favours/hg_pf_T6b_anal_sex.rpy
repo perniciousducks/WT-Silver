@@ -386,7 +386,7 @@ label hg_anal_sex_2:
     with hpunch
     g4 "{size=+9} WHAT?!{/size}"
     g4 "Don't tell me you're pregnant, [hermione_name]!"
-    call her_main("I couldn't get pregnant the way we are doing it, [genie_name]...","angry","wink")
+    call her_main("I couldn't get pregnant the way we are doing it, [genie_name]...", "angry", "wink", "base", "mid")
     m "What is this talk of marriage then?"
     call her_main("You misunderstood me [genie_name].", "angry", "base", "base", "mid")
     call her_main("I meant to say, would you marry a girl {size=+5}like{/size} me?", "angry", "narrow", "base", "down")

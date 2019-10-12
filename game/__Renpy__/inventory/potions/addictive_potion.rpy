@@ -149,7 +149,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
         "-Make her beg-":
             m "I don't think that you deserve to after calling it filthy and old."
             m "Perhaps if you asked nicely..."
-            call her_main("Fine. Please let me suck your dick [genie_name].","upset","wink")
+            call her_main("Fine. Please let me suck your dick [genie_name].", "upset", "wink", "base", "mid")
             m "Hmmm, I don't think that was sincere enough."
             call her_main("Please [genie_name], let me suck your big, thick dick. Pretty please.","angry","worriedCl",emote="05")
             m "Much better."
@@ -227,7 +227,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
     m "Delicious? I thought you said it was just a bottle full of my cum?"
     m "Are you sure that you're just not a little slut who's become addicted to her Headmaster's semen?"
     call u_pause_ani
-    call her_main("I'm sure. There was something else in there.","angry","wink")
+    call her_main("I'm sure. There was something else in there.", "angry", "wink", "base", "mid")
     hide screen hermione_main
     call u_play_ani
     m "Whatever you say [hermione_name]. Now if you want your reward you better get back to work."
@@ -464,7 +464,7 @@ label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the 
         "-Make her apologize first-":
             m "I don't think that you deserve to suck my dick after being this rude."
             m "Maybe if you apologised..."
-            call her_main("......","upset","wink")
+            call her_main("......", "upset", "wink", "base", "mid")
             m "No? Well in that case...{w=0.5}{nw}"
             call her_main("{size=+5}I'm sorry!{/size}", "scream", "closed", "angry", "mid")
             call her_main("Please let me suck your dick [genie_name]...", "annoyed", "closed", "base", "mid")
@@ -644,10 +644,10 @@ label potion_scene_3_3_1: #Hypno potion
     hide screen blktone
     call nar(">Hermione closes her eyes and appears to nod off.")
     call her_main("......", "base", "closed", "base", "mid")
-    call her_main("Where am I?","upset","wink")
+    call her_main("Where am I?", "upset", "wink", "base", "mid")
     m "You're in my office."
-    call her_main("I am?","upset","wink")
-    call her_main("How did I get here?","upset","wink")
+    call her_main("I am?", "upset", "wink", "base", "mid")
+    call her_main("How did I get here?", "upset", "wink", "base", "mid")
     m "You walked in here about 2 minutes ago."
     call her_main("Huh, I must have forgotten, silly old me.", "base", "happy", "base", "mid")
     call her_main("So professor, what am I doing here?", "base", "narrow", "worried", "down")
@@ -828,7 +828,7 @@ label potion_scene_3_3_1: #Hypno potion
 
     call set_her_action("covering")
     call her_main("This is soooo goood", "grin", "narrow", "annoyed", "up")
-    call her_main("Mistah [genie_name] can you please do something for me?","grin","wink",cheeks="blush")
+    call her_main("Mistah [genie_name] can you please do something for me?", "grin", "wink", "base", "mid",cheeks="blush")
     m "What's that?"
     call her_main("If it's not tooo much trouble could you...", "silly", "narrow", "annoyed", "up")
     call nar(">Hermione starts pinching her nipple.")

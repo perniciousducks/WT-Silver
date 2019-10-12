@@ -485,7 +485,7 @@ label hg_pf_admire_panties_T3_E2:
                 call her_main("","base","glance")
                 call ctc
 
-                call her_main("I hope you like it, [genie_name]...","angry","wink")
+                call her_main("I hope you like it, [genie_name]...", "angry", "wink", "base", "mid")
 
             "\"No, keep them on!\"":
                 call her_main("Sure, [genie_name].","base","glance")

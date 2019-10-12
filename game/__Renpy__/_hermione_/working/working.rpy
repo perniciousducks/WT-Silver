@@ -502,13 +502,13 @@ label job_5:
         elif random_choice == 1:
             call her_main("...","normal","worried", cheeks="blush")
             call her_main("Well, if it stops you from deducting those points.","open","worriedCl", cheeks="blush")
-            call her_main("I'll do it.","base","wink")
+            call her_main("I'll do it.", "base", "wink", "base", "mid")
         elif random_choice == 2:
             call her_main("It's a bit revealing... but I'll do it.","smile","happy", cheeks="blush")
             call her_main("For Gryffindor house obviously!","open","happyCl", cheeks="blush")
         else:
             call her_main("That doesn't leave a lot to the imagination...", "smile", "happy", "base", "mid")
-            call her_main("At least the straps should cover my nipples...","open","wink")
+            call her_main("At least the straps should cover my nipples...", "open", "wink", "base", "mid")
             call her_main("I'll do it...","normal","happy", cheeks="blush")
         
 
@@ -554,7 +554,7 @@ label hermione_helping_selling_cards:
         m "And this stopped after you started working there?"
         call her_main("Well, probably not because of it. They put in some anti thieving measures.", "base", "base", "base", "mid")
         m "Patent pending?"
-        call her_main("It's pretty clever actually, they put up a mirror behind the counter so that when I have to turn around and grab something I'll be able to see if anyone takes anything.","smile","wink")
+        call her_main("It's pretty clever actually, they put up a mirror behind the counter so that when I have to turn around and grab something I'll be able to see if anyone takes anything.", "smile", "wink", "base", "mid")
         g9 "\"Yeah, I'm sure that's why they put the mirror there...\""
         m "Sounds like you're doing a great job."
         call her_main("Thanks!","open","happy", cheeks="blush")

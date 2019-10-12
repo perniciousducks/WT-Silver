@@ -259,7 +259,7 @@ label hg_pf_strip_T2_Snape:
             g4 "You!... You good for nothing, ugly-faced, crooked-nosed-wannabe-wizard!"
             with hpunch
             call sna_main("(...)","snape_11")
-            call her_main("(... yikes!)","angry","wink")
+            call her_main("(... yikes!)", "angry", "wink", "base", "mid")
             call sna_main("(What did he just say to me?!)","snape_08")
             g4 "Shut your stupid mouth or I will send you flying out that bloody window!"
             g4 "That Bitch is already stripping for you, so what more do you want?!"
@@ -329,7 +329,7 @@ label hg_pf_strip_T2_Snape:
             call sna_main("Hm...","snape_13")
             pause.1
             call nar(">Professor Snape gives Hermione's buttocks an appraising look...")
-            call her_main(".........?","upset","wink")
+            call her_main(".........?", "upset", "wink", "base", "mid")
             call sna_main("I would say...","snape_13")
             call her_main("............?!", "base", "narrow", "worried", "down")
             call sna_main("Yes... \"{size=+5}F-{/size}\".","snape_09")

@@ -300,7 +300,7 @@ label astoria_intro_E2_hermione:
     call her_main("It's the first lesson we ever received in defence against the dark arts.", "open", "closed", "base", "mid")
     m "Well, one's been cast somewhere on the school."
     m "and I need your help finding out who did it..."
-    call her_main("Why do you need my help?","soft","wink")
+    call her_main("Why do you need my help?", "soft", "wink", "base", "mid")
     call her_main("Surely you're able to detect them?", "base", "base", "base", "mid")
     m "Unfortunately not... I must have been... asleep... when the thing happened..."
     m "I missed my chance, so to speak..."
@@ -316,7 +316,7 @@ label astoria_intro_E2_hermione:
 
     # Genie already knows about Azkaban.
     #m "And what's Azkaban?"
-    #call her_main("...Is this another test sir?","open","wink")
+    #call her_main("...Is this another test sir?", "open", "wink", "base", "mid")
     #m "Sure..."
     #call her_main("Of course! I know everything about it!", "smile", "happy", "base", "mid_soft")
     #call her_main("It's the prison of the damned... An impenetrable rocky outcrop surrounded by the harsh North Sea...","open","happyCl")

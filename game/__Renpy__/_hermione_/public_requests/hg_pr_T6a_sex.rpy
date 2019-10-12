@@ -116,7 +116,7 @@ label hg_pr_sex_T1_intro_E2:
     call her_main("It is sort of embarrassing, though...", "base", "base", "base", "R", cheeks="blush")
     call her_main("I spent the last night with two of my friends...", "open", "happy", "base", "mid", cheeks="blush")
     m "A slumber party with some girlfriends, huh?"
-    call her_main("Girlfriends?","angry","wink")
+    call her_main("Girlfriends?", "angry", "wink", "base", "mid")
     call her_main("No, [genie_name]. Harry and Ron are boys...", "open", "base", "base", "R", cheeks="blush")
     m "Hm..."
     call her_main("Yes, we were best friends for such a long time...", "base", "base", "base", "R", cheeks="blush")
@@ -126,7 +126,7 @@ label hg_pr_sex_T1_intro_E2:
     her "They did everything they wanted to do to me..."
     her "And everything I wanted to be done to me has been done..."
     call her_main(".................", "soft", "narrow", "annoyed", "up")
-    call her_main("Will I get paid for this, [genie_name]?","angry","wink")
+    call her_main("Will I get paid for this, [genie_name]?", "angry", "wink", "base", "mid")
 
     jump end_hg_pr_sex
 

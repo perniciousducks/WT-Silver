@@ -190,7 +190,7 @@ label hg_pf_admire_breasts_T1_intro_E2:
 
     m "[hermione_name], Is it just me?"
     g9 "Or is it getting really hot in here?!"
-    call her_main("Sir...?","open","wink")
+    call her_main("Sir...?", "open", "wink", "base", "mid")
     m "Take off your vest for me, would you..."
     call her_main("(...............)", "annoyed", "base", "angry", "mid")
     g9 "And your shirt! Take that off as well!"

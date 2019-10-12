@@ -102,7 +102,7 @@ label hg_ps_buttplug:
             "\"Fine, but I expect you to put it in now.\"":
                 $ current_payout = 100
                 call her_main("What? Right now!?.","angry","worriedCl")
-                call her_main("In front of you?","angry","wink")
+                call her_main("In front of you?", "angry", "wink", "base", "mid")
                 m "100 points [hermione_name]..."
                 call her_main("ugh... Fine...", "angry", "narrow", "base", "down")
                 call her_main("But I'm not turning around!", "annoyed", "narrow", "annoyed", "mid")
@@ -125,7 +125,7 @@ label hg_ps_buttplug:
                 call play_music("chipper_doodle") # HERMIONE'S THEME.
                 call her_main(".............", "angry", "base", "base", "mid")
                 call her_main("...", "angry", "narrow", "base", "down")
-                call her_main("well.... ah, I... better get to.... class... then...","angry","wink")
+                call her_main("well.... ah, I... better get to.... class... then...", "angry", "wink", "base", "mid")
                 m "See you tonight [hermione_name]."
 
             "\"You'll get 70.\"":
@@ -325,7 +325,7 @@ label hg_ps_buttplug:
                     $ buttplug_3_worn = True
                     call play_music("playful_tension") # SEX THEME.
                     m "well it just so happens that I recently came across the solution to your problem."
-                    call her_main("Which is?","disgust","wink")
+                    call her_main("Which is?", "disgust", "wink", "base", "mid")
                     m "Here."
 
                     call give_gift(">You hand hermione the jar of anal lubricant.",anal_lube_ITEM)
@@ -466,7 +466,7 @@ label hg_ps_buttplug_complete:
             call her_main("...Except for a few girls from Ravenclaw...", "open", "base", "base", "mid",cheeks="blush")
             m "What happened?"
             call her_main("I was walking down the hall, on my way to potions class...", "open", "closed", "base", "mid")
-            call her_main("And suddenly a gust of wind came and blew my skirt up...","upset","wink")
+            call her_main("And suddenly a gust of wind came and blew my skirt up...", "upset", "wink", "base", "mid")
             m "A gust of wind? inside?"
             call her_main("It must have been from a window...", "soft", "base", "base", "R")
             call her_main("Anyway the three girls walking behind me may have... seen it.", "open", "narrow", "worried", "down")
@@ -605,7 +605,7 @@ label hg_ps_buttplug_complete:
             call her_main("before now I've been going around it the wrong way...", "open", "base", "base", "R")
             call her_main("I just tried to ignore it...", "open", "closed", "base", "mid")
             her "and pay attention in class..."
-            call her_main("But that didn't work at all...","upset","wink")
+            call her_main("But that didn't work at all...", "upset", "wink", "base", "mid")
             call her_main("I was just too... distracted...", "base", "narrow", "worried", "down")
             $ sc34CG(1, 15, 2)
             call her_main("So I thought to myself that I've just got to focus on it...", "base", "narrow", "base", "up")
@@ -624,7 +624,7 @@ label hg_ps_buttplug_complete:
             her "Although I worry that it will really start to affect my grades..."
             m "Well I'm sure that missing one class a day is something you can catch up on."
             $ sc34CG(1, 15, 2)
-            call her_main("only One?","angry","wink")
+            call her_main("only One?", "angry", "wink", "base", "mid")
             m "You mean to say that you spent all your class time pleasuring yourself?"
             $ sc34CG(1, 17, 2)
             call her_main("..........", "soft", "narrow", "annoyed", "up")
@@ -749,7 +749,7 @@ label hg_ps_buttplug_complete:
             call her_main("It was ridiculous! I was barely able to stand...","open","worriedCl")
             call her_main("but then crookshanks thought it was some sort of game... he wouldn't leave it alone...","shock","worriedCl")
             call her_main("the vibrations were so intense that my knees gave out and I collapsed onto my bed!", "angry", "narrow", "base", "down")
-            call her_main("then he just played with it for hours...","angry","wink")
+            call her_main("then he just played with it for hours...", "angry", "wink", "base", "mid")
             m "are you still up for wearing it in the future?"
             call her_main("I suppose... So long as I know how it works now.", "upset", "closed", "base", "mid")
             call her_main("I'll just have to keep it away from crookshanks...", "angry", "narrow", "base", "down")
@@ -856,7 +856,7 @@ label hg_ps_buttplug_complete:
             call her_main("\"why are you wearing it\"...", "angry", "narrow", "base", "down")
             call her_main("\"does it feel nice\"...", "base", "narrow", "worried", "down")
             call her_main("\"can we touch it\"...", "base", "narrow", "worried", "down")
-            call her_main("\"can you make it wag\"...","angry","wink")
+            call her_main("\"can you make it wag\"...", "angry", "wink", "base", "mid")
             m "what did you do?"
             call her_main("well I made them promise to keep quiet about it...", "upset", "closed", "base", "mid")
             call her_main("but in exchange I may have had to let them touch it...", "open", "narrow", "worried", "down")
@@ -893,7 +893,7 @@ label hg_ps_buttplug_complete:
             m "what?"
             call her_main("Well I was in the stall finishing up...", "base", "base", "base", "R")
             her "When a girl entered the other stall."
-            call her_main("I wasn't sure but I thought that it may have been a \"slytherin\"...","upset","wink")
+            call her_main("I wasn't sure but I thought that it may have been a \"slytherin\"...", "upset", "wink", "base", "mid")
             call her_main("So I decided to press my cheeks to the wall and stick my tail through!", "smile", "base", "base", "R")
             m "did they touch it?"
             call her_main("not immediately...", "base", "base", "base", "R")
@@ -946,7 +946,7 @@ label hg_ps_buttplug_complete:
             call her_main("\"why are you wearing it\"...", "angry", "narrow", "base", "down")
             call her_main("\"does it feel nice\"...", "base", "narrow", "worried", "down")
             call her_main("\"can we touch it\"...", "base", "narrow", "worried", "down")
-            call her_main("\"can you make it wag\"...","angry","wink")
+            call her_main("\"can you make it wag\"...", "angry", "wink", "base", "mid")
             m "what did you do?"
             call her_main("well I made them promise to keep quiet about it...", "upset", "closed", "base", "mid")
             call her_main("but in exchange I may have had to let them touch it...", "open", "narrow", "worried", "down")
@@ -981,7 +981,7 @@ label hg_ps_buttplug_complete:
             m "what?"
             call her_main("Well I was in the stall finishing up...", "base", "base", "base", "R")
             her "When a girl entered the other stall."
-            call her_main("I wasn't sure but I thought that it may have been a \"slytherin\"...","upset","wink")
+            call her_main("I wasn't sure but I thought that it may have been a \"slytherin\"...", "upset", "wink", "base", "mid")
             call her_main("So I decided to stick my tail through!", "smile", "base", "base", "R")
             m "did they touch it?"
             call her_main("not immediately...", "base", "base", "base", "R")

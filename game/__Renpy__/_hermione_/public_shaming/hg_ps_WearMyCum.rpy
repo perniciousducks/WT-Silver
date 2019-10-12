@@ -94,7 +94,7 @@ label hg_ps_cumslut_Scene_1:
     m "So that's why you are doing this? For those two boys?"
     call her_main("Sort of... I'm not sure that they'd be too upset though.","annoyed","worriedL")
     m "Are you sure it's not because you love it."
-    call her_main("What?","upset","wink")
+    call her_main("What?", "upset", "wink", "base", "mid")
     m "Coming in here whenever I summon you."
     m "Doing whatever I tell you, whenever I tell you."
     m "Doing slutty things in front of your peers because I tell you."
@@ -110,10 +110,10 @@ label hg_ps_cumslut_Scene_1:
     m "Well hurry up [hermione_name], classes will start soon."
     call nar(">She starts jerking your cock with renewed vigour.")
     m "So where are you going to hide it?"
-    call her_main("I'm not sure.","upset","wink")
-    call her_main("I'm trying to think of somewhere no one will be able to see it.","upset","wink")
+    call her_main("I'm not sure.", "upset", "wink", "base", "mid")
+    call her_main("I'm trying to think of somewhere no one will be able to see it.", "upset", "wink", "base", "mid")
     m "Well you better think of some place soon!"
-    call her_main("Why's that?","angry","wink")
+    call her_main("Why's that?", "angry", "wink", "base", "mid")
     g9 "Because I'm about to cum!"
     call her_main("Already? Where should I-", "angry", "wide", "base", "stare")
 
@@ -134,7 +134,7 @@ label hg_ps_cumslut_Scene_1:
 
             $ aftersperm = True
 
-            call her_main("Well, this shouldn't be too bad...","upset","wink",xpos="right",ypos="base")
+            call her_main("Well, this shouldn't be too bad...", "upset", "wink", "base", "mid",xpos="right",ypos="base")
             m "I'm sure no one will notice."
             call her_main("They better not.", "angry", "base", "angry", "mid")
 
@@ -499,7 +499,7 @@ label hg_ps_cumslut_Scene_3:
     call her_main("Thank you... I've been thinking about what you asked me last time...", "soft", "narrow", "annoyed", "up",ypos="head")
     m "Last time?"
     call her_main("about why I do this... sell you these sort of favours.", "upset", "closed", "base", "mid")
-    call her_main("At the start it was just to get points, so that \'gryffindor\' could win the house cup...","angry","wink")
+    call her_main("At the start it was just to get points, so that \'gryffindor\' could win the house cup...", "angry", "wink", "base", "mid")
     call her_main("but lately...", "base", "narrow", "worried", "down")
     call her_main("...it’s been more than that... now I do it to make you happy, [genie_name].","base","glance")
     call her_main("Because making you happy, makes me happy...","base","suspicious")
@@ -813,7 +813,7 @@ label hg_ps_cumslut_complete_3:
                 call her_main("yes! Having to spend the whole day smelling your delicous cum but not being able to taste any of it!", "open", "base", "base", "R")
                 call her_main("It was like looking at a glass of water in the desert...", "soft", "narrow", "annoyed", "up")
                 m "did anyone else notice?"
-                call her_main("I couldn't say [genie_name]... I was too distracted by the smell...","angry","wink")
+                call her_main("I couldn't say [genie_name]... I was too distracted by the smell...", "angry", "wink", "base", "mid")
                 m "Very well, goodnight [hermione_name]."
                 call her_main("Good night [genie_name].", "grin", "narrow", "base", "dead")
     else: #Cum on face

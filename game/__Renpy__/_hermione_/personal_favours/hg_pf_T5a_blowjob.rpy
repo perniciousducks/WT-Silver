@@ -349,7 +349,7 @@ label hg_pf_blowjob_1:
             call her_main("*Slurp!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
 
             call hg_chibi_transition("bj_pause")
-            call her_main("But we are not getting as popular and as much support as I thought we would...","angry","wink")
+            call her_main("But we are not getting as popular and as much support as I thought we would...", "angry", "wink", "base", "mid")
 
             call hg_chibi_transition("bj")
             call her_main("*Slurp!* *Gulp!* *Gulp!*", "sucking", "narrow", "worried", "down")
@@ -436,7 +436,7 @@ label hg_pf_blowjob_1:
             call her_main("But I do not care.")
             call her_main("I am not afraid to \"get my hands dirty\" and do what needs to be done.", "upset", "closed", "base", "mid")
             m "A bit rebellious, aren't you?"
-            call her_main("Hm... I suppose I am.","angry","wink")
+            call her_main("Hm... I suppose I am.", "angry", "wink", "base", "mid")
             m "Back to sucking then. Teach your folks a lesson."
 
             call hg_chibi_transition("bj", trans="d3")
@@ -581,7 +581,7 @@ label hg_pf_blowjob_1:
             else:
                 call her_main("Yes. I think I may skip supper tonight...", "soft", "narrow", "annoyed", "up")
 
-            call her_main("Can I get paid now?","angry","wink")
+            call her_main("Can I get paid now?", "angry", "wink", "base", "mid")
             
             $ achievement.unlock("headlib")
 
@@ -625,7 +625,7 @@ label hg_pf_blowjob_1:
                 m "It's getting late..."
                 call her_main("Yes...","angry","worriedCl", emote="05")
 
-            call her_main("Can I get paid before I leave, [genie_name]?","upset","wink")
+            call her_main("Can I get paid before I leave, [genie_name]?", "upset", "wink", "base", "mid")
 
             $ aftersperm = True
 
@@ -1456,7 +1456,7 @@ label hg_hidden_blowjob_cumming:
             call hide_blkfade
             pause.5
 
-            call her_main("I take it you enjoyed yourself, [genie_name]?","angry","wink", xpos="mid", ypos="base")
+            call her_main("I take it you enjoyed yourself, [genie_name]?", "angry", "wink", "base", "mid", xpos="mid", ypos="base")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             m "Yes I did, [hermione_name]."
             call her_main("Good, so Can I get paid now?", "grin", "narrow", "base", "dead")
@@ -1507,7 +1507,7 @@ label hg_pf_blowjob_2:
         #    jump hg_pf_facefuck_1
 
         "\"Pretend I am your father.\"":
-            call her_main("My father?","angry","wink", ypos="head")
+            call her_main("My father?", "angry", "wink", "base", "mid", ypos="head")
             m "Anything wrong with that?"
             call her_main("I suppose not...", "base", "narrow", "worried", "down")
             call her_main("I mean it's just pretending...", "grin", "narrow", "base", "dead")
@@ -1690,12 +1690,12 @@ label hg_pf_blowjob_2:
                     pause.8
 
                     call play_music("chipper_doodle") # HERMIONE'S THEME.
-                    call her_main("I take it you enjoyed yourself sir?","angry","wink")
+                    call her_main("I take it you enjoyed yourself sir?", "angry", "wink", "base", "mid")
                     m "Yes I did, princess."
                     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
 
         "\"Worship my cock.\"":
-            call her_main("Worship it?","angry","wink", ypos="head")
+            call her_main("Worship it?", "angry", "wink", "base", "mid", ypos="head")
             m "Worship. My. Cock."
             call her_main("Well...", "base", "narrow", "worried", "down")
             call her_main("ok...", "soft", "narrow", "annoyed", "up")
@@ -1783,7 +1783,7 @@ label hg_pf_blowjob_2:
             call hg_chibi_transition("bj_pause")
             call her_main("Where do you want to cum today [genie_name]?", "soft", "narrow", "annoyed", "up")
             call her_main("I know it's greedy of me to ask...", "angry", "narrow", "base", "down")
-            call her_main("But can you cum in my mouth?","angry","wink")
+            call her_main("But can you cum in my mouth?", "angry", "wink", "base", "mid")
             call her_main("{size=-4}Please...{/size} I promise I won't waste a drop.", "soft", "narrow", "annoyed", "up")
             m "I think that can be arranged "
             call her_main("Thank you [genie_name]!","smile","happyCl", cheeks="blush", emote="06")

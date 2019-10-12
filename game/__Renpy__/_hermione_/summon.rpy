@@ -285,7 +285,7 @@ label hermione_favor_menu:
                 call her_main("But I'll do anything for you, [genie_name]...", "smile", "happy", "base", "mid")
                 jump silver_requests_root
             elif her_whoring >=18 and hermione_favors_convinced == 2:
-                call her_main("I guess you do have a way with words,[genie_name]... I'll do it.","soft","wink")
+                call her_main("I guess you do have a way with words,[genie_name]... I'll do it.", "soft", "wink", "base", "mid")
                 jump silver_requests_root
             elif her_whoring >=16:
                 call her_main("I have told you before, [genie_name], it was just a one time thing....", "open", "happy", "base", "mid")
@@ -649,10 +649,10 @@ label hermione_change:
             call her_main("Well, I do try my best, [genie_name].", "base", "closed", "base", "mid")
             call her_main("", "base", "base", "base", "mid")
         elif her_whoring >=7 and her_whoring < 19:
-            call her_main("I'm not sure if I'd qualify, but fine.","annoyed","wink")
+            call her_main("I'm not sure if I'd qualify, but fine.", "annoyed", "wink", "base", "mid")
             call her_main("", "normal", "base", "base", "mid")
         elif her_whoring >=19:
-            call her_main("I could act like a good girl if you really want me to...","smile","wink", cheeks="blush")
+            call her_main("I could act like a good girl if you really want me to...", "smile", "wink", "base", "mid", cheeks="blush")
             call her_main("","base","happy", cheeks="blush")
     elif temp_name == "Little Girl":
         if her_whoring >=7 and her_whoring < 9:

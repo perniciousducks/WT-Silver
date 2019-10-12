@@ -62,12 +62,12 @@ label equip_bottom:
                 # elif her_whoring < 20:
                     # call her_main("Are you sure, [genie_name]?", "disgust", "narrow", "base", "down")
                     # call her_main("That thing looks rather plain...", "open", "closed", "base", "mid")
-                    # call her_main("I would much rather wear one a bit shorter!","angry","wink")
+                    # call her_main("I would much rather wear one a bit shorter!", "angry", "wink", "base", "mid")
                     # m "No, [hermione_name]. Wear the long one..."
                     # call her_main("Ugh... Fine.", "disgust", "narrow", "base", "down")
                     # call her_main("Let me just change it.", "annoyed", "narrow", "annoyed", "mid")
                 # else: #20+
-                    # call her_main("Are you serious?","angry","wink")
+                    # call her_main("Are you serious?", "angry", "wink", "base", "mid")
                     # call her_main("That thing is soooooo ugly!", "annoyed", "narrow", "annoyed", "up")
                     # call her_main("I'm gonna get laughed at! No one wears skirts that long in Hogwarts!", "disgust", "slit", "low", "stare")
                     # m "No, [hermione_name]. Wear the long one..."
@@ -218,12 +218,12 @@ label equip_bottom:
                     # elif her_whoring < 20:
                         # call her_main("Are you sure, [genie_name]?", "disgust", "narrow", "base", "down")
                         # call her_main("That thing looks rather plain...", "open", "closed", "base", "mid")
-                        # call her_main("I would much rather wear one a bit shorter!","angry","wink")
+                        # call her_main("I would much rather wear one a bit shorter!", "angry", "wink", "base", "mid")
                         # m "No, [hermione_name]. Wear the long one..."
                         # call her_main("Ugh... Fine.", "disgust", "narrow", "base", "down")
                         # call her_main("Let me just change it.", "annoyed", "narrow", "annoyed", "mid")
                     # else: #20+
-                        # call her_main("Are you serious?","angry","wink")
+                        # call her_main("Are you serious?", "angry", "wink", "base", "mid")
                         # call her_main("That thing is soooooo ugly!", "annoyed", "narrow", "annoyed", "up")
                         # call her_main("I'm gonna get laughed at! No one wears skirts that long in Hogwarts!", "disgust", "slit", "low", "stare")
                         # m "No, [hermione_name]. Wear the long one..."
@@ -340,11 +340,11 @@ label equip_bottom:
                     # if her_whoring >= 11:
                         # if her_whoring < 14:
                             # if skirt_choice in ["skirt_cheer_s","skirt_cheer_sexy_s"]:
-                                # call her_main("But [genie_name], that's for Slytherins!","angry","wink")
+                                # call her_main("But [genie_name], that's for Slytherins!", "angry", "wink", "base", "mid")
                             # if skirt_choice in ["skirt_cheer_r","skirt_cheer_sexy_r"]:
-                                # call her_main("But [genie_name], that's for Ravenclaws!","angry","wink")
+                                # call her_main("But [genie_name], that's for Ravenclaws!", "angry", "wink", "base", "mid")
                             # if skirt_choice in ["skirt_cheer_h","skirt_cheer_sexy_h"]:
-                                # call her_main("But [genie_name], that's for Hufflepuffs!","angry","wink")
+                                # call her_main("But [genie_name], that's for Hufflepuffs!", "angry", "wink", "base", "mid")
                             # m "And?"
                             # call her_main("I'm a Gryffindor!", "annoyed", "narrow", "annoyed", "mid")
                             # if skirt_choice in ["skirt_cheer_s","skirt_cheer_sexy_s"]:
@@ -362,7 +362,7 @@ label equip_bottom:
                             # if skirt_choice in ["skirt_cheer_s","skirt_cheer_sexy_s"]:
                                 # m "Especially Gryffindor and Slytherin!"
                                 # m "I mean, do you like being called a mudblood every day by them?"
-                                # call her_main("No, [genie_name].","angry","wink")
+                                # call her_main("No, [genie_name].", "angry", "wink", "base", "mid")
                                 # m "Or when they call you a slut..."
                                 # g4 "Or a whore!"
                                 # g9 "Or bitch!"
@@ -418,7 +418,7 @@ label equip_bottom:
                             # call her_main("Let me just change it.","base","glance")
                     # else:
                         # call her_main("I don't know, [genie_name].", "annoyed", "narrow", "worried", "down")
-                        # call her_main("I'm not the cheerleader type!","angry","wink")
+                        # call her_main("I'm not the cheerleader type!", "angry", "wink", "base", "mid")
                         # call her_main("While I like the idea of supporting my house in Quidditch...", "open", "closed", "base", "mid")
                         # call her_main("My priority is to secure this years house cup instead!", "open", "base", "base", "R")
                         # call her_main("I have to refuse, [genie_name].", "soft", "base", "base", "mid")

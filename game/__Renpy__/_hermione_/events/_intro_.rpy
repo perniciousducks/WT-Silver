@@ -1223,7 +1223,7 @@ label hermione_intro_E6:
                 call her_main("Fine. I need to be punished!", "angry", "base", "angry", "mid")
                 call her_main("{size=-5}(And I truly do think so sometimes...){/size}","normal","worriedCl")
                 m "That's a good girl."
-                call her_main("................??","upset","wink")
+                call her_main("................??", "upset", "wink", "base", "mid")
                 m "Now that wasn't hard at all, was it?"
                 call her_main("n-no , sir...","annoyed","worriedL")
                 m "Alrighty, then..."

@@ -82,7 +82,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("So is that why I've been brought here? To be ridiculed!?", "angry", "base", "angry", "mid")
         call her_main("I'm not ashamed of what I've done for my house!", "annoyed", "narrow", "annoyed", "mid")
         call lun_main("No, you've been brought here to sell dumbledore one of those favours.","base","seductive","angry","mid")
-        call her_main("What?","upset","wink")
+        call her_main("What?", "upset", "wink", "base", "mid")
         call her_main("Why are you here then?", "soft", "base", "base", "mid")
         call lun_main("To help you.","base","angry","sad","mid")
         call her_main("...", "annoyed", "base", "angry", "mid")
@@ -497,7 +497,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("What are you doing here?", "annoyed", "narrow", "angry", "R")
         call lun_main("Getting ready to Jerk dumbledore off onto your face...","base","seductive","angry","mid")
         call her_main("Oh...", "annoyed", "base", "base", "mid")
-        call her_main("again?","upset","wink")
+        call her_main("again?", "upset", "wink", "base", "mid")
         m "Can you blame me?"
         call her_main("I suppose not...", "grin", "base", "base", "R")
         call lun_main("well then...","normal","mad","angry","mid")

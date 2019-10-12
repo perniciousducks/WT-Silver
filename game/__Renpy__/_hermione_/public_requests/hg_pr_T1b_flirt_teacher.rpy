@@ -169,7 +169,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
     call her_main("But I know that professor Snape is \"dirty\"!", "angry", "base", "angry", "mid")
     her "If you were to send someone else to him the outcome would be different, I know it!"
     m "Someone else?"
-    call her_main("Yes! Someone with more experience at this...","upset","wink")
+    call her_main("Yes! Someone with more experience at this...", "upset", "wink", "base", "mid")
     her "Someone..."
     her "Someone, uhm..."
     m "Sluttier?"
@@ -268,7 +268,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
     m "Hm... Can I see it?"
     call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "The Autograph, [hermione_name]. Can I see it?"
-    call her_main("Well... Em... It's in a rather private area, [genie_name].","upset","wink")
+    call her_main("Well... Em... It's in a rather private area, [genie_name].", "upset", "wink", "base", "mid")
     m "What? Well, then professor Goldenheart surely is \"dirty\"!"
     call her_main("It's professor Lockhart, [genie_name]...", "annoyed", "narrow", "angry", "R")
     her "And... Ehm..."
@@ -525,7 +525,7 @@ label hg_pr_flirt_teacher_T3_E3: # Lockhart
     m "What is that supposed to mean?"
     call her_main("That he is into boys, [genie_name]?","angry","worriedCl", emote="05")
     m "Oh..."
-    call her_main("............","upset","wink")
+    call her_main("............", "upset", "wink", "base", "mid")
     m "..........."
     m "Well, I bet it was a traumatizing experience for you, [hermione_name]."
     call her_main("It was, [genie_name]...", "open", "base", "base", "mid")

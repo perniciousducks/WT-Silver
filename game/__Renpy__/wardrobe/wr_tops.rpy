@@ -43,7 +43,7 @@ label equip_top:
                     # call her_main("Alright, [genie_name].","smile","happyCl")
                     # call her_main("Let me go and change real quick.","base","glance")
                 # elif her_whoring < 20:
-                    # call her_main("Are you sure, [genie_name]?","angry","wink")
+                    # call her_main("Are you sure, [genie_name]?", "angry", "wink", "base", "mid")
                     # call her_main("My old school top?", "angry", "base", "base", "mid")
                     # call her_main("You don't even want me to remove my tie or show off my cleavage??","disgust","glance")
                     # m "No, [hermione_name]. No cleavage today."
@@ -108,7 +108,7 @@ label equip_top:
                         # m "Yes, [hermione_name]."
                         # call her_main("Do you want me to tie the shirt around my breasts?", "open", "base", "base", "R")
                         # m "No, put it on properly."
-                        # call her_main("Properly, [genie_name]?","angry","wink")
+                        # call her_main("Properly, [genie_name]?", "angry", "wink", "base", "mid")
                         # m "You know, buttons and everything."
                         # call her_main("(I completely forgot this shirt even had buttons...)", "annoyed", "narrow", "worried", "down")
                         # call her_main("Can't I leave these buttons open, [genie_name]?", "soft", "base", "base", "R")
@@ -138,7 +138,7 @@ label equip_top:
                         # call her_main("OK, [genie_name]", "base", "base", "base", "mid")
                     # else:
                         # call her_main("My old school top? But it looks so plain...", "annoyed", "narrow", "base", "down")
-                        # call her_main("Do I really have to?","open","wink")
+                        # call her_main("Do I really have to?", "open", "wink", "base", "mid")
                         # m "You do."
                         # call her_main(".......", "annoyed", "narrow", "worried", "down")
                         # call her_main("(How embarrassing...)", "annoyed", "narrow", "annoyed", "up")
@@ -187,7 +187,7 @@ label equip_top:
                         # call her_main("Can't I just tie the shirt around my breasts so I can remove it more easily?", "open", "closed", "base", "mid")
                         # m "Is that really a concern of yours, [hermione_name]"
                         # call her_main("Well, yes.", "soft", "base", "base", "R")
-                        # call her_main("I like showing them to people!","grin","wink",cheeks="blush")
+                        # call her_main("I like showing them to people!", "grin", "wink", "base", "mid",cheeks="blush")
                         # g4 "You hopeless slut!"
                         # call her_main("...","base","glance")
                         # m "Wear your shirt properly, for now."
@@ -261,7 +261,7 @@ label equip_top:
                         # call her_main("(At least I get to show off my cleavage.)", "annoyed", "narrow", "annoyed", "up")
                         # call her_main("Alright, [genie_name]. I will change it.","base","glance")
                     # else: #20+
-                        # call her_main("My vest, [genie_name]?","angry","wink")
+                        # call her_main("My vest, [genie_name]?", "angry", "wink", "base", "mid")
                         # call her_main("Don't you have anything more fashionable?", "annoyed", "narrow", "annoyed", "up")
                         # call her_main("Besides, red and yellow doesn't really suit me.", "open", "closed", "base", "mid")
                         # m "Wear it, or I will have you cover up your tits too!"
@@ -308,11 +308,11 @@ label equip_top:
                     # if her_whoring >= 11:
                         # if her_whoring < 14:
                             # if top_choice in ["top_cheer_s","top_cheer_sexy_s"]:
-                                # call her_main("But [genie_name], that's for Slytherins!","angry","wink")
+                                # call her_main("But [genie_name], that's for Slytherins!", "angry", "wink", "base", "mid")
                             # if top_choice in ["top_cheer_r","top_cheer_sexy_r"]:
-                                # call her_main("But [genie_name], that's for Ravenclaws!","angry","wink")
+                                # call her_main("But [genie_name], that's for Ravenclaws!", "angry", "wink", "base", "mid")
                             # if top_choice in ["top_cheer_h","top_cheer_sexy_h"]:
-                                # call her_main("But [genie_name], that's for Hufflepuffs!","angry","wink")
+                                # call her_main("But [genie_name], that's for Hufflepuffs!", "angry", "wink", "base", "mid")
                             # m "And?"
                             # call her_main("I'm a Gryffindor!", "annoyed", "narrow", "annoyed", "mid")
                             # if top_choice in ["top_cheer_s","top_cheer_sexy_s"]:
@@ -330,7 +330,7 @@ label equip_top:
                             # if top_choice in ["top_cheer_s","top_cheer_sexy_s"]:
                                 # m "Especially Gryffindor and Slytherin!"
                                 # m "I mean, do you like being called a mudblood every day by them?"
-                                # call her_main("No, [genie_name].","angry","wink")
+                                # call her_main("No, [genie_name].", "angry", "wink", "base", "mid")
                                 # m "Or when they call you a slut..."
                                 # g4 "Or a whore!"
                                 # g9 "Or bitch!"
@@ -394,15 +394,15 @@ label equip_top:
                                 # call her_main("You can't be serious, [genie_name]!","open","worriedCl")
                                 # m "Wear it, or I will have you go naked!"
                                 # call her_main("...", "shock", "wide", "base", "stare")
-                                # call her_main("(Does he really think of making me do that?)","angry","wink")
+                                # call her_main("(Does he really think of making me do that?)", "angry", "wink", "base", "mid")
                                 # call her_main("{size=-5}(How exciting!){/size}","smile","happyCl")
                                 # call her_main("I will wear it if I absolutely have to,...", "open", "closed", "base", "mid")
-                                # call her_main("{size=-5}Do I?{/size}","angry","wink")
+                                # call her_main("{size=-5}Do I?{/size}", "angry", "wink", "base", "mid")
                                 # m "Yes."
                                 # call her_main("Tzzz--Your loss...", "angry", "base", "angry", "mid")
                         # else:
                             # call her_main("I don't know, [genie_name].", "annoyed", "narrow", "worried", "down")
-                            # call her_main("I'm not the cheerleader type!","angry","wink")
+                            # call her_main("I'm not the cheerleader type!", "angry", "wink", "base", "mid")
                             # call her_main("While I like the idea of supporting my house in Quidditch...", "open", "closed", "base", "mid")
                             # call her_main("My priority is to secure this years house cup instead!", "open", "base", "base", "R")
                             # call her_main("I have to refuse, [genie_name].", "soft", "base", "base", "mid")
@@ -422,10 +422,10 @@ label equip_top:
                                 # call her_main("Let me just change it.","base","glance")
                             # else: #23+
                                 # call her_main("The Gryffindor one?","annoyed","suspicious")
-                                # call her_main("But Gryffindor isn't even the winning team!","angry","wink")
+                                # call her_main("But Gryffindor isn't even the winning team!", "angry", "wink", "base", "mid")
                                 # call her_main("Gryffindor isn't even trying to win!","open","worriedL")
                                 # call her_main("(They are so embarrassing...)", "annoyed", "narrow", "annoyed", "up")
-                                # call her_main("Do I really have to?","angry","wink")
+                                # call her_main("Do I really have to?", "angry", "wink", "base", "mid")
                                 # m "Yes, [hermione_name]. Wear the Gryffindor one!"
                                 # call her_main("Fine, if I have to... Let me just change it.", "annoyed", "narrow", "annoyed", "mid")
                         # else:
@@ -466,7 +466,7 @@ label equip_top:
                 # m "Could you wear your pullover again?"
                 # if her_whoring >= 0:
                     # if her_whoring < 5:
-                        # call her_main("My pullover? But that's muggle clothing?","angry","wink")
+                        # call her_main("My pullover? But that's muggle clothing?", "angry", "wink", "base", "mid")
                         # m "So what? Didn't you already wear it before?"
                         # call her_main("Well yes, but that was an exception. Because it was raining and-", "open", "base", "base", "R")
                         # m "Pull it over already..."
@@ -505,7 +505,7 @@ label equip_top:
                 # m "Could you wear that sweater again?"
                 # if her_whoring >= 0:
                     # if her_whoring < 5:
-                        # call her_main("But, [genie_name], that's muggle clothing!","angry","wink")
+                        # call her_main("But, [genie_name], that's muggle clothing!", "angry", "wink", "base", "mid")
                         # m "... So what?"
                         # call her_main("They are against the Hogwarts rules for--", "open", "closed", "base", "mid")
                         # m "Proper school attire... Yeah yeah, heard that one a hundred times already..."
@@ -568,7 +568,7 @@ label equip_top:
                 # else:
                     # if her_whoring < 5:
                         # call her_main("[genie_name]?!", "shock", "wide", "base", "stare")
-                        # call her_main("How can you even suggest something like that to one of your student!","angry","wink")
+                        # call her_main("How can you even suggest something like that to one of your student!", "angry", "wink", "base", "mid")
                         # call her_main("What kind of silly joke is this?","shock","worriedCl")
                         # m "Yes, I'm sorry [hermione_name]. It was indeed just a joke."
                         # call her_main("Not a particularly funny one, [genie_name].","annoyed","suspicious")
@@ -606,7 +606,7 @@ label equip_top:
                     # elif her_whoring < 23:
                         # call her_main("Alright, [genie_name].", "open", "closed", "base", "mid")
                         # call her_main("It is a really nice-looking jacket, after all...", "annoyed", "narrow", "worried", "down")
-                        # call her_main("Just... do you expect me to leave it open the whole time?","angry","wink")
+                        # call her_main("Just... do you expect me to leave it open the whole time?", "angry", "wink", "base", "mid")
                         # m "Naturally, [hermione_name]."
                         # call her_main("With just my bra beneath it?", "disgust", "slit", "low", "stare")
                         # g9 "You betcha!"
@@ -623,7 +623,7 @@ label equip_top:
                 # else:
                     # if her_whoring < 5:
                         # call her_main("[genie_name]?!", "shock", "wide", "base", "stare")
-                        # call her_main("How can you even suggest something like that to one of your student!","angry","wink")
+                        # call her_main("How can you even suggest something like that to one of your student!", "angry", "wink", "base", "mid")
                         # call her_main("What kind of silly joke is this?","shock","worriedCl")
                         # m "Yes, I'm sorry [hermione_name]. It was indeed just a joke."
                         # call her_main("Not a particularly funny one, [genie_name].","annoyed","suspicious")
@@ -669,7 +669,7 @@ label equip_top:
                         # call her_main("A--Achou!!","angry","worriedCl",cheeks="blush",emote="05",trans="hpunch")
                         # call nar(">Hermione sneezed.")
                         # call her_main("Ahh,...", "silly", "narrow", "annoyed", "up")
-                        # call her_main("I'm terribly sorry [genie_name]...","angry","wink")
+                        # call her_main("I'm terribly sorry [genie_name]...", "angry", "wink", "base", "mid")
                         # call her_main("Thank you...","base","happyCl")
                         # call nar(">Hermione grabs the tissue.")
                         # g4 "(Wait! what tissue?! Not my...)"

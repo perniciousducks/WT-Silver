@@ -423,11 +423,11 @@ label hg_pr_kiss_T3_E1:
     call her_main("Oh, right...", "open", "narrow", "worried", "down")
     her "Well, we made out for a while..."
     her "She was very... passionate."
-    call her_main("So I imagine it was quite a spectacle...","angry","wink")
+    call her_main("So I imagine it was quite a spectacle...", "angry", "wink", "base", "mid")
     her "The boys were cheering and whistling..."
     call her_main("So we decided to \"snowball\" a little...", "base", "narrow", "worried", "down")
     m "I'm sorry, you decided to do what?"
-    call her_main("To \"snowball\", [genie_name].","angry","wink")
+    call her_main("To \"snowball\", [genie_name].", "angry", "wink", "base", "mid")
     call her_main("It is when one girl spits into another girl's mouth...","base","glance")
     her "We call it \"snowballing\"..."
     her "The boys really go crazy from that for some reason..."
@@ -441,7 +441,7 @@ label hg_pr_kiss_T3_E1:
     m "Well... You would be surprised..."
     call her_main("In any case, After that we kissed some more...", "base", "narrow", "worried", "down")
     her "And then the break was over..."
-    call her_main("And we had to run to class...","angry","wink")
+    call her_main("And we had to run to class...", "angry", "wink", "base", "mid")
     m "*Sigh...* Nonchalant and innocent schooldays..."
     m "Home assignments... Classes..."
     m "Schoolgirls \"snowballing\" in the courtyard..."
@@ -481,7 +481,7 @@ label hg_pr_kiss_T3_E2:
     call her_main("I am not telling you, [genie_name].", "base", "base", "base", "R", cheeks="blush") # :)
     her "You sent me out to kiss a girl..."
     her "And I did just that."
-    call her_main("The rest shall remain private.","angry","wink")
+    call her_main("The rest shall remain private.", "angry", "wink", "base", "mid")
     m "Now you are just being cruel, you little witch."
     call her_main("My points please.","smile","glance")
     m "Fine..."

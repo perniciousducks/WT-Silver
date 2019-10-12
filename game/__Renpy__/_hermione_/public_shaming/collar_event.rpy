@@ -72,7 +72,7 @@ label slut_scene: #Locked to her being your slut
     call bld
     $ hermione_zorder = 8
     m "That's a good little slut. Now if you want to suck my cock I expect you to ask nicely."
-    call her_main("What? This is bad enough, just let me suck \nyour cock.","upset","wink")
+    call her_main("What? This is bad enough, just let me suck \nyour cock.", "upset", "wink", "base", "mid")
     hide screen hermione_main
     m "Sluts beg for cock. And seeing as how you're a slut, I expect you to beg."
     call her_main("...","normal","worriedCl")
@@ -292,7 +292,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     hide screen hermione_main
     m "That's a good little whore, who else have you told that to?"
     m "Is it just me or do you beg every other boy you meet to cum inside you?"
-    call her_main("...","angry","wink")
+    call her_main("...", "angry", "wink", "base", "mid")
     hide screen hermione_main
     m "Tell me girl."
     call her_main("I beg every boy that fucks me to cum inside!","shock","worriedCl")
@@ -369,7 +369,7 @@ label slave_scene:
     m "Don't be silly [hermione_name], you're not a slut."
     call her_main("Thank yo-", "base", "base", "base", "mid")
     m "You're a slave."
-    call her_main("I'm a what?","upset","wink")
+    call her_main("I'm a what?", "upset", "wink", "base", "mid")
     m "You're a slave Miss Granger. Specifically, my slave."
     call her_main("What are you talking about? I'm not your slave.", "angry", "base", "angry", "mid")
     m "Are you sure? You come in here whenever I summon you, eager to do whatever I say."
@@ -515,7 +515,7 @@ label slave_scene:
     m "Yes you do."
     call her_main("...", "angry", "narrow", "base", "down")
     pause       ###new
-    call her_main("Yes master...","angry","wink")
+    call her_main("Yes master...", "angry", "wink", "base", "mid")
     hide screen hermione_main
     ">She tightens the collar around her neck."
 
@@ -561,7 +561,7 @@ label good_girl_scene:
     call her_main("Do you think that you could buy a favour off of me?","smile","glance")
     m "Sure, what would you like to do?"
     call her_main("Well I suppose that I could show you my breasts.", "base", "narrow", "worried", "down")
-    call her_main("For 50 points of course...","angry","wink")
+    call her_main("For 50 points of course...", "angry", "wink", "base", "mid")
     m "That seems fair."
     call her_main("Thank you [genie_name].","base","glance")
     ">Hermione slowly lifts her top."

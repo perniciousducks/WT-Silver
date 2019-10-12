@@ -147,7 +147,7 @@ label hg_pf_titjob_T1_intro_E1:
             jump back_to_titjob_choices
 
         "\"You'll get 45 house points.\"":
-            call her_main("45 house points...?","open","wink")
+            call her_main("45 house points...?", "open", "wink", "base", "mid")
             call her_main("This could put \"Gryffindor\" back in the lead...", "annoyed", "narrow", "worried", "down")
             m "So,...is that a yes?"
             call her_main("That is a yes, [genie_name]...", "open", "closed", "base", "mid")
@@ -306,7 +306,7 @@ label hg_pf_titjob_1:
     call her_main("[genie_name]...?", "soft", "base", "base", "mid")
     m "What is it?"
     $ ccg1 = 7
-    call her_main("Promise me you won't cum on my...face...","upset","wink")
+    call her_main("Promise me you won't cum on my...face...", "upset", "wink", "base", "mid")
 
     $ d_flag_01 = False #If TRUE Genie promised to warn her.
     menu:
@@ -330,9 +330,9 @@ label hg_pf_titjob_1:
     m "Why?"
     $ ccg1 = 7
     if daytime:
-        call her_main("Well, it's just that...{w=0.3}my classes are about to start...","upset","wink")
+        call her_main("Well, it's just that...{w=0.3}my classes are about to start...", "upset", "wink", "base", "mid")
     else:
-        call her_main("Well, it's just that...{w=0.3}I promised Ginny that we'd hang out tonight...","upset","wink")
+        call her_main("Well, it's just that...{w=0.3}I promised Ginny that we'd hang out tonight...", "upset", "wink", "base", "mid")
         call her_main("She's pretty upset that I'm spending so much time in here...")
     m "Do you need the points or not?"
     $ ccg1 = 6
@@ -345,7 +345,7 @@ label hg_pf_titjob_1:
         m "..."
         "\"Tell me how much you love your tits!\"":
             $ ccg1 = 5
-            call her_main("What?","upset","wink", ypos="head")
+            call her_main("What?", "upset", "wink", "base", "mid", ypos="head")
             $ ccg1 = 6
             call her_main("My breasts?", "disgust", "narrow", "worried", "down")
             m "You know,...how good they feel..."
@@ -383,7 +383,7 @@ label hg_pf_titjob_1:
 
         "\"Stick out your tongue!\"":
             $ ccg1 = 5
-            call her_main("[genie_name]?","open","wink", ypos="head")
+            call her_main("[genie_name]?", "open", "wink", "base", "mid", ypos="head")
             g4 "Just do it, slut!"
             $ ccg1 = 11
             call her_main("*Uhm*... Like this?", "open_wide_tongue", "narrow", "worried", "down")
@@ -633,7 +633,7 @@ label hg_pf_titjob_2:
             call hg_chibi_transition("tj_pause", trans="d5")
             pause.8
 
-            call her_main("Too much?","angry","wink")
+            call her_main("Too much?", "angry", "wink", "base", "mid")
             m "Yeah, just a bit."
             call her_main("Sorry [genie_name], I got a bit carried away...","angry","worriedCl", emote="05")
             m "No worries. Just keep on massaging it with those big tits of yours."
@@ -677,14 +677,14 @@ label hg_pf_titjob_2:
                     $ ccg1 = 23
                     call her_main("...................................", "grin", "narrow", "base", "dead")
                     $ ccg1 = 21
-                    call her_main("How was that, [genie_name]?","angry","wink")
+                    call her_main("How was that, [genie_name]?", "angry", "wink", "base", "mid")
                     m "Perfect."
 
         "\"This is really good. Did you practice?\"":
             $ ccg1 = 22
             call her_main("*Hmm?*...","base","happyCl", ypos="head")
             $ ccg1 = 21
-            call her_main("Sort of...{w=0.3} Well not on another cock...","angry","wink")
+            call her_main("Sort of...{w=0.3} Well not on another cock...", "angry", "wink", "base", "mid")
             m "On what then?"
             $ ccg1 = 22
             call her_main("Well, I spoke to Ginny...", "grin", "base", "base", "R")
@@ -696,7 +696,7 @@ label hg_pf_titjob_2:
             $ ccg1 = 22
             call her_main("On Ginny", "smile", "base", "base", "R")
             $ ccg1 = 23
-            call her_main("Well,...on her arm...","angry","wink")
+            call her_main("Well,...on her arm...", "angry", "wink", "base", "mid")
             m "You tit-fucked your friend's arm?"
             $ ccg1 = 25
             call her_main("Just as practice!","grin","worriedCl", emote="05")
@@ -705,7 +705,7 @@ label hg_pf_titjob_2:
             $ ccg1 = 23
             call her_main("How does this feel?", "base", "narrow", "worried", "down")
             m "*Mmm*... Yes, this feels quite good."
-            call her_main("Does it?","angry","wink")
+            call her_main("Does it?", "angry", "wink", "base", "mid")
             $ ccg1 = 21
             call her_main("Ginny seemed to enjoy it a lot as well...", "base", "narrow", "base", "up")
             g4 "She enjoyed it?"
@@ -730,7 +730,7 @@ label hg_pf_titjob_2:
             g4 "[hermione_name], you little slut!"
             $ ccg1 = 23
             call her_main("It was just practice!","grin","worriedCl", emote="05")
-            call her_main("Err... I mean...","angry","wink")
+            call her_main("Err... I mean...", "angry", "wink", "base", "mid")
             $ ccg1 = 21
             call her_main("It's not like I enjoyed it as well...", "angry", "narrow", "base", "down")
             m "Yes, yes... you're not a slut at all..."
@@ -751,7 +751,7 @@ label hg_pf_titjob_2_continue:
     call bld
     m "Yes... Keep stroking it."
     $ ccg1 = 23
-    call her_main("..............","angry","wink", ypos="head")
+    call her_main("..............", "angry", "wink", "base", "mid", ypos="head")
     m "Now I want you to say..."
 
     menu:
@@ -763,7 +763,7 @@ label hg_pf_titjob_2_continue:
             $ ccg1 = 22
             call her_main("My father? That's gross, [genie_name]! How could you suggest that I want to fu-", "soft", "narrow", "annoyed", "up")
             m "Come on... Just make something up."
-            call her_main("...........","angry","wink")
+            call her_main("...........", "angry", "wink", "base", "mid")
             call her_main("Well...", "open", "narrow", "worried", "down")
             $ ccg1 = 21
             call her_main("Sometimes when I hug him...")
@@ -808,7 +808,7 @@ label hg_pf_titjob_2_continue:
             call her_main("Other times I'll just wear my vest with nothing on underneath...")
             m "And how do you feel..."
             call her_main("So good...", "silly", "narrow", "base", "dead")
-            call her_main("One time when I was walking back from your office at night I was barely covering them...","angry","wink")
+            call her_main("One time when I was walking back from your office at night I was barely covering them...", "angry", "wink", "base", "mid")
             call her_main("And as I rounded a corner...", "soft", "narrow", "annoyed", "up")
             $ ccg1 = 24
             call her_main("A second year boy ran head first into them...", "grin", "narrow", "annoyed", "up")
@@ -855,7 +855,7 @@ label hg_pf_titjob_2_cumming:
             call bld
             g4 "Take this, whore!"
             $ ccg1 = 25
-            call her_main("What are you-","angry","wink", ypos="head")
+            call her_main("What are you-", "angry", "wink", "base", "mid", ypos="head")
 
             call hg_chibi_transition("tj_bj_pause", trans="d5")
             pause.8
@@ -908,11 +908,11 @@ label hg_pf_titjob_2_cumming:
             call her_main("Oh. I suppose so...", "grin", "base", "base", "R")
             call her_main("I mean it doesn't taste that bad and it means that I don't have to clean up afterwards.","base","happyCl")
             m "Hm... Are you sure you don't want people seeing your tits covered in cum..."
-            call her_main("What? Walk around school covered in your cum, [genie_name]?","angry","wink")
+            call her_main("What? Walk around school covered in your cum, [genie_name]?", "angry", "wink", "base", "mid")
 
             if her_tier < 6:
                 call her_main("With all due respect, [genie_name]...", "upset", "closed", "base", "mid")
-                call her_main("I don't plan on getting a reputation as a cum-loving whore...","angry","wink")
+                call her_main("I don't plan on getting a reputation as a cum-loving whore...", "angry", "wink", "base", "mid")
                 call her_main("Not like those \"Slytherin\" girls...", "angry", "narrow", "angry", "R")
             else:
                 call her_main("*Hmm*...", "soft", "happy", "base", "R")

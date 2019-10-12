@@ -29,7 +29,7 @@ label hg_pf_grope_breasts_T1:
     call her_main("B-but... this is...", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Just stand still..."
     m "go to your happy place or something..."
-    call her_main("M-my happy place...?","angry","wink")
+    call her_main("M-my happy place...?", "angry", "wink", "base", "mid")
     call nar(">You feel the girl's shapely breasts in your palms...")
 
     call her_main("............................","shock","worriedCl", ypos="head")

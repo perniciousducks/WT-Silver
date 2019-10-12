@@ -793,7 +793,7 @@ label luna_revert_2: #Non-Reversion event #DONE
             $ renpy.play('sounds/magic4.ogg')   #Not loud.
             call her_main("", "soft", "wide", "base", "stare",trans="hpunch")
             call lun_main("liquescimus corporis!","base","seductive","base","down")
-            call her_main("...","angry","wink")
+            call her_main("...", "angry", "wink", "base", "mid")
             m "That will be all for now miss lovegood."
             call lun_main("...","base","seductive","base","down")
             call lun_main("You better punish her...","base","seductive","base","down")
@@ -1205,7 +1205,7 @@ label luna_revert_2: #Non-Reversion event #DONE
 
     m "[hermione_name]? Are you OK?"
     call her_main("agh... what happened?", "open", "narrow", "worried", "down")
-    call her_main("Was Luna lovegood here?","upset","wink")
+    call her_main("Was Luna lovegood here?", "upset", "wink", "base", "mid")
     m "Who?"
     call her_main("never mind...","normal","worriedCl")
     call her_main("I think I'm going go now [genie_name]...","angry","worriedCl",emote="05")

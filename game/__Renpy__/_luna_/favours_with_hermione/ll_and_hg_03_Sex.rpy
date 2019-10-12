@@ -18,7 +18,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     ">You summon Hermione up to your office."
     $ luna_xpos = 300
     $ luna_flip = -1
-    call her_main("Hey Luna!!!","grin","wink")
+    call her_main("Hey Luna!!!", "grin", "wink", "base", "mid")
     call her_main("[genie_name].","normal","happyCl")
     call her_main("So what's he want from us today?","smile","glance")
     call her_main("Another blowjob?", "grin", "base", "base", "R")
@@ -39,7 +39,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     m "Would you do me the honour?"
     $ luna_flip = 1
     call lun_main("...","base","wide","sad","mid")
-    call her_main("(That's the corniest thing I've ever heard...)","open","wink")
+    call her_main("(That's the corniest thing I've ever heard...)", "open", "wink", "base", "mid")
     call lun_main("I...","base","wide","sad","R")
     call lun_main("I......","normal","wide","sad","R")
     call lun_main("I can't!","upset","wide","sad","down")
@@ -60,12 +60,12 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     ">Instead, you notice a bright red mark starting to form across Luna's face."
     call her_main("You need to stop thinking that right now!", "open", "base", "angry", "mid")
     call lun_main("but I'm not as-","pout","base","sad","R", cheeks="blush")
-    call her_main("Luna... you have to Stop measuring yourself against other people.","open","wink")
-    call her_main("You're the cutest, nicest, zaniest girl at this school and I don't know what's happened to you recently but you need to just calm down and enjoy your life.","open","wink")
+    call her_main("Luna... you have to Stop measuring yourself against other people.", "open", "wink", "base", "mid")
+    call her_main("You're the cutest, nicest, zaniest girl at this school and I don't know what's happened to you recently but you need to just calm down and enjoy your life.", "open", "wink", "base", "mid")
     call lun_main("but...","normal","wide","sad","down", cheeks="blush",tears="crying")
     call her_main("Shhh... It's ok...", "soft", "base", "base", "mid_soft")
     call her_main("Why don't we start by enjoying our headmaster's big cock, hmmm?", "grin", "happy", "base", "mid_soft")
-    call her_main("Would that make you feel a little better?","smile","wink")
+    call her_main("Would that make you feel a little better?", "smile", "wink", "base", "mid")
     call lun_main("y-yes...","base","seductive","sad","R", cheeks="blush",tears="crying")
     show screen blkfade
     with d3
@@ -504,7 +504,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     hide screen blkfade
     with d3
 
-    call her_main("I think you broke her...","grin","wink")
+    call her_main("I think you broke her...", "grin", "wink", "base", "mid")
     m "She's fine..."
     m "If I remember correctly, you had a similar response on your first time as well..."
     call her_main("[genie_name]!", "shock", "happy", "base", "mid_soft")

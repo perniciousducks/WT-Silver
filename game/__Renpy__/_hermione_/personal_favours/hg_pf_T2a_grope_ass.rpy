@@ -847,7 +847,7 @@ label hg_pf_grope_ass_T4_front:
         call her_main("I don't have long before others notice im missing.", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
     m "do you enjoy this so much?"
-    call her_main("I wouldn't phrase it like that...","annoyed","wink", cheeks="blush")
+    call her_main("I wouldn't phrase it like that...", "annoyed", "wink", "base", "mid", cheeks="blush")
 
     call her_main("Can we just start, please...?","angry","worriedCl", cheeks="blush",emote="05")
     m "Well, since you asked so nicely..."
@@ -887,7 +887,7 @@ label hg_pf_grope_ass_T4_front:
     call nar(">one hand circling just above her clit.")
     call her_main(".....................", "silly", "narrow", "base", "dead")
     m "is there something you want?"
-    call her_main(".....................","annoyed","wink", cheeks="blush")
+    call her_main(".....................", "annoyed", "wink", "base", "mid", cheeks="blush")
     call her_main("...i... {size=-5}...i want you to finger me...{/size}", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Did you say something, [hermione_name]?"
     call her_main("...it's nothing, [genie_name]...", "open", "narrow", "base", "up", cheeks="blush")

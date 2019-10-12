@@ -233,7 +233,7 @@ label l_tutoring:
         call her_main("... and I heard muffled sounds.", "base", "base", "base", "R",cheeks="blush")
         call her_main("I was hoping to catch a teacher doing bad things with one of those Slytherin whores.", "annoyed", "narrow", "angry", "R",cheeks="blush")
         call her_main("I slowly headed towards the sounds and I discovered two girls in an alcove.", "open", "base", "base", "mid",cheeks="blush")
-        call her_main("I remained hidden to observe them.","grin","wink",cheeks="blush")
+        call her_main("I remained hidden to observe them.", "grin", "wink", "base", "mid",cheeks="blush")
         g11 "{size=-2}(Come on!){/size}"
         call her_main("Yes, professor?", "base", "narrow", "base", "up",cheeks="blush")
         m "Yes, no, please continue."
@@ -434,7 +434,7 @@ label l_tutoring:
         m "Please answer the question, Miss Granger. Have you ever touched yourself?"
         call her_main("No, it's... it's wrong!", "annoyed", "narrow", "angry", "R",cheeks="blush")
         m "But when you looked at these girls, you felt certain emotions."
-        call her_main("Yes and ?","grin","wink",cheeks="blush")
+        call her_main("Yes and ?", "grin", "wink", "base", "mid",cheeks="blush")
         m "You didn't feel the need to touch yourself?"
         call her_main("Yes... but I resisted.", "base", "narrow", "base", "up",cheeks="blush")
         call nar(">You start to caress her thigh.")
@@ -898,7 +898,7 @@ label l_tutoring:
         call her_main("With your teachings and your \"scientific\" literature, indeed.", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
         call her_main("I'll become proficient in human anatomy with all this documentation.","angry","worriedCl",cheeks="blush")
         m "Do you need some scientific instruments for your research?"
-        call her_main("They could come in handy.","grin","wink",cheeks="blush")
+        call her_main("They could come in handy.", "grin", "wink", "base", "mid",cheeks="blush")
         call her_main("As long as it's not your dick.", "annoyed", "narrow", "angry", "R",cheeks="blush")
         call her_main("{size=-2}(Not that I don't appreciate it but no points no cock!){/size}", "smile", "base", "angry", "mid",cheeks="blush")
         m "Miss Granger! This is a serious matter!"
@@ -1073,7 +1073,7 @@ label l_tutoring:
         call her_main("{size=-2}(Not that I would mind...){/size}","angry","worriedCl",cheeks="blush")
         call her_main("{size=-2}(And I could ask him for points afterwards){/size}", "smile", "base", "base", "R")
         m "Miss Granger? Are you alright?"
-        call her_main("Yes professor! Sorry, I was thinking of my next exam.","grin","wink",cheeks="blush")
+        call her_main("Yes professor! Sorry, I was thinking of my next exam.", "grin", "wink", "base", "mid",cheeks="blush")
         m "Oh, I'm sure it's an important one. Maybe next lesson I can help you revise."
         call her_main("I would love that!","open","worriedCl",cheeks="blush")
         m "So, anal stimulation..."
@@ -1609,7 +1609,7 @@ label l_tutoring:
         call ctc
 
         call her_main("Hmmm, yes like that.", "base", "narrow", "base", "up",cheeks="blush")
-        call her_main("My pussy feels lonely without your care.","grin","wink",cheeks="blush")
+        call her_main("My pussy feels lonely without your care.", "grin", "wink", "base", "mid",cheeks="blush")
         call nar(">You start to finger her pussy too.")
         m "Poor little thing."
         call her_main("What's better in life than this professor?", "open", "narrow", "base", "up",cheeks="blush")

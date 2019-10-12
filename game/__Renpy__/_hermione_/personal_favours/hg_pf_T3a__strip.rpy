@@ -90,7 +90,7 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
     call bld
     m "[hermione_name], I need you to dance for me a little."
     call her_main("You want me to...","open","worried")
-    call her_main("...dance for you, [genie_name]?","open","wink")
+    call her_main("...dance for you, [genie_name]?", "open", "wink", "base", "mid")
     m "Yes... You think you could manage that?"
     call her_main("Ehm... I suppose so...", "soft", "base", "base", "R")
     her "Am I getting paid for this?"
@@ -174,7 +174,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     call bld
     m "[hermione_name], I need you to dance for me a little."
     call her_main("You want me to...","open","worried")
-    call her_main("...dance for you, [genie_name]?","open","wink")
+    call her_main("...dance for you, [genie_name]?", "open", "wink", "base", "mid")
     m "Yes... You think you could manage that?"
     call her_main("Ehm... I suppose so...", "soft", "base", "base", "R")
     her "Am I getting paid for this?"
@@ -794,7 +794,7 @@ label hg_pf_strip_T1_E2:
     call her_main("..............", "open", "narrow", "worried", "down")
     call her_main("What if my parents were to find out about this, [genie_name]?", "disgust", "narrow", "base", "down")
     call her_main("Mother would never understand...")
-    call her_main("As for my father...","upset","wink")
+    call her_main("As for my father...", "upset", "wink", "base", "mid")
 
     menu:
         m "..."
@@ -806,7 +806,7 @@ label hg_pf_strip_T1_E2:
 
         "{size=-3}\"Your father would spank you hard!\"{/size}":
             call her_main("He would not!", "shock", "wide", "base", "stare")
-            call her_main("And I am too old for that any way...","upset","wink")
+            call her_main("And I am too old for that any way...", "upset", "wink", "base", "mid")
             g9 "I would say that you are in the perfect age for that..."
             call her_main("Huh?")
             call her_main("I do not know what you mean, [genie_name].","grin","worriedCl", emote="05")
@@ -1144,7 +1144,7 @@ label hg_pf_strip_T2:
 
         call her_main("[genie_name]?", "open", "base", "base", "mid")
         m "Huh?"
-        call her_main("Can I ask you a question?","upset","wink")
+        call her_main("Can I ask you a question?", "upset", "wink", "base", "mid")
         m "Go ahead..."
         call her_main("...............","normal","worriedCl")
         call her_main("Have you ever been in love...?","grin","worriedCl", emote="05")
@@ -1156,7 +1156,7 @@ label hg_pf_strip_T2:
                 call her_main("But you couldn't be more wrong!", "annoyed", "narrow", "annoyed", "mid")
                 call her_main("I believe that true love is what makes the earth turn!", "base", "base", "base", "R")
                 m "Actually the conservation of angular momentum is responsible for that."
-                call her_main("Huh?","upset","wink")
+                call her_main("Huh?", "upset", "wink", "base", "mid")
                 m "Never mind. Just take off your skirt already?"
                 call her_main("............", "annoyed", "narrow", "annoyed", "mid")
 

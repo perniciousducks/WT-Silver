@@ -609,7 +609,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         call her_main("hello Professor!","base","happyCl")
         call her_main("hi luna! what's he want now? another blowjob.", "grin", "base", "base", "R")
         call lun_main("no, he just wants to talk...","base","seductive","angry","mid")
-        call her_main("really?","upset","wink")
+        call her_main("really?", "upset", "wink", "base", "mid")
         call lun_main("I mean he says talk...","normal","angry","mad","R")
         call lun_main("but I think we both know he wants to sit there and stroke that filthy old cock of his while we do all the talking.","base","seductive","angry","mid")
         call her_main("typical...", "base", "narrow", "worried", "down")
@@ -653,7 +653,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         call her_main("we'd just finished up basic spells revision so we moved onto blowjobs as usual...", "open", "base", "base", "R")
         call lun_main("...","normal","wide","sad","R", cheeks="blush")
         m "{size=-2}(mmmm...){/size}"
-        call her_main("it was going well when all of a sudden a few second years came into the common room...","angry","wink")
+        call her_main("it was going well when all of a sudden a few second years came into the common room...", "angry", "wink", "base", "mid")
         call lun_main("you said it was going to be empty!","normal","wide","sad","mid", cheeks="blush")
         call her_main("it was incredible sir... she swallowed the whole thing...", "base", "narrow", "worried", "down")
         g4 "{size=+4}(agh...){/size}"

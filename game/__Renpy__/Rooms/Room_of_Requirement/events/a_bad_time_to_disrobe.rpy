@@ -87,7 +87,7 @@ label a_bad_time_to_disrobe_part_1:
     m "What happened next then?"
     call her_main("Well, a few of the boys were in there.", "base", "base", "base", "mid")
     call her_main("They were playing wizards chess...", "base", "base", "base", "mid")
-    call her_main("Pretty poorly in fact.","disgust","wink")
+    call her_main("Pretty poorly in fact.", "disgust", "wink", "base", "mid")
 
     m "..."
     m "I'm sorry miss Granger but you're going to have to do better than this."

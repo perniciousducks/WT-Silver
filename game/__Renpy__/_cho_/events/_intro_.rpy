@@ -659,7 +659,7 @@ label cho_intro_E3:
     if her_whoring < 4: # If you haven't groped her breasts or ass yet.
         call her_main("My \"Quidditch equality movement\"?", "soft", "base", "base", "mid")
         call her_main("But Sir, I'm on the verge of a breakthrough with it!", "soft", "closed", "base", "mid")
-        call her_main("I worked very hard on gathering all records of past Quidditch matches, throughout the complete history of Quidditch!","open","wink")
+        call her_main("I worked very hard on gathering all records of past Quidditch matches, throughout the complete history of Quidditch!", "open", "wink", "base", "mid")
         call her_main("You'd be surprised just how few female-", "soft", "closed", "base", "mid")
         m "I'll give you ten house points."
         call her_main("Ten points?", "soft", "wide", "base", "stare",trans="hpunch")

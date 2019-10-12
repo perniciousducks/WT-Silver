@@ -96,7 +96,7 @@ label equip_bra:
                         # call her_main("I'll just lie down in the grass and unwind for a bit. I'll even take off my top at times so I won't get any tan-lines!", "smile", "base", "base", "mid")
                         # call her_main("I'm always attracting a crowd... Seems like the boys quite like ogling at me.","base","glance")
                 # else: #Fail
-                    # call her_main("Bikinis?","soft","wink")
+                    # call her_main("Bikinis?", "soft", "wink", "base", "mid")
                     # call her_main("I mostly wear a bathing suit when I'm out swimming.", "open", "base", "base", "R")
                     # call her_main("Why do you ask, [genie_name]?", "base", "base", "base", "mid")
                     # m "I would like you to wear one."
@@ -190,7 +190,7 @@ label equip_bra:
                     # call her_main("They always tell me how great my breasts look!","base","glance")
                 # else: #Fail
                     # if her_whoring < 11:
-                        # call her_main("Do you ask this from every girl, [genie_name]?","open","wink")
+                        # call her_main("Do you ask this from every girl, [genie_name]?", "open", "wink", "base", "mid")
                         # m "Why uhm... I mean yes. All the girls..."
                         # call her_main("Is this some sort of protection for-", "open", "narrow", "worried", "down")
                         # call her_main("It's those Blast-Ended Skrewts again, isn't it?!", "soft", "wide", "base", "stare",trans="hpunch")
@@ -417,7 +417,7 @@ label equip_panties:
                         # call her_main("I'll just lie down in the grass and unwind for a bit. I'll even take off my top at times so I won't get any tan-lines!", "smile", "base", "base", "mid")
                         # call her_main("I'm always attracting a crowd... Seems like the boys quite like ogling at me.","base","glance")
                 # else: #Fail
-                    # call her_main("Bikinis?","soft","wink")
+                    # call her_main("Bikinis?", "soft", "wink", "base", "mid")
                     # call her_main("I mostly wear a bathing suit when I'm out swimming.", "open", "base", "base", "R")
                     # call her_main("Why do you ask, [genie_name]?", "base", "base", "base", "mid")
                     # m "I would like you to wear one."

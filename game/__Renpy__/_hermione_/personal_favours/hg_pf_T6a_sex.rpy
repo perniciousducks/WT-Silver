@@ -667,7 +667,7 @@ label hg_sex_2:
             hide screen ccg
             call hg_chibi_transition(action="sex_creampie_pause", trans="d5")
 
-            call her_main("Maybe you are right, [genie_name], and I shouldn't worry so much.","angry","wink", ypos="head",flip=False)
+            call her_main("Maybe you are right, [genie_name], and I shouldn't worry so much.", "angry", "wink", "base", "mid", ypos="head",flip=False)
             call her_main("Can I get my payment now?")
 
             return
@@ -712,7 +712,7 @@ label hg_sex_2:
             call hg_chibi_transition(action="sex_creampie_pause", trans="d5")
 
             call her_main("I think I came several times, [genie_name]...", "soft", "narrow", "annoyed", "up", ypos="head",flip=False)
-            call her_main("Can I get my payment now?","angry","wink")
+            call her_main("Can I get my payment now?", "angry", "wink", "base", "mid")
             $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
 
             return

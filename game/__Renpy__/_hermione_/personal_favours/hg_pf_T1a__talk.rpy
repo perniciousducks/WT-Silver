@@ -942,7 +942,7 @@ label hg_pf_talk_tonks:
             call her_main("It is quite astonishing to what level those \"Slytherins\" would go - to get the teachers going...", "annoyed", "base", "angry", "mid")
             call her_main("Especially that one time during care for magical creatures...", "open", "base", "base", "mid")
             call ton_main("Oh? You weren't studying centaurs, were you?","horny","base","raised","mid")
-            call her_main("No? Why would you assume that?","normal","wink")
+            call her_main("No? Why would you assume that?", "normal", "wink", "base", "mid")
             call ton_main("No reason... please continue...","open","base","raised","R", cheeks="blush", hair="horny")
             call ton_main("","base","base","raised","mid", hair="basic")
             call her_main("Well, I do hope that Hagrid is above this favour trading business. He sure seems like it during my classes with him.", "open", "base", "base", "R")

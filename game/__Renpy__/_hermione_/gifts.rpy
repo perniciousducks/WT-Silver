@@ -283,7 +283,7 @@ label give_her_gift(gift_item):
             call her_mood(-8)
         elif her_whoring >= 18: # Lv 7+
             call her_main("The New edition of \"L.o.v.e.\"!!!","smile","happyCl")
-            call her_main("Err.. I mean, adult magazines?","angry","wink")
+            call her_main("Err.. I mean, adult magazines?", "angry", "wink", "base", "mid")
             call her_main("This is a little inappropriate...")
             call her_main("But I will take them...","base","happyCl")
             call give_gift(">You give an assortment of adult magazines to Hermione...",gift_item)
@@ -359,14 +359,14 @@ label give_her_gift(gift_item):
             call her_mood(0)
         elif her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
             call her_main("sexy lingerie?", "base", "narrow", "worried", "down")
-            call her_main("[genie_name] that is so inappropriate...","angry","wink")
+            call her_main("[genie_name] that is so inappropriate...", "angry", "wink", "base", "mid")
             call give_gift(">You give the lingerie to Hermione...",gift_item)
             call her_main("Thank you, [genie_name].", "base", "base", "base", "R",cheeks="blush")
             call her_mood(-7)
         elif her_whoring >= 18: # Lv 7+
             call her_main("sexy lingerie?", "base", "narrow", "worried", "down")
             call her_main("Do You think it will make me look like one of the witches in those adult magazines, [genie_name]?", "grin", "narrow", "base", "dead")
-            call her_main("Oh... I mean, thank you, [genie_name].","angry","wink")
+            call her_main("Oh... I mean, thank you, [genie_name].", "angry", "wink", "base", "mid")
             call give_gift(">You give the lingerie to Hermione...",gift_item)
             call her_mood(-15)
 
@@ -476,7 +476,7 @@ label give_her_gift(gift_item):
             call her_mood(-9)
         elif her_whoring >= 18: # Lv 7+
             call her_main("A ball gag and handcuffs?", "open", "happy", "base", "mid",cheeks="blush")
-            call her_main("This is completely inappropriate, [genie_name].","angry","wink") # :)
+            call her_main("This is completely inappropriate, [genie_name].", "angry", "wink", "base", "mid") # :)
             call her_main("But a gift is a gift, right?","base","suspicious")
             call give_gift(">You give the ball gag and cuffs to Hermione...",gift_item)
             call her_mood(-15)
@@ -503,7 +503,7 @@ label give_her_gift(gift_item):
         elif her_whoring >= 18: # Lv 7+
             call her_main("Anal plugs?", "angry", "narrow", "base", "down")
             call her_main("I have no use for things like that, [genie_name]...", "angry", "base", "base", "mid")
-            call her_main("They are so pretty though...","angry","wink")
+            call her_main("They are so pretty though...", "angry", "wink", "base", "mid")
             call her_main(".....................", "angry", "narrow", "base", "down")
             call her_main("Well, alright. I shall take them off your hands if I must, [genie_name].", "soft", "narrow", "annoyed", "up")
             call give_gift(">You give the anal plugs to Hermione...",gift_item)

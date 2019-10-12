@@ -521,7 +521,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         with hpunch
         g4 "{size=+9} WHAT?!{/size}"
         g4 "Don't tell me ye're expecting cargo, lass!"
-        call her_main("Ye seamen don't put no cargo in me bilge, captain...","angry","wink")
+        call her_main("Ye seamen don't put no cargo in me bilge, captain...", "angry", "wink", "base", "mid")
         m "Wha' be this natter o' settlin down then?"
         call her_main("Ye misunderstood me captain.", "angry", "base", "base", "mid")
         call her_main("I meant t' say, would ye stop plunderin for a lass {size=+5}like{/size} me?", "angry", "narrow", "base", "down")

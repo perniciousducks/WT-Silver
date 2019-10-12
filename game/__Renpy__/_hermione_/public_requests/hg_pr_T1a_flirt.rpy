@@ -34,7 +34,7 @@ label hg_pr_flirt:
         call her_main("But why \"Slytherin\"?","open","worried")
         her "If you need me to be flirtatious today, I think I can manage that..."
         her "But, please, can't be another house?"
-        call her_main("The \"Gryffindors\" maybe?","upset","wink")
+        call her_main("The \"Gryffindors\" maybe?", "upset", "wink", "base", "mid")
         m "I am only trying to protect your reputation, [hermione_name]."
         call her_main("[genie_name]?", "soft", "base", "base", "mid")
         m "Do you value the opinion the \"Slytherin\" students have of you?"
@@ -299,7 +299,7 @@ label hg_pr_flirt_T2_E1:
     m "Was he looking at your legs at all?"
     call her_main("What?", "open", "base", "base", "mid")
     m "Did he stare at your legs or not, [hermione_name]?"
-    call her_main("Em... He might have...","upset","wink")
+    call her_main("Em... He might have...", "upset", "wink", "base", "mid")
     m "What about your tits?"
     call her_main("[genie_name]!!!", "angry", "base", "angry", "mid")
     m "Fine. You get your points. Keep up the good work."

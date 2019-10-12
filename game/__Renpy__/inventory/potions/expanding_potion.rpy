@@ -18,7 +18,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_chibi("stand","mid","base")
 
     her "That wasn't actually that bad."
-    call her_main("So, now that I've had the potion, will you tell me what it's supposed to do.","angry","wink")
+    call her_main("So, now that I've had the potion, will you tell me what it's supposed to do.", "angry", "wink", "base", "mid")
     m "No need to ruin the fun, it should take effect relatively quickly."
     call her_main("Well what am I supposed to do until then?","base","glance")
     m "You could show me your tits."
@@ -99,7 +99,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     show screen groping_naked_tits
     call hide_blkfade
 
-    call her_main("Well...","upset","wink",xpos="mid",ypos="base")
+    call her_main("Well...", "upset", "wink", "base", "mid",xpos="mid",ypos="base")
     call nar(">You reach out and grab her breasts through her stretched shirt.")
     call her_main("!!!", "angry", "wide", "base", "stare")
     call her_main("Please be gentle [genie_name]. They seem to be much more sensitve than usual, it must be the potion.", "angry", "base", "base", "mid")
@@ -356,7 +356,7 @@ label potion_scene_2_2: #ass expansion
             show screen ch_hotdog
             with d3
             call her_main("!!!", "angry", "wide", "base", "stare")
-            call her_main("What are you going to do [genie_name]?","angry","wink")
+            call her_main("What are you going to do [genie_name]?", "angry", "wink", "base", "mid")
             hide screen hermione_main
             m "Well seeing as how your ass has become so fucking huge I thought I may as well put it to good use."
             call nar(">You pull you cock out from your robes and place it on top of her ass crack.")

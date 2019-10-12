@@ -193,7 +193,7 @@ label hg_pr_handjob_T1_E1:
             call her_main("Really?", "angry", "base", "base", "mid")
             call her_main("Thank you, [genie_name]!", "open", "narrow", "worried", "down")
             call her_main("I promise, I will try harder next time!", "base", "base", "base", "mid")
-            call her_main("Ehm... Should you request a similar favour in the future, I mean...","upset","wink")
+            call her_main("Ehm... Should you request a similar favour in the future, I mean...", "upset", "wink", "base", "mid")
 
             jump end_hg_pr_handjob
 
@@ -591,7 +591,7 @@ label hg_pr_handjob_T3_E3:
     her "I couldn't even take notes with my other hand..."
     her "It was wrapped around another thick hot cock too."
     m "You gave two boys handjobs at the same time?!"
-    call her_main("Yes Sir.","angry","wink")
+    call her_main("Yes Sir.", "angry", "wink", "base", "mid")
     call her_main("And I think I gave them the wank of their life too...", "base", "narrow", "worried", "down")
     her "Because they did not just cum."
     her "Their cocks simply exploded with spunk."

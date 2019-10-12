@@ -1192,7 +1192,7 @@ label hermione_intro_E6:
                 pass
 
         call her_main(".........","annoyed","angryL")
-        call her_main("What if I do it like this?","full","ahegao_intense")
+        call her_main("What if I do it like this?", "full", "slit", "worried", "ahegao")
 
         menu:
             "\"Good! Very stupid.\"":

@@ -319,7 +319,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("So I prayed he wasn't about to sit down and instead I positioned myself above the toilet with my legs around the base.","clench","worriedCl")
     m "And did he sit down or not?"
     call her_main("No, but he was close enough for me to feel his...","mad","ahegao_squint")
-    call her_main("His...","base","ahegao_intense")
+    call her_main("His...", "base", "slit", "worried", "ahegao")
     m "His what? miss Granger..."
     call her_main("Well... His Penis brushed up against my butt.", "annoyed", "closed", "base", "mid", cheeks="blush")
     m "How did he manage that?"

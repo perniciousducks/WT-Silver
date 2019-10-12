@@ -743,7 +743,7 @@ label hg_hidden_blowjob_snape:
     call play_music("snape_theme")
     call sna_main("Good, you are here.","snape_01", xpos="base", ypos="base")
     call hg_chibi_transition("bj")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_intense")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "slit", "worried", "ahegao")
     call sna_main("Listen, there is something I want to discuss...","snape_06")
     call sna_main("Hm...?","snape_05")
     call sna_main("Genie? Are you alright?")
@@ -761,7 +761,7 @@ label hg_hidden_blowjob_snape:
     call her_main("{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}", "sucking", "narrow", "annoyed", "up")
     m "Oh... What about her?"
     call sna_main("You promised that you would take care of the little witch.","snape_04")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_intense")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "slit", "worried", "ahegao")
     call sna_main("But she is still being a major pain in my arse!","snape_04")
     call sna_main("Her tactics have changed...")
     call sna_main("But the amount of grief she manages to bring me is the same...","snape_03")
@@ -909,7 +909,7 @@ label hg_hidden_blowjob_luna:
     call spit_on_her
 
     g4 "Take that, you nasty little slu-... Uhh, plant."
-    call her_main("{size=-4}(What the... *Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_intense")
+    call her_main("{size=-4}(What the... *Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "slit", "worried", "ahegao")
     call lun_main("That's right, [lun_genie_name]!","grin","happyCl","raised","mid")
     g4 "This one wants more spit!"
     call spit_on_her
@@ -1076,13 +1076,13 @@ label hg_hidden_blowjob_tonks:
 
             if ton_friendship < 50:
                 call ton_main("Or perhaps somebody else has their tongue wrapped around it?","horny","base","raised","L")
-                call her_main("{size=-4}(*Blergchhhgh...* *Cough...* *Cough...* *Cough...*){/size}","sucking","ahegao_intense")
+                call her_main("{size=-4}(*Blergchhhgh...* *Cough...* *Cough...* *Cough...*){/size}", "sucking", "slit", "worried", "ahegao")
                 call ton_main("who was that?","base","base","raised","mid")
                 call ton_main("Surely there nobody at this school who would be able to pleasure you properly...","open","base","raised","mid")
             else:
                 call ton_main("Are you stroking your hard, {w}magnificent, {w}cock?","open_wide_tongue","base","base","ahegao")
                 with hpunch
-                call her_main("{size=-4}(*Blergchhhgh...* *Cough...* *Cough...* *Cough...*){/size}","sucking","ahegao_intense")
+                call her_main("{size=-4}(*Blergchhhgh...* *Cough...* *Cough...* *Cough...*){/size}", "sucking", "slit", "worried", "ahegao")
                 call hg_chibi_transition("bj_pause")
                 call her_main("{size=-4}What??{/size}","sucking","ahegao_mad")
                 call ton_main("who was that?","base","base","raised","mid")
@@ -1126,7 +1126,7 @@ label hg_hidden_blowjob_tonks:
     call her_main("(Damn right I will...)","sucking","ahegao_mad")
 
     call hg_chibi_transition("bj")
-    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_intense")
+    call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "slit", "worried", "ahegao")
     call ton_main("Very well...","base","base","raised","R", xpos="right", ypos="base")
     call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}","sucking","ahegao_squint")
 
@@ -2112,7 +2112,7 @@ label hg_pf_facefuck_1: # Bondage facefuck scene
             g9 "ARGH!!! YOU WHORE!!!"
             $ uni_sperm = True
             $ u_sperm = "characters/hermione/face/auto_07.png"
-            call her_main("*pant*{image=textheart}{image=textheart}{image=textheart}*pant*","cumshot","ahegao_intense")
+            call her_main("*pant*{image=textheart}{image=textheart}{image=textheart}*pant*", "cumshot", "slit", "worried", "ahegao")
             g9 "TAKE THIS!!!"
             ">You start unloading onto the girl's waiting face."
             call her_main("{image=textheart}Yesss....{image=textheart}","soft","ahegao_mad")

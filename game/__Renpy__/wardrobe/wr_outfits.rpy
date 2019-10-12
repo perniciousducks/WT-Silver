@@ -383,7 +383,7 @@ label equip_outfit:
                     # g9 "Voulez vous coucher avec moi?"
                     # call her_main("............", "open_tongue", "narrow", "annoyed", "up")
                     # m "Girl?..."
-                    # call her_main("....................","open_tongue","ahegao_intense")
+                    # call her_main("....................", "open_tongue", "slit", "worried", "ahegao")
                     # m "(Did she just break?)"
                     # m "Snap out of it, [hermione_name]! I need you to put on this outfit here..."
                     # call her_main("What just happened?!", "open", "wide", "base", "stare",trans="hpunch")

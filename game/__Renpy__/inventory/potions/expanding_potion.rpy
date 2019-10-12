@@ -221,7 +221,7 @@ label potion_scene_2_2: #ass expansion
     $ hermione_wear_bottom = False
     call set_her_action("none","skip_update")
 
-    call her_main("","silly","ahegao_intense",cheeks="blush")
+    call her_main("", "silly", "slit", "worried", "ahegao",cheeks="blush")
     pause.8
 
     call her_main("", "soft", "wide", "base", "stare")

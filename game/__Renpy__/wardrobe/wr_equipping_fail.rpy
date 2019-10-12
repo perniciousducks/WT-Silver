@@ -12,11 +12,11 @@
 
             # m "[hermione_name]..."
             # m "Would you wear this--"
-            # call her_main("I'm sorry [genie_name],...","open","closed")
+            # call her_main("I'm sorry [genie_name],...", "open", "closed", "base", "mid")
             # call her_main("But I don't feel like dressing up for you today.","open","worriedL")
             # m "Any chance I could convince you otherwise?"
             # call her_main("Hmm...", "annoyed", "base", "base", "mid") #very upset, default
-            # call her_main("I want 5 house points! And that's no guarantee that I'm actually going to wear...","open","closed")
+            # call her_main("I want 5 house points! And that's no guarantee that I'm actually going to wear...", "open", "closed", "base", "mid")
             # call her_main("Whatever it is you want me to put on.","annoyed","annoyed")
 
             # menu:
@@ -63,7 +63,7 @@
             # with d3
             # m "[hermione_name]..."
             # m "I'd like you to wear--"
-            # call her_main("No, [genie_name]...","open","closed",xpos="base") #525=default Hermione xpos
+            # call her_main("No, [genie_name]...", "open", "closed", "base", "mid",xpos="base") #525=default Hermione xpos
             # call her_main("I'm still mad at you for what you did!","open","worriedL")
             # m "Will you wear it if I give Gryffindor some points?"
             # call her_main("...","annoyed","suspicious")
@@ -77,13 +77,13 @@
                     # g4 "for Gryffindor!"
                     # m "Was that good enough for you?"
                     # call her_main("(It's so easy to get points out of him!)", "soft", "base", "base", "R")
-                    # call her_main("Thank you,[genie_name].","open","closed")
+                    # call her_main("Thank you,[genie_name].", "open", "closed", "base", "mid")
                     # m "No problem. Now put on... {w=0.9}what was it again?"
                     # $ gryffindor += 15
                     # $ her_mood = 0
                 # "-Don't give her the points-":
                     # m "I'm already giving you new clothing! Isn't that enough?"
-                    # call her_main("No it's not enough, [genie_name]!","open","closed")
+                    # call her_main("No it's not enough, [genie_name]!", "open", "closed", "base", "mid")
                     # call her_main("I want those points!","angry","angry")
                     # call her_main("(You can shove those clothes up your ass...)","annoyed","angryL")
                     # m "I'm not giving you the points, [hermione_name]."
@@ -117,7 +117,7 @@
             # with d3
             # m "[hermione_name]..."
             # m "Would you please--"
-            # call her_main("No--","open","closed",xpos="base") #525=default Hermione xpos
+            # call her_main("No--", "open", "closed", "base", "mid",xpos="base") #525=default Hermione xpos
             # call her_main("...","annoyed","annoyed")
             # m "I just want you to wear--"
             # call her_main("I SAID NO, [genie_name]!","scream","angryCl")

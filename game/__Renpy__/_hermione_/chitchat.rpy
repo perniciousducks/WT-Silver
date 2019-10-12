@@ -103,7 +103,7 @@ label chit_chat:
             call her_main("That favour I sold you the other say, sir...","open","worried")
             call her_main(".......","normal","worriedCl")
             call her_main("I only agreed to it because the needs of my house always come first.","open","down")
-            call her_main("I just wanted you to know that, sir...","upset","closed")
+            call her_main("I just wanted you to know that, sir...", "upset", "closed", "base", "mid")
 
         elif one_of_ten == 10:
             call her_main("The \"Autumn Ball\" is still several months away...","open","angryCl")
@@ -136,7 +136,7 @@ label chit_chat:
             call her_main("I dislike the entire house of Slytherin with all my heart, sir.","angry","angry")
 
         elif one_of_ten == 5:
-            call her_main("Hogwarts has really become a second home to me lately...","open","closed")
+            call her_main("Hogwarts has really become a second home to me lately...", "open", "closed", "base", "mid")
             call her_main("I don't even miss my parents nearly as much anymore...","annoyed","down")
             call her_main("Come to think of it I don't miss them at all...", "angry", "wide", "base", "stare")
             call her_main("I'm an awful daughter...","angry","down_raised")
@@ -162,7 +162,7 @@ label chit_chat:
         elif one_of_ten == 10:
             call her_main("I've read about this thing called \"Time-Turner\".", "open", "base", "base", "mid")
             her "It allows the user to control the flow of time..."
-            call her_main("Having a device like that would do wonders for my schedule...","open","closed")
+            call her_main("Having a device like that would do wonders for my schedule...", "open", "closed", "base", "mid")
             call her_main("","annoyed","suspicious")
 
 
@@ -288,7 +288,7 @@ label chit_chat:
         elif one_of_ten == 4:
             call her_main("When I think about all the favours I sold you over these last months, sir...", "open", "base", "base", "mid")
             call her_main("Although I do feel a little bit embarrassed...","open","down")
-            call her_main("I also feel very proud of myself.","upset","closed")
+            call her_main("I also feel very proud of myself.", "upset", "closed", "base", "mid")
 
         elif one_of_ten == 5:
             call her_main("I still dedicate a lot of my time to studying...", "open", "base", "base", "mid")
@@ -299,11 +299,11 @@ label chit_chat:
         elif one_of_ten == 6:
             call her_main("Gryffindor shall get the house cup this year!","open","angryCl")
             call her_main("{size=-4}(Even if it should cost me my dignity...){/size}","angry","down_raised")
-            call her_main("","upset","closed")
+            call her_main("", "upset", "closed", "base", "mid")
 
         elif one_of_ten == 7:
             call her_main("I don't mind the autumn weather...", "open", "base", "base", "mid")
-            call her_main("But my favourite season is winter.","open","closed")
+            call her_main("But my favourite season is winter.", "open", "closed", "base", "mid")
             call her_main("", "soft", "base", "base", "mid")
 
         elif one_of_ten == 8:
@@ -353,7 +353,7 @@ label chit_chat:
             call her_main("I wonder if the diet is working...","annoyed","worriedL")
 
         elif one_of_ten == 7:
-            call her_main("I remember that I used to say that books were my friends...","open","closed")
+            call her_main("I remember that I used to say that books were my friends...", "open", "closed", "base", "mid")
             call her_main("Now that sounds so lame.","grin","worriedCl",emote="05")
             call her_main("", "soft", "base", "base", "mid")
 
@@ -375,7 +375,7 @@ label chit_chat:
         elif one_of_ten == 10:
             call her_main("Would you like to see my tits today, sir?","smile","glance")
             call her_main("25 house points, please.","smile","angry")
-            call her_main("","upset","closed")
+            call her_main("", "upset", "closed", "base", "mid")
 
 
     ### WHORING LEVEL 08+ ###
@@ -393,7 +393,7 @@ label chit_chat:
             call her_main("I hope it's going to start snowing soon...", "base", "base", "base", "mid")
 
         elif one_of_ten == 4:
-            call her_main("Jump and scream for the Gryffindor team!","open","closed")
+            call her_main("Jump and scream for the Gryffindor team!", "open", "closed", "base", "mid")
             call her_main("So daring and bold, sporting red and gold!","smile","happyCl",emote="06")
             call her_main("", "base", "base", "base", "mid")
 
@@ -405,7 +405,7 @@ label chit_chat:
             call her_main("I wonder what Ginny is going to wear for the ball...", "base", "base", "base", "mid")
 
         elif one_of_ten == 7:
-            call her_main("Considering the nature of the favours you keep buying from me sir...","open","closed")
+            call her_main("Considering the nature of the favours you keep buying from me sir...", "open", "closed", "base", "mid")
             call her_main("I seldom bother to put on underwear at all anymore...","open","worried")
 
         elif one_of_ten == 8:
@@ -415,16 +415,16 @@ label chit_chat:
             call her_main("","angry","wink")
 
         elif one_of_ten == 9:
-            call her_main("I have read this one article about the positive effects of semen on a woman's skin...","open","closed")
+            call her_main("I have read this one article about the positive effects of semen on a woman's skin...", "open", "closed", "base", "mid")
             call her_main("I wonder where their information is coming from...","base","glance")
             call her_main("Did the magazine conduct research of some sort?","angry","wink")
             call her_main("","base","glance")
 
         elif one_of_ten == 10:
-            call her_main("It goes like this...","open","closed")
+            call her_main("It goes like this...", "open", "closed", "base", "mid")
             her "First Gryffindor, then Ravenclaw, then Hufflepuff..."
             call her_main("And Slytherin is not even on the list!","open","annoyed",cheeks="blush")
-            call her_main("","upset","closed")
+            call her_main("", "upset", "closed", "base", "mid")
 
     if her_whoring >= 22:
         if one_of_ten == 1:
@@ -445,7 +445,7 @@ label chit_chat:
             call her_main("","base","glance")
         
         elif one_of_ten == 4:
-            call her_main("Jump and scream for the Gryffindor team!","open","closed") 
+            call her_main("Jump and scream for the Gryffindor team!", "open", "closed", "base", "mid") 
             call her_main("So daring and bold, sporting red and gold!","smile","happyCl",emote="06") 
             call her_main("", "base", "base", "base", "mid") 
 
@@ -461,7 +461,7 @@ label chit_chat:
             call her_main("", "base","glance")
         
         elif one_of_ten == 7:
-            call her_main("Considering the nature of the favours you keep buying from me sir...","open","closed") 
+            call her_main("Considering the nature of the favours you keep buying from me sir...", "open", "closed", "base", "mid") 
             call her_main("I seldom bother to put on underwear at all anymore...","open","worried")
             call her_main("(Not that I complain anyway..)","soft","ahegao") 
         
@@ -472,16 +472,16 @@ label chit_chat:
             call her_main("(Although I wouldn't mind doing it for free..).","smile","ahegao")
 
         elif one_of_ten == 9:
-            call her_main("Remember when I told you about this one article...","open","closed") 
+            call her_main("Remember when I told you about this one article...", "open", "closed", "base", "mid") 
             her "It was about the positive effects of semen on a woman's skin."
             call her_main("I tested it recently...","base","glance") 
             call her_main("And it actually works!","smile","glance")
-            call her_main("My skin definitely is getting softer.","smile","closed") 
+            call her_main("My skin definitely is getting softer.", "smile", "closed", "base", "mid") 
             call her_main("","base","glance") 
 
         elif one_of_ten == 10:
-            call her_main("It goes like this...","open","closed") 
+            call her_main("It goes like this...", "open", "closed", "base", "mid") 
             her "First Gryffindor, then Ravenclaw, then Hufflepuff..."
             call her_main("And Slytherin is not even on the list!","open","annoyed",cheeks="blush") 
-            call her_main("","upset","closed")
+            call her_main("", "upset", "closed", "base", "mid")
     return

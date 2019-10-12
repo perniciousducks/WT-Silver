@@ -53,7 +53,7 @@ label a_bad_time_to_disrobe_part_1:
 
     call her_walk(xpos="door", ypos="base", speed=2.5)
 
-    call her_main("{size=7}You heard what I said...{/size}","annoyed","closed",ypos="head")
+    call her_main("{size=7}You heard what I said...{/size}", "annoyed", "closed", "base", "mid",ypos="head")
     call her_chibi("leave")
 
     g9 "\"Some of that bartering skill put to good use...\""
@@ -304,7 +304,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("It is hard to talk about this as it is without your chewing distracting me.","annoyed","angry")
     call her_main("Anyhow...","base","angryL")
     call her_main("I expected the team to be going for at least another 30 minutes.", "open", "base", "base", "mid")
-    call her_main("But that's when the boy walked in...","normal","closed")
+    call her_main("But that's when the boy walked in...", "normal", "closed", "base", "mid")
     call her_main("And I panicked and threw the cloak over myself and hid in one of the toilets.","open","worriedL")
     m "Smart."
     call her_main("...", "base", "base", "base", "mid", cheeks="blush")
@@ -314,14 +314,14 @@ label a_bad_time_to_disrobe_part_2:
     m "You're the one receiving the points here, I'm just providing the means of earning them."
     call her_main("...","normal","down")
     call her_main("As I was saying...","base","down_raised")
-    call her_main("I went into one of the toilets and I heard the boy shuffling outside.","base","closed")
+    call her_main("I went into one of the toilets and I heard the boy shuffling outside.", "base", "closed", "base", "mid")
     call her_main("The room was so small so I tried to back into a corner, but as he came in I knew it wasn't going to work...","base","down_raised", cheeks="blush")
     call her_main("So I prayed he wasn't about to sit down and instead I positioned myself above the toilet with my legs around the base.","clench","worriedCl")
     m "And did he sit down or not?"
     call her_main("No, but he was close enough for me to feel his...","mad","ahegao_squint")
     call her_main("His...","base","ahegao_intense")
     m "His what? miss Granger..."
-    call her_main("Well... His Penis brushed up against my butt.","annoyed","closed", cheeks="blush")
+    call her_main("Well... His Penis brushed up against my butt.", "annoyed", "closed", "base", "mid", cheeks="blush")
     m "How did he manage that?"
     call her_main("The boy wasn't in there to relieve himself in the way I assumed...","open","angryCl", cheeks="blush")
     call her_main("I guess he wasn't paying attention to what sensation he was feeling on the tip of his...","normal","worried", cheeks="blush")

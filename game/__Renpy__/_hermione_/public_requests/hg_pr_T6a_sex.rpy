@@ -48,7 +48,7 @@ label hg_pr_sex:
         m "If you do this, \"Gryffindor\" will be getting seventy five points tonight."
         call her_main("Well, then I will do it, [genie_name].","annoyed","annoyed")
         m "Great. See you after your classes then."
-        call her_main(".............","upset","closed")
+        call her_main(".............", "upset", "closed", "base", "mid")
 
     else:
         m "[hermione_name]..."
@@ -110,7 +110,7 @@ label hg_pr_sex_T1_intro_E2:
     call her_main(face="neutral", xpos="right", ypos="base")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     m "[hermione_name], you missed your debriefing yesterday."
-    call her_main("Yes, [genie_name], I apologize... *yawn*...","open","closed")
+    call her_main("Yes, [genie_name], I apologize... *yawn*...", "open", "closed", "base", "mid")
     m "Care to explain yourself?"
     call her_main("Of course, [genie_name].", "open", "happy", "base", "mid", cheeks="blush")
     call her_main("It is sort of embarrassing, though...", "base", "base", "base", "R", cheeks="blush")
@@ -139,13 +139,13 @@ label hg_pr_sex_T1_E3:
     m "[hermione_name], did you complete your task?"
     show screen blktone
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Yes I did, [genie_name].","upset","closed")
+    call her_main("Yes I did, [genie_name].", "upset", "closed", "base", "mid")
     call her_main("And in the school library of all places...","open","annoyed", cheeks="blush")
     her "At first I was kind of worried that we would make too much noise..."
     her "But the boy literally lasted only one minute, [genie_name]."
     m "Don't hold it against him, [hermione_name]."
     m "You are quite attractive, he probably got too excited..."
-    call her_main("Nevertheless...","upset","closed")
+    call her_main("Nevertheless...", "upset", "closed", "base", "mid")
     her "A dozen or so of rather gingerly thrusts and he is cumming already?"
     her "As a girl I cannot help but feel disappointed..."
     m "I see..."
@@ -167,7 +167,7 @@ label hg_pr_sex_T1_E4:
 
     m "[hermione_name], did you complete your task?"
     call play_music("playful_tension") # SEX THEME.
-    call her_main("I did, [genie_name].","upset","closed")
+    call her_main("I did, [genie_name].", "upset", "closed", "base", "mid")
     call her_main("I took one of the \"Ravenclaw\" boys to the girl's restroom...","base","down")
     her "...and let him have his way with me in one of the stalls."
     m "Well done, [hermione_name]."
@@ -181,7 +181,7 @@ label hg_pr_sex_T1_E4:
     m "Your reputation?"
     call her_main("Well, yes... ehm...", "open", "base", "base", "R", cheeks="blush")
     m ".............."
-    call her_main("No, sorry, please disregard what I just said, [genie_name].","upset","closed")
+    call her_main("No, sorry, please disregard what I just said, [genie_name].", "upset", "closed", "base", "mid")
     m "Hm..."
 
     jump end_hg_pr_sex

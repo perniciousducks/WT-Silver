@@ -81,7 +81,7 @@ label equip_body_accessory:
                 # m "Would you wear this badge for me?"
                 # if her_whoring >= 0:
                     # call her_main("A S.P.E.W. badge?", "base", "base", "base", "mid")
-                    # call her_main("I'll wear this with pride [genie_name].","open","closed")
+                    # call her_main("I'll wear this with pride [genie_name].", "open", "closed", "base", "mid")
 
             # #I <3 Cum Badge
             # if body_accessory_choice == "badge_cum":

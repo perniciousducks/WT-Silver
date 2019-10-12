@@ -283,7 +283,7 @@ label hg_anal_sex_1:
             m "Yeah, sure..."
             m "Does it still hurt?"
             call her_main("A little...","open","concerned",cheeks="blush",tears="mascara")
-            call her_main("I also feel full and warm inside...","grin","closed",cheeks="blush",tears="mascara")
+            call her_main("I also feel full and warm inside...", "grin", "closed", "base", "mid",cheeks="blush",tears="mascara")
             m "You plan to keep it in? My cum I mean."
             call her_main("Yes...","grin","glance",cheeks="blush",tears="mascara")
 
@@ -293,7 +293,7 @@ label hg_anal_sex_1:
                 call her_main("I hope it won't start leaking before I get to my room...",cheeks="blush",tears="mascara")
 
             m "Well, good luck on your journey."
-            call her_main("Can I get paid now please?","grin","closed",cheeks="blush",tears="mascara")
+            call her_main("Can I get paid now please?", "grin", "closed", "base", "mid",cheeks="blush",tears="mascara")
 
             return
 
@@ -365,7 +365,7 @@ label hg_anal_sex_2:
         $ ccg3 = "blank"
         show screen ccg
         hide screen blkfade
-        call her_main("","open","closed",ypos="head")
+        call her_main("", "open", "closed", "base", "mid",ypos="head")
     else:
         call hg_chibi_transition("sex_slow", trans="d5")
 
@@ -377,7 +377,7 @@ label hg_anal_sex_2:
     g4 "Agh! You slut! You always get me with your words!"
 
     call play_music("playful_tension") # SEX THEME.
-    call her_main("Ah... Ah...","open","closed")
+    call her_main("Ah... Ah...", "open", "closed", "base", "mid")
     call her_main("Ah...")
     call her_main("[genie_name]?","base","glance")
     m "Yes, whore?"
@@ -392,7 +392,7 @@ label hg_anal_sex_2:
     call her_main("I meant to say, would you marry a girl {size=+5}like{/size} me?","angry","down_raised")
     call her_main("I would never propose to a man with his cock in my ass, [genie_name]...","angry","worriedCl",emote="05")
     m "Good. Because I don't think any man would be able to say \"no\" then."
-    call her_main("Ah{image=textheart}...","open","closed")
+    call her_main("Ah{image=textheart}...", "open", "closed", "base", "mid")
     call her_main("What I meant... ah{image=textheart} {w} ...to say was ah{image=textheart}... {w}...do you think someone would ever ah{image=textheart}... {w} ...want to marry a girl like me?","angry","down_raised")
     m "Huh?"
     call her_main("I mean, with all that was happening lately... ah{image=textheart}...","angry","down_raised")
@@ -412,7 +412,7 @@ label hg_anal_sex_2:
             m "What do you mean \"why\", whore?"
             m "You are young and attractive..."
             m "Tight asshole, full tits and wet little pussy..."
-            call her_main("Ah...{image=textheart}","open","closed")
+            call her_main("Ah...{image=textheart}", "open", "closed", "base", "mid")
             m "You will make some lucky guy a very happy man one day, whore."
             m "Ehm, I mean, [hermione_name]."
             call her_main("No, \"whore\" is good. Call me that, [genie_name].","silly","ahegao")

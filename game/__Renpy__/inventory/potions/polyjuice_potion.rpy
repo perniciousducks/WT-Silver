@@ -63,7 +63,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
                 call her_main("...","annoyed","down")
                 m "Well [hermione_name], what do you say? Will you drink a harmless little potion?"
                 m "For Gryffindor?"
-                call her_main("Fine...","open","closed")
+                call her_main("Fine...", "open", "closed", "base", "mid")
             else: #Fail
                 call her_main("And what kind of potion is it? It looks gross...","normal","frown")
                 m "Well, wouldn't it spoil half the enjoyment of it if I told you?"
@@ -160,7 +160,7 @@ label hg_pp_polyjuice_T1_intro:
                 her ".......?"
                 call her_walk(xpos="desk", speed=2.5)
                 call her_main("What is it, [genie_name]?","upset","angry")
-                call her_main("Haven't you humiliated me enough?","annoyed","closed")
+                call her_main("Haven't you humiliated me enough?", "annoyed", "closed", "base", "mid")
                 call her_main("", "annoyed", "base", "base", "R")
                 m "Would you like to earn 75 additional points?"
                 call her_main("75 points? How?","annoyed","suspicious")
@@ -169,7 +169,7 @@ label hg_pp_polyjuice_T1_intro:
                 call her_main("Right now? I look like a cat! Why would you ask me at a time like this?", "angry", "wide", "base", "stare")
                 call her_main("You're not some sort of pervert who likes animals are you?", "angry", "base", "base", "mid")
                 m "Of course not, I just think that you have a very unique look at the moment and that it would be a shame not to do anything with it."
-                call her_main("Fine, just promise me you aren't going to do anything weird.","upset","closed")
+                call her_main("Fine, just promise me you aren't going to do anything weird.", "upset", "closed", "base", "mid")
                 m "I promise. Now, kneel."
 
                 #Fade to black
@@ -339,7 +339,7 @@ label hg_pp_polyjuice_T1_introCC:
     menu:
         "-Let her go-":
             m "Goodnight [hermione_name]."
-            call her_main("Goodnight [genie_name].","upset","closed")
+            call her_main("Goodnight [genie_name].", "upset", "closed", "base", "mid")
 
             call her_walk(action="leave", speed=2)
 
@@ -367,7 +367,7 @@ label hg_pp_polyjuice_T1_introCC:
         call her_main("Like this? I look like a cat! Why would you ask me at a time like this?", "angry", "wide", "base", "stare")
         call her_main("You're not some sort of pervert who likes animals are you?", "angry", "base", "base", "mid")
         m "Of course not, I just think that you have a very unique look at the moment and that it would be a shame not to do anything with it."
-        call her_main("Fine, just promise me you aren't going to do anything weird.","upset","closed")
+        call her_main("Fine, just promise me you aren't going to do anything weird.", "upset", "closed", "base", "mid")
         m "I promise. Now, kneel."
     call blkfade
     pause.5
@@ -603,7 +603,7 @@ label hg_pp_polyjuice_T1_introCC:
         # her "And I will."
         # call her_main("So what now? I just go to class?","upset","wink")
         # m "Not yet, tell me something about yourself."
-        # call her_main("Well, ever since I started my \"Extracurricular activities\" with you my attendance and grades have started slipping.","open","closed")
+        # call her_main("Well, ever since I started my \"Extracurricular activities\" with you my attendance and grades have started slipping.", "open", "closed", "base", "mid")
         # m "Troubling indeed."
 
         # if her_whoring <= 13:

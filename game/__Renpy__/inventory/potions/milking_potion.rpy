@@ -557,7 +557,7 @@ label potion_scene_11_3: #Milking potion part 3
                 call set_her_action("milk_breasts")
 
                 call her_main("...","base","down")
-                call her_main("on!","open","closed")
+                call her_main("on!", "open", "closed", "base", "mid")
                 call nar(">The milker once again comes to life as it starts to milk Hermione for a second time.")
 
             "-drink it yourself-":
@@ -589,7 +589,7 @@ label potion_scene_11_3: #Milking potion part 3
                 call her_main("(I can't believe he liked it...)", "smile", "base", "base", "R")
                 call her_main("(maybe it does taste good...)", "grin", "base", "base", "R")
                 call her_main("...","base","down")
-                call her_main("on!","open","closed")
+                call her_main("on!", "open", "closed", "base", "mid")
                 call nar(">The milker once again comes to life as it starts to milk Hermione for a second time.")
 
 
@@ -616,7 +616,7 @@ label potion_scene_11_3: #Milking potion part 3
         m "Um..."
         call nar(">The machine struggles to suck any more milk from hermione's heaving chest.")
         m "I'm not sure how... I think it only shuts off when it's full?"
-        call her_main("well I don't think it's going to be able to get much more-","upset","closed")
+        call her_main("well I don't think it's going to be able to get much more-", "upset", "closed", "base", "mid")
         call nar(">You hear the harness start to whir, like a vacuum cleaner caught on carpet.")
         call her_main("!!!","disgust","shocked",cheeks="blush")
         call nar(">You hear a strange click come from the harness.")

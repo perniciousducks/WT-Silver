@@ -302,7 +302,7 @@ label luna_revert_1: #Reversion event #DONE
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
-    call her_main("[genie_name], I hope you don't mind me coming in unannounced...","angry","closed",xpos="base",ypos="base")
+    call her_main("[genie_name], I hope you don't mind me coming in unannounced...", "angry", "closed", "base", "mid",xpos="base",ypos="base")
 
     $ luna_flip = -1
     $ luna_r_arm = 2
@@ -642,7 +642,7 @@ label luna_revert_2: #Non-Reversion event #DONE
 
     call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
 
-    call her_main("[genie_name], I hope you don't mind me coming in unannounced...","angry","closed",xpos="base",ypos="base")
+    call her_main("[genie_name], I hope you don't mind me coming in unannounced...", "angry", "closed", "base", "mid",xpos="base",ypos="base")
     call her_main("But I really need a good-.","angry","down_raised")
 
     $ luna_flip = -1

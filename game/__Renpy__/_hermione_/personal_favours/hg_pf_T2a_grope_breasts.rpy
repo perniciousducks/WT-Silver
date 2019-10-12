@@ -73,7 +73,7 @@ label hg_pf_grope_breasts_T1:
         "-Let her go and give her the points-":
             m "Well if you gonna make a drama out of this, you might as well leave..."
             call nar(">You unhand the girl's breasts...")
-            call her_main("Thank you...","soft","closed", cheeks="blush")
+            call her_main("Thank you...", "soft", "closed", "base", "mid", cheeks="blush")
             m "But you didn't earn them today..."
             call her_main("...............","annoyed","angry", cheeks="blush")
 
@@ -159,21 +159,21 @@ label hg_pf_grope_breasts_T2_continue:
     m "You have great tits, [hermione_name]..."
     call her_main("....................................","angry","down_raised")
     m "You like it when I squeeze them like this?"
-    call her_main("Excuse me, [genie_name], but you are confusing me with one of those lowly harlots again...","upset","closed")
-    call her_main("I am only letting you fondle me because I am getting paid for it...","upset","closed")
-    call her_main("Not because I enjoy it...","upset","closed")
+    call her_main("Excuse me, [genie_name], but you are confusing me with one of those lowly harlots again...", "upset", "closed", "base", "mid")
+    call her_main("I am only letting you fondle me because I am getting paid for it...", "upset", "closed", "base", "mid")
+    call her_main("Not because I enjoy it...", "upset", "closed", "base", "mid")
     m "I see..."
     m "So, you're more like a prostitute then..."
     call her_main("[genie_name]!", "angry", "wide", "base", "stare")
     call her_main("Prostitutes are paid to have sex with men...", "angry", "wide", "base", "stare")
-    call her_main("I'd never do something like that!","upset","closed")
+    call her_main("I'd never do something like that!", "upset", "closed", "base", "mid")
 
     call nar(">You squeeze one of the girl's tits tightly and give the other a couple of firm tugs.")
 
     call her_main("Ah...","open","worriedCl")
     m "Enjoying yourself, [hermione_name]?"
 
-    call her_main("[genie_name], I am only doing this-","upset","closed")
+    call her_main("[genie_name], I am only doing this-", "upset", "closed", "base", "mid")
 
     call nar(">You squeeze both of her tits with force...")
 
@@ -248,7 +248,7 @@ label hg_pf_grope_breasts_T3_naked:
     call her_main("[genie_name], what did you do this for?")
     m "Dunno... Seemed like a good idea..."
     m "Did you like it?"
-    call her_main("...Of course, not, [genie_name].","annoyed","closed")
+    call her_main("...Of course, not, [genie_name].", "annoyed", "closed", "base", "mid")
     m "Let's try this again, then."
     call her_main("What?", "annoyed", "base", "base", "mid")
     call slap_her

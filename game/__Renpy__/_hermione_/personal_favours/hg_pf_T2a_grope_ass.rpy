@@ -672,7 +672,7 @@ label hg_pf_grope_ass_T3_back:
     call her_main("You should've warned me...","soft","angryL", cheeks="blush") #annoyed
 
     call nar(">Hermione goes quiet as you begin massaging her butt cheeks...")
-    call her_main("...","base","closed", cheeks="blush")
+    call her_main("...", "base", "closed", "base", "mid", cheeks="blush")
 
     call nar(">You take your thumbs and move them gently to each side as her soft butt cheeks open and close with every move...")
     m "Does this feel better?"
@@ -682,7 +682,7 @@ label hg_pf_grope_ass_T3_back:
     call her_main("Oh...{w} it doesn't matter to me how you want it...", "soft", "base", "base", "R", cheeks="blush")
 
     m "Is that so?"
-    call her_main("Of cours-{w=0.6}{nw}","soft","closed", cheeks="blush")
+    call her_main("Of cours-{w=0.6}{nw}", "soft", "closed", "base", "mid", cheeks="blush")
     call her_main("!!!", "clench", "wide", "base", "stare", cheeks="blush") #yelps
     call nar(">As your hands spread out - you suddenly tighten them firmly around Hermione's Butt cheeks...")
     g9 "..."
@@ -753,7 +753,7 @@ label hg_pf_grope_ass_T3_continue:
                             call her_main("......","clench","worriedCl", cheeks="blush")
                             call her_main("Ah...","silly","worriedCl", cheeks="blush")
                             call nar(">With no more objections you move your index finger across her clit and begin rubbing it gently...")
-                            call her_main("...","soft","closed", cheeks="blush")
+                            call her_main("...", "soft", "closed", "base", "mid", cheeks="blush")
                             call nar("Completely lost in the moment Hermione moves around as you massage her.")
                             call nar("In response to her movement you start rubbing her faster - and as you do she squeals and lets out a gentle moan.")
                             call her_main("*Hnnngh*","clench","worriedCl", cheeks="blush") #still has eyes closed
@@ -870,7 +870,7 @@ label hg_pf_grope_ass_T4_front:
     m "..."
     call her_main("...fine, [genie_name]...","base","ahegao_raised", cheeks="blush")
     m "you're being so quiet."
-    call her_main("....................","base","closed")
+    call her_main("....................", "base", "closed", "base", "mid")
     m "not even a word..."
 
     call nar(">you enjoy the sensation of her butt under your hands...")

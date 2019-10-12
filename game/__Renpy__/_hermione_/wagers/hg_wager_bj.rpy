@@ -556,7 +556,7 @@ label hg_wager_bj:
                                 g9 "20 points to gryffindor..."
                                 $ gryffindor += 20
                                 call her_main("That's not...","normal","down_raised")
-                                call her_main("Thank you...","open","closed")
+                                call her_main("Thank you...", "open", "closed", "base", "mid")
                                 if daytime:
                                     call her_main("Good bye then [genie_name].", "base", "base", "base", "mid")
                                 else:

@@ -643,7 +643,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         call her_main("well I don't mind...", "open", "base", "base", "R")
         $ luna_flip = -1
         call lun_main("please hermione...","normal","wide","sad","mid")
-        call her_main("shhh...","open","closed")
+        call her_main("shhh...", "open", "closed", "base", "mid")
         m "go on..."
         ">you speed up your stroking."
         call her_main("the other evening, luna and I were busy studying after class as usual...", "soft", "happy", "base", "R")

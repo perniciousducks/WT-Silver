@@ -108,7 +108,7 @@ label hg_pf_talk_T1_E1:
 
 label hg_pf_talk_T1: # Call label
     call her_main("My life has been quite uneventful lately, to be honest...","annoyed","angryL")
-    call her_main("Apart from the day when I failed that test...","open","closed")
+    call her_main("Apart from the day when I failed that test...", "open", "closed", "base", "mid")
     call her_main("I still can't believe it happened...","annoyed","angryL")
 
     menu:
@@ -136,7 +136,7 @@ label hg_pf_talk_T1: # Call label
     call her_main("Come to think of it, I don't feel like talking about it anymore...","annoyed","down")
     m "Alright, what else has happened lately?"
     call her_main("Em... Well, I'm doing pretty well at herbology...", "annoyed", "base", "base", "R")
-    call her_main("I mean, I always score the top marks, but I have been studying really hard anyway...","open","closed")
+    call her_main("I mean, I always score the top marks, but I have been studying really hard anyway...", "open", "closed", "base", "mid")
     call her_main("And now I sort of feel like sometimes I know more than professor Sprout herself...", "base", "base", "base", "mid")
 
     if masturbating:
@@ -148,7 +148,7 @@ label hg_pf_talk_T1: # Call label
     m "It's nothing, keep going..."
     call her_main("Well, some students are making fun of professor Quirell behind his back...", "open", "base", "base", "mid")
 
-    call her_main("I disapprove of such behaviour, of course.","base","closed")
+    call her_main("I disapprove of such behaviour, of course.", "base", "closed", "base", "mid")
     if masturbating:
         m "{size=-4}(Come on! Say something naughty!){/size}"
     else:
@@ -156,7 +156,7 @@ label hg_pf_talk_T1: # Call label
 
     call her_main("Oh, and my \"Men's Rights Movement\" group is gaining popularity...", "open", "base", "base", "mid")
     call her_main("I'm very happy about that...", "smile", "base", "base", "R")
-    call her_main("I think, given time, we will be able to make a real difference...","open","closed")
+    call her_main("I think, given time, we will be able to make a real difference...", "open", "closed", "base", "mid")
     call her_main("It is so invigorating to know that you are doing the right thing!", "base", "base", "base", "mid")
     call her_main("Wouldn't you agree, professor?", "base", "base", "base", "mid")
 
@@ -213,7 +213,7 @@ label hg_pf_talk_T2:
 
     call her_main("My life has been quite uneventful lately, to be honest...","annoyed","angryL")
     call her_main("Hm...", "annoyed", "base", "base", "R")
-    call her_main("There is a fierce competition going on between the \"Slytherin\" and the \"Gryffindor\" house.","open","closed")
+    call her_main("There is a fierce competition going on between the \"Slytherin\" and the \"Gryffindor\" house.", "open", "closed", "base", "mid")
     call her_main("To be honest, [genie_name], there should be none...","open","angryL")
     call her_main("\"Gryffindor\" would have been in the lead if not for those \"Slytherin\" harlots...","annoyed","angry")
     call her_main("The things I hear those girls do - simply to get a few extra points...","angry","angryL")
@@ -246,7 +246,7 @@ label hg_pf_talk_T2:
             $ masturbating = False
             m "Don't mention it."
 
-    call her_main("Well, like I was saying...","open","closed")
+    call her_main("Well, like I was saying...", "open", "closed", "base", "mid")
     call her_main("I heard that this one girl sold one of the professors some naughty pictures of herself for ten house points...","open","angryL")
 
     if masturbating:
@@ -254,7 +254,7 @@ label hg_pf_talk_T2:
     else:
         m "Ten points, huh?"
 
-    call her_main("Yes...","open","closed")
+    call her_main("Yes...", "open", "closed", "base", "mid")
 
     if masturbating:
         call her_main("And these two other girls...","annoyed","worriedL")
@@ -309,12 +309,12 @@ label hg_pf_talk_T2:
         $ hg_jerkoff.triggered() # .trigger = True, .counter += 1
 
     else:
-        call her_main("We need to put an end to this behaviour, [genie_name]!","open","closed")
+        call her_main("We need to put an end to this behaviour, [genie_name]!", "open", "closed", "base", "mid")
         m "Yeah, sure..."
         call her_main("So you agree with me then?","base","glance")
         call her_main("I think we need to implement a new penalty system to punish girls who are known to sell favours...", "open", "base", "base", "R")
         m "(All I heard was \"punish girls\"...)"
-        call her_main("This will also help the boys in our school to feel less discriminated against!","open","closed")
+        call her_main("This will also help the boys in our school to feel less discriminated against!", "open", "closed", "base", "mid")
         m "The boys?"
         m "Oh, right... Nobody wants to buy sexual favours from them... Poor bastards."
         call her_main("I'm so glad that you understand my concerns, [genie_name].", "base", "base", "base", "mid")
@@ -404,7 +404,7 @@ label hg_pf_talk_T3:
             $ masturbating = False
             m "Time to earn those points."
 
-    call her_main("Well...","open","closed")
+    call her_main("Well...", "open", "closed", "base", "mid")
     her "Today started off fairly normal..."
     call her_main("We had muggle studies.", "base", "base", "base", "mid")
     call her_main("Professor Burbage babbled on about things she doesn't understand as usual.", "open", "base", "base", "R")
@@ -559,7 +559,7 @@ label hg_pf_talk_tonks_T3_intro_E1:
     call her_main("The option to?","normal","frown")
     call her_main("Sorry, I'm not following...","normal","suspicious")
     m "[hermione_name], what is your opinion of Miss Tonks?"
-    call her_main("Well, she's a very talented witch... You'd have to be to become an auror.","open","closed")
+    call her_main("Well, she's a very talented witch... You'd have to be to become an auror.", "open", "closed", "base", "mid")
     m "Wouldn't it be great if we could have another chat with each other?"
     m "I heard you already had a bit of a talk previously."
     call her_main("You knew about that?","angry","worried", cheeks="blush")
@@ -620,7 +620,7 @@ label hg_pf_talk_tonks:
     pause.8
 
     call ton_main("","base","base","base","mid", hair="basic", xpos="600", ypos="base")
-    call her_main("Hello, Professor Tonks.","open","closed", xpos="right", ypos="base")
+    call her_main("Hello, Professor Tonks.", "open", "closed", "base", "mid", xpos="right", ypos="base")
     call her_main("", "base", "base", "base", "mid")
     if daytime:
         m "Good day, Miss Tonks."
@@ -633,7 +633,7 @@ label hg_pf_talk_tonks:
     m "More or less."
     m "I think the three of us should have a bit of a chat..."
     call ton_main("Miss Granger, you didn't cause any trouble I hope?","open","base","base","L")
-    call her_main("Me? Of course not!","open","closed")
+    call her_main("Me? Of course not!", "open", "closed", "base", "mid")
     call her_main("", "base", "base", "base", "mid")
     m "Now, I thought we could have a chat about these favour trading allegations..." #changed 'think' to 'thought'
     m "That you most kindly brought to Miss Tonks' attention."
@@ -783,12 +783,12 @@ label hg_pf_talk_tonks:
             call ton_main("Yes. The \"Men's Reign Movement\"...","open","closed","base","mid")
             call ton_main("","base","base","base","mid")
             call her_main("But-...{w=0.5} that's not what \"M.R.M\" stands for!","angry","worried")
-            call her_main("It's the \"Men's Rights Movement!\"","open","closed")
+            call her_main("It's the \"Men's Rights Movement!\"", "open", "closed", "base", "mid")
             call her_main("I've told you both about it... In detail!","annoyed","angry")
             call ton_main("I see... I probably wrote it down and put it somewhere in my...{w=0.8} extensive notes folder...","upset","base","sad","R")
             m "{size=-5}(*Heh!* It's like looking at myself in a mirror...){/size}" # Small text
             call her_main("(...)","annoyed","down")
-            call her_main("The \"M.R.M\" is there to provide male students with the same fairness, righteousness, and just benefits that girls are receiving at the school.","open","closed")
+            call her_main("The \"M.R.M\" is there to provide male students with the same fairness, righteousness, and just benefits that girls are receiving at the school.", "open", "closed", "base", "mid")
             call her_main("I felt its creation was necessary...", "annoyed", "base", "base", "mid")
 
     call her_main("All this favour trading has been completely unfair to the boys!","open","annoyed")
@@ -889,7 +889,7 @@ label hg_pf_talk_tonks:
                 call ton_main("*Hmm*... sounds like watching Quidditch has gotten a lot more interesting since I was in school.","horny","base","raised","mid")
                 call her_main("I wouldn't use the word interesting to describe it...","annoyed","worried", cheeks="blush")
                 call ton_main("I'll make sure to show up to the next match, to see what's going on for myself.","base","base","base","mid")
-                call her_main("Thank you professor...","open","closed")
+                call her_main("Thank you professor...", "open", "closed", "base", "mid")
 
             elif random_choice == "cho_2": # After Cho stripped for you.
                 call her_main("You're well aware that it's not just \"Slytherins\" that have been doing stuff like this...","open","angryCl")
@@ -904,7 +904,7 @@ label hg_pf_talk_tonks:
                     "*fap-fap-fap*"
                 else:
                     g9 "I can tell you all about Miss Chang's little-"
-                call her_main("She was dancing! Right here!","open","closed")
+                call her_main("She was dancing! Right here!", "open", "closed", "base", "mid")
                 call ton_main("Oh did she really?","upset","base","sad","L")
                 call ton_main("With or without clothes?","horny","base","angry","mid")
                 if masturbating:
@@ -929,9 +929,9 @@ label hg_pf_talk_tonks:
                     g9 "(If only there was a reason to give you some punishment...)"
                     "*fap-fap-fap*"
                 call her_main("I see...","normal","down")
-                call her_main("Well, that's good to hear...","open","closed")
+                call her_main("Well, that's good to hear...", "open", "closed", "base", "mid")
                 call her_main("I would have just handed her over to the authorities, if it was up to me...","open","angry")
-                call her_main("Anyway...","open","closed")
+                call her_main("Anyway...", "open", "closed", "base", "mid")
 
             else:
                 call her_main("...","annoyed","down", cheeks="blush")
@@ -1089,7 +1089,7 @@ label hg_pf_talk_tonks:
 
                     if masturbating:
                         if hg_pf_strip.counter > 1:
-                            call her_main("He did seem to enjoy it.","open","closed", cheeks="blush")
+                            call her_main("He did seem to enjoy it.", "open", "closed", "base", "mid", cheeks="blush")
                             g4 "(Yes! I thoroughly enjoyed that little show of yours, you slut!)"
                         else:
                             call her_main("He did seem to enjoy... them.","soft","down_raised", cheeks="blush")
@@ -1130,7 +1130,7 @@ label hg_pf_talk_tonks:
                         call ton_main("I'm asking miss Granger.","upset","base","base","mid")
                         m "Oh, of course!"
 
-                        call her_main("He did seem to enjoy it.","open","closed", cheeks="blush")
+                        call her_main("He did seem to enjoy it.", "open", "closed", "base", "mid", cheeks="blush")
                         call her_main("Maybe a bit too much even...","angry","glanceL", cheeks="blush")
                         call ton_main("That just means you did a great job, Miss Granger.","base","base","base","L")
                         call ton_main("Your house surely benefited even more from it.","horny","base","raised","L")

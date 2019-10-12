@@ -146,7 +146,7 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
 label hg_pf_strip_T0_fail_repeat:
     call bld
     m "[hermione_name], I need you to dance for me a little."
-    call her_main("And would you like me to take off my clothes as well?","soft","closed")
+    call her_main("And would you like me to take off my clothes as well?", "soft", "closed", "base", "mid")
     m "Yes?"
     call her_main("No! I will not!","scream","angry")
     call her_main("And I'd appreciate it if you'd stop making such outrageous requests...","annoyed","angry")
@@ -563,7 +563,7 @@ label hg_pf_strip_T1_intro_E2:
     call her_main("(Dancing naked in front of the headmaster...)","soft","shocked")
     call her_main("(Letting him touch my breasts...)","disgust","shocked")
     call her_main("(If my parents knew about this they would lose their minds...)","soft","shocked")
-    call her_main("(Especially my father...)","annoyed","closed")
+    call her_main("(Especially my father...)", "annoyed", "closed", "base", "mid")
     ">Hermione is starting to shake her tits again..."
     call her_main("(Hermione Granger - the stripper...)")
     call her_main("(Forgive me father...)","annoyed","dead")
@@ -594,7 +594,7 @@ label hg_pf_strip_T1_intro_E2:
     call her_main("................", "angry", "wide", "base", "stare")
 
     call nar(">Hermione looks horror-struck. All of her anger is gone...","start")
-    call her_main(".................","annoyed","closed")
+    call her_main(".................", "annoyed", "closed", "base", "mid")
     ">Without saying another word..."
     call nar(">She starts to pull down her panties...","end")
 
@@ -769,7 +769,7 @@ label hg_pf_strip_T1_E2:
     with d5
     call ctc
 
-    call her_main("Just for the record...","open","closed", xpos="mid", ypos="base")
+    call her_main("Just for the record...", "open", "closed", "base", "mid", xpos="mid", ypos="base")
     call her_main("I still consider this a highly inappropriate favour to be buying from one of your students, [genie_name].","annoyed","suspicious")
     m "Right. And an equally inappropriate favour to be selling to your headmaster. Wouldn't you agree?"
     call her_main("..........","annoyed","angryL")
@@ -854,7 +854,7 @@ label hg_pf_strip_T1_watch:
 
     if hermione_wear_panties:
         m "Yes, [hermione_name]! Take them off!"
-        call her_main("........","annoyed","closed")
+        call her_main("........", "annoyed", "closed", "base", "mid")
 
         $ hermione_wear_panties = False
         call set_her_action("pinch")
@@ -1067,7 +1067,7 @@ label hg_pf_strip_T2:
         call her_walk(xpos="mid", ypos="base", speed=2.5)
         pause.2
 
-        call her_main("All done!","smile","closed", ypos="head")
+        call her_main("All done!", "smile", "closed", "base", "mid", ypos="head")
 
         pass
 
@@ -1117,7 +1117,7 @@ label hg_pf_strip_T2:
     g9 "Would you like some help with it?"
     if her_tier <= 5:
         call her_main("No...","annoyed","angry")
-        call her_main("I can do it myself, [genie_name].","open","closed")
+        call her_main("I can do it myself, [genie_name].", "open", "closed", "base", "mid")
     else:
         call her_main("No, [genie_name].","base","glance")
         call her_main("Just enjoy the show...","soft","glance")
@@ -1139,7 +1139,7 @@ label hg_pf_strip_T2:
     g9 "Yes! The tits!"
 
     if her_tier <= 4:
-        call her_main("Must you be so vulgar, [genie_name]?","annoyed","closed")
+        call her_main("Must you be so vulgar, [genie_name]?", "annoyed", "closed", "base", "mid")
         call her_main("..............","annoyed","down")
 
         call her_main("[genie_name]?", "open", "base", "base", "mid")
@@ -1190,7 +1190,7 @@ label hg_pf_strip_T2:
                 call her_main("And you are older than my father!","grin","worriedCl", emote="05")
                 m "{size=-4}(You have no idea, girl.){/size}"
                 call her_main("Although some scientists insist that what we consider \"love\" is actually nothing but a chemical reaction...", "soft", "base", "base", "mid")
-                call her_main("And when a man is experiencing sexual arousal, the same type of hormones--","open","closed")
+                call her_main("And when a man is experiencing sexual arousal, the same type of hormones--", "open", "closed", "base", "mid")
                 m "[hermione_name]!"
                 call her_main("Yes, [genie_name]?", "soft", "base", "base", "mid")
                 m "Did you forget where you are?"
@@ -1238,7 +1238,7 @@ label hg_pf_strip_T2_watch:
 
     if hermione_wear_panties:
         m "Yes, [hermione_name]! Take them off!"
-        call her_main("........","annoyed","closed")
+        call her_main("........", "annoyed", "closed", "base", "mid")
 
         $ hermione_wear_panties = False
         call set_her_action("pinch")
@@ -1266,7 +1266,7 @@ label hg_pf_strip_T2_watch:
 
     m "{size=-4}(Did she practice this?){/size}"
     g9 "Oh, why would I care?"
-    call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","open","closed")
+    call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}", "open", "closed", "base", "mid")
 
     call set_her_action("None")
     pause.5
@@ -1333,7 +1333,7 @@ label hg_pf_strip_T2_masturbate:
         m "..."
         "-Promise her to hold it-":
                 $ d_flag_07 = True #Promised to hold it.
-                call her_main("Well, alright then...","open","closed")
+                call her_main("Well, alright then...", "open", "closed", "base", "mid")
 
         "-Give her no such promise-":
             $ d_flag_07 = False #Did not promise to hold it.
@@ -1351,7 +1351,7 @@ label hg_pf_strip_T2_masturbate:
 
     call nar(">You keep on wanking while you watch Hermione's dance...")
     show screen blktone
-    call her_main("Time for the finishing act I suppose...","annoyed","closed")
+    call her_main("Time for the finishing act I suppose...", "annoyed", "closed", "base", "mid")
     m "Yes, [hermione_name]! Take them off!"
     call her_main("........","annoyed","dead")
     if h_request_wear_panties or hermione_wear_panties:
@@ -1383,7 +1383,7 @@ label hg_pf_strip_T2_masturbate:
     m "{size=-4}(Did she practice this?){/size}"
     g9 "Oh, what do I care?"
     call nar(">You stroke your diamond-hard cock furiously.")
-    call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","open","closed")
+    call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}", "open", "closed", "base", "mid")
 
     call set_her_action("None")
     pause.5
@@ -1406,7 +1406,7 @@ label hg_pf_strip_T2_masturbate:
     with d5
     call ctc
 
-    call her_main("Whew... This was--","open","closed", ypos="head")
+    call her_main("Whew... This was--", "open", "closed", "base", "mid", ypos="head")
     with hpunch
     g4 "ARGH! YOU FUCKING CUNT!"
 
@@ -1467,7 +1467,7 @@ label hg_pf_strip_T2_masturbate:
         m "Aim at the wall or just put it back in my trousers and start cumming?"
         call her_main("........", "soft", "happy", "base", "R")
         call her_main("Still, you should not have...","soft","angry")
-        call her_main("I agreed to perform a striptease for you...","open","closed")
+        call her_main("I agreed to perform a striptease for you...", "open", "closed", "base", "mid")
         call her_main("But I didn't agree to be defiled like this.")
         m "I think I know where this is going..."
 
@@ -1524,9 +1524,9 @@ label hg_pf_strip_T2_masturbate:
             call her_chibi("sit_naked","on_desk","on_desk")
             show screen g_c_c_u
 
-            call her_main("Yes, I believe this would be an appropriate amount.","open","closed")
+            call her_main("Yes, I believe this would be an appropriate amount.", "open", "closed", "base", "mid")
             m "are we good then?"
-            call her_main("Yes, [genie_name]. Thank you.","open","closed")
+            call her_main("Yes, [genie_name]. Thank you.", "open", "closed", "base", "mid")
             hide screen bld1
             with d3
             call ctc

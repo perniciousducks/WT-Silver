@@ -241,7 +241,7 @@ label hg_pr_flirt_T1_E3:
     menu:
         m "Hm..."
         "\"Well, here are your points.\"":
-            call her_main("Thank you, [genie_name]...","open","closed")
+            call her_main("Thank you, [genie_name]...", "open", "closed", "base", "mid")
 
             jump end_hg_pr_flirt
 

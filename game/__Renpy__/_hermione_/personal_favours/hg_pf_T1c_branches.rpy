@@ -49,7 +49,7 @@ label hg_pf_admire_breasts_transition:
         call her_main("....................................","annoyed","annoyed")
 
     elif her_tier == 3:
-        call her_main("","base","closed", xpos="mid", ypos="base")
+        call her_main("", "base", "closed", "base", "mid", xpos="mid", ypos="base")
         call ctc
 
         m "Very good..."
@@ -300,7 +300,7 @@ label hg_pf_admire_breasts_T3_promise:
 
     menu:
         "\"A Nice set of tits you got there.\"":
-            call her_main("","annoyed","closed")
+            call her_main("", "annoyed", "closed", "base", "mid")
             call ctc
 
             her "Thank-"
@@ -514,7 +514,7 @@ label hg_pf_admire_breasts_T4_promise: # Call label
     menu:
         "\"You have great tits, [hermione_name].\"":
             call her_main("You really think so [genie_name]?", "annoyed", "base", "base", "mid")
-            call her_main("I am glad you like them, [genie_name]...","base","closed")
+            call her_main("I am glad you like them, [genie_name]...", "base", "closed", "base", "mid")
         "\"Your tits are alright I suppose...\"":
             call her_main("Huh?", "annoyed", "base", "base", "mid")
             her "Does this mean you don't like them, [genie_name]?"
@@ -727,8 +727,8 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             m "You did good."
 
             hide screen blktone8
-            call her_main("Thank you [genie_name].","base","closed")
-            call her_main("Now I need to clean myself up...","annoyed","closed")
+            call her_main("Thank you [genie_name].", "base", "closed", "base", "mid")
+            call her_main("Now I need to clean myself up...", "annoyed", "closed", "base", "mid")
             call ctc
 
             hide screen hermione_main
@@ -786,8 +786,8 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             m "You did good."
 
             hide screen blktone8
-            call her_main("Thank you [genie_name].","base","closed")
-            call her_main("Now I need to clean myself up...","annoyed","closed")
+            call her_main("Thank you [genie_name].", "base", "closed", "base", "mid")
+            call her_main("Now I need to clean myself up...", "annoyed", "closed", "base", "mid")
             call ctc
 
             hide screen hermione_main

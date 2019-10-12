@@ -387,7 +387,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Aye, sure..."
                 m "Does it still hurt?"
                 call her_main("A little...","open","concerned",cheeks="blush",tears="mascara")
-                call her_main("I also feel full and warm inside...","grin","closed",cheeks="blush",tears="mascara")
+                call her_main("I also feel full and warm inside...", "grin", "closed", "base", "mid",cheeks="blush",tears="mascara")
                 m "You plan to keep it in? My cum I mean."
                 call her_main("Aye..","grin","glance",cheeks="blush",tears="mascara")
 
@@ -397,7 +397,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                     call her_main("I hope it won't spring a leak before I get to my cabin...",cheeks="blush",tears="mascara")
 
                 m "Well, good luck on your voyage."
-                call her_main("Can I get paid now please?","grin","closed",cheeks="blush",tears="mascara")
+                call her_main("Can I get paid now please?", "grin", "closed", "base", "mid",cheeks="blush",tears="mascara")
 
             "-Spread yer canon fire o'er er hull-":
                 $ renpy.play('sounds/fuse.mp3')
@@ -500,7 +500,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
             $ ccg1 = "blank"
             $ ccg2 = "blank"
             $ ccg3 = "blank"
-            call her_main("","open","closed",ypos="head")
+            call her_main("", "open", "closed", "base", "mid",ypos="head")
             show screen ccg
 
         hide screen blktone
@@ -512,7 +512,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         play bg_sounds "sounds/CreakingShip.mp3"
 
         #INSERTION
-        call her_main("Ah... Ah...","open","closed")
+        call her_main("Ah... Ah...", "open", "closed", "base", "mid")
         call her_main("Ah...")
         call her_main("captain?","base","glance")
         m "Aye, wench?"
@@ -527,7 +527,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main("I meant t' say, would ye stop plunderin for a lass {size=+5}like{/size} me?","angry","down_raised")
         call her_main("I would ne'er propose t' a scallywag wit' his pegleg in me arse, captain...","angry","worriedCl",emote="05")
         m "Good. 'cause I don't reckon any scallywag would be able t' say \"neigh\" to you lassie."
-        call her_main("Ah{image=textheart}...","open","closed")
+        call her_main("Ah{image=textheart}...", "open", "closed", "base", "mid")
         call her_main("Wha' I meant... ah{image=textheart} {w} ...t' say was ah{image=textheart}... {w}...do ye reckon any pirate would ever ah{image=textheart}... {w} ...leave th' sea fer a lass like me?","angry","down_raised")
         m "Huh?"
         call her_main("I mean, wit' all that booty plunderin happenin' lately... ah{image=textheart}...","angry","down_raised")
@@ -547,7 +547,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Wha' do ye mean \"why\", wench?"
                 m "Ye be right out of harbour 'n ye only just set sail..."
                 m "Tight cabin, shimering tits, 'n wet wee powder pan..."
-                call her_main("Ah...{image=textheart}","open","closed")
+                call her_main("Ah...{image=textheart}", "open", "closed", "base", "mid")
                 m "Ye will make some lucky scallywag a mighty happy one, some day, wench."
                 m "Ehm, I mean, lass."
                 call her_main("No, \"wench\" be good. you be calling me that more, captain.","silly","ahegao")

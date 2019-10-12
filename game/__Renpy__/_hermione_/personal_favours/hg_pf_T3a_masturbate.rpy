@@ -529,7 +529,7 @@ label hg_pf_strip_T4_fingering:
             m "Shhh. Just play with your tits."
             call her_main("...fine, [genie_name]...","base","ahegao_raised", cheeks="blush")
             m "Good girl."
-            call her_main("....................","base","closed")
+            call her_main("....................", "base", "closed", "base", "mid")
             m "Just be quiet..."
             call nar(">you enjoy the sensation of gently stroking the inside of her thighs...")
             m "as my hands explore you"

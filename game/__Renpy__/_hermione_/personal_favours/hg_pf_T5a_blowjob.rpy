@@ -142,20 +142,20 @@ label hg_pf_blowjob_T0_fail_repeat:
     call her_main("And let me guess...","open","angryCl")
     call her_main("You'd like me to \"suck you off\" for it?","open","angry")
     g9 "That is correct!"
-    call her_main("I refuse...","open","closed")
+    call her_main("I refuse...", "open", "closed", "base", "mid")
     m "It's only a blowjob, girl..."
 
     if hg_kiss.trigger:
         m "It's not like you haven't done it before..."
         call her_main("Are you talking about the kiss I gave it?","open","angry")
-        call her_main("That was something different entirely...","open","closed")
+        call her_main("That was something different entirely...", "open", "closed", "base", "mid")
         m "How so?"
         call her_main("I wanted to get done with that favour early, so I helped a bit.","open","angryL")
         g9 "By sucking on my cock! Indeed you did!"
         call her_main("It was nothing more than a short kiss...","annoyed","angry")
         m "Still counts as a blowjob..."
 
-    call her_main("[genie_name], I've told you this last time...","open","closed")
+    call her_main("[genie_name], I've told you this last time...", "open", "closed", "base", "mid")
     call her_main("I refuse to do this sort of thing...","normal","angry")
     call her_main("I have to go now...","annoyed","angryL")
 
@@ -186,7 +186,7 @@ label hg_pf_blowjob_T1_intro_E1:
     call her_main("Yes. I know I'm supposed feel outraged...","angry","down_raised")
     call her_main("But somehow I do not...", "angry", "base", "base", "mid")
     call her_main("I suppose I am just glad that I can help out my house...","base","down")
-    call her_main("And if to do that I must put your penis in my mouth so be it...","upset","closed")
+    call her_main("And if to do that I must put your penis in my mouth so be it...", "upset", "closed", "base", "mid")
     m "Well, alright then."
     call her_main("Although, now when I say it out loud like this...","angry","down_raised")
     m "Too late! You already said \"yes\"!"
@@ -366,7 +366,7 @@ label hg_pf_blowjob_1:
             call hg_chibi_transition("bj_pause")
             call her_main("That's not what we stand for, [genie_name].", "angry", "base", "base", "mid")
             m "What do you mean?"
-            call her_main("The \"MRM\" is about gender equality.","open","closed")
+            call her_main("The \"MRM\" is about gender equality.", "open", "closed", "base", "mid")
             call her_main("We are not as much against selling sexual favours to the teachers...")
             call her_main("As we are against the gender inequality that the selling of sexual favour creates...")
             m "Hm..."
@@ -382,12 +382,12 @@ label hg_pf_blowjob_1:
             call her_main("*Slurp--","sucking","ahegao_mad")
 
             call hg_chibi_transition("bj_pause")
-            call her_main("Yes, it is frowned upon...","upset","closed")
+            call her_main("Yes, it is frowned upon...", "upset", "closed", "base", "mid")
             m "And yet, you are the biggest offender by far."
-            call her_main("But what choice do I have?","upset","closed")
+            call her_main("But what choice do I have?", "upset", "closed", "base", "mid")
             call her_main("I've been put in a very difficult position...")
             m "The cock, [hermione_name]."
-            call her_main("Right, sorry...","upset","closed")
+            call her_main("Right, sorry...", "upset", "closed", "base", "mid")
 
             call hg_chibi_transition("bj", trans="d3")
             pause.8
@@ -434,7 +434,7 @@ label hg_pf_blowjob_1:
             call hg_chibi_transition("bj_pause")
             call her_main("They would not understand of course...","open","down")
             call her_main("But I do not care.")
-            call her_main("I am not afraid to \"get my hands dirty\" and do what needs to be done.","upset","closed")
+            call her_main("I am not afraid to \"get my hands dirty\" and do what needs to be done.", "upset", "closed", "base", "mid")
             m "A bit rebellious, aren't you?"
             call her_main("Hm... I suppose I am.","angry","wink")
             m "Back to sucking then. Teach your folks a lesson."
@@ -464,13 +464,13 @@ label hg_pf_blowjob_1:
             call hg_chibi_transition("bj_pause")
             call her_main("The \"Gryffindor\" house was founded by Godric Gryffindor, thus the name.","open","down")
             call her_main("The heraldic animal of \"Gryffindor\" is the lion...")
-            call her_main("And it's colours are red and gold.","open","closed")
+            call her_main("And it's colours are red and gold.", "open", "closed", "base", "mid")
 
             call hg_chibi_transition("bj")
             call her_main("*Gulp!* *Slurp!* *Slurp!*","sucking","ahegao")
 
             call hg_chibi_transition("bj_pause")
-            call her_main("Professor Minerva McGonagall is the headmaster of our house.","open","closed")
+            call her_main("Professor Minerva McGonagall is the headmaster of our house.", "open", "closed", "base", "mid")
             call her_main("The \"Gryffindor\" house emphasizes the traits of courage...")
             call her_main("As well as \"daring, nerve and chivalry\"...")
             call her_main("And thus its members are generally regarded as brave but reckless...")
@@ -479,7 +479,7 @@ label hg_pf_blowjob_1:
             call her_main("*Slurp!* *Slurp!* *Slurp!*","sucking","ahegao")
 
             call hg_chibi_transition("bj_pause")
-            call her_main("\"Gryffindor\" corresponds roughly to the element of fire...","open","closed")
+            call her_main("\"Gryffindor\" corresponds roughly to the element of fire...", "open", "closed", "base", "mid")
             call her_main("And for that reason the colours of red and gold were chosen.")
 
             call hg_chibi_transition("bj")
@@ -1329,7 +1329,7 @@ label hg_hidden_blowjob_cumming:
         m "Ah, never mind, the moment is gone..."
         call her_main("Ehm... I'm sorry, [genie_name].", "angry", "base", "base", "mid")
         m "Yeah, whatever. Make it up to me by sucking my cock harder."
-        call her_main("Of course, [genie_name].","upset","closed")
+        call her_main("Of course, [genie_name].", "upset", "closed", "base", "mid")
 
     else:
         call her_main("I'm a slut, [genie_name].","base","suspicious", ypos="head")

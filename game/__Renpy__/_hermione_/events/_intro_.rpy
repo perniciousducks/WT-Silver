@@ -761,7 +761,7 @@ label hermione_intro_E3:
             call her_main("hm...","annoyed","suspicious")
             call her_main("Yes, that could help I suppose...", "soft", "base", "base", "R")
             call her_main("I appreciate your offer, professor, but...", "open", "base", "base", "mid")
-            call her_main("The best tutor is a book, and I have the entire Hogwarts library at my disposal.","open","closed")
+            call her_main("The best tutor is a book, and I have the entire Hogwarts library at my disposal.", "open", "closed", "base", "mid")
             call her_main("I don't think it would be necessary, sir. But...", "soft", "base", "base", "mid")
             her "May I think about it?"
             m "Don't take too long..."
@@ -783,7 +783,7 @@ label hermione_intro_E3:
     call her_main("Well, I'd better go now. We have another \"MRM\" meeting today.","open","angryCl")
     her "I will let you know about the new ideas we come up with."
     m "I can hardly wait..."
-    call her_main("Well, if there is nothing else, I have a studying schedule to keep.","open","closed")
+    call her_main("Well, if there is nothing else, I have a studying schedule to keep.", "open", "closed", "base", "mid")
     m "By all means..."
 
     call her_walk(action="leave", speed=2)
@@ -921,7 +921,7 @@ label hermione_intro_E5:
                 m "Well, it could be arranged, I suppose..."
 
     call her_main("Thank you, sir. I am very grateful.", "base", "base", "base", "mid")
-    call her_main("Just let me know when, and I will bring my books!","open","closed")
+    call her_main("Just let me know when, and I will bring my books!", "open", "closed", "base", "mid")
     call her_main("I must study even harder from now on...","annoyed","frown")
     call her_main("And I'll be taking private lessons from you, sir, as often as possible.", "base", "base", "base", "mid")
     call her_main("But that's not all...","normal","frown")
@@ -1280,7 +1280,7 @@ label hermione_intro_E6:
 
     if current_favor == "stand_there":
         call her_main("{size=-4}(I can just stand there and let the professor look at me...){/size}", "annoyed", "base", "base", "R", ypos="head")
-        call her_main("{size=-4}(There is nothing wrong with that... nothing at all...){/size}","open","closed")
+        call her_main("{size=-4}(There is nothing wrong with that... nothing at all...){/size}", "open", "closed", "base", "mid")
 
     if current_favor == "silly_face":
         call her_main("{size=-4}(Stupid face...){/size}","silly","silly", ypos="head")

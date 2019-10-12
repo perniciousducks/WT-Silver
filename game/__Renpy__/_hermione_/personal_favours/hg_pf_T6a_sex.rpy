@@ -96,10 +96,10 @@ label hg_pf_sex_T1_intro_E1:
     m "Well, yes. How did you...?"
     call her_main("Not a terribly difficult deduction all things considered...","base","glance")
     m "You don't mind then?"
-    call her_main("Of course, I mind, [genie_name]!","upset","closed")
+    call her_main("Of course, I mind, [genie_name]!", "upset", "closed", "base", "mid")
     her "I am not a prostitute!"
     m "But you'll do it anyway??"
-    call her_main("\"Gryffindor\" is falling behind again...","open","closed")
+    call her_main("\"Gryffindor\" is falling behind again...", "open", "closed", "base", "mid")
     her "What choice do I have...?"
     m "Great!"
 
@@ -113,7 +113,7 @@ label hg_pf_sex_T1_intro_E2:
     m "[hermione_name]..."
     m "Last night I had a dream..."
     g9 "You were lying on my desk and I was fucking your tight pussy like a madman..."
-    call her_main("In that dream, [genie_name]...","upset","closed", xpos="right", ypos="base")
+    call her_main("In that dream, [genie_name]...", "upset", "closed", "base", "mid", xpos="right", ypos="base")
     call her_main("Did I happen to receive 65 house points afterwards?","angry","angry")
     g9 "Why yes, you did, [hermione_name]."
     call her_main("...............................","disgust","glance")
@@ -195,7 +195,7 @@ label hg_sex_1:
     call hg_chibi_transition("grope_ass", flip=True, trans="fade")
     pause.5
 
-    call her_main(".............","upset","closed", ypos="head")
+    call her_main(".............", "upset", "closed", "base", "mid", ypos="head")
     call her_main("!!!!!!!!!!!!!!!", "angry", "wide", "base", "stare")
     m "Relax, [hermione_name]. I'm Just gonna take off your panties."
     call her_main("..............","angry","angry")
@@ -516,10 +516,10 @@ label hg_sex_2:
         "\"Be sweet but passionate.\"":
             m "Yes, you're liking this?"
             #$ ccg2 = 14
-            call her_main("I do, [genie_name]... ah...{image=textheart}","open","closed")
+            call her_main("I do, [genie_name]... ah...{image=textheart}", "open", "closed", "base", "mid")
             m "Good girl!"
             m "Just relax and take my cock!"
-            call her_main("Yes... ah...{image=textheart}","open","closed")
+            call her_main("Yes... ah...{image=textheart}", "open", "closed", "base", "mid")
             m "All the way in... all the way..."
             call her_main("Ah...{image=textheart}{image=textheart}","open","worriedCl")
             m "Yes, my little princess..."
@@ -766,7 +766,7 @@ label hg_sex_luna:
             m "(Who would be knocking at a time like this?)"
             lun "It's Luna Lovegood sir."
             m "{size=-3}Who's that again, [hermione_name]?{/size}"
-            call her_main("the crazy blonde... ah...{image=textheart}... with the nice breasts...","open","closed")
+            call her_main("the crazy blonde... ah...{image=textheart}... with the nice breasts...", "open", "closed", "base", "mid")
             m "Come in!"
         "-Tell them to go away.-":
             m "Go aw-!"

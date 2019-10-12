@@ -929,7 +929,7 @@ label cc_pf_strip_T1_intro_E3:
     with d3
     pause.5
 
-    call her_main("You wanted to see me, Sir?","soft","closed", ypos="head")
+    call her_main("You wanted to see me, Sir?", "soft", "closed", "base", "mid", ypos="head")
     call her_main("Cho?","soft","shocked", ypos="head")
     call cho_main("Hey there, Granger!","horny","narrow","angry","mid", ypos="head", flip=True) # Grinning
     call her_main("What? Why are you-","disgust","shocked", ypos="head")
@@ -937,7 +937,7 @@ label cc_pf_strip_T1_intro_E3:
     call her_walk(xpos="660",ypos="base", speed=2)
 
     call cho_main("","smile","narrow","angry","mid", xpos="mid", ypos="base", flip=True)
-    call her_main("What the bloody hell is going on here?!","scream","closed", xpos="base", ypos="base", trans="hpunch") # Scream
+    call her_main("What the bloody hell is going on here?!", "scream", "closed", "base", "mid", xpos="base", ypos="base", trans="hpunch") # Scream
     call her_main("","angry","angry")
 
     call cho_main("You know, just the usual...","soft","base","base","L")
@@ -1100,17 +1100,17 @@ label cc_pf_strip_T1_E3: # Repeats
     call her_walk(xpos="660", ypos="base", speed=2)
 
     call cho_main("","horny","narrow","angry","L", xpos="mid", ypos="base", flip=True)
-    call her_main("You wanted to see me, Professor?","soft","closed", xpos="base", ypos="base")
+    call her_main("You wanted to see me, Professor?", "soft", "closed", "base", "mid", xpos="base", ypos="base")
     g9 "Yes, but I wasn't the only one."
     call her_main("(...)","annoyed","angryL")
     call cho_main("Hi, Granger!","smile","narrow","angry","L")
-    call her_main("Let me guess, we are here to marvel at your insecurity again?","soft","closed")
+    call her_main("Let me guess, we are here to marvel at your insecurity again?", "soft", "closed", "base", "mid")
     call cho_main("Granger, instead of spitting out insults, why don't you join me and have some fun for once?","soft","base","raised","L")
     call cho_main("Strip down for your headmaster as well, like you usually do...","smile","narrow","angry","L")
     call cho_main("Or would it bother you too much, now that I'm here?","horny","narrow","base","L")
     call her_main("*glare*","angry","angry")
     call cho_main("Maybe then you'd have a chance to win against me!{w} And earn some useless \"Gryffindor\" points while you're at it.","soft","base","base","L")
-    call her_main("I don't think that will be necessary...","soft","closed")
+    call her_main("I don't think that will be necessary...", "soft", "closed", "base", "mid")
     call cho_main("Well, we all already know how this is going to turn out don't we, [cho_genie_name]?","soft","base","base","mid")
     call cho_main("My body is still better than Miss Granger's, isn't it?","smile","angry","angry","L")
     call her_main("","annoyed","angry")
@@ -1141,7 +1141,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("*Humph.*","annoyed","angryL")
             call cho_main("And? What else?","smile","narrow","base","L")
             g4 "And Cho's thighs are probably the most impressive ones I’ve seen in the last hund-... decade or more!"
-            call her_main("Well in that case...","soft","closed")
+            call her_main("Well in that case...", "soft", "closed", "base", "mid")
             call her_main("In that case I’ll give you a great opportunity to stare at them indefinitely.","angry","angry")
             call cho_main("What are you talking about, Granger?","soft","narrow","raised","L")
 
@@ -1225,7 +1225,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("No surprise there...", "base", "base", "base", "R")
             call cho_main("No!{w} It clearly isn't!","scream","angry","angry","mid", trans="hpunch")
             call cho_main("Are you mad, old man?","angry","narrow","angry","mid")
-            call her_main("Don't use that tone with the headmaster...","soft","closed")
+            call her_main("Don't use that tone with the headmaster...", "soft", "closed", "base", "mid")
             call cho_main("Nobody asked you!","angry","angry","angry","L")
             call her_main("He's the wisest wizard at our school...{w} Surely his word should be final...","smile","glance")
             m "I'd use the word astute but I'll take wise..."
@@ -1278,16 +1278,16 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("I'd like to leave now.", "soft", "base", "base", "mid")
             call cho_main("By all means, just go already.","soft","narrow","angry","R")
             call her_main("Did something not go as you expected?", "smile", "base", "base", "R")
-            call her_main("Did you think having me here when you exposed yourself would make me jealous...","soft","closed")
+            call her_main("Did you think having me here when you exposed yourself would make me jealous...", "soft", "closed", "base", "mid")
             call cho_main("(...)","annoyed","angry","angry","L")
             call her_main("Thank you for inviting me, Professor.","soft","glance")
             call her_main("I \"did\" enjoy this little obscene \"freak-show\" you arranged for me...","grin","glance")
             call cho_main("You'll regret this, Granger!","angry","narrow","angry","L")
 
             if daytime:
-                call her_main("Have a nice day, Professor.","soft","closed")
+                call her_main("Have a nice day, Professor.", "soft", "closed", "base", "mid")
             else:
-                call her_main("Have a good night, Professor.","soft","closed")
+                call her_main("Have a good night, Professor.", "soft", "closed", "base", "mid")
 
             m "(...)"
             call her_main("See you in class Chang!","grin","glanceL")
@@ -1358,24 +1358,24 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             g9 "You do! I'd really like to hear your opinion on Miss Chang's shamelessly exposed body!"
             call cho_main("*Mhmm*","base","closed","base","mid") # Self assured.
             call her_main("Fine...","soft","angryL")
-            call her_main("\"Poor\", I'd say...","soft","closed")
+            call her_main("\"Poor\", I'd say...", "soft", "closed", "base", "mid")
             call cho_main("How dare you!{w} You snobby skunk!","scream","angry","angry","L", trans="hpunch")
             call her_main("", "base", "base", "base", "R")
             m "(Is that better or worse than \"troll\"?)" # Snape explained school ratings during the match.
             call cho_main("Our Professor asked you to rate my body truthfully!","angry","angry","angry","L")
-            call her_main("Which I did!{w} And it's at \"dreadful\" now!","soft","closed")
+            call her_main("Which I did!{w} And it's at \"dreadful\" now!", "soft", "closed", "base", "mid")
             call cho_main("\"Dreadful\"?!","soft","wide","base","mid")
             call cho_main("You're a lying bitch, Granger!","angry","closed","angry","mid")
             call her_main("Sir, you can't let her talk to me like that!","angry","angry")
             m "Bitch isn't even a proper curse word."
             m "You can say that on TV..."
             call cho_main("Granger, why don't you tell us which part of my immaculate body deserves such a poor rating?","soft","narrow","angry","L")
-            call her_main("Very well...","soft","closed")
+            call her_main("Very well...", "soft", "closed", "base", "mid")
             call her_main("For one, you are a narcissistic bitch!{w} That makes the presumption her body is superior to all others...","open","angry")
             call cho_main("Because it is.","smile","narrow","angry","mid")
             call her_main("Not to mention that you have even fever curves than some of the boys I know...","grin","angry")
             call cho_main("","annoyed","narrow","angry","mid")
-            call her_main("Maybe once your Quidditch endeavours all fail, you can apply for a profession to model male underwear...","soft","closed")
+            call her_main("Maybe once your Quidditch endeavours all fail, you can apply for a profession to model male underwear...", "soft", "closed", "base", "mid")
             call cho_main("I wonder where you're getting \"your\" undergarments from...","soft","closed","base","mid")
             call cho_main("Stealing them from Madam Pomfrey, are you?","smile","narrow","angry","mid")
             call her_main("I do not!!!", "open", "wide", "base", "stare")

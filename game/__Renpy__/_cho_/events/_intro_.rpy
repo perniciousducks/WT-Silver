@@ -167,7 +167,7 @@ label cho_intro_E1:
     call play_sound("door")
     call her_chibi("stand","door","base")
 
-    call her_main("Professor I'm sorry to bother you but I wanted to...","open","closed", ypos="head")
+    call her_main("Professor I'm sorry to bother you but I wanted to...", "open", "closed", "base", "mid", ypos="head")
     call her_main("!!!", "normal", "wide", "base", "stare", ypos="head",trans="hpunch")
 
     call her_walk(xpos="570", ypos="base", speed=2)
@@ -228,7 +228,7 @@ label cho_intro_E1:
         call cho_main("And so what? What’s wrong with being confident about your body... you should try it some time... You might even get a boyfriend one day...", "soft", "wide", "base", "L")
         call cho_main("Though what do I know? I didn’t need to get my teeth shortened so I wouldn’t be confused as a rabbit!", "base", "angry", "angry", "L")
         call cho_main("Not that anyone would even see them through that horribly bushy hair of yours...", "smile", "angry", "angry", "L")
-        call her_main("Well, I heard that you were caught snogging someone in one off the carriages after the triwizard tournament. I’m sure that will go down in the Hogwarts book of history...","grin","closed", cheeks="blush")
+        call her_main("Well, I heard that you were caught snogging someone in one off the carriages after the triwizard tournament. I’m sure that will go down in the Hogwarts book of history...", "grin", "closed", "base", "mid", cheeks="blush")
         g9 "(How naughty, didn’t expect such indecent behaviour from a girl with such a cute face...)"
         call cho_main("Yeah? You ever even kissed a boy before Granger? And I’m talking about a real kiss and not your daddy kissing you good night...", "soft", "angry", "raised", "L")
         call her_main("Oh...{w=0.5} Of course I have!","angry","worriedL", cheeks="blush")
@@ -287,7 +287,7 @@ label cho_intro_E1:
         call her_main("...","annoyed","glanceL")
         call cho_main("*Hmph* There’s no argument here...","angry","narrow","angry","L")
         call cho_main("I’m sure that Hermione’s reasons for interrupting are totally valid...","upset","closed","angry","mid")
-        call her_main("And I’m sure Cho wasn’t just coming here to flaunt her body again...","soft","closed")
+        call her_main("And I’m sure Cho wasn’t just coming here to flaunt her body again...", "soft", "closed", "base", "mid")
         call cho_main("What’s that supposed to mean?!?","scream","base","base","mid",trans="hpunch")
         m "(I guess I’ll just have to wait this one out..)"
 
@@ -348,7 +348,7 @@ label cho_intro_E1:
     m "I’m...{p=0.8}{nw}"
     call her_main("I knew it!","angry","angry")
     g4 "Now, if you could just listen for a second!"
-    call her_main("I don’t want to hear it!","open","closed")
+    call her_main("I don’t want to hear it!", "open", "closed", "base", "mid")
     call her_main("I’m leaving.","normal","frown")
 
     # Hermione leaves
@@ -658,16 +658,16 @@ label cho_intro_E3:
 
     if her_whoring < 4: # If you haven't groped her breasts or ass yet.
         call her_main("My \"Quidditch equality movement\"?", "soft", "base", "base", "mid")
-        call her_main("But Sir, I'm on the verge of a breakthrough with it!","soft","closed")
+        call her_main("But Sir, I'm on the verge of a breakthrough with it!", "soft", "closed", "base", "mid")
         call her_main("I worked very hard on gathering all records of past Quidditch matches, throughout the complete history of Quidditch!","open","wink")
-        call her_main("You'd be surprised just how few female-","soft","closed")
+        call her_main("You'd be surprised just how few female-", "soft", "closed", "base", "mid")
         m "I'll give you ten house points."
         call her_main("Ten points?", "soft", "wide", "base", "stare",trans="hpunch")
         call her_main("Sir do you even realize how much time it took me to do all that research?","angry","frown")
         m "Twenty?"
         call her_main("Two hundred!","angry","angryCl")
         g4 "Two hundred? Are you nuts?"
-        call her_main("And just points isn’t going to cut it...","open","closed")
+        call her_main("And just points isn’t going to cut it...", "open", "closed", "base", "mid")
         m "Then what else?"
         call her_main("Uhm...", "annoyed", "base", "base", "R")
         m "You’re testing my patience Miss Granger..."
@@ -718,7 +718,7 @@ label cho_intro_E3:
         call her_main("Oh... My \"Quidditch equality movement\"?", "soft", "base", "base", "mid")
         m "That's the one."
         call her_main("It never really got off the ground...", "open", "base", "base", "R")
-        call her_main("No pun intended...","base","closed")
+        call her_main("No pun intended...", "base", "closed", "base", "mid")
         m "(...)"
         call her_main("To be honest, I don’t have that much time apart from my visits here and studying...","open","down")
         call her_main("I might consider dropping it.", "base", "base", "base", "R")
@@ -729,18 +729,18 @@ label cho_intro_E3:
         m "Tell me what you want."
         m "What you really{w}, really want..."
         call her_main("Very well, [genie_name].", "soft", "base", "base", "R")
-        call her_main("I'll tell you what I want!","open","closed")
+        call her_main("I'll tell you what I want!", "open", "closed", "base", "mid")
         call her_main("What I really, really want!","grin","glance")
         g9 "{size=-4}Nice!{/size}"
-        call her_main("I’d like a seat in the teacher stands, during the Quidditch matches..","open","closed")
+        call her_main("I’d like a seat in the teacher stands, during the Quidditch matches..", "open", "closed", "base", "mid")
         m "Is that all?"
         call her_main("Oh, and a hundred points for Gryffindor...", "grin", "base", "base", "R")
         m "(...)"
         m "I’d say fifty would be more appropriate in this instance..."
-        call her_main("Sir, it took a lot of effort to gather all those records of past Quidditch matches, throughout the whole history of Quidditch.","open","closed")
+        call her_main("Sir, it took a lot of effort to gather all those records of past Quidditch matches, throughout the whole history of Quidditch.", "open", "closed", "base", "mid")
         g4 "fifty points..."
         call her_main("(...)","annoyed","angryL")
-        call her_main("Very well then.","soft","closed")
+        call her_main("Very well then.", "soft", "closed", "base", "mid")
         m "50 points, to the Gryffindor house..."
         $ gryffindor += 50
         call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
@@ -763,20 +763,20 @@ label cho_intro_E3:
     call her_main("Pffff-{p=0.4}Why doesn't it surprise me that she'd need your help with it.","grin","glanceL")
     call her_main("How else could she possibly win that stupid Quidditch cup...","soft","angryCl")
     m "I thought that cup was so important to you?"
-    call her_main("I couldn’t care less about it, [genie_name].","open","closed")
+    call her_main("I couldn’t care less about it, [genie_name].", "open", "closed", "base", "mid")
     call her_main("The only cup that is worth winning is the \"house cup\".","open","glanceL")
     call her_main("They’re completely different...","annoyed","angry")
     m "Totally different..."
 
     if her_whoring < 18:
-        call her_main("It's the most prestigious award one could earn for your school house!{p=0.6}The Quidditch cup is nothing in comparison...","open","closed")
+        call her_main("It's the most prestigious award one could earn for your school house!{p=0.6}The Quidditch cup is nothing in comparison...", "open", "closed", "base", "mid")
         call her_main("Why are students even allowed to play this silly sport at our School?","annoyed","annoyed")
 
     if her_whoring < 8:
         call her_main("They're given the privilege of attending one of the most prestigious wizarding schools in the world...","open","angryL")
         call her_main("And they're wasting their time with some silly sports game that will get them nowhere...","open","angry")
         m "Yes. Because why enjoy yourself when you could study instead..."
-        call her_main("Exactly!","normal","closed")
+        call her_main("Exactly!", "normal", "closed", "base", "mid")
         m "(She's so predictable.)"
 
     m "Well... The quidditch teams are none of your concern anymore..."
@@ -824,26 +824,26 @@ label cho_intro_E3:
     call cho_walk("580", "base", action="enter", speed=1.6)
 
     call cho_main("Hello, Sir.{p=0.6}You've called for me?","base","base","base","mid", xpos="base", ypos="base")
-    call her_main("","normal","closed", xpos="450", ypos="base")
+    call her_main("", "normal", "closed", "base", "mid", xpos="450", ypos="base")
     call cho_main("Granger...","soft","narrow","angry","L")
     call her_main("Chang...","annoyed","angryL")
     m "Go on, girl. Tell her."
     call cho_main("Tell me what?","smile","angry","angry","mid")
     call her_main("...","annoyed","ahegao_raised")
-    call her_main("About my \"Quidditch equality movement\"...","normal","closed")
+    call her_main("About my \"Quidditch equality movement\"...", "normal", "closed", "base", "mid")
     call cho_main("Did our Professor finally convince you what a terrible idea it would be?","soft","narrow","angry","mid")
     m "Actually, I still think granting more people the ability to-"
     call cho_main("*Shhush!*, Professor!{p=0.6}I’d like to hear it from her.","pout","narrow","angry","mid")
     call cho_main("I'm going to enjoy this!","horny","narrow","base","L")
     call her_main("...","annoyed","angry")
-    call her_main("*Sigh*{p=0.6}I will end my movement. And I won't interfere with Quidditch again...","open","closed") #[Looking bored]
+    call her_main("*Sigh*{p=0.6}I will end my movement. And I won't interfere with Quidditch again...", "open", "closed", "base", "mid") #[Looking bored]
     call cho_main("This is amazing! I feel as if it's my birthday!","smile","base","base","mid")
     call her_main("After all, Quidditch is a huge waste of everyone's time.{p=0.6}Including mine...","soft","glanceL") #[Still looking bored]
     call cho_main("You're just jealous that I’m better than you at something.","smile","angry","angry","L")
     call her_main("I am not jealous!","angry","angryCl")
     m "You may go now, Miss Granger."
     call her_main("(...)","annoyed","angry")
-    call her_main("Until next time, Sir.","normal","closed")
+    call her_main("Until next time, Sir.", "normal", "closed", "base", "mid")
     call her_main("...","annoyed","glanceL")
 
     # Hermione leaves after glaring one last time at Cho.

@@ -22,7 +22,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     m "No need to ruin the fun, it should take effect relatively quickly."
     call her_main("Well what am I supposed to do until then?","base","glance")
     m "You could show me your tits."
-    call her_main("I don't think so [genie_name], you're only paying me for drinking the potion.","open","closed")
+    call her_main("I don't think so [genie_name], you're only paying me for drinking the potion.", "open", "closed", "base", "mid")
     call her_main("If you expect to see me without my shirt on then you'll have to try a little harder.","base","suspicious")
     m "Oh I wouldn't be so sure of that."
     call her_main("So is that what it does? Makes me show you my breasts? Is it some sort of mind control potion?", "base", "base", "base", "mid")
@@ -63,7 +63,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
             m "Why not? Everything is covered."
             call her_main("Barely. And what will people think of me.","angry","down_raised")
             m "Just tell them that you are still developing. I'm sure that they're used to enormous breasts anyway, what's a few extra sizes."
-            call her_main("...Fine. Just promise me that they won't get any bigger.","upset","closed")
+            call her_main("...Fine. Just promise me that they won't get any bigger.", "upset", "closed", "base", "mid")
             m "I can't promise that, your still in school. A lot of girls don't stop growing until their 30."
             call her_main("You know what I mean [genie_name].","scream","angry",emote="01")
             m "I'm afraid that I don't [hermione_name], now you'd best hurry if you don't want to be late."
@@ -105,7 +105,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("Please be gentle [genie_name]. They seem to be much more sensitve than usual, it must be the potion.", "angry", "base", "base", "mid")
     m "Well I'll take that into account..."
     call nar(">You take a breast in each hand and start kneading them with your fingers.")
-    call her_main("...","open","closed")
+    call her_main("...", "open", "closed", "base", "mid")
     m "They're certainly much larger than usual."
     call her_main("...yes","soft","ahegao")
     call nar(">You continue massaging them gently through her shirt. Pulling them apart and then pressing them into one another.")
@@ -238,7 +238,7 @@ label potion_scene_2_2: #ass expansion
 
 
     call her_main("ughhh, my ass has gotten bigger!","angry","down_raised")
-    call her_main("Is that what this potion's supposed to do? Making my ass big?","upset","closed")
+    call her_main("Is that what this potion's supposed to do? Making my ass big?", "upset", "closed", "base", "mid")
     m "Evidently."
     call her_main("Why does my ass feel so good?","soft","ahegao") #new
     call nar(">Hermione keeps rubbing her ass, rolling her fingers across her expanded buttocks.")
@@ -432,7 +432,7 @@ label potion_scene_2_2: #ass expansion
             call nar(">Hermione picks up her skirt and attempts to put it on. Her ass is so huge that it barely covers half of it.")
 
             call nar(">Your cum is still visible on her ass.")
-            call her_main("...","open","closed")
+            call her_main("...", "open", "closed", "base", "mid")
 
 
     hide screen hermione_main

@@ -94,11 +94,11 @@ label hg_pr_flash:
 
     else:
         m "[hermione_name] I need you to go out there and flash your tits to one of your classmates."
-        call her_main("I will do my best [genie_name].","open","closed")
+        call her_main("I will do my best [genie_name].", "open", "closed", "base", "mid")
         m "Really? Just like that? No complaints or anything?"
         call her_main("I am getting paid for this, am I not?","base","glance")
         m "Of course."
-        call her_main("Why would I complain about a simple task like this then?","open","closed")
+        call her_main("Why would I complain about a simple task like this then?", "open", "closed", "base", "mid")
         her "Thirty five house points is a fair prices for a few seconds of excitement... err..."
         call her_main("...I mean, embarrassment.","base","happyCl")
         m "{size=-3}(She changed this much already?){/size}"
@@ -126,16 +126,16 @@ label end_hg_pr_flash:
     if her_tier == 3:
 
         if one_out_of_three == 3:
-            call her_main("(I can't believe I did that today...)","upset","closed", ypos="head")
+            call her_main("(I can't believe I did that today...)", "upset", "closed", "base", "mid", ypos="head")
             call her_main("(What if Harry or Ron saw me like that?)", "angry", "wide", "base", "stare")
             call her_main("(Standing there...)")
             call her_main("(Pressing my breasts against that window glass...)")
             call her_main("(I would probably just die of embarrassment right there on the spot...)","angry","down_raised")
-            call her_main("(No. Protecting the honour of the \"Gryffindor\" house is my number one priority.)","upset","closed")
+            call her_main("(No. Protecting the honour of the \"Gryffindor\" house is my number one priority.)", "upset", "closed", "base", "mid")
             call her_main("(We must get the cup this year, no matter the cost...)")
             call her_main("(........)","angry","down_raised")
         else:
-            call her_main("\"Slytherin\"...","upset","closed", ypos="head")
+            call her_main("\"Slytherin\"...", "upset", "closed", "base", "mid", ypos="head")
 
     else:
         call her_main(".........................","grin","dead", ypos="head")
@@ -176,7 +176,7 @@ label hg_pr_flash_T1_E1:
     call her_main("I just couldn't bring myself to do it...","open","down")
     m "I see..."
     m "Well, I can't just give you the points for nothing, [hermione_name]."
-    call her_main("Of course, [genie_name]... I understand...","open","closed")
+    call her_main("Of course, [genie_name]... I understand...", "open", "closed", "base", "mid")
     call her_main("I shall try harder next time... I promise...","annoyed","worriedL")
     m "Then I will just put these thirty five points aside for now..."
     call her_main("Thank you, [genie_name]...","annoyed","worriedL")
@@ -249,7 +249,7 @@ label hg_pr_flash_T1_E3:
     call her_main("It is usually quite deserted during that time...")
     call her_main("Apart from me there was only one student...")
     $ sc34CG(3, 6)
-    call her_main("Some boy from \"Ravenclaw\"...","upset","closed")
+    call her_main("Some boy from \"Ravenclaw\"...", "upset", "closed", "base", "mid")
     call her_main("So I waved to him and when he looked up at me...")
     $ sc34CG(3, 7)
     call her_main("I quickly pulled my shirt up...", "angry", "base", "base", "mid")
@@ -289,7 +289,7 @@ label hg_pr_flash_T2_E1:
     call her_main("Just for the record, [genie_name]...","annoyed","angryL")
     m "Hm?"
     call her_main("I think that forcing your pupils to do things like this...","scream","angryCl")
-    call her_main("Is beneath an esteemed wizard such as yourself...","upset","closed")
+    call her_main("Is beneath an esteemed wizard such as yourself...", "upset", "closed", "base", "mid")
     m "\"Forcing\"? Nobody is forcing you to do anything, [hermione_name]."
     m "You came to me, remember?"
     call her_main("..........", "open", "base", "base", "mid")
@@ -305,14 +305,14 @@ label hg_pr_flash_T2_E1:
     m "Shame on you, [hermione_name]. Shame on you."
     call her_main("[genie_name], I never...!","angry","angry")
     m "Enough of this. Did you complete your task or not?"
-    call her_main("Yes I did...","upset","closed")
+    call her_main("Yes I did...", "upset", "closed", "base", "mid")
     m "And?"
     call her_main("And that is all I am going to say...","open","down")
-    call her_main("........","upset","closed")
+    call her_main("........", "upset", "closed", "base", "mid")
     m ".........."
     her "........"
     m "Oh, whatever. Just take your points and go."
-    call her_main("Thank you, [genie_name].","upset","closed")
+    call her_main("Thank you, [genie_name].", "upset", "closed", "base", "mid")
 
     jump end_hg_pr_flash
 
@@ -488,7 +488,7 @@ label hg_pr_flash_T3_E2:
     call her_main("...maybe.","grin","worriedCl",emote="05")
     call her_main("I just thought that you would like to hear something like that, [genie_name]...","base","glance")
     m "What I would like to hear, [hermione_name], is the truth."
-    call her_main("Even if it's incredibly dull, [genie_name]?","open","closed")
+    call her_main("Even if it's incredibly dull, [genie_name]?", "open", "closed", "base", "mid")
     m "Dull or not..."
     m "I only want to know what actually happened..."
     m "Keep your fantasies to yourself, [hermione_name]."

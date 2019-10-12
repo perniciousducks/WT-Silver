@@ -32,7 +32,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     m "..."
     call her_main("Ugh, fine! If you must know, I was out here gathering up some mastick resin.","upset","down")
     call her_main("I know Students aren't {i}technically{/i} supposed to touch the stuff since it's normally just used to make belch powder...", "annoyed", "base", "base", "R")
-    call her_main("But I'm using it in my research for a non addictive analgesic!","open","closed")
+    call her_main("But I'm using it in my research for a non addictive analgesic!", "open", "closed", "base", "mid")
     m "Whatever..."
 
     menu:

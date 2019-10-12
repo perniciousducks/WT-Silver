@@ -22,7 +22,7 @@ label hg_pr_flirt_teacher:
         call her_main("I am glad you finally decided to act, [genie_name]!", "open", "base", "base", "mid")
         m "Huh?"
         call her_main("You are finally ready to investigate the teachers who made a habit out of buying favours from the students, aren't you?","normal","frown")
-        call her_main("I am honoured to pose as bait in this noble endeavour.","open","closed")
+        call her_main("I am honoured to pose as bait in this noble endeavour.", "open", "closed", "base", "mid")
         m "Ehm... Yeah, that's exactly what I'm doing."
         call her_main("Splendid! You can count on me, [genie_name]!","normal","frown")
 
@@ -228,10 +228,10 @@ label hg_pr_flirt_teacher_T2_E1: # Slughorn
     call her_main("Well, professor Slughorn invited me over to one of his...","open","worriedL")
     her "Rather disturbing tea parties..."
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("There were plenty of girls...","open","closed")
+    call her_main("There were plenty of girls...", "open", "closed", "base", "mid")
     her "But all of them were much younger then me..."
     call her_main("Almost every guest was a freshman...","annoyed","suspicious")
-    call her_main("We had tea and some cake...","open","closed")
+    call her_main("We had tea and some cake...", "open", "closed", "base", "mid")
     her "Everything was pretty harmless..."
     m "Did you flirt with the man or not?"
     her "I did..."
@@ -334,7 +334,7 @@ label hg_pr_flirt_teacher_T2_E3: # Filch
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Well, I spent quite some time by flirting with mr.Filch today.", "soft", "base", "base", "mid",xpos="right",ypos="base")
-    call her_main("What a well read and exceptionally well mannered gentleman mr.Filch is.","open","closed")
+    call her_main("What a well read and exceptionally well mannered gentleman mr.Filch is.", "open", "closed", "base", "mid")
     m "........"
     call her_main("But I don't think anyone knows him like that...", "soft", "base", "base", "R")
     her "I don't think anyone knows mr.Filch like I do."
@@ -421,7 +421,7 @@ label hg_pr_flirt_teacher_T3_E1: # Filch
     m "There! Putting it on my \"to-do-list\"..."
     m "\"Take care of the creepy janitor-guy and his crooked cock.\"..."
     m "Yes, first thing tomorrow."
-    call her_main("Thank you [genie_name].","open","closed")
+    call her_main("Thank you [genie_name].", "open", "closed", "base", "mid")
     call her_main("Can I have my points now?","smile","happyCl")
 
     jump end_hg_pr_flirt_teacher

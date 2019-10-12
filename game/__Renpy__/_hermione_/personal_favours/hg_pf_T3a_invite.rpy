@@ -11,7 +11,7 @@ label hg_pf_strip_T1_Snape: # Fails
 
     m "Miss, Granger, I will be buying another favour from you today."
 
-    call her_main("Of course, [genie_name].","open","closed", xpos="base", ypos="base")
+    call her_main("Of course, [genie_name].", "open", "closed", "base", "mid", xpos="base", ypos="base")
     m "But before that, do you think you could go and fetch professor Snape for me?"
     call her_main("...Professor Snape?","annoyed","suspicious")
     her "May I ask, why, [genie_name]?"
@@ -46,7 +46,7 @@ label hg_pf_strip_T2_Snape:
 
         m "Miss, Granger, I will be buying another favour from you today."
 
-        call her_main("Of course, [genie_name].","open","closed", xpos="base", ypos="base")
+        call her_main("Of course, [genie_name].", "open", "closed", "base", "mid", xpos="base", ypos="base")
         m "But before that, do you think you could go and fetch professor Snape for me?"
         call her_main("...professor Snape?","annoyed","suspicious")
         her "May I ask, why, [genie_name]?"
@@ -73,7 +73,7 @@ label hg_pf_strip_T2_Snape:
 
         m "Miss, Granger, I will be buying another favour from you today."
 
-        call her_main("Of course, [genie_name].","open","closed", xpos="base", ypos="base")
+        call her_main("Of course, [genie_name].", "open", "closed", "base", "mid", xpos="base", ypos="base")
         m "But before that, do you think you could go and fetch professor Snape again?"
         call her_main("...professor Snape?","annoyed","suspicious")
         her "may I ask, why, [genie_name]?"
@@ -143,7 +143,7 @@ label hg_pf_strip_T2_Snape:
     call her_chibi("dance","on_desk","on_desk")
     call sna_chibi("stand","desk_close","base")
 
-    call her_main(".............","open","closed", ypos="head")
+    call her_main(".............", "open", "closed", "base", "mid", ypos="head")
     call sna_main("......................","snape_05")
     m ".........................."
 
@@ -354,7 +354,7 @@ label hg_pf_strip_T2_Snape:
     m "Alright! We Finally get to the good stuff!"
     call sna_main("Hm...","snape_13")
 
-    call her_main("........","annoyed","closed")
+    call her_main("........", "annoyed", "closed", "base", "mid")
 
     menu:
         m "..."
@@ -372,25 +372,25 @@ label hg_pf_strip_T2_Snape_watch:
     call her_chibi("dance","on_desk","on_desk")
     pause.5
 
-    call her_main("I will just keep on dancing then...","open","closed")
+    call her_main("I will just keep on dancing then...", "open", "closed", "base", "mid")
     call ctc
 
     call nar(">Hermione squeezes her breasts and shakes her hips slightly...")
 
     m "Yes, [hermione_name]. Very good."
     call sna_main("*Khem!* Acceptable performance, miss Granger.","snape_12")
-    call her_main("....","open","closed")
+    call her_main("....", "open", "closed", "base", "mid")
     m "Heh..."
     m "So,... how would you grade her tits?"
-    call her_main("......","annoyed","closed")
+    call her_main("......", "annoyed", "closed", "base", "mid")
     call sna_main("Hm......","snape_20")
-    call her_main("........","annoyed","closed")
+    call her_main("........", "annoyed", "closed", "base", "mid")
     call sna_main("\"B+\"!","snape_12")
     call her_main("!!!", "open", "wide", "base", "stare")
     m "Really?"
     call sna_main("Yes. I do give credit where it's due.","snape_12")
     call her_main("(Professor...)", "angry", "wide", "base", "stare")
-    call her_main("(Time for my finishing act then!)","open","closed")
+    call her_main("(Time for my finishing act then!)", "open", "closed", "base", "mid")
     pause.1
 
     $ hermione_wear_panties = False
@@ -412,7 +412,7 @@ label hg_pf_strip_T2_Snape_watch:
     call nar(">Hermione suddenly breaks into a series of rather complex pirouettes.")
     call sna_main("Yes, such grace...","snape_19")
     call sna_main("That lithe, young body!","snape_20")
-    call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","open","closed")
+    call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}", "open", "closed", "base", "mid")
     call nar(">Hermione seems very focused on her dancing routine...")
     call sna_main("Yes, and now another pirouette!","snape_19")
     call sna_main("Magnificent!")
@@ -579,8 +579,8 @@ label hg_pf_strip_T2_Snape_masturbate:
         call her_main("!!!", "open", "wide", "base", "stare")
         m "Really?"
         call sna_main("Yes. I do give credit where credit is due.","snape_12")
-        call her_main("(Professor...)","annoyed","closed")
-        call her_main("(Time for my finishing act then!)","open","closed")
+        call her_main("(Professor...)", "annoyed", "closed", "base", "mid")
+        call her_main("(Time for my finishing act then!)", "open", "closed", "base", "mid")
         pause.1
 
         $ hermione_wear_panties = False
@@ -629,7 +629,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         with d5
         call ctc
 
-        call her_main("Whew... This was--","open","closed")
+        call her_main("Whew... This was--", "open", "closed", "base", "mid")
         with hpunch
 
         g4 "ARGH! YOU FUCKING WHORE!"

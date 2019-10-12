@@ -458,7 +458,7 @@ label hg_ps_cumslut_Scene_2:
     m "If you return to this office after classes without any cum on you, I'll be very upset."
     call her_main("Yes [genie_name].","base","ahegao_raised")
     m "Have fun. Say hi to your friends for me."
-    call her_main("...","base","closed")
+    call her_main("...", "base", "closed", "base", "mid")
 
     call her_walk(action="leave", speed=2.5)
 
@@ -498,14 +498,14 @@ label hg_ps_cumslut_Scene_3:
     m "Gods, you're good at this, [hermione_name]!"
     call her_main("Thank you... I've been thinking about what you asked me last time...","soft","ahegao",ypos="head")
     m "Last time?"
-    call her_main("about why I do this... sell you these sort of favours.","upset","closed")
+    call her_main("about why I do this... sell you these sort of favours.", "upset", "closed", "base", "mid")
     call her_main("At the start it was just to get points, so that \'gryffindor\' could win the house cup...","angry","wink")
     call her_main("but lately...","base","down")
     call her_main("...it’s been more than that... now I do it to make you happy, [genie_name].","base","glance")
     call her_main("Because making you happy, makes me happy...","base","suspicious")
     m "That's great... but what would really make me happy right now is you focusing a little more on the task at hand..."
     call her_main("Oh! Of course, [genie_name]...","open","worriedCl")
-    call her_main("Do you need some extra encouragement?","open","closed")
+    call her_main("Do you need some extra encouragement?", "open", "closed", "base", "mid")
     m "it would help..."
     call her_main("well... do you know how much I've been thinking about this? How much I wanted to ask you to cover me again?","base","down")
     call her_main("I've become such a slut [genie_name], it's all I've been able to think about... going to class covered in your {image=textheart}cum{image=textheart}","grin","ahegao")
@@ -622,7 +622,7 @@ label hg_ps_cumslut_complete_1:
                 call her_main("Thank you [genie_name], will that be all?", "soft", "base", "base", "mid")
                 m "Yes [hermione_name], you may leave now. "
             "\"Tell me about your day.\"":
-                call her_main("It was a pretty normal day, I had potions class and then transfiguration.","open","closed")
+                call her_main("It was a pretty normal day, I had potions class and then transfiguration.", "open", "closed", "base", "mid")
                 m "And do you think that anyone noticed?"
                 call her_main("I don't think so [genie_name]. Ginny Weasley asked me about it during transfiguration class though.", "soft", "base", "base", "mid")
                 m "And what did you tell her?"
@@ -656,7 +656,7 @@ label hg_ps_cumslut_complete_1:
                 $ gryffindor += 50
                 call her_main("Oh, right the points, Thank you [genie_name]. if that's all I might head to bed.","open","down")
                 m "Very well, goodnight [hermione_name]."
-                call her_main("Good night [genie_name].","annoyed","closed")
+                call her_main("Good night [genie_name].", "annoyed", "closed", "base", "mid")
 
     else: #Cum on hair
         $ u_sperm = "characters/hermione/face/auto_12.png"
@@ -714,7 +714,7 @@ label hg_ps_cumslut_complete_2:
                 call her_main("Thank you [genie_name], will that be all?", "soft", "base", "base", "mid")
                 m "Yes [hermione_name], you may leave now. "
             "\"Tell me about your day.\"":
-                call her_main("It was a pretty normal day, well, except for Luna...","open","closed")
+                call her_main("It was a pretty normal day, well, except for Luna...", "open", "closed", "base", "mid")
                 m "Luna?"
                 call her_main("Luna Lovegood, sir.", "soft", "base", "base", "mid")
                 m "What happened with miss Lovegood?"
@@ -726,11 +726,11 @@ label hg_ps_cumslut_complete_2:
                 m "Really?"
                 call her_main("That's not the worst part. She then proceded to taste it!","open_tongue","glance")
                 m "I don't believe you."
-                call her_main("I was as shocked as you were.","open","closed")
+                call her_main("I was as shocked as you were.", "open", "closed", "base", "mid")
                 m "Well you have certainly made this old man very happy."
                 call her_main("Thank you [genie_name]. if that's all I might head to bed.","open","down")
                 m "Very well, goodnight [hermione_name]."
-                call her_main("Good night [genie_name].","annoyed","closed")
+                call her_main("Good night [genie_name].", "annoyed", "closed", "base", "mid")
 
     elif cum_location == 5: #Cum on shirt
         $ u_sperm = "characters/hermione/face/auto_06.png"
@@ -753,7 +753,7 @@ label hg_ps_cumslut_complete_2:
                 m "So you don't mind them knowing?"
                 call her_main("I suppose not... As long as it makes you happy.","open","down")
                 m "Very well, goodnight [hermione_name]."
-                call her_main("Good night [genie_name].","annoyed","closed")
+                call her_main("Good night [genie_name].", "annoyed", "closed", "base", "mid")
 
     else: #Cum on face
         $ u_sperm = "characters/hermione/face/auto_07.png"
@@ -768,7 +768,7 @@ label hg_ps_cumslut_complete_2:
                 m "Well [hermione_name], you may leave now."
                 call her_main("Did I at least make you happy?","open","annoyed",tears="mascara")
                 m "You did."
-                call her_main("Good.","annoyed","closed",tears="mascara")
+                call her_main("Good.", "annoyed", "closed", "base", "mid",tears="mascara")
             "\"Tell me about your day.\"":
                 $ sc34CG(1, 16, 6)
                 call her_main("My day...","normal","worriedCl",tears="mascara",xpos="base",ypos="base")

@@ -63,7 +63,7 @@ label hg_pr_grope:
         m "[hermione_name]?"
         call her_main("[genie_name]?", "base", "base", "base", "mid")
         m "How about you go let one of your classmates molest you a little again?"
-        call her_main("........","upset","closed")
+        call her_main("........", "upset", "closed", "base", "mid")
         m "Twenty five house points, [hermione_name]."
         call her_main("[genie_name], it's just...","annoyed","angryL")
         call her_main("I do not understand why I must do things like that...","annoyed","annoyed")
@@ -244,7 +244,7 @@ label hg_pr_grope_T2_E1:
 
     #elif her_whoring >= 9 and her_whoring <= 11: # LEVEL 04
 
-    call her_main("Well... There is not much to tell...","open","closed")
+    call her_main("Well... There is not much to tell...", "open", "closed", "base", "mid")
     her "I found this one boy from \"Ravenclaw\"..."
     her "Led him to one of the empty classrooms in the eastern wing..."
     her "He thought I wanted to make out with him..."
@@ -257,9 +257,9 @@ label hg_pr_grope_T2_E1:
     call her_main("???", "open", "base", "base", "mid")
     m "Did you enjoy it?"
     m "Did it feel good to be touched by that boy?"
-    call her_main("Oh...","open","closed")
+    call her_main("Oh...", "open", "closed", "base", "mid")
     her "Well, he was rather handsome I suppose..."
-    call her_main("I didn't hate it, if that's what you mean, [genie_name]...","upset","closed")
+    call her_main("I didn't hate it, if that's what you mean, [genie_name]...", "upset", "closed", "base", "mid")
     m "I see..."
 
     jump end_hg_pr_grope
@@ -269,7 +269,7 @@ label hg_pr_grope_T2_E2:
 
     call hg_pr_grope_intro
 
-    call her_main("Well...","open","closed")
+    call her_main("Well...", "open", "closed", "base", "mid")
     her "I'm not sure whether or not this counts, but..."
     her "During the herbology class today..."
     call her_main("I let this one boy slide his hand under my skirt...","upset","wink")
@@ -448,7 +448,7 @@ label hg_pr_grope_T3_E3:
     call her_main("Ehm... She started to touch my breasts as well...","base","down")
     call her_main("Almost the same way her boyfriend did just a moment ago...","smile","angry")
     her "Then she turned to him and she said..."
-    call her_main("\"I love you baby, and I want to share everything with you...\"","open","closed")
+    call her_main("\"I love you baby, and I want to share everything with you...\"", "open", "closed", "base", "mid")
     her "\"...And that includes your whores.\""
     call her_main("I did not appreciate being called a whore of course...", "angry", "base", "base", "mid")
     call her_main("But that was such a sweet and romantic gesture...", "base", "base", "base", "mid")

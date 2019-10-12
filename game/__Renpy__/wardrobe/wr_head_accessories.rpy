@@ -216,7 +216,7 @@ label equip_head_accessory:
 
                 # if her_whoring < 11:
                     # call her_main("Vintage glasses...?","open","worried")
-                    # call her_main("I don't need to wear glasses, [genie_name]. I can see just fine!","open","closed")
+                    # call her_main("I don't need to wear glasses, [genie_name]. I can see just fine!", "open", "closed", "base", "mid")
                     # m "They aren't real glasses. These lenses are fake."
                     # call her_main("I see... I suppose I could wear them...","annoyed","frown")
                     # call her_main("Let me put them on real quick.", "base", "base", "base", "mid")
@@ -259,7 +259,7 @@ label equip_head_accessory:
                 # if her_whoring >= 11:
                     # if h_hair_style != "updo":
                         # call her_main("Elf-ears...?", "soft", "base", "base", "mid")
-                        # call her_main("You wouldn't even be able to see them beneath all my hair...","open","closed")
+                        # call her_main("You wouldn't even be able to see them beneath all my hair...", "open", "closed", "base", "mid")
                         # m "You are right..."
                         # m "Could you change your hair too then? Show off your cute little ears?"
 

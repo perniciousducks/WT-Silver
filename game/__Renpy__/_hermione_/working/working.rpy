@@ -69,7 +69,7 @@ label maid_responses:
                 g9 "Certainly, I'll just get one of those Slytherin floozies that you are always on about."
                 m "I'm sure that they'd jump at the chance to make some points for their house."
                 m "They'd probably even do it for next to nothing, if not free."
-                call her_main("Fine, I get your point. It's just, surely there are other ways for you to earn money [genie_name]?","upset","closed")
+                call her_main("Fine, I get your point. It's just, surely there are other ways for you to earn money [genie_name]?", "upset", "closed", "base", "mid")
                 call her_main("I mean you're the school headmaster, can't you just file some reports and get paid by the ministry?", "base", "base", "base", "R")
                 m "I can, it's just not as enjoyable."
                 call her_main("Hmmph. Can I at least get my points now?","angry","angryCl")
@@ -467,13 +467,13 @@ label job_5:
     $ menu_x = 0.5 #Menu position is back to default. (Center).
 
     if first_time_cardgame_work:
-        call her_main("But... why do you want me to help them promote their shop?","annoyed","closed")
+        call her_main("But... why do you want me to help them promote their shop?", "annoyed", "closed", "base", "mid")
         g9 "That is my business."
         call her_main("What do you want me to tell them then?","open","concerned")
         m "Just ask them if they have a need for any help promoting their card game."
         g9 "If they're as business minded as I assume then there's no way they'd say no."
         g9 "And make sure you ask them for payment."
-        call her_main("Fine...","base","closed")
+        call her_main("Fine...", "base", "closed", "base", "mid")
         call her_main("I'll see you tonight.", "open", "base", "base", "mid")
         m "Forgetting something?"
         call her_main("... Just hand it over.","disgust","down", cheeks="blush")
@@ -542,7 +542,7 @@ label hermione_helping_selling_cards:
         call her_main("")
         m "Hello, [hermione_name], how was your day?"
         call her_main("Good...", "normal", "happy", "base", "mid")
-        call her_main("Still not that comfortable wearing the outfit you provided though so I just stood behind the shop counter today.","open","closed")
+        call her_main("Still not that comfortable wearing the outfit you provided though so I just stood behind the shop counter today.", "open", "closed", "base", "mid")
         call her_main("Apparently we sold a lot more items than usual though.","base","happy", cheeks="blush")
         g9 "Great news, I bet the twins are ecstatic."
         call her_main("Indeed, It was nice seeing them in such high spirits.","open","happyCl", cheeks="blush")
@@ -550,7 +550,7 @@ label hermione_helping_selling_cards:
         g9 "Seems to me like they are already..."
         m "So, how come you had such a surge in new customers?"
         call her_main("No idea, maybe the card game got more people interested in browsing the rest of their stock.", "annoyed", "happy", "base", "R")
-        call her_main("They actually had some problems with people stealing things before I started working there though.","open","closed")
+        call her_main("They actually had some problems with people stealing things before I started working there though.", "open", "closed", "base", "mid")
         m "And this stopped after you started working there?"
         call her_main("Well, probably not because of it. They put in some anti thieving measures.", "base", "base", "base", "mid")
         m "Patent pending?"
@@ -576,16 +576,16 @@ label hermione_helping_selling_cards:
         m "Yes?"
         m "Sounds like a great way to get people into playing..."
         call her_main("Well, I didn't have anywhere to store the packs as you could imagine.","base","down", cheeks="blush")
-        call her_main("So I had to resort to putting them behind my suspenders and the top of my stockings...","open","closed", cheeks="blush")
-        call her_main("And one customer got a bit...","normal","closed", cheeks="blush")
+        call her_main("So I had to resort to putting them behind my suspenders and the top of my stockings...", "open", "closed", "base", "mid", cheeks="blush")
+        call her_main("And one customer got a bit...", "normal", "closed", "base", "mid", cheeks="blush")
         call her_main("Touchy.","base","ahegao", cheeks="blush")
         m "I see..."
-        call her_main("I did get a bit agitated at one point actually...","open","closed", cheeks="blush")
+        call her_main("I did get a bit agitated at one point actually...", "open", "closed", "base", "mid", cheeks="blush")
         g4 "They didn't fire you did they?"
         call her_main("No!","mad","wide_stare")
         call her_main("The customer was quite apologetic actually and bought a bunch of things.","smile","angryCl")
         call her_main("The twins obviously took the credit for getting such a big sale and seemed rather pleased with themselves.","crooked_smile","annoyed")
-        call her_main("I'm fine with them believing they had anything to do with it though.","smile","closed")
+        call her_main("I'm fine with them believing they had anything to do with it though.", "smile", "closed", "base", "mid")
         m "How noble of you..."
         call her_main("Here's your payment.", "open", "base", "base", "mid")
         call give_reward("You have received 20 gold", "interface/icons/gold.png")
@@ -598,14 +598,14 @@ label hermione_helping_selling_cards:
         call her_main("Awful...","normal","down")
         m "Really, why is that?"
         call her_main("Well, I'm not actually angry...", "open", "base", "base", "mid")
-        call her_main("Just a bit annoyed, that's all.","annoyed","closed")
+        call her_main("Just a bit annoyed, that's all.", "annoyed", "closed", "base", "mid")
         m "With?"
         call her_main("Myself...","open","worriedL", cheeks="blush")
         call her_main("We've set up a practice day where you get to borrow a deck of cards to get more people into the game.", "normal", "happy", "base", "mid")
         g9 "Sounds like a good idea, get people invested."
         call her_main("Well, that was fine and all until the amount of new people interested started to slow down.","open","down")
         m "I see, so I expect the responsibility fell on you as you're the one meant to promote the game?"
-        call her_main("Yes... I thought it was a great idea so if it ended up not working out then it would look very bad on my part.","normal","closed")
+        call her_main("Yes... I thought it was a great idea so if it ended up not working out then it would look very bad on my part.", "normal", "closed", "base", "mid")
         m "So, you had to stop the practice sessions?"
         call her_main("No, that's not why I'm annoyed...", "annoyed", "happy", "base", "R")
         call her_main("In my haste to find a solution I thought it would be a great idea to play a few rounds of strip cards to get more people interested.","open","down_raised", cheeks="blush")
@@ -617,12 +617,12 @@ label hermione_helping_selling_cards:
         call her_main("Well, I managed to get a bunch of people into the card game so practice day is still on the schedule.","annoyed","angryCl")
         g9 "That's good!"
         call her_main("Though I might reconsider the whole strip card idea...","angry","down", cheeks="blush")
-        call her_main("I lost pretty quickly...","normal","closed", cheeks="blush")
+        call her_main("I lost pretty quickly...", "normal", "closed", "base", "mid", cheeks="blush")
         call her_main("It turned out they had been cheating the whole time...", "normal", "base", "base", "mid", cheeks="blush")
         g9 "Well, cheaters never prosper..."
         call her_main("That's not true in this case... they prospered alright.", "open", "happy", "base", "R", cheeks="blush")
         call her_main("In any case, they seemed... happy, they bought a bunch of things so that makes me...", "normal", "base", "base", "mid")
-        call her_main("Happy as well...","angry","closed", cheeks="blush")
+        call her_main("Happy as well...", "angry", "closed", "base", "mid", cheeks="blush")
         g9 "A job well done then, I bet the twins are very grateful for your contribution."
         call her_main("Thank you.","annoyed","happyCl", cheeks="blush")
         call her_main("Anyway...", "base", "base", "base", "mid")
@@ -638,7 +638,7 @@ label hermione_helping_selling_cards:
         g4 "Wait, a tournament? How come I wasn't invited?"
         call her_main("It was students only obviously...", "open", "happy", "base", "R")
         m "Oh... of course."
-        call her_main("There were way more participants than I expected seeing that there was an entry fee.","base","closed", cheeks="blush")
+        call her_main("There were way more participants than I expected seeing that there was an entry fee.", "base", "closed", "base", "mid", cheeks="blush")
         m "Must've been a great prize pool then..."
         call her_main("That's the weird thing. The prize pool only amounted do about half of the total entry fee amount.", "open", "base", "base", "mid")
         call her_main("Apparently... someone had gone around spreading the rumour that the winner would...","normal","down")
@@ -684,7 +684,7 @@ label hermione_helping_selling_cards:
         call her_main("Fine...","annoyed","glanceL", cheeks="blush")
         call her_main("I read that by putting the customer in a state of peace and happiness it would make them more susceptible to making hasty decisions.","smile","happyCl", cheeks="blush")
         g9 "Didn't think you'd be interested in such... unorthodox sales tactics..."
-        call her_main("I was curious to see if it would work more than anything else.","base","closed", cheeks="blush")
+        call her_main("I was curious to see if it would work more than anything else.", "base", "closed", "base", "mid", cheeks="blush")
         call her_main("I tried it out to test the legitimacy of the claims in that book of theirs...", "open", "base", "base", "mid")
         m "of course..."
         m "And how many times did you test this... theory of yours."

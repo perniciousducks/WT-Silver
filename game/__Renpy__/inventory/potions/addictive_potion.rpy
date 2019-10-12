@@ -364,7 +364,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             hide screen hermione_main
             m "No [hermione_name], I'm a tired old man and it's time for me to go to sleep."
             m "You can either eat off the floor or you can come back tomorrow."
-            call her_main("...Fine.","upset","closed")
+            call her_main("...Fine.", "upset", "closed", "base", "mid")
             hide screen hermione_main
             call nar(">She begrudgingly starts scooping your cum off the floor with her fingers.")
             # add animation?
@@ -423,7 +423,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
             $ uni_sperm = False
             call nar(">You pick her limp body up and carry her to her room.","start")
             call nar(">As you enter the dormitory you hear her mumble in her sleep.","end")
-            call her_main("You want a kiss [genie_name]? Of course I don't mind...","open","closed")
+            call her_main("You want a kiss [genie_name]? Of course I don't mind...", "open", "closed", "base", "mid")
             hide screen hermione_main
             call nar(">You place her carefully back into her bed.")
             m "Sleep tight, [hermione_name]."
@@ -467,7 +467,7 @@ label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the 
             call her_main("......","upset","wink")
             m "No? Well in that case...{w=0.5}{nw}"
             call her_main("{size=+5}I'm sorry!{/size}","scream","angryCl")
-            call her_main("Please let me suck your dick [genie_name]...","annoyed","closed")
+            call her_main("Please let me suck your dick [genie_name]...", "annoyed", "closed", "base", "mid")
             m "Hmmm, I don't think that was sincere enough."
             call her_main("Please [genie_name], let me suck your big, thick dick. Pretty please.","soft","worried")
             m "Much better."
@@ -643,7 +643,7 @@ label potion_scene_3_3_1: #Hypno potion
 
     hide screen blktone
     call nar(">Hermione closes her eyes and appears to nod off.")
-    call her_main("......","base","closed")
+    call her_main("......", "base", "closed", "base", "mid")
     call her_main("Where am I?","upset","wink")
     m "You're in my office."
     call her_main("I am?","upset","wink")
@@ -932,7 +932,7 @@ label potion_scene_3_3_1: #Hypno potion
     m "About that. I think it'd be better if you went back to your dorm."
     call her_main("Why's that mistah [genie_name] sir?", "annoyed", "base", "base", "mid")
     m "I think you need to have a little nap and let this wear off."
-    call her_main("whatever you say sir!","annoyed","closed")
+    call her_main("whatever you say sir!", "annoyed", "closed", "base", "mid")
     call set_her_action("none","skip_update")
     call her_main("And thanks again!{image=textheart} You're the best!","smile","happyCl",emote="06")
 

@@ -10,7 +10,7 @@ label ball_quest_E1:
     m "Miss Granger, how can I help you?"
     call her_main("Sir, have you made your decision yet on who will be in charge of the \"ABOC\" this year?", "open", "base", "base", "mid")
     m "\"ABOC\"?"
-    call her_main("The \"Autumn Ball Organization Committee\", sir...","open","closed")
+    call her_main("The \"Autumn Ball Organization Committee\", sir...", "open", "closed", "base", "mid")
     m "Ehm... Sure..."
     call her_main("Please excuse me if I am being too direct with this, sir...","normal","frown")
     call her_main("But I think you should put me in charge.","open","angryCl")
@@ -94,7 +94,7 @@ label ball_quest_E1:
                 m "Seriously? After all those favours you sold me?"
                 call her_main("Those were for the sake of my house, sir.","annoyed","annoyed")
                 m "Well this one is for the sake of the \"Autumn prom\"."
-                call her_main("It's the \"Autumn Ball\", sir...","upset","closed")
+                call her_main("It's the \"Autumn Ball\", sir...", "upset", "closed", "base", "mid")
                 m "Oh, come on..."
                 m "Entrusting the thing to somebody else would be a crime, you know that."
                 call her_main("..........","annoyed","angryL")
@@ -115,7 +115,7 @@ label ball_quest_E1:
                     m "So I suggest that you stop being selfish and get naked for me!"
 
                 call her_main("You are completely right, [genie_name]!","open","down")
-                call her_main("I must do this. Everyone depends on me.","upset","closed")
+                call her_main("I must do this. Everyone depends on me.", "upset", "closed", "base", "mid")
                 call her_main("Just give me a second please...","base","glance")
                 hide screen hermione_main
                 with d5

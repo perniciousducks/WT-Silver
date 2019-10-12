@@ -35,7 +35,7 @@ label hg_pr_blowjob:
     #Intro.
     if hg_pr_blowjob.counter == 0:
         m "[hermione_name], I will be buying another favour from you today."
-        call her_main("Thank you, [genie_name]. I really appreciate it.","open","closed")
+        call her_main("Thank you, [genie_name]. I really appreciate it.", "open", "closed", "base", "mid")
         m "Sure, Happy to help."
         m "I need you to go give a blowjob to one of your classmates."
         stop music fadeout 1.0
@@ -47,14 +47,14 @@ label hg_pr_blowjob:
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         m "Yes, that's how it's usually done..."
-        call her_main("[genie_name], I...","upset","closed")
+        call her_main("[genie_name], I...", "upset", "closed", "base", "mid")
         call her_main("I refuse to sell you a depraved favour like that, [genie_name].","open","annoyed", cheeks="blush")
         call her_main("Can't I just kiss another girl instead?","open","worriedCl")
         her "I do not mind that..."
         m "[hermione_name], please stop wasting my time..."
         m "If you are not in the mood to sell favours today..."
         m "Then there is the door."
-        call her_main("But I need the points, [genie_name]. You know that.","upset","closed")
+        call her_main("But I need the points, [genie_name]. You know that.", "upset", "closed", "base", "mid")
         m "It's as the saying goes, [hermione_name]..."
         m "\"If you won't suck a dick for it - you don't need it.\""
         call her_main("Tch...","angry","angry", cheeks="blush")
@@ -210,7 +210,7 @@ label hg_pr_blowjob_T1_E3:
     call her_main("He even warned me when he was about to cum.","angry","down_raised")
     m "A true gentleman indeed."
     m "Did you swallow?"
-    call her_main("Of course I did, [genie_name].","upset","closed")
+    call her_main("Of course I did, [genie_name].", "upset", "closed", "base", "mid")
     her "I told you - I gave the boy a proper blowjob."
     call her_main("The least I could do for someone who treated me with respect for a change...","angry","down_raised")
     m "Well, in that case."

@@ -86,11 +86,11 @@ label quidditch_commentator_event_2:
     m "[hermione_name], how much do you know about Quidditch?"
     call her_main("[genie_name], I mean, I've taken flying lessons... they're mandatory.", "open", "base", "base", "R")
     m "Ah, okay... and here I was hoping that you'd be able to commentate this years quidditch games..."
-    call her_main("Me, wasting time on something as stu...{w=0.8}{nw}","base","closed")
+    call her_main("Me, wasting time on something as stu...{w=0.8}{nw}", "base", "closed", "base", "mid")
     call her_main("Wait...{w=0.6} What did you say?","open","suspicious")
     m "I was going to ask you if you'd commentate this years quidditch games..."
     call her_main("You want me... to commentate this years wizarding school cup?","open","wide_stare")
-    call her_main("I'd be honoured, sir!","scream","closed",trans="hpunch")
+    call her_main("I'd be honoured, sir!", "scream", "closed", "base", "mid",trans="hpunch")
     call her_main("Quidditch has always been one of my passions, to be able to commentate it...","open","angry")
     call her_main("Not to mention getting to make all the announcements...", "smile", "base", "base", "R")
     call her_main("The speeches...", "grin", "happy", "base", "mid")

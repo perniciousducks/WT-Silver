@@ -484,7 +484,7 @@ label ll_pf_sex_T1_her_1: # Call label
     $ lunCG(mouth="open", eye="seductive", eyebrow="base", pupil="ahegao")
     lun "Oh, that would be {b}fantastic{/b}!"
     lun "Imagine me... being the person to teach the world how the dispel wrackspurts!"
-    call her_main("So you'd be okay with everyone knowing you've had Dumbledore's cock in you?","annoyed","closed")
+    call her_main("So you'd be okay with everyone knowing you've had Dumbledore's cock in you?", "annoyed", "closed", "base", "mid")
     $ lunCG(mouth="base", eye="happyCl", eyebrow="base", pupil="right")
     lun "I'd give the school a demonstration if I could!"
     #">Hermione's hands drift in between her legs..."

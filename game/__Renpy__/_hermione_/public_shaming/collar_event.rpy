@@ -203,10 +203,10 @@ label slut_scene: #Locked to her being your slut
     call her_main("Can I at least get a towel or something to \nclean my face?", "angry", "base", "base", "mid")
     hide screen hermione_main
     m "Why? Everyone already knows what a slut you are, walking back to your room with a bit of cum on your face is hardly going to change that."
-    call her_main("You can't be serious?!","upset","closed")
+    call her_main("You can't be serious?!", "upset", "closed", "base", "mid")
     hide screen hermione_main
     m "I am, and if you ever want to suck my cock again you will do as I say."
-    call her_main("...yes [genie_name].","open","closed")
+    call her_main("...yes [genie_name].", "open", "closed", "base", "mid")
     hide screen hermione_main
     m "Well get going."
     call her_main("Good night [genie_name].","base","glance")
@@ -317,7 +317,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("Thank you for ... cumming in my pussy.","grin","dead",cheeks="blush",tears="messy")
     hide screen hermione_main
     m "You're welcome girl. A good whore should always be grateful."
-    call her_main("Yes [genie_name].","grin","closed",cheeks="blush",tears="mascara")
+    call her_main("Yes [genie_name].", "grin", "closed", "base", "mid",cheeks="blush",tears="mascara")
     hide screen hermione_main
     call blkfade
 
@@ -400,7 +400,7 @@ label slave_scene:
     hide screen hermione_main
     m "That's a good little slave girl."
     m "Now ask me nicely to fuck that little ass of yours."
-    call her_main("Please [genie_name], please fuck my slutty ass.","open","closed")
+    call her_main("Please [genie_name], please fuck my slutty ass.", "open", "closed", "base", "mid")
     hide screen hermione_main
     m "Good girl."
     ">You thrust your full length into her in one motion."
@@ -571,7 +571,7 @@ label good_girl_scene:
 
     call her_main("Do you like them [genie_name]", "annoyed", "base", "base", "mid")
     m "Of course I do, they're lovely."
-    call her_main("Thank you [genie_name], you're always so kind.","base","closed")
+    call her_main("Thank you [genie_name], you're always so kind.", "base", "closed", "base", "mid")
     ">She lowers her top."
 
     call set_her_action("none")

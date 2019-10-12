@@ -557,7 +557,7 @@ label ball_ending_E2:
     mal "Hermione, hey..."
     call her_main("Oh, hello.", "base", "base", "base", "mid",ypos="head")
     mal "You look... so beautiful tonight, Hermione."
-    call her_main("Thank you, you are too sweet.","base","closed")
+    call her_main("Thank you, you are too sweet.", "base", "closed", "base", "mid")
     mal2 "Can I have the next dance?"
     mal "What? Back off buddy, I was here first!"
     mal2 "Like hell you were!"
@@ -1129,7 +1129,7 @@ label ball_ending_E2:
         call her_main("Professor...", "upset", "base", "base", "mid",ypos="head")
 
         call sna_main("And the stage is yours...")
-        call her_main("Thank you, professor.","base","closed")
+        call her_main("Thank you, professor.", "base", "closed", "base", "mid")
         pause.7
 
         hide screen bld1
@@ -3043,7 +3043,7 @@ label ball_ending_E3:
         pause.8
 
         call play_music("hermione")
-        call her_main("Sir, if this is about yesterday...","upset","closed", xpos="right", ypos="base")
+        call her_main("Sir, if this is about yesterday...", "upset", "closed", "base", "mid", xpos="right", ypos="base")
         dum_[1]"Good morning, Miss Granger."
         call her_main("It's not like I actually enjoyed it or anything, you know...","annoyed","annoyed")
         dum_[1]"Miss Granger, I found this letter on my desk..."

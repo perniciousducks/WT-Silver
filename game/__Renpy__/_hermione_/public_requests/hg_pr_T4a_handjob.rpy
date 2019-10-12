@@ -43,7 +43,7 @@ label hg_pr_handjob:
         m "Yes, I apologize..."
         call her_main(".........","annoyed","annoyed")
         m "How about we try something less... engaging instead?"
-        call her_main("............","upset","closed")
+        call her_main("............", "upset", "closed", "base", "mid")
         m "I'll be willing to grant \"Gryffindor\" fifty five points."
         m "All I ask in return is..."
         call her_main("..........?","angry","angry", cheeks="blush")
@@ -210,13 +210,13 @@ label hg_pr_handjob_T1_E2:
     her "I asked one if the \"Gryffindor\" boys to let me do \"it\" to him..."
     call her_main("To my surprise he agreed eagerly.", "open", "base", "base", "mid", cheeks="blush")
     m "Shocker..."
-    call her_main("So we hid behind one of those huge tapestries in the east wing...","open","closed")
+    call her_main("So we hid behind one of those huge tapestries in the east wing...", "open", "closed", "base", "mid")
     call her_main("And I... wanked him until he came...","annoyed","angryL")
     her "........."
     call her_main("And I asked him to keep the whole thing a secret, but...", "angry", "base", "base", "mid")
     m "What's the matter, [hermione_name]?"
     m "Doubting the honesty of your fellow \"Gryffindors\"?"
-    call her_main("Of course not, [genie_name].","upset","closed")
+    call her_main("Of course not, [genie_name].", "upset", "closed", "base", "mid")
     call her_main("...........................","angry","down_raised")
     call her_main("Still... Performing this sort of task could really damage my reputation...", "angry", "base", "base", "mid")
     m "Is this your way of asking for a raise, [hermione_name]?"
@@ -252,7 +252,7 @@ label hg_pr_handjob_T1_E3:
     with d3
     pause.5
     $ uni_sperm = False  #Universal sperm.
-    call her_main("","upset","closed")
+    call her_main("", "upset", "closed", "base", "mid")
     hide screen blkfade
     with d3
     pause
@@ -344,7 +344,7 @@ label hg_pr_handjob_T2_E2:
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name], did you complete your task?"
     show screen blktone
-    call her_main("I did, [genie_name]...","open","closed",xpos="right",ypos="base")
+    call her_main("I did, [genie_name]...", "open", "closed", "base", "mid",xpos="right",ypos="base")
     call her_main("Although I am still not sure how I feel about all of this...","annoyed","worriedL")
     m "You personal feelings are of no concern to me, [hermione_name]."
     m "Just tell me how it went."
@@ -398,7 +398,7 @@ label hg_pr_handjob_T2_E2:
     her "I wanked his cock until he came..."
     call her_main("Is that not what you told me to do?","disgust","glance")
     m "That's exactly what I told you to do, [hermione_name]."
-    call her_main("Then I would like to get paid now, please.","annoyed","closed")
+    call her_main("Then I would like to get paid now, please.", "annoyed", "closed", "base", "mid")
     m "........"
     m "Fine..."
 
@@ -412,7 +412,7 @@ label hg_pr_handjob_T2_E3:
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name], did you complete your task?"
     show screen blktone
-    call her_main("Yes, [genie_name]. I did.","open","closed",xpos="right",ypos="base")
+    call her_main("Yes, [genie_name]. I did.", "open", "closed", "base", "mid",xpos="right",ypos="base")
     m "Great. Tell me more."
     call play_music("playful_tension") # SEX THEME.
     call her_main("Well, today was a rather busy day...", "open", "base", "base", "mid")
@@ -427,7 +427,7 @@ label hg_pr_handjob_T2_E3:
     her "I wanked his cock until he came..."
     call her_main("But after that he said: \"Good job, slut\" and just left me there...","disgust","glance")
     call her_main("Such a mean thing to do...","annoyed","angryL")
-    call her_main("It made me feel so cheap... and used.","upset","closed")
+    call her_main("It made me feel so cheap... and used.", "upset", "closed", "base", "mid")
     her "But it gets worse..."
     her "......."
     call her_main("I think on some level it also made me feel good somehow...","angry","down_raised")
@@ -462,7 +462,7 @@ label hg_pr_handjob_T2_E3:
             m "ensuring that \"Gryffindor\" gets the house cup this year."
             m "That's the plan And thanks to your hard work, [hermione_name]..."
             m "All goes according to keik-... I mean, the plan..."
-            call her_main("Hm...","upset","closed")
+            call her_main("Hm...", "upset", "closed", "base", "mid")
 
             $ her_mood += 11
 

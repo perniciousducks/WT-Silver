@@ -297,7 +297,7 @@ label astoria_intro_E2_hermione:
     m "really?"
     call her_main("Those are the only things that can happen with an unforgivable curse, [genie_name]!","angry","worried")
     m "of course... I'm just making sure you were aware of them..."
-    call her_main("It's the first lesson we ever received in defence against the dark arts.","open","closed")
+    call her_main("It's the first lesson we ever received in defence against the dark arts.", "open", "closed", "base", "mid")
     m "Well, one's been cast somewhere on the school."
     m "and I need your help finding out who did it..."
     call her_main("Why do you need my help?","soft","wink")
@@ -310,7 +310,7 @@ label astoria_intro_E2_hermione:
     m "so I'll need you to go undercover to find out who."
     call her_main("really? You're depending on me to find a criminal student within our school?","soft","down_raised",cheeks="blush")
     m "If it's not too much troub--"
-    call her_main("I'd be honoured, [genie_name]!","scream","closed")
+    call her_main("I'd be honoured, [genie_name]!", "scream", "closed", "base", "mid")
     call her_main("It's no doubt the work of one of those despicable \"slytherins\"...","open","angryCl")
     call her_main("Nothing would give me greater pleasure than to see scum like that sent to \'Azkaban\'...","angry","angryL")
 
@@ -333,7 +333,7 @@ label astoria_intro_E2_hermione:
         "\"No one's getting sent to Azkaban...\"":
             m "By the gods, [hermione_name], what's wrong with you?"
             call her_main("What are you talking about, [genie_name]?", "open", "base", "base", "R",cheeks="blush")
-            call her_main("Everyone knows that life in Azkaban is the punishment for casting an unforgivable curse...","open","closed")
+            call her_main("Everyone knows that life in Azkaban is the punishment for casting an unforgivable curse...", "open", "closed", "base", "mid")
             m "I've been given special permission to punish them as I see fit."
             call her_main("Oh...", "annoyed", "base", "base", "mid")
             call her_main("So no Azkaban?", "soft", "base", "base", "R")
@@ -342,7 +342,7 @@ label astoria_intro_E2_hermione:
             m "Only if you find a body..."
             call her_main("yay!","smile","happyCl")
 
-    call her_main("Consider it done, [genie_name]!","open","closed")
+    call her_main("Consider it done, [genie_name]!", "open", "closed", "base", "mid")
 
     call her_walk(action="leave", speed=2)
 
@@ -466,7 +466,7 @@ label astoria_intro_E3:
 
     call her_main("Get in here, Astoria!","annoyed","angryL", ypos="head", flip=True)
     ast "{size=+2}{b}No!{/b}{/size}"
-    call her_main("Do you want to make this worse?","scream","closed", trans="hpunch")
+    call her_main("Do you want to make this worse?", "scream", "closed", "base", "mid", trans="hpunch")
     ast "no..."
     hide screen bld1
     with d3
@@ -553,13 +553,13 @@ label astoria_intro_E3:
                     call her_main("I expected more for this, Professor!","open","angry")
                     m "Take 'em or leave 'em..."
                     call her_main("...","annoyed","angryL")
-                    call her_main("Very well...","open","closed")
+                    call her_main("Very well...", "open", "closed", "base", "mid")
                     $ her_mood += 6
                     $ gryffindor += 10
 
                 "\"You'll get 20.\"":
                     call her_main("...", "annoyed", "base", "base", "R")
-                    call her_main("I suppose that's fair.","open","closed")
+                    call her_main("I suppose that's fair.", "open", "closed", "base", "mid")
                     $ her_mood = 0
                     $ gryffindor += 20
 

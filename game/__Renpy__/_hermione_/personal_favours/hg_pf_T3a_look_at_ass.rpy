@@ -224,7 +224,7 @@ label hg_pr_strip_T2_rear:
     if her_whoring < 18:
         call her_main("....................................","annoyed","annoyed", ypos="head")
     else:
-        call her_main("....................................","base","closed", ypos="head")
+        call her_main("....................................", "base", "closed", "base", "mid", ypos="head")
         call play_music("playful_tension") # SEX THEME.
     call ctc
 
@@ -248,7 +248,7 @@ label hg_pr_strip_T2_admire_rear:
     menu:
         "-\"You have a fantastic ass girl\"-":
             m "you should start wearing shorter skirts to show it off a little..."
-            call her_main(".....................","base","closed", ypos="head")
+            call her_main(".....................", "base", "closed", "base", "mid", ypos="head")
         "-\"Your ass is alright...\"-":
             ">You Look at her ass some more whilst making some disapproving tuts..."
             call her_main(".....................","annoyed","frown", ypos="head")
@@ -262,7 +262,7 @@ label hg_pr_strip_T2_admire_rear:
     if her_whoring < 15 or her_mood > 1:
         call her_main(".............", "annoyed", "base", "base", "mid")
     else:
-        call her_main(".............","base","closed")
+        call her_main(".............", "base", "closed", "base", "mid")
 
     jump end_hg_pf_strip
 
@@ -393,9 +393,9 @@ label hg_pr_strip_T3_admire_rear:
 
     menu:
         "\"Nice little ass you got there.\"":
-            call her_main("","annoyed","closed", ypos="head")
+            call her_main("", "annoyed", "closed", "base", "mid", ypos="head")
             call ctc
-            call her_main("Thank you [genie_name].","base","closed")
+            call her_main("Thank you [genie_name].", "base", "closed", "base", "mid")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("(Maybe he should grab it next time...)","annoyed","annoyed")
 
@@ -412,7 +412,7 @@ label hg_pr_strip_T3_admire_rear:
     if her_mood > 1:
         call her_main(".............", "annoyed", "base", "base", "mid")
     else:
-        call her_main(".............","base","closed")
+        call her_main(".............", "base", "closed", "base", "mid")
 
     jump end_hg_pf_strip
 
@@ -476,7 +476,7 @@ label hg_pr_strip_T3_grope_rear:
         call her_main("Even though I agreed to let you grab me, [genie_name]...","annoyed","angryL", cheeks="blush")
         call her_main("you didn't need to be so rough...","annoyed","angryL", cheeks="blush")
         m "sorry, It was hard to resist..."
-        call her_main("..........","base","closed")
+        call her_main("..........", "base", "closed", "base", "mid")
 
 
     if current_payout < 100:
@@ -549,7 +549,7 @@ label hg_pr_strip_T4_admire_rear:
     menu:
         "\"You have an amazing ass, [hermione_name].\"":
             call her_main("You really think so [genie_name]?", "annoyed", "base", "base", "mid", ypos="head")
-            call her_main("I am glad you like it, [genie_name]...","base","closed")
+            call her_main("I am glad you like it, [genie_name]...", "base", "closed", "base", "mid")
         "\"Your ass is ok... I suppose...\"":
             call her_main("Huh?", "annoyed", "base", "base", "mid", ypos="head")
             call her_main("Does this mean you don't like it, [genie_name]?", "annoyed", "base", "base", "mid")
@@ -783,7 +783,7 @@ label hg_show_ass_cumming:
                 her "It's covered...."
                 m "all because of your ass, [hermione_name]."
                 her "................"
-                call her_main("I need to get dressed...","open","closed")
+                call her_main("I need to get dressed...", "open", "closed", "base", "mid")
                 call ctc
 
                 hide screen hermione_main
@@ -929,8 +929,8 @@ label hg_show_ass_cumming:
         her "My ass is covered though..."
         m "Don't worry, it still looks great, [hermione_name]."
         m "Maybe even better now..."
-        call her_main("Thank you [genie_name].","base","closed")
-        call her_main("although I do need to clean myself up...","annoyed","closed")
+        call her_main("Thank you [genie_name].", "base", "closed", "base", "mid")
+        call her_main("although I do need to clean myself up...", "annoyed", "closed", "base", "mid")
         call ctc
 
         hide screen hermione_main

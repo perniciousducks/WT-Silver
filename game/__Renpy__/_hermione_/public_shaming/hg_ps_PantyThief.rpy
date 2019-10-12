@@ -336,7 +336,7 @@ label hg_ps_get_panties_complete:
                 her "It was quite ordinary really..."
                 her "I spent some time with my classmates..."
                 her "And we had a short \"MRM\" meeting after that..."
-                call her_main("I gave a short speech on \"Why it is wrong to sell sexual favours in exchange for house points\"...","open","closed")
+                call her_main("I gave a short speech on \"Why it is wrong to sell sexual favours in exchange for house points\"...", "open", "closed", "base", "mid")
                 call her_main("I felt bad that I had to give the speech without any underwear on...","annoyed","angryL")
                 hide screen sccg
                 call her_main(xpos="right",ypos="base",trans="fade")
@@ -361,7 +361,7 @@ label hg_ps_get_panties_complete:
                         her "Exactly!"
                         her "We need those points badly..."
                         her "It is not my fault that the system is so corrupted..."
-                        call her_main("I shall remain a symbol of righteousness to my peers, no matter what!","open","closed")
+                        call her_main("I shall remain a symbol of righteousness to my peers, no matter what!", "open", "closed", "base", "mid")
                         call her_main("Can I have my panties back now, please?", "open", "base", "base", "mid")
                         if her_panties_soaked:
                             jump hg_cum_on_panties_response
@@ -373,7 +373,7 @@ label hg_ps_get_panties_complete:
                 $ hg_ps_get_panties.level = 3 #Event hearts level (0-3)
 
                 $ sc34CG(1, 11)
-                call her_main("Another ordinary day at hogwarts...","open","closed",xpos="base",ypos="base")
+                call her_main("Another ordinary day at hogwarts...", "open", "closed", "base", "mid",xpos="base",ypos="base")
                 her "Nothing worth mentioning happened today..."
                 call her_main("Although I have to admit...","annoyed","worriedL")
                 her "It was oddly empowering to have no underwear on..."

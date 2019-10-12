@@ -118,7 +118,7 @@ label hg_pf_grope_T0_fail_repeat:
     call her_main("I've told you before, [genie_name], absolutely not!!","scream","angryCl")
     call her_main("Merlin's beard...","angry","angry")
     m "Please?"
-    call her_main("I'm leaving! Good day, Sir!","soft","closed")
+    call her_main("I'm leaving! Good day, Sir!", "soft", "closed", "base", "mid")
 
     call her_walk(action="leave", speed=2.5)
 

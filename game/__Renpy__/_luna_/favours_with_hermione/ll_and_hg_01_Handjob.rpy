@@ -66,7 +66,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("Of course not! I'm shocked you even have to ask!","annoyed","worriedL")
         call lun_main("So you're comfortable saying that after you've had a sip of some veritaserum?","normal","mad","mad","mid")
         call her_main("!!!", "angry", "wide", "base", "stare")
-        call her_main("O-O-Of course... but as you know, that potion's banned...","open","closed")
+        call her_main("O-O-Of course... but as you know, that potion's banned...", "open", "closed", "base", "mid")
         call lun_main("Not for the illustrious Professor dumbledore!","base","seductive","sad","R")
         call lun_main("Isn't that right sir?","upset","angry","mad","R")
         m "Oh, um yes of course I can get that easily..."
@@ -405,12 +405,12 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("unethical?","angry","down_raised")
         m "Yes, well normally you'd be right, but this is more of a curing of an existing mental condition."
         m "Think about it like I'm trying to cure her of Asperger's disease."
-        call her_main("Actually sir, Asperger's has been reclassified as part of the autism spectrum and is no longer considered it's own disease.","open","closed")
+        call her_main("Actually sir, Asperger's has been reclassified as part of the autism spectrum and is no longer considered it's own disease.", "open", "closed", "base", "mid")
         m "..."
         m "(Of course she'd know that...)"
         m "Well anyway, my point is there's nothing untoward happening."
         call her_main("...","annoyed","angryL")
-        call her_main("Alright then...","open","closed")
+        call her_main("Alright then...", "open", "closed", "base", "mid")
         call her_main("But why is she so mean?","open","worriedCl")
         m "I'm not sure. Maybe that's the true her."
         call her_main("I guess that's not impossible...","annoyed","down")
@@ -429,7 +429,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("What? I have to spend more time with her?", "soft", "wide", "base", "stare")
         call her_main("But she's weird...","open","worriedCl",cheeks="blush")
         m "We can work on that. Besides, don't you want to help out one of your friends?"
-        call her_main("Hmmm, I suppose that you're right [genie_name].","annoyed","closed")
+        call her_main("Hmmm, I suppose that you're right [genie_name].", "annoyed", "closed", "base", "mid")
         call her_main("I can't imagine that the daydreaming Luna would do too well in the real world.", "open", "happy", "base", "mid",cheeks="blush")
         call her_main("and as her friend It's my responsibility to try and save her from that!", "open", "base", "base", "R",cheeks="blush")
         call her_main("!!!", "soft", "wide", "base", "stare")
@@ -709,10 +709,10 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("ah...","base","happyCl","sad","mid")
         call lun_main("amazing...","base","seductive","sad","up")
         call lun_main("I didn't know it was possible for someone to cum so much...","base","base","sad","up")
-        call her_main("well of course you didn't. I'm surprised you were able to make [genie_name] cum at all!","open","closed")
+        call her_main("well of course you didn't. I'm surprised you were able to make [genie_name] cum at all!", "open", "closed", "base", "mid")
         call her_main("what with that shoddy technique of yours...","annoyed","suspicious")
         call lun_main("it's not that bad...","normal","angry","sad","up")
-        call her_main("whatever you have to tell yourself...","open","closed")
+        call her_main("whatever you have to tell yourself...", "open", "closed", "base", "mid")
         call lun_main("...","normal","mad","angry","up")
         call lun_main("fine... i'm not as good at giving hand jobs as you...","normal","suspicious","base","R")
         call lun_main("but that's only because you've spent the entire year in here Whoring yourself out to our headmaster!","normal","suspicious","mad","up")
@@ -771,7 +771,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("What is it anyway? Do you expect me to walk around the school half naked?","upset","suspicious","angry","R")
         call her_main("Of course not...","open","worried")
         call lun_main("then what?","normal","angry","mad","mid")
-        call her_main("In exchange for me teaching you how to be a better lover, I want you to be my study buddy.","open","closed")
+        call her_main("In exchange for me teaching you how to be a better lover, I want you to be my study buddy.", "open", "closed", "base", "mid")
         call lun_main("...","upset","suspicious","angry","mid")
         call lun_main("what?","normal","wide","sad","mid")
         call lun_main("why would you of all people need a study buddy? Aren't your grades perfect?","normal","suspicious","angry","mid")
@@ -799,7 +799,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "alright then, in that case, here's your payment."
         $ gryffindor += hermione_payout
         m "[hermione_payout] points to \'gryffindor\'!"
-        call her_main("thank you [genie_name].","base","closed")
+        call her_main("thank you [genie_name].", "base", "closed", "base", "mid")
         $ luna_gold += luna_payout
         $ gold -= luna_payout
         m "And [luna_payout] gold for Luna."
@@ -1171,7 +1171,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     call her_main("...","annoyed","suspicious")
                     $ gryffindor += 50
                     m "50 points to \'gryffindor\'!"
-                    call her_main("thank you [genie_name]...","base","closed")
+                    call her_main("thank you [genie_name]...", "base", "closed", "base", "mid")
                     call lun_main("...","normal","seductive","base","R")
                     $ luna_gold += 150
                     $ gold -= 150

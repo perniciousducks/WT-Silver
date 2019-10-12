@@ -163,7 +163,7 @@ label hg_pf_handjob_T1_intro_E2:
     call her_main("You have asked me that already, [genie_name].","disgust","glance")
     m "Ah, that's right."
     m "Well, I want you to play with my cock again."
-    call her_main("[genie_name], you are being vulgar again...","upset","closed")
+    call her_main("[genie_name], you are being vulgar again...", "upset", "closed", "base", "mid")
     m "Fine, fine."
     m "[hermione_name], I would like to buy another favour from you today."
     call her_main("Of course, [genie_name].","annoyed","angryL")
@@ -453,7 +453,7 @@ label hg_pf_handjob_1:
             call bld
             m "Very good..."
             m "Now touch it with your tongue."
-            call her_main("??!","open_tongue","closed")
+            call her_main("??!", "open_tongue", "closed", "base", "mid")
             m "That's the last thing I will be asking of you today."
             call her_main("............")
             call nar(">You feel the tip of Hermione's tongue warily rubbing against the head of your cock...")
@@ -633,7 +633,7 @@ label hg_pf_handjob_2:
             call her_main("Oh, that's right...")
             call her_main("I need to compliment your penis! I completely forgot about that!","angry","worriedCl", emote="05")
             m "Well, you don't have to--"
-            call her_main("[genie_name], let me be honest with you...","upset","closed")
+            call her_main("[genie_name], let me be honest with you...", "upset", "closed", "base", "mid")
             m "Yes?"
             call her_main("You have the biggest penis I have ever seen!","smile","angry")
             m "Well I suppo--"
@@ -665,7 +665,7 @@ label hg_pf_handjob_2:
             call her_main("Excuse me?", "open", "base", "base", "mid")
             call her_main("Oh, that's right! I'm supposed to degrade myself, right?","annoyed","suspicious")
             m "Well, you don't have to, but..."
-            call her_main("That's alright, I don't mind.","upset","closed")
+            call her_main("That's alright, I don't mind.", "upset", "closed", "base", "mid")
             call her_main("Alright then! I am a whore!", "base", "base", "base", "mid")
             m "Good. Glad we established that."
             m "Now I want you to say..."
@@ -804,7 +804,7 @@ label hg_pf_handjob_2_continue:
         "{size=-4}\"Sometimes I get lonely and let my dog mount me.\"{/size}":
             call her_main("What?!", "angry", "wide", "base", "stare")
             call her_main("That's disgusting.","annoyed","suspicious")
-            call her_main("Dogs carry {size=+5}STD{/size}s, [genie_name].","open","closed")
+            call her_main("Dogs carry {size=+5}STD{/size}s, [genie_name].", "open", "closed", "base", "mid")
             m "Actually, human and canine {size=+5}STD{/size}s are species specific..."
             m "Means that they can only be spread to the same species."
             call her_main("............","open","suspicious")
@@ -951,7 +951,7 @@ label hg_pf_handjob_2_cumming:
             m "Would keep your clothes clean."
 
             if hg_blowjob.trigger == False: # Hasn't done blowjobs yet.
-                call her_main("With all due respect [genie_name]...","upset","closed")
+                call her_main("With all due respect [genie_name]...", "upset", "closed", "base", "mid")
                 call her_main("Not for the meagre 45 points...","angry","wink")
                 call her_main("Speaking of which. Can I get may payment now please?")
             else:
@@ -1004,7 +1004,7 @@ label hg_pf_handjob_2_cumming:
             m "What?"
             call her_main("You came all over me, [genie_name]...","scream","worriedCl")
             call her_main("What a mess...","angry","down_raised")
-            call her_main("[genie_name], you should have warned me.","upset","closed")
+            call her_main("[genie_name], you should have warned me.", "upset", "closed", "base", "mid")
             m "It's your fault, [hermione_name]!"
             call her_main("My fault?", "angry", "base", "base", "mid")
             m "Yes! You got me going too well..."

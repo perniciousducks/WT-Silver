@@ -1239,7 +1239,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=6)
     m "Speaking of..."
     $ lunCG(pos=13)
-    call her_main("oh...","smile","concerned")
+    call her_main("oh...", "smile", "narrow", "worried", "mid_soft")
     $ lunCG(pos=8)
     call her_main("What will it be today then [genie_name]?","smile","suspicious")
     $ lunCG(pos=14)
@@ -1252,7 +1252,7 @@ label ll_pf_blowjob_T1_summon:
     m "I love your enthusiasm... but lets just start with a nice look at your tits..."
     $ lunCG(pos=15)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
-    call her_main("Oh... alright then...","soft","concerned")
+    call her_main("Oh... alright then...", "soft", "narrow", "worried", "mid_soft")
 
     call play_music("playful_tension") # SEX THEME.
     hide screen blkfade

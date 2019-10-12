@@ -597,13 +597,13 @@ label ball_ending_E2:
     m "The dress? No, no that's not why I am here."
     call her_main("It is fine, sir. I do not mind.","soft","glanceL",cheeks="blush")
     m "Listen to me, girl! I am not who you think--"
-    call her_main("Please, sir, let me suck on your cock a little.","open_tongue","concerned",cheeks="blush")
+    call her_main("Please, sir, let me suck on your cock a little.", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
     g4 "Gh--!!!"
-    call her_main("Just a little will do. Please. I'm begging you...","open_tongue","concerned",cheeks="blush")
+    call her_main("Just a little will do. Please. I'm begging you...", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
     g4 "Damn you, you damn witch!"
     g4 "Stop this! I really need to talk to you!"
     call her_main("Well of course, sir.","base","glance",cheeks="blush")
-    call her_main("Put your dick in my mouth and talk to me.","open_tongue","concerned",cheeks="blush")
+    call her_main("Put your dick in my mouth and talk to me.", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
     call her_main("Talk dirty to me...")
     g4 "*growl!*"
     m "*Sigh....*"
@@ -2046,14 +2046,14 @@ label ball_ending_E2:
         call her_main("I am... not sure...")
         call her_main("What...? What is.......", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Come on, girl. Pull yourself together!"
-        call her_main("I... I... What?","open","concerned",cheeks="blush",tears="mascara_soft")
+        call her_main("I... I... What?", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara_soft")
         call her_main("I don't understand... I...")
         m "Hm..."
         m "I will be leaving now."
         call her_main("Leaving...?", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Yes. Maybe you should too..."
         m "Go clean yourself up and rest or something."
-        call her_main("But I can't leave... No... I must...","open","concerned",cheeks="blush",tears="mascara_soft")
+        call her_main("But I can't leave... No... I must...", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara_soft")
         call her_main("The formal dance... I must...")
         m "A dance? You can't dance in this condition."
         call her_main("No! I am the ball queen! I must....", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
@@ -2265,7 +2265,7 @@ label ball_ending_E2:
         g4 "Damn you girl! Will you let me finish!?"
         call her_main("Of course sir...","base","glance",cheeks="blush")
         m "Huh?"
-        call her_main("Just make sure you don't hit my dress, alright?","open_tongue","concerned",cheeks="blush")
+        call her_main("Just make sure you don't hit my dress, alright?", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
         g4 "*Low growl!*"
         g4 "Come here, whore!"
         g4 "Suppose I might as well fuck you one last time!"
@@ -2445,7 +2445,7 @@ label ball_ending_E2:
         ### INSERTION ###
 
         call her_main("Ah...","open","surprised",cheeks="blush",tears="soft", ypos="head")
-        call her_main("Sir, no. You must listen to me--","open_tongue","concerned",cheeks="blush")
+        call her_main("Sir, no. You must listen to me--", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
@@ -2695,7 +2695,7 @@ label ball_ending_E2:
         call her_main("...orgasm so hard...")
         call her_main("Sir... That thing you wanted to discuss with me...", "soft", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Yeah... You know what? I actually wrote you a little letter on the matter..."
-        call her_main("A letter?","open","concerned",cheeks="blush",tears="mascara_soft")
+        call her_main("A letter?", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara_soft")
         m "Yeah... It should explain a couple of things..."
         call her_main("Oh... Alright...", "silly", "narrow", "annoyed", "up",cheeks="blush",tears="mascara_soft")
         m "Just read it tomorrow morning..."

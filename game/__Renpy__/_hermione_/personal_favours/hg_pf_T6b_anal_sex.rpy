@@ -277,12 +277,12 @@ label hg_anal_sex_1:
 
             call her_main("I apologize for saying that I hate you, [genie_name]...", "base", "base", "base", "R",cheeks="blush",tears="mascara",ypos="head",flip=False)
             call her_main("And your cock is not nasty...",cheeks="blush",tears="mascara")
-            call her_main("I don't know what's gotten into me...","grin","concerned",cheeks="blush",tears="mascara")
+            call her_main("I don't know what's gotten into me...", "grin", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
             g9 "My dick!"
-            call her_main("I suppose it's as when you call me a \"whore\". I know you actually don't mean it...","grin","concerned",cheeks="blush",tears="mascara")
+            call her_main("I suppose it's as when you call me a \"whore\". I know you actually don't mean it...", "grin", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
             m "Yeah, sure..."
             m "Does it still hurt?"
-            call her_main("A little...","open","concerned",cheeks="blush",tears="mascara")
+            call her_main("A little...", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
             call her_main("I also feel full and warm inside...", "grin", "closed", "base", "mid",cheeks="blush",tears="mascara")
             m "You plan to keep it in? My cum I mean."
             call her_main("Yes...","grin","glance",cheeks="blush",tears="mascara")
@@ -435,7 +435,7 @@ label hg_anal_sex_2:
             m "Are you kidding me?!"
             m "Young, hot and slutty. You could have any man you want!"
             m "Or a wizard or whatever you are into..."
-            call her_main("I think you may be right, [genie_name].","base","concerned",cheeks="blush",tears="soft")
+            call her_main("I think you may be right, [genie_name].", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
             m "I know I am right, whore."
             m "Now wiggle that little ass of yours a little."
             call her_main("Like this?","silly","worried",cheeks="blush",tears="soft")

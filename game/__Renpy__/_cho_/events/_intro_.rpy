@@ -693,7 +693,7 @@ label cho_intro_E3:
             "\"I don't think so!\"":
                 call her_main("What?... Why?!", "shock", "wide", "base", "stare",trans="hpunch")
                 m "Because you are being unreasonable."
-                call her_main("But you made it sound like it was something important to you!","disgust","concerned")
+                call her_main("But you made it sound like it was something important to you!", "disgust", "narrow", "worried", "mid_soft")
                 m "And you believe that I'd just throw point at you because of that?"
                 call her_main("{size=-4}It was worth a try...{/size}","annoyed","down")
                 m "Try to remember this, Miss Granger. You can't rip me off that easily."

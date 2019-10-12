@@ -1858,7 +1858,7 @@ label hg_pf_facefuck_1: # Bondage facefuck scene
     m "I think it's time for another blowjob, [hermione_name]."
     call her_main("Of course [genie_name]...","base","down_raised", xpos="mid", ypos="base")
     m "Not just any blowjob though."
-    call her_main("Oh? What's so special about this one?","soft","concerned")
+    call her_main("Oh? What's so special about this one?", "soft", "narrow", "worried", "mid_soft")
     m "Nothing much... You will have to have your hands tied behind your back though."
     her "WHAT? WHY?"
     m "Just to make sure you don't try to interfere..."

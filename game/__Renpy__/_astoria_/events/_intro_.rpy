@@ -501,7 +501,7 @@ label astoria_intro_E3:
     call her_main("What's going to be her punishment, Sir?", "soft", "base", "angry", "mid")
     call ast_main("Punishment? I didn't do anything!","clench","base","worried","mid")
     call her_main("You know very well what you did!", "angry", "closed", "angry", "mid")
-    call her_main("Sir, I overheard her boasting about it in the library - to a group of \"Slytherins.\"","annoyed","concerned")
+    call her_main("Sir, I overheard her boasting about it in the library - to a group of \"Slytherins.\"", "annoyed", "narrow", "worried", "mid_soft")
     call her_main("By the sounds of it, she used Imperio to control another student!", "annoyed", "base", "base", "mid")
     call ast_main("I did not!","annoyed","base","worried","L")
 

@@ -666,12 +666,12 @@ label hermione_change:
             call her_main("I like it...","soft","glanceL",cheeks="blush")
             call her_main("","base","glanceL",cheeks="blush")
         elif her_whoring >= 19:
-            call her_main("Yes, [genie_name].","base","concerned",cheeks="blush")
+            call her_main("Yes, [genie_name].", "base", "narrow", "worried", "mid_soft",cheeks="blush")
     elif temp_name == "Bad Girl":
         if her_whoring >=9 and her_whoring < 11:
             call her_main("I guess I am a bit.","soft","down")
             call her_main("I did fail that test after all...","disgust","down_raised")
-            call her_main("","normal","concerned")
+            call her_main("", "normal", "narrow", "worried", "mid_soft")
             call her_main("", "normal", "base", "base", "mid")
         elif her_whoring >=11 and her_whoring < 17:
             call her_main("I may be a little bit naughty at times.", "base", "happy", "base", "R",cheeks="blush")
@@ -751,7 +751,7 @@ label hermione_change:
         if her_whoring >=19 and her_whoring < 21:
             call her_main("Do you really have to call me that, [genie_name]?","disgust","worried")
             call her_main("Referring to me as a bitch or a slut for your own amusement is one thing...","mad","down",cheeks="blush")
-            call her_main("You're aware of how much I loathe Slytherin.","open","concerned")
+            call her_main("You're aware of how much I loathe Slytherin.", "open", "narrow", "worried", "mid_soft")
             call her_main("And I'm definitely not a whore...", "soft", "closed", "base", "mid")
             her "I refuse!"
             menu:
@@ -853,19 +853,19 @@ label hermione_change:
             call her_main("", "disgust","worriedCl", tears="mascara")
             menu:
                 "-Try to calm her down-":
-                    call her_main("", "disgust","concerned", tears="mascara")
+                    call her_main("", "disgust", "narrow", "worried", "mid_soft", tears="mascara")
                     m "Now, now, there's no need to cry."
                     m "Do you know why I call you these things miss granger?"
-                    call her_main("...no?", "disgust","concerned", tears="mascara")
+                    call her_main("...no?", "disgust", "narrow", "worried", "mid_soft", tears="mascara")
                     m "It's so that you'll come to know that words are just words and they only hurt if you let them."
-                    call her_main("...", "normal","concerned", tears="mascara")
+                    call her_main("...", "normal", "narrow", "worried", "mid_soft", tears="mascara")
                     m "Once you truly understand that nothing will hold you back."
                     g9 "And you'll be at your utmost potential."
-                    call her_main("You really think so?", "open","concerned", tears="mascara")
-                    call her_main("", "normal","concerned", tears="mascara")
+                    call her_main("You really think so?", "open", "narrow", "worried", "mid_soft", tears="mascara")
+                    call her_main("", "normal", "narrow", "worried", "mid_soft", tears="mascara")
                     m "Yes, in fact I do."
                     call her_main("Thank you, [genie_name].", "normal", "closed", "base", "mid", tears="mascara")
-                    call her_main("I can do it, I know I can.", "base","concerned", tears="mascara")
+                    call her_main("I can do it, I know I can.", "base", "narrow", "worried", "mid_soft", tears="mascara")
                     $ her_mood = 0
                 "-Tell her she deserves it-":
                     g4 "You deserve to be called a slut, a whore and a mudblood... just look at you."
@@ -875,10 +875,10 @@ label hermione_change:
                     call her_main("...", "open","worriedCl", tears="mascara_soft_blink")
                     call her_main("", "disgust","worriedCl", tears="mascara_soft")
                     g4 "Bending over onto my desk and let yourself be taken like a some common harlot..."
-                    call her_main("I...", "disgust","concerned", tears="mascara_soft")
+                    call her_main("I...", "disgust", "narrow", "worried", "mid_soft", tears="mascara_soft")
                     g4 "Letting your headmaster thrust himself upon you and taking my load like your life depended on it..."
                     call her_main("...", "normal","worriedCl", tears="mascara_soft")
-                    call her_main("", "normal","concerned", tears="mascara")
+                    call her_main("", "normal", "narrow", "worried", "mid_soft", tears="mascara")
                     m "I bet you don't even care about the points anymore..."
                     call her_main("Well...", "normal","down", tears="mascara")
                     call her_main("", "normal", "narrow", "annoyed", "up", tears="mascara")

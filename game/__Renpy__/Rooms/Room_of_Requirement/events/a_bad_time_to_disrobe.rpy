@@ -155,8 +155,8 @@ label a_bad_time_to_disrobe_part_1:
 
     call her_main("I'm not done!","open","down", tears="mascara")
     m "Sorry, you carry on my dear!"
-    call her_main("I ran out and grabbed what I could of my clothes... I think the boy may have seen me.","soft","concerned", tears="mascara")
-    call her_main("Professor.... I'm beginning to have second thoughts about this cloak idea.","soft","concerned", tears="mascara")
+    call her_main("I ran out and grabbed what I could of my clothes... I think the boy may have seen me.", "soft", "narrow", "worried", "mid_soft", tears="mascara")
+    call her_main("Professor.... I'm beginning to have second thoughts about this cloak idea.", "soft", "narrow", "worried", "mid_soft", tears="mascara")
     m "The boy didn't see your face, that's what matters."
     m "You could've draped the cloak around your head and it would be enough."
     call her_main("Professor!","shock","wide_stare", tears="mascara")

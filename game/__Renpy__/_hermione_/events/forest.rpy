@@ -851,7 +851,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     hide screen blkfade
     with d3
 
-    call her_main("Wait, where's Myrtle?","angry","concerned")
+    call her_main("Wait, where's Myrtle?", "angry", "narrow", "worried", "mid_soft")
     m "Oh, she left as soon as I gave her the OK to blab on about you."
     call her_main("WHAT?", "scream", "wide", "base", "stare")
     call her_main("you mean she didn't see any of...", "upset", "narrow", "annoyed", "mid")

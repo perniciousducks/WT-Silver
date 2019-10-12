@@ -311,7 +311,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("...","grin","dead",cheeks="blush",tears="messy")
     hide screen hermione_main
     m "Well aren't you going to at least be grateful."
-    call her_main("...Thank you [genie_name].","base","concerned",cheeks="blush",tears="soft")
+    call her_main("...Thank you [genie_name].", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
     hide screen hermione_main
     m "Thank you for what?"
     call her_main("Thank you for ... cumming in my pussy.","grin","dead",cheeks="blush",tears="messy")
@@ -330,7 +330,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     $ hermione_zorder = 5
     ">Hermione gets to her feet"
     m "Well seeing as how you said thank you I have a present for you."
-    call her_main("A present?","open","concerned",cheeks="blush",tears="mascara")
+    call her_main("A present?", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
     m "Yes, it's a lovely piece of jewellery to commemorate your self-acceptance."
 
     #sQuest "whore" collar reward

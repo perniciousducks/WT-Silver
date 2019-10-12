@@ -429,7 +429,7 @@ label hg_wager_bj:
                                 call u_pause_ani
                                 call her_main("So, no rematch then?","crooked_smile","glance")
                                 g9 "As I said, at least not for another 30 minutes..."
-                                call her_main("So I assume I'm not losing those points anymore?","open","concerned")
+                                call her_main("So I assume I'm not losing those points anymore?", "open", "narrow", "worried", "mid_soft")
                                 m "Definitely not..."
                                 if daytime:
                                     call her_main("Great, good bye for now then [genie_name]...", "base", "base", "base", "mid")

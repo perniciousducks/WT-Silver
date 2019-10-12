@@ -87,7 +87,7 @@ label equip_makeup:
                                 # call her_main("Mmmm, thank you [genie_name]...", "grin", "narrow", "annoyed", "up")
                             # "-Face-":
                                 # $ makeup_choice = "fake_cum_3"
-                                # call her_main("Oh. Alright then [genie_name]...","upset","concerned")
+                                # call her_main("Oh. Alright then [genie_name]...", "upset", "narrow", "worried", "mid_soft")
 
                         # call her_main("{size=-5}(It's a shame this isn't real...){/size}","base","down")
                         # call her_main("Fine, I'll do it [genie_name].","base","glance")

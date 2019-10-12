@@ -65,7 +65,7 @@ label maid_responses:
                 m "What do you mean, [hermione_name]?"
                 call her_main("It's so degrading... I have to clean other students rooms!","open","down")
                 m "You can stop any time."
-                call her_main("I can?","soft","concerned")
+                call her_main("I can?", "soft", "narrow", "worried", "mid_soft")
                 g9 "Certainly, I'll just get one of those Slytherin floozies that you are always on about."
                 m "I'm sure that they'd jump at the chance to make some points for their house."
                 m "They'd probably even do it for next to nothing, if not free."
@@ -469,7 +469,7 @@ label job_5:
     if first_time_cardgame_work:
         call her_main("But... why do you want me to help them promote their shop?", "annoyed", "closed", "base", "mid")
         g9 "That is my business."
-        call her_main("What do you want me to tell them then?","open","concerned")
+        call her_main("What do you want me to tell them then?", "open", "narrow", "worried", "mid_soft")
         m "Just ask them if they have a need for any help promoting their card game."
         g9 "If they're as business minded as I assume then there's no way they'd say no."
         g9 "And make sure you ask them for payment."
@@ -670,7 +670,7 @@ label hermione_helping_selling_cards:
         $ uni_sperm = True
         call her_main("","cum","dead")
         m "What happened to you?"
-        call her_main("What do you mean...","open","concerned")
+        call her_main("What do you mean...", "open", "narrow", "worried", "mid_soft")
         call her_main("Oh, that...","base","down", cheeks="blush")
         m "Yes, that..."
         call her_main("There's a good explanation for this.","normal","down_raised", cheeks="blush")

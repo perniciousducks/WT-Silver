@@ -381,12 +381,12 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
                 call her_main("I apologize for saying that I hate you, captain...", "base", "base", "base", "R",cheeks="blush",tears="mascara",ypos="head")
                 call her_main("And your canon is not rusty...",cheeks="blush",tears="mascara")
-                call her_main("I don't know what's gotten into me...","grin","concerned",cheeks="blush",tears="mascara")
+                call her_main("I don't know what's gotten into me...", "grin", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
                 g9 "My canonfire!"
-                call her_main("I suppose it's when you call me a \"wench\". I know that it's just roleplay...","grin","concerned",cheeks="blush",tears="mascara")
+                call her_main("I suppose it's when you call me a \"wench\". I know that it's just roleplay...", "grin", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
                 m "Aye, sure..."
                 m "Does it still hurt?"
-                call her_main("A little...","open","concerned",cheeks="blush",tears="mascara")
+                call her_main("A little...", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
                 call her_main("I also feel full and warm inside...", "grin", "closed", "base", "mid",cheeks="blush",tears="mascara")
                 m "You plan to keep it in? My cum I mean."
                 call her_main("Aye..","grin","glance",cheeks="blush",tears="mascara")
@@ -571,7 +571,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Ye pullin' me pegleg?!"
                 m "Young, hot 'n slutty. Ye could 'ave any scallywag ye wants!"
                 m "Or a landlubber or whatever ye be after..."
-                call her_main("I reckon ye may be right, captain.","base","concerned",cheeks="blush",tears="soft")
+                call her_main("I reckon ye may be right, captain.", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
                 m "I always be right, wench."
                 m "Now wiggle that wee arse o' yers a wee."
                 call her_main("Like this?","silly","worried",cheeks="blush",tears="soft")

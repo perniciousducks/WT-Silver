@@ -678,7 +678,7 @@ label hg_pf_talk_tonks:
             call ton_main("Any other incidents, Miss Granger?","open","base","raised","L")
             call her_main("More than I could count!", "open", "closed", "angry", "mid")
             call ton_main("","angry","base","base","mid")
-            call her_main("I'm almost certain one of the girls wasn't wearing any underwear in class - which is completely unhygienic.","angry","concerned")
+            call her_main("I'm almost certain one of the girls wasn't wearing any underwear in class - which is completely unhygienic.", "angry", "narrow", "worried", "mid_soft")
             if not hermione_wear_panties:
                 m "(Is she even wearing any herself right now?...)"
             call her_main("It was if a snail had dragged themselves across one of the seats.", "annoyed", "base", "base", "R", cheeks="blush")
@@ -795,7 +795,7 @@ label hg_pf_talk_tonks:
     call ton_main("Ah, yes... yes.","open","closed","sad","mid")
     call ton_main("... Wait, what?","angry","base","worried","mid")
     g9 "..."
-    call her_main("*Ugh!*... I assumed you read through the initial letter more thoroughly...","open","concerned")
+    call her_main("*Ugh!*... I assumed you read through the initial letter more thoroughly...", "open", "narrow", "worried", "mid_soft")
     if masturbating:
         m "(And yet you're still quick to whore yourself out to your headmaster...)"
     else:
@@ -1059,7 +1059,7 @@ label hg_pf_talk_tonks:
 
                 "\"Tonks isn't some kind of snitch\"":
                     m "I'm sure we can take Miss Tonks by her word."
-                    call her_main("But...","disgust","concerned")
+                    call her_main("But...", "disgust", "narrow", "worried", "mid_soft")
                     m "I'm sure Miss Tonks would be happy to provide additional points, as you'd basically be providing a favour for us both."
                     call ton_main("*Hmmm* Oh yes, I'd love to be of help for the \"Gryffindor\" house.","horny","base","upset","mid", hair="horny")
                     call her_main("Okay then, I want an additional 5 points, in that case.", "annoyed", "base", "base", "mid")

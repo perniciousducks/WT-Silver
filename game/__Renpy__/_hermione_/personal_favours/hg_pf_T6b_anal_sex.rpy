@@ -13,7 +13,7 @@ label hg_anal_sex_1:
     m "How familiar you are with the term \"Anal Sex\"?"
     call her_main("What?!","soft","shocked")
     m "I asked you a question..."
-    call her_main("90 house points...","annoyed","annoyed")
+    call her_main("90 house points...", "annoyed", "narrow", "annoyed", "mid")
     m "Seriously?"
     call her_main("Yes!","mad","worriedCl")
     call her_main(".............................","disgust","glance")

@@ -204,7 +204,7 @@ label hermione_random_duel:
         call her_main("You've already challenged me though...", "open", "happy", "base", "R")
         call her_main("and I lost.","annoyed","down")
         g9 "What if we made it a wager..."
-        call her_main("Like gambling? No thank you!","clench","annoyed")
+        call her_main("Like gambling? No thank you!", "clench", "narrow", "annoyed", "mid")
         m "It's not gambling, just a friendly house point wager..."
         call her_main("Sounds like gambling to me...","normal","suspicious")
         m "So, how about it?"

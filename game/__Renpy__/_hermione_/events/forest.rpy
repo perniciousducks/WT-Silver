@@ -346,7 +346,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     ">Hermione frantically looks to the cloudy sky, unable to even glimpse the moon through the impenetrable greyness."
     call her_main("Oh... um...", "open", "happy", "base", "R")
     m "It's alright for you to admit that you're a dirty little cumslut, miss granger."
-    call her_main("It's not like that!","upset","annoyed")
+    call her_main("It's not like that!", "upset", "narrow", "annoyed", "mid")
     call her_main("{size=-10}I just like sucking your dick, OK...{/size}","upset","glanceL")
     m "So you don't want me to cover you in cum like the cumslut you are?"
     call her_main("...","base","down")
@@ -854,7 +854,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     call her_main("Wait, where's Myrtle?","angry","concerned")
     m "Oh, she left as soon as I gave her the OK to blab on about you."
     call her_main("WHAT?", "scream", "wide", "base", "stare")
-    call her_main("you mean she didn't see any of...","upset","annoyed")
+    call her_main("you mean she didn't see any of...", "upset", "narrow", "annoyed", "mid")
     call her_main("(I got my hair all sticky for nothing...)","upset","down")
     m "So are you going to clean yourself up and get dressed?"
     call her_main("I'll get dressed...", "soft", "base", "base", "R")

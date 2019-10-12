@@ -151,9 +151,9 @@ label equip_outfit:
                     # else:
                         # call her_main("Sure, [genie_name]... Just like last time you said that.", "open", "base", "base", "R")
                         # m "(Shit, she's right! I've already used that card.)"
-                        # call her_main("What is it you want, [genie_name]?","clench","annoyed")
+                        # call her_main("What is it you want, [genie_name]?", "clench", "narrow", "annoyed", "mid")
                         # g9 "Could you dress up as my present?"
-                        # call her_main("That again... [genie_name], do you happen to have some sort of... unpacking fetish?","open","annoyed")
+                        # call her_main("That again... [genie_name], do you happen to have some sort of... unpacking fetish?", "open", "narrow", "annoyed", "mid")
                         # m "I've never had a childhood..."
                         # m "Just put this on."
                         # call nar(">You hand her the ribbon.")
@@ -165,7 +165,7 @@ label equip_outfit:
                         # call her_main("Never ask me something like this again!", "angry", "base", "angry", "mid")
                     # else:
                         # call her_main("Typical...", "open", "closed", "base", "mid")
-                        # call her_main("I'm sorry, [genie_name]. But this just sounds like just another one of your silly ideas...","open","annoyed")
+                        # call her_main("I'm sorry, [genie_name]. But this just sounds like just another one of your silly ideas...", "open", "narrow", "annoyed", "mid")
                     # m "But,... my birthday!"
                     # if not birthday_happened:
                         # call her_main("Birthday or not, I would never do such a thing! For anyone!", "scream", "closed", "angry", "mid")
@@ -330,7 +330,7 @@ label equip_outfit:
                         # m "Well, only to me..."
                         # m "I believe you can cover it up with a spell or something..."
                         # call her_main("Oh...","annoyed","down")
-                        # call her_main("You should have told me that first!","annoyed","annoyed")
+                        # call her_main("You should have told me that first!", "annoyed", "narrow", "annoyed", "mid")
                     # else:
                         # g9 "It's great, isn't it!"
                         # call her_main("Not really...","annoyed","down")

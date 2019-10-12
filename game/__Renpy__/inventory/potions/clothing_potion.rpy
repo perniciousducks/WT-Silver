@@ -77,13 +77,13 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         call her_main("Well I started off with potions class as usual when I started to feel like all eyes were on me.","disgust","glance")
         m "I wonder why."
         call her_main("As I was saying I was completing potions class and felt like everyone wouldn't take their eyes off of me.", "annoyed", "narrow", "angry", "R")
-        call her_main("I didn't think anything of it until I was approached by Professor Snape at the end of the lesson.","annoyed","annoyed")
+        call her_main("I didn't think anything of it until I was approached by Professor Snape at the end of the lesson.", "annoyed", "narrow", "annoyed", "mid")
         call her_main("He normally criticises me during potions class. Stuff like getting dosages wrong, things that I know are correct.","annoyed","worriedL")
         m "Back to the story [hermione_name]."
         call her_main("Well when he commented that he liked my outfit I was suspicious. I thought that perhaps he was talking about my shirt until I looked down and saw that everything was see through.","disgust","glance")
         call her_main("But I just ignored him, finished class and ran here.", "annoyed", "narrow", "angry", "R")
         m "You just finished class?"
-        call her_main("Of course, I can't afford to miss potions class. I'm doing poorly enough without missing class.","annoyed","annoyed")
+        call her_main("Of course, I can't afford to miss potions class. I'm doing poorly enough without missing class.", "annoyed", "narrow", "annoyed", "mid")
         m "Well fair enough. You may go now."
         call her_main("Hmmph. Goodbye [genie_name].","annoyed","worriedL")
 

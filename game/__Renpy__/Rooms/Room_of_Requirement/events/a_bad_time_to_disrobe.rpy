@@ -92,7 +92,7 @@ label a_bad_time_to_disrobe_part_1:
     m "..."
     m "I'm sorry miss Granger but you're going to have to do better than this."
     m "I expect better from you by now."
-    call her_main("So, no points then?", "angry", "annoyed")
+    call her_main("So, no points then?", "angry", "narrow", "annoyed", "mid")
     m "No, I know you can do better."
     call her_main("Fine! I'll do better next time. Double points! I'll show you!", "angry", "narrow", "angry", "R")
     m "That's the spirit. Your house will thank you when you beat the Slytherins by the end of the year."
@@ -202,7 +202,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("Oh, do you want me to collect it from somebody?", "open", "base", "base", "mid")
     m "That somebody is you miss Granger..."
     m "You left my cloak at the scene of the crime."
-    call her_main("What crime professor, what have you gotten me into?","upset","annoyed")
+    call her_main("What crime professor, what have you gotten me into?", "upset", "narrow", "annoyed", "mid")
     m "I'm talking about when you went to visit the boys changing room."
     m "Or have you forgotten already?"
     call her_main("{size=7}I've tried to.{/size}","upset","worriedL")
@@ -218,7 +218,7 @@ label a_bad_time_to_disrobe_part_2:
     g9 "Oh, the memories... you must retrieve it for me."
     call her_main("Fine, I'll do it... even though I hold you partly responsible for the situation that lead to me dropping it.", "annoyed", "closed", "angry", "mid")
     m "Great, let's not dwell on the past then."
-    call her_main("...","normal","annoyed")
+    call her_main("...", "normal", "narrow", "annoyed", "mid")
     call her_main("Do you happen to have any idea of where it is?", "open", "base", "base", "mid")
     m "Well, it hasn't been reported as found so unless someone stole it there's only one place it could be."
     call her_main("The boys changing room?","base","down")
@@ -310,7 +310,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("...", "base", "base", "base", "mid", cheeks="blush")
     call her_main("Well, it would've been if I had remembered to lock it.","base","down_raised")
     g9 "Not that smart..."
-    call her_main("Do you want me to continue or not?","annoyed","annoyed")
+    call her_main("Do you want me to continue or not?", "annoyed", "narrow", "annoyed", "mid")
     m "You're the one receiving the points here, I'm just providing the means of earning them."
     call her_main("...","normal","down")
     call her_main("As I was saying...","base","down_raised")

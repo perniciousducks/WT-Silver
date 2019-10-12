@@ -130,7 +130,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
     call her_main("!!!", "scream", "wide", "base", "stare", cheeks="blush")
     call her_main("Ouch! It hurts! *SOB!*","angry","worried", cheeks="blush")
     m "Did you like it though?"
-    call her_main("Did I... \"like it\, [genie_name]..?","annoyed","annoyed")
+    call her_main("Did I... \"like it\, [genie_name]..?", "annoyed", "narrow", "annoyed", "mid")
     call her_main("What girl in her right mind would like to be treated this way?")
     stop music fadeout 1.0
 
@@ -182,7 +182,7 @@ label hg_pf_grope_breasts_T2_continue:
     call her_main("[genie_name], I am only letting you do this to me because-","open","worriedCl")
     m "I know, I know..."
     m "You are starting to sound like a broken record."
-    call her_main("....","annoyed","annoyed")
+    call her_main("....", "annoyed", "narrow", "annoyed", "mid")
 
     call nar(">You let go of the girl's breasts...")
 
@@ -258,7 +258,7 @@ label hg_pf_grope_breasts_T3_naked:
     m "Admit that you enjoy it and I will."
     call her_main("But I don't...","disgust","down_raised")
     call her_main("And if you plan to keep on doing this to me, [genie_name]...")
-    call her_main("...then I think I should leave.","annoyed","annoyed")
+    call her_main("...then I think I should leave.", "annoyed", "narrow", "annoyed", "mid")
     m "Fine, fine..."
 
     jump hg_pf_grope_breasts_T3_continue

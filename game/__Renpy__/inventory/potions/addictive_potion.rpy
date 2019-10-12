@@ -116,7 +116,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
 
     call her_main("At least warn me next time you make me drink your cum, [genie_name].","open","worriedL")
     m "What do you mean next time?"
-    call her_main("Well, you're such a pervert you'll probably try and do this again. At least warn me so it's not such a shock.","annoyed","annoyed")
+    call her_main("Well, you're such a pervert you'll probably try and do this again. At least warn me so it's not such a shock.", "annoyed", "narrow", "annoyed", "mid")
     m "Ok, [hermione_name], I'll make sure to warn you next time."
     call her_main("Is that all then, [genie_name]?", "annoyed", "narrow", "angry", "R")
     m "Yes [hermione_name], that will be all."
@@ -199,7 +199,7 @@ label hg_pp_cumaddict_intro: #Scene where Hermione comes back addicted to your c
     hide screen hermione_main
     call u_play_ani
     her "*Gobble!!* *Gltch!!* *Gobble!!!*"
-    call her_main("","annoyed","annoyed")
+    call her_main("", "annoyed", "narrow", "annoyed", "mid")
     call u_pause_ani
     her "But nothing worked."
     hide screen hermione_main

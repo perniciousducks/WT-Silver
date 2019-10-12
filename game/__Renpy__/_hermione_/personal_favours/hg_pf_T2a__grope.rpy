@@ -196,10 +196,10 @@ label hg_pf_grope_T2_intro_E1:
     m "[hermione_name]..."
     call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "How would you like to earn some house points today?"
-    call her_main("And what would I need to do to earn them?","annoyed","annoyed")
+    call her_main("And what would I need to do to earn them?", "annoyed", "narrow", "annoyed", "mid")
     m "Oh nothing too out of the ordinary."
     m "You just stand here while I grope you for a bit..."
-    call her_main("[genie_name]... I'd prefer it if you wouldn't make me such offers...","annoyed","annoyed")
+    call her_main("[genie_name]... I'd prefer it if you wouldn't make me such offers...", "annoyed", "narrow", "annoyed", "mid")
     m "Why? Too hard to resist?"
     her "Nothing like that, [genie_name]."
     m "Well, how about you come closer and bare your tits for me...?"
@@ -246,7 +246,7 @@ label hg_pf_grope_T2_E1:
     m "[hermione_name]..."
     call her_main("[genie_name]?", "base", "base", "base", "mid")
     m "How would you like to earn some house points today?"
-    call her_main("And what would I need to do to earn them?","annoyed","annoyed")
+    call her_main("And what would I need to do to earn them?", "annoyed", "narrow", "annoyed", "mid")
     g9 "Get squeezed!"
     call her_main("....................................", "annoyed", "narrow", "angry", "R")
 

@@ -143,7 +143,7 @@ label hg_pp_polyjuice_T1_intro:
     m "I have no idea. The potion I gave you was supposed to turn you into a different girl."
     call her_main("What!? You didn't use polyjuice potion did you [genie_name]?", "shock", "wide", "base", "stare")
     m "What's that?"
-    call her_main("There's no point playing dumb [genie_name].","annoyed","annoyed")
+    call her_main("There's no point playing dumb [genie_name].", "annoyed", "narrow", "annoyed", "mid")
     call her_main("Well at least I know that it will wear off by morning.", "annoyed", "narrow", "angry", "R")
 
     if her_whoring >= 17:
@@ -332,7 +332,7 @@ label hg_pp_polyjuice_T1_introCC:
         m "I have no idea. The potion I gave you was supposed to turn you into a different girl."
         call her_main("What!? You didn't use polyjuice potion did you [genie_name]?", "shock", "wide", "base", "stare")
         m "What's that?"
-        call her_main("There's no point playing dumb [genie_name].","annoyed","annoyed")
+        call her_main("There's no point playing dumb [genie_name].", "annoyed", "narrow", "annoyed", "mid")
         call her_main("Well at least I know that it will wear off by morning.", "annoyed", "narrow", "angry", "R")
 
 

@@ -108,7 +108,7 @@ label chit_chat:
         elif one_of_ten == 10:
             call her_main("The \"Autumn Ball\" is still several months away...", "open", "closed", "angry", "mid")
             call her_main("But some girls are already discussing what kind of dress they are going to wear...","open","worried")
-            call her_main("","annoyed","annoyed")
+            call her_main("", "annoyed", "narrow", "annoyed", "mid")
 
 
     ### WHORING LEVEL 03 ###
@@ -233,7 +233,7 @@ label chit_chat:
             call her_main("{size=-4}(Like some sort of prostitute-witch...){/size}","angry","down_raised")
 
         elif one_of_ten == 3:
-            call her_main("What will it be today, sir?","annoyed","annoyed")
+            call her_main("What will it be today, sir?", "annoyed", "narrow", "annoyed", "mid")
 
         elif one_of_ten == 4:
             call her_main("lately I have not been studying nearly as much as I used to...","open","worried")
@@ -272,7 +272,7 @@ label chit_chat:
         if one_of_ten == 1:
             call her_main("Would you like me to show you my breasts today, sir?","open","down")
             call her_main("Yes... I would willingly expose myself to you, professor...", "base", "narrow", "base", "up")
-            call her_main("That's how selfless I am!","annoyed","annoyed")
+            call her_main("That's how selfless I am!", "annoyed", "narrow", "annoyed", "mid")
 
         elif one_of_ten == 2:
             call her_main("I can't help but feel bad for the house elves who do my laundry...", "open", "base", "base", "mid")

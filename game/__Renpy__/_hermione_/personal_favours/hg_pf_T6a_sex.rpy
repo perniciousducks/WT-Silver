@@ -200,7 +200,7 @@ label hg_sex_1:
     m "Relax, [hermione_name]. I'm Just gonna take off your panties."
     call her_main("..............", "angry", "base", "angry", "mid")
     m "Are you ready?"
-    call her_main("No...","annoyed","annoyed")
+    call her_main("No...", "annoyed", "narrow", "annoyed", "mid")
     m "Good girl."
     show screen blkfade
     with d5

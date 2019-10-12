@@ -46,7 +46,7 @@ label hg_pr_sex:
         call her_main("But...", "annoyed", "narrow", "angry", "R")
         her "..................."
         m "If you do this, \"Gryffindor\" will be getting seventy five points tonight."
-        call her_main("Well, then I will do it, [genie_name].","annoyed","annoyed")
+        call her_main("Well, then I will do it, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
         m "Great. See you after your classes then."
         call her_main(".............", "upset", "closed", "base", "mid")
 
@@ -55,7 +55,7 @@ label hg_pr_sex:
         m "I need you to go have sex with another classmate of yours."
         call her_main("Again, [genie_name]?", "angry", "base", "base", "mid")
         m "Yes. And you will get 75 points again as well."
-        call her_main("Well, alright...","annoyed","annoyed")
+        call her_main("Well, alright...", "annoyed", "narrow", "annoyed", "mid")
 
     call her_walk(action="leave", speed=2.5)
 
@@ -154,7 +154,7 @@ label hg_pr_sex_T1_E3:
     call her_main("My panties?","open","down")
     call her_main("I rarely bother to wear them anymore, [genie_name].", "annoyed", "narrow", "angry", "R")
     m "Oh really?"
-    call her_main("Yes... I find not wearing any underwear very empowering.","annoyed","annoyed")
+    call her_main("Yes... I find not wearing any underwear very empowering.", "annoyed", "narrow", "annoyed", "mid")
     m "Good for you, [hermione_name]."
 
     jump end_hg_pr_sex

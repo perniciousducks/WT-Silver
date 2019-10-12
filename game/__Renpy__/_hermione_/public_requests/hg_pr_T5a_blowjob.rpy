@@ -74,7 +74,7 @@ label hg_pr_blowjob:
         m "Go give some lucky boy another blowjob, [hermione_name]."
         call her_main("......Again?","disgust","glance")
         m "Yes, again."
-        call her_main("..........","annoyed","annoyed")
+        call her_main("..........", "annoyed", "narrow", "annoyed", "mid")
 
     else:
         call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -87,7 +87,7 @@ label hg_pr_blowjob:
         m "\"Dedicate today to something you do well\"..."
         call her_main("Something I do well...?", "soft", "base", "base", "R")
         m "Go suck on some cocks, [hermione_name]."
-        call her_main(".....................","annoyed","annoyed") # :(
+        call her_main(".....................", "annoyed", "narrow", "annoyed", "mid") # :(
         m "Report back to me after your classes as usual..."
         call her_main("Of course...", "annoyed", "narrow", "angry", "R")
 
@@ -146,7 +146,7 @@ label hg_pr_blowjob_T1_E1:
     m "..............."
     call her_main("....................................","angry","down_raised")
     m "Did you swallow?"
-    call her_main("...........................","annoyed","annoyed")
+    call her_main("...........................", "annoyed", "narrow", "annoyed", "mid")
     m "[hermione_name], did you swallow the load properly?"
     call her_main("Yes I did, [genie_name].", "angry", "base", "angry", "mid")
     m "Well, I suppose that will do for now..."
@@ -183,7 +183,7 @@ label hg_pr_blowjob_T1_E2:
     her "And should you pay me out of pity..."
     call her_main("Then That would only worsen the insult...", "annoyed", "narrow", "angry", "R")
     m "Hm... In that case, maybe I should pay you anyway..."
-    call her_main("No, [genie_name]. I would not accept it...","annoyed","annoyed")
+    call her_main("No, [genie_name]. I would not accept it...", "annoyed", "narrow", "annoyed", "mid")
     m "Hm... Well, this will be all then."
     her "Have a good night, [genie_name]."
 
@@ -203,7 +203,7 @@ label hg_pr_blowjob_T1_E3:
     m "[hermione_name], how did it go?"
     show screen blktone
     call her_main("I still find the idea of selling a favour like this appalling, [genie_name].", "annoyed", "narrow", "angry", "R",xpos="right",ypos="base")
-    call her_main("But other than that it well surprising well...","annoyed","annoyed")
+    call her_main("But other than that it well surprising well...", "annoyed", "narrow", "annoyed", "mid")
     call play_music("playful_tension") # SEX THEME.
     her "I gave a proper blowjob to this handsome boy from \"Ravenclaw\"..."
     call her_main("And he was such a gentleman about it...","open","down")
@@ -275,7 +275,7 @@ label hg_pr_blowjob_T2_E2:
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("[genie_name], I have been raped.", "scream", "closed", "angry", "mid")
     m "Seriously?"
-    call her_main("Yes, [genie_name].","annoyed","annoyed")
+    call her_main("Yes, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
     her "That nasty boy from \"Slytherin\" raped me..."
     call her_main("Or raped my face rather I suppose...","open","down")
     her "And--"

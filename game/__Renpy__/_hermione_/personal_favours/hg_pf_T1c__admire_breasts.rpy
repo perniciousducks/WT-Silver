@@ -368,7 +368,7 @@ label hg_pf_admire_breasts_T2_intro_E2:
     m "[hermione_name], how would you like to show me your breasts again?"
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("I'd rather not, [genie_name]...","annoyed","annoyed")
+    call her_main("I'd rather not, [genie_name]...", "annoyed", "narrow", "annoyed", "mid")
     m "Are you sure?"
     g9 "You could earn 25 house points for it!"
     call her_main(".............","annoyed","worriedL")

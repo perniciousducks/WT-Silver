@@ -80,9 +80,9 @@ label hat_intro_2: #Bringing in Hermione
     call her_main("Well, surely you've seen her grades [genie_name]...", "open", "closed", "base", "mid")
     call her_main("Suffice to say, she's hardly \"Ravenclaw\" material. She'd probably be better suited to \"Hufflepuff\" as well.","annoyed","suspicious")
     m "Fantastic. Could you please tell her to come to my office later this afternoon?"
-    call her_main("Why? You're not going to ask her for favours are you?","annoyed","annoyed")
+    call her_main("Why? You're not going to ask her for favours are you?", "annoyed", "narrow", "annoyed", "mid")
     m "Nothing of the sort. This is strictly school business."
-    call her_main("...","annoyed","annoyed")
+    call her_main("...", "annoyed", "narrow", "annoyed", "mid")
     call her_main("Fine... Just don't do anything too bad...","annoyed","suspicious")
     m "Scouts honour!"
     call her_main("Well if that's all then, [genie_name], I better head to class.", "open", "closed", "base", "mid")

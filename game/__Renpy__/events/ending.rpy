@@ -3045,7 +3045,7 @@ label ball_ending_E3:
         call play_music("hermione")
         call her_main("Sir, if this is about yesterday...", "upset", "closed", "base", "mid", xpos="right", ypos="base")
         dum_[1]"Good morning, Miss Granger."
-        call her_main("It's not like I actually enjoyed it or anything, you know...","annoyed","annoyed")
+        call her_main("It's not like I actually enjoyed it or anything, you know...", "annoyed", "narrow", "annoyed", "mid")
         dum_[1]"Miss Granger, I found this letter on my desk..."
         dum_[1]"It's addressed to you..."
         call her_main("A letter, sir?", "soft", "base", "base", "mid")

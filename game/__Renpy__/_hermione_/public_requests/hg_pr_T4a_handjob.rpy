@@ -41,7 +41,7 @@ label hg_pr_handjob:
         m "Alright, fine, maybe I really did cross some sort of line this time..."
         call her_main("You think [genie_name]?! You think!!?", "angry", "base", "angry", "mid")
         m "Yes, I apologize..."
-        call her_main(".........","annoyed","annoyed")
+        call her_main(".........", "annoyed", "narrow", "annoyed", "mid")
         m "How about we try something less... engaging instead?"
         call her_main("............", "upset", "closed", "base", "mid")
         m "I'll be willing to grant \"Gryffindor\" fifty five points."
@@ -53,7 +53,7 @@ label hg_pr_handjob:
         call her_main("...","disgust","glance")
         m "Fifty five house points..."
         call her_main("..............", "annoyed", "narrow", "angry", "R")
-        call her_main("I am glad that you came to your senses, [genie_name].","annoyed","annoyed")
+        call her_main("I am glad that you came to your senses, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
         m "Oh, but of course. Thank you for keeping me in check."
         m "Are you up for it then?"
         call her_main("I am willing to give it a try...", "annoyed", "narrow", "angry", "R")
@@ -79,7 +79,7 @@ label hg_pr_handjob:
         m "How about a handjob then?"
         call her_main("...............", "annoyed", "narrow", "angry", "R")
         m "Oh come on. You did it before."
-        call her_main("hm..........","annoyed","annoyed")
+        call her_main("hm..........", "annoyed", "narrow", "annoyed", "mid")
         her "Fifty five house points?"
         m "Naturally."
         call her_main("Well, alright... I'll see what I can do...","angry","down_raised")
@@ -150,7 +150,7 @@ label hg_pr_handjob_T1_E1:
     call her_main("Please, just let me have my points now, [genie_name]...", "open", "base", "base", "mid")
     m "I did not tell you to \"go and touch a boy's penis\", [hermione_name]."
     m "I told you to give one of your classmates a proper handjob."
-    call her_main("Well, yes... that was what I meant of course...","annoyed","annoyed")
+    call her_main("Well, yes... that was what I meant of course...", "annoyed", "narrow", "annoyed", "mid")
     m "Did you make him cum, then?"
     call her_main("[genie_name]?", "open", "base", "base", "mid")
     m "Did his \"wee-wee\" shoot white stuff at you, [hermione_name]?"
@@ -299,7 +299,7 @@ label hg_pr_handjob_T2_E1:
     m "Go on..."
     call her_main("Well, I sort of made a promise to the boy...","open","down")
     her "I promised to meet him after my classes and..."
-    call her_main("...and finish what I have started...","annoyed","annoyed")
+    call her_main("...and finish what I have started...", "annoyed", "narrow", "annoyed", "mid")
     m "I see..."
     m "Did you?"
     call her_main("No, [genie_name]. Not yet...", "angry", "base", "base", "mid")
@@ -422,7 +422,7 @@ label hg_pr_handjob_T2_E3:
     call her_main("And asked him if he wants me to wank him off.", "annoyed", "narrow", "angry", "R")
     her "a Few minutes later I was already stroking his hard cock in the restroom stall..."
     m "How very efficient of you..."
-    call her_main("Thank you, [genie_name].","annoyed","annoyed")
+    call her_main("Thank you, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
     call her_main("So, as I was saying...", "annoyed", "narrow", "angry", "R")
     her "I wanked his cock until he came..."
     call her_main("But after that he said: \"Good job, slut\" and just left me there...","disgust","glance")

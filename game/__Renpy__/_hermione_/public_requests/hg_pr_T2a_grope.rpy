@@ -66,7 +66,7 @@ label hg_pr_grope:
         call her_main("........", "upset", "closed", "base", "mid")
         m "Twenty five house points, [hermione_name]."
         call her_main("[genie_name], it's just...", "annoyed", "narrow", "angry", "R")
-        call her_main("I do not understand why I must do things like that...","annoyed","annoyed")
+        call her_main("I do not understand why I must do things like that...", "annoyed", "narrow", "annoyed", "mid")
         m "To help out your house?"
         call her_main("That's not what I meant...","disgust","glance")
         call her_main("Oh, never mind...", "annoyed", "narrow", "angry", "R")
@@ -304,7 +304,7 @@ label hg_pr_grope_T2_E3:
     call play_music("playful_tension") # SEX THEME.
     call her_main("I don't want to talk about it, [genie_name]...", "annoyed", "narrow", "angry", "R")
     m "What happened, [hermione_name]. Spit it out."
-    call her_main(".................","annoyed","annoyed")
+    call her_main(".................", "annoyed", "narrow", "annoyed", "mid")
     call her_main("But... it's so embarrassing...", "open", "base", "base", "mid")
     call her_main("Do I really have to, [genie_name]?","normal","worriedCl")
     m "Yes, I happen to love embarrassing things!"
@@ -362,7 +362,7 @@ label hg_pr_grope_T3_E1:
     her "I was about to slide it to my lab partner when..."
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Professor Snape snatched it right out of my hand...", "annoyed", "narrow", "angry", "R")
-    call her_main("He then read it out loud before the entire class...","annoyed","annoyed")
+    call her_main("He then read it out loud before the entire class...", "annoyed", "narrow", "annoyed", "mid")
     m "What did the note say?"
     call her_main("Well...","open","down")
     her "It said: \"You can touch my butt if you want. I bet professor Snape would never notice.\""

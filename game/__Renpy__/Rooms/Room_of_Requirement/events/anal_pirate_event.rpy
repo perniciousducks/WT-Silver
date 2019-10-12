@@ -32,7 +32,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         m "How familiar ye be wit' th' term \" Swabbing ye poop deck\"?"
 
 
-        call her_main("90 galleon points...","annoyed","annoyed")
+        call her_main("90 galleon points...", "annoyed", "narrow", "annoyed", "mid")
         m "Wha'?"
         call her_main(".............................","disgust","glance")
         m "Ah, well then lass. 90 galleon points 'tis."

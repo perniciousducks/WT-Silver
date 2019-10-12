@@ -29,12 +29,12 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     m "Mind control? Where's the fun in that? No, this is something much more entertaining."
     call her_main("Well it better happen soon otherwise I'm lea-", "annoyed", "narrow", "angry", "R")
     call nar(">You notice her breasts start to expand ever so slightly.") #Start using facial expressions mixed with Captain Nemo art
-    call her_main("...","annoyed","annoyed")
+    call her_main("...", "annoyed", "narrow", "annoyed", "mid")
     call her_main("As I said, something better happen soon or I'm leaving.","annoyed","worriedL")
     m "I wouldn't worry about it, from the looks of it, it's already started."
     call her_main("Why, what's wrong with me?", "open", "base", "base", "mid")
     m "There's nothing wrong with you. If anything, it's an improvement."
-    call her_main("What is?","annoyed","annoyed")
+    call her_main("What is?", "annoyed", "narrow", "annoyed", "mid")
     call nar(">She starts patting down her body. Checking to see if she has grown any new ears or a tail.")
     call her_main("I don't see what you could be...","open","down")
     call nar(">She grabs her breasts to check them.")
@@ -43,7 +43,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     m "About time you noticed."
     call her_main("Why would you make my breasts bigger? They're already big enough!", "angry", "base", "base", "mid")
     m "You know what they say, can't have too much of a good thing."
-    call her_main("It's the other way around [genie_name].","annoyed","annoyed")
+    call her_main("It's the other way around [genie_name].", "annoyed", "narrow", "annoyed", "mid")
     m "Is it? Well I prefer my version."
     call her_main("Well how big are they supposed to-","angry","down_raised")
     call nar(">Her breast swell up again.")
@@ -67,7 +67,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
             m "I can't promise that, your still in school. A lot of girls don't stop growing until their 30."
             call her_main("You know what I mean [genie_name].", "scream", "base", "angry", "mid",emote="01")
             m "I'm afraid that I don't [hermione_name], now you'd best hurry if you don't want to be late."
-            call her_main("...Yes [genie_name].","annoyed","annoyed")
+            call her_main("...Yes [genie_name].", "annoyed", "narrow", "annoyed", "mid")
 
             call her_walk(action="leave", speed=2)
 
@@ -82,7 +82,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
 
     m "Well that's a matter of personal opinion."
     m "Now how would you like to earn some additional points?"
-    call her_main("I want an extra 40.","annoyed","annoyed")
+    call her_main("I want an extra 40.", "annoyed", "narrow", "annoyed", "mid")
     m "I haven't even told you what I want to-"
     call her_main("If you want to touch my breasts it will be an extra 40 points.", "annoyed", "narrow", "angry", "R")
     m "Deal."
@@ -118,7 +118,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("!!!", "angry", "wide", "base", "stare")
     call her_main("You said that they wouldn't get any bigger! Now how would you explain this?!", "scream", "base", "angry", "mid",emote="01")
     m "Don't worry about that [hermione_name], worry about earning your 40 points."
-    call her_main("Just hurry up.","annoyed","annoyed")
+    call her_main("Just hurry up.", "annoyed", "narrow", "annoyed", "mid")
     menu: #Will add titfuck here
         #"-Suck her nipples-":
             #"asd"

@@ -52,7 +52,7 @@ label hg_pr_kiss:
         m "So... Are you up for it?"
         call her_main("I will see what I can do, [genie_name]...", "annoyed", "narrow", "angry", "R")
         m "Great. See you after your classes then."
-        call her_main("................","annoyed","annoyed")
+        call her_main("................", "annoyed", "narrow", "annoyed", "mid")
 
     elif her_tier < 5:
         m "[hermione_name], forty five house points are up for grabs today!"
@@ -165,7 +165,7 @@ label hg_pr_kiss_T1_E2:
     m "I guess it was embarrassing for you, girl?"
     call her_main("Very much so, [genie_name].", "annoyed", "narrow", "angry", "R")
     m "Did you enjoy it though?"
-    call her_main("*Humph!*...","annoyed","annoyed")
+    call her_main("*Humph!*...", "annoyed", "narrow", "annoyed", "mid")
     m "So you kissed a girl and you liked it?"
     call her_main("Yes...","disgust","glance")
     m "Did your tongues touch?"
@@ -331,7 +331,7 @@ label hg_pr_kiss_T2_E3:
             m "And that is why young girls such as yourself...."
             m "Are often interested in a much older gentleman..."
             call her_main("??!", "angry", "base", "base", "mid")
-            call her_main("That is not what I meant, [genie_name]...","annoyed","annoyed")
+            call her_main("That is not what I meant, [genie_name]...", "annoyed", "narrow", "annoyed", "mid")
 
         "\"You wouldn't understand, girl.\"":
             call her_main("Hm...", "upset", "closed", "base", "mid")
@@ -386,12 +386,12 @@ label hg_pr_kiss_T3_E1:
     m "Hm..."
     m "Don't you think that that's a little bit of prejudice on your part?"
     m "Or shall I say that you are being a \"housist\"?"
-    call her_main("...a \"housist\", [genie_name]?","annoyed","annoyed")
+    call her_main("...a \"housist\", [genie_name]?", "annoyed", "narrow", "annoyed", "mid")
     m "Well, you know... It's like \"sexist\" or \"ageist\"..."
     m "You just put an \"ist\" after something and it automatically becomes a bad thing..."
     call her_main("\"housist\" is not an actual word, [genie_name]...", "soft", "base", "base", "R")
     m "It's not? Well, give it time..."
-    call her_main(".............?","annoyed","annoyed")
+    call her_main(".............?", "annoyed", "narrow", "annoyed", "mid")
     m "\"Housophobic\"...?"
     m "No, wait, I got it!"
     m "\"Housophobe\"!"
@@ -403,10 +403,10 @@ label hg_pr_kiss_T3_E1:
     call her_main("I kissed that girl from \"Slytherin\"...", "open", "base", "base", "mid")
     call her_main("Normally I would never do it, of course...", "annoyed", "narrow", "angry", "R")
     her "Not with someone from that wretched house any way..."
-    call her_main("But she approached me first and practically begged me to do it with her...","annoyed","annoyed")
+    call her_main("But she approached me first and practically begged me to do it with her...", "annoyed", "narrow", "annoyed", "mid")
     call her_main("And today of all days...", "annoyed", "narrow", "angry", "R")
     her "to be honest..."
-    call her_main("She was quite attractive...","annoyed","annoyed")
+    call her_main("She was quite attractive...", "annoyed", "narrow", "annoyed", "mid")
     call her_main("For someone from \"slytherin\" that is...", "upset", "closed", "base", "mid")
     call her_main("I did not ask her why she needed this so desperately...", "open", "closed", "base", "mid")
     her "She was probably just trying to boost her own popularity at my expense..."

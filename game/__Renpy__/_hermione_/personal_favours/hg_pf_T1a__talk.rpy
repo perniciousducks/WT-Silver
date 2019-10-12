@@ -688,7 +688,7 @@ label hg_pf_talk_tonks:
             call ton_main("Actually, let's save that topic for another time...","open","happyCl","base","mid")
             call ton_main("Is there anything else you could tell us about these... naughty \"Slytherin\" girls?","horny","base","angry","mid", hair="horny")
             call her_main("Of course!", "open", "closed", "angry", "mid")
-            call her_main("I could go on for hours about the vile things they've been up to...","annoyed","annoyed")
+            call her_main("I could go on for hours about the vile things they've been up to...", "annoyed", "narrow", "annoyed", "mid")
             call ton_main("I'm not in a rush.","smile","happyCl","base","mid")
             call ton_main("But even if I was, it can wait until later.","horny","base","raised","L")
             call her_main("Well, that girl...{w=0.3} Pansy Parkinson...", "open", "closed", "angry", "mid")
@@ -791,7 +791,7 @@ label hg_pf_talk_tonks:
             call her_main("The \"M.R.M\" is there to provide male students with the same fairness, righteousness, and just benefits that girls are receiving at the school.", "open", "closed", "base", "mid")
             call her_main("I felt its creation was necessary...", "annoyed", "base", "base", "mid")
 
-    call her_main("All this favour trading has been completely unfair to the boys!","open","annoyed")
+    call her_main("All this favour trading has been completely unfair to the boys!", "open", "narrow", "annoyed", "mid")
     call ton_main("Ah, yes... yes.","open","closed","sad","mid")
     call ton_main("... Wait, what?","angry","base","worried","mid")
     g9 "..."

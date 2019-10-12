@@ -364,7 +364,7 @@ label hg_pf_strip_T4_fingering:
             g4 "Well now I have to hear it."
             call her_main("OK... but you have to promise not to tell anyone!", "open", "base", "base", "R", cheeks="blush")
             m "Witcher's honour."
-            call her_main("......","annoyed","annoyed")
+            call her_main("......", "annoyed", "narrow", "annoyed", "mid")
             m "[hermione_name]..."
             call her_main("Alright. If you must know... I'm remembering the time I corrected professor Snape about the ingredients of a Hiccoughing potion.","open","down")
             m "....."

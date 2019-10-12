@@ -92,7 +92,7 @@ label ball_quest_E1:
                 m "What?"
                 call her_main("You are abusing your power, sir. Again!","disgust","glance")
                 m "Seriously? After all those favours you sold me?"
-                call her_main("Those were for the sake of my house, sir.","annoyed","annoyed")
+                call her_main("Those were for the sake of my house, sir.", "annoyed", "narrow", "annoyed", "mid")
                 m "Well this one is for the sake of the \"Autumn prom\"."
                 call her_main("It's the \"Autumn Ball\", sir...", "upset", "closed", "base", "mid")
                 m "Oh, come on..."

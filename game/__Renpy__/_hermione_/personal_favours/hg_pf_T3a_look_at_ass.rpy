@@ -114,7 +114,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         m "Now turn around..."
         call blkfade
 
-        call her_main("","annoyed","annoyed")
+        call her_main("", "annoyed", "narrow", "annoyed", "mid")
         call ctc
         her "...................................."
 
@@ -397,12 +397,12 @@ label hg_pr_strip_T3_admire_rear:
             call ctc
             call her_main("Thank you [genie_name].", "base", "closed", "base", "mid")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("(Maybe he should grab it next time...)","annoyed","annoyed")
+            call her_main("(Maybe he should grab it next time...)", "annoyed", "narrow", "annoyed", "mid")
 
         "\"Hm... I've seen better.\"":
             $ her_mood += 9
             call her_main("Tsk...", "clench", "base", "angry", "mid", ypos="head")
-            call her_main("well in that case Are we done?","open","annoyed")
+            call her_main("well in that case Are we done?", "open", "narrow", "annoyed", "mid")
 
     call nar(">You stare at her ass for a while longer...")
     call ctc

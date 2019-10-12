@@ -44,12 +44,12 @@ label hg_ps_cumslut_Scene_1:
     $ hg_ps_cumslut.inProgress = True
     call her_main("What?!?", "shock", "wide", "base", "stare")
     call her_main("You can't be serious!", "angry", "base", "angry", "mid")
-    call her_main("It's bad enough that I let you cum on me in private!","annoyed","annoyed")
+    call her_main("It's bad enough that I let you cum on me in private!", "annoyed", "narrow", "annoyed", "mid")
     call her_main("But in public?","angry","annoyed",emote="01")
     call her_main("I think I better leave...", "annoyed", "base", "angry", "mid")
     m "Wait, wait, wait."
     m "What about if nobody could see it?"
-    call her_main("Well I suppose that would be alright...","annoyed","annoyed")
+    call her_main("Well I suppose that would be alright...", "annoyed", "narrow", "annoyed", "mid")
     call her_main("But what's the point if they can't see it?","annoyed","worriedL")
     m "You'll know it's there."
     call her_main("Hmmmm...", "annoyed", "narrow", "angry", "R") #Haggle here
@@ -248,7 +248,7 @@ label hg_ps_cumslut_Scene_2:
     $ hg_ps_cumslut.inProgress = True
     call her_main("Again?", "shock", "wide", "base", "stare")
     call her_main("You can not be serious!", "angry", "base", "angry", "mid")
-    call her_main("I already let you do this to me once, isn't that enough?","annoyed","annoyed")
+    call her_main("I already let you do this to me once, isn't that enough?", "annoyed", "narrow", "annoyed", "mid")
     m "It's enough when I say it's enough."
     m "Besides, was it really such an issue last time?"
     call her_main("Well I guess not...", "annoyed", "base", "base", "mid")
@@ -310,7 +310,7 @@ label hg_ps_cumslut_Scene_2:
     call her_main("Can't you just pay me for wearing your cum?","angry","worriedCl",emote="05")
     m "No."
     call nar(">You fell her hands tense around your cock.")
-    call her_main("You're making me choose? Between getting 80 points for doing nothing.","annoyed","annoyed")
+    call her_main("You're making me choose? Between getting 80 points for doing nothing.", "annoyed", "narrow", "annoyed", "mid")
     call her_main("Or getting paid nothing for wearing your cum around the school.","angry","annoyed",emote="01")
     m "Indeed I am [hermione_name]."
     call her_main("{size=-5}Ok...{/size}","disgust","down_raised")

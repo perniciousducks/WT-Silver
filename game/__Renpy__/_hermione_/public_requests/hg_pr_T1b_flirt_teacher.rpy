@@ -176,7 +176,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
     call her_main("Yes, I suppose...","disgust","glance")
     m "Don't you give up, [hermione_name]. We will make a slut err--"
     m "I mean a woman out of you yet!"
-    call her_main("...................","annoyed","annoyed")
+    call her_main("...................", "annoyed", "narrow", "annoyed", "mid")
 
     menu:
         "\"Here are your points, [hermione_name].\"":
@@ -305,7 +305,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
                     call her_main("","angry","annoyed", emote="01", xpos="right", ypos="base")
                     call ctc
 
-                    call her_main("As you can see Professor Lockhart is nothing but an embodiment of everything pure and courageous!","annoyed","annoyed")
+                    call her_main("As you can see Professor Lockhart is nothing but an embodiment of everything pure and courageous!", "annoyed", "narrow", "annoyed", "mid")
                     pause
                     m "Do I? From this?"
                     her "You should not worry about professor Lockhart, [genie_name]."

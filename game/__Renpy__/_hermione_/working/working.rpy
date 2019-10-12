@@ -584,7 +584,7 @@ label hermione_helping_selling_cards:
         g4 "They didn't fire you did they?"
         call her_main("No!","mad","wide_stare")
         call her_main("The customer was quite apologetic actually and bought a bunch of things.", "smile", "closed", "angry", "mid")
-        call her_main("The twins obviously took the credit for getting such a big sale and seemed rather pleased with themselves.","crooked_smile","annoyed")
+        call her_main("The twins obviously took the credit for getting such a big sale and seemed rather pleased with themselves.", "crooked_smile", "narrow", "annoyed", "mid")
         call her_main("I'm fine with them believing they had anything to do with it though.", "smile", "closed", "base", "mid")
         m "How noble of you..."
         call her_main("Here's your payment.", "open", "base", "base", "mid")

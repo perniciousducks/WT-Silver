@@ -129,7 +129,7 @@ label change_hair:
                         # call her_main("That barely even looks like blonde!","annoyed","down")
                         # call her_main("Don't you have anything brighter?","angry","wink")
                         # m "You going to wear it or not?"
-                        # call her_main("Fine,... Let me go change it.","annoyed","annoyed")
+                        # call her_main("Fine,... Let me go change it.", "annoyed", "narrow", "annoyed", "mid")
                 # else:
                     # call her_main("No thank you, [genie_name].", "open", "closed", "base", "mid")
                     # call her_main("I like my hair how it is.","open","worriedL")
@@ -235,7 +235,7 @@ label change_hair:
                 # else:
                     # call her_main("What?!", "angry", "base", "angry", "mid")
                     # call her_main("I'm not going to walk around school parading as some Slytherin joke-mascot!", "scream", "closed", "angry", "mid")
-                    # call her_main("I definitely refuse!","annoyed","annoyed")
+                    # call her_main("I definitely refuse!", "annoyed", "narrow", "annoyed", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 11."
                     # jump return_to_wardrobe
@@ -290,7 +290,7 @@ label change_hair:
                     # call her_main("I can't dye my hair pink, [genie_name]!","scream","worriedCl")
                     # call her_main("(What does he think I am? Some cheap dress-up doll?)", "annoyed", "narrow", "angry", "R")
                     # call her_main("It's an ugly colour anyway.", "open", "closed", "base", "mid")
-                    # call her_main("I definitely refuse!","annoyed","annoyed")
+                    # call her_main("I definitely refuse!", "annoyed", "narrow", "annoyed", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 14."
                     # jump return_to_wardrobe
@@ -303,7 +303,7 @@ label change_hair:
                     # call her_main("Let me go change.","base","glance")
                 # else:
                     # call her_main("No, [genie_name].", "open", "closed", "base", "mid")
-                    # call her_main("I'm not going to run around school looking like some grandma!","annoyed","annoyed")
+                    # call her_main("I'm not going to run around school looking like some grandma!", "annoyed", "narrow", "annoyed", "mid")
                     # call her_main("I refuse!", "annoyed", "base", "base", "R")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 17."

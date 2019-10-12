@@ -1232,7 +1232,7 @@ label ll_pf_blowjob_T1_summon:
     m "The window doesn't shut."
     $ lunCG(pos=6)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
-    call her_main("Then maybe try cumming a bit less...","disgust","annoyed")
+    call her_main("Then maybe try cumming a bit less...", "disgust", "narrow", "annoyed", "mid")
     m "If I do that I'm not sure you'll' be able to win the house cup..."
     $ lunCG('', '', '', 'dick', pos=14)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"

@@ -433,7 +433,7 @@ label hg_pf_strip_T1_intro_E2:
     if hermione_wear_top and (h_top == "top_1" or h_top == "top_6"):
         call nar(">Her vest seems to be stuck somehow, but the girl keeps pulling on at the fabric with anger...")
         call her_main("Why won't it....?!")
-        call her_main("There!","annoyed","annoyed")
+        call her_main("There!", "annoyed", "narrow", "annoyed", "mid")
         call nar(">Hermione finally manages to untangle herself and sends the vest flying to the other side of the room...")
 
         if h_top == "top_1":
@@ -579,11 +579,11 @@ label hg_pf_strip_T1_intro_E2:
     call her_chibi("image","on_desk","on_desk","dance/05_panties_01")
     call ctc
 
-    call her_main("Well, I hope you enjoyed yourself, [genie_name]!","open","annoyed")
+    call her_main("Well, I hope you enjoyed yourself, [genie_name]!", "open", "narrow", "annoyed", "mid")
     m "What?"
     call her_main("I would like to get paid now...", "open", "closed", "angry", "mid")
     m "Aren't you forgetting something, [hermione_name]?"
-    call her_main("[genie_name]...?","open","annoyed")
+    call her_main("[genie_name]...?", "open", "narrow", "annoyed", "mid")
     m "Your panties...?"
     call her_main("My panties?", "open", "wide", "base", "stare")
     call her_main("But, they always leave them on!")
@@ -712,7 +712,7 @@ label hg_pf_strip_T1_E2:
     call her_main("..............","disgust","glance", xpos="base", ypos="base")
     her "I would really rather not, [genie_name]..."
     m "Why? You are getting quite good at it."
-    call her_main(".........................","annoyed","annoyed")
+    call her_main(".........................", "annoyed", "narrow", "annoyed", "mid")
     call her_main("Thirty five house points?","open","down")
     m "Sure! The usual rate."
     call her_main("...................", "annoyed", "narrow", "angry", "R")
@@ -821,7 +821,7 @@ label hg_pf_strip_T1_E2:
             m "Are you sure about that?"
             call her_main("absolutely! My father is a man of integrity!","scream","worriedCl")
             m "But he {size=+4}is{/size} a {size=+4}man{/size}, right?"
-            call her_main(".....................","annoyed","annoyed")
+            call her_main(".....................", "annoyed", "narrow", "annoyed", "mid")
             call her_main("My father must never know about this...","annoyed","worriedL")
 
 
@@ -954,10 +954,10 @@ label hg_pf_strip_T1_masturbate:
             call reset_hermione
             call her_main("The dance is over, [genie_name]!", "soft", "base", "angry", "mid")
             pause 1
-            call her_main("I would like to get paid now!","annoyed","annoyed")
+            call her_main("I would like to get paid now!", "annoyed", "narrow", "annoyed", "mid")
             m "Stubborn [hermione_name]..."
             call nar(">You reluctantly put your cock away...")
-            call her_main("I would like to get paid now.","annoyed","annoyed")
+            call her_main("I would like to get paid now.", "annoyed", "narrow", "annoyed", "mid")
 
             $ her_mood += 6
 
@@ -994,7 +994,7 @@ label hg_pf_strip_T2_intro_E1:
     call her_main("..............","disgust","glance", xpos="base", ypos="base")
     her "I would really rather not, [genie_name]..."
     m "Why? You are getting quite good at it."
-    call her_main(".........................","annoyed","annoyed")
+    call her_main(".........................", "annoyed", "narrow", "annoyed", "mid")
     call her_main("Thirty five house points?", "open", "base", "base", "mid")
     g9 "Sure!"
     call her_main("Very well, then...", "base", "base", "base", "R")
@@ -1153,18 +1153,18 @@ label hg_pf_strip_T2:
             m "..."
             "\"Don't be ridiculous! Love is a lie!\"":
                 call her_main("I am sorry you think that way, [genie_name]!","annoyed","worriedL")
-                call her_main("But you couldn't be more wrong!","annoyed","annoyed")
+                call her_main("But you couldn't be more wrong!", "annoyed", "narrow", "annoyed", "mid")
                 call her_main("I believe that true love is what makes the earth turn!", "base", "base", "base", "R")
                 m "Actually the conservation of angular momentum is responsible for that."
                 call her_main("Huh?","upset","wink")
                 m "Never mind. Just take off your skirt already?"
-                call her_main("............","annoyed","annoyed")
+                call her_main("............", "annoyed", "narrow", "annoyed", "mid")
 
             "\"Be quiet and keep on dancing!\"":
-                call her_main("But you said I could ask you a question...","annoyed","annoyed")
+                call her_main("But you said I could ask you a question...", "annoyed", "narrow", "annoyed", "mid")
                 m "And you did, didn't you?"
                 call her_main("!!!............", "open", "base", "base", "mid")
-                call her_main("....................................","annoyed","annoyed")
+                call her_main("....................................", "annoyed", "narrow", "annoyed", "mid")
                 m "Now, hush and take your skirt off."
                 call her_main("........", "annoyed", "narrow", "angry", "R")
 

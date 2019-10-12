@@ -104,7 +104,7 @@ label hg_pf_handjob_T1_intro_E1:
     m "[hermione_name]."
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "Do you know what a \"handjob\" is?"
-    call her_main("Why?","annoyed","annoyed")
+    call her_main("Why?", "annoyed", "narrow", "annoyed", "mid")
     m "I feel like getting one..."
     call her_main("[genie_name]!", "angry", "base", "angry", "mid")
     m "Just another favour. No big deal, right?"
@@ -137,7 +137,7 @@ label hg_pf_handjob_T1_intro_E1:
             call her_main("45 house points...?","open","down")
             her "This could put \"Gryffindor\" back in the lead..."
             m "Is that a \"yes\"?"
-            call her_main("Yes, it is a yes, [genie_name].","annoyed","annoyed")
+            call her_main("Yes, it is a yes, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
             m "Great!"
             pass
 
@@ -331,7 +331,7 @@ label hg_pf_handjob_1:
             m "Heh... good. Go on."
             call her_main("I am a big whore...","open","down")
             m "Yes, you are."
-            call her_main("I am the biggest whore in England!","annoyed","annoyed")
+            call her_main("I am the biggest whore in England!", "annoyed", "narrow", "annoyed", "mid")
             call her_main("I try to act innocent, but in truth all I think about is cock!")
             m "Yes, you little slut!"
             call her_main("Yes! I am a slut!", "annoyed", "narrow", "angry", "R")
@@ -437,7 +437,7 @@ label hg_pf_handjob_1:
             m "Don't be silly, [hermione_name]. Nobody is watching."
             call her_main("You are, [genie_name].","open","down")
             m "But that's the whole point!"
-            call her_main("......","annoyed","annoyed")
+            call her_main("......", "annoyed", "narrow", "annoyed", "mid")
             m "It will make me cum in no time!"
             call her_main("...............", "annoyed", "narrow", "angry", "R")
             m "And then you can just get out and and take care of your business today."
@@ -536,7 +536,7 @@ label hg_pf_handjob_1:
             call her_main("Ew... Your sperm, [genie_name]...","angry","down_raised")
             call her_main("It's everywhere under my uniform...", "angry", "base", "base", "mid")
             m "Just put it in your mouth next time."
-            call her_main("I... don't think so, [genie_name].","annoyed","annoyed")
+            call her_main("I... don't think so, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
             call her_main("I really need to go. Can I just get paid now?")
 
         "-Just start cumming-":
@@ -594,15 +594,15 @@ label hg_pf_handjob_1:
                     call her_main("My classes are about to start and I can't go looking like this!","open","down")
                     m "Of course you can, just wipe it off or something..."
                     m "Nobody will even notice."
-                    call her_main("...I would like to get paid now.","annoyed","annoyed")
+                    call her_main("...I would like to get paid now.", "annoyed", "narrow", "annoyed", "mid")
                 else:
                     call her_main("My uniform is ruined!", "annoyed", "narrow", "angry", "R")
                     her "Am I supposed to go back to the \"Gryffindor\" common room looking like this?!"
                     m "Why not? You look hot, [hermione_name]!"
-                    call her_main("[genie_name]!!!","annoyed","annoyed")
+                    call her_main("[genie_name]!!!", "annoyed", "narrow", "annoyed", "mid")
                     m "Alright, alright. Just wipe it off or something."
                     m "Nobody will even notice."
-                    call her_main("...I would like to get paid now.","annoyed","annoyed")
+                    call her_main("...I would like to get paid now.", "annoyed", "narrow", "annoyed", "mid")
 
     jump end_hg_pf_handjob
 
@@ -765,7 +765,7 @@ label hg_pf_handjob_2_continue:
             m "I know. Just say it."
             call her_main("My father? That's disgusting, [genie_name]!", "angry", "base", "angry", "mid", emote="01")
             m "Humour me."
-            call her_main("...........","annoyed","annoyed")
+            call her_main("...........", "annoyed", "narrow", "annoyed", "mid")
             call her_main("Well...","open","down")
             call her_main("Sometimes I fantasize about being raped...")
             call her_main(".......")

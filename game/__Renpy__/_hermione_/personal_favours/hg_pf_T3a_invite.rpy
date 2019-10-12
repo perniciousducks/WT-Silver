@@ -244,7 +244,7 @@ label hg_pf_strip_T2_Snape:
             call her_main("Yes! You tell him profess--", "annoyed", "narrow", "angry", "R")
             m "You as well, you perverted little minx!"
             m "Calm down and take your skirt off already."
-            call her_main("I am not perverted...","annoyed","annoyed")
+            call her_main("I am not perverted...", "annoyed", "narrow", "annoyed", "mid")
             m "The skirt, [hermione_name]!"
             call her_main("......", "annoyed", "narrow", "angry", "R")
             call sna_main(".............","snape_13")

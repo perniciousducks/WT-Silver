@@ -108,7 +108,7 @@ label hg_pf_titjob_T1_intro_E1:
     m "Now, [hermione_name]..."
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "Have you ever given someone a \"titjob?\""
-    call her_main("A \"titjob?\"","annoyed","annoyed")
+    call her_main("A \"titjob?\"", "annoyed", "narrow", "annoyed", "mid")
     m "It's where you wrap those \"fat tits\" of yours around a cock,..."
     g9 "And then shake them up and down, and up and...{w=0.5}{nw}"
     call her_main("[genie_name]!", "angry", "base", "angry", "mid")
@@ -262,7 +262,7 @@ label hg_pf_titjob_1:
         call her_main("(It's so big...)","disgust","down_raised")
     m "Get to it, [hermione_name]..."
     call her_main("Right...","angry","worriedCl", emote="05")
-    call her_main("","annoyed","annoyed")
+    call her_main("", "annoyed", "narrow", "annoyed", "mid")
     pause.1
 
     # Hermione holds her Breasts.
@@ -317,7 +317,7 @@ label hg_pf_titjob_1:
             call her_main("Thank you, [genie_name].", "base", "happy", "base", "mid")
         "\"Hmmmm...{w=0.3} We'll see how I feel later...\"":
             $ ccg1 = 8
-            call her_main("*Hmmmmph*...","annoyed","annoyed")
+            call her_main("*Hmmmmph*...", "annoyed", "narrow", "annoyed", "mid")
             call her_main("At least avoid my hair...","normal","worriedCl")
 
     $ ccg1 = 5

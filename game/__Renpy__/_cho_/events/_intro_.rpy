@@ -175,7 +175,7 @@ label cho_intro_E1:
 
     call cho_main("","annoyed","angry","angry","R", xpos="base", ypos="base")
     call her_main("Cho,{w} How nice to see you here...", "open", "base", "base", "R", xpos="mid", ypos="base",flip=True)
-    call her_main("And why are you here exactly?","angry","annoyed")
+    call her_main("And why are you here exactly?", "angry", "narrow", "annoyed", "mid")
 
     call cho_main("Oh, you know...{w=0.5} Just having a discussion with our dear headmaster...", "smile", "base", "base", "L")
 
@@ -632,7 +632,7 @@ label cho_intro_E3:
         call her_main("Oh...", "annoyed", "narrow", "base", "up")
         call her_main("What about her...", "annoyed", "base", "angry", "mid")
         m "Well, it has come to my attention that you’ve been spreading false rumours about her."
-        call her_main("And? It’s well deserved in my opinion...","soft","annoyed")
+        call her_main("And? It’s well deserved in my opinion...", "soft", "narrow", "annoyed", "mid")
         m "Well, don’t you feel like it’s unbefitting of you to publicly talk badly about another student."
         call her_main("...","annoyed","down_raised")
         g9 "Surely that isn’t something to expect from Gryffindor's finest.."
@@ -770,7 +770,7 @@ label cho_intro_E3:
 
     if her_whoring < 18:
         call her_main("It's the most prestigious award one could earn for your school house!{p=0.6}The Quidditch cup is nothing in comparison...", "open", "closed", "base", "mid")
-        call her_main("Why are students even allowed to play this silly sport at our School?","annoyed","annoyed")
+        call her_main("Why are students even allowed to play this silly sport at our School?", "annoyed", "narrow", "annoyed", "mid")
 
     if her_whoring < 8:
         call her_main("They're given the privilege of attending one of the most prestigious wizarding schools in the world...", "open", "narrow", "angry", "R")

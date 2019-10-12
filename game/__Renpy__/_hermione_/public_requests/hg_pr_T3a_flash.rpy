@@ -90,7 +90,7 @@ label hg_pr_flash:
         call her_main("I said I'd better go then, [genie_name].", "annoyed", "narrow", "angry", "R")
         her "my classes are about to start..."
         m "Thirty five house points will be waiting for you here upon your return, [hermione_name]."
-        call her_main("..............","annoyed","annoyed")
+        call her_main("..............", "annoyed", "narrow", "annoyed", "mid")
 
     else:
         m "[hermione_name] I need you to go out there and flash your tits to one of your classmates."

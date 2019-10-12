@@ -17,7 +17,7 @@
             # m "Any chance I could convince you otherwise?"
             # call her_main("Hmm...", "annoyed", "base", "base", "mid") #very upset, default
             # call her_main("I want 5 house points! And that's no guarantee that I'm actually going to wear...", "open", "closed", "base", "mid")
-            # call her_main("Whatever it is you want me to put on.","annoyed","annoyed")
+            # call her_main("Whatever it is you want me to put on.", "annoyed", "narrow", "annoyed", "mid")
 
             # menu:
                 # "-Give her the points-":
@@ -90,7 +90,7 @@
                     # call her_main("Tzzz--", "angry", "base", "angry", "mid")
                     # call her_main("Well then wear your... {w=0.5}-stuff yourself!", "scream", "closed", "angry", "mid")
                     # m "Wouldn't look good on me..."
-                    # call her_main("I don't care.","annoyed","annoyed")
+                    # call her_main("I don't care.", "annoyed", "narrow", "annoyed", "mid")
         # else:
             # hide screen hermione_main
             # with d3
@@ -118,7 +118,7 @@
             # m "[hermione_name]..."
             # m "Would you please--"
             # call her_main("No--", "open", "closed", "base", "mid",xpos="base") #525=default Hermione xpos
-            # call her_main("...","annoyed","annoyed")
+            # call her_main("...", "annoyed", "narrow", "annoyed", "mid")
             # m "I just want you to wear--"
             # call her_main("I SAID NO, [genie_name]!", "scream", "closed", "angry", "mid")
             # call her_main("tzzzz...", "annoyed", "narrow", "angry", "R")

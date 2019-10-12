@@ -448,7 +448,7 @@ label slave_scene:
 
     ">You give her yet another strong slap across her buttocks."
     m "You aren't just some common slave [hermione_name]."
-    call her_main("I'm not?","annoyed","annoyed")
+    call her_main("I'm not?", "annoyed", "narrow", "annoyed", "mid")
     hide screen hermione_main
     m "No, of course not."
     m "You're my personal slave."

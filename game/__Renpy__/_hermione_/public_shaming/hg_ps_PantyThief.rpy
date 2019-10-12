@@ -142,7 +142,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         menu:
             "\"Put them on or lose the points!\"":
                 $ her_mood +=7
-                call her_main("What?","scream","wide_stare")
+                call her_main("What?", "scream", "wide", "base", "mid")
                 her "[genie_name], you are joking, right?"
                 m "I am not..."
                 call her_main("B-but...", "open", "base", "base", "mid")
@@ -258,7 +258,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 $ cleaned_panties = True
                 call her_main("Clean them How? You don't have a wash basin in here.", "open", "base", "base", "mid")
                 m "You're right, you'll have to use your mouth then."
-                call her_main("My mouth?!","scream","wide_stare")
+                call her_main("My mouth?!", "scream", "wide", "base", "mid")
                 m "What's the big deal? It wouldn't be the first time you've tasted my cum."
                 call her_main("It's a bit different! I wore these panties before I gave them to you.", "scream", "closed", "angry", "mid")
                 call her_main("Not to mention that your cum is all cold and slimy...","scream","worriedCl")

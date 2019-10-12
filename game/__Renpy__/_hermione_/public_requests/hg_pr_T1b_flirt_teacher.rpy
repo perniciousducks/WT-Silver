@@ -278,7 +278,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
 
     menu:
         "{size=-3}\"Lockhart will be out of this school in no time!\"{/size}":
-            call her_main("Because of me?","scream","wide_stare")
+            call her_main("Because of me?", "scream", "wide", "base", "mid")
             call her_main("[genie_name], please!","mad","worried", tears="soft")
             m "Show me!"
             call her_main("No, it's embarrassing!","scream","worriedCl")
@@ -290,7 +290,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
                     jump end_hg_pr_flirt_teacher
 
                 "\"Show me or I won't pay you!\"":
-                    call her_main("What?!","scream","wide_stare")
+                    call her_main("What?!", "scream", "wide", "base", "mid")
                     call her_main("...............", "annoyed", "narrow", "worried", "down")
                     call her_main("..................","annoyed","worriedL")
                     call her_main("Well, alright, but only to clear my idol's name...", "angry", "base", "angry", "mid")
@@ -401,7 +401,7 @@ label hg_pr_flirt_teacher_T3_E1: # Filch
     m "His what?"
     call her_main("His... manhood, [genie_name].","angry","worriedCl", emote="05")
     g9 "Way to go, Janitor-guy!"
-    call her_main("What?!","scream","wide_stare")
+    call her_main("What?!", "scream", "wide", "base", "mid")
     m "*Khem* I mean, this is unspeakable!"
     call her_main("Yes... Vile crooked thing all covered in veins...", "angry", "base", "base", "mid", tears="soft")
     m "Spare me the grisly details, [hermione_name]."

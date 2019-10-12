@@ -144,7 +144,7 @@ label hg_pf_handjob_T1_intro_E1:
         "\"you will get 100 house points.\"":
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ current_payout = 100
-            call her_main("100 house points?!","scream","wide_stare")
+            call her_main("100 house points?!", "scream", "wide", "base", "mid")
             her "This will definitely put \"Gryffindor\" in the lead!"
             m "Is that a \"yes\" then?"
             call her_main("Of course!", "smile", "happyCl", "base", "mid")

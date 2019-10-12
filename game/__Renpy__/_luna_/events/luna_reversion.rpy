@@ -650,7 +650,7 @@ label luna_revert_2: #Non-Reversion event #DONE
 
     call lun_main("","normal","wide","sad","mid",xpos="mid",ypos="base")
     call lun_main("...","upset","angry","mad","mid")
-    call her_main("...","scream","wide_stare")
+    call her_main("...", "scream", "wide", "base", "mid")
     call her_main("{size=+5}WHAT{/size}", "annoyed", "narrow", "annoyed", "mid")
     call lun_main("","normal","angry","angry","mid")
     call her_main("{size=+10}THE{/size}", "angry", "base", "angry", "mid")

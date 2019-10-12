@@ -627,7 +627,7 @@ label cho_intro_E3:
         $ cho_intro.E3_intro = True
 
         m "I got some word about you that needs to be addressed..."
-        call her_main("About what? Am I in trouble for anything?","soft","wide_stare")
+        call her_main("About what? Am I in trouble for anything?", "soft", "wide", "base", "mid")
         m "Miss Chang..."
         call her_main("Oh...", "annoyed", "narrow", "base", "up")
         call her_main("What about her...", "annoyed", "base", "angry", "mid")

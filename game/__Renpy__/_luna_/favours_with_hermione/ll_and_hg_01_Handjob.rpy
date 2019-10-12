@@ -763,7 +763,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main(".............","normal","suspicious","angry","R")
         call lun_main("fine...","normal","suspicious","sad","R")
         ">Luna slowly lists her marks across all subjects, most of them bordering on a pass and fail with the exception of divination."
-        call her_main("what? so low? How do you expect to get a job at the ministry of magic with marks like that?","scream","wide_stare")
+        call her_main("what? so low? How do you expect to get a job at the ministry of magic with marks like that?", "scream", "wide", "base", "mid")
         call lun_main("...","normal","suspicious","sad","down")
         call her_main("at this rate you'll have to get a job in the muggle world.", "disgust", "narrow", "base", "down")
         call lun_main("you think I don't know that? why do you think I agreed to all this in the first place...","upset","angry","angry","mid")

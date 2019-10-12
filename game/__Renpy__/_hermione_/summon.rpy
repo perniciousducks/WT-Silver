@@ -765,8 +765,8 @@ label hermione_change:
                     m "In fact, from this point forward you don't have to call me [genie_name] or exchange any favours..."
                     call her_main("", "soft", "base", "base", "mid", emote="04")
                     m "Lets just void this whole... deal of yours shall we."
-                    call her_main("B-but, [genie_name]?!","mad","wide_stare", emote="02")
-                    call her_main("","mad","wide_stare")
+                    call her_main("B-but, [genie_name]?!", "mad", "wide", "base", "mid", emote="02")
+                    call her_main("", "mad", "wide", "base", "mid")
                     m "I must apologize {b}Miss Granger{/b}, I thought we had come to some kind of agreeable arrangement by now..."
                     call her_main("But I...", "mad", "wide", "worried", "stare")
                     m "...I should have known better to believe that this sort of thing would work out..."
@@ -809,7 +809,7 @@ label hermione_change:
     elif temp_name == "Mudblood":
         if her_whoring >= 21:
             call her_main("A{w=0.5}...{w=0.5} {size=+6}{b}{cps=20}mud{w=0.5}blood{/cps}{/b}?!{/size}", "shock", "wide", "base", "stare")
-            call her_main("Did I hear you right, [genie_name]?!", "normal","wide_stare")
+            call her_main("Did I hear you right, [genie_name]?!", "normal", "wide", "base", "mid")
             menu:
                 "-Confirm-":
                     pass

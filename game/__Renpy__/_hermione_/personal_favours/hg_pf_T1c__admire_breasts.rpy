@@ -116,7 +116,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
     g9 "How much would it cost me for you to lift up your top?"
     call her_main("My top?!", "shock", "wide", "base", "stare")
     g9 "And show me what's underneath..."
-    call her_main("Why would I-?!","angry","wide_stare")
+    call her_main("Why would I-?!", "angry", "wide", "base", "mid")
 
     call her_main("[genie_name], I refuse to bare my breasts for you!", "open", "closed", "angry", "mid")
     call her_main("How could you even suggest such a thing?!", "angry", "base", "angry", "mid")
@@ -323,7 +323,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
             pass
 
         "\"I will give you 5 points to see your tits.\"":
-            call her_main("Five?!","scream","wide_stare")
+            call her_main("Five?!", "scream", "wide", "base", "mid")
             call her_main("[genie_name], I am not going to expose myself for a meagre five points!", "angry", "base", "angry", "mid",emote="01")
             m "Well, your tits sure aren't worth 200, [hermione_name]!"
             call her_main("(They aren't?)", "annoyed", "narrow", "worried", "down")

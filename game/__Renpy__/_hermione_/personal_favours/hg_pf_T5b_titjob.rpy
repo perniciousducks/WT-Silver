@@ -159,7 +159,7 @@ label hg_pf_titjob_T1_intro_E1:
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ current_payout = 100
             $ her_mood = 0
-            call her_main("100 house points?!","scream","wide_stare")
+            call her_main("100 house points?!", "scream", "wide", "base", "mid")
             call her_main("This might be enough to put \"Gryffindor\" in the lead!", "smile", "wide", "base", "stare")
             m "So,...is that a yes?"
             call her_main("Yes, [genie_name]!", "smile", "happyCl", "base", "mid")

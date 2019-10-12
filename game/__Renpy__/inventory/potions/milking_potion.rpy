@@ -105,7 +105,7 @@ label potion_scene_11_1: #Milking potion part 1
     m "Well as far as I can tell, your breasts are swelling due to an excess supply of milk."
     call her_main("...", "annoyed", "base", "angry", "mid")
     m "If we somehow got it all out of there, I'm sure they'd revert to normal size in no time at all."
-    call her_main("...","scream","wide_stare")
+    call her_main("...", "scream", "wide", "base", "mid")
     call her_main("You can't be serious!", "annoyed", "narrow", "annoyed", "mid")
     call her_main("Are you suggesting that I be milked! Like some sort of animal!", "annoyed", "narrow", "annoyed", "mid")
     m "I'm simply offering a way to fix your problem."

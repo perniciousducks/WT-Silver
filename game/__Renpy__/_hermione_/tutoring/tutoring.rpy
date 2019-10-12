@@ -164,7 +164,7 @@ label l_tutoring:
         call her_main("I don't think it helps at all.", "annoyed", "squint", "base", "mid")
         m "That's your problem Miss Granger, you think you already know the answer and don't follow my instructions."
         m "I don't care about the behaviour of those girls."
-        call her_main("What? Professor! You don't care?!","scream","wide_stare")
+        call her_main("What? Professor! You don't care?!", "scream", "wide", "base", "mid")
         g9 "{size=-2}(Oh, I do care, just not in the way you think.){/size}"
         m "For this exercise, Miss Granger, for this exercise. Don't get on your high horse."
         call her_main(".........", "annoyed", "narrow", "annoyed", "up")

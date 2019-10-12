@@ -74,7 +74,7 @@ label hg_pr_handjob:
     elif her_tier < 6:
         m "Ready to go have sex with one of your classmates yet?"
         stop music fadeout 1.0
-        call her_main("What?","scream","wide_stare")
+        call her_main("What?", "scream", "wide", "base", "mid")
         call her_main("Of course not! I would never--", "scream", "closed", "angry", "mid")
         m "How about a handjob then?"
         call her_main("...............", "annoyed", "narrow", "angry", "R")
@@ -377,7 +377,7 @@ label hg_pr_handjob_T2_E2:
             call her_main("\"Not yet\"??!", "angry", "base", "base", "mid")
             call her_main("..........", "angry", "narrow", "base", "down")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("Well, of course!","scream","wide_stare")
+            call her_main("Well, of course!", "scream", "wide", "base", "mid")
             call her_main("You are right, as usual, [genie_name]!", "soft", "base", "base", "mid")
             m "Huh?"
             call her_main("I have done a few... naughty things...", "open", "base", "base", "mid")

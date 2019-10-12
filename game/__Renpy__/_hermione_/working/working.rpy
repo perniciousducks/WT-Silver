@@ -582,7 +582,7 @@ label hermione_helping_selling_cards:
         m "I see..."
         call her_main("I did get a bit agitated at one point actually...", "open", "closed", "base", "mid", cheeks="blush")
         g4 "They didn't fire you did they?"
-        call her_main("No!","mad","wide_stare")
+        call her_main("No!", "mad", "wide", "base", "mid")
         call her_main("The customer was quite apologetic actually and bought a bunch of things.", "smile", "closed", "angry", "mid")
         call her_main("The twins obviously took the credit for getting such a big sale and seemed rather pleased with themselves.", "crooked_smile", "narrow", "annoyed", "mid")
         call her_main("I'm fine with them believing they had anything to do with it though.", "smile", "closed", "base", "mid")

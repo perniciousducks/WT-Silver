@@ -159,7 +159,7 @@ label a_bad_time_to_disrobe_part_1:
     call her_main("Professor.... I'm beginning to have second thoughts about this cloak idea.", "soft", "narrow", "worried", "mid_soft", tears="mascara")
     m "The boy didn't see your face, that's what matters."
     m "You could've draped the cloak around your head and it would be enough."
-    call her_main("Professor!","shock","wide_stare", tears="mascara")
+    call her_main("Professor!", "shock", "wide", "base", "mid", tears="mascara")
     m "Just trying to lighten the mood."
     m "Here's an extra 5 points for a Job well done, miss Granger."
     g9 "35 points to Gryffindor!"

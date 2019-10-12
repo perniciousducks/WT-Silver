@@ -340,7 +340,7 @@ label give_her_gift(gift_item):
             call give_gift(">You give the poster to Hermione...",gift_item)
             call her_mood(-15)
         elif her_whoring >= 18: # Lv 7+
-            call her_main("A Viktor Krum poster?!","scream","wide_stare")
+            call her_main("A Viktor Krum poster?!", "scream", "wide", "base", "mid")
             call her_main("Thank you, [genie_name]!","grin","worriedCl",emote="05")
             call give_gift(">You give the poster to Hermione...",gift_item)
             call her_main("Can't wait to hang it over my bed!", "smile", "base", "base", "R")

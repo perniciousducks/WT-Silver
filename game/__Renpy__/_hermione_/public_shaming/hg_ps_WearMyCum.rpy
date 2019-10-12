@@ -177,7 +177,7 @@ label hg_ps_cumslut_Scene_1:
 
             call nar(">Hermione bends down and place your cock in front of her face.")
             m "Get ready slut, here it comes!"
-            call her_main("...","scream","wide_stare",ypos="head")
+            call her_main("...", "scream", "wide", "base", "mid",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
             call her_main("I can't...", "clench", "narrow", "base", "down")
 
@@ -403,7 +403,7 @@ label hg_ps_cumslut_Scene_2:
 
             call nar(">Hermione bends down and place your cock in front of her face.")
             m "Get ready slut, here it comes!"
-            call her_main("...","scream","wide_stare",ypos="head")
+            call her_main("...", "scream", "wide", "base", "mid",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
             call her_main("...", "clench", "narrow", "base", "down")
             call nar(">You erupt onto her face, dousing her in your spunk.")

@@ -104,7 +104,7 @@ label hg_pf_grope:
 label hg_pf_grope_T0_fail_intro:
     m "[hermione_name], would you mind if I play with your tits a little?"
     call her_main("Play with...?", "shock", "wide", "base", "stare")
-    call her_main("My tits?!","angry","wide_stare")
+    call her_main("My tits?!", "angry", "wide", "base", "mid")
     g9 "Or your butt! I haven't fully decided yet!"
 
     $ hg_pf_grope.counter -= 1

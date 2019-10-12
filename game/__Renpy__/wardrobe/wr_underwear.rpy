@@ -100,7 +100,7 @@ label equip_bra:
                     # call her_main("I mostly wear a bathing suit when I'm out swimming.", "open", "base", "base", "R")
                     # call her_main("Why do you ask, [genie_name]?", "base", "base", "base", "mid")
                     # m "I would like you to wear one."
-                    # call her_main("At school? [genie_name], we don't even have swimming lessons here.","open","wide_stare")
+                    # call her_main("At school? [genie_name], we don't even have swimming lessons here.", "open", "wide", "base", "mid")
                     # m "Swimming lessons, hmm."
                     # m "Do you think something like that could be arranged? Down at the lake?"
                     # call her_main("The lake? That water is way too cold to swim in, [genie_name]! Especially in a bikini!", "disgust", "base", "base", "mid")
@@ -194,7 +194,7 @@ label equip_bra:
                         # m "Why uhm... I mean yes. All the girls..."
                         # call her_main("Is this some sort of protection for-", "open", "narrow", "worried", "down")
                         # call her_main("It's those Blast-Ended Skrewts again, isn't it?!", "soft", "wide", "base", "stare",trans="hpunch")
-                        # call her_main("[genie_name], are they biting off the student's nipples???","open","wide_stare")
+                        # call her_main("[genie_name], are they biting off the student's nipples???", "open", "wide", "base", "mid")
                         # m "What's so bad about biting nipples?"
                         # call her_main("[genie_name], these are some serious matters! We immediately have to inform the other teachers about this issue!", "open", "base", "angry", "mid")
                         # m "What?! No just put on the pasties!"
@@ -421,7 +421,7 @@ label equip_panties:
                     # call her_main("I mostly wear a bathing suit when I'm out swimming.", "open", "base", "base", "R")
                     # call her_main("Why do you ask, [genie_name]?", "base", "base", "base", "mid")
                     # m "I would like you to wear one."
-                    # call her_main("At school? [genie_name], we don't even have swimming lessons here.","open","wide_stare")
+                    # call her_main("At school? [genie_name], we don't even have swimming lessons here.", "open", "wide", "base", "mid")
                     # m "Swimming lessons, hmm."
                     # m "Do you think something like that could be arranged? Down at the lake?"
                     # call her_main("The lake? That water is way too cold to swim in, [genie_name]! Especially in a bikini!", "disgust", "base", "base", "mid")

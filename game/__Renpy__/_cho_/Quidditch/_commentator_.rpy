@@ -89,7 +89,7 @@ label quidditch_commentator_event_2:
     call her_main("Me, wasting time on something as stu...{w=0.8}{nw}", "base", "closed", "base", "mid")
     call her_main("Wait...{w=0.6} What did you say?", "open", "squint", "base", "mid")
     m "I was going to ask you if you'd commentate this years quidditch games..."
-    call her_main("You want me... to commentate this years wizarding school cup?","open","wide_stare")
+    call her_main("You want me... to commentate this years wizarding school cup?", "open", "wide", "base", "mid")
     call her_main("I'd be honoured, sir!", "scream", "closed", "base", "mid",trans="hpunch")
     call her_main("Quidditch has always been one of my passions, to be able to commentate it...", "open", "base", "angry", "mid")
     call her_main("Not to mention getting to make all the announcements...", "smile", "base", "base", "R")
@@ -106,7 +106,7 @@ label quidditch_commentator_event_2:
     call her_main("Cho will be so mad!", "crooked_smile", "happy", "base", "mid")
     m "I see..."
     g9 "Congratulations then, [hermione_name]! You got the j..."
-    call her_main("Ah!!! I better start lear...{w=0.8} I mean, preparing my opening speech!","open","wide_stare",trans="hpunch")
+    call her_main("Ah!!! I better start lear...{w=0.8} I mean, preparing my opening speech!", "open", "wide", "base", "mid",trans="hpunch")
 
     call her_walk(action="leave", speed=1.7)
 

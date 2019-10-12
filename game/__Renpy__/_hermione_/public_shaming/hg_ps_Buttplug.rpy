@@ -161,7 +161,7 @@ label hg_ps_buttplug:
             ">You pull out the large butt plug."
             m "Ready to try out the dragon yet?"
             stop music fadeout 1.0
-            call her_main("What?","scream","wide_stare",xpos="right",ypos="base")
+            call her_main("What?", "scream", "wide", "base", "mid",xpos="right",ypos="base")
             call her_main("Of course not! That thing would tear me--", "scream", "closed", "angry", "mid")
             ">you pull out the small butt plug"
             m "How about this one then?"
@@ -171,7 +171,7 @@ label hg_ps_buttplug:
             call her_main("Plus I don't hate the way it feels", "open", "base", "base", "R")
             ">You hand her the butt plug."
             m "why don't you put it in now."
-            call her_main("you want me to put it in now? in front of you!","scream","wide_stare")
+            call her_main("you want me to put it in now? in front of you!", "scream", "wide", "base", "mid")
             m "I don't see the harm in it."
             call her_main("well... it does save me having to visit the girls bathroom before class...", "annoyed", "narrow", "worried", "down")
             call her_main("alright then, I'll do it... but I want an extra five points!", "smile", "base", "base", "R")
@@ -313,7 +313,7 @@ label hg_ps_buttplug:
             m "You said the same thing about the smaller one."
             call her_main("That was different...", "disgust", "narrow", "base", "down")
             m "I have confidence in you! Besides, you were pretty great when you were taking my cock up your ass!"
-            call her_main("[genie_name]!","shock","wide_stare",cheeks="blush")
+            call her_main("[genie_name]!", "shock", "wide", "base", "mid",cheeks="blush")
             m "Come on..."
             call her_main("This is too much sir! even your cock wasn't this {b}thick{/b}...", "open", "narrow", "angry", "R")
             m "Nothing a little spit won't solve!"

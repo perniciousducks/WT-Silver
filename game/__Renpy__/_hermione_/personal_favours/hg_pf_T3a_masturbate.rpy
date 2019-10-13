@@ -215,7 +215,7 @@ label hg_pf_strip_T2_fingering:
 
     call her_main("Ah...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "almost there [hermione_name]?"
-    call her_main("a-almost...","clench","worried", cheeks="blush", tears="soft")
+    call her_main("a-almost...", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
     call her_main("I just need a bit longer...")
     m "well you better hurry..."
     call her_main("Ah... i know, [genie_name].", "mad", "worriedCl", "worried", "mid", tears="soft_blink")
@@ -223,7 +223,7 @@ label hg_pf_strip_T2_fingering:
     m "is everything alright?"
     call her_main("................", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     m "Why are you being so quiet [hermione_name]?"
-    call her_main("......","clench","worried", cheeks="blush", tears="soft")
+    call her_main("......", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
     call her_main("[genie_name]... I don't think I can...")
     m "what?"
     call her_main("...finish...", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
@@ -239,7 +239,7 @@ label hg_pf_strip_T2_fingering:
             call nar(">Hermione starts grinding furiously against hand")
             call her_main("*SOB!* i can't...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
             m "well then, 0 points to \"Gryffindor\"..."
-            call her_main("{size=-5}After all...{/size} Really [genie_name]?","clench","worried", cheeks="blush", tears="soft")
+            call her_main("{size=-5}After all...{/size} Really [genie_name]?", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
             call her_main("After I stood here and...", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
             call her_main("..........", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
             call nar(">Hermione wipes the tears from her eyes.")
@@ -253,7 +253,7 @@ label hg_pf_strip_T2_fingering:
             m "It's alright, [hermione_name]."
             call her_main("Really?", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
             m "I'm sure you're just a little nervous."
-            call her_main("Thank you [genie_name].","clench","worried", cheeks="blush", tears="soft")
+            call her_main("Thank you [genie_name].", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
             call her_main("I promise to try harder next time.", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
 
             jump end_hg_pf_strip
@@ -292,7 +292,7 @@ label hg_pf_strip_T3_fingering:
     m "Do you need a little more encouragement?"
     call her_main("Ah... yes... please....{image=textheart}", "open", "worriedCl", "worried", "mid")
     m "Tch... You nasty whore!"
-    call her_main("yes [genie_name], ah...{image=textheart}", "grin", "narrow", "base", "angry", "mid", "up", cheeks="blush")
+    call her_main("yes [genie_name], ah...{image=textheart}", "grin", "narrow", "base", "up", cheeks="blush")
     call her_main("please... ah... more...{image=textheart}", "grin", "base", "angry", "mid", cheeks="blush")
     g4 "You need to be punished for being such a slut!"
     call her_main("yes, [genie_name]... punish me...", "open", "narrow", "base", "up", cheeks="blush")
@@ -316,7 +316,7 @@ label hg_pf_strip_T3_fingering:
     m "You feeling alright?"
     call her_main("Yes, [genie_name]... I just need a little longer...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "take your time."
-    call her_main("ah... {image=textheart}","silly","worried", cheeks="blush", tears="soft")
+    call her_main("ah... {image=textheart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
 
     jump end_hg_pf_strip
 
@@ -425,7 +425,7 @@ label hg_pf_strip_T4_fingering:
             call her_main("...", "open", "base", "base", "R", cheeks="blush")
             call set_her_action("lift_breasts_naked")
 
-            call her_main("Mmmm...", "grin", "narrow", "base", "angry", "mid", "up", cheeks="blush")
+            call her_main("Mmmm...", "grin", "narrow", "base", "up", cheeks="blush")
             m "That's it..."
             call nar(">You stare at Hermione's breasts with hunger...")
             call her_main("ah...", "silly", "narrow", "base", "dead")
@@ -499,7 +499,7 @@ label hg_pf_strip_T4_fingering:
             call her_main(".......")
             call her_main("I love this...", "grin", "narrow", "base", "dead")
             call her_main("Standing here... playing with myself...", "base", "narrow", "worried", "down")
-            call her_main("Ah... while you play with me...{image=textheart}", "grin", "narrow", "base", "angry", "mid", "up", cheeks="blush")
+            call her_main("Ah... while you play with me...{image=textheart}", "grin", "narrow", "base", "up", cheeks="blush")
             m "Heh... Nice."
             call her_main("Ah...{image=textheart}", "open", "narrow", "base", "up", cheeks="blush")
             call her_main("I sometimes wish I could spend all day in here...", "grin", "base", "angry", "mid", cheeks="blush")
@@ -512,7 +512,7 @@ label hg_pf_strip_T4_fingering:
             m "What's was that [hermione_name]? You'll have to speak up."
             call her_main("Please finger me...", "open", "narrow", "base", "up", cheeks="blush")
             m "Once more, a little louder this time."
-            call her_main("Ah...{image=textheart} {size=+5}please finger my cunt!{/size}", "grin", "narrow", "base", "angry", "mid", "up", cheeks="blush")
+            call her_main("Ah...{image=textheart} {size=+5}please finger my cunt!{/size}", "grin", "narrow", "base", "up", cheeks="blush")
             $ g_c_u_pic = "groping_06"
             call nar(">You swiftly plunge two fingers into her dripping pussy.")
             call set_her_action("lift_breasts_naked")
@@ -572,7 +572,7 @@ label hg_pf_strip_T4_fingering:
     m "are you cumming, [hermione_name]?"
     call her_main("ah...{image=textheart} yes!!", "grin", "narrow", "annoyed", "up")
     call her_main("I'm cumming [genie_name]!!{image=textheart}", "grin", "narrow", "base", "dead")
-    call her_main("I'm cumming from being fucked with your fingers!!{image=textheart}{image=textheart}", "grin", "narrow", "base", "angry", "mid", "up", cheeks="blush")
+    call her_main("I'm cumming from being fucked with your fingers!!{image=textheart}{image=textheart}", "grin", "narrow", "base", "up", cheeks="blush")
     m "show me your tits [hermione_name]!"
     m "I want to see you cum while you play with them."
     $ hermione_squirt = True

@@ -148,14 +148,14 @@ label hg_pf_admire_panties_T1: # Call label
             ">You study Hermione's face..."
             call ctc
             ">You wonder what's going through her mind right now."
-            call her_main(".......................","angry","annoyed",emote="01")
+            call her_main(".......................", "angry", "narrow", "annoyed", "mid", emote="01")
             call ctc
 
             return
 
         "-Stare at her panties-":
             ">That's a plain girlish underwear..."
-            call her_main(".......................","angry","annoyed",emote="01")
+            call her_main(".......................", "angry", "narrow", "annoyed", "mid", emote="01")
             call ctc
 
             return

@@ -94,7 +94,7 @@ label hg_anal_sex_1:
             g4 "You know..."
             call her_main("Oh...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             #$ ccg2 = 6
-            call her_main("I am a whore??","clench","worried",cheeks="blush",tears="soft")
+            call her_main("I am a whore??", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
             g9 "Yes you are!"
             call her_main("*Sob!* I am a whore...", "angry", "squint", "base", "mid",cheeks="blush")
             call her_main("I love to suck cock...")
@@ -150,12 +150,12 @@ label hg_anal_sex_1:
 
             call her_main(".....................", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "You alright there, slut?"
-            call her_main("Ah... You are... stretching me out from the inside... [genie_name].","clench","worried",cheeks="blush",tears="soft")
+            call her_main("Ah... You are... stretching me out from the inside... [genie_name].", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
             call her_main("And it still hurts...", "angry", "squint", "base", "mid",cheeks="blush")
             m "Hm..."
             m "Maybe not enough lubrication...?"
             m "Come on down, [hermione_name]. Suck my dick some more."
-            call her_main("What? But...","clench","worried",cheeks="blush",tears="soft")
+            call her_main("What? But...", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
             call her_main("But it's dirty... It's been inside already.", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "Yes, it's been inside, but that doesn't mean it's dirty now."
             m "Come on, [hermione_name]. Suck my cock some more."
@@ -189,7 +189,7 @@ label hg_anal_sex_1:
 
             call her_main("Ah...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "Better now?"
-            call her_main("It still hurts...","clench","worried",cheeks="blush",tears="soft")
+            call her_main("It still hurts...", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
             call her_main("But I think I will be fine...")
             m "I'll take it slow for now..."
             call her_main("Ah... thank you, [genie_name].", "angry", "squint", "base", "mid",cheeks="blush")
@@ -198,13 +198,13 @@ label hg_anal_sex_1:
             m "Oh... So tight..."
             call her_main("................", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
             m "Why are you being so quiet [hermione_name]?"
-            call her_main("Because this is painful...","clench","worried",cheeks="blush",tears="soft")
+            call her_main("Because this is painful...", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
             call her_main("And I just want you to cum sooner, [genie_name]...")
             m "So you stifle your cries of pain?"
             call her_main("yes [genie_name]. *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             m "Don't do that."
             m "Sob, scream and cry as much as you wish!"
-            call her_main("B-but--","clench","worried",cheeks="blush",tears="soft")
+            call her_main("B-but--", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
             m "That will make me cum sooner."
             call her_main("Really? *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             call her_main("*Sob!* It hurts! *Sob!* It hurts so much! *Sob!*", "shock", "base", "base", "R",cheeks="blush",tears="soft")
@@ -319,14 +319,14 @@ label hg_anal_sex_1:
             pause.8
 
             m "Well, I'm done... You can get off my desk now."
-            call her_main("Yes, [genie_name]...","silly","worried",cheeks="blush",tears="soft",ypos="head",flip=False)
+            call her_main("Yes, [genie_name]...", "silly", "base", "worried", "mid", cheeks="blush",tears="soft",ypos="head",flip=False)
             m "You feeling alright?"
             call her_main("Yes, [genie_name]. It still hurts a little, but...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             m "But what?"
-            call her_main("But in a good way... [genie_name].","silly","worried",cheeks="blush",tears="soft")
+            call her_main("But in a good way... [genie_name].", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
             m "In a good way, huh?"
             g9 "Heh... You cute, little minx."
-            call her_main("Can I get paid now, [genie_name]?","silly","worried",cheeks="blush",tears="soft")
+            call her_main("Can I get paid now, [genie_name]?", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
 
             return
 
@@ -438,11 +438,11 @@ label hg_anal_sex_2:
             call her_main("I think you may be right, [genie_name].", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
             m "I know I am right, whore."
             m "Now wiggle that little ass of yours a little."
-            call her_main("Like this?","silly","worried",cheeks="blush",tears="soft")
+            call her_main("Like this?", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
             m  "Yes, that's a good whore."
             call her_main("I am a whore, aren't I?", "silly", "narrow", "base", "dead")
             m "You just sold me your asshole for 90 house points. How would you call that?"
-            call her_main("Yes, yes...{image=textheart} I am a whore...{image=textheart}","silly","worried",cheeks="blush",tears="soft")
+            call her_main("Yes, yes...{image=textheart} I am a whore...{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
             m "Are you crying?"
 
 

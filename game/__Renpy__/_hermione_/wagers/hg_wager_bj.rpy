@@ -258,7 +258,7 @@ label hg_wager_bj:
                     call her_main("That was mortifying!", "angry", "closed", "angry", "mid")
                     call her_main("How could you make me keep going?!?", "angry", "base", "angry", "mid")
                     m "Well, you were down there already, how could I not?"
-                    call her_main("Well, he found out anyway!", eye="angryCl")
+                    call her_main("Well, he found out anyway!", "angry", "closed", "angry", "mid")
                     m "And he didn't care, I don't see the problem here."
                     call her_main("You are unbelievable sometimes!", "scream", "base", "angry", "mid")
                     call her_main("I'm going now, don't expect me to do anything for you any time soon!", "clench", "base", "angry", "mid")
@@ -480,7 +480,7 @@ label hg_wager_bj:
                                         call u_pause_ani
                                         call her_main("Happy?", "normal", "happyCl", "base", "mid", cheeks="blush")
                                         g4 "What are you talking about? How could I be happy in a moment like this..."
-                                        call her_main("But I just made you...","open","worried", cheeks="blush")
+                                        call her_main("But I just made you...", "open", "base", "worried", "mid", cheeks="blush")
                                         g4 "I just lost that god damn game cause I couldn't concentrate!"
                                         call her_main("Well, I did what you asked me!", "mad", "narrow", "angry", "R", cheeks="blush")
                                         call her_main("So I'd very much appreciate if you didn't deduct those points", "open", "closed", "angry", "mid", cheeks="blush")
@@ -501,7 +501,7 @@ label hg_wager_bj:
                                         g4 "Of course I can, I'm the headmaster!"
                                         call her_main("I can't believe you've done this...", "mad", "base", "angry", "mid")
                                         m "Suck it up..."
-                                        call her_main("{size=-5}That's what I did...{/size}","open","annoyed", cheeks="blush")
+                                        call her_main("{size=-5}That's what I did...{/size}", "open", "narrow", "annoyed", "mid", cheeks="blush")
                                         m "Excuse me?"
                                         call her_main("Never mind...", "clench", "narrow", "angry", "R")
                                         $ her_mood += 25

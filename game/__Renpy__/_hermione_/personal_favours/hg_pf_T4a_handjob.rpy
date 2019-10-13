@@ -777,7 +777,7 @@ label hg_pf_handjob_2_continue:
             m "Heh... Nice."
             call her_main(".......", "angry", "narrow", "base", "down")
             m "Well, this wasn't that hard, was--"
-            call her_main("I scream for my Mommy but she is still at work...","mad","worried", tears="soft")
+            call her_main("I scream for my Mommy but she is still at work...", "mad", "base", "worried", "mid", tears="soft")
             m "Huh?"
             call her_main("My daddy takes me to my room...", "normal", "worriedCl", "worried", "mid")
             call her_main("He throws me on my bed!")

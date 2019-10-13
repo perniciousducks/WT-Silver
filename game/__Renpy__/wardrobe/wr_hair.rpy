@@ -255,7 +255,7 @@ label change_hair:
                         # jump return_to_wardrobe
                     # else: #5-10
                         # call her_main("Really, [genie_name]?", "annoyed", "squint", "base", "mid")
-                        # call her_main("You want me to look like a lesbian that bad?","open","annoyed",cheeks="blush")
+                        # call her_main("You want me to look like a lesbian that bad?", "open", "narrow", "annoyed", "mid", cheeks="blush")
                         # call her_main("I'm going to refuse!", "annoyed", "base", "base", "R")
                         # if cheats_active or game_difficulty <= 2:
                             # ">Try again at Whoring level 11."

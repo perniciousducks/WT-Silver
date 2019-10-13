@@ -411,7 +411,7 @@ label hg_pr_kiss_T3_E1:
     call her_main("I did not ask her why she needed this so desperately...", "open", "closed", "base", "mid")
     her "She was probably just trying to boost her own popularity at my expense..."
     her "Or it could also be that someone from the school staff bought this favour from her..."
-    call her_main("The same way you buy favours from me, [genie_name]...","open","annoyed", cheeks="blush")
+    call her_main("The same way you buy favours from me, [genie_name]...", "open", "narrow", "annoyed", "mid", cheeks="blush")
     m "(Snape?)"
     call her_main("If that is the case I am sure that it was professor Snape...", "angry", "base", "angry", "mid")
     m "What? He would never..."

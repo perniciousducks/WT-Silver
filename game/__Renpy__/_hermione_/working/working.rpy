@@ -500,7 +500,7 @@ label job_5:
             call her_main("...", "normal", "worriedCl", "worried", "mid", cheeks="blush")
             call her_main("Fine...", "open", "narrow", "base", "down", cheeks="blush")
         elif random_choice == 1:
-            call her_main("...","normal","worried", cheeks="blush")
+            call her_main("...", "normal", "base", "worried", "mid", cheeks="blush")
             call her_main("Well, if it stops you from deducting those points.", "open", "worriedCl", "worried", "mid", cheeks="blush")
             call her_main("I'll do it.", "base", "wink", "base", "mid")
         elif random_choice == 2:

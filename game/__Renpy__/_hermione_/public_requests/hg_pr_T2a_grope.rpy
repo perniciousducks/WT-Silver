@@ -232,7 +232,7 @@ label hg_pr_grope_T1_E3:
     m "Will ten extra points make you feel better?"
     call her_main("Huh? That would be very sweet of you [genie_name].", "soft", "base", "base", "mid", tears="soft")
     m "Of course... Ten extra points to \"Gryffindor\"."
-    call her_main("Thank you [genie_name]...","clench","worried", cheeks="blush", tears="soft")
+    call her_main("Thank you [genie_name]...", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "And the rest of your payment..."
 
     jump end_hg_pr_grope

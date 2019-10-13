@@ -9,28 +9,28 @@ label hermione_cardgame_menu:
         m "Are you familiar with Wizard Cards?"
         call her_main( "I've heard of it... it used to be a popular card game a decade or so ago.","annoyed","squint")
         g9 "So, would you like to play it?"
-        call her_main( "Do they even make the cards still? I don't think there's anyone in Hogsmeade stocking them.","normal","suspicious")
+        call her_main("Do they even make the cards still? I don't think there's anyone in Hogsmeade stocking them.", "normal", "squint", "base", "mid")
         call her_main( "So I wouldn't be able to play against you...","base","base")
         call her_main( "Unless Fred and Geo...","clench","wide")
         m "Unless... who now?"
-        call her_main( "\"Hermione... learn to keep your mouth shut.\"","mad","wideL")
+        call her_main("\"Hermione... learn to keep your mouth shut.\"", "mad", "wide", "base", "R")
         m "[hermione_name]..."
-        call her_main( "I'm sorry sir, I should have told you...","open","worried")
-        call her_main( "Fred and George have a secret shop set up in the school.","normal","worriedL")
+        call her_main("I'm sorry sir, I should have told you...", "open", "base", "worried", "mid")
+        call her_main("Fred and George have a secret shop set up in the school.", "normal", "base", "worried", "R")
         m "I see..."
         call her_main( "Please don't tell them I told you.","open","worriedCl")
         m "So you say they might have some cards?"
-        call her_main( "Wha... yes, maybe.","base","soft")
-        call her_main( "You're not going to shut them down?","angry","suspicious")
+        call her_main("Wha... yes, maybe.", "base", "base", "base", "mid_soft")
+        call her_main("You're not going to shut them down?", "angry", "squint", "base", "mid")
         m "Why should I? It's a free market is it not?"
         g9 "A little bit of competition with Hoemead is good for consumers."
-        call her_main( "But... I mean, yes of course.","annoyed","worried")
+        call her_main("But... I mean, yes of course.", "annoyed", "base", "worried", "mid")
         m "So you'll play if they stock some cards?"
-        call her_main( "I mean...","soft","down_raised")
+        call her_main("I mean...", "soft", "narrow", "base", "down")
         m "If they don't get shut down I mean."
         call her_main( "Oh, yes of course I'll play.","shock","wide")
-        call her_main( "...","soft","surprised")
-        call her_main( "Anything else you needed or am I free to go?","base","worried")
+        call her_main("...", "soft", "wide", "worried", "stare")
+        call her_main("Anything else you needed or am I free to go?", "base", "base", "worried", "mid")
         $ her_know_cards = True
         jump hermione_requests
 
@@ -46,17 +46,17 @@ label hermione_cardgame_menu:
         m "Hello again [hermione_name]."
         call her_main( "Hello [genie_name].","base","base")
         m "I wanted to thank you for mentioning the Weasley shop."
-        call her_main( "You're not shutting them down are you?","soft","down")
+        call her_main("You're not shutting them down are you?", "soft", "narrow", "worried", "down")
         m "Of course not, where else am I supposed to get my supplies from?"
-        call her_main( "Oh, yes... where.","normal","down_raised")
+        call her_main("Oh, yes... where.", "normal", "narrow", "base", "down")
         g9 "In fact, I noticed that you were on the list."
-        call her_main( "What list? Have I done something wrong?","soft","worried")
+        call her_main("What list? Have I done something wrong?", "soft", "base", "worried", "mid")
         m "The tier list for the card game of course."
-        call her_main( "Ah, yes...","normal","soft")
-        call her_main( "I went there to see if you had shut them down and ended up with a deck of cards.","mad","angryCl")
+        call her_main("Ah, yes...", "normal", "base", "base", "mid_soft")
+        call her_main("I went there to see if you had shut them down and ended up with a deck of cards.", "mad", "closed", "angry", "mid")
         g9 "\"Sounds like even I could learn some bartering tricks from those two.\""
         m "So, how about a little some practice rounds then?"
-        call her_main( " I've only recently started playing so I'm not that good yet.","base","glance")
+        call her_main(" I've only recently started playing so I'm not that good yet.", "base", "narrow", "base", "mid_soft")
         m "Don't worry, after a few practice rounds you'll get up to speed, when you're ready we'll play the real challenge..."
         $ her_cards_stocked_talk = True
         jump hermione_duel_menu
@@ -94,14 +94,14 @@ label hermione_first_duel:
     hide screen blkfade
     stop music fadeout 1
     if not her_first_win:
-        call her_main( "Well, that's interesting. I was sure that my deck would've been balanced enough...","angry","angryCl")
+        call her_main("Well, that's interesting. I was sure that my deck would've been balanced enough...", "angry", "closed", "angry", "mid")
         g9 "It's just a practice round, I'm sure you'll do better next time."
-        call her_main( "Your smile says otherwise.","mad","angryL")
+        call her_main("Your smile says otherwise.", "mad", "narrow", "angry", "R")
         m "..."
         $ her_first_win = True
         pass
     else:
-        call her_main( "This game is stupid!","angry","angryCl")
+        call her_main("This game is stupid!", "angry", "closed", "angry", "mid")
         pass
 
     $ geniecard_tokens += 1
@@ -122,18 +122,18 @@ label hermione_second_duel:
     hide screen blkfade
     stop music fadeout 1
     if not her_second_win:
-        call her_main( "I got 5 boosters, how isn't that enough to build a better deck than yours?","mad","annoyed")
+        call her_main("I got 5 boosters, how isn't that enough to build a better deck than yours?", "mad", "narrow", "annoyed", "mid")
         m "It's more important where you place those cards..."
-        call her_main( "I know what I'm doing....","open","angryCl")
+        call her_main("I know what I'm doing....", "open", "closed", "angry", "mid")
         g9 "So, do you want to take a break?"
-        call her_main( "No, I'm ready...","soft","concerned")
+        call her_main("No, I'm ready...", "soft", "narrow", "worried", "mid_soft")
         m "You sure?"
-        call her_main( "I said I'm ready.","clench","angry")
+        call her_main("I said I'm ready.", "clench", "base", "angry", "mid")
         $ her_second_win = True
         jump hermione_duel_menu
         pass
     else:
-        call her_main( "This game is stupid!","angry","angryCl")
+        call her_main("This game is stupid!", "angry", "closed", "angry", "mid")
         pass
 
     $ geniecard_tokens += 1
@@ -142,7 +142,7 @@ label hermione_second_duel:
 
 label hermione_third_duel:
     call her_main( "I'll make my house proud, you'll see.","grin","happy")
-    call her_main( "Wait, I should have asked for point for this.","shock","shocked")
+    call her_main("Wait, I should have asked for point for this.", "shock", "wide", "worried", "shocked")
     g9 "To late, here we go."
 
     call play_music("boss_card_theme")
@@ -178,13 +178,13 @@ label hermione_third_duel:
     hide screen blkfade
 
     if her_third_win == False:
-        call her_main( "Nooo, how's this even possible?","clench","shocked")
-        call her_main( "I'm supposed to be the smartest girl in my year...","mad","surprised")
+        call her_main("Nooo, how's this even possible?", "clench", "wide", "worried", "shocked")
+        call her_main("I'm supposed to be the smartest girl in my year...", "mad", "wide", "worried", "stare")
         g9 "Looks like Wisdom beats intelligence..."
-        call her_main( "You don't have to patronize me, I'll get you next time. You'll see.","upset","suspicious")
+        call her_main("You don't have to patronize me, I'll get you next time. You'll see.", "upset", "squint", "base", "mid")
         g9 "You seem to have forgotten something..."
-        call her_main( "Fine...","angry","glance")
-        call her_main( "Here...","mad","glanceL")
+        call her_main("Fine...", "angry", "narrow", "base", "mid_soft")
+        call her_main("Here...", "mad", "narrow", "base", "mid_soft")
         $ unlocked_cards += [card_her_librarian]
         call give_reward("You have received a card!", "images/cardgame/t1/hermione/her_librarian_v1.png")
         $ her_third_win = True
@@ -223,7 +223,7 @@ label hermione_random_duel:
         call her_main("House points...", "normal", "happy", "base", "R")
         call her_main("How would this work then?", "open", "happy", "base", "mid")
         m "Well, if you win I'll give you 10 points to Gryffindor."
-        call her_main("Only 10?","annoyed","Glance")
+        call her_main("Only 10?", "annoyed", "narrow", "base", "mid_soft")
         m "20 then..."
         call her_main("And if I lose?", "open", "happy", "base", "R")
         m "I'll take the same amount away."
@@ -259,7 +259,7 @@ label hermione_random_duel:
         $ geniecard_tokens += 1
 
     m "Seems like I've won this one [hermione_name]."
-    call her_main ("I noticed...","normal","worriedL")
+    call her_main("I noticed...", "normal", "base", "worried", "R")
     m "You do know what this means, don't you?"
     call her_main("...", "normal", "base", "worried", "mid")
     g9 "This means I'm going to have to deduct 20 points from Gryffindor house."
@@ -272,7 +272,7 @@ label hermione_random_duel:
             g9 "In that case, I think I have a good idea for a job..."
             call her_main("A job?", "open", "happy", "base", "mid")
             m "Yes, I'd like you to start helping the twins promote the card game..."
-            call her_main("I can do that...","base","worried", cheeks="blush")
+            call her_main("I can do that...", "base", "base", "worried", "mid", cheeks="blush")
             call her_main("But not today if that's okay with you.", "open", "narrow", "worried", "down")
             g9 "That's fine, wouldn't want you to go there looking as defeated as you are at the moment."
             call her_main("...", "normal", "happy", "base", "R", cheeks="blush")

@@ -483,7 +483,7 @@ label hg_pr_handjob_T3_intro_E1:
     $ u_sperm = "characters/hermione/face/auto_08.png"
 
     show screen blktone
-    call her_main("[genie_name]...","open","worried", xpos="right", ypos="base")
+    call her_main("[genie_name]...", "open", "base", "worried", "mid", xpos="right", ypos="base")
     m "[hermione_name]..."
     call her_main("I did a bad thing today, [genie_name]...", "open", "base", "worried", "R")
     m "Did you now? Do tell..."
@@ -503,11 +503,11 @@ label hg_pr_handjob_T3_intro_E1:
     call her_main("[genie_name]?", "angry", "base", "base", "mid", tears="soft")
     m "There is something in your hair..."
     call her_main("What? But I swallowed it all... err...", "soft", "base", "base", "mid", tears="soft")
-    call her_main("I mean...","clench","worried", cheeks="blush", tears="soft")
+    call her_main("I mean...", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
     call her_main("*Sigh*", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     her "...I sucked him off, [genie_name]."
     her "I did not plan to... but..."
-    call her_main("Ron is always so nice to me...","clench","worried", cheeks="blush", tears="soft")
+    call her_main("Ron is always so nice to me...", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
     call her_main("And I wanted to thank him...*Sob!*", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     call her_main("And now Ginny will kill me! *Sob!*", "angry", "base", "base", "mid", tears="soft")
     her "She will kill me, [genie_name]!"
@@ -515,7 +515,7 @@ label hg_pr_handjob_T3_intro_E1:
     her "No, no, no... How will I ever face her...?"
     m "Calm down, [hermione_name]."
     m "I assure you, this is not something a boy would be eager to brag about to his sister."
-    call her_main("It is not?","clench","worried", cheeks="blush", tears="soft")
+    call her_main("It is not?", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "Don't be silly, [hermione_name]."
     call her_main("Hm...", "normal", "base", "base", "R", tears="soft")
     call her_main("You are probably right, [genie_name]...", "soft", "base", "base", "mid", tears="soft")

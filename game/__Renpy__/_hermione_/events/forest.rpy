@@ -300,7 +300,7 @@ label forest_BJ_2:
     call her_main("To coat in your filthy nasty {b}{image=textheart}cum{image=textheart}{/b}...", "angry", "narrow", "base", "dead")
     call her_main("In front of whoever, or whatever, you want...", "angry", "narrow", "annoyed", "up")
     call her_main("...", "angry", "narrow", "base", "dead")
-    call her_main("Well... I hope you've learned your lesson!", "angry", "narrow", "base", "angry", "mid", "up")
+    call her_main("Well... I hope you've learned your lesson!", "angry", "narrow", "base", "up")
     call her_main("I'm going to go back and...", "angry", "narrow", "base", "up")
     call her_main("ge-Clean! myself off...", "open", "squint", "worried", "up")
     call her_main("And remember...", "open", "narrow", "base", "up")
@@ -600,7 +600,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     with d3
 
     m "[hermione_name]..."
-    call her_main("About time you got here, [genie_name]!","upset","annoyed",xpos="right",ypos="base",trans="d5")
+    call her_main("About time you got here, [genie_name]!", "upset", "narrow", "annoyed", "mid", xpos="right",ypos="base",trans="d5")
     call her_main("Do you know how long I've been waiting out here in the cold?", "annoyed", "happy", "base", "mid")
 
     menu:

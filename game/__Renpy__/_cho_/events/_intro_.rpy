@@ -224,7 +224,7 @@ label cho_intro_E1:
         call cho_main("Things?", "angry", "wide", "base", "L")
         call cho_main("Oh, miss perfect Hermione Granger. Afraid of using the word tits...", "horny", "narrow", "raised", "downR")
         call her_main("Cho!", "scream", "wide", "base", "stare", cheeks="blush")
-        call her_main(".{w=0.3}.{w=0.3}.","mad","worried", cheeks="blush")
+        call her_main(".{w=0.3}.{w=0.3}.", "mad", "base", "worried", "mid", cheeks="blush")
         call cho_main("And so what? What’s wrong with being confident about your body... you should try it some time... You might even get a boyfriend one day...", "soft", "wide", "base", "L")
         call cho_main("Though what do I know? I didn’t need to get my teeth shortened so I wouldn’t be confused as a rabbit!", "base", "angry", "angry", "L")
         call cho_main("Not that anyone would even see them through that horribly bushy hair of yours...", "smile", "angry", "angry", "L")
@@ -234,10 +234,10 @@ label cho_intro_E1:
         call her_main("Oh...{w=0.5} Of course I have!", "angry", "base", "worried", "R", cheeks="blush")
         call her_main("Hey, just because I’m not the kind of person to jump on every opportunity they get to have a peek at some random boys wand... that doesn’t mean I’ve never kissed anyone...","open","WorriedCl", cheeks="blush")
         g9 "..."
-        call her_main("And I didn’t need to have my breasts enlarged not to be confused as a boy!","open","WorriedL", cheeks="blush")
+        call her_main("And I didn’t need to have my breasts enlarged not to be confused as a boy!","open", "base", "worried", "R", cheeks="blush")
         call cho_main("Oh yeah, like you haven't been flaunting yours around either...", "base", "closed", "raised", "mid")
         call cho_main("Don’t you try and act all innocent!", "smile", "base", "angry", "L")
-        call her_main("As If...","normal","Worried", cheeks="blush")
+        call her_main("As If...","normal", "base", "worried", "mid", cheeks="blush")
         call cho_main("I wouldn’t doubt that’s why you’re here. To push your stupid agendas whilst you push your breasts together at the same time.", "open", "base", "angry", "L")
 
         g4 "{size=-4}You fucking sluts!{/size}"

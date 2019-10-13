@@ -71,7 +71,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "Something like that..."
         call her_main("", "normal", "base", "base", "mid")
         call her_main("I am glad you're finally asking me to properly utilize my abilities as one of Hogwarts top students.", "open", "closed", "base", "mid")
-        call her_main("{size=-4}I only wish you would have asked this of me sooner..{/size}",mouth="open",eye="glanceL")
+        call her_main("{size=-4}I only wish you would have asked this of me sooner..{/size}","open","narrow", "base","R_soft")
         call her_main("", "normal", "closed", "base", "mid")
         call her_main("Never fear! I am happy to complete a task such as this one!", "smile", "base", "base", "mid")
         call her_main("", "base", "base", "base", "mid")
@@ -85,16 +85,16 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "\"The more I am used, the more valuable I become.\""
         call her_main("The sword of Gryffindor...{w=0.5}{nw}", "open", "closed", "base", "mid")
         call her_main("no, wait...{w=0.5}{nw}", "angry", "wide", "worried", "shocked")
-        call her_main("..the elder wand?", eye="base")
+        call her_main("..the elder wand?", "base", "base", "base", "mid")
         call her_main("", mouth="disgust")
         m "I am not done yet [hermione_name]..."
-        call her_main("Sorry...{w=0.5}{nw}", eye="down", cheeks="blush")
+        call her_main("Sorry...{w=0.5}{nw}", "soft", "narrow", "worried", "down")
         call her_main("", "normal", "base", "base", "mid")
         m "\"The only thing man covet more than my form is the secret I hid.\""
         call her_main("hmm...{w=0.5}{nw}", "upset", "base", "base", "R")
         call her_main("", "normal", "base", "base", "mid")
         m "... \"Sometimes I am plain and white, but I look my best when skimpy and black.\""
-        call her_main("", eye="squint")
+        call her_main("", "normal", "happy", "base", "mid")
         g4 "No wait! \"skimpy and pink.\""
         call her_main("This is an ancient riddle...?", "open", "squint", "angry", "mid")
         call her_main("", "upset", "base", "base", "R")
@@ -123,11 +123,11 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "You're a bright young gal, I'm sure you'll think of something... Make haste!"
         call her_main(".......", mouth="disgust", cheeks="blush")
         pause 1.0
-        call her_main("", eye="down", cheeks="blush")
+        call her_main("", "soft", "narrow", "worried", "down")
         m "What are you standing there for?"
-        call her_main("Isn't there any other way I coul-..{w=0.5}{nw}", eye="glance", cheeks="blush")
+        call her_main("Isn't there any other way I coul-..{w=0.5}{nw}", "soft", "narrow", "base", "mid_soft", cheeks="blush")
         m "No."
-        call her_main("{size=-4}...fine.{/size}", eye="down", cheeks="blush")
+        call her_main("{size=-4}...fine.{/size}", "soft", "narrow", "worried", "down")
 
         call her_walk(action="leave", speed=2.5)
 
@@ -191,10 +191,10 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Uh.... Well, the person I boug-... {w=0.3}*ahem*{w=0.2} {size=+2}BORROWED{/size} these from must have forgotten to take the price tag off.", "open", "happy", "base", "mid")
         call her_main("", mouth="normal")
         m "I see...{w=0.3} Well whoever you took them from must be a bit slow to forget something like that, don't you agree?"
-        call her_main("Uhh...", eye="down")
+        call her_main("Uhh...", "normal", "narrow", "worried", "down")
         m "I would even dare to call them...{w=0.2} a moron."
         call her_main("...", mouth="upset")
-        call her_main("", eye="worriedL")
+        call her_main("", "upset", "base", "worried", "R")
         g9 "A bloated...{w=0.2} Scatterbrained,{w=0.2} moron!"
         call her_main("{size=+4}[genie_name]!{/size}", "open", "squint", "angry", "mid")
         call her_main("", mouth="normal")
@@ -203,19 +203,19 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("it was me!", "angry", "narrow", "worried", "down")
         call her_main("I couldn't do it, so I bought them at the shop...", mouth="disgust")
         m "So...{w=0.5} You're the bloated, scatterbrained moron then?"
-        call her_main("Sir, this has been embarrassing enough...{w=0.5}\nCan I just go back to my dormitory please?", eye="glance")
+        call her_main("Sir, this has been embarrassing enough...{w=0.5}\nCan I just go back to my dormitory please?", "disgust", "narrow", "base", "mid_soft")
         m "[hermione_name]..."
 
         menu:
             "\"Cheaters never Prosper.\"":
                 m "Well, I must say I am disappointed with your actions [hermione_name]."
                 call her_main("I am so sorry [genie_name]..", "disgust", "narrow", "worried", "down")
-                call her_main("", eye="glance")
+                call her_main("", "disgust", "narrow", "base", "mid_soft")
                 m "Not only you disobeyed me but also tried to trick me, your headmaster, into thinking these belonged to some colleague of yours."
-                call her_main("it won't happen again..", eye="down")
-                call her_main("", eye="glance")
+                call her_main("it won't happen again..", "disgust", "narrow", "worried", "down")
+                call her_main("", "disgust", "narrow", "base", "mid_soft")
                 g4 "For your own sake it better doesn't or I will have to take action."
-                call her_main("", eye="down")
+                call her_main("", "disgust", "narrow", "worried", "down")
                 m "Dismissed."
                 call her_main("Yes sir.")
 
@@ -265,14 +265,14 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "Hello to you too, [hermione_name]."
         g9 "Say..{w=0.3} would you like to earn some points today girl?"
         call her_main("Possibly..", mouth="open")
-        call her_main("But that depends on the task required of me.", eye="closed")
+        call her_main("But that depends on the task required of me.", "open", "closed", "base", "mid")
         call her_main("", "soft", "base", "base", "R")
         m "I would like you to try yourself at {size=+4}'that'{/size} favour again."
         call her_main("*sigh* I knew that sooner or later you would ask me about it, [genie_name]..", "open", "closed", "base", "mid")
         call her_main("Do I have a choice?", "upset", "base", "worried", "mid")
         g9 "Certainly, if you don't mind those 'Slytherin Harlots' taking the house cup!"
-        call her_main("I Do mind...", eye="down_raised")
-        call her_main("", eye="worried")
+        call her_main("I Do mind...", "upset", "narrow", "base", "down")
+        call her_main("", "upset", "base", "worried", "mid")
         g9 "Then you'd better head on out and steal some girl's panties!"
         call her_main("{size=-4}...100 points{/size}", "open", "base", "worried", "R")
         call her_main("", mouth="upset")
@@ -360,18 +360,18 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("She's a sister of one of my friends...", "open", "base", "worried", "R", cheeks="blush")
                 call her_main("", mouth="normal", cheeks="blush")
                 m "Is she hot? Or cute?"
-                call her_main("...", eye="down", cheeks="blush")
+                call her_main("...", "soft", "narrow", "worried", "down")
                 m "Well?"
                 call her_main("I guess she is kind of both..", mouth="soft", cheeks="blush")
                 g9 "(Splendid! Maybe she can introduce her to me sometimes)"
-                call her_main("", eye="base", cheeks="blush")
+                call her_main("", "soft", "base", "base", "mid", cheeks="blush")
                 m "So, how did you do it?"
                 call her_main("I offered to do her laundry along with mine this week...", "open", "narrow", "worried", "down", cheeks="blush")
                 call her_main("", mouth="soft", cheeks="blush")
                 m "And?"
                 call her_main("And whilst I was working, I grabbed one of her...{w=0.4} 'panties'...{w=0.3} and shoved them in my pocket.", "soft", "narrow", "base", "R_soft", cheeks="blush")
                 m "And?"
-                call her_main("If she she asked what happened to them... I would've just said that they had gotten lost in the wash.", eye="glance", cheeks="blush")
+                call her_main("If she she asked what happened to them... I would've just said that they had gotten lost in the wash.", "soft", "narrow", "base", "mid_soft", cheeks="blush")
                 call her_main("", mouth="normal", cheeks="blush")
                 m "And?"
                 call her_main(" And... that’s really it.", "open", "base", "base", "mid")
@@ -425,9 +425,9 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", "normal", "base", "base", "mid", cheeks="blush")
         m "But we've made it quite a habit by now, didn't we?"
         m "You coming here every morning and asking for points.."
-        call her_main("", eye="worried", cheeks="blush")
+        call her_main("", "normal", "base", "worried", "mid", cheeks="blush")
         m "..for which in return you bring me panties of that colleague of yours.."
-        call her_main("", eye="down_raised", cheeks="blush")
+        call her_main("", "normal", "narrow", "base", "down", cheeks="blush")
         g9 "..I wonder if she realised by now that a washing machine can only eat so much panties."
         call her_main("", "soft", "narrow", "base", "R_soft", cheeks="blush")
         m "but surely that's something worth risking your reputation over, am I right?"
@@ -483,13 +483,13 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", mouth="normal")
         call her_main("But just as I was shoving the last pair into my bag, Katie Bell walked in...", "angry", "narrow", "base", "down", cheeks="blush")
         call her_main("She caught me red handed!", "disgust", "narrow", "worried", "down", cheeks="blush")
-        call her_main("", eye="concerned")
+        call her_main("", "normal", "narrow", "worried", "mid_soft")
         g9 "Or caught silky handed!{w=1.0}{nw}"
         m "Or caught silky handed!{fast} ...panty handed?"
-        call her_main("", eye="down")
+        call her_main("", "normal", "narrow", "worried", "down")
         m "..."
         m "Sounded better in my head...{w=0.5} give me a minute and I'll come up with something that works..."
-        call her_main("I've never been more embarrassed in my entire life!", eye="concerned", cheeks="blush")
+        call her_main("I've never been more embarrassed in my entire life!", "normal", "narrow", "worried", "mid_soft", cheeks="blush")
         call her_main("", "annoyed", "narrow", "base", "R_soft")
         m "Pff, as if you've never said 'that' before."
         call her_main("I mean it! And I was mortified standing there clutching her panties while stumbling over my words for an excuse.", "open", "narrow", "worried", "mid_soft", cheeks="blush")
@@ -507,7 +507,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "It was a metaphor... She was assuming you were a bit more 'worldly' than you really are."
         call her_main("I am plenty worldly!", "angry", "base", "angry", "mid")
         call her_main(".....", "upset", "narrow", "angry", "R")
-        call her_main("", eye="worried")
+        call her_main("", "upset", "base", "worried", "mid")
         pause 0.5
         call her_main(".... What’s Cunnilingus?", "open", "base", "worried", "mid")
         call her_main("", mouth="upset")
@@ -518,7 +518,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Huh?", "open", "narrow", "worried", "mid_soft")
         call her_main("", mouth="upset")
         m "Muff Diving.."
-        call her_main("", eye="worried")
+        call her_main("", "upset", "base", "worried", "mid")
         m "Munch her carpet.."
         call her_main("", "clench", "closed", "angry", "mid")
         m "Deluxe wash.."
@@ -531,7 +531,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Yes obviously...", "open", "closed", "angry", "mid")
         call her_main("(...does he think I'm an idiot?)", "annoyed", "narrow", "angry", "R")
         m "Okay then repeat after me."
-        call her_main("", eye="soft")
+        call her_main("", "annoyed", "base", "base", "mid_soft")
         m "She wanted you.."
         call her_main("She wanted me...", "open", "base", "base", "mid_soft")
         call her_main("", mouth="normal")
@@ -546,7 +546,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         g9 "Because in my experience it feels awesome...{w=0.5}{nw}"
         m "Because in my experience it feels awesome...{fast} Wait, did that make it sound like I have a vagin-"
         call her_main("You're wrong! She- She-", "shock", "closed", "angry", "mid", cheeks="blush")
-        call her_main("", mouth="angry", eye="WorriedCl", cheeks="blush")
+        call her_main("", "angry", "worriedCl", "worried", "mid", cheeks="blush")
         m "What? Never done it before?"
         call her_main("{size=+4}OF COURSE NOT!{/size}", "angry", "base", "angry", "mid", cheeks="blush")
         g9 "I mean, I assumed you didn't have any real friends... But to get to your age and never eat another girl out? How shameful."
@@ -565,11 +565,11 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         g9 "You better get to it then, [hermione_name]!"
         call her_main("But I- But I- I couldn't- ", "shock", "narrow", "worried", "down", cheeks="blush")
         call her_main("", mouth="angry", cheeks="blush")
-        call her_main("I'll just have to inform her that it was a misunderstanding, yes that will have to do.", eye="glanceL", cheeks="blush")
-        call her_main("", eye="glance", cheeks="blush")
+        call her_main("I'll just have to inform her that it was a misunderstanding, yes that will have to do.", "shock", "narrow", "base", "mid_soft", cheeks="blush")
+        call her_main("", "angry", "narrow", "base", "mid_soft", cheeks="blush")
         g9 "Sure, and risk her spilling the beans to your entire dorm that the proud Hermione Granger steals girls’ panties."
-        call her_main("...", eye="down", cheeks="blush")
-        call her_main("", eye="angryCl", cheeks="blush")
+        call her_main("...", "soft", "narrow", "worried", "down")
+        call her_main("", "soft", "closed", "angry", "mid", cheeks="blush")
         g9 "Hey, for sixty points would you let me watc-"
         call her_main("Absolutely not!", "scream", "base", "angry", "mid", cheeks="blush")
         call her_main("", "angry", "base", "angry", "mid", cheeks="blush")
@@ -662,8 +662,8 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Could you make it a 'hard' one [genie_name]?", mouth="open_wide_tongue")
         call her_main("", mouth="smile")
         g9 "You'll enjoy this one for sure...{w=0.3} Ready?"
-        call her_main("Ready!", eye="happyCl")
-        call her_main("", eye="base")
+        call her_main("Ready!", "smile", "happyCl", "base", "mid")
+        call her_main("", "base", "base", "base", "mid")
         m "\"I am as soft and pure as a kitten, though far more desirable.\""
         call her_main("Hmmmm...", "base", "base", "base", "R")
         call her_main("Boobs?{w=0.3} Titjob?", "soft", "base", "base", "mid")
@@ -676,11 +676,11 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", mouth="base")
         m "\"The less of me there is, the more...'desirable' I become to behold.\""
         call her_main("Oh! Oh! Panties!", "crooked_smile", "closed", "base", "mid")
-        call her_main("", eye="base")
+        call her_main("", "base", "base", "base", "mid")
         g9 "Spot on."
         call her_main("Mine or someone else’s?", "smile", "happy", "base", "mid_soft")
         m "Someone else's if you don't mind, [hermione_name]."
-        call her_main("On it! I'll be back soon...", eye="base")
+        call her_main("On it! I'll be back soon...", "base", "base", "base", "mid")
 
         call her_walk(action="leave", speed=2.5)
 
@@ -727,8 +727,8 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         g9 "You know, charming the panties off someone is just a figure of speech."
         call her_main("Not anymore... I'd like to think Katie was quite pleased with me.", "smile", "narrow", "base", "mid_soft", cheeks="blush")
         m "Katie? Katie Bell? The same delicious dyke that wanted you to clam joust with her?"
-        call her_main("Maybe...", eye="glanceL", cheeks="blush")
-        call her_main("Although, Katie keeps raising the fee every time I ask.", eye="happyCl", cheeks="blush")
+        call her_main("Maybe...", "smile", "narrow", "base", "R_soft", cheeks="blush")
+        call her_main("Although, Katie keeps raising the fee every time I ask.", "smile", "happyCl", "base", "mid", cheeks="blush")
         call her_main("", mouth="open", cheeks="blush")
         call her_main("Not that I mind, but my tongue can get quite sore sometimes.", mouth="open_tongue", cheeks="blush")
         call her_main("Especially since we've started the alphabet-lingous thing.", "open_wide_tongue", "squint", "worried", "up", cheeks="blush")
@@ -736,7 +736,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         g4 "Ugh!"
         call cum_block
         call gen_chibi("cumming_behind_desk")
-        call her_main("", eye="glance", cheeks="blush")
+        call her_main("", "open_wide_tongue", "narrow", "base", "mid_soft", cheeks="blush")
         pause 1.5
         call gen_chibi("came_on_desk")
         call her_main("Oh, poor [genie_name], I had no idea you were so pent up. You can start calling me out more than twice a day, if two a day isn't enough.", "soft", "narrow", "worried", "mid_soft", cheeks="blush")

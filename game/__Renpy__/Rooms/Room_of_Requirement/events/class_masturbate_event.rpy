@@ -152,7 +152,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Of course he asked Daphne for her side of the story first.", "annoyed", "base", "base", "mid")
         call her_main("She pretended to act all innocent and embarrassed at first.", "open", "base", "base", "mid_soft")
         call her_main("But when Snape asked her again, she might as well have screamed that I was 'playing with myself.'", "annoyed", "happy", "base", "mid")
-        call her_main("When I tried to deny it, Proff- That disgusting pig Snape just grabbed my hand and sniffed it.", mouth="clench", eye="disgust")
+        call her_main("When I tried to deny it, Proff- That disgusting pig Snape just grabbed my hand and sniffed it.", "clench", "base", "worried", "mid")
         call her_main("The face he made had the whole class laughed at me! I was-", "open", "wide", "base", "stare", cheeks="blush")
         call her_main("I was- They-aghh!", "angry", "base", "angry", "mid")
         m "Just let it out [hermione_name]"
@@ -409,7 +409,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 m "And Rad nose Booty didn't mind his entire class watching you get off?"
                 call her_main("Oh him. Ha-ha Let's just say his eye wasn't doing much spinning that class. I hear it can even see through walls to so-", "soft", "base", "base", "mid_soft", cheeks="blush")
                 call her_main("and ah ah ah, that was the best part. I got an owl delivering my graded test back, before coming here. ah ah", "smile", "narrow", "annoyed", "up", cheeks="blush")
-                call her_main("A+ 100% no questions answered.", "grin", "wide", "base", "stare", cheeks="blush")
+                call her_main("A+ 100%% no questions answered.", "grin", "wide", "base", "stare", cheeks="blush")
                 call her_main("AGGGH! {image=textheart}{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up", cheeks="blush")
                 m "Well it certainly sounds like you had a fun day."
                 call her_main("Pant Pant, heh and I didn't tell you about my other classes.", "smile", "happy", "base", "mid_soft", cheeks="blush")

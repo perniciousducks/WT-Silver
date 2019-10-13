@@ -123,7 +123,7 @@ label hg_pr_flirt_teacher_T1_E1: # Flitwick
         "\"No points for you!\"":
 
             call her_main("But [genie_name], I did my best!", "angry", "base", "worried", "mid")
-            call her_main("You are going back on your promise [genie_name]!","mad","worried", tears="soft")
+            call her_main("You are going back on your promise [genie_name]!", "mad", "base", "worried", "mid", tears="soft")
             m "......................."
             stop music fadeout 1.0
             call her_main("How unbecoming of a school headmaster!", "scream", "worriedCl", "worried", "mid")
@@ -279,7 +279,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
     menu:
         "{size=-3}\"Lockhart will be out of this school in no time!\"{/size}":
             call her_main("Because of me?", "scream", "wide", "base", "mid")
-            call her_main("[genie_name], please!","mad","worried", tears="soft")
+            call her_main("[genie_name], please!", "mad", "base", "worried", "mid", tears="soft")
             m "Show me!"
             call her_main("No, it's embarrassing!", "scream", "worriedCl", "worried", "mid")
 
@@ -302,7 +302,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
                     pause.5
 
                     m "Hm..."
-                    call her_main("","angry","annoyed", emote="01", xpos="right", ypos="base")
+                    call her_main("", "angry", "narrow", "annoyed", "mid", emote="01", xpos="right", ypos="base")
                     call ctc
 
                     call her_main("As you can see Professor Lockhart is nothing but an embodiment of everything pure and courageous!", "annoyed", "narrow", "annoyed", "mid")
@@ -311,7 +311,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
                     her "You should not worry about professor Lockhart, [genie_name]."
                     her "He is not \"dirty\"."
                     m "Ah, what do I care..."
-                    call her_main("............?","angry","annoyed", emote="01")
+                    call her_main("............?", "angry", "narrow", "annoyed", "mid", emote="01")
 
                     call set_her_action("none")
 

@@ -286,7 +286,7 @@ label ball_quest_E1:
                     her "...I need to shamelessly present my naked body before you like this!"
                     m ".............?"
                     call her_main("I need to feel this embarrassment and humiliation! *SOB!*", "upset", "narrow", "angry", "dead", cheeks="blush", tears="messy")
-                    call her_main("The fate of the \"Autumn ball\" depends on this...", "grin", "narrow", "base", "angry", "mid", "up", cheeks="blush", tears="messy")
+                    call her_main("The fate of the \"Autumn ball\" depends on this...", "grin", "base", "angry", "mid", cheeks="blush", tears="messy")
                     her "So, sir, please..."
                     call her_main("Keep looking at my naked breasts, and my pussy...", "grin", "base", "angry", "mid", cheeks="blush", tears="messy")
                     call ctc
@@ -445,9 +445,9 @@ label ball_quest_E3:
     m "are You kidding me!?"
     call her_main("They sent me the dress I wore to the ball last year...", "angry", "base", "base", "mid", tears="soft")
     m "Those inconsiderate bastards!"
-    call her_main("Are you making fun of me sir?","mad","worried", tears="soft")
+    call her_main("Are you making fun of me sir?", "mad", "base", "worried", "mid", tears="soft")
     m "Can you blame me?"
-    call her_main("I will become the laughingstock of Hogwarts! *Sob!*","clench","worried", cheeks="blush", tears="soft")
+    call her_main("I will become the laughingstock of Hogwarts! *Sob!*", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
     call her_main("My reputation is as good as ruined! *Sob!*", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
     m "Seriously? After all the favours you sold me you care about a thing like this?"
     call her_main("Wearing the same dress to the \"Autumn Ball\" for two years in a row would be more humiliating than any favour I sold you so far, sir.", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
@@ -495,7 +495,7 @@ label ball_quest_E4:
     call play_music("chipper_doodle")
     call bld
     m "Miss Granger?"
-    call her_main("Sorry to disturb you sir...","open","worried", xpos="right", ypos="base")
+    call her_main("Sorry to disturb you sir...", "open", "base", "worried", "mid", xpos="right", ypos="base")
     call her_main("I came to apologize for my...", "open", "base", "worried", "R")
     her "...my hysterical behaviour yesterday."
     m "Sure thing, don't worry about it."
@@ -511,7 +511,7 @@ label ball_quest_E4:
     call play_music("despair")
     call her_main("I won't be able to attend the ball this year... so what?", "annoyed", "narrow", "worried", "down")
     call her_main("I spent countless hours with organizing the event...", "normal", "worriedCl", "worried", "mid")
-    call her_main("I worked so hard... and...","open","worried", tears="soft")
+    call her_main("I worked so hard... and...", "open", "base", "worried", "mid", tears="soft")
     call her_main("And now I will not even be able to... to... *Sob!*", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     call her_main("To... *SOB!*", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     call her_main("Excuse me sir!", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
@@ -559,7 +559,7 @@ label ball_quest_E5:
     her "It's perfect... *sob!* ...I love it."
     m "You sure don't look like it..."
     her "I am sorry, sir... *Sob!*"
-    call her_main("I... I am just...","clench","worried", cheeks="blush", tears="soft")
+    call her_main("I... I am just...", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
     call her_main("I am so happy...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     her "Thank you, sir. Thank you so much."
     call her_main("I cannot believe that you would do something like that for me...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")

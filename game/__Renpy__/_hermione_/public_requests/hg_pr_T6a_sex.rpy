@@ -140,7 +140,7 @@ label hg_pr_sex_T1_E3:
     show screen blktone
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Yes I did, [genie_name].", "upset", "closed", "base", "mid")
-    call her_main("And in the school library of all places...","open","annoyed", cheeks="blush")
+    call her_main("And in the school library of all places...", "open", "narrow", "annoyed", "mid", cheeks="blush")
     her "At first I was kind of worried that we would make too much noise..."
     her "But the boy literally lasted only one minute, [genie_name]."
     m "Don't hold it against him, [hermione_name]."

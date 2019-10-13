@@ -60,7 +60,7 @@ label equip_outfit:
                     # m "The adventurous type for sure."
                     # call her_main( "I don't know...","open","base")
                     # m "The kind that fights a corrupt government for the good of the people."
-                    # call her_main( "...","open","down_raised")
+                    # call her_main("...", "open", "narrow", "base", "down")
                     # m "It will feel very empowering I'm sure."
                     # m "The female pirates were said to have a very good relationship with their crew."
                     # call her_main( "Fine... shipmate [genie_name].","crooked_smile","base")
@@ -254,15 +254,15 @@ label equip_outfit:
                     # m "Uh, she's a misunderstood girl in love with one of the main characters enemies."
                     # call her_main( "I feel misunderstood at times too, does she get her love in the end?","base","narrow")
                     # m "Well, it's complicated. There's a bunch of different itterations too."
-                    # call her_main( "Will you stop talking about it if I put it on?","annoyed","worried")
+                    # call her_main("Will you stop talking about it if I put it on?", "annoyed", "base", "worried", "mid"
                     # m "Yes."
                     # call her_main( "Fine." ,"base","base")
                 # else: #Fail
-                    # call her_main( "No thanks, it seems a bit too tight for me.", "soft", "worried")
+                    # call her_main("No thanks, it seems a bit too tight for me.", "soft", "base", "worried", "mid"
                     # m "\"I'll loosen you up soon enough.\""
                     # call her_main( "What are you looking at. Is it something I said?","base","narrow")
                     # m "Oh, nothing my dear... I was just meditating."
-                    # call her_main( "\"More like, falling asleep.\"","base","suspicious")
+                    # call her_main("\"More like, falling asleep.\"", "base", "squint", "base", "mid")
                     # if cheats_active or game_difficulty <= 2:
                         # ">Try again at Whoring level 14."
                     # jump return_to_wardrobe

@@ -34,7 +34,7 @@ label slut_scene: #Locked to her being your slut
     m "Of course you're a slut."
     call her_main("!!!", "angry", "base", "base", "mid",tears="soft")
     m "You come here nearly every day and do unspeakable things. A normal girl doesn't let her headmaster fuck her in the ass."
-    call her_main("I knew it... How will I be able to live this down?","mad","worried",tears="soft")
+    call her_main("I knew it... How will I be able to live this down?", "mad", "base", "worried", "mid", tears="soft")
     m "You won't. You'll have to embrace it."
     call her_main("What?", "angry", "base", "base", "mid",tears="soft")
     m "There's no coming back for a slut like this. Even if I leave you'll just find some other cock to please."
@@ -229,7 +229,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     #she then comes back later that night after Ginny makes the quidditch team use her
 
     m "You're not a slut [hermione_name]."
-    call her_main("Thank you si-","mad","worried",tears="soft")
+    call her_main("Thank you si-", "mad", "base", "worried", "mid", tears="soft")
     m "You're worse than a slut, you're a whore."
     call her_main("What? What's the difference?", "angry", "base", "base", "mid")
     m "A slut is someone who enjoys sex. A whore is someone who's addicted to it."
@@ -265,7 +265,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("Please [genie_name].", "open", "narrow", "worried", "down")
     hide screen hermione_main
     m "Please what?"
-    call her_main("Please fuck me...","mad","worried",tears="soft")
+    call her_main("Please fuck me...", "mad", "base", "worried", "mid", tears="soft")
     hide screen hermione_main
     m "I'm not sure I quite heard that. You'll have to speak up."
     call her_main("{size=+5}Please fuck my cunt{/size}", "scream", "wide", "base", "stare")
@@ -337,7 +337,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call give_reward(">You present her the \"whore\" collar.\n \"whore\" collar added to your wardrobe.")
 
     call her_main("A collar? That says whore?", "open", "happy", "base", "mid",cheeks="blush")
-    call her_main("How is this a piece of jewellery?","open","annoyed",cheeks="blush")
+    call her_main("How is this a piece of jewellery?", "open", "narrow", "annoyed", "mid", cheeks="blush")
     m "Well I expect you to wear it all the time, like a ring, so I guess that qualifies it as jewellery."
     call her_main("You expect me to wear this all the time? Not just in your office.", "scream", "base", "angry", "mid",cheeks="blush",tears="messy")
     m "Of course. I already know what a whore you are, this is so that everyone else will know."
@@ -438,7 +438,7 @@ label slave_scene:
     m "Now if I'm your master then what does that make you?"
     call her_main("{size=-7}a slave{/size}", "soft", "base", "base", "mid",tears="soft")
     m "What was that, I couldn't quite make that out."
-    call her_main("A slave.","mad","worried",tears="soft")
+    call her_main("A slave.", "mad", "base", "worried", "mid", tears="soft")
 
     $ hermione_name = "Slave"
 

@@ -2,6 +2,9 @@
     if not config.developer:
         config.missing_image_callback = missing_image_func
         config.missing_label_callback = missing_label_func
+    config.after_load_callbacks.append(check_errors)
+        
+default _checking_for_errors = False
 
 init -2 python:
     rpy_version = int('%d%d%d%d' % renpy.version_tuple)
@@ -52,6 +55,75 @@ init -2 python:
             elif config.developer:
                 raise Exception("The variable `{}` was not previously set with a default value.".format(arg))
         renpy.execute_default_statement(False)
+        
+    def check_for_call_errors(char, auto=True):
+        import os
+        import os.path
+        import time
+        global _checking_for_errors
+        
+        open(config.basedir+"/calls.txt", "w").close()
+        open(config.basedir+"/game/test.rpy", "w").close()
+        _files = {"f": 0} # nonlocal nonglobal
+        _calls = []
+        _calls_dict = {}
+        _exp = char
+        _auto = auto
+        
+        _tab = " "*4
+        
+        def check_file(file, name):    
+            _found = False
+            with open(file) as f:
+                for n, line in enumerate(f):
+                    l = line.strip()
+                    if l.startswith("call %s" % _exp):
+                        _calls.append(l)
+                        _calls_dict.setdefault(name, []).append(l+" # Line: %s" % n)
+                        if not _found:
+                            _found = True
+                            _files["f"] += 1
+            return
+        
+        for dp, dn, fn in os.walk(config.basedir):
+            for i in [f for f in fn if f.endswith(".rpy")]:
+                check_file(os.path.join(dp, i), i)
+                
+        with open(config.basedir+"/calls.txt", "w") as f:
+            for exp in _calls:
+                f.write("%s\n" % exp)
+            
+        with open(config.basedir+"/game/test.rpy", "w") as f:
+            f.write("label expression_testing:\n%s%s\n%s### Found %s occurences of 'call %s' in %s files. ###\n%s\n%s$ _skip = Skip(fast=True)\n%s$ _skip()\n%s$ renpy.not_infinite_loop(60)\n" % (_tab, "#"*70, _tab, len(_calls), _exp, _files["f"], _tab+"#"*70, _tab, _tab, _tab))
+            for k in _calls_dict.iterkeys():
+                f.write("%s#\n%s# %s\n%s#\n" % (_tab, _tab, k, _tab))
+                for v in _calls_dict[k]:
+                    f.write(_tab+"%s\n" % v)
+            f.write("%s$ renpy.choice_for_skipping()\n%smenu:\n%s\"System\" \"Test successful, delete test.rpy?\"\n%s\"Yes\":\n%s$ _delete_test_file()\n%s\"No\":\n%spass\n%sjump main_room_menu\n" % (_tab, _tab, _tab*2, _tab*2, _tab*3, _tab*2, _tab*3, _tab))
+            
+        print "Scan finished"
+        print "Found %s calls." % len(_calls)
+        if _auto:
+            _checking_for_errors = True
+            print "restarting..."
+            renpy.reload_script()
+            
+    def _delete_test_file():
+            if os.path.isfile(config.basedir+"/game/test.rpy"):
+                os.remove(config.basedir+"/game/test.rpy")
+            return
+            
+    def check_errors():
+        import os
+        
+        global _checking_for_errors
+        if _checking_for_errors:
+            _checking_for_errors = False
+            renpy.pause(2.0)
+            renpy.jump("expression_testing")
+            
+        if os.path.isfile(config.basedir+"/game/test.rpyc") and not os.path.isfile(config.basedir+"/game/test.rpy"):
+            os.remove(config.basedir+"/game/test.rpyc")
         
 label missing_label():
     $ renpy.choice_for_skipping()

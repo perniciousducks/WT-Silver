@@ -423,7 +423,7 @@ label chit_chat:
         elif one_of_ten == 10:
             call her_main("It goes like this...", "open", "closed", "base", "mid")
             her "First Gryffindor, then Ravenclaw, then Hufflepuff..."
-            call her_main("And Slytherin is not even on the list!","open","annoyed",cheeks="blush")
+            call her_main("And Slytherin is not even on the list!", "open", "narrow", "annoyed", "mid", cheeks="blush")
             call her_main("", "upset", "closed", "base", "mid")
 
     if her_whoring >= 22:
@@ -482,6 +482,6 @@ label chit_chat:
         elif one_of_ten == 10:
             call her_main("It goes like this...", "open", "closed", "base", "mid") 
             her "First Gryffindor, then Ravenclaw, then Hufflepuff..."
-            call her_main("And Slytherin is not even on the list!","open","annoyed",cheeks="blush") 
+            call her_main("And Slytherin is not even on the list!", "open", "narrow", "annoyed", "mid", cheeks="blush") 
             call her_main("", "upset", "closed", "base", "mid")
     return

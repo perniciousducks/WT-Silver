@@ -48,7 +48,7 @@ label hg_pr_blowjob:
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         m "Yes, that's how it's usually done..."
         call her_main("[genie_name], I...", "upset", "closed", "base", "mid")
-        call her_main("I refuse to sell you a depraved favour like that, [genie_name].","open","annoyed", cheeks="blush")
+        call her_main("I refuse to sell you a depraved favour like that, [genie_name].", "open", "narrow", "annoyed", "mid", cheeks="blush")
         call her_main("Can't I just kiss another girl instead?", "open", "worriedCl", "worried", "mid")
         her "I do not mind that..."
         m "[hermione_name], please stop wasting my time..."
@@ -165,7 +165,7 @@ label hg_pr_blowjob_T1_E2:
     call play_music("despair")
     call her_main("[genie_name], I...", "angry", "narrow", "base", "down")
     her "I tried, but..."
-    call her_main("The boy turned me down, [genie_name]...","mad","worried", tears="soft")
+    call her_main("The boy turned me down, [genie_name]...", "mad", "base", "worried", "mid", tears="soft")
     call her_main("I cannot believe that actually happened...", "angry", "base", "base", "mid", tears="soft")
     her "I am one of the top students in this school!"
     her "One of the most popular ones too..."
@@ -176,9 +176,9 @@ label hg_pr_blowjob_T1_E2:
     m "I think I would get over it rather quickly..."
     call her_main("He rejected me [genie_name]...", "angry", "base", "angry", "mid", cheeks="blush")
     her "Who does he think he is?!"
-    call her_main("With all due respect, [genie_name], you wouldn't understand...","open","annoyed", cheeks="blush")
+    call her_main("With all due respect, [genie_name], you wouldn't understand...", "open", "narrow", "annoyed", "mid", cheeks="blush")
     m "Well, in any case. I can't pay you for this."
-    call her_main("Of course... I would not expect you to, [genie_name].","annoyed","annoyed", tears="soft")
+    call her_main("Of course... I would not expect you to, [genie_name].", "annoyed", "narrow", "annoyed", "mid", tears="soft")
     her "I failed to complete my task and deserve no praise of any kind..."
     her "And should you pay me out of pity..."
     call her_main("Then That would only worsen the insult...", "annoyed", "narrow", "angry", "R")

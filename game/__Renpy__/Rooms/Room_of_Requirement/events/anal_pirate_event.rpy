@@ -138,7 +138,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 g4 "Ye know..."
                 call her_main("Aye...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 #$ ccg2 = 6
-                call her_main("I be a wench??","clench","worried",cheeks="blush",tears="soft")
+                call her_main("I be a wench??", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
                 g9 "Yes ye be!"
                 call her_main("*Sob!* I be a wench...", "angry", "squint", "base", "mid",cheeks="blush")
                 call her_main("I love t' suck ye pegleg...")
@@ -218,12 +218,12 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
                 call her_main(".....................", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "Ye be fine thar, wench?"
-                call her_main("Blisterin' Barnacles... Ye be... turnin' me folds inside out... captain.","clench","worried",cheeks="blush",tears="soft")
+                call her_main("Blisterin' Barnacles... Ye be... turnin' me folds inside out... captain.", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
                 call her_main("Me stitches be breaking", "angry", "squint", "base", "mid",cheeks="blush")
                 m "Aye..."
                 m "Maybe me canon needs swabbin'...?"
                 m "Go below deck, lass. swabb me canon some more."
-                call her_main("Wha'? But...","clench","worried",cheeks="blush",tears="soft")
+                call her_main("Wha'? But...", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
                 call her_main("But it be rusty... 'tis been in me bilge.", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "Aye, 'tis been abaft, but that's nah nigh ye bilge."
                 m "Heave ho landlubber or me ship be sinkin', lass. Swab me canon some more."
@@ -283,7 +283,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
                 call her_main("Ah...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "We be smooth sailing lass?"
-                call her_main("It still be hurting...","clench","worried",cheeks="blush",tears="soft")
+                call her_main("It still be hurting...", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
                 call her_main("But th' storm has passed.")
                 m "I'll adjust th' sails fer now..."
                 call her_main("Ah... I be greatful, captain.", "angry", "squint", "base", "mid",cheeks="blush")
@@ -292,13 +292,13 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Oh... Ye cavern be perfect, lass..."
                 call her_main("................", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
                 m "Why are ye bein' so quiet lass?"
-                call her_main("'cause 'tis cavern be too shallow for ye ship...","clench","worried",cheeks="blush",tears="soft")
+                call her_main("'cause 'tis cavern be too shallow for ye ship...", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
                 call her_main("'n I jus' wants ye t' cum sooner, captain...")
                 m "So ye stifle yer cries o' pain?"
                 call her_main("Aye captain. *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 m "Nah on me ship lass."
                 m "Sob, scream 'n cry as much as ye wish!"
-                call her_main("B-but--","clench","worried",cheeks="blush",tears="soft")
+                call her_main("B-but--", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
                 m "That shall make me canon ready t' fire in ye broadside."
                 call her_main("be this true? *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 call her_main("*Sob!* Me hull! *Sob!* It be taking in water! *Sob!*", "shock", "base", "base", "R",cheeks="blush",tears="soft")
@@ -432,14 +432,14 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen hermione_main
 
                 m "Well, I'm done... You can get off my ship now."
-                call her_main("Yes, captain...","silly","worried",cheeks="blush",tears="soft",ypos="head")
+                call her_main("Yes, captain...", "silly", "base", "worried", "mid", cheeks="blush",tears="soft",ypos="head")
                 m "You feeling alright?"
                 call her_main("Yes, captain. It still hurts a little, but...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
                 m "But what?"
-                call her_main("But in a good way... captain.","silly","worried",cheeks="blush",tears="soft")
+                call her_main("But in a good way... captain.", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
                 m "In a good way, huh?"
                 g9 "Heh... You naughty, little pirate."
-                call her_main("Can I my get my share of the booty now, captain?","silly","worried",cheeks="blush",tears="soft")
+                call her_main("Can I my get my share of the booty now, captain?", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
 
     #Second time event.
     elif pathvalue == 1:
@@ -574,11 +574,11 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("I reckon ye may be right, captain.", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
                 m "I always be right, wench."
                 m "Now wiggle that wee arse o' yers a wee."
-                call her_main("Like this?","silly","worried",cheeks="blush",tears="soft")
+                call her_main("Like this?", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
                 m  "Aye, that be a good wench."
                 call her_main("I be a wench, aren't I?", "silly", "narrow", "base", "dead")
                 m "Ye jus' sold me yer asshole fer 90 galleon points. What ye be calling that?"
-                call her_main("Yes, yes...{image=textheart} I be nothing but a wench...{image=textheart}","silly","worried",cheeks="blush",tears="soft")
+                call her_main("Yes, yes...{image=textheart} I be nothing but a wench...{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
                 m "Ye helm be leakin."
                 pass
 

@@ -31,9 +31,9 @@ label whose_points:
     m "First, let me introduce today's contestants."
     m "The curly haired harlot we all know and love. Give it up for Hermione."
     $ renpy.play('sounds/applause01.ogg')
-    call her_main("...","grin","worried",cheeks="blush", xpos="500",ypos="base")
+    call her_main("...", "grin", "base", "worried", "mid", cheeks="blush", xpos="500",ypos="base")
     $ renpy.sound.play("sounds/wolf_whistle.mp3")
-    call her_main("...","base","worried",cheeks="blush")
+    call her_main("...", "base", "base", "worried", "mid", cheeks="blush")
 
     m "The ravishing ravenclaw who'll rock your socks off. Luna! "
     $ renpy.play('sounds/applause01.ogg')
@@ -70,7 +70,7 @@ label whose_points:
     m "Looks like we have our first prompt."
     m "Things you might say in potions class... But also in your bedroom."
 
-    call her_main("This cauldron hasn't been used for years. It's all mouldy and full of muck!","grin","worried",cheeks="blush", xpos="right", ypos="base")
+    call her_main("This cauldron hasn't been used for years. It's all mouldy and full of muck!", "grin", "base", "worried", "mid", cheeks="blush", xpos="right", ypos="base")
 
     $ renpy.play('sounds/applause01.ogg')
     hat "Boo, there's no cauldrons in the bedroom!"
@@ -232,7 +232,7 @@ label whose_points:
     hide screen astoria_main
     with d3
 
-    call her_main("Oh no, I forgot about that!","shock","worried", tears="crying")
+    call her_main("Oh no, I forgot about that!", "shock", "base", "worried", "mid", tears="crying")
 
     $ renpy.play('sounds/epic_intro.mp3')
     $ renpy.play('sounds/applause01.ogg')

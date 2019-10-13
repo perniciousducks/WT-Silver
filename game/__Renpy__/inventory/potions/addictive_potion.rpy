@@ -812,9 +812,9 @@ label potion_scene_3_3_1: #Hypno potion
             m "I want you to beg."
             call her_main("Please mistah sir...", "shock", "worriedCl", "worried", "mid")
             m "Please what?"
-            call her_main("Ohmigawd Please let me touch myself down there... I'll do anything...","clench","worried",cheeks="blush",tears="soft")
+            call her_main("Ohmigawd Please let me touch myself down there... I'll do anything...", "clench", "base", "worried", "mid", cheeks="blush",tears="soft")
             m "Anything?"
-            call her_main("Anything. I just need to feel happy...","silly","worried",cheeks="blush",tears="soft")
+            call her_main("Anything. I just need to feel happy...", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
             m "Tell me what you are and I'll let you."
             call her_main("I'm Hermione, the school slut.", "grin", "narrow", "annoyed", "up")
             m "More."

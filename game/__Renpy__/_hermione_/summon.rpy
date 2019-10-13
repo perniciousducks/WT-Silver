@@ -290,7 +290,7 @@ label hermione_favor_menu:
             elif her_whoring >=16:
                 call her_main("I have told you before, [genie_name], it was just a one time thing....", "open", "happy", "base", "mid")
                 m "What about tomorrow though?"
-                call her_main ("What about tomorrow?","base","squint")
+                call her_main("What about tomorrow?","base","squint")
                 g9 "I made a graph detailing the current daily average points Slytherin gain... doesn't look that great."
                 m "Just think about it."
                 jump hermione_favors_convinced_check
@@ -683,7 +683,7 @@ label hermione_change:
             call her_main("That would make you my prince wouldn't it?", "open", "base", "base", "R",cheeks="blush")
             call her_main("", "base", "base", "base", "mid", cheeks="blush")
         elif her_whoring >= 13:
-            call her_main ("Yes... My prince.","smile","happy")
+            call her_main("Yes... My prince.","smile","happy")
             m "..."
             call her_main("I-I mean, [genie_name].", "smile", "happyCl", "base", "mid", emote="05")
             call her_main("", "base", "base", "base", "mid")
@@ -698,16 +698,16 @@ label hermione_change:
             m "No."
             call her_main("....", "annoyed", "base", "worried", "mid")
         elif her_whoring >= 13:
-            call her_main ("*Meow*","smile","happyCl")
-            call her_main ("","smile","happy")
+            call her_main("*Meow*","smile","happyCl")
+            call her_main("","smile","happy")
             m "Don't do that..."
-            call her_main ("Such a party pooper.","annoyed","happyCl")
+            call her_main("Such a party pooper.","annoyed","happyCl")
             call her_main("", "base", "base", "base", "mid")
     elif temp_name == "Bitch":
         if her_whoring >=13 and her_whoring < 15:
             call her_main("Isn't this a bit inappropriate [genie_name]?", "mad", "narrow", "worried", "down")
             m "And doing favours for house points isn't?"
-            call her_main ("Fine...","base","down_raised",cheeks="blush")
+            call her_main("Fine...","base","down_raised",cheeks="blush")
         elif her_whoring >= 15 and her_whoring < 17:
             call her_main("...", "normal", "narrow", "worried", "down",cheeks="blush")
             m "Any objections?"
@@ -797,10 +797,10 @@ label hermione_change:
                     m "That's not an answer..."
                     call her_main("{size=-10}Okay..{/size}", "soft", "narrow", "angry", "R",cheeks="blush")
                     m "What was that? I didn't hear you."
-                    call her_main("I said yes, you can call me a slytherin whore... or whatever.","normal","annoyed", cheeks="blush")
+                    call her_main("I said yes, you can call me a slytherin whore... or whatever.", "normal", "narrow", "annoyed", "mid", cheeks="blush")
                     call her_main("Happy now?!", "open", "closed", "angry", "mid", cheeks="blush")
                     g9 "Very."
-                    call her_main ("{size=-6}You are the worst.{/size}","normal","glanceL", cheeks="blush")
+                    call her_main("{size=-6}You are the worst.{/size}", "normal", "narrow", "base", "R_soft", cheeks="blush")
                     $ her_mood += 15
         elif her_whoring >= 21:
             call her_main("Please, [genie_name], couldn't you call me something else instead?", "open", "base", "worried", "mid")

@@ -2702,10 +2702,10 @@ label ball_ending_E2:
         m "Or whenever..."
         m "Or don't read it at all, I don't care..."
         g4 "............."
-        call her_main("Sir...?","base","worried",cheeks="blush",tears="mascara")
+        call her_main("Sir...?", "base", "base", "worried", "mid", cheeks="blush",tears="mascara")
         m "Stop it with the eyes! You're making me feel uncomfortable..."
         m "I wrote you a letter, so what?"
-        call her_main("I think it's sweet.............","base","worried",cheeks="blush",tears="mascara")
+        call her_main("I think it's sweet.............", "base", "base", "worried", "mid", cheeks="blush",tears="mascara")
         g4 "I said, stop gawking at me girl. I thought you were late for your dance or something!"
         call her_main("THE DANCE!", "open", "wide", "base", "stare",cheeks="blush",tears="mascara")
         call her_main("I'm sorry, I have to go!")
@@ -3082,10 +3082,10 @@ label ball_ending_E3:
         hide screen letter
         call bld("hide")
 
-        call her_main( "...........................................................................................................","disgust","shocked",cheeks="blush")
+        call her_main( "...........................................................................................................","disgust","wide","worried","shocked",cheeks="blush")
         dum_[1]"I assume the sender of this letter is that Genie fellow?"
         dum_[1]"The one who has been impersonating me for the past several months?"
-        call her_main( "...........................................................................................................","disgust","shocked",cheeks="blush")
+        call her_main( "...........................................................................................................","disgust","wide","worried","shocked",cheeks="blush")
         dum_[1]"Well, now that I am back..."
         dum_[1]"I will be putting an end to all that \"favour-selling-business\" of course."
         call her_main("", "scream", "base", "angry", "mid",emote="01")
@@ -3095,7 +3095,7 @@ label ball_ending_E3:
         her "{size=+7}What?!!{/size}"
         call her_main("How am I supposed to win any points then?", "disgust", "narrow", "base", "mid_soft")
         dum_[1]"The same way you always did, miss Granger."
-        call her_main("Huh...?","open","annoyed",cheeks="blush")
+        call her_main("Huh...?","open","narrow","annoyed","mid",cheeks="blush")
         dum_[1]"With hard work."
         call her_main("That's just stupid!", "angry", "base", "angry", "mid",cheeks="blush")
         dum_[2] "Miss Granger, would you mind to guard your tongue when--"
@@ -3104,7 +3104,7 @@ label ball_ending_E3:
         hide screen hermione_main
         $ hermione_wear_bra = False
         call set_her_action("lift_top")
-        call her_main("","annoyed","annoyed", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "annoyed", "narrow", "annoyed", "mid", xpos="mid", ypos="base", trans="fade")
         stop music
         call ctc
 

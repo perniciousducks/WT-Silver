@@ -128,7 +128,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
 
     $ her_mood += 10
     call her_main("!!!", "scream", "wide", "base", "stare", cheeks="blush")
-    call her_main("Ouch! It hurts! *SOB!*","angry","worried", cheeks="blush")
+    call her_main("Ouch! It hurts! *SOB!*", "angry", "base", "worried", "mid", cheeks="blush")
     m "Did you like it though?"
     call her_main("Did I... \"like it\, [genie_name]..?", "annoyed", "narrow", "annoyed", "mid")
     call her_main("What girl in her right mind would like to be treated this way?")
@@ -244,7 +244,7 @@ label hg_pf_grope_breasts_T3_naked:
     call slap_her
 
     call her_main("!!!", "scream", "wide", "base", "stare", cheeks="blush")
-    call her_main("Ouch!","angry","worried", cheeks="blush")
+    call her_main("Ouch!", "angry", "base", "worried", "mid", cheeks="blush")
     call her_main("[genie_name], what did you do this for?")
     m "Dunno... Seemed like a good idea..."
     m "Did you like it?"
@@ -426,7 +426,7 @@ label hg_pf_grope_breasts_T4_naked: # No top.
     call slap_her
 
     call her_main("A-ah! Yes! I do, I do! A-ah...", "silly", "narrow", "annoyed", "up", cheeks="blush", tears="soft")
-    call her_main("...does this mean I'm a pervert, [genie_name]?","angry","worried", cheeks="blush", tears="soft")
+    call her_main("...does this mean I'm a pervert, [genie_name]?", "angry", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "What?"
     m "Stop being silly, [hermione_name]."
     m "It is completely natural for a girl to enjoy her tits getting smacked around a little."
@@ -477,13 +477,13 @@ label hg_pf_grope_breasts_T5_naked:
     m "But do you enjoy it?"
 
     if her_whoring < 18:
-        call her_main("Ah... Yes, [genie_name]... I don't know why, but I do...","clench","worried", cheeks="blush", tears="soft")
+        call her_main("Ah... Yes, [genie_name]... I don't know why, but I do...", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
     else:
-        call her_main("Ah... Yes, [genie_name]... I love it...","silly","worried", cheeks="blush", tears="soft")
+        call her_main("Ah... Yes, [genie_name]... I love it...", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
 
     m "Good girl..."
     call nar(">You let go of her nipples...")
-    call her_main("Ah...","silly","worried", cheeks="blush", tears="soft")
+    call her_main("Ah...", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
 
     show screen bld1
     call hide_blktone
@@ -506,14 +506,14 @@ label hg_pf_grope_breasts_T5_naked:
 
     if her_whoring < 18:
         call her_main("I don't \"want to\"... ", "shock", "base", "base", "R", cheeks="blush", tears="soft")
-        call her_main("But if you insist [genie_name]...","silly","worried", cheeks="blush", tears="soft")
+        call her_main("But if you insist [genie_name]...", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
         m "Well, I do insist... apparently."
     else:
         call her_main("Yes please, [genie_name]!", "shock", "base", "base", "R", cheeks="blush", tears="soft")
         call her_main("I'll even let you do it for free...", "shock", "base", "base", "R", cheeks="blush", tears="soft")
         m "Well, in that case..."
 
-    call her_main("Ah...","silly","worried", cheeks="blush", tears="soft")
+    call her_main("Ah...", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
 
     call nar(">You spend some more time with Hermione's breasts...")
 

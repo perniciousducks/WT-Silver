@@ -86,7 +86,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         g9 "Just get naked already!"
 
         show screen blktone
-        call her_main("...","annoyed","annoyed", xpos="mid", ypos="base")
+        call her_main("...","annoyed","narrow", "annoyed", "mid", xpos="mid", ypos="base")
 
         #Remove Top Animation
         call set_her_action("lift_top")
@@ -222,7 +222,7 @@ label hg_pr_strip_T2_rear:
     call hg_pr_strip_rear_transition
 
     if her_whoring < 18:
-        call her_main("....................................","annoyed","annoyed", ypos="head")
+        call her_main("....................................","annoyed","narrow", "annoyed", "mid", ypos="head")
     else:
         call her_main("....................................", "base", "closed", "base", "mid", ypos="head")
         call play_music("playful_tension") # SEX THEME.

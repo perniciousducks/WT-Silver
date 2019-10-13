@@ -443,7 +443,7 @@ label hg_pf_talk_T3:
     else:
         m "(Poly... what?)"
     g9 "Why don't {size=+4}you{/size} tell me since you seem so knowledgeable about the subject..."
-    call her_main("Sorry?","mad","worried", cheeks="blush")
+    call her_main("Sorry?", "mad", "base", "worried", "mid", cheeks="blush")
     m "What {size=+4}would{/size}{w=0.6} they use those massagers for?"
     call her_main("Well, you know...", "open", "narrow", "worried", "down", cheeks="blush")
     m "Pretend that I don't."
@@ -543,7 +543,7 @@ label hg_pf_talk_T3:
         g9 "Here we were having an innocent conversation about back massagers and you spring all this on me."
         call her_main("Professor... I didn't mean.", "soft", "worriedCl", "worried", "mid", cheeks="blush")
         g9 "Don't you 'Professor' me..."
-        call her_main("But please, I assure you...","open","worried", cheeks="blush")
+        call her_main("But please, I assure you...", "open", "base", "worried", "mid", cheeks="blush")
         m "That will be all for today Miss Granger."
         m "You've surely opened my eyes..."
         call her_main("...", "annoyed", "base", "base", "mid")
@@ -562,7 +562,7 @@ label hg_pf_talk_tonks_T3_intro_E1:
     call her_main("Well, she's a very talented witch... You'd have to be to become an auror.", "open", "closed", "base", "mid")
     m "Wouldn't it be great if we could have another chat with each other?"
     m "I heard you already had a bit of a talk previously."
-    call her_main("You knew about that?","angry","worried", cheeks="blush")
+    call her_main("You knew about that?", "angry", "base", "worried", "mid", cheeks="blush")
     m "I'm the headmaster [hermione_name]...{w} It's my job to know what goes on within the castle."
     m "She was the one that suggested you try selling some favours yourself, was it not?"
     call her_main("Well...", "disgust", "narrow", "base", "down")
@@ -699,7 +699,7 @@ label hg_pf_talk_tonks:
             call ton_main("Now, we can't have that, can we...","base","base","sad","mid")
             call her_main("I know... It angers me to the core...", "annoyed", "base", "worried", "mid")
             call ton_main("","upset","base","sad","L", hair="basic")
-            call her_main("Everyone has been working so hard towards winning the cup... I have been working so hard...","open","worried", cheeks="blush")
+            call her_main("Everyone has been working so hard towards winning the cup... I have been working so hard...", "open", "base", "worried", "mid", cheeks="blush")
             call her_main("The way it is right now doesn't promote fairness at all.", "annoyed", "narrow", "worried", "down")
             call ton_main("I can see how that could be a problem...","open","closed","base","mid")
             call her_main("It's a huge problem!", "angry", "base", "angry", "mid")
@@ -887,7 +887,7 @@ label hg_pf_talk_tonks:
                     m "Were you looking, Miss Granger?"
                     call her_main("...", "annoyed", "narrow", "base", "R_soft", cheeks="blush")
                 call ton_main("*Hmm*... sounds like watching Quidditch has gotten a lot more interesting since I was in school.","horny","base","raised","mid")
-                call her_main("I wouldn't use the word interesting to describe it...","annoyed","worried", cheeks="blush")
+                call her_main("I wouldn't use the word interesting to describe it...", "annoyed", "base", "worried", "mid", cheeks="blush")
                 call ton_main("I'll make sure to show up to the next match, to see what's going on for myself.","base","base","base","mid")
                 call her_main("Thank you professor...", "open", "closed", "base", "mid")
 
@@ -1121,7 +1121,7 @@ label hg_pf_talk_tonks:
                         call ton_main("What have you been doing back there?","horny","base","raised","mid", hair="horny")
                         m "I-{w=0.6}{nw}"
                         call her_main("H-{w=0.3}he isn't doing anything! Isn't that right, Professor?", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-                        call her_main("Just *uhm*...{w=0.5} stretching your leg, as always.","crooked_smile","worried", cheeks="blush")
+                        call her_main("Just *uhm*...{w=0.5} stretching your leg, as always.", "crooked_smile", "base", "worried", "mid", cheeks="blush")
                         call ton_main("Right...","open","base","base","R")
                         call ton_main("Well then, since my work here is done... I need to go back to my regular duties.","open","closed","base","mid", hair="basic")
 

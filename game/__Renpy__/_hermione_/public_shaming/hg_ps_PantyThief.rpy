@@ -65,7 +65,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         #">Her panties? You can't help but wonder when she managed to take them off..."
         m "??!"
         call nar(">You acquired Hermione's panties...")
-        call her_main("Just take them, [genie_name]...","mad","worried",tears="soft")
+        call her_main("Just take them, [genie_name]...", "mad", "base", "worried", "mid", tears="soft")
         m "What? When did you?"
         her "Your speech was so moving..."
         her "You are so right, [genie_name]! I shall beat them at their own game!"

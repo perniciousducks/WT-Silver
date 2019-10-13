@@ -336,7 +336,7 @@ label hg_pf_strip_T2_Snape:
             call her_main("(What?!)", "shock", "wide", "base", "stare")
             call sna_main("Unsatisfactory...","snape_09")
             sna "Look at that pitiful thing. Tiny and skinny... That's a boy's butt."
-            call her_main("!!!!!!!!!!","angry","annoyed", emote="01")
+            call her_main("!!!!!!!!!!", "angry", "narrow", "annoyed", "mid", emote="01")
 
     call nar(">One after another, Hermione undoes the buttons of her shirt...")
     pause.2

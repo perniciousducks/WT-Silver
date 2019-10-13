@@ -324,7 +324,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("Well... His Penis brushed up against my butt.", "annoyed", "closed", "base", "mid", cheeks="blush")
     m "How did he manage that?"
     call her_main("The boy wasn't in there to relieve himself in the way I assumed...", "open", "closed", "angry", "mid", cheeks="blush")
-    call her_main("I guess he wasn't paying attention to what sensation he was feeling on the tip of his...","normal","worried", cheeks="blush")
+    call her_main("I guess he wasn't paying attention to what sensation he was feeling on the tip of his...", "normal", "base", "worried", "mid", cheeks="blush")
     call her_main("Anyway...", "open", "base", "worried", "R", cheeks="blush")
     m "..."
     call her_main("I'd like my points now.", "base", "narrow", "worried", "down")

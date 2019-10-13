@@ -454,7 +454,7 @@ label hg_ps_buttplug_complete:
             call her_main("Still... being this distracted during class could really damage my grades...", "angry", "base", "base", "mid")
             m "I wouldn't worry about that. Just think of Gryffindor!"
             hide screen sccg
-            call her_main("Speaking of that...","annoyed","annoyed",xpos="right",ypos="base",trans="fade")
+            call her_main("Speaking of that...", "annoyed", "narrow", "annoyed", "mid", xpos="right",ypos="base",trans="fade")
             m "Oh yes, quite right."
 
         elif one_out_of_three == 2: ### EVENT (B)

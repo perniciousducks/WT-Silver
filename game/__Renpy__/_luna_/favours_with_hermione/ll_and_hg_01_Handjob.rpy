@@ -93,9 +93,9 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_main("...", "normal", "worriedCl", "worried", "mid")
         call her_main("Do I have to?", "angry", "worriedCl", "worried", "mid",emote="05")
         call lun_main("Of course not... So long as you don't mind me telling your precious \"MRM\" what's been going on.","base","mad","mad","mid")
-        call her_main("...","mad","worried",tears="soft")
+        call her_main("...", "mad", "base", "worried", "mid", tears="soft")
         call her_main("FINE!", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
-        call her_main("I see how it is!","annoyed","annoyed",tears="crying")
+        call her_main("I see how it is!", "annoyed", "narrow", "annoyed", "mid", tears="crying")
         ">Hermione pulls off her top in a huff."
 
         hide screen hermione_main
@@ -107,7 +107,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         call set_her_action("strip")
 
-        call her_main("for trying to do what's right!","annoyed","annoyed",tears="crying")
+        call her_main("for trying to do what's right!", "annoyed", "narrow", "annoyed", "mid", tears="crying")
         ">Hermione stands naked before you and Luna. Her face is contorted in what seems like an equal mix of rage and embarrassment."
         call her_main("there! are you happy now you two?", "annoyed", "narrow", "annoyed", "mid")
         m "Ye-"

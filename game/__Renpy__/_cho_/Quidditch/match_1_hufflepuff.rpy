@@ -182,7 +182,7 @@ label hufflepuff_match:
     pause.2
     call her_walk(xpos="375", ypos="105", speed=2)
     pause.5
-    call her_main("Good Morning everyone, and welcome to the i-inaugural-","soft","worried", flip=True,xpos="120",ypos="base")
+    call her_main("Good Morning everyone, and welcome to the i-inaugural-", "soft", "base", "worried", "mid", flip=True,xpos="120",ypos="base")
     call her_main("", "normal", "base", "worried", "mid")
     call sna_main("Speak up girl! And would it kill you to enunciate?!","snape_03",ypos="head")
     call her_main("*Grrr*", "mad", "narrow", "angry", "R")
@@ -639,7 +639,7 @@ label hufflepuff_match:
     $ renpy.sound.play("sounds/ball_hit.mp3")
     call sna_main("Yes, and I was starting to enjoy it. You are missing most of it by the way...","snape_20",ypos="head")
     call her_main("As a result of your yelling!", "scream", "closed", "angry", "mid")
-    call her_main("", mouth="normal", eye="AngryCl")
+    call her_main("", "normal", "closed", "angry", "mid")
     call sna_main("Eyes forward... girl.","snape_13",ypos="head")
     hide screen hermione_main
     her "*Grrrrr*"

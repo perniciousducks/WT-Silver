@@ -371,7 +371,7 @@ label potion_scene_2_2: #ass expansion
             call her_main("!!!", "grin", "narrow", "annoyed", "up")
             hide screen hermione_main
             m "Fuck, your ass is so soft. It's like fucking a pillow."
-            call her_main("Ahhh...","silly","worried",cheeks="blush",tears="soft")
+            call her_main("Ahhh...", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
             call her_main("Please, [genie_name]...", "silly", "narrow", "annoyed", "up")
             hide screen hermione_main
             m "Ughh, this feels so good, we might have to make this permanent."

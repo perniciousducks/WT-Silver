@@ -32,7 +32,7 @@ label hg_pp_cumaddict: #cum addiction - work in progress, has some scenes adjust
                 her "And you'll pay me if I drink this?"
                 m "Of course...{w} I'll give you 30 points for Gryffindor house."
 
-    if hg_pp_polyjuice.counter > 0:
+    if her_polyjuice_drunk:
         call her_main("You're not going to try to transform me into a cat again are you [genie_name]?","normal","frown")
         call her_main("","normal","frown")
         m "Of course not, now would you kindly drink the potion?"

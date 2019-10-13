@@ -1,10 +1,7 @@
-#Need a check if it's her first potion (is_first_potion)
-#Need a check if she has drunk any kind of polyjuice potion (polyjuice_drunk)
-#Need Check if she has drunk Luna potion before (her_luna_polyjuice_drunk)
+#TODO Fix posing/positioning and CG in polyjuice events
 #All scenes (cat/Luna) needs posing, add ending where it fails, whoring level requirements.
 #Character is incorectly positioned in some segments (infront of textbox) - done
 #The image segment changing when she swallows looks a bit weird
-#I probably fucked up some statements on how it should display when she has drunk Luna potion before/not drunk it before.
 
 ### POLYJUICE POTION ###
 
@@ -27,14 +24,14 @@ default hg_pp_polyjuice = event_class(
 label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her into another girl)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?","base","base")
-    if hg_pp_polyjuice.counter < 1: # Add counter check for all potions instead
+    if not her_potion_drunk:
         m "So, are you ready to try out one of my potions?"
         her "As ready as I'll ever be..."
         m "great!"
         m "I have this potion for you to try out."
     else:
         m "I have another potion for you to try out today..."
-        if hg_pp_polyjuice.counter > 0:
+        if her_polyjuice_drunk:
             her "Is this another polyjuice potion?"
             m "...{w}no?"
             if her_whoring < 12:
@@ -94,7 +91,7 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
     call her_main("Blehgh.","disgust","narrow")
     m "Well done."
 
-    if hg_pp_polyjuice.counter > 0:
+    if her_polyjuice_drunk:
         her "Here we go again I suppose..."
         her "Nothing's happening..."
         m "You'll just have to wait a minute remember?"
@@ -153,7 +150,6 @@ label hg_pp_polyjuice_T1_intro:
             "-Make her suck you off-":
                 # Introduction to kitty blowjob scene
                 label hg_pp_polyjuice_suck_intro:
-                $ hg_pp_polyjuice.done_blowjob = True
                 m "Wait, [hermione_name]!"
                 call her_chibi("stand","door",flip=False)
                 with d3
@@ -300,10 +296,11 @@ label hg_pp_polyjuice_T1_intro:
     $ hermione_busy = True
     jump main_room
 
+#TODO hg_pp_polyjuice_T1_introCC is never called?
 label hg_pp_polyjuice_T1_introCC:
     call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
 
-    if her_know_polyjuice:
+    if her_polyjuice_drunk:
         her "I can't believe you had me drink this again..."
         m "What's the problem? I think you look cute..."
         if her_whoring < 6:
@@ -323,7 +320,7 @@ label hg_pp_polyjuice_T1_introCC:
             m "And how did that make you feel?"
             her "I'm not sure..."
     else:
-        $ her_know_polyjuice = True
+        $ her_polyjuice_drunk = True
         call her_main("How could you do this to me [genie_name]?","angry","angry", xpos="mid", ypos="base", trans="hpunch")
         her "Try and turn me into a cat!"
         call her_main("In the middle of class!","annoyed","worriedL")
@@ -358,9 +355,9 @@ label hg_pp_polyjuice_T1_introCC:
     m "Wait [hermione_name], how would you like to earn 75 additional points?"
     call her_main("75 points? How?","annoyed","suspicious")
     m "By sucking my cock."
-    if polyjuice_drunk:
+    if her_polyjuice_drunk:
         her "Again?"
-        her "I thought you found my tounge way to rough in this state?"
+        her "I thought you found my tongue way to rough in this state?"
         m "Well, the purring certainly made well up for that aspect."
         her "Okay then..."
     else:
@@ -392,10 +389,10 @@ label hg_pp_polyjuice_T1_introCC:
     with fade
     call ctc
 
-    if polyjuice_drunk:
+    if her_polyjuice_drunk:
         call bld
         her "*Lick*"
-        m "There's that tounge again...{w} could you try using your throat a bit more?"
+        m "There's that tongue again...{w} could you try using your throat a bit more?"
         her "*Slurp*" #annoyed eyes
         $ g_c_u_pic = "hand_ani"
         with d3
@@ -427,7 +424,7 @@ label hg_pp_polyjuice_T1_introCC:
     $ g_c_u_pic = "blowjob_ani"
     with d3
     m "Even looking like this?"                         ###start sucking
-    if polyjuice_drunk:
+    if her_polyjuice_drunk:
         her "You had me do it before... at least I knew what to expect this time..."
         m "Slutty little Miss Granger... begging for attention..."
         m "making herself look like a cat for attention..."
@@ -524,279 +521,290 @@ label hg_pp_polyjuice_T1_introCC:
 
 #Luna transformation. #DONE
 
-# label potion_scene_1_2: #Luna potion
-    # m "Might I offer you a drink?"
-    # call her_main("You're not trying to get me drunk on Butterbeer again are you?","normal","base",xpos="right",ypos="base")
-    # m "Nothing of the sort, just a harmless little potion."
-    # call nar(">You hand her the potion bottle.")
-    # if is_first_potion:
-        # first_potion = False
-        # her "I can't believe you're making me drink random potions..."
-    # else:
-        # call her_main("Another of your mysterious potions?","open","suspicious")
-    # if polyjuice_drunk:
-        # her "Yuck... another polyjuice potion..."
-        # her "Do I really have to drink it again?"
-        # m "If you'd like to continue our favour trading it would certainly be in your best interest [hermione_name]."
-        # her "..."
-        # her "Can you at least tell me what you've put in it?"
-        # m "What's the fun in that? You're going to have to drink it and find out..."
-        # if her_whoring <= #low
-            # her "I'm not going to drink it again, especially since I have no idea who... or what it might turn me into."
-            # #End Scene
-        # if her whoring <= #high
-            # her "Well, I might be a little bit curious..."
-            # her "Okay then..."
-    # else:
-        # her "Let me guess, you won't tell me what it does and I'll embarrass myself in front of the whole class?"
-        # m "Not at all."
-        # call her_main("That's new.","annoyed","suspicious")
-        # her "... and somehow worrying"
-        # her "So what exactly is it then?"
-        # m "It's your regular, run-off-the-mill Polyjuice Potion."
-        # call her_main("Ugh. Those taste like muck.","normal","worriedCl")
-        # her "...and what will it turn me into?"
-        # m "That, Miss Granger, is a secret."
-        # call her_main("Typical.","normal","baseL",tears="soft")
-        # m "It'll taste a lot sweeter if you imagine all the points you'll earn for Gryffindor."
-        # m "How much of a lead did Slytherin have on you again?"
-        # her "You're right, [genie_name]. I can't let Gryffindor down!"
-    # hide screen hermione_main
-    # with d3
-    # pause.2
+label potion_scene_1_2: #Luna potion
+    m "Might I offer you a drink?"
+    call her_main("You're not trying to get me drunk on Butterbeer again are you?","normal","base",xpos="right",ypos="base")
+    m "Nothing of the sort, just a harmless little potion."
+    call nar(">You hand her the potion bottle.")
+    if not her_potion_drunk:
+        her "I can't believe you're making me drink random potions..."
+    else:
+        call her_main("Another of your mysterious potions?","open","suspicious")
+    if her_polyjuice_drunk:
+        her "Yuck... another polyjuice potion..."
+        her "Do I really have to drink it again?"
+        m "If you'd like to continue our favour trading it would certainly be in your best interest [hermione_name]."
+        her "..."
+        her "Can you at least tell me what you've put in it?"
+        m "What's the fun in that? You're going to have to drink it and find out..."
+        if her_whoring <= 12:
+            her "I'm not going to drink it again, especially since I have no idea who... or what it might turn me into."
+            her "You know what... I think I'd better leave."
+            call her_walk(action="leave", speed=2)
+            $ her_mood += 10
+            $ hermione_busy = True
+            jump main_room
+            # End Scene
+        else:
+            her "Well, I might be a little bit curious..."
+            her "Okay then..."
+    else:
+        her "Let me guess, you won't tell me what it does and I'll embarrass myself in front of the whole class?"
+        m "Not at all."
+        call her_main("That's new.","annoyed","suspicious")
+        her "... and somehow worrying"
+        her "So what exactly is it then?"
+        m "It's your regular, run-off-the-mill Polyjuice Potion."
+        call her_main("Ugh. Those taste like muck.","normal","worriedCl")
+        her "...and what will it turn me into?"
+        m "That, Miss Granger, is a secret."
+        call her_main("Typical.","normal","baseL",tears="soft")
+        m "It'll taste a lot sweeter if you imagine all the points you'll earn for Gryffindor."
+        m "How much of a lead did Slytherin have on you again?"
+        her "You're right, [genie_name]. I can't let Gryffindor down!"
+    hide screen hermione_main
+    with d3
+    pause.2
 
-    # $ renpy.sound.play("sounds/gulp.mp3")
-    # call her_chibi("drink_potion","mid","base")
-    # pause 2
+    $ renpy.sound.play("sounds/gulp.mp3")
+    call her_chibi("drink_potion","mid","base")
+    pause 2
 
-    # call nar(">She downs the thick potion.")
-    # pause.5
+    call nar(">She downs the thick potion.")
+    pause.5
 
-    # call her_chibi("stand","mid","base")
-    # pause.2
+    call her_chibi("stand","mid","base")
+    pause.2
 
-    # call her_main("Blehgh.","disgust","narrow")
-    # if polyjuice_drunk:
-        # her "Pinching my nose barely helps..."
-        # her "So, do I leave or?"
-        # m "No, just wait here for a moment..."
-        # m "Why don't you tell me a little bit about how your day's been going."
-        # her "Okay..."
-        # if her_whoring <= 13:
-            # her "Well, there's not much to tell you that you don't already know."
-            # her "Lately I've been questioning my previous outlook on life in general."
-            # m "In what way exactly?"
-            # her "Well, since we started our... mutually beneficial... what ever we call this..."
-            # her "The general atmosphere in our common room has been in an all time high because of how many house points we're racking in."
-            # m "That's good, you must feel a great sense of pride and accomplishment..."
-            # her "Of course, the only issue is that I would never be able to tell them I'm the one to thank for it..."
-            # her "If they just had one look of my face they'd be able to tell what was up."
-            # m "Speaking of face..."
-        # else:
-            # her "Well, generally its been quite dull up until now."
-            # her "I would be lying if I said I wasn't a little bit excited when you called on me."
-            # m "Oh, you'll be getting your fair share of excitement soon enough... Well, not this version of you."
-            # her "What version of me will be..."
-    # else:
-        # her "I was wrong, not muck. Snot. It's as thick as Trollsnot."
-        # m "As long as you keep it down, you'll earn Gryffindor a great deal of points."
-        # her "And I will."
-        # call her_main("So what now? I just go to class?","upset","wink")
-        # m "Not yet, tell me something about yourself."
-        # call her_main("Well, ever since I started my \"Extracurricular activities\" with you my attendance and grades have started slipping.","open","closed")
-        # m "Troubling indeed."
+    call her_main("Blehgh.","disgust","narrow")
+    if her_polyjuice_drunk:
+        her "Pinching my nose barely helps..."
+        her "So, do I leave or?"
+        m "No, just wait here for a moment..."
+        m "Why don't you tell me a little bit about how your day's been going."
+        her "Okay..."
+        if her_whoring <= 13:
+            her "Well, there's not much to tell you that you don't already know."
+            her "Lately I've been questioning my previous outlook on life in general."
+            m "In what way exactly?"
+            her "Well, since we started our... mutually beneficial... what ever we call this..."
+            her "The general atmosphere in our common room has been in an all time high because of how many house points we're racking in."
+            m "That's good, you must feel a great sense of pride and accomplishment..."
+            her "Of course, the only issue is that I would never be able to tell them I'm the one to thank for it..."
+            her "If they just had one look of my face they'd be able to tell what was up."
+            m "Speaking of face..."
+        else:
+            her "Well, generally its been quite dull up until now."
+            her "I would be lying if I said I wasn't a little bit excited when you called on me."
+            m "Oh, you'll be getting your fair share of excitement soon enough... Well, not this version of you."
+            her "What version of me will be..."
+    else:
+        her "I was wrong, not muck. Snot. It's as thick as Trollsnot."
+        m "As long as you keep it down, you'll earn Gryffindor a great deal of points."
+        her "And I will."
+        call her_main("So what now? I just go to class?","upset","wink")
+        m "Not yet, tell me something about yourself."
+        call her_main("Well, ever since I started my \"Extracurricular activities\" with you my attendance and grades have started slipping.","open","closed")
+        m "Troubling indeed."
 
-        # if her_whoring <= 13:
-            # call her_main("It is! [genie_name], I used to be at the top of the class. My scores were impeccable. ","scream","angryCl")
-            # m "And how are your scores now?"
-            # call her_main("Well I'm still at the top... Just not by as much.","annoyed","angryL")
-            # m "Well, there are times when academic excellence shouldn't be your primary concern."
-            # call her_main("Hmmph, and what /should/ be my primary concern then?","annoyed","suspicious")
-            # m "Currently. I'd say your face is pretty high on the list"
-            # call her_main("Excuse me. That is hardly appropriate for a headmaster.","open_tongue","glance")
-            # m "No, I'm serious. You should really see the look on your face."
-        # else:
-            # call her_main("Not really. I realise there are other things I can excel in.","base","base")
-            # m "Like sucking cocks for house points"
-            # call her_main("Professor!","scream","angryCl")
-            # m "Oh don't be so modest. If sucking dick was a class, you'd be Magna Cum Laude."
-            # call her_main("Thank you professor. You know, there's time to earn some more points before class. If you're feeling generous I could...","scream","angryCl")
-            # m "I'd have to know on whose face I'll be cumming though "
-            # call her_main("What do you mean? ...My face of course... I mean ...*urp*","scream","angryCl")
+        if her_whoring <= 13:
+            call her_main("It is! [genie_name], I used to be at the top of the class. My scores were impeccable. ","scream","angryCl")
+            m "And how are your scores now?"
+            call her_main("Well I'm still at the top... Just not by as much.","annoyed","angryL")
+            m "Well, there are times when academic excellence shouldn't be your primary concern."
+            call her_main("Hmmph, and what /should/ be my primary concern then?","annoyed","suspicious")
+            m "Currently. I'd say your face is pretty high on the list"
+            call her_main("Excuse me. That is hardly appropriate for a headmaster.","open_tongue","glance")
+            m "No, I'm serious. You should really see the look on your face."
+        else:
+            call her_main("Not really. I realise there are other things I can excel in.","base","base")
+            m "Like sucking cocks for house points"
+            call her_main("Professor!","scream","angryCl")
+            m "Oh don't be so modest. If sucking dick was a class, you'd be Magna Cum Laude."
+            call her_main("Thank you professor. You know, there's time to earn some more points before class. If you're feeling generous I could...","scream","angryCl")
+            m "I'd have to know on whose face I'll be cumming though "
+            call her_main("What do you mean? ...My face of course... I mean ...*urp*","scream","angryCl")
 
-    # hide screen hermione_main
-    # with hpunch
-    # hide screen hermione_stand
-    # call lun_chibi("stand","base","base")
-    # pause.5
+    hide screen hermione_main
+    with hpunch
+    hide screen hermione_stand
+    call lun_chibi("stand","base","base")
+    pause.5
 
-    # "*POOF*"
+    "*POOF*"
 
-    # $ luna_xpos = 400 #400 = "right"
-    # $ changeLuna("base","base","sad","mid")
-    # show screen luna_main
-    # with d3
+    $ luna_xpos = 400 #400 = "right"
+    $ changeLuna("base","base","sad","mid")
+    show screen luna_main
+    with d3
 
-    # if her_luna_polyjuice_drunk:
-        # her "*urgh*... Every time..."
-        # her "Did it work?"
-        # m "Perfectly..."
-        # call nar(">Hermione starts examining herself, feeling out her outfit and pausing at her breasts.")
-        # $ changeLuna("base","seductive","raised","mid")
-        # her "Well, At least I appear to be a girl.... A ravenclaw."
-        # m "I'm surprised you expected something different."
-        # call nar(">Hermione grabs a lock of her hair")
-        # $ changeLuna("pout","base","base","crossed")
-        # her "Hmm, a blonde... that narrows things down. Not a good sign..."
-        # m "And why might that be?"
-        # call nar(">Hermione reaches up into her fair and finds a thin wooden object lodge in the mess.")
-        # $ changeLuna("base","wide","angry","mid")
-        # her "..."
-        # her "I'm...{w} You...{w} You turned me into Luna Lovegood again?"
-        # m "Yeah!"
-        # $ changeLuna("pout","wide","angry","mid")
-        # her "What is your obsession with this crazy blonde girl?"
-        # m "Now now, you're the one looking like her remember."
-        # m "Unless you're referring to yourself there's nothing wrong with the way she looks."
-        # $ changeLuna("pout","base","sad","mid")
-        # her "..."
-        # m "Now, I'd like to see those great assets of hers..."
-        # if her_whoring <= #Lowish
-            # her "This again? I already told you, I'm not going to flaunt another students... assets."
-            # m "Then why would you drink the potion?"
-            # her "You didn't tell me what it was going to do [genie_name]."
-            # m "Oh, yeah..."
-            # her "I'm not going bare my... her chest... for you."
-            # m "Well you wont be receiving any of those points..."
-            # her "..."
-            # her "Yeah, that's still going to be a no, bye [genie_name]."
-            # #Hermione walks out Scene end
-            # #Hermione mood gets worse
-    # else:
-        # her "Ughhh... I feel like I'm going to throw up! Did the Polyjuice work??"
-        # m "Like a charm."
-        # call nar(">Hermione starts examining herself, feeling out her outfit and pausing at her breasts.")
-        # $ changeLuna("base","seductive","raised","mid")
-        # her "Apparently I'm still a girl. Someone from Ravenclaw?"
-        # m "Keen powers of observation, Miss Granger"
-        # call nar(">Hermione grabs a lock of her hair")
-        # $ changeLuna("pout","base","base","crossed")
-        # her "Definitely a blonde, though she could absolutely use a comb"
-        # $ changeLuna("base","base","base","crossed")
-        # call nar(">Suddenly Hermione feels something stuck in the mess of blonde. On closer examination it appears to be a wand.")
-        # $ changeLuna("base","wide","angry","mid")
-        # her "..."
-        # her "You turned me into Loony Lovegood... I mean Luna Lovegood!?!"
-        # m "Very astute, [hermione_name]."
-        # if not luna_known:
-            # m "(No idea who that is, but she looks good.)"
-        # $ changeLuna("pout","wide","angry","mid")
-        # her "Why on earth would you want me to look like Luna? She's completely mental!"
-        # m "I'm not seeing anything wrong with her."
-        # $ changeLuna("pout","base","sad","mid")
-        # her "She has... imaginary friends and believes in things that can't possibly exist [genie_name]. She is absolutely mad."
-        # m "Fortunately, I'm not really interested in her mental health. I am interested in her impressive, and quite real, chest."
-        # if her_whoring <= #Lowish
-            # her "I can't believe what you're suggesting, you're asking me to show off another students breasts?"
-            # m "Well, what else would you have me do? Look at your face?"
-            # her "That's crossing the line [genie_name], I might not think very highly of Loony... Luna..."
-            # her "But I'm not going bare my... her chest... for you."
-            # m "Then you wont be receiving any of those points..."
-            # her "..."
-            # her "Yeah, that's still going to be a no, bye [genie_name]."
-            # #Hermione walks out Scene end
-            # #Hermione mood gets worse
-        # else:
-            # $ changeLuna("base","seductive","raised","mid")
-            # her "You can't possibly be interested in that... that girl's paltry breasts."
-            # m "Currently they're yours. And they don't look so paltry from where I'm sitting [hermione_name]. Do I detect a hint of jealousy?"
-            # $ changeLuna("base","base","angry","mid")
-            # her "Not at all, I suppose it is only natural that someone of your advanced age has trouble with their eyesight."
-            # m "(definitely struck a nerve there.) Is that any way to talk to your elders, [hermione_name]? Perhaps you need a good spanking to remind you of your manners. We old people are good at giving those."
-            # $ changeLuna("disgust","base","sad","mid")
-            # her "I..I apologize, [genie_name]. I don't know what came over me."
-            # m "Apology accepted. I'm sure they can't hold a candle to the brilliance of your boobs."
-            # $ changeLuna("pout","base","base","R")
-            # her "I'd like to think I'm more than just a pair of breasts... but thank you [genie_name]. That was flattering. In a way."
-            # m "If you want to dispel all doubt, we could compare. Why don't you lift your shirt and show me what you... err... She's got under that sweater."
-            # $ changeLuna("pout","wide","angry","R")
-            # her "I'm still not entirely comfortable with this..."
-    # call nar(">Hermione quickly strips off her Ravenclaw top, followed by her bra.")
-    # hide screen luna_main
-    # with d3
+    if her_luna_polyjuice_drunk:
+        her "*urgh*... Every time..."
+        her "Did it work?"
+        m "Perfectly..."
+        call nar(">Hermione starts examining herself, feeling out her outfit and pausing at her breasts.")
+        $ changeLuna("base","seductive","raised","mid")
+        her "Well, At least I appear to be a girl.... A ravenclaw."
+        m "I'm surprised you expected something different."
+        call nar(">Hermione grabs a lock of her hair")
+        $ changeLuna("pout","base","base","crossed")
+        her "Hmm, a blonde... that narrows things down. Not a good sign..."
+        m "And why might that be?"
+        call nar(">Hermione reaches up into her fair and finds a thin wooden object lodge in the mess.")
+        $ changeLuna("base","wide","angry","mid")
+        her "..."
+        her "I'm...{w} You...{w} You turned me into Luna Lovegood again?"
+        m "Yeah!"
+        $ changeLuna("pout","wide","angry","mid")
+        her "What is your obsession with this crazy blonde girl?"
+        m "Now now, you're the one looking like her remember."
+        m "Unless you're referring to yourself there's nothing wrong with the way she looks."
+        $ changeLuna("pout","base","sad","mid")
+        her "..."
+        m "Now, I'd like to see those great assets of hers..."
+        if her_whoring <= 13:# Lowish
+            her "This again? I already told you, I'm not going to flaunt another students... assets."
+            m "Then why would you drink the potion?"
+            her "You didn't tell me what it was going to do [genie_name]."
+            m "Oh, yeah..."
+            her "I'm not going bare my... her chest... for you."
+            m "Well you wont be receiving any of those points..."
+            her "..."
+            her "Yeah, that's still going to be a no, bye [genie_name]."
+            call her_walk(action="leave", speed=2)
+            $ her_mood += 10
+            $ hermione_busy = True
+            jump main_room
+            # End Scene
+    else:
+        her "Ughhh... I feel like I'm going to throw up! Did the Polyjuice work??"
+        m "Like a charm."
+        call nar(">Hermione starts examining herself, feeling out her outfit and pausing at her breasts.")
+        $ changeLuna("base","seductive","raised","mid")
+        her "Apparently I'm still a girl. Someone from Ravenclaw?"
+        m "Keen powers of observation, Miss Granger"
+        call nar(">Hermione grabs a lock of her hair")
+        $ changeLuna("pout","base","base","crossed")
+        her "Definitely a blonde, though she could absolutely use a comb"
+        $ changeLuna("base","base","base","crossed")
+        call nar(">Suddenly Hermione feels something stuck in the mess of blonde. On closer examination it appears to be a wand.")
+        $ changeLuna("base","wide","angry","mid")
+        her "..."
+        her "You turned me into Loony... I mean Luna Lovegood!?!"
+        m "Very astute, [hermione_name]."
+        if not luna_known:
+            # Do not set luna_known here, it could prevent her normal intro sequence
+            m "(No idea who that is, but she looks good.)"
+        $ changeLuna("pout","wide","angry","mid")
+        her "Why on earth would you want me to look like Luna? She's completely mental!"
+        m "I'm not seeing anything wrong with her."
+        $ changeLuna("pout","base","sad","mid")
+        her "She has... imaginary friends and believes in things that can't possibly exist [genie_name]. She is absolutely mad."
+        m "Fortunately, I'm not really interested in her mental health. I am interested in her impressive, and quite real, chest."
+        if her_whoring <= 13: # Lowish
+            her "I can't believe what you're suggesting, you're asking me to show off another students breasts?"
+            m "Well, what else would you have me do? Look at your face?"
+            her "That's crossing the line [genie_name], I might not think very highly of Loony... Luna..."
+            her "But I'm not going bare my... her chest... for you."
+            m "Then you wont be receiving any of those points..."
+            her "..."
+            her "Yeah, that's still going to be a no, bye [genie_name]."
+            call her_walk(action="leave", speed=2)
+            $ her_mood += 10
+            $ hermione_busy = True
+            jump main_room
+            # End scene
+        else:
+            $ changeLuna("base","seductive","raised","mid")
+            her "You can't possibly be interested in that... that girl's paltry breasts."
+            m "Currently they're yours. And they don't look so paltry from where I'm sitting [hermione_name]. Do I detect a hint of jealousy?"
+            $ changeLuna("base","base","angry","mid")
+            her "Not at all, I suppose it is only natural that someone of your advanced age has trouble with their eyesight."
+            m "(definitely struck a nerve there.) Is that any way to talk to your elders, [hermione_name]? Perhaps you need a good spanking to remind you of your manners. We old people are good at giving those."
+            $ changeLuna("disgust","base","sad","mid")
+            her "I..I apologize, [genie_name]. I don't know what came over me."
+            m "Apology accepted. I'm sure they can't hold a candle to the brilliance of your boobs."
+            $ changeLuna("pout","base","base","R")
+            her "I'd like to think I'm more than just a pair of breasts... but thank you [genie_name]. That was flattering. In a way."
+            m "If you want to dispel all doubt, we could compare. Why don't you lift your shirt and show me what you... err... She's got under that sweater."
+            $ changeLuna("pout","wide","angry","R")
+            her "I'm still not entirely comfortable with this..."
+    call nar(">Hermione quickly strips off her Ravenclaw top, followed by her bra.")
+    hide screen luna_main
+    with d3
 
-    # $ luna_wear_top = False
-    # $ luna_wear_bra = False
-    # call update_luna_chibi_uniform
-    # call lun_chibi("stand","base","base")
-    # pause.5
+    $ luna_wear_top = False
+    $ luna_wear_bra = False
+    call update_luna_chibi_uniform
+    call lun_chibi("stand","base","base")
+    pause.5
 
-    # $ changeLuna("base","seductive","raised","R")
-    # show screen luna_main
-    # with d3
+    $ changeLuna("base","seductive","raised","R")
+    show screen luna_main
+    with d3
 
-    # if her_luna_polyjuice_drunk:
-        # her "I assume you'd like a closer look like last time?"
-        # m "Of course, get those cute pink nipples up here."
-    # else:
-        # her "There, see. Perfectly ordinary breasts. Absolutely no need to keep looking at them."
-        # m "I'm not quite convinced, the soft pale skin, the cute pink nipples and they look like quite a handful. I think you might have some serious competition here [hermione_name]."
-        # $ changeLuna("upset","seductive","angry","mid")
-        # her "You can't be serious! They're saggy and couldn't even fill a first-year's palm!"
-        # m "Hmmm, I'm not sure. I think a closer examination is required."
-    # hide screen luna_main
-    # with d3
+    if her_luna_polyjuice_drunk:
+        her "I assume you'd like a closer look like last time?"
+        m "Of course, get those cute pink nipples up here."
+    else:
+        her "There, see. Perfectly ordinary breasts. Absolutely no need to keep looking at them."
+        m "I'm not quite convinced, the soft pale skin, the cute pink nipples and they look like quite a handful. I think you might have some serious competition here [hermione_name]."
+        $ changeLuna("upset","seductive","angry","mid")
+        her "You can't be serious! They're saggy and couldn't even fill a first-year's palm!"
+        m "Hmmm, I'm not sure. I think a closer examination is required."
+    hide screen luna_main
+    with d3
 
-    # #call lun_walk("mid","desk",1.7) #Needs walking chibi that is topless.
-    # call lun_chibi("stand","desk","base") #Temporary!
+    #call lun_walk("mid","desk",1.7) #TODO Needs walking chibi that is topless.
+    call lun_chibi("stand","desk","base") #Temporary!
 
-    # call nar(">In a huff, Hermione walks over and presents her new set of breasts")
-    # show screen luna_main
-    # with d3
+    call nar(">In a huff, Hermione walks over and presents her new set of breasts")
+    show screen luna_main
+    with d3
 
-    # if her_luna_polyjuice_drunk:
-        # m "You look a bit flustered [hermione_name]."
-        # $ changeLuna("pout","seductive","angry","mid")
-        # her "You're staring directly at my chest [genie_name] and I can't help but feel a bit guilty as its not my own..."
-        # m "Well, hopefully this should take your mind off that... 20 points to Gryffindor."
-        # her "Thank you, [genie_name]...."
-    # else:
-        # m "Yes yes, upon closer inspection it seems I was wrong. Luna's breasts are indeed second to your own."
-        # $ changeLuna("pout","seductive","angry","mid")
-        # her "I'm glad you came to your senses. Thank you, If you're completely satisfied, I'll cover these hideous things up now."
-        # m "Completely, [hermione_name]. 20 points to Gryffindor."
-    # hide screen luna_main
-    # with d3
+    if her_luna_polyjuice_drunk:
+        m "You look a bit flustered [hermione_name]."
+        $ changeLuna("pout","seductive","angry","mid")
+        her "You're staring directly at my chest [genie_name] and I can't help but feel a bit guilty as its not my own..."
+        m "Well, hopefully this should take your mind off that... 20 points to Gryffindor."
+        her "Thank you, [genie_name]...."
+    else:
+        m "Yes yes, upon closer inspection it seems I was wrong. Luna's breasts are indeed second to your own."
+        $ changeLuna("pout","seductive","angry","mid")
+        her "I'm glad you came to your senses. Thank you, If you're completely satisfied, I'll cover these hideous things up now."
+        m "Completely, [hermione_name]. 20 points to Gryffindor."
+    hide screen luna_main
+    with d3
 
-    # $ luna_wear_top = True
-    # $ luna_wear_bra = True
-    # call update_luna_chibi_uniform
-    # call lun_chibi("stand","desk","base")
-    # pause.5
+    $ luna_wear_top = True
+    $ luna_wear_bra = True
+    call update_luna_chibi_uniform
+    call lun_chibi("stand","desk","base")
+    pause.5
 
-    # $ changeLuna("base","closed","base","mid")
-    # show screen luna_main
-    # with d3
+    $ changeLuna("base","closed","base","mid")
+    show screen luna_main
+    with d3
 
-    # her "Well I best be off to classes."
-    # m "You're going to class looking like a fellow classmate?"
-    # $ changeLuna("base","base","raised","mid")
-    # her "It's not going to be a problem. Luna's barely in class as it is, I can just pretend to be her. Maybe I'll even improve her test scores. You'll notify the teachers I can't attend class right?"
-    # m "Absolutely. (Not a chance) But, what if you bump into her in the halls?"
-    # $ changeLuna("pout","seductive","base","mid")
-    # her "Believe me [genie_name], Luna will probably think I'm some kind of Wrackspurt that's messing with her head."
-    # hide screen luna_main
-    # with d3
+    her "Well I best be off to classes."
+    m "You're going to class looking like a fellow classmate?"
+    $ changeLuna("base","base","raised","mid")
+    her "It's not going to be a problem. Luna's barely in class as it is, I can just pretend to be her. Maybe I'll even improve her test scores. You'll notify the teachers I can't attend class right?"
+    m "Absolutely. (Not a chance) But, what if you bump into her in the halls?"
+    $ changeLuna("pout","seductive","base","mid")
+    her "Believe me [genie_name], Luna will probably think I'm some kind of Wrackspurt that's messing with her head."
+    hide screen luna_main
+    with d3
 
-    # call lun_walk("desk","leave",2.7)
+    call lun_walk("desk","leave",2.7)
 
-    # $ hermione_busy = True
+    $ hermione_busy = True
 
-    # jump main_room
+    $ her_potion_drunk = True
+    $ her_polyjuice_drunk = True
+    $ her_luna_polyjuice_drunk = True
 
-    # #Tick that adds that she has drunk any sort of polyjuice potion so she will now recognize it.
-    # #Tick that she has drunk the luna polyjuice potion
-    # #Tick that Genie now knows what Luna looks like
+    jump main_room
 
 # #Lamia transformation.
 

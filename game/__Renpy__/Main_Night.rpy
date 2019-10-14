@@ -45,9 +45,9 @@ label night_start:
     if current_job == 5:
         jump hermione_helping_selling_cards
 
-    #Hermione Potions return.
-    # if cat_ears_potion_return:
-        # jump potion_scene_1_1_2  <--- Missing label
+    # Hermione Potions return
+    if her_cat_polyjuice_return:
+        jump potion_scene_1_1_2
     if transparent_quest:
         $ transparent_quest = False
         jump potion_scene_4_2

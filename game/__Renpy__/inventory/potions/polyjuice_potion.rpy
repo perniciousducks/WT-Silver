@@ -3,25 +3,9 @@
 #Character is incorectly positioned in some segments (infront of textbox) - done
 #The image segment changing when she swallows looks a bit weird
 
-### POLYJUICE POTION ###
-
-#Cat ears.
-
-default hg_pp_polyjuice = event_class(
-    title = "Polyjuice", start_label = "hg_pp_polyjuice",
-    events = [
-        [
-            ["hg_pp_polyjuice_T1_intro"],
-            ["hg_pp_polyjuice_T1_E1"],
-            ["hg_pp_polyjuice_T1_E2"],
-            ["hg_pp_polyjuice_T1_E3"]
-        ]
-    ],
-    iconset = [["heart_empty", "heart_green"]],
-    done_blowjob = False
-)
-
-label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her into another girl)
+# Cat polyjuice start
+label potion_scene_1_1_1:
+    # Genie is trying to transform her into another girl, but...
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?","base","base")
     if not her_potion_drunk:
@@ -116,20 +100,20 @@ label hg_pp_polyjuice: #catears (keep in mind Genie is trying to transform her i
 
     call her_walk(action="leave", speed=2)
 
+    # Equip cat ears
+    $ h_ears = "cat_ears"
+    $ h_request_wear_ears = True
+    $ hermione_wear_ears = True
+    call update_her_uniform
 
-    #$ cat_ears_potion_return = True #Triggers Hermione return
-
-    #Equip Cat-Ears
-    #$ h_ears = "cat_ears"
-    #$ h_request_wear_ears = True
-    #$ hermione_wear_ears = True
-    #call update_her_uniform
-    $ hg_pp_polyjuice.inProgress = True
+    $ her_cat_polyjuice_return = True
     $ hermione_busy = True
 
     jump main_room
 
-label hg_pp_polyjuice_T1_intro:
+# Cat polyjuice return event
+label potion_scene_1_1_2:
+    $ her_cat_polyjuice_return = False
     call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
 
     call her_main("How could you do this to me [genie_name]?","angry","angry", xpos="mid", ypos="base", trans="hpunch")
@@ -145,11 +129,9 @@ label hg_pp_polyjuice_T1_intro:
 
     if her_whoring >= 17:
         call her_walk(xpos="door", speed=2)
-        nar "You see Hermione reaching for the door knob but an idea strikes you."
+        "You see Hermione reaching for the door knob but an idea strikes you."
         menu:
             "-Make her suck you off-":
-                # Introduction to kitty blowjob scene
-                label hg_pp_polyjuice_suck_intro:
                 m "Wait, [hermione_name]!"
                 call her_chibi("stand","door",flip=False)
                 with d3
@@ -172,6 +154,8 @@ label hg_pp_polyjuice_T1_intro:
                 show screen blkfade with d3
                 pause.5
                 ">Hermione walks over and kneels before you."
+
+                show screen chair_left
                 $ gen_chibi_xpos = -10
                 $ gen_chibi_ypos = 10
                 call set_u_ani("blowjob_ani","hand_ani", 0,10)
@@ -180,7 +164,6 @@ label hg_pp_polyjuice_T1_intro:
                 hide screen hermione_main
                 hide screen genie
                 call her_chibi("hide")
-                show screen chair_left
                 hide screen blkfade
                 with d5
 
@@ -219,12 +202,12 @@ label hg_pp_polyjuice_T1_intro:
 
                 m "Even looking like this?"
                 m "What would everyone have thought? Would they just assume that you were a victim of a prank?"
-                m "Or would they just think that slutty little Miss Granger was just begging for attention again."
+                m "Or would they think that slutty little Miss Granger was just begging for attention again."
                 m "Wearing skimpy outfits and trying to look like a pussycat."
-                call nar(">You try place your hand on the back of her head but her new ears are in the way.")
+                call nar(">You try to place your hand on the back of her head but her new ears are in the way.")
                 m "These are quite soft."
                 call nar(">You start feeling and petting her brand new ears.","start")
-                call nar(">Hermione starts involuntary purring..","end")
+                call nar(">Hermione starts purring involuntarily..","end")
                 #
                 # Add a purr sound? :D
                 #
@@ -272,7 +255,7 @@ label hg_pp_polyjuice_T1_intro:
                 m "Well, you certainly earned your 75 points."
                 $ gryffindor += 75
                 with d3
-                call her_main("Thank you [genie_name]. Will that be all.","base","ahegao_raised")
+                call her_main("Thank you [genie_name]. Will that be all?","base","ahegao_raised")
                 m "One last thing."
                 m "Who's a good girl?"
                 call her_main("..........","annoyed","worriedL")
@@ -290,14 +273,21 @@ label hg_pp_polyjuice_T1_intro:
                 pause 1.0
             "-Let her go-":
                 m "Maybe next time.."
-                pass
+                #TODO Fix: Chibi flips and walks when choosing this option, it should just exit the room
 
     call her_walk(action="leave", speed=2)
+
+    # Unequip cat ears
+    $ h_ears = "blank"
+    $ h_request_wear_ears = False
+    $ hermione_wear_ears = False
+    call update_her_uniform
+
     $ hermione_busy = True
     jump main_room
 
-#TODO hg_pp_polyjuice_T1_introCC is never called?
-label hg_pp_polyjuice_T1_introCC:
+# Alternative cat polyjuice return scene, not used
+label potion_scene_1_1_2_alt:
     call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
 
     if her_polyjuice_drunk:
@@ -340,7 +330,7 @@ label hg_pp_polyjuice_T1_introCC:
 
             call her_walk(action="leave", speed=2)
 
-            #$ cat_ears_potion_return = False #Triggers Hermione return
+            #$ her_cat_polyjuice_return = False #Triggers Hermione return
             #$ h_request_wear_ears = False
             #$ hermione_wear_ears = False
             #call update_her_uniform
@@ -509,7 +499,7 @@ label hg_pp_polyjuice_T1_introCC:
     hide screen blktone
     with fade
 
-    $ cat_ears_potion_return = False #Triggers Hermione return
+    $ her_cat_polyjuice_return = False #Triggers Hermione return
     $ hermione_wear_ears = False
     call update_her_uniform
 

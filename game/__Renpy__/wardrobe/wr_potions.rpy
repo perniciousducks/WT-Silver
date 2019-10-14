@@ -17,12 +17,12 @@ label use_hermione_potion:
     if potion_choice == "polyjuice_potion":
         menu:
             ">Polyjuice potion. You know what it does..."
-            # "-Cat Transformation-" if daytime and potion_inv.has("p_cat_transformation"):
-                # $ potion_inv.remove("p_cat_transformation")
-                # $ renpy.jump( potion_lib.getJumpLabel("p_cat_transformation") )
-            # "{color=#858585}-Cat Transformation-{/color}" if not daytime and potion_inv.has("p_cat_transformation"): # Missing?
-                # call wardrobe_fail("This potion can only be used during the day.")
-                # jump return_to_wardrobe
+            "-Cat Transformation-" if daytime and potion_inv.has("p_cat_transformation"):
+                $ potion_inv.remove("p_cat_transformation")
+                $ renpy.jump( potion_lib.getJumpLabel("p_cat_transformation") )
+            "{color=#858585}-Cat Transformation-{/color}" if not daytime and potion_inv.has("p_cat_transformation"): # Missing?
+                call wardrobe_fail("This potion can only be used during the day.")
+                jump return_to_wardrobe
 
             "-Luna Transformation-" if daytime and potion_inv.has("p_luna_transformation"):
                 $ potion_inv.remove("p_luna_transformation")

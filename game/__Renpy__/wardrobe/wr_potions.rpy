@@ -21,14 +21,14 @@ label use_hermione_potion:
                 $ potion_inv.remove("p_cat_transformation")
                 $ renpy.jump( potion_lib.getJumpLabel("p_cat_transformation") )
             "{color=#858585}-Cat Transformation-{/color}" if not daytime and potion_inv.has("p_cat_transformation"): # Missing?
-                call wardrobe_fail("This potion can only be used during the day.")
+                "This potion can only be used during the day."
                 jump return_to_wardrobe
 
             "-Luna Transformation-" if daytime and potion_inv.has("p_luna_transformation"):
                 $ potion_inv.remove("p_luna_transformation")
                 $ renpy.jump( potion_lib.getJumpLabel("p_luna_transformation") )
             "{color=#858585}-Luna Transformation-{/color}" if not daytime and potion_inv.has("p_luna_transformation"):
-                call wardrobe_fail("This potion can only be used during the day.")
+                "This potion can only be used during the day."
                 jump return_to_wardrobe
 
             # TODO: uncomment when scene is complete
@@ -45,14 +45,14 @@ label use_hermione_potion:
                 $ potion_inv.remove("p_breast_expansion")
                 $ renpy.jump( potion_lib.getJumpLabel("p_breast_expansion") )
             "{color=#858585}-Breast Expansion-{/color}" if not daytime and potion_inv.has("p_breast_expansion"):
-                call wardrobe_fail("This potion can only be used during the day.")
+                "This potion can only be used during the day."
                 jump return_to_wardrobe
 
             "-Ass Expansion" if daytime and potion_inv.has("p_ass_expansion"):
                 $ potion_inv.remove("p_ass_expansion")
                 $ renpy.jump( potion_lib.getJumpLabel("p_ass_expansion") )
             "{color=#858585}-Ass Expansion-{/color}" if not daytime and potion_inv.has("p_ass_expansion"):
-                call wardrobe_fail("This potion can only be used during the day.")
+                "This potion can only be used during the day."
                 jump return_to_wardrobe
 
             "-Never mind-":
@@ -65,7 +65,7 @@ label use_hermione_potion:
                 $ potion_inv.remove("p_milk_potion")
                 $ renpy.jump( potion_lib.getJumpLabel("p_milk_potion") )
             "{color=#858585}-Lactantium-{/color}" if not daytime and potion_inv.has("p_milk_potion"):
-                call wardrobe_fail("This potion can only be used during the day.")
+                "This potion can only be used during the day."
                 jump return_to_wardrobe
 
             "-Never mind-":
@@ -78,14 +78,14 @@ label use_hermione_potion:
                 # $ potion_inv.remove("p_cum_addiction")
                 # $ renpy.jump( potion_lib.getJumpLabel("p_cum_addiction") )
             # "{color=#858585}-Cum Addiction-{/color}" if not daytime and potion_inv.has("p_cum_addiction"): # NOT YET READY!
-                # call wardrobe_fail("This potion can only be used during the day.")
+                # "This potion can only be used during the day."
                 # jump return_to_wardrobe
 
             "-Hypno potion-" if daytime and potion_inv.has("p_hypno"):
                 $ potion_inv.remove("p_hypno")
                 $ renpy.jump( potion_lib.getJumpLabel("p_hypno") )
             "{color=#858585}-Hypno potion-{/color}" if not daytime and potion_inv.has("p_hypno"):
-                call wardrobe_fail("This potion can only be used during the day.")
+                "This potion can only be used during the day."
                 jump return_to_wardrobe
 
             # TODO: uncomment if ready unsure if ready for current release
@@ -102,7 +102,7 @@ label use_hermione_potion:
                 $ potion_inv.remove("p_transparency")
                 $ renpy.jump( potion_lib.getJumpLabel("p_transparency") )
             "{color=#858585}-Transparent Clothes-{/color}" if not daytime and potion_inv.has("p_transparency"):
-                call wardrobe_fail("This potion can only be used during the day.")
+                "This potion can only be used during the day."
                 jump return_to_wardrobe
 
             "-Permanent Clothing Transparency-" if potion_inv.has("p_transparency"):

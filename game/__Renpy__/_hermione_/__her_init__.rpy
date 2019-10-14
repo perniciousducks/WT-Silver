@@ -201,9 +201,6 @@ default hermione_ass_cum = False
 default hermione_squirt  = False
 default hermione_futa    = False
 
-default milk_level = 0
-default milking    = 0
-
 # Piercings
 default hermione_ear_piercing = "characters/hermione/clothes/piercings/blank.png"
 default h_ear_piercing        = "blank"
@@ -459,6 +456,11 @@ default her_polyjuice_drunk = False
 default her_luna_polyjuice_drunk = False
 
 default her_cat_polyjuice_return = False
+
+default her_milk_potion_return = False
+default potion_scene_11_progress = 0
+default potion_version = 0
+default milking    = 0
 
 default collar = 0
 
@@ -1178,7 +1180,6 @@ label reset_hermione_clothing:
         "hermione_ass_cum",
         "hermione_squirt",
         "hermione_futa",
-        "milk_level",
         "milking",
 
         # Piercings

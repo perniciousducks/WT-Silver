@@ -54,10 +54,11 @@ label night_start:
     # if addicted == True:
         # jump potion_scene_3_1_2  <--- Missing label
 
-    if milking == -1:
-        call potion_scene_11_1_2 #Returns
-    #if milking == -3:
-        #call potion_scene_11_3_2 <- label does not exist
+    if her_milk_potion_return:
+        if potion_scene_11_progress == 1:
+            jump potion_scene_11_1_2
+        elif potion_scene_11_progress == 2:
+            pass
 
 
     #Atoria / Tonks event return.

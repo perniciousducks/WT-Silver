@@ -43,19 +43,21 @@ label night_start:
     if current_job == 5:
         jump hermione_helping_selling_cards
 
-    #Hermione Potions return.
-    # if cat_ears_potion_return:
-        # jump potion_scene_1_1_2  <--- Missing label
+    # Hermione Potions return
+    if her_cat_polyjuice_return:
+        jump potion_scene_1_1_2
+    
     if transparent_quest:
-        $ transparent_quest = False
         jump potion_scene_4_2
-    # if addicted == True:
-        # jump potion_scene_3_1_2  <--- Missing label
 
-    #if milking == -1:
-        #call potion_scene_11_1_2 #Returns
-    #if milking == -3:
-        #call potion_scene_11_3_2 <- label does not exist
+    if her_milk_potion_return:
+        if potion_scene_11_progress == 1:
+            jump potion_scene_11_1_2
+        elif potion_scene_11_progress == 2:
+            pass
+
+    if her_cum_potion_return:
+        jump hg_pp_cumaddict_intro
 
     #Atoria / Tonks event return.
     #if astoria_tonks_event_in_progress:

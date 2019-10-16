@@ -1,8 +1,5 @@
-
-
-### BREAST AND ASS EXPANSION ###
-
-label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifucking won't be written (ayylmao)
+# Breast expansion - Until chibis are added for it tifucking won't be written (ayylmao)
+label potion_scene_2_1_1:
     m "Guess what I have for you today."
     call her_main("Is it another foul tasting potion that will try transform me into a hideous animal?", "open", "closed", "angry", "mid")
     m "Well I mean this one smells nice."
@@ -64,9 +61,9 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
             call her_main("Barely. And what will people think of me.", "angry", "narrow", "base", "down")
             m "Just tell them that you are still developing. I'm sure that they're used to enormous breasts anyway, what's a few extra sizes."
             call her_main("...Fine. Just promise me that they won't get any bigger.", "upset", "closed", "base", "mid")
-            m "I can't promise that, your still in school. A lot of girls don't stop growing until their 30."
-            call her_main("You know what I mean [genie_name].", "scream", "base", "angry", "mid",emote="01")
-            m "I'm afraid that I don't [hermione_name], now you'd best hurry if you don't want to be late."
+            m "I can't promise that, you're still in school. A lot of girls don't stop growing until their 30."
+            call her_main("You know what I mean [genie_name].", "scream", "base", "angry", "mid", emote="01")
+            m "I'm afraid that I don't, [hermione_name], now you'd best hurry if you don't want to be late."
             call her_main("...Yes [genie_name].", "annoyed", "narrow", "annoyed", "mid")
 
             call her_walk(action="leave", speed=2)
@@ -76,6 +73,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
             call set_her_action("expand_breasts")
 
             jump main_room
+            # End scene
 
         "-Play with her breasts-":
             pass
@@ -102,7 +100,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("Well...", "upset", "wink", "base", "mid",xpos="mid",ypos="base")
     call nar(">You reach out and grab her breasts through her stretched shirt.")
     call her_main("!!!", "angry", "wide", "base", "stare")
-    call her_main("Please be gentle [genie_name]. They seem to be much more sensitve than usual, it must be the potion.", "angry", "base", "base", "mid")
+    call her_main("Please be gentle [genie_name]. They seem to be much more sensitive than usual, it must be the potion.", "angry", "base", "base", "mid")
     m "Well I'll take that into account..."
     call nar(">You take a breast in each hand and start kneading them with your fingers.")
     call her_main("...", "open", "closed", "base", "mid")
@@ -137,7 +135,7 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
     call her_main("sir... they seem to have become more sensitive...", "base", "narrow", "base", "up")
     call her_main("Please don't do anything sudden.", "soft", "narrow", "annoyed", "up")
     m "Like this?"
-    call nar(">You take both nipple between your thumb and index finger.")
+    call nar(">You take both nipples between your thumb and index finger.")
     call her_main("!!!", "scream", "wide", "base", "stare")
     call her_main("Please stop... it's too much, it's like my nipples are on fire.", "shock", "worriedCl", "worried", "mid")
     m "Shhhh, just be still, it'll all be over soon."
@@ -178,16 +176,20 @@ label potion_scene_2_1_1: #breast expansion - Until chibis are added for it tifu
 
     call her_walk(action="leave", speed=2)
 
+    $ her_potions_drunk.add("expansion")
+    $ her_potions_drunk.add("breast_expansion")
+
     $ hermione_busy = True
 
     jump main_room
 
+# Breast expansion return
+label potion_scene_2_1_2:
+    #TODO Event: Hermione comes back after having her breasts expand in class
 
-label potion_scene_2_1_2: #Hermione comes back after having her breasts expand in class
 
-
-
-label potion_scene_2_2: #ass expansion
+# Ass expansion
+label potion_scene_2_2:
     m "[hermione_name], I have another potion for you to try today."
     call her_main("Another one? Where are you getting these?", "open", "squint", "base", "mid")
     m "That's of no concern to you. What should concern you is the 20 points that you are able to earn should you drink it."
@@ -208,11 +210,11 @@ label potion_scene_2_2: #ass expansion
     call her_main("Well can you at least give me a hint?", "open", "base", "base", "mid")
     m "Let's just say that it's a redistribution of ass{w}ets." ###Added {w} instead of your ...
     call her_main("What do you mean by--", "annoyed", "narrow", "angry", "R")
-    call nar(">Hermione goes white as she starts to feel her body churn.")
+    call nar(">Hermione turns pale as she starts to feel her body churn.")
     call her_main("What's going on. It feels like my insides are moving.", "angry", "wide", "base", "stare")
     call her_main("And my ass, it feels so... good.", "soft", "narrow", "annoyed", "up")
     call nar(">You start to notice her ass increase in size.") #Use bigger butt from Captain Nemo
-    call her_main("It feels too sensitive... I have to take my skirt off", "angry", "wide", "base", "stare") #changed so to too
+    call her_main("It feels too sensitive... I have to take my skirt off", "angry", "wide", "base", "stare")
 
     $ hermione_wear_panties = False
     call set_her_action("lift_skirt")
@@ -253,7 +255,7 @@ label potion_scene_2_2: #ass expansion
 
     call nar(">Hermione hops over to your desk, her ass bouncing as she moves, and presents herself to you.")
     pause 1
-    show screen chair_left
+    
     hide screen genie
     show screen no_groping_02
     call hide_blkfade
@@ -270,7 +272,6 @@ label potion_scene_2_2: #ass expansion
     m "Well this potion certainly is effective."
     call nar(">You start firmly stroking her ass cheeks. Pulling them apart to reveal her asshole and then squishing them together.","start")
     call nar(">Seeing her tight asshole gives you an idea.","end")
-    $ hermione_zorder = 8
 
     menu: #Thought about adding a rimming option here but the chibis don't really support it
         "-Finger her asshole-":
@@ -326,7 +327,6 @@ label potion_scene_2_2: #ass expansion
             m "Well you best be off to class."
             call her_main("...With my butt looking like this?", "angry", "narrow", "base", "down")
             m "I'm sure no one will be able to tell \nwith your skirt on. Now hurry up \nI have things to attend to."
-            $ hermione_zorder = 5
             call blkfade
             pause 1
 
@@ -352,6 +352,7 @@ label potion_scene_2_2: #ass expansion
         "-Hot dog her-" if her_whoring >= 17:
             m "Bend over [hermione_name]."
             call nar(">Before she even has a chance to react you push her forward over your desk.")
+            show screen chair_left
             hide screen groping_02
             show screen ch_hotdog
             with d3
@@ -378,13 +379,13 @@ label potion_scene_2_2: #ass expansion
             call her_main("Permanent?", "shock", "base", "base", "R",cheeks="blush",tears="soft")
             hide screen hermione_main
             m "You wouldn't mind, would you?"
-            m "Having me use your ass a sex-toy everyday."
+            m "Having me use your ass as a sex-toy everyday."
             call her_main("...", "angry", "squint", "base", "mid",cheeks="blush")
             hide screen hermione_main
             m "I asked you a question, [hermione_name]."
             call her_main("... no [genie_name]...", "silly", "narrow", "base", "dead")
             hide screen hermione_main
-            call nar(">You feel her asshole start quiver as you glide over it.")
+            call nar(">You feel her asshole starts to quiver as you glide over it.")
             m "Of course you wouldn't, you're enjoying this more than I am, aren't you?"
             call her_main("...yes... I'm loving... you using my ass as your toy...", "silly", "narrow", "annoyed", "up")
             hide screen hermione_main
@@ -410,7 +411,6 @@ label potion_scene_2_2: #ass expansion
             call blkfade
             pause 1
 
-            $ hermione_zorder = 5
             hide screen chair_left
             hide screen groping_01
             hide screen groping_02
@@ -424,7 +424,7 @@ label potion_scene_2_2: #ass expansion
 
             show screen bld1
             call her_main("...With my butt looking like this?", "angry", "squint", "base", "mid",cheeks="blush")
-            m "I'm sure no one will be able to tell with your skirt on. Now hurry up, I feel like a nap.'"
+            m "I'm sure no one will be able to tell with your skirt on. Now hurry up, I feel like a nap."
             #call her_main("Yes [genie_name].", "angry", "squint", "base", "mid",cheeks="blush")
             m "Oh I almost forgot, 20 points to Gryffindor!"
             $ gryffindor += 20
@@ -446,6 +446,9 @@ label potion_scene_2_2: #ass expansion
     with d3
 
     call her_walk(action="leave", speed=2.5)
+
+    $ her_potions_drunk.add("expansion")
+    $ her_potions_drunk.add("ass_expansion")
 
     $ hermione_busy = True
 

@@ -81,8 +81,19 @@ default tutoring_offer_made = False # If you offered her to tutor her (In hermio
 default hermione_is_waiting_01 = False # Turns True at the end of first special event with Snape. Triggers next visit from Hermione (hermione_intro_E2)
 default hermione_is_waiting_02 = False # Turns True at the end of second special event with Snape. Triggers next visit from Hermione
 
-# Potion flags
-default her_know_polyjuice = False
+# Potions
+default her_potions_drunk = set() # Can contain
+    # "polyjuice", "cat_polyjuice", "luna_polyjuice",
+    # "expansion", "ass_expansion", "breast_expansion",
+    # "addiction", "cum_addiction",
+    # "hypno", "milk", "transparency"
+
+default her_cum_potion_fail = 0
+default her_cum_potion_return = False
+default her_cat_polyjuice_return = False
+default her_milk_potion_return = False
+default potion_scene_11_progress = 0
+default potion_version = 0
 
 default collar = 0
 
@@ -104,7 +115,6 @@ default her_shop_help_first = True
 
 # Rewards
 default autograph                  = False # Professor Lockhart's tattoo.
-default cat_ears_potion_return     = False
 default gave_hermione_gift         = False
 default hermione_wardrobe_unlocked = False
 

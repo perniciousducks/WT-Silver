@@ -1,5 +1,3 @@
-default potion_scene_11_progress = 0
-
 # base potions:
 # Polyjuice potion (Luna, Cat, Lamia)
 # Expanding Elixir (Breast, Ass)

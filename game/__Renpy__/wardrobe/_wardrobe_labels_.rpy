@@ -223,13 +223,6 @@ label equip_tattoo:
     jump return_to_wardrobe
 
 
-label wardrobe_fail(text=""):
-    hide screen wardrobe
-    if text != "":
-        call nar(">[text]")
-
-    return
-
 ### GIFTS SECTION ###
 
 ## Gifts ##

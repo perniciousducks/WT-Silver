@@ -5,12 +5,12 @@ default hermione_hair_base = cloth_class(char="hermione", category="head", subca
 
 # Tops
 
-default hermione_cloth_topschool1 = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_1", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]], bodyfix={"breasts": ["breasts_01_tight", 6, 0, 0, False]})
-default hermione_cloth_topschool2     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_2", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=4, bodyfix={"breasts": ["breasts_01_tight", 6, 0, 0, False]})
-default hermione_cloth_topschool3     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_3", layers=3, color=[[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=8, bodyfix={"breasts": ["breasts_01_tight", 6, 0, 0, False]})
-default hermione_cloth_topschool4     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_4", layers=3, color=[[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=8, bodyfix={"breasts": ["breasts_01_tight", 6, 0, 0, False]})
-default hermione_cloth_topschool5     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_5", layers=3, color=[[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=12, bodyfix={"breasts": ["breasts_01_tight", 6, 0, 0, False]})
-default hermione_cloth_topschool6     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_6", layers=3, color=[[109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=12, bodyfix={"breasts": ["breasts_01_tight", 6, 0, 0, False]})
+default hermione_cloth_topschool1 = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_1", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]], bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
+default hermione_cloth_topschool2     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_2", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=4, bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
+default hermione_cloth_topschool3     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_3", layers=3, color=[[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=8, bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
+default hermione_cloth_topschool4     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_4", layers=3, color=[[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=8, bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
+default hermione_cloth_topschool5     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_5", layers=3, color=[[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=12, bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
+default hermione_cloth_topschool6     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_6", layers=3, color=[[109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=12, bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
 
 # Bottoms
 

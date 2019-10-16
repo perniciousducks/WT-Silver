@@ -83,8 +83,13 @@ label use_hermione_potion:
                 jump return_to_wardrobe
 
             "-Hypno potion-" if daytime and potion_inv.has("p_hypno"):
-                $ potion_inv.remove("p_hypno")
-                $ renpy.jump( potion_lib.getJumpLabel("p_hypno") )
+                menu: #TODO Remove warning once Hermione's appearance change is made temporary
+                    "This potion will change Hermione's appearance. Do you want to continue?"
+                    "-Yes-":
+                        $ potion_inv.remove("p_hypno")
+                        $ renpy.jump( potion_lib.getJumpLabel("p_hypno") )
+                    "-No-":
+                        jump return_to_wardrobe
             "{color=#858585}-Hypno potion-{/color}" if not daytime and potion_inv.has("p_hypno"):
                 "This potion can only be used during the day."
                 jump return_to_wardrobe

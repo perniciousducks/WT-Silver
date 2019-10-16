@@ -50,7 +50,6 @@ label night_start:
         jump potion_scene_1_1_2
     
     if transparent_quest:
-        $ transparent_quest = False
         jump potion_scene_4_2
 
     if her_milk_potion_return:

@@ -1,10 +1,5 @@
 
-
-### CUM ADDICTION ###
-#Add check if she has drunk addiction  potion
-#Add check if she has drunk cum addiction (for future uses)
-
-#cum addiction - work in progress, has some scenes adjusted for it
+# Cum addiction - work in progress, has some scenes adjusted for it
 label potion_scene_3_1_1:
     m "[hermione_name], today I have a very special potion that I would like you to drink."
     if not her_potions_drunk:
@@ -59,9 +54,7 @@ label potion_scene_3_1_1:
         $ her_mood += 10
         $ hermione_busy = True
         jump main_room
-        #Check that she has drunk the addictive potion
-        #No check that it's cum addiction specifically since the effects doesn't kick in here.
-        #Hermiones mood gets worse
+        # End scene
     elif her_whoring <= 12 and her_cum_potion_fail > 0: # Too low and failed previously
         call nar(">Hermione takes a whiff of the potion contents.")
         $ renpy.play('sounds/sniff.mp3')
@@ -79,6 +72,7 @@ label potion_scene_3_1_1:
         $ her_mood += 10
         $ hermione_busy = True
         jump main_room
+        # End scene
     else:
         if "cum_addiction" not in her_potions_drunk: # First time
             call her_chibi("drink_potion","mid","base")
@@ -463,35 +457,7 @@ label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-label potion_scene_7: #hyper sensitivity potion
+label potion_scene_7: #TODO hyper sensitivity potion
     m "I'd like you to drink a potion today."
     her "Alright then."
     m "Just like that? No putting up a fight or demanding to know what it is?"
@@ -575,22 +541,19 @@ label potion_scene_3_2_1: #TODO Hyper sensitive breasts potion
     her "No [genie_name], this is the best thing I've ever felt."
     her ""
 
-label potion_scene_3_2_2: #Hyper sensitive mouth/throat
+label potion_scene_3_2_2: #TODO Hyper sensitive mouth/throat potion
 
-label potion_scene_3_2_3: #Hyper sensitive pussy
+label potion_scene_3_2_3: #TODO Hyper sensitive pussy potion
 
 
-### HYPNO POTION ###
-
-### FACE NEEDS UPDATE ###
-### EYE COLOR NEEDS TO BE CHANGED ###
-
-label potion_scene_3_3_1: #Hypno potion
+# Hypno potion
+label potion_scene_3_3_1:
     m "[hermione_name], I have another special potion for you today."
     call her_main("Who are you even buying these off?","normal","frown")
     m "A good magician never tells."
     call her_main("Magician? You're a wizard, and this better not have any long-term side effects.","normal","frown")
-    call her_main("I'm still coughing up fur balls every now again from that polyjuice potion.","normal","frown")
+    if "cat_polyjuice" in her_potions_drunk:
+        call her_main("I'm still coughing up fur balls every now again from that polyjuice potion.","normal","frown")
     m "Of course it won't, now would you kindly drink the potion."
     call her_main("...","annoyed","angryL")
     call her_chibi("drink_potion","mid","base")
@@ -608,7 +571,9 @@ label potion_scene_3_3_1: #Hypno potion
     call nar(">Hermione's eyes go blank and she stares forward blankly.")
     call her_main("What am I?","grin","dead")
     m "Uhm..."
-    m "(Should have thought of something. At least the potion seems to work. Lets see...)"
+    m "(Should have thought of something. At least the potion seems to work. Let's see...)"
+
+    #TODO Reconsider the use of menu here, there is only one option
     menu:
         "-You're an airheaded bimbo-":
             show screen blktone
@@ -617,9 +582,6 @@ label potion_scene_3_3_1: #Hypno potion
     menu:
         "-You love being covered in my cum-":
             pass
-
-    $ cum_badge_ITEM.unlocked = True
-    call set_her_body_accessory("badge_cum")
 
     call her_main("I love being covered in your cum...","soft","dead")
     menu:
@@ -674,7 +636,8 @@ label potion_scene_3_3_1: #Hypno potion
 
     call nar("Hermione pulls out her wand and casts a spell...")
 
-    #Setting up Bimbo clothes.
+    #TODO Hermione's bimbo clothes should be temporary for this potion
+    # Setting up Bimbo clothes
     call set_her_hair(color="blonde")
     $ h_lipstick = "lipstick_pink"
 
@@ -716,7 +679,7 @@ label potion_scene_3_3_1: #Hypno potion
             call her_main("Thank youuuuu!!!{image=textheart}{image=textheart}{image=textheart}","grin","ahegao")
             call her_main("Aaaaanyway...","open","baseL")
             call her_main("Is there anything you want from me mistah... I'll do anything!{image=textheart}","soft","glance")
-        "-Where is your badge, cumslut?!-" if cum_badge_ITEM.unlocked:
+        "-Where is your badge, cumslut?!-":
             call her_main("Oh no I forgot that!","soft","wide")
             call her_main("I'm soooo sorry!!!","shock","worriedCl",cheeks="blush")
             call her_main("It's this one, isn't it...","soft","down")
@@ -735,7 +698,7 @@ label potion_scene_3_3_1: #Hypno potion
 
     m "I'm just going to ask you a few questions."
     call her_main("(...)","annoyed","angry")
-    call her_main("(And here I hoped he'd just ask to fuck...)","annoyed","angryL")
+    call her_main("(And here I was hoping he'd just ask to fuck...)","annoyed","angryL")
     call her_main("(Questions are so boooring! I hope they are at least naughty...)","annoyed","ahegao")
     call her_main("Are those questions going to be hard, mistah?","grin","worriedCl",emote="05")
     call her_main("I don't like hard questions.","grin","worriedCl")
@@ -750,7 +713,7 @@ label potion_scene_3_3_1: #Hypno potion
     m "You like making people happy?"
     call her_main("Of course mistah professor, making people happy{image=textheart} makes me happy{image=textheart}!","smile","happyCl")
     call her_main("Once I finish school I want to get a job where all I do is make people happy{image=textheart}!","base","happyCl")
-    m "Ok, final question;"
+    m "Ok, final question"
     m "How would you like to make yourself happy?"
     call her_main("Make myself happy?","annoyed","down")
     call her_main("But I'm already happy, silly!","base","happyCl")
@@ -866,6 +829,7 @@ label potion_scene_3_3_1: #Hypno potion
     call set_her_action("covering")
     call her_main("No wait my face!","silly","ahegao_raised",cheeks="blush")
 
+    #TODO Fix: Chibi cumshot position in the following segment
     menu:
         "-Cum on her face-":
             g4 "Here it comes slut!"
@@ -928,18 +892,21 @@ label potion_scene_3_3_1: #Hypno potion
     call bld
     m "(Maybe I should have told her to get dressed first...)"
 
-    $ lipstick_pink_ITEM.unlocked = True #Unlocks pink lipstick.
-    call give_reward(">Hermione can now use pink lipstick!","interface/icons/lipstick_pink.png") #Need lipstick shop image!
+    # Note: these items can also be bought
+    $ cum_badge_ITEM.unlocked = True
+    $ lipstick_pink_ITEM.unlocked = True
+    call give_reward(">Hermione can now use pink lipstick and wear the \'cum\' badge!","interface/icons/lipstick_pink.png")
 
     call reset_hermione
 
-    $ hermione_busy = True
+    $ her_potions_drunk.add("hypno")
 
+    $ hermione_busy = True
     jump main_room
 
 
 ### AHEGAO POTION ###
-
+#TODO Ahegao potion is incomplete (only a sex scene with broken CG)
 label potion_scene_3_4_1:
     m "How long until your next class [hermione_name]?"
     call her_main("about fifteen minutes sir.","open","base")

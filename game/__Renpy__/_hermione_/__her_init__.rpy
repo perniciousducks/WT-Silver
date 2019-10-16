@@ -454,7 +454,8 @@ default hermione_is_waiting_02 = False # Turns True at the end of second special
 default her_potions_drunk = set() # Can contain
     # "polyjuice", "cat_polyjuice", "luna_polyjuice",
     # "expansion", "ass_expansion", "breast_expansion",
-    # "addiction", "cum_addiction", "hypno", "milk"
+    # "addiction", "cum_addiction",
+    # "hypno", "milk", "transparency"
 
 default her_cum_potion_fail = 0
 default her_cum_potion_return = False

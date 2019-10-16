@@ -8,14 +8,14 @@ label potion_scene_1_1_1:
     # Genie is trying to transform her into another girl, but...
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?","base","base")
-    if not her_potion_drunk:
+    if not her_potions_drunk:
         m "So, are you ready to try out one of my potions?"
         her "As ready as I'll ever be..."
         m "great!"
         m "I have this potion for you to try out."
     else:
         m "I have another potion for you to try out today..."
-        if her_polyjuice_drunk:
+        if "polyjuice" in her_potions_drunk:
             her "Is this another polyjuice potion?"
             m "...{w}no?"
             if her_whoring < 12:
@@ -75,7 +75,7 @@ label potion_scene_1_1_1:
     call her_main("Blehgh.","disgust","narrow")
     m "Well done."
 
-    if her_polyjuice_drunk:
+    if "polyjuice" in her_potions_drunk:
         her "Here we go again I suppose..."
         her "Nothing's happening..."
         m "You'll just have to wait a minute remember?"
@@ -105,6 +105,8 @@ label potion_scene_1_1_1:
     $ h_request_wear_ears = True
     $ hermione_wear_ears = True
     call update_her_uniform
+
+    # Note: potion drinking flags are set in the return event
 
     $ her_cat_polyjuice_return = True
     $ hermione_busy = True
@@ -283,14 +285,21 @@ label potion_scene_1_1_2:
     $ hermione_wear_ears = False
     call update_her_uniform
 
+    # Set flags
+    $ her_potions_drunk.add("polyjuice")
+    $ her_potions_drunk.add("cat_polyjuice")
+
     $ hermione_busy = True
     jump main_room
 
 # Alternative cat polyjuice return scene, not used
+#TODO This event needs to be checked before/if it is going to be used again
 label potion_scene_1_1_2_alt:
+    $ her_cat_polyjuice_return = False
+
     call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
 
-    if her_polyjuice_drunk:
+    if "cat_polyjuice" in her_potions_drunk:
         her "I can't believe you had me drink this again..."
         m "What's the problem? I think you look cute..."
         if her_whoring < 6:
@@ -310,7 +319,6 @@ label potion_scene_1_1_2_alt:
             m "And how did that make you feel?"
             her "I'm not sure..."
     else:
-        $ her_polyjuice_drunk = True
         call her_main("How could you do this to me [genie_name]?","angry","angry", xpos="mid", ypos="base", trans="hpunch")
         her "Try and turn me into a cat!"
         call her_main("In the middle of class!","annoyed","worriedL")
@@ -322,7 +330,6 @@ label potion_scene_1_1_2_alt:
         call her_main("There's no point playing dumb [genie_name].","annoyed","annoyed")
         call her_main("Well at least I know that it will wear off by morning.","annoyed","angryL")
 
-
     menu:
         "-Let her go-":
             m "Goodnight [hermione_name]."
@@ -330,10 +337,13 @@ label potion_scene_1_1_2_alt:
 
             call her_walk(action="leave", speed=2)
 
-            #$ her_cat_polyjuice_return = False #Triggers Hermione return
-            #$ h_request_wear_ears = False
-            #$ hermione_wear_ears = False
-            #call update_her_uniform
+            $ h_request_wear_ears = False
+            $ hermione_wear_ears = False
+            call update_her_uniform
+
+            # Set flags
+            $ her_potions_drunk.add("polyjuice")
+            $ her_potions_drunk.add("cat_polyjuice")
 
             $ hermione_busy = True
 
@@ -345,7 +355,7 @@ label potion_scene_1_1_2_alt:
     m "Wait [hermione_name], how would you like to earn 75 additional points?"
     call her_main("75 points? How?","annoyed","suspicious")
     m "By sucking my cock."
-    if her_polyjuice_drunk:
+    if "cat_polyjuice" in her_potions_drunk:
         her "Again?"
         her "I thought you found my tongue way to rough in this state?"
         m "Well, the purring certainly made well up for that aspect."
@@ -379,7 +389,7 @@ label potion_scene_1_1_2_alt:
     with fade
     call ctc
 
-    if her_polyjuice_drunk:
+    if "cat_polyjuice" in her_potions_drunk:
         call bld
         her "*Lick*"
         m "There's that tongue again...{w} could you try using your throat a bit more?"
@@ -414,7 +424,7 @@ label potion_scene_1_1_2_alt:
     $ g_c_u_pic = "blowjob_ani"
     with d3
     m "Even looking like this?"                         ###start sucking
-    if her_polyjuice_drunk:
+    if "cat_polyjuice" in her_potions_drunk:
         her "You had me do it before... at least I knew what to expect this time..."
         m "Slutty little Miss Granger... begging for attention..."
         m "making herself look like a cat for attention..."
@@ -467,7 +477,7 @@ label potion_scene_1_1_2_alt:
     call nar(">You shoot you load directly down her throat.")
     call ctc
 
-#This scene looks a bit weird
+    #This scene looks a bit weird
     $ g_c_u_pic = "cum_in_mouth_ani"
     with d3
     call her_main("","full_cum","dead")
@@ -516,11 +526,13 @@ label potion_scene_1_2: #Luna potion
     call her_main("You're not trying to get me drunk on Butterbeer again are you?","normal","base",xpos="right",ypos="base")
     m "Nothing of the sort, just a harmless little potion."
     call nar(">You hand her the potion bottle.")
-    if not her_potion_drunk:
+
+    if not her_potions_drunk:
         her "I can't believe you're making me drink random potions..."
     else:
         call her_main("Another of your mysterious potions?","open","suspicious")
-    if her_polyjuice_drunk:
+
+    if "polyjuice" in her_potions_drunk:
         her "Yuck... another polyjuice potion..."
         her "Do I really have to drink it again?"
         m "If you'd like to continue our favour trading it would certainly be in your best interest [hermione_name]."
@@ -567,7 +579,7 @@ label potion_scene_1_2: #Luna potion
     pause.2
 
     call her_main("Blehgh.","disgust","narrow")
-    if her_polyjuice_drunk:
+    if "polyjuice" in her_potions_drunk:
         her "Pinching my nose barely helps..."
         her "So, do I leave or?"
         m "No, just wait here for a moment..."
@@ -628,7 +640,7 @@ label potion_scene_1_2: #Luna potion
     show screen luna_main
     with d3
 
-    if her_luna_polyjuice_drunk:
+    if "luna_polyjuice" in her_potions_drunk:
         her "*urgh*... Every time..."
         her "Did it work?"
         m "Perfectly..."
@@ -733,7 +745,7 @@ label potion_scene_1_2: #Luna potion
     show screen luna_main
     with d3
 
-    if her_luna_polyjuice_drunk:
+    if "luna_polyjuice" in her_potions_drunk:
         her "I assume you'd like a closer look like last time?"
         m "Of course, get those cute pink nipples up here."
     else:
@@ -752,7 +764,7 @@ label potion_scene_1_2: #Luna potion
     show screen luna_main
     with d3
 
-    if her_luna_polyjuice_drunk:
+    if "luna_polyjuice" in her_potions_drunk:
         m "You look a bit flustered [hermione_name]."
         $ changeLuna("pout","seductive","angry","mid")
         her "You're staring directly at my chest [genie_name] and I can't help but feel a bit guilty as its not my own..."
@@ -790,9 +802,8 @@ label potion_scene_1_2: #Luna potion
 
     $ hermione_busy = True
 
-    $ her_potion_drunk = True
-    $ her_polyjuice_drunk = True
-    $ her_luna_polyjuice_drunk = True
+    $ her_potions_drunk.add("polyjuice")
+    $ her_potions_drunk.add("luna_polyjuice")
 
     jump main_room
 

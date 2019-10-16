@@ -176,6 +176,9 @@ label potion_scene_2_1_1:
 
     call her_walk(action="leave", speed=2)
 
+    $ her_potions_drunk.add("expansion")
+    $ her_potions_drunk.add("breast_expansion")
+
     $ hermione_busy = True
 
     jump main_room
@@ -443,6 +446,9 @@ label potion_scene_2_2:
     with d3
 
     call her_walk(action="leave", speed=2.5)
+
+    $ her_potions_drunk.add("expansion")
+    $ her_potions_drunk.add("ass_expansion")
 
     $ hermione_busy = True
 

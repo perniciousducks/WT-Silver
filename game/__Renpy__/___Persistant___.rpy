@@ -1,6 +1,5 @@
 #TODO Move variable defaults to appropriate files, leave common ones here (and rename this file to _Variables_.rpy or something)
 
-default addicted          = False
 default tentacle_cosmetic = False
 
 default interface_color = "gold"

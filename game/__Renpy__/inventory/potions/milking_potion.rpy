@@ -120,6 +120,7 @@ label potion_scene_11_1:
 
     call her_walk(action="leave", speed=2)
 
+    $ her_potions_drunk.add("milk")
     $ her_milk_potion_return = True
 
     $ hermione_busy = True

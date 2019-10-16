@@ -48,17 +48,19 @@ label night_start:
     # Hermione Potions return
     if her_cat_polyjuice_return:
         jump potion_scene_1_1_2
+    
     if transparent_quest:
         $ transparent_quest = False
         jump potion_scene_4_2
-    # if addicted == True:
-        # jump potion_scene_3_1_2  <--- Missing label
 
     if her_milk_potion_return:
         if potion_scene_11_progress == 1:
             jump potion_scene_11_1_2
         elif potion_scene_11_progress == 2:
             pass
+
+    if her_cum_potion_return:
+        jump hg_pp_cumaddict_intro
 
 
     #Atoria / Tonks event return.

@@ -853,6 +853,10 @@ label ag_se_imperio_sb_E3:
     $ susan_face_covered = False
     call sus_main("I hope you two are happy...","upset","narrow","base","down")
 
+    $ susan_wear_top = True
+    $ susan_wear_bra = True
+    call update_sus_uniform
+
     if daytime:
         call ast_main("We're going to be late for classes, Susy!","annoyed","narrow","base","R")
         call ast_main("Let's head to Tonks' study, shall we?...","smile","narrow","base","R")

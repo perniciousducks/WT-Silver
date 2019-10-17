@@ -130,7 +130,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
     call her_main("!!!", "scream", "wide", "base", "stare", cheeks="blush")
     call her_main("Ouch! It hurts! *SOB!*", "angry", "base", "worried", "mid", cheeks="blush")
     m "Did you like it though?"
-    call her_main("Did I... \"like it\, [genie_name]..?", "annoyed", "narrow", "annoyed", "mid")
+    call her_main("Did I... \"like it\", [genie_name]..?", "annoyed", "narrow", "annoyed", "mid")
     call her_main("What girl in her right mind would like to be treated this way?")
     stop music fadeout 1.0
 

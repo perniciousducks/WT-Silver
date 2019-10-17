@@ -65,34 +65,6 @@ define kissiris = Fade(0.2, 0.0, 0.8, color='#fb8dc8')
 define black_magic = Fade(0.2, 0.0, 0.5, color='#7f3590')
 define blackfade = Fade(0.9, 0.5, 1, color='#000000')
 
-#TODO Remove unused sound defines
-# Sounds
-define sd_boing1 = "sounds/boing.mp3"
-define sd_boing2 = "sounds/boing02.mp3"
-define sd_boing3 = "sounds/boing03.mp3"
-define sd_burp = "sounds/burp.mp3"
-define sd_door = "sounds/door.mp3"
-define sd_door2 = "sounds/door2.mp3"
-define sd_door3 = "sounds/door3.mp3"
-define sd_fall = "sounds/fall.wav"
-define sd_glitch = "sounds/gltch.mp3"
-define sd_iris_run = "sounds/iris_run.mp3"
-define sd_kungfupunch = "sounds/kung-fu-punch.mp3"
-define sd_magic4 = "sounds/magic4.ogg"
-define sd_monster = "sounds/mon.wav"
-define sd_monster_dead = "sounds/mondead.wav"
-define sd_pistol2 = "sounds/pistol2.mp3"
-define sd_pop1 = "sounds/pop01.mp3"
-define sd_pop2 = "sounds/pop02.mp3"
-define sd_pop3 = "sounds/pop03.mp3"
-define sd_punch1 = "sounds/punch01.mp3"
-define sd_punch2 = "sounds/punch02.mp3"
-define sd_rustling = "sounds/rustling.mp3"
-define sd_scratch = "sounds/scratch.wav"
-define sd_slap = "sounds/slap.mp3"
-define sd_spit = "sounds/spit.mp3"
-define sd_win2 = "sounds/win2.mp3"
-
 # Main title background animation
 image title_ani: 
     contains:

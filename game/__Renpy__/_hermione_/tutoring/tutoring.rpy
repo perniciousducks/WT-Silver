@@ -69,7 +69,7 @@ label l_tutoring:
         her "..........."
         m "I can tutor you, but you need to understand certain things about magic."
         m "With proper training, you can learn to increase your magic ability."
-        play music ms_manatees fadein 1 fadeout 1
+        call play_music("night")
         call her_main("Yes?", "soft", "base", "base", "R")
         m "Certain emotions like love and hate, pleasure and pain..."
         g9 "{size=-2}(If she falls for that, I'm a true genius!){/size}"
@@ -1128,33 +1128,33 @@ label l_tutoring:
         call her_main("Yesss {image=textheart} like that!", "silly", "narrow", "base", "up",cheeks="blush")
         call nar(">You remove it just as quickly while giving her butt a loud slap.")
 
-        play sound sd_boing1
+        call play_sound("boing")
         with flashbulb
-        play sound sd_slap
+        call play_sound("slap_1")
         with hpunch
 
         call her_main("Yessss more {image=textheart}.", "open_tongue", "narrow", "base", "up",cheeks="blush")
         g9 "As you wish, princess."
         call nar(">You promptly insert and remove it.")
 
-        play sound sd_boing1
+        call play_sound("boing")
         pause.1
-        play sound sd_slap
+        call play_sound("slap_1")
         with hpunch
 
         call her_main("More!!", "open_tongue", "narrow", "base", "up",cheeks="blush")
 
-        play sound sd_boing1
+        call play_sound("boing")
         pause.1
-        play sound sd_slap
+        call play_sound("slap_1")
         with hpunch
 
         $ u_tears_pic = "characters/hermione/face/e_her_tears_03b.png"
         call her_main("Aaaah {image=textheart}.", "open_wide_tongue", "narrow", "base", "up",cheeks="blush")
 
-        play sound sd_boing1
+        call play_sound("boing")
         pause.1
-        play sound sd_slap
+        call play_sound("slap_1")
         with hpunch
 
         m "You can touch yourself too, you know."
@@ -1472,10 +1472,10 @@ label l_tutoring:
     elif her_tutoring == 12:
         call her_main("Oh! I can't believe I forgot! Stay where you are, I'll be right back!", "mad", "wide", "base", "stare",cheeks="blush")
         hide screen hermione_main
-        play sound sd_door
+        call play_sound("door")
         call blkfade
 
-        play sound sd_door
+        call play_sound("door")
         pause.3
 
         ###MAKE HER WEAR JUST A ROBE
@@ -1684,13 +1684,13 @@ label l_tutoring:
     elif her_tutoring == 13:
         call her_main("I'll go get my books right away, sir!", "soft", "base", "base", "R")
         hide screen hermione_main
-        play sound sd_door
+        call play_sound("door")
         call blkfade
         pause 1
 
         #call set_her_action("hold_book")
 
-        play sound sd_door
+        call play_sound("door")
         pause.3
 
         call hide_blkfade
@@ -1783,25 +1783,25 @@ label l_tutoring:
         her "Yessss {image=textheart}."
         call her_main("I love his big cock in my ass.", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
         call nar(">You slap her buttcheek.")
-        play sound sd_slap
+        call play_sound("slap_1")
         with hpunch
         call her_main("And being punished for my sluttiness.", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
-        play sound sd_slap
+        call play_sound("slap_1")
         with hpunch
         call her_main("Aah, like this, punish me more master {image=textheart}.", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
-        play sound sd_slap
+        call play_sound("slap_1")
         with hpunch
         call her_main("Yess!", "open_wide_tongue", "narrow", "base", "up",cheeks="blush")
-        play sound sd_slap
+        call play_sound("slap_1")
         with hpunch
         call her_main("Mooore!", "open_wide_tongue", "narrow", "base", "up",cheeks="blush")
-        play sound sd_slap
+        call play_sound("slap_1")
         with hpunch
         call her_main("I'm about to...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
-        play sound sd_slap
+        call play_sound("slap_1")
         with hpunch
         pause.1
-        play sound sd_slap
+        call play_sound("slap_1")
         with hpunch
         pause.1
         call her_main("Cuuuum {image=textheart}{image=textheart}.", "open_wide_tongue", "narrow", "base", "up",cheeks="blush")
@@ -1873,57 +1873,6 @@ label l_tutoring:
         jump day_start
 
 
-
-
-###UE CUSTOM THINGS
-#TODO Remove unused sound defines
-# Music
-define ms_arabian_nights = "music/Arabian_Nights.mp3"
-define ms_bushwick = "music/Bushwick_Tarantella_Loop.mp3"
-define ms_croft_manor = "music/Croft_Manor.mp3"
-define ms_dice_game = "music/Dice_Game.mp3"
-define ms_gtkm = "music/Going_to_Kill_Me.mp3"
-define ms_gorilla = "music/Gorilla_Theme.mp3"
-define ms_india = "music/India's_Different.mp3"
-define ms_jafar = "music/Jafar's_Hour.mp3"
-define ms_kabul = "music/Kabul_Flight_Jumpstart.mp3"
-define ms_manatees = "music/Music for Manatees.mp3"
-define ms_marketplace = "music/Marketplace.mp3"
-define ms_outlaw_star = "music/Outlaw_Star_Freedom.mp3"
-define ms_ozone = "music/Ozone.ogg"
-define ms_sleep_walking = "music/Sleep_Walking.mp3"
-define ms_tension = "music/Tension.mp3"
-define ms_the_calm_before = "music/The_Calm_Before.mp3"
-define ms_the_eastern_wind = "music/The_Eastern_Wind.mp3"
-define ms_the_kiss = "music/The_Kiss.mp3"
-define ms_the_xfiles = "music/The_X-Files.mp3"
-define ms_vision = "music/Vision.mp3"
-# Sounds
-define sd_boing1 = "sounds/boing.mp3"
-define sd_boing2 = "sounds/boing02.mp3"
-define sd_boing3 = "sounds/boing03.mp3"
-define sd_burp = "sounds/burp.mp3"
-define sd_door = "sounds/door.mp3"
-define sd_door2 = "sounds/door2.mp3"
-define sd_door3 = "sounds/door3.mp3"
-define sd_fall = "sounds/fall.wav"
-define sd_glitch = "sounds/gltch.mp3"
-define sd_iris_run = "sounds/iris_run.mp3"
-define sd_kungfupunch = "sounds/kung-fu-punch.mp3"
-define sd_magic4 = "sounds/magic4.ogg"
-define sd_monster = "sounds/mon.wav"
-define sd_monster_dead = "sounds/mondead.wav"
-define sd_pistol2 = "sounds/pistol2.mp3"
-define sd_pop1 = "sounds/pop01.mp3"
-define sd_pop2 = "sounds/pop02.mp3"
-define sd_pop3 = "sounds/pop03.mp3"
-define sd_punch1 = "sounds/punch01.mp3"
-define sd_punch2 = "sounds/punch02.mp3"
-define sd_rustling = "sounds/rustling.mp3"
-define sd_scratch = "sounds/scratch.wav"
-define sd_slap = "sounds/slap.mp3"
-define sd_spit = "sounds/spit.mp3"
-define sd_win2 = "sounds/win2.mp3"
 # Screens
 screen genie_and_hermione(): #Genie sitting, Hermione stands right in front of him (behind the desk even).
     tag favor

@@ -15,7 +15,7 @@ label potion_scene_2_1_1:
     call her_chibi("stand","mid","base")
 
     her "That wasn't actually that bad."
-    call her_main("So, now that I've had the potion, will you tell me what it's supposed to do.", "angry", "wink", "base", "mid")
+    call her_main("So, now that I've had the potion, will you tell me what it's supposed to do?", "angry", "wink", "base", "mid")
     m "No need to ruin the fun, it should take effect relatively quickly."
     call her_main("Well what am I supposed to do until then?", "base", "narrow", "base", "mid_soft")
     m "You could show me your tits."
@@ -75,7 +75,7 @@ label potion_scene_2_1_1:
             jump main_room
             # End scene
 
-        "-Play with her breasts-":
+        "-Play with her breasts-": #TODO Whoring check
             pass
 
     m "Well that's a matter of personal opinion."
@@ -90,6 +90,7 @@ label potion_scene_2_1_1:
     call nar(">Hermione walks over to behind your desk, her breasts swaying rhythmically as she moves.")
     pause .8
 
+    #TODO Change chibi/sprite to match writing (shirt on) or change the writing (shirt off)
     hide screen hermione_main
     call set_her_action("lift_top")
     call her_chibi("hide")

@@ -180,11 +180,10 @@ label tentacle_2: #Enjoyable tentacle scene
     call play_music("hermione_theme")
     pause.8
 
-    #TODO Find and add missing CG file (e1.png), was it ever in the game?
-    #call cg_scene(folder="", layer="e1")
-    #hide screen blkfade
-    #with d9
-    #call ctc
+    call cg_scene(folder="", layer="p1")
+    hide screen blkfade
+    with d9
+    call ctc
 
     her "What the hell kind of plant is this?"
     ">You start pumping the tentacles in her vagina slowly"

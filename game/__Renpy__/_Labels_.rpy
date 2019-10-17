@@ -336,8 +336,12 @@ label play_sound(sound=""):
     # Affection
     if sound in ["gulp", "gulping", "swallow", "swallowing"]: # gulp
         $ renpy.play('sounds/gulp.mp3')
-    if sound in ["slap", "slapping"]: # slap
+    if sound == "slap_1":
+        $ renpy.play('sounds/slap.mp3')
+    if sound == "slap": # slap_2
         $ renpy.play('sounds/slap_02.mp3')
+    if sound == "slap_3":
+        $ renpy.play('sounds/slap_03.mp3')
     if sound in ["spit", "spitting"]: # spit
         $ renpy.play('sounds/spit.mp3')
     if sound in ["kick", "kicking", "bump"]: # kick

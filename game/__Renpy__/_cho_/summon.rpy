@@ -16,12 +16,15 @@ label summon_cho:
 
         # Main Matches
         "Start Hufflepuff Match" if (huffl_matches_won == 2 and cho_tier == 1):
-            $ lock_cho_training = True # Temporarily, Until next events get added.
-            $ cho_tier = 2
+            $ lock_cho_training = True
+            $ lock_cho_practice = True
             $ main_match_1_stage = "start"
             $ cc_event_pause  += 1  # Event starts on the next day.
             $ cc_summon_pause += 1 # Can't be summoned until next event.
             jump start_hufflepuff_match
+
+        "Start Slytherin Match" if (cc_st.win_counter >= 2 and cho_tier == 2 and slytherin_match == ""):
+            jump start_slytherin_match
 
 
         # Talk
@@ -40,7 +43,7 @@ label summon_cho:
 
         # Quidditch Training
         "-Training-" if not lock_cho_training:
-            if cho_mood != 0:
+            if cho_mood > 0:
                 m "Ready to get back to training?"
                 if cho_mood >= 5:
                     call cho_main("No.{w} And I don't want to hear of it right now, Sir.",face="angry")
@@ -200,6 +203,9 @@ label cho_talk:
             $ quidditch_commentator = "hermione"
             jump quidditch_commentator_event_3
 
+        "-Discuss Quidditch Training-" if cho_tier == 2 and not lock_cho_training:
+            jump cc_st_talk
+
         # Naming
         "\"Address me only as\"":
             menu:
@@ -214,7 +220,7 @@ label cho_talk:
                 "-Custom Input-":
                     $ temp_name = renpy.input("(Please enter the name.)", cho_genie_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
-                    
+
                     if temp_name == "":
                         jump cho_talk
                     $ cho_genie_name = temp_name
@@ -237,7 +243,7 @@ label cho_talk:
                 "-Custom Input-":
                     $ temp_name = renpy.input("(Please enter the name.)", cho_name, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ", length=14)
                     $ temp_name = temp_name.strip()
-                    
+
                     if temp_name == "":
                         jump cho_talk
                     $ cho_name = temp_name

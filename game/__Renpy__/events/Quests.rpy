@@ -124,13 +124,13 @@ label quests:
 
     if geniecard_level < 2 and snape_third_win and her_third_win and twins_second_win:
         $ letter_cardgame_t2.mailLetter()
-        
-        
+
+
     # Cho events not triggered by a date.
     if cc_event_pause == 0:
         if daytime:
 
-            if huffl_matches_won == 1 and quidditch_commentator == "none":
+            if huffl_matches_won == 1 and quidditch_commentator == None:
                 $ lock_cho_practice = True
                 $ quidditch_commentator = "talk_with_hermione"
                 jump quidditch_commentator_event_1
@@ -138,6 +138,9 @@ label quests:
             if main_match_1_stage == "start":
                 $ main_match_1_stage = "return" # Triggers the return during the evening.
                 jump hufflepuff_match
+            if slytherin_match == "start":
+                $ slytherin_match = "return"
+                jump slytherin_match
 
         else:
             if cho_intro.E1_complete and not cho_intro.E2_complete:
@@ -145,11 +148,18 @@ label quests:
 
             if quidditch_match_in_progress:
                 $ quidditch_match_in_progress = False
-                jump quidditch_match_return
+                if cho_tier == 1: # Hufflepuff
+                    jump quidditch_match_return
+                else: # Slytherin
+                    jump cc_st_return
+
 
             if main_match_1_stage == "return":
                 $ main_match_1_stage = "end"
                 jump hufflepuff_match_return
+            if slytherin_match == "return":
+                $ slytherin_match = "completed"
+                jump slytherin_match_return
 
     # Susan events not triggered by a date.
     if sb_event_pause == 0:
@@ -198,6 +208,8 @@ label quests:
     # Hermione events not triggered by a date.
     if hg_event_pause == 0:
         if daytime:
+            if cc_st.return_E1 and not cc_st.hermione_E1:
+                jump cc_st_hermione_E1
 
             # Ending events
             if her_whoring >= 15 and not ball_quest.E1_complete:
@@ -316,6 +328,21 @@ default cho_intro = quest_class(
     E2_complete = False, # 2nd visit
     E3_intro    = False, # You talked to Hermione once, but event failed.
     E3_complete = False, # 3rd visit, summon unlocked.
+)
+
+default cc_st = quest_class(
+    match_counter = 0,
+    win_counter   = 0,
+
+    return_E1 = False, # 1st match, Slyth & HG don't appear.
+    return_E2 = False, # 2st match, right clothing, wrong commentator (Tonks).
+    return_E3 = False, # 3st match, right clothing, right commentator (Hermione).
+
+    hermione_E1 = False, # Walks into your room and quits commentating.
+    snape_E1 = False, # Refuses to get Slyth to play.
+    tonks_E1 = False, # You tell her about Cho. She gets Slyth to play.
+    tonks_E2 = False, # You talk more about Cho and the Slytherins boys.
+    hermione_blackmail = False, # Talk to Hermione and blackmail her.
 )
 
 # Susan

@@ -343,16 +343,19 @@ label change_quidditch_tactics:
                 $ cho_class.equip(cho_outfit_quidditch)
                 call cho_main(face="neutral", xpos="mid", ypos="base")
 
-            "-Start Practice Match-" if daytime and huffl_matches_won < 2 and not lock_cho_practice:
+            "-Start Practice Match-" if daytime and not lock_cho_practice:
                 # Cho continues to wear her Quidditch outfit.
                 # No clothing reset until after the eventing.
-                jump start_training_match
+                if cho_tier == 1: # Hufflepuff
+                    jump start_training_match
+                if cho_tier == 2: # Slytherin
+                    jump cc_st_start
 
-            "{color=#858585}-Start Practice Match-{/color}" if (not daytime or lock_cho_practice) and not cho_content_complete:
-                if not daytime:
-                    call nar(">You can only do that during the day.")
-                else:
+            "{color=#858585}-Start Practice Match-{/color}" if not daytime or lock_cho_practice:
+                if lock_cho_practice:
                     call nar(">You can't do that right now.")
+                else:
+                    call nar(">You can only do that during the day.")
 
             "-Go Back-":
                 call cho_main("Very well, [cho_genie_name].","open","base","base","mid", ypos="head")

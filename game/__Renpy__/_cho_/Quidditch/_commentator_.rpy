@@ -115,6 +115,7 @@ label quidditch_commentator_event_2:
     m "I better tell Cho about the...{w=0.8} news."
 
     $ hermione_busy = True
+    $ lock_cho_practice = False
 
     jump main_room
 

@@ -77,14 +77,14 @@ label rummaging:
     elif wine_ITEM.number < 1:
         call rum_block(wine_ITEM)
 
-    elif random_percent <= 50:
+    elif random_percent <= 25:
         if firewhisky_ITEM.unlocked and random_percent <= 25:
             call rum_block(firewhisky_ITEM)
         else:
             call rum_block(wine_ITEM)
 
     # Gold.
-    elif random_percent <= 60:
+    elif random_percent <= 40:
         call rum_block("gold")
 
     # Items.

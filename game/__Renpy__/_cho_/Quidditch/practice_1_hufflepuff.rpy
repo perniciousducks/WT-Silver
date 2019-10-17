@@ -75,37 +75,28 @@ label quidditch_match_return:
 
 
     # Hufflepuff Match
-    if cho_tier == 1:
 
-        # First practice game.
-        if huffl_matches_won == 0:
-            # Win
-            if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id and quidditch_position == "above":
-                $ huffl_matches_won = 1
-                jump hufflepuff_practice_win_1
-            # Lose
-            else:
-                jump hufflepuff_practice_lost
-
-        # Second practice game.
+    # First practice game.
+    if huffl_matches_won == 0:
+        # Win
+        if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id and quidditch_position == "above":
+            $ huffl_matches_won = 1
+            jump hufflepuff_practice_win_1
+        # Lose
         else:
-            # Win
-            if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id and quidditch_position == "above" and cho_whoring >= 3:
-                $ huffl_matches_won = 2
-                $ lock_cho_training = True
-                jump hufflepuff_practice_win_2
-            # Lose
-            else:
-                jump hufflepuff_practice_lost
+            jump hufflepuff_practice_lost
 
+    # Second practice game.
+    else:
+        # Win
+        if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id and quidditch_position == "above" and cho_whoring >= 3:
+            $ huffl_matches_won = 2
+            $ lock_cho_training = True
+            jump hufflepuff_practice_win_2
+        # Lose
+        else:
+            jump hufflepuff_practice_lost
 
-    #Slytherin Match
-    elif cho_tier == 2:
-        jump main_room
-
-    #Gryffindor Match
-    elif cho_tier == 3:
-        jump main_room
 
 
 # Lost first hufflepuff match.

@@ -318,67 +318,73 @@ label cast_spell(spell=""):
 label play_sound(sound=""):
 
     # Objects
-    if sound in ["knock", "knocking"]:
+    if sound in ["knock", "knocking"]: # knocking
         $ renpy.play('sounds/knocking.mp3')
-    if sound in ["door"]:
+    if sound == "door":
         $ renpy.play('sounds/door.mp3')
-    if sound in ["lock","unlock"]:
+    if sound in ["lock","unlock"]: # lock
         $ renpy.play('sounds/09_lock.wav')
-    if sound in ["desk","climb_desk"]:
+    if sound in ["desk","climb_desk"]: # climb_desk
         $ renpy.play('sounds/08_hop_on_desk.mp3')
-    if sound in ["owl"]:
+    if sound == "owl":
         play sound "sounds/owl.mp3"
 
     # Ambience
-    if sound in ["applause"]:
+    if sound == "applause":
         $ renpy.play('sounds/applause01.ogg')
 
     # Affection
-    if sound in ["gulp", "gulping", "swallow", "swallowing"]:
+    if sound in ["gulp", "gulping", "swallow", "swallowing"]: # gulp
         $ renpy.play('sounds/gulp.mp3')
-    if sound in ["slap", "slapping"]:
+    if sound in ["slap", "slapping"]: # slap
         $ renpy.play('sounds/slap_02.mp3')
-    if sound in ["spit", "spitting"]:
+    if sound in ["spit", "spitting"]: # spit
         $ renpy.play('sounds/spit.mp3')
-    if sound in ["kick", "kicking", "bump"]:
+    if sound in ["kick", "kicking", "bump"]: # kick
         $ renpy.play('sounds/kick.ogg')
-    if sound in ["kiss", "kissing"]:
+    if sound in ["kiss", "kissing"]: # kiss
         $ renpy.play('sounds/kiss.mp3')
-    if sound in ["insert", "inserting", "goo"]:
+    if sound in ["insert", "inserting", "goo"]: # insert
         $ renpy.play('sounds/gltch.mp3')
-    if sound in ["boing"]:
+    if sound == "boing":
         $ renpy.play('sounds/boing.mp3')
-    if sound in ["pop", "bottle"]:
+    if sound in ["pop", "bottle"]: # pop
         $ renpy.play('sounds/bottle.mp3')
+    if sound == "snore":
+        $ renpy.play('sounds/snore1.mp3')
+    if sound == "snore_quiet":
+        $ renpy.play('sounds/snore2.mp3')
+    if sound == "snore_loud":
+        $ renpy.play('sounds/snore3.mp3')
 
     # Magic
-    if sound in ["spell"]:
+    if sound == "spell":
         $ renpy.play('sounds/magic2.mp3')
-    if sound in ["magic"]:
+    if sound == "magic":
         $ renpy.play('sounds/magic4.ogg')
 
     # Movement
-    if sound in ["footsteps"]:
+    if sound == "footsteps":
         $ renpy.play('sounds/footsteps.mp3')
-    if sound in ["walking"]:
+    if sound == "walking":
         $ renpy.play('sounds/run_04.mp3')
-    if sound in ["running"]:
+    if sound == "running":
         $ renpy.play('sounds/run_03.mp3')
-    if sound in ["sprinting"]:
+    if sound == "sprinting":
         $ renpy.play('sounds/run_02.mp3')
-    if sound in ["walking_on_grass", "grass"]:
+    if sound in ["walking_on_grass", "grass"]: # walking_grass
         $ renpy.play('sounds/steps_grass.mp3')
 
     # Interface
-    if sound in ["scroll"]:
+    if sound == "scroll":
         $ renpy.play('sounds/scroll.mp3')
-    if sound in ["equip", "equip_inventory"]:
+    if sound in ["equip", "equip_inventory"]: # equip
         $ renpy.play('sounds/cloth_sound.mp3')
 
     # Misc
-    if sound in ["scratch"]:
+    if sound == "scratch":
         $ renpy.play('sounds/scratch.wav')
-    if sound in ["shatter"]:
+    if sound == "shatter":
         $ renpy.play('sounds/glass_shatter.mp3')
     if sound in ["glass_break","glass"]:
         $ renpy.play('sounds/glass_break.mp3')
@@ -388,80 +394,80 @@ label play_sound(sound=""):
 
 #TODO One keyword per theme (use == instead of x in [..] checks, possibly define everything in a dictionary to simplify code further)
 label play_music(music=""):
-    if music in ["stop","pause"]:
+    if music in ["stop","pause"]: # stop
         stop music fadeout 1.0
         return
 
     # Harry Potter
-    if music in ["hedwigs_theme", "hogwarts"]:
+    if music in ["hedwigs_theme", "hogwarts"]: # hogwarts
         play music "music/01 Prologue.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["ball_theme", "ball"]:
+    elif music in ["ball_theme", "ball"]: # ball
         play music "music/11 Neville's Waltz.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["festive", "xmas"]:
+    elif music in ["festive", "xmas"]: # festive
         play music "music/07 Introducing Colin2.mp3" fadein 1 fadeout 1 if_changed
     elif music == "quidditch":
         play music "music/11 The Quidditch Match_original.mp3" fadein 1 fadeout 1 if_changed
     # Character Music
-    elif music in ["snape", "snape_theme", "dark_fog"]:
+    elif music in ["snape", "snape_theme", "dark_fog"]: # snape
         # Snape
         play music "music/Dark Fog.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["hermione", "hermione_theme", "chipper_doodle"]:
+    elif music in ["hermione", "hermione_theme", "chipper_doodle"]: # hermione
         # Hermione
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["cho", "cho_theme", "happy_adventure"]:
+    elif music in ["cho", "cho_theme", "happy_adventure"]: #cho
         # Cho
         play music "music/fuzzball-parade-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["astoria", "astoria_theme"]:
+    elif music in ["astoria", "astoria_theme"]: #astoria
         # Astoria
         play music "music/KMcL_OpenThoseBrightEyes.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["susan", "susan_theme"]:
+    elif music in ["susan", "susan_theme"]: #susan
         # Susan
         play music "music/teddy-bear-waltz-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["tonks", "tonks_theme"]:
+    elif music in ["tonks", "tonks_theme"]: # tonks
         # Tonks
         play music "music/scheming-weasel-slower-version-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["luna", "luna_theme"]:
+    elif music in ["luna", "luna_theme"]: # luna
         # Luna
         play music "music/wallpaper-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["playful", "playful_tension"]:
+    elif music in ["playful", "playful_tension"]: # playful
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["silly", "fun", "silly_fun_loop"]:
+    elif music in ["silly", "fun", "silly_fun_loop"]: # silly
         play music "music/silly_fun_loop.mp3" fadein 1 fadeout 1 if_changed
 
     # Store Music
-    elif music in ["weasley_store"]:
+    elif music == "weasley_store":
         play music "music/weasley_store.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["clothing_store"]:
+    elif music == "clothing_store":
         play music "music/clothing_store.mp3" fadein 1 fadeout 1 if_changed
 
     # Background Music
-    elif music in ["day", "day_theme", "brittle_rille"]:
+    elif music in ["day", "day_theme", "brittle_rille"]: # day
         play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["night", "night_theme", "manatees"]:
+    elif music in ["night", "night_theme", "manatees"]: # night
         play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["night_outside", "outside_night"]:
+    elif music in ["night_outside", "outside_night"]: # night_outside
         play music "sounds/night.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["jazz_take"]:
+    elif music in ["jazz_take"]: # jazz?
         play music "sounds/jazz take 2.mp3" fadein 1 fadeout 1 if_changed
 
     # Interface
-    elif music in ["my_immortal"]:
+    elif music in ["my_immortal"]: # wardrobe
         play music "music/Spring_In_My_Step.mp3" fadein 0.2 fadeout 0.2 if_changed
 
     # Misc
     elif music in ["hitman"]:
         play music "music/hitman.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["boss_theme"]:
+    elif music in ["boss_theme"]: # boss
         play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["boss_card_theme"]:
+    elif music in ["boss_card_theme"]: # cardgame
         play music "music/Juhani_Junkala.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["sad","grape_soda"]:
+    elif music in ["sad","grape_soda"]: # sad
         play music "music/GrapeSodaIsFuckingRawbyjrayteam6.mp3" fadein 0.2 fadeout 0.5 if_changed
-    elif music in ["anguish"]:
+    elif music == "anguish":
         play music "music/Anguish.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["trance"]:
+    elif music == "trance":
         play music "music/Under-the-Radar by PhobyAk.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["despair"]:
+    elif music == "despair":
         play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 if_changed
 
     else:
@@ -538,4 +544,20 @@ label adjust_game_difficulty(dif=None):
         $ cheat_reading = False
         $ wine_ITEM.cost = 140
         $ firewhisky_ITEM.cost = 160
+    return
+
+# Dummy labels. To prevent crashes. # TODO: Remove later.
+label update_her_uniform:
+    $ hermione_wear_top=False
+    $ hermione_wear_bottom=False
+    $ hermione_wear_bra=False
+    $ hermione_wear_panties=False
+    return
+label reset_hermione:
+    return
+label h_equip_temp_outfit(outfit=None):
+    return
+label h_unequip_temp_outfit(outfit=None):
+    return
+label set_her_action(action=None, update=None):
     return

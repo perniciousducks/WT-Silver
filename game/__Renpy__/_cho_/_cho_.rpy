@@ -51,7 +51,7 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
             if cho_flip == -1: #Flipped
                 $ cho_xpos = -50
             else:
-                $ cho_xpos = 590
+                $ cho_xpos = 660
             $ cho_ypos = 200
             $ cho_zorder = 8
         else:

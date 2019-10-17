@@ -431,7 +431,7 @@ label hermione_talk:
         "{color=#858585}-Solve the matter with Cho-{/color}" if cho_intro.E2_complete and not ss_he.cho_E1:
             # Before talking to Snape.
             m "(I should ask Snape what to do about that Cho girl first. Just to be save.)"
-            m "(I should ask him to hang out in the evening.)"
+            m "(Might as well have a drink with him...)"
             jump hermione_talk
 
         "-Solve the matter with Cho-" if ss_he.cho_E1 and not cho_intro.E3_complete:
@@ -442,6 +442,8 @@ label hermione_talk:
             $ quidditch_commentator = "talk_with_cho"
             jump quidditch_commentator_event_2
 
+        "-Ask Hermione to commentate the game again-\n...again" if cc_st.hermione_E1 and not cc_st.hermione_blackmail:
+            jump cc_st_hermione_blackmail
 
         # General.
         "-Address me only as-":

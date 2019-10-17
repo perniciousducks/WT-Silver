@@ -398,7 +398,7 @@ label chibi_effect(action=None, chibi=None):
 
     elif action == "thought":
         show screen emo_thought
-    elif action in ["!","exclamation"]:
+    elif action == "!":
         show screen emo_exclamation
     elif action == "sad":
         show screen emo_sad

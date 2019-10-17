@@ -50,6 +50,13 @@ label snape_hangout:
     if hg_strip.trigger and not ss_he.hermione_strip: #After second dance where Snape entered room.
         jump ss_he_hermione_strip # Get to invite Snape to watch.
 
+    # Cho
+    if cc_st.hermione_E1 and not cc_st.snape_E1:
+        if cho_tier == 2: # During Slytherin match preparation.
+            jump cc_st_snape_E1
+        else: # Don't need event after Slytherin was beaten.
+            $ cc_st.snape_E1 = True
+            pass
 
     ### Snape Stories ###
     # Events are located here.

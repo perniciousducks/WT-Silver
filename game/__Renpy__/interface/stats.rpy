@@ -308,7 +308,7 @@ screen stats_menuitem(xx, yy):
                                 use stat_bar(int(cho_tier/0.2), "-Favour Tier-", "", cho_tier) # 4 will be max.
                                 use stat_bar(int(cho_whoring/0.9), "-Recklessness-", cho_whoring_word, cho_whoring)
                                 use stat_bar(int(cho_reputation/0.9), "-Reputation-", cho_reputation_word, cho_reputation)
-                                use stat_bar(int((huffl_matches_won+gryff_matches_won+slyth_matches_won)/0.6), "{size=-10}-Quidditch Training-{/size}" , "Not started", huffl_matches_won+gryff_matches_won+slyth_matches_won) # TODO: Add word list
+                                use stat_bar(int((huffl_matches_won+cc_st.win_counter)/0.6), "{size=-10}-Quidditch Training-{/size}" , "Not started", huffl_matches_won+cc_st.win_counter) # TODO: Add word list # TODO: Add cc_gt.match_counter & cc_gt.win_counter
                             elif current_category == "Luna":
                                 use stat_bar(int(10-lun_mood/1.0), "-Mood-" , "Cheerful", lun_mood) # TODO: Add word list
                                 use stat_bar(int(lun_tier/0.4), "-Favour Tier-", "", lun_tier) # 4 is max.

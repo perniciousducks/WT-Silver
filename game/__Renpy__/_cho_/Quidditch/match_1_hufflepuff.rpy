@@ -195,14 +195,14 @@ label hufflepuff_match:
     call sna_main("{size=-4}Those are grades we give out to our students, for decidedly poor performances, like Granger’s...{/size}","snape_01",ypos="head")
     call her_main("...", "mad", "base", "angry", "mid")
     with hpunch
-    
+
     stop bg_sounds fadeout 4
-    
+
     call her_main("{size=+5}Quiet Please!{/size}", "scream", "base", "angry", "mid")
     call her_main("...", "normal", "closed", "angry", "mid")
-    
+
     play bg_sounds "sounds/crowd_low.mp3" fadein 2
-    
+
     call her_main("Thank you...", "open", "happy", "base", "mid_soft")
     call her_main("L-let's begin!", "base", "base", "base", "mid")
 
@@ -392,7 +392,7 @@ label hufflepuff_match:
 
     play bg_sounds "sounds/crowd_low.mp3" fadein 3 fadeout 2
     play sound "sounds/crowd_cheer.mp3"
-    
+
     $ qp_mob_reaction[0] = "emo8"
     $ qp_mob_reaction[1] = "emo7"
     $ qp_mob_reaction[2] = "emo8"
@@ -450,7 +450,7 @@ label hufflepuff_match:
     call her_main("", "base", "closed", "base", "mid")
     call sna_main("I practically caught them chew each other’s tongues off at one point.","snape_02",ypos="head")
     call her_main("Speaking of important, I just realised that as the inaugural game, I should cover the rules of the game for any first-years watching.", "open", "happy", "base", "R")
-    
+
     # Reading the rules
     stop music fadeout 4
     stop bg_sounds fadeout 2
@@ -826,11 +826,11 @@ label hufflepuff_match_return:
     stop music fadeout 1.0
     call popup("New favours for Cho have been unlocked!", "Congratulations!", "interface/icons/head/head_cho_2.png")
     call unlock_clothing(text=">New clothing items for Cho have been unlocked!", item=cho_outfit_cheerleader)
-    
-    if cho_whoring < 24:
-        $ cho_whoring = 24
-        $ TBA_message("This concludes all Quidditch events for Cho as of version %s." % title_version)
-        $ TBA_message("Cho's recklesness stat has been maxed out.\nYou can now use all of her wardrobe options.")
+
+    #if cho_whoring < 24:
+    #    $ cho_whoring = 24
+    #    $ TBA_message("This concludes all Quidditch events for Cho as of version %s." % title_version)
+    #    $ TBA_message("Cho's recklesness stat has been maxed out.\nYou can now use all of her wardrobe options.")
 
     $ cho_busy      = True
     $ hermione_busy = True
@@ -839,6 +839,9 @@ label hufflepuff_match_return:
     # Reset Cho
     $ cho_class.equip(cho_outfit_last)
 
-    $ cho_content_complete = True # Temporary to hide the Practice Match option in the menu.
+    $ cho_tier = 2
+    $ cho_training_unlocked = True
+    $ lock_cho_practice = False
+    $ lock_cho_training = False
 
     jump end_cho_event

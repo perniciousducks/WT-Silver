@@ -90,7 +90,7 @@ label her_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
     show screen bld1
 
     call transition(trans, True)
-    
+
     $ hermione_class.say(text)
 
     if use_hermione_head and not face_on_cg:
@@ -131,7 +131,7 @@ label update_hermione:
     $ use_hermione_head = False
 
     return
-    
+
 label end_her_event:
     call her_chibi("hide")
     hide screen hermione_main
@@ -139,7 +139,7 @@ label end_her_event:
     pause.5
 
     call update_hermione
-    
+
     $ active_girl = None
     $ hermione_busy = True
 
@@ -153,4 +153,3 @@ screen hermione_main():
         add hermione_class.get_image() xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio) at hermione_animation
     else:
         add hermione_class.get_image() xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
-        

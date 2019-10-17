@@ -120,6 +120,10 @@ init python:
     nar = Character('Narrator', show_side_image=Image("characters/misc/dumbledore/dum_narritor.png"))
     sil = Character('Team Silver', show_side_image=Image("characters/misc/dumbledore/dum_narritor.png"))
 
+    malf = Character('Malfoy')
+    cra = Character('Crabbe')
+    goy = Character('Goyle')
+
     maf = Character('Madam Mafkin', show_side_image=Image("characters/misc/mafkin/maf_1.png", xalign=1.0))
     abe = Character('Aberforth')
     myr = Character('Moaning Myrtle')

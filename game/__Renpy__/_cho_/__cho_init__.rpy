@@ -61,7 +61,7 @@ default cho_quiz_complete       = False
 default snape_quid_help         = False # True after Failing the Quiz.
 default lock_cho_training       = False
 default lock_cho_practice       = False
-default quidditch_commentator   = "none"
+default quidditch_commentator   = None
 default quidditch_position      = "front"
 
 # Quidditch Outfit
@@ -74,17 +74,17 @@ default cho_quidditch_gloves    = True # For testing.
 # Quidditch Matches
 default quidditch_match_in_progress = False
 default huffl_match_counter   = 0
-default gryff_match_counter   = 0
-default slyth_match_counter   = 0
 
 default huffl_matches_won     = 0 # Goes up to 2
-default gryff_matches_won     = 0 # Goes up to 2
-default slyth_matches_won     = 0 # Goes up to 2
 
 default start_match           = 0 # No match will trigger at 0
 default main_match_1_stage    = "none"
 default main_match_2_stage    = "none"
 default main_match_3_seen     = "none"
+
+default hufflepuff_match      = ""
+default slytherin_match       = ""
+default gryffindor_match      = ""
 
 default cho_content_complete  = False
 
@@ -192,15 +192,14 @@ label reset_cho_progress:
         # Quidditch Matches
         "quidditch_match_in_progress",
         "huffl_match_counter",
-        "gryff_match_counter",
-        "slyth_match_counter",
         "huffl_matches_won",
-        "gryff_matches_won",
-        "slyth_matches_won",
         "start_match",
         "main_match_1_stage",
         "main_match_2_stage",
         "main_match_3_seen",
+        "hufflepuff_match",
+        "slytherin_match",
+        "gryffindor_match",
         "cho_content_complete",
 
         # Event objects

@@ -91,8 +91,8 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         #Remove Top Animation
         call set_her_action("lift_top")
         pause.5
-        $ hermione_wear_top = False
-        $ hermione_wear_bra = False
+        $ hermione_class.strip("top")
+        $ hermione_class.strip("bra")
         call set_her_action("None")
         pause.2
 
@@ -148,8 +148,8 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         #Remove Top Animation
         call set_her_action("lift_top")
         pause.5
-        $ hermione_wear_top = False
-        $ hermione_wear_bra = False
+        $ hermione_class.strip("top")
+        $ hermione_class.strip("bra")
         call set_her_action("None")
         pause.2
 
@@ -200,8 +200,8 @@ label hg_pr_strip_rear_transition:
     pause 1
 
     # Setup
-    $ hermione_wear_top = False
-    $ hermione_wear_bottom = False
+    $ hermione_class.strip("top")
+    $ hermione_class.strip("bottom")
     call hg_chibi_transition("stand_behind_desk", flip=True, trans="fade")
     pause.8
 
@@ -328,8 +328,8 @@ label hg_pr_strip_T2_masturbate_rear:
 
     ">You take your cock out and start stroking it..."
 
-    $ hermione_wear_top = False
-    $ hermione_wear_bottom = False
+    $ hermione_class.strip("top")
+    $ hermione_class.strip("bottom")
 
     call hg_chibi_transition("jerk_off_behind_desk", flip=True, trans="d7")
     call play_music("chipper_doodle")
@@ -496,8 +496,8 @@ label hg_pr_strip_T3_masturbate_rear:
 
     ">You take your cock out and start stroking it..."
 
-    $ hermione_wear_top = False
-    $ hermione_wear_bottom = False
+    $ hermione_class.strip("top")
+    $ hermione_class.strip("bottom")
 
     call hg_chibi_transition("jerk_off_behind_desk", flip=True, trans="d7")
     call play_music("chipper_doodle")
@@ -673,8 +673,8 @@ label hg_pr_strip_T4_masturbate_rear:
 
     ">You take your cock out and start stroking it..."
 
-    $ hermione_wear_top = False
-    $ hermione_wear_bottom = False
+    $ hermione_class.strip("top")
+    $ hermione_class.strip("bottom")
 
     call hg_chibi_transition("jerk_off_behind_desk", flip=True, trans="d7")
     call play_music("chipper_doodle")

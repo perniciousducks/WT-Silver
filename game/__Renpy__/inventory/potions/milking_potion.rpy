@@ -196,8 +196,8 @@ label potion_scene_11_2:
     call set_her_action("lift_top")
     pause.5
 
-    $ hermione_wear_top = False
-    $ hermione_wear_bra = False
+    $ hermione_class.strip("top")
+    $ hermione_class.strip("bra")
     call set_her_action("none","skip_update")
     pause.5
 
@@ -424,8 +424,8 @@ label potion_scene_11_3:
     call set_her_action("lift_top")
     pause.5
 
-    $ hermione_wear_top = False
-    $ hermione_wear_bra = False
+    $ hermione_class.strip("top")
+    $ hermione_class.strip("bra")
     call set_her_action("none","skip_update")
     pause.5
 
@@ -728,8 +728,8 @@ label potion_scene_11_3:
         pause.5
 
         hide screen hermione_main
-        $ hermione_wear_bottom = False
-        $ hermione_wear_panties = False
+        $ hermione_class.strip("bottom")
+        $ hermione_class.strip("panties")
         call set_her_action("none","skip_update")
         $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded_xlarge.png"
         show screen hermione_main

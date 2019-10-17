@@ -605,8 +605,7 @@ label hg_pf_talk_tonks:
     pause 1
 
     # Setup
-    $ hermione_wear_top = True
-    $ hermione_wear_bottom = True
+    $ hermione_class.wear("all")
     call update_her_uniform
 
     $ tonks_outfit_last.save() # Store current outfit.
@@ -679,7 +678,7 @@ label hg_pf_talk_tonks:
             call her_main("More than I could count!", "open", "closed", "angry", "mid")
             call ton_main("","angry","base","base","mid")
             call her_main("I'm almost certain one of the girls wasn't wearing any underwear in class - which is completely unhygienic.", "angry", "narrow", "worried", "mid_soft")
-            if not hermione_wear_panties:
+            if not hermione_class.get_worn("panties"):
                 m "(Is she even wearing any herself right now?...)"
             call her_main("It was if a snail had dragged themselves across one of the seats.", "annoyed", "base", "base", "R", cheeks="blush")
             call her_main("I had to insist on staying after class - and I spent a good 10 minutes scourgifying everything.", "disgust", "narrow", "worried", "down", cheeks="blush")

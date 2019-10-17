@@ -46,15 +46,17 @@ label potion_scene_4: #Transparent uniform
     call her_walk(action="leave", speed=2)
 
     $ hermione_busy = True
+    
+    # TODO: Revamp transparency potion scenario logic, do we keep it a wardrobe feature or?
 
-    if her_whoring <= 7:
-        call set_her_transparency(top=0.8, bottom=0.9)
-    elif her_whoring <= 13:
-        call set_her_transparency(top=0.5, bottom=0.6)
-    elif her_whoring <= 20:
-        call set_her_transparency(top=0.3, bottom=0.4, bra=0.6, onepiece=0.6, panties=0.6)
-    else:
-        call set_her_transparency(top=0.2, bottom=0.2, bra=0.4, onepiece=0.4, panties=0.4)
+    #if her_whoring <= 7:
+    #    call set_her_transparency(top=0.8, bottom=0.9)
+    #elif her_whoring <= 13:
+    #    call set_her_transparency(top=0.5, bottom=0.6)
+    #elif her_whoring <= 20:
+    #    call set_her_transparency(top=0.3, bottom=0.4, bra=0.6, onepiece=0.6, panties=0.6)
+    #else:
+    #    call set_her_transparency(top=0.2, bottom=0.2, bra=0.4, onepiece=0.4, panties=0.4)
 
     $ transparent_quest = True
 
@@ -142,7 +144,8 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "Yes, you can go now slut."
         call her_main("{image=textheart}", "smile", "base", "base", "R")
 
-    call reset_her_transparency
+    # TODO: Fix once scenario issues have been resolved.
+    #call reset_her_transparency
 
     call her_walk(action="leave", speed=2)
 

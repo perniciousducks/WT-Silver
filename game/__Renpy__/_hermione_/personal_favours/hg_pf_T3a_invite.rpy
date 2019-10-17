@@ -272,11 +272,11 @@ label hg_pf_strip_T2_Snape:
 
     pause.2
 
-    $ hermione_wear_panties = True
+    $ hermione_class.wear("panties")
     call set_her_action("lift_skirt")
     pause.5
 
-    $ hermione_wear_bottom = False
+    $ hermione_class.strip("bottom")
     call set_her_action("None")
     pause.2
 
@@ -341,11 +341,11 @@ label hg_pf_strip_T2_Snape:
     call nar(">One after another, Hermione undoes the buttons of her shirt...")
     pause.2
 
-    $ hermione_wear_bra = False
+    $ hermione_class.strip("bra")
     call set_her_action("lift_top")
     pause.5
 
-    $ hermione_wear_top = False
+    $ hermione_class.strip("top")
     call set_her_action("None")
     pause.2
 
@@ -393,7 +393,7 @@ label hg_pf_strip_T2_Snape_watch:
     call her_main("(Time for my finishing act then!)", "open", "closed", "base", "mid")
     pause.1
 
-    $ hermione_wear_panties = False
+    $ hermione_class.strip("panties")
     call set_her_action("pinch")
     pause.5
 
@@ -583,7 +583,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         call her_main("(Time for my finishing act then!)", "open", "closed", "base", "mid")
         pause.1
 
-        $ hermione_wear_panties = False
+        $ hermione_class.strip("panties")
         call set_her_action("pinch")
         pause.5
 

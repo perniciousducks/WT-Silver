@@ -1281,8 +1281,8 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         call her_main("say it...", "base", "squint", "base", "mid")
         call lun_main("I want to look at your boobs alright!","open","happyCl","sad","mid", cheeks="blush")
         ">hermione quickly removes her top and bra."
-        $ hermione_wear_top = False
-        $ hermione_wear_bra = False
+        $ hermione_class.strip("top")
+        $ hermione_class.strip("bra")
         call update_her_uniform
         call her_main("see, that's not so hard now is it?", "base", "squint", "base", "mid")
         call lun_main("no...","base","seductive","sad","mid", cheeks="blush")
@@ -1342,8 +1342,8 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         hide screen blkfade
         with d3
 
-        $ hermione_wear_top = True
-        $ hermione_wear_bra = True
+        $ hermione_class.wear("top")
+        $ hermione_class.wear("bra")
         call update_her_uniform
         call set_her_action("none","update")
         call her_main("feel better you two?", "base", "narrow", "base", "mid_soft")

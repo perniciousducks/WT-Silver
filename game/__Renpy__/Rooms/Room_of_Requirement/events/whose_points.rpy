@@ -193,7 +193,7 @@ label whose_points:
     with d5
     pause.8
 
-    $ hermione_wear_bra = False
+    $ hermione_class.strip("bra")
     call set_her_action(action="lift_top")
 
     $ renpy.sound.play("sounds/crowd_gasp.mp3")

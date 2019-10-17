@@ -436,29 +436,9 @@ label ball_ending_E2:
 
 
     #Setting up Hermione's outfit.
-
-    #Hermione Hair
-    call set_her_hair(style="updo", color="brown")
-
-    #Hermione Clothes
-    call reset_her_transparency
-
-    $ h_neckwear               = "blank"
-    $ hermione_body_accs_list  = []
-    $ h_gloves                 = "blank"
-    $ h_stockings              = "blank"
-    $ h_request_wear_robe      = False
-    $ h_request_wear_mask      = False
-    $ h_request_wear_gag       = False
-
-    $ h_ears                   = "blank"
-    $ hermione_makeup_list     = []
-    $ h_glasses                = "blank"
-    $ h_request_wear_hat       = False
-
-    call update_her_uniform
-
-    call set_her_outfit(hg_dress_yule_ball_ITEM) #Updates uniform.
+    
+    # TODO: Uncomment once ball dress is added.
+    #$ hermione_class.equip(ball_dress_pointer)
 
     hide screen hermione_main
     hide screen room # MAIN BG (DAY).
@@ -2956,11 +2936,7 @@ label ball_ending_E3:
     $ daytime = True
     call update_interface_color
 
-    $ h_request_wear_hat = False
-    $ hermione_wear_hat = False
-    call set_her_hair(style="curly", color="brown")
-
-    call set_her_outfit(None) #Updates uniform.
+    $ hermione_class.equip(hermione_outfit_default)
     call reset_hermione
 
     hide screen ccg
@@ -3102,7 +3078,7 @@ label ball_ending_E3:
 
         ### TITS ###
         hide screen hermione_main
-        $ hermione_wear_bra = False
+        $ hermione_class.strip("bra")
         call set_her_action("lift_top")
         call her_main("", "annoyed", "narrow", "annoyed", "mid", xpos="mid", ypos="base", trans="fade")
         stop music
@@ -3113,7 +3089,7 @@ label ball_ending_E3:
         call her_main("", "annoyed", "base", "angry", "mid")
 
         hide screen hermione_main
-        $ hermione_wear_panties = False
+        $ hermione_class.strip("panties")
         call set_her_action("lift_skirt")
         call her_main("","angry","annoyed", trans="fade")
         call ctc

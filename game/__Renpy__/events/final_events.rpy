@@ -132,7 +132,7 @@ label ball_quest_E1:
                     with fade
                     pause.8
 
-                    $ hermione_wear_bra = False
+                    $ hermione_class.strip("bra")
                     call set_her_action("lift_top")
                     pause.5
 
@@ -159,7 +159,7 @@ label ball_quest_E1:
                     with d5
                     call ctc
 
-                    $ hermione_wear_panties = False
+                    $ hermione_class.strip("panties")
                     call her_chibi("lift_skirt","mid","base")
                     with fade
                     call ctc
@@ -231,27 +231,27 @@ label ball_quest_E1:
                     call nar(">Hermione is taking her clothes off...")
                     pause.2
 
-                    $ hermione_wear_bra = False
+                    $ hermione_class.strip("bra")
                     call set_her_action("lift_top")
                     pause.5
 
-                    $ hermione_wear_top = False
+                    $ hermione_class.strip("top")
                     call set_her_action("None")
                     pause.5
 
                     call nar(">One piece after another...")
 
-                    $ hermione_wear_panties = True
+                    $ hermione_class.wear("panties")
                     call set_her_action("lift_skirt")
                     pause.5
 
-                    $ hermione_wear_bottom = False
+                    $ hermione_class.strip("bottom")
                     call set_her_action("None")
                     pause.5
 
                     call nar(">Vest, shirt, her skirt, and finally...")
 
-                    $ hermione_wear_panties = False
+                    $ hermione_class.strip("panties")
                     call set_her_action("covering")
                     pause.5
 

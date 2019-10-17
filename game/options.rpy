@@ -1,14 +1,19 @@
 # Ren'Py configuration
 define title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
 
-init -1 python hide: 
+init -1 python hide:
+    is_release = False
+    
     # Internal name and version
-    config.name    = "WT Silver" # EXPERIMENTAL VERSION
-    config.version = "1.373"
+    config.name    = "WT Silver" if is_release else "WT Silver EXPERIMENTAL VERSION"
+    config.version = "1.38"
 
     # Window
     title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
-    config.window_title = "Witch Trainer (Silver) %s" % title_version # EXPERIMENTAL VERSION
+    if is_release:
+        config.window_title = "Witch Trainer (Silver) {}".format(title_version)
+    else:
+        config.window_title = "Witch Trainer (Silver) {} EXPERIMENTAL VERSION".format(title_version)
     config.window_icon = "interface/icon.png"
 
     # Window size

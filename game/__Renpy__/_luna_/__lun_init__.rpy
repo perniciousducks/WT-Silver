@@ -33,13 +33,6 @@ default luna_wear_cum          = False
 default luna_wear_cum_under    = False
 
 # Chibi
-default luna_chibi_image       = "characters/luna/chibis/luna_stand.png"
-default luna_chibi_stand       = "characters/luna/chibis/luna_stand.png"
-default luna_chibi_blink       = "ch_lun blink_a"
-default luna_chibi_blink_f     = "ch_lun blink_a_flip"
-default luna_chibi_walk        = "ch_lun walk_a"
-default luna_chibi_walk_f      = "ch_lun walk_a_flip"
-
 default luna_chibi_xpos        = 500
 default luna_chibi_ypos        = 250
 default luna_chibi_xpos_name   = "base" #Memory of chibi position.
@@ -311,12 +304,6 @@ label reset_luna_base:
         "luna_wear_cum",
         "luna_wear_cum_under",
         #Chibi
-        "luna_chibi_image",
-        "luna_chibi_stand",
-        "luna_chibi_blink",
-        "luna_chibi_blink_f",
-        "luna_chibi_walk",
-        "luna_chibi_walk_f",
         "luna_chibi_xpos",
         "luna_chibi_ypos",
         "luna_chibi_xpos_name",

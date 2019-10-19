@@ -72,13 +72,9 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, r
 
 
 label update_snape:
-
     $ snape_flip = 1
     $ use_snape_head = False
-    call update_sna_chibi
-
     return
-
 
 
 ### SNAPE FULL

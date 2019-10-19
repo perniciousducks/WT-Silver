@@ -8,8 +8,6 @@ label sus_chibi(action = "", xpos=sus_chibi_xpos, ypos=sus_chibi_ypos, flip=Fals
     if xpos != sus_chibi_xpos:
         if xpos == "mid":
             $ sus_chibi_xpos = 540
-        elif xpos in ["wardrobe","center","base","default"]: #Don't use these when there are other chibis around (like Hermione's). Use "mid" instead.
-            $ sus_chibi_xpos = 530
         elif xpos == "desk":
             $ sus_chibi_xpos = 440
         elif xpos == "on_desk":
@@ -124,69 +122,57 @@ label sus_walk(xpos=walk_xpos, ypos=walk_ypos, speed=sus_speed, action="", loite
 
     return
 
-label susan_walk_end_loiter(dissolveTime = 3):
-    if dissolveTime > 0:
-        hide screen susan_stand
-        with Dissolve((dissolveTime/10))
-    else:
-        hide screen susan_stand
-    return
-
-
-
 ### SUSAN CHIBI SCREENS ###
 
 screen susan_stand():
     tag susan_chibi
-
-    add susan_chibi_stand    xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_shoes    xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_top      xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_bottom   xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_robe     xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
-
     zorder sus_chibi_zorder
+
+    add susan_chibi_stand xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
+    if susan_wear_bottom or susan_wear_stockings:
+        add susan_chibi_shoes xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
+    if susan_wear_top:
+        add susan_chibi_top xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
+    if susan_wear_bottom:
+        add susan_chibi_bottom xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
+    if susan_wear_robe:
+        add susan_chibi_robe xpos sus_chibi_xpos ypos sus_chibi_ypos xzoom sus_chibi_flip zoom (1.0/scaleratio)
 
 screen susan_walk():
     tag susan_chibi
-
-    add susan_chibi_walk         at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_walk_shoes   at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
-
-    add susan_chibi_top          at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_bottom       at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
-    add susan_chibi_robe         at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
-
     zorder sus_chibi_zorder
 
+    add susan_chibi_walk at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
+    add susan_chibi_walk_shoes at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
 
-label update_susan_chibi_uniform:
-
-    #Clothing
     if susan_wear_top:
-        $ susan_chibi_top       = "characters/susan/chibis/sb_cloth_shirt_h.png"
-    else:
-        $ susan_chibi_top       = "characters/susan/chibis/blank.png"
-
+        add susan_chibi_top at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
     if susan_wear_bottom:
-        $ susan_chibi_bottom    = "characters/susan/chibis/sb_cloth_skirt.png"
-    else:
-        $ susan_chibi_bottom    = "characters/susan/chibis/blank.png"
-
+        add susan_chibi_bottom at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
     if susan_wear_robe:
-        $ susan_chibi_robe      = "characters/susan/chibis/sb_cloth_robe_h.png"
-    else:
-        $ susan_chibi_robe      = "characters/susan/chibis/blank.png"
-
-    $ susan_chibi_stand         = "ch_sus blink"
-
-    #Main Chibi
-    if susan_wear_bottom or susan_wear_stockings: #With Shoes.
-        $ susan_chibi_shoes         = "characters/susan/chibis/sb_walk_01_shoes.png"
-        $ susan_chibi_walk_shoes    = "ch_sus walk_shoes"
-    else:
-        $ susan_chibi_shoes         = "characters/susan/chibis/blank.png"
-        $ susan_chibi_walk_shoes    = "characters/susan/chibis/blank.png"
+        add susan_chibi_robe at sus_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2) xzoom sus_chibi_flip zoom (1.0/scaleratio)
 
 
-    return
+default susan_chibi = chibi("susan", ["base", "shoes", "top", "bottom", "robe"], update_susan_chibi)
+
+init python:
+    def update_susan_chibi(chibi):
+        if chibi.action == "walk":
+            chibi["base"] = "ch_sus walk"
+        else:
+            chibi["base"] = "ch_sus blink"
+        
+        if susan_wear_bottom or susan_wear_stockings:
+            if chibi.action == "walk":
+                chibi["shoes"] = "ch_sus walk_shoes"
+            else:
+                chibi["shoes"] = "sb_walk_01_shoes.png"
+        
+        if susan_wear_top:
+            chibi["top"] = "sb_cloth_shirt_h.png"
+
+        if susan_wear_bottom:
+            chibi["bottom"] = "sb_cloth_skirt.png"
+
+        if susan_wear_robe:
+            chibi["robe"] = "sb_cloth_robe_h.png"

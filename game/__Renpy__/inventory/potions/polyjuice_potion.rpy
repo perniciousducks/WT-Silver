@@ -738,7 +738,6 @@ label potion_scene_1_2:
 
     $ luna_wear_top = False
     $ luna_wear_bra = False
-    call update_luna_chibi_uniform
     call lun_chibi("stand","base","base")
     pause.5
 
@@ -781,7 +780,6 @@ label potion_scene_1_2:
 
     $ luna_wear_top = True
     $ luna_wear_bra = True
-    call update_luna_chibi_uniform
     call lun_chibi("stand","desk","base")
     pause.5
 

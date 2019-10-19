@@ -33,6 +33,7 @@ default sus_chibi_flip   = 1
 default sus_speed        = 2.0
 default sus_chibi_zorder = 3
 
+#TODO Remove Susan chibi variables
 default susan_chibi_stand = "ch_sus blink"
 default susan_chibi_shoes = "characters/susan/chibis/sb_walk_01_shoes.png"
 

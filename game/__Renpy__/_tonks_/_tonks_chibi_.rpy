@@ -9,8 +9,6 @@ label ton_chibi(action = "", xpos=ton_chibi_xpos, ypos=ton_chibi_ypos, flip=Fals
     if xpos != ton_chibi_xpos:
         if xpos == "mid":
             $ ton_chibi_xpos = 540 # 560
-        elif xpos in ("wardrobe","center","base","default"): #Don't use these when there are other chibis around (like Hermione's). Use "mid" instead.
-            $ ton_chibi_xpos = 530
         elif xpos == "desk":
             $ ton_chibi_xpos = 440
         elif xpos == "on_desk":
@@ -143,16 +141,6 @@ label ton_walk(xpos=walk_xpos, ypos=walk_ypos, speed=ton_speed, action="", loite
     return
 
 
-label ton_walk_end_loiter(dissolveTime = 3):
-    if dissolveTime > 0:
-        hide screen ton_stand
-        with Dissolve((dissolveTime/10))
-    else:
-        hide screen ton_stand
-    return
-
-
-
 ### TONKS CHIBI SCREENS ###
 
 screen ton_stand():
@@ -170,6 +158,7 @@ screen ton_stand():
         add ton_chibi_top      xpos ton_chibi_xpos ypos ton_chibi_ypos xzoom ton_chibi_flip zoom (1.0/scaleratio)
         add ton_chibi_robe     xpos ton_chibi_xpos ypos ton_chibi_ypos xzoom ton_chibi_flip zoom (1.0/scaleratio)
         add ton_chibi_gloves     xpos ton_chibi_xpos ypos ton_chibi_ypos xzoom ton_chibi_flip zoom (1.0/scaleratio)
+        #TODO Put cloth pile on separate screen
         if ton_cloth_pile:
             add "characters/chibis/cloth_pile_r.png" xpos ton_pile_xpos ypos ton_pile_ypos
 
@@ -192,6 +181,7 @@ screen ton_walk():
             add ton_chibi_shoes        xzoom ton_chibi_flip zoom (1.0/scaleratio)
         add ton_chibi_robe         xzoom ton_chibi_flip zoom (1.0/scaleratio)
         add ton_chibi_gloves       xzoom ton_chibi_flip zoom (1.0/scaleratio)
+    #TODO Put cloth pile on separate screen
     if ton_cloth_pile:
         add "characters/chibis/cloth_pile_r.png" xpos ton_pile_xpos ypos ton_pile_ypos
 
@@ -213,3 +203,42 @@ screen with_tonks_animated():
         
     if tonks_class.get_worn("top"):
         add "ch_ton sit_top" at Position(xpos=610, ypos=175)
+
+
+default tonks_chibi = chibi("tonks", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves"], update_tonks_chibi)
+
+init python:
+    # Tonks special: drinking (not part of chibi definition)
+    def update_tonks_chibi(chibi):
+        # Tonks currently has no special chibis
+        # ton_chibi_animation
+        # ton_chibi_status
+
+        if chibi.action == "walk":
+            chibi["base"] = "ch_ton walk"
+        else:
+            chibi["base"] = "ch_ton blink"
+                    
+        if tonks_class.get_worn("top"):
+            chibi["top"] = "nt_top.png"
+
+        if tonks_class.get_worn("bottom"):
+            if tonks_class.get_cloth("bottom").subcat == "trousers":
+                if chibi.action == "walk":
+                    chibi["bottom"] = "ch_ton trousers"
+                else:
+                    chibi["bottom"] = "nt_trousers.png"
+            else:
+                chibi["bottom"] = "nt_skirt.png"
+
+        if tonks_class.get_worn("gloves"):
+            chibi["gloves"] = "nt_gloves.png"
+
+        if tonks_class.get_worn("robe"):
+            chibi["robe"] = "nt_robe.png"
+
+        if tonks_class.get_worn("bottom") or tonks_class.get_worn("stockings"):
+            if chibi.action == "walk":
+                chibi["shoes"] = "ch_ton walk_shoes"
+            else:
+                chibi["shoes"] = "nt_shoes.png"

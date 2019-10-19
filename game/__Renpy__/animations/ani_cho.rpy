@@ -104,35 +104,35 @@ image ch_cho trousers:
 
 ### FLYING ANIMATIONS ###        
 image ch_cho fly:
-    "characters/cho/chibis/cc_fly0.png"
+    "characters/cho/chibis/fly_move/cc_fly0.png"
     pause 2
-    "characters/cho/chibis/cc_fly1.png"
+    "characters/cho/chibis/fly_move/cc_fly1.png"
     pause.08
-    "characters/cho/chibis/cc_fly0.png"
+    "characters/cho/chibis/fly_move/cc_fly0.png"
     pause 5
-    "characters/cho/chibis/cc_fly1.png"
+    "characters/cho/chibis/fly_move/cc_fly1.png"
     pause.08
-    "characters/cho/chibis/cc_fly0.png"
+    "characters/cho/chibis/fly_move/cc_fly0.png"
     pause.08
-    "characters/cho/chibis/cc_fly1.png"
+    "characters/cho/chibis/fly_move/cc_fly1.png"
     pause.08
-    "characters/cho/chibis/cc_fly0.png"
+    "characters/cho/chibis/fly_move/cc_fly0.png"
     pause 3
     repeat
     
 image ch_cho fly_idle:
-    "characters/cho/chibis/cc_fly_idle0.png"
+    "characters/cho/chibis/fly/cc_fly_idle0.png"
     pause 2
-    "characters/cho/chibis/cc_fly_idle1.png"
+    "characters/cho/chibis/fly/cc_fly_idle1.png"
     pause.08
-    "characters/cho/chibis/cc_fly_idle0.png"
+    "characters/cho/chibis/fly/cc_fly_idle0.png"
     pause 5
-    "characters/cho/chibis/cc_fly_idle1.png"
+    "characters/cho/chibis/fly/cc_fly_idle1.png"
     pause.08
-    "characters/cho/chibis/cc_fly_idle0.png"
+    "characters/cho/chibis/fly/cc_fly_idle0.png"
     pause.08
-    "characters/cho/chibis/cc_fly_idle1.png"
+    "characters/cho/chibis/fly/cc_fly_idle1.png"
     pause.08
-    "characters/cho/chibis/cc_fly_idle0.png"
+    "characters/cho/chibis/fly/cc_fly_idle0.png"
     pause 3
     repeat

@@ -56,8 +56,6 @@ label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
         else:
             $ luna_ypos = int(ypos)
 
-    call update_luna_chibi_uniform
-
     if face != None:
         if mouth == None:
             call set_lun_face(mouth = face)
@@ -146,7 +144,6 @@ label update_luna:
     $ luna_r_arm             = 1
 
     call update_lun_uniform
-    call update_luna_chibi_uniform
 
     return
 

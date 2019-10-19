@@ -64,7 +64,7 @@ image ch_ast walk_shoes: #With Shoes.
     
 #Stand
 image ch_ast wand_stand:
-    
+    xoffset -76
     contains:
         "characters/astoria/chibis/wand/ag_stand_01.png"
 
@@ -86,7 +86,7 @@ image ch_ast wand_stand:
         repeat
         
 image ch_ast wand_casting:
-    
+    xoffset -76
     contains:
         "characters/astoria/chibis/wand_casting/ag_stand_01.png"
         pause.22
@@ -122,7 +122,7 @@ image ch_ast wand_casting:
         repeat
         
 image ch_ast wand_imperio:
-    
+    xoffset -76
     contains:
         "characters/astoria/chibis/wand_imperio/ag_stand_03.png"
         pause.12
@@ -185,6 +185,7 @@ image ch_ast wand_imperio:
         "ch_ast imperio_smoke"
         
 image ch_ast imperio_smoke:
+    xoffset -76
     contains:
         subpixel True
         
@@ -198,7 +199,7 @@ image ch_ast imperio_smoke:
         repeat
     
 image ch_ast imperio_shoes:
-
+    xoffset -76
     contains:
         "characters/astoria/chibis/wand_imperio/ag_shoes.png"
         pause 1.24

@@ -9,8 +9,6 @@ label cho_chibi(action = "", xpos=cho_chibi_xpos, ypos=cho_chibi_ypos, flip=Fals
     if xpos != cho_chibi_xpos:
         if xpos == "mid":
             $ cho_chibi_xpos = 560
-        elif xpos in ("wardrobe","center","base","default"): #Don't use these when there are other chibis around (like Hermione's). Use "mid" instead.
-            $ cho_chibi_xpos = 530
         elif xpos == "desk":
             $ cho_chibi_xpos = 440
         elif xpos == "on_desk":
@@ -169,6 +167,7 @@ screen cho_stand():
             add cho_chibi_shoes    xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_robe     xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_gloves     xpos cho_chibi_xpos ypos cho_chibi_ypos xzoom cho_chibi_flip zoom (1.0/scaleratio)
+        #TODO Put cloth pile on separate screen
         if cho_cloth_pile:
             add "characters/chibis/cloth_pile_r.png" xpos cho_pile_xpos ypos cho_pile_ypos zoom 0.5
 
@@ -191,5 +190,66 @@ screen cho_walk():
             add cho_chibi_shoes        xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_robe         xzoom cho_chibi_flip zoom (1.0/scaleratio)
         add cho_chibi_gloves       xzoom cho_chibi_flip zoom (1.0/scaleratio)
+    #TODO Put cloth pile on separate screen
     if cho_cloth_pile:
         add "characters/chibis/cloth_pile_r.png" xpos cho_pile_xpos ypos cho_pile_ypos zoom 0.5
+
+
+default cho_chibi = chibi("cho", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves", "quid_shoes"], update_cho_chibi)
+
+init python:
+    # Cho special: fly (fly_idle!), fly_move
+    def update_cho_chibi(chibi):
+        # Temporary way of assigning chibi.special
+        if cho_chibi_animation:
+            chibi.special = cho_chibi_animation
+            if cho_chibi_status:
+                chibi.special += "_" + cho_chibi_status
+
+        if chibi.special == "fly":
+            chibi["base"] = "ch_cho fly_idle"
+        elif chibi.special == "fly_move":
+            chibi["base"] = "ch_cho fly"
+        elif chibi.action == "walk":
+            chibi["base"] = "ch_cho walk"
+        else:
+            chibi["base"] = "ch_cho blink"
+
+        if cho_class.get_worn("top"):
+            if cho_class.get_cloth("top").id == "top_sweater_1":
+                chibi["top"] = "cc_sweater.png"
+            else:
+                chibi["top"] = "cc_top.png"
+
+        if cho_class.get_worn("bottom"):
+            if cho_class.get_cloth("bottom").id in ("pants_long_2", "pants_short_4"):
+                if chibi.action == "walk":
+                    chibi["bottom"] = "ch_cho trousers"
+                else:
+                    chibi["bottom"] = "cc_trousers.png"
+            else:
+                chibi["bottom"] = "cc_skirt.png"
+
+        if cho_class.get_worn("gloves"):
+            if cho_class.get_cloth("gloves").id == "quidditch":
+                chibi["gloves"] = "cc_gloves.png"
+
+        if cho_class.get_worn("robe"):
+            if cho_class.get_cloth("robe").id == "robe_quidditch_1":
+                chibi["robe"] = "cc_quid_robe.png"
+                if not chibi.special:
+                    chibi["fix"] = "cc_quid_robe_fix.png"
+            else:
+                chibi["robe"] = "cc_robe.png"
+
+        if cho_class.get_worn("bottom") or cho_class.get_worn("stockings"):
+            if cho_class.get_worn("gloves") and cho_class.get_cloth("gloves").id == "quidditch":
+                if chibi.action == "walk":
+                    chibi["quid_shoes"] = "ch_cho walk_quid_shoes"
+                else:
+                    chibi["quid_shoes"] = "cc_quid_shoes.png"
+            else:
+                if chibi.action == "walk":
+                    chibi["shoes"] = "ch_cho walk_shoes"
+                else:
+                    chibi["shoes"] = "cc_shoes.png"

@@ -345,7 +345,6 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 $ luna_wear_panties = False
             else:
                 $ luna_wear_bra = False
-            call update_luna_chibi_uniform
 
             call lun_chibi("stand","desk","base")
 
@@ -389,7 +388,6 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 $ luna_wear_bottom = False
             else:
                 $ luna_wear_top = False
-            call update_luna_chibi_uniform
 
             call lun_chibi("stand","desk","base")
 
@@ -706,7 +704,6 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             ">You hear the soft rustle of clothes..."
             ">Suddenly something is gently placed on your desk"
 
-            call update_luna_chibi_uniform
             call lun_chibi("stand","desk","base")
 
             hide screen blkfade
@@ -876,7 +873,6 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
         else: # Dom choice ?
             call lun_main("...","base","angry","base","mid",xpos="mid",ypos="base")
-            call update_luna_chibi_uniform
             call lun_chibi("stand","desk","base")
             call ctc
 

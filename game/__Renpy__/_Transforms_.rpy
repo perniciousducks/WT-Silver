@@ -61,6 +61,16 @@ transform ast_walk_trans(x, x2, y, y2):
     ypos y
     linear ast_speed xpos x2 ypos y2 # linear
 
+transform chibi_base(position, flip):
+    pos position
+    xzoom flip
+    zoom (1.0/scaleratio)
+
+transform chibi_walk(start, end, flip, speed):
+    pos start
+    xzoom flip
+    linear speed pos end
+
 transform chibi_fly_idle:
     subpixel True
 

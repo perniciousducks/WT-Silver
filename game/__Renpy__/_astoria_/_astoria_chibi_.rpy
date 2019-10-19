@@ -10,8 +10,6 @@ label ast_chibi(action = "", xpos=ast_chibi_xpos, ypos=ast_chibi_ypos, flip=Fals
     if xpos != ast_chibi_xpos:
         if xpos == "mid":
             $ ast_chibi_xpos = 540
-        elif xpos in ("wardrobe","center","base","default"): #Don't use these when there are other chibis around (like Hermione's). Use "mid" instead.
-            $ ast_chibi_xpos = 530
         elif xpos == "desk":
             $ ast_chibi_xpos = 440
         elif xpos == "on_desk":
@@ -42,15 +40,15 @@ label ast_chibi(action = "", xpos=ast_chibi_xpos, ypos=ast_chibi_ypos, flip=Fals
         pause .5
     else:
         if action == "wand":
-            $ xoffset = 76 # Fixes image X position for wand stance
+            #$ xoffset = 76 # Fixes image X position for wand stance
             $ ast_chibi_animation = "wand"
             $ update_chibi_image("astoria")
         elif action == "wand_casting":
-            $ xoffset = 76 # Fixes image X position for wand stance
+            #$ xoffset = 76 # Fixes image X position for wand stance
             $ ast_chibi_animation = "wand_casting"
             $ update_chibi_image("astoria")
         elif action == "wand_imperio":
-            $ xoffset = 76 # Fixes image X position for wand stance
+            #$ xoffset = 76 # Fixes image X position for wand stance
             $ ast_chibi_animation = "wand_imperio"
             $ update_chibi_image("astoria")
         elif action == "reset":
@@ -182,6 +180,7 @@ screen ast_stand():
         add ast_chibi_top      xpos ast_chibi_xpos ypos ast_chibi_ypos xzoom ast_chibi_flip zoom (1.0/scaleratio)
         add ast_chibi_robe     xpos ast_chibi_xpos ypos ast_chibi_ypos xzoom ast_chibi_flip zoom (1.0/scaleratio)
         add ast_chibi_gloves     xpos ast_chibi_xpos ypos ast_chibi_ypos xzoom ast_chibi_flip zoom (1.0/scaleratio)
+        #TODO Put cloth pile on separate screen
         if ast_cloth_pile:
             add "characters/chibis/cloth_pile_r.png" xpos ast_pile_xpos ypos ast_pile_ypos zoom 0.5
 
@@ -205,5 +204,44 @@ screen ast_walk():
             add ast_chibi_shoes        xzoom ast_chibi_flip zoom (1.0/scaleratio)
         add ast_chibi_robe         xzoom ast_chibi_flip zoom (1.0/scaleratio)
         add ast_chibi_gloves       xzoom ast_chibi_flip zoom (1.0/scaleratio)
+    #TODO Put cloth pile on separate screen
     if ast_cloth_pile:
         add "characters/chibis/cloth_pile_r.png" xpos ast_pile_xpos ypos ast_pile_ypos zoom 0.5
+
+
+default astoria_chibi = chibi("astoria", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves"], update_astoria_chibi)
+
+init python:
+    # Astoria special: wand, wand_casting, wand_imperio
+    def update_astoria_chibi(chibi):
+        # Temporary way of assigning chibi.special
+        if ast_chibi_animation:
+            chibi.special = ast_chibi_animation
+
+        if chibi.special == "wand":
+            chibi["base"] = "ch_ast wand_stand"
+        elif chibi.special == "wand_casting":
+            chibi["base"] = "ch_ast wand_casting"
+        elif chibi.special == "wand_imperio":
+            chibi["base"] = "ch_ast wand_imperio"
+        elif chibi.action == "walk":
+            chibi["base"] = "ch_ast walk"
+        else:
+            chibi["base"] = "ch_ast blink"
+
+        if astoria_class.get_worn("top"):
+            chibi["top"] = "ag_top.png"
+
+        if astoria_class.get_worn("bottom") or astoria_class.get_worn("top") and astoria_class.get_cloth("top").id == astoria_cloth_topann.id:
+            chibi["bottom"] = "ag_skirt.png"
+
+        if astoria_class.get_worn("robe") and not chibi.special:
+            chibi["robe"] = "ag_robe.png"
+
+        if astoria_class.get_worn("bottom") or astoria_class.get_worn("stockings"):
+            if chibi.special == "wand_imperio":
+                chibi["shoes"] = "ch_ast imperio_shoes"
+            elif chibi.action == "walk":
+                chibi["shoes"] = "ch_ast walk_shoes"
+            else:
+                chibi["shoes"] = "ag_shoes.png"

@@ -633,11 +633,11 @@ screen DRgame_menu():
             #xanchor "center"
             #yanchor "center"
             if sna_chibi_flip == 1:
-                idle sna_chibi_stand
-                hover yellowTint(sna_chibi_stand)
+                idle "snape_stand"
+                hover yellowTint("snape_stand")
             else:
-                idle im.Flip(sna_chibi_stand, horizontal=True)
-                hover yellowTint( im.Flip(sna_chibi_stand, horizontal=True) )
+                idle im.Flip("snape_stand", horizontal=True)
+                hover yellowTint( im.Flip("snape_stand", horizontal=True) )
             action [Hide("DRgame_menu"), Jump("dark_room_stranger")]
 
     if DRmaid in DRgame.characters and DRmaid.location in ["room","desk","fireplace"]:

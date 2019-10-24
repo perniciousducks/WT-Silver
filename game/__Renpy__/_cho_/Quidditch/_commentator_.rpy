@@ -152,30 +152,3 @@ label quidditch_commentator_event_3:
     $ cho_busy = True
 
     jump main_room
-
-
-
-
-
-### Old Content ###
-# Might be used for future Quidditch events.
-
-label nothing_to_see_here_001:
-    call play_sound("door")
-    call cho_main("...","pout","narrow","sad","R",xpos="mid",ypos="base")
-    m "Miss Chang... In case you were wondering, I haven't gotten around to firing miss granger yet..."
-    call cho_main("Oh... Um... About that...","soft","narrow","raised","R")
-    call cho_main("Could you please... not... do that...","open","base","sad","down")
-    g4 "What? You want Hermione to keep commentating your games?"
-    g4 "What about our strategies?"
-    call cho_main("We can still do them...","soft","base","raised","down")
-    call cho_main("...","pout","base","raised","R")
-    m "[cho_name], is there something you're not telling me?"
-    call cho_main("Well...","soft","narrow","raised","R")
-    call cho_main("It's just that...","open","narrow","sad","mid")
-    call cho_main("People have been a lot nicer to me since that game!","quiver","narrow","sad","mid")
-    call cho_main("All the gryffindors are inviting me to parties...","soft","base","raised","down")
-    call cho_main("Most of the Slytherins have stopped being racist...","open","closed","angry","mid")
-    call cho_main("And the hufflepuff team weren't even upset that i beat them!","open","base","raised","L")
-    m "So you want to keep on with my coaching?"
-    call cho_main("Of course! It's the only chance Ravenclaw has to win the W.S.C.!","pout","narrow","raised","down")

@@ -7,6 +7,8 @@
 # (Gets to see the boy's dicks, the girl's panties, punishs them,...)
 # (Gives hours points to each of the students)
 
+#TODO Add Tonks chibi to all her public request nightly reports
+
 label nt_pr_teach_start:
     call ton_main("","base","base","base","mid", xpos="right", ypos="base", trans="fade")
 

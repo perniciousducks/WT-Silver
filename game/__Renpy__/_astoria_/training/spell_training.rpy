@@ -1474,9 +1474,10 @@ label ag_st_imperio_E5:
     call sna_main("A Slytherin takes better care of her equipment...","snape_10")
     call ast_main("Yes. I'm sorry, Professor.","clench","closed","angry","mid", emote="05")
 
+    #TODO Implement path-based movement in chibi class (or prevent chibi stopping at every turn somehow)
     call ast_walk("270","290",speed=0.5)
-    call ast_walk("370","290",speed=0.6, hide_screens=False)
-    call ast_walk("desk","base",speed=1.4, hide_screens=False)
+    call ast_walk("370","290",speed=0.6)
+    call ast_walk("desk","base",speed=1.4)
     call ast_chibi("stand","desk","base", flip=False)
     with d3
     pause.1
@@ -1491,7 +1492,7 @@ label ag_st_imperio_E5:
 
     #astoria leaves
     $ sna_chibi_zorder = 3
-    $ ast_chibi_zorder = 2
+    $ astoria_chibi.zorder = 2
 
     call sna_chibi("stand","620","base") # Updates Zorder.
     call ast_walk(action="leave", speed=2)

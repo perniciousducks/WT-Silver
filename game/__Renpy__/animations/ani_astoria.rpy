@@ -64,7 +64,7 @@ image ch_ast walk_shoes: #With Shoes.
     
 #Stand
 image ch_ast wand_stand:
-    xoffset -76
+    size (350, 360) # Set size when using `contains`, so additional transforms work as expected
     contains:
         "characters/astoria/chibis/wand/ag_stand_01.png"
 
@@ -86,7 +86,7 @@ image ch_ast wand_stand:
         repeat
         
 image ch_ast wand_casting:
-    xoffset -76
+    size (350, 360) # Set size when using `contains`, so additional transforms work as expected
     contains:
         "characters/astoria/chibis/wand_casting/ag_stand_01.png"
         pause.22
@@ -122,7 +122,7 @@ image ch_ast wand_casting:
         repeat
         
 image ch_ast wand_imperio:
-    xoffset -76
+    size (350, 360) # Set size when using `contains`, so additional transforms work as expected
     contains:
         "characters/astoria/chibis/wand_imperio/ag_stand_03.png"
         pause.12
@@ -185,22 +185,18 @@ image ch_ast wand_imperio:
         "ch_ast imperio_smoke"
         
 image ch_ast imperio_smoke:
-    xoffset -76
-    contains:
-        subpixel True
-        
-        xoffset 0
-        yoffset 72
-        rotate -70
-        alpha 1.0
-        "characters/astoria/chibis/wand_imperio/smoke.png"
-        linear 1.0 alpha 0.7 yzoom 0.85 xoffset 16 yoffset 86
-        linear 1.0 alpha 1.0 yzoom 1.0 xoffset 0 yoffset 72
-        repeat
+    subpixel True
+    
+    xoffset 0
+    yoffset 72
+    rotate -70
+    alpha 1.0
+    "characters/astoria/chibis/wand_imperio/smoke.png"
+    linear 1.0 alpha 0.7 yzoom 0.85 xoffset 16 yoffset 86
+    linear 1.0 alpha 1.0 yzoom 1.0 xoffset 0 yoffset 72
+    repeat
     
 image ch_ast imperio_shoes:
-    xoffset -76
-    contains:
-        "characters/astoria/chibis/wand_imperio/ag_shoes.png"
-        pause 1.24
-        "characters/astoria/chibis/wand_imperio/ag_shoes_04.png"
+    "characters/astoria/chibis/wand_imperio/ag_shoes.png"
+    pause 1.24
+    "characters/astoria/chibis/wand_imperio/ag_shoes_04.png"

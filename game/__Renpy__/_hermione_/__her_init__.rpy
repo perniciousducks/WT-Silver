@@ -26,10 +26,6 @@ default her_chibi_robe          = "blank"
 default her_chibi_gloves        = "blank" #blank is the new defined image, makes our lives easier
 default her_chibi_fix           = "blank"
 
-default her_cloth_pile = False
-default her_pile_xpos = 440 # Right side of desk.
-default her_pile_ypos = 425 # Bit below feet level.
-
 # Stats
 default her_tier       = 1
 default her_whoring    = 0

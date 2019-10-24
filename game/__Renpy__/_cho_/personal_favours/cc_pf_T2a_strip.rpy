@@ -13,6 +13,7 @@ label cc_pf_strip:
         if cho_whoring < 9: # Points til 9
             $ cho_whoring += 1
 
+    $ cho_class.wear("all") # Reset clothes
     jump end_cho_event
 
 
@@ -109,7 +110,7 @@ label cc_pf_strip_T1_intro_E1:
     # Remove top.
     hide screen cho_chang
     $ cho_class.strip("robe","top")
-    $ cho_cloth_pile = True
+    show screen cho_cloth_pile
     show screen cho_chang
     with d3
     pause.5
@@ -264,7 +265,7 @@ label cc_pf_strip_T1_intro_E1:
 
     hide screen cho_chang
     $ cho_class.wear("all")
-    $ cho_cloth_pile = False
+    hide screen cho_cloth_pile
     call cho_main("","angry","angry","angry","mid")
     pause.8
 
@@ -298,7 +299,7 @@ label cc_pf_strip_T1_intro_E2:
     # Remove top.
     hide screen cho_chang
     $ cho_class.strip("robe","top")
-    $ cho_cloth_pile = True
+    show screen cho_cloth_pile
     call cho_main("","upset","narrow","base","mid")
     pause.5
 
@@ -652,8 +653,7 @@ label cc_pf_strip_T1_intro_E2:
     call play_sound("equip")
     hide screen cho_chang
     $ cho_class.wear("all")
-    $ update_chibi_image("cho")
-    $ cho_cloth_pile = False
+    hide screen cho_cloth_pile
     pause.8
 
     call cho_main("(...)","upset","narrow","sad","down", xpos="right", ypos="base")
@@ -704,7 +704,7 @@ label cc_pf_strip_T1_intro_E3:
     # Remove top.
     hide screen cho_chang
     $ cho_class.strip("robe","top")
-    $ cho_cloth_pile = True
+    show screen cho_cloth_pile
     show screen cho_chang
     with d3
     pause.5
@@ -762,7 +762,7 @@ label cc_pf_strip_T1_intro_E3:
 
         hide screen cho_chang
         $ cho_class.wear("all")
-        $ cho_cloth_pile = False
+        hide screen cho_cloth_pile
         call cho_main("","angry","closed","angry","mid")
         pause.8
 
@@ -991,7 +991,7 @@ label cc_pf_strip_T1_E3: # Repeats
     # Remove top & robe.
     hide screen cho_chang
     $ cho_class.strip("robe","top")
-    $ cho_cloth_pile = True
+    show screen cho_cloth_pile
     show screen cho_chang
     with d3
     pause.5
@@ -1044,8 +1044,10 @@ label cc_pf_strip_T1_E3: # Repeats
     m "Of course..."
     call cho_main("Anything else you'd like, Sir?","base","base","base","mid")
 
+    $ d_flag_01 = False # Cho on desk flag for this event
     menu:
         "\"Hop on my desk!\"":
+            $ d_flag_01 = True
             call cho_main("Sounds like fun idea, [cho_genie_name]!","base","closed","base","mid")
             call hide_characters
             show screen blkfade
@@ -1148,7 +1150,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             # Hermione walks towards the desk to pick up Cho's clothing.
             call her_walk(xpos="desk", ypos="base", speed=1.6)
             pause.2
-            if cho_chibi_xpos == 570: # Close to the middle.
+            if not d_flag_01: # Cho not on desk
                 call cho_chibi("stand","570","base", flip=False) # Facing the desk.
                 with d3
             pause.6
@@ -1159,7 +1161,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call bld("hide")
             pause.2
             call play_sound("equip")
-            $ cho_cloth_pile = False
+            hide screen cho_cloth_pile
             pause.5
 
             call cho_main("My clothes!","angry","wide","base","L", ypos="head", flip=True)
@@ -1181,7 +1183,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_chibi("leave")
 
             # Cho runs out the door.
-            if cho_chibi_xpos == 350: # On desk
+            if d_flag_01: # On desk
                 call play_sound("climb_desk")
                 show screen blkfade
                 with d3
@@ -1317,7 +1319,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             # Cho gets dressed.
             hide screen cho_chang
             $ cho_class.wear("all")
-            $ cho_cloth_pile = False
+            hide screen cho_cloth_pile
             hide screen blkfade
 
             call cho_main("Sir, my *uhm*...{w} my panties...","soft","base","angry","R", xpos="mid", ypos="base", trans="fade")
@@ -1426,7 +1428,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             # Cho gets dressed.
             hide screen cho_chang
             $ cho_class.wear("all")
-            $ cho_cloth_pile = False
+            hide screen cho_cloth_pile
             show screen cho_chang
             with d3
             pause.5

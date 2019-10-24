@@ -757,7 +757,7 @@ label potion_scene_1_2:
     hide screen luna_main
     with d3
 
-    #call lun_walk("mid","desk",1.7) #TODO Needs walking chibi that is topless.
+    #call lun_walk("desk") #TODO Needs walking chibi that is topless.
     call lun_chibi("stand","desk","base") #Temporary!
 
     call nar(">In a huff, Hermione walks over and presents her new set of breasts")
@@ -797,7 +797,7 @@ label potion_scene_1_2:
     hide screen luna_main
     with d3
 
-    call lun_walk("desk","leave",2.7)
+    call lun_walk(action="leave")
 
     $ hermione_busy = True
 

@@ -120,9 +120,10 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
 label update_tonks:
 
     # Chibi Update
-    $ update_chibi_image("tonks")
+    $ tonks_chibi.update()
+    $ tonks_chibi.position(flip=False)
     $ tonks_flip = 1
-    $ ton_cloth_pile = False
+    hide screen ton_cloth_pile
 
     # Reset temporal hair colour
     $ tonks_class.get_cloth("hair").color = tonks_haircolor

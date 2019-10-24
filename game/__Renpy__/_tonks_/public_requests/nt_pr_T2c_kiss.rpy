@@ -4,6 +4,7 @@
 
 # ([tonks_name] makes out with her students...)
 
+#TODO Add Tonks chibi to all her public request nightly reports
 
 label nt_pr_kiss_start:
     call ton_main("","base","base","base","mid", xpos="right", ypos="base", trans="fade")

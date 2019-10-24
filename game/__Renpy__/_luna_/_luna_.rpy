@@ -87,20 +87,13 @@ label luna_away:
     call reset_luna
     call gen_chibi("sit_behind_desk")
 
-    if luna_chibi_xpos_name in ["desk"]:
-        call lun_chibi("stand","desk","base")
-    elif luna_chibi_xpos_name in ["mid"]:
-        call lun_chibi("stand","mid","base")
-    else:
-        call lun_chibi("hide")
+    #TODO Check if Luna stands in the right place at the end of her events (when jumping to luna_away)
+    # call lun_chibi("stand", ypos="base")
 
     hide screen blkfade
     with d3
 
-    if luna_chibi_xpos_name in ["desk"]:
-        call lun_walk("desk","leave",2.7)
-    if luna_chibi_xpos_name in ["mid"]:
-        call lun_walk("mid","leave",2)
+    call lun_walk(action="leave")
 
     $ luna_busy = True
 

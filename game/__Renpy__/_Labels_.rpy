@@ -514,7 +514,7 @@ label increase_house_points(house="Add house", points=0):
 
     return
 
-
+#TODO Remove/replace this oddly specific label
 label chibi_walk_desk_blkfade(char=None):
 
     call hide_characters

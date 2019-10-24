@@ -21,8 +21,7 @@ label ll_pf_sex_T1_intro:
     call play_sound("knocking")
     "*knock* *knock* *knock*"
 
-    call play_sound("door")
-    call lun_walk("door","mid",2)
+    call lun_walk("mid", action="enter")
 
     call lun_main("Good morning, [lun_genie_name]!","base","happyCl","sad","mid",cheeks="blush", xpos="mid" , ypos="base")
 
@@ -57,8 +56,7 @@ label ll_pf_sex_T1_intro:
     hide screen bld1
     with d3
 
-    call lun_walk("mid", "door", 2, loiter=False)
-    call play_sound("door")
+    call lun_walk(action="leave")
 
     call gen_walk(action="leave", speed=3)
 

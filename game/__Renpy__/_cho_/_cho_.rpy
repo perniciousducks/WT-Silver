@@ -91,9 +91,10 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
 label update_cho:
 
     # Chibi Update
-    $ update_chibi_image("cho")
+    $ cho_chibi.update()
+    $ cho_chibi.position(flip=False)
     $ cho_flip = 1
-    $ cho_cloth_pile = False
+    hide screen cho_cloth_pile
 
     return
 

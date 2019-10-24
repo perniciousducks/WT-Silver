@@ -7,30 +7,6 @@ default tonks_animation = None
 
 default tonks_haircolor = [[243, 158, 189, 255]]
 
-# Chibi
-default ton_chibi_xpos      = 500
-default ton_chibi_ypos      = 250
-default ton_chibi_flip      = 1
-default ton_chibi_zorder    = 3
-default ton_chibi_animation = None
-default ton_chibi_status    = ""
-
-default ton_chibi_stand = "ch_ton blink"
-default ton_chibi_shoes = "characters/tonks/chibis/nt_walk_01_shoes.png"
-
-default ton_chibi_walk       = "ch_ton walk"
-default ton_chibi_walk_shoes = "ch_ton walk_shoes"
-
-default ton_chibi_top    = "characters/tonks/chibis/nt_top.png"
-default ton_chibi_bottom = "characters/tonks/chibis/nt_trousers.png"
-default ton_chibi_robe   = "blank"
-default ton_chibi_gloves = "blank" # blank is the new defined image, makes our lives easier
-default ton_chibi_fix    = "blank"
-
-default ton_cloth_pile = False
-default ton_pile_xpos  = 440 # Right side of desk.
-default ton_pile_ypos  = 425 # Bit below feet level.
-
 # Stats
 default ton_tier           = 1
 default ton_friendship     = 0 #Max is 100.

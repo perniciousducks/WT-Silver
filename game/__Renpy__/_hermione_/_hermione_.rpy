@@ -126,7 +126,7 @@ label her_kneel(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=No
 
 label update_hermione:
 
-    $ update_chibi_image("hermione")
+    #TODO $ hermione_chibi.update()
     $ hermione_flip = 1
     $ use_hermione_head = False
 

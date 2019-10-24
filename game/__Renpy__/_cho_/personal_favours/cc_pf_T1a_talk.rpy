@@ -258,7 +258,7 @@ label cc_pf_talk_T1_intro_E2:
     g9 "Get closer, [cho_name]..."
     call cho_main("...","annoyed","base","base","down")
 
-    call cho_chibi("stand","desk","base")
+    call cho_walk("desk","base")
 
     call play_music("cho_theme")
     call cho_main("","annoyed","narrow","angry","mid",xpos="mid",ypos="base",trans="fade")
@@ -988,7 +988,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
     g9 "Come a bit closer, would you."
     call cho_main("Of course...","annoyed","base","base","R")
 
-    call cho_chibi("stand","desk","base")
+    call cho_walk("desk","base")
 
     call cho_main("","annoyed", face="neutral", xpos="mid", ypos="base", trans="fade")
     g9 "So. How is school life?"

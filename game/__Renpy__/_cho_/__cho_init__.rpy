@@ -6,30 +6,6 @@ default cho_zorder              = 5
 default cho_flip                = 1
 default cho_animation           = None
 
-#Chibi
-default cho_chibi_xpos          = 500
-default cho_chibi_ypos          = 250
-default cho_chibi_flip          = 1
-default cho_chibi_zorder        = 3
-default cho_chibi_animation     = None
-default cho_chibi_status        = ""
-
-default cho_chibi_stand         = "ch_cho blink"
-default cho_chibi_shoes         = "characters/cho/chibis/cc_walk_01_shoes.png"
-
-default cho_chibi_walk          = "ch_cho walk"
-default cho_chibi_walk_shoes    = "ch_cho walk_shoes"
-
-default cho_chibi_top           = "characters/cho/chibis/cc_cloth_shirt_r.png"
-default cho_chibi_bottom        = "characters/cho/chibis/cc_cloth_skirt.png"
-default cho_chibi_robe          = "blank"
-default cho_chibi_gloves        = "blank" #blank is the new defined image, makes our lives easier
-default cho_chibi_fix           = "blank"
-
-default cho_cloth_pile = False
-default cho_pile_xpos = 440 # Right side of desk.
-default cho_pile_ypos = 425 # Bit below feet level.
-
 # Stats
 default cho_tier                = 1
 default cho_whoring             = 0

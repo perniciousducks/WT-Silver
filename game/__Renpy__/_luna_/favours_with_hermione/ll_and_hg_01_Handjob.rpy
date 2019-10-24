@@ -1139,7 +1139,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
                     call lun_main("if you two are done talking I'm going to class...","normal","mad","angry","mid",tears="soft")
 
-                    call lun_walk("mid","leave",2.5)
+                    call lun_walk(action="leave")
 
                     call load_luna_clothing_saves
 

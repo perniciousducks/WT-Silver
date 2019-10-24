@@ -462,7 +462,7 @@ label luna_revert_1: #Reversion event #DONE
     call lun_main("Alright, I'll go back to my common room...","upset","suspicious","sad","mid")
     call her_main("That's right...", "soft", "happy", "base", "R")
 
-    call lun_walk("mid","leave",2)
+    call lun_walk(action="leave")
 
     call her_main("Well, now that that's over...", "annoyed", "narrow", "angry", "R")
     call her_main("I think I'll be leaving as well...", "annoyed", "base", "angry", "mid")
@@ -1201,7 +1201,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     ">Luna turns to leave your office with Hermione still in a heap on the floor."
     call lun_main("See you next time...","base","suspicious","mad","mid")
 
-    call lun_walk("mid","leave",2)
+    call lun_walk(action="leave")
 
     m "[hermione_name]? Are you OK?"
     call her_main("agh... what happened?", "open", "narrow", "worried", "down")

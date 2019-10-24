@@ -1200,7 +1200,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 ">Luna stands up from your lap"
                 $ luna_flip = 1
                 $ luna_xpos = 600
-                $ luna_chibi_xpos = 500
+                call lun_chibi(xpos=500,flip=False)
                 hide screen blkfade
                 with d3
                 call lun_main("*hmph* You're such nasty old [lun_genie_name]!","base","suspicious","angry","mid")
@@ -1240,7 +1240,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         #chibi stuff
         $ luna_flip = -1
         $ luna_xpos = 120
-        $ luna_chibi_xpos = 300
+        call lun_chibi(xpos=500,flip=True)
         hide screen blkfade
         with d3
         ">Luna lightly sits on your lap."
@@ -1338,7 +1338,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         ">Luna stands up from your lap"
         $ luna_flip = 1
         $ luna_xpos = 600
-        $ luna_chibi_xpos = 500
+        call lun_chibi(xpos=500,flip=False)
         hide screen blkfade
         with d3
 

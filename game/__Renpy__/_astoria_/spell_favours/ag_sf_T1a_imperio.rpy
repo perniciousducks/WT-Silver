@@ -3,13 +3,13 @@
 ### Susan Imperio Events ###
 
 label ag_se_imperio_sb: # Move label
-    $ ast_chibi_zorder = 4 # In front of Susan.
+    $ astoria_chibi.zorder = 4 # In front of Susan.
     $ ag_se_imperio_sb.start()
 
     label end_ag_se_imperio_sb:
 
     # Reset
-    $ ast_chibi_zorder = 3 # Default
+    $ astoria_chibi.zorder = 3 # Default
 
     $ astoria_busy = True
     $ susan_busy = True
@@ -21,7 +21,8 @@ label ag_se_imperio_sb: # Move label
 label ag_se_imperio_sb_E1:
     call play_music("stop")
     call hide_characters
-    call ast_chibi("stand","530","base")
+    #TODO Astoria chibi zorder above Susan chibi
+    call ast_chibi("stand","mid","base")
     hide screen bld1
     with d3
     call sus_walk(action="enter", xpos="desk", ypos="base", speed=2.5)

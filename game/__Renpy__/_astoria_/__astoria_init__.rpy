@@ -6,30 +6,6 @@ default astoria_flip      = 1
 default astoria_animation = None
 default use_astoria_head  = False
 
-# Chibi
-default ast_chibi_xpos      = 500
-default ast_chibi_ypos      = 250
-default ast_chibi_flip      = 1
-default ast_chibi_zorder    = 3
-default ast_chibi_animation = None
-default ast_chibi_status    = ""
-
-default ast_chibi_stand = "ch_ast blink"
-default ast_chibi_shoes = "characters/astoria/chibis/ag_walk_01_shoes.png"
-
-default ast_chibi_walk       = "ch_ast walk"
-default ast_chibi_walk_shoes = "ch_ast walk_shoes"
-
-default ast_chibi_top    = "characters/astoria/chibis/ag_top.png"
-default ast_chibi_bottom = "characters/astoria/chibis/ag_skirt.png"
-default ast_chibi_robe   = "blank"
-default ast_chibi_gloves = "blank" # blank is the new defined image, makes our lives easier
-default ast_chibi_fix    = "blank"
-
-default ast_cloth_pile = False
-default ast_pile_xpos  = 440 # Right side of desk.
-default ast_pile_ypos  = 425 # Bit below feet level.
-
 # Flags
 default astoria_busy              = False
 default astoria_unlocked          = False

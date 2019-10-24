@@ -4,6 +4,8 @@
 
 # (Tonks lets her students play with her tits, ass,...)
 
+#TODO Add Tonks chibi to all her public request nightly reports
+
 label nt_pr_grope_start:
     call ton_main("","base","base","base","mid", xpos="right", ypos="base", trans="fade")
 

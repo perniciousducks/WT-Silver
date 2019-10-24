@@ -717,7 +717,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             with d3
 
             #TODO Fix chibi position here
-            $ luna_chibi_zorder = 2
+            $ luna_chibi.zorder = 2
             call gen_chibi("standing_alt","desk","base")
             call lun_chibi("stand",510,"base")
             show screen chair_left

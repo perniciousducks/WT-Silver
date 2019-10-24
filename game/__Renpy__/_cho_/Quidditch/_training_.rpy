@@ -294,7 +294,7 @@ label change_quidditch_tactics:
 
     $ menu_y = 0.8
 
-    if cho_chibi_animation == "fly":
+    if cho_chibi.special == "fly":
         menu:
             m "(What directions should I give her?)"
             "\"It's all about the ass!\"" if quidditch_position != "front":

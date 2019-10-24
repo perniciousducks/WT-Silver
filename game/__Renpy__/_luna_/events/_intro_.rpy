@@ -102,8 +102,7 @@ label hat_intro_3: #Luna change scene #DONE
     lun "It's Luna Lovegood, sir..."
     m "come in, come in..."
 
-    call play_sound("door")
-    call lun_walk("door","mid",2)
+    call lun_walk("mid", action="enter")
     pause.5
 
     call lun_main("Hermione said you wanted to see me?","normal","base","base","R",xpos="right",ypos="base")
@@ -136,7 +135,7 @@ label hat_intro_3: #Luna change scene #DONE
             m "Yeah, busy..."
             m "(Too busy to hear about something that dull.)"
             call lun_main("I'll come back later then, this really is something you need to hear about!","base","closed","angry","R")
-            call lun_walk("mid","leave",2)
+            call lun_walk(action="leave")
             $ luna_busy = True
 
             $ luna_unlocked = True
@@ -190,7 +189,7 @@ label hat_intro_3: #Luna change scene #DONE
     m "Thank you very much Miss Lovegood. I think you better be off to bed now "
     call lun_main("yes... bed...","normal","base","base","empty")
 
-    call lun_walk("mid","leave",2)
+    call lun_walk(action="leave")
 
     $ luna_wear_accs = False
     $ lun_hair_style = "curly"
@@ -259,8 +258,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
             lun "..."
             call nar(">Your door opens as Luna walks in.")
 
-    call play_sound("door")
-    call lun_walk("door","desk",2.7)
+    call lun_walk("desk", action="enter")
     pause.5
 
     call lun_main("Hello...","base","base","sad","mid",xpos="mid",ypos="base")
@@ -367,7 +365,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
     m "..."
     call lun_main("Well, I'd best be off... goodbye professor!","base","happyCl","base","mid")
 
-    call lun_walk("desk","leave",2.5)
+    call lun_walk(action="leave")
 
     call bld
     m "(This is going to be fun!)"

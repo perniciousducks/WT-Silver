@@ -1,219 +1,84 @@
+label ton_chibi(action=None, xpos=None, ypos=None, flip=False):
+    $ tonks_chibi.position(xpos, ypos, flip)
 
-
-### Tonks Chibi ###
-
-label ton_chibi(action = "", xpos=ton_chibi_xpos, ypos=ton_chibi_ypos, flip=False, animation=False):
-    $ ton_chibi_status = ""
-    $ update_chibi_image("tonks")
-
-    if xpos != ton_chibi_xpos:
-        if xpos == "mid":
-            $ ton_chibi_xpos = 540 # 560
-        elif xpos == "desk":
-            $ ton_chibi_xpos = 440
-        elif xpos == "on_desk":
-            $ ton_chibi_xpos = 350
-        elif xpos == "on_desk":
-            $ ton_chibi_xpos = 350
-        elif xpos == "behind_desk":
-            $ ton_chibi_xpos = 230
-        elif xpos == "door":
-            $ ton_chibi_xpos = 750
-        else:
-            $ ton_chibi_xpos = int(xpos)
-
-    if ypos != ton_chibi_ypos:
-        if ypos in ("base","default"):
-            $ ton_chibi_ypos = 250
-        elif ypos == "on_desk":
-            $ ton_chibi_ypos = 180
-        elif ypos == "behind_desk":
-            $ ton_chibi_ypos = 260
-        else:
-            $ ton_chibi_ypos = int(ypos)
-
-    # Action command.
     if action == "hide":
-        hide screen ton_stand
+        $ tonks_chibi.hide()
+        return
     elif action == "leave":
-        call play_sound("door")
-        hide screen ton_main
+        hide screen tonks_main
         hide screen bld1
         hide screen blktone
-        hide screen ton_stand
+        call play_sound("door")
+        $ tonks_chibi.hide()
         with d3
         pause .5
-    else:
-        if action == "reset":
-            $ ton_chibi_animation = None
-            $ update_chibi_image("tonks")
+        return
+    elif action == "reset":
+        $ tonks_chibi.do(None)
+    else: # stand
+        $ tonks_chibi.do(None)
 
-        if flip: #Same variable that the main sprite is using. #1 == Default
-            $ ton_chibi_flip = -1
-            show screen ton_stand
-        else:
-            $ ton_chibi_flip = 1
-            show screen ton_stand
-
-    if animation != False:
-        $ ton_chibi_animation = animation
-
+    $ tonks_chibi.show()
     return
 
-
-
-### Tonks Chibi Walk ###
-default ton_speed = 2.0
-label ton_walk(xpos=walk_xpos, ypos=walk_ypos, speed=ton_speed, action="", loiter=True, redux_pause=0):
+label ton_walk(xpos=None, ypos=None, speed=None, action=None, loiter=True, redux_pause=0):
     call hide_characters
     call hide_chibi_effects
     hide screen bld1
     hide screen blktone
     with d3
 
-    $ ton_chibi_status = "move"
-    $ update_chibi_image("tonks")
+    #TODO Convert speed
 
-    # Action command.
     if action == "enter":
         call play_sound("door")
-        $ ton_chibi_xpos = 750
-        $ ton_chibi_ypos = 250
-        $ ton_chibi_flip = 1
+        call ton_chibi(None, "door", "base")
+        if xpos or ypos:
+            $ tonks_chibi.move(xpos, ypos)
     elif action == "leave":
-        $ xpos = "door"
-        $ ypos = "base"
-        $ loiter = False
-
-    # Start position.
-    $ walk_xpos = ton_chibi_xpos
-    $ walk_ypos = ton_chibi_ypos
-
-    # Target location.
-    if xpos == "mid":
-        $ walk_xpos2 = 540 # 560
-    elif xpos == "desk":
-        $ walk_xpos2 = 440
-    elif xpos == "door":
-        $ walk_xpos2 = 750
+        $ tonks_chibi.show()
+        $ tonks_chibi.move("door", "base")
+        call play_sound("door")
+        $ tonks_chibi.hide()
+        with d3
+        pause .5
     else:
-        $ walk_xpos2 = int(xpos)
-
-    if ypos in ("base","default"):
-        $ walk_ypos2 = 250
-    else:
-        $ walk_ypos2 = int(ypos)
-
-    $ ton_speed = speed #Speed of walking animation. (lower = faster)
-
-    # Walk right to left
-    if walk_xpos >= walk_xpos2:
-        $ ton_chibi_flip = 1
-        show screen ton_walk
-        $ tmp = ton_speed - redux_pause
-        $ renpy.pause(tmp)
-        $ ton_chibi_xpos = walk_xpos2
-        $ ton_chibi_ypos = walk_ypos2
-        hide screen ton_walk
-        if loiter:
-            $ ton_chibi_status = ""
-            $ update_chibi_image("tonks")
-            show screen ton_stand
-
-    # Walk left to right
-    else:
-        $ ton_chibi_flip = -1
-        show screen ton_walk
-        $ tmp = ton_speed - redux_pause
-        $ renpy.pause(tmp)
-        $ ton_chibi_xpos = walk_xpos2
-        $ ton_chibi_ypos = walk_ypos2
-        hide screen ton_walk
-        if action == "leave":
-            call play_sound("door")
-            $ ton_chibi_flip = 1
-        else:
-            if loiter:
-                $ update_chibi_image("tonks")
-                $ ton_chibi_status = ""
-                show screen ton_stand
+        $ tonks_chibi.show()
+        $ tonks_chibi.move(xpos, ypos)
 
     return
 
-
-### TONKS CHIBI SCREENS ###
-
-screen ton_stand():
-    tag ton_chibi
-    zorder ton_chibi_zorder
-
-    frame:
-        style "empty"
-        if ton_chibi_animation == "fly":
-            at chibi_fly_idle
-        add ton_chibi_fix      xpos ton_chibi_xpos ypos ton_chibi_ypos xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        add ton_chibi_stand    xpos ton_chibi_xpos ypos ton_chibi_ypos xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        add ton_chibi_bottom   xpos ton_chibi_xpos ypos ton_chibi_ypos xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        add ton_chibi_shoes    xpos ton_chibi_xpos ypos ton_chibi_ypos xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        add ton_chibi_top      xpos ton_chibi_xpos ypos ton_chibi_ypos xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        add ton_chibi_robe     xpos ton_chibi_xpos ypos ton_chibi_ypos xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        add ton_chibi_gloves     xpos ton_chibi_xpos ypos ton_chibi_ypos xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        #TODO Put cloth pile on separate screen
-        if ton_cloth_pile:
-            add "characters/chibis/cloth_pile_r.png" xpos ton_pile_xpos ypos ton_pile_ypos
-
-screen ton_walk():
-    tag ton_chibi
-    zorder ton_chibi_zorder
-
-    frame:
-        style "empty"
-        if ton_chibi_animation == "fly":
-            at chibi_fly(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2, speed=ton_speed)
-        else:
-            at ton_walk_trans(walk_xpos, walk_xpos2, walk_ypos, walk_ypos2)
-        add ton_chibi_fix          xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        add ton_chibi_walk         xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        add ton_chibi_bottom       xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        add ton_chibi_shoes        xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        add ton_chibi_top          xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        if "quid" in ton_chibi_shoes:
-            add ton_chibi_shoes        xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        add ton_chibi_robe         xzoom ton_chibi_flip zoom (1.0/scaleratio)
-        add ton_chibi_gloves       xzoom ton_chibi_flip zoom (1.0/scaleratio)
-    #TODO Put cloth pile on separate screen
-    if ton_cloth_pile:
-        add "characters/chibis/cloth_pile_r.png" xpos ton_pile_xpos ypos ton_pile_ypos
+# Screens
+screen ton_cloth_pile(position=(440, 425)): # Default position: Right of desk, below feet.
+    tag ton_cloth_pile
+    zorder tonks_chibi.zorder
+    add "characters/chibis/cloth_pile_r.png" pos position zoom 0.5
 
 screen with_tonks_animated():
     tag ton_chibi
-    zorder ton_chibi_zorder
+    zorder tonks_chibi.zorder
     
     if daytime:
-        add "genie_toast_goblet_daytime" at Position(xpos=435, ypos=200)
+        add "genie_toast_goblet_daytime" xpos 435 ypos 200
     else:
-        add "genie_toast_goblet" at Position(xpos=435, ypos=200)
+        add "genie_toast_goblet" xpos 435 ypos 200
 
-    add "ch_ton sit" at Position(xpos=610, ypos=175)
+    add "ch_ton sit" xpos 610 ypos 175
     
     if tonks_class.get_worn("bottom"):
-        add "ch_ton sit_trousers" at Position(xpos=610, ypos=175)
+        add "ch_ton sit_trousers" xpos 610 ypos 175
     if tonks_class.get_worn("bottom") or tonks_class.get_worn("stockings"):
-        add "ch_ton sit_shoes" at Position(xpos=610, ypos=175)
-        
+        add "ch_ton sit_shoes" xpos 610 ypos 175
     if tonks_class.get_worn("top"):
-        add "ch_ton sit_top" at Position(xpos=610, ypos=175)
+        add "ch_ton sit_top" xpos 610 ypos 175
 
 
+# Chibi definition
 default tonks_chibi = chibi("tonks", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves"], update_tonks_chibi)
 
 init python:
-    # Tonks special: drinking (not part of chibi definition)
     def update_tonks_chibi(chibi):
-        # Tonks currently has no special chibis
-        # ton_chibi_animation
-        # ton_chibi_status
-
+        # Tonks special: drinking (not part of chibi definition)
         if chibi.action == "walk":
             chibi["base"] = "ch_ton walk"
         else:

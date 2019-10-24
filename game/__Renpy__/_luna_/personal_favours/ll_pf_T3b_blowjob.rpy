@@ -11,8 +11,7 @@ label ll_pf_blowjob_T1_intro:
     "*knock* *knock* *knock*"
     g4 "Yea-"
 
-    call play_sound("door")
-    call lun_walk("door","mid",2)
+    call lun_walk("mid", action="enter")
     pause.5
 
     call lun_main("Hello, [lun_genie_name]! Lovely day today isn't it?","base","happyCl","base","mid", xpos="mid", ypos="base")
@@ -68,7 +67,7 @@ label ll_pf_blowjob_T1_intro:
     m "If you want to crawl under the desk feel free..."
     call lun_main("Thank you, [lun_genie_name]...","base","happyCl","base","mid")
 
-    call lun_walk("mid","desk",1.6)
+    call lun_walk("desk")
 
     # Luna crawls under your desk and sucks you off!
     call luna_blowjob_under_desk
@@ -90,7 +89,7 @@ label ll_pf_blowjob_T1_intro:
     m "You'll be the first to know."
     call lun_main("Thanks, [lun_genie_name]! Have a nice day!","base","happyCl","base","mid")
 
-    call lun_walk("desk","leave",2.7)
+    call lun_walk(action="leave")
 
     call bld
     m "(...)"
@@ -137,14 +136,14 @@ label ll_pf_blowjob_T1_intro_E1:
     m "Come over here and I'll we can start..."
     call lun_main("Yay","smile","happyCl","sad","mid")
 
-    call lun_walk("mid","desk",1.6)
+    call lun_walk("desk")
 
     # Luna crawls under your desk and sucks you off!
     call luna_blowjob_under_desk
 
     call lun_main("Have a nice day, [lun_genie_name]!","base","happyCl","base","mid")
 
-    call lun_walk("desk","leave",2.7)
+    call lun_walk(action="leave")
 
     call bld
     m "(...)"
@@ -192,7 +191,7 @@ label ll_pf_blowjob_T1_intro_E2:
     ">Luna takes in a deep breath."
     call lun_main("Agh.... it reminds me of my old Wiggentree... and my new friend!","base","happyCl","sad","mid",cheeks="blush")
 
-    call lun_walk("desk","leave",2.7)
+    call lun_walk(action="leave")
 
     $ luna_wear_cum = False
 
@@ -232,7 +231,7 @@ label ll_pf_blowjob_T1_E3:
 
             $ lun_genie_name = "genie"
 
-            call lun_walk("desk","leave",2.5)
+            call lun_walk(action="leave")
 
         "-Let her do her own thing...-":
 
@@ -255,7 +254,7 @@ label ll_pf_blowjob_T1_E3:
             m "..."
             call lun_main("Well, toodaloo sir!","base","happyCl","base","mid", cheeks="blush")
 
-            call lun_walk("desk","leave",2.5)
+            call lun_walk(action="leave")
 
         "-Summon Somebody!-":
             call ll_pf_blowjob_T1_summon
@@ -905,6 +904,8 @@ label ll_pf_blowjob_T1_slapping: # Call label
     lun "Yes, sir..."
     ">Luna picks herself up from under your desk and goes to leave."
 
+    call lun_chibi("desk")
+
     hide screen luncg
     show screen blkfade
     with d5
@@ -1530,7 +1531,7 @@ label ll_pf_blowjob_T1_old_writing: # Not in use. Event got added as a menu opti
     m "Fantastic... Shall we begin then?"
     call lun_main("{b}yes{/b}... thank you [lun_genie_name]...","base","happyCl","sad","mid",cheeks="blush")
 
-    call lun_walk("mid","desk",1.6)
+    call lun_walk("desk")
 
     call ll_pf_blowjob_T1_summon
 

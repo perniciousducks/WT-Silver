@@ -794,7 +794,7 @@ init python:
                         self.clothing[object.type][0] = object
                         self.clothing[object.type][4] = False
             self.cached = False
-            update_chibi_image(self.char)
+            update_chibi(self.char)
             
         def unequip(self, *args):
             if 'all' in args:
@@ -813,7 +813,7 @@ init python:
                     except KeyError:
                         raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
-            update_chibi_image(self.char)
+            update_chibi(self.char)
             
         def strip(self, *args):
             if 'all' in args:
@@ -832,7 +832,7 @@ init python:
                         except KeyError:
                             raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
-            update_chibi_image(self.char)
+            update_chibi(self.char)
             
         def wear(self, *args):
             if 'all' in args:
@@ -850,7 +850,7 @@ init python:
                         except KeyError:
                             raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
             self.cached = False
-            update_chibi_image(self.char)
+            update_chibi(self.char)
             
         def toggle_wear(self, type):
             if type in ("makeup", "accessory", "piercing", "tattoo"):

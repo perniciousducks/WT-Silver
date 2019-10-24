@@ -66,10 +66,6 @@ screen G_Flowers_out():  #  Genie flowers vanish
     add "vanish_effect_bouquet" xpos 198+140 ypos 235
     zorder 5
 
-screen universal_walk():
-    tag chibi_walk
-    add universal_walk_image at universal_chibi_walk(u_walk_x, u_walk_x2, u_walk_speed, u_walk_y)
-
 
 ### MISC SCREENS
 screen bld1():
@@ -286,12 +282,12 @@ label teleport(position=None,effect=True,poof_label=None):
         $ teleport_ypos = her_chibi_ypos-80
         $ teleport_zorder = 3
     elif position == "cho":
-        $ teleport_xpos = cho_chibi_xpos+45
-        $ teleport_ypos = cho_chibi_ypos-80
+        $ teleport_xpos = cho_chibi.pos[0]+45
+        $ teleport_ypos = cho_chibi.pos[1]-80
         $ teleport_zorder = 3
     elif position == "astoria":
-        $ teleport_xpos = ast_chibi_xpos+45
-        $ teleport_ypos = ast_chibi_ypos-80
+        $ teleport_xpos = astoria_chibi.pos[0]+45
+        $ teleport_ypos = astoria_chibi.pos[1]-80
         $ teleport_zorder = 3
     elif position == "desk":
         $ teleport_xpos = 320
@@ -362,17 +358,17 @@ label get_chibi_position(char=None):
         $ chibi_ypos   = ast_chibi_ypos
         $ chibi_zorder = ast_chibi_zorder
     elif char == "susan":
-        $ chibi_xpos   = sus_chibi_xpos
-        $ chibi_ypos   = sus_chibi_ypos
-        $ chibi_zorder = sus_chibi_zorder
+        $ chibi_xpos   = susan_chibi.pos[0]
+        $ chibi_ypos   = susan_chibi.pos[1]
+        $ chibi_zorder = susan_chibi.zorder
     elif char == "luna":
-        $ chibi_xpos   = lun_chibi_xpos
-        $ chibi_ypos   = lun_chibi_ypos
-        $ chibi_zorder = lun_chibi_zorder
+        $ chibi_xpos   = luna_chibi.pos[0]
+        $ chibi_ypos   = luna_chibi.pos[1]
+        $ chibi_zorder = luna_chibi.zorder
     elif char == "cho":
-        $ chibi_xpos   = cho_chibi_xpos
-        $ chibi_ypos   = cho_chibi_ypos
-        $ chibi_zorder = cho_chibi_zorder
+        $ chibi_xpos   = cho_chibi.pos[0]
+        $ chibi_ypos   = cho_chibi.pos[1]
+        $ chibi_zorder = cho_chibi.zorder
 
     return
 

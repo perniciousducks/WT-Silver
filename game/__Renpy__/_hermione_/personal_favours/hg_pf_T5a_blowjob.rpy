@@ -51,6 +51,7 @@ label hg_pf_blowjob:
     else:
         m "You can go now, [hermione_name]."
 
+    #TODO Check if mouth_full_of_cum is defined in all paths leading up to this point
     if mouth_full_of_cum:
         call her_main("...", "full_cum", "narrow", "annoyed", "up", cheeks="blush", tears="mascara")
     else:
@@ -840,9 +841,7 @@ label hg_hidden_blowjob_luna:
     m "Quiet, [hermione_name]! Unless you want to be noticed..."
 
     #Luna comes in
-    call play_sound("door")
-
-    call lun_walk("door","mid",3)
+    call lun_walk("mid", action="enter")
 
     call lun_main("Hello, [lun_genie_name].","soft","base","base","down", xpos="right", ypos="base")
     call bld("hide")
@@ -941,8 +940,7 @@ label hg_hidden_blowjob_luna:
         call lun_main("Good night!","smile_large","happyCl","base","mid")
 
     #Luna leaves.
-    call lun_walk("mid","leave",3)
-    pause.5
+    call lun_walk(action="leave")
 
     stop music fadeout 1.0
     call bld
@@ -1255,7 +1253,7 @@ label hg_hidden_blowjob_cumming:
     $ hermione_flip = 1 #Default
     call her_main("*Slurp!* *Slurp!* *Gulp!*", "sucking", "squint", "worried", "up", ypos="head")
     ">Hermione keeps sucking on your cock with a rather fierce determination."
-    ">Her technique is lacking but she makes up for it with the effort she puts it."
+    ">Her technique is lacking but she makes up for it with the effort she puts in."
 
     m "Yes... I love your eager, little mouth, girl..."
     call her_main("*Gobble!* *Gobble!* *Gobble!*", "sucking", "narrow", "annoyed", "up")

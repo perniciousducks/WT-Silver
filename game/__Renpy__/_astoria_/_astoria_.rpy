@@ -99,9 +99,10 @@ label set_random_nicknames:
 label update_astoria:
 
     # Chibi Update
-    $ update_chibi_image("astoria")
+    $ astoria_chibi.update()
+    $ astoria_chibi.position(flip=False)
     $ astoria_flip = 1
-    $ astoria_cloth_pile = False
+    hide screen astoria_cloth_pile
 
     return
 

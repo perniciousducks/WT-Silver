@@ -26,24 +26,6 @@ default susan_tears  = "characters/susan/face/extras/tears_blank.png"
 default susan_extra  = "characters/susan/face/extras/blank.png"
 default susan_emote  = "characters/emotes/blank.png"
 
-# Chibi
-default sus_chibi_xpos   = 500
-default sus_chibi_ypos   = 250
-default sus_chibi_flip   = 1
-default sus_speed        = 2.0
-default sus_chibi_zorder = 3
-
-#TODO Remove Susan chibi variables
-default susan_chibi_stand = "ch_sus blink"
-default susan_chibi_shoes = "characters/susan/chibis/sb_walk_01_shoes.png"
-
-default susan_chibi_walk       = "ch_sus walk"
-default susan_chibi_walk_shoes = "ch_sus walk_shoes"
-
-default susan_chibi_top    = "characters/susan/chibis/sb_cloth_shirt_h.png"
-default susan_chibi_bottom = "characters/susan/chibis/sb_cloth_skirt.png"
-default susan_chibi_robe   = "characters/susan/chibis/blank.png"
-
 # Hair
 default susan_hair        = "characters/susan/body/hair/braided_red_base.png"
 default susan_hair_shadow = "characters/susan/body/hair/braided_red_top.png"
@@ -253,20 +235,6 @@ label reset_susan_clothing:
         "susan_tears",
         "susan_extra",
         "susan_emote",
-
-        # Chibi
-        "sus_chibi_xpos",
-        "sus_chibi_ypos",
-        "sus_chibi_flip",
-        "sus_speed",
-        "sus_chibi_zorder",
-        "susan_chibi_stand",
-        "susan_chibi_shoes",
-        "susan_chibi_walk",
-        "susan_chibi_walk_shoes",
-        "susan_chibi_top",
-        "susan_chibi_bottom",
-        "susan_chibi_robe",
 
         # Hair
         "susan_hair",

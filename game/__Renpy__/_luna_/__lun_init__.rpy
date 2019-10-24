@@ -32,13 +32,6 @@ default luna_cum               = 1
 default luna_wear_cum          = False
 default luna_wear_cum_under    = False
 
-# Chibi
-default luna_chibi_xpos        = 500
-default luna_chibi_ypos        = 250
-default luna_chibi_xpos_name   = "base" #Memory of chibi position.
-default luna_chibi_ypos_name   = "base" #Memory of chibi position.
-default luna_chibi_zorder      = 3
-
 # CG
 default hermione_kneel_leg     = False
 default hermione_kneel_cock    = False
@@ -303,12 +296,6 @@ label reset_luna_base:
         "luna_cum",
         "luna_wear_cum",
         "luna_wear_cum_under",
-        #Chibi
-        "luna_chibi_xpos",
-        "luna_chibi_ypos",
-        "luna_chibi_xpos_name",
-        "luna_chibi_ypos_name",
-        "luna_chibi_zorder",
         #CG
         "hermione_kneel_leg",
         "hermione_kneel_cock"

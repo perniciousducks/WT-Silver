@@ -296,7 +296,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                                 m "I'm waiting..."
                                 call lun_main("... {size=-8}(fine...){/size}","upset","suspicious","sad","down")
 
-                                call lun_walk("mid","desk",2)
+                                call lun_walk("desk")
 
                                 m "Very good... Maybe you should stand this close from now on..."
                                 call lun_main("...","upset","suspicious","sad","R")

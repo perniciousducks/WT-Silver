@@ -8,8 +8,7 @@ label ll_pf_masturbate_T1_intro:
     "*knock* *knock* *knock*"
     m "Come in..."
 
-    call play_sound("door")
-    call lun_walk("door","mid",2.5)
+    call lun_walk("desk", action="enter")
     pause.5
 
     call lun_main("Hello, Sir...","base","happyCl","base","mid",xpos="right",ypos="base")
@@ -217,7 +216,7 @@ label ll_pf_masturbate_T1_intro:
     m "I look forward to it."
     call lun_main("...","base","seductive","sad","mid")
 
-    call lun_walk("desk","leave",2.5)
+    call lun_walk(action="leave")
 
     call bld
     m "(What an odd girl.)"
@@ -274,7 +273,7 @@ label ll_pf_masturbate_T1_intro_E1:
     m "I don't see why not."
     m "Please, why don't you come a bit closer..."
 
-    call lun_walk("mid", "desk", 2)
+    call lun_walk("desk")
 
     # Tell her to masturbate.
     call ll_pf_masturbate_T1_start
@@ -286,7 +285,7 @@ label ll_pf_masturbate_T1_intro_E1:
     call lun_main("Thank you, [lun_genie_name]!","normal","seductive","sad","mid")
     call lun_main("I have to head back to our dorms now...","upset","seductive","sad","R")
 
-    call lun_walk("desk", "leave", 2)
+    call lun_walk(action="leave")
 
     call bld
     m "(What an odd girl.)"
@@ -316,7 +315,7 @@ label ll_pf_masturbate_T1_intro_E2:
     call lun_main("You mean it's okay if I?","normal","wide","sad","mid")
     call lun_main("Oh... Thank you, thank you, thank you!","smile","happyCl","base","R")
 
-    call lun_walk("mid", "desk", 2)
+    call lun_walk("desk")
 
     # Tell her to masturbate.
     call ll_pf_masturbate_T1_start
@@ -329,7 +328,7 @@ label ll_pf_masturbate_T1_intro_E2:
     call lun_main("No...{w} I better get to bed...","upset","seductive","sad","R")
     call lun_main("Thanks again, [lun_genie_name]!","normal","seductive","sad","down")
 
-    call lun_walk("desk", "leave", 2)
+    call lun_walk(action="leave")
 
     call bld
     m "(She really is a bit loony...)"
@@ -347,7 +346,9 @@ label ll_pf_masturbate_T1_E3:
     call lun_main("","base","closed","angry","mid", xpos="mid", ypos="base")
     m "[lun_name], are those wrackspurts still causing you-"
 
-    $ luna_wear_top = False # Has to be removed because of the sleeves.
+    call lun_walk("desk")
+
+    #$ luna_wear_top = False # Has to be removed because of the sleeves.
     $ luna_l_arm = 4
 
     call nar(">Luna quickly puts her hand down her skirt, not even waiting on your reply...")
@@ -390,7 +391,7 @@ label ll_pf_masturbate_T1_E3:
     m "See that you do."
     lun "Yes, [lun_genie_name]..."
 
-    call lun_walk("mid", "leave", 2)
+    call lun_walk(action="leave")
 
     jump end_luna_masturbate_event
 
@@ -400,7 +401,7 @@ label ll_pf_masturbate_T1_E3:
 
 label ll_pf_masturbate_T1_start: # Call label
 
-    $ luna_wear_top = False # Has to be removed because of the sleeves.
+    #$ luna_wear_top = False # Has to be removed because of the sleeves.
 
     call lun_main("...","pout","base","sad","mid", xpos="mid", ypos="base", trans="fade")
     m "That's it..."
@@ -692,8 +693,7 @@ label ll_pf_masturbate_T1_E2_old: #Masturbate for Genie and then Genie cum on Lu
             lun "Lovegood, [lun_genie_name]..."
             m "Oh miss lovegood! Come in..."
 
-    call play_sound("door")
-    call lun_walk("door","mid",2.5)
+    call lun_walk("mid", action="enter")
     pause.5
 
     call lun_main("...","pout","annoyed","sad","R",cheeks="blush",xpos="right",ypos="base")

@@ -67,7 +67,7 @@ label sna_chibi(action = "", xpos=sna_chibi_xpos, ypos=sna_chibi_ypos, pic = "",
         pass
 
     elif action == "leave":
-        hide screen sna_main
+        hide screen snape_main
         hide screen bld1
         hide screen blktone
         with d3

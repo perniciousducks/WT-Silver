@@ -520,8 +520,6 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call nar(">With a flick of Hermione's wand, Luna's clothes slither back onto her naked form.")
     call her_main("Wingardium Leviosaaaaa!", "open", "happyCl", "base", "mid")
 
-    hide screen luna_blink
-    with d3
     call lun_chibi("stand","on_desk","140")
     pause.2
 
@@ -535,17 +533,10 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     with d3
     pause.2
 
-    hide screen luna_blink
-    with d3
     call lun_chibi("stand","mid","base",flip=True)
     call her_chibi("stand","desk","base",flip=True)
 
-    #TODO Fix whatever was intended to happen here (lun_walk with stand/blink animation?)
-    # $ luna_chibi_walk = "ch_lun blink_a"
-    # $ luna_chibi_walk_f = "ch_lun blink_a_flip"
-    call lun_walk("mid","door",2)
-    call lun_chibi("hide")
-
+    call lun_walk(action="leave")
     call her_walk(action="leave", speed=2)
 
     $ hermione_busy = True

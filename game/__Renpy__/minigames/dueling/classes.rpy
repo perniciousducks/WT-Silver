@@ -111,12 +111,12 @@ init python:
             
         def check_shape(self):
             global _sign_value, _sign_max
-            max_score = len(self.sign.sign)
+            max_score = len(self.sign.shape)
             score = 0
             temp = []
 
             if self.current_child.shape != []:
-                for t in self.sign.sign:
+                for t in self.sign.shape:
                     if t in temp:
                         continue
                     for i in self.current_child.shape:

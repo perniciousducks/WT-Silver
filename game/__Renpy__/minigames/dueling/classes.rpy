@@ -147,7 +147,7 @@ init python:
         def set_boundries(self):
             self.boundries = [1000, 1000, -1000, -1000]
             
-            for i in self.sign.sign:
+            for i in self.sign.shape:
                 self.boundries[0] = min(self.boundries[0], i[0])
                 self.boundries[1] = min(self.boundries[1], i[1])
                 self.boundries[2] = max(self.boundries[2], i[0])

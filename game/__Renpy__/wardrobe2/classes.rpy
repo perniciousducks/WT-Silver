@@ -1,15 +1,11 @@
 init python:
-    import pygame
-    
     def get_character_object(key):
         return character_list.get(key)
             
     def set_clipboard(txt):
-        import pygame.scrap
         pygame.scrap.put(pygame.scrap.SCRAP_TEXT, txt.encode("utf-8"))
         
     def get_clipboard():
-        import pygame.scrap
         clipboard = pygame.scrap.get(pygame.scrap.SCRAP_TEXT)
         if clipboard:
             return clipboard

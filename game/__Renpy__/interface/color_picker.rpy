@@ -120,8 +120,6 @@ define alpha_gradient_image = AlphaGradientImage(size=(255,30))
 define hue_gradient_image = HueGradientImage(size=(30,255))
 
 init -1 python:
-    import colorsys
-
     def color_picker(color=[0,0,0,0], alpha=True, title="Pick a colour", pos_xy=(240, 130)):
         global picking_color
         picking_color = color # Color object (list) to be updated live
@@ -163,7 +161,7 @@ init -1 python:
     def color_picker_update_hsva():
         scope = renpy.get_screen("color_picker").scope
         (r, g, b, a) = scope["rgba"]
-        (h, s, v) = colorsys.rgb_to_hsv(r / 255.0, g / 255.0, b / 255.0)
+        (h, s, v) = colorsys.rgb_to_hsv(r / 255.0, g / 255.0, b / 255.0) # TODO: Try replacing colorsys with renpy Color class
         scope["hue"] = 1 - h
         scope["saturation"] = s
         scope["value"] = v

@@ -60,11 +60,11 @@ label studio(studio_char):
     call hide_characters
     
     python:
-        studio_eyebrows_list = os.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyebrows/")
-        studio_eyes_list = os.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyes/")
+        studio_eyebrows_list = system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyebrows/")
+        studio_eyes_list = system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyes/")
         studio_eyes_list.remove("_white_.png")
-        studio_mouth_list = os.listdir(config.basedir+"/game/characters/"+active_girl+"/face/mouth/")
-        studio_pupils_list = os.listdir(config.basedir+"/game/characters/"+active_girl+"/face/pupils/")
+        studio_mouth_list = system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/mouth/")
+        studio_pupils_list = system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/pupils/")
     
     $ studio_bg_list = ["wall_day", "castle", "forest", "highlight", "versus", "main_room_day", "main_room_night", "corridor", "custom"]
     $ studio_bg_overlay_list = [None, "curtains", "card", "g_bottom", "g_left", "g_circular"]
@@ -86,7 +86,7 @@ label studio(studio_char):
     
     $ image_arrow = "interface/frames/"+interface_color+"/arrow2.png"
     
-    label studio_after_init:
+    label .after_init:
     
     show screen studio
     
@@ -219,7 +219,7 @@ label studio(studio_char):
         call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
         return
         
-    jump studio_after_init
+    jump .after_init
 
 screen studio():
     tag studio

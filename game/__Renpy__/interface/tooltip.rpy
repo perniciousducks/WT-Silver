@@ -42,7 +42,9 @@ init python:
             return render
 
         def event(self, ev, x, y, st):
-            # Update mouse position
-            self.x = x
-            self.y = y
-            renpy.redraw(self, 0)
+            # Check if pointer is in motion
+            if ev.type == pygame.MOUSEMOTION:
+                # Update mouse position
+                self.x = x
+                self.y = y
+                renpy.redraw(self, 0)

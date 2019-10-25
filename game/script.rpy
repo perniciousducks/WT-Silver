@@ -1,10 +1,5 @@
 ﻿# Main script file
 init python:
-    # Import commonly used modules
-    import math
-    import random
-    import time
-
     config.after_load_callbacks.append(start_image_crop)
 
     renpy.music.register_channel("bg_sounds", "sfx", True)

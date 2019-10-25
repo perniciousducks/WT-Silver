@@ -33,7 +33,7 @@ label door_menu(xx=723, yy=90):
 
     $ current_sorting = door_show_busy
 
-    label door_menu_after_init:
+    label .after_init:
     #$ renpy.block_rollback()
 
     show screen bld1
@@ -56,7 +56,7 @@ label door_menu(xx=723, yy=90):
         $ hide_transitions = False
         jump main_room_menu
 
-    jump door_menu_after_init
+    jump .after_init
 
 screen door_menu(xx, yy):
     tag door_menu

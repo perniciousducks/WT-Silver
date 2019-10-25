@@ -1,4 +1,12 @@
 init -1 python:
+    # Import commonly used python modules
+    #import os as system # Already imported in devtools.rpy
+    import time
+    import math
+    import random
+    import pygame
+    import colorsys
+    
     def num_to_word(n, readable=True):
         """Transcript numbers (integers) into readable words."""
         n = int(n)

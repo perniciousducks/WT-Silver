@@ -1,6 +1,5 @@
 init python:
     from shutil import copyfile
-    import time
     
     if persistent.gallery_votes is None:
         # key is id and value is a string for upvote, netrual, downvote
@@ -9,7 +8,7 @@ init python:
     def create_folder_if_not_exist(path):
         #Create the folder if it dont exist
         try:
-            os.makedirs(path)
+            system.makedirs(path)
         except OSError as e:
             if e.errno != errno.EEXIST:
                 raise
@@ -18,7 +17,7 @@ init python:
         char = file_info[4]
         file_name = str(file_info[0]) + file_info[1].split("/",-1)[-1]
         file_path = config.basedir+"/game/outfits/"+char.lower()+"/"+file_name
-        if not os.path.isfile(file_path):
+        if not system.path.isfile(file_path):
             headers = { 'User-Agent' : 'Mozilla/5.0' }
             response = urllib2.urlopen(urllib2.Request(file_info[1], None, headers)).read()
             #Write the file to a folder in outfits under the characters name 

@@ -5,28 +5,26 @@
 label cho_training_menu:
 
     # Quiz.
-    if not cho_quiz_complete:
-        jump cho_quiz_1
+    if not cho_quiz.complete:
+        jump cho_quiz
 
     # Training Intro 1.
     # Event fails. Cho will get mad and leaves.
-    if cho_training_state == "intro_1":
-        $ cho_training_state = "intro_2"
-        jump quidditch_training_intro_1
+    if not cho_quid.E1_complete:
+        jump cho_quid_E1
 
     # Training Intro 2.
-    if cho_training_state == "intro_2":
-        $ cho_training_state = "complete"
+    if not cho_quid.E2_complete:
         $ cho_training_unlocked = True
         $ cho_favors_unlocked = True
-        jump quidditch_training_intro_2
+        jump cho_quid_E2
 
     jump change_quidditch_tactics
 
 
 
 # Training Intro 1.
-label quidditch_training_intro_1:
+label cho_quid_E1:
     # Genie should get into a drill sargeant mood here.
     call cho_main(xpos="mid",ypos="base",trans="fade")
 
@@ -112,7 +110,7 @@ label quidditch_training_intro_1:
 
     menu:
         "\"It's all about the ass!\"":
-            $ quidditch_position = "front"
+            $ cho_quid.position = "front"
             call cho_main("Who- What?!{w} Whose ass?","soft","wide","base","mid")
             m "Yours, of course."
             call cho_main("M-my... my ass?","open","wide","raised","mid")
@@ -121,14 +119,14 @@ label quidditch_training_intro_1:
             m "Oh I'm dead serious! I never belittle a great ass should I see one."
 
         "\"Panties are Key!\"":
-            $ quidditch_position = "above"
+            $ cho_quid.position = "above"
             call cho_main("Panties? What does panties have to do with Quidditch?","soft","wide","raised","mid")
             m "Everything, girl!{w} For some they are the meaning of life!"
             call cho_main("What?!{w} Are you seriously suggesting \"this\"?{w} To win?{w} Panties?","angry","narrow","angry","mid")
             m "I was never more sure about anything in my life..."
 
         "\"Get intimate!\"":
-            $ quidditch_position = "close"
+            $ cho_quid.position = "close"
             call cho_main("[cho_genie_name]?","soft","wide","base","mid")
             m "Get close. Show him your goods. Give him a peek..."
             m "You know, basic stuff..."
@@ -170,8 +168,6 @@ label quidditch_training_intro_1:
     # Cho leaves.
     call cho_walk(action="leave", speed=1.6)
 
-    $ cho_training_state = "intro_2"
-
     call popup("You've lost the ability to train Cho in Quidditch.", "Congratulations!", "interface/icons/head/head_cho_2.png")
 
     call bld
@@ -180,12 +176,14 @@ label quidditch_training_intro_1:
     $ cho_mood += 9
     $ cho_busy = True
 
+    $ cho_quid.E1_complete = True
+
     jump main_room
 
 
 
 # Training Intro 2.
-label quidditch_training_intro_2:
+label cho_quid_E2:
     call cho_main(xpos="mid",ypos="base",trans="fade")
     m "Did you finally come to terms with my training methods?"
     call cho_main("No, Sir.","soft","closed","angry","mid")
@@ -198,7 +196,7 @@ label quidditch_training_intro_2:
     m "(...)"
     m "What did I suggest last time again?"
 
-    if quidditch_position == "front":
+    if cho_quid.position == "front":
         call cho_main("You were raving about my bum, Sir.","open","closed","base","mid")
         g9 "That's right! Your ass!{w} Now I remember!"
         call cho_main("(...)","annoyed","narrow","angry","mid")
@@ -207,12 +205,12 @@ label quidditch_training_intro_2:
         call cho_main("But, May I ask, Sir...","open","base","base","R")
         call cho_main("How exactly did you picture my \"ass\" helping us win?","annoyed","narrow","angry","mid")
 
-    elif quidditch_position == "above":
+    elif cho_quid.position == "above":
         call cho_main("It had something to do with panties.","open","narrow","angry","mid")
         call cho_main("However, I have no clue why you would include panties in our training...","soft","narrow","base","R")
         g9 "Ah yes. Panties!{w} Now I remember!"
 
-    elif quidditch_position == "close":
+    elif cho_quid.position == "close":
         call cho_main("You wanted me to have sex with their seeker...","angry","closed","angry","mid")
         m "I did?"
         call cho_main("You did! You ask me to get intimate with him!","soft","narrow","angry","mid")
@@ -260,6 +258,8 @@ label quidditch_training_intro_2:
     call cho_main("Ready when you are, [cho_genie_name]!","smile","base","base","mid", xpos="right", ypos="base")
     m "(...)"
 
+    $ cho_quid.E2_complete = True
+
     jump demonstrate_quidditch_tactics
 
 
@@ -297,19 +297,19 @@ label change_quidditch_tactics:
     if cho_chibi_animation == "fly":
         menu:
             m "(What directions should I give her?)"
-            "\"It's all about the ass!\"" if quidditch_position != "front":
+            "\"It's all about the ass!\"" if cho_quid.position != "front":
                 call demonstrate_tactic("front")
-            "\"It's all about the ass!\" {size=-6}(selected){/size}" if quidditch_position == "front":
+            "\"It's all about the ass!\" {size=-6}(selected){/size}" if cho_quid.position == "front":
                 pass
 
-            "\"Panties are Key!\"" if quidditch_position != "above":
+            "\"Panties are Key!\"" if cho_quid.position != "above":
                 call demonstrate_tactic("above")
-            "\"Panties are Key!\" {size=-6}(selected){/size}" if quidditch_position == "above":
+            "\"Panties are Key!\" {size=-6}(selected){/size}" if cho_quid.position == "above":
                 pass
 
-            "\"Get intimate!\"" if quidditch_position != "close":
+            "\"Get intimate!\"" if cho_quid.position != "close":
                 call demonstrate_tactic("close")
-            "\"Get intimate!\" {size=-6}(selected){/size}" if quidditch_position == "close":
+            "\"Get intimate!\" {size=-6}(selected){/size}" if cho_quid.position == "close":
                 pass
             "":
                 pass
@@ -326,7 +326,7 @@ label change_quidditch_tactics:
 
     else:
         menu:
-            "-Change Tactic-":
+            "-Change Tactic-" if not cho_quid.lock_tactic:
                 m "Start flying, [cho_name]."
                 call cho_main("Yes, Sir!","open","closed","angry","mid", ypos="head")
                 hide screen bld1
@@ -336,23 +336,29 @@ label change_quidditch_tactics:
                 call cho_chibi(action="fly", xpos="550", ypos="260")
                 with d5
                 pause.8
+            "{color=#858585}-Change Tactic-{/color}" if cho_quid.lock_tactic:
+                m "(We have won with this tactic before. I don't see why we should change it.)"
+                jump demonstrate_quidditch_tactics
 
-            "-Customize quidditch outfit-":
+            "-Customize quidditch outfit-" if not cho_quid.lock_tactic:
                 call cho_main(face="neutral", xpos="mid", ypos="base")
                 call t_wardrobe_quidditch() # Open quidditch wardrobe
                 $ cho_class.equip(cho_outfit_quidditch)
                 call cho_main(face="neutral", xpos="mid", ypos="base")
+            "{color=#858585}-Customize quidditch outfit-{/color}" if cho_quid.lock_tactic:
+                m "(We have won with this outfit before. No point in changing it.)"
+                jump demonstrate_quidditch_tactics
 
-            "-Start Practice Match-" if daytime and not lock_cho_practice:
+            "-Start Practice Match-" if daytime and not cho_quid.lock_practice:
                 # Cho continues to wear her Quidditch outfit.
                 # No clothing reset until after the eventing.
                 if cho_tier == 1: # Hufflepuff
-                    jump start_training_match
+                    jump cc_ht_start
                 if cho_tier == 2: # Slytherin
                     jump cc_st_start
 
-            "{color=#858585}-Start Practice Match-{/color}" if not daytime or lock_cho_practice:
-                if lock_cho_practice:
+            "{color=#858585}-Start Practice Match-{/color}" if not daytime or cho_quid.lock_practice:
+                if cho_quid.lock_practice:
                     call nar(">You can't do that right now.")
                 else:
                     call nar(">You can only do that during the day.")
@@ -394,10 +400,10 @@ label demonstrate_tactic(position=""):
         call bld
         m "Yes, very good. Keep that position."
 
-        if cho_quidditch_coat == True:
+        if cho_quid.coat == True:
             m "(It's going to be problematic getting a good view of her ass while she has that coat on...)"
             m "(Maybe I can get her to remove it...)"
-        elif cho_quidditch_bottom in ["skirt_short","skirt_long"]:
+        elif cho_quid.bottom in ["skirt_short","skirt_long"]:
             m "(This might work!)"
             m "(Although, her skirt doesn't really emphasize her ass enough...)"
             m "(Maybe there is a better option for this position...)"
@@ -418,7 +424,7 @@ label demonstrate_tactic(position=""):
         g4 "Higher!"
         g4 "Fly right above my head!"
 
-        if cho_quidditch_bottom in ["skirt_short","skirt_long"]:
+        if cho_quid.bottom in ["skirt_short","skirt_long"]:
             call cho_main("But then you could see under my skirt, [cho_genie_name]!","open","base","base","downR", ypos="head")
             g4 "Which is what we are going for, [cho_name]!"
             g4 "Maximum distraction!{w} Now show me those panties!"
@@ -437,7 +443,7 @@ label demonstrate_tactic(position=""):
         show screen bld1
         with d3
 
-        if cho_quidditch_bottom in ["skirt_short","skirt_long"]:
+        if cho_quid.bottom in ["skirt_short","skirt_long"]:
             g4 "Yes, fantastic!"
             g9 "You have very cute panties, girl!"
             call cho_main("*Uhm*...{w} Thank you, [cho_genie_name].","annoyed","base","base","down", ypos="head")
@@ -467,7 +473,7 @@ label demonstrate_tactic(position=""):
         call cho_main("*Uhm*...{w} Thank you, Sir.","soft","base","sad","mid", ypos="head")
 
 
-    $ quidditch_position = position
+    $ cho_quid.position = position
 
     return
 

@@ -2,17 +2,17 @@
 
 # Started first training match against Hufflepuff
 
-label start_training_match:
+label cc_ht_start:
 
     call cho_main("","base","base","base","mid", xpos="right", ypos="base", trans="fade")
 
     # First Hufflepuff match.
-    if huffl_matches_won == 0:
+    if cc_ht.win_counter == 0:
 
         # Intro
-        if huffl_match_counter == 0:
+        if cc_ht.match_counter == 0:
 
-            $ huffl_match_counter += 1 # Stat counter
+            $ cc_ht.match_counter += 1 # Stat counter
 
             m "So, when will those Quidditch matches take place?"
             call cho_main("We could arrange one for today. Just for practice, against Hufflepuff.","open","base","base","R")
@@ -26,7 +26,7 @@ label start_training_match:
         # Repeated
         else:
 
-            $ huffl_match_counter += 1 # Stat counter
+            $ cc_ht.match_counter += 1 # Stat counter
 
             m "Time for another practice match don't you think?"
             call cho_main("I’ll try my best, [cho_genie_name].","base","base","base","mid")
@@ -36,9 +36,9 @@ label start_training_match:
 
 
     # Second Hufflepuff match.
-    elif huffl_matches_won == 1:
+    elif cc_ht.win_counter == 1:
 
-        $ huffl_match_counter += 1 # Stat counter
+        $ cc_ht.match_counter += 1 # Stat counter
 
         m "Ready to kick some badger ass again?"
         call cho_main("Absolutely!","smile","narrow","angry","mid")
@@ -50,11 +50,12 @@ label start_training_match:
     call cho_walk(action="leave", speed=2)
 
     $ cho_busy = True
-    if quidditch_commentator == "hermione": # Hermione has to commentate.
+    if cho_quid.commentator == "hermione": # Hermione has to commentate.
         $ hermione_busy = True
-    $ quidditch_match_in_progress = True
+    $ cho_quid.in_progress = True
 
     jump main_room
+
 
 # Check if Cho won or lost the practice game.
 label quidditch_match_return:
@@ -75,32 +76,33 @@ label quidditch_match_return:
 
 
     # Hufflepuff Match
+    if cc_ht.match_counter == 1:
+        jump cc_ht_return_E1 # No commentator.
 
-    # First practice game.
-    if huffl_matches_won == 0:
+    # First win, can fail.
+    if cc_ht.win_counter == 0:
+
         # Win
-        if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id and quidditch_position == "above":
-            $ huffl_matches_won = 1
-            jump hufflepuff_practice_win_1
+        if cho_quid.bottom == "skirt_short" and cho_quid.position == "above" and cho_whoring >= 3:
+            $ cc_ht.win_counter = 1
+            $ cho_quid.lock_tactic = True
+            jump cc_ht_return_E2
+
         # Lose
         else:
-            jump hufflepuff_practice_lost
+            jump cc_ht_return_fail
 
-    # Second practice game.
+    # Second win.
     else:
-        # Win
-        if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id and quidditch_position == "above" and cho_whoring >= 3:
-            $ huffl_matches_won = 2
-            $ lock_cho_training = True
-            jump hufflepuff_practice_win_2
-        # Lose
-        else:
-            jump hufflepuff_practice_lost
+
+        $ cc_ht.win_counter = 2
+        $ cho_quid.lock_training = True
+        jump cc_ht_return_E3
 
 
 
 # Lost first hufflepuff match.
-label hufflepuff_practice_lost:
+label cc_ht_return_fail:
 
     call cho_main("...", mouth="upset", face="neutral", xpos="mid", ypos="base")
     m "So, how did it go?"
@@ -108,28 +110,19 @@ label hufflepuff_practice_lost:
     m "What was the problem?"
 
     # Low whoring response
-    if huffl_matches_won == 1 and cho_whoring < 3:
-        if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id:
-            call cho_main("I couldn't focus on the game!","angry","closed","angry","mid")
-            call cho_main("This ridiculously short skirt! The whole match it kept on slipping over my bum!","soft","narrow","angry","mid")
-            m "So what? It wasn't an issue before... Just ignore it..."
-            call cho_main("And let everybody ogle at my bare ass?","open","angry","angry","mid")
-            m "Aren't you still wearing panties?"
-            call cho_main("Of course I am! And I don't intend to show them to the whole school!","annoyed","narrow","angry","mid")
-            call cho_main("Just enough to let Cedric have a peek...","soft","narrow","angry","R")
-            g4 "\"Just a peek\" won't do, [cho_name]! You have to reveal everything!"
-            g4 "If the entire school knows the colour of your panties, that's when you have done your task well!"
-            call cho_main("You are asking too much of me, [cho_genie_name]! I'd never be able to do such a thing...","annoyed","narrow","base","mid")
-            m "Clearly you just aren't ready yet. We'll get you to be more confident on your broom soon enough..."
-            g9 "With your panties on display!"
-        else:
-            call cho_main("I'm not really sure...","soft","narrow","sad","R")
-            call cho_main("Our tactics worked so well last time!","soft","base","sad","mid")
-            call cho_main("It might have been a bad idea to change them, don't you think so too, [cho_genie_name]?","annoyed","narrow","sad","mid")
-            m "Hmmm..."
-            m "Yes, maybe we should try again with out previous tactics."
-            call cho_main("Yes, [cho_genie_name].","soft","narrow","sad","mid")
-
+    if cho_quid.bottom == "skirt_short" and cho_whoring < 3:
+        call cho_main("I couldn't focus on the game!","angry","closed","angry","mid")
+        call cho_main("This ridiculously short skirt! The whole match it kept on slipping over my bum!","soft","narrow","angry","mid")
+        m "So what? Just ignore it..."
+        call cho_main("And let everybody ogle at my bare ass?","open","angry","angry","mid")
+        m "Aren't you still wearing panties?"
+        call cho_main("Of course I am! And I don't intend to show them to the whole school!","annoyed","narrow","angry","mid")
+        call cho_main("Just enough to let Cedric have a peek...","soft","narrow","angry","R")
+        g4 "\"Just a peek\" won't do, [cho_name]! You have to reveal everything!"
+        g4 "If the entire school knows the colour of your panties, that's when you have done your task well!"
+        call cho_main("You are asking too much of me, [cho_genie_name]! I'd never be able to do such a thing...","annoyed","narrow","base","mid")
+        m "Clearly you just aren't ready yet. We'll get you to be more confident on your broom soon enough..."
+        g9 "With your panties on display!"
         call cho_main("(...)","annoyed","narrow","angry","mid")
         call cho_main("It's getting late...","soft","narrow","base","R")
         call cho_main("If you don't mind I'd like to go to bed now.","open","base","angry","mid")
@@ -137,12 +130,12 @@ label hufflepuff_practice_lost:
         call cho_main("Have a good night, Sir.","soft","closed","base","mid")
 
     # Position response
-    elif quidditch_position != "above":
+    elif cho_quid.position != "above":
         call cho_main("Our tactic didn't work, [cho_genie_name].","annoyed","narrow","sad","mid")
         call cho_main("Cedric just ignored me for most of the game, and ended up catching the snitch...","soft","narrow","sad","R")
         m "Were you trying to distract him enough?"
 
-        if cho_class.get_cloth("bottom").id == cho_cloth_schoolskirt3.id:
+        if cho_quid.bottom == "skirt_short":
             call cho_main("Of course I was! I tried to let him have a peek up my skirt, but I'm not sure he even noticed that I was wearing one.","soft","narrow","angry","mid")
             m "Interesting..."
             m "Maybe we need to tackle this situation from another angle."
@@ -173,7 +166,7 @@ label hufflepuff_practice_lost:
 
     $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
 
-    if huffl_matches_won == 0:
+    if cc_ht.win_counter == 0:
         $ cho_mood += 5
     else:
         $ cho_mood += 8
@@ -184,10 +177,85 @@ label hufflepuff_practice_lost:
 
 
 
-# Won first Hufflepuff match.
-label hufflepuff_practice_win_1:
+label cc_ht_return_E1:
+    call cho_main("[cho_genie_name], there's been a disaster!","scream","closed","angry","mid", xpos="mid", ypos="base")
+    m "Off to a good start..."
+    call cho_main("[cho_genie_name], something terrible happened to Lee Jordan!","quiver","narrow","sad","mid")
+    m "Lee Jordan?{w=0.5} Is that a famous basketball player I'm not aware of?"
+    call cho_main("What?{w=0.5} No Sir, Lee is our quidditch commentator!","soft","narrow","base","mid")
+    call cho_main("He got hit in the throat by a bludger!","quiver","base","raised","down")
+    call cho_main("Madam Pomfrey says he'll be able to talk in a few days, but yelling is out of the picture for the rest of the season.","soft","closed","sad","mid")
+    call cho_main("What are we going to do! We can't have a \"W.S.C.\" without a commentator!","soft","base","sad","mid")
+    m "Can't you play without one?"
+    call cho_main("No. Someone has to announce the points after all.","annoyed","narrow","base","mid")
+    m "I see..."
 
-    call cho_main("...","annoyed","narrow","angry","R",xpos="mid",ypos="base")
+    label who_shall_commentate:
+    menu:
+        m "How about we ask..."
+        "\"Hermione\"":
+            pass
+        "\"Astoria\"" if astoria_unlocked:
+            call cho_main("That brat?","scream","shocked","raised","mid")
+            call cho_main("Not a chance!","open","closed","angry","mid")
+            call cho_main("Besides, [cho_genie_name], did you forget that she's a slytherin?","open","angry","angry","mid")
+            m "Right. No slytherins. Got it."
+            m "How about..."
+            jump who_shall_commentate
+        "\"Luna\"" if luna_unlocked:
+            call cho_main("Luna? Luna Lovegood, [cho_genie_name]?","open","narrow","raised","mid")
+            call cho_main("Knowing her she'd probably commentate the grass as it's growing...","open","closed","raised","mid")
+            call cho_main("Trust me, [cho_genie_name], Luna would be a terrible choice!","soft","angry","angry","mid")
+            m "Fine. How about..."
+            jump who_shall_commentate
+
+    call cho_main("Hermione Granger?","scream","shocked","raised","mid")
+    call cho_main("She wouldn't know the first thing about quidditch!","open","angry","angry","mid")
+    call cho_main("You can't pick her!","upset","closed","raised","mid")
+    m "Now, now... Don't underestimate Miss Granger..."
+    m "Why don't we just ask her first?"
+    call cho_main("Absolutely not! I won't talk to that Gryffindor skunk ever again!","scream","closed","angry","mid")
+    call cho_main("Didn't I make it clear that I don't want her to \"ever\" be involved in Quidditch again?","annoyed","narrow","angry","mid")
+    m "Alright, are there any other students who know Quidditch rules well enough to take this... Jordan boy's place?"
+    call cho_main("...","pout","base","base","down")
+    m "Well?"
+    call cho_main("Well, most of them would be on one of the Quidditch teams...","soft","base","raised","R")
+    call cho_main("But Granger wouldn't know anything about Quidditch either!","pout","narrow","angry","mid")
+    m "Do you know anybody else suited for the job?"
+    call cho_main("{size=-4}Probably anyone at this point...{/size}","pout","base","raised","R")
+    call cho_main("(Wait a minute...)","pout","wide","raised","mid")
+    call cho_main("No...","smile","base","base","mid") #Mischievous smile
+    g9 "I'll ask her... What's the worst that could happen..."
+    call cho_main("Yeah, actually you're probably right...","angry","angry","angry","mid")
+    m "Don't worry she'll do a-{w=1.0}{nw}"
+    g4 "Wait... what did you say?"
+    call cho_main("I'm sure she'll do a heckin' good job!","smile","angry","angry","mid")
+    call cho_main("(She'll flub the whole thing and everyone will laugh at her.)","smile","angry","angry","R") #Mischievous smile
+    g9 "Well, great then. I'll ask her in that case!"
+    call cho_main("(She'll be humiliated and no one will ever see her as anything but a showoff that knows nothing!)","quiver","angry","angry","down")
+    call cho_main("(I can already picture it...{w=0.8} the whole school laughing...)","quiver","base","raised","up")
+    m "Miss Chang?"
+    call cho_main("Oh, thank you for handling it professor! Boy, you took a load off my mind...","open","base","base","mid",trans="hpunch")
+    call cho_main("I'll be heading back to classes now, if you don't mind.","soft","closed","base","mid")
+
+    # Cho leaves.
+    call cho_walk(action="leave", speed=2)
+
+    call bld
+    m "(...)"
+
+    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
+
+    $ cho_busy = True
+    $ cho_quid.lock_practice = True # Can't progress until finding a commentator.
+
+    $ cc_ht.return_E1 = True
+
+    jump main_room
+
+
+label cc_ht_return_E2:
+    call cho_main("...","annoyed","narrow","angry","R", xpos="mid", ypos="base")
     m "You seem a little on edge..."
     call cho_main("On edge?","scream","shocked","angry","mid")
     call cho_main("Of course I'm on edge! I've never felt so humiliated in my life!","angry","wide","angry","mid")
@@ -240,14 +308,14 @@ label hufflepuff_practice_win_1:
 
     $ cho_busy = True
 
+    $ cc_ht.return_E2 = True
+
     jump main_room
 
 
+label cc_ht_return_E3:
 
-
-label hufflepuff_practice_win_2:
-
-    call cho_main("I hate you, I hate you, I HATE YOU!","scream","closed","angry","mid",xpos="mid",ypos="base",trans="hpunch")
+    call cho_main("I hate you, I hate you, I HATE YOU!","scream","closed","angry","mid", xpos="mid", ypos="base",trans="hpunch")
     m "Did you catch that gold thing?"
     call cho_main("I've never felt so humiliated in my entire life!","open","angry","angry","R")
     g4 "Did you win or what?{w} I'm on the edge of my seat here, girl!"
@@ -273,4 +341,99 @@ label hufflepuff_practice_win_2:
 
     $ cho_busy = True
 
+    $ cc_ht.return_E3 = True
+
     jump main_room
+
+
+
+### Quidditch Commentator Quests ###
+
+label cc_ht_hermione_commentator:
+    call her_main(xpos="mid", ypos="base",trans="fade")
+
+    m "[hermione_name], how much do you know about Quidditch?"
+    call her_main("[genie_name], I mean, I've taken flying lessons... they're mandatory.", "open", "base", "base", "R")
+    m "Ah, okay... and here I was hoping that you'd be able to commentate this years quidditch games..."
+    call her_main("Me, wasting time on something as stu...{w=0.8}{nw}", "base", "closed", "base", "mid")
+    call her_main("Wait...{w=0.6} What did you say?", "open", "squint", "base", "mid")
+    m "I was going to ask you if you'd commentate this years quidditch games..."
+    call her_main("You want me... to commentate this years wizarding school cup?", "open", "wide", "base", "mid")
+    call her_main("I'd be honoured, sir!", "scream", "closed", "base", "mid",trans="hpunch")
+    call her_main("Quidditch has always been one of my passions, to be able to commentate it...", "open", "base", "angry", "mid")
+    call her_main("Not to mention getting to make all the announcements...", "smile", "base", "base", "R")
+    call her_main("The speeches...", "grin", "happy", "base", "mid")
+
+    if her_whoring < 18:
+        call her_main("The paper...", "soft", "narrow", "annoyed", "up")
+        call her_main("The {image=textheart}{i}preparation{/i}{image=textheart}...", "open_tongue", "narrow", "base", "up")
+    else:
+        call her_main("Everybody will be focused on me...", "soft", "narrow", "annoyed", "up")
+
+    call her_main("I accept!", "scream", "closed", "angry", "mid",trans="hpunch")
+    g4 "I thought you just said you didn't..."
+    call her_main("Cho will be so mad!", "crooked_smile", "happy", "base", "mid")
+    m "I see..."
+    g9 "Congratulations then, [hermione_name]! You got the j..."
+    call her_main("Ah!!! I better start lear...{w=0.8} I mean, preparing my opening speech!", "open", "wide", "base", "mid",trans="hpunch")
+
+    call her_walk(action="leave", speed=1.7)
+
+    call bld
+    m "Aaaa-nd, she's gone..."
+    m "I better tell Cho about the...{w=0.8} news."
+
+    $ hermione_busy = True
+    $ cho_quid.commentator = "hermione"
+    $ cc_ht.hermione_commentator = True
+
+    jump main_room
+
+
+
+### Cho Talk ###
+
+label cc_ht_talk:
+
+    call cho_main(xpos="mid", ypos="base", trans="fade")
+
+    if cc_ht.return_E1 and cho_quid.commentator == None:
+        call cho_main("Have you asked Hermione to be our commentator yet?","soft","base","base","mid")
+        m "Not yet."
+        call cho_main("We can't practice if we don't have a commentator.","soft","base","sad","R")
+        call cho_main("Please ask her, Sir.","annoyed","base","sad","mid")
+
+    elif cho_quid.commentator == "hermione" and cho_quid.lock_practice: # mandatory
+        g9 "I've got great news for you! I found us a new commentator!"
+        call cho_main("Is it Hermione?","soft","closed","base","mid")
+        g9 "Yes! Very good guess!"
+        call cho_main("It wasn't a guess, [cho_genie_name]. We've discussed her already.","pout","narrow","angry","mid")
+        m "Oh, sure..."
+        call cho_main("But I'm surprised she even took up the task...","pout","base","base","R")
+        g9 "Right away. No questions asked."
+        call cho_main("And little miss Granger wasn't even the slightest bit intimidated by her new obligation?","open","base","raised","mid")
+        g9 "Not at all. She seemed rather joyous of her situation."
+        call cho_main("Oh...","pout","base","sad","down") # Bit sad.
+        call cho_main("Well she just doesn't know what's coming towards her yet!","annoyed","angry","angry","mid") # Mischievous smile
+        call cho_main("{size=-4}I hope she gets hit by a bludger as well! I might even tell the boys to aim at her once or twice!{/size}","angry","angry","angry","R") # Small text.
+        g9 "Make sure you tell everyone your great and very proactive headmaster sorted everything out..."
+        call cho_main("Oh, I will. Thank you very much!","soft","base","base","mid")
+        call cho_main("(...)","pout","base","base","R")
+
+        $ cho_quid.lock_practice = False
+
+    elif cc_ht.win_counter == 1 and cho_whoring < 3: # Won once. Confidence not high enough.
+        call cho_main("Do I really have to wear the skirt for the game?","open","base","sad","mid")
+        call cho_main("Everyone can see right under it.","soft","base","sad","down")
+        m "You say that like it's a bad thing..."
+        call cho_main("Because it is!","angry","narrow","angry","mid")
+        call cho_main("I'm not some harlot that likes to give everyone a glimps of her panties.","open","narrow","angry","R")
+        m "You aren't yet..."
+        call cho_main("What do you mean, Sir?","annoyed","narrow","angry","mid")
+
+    else:
+        call cho_main("I'm confident that we can win this, [cho_genie_name].","smile","base","base","mid")
+
+    call cho_main(xpos="base", ypos="base", trans="fade")
+
+    jump cho_requests

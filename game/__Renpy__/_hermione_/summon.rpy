@@ -438,10 +438,8 @@ label hermione_talk:
             # After talking to Snape.
             jump cho_intro_E3
 
-        "-Ask Hermione to commentate the game-" if quidditch_commentator == "talk_with_hermione":
-            $ quidditch_commentator = "talk_with_cho"
-            jump quidditch_commentator_event_2
-
+        "-Ask Hermione to commentate the game-" if cc_ht.return_E1 and not cc_ht.hermione_commentator:
+            jump cc_ht_hermione_commentator
         "-Ask Hermione to commentate the game again-\n...again" if cc_st.hermione_E1 and not cc_st.hermione_blackmail:
             jump cc_st_hermione_blackmail
 

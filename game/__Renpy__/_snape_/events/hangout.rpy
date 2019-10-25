@@ -39,7 +39,8 @@ label snape_hangout:
     # Cho
     if cho_intro.E2_complete and not ss_he.cho_E1:
         jump ss_he_cho_E1
-    if snape_quid_help == True and quidditch_book_1_ITEM.unlocked == False and cho_quiz_complete == False: # After failing the Quiz.
+    if cho_quiz.lost and not quidditch_book_1_ITEM.unlocked and not cho_quiz.complete and not ss_he.cho_E2:
+        # After failing the Quiz.
         jump ss_he_cho_E2
 
 

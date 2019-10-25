@@ -15,20 +15,18 @@ label summon_cho:
     menu:
 
         # Main Matches
-        "Start Hufflepuff Match" if (huffl_matches_won == 2 and cho_tier == 1):
-            $ lock_cho_training = True
-            $ lock_cho_practice = True
-            $ main_match_1_stage = "start"
-            $ cc_event_pause  += 1  # Event starts on the next day.
-            $ cc_summon_pause += 1 # Can't be summoned until next event.
+        "Start Hufflepuff Match" if (cc_ht.win_counter >= 2 and cho_tier == 1 and hufflepuff_match == ""):
             jump start_hufflepuff_match
 
         "Start Slytherin Match" if (cc_st.win_counter >= 2 and cho_tier == 2 and slytherin_match == ""):
             jump start_slytherin_match
 
+        #"Start Slytherin Match" if (cc_gt.win_counter >= 2 and cho_tier == 3 and gryffindor_match == ""):
+        #    jump start_gryffindor_match
+
 
         # Talk
-        "-Talk-" if cho_training_unlocked:
+        "-Talk-":
             if not cho_chatted:
                 if cho_mood <= 3:
                     $ cho_chatted = True
@@ -42,7 +40,7 @@ label summon_cho:
 
 
         # Quidditch Training
-        "-Training-" if not lock_cho_training:
+        "-Training-" if not cho_quid.lock_training:
             if cho_mood > 0:
                 m "Ready to get back to training?"
                 if cho_mood >= 5:
@@ -75,12 +73,13 @@ label summon_cho:
                 call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like it today...","upset","base","sad","mid")
                 jump cho_requests
 
-        "{color=#858585}-Public Requests-{/color}" if not daytime and cho_requests_unlocked:
-            call nar(">Public requests are available during the daytime only.")
-            jump cho_requests
-
-        "{color=#858585}-Hidden-{/color}" if not cho_requests_unlocked:
-            call nar(">You haven't unlocked this feature yet.")
+        "{color=#858585}-Public Requests-{/color}" if not daytime or not cho_requests_unlocked or not cho_favors_unlocked:
+            if not cho_favors_unlocked:
+                m "I need to help her with her Quidditch training, before I can ask for something like this."
+            elif not cho_requests_unlocked:
+                call nar(">You haven't unlocked this feature yet.")
+            elif not daytime:
+                call nar(">Public requests are available during the daytime only.")
             jump cho_requests
 
 
@@ -198,16 +197,14 @@ label cho_talk:
     menu:
         #"-Working-":
 
-        "-Quidditch Commentator-" if quidditch_commentator == "talk_with_cho":
-            $ lock_cho_practice = False
-            $ quidditch_commentator = "hermione"
-            jump quidditch_commentator_event_3
-
-        "-Discuss Quidditch Training-" if cho_tier == 2 and not lock_cho_training:
-            jump cc_st_talk
+        "-Discuss Quidditch Training-" if not cho_quid.lock_training:
+            if cho_tier == 1:
+                jump cc_ht_talk
+            elif cho_tier == 2:
+                jump cc_st_talk
 
         # Naming
-        "\"Address me only as\"":
+        "\"Address me only as\"" if cho_training_unlocked:
             menu:
                 "\"Professor\"":
                     $ cho_genie_name = "Professor"
@@ -232,7 +229,7 @@ label cho_talk:
             call cho_main("Of course, [cho_genie_name]...",face="neutral")
             jump cho_talk
 
-        "\"From now on I will refer to you as\"":
+        "\"From now on I will refer to you as\"" if cho_training_unlocked:
             menu:
                 "\"Miss Chang\"":
                     $ cho_name = "Miss Chang"

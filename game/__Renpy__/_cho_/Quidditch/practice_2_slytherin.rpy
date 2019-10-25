@@ -10,7 +10,7 @@ label cc_st_start:
     if cc_st.match_counter == 0:
         m "Alright, we need to try out those new tactics!"
         g4 "There is a lot at stake here! We can't afford to lose even a single game!"
-        g4 "We can't show any weakness to those \"Slytherins\"!"
+        g4 "We can't show any weakness to those \"Slytherins!\""
         call cho_main("Is my success really that important to you, Sir?", "smile", "base", "base", "mid")
         call cho_main("I'm glad!", "smile", "closed", "base", "mid")
         m "Are you ready [cho_name]?"
@@ -24,12 +24,12 @@ label cc_st_start:
         call cho_main("Show me the money?", "open", "narrow", "raised", "mid") # wink
         g4 "Say it like you mean it, brother!"
         call cho_main("What?", "angry", "wide", "base", "mid")
-        g4 "Show me the money!" # loud
+        g4 "{size=+5}Show me the money!{/size}" # loud
         if cc_pf_strip.points >= 2:
             call cho_main("(He knows I'm a girl...why would he say that?)", "annoyed", "narrow", "angry", "mid")
         else:
             call cho_main("(I'm a girl...why would he say that?)", "annoyed", "narrow", "angry", "mid")
-        g4 "Show me the money!" # louder
+        g4 "{size=+10}Show me the money!{/size}" # louder
         call cho_main("May I leave, Sir?", "soft", "narrow", "sad", "mid")
         g9 "What you gonna do, [cho_name]?"
         call cho_main("Leave?", "annoyed", "narrow", "base", "mid")
@@ -46,8 +46,8 @@ label cc_st_start:
 
         $ cho_busy = True
         $ hermione_busy = True
-        $ quidditch_commentator = None # Hermione won't show up.
-        $ quidditch_match_in_progress = True
+        $ cho_quid.commentator = None # Hermione won't show up.
+        $ cho_quid.in_progress = True
         $ cc_st.match_counter += 1 # Stat counter
 
         jump main_room
@@ -60,7 +60,7 @@ label cc_st_start:
         call cho_main("Professor Tonks, wasn't it?", "smile", "base", "base", "mid")
         m "Yep."
 
-        if quidditch_commentator == "tonks":
+        if cho_quid.commentator == "tonks":
             call cho_main("And Professor Tonks will be commentating the match as well?", "soft", "base", "raised", "mid")
             m "That's correct."
             call cho_main("*Hmm*... I have my doubts about her, if I'm honest...", "annoyed", "base", "sad", "R")
@@ -78,7 +78,7 @@ label cc_st_start:
     # Repeat.
     else:
         m "Ready for your next match, [cho_name]?"
-        if quidditch_commentator == "tonks":
+        if cho_quid.commentator == "tonks":
             call cho_main("[cho_genie_name], is Professor Tonks still going to commentate the match?", "soft", "narrow", "sad", "mid")
             m "Yes. Hermione still hasn't changed her mind about it."
             call cho_main("Alright...", "annoyed", "base", "raised", "down")
@@ -96,12 +96,12 @@ label cc_st_start:
     call cho_walk(action="leave", speed=2)
 
     $ cho_busy = True
-    if quidditch_commentator == "hermione":
+    if cho_quid.commentator == "hermione":
         $ hermione_busy = True
-    elif quidditch_commentator == "tonks":
+    elif cho_quid.commentator == "tonks":
         $ tonks_busy = True
 
-    $ quidditch_match_in_progress = True
+    $ cho_quid.in_progress = True
     $ cc_st.match_counter += 1 # Stat counter
 
     jump main_room
@@ -114,14 +114,30 @@ label cc_st_return:
 
     $ ss_summon_pause = 0 # Can drink with Snape again, now that Slyth plays.
 
-    if quidditch_commentator == "tonks":
-        jump cc_st_return_E2
+    # First win; can fail.
+    if cc_st.win_counter == 0:
 
-    elif quidditch_commentator == "hermione":
-        jump cc_st_return_E3
+        # Win
+        if cho_quid.bottom in ["pants_long","pants_short"] and cho_quid.coat == False and cho_quid.position == "front":
+            $ cc_st.win_counter = 1
+            $ cho_quid.lock_tactic = True
+            jump cc_st_return_E2
 
+        # Lose
+        else:
+            jump cc_st_return_fail
+
+    # Second win; can fail.
     else:
-        jump cc_st_return_fail
+
+        # Win
+        if cho_quid.commentator == "hermione":
+            $ cc_st.win_counter = 2
+            jump cc_st_return_E3
+
+        # Lose
+        else:
+            jump cc_st_return_fail
 
 
 label cc_st_return_E1:
@@ -196,7 +212,7 @@ label cc_st_return_E1:
     m "Why are you asking me?"
     m "Did you forget to tell her about today's training?"
     call cho_main("She knew very well that she had to be there!", "soft", "narrow", "base", "down")
-    call cho_main("And so did those braindead \"Slytherins\".", "annoyed", "narrow", "angry", "mid")
+    call cho_main("And so did those braindead \"Slytherins.\"", "annoyed", "narrow", "angry", "mid")
     call cho_main("Spineless cowards...", "annoyed", "narrow", "base", "R")
     call cho_main("They have no interest in training against us!", "soft", "base", "base", "mid")
     call cho_main("Because why should they... They'll win anyway!", "angry", "wide", "base", "mid")
@@ -236,7 +252,7 @@ label cc_st_return_E1:
     $ hermione_busy = True
     $ cho_busy = True
     $ cho_mood += 6
-    $ lock_cho_practice = True
+    $ cho_quid.lock_practice = True
 
     $ cc_st.return_E1 = True # Triggers Hermione's return next day.
 
@@ -246,13 +262,18 @@ label cc_st_return_E1:
 label cc_st_return_E2:
     "Dev Note" "Return event 2 - Event not yet written."
     "Dev Note" "You picked the right clothing combination, but Hermione is not yet a commentator."
-
+    # TODO: add writing.
     # TODO: lock Cho's quidditch clothing and tactic.
     # They worked good enough so
 
     # Cho mentions that Tonks might be an issue, and would like to try one more time.
 
-    $ hermione_busy = True
+    if cho_quid.commentator == "hermione":
+        $ her_mood += 6
+        $ hermione_busy = True
+    if cho_quid.commentator == "tonks":
+        $ tonks_busy = True
+
     $ cho_busy = True
 
     $ cc_st.return_E2
@@ -263,9 +284,14 @@ label cc_st_return_E2:
 label cc_st_return_E3:
     "Dev Note" "Return event 3 - Event not yet written."
     "Dev Note" "You picked the right clothing combination, and Hermione is not yet a commentator."
+    # TODO: add writing.
 
-    $ her_mood += 6
-    $ hermione_busy = True
+    if cho_quid.commentator == "hermione":
+        $ her_mood += 6
+        $ hermione_busy = True
+    if cho_quid.commentator == "tonks":
+        $ tonks_busy = True
+
     $ cho_busy = True
 
     $ cc_st.return_E3
@@ -275,9 +301,10 @@ label cc_st_return_E3:
 
 label cc_st_return_fail:
     "Dev Note" "Failed match, add writing."
+    # TODO: add writing.
 #    m "Well, how did it go?"
 #    cho "We lost, Sir."
-#    elif quidditch_commentator == "tonks":
+#    elif cho_quid.commentator == "tonks":
 #        cho "Could we please get somebody else to commentate the game?"
 #        m "Is Miss Tonks not good enough?"
 #        cho "No, she's great..."
@@ -285,9 +312,13 @@ label cc_st_return_fail:
 #        m "So what's the issue?"
 #        cho "She's not only distracting those \"Slytherins\", but my team as well."
 
-    $ her_mood += 6
+    if cho_quid.commentator == "hermione":
+        $ her_mood += 6
+        $ hermione_busy = True
+    if cho_quid.commentator == "tonks":
+        $ tonks_busy = True
+
     $ cho_mood += 6
-    $ hermione_busy = True
     $ cho_busy = True
 
     jump main_room
@@ -384,7 +415,7 @@ label cc_st_snape_E1:
     m "The little asian?"
     call sna_main("Yes, Miss Chang.","snape_40")
     m "..."
-    call sna_main("I wish her best of luck against my team of \"Slytherins\".","snape_02")
+    call sna_main("I wish her best of luck against my team of \"Slytherins.\"","snape_02")
     call sna_main("She'll need it.","snape_45")
     g4 "What kind of game are you playing?"
     call sna_main("I'm sorry?","snape_38")
@@ -483,7 +514,7 @@ label cc_st_tonks_E1:
         m "And how would I get her to agree to that?"
         call ton_main("Well... *Uhm*...","upset","base","sad","down", hair="horny")
         m "It was difficult enough to get her to strip just for me..."
-        m "She only did it because I helped her win against \"Hufflepuff\"."
+        m "She only did it because I helped her win against \"Hufflepuff.\""
         call ton_main("So that was your idea with the skirt? Very clever.","horny","base","worried","mid")
         m "If you help her against \"Slytherin\"..."
         g9 "Maybe I can arrange something with the two of you?"
@@ -551,7 +582,7 @@ label cc_st_tonks_E1:
 
     # You tell Tonks about Hermione.
     m "..."
-    if quidditch_commentator == None:
+    if cho_quid.commentator == None:
         m "That's not all, though. There's something else I need your help with."
         call ton_main("You can't expect me to fix all of your problems, Genie.","base","base","base","mid")
         m "It's about Hermione's role as a commentator..."
@@ -590,10 +621,10 @@ label cc_st_tonks_E1:
     call ton_main("It's always third or nothing with us Puffs.","open","base","sad","R")
     m "(Puffs?)"
 
-    if quidditch_commentator == None:
+    if cho_quid.commentator == None:
         call ton_main("Anyhow, I shall talk to Miss Granger...","base","base","base","mid")
         call ton_main("Should she still not want to commentate, then I shall fill in for her.","open","base","base","L")
-        $ quidditch_commentator = "tonks"
+        $ cho_quid.commentator = "tonks"
     else:
         call ton_main("Should Miss Granger change her mind again, I can fill in for her.","base","base","base","mid")
         call ton_main("I'm a great talker, as you probably already know.","smile","happyCl","base","mid")
@@ -609,7 +640,7 @@ label cc_st_tonks_E1:
         ">You finish your drinks before calling it a night."
 
     $ tonks_busy = True
-    $ lock_cho_practice = False
+    $ cho_quid.lock_practice = False
 
     $ cc_st.tonks_E1 = True
 
@@ -640,7 +671,7 @@ label cc_st_hermione_blackmail:
                 her "I guess I don't..." # upset
                 m "Your loss..."
 
-            "\"You could make fun of those \"Slytherins\".\"":
+            "\"You could make fun of those \"Slytherins.\" \"":
                 if her_tier >= 5:
                     her "That sounds childish, [genie_name]."
                     m "Does it now?"
@@ -793,7 +824,7 @@ label cc_st_hermione_blackmail:
     her "Blackmailing? Me?!" # chocked
     m "I tried..."
     her "So that's what's going on here. You two are scheming against me!" # angry
-    cho "Come on, Hermione. You can't be that scared of those \"Slytherins\". Don't be such a coward..."
+    cho "Come on, Hermione. You can't be that scared of those \"Slytherins.\" Don't be such a coward..."
     her "I am not!"
     cho "Please! We need somebody to commentate."
     her "I won't do it! And neither of you can change my mind on this!"
@@ -855,12 +886,12 @@ label cc_st_hermione_blackmail:
     her "Both matches!"
     m "What?"
     her "The \"Gryffindor\" match as well! The one after that, should \"Ravenclaw\" even get that far..."
-    cho "Oh no you won't! You'd be all in favour of \"Gryffindorn\"!"
+    cho "Oh no you won't! You'd be all in favour of \"Gryffindorn!\""
     her "Yes I would. And I'll make sure that you lose."
     m "Great. Finally we can get on with this..."
     m "Miss Granger, you're expected to appear during the practice matches as commentator."
     her "..."
-    g9 "Every time you don't, I'll take 50 points from \"Gryffindorn\"!"
+    g9 "Every time you don't, I'll take 50 points from \"Gryffindorn!\""
     her "That's just typical of you!"
     m "Make sure to be present..."
     her "..."
@@ -886,7 +917,7 @@ label cc_st_hermione_blackmail:
     $ cho_busy = True
 
     $ cc_st.hermione_blackmail = True
-    $ quidditch_commentator = "hermione"
+    $ cho_quid.commentator = "hermione"
 
     jump main_room
 
@@ -899,14 +930,14 @@ label cc_st_talk:
     call cho_main(xpos="mid", ypos="base", trans="fade")
 
     # you haven't talked to Tonks yet.
-    if lock_cho_practice:
+    if cho_quid.lock_practice:
         call cho_main("Have you gotten those \"Slytherin\" pigs to play yet?","open","narrow","base","mid")
         m "Not yet, but I'm on it."
         call cho_main("Please just hurry up, Sir.","annoyed","narrow","base","mid")
         call cho_main("We need to practice...","annoyed","narrow","sad","R")
 
     # played one match with Tonks.
-    elif cc_st.match_counter >= 2 and quidditch_commentator == "tonks" and cc_pf_strip.points < 3 and not cc_st.hermione_blackmail:
+    elif cc_st.match_counter >= 2 and cho_quid.commentator == "tonks" and cc_pf_strip.points < 3 and not cc_st.hermione_blackmail:
         call cho_main("So, what is Granger up to?","soft","base","base","mid")
         call cho_main("Is she still too frightened to face those jolly \"Slytherins?\"","open","base","base","R")
         m "Well, we have Tonks to do that now..."
@@ -918,10 +949,10 @@ label cc_st_talk:
         call cho_main("Those stupid idiots can barely sit on their brooms because of her...","annoyed","narrow","angry","mid")
         m "Why? Is the wood too hard?"
         m "(When do those people realize that carpets are more comfortable...)"
-        call cho_main("We need to get that \"Gryffindor\" skunk to peeve those \"Slytherins\", so we can get past them!","annoyed","base","angry","mid")
+        call cho_main("We need to get that \"Gryffindor\" skunk to peeve those \"Slytherins,\" so we can get past them!","annoyed","base","angry","mid")
 
     # after strip and before blackmailing Hermione.
-    elif quidditch_commentator == "tonks" and cc_pf_strip.points >= 3 and not cc_st.hermione_blackmail:
+    elif cho_quid.commentator == "tonks" and cc_pf_strip.points >= 3 and not cc_st.hermione_blackmail:
         m "Would you be willing to help me change Hermione's mind?"
         call cho_main("Of course? And How?","base","base","base","mid")
         m "With-"

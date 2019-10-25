@@ -130,13 +130,8 @@ label quests:
     if cc_event_pause == 0:
         if daytime:
 
-            if huffl_matches_won == 1 and quidditch_commentator == None:
-                $ lock_cho_practice = True
-                $ quidditch_commentator = "talk_with_hermione"
-                jump quidditch_commentator_event_1
-
-            if main_match_1_stage == "start":
-                $ main_match_1_stage = "return" # Triggers the return during the evening.
+            if hufflepuff_match == "start":
+                $ hufflepuff_match = "return" # Triggers the return during the evening.
                 jump hufflepuff_match
             if slytherin_match == "start":
                 $ slytherin_match = "return"
@@ -146,16 +141,16 @@ label quests:
             if cho_intro.E1_complete and not cho_intro.E2_complete:
                 jump cho_intro_E2
 
-            if quidditch_match_in_progress:
-                $ quidditch_match_in_progress = False
+            if cho_quid.in_progress:
+                $ cho_quid.in_progress = False
                 if cho_tier == 1: # Hufflepuff
                     jump quidditch_match_return
                 else: # Slytherin
                     jump cc_st_return
 
 
-            if main_match_1_stage == "return":
-                $ main_match_1_stage = "end"
+            if hufflepuff_match == "return":
+                $ hufflepuff_match = "end"
                 jump hufflepuff_match_return
             if slytherin_match == "return":
                 $ slytherin_match = "completed"
@@ -330,6 +325,45 @@ default cho_intro = quest_class(
     E3_complete = False, # 3rd visit, summon unlocked.
 )
 
+default cho_quid = quest_class(
+    E1_complete = False, #
+    E2_complete = False, #
+
+    position    = "",
+    commentator = None,
+
+    top           = "sweater",
+    bottom        = "pants_long",
+    coat          = True,
+    gloves        = True,
+
+    lock_training = False,
+    lock_practice = False,
+    lock_tactic   = False,
+    in_progress   = False,
+)
+
+default cho_quiz = quest_class(
+    intro_1 = False, #
+    intro_2 = False, #
+
+    correct_answers = 0,
+    checkpoint      = False,
+    lost            = False,
+    complete        = False,
+)
+
+default cc_ht = quest_class(
+    match_counter = 0,
+    win_counter   = 0,
+
+    return_E1 = False, # They now need a commentator.
+    return_E2 = False, # 1st match won.
+    return_E3 = False, # 2st match won.
+
+    hermione_commentator = False, # You ask Hermione to be the new commentator.
+)
+
 default cc_st = quest_class(
     match_counter = 0,
     win_counter   = 0,
@@ -380,7 +414,7 @@ default ss_he = quest_class(
     tonks_E2    = False, # Inform him that Tonks has joined you both.
     tonks_E3    = False, # Tonks is teaching DAtDA. Snape might use Veritaserum on her...
     cho_E1      = False, # You tell Snape that you have met Cho.
-    cho_E2      = False, #
+    cho_E2      = False, # Get some help with Quidditch.
 
     hermione_strip = False, # You invite Snape to watch Hermione strip.
 )

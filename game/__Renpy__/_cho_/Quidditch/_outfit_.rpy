@@ -15,7 +15,7 @@ label use_quidditch_pants_1:
     m "I know what I'm doing..."
     call cho_main("If you say so, [cho_genie_name].","base","base","base","mid")
 
-    $ cho_quidditch_bottom = "pants_long" # For testing.
+    $ cho_quid.bottom = "pants_long" # For testing.
 
     return
 
@@ -42,7 +42,7 @@ label use_quidditch_pants_2:
         call cho_main("Alright. I see nothing wrong with that.","soft","base","base","down")
         call cho_main("I just hope it won't get too cold on our next game...","annoyed","base","sad","mid")
 
-    $ cho_quidditch_bottom = "pants_short" # For testing.
+    $ cho_quid.bottom = "pants_short" # For testing.
 
     return
 
@@ -80,7 +80,7 @@ label use_quidditch_skirt_1:
         call cho_main("I hope you're' right.","soft","closed","angry","mid")
         call cho_main("This is going to be so embarrassing...","quiver","base","sad","down")
 
-    $ cho_quidditch_bottom = "skirt_long" # For testing.
+    $ cho_quid.bottom = "skirt_long" # For testing.
 
     return
 
@@ -123,7 +123,7 @@ label use_quidditch_skirt_2: # Not in use.
         m "Just a few inches..."
         call cho_main("Alright...","base","narrow","sad","down")
 
-    $ cho_quidditch_bottom = "skirt_short" # For testing.
+    $ cho_quid.bottom = "skirt_short" # For testing.
 
     return
 

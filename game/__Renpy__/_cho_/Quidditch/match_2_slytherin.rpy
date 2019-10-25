@@ -1,22 +1,23 @@
 
 
+### Main Match ###
+
+# Chat with Cho the day before.
 label start_slytherin_match:
-    # Chat with Cho the day before.
+    ## TODO: Add writing.
 
     $ cho_busy = True
     $ cc_event_pause  += 1  # Event starts on the next day.
     $ cc_summon_pause += 1  # Can't be summoned until next event.
 
-    $ lock_cho_training = True
-    $ lock_cho_practice = True
+    $ cho_quid.lock_training = True
+    $ cho_quid.lock_practice = True
 
     $ slytherin_match = "start"
 
     jump main_room
 
 
-
-### Main Match ###
 
 #Office before game
 label slytherin_match:

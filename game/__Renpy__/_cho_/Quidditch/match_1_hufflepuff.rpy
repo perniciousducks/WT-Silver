@@ -27,6 +27,16 @@ label start_hufflepuff_match:
     # Cho leaves.
     call cho_walk(speed=1.6, action="leave")
 
+    $ cho_quid.lock_training = True
+    $ cho_quid.lock_practice = True
+
+    $ cc_event_pause  += 1  # Event starts on the next day.
+    $ cc_summon_pause += 1 # Can't be summoned until next event.
+
+    $ cho_busy = True
+
+    $ hufflepuff_match = "start"
+
     jump end_cho_event
 
 ### Main Match Against Hufflepuff ###
@@ -841,7 +851,8 @@ label hufflepuff_match_return:
 
     $ cho_tier = 2
     $ cho_training_unlocked = True
-    $ lock_cho_practice = False
-    $ lock_cho_training = False
+    $ cho_quid.lock_practice = False
+    $ cho_quid.lock_training = False
+    $ cho_quid.lock_tactic   = False
 
     jump end_cho_event

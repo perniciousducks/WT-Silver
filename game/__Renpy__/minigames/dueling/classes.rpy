@@ -18,10 +18,11 @@ init python:
             return render
 
     class class_draw_shape(renpy.Displayable):
-        def __init__(self, color, width, height):
+        def __init__(self, color, width, height, mode):
             super(class_draw_shape, self).__init__(self)
 
             self.color = color
+            self.mode = mode
             
             self.width = width
             self.height = height
@@ -35,28 +36,38 @@ init python:
         def render(self, width, height, st, at):
             render = renpy.Render(self.width, self.height)
 
-            for i in self.shape:
-                render.canvas().circle(self.color, i, 5, 0)
+            if self.mode == 0:
+                for i in self.shape:
+                    render.canvas().circle(self.color, i, 5, 0)
+            elif self.mode == 1:
+                if self.shape:
+                    render.canvas().lines(self.color, False, self.shape, 10)
             return render
                     
-        def event(self, ev, x, y, st):
+        def event(self, ev, x, y, st):            
             if self.active:
                 if renpy.map_event(ev, 'mousedown_1'):
                     self.drawing = True
                 elif renpy.map_event(ev, 'mouseup_1'):
                     self.drawing = False
+                    self.cached = False
 
                 if self.drawing:
                     if ev.type == pygame.MOUSEMOTION:
                         self.shape.append((x, y))
+                        if self.mode == 1:
+                            renpy.redraw(self, 0)
+                                
             else:
                 if not self.cached:
                     self.cached = True
                     renpy.redraw(self, 0)
+            
 
     class class_draw_canvas(renpy.Displayable):
         _precision = 10
         interactive = True
+        mode = 1 # 0 Precise, 1 fast
         
         color = (51, 153, 0) # Green
         
@@ -86,7 +97,7 @@ init python:
                 if self.interactive:
                     if renpy.map_event(ev, 'mousedown_1'):
                         #self.clear()
-                        new_child = class_draw_shape(self.color, self.width, self.height)
+                        new_child = class_draw_shape(self.color, self.width, self.height, self.mode)
                         self.children.append(new_child)
                         self.current_child = new_child
                         renpy.redraw(self, 0)
@@ -96,8 +107,8 @@ init python:
                         self.current_child.active = False
                         self.check_shape()
 
-                for child in self.children:
-                    child.event(ev, x, y, st)
+                    for child in self.children:
+                        child.event(ev, x, y, st)
 
         def clear(self):
             for i in self.children:

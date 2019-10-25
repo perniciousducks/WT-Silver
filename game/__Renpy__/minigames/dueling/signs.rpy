@@ -70,7 +70,7 @@ label magic_tutorial:
     show screen draw_magic
     "Magician" "The black shape you see on the screen is called a guideline shape."
     "Magician" "Your goal is to map the shape with your mouse pointer while holding left mouse button. You can start either from top or the bottom."
-    $ _trash = class_draw_shape((51, 153, 0), 400, 400)
+    $ _trash = class_draw_shape((51, 153, 0), 400, 400, 1)
     $ _trash.shape = tutorial_shape
     $ test_sign.children.append(_trash)
     $ test_sign.force_redraw()

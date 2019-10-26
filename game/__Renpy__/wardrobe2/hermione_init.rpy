@@ -12,12 +12,33 @@ default hermione_cloth_topschool4     = cloth_class(char="hermione", category="t
 default hermione_cloth_topschool5     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_5", layers=3, color=[[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=12, bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
 default hermione_cloth_topschool6     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_6", layers=3, color=[[109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=12, bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
 
+default hermione_cloth_maiddress1 = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="maid_dress_1", layers=3, color=[[40, 51, 61, 255], [236, 243, 244, 255], [53, 63, 84, 255]], bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]}, incompatible=["bottom"])
+
 # Bottoms
 
 default hermione_cloth_schoolskirt1 = cloth_class(char="hermione", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_1", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]])
 default hermione_cloth_schoolskirt2 = cloth_class(char="hermione", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_2", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=4)
 default hermione_cloth_schoolskirt3 = cloth_class(char="hermione", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_3", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=8)
 default hermione_cloth_schoolskirt4 = cloth_class(char="hermione", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_4", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=12)
+
+# Stockings
+
+default hermione_cloth_maidstockings1 = cloth_class(char="hermione", category="legwear", subcat="stockings", type="stockings", id="maid_stockings_1", layers=1, color=[[53, 33, 30, 255]])
+
+default hermione_cloth_stockings1 = cloth_class(char="hermione", category="legwear", subcat="stockings", type="stockings", id="stockings_1", layers=2, color=[[219, 165, 13, 255], [146, 63, 30, 255]])
+
+# Hat
+
+default hermione_cloth_maidhat1 = cloth_class(char="hermione", category="head", subcat="hats", type="hat", id="maid_hat_1", layers=1, color=[[236, 243, 244, 255]])
+
+# Neckwear
+
+default hermione_cloth_maidchoker1 = cloth_class(char="hermione", category="head", subcat="neckwear", type="neckwear", id="maid_choker_1", layers=2, color=[[40, 51, 61, 255], [236, 243, 244, 255]])
+default hermione_cloth_maidchoker2 = cloth_class(char="hermione", category="head", subcat="neckwear", type="neckwear", id="maid_choker_2", layers=1, color=[[236, 243, 244, 255]])
+
+# Gloves
+
+default hermione_cloth_maidgloves1 = cloth_class(char="hermione", category="misc", subcat="gloves", type="gloves", id="maid_gloves_1", layers=3, color=[[40, 51, 61, 255], [236, 243, 244, 255], [53, 63, 84, 255]])
 
 # Temporal save
 default hermione_outfit_last = outfit_class(name="Last worn items", group=[astoria_hair_base])
@@ -61,7 +82,7 @@ python:
             "hat":        [None, 24, 0, 0, False],
             "hair":       [hermione_hair_base, 12, 0, 0, False],
             "earring":    [None, 22, 0, 0, False],
-            "neckwear":   [None, 17, 0, 0, False],
+            "neckwear":   [None, 20, 0, 0, False],
             "robe":       [None, 21, 0, 0, False],
             "gloves":     [None, 41, 0, 0, False],
             "top":        [hermione_cloth_topschool1, 19, 0, 0, False],

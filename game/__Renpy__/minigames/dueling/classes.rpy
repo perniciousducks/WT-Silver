@@ -69,7 +69,7 @@ init python:
         interactive = True
         mode = 1 # 0 Precise, 1 fast
         
-        color = (51, 153, 0) # Green
+        color = (211, 211, 211) # Green
         
         def __init__(self, width, height, sign):
             super(class_draw_canvas, self).__init__(self)

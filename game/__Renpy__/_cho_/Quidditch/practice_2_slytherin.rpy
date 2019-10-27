@@ -22,13 +22,15 @@ label cc_st_start:
         call cho_main("I don't have any on me, Sir.", "angry", "narrow", "sad", "mid") # embarassed
         g9 "No, no, say the quote!{w} Say \"Show me the money.\""
         call cho_main("Show me the money?", "open", "narrow", "raised", "mid") # wink
-        g4 "Say it like you mean it, brother!"
+        g9 "Say it like you mean it, brother!"
         call cho_main("What?", "angry", "wide", "base", "mid")
+        with hpunch
         g4 "{size=+5}Show me the money!{/size}" # loud
         if cc_pf_strip.points >= 2:
             call cho_main("(He knows I'm a girl...why would he say that?)", "annoyed", "narrow", "angry", "mid")
         else:
             call cho_main("(I'm a girl...why would he say that?)", "annoyed", "narrow", "angry", "mid")
+        with hpunch
         g4 "{size=+10}Show me the money!{/size}" # louder
         call cho_main("May I leave, Sir?", "soft", "narrow", "sad", "mid")
         g9 "What you gonna do, [cho_name]?"
@@ -133,6 +135,8 @@ label cc_st_return:
         # Win
         if cho_quid.commentator == "hermione":
             $ cc_st.win_counter = 2
+            $ cho_quid.lock_training = True # Removes training menu.
+            $ slytherin_match = "ready" # Able to start main match.
             jump cc_st_return_E3
 
         # Lose
@@ -249,6 +253,8 @@ label cc_st_return_E1:
     call bld
     m "That girl sure is a piece of work..."
 
+    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
+
     $ hermione_busy = True
     $ cho_busy = True
     $ cho_mood += 6
@@ -260,7 +266,11 @@ label cc_st_return_E1:
 
 
 label cc_st_return_E2:
-    "Dev Note" "Return event 2 - Event not yet written."
+    menu:
+        "Dev Note" "Return event 2 - Event not yet written."
+        "-Got it!-":
+            pass
+
     "Dev Note" "You picked the right clothing combination, but Hermione is not yet a commentator."
     # TODO: add writing.
     # TODO: lock Cho's quidditch clothing and tactic.
@@ -271,6 +281,18 @@ label cc_st_return_E2:
     if cho_quid.commentator == "hermione":
         $ her_mood += 6
         $ hermione_busy = True
+
+        #call cho_main("At the expense of my dignity!","quiver","base","raised","down")
+        #m "That's a...{w} yes?"
+        #call cho_main("Lee Jordan only used to say that I had a nice butt! But-","soft","base","sad","down")
+        #call cho_main("But, Hermione! Her incompetence as a Quidditch commentator is unmeasurable!","open","base","raised","R")
+        #call cho_main("I almost miss Jordan's sexist remarks about my body...","open","closed","base","mid")
+        #g9 "I could tell Hermione to do the same if you'd like."
+        #call cho_main("Please don't, [cho_genie_name]! I was merely joking!","annoyed","narrow","angry","mid")
+
+
+    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
+
     if cho_quid.commentator == "tonks":
         $ tonks_busy = True
 
@@ -282,9 +304,16 @@ label cc_st_return_E2:
 
 
 label cc_st_return_E3:
-    "Dev Note" "Return event 3 - Event not yet written."
+    menu:
+        "Dev Note" "Return event 3 - Event not yet written."
+        "-Got it!-":
+            pass
+
     "Dev Note" "You picked the right clothing combination, and Hermione is not yet a commentator."
     # TODO: add writing.
+
+
+    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
 
     if cho_quid.commentator == "hermione":
         $ her_mood += 6
@@ -300,7 +329,10 @@ label cc_st_return_E3:
 
 
 label cc_st_return_fail:
-    "Dev Note" "Failed match, add writing."
+    menu:
+        "Dev Note" "Failed match, add writing."
+        "-Got it!-":
+            pass
     # TODO: add writing.
 #    m "Well, how did it go?"
 #    cho "We lost, Sir."
@@ -311,6 +343,8 @@ label cc_st_return_fail:
 #        cho "Far better than that half-witt Granger..."
 #        m "So what's the issue?"
 #        cho "She's not only distracting those \"Slytherins\", but my team as well."
+
+    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
 
     if cho_quid.commentator == "hermione":
         $ her_mood += 6

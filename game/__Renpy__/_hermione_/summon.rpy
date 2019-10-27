@@ -440,7 +440,7 @@ label hermione_talk:
 
         "-Ask Hermione to commentate the game-" if cc_ht.return_E1 and not cc_ht.hermione_commentator:
             jump cc_ht_hermione_commentator
-        "-Ask Hermione to commentate the game again-\n...again" if cc_st.hermione_E1 and not cc_st.hermione_blackmail:
+        "-Ask Hermione to commentate the game again...-\n{size=-5}again...{/size}" if cc_st.hermione_E1 and not cc_st.hermione_blackmail:
             jump cc_st_hermione_blackmail
 
         # General.

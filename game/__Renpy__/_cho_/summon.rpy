@@ -15,10 +15,10 @@ label summon_cho:
     menu:
 
         # Main Matches
-        "Start Hufflepuff Match" if (cc_ht.win_counter >= 2 and cho_tier == 1 and hufflepuff_match == ""):
+        "Start Hufflepuff Match" if (cho_tier == 1 and hufflepuff_match == "ready"):
             jump start_hufflepuff_match
 
-        "Start Slytherin Match" if (cc_st.win_counter >= 2 and cho_tier == 2 and slytherin_match == ""):
+        "Start Slytherin Match" if (cho_tier == 2 and slytherin_match == "ready"):
             jump start_slytherin_match
 
         #"Start Slytherin Match" if (cc_gt.win_counter >= 2 and cho_tier == 3 and gryffindor_match == ""):

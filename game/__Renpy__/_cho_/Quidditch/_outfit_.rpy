@@ -11,11 +11,11 @@ label use_quidditch_pants_1:
 
     m "I'd like you to wear trousers for your games again."
     call cho_main("Really? Just my regular pants?","annoyed","base","raised","mid")
-    m "Yes. Regular ole- pants."
+    m "Yes. Regular ole' pants."
     m "I know what I'm doing..."
     call cho_main("If you say so, [cho_genie_name].","base","base","base","mid")
 
-    $ cho_quid.bottom = "pants_long" # For testing.
+    $ cho_quid.bottom = "pants_long"
 
     return
 
@@ -42,7 +42,7 @@ label use_quidditch_pants_2:
         call cho_main("Alright. I see nothing wrong with that.","soft","base","base","down")
         call cho_main("I just hope it won't get too cold on our next game...","annoyed","base","sad","mid")
 
-    $ cho_quid.bottom = "pants_short" # For testing.
+    $ cho_quid.bottom = "pants_short"
 
     return
 
@@ -80,7 +80,7 @@ label use_quidditch_skirt_1:
         call cho_main("I hope you're' right.","soft","closed","angry","mid")
         call cho_main("This is going to be so embarrassing...","quiver","base","sad","down")
 
-    $ cho_quid.bottom = "skirt_long" # For testing.
+    $ cho_quid.bottom = "skirt_long"
 
     return
 
@@ -123,7 +123,7 @@ label use_quidditch_skirt_2: # Not in use.
         m "Just a few inches..."
         call cho_main("Alright...","base","narrow","sad","down")
 
-    $ cho_quid.bottom = "skirt_short" # For testing.
+    $ cho_quid.bottom = "skirt_short"
 
     return
 
@@ -157,6 +157,8 @@ label remove_quidditch_coat:
         call cho_main("Fine...","pout","angry","angry","R")
         call cho_main("But-{w} I better win!","soft","angry","raised","mid")
 
+    $ cho_quid.coat = False
+
     return
 
 
@@ -169,5 +171,7 @@ label remove_quidditch_gloves: # Not in use.
     m "With your mouth?"
     cho "That's just stupid!"
     m "Fair enough... Keep them on then."
+
+    $ cho_quid.gloves = True
 
     return

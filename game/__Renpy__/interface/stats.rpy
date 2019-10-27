@@ -52,7 +52,7 @@ label stats_menu(xx=150, yy=90):
     $ susan_xpos = 300
     $ susan_ypos = 0
     #
-    label stats_menu_after_init:
+    label .after_init:
     $ renpy.block_rollback()
 
     show screen bld1
@@ -79,7 +79,7 @@ label stats_menu(xx=150, yy=90):
         $ hide_transitions = False
         jump main_room_menu
 
-    jump stats_menu_after_init
+    jump .after_init
 
 screen stats_menu(xx, yy):
     tag stats_menu

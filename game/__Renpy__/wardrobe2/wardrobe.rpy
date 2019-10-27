@@ -80,7 +80,7 @@ label t_wardrobe(char_label):
     if wardrobe_music_active:
         call play_music("my_immortal")
     
-    label t_wardrobe_after_init:
+    label .after_init:
     
     show screen t_wardrobe_menu(550, 50)
     
@@ -285,7 +285,7 @@ label t_wardrobe(char_label):
         if wardrobe_music_active:
             call play_music(active_girl+"_theme")
         return
-    jump t_wardrobe_after_init
+    jump .after_init
         
 screen t_wardrobe_menu(xx, yy):
     tag wardrobe

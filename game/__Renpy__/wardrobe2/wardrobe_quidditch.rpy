@@ -8,7 +8,7 @@ label t_wardrobe_quidditch():
                             "bottom": [choq_cloth_pantslong2, choq_cloth_pantsshort4, choq_cloth_schoolskirt3]}
         current_item = [0, 0]
     
-    label t_wardrobe_quidditch_after_init:
+    label .after_init:
     
     show screen t_wardrobe_quidditch_menuitem(550, 50)
     
@@ -36,7 +36,7 @@ label t_wardrobe_quidditch():
             
         # If taking off coat failed
         if _return == "fail":
-            jump t_wardrobe_quidditch_after_init
+            jump .after_init
             
         if cho_class.get_cloth("bottom").id == choq_cloth_schoolskirt3.id:
             call use_quidditch_skirt_1
@@ -54,7 +54,7 @@ label t_wardrobe_quidditch():
         $ hide_transitions = False
         return
 
-    jump t_wardrobe_quidditch_after_init
+    jump .after_init
         
 screen t_wardrobe_quidditch_menuitem(xx, yy):
     tag wardrobe_menuitem

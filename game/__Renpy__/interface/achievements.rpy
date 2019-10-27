@@ -123,7 +123,6 @@ init python:
         return
 
     def update_achievements():
-        import time
         while True:
             time.sleep(5)
 
@@ -237,7 +236,7 @@ label achievement_menu(xx=150, yy=90):
     $ menu_items = achievement_sortfilter(category_items, current_sorting, current_filter)
     $ menu_items_length = len(menu_items)
 
-    label achievement_menu_after_init:
+    label .after_init:
     $ renpy.block_rollback()
 
     show screen bld1
@@ -300,7 +299,7 @@ label achievement_menu(xx=150, yy=90):
         $ hide_transitions = False
         jump main_room_menu
 
-    jump achievement_menu_after_init
+    jump .after_init
 
 screen achievement_menu(xx, yy):
     tag achievement_menu

@@ -334,7 +334,7 @@ label snape_intro_E3:
     who2 "........................"
 
     # Hide Snape chibi and fade to black
-    hide screen snape_stand
+    hide screen snape_chibi
     show screen blkfade
     with d3
 

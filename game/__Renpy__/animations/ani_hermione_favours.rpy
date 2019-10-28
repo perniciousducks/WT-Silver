@@ -575,19 +575,6 @@ image jerking_off_02_ani: #Genie jerking off in front of dancing on a desk Hermi
     pause.2
     repeat
 
-image jerking_off_03_ani: #SNape jerking off in front of dancing on a desk Hermione.
-    zoom 0.5
-    
-    "characters/snape/chibis/masturbating/01.png"
-    pause.2
-    "characters/snape/chibis/masturbating/02.png"
-    pause.2
-    "characters/snape/chibis/masturbating/03.png"
-    pause.2
-    "characters/snape/chibis/masturbating/04.png"
-    pause.2
-    repeat
-
 ### CUM ###
 image jerking_off_cum_ani: #Sperm. While Hermione sits on desk.
     "characters/genie/chibis/masturbating/sperm_short_01.png"
@@ -622,50 +609,4 @@ image jerking_off_cum_ani: #Sperm. While Hermione sits on desk.
     pause.1
     "characters/genie/chibis/masturbating/sperm_short_16.png"
     pause.1
-    repeat
-
-### CUM_03 ###
-image snape_cum_01: #Snape cumming on Hermione after she is done striping.
-    "characters/snape/chibis/masturbating/sperm_01.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_02.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_03.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_04.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_05.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_06.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_07.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_08.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_09.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_10.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_11.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_12.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_13.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_14.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_15.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_16.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_17.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_18.png"
-    pause 2
-    "characters/snape/chibis/masturbating/sperm_19.png"
-    pause.1
-    "characters/snape/chibis/masturbating/sperm_20.png"
-    pause.1
-    "images/animation/00.png"
-    pause.5
     repeat

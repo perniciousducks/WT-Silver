@@ -525,8 +525,6 @@ label chibi_walk_desk_blkfade(char=None):
 
     if char == "hermione":
         call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
-    elif char == "tonks":
-        call ton_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
 
     call blkfade
 

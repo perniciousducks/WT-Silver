@@ -595,7 +595,7 @@ label astoria_intro_E3:
         call ast_main("...","annoyed","narrow","worried","down")
         call ast_main("(Better him than any of the other teachers...)","clench","narrow","base","down")
 
-    $ sna_chibi_zorder = 4 # In front of Astoria
+    $ snape_chibi.zorder = 4 # In front of Astoria
     call sna_walk(action="enter", xpos="mid", ypos="base", speed=3)
 
     call play_music("snape_theme")
@@ -674,7 +674,7 @@ label astoria_intro_E3:
 
     call sna_walk(action="leave", speed=1)
     pause.2
-    $ sna_chibi_zorder = 2 # Reset zorder
+    $ snape_chibi.zorder = 2 # Reset zorder
 
     call ton_walk("500","base", speed=2.8)
     call ast_chibi("stand","desk","base", flip=False)

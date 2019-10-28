@@ -61,10 +61,10 @@ default cho_chibi = chibi("cho", ["fix", "base", "bottom", "shoes", "top", "robe
 
 init python:
     def update_cho_chibi(chibi):
-        # Cho special: fly (fly_idle!), fly_move
-        if chibi.special == "fly":
+        # Cho actions: fly (fly_idle!), fly_move
+        if chibi.action == "fly":
             chibi["base"] = "ch_cho fly_idle"
-        elif chibi.special == "fly_move":
+        elif chibi.action == "fly_move":
             chibi["base"] = "ch_cho fly"
         elif chibi.action == "walk":
             chibi["base"] = "ch_cho walk"

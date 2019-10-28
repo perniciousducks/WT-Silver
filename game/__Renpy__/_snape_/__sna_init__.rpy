@@ -6,15 +6,6 @@ default use_snape_head            = False
 
 default s_sprite = "characters/snape/main/snape_01.png"
 
-default sna_chibi_xpos    = 610
-default sna_chibi_ypos    = 190
-default sna_speed         = 2.0
-default sna_chibi_flip    = 1
-default sna_chibi_zorder  = 2
-
-default sna_chibi_stand   = "snape_stand"
-default sna_chibi_walk    = "snape_walk"
-
 ###SNAPE STATS###
 default snape_busy = False #When True, you can't summon Snape.
 

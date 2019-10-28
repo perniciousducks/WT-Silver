@@ -35,7 +35,6 @@ label hg_pf_strip:
     $ aftersperm = temp_save # Load
 
     hide screen g_c_c_u # Genie's sperm. Universal.
-    hide screen s_c_c_u # Snape's sperm. Universal.
 
     call sna_chibi("hide")
     call her_chibi("stand","desk","base", flip=False)
@@ -49,7 +48,7 @@ label hg_pf_strip:
 
 
     # Points
-    m "[current_payout] to the \"Gryffindor\" house."
+    m "[current_payout] points to the \"Gryffindor\" house."
     call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R")
 
 

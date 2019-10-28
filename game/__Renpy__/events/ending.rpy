@@ -2844,6 +2844,7 @@ label ball_ending_E2:
     ### FINAL CREDITS ###
 
 label ball_ending_credits:
+    #TODO Fix credits chibis
 
     play music "music/02 - Shanghai Honey.mp3" fadein 1 fadeout 1 # ORANGE RANGE THEME.
 
@@ -2862,7 +2863,7 @@ label ball_ending_credits:
 
     $ xder = 160
     $ yder = 160
-    $ dermo = "jerking_off_03_ani"
+    $ dermo = "snape_jerking_off"
     show screen uni_cr
     hide screen credits_chibi
 

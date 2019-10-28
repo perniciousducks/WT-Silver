@@ -1491,13 +1491,13 @@ label ag_st_imperio_E5:
     call ast_main("Yes sir.","annoyed","base","base","down")
 
     #astoria leaves
-    $ sna_chibi_zorder = 3
+    $ snape_chibi.zorder = 3
     $ astoria_chibi.zorder = 2
 
     call sna_chibi("stand","620","base") # Updates Zorder.
     call ast_walk(action="leave", speed=2)
 
-    $ sna_chibi_zorder = 2 # Reset to default.
+    $ snape_chibi.zorder = 2 # Reset to default.
 
     # Tonks hops off your desk and walks closer to Snape.
     call play_sound("climb_desk")

@@ -61,12 +61,12 @@ default astoria_chibi = chibi("astoria", ["fix", "base", "bottom", "shoes", "top
 
 init python:
     def update_astoria_chibi(chibi):
-        # Astoria special: wand, wand_casting, wand_imperio
-        if chibi.special == "wand":
+        # Astoria actions: wand, wand_casting, wand_imperio
+        if chibi.action == "wand":
             chibi["base"] = "ch_ast wand_stand"
-        elif chibi.special == "wand_casting":
+        elif chibi.action == "wand_casting":
             chibi["base"] = "ch_ast wand_casting"
-        elif chibi.special == "wand_imperio":
+        elif chibi.action == "wand_imperio":
             chibi["base"] = "ch_ast wand_imperio"
         elif chibi.action == "walk":
             chibi["base"] = "ch_ast walk"
@@ -83,7 +83,7 @@ init python:
             chibi["robe"] = "ag_robe.png"
 
         if astoria_class.get_worn("bottom") or astoria_class.get_worn("stockings"):
-            if chibi.special == "wand_imperio":
+            if chibi.action == "wand_imperio":
                 chibi["shoes"] = "ch_ast imperio_shoes"
             elif chibi.action == "walk":
                 chibi["shoes"] = "ch_ast walk_shoes"

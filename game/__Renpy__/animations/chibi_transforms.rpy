@@ -1,3 +1,6 @@
+
+# Transforms used by the chibi class
+
 transform chibi_base(position, flip):
     pos position
     # anchor (0.5, 1.0)
@@ -50,11 +53,6 @@ transform gen_walk_trans(x, x2, y, y2):
     xpos x
     ypos y
     linear gen_speed xpos x2 ypos y2 # linear
-
-transform sna_walk_trans(x, x2, y, y2):
-    xpos x
-    ypos y
-    linear sna_speed xpos x2 ypos y2 # linear
 
 transform her_walk_trans(x, x2, y, y2):
     xpos x

@@ -652,7 +652,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         call sna_main("Here is your reward!","snape_21")
 
         call cum_block
-        call sna_chibi("cumming","desk","240")
+        call sna_chibi("cumming","desk_close","245")
         pause.2
 
         $ uni_sperm = True #Triggers universal sperm to show on hermione_main screen.
@@ -665,6 +665,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         g4 "Little slut!"
         call her_main("...............................", "grin", "narrow", "annoyed", "up")
 
+        #TODO Fix chibi sperm layers (cum stays on Hermione while Genie and Snape hold their dicks)
         $ s_c_c_u_pic = "characters/snape/chibis/masturbating/sperm_18.png"
         $ g_c_c_u_pic = "characters/genie/chibis/masturbating/sperm_wide_18.png"
 
@@ -672,7 +673,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         g9 "I know, right!?"
 
         call gen_chibi("hold_dick","behind_desk","base")
-        call sna_chibi("hold_dick","desk","240")
+        call sna_chibi("hold_dick","desk_close","245")
         pause.2
 
         call sna_main("Yes... We should do this more often.","snape_22")
@@ -701,7 +702,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         pause 2
         hide screen hermione_main
 
-        call sna_chibi("hold_dick","mid","240")
+        call sna_chibi("hold_dick","mid","245")
         call gen_chibi("sit_behind_desk")
         call her_chibi("stand","desk","base", flip=True)
 

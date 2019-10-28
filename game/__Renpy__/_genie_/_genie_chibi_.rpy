@@ -119,7 +119,7 @@ screen genie_jerking_off_standing():
     zorder 2
 
 screen genie_jerking_off_standing_cum():
-    add "genie_cum_03" at Position(xpos=gen_chibi_xpos-290, ypos=gen_chibi_ypos-190) #x270, y185 #290
+    add "genie_cum_03" at Position(xpos=gen_chibi_xpos-270, ypos=gen_chibi_ypos-185)
     zorder 4
 
 screen genie_stands_holds_dick():

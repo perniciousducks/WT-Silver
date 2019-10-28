@@ -528,17 +528,3 @@ label her_walk(xpos=walk_xpos, ypos=walk_ypos, speed=her_speed, action="", loite
             show screen hermione_stand
 
     return
-
-
-
-
-# label to be called to remove hermiones chibi from the screen
-#
-# @param dissolveTime how long to use the desolve transition for i.e.(2=d2, 3=d3)
-label her_walk_end_loiter(dissolveTime = 3):
-    if dissolveTime > 0:
-        hide screen hermione_stand
-        with Dissolve((dissolveTime/10))
-    else:
-        hide screen hermione_stand
-    return

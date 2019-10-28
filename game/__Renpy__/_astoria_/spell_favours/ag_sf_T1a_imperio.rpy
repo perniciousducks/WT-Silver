@@ -21,7 +21,6 @@ label ag_se_imperio_sb: # Move label
 label ag_se_imperio_sb_E1:
     call play_music("stop")
     call hide_characters
-    #TODO Astoria chibi zorder above Susan chibi
     call ast_chibi("stand","mid","base")
     hide screen bld1
     with d3

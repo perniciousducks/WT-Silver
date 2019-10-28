@@ -169,7 +169,7 @@ label DRgame_chibis:
         call gen_chibi("stand","710","165",flip=True)
 
     #Stranger
-    $ sna_chibi_zorder = 1
+    $ snape_chibi.zorder = 1
     if DRstranger in DRgame.characters:
         if DRstranger.location != "outside":
             call sna_chibi("stand","450","180",flip=True)
@@ -627,12 +627,11 @@ screen DRgame_menu():
     #Stranger
     if DRstranger in DRgame.characters and DRstranger.location not in ["outside"]:
         imagebutton:
-            xpos sna_chibi_xpos
-            ypos sna_chibi_ypos
+            pos sna_chibi.pos
             focus_mask True
             #xanchor "center"
             #yanchor "center"
-            if sna_chibi_flip == 1:
+            if not snape_chibi.flip:
                 idle "snape_stand"
                 hover yellowTint("snape_stand")
             else:

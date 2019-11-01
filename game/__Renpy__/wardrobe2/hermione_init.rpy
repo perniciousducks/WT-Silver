@@ -1,7 +1,7 @@
 # Hermione wardrobe init
 default hermione_class = char_class(char="hermione")
 
-default hermione_hair_base = cloth_class(char="hermione", category="head", subcat="hair", type="hair", id="base", layers=1, color=[[152, 89, 48, 255]])
+default hermione_hair_base = cloth_class(char="hermione", category="head", subcat="hair", type="hair", id="base", layers=3, color=[[152, 89, 48, 255], [195, 137, 89, 255], [230, 141, 32, 255]])
 
 # School uniform set
 
@@ -36,8 +36,11 @@ default hermione_cloth_pokerpanties1 = cloth_class(char="hermione", category="pa
 default hermione_cloth_pokerbra1 = cloth_class(char="hermione", category="bras", subcat="bras", type="bra", id="poker_bra_1", layers=4, color=[[26, 26, 35, 255], [232, 232, 232, 255], [153, 22, 10, 255], [255, 179, 3, 255]], incompatible=["panties", "top", "bottom"])
 default hermione_cloth_pokergloves1 = cloth_class(char="hermione", category="misc", subcat="gloves", type="gloves", id="poker_gloves_1", layers=2, color=[[232, 232, 232, 255], [255, 179, 3, 255]])
 default hermione_cloth_pokerearring1 = cloth_class(char="hermione", category="head", subcat="earrings", type="earring", id="poker_earring_1", layers=1, color=[[255, 179, 3, 255]])
-
 default hermione_cloth_pokerbellypiercing1 = cloth_class(char="hermione", category="torso", subcat="piercing", type="piercing2", id="poker_belly_1", layers=4, color=[[26, 26, 35, 255], [232, 232, 232, 255], [153, 22, 10, 255], [255, 179, 3, 255]])
+
+# Rave bikini
+default hermione_cloth_bikinipanties1 = cloth_class(char="hermione", category="panties", subcat="panties", type="panties", id="bikini_panties_1", layers=2, color=[[138, 0, 0, 255], [252, 135, 0, 255]])
+default hermione_cloth_bikinibra1 = cloth_class(char="hermione", category="bras", subcat="bras", type="bra", id="bikini_bra_1", layers=2, color=[[138, 0, 0, 255], [252, 135, 0, 255]])
 
 # Temporal save
 default hermione_outfit_last = outfit_class(name="Last worn items", group=[astoria_hair_base])
@@ -89,7 +92,7 @@ python:
             "bottom":     [hermione_cloth_schoolskirt1, 16, 0, 0, False],
             "garterbelt": [None, 15, 0, 0, False],
             "panties":    [None, 14, 0, 0, False],
-            "stockings":  [None, 13, 0, 0, False],
+            "stockings":  [hermione_cloth_stockings1, 13, 0, 0, False],
             "buttplug":   [None, 0, 0, 0, False],
             "pubes":      [None, 11, 0, 0, False],
             "tattoo0":    [None, 10, 0, 0, False],

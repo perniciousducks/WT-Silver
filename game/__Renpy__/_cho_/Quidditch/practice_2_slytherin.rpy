@@ -6,53 +6,25 @@ label cc_st_start:
 
     call cho_main("", "base", "base", "base", "mid", xpos="right", ypos="base", trans="fade")
 
-    # Intro
+    # Intro 1
     if cc_st.match_counter == 0:
         m "Alright, we need to try out those new tactics!"
+        if cho_quid.bottom in ["skirt_long","skirt_short"] and cho_quid.position == "above":
+            call cho_main("New tactics? Aren't we still using the ones from before?", "soft", "narrow", "base", "mid")
+            m "Right... Well I'm sure they're sufficient enough to secure a win."
+            m "Well, I'm sure they're good enough to secure us another easy win."
+            call cho_main("If you say so, [cho_genie_name].", "base", "base", "base", "mid")
         g4 "There is a lot at stake here! We can't afford to lose even a single game!"
         g4 "We can't show any weakness to those \"Slytherins!\""
-        call cho_main("Is my success really that important to you, Sir?", "smile", "base", "base", "mid")
-        call cho_main("I'm glad!", "smile", "closed", "base", "mid")
-        m "Are you ready [cho_name]?"
-        call cho_main("I am!", "base", "base", "angry", "mid")
-        m "Then show me the money."
-        call cho_main("What?", "upset", "base", "raised", "mid")
+        call cho_main("Is my success really that important to you, Sir? I'm glad!", "smile", "base", "base", "mid")
         m "(I can't lose this much gold to Snape. I'll show that bastard!)"
-        g9 "Say it,[cho_name]!{w} Show me the money!"
-        call cho_main("I don't have any on me, Sir.", "angry", "narrow", "sad", "mid") # embarassed
-        g9 "No, no, say the quote!{w} Say \"Show me the money.\""
-        call cho_main("Show me the money?", "open", "narrow", "raised", "mid") # wink
-        g9 "Say it like you mean it, brother!"
-        call cho_main("What?", "angry", "wide", "base", "mid")
-        with hpunch
-        g4 "{size=+5}Show me the money!{/size}" # loud
-        if cc_pf_strip.points >= 2:
-            call cho_main("(He knows I'm a girl...why would he say that?)", "annoyed", "narrow", "angry", "mid")
-        else:
-            call cho_main("(I'm a girl...why would he say that?)", "annoyed", "narrow", "angry", "mid")
-        with hpunch
-        g4 "{size=+10}Show me the money!{/size}" # louder
-        call cho_main("May I leave, Sir?", "soft", "narrow", "sad", "mid")
-        g9 "What you gonna do, [cho_name]?"
-        call cho_main("Leave?", "annoyed", "narrow", "base", "mid")
-        m "..."
         g9 "Return to my office after the game."
-        call cho_main("Yes...", "annoyed", "narrow", "base", "R")
+        call cho_main("Yes, Sir.", "annoyed", "narrow", "base", "R")
 
-        # Cho leaves.
-        call cho_walk(xpos="door", ypos="base", speed=2)
-
-        call cho_main("(That was weird...)", "angry", "base", "sad", "down", ypos="head")
-
-        call cho_chibi(action="leave")
-
-        $ cho_busy = True
         $ hermione_busy = True
         $ cho_quid.commentator = None # Hermione won't show up.
-        $ cho_quid.in_progress = True
-        $ cc_st.match_counter += 1 # Stat counter
 
-        jump main_room
+        pass
 
 
     # Intro 2
@@ -74,6 +46,7 @@ label cc_st_start:
         call cho_main("I'm really glad we have her as a teacher.", "base", "base", "base", "down")
         m "Make sure to thank her for it...some day."
         call cho_main("I will, [cho_genie_name].", "smile", "base", "base", "mid")
+        call cho_main("Until later...", "base", "base", "base", "mid")
         pass
 
 
@@ -88,11 +61,11 @@ label cc_st_start:
         else: # Hermione
             call cho_main("Yes, [cho_genie_name].", "base", "base", "angry", "mid")
             call cho_main("I hope all my recent practice will pay off..", "smile", "base", "base", "R")
+
+        call cho_main("I shall be back after the game.", "base", "base", "base", "mid")
+        m "Off you go then."
         pass
 
-
-    call cho_main("I shall be back after the game.", "base", "base", "base", "mid")
-    m "Off you go then."
 
     # Cho leaves.
     call cho_walk(action="leave", speed=2)
@@ -213,10 +186,9 @@ label cc_st_return_E1:
     call cho_main("And neither did our commentator!", "soft", "narrow", "base", "mid")
     m "Hermione?"
     call cho_main("Yes! Where the bloody hell was she?!", "angry", "narrow", "angry", "mid", emote="01")
-    m "Why are you asking me?"
-    m "Did you forget to tell her about today's training?"
-    call cho_main("She knew very well that she had to be there!", "soft", "narrow", "base", "down")
-    call cho_main("And so did those braindead \"Slytherins.\"", "annoyed", "narrow", "angry", "mid")
+    m "The commentator needs to show up for training too?"
+    call cho_main("Yes! And she bloody well needs it.", "soft", "narrow", "base", "down")
+    call cho_main("And those braindead \"Slytherins.\"", "annoyed", "narrow", "angry", "mid")
     call cho_main("Spineless cowards...", "annoyed", "narrow", "base", "R")
     call cho_main("They have no interest in training against us!", "soft", "base", "base", "mid")
     call cho_main("Because why should they... They'll win anyway!", "angry", "wide", "base", "mid")
@@ -384,7 +356,13 @@ label cc_st_hermione_E1:
     her "Cho Chang!"
     g4 "..."
     m "Wait, so you didn't quit?"
-    her "I'm quitting now!"
+    her "No! How were I supposed to know I needed to show up for Practice?"
+    m "(Is she blaming me?)"
+    m "Surely there must've been some contract that mentioned it..."
+    her "You tell me, you're the one that appointed me."
+    m "Oh, right."
+    her "So, since I didn't sign anything..."
+    her "I quit!"
     g4 "What? You can't do that!"
     her "Why not? After all, I'm terrible at it, aren't I?"
     her "I made such a fool out of myself during the \"Hufflepuff\" game..." # Sad, tears
@@ -650,7 +628,7 @@ label cc_st_tonks_E1:
         call ton_main("What? Because as a teacher I'd be biased?","open","base","raised","mid")
 
 
-    call ton_main("Well, thanks to your efforts, Hufflepuffs is already out...","upset","base","angry","R")
+    call ton_main("Well, thanks to your efforts, Hufflepuff is already out...","upset","base","angry","R")
     call ton_main("And now the best we can hope for is to not get last...","open","closed","base","mid")
     call ton_main("It's always third or nothing with us Puffs.","open","base","sad","R")
     m "(Puffs?)"

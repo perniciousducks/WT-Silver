@@ -268,11 +268,11 @@ screen hermione_chibi_dance():
 ### SIT NAKED ###
 screen hermione_chibi_sit_naked_A():
     tag hermione_chibi
-    add "characters/hermione/chibis/sitting/sit_naked_blink.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
+    add "characters/hermione/chibis/sitting/sit_naked_blink.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom her_chibi_scale #0.4 or 0.5
     zorder her_chibi_zorder
 screen hermione_chibi_sit_naked_B():
     tag hermione_chibi
-    add "characters/hermione/chibis/sitting/sit_naked.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
+    add "characters/hermione/chibis/sitting/sit_naked.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom her_chibi_scale
     zorder her_chibi_zorder
 screen hermione_chibi_stand_no_shirt():
     tag hermione_chibi
@@ -350,7 +350,7 @@ label update_chibi_uniform:
 
 ### HERMIONE MAIN CHIBI ###
 
-label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "", flip=False):
+label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "", flip=False, scale=her_chibi_scale):
     hide screen hermione_stand
     hide screen hermione_walk
 
@@ -360,6 +360,7 @@ label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "",
     hide screen hermione_chibi_lift_top
     hide screen hermione_chibi_lift_skirt
 
+    hide screen hermione_chibi_sit_naked_A
     hide screen ch_potion
     hide screen ch_hotdog
 
@@ -387,6 +388,8 @@ label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "",
         else:
             $ her_chibi_ypos = int(ypos)
 
+    if scale != her_chibi_scale:
+        $ her_chibi_scale = scale
 
     #Hermione Chibi Actions.
     if action == "lift_top":
@@ -404,6 +407,8 @@ label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "",
         show screen hermione_chibi_stand_no_shirt
 
     #Sit Naked
+    elif action == "sit":
+        show screen hermione_chibi_sit_naked_A # TODO: add clothing layers for this chibi.
     elif action == "sit_naked":
         show screen hermione_chibi_sit_naked_A
     elif action == "sit_naked_wide_eyes" or action == "sit_naked_scared" or action == "sit_naked_shocked":

@@ -3,7 +3,7 @@
 ### Ravenclaw vs. Hufflepuff ###
 
 label start_hufflepuff_match:
-    call cho_main(xpos="mid",ypos="base",trans="fade")
+    call cho_main(xpos="mid", ypos="base", trans="fade")
     m "[cho_name], what do you say... ready for your first game of the season?"
     call cho_main("To be honest, [cho_genie_name], I'm feeling quite nervous.","soft","base","sad","R")
     m "Don't worry. I believe you are ready..."
@@ -13,8 +13,10 @@ label start_hufflepuff_match:
     call cho_main("Yes, [cho_genie_name].","base","base","base","mid")
     g9 "Well then, tomorrow it is!"
 
-    if weather_gen in [5,6]: # Bad weather.
+    if raining:
         call cho_main("Sounds great, [cho_genie_name]. I just hope it stops raining until then.","soft","base","base","R")
+    elif snowing:
+        call cho_main("Sounds great, [cho_genie_name]. I just hope it stops snowing until then.","soft","base","base","R")
     else:
         call cho_main("Sounds great, [cho_genie_name]. I just hope the weather stays like it is too.","soft","base","base","R")
 
@@ -39,20 +41,26 @@ label start_hufflepuff_match:
 
     jump end_cho_event
 
+
 ### Main Match Against Hufflepuff ###
 
 label hufflepuff_match:
 
     ### Event Setup ###
     $ cho_outfit_last.save()
+    $ hermione_outfit_last.save()
+
     $ cho_class.equip(cho_outfit_quidditch)
-    call h_equip_temp_outfit(hg_standart_school_ITEM)
+    $ hermione_class.equip(hermione_outfit_default)
 
 
     # Scene before Match against Hufflepuff
+    call play_music("stop")
+
     call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
     pause.5
 
+    call play_music("snape")
     call sna_main("Are you ready to go?","snape_03",xpos="base",ypos="base")
     g4 "Can't you bloody knock?!"
     call sna_main("Should I?{w} I was sure you were already waiting for me...","snape_05")
@@ -192,7 +200,7 @@ label hufflepuff_match:
     pause.2
     call her_walk(xpos="375", ypos="105", speed=2)
     pause.5
-    call her_main("Good Morning everyone, and welcome to the i-inaugural-", "soft", "base", "worried", "mid", flip=True,xpos="120",ypos="base")
+    call her_main("Good Morning everyone, and welcome to the i-inaugural-", "soft", "base", "worried", "mid", flip=True, xpos="120", ypos="base")
     call her_main("", "normal", "base", "worried", "mid")
     call sna_main("Speak up girl! And would it kill you to enunciate?!","snape_03",ypos="head")
     call her_main("*Grrr*", "mad", "narrow", "angry", "R")

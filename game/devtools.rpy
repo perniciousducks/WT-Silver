@@ -13,10 +13,10 @@ init -2 python:
     
     rpy_version = int('%d%d%d%d' % renpy.version_tuple)
     
-    if rpy_version >= 730000:
+    if rpy_version >= 735606:
         pass
     else:
-        raise Exception("Your Ren'Py launcher is outdated, the current minimal requirement is 7.3.0+\nPlease perform an update or use official game executable instead.")
+        raise Exception("Your Ren'Py launcher is outdated, the current minimal requirement is 7.3.5+\nPlease perform an update and try launching the game again.")
         
     def missing_image_func(path):
         global systemerror

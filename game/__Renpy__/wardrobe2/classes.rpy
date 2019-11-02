@@ -223,6 +223,7 @@ init python:
             self.unlocked = True
             self.cloned = False
             self.cached = False
+            self.zorder = None # None - use pre-defined zorder, int - object zorder
             
             self.bodyfix = None
             self.incompatible = None
@@ -346,7 +347,7 @@ init python:
             color = []
             for c in self.color:
                 color.append(list(c))
-            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=color, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix, layerfix=self.layerfix, whoring=self.whoring, bodyfix=self.bodyfix, incompatible=self.incompatible)
+            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=color, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix, layerfix=self.layerfix, whoring=self.whoring, bodyfix=self.bodyfix, incompatible=self.incompatible, mask=self.mask, zorder=self.zorder)
                 
         def set_pose(self, pose):
             if pose == None:
@@ -940,42 +941,46 @@ init python:
                 
                 # Add body to sprite list
                 for key, value in self.body.iteritems():
-                    if self.body[key][0] and not self.body[key][4]:
+                    if value[0] and not value[4]:
                         sprite_list.append(value)
                         
                 # Add face to sprite list
                 for key, value in self.face.iteritems():
-                    if self.face[key][0] and not self.face[key][4]:
+                    if value[0] and not value[4]:
                         sprite_list.append(value)
                 
                 # Add other to sprite list        
                 for key, value in self.other.iteritems():
-                    if self.other[key][0] and not self.other[key][4]:
+                    if value[0] and not value[4]:
                         sprite_list.append(value)
                         
                 # Add clothing to sprite list 
                 for key, value in self.clothing.iteritems():
-                    if self.clothing[key][0] and not self.clothing[key][4]:
+                    if value[0] and not value[4]:
                         # Perform an additional check for body parts modifications
-                        if self.clothing[key][0].bodyfix != None:
+                        if value[0].bodyfix != None:
                             # Iterate through all body fixes
-                            for k, v in self.clothing[key][0].bodyfix.iteritems():
+                            for k, v in value[0].bodyfix.iteritems():
                                 # Temporarily replace a body part using list comprehension 
                                 sprite_list = [v if isinstance(x[0], basestring) and k in x[0] else x for x in sprite_list]
                         # Check if cloth requires layers below or above everything (such as hair locks, capes etc.)
-                        if self.clothing[key][0].layerfix != {}:
-                            for k, v in self.clothing[key][0].layerfix.iteritems():
+                        if value[0].layerfix != {}:
+                            for k, v in value[0].layerfix.iteritems():
                                 if k == "outline_above":
                                     sprite_list.append([v[0], 150, 0, 0, False])
                                 elif k == "outline_below":
                                     sprite_list.append([v[0], -150, 0, 0, False])
                                 else:
                                     if v[1] == 1:
-                                        sprite_list.append([self.clothing[key][0].get_layerfix(k), 100+k, 0, 0, False])
+                                        sprite_list.append([value[0].get_layerfix(k), 100+k, 0, 0, False])
                                     else:
-                                        sprite_list.append([self.clothing[key][0].get_layerfix(k), -100+k, 0, 0, False])
-                        sprite_list.append(value)
-                        sprite_list.append([self.clothing[key][0].get_skin(), 5, 0, 0, False])
+                                        sprite_list.append([value[0].get_layerfix(k), -100+k, 0, 0, False])
+                        # check if clothing piece uses non-standard zorder
+                        if value[0].zorder != None:
+                            sprite_list.append([value[0], value[0].zorder, value[2], value[3], value[4]])
+                        else:
+                            sprite_list.append(value)
+                        sprite_list.append([value[0].get_skin(), 5, 0, 0, False])
                         
                 # Sort sprite list by zorder
                 sprite_list.sort(key=lambda x: x[1], reverse=False)

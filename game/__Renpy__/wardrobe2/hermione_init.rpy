@@ -19,7 +19,7 @@ default hermione_cloth_stockings1 = cloth_class(char="hermione", category="legwe
 
 # Maid outfit
 
-default hermione_cloth_maiddress1 = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="maid_dress_1", layers=3, color=[[40, 51, 61, 255], [236, 243, 244, 255], [53, 63, 84, 255]], bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]}, incompatible=["bottom"])
+default hermione_cloth_maiddress1 = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="maid_dress_1", layers=3, color=[[40, 51, 61, 255], [236, 243, 244, 255], [53, 63, 84, 255]], bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
 default hermione_cloth_maidstockings1 = cloth_class(char="hermione", category="legwear", subcat="stockings", type="stockings", id="maid_stockings_1", layers=1, color=[[53, 33, 30, 255]])
 default hermione_cloth_maidhat1 = cloth_class(char="hermione", category="head", subcat="hats", type="hat", id="maid_hat_1", layers=1, color=[[236, 243, 244, 255]])
 default hermione_cloth_maidchoker1 = cloth_class(char="hermione", category="head", subcat="neckwear", type="neckwear", id="maid_choker_1", layers=2, color=[[40, 51, 61, 255], [236, 243, 244, 255]])
@@ -43,7 +43,7 @@ default hermione_cloth_bikinipanties1 = cloth_class(char="hermione", category="p
 default hermione_cloth_bikinibra1 = cloth_class(char="hermione", category="bras", subcat="bras", type="bra", id="bikini_bra_1", layers=2, color=[[138, 0, 0, 255], [252, 135, 0, 255]])
 
 # Bunny outfit
-default hermione_cloth_bunnytop1 = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="bunny_top_1", layers=1, color=[[48, 48, 48, 255]], incompatible=["bottom", "panties", "bra"])
+default hermione_cloth_bunnytop1 = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="bunny_top_1", layers=1, color=[[48, 48, 48, 255]], incompatible=["panties", "bra"], zorder=15)
 default hermione_cloth_bunnystockings1 = cloth_class(char="hermione", category="legwear", subcat="stockings", type="stockings", id="bunny_stockings_1", layers=1, color=[[81, 81, 81, 255]])
 default hermione_cloth_bunnytattoo1 = cloth_class(char="hermione", category="hips", subcat="tattoos", type="tattoo3", id="bunny_tattoo1", layers=1, color=[[0, 0, 1, 255]])
 default hermione_cloth_bunnyhat1 = cloth_class(char="hermione", category="head", subcat="hats", type="hat", id="bunny_hat_1", layers=2, color=[[48, 48, 48, 255], [232, 232, 232, 255]])
@@ -51,7 +51,7 @@ default hermione_cloth_bunnygloves1 = cloth_class(char="hermione", category="mis
 default hermione_cloth_bunnybowtie1 = cloth_class(char="hermione", category="head", subcat="neckwear", type="neckwear", id="bunny_bowtie_1", layers=2, color=[[232, 232, 232, 255], [48, 48, 48, 255]])
 
 # Temporal save
-default hermione_outfit_last = outfit_class(name="Last worn items", group=[astoria_hair_base])
+default hermione_outfit_last = outfit_class(name="Last worn items", group=[hermione_hair_base])
 
 default hermione_outfit_custom = outfit_class(name = "Default", group = [hermione_hair_base.clone(), hermione_cloth_topschool1.clone(), hermione_cloth_schoolskirt1.clone()], unlocked=True)
 

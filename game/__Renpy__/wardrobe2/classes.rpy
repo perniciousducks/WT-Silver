@@ -226,6 +226,7 @@ init python:
             
             self.bodyfix = None
             self.incompatible = None
+            self.mask = None
             
             self.layerfix = {}
             
@@ -294,6 +295,9 @@ init python:
             if renpy.loadable(self.imagepath+"overlay.png"):
                 self.overlayer = self.imagepath+"overlay.png"
                 
+            if renpy.loadable(self.imagepath+"mask.png"):
+                self.mask = self.imagepath+"mask.png"
+                
             # Check if bodyfix exists
             if self.bodyfix != None and not self.cloned:
                 imagepath = "characters/"+self.char+"/body/"
@@ -360,6 +364,10 @@ init python:
                     self.overlayer = self.imagepath+"overlay.png"
                 else:
                     self.overlayer = "characters/dummy.png"
+                if renpy.loadable(self.imagepath+"mask.png"):
+                    self.mask = self.imagepath+"mask.png"
+                else:
+                    self.mask = None
                 self.set_armfix()
                 self.cached = False
                 return None
@@ -954,6 +962,7 @@ init python:
                             for k, v in self.clothing[key][0].bodyfix.iteritems():
                                 # Temporarily replace a body part using list comprehension 
                                 sprite_list = [v if isinstance(x[0], basestring) and k in x[0] else x for x in sprite_list]
+                        # Check if cloth requires layers below or above everything (such as hair locks, capes etc.)
                         if self.clothing[key][0].layerfix != {}:
                             for k, v in self.clothing[key][0].layerfix.iteritems():
                                 if k == "outline_above":
@@ -978,8 +987,9 @@ init python:
                     width = 1920
                     height = 1440
                 
-                # Armfix
+                # Armfix and alpha mask lists
                 armfix = []
+                mask = []
                 
                 # Build image
                 self.sprite = Image("characters/dummy.png")
@@ -1006,6 +1016,9 @@ init python:
                                     # add fixes WITHOUT hand image
                                     armfix.append(sprite[0].get_armfix(False, True)[0]) # L
                                     armfix.append(sprite[0].get_armfix(False, True)[1]) # R
+                                    
+                            if sprite[0].mask:
+                                mask.append(sprite[0].mask)
                     
                     if armfix > 0:
                         for item in armfix:
@@ -1013,7 +1026,18 @@ init python:
                                 (width, height),
                                 (0,0), self.sprite,
                                 (0,0), item)
-                                    
+                                 
+                    # Apply AlphaMask for problematic clothing layers such as bras with visible nipples.
+                    if mask != []:
+                        if len(mask) > 1:
+                            # Combine alpha masks
+                            m = AlphaMask(mask[0], mask[1])
+                            for i in xrange(2, len(mask)):
+                                m = AlphaMask(mask[i], mask[i+1])
+                            self.sprite = AlphaMask(self.sprite, m)
+                        else:
+                            self.sprite = AlphaMask(self.sprite, mask[0])
+                    
                     # Fixes alpha change issues during transitions
                     self.sprite = Flatten(self.sprite)
             return self.sprite

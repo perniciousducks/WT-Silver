@@ -81,7 +81,7 @@ screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=
             text "{size=10}" + toggle4 + "{/size}" xpos 342+115 ypos 35+20
 
         #Items
-        for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
+        for i in xrange(current_page*items_shown, (current_page*items_shown)+items_shown):
             if i < len(menu_items):
                 if menu_items[i].unlockable == False: #Unlockables are shown but aren't buyable/clickable
                     hotspot (12, 86+90*(i-(current_page*items_shown)), 540, 90) clicked Return(menu_items[i])
@@ -178,12 +178,12 @@ screen icon_menu(menu_items, categories, character, title, xpos, ypos):
             text title xalign 0.5 yalign 0.5 size 16 bold 0.2
 
         #Categories
-        for i in range(0,len(categories)): #Max 5 items!
+        for i in xrange(0,len(categories)): #Max 5 items!
             hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("category_choice",categories[i]), Return(categories[i])
             add "interface/icons/" +str(categories[i])+ ".png" xpos 0+(90*i) ypos 70 zoom 0.35
 
         #Items
-        for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
+        for i in xrange(current_page*items_shown, (current_page*items_shown)+items_shown):
             if i < len(menu_items):
                 $ row = i // 5
                 $ col = i % 5
@@ -249,7 +249,7 @@ screen bottom_menu(menu_items, categories, title, xpos, ypos, func_btn=False, fu
         text title xalign 0.5 yalign 0.5 xpos 130+70 ypos 0+18 size 12
 
         #Categories
-        for i in range(0,len(categories)):
+        for i in xrange(0,len(categories)):
             #hotspot (300+(33*i), 0, 33, 34) clicked SetVariable("category_choice",categories[i]), Return(categories[i])
             #add "interface/topbar/buttons/" +interface_color+ "/" +str(categories[i])+ ".png" xpos 300+(33*i) ypos 0
 
@@ -270,7 +270,7 @@ screen bottom_menu(menu_items, categories, title, xpos, ypos, func_btn=False, fu
                 action Return("func")
 
         #Items
-        for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
+        for i in xrange(current_page*items_shown, (current_page*items_shown)+items_shown):
             if i < len(menu_items):
                 $ col = i % 5
                 $ row = i % 1
@@ -372,7 +372,7 @@ screen clothing_menu(menu_items, character, preview):
             text preview.get_description() xpos 85 ypos 490 size 12
             text preview.get_type() xpos 509 ypos 458 size 16
 
-            for i in range(0,len(preview.get_items() )):
+            for i in xrange(0,len(preview.get_items() )):
                 $ row = i % 3
                 $ col = i % 2
                 text "+"+preview.get_items()[i] xpos 511+(80*col) ypos (490+(12*row)) size 12
@@ -381,7 +381,7 @@ screen clothing_menu(menu_items, character, preview):
             text "Gold: "+preview.get_cost() xpos 509 ypos 557 size 16
 
         #Mannequin Display Panels.
-        for i in range(current_page*items_shown, (current_page*items_shown)+items_shown):
+        for i in xrange(current_page*items_shown, (current_page*items_shown)+items_shown):
             if i < len(menu_items):
                 hotspot( 70+(227*(i-(current_page*items_shown))) , (107) , 175 , 284 ) clicked Return(menu_items[i])
 
@@ -421,7 +421,7 @@ screen character_select_menu(character_list=[], menu_text="menu name", xposition
             ysize 41
             text menu_text xalign 0.5 yalign 0.5  size 14
 
-        for i in range(0,len(character_list)):
+        for i in xrange(0,len(character_list)):
             $ row = i // 2
             $ col = i % 2
 

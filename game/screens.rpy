@@ -357,7 +357,7 @@ screen file_picker():
             textbutton _("Quick"):
                 action FilePage("quick")
 
-            for i in range(1, 11):
+            for i in xrange(1, 11):
                 textbutton str(i):
                     action FilePage(i)
 
@@ -374,7 +374,7 @@ screen file_picker():
             style_group "file_picker"
 
             # Display ten file slots, numbered 1 - 10.
-            for i in range(1, columns * rows + 1):
+            for i in xrange(1, columns * rows + 1):
                 $ is_compatible = check_save_compatibility(FileCurrentPage(), str(i))
                 
                 if renpy.get_screen("load"):

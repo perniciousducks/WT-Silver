@@ -9,9 +9,9 @@ init python:
             duel_player_deck = playerdeck
         
         backside_list = []
-        for i in range(0, rules[0]):
+        for i in xrange(0, rules[0]):
             backside_list.append(True)
-        for i in range(rules[0], len(opppent_deck)):
+        for i in xrange(rules[0], len(opppent_deck)):
             backside_list.append(False)
             
         ## Setup Deck ##
@@ -58,9 +58,9 @@ init python:
                             enemy_deck.append(elm)
                 
                 backside_list = []
-                for i in range(0, rules[0]):
+                for i in xrange(0, rules[0]):
                     backside_list.append(True)
-                for i in range(rules[0], len(opppent_deck)):
+                for i in xrange(rules[0], len(opppent_deck)):
                     backside_list.append(False)
                 reset_table_cards()
                     
@@ -241,21 +241,21 @@ screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
     imagemap:
         ground "images/cardgame/card_table.png"
 
-        for y in range(0,3):
-            for x in range(0,3):
+        for y in xrange(0,3):
+            for x in xrange(0,3):
                 if table_cards[x][y] == None:
                     hotspot (353+124*x, 25+184*y, 125, 182) clicked Return(str(x+y*3))
                 else:
                     use cardrender(table_cards[x][y], 353+124*x, 25+184*y, cardzoom=0.375, animated=True)
    
-    for i in range(0, len(l_playerdeck)):
+    for i in xrange(0, len(l_playerdeck)):
         if not selectcard == i:
             use cardrender(l_playerdeck[i], 18,17+80*i, True)
     
     if not selectcard == -1:
         use cardrender(l_playerdeck[selectcard], 54,17+80*selectcard)
         
-    for i in range(0, len(l_enemydeck)):
+    for i in xrange(0, len(l_enemydeck)):
         if not selectenemycard == i:
             use cardrender(l_enemydeck[i], 898,17+80*i, True, backside=shown_cards[i])
             

@@ -19,7 +19,7 @@ default geniecard_level = 1
 default geniecard_tokens = 0
 default cardgame_eoc = False # End of content flag
 
-default table_cards = [[None for x in range(0,3)] for y in range(0,3)]
+default table_cards = [[None for x in xrange(0,3)] for y in xrange(0,3)]
 
 default card_width = 320 # get_width("images/cardgame/border.png")
 default card_height = 480 # get_height("images/cardgame/border.png")
@@ -537,7 +537,7 @@ init python:
         gretest_func = lambda elm1, elm2 : elm1.get_total_value() < elm2.get_total_value()
         temp_pool = []
         temp_pool.extend(card_pool)
-        for card in range(0,5):
+        for card in xrange(0,5):
             random_choice = renpy.random.choice(temp_pool)
 
             new_deck.append(random_choice)
@@ -561,7 +561,7 @@ init python:
         return new_deck
     def find_index_func(seq, func):
         func_index = 0
-        for i in range(0, len(seq)):
+        for i in xrange(0, len(seq)):
             if func(seq[func_index], seq[i]):
                 func_index = i
         return func_index
@@ -614,7 +614,7 @@ init python:
     def get_rgb_list(hex):
         hex = hex.lstrip('#')
         hex_len = len(hex)
-        rgb = list(int(hex[i:i + hex_len // 3], 16) for i in range(0, hex_len, hex_len // 3))
+        rgb = list(int(hex[i:i + hex_len // 3], 16) for i in xrange(0, hex_len, hex_len // 3))
         if len(rgb) < 4:
             rgb.append(255) # Add alpha
         return rgb
@@ -628,8 +628,8 @@ init python:
     def reset_table_cards():
         global table_cards
 
-        for y in range(0,3):
-            for x in range(0,3):
+        for y in xrange(0,3):
+            for x in xrange(0,3):
                 table_cards[x][y] = None
         return
 
@@ -637,8 +637,8 @@ init python:
         global table_cards
         playerpoints = len(player_deck)
 
-        for y in range(0,3):
-            for x in range(0,3):
+        for y in xrange(0,3):
+            for x in xrange(0,3):
                 if table_cards[x][y] and table_cards[x][y].playercard:
                     playerpoints += 1
         if playerpoints > 5:
@@ -756,8 +756,8 @@ init python:
                 score_func = lambda a : a
                 take_over = lambda a, b : a > b
 
-            for y in range(0,3):
-                for x in range(0,3):
+            for y in xrange(0,3):
+                for x in xrange(0,3):
                     score = 0
                     if table_cards[x][y] == None:
                         if not y == 0 and not table_cards[x][y-1] == None and table_cards[x][y-1].playercard:

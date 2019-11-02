@@ -441,7 +441,7 @@ screen summon_characters():
         action Jump("hide_summon_characters")
 
     # Character Buttons
-    for i in range(0,len(character_summon_list)):
+    for i in xrange(0,len(character_summon_list)):
 
         imagebutton:
             xpos 10

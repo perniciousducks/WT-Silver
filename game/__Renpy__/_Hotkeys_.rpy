@@ -200,17 +200,19 @@ style menu_choice_night:
     outlines [ (1, "#00000080", 1, 0) ]
 
 style say_who_window_day:
-    xsize 164
+    xminimum 164
     ysize 32
-    background "interface/frames/gold/namebox.png"
+    xpadding 10
+    background Frame("interface/frames/gold/namebox.png", 6, 6)
     xpos 235
     ypos 48
     text_align 0.5
 
 style say_who_window_night:
-    xsize 164
+    xminimum 164
     ysize 32
-    background "interface/frames/gray/namebox.png"
+    xpadding 10
+    background Frame("interface/frames/gray/namebox.png", 6, 6)
     xpos 235
     ypos 48
     text_align 0.5

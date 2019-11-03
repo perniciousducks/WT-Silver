@@ -15,7 +15,7 @@ screen say(who, what, side_image=None):
     
     #Add "hidden" window
     if hkey_chat_hidden:
-        window:
+        frame:
             xalign 0.5
             yalign 0.99
             if daytime and not persistent.nightmode:
@@ -34,7 +34,7 @@ screen say(who, what, side_image=None):
             style "empty"
     else:
         if who:
-            window:
+            frame:
                 ypos 470
                 if daytime and not persistent.nightmode:
                     style "say_who_window_day"

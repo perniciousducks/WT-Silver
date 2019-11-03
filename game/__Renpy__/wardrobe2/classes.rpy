@@ -387,6 +387,10 @@ init python:
                     self.overlayer = self.imagepath+"/"+pose+"/overlay.png"
                 else:
                     self.overlayer = "characters/dummy.png"
+                if renpy.loadable(self.imagepath+"/"+pose+"/mask.png"):
+                    self.mask = self.imagepath+"/"+pose+"/mask.png"
+                else:
+                    self.mask = None
                 self.set_armfix(True)
                 self.cached = False
                 return True
@@ -699,6 +703,26 @@ init python:
                         self.clothing[key][4] = False
             self.set_pose(anim, offset)
             self.cached = False
+            
+        def action(self, action):
+            """Unfinished, added for future reference.
+            Known issues:
+            - Incompatible with dynamic zorder
+            - Incompatible with alpha masking
+            - poses require additional artwork for each cloth affected by the arms movement (bottoms, tops, gloves, bras, accessories, piercings, tattoos) (Not viable in the long run)"""
+            # Hardcoded for testing purposes
+            if action in (None, "default", "reset"):
+                if self.char == "hermione":
+                    self.set_body(armright="arm_down_r" ,armleft="arm_down_l")
+            elif action == "lift_skirt":
+                if self.char == "hermione":
+                    self.set_body(armright=None ,armleft="lift_skirt")
+                    self.body["armleft"][1] = 20
+            for key, value in self.clothing.iteritems():
+                if value[0]:
+                    value[0].set_pose(action)
+            self.cached = False
+            return
             
         def get_cloth(self, type):
             return self.get_object(self.clothing, type)

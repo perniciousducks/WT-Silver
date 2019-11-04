@@ -514,7 +514,7 @@ label ball_ending_E2:
         fem "(I think it's more than just that...)"
         mal "(Oh, shut up. You are just jealous.)"
         mal2 "(Yeah, you wish you had Hermione's courage!)"
-        mal "(Exactly! She is as loyal to \"Gryffindor\" as no one else!)"
+        mal "(Exactly! She is as loyal to Gryffindor as no one else!)"
         mal "(Even if that's true, what about it?)"
         mal "(Thanks to her sacrifice our house will be getting the cup this year!)"
         mal2 "(Yeah, and what did you ever do for our house?)"
@@ -902,7 +902,7 @@ label ball_ending_E2:
         call bld
         sna "There! Hm...?"
         sna "(Well of course... Why am I not surprised?)"
-        sna "Miss Hermione Granger of the \"Gryffindor\" house..."
+        sna "Miss Hermione Granger of the Gryffindor house..."
         ">Loud applause and cheering."
         sna "Miss Granger, if you would be so kind to grace us with your presence..."
         call bld("hide")
@@ -1533,7 +1533,7 @@ label ball_ending_E2:
         call ctc
 
         her "!!!"
-        sly1 "I thought it could be you, \"gryffindor\" filth..."
+        sly1 "I thought it could be you, gryffindor filth..."
         sly1 "Moaning like a whore..."
         sly1 "Getting fucked by... Oh..."
         with hpunch
@@ -1558,11 +1558,11 @@ label ball_ending_E2:
         call cg_scene("129")
         her "Sir, don't call me that in front of them, please..."
         m "What's the matter? Why are you Acting shy all a of sudden?"
-        her "Can't you see that they are from \"Slytherin\"?!"
+        her "Can't you see that they are from Slytherin?!"
         m "So what?"
         her "Our two houses... we have a history."
         m "Oh..."
-        m "Well, then you shall become the bridge between \"slytherin\" and \"gryffindor\"."
+        m "Well, then you shall become the bridge between slytherin and gryffindor."
         m "Hermione Granger, the ambassador of peace!"
         call cg_scene("130")
         her "No, sir! I refuse!"
@@ -1589,7 +1589,7 @@ label ball_ending_E2:
         sly2 "Ha-ha-ha! Nice one! Look at her stupid face!"
         call cg_scene("134")
         her "You... You...!"
-        sly1 "We really enjoyed your speech, \"gryffindor slut\"."
+        sly1 "We really enjoyed your speech, gryffindor slut."
         sly2 "Yeah... Sure did..."
         her "That wasn't meant for you, you slytherin scum!"
         sly1 "Wasn't meant for us? What are you, stupid?"

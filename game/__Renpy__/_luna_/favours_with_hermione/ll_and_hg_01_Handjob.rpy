@@ -152,10 +152,10 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_kneel("[genie_name]... please... what's going on?","mad","worried",tears="soft")
         call lun_main("I said that you're here to sell a favour.","normal","angry","angry","down")
         call lun_main("Isn't that you want? To sell favours to dumbledore?","base","seductive","sad","mid")
-        call her_kneel("I want... I want \"gryffindor\" to win the house cup...","open","down")
+        call her_kneel("I want... I want gryffindor to win the house cup...","open","down")
 
         if gryffindor > slytherin:
-            call lun_main("But \"gryffindor\" is already ahead by "+str(gryffindor-slytherin)+" points...","pout","angry","raised","down")
+            call lun_main("But gryffindor is already ahead by "+str(gryffindor-slytherin)+" points...","pout","angry","raised","down")
             call lun_main("do you really think that they need any more points to win?","base","angry","sad","down")
             call her_kneel("...","soft","squintL")
         else:
@@ -459,7 +459,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "Anyway, thanks for your help today."
         call her_main("anything for my friends [genie_name]...", "soft", "happy", "base", "R")
         m "(Does that mean me?)"
-        m "Yes, well, 60 points to \"gryffindor\"!"
+        m "Yes, well, 60 points to gryffindor!"
         $ gryffindor += 60
         call her_main("Thank you [genie_name]...", "open", "base", "base", "R")
 
@@ -799,7 +799,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("it better not...","normal","angry","angry","mid")
         m "alright then, in that case, here's your payment."
         $ gryffindor += hermione_payout
-        m "[hermione_payout] points to \'gryffindor\'!"
+        m "[hermione_payout] points to gryffindor!"
         call her_main("thank you [genie_name].", "base", "closed", "base", "mid")
         $ luna_gold += luna_payout
         $ gold -= luna_payout
@@ -1168,7 +1168,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     m "Right, nearly forgot."
                     call her_main("...", "annoyed", "squint", "base", "mid")
                     $ gryffindor += 50
-                    m "50 points to \'gryffindor\'!"
+                    m "50 points to gryffindor!"
                     call her_main("thank you [genie_name]...", "base", "closed", "base", "mid")
                     call lun_main("...","normal","seductive","base","R")
                     $ luna_gold += 150

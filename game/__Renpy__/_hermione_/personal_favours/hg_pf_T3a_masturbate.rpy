@@ -95,7 +95,7 @@ label hg_pf_strip_T2_fingering:
             call her_main("I hardly think that language is appropriate.", "upset", "wink", "base", "mid")
             m "And masturbating in front of your headmaster is?"
             call her_main("Well... this is different.", "open", "narrow", "worried", "down")
-            call her_main("I'm doing this for the honour of \"gryffindor\"...")
+            call her_main("I'm doing this for the honour of gryffindor...")
             call her_main("To help my--")
             call nar(">You notice how she's starting to grind her hips a little faster.")
             $ hermione_dribble = True
@@ -140,7 +140,7 @@ label hg_pf_strip_T2_fingering:
             call set_her_action("covering_top")
 
             call her_main("I'm not sure if I should--", "clench", "narrow", "base", "down")
-            m "There's another 10 points for \"gryffindor\" in it for you..."
+            m "There's another 10 points for gryffindor in it for you..."
             $ current_payout += 10
             call her_main("...", "soft", "happy", "base", "R")
             call her_main("......", "soft", "happy", "base", "R")
@@ -230,7 +230,7 @@ label hg_pf_strip_T2_fingering:
 
     menu:
         "-Chastise her-":
-            m "Well then I guess \"Slytherin\" will have to win the house cup this year."
+            m "Well then I guess Slytherin will have to win the house cup this year."
             call her_main("B-but--", "scream", "wide", "base", "stare")
             m "now, now [hermione_name], a deals a deal."
             call her_main("Really?", "open", "worriedCl", "worried", "mid")
@@ -238,7 +238,7 @@ label hg_pf_strip_T2_fingering:
             m "try harder..."
             call nar(">Hermione starts grinding furiously against hand")
             call her_main("*SOB!* i can't...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
-            m "well then, 0 points to \"Gryffindor\"..."
+            m "well then, 0 points to Gryffindor..."
             call her_main("{size=-5}After all...{/size} Really [genie_name]?", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
             call her_main("After I stood here and...", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
             call her_main("..........", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")

@@ -370,7 +370,7 @@ label ss_he_tonks_E1:
     call sna_main("Let's just hope this whole Ministry situation will solve itself...","snape_31")
 
     call sna_main("Thankfully, out of all the people the ministry could have sent...","snape_06")
-    call sna_main("They brought that clumsy, good-for-nothing \"hufflepuff\"...","snape_35")
+    call sna_main("They brought that clumsy, good-for-nothing hufflepuff...","snape_35")
     call sna_main("As long as we keep our heads down and act as if we've nothing to hide...","snape_03")
     call sna_main("There will be nothing to worry about.","snape_09")
     m "I have my doubts about that."
@@ -710,7 +710,7 @@ label ss_he_tonks_E2:
 
     call sna_main("Join us? Doing what?","snape_05")
     g9 "Corrupting those precious little girls of course!"
-    call sna_main("And according to you, Tonks wants to help us break the \"Gryffindor-Bitch\" as well?","snape_34")
+    call sna_main("And according to you, Tonks wants to help us break that Gryffindor bitch as well?","snape_34")
     m "Yep."
     call sna_main("Ha-ha-ha!{w} That's just fucking silly!","snape_28")
     m "................"
@@ -776,7 +776,7 @@ label ss_he_tonks_E2:
 
     call sna_main("What a wicked bitch!","snape_13")
     call sna_main("If only we were selling favours back then...","snape_46")
-    call sna_main("You know what they say about students from \"Hufflepuff\"...","snape_20")
+    call sna_main("You know what they say about students from Hufflepuff...","snape_20")
     call sna_main("They are quite the \"hard-working\" bunch!","snape_21")
     m "(...)"
     m "I'm calling dibs on her!"

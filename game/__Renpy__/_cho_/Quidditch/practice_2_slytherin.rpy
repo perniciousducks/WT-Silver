@@ -15,7 +15,7 @@ label cc_st_start:
             m "Well, I'm sure they're good enough to secure us another easy win."
             call cho_main("If you say so, [cho_genie_name].", "base", "base", "base", "mid")
         g4 "There is a lot at stake here! We can't afford to lose even a single game!"
-        g4 "We can't show any weakness to those \"Slytherins!\""
+        g4 "We can't show any weakness to those Slytherins!"
         call cho_main("Is my success really that important to you, Sir? I'm glad!", "smile", "base", "base", "mid")
         m "(I can't lose this much gold to Snape. I'll show that bastard!)"
         g9 "Return to my office after the game."
@@ -182,13 +182,13 @@ label cc_st_return_E1:
     g9 "(Yes!)"
     call cho_main("For today, that is...", "annoyed", "narrow", "base", "R")
     m "(Balls...)"
-    call cho_main("We couldn't play today because the entire \"Slytherin\" team didn't even bother to show up!", "annoyed", "narrow", "base", "mid")
+    call cho_main("We couldn't play today because the entire Slytherin team didn't even bother to show up!", "annoyed", "narrow", "base", "mid")
     call cho_main("And neither did our commentator!", "soft", "narrow", "base", "mid")
     m "Hermione?"
     call cho_main("Yes! Where the bloody hell was she?!", "angry", "narrow", "angry", "mid", emote="01")
     m "The commentator needs to show up for training too?"
     call cho_main("Yes! And she bloody well needs it.", "soft", "narrow", "base", "down")
-    call cho_main("And those braindead \"Slytherins.\"", "annoyed", "narrow", "angry", "mid")
+    call cho_main("And those braindead Slytherins.", "annoyed", "narrow", "angry", "mid")
     call cho_main("Spineless cowards...", "annoyed", "narrow", "base", "R")
     call cho_main("They have no interest in training against us!", "soft", "base", "base", "mid")
     call cho_main("Because why should they... They'll win anyway!", "angry", "wide", "base", "mid")
@@ -314,7 +314,7 @@ label cc_st_return_fail:
 #        cho "No, she's great..."
 #        cho "Far better than that half-witt Granger..."
 #        m "So what's the issue?"
-#        cho "She's not only distracting those \"Slytherins\", but my team as well."
+#        cho "She's not only distracting those Slytherins, but my team as well."
 
     $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
 
@@ -365,10 +365,10 @@ label cc_st_hermione_E1:
     her "I quit!"
     g4 "What? You can't do that!"
     her "Why not? After all, I'm terrible at it, aren't I?"
-    her "I made such a fool out of myself during the \"Hufflepuff\" game..." # Sad, tears
-    her "And now with the \"Slytherin\" team being next..."
+    her "I made such a fool out of myself during the Hufflepuff game..." # Sad, tears
+    her "And now with the Slytherin team being next..."
     her "I won't take part of their practice runs just to be laughed at by them..."
-    her "I'm not giving those \"Slytherins\" that satisfaction!"
+    her "I'm not giving those Slytherins that satisfaction!"
 
 
     menu:
@@ -423,11 +423,11 @@ label cc_st_hermione_E1:
 
 label cc_st_snape_E1:
     # hangout event
-    call sna_main("Your precious \"Ravenclaw\" bird, made any breakthroughs with her yet?","snape_37", ypos="head")
+    call sna_main("Your precious Ravenclaw bird, made any breakthroughs with her yet?","snape_37", ypos="head")
     m "The little asian?"
     call sna_main("Yes, Miss Chang.","snape_40")
     m "..."
-    call sna_main("I wish her best of luck against my team of \"Slytherins.\"","snape_02")
+    call sna_main("I wish her best of luck against my team of Slytherins.","snape_02")
     call sna_main("She'll need it.","snape_45")
     g4 "What kind of game are you playing?"
     call sna_main("I'm sorry?","snape_38")
@@ -489,7 +489,7 @@ label cc_st_tonks_E1:
     call ton_main("Cho Chang?","open","base","raised","mid")
     m "(Is she like the \"token asian\" of this school?)"
     m "(How is everybody able to guess her name immediately.)"
-    m "Yes, the little \"Ravenclaw\" minx, correct."
+    m "Yes, the little Ravenclaw minx, correct."
     call ton_main("Well, I figured you'd be talking about her - if it has to do with Quidditch.","open","base","base","R")
     m "She's one of the girls I buy favours from."
     call ton_main("No way!{w=0.8}{nw}","scream","wide","wide","wide", hair="horny")
@@ -526,9 +526,9 @@ label cc_st_tonks_E1:
         m "And how would I get her to agree to that?"
         call ton_main("Well... *Uhm*...","upset","base","sad","down", hair="horny")
         m "It was difficult enough to get her to strip just for me..."
-        m "She only did it because I helped her win against \"Hufflepuff.\""
+        m "She only did it because I helped her win against Hufflepuff."
         call ton_main("So that was your idea with the skirt? Very clever.","horny","base","worried","mid")
-        m "If you help her against \"Slytherin\"..."
+        m "If you help her against Slytherin..."
         g9 "Maybe I can arrange something with the two of you?"
         call ton_main("Or all three of us!","base","base","angry","mid")
         g9 "I'm sure that minx would love that!"
@@ -566,7 +566,7 @@ label cc_st_tonks_E1:
     # Talk about Slytherin.
     m "..."
     m "But to get any further with her, I'll have to help her beat the opposing team in the next match."
-    call ton_main("\"Slytherin?\" That shouldn't be too difficult.","open","base","raised","mid")
+    call ton_main("Slytherin? That shouldn't be too difficult.","open","base","raised","mid")
     m "Really? How so?"
     call ton_main("Their tactics revolve around strength, brute force, and manifesting their dominance on the field!","open","closed","angry","mid")
     call ton_main("A good strategy for when you're in bed with your partner, but not in Quidditch.","base","base","angry","mid")
@@ -613,7 +613,7 @@ label cc_st_tonks_E1:
 
     else:
         m "Did you know Hermione wanted to quit her task as a commentator?"
-        call ton_main("Did she now? I thought she did well in the \"Hufflepuff\" game.","upset","base","raised","mid")
+        call ton_main("Did she now? I thought she did well in the Hufflepuff game.","upset","base","raised","mid")
         call ton_main("A bit wooden, but not bad for her first try.","open","base","base","R")
         call ton_main("Speaking in front of such a large crowd and all.","open","base","raised","mid")
         call ton_main("I thought it was rather cute listening to her fumble her words...","base","happyCl","base","mid")
@@ -668,7 +668,7 @@ label cc_st_hermione_blackmail:
 
     # Before Cho stripped in front of Hermione.
     if cc_pf_strip.points < 3:
-        m "[hermione_name], may I change your mind about your role in the \"Slytherin\" match?"
+        m "[hermione_name], may I change your mind about your role in the Slytherin match?"
         her "My answer is still no, [genie_name]."
         g4 "Come on!"
         her "That's my final answer."
@@ -683,7 +683,7 @@ label cc_st_hermione_blackmail:
                 her "I guess I don't..." # upset
                 m "Your loss..."
 
-            "\"You could make fun of those \"Slytherins.\" \"":
+            "\"You could make fun of those Slytherins.\"":
                 if her_tier >= 5:
                     her "That sounds childish, [genie_name]."
                     m "Does it now?"
@@ -836,7 +836,7 @@ label cc_st_hermione_blackmail:
     her "Blackmailing? Me?!" # chocked
     m "I tried..."
     her "So that's what's going on here. You two are scheming against me!" # angry
-    cho "Come on, Hermione. You can't be that scared of those \"Slytherins.\" Don't be such a coward..."
+    cho "Come on, Hermione. You can't be that scared of those Slytherins. Don't be such a coward..."
     her "I am not!"
     cho "Please! We need somebody to commentate."
     her "I won't do it! And neither of you can change my mind on this!"
@@ -897,13 +897,13 @@ label cc_st_hermione_blackmail:
     g9 "All you gotta do is commentate the next match."
     her "Both matches!"
     m "What?"
-    her "The \"Gryffindor\" match as well! The one after that, should \"Ravenclaw\" even get that far..."
-    cho "Oh no you won't! You'd be all in favour of \"Gryffindorn!\""
+    her "The Gryffindor match as well! The one after that, should Ravenclaw even get that far..."
+    cho "Oh no you won't! You'd be all in favour of Gryffindor!"
     her "Yes I would. And I'll make sure that you lose."
     m "Great. Finally we can get on with this..."
     m "Miss Granger, you're expected to appear during the practice matches as commentator."
     her "..."
-    g9 "Every time you don't, I'll take 50 points from \"Gryffindorn!\""
+    g9 "Every time you don't, I'll take 50 points from Gryffindor!"
     her "That's just typical of you!"
     m "Make sure to be present..."
     her "..."
@@ -943,7 +943,7 @@ label cc_st_talk:
 
     # you haven't talked to Tonks yet.
     if cho_quid.lock_practice:
-        call cho_main("Have you gotten those \"Slytherin\" pigs to play yet?","open","narrow","base","mid")
+        call cho_main("Have you gotten those Slytherin pigs to play yet?","open","narrow","base","mid")
         m "Not yet, but I'm on it."
         call cho_main("Please just hurry up, Sir.","annoyed","narrow","base","mid")
         call cho_main("We need to practice...","annoyed","narrow","sad","R")
@@ -951,7 +951,7 @@ label cc_st_talk:
     # played one match with Tonks.
     elif cc_st.match_counter >= 2 and cho_quid.commentator == "tonks" and cc_pf_strip.points < 3 and not cc_st.hermione_blackmail:
         call cho_main("So, what is Granger up to?","soft","base","base","mid")
-        call cho_main("Is she still too frightened to face those jolly \"Slytherins?\"","open","base","base","R")
+        call cho_main("Is she still too frightened to face those jolly Slytherins?","open","base","base","R")
         m "Well, we have Tonks to do that now..."
         call cho_main("But Tonks isn't even on our side! This won't help!","angry","base","angry","mid")
         m "And Hermione is?"
@@ -961,7 +961,7 @@ label cc_st_talk:
         call cho_main("Those stupid idiots can barely sit on their brooms because of her...","annoyed","narrow","angry","mid")
         m "Why? Is the wood too hard?"
         m "(When do those people realize that carpets are more comfortable...)"
-        call cho_main("We need to get that \"Gryffindor\" skunk to peeve those \"Slytherins,\" so we can get past them!","annoyed","base","angry","mid")
+        call cho_main("We need to get that Gryffindor skunk to peeve those Slytherins, so we can get past them!","annoyed","base","angry","mid")
 
     # after strip and before blackmailing Hermione.
     elif cho_quid.commentator == "tonks" and cc_pf_strip.points >= 3 and not cc_st.hermione_blackmail:

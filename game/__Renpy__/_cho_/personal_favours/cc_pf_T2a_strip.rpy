@@ -157,7 +157,7 @@ label cc_pf_strip_T1_intro_E1:
     call cho_main("Please. Why should I care what Granger does for you in here?","soft","narrow","angry","R")
     call cho_main("I suspected she was one of those girls buying favours from her teachers!","soft","closed","angry","mid")
     call cho_main("With how many points she's earned for her house lately,... to win the house cup...","open","narrow","angry","R")
-    call cho_main("But as long as you don't help any \"Gryffindor\" or \"Slytherin\" sluts win the Quidditch cup, everything will be fine.","base","narrow","base","mid")
+    call cho_main("But as long as you don't help any Gryffindor or Slytherin sluts win the Quidditch cup, everything will be fine.","base","narrow","base","mid")
     m "That's a relief..."
 
     call cho_main("Besides, she clearly doesn't hold a candle against me!","open","narrow","base","R")
@@ -1077,7 +1077,7 @@ label cc_pf_strip_T1_E3: # Repeats
             call cho_walk(xpos="570",ypos="base", speed=2)
 
     call cho_main("Now, if you don't mind, Sir...","soft","base","base","R", xpos="mid", ypos="base", flip=True)
-    call cho_main("I'd like you to call that \"Gryffindor slut\" to your office!","soft","base","base","L")
+    call cho_main("I'd like you to call that Gryffindor slut to your office!","soft","base","base","L")
     g9 "On it!"
     pause.8
     call cho_main("(...)","annoyed","narrow","angry","L")
@@ -1109,7 +1109,7 @@ label cc_pf_strip_T1_E3: # Repeats
     call cho_main("Strip down for your headmaster as well, like you usually do...","smile","narrow","angry","L")
     call cho_main("Or would it bother you too much, now that I'm here?","horny","narrow","base","L")
     call her_main("*glare*", "angry", "base", "angry", "mid")
-    call cho_main("Maybe then you'd have a chance to win against me!{w} And earn some useless \"Gryffindor\" points while you're at it.","soft","base","base","L")
+    call cho_main("Maybe then you'd have a chance to win against me!{w} And earn some useless Gryffindor points while you're at it.","soft","base","base","L")
     call her_main("I don't think that will be necessary...", "soft", "closed", "base", "mid")
     call cho_main("Well, we all already know how this is going to turn out don't we, [cho_genie_name]?","soft","base","base","mid")
     call cho_main("My body is still better than Miss Granger's, isn't it?","smile","angry","angry","L")
@@ -1488,7 +1488,7 @@ label cc_pf_strip_T2_E1:
             call hide_blktone
             call cho_main("So many? But...","soft","wide","base","mid")
             call cho_main("Sir, don't you think that's a bit outrageous?","open","closed","angry","mid")
-            call cho_main("People in house \"Ravenclaw\" work hard to earn that amount of points!","open","base","raised","L")
+            call cho_main("People in house Ravenclaw work hard to earn that amount of points!","open","base","raised","L")
             call cho_main("And you're telling me that you give that cow \"one hundred bloody points\"{w}, for showing you her tits?!","angry","narrow","angry","mid")
             m "Not just her tits, [cho_name]."
             g4 "Everything!!!"

@@ -696,7 +696,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     lun "I had a wrackspurt attack and needed help to purge them..."
     call ast_main("Wrackspurt?...", "annoyed", "narrow","angry", "mid")
     $ lunCG('base', 'seductive', '', 'right')
-    call ast_main("Ugh... I always knew you \"ravenclaw\" girls were {b}special{/b}...", "upset","narrow","base","R")
+    call ast_main("Ugh... I always knew you ravenclaw girls were {b}special{/b}...", "upset","narrow","base","R")
     $ lunCG('open', 'wide', '', 'up')
     call ast_main("But you really do take the cake, Luna...", "upset","narrow","angry","mid")
     $ lunCG('base', 'happyCl', 'sad', 'right')

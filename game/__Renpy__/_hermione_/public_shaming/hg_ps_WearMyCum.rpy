@@ -499,7 +499,7 @@ label hg_ps_cumslut_Scene_3:
     call her_main("Thank you... I've been thinking about what you asked me last time...", "soft", "narrow", "annoyed", "up",ypos="head")
     m "Last time?"
     call her_main("about why I do this... sell you these sort of favours.", "upset", "closed", "base", "mid")
-    call her_main("At the start it was just to get points, so that \'gryffindor\' could win the house cup...", "angry", "wink", "base", "mid")
+    call her_main("At the start it was just to get points, so that gryffindor could win the house cup...", "angry", "wink", "base", "mid")
     call her_main("but lately...", "base", "narrow", "worried", "down")
     call her_main("...it’s been more than that... now I do it to make you happy, [genie_name].", "base", "narrow", "base", "mid_soft")
     call her_main("Because making you happy, makes me happy...", "base", "squint", "base", "mid")

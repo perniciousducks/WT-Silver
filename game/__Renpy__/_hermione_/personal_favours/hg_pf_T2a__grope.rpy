@@ -49,7 +49,7 @@ label hg_pf_grope:
     # Points
     if her_tier <= 5:
         $ gryffindor += current_payout
-        m "The \"Gryffindor\" house gets [current_payout] points!"
+        m "The Gryffindor house gets [current_payout] points!"
     else:
         m "You may leave now, [hermione_name]."
 
@@ -210,7 +210,7 @@ label hg_pf_grope_T2_intro_E1:
 
     call her_main("[genie_name]! Don't you think this is too much?", "disgust", "narrow", "base", "mid_soft")
     m "You think?"
-    her "I am not one of those harlots from \"Slytherin\", you know..."
+    her "I am not one of those harlots from Slytherin, you know..."
     m "I know... You are from \"Gryfonmon\"... or something..." #<- GRYFFINDOR MISSPELLED ON PERPOUSE
     call her_main("And if I don't feel like it I don't have to sell you a single favour, [genie_name]!", "annoyed", "base", "worried", "R")
     m "Of course..."

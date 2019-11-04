@@ -13,7 +13,7 @@ label cc_pr_manipulate_start:
         # Intro
         if cc_pr_manipulate.points == 0:
             m "So what do we know about our opponents?"
-            call cho_main("\"Hufflepuff\"? Well their team isn't the best, but they have a really strong seeker.","soft","base","base","mid")
+            call cho_main("Hufflepuff? Well their team isn't the best, but they have a really strong seeker.","soft","base","base","mid")
             m "Right...{w} who was that again?"
             call cho_main("Cedric Diggory. How often do I have to repeat that to you, [cho_genie_name]?","annoyed","narrow","base","mid")
             m "You will know once you get to be my age..."
@@ -23,7 +23,7 @@ label cc_pr_manipulate_start:
             call cho_main("And very popular with the girls...","soft","base","sad","downR")
             m "Do I sense a little bit of something in your voice?"
             call cho_main("Of course not! We stopped dating ages ago!","angry","base","raised","R")
-            call cho_main("I didn't want to be seen with an idiot like him anymore, not if I'm supposed to be a proper \"Ravenclaw\"...","soft","narrow","angry","mid")
+            call cho_main("I didn't want to be seen with an idiot like him anymore, not if I'm supposed to be a proper Ravenclaw...","soft","narrow","angry","mid")
             call cho_main("{size=-4}Even if he's cute...{/size}","horny","base","sad","down") # Small text.
             m "That's good. We can use this to our advantage."
             call cho_main("We can? How?","soft","wide","base","mid")
@@ -38,7 +38,7 @@ label cc_pr_manipulate_start:
             call cho_main("Isn't it a little mean?","soft","closed","base","mid")
             m "Mean? You're not doing anything wrong are you? You're just talking to him."
             call cho_main("So I'm just supposed to lead him down the garden path?","soft","base","raised","mid")
-            m "Only if you want \"Ravenclaw\" to have a chance at winning."
+            m "Only if you want Ravenclaw to have a chance at winning."
             call cho_main("*Hmmm*...","annoyed","narrow","base","R")
             m "And don't worry about him.{w} He's hardly going to complain about having a pretty little thing like you to talk to..."
             g9 "Not to mention look at..."
@@ -52,13 +52,13 @@ label cc_pr_manipulate_start:
             m "And how's that plan been working out so far?"
             call cho_main("*Ugh!* Fine...{w} Point taken...","annoyed","narrow","angry","R")
             call cho_main("So I just have to make him think there's something between us again?","soft","base","base","mid")
-            call cho_main("I think I can do that...{w} For \"Ravenclaw\"...","quiver","base","sad","down")
+            call cho_main("I think I can do that...{w} For Ravenclaw...","quiver","base","sad","down")
             m "Good, let me know how it goes later today."
             call cho_main("Yes, [cho_genie_name]!","base","base","base","mid")
 
         # Repeated
         else:
-            m "Ready to mess with \"Hufflepuff\" again?"
+            m "Ready to mess with Hufflepuff again?"
             call cho_main("I guess so...", mouth="soft", face="happy")
             g9 "Great! I'll see you later today for your report, [cho_name]!"
             call cho_main("Yes, [cho_genie_name]!","base","base","base","mid")
@@ -69,30 +69,30 @@ label cc_pr_manipulate_start:
         # Intro
         if cc_pr_manipulate.points == 0:
             m "[cho_name], how well, in your opinion, did you do in your last match?"
-            call cho_main("I think I did quite well with distracting those \"Hufflepuffs\"...","soft","narrow","sad","mid")
-            m "Only one \"Hufflepuff\"!{w} We were lucky you could secure that win with such low effort..."
+            call cho_main("I think I did quite well with distracting those Hufflepuffs...","soft","narrow","sad","mid")
+            m "Only one Hufflepuff!{w} We were lucky you could secure that win with such low effort..."
             call cho_main("(...)","annoyed","base","sad","downR")
             m "We have to up our game to win against the next house, don't you think?"
             m "Manipulating just one player won't be enough this time! We have to put our focus on their entire team!"
-            call cho_main("You might be right about that, [cho_genie_name].{w} \"Slytherin\"'s team is quite good overall, and they have some of the best players at this school.","soft","base","sad","mid")
+            call cho_main("You might be right about that, [cho_genie_name].{w} Slytherin's team is quite good overall, and they have some of the best players at this school.","soft","base","sad","mid")
             call cho_main("What do you suggest I should do?","annoyed","narrow","sad","mid")
             m "Same as with that Diggory boy!"
             g4 "Go and talk to them, be affectionate and flirty, make out with them..."
-            call cho_main("Make out with? Those \"Slytherins\"-","soft","wide","sad","mid")
+            call cho_main("Make out with? Those Slytherins-","soft","wide","sad","mid")
             call cho_main("*guargh*","scream","narrow","angry","mid", trans="hpunch")
             call cho_main("*cough*{w=0.6} *guargh!*{w=0.8} *cough*","scream","closed","angry","mid", trans="hpunch")
             call nar(">You hear Cho make some inadvertent gag noises...")
             m "Is everything okay, girl?"
-            call cho_main("No!{w=0.2} It's not ok!{w} Why would you think I want to snog with those repulsive, yuck-ugly, \"Slytherin\" degenerates?!","angry","wide","sad","mid")
+            call cho_main("No!{w=0.2} It's not ok!{w} Why would you think I want to snog with those repulsive, yuck-ugly, Slytherin degenerates?!","angry","wide","sad","mid")
             call cho_main("The thought alone utterly disgusts me, [cho_genie_name]!","soft","narrow","angry","R")
             call cho_main("I'll do anything but that!","soft","narrow","base","mid")
             m "So no kissing?"
             call cho_main("Absolutely not!{w=0.8} Not even with Malfoy...","angry","closed","angry","mid")
             m "(...)"
-            call cho_main("Besides, Sir.{w=0.6} They're \"Slytherins\"!{w=0.8} What if someone were to see me with them?","soft","narrow","angry","mid")
+            call cho_main("Besides, Sir.{w=0.6} They're Slytherins!{w=0.8} What if someone were to see me with them?","soft","narrow","angry","mid")
             m "Would that be an issue?"
             call cho_main("Since they are on the enemy team, yes!","angry","narrow","angry","mid")
-            call cho_main("What if my team was to find out I hang around \"Slytherins\"?{w} \"Slytherins\"!","angry","wide","base","mid")
+            call cho_main("What if my team was to find out I hang around Slytherins?{w} Slytherins!","angry","wide","base","mid")
             m "So... just do it in secret, then."
             call cho_main("That... might work.","annoyed","base","base","R")
             m "Don't you have any classes with them?"
@@ -115,7 +115,7 @@ label cc_pr_manipulate_start:
 
         # Repeated
         else:
-            m "Time to brighten up some \"Slytherin\"'s day again..."
+            m "Time to brighten up some Slytherin's day again..."
             g9 "Go and get their players on \"your\" side!"
             call cho_main("I will try my best, [cho_genie_name]!", mouth="smile", face="happy")
             g9 "Report to me later as usual, [cho_name]!"
@@ -157,7 +157,7 @@ label cc_pr_manipulate_T1_intro_E1:
     m "At least it sounds like you're doing a good job distracting him."
     call cho_main("If you say so...","quiver","base","sad","down")
     m "Just keep in mind why we're doing this."
-    g4 "You can't chicken out of something as small as a kiss if you want \"Ravenclaw\" to have a chance!"
+    g4 "You can't chicken out of something as small as a kiss if you want Ravenclaw to have a chance!"
     call cho_main("Right, [cho_genie_name]!","angry","closed","sad","mid")
     m "That'll be all for now, you can go."
     call cho_main("Thank you, [cho_genie_name].","base","base","base","mid")
@@ -219,7 +219,7 @@ label cc_pr_manipulate_T1_E2:
     m "Why not? Tell me what happened..."
     call cho_main("Well, today I saw Cedric again down in the dungeons.","horny","closed","sad","mid")
     g9 "(The dungeons? I like where this is going already!)"
-    call cho_main("Before I approached him I removed my \"Ravenclaw\" tie, and unbuttoned the top of my blouse.","horny","base","base","down")
+    call cho_main("Before I approached him I removed my Ravenclaw tie, and unbuttoned the top of my blouse.","horny","base","base","down")
     m "A very well thought out strategy, girl!"
     call cho_main("I thought it would be enough to get his attention.","soft","narrow","base","mid")
     m "Which I assume you got straight away?"
@@ -242,7 +242,7 @@ label cc_pr_manipulate_T1_E2:
     m "You're right. That could be an issue..."
     call cho_main("And the worst thing is, he just kept staring!","angry","narrow","sad","down")
     m "And then? What happened?"
-    call cho_main("He commended me about how well I did in my last potion lesson with him, so he awarded \"Ravenclaw\" five house points for my efforts.","soft","narrow","angry","mid")
+    call cho_main("He commended me about how well I did in my last potion lesson with him, so he awarded Ravenclaw five house points for my efforts.","soft","narrow","angry","mid")
     m "Sounds like a nice guy..."
     call cho_main("But Sir, I ruined my potion during the last lesson I had with him!","quiver","narrow","sad","mid")
     call cho_main("The only reason he gave me those points, is because I let him stare down my shirt!","quiver","angry","sad","mid")
@@ -321,9 +321,9 @@ label cc_pr_manipulate_T2_intro_E1:
     call cho_main("They must've felt how awkward I was as I approached them, or they had literally never had any woman approach them before.","quiver","base","sad","mid")
     m "So they didn't get that you were coming onto them, surely they can't be that thick..."
     call cho_main("No sir, they got it alright... perhaps a little too well.","horny","base","base","down")
-    call cho_main("Or they're just used to treating those \"Slytherin\" skanks as their personal squeeze toys...","annoyed","narrow","angry","R")
+    call cho_main("Or they're just used to treating those Slytherin skanks as their personal squeeze toys...","annoyed","narrow","angry","R")
     m "So, what happened?"
-    call cho_main("I came onto them a little bit, since they're new on the \"Slytherin\" team I told them how impressed I was when watching their practice match against Gryffindor.","soft","narrow","angry","mid")
+    call cho_main("I came onto them a little bit, since they're new on the Slytherin team I told them how impressed I was when watching their practice match against Gryffindor.","soft","narrow","angry","mid")
     call cho_main("Told them that it must be lonely on the pitch with no girls on their team so fool around with in the showers.","horny","base","sad","down")
     call cho_main("I couldn't stand the idea of complimenting them on their looks so I told them how impressed I am with their pure strength... which technically isn't a lie.","horny","narrow","sad","down")
     m "Understandable... but what about getting them to take it a bit easier on you during the game itself?"
@@ -343,11 +343,11 @@ label cc_pr_manipulate_T2_intro_E1:
     m "And what about the butt squeeze?"
     call cho_main("What about it, sir?","soft","wide","base","mid")
     m "Did you like it?"
-    call cho_main("Sir! They're \"Slytherins\"!","angry","wide","base","mid")
+    call cho_main("Sir! They're Slytherins!","angry","wide","base","mid")
     m "That's not what I asked."
     call cho_main("...","annoyed","narrow","angry","mid")
     call cho_main("Can I please go now, Sir?{w} I've done what you asked of me.","soft","narrow","angry","R")
-    m "Yes, [cho_name].{w} You've done a great job today getting closer to beating those pesky \"Slytherins\"."
+    m "Yes, [cho_name].{w} You've done a great job today getting closer to beating those pesky Slytherins."
     call cho_main("Thank you sir...","soft","narrow","base","mid")
     m "Make sure they'll remember your meeting during the match, and I'm sure any sort of desire to win will wash away."
     call cho_main("*Hmph*...","horny","narrow","base","downR")

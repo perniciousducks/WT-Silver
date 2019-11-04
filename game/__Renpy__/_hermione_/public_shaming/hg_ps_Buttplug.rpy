@@ -58,7 +58,7 @@ label hg_ps_buttplug:
         call her_main(".........", "annoyed", "narrow", "annoyed", "mid")
         m "How about we try one a little less... ambitious."
         call her_main("............", "upset", "closed", "base", "mid")
-        m "I'm willing to give \"Gryffindor\" fifty five points."
+        m "I'm willing to give Gryffindor fifty five points."
         m "and All I ask for..."
         call her_main("..........?", "annoyed", "squint", "base", "mid")
         call nar(">You pull out the small butt plug from your desk.")
@@ -149,7 +149,7 @@ label hg_ps_buttplug:
             m "Wearing your favourite little butt plug to class!"
             call her_main("...again?", "angry", "narrow", "base", "down")
             m "Sure, why not?"
-            m "And another fifty five house points for the \"Gryffindor\" house of course."
+            m "And another fifty five house points for the Gryffindor house of course."
             call her_main("..........", "annoyed", "base", "worried", "R")
             m "So... Are you ok with that, [hermione_name]?"
             call her_main("I suppose so...", "annoyed", "narrow", "angry", "R")
@@ -725,7 +725,7 @@ label hg_ps_buttplug_complete:
             show screen blktone
             call her_main("It went well, [genie_name]...", "open", "base", "base", "mid",xpos="right",ypos="base")
             call play_music("playful_tension") # SEX THEME.
-            her "A group of second years from \"hufflepuff\" even complimented me on it..."
+            her "A group of second years from hufflepuff even complimented me on it..."
             call her_main("...they said that it looked cute...", "grin", "base", "base", "R")
             m "did anything else happen?"
             call her_main("well seeing as how they were so nice...", "base", "narrow", "worried", "down")
@@ -839,7 +839,7 @@ label hg_ps_buttplug_complete:
             call her_main("Well, there's not much to tell...", "open", "narrow", "worried", "down")
             her "I attended classes..."
             her "studied for the upcoming potions exam..."
-            call her_main("it was a normal day except for a group of those nasty \"slytherin\" tramps...", "annoyed", "narrow", "angry", "R")
+            call her_main("it was a normal day except for a group of those nasty slytherin tramps...", "annoyed", "narrow", "angry", "R")
             call her_main("I was minding my business on the way to class when they called me a \"butt slut\".", "angry", "narrow", "base", "down")
             m "did you say anything back to them?"
             call her_main("and sink to their level...", "annoyed", "narrow", "angry", "R")
@@ -902,7 +902,7 @@ label hg_ps_buttplug_complete:
             m "what?"
             call her_main("Well I was in the stall finishing up...", "base", "base", "base", "R")
             her "When a girl entered the other stall."
-            call her_main("I wasn't sure but I thought that it may have been a \"slytherin\"...", "upset", "wink", "base", "mid")
+            call her_main("I wasn't sure but I thought that it may have been a slytherin...", "upset", "wink", "base", "mid")
             call her_main("So I decided to press my cheeks to the wall and stick my tail through!", "smile", "base", "base", "R")
             m "did they touch it?"
             call her_main("not immediately...", "base", "base", "base", "R")
@@ -990,7 +990,7 @@ label hg_ps_buttplug_complete:
             m "what?"
             call her_main("Well I was in the stall finishing up...", "base", "base", "base", "R")
             her "When a girl entered the other stall."
-            call her_main("I wasn't sure but I thought that it may have been a \"slytherin\"...", "upset", "wink", "base", "mid")
+            call her_main("I wasn't sure but I thought that it may have been a slytherin...", "upset", "wink", "base", "mid")
             call her_main("So I decided to stick my tail through!", "smile", "base", "base", "R")
             m "did they touch it?"
             call her_main("not immediately...", "base", "base", "base", "R")
@@ -1027,7 +1027,7 @@ label hg_ps_buttplug_complete:
             m "Very good, [hermione_name]!"
 
     $ gryffindor += current_payout #55
-    m "The \"Gryffindor\" house gets [current_payout] points!"
+    m "The Gryffindor house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave", speed=2.5)

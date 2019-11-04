@@ -229,7 +229,7 @@ label cc_ht_return_E2:
     m "You seem a little on edge..."
     call cho_main("On edge?","scream","shocked","angry","mid")
     call cho_main("Of course I'm on edge! I've never felt so humiliated in my life!","angry","wide","angry","mid")
-    call cho_main("You had to have me do this on the day half of \"hufflepuff\" shows up to watch us practice, didn't you!","pout","narrow","angry","R")
+    call cho_main("You had to have me do this on the day half of hufflepuff shows up to watch us practice, didn't you!","pout","narrow","angry","R")
     call cho_main("I bet you were probably in on it...","upset","narrow","angry","mid")
     m "Now now, you know I'd never resort to any sort of foul play like that..."
     m "More importantly, how did the game go?"
@@ -242,11 +242,11 @@ label cc_ht_return_E2:
     g9 "Sounds like somebody should get a reward for his efforts!"
     call cho_main("I can't believe I was able to finally catch it!","smile","closed","base","mid")
     m "Is this the first time you've caught one?"
-    call cho_main("*Mhmm*... This is the first game of quidditch \"Ravenclaw\" has won in over six years!","smile","base","base","mid")
+    call cho_main("*Mhmm*... This is the first game of quidditch Ravenclaw has won in over six years!","smile","base","base","mid")
     m "Wasn't this just a practice game?"
     call cho_main("I was including the practices, [cho_genie_name]...","annoyed","narrow","sad","downR")
     m "oh..."
-    call cho_main("\"Ravenclaw\"...{w} isn't very good...","pout","narrow","sad","down")
+    call cho_main("Ravenclaw...{w} isn't very good...","pout","narrow","sad","down")
     call cho_main("But I have a feeling that's going to change this year!","smile","closed","base","mid")
     g9 "And I am happy to be of help!"
     call cho_main("Yes, [cho_genie_name]! Thank you so much!","horny","narrow","base","down")
@@ -255,8 +255,8 @@ label cc_ht_return_E2:
     m "Then you can do some more advanced favours for me."
     call cho_main("More advanced...favours?","soft","narrow","sad","mid")
     #m "Would you say you've had enough practice to play against them in a tourney game?"
-    #call cho_main("Absolutely! The next time we will confront \"Hufflepuff\", they will be crushed!","smile","angry","angry","mid")
-    #call cho_main("This should be an easy win for \"Ravenclaw\".","base","closed","base","mid")
+    #call cho_main("Absolutely! The next time we will confront Hufflepuff, they will be crushed!","smile","angry","angry","mid")
+    #call cho_main("This should be an easy win for Ravenclaw.","base","closed","base","mid")
     call cho_main("*Uhm*... [cho_genie_name]...","horny","base","sad","mid")
     call cho_main("The whole house is celebrating our win at the moment...","soft","narrow","sad","mid")
     call cho_main("And I'd rather not miss spending some time with-","horny","base","sad","R")

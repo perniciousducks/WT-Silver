@@ -19,7 +19,7 @@ label potion_scene_11_1:
     call her_main("...", "open", "closed", "angry", "mid")
     call her_main("If I had the option I'd prefer not to...", "open", "base", "base", "mid")
     m "well-"
-    call her_main("but unfortunately, \"Slytherin\" winning the house cup this year isn't an option!", "scream", "closed", "angry", "mid")
+    call her_main("but unfortunately, Slytherin winning the house cup this year isn't an option!", "scream", "closed", "angry", "mid")
     m "So you'll drink the potion then?"
     call her_main("Yes [genie_name], I'll drink your potion.", "annoyed", "squint", "base", "mid")
     m "Fantastic!"
@@ -116,7 +116,7 @@ label potion_scene_11_1:
     call her_main("It can't be any worse than being milked.", "open", "squint", "base", "mid")
     call her_main("Honestly, [genie_name], I'm shocked that you would even suggest something so completely ridiculous.", "normal", "squint", "angry", "mid")
     call her_main("I think I better get going...", "annoyed", "narrow", "angry", "R")
-    m "Well, 20 points to \"gryffindor\""
+    m "Well, 20 points to gryffindor"
     $ gryffindor += 20
     call her_main("Thanks...", "annoyed", "squint", "base", "mid")
 
@@ -342,7 +342,7 @@ label potion_scene_11_2:
     call her_main("well I'd like to be paid now [genie_name]...", "annoyed", "narrow", "angry", "R")
 
 
-    m "Oh yes, quite right. 100 points to \"gryffindor\"!"
+    m "Oh yes, quite right. 100 points to gryffindor!"
     $ gryffindor += 100
 
     call her_main("Thank you sir...", "open", "squint", "base", "mid")
@@ -672,7 +672,7 @@ label potion_scene_11_3:
 
         call her_main("...", "open_wide_tongue", "narrow", "annoyed", "up")
         call nar(">Hermione stands before you, unable to speak.")
-        m "Oh um... 20 points to \"gryffindor\"!"
+        m "Oh um... 20 points to gryffindor!"
         $ gryffindor += 20
         call her_main("...", "open_wide_tongue", "narrow", "annoyed", "up")
         m "And I'll be needing this back."
@@ -889,7 +889,7 @@ label potion_scene_11_3:
         call her_main("{size=-8}t-turn it...{/size}", "angry", "squint", "base", "mid",cheeks="blush")
         call her_main("{size=-6}t-turn it...{/size}", "angry", "squint", "base", "mid",cheeks="blush")
         call her_main("{size=-4}t-turn it... up...{/size}", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
-        m "I think you've had enough... 20 points to \"gryffindor\"!"
+        m "I think you've had enough... 20 points to gryffindor!"
         $ gryffindor += 20
 
         call her_main("...", "angry", "squint", "base", "mid",cheeks="blush")
@@ -971,7 +971,7 @@ label potion_scene_11_1_2:
     call her_main("Well I expect to be paid extra after this humiliation.", "annoyed", "narrow", "annoyed", "mid")
     m "how much?"
     call her_main("30 points.", "annoyed", "base", "angry", "mid")
-    m "Fine, 30 points to \"gryffindor\"."
+    m "Fine, 30 points to gryffindor."
     $ gryffindor += 30
     call her_main("*hmph*", "annoyed", "narrow", "annoyed", "mid")
     call her_main("So when are these \"things\" going to go away? Or do I have to go get one of the nurses to shrink them?", "angry", "narrow", "annoyed", "mid", emote="01")

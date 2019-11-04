@@ -43,7 +43,7 @@ label hg_pr_flirt_teacher:
 # End Event
 label end_hg_pr_flirt_teacher:
     $ gryffindor += current_payout
-    m "The \"Gryffindors\" get [current_payout] points!"
+    m "The Gryffindors get [current_payout] points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave", speed=2.5)
@@ -463,7 +463,7 @@ label hg_pr_flirt_teacher_T3_E2: # Snape +CG
     m "The fiend!"
     m "Did you enjoy it, though?"
     call her_main("[genie_name], I am only doing this--", "scream", "closed", "angry", "mid", ypos="head")
-    m "Go \"Gryffindors\"! honour and all that. Yes, I remember."
+    m "Go Gryffindors! honour and all that. Yes, I remember."
     call ctc
 
     hide screen snape_groping

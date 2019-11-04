@@ -41,18 +41,18 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         call her_main("May I ask what you are planning to do with them...?", "disgust", "narrow", "base", "mid_soft")
         m "Ehm...I'm conducting research..."
         her "But this is kind of inappropriate, don't you think?"
-        m "But don't you hate it that some of the girls from \"Slytherin\"..."
+        m "But don't you hate it that some of the girls from Slytherin..."
         m "Are selling favours for house points, [hermione_name]?"
         call her_main("Yes I do!", "angry", "base", "angry", "mid")
-        call her_main("(Those \"Slytherin\" tramps have no dignity.)", "annoyed", "narrow", "angry", "R")
+        call her_main("(Those Slytherin tramps have no dignity.)", "annoyed", "narrow", "angry", "R")
         m "Well, there you go then!"
         call her_main("Huh?", "disgust", "narrow", "base", "mid_soft")
         m "Beat them at their own game!"
         call her_main("What?", "open", "base", "base", "mid")
-        m "Yes! Don't just put the \"Gryffindor\" house back on top..."
+        m "Yes! Don't just put the Gryffindor house back on top..."
         m "But do it by beating them at their own game!"
         call her_main("[genie_name]...", "open", "base", "worried", "mid")
-        m "As headmaster, I cannot play favourites. But you know how I feel about \"Gryffindor\"..."
+        m "As headmaster, I cannot play favourites. But you know how I feel about Gryffindor..."
         m "I wish I could give you the points but that would ruin the system..."
         hide screen hermione_main
         with d3
@@ -417,7 +417,7 @@ label hg_ps_get_panties_complete:
         her "Good night, [genie_name]."
     else:
         $ gryffindor +=15
-        m "Fifteen points to \"Gryffindor\", [hermione_name]. Well deserved."
+        m "Fifteen points to Gryffindor, [hermione_name]. Well deserved."
         her "Thank you, [genie_name]..."
         m "You can go now."
         her "Good night, [genie_name]."

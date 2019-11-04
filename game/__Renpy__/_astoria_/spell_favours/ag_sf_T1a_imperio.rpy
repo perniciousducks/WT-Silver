@@ -466,10 +466,10 @@ label ag_se_imperio_sb_E2:
     m "A closeted slut..."
     call ast_main("Excuse me?",mouth="open",eyebrows="worried")
     call ast_main("",mouth="upset")
-    m "Miss Greengrass... is there any other \"Hufflepuff\" students you know of selling favours?"
-    call ast_main("Why would I know or care what \"Hufflepuffs\" are doing?",mouth="clench")
+    m "Miss Greengrass... is there any other Hufflepuff students you know of selling favours?"
+    call ast_main("Why would I know or care what Hufflepuffs are doing?",mouth="clench")
     m "Just because she enjoys it doesn't mean it's not humiliating for her..."
-    m "What would the other \"Hufflepuffs\" think of her if she knew what you have her do?"
+    m "What would the other Hufflepuffs think of her if she knew what you have her do?"
     call sus_main("...", "upset","narrow","base","down")
     call ast_main("What do you mean?","upset","base","base")
     m "Ask her the right questions..."
@@ -1804,7 +1804,7 @@ label hermione_breaks_astoria:
     her "..."
     m "How many?"
     her "At least a hundred."
-    m "One hundred points to \"Gryffindor\" then!"
+    m "One hundred points to Gryffindor then!"
     $ gryffindor += 100
     her "Thank you, [genie_name]."
     ">With that, Hermione unparalyses the dazed Slytherin before leading her out of your office and back to her dorm."

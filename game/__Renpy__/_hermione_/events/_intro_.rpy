@@ -483,7 +483,7 @@ label hermione_intro_E2:
     call her_main("Did you know that some of the girls in this school are now selling favours for house points...?", "annoyed", "squint", "angry", "mid")
     her "Sometimes even for good grades..."
     m "Really?"
-    call her_main("Nobody from the \"Gryffindor\" house of course...", "open", "closed", "angry", "mid")
+    call her_main("Nobody from the Gryffindor house of course...", "open", "closed", "angry", "mid")
     her "And that's what puts us at a disadvantage - our integrity!"
     her "As for the boys - they have to work ten times harder than the girls simply to pass a test..."
     her "Or, if they are lucky enough, to get one meagre house point..."
@@ -580,8 +580,8 @@ label ss_he_hermione_E2:
     call sna_main("She hasn't failed a single test in her entire time here...","snape_31")
     call sna_main("She is always ahead of the schedule...","snape_31")
     call sna_main("Damn, how I hate it when she corrects me during my classes...","snape_08")
-    call sna_main("And thanks to her the \"Gryffindor\" house is way ahead of everybody else now...","snape_34")
-    call sna_main("Even \"Slytherin\" is no match for them this year...","snape_35")
+    call sna_main("And thanks to her the Gryffindor house is way ahead of everybody else now...","snape_34")
+    call sna_main("Even Slytherin is no match for them this year...","snape_35")
     call sna_main("........................","snape_43")
     call sna_main("Dammit... I need more wine...","snape_34")
     m "The wine can wait. Hear me out!"
@@ -615,11 +615,11 @@ label ss_he_hermione_E2:
             else:
                 jump fuck_off
 
-        "{size=-3}\"Make sure \"Gryffindor\" loses the cup this year!\"{/size}" if not d_flag_02:
+        "{size=-3}\"Make sure Gryffindor loses the cup this year!\"{/size}" if not d_flag_02:
             $ d_flag_02 = True
             call sna_main("You mean to just start subtracting points from them for no good reason?","snape_01")
             call sna_main("Oh, I like that!","snape_02")
-            call sna_main("There are a couple of \"Slytherin\" girls who are long overdue for receiving some extra house points as well.","snape_46")
+            call sna_main("There are a couple of Slytherin girls who are long overdue for receiving some extra house points as well.","snape_46")
             call sna_main("Oh, this will work out magnificently!","snape_45")
             call sna_main("You are a Genius!","snape_02")
             m "Yes, I am a genius genie. What are the odds of that..."
@@ -636,7 +636,7 @@ label ss_he_hermione_E2:
             m "Nonsense!"
             m "All we need to do is convince her that she needs to make some sacrifices \"for the greater good\"."
             call sna_main("Oh, but of course...","snape_37")
-            call sna_main("She would gladly \"Get her hands dirty\" to save the honour of her precious \"Gryffindor\" house!","snape_47")
+            call sna_main("She would gladly \"Get her hands dirty\" to save the honour of her precious Gryffindor house!","snape_47")
             call sna_main("And when she does, we will have the leverage we need...","snape_37")
 
             if d_flag_01 and d_flag_02 and d_flag_03:
@@ -890,7 +890,7 @@ label hermione_intro_E5:
                                 with hpunch
                                 call her_main("{size=+5}Professor Dumbledore!!!{/size}", "scream", "closed", "angry", "mid")
                                 m "{size=-5}(Well, at least I tried...){/size}"
-                                her "I am not some \"Slytherin\" floozy!"
+                                her "I am not some Slytherin floozy!"
                                 m "Of course not, miss Granger."
                                 m "It was a test... You passed. Good job."
                                 call her_main("What...?", "open", "base", "base", "mid")
@@ -1040,7 +1040,7 @@ label hermione_intro_E6:
     call her_main(".................", "annoyed", "base", "worried", "R")
     m "What is it, miss Granger?"
     call her_main("Well, ehm...", "open", "base", "base", "mid")
-    her "You see... The \"Gryffindor\" house is not in the lead anymore..."
+    her "You see... The Gryffindor house is not in the lead anymore..."
     call her_main("And... everyone is working so hard...", "annoyed", "base", "worried", "R")
     her "And they look up to me for help but I don't know what to do..."
     m "............................"
@@ -1244,9 +1244,9 @@ label hermione_intro_E6:
 
     label stupid_enogh:
         if current_payout == 1:
-            m "[current_payout] point to the \"Gryffindor\" house."
+            m "[current_payout] point to the Gryffindor house."
         else:
-            m "[current_payout] points to the \"Gryffindor\" house."
+            m "[current_payout] points to the Gryffindor house."
         $ gryffindor += current_payout
 
     call her_main("Yay!..............", "grin", "worriedCl", "worried", "mid", emote="05", xpos="base", ypos="base", flip=False, trans="fade")

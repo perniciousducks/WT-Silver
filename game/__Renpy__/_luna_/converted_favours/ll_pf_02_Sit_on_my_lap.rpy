@@ -1354,7 +1354,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         m "Alright, alright. Here's your gold and points."
         $ gryffindor += 25
         $ ravenclaw += 25
-        m "15 points to \"gryffindor\" and \"ravenclaw\"."
+        m "15 points to gryffindor and ravenclaw."
         $ gold -= 80
         $ luna_gold += 40
         m "and here's your gold."

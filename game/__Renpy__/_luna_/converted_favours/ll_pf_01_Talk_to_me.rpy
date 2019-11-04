@@ -70,7 +70,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                     call lun_main("...","normal","suspicious","base","R")
                     call lun_main("{size=-5}(Well I suppose he did offer fifty gold...){/size}","base","suspicious","base","R")
                     call lun_main("As I was saying, no one seems to even notice me.","normal","angry","angry","mid")
-                    call lun_main("The teachers are too busy playing favourites with the \"gryffindor\" and \"slytherin\" students.","pout","angry","angry","R")
+                    call lun_main("The teachers are too busy playing favourites with the gryffindor and slytherin students.","pout","angry","angry","R")
                     call lun_main("The girls are all self-obsessed.","upset","angry","angry","down")
                     m "You don't say."
                     call lun_main("and The boys are off chasing anything that shows a little skin...","upset","mad","angry","R")
@@ -83,7 +83,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                     m "{size=-2}(Yes......){/size}"
                     call lun_main("showing off her body for anyone that will look.","smile","annoyed","angry","R")
                     m "{size=+2}(Yes.........){/size}"
-                    call lun_main("You probably want me to act like those \"slytherin\" sluts too...","base","suspicious","angry","mid")
+                    call lun_main("You probably want me to act like those slytherin sluts too...","base","suspicious","angry","mid")
                     m "{size=+4}(Yes! Yes!){/size}"
                     call lun_main("willing to show it all for a few points...","grin","suspicious","angry","mid")
                     g4 "{size=+4}(almost there...){/size}"
@@ -698,7 +698,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         m "Alright, alright. Here's your gold and points."
         $ gryffindor += 15
         $ ravenclaw += 15
-        m "15 points to \"gryffindor\" and \"ravenclaw\"."
+        m "15 points to gryffindor and ravenclaw."
         $ gold -= 50
         $ luna_gold += 25
         m "and here's your gold."

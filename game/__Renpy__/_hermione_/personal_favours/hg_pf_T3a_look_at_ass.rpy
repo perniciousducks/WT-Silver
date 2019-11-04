@@ -967,7 +967,7 @@ label end_hg_show_ass:
                 $ her_mood +=7
 
         $ gryffindor +=current_payout
-        m "The \"Gryffindor\" house gets [current_payout] points!"
+        m "The Gryffindor house gets [current_payout] points!"
         stop music fadeout 10.0
 
         call her_main("..................", "annoyed", "base", "worried", "R")

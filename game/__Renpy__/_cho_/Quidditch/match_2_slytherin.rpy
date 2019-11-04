@@ -6,7 +6,7 @@
 label start_slytherin_match:
     call cho_main(xpos="mid", ypos="base", trans="fade")
     g9 "Alright, [cho_name]. Let's do this!"
-    g4 "Tomorrow we shall wipe the floor with those \"Slytherins,\" and bathe in their salty tears!"
+    g4 "Tomorrow we shall wipe the floor with those Slytherins, and bathe in their salty tears!"
     g9 "(Snape's tears in particular, after I get a hold of all of his gold!)"
     call cho_main("I'll do my best, Sir.", "soft", "base", "angry", "mid")
     m "Are you ready?"
@@ -283,7 +283,7 @@ label slytherin_match:
     call ton_walk(xpos= 220, ypos= 130, speed=1)
     pause .2
 
-    call ton_main("Oh, what a view! Much better than the one from the \"Hufflepuff\" stands!","base","happyCl","base","mid", flip=True, ypos="head")
+    call ton_main("Oh, what a view! Much better than the one from the Hufflepuff stands!","base","happyCl","base","mid", flip=True, ypos="head")
 
     #Hermione enters from the left and walks up to the podium
     play bg_sounds "sounds/crowd.mp3" fadein 2
@@ -336,7 +336,7 @@ label slytherin_match:
 
     #Crowdsounds go down
     call her_main("Welcome back to the second match of the season!","base","happyCl","base","mid")
-    sly1 "{size=+5}Not the \"Gryffindor\" slut again!{/size}"
+    sly1 "{size=+5}Not the Gryffindor slut again!{/size}"
     with hpunch
     sly2 "{size=+8}Get off the podium, Mudblood!{/size}"
     sly1 "{size=+15}Boooo!{/size}"
@@ -366,7 +366,7 @@ label slytherin_match:
     call her_main("I know the weather might not be optimal, but the games must go on.","soft","closed","base","mid", flip=True, xpos="120", ypos="base")
     call her_main("Therefore, let me now welcome onto the pitch...","open","base","base","down")
     call her_main("The team known for their technical prowess and... lately... unconventional tactics...","disgust","base","worried","down")
-    call her_main("Team \"Ravenclaw!\"","open","base","base","mid")
+    call her_main("Team Ravenclaw!","open","base","base","mid")
 
     $ qp_mob_reaction[0] = "emo8"
     $ qp_mob_reaction[1] = "emo7"
@@ -387,7 +387,7 @@ label slytherin_match:
     with hpunch
     qcr "{size=+15}Get on with it!{/size}" # loud
     call her_main("The team known for their thick skin... or should I say, thick skulls...","angry","base","angry","mid", emote="01")
-    call her_main("Team \"Slytherin!\"","annoyed","narrow","angry","mid")
+    call her_main("Team Slytherin!","annoyed","narrow","angry","mid")
 
     $ renpy.sound.play("sounds/crowd_stomping.mp3")
     $ qp_mob_reaction[0] = "emo8"
@@ -408,9 +408,9 @@ label slytherin_match:
 
 
     call her_main("And we're off!","base","happyCl","base","mid")
-    call nar("Looking up you can see Cho giving Malfoy a quick smirk as she darts off towards the \"Slytherin\" half of the pitch.")
-    call her_main("\"Ravenclaw\" chaser and team captain Roger Davies immediately goes for the quaffle...","open","base","angry","L")
-    call her_main("The \"Slytherin\" captain Graham Montague not far behind.","open","base","angry","up")
+    call nar("Looking up you can see Cho giving Malfoy a quick smirk as she darts off towards the Slytherin half of the pitch.")
+    call her_main("Ravenclaw chaser and team captain Roger Davies immediately goes for the quaffle...","open","base","angry","L")
+    call her_main("The Slytherin captain Graham Montague not far behind.","open","base","angry","up")
     call her_main("Oh! Davies catches it and passes to Bradley...","smile","base","angry","up")
     call ton_main("She's pretty cute when she's excited, isn't she.","base","happyCl","base","mid")
     m "..."
@@ -426,10 +426,10 @@ label slytherin_match:
     call sna_main("Feels a bit like cheating, considering our bet...","snape_09")
     g4 "Fuck{w=0.3}, I forgot he was here..."
     call sna_main("That I am...{w=0.3} And I can still hear you...","snape_03")
-    call sna_main("I had imagined that you wouldn't use such tactics during the game against \"Slytherin\"...","snape_04")
+    call sna_main("I had imagined that you wouldn't use such tactics during the game against Slytherin...","snape_04")
     m "(There goes that fucking bet...)"
 
-    call her_main("The \"Slytherin\" beaters, Crabbe and Goyle, are now focusing their efforts on beating the bludgers as hard as they can towards the enemy chasers!","open","base","angry","R")
+    call her_main("The Slytherin beaters, Crabbe and Goyle, are now focusing their efforts on beating the bludgers as hard as they can towards the enemy chasers!","open","base","angry","R")
 
     m "Well, if you remembered the bet correctly, you'd know that we said nothing about any tampering on my part."
     g9 "It was only you who made such an agreement..."
@@ -469,11 +469,11 @@ label slytherin_match:
     $ qp_mob_reaction[1] = "emo02"
     $ qp_mob_reaction[2] = "excl"
     $ renpy.sound.play("sounds/crowd_ouch.mp3")
-    call her_main("Another bludger hit by Crabbe - going straight into the stomach of the \"Ravenclaw\" keeper!","clench","base","worried","up")
+    call her_main("Another bludger hit by Crabbe - going straight into the stomach of the Ravenclaw keeper!","clench","base","worried","up")
     $ qp_mob_reaction[2] = None
     $ qp_mob_reaction[1] = None
     $ qp_mob_reaction[0] = None
-    call her_main("Pucey passes the quaffle to Warrington, who scores another goal for team \"Slytherin!\"","annoyed","base","angry","up")
+    call her_main("Pucey passes the quaffle to Warrington, who scores another goal for team Slytherin!","annoyed","base","angry","up")
     call sna_main("...","snape_45") #Smirks
     m "That's insane, how the hell did he hit that?"
     g4 "He was on the other side of the pitch!"
@@ -499,10 +499,10 @@ label slytherin_match:
     call ton_main("Game? What game...","open","base","raised","L")
     call ton_main("Oh, Quidditch! Of course!","upset","base","worried","ahegao")
 
-    call her_main("And we're now 60-0 to \"Slytherin\" as their onslaught continues, the seekers not yet having spotted the snitch.","open","base","angry","L")
-    call her_main("If it wasn't for those foul tactics - from the brutes on the \"Slytherin\" team...","angry","base","angry","L")
+    call her_main("And we're now 60-0 to Slytherin as their onslaught continues, the seekers not yet having spotted the snitch.","open","base","angry","L")
+    call her_main("If it wasn't for those foul tactics - from the brutes on the Slytherin team...","angry","base","angry","L")
     $ renpy.sound.play("sounds/ball_hit.mp3")
-    call her_main("\"Ravenclaw\" would have no issues beating the ever living sh-{w=1.2}{nw}","angry","narrow","angry","L")
+    call her_main("Ravenclaw would have no issues beating the ever living sh-{w=1.2}{nw}","angry","narrow","angry","L")
 
     #Hermione gets hit in the face by a bludger
     call hide_characters

@@ -70,7 +70,7 @@ label use_quidditch_skirt_1:
         m "Then just tell them it was the only way to win. I'm sure they'll understand."
         call cho_main("You... might be right...","open","base","sad","downR")
         call cho_main("Alright! I'll do it!","smile","base","base","mid")
-        call cho_main("Go Go \'Ravenclaw\'!","scream","closed","sad","mid")
+        call cho_main("Go Go Ravenclaw!","scream","closed","sad","mid")
 
     # Repeat
     else:
@@ -96,7 +96,7 @@ label use_quidditch_skirt_2: # Not in use.
         m "Well, that skirt seemed a little long to me..."
         m "If you took a few inches off of it, maybe the other players wouldn't be able to keep their eyes off of you."
         call cho_main("Well I suppose I could take another inch or two off...","quiver","narrow","sad","downR")
-        call cho_main("But we better win the next practice against \"Hufflepuff\"!","scream","narrow","angry","mid")
+        call cho_main("But we better win the next practice against Hufflepuff!","scream","narrow","angry","mid")
         m "Hey, the games up to you... All I can give is pointers."
         call cho_main("Hmph... That's not what a coach is supposed to say!","pout","narrow","angry","mid")
         call cho_main("You're supposed to believe in me!","open","closed","angry","mid")

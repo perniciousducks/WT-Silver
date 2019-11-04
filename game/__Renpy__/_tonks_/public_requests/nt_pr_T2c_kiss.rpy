@@ -81,7 +81,7 @@ label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
             "\"You are back!\"":
                 pass
             "\"Make it quick!\"":
-                call ton_main("I made out with my favourite \"Slytherin boy\" again...","open","base","base","R")
+                call ton_main("I made out with my favourite Slytherin boy again...","open","base","base","R")
                 call ton_main("He's getting quite good at it...","horny","base","base","up")
                 m "Well done, [tonks_name]... We'll talk next time."
                 call ton_main("Have a good night, [ton_genie_name].","base","happyCl","base","mid")
@@ -153,7 +153,7 @@ label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
                 pass
             "\"Make it quick!\"":
                 call ton_main("Sorry I'm a bit late today...","open","base","base","R")
-                call ton_main("I was \"occupied\" kissing that little \"Ravenclaw boy\" again...","horny","base","angry","mid")
+                call ton_main("I was \"occupied\" kissing that little Ravenclaw boy again...","horny","base","angry","mid")
                 m "Very good, [tonks_name]."
                 call ton_main("Thank you, [ton_genie_name]. Have a good night.","base","base","base","mid")
                 call increase_house_points(house="r", points=20)
@@ -167,7 +167,7 @@ label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     g9 "I like the sound of that!"
     m "Now, care to elaborate?"
     call ton_main("Alright then, you old perv...","horny","base","angry","mid")
-    call ton_main("Today's event was with my favourite little \"Ravenclaw boy\"...","base","base","base","mid")
+    call ton_main("Today's event was with my favourite little Ravenclaw boy...","base","base","base","mid")
     m "That shy one?"
     call ton_main("Yes, the cute one!{w} He made a classic mistake today...","smile","happyCl","base","mid")
     m "Which is?"
@@ -223,7 +223,7 @@ label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
             "\"You are back!\"":
                 pass
             "\"Make it quick!\"":
-                call ton_main("I gave those two \"Slytherin sluts\" detention again...","open","base","base","R")
+                call ton_main("I gave those two Slytherin sluts detention again...","open","base","base","R")
                 call ton_main("Fuck, I came so hard watching them kiss!","base","base","base","mid")
                 m "You wouldn't believe how jealous I am!"
                 call ton_main("You have no idea, [ton_genie_name]!","base","base","angry","mid")
@@ -236,12 +236,12 @@ label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
     m "How was your day?"
     call ton_main("Better than most... You'll love this one!","base","happyCl","base","mid")
     g9 "Don't let me stop you then..."
-    call ton_main("As always, there were a few \"Slytherins\" messing around in class...","open","base","base","R")
+    call ton_main("As always, there were a few Slytherins messing around in class...","open","base","base","R")
     call ton_main("With an especially annoying pair of girls that wouldn't shut up!","open","closed","base","mid")
     call ton_main("So,... I gave them detention,...which thankfully got them to quiet down a little.","open","base","base","L")
     m "So far so good..."
     call ton_main("Normally, I only try and buy favours from one person at a time...","open","closed","base","mid")
-    call ton_main("But then I figured, why not give both those \"Slytherin sluts\" a shot.","base","base","base","mid")
+    call ton_main("But then I figured, why not give both those Slytherin sluts a shot.","base","base","base","mid")
     g9 "So you took turns kissing the girls?"
     call ton_main("No, but I could have...","open","base","base","R")
     call ton_main("I gave them the option of staying behind - for a full hour of detention...","open","closed","base","mid")
@@ -291,7 +291,7 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
             "\"You are back!\"":
                 pass
             "\"Make it quick!\"":
-                call ton_main("I kissed that cure little \"Slytherin girl\"...","open","base","base","mid")
+                call ton_main("I kissed that cure little Slytherin girl...","open","base","base","mid")
                 call ton_main("She gotting there!","base","happyCl","base","mid")
                 m "Very good, [tonks_name]."
                 call ton_main("Thank you, [ton_genie_name]. Have a good night.","base","base","base","mid")
@@ -307,7 +307,7 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
     call ton_main("No.{w} About a tender and confused girl...","open","closed","base","mid")
     call ton_main("Who's coming to terms with her sexuality, thanks to her stunningly intelligent teacher.","base","base","angry","mid")
 
-    call ton_main("That little \"Slytherin girl\" is starting to come around to me more often - as of late...","base","base","base","mid")
+    call ton_main("That little Slytherin girl is starting to come around to me more often - as of late...","base","base","base","mid")
     call ton_main("So, I figured now might be a good time to take it to the next level...","open","base","base","R")
     call ton_main("Getting her to stay after class is easy enough now...","open","closed","base","mid")
     call ton_main("I just brush her hand as I walk past her,...and throw her a subtle wink.","base","base","base","mid")
@@ -361,7 +361,7 @@ label nt_pr_kiss_T2_E1: # Tier 2 Event 1 # Not in use.
     call ton_main("Honestly? I don't think I've ever been as turned on in my life...","base","base","base","mid")
     call ton_main("Fuck... It was incredible... the power I felt over him... it was intoxicating...","base","base","base","mid")
     m "Care to elaborate?"
-    call ton_main("Well, you know that stuck up little \"Slytherin\" I've been fooling around with?","base","base","base","mid")
+    call ton_main("Well, you know that stuck up little Slytherin I've been fooling around with?","base","base","base","mid")
     m "The guy or the girl?"
     call ton_main("The boy.","base","base","base","mid")
     m "Yep, I think I remember them..."

@@ -49,7 +49,7 @@ label hg_pf_strip:
 
 
     # Points
-    m "[current_payout] to the \"Gryffindor\" house."
+    m "[current_payout] to the Gryffindor house."
     call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R")
 
 
@@ -261,7 +261,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
             call nar(">Finally the zipper is undone and she has no choice but to take the skirt off...","end")
 
             call her_main("{size=-5}(Here it comes then...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-            call her_main("{size=-5}(For the honour of \"Gryffindor\"....){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+            call her_main("{size=-5}(For the honour of Gryffindor....){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
 
             call nar(">Hermione takes off her skirt...")
             pause.2
@@ -292,7 +292,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
             call nar(">Finally the last button is undone and she has no choice but to take the shirt off...","end")
 
             call her_main("{size=-5}(Alright, here it comes...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-            call her_main("{size=-5}(For the honour of the \"Gryffindor\"!){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+            call her_main("{size=-5}(For the honour of the Gryffindor!){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
 
             call nar(">Hermione takes off her shirt...")
             pause.2

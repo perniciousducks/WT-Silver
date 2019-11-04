@@ -144,14 +144,14 @@ label cc_pf_talk_T1_intro_E1:
     g4 "For all you know he could be a vampire!"
     call cho_main("Sir, you're talking nonsense...","annoyed","angry","angry","R")
     call cho_main("Please don't joke about your student like that. It's so unlike you...","open","closed","base","mid")
-    call cho_main("He's one of your bests! The best student \"Hufflepuff\" has ever seen!","open","base","base","mid")
-    m "A \"Hufflepuff\"? Well, that explains everything..."
+    call cho_main("He's one of your bests! The best student Hufflepuff has ever seen!","open","base","base","mid")
+    m "A Hufflepuff? Well, that explains everything..."
     m "If he's such an exceptionally great student, then why aren't you two still together?"
     call cho_main("Things didn't work out, naturally...","open","base","raised","R")
     call cho_main("The tourney ended, and he didn't win, so...","soft","base","raised","down")
     m "So you two broke up?... Because he didn't win?"
     call cho_main("That was one of the reasons...","soft","base","base","downR")
-    call cho_main("There is also the fact that he's on the \"Hufflepuff Quidditch team\", as their Seeker.","open","base","base","mid")
+    call cho_main("There is also the fact that he's on the Hufflepuff Quidditch team, as their Seeker.","open","base","base","mid")
     call cho_main("It's our last shot at winning the Quidditch house cup, for the both of us.","angry","base","base","down")
     call cho_main("We'd constantly be at each other's throats.","soft","narrow","angry","mid")
     g4 "Intriguing!"
@@ -270,7 +270,7 @@ label cc_pf_talk_T1_intro_E2:
     call cho_main("I'd rather not.","soft","narrow","angry","mid")
     m "Tell me about yourself then."
     call cho_main("Of course, [cho_genie_name].","smile","base","base","mid")
-    call cho_main("We did a couple more Quidditch session yesterday.{w} To get ready for our big game against \"Hufflepuff\".","open","narrow","base","mid")
+    call cho_main("We did a couple more Quidditch session yesterday.{w} To get ready for our big game against Hufflepuff.","open","narrow","base","mid")
     call cho_main("Our team really believes that we have a chance to win this time!{w} They got a huge boost of confidence after I told 'em that the great \"Albus Dumbledore\" would be training us himself!","smile","base","base","mid")
     m "Are you getting along with your team well?"
     call cho_main("I'd say so.{w} But there has been a time when...","soft","base","base","mid")
@@ -531,7 +531,7 @@ label cc_pf_talk_T1_E3:
             call cho_main("I simply have to go to my next lesson...","soft","closed","base","mid")
             call cho_main("Or I will be late again.","annoyed","base","base","R")
         else:
-            call cho_main("But if you expect me to do well during our next \"Hufflepuff\" game, then I'll require some sleep...","soft","base","base","R")
+            call cho_main("But if you expect me to do well during our next Hufflepuff game, then I'll require some sleep...","soft","base","base","R")
 
         m "Of course. You may go..."
         call cho_main("Thank you, Sir.","base","base","base","mid")
@@ -624,20 +624,20 @@ label cc_pf_talk_T2_intro_E1:
     call cho_main("School has been rather uneventful the past couple of days.","soft","base","base","R")
     call cho_main("That is, if constantly getting bullied is the new norm at this school...","soft","narrow","angry","mid")
     m "Bullied by whom?"
-    call cho_main("The \"Slytherin Quidditch team\"!{w} They've been total dicks lately...","annoyed","narrow","angry","R")
+    call cho_main("The Slytherin Quidditch team!{w} They've been total dicks lately...","annoyed","narrow","angry","R")
     m "You don't say.{w=0.8} Why is that?"
     call cho_main("Because they are scared of us, I wager...","soft","narrow","angry","downR")
 
     call cho_main("We'll be playing against them next.","annoyed","narrow","base","R")
     call cho_main("And of course they have to behave like the absolute worst!","soft","narrow","angry","mid")
     call cho_main("They deserve to be publicly disgraced in front of the whole school!{w=0.8} The whole lot of them!","scream","closed","angry","mid", trans="hpunch")
-    call cho_main("I'll make sure of it, [cho_genie_name]!{w} The \"Slytherin team\" will lose!","angry","narrow","angry","mid")
+    call cho_main("I'll make sure of it, [cho_genie_name]!{w} The Slytherin team will lose!","angry","narrow","angry","mid")
     g9 "(And I'll win my bet with Snape even sooner! Sweet!)"
-    m "Anything you can tell me about them?{w} Are they better than \"Hufflepuff\"?"
+    m "Anything you can tell me about them?{w} Are they better than Hufflepuff?"
     call cho_main("They are, by quite a bit.","annoyed","base","base","mid")
-    call cho_main("However, \"Hufflepuff\" only had one really good player. Which was Cedric.","soft","base","base","R")
-    call cho_main("\"Slytherin\" on the other hand, they are almost unbeatable.{w} They might even be better than \"Gryffindor\"!","angry","wide","base","mid")
-    m "You don't say. So why are they next and not \"Gryffindor\"?"
+    call cho_main("However, Hufflepuff only had one really good player. Which was Cedric.","soft","base","base","R")
+    call cho_main("Slytherin on the other hand, they are almost unbeatable.{w} They might even be better than Gryffindor!","angry","wide","base","mid")
+    m "You don't say. So why are they next and not Gryffindor?"
     call cho_main("Because of their seeker, he's...{w=1.2} so,{w=0.8} so bad!","soft","narrow","base","R")
     m "Who is?"
     call cho_main("Draco Malfoy, Sir.","soft","closed","base","mid")
@@ -681,7 +681,7 @@ label cc_pf_talk_T2_intro_E1:
     if masturbating:
         g4 "Those asshole bullies... Show them who's boss!"
     else:
-        g9 "And a strong, independent woman like yourself would never be intimidated by puny \"Slytherins\"!"
+        g9 "And a strong, independent woman like yourself would never be intimidated by puny Slytherins!"
         call cho_main("Of course not, Sir.","soft","closed","base","mid")
         g4 "I'm so proud!"
 
@@ -737,14 +737,14 @@ label cc_pf_talk_T2_intro_E1:
         g9 "Never felt better!"
         call cho_main("That's good to hear.","smile","base","base","mid")
 
-    m "I'm glad you aren't letting yourself get oppressed by those \"Slytherins\"."
+    m "I'm glad you aren't letting yourself get oppressed by those Slytherins."
     call cho_main("Not in a million years!","base","narrow","base","mid")
     m "Admirable."
 
     m "Anything else you could tell me about their team?{p=0.6}Anything that could help us?"
     m "Did you maybe fool around with their seeker as well?"
     call cho_main("Malfoy?","soft","wide","base","mid") # Shocked
-    call cho_main("*Tzzzz!* I'd never surround myself with that \"Slytherin\" scum!","angry","closed","angry","mid")
+    call cho_main("*Tzzzz!* I'd never surround myself with that Slytherin scum!","angry","closed","angry","mid")
     call cho_main("","annoyed","narrow","angry","mid")
     m "I guess you and Granger have at least some things in common..."
     call cho_main("His daddy bought their whole team new brooms, which is the only reason they've even let him in.","soft","narrow","raised","mid")
@@ -781,7 +781,7 @@ label cc_pf_talk_T2_intro_E2:
     call cho_main("","base","base","base","mid", xpos="mid", ypos="base", trans="fade")
     m "How's school? Have anything to tell me?"
     call cho_main("Quite a bit, Sir!","smile","base","base","down")
-    call cho_main("I feel like people have shown me more affection ever since our game against \"Hufflepuff\".","base","base","base","mid")
+    call cho_main("I feel like people have shown me more affection ever since our game against Hufflepuff.","base","base","base","mid")
     m "You don't say..."
 
     menu:
@@ -812,7 +812,7 @@ label cc_pf_talk_T2_intro_E2:
             call cho_main("Please don't try to diminish my achievement, Sir!","annoyed","narrow","base","R")
 
     call cho_main("It's like I'm a celebrity now! I'm getting so much attention!","soft","base","base","R")
-    call cho_main("It never happened that \"Ravenclaw\" won a game.{p=0.6}And I made that possible!","smile","base","base","mid")
+    call cho_main("It never happened that Ravenclaw won a game.{p=0.6}And I made that possible!","smile","base","base","mid")
     if masturbating:
         g4 "{size=-4}And soon you'll be on your knees thanking me for it!{/size}"
     else:
@@ -849,15 +849,15 @@ label cc_pf_talk_T2_intro_E2:
     call cho_main("It's fun receiving all of the boys attention!{p=0.8}And seeing how jealous it makes all of the girls!","soft","base","base","mid")
     call cho_main("Especially Granger!","smile","narrow","base","mid")
     if masturbating:
-        g4 "{size=-4}Yes, the \"Gryffindor whore\"!{/size}"
+        g4 "{size=-4}Yes, the Gryffindor whore!{/size}"
     call cho_main("You should have seen her face, [cho_genie_name]. She's so angry at me! I love it!","smile","closed","base","mid")
     call cho_main("She can't even bear to look at me anymore.","soft","narrow","angry","mid")
-    call cho_main("You should know, for whatever reason, almost all of \"Hufflepuff\" faults her for helping \"Ravenclaw\" secure the win!","soft","base","base","R")
-    call cho_main("She announced several times that \"Hufflepuff\" was leading in points, when they actually weren't!","smile","narrow","base","R")
-    call cho_main("Which resulted in \"Hufflepuff\" playing far more defensively, when they should have been aggressive!","smile","narrow","angry","mid")
+    call cho_main("You should know, for whatever reason, almost all of Hufflepuff faults her for helping Ravenclaw secure the win!","soft","base","base","R")
+    call cho_main("She announced several times that Hufflepuff was leading in points, when they actually weren't!","smile","narrow","base","R")
+    call cho_main("Which resulted in Hufflepuff playing far more defensively, when they should have been aggressive!","smile","narrow","angry","mid")
     if masturbating:
         g4 "{size=-4}Oh you are one of those girls! I like going aggressive!{/size}"
-    call cho_main("I caught the Snitch at just the right time!{p=0.6}If \"Hufflepuff\" had gone too far in the lead, we would have lost!","base","narrow","base","mid")
+    call cho_main("I caught the Snitch at just the right time!{p=0.6}If Hufflepuff had gone too far in the lead, we would have lost!","base","narrow","base","mid")
     call cho_main("I really need to thank Granger the next time I see her.{p=0.6}I owe her a great deal...","soft","narrow","base","R")
     if masturbating:
         g4 "{size=-4}I'd love to watch you \"thank her\"!{/size}"
@@ -1206,7 +1206,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 g4 "*Argh!* How nasty!"
                 call cho_main("I dare them to try it on me, those bastards!","soft","narrow","angry","R")
                 g4 "*Yes!* You deserve a good spanking!"
-                call cho_main("I saw them go after Katie Bell today, one of the \"Gryffindor\" chasers...","soft","narrow","base","mid")
+                call cho_main("I saw them go after Katie Bell today, one of the Gryffindor chasers...","soft","narrow","base","mid")
                 call cho_main("She was carrying a whole bunch of books and other equipment,... so she couldn't simply run off or drop them...","soft","narrow","angry","mid")
                 call cho_main("She would have probably beaten them up immediately if that wasn't the case. Those cowards...","angry","angry","angry","mid")
                 g4 "*Yes!* I wouldn't mind borrowing one of those bats!"

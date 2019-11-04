@@ -41,7 +41,7 @@ label hg_pf_sex:
 
 
     # Points
-    m "Yes, [hermione_name]. [current_payout] points to the \"Gryffindor\" house."
+    m "Yes, [hermione_name]. [current_payout] points to the Gryffindor house."
     $ gryffindor += current_payout
     call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R")
 
@@ -99,7 +99,7 @@ label hg_pf_sex_T1_intro_E1:
     call her_main("Of course, I mind, [genie_name]!", "upset", "closed", "base", "mid")
     her "I am not a prostitute!"
     m "But you'll do it anyway??"
-    call her_main("\"Gryffindor\" is falling behind again...", "open", "closed", "base", "mid")
+    call her_main("Gryffindor is falling behind again...", "open", "closed", "base", "mid")
     her "What choice do I have...?"
     m "Great!"
 

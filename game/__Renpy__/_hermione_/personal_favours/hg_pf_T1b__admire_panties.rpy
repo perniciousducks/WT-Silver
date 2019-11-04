@@ -44,7 +44,7 @@ label hg_pf_admire_panties:
     # Points
     if her_tier <= 3:
         $ gryffindor += current_payout
-        m "[current_payout] points to \"Gryffindor\", [hermione_name]. Well done."
+        m "[current_payout] points to Gryffindor, [hermione_name]. Well done."
 
     if hg_pf_admire_panties.counter == 1: #First time.
         call her_main("Another [current_payout] points...", "base", "narrow", "worried", "down")
@@ -211,7 +211,7 @@ label hg_pf_admire_panties_T2: # Call label
     menu:
         "\"You don't look too embarrassed...\"":
             call her_main("That's not true...", "base", "happy", "base", "mid")
-            call her_main("But this is a small price to pay if the \"Gryffindors\" keep the cup this year.", "base", "base", "base", "R")
+            call her_main("But this is a small price to pay if the Gryffindors keep the cup this year.", "base", "base", "base", "R")
             her "I know everyone will be so happy..."
             
         "\"I like your panties...\"":
@@ -276,7 +276,7 @@ label hg_pf_admire_panties_T3_intro_E1:
                 "\"Absolutely!\"":
                     m "Absolutely!"
                     $ current_payout +=10
-                    m "Ten additional points to \"Gryffindor\"!"
+                    m "Ten additional points to Gryffindor!"
                     call her_main("Thank you, [genie_name]!", "base", "worriedCl", "worried", "mid")
                     call ctc
 
@@ -332,7 +332,7 @@ label hg_pf_admire_panties_T3_E1:
                 "\"Absolutely!\"":
                     m "Absolutely!"
                     $ current_payout +=10
-                    m "Ten additional points to \"Gryffindor\"!"
+                    m "Ten additional points to Gryffindor!"
                     call her_main("Thank you, [genie_name]!", "base", "worriedCl", "worried", "mid")
                     call ctc
 
@@ -408,7 +408,7 @@ label hg_pf_admire_panties_T3_E2:
     if not hermione_class.get_worn("panties"):
         g9 "Where are your panties, [hermione_name]?"
         call her_main("I have them here in my pocket...", "open", "base", "base", "R")
-        call her_main("Most of the time I just leave them in the \"Gryffindor\" common room...", "open", "base", "base", "R")
+        call her_main("Most of the time I just leave them in the Gryffindor common room...", "open", "base", "base", "R")
         call her_main("But I got them with me this time.", "open", "base", "base", "R")
         call ctc
 

@@ -401,7 +401,7 @@ label ball_quest_E2:
     m "for the Same reason why I never leave this room...?"
     call sna_main("Right...","snape_05")
     sna "But you know what else could endanger out little enterprise?"
-    call sna_main("Me losing it during class and strangling a couple of \"Gryffindor\" maggots with my bare hands...","snape_07")
+    call sna_main("Me losing it during class and strangling a couple of Gryffindor maggots with my bare hands...","snape_07")
     m "Hm... I see your point..."
     call sna_main("Seriously, man... I need a drink...","snape_06")
 

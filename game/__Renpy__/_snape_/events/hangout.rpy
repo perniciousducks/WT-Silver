@@ -215,7 +215,7 @@ label ss_he_story_E1:
     call bld
     m "Alright. Teach me your wand-based magic now."
     call sna_main("Sure, I could do that...","snape_23", ypos="head")
-    call sna_main("Or I could tell you some more about those teenage \"slytherin\" sluts...","snape_02")
+    call sna_main("Or I could tell you some more about those teenage slytherin sluts...","snape_02")
     g9 "The latter, please."
     call sna_main("Great... Get a load of this then...","snape_13")
     pause.1
@@ -241,7 +241,7 @@ label ss_he_story_intro_E2:
     call sna_main("So putting my house in the lead is essential...","snape_09")
     call sna_main("Could take time though...","snape_06")
     m "Take time?"
-    m "Why not just award a couple of hundred points to \"Slytherin\" and be done with it?"
+    m "Why not just award a couple of hundred points to Slytherin and be done with it?"
     call sna_main("No, we need to be discreet with this...","snape_24")
     call sna_main("Awarding a whole bunch of points to my house without any reason could draw in unnecessary attention...","snape_05")
     m "Hm... I see your point..."
@@ -341,7 +341,7 @@ label ss_he_story_intro_E5:
 
 label ss_he_story_E6:
     call bld
-    m "So, tell me about those \"slytherin\" sluts some more!"
+    m "So, tell me about those slytherin sluts some more!"
     call sna_main("What can I say? Life's been good to me lately, my friend.","snape_23", ypos="head")
     call sna_main("These days I have a whole harem of skimpy students to choose from.","snape_22")
     g9 "Nice!"
@@ -418,7 +418,7 @@ label ss_he_story_intro_E8:
     call blktone
 
     ">Professor Snape seems to be completely at ease around you now."
-    ">The bond of male friendship between you twe strengthens even more.\n>\"Slytherin\" house point payouts have increased formidably..."
+    ">The bond of male friendship between you twe strengthens even more.\n>Slytherin house point payouts have increased formidably..."
 
     call sly_plus
     call hide_blktone
@@ -595,7 +595,7 @@ label ss_he_story_E14:
     call sna_main("And that's when the bitch starts to cum!","snape_21")
     m "Sweet! And then you woke up?"
     call sna_main("What? No, it actually happened.","snape_05")
-    call sna_main("I finally nailed that blond witch from \"Slytherin\".","snape_13")
+    call sna_main("I finally nailed that blond witch from Slytherin.","snape_13")
     g9 "Nice!"
     call sna_main("I know.","snape_13")
     call sna_main("She is pretty twisted though...","snape_25")
@@ -639,16 +639,16 @@ label ss_he_story_intro_E15:
     m "I see..."
     m "I will have to find another way of spending my evenings from now on then..."
     call sna_main("I'm sure miss granger will be happy to help.","snape_02")
-    m "Yes, for as long as \"slytherin\" is in the lead."
+    m "Yes, for as long as slytherin is in the lead."
     call sna_main("Seriously? She still cares about that?","snape_05")
     m "Very much so."
-    call sna_main("Well in that case I shall personally ensure that \"slytherin\" house gets as many house points as possible.","snape_23")
+    call sna_main("Well in that case I shall personally ensure that slytherin house gets as many house points as possible.","snape_23")
     pause.1
     call blktone
 
     ">Your friendship level with professor Snape reached its maximum value."
     ">Congratulations. If this were a \"dating sim\" you would be getting the ending with Severus Snape."
-    ">The \"Slytherin\" house point payout has increased greatly and reached it's maximum level as well."
+    ">The Slytherin house point payout has increased greatly and reached it's maximum level as well."
 
     call hide_blktone
 
@@ -659,5 +659,5 @@ label sly_plus:
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
-    ">The \"Slytherin\" house point payout has increased..."
+    ">The Slytherin house point payout has increased..."
     return

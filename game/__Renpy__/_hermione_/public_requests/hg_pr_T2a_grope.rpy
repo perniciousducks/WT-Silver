@@ -104,7 +104,7 @@ label hg_pr_grope:
 
 label end_hg_pr_grope:
     $ gryffindor += current_payout
-    m "The \"Gryffindor\" house gets [current_payout] points!"
+    m "The Gryffindor house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave", speed=2.5)
@@ -208,7 +208,7 @@ label hg_pr_grope_T1_E3:
     call hg_pr_grope_intro
 
     call play_music("playful_tension") # SEX THEME.
-    call her_main("I led this one guy from \"Hufflepuff\" to an empty classroom and I told him that he can touch me if he wants.", "open", "base", "base", "mid")
+    call her_main("I led this one guy from Hufflepuff to an empty classroom and I told him that he can touch me if he wants.", "open", "base", "base", "mid")
     her "That I don't mind..."
     call her_main("...........", "annoyed", "base", "worried", "R")
     m "And?"
@@ -231,7 +231,7 @@ label hg_pr_grope_T1_E3:
     call her_main("*Sob!*", "normal", "base", "base", "R", tears="soft")
     m "Will ten extra points make you feel better?"
     call her_main("Huh? That would be very sweet of you [genie_name].", "soft", "base", "base", "mid", tears="soft")
-    m "Of course... Ten extra points to \"Gryffindor\"."
+    m "Of course... Ten extra points to Gryffindor."
     call her_main("Thank you [genie_name]...", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "And the rest of your payment..."
 
@@ -245,7 +245,7 @@ label hg_pr_grope_T2_E1:
     #elif her_whoring >= 9 and her_whoring <= 11: # LEVEL 04
 
     call her_main("Well... There is not much to tell...", "open", "closed", "base", "mid")
-    her "I found this one boy from \"Ravenclaw\"..."
+    her "I found this one boy from Ravenclaw..."
     her "Led him to one of the empty classrooms in the eastern wing..."
     her "He thought I wanted to make out with him..."
     her "But I told him that I just want him to touch me..."
@@ -378,7 +378,7 @@ label hg_pr_grope_T3_E1:
     $ sc34CG(2, 19, 6, 5)
 
     call her_main("But when the class was over...",xpos="base",ypos="base")
-    call her_main("These two nasty-looking boys from \"Slytherin\" cornered me...")
+    call her_main("These two nasty-looking boys from Slytherin cornered me...")
     call her_main("Actually they weren't mean to me or anything...")
     call her_main("So we just waited for everyone to leave the classroom...")
     $ sc34CG(2, 16, 6, 9)
@@ -412,7 +412,7 @@ label hg_pr_grope_T3_E2:
 
     call her_main("Actually something quite unexpected happened to me today, [genie_name]...", "base", "base", "base", "mid")
     her "Right after the Defence Against the Dark Arts class..."
-    her "This stocky \"Hufflepuff \" boy came up to me..."
+    her "This stocky Hufflepuff boy came up to me..."
     call play_music("playful_tension") # SEX THEME.
     call her_main("He said someone told him that I let boys touch me...", "angry", "wink", "base", "mid")
     call her_main("Normally I would deny everything...", "base", "narrow", "base", "mid_soft")

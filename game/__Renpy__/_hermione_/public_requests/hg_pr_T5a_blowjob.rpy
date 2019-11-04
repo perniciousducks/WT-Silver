@@ -101,7 +101,7 @@ label hg_pr_blowjob:
 
 label end_hg_pr_blowjob:
     $ gryffindor += current_payout
-    m "The \"Gryffindor\" house gets [current_payout] points!"
+    m "The Gryffindor house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave", speed=2.5)
@@ -205,7 +205,7 @@ label hg_pr_blowjob_T1_E3:
     call her_main("I still find the idea of selling a favour like this appalling, [genie_name].", "annoyed", "narrow", "angry", "R",xpos="right",ypos="base")
     call her_main("But other than that it well surprising well...", "annoyed", "narrow", "annoyed", "mid")
     call play_music("playful_tension") # SEX THEME.
-    her "I gave a proper blowjob to this handsome boy from \"Ravenclaw\"..."
+    her "I gave a proper blowjob to this handsome boy from Ravenclaw..."
     call her_main("And he was such a gentleman about it...", "open", "narrow", "worried", "down")
     call her_main("He even warned me when he was about to cum.", "angry", "narrow", "base", "down")
     m "A true gentleman indeed."
@@ -276,7 +276,7 @@ label hg_pr_blowjob_T2_E2:
     call her_main("[genie_name], I have been raped.", "scream", "closed", "angry", "mid")
     m "Seriously?"
     call her_main("Yes, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
-    her "That nasty boy from \"Slytherin\" raped me..."
+    her "That nasty boy from Slytherin raped me..."
     call her_main("Or raped my face rather I suppose...", "open", "narrow", "worried", "down")
     her "And--"
     play sound "sounds/burp.mp3"

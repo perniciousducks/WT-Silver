@@ -91,6 +91,13 @@ screen no_groping_02(): # Hermione stands with you behind desk - Flip = False
         add "groping_02_blinking" at Position(xpos=-60, ypos=10)
     zorder desk_zorder
 
+screen grope_ass_podium(idle=False):
+    tag favor
+    zorder 5
+    if idle:
+        add "grope_ass_podium_idle" pos (328,100)
+    else:
+        add "grope_ass_podium" pos (328,100)
 
 ### MOLESTING TITS FULLY CLOTHED ###
 screen groping_03(): # Grope breasts fully clothed
@@ -278,6 +285,11 @@ screen hermione_chibi_stand_no_shirt():
     tag hermione_chibi
     add "characters/hermione/chibis/dance/03_no_shirt_03.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
     zorder her_chibi_zorder
+
+screen hermione_lying():
+    tag hermione_chibi
+    zorder her_chibi_zorder
+    add "characters/hermione/chibis/lying/shime21.png" xpos her_chibi_xpos ypos her_chibi_ypos
 
 ### UNIVERSAL SCREEN ###
 screen h_c_u():

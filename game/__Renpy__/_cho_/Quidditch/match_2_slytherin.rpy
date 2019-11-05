@@ -105,12 +105,12 @@ label slytherin_match:
 
     call play_music("tonks")
     call ton_main("Hi, [ton_genie_name].","base","base","base","mid", xpos="mid", ypos="base")
-    m "Tonks... pleasure as always."
+    m "Tonks... a pleasure as always."
     call ton_main("Pleasure's all mine...","horny","base","raised","mid")
-    call ton_main("I was afraid you might've forgotten about todays-","open","base","base","mid")
+    call ton_main("I was afraid you might've forgotten about today's-","open","base","base","mid")
     g9 "Quidditch match?"
     call ton_main("So you didn't forget!","open","base","raised","mid")
-    g9 "How could I, last match was a great show!"
+    g9 "How could I? Last match was a great show!"
     call ton_main("It sure was...","base","base","angry","mid")
     call ton_main("So, is Hermione going to show up as well?","horny","base","angry","mid")
     m "Who knows with her, honestly..."
@@ -148,7 +148,7 @@ label slytherin_match:
     pause .3
 
     call ton_main("*huh?*... (When did he?)","upset","base","worried","L", ypos="head")
-    call ton_main("(Impressive. Now if only his stamina can keep up with that speed...)","horny","base","raised","R")
+    call ton_main("(Impressive. I wonder if his stamina can keep up with that speed...)","horny","base","raised","R")
     g9 "Ladies first."
     call ton_main("What a gentleman.","base","happyCl","base","mid")
 
@@ -188,7 +188,7 @@ label slytherin_match:
     call sna_main("*Ahem*... Albus, Glad you made it in time.","snape_09")
     call ton_main("I know who he is, Snape. There's no need for the pretence.","open","closed","base","L", ypos="head", flip=True)
     call sna_main("Of course there is. We're outside the headmaster's office, after all.","snape_16")
-    call sna_main("We have to keep up the act in front of the students, for appearances sake...","snape_01")
+    call sna_main("We have to keep up the act in front of the students...","snape_01")
     call ton_main("*Hmm*... Good point...","base","base","base","R")
     m "I'm standing right here."
     call sna_main("Right...","snape_09")
@@ -211,15 +211,14 @@ label slytherin_match:
     call sna_main("I thought genies were supposed to be immortal!","snape_43")
     m "No Snape...{w=0.4} this is it for me..."
     call sna_main("...","snape_25")
-    m "You've found it..."
-    m "My only weakness..."
+    m "You've found it...{w=0.4} My only weakness..."
     call sna_main("...","snape_38")
     m "Awkwardness..."
-    stop bg_sounds fadeout 4
     $ renpy.sound.play("sounds/giggle2_loud.mp3")
     call ton_main("*Giggles*","base","happyCl","base","mid")
     call sna_main("Go splinch yourself...","snape_08")
 
+    stop bg_sounds fadeout 4
 
     #nar "You continue making your way down to the Quidditch pitch, the silence only broken by Tonks giggling to herself every so often..."
     nar "The three of you climb up the Quidditch tower."
@@ -421,7 +420,7 @@ label slytherin_match:
     call ton_main("Oh... I see, miss Chang has decided to forego the coat today...","open","base","raised","up")
     call ton_main("And those trousers seem to sit pretty tight on her...","horny","base","base","up")
     m "I did my research..."
-    g9 "I know for a fact that those Slytherin boys are men of class; they enjoy such things as much as you."
+    g9 "I know for a fact that those Slytherin boys are men of class -{w=0.2} they enjoy such things as much as you."
     call ton_main("I bet they do...","open","base","raised","R")
     call sna_main("Feels a bit like cheating, considering our bet...","snape_09")
     g4 "Fuck{w=0.3}, I forgot he was here..."
@@ -491,7 +490,7 @@ label slytherin_match:
     call ton_main("Oh what the heck, go on then. I'll have a glass.","base","base","angry","down")
 
     call nar("You sit down with Snape and Tonks to enjoy the match - drinking some of the finest wine you've tasted.","start")
-    call nar("Tonks' cheeks turning redder as the game continues.","end")
+    call nar("Tonks' cheeks are turning redder as the game continues.","end")
 
     m "Doesn't look great..."
     call ton_main("What do you mean? Only thing that would make this better was if she sat in my lap!","horny","base","angry","L", hair="horny")
@@ -538,8 +537,11 @@ label slytherin_match:
     $ ton_chibi_zorder = 2
     $ gen_chibi_zorder = 4
 
-    $ her_chibi_scale = 0.4
-    call her_chibi("sit", xpos=355, ypos=140, scale=0.4)
+    #$ her_chibi_scale = 0.4
+    #call her_chibi("sit", xpos=355, ypos=140, scale=0.4)
+    $ her_chibi_xpos = 330
+    $ her_chibi_ypos = 160
+    show screen hermione_lying
     call ton_chibi("stand", xpos=395, ypos=110, flip=False)
     call sna_chibi("stand", xpos=260, ypos=0, flip=True)
     call gen_chibi("stand", xpos=210, ypos=40, flip=False) # TODO: mirror Genie's flip so it's the same as any other character.
@@ -591,6 +593,7 @@ label slytherin_match:
     with d5
     pause .8
 
+    hide screen hermione_lying
     call ton_chibi("hide")
     call her_chibi("hide")
     call gen_chibi("stand", xpos=255, ypos=0, flip=True)
@@ -606,6 +609,7 @@ label slytherin_match:
     #Genie and Snape sprite should probably both be turned left and swapped in this section.
     with hpunch
     $ renpy.sound.play("sounds/falling_stairs.mp3")
+    pause 1
     ton "Bloody stairs!"
     m "Nevermind..."
     call sna_main("This isn't good.","snape_03")
@@ -677,7 +681,7 @@ label slytherin_match:
     stop bg_sounds fadeout 4
     stop music fadeout 2
 
-    cho "..."
+    #cho "..." # Doesn't really make sense for Cho to appear at this point, especially since she doesn't say anything
 
     menu:
         "(Let's give them what they came for...)"
@@ -820,49 +824,68 @@ label slytherin_match:
     call her_main("Miss Chang sure knows how to handle that broom between her thighs.","angry","base","angry","L")
     cho "!!!"
 
-    #Section where genie goes up and touches Hermione (tonks) under her skirt
-    #call sna_main("You know... Tonks isn't here right now...","snape_01") #Small text
-    #m "So?" #Small text
-    #call sna_main("...","snape_01") #Smirks
-    #m "Oh...{w=0.3} I see what you mean..."#Small text
-    #Genie starts sneaking up behind Hermione (Tonks) Could this be synced to have him arrive when she yells whoa?
-    #call her_main("Cute brunette passes to handsome blonde boy...{w=0.5}Whoa!","base","base","base","mid")
-    #Crowd ???
-    #g9 "..."
-    #call her_main("No worries ladies and gentlemen, I just had a bit of a slip. It's very... wet up here...","base","base","base","mid") #blushing
-    #m "(And it's about to get even wetter in a minute...)"
-    #nar "You begin touching Hermione, moving your hands up and down and gently massaging her butt and thighs."
-    #call her_main("*Hmm* Those boys are going way too fast! I don't think I'll be able to keep up if they go any faster.","base","base","base","mid")
-    #g9 "(Let's slow down a bit then shall we...)"
-    #nar "You continue touching Hermione and as you go on she's finding it more and more difficult to focus on the game."
-    #call her_main("*Ahh*{w=03} Still...{w=03} Still no...*Ahh*{w=03} sign of the golden snitch...","base","base","base","mid")
-    #m "(That's because I'm about to give that snitch a rub for good luck...)"
-    #call her_main("*Mmmm* Those boys sure are doing well. I've never... *Hnngh* experienced such a...{w=0.3} such a...{w=0.3} thrill before!","base","base","base","mid") #Thrill big text
-    #g9 "(Time to get some of my own liquid luck!)"
-    #nar "As you keep touching Hermione you move your hand further underneath her skirt and as you begin rubbing her vagina you can feel a bit of a wet spot on her panties."
-    #call her_main("(Oh! That's naughty!{w=0.3} *Ahh*...{w=0.3} One of the Slytherin beaters just smashed their elbow into an opposing player...)","base","base","base","mid")
-    #nar "You begin rubbing her faster, moving your middle finger back and forwards across her clitoris."
-    #call her_main("And we all know...{w=0.3} *Ahh*{w=0.3} No excessive use of elbows...{w=0.3} *Ahh*{w=0.3} Permitted...","base","base","base","mid")
-    #call her_main("But it seems to have done the trick!","base","base","base","mid")
-    #call her_main("The Slytherin chasers are... {w=0.3}*Ahh*...{w=0.3} Edging ever so closer to the goal posts!","base","base","base","mid")
-    #nar "As the quaffle is thrown towards one of the hoops you give Hermione one last rub across her panties bringing her over the edge."
-    #Crowd cheer
-    #call her_main("Cumming!!!","base","base","base","mid") #Big text, Considering if she should yell Gooooaaal! instead
-    #nar "Hermione's legs tremble as her knees buckles, the words of her orgasm drowned out by the cheers of the crowd."
-    #nar "She glances up at you, cheeks flushed and legs still shaking slightly."
-    #call her_main("*Ahh*...{w=0.3}*Ahh*...{w=0.3}Sir...{w=0.2} that was...","base","base","base","mid")
-    #Genie walks back to his seat
-    #nar "Before she finishes her sentence you give Hermione a quick smirk and swiftly head back to your seat..."
-    #g9 "It's not just the Slytherin players that are quick to score this game." #Small text
-    #call sna_main("...","snape_01") #Smirks
-    #call sna_main("Seems like Miss Granger wont be forgetting this match anytime soon...","snape_01") #Small text
-    #nar "You look back up at Hermione who's still trying to compose herself and get back to commentating."
-    #call sna_main("You can wipe that smile of your face now...","snape_01")
-    #call sna_main("Gryffindor has no chance, We've got this game in the bag.","snape_01")
+    # Section where genie goes up and touches Hermione (tonks) under her skirt
+    call sna_main("You know... Tonks isn't here right now...","snape_01") #Small text
+    m "So?" #Small text
+    call sna_main("...","snape_01") #Smirks
+    m "Oh...{w=0.3} I see what you mean..."#Small text
+    call gen_walk(xpos=290, ypos=55, speed=2.5)
+    call gen_chibi(action="hide")
+    call her_chibi(action="hide")
+    show screen grope_ass_podium(idle=True)
+    with d3
+    pause .5
+    # Genie starts sneaking up behind Hermione (Tonks)
+    call her_main("Cute brunette passes to handsome blonde boy...","base","base","base","mid")
+    hide screen hermione_main
+    show screen grope_ass_podium()
+    with d3
+    pause .5
+    call her_main("Whoa!","base","base","base","mid") # Look of surprise
+    # Crowd ???
+    g9 "..."
+    call her_main("No worries ladies and gentlemen, I just had a bit of a slip. It's very... wet up here...","base","base","base","mid") #blushing
+    m "(And it's about to get even wetter in a minute...)"
+    "You begin touching Hermione, moving your hands up and down and gently massaging her butt and thighs."
+    call her_main("*Hmm* Those boys are going way too fast! I don't think I'll be able to keep up if they go any faster.","base","base","base","mid")
+    g9 "(Let's slow down a bit then shall we...)"
+    "You continue touching Hermione and as you go on she's finding it more and more difficult to focus on the game."
+    call her_main("*Ahh*{w=03} Still...{w=03} Still no...*Ahh*{w=03} sign of the golden snitch...","base","base","base","mid")
+    m "(That's because I'm about to give that snitch a rub for good luck...)"
+    call her_main("*Mmmm* Those boys sure are doing well. I've never... *Hnngh* experienced such a...{w=0.3} such a...{w=0.3} thrill before!","base","base","base","mid") #Thrill big text
+    g9 "(Time to get some of my own liquid luck!)"
+    "As you keep touching Hermione you move your hand further underneath her skirt and as you begin rubbing her vagina you can feel a bit of a wet spot on her panties."
+    call her_main("Oh! That's naughty!{w=0.3} *Ahh*...{w=0.3} One of the Slytherin beaters just smashed their elbow into an opposing player...","base","base","base","mid")
+    "You begin rubbing her faster, moving your middle finger back and forwards across her clitoris."
+    call her_main("And we all know...{w=0.3} *Ahh*{w=0.3} No excessive use of elbows...{w=0.3} *Ahh*{w=0.3} Permitted...","base","base","base","mid")
+    call her_main("But it seems to have done the trick!","base","base","base","mid")
+    call her_main("The Slytherin chasers are... {w=0.3}*Ahh*...{w=0.3} Edging ever closer... to the goal posts!","base","base","base","mid")
+    "As the quaffle is thrown towards one of the hoops you give Hermione one last rub across her panties bringing her over the edge."
+    # Crowd cheers
+    call her_main("{size=+8}Goooaaal!!!{/size}","base","base","base","mid") # Orgasmic face. Yell "Cumming!!!" instead?
+    "Hermione's legs tremble as her knees buckles, the words of her orgasm drowned out by the cheers of the crowd."
+    "She glances up at you, cheeks flushed and legs still shaking slightly."
+    call her_main("*Ahh*...{w=0.3}*Ahh*...{w=0.3}Sir...{w=0.2} that was...","base","base","base","mid")
 
+    # Genie walks back to his seat
+    hide screen grope_ass_podium
+    call her_chibi(action="stand", flip=True)
+    call gen_chibi("stand", flip=True)
+    with d3
+    call gen_walk(xpos=130, ypos=10, speed=2)
+    call gen_chibi("stand", flip=False)
+
+    "Before she finishes her sentence you give Hermione a quick smirk and swiftly head back to your seat..."
+    g9 "It's not just the Slytherin players that are quick to score this game." #Small text
+    call sna_main("...","snape_01") #Smirks
+    call sna_main("Seems like Miss Granger won't be forgetting this match anytime soon...","snape_01") #Small text
+    "You look back up at Hermione who's still trying to compose herself and get back to commentating."
+
+    call sna_main("You can wipe that smile of your face now...","snape_01")
+    call sna_main("Gryffindor has no chance, We've got this game in the bag.","snape_01")
 
     call sna_main("Whatever your plan is I doubt you'll succeed...","snape_03") #smirk
-    call sna_main("Another couple of goals and you wont win even if Miss Chang manages to catch the snitch.","snape_45")
+    call sna_main("Another couple of goals and you won't win even if Miss Chang manages to catch the snitch.","snape_45")
     g9 "You say that..."
     call nar("Cho, now with her eyes fixed behind one of the goalposts, seemingly having spotted the snitch, gives you a quick glance and a smile as she flies up to Crabbe and Goyle.")
 
@@ -897,15 +920,15 @@ label slytherin_match:
     malf "What?!?"
     cra "She's going after the Snitch!"
 
-    call nar("Malfoy spins his head around, finally noticing that Cho's currently chasing the snitch in the distance he quickly darts after her.")
+    call nar("Malfoy spins his head around. Finally noticing that Cho's currently chasing the snitch in the distance, he quickly darts after her.")
     malf "You fucking idiots!"
 
     call her_main("Oh... it looks like things are heating up! Malfoy has finally realised Chang is going for the Snitch...","open","base","angry","L")
     $ renpy.sound.play("sounds/giggle2_loud.mp3")
-    call her_main("Look at that girl fly! I didn't think you could grip a broom so tightly... maybe I could learn a thing or two from her.","grin","base","angry","L")
+    call her_main("*giggles* Look at that girl fly! I didn't think you could grip a broom so tightly... maybe I could learn a thing or two from her.","grin","base","angry","L")
     call sna_main("I see we've been playing different games...","snape_37")
     g9 "Quite..."
-    call her_main("Chang, now only inches away can almost taste that ball...","grin","base","angry","up")
+    call her_main("Chang, now only inches away, can almost taste that ball...","grin","base","angry","up")
     call her_main("Malfoy on his superior broom edging ever closer...","open","base","angry","L")
     call sna_main("Well, congratulations... You've got me beat...","snape_37")
     call sna_main("Sure as hell is a better view than last season...","snape_20")

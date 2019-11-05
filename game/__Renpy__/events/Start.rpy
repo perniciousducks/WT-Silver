@@ -10,7 +10,7 @@ label start_wt:
 
     call update_interface_color("gray")
     $ menu_x = 0.5
-    $ menu_y = 0.75
+    $ menu_y = 0.7
 
     label choose_your_difficulty:
     menu:
@@ -84,7 +84,7 @@ label start_wt:
     if cheats_active or persistent.game_complete:
         menu:
             "Skip content" ">Would you like to skip early sections of the game?"
-            "-Play the intro-{p}{size=-4}{color=#ffae19}new content!{/color}{/size}":
+            "-Play the intro-{p}{size=-6}{color=#ffae19}new content!{/color}{/size}":
                 $ skip_to_hermione = False
             "-Skip to Hermione-" if cheats_active or persistent.game_complete:
                 $ skip_to_hermione = True

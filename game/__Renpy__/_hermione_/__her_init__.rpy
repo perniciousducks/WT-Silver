@@ -60,6 +60,7 @@ default hermione_dribble = False
 default dribble_equippable = False
 default hermione_wetpanties = False
 default wetpanties_equippable = False
+default hermione_outfits_schedule = True
 
 # Stat Screen
 default her_jerk_off_counter = 0

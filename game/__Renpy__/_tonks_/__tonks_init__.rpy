@@ -49,6 +49,7 @@ default tonks_wardrobe_unlocked = False
 default chitchated_with_tonks   = False
 default tonks_strip_happened    = False # Tonks random clothing event
 default tonks_morph_known       = False # Genie knows about Tonks being a Metamorphmagus
+default tonks_outfits_schedule = True
 
 default gave_tonks_gift = False
 default tonks_mail_list = []

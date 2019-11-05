@@ -32,10 +32,14 @@ label update_interface_color(color=None):
     if interface_color == "gold":
         $ txt_style = "day_text"
         $ btn_style = "daybtn"
+        $ mnu_style = "menu_choice_day"
+        $ mnu_btn_style = "menu_choice_daybutton"
         $ btn_hover = "#e3ba7140"
     else:
         $ txt_style = "night_text"
         $ btn_style = "nightbtn"
+        $ mnu_style = "menu_choice_night"
+        $ mnu_btn_style = "menu_choice_nightbutton"
         $ btn_hover = "#7d75aa40"
     return
 

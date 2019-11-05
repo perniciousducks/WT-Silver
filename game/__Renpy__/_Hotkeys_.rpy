@@ -14,8 +14,6 @@ init python:
     config.keymap['hide_windows'].remove('h')
     # config.keymap['hide_windows'].remove('joy_hide')
 
-
-
     def custom_menu(items, **kwargs):
         return renpy.display_menu(items, interact=True, screen='custom_menu')
 
@@ -94,47 +92,43 @@ screen custom_menu(items):
 
         vbox:
             style "menu"
-            spacing 1
+            spacing 0
 
-            # Count from here
-            $ hkey = 0
+            for i, item in enumerate(items, 1):
+                $ ico = None
+                
+                frame:
+                    style "empty"
+                    ysize 28
+                    xminimum int(config.screen_width * 0.5)
+                    xmaximum int(config.screen_width * 0.5)
+                    
+                    if "{icon=" in item.caption:
+                        $ ico = item.caption.partition("{icon=")[2][:-1]
 
-            for caption, action, chosen in items:
-
-                $ hkey += 1
-
-                if action:
-
-                    button:
-                        action action
-                        if daytime and not persistent.nightmode:
-                            style "menu_choice_daybutton"
-                        else:
-                            style "menu_choice_nightbutton"
-
-                        # Dont add a number if choice number is higher than number of available hotkeys
-                        # Add a SHIFT modifier maybe?
-                        if hkey < 10 and not renpy.variant('android'):
-                            if daytime and not persistent.nightmode:
-                                text "[hkey]. " + caption style "menu_choice_day"
-                            else:
-                                text "[hkey]. " + caption style "menu_choice_night"
-                        else:
-                            if daytime and not persistent.nightmode:
-                                text caption style "menu_choice_day"
-                            else:
-                                text caption style "menu_choice_night"
-
-                    # Dont add a hotkey if choice number is higher than number of available hotkeys
-                    # Add a SHIFT modifier maybe?
-                    if hkey < 10:
-                        key str(hkey) action action
-                        key "K_KP"+str(hkey) action action #Numpad
-                else:
-                    if daytime:
-                        text caption style "menu_choice_day"
+                    if item.action:
+                        button:
+                            action item.action
+                            style mnu_btn_style
+                            text item.caption.partition("{icon=")[0] style mnu_style yalign 0.5
                     else:
-                        text caption style "menu_choice_night"
+                        text item.caption.partition("{icon=")[0] style mnu_style
+                            
+                    hbox:
+                        spacing 3
+                        yalign 0.5
+                        
+                        if i < 10:
+                            if daytime:
+                                text "{size=-2}[i].{/size}" style txt_style color "#f9d592" xpos 5 yalign 0.5
+                            else:
+                                text "{size=-2}[i].{/size}" style txt_style color "#9b8d84" xpos 5 yalign 0.5
+                            key str(i) action item.action
+                            key "K_KP"+str(i) action item.action #Numpad
+                        if ico:
+                            add ico
+                        
+                #add "interface/general/"+interface_color+"/spacer.png" xalign 0.5 yalign 1.0
 
 # Styles
 style day_text:
@@ -166,6 +160,7 @@ style nightbtn:
     padding (5, 5, 5, 5)
 
 style menu_choice_daybutton:
+    yminimum 28
     background "#ac8d5aE6"
     hover_background "#97681f"
     insensitive_background "#d1a02eB3"
@@ -174,6 +169,7 @@ style menu_choice_daybutton:
     activate_sound "sounds/click3.mp3"
 
 style menu_choice_nightbutton:
+    yminimum 28
     background "#5d5151E6"
     hover_background "#897e75"
     insensitive_background "#9e8449"

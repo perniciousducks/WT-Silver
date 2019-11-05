@@ -15,18 +15,18 @@ label summon_cho:
     menu:
 
         # Main Matches
-        "Start Hufflepuff Match" if (cho_tier == 1 and hufflepuff_match == "ready"):
+        "-Start Hufflepuff Match-{icon=interface/icons/small/huff.png}" if (cho_tier == 1 and hufflepuff_match == "ready"):
             jump start_hufflepuff_match
 
-        "Start Slytherin Match" if (cho_tier == 2 and slytherin_match == "ready"):
+        "-Start Slytherin Match-{icon=interface/icons/small/slyt.png}" if (cho_tier == 2 and slytherin_match == "ready"):
             jump start_slytherin_match
 
-        #"Start Slytherin Match" if (cc_gt.win_counter >= 2 and cho_tier == 3 and gryffindor_match == ""):
+        #"-Start Slytherin Match-{icon=interface/icons/small/gryf.png}" if (cc_gt.win_counter >= 2 and cho_tier == 3 and gryffindor_match == "ready"):
         #    jump start_gryffindor_match
 
 
         # Talk
-        "-Talk-":
+        "-Talk-{icon=interface/icons/small/talk.png}":
             if not cho_chatted:
                 if cho_mood <= 3:
                     $ cho_chatted = True
@@ -40,7 +40,7 @@ label summon_cho:
 
 
         # Quidditch Training
-        "-Training-" if not cho_quid.lock_training:
+        "-Training-{icon=interface/icons/small/quidditch.png}" if not cho_quid.lock_training:
             if cho_mood > 0:
                 m "Ready to get back to training?"
                 if cho_mood >= 5:
@@ -50,41 +50,22 @@ label summon_cho:
                 call nar(">Cho is still upset with you.")
                 jump cho_requests
             jump cho_training_menu
-
-
-        # Favours
-        "-Personal Favours-" if cho_favors_unlocked:
-            if cho_mood <= 0:
+            
+            
+        "-Sexual favours-{icon=interface/icons/small/condom.png}" if cho_favors_unlocked:
+            if 3 > cho_mood > 1:
+                call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like it today...","upset","base","sad","mid")
+                jump cho_requests
+            else:
                 jump cho_favor_menu
-            else:
-                call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like it today...","upset","base","sad","mid")
-                jump cho_requests
-
-        "{color=#858585}-Personal Favours-{/color}" if not cho_favors_unlocked:
-            m "I need to help her with her Quidditch training, before I can ask for something like this."
-            jump cho_requests
-
-
-        # Requests
-        "-Public Requests-" if daytime and cho_requests_unlocked:
-            if cho_mood <= 0:
-                jump cho_requests_menu
-            else:
-                call cho_main("I'm sorry, [cho_genie_name]. But I don't feel like it today...","upset","base","sad","mid")
-                jump cho_requests
-
-        "{color=#858585}-Public Requests-{/color}" if not daytime or not cho_requests_unlocked or not cho_favors_unlocked:
-            if not cho_favors_unlocked:
-                m "I need to help her with her Quidditch training, before I can ask for something like this."
-            elif not cho_requests_unlocked:
-                call nar(">You haven't unlocked this feature yet.")
-            elif not daytime:
-                call nar(">Public requests are available during the daytime only.")
+                
+        "{color=#858585}-Sexual favours-{/color}{icon=interface/icons/small/condom.png}" if not cho_favors_unlocked:
+            m "(I need to help her with her Quidditch training, before I can ask for something like this.)"
             jump cho_requests
 
 
         # Wardrobe
-        "-Wardrobe-" if cho_wardrobe_unlocked:
+        "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if cho_wardrobe_unlocked:
             call cho_main(xpos="wardrobe",ypos="base", face="neutral")
             call t_wardrobe("cho_main")
             jump cho_requests
@@ -95,7 +76,7 @@ label summon_cho:
 
 
         # Gifts
-        "-Gifts-" if not gave_cho_gift:
+        "-Gifts-{icon=interface/icons/small/gift.png}" if not gave_cho_gift:
             call gift_menu
             jump cho_requests
 
@@ -118,34 +99,51 @@ label summon_cho:
 # Cho Favor Menu
 label cho_favor_menu:
     call update_cho_favors
-    python:
-        menu_choices = []
-        for i in cc_favor_list:
-            if i in []: # Not in the game yet.
-                menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
-            elif i.start_tier > cho_tier:
-                menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
+    
+    menu:
+        "-Personal Favours-{icon=interface/icons/small/heart_red.png}":
+            label .personal:
+            python:
+                menu_choices = []
+                for i in cc_favor_list:
+                    if i in []: # Not in the game yet.
+                        menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
+                    elif i.start_tier > cho_tier:
+                        menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
+                    else:
+                        menu_choices.append((i.getMenuText(),i.start_label))
+                        
+                menu_choices.append(("-Never mind-", "nvm"))
+                result = custom_menu(menu_choices)
+            if result == "nvm":
+                jump cho_favor_menu
+            elif result == "vague":
+                call favor_not_ready
+                jump .personal
+            elif result == "na":
+                call not_available
+                jump .personal
             else:
-                menu_choices.append((i.getMenuText(),i.start_label))
-        menu_choices.append(("-Never mind-", "nvm"))
-        result = custom_menu(menu_choices)
-    if result == "nvm":
-        jump cho_requests
-    elif result == "vague":
-        call favor_not_ready
-        jump cho_requests
-    elif result == "na":
-        call not_available
-        jump cho_requests
-    else:
-        $ renpy.jump(result)
+                $ renpy.jump(result)
+                
+        "{color=#858585}-Public Requests-{/color}{icon=interface/icons/small/star_yellow.png}" if not daytime or not cho_requests_unlocked:
+            if not cho_requests_unlocked:
+                call nar(">You haven't unlocked this feature yet.")
+            elif not daytime:
+                call nar(">Public requests are available during the daytime only.")
+            jump cho_favor_menu
+            
+        "-Public Requests-{icon=interface/icons/small/star_yellow.png}" if daytime and cho_requests_unlocked:
+            jump cho_requests_menu
+            
+        "-Never mind-":
+            jump cho_requests
 
 label update_cho_favors:
     python:
         for i in cc_favor_list:
             if i.tier != cho_tier and i.max_tiers >= cho_tier:
                 i.tier = cho_tier
-
     return
 
 # Cho Requests Menu
@@ -163,7 +161,7 @@ label cho_requests_menu:
         menu_choices.append(("-Never mind-", "nvm"))
         result = custom_menu(menu_choices)
     if result == "nvm":
-        jump cho_requests
+        jump cho_favor_menu
     elif result == "vague":
         call favor_not_ready
         jump cho_requests
@@ -179,9 +177,7 @@ label update_cho_requests:
         for i in cc_requests_list:
             if i.tier != cho_tier and i.max_tiers >= cho_tier:
                 i.tier = cho_tier
-
     return
-
 
 label favor_not_ready:
     call nar("You can't do this favour just yet.")
@@ -191,13 +187,12 @@ label not_available:
     $ TBA_message("This feature is currently not available as of version %s." % title_version)
     return
 
-
 # Cho Talk
 label cho_talk:
     menu:
         #"-Working-":
 
-        "-Discuss Quidditch Training-" if not cho_quid.lock_training:
+        "-Discuss Quidditch Training-{icon=interface/icons/small/quidditch.png}" if not cho_quid.lock_training:
             if cho_tier == 1:
                 jump cc_ht_talk
             elif cho_tier == 2:
@@ -250,6 +245,16 @@ label cho_talk:
                     jump cho_talk
 
             call cho_main("Very well,...",face="neutral")
+            jump cho_talk
+            
+        "-You may wear your current outfit only-{icon=interface/icons/small/wardrobe.png}" if cho_wardrobe_unlocked and cho_outfits_schedule:
+            cho "Okay, [cho_genie_name]."
+            $ cho_outfits_schedule = False
+            jump cho_talk
+            
+        "-You may wear whatever you like-{icon=interface/icons/small/wardrobe.png}" if cho_wardrobe_unlocked and not cho_outfits_schedule:
+            cho "Okay, [cho_genie_name]."
+            $ cho_outfits_schedule = True
             jump cho_talk
 
         "\"Never mind\"":

@@ -35,6 +35,7 @@ default astoria_busy              = False
 default astoria_unlocked          = False
 default astoria_wardrobe_unlocked = False
 default chitchated_with_astoria   = False
+default astoria_outfits_schedule = True
 
 # Names
 default astoria_name   = "Astoria"

@@ -50,6 +50,7 @@ default cho_busy                = False
 default cho_chatted             = False
 default has_cho_panties         = False
 default cho_panties_soaked      = False
+default cho_outfits_schedule = True
 
 # Intro
 default jerked_off_during_cho_intro = False

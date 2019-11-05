@@ -19,11 +19,7 @@ label summon_hermione:
     menu:
 
         # Talk
-        "-Level Up-" if her_level_up != None:
-            call hermione_level_up(tier=her_level_up)
-            jump hermione_requests
-
-        "-Talk-":
+        "-Talk-{icon=interface/icons/small/talk.png}":
             if not chitchated_with_her:
                 if her_mood <= 3:
                     $ chitchated_with_her = True
@@ -37,7 +33,7 @@ label summon_hermione:
 
 
         # Tutoring
-        "-Tutoring-" if not daytime and her_tutoring < 14: #13 is last level.
+        "-Tutoring-{icon=interface/icons/small/book.png}" if not daytime and her_tutoring < 14: #13 is last level.
             if her_mood >=1 and her_mood < 3:
                 her "I'm sorry, maybe tomorrow..."
                 jump hermione_requests
@@ -55,10 +51,14 @@ label summon_hermione:
                 jump hermione_requests
             else:
                 jump l_tutoring_check
+                
+        "{color=#858585}-Tutoring-{/color}{icon=interface/icons/small/book.png}" if daytime and her_tutoring < 14:
+            call nar("> Tutoring is available during the night only.")
+            jump hermione_requests
 
 
         # Favors
-        "-Buy sexual favours-" if hermione_favors:
+        "-Sexual favours-{icon=interface/icons/small/condom.png}" if hermione_favors:
             if her_mood >=1 and her_mood < 3:
                 her "I'm sorry, [genie_name], Maybe some other time..."
                 jump hermione_requests
@@ -85,22 +85,21 @@ label summon_hermione:
 
 
         # Wardrobe
-        "-Wardrobe-" if hermione_wardrobe_unlocked: # Unlocks after first summoning her.
+        "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if hermione_wardrobe_unlocked: # Unlocks after first summoning her.
             call her_main(xpos="wardrobe", ypos="base", face="neutral")
             call t_wardrobe("her_main")
             jump hermione_requests
 
         # Cardgame
-        "-Let's Duel- {image=interface/cards.png}" if snape_second_win:
+        "-Let's Duel-{icon=interface/cards.png}" if snape_second_win:
             jump hermione_cardgame_menu
 
-
         # Gifts
-        "-Gifts-" if not gave_hermione_gift:
+        "-Gifts-{icon=interface/icons/small/gift.png}" if not gave_hermione_gift:
             call gift_menu
             jump hermione_requests
 
-        "{color=#858585}-Gifts-{/color}" if gave_hermione_gift:
+        "{color=#858585}-Gifts-{/color}{icon=interface/icons/small/wardrobe.png}" if gave_hermione_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."
             jump hermione_requests
 
@@ -211,7 +210,12 @@ label hermione_favor_menu:
 
         label silver_requests_root:
         menu:
-            "-Personal favours-":
+            "-Level Up-{icon=interface/icons/small/levelup.png}" if her_level_up != None:
+                call hermione_level_up(tier=her_level_up)
+                jump silver_requests_root
+            
+            "-Personal favours-{icon=interface/icons/small/heart_red.png}":
+                label .personal:
                 python:
                     menu_choices = []
                     for i in hg_favor_list:
@@ -226,20 +230,20 @@ label hermione_favor_menu:
                     result = custom_menu(menu_choices)
                 if result == "nvm":
                     jump silver_requests_root
-                if result == "vague":
+                elif result == "vague":
                     call favor_not_ready
-                    jump silver_requests_root
+                    jump .personal
                 elif result == "na":
                     call not_available
-                    jump silver_requests_root
+                    jump .personal
                 else:
                     $ renpy.jump(result)
 
-            "{color=#858585}-Public requests-{/color}" if not daytime:
-                call nar(">Public requests are available during the daytime only.")
+            "{color=#858585}-Public requests-{/color}{icon=interface/icons/small/star_yellow.png}" if not daytime:
+                call nar(">Public requests are available during the day only.")
                 jump silver_requests_root
 
-            "-Public requests-" if daytime:
+            "-Public requests-{icon=interface/icons/small/star_yellow.png}" if daytime:
                 python:
                     menu_choices = []
                     for i in hg_requests_list:
@@ -251,10 +255,11 @@ label hermione_favor_menu:
                 else:
                     $ renpy.jump(result)
 
-            "{color=#858585}-Public Shaming-{/color}" if not daytime:
-                call nar(">Public Shaming events are available during the daytime only.")
+            "{color=#858585}-Public Shaming-{/color}{icon=interface/icons/small/star_pink.png}" if not daytime:
+                call nar(">Public Shaming events are available during the day only.")
                 jump silver_requests_root
-            "-Public Shaming-"if daytime:
+                
+            "-Public Shaming-{icon=interface/icons/small/star_pink.png}"if daytime:
                 label not_now_ps:
                 python:
                     menu_choices = []
@@ -353,7 +358,7 @@ label update_her_requests:
 
 label hermione_talk:
     menu:
-        "-Working-":
+        "-Working-{icon=interface/icons/small/gold.png}":
             label working_menu:
             menu:
                 "-Work as a maid-" if daytime and hg_outfit_maid_ITEM.unlocked:
@@ -409,13 +414,13 @@ label hermione_talk:
 
 
         ### Luna ###
-        "-Ask for a new student-" if hat_known and not luna_known:
+        "-Ask for a new student-{icon=interface/icons/small/luna.png}" if hat_known and not luna_known:
             $ luna_known = True
             jump hat_intro_2
 
 
         ### Astoria ###
-        "-Ask her to help Tonks-" if astoria_intro.E1_complete and not astoria_intro.E3_complete:
+        "-Ask her to help Tonks-{icon=interface/icons/small/tonks.png}" if astoria_intro.E1_complete and not astoria_intro.E3_complete:
             if astoria_intro.E2_hermione:
                 call her_main("I'm still looking for that student, [genie_name]!", "open", "closed", "base", "mid")
                 call her_main("Trust in me, I will find that slytherin scum!", "angry", "base", "angry", "mid")
@@ -428,19 +433,19 @@ label hermione_talk:
 
 
         ### Cho ###
-        "{color=#858585}-Solve the matter with Cho-{/color}" if cho_intro.E2_complete and not ss_he.cho_E1:
+        "{color=#858585}-Solve the matter with Cho-{/color}{icon=interface/icons/small/cho.png}" if cho_intro.E2_complete and not ss_he.cho_E1:
             # Before talking to Snape.
             m "(I should ask Snape what to do about that Cho girl first. Just to be save.)"
             m "(Might as well have a drink with him...)"
             jump hermione_talk
 
-        "-Solve the matter with Cho-" if ss_he.cho_E1 and not cho_intro.E3_complete:
+        "-Solve the matter with Cho-{icon=interface/icons/small/cho.png}" if ss_he.cho_E1 and not cho_intro.E3_complete:
             # After talking to Snape.
             jump cho_intro_E3
 
-        "-Ask Hermione to commentate the game-" if cc_ht.return_E1 and not cc_ht.hermione_commentator:
+        "-Ask Hermione to commentate the game-{icon=interface/icons/small/quidditch.png}" if cc_ht.return_E1 and not cc_ht.hermione_commentator:
             jump cc_ht_hermione_commentator
-        "-Ask Hermione to commentate the game again...-\n{size=-5}again...{/size}" if cc_st.hermione_E1 and not cc_st.hermione_blackmail:
+        "-Ask Hermione to commentate the game again...-\n{size=-5}again...{/size}{icon=interface/icons/small/quidditch.png}" if cc_st.hermione_E1 and not cc_st.hermione_blackmail:
             jump cc_st_hermione_blackmail
 
         # General.
@@ -597,8 +602,18 @@ label hermione_talk:
                         jump hermione_change_fail
                 "-Never mind-":
                     jump hermione_talk
+                    
+        "-You may wear your current outfit only-{icon=interface/icons/small/wardrobe.png}" if hermione_wardrobe_unlocked and hermione_outfits_schedule:
+            her "Okay, [genie_name]."
+            $ hermione_outfits_schedule = False
+            jump hermione_talk
+            
+        "-You may wear whatever you like-{icon=interface/icons/small/wardrobe.png}" if hermione_wardrobe_unlocked and not hermione_outfits_schedule:
+            her "Okay, [genie_name]."
+            $ hermione_outfits_schedule = True
+            jump hermione_talk
 
-        "-Give her the dress-" if ball_quest.E4_complete and hg_dress_yule_ball_ITEM.unlocked and not ball_quest.gave_dress:
+        "-Give her the ball dress-" if ball_quest.E4_complete and hg_dress_yule_ball_ITEM.unlocked and not ball_quest.gave_dress:
             jump ball_quest_E5
 
         "-Start the Ending-" if ball_quest.gave_dress: #Starts the ending of the game.

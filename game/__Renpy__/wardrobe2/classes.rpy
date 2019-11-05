@@ -1,18 +1,28 @@
 init python:
     def get_character_object(key):
         return character_list.get(key)
-            
-    def set_clipboard(txt):
-        pygame.scrap.put(pygame.scrap.SCRAP_TEXT, txt.encode("utf-8"))
         
-    def get_clipboard():
-        clipboard = pygame.scrap.get(pygame.scrap.SCRAP_TEXT)
-        if clipboard:
-            return clipboard
-        return None
+    def get_character_outfits_schedule(key):
+        global daytime, weather_gen, raining, snowing, blizzard, storm
         
-    def evaluate(txt):
-        return __import__('ast').literal_eval(txt)
+        schedule = []
+        char = get_character_object(key)
+        outfits = char.outfits_schedule[daytime]
+        
+        for i in outfits:
+            if i.schedule[4] and (snowing or blizzard):
+                schedule.append(i)
+                continue
+            if i.schedule[3] and raining:
+                schedule.append(i)
+                continue
+            if i.schedule[2] and weather_gen >= 4 and not (raining or blizzard or snowing):
+                schedule.append(i)
+                continue
+            if not (i.schedule[2] or i.schedule[3] or i.schedule[4]) and weather_gen < 4:
+                schedule.append(i)
+                continue
+        return schedule
             
     class outfit_class(object):
         
@@ -23,6 +33,7 @@ init python:
             self.unlocked = False
             self.group = []
             self.cached = False
+            self.schedule = [False]*6 # 0=day, 1=night, 2=cloudy, 3=rainy, 4=snowing, 5=school
             
             self.sprite = "empty"
             self.__dict__.update(**kwargs)
@@ -166,6 +177,7 @@ init python:
 
                 # Armfix
                 armfix = []
+                mask = []
                 
                 # Build image
                 self.sprite = Image("characters/dummy.png")
@@ -195,6 +207,9 @@ init python:
                                 # add fixes WITHOUT hand image
                                 armfix.append(sprite[0].get_armfix(True, True)[0]) # L
                                 armfix.append(sprite[0].get_armfix(True, True)[1]) # R
+                                
+                        if sprite[0].mask:
+                                mask.append(sprite[0].mask)
                     
                 if armfix > 0:
                     for item in armfix:
@@ -202,6 +217,16 @@ init python:
                             (1010, 1200),
                             (0,0), self.sprite,
                             (0,0), item)
+                            
+                if mask != []:
+                    if len(mask) > 1:
+                        # Combine alpha masks
+                        m = AlphaMask(mask[0], mask[1])
+                        for i in xrange(2, len(mask)):
+                            m = AlphaMask(mask[i], mask[i+1])
+                        self.sprite = AlphaMask(self.sprite, m)
+                    else:
+                        self.sprite = AlphaMask(self.sprite, mask[0])
             return self.sprite
             
             
@@ -572,6 +597,7 @@ init python:
             self.clothing = {}
             self.clothing_dictlist = {}
             self.outfits = []
+            self.outfits_schedule = {True: [], False:[]} # True=day, false=night 
             self.other = {}
             
             self.incompatible_wardrobe = []
@@ -642,6 +668,34 @@ init python:
                 if cum and symbol not in cum:
                     self.other['cum'][0] = imagepath+cum+".png"
             self.cached = False
+            
+        def update_outfits_schedule(self, obj=None, all=False):
+            if all:
+                self.outfits_schedule = {True: [], False:[]}
+                
+                for outfit in self.outfits:
+                    if outfit.schedule[0] == True:
+                        self.outfits_schedule[True].append(outfit)
+                    elif outfit.schedule[1] == True:
+                        self.outfits_schedule[False].append(outfit)
+                return
+                
+            if obj.schedule[0] == True:
+                if not obj in self.outfits_schedule[True]:
+                    self.outfits_schedule[True].append(obj)
+            else:
+                if obj in self.outfits_schedule[True]:
+                    self.outfits_schedule[True].remove(obj)
+                    
+            if obj.schedule[1] == True:
+                if not obj in self.outfits_schedule[False]:
+                    self.outfits_schedule[False].append(obj)
+            else:
+                if obj in self.outfits_schedule[False]:
+                    self.outfits_schedule[False].remove(obj)
+            return
+                    
+            
             
         def expression(self, **kwargs):
             for arg, value in kwargs.iteritems():

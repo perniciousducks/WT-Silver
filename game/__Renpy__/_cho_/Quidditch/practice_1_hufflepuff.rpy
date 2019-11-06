@@ -140,6 +140,9 @@ label cc_ht_return_fail:
         call cho_main("(...)","annoyed","narrow","base","R")
         call cho_main("I'll be going to bed now if you don't mind.","soft","narrow","angry","mid")
         call cho_main("Have a good night, Sir.","annoyed","narrow","base","mid")
+        if cheats_active:
+            call nar("{size=+6}> Try again at recklesness level {color=#7a0000}3{/color}.{/size}")
+            
 
     # Outfit response.
     else:
@@ -233,6 +236,7 @@ label cc_ht_return_E2:
     call cho_main("I bet you were probably in on it...","upset","narrow","angry","mid")
     m "Now now, you know I'd never resort to any sort of foul play like that..."
     m "More importantly, how did the game go?"
+    call play_music("cho_theme")
     call cho_main("{size=+10}I got it!!!{/size}","scream","base","base","mid")
     call cho_main("I caught the snitch!","smile","closed","base","mid")
     m "Congratulations..."
@@ -283,7 +287,9 @@ label cc_ht_return_E2:
 
 label cc_ht_return_E3:
 
+    call play_music("stop")
     call cho_main("[cho_genie_name], there's been a disaster!","scream","closed","angry","mid", xpos="mid", ypos="base")
+    call play_music("night_theme")
     m "Off to a good start..."
     call cho_main("[cho_genie_name], something terrible happened to Lee Jordan!","quiver","narrow","sad","mid")
     m "Lee Jordan?{w=0.5} Is that a famous basketball player I'm not aware of?"
@@ -328,7 +334,9 @@ label cc_ht_return_E3:
     call cho_main("But Granger wouldn't know anything about Quidditch either!","pout","narrow","angry","mid")
     m "Do you know anybody else suited for the job?"
     call cho_main("{size=-4}Probably anyone at this point...{/size}","pout","base","raised","R")
+    call play_music("stop")
     call cho_main("(Wait a minute...)","pout","wide","raised","mid")
+    call play_music("cho_theme")
     call cho_main("No...","smile","base","base","mid") #Mischievous smile
     g9 "I'll ask her... What's the worst that could happen..."
     call cho_main("Yeah, actually you're probably right...","angry","angry","angry","mid")
@@ -445,4 +453,4 @@ label cc_ht_talk:
 
     call cho_main(xpos="base", ypos="base", trans="fade")
 
-    jump cho_requests
+    return

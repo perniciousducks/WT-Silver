@@ -194,9 +194,10 @@ label cho_talk:
 
         "-Discuss Quidditch Training-{icon=interface/icons/small/quidditch.png}" if not cho_quid.lock_training:
             if cho_tier == 1:
-                jump cc_ht_talk
+                call cc_ht_talk
             elif cho_tier == 2:
-                jump cc_st_talk
+                call cc_st_talk
+            jump cho_talk
 
         # Naming
         "\"Address me only as\"" if cho_training_unlocked:

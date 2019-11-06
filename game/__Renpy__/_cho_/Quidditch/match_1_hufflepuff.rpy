@@ -541,7 +541,7 @@ label hufflepuff_match:
     mal "She totally is!"
     $ renpy.sound.play("sounds/giggle2_loud.mp3")
     hide screen hermione_main
-    "Fem Student #1" "What a slut!"
+    "Female Student #1" "What a slut!"
     hide screen hufflepuff_match_cho_chase
     with d3
 
@@ -571,7 +571,7 @@ label hufflepuff_match:
     mal "Cho show us your panties!"
     $ renpy.sound.play("sounds/giggle2_loud.mp3")
     $ qp_mob_reaction[1] = "emo7"
-    "Fem Student #1" "We want to see them!"
+    "Female Student #1" "We want to see them!"
     $ qp_mob_reaction[2] = "emo8"
     $ renpy.sound.play("sounds/crowd_cheer.mp3")
 

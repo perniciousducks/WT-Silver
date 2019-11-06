@@ -18,15 +18,10 @@ screen say(who, what, side_image=None):
         frame:
             xalign 0.5
             yalign 0.99
-            if daytime and not persistent.nightmode:
-                style "say_who_window_day"
-                text "Hidden" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
-            else:
-                style "say_who_window_night"
-                text "Hidden" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
+            ypos 1000 # hide below visible area
             if who:
-                text who id "who" ypos 1000
-            text what id "what" ypos 1000
+                text who id "who"
+            text what id "what"
             
         #Add fullscreen CTC button
         button:

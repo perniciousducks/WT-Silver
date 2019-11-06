@@ -59,7 +59,9 @@ label cc_pf_strip_T1_intro_E1:
     g9 "So, Why don't you show me what you are made of?{w} Let me have a proper look at you!"
     call cho_main("Sir?","soft","wink","raised","mid")
     m "I need you to remove your clothes."
+    call play_music("stop")
     call cho_main("!!!","soft","wide","base","mid")
+    call play_music("cho_theme")
     m "Go on, girl. Start with the top..."
     call cho_main("No!","scream","closed","angry","mid", trans="hpunch")
     call cho_main("Why are you even asking me to do such a thing?!","angry","narrow","angry","mid")
@@ -565,9 +567,7 @@ label cc_pf_strip_T1_intro_E2:
     pause.4
 
     # Cho strips completely.
-    hide screen cho_chang
     $ cho_class.strip("all")
-    show screen cho_chang
     with d3
     pause.5
 

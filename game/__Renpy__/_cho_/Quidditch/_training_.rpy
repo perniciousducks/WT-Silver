@@ -326,6 +326,12 @@ label change_quidditch_tactics:
 
     else:
         menu:
+            "-Discuss Quidditch Training-" if not cho_quid.lock_training:
+                if cho_tier == 1:
+                    call cc_ht_talk
+                elif cho_tier == 2:
+                    call cc_st_talk
+                
             "-Change Tactic-" if not cho_quid.lock_tactic:
                 m "Start flying, [cho_name]."
                 call cho_main("Yes, Sir!","open","closed","angry","mid", ypos="head")
@@ -337,7 +343,10 @@ label change_quidditch_tactics:
                 with d5
                 pause.8
             "{color=#858585}-Change Tactic-{/color}" if cho_quid.lock_tactic:
-                m "(We have won with this tactic before. I don't see why we should change it.)"
+                if hufflepuff_match == "end":
+                    m "(We have won with this tactic before. I don't see why we should change it.)"
+                else:
+                    m "(The outfit and tactics seems to be fine. I should probably do some favours to improve her confidence a bit.)"
                 jump demonstrate_quidditch_tactics
 
             "-Customize quidditch outfit-" if not cho_quid.lock_tactic:
@@ -346,7 +355,10 @@ label change_quidditch_tactics:
                 $ cho_class.equip(cho_outfit_quidditch)
                 call cho_main(face="neutral", xpos="mid", ypos="base")
             "{color=#858585}-Customize quidditch outfit-{/color}" if cho_quid.lock_tactic:
-                m "(We have won with this outfit before. No point in changing it.)"
+                if hufflepuff_match == "end":
+                    m "(We have won with this tactic before. I don't see why we should change it.)"
+                else:
+                    m "(The outfit and tactics seems to be fine. I should probably do some favours to improve her confidence a bit.)"
                 jump demonstrate_quidditch_tactics
 
             "-Start Practice Match-" if daytime and not cho_quid.lock_practice:

@@ -118,7 +118,7 @@ screen custom_menu(items):
                         spacing 3
                         yalign 0.5
                         
-                        if i < 10:
+                        if i < 10 and item.action:
                             if daytime:
                                 text "{size=-2}[i].{/size}" style txt_style color "#f9d592" xpos 5 yalign 0.5
                             else:

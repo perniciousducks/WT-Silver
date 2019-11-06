@@ -118,6 +118,7 @@ label cc_st_return:
 
 
 label cc_st_return_E1:
+    
     call play_music("stop")
     pause .5
 
@@ -155,8 +156,8 @@ label cc_st_return_E1:
     # Cho is furious.
     call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid", ypos="base")
     m "..."
-    m "What are you doing here? You're not supposed to be back yet..."
-    call cho_main("I'm surprised you could you tell...", "soft", "wide", "base", "mid")
+    m "What are you doing in here? You're not supposed to be back yet..."
+    call cho_main("I'm surprised you could tell...", "soft", "wide", "base", "mid")
     g4 "You just woke me up in the middle of my nap!"
     call cho_main("Oh no, Sir. I'm terribly sorry!", "soft", "base", "raised", "R")
 
@@ -989,4 +990,4 @@ label cc_st_talk:
 
     call cho_main(xpos="base", ypos="base", trans="fade")
 
-    jump cho_requests
+    return

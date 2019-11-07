@@ -861,25 +861,34 @@ label slytherin_match:
     call her_main("But it seems to have done the trick!","base","base","base","mid")
     call her_main("The Slytherin chasers are... {w=0.3}*Ahh*...{w=0.3} Edging ever closer... to the goal posts!","base","base","base","mid")
     "As the quaffle is thrown towards one of the hoops you give Hermione one last rub across her panties bringing her over the edge."
-    # Crowd cheers
-    call her_main("{size=+8}Goooaaal!!!{/size}","base","base","base","mid") # Orgasmic face. Yell "Cumming!!!" instead?
-    "Hermione's legs tremble as her knees buckles, the words of her orgasm drowned out by the cheers of the crowd."
-    "She glances up at you, cheeks flushed and legs still shaking slightly."
-    call her_main("*Ahh*...{w=0.3}*Ahh*...{w=0.3}Sir...{w=0.2} that was...","base","base","base","mid")
 
-    # Genie walks back to his seat
+    $ renpy.sound.play("sounds/crowd_applause.mp3")
+    call her_main("{size=+8}Goooaaal!!!{/size}","base","base","base","mid") # Orgasmic face. Yell "Cumming!!!" instead?
+    "Hermione's legs tremble as her knees buckle, the words of her orgasm drowned out by the cheers of the crowd."
+
+    # Hermione (Tonks) falls to her knees
+    $ her_chibi_zorder = 2
+    $ gen_chibi_zorder = 3
+    hide screen hermione_main
     hide screen grope_ass_podium
-    call her_chibi(action="stand", flip=True)
+    $ her_chibi_xpos = 325
+    $ her_chibi_ypos = 170
+    show screen hermione_kneel_pant
     call gen_chibi("stand", flip=True)
-    with d3
+    with d5
+    # Genie walks back to his seat
     call gen_walk(xpos=130, ypos=10, speed=2)
     call gen_chibi("stand", flip=False)
 
-    "Before she finishes her sentence you give Hermione a quick smirk and swiftly head back to your seat..."
+    "You give Hermione a quick smirk and swiftly head back to your seat..."
+    "She glances up at you, cheeks flushed and legs still shaking slightly."
+    call her_main("*Ahh*...{w=0.3}*Ahh*...{w=0.3}Sir...{w=0.2} that was...{w=0.3} *Ahh*...","base","base","base","mid")
+
+    #"Before she finishes her sentence you give Hermione a quick smirk and swiftly head back to your seat..."
     g9 "It's not just the Slytherin players that are quick to score this game." #Small text
     call sna_main("...","snape_01") #Smirks
     call sna_main("Seems like Miss Granger won't be forgetting this match anytime soon...","snape_01") #Small text
-    "You look back up at Hermione who's still trying to compose herself and get back to commentating."
+    "You look back at Hermione who's still trying to compose herself and get back to commentating."
 
     call sna_main("You can wipe that smile of your face now...","snape_01")
     call sna_main("Gryffindor has no chance, We've got this game in the bag.","snape_01")
@@ -948,6 +957,7 @@ label slytherin_match:
     with d5
     pause .8
 
+    #TODO Show standing Hermione chibi when Cho's CG is hidden
     call her_chibi("hide") # Hermione is already gone.
     call gen_chibi("standing_alt", xpos=130, ypos=10, flip=False)
     call sna_chibi("stand", xpos=220, ypos=-50, flip=False)

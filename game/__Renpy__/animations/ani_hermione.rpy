@@ -1020,7 +1020,13 @@ image ch_hem fly_a:
     pause.1
     repeat
 
-
+image ch_hem kneel_pant:
+    zoom 0.5
+    "characters/hermione/chibis/kneel/1.png"
+    pause 1
+    "characters/hermione/chibis/kneel/2.png"
+    pause 1
+    repeat
 
 ### HERMIONE FAVOR ANIMATIONS ###
 

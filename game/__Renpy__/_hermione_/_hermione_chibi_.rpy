@@ -291,6 +291,11 @@ screen hermione_lying():
     zorder her_chibi_zorder
     add "characters/hermione/chibis/lying/shime21.png" xpos her_chibi_xpos ypos her_chibi_ypos
 
+screen hermione_kneel_pant():
+    tag hermione_chibi
+    zorder her_chibi_zorder
+    add "ch_hem kneel_pant" xpos her_chibi_xpos ypos her_chibi_ypos
+
 ### UNIVERSAL SCREEN ###
 screen h_c_u():
     tag hermione_chibi

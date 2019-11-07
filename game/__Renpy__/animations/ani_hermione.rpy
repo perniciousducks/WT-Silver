@@ -1027,6 +1027,21 @@ image ch_hem kneel_pant:
     "characters/hermione/chibis/kneel/2.png"
     pause 1
     repeat
+    
+image ch_hem hit_on_head:
+    zoom 0.5
+    yoffset -18
+    xoffset 4
+    
+    "characters/hermione/chibis/hit_on_head/01.png"
+    pause.1
+    "characters/hermione/chibis/hit_on_head/02.png"
+    pause.1
+    "characters/hermione/chibis/hit_on_head/03.png"
+    pause.1
+    "characters/hermione/chibis/hit_on_head/04.png"
+    pause.1
+    repeat
 
 ### HERMIONE FAVOR ANIMATIONS ###
 

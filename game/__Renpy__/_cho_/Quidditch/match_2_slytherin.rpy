@@ -1,4 +1,15 @@
-
+screen bludger_flying(start, end, t=1.0):
+    zorder 4
+    tag bludger
+    
+    add "images/rooms/quidditch_pitch/bludger.png":
+        at transform:
+            subpixel True
+            anchor (0.5, 0.5)
+            align (0.5, 0.5)
+            pos start
+            ease t xpos end[0] ypos end[1]
+        
 
 ### Main Match ###
 
@@ -228,9 +239,8 @@ label slytherin_match:
 
     #Scene Cloudy/rainy pitch
     #Sounds slightly windy/rain (Might need a new sound we'll see... It shouldn't overpower things)
-
-    call room("quidditch_pitch")
-    $ qp_mob = 2 # Controls number of people
+    
+    $ qp_mob = 0 # Controls number of people
     $ qp_mob_reaction = [None, None, None] # Reset reactions
     #call sna_chibi("stand", "210", -40, flip=True)
     #call gen_chibi("stand", "130", "10")
@@ -239,13 +249,19 @@ label slytherin_match:
     $ her_chibi_zorder = 2
     $ ton_chibi_zorder = 3
     $ gen_chibi_zorder = 4
+
+    call room("quidditch_pitch")
+    with d3
+    
+    play bg_sounds "sounds/crowd.mp3" fadein 2
+    
     pause 1
 
     #Quidditch pitch fills up a little
-
-
-    call hide_blkfade
-    call ctc
+    $ qp_mob = 1
+    with d3
+    
+    pause 1
 
     call play_sound("footsteps")
     pause .8
@@ -285,7 +301,6 @@ label slytherin_match:
     call ton_main("Oh, what a view! Much better than the one from the Hufflepuff stands!","base","happyCl","base","mid", flip=True, ypos="head")
 
     #Hermione enters from the left and walks up to the podium
-    play bg_sounds "sounds/crowd.mp3" fadein 2
 
     call her_chibi("stand", 220, 50, flip=True)
     with d3
@@ -303,6 +318,8 @@ label slytherin_match:
     call her_main("Of course, as you know I take my responsibilities seriously!","open","base","angry","L")
 
     #Quidditch pitch fills up a little
+    $ qp_mob = 2
+    with d3
 
     #Crowdsound goes up
     call sna_main("{size=-4}Unfortunately...{/size}","snape_31") #small text
@@ -319,6 +336,8 @@ label slytherin_match:
     pause.3
 
     #Quidditch pitch full
+    $ qp_mob = 3
+    with d3
     call sna_main("The crowd is waiting, Miss Granger...","snape_31")
     call her_main("Sorry!","clench","base","worried","down", emote="05")
 
@@ -331,12 +350,13 @@ label slytherin_match:
     pause .8
 
     $ renpy.sound.play("sounds/microphone_feedback.mp3")
+    play bg_sounds "sounds/crowd_low.mp3" fadein 3
     call her_main("*Ahem*","soft","narrow","worried","mid")
-
     #Crowdsounds go down
     call her_main("Welcome back to the second match of the season!","base","happyCl","base","mid")
     sly1 "{size=+5}Not the Gryffindor slut again!{/size}"
     with hpunch
+    $ qp_mob_reaction[2] = "emo8"
     sly2 "{size=+8}Get off the podium, Mudblood!{/size}"
     sly1 "{size=+15}Boooo!{/size}"
     call her_main("*Hmph!*","annoyed","narrow","angry","mid")
@@ -351,6 +371,7 @@ label slytherin_match:
 
     call her_main("Sir, I'm trying to do my job here - and those Slytherin boys just can't keep their filthy mouths shut!","soft","narrow","angry","mid", flip=False, ypos="head")
     call sna_main("Surely you've been called worse Miss Granger...","snape_05")
+    $ qp_mob_reaction = [None, None, None]
     call ton_main("Just ignore them sweetie, you're doing great.","base","happyCl","base","mid")
     call her_main("...","annoyed","narrow","angry","down") #annoyed
     call her_main("Fine...","soft","base","base","R") #Open mouth glances to the right
@@ -372,19 +393,19 @@ label slytherin_match:
     $ qp_mob_reaction[2] = "emo8"
     $ renpy.sound.play("sounds/crowd_cheer.mp3")
     ">A loud cheer roars from the grandstands."
-    $ qp_mob_reaction[0] = None
-    $ qp_mob_reaction[1] = None
-    $ qp_mob_reaction[2] = None
+    $ qp_mob_reaction = [None, None, None]
 
     #Crowd Sounds
     call her_main("And their opponents...","soft","closed","base","mid")
     call her_main("The team known for their...","open","narrow","angry","down")
     call her_main("Their...","open","narrow","angry","L")
+    $ qp_mob_reaction[2] = "emo8"
     sly1 "{size=+5}Got a cock down your throat?{w=0.8} Get on with it!{/size}"
     sly2 "{size=+8}Yeah!{w=0.5} Get on with it!{/size}"
     call her_main("...","annoyed","closed","angry","mid")
     with hpunch
     qcr "{size=+15}Get on with it!{/size}" # loud
+    $ qp_mob_reaction[2] = None
     call her_main("The team known for their thick skin... or should I say, thick skulls...","angry","base","angry","mid", emote="01")
     call her_main("Team Slytherin!","annoyed","narrow","angry","mid")
 
@@ -400,6 +421,11 @@ label slytherin_match:
     call sna_main("...","snape_38")
     call her_main("And now, if both teams have managed to find their way to their starting positions...","open","closed","base","mid")
     call her_main("Madam Hooch, if you please!","soft","base","base","L")
+    
+    hide screen hermione_main
+    with d3
+    
+    pause.5
 
     $ renpy.sound.play("sounds/referee.mp3")
     call play_music("quidditch")
@@ -473,6 +499,9 @@ label slytherin_match:
     $ qp_mob_reaction[1] = None
     $ qp_mob_reaction[0] = None
     call her_main("Pucey passes the quaffle to Warrington, who scores another goal for team Slytherin!","annoyed","base","angry","up")
+    hide screen hermione_main
+    with d3
+    
     call sna_main("...","snape_45") #Smirks
     m "That's insane, how the hell did he hit that?"
     g4 "He was on the other side of the pitch!"
@@ -509,13 +538,32 @@ label slytherin_match:
     pause .2
 
     # Ball hitting the chibi's face.
-
+    # DEVVV
+    
+    
+    show screen bludger_flying((530, -100), (-50, 1000))
+    pause .18
+    $ renpy.play(["sounds/card_punch4.mp3", "sounds/microphone_feedback.mp3"])
+    show screen gfx_effect(435, 118, img="glow_effect", zoom=0.7, duration=0.3)
+    show screen hermione_hit_on_head
+    with vpunch
+    hide screen gfx_effect
+    show screen gfx_effect(355, 320, img="smoke", zoom=0.5)
     call play_sound("kick")
-    with hpunch
+    $ qp_hole = True
+    with None
 
     #Audience groans
+    stop bg_sounds fadeout 2
+    stop music fadeout 2
+    pause 0.5
+    $ renpy.sound.play("sounds/crowd_gasp.mp3")
+    pause 1.0
+    $ renpy.sound.play("sounds/dizzy.mp3", loop=True)
+    pause 2.0
     call sna_main("*Pfffffffffff*-","snape_14") # Snape has wine gushing out of his nose (image edit)
-    call sna_main("*Ha-ha-HA-HA!*{w=0.6}{nw}","snape_42")
+    call sna_main("*Ha-ha-HA-HA!*","snape_42")
+    $ renpy.sound.stop(fadeout=1.0)
 
     call play_music("fun")
     stop weather fadeout 0.5

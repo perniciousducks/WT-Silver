@@ -244,7 +244,6 @@ label cc_st_return_E2:
         "-Got it!-":
             pass
 
-    "Dev Note" "You picked the right clothing combination, but Hermione is not yet a commentator."
     # TODO: add writing.
     # TODO: lock Cho's quidditch clothing and tactic.
     # They worked good enough so
@@ -262,6 +261,8 @@ label cc_st_return_E2:
         #call cho_main("I almost miss Jordan's sexist remarks about my body...","open","closed","base","mid")
         #g9 "I could tell Hermione to do the same if you'd like."
         #call cho_main("Please don't, [cho_genie_name]! I was merely joking!","annoyed","narrow","angry","mid")
+    else:
+        "Dev Note" "You picked the right clothing combination, but Hermione is not yet a commentator."
 
 
     $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
@@ -282,7 +283,6 @@ label cc_st_return_E3:
         "-Got it!-":
             pass
 
-    "Dev Note" "You picked the right clothing combination, and Hermione is not yet a commentator."
     # TODO: add writing.
 
 
@@ -291,6 +291,8 @@ label cc_st_return_E3:
     if cho_quid.commentator == "hermione":
         $ her_mood += 6
         $ hermione_busy = True
+    else:
+        "Dev Note" "You picked the right clothing combination, and Hermione is not yet a commentator."
     if cho_quid.commentator == "tonks":
         $ tonks_busy = True
 
@@ -456,10 +458,10 @@ label cc_st_snape_E1:
     call sna_main("You won't win by making friends, isn't that right?","snape_18")
     m "..."
     call sna_main("*Hrhm*... Good riddance, then...","snape_12")
-
+    $ renpy.sound.play(["sounds/gulp.mp3"]*3)
     call nar(">Snape empties the last drop of wine, before he quietly leaves.","start")
     ">You feel a sense of remorse shortly after he's gone, realizing that you're both just parts of the same coin."
-    call nar(">Your friendship level with him has not changed...","end")
+    call nar(">Your friendship level with him has not changed...{w=1.5}...Probably","end")
 
     $ snape_busy = True
     $ ss_summon_pause += 5 # Snape can't be summoned for a couple of days. Can be set to 0 once you talked to Tonks.
@@ -645,8 +647,9 @@ label cc_st_tonks_E1:
     g9 "I'm so glad to have you!"
     call ton_main("Aww, you're so sweet!","base","base","sad","mid")
     with hpunch
+    $ renpy.play("sounds/hiccup_fem.mp3")
     call ton_main("*Hick!*... whoopsie...","upset","base","base","ahegao")
-
+    
     if daytime:
         ">You finish your drinks before calling it a day."
     else:
@@ -804,6 +807,8 @@ label cc_st_hermione_blackmail:
     her "What?"
     her "[genie_name], you can't do this!"
     g9 "Sure I can."
+    
+    call nar("> You telepathically call Cho into your office.")
 
     call hide_characters
     hide screen bld1
@@ -948,6 +953,13 @@ label cc_st_talk:
         m "Not yet, but I'm on it."
         call cho_main("Please just hurry up, Sir.","annoyed","narrow","base","mid")
         call cho_main("We need to practice...","annoyed","narrow","sad","R")
+        m "Any ideas on how I would do that?"
+        call cho_main("How would I know, I'm not a teacher am I... ask one of them.", "annoyed","base","angry","R")
+        if cc_st.snape_E1:
+            m "Well, I asked Snape..."
+            call cho_main("And how did that work out for you?","open","base","base","mid")
+            m "It didn't."
+            call cho_main("Ask another teacher then...", "angry","base","angry","mid")
 
     # played one match with Tonks.
     elif cc_st.match_counter >= 2 and cho_quid.commentator == "tonks" and cc_pf_strip.points < 3 and not cc_st.hermione_blackmail:

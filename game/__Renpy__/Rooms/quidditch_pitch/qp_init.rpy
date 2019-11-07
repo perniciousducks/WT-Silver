@@ -1,6 +1,8 @@
 default qp_mob = 0
 default qp_mob_reaction = [None, None, None]
 default qp_spotlight = False
+default qp_hole = False
+default qp_bludger_hit_commentator = False
 
 screen quidditch_pitch():
     tag quidditch_pitch
@@ -24,6 +26,10 @@ screen quidditch_pitch_overlay():
     add "images/rooms/quidditch_pitch/tower_overlay.png"
     if qp_spotlight:
         add "images/rooms/quidditch_pitch/fade.png"
+    if qp_bludger_hit_commentator:
+        add "smoke"
+    if qp_hole:
+        add "images/rooms/quidditch_pitch/hole.png"
     add qp_mob_reaction[0] xpos 570 ypos 220
     add qp_mob_reaction[1] xpos 700 ypos 150
     add qp_mob_reaction[2] xpos 1000 ypos 150

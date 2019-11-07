@@ -15,8 +15,6 @@ label ton_chibi(action = "", xpos=ton_chibi_xpos, ypos=ton_chibi_ypos, flip=Fals
             $ ton_chibi_xpos = 440
         elif xpos == "on_desk":
             $ ton_chibi_xpos = 350
-        elif xpos == "on_desk":
-            $ ton_chibi_xpos = 350
         elif xpos == "behind_desk":
             $ ton_chibi_xpos = 230
         elif xpos == "door":
@@ -133,11 +131,13 @@ label ton_walk(xpos=walk_xpos, ypos=walk_ypos, speed=ton_speed, action="", loite
         hide screen ton_walk
         if action == "leave":
             call play_sound("door")
+            with d3
+            pause.3
             $ ton_chibi_flip = 1
         else:
             if loiter:
-                $ update_chibi_image("tonks")
                 $ ton_chibi_status = ""
+                $ update_chibi_image("tonks")
                 show screen ton_stand
 
     return

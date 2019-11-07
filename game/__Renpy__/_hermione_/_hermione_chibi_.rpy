@@ -285,6 +285,8 @@ screen hermione_chibi_stand_no_shirt():
     tag hermione_chibi
     add "characters/hermione/chibis/dance/03_no_shirt_03.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
     zorder her_chibi_zorder
+    
+### MISC ###
 
 screen hermione_lying():
     tag hermione_chibi
@@ -295,6 +297,11 @@ screen hermione_kneel_pant():
     tag hermione_chibi
     zorder her_chibi_zorder
     add "ch_hem kneel_pant" xpos her_chibi_xpos ypos her_chibi_ypos
+    
+screen hermione_hit_on_head():
+    tag hermione_chibi
+    zorder her_chibi_zorder
+    add "ch_hem hit_on_head" xpos her_chibi_xpos ypos her_chibi_ypos xzoom her_chibi_flip
 
 ### UNIVERSAL SCREEN ###
 screen h_c_u():

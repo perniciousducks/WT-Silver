@@ -852,7 +852,7 @@ label cc_pf_talk_T2_intro_E2:
         g4 "{size=-4}Yes, the Gryffindor whore!{/size}"
     call cho_main("You should have seen her face, [cho_genie_name]. She's so angry at me! I love it!","smile","closed","base","mid")
     call cho_main("She can't even bear to look at me anymore.","soft","narrow","angry","mid")
-    call cho_main("You should know, for whatever reason, almost all of Hufflepuff faults her for helping Ravenclaw secure the win!","soft","base","base","R")
+    call cho_main("You should know, for whatever reason, almost all of Hufflepuff blames her for helping Ravenclaw secure the win!","soft","base","base","R")
     call cho_main("She announced several times that Hufflepuff was leading in points, when they actually weren't!","smile","narrow","base","R")
     call cho_main("Which resulted in Hufflepuff playing far more defensively, when they should have been aggressive!","smile","narrow","angry","mid")
     if masturbating:
@@ -904,7 +904,7 @@ label cc_pf_talk_T2_intro_E2:
     call cho_main("Show everyone her ridiculous cow tits!","soft","narrow","angry","up")
     g4 "(Yes!!! I'm almost there!)"
     call cho_main("She deserves it...","angry","closed","angry","R")
-    call cho_main("That know it all, pretentious little bitch!","soft","narrow","angry","downR")
+    call cho_main("That know-it-all, pretentious little bitch!","soft","narrow","angry","downR")
 
     # Genie cums.
     g4 "{size=-4}Yes, yes! You nasty slut!{/size}"

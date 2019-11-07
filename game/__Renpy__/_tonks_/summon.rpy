@@ -223,6 +223,16 @@ label tonks_talk:
                 call ton_main("I'm sorry [ton_genie_name], but I don't think I can improved these outfits any further.","open","base","raised","mid")
                 call ton_main("I will see what I can do should you get any new ones.","base","base","base","mid")
                 jump tonks_requests
+                
+        "-Ask for help with Quidditch-{icon=interface/icons/small/quidditch.png}" if cho_quid.lock_practice and cc_st.match_counter == 1:
+            m "Got a moment?"
+            call ton_main("Sure just make it quick.","open","base","base","mid")
+            m "I have a problem with...{w=0.5}{nw}"
+            call ton_main("I'll have to stop you right there.","upset","base","worried","mid")
+            call ton_main("if you want to cry out about your problems, at least offer me a drink first...","open","closed","worried","mid")
+            call ton_main("","upset","closed","worried","mid")
+            m "(Is in this school at least ONE person that has no problems with alcohol...?)"
+            jump tonks_talk
 
         "-Get naked!-" if tonks_strip_happened and (not tonks_class.get_worn("top") or not tonks_class.get_worn("bottom") or not tonks_class.get_worn("robe")):
             m "Get naked, [tonks_name]!"

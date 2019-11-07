@@ -13,26 +13,56 @@ label summon_snape:
         pass
 
     menu:
-
         # Talk
         "-Talk-{icon=interface/icons/small/talk.png}":
             if not chitchated_with_snape:
                 $ chitchated_with_snape = True
                 call snape_chitchat
 
+            label .talk:
             menu:
                 "-Ask him to help Tonks-" if astoria_intro.E1_complete and not astoria_intro.E3_complete:
 
                     if astoria_intro.E2_snape:
                         call sna_main("I'm still on the lookout, Genie.","snape_01")
                         call sna_main("If I find the little maggot that casts those spells...","snape_10")
-                        jump snape_ready
+                        jump .talk
 
                     $ snape_busy = True
                     $ astoria_intro.E2_snape = True
                     $ ag_event_pause = 2
                     jump astoria_intro_E2_snape
-
+                    
+                "-Try solving the Quidditch Quarrel-{icon=interface/icons/small/quidditch.png}" if cho_quid.lock_practice and not cc_st.snape_E1:
+                    if daytime:
+                        m "I wanted to talk to you about the upcoming Quidditch game."
+                        call sna_main("I don't really have time right now...", "snape_05")
+                        if wine_ITEM.number >= 1:
+                            m "I got drinks."
+                        else:
+                            m "I'll get us drinks."
+                        call sna_main("Tempting, but it'll have to be in the evening... work and all that.", "snape_06")
+                        m "Fine."
+                        jump .talk
+                    else:
+                        m "So about that upcoming Quidditch game..."
+                        
+                        if wine_ITEM.number >= 1:
+                            call sna_main("Whatever it is, it can wait, lets sit down first, shall we.", "snape_01")
+                            call setup_fireplace_hangout(char="snape")
+                            $ ss_he_drink.start()
+                            $ ss_he_counter += 1
+                            $ wine_ITEM.number -= 1
+                            
+                            jump cc_st_snape_E1
+                        else:
+                            call sna_main("I hope you have some wine at least?", "snape_01")
+                            m "I hoped you'd bring your own for once."
+                            call sna_main("I see..", "snape_04")
+                            call sna_main("I guess you don't need my help afterall.", "snape_31")
+                            m "(Bloody alcoholic..)"
+                            jump .talk
+                    
                 "-Never mind":
                     jump snape_ready
 
@@ -49,7 +79,6 @@ label summon_snape:
                 m "(I don't have any more wine...)"
             jump snape_ready
 
-
         # Potions
         "-Get a potion-{icon=interface/icons/small/potion.png}" if her_whoring > 10:
             jump snape_potion_menu
@@ -58,7 +87,6 @@ label summon_snape:
         # Cardgame
         "-Let's Duel-{icon=interface/cards.png}" if deck_unlocked:
             jump snape_duel_menu
-
 
         # Dismiss
         "-Never mind-":
@@ -74,7 +102,6 @@ label summon_snape:
             $ snape_busy = True
 
             jump main_room
-
 
 # Potion Menu
 label snape_potion_menu:

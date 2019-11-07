@@ -130,6 +130,28 @@ label spell_not_known:
 label astoria_talk:
     menu:
         #"--":
+        "-Ask about Slytherin Quidditch Team-{icon=interface/icons/small/quidditch.png}" if cho_quid.lock_practice and cc_st.match_counter == 1:
+            m "Could you help me with something?"
+            ast "Depends what it is."
+            ast "And what's in it for me..."
+            m "Well, the Slytherin Quidditch team refuses to practice against the Ravenclaws."
+            ast "And?"
+            m "I was wondering if there's something you could do about it."
+            ast "Like what?"
+            m "I don't know... ask them nicely?"
+            ast "Yeah right, those guys would never listen to me..."
+            ast "And can't you do something about it. You're the headmaster!"
+            m "Well, I can't technically force them to do anything. If I could then that would make things way easier..."
+            ast "Ask Snape then, he's the head of Slytherin... If they'd listen to anyone it'd be him."
+            if cc_st.snape_E1:
+                m "I already did..."
+            else:
+                m "I could..."
+            m "Well, I'll try and think of something..."
+            ast "You do that."
+            jump astoria_talk
+
+            
         "-Address me only as-":
             menu:
                 "-Sir-":

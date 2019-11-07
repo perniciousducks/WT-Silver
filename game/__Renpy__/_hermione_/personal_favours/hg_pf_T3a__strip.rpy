@@ -48,7 +48,7 @@ label hg_pf_strip:
 
 
     # Points
-    m "[current_payout] points to the \"Gryffindor\" house."
+    m "[current_payout] points to the Gryffindor house."
     call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R")
 
 
@@ -260,16 +260,16 @@ label hg_pf_strip_T1_intro_E1: # Complete
             call nar(">Finally the zipper is undone and she has no choice but to take the skirt off...","end")
 
             call her_main("{size=-5}(Here it comes then...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-            call her_main("{size=-5}(For the honour of \"Gryffindor\"....){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+            call her_main("{size=-5}(For the honour of Gryffindor....){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
 
             call nar(">Hermione takes off her skirt...")
             pause.2
 
-            $ hermione_wear_panties = True
+            $ hermione_class.wear("panties")
             call set_her_action("lift_skirt")
             pause.5
 
-            $ hermione_wear_bottom = False
+            $ hermione_class.strip("bottom")
             call set_her_action("None")
             pause.5
 
@@ -291,7 +291,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
             call nar(">Finally the last button is undone and she has no choice but to take the shirt off...","end")
 
             call her_main("{size=-5}(Alright, here it comes...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-            call her_main("{size=-5}(For the honour of the \"Gryffindor\"!){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+            call her_main("{size=-5}(For the honour of the Gryffindor!){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
 
             call nar(">Hermione takes off her shirt...")
             pause.2
@@ -299,7 +299,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
             call set_her_action("lift_top")
             pause.5
 
-            $ hermione_wear_top = False
+            $ hermione_class.strip("top")
             call set_her_action("None")
             pause.5
 
@@ -464,11 +464,11 @@ label hg_pf_strip_T1_intro_E2:
             call her_main("Too late!", "angry", "base", "angry", "mid")
             pause.1
 
-    $ hermione_wear_panties = True
+    $ hermione_class.wear("panties")
     call set_her_action("lift_skirt")
     pause.5
 
-    $ hermione_wear_bottom = False
+    $ hermione_class.strip("bottom")
     call set_her_action("None")
     pause.2
 
@@ -478,14 +478,14 @@ label hg_pf_strip_T1_intro_E2:
     m "{size=-4}(Maybe it was still too early to--{/size}"
     call her_main("My shirt?!!", "disgust", "narrow", "base", "mid_soft")
 
-    $ hermione_wear_bra = True
+    $ hermione_class.wear("bra")
     call set_her_action("lift_top")
     pause.2
 
     call her_main("{size=+9}I don't need it!{/size}", "scream", "base", "angry", "mid", emote="01")
     pause.2
 
-    $ hermione_wear_top = False
+    $ hermione_class.strip("top")
     call set_her_action("None")
     pause.2
 
@@ -597,7 +597,7 @@ label hg_pf_strip_T1_intro_E2:
     ">Without saying another word..."
     call nar(">She starts to pull down her panties...","end")
 
-    $ hermione_wear_panties = False
+    $ hermione_class.strip("panties")
     call update_her_uniform
     call her_chibi("image","on_desk","on_desk","dance/07_dance_01")
     call her_main("", "annoyed", "worriedCl", "worried", "mid", cheeks="blush")
@@ -776,11 +776,11 @@ label hg_pf_strip_T1_E2:
 
     # Talk off top
     call nar(">Hermione undoes the last button of her shirt...")
-    $ hermione_wear_bra = False
+    $ hermione_class.strip("bra")
     call set_her_action("lift_top")
     pause.5
 
-    $ hermione_wear_top = False
+    $ hermione_class.strip("top")
     call set_her_action("None")
     pause.2
 
@@ -827,11 +827,11 @@ label hg_pf_strip_T1_E2:
     # Take off skirt
     call nar(">Hermione is starting to sway her hips rather seductively...")
 
-    $ hermione_wear_panties = True
+    $ hermione_class.wear("panties")
     call set_her_action("lift_skirt")
     pause.5
 
-    $ hermione_wear_bottom = False
+    $ hermione_class.strip("bottom")
     call set_her_action("None")
     pause.2
 
@@ -855,7 +855,7 @@ label hg_pf_strip_T1_watch:
         m "Yes, [hermione_name]! Take them off!"
         call her_main("........", "annoyed", "closed", "base", "mid")
 
-        $ hermione_wear_panties = False
+        $ hermione_class.strip("panties")
         call set_her_action("pinch")
         pause.5
 
@@ -1124,11 +1124,11 @@ label hg_pf_strip_T2:
     call her_main("...", "base", "narrow", "worried", "down")
     call nar(">Hermione pulls her shirt over her head...")
 
-    $ hermione_wear_bra = False
+    $ hermione_class.strip("bra")
     call set_her_action("lift_top")
     pause.5
 
-    $ hermione_wear_top = False
+    $ hermione_class.strip("top")
     call set_her_action("None")
     pause.2
 
@@ -1201,11 +1201,11 @@ label hg_pf_strip_T2:
     # Take off skirt
     call nar(">Hermione is starting to sway her hips rather seductively...")
 
-    $ hermione_wear_panties = True
+    $ hermione_class.wear("panties")
     call set_her_action("lift_skirt")
     pause.5
 
-    $ hermione_wear_bottom = False
+    $ hermione_class.strip("bottom")
     call set_her_action("None")
     pause.2
 
@@ -1239,7 +1239,7 @@ label hg_pf_strip_T2_watch:
         m "Yes, [hermione_name]! Take them off!"
         call her_main("........", "annoyed", "closed", "base", "mid")
 
-        $ hermione_wear_panties = False
+        $ hermione_class.strip("panties")
         call set_her_action("pinch")
         pause.5
 
@@ -1356,7 +1356,7 @@ label hg_pf_strip_T2_masturbate:
     if h_request_wear_panties or hermione_wear_panties:
         call nar(">Hermione bends over slightly and slides her panties down...")
 
-        $ hermione_wear_panties = False
+        $ hermione_class.strip("panties")
         call set_her_action("pinch")
         pause.5
 

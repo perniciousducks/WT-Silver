@@ -609,7 +609,7 @@ label potion_scene_3_3_1:
         call set_her_action("lift_top")
         pause.5
 
-        $ hermione_wear_top = False
+        $ hermione_class.strip("top")
         call set_her_action("none","skip_update")
         pause.5
 
@@ -623,7 +623,7 @@ label potion_scene_3_3_1:
         call set_her_action("lift_bottom")
         pause.5
 
-        $ hermione_wear_bottom = False
+        $ hermione_class.strip("bottom")
         call set_her_action("none","skip_update")
         pause.5
 
@@ -636,35 +636,11 @@ label potion_scene_3_3_1:
 
     call nar("Hermione pulls out her wand and casts a spell...")
 
-    #TODO Hermione's bimbo clothes should be temporary for this potion
+    # TODO: Hermione's bimbo clothes should be temporary for this potion. revamp this event.
     # Setting up Bimbo clothes
-    call set_her_hair(color="blonde")
-    $ h_lipstick = "lipstick_pink"
-
-    $ h_request_wear_top = True
-    $ h_top = "top_5_g"
-    $ h_top_color = "base"
-
-    $ h_request_wear_bottom = True
-    $ h_bottom = "skirt_4_low"
-    $ h_bottom_color = "purple"
-
-    $ h_request_wear_bra = True
-    $ h_bra = "bra_lace"
-    $ h_bra_color = "pink"
-
-    $ h_request_wear_panties = True
-    $ h_panties = "panties_lace"
-    $ h_panties_color = "pink"
-
-    $ h_request_wear_neckwear = True
-    $ h_neckwear = "choker_lace"
-
-    $ h_request_wear_stockings = True
-    $ h_stockings = "stockings_fishnets"
-
-    call load_hermione_clothing_saves
-    call update_her_uniform
+    # Blonde hair
+    # Override body?
+    # add special face layer?
 
     pause.5
     call her_main("", "base", "narrow", "base", "mid_soft")
@@ -685,16 +661,11 @@ label potion_scene_3_3_1:
             call her_main("It's this one, isn't it...", "soft", "narrow", "worried", "down")
             call nar("Hermione conjures an -I {image=textheart} Cum- badge, which magically attaches itself to her breasts.")
 
-            $ h_request_wear_body_accs = True
-            $ hermione_body_accs_list = []
-            $ hermione_body_accs_list.append("badge_cum")
-
-            call load_hermione_clothing_saves
-            call update_her_uniform
+            # TODO: Uncomment once badges have been added.
+            # hermione_class.equip(cumslut_badge)
 
             call her_main("Yay! Do you like it?", "grin", "happyCl", "base", "mid")
             call her_main("Anything else you want from me mistah?... I'll do anything!{image=textheart}", "soft", "narrow", "base", "mid_soft")
-
 
     m "I'm just going to ask you a few questions."
     call her_main("(...)", "annoyed", "base", "angry", "mid")
@@ -726,8 +697,8 @@ label potion_scene_3_3_1:
     call set_her_action("lift_top")
     pause.5
 
-    $ hermione_wear_top = False
-    $ hermione_wear_bra = False
+    $ hermione_class.strip("top")
+    $ hermione_class.strip("bra")
     call set_her_action("none","skip_update")
     pause.5
 
@@ -738,8 +709,8 @@ label potion_scene_3_3_1:
     call set_her_action("lift_skirt")
     pause.5
 
-    $ hermione_wear_bottom = False
-    $ hermione_wear_panties = False
+    $ hermione_class.strip("bottom")
+    $ hermione_class.strip("panties")
     call set_her_action("none","skip_update")
     pause.5
 

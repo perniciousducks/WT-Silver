@@ -1,4 +1,12 @@
 init -1 python:
+    # Import commonly used python modules
+    #import os as system # Already imported in devtools.rpy
+    import time
+    import math
+    import random
+    import pygame
+    import colorsys
+    
     def num_to_word(n, readable=True):
         """Transcript numbers (integers) into readable words."""
         n = int(n)
@@ -60,6 +68,14 @@ init -1 python:
             return min(1.0, xsize / x)
         return min(1.0, ysize / y)
         
+    def get_boundries(image):
+        if isinstance(image, basestring):
+            image = im.Image(image)
+
+        myRender = renpy.render(image, 800, 800, 0, 0)
+        sizes = myRender.get_size()
+        return (0, 0, sizes[0], sizes[1])
+        
     def image_hover(image):
         """Returns slightly brighter image used during hover events"""
         return im.MatrixColor(image, im.matrix.brightness(0.12))
@@ -67,3 +83,15 @@ init -1 python:
     def image_alpha(image, alpha=0.5):
         """Returns an image with changed alpha 0 - fully transparent 1 - fully visible"""
         return im.MatrixColor(image, im.matrix.opacity(alpha))
+        
+    def set_clipboard(txt):
+        pygame.scrap.put(pygame.scrap.SCRAP_TEXT, txt.encode("utf-8"))
+        
+    def get_clipboard():
+        clipboard = pygame.scrap.get(pygame.scrap.SCRAP_TEXT)
+        if clipboard:
+            return clipboard
+        return None
+        
+    def evaluate(txt):
+        return __import__('ast').literal_eval(txt)

@@ -1,10 +1,5 @@
 ﻿# Main script file
 init python:
-    # Import commonly used modules
-    import math
-    import random
-    import time
-
     config.after_load_callbacks.append(start_image_crop)
 
     renpy.music.register_channel("bg_sounds", "sfx", True)
@@ -40,6 +35,8 @@ default commentaries = False
 default txt_style = "night_text"
 default btn_style = "nightbtn"
 default btn_hover = "#7d75aa40"
+default mnu_style = "menu_choice_night"
+default mnu_btn_style = "menu_choice_nightbutton"
 
 # Menu placement
 default menu_x = 0.5

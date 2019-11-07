@@ -1,5 +1,11 @@
 label phoenix:
 
+    menu:
+        "Dueling - Prototype sign drawing":
+            jump magic_tutorial
+        "Back":
+            jump main_room_menu
+
     if not bird_examined:
         $ bird_examined = True
         hide screen genie

@@ -46,7 +46,7 @@ label hg_pf_blowjob:
         call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
 
     if her_tier < 6:
-        m "Yes, [hermione_name]. [current_payout] points to \"Gryffindor\"."
+        m "Yes, [hermione_name]. [current_payout] points to Gryffindor."
         $ gryffindor += current_payout
     else:
         m "You can go now, [hermione_name]."
@@ -83,7 +83,7 @@ label hg_pf_blowjob_fail:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
-    m "I plan to grant \"Gryffindor\" 55 house points today..."
+    m "I plan to grant Gryffindor 55 house points today..."
     m "If you suck me off..."
 
     $ hg_pf_blowjob.counter -= 1
@@ -101,7 +101,7 @@ label hg_pf_blowjob_T0_fail_intro:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
-    m "I plan to grant \"Gryffindor\" 55 house points today..."
+    m "I plan to grant Gryffindor 55 house points today..."
     m "If you suck me off..."
     call her_main("Suck you...{w}off?", "disgust", "wide", "base", "mid")
     call her_main("With my mouth?!", "disgust", "wide", "base", "stare")
@@ -139,7 +139,7 @@ label hg_pf_blowjob_T0_fail_repeat:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
-    m "I plan to grant \"Gryffindor\" 55 house points today..."
+    m "I plan to grant Gryffindor 55 house points today..."
     call her_main("And let me guess...", "open", "closed", "angry", "mid")
     call her_main("You'd like me to \"suck you off\" for it?", "open", "base", "angry", "mid")
     g9 "That is correct!"
@@ -179,7 +179,7 @@ label hg_pf_blowjob_T1_intro_E1:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
-    m "I plan to grant \"Gryffindor\" 55 house points today..."
+    m "I plan to grant Gryffindor 55 house points today..."
     m "If you suck me off..."
     call her_main("Oh...", "open", "narrow", "worried", "down")
     call her_main("Alright.", "base", "narrow", "worried", "down")
@@ -444,7 +444,7 @@ label hg_pf_blowjob_1:
             pause.8
             call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
 
-        "\"Tell me about the \"Gryffindor\" house.\"":
+        "\"Tell me about the Gryffindor house.\"":
             call her_main("*Slurp--")
 
             call hg_chibi_transition("bj_pause")
@@ -463,8 +463,8 @@ label hg_pf_blowjob_1:
             call her_main("*Gulp--", "sucking", "narrow", "annoyed", "up")
 
             call hg_chibi_transition("bj_pause")
-            call her_main("The \"Gryffindor\" house was founded by Godric Gryffindor, thus the name.", "open", "narrow", "worried", "down")
-            call her_main("The heraldic animal of \"Gryffindor\" is the lion...")
+            call her_main("The Gryffindor house was founded by Godric Gryffindor, thus the name.", "open", "narrow", "worried", "down")
+            call her_main("The heraldic animal of Gryffindor is the lion...")
             call her_main("And it's colours are red and gold.", "open", "closed", "base", "mid")
 
             call hg_chibi_transition("bj")
@@ -472,7 +472,7 @@ label hg_pf_blowjob_1:
 
             call hg_chibi_transition("bj_pause")
             call her_main("Professor Minerva McGonagall is the headmaster of our house.", "open", "closed", "base", "mid")
-            call her_main("The \"Gryffindor\" house emphasizes the traits of courage...")
+            call her_main("The Gryffindor house emphasizes the traits of courage...")
             call her_main("As well as \"daring, nerve and chivalry\"...")
             call her_main("And thus its members are generally regarded as brave but reckless...")
 
@@ -480,7 +480,7 @@ label hg_pf_blowjob_1:
             call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
 
             call hg_chibi_transition("bj_pause")
-            call her_main("\"Gryffindor\" corresponds roughly to the element of fire...", "open", "closed", "base", "mid")
+            call her_main("Gryffindor corresponds roughly to the element of fire...", "open", "closed", "base", "mid")
             call her_main("And for that reason the colours of red and gold were chosen.")
 
             call hg_chibi_transition("bj")

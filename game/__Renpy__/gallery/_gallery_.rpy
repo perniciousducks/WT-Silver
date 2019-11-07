@@ -103,7 +103,7 @@ label open_gallery():
     elif _return[0] == "import":
         $ file_path = config.basedir+"/game/outfits/"+_return[1][4].lower()+"/"+str(loadet_gallery[i][0])+loadet_gallery[i][1].split("/",-1)[-1]
         $ target_path = config.basedir+"/game/outfits/"+loadet_gallery[i][1].split("/",-1)[-1]
-        if not os.path.isfile(target_path):
+        if not system.path.isfile(target_path):
             $ copyfile(file_path, target_path)
             
     elif _return[0] == "sort":

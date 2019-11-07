@@ -15,18 +15,13 @@ screen say(who, what, side_image=None):
     
     #Add "hidden" window
     if hkey_chat_hidden:
-        window:
+        frame:
             xalign 0.5
             yalign 0.99
-            if daytime and not persistent.nightmode:
-                style "say_who_window_day"
-                text "Hidden" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
-            else:
-                style "say_who_window_night"
-                text "Hidden" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
+            ypos 1000 # hide below visible area
             if who:
-                text who id "who" ypos 1000
-            text what id "what" ypos 1000
+                text who id "who"
+            text what id "what"
             
         #Add fullscreen CTC button
         button:
@@ -34,7 +29,7 @@ screen say(who, what, side_image=None):
             style "empty"
     else:
         if who:
-            window:
+            frame:
                 ypos 470
                 if daytime and not persistent.nightmode:
                     style "say_who_window_day"
@@ -357,7 +352,7 @@ screen file_picker():
             textbutton _("Quick"):
                 action FilePage("quick")
 
-            for i in range(1, 11):
+            for i in xrange(1, 11):
                 textbutton str(i):
                     action FilePage(i)
 
@@ -374,7 +369,7 @@ screen file_picker():
             style_group "file_picker"
 
             # Display ten file slots, numbered 1 - 10.
-            for i in range(1, columns * rows + 1):
+            for i in xrange(1, columns * rows + 1):
                 $ is_compatible = check_save_compatibility(FileCurrentPage(), str(i))
                 
                 if renpy.get_screen("load"):

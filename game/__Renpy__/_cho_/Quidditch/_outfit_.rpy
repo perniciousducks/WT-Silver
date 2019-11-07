@@ -11,11 +11,11 @@ label use_quidditch_pants_1:
 
     m "I'd like you to wear trousers for your games again."
     call cho_main("Really? Just my regular pants?","annoyed","base","raised","mid")
-    m "Yes. Regular ole- pants."
+    m "Yes. Regular ole' pants."
     m "I know what I'm doing..."
     call cho_main("If you say so, [cho_genie_name].","base","base","base","mid")
 
-    $ cho_quidditch_bottom = "pants_long" # For testing.
+    $ cho_quid.bottom = "pants_long"
 
     return
 
@@ -42,7 +42,7 @@ label use_quidditch_pants_2:
         call cho_main("Alright. I see nothing wrong with that.","soft","base","base","down")
         call cho_main("I just hope it won't get too cold on our next game...","annoyed","base","sad","mid")
 
-    $ cho_quidditch_bottom = "pants_short" # For testing.
+    $ cho_quid.bottom = "pants_short"
 
     return
 
@@ -70,7 +70,7 @@ label use_quidditch_skirt_1:
         m "Then just tell them it was the only way to win. I'm sure they'll understand."
         call cho_main("You... might be right...","open","base","sad","downR")
         call cho_main("Alright! I'll do it!","smile","base","base","mid")
-        call cho_main("Go Go \'Ravenclaw\'!","scream","closed","sad","mid")
+        call cho_main("Go Go Ravenclaw!","scream","closed","sad","mid")
 
     # Repeat
     else:
@@ -80,7 +80,7 @@ label use_quidditch_skirt_1:
         call cho_main("I hope you're' right.","soft","closed","angry","mid")
         call cho_main("This is going to be so embarrassing...","quiver","base","sad","down")
 
-    $ cho_quidditch_bottom = "skirt_long" # For testing.
+    $ cho_quid.bottom = "skirt_long"
 
     return
 
@@ -96,7 +96,7 @@ label use_quidditch_skirt_2: # Not in use.
         m "Well, that skirt seemed a little long to me..."
         m "If you took a few inches off of it, maybe the other players wouldn't be able to keep their eyes off of you."
         call cho_main("Well I suppose I could take another inch or two off...","quiver","narrow","sad","downR")
-        call cho_main("But we better win the next practice against \"Hufflepuff\"!","scream","narrow","angry","mid")
+        call cho_main("But we better win the next practice against Hufflepuff!","scream","narrow","angry","mid")
         m "Hey, the games up to you... All I can give is pointers."
         call cho_main("Hmph... That's not what a coach is supposed to say!","pout","narrow","angry","mid")
         call cho_main("You're supposed to believe in me!","open","closed","angry","mid")
@@ -123,7 +123,7 @@ label use_quidditch_skirt_2: # Not in use.
         m "Just a few inches..."
         call cho_main("Alright...","base","narrow","sad","down")
 
-    $ cho_quidditch_bottom = "skirt_short" # For testing.
+    $ cho_quid.bottom = "skirt_short"
 
     return
 
@@ -157,6 +157,8 @@ label remove_quidditch_coat:
         call cho_main("Fine...","pout","angry","angry","R")
         call cho_main("But-{w} I better win!","soft","angry","raised","mid")
 
+    $ cho_quid.coat = False
+
     return
 
 
@@ -169,5 +171,7 @@ label remove_quidditch_gloves: # Not in use.
     m "With your mouth?"
     cho "That's just stupid!"
     m "Fair enough... Keep them on then."
+
+    $ cho_quid.gloves = True
 
     return

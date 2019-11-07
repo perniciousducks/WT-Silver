@@ -44,7 +44,7 @@ label hg_pr_handjob:
         call her_main(".........", "annoyed", "narrow", "annoyed", "mid")
         m "How about we try something less... engaging instead?"
         call her_main("............", "upset", "closed", "base", "mid")
-        m "I'll be willing to grant \"Gryffindor\" fifty five points."
+        m "I'll be willing to grant Gryffindor fifty five points."
         m "All I ask in return is..."
         call her_main("..........?", "angry", "base", "angry", "mid", cheeks="blush")
         m "...that you go out there and give some lucky boy a handjob..."
@@ -65,7 +65,7 @@ label hg_pr_handjob:
         m "A Handjob to the boy of your choosing!"
         call her_main("...again?", "angry", "narrow", "base", "down")
         m "Sure, why not?"
-        m "And another fifty five house points for the \"Gryffindor\" house of course."
+        m "And another fifty five house points for the Gryffindor house of course."
         call her_main("..........", "annoyed", "base", "worried", "R")
         m "So... Are you up for that, [hermione_name]?"
         call her_main("I will see what I can do...", "annoyed", "narrow", "angry", "R")
@@ -105,7 +105,7 @@ label hg_pr_handjob:
 
 label end_hg_pr_handjob:
     $ gryffindor += current_payout #55
-    m "The \"Gryffindor\" house gets [current_payout] points!"
+    m "The Gryffindor house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave", speed=2.5)
@@ -207,7 +207,7 @@ label hg_pr_handjob_T1_E2:
     show screen blktone
     call her_main("It went well, [genie_name]...", "open", "base", "base", "mid",xpos="right",ypos="base")
     call play_music("playful_tension") # SEX THEME.
-    her "I asked one if the \"Gryffindor\" boys to let me do \"it\" to him..."
+    her "I asked one if the Gryffindor boys to let me do \"it\" to him..."
     call her_main("To my surprise he agreed eagerly.", "open", "base", "base", "mid", cheeks="blush")
     m "Shocker..."
     call her_main("So we hid behind one of those huge tapestries in the east wing...", "open", "closed", "base", "mid")
@@ -215,7 +215,7 @@ label hg_pr_handjob_T1_E2:
     her "........."
     call her_main("And I asked him to keep the whole thing a secret, but...", "angry", "base", "base", "mid")
     m "What's the matter, [hermione_name]?"
-    m "Doubting the honesty of your fellow \"Gryffindors\"?"
+    m "Doubting the honesty of your fellow Gryffindors?"
     call her_main("Of course not, [genie_name].", "upset", "closed", "base", "mid")
     call her_main("...........................", "angry", "narrow", "base", "down")
     call her_main("Still... Performing this sort of task could really damage my reputation...", "angry", "base", "base", "mid")
@@ -266,7 +266,7 @@ label hg_pr_handjob_T1_E3:
     her "And do you know how he thanked me?"
     call her_main("He got his spunk all over me...", "scream", "base", "angry", "mid", emote="01")
     call her_main("And he did that on purpose, I know he did!", "scream", "closed", "angry", "mid")
-    call her_main("Nasty, good for nothing \"ravenclaws\"...", "annoyed", "base", "worried", "R")
+    call her_main("Nasty, good for nothing ravenclaws...", "annoyed", "base", "worried", "R")
     m "Well, I'd say a job well done."
 
     jump end_hg_pr_handjob
@@ -365,7 +365,7 @@ label hg_pr_handjob_T2_E2:
         "\"What? Of course not, [hermione_name]!\"":
             call her_main("..............", "base", "base", "base", "R", cheeks="blush")
             call her_main("You are right, [genie_name]...", "base", "narrow", "worried", "down")
-            her "I am making this sacrifice for the glory of the \"Gryffindor\" house."
+            her "I am making this sacrifice for the glory of the Gryffindor house."
             call her_main("I am not taking pleasure in this sort of activity...", "soft", "narrow", "annoyed", "up")
             call her_main("Because if I would...", "annoyed", "narrow", "angry", "R")
             her "That would mean I really am a slut..."
@@ -459,7 +459,7 @@ label hg_pr_handjob_T2_E3:
             call her_main("[genie_name], did you just say \"All goes according to plan\"?", "angry", "base", "angry", "mid", cheeks="blush")
             m "Did I?"
             m "Oh, yes, of course."
-            m "ensuring that \"Gryffindor\" gets the house cup this year."
+            m "ensuring that Gryffindor gets the house cup this year."
             m "That's the plan And thanks to your hard work, [hermione_name]..."
             m "All goes according to keik-... I mean, the plan..."
             call her_main("Hm...", "upset", "closed", "base", "mid")

@@ -50,7 +50,7 @@ label inventory_menu(xx=150, yy=90):
     $ menu_items = inventory_sortfilter(category_items, current_sorting)
     $ menu_items_length = len(menu_items)
 
-    label inventory_menu_after_init:
+    label .after_init:
     $ renpy.block_rollback()
 
     show screen bld1
@@ -100,7 +100,7 @@ label inventory_menu(xx=150, yy=90):
         $ hide_transitions = False
         jump main_room_menu
 
-    jump inventory_menu_after_init
+    jump .after_init
 
 screen inventory_menu(xx, yy):
     tag inventory_menu

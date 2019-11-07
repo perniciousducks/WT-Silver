@@ -9,12 +9,14 @@
 default _checking_for_errors = False
 
 init -2 python:
+    import os as system
+    
     rpy_version = int('%d%d%d%d' % renpy.version_tuple)
     
-    if rpy_version >= 730000:
+    if rpy_version >= 735606:
         pass
     else:
-        raise Exception("Your Ren'Py launcher is outdated, the current minimal requirement is 7.3.0+\nPlease perform an update or use official game executable instead.")
+        raise Exception("Your Ren'Py launcher is outdated, the current minimal requirement is 7.3.5+\nPlease perform an update and try launching the game again.")
         
     def missing_image_func(path):
         global systemerror
@@ -84,9 +86,6 @@ init -2 python:
                 return
         
     def check_for_call_errors(char, auto=True):
-        import os
-        import os.path
-        import time
         global _checking_for_errors
         
         open(config.basedir+"/calls.txt", "w").close()
@@ -112,9 +111,9 @@ init -2 python:
                             _files["f"] += 1
             return
         
-        for dp, dn, fn in os.walk(config.basedir):
+        for dp, dn, fn in system.walk(config.basedir):
             for i in [f for f in fn if f.endswith(".rpy")]:
-                check_file(os.path.join(dp, i), i)
+                check_file(system.path.join(dp, i), i)
                 
         with open(config.basedir+"/calls.txt", "w") as f:
             for exp in _calls:
@@ -136,12 +135,11 @@ init -2 python:
             renpy.reload_script()
             
     def _delete_test_file():
-            if os.path.isfile(config.basedir+"/game/test.rpy"):
-                os.remove(config.basedir+"/game/test.rpy")
+            if system.path.isfile(config.basedir+"/game/test.rpy"):
+                system.remove(config.basedir+"/game/test.rpy")
             return
             
     def check_errors():
-        import os
         
         global _checking_for_errors
         if _checking_for_errors:
@@ -149,8 +147,8 @@ init -2 python:
             renpy.pause(2.0)
             renpy.jump("expression_testing")
             
-        if os.path.isfile(config.basedir+"/game/test.rpyc") and not os.path.isfile(config.basedir+"/game/test.rpy"):
-            os.remove(config.basedir+"/game/test.rpyc")
+        if system.path.isfile(config.basedir+"/game/test.rpyc") and not system.path.isfile(config.basedir+"/game/test.rpy"):
+            system.remove(config.basedir+"/game/test.rpyc")
         
 label missing_label():
     $ renpy.choice_for_skipping()

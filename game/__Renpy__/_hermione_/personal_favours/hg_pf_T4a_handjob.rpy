@@ -48,7 +48,7 @@ label hg_pf_handjob:
 
     # Points
     if her_tier <= 5:
-        m "Yes, [hermione_name]. [current_payout] to \"Gryffindor\"."
+        m "Yes, [hermione_name]. [current_payout] to Gryffindor."
         $ gryffindor += current_payout
     else:
         m "You may leave now, [hermione_name]."
@@ -135,7 +135,7 @@ label hg_pf_handjob_T1_intro_E1:
             $ her_mood += 7
             call her_main(".....", "annoyed", "narrow", "angry", "R")
             call her_main("45 house points...?", "open", "narrow", "worried", "down")
-            her "This could put \"Gryffindor\" back in the lead..."
+            her "This could put Gryffindor back in the lead..."
             m "Is that a \"yes\"?"
             call her_main("Yes, it is a yes, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
             m "Great!"
@@ -145,10 +145,10 @@ label hg_pf_handjob_T1_intro_E1:
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ current_payout = 100
             call her_main("100 house points?!", "scream", "wide", "base", "mid")
-            her "This will definitely put \"Gryffindor\" in the lead!"
+            her "This will definitely put Gryffindor in the lead!"
             m "Is that a \"yes\" then?"
             call her_main("Of course!", "smile", "happyCl", "base", "mid")
-            call her_main("If it will bring \"Gryffindor\" 100 house points, I don't mind touching your... thing a little.", "smile", "happyCl", "base", "mid", emote="06")
+            call her_main("If it will bring Gryffindor 100 house points, I don't mind touching your... thing a little.", "smile", "happyCl", "base", "mid", emote="06")
             pass
 
     jump hg_pf_handjob_1
@@ -169,9 +169,9 @@ label hg_pf_handjob_T1_intro_E2:
     call her_main("Of course, [genie_name].", "annoyed", "narrow", "angry", "R")
     g9 "The favour being you playing with my cock!"
     call her_main("..............", "disgust", "narrow", "base", "mid_soft")
-    m "Oh, come on. For the honour of the \"Gryffindors\"?"
+    m "Oh, come on. For the honour of the Gryffindors?"
     call her_main(".............", "angry", "base", "angry", "mid")
-    g9 "Play with my cock for the honour of the \"Gryffindors\", [hermione_name]!"
+    g9 "Play with my cock for the honour of the Gryffindors, [hermione_name]!"
     call her_main("Stop saying that, [genie_name]...", "scream", "base", "angry", "mid", emote="01")
     m "Come on [hermione_name], it's not like I'm asking you to do this for free."
     call her_main(".......", "annoyed", "narrow", "angry", "R")
@@ -515,7 +515,7 @@ label hg_pf_handjob_1:
                 call her_main("What choice do I have?", "angry", "narrow", "base", "down")
                 call her_main("I can't just skip a class...")
             else:
-                call her_main("At this hour The \"Gryffindor\" common room will be full of people...", "angry", "worriedCl", "worried", "mid", emote="05")
+                call her_main("At this hour The Gryffindor common room will be full of people...", "angry", "worriedCl", "worried", "mid", emote="05")
                 call her_main("I didn't want to have to return there all covered in your... spunk, [genie_name].")
                 call her_main("Oh, it's getting pretty late...", "angry", "base", "base", "mid")
                 m "So you will go like this, instead?"
@@ -597,7 +597,7 @@ label hg_pf_handjob_1:
                     call her_main("...I would like to get paid now.", "annoyed", "narrow", "annoyed", "mid")
                 else:
                     call her_main("My uniform is ruined!", "annoyed", "narrow", "angry", "R")
-                    her "Am I supposed to go back to the \"Gryffindor\" common room looking like this?!"
+                    her "Am I supposed to go back to the Gryffindor common room looking like this?!"
                     m "Why not? You look hot, [hermione_name]!"
                     call her_main("[genie_name]!!!", "annoyed", "narrow", "annoyed", "mid")
                     m "Alright, alright. Just wipe it off or something."
@@ -736,7 +736,7 @@ label hg_pf_handjob_2:
             call her_main("This is actually quite fun!")
             call her_main("Err... I mean...", "angry", "wink", "base", "mid")
             call her_main("I am only doing this to help my house of course...")
-            m "Yes, yes... The \"Gryffindor\" honour and all that."
+            m "Yes, yes... The Gryffindor honour and all that."
             m "You just keep massaging that spot..."
             m "Oh, yes..."
             call her_main("...............", "base", "narrow", "worried", "down")

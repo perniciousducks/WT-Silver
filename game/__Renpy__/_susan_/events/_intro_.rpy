@@ -23,7 +23,7 @@ label nt_he_susan_E1:
     call ton_main("That being said, I'm quite worried about her...","open","closed","worried","mid")
     call ton_main("Lately she's been too shy to even answer the simplest of questions during my class.","open","base","sad","R")
     call ton_main("She's lost quite a few points for her house that way.","upset","base","sad","mid")
-    call ton_main("Not in my lessons, of course. I'd never take points from \"Hufflepuff!\"","upset","base","worried","down")
+    call ton_main("Not in my lessons, of course. I'd never take points from Hufflepuff!","upset","base","worried","down")
     g9 "Just send her my way and I'll drown her in house points!"
     m "And show her that her bod-..."
     g4 "*Ahem!* Show her that she's appreciated..."

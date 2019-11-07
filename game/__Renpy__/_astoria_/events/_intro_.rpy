@@ -311,7 +311,7 @@ label astoria_intro_E2_hermione:
     call her_main("really? You're depending on me to find a criminal student within our school?", "soft", "narrow", "base", "down",cheeks="blush")
     m "If it's not too much troub--"
     call her_main("I'd be honoured, [genie_name]!", "scream", "closed", "base", "mid")
-    call her_main("It's no doubt the work of one of those despicable \"slytherins\"...", "open", "closed", "angry", "mid")
+    call her_main("It's no doubt the work of one of those despicable slytherins...", "open", "closed", "angry", "mid")
     call her_main("Nothing would give me greater pleasure than to see scum like that sent to \'Azkaban\'...", "angry", "narrow", "angry", "R")
 
     # Genie already knows about Azkaban.
@@ -323,7 +323,7 @@ label astoria_intro_E2_hermione:
     #call her_main("the guards are the deathly eaters of all happy thoughts and emotions known as dementors...", "open", "narrow", "angry", "R")
     #call her_main("They endlessly patrol the prison, devouring all hope from the prisoners, driving them mad within a few days...", "open", "base", "angry", "mid")
     #call her_main("Tormenting them relentlessly for the rest of their miserable lives...", "grin", "happyCl", "base", "mid")
-    #call her_main("And the perfect place to house all those dirty \'slytherins\'!", "angry", "base", "angry", "mid")
+    #call her_main("And the perfect place to house all those dirty slytherins!", "angry", "base", "angry", "mid")
 
     menu:
         m "(...)"
@@ -501,7 +501,7 @@ label astoria_intro_E3:
     call her_main("What's going to be her punishment, Sir?", "soft", "base", "angry", "mid")
     call ast_main("Punishment? I didn't do anything!","clench","base","worried","mid")
     call her_main("You know very well what you did!", "angry", "closed", "angry", "mid")
-    call her_main("Sir, I overheard her boasting about it in the library - to a group of \"Slytherins.\"", "annoyed", "narrow", "worried", "mid_soft")
+    call her_main("Sir, I overheard her boasting about it in the library - to a group of Slytherins.", "annoyed", "narrow", "worried", "mid_soft")
     call her_main("By the sounds of it, she used Imperio to control another student!", "annoyed", "base", "base", "mid")
     call ast_main("I did not!","annoyed","base","worried","L")
 
@@ -511,7 +511,7 @@ label astoria_intro_E3:
     call her_main("Not when you've been casting unforgivable curses - you evil little witch!", "grin", "base", "angry", "mid")
     call ast_main("Fine!","clench","closed","angry","mid")
     call ast_main("I'll tell you what happened, Sir...", "open","narrow","base","mid")
-    call ast_main("But only if this \"Gryffindor\" leaves!","annoyed","narrow","base","mid")
+    call ast_main("But only if this Gryffindor leaves!","annoyed","narrow","base","mid")
     call her_main("Not a chance!", "angry", "closed", "angry", "mid")
 
     $ d_flag_01 = False
@@ -608,7 +608,7 @@ label astoria_intro_E3:
     m "It's not that sort of visit."
     call sna_main("Really? Then what's she doing here?","snape_01")
     m "She's the one who's been casting those curses."
-    call sna_main("Truthfully? A \"Slytherin?\"","snape_05")
+    call sna_main("Truthfully? A Slytherin?","snape_05")
     call sna_main("I expect better than this from my students, Miss Greengrass...","snape_10")
 
     call sna_main("The very first lesson I give you is don't-","snape_08")
@@ -620,10 +620,10 @@ label astoria_intro_E3:
     call ast_main("I-I'm sorry, sir... It won't happen again.","clench","narrow","base","down")
     call sna_main("Who did you cast them on, you little idiot?","snape_32")
     call ast_main("Susan Bones, Sir...","annoyed","narrow","base","down")
-    call sna_main("The \"Hufflepuff\" cow-","snape_44")
+    call sna_main("The Hufflepuff cow-","snape_44")
     call sna_main("*Ahem*...","snape_09")
     m "..."
-    call sna_main("That cowardly \"Hufflepuff\" girl?","snape_38")
+    call sna_main("That cowardly Hufflepuff girl?","snape_38")
     call ast_main("Yes.","open","narrow","worried","L")
     call ast_main("I... might have used Imperio to embarrass her a little...","smile","narrow","worried","mid")
     call sna_main("Well as long as you only cast it once...","snape_09")
@@ -745,7 +745,7 @@ label astoria_intro_E3:
             call ton_main("But you're right though, Professor!","open","base","worried","mid")
             call ton_main("Casting the Imperius curse at her age is no easy task!","open","closed","base","mid")
             call ton_main("A girl with that type of...{w=0.3} talent, is a rare thing.","horny","base","raised","L") # Horny
-            call ton_main("I would say, 50 points for \"Slytherin\" should be appropriate.","base","base","angry","mid")
+            call ton_main("I would say, 50 points for Slytherin should be appropriate.","base","base","angry","mid")
             call ast_main("!!!","clench","base","base","mid")
             g4 "(If Hermione hears about this - she'll {i}Abra Kadabra{/i} my head off!)"
             g4 "(And not the one on my shoulders...)"
@@ -831,7 +831,7 @@ label nt_he_astoria_E1:
     call ton_main("I wouldn't mind giving her a thorough robe inspection - if you know what I'm saying.","horny","base","angry","mid", hair="horny")
     call ton_main("This girl...{w=0.5} she's special...{w=0.8} different...","open","base","base","R", hair="neutral")
     m "You got the hots for this girl?"
-    call ton_main("She's a \"Slytherin!\"","angry","base","raised","mid")
+    call ton_main("She's a Slytherin!","angry","base","raised","mid")
     m "People keep saying that as if I'd know what the problem is."
     call ton_main("Oh yes... I guess I'm a teacher now - so I should be more impartial...","upset","base","sad","down")
     call ton_main("Old habits, I suppose.","open","base","worried","R")

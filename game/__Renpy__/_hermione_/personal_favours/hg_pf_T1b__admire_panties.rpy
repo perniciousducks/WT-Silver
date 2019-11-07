@@ -44,7 +44,7 @@ label hg_pf_admire_panties:
     # Points
     if her_tier <= 3:
         $ gryffindor += current_payout
-        m "[current_payout] points to \"Gryffindor\", [hermione_name]. Well done."
+        m "[current_payout] points to Gryffindor, [hermione_name]. Well done."
 
     if hg_pf_admire_panties.counter == 1: #First time.
         call her_main("Another [current_payout] points...", "base", "narrow", "worried", "down")
@@ -131,7 +131,6 @@ label hg_pf_admire_panties_T1: # Call label
     hide screen bld1
     with d3
 
-    $ hermione_wear_panties = True
     call set_her_action("lift_skirt")
 
     call her_chibi("lift_skirt","mid","base")
@@ -146,19 +145,15 @@ label hg_pf_admire_panties_T1: # Call label
     menu:
         "-Stare at her face-":
             ">You study Hermione's face..."
-            call ctc
+            pass
             ">You wonder what's going through her mind right now."
             call her_main(".......................", "angry", "narrow", "annoyed", "mid", emote="01")
-            call ctc
-
-            return
 
         "-Stare at her panties-":
             ">That's a plain girlish underwear..."
             call her_main(".......................", "angry", "narrow", "annoyed", "mid", emote="01")
-            call ctc
-
-            return
+    call ctc
+    return
 
 
 
@@ -203,7 +198,6 @@ label hg_pf_admire_panties_T2: # Call label
     hide screen bld1
     with d3
 
-    $ hermione_wear_panties = True
     call set_her_action("lift_skirt")
 
     call her_chibi("lift_skirt","mid","base")
@@ -217,26 +211,19 @@ label hg_pf_admire_panties_T2: # Call label
     menu:
         "\"You don't look too embarrassed...\"":
             call her_main("That's not true...", "base", "happy", "base", "mid")
-            call her_main("But this is a small price to pay if the \"Gryffindors\" keep the cup this year.", "base", "base", "base", "R")
+            call her_main("But this is a small price to pay if the Gryffindors keep the cup this year.", "base", "base", "base", "R")
             her "I know everyone will be so happy..."
-            call ctc
-
-            return
-
+            
         "\"I like your panties...\"":
             call her_main("Thank you, [genie_name]...", "base", "happy", "base", "mid")
-            call ctc
-
-            return
 
         "-Keep looking into her eyes-":
             call her_main("..............................", "soft", "base", "base", "mid")
             her "...........................?"
             call her_main("................................", "grin", "base", "base", "R")
             call her_main("[genie_name], please... You are embarrassing me.", "grin", "worriedCl", "worried", "mid",emote="05")
-            call ctc
-
-            return
+    call ctc
+    return
 
 
 
@@ -261,7 +248,7 @@ label hg_pf_admire_panties_T3_intro_E1:
     hide screen bld1
     with d3
 
-    $ hermione_wear_panties = False
+    $ hermione_class.strip("panties")
     call set_her_action("lift_skirt")
 
     call her_chibi("lift_skirt","mid","base")
@@ -289,14 +276,14 @@ label hg_pf_admire_panties_T3_intro_E1:
                 "\"Absolutely!\"":
                     m "Absolutely!"
                     $ current_payout +=10
-                    m "Ten additional points to \"Gryffindor\"!"
+                    m "Ten additional points to Gryffindor!"
                     call her_main("Thank you, [genie_name]!", "base", "worriedCl", "worried", "mid")
                     call ctc
 
                 "\"Absolutely not!\"":
                     $ her_mood +=5
                     call her_main("Why not!?", "scream", "closed", "angry", "mid")
-                    m "Sluts aren't paid."
+                    m "Sluts aren't getting paid."
                     m "That's what makes them sluts."
                     call her_main("well are you even going to pay me [current_payout] points?", "annoyed", "base", "angry", "mid")
                     m "Are you a slut or are you a prostitute?"
@@ -320,7 +307,7 @@ label hg_pf_admire_panties_T3_E1:
     hide screen bld1
     with d3
 
-    $ hermione_wear_panties = False
+    $ hermione_class.strip("panties")
     call set_her_action("lift_skirt")
 
     call her_chibi("lift_skirt","mid","base")
@@ -345,14 +332,14 @@ label hg_pf_admire_panties_T3_E1:
                 "\"Absolutely!\"":
                     m "Absolutely!"
                     $ current_payout +=10
-                    m "Ten additional points to \"Gryffindor\"!"
+                    m "Ten additional points to Gryffindor!"
                     call her_main("Thank you, [genie_name]!", "base", "worriedCl", "worried", "mid")
                     call ctc
 
                 "\"Absolutely not!\"":
                     $ her_mood +=5
                     call her_main("Why not!?", "scream", "closed", "angry", "mid")
-                    m "Sluts aren't paid."
+                    m "Sluts aren't getting paid."
                     m "That's what makes them sluts."
                     call her_main("Well are you even going to pay me [current_payout] points?", "annoyed", "base", "angry", "mid")
                     m "Are you a slut or are you a prostitute?"
@@ -373,8 +360,7 @@ label hg_pf_admire_panties_T3_E1:
             with d3
             ">Hermione puts on her panties."
 
-            $ h_request_wear_panties = True
-            $ hermione_wear_panties = True
+            $ hermione_class.wear("panties")
 
             call update_her_uniform
             call update_chibi_uniform
@@ -390,8 +376,6 @@ label hg_pf_admire_panties_T3_E1:
             call her_main("Of course, [genie_name].", "soft", "narrow", "annoyed", "up")
             call ctc
 
-            $ h_request_wear_panties = False
-
     jump end_hg_pf_admire_panties
 
 
@@ -406,9 +390,9 @@ label hg_pf_admire_panties_T3_E2:
     with d3
 
     if h_request_wear_panties:
-        $ hermione_wear_panties = True
+        $ hermione_class.wear("panties")
     else:
-        $ hermione_wear_panties = False
+        $ hermione_class.strip("panties")
 
     call set_her_action("lift_skirt")
 
@@ -421,10 +405,10 @@ label hg_pf_admire_panties_T3_E2:
     call ctc
 
     # No Panties.
-    if not hermione_wear_panties:
+    if not hermione_class.get_worn("panties"):
         g9 "Where are your panties, [hermione_name]?"
         call her_main("I have them here in my pocket...", "open", "base", "base", "R")
-        call her_main("Most of the time I just leave them in the \"Gryffindor\" common room...", "open", "base", "base", "R")
+        call her_main("Most of the time I just leave them in the Gryffindor common room...", "open", "base", "base", "R")
         call her_main("But I got them with me this time.", "open", "base", "base", "R")
         call ctc
 
@@ -438,7 +422,7 @@ label hg_pf_admire_panties_T3_E2:
                 ">Hermione puts on her panties."
 
                 $ h_request_wear_panties = True
-                $ hermione_wear_panties = True
+                $ hermione_class.wear("panties")
 
                 call update_her_uniform
                 call update_chibi_uniform
@@ -453,8 +437,6 @@ label hg_pf_admire_panties_T3_E2:
             "\"No, keep them off!\"":
                 call her_main("Of course, [genie_name].", "soft", "narrow", "annoyed", "up")
                 call ctc
-
-                $ h_request_wear_panties = False
 
     else:
         call her_main("Do you like them, [genie_name]?", "base", "narrow", "base", "mid_soft")
@@ -473,7 +455,7 @@ label hg_pf_admire_panties_T3_E2:
                 call nar(">Hermione takes off her panties.")
 
                 $ h_request_wear_panties = False
-                $ hermione_wear_panties = False
+                $ hermione_class.strip("panties")
 
                 call update_her_uniform
                 hide screen hermione_chibi_lift_skirt
@@ -490,7 +472,5 @@ label hg_pf_admire_panties_T3_E2:
             "\"No, keep them on!\"":
                 call her_main("Sure, [genie_name].", "base", "narrow", "base", "mid_soft")
                 call ctc
-
-                $ h_request_wear_panties = True
 
     jump end_hg_pf_admire_panties

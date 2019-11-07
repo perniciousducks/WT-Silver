@@ -1,9 +1,9 @@
 label start_slide_puzzle:
     $ puzzle_tries = 0
-    $ imagepuzzle = [["images/rooms/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" for x in range(0,4)] for y in range(0,4)]
+    $ imagepuzzle = [["images/rooms/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" for x in xrange(0,4)] for y in xrange(0,4)]
     $ imagepuzzle[3][3] = "empty"
     python:
-        for x in range(0,16):
+        for x in xrange(0,16):
             xposS = int(x/4)
             yposS = int(x%4)
             tempimage = imagepuzzle[xposS][yposS]
@@ -11,7 +11,7 @@ label start_slide_puzzle:
             yposE = int(((x+3)%16)%4)
             imagepuzzle[xposS][yposS] = imagepuzzle[xposE][yposE]
             imagepuzzle[xposE][yposE] = tempimage
-        for x in range(0,16):
+        for x in xrange(0,16):
             xposS = int(x/4)
             yposS = int(x%4)
             if imagepuzzle[xposS][yposS] == "empty":
@@ -46,8 +46,8 @@ label update_puzzle_slide:
         $ emptyposition = p_move
 
     python:
-        for x in range(0,4):
-            for y in range(0,4):
+        for x in xrange(0,4):
+            for y in xrange(0,4):
                 if p_move != -2 and ((imagepuzzle[y][x] != "images/rooms/room_of_requirement/puzzle/puzzle_part_"+str((y+1)+(4*(x)))+".png" and (y+1)+(4*(x)) != 16) or imagepuzzle[3][3] != "empty"):
                     renpy.jump("update_puzzle_slide")
 
@@ -122,8 +122,8 @@ screen puzzle_board():
 
         add "images/rooms/room_of_requirement/puzzle/lock.png"
 
-        for x in range(0,4):
-            for y in range(0,4):
+        for x in xrange(0,4):
+            for y in xrange(0,4):
                 $ somestring = imagepuzzle[x][y]
                 if somestring != "empty":
                     imagebutton:

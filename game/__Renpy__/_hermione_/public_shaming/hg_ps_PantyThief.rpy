@@ -41,24 +41,24 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         call her_main("May I ask what you are planning to do with them...?", "disgust", "narrow", "base", "mid_soft")
         m "Ehm...I'm conducting research..."
         her "But this is kind of inappropriate, don't you think?"
-        m "But don't you hate it that some of the girls from \"Slytherin\"..."
+        m "But don't you hate it that some of the girls from Slytherin..."
         m "Are selling favours for house points, [hermione_name]?"
         call her_main("Yes I do!", "angry", "base", "angry", "mid")
-        call her_main("(Those \"Slytherin\" tramps have no dignity.)", "annoyed", "narrow", "angry", "R")
+        call her_main("(Those Slytherin tramps have no dignity.)", "annoyed", "narrow", "angry", "R")
         m "Well, there you go then!"
         call her_main("Huh?", "disgust", "narrow", "base", "mid_soft")
         m "Beat them at their own game!"
         call her_main("What?", "open", "base", "base", "mid")
-        m "Yes! Don't just put the \"Gryffindor\" house back on top..."
+        m "Yes! Don't just put the Gryffindor house back on top..."
         m "But do it by beating them at their own game!"
         call her_main("[genie_name]...", "open", "base", "worried", "mid")
-        m "As headmaster, I cannot play favourites. But you know how I feel about \"Gryffindor\"..."
+        m "As headmaster, I cannot play favourites. But you know how I feel about Gryffindor..."
         m "I wish I could give you the points but that would ruin the system..."
         hide screen hermione_main
         with d3
         call nar(">Suddenly Hermione extends her arm to you...","start")
         
-        $ hermione_wear_panties = False
+        $ hermione_class.strip("panties")
         call update_her_uniform
 
         call nar(">You see that she is clutching a little piece of fabric in her fist...","end")
@@ -85,7 +85,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
             hide screen hermione_main
             with d3
 
-            $ hermione_wear_panties = False
+            $ hermione_class.strip("panties")
             call update_her_uniform
             
             call nar(">Hermione pulls her panties out of her pocket...")
@@ -97,7 +97,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
             hide screen hermione_main
             with d3
 
-            $ hermione_wear_panties = False
+            $ hermione_class.strip("panties")
             call update_her_uniform
 
             call nar(">Hermione takes off her panties and hands them over to you...")
@@ -154,7 +154,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 hide screen hermione_main
                 call nar(">Hermione hesitantly puts on her panties...","start")
 
-                $ hermione_wear_panties = True
+                $ hermione_class.wear("panties")
                 call update_her_uniform
 
                 ">A tiny stream of cum trickles down one of her legs..."
@@ -183,7 +183,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         hide screen hermione_main
         call nar(">Hermione puts the panties on...")
 
-        $ hermione_wear_panties = True
+        $ hermione_class.wear("panties")
         call update_her_uniform
 
         call her_main("(This feels funny...)", "angry", "worriedCl", "worried", "mid",emote="05")
@@ -228,7 +228,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         hide screen hermione_main
         call nar(">Hermione swiftly slides her drenched panties on...")
 
-        $ hermione_wear_panties = True
+        $ hermione_class.wear("panties")
         call update_her_uniform
 
     elif her_whoring > 15: ###New variant of the event
@@ -250,7 +250,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 hide screen hermione_main
                 call nar(">Hermione swiftly slides her drenched panties on...")
 
-                $ hermione_wear_panties = True
+                $ hermione_class.wear("panties")
                 call update_her_uniform
 
                 call her_main("...", "soft", "narrow", "annoyed", "up")
@@ -287,7 +287,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
 
 label hg_ps_get_panties_complete:
     $ hg_ps_get_panties.complete = True
-    $ hermione_wear_panties = False
+    $ hermione_class.strip("panties")
     call update_her_uniform
 
 
@@ -417,7 +417,7 @@ label hg_ps_get_panties_complete:
         her "Good night, [genie_name]."
     else:
         $ gryffindor +=15
-        m "Fifteen points to \"Gryffindor\", [hermione_name]. Well deserved."
+        m "Fifteen points to Gryffindor, [hermione_name]. Well deserved."
         her "Thank you, [genie_name]..."
         m "You can go now."
         her "Good night, [genie_name]."

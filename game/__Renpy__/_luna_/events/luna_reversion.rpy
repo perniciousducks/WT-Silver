@@ -46,9 +46,9 @@ label luna_reversion_event: #DONE
                 ">Luna turns around to leave your office."
                 m "Oh, one last thing..."
                 call lun_main("...","normal","angry","sad","mid")
-                m "Could you send the first \'slytherin\' girl you see to my office?"
+                m "Could you send the first slytherin girl you see to my office?"
                 call lun_main("What! Why?","pout","wide","angry","mid")
-                m "Well seeing as how you're not able to give me a little attention, I figure that one of those \'slytherin\' sluts will."
+                m "Well seeing as how you're not able to give me a little attention, I figure that one of those slytherin sluts will."
                 m "They'll probably even do it for half the price..."
                 call lun_main("...","upset","angry","angry","mid")
                 call lun_main("......","normal","suspicious","sad","down")
@@ -328,7 +328,7 @@ label luna_revert_1: #Reversion event #DONE
     call her_main("If you need your filthy old cock jerked so badly you should just call me!", "annoyed", "narrow", "angry", "R")
     call lun_main("???","upset","wide","sad","R")
     call her_main("But to be doing this with Luna Lovegood...", "annoyed", "narrow", "annoyed", "mid")
-    call her_main("She's not even a {size=+5}\"Gryffindor\"!{/size}", "angry", "base", "angry", "mid")
+    call her_main("She's not even a {size=+5}Gryffindor!{/size}", "angry", "base", "angry", "mid")
     m "I wasn't pay-"
     call her_main("Shut up!", "scream", "base", "angry", "mid",emote="01")
     call her_main("How did you even get Luna to agree to this, sir?", "annoyed", "narrow", "annoyed", "mid")
@@ -411,7 +411,7 @@ label luna_revert_1: #Reversion event #DONE
             ">You raise your hand to the air."
             m "Scouts honour!"
             call her_main("...", "disgust", "narrow", "base", "mid_soft")
-            m "Besides, surely you'd notice a jump in \"Ravenclaw's\" points?"
+            m "Besides, surely you'd notice a jump in Ravenclaw's points?"
             call her_main("I suppose you're right...", "annoyed", "narrow", "angry", "R")
             call her_main("If the sorting hat had manipulated her then doing this isn't out of the question.", "annoyed", "narrow", "angry", "R")
             call her_main("{size=-5}(But for her to do it so willingly...){/size}", "annoyed", "narrow", "angry", "R")
@@ -428,7 +428,7 @@ label luna_revert_1: #Reversion event #DONE
     call her_main("Well regardless, she has to be punished.", "annoyed", "narrow", "annoyed", "mid")
     m "Wait, she's being punished?"
     call her_main("Of course!", "annoyed", "narrow", "angry", "R")
-    call her_main("Seeing as how you didn't give \"Ravenclaw\" any points you haven't done anything wrong.", "annoyed", "squint", "base", "mid")
+    call her_main("Seeing as how you didn't give Ravenclaw any points you haven't done anything wrong.", "annoyed", "squint", "base", "mid")
     call her_main("But her...", "annoyed", "squint", "angry", "mid")
     ">Hermione glares at the still frozen Luna Lovegood."
     call her_main("...", "annoyed", "squint", "angry", "mid")
@@ -1046,7 +1046,7 @@ label luna_revert_2: #Non-Reversion event #DONE
             call lun_main("hear that hermione?","grin","mad","mad","mid")
             call her_kneel("...","open_wide_tongue","down_raised")
             call lun_main("you're headmaster has a nice load of cum ready for you...","base","suspicious","angry","mid")
-            call lun_main("if you're lucky he might even give \"gryffindor\" some points...","smile","seductive","base","down")
+            call lun_main("if you're lucky he might even give gryffindor some points...","smile","seductive","base","down")
             g9  "Yes..."
             call her_kneel("...","open_wide_tongue","angryCl")
             call lun_main("Aww, you look so upset...","normal","seductive","sad","down")

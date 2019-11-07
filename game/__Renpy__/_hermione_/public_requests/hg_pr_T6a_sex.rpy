@@ -45,7 +45,7 @@ label hg_pr_sex:
         call her_main("I had the feeling that we would get to this sooner or later...", "disgust", "narrow", "base", "mid_soft")
         call her_main("But...", "annoyed", "narrow", "angry", "R")
         her "..................."
-        m "If you do this, \"Gryffindor\" will be getting seventy five points tonight."
+        m "If you do this, Gryffindor will be getting seventy five points tonight."
         call her_main("Well, then I will do it, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
         m "Great. See you after your classes then."
         call her_main(".............", "upset", "closed", "base", "mid")
@@ -67,7 +67,7 @@ label hg_pr_sex:
 
 label end_hg_pr_sex:
     $ gryffindor += current_payout
-    m "\"Gryffindor\" gets [current_payout] points!"
+    m "Gryffindor gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave", speed=2.5)
@@ -168,7 +168,7 @@ label hg_pr_sex_T1_E4:
     m "[hermione_name], did you complete your task?"
     call play_music("playful_tension") # SEX THEME.
     call her_main("I did, [genie_name].", "upset", "closed", "base", "mid")
-    call her_main("I took one of the \"Ravenclaw\" boys to the girl's restroom...", "base", "narrow", "worried", "down")
+    call her_main("I took one of the Ravenclaw boys to the girl's restroom...", "base", "narrow", "worried", "down")
     her "...and let him have his way with me in one of the stalls."
     m "Well done, [hermione_name]."
     call her_main(".....................", "annoyed", "narrow", "angry", "R")

@@ -9,7 +9,7 @@ label hg_pf_admire_breasts_transition:
     pause.2
 
     # Setup Pose
-    $ hermione_wear_bra = False
+    $ hermione_class.strip("bra")
     call set_her_action("lift_top")
 
     call her_chibi("lift_top","mid","base")
@@ -17,14 +17,11 @@ label hg_pf_admire_breasts_transition:
 
 
     call bld
+    
+    m "Hm..."
     if her_tier <= 2:
-        m "Hm..."
         call her_main("{size=-5}(My breasts are completely exposed...){/size}", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
-        m "Come closer [hermione_name], let me take a better look..."
-    else:
-        m "Hm..."
-        m "Come closer [hermione_name], let me take a better look..."
-
+    m "Come closer [hermione_name], let me take a better look..."
 
     # Move to desk
     hide screen bld1
@@ -50,22 +47,18 @@ label hg_pf_admire_breasts_transition:
 
     elif her_tier == 3:
         call her_main("", "base", "closed", "base", "mid", xpos="mid", ypos="base")
-        call ctc
 
         m "Very good..."
         call play_music("playful_tension") # SEX THEME.
         her "...................................."
-        call ctc
 
     else:
         call her_main("", "base", "narrow", "base", "mid_soft", cheeks="blush", xpos="mid", ypos="base")
-        call ctc
 
         m "Very good..."
         call play_music("playful_tension") # SEX THEME.
         call her_main("............", "base", "narrow", "base", "mid_soft", cheeks="blush")
-        call ctc
-
+    call ctc
     return
 
 
@@ -161,7 +154,7 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
     m "Go ahead, [hermione_name]. You are not getting paid if you do..."
     call her_main("But I showed you my...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
     call her_main("And you touched me...", "angry", "base", "angry", "mid", cheeks="blush")
-    call her_main("And I am getting nothing?", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
+    call her_main("And I am getting nothing in return?", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
     m "You are dismissed, [hermione_name]..."
     call her_main("Gr..................", "angry", "worriedCl", "worried", "mid", cheeks="blush")
     call her_main("{size=-5}(Burn in hell, you wretched old-{/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")

@@ -5,7 +5,7 @@ label gift_menu:
         category_choice = category_list[0]
         current_page = 0
 
-    label gift_menu_after_init:
+    label .after_init:
 
     python:
         item_list = []
@@ -46,7 +46,6 @@ label gift_menu:
                 return
         else:
             ">You don't own this item."
-            jump gift_menu_after_init
     elif _return == "inc":
         $ current_page += 1
     elif _return == "dec":
@@ -56,7 +55,7 @@ label gift_menu:
         with d3
         return
 
-    jump gift_menu_after_init
+    jump .after_init
     
 label give_gift(text = "", gift = ""):
     hide screen hermione_main

@@ -91,7 +91,7 @@ label book_handle(book=None):
     $ book.open()
     $ renpy.play('sounds/bookopen.mp3')
     show screen book_animator("book_page_next", 0.5)
-    label book_after_init:
+    label .after_init:
 
     $ _return = ui.interact()
     
@@ -100,23 +100,21 @@ label book_handle(book=None):
         $ renpy.play('sounds/pageflip.mp3')
         show screen book_animator("book_page_next", 0.5)
         with d1
-        jump book_after_init
     elif _return == "prev":
         $ current_book.prev()
         $ renpy.play('sounds/pageflip.mp3')
         show screen book_animator("book_page_prev", 0.5)
         with d1
-        jump book_after_init
     elif _return == "back":
         $ current_book.open()
         $ renpy.play('sounds/pageflipback.mp3')
         show screen book_animator("book_page_start", 0.5)
         with d1
-        jump book_after_init
     elif _return == "Close":
         $ current_book.close()
         $ renpy.play('sounds/bookclose.mp3')
         return
+    jump .after_init
     
 screen book_menu(page, pages, title, page_title, page_text, page_overflow):
     tag book_menu

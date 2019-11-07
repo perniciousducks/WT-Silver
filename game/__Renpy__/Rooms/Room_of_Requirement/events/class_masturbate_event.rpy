@@ -385,10 +385,9 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 hide screen hermione_main
                 with d3
 
-                $ hermione_wear_stockings = False
-                $ hermione_wear_bottoms = False
-                $ hermione_wear_panties = False
-                call update_her_body
+                $ hermione_class.strip("stockings")
+                $ hermione_class.strip("bottom")
+                $ hermione_class.strip("panties")
 
                 call her_main()
                 call set_her_action("fingering")

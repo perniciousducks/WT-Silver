@@ -131,6 +131,11 @@ label tonks_summon_setup:
         call ton_main(xpos="base", ypos="base", trans="fade")
 
         return
+        
+    if tonks_outfits_schedule:
+        $ tmp_outfits = get_character_outfits_schedule("tonks")
+        if len(tmp_outfits) > 0:
+            $ tonks_class.equip(renpy.random.choice(tmp_outfits))
 
     call play_sound("door")
     call ton_chibi("stand","mid","base")

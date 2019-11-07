@@ -89,7 +89,7 @@ screen deck_builder_screen():
             ysize 500
             text "{size=-5}"+unlocked_cards[selectcard].get_description()+"{/size}"
     
-    for i in range(0,5):
+    for i in xrange(0,5):
         # Need to get the amount this way since renpy dont save the pointer so after you load a game the card in the playerdeck is not the same as in unlocked_cards anymore
         if not selectcard == -1 and unlocked_cards[selectcard].copies > 0:
             use cardrender(playerdeck[i], 223+165*i,17, True, return_value=i) 

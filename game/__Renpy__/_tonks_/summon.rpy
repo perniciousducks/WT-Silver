@@ -20,11 +20,7 @@ label summon_tonks:
     menu:
 
         # Talk
-        "-Level Up-" if ton_level_up != None:
-            call tonks_level_up(tier=ton_level_up)
-            jump tonks_requests
-
-        "-Talk-":
+        "-Talk-{icon=interface/icons/small/talk.png}":
             if not chitchated_with_tonks:
                 call tonks_chit_chat
                 jump tonks_talk
@@ -32,29 +28,24 @@ label summon_tonks:
                 jump tonks_talk
 
 
-        # Requests
-        "-Public Requests-" if daytime and tonks_requests_unlocked:
-            jump tonks_requests_menu
-
-        "{color=#858585}-Public Requests-{/color}" if not daytime and tonks_requests_unlocked:
-            call nar(">Public requests are available during the daytime only.")
-            jump tonks_requests
-
+        # Favours
+        "-Sexual favours-{icon=interface/icons/small/condom.png}":
+            jump tonks_favor_menu
 
         # Fireplace Chats
-        "-Let's hang-" if (wine_ITEM.number > 0 and nt_he_drink.counter == 0) or (firewhisky_ITEM.number > 0 and nt_he_drink.counter > 0):
+        "-Let's hang-{icon=interface/icons/small/toast.png}" if (wine_ITEM.number > 0 and nt_he_drink.counter == 0) or (firewhisky_ITEM.number > 0 and nt_he_drink.counter > 0):
             jump tonks_hangout
 
-        "{color=#858585}-Let's hang-{/color}" if (firewhisky_ITEM.number < 1 and nt_he_drink.counter > 0):
+        "{color=#858585}-Let's hang-{/color}{/color}{icon=interface/icons/small/toast.png}" if (firewhisky_ITEM.number < 1 and nt_he_drink.counter > 0):
             m "(I don't have any firewhisky...)"
             jump tonks_requests
 
-        "{color=#858585}-Let's hang-{/color}" if (wine_ITEM.number < 1 and nt_he_drink.counter == 0):
+        "{color=#858585}-Let's hang-{/color}{icon=interface/icons/small/toast.png}" if (wine_ITEM.number < 1 and nt_he_drink.counter == 0):
             m "(I don't have any wine...)"
             jump tonks_requests
 
         # Wardrobe
-        "-Wardrobe-" if tonks_wardrobe_unlocked:
+        "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if tonks_wardrobe_unlocked:
             call ton_main(xpos="wardrobe",ypos="base", face="neutral")
             call t_wardrobe("ton_main")
             jump tonks_requests
@@ -65,14 +56,13 @@ label summon_tonks:
 
 
         # Gifts
-        "-Gifts-" if not gave_tonks_gift:
+        "-Gifts-{icon=interface/icons/small/gift.png}" if not gave_tonks_gift:
             call gift_menu
             jump tonks_requests
 
-        "{color=#858585}-Gifts-{/color}" if gave_tonks_gift:
+        "{color=#858585}-Gifts-{/color}{icon=interface/icons/small/gift.png}" if gave_tonks_gift:
             m "I already gave her a gift today."
             jump tonks_requests
-
 
         # Dismiss
         "-Never mind-":
@@ -116,6 +106,58 @@ label tonks_level_up(tier=None):
 
 
 # Tonks Requests Menu
+label tonks_favor_menu:
+    # call update_tonks_favors
+    
+    menu:
+        "-Level Up-{icon=interface/icons/small/levelup.png}" if ton_level_up != None:
+            call tonks_level_up(tier=ton_level_up)
+            jump tonks_requests
+            
+        "{color=#858585}-Personal Favours-{/color}{icon=interface/icons/small/heart_red.png}":
+            call not_available
+            jump tonks_favor_menu
+            #
+            # Uncomment once favours are ready
+            #
+            
+            # label .personal:
+            # python:
+                # menu_choices = []
+                # for i in nt_favor_list:
+                    # if i in []: # Not in the game yet.
+                        # menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
+                    # elif i.start_tier > ton_tier:
+                        # menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
+                    # else:
+                        # menu_choices.append((i.getMenuText(),i.start_label))
+                        
+                # menu_choices.append(("-Never mind-", "nvm"))
+                # result = custom_menu(menu_choices)
+            # if result == "nvm":
+                # jump tonks_favor_menu
+            # elif result == "vague":
+                # call favor_not_ready
+                # jump .personal
+            # elif result == "na":
+                # call not_available
+                # jump .personal
+            # else:
+                # $ renpy.jump(result)
+                
+        "-Public Requests-{icon=interface/icons/small/star_yellow.png}" if daytime and tonks_requests_unlocked:
+            jump tonks_requests_menu
+
+        "{color=#858585}-Public Requests-{/color}{icon=interface/icons/small/star_yellow.png}" if not daytime or not tonks_requests_unlocked:
+            if not tonks_requests_unlocked:
+                call nar(">You haven't unlocked this feature yet.")
+            elif not daytime:
+                call nar(">Public requests are available during the day only.")
+            jump tonks_favor_menu
+            
+        "-Never mind-":
+            jump tonks_requests
+            
 label tonks_requests_menu:
     call update_ton_requests
     python:
@@ -130,13 +172,13 @@ label tonks_requests_menu:
         menu_choices.append(("-Never mind-", "nvm"))
         result = custom_menu(menu_choices)
     if result == "nvm":
-        jump tonks_requests
+        jump tonks_favor_menu
     elif result == "vague":
         call favor_not_ready
-        jump tonks_requests
+        jump tonks_requests_menu
     elif result == "na":
         call not_available
-        jump tonks_requests
+        jump tonks_requests_menu
     else:
         $ renpy.jump(result)
 
@@ -155,7 +197,7 @@ label tonks_talk:
     menu:
         # Temporarily disabled
         #
-        "-Ask about outfit upgrades-":
+        "-Ask about outfit upgrades-{icon=interface/icons/small/wardrobe.png}":
             m "[tonks_name],..."
             m "Do you think you could change any of these outfits?"
             m "You know..."
@@ -439,6 +481,16 @@ label tonks_talk:
                     jump tonks_talk
                 "-Never mind-":
                     jump tonks_talk
+                    
+        "-You may wear your current outfit only-{icon=interface/icons/small/wardrobe.png}" if tonks_wardrobe_unlocked and tonks_outfits_schedule:
+            ton "Okay, [ton_genie_name]."
+            $ tonks_outfits_schedule = False
+            jump tonks_talk
+            
+        "-You may wear whatever you like-{icon=interface/icons/small/wardrobe.png}" if tonks_wardrobe_unlocked and not tonks_outfits_schedule:
+            ton "Okay, [ton_genie_name]."
+            $ tonks_outfits_schedule = True
+            jump tonks_talk
 
         "-Never mind-":
             jump tonks_requests

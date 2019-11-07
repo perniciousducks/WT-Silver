@@ -91,6 +91,13 @@ screen no_groping_02(): # Hermione stands with you behind desk - Flip = False
         add "groping_02_blinking" at Position(xpos=-60, ypos=10)
     zorder desk_zorder
 
+screen grope_ass_podium(idle=False):
+    tag favor
+    zorder 5
+    if idle:
+        add "grope_ass_podium_idle" pos (328,100)
+    else:
+        add "grope_ass_podium" pos (328,100)
 
 ### MOLESTING TITS FULLY CLOTHED ###
 screen groping_03(): # Grope breasts fully clothed
@@ -268,16 +275,26 @@ screen hermione_chibi_dance():
 ### SIT NAKED ###
 screen hermione_chibi_sit_naked_A():
     tag hermione_chibi
-    add "characters/hermione/chibis/sitting/sit_naked_blink.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
+    add "characters/hermione/chibis/sitting/sit_naked_blink.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom her_chibi_scale #0.4 or 0.5
     zorder her_chibi_zorder
 screen hermione_chibi_sit_naked_B():
     tag hermione_chibi
-    add "characters/hermione/chibis/sitting/sit_naked.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
+    add "characters/hermione/chibis/sitting/sit_naked.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom her_chibi_scale
     zorder her_chibi_zorder
 screen hermione_chibi_stand_no_shirt():
     tag hermione_chibi
     add "characters/hermione/chibis/dance/03_no_shirt_03.png" xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
     zorder her_chibi_zorder
+
+screen hermione_lying():
+    tag hermione_chibi
+    zorder her_chibi_zorder
+    add "characters/hermione/chibis/lying/shime21.png" xpos her_chibi_xpos ypos her_chibi_ypos
+
+screen hermione_kneel_pant():
+    tag hermione_chibi
+    zorder her_chibi_zorder
+    add "ch_hem kneel_pant" xpos her_chibi_xpos ypos her_chibi_ypos
 
 ### UNIVERSAL SCREEN ###
 screen h_c_u():
@@ -350,7 +367,7 @@ label update_chibi_uniform:
 
 ### HERMIONE MAIN CHIBI ###
 
-label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "", flip=False):
+label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "", flip=False, scale=her_chibi_scale):
     hide screen hermione_stand
     hide screen hermione_walk
 
@@ -360,6 +377,7 @@ label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "",
     hide screen hermione_chibi_lift_top
     hide screen hermione_chibi_lift_skirt
 
+    hide screen hermione_chibi_sit_naked_A
     hide screen ch_potion
     hide screen ch_hotdog
 
@@ -387,6 +405,8 @@ label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "",
         else:
             $ her_chibi_ypos = int(ypos)
 
+    if scale != her_chibi_scale:
+        $ her_chibi_scale = scale
 
     #Hermione Chibi Actions.
     if action == "lift_top":
@@ -404,6 +424,8 @@ label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "",
         show screen hermione_chibi_stand_no_shirt
 
     #Sit Naked
+    elif action == "sit":
+        show screen hermione_chibi_sit_naked_A # TODO: add clothing layers for this chibi.
     elif action == "sit_naked":
         show screen hermione_chibi_sit_naked_A
     elif action == "sit_naked_wide_eyes" or action == "sit_naked_scared" or action == "sit_naked_shocked":

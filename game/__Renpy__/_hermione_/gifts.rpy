@@ -239,7 +239,7 @@ label give_her_gift(gift_item):
     elif gift_item == girls_mag_ITEM:#girl mags
         if her_whoring >= 0 and her_whoring <= 5: # Lv 1-2.
             call her_main("Hm?", "soft", "base", "base", "mid")
-            call her_main("This is the sort of press some \"slytherin\" bimbo would appreciate.", "annoyed", "squint", "base", "mid")
+            call her_main("This is the sort of press some slytherin bimbo would appreciate.", "annoyed", "squint", "base", "mid")
             call her_main("I am way above silly magazines like that, [genie_name].", "open", "closed", "base", "mid")
             call her_mood(0)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
@@ -403,8 +403,8 @@ label give_her_gift(gift_item):
             call her_mood(10)
         elif her_whoring >= 6 and her_whoring <= 11: # Lv 3-4.
             call her_main("Is this what I think it is?", "angry", "narrow", "base", "down")
-            call her_main("[genie_name], let me remind you that I belong to the noble house of \"Gryffindor\".", "open", "narrow", "annoyed", "mid", cheeks="blush")
-            call her_main("A present like that would be appropriate for a girl from \"Slytherin\", [genie_name].", "upset", "closed", "base", "mid")
+            call her_main("[genie_name], let me remind you that I belong to the noble house of Gryffindor.", "open", "narrow", "annoyed", "mid", cheeks="blush")
+            call her_main("A present like that would be appropriate for a girl from Slytherin, [genie_name].", "upset", "closed", "base", "mid")
             call her_mood(10)
         elif her_whoring >= 12 and her_whoring <= 17: # Lv 5-6.
             call her_main("Is that a... vibrator?", "angry", "narrow", "base", "down")

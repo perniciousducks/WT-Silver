@@ -15,7 +15,7 @@ label summon_snape:
     menu:
 
         # Talk
-        "-Talk-":
+        "-Talk-{icon=interface/icons/small/talk.png}":
             if not chitchated_with_snape:
                 $ chitchated_with_snape = True
                 call snape_chitchat
@@ -38,10 +38,10 @@ label summon_snape:
 
 
         # Fireplace Chats
-        "-Let's hang-" if wine_ITEM.number >= 1 and not daytime:
+        "-Let's hang-{icon=interface/icons/small/toast.png}" if wine_ITEM.number >= 1 and not daytime:
             jump snape_hangout
 
-        "{color=#858585}-Let's hang-{/color}" if wine_ITEM.number < 1 or daytime:
+        "{color=#858585}-Let's hang-{/color}{icon=interface/icons/small/toast.png}" if wine_ITEM.number < 1 or daytime:
             if daytime:
                 m "(I'm not sharing my booze with Snape while he still has to teach classes...)"
                 m "(I better ask him during the evening to get drunk...)"
@@ -51,12 +51,12 @@ label summon_snape:
 
 
         # Potions
-        "-Get a potion-" if her_whoring > 10:
+        "-Get a potion-{icon=interface/icons/small/potion.png}" if her_whoring > 10:
             jump snape_potion_menu
 
 
         # Cardgame
-        "-Let's Duel- {image=interface/cards.png}" if deck_unlocked:
+        "-Let's Duel-{icon=interface/cards.png}" if deck_unlocked:
             jump snape_duel_menu
 
 

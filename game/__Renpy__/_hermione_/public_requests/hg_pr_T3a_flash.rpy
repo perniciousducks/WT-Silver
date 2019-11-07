@@ -17,7 +17,7 @@ label hg_pr_flash:
     #Intro.
     if hg_pr_flash.counter == 0:
         m "[hermione_name]..."
-        m "I would like to award \"Gryffindor\" with 25 house points today."
+        m "I would like to award Gryffindor with 25 house points today."
         call her_main("Really?", "base", "base", "base", "mid")
         her "Thank you, [genie_name]!"
         m "Yes, but first I will require your help with something..."
@@ -37,7 +37,7 @@ label hg_pr_flash:
         her "How can you ask one of your pupils to perform such a task?"
         m "So that's how you feel then? I see..."
         m "I suppose I will be awarding those points to some other house instead ..."
-        m "\"Slytherin\" perhaps?"
+        m "Slytherin perhaps?"
         call her_main("................", "disgust", "narrow", "base", "mid_soft")
         m "But, you know, no pressure..."
         call her_main("[genie_name]...", "annoyed", "narrow", "angry", "R")
@@ -116,7 +116,7 @@ label hg_pr_flash:
 
 label end_hg_pr_flash:
     $ gryffindor += current_payout
-    m "The \"Gryffindor\" house gets [current_payout] points!"
+    m "The Gryffindor house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
     call her_walk(xpos="door", ypos="base", speed=2)
@@ -131,11 +131,11 @@ label end_hg_pr_flash:
             call her_main("(Standing there...)")
             call her_main("(Pressing my breasts against that window glass...)")
             call her_main("(I would probably just die of embarrassment right there on the spot...)", "angry", "narrow", "base", "down")
-            call her_main("(No. Protecting the honour of the \"Gryffindor\" house is my number one priority.)", "upset", "closed", "base", "mid")
+            call her_main("(No. Protecting the honour of the Gryffindor house is my number one priority.)", "upset", "closed", "base", "mid")
             call her_main("(We must get the cup this year, no matter the cost...)")
             call her_main("(........)", "angry", "narrow", "base", "down")
         else:
-            call her_main("\"Slytherin\"...", "upset", "closed", "base", "mid", ypos="head")
+            call her_main("Slytherin...", "upset", "closed", "base", "mid", ypos="head")
 
     else:
         call her_main(".........................", "grin", "narrow", "base", "dead", ypos="head")
@@ -200,7 +200,7 @@ label hg_pr_flash_T1_E2:
     call her_main("Ehm... Sort of...", "annoyed", "base", "worried", "R")
     m "Sort of?"
     call her_main("Yes... uhm...", "open", "base", "base", "mid")
-    her "Well, I decided to try and flash them to this \"hufflepuff\" boy..."
+    her "Well, I decided to try and flash them to this hufflepuff boy..."
     call her_main("I've been waiting for the right moment...", "open", "narrow", "worried", "down")
     her "I was worried that something would go wrong..."
     call her_main("And, of course, everything that could - did...", "annoyed", "narrow", "angry", "R")
@@ -249,7 +249,7 @@ label hg_pr_flash_T1_E3:
     call her_main("It is usually quite deserted during that time...")
     call her_main("Apart from me there was only one student...")
     $ sc34CG(3, 6)
-    call her_main("Some boy from \"Ravenclaw\"...", "upset", "closed", "base", "mid")
+    call her_main("Some boy from Ravenclaw...", "upset", "closed", "base", "mid")
     call her_main("So I waved to him and when he looked up at me...")
     $ sc34CG(3, 7)
     call her_main("I quickly pulled my shirt up...", "angry", "base", "base", "mid")
@@ -341,7 +341,7 @@ label hg_pr_flash_T2_E2:
     call her_main("Aww...", "angry", "base", "base", "mid")
     call her_main("Well... Ehm...", "angry", "narrow", "base", "down")
     her "Well, alright, here it goes..."
-    call her_main("I flashed my tits to that \"Slytherin\" underclassman in a corridor...", "scream", "worriedCl", "worried", "mid")
+    call her_main("I flashed my tits to that Slytherin underclassman in a corridor...", "scream", "worriedCl", "worried", "mid")
     her "But I was standing too close to him..."
     call her_main("....", "normal", "worriedCl", "worried", "mid")
     her "...."
@@ -350,7 +350,7 @@ label hg_pr_flash_T2_E2:
     call her_main("He made me promise to meet him after my classes...", "angry", "base", "base", "mid")
     her "And let him..."
     call her_main("\"Play with my tits\" some more...", "open", "worriedCl", "worried", "mid")
-    call her_main("You see, that is why I hate \"slytherin\" boys, [genie_name]...", "angry", "narrow", "base", "down")
+    call her_main("You see, that is why I hate slytherin boys, [genie_name]...", "angry", "narrow", "base", "down")
     her "They don't have a shred of honour.."
     her "..."
     m "Did you keep your promise?"
@@ -461,7 +461,7 @@ label hg_pr_flash_T3_E2:
     call her_main("Yes I did, [genie_name].", "base", "base", "base", "mid")
     m "Well, tell me all about it, then."
     call her_main("Ehm... Alright...", "open", "base", "base", "mid")
-    her "I was flashing my tits to this boy in the \"Gryffindor\" common room..."
+    her "I was flashing my tits to this boy in the Gryffindor common room..."
     call her_main("When my friend, Ginny walked in on us...", "open", "base", "base", "mid")
     m "Another boy?"
     call her_main("A boy? No, Ginny is a girl's name, [genie_name].", "soft", "base", "base", "R")
@@ -513,12 +513,12 @@ label hg_pr_flash_T3_E3:
     call her_main("Yes I did, [genie_name]...", "base", "base", "base", "mid")
     m "Alright, tell me how did it go."
     call her_main("Well, let's see...", "annoyed", "base", "worried", "R")
-    her "First I flashed them to that one boy from \"Ravenclaw\"..."
-    call her_main("Then to that upperclassman from \"Hufflepuff\"...", "open", "base", "base", "mid")
-    call her_main("Then there was this other boy from \"Ravenclaw\".", "base", "base", "base", "mid")
+    her "First I flashed them to that one boy from Ravenclaw..."
+    call her_main("Then to that upperclassman from Hufflepuff...", "open", "base", "base", "mid")
+    call her_main("Then there was this other boy from Ravenclaw.", "base", "base", "base", "mid")
     m "???"
-    call her_main("After that I flashed my tits to some \"Gryffindor\" underclassman by mistake...", "angry", "worriedCl", "worried", "mid",emote="05")
-    call her_main("No, wait...  the boy from \"Gryffindor\" was after that other boy...", "annoyed", "base", "worried", "R")
+    call her_main("After that I flashed my tits to some Gryffindor underclassman by mistake...", "angry", "worriedCl", "worried", "mid",emote="05")
+    call her_main("No, wait...  the boy from Gryffindor was after that other boy...", "annoyed", "base", "worried", "R")
     m "How many boys did you flash your tits to today, [hermione_name]?"
     call her_main("Half a dozen or so?", "angry", "base", "base", "mid")
     call her_main("I had an opening in my schedule...", "angry", "wink", "base", "mid")

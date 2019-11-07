@@ -3,7 +3,7 @@
 ### Ravenclaw vs. Hufflepuff ###
 
 label start_hufflepuff_match:
-    call cho_main(xpos="mid",ypos="base",trans="fade")
+    call cho_main(xpos="mid", ypos="base", trans="fade")
     m "[cho_name], what do you say... ready for your first game of the season?"
     call cho_main("To be honest, [cho_genie_name], I'm feeling quite nervous.","soft","base","sad","R")
     m "Don't worry. I believe you are ready..."
@@ -13,8 +13,10 @@ label start_hufflepuff_match:
     call cho_main("Yes, [cho_genie_name].","base","base","base","mid")
     g9 "Well then, tomorrow it is!"
 
-    if weather_gen in [5,6]: # Bad weather.
+    if raining:
         call cho_main("Sounds great, [cho_genie_name]. I just hope it stops raining until then.","soft","base","base","R")
+    elif snowing:
+        call cho_main("Sounds great, [cho_genie_name]. I just hope it stops snowing until then.","soft","base","base","R")
     else:
         call cho_main("Sounds great, [cho_genie_name]. I just hope the weather stays like it is too.","soft","base","base","R")
 
@@ -27,7 +29,18 @@ label start_hufflepuff_match:
     # Cho leaves.
     call cho_walk(speed=1.6, action="leave")
 
+    $ cho_quid.lock_training = True
+    $ cho_quid.lock_practice = True
+
+    $ cc_event_pause  += 1  # Event starts on the next day.
+    $ cc_summon_pause += 1 # Can't be summoned until next event.
+
+    $ cho_busy = True
+
+    $ hufflepuff_match = "start"
+
     jump end_cho_event
+
 
 ### Main Match Against Hufflepuff ###
 
@@ -35,14 +48,19 @@ label hufflepuff_match:
 
     ### Event Setup ###
     $ cho_outfit_last.save()
+    $ hermione_outfit_last.save()
+
     $ cho_class.equip(cho_outfit_quidditch)
-    call h_equip_temp_outfit(hg_standart_school_ITEM)
+    $ hermione_class.equip(hermione_outfit_default)
 
 
     # Scene before Match against Hufflepuff
+    call play_music("stop")
+
     call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
     pause.5
 
+    call play_music("snape")
     call sna_main("Are you ready to go?","snape_03",xpos="base",ypos="base")
     g4 "Can't you bloody knock?!"
     call sna_main("Should I?{w} I was sure you were already waiting for me...","snape_05")
@@ -182,7 +200,7 @@ label hufflepuff_match:
     pause.2
     call her_walk(xpos="375", ypos="105", speed=2)
     pause.5
-    call her_main("Good Morning everyone, and welcome to the i-inaugural-", "soft", "base", "worried", "mid", flip=True,xpos="120",ypos="base")
+    call her_main("Good Morning everyone, and welcome to the i-inaugural-", "soft", "base", "worried", "mid", flip=True, xpos="120", ypos="base")
     call her_main("", "normal", "base", "worried", "mid")
     call sna_main("Speak up girl! And would it kill you to enunciate?!","snape_03",ypos="head")
     call her_main("*Grrr*", "mad", "narrow", "angry", "R")
@@ -523,7 +541,7 @@ label hufflepuff_match:
     mal "She totally is!"
     $ renpy.sound.play("sounds/giggle2_loud.mp3")
     hide screen hermione_main
-    "Fem Student #1" "What a slut!"
+    "Female Student #1" "What a slut!"
     hide screen hufflepuff_match_cho_chase
     with d3
 
@@ -553,7 +571,7 @@ label hufflepuff_match:
     mal "Cho show us your panties!"
     $ renpy.sound.play("sounds/giggle2_loud.mp3")
     $ qp_mob_reaction[1] = "emo7"
-    "Fem Student #1" "We want to see them!"
+    "Female Student #1" "We want to see them!"
     $ qp_mob_reaction[2] = "emo8"
     $ renpy.sound.play("sounds/crowd_cheer.mp3")
 
@@ -792,7 +810,7 @@ label hufflepuff_match_return:
     call cho_walk("desk", "base", speed=2.4, action="enter")
 
     $ renpy.sound.play("sounds/punch01.mp3")
-    call cho_main("We beat \"Hufflepuff\"!!!","smile","angry","base","mid", ypos="base", trans="hpunch")
+    call cho_main("We beat Hufflepuff!!!","smile","angry","base","mid", ypos="base", trans="hpunch")
     $ renpy.sound.play("sounds/MaleGasp.mp3")
     g4 "{size=+10}IT WASN'T ME!{/size}"
     m "..........."
@@ -806,12 +824,12 @@ label hufflepuff_match_return:
     call cho_main("We could actually win the cup!","open","shocked","angry","L")
     m "And you weren't embarrassed?"
     call cho_main("I was a little at the start of the game...","quiver","narrow","sad","downR")
-    call cho_main("But once I realised how much it was affecting those slack-jawed \"Hufflepuffs\"s...","smile","angry","angry","R")
+    call cho_main("But once I realised how much it was affecting those slack-jawed Hufflepuffs...","smile","angry","angry","R")
     call cho_main("It was like having my own personal weapon of mass distraction!","smile","shocked","angry","mid")
     call cho_main("I don't think Cedric even knew where the snitch was most of the time!","horny","base","base","downR")
     call cho_main("All he seemed to do was follow me around...","horny","narrow","sad","down")
     call cho_main("Him {size=-2}and {size=-2}half {size=-2}the {size=-2}team...{/size}","quiver","narrow","sad","downR")
-    call cho_main("This might be the first real chance \"Ravenclaw\" has ever had to win the cup.","open","closed","sad","mid")
+    call cho_main("This might be the first real chance Ravenclaw has ever had to win the cup.","open","closed","sad","mid")
     m "I'm sure this must mean a lot to you..."
     call cho_main("It does... I might even get picked up by a pro team!","smile","base","base","R")
     m "..."
@@ -841,7 +859,8 @@ label hufflepuff_match_return:
 
     $ cho_tier = 2
     $ cho_training_unlocked = True
-    $ lock_cho_practice = False
-    $ lock_cho_training = False
+    $ cho_quid.lock_practice = False
+    $ cho_quid.lock_training = False
+    $ cho_quid.lock_tactic   = False
 
     jump end_cho_event

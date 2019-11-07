@@ -5,7 +5,7 @@
 label hg_pr_flirt:
 
     if hg_pr_flirt.counter < 1:
-        m "{size=-4}(Ask her to go flirt with some boys from \"Slytherin\"?){/size}"
+        m "{size=-4}(Ask her to go flirt with some boys from Slytherin?){/size}"
         menu:
             "\"(Yes, let's do it!)\"":
                 pass
@@ -21,7 +21,7 @@ label hg_pr_flirt:
     if hg_pr_flirt.counter == 0 and her_whoring < 6:
 
         call play_music("chipper_doodle") # HERMIONE'S THEME.
-        m "What is your opinion on the boys of the \"Slytherin\" house?"
+        m "What is your opinion on the boys of the Slytherin house?"
         call her_main("I detest them, [genie_name].", "angry", "base", "angry", "mid")
         m "Well, too bad. Because I want you to get really friendly with a few of them today."
         call her_main("If I must...", "soft", "base", "base", "R")
@@ -31,27 +31,27 @@ label hg_pr_flirt:
         call her_main("Flirt?!", "shock", "wide", "base", "stare")
         call her_main("[genie_name]!", "angry", "base", "angry", "mid")
         call her_main("I'm not even going to ask why you'd be interested in this, [genie_name]...", "annoyed", "squint", "base", "mid")
-        call her_main("But why \"Slytherin\"?", "open", "base", "worried", "mid")
+        call her_main("But why Slytherin?", "open", "base", "worried", "mid")
         her "If you need me to be flirtatious today, I think I can manage that..."
         her "But, please, can't be another house?"
-        call her_main("The \"Gryffindors\" maybe?", "upset", "wink", "base", "mid")
+        call her_main("The Gryffindors maybe?", "upset", "wink", "base", "mid")
         m "I am only trying to protect your reputation, [hermione_name]."
         call her_main("[genie_name]?", "soft", "base", "base", "mid")
-        m "Do you value the opinion the \"Slytherin\" students have of you?"
+        m "Do you value the opinion the Slytherin students have of you?"
         call her_main("I couldn't care less about the opinions of those Neanderthals.", "scream", "closed", "angry", "mid")
-        m "What about the students of the \"Gryffindor\" house?"
+        m "What about the students of the Gryffindor house?"
         call her_main("Their opinion means the world to me--", "annoyed", "base", "worried", "R")
         call her_main("Oh, I see...", "base", "base", "base", "mid")
         m "Exactly... Just looking out for you [hermione_name]."
         her "Em... Thank you [genie_name]..."
 
     elif her_whoring < 6:
-        m "I need you to go make some new friends at \"Slytherin\" house."
-        her "You mean you need me to flirt with the \"Slytherin\" boys again [genie_name]?"
+        m "I need you to go make some new friends at Slytherin house."
+        her "You mean you need me to flirt with the Slytherin boys again [genie_name]?"
         m "That's exactly what I need you to do today, [hermione_name]."
         call her_main("Must I really do this [genie_name]?", "open", "base", "base", "mid")
         m "We have been through this, [hermione_name]."
-        m "Going to the \"Slytherin\" boys is in your best interests."
+        m "Going to the Slytherin boys is in your best interests."
         call her_main("Yes, I know, [genie_name].", "open", "closed", "angry", "mid")
         her "But why must I do this at all?"
         m "Nobody is forcing you, [hermione_name]..."
@@ -59,7 +59,7 @@ label hg_pr_flirt:
         call her_main("Alright if I must... [genie_name]...", "normal", "squint", "angry", "mid")
 
     else:
-        m "I need you to flirt with some boys from \"Slytherin\" today."
+        m "I need you to flirt with some boys from Slytherin today."
         her "I'll see what I can do, [genie_name]."
         m "Great. I'll be expecting your report today after classes."
 
@@ -76,7 +76,7 @@ label hg_pr_flirt:
 # End Event
 label end_hg_pr_flirt:
     $ gryffindor += current_payout
-    m "The \"Gryffindor\" house gets [current_payout] points!"
+    m "The Gryffindor house gets [current_payout] points!"
     call her_main("Thank you, [genie_name].", face="happy")
 
     call her_walk(action="leave", speed=2.5)
@@ -143,7 +143,7 @@ label hg_pr_flirt_T1_E1:
     m "I told you to flirt with boys {size=+5}your{/size} age!"
     call her_main("I wanted to at first, but...", "normal", "squint", "angry", "mid")
     call her_main("I guess I got scared...", "annoyed", "narrow", "angry", "R")
-    her "I mean I despise those \"Slytherins\" way too much to flirt with them, [genie_name]!"
+    her "I mean I despise those Slytherins way too much to flirt with them, [genie_name]!"
     call her_main("I would have to fight my gag-reflex the entire time!", "angry", "base", "angry", "mid")
 
     menu:
@@ -225,13 +225,13 @@ label hg_pr_flirt_T1_E3:
     m "How many boys did you flirt with today, [hermione_name]?"
     call blktone
     stop music fadeout 1.0
-    call her_main("Well, the \"Slytherin\" quidditch team was practising in the stadium today...", "open", "base", "worried", "R")
+    call her_main("Well, the Slytherin quidditch team was practising in the stadium today...", "open", "base", "worried", "R")
     her "I thought I could sneak into the bleachers and cheer them on..."
     call her_main("But...", "annoyed", "narrow", "angry", "R")
     m "Yes?"
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("A whole flock of those \"Slytherin\" harlots was already there, [genie_name].", "angry", "base", "angry", "mid")
+    call her_main("A whole flock of those Slytherin harlots was already there, [genie_name].", "angry", "base", "angry", "mid")
     her "They were cheering and yelling..."
     call her_main("And one of them even exposed herself in an inappropriate manner to the players, [genie_name]...", "angry", "base", "angry", "mid")
     her "I cannot believe our school accepts such behaviour..."
@@ -318,13 +318,13 @@ label hg_pr_flirt_T2_E2:
     call her_main("Then after the second period there was this other guy...", "soft", "base", "base", "R")
     call her_main("And then something bizarre happened...", "angry", "base", "worried", "mid")
     call play_music("playful_tension") # SEX THEME.
-    her "This angry-looking guy from \"Slytherin\" came up to me and asked me out on a date..."
+    her "This angry-looking guy from Slytherin came up to me and asked me out on a date..."
     call her_main("I told him \"no\" at first, but we ended up taking a walk together.", "soft", "base", "base", "R")
     m "Did you enjoy yourself, [hermione_name]?"
     call her_main("I think I did, [genie_name]... To my own astonishment...", "open", "base", "base", "mid")
     call her_main("There was something about his \"devil-may-care\" attitude...", "base", "base", "base", "mid")
     call her_main("He was so confident and calm and...", "base", "happyCl", "base", "mid")
-    call her_main("I still loathe the \"Slytherin\" house of course!", "angry", "worriedCl", "worried", "mid", emote="05")
+    call her_main("I still loathe the Slytherin house of course!", "angry", "worriedCl", "worried", "mid", emote="05")
     call her_main("But...", "annoyed", "narrow", "worried", "down")
     her "Maybe some of the students got there by mistake?"
     call her_main("Could the \"sorting hat\" make... miscalculations?", "open", "base", "worried", "R")
@@ -358,7 +358,7 @@ label hg_pr_flirt_T2_E3:
     call her_main("That last one was quite smart and well-mannered too.", "base", "happyCl", "base", "mid")
     her "............................"
     her "................"
-    call her_main("But I still refuse to change my opinion about the \"Slytherin\" house, [genie_name].", "angry", "worriedCl", "worried", "mid", emote="05")
+    call her_main("But I still refuse to change my opinion about the Slytherin house, [genie_name].", "angry", "worriedCl", "worried", "mid", emote="05")
     m "I'm not asking you to, [hermione_name]."
     her "I am only doing this to help my own house!"
     call her_main("The proud house of \"Gryffndor\"!", "scream", "worriedCl", "worried", "mid")
@@ -394,14 +394,14 @@ label hg_pr_flirt_T3_E1:
     call her_main("Then one more right before the last period...", "base", "happyCl", "base", "mid")
     call her_main("And finally this last guy that walked me right to your tower, [genie_name]...", "smile", "happyCl", "base", "mid")
     m "So, eleven then?"
-    m "Those \"Slytherin\" boys are really starting to like you, huh?"
+    m "Those Slytherin boys are really starting to like you, huh?"
     $ sc34CG(2, 7, 1, 2)
     call her_main("I suppose so...", "base", "happyCl", "base", "mid")
     call her_main("Well, not all of them were nice to me at first...", "annoyed", "narrow", "worried", "down")
     call her_main("But I use this trick to \"tame\" them.", "smile", "narrow", "base", "mid_soft")
     m "A trick?"
     $ sc34CG(2, 6, 1, 1)
-    call her_main("Yes... Whenever a boy from \"Slytherin\" is being mean to me or calls me a name...", "base", "happyCl", "base", "mid")
+    call her_main("Yes... Whenever a boy from Slytherin is being mean to me or calls me a name...", "base", "happyCl", "base", "mid")
     her "I just swallow my pride and smile in response."
     m "Hm..."
     m "So, if for example, somebody were to call you a \"whore\" you would just smile at them?"
@@ -446,7 +446,7 @@ label hg_pr_flirt_T3_E3:
     stop music fadeout 1.0
     call her_main("[genie_name], I am sorry, but...", "normal", "worriedCl", "worried", "mid")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("I hate those \"Slytherin\" tramps, [genie_name]!", "angry", "base", "angry", "mid")
+    call her_main("I hate those Slytherin tramps, [genie_name]!", "angry", "base", "angry", "mid")
     m "Tell me what happened."
     call her_main("I don't want to talk about it...", "annoyed", "narrow", "angry", "R")
     m "Tell me what happened, [hermione_name]!"
@@ -459,13 +459,13 @@ label hg_pr_flirt_T3_E3:
             m "No luck with the flirting today then?"
             call her_main("Oh, quite the opposite, [genie_name].", "angry", "worriedCl", "worried", "mid", emote="05")
             call play_music("playful_tension") # SEX THEME.
-            her "One of the boys actually took me to the \"Slytherin\" common room today..."
+            her "One of the boys actually took me to the Slytherin common room today..."
             call her_main("There were at least a dozen of them there...", "normal", "base", "base", "mid")
             call her_main("All of the boys knew who I was...", "open", "closed", "angry", "mid")
             her "I was the center of attention at first..."
             call her_main("And it felt sort of wonderful...", "base", "narrow", "base", "up")
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("Then a bunch of those \"Slytherin\" harlots stumbled in and...", "disgust", "narrow", "base", "mid_soft")
+            call her_main("Then a bunch of those Slytherin harlots stumbled in and...", "disgust", "narrow", "base", "mid_soft")
             m "And?"
             call her_main("Well, they started saying stuff and doing things...", "annoyed", "narrow", "angry", "R")
             her "Anyway, I had to leave..."

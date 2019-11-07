@@ -17,7 +17,7 @@ label hermione_wardrobe_check(section, arg=None):
         if her_whoring < temp_count[0]:
             call her_main("Its too "+random.choice(("slutty", "revealing", "much", "breezy", "Granger like"))+"...",face="annoyed")
             $ temp_score += 1
-        if temp_count[2] < 2 and cho_whoring < 10:
+        if temp_count[2] < 2 and her_whoring < 10:
             if temp_score > 0:
                 call her_main("...not to mention missing underwear!",face="annoyed")
             else:

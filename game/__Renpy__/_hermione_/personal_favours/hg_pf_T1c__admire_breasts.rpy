@@ -43,7 +43,7 @@ label hg_pf_admire_breasts:
 
     # Points
     $ gryffindor += current_payout
-    m "The \"Gryffindor\" house gets [current_payout] points!"
+    m "The Gryffindor house gets [current_payout] points!"
     stop music fadeout 10.0
 
     if her_tier <= 2:
@@ -123,7 +123,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
     m "Don't you want to earn some house points?"
     call her_main("Yes... But not in a way such as this!", "angry", "narrow", "angry", "R")
 
-    m "I will award \"Gryffindor\" [current_payout] whole house points if you remove your top."
+    m "I will award Gryffindor [current_payout] whole house points if you remove your top."
     g9 "Isn't that a steal?"
     call her_main("No it isn't!", "clench", "closed", "angry", "mid", emote="01")
     m "Please?"
@@ -138,7 +138,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
             pass
 
         "\"That won't be enough, [hermione_name]...\"":
-            g4 "I'm not giving \"Gryffindor\" [current_payout] whole points because you took off a vest..."
+            g4 "I'm not giving Gryffindor [current_payout] whole points because you took off a vest..."
             call her_main("But-", "open", "wide", "base", "stare")
             m "No buts! You are dismissed."
             call her_main("Please, [genie_name]. I need those points!", "disgust", "worriedCl", "worried", "mid")
@@ -161,8 +161,9 @@ label hg_pf_admire_breasts_T1_intro_E1:
     pause.4
 
     # Change Top
+    $ hermione_outfit_last.save()
     hide screen hermione_main
-    $ h_top = "top_2_g"
+    $ hermione_class.equip(hermione_cloth_topschool3)
     call update_her_uniform
     call her_main("", "annoyed", "narrow", "angry", "R")
     call ctc
@@ -179,7 +180,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
     with d3
 
     # Reset Top
-    $ h_top = "top_1_g"
+    $ hermione_class.equip(hermione_outfit_last)
 
     jump end_hg_pf_admire_breasts
 
@@ -264,7 +265,6 @@ label hg_pf_admire_breasts_T1: # Call label
     pause.4
 
     # Lift top
-    $ hermione_wear_bra = True
     call set_her_action("lift_top")
 
     call her_main("", "annoyed", "base", "worried", "R")

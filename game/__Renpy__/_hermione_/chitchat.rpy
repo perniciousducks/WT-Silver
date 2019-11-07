@@ -282,7 +282,7 @@ label chit_chat:
         elif one_of_ten == 3:
             call her_main("it Doesn't matter how many times you ask me this, sir...", "open", "base", "base", "mid")
             her "The answer shall remain the same..."
-            call her_main("I have nothing but resentment for the \"Slytherins\"!", "angry", "base", "angry", "mid")
+            call her_main("I have nothing but resentment for the Slytherins!", "angry", "base", "angry", "mid")
             call her_main("", "annoyed", "narrow", "angry", "R")
 
         elif one_of_ten == 4:
@@ -429,7 +429,7 @@ label chit_chat:
     if her_whoring >= 22:
         if one_of_ten == 1:
             call her_main("If you ever need some \"help\", sir, please let me know.", "open_wide_tongue", "base", "base", "R",cheeks="blush")
-            her "-She suggestively jerks her hand-"
+            "-She suggestively jerks her hand-"
             call her_main("", "base", "base", "base", "R",cheeks="blush") 
 
         elif one_of_ten == 2:

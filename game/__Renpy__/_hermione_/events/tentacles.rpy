@@ -279,7 +279,8 @@ label costume_scene_1: #Maid role-play
         m "35 points sounds fair."
     call her_main("...", "smile", "narrow", "base", "mid_soft")
     call her_main("Let me go change.", "smile", "narrow", "base", "mid_soft")
-    call set_hermione_outfit(hg_outfit_maid_OBJ)
+    # TODO: Uncomment once maid outfit has been added.
+    # hermione_class.equip(maid_outfit_pointer)
     call her_main("", "smile", "narrow", "base", "mid_soft")
     call ctc
 

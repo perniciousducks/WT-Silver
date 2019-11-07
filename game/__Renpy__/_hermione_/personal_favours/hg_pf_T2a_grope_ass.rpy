@@ -170,7 +170,7 @@ label hg_pf_grope_ass_T1_back:
 
         "\"I'm subtracting points from you then!\"":
             call her_main("You can't be serious!?", "scream", "wide", "base", "stare", cheeks="blush")
-            g4 "The \"Gryffindor\" house, minus 10 points!"
+            g4 "The Gryffindor house, minus 10 points!"
             g4 "There! It's done!"
             call her_main("Gr...........", "angry", "base", "angry", "mid", cheeks="blush")
             call her_main("........................", "angry", "base", "angry", "mid", cheeks="blush")
@@ -382,7 +382,7 @@ label hg_pf_grope_ass_T2_continue:
 
     if her_tier <= 5:
         call her_main("Well, you know me, [genie_name]...", "base", "narrow", "base", "up", cheeks="blush")
-        call her_main("I'm just happy to be able to do my part for the \"Gryffindor\" house....", "base", "narrow", "base", "up", cheeks="blush")
+        call her_main("I'm just happy to be able to do my part for the Gryffindor house....", "base", "narrow", "base", "up", cheeks="blush")
     else:
         call her_main("Please don't mind it and continue...", "base", "narrow", "base", "up", cheeks="blush")
         call her_main("(...to grope me...)", "base", "narrow", "base", "mid_soft", cheeks="blush")
@@ -508,7 +508,7 @@ label hg_pf_grope_ass_T2_fail:
             $ gryffindor += 100
             $ her_mood += 9
 
-            m "One hundred points to \"Gryffindor\" !"
+            m "One hundred points to Gryffindor !"
             m "There, it is done..."
             m "Now would you calm yourself down, [hermione_name]?"
             call her_main("No, I will not!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy", ypos="head")

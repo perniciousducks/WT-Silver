@@ -83,7 +83,7 @@ default Galadriel_I_ITEM = fiction_book(
         "Suddenly and abruptly everything changes. Galadriel finds out that she is pregnant. -End of book one-"
     ]
 )
-    
+
 default Galadriel_II_ITEM = fiction_book(
     id          = "Galadriel_II",
     name        = "\"The Tale of Galadriel. Book II.\"",
@@ -150,7 +150,7 @@ default Armchairs_ITEM = fiction_book(
         "A new race of half-frozen undead monsters is introduced into the story. To be continued..."
     ]
 )
-       
+
 default Dear_Wifu_ITEM = fiction_book(
     id          = "Dear_Wifu",
     name        = "\"My dear waifu\"",
@@ -184,7 +184,7 @@ default quidditch_book_1_ITEM = fiction_book(
         "The winning team is decided once the snitch is caught which is worth 150 points to the team of which seeker caught it. Therefore a match could technically go on forever... The longest Quidditch match ever recorded went on for about 3 months..."
     ]
 )
-    
+
 default book_list = silver_book_lib(
     read_books = [
         Speedreading_1_ITEM,
@@ -450,7 +450,7 @@ label book_complete:
     elif book_choice.id == "quidditch_book_1":
         m "Well, that was quite informative...{w} But who in their right mind wants to watch a game for three months... even with basketball I'd struggle a bit at that point."
         m "Hopefully that’s enough information to convince Miss Chang I know what I'm doing...{w} basketball is still better though..."
-        $ quid_hint_icon = "{image=interface/check_True.png} "
+        $ cho_quid.hint = "{image=interface/check_True.png} "
 
     elif book_choice in book_list.read_books:
         $ speed_reading += 1

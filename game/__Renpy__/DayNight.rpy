@@ -163,7 +163,7 @@ label update_day_values:
         $ weather_gen = renpy.random.randint(1, 6)
 
     # Change the weather for Quidditch Matches
-    if cc_event_pause == 0 and main_match_1_stage == "start":
+    if cc_event_pause == 0 and hufflepuff_match == "start":
         $ weather_gen = 1
 
     # Package delivery

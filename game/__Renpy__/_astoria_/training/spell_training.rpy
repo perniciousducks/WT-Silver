@@ -1578,7 +1578,7 @@ label ag_st_imperio_E5:
             call ton_main("Well, we've been helping her haven't we?","open","base","sad","mid")
             call ton_main("She's such an uptight and oppressed little cute-{w=0.8}... girl.","upset","base","sad","down")
             call ton_main("...","angry","base","worried","down")
-            call ton_main("How can I not help her, even if she's a \"Slytherin.\"","open","base","sad","mid")
+            call ton_main("How can I not help her, even if she's a Slytherin.","open","base","sad","mid")
             m "[tonks_name]... You aren't convincing anyone."
             call ton_main("To think such an innocent girl could be the victim of such an-","open","base","sad","R")
             m "Tonks!"
@@ -1676,7 +1676,7 @@ label ag_st_imperio_E5:
     g9 "That Susan girl... How about her?"
 
     call ton_main("Susan Bones?","open","wide","wide","wide")
-    call ton_main("But, she's a \"Hufflepuff\"...{w=0.8} I used to be...","open","base","worried","mid", hair="sad") # Tonks looks concerned (Blue)
+    call ton_main("But, she's a Hufflepuff...{w=0.8} I used to be...","open","base","worried","mid", hair="sad") # Tonks looks concerned (Blue)
     m "I don't see how that makes any difference..."
     m "Remember why we're doing this, you want Miss Greengrass to be able to curse you properly, correct?"
     call ton_main("Yes...","upset","base","sad","down")

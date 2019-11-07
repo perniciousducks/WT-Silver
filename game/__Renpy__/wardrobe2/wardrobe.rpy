@@ -64,6 +64,7 @@ label t_wardrobe(char_label):
     $ wardrobe_categories = char_active.clothing_dictlist
     $ export_in_progress = False
     $ item_to_export = None
+    $ wardrobe_outfit_schedule = ("Day", "Night", "Cloudy", "Rainy", "Snowy", "School")
     
     python:
         character_toggles = []
@@ -80,7 +81,7 @@ label t_wardrobe(char_label):
     if wardrobe_music_active:
         call play_music("my_immortal")
     
-    label t_wardrobe_after_init:
+    label .after_init:
     
     show screen t_wardrobe_menu(550, 50)
     
@@ -130,13 +131,21 @@ label t_wardrobe(char_label):
             $ renpy.call(active_girl+"_wardrobe_check", "equip", _return[1])
         $ char_active.reset_compatibility()
     elif _return == "addoutfit":
-        $ get_character_object(active_girl).create_outfit("Custom", "A custom outfit")
+        $ char_active.create_outfit("Custom", "A custom outfit")
         $ menu_items = char_active.outfits
         $ menu_items_length = len(menu_items)
     elif _return[0] == "deloutfit":
         $ char_active.outfits.pop(_return[1])
+        $ char_active.update_outfits_schedule(all=True)
         $ menu_items = char_active.outfits
         $ menu_items_length = len(menu_items)
+    elif _return[0] == "tagoutfit":
+        $ _item = char_active.outfits[_return[1]]
+        $ _item.schedule[_return[2]] = not _item.schedule[_return[2]]
+        if _return[2] > 1 and (not _item.schedule[0] and not _item.schedule[1]):
+            $ _item.schedule[0] = True
+            $ _item.schedule[1] = True
+        $ char_active.update_outfits_schedule(_item)
     elif _return[0] == "export":
         menu:
             "Export to PNG file" if not renpy.variant('android'):
@@ -196,7 +205,7 @@ label t_wardrobe(char_label):
             $ current_category = _return[1]
             # Outfits
             if current_category == "outfits":
-                $ category_items = ["Load", "Save", "Delete", "Export&Import"]
+                $ category_items = ["Load", "Save", "Delete", "Export&Import", "Schedule"]
                 $ current_subcategory = category_items[0]
                 $ current_item = None
                 $ char_active.wear("all")
@@ -261,6 +270,8 @@ label t_wardrobe(char_label):
             else:
                 show screen t_wardrobe_menuitem(20, 50)
         $ renpy.call(active_girl+"_wardrobe_check", "toggle", _return[1])
+    elif _return == "toggle_schedule":
+        $ globals()[active_girl+"_outfits_schedule"] = not globals()[active_girl+"_outfits_schedule"]
     elif _return == "music":
         show screen t_wardrobe_menu(550, 50)
         if current_category:
@@ -285,7 +296,7 @@ label t_wardrobe(char_label):
         if wardrobe_music_active:
             call play_music(active_girl+"_theme")
         return
-    jump t_wardrobe_after_init
+    jump .after_init
         
 screen t_wardrobe_menu(xx, yy):
     tag wardrobe
@@ -580,7 +591,12 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
             if i < menu_items_length:
                 $ row = (i // 5) % 2
                 $ col = i % 5
-                add menu_items[i].get_image() xpos 40+90*col ypos 117+180*row xalign 0.5 zoom 0.2
+                frame:
+                    style "empty"
+                    xsize 90
+                    ysize 180
+                    #add Crop((0, 0, 90, 180), menu_items[i].get_image()) xpos 40+90*col ypos 140+180*row xalign 0.5 zoom 0.2
+                    add menu_items[i].get_image() xpos 40+90*col ypos 141+180*row xalign 0.5 zoom 0.18
                 if current_subcategory == "Delete":
                     button xsize 90 ysize 180 style "empty" hover_background "#cc330040" xpos 10+90*col ypos 176+180*row action Return(["deloutfit", i])
                     #textbutton "{color=#B33A3A}{size=50}-{/size}{/color}" style "empty" hover_background "#cc330040" xsize 90 ysize 180 xpos 10+90*col ypos 176+180*row text_xalign 0.5 text_yalign 0.5 action Return(["deloutfit", i]) text_outlines [ (4, "#000", 0, 0) ]
@@ -588,6 +604,26 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
                     button xsize 90 ysize 180 style "empty" hover_background btn_hover xpos 10+90*col ypos 176+180*row action Return(["equip", menu_items[i]])
                 elif current_subcategory == "Export&Import":
                     textbutton "Export" xsize 90 ysize 180 style "empty" hover_background btn_hover text_color "#FFF" text_outlines [(4, "#000", 0, 0)] xpos 10+90*col ypos 176+180*row text_xalign 0.5 text_yalign 0.95 action Return(["export", menu_items[i]])
+                elif current_subcategory == "Schedule":
+                    frame:
+                        style "empty"
+                        background "#000000B3"
+                        xsize 35
+                        ysize 179
+                        xpos 12+90*col 
+                        ypos 179+180*row
+                        vbox:
+                            spacing 5
+                            xpos 5
+                            for x in xrange(6):
+                                $ _bg = "interface/wardrobe/test/icons/"+wardrobe_outfit_schedule[x].lower()+".png"
+                                if wardrobe_outfit_schedule[x] in ("Day", "Night"):
+                                    $ _tooltip = "Worn during the "+wardrobe_outfit_schedule[x]+":\n{size=-4}"+str(menu_items[i].schedule[x])+"{/size}"
+                                elif wardrobe_outfit_schedule[x] in ("Rainy", "Cloudy", "Snowy"):
+                                    $ _tooltip = "Worn during "+wardrobe_outfit_schedule[x]+" weather:\n{size=-4}"+str(menu_items[i].schedule[x])+"{/size}"
+                                else:
+                                    $ _tooltip = "Worn during school events:"+"\n{size=-4}"+str(menu_items[i].schedule[x])+"{/size}"
+                                button xsize 25 ysize 25 style "empty" background grayTint(_bg) hover_background whiteTint(_bg) selected_background _bg action [SelectedIf(menu_items[i].schedule[x] == True), Return(["tagoutfit", i, x])] tooltip _tooltip
                     
         # Add empty items
         for i in xrange(menu_items_length, (current_page*10)+10):
@@ -599,3 +635,10 @@ screen t_wardrobe_outfit_menuitem(xx, yy):
                 textbutton "Import" style "empty" background "#00000033" hover_background btn_hover text_color "#FFF" text_outlines [(4, "#000", 0, 0)] xsize 88 ysize 178 xpos 10+90*col ypos 180+180*row text_xalign 0.5 text_yalign 0.5 action Return("import")
             else:
                 button style "empty" background "#00000033" xsize 88 ysize 178 xpos 10+90*col ypos 180+180*row
+                
+                # Schedule toggle
+        if current_subcategory == "Schedule":
+            textbutton "{size=12}Enable scheduling{/size}" style "empty" background "interface/wardrobe/"+str(interface_color)+"/check_"+str(globals()[active_girl+"_outfits_schedule"])+".png" xpos 290 ypos 38 text_color "#FFF" text_yanchor 0.5 text_ypos 14 text_xpos 24 ysize 24 xsize 68 action Return("toggle_schedule") tooltip "{size=-4}[active_girl] will automatically wear outfits\nbased on set schedule, time of day and weather.{/size}"
+                
+            if not globals()[active_girl+"_outfits_schedule"]:
+                textbutton "Disabled" style "empty" action NullAction() xpos 10 ypos 178 xsize 447 ysize 360 background "#00000080" text_color "#FFF" text_xalign 0.5 text_yalign 0.5 text_size 24

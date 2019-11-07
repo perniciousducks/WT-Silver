@@ -283,7 +283,7 @@ label potions_menu:
             for item in PotionOBJ:
                 if not potion_inv.has(item):
                     missing_items.append(item)
-            for i in range(len(missing_items)):
+            for i in xrange(len(missing_items)):
                 tmp_txt += "{size=+5}{b}"+potion_lib.getName(missing_items[i])+"{/b}{/size}"
                 if len(missing_items) > 1:
                     if i < len(missing_items)-2:

@@ -26,38 +26,15 @@ default cho_busy                = False
 default cho_chatted             = False
 default has_cho_panties         = False
 default cho_panties_soaked      = False
+default cho_outfits_schedule = True
 
 # Intro
 default jerked_off_during_cho_intro = False
 
-# Quidditch Training
-default cho_training_state      = "quiz_start"
-default quid_hint_icon          = "" # Icon: "{image=interface/check_True.png} "
-default cho_quiz_complete       = False
-default snape_quid_help         = False # True after Failing the Quiz.
-default lock_cho_training       = False
-default lock_cho_practice       = False
-default quidditch_commentator   = None
-default quidditch_position      = "front"
-
 # Quidditch Outfit
 default quid_outfit_intro       = []
-default cho_quidditch_top       = "sweater" # For testing.
-default cho_quidditch_bottom    = "pants_long" # For testing.
-default cho_quidditch_coat      = True # For testing.
-default cho_quidditch_gloves    = True # For testing.
 
 # Quidditch Matches
-default quidditch_match_in_progress = False
-default huffl_match_counter   = 0
-
-default huffl_matches_won     = 0 # Goes up to 2
-
-default start_match           = 0 # No match will trigger at 0
-default main_match_1_stage    = "none"
-default main_match_2_stage    = "none"
-default main_match_3_seen     = "none"
-
 default hufflepuff_match      = ""
 default slytherin_match       = ""
 default gryffindor_match      = ""
@@ -148,31 +125,10 @@ label reset_cho_progress:
         # Intro
         "jerked_off_during_cho_intro",
 
-        # Quidditch Training
-        "cho_training_state",
-        "quid_hint_icon",
-        "cho_quiz_complete",
-        "snape_quid_help",
-        "lock_cho_training",
-        "lock_cho_practice",
-        "quidditch_commentator",
-        "quidditch_position",
-
         # Quidditch Outfit
         "quid_outfit_intro",
-        "cho_quidditch_top",
-        "cho_quidditch_bottom",
-        "cho_quidditch_coat",
-        "cho_quidditch_gloves",
 
         # Quidditch Matches
-        "quidditch_match_in_progress",
-        "huffl_match_counter",
-        "huffl_matches_won",
-        "start_match",
-        "main_match_1_stage",
-        "main_match_2_stage",
-        "main_match_3_seen",
         "hufflepuff_match",
         "slytherin_match",
         "gryffindor_match",

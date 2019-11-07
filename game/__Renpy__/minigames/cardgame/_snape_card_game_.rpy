@@ -338,7 +338,6 @@ label snape_random_duel:
     hide screen blkfade
 
     python:
-        import random
         rand_ing_or_pot = random.choice(potion_lib.lib)
         potion_inv.add(rand_ing_or_pot)
 

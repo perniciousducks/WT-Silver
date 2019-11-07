@@ -66,14 +66,14 @@ label snape_intro_E1:
     who2 "Half of my... so-called \"pupils\" are nothing but annoying maggots that make my life miserable on a daily basis."
     m "................"
     call sna_main("","snape_06")
-    who2 "Most of them belong to your precious \"gryffindor\" house of course..."
+    who2 "Most of them belong to your precious gryffindor house of course..."
     m "......?"
     call sna_main("","snape_03")
     who2 "The wretched Weasley family, that noisy Granger girl and of course the hero of all the juvenile delinquents around the globe...."
     call sna_main("","snape_08")
     who2 "{size=+3}The Potter boy!{/size}"
     call sna_main("","snape_01")
-    who2 "Mark my words, Albus. The \"gryffindor house\" will become this school's undoing!"
+    who2 "Mark my words, Albus. The gryffindor house will become this school's undoing!"
     m "...................."
     call sna_main("","snape_01")
     who2 "Nothing but annoying maggots, the lot of them!"
@@ -655,7 +655,7 @@ label snape_intro_E5:
     m "And my lamp is literally worlds away..."
     call sna_main("Well, what do you expect me to do about that?","snape_03")
     sna "Send you a couple of girls from Slytherin maybe?"
-    g9 "I have no idea what \"Slytherin\" is, but I think that would work..."
+    g9 "I have no idea what Slytherin is, but I think that would work..."
     call sna_main("That was a joke, obviously.","snape_04")
     call sna_main("Although...","snape_09")
     sna "Hm..."
@@ -687,7 +687,7 @@ label snape_intro_E5:
     m "Intriguing..."
     call sna_main("Hm...","snape_04")
     call sna_main("Agreed.","snape_06")
-    m "Oh, and send me some of those \"Slytherin\" girls as well.."
+    m "Oh, and send me some of those Slytherin girls as well.."
     call sna_main("...............","snape_05")
     sna "........................."
     call sna_main("Ha-ha-ha!!!","snape_28")

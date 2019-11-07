@@ -1,22 +1,28 @@
 init python:
-    import pygame
-    
     def get_character_object(key):
         return character_list.get(key)
-            
-    def set_clipboard(txt):
-        import pygame.scrap
-        pygame.scrap.put(pygame.scrap.SCRAP_TEXT, txt.encode("utf-8"))
         
-    def get_clipboard():
-        import pygame.scrap
-        clipboard = pygame.scrap.get(pygame.scrap.SCRAP_TEXT)
-        if clipboard:
-            return clipboard
-        return None
+    def get_character_outfits_schedule(key):
+        global daytime, weather_gen, raining, snowing, blizzard, storm
         
-    def evaluate(txt):
-        return __import__('ast').literal_eval(txt)
+        schedule = []
+        char = get_character_object(key)
+        outfits = char.outfits_schedule[daytime]
+        
+        for i in outfits:
+            if i.schedule[4] and (snowing or blizzard):
+                schedule.append(i)
+                continue
+            if i.schedule[3] and raining:
+                schedule.append(i)
+                continue
+            if i.schedule[2] and weather_gen >= 4 and not (raining or blizzard or snowing):
+                schedule.append(i)
+                continue
+            if not (i.schedule[2] or i.schedule[3] or i.schedule[4]) and weather_gen < 4:
+                schedule.append(i)
+                continue
+        return schedule
             
     class outfit_class(object):
         
@@ -27,6 +33,7 @@ init python:
             self.unlocked = False
             self.group = []
             self.cached = False
+            self.schedule = [False]*6 # 0=day, 1=night, 2=cloudy, 3=rainy, 4=snowing, 5=school
             
             self.sprite = "empty"
             self.__dict__.update(**kwargs)
@@ -170,6 +177,7 @@ init python:
 
                 # Armfix
                 armfix = []
+                mask = []
                 
                 # Build image
                 self.sprite = Image("characters/dummy.png")
@@ -199,6 +207,9 @@ init python:
                                 # add fixes WITHOUT hand image
                                 armfix.append(sprite[0].get_armfix(True, True)[0]) # L
                                 armfix.append(sprite[0].get_armfix(True, True)[1]) # R
+                                
+                        if sprite[0].mask:
+                                mask.append(sprite[0].mask)
                     
                 if armfix > 0:
                     for item in armfix:
@@ -206,6 +217,16 @@ init python:
                             (1010, 1200),
                             (0,0), self.sprite,
                             (0,0), item)
+                            
+                if mask != []:
+                    if len(mask) > 1:
+                        # Combine alpha masks
+                        m = AlphaMask(mask[0], mask[1])
+                        for i in xrange(2, len(mask)):
+                            m = AlphaMask(mask[i], mask[i+1])
+                        self.sprite = AlphaMask(self.sprite, m)
+                    else:
+                        self.sprite = AlphaMask(self.sprite, mask[0])
             return self.sprite
             
             
@@ -227,9 +248,11 @@ init python:
             self.unlocked = True
             self.cloned = False
             self.cached = False
+            self.zorder = None # None - use pre-defined zorder, int - object zorder
             
             self.bodyfix = None
             self.incompatible = None
+            self.mask = None
             
             self.layerfix = {}
             
@@ -298,6 +321,9 @@ init python:
             if renpy.loadable(self.imagepath+"overlay.png"):
                 self.overlayer = self.imagepath+"overlay.png"
                 
+            if renpy.loadable(self.imagepath+"mask.png"):
+                self.mask = self.imagepath+"mask.png"
+                
             # Check if bodyfix exists
             if self.bodyfix != None and not self.cloned:
                 imagepath = "characters/"+self.char+"/body/"
@@ -346,7 +372,7 @@ init python:
             color = []
             for c in self.color:
                 color.append(list(c))
-            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=color, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix, layerfix=self.layerfix, whoring=self.whoring, bodyfix=self.bodyfix, incompatible=self.incompatible)
+            return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=color, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix, layerfix=self.layerfix, whoring=self.whoring, bodyfix=self.bodyfix, incompatible=self.incompatible, mask=self.mask, zorder=self.zorder)
                 
         def set_pose(self, pose):
             if pose == None:
@@ -364,6 +390,10 @@ init python:
                     self.overlayer = self.imagepath+"overlay.png"
                 else:
                     self.overlayer = "characters/dummy.png"
+                if renpy.loadable(self.imagepath+"mask.png"):
+                    self.mask = self.imagepath+"mask.png"
+                else:
+                    self.mask = None
                 self.set_armfix()
                 self.cached = False
                 return None
@@ -382,6 +412,10 @@ init python:
                     self.overlayer = self.imagepath+"/"+pose+"/overlay.png"
                 else:
                     self.overlayer = "characters/dummy.png"
+                if renpy.loadable(self.imagepath+"/"+pose+"/mask.png"):
+                    self.mask = self.imagepath+"/"+pose+"/mask.png"
+                else:
+                    self.mask = None
                 self.set_armfix(True)
                 self.cached = False
                 return True
@@ -563,6 +597,7 @@ init python:
             self.clothing = {}
             self.clothing_dictlist = {}
             self.outfits = []
+            self.outfits_schedule = {True: [], False:[]} # True=day, false=night 
             self.other = {}
             
             self.incompatible_wardrobe = []
@@ -634,6 +669,34 @@ init python:
                     self.other['cum'][0] = imagepath+cum+".png"
             self.cached = False
             
+        def update_outfits_schedule(self, obj=None, all=False):
+            if all:
+                self.outfits_schedule = {True: [], False:[]}
+                
+                for outfit in self.outfits:
+                    if outfit.schedule[0] == True:
+                        self.outfits_schedule[True].append(outfit)
+                    elif outfit.schedule[1] == True:
+                        self.outfits_schedule[False].append(outfit)
+                return
+                
+            if obj.schedule[0] == True:
+                if not obj in self.outfits_schedule[True]:
+                    self.outfits_schedule[True].append(obj)
+            else:
+                if obj in self.outfits_schedule[True]:
+                    self.outfits_schedule[True].remove(obj)
+                    
+            if obj.schedule[1] == True:
+                if not obj in self.outfits_schedule[False]:
+                    self.outfits_schedule[False].append(obj)
+            else:
+                if obj in self.outfits_schedule[False]:
+                    self.outfits_schedule[False].remove(obj)
+            return
+                    
+            
+            
         def expression(self, **kwargs):
             for arg, value in kwargs.iteritems():
                 if value:
@@ -694,6 +757,26 @@ init python:
                         self.clothing[key][4] = False
             self.set_pose(anim, offset)
             self.cached = False
+            
+        def action(self, action):
+            """Unfinished, added for future reference.
+            Known issues:
+            - Incompatible with dynamic zorder
+            - Incompatible with alpha masking
+            - poses require additional artwork for each cloth affected by the arms movement (bottoms, tops, gloves, bras, accessories, piercings, tattoos) (Not viable in the long run)"""
+            # Hardcoded for testing purposes
+            if action in (None, "default", "reset"):
+                if self.char == "hermione":
+                    self.set_body(armright="arm_down_r" ,armleft="arm_down_l")
+            elif action == "lift_skirt":
+                if self.char == "hermione":
+                    self.set_body(armright=None ,armleft="lift_skirt")
+                    self.body["armleft"][1] = 20
+            for key, value in self.clothing.iteritems():
+                if value[0]:
+                    value[0].set_pose(action)
+            self.cached = False
+            return
             
         def get_cloth(self, type):
             return self.get_object(self.clothing, type)
@@ -936,41 +1019,46 @@ init python:
                 
                 # Add body to sprite list
                 for key, value in self.body.iteritems():
-                    if self.body[key][0] and not self.body[key][4]:
+                    if value[0] and not value[4]:
                         sprite_list.append(value)
                         
                 # Add face to sprite list
                 for key, value in self.face.iteritems():
-                    if self.face[key][0] and not self.face[key][4]:
+                    if value[0] and not value[4]:
                         sprite_list.append(value)
                 
                 # Add other to sprite list        
                 for key, value in self.other.iteritems():
-                    if self.other[key][0] and not self.other[key][4]:
+                    if value[0] and not value[4]:
                         sprite_list.append(value)
                         
                 # Add clothing to sprite list 
                 for key, value in self.clothing.iteritems():
-                    if self.clothing[key][0] and not self.clothing[key][4]:
+                    if value[0] and not value[4]:
                         # Perform an additional check for body parts modifications
-                        if self.clothing[key][0].bodyfix != None:
+                        if value[0].bodyfix != None:
                             # Iterate through all body fixes
-                            for k, v in self.clothing[key][0].bodyfix.iteritems():
+                            for k, v in value[0].bodyfix.iteritems():
                                 # Temporarily replace a body part using list comprehension 
                                 sprite_list = [v if isinstance(x[0], basestring) and k in x[0] else x for x in sprite_list]
-                        if self.clothing[key][0].layerfix != {}:
-                            for k, v in self.clothing[key][0].layerfix.iteritems():
+                        # Check if cloth requires layers below or above everything (such as hair locks, capes etc.)
+                        if value[0].layerfix != {}:
+                            for k, v in value[0].layerfix.iteritems():
                                 if k == "outline_above":
                                     sprite_list.append([v[0], 150, 0, 0, False])
                                 elif k == "outline_below":
                                     sprite_list.append([v[0], -150, 0, 0, False])
                                 else:
                                     if v[1] == 1:
-                                        sprite_list.append([self.clothing[key][0].get_layerfix(k), 100+k, 0, 0, False])
+                                        sprite_list.append([value[0].get_layerfix(k), 100+k, 0, 0, False])
                                     else:
-                                        sprite_list.append([self.clothing[key][0].get_layerfix(k), -100+k, 0, 0, False])
-                        sprite_list.append(value)
-                        sprite_list.append([self.clothing[key][0].get_skin(), 5, 0, 0, False])
+                                        sprite_list.append([value[0].get_layerfix(k), -100+k, 0, 0, False])
+                        # check if clothing piece uses non-standard zorder
+                        if value[0].zorder != None:
+                            sprite_list.append([value[0], value[0].zorder, value[2], value[3], value[4]])
+                        else:
+                            sprite_list.append(value)
+                        sprite_list.append([value[0].get_skin(), 5, 0, 0, False])
                         
                 # Sort sprite list by zorder
                 sprite_list.sort(key=lambda x: x[1], reverse=False)
@@ -982,8 +1070,9 @@ init python:
                     width = 1920
                     height = 1440
                 
-                # Armfix
+                # Armfix and alpha mask lists
                 armfix = []
+                mask = []
                 
                 # Build image
                 self.sprite = Image("characters/dummy.png")
@@ -1010,6 +1099,9 @@ init python:
                                     # add fixes WITHOUT hand image
                                     armfix.append(sprite[0].get_armfix(False, True)[0]) # L
                                     armfix.append(sprite[0].get_armfix(False, True)[1]) # R
+                                    
+                            if sprite[0].mask:
+                                mask.append(sprite[0].mask)
                     
                     if armfix > 0:
                         for item in armfix:
@@ -1017,7 +1109,18 @@ init python:
                                 (width, height),
                                 (0,0), self.sprite,
                                 (0,0), item)
-                                    
+                                 
+                    # Apply AlphaMask for problematic clothing layers such as bras with visible nipples.
+                    if mask != []:
+                        if len(mask) > 1:
+                            # Combine alpha masks
+                            m = AlphaMask(mask[0], mask[1])
+                            for i in xrange(2, len(mask)):
+                                m = AlphaMask(mask[i], mask[i+1])
+                            self.sprite = AlphaMask(self.sprite, m)
+                        else:
+                            self.sprite = AlphaMask(self.sprite, mask[0])
+                    
                     # Fixes alpha change issues during transitions
                     self.sprite = Flatten(self.sprite)
             return self.sprite

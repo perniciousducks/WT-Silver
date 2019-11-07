@@ -3,6 +3,11 @@
 #Door Events (Astoria wears random clothing.)
 
 label astoria_summon_setup:
+    
+    if astoria_outfits_schedule:
+        $ tmp_outfits = get_character_outfits_schedule("astoria")
+        if len(tmp_outfits) > 0:
+            $ astoria_class.equip(renpy.random.choice(tmp_outfits))
 
     $ astoria_wardrobe_unlocked = True
 

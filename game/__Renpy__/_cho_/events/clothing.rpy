@@ -84,6 +84,11 @@ label cho_summon_setup:
             call cho_main(xpos="base", ypos="base", face="horny", trans="fade")
 
             return
+            
+    if cho_outfits_schedule:
+        $ tmp_outfits = get_character_outfits_schedule("cho")
+        if len(tmp_outfits) > 0:
+            $ cho_class.equip(renpy.random.choice(tmp_outfits))
 
     call play_sound("door")
     call cho_chibi("stand","mid","base")

@@ -600,14 +600,13 @@ label l_tutoring:
         call her_main("Ok...", "angry", "worriedCl", "worried", "mid",cheeks="blush",emote="05")
 
         hide screen hermione_main
-        $ hermione_wear_robe = False
+        $ hermione_class.strip("robe")
         call her_chibi("lift_top")
 
         call set_her_action("lift_top")
 
         hide screen hermione_main
-        $ hermione_wear_robe = False
-        $ hermione_wear_top = False
+        $ hermione_class.strip("top")
         call set_her_action("none")
 
         call her_main("Like that?", "annoyed", "narrow", "angry", "R",cheeks="blush")
@@ -615,8 +614,7 @@ label l_tutoring:
         if hermione_wear_bra:
             m "Without your bra Miss Granger..."
             hide screen hermione_main
-            $ hermione_wear_bra = False
-            call update_her_body
+            $ hermione_class.strip("bra")
             call her_main()
 
         m "Yes, and now come here."
@@ -670,7 +668,7 @@ label l_tutoring:
         call her_main("Not that hard, I will...", "open_wide_tongue", "narrow", "base", "up",cheeks="blush")
         g9 "{size=-2}(Time for the grand finale!){/size}"
 
-        if hermione_wear_panties:
+        if hermione_class.get_worn("panties"):
             ">You quickly slip your hand into her panties and rub her pussy furiously."
         else:
             ">You quickly move your hand toward her pussy and rub it furiously."
@@ -750,16 +748,14 @@ label l_tutoring:
 
         call chibi_walk_desk_blkfade("hermione")
 
-        $ hermione_wear_robe = False
-        $ hermione_wear_top = False
-        call update_her_body
+        $ hermione_class.strip("robe")
+        $ hermione_class.strip("top")
 
         if hermione_wear_bra:
             call her_main("...",ypos="head")
             m "And your bra..."
 
-            $ hermione_wear_bra = False
-            call update_her_body
+            $ hermione_class.strip("bra")
 
         call her_main("........", "annoyed", "closed", "base", "mid",cheeks="blush",ypos="head")
 
@@ -777,7 +773,7 @@ label l_tutoring:
         call set_her_action("lift_skirt")
         pause.5
 
-        $ hermione_wear_bottom = False
+        $ hermione_class.strip("bottom")
         call set_her_action("None")
         pause.5
 
@@ -804,7 +800,7 @@ label l_tutoring:
             call her_main("Professor!", "mad", "wide", "base", "stare",cheeks="blush")
             m "Now take them off."
 
-            $ hermione_wear_panties = False
+            $ hermione_class.strip("panties")
             call set_her_action("pinch")
 
             call nar(">She slowly lowers her panties.")
@@ -940,9 +936,9 @@ label l_tutoring:
             call set_her_action("lift_top")
             pause.5
 
-            $ hermione_wear_robe = False
-            $ hermione_wear_top = False
-            $ hermione_wear_bra = False
+            $ hermione_class.strip("robe")
+            $ hermione_class.strip("top")
+            $ hermione_class.strip("bra")
             call set_her_action("None")
             pause.5
 
@@ -953,8 +949,8 @@ label l_tutoring:
             call set_her_action("lift_top")
             pause.5
 
-            $ hermione_wear_robe = False
-            $ hermione_wear_top = False
+            $ hermione_class.strip("robe")
+            $ hermione_class.strip("top")
             call set_her_action("None")
             pause.5
 
@@ -970,7 +966,7 @@ label l_tutoring:
         call set_her_action("lift_skirt")
         pause.5
 
-        $ hermione_wear_bottom = False
+        $ hermione_class.strip("bottom")
         call set_her_action("None")
         pause.5
 
@@ -987,7 +983,7 @@ label l_tutoring:
             call set_her_action("pinch")
             pause.5
 
-            $ hermione_wear_panties = False
+            $ hermione_class.strip("panties")
             call set_her_action("None")
             pause.5
 
@@ -1090,9 +1086,9 @@ label l_tutoring:
         call set_her_action("lift_top")
         pause.2
 
-        $ hermione_wear_robe = False
-        $ hermione_wear_top = False
-        $ hermione_wear_bra = False
+        $ hermione_class.strip("robe")
+        $ hermione_class.strip("top")
+        $ hermione_class.strip("bra")
         call set_her_action("None")
 
         ">She rips off her shirt and rushes to your desk."
@@ -1274,9 +1270,9 @@ label l_tutoring:
         call set_her_action("lift_top")
         pause.5
 
-        $ hermione_wear_robe = False
-        $ hermione_wear_top = False
-        $ hermione_wear_bra = False
+        $ hermione_class.strip("robe")
+        $ hermione_class.strip("top")
+        $ hermione_class.strip("bra")
         call set_her_action("None")
         pause.5
 
@@ -1304,8 +1300,8 @@ label l_tutoring:
         call set_her_action("lift_skirt")
         pause.5
 
-        $ hermione_wear_bottom = False
-        $ hermione_wear_panties = False
+        $ hermione_class.strip("bottom")
+        $ hermione_class.strip("panties")
         call set_her_action("None")
         pause.5
 
@@ -1560,7 +1556,7 @@ label l_tutoring:
 
         ">Hermione slowly slides down her robe and climbs up your desk."
 
-        $ hermione_wear_robe = False
+        $ hermione_class.strip("robe")
 
         call her_chibi("dance","on_desk","on_desk")
 

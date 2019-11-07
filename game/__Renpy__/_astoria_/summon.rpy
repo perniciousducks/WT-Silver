@@ -14,7 +14,7 @@ label summon_astoria:
     menu:
 
         # Talk
-        "-Talk-":
+        "-Talk-{icon=interface/icons/small/talk.png}":
             if not chitchated_with_astoria:
                 call astoria_chit_chat
                 jump astoria_talk
@@ -23,16 +23,19 @@ label summon_astoria:
 
 
         # Spells
-        "-Spells-":
+        "-Spells-{icon=interface/icons/small/spell.png}":
             if ast_mood != 0:
                 call ast_main("I don't want to today...","annoyed","narrow","base","R")
                 jump astoria_requests
             else:
                 jump astoria_spells
-
+                
+        "{color=#858585}-Sexual favours-{/color}{icon=interface/icons/small/condom.png}" if cho_favors_unlocked:
+            $ TBA_message()
+            jump astoria_requests
 
         # Wardrobe
-        "-Wardrobe-" if astoria_wardrobe_unlocked:
+        "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if astoria_wardrobe_unlocked:
             call ast_main(xpos="wardrobe", ypos="base", face="neutral")
             call t_wardrobe("ast_main")
             jump astoria_requests
@@ -43,11 +46,11 @@ label summon_astoria:
 
 
         # Gifts
-        "-Gifts-" if not gave_astoria_gift:
+        "-Gifts-{icon=interface/icons/small/gift.png}" if not gave_astoria_gift:
             call gift_menu
             jump astoria_requests
 
-        "{color=#858585}-Gifts-{/color}" if gave_astoria_gift:
+        "{color=#858585}-Gifts-{/color}{icon=interface/icons/small/gift.png}" if gave_astoria_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."
             jump astoria_requests
 
@@ -284,6 +287,16 @@ label astoria_talk:
                     jump astoria_talk
                 "-Never mind-":
                     jump astoria_talk
+                    
+        "-You may wear your current outfit only-{icon=interface/icons/small/wardrobe.png}" if astoria_wardrobe_unlocked and astoria_outfits_schedule:
+            ast "Okay, [ast_genie_name]."
+            $ astoria_outfits_schedule = False
+            jump astoria_talk
+            
+        "-You may wear whatever you like-{icon=interface/icons/small/wardrobe.png}" if astoria_wardrobe_unlocked and not astoria_outfits_schedule:
+            ast "Okay, [ast_genie_name]."
+            $ astoria_outfits_schedule = True
+            jump astoria_talk
 
 
         "-Never mind":

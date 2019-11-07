@@ -52,7 +52,7 @@ label hg_pf_titjob:
 
     # Points
     if her_tier <= 5:
-        m "Yes, [hermione_name]. [current_payout] to \"Gryffindor\"."
+        m "Yes, [hermione_name]. [current_payout] to Gryffindor."
         $ gryffindor += current_payout
     else:
         m "You may leave now, [hermione_name]."
@@ -148,7 +148,7 @@ label hg_pf_titjob_T1_intro_E1:
 
         "\"You'll get 45 house points.\"":
             call her_main("45 house points...?", "open", "wink", "base", "mid")
-            call her_main("This could put \"Gryffindor\" back in the lead...", "annoyed", "narrow", "worried", "down")
+            call her_main("This could put Gryffindor back in the lead...", "annoyed", "narrow", "worried", "down")
             m "So,...is that a yes?"
             call her_main("That is a yes, [genie_name]...", "open", "closed", "base", "mid")
             call her_main("45 points seem like a fair amount for-...", "open", "base", "base", "R")
@@ -160,7 +160,7 @@ label hg_pf_titjob_T1_intro_E1:
             $ current_payout = 100
             $ her_mood = 0
             call her_main("100 house points?!", "scream", "wide", "base", "mid")
-            call her_main("This might be enough to put \"Gryffindor\" in the lead!", "smile", "wide", "base", "stare")
+            call her_main("This might be enough to put Gryffindor in the lead!", "smile", "wide", "base", "stare")
             m "So,...is that a yes?"
             call her_main("Yes, [genie_name]!", "smile", "happyCl", "base", "mid")
             call her_main("I shall do my best...", "soft", "narrow", "base", "mid_soft", emote="06")
@@ -499,7 +499,7 @@ label hg_pf_titjob_1:
                 call her_main("I can't go to class like this...", "angry", "worriedCl", "worried", "mid", emote="05")
                 call her_main("I'm covered in semen...", "disgust", "narrow", "base", "down", emote="05")
             else:
-                call her_main("At this hour the \"Gryffindor common room\" will be full of students...", "angry", "worriedCl", "worried", "mid", emote="05")
+                call her_main("At this hour the Gryffindor common room will be full of students...", "angry", "worriedCl", "worried", "mid", emote="05")
                 call her_main("And I'm smelling like spunk!", "scream", "worriedCl", "worried", "mid")
                 call her_main("I hope I can just run past them without anybody noticing...", "disgust", "narrow", "worried", "down")
 
@@ -548,7 +548,7 @@ label hg_pf_titjob_1:
             if daytime:
                 call her_main("I can't attend class looking like this!", "angry", "worriedCl", "worried", "mid")
             else:
-                call her_main("How am I supposed to go back to the \"Gryffindor common room\" like this?!", "angry", "worriedCl", "worried", "mid")
+                call her_main("How am I supposed to go back to the Gryffindor common room like this?!", "angry", "worriedCl", "worried", "mid")
             m "Just wipe it off..."
             call her_main("...........................", "angry", "narrow", "worried", "down")
             call her_main("I would like to get paid now, [genie_name]...", "annoyed", "narrow", "angry", "R")
@@ -913,7 +913,7 @@ label hg_pf_titjob_2_cumming:
             if her_tier < 6:
                 call her_main("With all due respect, [genie_name]...", "upset", "closed", "base", "mid")
                 call her_main("I don't plan on getting a reputation as a cum-loving whore...", "angry", "wink", "base", "mid")
-                call her_main("Not like those \"Slytherin\" girls...", "angry", "narrow", "angry", "R")
+                call her_main("Not like those Slytherin girls...", "angry", "narrow", "angry", "R")
             else:
                 call her_main("*Hmm*...", "soft", "happy", "base", "R")
                 call her_main("Maybe if you ask nicely...", "soft", "narrow", "base", "mid_soft")

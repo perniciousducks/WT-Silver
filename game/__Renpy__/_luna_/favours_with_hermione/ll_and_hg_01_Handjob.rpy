@@ -99,8 +99,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         ">Hermione pulls off her top in a huff."
 
         hide screen hermione_main
-        $ hermione_wear_top = False
-        $ hermione_wear_bra = False
+        $ hermione_class.strip("top")
+        $ hermione_class.strip("bra")
 
         call her_main("Feel free to humiliate me!", "angry", "base", "angry", "mid",tears="crying")
         ">Hermione angrily removes her skirt."
@@ -152,10 +152,10 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call her_kneel("[genie_name]... please... what's going on?","mad","worried",tears="soft")
         call lun_main("I said that you're here to sell a favour.","normal","angry","angry","down")
         call lun_main("Isn't that you want? To sell favours to dumbledore?","base","seductive","sad","mid")
-        call her_kneel("I want... I want \"gryffindor\" to win the house cup...","open","down")
+        call her_kneel("I want... I want gryffindor to win the house cup...","open","down")
 
         if gryffindor > slytherin:
-            call lun_main("But \"gryffindor\" is already ahead by "+str(gryffindor-slytherin)+" points...","pout","angry","raised","down")
+            call lun_main("But gryffindor is already ahead by "+str(gryffindor-slytherin)+" points...","pout","angry","raised","down")
             call lun_main("do you really think that they need any more points to win?","base","angry","sad","down")
             call her_kneel("...","soft","squintL")
         else:
@@ -459,7 +459,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "Anyway, thanks for your help today."
         call her_main("anything for my friends [genie_name]...", "soft", "happy", "base", "R")
         m "(Does that mean me?)"
-        m "Yes, well, 60 points to \"gryffindor\"!"
+        m "Yes, well, 60 points to gryffindor!"
         $ gryffindor += 60
         call her_main("Thank you [genie_name]...", "open", "base", "base", "R")
 
@@ -739,11 +739,12 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ luna_r_arm = "1"
         $ luna_flip = -1
 
-        $ hermione_right_arm = "characters/hermione/body/arms/right/right_1.png"
+        # TODO: Fix me.
+        #$ hermione_right_arm = "characters/hermione/body/arms/right/right_1.png"
         $ hermione_zorder = 5
 
-        call load_hermione_clothing_saves
-        call update_her_uniform
+        #call load_hermione_clothing_saves
+        #call update_her_uniform
 
         call gen_chibi("sit_behind_desk")
         call her_chibi("stand","mid","base")
@@ -798,7 +799,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("it better not...","normal","angry","angry","mid")
         m "alright then, in that case, here's your payment."
         $ gryffindor += hermione_payout
-        m "[hermione_payout] points to \'gryffindor\'!"
+        m "[hermione_payout] points to gryffindor!"
         call her_main("thank you [genie_name].", "base", "closed", "base", "mid")
         $ luna_gold += luna_payout
         $ gold -= luna_payout
@@ -815,10 +816,9 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         ">Luna and hermione quickly get dressed before quickly leaving the room together."
 
         call load_luna_clothing_saves
-        call load_hermione_clothing_saves
-
         call update_lun_uniform
-        call update_her_uniform
+        
+        $ hermione_class.wear("all")
 
         show screen luna_main
         show screen hermione_main
@@ -856,8 +856,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         call her_chibi("stand","mid","base")
 
-        call load_hermione_clothing_saves
-        call update_her_uniform
+        $ hermione_class.wear("all")
 
         $ luna_flip = -1
         call lun_main("",xpos="mid",ypos="base")
@@ -1152,8 +1151,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     hide screen hermione_main
                     with d3
 
-                    call load_hermione_clothing_saves
-                    call update_her_uniform
+                    $ hermione_class.wear("all")
 
                     call her_walk(action="leave", speed=2.5)
 
@@ -1170,7 +1168,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     m "Right, nearly forgot."
                     call her_main("...", "annoyed", "squint", "base", "mid")
                     $ gryffindor += 50
-                    m "50 points to \'gryffindor\'!"
+                    m "50 points to gryffindor!"
                     call her_main("thank you [genie_name]...", "base", "closed", "base", "mid")
                     call lun_main("...","normal","seductive","base","R")
                     $ luna_gold += 150
@@ -1185,10 +1183,9 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     hide screen hermione_main
 
                     call load_luna_clothing_saves
-                    call load_hermione_clothing_saves
-
                     call update_lun_uniform
-                    call update_her_uniform
+                   
+                    $ hermione_class.wear("all")
 
                     with d3
                     pause.8

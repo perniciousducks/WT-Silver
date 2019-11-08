@@ -516,7 +516,7 @@ label ss_he_cho_E1:
                 call sna_main("Well, you have plenty of time to gather that amount.","snape_22")
             else:
                 m "Are you feeling \"that\" confident?"
-                call sna_main("About Slytherin beating Ravenclaw in Quidditch?","snape_20")
+                call sna_main("About Slytherin winning the cup?","snape_20")
                 call sna_main("Absolutely!","snape_22")
 
             call sna_main("So, what do you say? Want to take the bet?","snape_13")
@@ -524,7 +524,7 @@ label ss_he_cho_E1:
             m "You won't cheat, and you won't give Slytherin any unfair advantages."
             call sna_main("I'd never think of it.","snape_09")
             m "So. You want to take on the bet?"
-            call sna_main("Indeed I will.","snape_02")
+            call sna_main("Of course, I have no doubt Slytherin will win the cup.","snape_02")
             call sna_main("At least Quidditch will be worth watching now. I can't say no to some good old gambling.","snape_20")
             call sna_main("But how will you help Miss Chang in Quidditch? You know nothing about it?","snape_05")
 

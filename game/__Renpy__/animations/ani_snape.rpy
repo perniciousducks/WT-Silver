@@ -36,3 +36,8 @@ image snape_toast_goblet: # Snape sitting in front of fireplace, right side.
     "characters/snape/chibis/drinking/01.png"
     pause 3
     repeat
+
+image snape_stand_shocked:
+    zoom 0.5
+    
+    "characters/snape/chibis/shocked/01.png"

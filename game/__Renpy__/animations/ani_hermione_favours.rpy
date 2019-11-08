@@ -489,6 +489,66 @@ image grope_ass_podium_blink:
     "images/animation/00.png"
     pause 3
     repeat
+    
+image grope_ass_podium_horny:
+    zoom 0.5
+    
+    contains:
+        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
+        pause .2
+        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
+        pause .2
+        "characters/hermione/chibis/grope_ass_podium/grope_3.png"
+        pause .5
+        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
+        pause .2
+        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
+        pause .2
+        repeat
+    contains:
+        "characters/hermione/chibis/grope_ass_podium/horny.png"
+    contains:
+        "grope_ass_podium_blink"
+        
+image grope_ass_podium_close:
+    zoom 0.5
+    
+    contains:
+        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
+        pause .2
+        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
+        pause .2
+        "characters/hermione/chibis/grope_ass_podium/grope_3.png"
+        pause .5
+        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
+        pause .2
+        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
+        pause .2
+        repeat
+    contains:
+        "characters/hermione/chibis/grope_ass_podium/close.png"
+    contains:
+        "grope_ass_podium_blink"
+        
+image grope_ass_podium_cumming:
+    zoom 0.5
+    
+    contains:
+        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
+        pause .2
+        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
+        pause .2
+        "characters/hermione/chibis/grope_ass_podium/grope_3.png"
+        pause .5
+        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
+        pause .2
+        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
+        pause .2
+        repeat
+    contains:
+        "characters/hermione/chibis/grope_ass_podium/cumming.png"
+    contains:
+        "grope_ass_podium_blink"
 
 ### GROPING TITS FULLY CLOTHED ###
 image groping_03_ani: #Genie groping Hermione under her skirt. Hermione is facing Genie.

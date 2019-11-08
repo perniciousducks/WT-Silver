@@ -11,6 +11,11 @@ image genie_stand_alternative: #Default Genie walk animation.
     zoom 0.5
     
     "characters/genie/chibis/standing.png"
+    
+image genie_stand_shocked:
+    zoom 0.5
+    
+    "characters/genie/chibis/shocked/01.png"
 
 ### Walk ###
 image genie_walk_ani: #Default Genie walk animation.

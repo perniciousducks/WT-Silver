@@ -306,11 +306,11 @@ screen hermione_hit_on_head():
 ### UNIVERSAL SCREEN ###
 screen h_c_u():
     tag hermione_chibi
+    zorder her_chibi_zorder
     if "/chibis/" in h_c_u_pic:
         add h_c_u_pic xpos her_chibi_xpos ypos her_chibi_ypos zoom 0.5
     else:
         add h_c_u_pic xpos her_chibi_xpos ypos her_chibi_ypos
-    zorder her_chibi_zorder
 
 
 
@@ -443,12 +443,15 @@ label her_chibi(action = "", xpos=her_chibi_xpos, ypos=her_chibi_ypos, pic = "",
         show screen ch_potion
 
     #Special Images. These need custom xpos/ypos positions!
-    elif action == "image":
+    elif action in ("image", "animation"):
 
         #Add specific xpos and ypos number when calling.
 
         if pic != "":
-            $ h_c_u_pic = "characters/hermione/chibis/"+str(pic)+".png"
+            if action == "animation":
+                $ h_c_u_pic = pic
+            else:
+                $ h_c_u_pic = "characters/hermione/chibis/"+str(pic)+".png"
 
         show screen h_c_u
 

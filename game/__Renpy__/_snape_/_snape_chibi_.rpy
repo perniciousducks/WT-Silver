@@ -33,24 +33,17 @@ label sna_chibi(action = "", xpos=sna_chibi_xpos, ypos=sna_chibi_ypos, pic = "",
     #Snape Chibi Actions.
 
     #Special Images. These need custom xpos/ypos positions!
-    if action == "image":
-
-        if xpos == "desk":
-            $ sna_chibi_xpos = 440
-        elif xpos == "mid":
-            $ sna_chibi_xpos = 500
-        elif xpos == "door":
-            $ sna_chibi_xpos = 750
+    if action in ("image", "animation"):
+        if flip:
+            $ sna_chibi_flip = -1
         else:
-            $ sna_chibi_xpos = 500
-
-        if ypos == "base":
-            $ sna_chibi_ypos = 190
-        else:
-            $ sna_chibi_ypos = 190
+            $ sna_chibi_flip = 1
 
         if pic != "":
-            $ s_c_u_pic = "characters/snape/chibis/"+str(pic)+".png"
+            if action == "animation":
+                $ s_c_u_pic = pic
+            else:
+                $ s_c_u_pic = "characters/snape/chibis/"+str(pic)+".png"
 
         show screen s_c_u
 
@@ -193,12 +186,13 @@ label update_sna_chibi:
 ###  UNIVERSAL SCREEN ###
 
 screen s_c_u():
+    zorder sna_chibi_zorder 
     tag snape_chibi
+    
     if "/chibis/" in s_c_u_pic:
-        add s_c_u_pic xpos sna_chibi_xpos ypos sna_chibi_ypos zoom 0.5
+        add s_c_u_pic xpos sna_chibi_xpos ypos sna_chibi_ypos xzoom sna_chibi_flip zoom 0.5
     else:
-        add s_c_u_pic xpos sna_chibi_xpos ypos sna_chibi_ypos
-    zorder 3
+        add s_c_u_pic xpos sna_chibi_xpos ypos sna_chibi_ypos xzoom sna_chibi_flip
 
 screen s_c_c_u(): # cum
     add s_c_c_u_pic at Position(xpos=snape_cum_chibi_xpos+140, ypos=snape_cum_chibi_ypos)

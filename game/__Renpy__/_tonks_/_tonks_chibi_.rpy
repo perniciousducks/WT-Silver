@@ -44,7 +44,10 @@ label ton_chibi(action = "", xpos=ton_chibi_xpos, ypos=ton_chibi_ypos, flip=Fals
         with d3
         pause .5
     else:
-        if action == "reset":
+        if action == "slack_jaw":
+            $ ton_chibi_animation = "slack_jaw"
+            $ update_chibi_image("tonks")
+        elif action == "reset":
             $ ton_chibi_animation = None
             $ update_chibi_image("tonks")
 

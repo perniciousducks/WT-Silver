@@ -62,41 +62,44 @@ init python:
                 cho_chibi_shoes = "blank"
         elif name == "tonks":
             imagepath = "characters/tonks/chibis/"
-            animation = "_"+ton_chibi_animation if ton_chibi_animation else ""
+            animation = "/"+ton_chibi_animation+"/" if ton_chibi_animation else ""
             status = "_"+ton_chibi_status if ton_chibi_status else ""
             global ton_chibi_fix, ton_chibi_gloves, ton_chibi_top, ton_chibi_bottom, ton_chibi_robe, ton_chibi_shoes, ton_chibi_walk_shoes, ton_chibi_stand, ton_chibi_walk
             ton_chibi_fix, ton_chibi_gloves, ton_chibi_top, ton_chibi_bottom, ton_chibi_robe, ton_chibi_shoes, ton_chibi_walk_shoes, ton_chibi_stand, ton_chibi_walk, ton_chibi_shoes = "blank", "blank", "blank", "blank", "blank", "blank", "blank", "ch_ton blink", "ch_ton walk", "ch_ton walk_shoes"
+            
+            if ton_chibi_animation == "slack_jaw":
+                ton_chibi_stand = "ch_ton slack_jaw"
 
             if tonks_class.get_worn("top"):
-                ton_chibi_top = imagepath+"nt_top"+animation+status+".png" if animation else imagepath+"nt_top.png"
+                ton_chibi_top = imagepath+animation+"nt_top"+status+".png" if animation else imagepath+"nt_top.png"
 
             if tonks_class.get_worn("bottom"):
                 if tonks_class.get_cloth("bottom").subcat == "trousers":
                     if not status == "_move":
-                        ton_chibi_bottom = imagepath+"nt_trousers"+animation+".png"
+                        ton_chibi_bottom = imagepath+animation+"nt_trousers.png"
                     else:
                         if animation:
-                            ton_chibi_bottom = imagepath+"nt_trousers"+animation+status+".png"
+                            ton_chibi_bottom = imagepath+animation+"nt_trousers"+status+".png"
                         else:
                             if status == "_move":
                                 ton_chibi_bottom = "ch_ton trousers"
                             else:
                                 ton_chibi_bottom = imagepath+"nt_trousers.png"
                 else:
-                    ton_chibi_bottom = imagepath+"nt_skirt"+animation+status+".png" if animation else imagepath+"nt_skirt.png"
+                    ton_chibi_bottom = imagepath+animation+"nt_skirt"+status+".png" if animation else imagepath+"nt_skirt.png"
 
             if tonks_class.get_worn("gloves"):
-                ton_chibi_gloves = imagepath+"nt_gloves"+animation+status+".png" if animation else imagepath+"nt_gloves.png"
+                ton_chibi_gloves = imagepath+animation+"nt_gloves"+status+".png" if animation else imagepath+"nt_gloves.png"
 
             if tonks_class.get_worn("robe"):
-                ton_chibi_robe = imagepath+"nt_robe"+animation+status+".png" if animation else imagepath+"nt_robe.png"
+                ton_chibi_robe = imagepath+animation+"nt_robe"+status+".png" if animation else imagepath+"nt_robe.png"
 
             if tonks_class.get_worn("bottom") or tonks_class.get_worn("stockings"):
                 if not status == "_move":
-                    ton_chibi_shoes = imagepath+"nt_shoes"+animation+".png"
+                    ton_chibi_shoes = imagepath+animation+"nt_shoes.png"
                 else:
                     if animation:
-                        ton_chibi_shoes = imagepath+"nt_shoes"+animation+".png"
+                        ton_chibi_shoes = imagepath+animation+"nt_shoes.png"
             else:
                 ton_chibi_shoes = "blank"
         elif name == "astoria":

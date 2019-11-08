@@ -518,22 +518,6 @@ label increase_house_points(house="Add house", points=0):
 
     return
 
-#TODO Remove/replace this oddly specific label
-label chibi_walk_desk_blkfade(char=None):
-
-    call hide_characters
-    hide screen blktone
-    hide screen bld1
-    with d3
-    pause.2
-
-    if char == "hermione":
-        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
-
-    call blkfade
-
-    return
-
 label adjust_game_difficulty(dif=None):
     if 1 <= dif <= 3:
         $ game_difficulty = dif

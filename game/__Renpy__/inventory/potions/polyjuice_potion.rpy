@@ -630,7 +630,7 @@ label potion_scene_1_2:
 
     hide screen hermione_main
     with hpunch
-    hide screen hermione_stand
+    call her_chibi("hide")
     call lun_chibi("stand","base","base")
     pause.5
 

@@ -361,7 +361,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 with d3
                 call ctc
 
-                $ g_c_u_pic = "ani_her_sex_cum_inside_blink"
+                $ g_c_u_pic = "sex_cum_in_blink_ani"
 
                 call her_main("*Sob!*...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 m "Whew!... I reckon me gunpowder needs restocking in the next harbour.' it be."

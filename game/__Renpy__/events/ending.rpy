@@ -2871,7 +2871,7 @@ label ball_ending_credits:
 
     $ xder = 670
     $ yder = 410
-    $ dermo = "ch_hem run_f"
+    $ dermo = im.Flip("ch_hem run", horizontal=True)
 
     centered """{cps=40}
     {size=+2}{color=#e5e297}-\{CREATOR OF THIS GAME WOULD ALSO LIKE TO PERSONALLY THANK\}-{/color}{/size}\n\n
@@ -3102,7 +3102,8 @@ label ball_ending_E3:
         call set_her_action("")
         call her_main("And I mean {size=+9}ANYTHING!!!{/size}", "scream", "base", "angry", "mid",emote="01", trans="hpunch")
 
-        call chibi_walk_desk_blkfade("hermione")
+        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+        call blkfade
 
         call play_sound("climb_desk")
         pause.7

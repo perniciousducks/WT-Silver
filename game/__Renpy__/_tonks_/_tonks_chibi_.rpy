@@ -18,7 +18,6 @@ label ton_chibi(action=None, xpos=None, ypos=None, flip=False):
     else: # stand
         $ tonks_chibi.do(None)
 
-    $ tonks_chibi.show()
     return
 
 label ton_walk(xpos=None, ypos=None, speed=None, action=None, loiter=True, redux_pause=0):

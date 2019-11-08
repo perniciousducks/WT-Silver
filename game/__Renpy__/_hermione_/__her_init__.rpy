@@ -13,7 +13,6 @@ default her_chibi_flip          = 1
 default her_chibi_zorder        = 3
 default her_chibi_animation     = None
 default her_chibi_status        = ""
-default her_chibi_scale         = 0.5
 
 default her_chibi_stand         = "ch_hem blink_a"
 default her_chibi_shoes         = "characters/cho/chibis/cc_walk_01_shoes.png"

@@ -641,8 +641,7 @@ screen DRgame_menu():
 
     if DRmaid in DRgame.characters and DRmaid.location in ["room","desk","fireplace"]:
         imagebutton:
-            xpos her_chibi_xpos
-            ypos her_chibi_ypos
+            pos hermione_chibi.pos
             focus_mask True
             xanchor "center"
             yanchor "center"

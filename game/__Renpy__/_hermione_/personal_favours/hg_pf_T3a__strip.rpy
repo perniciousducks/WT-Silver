@@ -405,7 +405,8 @@ label hg_pf_strip_T1_intro_E2:
 
     m "??!"
 
-    call chibi_walk_desk_blkfade("hermione")
+    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call blkfade
 
     $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking.
     pause 3
@@ -575,6 +576,7 @@ label hg_pf_strip_T1_intro_E2:
 
     call nar(">You find the thought strangely arousing...","end")
 
+    #TODO Hermione chibi: Stand in panties only (blinking?)
     call her_chibi("image","on_desk","on_desk","dance/05_panties_01")
     call ctc
 
@@ -599,6 +601,7 @@ label hg_pf_strip_T1_intro_E2:
 
     $ hermione_class.strip("panties")
     call update_her_uniform
+    #TODO Hermione chibi: Stand naked blinking (ch_hem blink_n)
     call her_chibi("image","on_desk","on_desk","dance/07_dance_01")
     call her_main("", "annoyed", "worriedCl", "worried", "mid", cheeks="blush")
     pause.2

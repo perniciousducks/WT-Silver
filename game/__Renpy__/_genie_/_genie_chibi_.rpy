@@ -55,11 +55,6 @@ screen petting(): #PETTING THE PHOENIX.
     add "petting" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 #xpos 390 ypos 65
     zorder 1
 
-screen sad_phoenix(): #SAD SMILEY THAT SHOWS WHEN YOU PET THE BIRD.
-    tag genie_chibi
-    add "sad_01" xpos 423+140 ypos 130
-    zorder 1
-
 
 screen paperwork(): #GENIE DOING PAPERWORK BEHIND HIS DESK.
     tag genie_chibi
@@ -127,61 +122,6 @@ screen genie_stands_holds_dick():
     add "characters/genie/chibis/masturbating/01.png" xpos gen_chibi_xpos-270 ypos gen_chibi_ypos-185 zoom 0.5
     zorder 2
 
-
-### HANDJOB, Genie and Hermione ###
-
-screen genie_handjob():
-    tag genie_chibi
-    add "handjob_ani" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
-    zorder 2
-
-screen genie_handjob_pause():
-    tag genie_chibi
-    add "characters/hermione/chibis/handjob/01.png" xpos gen_chibi_xpos-230 ypos gen_chibi_ypos-185 zoom 0.5
-    zorder 2
-
-screen genie_handjob_kiss():
-    tag genie_chibi
-    add "kiss_ani" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
-    zorder 2
-
-screen genie_handjob_cum_on_shirt():
-    add "on_shirt_cum_ani" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
-    zorder 2
-
-screen genie_handjob_cum_on_shirt_pause():
-    add "characters/hermione/chibis/handjob/sperm_on_21.png" xpos gen_chibi_xpos-230 ypos gen_chibi_ypos-185 zoom 0.5
-    zorder 2
-
-screen genie_handjob_cum_under_shirt():
-    add "undershirt_cum_ani" at Position(xpos=gen_chibi_xpos-230, ypos=gen_chibi_ypos-185)
-    zorder 2
-
-
-### TITJOB HERMIONE ###
-screen genie_titjob():
-    tag genie_chibi
-    add "titjob_ani" at Position(xpos=gen_chibi_xpos-30, ypos=gen_chibi_ypos)
-
-screen genie_titjob_pause():
-    tag genie_chibi
-    add "characters/hermione/chibis/titjob/tj_cum_chest_01.png" xpos gen_chibi_xpos-30 ypos gen_chibi_ypos zoom 0.5
-
-screen genie_titjob_cum_on_tits():
-    tag genie_chibi
-    add "titjob_chest_ani" at Position(xpos=gen_chibi_xpos-30, ypos=gen_chibi_ypos+10)
-
-screen genie_titjob_cum_in_mouth():
-    tag genie_chibi
-    add "titjob_mouth_ani" at Position(xpos=gen_chibi_xpos-30, ypos=gen_chibi_ypos+10)
-
-
-screen genie_groping():
-    tag genie_chibi
-    add "groping_ass_ani" at Position(xpos=gen_chibi_xpos-285, ypos=gen_chibi_ypos-185)
-
-
-
 ### SUSAN CHIBI SCREENS ###
 
 screen genie_stand():
@@ -225,11 +165,6 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
     hide screen hermione_chibi_bj
     hide screen hermione_chibi_sex
 
-    hide screen genie_titjob
-    hide screen genie_titjob_pause
-    hide screen genie_titjob_cum_in_mouth
-    hide screen genie_titjob_cum_on_tits
-
     hide screen groping_01    # Grope Ass fully clothed - Flip = True (facing door)
     hide screen groping_02    # Grope Ass fully clothed - Flip = False
     hide screen no_groping_01 # Hermione stands with you behind desk - Flip = True (facing door)
@@ -238,7 +173,6 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
     hide screen groping_03         # Grope breasts fully clothed
     hide screen genie_and_tits_01
     hide screen groping_naked_tits
-    hide screen genie_groping
 
     hide screen rum_screen
 
@@ -336,25 +270,6 @@ label gen_chibi(action = "", xpos=gen_chibi_xpos, ypos=gen_chibi_ypos, pic = "",
             show screen genie_jerking_sperm_02
         else:
             show screen genie_jerking_off
-
-    #Titjob
-    elif action in ["titjob","titjob_pause","titjob_cum_in_mouth","titjob_cum_on_tits"]:
-
-        if action == "titjob":
-            show screen genie_titjob
-        if action == "titjob_pause":
-            show screen genie_titjob_pause
-        if action == "titjob_cum_in_mouth":
-            show screen genie_titjob_cum_in_mouth
-        if action == "titjob_cum_on_tits":
-            show screen genie_titjob_cum_on_tits
-
-        if xpos == "behind_desk": #No xpos change.
-            hide screen desk
-            show screen desk
-
-    elif action == "groping":
-        show screen genie_groping
 
     elif action == "hide":
         pass

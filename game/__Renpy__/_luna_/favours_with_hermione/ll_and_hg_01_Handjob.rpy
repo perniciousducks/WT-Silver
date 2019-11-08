@@ -118,11 +118,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("then kneel...","normal","suspicious","sad","mid")
 
         hide screen hermione_main
-        $ her_chibi_xpos = 40 #40 = Near Luna
-        $ her_chibi_ypos = 60
-        $ h_c_u_pic = "characters/hermione/chibis/dance/sit_naked_blink.png"
         $ hermione_xpos=590
-        show screen h_c_u
+        call her_chibi("sit_naked", 40, 60)
         with d3
 
         call her_kneel("...","annoyed","ahegao")
@@ -548,11 +545,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         ">As they're putting their clothes in a pile you slowly get up from your desk and whip your cock out from in between your robes."
         call lun_main("On your knees then, slut...","base","seductive","angry","mid")
         hide screen hermione_main
-        $ her_chibi_xpos = 40 #40 = Near Luna
-        $ her_chibi_ypos = 60
-        $ h_c_u_pic = "characters/hermione/chibis/dance/sit_naked_blink.png"
         $ hermione_xpos=590
-        show screen h_c_u
+        call her_chibi("sit_naked", 40, 60)
         with d3
 
         hide screen bld1

@@ -20,7 +20,6 @@ label ast_chibi(action=None, xpos=None, ypos=None, flip=False):
     else: # stand
         $ astoria_chibi.do(None)
 
-    $ astoria_chibi.show()
     return
 
 label ast_walk(xpos=None, ypos=None, speed=None, action=None, loiter=True, redux_pause=0):

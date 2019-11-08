@@ -18,7 +18,6 @@ label lun_chibi(action=None, xpos=None, ypos=None, flip=False):
     else: # stand
         $ luna_chibi.do(None)
 
-    $ luna_chibi.show()
     return
 
 label lun_walk(xpos=None, ypos=None, speed=None, action=None, redux_pause=0):

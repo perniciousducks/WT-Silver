@@ -418,7 +418,8 @@ label l_tutoring:
         hide screen bld1
         with d3
 
-        call chibi_walk_desk_blkfade("hermione")
+        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+        call blkfade
 
         hide screen genie
         show screen no_groping_01
@@ -512,7 +513,8 @@ label l_tutoring:
         hide screen bld1
         with d3
 
-        call chibi_walk_desk_blkfade("hermione")
+        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+        call blkfade
 
         ">Hermione walks towards your desk."
         ">You grab her tits and massage them softly."
@@ -556,7 +558,7 @@ label l_tutoring:
         show screen genie_and_hermione
         hide screen genie_and_hermione
         show screen genie
-        show screen hermione_stand
+        call her_chibi("stand")
         call hide_blkfade
 
         call her_main("...........", "mad", "wide", "base", "stare",cheeks="blush")
@@ -622,7 +624,8 @@ label l_tutoring:
         call her_main("", "base", "closed", "base", "mid")
         m "Now."
 
-        call chibi_walk_desk_blkfade("hermione")
+        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+        call blkfade
 
         ">Hermione slowly walks towards your desk."
         ">She tries not to bounce her tits without much success..."
@@ -746,7 +749,8 @@ label l_tutoring:
         m "Enough of this! Now take off your shirt and come here."
         call her_main("Here we go for another \"lesson\".", "open", "squint", "base", "mid")
 
-        call chibi_walk_desk_blkfade("hermione")
+        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+        call blkfade
 
         $ hermione_class.strip("robe")
         $ hermione_class.strip("top")
@@ -1093,7 +1097,8 @@ label l_tutoring:
 
         ">She rips off her shirt and rushes to your desk."
 
-        call chibi_walk_desk_blkfade("hermione")
+        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+        call blkfade
 
         hide screen genie
         show screen groping_05
@@ -1284,7 +1289,8 @@ label l_tutoring:
         m "Oh, we have time."
         call her_main("Speaking of that...", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
 
-        call chibi_walk_desk_blkfade("hermione")
+        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+        call blkfade
 
         hide screen genie
         show screen no_groping_05
@@ -1481,7 +1487,6 @@ label l_tutoring:
             $ hermione_robe = "characters/hermione/clothes/robe/robe_2_s.png"
         call set_her_action("naked") #Removes all clothes.
         $ hermione_wear_robe = True
-        call update_chibi_uniform
 
         call her_chibi("stand","door","base")
         call hide_blkfade
@@ -1549,7 +1554,8 @@ label l_tutoring:
         m "{size=-2}(It's not as if you don't like it rough){/size}"
         m "Alright, my desk, you, naked, now!"
 
-        call chibi_walk_desk_blkfade("hermione")
+        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+        call blkfade
 
         $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking.
         pause.5
@@ -1707,7 +1713,8 @@ label l_tutoring:
         call her_main("{size=-2}(I give myself away for free now, what a bad whore I make){/size}", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
         m "Come here and strip."
 
-        call chibi_walk_desk_blkfade("hermione")
+        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+        call blkfade
 
         hide screen hermione_main
         with d3
@@ -1867,323 +1874,3 @@ label l_tutoring:
 
         $ her_tutoring = 14
         jump day_start
-
-
-# Screens
-screen genie_and_hermione(): #Genie sitting, Hermione stands right in front of him (behind the desk even).
-    tag favor
-    add "images/rooms/main_room/genie_and_hermione_01.png" xpos -84 ypos 10 zoom 0.5
-
-screen groping_05():
-    tag favor
-    add "groping_05" at Position(xpos = -84, ypos = 10)
-    add "groping_05_blinking" at Position(xpos = -84, ypos = 10)
-
-screen groping_05b():
-    tag favor
-    add "groping_05b" at Position(xpos = -84, ypos = 10)
-    add "groping_05_blinking" at Position(xpos = -84, ypos = 10)
-
-screen no_groping_05():
-    tag favor
-    add "characters/hermione/chibis/grope_ass/back_d_05.png" xpos -84 ypos 10 zoom 0.5
-    add "groping_05_blinking" at Position(xpos = -84, ypos = 10)
-
-screen no_groping_05_desk():
-    tag favor
-    add "characters/hermione/chibis/fingering/02.png" xpos -84 ypos 10 zoom 0.5
-
-screen no_groping_06(): #Facing Genie.
-    tag favor
-    add "characters/hermione/chibis/grope_ass/front_e_05.png" xpos -84 ypos 10 zoom 0.5
-    add "groping_06_blinking" at Position(xpos = -84, ypos = 10)
-
-screen groping_06():
-    tag favor
-    add "groping_06" at Position(xpos = -84, ypos = 10)
-    add "groping_06_blinking" at Position(xpos = -84, ypos = 10)
-
-screen groping_06b():
-    tag favor
-    add "groping_06b" at Position(xpos = -84, ypos = 10)
-    add "groping_06_blinking" at Position(xpos = -84, ypos = 10)
-
-screen no_groping_laying_01():
-    tag favor
-    add "characters/hermione/chibis/fingering/01.png" xpos -84 ypos 10 zoom 0.5
-
-screen no_groping_laying_02():
-    tag favor
-    add "characters/hermione/chibis/fingering/b_01.png" xpos -84 ypos 10 zoom 0.5
-
-screen scr_her_fingering_naked(speed="normal"):
-    tag favor
-    if speed == "slow":
-        add "ani_her_fingering_slow_naked" at Position(xpos = -84, ypos = 10)
-    else:
-        add "ani_her_fingering_naked" at Position(xpos = -84, ypos = 10)
-    add "ani_her_fingering_blinking" at Position(xpos = -84, ypos = 10)
-
-screen scr_her_sex(speed="normal"):
-    tag favor
-    if speed == "slow":
-        add "ani_her_sex_slow_naked" at Position(xpos = -84, ypos = 10)
-    elif speed == "normal":
-        add "ani_her_sex_naked" at Position(xpos = -84, ypos = 10)
-    elif speed == "fast":
-        add "ani_her_sex_fast_naked" at Position(xpos = -84, ypos = 10)
-
-screen scr_her_sex_cum_outside(blink=0):
-    tag favor
-    add "ani_her_sex_cum_outside_naked" at Position(xpos = -84, ypos = 10)
-
-image groping_06: #Genie groping Hermione under her skirt. Hermione is facing Genie.
-    zoom 0.5
-    
-    "characters/hermione/chibis/grope_ass/front_e_01.png"
-    pause.2
-    "characters/hermione/chibis/grope_ass/front_e_02.png"
-    pause.2
-    "characters/hermione/chibis/grope_ass/front_e_03.png"
-    pause.5
-    "characters/hermione/chibis/grope_ass/front_e_02.png"
-    pause.2
-    "characters/hermione/chibis/grope_ass/front_e_01.png"
-    pause.2
-    repeat
-
-image groping_06b: #Genie groping Hermione under her skirt. Hermione is facing Genie.
-    zoom 0.5
-    
-    "characters/hermione/chibis/grope_ass/front_e_01.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/front_e_02.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/front_e_03.png"
-    pause.2
-    "characters/hermione/chibis/grope_ass/front_e_02.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/front_e_01.png"
-    pause.1
-    repeat
-
-image groping_06_blinking: #Animation of Hermione blinking her eyes.
-    zoom 0.5
-    
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/front_e_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    "characters/hermione/chibis/grope_ass/front_e_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/front_e_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    repeat
-
-image groping_05: #Genie groping Hermione under her skirt. Hermione is facing Genie.
-    zoom 0.5
-    
-    "characters/hermione/chibis/grope_ass/back_d_01.png"
-    pause.2
-    "characters/hermione/chibis/grope_ass/back_d_02.png"
-    pause.2
-    "characters/hermione/chibis/grope_ass/back_d_03.png"
-    pause.5
-    "characters/hermione/chibis/grope_ass/back_d_02.png"
-    pause.2
-    "characters/hermione/chibis/grope_ass/back_d_01.png"
-    pause.2
-    repeat
-
-image groping_05b: #Genie groping Hermione under her skirt. Hermione is facing Genie.
-    zoom 0.5
-    
-    "characters/hermione/chibis/grope_ass/back_d_01.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/back_d_02.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/back_d_03.png"
-    pause.2
-    "characters/hermione/chibis/grope_ass/back_d_02.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/back_d_01.png"
-    pause.1
-    repeat
-
-image groping_05_blinking: #Animation of Hermione blinking her eyes.
-    zoom 0.5
-    
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/back_d_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    "characters/hermione/chibis/grope_ass/back_d_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/back_d_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    repeat
-
-image ani_her_fingering_blinking: #Animation of Hermione blinking her eyes.
-    zoom 0.5
-    
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/fingering/blink.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    "characters/hermione/chibis/fingering/blink.png"
-    pause.1
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/fingering/blink.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    repeat
-
-image ani_her_fingering_slow_naked:
-    zoom 0.5
-    
-    "characters/hermione/chibis/fingering/n_01.png"
-    pause.3
-    "characters/hermione/chibis/fingering/n_02.png"
-    pause.3
-    "characters/hermione/chibis/fingering/n_03.png"
-    pause.3
-    "characters/hermione/chibis/fingering/n_04.png"
-    pause.3
-    repeat
-
-image ani_her_fingering_naked:
-    zoom 0.5
-    
-    "characters/hermione/chibis/fingering/n_01.png"
-    pause.2
-    "characters/hermione/chibis/fingering/n_02.png"
-    pause.2
-    "characters/hermione/chibis/fingering/n_03.png"
-    pause.2
-    "characters/hermione/chibis/fingering/n_04.png"
-    pause.2
-    repeat
-
-image ani_her_sex_slow_naked:
-    zoom 0.5
-    
-    "characters/hermione/chibis/sex/n_01.png"
-    pause.15
-    "characters/hermione/chibis/sex/n_02.png"
-    pause.15
-    "characters/hermione/chibis/sex/n_03.png"
-    pause.15
-    "characters/hermione/chibis/sex/n_04.png"
-    pause.15
-    "characters/hermione/chibis/sex/n_05.png"
-    pause.15
-    "characters/hermione/chibis/sex/n_06.png"
-    pause.15
-    "characters/hermione/chibis/sex/n_07.png"
-    pause.15
-    repeat
-
-image ani_her_sex_naked:
-    zoom 0.5
-    
-    "characters/hermione/chibis/sex/n_01.png"
-    pause.1
-    "characters/hermione/chibis/sex/n_02.png"
-    pause.1
-    "characters/hermione/chibis/sex/n_03.png"
-    pause.1
-    "characters/hermione/chibis/sex/n_04.png"
-    pause.1
-    "characters/hermione/chibis/sex/n_05.png"
-    pause.1
-    "characters/hermione/chibis/sex/n_06.png"
-    pause.1
-    "characters/hermione/chibis/sex/n_07.png"
-    pause.1
-    repeat
-
-image ani_her_sex_fast_naked:
-    zoom 0.5
-    
-    "characters/hermione/chibis/sex/n_01.png"
-    pause.05
-    "characters/hermione/chibis/sex/n_02.png"
-    pause.05
-    "characters/hermione/chibis/sex/n_03.png"
-    pause.05
-    "characters/hermione/chibis/sex/n_04.png"
-    pause.05
-    "characters/hermione/chibis/sex/n_05.png"
-    pause.05
-    "characters/hermione/chibis/sex/n_06.png"
-    pause.05
-    "characters/hermione/chibis/sex/n_07.png"
-    pause.05
-    repeat
-
-image ani_her_sex_cum_outside_naked:
-    zoom 0.5
-    
-    "characters/hermione/chibis/sex/sperm_n_01.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_02.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_03.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_04.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_05.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_06.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_07.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_08.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_09.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_10.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_11.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_12.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_13.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_14.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_15.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_16.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_17.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_18.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_19.png"
-    pause 2
-    "characters/hermione/chibis/sex/sperm_n_20.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_21.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_22.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_23.png"
-    pause.1
-    repeat

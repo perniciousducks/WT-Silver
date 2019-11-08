@@ -737,9 +737,9 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     show screen blkfade
                     with d3
 
-                    hide screen genie
-                    call gen_chibi("groping",460)
-                    with fade
+                    #hide screen genie
+                    #with fade
+                    #TODO Add chibi of Genie groping Luna's tits
 
                     ">You reach out swiftly and grab both of her creamy tits..."
                     hide screen blkfade
@@ -780,6 +780,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     ">You reach into your robe and pull out your cock..."
                     ">You spit on your hand to lube it before you start stroking..."
                     hide screen genie
+                    #TODO Fix chibi position (when replacing g_c_u screens)
                     $ gen_chibi_xpos = -20
                     $ gen_chibi_ypos = 10
                     $ g_c_u_pic = "jerking_off_02_ani"

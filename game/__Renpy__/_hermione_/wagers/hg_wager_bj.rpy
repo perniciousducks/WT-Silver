@@ -16,7 +16,7 @@ label hg_wager_bj:
             call her_main("Okay, I can do that...", "open", "base", "base", "mid_soft", cheeks="blush")
             call her_main("", "base", "base", "base", "mid_soft")
             g9 "Well, get over here then!"
-            call chibi_walk_desk_blkfade("hermione")
+            call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
             call blkfade
             hide screen genie
             call her_main("Should I turn around, [genie_name]?", "open", "worriedCl", "worried", "mid")
@@ -110,7 +110,8 @@ label hg_wager_bj:
             if her_whoring > 18:
                 call her_main("And it does feel good having my mouth full of your cock...", "soft", "happyCl", "base", "mid", cheeks="blush")
         m "Get over here then!"
-        call chibi_walk_desk_blkfade("hermione")
+        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+        call blkfade
         call play_music("playful_tension")
         hide screen hermione_main
         hide screen genie

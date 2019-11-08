@@ -1139,7 +1139,7 @@ label hermione_intro_E6:
         hide screen bld1
         pause.5
 
-        #show screen hermione_stand_f <- screen does not exist
+        call her_chibi("stand", flip=True)
         with d7
 
         call her_main(".................................", "annoyed", "base", "base", "R",flip=True)
@@ -1154,7 +1154,7 @@ label hermione_intro_E6:
                 call her_main("..............", "annoyed", "narrow", "angry", "R",cheeks="blush")
                 call her_main("Thank you, professor...")
             "\"That's enough. Here are your points...\"":
-                show screen hermione_stand #Hermione stands still.
+                call her_chibi("stand")
                 with d7
                 pause.5
                 show screen bld1
@@ -1162,7 +1162,7 @@ label hermione_intro_E6:
                 jump stupid_enogh
 
         m "Very good, you can turn back now..."
-        show screen hermione_stand #Hermione stands still.
+        call her_chibi("stand", flip=False)
         with d7
         pause.7
 

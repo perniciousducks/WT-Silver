@@ -20,7 +20,6 @@ label cho_chibi(action=None, xpos=None, ypos=None, flip=False):
     else: # stand
         $ cho_chibi.do(None)
 
-    $ cho_chibi.show()
     return
 
 label cho_walk(xpos=None, ypos=None, speed=None, action=None, loiter=True, redux_pause=0):

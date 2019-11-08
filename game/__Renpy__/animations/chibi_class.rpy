@@ -67,10 +67,11 @@ define chibi_places = {
 #TODO Define a reasonable base speed
 define chibi_base_speed = 100 # pixels/sec
 
+#TEMP skip say statements (for testing chibi code)
 # python early:
 #     def say_none(who, what, *args, **kwargs):
 #         return
-#     renpy.say = say_none #TEMP skip say statements (for testing chibi code)
+#     renpy.say = say_none
 
 init -1 python:
     from collections import OrderedDict
@@ -129,7 +130,7 @@ init -1 python:
             self.pos = (0,0)
             self.flip = False
             self.action = None
-            self.action_info = None
+            self.action_info = self.resolve_action(None)
             self.special = None
             self.update_callback = update_callback
             self.zorder = zorder
@@ -153,7 +154,7 @@ init -1 python:
             if self.update_callback:
                 self.update_callback(self)
 
-        def move(self, x=None, y=None, speed=1.0, time_speed=None):
+        def move(self, x=None, y=None, speed=1.0, time_speed=None, redux=False):
             pos = self.resolve_position(x,y)
             dist = math.sqrt((self.pos[0] - pos[0])**2 + (self.pos[1] - pos[1])**2)
             time = dist / (float(chibi_base_speed) * speed)
@@ -172,16 +173,24 @@ init -1 python:
                 # Current action is already a move action
                 move_action = self.action
             
-            # Apply the action with a transition
+            # Apply the action with a transform
             trans_name = self.resolve_action(move_action)[1]
             trans = self.resolve_transform(trans_name, self.pos, pos, self.flip, time)
             self.do(move_action, trans)
             self.position(pos[0], pos[1])
 
-            #TODO Implement "redux_pause" so move returns before animation is finished (following lines should still execute somehow)
-            renpy.pause(time)
-            if old_action != move_action:
-                self.do(old_action)
+            #TODO Add usage of redux parameter to chibi walk labels
+            if redux:
+                # Reduce the pause and don't do the old action
+                if not isinstance(redux, bool):
+                    time -= float(redux)
+                if time > 0:
+                    renpy.pause(time)
+            else:
+                # Pause while moving and then do the old action
+                renpy.pause(time)
+                if old_action != move_action:
+                    self.do(old_action)
 
         def do(self, action=None, trans=None):
             self.action = action

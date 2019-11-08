@@ -480,7 +480,8 @@ label hg_ps_cumslut_Scene_3:
     hide screen bld1
     with d3
 
-    call chibi_walk_desk_blkfade("hermione")
+    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call blkfade
     pause.3
 
     hide screen genie

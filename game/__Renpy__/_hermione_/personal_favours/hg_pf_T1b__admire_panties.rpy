@@ -363,7 +363,6 @@ label hg_pf_admire_panties_T3_E1:
             $ hermione_class.wear("panties")
 
             call update_her_uniform
-            call update_chibi_uniform
             call her_chibi("lift_skirt")
             call set_her_action("lift_skirt")
 
@@ -425,7 +424,6 @@ label hg_pf_admire_panties_T3_E2:
                 $ hermione_class.wear("panties")
 
                 call update_her_uniform
-                call update_chibi_uniform
                 call her_chibi("lift_skirt")
                 call set_her_action("lift_skirt")
 
@@ -458,8 +456,6 @@ label hg_pf_admire_panties_T3_E2:
                 $ hermione_class.strip("panties")
 
                 call update_her_uniform
-                hide screen hermione_chibi_lift_skirt
-                call update_chibi_uniform
 
                 call her_chibi("lift_skirt")
                 call set_her_action("lift_skirt")

@@ -122,12 +122,31 @@ image blkfade = "interface/blackfade.png"
 image whitefade = "interface/whitefade.png"
 image whitefade = "interface/whitefade.png"
 image con1 = "interface/cont1.png"
-image blk50 = im.Alpha("interface/blackfade.png", 0.5)
-image blk50 = im.Alpha("interface/blackfade.png", 0.5)
 
-image ctc3 = Animation("interface/ctc00.png", 0.2, "interface/ctc01.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc03.png", 0.2, "interface/ctc04.png", 0.5, "interface/ctc03.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc01.png", 0.2, xpos=0.995, ypos=0.995, xanchor=1.0, yanchor=1.0)
-image ctc4 = Animation("interface/ctc00.png", 0.2, "interface/ctc01.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc03.png", 0.2, "interface/ctc04.png", 0.5, "interface/ctc03.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc01.png", 0.2, xpos=0.99, ypos=0.995, xanchor=0.8, yanchor=1.0)
-image ctc7 = Animation("interface/ctc00.png", 0.2, "interface/ctc01.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc03.png", 0.2, "interface/ctc04.png", 0.5, "interface/ctc03.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc01.png", 0.2)
+image blk50: 
+    alpha 0.5
+    "interface/blackfade.png"
+
+image ctc:
+    pos (0.99, 0.995)
+    anchor (0.8, 1.0)
+    "interface/ctc00.png"
+    pause 0.2
+    "interface/ctc01.png"
+    pause 0.2
+    "interface/ctc02.png"
+    pause 0.2
+    "interface/ctc03.png"
+    pause 0.2
+    "interface/ctc04.png"
+    pause 0.5
+    "interface/ctc03.png"
+    pause 0.2
+    "interface/ctc02.png"
+    pause 0.2
+    "interface/ctc01.png"
+    pause 0.2
+    repeat
 
 # Emotions ^_^
 

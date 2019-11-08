@@ -376,3 +376,8 @@ image petting: #PETTING THE PHOENIX.
     "images/rooms/_objects_/phoenix/petting_ani/petting_01.png"
     pause 3
     repeat
+
+#TODO desk_idle_ani is supposed to be a Genie action (without desk?)
+image desk_idle_ani:
+    zoom 0.5
+    "images/animation/00_desk.png"

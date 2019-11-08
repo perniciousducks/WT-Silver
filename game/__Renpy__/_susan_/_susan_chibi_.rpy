@@ -18,7 +18,6 @@ label sus_chibi(action=None, xpos=None, ypos=None, flip=False):
     else: # stand
         $ susan_chibi.do(None)
 
-    $ susan_chibi.show()
     return
 
 label sus_walk(xpos=None, ypos=None, speed=None, action=None, loiter=True, redux_pause=0):

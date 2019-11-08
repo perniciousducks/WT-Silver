@@ -140,7 +140,8 @@ label hg_pf_grope_T1_intro_E1:
     m "Come closer [hermione_name]... Hop around my desk..."
     call her_main("*Uhm*... very well, Sir.", "disgust", "narrow", "base", "down")
 
-    call chibi_walk_desk_blkfade("hermione")
+    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call blkfade
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
     pause.5
@@ -221,7 +222,8 @@ label hg_pf_grope_T2_intro_E1:
     m "Well, I feel more like touching, actually..."
     her "...................................."
 
-    call chibi_walk_desk_blkfade("hermione")
+    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call blkfade
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 
@@ -284,7 +286,8 @@ label hg_pf_grope_T3_intro_E1:
     g9 "You just read my mind!"
     call her_main("...................", "disgust", "narrow", "base", "down")
 
-    call chibi_walk_desk_blkfade("hermione")
+    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call blkfade
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
 

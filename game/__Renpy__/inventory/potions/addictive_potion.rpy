@@ -558,7 +558,6 @@ label potion_scene_3_3_1:
     call her_main("...", "annoyed", "narrow", "angry", "R")
     call her_chibi("drink_potion","mid","base")
     with d3
-    hide screen hermione_stand
     call nar(">Hermione cautiously starts drinking the potion.")
     call her_main("", "cum", "worriedCl", "worried", "mid")
     pause .5
@@ -891,7 +890,7 @@ label potion_scene_3_4_1:
     show screen blkfade
     with d3
     hide screen bld1
-    hide screen hermione_stand
+    call her_chibi("hide")
     #SEX
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
@@ -1079,7 +1078,7 @@ label potion_scene_3_4_1:
     ">you carry her unconscious body back to her room to sleep the last of the potion off."
     hide screen ccg
     hide screen hermione_main
-    hide screen hermione_stand
+    call her_chibi("hide")
     show screen genie
     hide screen blkfade
     with d3

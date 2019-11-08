@@ -80,7 +80,7 @@ screen bld2():
     zorder 3
 
 screen ctc():
-    add "ctc4"
+    add "ctc"
     zorder 9
 
 screen gift():
@@ -256,20 +256,10 @@ screen plus_300():
     add "plus_300" at Position(xpos=450, ypos=120)
 
 
-
-
-
-
-
 screen c_scene(): #Snape Classroom Scene
     tag gc
     add "images/CG/scene_01.png" xpos 140 ypos 0
     zorder 4
-
-screen ch_hotdog():
-    add "ch_hem hotdog" xpos -70 ypos 10 #Desk sex ani.
-    zorder 0
-
 
 
 label teleport(position=None,effect=True,poof_label=None):
@@ -278,8 +268,8 @@ label teleport(position=None,effect=True,poof_label=None):
         $ teleport_ypos = gen_chibi_ypos-15
         $ teleport_zorder = 3
     elif position == "hermione":
-        $ teleport_xpos = her_chibi_xpos+45
-        $ teleport_ypos = her_chibi_ypos-80
+        $ teleport_xpos = hermione_chibi.pos[0]+45
+        $ teleport_ypos = hermione_chibi.pos[1]-80
         $ teleport_zorder = 3
     elif position == "cho":
         $ teleport_xpos = cho_chibi.pos[0]+45

@@ -537,11 +537,7 @@ label slytherin_match:
     $ ton_chibi_zorder = 2
     $ gen_chibi_zorder = 4
 
-    #$ her_chibi_scale = 0.4
-    #call her_chibi("sit", xpos=355, ypos=140, scale=0.4)
-    $ her_chibi_xpos = 330
-    $ her_chibi_ypos = 160
-    show screen hermione_lying
+    call her_chibi("lying", 330, 160)
     call ton_chibi("stand", xpos=395, ypos=110, flip=False)
     call sna_chibi("stand", xpos=260, ypos=0, flip=True)
     call gen_chibi("stand", xpos=210, ypos=40, flip=False) # TODO: mirror Genie's flip so it's the same as any other character.
@@ -745,7 +741,6 @@ label slytherin_match:
     with d3
     pause .5
 
-    $ her_chibi_scale = 0.5
     $ sna_chibi_zorder = 1
     $ her_chibi_zorder = 3
     $ gen_chibi_zorder = 2
@@ -871,9 +866,7 @@ label slytherin_match:
     $ gen_chibi_zorder = 3
     hide screen hermione_main
     hide screen grope_ass_podium
-    $ her_chibi_xpos = 325
-    $ her_chibi_ypos = 170
-    show screen hermione_kneel_pant
+    call her_chibi("kneel_pant", 325, 170)
     call gen_chibi("stand", flip=True)
     with d5
     # Genie walks back to his seat

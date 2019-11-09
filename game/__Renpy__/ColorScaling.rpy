@@ -94,5 +94,6 @@ init python:
                     self.sprite = sprite
                 return self.sprite
             # If for some reason crop calculation isn't finished yet, calculate on the main thread and recursively return the image.
-            crop_whitespace(self.images[self.image_index], self)
+            self.box = crop_whitespace(self.images[self.image_index])
+            self.done = True
             return self.get_image()

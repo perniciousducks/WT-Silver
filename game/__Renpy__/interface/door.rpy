@@ -103,10 +103,7 @@ screen door_menu(xx, yy):
 
                                 add "interface/achievements/"+interface_color+"/spacer_left.png"
                             add "interface/achievements/"+interface_color+"/iconbox.png" yoffset 1
-                            if not door_dict[char]["busy"]:
-                                $ image_zoom = crop_image_zoom("interface/icons/head/"+door_dict.get(char).get("ico")+".png", 42, 42)
-                            else:
-                                $ image_zoom = crop_image_zoom("interface/icons/head/"+door_dict.get(char).get("ico")+".png", 42, 42, True)
+                            $ image_zoom = crop_image_zoom("interface/icons/head/"+door_dict[char]["ico"]+".png", 42, 42, door_dict[char]["busy"])
                             frame:
                                 style "empty"
                                 xsize 42

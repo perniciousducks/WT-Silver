@@ -5,7 +5,7 @@ init python:
     with renpy.file(".whitespace") as fp:
         line = fp.readline()
         while line:
-            whitespace_dict[line.split(':')[0]] = line.split(':')[1].split(',')
+            whitespace_dict[line.split(':')[0]] = tuple(int(x) for x in line.split(':')[1].split(','))
             line = fp.readline()
             
     def start_image_crop():
@@ -26,7 +26,7 @@ init python:
         except KeyError:
             surf = Image(path).load()
             box = surf.get_bounding_rect() # Does not return a list/tuple but an object!
-            box = (box[0], box[1], box[2], box[3])
+            box = tuple(x for x in box)
             whitespace_dict[path] = box
             
         if thread:

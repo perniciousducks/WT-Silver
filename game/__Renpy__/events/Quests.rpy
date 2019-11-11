@@ -341,6 +341,10 @@ default cho_quid = quest_class(
     lock_practice = False,
     lock_tactic   = False,
     in_progress   = False,
+    
+    #hufflepuff_talk = False,
+    slytherin_talk = False,
+    gryffindor_talk = False
 )
 
 default cho_quiz = quest_class(

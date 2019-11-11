@@ -837,6 +837,18 @@ label hufflepuff_match_return:
     call cho_main("I better go celebrate with the team now!","open","base","base","mid")
     m "Well, off you go then."
     call cho_main("Thank you Professor...","smile","wink","base","mid")
+    #
+    # TODO: Add panty flash in form of a reward/tease
+    #
+    # cho "But before I go...." # blushes
+    # (flashes panties)
+    # g4 "!!!"
+    # (equips skirt again)
+    # cho "I gotta go."
+    # starts walking out of the office
+    # m "Hey but I ha-..."
+    # (cho leaves)
+    # m "Oh well.. At least I caught a glimpse of the goodies."
 
     # Cho leaves.
     call cho_walk(action="leave")

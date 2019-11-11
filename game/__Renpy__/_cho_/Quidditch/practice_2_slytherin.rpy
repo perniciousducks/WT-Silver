@@ -1,7 +1,50 @@
+### Cho Intro Slytherin Training ###
+label cc_st_intro:
+    $ cho_quid.slytherin_talk = True
+    
+    call play_sound("door")
+    call cho_chibi("stand","mid","base")
+    with d3
+    
+    call play_music("stop")
+    
+    # TODO: Needs posing
+    cho "Hello, [cho_genie_name]..." # sad
+    m "[cho_name]."
+    m "Where did that high-spirit from yesterday fly off to?"
+    cho "Nowhere, [cho_genie_name], I'm still very happy we won the game, it's just.." # worried/sad
+    m "Just?"
+    cho "I'm worried about the future." # sad/relieved
+    m "The futu...{w=0.7}{nw}"
+    m "You didn't get pregnant during your little celebration event, did you?"
+    call play_music("cho_theme")
+    cho "WHAT?!" # Upset/whatthefuck face
+    cho "Sir, why would you even suggest that?!" # upset
+    m "Then what is it?"
+    cho "It's about the upcoming quidditch match" # annoyed - eyes R, mouth annoyed
+    m "Oh... Of course..."
+    m "..."
+    m "Well?"
+    cho "Well, what?" # confused
+    m "Tell me who we're up against next..."
+    cho "Slytherin, [cho_genie_name]..." # eyebrows sad, eyes mid, mouth pout
+    g9 "Oh, sweet!"
+    cho "I'm glad you're optimistic, they're an entirely different ballpark compared to Hufflepuff." # annoyed
+    m "Really?"
+    m "Why's that?"
+    cho "They're brutal compared to Hufflepuff. They'd do anything they could get away with..." # eyebrows sad, eyes mid, mouth pout
+    m "Then we should do the same shouldn't we?"
+    cho "I suppose..." # eyes R eyebrows normal mouth pout
+    m "Where's did the positive spirits from winning that last match go?"
+    m "We'll show those Slytherins what we got no problem!"
+    g9 "(And show Snape who's boss.)"
+    cho "..." # slight smile
+    m "Trust me, our tactics has worked perfectly thus far hasn't it?"
+    cho "I... yes... yes you're right, Thank you, [cho_genie_name]." # happy
 
+    jump cho_requests
 
 ### Cho Slytherin Training ###
-
 label cc_st_start:
 
     call cho_main("", "base", "base", "base", "mid", xpos="right", ypos="base", trans="fade")

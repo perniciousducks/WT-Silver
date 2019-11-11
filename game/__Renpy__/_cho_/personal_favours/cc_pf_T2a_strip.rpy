@@ -66,6 +66,9 @@ label cc_pf_strip_T1_intro_E1:
     m "Go on, girl. Start with the top..."
     call cho_main("No!","scream","closed","angry","mid", trans="hpunch")
     call cho_main("Why are you even asking me to do such a thing?!","angry","narrow","angry","mid")
+    m "Didn't you take your skirt off for me after the Hufflepuff match?"
+    call cho_main("{size=-4}Well, I probably shouldn't have done that..{/size}","pout","base","sad","R")
+    m "Sorry?"
     m "Have you already forgotten that I'm here to train you?"
     call cho_main("And I'm very thankful for that, Sir, but...","open","closed","base","mid")
     m "Am I not your trusted mentor?"
@@ -81,6 +84,8 @@ label cc_pf_strip_T1_intro_E1:
     call cho_main("You're really old...","soft","narrow","sad","downR")
     m "Pardon me?"
     call cho_main("I meant... you're our headmaster! It just feels wrong to me!","soft","narrow","sad","mid")
+    m "It didn't bother you the last time you barged into my office..."
+    call cho_main("Well, we had just won the game and all that... Maybe my judgement...","pout","closed","sad","R")
     m "Are you one of those shy girls, Miss Chang?"
     call cho_main("No, Sir. I wouldn't say I'm shy, but...","soft","narrow","sad","downR")
     m "Well then prove me you aren't, girl!"

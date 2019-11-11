@@ -149,6 +149,28 @@ init -2 python:
             
         if system.path.isfile(config.basedir+"/game/test.rpyc") and not system.path.isfile(config.basedir+"/game/test.rpy"):
             system.remove(config.basedir+"/game/test.rpyc")
+            
+    def save_whitespace(mode=0):
+        """ Saves whitespace information to .whitespace file
+            mode = 0 - Whitespace_dict
+            mode = 1 - file crawler """
+        file = config.basedir+"/game/.whitespace"
+        
+        open(file, "w").close()
+        
+        with open(file, "w") as fp:
+            if mode == 0:
+                for key, value in whitespace_dict.iteritems():
+                    fp.write("{}:{},{},{},{}\n".format(key, value[0], value[1], value[2], value[3]))
+            elif mode == 1:
+                print "This might take a while... If your game freezes, that's normal."
+                time.sleep(3)
+                for dp, dn, fn in system.walk(config.basedir+"/game/"):
+                    for i in [f for f in fn if f.endswith(".png")]:
+                        img = system.path.join(dp, i).replace("\\", "/").split("/game/")[1]
+                        box = crop_whitespace(img)
+                        fp.write("{}:{},{},{},{}\n".format(img, box[0], box[1], box[2], box[3]))
+        return "Saved successfuly"
         
 label missing_label():
     $ renpy.choice_for_skipping()

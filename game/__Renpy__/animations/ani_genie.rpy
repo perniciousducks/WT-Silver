@@ -4,6 +4,11 @@ image genie_stand_ani:
     
 image genie_stand_alternative:
     "characters/genie/chibis/standing.png"
+    
+image genie_stand_shocked:
+    zoom 0.5
+    
+    "characters/genie/chibis/shocked/01.png"
 
 image genie_walk_ani:
     "characters/genie/chibis/walk_01.png"

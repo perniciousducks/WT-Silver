@@ -172,3 +172,20 @@ image ch_ton sit_top:
     zoom 0.5
     
     "characters/tonks/chibis/drinking/nt_top.png"
+
+image ch_ton slack_jaw:
+    "characters/tonks/chibis/slack_jaw/nt_stand_01.png"
+    pause 2
+    "characters/tonks/chibis/slack_jaw/nt_stand_02.png"
+    pause.08
+    "characters/tonks/chibis/slack_jaw/nt_stand_01.png"
+    pause 5
+    "characters/tonks/chibis/slack_jaw/nt_stand_02.png"
+    pause.08
+    "characters/tonks/chibis/slack_jaw/nt_stand_01.png"
+    pause.08
+    "characters/tonks/chibis/slack_jaw/nt_stand_02.png"
+    pause.08
+    "characters/tonks/chibis/slack_jaw/nt_stand_01.png"
+    pause 3
+    repeat

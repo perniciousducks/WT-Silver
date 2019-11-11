@@ -29,11 +29,14 @@ init python:
             renpy.with_statement(d3)
         return
         
-screen gfx_effect(start_x, start_y, target_x, target_y, img, xanchor=0.5, yanchor=0.5, zoom=0.5, duration=1.0, timer=0.5):
+screen gfx_effect(start_x=None, start_y=None, target_x=None, target_y=None, img, xanchor=0.5, yanchor=0.5, zoom=0.5, duration=1.0, timer=0.5):
     tag gfx
     zorder 6
 
-    add img xanchor xanchor yanchor yanchor zoom zoom at moveto(start_x, start_y, target_x, target_y, duration)
+    if target_x:
+        add img xanchor xanchor yanchor yanchor zoom zoom at moveto(start_x, start_y, target_x, target_y, duration)
+    else:
+        add img xanchor xanchor yanchor yanchor zoom zoom xpos start_x ypos start_y
     timer timer action Hide("gfx_effect")
 
 label t_wardrobe(char_label):

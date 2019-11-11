@@ -106,3 +106,7 @@ image snape_cum_layer:
     linear .2 alpha 0
     pause .5
     repeat
+
+image snape_stand_shocked:
+    zoom 0.5
+    "characters/snape/chibis/shocked/01.png"

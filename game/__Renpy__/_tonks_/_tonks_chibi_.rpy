@@ -13,6 +13,8 @@ label ton_chibi(action=None, xpos=None, ypos=None, flip=False):
         with d3
         pause .5
         return
+    elif action == "slack_jaw":
+        pass #TODO Add slack_jaw action to Tonks chibi
     elif action == "reset":
         $ tonks_chibi.do(None)
     else: # stand

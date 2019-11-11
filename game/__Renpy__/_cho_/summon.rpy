@@ -51,6 +51,10 @@ label summon_cho:
                 jump cho_requests
             jump cho_training_menu
             
+        "{color=#858585}-Training-{icon=interface/icons/small/quidditch.png}" if cho_quid.lock_training:
+            m "(She's as ready as one can be.)"
+            jump cho_requests
+            
             
         "-Sexual favours-{icon=interface/icons/small/condom.png}" if cho_favors_unlocked:
             if 3 > cho_mood > 1:

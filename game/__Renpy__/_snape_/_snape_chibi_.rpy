@@ -20,6 +20,8 @@ label sna_chibi(action=None, xpos=None, ypos=None, flip=False):
     #TODO Add Snape chibi wand actions
     # elif action in ("wand",):
     #     $ snape_chibi.do(action)
+    elif action == "stand_shocked":
+        pass #TODO Add action stand_shocked to Snape chibi
     elif action in ("jerking_off", "cumming", "cumming_done"):
         $ snape_chibi.hide() # Not handled by chibi class
         show screen snape_jerking_off(action)

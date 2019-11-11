@@ -57,6 +57,8 @@ default hermione_outfit_custom = outfit_class(name = "Default", group = [hermion
 
 # Outfits
 default hermione_outfit_default = outfit_class(name = "Default", group=[hermione_hair_base.clone(), hermione_cloth_topschool1.clone(), hermione_cloth_schoolskirt1.clone()])
+default hermione_outfit_default_no_vest = outfit_class(name = "Default", group=[hermione_hair_base.clone(), hermione_cloth_topschool3.clone(), hermione_cloth_schoolskirt1.clone()])
+default hermione_outfit_default_no_tie_open_shirt = outfit_class(name = "Default", group=[hermione_hair_base.clone(), hermione_cloth_topschool5.clone(), hermione_cloth_schoolskirt1.clone()])
         
 label default_hermione_class_init:
 python:

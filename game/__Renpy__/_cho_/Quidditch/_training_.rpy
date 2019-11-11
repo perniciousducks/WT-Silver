@@ -243,7 +243,6 @@ label cho_quid_E2:
     # Scene Setup
     show screen chair_left
     show screen desk
-    call update_gen_chibi # Reset Chibi.
     call gen_chibi("stand","desk","base")
 
     $ cho_outfit_last.save()
@@ -278,7 +277,6 @@ label change_quidditch_tactics:
 
     show screen chair_left
     show screen desk
-    call update_gen_chibi # Reset Chibi.
     call gen_chibi("stand","desk","base")
 
     $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
@@ -449,9 +447,7 @@ label demonstrate_tactic(position=""):
         call cho_main("How is this?","open","base","base","down", ypos="head")
 
         # Genie looks up.
-        call gen_chibi("hide")
-        $ gen_chibi_stand = "genie_stand_alternative"
-        call gen_chibi("stand","desk","base")
+        call gen_chibi("standing_alt","desk","base")
         show screen bld1
         with d3
 
@@ -465,7 +461,6 @@ label demonstrate_tactic(position=""):
             m "(...)"
             g4 "(You would never be able to see her panties while she's wearing those pants... Such a tragedy!)"
 
-        call update_gen_chibi
         call gen_chibi("stand","desk","base")
         show screen bld1
         with d3

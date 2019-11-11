@@ -12,10 +12,12 @@ screen room_of_requirement():
     add im.Flip("images/rooms/room_of_requirement/corridor.png", horizontal=True)
     if mirror_image != 0:
         add im.Flip(mirror_bg[mirror_image], horizontal=True) xpos -540 at mirrage
-    if renpy.get_screen("genie_stand"):
-        use genie_stand_mirror
-    if renpy.get_screen("genie_walk"):
-        use genie_walk_mirror
+
+    # Show a copy of chibi screen in the mirror
+    $ mirror_chibi = renpy.get_screen("genie_chibi")
+    if mirror_chibi:
+        add mirror_chibi.copy() xzoom -1 xoffset 450-config.screen_width
+    
     add "images/rooms/room_of_requirement/empty_room.png"
     add "images/rooms/_objects_/doors/door_idle_night.png" xpos 898 ypos 315 xanchor 0.5 yanchor 0.5 zoom 0.5
     add "images/rooms/room_of_requirement/mirror.png" xpos 100 ypos 180
@@ -56,20 +58,6 @@ screen room_of_requirement_menu():
         tooltip "Back to office"
        
         action Jump("return_office")
-
-screen genie_stand_mirror():
-    tag genie_chibi_mirror
-
-    add gen_chibi_stand xpos gen_chibi_xpos-110 ypos gen_chibi_ypos xzoom -gen_chibi_flip #zoom (1.0/scaleratio)
-
-    zorder gen_chibi_zorder
-
-screen genie_walk_mirror():
-    tag genie_chibi_mirror
-
-    add gen_chibi_walk at gen_walk_trans(-walk_xpos, walk_xpos2-110, walk_ypos, walk_ypos2 ) xzoom -gen_chibi_flip #zoom (1.0/scaleratio)
-
-    zorder gen_chibi_zorder
 
 label hide_room_req:
     hide screen room_of_requirement_menu

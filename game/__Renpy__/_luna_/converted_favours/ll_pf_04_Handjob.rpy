@@ -26,10 +26,7 @@ label luna_favour_4: ###Luna handjob #DONE
         hide screen genie
         show screen chair_left
         show screen desk
-        $ gen_chibi_xpos = -20
-        $ gen_chibi_ypos = 10
-        $ g_c_u_pic = "jerking_off_02_ani"
-        show screen g_c_u
+        call gen_chibi("hold_dick", "desk", "base")
         with fade
         hide screen blktone
         hide screen blkfade
@@ -152,14 +149,8 @@ label luna_favour_4: ###Luna handjob #DONE
             ">Luna spits into her hand again and places it back on your cock."
         ">She then starts pumping your cock even faster."
         g4 "Gods yes..."
-        g4 "(This is it, where should I cum?)"
-
-        menu:
-            "-On her cunt!-":
-                ">You place your hand on Luna's cheek, trying to hold her in position."
-
-            "-On her tits!-":
-                ">You place your hand on the top of Luna's should and slowly try to force her down to be level with your crouch."
+        
+        ">You place your hand on Luna's shoulder and slowly try to force her down to your crotch."
 
         call lun_main("[lun_genie_name]!!!","clench","angry","mad","mid")
         call lun_main("You're not trying to cum on me are you?","upset","mad","mad","mid")
@@ -189,6 +180,9 @@ label luna_favour_4: ###Luna handjob #DONE
         menu:
             "Where should you cum?"
             "-Face-":
+                ">You start shooting your load across her face, coating her in your sticky cum."
+                call gen_chibi("cumming")
+
                 $ luna_choice = 1
                 $ luna_cum = 11
                 $ luna_wear_cum = True
@@ -196,21 +190,18 @@ label luna_favour_4: ###Luna handjob #DONE
 
                 call lun_main("{image=textheart}{image=textheart}{image=textheart}","silly","happyCl","sad","down")
                 call ctc
-
-                ">You start shooting your load across her face, coating her in your sticky cum."
-                hide screen g_c_c_u
-                $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
                 $ luna_r_arm = 2
                 $ luna_l_arm = 2
                 $ genie_base = "characters/genie/base/open.png"
                 hide screen genie_main
+                call gen_chibi("hold_dick")
                 with d3
 
                 $ luna_xpos = 390
                 $ luna_ypos = 0
                 ">Luna hops to her feet."
                 $ luna_cum = 12
-                ">Luna then collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."
+                ">Luna then collects a strand of cum on the end of her finger, staring at it intently before putting it into her mouth."
                 call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","angry","angry","mid")
                 call lun_main("Just give me a moment to clean up sir...","base","seductive","angry","mid")
                 m "Sure..."
@@ -235,6 +226,7 @@ label luna_favour_4: ###Luna handjob #DONE
             "-Mouth-":
                 $ luna_choice = 2
                 call cum_block
+                call gen_chibi("cumming")
 
                 call lun_main("{image=textheart}{image=textheart}{image=textheart}","full","happyCl","sad","down")
                 call ctc
@@ -248,8 +240,8 @@ label luna_favour_4: ###Luna handjob #DONE
                 call lun_main("...","full","seductive","down","sad")
                 g4 "{size=+10}TAKE IT ALL YOU big-titted sLUT!{/size}"
                 g4 "mmmm....."
-                hide screen g_c_c_u
-                $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
+
+                call gen_chibi("hold_dick")
                 $ luna_r_arm = 2
                 $ luna_l_arm = 2
                 $ genie_base = "characters/genie/base/open.png"
@@ -262,7 +254,7 @@ label luna_favour_4: ###Luna handjob #DONE
                 m "Ahh... that was fantastic slut..."
                 call lun_main("[lun_genie_name]...","base","suspicious","angry","R")
 
-        $ g_c_u_pic = "characters/genie/chibis/masturbating/b_01.png"
+        call gen_chibi("hold_dick")
         $ luna_xpos = 390
         $ luna_ypos = 0
         m "well then, Here's your payment, [lun_name]."
@@ -281,7 +273,6 @@ label luna_favour_4: ###Luna handjob #DONE
         $ luna_wear_cum_under = False
         m "Weird..."
 
-        hide screen g_c_u
         show screen genie
         hide screen chair_left
         hide screen desk
@@ -354,10 +345,7 @@ label luna_favour_4: ###Luna handjob #DONE
             hide screen genie
             show screen chair_left
             show screen desk
-            $ gen_chibi_xpos = -20
-            $ gen_chibi_ypos = 10
-            $ g_c_u_pic = "jerking_off_02_ani"
-            show screen g_c_u
+            call gen_chibi("jerking_off")
             with fade
             hide screen blktone
             hide screen blkfade
@@ -481,10 +469,7 @@ label luna_favour_4: ###Luna handjob #DONE
             g4 "mmmm"
             call lun_main("Now...","normal","mad","mad","mid")
             call lun_main("Cum.","base","seductive","angry","mid")
-            $ g_c_c_u_pic = "jerking_off_cum_ani"
-            $ genie_cum_chibi_xpos = -45
-            $ genie_cum_chibi_ypos = 5
-            show screen g_c_c_u
+            call gen_chibi("cumming") #TODO Use "short distance" cumming animation
             $ luna_wear_cum_under = True
             $ luna_cum = 10
             call cum_block
@@ -495,8 +480,7 @@ label luna_favour_4: ###Luna handjob #DONE
             call lun_main("(It's so warm...)","base","seductive","sad","R")
             g4 "{size=+10}TAKE IT ALL YOU sLUT!{/size}"
             g4 "mmmm....."
-            hide screen g_c_c_u
-            $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
+            call gen_chibi("hold_dick")
             $ luna_r_arm = 2
             hide screen genie_main
             with d3
@@ -506,7 +490,6 @@ label luna_favour_4: ###Luna handjob #DONE
             call lun_main("[lun_genie_name]!","base","mad","mad","mid")
             call lun_main("How could you! Cumming on your students {size=-10}pussy{/size}...","base","angry","angry","mid")
             m "Ahh... that was fantastic slut..."
-            $ g_c_u_pic = "characters/genie/chibis/masturbating/b_01.png"
             call lun_main("[lun_genie_name]...","base","suspicious","angry","R")
 
         else: #last time event is run before cum addict variant
@@ -573,10 +556,7 @@ label luna_favour_4: ###Luna handjob #DONE
             hide screen genie
             show screen chair_left
             show screen desk
-            $ gen_chibi_xpos = -20
-            $ gen_chibi_ypos = 10
-            $ g_c_u_pic = "jerking_off_02_ani"
-            show screen g_c_u
+            call gen_chibi("jerking_off")
             with fade
             hide screen blktone
             hide screen blkfade
@@ -726,20 +706,18 @@ label luna_favour_4: ###Luna handjob #DONE
             menu:
                 "-boobs-":
                     $ current_payout += 100
-                    show screen g_c_c_u
                     $ luna_cum = 5
                     $ luna_wear_cum = True
                     call cum_block
-
+                    call gen_chibi("cumming")
                     ">You start shooting your load across her chest, coating her tits in cum."
 
                 "-thighs-":
                     $ current_payout += 50
-                    show screen g_c_c_u
                     $ luna_cum = 10
                     $ luna_wear_cum = True
                     call cum_block
-
+                    call gen_chibi("cumming")
                     ">You start spurting over Luna's soft thighs, coating her pussy in cum."
 
                 "-{size=+10}FACE!{/size}-":
@@ -750,8 +728,7 @@ label luna_favour_4: ###Luna handjob #DONE
             call lun_main("(It's so warm...)","base","seductive","sad","R")
             g4 "{size=+10}TAKE IT ALL YOU big-titted sLUT!{/size}"
             g4 "mmmm....."
-            hide screen g_c_c_u
-            $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
+            call gen_chibi("hold_dick")
             $ luna_r_arm = 2
             hide screen genie_main
             with d3
@@ -782,7 +759,7 @@ label luna_favour_4: ###Luna handjob #DONE
                 call lun_main("amazing...","base","seductive","sad","mid")
 
             m "Ahh... that was fantastic slut..."
-            $ g_c_u_pic = "characters/genie/chibis/masturbating/b_01.png"
+            call gen_chibi("hold_dick")
             call lun_main("[lun_genie_name]...","base","suspicious","angry","R")
 
     hide screen luna_main
@@ -801,7 +778,6 @@ label luna_favour_4: ###Luna handjob #DONE
     $ luna_wear_cum = False
     $ luna_wear_cum_under = False
 
-    hide screen g_c_u
     show screen genie
     hide screen chair_left
     hide screen desk
@@ -832,8 +808,7 @@ label luna_cum_addict_event:
     call lun_main("(What's this smell?)","pout","seductive","sad","downL")
     g4 "{size=+10}TAKE IT ALL YOU big-titted SLUT!{/size}"
     g4 "mmmm....."
-    hide screen g_c_c_u
-    $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
+    call gen_chibi("hold_dick")
     $ luna_r_arm = 2
     hide screen genie_main
     $ genie_base = "characters/genie/base/open.png"
@@ -843,7 +818,6 @@ label luna_cum_addict_event:
     call lun_main("......","normal","angry","angry","downL")
     call lun_main(".........","base","seductive","sad","empty")
     m "Ahh... that was fantastic slut..."
-    $ g_c_u_pic = "characters/genie/chibis/masturbating/b_01.png"
     call lun_main("What {size=+4}is {size=+4}this {size=+4}smell?{/size}","base","wide","sad","mid")
     m "Cum?"
     ">Luna gets up from her knees"

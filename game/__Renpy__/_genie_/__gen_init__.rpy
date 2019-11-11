@@ -8,18 +8,6 @@ default use_genie_head   = False
 default genie_base = "characters/genie/base/base.png"
 default genie_face = "characters/genie/face/base.png"
 
-# Chibi
-default gen_chibi_xpos   = 500
-default gen_chibi_ypos   = 190
-default gen_speed        = 2.0
-default gen_chibi_zorder = 2
-default gen_chibi_flip   = 1
-default gen_chibi_stand  = "genie_stand_ani"
-default gen_chibi_walk   = "genie_walk_ani"
-
-default genie_cum_chibi_xpos = -45
-default genie_cum_chibi_ypos = -5
-
 # Stats
 default imagination      = 1
 default bdsm_imagination = 1

@@ -52,16 +52,19 @@ screen chibi(chibi_object):
         frame: # Debug frame
             background "#00ff0055"
 
-#TODO Fix: Coordinates vary for some chibis
+#TODO Fix: Coordinates vary for some chibis (maybe resolve positions outside of chibi class)
 #TODO Anchor chibi transforms to (0.5, 1.0) and realign positions
 define chibi_places = {
     "mid": (540, None), # cho:560 lun:580 sna:500 gen:500
     "desk": (440, None),
     "desk_close": (425, None),
     "on_desk": (350, 180),
-    "behind_desk": (230, 260),
+    "behind_desk": (230, 260), # gen:210, 190
     "door": (750, None),
     "base": (None, 250), # sna: 190 (240/245?) gen: 190
+    "left": (100, None), # Genie only?
+    "fireplace": (550, 160), # Genie only?
+    "cupboard": (260, None), # Genie only?
 }
 
 #TODO Define a reasonable base speed

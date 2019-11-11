@@ -1414,11 +1414,8 @@ label l_tutoring:
 
         call her_chibi("hide")
         hide screen genie
-        $ gen_chibi_xpos = -10
-        $ gen_chibi_ypos = 10
-        $ g_c_u_pic = "blowjob_ani"
+        call hg_chibi_transition("bj")
         show screen chair_left
-        show screen g_c_u
         call hide_blkfade
         call ctc
 
@@ -1435,8 +1432,7 @@ label l_tutoring:
         g11 "Yes!"
 
         call cum_block
-        $ g_c_u_pic = "cum_in_mouth_ani"
-        show screen g_c_u
+        call hg_chibi_transition("bj_cumming_in")
         hide screen bld1
         with d3
 
@@ -1447,7 +1443,6 @@ label l_tutoring:
         call blkfade
 
         ">She wipes her mouth."
-        hide screen g_c_u
         hide screen chair_left
         show screen genie
         call her_chibi("stand","desk","base")

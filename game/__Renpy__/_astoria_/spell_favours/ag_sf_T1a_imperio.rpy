@@ -103,7 +103,7 @@ label ag_se_imperio_sb_E1:
     with d3
     pause.8
 
-    call gen_chibi("jerking_off_behind_desk")
+    call gen_chibi("jerk_off_behind_desk")
     pause.5
 
     call ast_main("...","annoyed","narrow","base","mid")
@@ -364,7 +364,7 @@ label ag_se_imperio_sb_E2:
     hide screen bld1
     with d3
     pause.1
-    call gen_chibi("jerking_off_behind_desk")
+    call gen_chibi("jerk_off_behind_desk")
     pause.8
 
     call ast_main("[ast_genie_name]! Are you touching yourself?","scream","base","base","mid")
@@ -421,7 +421,7 @@ label ag_se_imperio_sb_E2:
     hide screen bld1
     with d3
     pause.1
-    call gen_chibi("cumming_behind_desk")
+    call gen_chibi("cum_behind_desk")
     call cum_block
     g4 "{size=+10}AHHH... YESS!!!!{/size}"
     call ast_main("Woah... I didn't think you'd have that much in you, sir...","clench","base","base","mid")
@@ -654,7 +654,7 @@ label ag_se_imperio_sb_E3:
     hide screen bld1
     with d3
     pause.1
-    call gen_chibi("jerking_off_behind_desk")
+    call gen_chibi("jerk_off_behind_desk")
     pause.8
 
     show screen bld1
@@ -803,7 +803,7 @@ label ag_se_imperio_sb_E3:
 
     g4 "HERE IT COMES SLUT!"
     hide screen bld1
-    call gen_chibi("cumming_behind_desk")
+    call gen_chibi("cum_behind_desk")
     call cum_block
     sus "No wait! Astoria, you said I could go--"
     call cum_block

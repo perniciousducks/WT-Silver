@@ -13,7 +13,6 @@ label a_christmas_tale:
     $ daytime = False #Night
     call update_interface_color
     $ room_deco = "_deco_1" #Xmas deco
-    $ gen_chibi_stand = "characters/misc/santa/santa_chibi.png"
 
     call room("main_room")
     hide screen genie
@@ -65,14 +64,16 @@ label a_christmas_tale:
 
     call play_sound("bump")
     hide screen fireplace_fire
-    call gen_chibi("stand","620","150")
-    call teleport("genie")
+    # Teleport Santa Genie into the fireplace
+    show screen genie_santa_chibi(620, 150)
+    call teleport((620+75, 150-15))
     pause.8
 
     nar "A figure appeared, in the most silent of nights."
     pause.2
 
-    call gen_chibi("stand","620","150",flip=True)
+    # Turn around
+    show screen genie_santa_chibi(620, 150, True)
     with d3
     pause.2
 
@@ -104,8 +105,9 @@ label a_christmas_tale:
     nar "But then he froze on the spot."
 
     hide screen bld1
-    call gen_chibi("hide")
-    call teleport("genie")
+    # Teleport away
+    hide screen genie_chibi
+    call teleport((620+75, 150-15))
     with d3
     pause.5
 
@@ -180,9 +182,14 @@ label a_christmas_tale:
     #Reset
     $ daytime = temp_time
     call update_interface_color
-    call update_gen_chibi
 
     #Unlock Xmas Deco
     $ unlocked_xmas_deco = True
 
     jump enter_room_of_req
+
+# Screen with Genie dressed as Santa (only used in Christmas tale)
+screen genie_santa_chibi(x, y, flip=False):
+    tag genie_chibi
+    zorder 2
+    add "characters/misc/santa/santa_chibi.png" pos (x,y) zoom 0.5 xzoom (-1 if flip else 1)

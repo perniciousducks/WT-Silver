@@ -20,12 +20,9 @@ label sna_chibi(action=None, xpos=None, ypos=None, flip=False):
     #TODO Add Snape chibi wand actions
     # elif action in ("wand",):
     #     $ snape_chibi.do(action)
-    elif action == "jerking_off":
+    elif action in ("jerking_off", "cumming", "cumming_done"):
         $ snape_chibi.hide() # Not handled by chibi class
-        show screen snape_jerking_off
-    elif action == "cumming":
-        $ snape_chibi.hide() # Not handled by chibi class
-        show screen snape_jerking_off_cum
+        show screen snape_jerking_off(action)
     elif action == "hold_dick":
         $ snape_chibi.hide() # Not handled by chibi class
         show screen snape_stands_holds_dick
@@ -81,15 +78,15 @@ screen with_snape(ani=False):
             add "characters/genie/chibis/drinking/01.png" xpos 435 ypos 200 zoom 0.5
         add "characters/snape/chibis/drinking/01.png" xpos 618 ypos 200 zoom 0.5
 
-screen snape_jerking_off():
+screen snape_jerking_off(action="jerking_off"):
     tag snape_chibi
     zorder snape_chibi.zorder
-    add "snape_jerking_off" pos snape_chibi.pos
-
-screen snape_jerking_off_cum():
-    tag snape_chibi
-    zorder snape_chibi.zorder
-    add "snape_jerking_off_cum" pos snape_chibi.pos
+    if action == "cumming":
+        add "snape_jerking_off_cum" pos snape_chibi.pos
+    elif action == "cumming_done":
+        add "snape_jerking_off_cum_done" pos snape_chibi.pos
+    else:
+        add "snape_jerking_off" pos snape_chibi.pos
 
 screen snape_stands_holds_dick():
     tag snape_chibi

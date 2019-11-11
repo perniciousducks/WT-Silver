@@ -1,4 +1,6 @@
 label her_chibi(action=None, xpos=None, ypos=None, flip=False, pic=None):
+    hide screen favor # screen tag
+
     $ hermione_chibi.position(xpos, ypos, flip)
 
     if action == "hide":
@@ -25,6 +27,10 @@ label her_chibi(action=None, xpos=None, ypos=None, flip=False, pic=None):
     elif action == "dance":
         $ hermione_chibi.hide()
         show screen hermione_chibi_dance
+
+    elif action == "dance_pause":
+        $ hermione_chibi.hide()
+        show screen hermione_chibi_dance_pause
 
     elif action == "top_naked":
         $ hermione_chibi.hide()
@@ -53,12 +59,6 @@ label her_chibi(action=None, xpos=None, ypos=None, flip=False, pic=None):
     elif action == "kneel_pant":
         $ hermione_chibi.hide()
         show screen hermione_kneel_pant
-
-    elif action == "image" and pic:
-        $ hermione_chibi.hide()
-        # Add specific xpos and ypos number when calling.
-        $ h_c_u_pic = "characters/hermione/chibis/"+str(pic)+".png"
-        show screen h_c_u
 
     elif action == "reset":
         $ hermione_chibi.do(None)
@@ -94,15 +94,16 @@ label her_walk(xpos=None, ypos=None, speed=None, action=None, loiter=True, redux
 
     return
 
+#TODO Convert Hermione chibis once cloth layers are made
 # Screens
 screen hermione_chibi_lift_top():
     tag hermione_chibi
     add "characters/hermione/chibis/lift_top/tits_00.png" pos hermione_chibi.pos zoom 0.5
-    zorder her_chibi_zorder
+    zorder hermione_chibi.zorder
 
 screen hermione_chibi_lift_skirt():
     tag hermione_chibi
-    zorder her_chibi_zorder
+    zorder hermione_chibi.zorder
     if hermione_wear_panties:
         #TODO Move this into the actual event, use it to set clothing state before showing chibi
         if hg_pf_admire_panties.counter <= 1:
@@ -114,12 +115,12 @@ screen hermione_chibi_lift_skirt():
 
 screen ch_potion():
     tag hermione_chibi
-    zorder her_chibi_zorder
+    zorder hermione_chibi.zorder
     add "ch_hem potion" pos hermione_chibi.pos xoffset -30 zoom 0.5
 
 screen hermione_chibi_dance():
     tag hermione_chibi
-    zorder her_chibi_zorder
+    zorder hermione_chibi.zorder
     if hermione_wear_top:
         if h_top == "top_1" or h_top == "top_6":
             add "clothed_dance_ani" pos hermione_chibi.pos zoom 0.5
@@ -134,39 +135,38 @@ screen hermione_chibi_dance():
         else: #Nude
             add "no_shirt_no_skirt_dance_ani" pos hermione_chibi.pos zoom 0.5
 
+screen hermione_chibi_dance_pause:
+    tag hermione_chibi
+    zorder hermione_chibi.zorder
+    if hermione_class.get_worn("panties"):
+        add "no_shirt_no_skirt_dance_pause" pos hermione_chibi.pos zoom 0.5
+    else:
+        add "no_panties_dance_pause" pos hermione_chibi.pos zoom 0.5
+
 screen hermione_chibi_sit_naked_A():
     tag hermione_chibi
-    zorder her_chibi_zorder
+    zorder hermione_chibi.zorder
     add "characters/hermione/chibis/sitting/sit_naked_blink.png" pos hermione_chibi.pos zoom 0.5 # 0.4
 
 screen hermione_chibi_sit_naked_B():
     tag hermione_chibi
-    zorder her_chibi_zorder
+    zorder hermione_chibi.zorder
     add "characters/hermione/chibis/sitting/sit_naked.png" pos hermione_chibi.pos zoom 0.5 # 0.4
     
 screen hermione_chibi_stand_no_shirt():
     tag hermione_chibi
-    zorder her_chibi_zorder
+    zorder hermione_chibi.zorder
     add "characters/hermione/chibis/dance/03_no_shirt_03.png" pos hermione_chibi.pos zoom 0.5
 
 screen hermione_lying():
     tag hermione_chibi
-    zorder her_chibi_zorder
+    zorder hermione_chibi.zorder
     add "characters/hermione/chibis/lying/shime21.png" pos hermione_chibi.pos
 
 screen hermione_kneel_pant():
     tag hermione_chibi
-    zorder her_chibi_zorder
+    zorder hermione_chibi.zorder
     add "ch_hem kneel_pant" pos hermione_chibi.pos zoom 0.5
-
-#TODO Remove universal screen (h_c_u)
-screen h_c_u():
-    tag hermione_chibi
-    zorder her_chibi_zorder
-    if "/chibis/" in h_c_u_pic:
-        add h_c_u_pic pos hermione_chibi.pos zoom 0.5
-    else:
-        add h_c_u_pic pos hermione_chibi.pos
 
 # Chibi definition
 default hermione_chibi = chibi("hermione", ["base"], update_hermione_chibi)

@@ -236,9 +236,9 @@ label slytherin_match:
     #call gen_chibi("stand", "130", "10")
     #call her_chibi("stand", "375", "105", flip=True)
     $ sna_chibi_zorder = 1
-    $ her_chibi_zorder = 2
+    $ hermione_chibi.zorder = 2
     $ ton_chibi_zorder = 3
-    $ gen_chibi_zorder = 4
+    $ genie_chibi.zorder = 4
     pause 1
 
     #Quidditch pitch fills up a little
@@ -533,9 +533,9 @@ label slytherin_match:
 
     call hide_characters
     $ sna_chibi_zorder = 1
-    $ her_chibi_zorder = 3
+    $ hermione_chibi.zorder = 3
     $ ton_chibi_zorder = 2
-    $ gen_chibi_zorder = 4
+    $ genie_chibi.zorder = 4
 
     call her_chibi("lying", 330, 160)
     call ton_chibi("stand", xpos=395, ypos=110, flip=False)
@@ -742,8 +742,8 @@ label slytherin_match:
     pause .5
 
     $ sna_chibi_zorder = 1
-    $ her_chibi_zorder = 3
-    $ gen_chibi_zorder = 2
+    $ hermione_chibi.zorder = 3
+    $ genie_chibi.zorder = 2
 
     call her_chibi("stand", 160, 70, flip=True)
     with d3
@@ -862,8 +862,8 @@ label slytherin_match:
     "Hermione's legs tremble as her knees buckle, the words of her orgasm drowned out by the cheers of the crowd."
 
     # Hermione (Tonks) falls to her knees
-    $ her_chibi_zorder = 2
-    $ gen_chibi_zorder = 3
+    $ hermione_chibi.zorder = 2
+    $ genie_chibi.zorder = 3
     hide screen hermione_main
     hide screen grope_ass_podium
     call her_chibi("kneel_pant", 325, 170)

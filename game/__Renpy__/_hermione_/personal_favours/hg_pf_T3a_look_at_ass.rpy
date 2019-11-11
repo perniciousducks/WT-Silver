@@ -326,19 +326,22 @@ label hg_pr_strip_T2_masturbate_rear:
     show screen blkfade
     with d5
 
-    ">You take your cock out and start stroking it..."
-
     $ hermione_class.strip("top")
     $ hermione_class.strip("bottom")
 
-    call hg_chibi_transition("jerk_off_behind_desk", flip=True, trans="d7")
+    call gen_chibi("jerk_off_behind_desk")
     call play_music("chipper_doodle")
-    call ctc
+    
+    ">You take your cock out and start stroking it..."
+
+    hide screen blkfade
+    with d5
 
     $ her_mood += 2
 
-    show screen blktone
-    show screen hermione_ass
+    #TODO Fix usage of missing screen hermione_ass
+    #show screen blktone
+    #show screen hermione_ass
     call her_main("Are you enjoying the view [genie_name]", "angry", "wide", "base", "stare", ypos="head")
     m "yes I am [hermione_name]. just stand still and let me look a little longer..."
 
@@ -494,14 +497,16 @@ label hg_pr_strip_T3_masturbate_rear:
     show screen blkfade
     with d5
 
-    ">You take your cock out and start stroking it..."
-
     $ hermione_class.strip("top")
     $ hermione_class.strip("bottom")
 
-    call hg_chibi_transition("jerk_off_behind_desk", flip=True, trans="d7")
+    call gen_chibi("jerk_off_behind_desk")
     call play_music("chipper_doodle")
-    call ctc
+    
+    ">You take your cock out and start stroking it..."
+
+    hide screen blkfade
+    with d5
 
     show screen blktone
     show screen hermione_ass
@@ -671,14 +676,16 @@ label hg_pr_strip_T4_masturbate_rear:
     show screen blkfade
     with d5
 
-    ">You take your cock out and start stroking it..."
-
     $ hermione_class.strip("top")
     $ hermione_class.strip("bottom")
 
-    call hg_chibi_transition("jerk_off_behind_desk", flip=True, trans="d7")
+    call gen_chibi("jerk_off_behind_desk")
     call play_music("chipper_doodle")
-    call ctc
+    
+    ">You take your cock out and start stroking it..."
+
+    hide screen blkfade
+    with d5
 
     show screen blktone
     show screen hermione_ass

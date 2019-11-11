@@ -665,15 +665,11 @@ label hg_pf_strip_T2_Snape_masturbate:
         g4 "Little slut!"
         call her_main("...............................", "grin", "narrow", "annoyed", "up")
 
-        #TODO Fix chibi sperm layers (cum stays on Hermione while Genie and Snape hold their dicks)
-        $ s_c_c_u_pic = "characters/snape/chibis/masturbating/sperm_18.png"
-        $ g_c_c_u_pic = "characters/genie/chibis/masturbating/sperm_wide_18.png"
-
         call sna_main("Ha-ha-ha! This is magnificent!","snape_21")
         g9 "I know, right!?"
 
-        call gen_chibi("hold_dick","behind_desk","base")
-        call sna_chibi("hold_dick","desk_close","245")
+        call gen_chibi("cumming_done","behind_desk","base")
+        call sna_chibi("cumming_done","desk_close","245")
         pause.2
 
         call sna_main("Yes... We should do this more often.","snape_22")

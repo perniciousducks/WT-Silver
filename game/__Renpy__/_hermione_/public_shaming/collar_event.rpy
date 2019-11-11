@@ -248,11 +248,8 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call blkfade
 
     hide screen genie
-    $ gen_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
-    $ gen_chibi_ypos = 10
-    $ g_c_u_pic = "pause_sex"
+    call hg_chibi_transition("sex_pause")
     show screen chair_left
-    show screen g_c_u
     call hide_blkfade
 
     $ hermione_zorder = 8
@@ -270,7 +267,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("{size=+5}Please fuck my cunt{/size}", "scream", "wide", "base", "stare")
     hide screen hermione_main
     m "Seeing as how you asked nicely."
-    $ g_c_u_pic = "sex_ani"
+    call hg_chibi_transition("sex")
     ">You take a firm grip of her hips and thrust into her sopping pussy."
     m "Ugh you're still so tight."
     m "I thought that you would have loosened up after all the guys you've fucked."
@@ -303,7 +300,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     ">You increase your pumping of her pussy."
     m "Here's your cum, whore. You earned it."
     ">You push yourself all the way in and start shooting off into her womb."
-    $ g_c_u_pic = "sex_cum_in_ani"
+    call hg_chibi_transition("sex_creampie")
     call her_main("!!!", "scream", "wide", "worried", "stare",cheeks="blush",tears="messy")
     hide screen hermione_main
     m "That's it, take it all you fucking slut."
@@ -322,7 +319,6 @@ label whore_scene: #(locked behind the public her_whoring flag)
 
     show screen genie
     hide screen chair_left
-    hide screen g_c_u
     call her_chibi("stand","desk","base")
     hide screen blkfade
     with d3
@@ -386,11 +382,8 @@ label slave_scene:
     call blkfade
 
     hide screen genie
-    $ gen_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
-    $ gen_chibi_ypos = 10
-    $ g_c_u_pic = "pause_sex"
+    call hg_chibi_transition("sex_pause")
     show screen chair_left
-    show screen g_c_u # pause_sex
     call her_chibi("hide")
     call hide_blkfade
 
@@ -405,7 +398,7 @@ label slave_scene:
     m "Good girl."
     ">You thrust your full length into her in one motion."
 
-    $ g_c_u_pic = "sex_ani" # sex_ani
+    call hg_chibi_transition("sex")
 
     m "You're very tight today, are you enjoying this?"
     call her_main("Yes [genie_name], I'm loving this.", "base", "narrow", "base", "up")
@@ -471,7 +464,9 @@ label slave_scene:
     m "That's it girl. Almost there, just a little more..."
     ">You grab her hips and impale her on your throbbing member."
     m "Ughhh"
-    $ g_c_u_pic = "sex_cum_in_ani"
+    
+    call hg_chibi_transition("sex_creampie")
+
     ">You roar as you cum inside her tight hole."
     call her_main("I'm cumming!", "scream", "wide", "base", "stare")
     hide screen hermione_main

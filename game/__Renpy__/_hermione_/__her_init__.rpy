@@ -6,26 +6,6 @@ default hermione_zorder              = 5
 default hermione_flip                = 1
 default hermione_animation           = None
 
-#Chibi
-default her_chibi_xpos          = 500
-default her_chibi_ypos          = 250
-default her_chibi_flip          = 1
-default her_chibi_zorder        = 3
-default her_chibi_animation     = None
-default her_chibi_status        = ""
-
-default her_chibi_stand         = "ch_hem blink_a"
-default her_chibi_shoes         = "characters/cho/chibis/cc_walk_01_shoes.png"
-
-default her_chibi_walk          = "ch_hem walk_a"
-default her_chibi_walk_shoes    = "ch_cho walk_shoes"
-
-default her_chibi_top           = "characters/cho/chibis/cc_cloth_shirt_r.png"
-default her_chibi_bottom        = "characters/cho/chibis/cc_cloth_skirt.png"
-default her_chibi_robe          = "blank"
-default her_chibi_gloves        = "blank" #blank is the new defined image, makes our lives easier
-default her_chibi_fix           = "blank"
-
 # Stats
 default her_tier       = 1
 default her_whoring    = 0

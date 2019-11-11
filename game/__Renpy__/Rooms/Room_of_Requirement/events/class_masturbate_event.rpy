@@ -7,12 +7,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
 
     call reset_menu_position
 
-    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ gen_chibi_ypos = 10
-    $ g_c_u_pic = "sex_slow_ani"
-
     nar "This event is written by WaxerRed."
-
 
     menu:
         "Path 1":

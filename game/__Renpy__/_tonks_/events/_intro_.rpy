@@ -112,7 +112,7 @@ label tonks_intro_E1:
         with d3
         pause.2
 
-        call gen_chibi("jerking_off_behind_desk")
+        call gen_chibi("jerk_off_behind_desk")
         with d3
         pause.8
 

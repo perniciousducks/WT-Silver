@@ -102,7 +102,6 @@ label hg_wager_bj:
                 call her_walk(action="leave", speed=2)
 
     else: #If her whoring is higher than 15 (when she can do blowjob favour)
-        call set_u_ani("blowjob_ani","hand_ani", 0,10)
         call her_main("Gryffindor really can't afford to lose 20 points...", "soft", "base", "worried", "mid")
         call her_main("Okay then, I'll do it.", "open", "closed", "base", "mid")
         if hg_pf_blowjob.points > 0: #if shes done the blowjob favour these show
@@ -117,7 +116,7 @@ label hg_wager_bj:
         hide screen genie
         call her_chibi("hide")
         show screen chair_left
-        call u_play_ani #Should start the blowjob animation
+        call hg_chibi_transition("bj")
         hide screen bld1
         hide screen blkfade
         with fade
@@ -127,9 +126,9 @@ label hg_wager_bj:
         g4 "Put some work into it."
         call her_main("*Gulp*, *Gobble*, *Gltch*", "open_wide_tongue", "narrow", "worried", "mid_soft")
         m "Your mouth feels amazing, you're a natural!"
-        call u_pause_ani
+        call hg_chibi_transition("bj_pause")
         call her_main("I'm glad you like it [genie_name].", "open", "happy", "base", "mid", cheeks="blush")
-        call u_play_ani
+        call hg_chibi_transition("bj")
         call her_main("*Gobble*, *Slurp*, *Gobble*", "open_wide_tongue", "closed", "base", "mid", cheeks="blush")
 
         call play_music("dark_fog")#Snape walks in
@@ -141,10 +140,10 @@ label hg_wager_bj:
 
         with hpunch
         call sna_main("I want a rematch!", face="snape_07")
-        call u_pause_ani
+        call hg_chibi_transition("bj_pause")
         m "{size=-5}Don't stop, [hermione_name]...{/size}"
         g4 "What do you mean, rematch? I beat you fair and square!"
-        call u_play_ani
+        call hg_chibi_transition("bj")
         call her_main("*Slurp*, *Gulp*, *Urk*", ypos="head", "open_wide_tongue", "worriedCl", "worried", "mid", cheeks="blush")
         call sna_main("I'm certain you were cheating, my deck is way better than yours.", face="snape_06")
         call sna_main("Hold on... what's that noise?", face="snape_03")
@@ -168,8 +167,7 @@ label hg_wager_bj:
             "-Tell him not to worry about it.-":
                 g4 "There's nothing suspicious happening here...{w} {size=-5}Ugh!{/size}"
                 pause.5
-                call set_u_ani("cum_in_mouth_ani", "hand_ani", 0, 10)
-                call u_play_ani
+                call hg_chibi_transition("bj_cumming_in")
                 call cum_block
                 g4 "{size=+7}ARGH!{/size}"
                 call her_main("...", "full", "wide", "worried", "stare")
@@ -195,7 +193,7 @@ label hg_wager_bj:
                 pause 1
                 hide screen blkfade
                 $ renpy.music.play("music/Hitman.mp3")
-                call u_pause_ani
+                call hg_chibi_transition("bj_pause")
                 g4 "...?!"
                 call sna_main("Reveal yourself! I won't let you harm him!", face="snape_10", wand=True)
                 g4 "Severus, wait!"
@@ -215,8 +213,7 @@ label hg_wager_bj:
                     call sna_walk(action="leave", speed=3)
 
                 else: #if hermione has stripped twice (so snape walked in on her)
-                    call set_u_ani("desk_idle_ani")
-                    call u_play_ani
+                    call gen_chibi("dick_out_desk")
                     call her_chibi("stand","220","base", flip=True)
                     call sna_main("Miss Granger?! I tho-... I...", face="snape_14", wand=True)
                     hide screen snape_defends
@@ -305,11 +302,11 @@ label hg_wager_bj:
                             call sna_walk(action="leave", speed=3)
 
                             g4 "And not a moment to soon.... Take this you whore!"
-                            call set_u_ani("cum_in_mouth_ani", "hand_ani", 0, 10)
-                            call u_play_ani
+                            call hg_chibi_transition("bj_cumming_in")
+                            
                             call cum_block
                             pause 1
-                            call u_pause_ani
+                            call hg_chibi_transition("bj_pause")
                             call her_main("*Mmmh!!*", "full_cum", "wide", "base", "stare", cheeks="blush")
                             $ renpy.play('sounds/gulp.mp3')
                             call her_main("{image=textheart}*Gulp* {image=textheart}", "cum", "narrow", "annoyed", "up")
@@ -319,7 +316,6 @@ label hg_wager_bj:
                             m "Fine, I won't deduct those points..."
                             call her_main("Thank you...", "smile", "base", "base", "mid")
                             call blkfade
-                            call u_end_ani
                             call her_chibi("stand","mid","base")
                             call gen_chibi("sit_behind_desk")
                             hide screen blkfade
@@ -338,8 +334,7 @@ label hg_wager_bj:
                             call her_main("*Slurp*, *Slurp*, *Slurp*", "open_wide_tongue", "worriedCl", "worried", "mid", cheeks="blush")
                             m "No... It's all good... I can feel the ghostly presence being expelled as we speak..."
                             g4 "Now take this you whore!"
-                            call set_u_ani("cum_in_mouth_ani", "hand_ani", 0, 10)
-                            call u_play_ani
+                            call hg_chibi_transition("bj_cumming_in")
                             call cum_block
                             g4 "..."
                             call sna_main("...",face="snape_14")
@@ -358,13 +353,12 @@ label hg_wager_bj:
                             call sna_walk(action="leave", speed=3)
 
                             m "You can come out now [hermione_name]..."
-                            call u_pause_ani
+                            call hg_chibi_transition("bj_pause")
                             call her_main("Thank you for your ghostly residue, [genie_name]", "cum", "narrow", "worried", "mid_soft")
                             m "You're welcome, I can't believe he bought it..."
                             call her_main("What do you expect from the head of Slytherin?", "crooked_smile", "narrow", "base", "R_soft")
                             m "yes...{w=0.3} Well...{w=0.3} I think that's enough for today."
                             call blkfade
-                            call u_end_ani
                             call her_chibi("stand","mid","base")
                             call gen_chibi("sit_behind_desk")
                             hide screen blkfade
@@ -385,7 +379,7 @@ label hg_wager_bj:
                             m "Yes, I think the ghost may have been a gambler during their lifetime..."
                             jump bj_duel_game
                 else: #whoring not higher than 21
-                    call u_pause_ani
+                    call hg_chibi_transition("bj_pause")
                     call her_main("*Mmphaa...*", "open_tongue", "narrow", "annoyed", "up")
                     m "Hold on...{w} Yes, I think the ghostly presence has departed..."
                     call sna_main("Already?",face="snape_05")
@@ -402,15 +396,14 @@ label hg_wager_bj:
                             g9 "I don't see why not... I don't have anything else going on at the moment..."
                             label bj_duel_game:
                             call her_main("...", "open_wide_tongue", "narrow", "annoyed", "mid")
-                            call u_play_ani
+                            call hg_chibi_transition("bj")
                             call her_main("*Slurp*, *Slurp*, *Gobble*")
                             g4 "Gngh..."
                             call sna_main("In that case, let's begin...", face="snape_02")
                             # Gamestart
                             call snape_special_duel
                             # After game
-                            call set_u_ani("cum_in_mouth_ani", "hand_ani", 0, 10)
-                            call u_play_ani
+                            call hg_chibi_transition("bj_cumming_in")
                             call cum_block
                             pause 3
                             if duel_response == "draw":
@@ -427,7 +420,7 @@ label hg_wager_bj:
 
                                 call sna_walk(action="leave", speed=3)
 
-                                call u_pause_ani
+                                call hg_chibi_transition("bj_pause")
                                 call her_main("So, no rematch then?", "crooked_smile", "narrow", "base", "mid_soft")
                                 g9 "As I said, at least not for another 30 minutes..."
                                 call her_main("So I assume I'm not losing those points anymore?", "open", "narrow", "worried", "mid_soft")
@@ -460,7 +453,7 @@ label hg_wager_bj:
                                         call sna_walk(action="leave", speed=3)
 
                                         m "Get out of there... life decisions."
-                                        call u_pause_ani
+                                        call hg_chibi_transition("bj_pause")
                                         call her_main("Happy?", "normal", "happyCl", "base", "mid", cheeks="blush")
                                         m "I just lost the game and one of my bottles of wine..."
                                         call her_main("And a higher than average amount of 2 to 5ml by the looks of it...", "open", "narrow", "worried", "down", cheeks="blush")
@@ -478,7 +471,7 @@ label hg_wager_bj:
 
                                         call sna_walk(action="leave", speed=3)
 
-                                        call u_pause_ani
+                                        call hg_chibi_transition("bj_pause")
                                         call her_main("Happy?", "normal", "happyCl", "base", "mid", cheeks="blush")
                                         g4 "What are you talking about? How could I be happy in a moment like this..."
                                         call her_main("But I just made you...", "open", "base", "worried", "mid", cheeks="blush")
@@ -532,7 +525,7 @@ label hg_wager_bj:
 
                                 call sna_walk(action="leave", speed=3)
 
-                                call u_pause_ani
+                                call hg_chibi_transition("bj_pause")
                                 call her_main("Did you just call me a...{nw}")
                                 m "Snape..."
                                 # Easter egg start
@@ -563,7 +556,6 @@ label hg_wager_bj:
                                 else:
                                     call her_main("Good night then [genie_name].", "base", "base", "base", "mid")
                             call blkfade
-                            call u_end_ani
                             hide screen blkfade
                             jump end_hermione_event
                         "-I'll pass-":
@@ -605,7 +597,6 @@ label hg_wager_bj:
         $ hg_pf_blowjob.counter += 1
         $ achievement.unlock("headlib")
     call blkfade
-    call u_end_ani
     hide screen blkfade
 
     jump end_hermione_event
@@ -615,7 +606,7 @@ label hg_wager_bj_secret:
     hide screen hermione_main
     call blkfade
     $ renpy.block_rollback()
-    call u_play_ani
+    call hg_chibi_transition("bj")
     call sna_chibi("stand","460","base")
     pause 1.0
     show screen hg_wager_bj_secret
@@ -631,7 +622,7 @@ label hg_wager_bj_secret:
     g9 "Another victory in the bag, eat my shit!"
 
     call blkfade
-    call u_pause_ani
+    call hg_chibi_transition("bj_pause")
     call sna_chibi("hide")
     hide screen snape_main
     hide screen hg_wager_bj_secret

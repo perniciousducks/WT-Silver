@@ -32,7 +32,6 @@ label hg_pf_titjob:
     
     $ face_on_cg = False
     hide screen ccg
-    hide screen g_c_c_u
 
     # Update Hermione
     $ temp_save = aftersperm # Save

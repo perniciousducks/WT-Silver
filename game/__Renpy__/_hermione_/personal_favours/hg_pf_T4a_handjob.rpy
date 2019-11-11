@@ -557,7 +557,6 @@ label hg_pf_handjob_1:
             call hg_chibi_transition("hj_cumming_on_pause", trans="d5")
             call ctc
 
-            $ g_c_u_pic = "characters/hermione/chibis/handjob/sperm_on_21.png"
             $ u_sperm = "characters/hermione/face/auto_06.png"
             $ uni_sperm = True
             $ aftersperm = True

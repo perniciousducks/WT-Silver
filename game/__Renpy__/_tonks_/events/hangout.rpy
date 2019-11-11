@@ -706,7 +706,7 @@ label nt_he_story_centaur: # Not in use.
     g4 "Yes! Here it comes!"
 
     call cum_block
-    call gen_chibi("cumming_behind_desk")
+    call gen_chibi("cum_behind_desk")
     with d3
     pause 1
 
@@ -726,7 +726,7 @@ label nt_he_story_centaur: # Not in use.
     hide screen bld1
     with d3
 
-    call gen_chibi("came_on_desk")
+    call gen_chibi("cum_on_desk")
     with d3
     pause.5
 

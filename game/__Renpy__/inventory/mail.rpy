@@ -63,8 +63,7 @@ label read_letter:
             "-Read Letter-":
                 pass
             "-Shoo the bird away!-":
-                call shoo_owl_away
-                jump main_room
+                jump shoo_owl_away
 
     $ letter = letter_queue_list[0]
 
@@ -105,35 +104,31 @@ screen letter():
     zorder 20
     tag letter
 
-    add "interface/points/letter.png" at Position(xpos=340, ypos=30)
+    add "interface/points/letter.png" pos (340, 30)
     hbox:
-        spacing 40 xpos 410 ypos 80 xmaximum 250
+        spacing 40 pos (410, 80) xmaximum 250
         text letter.getLetterText()
 
 label shoo_owl_away:
     show screen chair_left
     show screen desk
-    call gen_chibi("standing_alt", "420", "160", flip=True) # Update position and sprite
+    call gen_chibi("standing_alt", 420, 160, flip=True)
     with d5
     pause.2
 
     $ renpy.say(g4, renpy.random.choice(["fuck off", "bug off", "get out", "get the hell out of here", "go away", "away with you", "don't you even dare shit on my floor"])+", you"+renpy.random.choice([" stupid", " silly", " annoying", "", " idiotic", " bloody"])+renpy.random.choice([" flying rat!", " bird!", " poor excuse for a pigeon!", " pigeon!", " idiot!"]))
     pause.1
 
-    call gen_chibi("animation", pic="genie_rum_ani", "360", "80", flip=False)
+    call gen_chibi("rummage", 360, 80, flip=False)
     call play_sound("owl")
     hide screen owl
     with hpunch
     pause.8
 
-    call gen_chibi("sit_behind_desk")
-    with d5
-    pause.5
-
     $ owl_away = True
     $ owl_away_counter += 1
 
-    return
+    jump main_room
 
 ### Letter Attachment Call Labels ###
 

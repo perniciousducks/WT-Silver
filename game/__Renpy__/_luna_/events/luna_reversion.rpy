@@ -134,10 +134,7 @@ label luna_revert_1: #Reversion event #DONE
     hide screen genie
     show screen chair_left
     show screen desk
-    $ gen_chibi_xpos = -20
-    $ gen_chibi_ypos = 10
-    $ g_c_u_pic = "jerking_off_02_ani"
-    show screen g_c_u
+    #TODO Re-add chibis to this event
     with fade
     hide screen blktone
     hide screen blkfade
@@ -247,7 +244,7 @@ label luna_revert_1: #Reversion event #DONE
 
     menu:
         "-On her face-":
-            ">You place your hand on the top of Luna's head and slowly force it down to be level with your crouch."
+            ">You place your hand on the top of Luna's head and slowly force it down to be level with your crotch."
             ">Her slender hands don't stop sliding up and down your length."
             call lun_main("[lun_genie_name]!!!","clench","wide","sad","mid")
             g9  "Shhh, [lun_name], I'm just giving you a closer look."
@@ -295,7 +292,7 @@ label luna_revert_1: #Reversion event #DONE
     call lun_main("[lun_genie_name]!","disgust","mad","angry","mid")
     call lun_main("How could you!","clench","angry","mad","mid")
     m "Ahh... that was fantastic, slut..."
-    $ g_c_u_pic = "characters/genie/chibis/masturbating/b_01.png"
+    #TODO Pause chibi of Genie masturbating
     call lun_main("[lun_genie_name]!!!","open","angry","mad","mid")
 
     #Hermione Enters.
@@ -492,10 +489,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     hide screen genie
     show screen chair_left
     show screen desk
-    $ gen_chibi_xpos = -20
-    $ gen_chibi_ypos = 10
-    $ g_c_u_pic = "jerking_off_02_ani"
-    show screen g_c_u
+    #TODO Add chibi of Genie jerking off ("genie_jerk_off_standing")
     with fade
     hide screen blktone
     hide screen blkfade
@@ -596,10 +590,10 @@ label luna_revert_2: #Non-Reversion event #DONE
 
     menu:
         "-On her face-":
-            ">You place your hand on the top of Luna's head and slowly try to force it down to be level with your crouch."
+            ">You place your hand on the top of Luna's head and slowly try to force it down to be level with your crotch."
 
         "-On her tits-":
-            ">You place your hand on the top of Luna's should and slowly try to force her down to be level with your crouch."
+            ">You place your hand on the top of Luna's should and slowly try to force her down to be level with your crotch."
 
     call lun_main("[lun_genie_name]!!!","clench","angry","mad","mid")
     call lun_main("You're not trying to cum on me are you?","upset","mad","mad","mid")
@@ -616,8 +610,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     g9  "mmmm"
     call lun_main("Now...","normal","mad","mad","mid")
     call lun_main("Cum.","base","seductive","angry","mid")
-    $ g_c_c_u_pic = "jerking_off_cum_ani"
-    show screen g_c_c_u
+    #TODO Add chibi of Genie cumming (short distance version?)
     $ luna_wear_cum_under = True
     $ luna_cum = 10
     call cum_block
@@ -628,14 +621,12 @@ label luna_revert_2: #Non-Reversion event #DONE
     call lun_main("(It's so warm...)","base","seductive","sad","R")
     g9  "{size=+10}TAKE IT ALL YOU sLUT!{/size}"
     g9  "mmmm....."
-    hide screen g_c_c_u
-    $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
     m "That hit the spot..."
     call lun_main("({image=textheart}{image=textheart}{image=textheart})","base","seductive","sad","mid")
     call lun_main("[lun_genie_name]!","base","mad","mad","mid")
     call lun_main("How could you! Cumming on your students {size=-10}pussy{/size}...","base","angry","angry","mid")
     m "Ahh... that was fantastic slut..."
-    $ g_c_u_pic = "characters/genie/chibis/masturbating/b_01.png"
+    #TODO Pause chibi of Genie masturbating
     call lun_main("[lun_genie_name]...","base","suspicious","angry","R")
 
     #Hermione Enters.
@@ -971,10 +962,10 @@ label luna_revert_2: #Non-Reversion event #DONE
             call lun_main("slut...","base","seductive","base","down")
             with hpunch
 
+            #TODO Add sex chibis here
             g9  "{size=+7}Argh, TAKE THIS!!!{/size}"
             call cum_block
             g9  "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
-            $ g_c_u_pic = "sex_cum_in_ani"
             call cum_block
             show screen ctc
             pause
@@ -987,7 +978,6 @@ label luna_revert_2: #Non-Reversion event #DONE
 
             show screen bld1
             with d3
-            $ g_c_u_pic = "characters/hermione/chibis/sex/creampie_19.png"
 
         "-Start jerking off-": #Jerk off and cum on hermione
             show screen blkfade

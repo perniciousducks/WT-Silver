@@ -159,11 +159,7 @@ label potion_scene_1_1_2:
                 ">Hermione walks over and kneels before you."
 
                 show screen chair_left
-                $ gen_chibi_xpos = -10
-                $ gen_chibi_ypos = 10
-                call set_u_ani("blowjob_ani","hand_ani", 0,10)
-                $ g_c_u_pic = "hand_ani"
-                call u_pause_ani
+                call hg_chibi_transition("bj_pause")
                 hide screen hermione_main
                 hide screen genie
                 call her_chibi("hide")
@@ -173,7 +169,7 @@ label potion_scene_1_1_2:
                 m "Good girl."
                 m "Now open wide."
                 call her_main("...", "open_wide_tongue", "base", "base", "mid")
-                call u_play_ani
+                call hg_chibi_transition("bj")
 
                 ">Hermione takes you into her mouth"
                 hide screen hermione_main
@@ -182,7 +178,7 @@ label potion_scene_1_1_2:
                 m "Good god what is with your tongue?! It feels like velcro."
                 her "*Slurp?*"
 
-                call u_pause_ani
+                call hg_chibi_transition("bj_pause")
 
                 call her_main("It's because of your stupid potion, it made my tongue all rough.", "open_wide_tongue", "base", "angry", "mid")
                 call her_main("Do you want to stop?", "grin", "base", "base", "R")
@@ -191,17 +187,17 @@ label potion_scene_1_1_2:
                 call her_main("Okay, [genie_name].", "annoyed", "narrow", "angry", "R")
                 hide screen hermione_main
 
-                call u_play_ani
+                call hg_chibi_transition("bj")
 
                 call nar(">Hermione swallows your cock again, taking care not to apply too much pressure with her tongue.") #start sucking scene. might insert more sucking noises for a little while or add pauses
                 m "So..{w=1.0} did you attend all your classes today?"
 
-                call u_pause_ani
+                call hg_chibi_transition("bj_pause")
 
                 call her_main("Of course [genie_name].", "base", "narrow", "base", "mid_soft")
 
                 hide screen hermione_main
-                call u_play_ani
+                call hg_chibi_transition("bj")
 
                 m "Even looking like this?"
                 m "What would everyone have thought? Would they just assume that you were a victim of a prank?"
@@ -217,12 +213,12 @@ label potion_scene_1_1_2:
                 pause 1.0
                 g4 "Oh good heavens!"
                 m "It's like your whole mouth has become a vibrator."
-                call u_pause_ani
+                call hg_chibi_transition("bj_pause")
                 call her_main("I can't help it [genie_name], when someone touches my ears I just purr.", "base", "happyCl", "base", "mid")
                 hide screen hermione_main
                 m "It feels amazing, now cock back in the mouth girl."
                 call her_main("Yes [genie_name].", "smile", "happyCl", "base", "mid",emote="06")
-                call u_play_ani
+                call hg_chibi_transition("bj")
                 hide screen hermione_main
                 with d3
                 call nar(">You immediately put your hands back on her ears and start stroking them as she sucks you off.")
@@ -233,9 +229,8 @@ label potion_scene_1_1_2:
                 her "*Purr* *Purr* *Purr*"
                 call nar(">You grab her ears and pull her head into you causing the tip of your cock to rest in her vibrating throat.")
                 g4 "{size=+10}ARGH!!!!!!!!!!!!!!!!{/size}"
-                #######################################
-                call set_u_ani("cum_in_mouth_ani","hand_ani", 0,10)
-                $ g_c_u_pic = "cum_in_mouth_ani"
+                
+                call hg_chibi_transition("bj_cumming_in")
                 call cum_block
                 her "*Purr* *Purr* *Purr*"
                 call nar(">You shoot you load directly down her throat.")
@@ -251,7 +246,8 @@ label potion_scene_1_1_2:
                 call her_main("", "full_cum", "narrow", "base", "dead")
                 pause .1
                 call her_main("*Purr* *gulp* *gulp*", "cum", "worriedCl", "worried", "mid")
-                #
+                
+                call hg_chibi_transition("bj_pause")
                 call nar(">You pull your cock out of her purring mouth.")
                 call her_main("Mmmmm, it might be this potion but that tasted good...", "base", "narrow", "base", "mid_soft")
                 hide screen hermione_main
@@ -267,7 +263,6 @@ label potion_scene_1_1_2:
                 show screen blkfade with d3
 
                 call hide_characters
-                call u_end_ani
                 call her_chibi(xpos="desk")
                 call gen_chibi("sit_behind_desk")
 
@@ -371,19 +366,16 @@ label potion_scene_1_1_2_alt:
     pause.5
 
     ">Hermione walks over and kneels before you."
+    call hg_chibi_transition("bj_pause")
     m "Good girl."
     call her_main("...", "open_wide_tongue", "base", "base", "mid")
-    ">Hermione takes you into her mouth"                ###Have the chibi scene of her sucking
+    ">Hermione takes you into her mouth"
     hide screen hermione_main
     hide screen genie
 
-    $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
-    $ gen_chibi_ypos = 10
-    $ g_c_u_pic = "blowjob_ani"
     show screen chair_left
-    show screen g_c_u
+    call hg_chibi_transition("bj")
 
-    call her_chibi("hide")
     hide screen blkfade
     hide screen blktone
     hide screen bld1
@@ -395,7 +387,7 @@ label potion_scene_1_1_2_alt:
         her "*Lick*"
         m "There's that tongue again...{w} could you try using your throat a bit more?"
         her "*Slurp*" #annoyed eyes
-        $ g_c_u_pic = "hand_ani"
+        call hg_chibi_transition("bj_pause")
         with d3
         her "You sure you want me to continue?"
         m "Yes!"
@@ -404,7 +396,7 @@ label potion_scene_1_1_2_alt:
         call bld
         m "Good god what is with your tongue?! It feels like velcro."
         her "*Slurp?*"
-        $ g_c_u_pic = "hand_ani"
+        call hg_chibi_transition("bj_pause")
         with d3
         call her_main("It's because of your stupid potion, it's \nmade my tongue all rough.", "open_wide_tongue", "base", "angry", "mid")
         call her_main("Do you want to stop?", "grin", "base", "base", "R")
@@ -413,16 +405,16 @@ label potion_scene_1_1_2_alt:
 
     call her_main("Of course [genie_name].", "annoyed", "narrow", "angry", "R")
     hide screen hermione_main
-    $ g_c_u_pic = "blowjob_ani"
+    call hg_chibi_transition("bj")
     with d3
 
     call nar(">Hermione swallows your cock again, taking care\nnot to apply too much pressure with her tongue.") #start sucking scene. might insert more sucking noises for a little while or add pauses
     m "So you still went to all your classes?"
-    $ g_c_u_pic = "hand_ani"
+    call hg_chibi_transition("bj_pause")
     with d3
     call her_main("Of course [genie_name].", "base", "narrow", "base", "mid_soft")
     hide screen hermione_main
-    $ g_c_u_pic = "blowjob_ani"
+    call hg_chibi_transition("bj")
     with d3
     m "Even looking like this?"                         ###start sucking
     if "cat_polyjuice" in her_potions_drunk:
@@ -435,11 +427,11 @@ label potion_scene_1_1_2_alt:
         m "Keep going girl, this feels amazing..."
         call nar(">You momentarily stop patting her as you close your eyes with pleasure.")
         m "Don't stop!"
-        $ g_c_u_pic = "hand_ani"
+        call hg_chibi_transition("bj_pause")
         with d3
         her "You stopped patting me!"
         m "Oh, sorry..."
-        $ g_c_u_pic = "blowjob_ani"
+        call hg_chibi_transition("bj")
         with d3
         hide screen hermione_main
         with d3
@@ -455,13 +447,13 @@ label potion_scene_1_1_2_alt:
         call nar(">Hermione starts involuntary purring","end")
         m "Oh good heavens!"
         m "It's like your whole mouth has become a vibrator."
-        $ g_c_u_pic = "hand_ani"
+        call hg_chibi_transition("bj_pause")
         with d3
         call her_main("I can't help it [genie_name], whenever \nanything touches my ears I just purr.", "base", "happyCl", "base", "mid")
         hide screen hermione_main
         m "It feels amazing, now cock back in the mouth girl."
         call her_main("Yes [genie_name].", "smile", "happyCl", "base", "mid",emote="06")
-        $ g_c_u_pic = "blowjob_ani"
+        call hg_chibi_transition("bj")
         with d3
         hide screen hermione_main
         with d3
@@ -479,7 +471,7 @@ label potion_scene_1_1_2_alt:
     call ctc
 
     #This scene looks a bit weird
-    $ g_c_u_pic = "cum_in_mouth_ani"
+    call hg_chibi_transition("bj_cumming_in")
     with d3
     call her_main("", "full_cum", "narrow", "base", "dead")
     pause .1
@@ -491,12 +483,14 @@ label potion_scene_1_1_2_alt:
     pause .1
     call her_main("*Purr* *gulp* *gulp*", "cum", "worriedCl", "worried", "mid")
     call nar(">You pull your cock out of her purring mouth.")
+    call hg_chibi_transition("bj_pause")
+    with d3
     call her_main("Mmmmm, it might be this potion but that tasted \ngood...", "base", "narrow", "base", "mid_soft")
     hide screen hermione_main
+    with d3
     m "Well, you certainly earned your 75 points."
     $ gryffindor += 75
-    $ g_c_u_pic = "hand_ani"
-    with d3
+
     call her_main("Thank you [genie_name]. Will that be all.", "base", "narrow", "base", "up")
     m "One last thing."
     m "Who's a good girl?"

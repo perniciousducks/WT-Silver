@@ -395,11 +395,8 @@ label potion_scene_2_2:
             m "That's it girl, here I come!"
             call nar(">With one final thrust you cum, covering her fat ass with your seed.")
             hide screen ch_hotdog
-            $ g_c_u_pic = "sex_cum_out_ani"
             show screen chair_left
-            $ gen_chibi_xpos = -70
-            $ gen_chibi_ypos = 10
-            show screen g_c_u
+            call hg_chibi_transition("sex_cumming_out")
 
             call cum_block
 
@@ -417,7 +414,6 @@ label potion_scene_2_2:
             hide screen chair_left
             hide screen groping_01
             hide screen groping_02
-            hide screen g_c_u
             call her_chibi("stand","desk","base")
             show screen genie
             hide screen blktone

@@ -264,8 +264,8 @@ screen c_scene(): #Snape Classroom Scene
 
 label teleport(position=None,effect=True,poof_label=None):
     if position == "genie":
-        $ teleport_xpos = gen_chibi_xpos+75
-        $ teleport_ypos = gen_chibi_ypos-15
+        $ teleport_xpos = genie_chibi.pos[0]+75
+        $ teleport_ypos = genie_chibi.pos[1]-15
         $ teleport_zorder = 3
     elif position == "hermione":
         $ teleport_xpos = hermione_chibi.pos[0]+45
@@ -284,6 +284,10 @@ label teleport(position=None,effect=True,poof_label=None):
         $ teleport_ypos = 160
         $ teleport_zorder = 1
         show screen desk
+    else:
+        $ teleport_xpos = position[0]
+        $ teleport_ypos = position[1]
+        $ teleport_zorder = 2
 
     if effect == True:
         $ renpy.play('sounds/magic4.ogg')
@@ -327,26 +331,26 @@ screen heal_animation():
 label get_chibi_position(char=None):
 
     if char == "genie":
-        $ chibi_xpos   = gen_chibi_xpos
-        $ chibi_ypos   = gen_chibi_ypos
-        $ chibi_zorder = gen_chibi_zorder
+        $ chibi_xpos   = genie_chibi.pos[0]
+        $ chibi_ypos   = genie_chibi.pos[1]
+        $ chibi_zorder = genie_chibi.zorder
     elif char == "snape":
-        $ chibi_xpos   = sna_chibi_xpos
-        $ chibi_ypos   = sna_chibi_ypos
-        $ chibi_zorder = sna_chibi_zorder
+        $ chibi_xpos   = snape_chibi.pos[0]
+        $ chibi_ypos   = snape_chibi.pos[1]
+        $ chibi_zorder = snape_chibi.zorder
     elif char == "tonks":
-        $ chibi_xpos   = ton_chibi_xpos
-        $ chibi_ypos   = ton_chibi_ypos
-        $ chibi_zorder = ton_chibi_zorder
+        $ chibi_xpos   = tonks_chibi.pos[0]
+        $ chibi_ypos   = tonks_chibi.pos[1]
+        $ chibi_zorder = tonks_chibi.zorder
 
     elif char == "hermione":
-        $ chibi_xpos   = her_chibi_xpos
-        $ chibi_ypos   = her_chibi_ypos
-        $ chibi_zorder = her_chibi_zorder
+        $ chibi_xpos   = hermione_chibi.pos[0]
+        $ chibi_ypos   = hermione_chibi.pos[1]
+        $ chibi_zorder = hermione_chibi.zorder
     elif char == "astoria":
-        $ chibi_xpos   = ast_chibi_xpos
-        $ chibi_ypos   = ast_chibi_ypos
-        $ chibi_zorder = ast_chibi_zorder
+        $ chibi_xpos   = astoria_chibi.pos[0]
+        $ chibi_ypos   = astoria_chibi.pos[1]
+        $ chibi_zorder = astoria_chibi.zorder
     elif char == "susan":
         $ chibi_xpos   = susan_chibi.pos[0]
         $ chibi_ypos   = susan_chibi.pos[1]
@@ -423,12 +427,7 @@ screen emo_hearts():
     zorder chibi_zorder+1
 
 label hide_chibi_effects:
-    hide screen emo_thought
-    hide screen emo_exclamation
-    hide screen emo_sad
-    hide screen emo_hoot
-    hide screen emo_hearts
-
+    hide screen emo # screen tag
     return
 
 
@@ -476,19 +475,19 @@ screen l_head(): #Screen that shows a full sprite of HERMIONE.
 ### CGs ###
 screen snape_groping():
     add "images/CG/scene_01.png"
-    zorder her_chibi_zorder
+    zorder 6
 
 screen snape_facial():
     add "images/CG/scene_03.png"
-    zorder her_chibi_zorder
+    zorder 6
 
 screen snape_sex():
     add "images/CG/scene_04.png"
-    zorder her_chibi_zorder
+    zorder 6
 
 screen dual_hand_job():
     add "images/CG/scene_02.png"
-    zorder her_chibi_zorder
+    zorder 6
 
 screen blkback():
     zorder 1

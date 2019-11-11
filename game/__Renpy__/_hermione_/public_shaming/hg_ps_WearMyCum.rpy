@@ -485,11 +485,8 @@ label hg_ps_cumslut_Scene_3:
     pause.3
 
     hide screen genie
-    $ gen_chibi_xpos = 60 #-185 behind the desk.
-    $ gen_chibi_ypos = 10
-    $ g_c_u_pic = "handjob_ani"
     show screen chair_left
-    show screen g_c_u
+    call hg_chibi_transition("hj")
     #show screen desk_02 <- screen does not exist
     hide screen blktone
     hide screen blkfade
@@ -533,9 +530,7 @@ label hg_ps_cumslut_Scene_3:
             $ uni_sperm = True
 
             call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "worried", "down",xpos="right",ypos="base")
-            $ gen_chibi_xpos = 60 #-185 behind the desk.
-            $ gen_chibi_ypos = 10
-            $ g_c_u_pic = "on_shirt_cum_ani"
+            call hg_chibi_transition("hj_cumming_on")
             hide screen blkfade
             hide screen bld1
             with d3
@@ -545,7 +540,7 @@ label hg_ps_cumslut_Scene_3:
             m "That's it, all over you slut."
             call her_main("......", "soft", "narrow", "annoyed", "up")
             pause
-            #$ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
+            call hg_chibi_transition("hj_cumming_on_pause")
             call her_main("It's so warm...{image=textheart}", "grin", "narrow", "base", "dead")
             m "That it is."
             call her_main("If it's alright with you, I think I better head to class now...", "base", "narrow", "worried", "down")
@@ -564,9 +559,7 @@ label hg_ps_cumslut_Scene_3:
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
             $ u_sperm = "characters/hermione/face//auto_07.png"
             $ uni_sperm = True
-            $ gen_chibi_xpos = 60 #-185 behind the desk.
-            $ gen_chibi_ypos = 10
-            $ g_c_u_pic = "on_shirt_cum_ani"
+            call hg_chibi_transition("hj_cumming_on")
             hide screen blkfade
             hide screen bld1
             with d3

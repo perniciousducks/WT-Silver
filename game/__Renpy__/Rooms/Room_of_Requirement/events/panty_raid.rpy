@@ -7,10 +7,6 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
     call room("main_room")
     call reset_menu_position
 
-    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ gen_chibi_ypos = 10
-    $ g_c_u_pic = "sex_slow_ani"
-
     centered "{size=+7}{color=#cbcbcb}Panty Raid{/color}{/size}"
     narrator "Based on story written by {size=+8}WaxerRed{/size}.{w=1.0}{size=-3}\nProofreading&Editing: Lineup, Johnny, LoafyLemon{w=1.0}\nImplementation: Lineup, LoafyLemon{/size}"
 
@@ -34,7 +30,6 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
             #Reset
             $ daytime = temp_time
             call update_interface_color
-            call update_gen_chibi
             jump enter_room_of_req
 
     stop music fadeout 1.0
@@ -384,7 +379,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 call her_walk(xpos="door", ypos="base", speed=3.0)
 
                 m "{size=-4}Ginny..{w=1.0} its time for you to meet 'George'.{/size}{w=0.2}{nw}"
-                call gen_chibi("jerking_off_behind_desk")
+                call gen_chibi("jerk_off_behind_desk")
                 $ renpy.play('sounds/zipper.mp3')
                 g9 "{size=-4}Ginny.. Its time for you to meet 'George'.{/size}{fast}"
                 call her_main("", "angry", "wide", "worried", "shocked", cheeks="blush", flip=True)
@@ -717,10 +712,10 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         hide screen hermione_main
         with d3
         pause 1.0
-        call gen_chibi("jerking_off_behind_desk")
+        call gen_chibi("jerk_off_behind_desk")
         $ renpy.play('sounds/zipper.mp3')
         ">You take your cock out and start stroking it..."
-        call gen_chibi("jerking_off_behind_desk")
+        call gen_chibi("jerk_off_behind_desk")
         call her_main("Mmmm, [genie_name] need any help with that?", "base", "squint", "base", "mid", cheeks="blush")
         m "These already feel a little damp in the middle. Why don’t you tell me why that is?"
         call her_main("Oh you know, girls will be girls and all.", "grin", "narrow", "base", "mid_soft", cheeks="blush")
@@ -735,10 +730,10 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", "open_wide_tongue", "squint", "worried", "up", cheeks="blush")
         g4 "Ugh!"
         call cum_block
-        call gen_chibi("cumming_behind_desk")
+        call gen_chibi("cum_behind_desk")
         call her_main("", "open_wide_tongue", "narrow", "base", "mid_soft", cheeks="blush")
         pause 1.5
-        call gen_chibi("came_on_desk")
+        call gen_chibi("cum_on_desk")
         call her_main("Oh, poor [genie_name], I had no idea you were so pent up. You can start calling me out more than twice a day, if two a day isn't enough.", "soft", "narrow", "worried", "mid_soft", cheeks="blush")
         m "During the day? But what about your classes?"
         call her_main("Hmm? Oh well, missing one or two wouldn't hurt... Especially if the headmaster has an important 'assignment' for me.", "base", "narrow", "base", "mid_soft", cheeks="blush")

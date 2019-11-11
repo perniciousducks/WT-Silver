@@ -928,55 +928,6 @@ image desk_blinking: #Animation of Hermione blinking her eyes standing at genie'
     pause 3
     repeat
 
-image jerking_off_02_ani: #Genie jerking off in front of dancing on a desk Hermione. (Difference is that the dick is aimed higher.)
-    zoom 0.5
-    
-    "characters/genie/chibis/masturbating/01.png"
-    pause.2
-    "characters/genie/chibis/masturbating/02.png"
-    pause.2
-    "characters/genie/chibis/masturbating/03.png"
-    pause.2
-    "characters/genie/chibis/masturbating/04.png"
-    pause.2
-    repeat
-
-### CUM ###
-image jerking_off_cum_ani: #Sperm. While Hermione sits on desk.
-    "characters/genie/chibis/masturbating/sperm_short_01.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_02.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_03.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_04.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_05.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_06.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_07.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_08.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_09.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_10.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_11.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_12.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_13.png"
-    pause 3
-    "characters/genie/chibis/masturbating/sperm_short_14.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_15.png"
-    pause.1
-    "characters/genie/chibis/masturbating/sperm_short_16.png"
-    pause.1
-    repeat
-
 image blowjob_ani: # Hermione blowjob
     zoom 0.5
     

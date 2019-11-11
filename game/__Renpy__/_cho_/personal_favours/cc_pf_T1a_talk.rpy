@@ -202,7 +202,7 @@ label cc_pf_talk_T1_intro_E1:
             hide screen cho_chang
             call nar(">You reach under the desk and grab your cock...")
 
-            call gen_chibi("jerking_behind_desk")
+            call gen_chibi("jerk_off_behind_desk")
             with d3
             pause.8
 
@@ -302,7 +302,7 @@ label cc_pf_talk_T1_intro_E2:
             with d5
             pause.5
 
-            call gen_chibi("jerking_off_behind_desk")
+            call gen_chibi("jerk_off_behind_desk")
             with d3
             pause.8
 
@@ -354,7 +354,7 @@ label cc_pf_talk_T1_intro_E2:
         g4 "*Argh* {size=-4}Here it comes!{/size}"
 
         call cum_block
-        call gen_chibi("cumming_behind_desk")
+        call gen_chibi("cum_behind_desk")
         with d3
         pause.8
 
@@ -369,7 +369,7 @@ label cc_pf_talk_T1_intro_E2:
         call cho_main("[cho_genie_name], are you alright?","quiver","wide","base","mid")
         call cho_main("You're sweating and breathing quite heavily...","quiver","base","base","mid")
 
-        call gen_chibi("came_on_desk")
+        call gen_chibi("cum_on_desk")
         with d3
         pause.8
 
@@ -461,7 +461,7 @@ label cc_pf_talk_T1_E3:
             hide screen cho_chang
             call nar(">You reach under the desk and grab your cock...")
 
-            call gen_chibi("jerking_behind_desk")
+            call gen_chibi("jerk_off_behind_desk")
             with d3
             pause.8
 
@@ -503,7 +503,7 @@ label cc_pf_talk_T1_E3:
         with d3
 
         call cum_block
-        call gen_chibi("cumming_behind_desk")
+        call gen_chibi("cum_behind_desk")
         with d3
         pause.8
 
@@ -516,7 +516,7 @@ label cc_pf_talk_T1_E3:
 
         # Genie finished.
         call hide_characters
-        call gen_chibi("came_on_desk")
+        call gen_chibi("cum_on_desk")
         with d3
         pause.8
 
@@ -653,7 +653,7 @@ label cc_pf_talk_T2_intro_E1:
             hide screen cho_chang
             call nar(">You reach under the desk and grab your cock...")
 
-            call gen_chibi("jerking_behind_desk")
+            call gen_chibi("jerk_off_behind_desk")
             with d3
             pause.8
 
@@ -716,7 +716,7 @@ label cc_pf_talk_T2_intro_E1:
         with d3
 
         call cum_block
-        call gen_chibi("cumming_behind_desk")
+        call gen_chibi("cum_behind_desk")
         with d3
         pause.8
 
@@ -726,7 +726,7 @@ label cc_pf_talk_T2_intro_E1:
         call cum_block
         g4 "*Panting* {size=-4}You fucking slut!{/size}"
 
-        call gen_chibi("came_on_desk")
+        call gen_chibi("cum_on_desk")
         with d3
         pause.8
 
@@ -792,7 +792,7 @@ label cc_pf_talk_T2_intro_E2:
             hide screen cho_chang
             call nar(">You reach under the desk and grab your cock...")
 
-            call gen_chibi("jerking_behind_desk")
+            call gen_chibi("jerk_off_behind_desk")
             with d3
             pause.8
 
@@ -830,7 +830,7 @@ label cc_pf_talk_T2_intro_E2:
                 hide screen cho_chang
                 call nar(">You reach under the desk and grab your cock...")
 
-                call gen_chibi("jerking_behind_desk")
+                call gen_chibi("jerk_off_behind_desk")
                 with d3
                 pause.8
 
@@ -886,7 +886,7 @@ label cc_pf_talk_T2_intro_E2:
                 hide screen cho_chang
                 call nar(">You reach under the desk and grab your cock...")
 
-                call gen_chibi("jerking_behind_desk")
+                call gen_chibi("jerk_off_behind_desk")
                 with d3
                 pause.8
 
@@ -911,7 +911,7 @@ label cc_pf_talk_T2_intro_E2:
 
     call cum_block
     call hide_characters
-    call gen_chibi("cumming_behind_desk")
+    call gen_chibi("cum_behind_desk")
     with d3
     pause.8
 
@@ -938,7 +938,7 @@ label cc_pf_talk_T2_intro_E2:
     with d3
     pause.2
 
-    call gen_chibi("came_on_desk")
+    call gen_chibi("cum_on_desk")
     pause.8
 
     call bld
@@ -1005,7 +1005,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
             hide screen cho_chang
             call nar(">You reach under the desk and grab your cock...")
 
-            call gen_chibi("jerking_behind_desk")
+            call gen_chibi("jerk_off_behind_desk")
             with d3
             pause.8
 
@@ -1079,7 +1079,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 with d3
 
                 call cum_block
-                call gen_chibi("cumming_behind_desk")
+                call gen_chibi("cum_behind_desk")
                 with d3
                 pause.8
 
@@ -1097,7 +1097,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 with d3
                 pause.2
 
-                call gen_chibi("came_on_desk")
+                call gen_chibi("cum_on_desk")
                 pause.8
 
                 call cho_main("And why don't we put a large bucket under her so when they-","soft","closed","base","mid")
@@ -1223,7 +1223,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 with d3
 
                 call cum_block
-                call gen_chibi("cumming_behind_desk")
+                call gen_chibi("cum_behind_desk")
                 with d3
                 pause.8
 
@@ -1238,7 +1238,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 with d3
                 pause.2
 
-                call gen_chibi("came_on_desk")
+                call gen_chibi("cum_on_desk")
                 pause.8
 
                 call bld

@@ -158,8 +158,8 @@ label hufflepuff_match:
     #call gen_chibi("stand", "130", "10")
     #call her_chibi("stand", "375", "105", flip=True)
     $ snape_chibi.zorder = 2
-    $ her_chibi_zorder = 3
-    $ gen_chibi_zorder = 4
+    $ hermione_chibi.zorder = 3
+    $ genie_chibi.zorder = 4
     pause 1
 
     ### Main Match Starts ###
@@ -254,8 +254,8 @@ label hufflepuff_match:
     stop bg_sounds fadeout 4
     stop music fadeout 2
 
-    $ her_chibi_zorder = 4
-    $ gen_chibi_zorder = 3
+    $ hermione_chibi.zorder = 4
+    $ genie_chibi.zorder = 3
     call her_chibi("stand","350","185", flip=True)
     with d3
 
@@ -371,7 +371,7 @@ label hufflepuff_match:
             with d5
 
             $ snape_chibi.zorder = 3
-            $ gen_chibi_zorder   = 2
+            $ genie_chibi.zorder = 2
             call sna_chibi("stand","260","40", flip=True)
             call gen_chibi("stand", "340", "45", flip=True)
             with d3
@@ -422,8 +422,8 @@ label hufflepuff_match:
     call gen_walk(xpos="130", ypos="10", speed=2)
 
     $ snape_chibi.zorder = 2
-    $ her_chibi_zorder   = 4
-    $ gen_chibi_zorder   = 3
+    $ hermione_chibi.zorder   = 4
+    $ genie_chibi.zorder = 3
     call gen_chibi("stand", "130", "10", flip=False)
     call sna_chibi("stand", "210", -40, flip=True)
     with d3

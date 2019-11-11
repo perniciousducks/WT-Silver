@@ -153,10 +153,10 @@ screen main_room(interact=True):
 
 
 # Genie at desk
-screen genie_desk(interact=True):
+screen genie_desk:
     tag genie_chibi # Uses same tag as chibi screens
     if renpy.variant('android'):
-        add "newanimation" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5
+        add "genie_sit_behind_desk" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5
         imagemap:
             xpos 384
             ypos 370
@@ -174,8 +174,8 @@ screen genie_desk(interact=True):
             focus_mask True
             xanchor 0.5
             yanchor 0.5
-            idle "newanimation"
-            hover "newanimation_hover"
+            idle "genie_sit_behind_desk"
+            hover "genie_sit_behind_desk_hover"
             if desk_examined:
                 tooltip "Open desk"
                 hovered Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210)
@@ -244,10 +244,10 @@ screen fireplace_glow():
     add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.2
 
 # Furniture
-screen desk(xposistion=360): # Desk only
+screen desk(x=360): # Desk only
     tag desk
     zorder 2
-    add "images/rooms/main_room/desk_with_shadow.png" xpos xposistion ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/desk_with_shadow.png" xpos x ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
 
 screen dumbledore(): # Dumbledore and desk
     tag dumbledore
@@ -262,6 +262,12 @@ screen chair_right():
     tag chair_right
     zorder 0 # Show main_room first for correct order
     add "images/rooms/main_room/chair_right.png" xpos 793 ypos 300 xanchor 0.5 yanchor 0.5 zoom 0.5
+
+screen cupboard_open():
+    tag cupboard
+    add "images/rooms/_objects_/cupboard/cupboard_open.png" xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
+    if cupboard_deco:
+        add "images/rooms/_objects_/cupboard/cupboard_open" +str(cupboard_deco)+ ".png"  xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5
 
 # Owl
 screen owl(interact=True):

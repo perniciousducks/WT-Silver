@@ -51,10 +51,21 @@ image snape_jerking_off_cum:
     contains:
         yoffset -240
         xoffset -490
-        "snape_cum"
+        "snape_cum_layer"
+
+image snape_jerking_off_cum_done:
+    size (150,250)
+    contains:
+        zoom 0.5
+        yoffset -60
+        "characters/snape/chibis/masturbating/02.png"
+    contains:
+        yoffset -240
+        xoffset -490
+        "characters/snape/chibis/masturbating/sperm_18.png"
 
 # Snape cumming (on Hermione after she is done stripping, not pictured)
-image snape_cum:
+image snape_cum_layer:
     alpha 1
     "characters/snape/chibis/masturbating/sperm_01.png"
     pause .1

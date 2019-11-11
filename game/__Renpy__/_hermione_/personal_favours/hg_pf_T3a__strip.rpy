@@ -34,8 +34,6 @@ label hg_pf_strip:
     call reset_hermione
     $ aftersperm = temp_save # Load
 
-    hide screen g_c_c_u # Genie's sperm. Universal.
-
     call sna_chibi("hide")
     call her_chibi("stand","desk","base", flip=False)
     call gen_chibi("sit_behind_desk")
@@ -577,7 +575,7 @@ label hg_pf_strip_T1_intro_E2:
     call nar(">You find the thought strangely arousing...","end")
 
     #TODO Hermione chibi: Stand in panties only (blinking?)
-    call her_chibi("image","on_desk","on_desk","dance/05_panties_01")
+    call her_chibi("dance_pause","on_desk","on_desk")
     call ctc
 
     call her_main("Well, I hope you enjoyed yourself, [genie_name]!", "open", "narrow", "annoyed", "mid")
@@ -602,7 +600,7 @@ label hg_pf_strip_T1_intro_E2:
     $ hermione_class.strip("panties")
     call update_her_uniform
     #TODO Hermione chibi: Stand naked blinking (ch_hem blink_n)
-    call her_chibi("image","on_desk","on_desk","dance/07_dance_01")
+    call her_chibi("dance_pause","on_desk","on_desk")
     call her_main("", "annoyed", "worriedCl", "worried", "mid", cheeks="blush")
     pause.2
 
@@ -970,7 +968,6 @@ label hg_pf_strip_T1_masturbate:
             pause.1
 
             hide screen chair_left
-            hide screen g_c_u
             hide screen desk
             call gen_chibi("hide")
             show screen genie
@@ -1413,11 +1410,7 @@ label hg_pf_strip_T2_masturbate:
     g4 "ARGH! YOU FUCKING CUNT!"
 
     call cum_block
-    call gen_chibi("jerking_off","behind_desk","behind_desk")
-    $ g_c_c_u_pic = "genie_cum_03"
-    $ genie_cum_chibi_xpos = -65
-    $ genie_cum_chibi_ypos = 5
-    show screen g_c_c_u
+    call gen_chibi("cumming","behind_desk","behind_desk")
     call ctc
 
     $ uni_sperm = True #Triggers universal sperm to show on hermione_main screen.
@@ -1428,9 +1421,7 @@ label hg_pf_strip_T2_masturbate:
     call her_main("??!!!", "shock", "wide", "base", "stare")
     call her_main("[genie_name]!!!", "angry", "worriedCl", "worried", "mid")
 
-    call gen_chibi("hold_dick","behind_desk","behind_desk")
-
-    $ g_c_c_u_pic = "characters/genie/chibis/masturbating/sperm_wide_18.png"
+    call gen_chibi("cumming_done","behind_desk","behind_desk")
 
     if d_flag_07: #Promised to hold it.
         call her_main("No, [genie_name]! You promised!", "angry", "worriedCl", "worried", "mid", ypos="head")
@@ -1484,9 +1475,7 @@ label hg_pf_strip_T2_masturbate:
             call her_main("One meagre extra point for letting you do this to me?", "scream", "worriedCl", "worried", "mid")
             call her_main("Now, that is just insulting, [genie_name]!", "soft", "base", "angry", "mid")
             m "One extra point, [hermione_name]. Take it or leave it."
-            hide screen g_c_c_u
             call her_chibi("sit_naked","on_desk","on_desk")
-            show screen g_c_c_u
 
             call her_main(".............", "annoyed", "narrow", "angry", "R")
             call her_main("I'll take it.", "soft", "base", "angry", "mid")
@@ -1505,9 +1494,7 @@ label hg_pf_strip_T2_masturbate:
             call her_main("Ten extra points [genie_name]?", "soft", "base", "angry", "mid")
             call her_main("But that is not even nearly enough!")
             m "Ten extra points. Take 'em or leave 'em [hermione_name]."
-            hide screen g_c_c_u
             call her_chibi("sit_naked","on_desk","on_desk")
-            show screen g_c_c_u
 
             call her_main("...............", "annoyed", "narrow", "angry", "R")
             call her_main("Well, alright... Better than nothing I suppose...", "soft", "base", "angry", "mid")
@@ -1522,9 +1509,7 @@ label hg_pf_strip_T2_masturbate:
 
         "\"You get 25 extra points.\"":
             $ current_payout = 60
-            hide screen g_c_c_u
             call her_chibi("sit_naked","on_desk","on_desk")
-            show screen g_c_c_u
 
             call her_main("Yes, I believe this would be an appropriate amount.", "open", "closed", "base", "mid")
             m "are we good then?"
@@ -1541,9 +1526,7 @@ label hg_pf_strip_T2_masturbate:
         "\"You get 50 extra points.\"":
             $ current_payout = 85
             call her_main("Seriously?!", "angry", "wide", "base", "stare")
-            hide screen g_c_c_u
             call her_chibi("sit_naked","on_desk","on_desk")
-            show screen g_c_c_u
 
             call her_main("Oh, I don't know what to say...", "open", "wide", "base", "stare")
             m "I enjoyed your performance [hermione_name]."
@@ -1596,7 +1579,6 @@ label hg_pf_strip_T2_masturbate:
                     show screen blkfade
                     with d5
 
-                    hide screen g_c_c_u
                     call gen_chibi("sit_behind_desk")
                     call her_chibi("stand","desk","base")
                     hide screen blkfade

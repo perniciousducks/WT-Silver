@@ -455,18 +455,12 @@ label hg_pf_strip_T4_fingering:
     call play_sound("climb_desk")
     pause 2
 
-    ">Hermione slowly climbs down desk and stands in front of you."
+    ">Hermione slowly climbs down from the desk and stands in front of you."
     pause.5
 
-    call hg_chibi_transition("admire_breasts") # Replace with naked chibi
+    call hg_chibi_transition("admire_breasts") #TODO Replace with naked chibi
 
-    #show screen desk
-    #show screen chair_left
     hide screen genie
-    $ gen_chibi_xpos = -77
-    $ gen_chibi_ypos = 13
-    $ g_c_u_pic = "characters/hermione/chibis/grope_ass/front_e_01.png"
-    show screen g_c_u
 
     hide screen blktone
     hide screen bld1
@@ -481,7 +475,7 @@ label hg_pf_strip_T4_fingering:
         m "..."
         "-Grab her tits-":
             call nar(">You reach forward and grab a hold of her supple breasts.")
-            $ g_c_u_pic = "groping_naked_tits_ani"
+            call hg_chibi_transition("grope_breasts")
             call set_her_action("fingering")
 
             call her_main("[genie_name]!", "shock", "worriedCl", "worried", "mid")
@@ -513,13 +507,13 @@ label hg_pf_strip_T4_fingering:
             call her_main("Please finger me...", "open", "narrow", "base", "up", cheeks="blush")
             m "Once more, a little louder this time."
             call her_main("Ah...{image=textheart} {size=+5}please finger my cunt!{/size}", "grin", "narrow", "base", "up", cheeks="blush")
-            $ g_c_u_pic = "groping_06"
+            show screen groping_06
             call nar(">You swiftly plunge two fingers into her dripping pussy.")
             call set_her_action("lift_breasts_naked")
             call her_main("{image=textheart}{image=textheart}{size=+5}!!!{/size}{image=textheart}{image=textheart}", "silly", "narrow", "annoyed", "up")
 
         "-Finger her-":
-            $ g_c_u_pic = "groping_06"
+            show screen groping_06
             call nar(">You run your hands up and down Hermione's legs...")
             call her_main("!!!", "open", "worriedCl", "worried", "mid")
             call nar(">And slowly move your hands towards her pussy...")
@@ -586,7 +580,7 @@ label hg_pf_strip_T4_fingering:
     call her_main("........................", "silly", "narrow", "annoyed", "up")
 
     call nar(">You release her...")
-    $ g_c_u_pic = "characters/hermione/chibis/grope_ass/front_e_01.png"
+    call hg_chibi_transition("admire_breasts")
     m "This will do for now [hermione_name]."
 
     jump end_hg_pf_strip

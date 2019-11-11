@@ -30,7 +30,10 @@ label rummaging:
     $ rum_times += 1  # Stat counter.
 
     hide screen genie
-    show screen rum_screen
+    show screen chair_left
+    show screen desk
+    show screen cupboard_open
+    show screen rummaging
     with d3
     show screen bld1
     with d3

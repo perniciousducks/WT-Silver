@@ -7,10 +7,6 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
     call reset_menu_position
 
-    $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-    $ gen_chibi_ypos = 10
-    $ g_c_u_pic = "sex_slow_ani"
-
     nar "This story is a rewrite of the \"Time for anal\" Private favour. And the genie is a pirate? Who knows... Enjoy."
 
 
@@ -110,10 +106,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen genie
                 show screen chair_left
 
-                $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-                $ gen_chibi_ypos = 10
-                $ g_c_u_pic = "sex_slow_ani"
-                show screen g_c_u
+                call hg_chibi_transition("sex_slow")
 
                 if use_cgs:
                     $ face_on_cg = True
@@ -158,10 +151,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen genie
                 show screen chair_left
 
-                $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
-                $ gen_chibi_ypos = 10
-                $ g_c_u_pic = "blowjob_ani"
-                show screen g_c_u
+                call hg_chibi_transition("bj")
 
                 hide screen blktone
                 hide screen bld1
@@ -196,10 +186,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen genie
                 show screen chair_left
 
-                $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-                $ gen_chibi_ypos = 10
-                $ g_c_u_pic = "sex_slow_ani"
-                show screen g_c_u
+                call hg_chibi_transition("sex_slow")
 
                 if use_cgs:
                     $ face_on_cg = True
@@ -238,10 +225,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen genie
                 show screen chair_left
 
-                $ gen_chibi_xpos = -10 #-185 behind the desk. (Also 5 is something).
-                $ gen_chibi_ypos = 10
-                $ g_c_u_pic = "blowjob_ani"
-                show screen g_c_u
+                call hg_chibi_transition("bj")
 
                 hide screen blktone
                 hide screen bld1
@@ -261,10 +245,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen genie
                 show screen chair_left
 
-                $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-                $ gen_chibi_ypos = 10
-                $ g_c_u_pic = "sex_slow_ani"
-                show screen g_c_u
+                call hg_chibi_transition("sex_slow")
 
                 if use_cgs:
                     $ face_on_cg = True
@@ -319,7 +300,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call cum_block
                 g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
 
-                $ g_c_u_pic = "sex_cum_in_ani"
+                call hg_chibi_transition("sex_creampie")
                 hide screen bld1
                 with d3
                 $ renpy.play('sounds/cannon.mp3')
@@ -361,7 +342,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 with d3
                 call ctc
 
-                $ g_c_u_pic = "sex_cum_in_blink_ani"
+                call hg_chibi_transition("sex_creampie_blink")
 
                 call her_main("*Sob!*...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 m "Whew!... I reckon me gunpowder needs restocking in the next harbour.' it be."
@@ -409,7 +390,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call cum_block
                 $ renpy.play('sounds/cannon.mp3')
                 with hpunch
-                $ g_c_u_pic = "sex_cum_out_ani"
+                call hg_chibi_transition("sex_cumming_out")
                 call ctc
 
                 $ uni_sperm = True
@@ -426,11 +407,9 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call ctc
 
                 call blkfade
-
-                call blkfade
                 $ face_on_cg = False
                 hide screen hermione_main
-
+                call hg_chibi_transition("sex_cumming_out_blink")
                 m "Well, I'm done... You can get off my ship now."
                 call her_main("Yes, captain...", "silly", "base", "worried", "mid", cheeks="blush",tears="soft",ypos="head")
                 m "You feeling alright?"
@@ -489,10 +468,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         hide screen genie
         show screen chair_left
 
-        $ gen_chibi_xpos = -70 #-185 behind the desk. (Also 5 is something).
-        $ gen_chibi_ypos = 10
-        $ g_c_u_pic = "sex_ani"
-        show screen g_c_u
+        call hg_chibi_transition("sex")
 
         if use_cgs:
             $ face_on_cg = True
@@ -601,7 +577,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 with d3
                 
                 $ renpy.play('sounds/cannon.mp3')
-                $ g_c_u_pic = "sex_cum_in_ani"
+                call hg_chibi_transition("sex_creampie")
                 call cum_block
                 with hpunch
                 call ctc
@@ -635,7 +611,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 with d3
 
                 $ renpy.play('sounds/cannon.mp3')
-                $ g_c_u_pic = "sex_cum_out_ani"
+                call hg_chibi_transition("sex_cumming_out")
                 call cum_block
                 with hpunch
                 call ctc
@@ -685,7 +661,6 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
 
-    hide screen g_c_c_u # Genie's sperm. Universal.
     hide screen ccg
 
     call her_chibi("stand","desk","base")

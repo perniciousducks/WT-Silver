@@ -100,7 +100,7 @@ label astoria_intro_E1:
                     with d3
 
                     # Genie and Tonks stand behind the desk.
-                    $ gen_chibi_zorder = 1
+                    $ genie_chibi.zorder = 1
                     $ tonks_chibi.zorder = 1
                     call ton_chibi("stand","275","behind_desk")
                     call gen_chibi("stand","190","behind_desk")
@@ -140,7 +140,7 @@ label astoria_intro_E1:
                     hide screen bld1
                     with d3
 
-                    $ gen_chibi_zorder = 2 # Default
+                    $ genie_chibi.zorder = 2 # Default
                     $ tonks_chibi.zorder = 3 # Default
                     call gen_chibi("sit_behind_desk")
                     call ton_chibi("stand","desk","base")

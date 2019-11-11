@@ -86,6 +86,5 @@ label update_genie:
     $ genie_scaleratio = 2 #Reset
     $ genie_zorder = 4 #Needs to stay behind other sprites, namely Hermione & Luna (zorder 5)
     $ use_genie_head = False
-    call update_gen_chibi
 
     return

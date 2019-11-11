@@ -11,7 +11,7 @@ label jerk_off:
 
     hide screen bld1
     hide screen genie
-    call gen_chibi("jerking_off_behind_desk")
+    call gen_chibi("jerk_off_behind_desk")
     with d3
     pause 1
 
@@ -72,7 +72,7 @@ else:
         g4 "Suck my almighty cock, you whore!!!"
 
 hide screen blktone
-call gen_chibi("cumming_behind_desk")
+call gen_chibi("cum_behind_desk")
 with hpunch
 pause 1
 

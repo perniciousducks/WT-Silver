@@ -8,7 +8,7 @@ label fireplace:
         with Dissolve(0.5)
         m "Hm... Looks like an ordinary fireplace..."
         show screen genie
-        hide screen genie_stand
+        call gen_chibi("hide")
         hide screen chair_left #Empty chair near the desk.
         hide screen desk
         with Dissolve(0.5)
@@ -34,7 +34,7 @@ label fireplace:
                 menu:
                     "-Try solving the puzzle-":
                         show screen genie
-                        hide screen genie_stand
+                        call gen_chibi("hide")
                         hide screen chair_left #Empty chair near the desk.
                         hide screen desk
                         with d3
@@ -42,7 +42,7 @@ label fireplace:
                     "-Save it for later-":
                         pass
                 show screen genie
-                hide screen genie_stand
+                call gen_chibi("hide")
                 hide screen chair_left #Empty chair near the desk.
                 hide screen desk
                 with d3

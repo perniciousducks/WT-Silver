@@ -137,10 +137,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         hide screen genie
         show screen chair_left
         show screen desk
-        $ gen_chibi_xpos = -20
-        $ gen_chibi_ypos = 10
-        $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
-        show screen g_c_u
+        call gen_chibi("hold_dick")
         hide screen blkfade
         with d5
         call ctc
@@ -267,7 +264,6 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         show screen genie
         hide screen chair_left
         hide screen desk
-        hide screen g_c_u
 
         call lun_main("...","base","seductive","sad","mid")
         $ luna_flip = -1
@@ -553,10 +549,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         hide screen genie
         show screen chair_left
         show screen desk
-        $ gen_chibi_xpos = -20
-        $ gen_chibi_ypos = 10
-        $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
-        show screen g_c_u
+        call gen_chibi("hold_dick")
         with fade
 
         $ luna_r_arm = 3
@@ -672,7 +665,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ luna_wear_cum = True
         call lun_main("mmmmm...","base","wide","sad","mid")
         call her_main("that's it, just let out all that {b}nasty{/b} cum.", "grin", "narrow", "annoyed", "up")
-        $ g_c_u_pic = "characters/hermione/chibis/grope_breasts/masturbate_01.png"
+        
+        call gen_chibi("hold_dick")
         $ genie_base = "characters/genie/base/open.png"
         $ luna_cum = 12
         ">Luna then collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."

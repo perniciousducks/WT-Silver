@@ -46,15 +46,3 @@ transform chibi_wand(position, flip):
     xoffset -72 # Note: Offset seems to be applied after zoom
     xzoom (-1 if flip else 1)
     zoom (1.0/scaleratio)
-
-# Old chibi transforms
-
-transform gen_walk_trans(x, x2, y, y2):
-    xpos x
-    ypos y
-    linear gen_speed xpos x2 ypos y2 # linear
-
-transform her_walk_trans(x, x2, y, y2):
-    xpos x
-    ypos y
-    linear her_speed xpos x2 ypos y2 # linear

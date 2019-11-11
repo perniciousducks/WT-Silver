@@ -75,10 +75,10 @@ label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, t
             $ u_sperm = "characters/hermione/face/auto_07.png"
 
     ### Sex ###
-    elif action in ["sex","sex_slow","sex_fast","sex_pause","sex_cumming_out","sex_cumming_out_blink","sex_creampie","sex_creampie_pause"]:
+    elif action in ["sex","sex_slow","sex_fast","sex_pause","sex_cumming_out","sex_cumming_out_blink","sex_creampie","sex_creampie_blink"]:
         show screen chair_left
         show screen hermione_chibi_sex(ani=action)
-        if action in ["sex_cumming_out","sex_cumming_out_blink","sex_creampie","sex_creampie_pause"]:
+        if action in ["sex_cumming_out","sex_cumming_out_blink","sex_creampie","sex_creampie_blink"]:
             $ uni_sperm = True
             $ u_sperm = "characters/hermione/face/auto_08.png"
 
@@ -163,12 +163,6 @@ screen jerking_off_01():
     if not no_blinking: #When True - blinking animation is not displayed.
         add "grope_front_blinking" at Position(xpos=-60, ypos=10)
     zorder desk_zorder
-
-### SPERM ###
-screen jerking_off_cum():
-    add "jerking_off_cum_ani" at Position(xpos=-60, ypos=10)
-    #add "grope_front_blinking" at Position(xpos=-200, ypos=10)
-    zorder desk_zorder+1
 
 ### ADMIRING TITS ###
 screen genie_and_tits_01(): #Genie sitting, looking ar naked tits. Hermione stands right in front of him. (Behind the desk even).
@@ -282,8 +276,8 @@ screen hermione_chibi_sex(ani=None): #x-70 y10
 
     elif ani in ["sex_creampie"]:
         add "sex_cum_in_ani" at Position(xpos=-70, ypos=10)
-    elif ani in ["sex_creampie_pause"]:
-        add "characters/hermione/chibis/sex/creampie_19.png" xpos -70 ypos 10 zoom 0.5
+    elif ani in ["sex_creampie_blink"]:
+        add "sex_cum_in_blink_ani" xpos -70 ypos 10 zoom 0.5
 
     else:
         add "sex_ani" at Position(xpos=-70, ypos=10)

@@ -120,7 +120,7 @@ label hermione_intro_E1:
             with d3
             pause.2
 
-            call gen_chibi("jerking_off_behind_desk")
+            call gen_chibi("jerk_off_behind_desk")
             with d3
             pause.5
 
@@ -244,7 +244,7 @@ label hermione_intro_E1:
 
         call cum_block
 
-        call gen_chibi("cumming_behind_desk")
+        call gen_chibi("cum_behind_desk")
         with d3
         pause 3
 
@@ -254,7 +254,7 @@ label hermione_intro_E1:
         her "???"
         g4 "*breathing heavily* Yes! yes...."
 
-        call gen_chibi("came_on_desk")
+        call gen_chibi("cum_on_desk")
         with d3
         pause.5
 

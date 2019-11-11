@@ -3,6 +3,8 @@ label phoenix:
     menu:
         "Dueling - Prototype sign drawing":
             jump magic_tutorial
+        "Let me feed and pet that damn bird!":
+            pass
         "Back":
             jump main_room_menu
 
@@ -16,7 +18,7 @@ label phoenix:
         m "Hm....."
         m "Even this weird-looking bird radiates magic..."
         show screen genie
-        hide screen genie_stand
+        call gen_chibi("hide")
         hide screen chair_left #Empty chair near the desk.
         hide screen desk
         with d5
@@ -36,6 +38,8 @@ label phoenix:
 ### FEEDING ###
 label feeding:
     hide screen genie
+    show screen chair_left
+    show screen desk
     show screen feeding
     with d3
     pause .5
@@ -51,18 +55,22 @@ label feeding:
     else:
         pause .8
 
-    show screen genie
-    hide screen feeding
-    with d3
+    # show screen genie
+    # hide screen chair_left
+    # hide screen desk
+    # hide screen feeding
+    # with d3
 
     jump main_room_menu
 
 ### PETTING ###
 label petting:
     hide screen genie
+    show screen chair_left
+    show screen desk
     show screen petting
     with d3
-    pause 1
+    pause .5
 
     $ random_number = renpy.random.randint(1, 5)
     if random_number == 1:
@@ -74,8 +82,8 @@ label petting:
     else:
         pause 2.4
 
-    show screen genie
-    hide screen petting
-    with d3
+    # show screen genie
+    # hide screen petting
+    # with d3
 
     jump main_room_menu

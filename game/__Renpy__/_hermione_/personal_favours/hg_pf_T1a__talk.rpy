@@ -119,7 +119,7 @@ label hg_pf_talk_T1: # Call label
             hide screen hermione_main
             call nar(">You reach under the desk and grab your cock...")
 
-            call gen_chibi("jerking_behind_desk")
+            call gen_chibi("jerk_off_behind_desk")
             with d3
             pause.8
 
@@ -231,7 +231,7 @@ label hg_pf_talk_T2:
 
             hide screen hermione_main
             call nar(">You reach under the desk and grab your cock...")
-            call gen_chibi("jerking_behind_desk")
+            call gen_chibi("jerk_off_behind_desk")
             with d3
             pause.8
 
@@ -274,7 +274,7 @@ label hg_pf_talk_T2:
         g4 "{size=-4}(You little slut! That did it!) *Argh!*{/size}"
 
         call cum_block
-        call gen_chibi("cumming_behind_desk")
+        call gen_chibi("cum_behind_desk")
         with d3
         pause.8
 
@@ -290,7 +290,7 @@ label hg_pf_talk_T2:
         g4 "What? No, I was just... ah, shit, this feels good..."
 
         call hide_characters
-        call gen_chibi("came_on_desk")
+        call gen_chibi("cum_on_desk")
         with d3
         pause.8
 
@@ -392,7 +392,7 @@ label hg_pf_talk_T3:
 
             hide screen hermione_main
             call nar(">You reach under the desk and grab your cock...")
-            call gen_chibi("jerking_behind_desk")
+            call gen_chibi("jerk_off_behind_desk")
             with d3
             pause.8
             call her_main("[genie_name], I hoped we wouldn't do this again...", "open", "squint", "base", "mid")
@@ -471,7 +471,7 @@ label hg_pf_talk_T3:
         hide screen bld1
         with d3
         call cum_block
-        call gen_chibi("cumming_behind_desk")
+        call gen_chibi("cum_behind_desk")
         with d3
         pause.8
 
@@ -490,7 +490,7 @@ label hg_pf_talk_T3:
         hide screen bld1
         with d3
         pause.1
-        call gen_chibi("came_on_desk")
+        call gen_chibi("cum_on_desk")
         with d3
         pause.5
 
@@ -657,7 +657,7 @@ label hg_pf_talk_tonks:
                     hide screen bld1
                     with d3
                     pause.2
-                    call gen_chibi("jerking_behind_desk")
+                    call gen_chibi("jerk_off_behind_desk")
                     with d3
                     pause.8
 
@@ -719,7 +719,7 @@ label hg_pf_talk_tonks:
                     hide screen bld1
                     with d3
                     pause.2
-                    call gen_chibi("jerking_behind_desk")
+                    call gen_chibi("jerk_off_behind_desk")
                     with d3
                     pause.8
 
@@ -963,7 +963,7 @@ label hg_pf_talk_tonks:
                 hide screen bld1
                 with d3
                 call cum_block
-                call gen_chibi("cumming_behind_desk")
+                call gen_chibi("cum_behind_desk")
                 with d3
                 pause.8
 
@@ -974,7 +974,7 @@ label hg_pf_talk_tonks:
                 call her_main("", "annoyed", "base", "base", "mid", cheeks="blush")
                 call ton_main("Are you okay, professor? You're awfully quiet...","base","base","raised","mid", cheeks="blush")
                 call her_main("(.............)", "soft", "base", "base", "mid")
-                call gen_chibi("came_on_desk")
+                call gen_chibi("cum_on_desk")
                 with d3
                 pause.2
                 call bld
@@ -1099,7 +1099,7 @@ label hg_pf_talk_tonks:
                         with d3
                         pause.2
                         call cum_block
-                        call gen_chibi("cumming_behind_desk")
+                        call gen_chibi("cum_behind_desk")
                         with d3
                         pause.8
 
@@ -1111,7 +1111,7 @@ label hg_pf_talk_tonks:
                         call ton_main("Seems like the headmaster enjoyed our little discussion...","horny","base","angry","mid", hair="horny")
                         call her_main("(.............)", "soft", "base", "base", "mid")
 
-                        call gen_chibi("came_on_desk")
+                        call gen_chibi("cum_on_desk")
                         with d3
                         pause.2
 

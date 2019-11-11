@@ -198,7 +198,7 @@ label cho_intro_E1:
             with d3
             pause.2
 
-            call gen_chibi("jerking_off_behind_desk")
+            call gen_chibi("jerk_off_behind_desk")
             with d3
             pause.5
 
@@ -247,7 +247,7 @@ label cho_intro_E1:
         with d3
 
         call cum_block
-        call gen_chibi("cumming_behind_desk")
+        call gen_chibi("cum_behind_desk")
         with d3
         pause.8
 
@@ -261,7 +261,7 @@ label cho_intro_E1:
 
         m "(Shit...)"
 
-        call gen_chibi("came_on_desk")
+        call gen_chibi("cum_on_desk")
         with d3
         pause.8
 

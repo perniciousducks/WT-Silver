@@ -28,7 +28,6 @@ label hg_pf_sex:
 
     $ face_on_cg = False
     hide screen ccg
-    hide screen g_c_c_u
 
     call her_chibi("stand","desk","base", flip=False)
     call gen_chibi("sit_behind_desk")
@@ -407,7 +406,7 @@ label hg_sex_1:
             hide screen ccg
             $ hermione_flip = 1 #Default
             $ face_on_cg = False
-            call hg_chibi_transition(action="sex_creampie_pause", trans="d5")
+            call hg_chibi_transition(action="sex_creampie_blink", trans="d5")
 
             if daytime:
                 call her_main("But I think I will be able to make it to my classes...", "silly", "narrow", "base", "dead", ypos="head")
@@ -441,7 +440,7 @@ label hg_sex_1:
             call ctc
 
             if not use_cgs:
-                call hg_chibi_transition(action="sex_creampie_pause", trans="d5")
+                call hg_chibi_transition(action="sex_creampie_blink", trans="d5")
 
             call her_main("You came inside of me...", "silly", "narrow", "base", "dead")
             g9 "I sure did."
@@ -647,7 +646,7 @@ label hg_sex_2:
             call ctc
 
             if not use_cgs:
-                call hg_chibi_transition(action="sex_creampie_pause", trans="d5")
+                call hg_chibi_transition(action="sex_creampie_blink", trans="d5")
 
             #$ ccg2 = 40
             m "Well, this was pretty great..."
@@ -667,7 +666,7 @@ label hg_sex_2:
 
             $ face_on_cg = False
             hide screen ccg
-            call hg_chibi_transition(action="sex_creampie_pause", trans="d5")
+            call hg_chibi_transition(action="sex_creampie_blink", trans="d5")
 
             call her_main("Maybe you are right, [genie_name], and I shouldn't worry so much.", "angry", "wink", "base", "mid", ypos="head",flip=False)
             call her_main("Can I get my payment now?")
@@ -711,7 +710,7 @@ label hg_sex_2:
 
             $ face_on_cg = False
             hide screen ccg
-            call hg_chibi_transition(action="sex_creampie_pause", trans="d5")
+            call hg_chibi_transition(action="sex_creampie_blink", trans="d5")
 
             call her_main("I think I came several times, [genie_name]...", "soft", "narrow", "annoyed", "up", ypos="head",flip=False)
             call her_main("Can I get my payment now?", "angry", "wink", "base", "mid")

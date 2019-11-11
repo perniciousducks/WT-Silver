@@ -31,6 +31,12 @@ label ball_ending_start:
             jump hermione_talk
 
 
+screen genie_snape_shake_hands(shake=False):
+    if shake:
+        add "characters/snape/chibis/handshake/hand_01.png" pos (220, 205) zoom 0.5
+    else:
+        add "characters/snape/chibis/handshake/hand_00.png" pos (220, 205) zoom 0.5
+
 label ball_ending_E1:
     stop music fadeout 1.0
 
@@ -68,10 +74,8 @@ label ball_ending_E1:
     hide screen bld1
     call sna_chibi("hide")
     show screen chair_left
-    show screen g_c_u
-    $ gen_chibi_xpos = 220
-    $ gen_chibi_ypos = 205
-    $ g_c_u_pic = "characters/snape/chibis/handshake/hand_00.png"
+    show screen genie_snape_shake_hands(False)
+
     play music "music/11 The Quidditch Match.mp3" fadein 1 fadeout 1 # EPIC THEME.
     pause 1
 
@@ -85,7 +89,7 @@ label ball_ending_E1:
     m "Right..."
     call blkfade
 
-    $ g_c_u_pic = "characters/snape/chibis/handshake/hand_01.png"
+    show screen genie_snape_shake_hands(True)
     call hide_blkfade
     pause 2
 
@@ -105,7 +109,7 @@ label ball_ending_E1:
 
     hide screen snape_main
     hide screen chair_left
-    hide screen g_c_u
+    hide screen genie_snape_shake_hands
     show screen genie
     pause.5
 

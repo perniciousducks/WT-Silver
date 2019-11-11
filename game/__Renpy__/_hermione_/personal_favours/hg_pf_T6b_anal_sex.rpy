@@ -256,7 +256,7 @@ label hg_anal_sex_1:
 
             # AFTER CUM INSIDE
             if not use_cgs:
-                call hg_chibi_transition("sex_creampie_pause", trans="d5")
+                call hg_chibi_transition("sex_creampie_blink", trans="d5")
 
             call her_main("*Sob!*...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             m "Whew!... I think that was the last of it."
@@ -272,7 +272,7 @@ label hg_anal_sex_1:
 
             $ face_on_cg = False
             hide screen ccg
-            call hg_chibi_transition("sex_creampie_pause", trans="d5")
+            call hg_chibi_transition("sex_creampie_blink", trans="d5")
             pause.8
 
             call her_main("I apologize for saying that I hate you, [genie_name]...", "base", "base", "base", "R",cheeks="blush",tears="mascara",ypos="head",flip=False)
@@ -315,7 +315,7 @@ label hg_anal_sex_1:
 
             $ face_on_cg = False
             hide screen ccg
-            call hg_chibi_transition("sex_creampie_pause", trans="d5")
+            call hg_chibi_transition("sex_creampie_blink", trans="d5")
             pause.8
 
             m "Well, I'm done... You can get off my desk now."

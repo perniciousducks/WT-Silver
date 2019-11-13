@@ -186,6 +186,10 @@ screen genie_desk:
             action Jump("desk")
             sensitive room_menu_active
 
+screen gui_tooltip(img=None, xx=335, yy=210):
+    add img xpos xx ypos yy
+    zorder 3
+
 # Phoenix
 screen phoenix_feather():
     tag feather

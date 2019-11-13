@@ -130,7 +130,7 @@ init -1 python:
         def move(self, x=None, y=None, speed=1.0, time_speed=None, redux=False):
             pos = self.resolve_position(x,y)
             dist = math.sqrt((self.pos[0] - pos[0])**2 + (self.pos[1] - pos[1])**2)
-            time = dist / (float(chibi_base_speed) * speed)
+            time = dist / (float(self.speed) * speed)
 
             # Temporary aid for time to speed conversion
             if time_speed and config.developer:

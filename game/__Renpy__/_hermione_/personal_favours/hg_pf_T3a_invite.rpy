@@ -141,7 +141,7 @@ label hg_pf_strip_T2_Snape:
     $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking.
     pause 3
     call her_chibi("dance","on_desk","on_desk")
-    call sna_chibi("stand","desk_close","base")
+    call sna_chibi("stand","desk_close","desk_close")
 
     call her_main(".............", "open", "closed", "base", "mid", ypos="head")
     call sna_main("......................","snape_05")
@@ -619,6 +619,7 @@ label hg_pf_strip_T2_Snape_masturbate:
 
         ">Hermione performs another set of movements and pirouettes..."
         ">Gives a little curtsy bow to the imaginary public..."
+        label dev:
         ">And then slumps down on her butt exhausted."
 
         call her_chibi("sit_naked","on_desk","on_desk")
@@ -633,7 +634,6 @@ label hg_pf_strip_T2_Snape_masturbate:
         with hpunch
 
         g4 "ARGH! YOU FUCKING WHORE!"
-
         hide screen bld1
         with d3
 
@@ -646,19 +646,23 @@ label hg_pf_strip_T2_Snape_masturbate:
 
         call her_main("??!!!", "shock", "wide", "base", "stare")
         call her_main("", "angry", "worriedCl", "worried", "mid")
+        hide screen bld1
+        with d3
         call ctc
 
         call sna_main("Good job, you harlot!","snape_18")
         call sna_main("Here is your reward!","snape_21")
 
         call cum_block
-        call sna_chibi("cumming","desk_close","245")
+        call sna_chibi("cumming","desk_close","desk_close")
         pause.2
 
         $ uni_sperm = True #Triggers universal sperm to show on hermione_main screen.
         $ u_sperm = "characters/hermione/face/auto_05.png"
 
         call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
+        hide screen bld1
+        with d3
         call ctc
 
         call sna_main("Oh... Yes...","snape_21")
@@ -669,8 +673,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         g9 "I know, right!?"
 
         call gen_chibi("cumming_done","behind_desk","base")
-        call sna_chibi("cumming_done","desk_close","245")
-        pause.2
+        call sna_chibi("cumming_done","desk_close","desk_close")
 
         call sna_main("Yes... We should do this more often.","snape_22")
         call her_main(".................", "grin", "narrow", "annoyed", "up")

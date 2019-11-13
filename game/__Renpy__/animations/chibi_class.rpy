@@ -1,45 +1,12 @@
 label chibi_test_scene:
-    # $ susan_chibi.position(x="mid",y="base")
-    # $ susan_chibi.do()
-    # $ susan_chibi.show()
-    # pause 2
-    # $ susan_chibi.move(x="door")
-    # pause 2
-    # $ susan_chibi.hide()
-
-    # $ tonks_chibi.position(x="mid",y="base")
-    # $ tonks_chibi.do()
-    # $ tonks_chibi.show()
-    # pause 2
-    # $ tonks_chibi.move(x="door")
-    # pause 2
-    # $ tonks_chibi.hide()
-
-    # $ cho_class.equip(cho_outfit_quidditch)
-    # $ cho_chibi.position(x="door",y="base")
-    # $ cho_chibi.do("fly")
-    # $ cho_chibi.show()
-    # pause 4
-    # $ cho_chibi.move(x="desk")
-    # pause 4
-    # $ cho_chibi.move(x="door")
-    # pause 4
-    # $ cho_chibi.do("fly", flip=False)
-    # pause 4
-    # $ cho_chibi.hide()
-    $ renpy.checkpoint()
-    "Begin"
-    $ astoria_chibi.position(x="mid", y="base")
-    $ astoria_chibi.do()
-    $ astoria_chibi.show()
-    "Check 1"
-    $ astoria_chibi.do("wand")
-    $ astoria_chibi.zorder = 2
-    "Check 2"
-    $ astoria_chibi.hide()
-    "Done"
 
     jump main_room
+
+#TEMP skip say statements (for testing chibi code)
+# python early:
+#     def say_none(who, what, *args, **kwargs):
+#         return
+#     renpy.say = say_none
 
 screen chibi(chibi_object):
     zorder chibi_object.zorder
@@ -48,50 +15,31 @@ screen chibi(chibi_object):
         fit_first True
         for d in chibi_object.displayables():
             add d
-        transclude # Allow additional content when used by another screen
         frame: # Debug frame
             background "#00ff0055"
 
-#TODO Fix: Coordinates vary for some chibis (maybe resolve positions outside of chibi class)
-#TODO Anchor chibi transforms to (0.5, 1.0) and realign positions
-define chibi_places = {
-    "mid": (540, None), # cho:560 lun:580 sna:500 gen:500
-    "desk": (440, None),
-    "desk_close": (425, None),
-    "on_desk": (350, 180),
-    "behind_desk": (230, 260), # gen:210, 190
-    "door": (750, None),
-    "base": (None, 250), # sna: 190 (240/245?) gen: 190
-    "left": (100, None), # Genie only?
-    "fireplace": (550, 160), # Genie only?
-    "cupboard": (260, None), # Genie only?
-}
-
-#TODO Define a reasonable base speed
-define chibi_base_speed = 100 # pixels/sec
-
-#TEMP skip say statements (for testing chibi code)
-# python early:
-#     def say_none(who, what, *args, **kwargs):
-#         return
-#     renpy.say = say_none
-
 init -1 python:
     from collections import OrderedDict
-    import os.path
 
     def update_chibi(name):
+        get_chibi_object(name).update()
+
+    def get_chibi_object(name):
         name = "{}_chibi".format(name)
         c = getattr(renpy.store, name, None)
         if c and isinstance(c, chibi):
-            c.update()
-        elif config.developer:
+            return c
+        else:
+            # Fail early, returning None is no good
             raise Exception("Chibi object not found. {}".format(name))
 
     class chibi(object):
         #TODO Document usage of chibi class
         #TODO Implement chibi_effect
         #TODO Fix chibi screen problems on rollback (eg. happens when astoria and tonks are both visible during imperio stuff)
+        #TODO Fix: Coordinates vary for some chibis (maybe resolve positions outside of chibi class)
+        #TODO Anchor chibi transforms to (0.5, 1.0) and realign positions
+
         """
             handling actions:
             * by action definition
@@ -103,12 +51,13 @@ init -1 python:
                 the actual image filename relative to `image_path`
             * adding `~` as a prefix to a filename will resolve it to the chibi's base image path instead of
                 the special action directory (this is useful for images that are compatible with multiple actions)
-            * note that layers must be updated whenever the action changes. When this happens, the class calls
-                `update_callback`, which is expected to set all the required chibi layers
+            * the class will update layers whenever the action changes by calling `update_callback`,
+                which is expected to set all the required chibi layers
 
             tag: name of the chibi (character name, use only letters)
             special: an action with its own set of layers (ie. images are loaded from a special directory)
             action: an action that uses the common set of layers (ie. images are loaded from the image path)
+            places:
         """
 
         # action: (is_special, transform_name, move_action_name)
@@ -120,26 +69,47 @@ init -1 python:
             "wand": (True, "chibi_wand", "walk"),
         }
 
-        def __init__(self, tag, layers, update_callback, zorder=3, image_path=None, actions=None):
+        # place: (x, y)
+        places = {
+            "base": (None, 250), # sna: 190 (240/245?) gen: 190
+            "mid": (540, None), # cho:560 lun:580 sna:500 gen:500
+            "desk": (440, None),
+            "on_desk": (350, 180),
+            "behind_desk": (230, 260), # gen:210, 190
+            "door": (750, None),
+        }
+
+        def __init__(self, tag, layers, update_callback, zorder=3, speed=100, image_path=None, actions=None, places=None):
             self.tag = tag
+            self.layers = OrderedDict([(k, None) for k in layers])
+            self.update_callback = update_callback
+            self.zorder = zorder
+            self.speed = speed # pixels/sec
+
             if image_path:
                 self.image_path = image_path
             else:
                 self.image_path = "characters/{}/chibis".format(tag)
+            
             if actions:
+                # Override class variable for this instance
                 self.actions = dict(chibi.actions)
                 self.actions.update(actions)
-            self.layers = OrderedDict([(k, None) for k in layers])
+
+            if places:
+                # Override class variable for this instance
+                self.places = dict(chibi.places)
+                self.places.update(places)
+
             self.pos = (0,0)
             self.flip = False
             self.action = None
             self.action_info = self.resolve_action(None)
             self.special = None
-            self.update_callback = update_callback
-            self.zorder = zorder
             self.transform = None
-            self.screen_tag = "{}_chibi".format(tag)
+
             # Define a screen for the chibi
+            self.screen_tag = "{}_chibi".format(tag)
             renpy.define_screen(self.screen_tag, chibi._screen, tag=self.screen_tag, zorder="chibi_object.zorder")
 
         @staticmethod
@@ -168,6 +138,7 @@ init -1 python:
             
             self.flip = self.pos[0] <= pos[0]
 
+            #TODO Chibi action after moving should be configurable per action (default to stand/None)
             old_action = self.action
             if len(self.action_info) == 3:
                 # Action info provides a move action
@@ -222,15 +193,15 @@ init -1 python:
             if not isinstance(x, int):
                 if x == None:
                     x = self.pos[0]
-                elif x in chibi_places:
-                    x = chibi_places[x][0] or self.pos[0]
+                elif x in self.places:
+                    x = self.places[x][0] or self.pos[0]
                 else:
                     x = int(x)
             if not isinstance(y, int):
                 if y == None:
                     y = self.pos[1]
-                elif y in chibi_places:
-                    y = chibi_places[y][1] or self.pos[1]
+                elif y in self.places:
+                    y = self.places[y][1] or self.pos[1]
                 else:
                     y = int(y)
             return (x,y)
@@ -274,8 +245,8 @@ init -1 python:
                 # Assume value is a filename and resolve it
                 if value.startswith('~') or not self.special:
                     # Avoid special directory
-                    value = os.path.join(self.image_path, value)
+                    value = self.image_path + "/" + value
                 else:
-                    value = os.path.join(self.image_path, self.action, value)
+                    value = self.image_path + "/" + self.action + "/" + value
             
             self.layers[key] = value

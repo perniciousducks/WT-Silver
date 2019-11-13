@@ -239,9 +239,9 @@ label slytherin_match:
     #call sna_chibi("stand", "210", -40, flip=True)
     #call gen_chibi("stand", "130", "10")
     #call her_chibi("stand", "375", "105", flip=True)
-    $ sna_chibi_zorder = 1
+    $ snape_chibi.zorder = 1
     $ hermione_chibi.zorder = 2
-    $ ton_chibi_zorder = 3
+    $ tonks_chibi.zorder = 3
     $ genie_chibi.zorder = 4
 
     call room("quidditch_pitch")
@@ -556,8 +556,8 @@ label slytherin_match:
     pause 0.5
     $ renpy.sound.play("sounds/crowd_gasp.mp3")
     call ton_chibi("slack_jaw", 200, 50, flip=True)
-    call gen_chibi("animation", 130, 10, pic="genie_stand_shocked", flip=False)
-    call sna_chibi("animation", 210, -40, pic="snape_stand_shocked", flip=True)
+    call gen_chibi("stand_shocked", 130, 10, flip=False)
+    call sna_chibi("stand_shocked", 210, -40, flip=True)
     pause 1.0
     $ renpy.sound.play("sounds/dizzy.mp3", loop=True)
     pause 2.0
@@ -580,9 +580,9 @@ label slytherin_match:
     pause.5
 
     call hide_characters
-    $ sna_chibi_zorder = 1
+    $ snape_chibi.zorder = 1
     $ hermione_chibi.zorder = 3
-    $ ton_chibi_zorder = 2
+    $ tonks_chibi.zorder = 2
     $ genie_chibi.zorder = 4
 
     call her_chibi("lying", 330, 160)
@@ -785,7 +785,7 @@ label slytherin_match:
     with d3
     pause .5
 
-    $ sna_chibi_zorder = 1
+    $ snape_chibi.zorder = 1
     $ hermione_chibi.zorder = 3
     $ genie_chibi.zorder = 2
 
@@ -880,7 +880,7 @@ label slytherin_match:
     g9 "Oh...{w=0.3} I see what you mean..."#Small text
     call gen_walk(xpos=290, ypos=55, speed=2.5)
     call gen_chibi(action="hide")
-    $ her_chibi_zorder = 5
+    $ hermione_chibi.zorder = 5
     #
     #
     #
@@ -888,7 +888,7 @@ label slytherin_match:
     #
     #
     #
-    call her_chibi("animation", 328, 100, pic="grope_ass_podium_idle")
+    call hg_chibi_transition("grope_on_podium_idle")
     with d3
     pause .5
     # Genie starts sneaking up behind Hermione (Tonks)
@@ -896,7 +896,7 @@ label slytherin_match:
     hide screen hermione_main
     with d3
     pause 1.0
-    call her_chibi("animation", 328, 100, pic="grope_ass_podium")
+    call hg_chibi_transition("grope_on_podium")
     with d3
     pause 2.0
     call her_main("Whoa!","base","base","base","mid") # Look of surprise
@@ -907,7 +907,7 @@ label slytherin_match:
     g9 "..."
     call her_main("No worries ladies and gentlemen, just had a bit of a slip. It's very...{w=0.3} wet up here...","base","base","base","mid") #blushing
     m "(And it will be getting even wetter in a minute...)"
-    call her_chibi("animation", 328, 100, pic="grope_ass_podium_horny")
+    call hg_chibi_transition("grope_on_podium_horny")
     hide screen hermione_main
     show screen blktone5
     with d5
@@ -950,7 +950,7 @@ label slytherin_match:
     call her_main("And we all know...{w=0.3} *Ahh*{w=0.3} No excessive use of elbows...{w=0.3} *Ahh*{w=0.3} Permitted...","base","base","base","mid")
     call her_main("But it seems to have done the trick!","base","base","base","mid")
     call her_main("The Slytherin chasers are... {w=0.3}*Ahh*...{w=0.3} Edging ever closer... to the goal posts!","base","base","base","mid")
-    call her_chibi("animation", 328, 100, pic="grope_ass_podium_close")
+    call hg_chibi_transition("grope_on_podium_close")
     hide screen hermione_main
     show screen blktone5
     with d5
@@ -964,7 +964,7 @@ label slytherin_match:
     with d3
     pause 0.5
     call cum_block
-    call her_chibi("animation", 328, 100, pic="grope_ass_podium_cumming")
+    call hg_chibi_transition("grope_on_podium_cumming")
     pause 0.7
     show screen blktone5
     with d5

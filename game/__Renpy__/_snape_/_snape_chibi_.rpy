@@ -1,7 +1,3 @@
-
-
-### Snape Chibi ###
-
 label sna_chibi(action=None, xpos=None, ypos=None, flip=False):
     $ snape_chibi.position(xpos, ypos, flip)
 
@@ -20,14 +16,15 @@ label sna_chibi(action=None, xpos=None, ypos=None, flip=False):
     #TODO Add Snape chibi wand actions
     # elif action in ("wand",):
     #     $ snape_chibi.do(action)
-    elif action == "stand_shocked":
-        pass #TODO Add action stand_shocked to Snape chibi
     elif action in ("jerking_off", "cumming", "cumming_done"):
         $ snape_chibi.hide() # Not handled by chibi class
         show screen snape_jerking_off(action)
     elif action == "hold_dick":
         $ snape_chibi.hide() # Not handled by chibi class
         show screen snape_stands_holds_dick
+    elif action == "stand_shocked":
+        $ snape_chibi.hide()
+        show screen snape_stand_shocked
     elif action == "reset":
         $ snape_chibi.do(None)
     else: # stand
@@ -62,6 +59,7 @@ label sna_walk(xpos=None, ypos=None, speed=None, action=None, loiter=True, redux
 
     return
 
+#TODO Convert Snape chibi screens into chibi class actions if position and such depend on it
 # Screens
 screen with_snape(ani=False):
     tag hanging_with_snape
@@ -95,8 +93,19 @@ screen snape_stands_holds_dick():
     zorder snape_chibi.zorder
     add "characters/snape/chibis/masturbating/01.png" pos snape_chibi.pos zoom 0.5 yoffset -60
 
+screen snape_stand_shocked:
+    tag snape_chibi
+    zorder snape_chibi.zorder
+    add "snape_stand_shocked" pos snape_chibi.pos
+
 # Chibi definition
-default snape_chibi = chibi("snape", ["base"], update_snape_chibi)
+default snape_chibi = chibi("snape", ["base"], update_snape_chibi, places=snape_places)
+
+define snape_places = {
+    "base": (None, 190),
+    "mid": (500, None),
+    "desk_close": (425, 245)
+}
 
 init python:
     def update_snape_chibi(chibi):

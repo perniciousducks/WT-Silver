@@ -40,10 +40,6 @@ screen ccg():
 
     zorder 4
 
-screen gui_tooltip(img=None, xx=335, yy=210):
-    add img xpos xx ypos yy
-    zorder 3
-
 screen notes(): #A bunch of notes poping out with a "win" sound effect.
     add "notes" xpos 320+140 ypos 330
     zorder 1
@@ -72,12 +68,12 @@ screen bld1():
     tag bld1
     if not current_room == "quidditch_pitch":
         add "interface/bld.png"
-    zorder 3
+    zorder 4
 
 screen bld2():
     tag bld2
     add im.Flip("interface/bld.png", vertical=True)
-    zorder 3
+    zorder 4
 
 screen ctc():
     add "ctc"

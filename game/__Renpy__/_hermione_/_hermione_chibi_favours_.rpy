@@ -49,7 +49,10 @@ label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, t
             show screen groping_02 # Towards Door.
         else:
             show screen groping_01 # Towards Cupboard.
-
+    
+    elif action in ("grope_on_podium_horny", "grope_on_podium_close", "grope_on_podium_cumming", "grope_on_podium_idle", "grope_on_podium_cumming"):
+        show screen grope_on_podium(action)
+        
     elif action in ["jerk_off"]:
         show screen chair_left
         show screen jerking_off_01
@@ -134,13 +137,10 @@ screen no_groping_02(): # Hermione stands with you behind desk - Flip = False
         add "grope_back_blinking" at Position(xpos=-60, ypos=10)
     zorder desk_zorder
 
-screen grope_ass_podium(idle=False):
+screen grope_on_podium(action):
     tag favor
-    zorder 5
-    if idle:
-        add "grope_ass_podium_idle" pos (328,100)
-    else:
-        add "grope_ass_podium" pos (328,100)
+    if action in ("grope_on_podium_horny", "grope_on_podium_close", "grope_on_podium_cumming", "grope_on_podium_idle", "grope_on_podium_cumming"):
+        add action pos (328, 100)
 
 ### MOLESTING TITS FULLY CLOTHED ###
 screen groping_03(): # Grope breasts fully clothed
@@ -188,7 +188,7 @@ screen hermione_chibi_ass(ani=None):
 ### Handjob ###
 screen hermione_chibi_hj(ani=None, xpos=230, ypos=0):
     tag favor
-    zorder chibi_zorder
+    zorder desk_zorder
     $ chibi_xpos = xpos
     $ chibi_ypos = ypos
 
@@ -213,7 +213,7 @@ screen hermione_chibi_hj(ani=None, xpos=230, ypos=0):
 ### Titjob ###
 screen hermione_chibi_tj(ani=None, xpos=450, ypos=200):
     tag favor
-    zorder chibi_zorder
+    zorder desk_zorder
     $ chibi_xpos = xpos
     $ chibi_ypos = ypos
 

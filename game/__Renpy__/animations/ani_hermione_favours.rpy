@@ -784,33 +784,36 @@ image fingering_blinking:
     pause 3
     repeat
 
-image grope_ass_podium:
+image grope_on_podium_loop:
+    "characters/hermione/chibis/grope_ass_podium/grope_1.png"
+    pause .2
+    "characters/hermione/chibis/grope_ass_podium/grope_2.png"
+    pause .2
+    "characters/hermione/chibis/grope_ass_podium/grope_3.png"
+    pause .5
+    "characters/hermione/chibis/grope_ass_podium/grope_2.png"
+    pause .2
+    "characters/hermione/chibis/grope_ass_podium/grope_1.png"
+    pause .2
+    repeat
+
+image grope_on_podium:
     zoom 0.5
     #size (282, 410)
     contains:
-        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
-        pause .2
-        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
-        pause .2
-        "characters/hermione/chibis/grope_ass_podium/grope_3.png"
-        pause .5
-        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
-        pause .2
-        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
-        pause .2
-        repeat
+        "grope_on_podium_loop"
     contains:
-        "grope_ass_podium_blink"
+        "grope_on_podium_blink"
 
-image grope_ass_podium_idle:
+image grope_on_podium_idle:
     zoom 0.5
     #size (282, 410)
     contains:
         "characters/hermione/chibis/grope_ass_podium/idle.png"
     contains:
-        "grope_ass_podium_blink"
+        "grope_on_podium_blink"
 
-image grope_ass_podium_blink:
+image grope_on_podium_blink:
     "images/animation/00.png"
     pause .1
     "characters/hermione/chibis/grope_ass_podium/blink.png"
@@ -827,65 +830,32 @@ image grope_ass_podium_blink:
     pause 3
     repeat
     
-image grope_ass_podium_horny:
-    zoom 0.5
-    
+image grope_on_podium_horny:
+    zoom 0.5    
     contains:
-        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
-        pause .2
-        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
-        pause .2
-        "characters/hermione/chibis/grope_ass_podium/grope_3.png"
-        pause .5
-        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
-        pause .2
-        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
-        pause .2
-        repeat
+        "grope_on_podium_loop"
     contains:
         "characters/hermione/chibis/grope_ass_podium/horny.png"
     contains:
-        "grope_ass_podium_blink"
+        "grope_on_podium_blink"
         
-image grope_ass_podium_close:
+image grope_on_podium_close:
     zoom 0.5
-    
     contains:
-        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
-        pause .2
-        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
-        pause .2
-        "characters/hermione/chibis/grope_ass_podium/grope_3.png"
-        pause .5
-        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
-        pause .2
-        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
-        pause .2
-        repeat
+        "grope_on_podium_loop"
     contains:
         "characters/hermione/chibis/grope_ass_podium/close.png"
     contains:
-        "grope_ass_podium_blink"
+        "grope_on_podium_blink"
         
-image grope_ass_podium_cumming:
+image grope_on_podium_cumming:
     zoom 0.5
-    
     contains:
-        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
-        pause .2
-        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
-        pause .2
-        "characters/hermione/chibis/grope_ass_podium/grope_3.png"
-        pause .5
-        "characters/hermione/chibis/grope_ass_podium/grope_2.png"
-        pause .2
-        "characters/hermione/chibis/grope_ass_podium/grope_1.png"
-        pause .2
-        repeat
+        "grope_on_podium_loop"
     contains:
         "characters/hermione/chibis/grope_ass_podium/cumming.png"
     contains:
-        "grope_ass_podium_blink"
+        "grope_on_podium_blink"
 
 ### GROPING TITS FULLY CLOTHED ###
 image groping_tits: #Genie groping Hermione under her skirt. Hermione is facing Genie.

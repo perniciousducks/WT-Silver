@@ -537,7 +537,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call her_chibi("stand","desk","base",flip=True)
 
     call lun_walk(action="leave")
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     $ hermione_busy = True
     $ luna_busy = True

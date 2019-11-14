@@ -141,7 +141,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
     call her_main("You are a mean and demented old man!", "angry", "base", "angry", "mid", cheeks="blush", tears="soft", xpos="mid", ypos="base")
     m "............"
 
-    call her_walk(action="leave", speed=3)
+    call her_walk(action="leave")
 
     call bld
     m "Well, no points for Gryffindor then..."

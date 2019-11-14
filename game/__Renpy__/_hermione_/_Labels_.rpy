@@ -17,7 +17,7 @@ label too_much:
     her "How could you ask for such a thing!?"
     call her_main("I think I better leave.", "angry", "worriedCl", "worried", "mid",emote="05")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ her_mood += 6
 
@@ -30,7 +30,7 @@ label very_no:
     her "I'll show you that my integrity and honour as a Gryffindor cannot be bought!"
     call her_main("I'm leaving this instant.", "scream", "closed", "angry", "mid")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ her_mood += 9
 

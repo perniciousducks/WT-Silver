@@ -27,7 +27,7 @@ label cc_pf_strip_T1_intro_E1:
     m "First, come a bit closer..."
     call cho_main("Very well, Sir.","base","base","base","mid")
 
-    call cho_walk(xpos="desk", ypos="base", speed=1.6)
+    call cho_walk(xpos="desk", ypos="base")
 
     call cho_main(xpos="mid", ypos="base", trans="fade")
     call ctc
@@ -274,7 +274,7 @@ label cc_pf_strip_T1_intro_E1:
     call cho_main("We are done here!","angry","angry","angry","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.2)
+    call cho_walk(action="leave")
 
     call bld
     m "She'll do it next time, I'm sure..."
@@ -288,7 +288,7 @@ label cc_pf_strip_T1_intro_E2:
     g9 "I'd like you to undress, once again!"
     call cho_main("Of course, Sir.","annoyed","base","angry","downR")
 
-    call cho_walk(xpos="desk", ypos="base", speed=1.6)
+    call cho_walk(xpos="desk", ypos="base")
 
     call cho_main("Down to my undergarments, [cho_genie_name]?","soft","closed","base","mid", xpos="mid", ypos="base", trans="fade")
     call cho_main("Or would you like me to take off all of it?","soft","narrow","base","mid")
@@ -626,7 +626,7 @@ label cc_pf_strip_T1_intro_E2:
     with d3
     pause.1
 
-    call cho_walk(xpos="door", ypos="base", speed=2.5)
+    call cho_walk(xpos="door", ypos="base")
 
     call bld
     m "Miss Chang."
@@ -644,7 +644,7 @@ label cc_pf_strip_T1_intro_E2:
     m "You're still naked...{w} I wouldn't go out there if I were you..."
     call cho_main("Oh, yes of course!","soft","wide","base","mid", trans="hpunch")
 
-    call cho_walk(xpos="desk", ypos="base", speed=2)
+    call cho_walk(xpos="desk", ypos="base")
     pause.5
     call chibi_effect("thought","cho")
     pause.8
@@ -664,7 +664,7 @@ label cc_pf_strip_T1_intro_E2:
         call cho_main("Have a good night...","soft","base","base","R")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.5)
+    call cho_walk(action="leave")
 
     call bld
     m "She's so cute..."
@@ -682,7 +682,7 @@ label cc_pf_strip_T1_intro_E3:
     g9 "Yes Indeed! Come a bit closer..."
     call cho_main("(...)","angry","narrow","base","down")
 
-    call cho_walk(xpos="desk", ypos="base", speed=1.6)
+    call cho_walk(xpos="desk", ypos="base")
 
     call cho_main("Sir, Those favours were never about my training, were they?","soft","narrow","angry","mid", xpos="mid", ypos="base", trans="fade")
     m "I never said they were!"
@@ -769,7 +769,7 @@ label cc_pf_strip_T1_intro_E3:
         call cho_main("Good day, Sir!","soft","narrow","angry","mid")
 
         # Cho leaves.
-        call cho_walk(action="leave", speed=2.5)
+        call cho_walk(action="leave")
 
         # Event failed, no progress.
         $ cc_pf_strip.fail()
@@ -913,7 +913,7 @@ label cc_pf_strip_T1_intro_E3:
     call cho_main("I’m untouchable! I’ll show that bitch she can’t mess with me!","angry","angry","angry","R")
     call cho_main("This is gonna be so much fun!","smile","narrow","angry","mid")
 
-    call cho_walk(xpos="570",ypos="base", speed=1.5)
+    call cho_walk(xpos="570",ypos="base")
     pause 2.0
 
     call cho_main("Call her already!","annoyed","narrow","angry","R", ypos="head", flip=True)
@@ -934,7 +934,7 @@ label cc_pf_strip_T1_intro_E3:
     call cho_main("Hey there, Granger!","horny","narrow","angry","mid", ypos="head", flip=True) # Grinning
     call her_main("What? Why are you-", "disgust", "wide", "worried", "shocked", ypos="head")
 
-    call her_walk(xpos="660",ypos="base", speed=2)
+    call her_walk(xpos="660",ypos="base")
 
     call cho_main("","smile","narrow","angry","mid", xpos="mid", ypos="base", flip=True)
     call her_main("What the bloody hell is going on here?!", "scream", "closed", "base", "mid", xpos="base", ypos="base", trans="hpunch") # Scream
@@ -978,7 +978,7 @@ label cc_pf_strip_T1_E3: # Repeats
     m "[cho_name], why don't you come a bit closer?"
     call cho_main("Of course, [cho_genie_name]...","base","narrow","base","mid")
 
-    call cho_walk(xpos="desk", ypos="base", speed=1.6)
+    call cho_walk(xpos="desk", ypos="base")
 
     call cho_main("","base","base","base","R", xpos="mid", ypos="base", trans="fade")
     call ctc
@@ -1076,7 +1076,7 @@ label cc_pf_strip_T1_E3: # Repeats
         "\"Let Granger have a good look at you!\"":
             call cho_main("I'll make sure of it, Sir!","quiver","narrow","angry","mid")
 
-            call cho_walk(xpos="570",ypos="base", speed=2)
+            call cho_walk(xpos="570",ypos="base")
 
     call cho_main("Now, if you don't mind, Sir...","soft","base","base","R", xpos="mid", ypos="base", flip=True)
     call cho_main("I'd like you to call that Gryffindor slut to your office!","soft","base","base","L")
@@ -1099,7 +1099,7 @@ label cc_pf_strip_T1_E3: # Repeats
     call chibi_effect("thought","hermione")
     pause.8
 
-    call her_walk(xpos="660", ypos="base", speed=2)
+    call her_walk(xpos="660", ypos="base")
 
     call cho_main("","horny","narrow","angry","L", xpos="mid", ypos="base", flip=True)
     call her_main("You wanted to see me, Professor?", "soft", "closed", "base", "mid", xpos="base", ypos="base")
@@ -1147,8 +1147,10 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("In that case I’ll give you a great opportunity to stare at them indefinitely.", "angry", "base", "angry", "mid")
             call cho_main("What are you talking about, Granger?","soft","narrow","raised","L")
 
+            label dev:
+
             # Hermione walks towards the desk to pick up Cho's clothing.
-            call her_walk(xpos="desk", ypos="base", speed=1.6)
+            call her_walk(xpos="desk", ypos="base", speed=1.5)
             pause.2
             if not d_flag_01: # Cho not on desk
                 call cho_chibi("stand","570","base", flip=False) # Facing the desk.
@@ -1167,7 +1169,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("My clothes!","angry","wide","base","L", ypos="head", flip=True)
 
             call play_sound("running")
-            call her_walk(xpos="door", ypos="base", speed=1.4)
+            call her_walk(xpos="door", ypos="base", speed=2)
             call her_chibi("stand","door","base", flip=False)
             with d3
 
@@ -1198,7 +1200,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 call cho_main("Give them back you bitch!","scream","narrow","angry","L", ypos="head", flip=True, trans="hpunch")
 
                 call play_sound("running")
-                call cho_walk(action="leave", speed=1.2)
+                call cho_walk(action="leave", speed=2)
 
             else:
                 hide screen bld1
@@ -1209,7 +1211,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 call cho_main("Give them back you bitch!","scream","narrow","angry","L", ypos="head", flip=True, trans="hpunch")
 
                 call play_sound("running")
-                call cho_walk(action="leave", speed=1)
+                call cho_walk(action="leave", speed=2)
 
             call bld
             m "Did she just?"
@@ -1297,7 +1299,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("Cow...","annoyed","narrow","angry","R")
 
             # Hermione leaves.
-            call her_walk(action="leave", speed=2)
+            call her_walk(action="leave")
 
             # Cho stands close to your desk.
             call hide_characters
@@ -1335,7 +1337,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("Until next time, [cho_genie_name].","soft","narrow","angry","mid")
 
             # Cho leaves.
-            call cho_walk(action="leave", speed=2.5)
+            call cho_walk(action="leave")
 
             call bld
             g4 "Damn!"
@@ -1412,7 +1414,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 call her_main("*Tzzzzzh!*", "annoyed", "narrow", "angry", "R")
 
             # Hermione leaves.
-            call her_walk(action="leave", speed=1.5)
+            call her_walk(action="leave")
 
             show screen blkfade
             call cho_chibi("stand","desk","base", flip=False)
@@ -1444,7 +1446,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 m "Don't you want your-"
                 call cho_main("Sweet dreams, [cho_genie_name]!","smile","narrow","angry","mid")
 
-            call cho_walk(action="leave", speed=2.5)
+            call cho_walk(action="leave")
 
             call bld
             g9 "Nice, I still got her panties!"

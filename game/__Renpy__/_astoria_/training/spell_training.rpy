@@ -260,7 +260,7 @@ label ag_st_imperio_E1:
     call ast_main("........................","annoyed","base","angry","R")
     call ton_main("Have a good night, Professor.","base","base","base","mid")
 
-    call ton_walk(xpos="door", ypos="base", speed=2.5)
+    call ton_walk(xpos="door", ypos="base")
     call ton_chibi("stand","door","base", flip=False)
     with d3
     pause.2
@@ -269,7 +269,7 @@ label ag_st_imperio_E1:
     call ast_main(".................................................","annoyed","base","base","down", ypos="head")
 
     # They both leave.
-    call ast_walk(xpos="680", ypos="base", speed=2)
+    call ast_walk(xpos="680", ypos="base")
 
     call play_sound("door")
     call ast_chibi("hide")
@@ -511,7 +511,7 @@ label ag_st_imperio_E2:
             call ast_main("............................","upset","narrow","base","down")
             call ton_main("Have a good night, Professor.","base","base","base","mid")
 
-            call ton_walk(xpos="door", ypos="base", speed=2)
+            call ton_walk(xpos="door", ypos="base")
             call ton_chibi("stand","door","base", flip=False)
             with d3
             pause.2
@@ -520,7 +520,7 @@ label ag_st_imperio_E2:
             call ast_main("...........................","upset","base","base","L", ypos="head")
 
             # They both leave.
-            call ast_walk(xpos="680", ypos="base", speed=2)
+            call ast_walk(xpos="680", ypos="base")
 
             call play_sound("door")
             call ast_chibi("hide")
@@ -718,7 +718,7 @@ label ag_st_imperio_E3:
     call ast_main("*Tzzz!*...","clench","base","angry","mid")
 
     # Astoria leaves.
-    call ast_walk(action="leave", speed=2.5)
+    call ast_walk(action="leave")
 
     call ton_main("The nerve on that girl, I can't believe it!","open","base","angry","mid", hair="angry", xpos="mid", ypos="base")
     call ton_main("I'm beginning to think teaching her an \"unforgivable curse\" might've been a bad idea after all...","upset","base","base","R")
@@ -765,7 +765,7 @@ label ag_st_imperio_E3:
     call ton_main("Have a good night, [ton_genie_name].","open","base","base","mid")
 
     # Tonks leaves.
-    call ton_walk(action="leave", speed=2.8)
+    call ton_walk(action="leave")
 
     call bld
     m "..."
@@ -784,7 +784,7 @@ label ag_st_imperio_E3:
 label ag_st_imperio_E4:
     stop music fadeout 1.0
 
-    call ton_walk(action="enter","desk","base", speed=3)
+    call ton_walk(action="enter","desk","base")
     pause.5
 
     call ton_chibi("stand","desk","base", flip=True)
@@ -800,7 +800,7 @@ label ag_st_imperio_E4:
     pause.1
 
     #Astoria enters
-    call ast_walk(action="enter","530","base", speed=2.8) # Make sure it's slightly to the left of Tonks' chibi.
+    call ast_walk(action="enter","530","base") # Make sure it's slightly to the left of Tonks' chibi.
     pause.1
 
     call ton_chibi("stand","desk","base", flip=False)
@@ -1033,7 +1033,7 @@ label ag_st_imperio_E4:
     with d3
     pause.2
 
-    call ast_walk(action="leave", speed=2.2)
+    call ast_walk(action="leave")
     pause.5
 
     call ton_chibi("stand","desk","base", flip=False)
@@ -1086,7 +1086,7 @@ label ag_st_imperio_E4:
     call ton_main("Have a good night, [ton_genie_name]!","base","base","angry","mid")
 
     # Tonks leaves.
-    call ton_walk(action="leave", speed=2.8)
+    call ton_walk(action="leave")
 
     call bld
     g9 "I hope she's planned something big!"
@@ -1448,7 +1448,7 @@ label ag_st_imperio_E5:
     else:
         g4 "Damn it, what are you doing here?"
 
-    call sna_walk("620","base", speed=1.5)
+    call sna_walk("620","base")
     pause.2
 
     call play_music("snape_theme")
@@ -1475,9 +1475,9 @@ label ag_st_imperio_E5:
     call ast_main("Yes. I'm sorry, Professor.","clench","closed","angry","mid", emote="05")
 
     #TODO Implement path-based movement in chibi class (or prevent chibi stopping at every turn somehow)
-    call ast_walk("270","290",speed=0.5)
-    call ast_walk("370","290",speed=0.6)
-    call ast_walk("desk","base",speed=1.4)
+    call ast_walk("270","290")
+    call ast_walk("370","290")
+    call ast_walk("desk","base")
     call ast_chibi("stand","desk","base", flip=False)
     with d3
     pause.1
@@ -1495,7 +1495,7 @@ label ag_st_imperio_E5:
     $ astoria_chibi.zorder = 2
 
     call sna_chibi("stand","620","base") # Updates Zorder.
-    call ast_walk(action="leave", speed=2)
+    call ast_walk(action="leave")
 
     $ snape_chibi.zorder = 2 # Reset to default.
 
@@ -1510,7 +1510,7 @@ label ag_st_imperio_E5:
     with d5
     pause.5
 
-    call ton_walk("550","base", speed=1)
+    call ton_walk("550","base")
     pause.8
 
     call ton_main("","base","base","angry","L", xpos="275", ypos="base", flip=True)
@@ -1556,12 +1556,12 @@ label ag_st_imperio_E5:
     call ton_main("..................","angry","base","angry","L", hair="angry") # Angry stare
 
     #Snape leaves
-    call sna_walk(action="leave", speed=2)
+    call sna_walk(action="leave")
 
     call ton_chibi("stand","mid","base", flip=False)
     with d3
     pause.2
-    call ton_walk("desk","base",speed=1.5)
+    call ton_walk("desk","base")
     pause.5
 
     call ton_main("Thank you...","upset","base","worried","mid", hair="neutral", xpos="mid", ypos="base", flip=False)
@@ -1695,7 +1695,7 @@ label ag_st_imperio_E5:
     call ton_main("Oh - I will, [ton_genie_name]!","base","base","raised","R")
     call ton_main("I sure will!","horny","base","angry","mid")
 
-    call ton_walk(action="leave", speed=2.5)
+    call ton_walk(action="leave")
 
     call bld
     m "..."

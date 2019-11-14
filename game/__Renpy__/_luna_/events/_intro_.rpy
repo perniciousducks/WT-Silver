@@ -87,7 +87,7 @@ label hat_intro_2: #Bringing in Hermione
     m "Scouts honour!"
     call her_main("Well if that's all then, [genie_name], I better head to class.", "open", "closed", "base", "mid")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     jump end_hermione_event
 

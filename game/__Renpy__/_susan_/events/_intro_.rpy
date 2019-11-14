@@ -102,7 +102,7 @@ label susan_intro_E1:
             $ d_flag_02 = True # Susan walks in anyway.
             who "Okay, Sir."
 
-    call sus_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call sus_walk(action="enter", xpos="mid", ypos="base")
 
     call bld
     if d_flag_02:
@@ -154,7 +154,7 @@ label susan_intro_E1:
     call sus_main("I shall return to my dormitory then.","open","base","base","R")
     call sus_main("Good-{w=0.4} Good day, Sir.","grin","base","base","mid")
 
-    call sus_walk(action="leave", speed=2)
+    call sus_walk(action="leave")
 
     call bld
     m "..."

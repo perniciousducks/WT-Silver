@@ -420,7 +420,7 @@ label hg_ps_buttplug:
             call her_main("Thank you, [genie_name]!", "base", "narrow", "base", "mid_soft")
             call her_main("{size=-5}({image=textheart}it feels so good... I might have to buy my own...{image=textheart}){/size}", "soft", "narrow", "annoyed", "up")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ hg_ps_buttplug.inProgress = True
 
@@ -432,7 +432,7 @@ label hg_ps_buttplug:
 
 label hg_ps_buttplug_complete:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call bld
     if her_whoring <= 15 and buttplug_size == 1: # LEVEL 06
@@ -1030,7 +1030,7 @@ label hg_ps_buttplug_complete:
     m "The Gryffindor house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ hg_ps_buttplug.points += 1
     $ hg_ps_buttplug.complete = True

@@ -296,7 +296,7 @@ label cho_quiz:
         call cho_main("Bye then professor...", "annoyed", "base", "base", "mid")
 
         # Cho leaves.
-        call cho_walk(action="leave", speed=2.5)
+        call cho_walk(action="leave")
 
         g4 "(What am I supposed to do now... I clearly know fuck-all about Quidditch...)"
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumb-ass it might have to do...)"
@@ -358,7 +358,7 @@ label cho_quiz:
         call cho_main("Bye then professor...", "pout", "base", "base", "R")
 
         # Cho leaves.
-        call cho_walk(action="leave", speed=2.5)
+        call cho_walk(action="leave")
 
         g4 "(The fuck am I supposed to do now... I feel like that must’ve been a fluke, I know nothing about Quidditch..)."
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumb-ass it might have to do...)"
@@ -612,7 +612,7 @@ label cho_quiz_checkpoint:
         m "Looking forward to it."
 
         # Cho leaves.
-        call cho_walk(action="leave", speed=2.5)
+        call cho_walk(action="leave")
 
         $ cho_quiz.complete = True
 
@@ -635,7 +635,7 @@ label cho_quiz_checkpoint:
         call cho_main("Good bye then...", "base", "base", "base", "mid")
 
         # Cho leaves.
-        call cho_walk(action="leave", speed=2.5)
+        call cho_walk(action="leave")
 
         g4 "(What am I supposed to do now... I clearly don't know enough about Quidditch...)"
         m "(I’d rather not ask Snape... but unless there’s someone else that I could ask without sounding like a complete dumb-ass it might have to do...)"

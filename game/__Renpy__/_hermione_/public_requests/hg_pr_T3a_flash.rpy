@@ -106,7 +106,7 @@ label hg_pr_flash:
         call her_main("Classes are about to start... I'd better leave now.", "base", "base", "base", "mid")
         her "I will see you later tonight, [genie_name]."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ current_payout = 35
     $ hg_pr_flash.inProgress = True
@@ -119,7 +119,7 @@ label end_hg_pr_flash:
     m "The Gryffindor house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
-    call her_walk(xpos="door", ypos="base", speed=2)
+    call her_walk(xpos="door", ypos="base")
     pause.2
 
     show screen blktone
@@ -161,7 +161,7 @@ label end_hg_pr_flash:
 
 label hg_pr_flash_T1_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     #if her_whoring >= 9 and her_whoring < 12:
 
@@ -183,7 +183,7 @@ label hg_pr_flash_T1_E1:
     her "..."
     her "I'd better go now."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ hg_pr_flash.inProgress = False
 
@@ -192,7 +192,7 @@ label hg_pr_flash_T1_E1:
 
 label hg_pr_flash_T1_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name], did you complete your task?"
@@ -229,7 +229,7 @@ label hg_pr_flash_T1_E2:
 
 label hg_pr_flash_T1_E3:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="neutral", xpos="right", ypos="base")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -273,7 +273,7 @@ label hg_pr_flash_T1_E3:
 
 label hg_pr_flash_T2_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     #elif her_whoring >= 12 and her_whoring < 15:
 
@@ -319,7 +319,7 @@ label hg_pr_flash_T2_E1:
 
 label hg_pr_flash_T2_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name]..."
@@ -364,7 +364,7 @@ label hg_pr_flash_T2_E2:
 
 label hg_pr_flash_T2_E3:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name], did you complete your task?"
@@ -399,7 +399,7 @@ label hg_pr_flash_T2_E3:
 
 label hg_pr_flash_T3_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     #elif her_whoring >= 15:
 
@@ -452,7 +452,7 @@ label hg_pr_flash_T3_E1:
 
 label hg_pr_flash_T3_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     stop music fadeout 1.0
     call her_main(face="happy", xpos="right", ypos="base")
@@ -504,7 +504,7 @@ label hg_pr_flash_T3_E2:
 
 label hg_pr_flash_T3_E3:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="happy", xpos="right", ypos="base")
     m "[hermione_name], did you complete your task?"

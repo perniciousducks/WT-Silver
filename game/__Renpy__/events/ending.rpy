@@ -40,7 +40,7 @@ screen genie_snape_shake_hands(shake=False):
 label ball_ending_E1:
     stop music fadeout 1.0
 
-    call sna_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call sna_walk(action="enter", xpos="desk", ypos="base")
     pause.8
 
     call play_music("snape_theme")
@@ -118,7 +118,7 @@ label ball_ending_E1:
     call hide_blkfade
     pause.5
 
-    call sna_walk(xpos="door", ypos="base", speed=3)
+    call sna_walk(xpos="door", ypos="base")
     pause.5
 
     call sna_chibi("stand","door","base", flip=False)
@@ -315,7 +315,7 @@ label ball_ending_E1:
     call bld
     m "........."
 
-    call gen_walk(xpos="door", ypos="base", speed=2.8)
+    call gen_walk(xpos="door", ypos="base")
     pause.5
 
     call bld
@@ -2980,7 +2980,7 @@ label ball_ending_E3:
         call sna_chibi("stand","door","base", flip=False)
         pause.8
 
-        call sna_walk(xpos="mid", ypos="base", speed=2)
+        call sna_walk(xpos="mid", ypos="base")
         pause.8
 
         call bld
@@ -3020,7 +3020,7 @@ label ball_ending_E3:
         call her_chibi("stand","door","base", flip=False)
         pause.8
 
-        call her_walk(xpos="mid", ypos="base", speed=3)
+        call her_walk(xpos="mid", ypos="base")
         pause.8
 
         call play_music("hermione")
@@ -3106,7 +3106,7 @@ label ball_ending_E3:
         call set_her_action("")
         call her_main("And I mean {size=+9}ANYTHING!!!{/size}", "scream", "base", "angry", "mid",emote="01", trans="hpunch")
 
-        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+        call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
         call blkfade
 
         call play_sound("climb_desk")

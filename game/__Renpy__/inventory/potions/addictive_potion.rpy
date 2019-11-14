@@ -48,7 +48,7 @@ label potion_scene_3_1_1:
         her "Are you crazy? You came in a bottle and served it to me and then has the audacity to ask if I liked the taste?"
         her "What's wrong with you?"
         her "I'm leaving..."
-        call her_walk(action="leave", speed=2)
+        call her_walk(action="leave")
         m "(Damn, looks like she didn't drink enough for the effect to kick in. I guess she has to trust me more before drinking this one...)"
         $ her_cum_potion_fail += 1
         $ her_mood += 10
@@ -66,7 +66,7 @@ label potion_scene_3_1_1:
         call her_main("It reeks of semen ", "angry", "base", "angry", "mid")
         her "I can't believe you were going to make me drink that..."
         her "I'm leaving..."
-        call her_walk(action="leave", speed=2)
+        call her_walk(action="leave")
         m "(Damn, looks like she won't even consider tasting it. I guess she has to trust me more before drinking this one...)"
         $ her_cum_potion_fail += 1
         $ her_mood += 10
@@ -108,7 +108,7 @@ label potion_scene_3_1_1:
     call nar(">Hermione hurriedly leaves the room with the remainder of the potion firmly in her grasp.")
 
     hide screen hermione_main
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     $ her_potions_drunk.add("addiction")
     $ her_potions_drunk.add("cum_addiction")
@@ -121,7 +121,7 @@ label potion_scene_3_1_1:
 label hg_pp_cumaddict_intro:
     $ her_cum_potion_return = False
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
+    call her_walk(action="enter", xpos="mid", ypos="base")
     pause.2
     call her_main("What the hell did you do to me?", "scream", "worriedCl", "worried", "mid", xpos="mid", ypos="base", trans="hpunch")
     m "Whatever are you talking about, [hermione_name]?"
@@ -426,7 +426,7 @@ label hg_pp_cumaddict_intro:
 
 label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the event maybe?
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
+    call her_walk(action="enter", xpos="mid", ypos="base")
     pause.2
 
     call her_main("Take off your pants! No questions!", "scream", "worriedCl", "worried", "mid", xpos="mid", ypos="base", trans="hpunch")
@@ -852,7 +852,7 @@ label potion_scene_3_3_1:
     call set_her_action("none","skip_update")
     call her_main("And thanks again!{image=textheart} You're the best!", "smile", "happyCl", "base", "mid",emote="06")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     call bld
     m "(Maybe I should have told her to get dressed first...)"

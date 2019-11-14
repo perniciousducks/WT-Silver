@@ -38,7 +38,7 @@ label an_odd_circumstance():
     nar "I said in a puzzled manner..."
     nar "I never had a phone in here... in fact, there's not a single electronic device in this office..."
     nar "After a few moments the figure stepped into the light, illuminating a girls face."
-    call her_walk("desk", "base", speed=2)
+    call her_walk("desk", "base")
     her "..."
     nar "Her hazel coloured flowing hair reminded me of a leather bound book, filled to the brim with the secrets of the girl in front of me..."
     nar "I felt myself becoming lost in her mysterious brown eyes, which provoked a sense of great pain and suffering."
@@ -156,7 +156,7 @@ label an_odd_circumstance():
     nar "The girl, adjusting herself and still slightly covered in semen made her way to the door, only turning around once more..."
     her "I hope that was satisfactory..."
     her "Let it be known that Hermione never backs down on a deal..."
-    call her_walk("door", "base", speed=2)
+    call her_walk("door", "base")
     call her_chibi("leave")
     nar "My breathing slowly returned to normal, as the pinching feeling in my vocal cords slowly faded away."
     show screen blkfade

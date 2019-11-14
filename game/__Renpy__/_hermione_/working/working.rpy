@@ -31,7 +31,7 @@ label job_1:
 
     m "Off you go then..."
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     call h_unequip_temp_outfit()
 
@@ -43,7 +43,7 @@ label job_1:
 label maid_responses:
     $ payment = renpy.random.randint(10, 25)
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
 
@@ -88,7 +88,7 @@ label maid_responses:
     $ gryffindor+= 20
     $ gold += payment
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     call h_unequip_temp_outfit()
 
@@ -122,7 +122,7 @@ label job_2:
 
     m "Off you go then..."
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     call h_unequip_temp_outfit()
 
@@ -134,7 +134,7 @@ label job_2:
 label barmaid_responses:
     $ payment = renpy.random.randint(20, 50)
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call h_equip_temp_outfit(hg_outfit_maid_ITEM)
 
@@ -158,7 +158,7 @@ label barmaid_responses:
     $ gryffindor+= 20
     $ gold += payment
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     call h_unequip_temp_outfit()
 
@@ -196,7 +196,7 @@ label job_3:
     call her_main("Thank you...", "base", "happyCl", "base", "mid")
     m "Off you go then..."
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     call h_unequip_temp_outfit()
 
@@ -208,7 +208,7 @@ label job_3:
 label gryffindor_cheer_responses:
     $ payment = renpy.random.randint(40, 80)
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     if hg_cheer_g_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_g_sexy_ITEM)
@@ -307,7 +307,7 @@ label gryffindor_cheer_responses:
     $ gryffindor+= 20
     $ gold += payment
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     call h_unequip_temp_outfit()
 
@@ -346,7 +346,7 @@ label job_4:
     call her_main("Thank you...", "base", "happyCl", "base", "mid")
     m "Off you go then..."
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     call h_unequip_temp_outfit()
 
@@ -358,7 +358,7 @@ label job_4:
 label slytherin_cheer_responses:
     $ payment = renpy.random.randint(50, 100)
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     if hg_cheer_s_sexy_ITEM.unlocked and her_whoring >= 11: #Sexy
         call h_equip_temp_outfit(hg_cheer_s_sexy_ITEM)
@@ -451,7 +451,7 @@ label slytherin_cheer_responses:
 
     label end_her_working_no_payment:
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     call h_unequip_temp_outfit()
 

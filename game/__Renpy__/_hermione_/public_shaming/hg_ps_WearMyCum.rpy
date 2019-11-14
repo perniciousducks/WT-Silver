@@ -237,7 +237,7 @@ label hg_ps_cumslut_Scene_1:
     m "It's Only unfair if you clean it off."
     call her_main("...", "angry", "base", "angry", "mid")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     jump end_hermione_event
 
@@ -460,7 +460,7 @@ label hg_ps_cumslut_Scene_2:
     m "Have fun. Say hi to your friends for me."
     call her_main("...", "base", "closed", "base", "mid")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     jump end_hermione_event
 
@@ -480,7 +480,7 @@ label hg_ps_cumslut_Scene_3:
     hide screen bld1
     with d3
 
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
     pause.3
 
@@ -586,7 +586,7 @@ label hg_ps_cumslut_Scene_3:
     call her_main("of course [genie_name]...", "soft", "narrow", "annoyed", "up",xpos="right",ypos="base")
     call her_main("(I can't wait to see the look on peoples faces...)", "grin", "narrow", "base", "dead")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     jump end_hermione_event
 
@@ -603,7 +603,7 @@ label hg_ps_cumslut_complete: #Hermione returns from her day of wearing your cum
 
 label hg_ps_cumslut_complete_1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     if cum_location == 1: #Cum under shirt
         $ aftersperm = True
@@ -694,7 +694,7 @@ label hg_ps_cumslut_complete_1:
 
 label hg_ps_cumslut_complete_2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     if cum_location == 4: #Cum on legs
         $ u_sperm = "characters/hermione/face/auto_13.png"

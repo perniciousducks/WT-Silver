@@ -11,7 +11,7 @@
 
 
 
-#    call her_walk(action="leave", speed=2)
+#    call her_walk(action="leave")
 
 #    $ hermione_busy = True
 

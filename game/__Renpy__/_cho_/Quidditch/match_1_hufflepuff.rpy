@@ -27,7 +27,7 @@ label start_hufflepuff_match:
     m "Good luck!"
 
     # Cho leaves.
-    call cho_walk(speed=1.6, action="leave")
+    call cho_walk(action="leave")
 
     $ cho_quid.lock_training = True
     $ cho_quid.lock_practice = True
@@ -57,7 +57,7 @@ label hufflepuff_match:
     # Scene before Match against Hufflepuff
     call play_music("stop")
 
-    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call sna_walk(action="enter", xpos="mid", ypos="base")
     pause.5
 
     call play_music("snape")
@@ -130,7 +130,7 @@ label hufflepuff_match:
     m "You should lead the way..."
     call sna_main("Right you are. Time to get smashed!","snape_02",ypos="head")
 
-    call sna_walk(xpos="700", ypos="base", speed=1.6)
+    call sna_walk(xpos="700", ypos="base")
 
     # Blackfade
     stop music fadeout 2
@@ -198,7 +198,7 @@ label hufflepuff_match:
     call her_chibi("stand","220","50", flip=True)
     with d3
     pause.2
-    call her_walk(xpos="375", ypos="105", speed=2)
+    call her_walk(xpos="375", ypos="105")
     pause.5
     call her_main("Good Morning everyone, and welcome to the i-inaugural-", "soft", "base", "worried", "mid", flip=True, xpos="120", ypos="base")
     call her_main("", "normal", "base", "worried", "mid")
@@ -259,7 +259,7 @@ label hufflepuff_match:
     call her_chibi("stand","350","185", flip=True)
     with d3
 
-    call gen_walk(xpos="360", ypos="45", speed=2)
+    call gen_walk(xpos="360", ypos="45")
 
     $ genie_base = "characters/genie/base/base.png"
     $ genie_zorder = 5
@@ -419,7 +419,7 @@ label hufflepuff_match:
     $ qp_mob_reaction[1] = None
     $ qp_mob_reaction[2] = None
 
-    call gen_walk(xpos="130", ypos="10", speed=2)
+    call gen_walk(xpos="130", ypos="10")
 
     $ snape_chibi.zorder = 2
     $ hermione_chibi.zorder   = 4
@@ -689,7 +689,7 @@ label hufflepuff_match:
     $ cho_animation = sprite_fly_idle
     $ cho_class.animation("quid", (233, -78))
     call cho_chibi(action="fly", xpos=1200,ypos=-100)
-    call cho_walk(xpos=500,ypos=50, speed=2.5)
+    call cho_walk(xpos=500,ypos=50)
     pause 1.5
     show screen bld2
     call cho_main("Hey, Granger!", "open", "angry", "angry", "L", ypos=-200)
@@ -737,7 +737,7 @@ label hufflepuff_match:
     call cho_main("", "quiver", "wide", "sad", "downR")
     ">Hermione’s commentating is drowned out by the sound of the Ravenclaw grandstand cheering."
     call cho_main("{size=+6}You are done, Granger!{/size}", "scream", "closed", "angry", "L")
-    call cho_walk(xpos=1200,ypos=800, speed=2.5)
+    call cho_walk(xpos=1200,ypos=800)
     pause.8
     $ cho_animation = None
     $ cho_class.animation(None)
@@ -775,7 +775,7 @@ label hufflepuff_match:
     g4 "Dammit, I almost said that!"
     m "Anyway, I'm beat, time to hit the hay."
 
-    call gen_walk(xpos="desk", ypos="base", speed=2.8)
+    call gen_walk(xpos="desk", ypos="base")
 
     call blkfade
 
@@ -807,7 +807,7 @@ label hufflepuff_match_return:
     $ renpy.sound.play("sounds/snore2.mp3")
     m "......{w=0.5}*Snore*{w=1.0}{nw}"
     stop music fadeout 6.0
-    call cho_walk("desk", "base", speed=2.4, action="enter")
+    call cho_walk("desk", "base", action="enter")
 
     $ renpy.sound.play("sounds/punch01.mp3")
     call cho_main("We beat Hufflepuff!!!","smile","angry","base","mid", ypos="base", trans="hpunch")
@@ -839,7 +839,7 @@ label hufflepuff_match_return:
     call cho_main("Thank you Professor...","smile","wink","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.4)
+    call cho_walk(action="leave")
 
     stop music fadeout 1.0
     call popup("New favours for Cho have been unlocked!", "Congratulations!", "interface/icons/head/head_cho_2.png")

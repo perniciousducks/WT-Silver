@@ -91,7 +91,7 @@ label hg_pr_blowjob:
         m "Report back to me after your classes as usual..."
         call her_main("Of course...", "annoyed", "narrow", "angry", "R")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ current_payout = 65
     $ hg_pr_blowjob.inProgress = True
@@ -104,7 +104,7 @@ label end_hg_pr_blowjob:
     m "The Gryffindor house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ aftersperm = False
     $ uni_sperm = False
@@ -128,7 +128,7 @@ label end_hg_pr_blowjob:
 
 label hg_pr_blowjob_T1_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="annoyed", xpos="right", ypos="base")
 
@@ -156,7 +156,7 @@ label hg_pr_blowjob_T1_E1:
 
 label hg_pr_blowjob_T1_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="annoyed", xpos="right", ypos="base")
 
@@ -187,7 +187,7 @@ label hg_pr_blowjob_T1_E2:
     m "Hm... Well, this will be all then."
     her "Have a good night, [genie_name]."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ hg_pr_blowjob.inProgress = False
 
@@ -196,7 +196,7 @@ label hg_pr_blowjob_T1_E2:
 
 label hg_pr_blowjob_T1_E3:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="annoyed", xpos="right", ypos="base")
 
@@ -223,7 +223,7 @@ label hg_pr_blowjob_T1_E3:
 
 label hg_pr_blowjob_T2_intro_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="annoyed", xpos="right", ypos="base")
 
@@ -255,7 +255,7 @@ label hg_pr_blowjob_T2_intro_E1:
 
 label hg_pr_blowjob_T2_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     #if her_whoring >= 21: # LEVEL 08 =+
 
@@ -309,7 +309,7 @@ label hg_pr_blowjob_T2_E2:
 
 label hg_pr_blowjob_T2_E3:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     stop music fadeout 1.0
     $ uni_sperm = True

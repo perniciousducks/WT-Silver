@@ -28,7 +28,7 @@ label astoria_intro_E1:
             ton "I'm coming in..."
 
     # Tonks walks in.
-    call ton_walk(action="enter", xpos="desk", ypos="base", speed=2.8)
+    call ton_walk(action="enter", xpos="desk", ypos="base")
 
     call play_music("tonks_theme")
     call ton_main("Good evening, [ton_genie_name].","base","base","base","mid", xpos="mid", ypos="base")
@@ -264,7 +264,7 @@ label astoria_intro_E1:
     call ton_main("Talk to you soon, [ton_genie_name].","base","base","worried","mid")
 
     # Tonks leaves.
-    call ton_walk(action="leave", speed=2.5)
+    call ton_walk(action="leave")
 
     call bld
     m "I should definitely get Snape on this..."
@@ -344,7 +344,7 @@ label astoria_intro_E2_hermione:
 
     call her_main("Consider it done, [genie_name]!", "open", "closed", "base", "mid")
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     call bld
     if astoria_intro.E2_snape:
@@ -403,7 +403,7 @@ label astoria_intro_E2_snape:
 
     call sna_main("Don't worry, I'll find that student in no time. You shall see...","snape_02")
 
-    call sna_walk(action="leave", speed=2)
+    call sna_walk(action="leave")
 
     call bld
     m "What a drama queen..."
@@ -450,7 +450,7 @@ label astoria_intro_E3:
     her "Although... I'm not alone."
     m "Come in."
 
-    call her_walk(action="enter", xpos="desk", ypos="base", speed=2.7)
+    call her_walk(action="enter", xpos="desk", ypos="base")
 
     call play_music("hermione_theme")
     call her_main("Hello sir.","normal","happy", xpos="mid", ypos="base")
@@ -481,7 +481,7 @@ label astoria_intro_E3:
     pause.8
 
     # Astoria enters.
-    call ast_walk("500","base", speed=2.5)
+    call ast_walk("500","base")
 
     call play_music("playful")
     call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base", flip=False)
@@ -579,10 +579,10 @@ label astoria_intro_E3:
     call her_main("Good day, Professor.", "open", "base", "angry", "mid")
     stop music fadeout 2.0
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
     pause.2
 
-    call ast_walk("460","base",speed=1)
+    call ast_walk("460","base")
     pause.2
 
     call ast_main("...","annoyed","base","base","L")
@@ -596,7 +596,7 @@ label astoria_intro_E3:
         call ast_main("(Better him than any of the other teachers...)","clench","narrow","base","down")
 
     $ snape_chibi.zorder = 4 # In front of Astoria
-    call sna_walk(action="enter", xpos="mid", ypos="base", speed=3)
+    call sna_walk(action="enter", xpos="mid", ypos="base")
 
     call play_music("snape_theme")
     $ astoria_zorder = 3
@@ -647,7 +647,7 @@ label astoria_intro_E3:
 
     # Snape leaves and runs into Tonks.
     call play_music("stop")
-    call sna_walk("660","base", speed=2)
+    call sna_walk("660","base")
 
     # Equip Tonks default clothing.
     $ tonks_outfit_last.save() # Store current outfit.
@@ -672,11 +672,11 @@ label astoria_intro_E3:
     call sna_main("Stepping aside.","snape_18")
     call ton_main("Oh, okay...","smile","happyCl","base","mid")
 
-    call sna_walk(action="leave", speed=1)
+    call sna_walk(action="leave")
     pause.2
     $ snape_chibi.zorder = 2 # Reset zorder
 
-    call ton_walk("500","base", speed=2.8)
+    call ton_walk("500","base")
     call ast_chibi("stand","desk","base", flip=False)
     with d3
 
@@ -767,10 +767,10 @@ label astoria_intro_E3:
     with d3
     pause.1
 
-    call ast_walk(action="leave", speed=2.5)
+    call ast_walk(action="leave")
     pause.1
 
-    call ton_walk("desk","base", speed=1)
+    call ton_walk("desk","base")
 
     call play_music("playful")
     call ton_main("She's {size=+5}so cute!{/size} Isn't she? {image=textheart}","upset","base","sad","R", xpos="mid", ypos="base")
@@ -800,7 +800,7 @@ label astoria_intro_E3:
     call ton_main("Until next time!{image=textheart}","base","happyCl","base","mid")
     call play_music("stop")
 
-    call ton_walk(action="leave", speed=3)
+    call ton_walk(action="leave")
 
     call bld
     m "(...)"
@@ -965,7 +965,7 @@ label astoria_intro_E4:
 
             jump main_room
 
-    call ast_walk("desk","base", speed=2.8)
+    call ast_walk("desk","base")
     pause.2
 
     call play_music("astoria_theme")
@@ -998,7 +998,7 @@ label astoria_intro_E4:
             m "See ya."
 
             # Astoria leaves.
-            call ast_walk(action="leave", speed=2.8)
+            call ast_walk(action="leave")
 
             call bld
             m "I'd better not mention this to Tonks..."
@@ -1023,7 +1023,7 @@ label astoria_intro_E4:
     call ast_main("...","grin","base","angry","R")
 
     # Astoria leaves.
-    call ast_walk(action="leave", speed=2.5)
+    call ast_walk(action="leave")
 
     call bld
     m "..."

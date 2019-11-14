@@ -45,7 +45,7 @@ label cc_pr_flirt_start: # Not in use.
         g9 "Now, off you go!"
         cho "See you later, [cho_genie_name]."
 
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave")
 
     $ cc_pr_flirt.inProgress = True
 
@@ -92,14 +92,14 @@ label cc_pr_flirt_T1_intro:
     $ cc_pr_flirt.level = 1
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter")
 
     "This is the intro {color=#80ff00}Tier1{/color}"
 
 
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave")
 
     jump end_cho_event
 
@@ -111,28 +111,28 @@ label cc_pr_flirt_T1_intro:
 label cc_pr_flirt_T1_E1:
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter")
 
     "This is the {color=#5490b5}first{/color} event in {color=#80ff00}Tier1{/color}"
 
 
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave")
 
     jump end_cho_event
 
 label cc_pr_flirt_T1_E2:
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter")
 
     "This is the {color=#ffae19}second{/color} event in {color=#80ff00}Tier1{/color}"
 
 
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave")
 
     jump end_cho_event
 
@@ -147,14 +147,14 @@ label cc_pr_flirt_T2_intro:
     $ cc_pr_flirt.level = 2
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter")
 
     "This is the intro {color=#80ff00}Tier2{/color}"
 
 
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave")
 
     jump end_cho_event
 
@@ -164,28 +164,28 @@ label cc_pr_flirt_T2_intro:
 label cc_pr_flirt_T2_E1:
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter")
 
     "This is the {color=#ffae19}first{/color} event in {color=#8000ff}Tier2{/color}"
 
 
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave")
 
     jump end_cho_event
 
 label cc_pr_flirt_T2_E2:
 
     # Cho enters.
-    call cho_walk(action="enter", speed=1.6)
+    call cho_walk(action="enter")
 
     "This is the {color=#e42e4e}second{/color} event in {color=#8000ff}Tier2{/color}"
 
 
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave")
 
     jump end_cho_event
 

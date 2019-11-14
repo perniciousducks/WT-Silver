@@ -105,7 +105,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         call nar(">Hermione's panties acquired.")
         call her_main("Well, the classes are about to start, so I'd better go now...", "soft", "base", "base", "mid")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ hg_ps_get_panties.inProgress = True #True when Hermione has no panties on.
 
@@ -291,7 +291,7 @@ label hg_ps_get_panties_complete:
     call update_her_uniform
 
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main("Good evening, [genie_name]...", "base", "base", "base", "mid",xpos="right",ypos="base")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -423,7 +423,7 @@ label hg_ps_get_panties_complete:
         her "Good night, [genie_name]."
         #m "Yes, good night..."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     if her_whoring < 6:
         $ her_whoring +=1

@@ -23,7 +23,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
 
     #First Level
     if pathvalue == 0:
-        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base")
 
         call bld
         m "[hermione_name] There is another task I have in mind for you."
@@ -38,12 +38,12 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("[genie_name]!", "shock", "wide", "base", "stare")
         call her_main("I was right to assume that this would be humiliating!", "angry", "base", "angry", "mid")
         m "you know what they say about assuming, you make an"
-        call her_walk(action="leave", speed=2.5)
+        call her_walk(action="leave")
 
         show screen blkfade
         call hide_blkfade
 
-        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base")
 
         call bld
         m "..."
@@ -111,7 +111,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
 
     #Second Level
     if pathvalue == 1:
-        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base")
 
         call bld
         m "'Morning, [hermione_name]."
@@ -121,12 +121,12 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         m "...Go masturbate during class. 80 points."
         call her_main("Fine.", "annoyed", "narrow", "annoyed", "mid")
 
-        call her_walk(action="leave", speed=2.5)
+        call her_walk(action="leave")
 
         call bld
         m "I would have given you 200 for listening to my story!"
 
-        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base")
 
         m "Why hello there [hermione_name] you loo-"
         call her_main("[genie_name] I demand the expulsion of all those Slytherin Harlots!", "angry", "base", "angry", "mid")
@@ -198,11 +198,11 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Stop it...please.", "upset", "narrow", "worried", "down")
                 m "The hypocritical harlot?"
 
-        call her_walk(action="leave", speed=2.5)
+        call her_walk(action="leave")
 
     # Third Level
     elif pathvalue == 2:
-        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base")
 
         call bld
         m "POP QUIZ!"
@@ -223,12 +223,12 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         m "You don't ALWAYS need my permission to masturbate [hermione_name]"
         call her_main("Oh trust me, I know.", "soft", "base", "base", "mid_soft", cheeks="blush")
 
-        call her_walk(action="leave", speed=2.5)
+        call her_walk(action="leave")
 
         show screen blkfade
         call hide_blkfade
 
-        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base")
 
         call bld
         m "Everything alright [hermione_name]? I usually expect you a bit earlier."
@@ -282,11 +282,11 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         m "Have a good night [hermione_name]"
         call her_main("You too [genie_name]", "open", "base", "base", "mid")
 
-        call her_walk(action="leave", speed=2.5)
+        call her_walk(action="leave")
 
     #Fourth Level
     elif pathvalue == 3:
-        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base")
 
         call bld
         m "How are you doing this fine, beautiful morning my little, wittle [hermione_name]"
@@ -318,12 +318,12 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         m "I'd certainly be happy about it...And perhaps my happiness will be its own reward?"
         call her_main("Heh. Yes, maybe it will. Well I better get to work then.", "smile", "base", "base", "mid")
 
-        call her_walk(action="leave", speed=2.5)
+        call her_walk(action="leave")
 
         show screen blkfade
         call hide_blkfade
 
-        call her_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+        call her_walk(action="enter", xpos="mid", ypos="base")
 
         call her_main("[genie_name]", "open", "base", "base", "mid")
         m "Did you complete your task?"
@@ -410,7 +410,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 m "[hermione_name] I'm going to repeal the rule about not giving bonus points, you'll get double for today."
                 call her_main("Thank you, [genie_name]", "smile", "base", "base", "mid")
 
-                call her_walk(action="leave", speed=2.5)
+                call her_walk(action="leave")
 
     call blkfade
     # call h_unequip_temp_outfit

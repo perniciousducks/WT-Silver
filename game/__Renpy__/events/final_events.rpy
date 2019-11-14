@@ -3,7 +3,7 @@
 label ball_quest_E1:
     stop music fadeout 1.0
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call play_music("chipper_doodle")
     call her_main("[genie_name]?", "soft", "base", "base", "mid", xpos="right", ypos="base")
@@ -202,7 +202,7 @@ label ball_quest_E1:
                     with d5
 
                     #Walks to the door
-                    call her_walk(xpos="door", ypos="base", speed=2)
+                    call her_walk(xpos="door", ypos="base")
 
                     #Locks the door
                     pause.5
@@ -219,7 +219,7 @@ label ball_quest_E1:
                     #Returns from the door
                     m "??!"
 
-                    call her_walk(xpos="mid", ypos="base", speed=3)
+                    call her_walk(xpos="mid", ypos="base")
                     pause.2
 
                     call her_main("Just in case...", "annoyed", "narrow", "angry", "R")
@@ -334,7 +334,7 @@ label ball_quest_E1:
     call her_main("Well, I'd better go now. I have so many arrangements to make!", "grin", "base", "base", "R")
     m "By all means, Miss Granger. Have a nice day."
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
     pause.5
 
     call bld
@@ -355,7 +355,7 @@ label ball_quest_E1:
 label ball_quest_E2:
     stop music fadeout 1.0
 
-    call sna_walk(action="enter", xpos="mid", ypos="base", speed=3)
+    call sna_walk(action="enter", xpos="mid", ypos="base")
     pause.2
 
     call play_music("snape_theme")
@@ -438,7 +438,7 @@ label ball_quest_E2:
 label ball_quest_E3:
     stop music fadeout 1.0
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call play_music("chipper_doodle")
     call her_main("My parents sent me the wrong dress!", "angry", "base", "base", "mid", tears="soft", xpos="right", ypos="base")
@@ -464,7 +464,7 @@ label ball_quest_E3:
     call her_main("I think I'd better go now...*sob*", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     m "Well, don't let me keep you a moment longer, miss Granger...."
 
-    call her_walk(xpos="door", ypos="base", speed=2)
+    call her_walk(xpos="door", ypos="base")
     pause.3
 
     call her_main("(My life is ruined...)", "angry", "squint", "base", "mid", cheeks="blush", tears="messy", ypos="head")
@@ -490,7 +490,7 @@ label ball_quest_E3:
 label ball_quest_E4:
     stop music fadeout 1.0
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call play_music("chipper_doodle")
     call bld
@@ -522,7 +522,7 @@ label ball_quest_E4:
     show screen genie
     with d1
 
-    call her_walk(action="run", xpos="door", ypos="base", speed=1, loiter=False)
+    call her_walk(action="run", xpos="door", ypos="base", speed=2, loiter=False)
     call play_sound("door")
     pause.5
 
@@ -592,7 +592,7 @@ label ball_quest_E5:
     call her_chibi("stand","mid","base",flip="True")
     pause.2
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     call bld
     m "......................"

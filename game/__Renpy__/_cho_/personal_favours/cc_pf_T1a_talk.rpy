@@ -31,7 +31,7 @@ label cc_pf_talk_T1_intro_E1:
     m "First, I'd like you to come a bit closer."
     call cho_main("Very well, [cho_genie_name]...","soft","base","base","R")
 
-    call cho_walk("desk", "base", speed=1.6)
+    call cho_walk("desk", "base")
 
     call play_music("cho_theme")
     call cho_main(face="happy",xpos="mid",ypos="base",trans="fade")
@@ -243,7 +243,7 @@ label cc_pf_talk_T1_intro_E1:
         call cho_main("See you next time.","smile","base","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.2)
+    call cho_walk(action="leave")
 
     call bld
     m "(...)"
@@ -399,7 +399,7 @@ label cc_pf_talk_T1_intro_E2:
     call cho_main("Thank you, [cho_genie_name].","soft","wink","sad","mid")
 
     # Cho very slowly walks out of your office...
-    call cho_walk(action="leave", speed=3)
+    call cho_walk(action="leave")
 
     call bld
     m "(...)"
@@ -419,7 +419,7 @@ label cc_pf_talk_T1_E3:
     m "First, come closer. Let me have a good look at you!"
     call cho_main("Yes, Sir.","base","base","base","mid")
 
-    call cho_walk(xpos="desk", ypos="base", speed=1.6)
+    call cho_walk(xpos="desk", ypos="base")
 
     call cho_main("Anything specific you'd like to know?","soft","base","base","mid", xpos="mid", ypos="base", trans="fade")
     m "Yes. Let's talk some more about Diggory..."
@@ -538,7 +538,7 @@ label cc_pf_talk_T1_E3:
         call cho_main("Until next time.","smile","narrow","base","mid")
 
         # Cho leaves.
-        call cho_walk(action="leave", speed=2.5)
+        call cho_walk(action="leave")
 
         call bld
         g9 "Sweet little wank I had there."
@@ -598,7 +598,7 @@ label cc_pf_talk_T1_E3:
             call cho_main("Have a good night.","smile","narrow","base","mid")
 
         # Cho leaves.
-        call cho_walk(action="leave", speed=2.5)
+        call cho_walk(action="leave")
 
         call bld
         m "I wonder what colours they are..."
@@ -615,7 +615,7 @@ label cc_pf_talk_T2_intro_E1:
     m "Please come a bit closer..."
     call cho_main("Yes, Sir.","base","base","base","mid")
 
-    call cho_walk(xpos="desk", ypos="base", speed=1.6)
+    call cho_walk(xpos="desk", ypos="base")
 
     call cho_main("","base","base","base","mid", xpos="mid", ypos="base", trans="fade")
     m "Tell me, how have you been?"
@@ -766,7 +766,7 @@ label cc_pf_talk_T2_intro_E1:
     call cho_main("Until next time...","base","narrow","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.5)
+    call cho_walk(action="leave")
 
     jump end_cho_talk_event
 
@@ -776,7 +776,7 @@ label cc_pf_talk_T2_intro_E2:
     call cho_main("Of course not, [cho_genie_name]!","smile","base","base","mid")
     m "Come closer..."
 
-    call cho_walk(xpos="desk", ypos="base", speed=1.6)
+    call cho_walk(xpos="desk", ypos="base")
 
     call cho_main("","base","base","base","mid", xpos="mid", ypos="base", trans="fade")
     m "How's school? Have anything to tell me?"
@@ -967,7 +967,7 @@ label cc_pf_talk_T2_intro_E2:
     call cho_main("Have a nice day, [cho_genie_name]!","angry","closed","angry","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.5)
+    call cho_walk(action="leave")
 
     call bld
     m "(I really did make a mess...)"
@@ -1137,7 +1137,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
             call cho_main("Thank you, Sir.","soft","closed","base","mid")
 
             # Cho leaves.
-            call cho_walk(action="leave", speed=2.5)
+            call cho_walk(action="leave")
 
             call bld
             m "(Well that was weird.)"
@@ -1285,7 +1285,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
             call cho_main("Thank you, Sir.","soft","closed","base","mid")
 
             # Cho leaves.
-            call cho_walk(action="leave", speed=2.5)
+            call cho_walk(action="leave")
 
             call bld
             g4 "Go! Go! Ravenclaw!"

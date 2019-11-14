@@ -75,7 +75,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
             "\"Fine, leave. I don't care...\"":
                 her "Tsk!"
 
-                call her_walk(action="leave", speed=2.5)
+                call her_walk(action="leave")
 
                 $ her_mood = +12
 
@@ -989,7 +989,7 @@ label end_hg_show_ass:
     else:
         her "I'd better go now then. It's getting pretty late..."
 
-    call her_walk(xpos="door", ypos="base", speed=2.5)
+    call her_walk(xpos="door", ypos="base")
 
     #First event.
     if her_whoring < 15:

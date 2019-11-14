@@ -297,7 +297,7 @@ label luna_revert_1: #Reversion event #DONE
 
     #Hermione Enters.
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main("[genie_name], I hope you don't mind me coming in unannounced...", "angry", "closed", "base", "mid",xpos="base",ypos="base")
 
@@ -466,7 +466,7 @@ label luna_revert_1: #Reversion event #DONE
     m "Don't you want to stay a little longer?"
     call her_main("I don't think so, sir...", "disgust", "narrow", "base", "mid_soft")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ luna_reverted = True
     $ luna_wardrobe_unlocked = False
@@ -631,7 +631,7 @@ label luna_revert_2: #Non-Reversion event #DONE
 
     #Hermione Enters.
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main("[genie_name], I hope you don't mind me coming in unannounced...", "angry", "closed", "base", "mid",xpos="base",ypos="base")
     call her_main("But I really need a good-.", "angry", "narrow", "base", "down")
@@ -1205,7 +1205,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     call her_main("(Wait, what was I doing here...)", "annoyed", "squint", "base", "mid")
     call reset_luna
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ luna_busy = True
     $ hermione_busy = True

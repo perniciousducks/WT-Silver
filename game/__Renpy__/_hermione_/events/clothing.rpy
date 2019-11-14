@@ -10,7 +10,7 @@ label hermione_summon_setup:
 
         #call set_her_action("hold_book") # This will only be used once in the game, here.
 
-        call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+        call her_walk(action="enter", xpos="mid", ypos="base")
 
         call play_music("hermione_theme")
         call ctc

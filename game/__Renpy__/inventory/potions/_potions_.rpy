@@ -245,7 +245,7 @@ label potions_room:
     else:
         call gen_chibi("stand","0","base")
         call hide_blkfade
-        call gen_walk(xpos="left", ypos="base", speed=1.4)
+        call gen_walk(xpos="left", ypos="base")
     pause.2
     jump potions_menu
 

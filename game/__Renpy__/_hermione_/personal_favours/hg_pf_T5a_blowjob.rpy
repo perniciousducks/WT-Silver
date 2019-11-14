@@ -58,7 +58,7 @@ label hg_pf_blowjob:
         call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R")
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base", speed=2.5)
+    call her_walk(xpos="door", ypos="base")
 
     call her_chibi(action="leave")
 
@@ -124,7 +124,7 @@ label hg_pf_blowjob_T0_fail_intro:
 
     call her_main("I should leave...", "disgust", "narrow", "base", "down", cheeks="blush")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     call bld
     m "Tough luck..."
@@ -160,7 +160,7 @@ label hg_pf_blowjob_T0_fail_repeat:
     call her_main("I refuse to do this sort of thing...", "normal", "base", "angry", "mid")
     call her_main("I have to go now...", "annoyed", "narrow", "angry", "R")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ her_mood += 6
     $ hg_pf_blowjob.counter -= 1
@@ -192,7 +192,7 @@ label hg_pf_blowjob_T1_intro_E1:
     call her_main("Although, now when I say it out loud like this...", "angry", "narrow", "base", "down")
     m "Too late! You already said \"yes\"!"
     call her_main("I know...", "grin", "worriedCl", "worried", "mid", emote="05")
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     jump hg_pf_blowjob_1
@@ -289,7 +289,7 @@ label hg_pf_blowjob_T2_intro_E1:
     g4 "Come here, you dirty little minx!"
     call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "annoyed", "up")
 
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     jump hg_pf_blowjob_2
@@ -740,7 +740,7 @@ label hg_hidden_blowjob_snape:
     with d3
     pause.8
 
-    call sna_walk(xpos="mid", ypos="base", speed=4)
+    call sna_walk(xpos="mid", ypos="base")
     pause.2
 
     call play_music("snape_theme")
@@ -792,7 +792,7 @@ label hg_hidden_blowjob_snape:
     with d3
     pause.2
 
-    call sna_walk(action="leave", speed=3)
+    call sna_walk(action="leave")
     pause.8
 
     call play_music("playful_tension") # SEX THEME.
@@ -1047,7 +1047,7 @@ label hg_hidden_blowjob_tonks:
     with d3
     pause.1
 
-    call ton_walk("mid","base", speed=2.5)
+    call ton_walk("mid","base")
 
     if daytime:
         call ton_main("Hello, Sir.","base","base","base","mid", xpos="right", ypos="base")
@@ -1235,7 +1235,7 @@ label hg_hidden_blowjob_tonks:
     #Tonks leaves.
     stop music fadeout 1.0
 
-    call ton_walk(action="leave", speed=2.5)
+    call ton_walk(action="leave")
     pause.5
 
     $ tonks_class.equip(tonks_outfit_last) # Equip custom outfit.

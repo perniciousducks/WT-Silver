@@ -57,7 +57,7 @@ label hg_pr_sex:
         m "Yes. And you will get 75 points again as well."
         call her_main("Well, alright...", "annoyed", "narrow", "annoyed", "mid")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ current_payout = 75
     $ hg_pr_sex.inProgress = True
@@ -70,7 +70,7 @@ label end_hg_pr_sex:
     m "Gryffindor gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ public_whore_ending = True
 
@@ -105,7 +105,7 @@ label hg_pr_sex_T1_intro_E1:
 label hg_pr_sex_T1_intro_E2:
     $ hg_pr_sex_skip = False
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="neutral", xpos="right", ypos="base")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
@@ -132,7 +132,7 @@ label hg_pr_sex_T1_intro_E2:
 
 
 label hg_pr_sex_T1_E3:
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="happy", xpos="right", ypos="base")
 
@@ -161,7 +161,7 @@ label hg_pr_sex_T1_E3:
 
 
 label hg_pr_sex_T1_E4:
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="happy", xpos="right", ypos="base")
 

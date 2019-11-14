@@ -670,7 +670,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
     call her_main("Thank you, captain...", "grin", "base", "base", "mid",xpos="right",ypos="base", cheeks="blush")
 
-    call her_walk(action="leave", speed=2.7)
+    call her_walk(action="leave")
 
     $ aftersperm = False #Show cum stains on Hermione's uniform.
 

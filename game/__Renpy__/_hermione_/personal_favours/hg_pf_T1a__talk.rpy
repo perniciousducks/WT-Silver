@@ -51,7 +51,7 @@ label hg_pf_talk:
 
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base", speed=2.5)
+    call her_walk(xpos="door", ypos="base")
 
     call her_chibi(action="leave")
 
@@ -994,7 +994,7 @@ label hg_pf_talk_tonks:
                 call ton_main("Professor...","horny","base","raised","mid")
                 m "Miss Tonks..."
 
-                call ton_walk(action="leave", speed=2.5)
+                call ton_walk(action="leave")
 
             else:
                 call ton_main("Oh no, those poor things!","upset","base","sad","mid", hair="basic")
@@ -1018,7 +1018,7 @@ label hg_pf_talk_tonks:
                 call ton_main("Professor...","horny","base","raised","mid")
                 m "Miss Tonks..."
 
-                call ton_walk(action="leave", speed=2.5)
+                call ton_walk(action="leave")
 
         "\"Yourself.\"":
             call her_main("Well...", "angry", "narrow", "worried", "down")
@@ -1050,7 +1050,7 @@ label hg_pf_talk_tonks:
                         call ton_main("Have a good night, Miss Granger.","base","base","base","L")
                         call her_main("Good night, professor Tonks.", "open", "base", "base", "R")
 
-                    call ton_walk(action="leave", speed=2.5)
+                    call ton_walk(action="leave")
 
                     call bld
                     m "(She ignored me...?)"
@@ -1152,7 +1152,7 @@ label hg_pf_talk_tonks:
                     call ton_main("Professor...","horny","base","raised","mid")
                     m "Miss Tonks..."
 
-                    call ton_walk(action="leave", speed=2.5)
+                    call ton_walk(action="leave")
 
 
     $ tonks_class.equip(tonks_outfit_last) # Equip custom outfit.

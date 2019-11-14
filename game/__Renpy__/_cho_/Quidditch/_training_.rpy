@@ -166,7 +166,7 @@ label cho_quid_E1:
         call cho_main("Good night, Sir...","soft","narrow","angry","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave")
 
     call popup("You've lost the ability to train Cho in Quidditch.", "Congratulations!", "interface/icons/head/head_cho_2.png")
 
@@ -235,7 +235,7 @@ label cho_quid_E2:
     call cho_main("Yes, Sir.{w} Let me just go and get all of my equipment.","smile","base","base","mid")
     call cho_main("I'll be right back.","base","narrow","base","mid")
 
-    call cho_walk(action="leave", speed=2)
+    call cho_walk(action="leave")
 
     call blkfade
     pause.8
@@ -251,7 +251,7 @@ label cho_quid_E2:
     call hide_blkfade
     pause.8
 
-    call cho_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call cho_walk(action="enter", xpos="mid", ypos="base")
     pause.5
 
     call cho_main("Ready when you are, [cho_genie_name]!","smile","base","base","mid", xpos="right", ypos="base")
@@ -312,7 +312,7 @@ label change_quidditch_tactics:
             "":
                 pass
             "\"Come back down.\"":
-                call cho_walk("mid", "base", speed=1.2)
+                call cho_walk("mid", "base")
                 pause.2
 
                 call cho_chibi("reset","mid","base", flip=False)
@@ -400,12 +400,12 @@ label demonstrate_tactic(position=""):
     # The *ASS* position!
     if position == "front":
         m "Now turn away from me."
-        call cho_walk(xpos=580, ypos=220, speed=0.5)
+        call cho_walk(xpos=580, ypos=220)
 
         call cho_main("Like this?","soft","base","base","R", ypos="head")
         m "A bit higher maybe..."
 
-        call cho_walk(xpos=600, ypos=150, speed=0.3)
+        call cho_walk(xpos=600, ypos=150)
 
         call bld
         m "Yes, very good. Keep that position."
@@ -427,7 +427,7 @@ label demonstrate_tactic(position=""):
     elif position == "above":
         m "Now move a bit higher."
 
-        call cho_walk(xpos=550, ypos=200, speed=0.3)
+        call cho_walk(xpos=550, ypos=200)
 
         call cho_main("Like this?","soft","base","base","downR", ypos="head")
         with hpunch
@@ -442,7 +442,7 @@ label demonstrate_tactic(position=""):
         else:
             call cho_main("Of course, [cho_genie_name]...","base","base","base","downR", ypos="head")
 
-        call cho_walk(xpos=500, ypos=100, speed=0.5)
+        call cho_walk(xpos=500, ypos=100)
 
         call cho_main("How is this?","open","base","base","down", ypos="head")
 
@@ -470,7 +470,7 @@ label demonstrate_tactic(position=""):
         m "Come as close to me as you can..."
         call cho_main("Yes, [cho_genie_name].","soft","base","base","R", ypos="head")
 
-        call cho_walk(xpos=450, ypos=240, speed=0.5)
+        call cho_walk(xpos=450, ypos=240)
 
         call cho_main("How's this? Too close?","soft","wink","raised","mid", ypos="head")
         m "No! It's the perfect distance!"

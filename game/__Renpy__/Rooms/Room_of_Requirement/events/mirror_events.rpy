@@ -45,7 +45,7 @@ label prev_at_hogwarts:
     dum_[3] "Please, come in..."
     pause.2
 
-    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+    call sna_walk(action="enter", xpos="mid", ypos="base")
     pause.5
 
     dum_[1] "Ah, Severus..."
@@ -97,7 +97,7 @@ label prev_at_hogwarts:
     with d3
     pause.2
 
-    call sna_walk(action="leave", speed=2.5)
+    call sna_walk(action="leave")
 
     call play_music("stop")
 

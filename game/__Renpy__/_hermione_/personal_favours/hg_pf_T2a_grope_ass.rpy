@@ -57,7 +57,7 @@ label hg_pf_grope_ass_T1_front:
 
     call her_main("Good day, Sir.", "disgust", "narrow", "angry", "R", cheeks="blush")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ her_mood += 4
 
@@ -147,7 +147,7 @@ label hg_pf_grope_ass_T1_back:
             m "Are you sure about that?"
             call her_main("I'm leaving. Good day, Sir.", "angry", "base", "angry", "mid", cheeks="blush")
 
-            call her_walk(action="leave", speed=3)
+            call her_walk(action="leave")
 
             call bld
             m "(Whatever...)"
@@ -159,7 +159,7 @@ label hg_pf_grope_ass_T1_back:
         "\"You are not getting any points for this!\"":
             call her_main("Ha! See if I care, [genie_name]!", "angry", "base", "angry", "mid", cheeks="blush")
 
-            call her_walk(action="leave", speed=3)
+            call her_walk(action="leave")
 
             call bld
             g4 "*Tsk!* (You little brat!)"
@@ -179,7 +179,7 @@ label hg_pf_grope_ass_T1_back:
             call her_main("I hate you, [genie_name]! I hate you!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
 
             # Hermione runs out of the room.
-            call her_walk(action="run", speed=2, loiter=False)
+            call her_walk(action="run", xpos="door", ypos="base", speed=2, loiter=False)
             call play_sound("door")
             pause.2
 
@@ -533,7 +533,7 @@ label hg_pf_grope_ass_T2_fail:
 
     call hg_chibi_transition("stand","desk","base", flip=False, trans="fade")
 
-    call her_walk(xpos="door", ypos="base", speed=2)
+    call her_walk(xpos="door", ypos="base")
 
     call her_main("...........................", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
 

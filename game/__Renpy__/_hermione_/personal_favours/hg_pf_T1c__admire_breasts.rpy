@@ -63,7 +63,7 @@ label hg_pf_admire_breasts:
 
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base", speed=3)
+    call her_walk(xpos="door", ypos="base")
 
     if her_tier <= 1 and hg_pf_admire_breasts.points == 1:
         call her_main("........................", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
@@ -149,7 +149,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
             call her_main("Fine! I'm leaving...", "open", "closed", "angry", "mid")
             call her_main("Good day, Sir.", "angry", "base", "angry", "mid")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             $ her_mood += 3
             $ hg_pf_admire_breasts.fail()
@@ -231,7 +231,7 @@ label hg_pf_admire_breasts_T1_intro_E2:
 
             call her_main("Good day, Sir.", "scream", "base", "angry", "mid")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             $ her_mood += 6
             $ hg_pf_admire_breasts.fail()
@@ -352,7 +352,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
         "\"Fine, leave. I don't care...\"":
             call her_main("Tsk!", "clench", "closed", "angry", "mid")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             $ her_mood += 12
 

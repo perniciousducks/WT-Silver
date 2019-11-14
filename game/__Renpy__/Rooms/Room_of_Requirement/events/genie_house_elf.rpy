@@ -25,7 +25,7 @@ label genie_house_elf:
 
     nar "Snape then opened the door, his pointy nose protruding under his silky hair."
 
-    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call sna_walk(action="enter", xpos="mid", ypos="base")
 
     call sna_main("You called? ","snape_23", xpos="base", ypos="base")
 
@@ -110,7 +110,7 @@ label genie_house_elf:
     call sna_main("I’ve been working on a new cleaning solution.","snape_01", xpos="base", ypos="base")
     call sna_main("It might come in handy sooner than I thought.","snape_02", xpos="base", ypos="base")
 
-    call sna_walk(action="leave", speed=2)
+    call sna_walk(action="leave")
 
     nar "The door shut and silence spread across the room only interrupted after a few minutes by the house elf."
 

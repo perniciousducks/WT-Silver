@@ -62,9 +62,7 @@ label hg_pf_handjob:
 
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base", speed=2.5)
-
-    call her_chibi(action="leave")
+    call her_walk(action="leave")
 
 
     # Increase level

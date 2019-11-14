@@ -46,7 +46,7 @@ label hg_pf_sex:
 
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base", speed=2.5)
+    call her_walk(xpos="door", ypos="base")
 
     call her_chibi(action="leave")
 
@@ -132,7 +132,7 @@ label hg_pf_sex_T1_intro_E3:
     call her_main("I do....", "angry", "narrow", "base", "down")
     stop music fadeout 1.0
 
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     call hg_chibi_transition("admire_ass", flip=True, trans="fade")
@@ -190,7 +190,7 @@ label hg_pf_sex_T1_E3: # repeats
 
 label hg_sex_1:
     stop music fadeout 1.0
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     call hg_chibi_transition("grope_ass", flip=True, trans="fade")

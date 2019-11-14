@@ -38,7 +38,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("Well come on then, summon her...","pout","mad","angry","mid")
         ">You summon Hermione. Somehow..."
 
-        call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+        call her_walk(action="enter", xpos="mid", ypos="base")
 
         $ luna_flip = -1
         $ luna_r_arm = 2
@@ -456,7 +456,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ gryffindor += 60
         call her_main("Thank you [genie_name]...", "open", "base", "base", "R")
 
-        call her_walk(action="leave", speed=2.5)
+        call her_walk(action="leave")
 
         $ luna_busy = True
         $ hermione_busy = True
@@ -477,7 +477,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         ">You summon Hermione to your office."
 
-        call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+        call her_walk(action="enter", xpos="mid", ypos="base")
 
         $ luna_flip = -1
         $ luna_r_arm = 2
@@ -815,7 +815,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         call her_main("this is going to be so much FUN!", "grin", "narrow", "annoyed", "up")
 
-        call her_walk(action="leave", speed=2.5)
+        call her_walk(action="leave")
 
         call lun_main("(What have I agreed to)","normal","suspicious","sad","down")
         hide screen luna_main
@@ -1141,7 +1141,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
                     $ hermione_class.wear("all")
 
-                    call her_walk(action="leave", speed=2.5)
+                    call her_walk(action="leave")
 
                 else:
                     jump luna_her_hj_end

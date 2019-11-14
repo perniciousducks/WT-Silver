@@ -58,7 +58,7 @@ label ll_pf_sex_T1_intro:
 
     call lun_walk(action="leave")
 
-    call gen_walk(action="leave", speed=3)
+    call gen_walk(action="leave")
 
     show screen blkfade
     with d3

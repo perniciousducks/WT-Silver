@@ -66,7 +66,7 @@ label potion_scene_2_1_1:
             m "I'm afraid that I don't, [hermione_name], now you'd best hurry if you don't want to be late."
             call her_main("...Yes [genie_name].", "annoyed", "narrow", "annoyed", "mid")
 
-            call her_walk(action="leave", speed=2)
+            call her_walk(action="leave")
 
             $ hermione_busy = True
 
@@ -85,7 +85,7 @@ label potion_scene_2_1_1:
     call her_main("If you want to touch my breasts it will be an extra 40 points.", "annoyed", "narrow", "angry", "R")
     m "Deal."
 
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     call nar(">Hermione walks over to behind your desk, her breasts swaying rhythmically as she moves.")
@@ -176,7 +176,7 @@ label potion_scene_2_1_1:
     m "Yes [hermione_name]. You can go now."
     pause.2
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     $ her_potions_drunk.add("expansion")
     $ her_potions_drunk.add("breast_expansion")
@@ -253,7 +253,7 @@ label potion_scene_2_2:
     hide screen bld1
     with d3
 
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     call nar(">Hermione hops over to your desk, her ass bouncing as she moves, and presents herself to you.")
@@ -444,7 +444,7 @@ label potion_scene_2_2:
     call her_chibi("stand","desk","base")
     with d3
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ her_potions_drunk.add("expansion")
     $ her_potions_drunk.add("ass_expansion")

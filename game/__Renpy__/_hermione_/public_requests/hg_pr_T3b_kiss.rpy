@@ -75,7 +75,7 @@ label hg_pr_kiss:
         call her_main("I know a couple of girls who are hungry for attention and wouldn't mind putting on a little show.", "smile", "narrow", "base", "mid_soft")
         m "Great. See you after your classes then."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ current_payout += 45
     $ hg_pr_kiss.inProgress = True
@@ -88,7 +88,7 @@ label end_hg_pr_kiss:
     m "The Gryffindor house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ hg_pr_kiss.inProgress = False
 
@@ -108,7 +108,7 @@ label end_hg_pr_kiss:
 
 label hg_pr_kiss_T1_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     #if her_whoring >= 12 and her_whoring < 15: # LEVEL 05
 
@@ -142,7 +142,7 @@ label hg_pr_kiss_T1_E1:
     m "You are not getting paid, you know that, right?"
     call her_main("I don't care...", "scream", "closed", "angry", "mid")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ her_mood +=12
 
@@ -153,7 +153,7 @@ label hg_pr_kiss_T1_E1:
 
 label hg_pr_kiss_T1_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name], did you complete your task?"
@@ -180,7 +180,7 @@ label hg_pr_kiss_T1_E2:
 
 label hg_pr_kiss_T1_E3:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name], did you complete your task?"
@@ -223,7 +223,7 @@ label hg_pr_kiss_T1_E3:
             m "You are dismissed."
             call her_main("......", "angry", "base", "base", "mid",tears="soft")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             $ her_mood +=25
 
@@ -234,7 +234,7 @@ label hg_pr_kiss_T1_E3:
 
 label hg_pr_kiss_T2_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     #elif her_whoring >= 15 and her_whoring <= 17: # LEVEL 06. Event level 02.
 
@@ -272,7 +272,7 @@ label hg_pr_kiss_T2_E1:
 
 label hg_pr_kiss_T2_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name]. Did you complete your task?"
@@ -312,7 +312,7 @@ label hg_pr_kiss_T2_E2:
 
 label hg_pr_kiss_T2_E3:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     show screen blktone
@@ -367,7 +367,7 @@ label hg_pr_kiss_T2_E3:
 
 label hg_pr_kiss_T3_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     #elif her_whoring >= 18: # LEVEL 07+
 
@@ -453,7 +453,7 @@ label hg_pr_kiss_T3_E1:
 
 label hg_pr_kiss_T3_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="happy", xpos="right", ypos="base")
     m "[hermione_name], did you complete your task?"

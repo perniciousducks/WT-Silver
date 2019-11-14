@@ -16,7 +16,7 @@ label hg_wager_bj:
             call her_main("Okay, I can do that...", "open", "base", "base", "mid_soft", cheeks="blush")
             call her_main("", "base", "base", "base", "mid_soft")
             g9 "Well, get over here then!"
-            call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+            call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
             call blkfade
             hide screen genie
             call her_main("Should I turn around, [genie_name]?", "open", "worriedCl", "worried", "mid")
@@ -38,7 +38,7 @@ label hg_wager_bj:
             if hg_strip.trigger: #If snape walked in during the dance favour.
                 call play_music("dark_fog")
 
-                call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
+                call sna_walk(action="enter", xpos="mid", ypos="base")
 
                 call sna_main( "Hello Geni...", face="snape_09")
                 call sna_main( "What do we have here?!?", face="snape_20")
@@ -65,7 +65,7 @@ label hg_wager_bj:
                 m "You are excused miss Granger, but I will be taking 20 points from Gryffindor."
                 $ gryffindor -= 20 #should take gryffindor points and then hermione leaves
 
-                call her_walk(action="leave", speed=2)
+                call her_walk(action="leave")
 
                 call sna_main("How did you talk her into that?", face="snape_02")
                 m "We made a bet involving house points and she lost, why did you have to barge your way in like that?"
@@ -77,7 +77,7 @@ label hg_wager_bj:
                 g4 "Can't a mythical creature feel up a schoolgirl in peace around here?"
                 call sna_main("Fine, I'll leave you to it, the less I have to see that girl the better...", face="snape_06")
 
-                call sna_walk(action="leave", speed=3)
+                call sna_walk(action="leave")
 
             else : #If she hasn't stripped twice.
                 call her_main("No, it's bad enough doing this to gain house points, it's much worse to prevent losing them!", "clench", "narrow", "angry", "R")
@@ -99,7 +99,7 @@ label hg_wager_bj:
                 hide screen hermione_main
                 with d3
 
-                call her_walk(action="leave", speed=2)
+                call her_walk(action="leave")
 
     else: #If her whoring is higher than 15 (when she can do blowjob favour)
         call her_main("Gryffindor really can't afford to lose 20 points...", "soft", "base", "worried", "mid")
@@ -109,7 +109,7 @@ label hg_wager_bj:
             if her_whoring > 18:
                 call her_main("And it does feel good having my mouth full of your cock...", "soft", "happyCl", "base", "mid", cheeks="blush")
         m "Get over here then!"
-        call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+        call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
         call blkfade
         call play_music("playful_tension")
         hide screen hermione_main
@@ -133,7 +133,7 @@ label hg_wager_bj:
 
         call play_music("dark_fog")#Snape walks in
 
-        call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
+        call sna_walk(action="enter", xpos="mid", ypos="base")
 
         call sna_main("", face="snape_01",xpos="base",ypos="base")
         call ctc
@@ -179,7 +179,7 @@ label hg_wager_bj:
                 call sna_main("I’ll leave you to it then...", face="snape_03")
                 call her_main("...", "full_cum", "narrow", "base", "down", cheeks="blush")
 
-                call sna_walk(xpos="door", ypos="base", speed=3) #snape walks to the door, pauses on gulp sound
+                call sna_walk(xpos="door", ypos="base") #snape walks to the door, pauses on gulp sound
 
                 $ renpy.play('sounds/gulp.mp3')
                 call her_main("{image=textheart}*Gulp* {image=textheart}", "cum", "narrow", "annoyed", "up")
@@ -210,7 +210,7 @@ label hg_wager_bj:
                     with d3
                     pause.2
 
-                    call sna_walk(action="leave", speed=3)
+                    call sna_walk(action="leave")
 
                 else: #if hermione has stripped twice (so snape walked in on her)
                     call gen_chibi("dick_out_desk")
@@ -247,7 +247,7 @@ label hg_wager_bj:
                     with d3
                     pause.2
 
-                    call sna_walk(action="leave", speed=3)
+                    call sna_walk(action="leave")
 
                 pause.2
                 m "Well, that was something..."
@@ -299,7 +299,7 @@ label hg_wager_bj:
                             with d3
                             pause.2
 
-                            call sna_walk(action="leave", speed=3)
+                            call sna_walk(action="leave")
 
                             g4 "And not a moment to soon.... Take this you whore!"
                             call hg_chibi_transition("bj_cumming_in")
@@ -350,7 +350,7 @@ label hg_wager_bj:
                             with d3
                             pause.2
 
-                            call sna_walk(action="leave", speed=3)
+                            call sna_walk(action="leave")
 
                             m "You can come out now [hermione_name]..."
                             call hg_chibi_transition("bj_pause")
@@ -418,7 +418,7 @@ label hg_wager_bj:
                                 m "I don't know what that means..."
                                 call sna_main("I feel like understand you less and less by the day...", face="snape_01")
 
-                                call sna_walk(action="leave", speed=3)
+                                call sna_walk(action="leave")
 
                                 call hg_chibi_transition("bj_pause")
                                 call her_main("So, no rematch then?", "crooked_smile", "narrow", "base", "mid_soft")
@@ -450,7 +450,7 @@ label hg_wager_bj:
                                         m "Just take the wine and leave..."
                                         m "I need to reflect on my previous life decisions."
 
-                                        call sna_walk(action="leave", speed=3)
+                                        call sna_walk(action="leave")
 
                                         m "Get out of there... life decisions."
                                         call hg_chibi_transition("bj_pause")
@@ -469,7 +469,7 @@ label hg_wager_bj:
                                         else:
                                             call sna_main("Fine...", face="snape_03")
 
-                                        call sna_walk(action="leave", speed=3)
+                                        call sna_walk(action="leave")
 
                                         call hg_chibi_transition("bj_pause")
                                         call her_main("Happy?", "normal", "happyCl", "base", "mid", cheeks="blush")
@@ -523,7 +523,7 @@ label hg_wager_bj:
                                 call sna_main("That's fair...", face="snape_03")
                                 call sna_main("I'll take my leave in that case...", face="snape_01")
 
-                                call sna_walk(action="leave", speed=3)
+                                call sna_walk(action="leave")
 
                                 call hg_chibi_transition("bj_pause")
                                 call her_main("Did you just call me a...{nw}")
@@ -569,7 +569,7 @@ label hg_wager_bj:
                     with d3
                     pause.2
 
-                    call sna_walk(action="leave", speed=3)
+                    call sna_walk(action="leave")
 
                     m "..."
                     g4 "...Why did you stop?"

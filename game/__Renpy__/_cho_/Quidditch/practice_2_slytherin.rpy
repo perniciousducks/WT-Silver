@@ -68,7 +68,7 @@ label cc_st_start:
 
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2)
+    call cho_walk(action="leave")
 
     $ cho_busy = True
     if cho_quid.commentator == "hermione":
@@ -151,7 +151,7 @@ label cc_st_return_E1:
     pause .5
 
     # Cho walks in.
-    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call cho_walk(action="enter", xpos="desk", ypos="base")
 
     # Cho is furious.
     call cho_main("", "annoyed", "narrow", "angry", "mid", xpos="mid", ypos="base")
@@ -221,7 +221,7 @@ label cc_st_return_E1:
     call cho_main("Good night, Sir.", "soft", "narrow", "base", "mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.2)
+    call cho_walk(action="leave")
 
     call bld
     m "That girl sure is a piece of work..."
@@ -348,7 +348,7 @@ label cc_st_hermione_E1:
     g4 "..."
 
     # Hermione barges in.
-    call her_walk(xpos="desk", ypos="base", speed=2)
+    call her_walk(xpos="desk", ypos="base")
 
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base") # annoyed
     pause .5
@@ -409,7 +409,7 @@ label cc_st_hermione_E1:
     her "Good day, Sir."
 
     #Hermione walks out
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     call bld
     g4 "(What in the great desert sands do these women want from me...)"
@@ -818,7 +818,7 @@ label cc_st_hermione_blackmail:
     # Hermione puts her clothes on if she's naked.
     # TODO: add clothing equip for Hermione.
 
-    call her_walk(xpos="mid", ypos="base", speed=1)
+    call her_walk(xpos="mid", ypos="base")
     pause .1
 
     # Summon Cho.
@@ -829,7 +829,7 @@ label cc_st_hermione_blackmail:
     call chibi_effect(action="thought", chibi="hermione")
     pause 1
 
-    call cho_walk(xpos="680", ypos="base", speed=0.6)
+    call cho_walk(xpos="680", ypos="base")
     pause .2
 
     call her_main("", "base", "base", "base", "mid", xpos="270", ypos="base", flip=True)
@@ -917,7 +917,7 @@ label cc_st_hermione_blackmail:
     m "You are both dismissed..."
     her "..."
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
     pause .2
 
     if daytime:
@@ -925,7 +925,7 @@ label cc_st_hermione_blackmail:
     else:
         call cho_main("Good night, Sir.", "base", "base", "base", "mid", ypos="head") # Happy
 
-    call cho_walk(action="leave", speed=0.6)
+    call cho_walk(action="leave")
 
     call bld
     g9 "Quest complete!"

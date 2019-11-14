@@ -538,17 +538,17 @@ label floor_7th:
             $ first_time_7th=False
             m "So... The diary mentioned he was walking around here."
 
-            call gen_walk(xpos="200", ypos="base", speed=2.7)
+            call gen_walk(xpos="200", ypos="base", speed=1.5)
 
             call bld
             m "I can definitely sense a strong magical energy in this place..."
 
-            call gen_walk(xpos="door", ypos="base", speed=2.7)
+            call gen_walk(xpos="door", ypos="base", speed=1.5)
 
             call bld
             m "Maybe if I...or I could..."
 
-            call gen_walk(xpos="120", ypos="base", speed=2.7)
+            call gen_walk(xpos="120", ypos="base", speed=1.5)
 
             call bld
             g4 "I could be in my office jacking off right now!!"
@@ -774,7 +774,7 @@ label outskirts_of_hogwarts:
     call gen_chibi("stand","desk","base")
     call hide_blkfade
 
-    call gen_walk(action="leave", speed=2.8)
+    call gen_walk(action="leave")
     call blkfade
 
     stop music fadeout 1.0

@@ -11,7 +11,7 @@ label cho_panties_response_T2:
 
     if cho_panties_soaked:
         g9 "Your panties! Of course, [cho_name]!{w} I've got them right here..."
-        call cho_walk("desk","base", speed=2)
+        call cho_walk("desk","base")
         pause.8
 
         call cho_main("(...)","annoyed","narrow","angry","mid", xpos="mid", ypos="base", trans="fade") # Evil stare.
@@ -39,7 +39,7 @@ label cho_panties_response_T2:
         call cho_main("It's disgusting!","annoyed","narrow","base","down")
         call cho_main("I better get them cleaned immediately...","angry","narrow","sad","down")
 
-        call cho_walk("door","base", speed=3)
+        call cho_walk("door","base")
 
         call bld
         m "Where are you going?"
@@ -68,10 +68,10 @@ label cho_panties_response_T2:
         call cho_main("(...)","annoyed","narrow","base","mid")
         m "There, take them..."
 
-        call cho_walk("desk","base", speed=2)
+        call cho_walk("desk","base")
         pause.8
 
-        call cho_walk("mid","base", speed=2)
+        call cho_walk("mid","base")
         call cho_chibi("stand","mid","base", flip=False)
         with d3
         pause.2

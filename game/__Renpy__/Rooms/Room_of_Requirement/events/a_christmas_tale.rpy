@@ -45,7 +45,7 @@ label a_christmas_tale:
     with d3
     nar "Severus then entered, all flustered and spent."
 
-    call sna_walk(xpos="mid", ypos="base", speed=2.5)
+    call sna_walk(xpos="mid", ypos="base")
     pause.2
 
     call sna_main("Genie? Where are you... I came here, to vent...",face="snape_03",ypos="head")

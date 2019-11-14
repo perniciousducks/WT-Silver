@@ -61,7 +61,7 @@ label hg_pf_admire_panties:
 
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base", speed=2.5)
+    call her_walk(xpos="door", ypos="base")
 
     if her_tier > 3:
         her "What about my points?"

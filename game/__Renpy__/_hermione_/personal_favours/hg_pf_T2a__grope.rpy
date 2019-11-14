@@ -70,7 +70,7 @@ label hg_pf_grope:
 
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base", speed=2.5)
+    call her_walk(xpos="door", ypos="base")
 
     if her_tier > 5:
         call her_main("(What about my points?)", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
@@ -120,7 +120,7 @@ label hg_pf_grope_T0_fail_repeat:
     m "Please?"
     call her_main("I'm leaving! Good day, Sir!", "soft", "closed", "base", "mid")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ her_mood += 6
 
@@ -140,7 +140,7 @@ label hg_pf_grope_T1_intro_E1:
     m "Come closer [hermione_name]... Hop around my desk..."
     call her_main("*Uhm*... very well, Sir.", "disgust", "narrow", "base", "down")
 
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
@@ -222,7 +222,7 @@ label hg_pf_grope_T2_intro_E1:
     m "Well, I feel more like touching, actually..."
     her "...................................."
 
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
@@ -286,7 +286,7 @@ label hg_pf_grope_T3_intro_E1:
     g9 "You just read my mind!"
     call her_main("...................", "disgust", "narrow", "base", "down")
 
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")

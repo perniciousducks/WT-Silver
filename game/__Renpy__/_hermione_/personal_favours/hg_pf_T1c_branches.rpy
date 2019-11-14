@@ -29,7 +29,7 @@ label hg_pf_admire_breasts_transition:
     with d3
     pause.2
 
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     ">Hermione slowly walks towards your desk."
@@ -160,7 +160,7 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
     call her_main("Gr..................", "angry", "worriedCl", "worried", "mid", cheeks="blush")
     call her_main("{size=-5}(Burn in hell, you wretched old-{/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ her_mood += 22
 
@@ -229,7 +229,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
             g4 "Come on, now. Just say something dirty! I'm almost there!"
             call her_main("You are a horrible person, [genie_name]...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
 
-            call her_walk(action="leave", speed=2)
+            call her_walk(action="leave")
 
             jump end_hermione_event
 
@@ -254,7 +254,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
 
             call her_main("I'm leaving!", "angry", "squint", "base", "mid", cheeks="blush")
 
-            call her_walk(action="leave", speed=2)
+            call her_walk(action="leave")
 
             jump end_hermione_event
 

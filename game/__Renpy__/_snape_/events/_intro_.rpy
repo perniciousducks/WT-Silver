@@ -25,7 +25,7 @@ label snape_intro_E1:
 
     call chibi_effect("hide")
 
-    call sna_walk(xpos="mid", ypos="base", speed=4)
+    call sna_walk(xpos="mid", ypos="base")
     pause.2
 
     call sna_main("","snape_01",xpos="base",ypos="base")
@@ -105,7 +105,7 @@ label snape_intro_E1:
 
     stop music fadeout 1.0
 
-    call sna_walk(action="leave", speed=3)
+    call sna_walk(action="leave")
 
     call bld
     m "Hm..."
@@ -128,7 +128,7 @@ label snape_intro_E1:
 label snape_intro_E2:
     call play_music("dark_fog")
 
-    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call sna_walk(action="enter", xpos="mid", ypos="base")
 
     call bld
     m "{size=-3}(That broody guy again...){/size}"
@@ -190,7 +190,7 @@ label snape_intro_E2:
     call sna_main("","snape_24")
     who2 "Good night, Albus."
 
-    call sna_walk(xpos="door", ypos="base", speed=3)
+    call sna_walk(xpos="door", ypos="base")
     pause.2
 
     who2 "................."
@@ -228,7 +228,7 @@ label snape_intro_E2:
 label snape_intro_E3:
     call play_music("dark_fog")
 
-    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call sna_walk(action="enter", xpos="mid", ypos="base")
 
     call sna_main("","snape_01",xpos="base",ypos="base")
     call ctc
@@ -326,7 +326,7 @@ label snape_intro_E3:
     call sna_main("","snape_06")
     who2 "Well, good night, Albus."
 
-    call sna_walk(xpos="door", ypos="base", speed=3)
+    call sna_walk(xpos="door", ypos="base")
     pause.2
 
     stop music fadeout 1.0
@@ -620,7 +620,7 @@ label snape_intro_E4:
 label snape_intro_E5:
     call play_music("dark_fog")
 
-    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call sna_walk(action="enter", xpos="mid", ypos="base")
 
     call sna_main("","snape_01",xpos="base",ypos="base")
 
@@ -713,7 +713,7 @@ label snape_intro_E5:
     call sna_main("Good night... genie.","snape_24")
     m "Yes. Good night, Severus."
 
-    call sna_walk(xpos="door", ypos="base", speed=3)
+    call sna_walk(xpos="door", ypos="base")
     pause.2
 
     call sna_main(".................","snape_06", ypos="head")

@@ -98,7 +98,7 @@ label potion_scene_1_1_1:
         call nar(">Hermione heads off to class.")
         $ gryffindor += 20
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     #TODO Fix: setting cat appearance
     # Equip cat ears
@@ -117,7 +117,7 @@ label potion_scene_1_1_1:
 # Cat polyjuice return event
 label potion_scene_1_1_2:
     $ her_cat_polyjuice_return = False
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main("How could you do this to me [genie_name]?", "angry", "base", "angry", "mid", xpos="mid", ypos="base", trans="hpunch")
     her "Try and turn me into a cat!"
@@ -131,7 +131,7 @@ label potion_scene_1_1_2:
     call her_main("Well at least I know that it will wear off by morning.", "annoyed", "narrow", "angry", "R")
 
     if her_whoring >= 17:
-        call her_walk(xpos="door", speed=2)
+        call her_walk(xpos="door")
         "You see Hermione reaching for the door knob but an idea strikes you."
         menu:
             "-Make her suck you off-":
@@ -139,7 +139,7 @@ label potion_scene_1_1_2:
                 call her_chibi("stand","door",flip=False)
                 with d3
                 her ".......?"
-                call her_walk(xpos="desk", speed=2.5)
+                call her_walk(xpos="desk")
                 call her_main("What is it, [genie_name]?", "upset", "base", "angry", "mid")
                 call her_main("Haven't you humiliated me enough?", "annoyed", "closed", "base", "mid")
                 call her_main("", "annoyed", "base", "base", "R")
@@ -273,7 +273,7 @@ label potion_scene_1_1_2:
                 m "Maybe next time.."
                 #TODO Fix: Chibi flips and walks when choosing this option, it should just exit the room
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     # Unequip cat ears
     $ h_ears = "blank"
@@ -293,7 +293,7 @@ label potion_scene_1_1_2:
 label potion_scene_1_1_2_alt:
     $ her_cat_polyjuice_return = False
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     if "cat_polyjuice" in her_potions_drunk:
         her "I can't believe you had me drink this again..."
@@ -331,7 +331,7 @@ label potion_scene_1_1_2_alt:
             m "Goodnight [hermione_name]."
             call her_main("Goodnight [genie_name].", "upset", "closed", "base", "mid")
 
-            call her_walk(action="leave", speed=2)
+            call her_walk(action="leave")
 
             $ h_request_wear_ears = False
             $ hermione_wear_ears = False
@@ -537,7 +537,7 @@ label potion_scene_1_2:
         if her_whoring <= 12:
             her "I'm not going to drink it again, especially since I have no idea who... or what it might turn me into."
             her "You know what... I think I'd better leave."
-            call her_walk(action="leave", speed=2)
+            call her_walk(action="leave")
             $ her_mood += 10
             $ hermione_busy = True
             jump main_room
@@ -668,7 +668,7 @@ label potion_scene_1_2:
             m "Well you wont be receiving any of those points..."
             her "..."
             her "Yeah, that's still going to be a no, bye [genie_name]."
-            call her_walk(action="leave", speed=2)
+            call her_walk(action="leave")
             $ her_mood += 10
             $ hermione_busy = True
             jump main_room
@@ -706,7 +706,7 @@ label potion_scene_1_2:
             m "Then you wont be receiving any of those points..."
             her "..."
             her "Yeah, that's still going to be a no, bye [genie_name]."
-            call her_walk(action="leave", speed=2)
+            call her_walk(action="leave")
             $ her_mood += 10
             $ hermione_busy = True
             jump main_room
@@ -850,7 +850,7 @@ label potion_scene_1_2:
     # #THE END
 
 
-    # call her_walk(action="leave", speed=2)
+    # call her_walk(action="leave")
 
     # $ hermione_busy = True
 

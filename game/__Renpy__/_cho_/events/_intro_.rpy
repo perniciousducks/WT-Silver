@@ -46,7 +46,7 @@ label cho_intro_E1:
 
 
     # Cho enters your office for the first time.
-    call cho_walk("660", "base", action="enter", speed=1.6)
+    call cho_walk("660", "base", action="enter")
 
     call play_music("cho_theme")
     call cho_main("Good morning, Sir.","base","base","base","mid", xpos="mid", ypos="base")
@@ -170,7 +170,7 @@ label cho_intro_E1:
     call her_main("Professor I'm sorry to bother you but I wanted to...", "open", "closed", "base", "mid", ypos="head")
     call her_main("!!!", "normal", "wide", "base", "stare", ypos="head",trans="hpunch")
 
-    call her_walk(xpos="570", ypos="base", speed=2)
+    call her_walk(xpos="570", ypos="base")
     call her_chibi("stand","570","base",flip=True)
 
     call cho_main("","annoyed","angry","angry","R", xpos="base", ypos="base")
@@ -271,7 +271,7 @@ label cho_intro_E1:
         m "Certainly..."
 
         # Cho walks to the door and stops.
-        call cho_walk("door", "base", speed=1.6)
+        call cho_walk("door", "base")
         pause.8
         call cho_chibi("stand","door","base")
         with d3
@@ -321,7 +321,7 @@ label cho_intro_E1:
         call her_main("...", "annoyed", "narrow", "angry", "R")
 
         # Cho walks to the door and stops.
-        call cho_walk("door", "base", speed=2.5)
+        call cho_walk("door", "base")
         pause.8
         call cho_chibi("stand","door","base")
         with d3
@@ -352,7 +352,7 @@ label cho_intro_E1:
     call her_main("I’m leaving.", "normal", "squint", "angry", "mid")
 
     # Hermione leaves
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     # Hermione Mood down
     $ her_mood += 6
@@ -380,7 +380,7 @@ label cho_intro_E2:
     call cho_chibi("stand","door","base",flip=False)
     with d1
     pause.3
-    call cho_walk("desk", "base", speed=2.2)
+    call cho_walk("desk", "base")
     pause.2
 
     call cho_main("I hate her!","scream","closed","angry","mid", xpos="mid", ypos="base",trans="hpunch")
@@ -424,7 +424,7 @@ label cho_intro_E2:
     call cho_main("Have a nice evening, Professor.","smile","closed","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.2)
+    call cho_walk(action="leave")
 
     call bld
     m "I better talk to Hermione about this..."
@@ -701,7 +701,7 @@ label cho_intro_E3:
                 g9 "You may leave now."
                 call her_main("I will!{w} Good day, Sir!", "open", "closed", "angry", "mid")
 
-                call her_walk(action="leave", speed=2.5)
+                call her_walk(action="leave")
 
                 call bld
                 m "She might forget all about it in time."
@@ -817,7 +817,7 @@ label cho_intro_E3:
         pause.5
 
     # Cho enters the office.
-    call cho_walk("580", "base", action="enter", speed=1.6)
+    call cho_walk("580", "base", action="enter")
 
     call cho_main("Hello, Sir.{p=0.6}You've called for me?","base","base","base","mid", xpos="base", ypos="base")
     call her_main("", "normal", "closed", "base", "mid", xpos="450", ypos="base")
@@ -843,7 +843,7 @@ label cho_intro_E3:
     call her_main("...", "annoyed", "narrow", "base", "R_soft")
 
     # Hermione leaves after glaring one last time at Cho.
-    call her_walk(xpos="door", ypos="base", speed=2.5)
+    call her_walk(xpos="door", ypos="base")
     pause.2
     call her_chibi("stand","door","base",flip=False)
     with d3
@@ -868,7 +868,7 @@ label cho_intro_E3:
     call cho_main("Good day, Professor.","smile","base","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave")
 
     call bld
     m "That went better than expected."

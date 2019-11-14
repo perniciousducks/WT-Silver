@@ -51,7 +51,7 @@ label hg_pf_strip:
 
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base", speed=2.5)
+    call her_walk(xpos="door", ypos="base")
 
     call her_chibi(action="leave")
 
@@ -132,7 +132,7 @@ label hg_pf_strip_T0_fail_intro: # Hermione starts dancing, but it will fail any
     call her_main("Stripping for you won't be worth \"any\" amount of points!", "angry", "base", "angry", "mid")
     call her_main("I will be leaving now!", "annoyed", "base", "angry", "mid")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ her_mood += 5
     $ hg_pf_strip.counter -= 1
@@ -152,7 +152,7 @@ label hg_pf_strip_T0_fail_repeat:
     call her_main("I will be leaving now...", "annoyed", "base", "angry", "mid")
     call her_main("Good day, Sir...", "annoyed", "narrow", "angry", "R")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ her_mood += 5
     $ hg_pf_strip.counter -= 1
@@ -362,7 +362,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
             m "We'll see..."
             call her_main("Tsk!", "disgust", "narrow", "base", "mid_soft", tears="mascara")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             # Event does not fail. She jsut gets mad, but no whoring increase.
             $ her_mood += 25
@@ -403,7 +403,7 @@ label hg_pf_strip_T1_intro_E2:
 
     m "??!"
 
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking.
@@ -613,7 +613,7 @@ label hg_pf_strip_T1_intro_E2:
 
     stop music
 
-    call sna_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call sna_walk(action="enter", xpos="mid", ypos="base")
 
     call sna_main("Listen, Genie. I've been thinki-","snape_01", xpos="base", ypos="base")
 
@@ -659,7 +659,7 @@ label hg_pf_strip_T1_intro_E2:
     with fade
     pause.2
 
-    call sna_walk(action="leave", speed=3)
+    call sna_walk(action="leave")
 
     show screen blkfade
     with d5
@@ -678,7 +678,7 @@ label hg_pf_strip_T1_intro_E2:
     with d3
     pause.2
 
-    call her_walk(xpos="mid", ypos="base", speed=1.5)
+    call her_walk(xpos="mid", ypos="base")
 
     call her_main("................................", "disgust", "narrow", "base", "down", ypos="head")
     pause.2
@@ -690,7 +690,7 @@ label hg_pf_strip_T1_intro_E2:
     call her_chibi("stand","mid","base", flip=True)
     pause.2
 
-    call her_walk(xpos="desk", ypos="base", speed=2)
+    call her_walk(xpos="desk", ypos="base")
 
     call her_main("........................", "normal", "worriedCl", "worried", "mid", xpos="base", ypos="base")
     stop music fadeout 2.0
@@ -733,7 +733,7 @@ label hg_pf_strip_T1_E2:
     with d3
     pause.5
 
-    call her_walk(xpos="door", ypos="base", speed=2)
+    call her_walk(xpos="door", ypos="base")
 
     pause.2
     call chibi_effect("thought", "hermione")
@@ -750,13 +750,13 @@ label hg_pf_strip_T1_E2:
     call her_chibi("stand","door","base")
     pause.1
 
-    call her_walk(xpos="mid", ypos="base", speed=3)
+    call her_walk(xpos="mid", ypos="base")
     pause.2
 
     call her_main("Just in case...", "annoyed", "narrow", "angry", "R", ypos="head")
     stop music fadeout 1.0
 
-    call her_walk(xpos="desk", ypos="base", speed=3, redux_pause=2, loiter=False)
+    call her_walk(xpos="desk", ypos="base", redux_pause=2, loiter=False)
 
     show screen blkfade
     with d5
@@ -1054,7 +1054,7 @@ label hg_pf_strip_T2:
         with d3
         pause.5
 
-        call her_walk(xpos="door", ypos="base", speed=1.6)
+        call her_walk(xpos="door", ypos="base")
 
         pause.5
         call play_sound("lock")
@@ -1063,7 +1063,7 @@ label hg_pf_strip_T2:
         call her_chibi("stand","door","base")
         pause.1
 
-        call her_walk(xpos="mid", ypos="base", speed=2.5)
+        call her_walk(xpos="mid", ypos="base")
         pause.2
 
         call her_main("All done!", "smile", "closed", "base", "mid", ypos="head")
@@ -1080,7 +1080,7 @@ label hg_pf_strip_T2:
             call her_main("..................", "annoyed", "narrow", "angry", "R")
 
             stop music fadeout 1.0
-            call her_walk(xpos="desk", ypos="base", speed=2, redux_pause=1, loiter=False)
+            call her_walk(xpos="desk", ypos="base", redux_pause=1, loiter=False)
 
             $ her_mood += 4
             pass
@@ -1584,7 +1584,7 @@ label hg_pf_strip_T2_masturbate:
                     hide screen blkfade
                     with d5
 
-                    call her_walk(action="leave", speed=2.5)
+                    call her_walk(action="leave")
 
                     $ her_mood += 50
 

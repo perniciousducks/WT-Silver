@@ -23,7 +23,7 @@ label hg_pf_strip_T1_Snape: # Fails
     m "Short answer... yes."
     call her_main("I'm leaving!", "angry", "base", "angry", "mid")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ her_mood += 15
     $ hg_pf_strip.fail()
@@ -89,7 +89,7 @@ label hg_pf_strip_T2_Snape:
         call her_main("Well, alright...", "disgust", "narrow", "base", "mid_soft")
         m "Good. Go find professor Snape then."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     show screen blkfade
     with d5
@@ -619,7 +619,6 @@ label hg_pf_strip_T2_Snape_masturbate:
 
         ">Hermione performs another set of movements and pirouettes..."
         ">Gives a little curtsy bow to the imaginary public..."
-        label dev:
         ">And then slumps down on her butt exhausted."
 
         call her_chibi("sit_naked","on_desk","on_desk")
@@ -742,7 +741,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         hide screen blkfade
         with d5
 
-        call sna_walk(action="leave", speed=2)
+        call sna_walk(action="leave")
         pause.5
 
         call her_chibi("stand","desk","base")

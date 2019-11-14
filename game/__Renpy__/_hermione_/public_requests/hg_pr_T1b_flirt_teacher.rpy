@@ -32,7 +32,7 @@ label hg_pr_flirt_teacher:
 
     her "Well, I'd better go now. Classes are about to start..."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ current_payout = 15
     $ hg_pr_flirt_teacher.inProgress = True
@@ -46,7 +46,7 @@ label end_hg_pr_flirt_teacher:
     m "The Gryffindors get [current_payout] points!"
     her "Thank you, [genie_name]."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ hg_pr_flirt_teacher.inProgress = False
 
@@ -62,7 +62,7 @@ label end_hg_pr_flirt_teacher:
 
 
 label hg_pr_flirt_teacher_intro:
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main("Good evening, [genie_name].", face="happy", xpos="right", ypos="base")
     m "[hermione_name]..."
@@ -130,7 +130,7 @@ label hg_pr_flirt_teacher_T1_E1: # Flitwick
             m "You are dismissed, [hermione_name]."
             call her_main("Tsk!", "angry", "base", "angry", "mid", emote="01")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             $ her_mood += 18
 
@@ -187,7 +187,7 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
             call her_main("And I feel so humiliated now...", "angry", "worriedCl", "worried", "mid", emote="05")
             call her_main("But I understand and won't argue with your decision...", "normal", "worriedCl", "worried", "mid")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             $ hg_pr_flirt_teacher.inProgress = False
 
@@ -362,7 +362,7 @@ label hg_pr_flirt_teacher_T2_E3: # Filch
             m "You are dismissed, [hermione_name]."
             call her_main(".........................................", "angry", "base", "angry", "mid")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             $ her_mood +=15
 

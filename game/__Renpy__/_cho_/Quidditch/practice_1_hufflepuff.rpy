@@ -38,7 +38,7 @@ label cc_ht_start:
         call cho_main("Later, [cho_genie_name]!", face="happy")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2)
+    call cho_walk(action="leave")
 
     $ cho_busy = True
     if cho_quid.commentator == "hermione": # Hermione has to commentate.
@@ -65,7 +65,7 @@ label quidditch_match_return:
             m "Come on in, [cho_name]!"
             cho "..."
 
-    call cho_walk(action="enter", speed=2.2)
+    call cho_walk(action="enter")
 
 
     # Hufflepuff Match
@@ -157,7 +157,7 @@ label cc_ht_return_fail:
         call cho_main("Have a good night, Sir.","soft","base","base","R")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.2)
+    call cho_walk(action="leave")
 
     $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
 
@@ -212,7 +212,7 @@ label cc_ht_return_E1:
     call cho_main("Have a good night, Sir.","soft","closed","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2)
+    call cho_walk(action="leave")
 
     call bld
     m "(...)"
@@ -272,7 +272,7 @@ label cc_ht_return_E2:
     m "You too..."
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2)
+    call cho_walk(action="leave")
 
     $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
 
@@ -352,7 +352,7 @@ label cc_ht_return_E3:
     call cho_main("I'll be heading back to bed, if you don't mind.","soft","closed","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2)
+    call cho_walk(action="leave")
 
     call bld
     m "(...)"
@@ -394,7 +394,7 @@ label cc_ht_hermione_commentator:
     g9 "Congratulations then, [hermione_name]! You got the j..."
     call her_main("Ah!!! I better start lear...{w=0.8} I mean, preparing my opening speech!", "open", "wide", "base", "mid",trans="hpunch")
 
-    call her_walk(action="leave", speed=1.7)
+    call her_walk(action="leave", speed=1.5)
 
     call bld
     m "Aaaa-nd, she's gone..."

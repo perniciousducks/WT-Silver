@@ -94,7 +94,7 @@ label hg_pr_grope:
         call her_main("Great. I will see you after the classes then, [genie_name]. As usual.", "angry", "wink", "base", "mid")
         m "Yes. Good luck."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ current_payout = 25
     $ hg_pr_grope.inProgress = True
@@ -107,7 +107,7 @@ label end_hg_pr_grope:
     m "The Gryffindor house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ hg_pr_grope.inProgress = False
 
@@ -125,7 +125,7 @@ label end_hg_pr_grope:
 
 label hg_pr_grope_intro:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main("Good evening, [genie_name].", "base", "base", "base", "mid",xpos="right",ypos="base")
     m "[hermione_name]..."

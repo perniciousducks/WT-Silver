@@ -120,7 +120,7 @@ label potion_scene_11_1:
     $ gryffindor += 20
     call her_main("Thanks...", "annoyed", "squint", "base", "mid")
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     $ her_potions_drunk.add("milk")
     $ her_milk_potion_return = True
@@ -351,7 +351,7 @@ label potion_scene_11_2:
 
     $ milking = 0
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     $ hermione_busy = True
 
@@ -924,7 +924,7 @@ label potion_scene_11_3:
 
         call her_main("good bye sir...", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     $ milking = 0
 
@@ -948,7 +948,7 @@ label potion_scene_11_3:
 label potion_scene_11_1_2:
     $ her_milk_potion_return = False
 
-    call her_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call her_walk(action="enter", xpos="desk", ypos="base")
 
     $ hermione_wet_clothes = True
 
@@ -980,7 +980,7 @@ label potion_scene_11_1_2:
     call her_main("but don't think I've forgiven you!", "open", "closed", "angry", "mid")
     call nar(">Hermione storms out in a huff.")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     call bld
     m "(bitches... you'd think she'd be happy to get some {size=+5}big kahunas{/size} for free!)"

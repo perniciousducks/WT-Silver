@@ -43,7 +43,7 @@ label potion_scene_4: #Transparent uniform
 
     call her_main("Thank you [genie_name].", "open", "closed", "base", "mid")
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     $ hermione_busy = True
     
@@ -68,7 +68,7 @@ label potion_scene_4: #Transparent uniform
 label potion_scene_4_2: #Scene where Hermione comes back after classes angry and confused at having her uniform made transparent
     $ transparent_quest = False
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     show screen bld1
     if her_whoring <= 7: #Very angry and embarrassed
@@ -147,7 +147,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
     # TODO: Fix once scenario issues have been resolved.
     #call reset_her_transparency
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     $ hermione_busy = True
 

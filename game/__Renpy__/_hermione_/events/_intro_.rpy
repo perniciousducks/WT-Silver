@@ -80,7 +80,7 @@ label hermione_intro_E1:
     else:
         m "?!!"
 
-    call her_walk(xpos="mid", ypos="base", speed=3)
+    call her_walk(xpos="mid", ypos="base")
     pause.5
 
     call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
@@ -276,7 +276,7 @@ label hermione_intro_E1:
     call her_main("My classes are about to start, so I'd better go now.", "open", "closed", "angry", "mid")
     her "Thank you for your time..."
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     if masturbating:
         m "{size=-4}(This was awesome...) *Panting*{/size}"
@@ -437,7 +437,7 @@ label hermione_intro_E2:
     label hermione_intro_E2_continue:
         pass
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=3)
+    call her_walk(action="enter", xpos="mid", ypos="base")
     pause.5
 
     call play_music("chipper_doodle")
@@ -506,7 +506,7 @@ label hermione_intro_E2:
 
     her "Now, if you'll excuse me, I must get to my classes..."
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     call bld
     m "...................."
@@ -689,7 +689,7 @@ label hermione_intro_E3:
     $ hermione_wear_robe = True
     call update_her_uniform
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
     pause.5
 
     call her_main("", "annoyed", "squint", "angry", "mid", xpos="base", ypos="base")
@@ -786,7 +786,7 @@ label hermione_intro_E3:
     call her_main("Well, if there is nothing else, I have a studying schedule to keep.", "open", "closed", "base", "mid")
     m "By all means..."
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     $ hermione_class.strip("robe")
     $ snape_busy = False
@@ -803,13 +803,13 @@ label hermione_intro_E3:
 label hermione_intro_E4:
     stop music fadeout 1.0
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call bld
     her "....................."
     m "???"
 
-    call her_walk(xpos="desk", ypos="base", speed=1.6)
+    call her_walk(xpos="desk", ypos="base")
 
     call bld
     her "............"
@@ -833,7 +833,7 @@ label hermione_intro_E4:
     her "I think I'd better go..."
     m "..................."
 
-    call her_walk(action="run", xpos="door", ypos="base", speed=1, loiter=False)
+    call her_walk(action="run", xpos="door", ypos="base", speed=2, loiter=False)
     call play_sound("door")
     pause.3
 
@@ -856,7 +856,7 @@ label hermione_intro_E4:
 label hermione_intro_E5:
     stop music fadeout 1.0
 
-    call her_walk(action="enter", xpos="desk", ypos="base", speed=2.8)
+    call her_walk(action="enter", xpos="desk", ypos="base")
 
     call play_music("chipper_doodle")
     call her_main("Good morning, Professor.", "base", "base", "base", "mid", xpos="right", ypos="base")
@@ -932,7 +932,7 @@ label hermione_intro_E5:
     m "Ehm... alright..."
     call her_main("Oh, my classes are about to start. I'd better go...", "open", "base", "worried", "R")
 
-    call her_walk(action="leave", speed=2)
+    call her_walk(action="leave")
 
     stop music fadeout 1.0
 
@@ -1029,7 +1029,7 @@ label hermione_intro_E6:
     label hermione_intro_E6_continue:
         pass
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=3)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call play_music("day_theme")
     call her_main("Good day, professor...", "soft", "base", "base", "R", xpos="base", ypos="base")
@@ -1268,7 +1268,7 @@ label hermione_intro_E6:
     call her_main("Well... I suppose I'd better go now...", "base", "base", "base", "mid")
     m "............"
 
-    call her_walk(xpos="door", ypos="base", speed=2)
+    call her_walk(xpos="door", ypos="base")
     pause.3
 
     if current_favor == "show_tongue":

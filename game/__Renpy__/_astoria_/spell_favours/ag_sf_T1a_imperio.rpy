@@ -24,7 +24,7 @@ label ag_se_imperio_sb_E1:
     call ast_chibi("stand","mid","base")
     hide screen bld1
     with d3
-    call sus_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call sus_walk(action="enter", xpos="desk", ypos="base")
     pause.2
 
     call sus_main("Hello, [sus_genie_name]. You wanted to see me?.","open","base","worried","mid", xpos="right", ypos="base")
@@ -210,7 +210,7 @@ label ag_se_imperio_sb_E1:
         call ast_main("Night then, Sir!","grin","closed","base","mid")
         m "Good night..."
 
-    call ast_walk("door","base", speed=2.5)
+    call ast_walk("door","base")
     pause.2
     call ast_chibi("stand","door","base", flip=False)
     with d3
@@ -219,7 +219,7 @@ label ag_se_imperio_sb_E1:
     call ast_main("Come on Susy, time to give professor Tonks a visit.","open","base","base","mid", ypos="head")
     call sus_main("...","upset","narrow","worried","down", ypos="head")
 
-    call sus_walk(action="leave", speed=2.5)
+    call sus_walk(action="leave")
 
     call ast_main("(This is so much fun!)","grin","closed","base","mid")
 
@@ -254,7 +254,7 @@ label ag_se_imperio_sb_E2:
     call ast_chibi("stand","530","base")
     hide screen bld1
     with d3
-    call sus_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call sus_walk(action="enter", xpos="desk", ypos="base")
     pause.2
 
 
@@ -511,7 +511,7 @@ label ag_se_imperio_sb_E2:
     call play_music("stop")
     call hide_characters
     call ast_chibi("reset","530","base")
-    call ast_walk("door","base", speed=2.5)
+    call ast_walk("door","base")
     pause.2
     call ast_chibi("stand","door","base", flip=False)
     with d3
@@ -521,7 +521,7 @@ label ag_se_imperio_sb_E2:
     call ast_main("Come on Susy, time to give professor Tonks another visit","open","base","base","L", ypos="head")
     call sus_main("...","upset", ypos="head")
 
-    call sus_walk(action="leave", speed=2.5)
+    call sus_walk(action="leave")
 
     if daytime:
         call ast_main("See you, [ast_genie_name]!","grin","closed","base","mid")
@@ -557,7 +557,7 @@ label ag_se_imperio_sb_E3:
     call ast_chibi("stand","530","base")
     hide screen bld1
     with d3
-    call sus_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call sus_walk(action="enter", xpos="desk", ypos="base")
     pause.2
 
     call sus_main("You wanted to see me sir?","open","base","worried","mid", xpos="right", ypos="base")

@@ -178,7 +178,7 @@ label enter_room_of_req:
         call gen_chibi("stand","door","base",flip=True)
         m "And a mirror?"
 
-        call gen_walk(xpos="200", ypos="base", speed=2.7)
+        call gen_walk(xpos="200", ypos="base")
 
         call bld
         m "..."
@@ -259,7 +259,7 @@ label enter_room_of_req:
         call gen_chibi("stand","door","base",flip=True)
         call hide_blkfade
 
-        call gen_walk(xpos="200", ypos="base", speed=2.7)
+        call gen_walk(xpos="200", ypos="base")
 
     $ mirror_image = 1
     call gen_chibi("stand","200","base",flip=True)

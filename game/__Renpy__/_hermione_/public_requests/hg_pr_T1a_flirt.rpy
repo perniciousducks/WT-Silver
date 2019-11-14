@@ -65,7 +65,7 @@ label hg_pr_flirt:
 
     her "Well, I'd better go now. Classes are about to start..."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ current_payout = 5
     $ hg_pr_flirt.inProgress = True
@@ -79,7 +79,7 @@ label end_hg_pr_flirt:
     m "The Gryffindor house gets [current_payout] points!"
     call her_main("Thank you, [genie_name].", face="happy")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ hg_pr_flirt.inProgress = False
 
@@ -99,7 +99,7 @@ label end_hg_pr_flirt:
 
 label hg_pr_flirt_intro:
     #if her_whoring >= 0 and her_whoring < 3:
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main("Good evening, [genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
     m "[hermione_name]..."
@@ -159,7 +159,7 @@ label hg_pr_flirt_T1_E1:
             m "Get out of my sight..."
             call her_main("Yes, [genie_name]...Sorry, [genie_name]...", "annoyed", "squint", "angry", "mid")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             $ hg_pr_flirt.inProgress = False
 
@@ -209,7 +209,7 @@ label hg_pr_flirt_T1_E2:
             call her_main("But, you promised!", "angry", "base", "base", "mid", tears="soft")
             call her_main("................", "mad", "worriedCl", "worried", "mid", tears="soft_blink")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             $ her_mood += 10
 
@@ -249,7 +249,7 @@ label hg_pr_flirt_T1_E3:
             stop music fadeout 1.0
             call her_main("I don't feel like I deserved any this time anyway...", "annoyed", "narrow", "angry", "R")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             $ hg_pr_flirt.inProgress = False
 
@@ -481,7 +481,7 @@ label hg_pr_flirt_T3_E3:
             m "You are free to leave."
             call her_main("{size=-4}(Stubborn old man!){/size}", "angry", "base", "angry", "mid")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             $ her_mood += 10
 

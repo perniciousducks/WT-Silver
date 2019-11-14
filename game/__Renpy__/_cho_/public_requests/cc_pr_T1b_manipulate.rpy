@@ -122,7 +122,7 @@ label cc_pr_manipulate_start:
             call cho_main("Yes, Sir!","base","base","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=1.6)
+    call cho_walk(action="leave")
 
     $ cc_pr_manipulate.inProgress = True
 
@@ -137,7 +137,7 @@ label cc_pr_manipulate_start:
 label cc_pr_manipulate_T1_intro_E1:
 
     # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call cho_walk(action="enter", xpos="desk", ypos="base")
 
     call cho_main(face="happy", xpos="mid", ypos="base", trans="fade")
     m "How did it go?"
@@ -163,7 +163,7 @@ label cc_pr_manipulate_T1_intro_E1:
     call cho_main("Thank you, [cho_genie_name].","base","base","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.5)
+    call cho_walk(action="leave")
 
     if cho_reputation < 3: # Points til 3.
         $ cho_reputation += 1
@@ -174,7 +174,7 @@ label cc_pr_manipulate_T1_intro_E1:
 label cc_pr_manipulate_T1_E1:
 
     # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call cho_walk(action="enter", xpos="desk", ypos="base")
 
     call cho_main(face="happy", xpos="mid", ypos="base", trans="fade")
     m "What's my favourite Quidditch player been up to today?"
@@ -203,7 +203,7 @@ label cc_pr_manipulate_T1_E1:
         $ cho_reputation += 1
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.5)
+    call cho_walk(action="leave")
 
     jump end_cho_event
 
@@ -211,7 +211,7 @@ label cc_pr_manipulate_T1_E1:
 label cc_pr_manipulate_T1_E2:
 
     # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call cho_walk(action="enter", xpos="desk", ypos="base")
 
     call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
     g4 "[cho_name]! Do you have some good news for me?"
@@ -254,7 +254,7 @@ label cc_pr_manipulate_T1_E2:
     call cho_main("Have a nice day.","soft","narrow","sad","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.5)
+    call cho_walk(action="leave")
 
     if cho_reputation < 3: # Points til 3.
         $ cho_reputation += 1
@@ -265,7 +265,7 @@ label cc_pr_manipulate_T1_E2:
 label cc_pr_manipulate_T1_E3:
 
     # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call cho_walk(action="enter", xpos="desk", ypos="base")
 
     call cho_main(face="happy", xpos="mid", ypos="base", trans="fade")
     m "So? How did it go?"
@@ -292,7 +292,7 @@ label cc_pr_manipulate_T1_E3:
     call cho_main("Good night, [cho_genie_name].", face="happy")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.5)
+    call cho_walk(action="leave")
 
     if cho_reputation < 3: # Points til 3.
         $ cho_reputation += 1
@@ -306,7 +306,7 @@ label cc_pr_manipulate_T1_E3:
 label cc_pr_manipulate_T2_intro_E1:
 
     # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call cho_walk(action="enter", xpos="desk", ypos="base")
 
     call cho_main(face="angry", xpos="mid", ypos="base", trans="fade")
     m "Good evening [cho_name], How did today's task go?"
@@ -354,7 +354,7 @@ label cc_pr_manipulate_T2_intro_E1:
     call cho_main("I'll do my best.","soft","narrow","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.5)
+    call cho_walk(action="leave")
 
     if cho_reputation < 9: # Points til 9.
         $ cho_reputation += 1
@@ -365,7 +365,7 @@ label cc_pr_manipulate_T2_intro_E1:
 label cc_pr_manipulate_T2_E1:
 
     # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call cho_walk(action="enter", xpos="desk", ypos="base")
 
     call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
     call cho_main("I managed to corner their seeker when he came out of the boys bathroom.{w} One of the only times those thugs weren't hanging around with him.","soft","narrow","base","down")
@@ -398,7 +398,7 @@ label cc_pr_manipulate_T2_E1:
     call cho_main("Good night, [cho_genie_name].","smile","narrow","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.5)
+    call cho_walk(action="leave")
 
     if cho_reputation < 9: # Points til 9.
         $ cho_reputation += 1
@@ -409,7 +409,7 @@ label cc_pr_manipulate_T2_E1:
 label cc_pr_manipulate_T2_intro_E2:
 
     # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call cho_walk(action="enter", xpos="desk", ypos="base")
 
     call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
     m "Back already? How did it go?"
@@ -438,7 +438,7 @@ label cc_pr_manipulate_T2_intro_E2:
     call cho_main("Thank you, [cho_genie_name]!","smile","base","base","R")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.5)
+    call cho_walk(action="leave")
 
     if cho_reputation < 9: # Points til 9.
         $ cho_reputation += 1
@@ -449,7 +449,7 @@ label cc_pr_manipulate_T2_intro_E2:
 label cc_pr_manipulate_T2_intro_E3:
 
     # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call cho_walk(action="enter", xpos="desk", ypos="base")
 
     call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
     m "[cho_name], how was your day?"
@@ -507,7 +507,7 @@ label cc_pr_manipulate_T2_intro_E3:
     call cho_main("Good night, coach.","soft","narrow","angry","mid") # Angry
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.5)
+    call cho_walk(action="leave")
 
     if cho_reputation < 9: # Points til 9.
         $ cho_reputation += 1
@@ -518,7 +518,7 @@ label cc_pr_manipulate_T2_intro_E3:
 label cc_pr_manipulate_T2_E3:
 
     # Cho enters.
-    call cho_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call cho_walk(action="enter", xpos="desk", ypos="base")
 
     call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
     g9 "[cho_name]! You’re back."
@@ -578,7 +578,7 @@ label cc_pr_manipulate_T2_E3:
     call cho_main("Good night, Sir.","base","base","base","mid")
 
     # Cho leaves.
-    call cho_walk(action="leave", speed=2.5)
+    call cho_walk(action="leave")
 
     if cho_reputation < 9: # Points til 9.
         $ cho_reputation += 1

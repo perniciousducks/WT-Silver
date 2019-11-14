@@ -67,7 +67,7 @@ label tonks_intro_E1:
     call bld
     m "*hmmm?*..."
 
-    call ton_walk(xpos="mid", ypos="base", speed=2.5)
+    call ton_walk(xpos="mid", ypos="base")
     pause.5
 
     call play_music("tonks_theme")
@@ -216,7 +216,7 @@ label tonks_intro_E1:
     call ton_main("Good day, Sir.","base","base","base","mid")
 
     # Tonks leaves.
-    call ton_walk(action="leave", speed=2)
+    call ton_walk(action="leave")
 
     call bld
     m "This can't be good..."
@@ -264,7 +264,7 @@ label tonks_intro_E2:
             ton "I'm coming in..."
             g4 "(Shit!)"
 
-    call ton_walk(action="enter", xpos="mid", ypos="base", speed=2.5)
+    call ton_walk(action="enter", xpos="mid", ypos="base")
 
     call play_music("tonks_theme")
     call ton_main("Professor.","base","base","base","mid", xpos="right", ypos="base")
@@ -312,7 +312,7 @@ label tonks_intro_E2:
     call ton_main("I won't Professor.{w} Have a good night.","base","base","base","mid")
 
     # Tonks leaves.
-    call ton_walk(action="leave", speed=2.5)
+    call ton_walk(action="leave")
 
     call bld
     m "Shit..."
@@ -461,7 +461,7 @@ label tonks_intro_E3:
             ton "Sir, I’m coming in."
 
     #Tonks enters the office
-    call ton_walk(action="enter", xpos="desk", ypos="base", speed=2.8)
+    call ton_walk(action="enter", xpos="desk", ypos="base")
 
     call play_music("tonks_theme")
     call ton_main("Professor...","base","base","base","mid", xpos="mid", ypos="base")
@@ -656,7 +656,7 @@ label tonks_intro_E3:
     m "I most certainly will..."
 
     #Tonks leaves
-    call ton_walk(action="leave", speed=2.5)
+    call ton_walk(action="leave")
 
     call bld
     m "What an interesting turn of events..."

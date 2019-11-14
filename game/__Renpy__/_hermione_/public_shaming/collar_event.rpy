@@ -4,7 +4,7 @@
 
 label collar_scene:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call nar(">Hermione bursts into the room crying")
 
@@ -48,7 +48,7 @@ label slut_scene: #Locked to her being your slut
     hide screen hermione_main
     with d3
 
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     ">Hermione walks over and kneels before you as you pull out your cock from your robes."
@@ -212,7 +212,7 @@ label slut_scene: #Locked to her being your slut
     m "Good night. {w}Slut."
     call her_main("...", "base", "narrow", "worried", "down")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ hermione_zorder = 5
 
@@ -244,7 +244,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     m "I am serious, now be a good little whore and bend over my desk and I'll give you what you want."
     call her_main("...", "angry", "narrow", "base", "down")
 
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     hide screen genie
@@ -352,7 +352,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("Goodbye [genie_name].", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
     m "Goodbye whore."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ hermione_zorder = 5
 
@@ -378,7 +378,7 @@ label slave_scene:
     m "Now be a good girl and bend over the desk."
     call her_main("...", "angry", "base", "base", "mid")
 
-    call her_walk(xpos="desk", ypos="base", speed=2, loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
     hide screen genie
@@ -530,7 +530,7 @@ label slave_scene:
     call her_chibi("stand","mid","base")
     #call fade <- label does not exist
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ hermione_zorder = 5
 
@@ -578,7 +578,7 @@ label good_girl_scene:
 
     $ collar = 4
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ hermione_zorder = 5
 

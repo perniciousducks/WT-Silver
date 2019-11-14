@@ -95,7 +95,7 @@ label hg_pr_handjob:
         m "And report back to me after your classes, as usual."
         call her_main("Of course, [genie_name].", "base", "happyCl", "base", "mid")
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ current_payout = 55
     $ hg_pr_handjob.inProgress = True
@@ -108,7 +108,7 @@ label end_hg_pr_handjob:
     m "The Gryffindor house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
-    call her_walk(action="leave", speed=2.5)
+    call her_walk(action="leave")
 
     $ uni_sperm = False  #Universal sperm.
     $ aftersperm = False #Shows stains on Hermione's uniform.
@@ -131,7 +131,7 @@ label end_hg_pr_handjob:
 
 label hg_pr_handjob_T1_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     #if her_whoring >= 15 and her_whoring < 18:
 
@@ -172,7 +172,7 @@ label hg_pr_handjob_T1_E1:
             m "You are free to go, [hermione_name]."
             call her_main(".........", "annoyed", "narrow", "angry", "R")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             $ her_mood +=9
 
@@ -200,7 +200,7 @@ label hg_pr_handjob_T1_E1:
 
 label hg_pr_handjob_T1_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name], how did it go?"
@@ -232,7 +232,7 @@ label hg_pr_handjob_T1_E2:
 
 label hg_pr_handjob_T1_E3:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     m "[hermione_name], how did it go?"
 
@@ -274,7 +274,7 @@ label hg_pr_handjob_T1_E3:
 
 label hg_pr_handjob_T2_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     #elif her_whoring >= 18 and her_whoring < 21:
 
@@ -320,7 +320,7 @@ label hg_pr_handjob_T2_E1:
             call her_main("......", "angry", "base", "base", "mid")
             call her_main("This is just not fair!", "scream", "worriedCl", "worried", "mid")
 
-            call her_walk(action="leave", speed=2.5)
+            call her_walk(action="leave")
 
             $ her_mood += 20
 
@@ -339,7 +339,7 @@ label hg_pr_handjob_T2_E1:
 
 label hg_pr_handjob_T2_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name], did you complete your task?"
@@ -407,7 +407,7 @@ label hg_pr_handjob_T2_E2:
 
 label hg_pr_handjob_T2_E3:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name], did you complete your task?"
@@ -471,7 +471,7 @@ label hg_pr_handjob_T2_E3:
 
 label hg_pr_handjob_T3_intro_E1:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     #elif her_whoring >= 21:
 
@@ -531,7 +531,7 @@ label hg_pr_handjob_T3_intro_E1:
 
 label hg_pr_handjob_T3_E2:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name], did you complete your task?"
@@ -564,7 +564,7 @@ label hg_pr_handjob_T3_E2:
 
 label hg_pr_handjob_T3_E3:
 
-    call her_walk(action="enter", xpos="mid", ypos="base", speed=2)
+    call her_walk(action="enter", xpos="mid", ypos="base")
 
     call her_main(face="neutral", xpos="right", ypos="base")
     m "[hermione_name], did you complete your task?"

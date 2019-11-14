@@ -20,30 +20,28 @@ label lun_chibi(action=None, xpos=None, ypos=None, flip=False):
 
     return
 
-label lun_walk(xpos=None, ypos=None, speed=None, action=None, redux_pause=0):
+label lun_walk(xpos=None, ypos=None, speed=1.0, action=None, redux_pause=0):
     call hide_characters
     call hide_chibi_effects
     hide screen bld1
     hide screen blktone
     with d3
 
-    #TODO Convert speed
-
     if action == "enter":
         call play_sound("door")
         call lun_chibi(None, "door", "base", False)
         if xpos or ypos:
-            $ luna_chibi.move(xpos, ypos)
+            $ luna_chibi.move(xpos, ypos, speed)
     elif action == "leave":
         $ luna_chibi.show()
-        $ luna_chibi.move("door", "base")
+        $ luna_chibi.move("door", "base", speed)
         call play_sound("door")
         $ luna_chibi.hide()
         with d3
         pause .5
     else:
         $ luna_chibi.show()
-        $ luna_chibi.move(xpos, ypos)
+        $ luna_chibi.move(xpos, ypos, speed)
 
     return
 

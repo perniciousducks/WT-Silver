@@ -59,7 +59,7 @@ label start_slytherin_match:
     call cho_main("(...)", "annoyed", "narrow", "angry", "R")
     call cho_main("See you tomorrow, [cho_genie_name].", "soft", "narrow", "sad", "mid")
 
-    call cho_walk(action="leave", speed=2.2)
+    call cho_walk(action="leave")
 
     $ cho_busy = True
     $ cc_event_pause  += 1  # Event starts on the next day.
@@ -114,7 +114,7 @@ label slytherin_match:
             pass
 
     #Tonks enters
-    call ton_walk(action="enter", xpos="desk", ypos="base", speed=2.5)
+    call ton_walk(action="enter", xpos="desk", ypos="base")
 
     call play_music("tonks")
     call ton_main("Hi, [ton_genie_name].","base","base","base","mid", xpos="mid", ypos="base")
@@ -165,7 +165,7 @@ label slytherin_match:
     g9 "Ladies first."
     call ton_main("What a gentleman.","base","happyCl","base","mid")
 
-    call ton_walk(xpos="680", ypos="base", speed=2.2)
+    call ton_walk(xpos="680", ypos="base")
 
     call play_sound("door")
     call ton_chibi("hide")
@@ -286,7 +286,7 @@ label slytherin_match:
     with d3
     pause .3
 
-    call ton_walk(xpos= 220, ypos= 130, speed=1)
+    call ton_walk(xpos= 220, ypos= 130)
     pause .2
 
     call ton_main("Oh, what a view! Much better than the one from the Hufflepuff stands!","base","happyCl","base","mid", flip=True, ypos="head")
@@ -296,7 +296,7 @@ label slytherin_match:
     call her_chibi("stand", 220, 50, flip=True)
     with d3
     pause .3
-    call her_walk(xpos=375, ypos=105, speed=2)
+    call her_walk(xpos=375, ypos=105)
     pause .5
 
     #Hermione turns around
@@ -618,7 +618,7 @@ label slytherin_match:
     with d3
     pause .2
 
-    call ton_walk(xpos=430, ypos=70, speed=0.5)
+    call ton_walk(xpos=430, ypos=70)
 
 
     pause .5
@@ -629,7 +629,7 @@ label slytherin_match:
     call ton_chibi(flip=False)
     with d3
 
-    call ton_walk(xpos=395, ypos=110, speed=1)
+    call ton_walk(xpos=395, ypos=110)
     pause .5
 
     call play_sound("footsteps")
@@ -701,7 +701,7 @@ label slytherin_match:
     m "No..."
     pause .3
 
-    call gen_walk(xpos=360, ypos=45, speed=2)
+    call gen_walk(xpos=360, ypos=45)
     pause .8
 
     $ genie_zorder = 5
@@ -796,7 +796,7 @@ label slytherin_match:
     with d3
     pause .2
 
-    call her_walk(xpos=310, ypos=105, speed=2)
+    call her_walk(xpos=310, ypos=105)
     pause .3
 
     play bg_sounds "sounds/crowd_low.mp3" fadein 3 fadeout 2
@@ -805,13 +805,13 @@ label slytherin_match:
     call sna_main("Miss Granger?","snape_05", ypos="head")
     call her_main("It's...","disgust","base","worried","down", cheeks="blush")
 
-    call gen_walk(xpos=345, ypos=25, speed=0.3)
+    call gen_walk(xpos=345, ypos=25)
     pause .2
 
     m "Get up there, the crowd has started to suspect something..."
     call her_main("Oh...{w=0.5} of course!","soft","narrow","worried","mid", cheeks="blush")
 
-    call her_walk(xpos=375, ypos=105, speed=1)
+    call her_walk(xpos=375, ypos=105)
     pause .1
     call gen_chibi("hide")
     with d3
@@ -878,7 +878,7 @@ label slytherin_match:
     m "So?" #Small text
     call sna_main("...","snape_37") #Smirks
     g9 "Oh...{w=0.3} I see what you mean..."#Small text
-    call gen_walk(xpos=290, ypos=55, speed=2.5)
+    call gen_walk(xpos=290, ypos=55)
     call gen_chibi(action="hide")
     $ hermione_chibi.zorder = 5
     #
@@ -983,7 +983,7 @@ label slytherin_match:
     call gen_chibi("stand", flip=True)
     with d5
     # Genie walks back to his seat
-    call gen_walk(xpos=130, ypos=10, speed=2)
+    call gen_walk(xpos=130, ypos=10)
     call gen_chibi("stand", flip=False)
 
     "With Hermione collapsed on the ground you give last quick look and then swiftly head back to your seat..."

@@ -66,7 +66,7 @@ label hg_pf_titjob:
 
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base", speed=2.5)
+    call her_walk(xpos="door", ypos="base")
 
     call her_chibi(action="leave")
 

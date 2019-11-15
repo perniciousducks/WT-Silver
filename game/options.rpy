@@ -4,7 +4,7 @@ define title_version = config.version if len(config.version) < 5 else (config.ve
 init -1 python hide: 
     # Internal name and version
     config.name    = "WT Silver" # EXPERIMENTAL VERSION
-    config.version = "1.373"
+    config.version = "1.374"
 
     # Window
     title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])

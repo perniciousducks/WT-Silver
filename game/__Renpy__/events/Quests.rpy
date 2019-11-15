@@ -116,6 +116,12 @@ label quests:
     if day >= 25:
         if not deck_unlocked:
             $ letter_deck.mailLetter()
+    
+        if persistent.xmas_2019 == None and not daytime:
+            if 1578528000 > int(time.time()) > 1577145600:
+                jump xmas
+            else:
+                persistent.xmas_2019 = True
 
     # Cardgame
     if day >= twins_cards_delay:
@@ -124,7 +130,6 @@ label quests:
 
     if geniecard_level < 2 and snape_third_win and her_third_win and twins_second_win:
         $ letter_cardgame_t2.mailLetter()
-        
         
     # Cho events not triggered by a date.
     if cc_event_pause == 0:

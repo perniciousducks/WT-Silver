@@ -639,3 +639,8 @@ screen hg_wager_bj_secret():
     add im.MatrixColor("images/rooms/overlays/g_circular.png", im.matrix.saturation(0.0)*im.matrix.brightness(0.7))
 
     text "Replay" pos (50, 50) size 40 color "#FFF" outlines [(5, "#000", 0, 0)] at blink
+
+screen rollback_check():
+    tag rollback_check
+    if not tried_rollback:
+        key "rollback" action [SetVariable("tried_rollback", True), Jump("hg_wager_bj_secret")]

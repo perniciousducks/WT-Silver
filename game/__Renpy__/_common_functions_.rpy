@@ -6,6 +6,7 @@ init -1 python:
     import random
     import pygame
     import colorsys
+    import itertools
     
     def num_to_word(n, readable=True):
         """Transcript numbers (integers) into readable words."""

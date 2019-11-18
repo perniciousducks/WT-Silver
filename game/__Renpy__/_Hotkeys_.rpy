@@ -14,13 +14,6 @@ init python:
     config.keymap['hide_windows'].remove('h')
     # config.keymap['hide_windows'].remove('joy_hide')
 
-    def custom_menu(items, **kwargs):
-        return renpy.display_menu(items, interact=True, screen='custom_menu')
-
-    def debug():
-        config.debug ^= True
-        return "Debug = %s" % config.debug
-
     # Initialize hotkey variables and functions
     # List of available inputs: http://www.pygame.org/docs/ref/key.html
     hkey_map = "m"
@@ -38,9 +31,6 @@ init python:
     #Temp vars
     hkey_input = ""
     hkey_chat_hidden = False
-
-    # Force change all default menus to use custom one w/ hotkeys
-    menu = custom_menu
 
 # Add hotkeys to main_room screen (_main_room_.rpy)
 screen hotkeys_main():
@@ -71,147 +61,3 @@ screen hotkeys_say():
     else:
         key hkey_hide action ToggleVariable("hkey_chat_hidden", False, True)
         key hkey_mhide action ToggleVariable("hkey_chat_hidden", False, True)
-
-screen rollback_check():
-    tag rollback_check
-    if not tried_rollback:
-        key "rollback" action [SetVariable("tried_rollback", True), Jump("hg_wager_bj_secret")]
-
-# Custom menu w/ hotkeys
-screen custom_menu(items):
-    tag menu
-    zorder 15
-
-    # Dont add the fade if character or saybox is present (They have their own triggers for fading)
-    if not renpy.get_screen("say") and not renpy.get_screen("hermione_main") and not renpy.get_screen("cho_chang") and not renpy.get_screen("luna_main") and not renpy.get_screen("snape_main") and not renpy.get_screen("astoria_main") and not renpy.get_screen("tonks_main") and not renpy.get_screen("susan_main") and not renpy.get_screen("letter"):
-        add "interface/bld.png" at fadeOutOnly
-    window at fadeInOut:
-        style "menu_window"
-        xalign menu_x
-        yalign menu_y
-
-        vbox:
-            style "menu"
-            spacing 0
-
-            for i, item in enumerate(items, 1):
-                $ ico = None
-                
-                frame:
-                    style "empty"
-                    ysize 28
-                    xminimum int(config.screen_width * 0.5)
-                    xmaximum int(config.screen_width * 0.5)
-                    
-                    if "{icon=" in item.caption:
-                        $ ico = item.caption.partition("{icon=")[2][:-1]
-
-                    if item.action:
-                        button:
-                            action item.action
-                            style mnu_btn_style
-                            text item.caption.partition("{icon=")[0] style mnu_style yalign 0.5
-                    else:
-                        text item.caption.partition("{icon=")[0] style mnu_style
-                            
-                    hbox:
-                        spacing 3
-                        yalign 0.5
-                        
-                        if i < 10 and item.action:
-                            if daytime:
-                                text "{size=-2}[i].{/size}" style txt_style color "#f9d592" xpos 5 yalign 0.5
-                            else:
-                                text "{size=-2}[i].{/size}" style txt_style color "#9b8d84" xpos 5 yalign 0.5
-                            key str(i) action item.action
-                            key "K_KP"+str(i) action item.action #Numpad
-                        if ico:
-                            add ico
-                        
-                #add "interface/general/"+interface_color+"/spacer.png" xalign 0.5 yalign 1.0
-
-# Styles
-style day_text:
-    color "#f9d592"
-    hover_color "#FFFFFF"
-    insensitive_color "#50443c"
-    selected_color "#eedfd5"
-    selected_hover_color "#FFFFFF"
-    outlines [ (1, "#00000080", 1, 0) ]
-
-style night_text:
-    color "#9b8d84"
-    hover_color "#FFFFFF"
-    insensitive_color "#50443c"
-    selected_color "#eedfd5"
-    selected_hover_color "#FFFFFF"
-    outlines [ (1, "#00000080", 1, 0) ]
-
-style daybtn:
-    background "#ac8d5aE6"
-    hover_background "#97681f"
-    insensitive_background "#d1a02eB3"
-    padding (5, 5, 5, 5)
-
-style nightbtn:
-    background "#5d5151E6"
-    hover_background "#897e75"
-    insensitive_background "#9e8449"
-    padding (5, 5, 5, 5)
-
-style menu_choice_daybutton:
-    yminimum 28
-    background "#ac8d5aE6"
-    hover_background "#97681f"
-    insensitive_background "#d1a02eB3"
-    xminimum int(config.screen_width * 0.5)
-    xmaximum int(config.screen_width * 0.5)
-    activate_sound "sounds/click3.mp3"
-
-style menu_choice_nightbutton:
-    yminimum 28
-    background "#5d5151E6"
-    hover_background "#897e75"
-    insensitive_background "#9e8449"
-    xminimum int(config.screen_width * 0.5)
-    xmaximum int(config.screen_width * 0.5)
-    activate_sound "sounds/click3.mp3"
-
-style menu_choice_day:
-    size 18
-    xalign 0.5
-    text_align 0.5
-    color "#f9d592"
-    hover_color "#ffffff"
-    insensitive_color "#444"
-    outlines [ (1, "#00000080", 1, 0) ]
-
-style menu_choice_night:
-    size 18
-    xalign 0.5
-    text_align 0.5
-    color "#9b8d84"
-    hover_color "#ffffff"
-    insensitive_color "#444"
-    outlines [ (1, "#00000080", 1, 0) ]
-
-style say_who_window_day:
-    xminimum 164
-    ysize 32
-    xpadding 10
-    background Frame("interface/frames/gold/namebox.png", 6, 6)
-    xpos 235
-    ypos 48
-    text_align 0.5
-
-style say_who_window_night:
-    xminimum 164
-    ysize 32
-    xpadding 10
-    background Frame("interface/frames/gray/namebox.png", 6, 6)
-    xpos 235
-    ypos 48
-    text_align 0.5
-
-style say_two_window_vbox:
-    yalign 1.0

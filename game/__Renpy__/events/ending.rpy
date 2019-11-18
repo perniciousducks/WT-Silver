@@ -430,7 +430,7 @@ label ball_ending_E2:
 
     # Scene Setup
     $ daytime = True
-    call update_interface_color("gold")
+    call update_interface_color
 
     hide screen bld1
     hide screen blktone
@@ -2754,7 +2754,7 @@ label ball_ending_E2:
 
     ### Scene Setup ###
     $ daytime = False
-    call update_interface_color("gray")
+    call update_interface_color
 
     hide screen cg # Single layer CG screen.
 

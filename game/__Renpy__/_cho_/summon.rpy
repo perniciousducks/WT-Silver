@@ -136,7 +136,7 @@ label cho_favor_menu:
                         menu_choices.append((i.getMenuText(),i.start_label))
                         
                 menu_choices.append(("-Never mind-", "nvm"))
-                result = custom_menu(menu_choices)
+                result = renpy.display_menu(menu_choices)
             if result == "nvm":
                 jump cho_favor_menu
             elif result == "vague":
@@ -181,7 +181,7 @@ label cho_requests_menu:
             else:
                 menu_choices.append((i.getMenuText(),i.start_label))
         menu_choices.append(("-Never mind-", "nvm"))
-        result = custom_menu(menu_choices)
+        result = renpy.display_menu(menu_choices)
     if result == "nvm":
         jump cho_favor_menu
     elif result == "vague":

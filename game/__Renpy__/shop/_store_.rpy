@@ -581,13 +581,13 @@ label shop_potion_menu:
             else:
                 potion_menu.append(("-"+potion.name+"-",potion))
         potion_menu.append(("-Never mind-", "nvm"))
-        PotionOBJ = custom_menu(potion_menu)
+        PotionOBJ = renpy.display_menu(potion_menu)
     if isinstance(PotionOBJ, silver_potion):
         python:
             potion_menu = []
             potion_menu.append(("-Buy the potion for "+str(PotionOBJ.cost)+" Gold-", PotionOBJ))
             potion_menu.append(("-Never mind-", "nvm"))
-            choice = custom_menu(potion_menu)
+            choice = renpy.display_menu(potion_menu)
         if isinstance(choice, silver_potion):
             if gold >= PotionOBJ.cost:
                 $ gold -= PotionOBJ.cost

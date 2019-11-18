@@ -118,7 +118,7 @@ label luna_favor_menu:
                     else:
                         menu_choices.append((i.getMenuText(),i.start_label))
                 menu_choices.append(("-Never mind-", "nvm"))
-                result = custom_menu(menu_choices)
+                result = renpy.display_menu(menu_choices)
             if result == "nvm":
                 jump luna_favor_menu
             elif result == "vague":

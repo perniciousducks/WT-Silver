@@ -53,7 +53,7 @@ label t_wardrobe(char_label):
     default bg_color_wardrobe_day = "#e8c97e"
     default bg_color_wardrobe_night = "#7d756e"
     
-    if daytime and not persistent.nightmode:
+    if interface_color == "gold":
         $ bg_color_wardrobe = bg_color_wardrobe_day
     else:
         $ bg_color_wardrobe = bg_color_wardrobe_night

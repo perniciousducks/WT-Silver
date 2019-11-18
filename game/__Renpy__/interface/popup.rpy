@@ -12,10 +12,7 @@ screen popup_window(string="", xpos=0, ypos=60):
     
     frame:
         at popup_animation
-        if daytime and not persistent.nightmode:
-            style "say_who_window_day"
-        else:
-            style "say_who_window_night"
+        style "say_who_window"
         pos (xpos, ypos)
         
         text string align (0.5, 0.5) size 12

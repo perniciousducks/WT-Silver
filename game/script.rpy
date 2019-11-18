@@ -33,7 +33,7 @@ label temporary_post_default_init:
 default commentaries = False
 
 default txt_style = "night_text"
-default btn_style = "nightbtn"
+default btn_style = "night_button"
 default btn_hover = "#7d75aa40"
 default mnu_style = "menu_choice_night"
 default mnu_btn_style = "menu_choice_nightbutton"

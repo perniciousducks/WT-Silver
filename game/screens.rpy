@@ -1,6 +1,3 @@
-# This file is in the public domain. Feel free to modify it as a basis
-# for your own screens.
-
 ##############################################################################
 # Say
 #
@@ -29,21 +26,18 @@ screen say(who, what, side_image=None):
             style "empty"
     else:
         if who:
-            frame:
+            window:
+                style_prefix "say_who"
                 ypos 470
-                if daytime and not persistent.nightmode:
-                    style "say_who_window_day"
-                    text who id "who" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
-                else:
-                    style "say_who_window_night"
-                    text who id "who" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ] bold False text_align 0.5 xalign 0.5 yalign 0.5
+                text who id "who":
+                    color (persistent.text_color_day if interface_color == "gold" else persistent.text_color_night)
+                    outlines [(1, persistent.text_outline, 1, 0)]
         window id "window":
             has vbox#:
-                #style "say_vbox"            
-            if daytime and not persistent.nightmode:
-                text what id "what" color persistent.text_color_day outlines [ (1, persistent.text_outline, 1, 0) ]
-            else:
-                text what id "what" color persistent.text_color_night outlines [ (1, persistent.text_outline, 1, 0) ]
+                #style "say_vbox"        
+            text what id "what":
+                color (persistent.text_color_day if interface_color == "gold" else persistent.text_color_night)
+                outlines [(1, persistent.text_outline, 1, 0)]
 
     # Use the quick menu.
     if not hkey_chat_hidden and not who == None:
@@ -61,29 +55,55 @@ screen say(who, what, side_image=None):
 # http://www.renpy.org/doc/html/screen_special.html#choice
 
 screen choice(items):
-    use bld1
-    window:
+    tag menu
+    zorder 15
+
+    # Dont add the fade if character or saybox is present (They have their own triggers for fading)
+    if not any(itertools.imap(renpy.get_screen, ["say", "hermione_main", "cho_chang", "luna_main", "snape_main", "astoria_main", "tonks_main", "susan_main", "letter"])):
+        add "interface/bld.png" at fadeOutOnly
+    window at fadeInOut:
         style "menu_window"
         xalign menu_x
         yalign menu_y
 
         vbox:
             style "menu"
-            spacing 2
+            spacing 0
 
-            for caption, action, chosen in items:
+            for i, item in enumerate(items, 1):
+                $ ico = None
+                
+                frame:
+                    style "empty"
+                    ysize 28
+                    xminimum int(config.screen_width * 0.5)
+                    xmaximum int(config.screen_width * 0.5)
+                    
+                    if "{icon=" in item.caption:
+                        $ ico = item.caption.partition("{icon=")[2][:-1]
 
-                if action:
+                    if item.action:
+                        button:
+                            action item.action
+                            style mnu_btn_style
+                            text item.caption.partition("{icon=")[0] style mnu_style yalign 0.5
+                    else:
+                        text item.caption.partition("{icon=")[0] style mnu_style
+                            
+                    hbox:
+                        spacing 3
+                        yalign 0.5
+                        
+                        if i < 10 and item.action:
+                            text "{size=-2}[i].{/size}" style txt_style xpos 5 yalign 0.5
+                            # Numeric hotkey support
+                            key str(i) action item.action
+                            key "K_KP"+str(i) action item.action #Numpad
+                        if ico:
+                            add ico
+                        
+                #add "interface/general/"+interface_color+"/spacer.png" xalign 0.5 yalign 1.0
 
-                    button:
-                        action action
-                        style "menu_choice_button"
-
-                        text caption style "menu_choice"
-
-                else:
-                    text caption style "menu_caption"
-    zorder 7
 
 style menu_window is default
 
@@ -129,57 +149,14 @@ screen input(prompt):
 # http://www.renpy.org/doc/html/screen_special.html#nvl
 
 screen nvl(dialogue, items=None):
-    zorder 7
-    window:
-        style "nvl_window"
+    null
 
-        has vbox:
-            style "nvl_vbox"
-
-        # Display dialogue.
-        for who, what, who_id, what_id, window_id in dialogue:
-            window:
-                id window_id
-
-                has hbox:
-                    spacing 10
-
-                if who is not None:
-                    text who id who_id
-
-                text what id what_id
-
-        # Display a menu, if given.
-        if items:
-
-            vbox:
-                id "menu"
-
-                for caption, action, chosen in items:
-
-                    if action:
-
-                        button:
-                            style "nvl_menu_choice_button"
-                            action action
-
-                            text caption style "nvl_menu_choice"
-
-                    else:
-
-                        text caption style "nvl_dialogue"
-
-    add SideImage() xalign 0.0 yalign 1.0
-
-    use quick_menu
-
-
-
+##############################################################################
+# Main Menu
+#
 # Screen that's used to display the main menu, when Ren'Py first starts
 # http://www.renpy.org/doc/html/screen_special.html#main-menu
 
-
-# Main Menu
 screen main_menu():
     tag menu
     zorder 5
@@ -295,6 +272,7 @@ screen extras():
 # Screen that's included in other screens to display the game menu
 # navigation and background.
 # http://www.renpy.org/doc/html/screen_special.html#navigation
+
 screen navigation():
 
     # The background of the game menu.
@@ -508,15 +486,15 @@ screen preferences():
                 if not renpy.variant('android'):
                     textbutton "Tooltips" action ToggleVariable("persistent.tooltip", True, False)
                     textbutton _("Custom Cursor") action [ToggleVariable("persistent.customcursor", True, False), ToggleVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] }, None) ]
-                textbutton _("Nightmode") action ToggleVariable("persistent.nightmode", True, False)
+                textbutton _("Nightmode") action [ToggleVariable("persistent.nightmode", True, False), Function(renpy.call_in_new_context, "update_interface_color")]
             frame:
                 style_group "pref"
                 has vbox
 
                 label _("Text colour")
                 if not persistent.nightmode:
-                    textbutton _("Day {color=[persistent.text_color_day]}text{/color}") action Function(set_text_color)
-                textbutton _("Night {color=[persistent.text_color_night]}text{/color}") action Function(set_text_color, False)
+                    textbutton _("Day {color=[persistent.text_color_day]}text{/color}") action Function(renpy.invoke_in_new_context, set_text_color)
+                textbutton _("Night {color=[persistent.text_color_night]}text{/color}") action Function(renpy.invoke_in_new_context, set_text_color, False)
                 textbutton _("Shadow") action ToggleVariable("persistent.text_outline", "#00000080", "#00000000")
                 textbutton _("Default") action [SetVariable("persistent.text_color_day", "#402313"), SetVariable("persistent.text_color_night", "#341c0f"), SetVariable("persistent.text_outline", "#00000000")]
                 
@@ -715,6 +693,7 @@ style yesno_label_text:
 #
 # A screen that's included by the default say screen, and adds quick access to
 # several useful functions.
+
 screen quick_menu():
 
     # Add an in-game quick menu.
@@ -726,13 +705,13 @@ screen quick_menu():
             ypos 489
             xanchor 1.0
 
-            textbutton _("Save") action ShowMenu('save') activate_sound "sounds/click3.mp3"
-            textbutton _("Auto") action Preference("auto-forward", "toggle") activate_sound "sounds/click3.mp3"
+            textbutton _("Save") action ShowMenu('save')
+            textbutton _("Auto") action Preference("auto-forward", "toggle")
         hbox:
             ypos 600
             if renpy.can_rollback():
-                imagebutton idle "interface/frames/"+interface_color+"/arrow.png" action Rollback() activate_sound "sounds/click3.mp3" yanchor 1.0 xanchor 0.5 xpos 180
-            imagebutton idle im.Flip("interface/frames/"+interface_color+"/arrow.png", horizontal=True) action Skip(fast=True, confirm=True) activate_sound "sounds/click3.mp3" yanchor 1.0 xanchor 0.5 xpos 800
+                imagebutton idle "interface/frames/"+interface_color+"/arrow.png" action Rollback() yanchor 1.0 xanchor 0.5 xpos 180
+            imagebutton idle im.Flip("interface/frames/"+interface_color+"/arrow.png", horizontal=True) action Skip(fast=True, confirm=True) yanchor 1.0 xanchor 0.5 xpos 800
     else:
         hbox:
             style_group "quick"
@@ -743,15 +722,16 @@ screen quick_menu():
 
             #textbutton _("Back") action Rollback()
             #textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave() activate_sound "sounds/click3.mp3"
-            textbutton _("Q.Load") action QuickLoad() activate_sound "sounds/click3.mp3"
-            textbutton _("Skip") action Skip() activate_sound "sounds/click3.mp3"
+            textbutton _("Q.Save") action QuickSave()
+            textbutton _("Q.Load") action QuickLoad()
+            textbutton _("Skip") action Skip()
             #textbutton _("F.Skip") action Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle") activate_sound "sounds/click3.mp3"
-            textbutton _("Prefs") action ShowMenu('preferences') activate_sound "sounds/click3.mp3"
+            textbutton _("Auto") action Preference("auto-forward", "toggle")
+            textbutton _("Prefs") action ShowMenu('preferences')
 
 style quick_button:
     is default
+    activate_sound "sounds/click3.mp3"
     background None
     xpadding 8
     ypadding 8

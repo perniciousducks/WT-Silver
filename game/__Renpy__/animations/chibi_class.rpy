@@ -131,10 +131,6 @@ init -1 python:
             pos = self.resolve_position(x,y)
             dist = math.sqrt((self.pos[0] - pos[0])**2 + (self.pos[1] - pos[1])**2)
             time = dist / (float(self.speed) * speed)
-
-            # Temporary aid for time to speed conversion
-            if time_speed and config.developer:
-                print "calc-time: {}, req-time: {}, conv-speed: {}".format(time, time_speed, time/time_speed)
             
             self.flip = self.pos[0] <= pos[0]
 

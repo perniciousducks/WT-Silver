@@ -92,7 +92,7 @@ label astoria_spells:
 
         spell_menu.append( ("-Never mind-", "nvm") )
 
-        result = custom_menu(spell_menu)
+        result = renpy.display_menu(spell_menu)
 
     if result == "nvm":
         jump astoria_requests

@@ -21,7 +21,7 @@ label house_points:
 
     # Outline settings
     $ points_outline = [ (1, "#000", 0, 0) ]
-    if interface_color == "gold" and not persistent.nightmode:
+    if interface_color == "gold":
         $ daygold_colour = "{color=#000}"
         $ daygold_outline = [ (1, "#e4ba7080", 0, 0) ]
     else:
@@ -87,7 +87,6 @@ screen ui_top_bar():
                     tooltip "Close menu"
                 else:
                     tooltip "Open menu"
-                activate_sound "sounds/click3.mp3"
                 action ToggleVariable("toggle_menu", True, False)
 
         # Sleep button
@@ -103,7 +102,6 @@ screen ui_top_bar():
                 else:
                     action Jump("day_start")
                     tooltip "Sleep (s)"
-                activate_sound "sounds/click3.mp3"
 
         hbox:
             if renpy.variant('android'):
@@ -119,7 +117,6 @@ screen ui_top_bar():
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.png")
                     tooltip "Achievements"
                     action Jump("achievement_menu")
-                    activate_sound "sounds/click3.mp3"
 
             # Stats button
             imagebutton:
@@ -128,7 +125,6 @@ screen ui_top_bar():
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
                     tooltip "Characters (c)"
                     action Jump("open_stat_menu")
-                    activate_sound "sounds/click3.mp3"
 
             # Inventory button
             imagebutton:
@@ -137,7 +133,6 @@ screen ui_top_bar():
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png")
                     tooltip "Inventory (i)"
                     action Jump("inventory_menu")
-                    activate_sound "sounds/click3.mp3"
 
             # Work button
             if letter_min_work.read:
@@ -147,7 +142,6 @@ screen ui_top_bar():
                         hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_work.png")
                         tooltip "Work (w)"
                         action Jump("paperwork")
-                        activate_sound "sounds/click3.mp3"
 
         ## Toggle UI lock button
         #imagebutton:
@@ -155,7 +149,6 @@ screen ui_top_bar():
         #    idle "interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock
         #    hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_%s.png" % toggle_ui_lock)
         #    action ToggleVariable("toggle_ui_lock", False, True)
-        #    activate_sound "sounds/click3.mp3"
 
         #Debug
         if config.debug:
@@ -210,7 +203,6 @@ screen ui_points():
                     hovered SetVariable("toggle_points", True)
                     unhovered SetVariable("toggle_points", False)
                     action ToggleVariable("persistent.toggle_points", True, False)
-                    activate_sound "sounds/click3.mp3"
 
 screen ui_stats():
     tag ui
@@ -290,23 +282,18 @@ screen ui_menu():
                 hover "interface/topbar/icon_discord.png"
                 tooltip "Visit {size=-6}SilverStudioGames{/size} discord"
                 action OpenURL("https://discord.gg/7PD57yt")
-                activate_sound "sounds/click3.mp3"
             #Patreon
             imagebutton:
                 idle image_alpha("interface/topbar/icon_patreon.png")
                 hover "interface/topbar/icon_patreon.png"
                 tooltip "Visit {size=-6}SilverStudioGames{/size} patreon"
                 action OpenURL("https://www.patreon.com/SilverStudioGames")
-                activate_sound "sounds/click3.mp3"
             #Bugfixes
             imagebutton:
                 idle image_alpha("interface/topbar/icon_bug.png")
                 hover "interface/topbar/icon_bug.png"
                 tooltip "Open bugfix menu"
                 action [SetVariable("toggle_menu", False), Jump("bugfix_menu")]
-                activate_sound "sounds/click3.mp3"
-
-
 
 ### Ingame Options Menu ###
 

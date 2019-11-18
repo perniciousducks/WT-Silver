@@ -26,7 +26,7 @@ init python hide:
         label = "#9b8d84",
 
         ## The color of a frame containing widgets.
-        frame = "#5d5151", #ConditionSwitch("interface_color == \"gold\"", "#ac8d5a", "True", "#5d5151"),
+        frame = "#5d5151",
 
         ## The background of the main menu. This can be a color
         ## beginning with '#', or an image filename. The latter
@@ -48,142 +48,127 @@ init python hide:
         ## do so below.
     )
 
-    #########################################
-    ## These settings let you customize the window containing the
-    ## dialogue and narration, by replacing it with an image.
+# Common control styles
+style default:
+    font "fonts/CREABBB.TTF"
+    size 16
+    color "#402313"
 
-    ## The background of the window. In a Frame, the two numbers
-    ## are the size of the left/right and top/bottom borders,
-    ## respectively.
-    
-    
-    #renpy.register_style_preference("text2", "day", style.button_text, "color", "#f9d592")
-    #renpy.register_style_preference("text2", "night", style.button_text, "color", "#9b8d84")
+style button:
+    activate_sound "sounds/click3.mp3"
+    background "#5d5151E6" # ConditionSwitch("interface_color == \"gold\"", "#ac8d5aE6", "True", "#5d5151E6")
+    hover_background "#897e75" # ConditionSwitch("interface_color == \"gold\"", "#97681f", "True", "#897e75")
+    insensitive_background "#463b3bE6" # ConditionSwitch("interface_color == \"gold\"", "#917442E6", "True", "#463b3bE6")
+    selected_background "#766a6aE6" # ConditionSwitch("interface_color == \"gold\"", "#e5c48dE6", "True", "#766a6aE6")
+    selected_hover_background "#897e75" # onditionSwitch("interface_color == \"gold\"", "#97681f", "True", "#897e75")
+    # padding (5, 5, 5, 5)
 
-    style.window.background = Frame(ConditionSwitch("interface_color == \"gold\"", "interface/frames/gold/frame.png","True","interface/frames/gray/frame.png"))
-    
-    #style.pref_button.background = Frame(ConditionSwitch("interface_color == \"gold\"", "#FFF", "True", "#000"),15,15)
-    
-    style.button.background = "#5d5151E6"#ConditionSwitch("interface_color == \"gold\"", "#ac8d5aE6", "True", "#5d5151E6")
-    style.button.hover_background = "#897e75"#ConditionSwitch("interface_color == \"gold\"", "#97681f", "True", "#897e75")
-    style.button.insensitive_background = "#463b3bE6"#ConditionSwitch("interface_color == \"gold\"", "#917442E6", "True", "#463b3bE6")
-    style.button.selected_background = "#766a6aE6"#ConditionSwitch("interface_color == \"gold\"", "#e5c48dE6", "True", "#766a6aE6")
-    style.button.selected_hover_background = "#897e75"#ConditionSwitch("interface_color == \"gold\"", "#97681f", "True", "#897e75")
-    
-    style.button_text.color = "#9b8d84" #If(interface_color == "gold", "#f9d592", "#9b8d84")
-    style.button_text.hover_color = "#ffffff"
-    style.button_text.insensitive_color = "#50443c"
-    style.button_text.selected_color = "#eedfd5"
-    style.button_text.selected_hover_color = "#FFFFFF"
-    style.button_text.outlines = [(1, "#00000080", 1, 0)]
+style button_text:
+    color "#9b8d84" #If(interface_color == "gold", "#f9d592", "#9b8d84")
+    hover_color "#ffffff"
+    insensitive_color "#50443c"
+    selected_color "#eedfd5"
+    selected_hover_color "#FFFFFF"
+    outlines [(1, "#00000080", 1, 0)]
 
-    ## Margin is space surrounding the window, where the background
-    ## is not drawn.
+style imagemap:
+    activate_sound "sounds/click3.mp3"
 
-    # style.window.left_margin = 6
-    ##style.window.right_margin = 280
-    style.window.top_margin = 22
-    # style.window.bottom_margin = 6
+style input:
+    color "#5c321b"
 
-    ## Padding is space inside the window, where the background is
-    ## drawn.
+# Dialogue styles
+style say_window:
+    background Frame(DynamicDisplayable("'interface/frames/[interface_color]/frame.png'"))
+    top_margin 22
+    left_padding 250
+    right_padding 250
+    top_padding 40
+    yminimum 143
 
-    style.window.left_padding = 250 #200
-    style.window.right_padding = 250
-    style.window.top_padding = 40
+style say_who_window:
+    is default
+    xminimum 164
+    ysize 32
+    background Frame(DynamicDisplayable("'interface/frames/[interface_color]/namebox.png'"), 6, 6)
+    xpos 235
+    ypos 48
+    text_align 0.5
 
-    #Backup/Original
-    #style.window.left_padding = 65
-    #style.window.right_padding = 70
-    #style.window.top_padding = 40
-    # style.window.bottom_padding = 6
+style say_label:
+    bold False
+    text_align 0.5
+    xalign 0.5
+    yalign 0.5
 
-    ## This is the minimum height of the window, including the margins
-    ## and padding.
+# Day/night text styles
+style day_text:
+    color "#f9d592"
+    hover_color "#FFFFFF"
+    insensitive_color "#50443c"
+    selected_color "#eedfd5"
+    selected_hover_color "#FFFFFF"
+    outlines [ (1, "#00000080", 1, 0) ]
 
-    style.window.yminimum = 143
+style night_text:
+    color "#9b8d84"
+    hover_color "#FFFFFF"
+    insensitive_color "#50443c"
+    selected_color "#eedfd5"
+    selected_hover_color "#FFFFFF"
+    outlines [ (1, "#00000080", 1, 0) ]
 
+# Day/night button styles
+style day_button:
+    background "#ac8d5aE6"
+    hover_background "#97681f"
+    insensitive_background "#d1a02eB3"
+    padding (5, 5, 5, 5)
 
-    #########################################
-    ## This lets you change the placement of the main menu.
+style night_button:
+    background "#5d5151E6"
+    hover_background "#897e75"
+    insensitive_background "#9e8449"
+    padding (5, 5, 5, 5)
 
-    ## The way placement works is that we find an anchor point
-    ## inside a displayable, and a position (pos) point on the
-    ## screen. We then place the displayable so the two points are
-    ## at the same place.
+# Choice menu styles
+style menu_choice:
+    hover_color "#e9d570"
+    hover_outlines [(2, "#402313", 0, 0)]
 
-    ## An anchor/pos can be given as an integer or a floating point
-    ## number. If an integer, the number is interpreted as a number
-    ## of pixels from the upper-left corner. If a floating point,
-    ## the number is interpreted as a fraction of the size of the
-    ## displayable or screen.
+style menu_choice_day:
+    size 18
+    xalign 0.5
+    text_align 0.5
+    color "#f9d592"
+    hover_color "#ffffff"
+    insensitive_color "#444"
+    outlines [ (1, "#00000080", 1, 0) ]
 
-    # style.mm_menu_frame.xpos = 0.5
-    # style.mm_menu_frame.xanchor = 0.5
-    # style.mm_menu_frame.ypos = 0.75
-    # style.mm_menu_frame.yanchor = 0.5
+style menu_choice_night:
+    size 18
+    xalign 0.5
+    text_align 0.5
+    color "#9b8d84"
+    hover_color "#ffffff"
+    insensitive_color "#444"
+    outlines [ (1, "#00000080", 1, 0) ]
 
+style menu_choice_daybutton:
+    yminimum 28
+    xsize int(config.screen_width * 0.5)
+    background "#ac8d5aE6"
+    hover_background "#97681f"
+    insensitive_background "#d1a02eB3"
+    activate_sound "sounds/click3.mp3"
 
-    #########################################
-    ## These let you customize the default font used for text in Ren'Py.
+style menu_choice_nightbutton:
+    yminimum 28
+    xsize int(config.screen_width * 0.5)
+    background "#5d5151E6"
+    hover_background "#897e75"
+    insensitive_background "#9e8449"
+    activate_sound "sounds/click3.mp3"
 
-    ## The file containing the default font.
-
-    style.default.font = "interface/CREABBB.TTF"
-
-    ## The default size of text.
-    style.default.size = 16
-    style.default.color = "#402313"
-
-    #renpy.register_style_preference("dialog", "Day", style.say_dialogue, "font", "interface/CREABBB.TTF")
-    #renpy.register_style_preference("dialog", "Day", style.say_dialogue, "size", 18)
-    #renpy.register_style_preference("dialog", "Day", style.say_dialogue, "color", "#402313")
-
-    #renpy.register_style_preference("dialog", "Night", style.say_dialogue, "font", "interface/CREABBB.TTF")
-    #renpy.register_style_preference("dialog", "Night", style.say_dialogue, "size", 18)
-    #renpy.register_style_preference("dialog", "Night", style.say_dialogue, "color", "#211109")
-
-    ## Note that these only change the size of some of the text. Other
-    ## buttons have their own styles.
-
-
-    ## Sounds that are used when button and imagemaps are clicked.
-
-    style.button.activate_sound = "interface/click3.mp3"
-    style.imagemap.activate_sound = "interface/click3.mp3"
-
-    ##Modifies the Menu Choice's BG
-    #style.menu_choice_button.background = Frame("choice_bg_idle.jpg",28,9)
-    #style.menu_choice_button.hover_background = Frame("choice_bg_hover.jpg",28,9)
-    # style.name_button.selected_background = Frame("choice_bg_idle.jpg",28,9)
-    # style.name_button.selected_hover_background = Frame("choice_bg_idle.jpg",28,9)
-    # style.name_button.insensitive_background = Frame("choice_bg_idle.jpg",28,9)
-    # style.menu_choice_button.yminimum = 39 #Sets height, recommended to be the exact height of your image
-
-    ##Modifies the Menu Choice's Text
-    #style.menu_choice.color = "#000"
-    #style.menu_choice.size = 18
-    #style.menu_choice.outlines = [(2, "#000", 0, 0)]
-    style.menu_choice.hover_color = "#e9d570"
-    style.menu_choice.hover_outlines = [(2, "#402313", 0, 0)]
-
-    #style.file_picker_button.color = "#c25fb9"
- ########################################################################################
-
-    style.say_who_window.background = Frame(ConditionSwitch("interface_color == \"gold\"", "interface/frames/gold/PinkBox.png","True","interface/frames/gray/PinkBox.png"), 15, 15)
-
-    #style.say_who_window.background = Frame("interface/PinkBox.png", 15, 15) #Background skin
-    style.say_who_window.xalign = 0.0
-    style.say_who_window.yalign = 1.0
-    style.say_who_window.xpos = 227 #For precise placement
-    style.say_who_window.ypos = 125 #For precise placement
-    style.say_who_window.left_padding = 20
-    style.say_who_window.top_padding = 15
-    style.say_who_window.right_padding = 20
-    style.say_who_window.bottom_padding = 15
-    style.say_who_window.xminimum = 150
-    style.say_who_window.yminimum = 10
-    style.say_who_window.xfill = False
-
-    # Override Styles
-    style.input.color = "#5c321b"
+style say_two_window_vbox:
+    yalign 1.0

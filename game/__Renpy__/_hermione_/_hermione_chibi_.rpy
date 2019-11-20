@@ -181,7 +181,7 @@ init python:
                 else:
                     chibi["base"] = "ch_hem walk_robe_n"
             else:
-                 chibi["base"] = "ch_hem walk_n"
+                 chibi["base"] = "ch_hem walk"
 
         elif chibi.action == "run":
             chibi["base"] = "ch_hem run"
@@ -196,4 +196,4 @@ init python:
                 else:
                     chibi["base"] = "ch_hem blink_robe_n"
             else:
-                 chibi["base"] = "ch_hem blink_n"
+                 chibi["base"] = "ch_hem blink"

@@ -41,7 +41,7 @@ image ch_hem hotdog:
     pause.3
     repeat
 
-image ch_hem walk_a:    #shirt 00
+image ch_hem walk:    #shirt 00
     "characters/hermione/chibis/walk/h_walk_a_01.png"
     pause.08
     "characters/hermione/chibis/walk/h_walk_a_02.png"

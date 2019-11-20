@@ -261,7 +261,7 @@ label cho_intro_E1:
 
         m "(Shit...)"
 
-        call gen_chibi("cum_on_desk")
+        call gen_chibi("cum_behind_desk_done")
         with d3
         pause.8
 

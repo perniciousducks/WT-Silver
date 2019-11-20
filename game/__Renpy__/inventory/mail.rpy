@@ -112,7 +112,7 @@ screen letter():
 label shoo_owl_away:
     show screen chair_left
     show screen desk
-    call gen_chibi("standing_alt", 420, 160, flip=True)
+    call gen_chibi("stand_alt", 420, 160, flip=True)
     with d5
     pause.2
 
@@ -230,11 +230,11 @@ label deck_mail_send:
 
     show screen blktone
     show screen start_deck
-    with Dissolve(.3)
+    with d3
     pause
     hide screen start_deck
     hide screen blktone
-    with Dissolve(.3)
+    with d3
 
     g9 "Hell yes I'm playing this..."
     call give_reward(">You've unlocked Wizard cards.\nUse the deck builder available on your desk to learn the rules and edit your deck.","interface/icons/cards.png")

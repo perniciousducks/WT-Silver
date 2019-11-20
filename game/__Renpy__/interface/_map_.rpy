@@ -55,11 +55,11 @@ screen mouse_positions():
 image map_unfold:
     "interface/map/anim/map_03.png"
     pause.5
-    "interface/map/anim/map_02.png" with Dissolve(0.5)
+    "interface/map/anim/map_02.png" with d5
     pause.5
-    "interface/map/anim/map_01.png" with Dissolve(0.5)
+    "interface/map/anim/map_01.png" with d5
     pause.5
-    "interface/map/map.png" with Dissolve(0.5)
+    "interface/map/map.png" with d5
 
 screen map_buttons():
     tag map
@@ -768,7 +768,6 @@ label map_pitch: #Label controlling what happens when you go to the quidditch pi
 
 label outskirts_of_hogwarts:
     call blkfade
-    hide screen genie
     show screen chair_left
     show screen desk
     call gen_chibi("stand","desk","base")

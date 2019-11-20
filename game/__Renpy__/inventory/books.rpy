@@ -307,13 +307,11 @@ label reading_book:
 
     if fire_in_fireplace:   #Shows Genie reading a book near the fireplace.
         hide screen chair_right
-        hide screen genie
-        show screen reading_near_fire
+        call gen_chibi("read_near_fire")
         with d3
     else:                   #Shows Genie reading a book near the window.
         hide screen chair_right
-        hide screen genie
-        show screen reading
+        call gen_chibi("read")
         with d3
 
     if raining:
@@ -372,11 +370,9 @@ label reading_book:
         ">There are still some chapters left."
 
     if fire_in_fireplace:
-        show screen done_reading_near_fire
-        hide screen reading_near_fire
+        call gen_chibi("read_near_fire_done")
     else:
-        show screen done_reading
-        hide screen reading
+        call gen_chibi("read_done")
 
     if daytime:
         jump night_start
@@ -432,9 +428,9 @@ label read_chapter:
 
 label book_complete:
     if fire_in_fireplace:
-        show screen done_reading_near_fire
+        call gen_chibi("read_near_fire_done")
     else:
-        show screen done_reading
+        call gen_chibi("read_done")
 
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     show screen notes
@@ -468,11 +464,6 @@ label book_complete:
     "[book_choice.effect]" # ex. ">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.."
     hide screen notes
 
-
-    if fire_in_fireplace:
-        hide screen reading_near_fire
-    else:
-        hide screen reading
 
     if daytime:
         jump night_start

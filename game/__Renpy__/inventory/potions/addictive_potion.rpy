@@ -144,11 +144,7 @@ label hg_pp_cumaddict_intro:
     call blkfade
     pause 1
     hide screen hermione_main
-    hide screen genie
     show screen chair_left
-    hide screen hermione_main
-    hide screen genie
-    call her_chibi("hide")
     call hg_chibi_transition("bj_pause")
     hide screen blkfade
     with d5
@@ -412,9 +408,7 @@ label hg_pp_cumaddict_intro:
 
     hide screen hermione_main
     hide screen ctc
-    hide screen chair_left
-    hide screen desk
-    show screen genie
+    call gen_chibi("sit_behind_desk")
     hide screen blktone
 
     $ uni_sperm = False
@@ -756,8 +750,7 @@ label potion_scene_3_3_1:
     hide screen hermione_main
     call blkfade
 
-    hide screen genie
-    call gen_chibi("jerking_off","desk","base")
+    call gen_chibi("jerk_off","desk","base")
     show screen chair_left
     show screen desk
 
@@ -799,7 +792,7 @@ label potion_scene_3_3_1:
         "-Cum on her face-":
             g4 "Here it comes slut!"
             call her_main("{image=textheart}!!!{image=textheart}", "shock", "wide", "base", "stare",cheeks="blush")
-            call gen_chibi("cumming","desk","base")
+            call gen_chibi("cum","desk","base")
             $ u_sperm = "characters/hermione/face/auto_07.png"
             $ uni_sperm = True
             g4 "that's it, all over your face."
@@ -808,7 +801,7 @@ label potion_scene_3_3_1:
         "-Cum on her tits-":
             g4 "Here it comes fuckbunny!"
             call her_main("{image=textheart}{image=textheart}{image=textheart}", "shock", "wide", "base", "stare",cheeks="blush")
-            call gen_chibi("cumming","desk","base")
+            call gen_chibi("cum","desk","base")
             $ u_sperm = "characters/hermione/face/auto_02.png"
             $ uni_sperm = True
             g4 "All over your tits."
@@ -817,7 +810,7 @@ label potion_scene_3_3_1:
         "-cover her in cum-":
             g4 "Here it comes whore!"
             call her_main("{image=textheart}{image=textheart}{image=textheart}", "shock", "wide", "base", "stare",cheeks="blush")
-            call gen_chibi("cumming","desk","base")
+            call gen_chibi("cum","desk","base")
             $ u_sperm = "characters/hermione/face/auto_05.png"
             $ uni_sperm = True
             g4 "that's right slut, All over you."
@@ -837,10 +830,7 @@ label potion_scene_3_3_1:
     hide screen hermione_main
     call blkfade
 
-    call gen_chibi("hide")
-    hide screen chair_left
-    hide screen desk
-    show screen genie
+    call gen_chibi("sit_behind_desk")
     call her_chibi("stand","desk","base")
     call hide_blkfade
 
@@ -892,7 +882,7 @@ label potion_scene_3_4_1:
     with kissiris
     call her_main("ahhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare")
     hide screen hermione_main
-    hide screen genie
+    call gen_chibi("hide")
     $ ccg_folder = "herm_sex"
     $ ccg1 = "blank"
     $ ccg3 = "blank"
@@ -1074,7 +1064,7 @@ label potion_scene_3_4_1:
     hide screen ccg
     hide screen hermione_main
     call her_chibi("hide")
-    show screen genie
+    call gen_chibi("sit_behind_desk")
     hide screen blkfade
     with d3
 

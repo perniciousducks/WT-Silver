@@ -99,7 +99,7 @@ label room(room=None, hide_screens=True, stop_sound=True):
         else:
             hide screen package
 
-        show screen genie
+        call gen_chibi("sit_behind_desk")
 
         # User interface
         call house_points

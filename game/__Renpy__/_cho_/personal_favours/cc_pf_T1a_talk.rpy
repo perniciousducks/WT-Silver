@@ -369,7 +369,7 @@ label cc_pf_talk_T1_intro_E2:
         call cho_main("[cho_genie_name], are you alright?","quiver","wide","base","mid")
         call cho_main("You're sweating and breathing quite heavily...","quiver","base","base","mid")
 
-        call gen_chibi("cum_on_desk")
+        call gen_chibi("cum_behind_desk_done")
         with d3
         pause.8
 
@@ -516,7 +516,7 @@ label cc_pf_talk_T1_E3:
 
         # Genie finished.
         call hide_characters
-        call gen_chibi("cum_on_desk")
+        call gen_chibi("cum_behind_desk_done")
         with d3
         pause.8
 
@@ -726,7 +726,7 @@ label cc_pf_talk_T2_intro_E1:
         call cum_block
         g4 "*Panting* {size=-4}You fucking slut!{/size}"
 
-        call gen_chibi("cum_on_desk")
+        call gen_chibi("cum_behind_desk_done")
         with d3
         pause.8
 
@@ -938,7 +938,7 @@ label cc_pf_talk_T2_intro_E2:
     with d3
     pause.2
 
-    call gen_chibi("cum_on_desk")
+    call gen_chibi("cum_behind_desk_done")
     pause.8
 
     call bld
@@ -1097,7 +1097,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 with d3
                 pause.2
 
-                call gen_chibi("cum_on_desk")
+                call gen_chibi("cum_behind_desk_done")
                 pause.8
 
                 call cho_main("And why don't we put a large bucket under her so when they-","soft","closed","base","mid")
@@ -1238,7 +1238,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 with d3
                 pause.2
 
-                call gen_chibi("cum_on_desk")
+                call gen_chibi("cum_behind_desk_done")
                 pause.8
 
                 call bld

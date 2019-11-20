@@ -15,7 +15,7 @@ label a_christmas_tale:
     $ room_deco = "_deco_1" #Xmas deco
 
     call room("main_room")
-    hide screen genie
+    call gen_chibi("hide")
     show screen chair_left
     show screen desk
     show screen fireplace_fire
@@ -106,7 +106,7 @@ label a_christmas_tale:
 
     hide screen bld1
     # Teleport away
-    hide screen genie_chibi
+    call gen_chibi("hide")
     call teleport((620+75, 150-15))
     with d3
     pause.5

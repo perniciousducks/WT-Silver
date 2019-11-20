@@ -241,8 +241,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     ">You reach under the desk and grab your cock..."
                     hide screen blktone8
                     with d3
-                    hide screen genie
-                    show screen genie_jerking_off
+                    call gen_chibi("jerk_off_behind_desk")
                     with d3
                     call ctc
 
@@ -282,19 +281,17 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     g4 "Argh! YES!"
                     hide screen luna_main
                     hide screen bld1
-                    show screen genie_jerking_sperm
+                    call gen_chibi("cum_behind_desk")
                     show screen bld1
                     with d3
 
                     call lun_main("ugh... there's so much...","normal","mad","sad","down",tears="mascara")
                     call lun_main("{size=-5}(As usual...){/size}","base","mad","sad","R",tears="mascara")
-                    show screen genie_jerking_sperm_02
+                    call gen_chibi("cum_behind_desk_done")
                     with d3
 
                     g4 "good work, slut... ah, shit, this feels so good..."
-                    show screen genie
                     hide screen bld1
-                    #show screen genie_jerking_off
                     with d3
 
                     call lun_main("......","normal","angry","sad","mid",tears="mascara")
@@ -424,12 +421,12 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             g4 "Argh! YES!"
             hide screen luna_main
             hide screen bld1
-            show screen genie_jerking_sperm
+            call gen_chibi("cum_behind_desk")
             show screen bld1
             with d3
 
             call lun_main("That's it, [lun_genie_name], make sure you cover them...","base","suspicious","mad","mid")
-            show screen genie_jerking_sperm_02
+            call gen_chibi("cum_behind_desk_done")
             with d3
             g4 "ah, shit they're so soft, why does this feels so good..."
 
@@ -718,7 +715,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
             #TODO Fix chibi positions
             $ luna_chibi.zorder = 2
-            call gen_chibi("standing_alt","desk","base")
+            call gen_chibi("stand_alt","desk","base")
             call lun_chibi("stand",510,"base")
             show screen chair_left
             show screen desk
@@ -737,8 +734,6 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     show screen blkfade
                     with d3
 
-                    #hide screen genie
-                    #with fade
                     #TODO Add chibi of Genie groping Luna's tits
 
                     ">You reach out swiftly and grab both of her creamy tits..."
@@ -779,9 +774,8 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
                     ">You reach into your robe and pull out your cock..."
                     ">You spit on your hand to lube it before you start stroking..."
-                    hide screen genie
                     #TODO Fix chibi position (jerking_off seems to be anchored differently, must remain consistent across events though)
-                    call gen_chibi("jerking_off")
+                    call gen_chibi("jerk_off")
                     hide screen blkfade
                     with fade
 
@@ -822,7 +816,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     call lun_main("doing thi-","base","suspicious","sad","down",tears="mascara")
                     g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
 
-                    call gen_chibi("cumming")
+                    call gen_chibi("cum")
                     $ luna_wear_cum = True
                     $ luna_cum = 5
                     hide screen luna_main
@@ -839,7 +833,6 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     call lun_main("{size=-5}(I can't believe this...){/size}","normal","mad","sad","R",tears="mascara")
                     call lun_main("ugh... {size=-5}(it stinks as well...){/size}","normal","mad","angry","down",tears="mascara")
                     g4 "argh... good work, slut... ah, shit, this feels so good..."
-                    show screen genie
                     hide screen bld1
                     with d3
 
@@ -887,7 +880,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             ">You stand up and walk in front of luna, feeling the pressure of her gaze."
 
             hide screen bld1
-            hide screen genie
+            #TODO Add Genie chibi?
             show screen chair_left
             show screen desk
             call lun_chibi("stand","desk","base") #TODO replace "desk" with correct xpos number.
@@ -911,8 +904,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call lun_main("be a good boy....","base","seductive","sad","mid")
             show screen blkfade
             ">You take your cock out and start stroking it..."
-            hide screen genie
-            call gen_chibi("jerking_off")
+            call gen_chibi("jerk_off")
             hide screen blkfade
             with fade
 
@@ -951,7 +943,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call lun_main("{size=+4}cum all over me!{/size}","smile","suspicious","angry","mid")
             g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
 
-            call gen_chibi("cumming")
+            call gen_chibi("cum")
             $ luna_wear_cum = True
             if luna_addicted:
                 $ luna_cum = 11
@@ -966,14 +958,14 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             hide screen luna_main
             with d3
 
-            call gen_chibi("jerking_off")
+            call gen_chibi("jerk_off")
             hide screen bld1
             with d3
 
             if luna_addicted:
                 call lun_main("That's it, [lun_genie_name], make sure you cover me...","base","suspicious","mad","mid")
 
-                call gen_chibi("cumming")
+                call gen_chibi("cum")
                 with d3
                 g4 "ah, shit... ah... this is too good..."
                 call lun_main("mmm...","base","mad","mad","mid")
@@ -1011,9 +1003,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call load_luna_clothing_saves
 
                 $ luna_wear_cum = False
-                show screen genie
-                hide screen chair_left
-                hide screen desk
+                call gen_chibi("sit_behind_desk")
                 show screen luna_main
                 with d3
 
@@ -1026,7 +1016,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             else:
                 call lun_main("That's it, [lun_genie_name], make sure you cover me...","base","suspicious","mad","mid")
 
-                call gen_chibi("cumming")
+                call gen_chibi("cum")
                 with d3
                 g4 "ah, shit... ah... this is too good..."
                 call lun_main("mmm...","base","mad","mad","mid")
@@ -1046,9 +1036,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call load_luna_clothing_saves
 
                 $ luna_cum = 2
-                show screen genie
-                hide screen chair_left
-                hide screen desk
+                call gen_chibi("sit_behind_desk")
                 show screen luna_main
                 with d3
 
@@ -1096,6 +1084,5 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
         call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
     ">Luna leaves your office."
     $ luna_wear_cum = False
-    hide screen genie_jerking_sperm_02
 
     jump luna_away

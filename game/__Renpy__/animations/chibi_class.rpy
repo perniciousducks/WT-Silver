@@ -15,8 +15,8 @@ screen chibi(chibi_object):
         fit_first True
         for d in chibi_object.displayables():
             add d
-        frame: # Debug frame
-            background "#00ff0055"
+        # frame: # Debug frame
+        #     background "#00ff0055"
 
 init -1 python:
     from collections import OrderedDict

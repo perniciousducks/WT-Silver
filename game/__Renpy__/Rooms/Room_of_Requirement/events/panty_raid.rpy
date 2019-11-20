@@ -733,7 +733,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call gen_chibi("cum_behind_desk")
         call her_main("", "open_wide_tongue", "narrow", "base", "mid_soft", cheeks="blush")
         pause 1.5
-        call gen_chibi("cum_on_desk")
+        call gen_chibi("cum_behind_desk_done")
         call her_main("Oh, poor [genie_name], I had no idea you were so pent up. You can start calling me out more than twice a day, if two a day isn't enough.", "soft", "narrow", "worried", "mid_soft", cheeks="blush")
         m "During the day? But what about your classes?"
         call her_main("Hmm? Oh well, missing one or two wouldn't hurt... Especially if the headmaster has an important 'assignment' for me.", "base", "narrow", "base", "mid_soft", cheeks="blush")

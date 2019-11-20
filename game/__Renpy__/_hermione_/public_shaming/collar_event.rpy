@@ -54,7 +54,6 @@ label slut_scene: #Locked to her being your slut
     ">Hermione walks over and kneels before you as you pull out your cock from your robes."
 
     call play_music("playful_tension") #HERMIONE
-    hide screen genie
     call hg_chibi_transition("bj_pause")
 
     hide screen blktone
@@ -247,7 +246,6 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
-    hide screen genie
     call hg_chibi_transition("sex_pause")
     show screen chair_left
     call hide_blkfade
@@ -317,8 +315,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     hide screen hermione_main
     call blkfade
 
-    show screen genie
-    hide screen chair_left
+    call gen_chibi("sit_behind_desk")
     call her_chibi("stand","desk","base")
     hide screen blkfade
     with d3
@@ -381,7 +378,6 @@ label slave_scene:
     call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
-    hide screen genie
     call hg_chibi_transition("sex_pause")
     show screen chair_left
     call her_chibi("hide")

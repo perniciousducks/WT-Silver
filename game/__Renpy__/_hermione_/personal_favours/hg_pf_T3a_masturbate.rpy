@@ -460,8 +460,6 @@ label hg_pf_strip_T4_fingering:
 
     call hg_chibi_transition("admire_breasts") #TODO Replace with naked chibi
 
-    hide screen genie
-
     hide screen blktone
     hide screen bld1
     hide screen blkfade

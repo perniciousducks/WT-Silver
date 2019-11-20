@@ -242,7 +242,7 @@ label hg_pf_handjob_1:
     show screen chair_left
     show screen desk
     call her_chibi("stand","560","base")
-    call gen_chibi("jerking_off","450","base")
+    call gen_chibi("jerk_off","450","base")
 
     hide screen blkfade
     with fade

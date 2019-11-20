@@ -64,9 +64,9 @@ screen with_snape(ani=False):
     zorder 3
     if ani:
         if daytime:
-            add "genie_toast_goblet_daytime" xpos 435 ypos 200 # Different shadow.
+            add "ch_gen toast_goblet_daytime" xpos 435 ypos 200 # Different shadow.
         else:
-            add "genie_toast_goblet" xpos 435 ypos 200
+            add "ch_gen toast_goblet" xpos 435 ypos 200
         add "snape_toast_goblet" xpos 618 ypos 200 zoom 0.5
 
     else:

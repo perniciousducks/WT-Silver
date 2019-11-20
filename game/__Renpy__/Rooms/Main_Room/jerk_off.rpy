@@ -10,7 +10,6 @@ label jerk_off:
         $ d_flag_02 = True
 
     hide screen bld1
-    hide screen genie
     call gen_chibi("jerk_off_behind_desk")
     with d3
     pause 1
@@ -78,20 +77,20 @@ pause 1
 
 if her_panties_soaked:
     call nar(">You cum all over Hermione's panties, and then use them to wipe the cum off the floor...")
-    call gen_chibi("cum_on_desk")
+    call gen_chibi("cum_behind_desk_done")
     pause.5
 
     call nar(">You received the item: \"Cum-soaked panties\".")
 elif cho_panties_soaked:
     call nar(">You cum all over Cho's panties, and then use them to wipe the cum off the floor...")
-    call gen_chibi("cum_on_desk")
+    call gen_chibi("cum_behind_desk_done")
     pause.5
 
     call nar(">You received the item: \"Cum-soaked panties\".")
 else:
     call nar(">You cum on the floor.")
 
-call gen_chibi("cum_on_desk")
+call gen_chibi("cum_behind_desk_done")
 pause.2
 
 call bld
@@ -104,9 +103,7 @@ $ d_flag_01 = False
 $ d_flag_02 = False
 $ d_flag_03 = False
 
-hide screen genie_jerking_sperm_02
-call gen_chibi("hide")
-show screen genie
+call gen_chibi("sit_behind_desk")
 hide screen bld1
 
 if daytime:

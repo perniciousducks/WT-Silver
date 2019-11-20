@@ -23,7 +23,6 @@ label luna_favour_4: ###Luna handjob #DONE
         ">You stand up and walk around your desk, standing in front of Luna."
         ">You open your cloak and pull out your cock."
         hide screen bld1
-        hide screen genie
         show screen chair_left
         show screen desk
         call gen_chibi("hold_dick", "desk", "base")
@@ -181,7 +180,7 @@ label luna_favour_4: ###Luna handjob #DONE
             "Where should you cum?"
             "-Face-":
                 ">You start shooting your load across her face, coating her in your sticky cum."
-                call gen_chibi("cumming")
+                call gen_chibi("cum")
 
                 $ luna_choice = 1
                 $ luna_cum = 11
@@ -226,7 +225,7 @@ label luna_favour_4: ###Luna handjob #DONE
             "-Mouth-":
                 $ luna_choice = 2
                 call cum_block
-                call gen_chibi("cumming")
+                call gen_chibi("cum")
 
                 call lun_main("{image=textheart}{image=textheart}{image=textheart}","full","happyCl","sad","down")
                 call ctc
@@ -273,9 +272,7 @@ label luna_favour_4: ###Luna handjob #DONE
         $ luna_wear_cum_under = False
         m "Weird..."
 
-        show screen genie
-        hide screen chair_left
-        hide screen desk
+        call gen_chibi("sit_behind_desk")
 
         jump luna_away
 
@@ -342,10 +339,9 @@ label luna_favour_4: ###Luna handjob #DONE
             ">You stand up and walk around your desk, standing in front of Luna."
             ">You open your cloak and pull out your cock."
             hide screen bld1
-            hide screen genie
             show screen chair_left
             show screen desk
-            call gen_chibi("jerking_off")
+            call gen_chibi("jerk_off")
             with fade
             hide screen blktone
             hide screen blkfade
@@ -469,7 +465,7 @@ label luna_favour_4: ###Luna handjob #DONE
             g4 "mmmm"
             call lun_main("Now...","normal","mad","mad","mid")
             call lun_main("Cum.","base","seductive","angry","mid")
-            call gen_chibi("cumming") #TODO Use "short distance" cumming animation
+            call gen_chibi("cum") #TODO Use "short distance" cumming animation
             $ luna_wear_cum_under = True
             $ luna_cum = 10
             call cum_block
@@ -553,10 +549,9 @@ label luna_favour_4: ###Luna handjob #DONE
             ">You stand up and walk around your desk, standing in front of Luna."
             ">You open your cloak and pull out your cock."
             hide screen bld1
-            hide screen genie
             show screen chair_left
             show screen desk
-            call gen_chibi("jerking_off")
+            call gen_chibi("jerk_off")
             with fade
             hide screen blktone
             hide screen blkfade
@@ -709,7 +704,7 @@ label luna_favour_4: ###Luna handjob #DONE
                     $ luna_cum = 5
                     $ luna_wear_cum = True
                     call cum_block
-                    call gen_chibi("cumming")
+                    call gen_chibi("cum")
                     ">You start shooting your load across her chest, coating her tits in cum."
 
                 "-thighs-":
@@ -717,7 +712,7 @@ label luna_favour_4: ###Luna handjob #DONE
                     $ luna_cum = 10
                     $ luna_wear_cum = True
                     call cum_block
-                    call gen_chibi("cumming")
+                    call gen_chibi("cum")
                     ">You start spurting over Luna's soft thighs, coating her pussy in cum."
 
                 "-{size=+10}FACE!{/size}-":
@@ -778,9 +773,7 @@ label luna_favour_4: ###Luna handjob #DONE
     $ luna_wear_cum = False
     $ luna_wear_cum_under = False
 
-    show screen genie
-    hide screen chair_left
-    hide screen desk
+    call gen_chibi("sit_behind_desk")
 
     jump luna_away
 

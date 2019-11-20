@@ -1152,8 +1152,6 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call her_main("In that case I’ll give you a great opportunity to stare at them indefinitely.", "angry", "base", "angry", "mid")
             call cho_main("What are you talking about, Granger?","soft","narrow","raised","L")
 
-            label dev:
-
             # Hermione walks towards the desk to pick up Cho's clothing.
             call her_walk(xpos="desk", ypos="base", speed=1.5)
             pause.2

@@ -408,8 +408,8 @@ label ball_quest_E2:
     hide screen snape_main
     call blkfade
 
+    call gen_chibi("hide")
     show screen with_snape(ani=False)
-    hide screen genie
     hide screen chair_right
     hide screen desk
     show screen desk
@@ -519,7 +519,7 @@ label ball_quest_E4:
     hide screen bld1
     with d3
     hide screen no_groping_02
-    show screen genie
+    call gen_chibi("sit_behind_desk")
     with d1
 
     call her_walk(action="run", xpos="door", ypos="base", speed=2, loiter=False)

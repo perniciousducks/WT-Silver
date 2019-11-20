@@ -1067,7 +1067,7 @@ label slytherin_match:
 
     #TODO Show standing Hermione chibi when Cho's CG is hidden
     call her_chibi("hide") # Hermione is already gone.
-    call gen_chibi("standing_alt", xpos=130, ypos=10, flip=False)
+    call gen_chibi("stand_alt", xpos=130, ypos=10, flip=False)
     call sna_chibi("stand", xpos=220, ypos=-50, flip=False)
 
     $ qp_mob_reaction[0] = None

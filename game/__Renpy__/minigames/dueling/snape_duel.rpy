@@ -33,11 +33,11 @@ label duel:
     # Hide all the screens.
 
     hide screen notes #A bunch of notes poping out with a "win" sound effect.
-    hide screen genie
     hide screen owl
     hide screen ui_top_bar
     hide screen ctc
     hide screen snape_defends
+    call gen_chibi("hide")
     hide screen blkfade
 
 

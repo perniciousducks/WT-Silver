@@ -161,8 +161,6 @@ label potion_scene_1_1_2:
                 show screen chair_left
                 call hg_chibi_transition("bj_pause")
                 hide screen hermione_main
-                hide screen genie
-                call her_chibi("hide")
                 hide screen blkfade
                 with d5
 
@@ -173,7 +171,6 @@ label potion_scene_1_1_2:
 
                 ">Hermione takes you into her mouth"
                 hide screen hermione_main
-                hide screen genie
                 call ctc
                 m "Good god what is with your tongue?! It feels like velcro."
                 her "*Slurp?*"
@@ -371,7 +368,6 @@ label potion_scene_1_1_2_alt:
     call her_main("...", "open_wide_tongue", "base", "base", "mid")
     ">Hermione takes you into her mouth"
     hide screen hermione_main
-    hide screen genie
 
     show screen chair_left
     call hg_chibi_transition("bj")

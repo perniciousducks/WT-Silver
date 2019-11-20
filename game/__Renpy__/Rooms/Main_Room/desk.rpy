@@ -315,9 +315,6 @@ screen watch():
     else:
         add "interface/desk/watch/night.png" xpos watch_x+40 ypos watch_y+6 xanchor 0.5
 
-
-
-### PAPERWORK ###
 label paperwork:
     if letter_min_report in letter_queue_list:
         m "I need to get paid first."
@@ -335,10 +332,8 @@ label paperwork:
         play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
         stop bg_sounds
 
-
-    hide screen genie
-    show screen paperwork
-    with Dissolve(0.3)
+    call gen_chibi("paperwork")
+    with d3
     ">You do some paperwork."
 
     call finished_working_chapter #Chapter finished. $ report_chapters += 1
@@ -376,18 +371,12 @@ label paperwork:
 
     call report_chapters_check #Checks whether or not the completed chapter was the final one.
 
-
-    show screen genie
-    hide screen paperwork
-
-
+    call gen_chibi("sit_behind_desk")
 
     if daytime:
         jump night_start
     else:
         jump day_start
-
-
 
 #Completed one chapter
 label report_chapters_check:

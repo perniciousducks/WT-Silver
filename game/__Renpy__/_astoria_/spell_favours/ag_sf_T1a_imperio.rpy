@@ -430,7 +430,7 @@ label ag_se_imperio_sb_E2:
     call sus_main("","upset")
 
     call ast_main("","annoyed","narrow","base","R")
-    call gen_chibi("cum_on_desk")
+    call gen_chibi("cum_behind_desk_done")
     pause.5
 
     call nar(">As you shoot your massive load Susan's leg twitches slightly...")
@@ -817,7 +817,7 @@ label ag_se_imperio_sb_E3:
     g4 "Ahhh... don't worry about that..."
     call nar(">You give your cock a few final pumps, working out the last of your load onto Susan's waiting face...")
 
-    call gen_chibi("cum_on_desk")
+    call gen_chibi("cum_behind_desk_done")
     pause.5
     g4 "There we go..."
     call ast_main("Nice work, [ast_genie_name]...","open","closed","base","mid")

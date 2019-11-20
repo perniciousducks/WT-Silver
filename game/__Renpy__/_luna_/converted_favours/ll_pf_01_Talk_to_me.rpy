@@ -47,8 +47,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                     ">You reach under the desk and grab your cock..."
                     hide screen blktone8
                     with d3
-                    hide screen genie
-                    show screen genie_jerking_off
+                    call gen_chibi("jerk_off_behind_desk")
                     with d3
                     call ctc
 
@@ -57,7 +56,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                     if current_payout < 50:
                         call lun_main("This is exactly what I mean!","upset","mad","mad","mid")
                         call lun_main("Even the headmaster of this damn school thinks he can get away with touching himself in front of me for only [current_payout] gold!","upset","mad","mad","R")
-                        show screen genie
+                        call gen_chibi("sit_behind_desk")
                         with d3
                         "You quickly tuck your cock back into your robe."
                         m "i can assure you I was doing no such thing!"
@@ -96,17 +95,15 @@ label luna_favour_1: ###TALK TO ME #DONE
                     g4 "Argh! YES!"
                     hide screen luna_main
                     hide screen bld1
-                    show screen genie_jerking_sperm
+                    call gen_chibi("cum_behind_desk")
                     show screen bld1
                     with d3
 
                     call lun_main("That's it, [lun_genie_name], just let it all out...","base","seductive","base","mid")
-                    show screen genie_jerking_sperm_02
+                    call gen_chibi("cum_behind_desk_done")
                     with d3
                     g4 "What? No, I was just... ah, shit, this feels good..."
-                    show screen genie
                     hide screen bld1
-                    #show screen genie_jerking_off
                     with d3
                     call lun_main("You couldn't help yourself could you?","base","seductive","raised","R")
                     m "ah... I guess not."
@@ -190,8 +187,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                 ">You reach under the desk and grab your cock..."
                 hide screen blktone8
                 with d3
-                hide screen genie
-                show screen genie_jerking_off
+                call gen_chibi("jerk_off_behind_desk")
                 with d3
                 pause
                 call lun_main("Isn't that better?","base","seductive","raised","mid")
@@ -240,17 +236,15 @@ label luna_favour_1: ###TALK TO ME #DONE
                         g4 "Argh! YES!"
                         hide screen luna_main
                         hide screen bld1
-                        show screen genie_jerking_sperm
+                        call gen_chibi("cum_behind_desk")
                         show screen bld1
                         with d3
 
                         call lun_main("That's it, [lun_genie_name] just like that...","base","seductive","base","mid")
-                        show screen genie_jerking_sperm_02
+                        call gen_chibi("cum_behind_desk_done")
                         with d3
                         g4 "What? No, I was thinking about... ah, shit, this feels too good..."
-                        show screen genie
                         hide screen bld1
-                        #show screen genie_jerking_off
                         with d3
                         call lun_main("Your a nasty old man, aren't you.","base","seductive","raised","R")
                         m "ah..."
@@ -328,17 +322,15 @@ label luna_favour_1: ###TALK TO ME #DONE
                         g4 "Argh! YES!"
                         hide screen luna_main
                         hide screen bld1
-                        show screen genie_jerking_sperm
+                        call gen_chibi("cum_behind_desk")
                         show screen bld1
                         with d3
 
                         call lun_main("That's it, just let it out...","upset","mad","mad","mid")
-                        show screen genie_jerking_sperm_02
+                        call gen_chibi("cum_behind_desk_done")
                         with d3
                         g4 "good work, slut... ah, shit, this feels so good..."
-                        show screen genie
                         hide screen bld1
-                        #show screen genie_jerking_off
                         with d3
                         call lun_main("Your a nasty old man, aren't you.","base","suspicious","raised","mid")
                         m "ah..."
@@ -401,8 +393,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                 ">You reach under the desk and grab your cock..."
                 hide screen blktone8
                 with d3
-                hide screen genie
-                show screen genie_jerking_off
+                call gen_chibi("jerk_off_behind_desk")
                 with d3
                 pause
                 call lun_main("That's better isn't it?","base","suspicious","angry","mid")
@@ -434,17 +425,15 @@ label luna_favour_1: ###TALK TO ME #DONE
                 g4 "Argh! YES!"
                 hide screen luna_main
                 hide screen bld1
-                show screen genie_jerking_sperm
+                call gen_chibi("cum_behind_desk")
                 show screen bld1
                 with d3
 
                 call lun_main("That's it, [lun_genie_name] just like that...","normal","mad","angry","mid")
-                show screen genie_jerking_sperm_02
+                call gen_chibi("cum_behind_desk_done")
                 with d3
                 g4 "ah, shit, why does this feels so good..."
-                show screen genie
                 hide screen bld1
-                #show screen genie_jerking_off
                 with d3
                 call lun_main("Disgusting...","clench","seductive","base","R")
                 m "ah..."
@@ -477,8 +466,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                 ">You reach under the desk and grab your cock..."
                 hide screen blktone8
                 with d3
-                hide screen genie
-                show screen genie_jerking_off
+                call gen_chibi("jerk_off_behind_desk")
                 with d3
                 call ctc
 
@@ -546,17 +534,15 @@ label luna_favour_1: ###TALK TO ME #DONE
                 g4 "Argh! YES!"
                 hide screen luna_main
                 hide screen bld1
-                show screen genie_jerking_sperm
+                call gen_chibi("cum_behind_desk")
                 show screen bld1
                 with d3
 
                 call lun_main("ugh... there's so much...","upset","mad","mad","mid")
-                show screen genie_jerking_sperm_02
+                call gen_chibi("cum_behind_desk_done")
                 with d3
                 g4 "good work, slut... ah, shit, this feels so good..."
-                show screen genie
                 hide screen bld1
-                #show screen genie_jerking_off
                 with d3
                 call lun_main("The floor...","normal","angry","angry","down")
                 call lun_main("it's covered...","normal","angry","angry","R")
@@ -626,8 +612,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         ">You reach under the desk and grab your cock..."
         hide screen blktone8
         with d3
-        hide screen genie
-        show screen genie_jerking_off
+        call gen_chibi("jerk_off_behind_desk")
         with d3
         pause
         call lun_main("That's better isn't it?","normal","angry","sad","mid")
@@ -677,18 +662,16 @@ label luna_favour_1: ###TALK TO ME #DONE
         g4 "Argh! YES!"
         hide screen luna_main
         hide screen bld1
-        show screen genie_jerking_sperm
+        call gen_chibi("cum_behind_desk")
         show screen bld1
         with d3
 
         call lun_main("...","base","seductive","sad","mid", cheeks="blush")
         call her_main("I told you he liked stories...", "base", "narrow", "base", "mid_soft")
-        show screen genie_jerking_sperm_02
+        call gen_chibi("cum_behind_desk_done")
         with d3
         g4 "ah, shit, why does this feels so good..."
-        show screen genie
         hide screen bld1
-        #show screen genie_jerking_off
         with d3
 
         call lun_main("next time just make one up...","upset","seductive","angry","R")

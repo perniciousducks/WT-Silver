@@ -104,7 +104,7 @@ label prev_at_hogwarts:
     dum_[2] "\"I don't think I'll ever understa-\""
 
     hide screen dumbledore
-    show screen genie
+    call gen_chibi("sit_behind_desk")
     call teleport("desk")
 
     pause.8
@@ -138,7 +138,7 @@ label a_spaced_out_conversation:
     call room("main_room")
     call music_block
 
-    hide screen genie
+    call gen_chibi("hide")
     hide screen chair_right
     show screen fireplace_fire
     show screen desk

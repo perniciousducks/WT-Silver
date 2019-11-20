@@ -277,11 +277,6 @@ label waifu_completed:
     $ victoria = 0
     $ leena = 0
 
-    if fire_in_fireplace:
-        hide screen reading_near_fire
-    else:
-        hide screen reading
-
     if daytime:
         jump night_start
     else:

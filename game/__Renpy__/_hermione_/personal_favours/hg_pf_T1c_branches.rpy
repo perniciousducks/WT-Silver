@@ -425,7 +425,7 @@ label hg_pf_admire_breasts_T3_masturbate:
 
             $ no_blinking = True #When True - blinking animation is not displayed.
 
-            show screen jerking_off_cum
+            call gen_chibi("cum_close")
             with d5
             call ctc
 
@@ -433,7 +433,7 @@ label hg_pf_admire_breasts_T3_masturbate:
             call her_main("[genie_name], no, you promised!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
             g4 "Oh, this is great, yes..."
             $ no_blinking = False #When True - blinking animation is not displayed.
-            hide screen jerking_off_cum
+            call gen_chibi("cum_close_done")
             with d3
 
             call her_main("[genie_name], how could you...?", "angry", "squint", "base", "mid", cheeks="blush")
@@ -698,7 +698,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             $ no_blinking = True #When True - blinking animation is not displayed.
             $ sperm_on_tits = True
 
-            show screen jerking_off_cum
+            call gen_chibi("cum_close")
             with d5
             call ctc
 
@@ -706,7 +706,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             call her_main("[genie_name], I didn't mean that you can release your... semen on me, [genie_name]...", "angry", "worriedCl", "worried", "mid", cheeks="blush",emote="05")
             g4 "Oh, this is great, yes..."
             $ no_blinking = False #When True - blinking animation is not displayed.
-            hide screen jerking_off_cum
+            call gen_chibi("cum_close_done")
             with d5
 
             call her_main("Well, what's done is done I suppose...", "base", "base", "base", "R", cheeks="blush")
@@ -756,7 +756,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             $ no_blinking = True #When True - blinking animation is not displayed.
             $ sperm_on_tits = True
 
-            show screen jerking_off_cum
+            call gen_chibi("cum_close")
             call hide_blkfade
             call ctc
 
@@ -765,7 +765,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             g4 "Oh, this is great, yes..."
 
             $ no_blinking = False #When True - blinking animation is not displayed.
-            hide screen jerking_off_cum
+            call gen_chibi("cum_close_done")
             with d3
 
             call her_main("Well, what's done is done I suppose...", "angry", "worriedCl", "worried", "mid", cheeks="blush")

@@ -440,9 +440,6 @@ label snape_intro_E3:
     show screen snape_glass
     pause 2.3
 
-    hide screen genie
-    hide screen snape_defends
-
     jump duel
 
 

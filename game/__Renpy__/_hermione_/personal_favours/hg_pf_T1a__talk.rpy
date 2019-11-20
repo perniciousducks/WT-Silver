@@ -290,7 +290,7 @@ label hg_pf_talk_T2:
         g4 "What? No, I was just... ah, shit, this feels good..."
 
         call hide_characters
-        call gen_chibi("cum_on_desk")
+        call gen_chibi("cum_behind_desk_done")
         with d3
         pause.8
 
@@ -490,7 +490,7 @@ label hg_pf_talk_T3:
         hide screen bld1
         with d3
         pause.1
-        call gen_chibi("cum_on_desk")
+        call gen_chibi("cum_behind_desk_done")
         with d3
         pause.5
 
@@ -974,7 +974,7 @@ label hg_pf_talk_tonks:
                 call her_main("", "annoyed", "base", "base", "mid", cheeks="blush")
                 call ton_main("Are you okay, professor? You're awfully quiet...","base","base","raised","mid", cheeks="blush")
                 call her_main("(.............)", "soft", "base", "base", "mid")
-                call gen_chibi("cum_on_desk")
+                call gen_chibi("cum_behind_desk_done")
                 with d3
                 pause.2
                 call bld
@@ -1111,7 +1111,7 @@ label hg_pf_talk_tonks:
                         call ton_main("Seems like the headmaster enjoyed our little discussion...","horny","base","angry","mid", hair="horny")
                         call her_main("(.............)", "soft", "base", "base", "mid")
 
-                        call gen_chibi("cum_on_desk")
+                        call gen_chibi("cum_behind_desk_done")
                         with d3
                         pause.2
 

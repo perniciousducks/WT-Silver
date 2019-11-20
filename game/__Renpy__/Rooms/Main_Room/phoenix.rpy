@@ -10,17 +10,13 @@ label phoenix:
 
     if not bird_examined:
         $ bird_examined = True
-        hide screen genie
         call gen_chibi("stand","mid","base",flip=True)
         show screen chair_left #Empty chair near the desk.
         show screen desk
         with d5
         m "Hm....."
         m "Even this weird-looking bird radiates magic..."
-        show screen genie
-        call gen_chibi("hide")
-        hide screen chair_left #Empty chair near the desk.
-        hide screen desk
+        call gen_chibi("sit_behind_desk")
         with d5
         jump main_room_menu
 
@@ -35,12 +31,10 @@ label phoenix:
 
     jump main_room_menu
 
-### FEEDING ###
 label feeding:
-    hide screen genie
     show screen chair_left
     show screen desk
-    show screen feeding
+    call gen_chibi("grab_high", phoenix_OBJ.xpos, phoenix_OBJ.ypos)
     with d3
     pause .5
 
@@ -55,20 +49,12 @@ label feeding:
     else:
         pause .8
 
-    # show screen genie
-    # hide screen chair_left
-    # hide screen desk
-    # hide screen feeding
-    # with d3
-
     jump main_room_menu
 
-### PETTING ###
 label petting:
-    hide screen genie
     show screen chair_left
     show screen desk
-    show screen petting
+    call gen_chibi("petting", phoenix_OBJ.xpos, phoenix_OBJ.ypos)
     with d3
     pause .5
 
@@ -81,9 +67,5 @@ label petting:
         "Glad you aren't as noisy as Iago..."
     else:
         pause 2.4
-
-    # show screen genie
-    # hide screen petting
-    # with d3
 
     jump main_room_menu

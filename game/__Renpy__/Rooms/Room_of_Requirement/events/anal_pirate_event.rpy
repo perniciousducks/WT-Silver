@@ -102,10 +102,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Aye... , I jus' wants this t' end...", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="crying")
 
                 call blkfade
-                call her_chibi("hide") #HERMIONE
-                hide screen genie
                 show screen chair_left
-
                 call hg_chibi_transition("sex_slow")
 
                 if use_cgs:
@@ -146,11 +143,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 play music "music/pirate.mp3" fadein 1 fadeout 1
                 play bg_sounds "sounds/CreakingShip.mp3"
 
-                #SUCKING
-                call her_chibi("hide")
-                hide screen genie
                 show screen chair_left
-
                 call hg_chibi_transition("bj")
 
                 hide screen blktone
@@ -180,12 +173,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 g4 "Let us pump this wee cavern full o' seamen then, savvy?"
                 call her_main(".....................", "angry", "squint", "base", "mid",cheeks="blush")
 
-
-                # SEX
-                call her_chibi("hide") #HERMIONE
-                hide screen genie
                 show screen chair_left
-
                 call hg_chibi_transition("sex_slow")
 
                 if use_cgs:
@@ -221,10 +209,8 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen ccg
                 $ face_on_cg = False
                 hide screen hermione_main
-                call her_chibi("hide")
-                hide screen genie
-                show screen chair_left
 
+                show screen chair_left
                 call hg_chibi_transition("bj")
 
                 hide screen blktone
@@ -240,11 +226,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m "Aye, Maybe that be enough."
                 call blkfade
 
-                # SEX
-                call her_chibi("hide") #HERMIONE
-                hide screen genie
                 show screen chair_left
-
                 call hg_chibi_transition("sex_slow")
 
                 if use_cgs:
@@ -464,10 +446,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main("'n , jus' call me \"wench\", captain.", "base", "squint", "base", "mid")
         g4 "Agh! Ye wench! Ye always get me wit' yer words!"
 
-        call her_chibi("hide")
-        hide screen genie
         show screen chair_left
-
         call hg_chibi_transition("sex")
 
         if use_cgs:

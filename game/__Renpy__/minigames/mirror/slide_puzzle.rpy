@@ -79,9 +79,8 @@ label open_puzzle_box:
     m "Hold on a second, there's a book in here..."
     m "Seems to be some sort of notebook, I'll skim through it....."
     hide screen chair_right
-    hide screen genie
-    show screen reading
-    with Dissolve(0.3)
+    call gen_chibi("read")
+    with d3
     m "My dear phoenix has been losing his feathers lately, I think it's time soon..... "
     m "(Time for what?)"
     m "That Potter boy is mighty cute, looks just like his father.... "
@@ -93,9 +92,8 @@ label open_puzzle_box:
     m "Whilst searching, a room that I had never seen before appeared, filled with chamber pots... But when I returned later, it was gone."
     m "(I've seen enough magic to know where this is going... I should investigate that corridor on the seventh floor.)"
     show screen chair_right
-    show screen genie
-    hide screen reading
-    with Dissolve(0.3)
+    call gen_chibi("sit_behind_desk")
+    with d3
     call give_reward("You've unlocked something on the 7th floor, check your map to get there.","/interface/icons/head/head_genie_question_mark.png")
     $ unlocked_7th = True
     call update_quest_items

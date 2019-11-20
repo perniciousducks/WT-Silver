@@ -447,7 +447,7 @@ label demonstrate_tactic(position=""):
         call cho_main("How is this?","open","base","base","down", ypos="head")
 
         # Genie looks up.
-        call gen_chibi("standing_alt","desk","base")
+        call gen_chibi("stand_alt","desk","base")
         show screen bld1
         with d3
 

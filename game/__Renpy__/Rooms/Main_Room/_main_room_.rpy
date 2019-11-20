@@ -7,7 +7,7 @@ screen main_room_menu():
     on "hide" action SetVariable("room_menu_active", False)
 
 # Main room screen
-screen main_room(interact=True):
+screen main_room():
     tag room
     zorder 0
 
@@ -153,10 +153,10 @@ screen main_room(interact=True):
 
 
 # Genie at desk
-screen genie_desk:
+screen genie_desk_interactive:
     tag genie_chibi # Uses same tag as chibi screens
     if renpy.variant('android'):
-        add "genie_sit_behind_desk" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5
+        add "ch_gen sit_behind_desk" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5
         imagemap:
             xpos 384
             ypos 370
@@ -174,14 +174,13 @@ screen genie_desk:
             focus_mask True
             xanchor 0.5
             yanchor 0.5
-            idle "genie_sit_behind_desk"
-            hover "genie_sit_behind_desk_hover"
+            idle "ch_gen sit_behind_desk"
+            hover "ch_gen sit_behind_desk_hover"
             if desk_examined:
                 tooltip "Open desk"
-                hovered Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210)
             else:
                 tooltip "Examine Desk"
-                hovered Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210)
+            hovered Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210)
             unhovered Hide("gui_tooltip")
             action Jump("desk")
             sensitive room_menu_active
@@ -202,50 +201,44 @@ screen phoenix_food():
     zorder 2
 
 # Fireplace
-screen fireplace(interact=True):
+screen fireplace:
     tag fireplace
     zorder 1
-    if interact:
-        imagebutton:
-            xpos fireplace_OBJ.xpos
-            ypos fireplace_OBJ.ypos
-            focus_mask True
-            xanchor 0.5
-            yanchor 0.5
-            idle fireplace_OBJ.get_idle_image()
-            hover fireplace_OBJ.get_hover_image()
-            if fireplace_examined:
-                if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
-                    tooltip "What's that glimmer?"
-                else:
-                    if not fire_in_fireplace:
-                        tooltip "Light fire"
-                    else:
-                        tooltip "Extinguish fire"
-            else:
-                tooltip "Examine fireplace"
-            action Jump("fireplace")
-            sensitive room_menu_active
-    else:
-        add fireplace_OBJ.get_room_image() xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
+    imagebutton:
+        xpos fireplace_OBJ.xpos
+        ypos fireplace_OBJ.ypos
+        xanchor 0.5
+        yanchor 0.5
+        focus_mask True
+        idle fireplace_OBJ.get_idle_image()
+        hover fireplace_OBJ.get_hover_image()
+        if not fireplace_examined:
+            tooltip "Examine fireplace"
+        elif is_puzzle_box_in_fireplace():
+            tooltip "What's that glimmer?"
+        elif fire_in_fireplace:
+            tooltip "Extinguish fire"
+        else:
+            tooltip "Light fire"
+        action Jump("fireplace")
+        sensitive room_menu_active
 
+    #TODO Replace usage of screen fireplace_fire with flag fire_in_fireplace. Show/hide fire animation with transform effect
+    # showif fire_in_fireplace:
+    #     add "fireplace_fire" xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos+25 xanchor 0.5 yanchor 0.5
+    
     # Fireplace deco
     if fireplace_deco_OBJ.room_image:
         add fireplace_deco_OBJ.get_room_image() xpos fireplace_deco_OBJ.xpos ypos fireplace_deco_OBJ.ypos xanchor 0.5 yanchor 0.5
 
     # Puzzle box appears in fireplace
-    if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
-        use fireplace_glow
+    if is_puzzle_box_in_fireplace():
+        add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.2
 
-screen fireplace_fire():
+screen fireplace_fire:
     tag fireplace_fire
     zorder 2
     add "fireplace_fire" xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos+25 xanchor 0.5 yanchor 0.5
-
-screen fireplace_glow():
-    tag fireplace_glow
-    zorder 3
-    add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.2
 
 # Furniture
 screen desk(x=360): # Desk only
@@ -274,7 +267,7 @@ screen cupboard_open():
         add "images/rooms/_objects_/cupboard/cupboard_open" +str(cupboard_deco)+ ".png"  xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5
 
 # Owl
-screen owl(interact=True):
+screen owl:
     tag owl
     imagebutton:
         xpos owl_OBJ.xpos
@@ -293,7 +286,7 @@ screen owl(interact=True):
         add owl_deco_OBJ.get_room_image() xpos owl_deco_OBJ.xpos ypos owl_deco_OBJ.ypos xanchor 0.5 yanchor 1.0
 
 # Package
-screen package(interact=True):
+screen package:
     tag package
     imagebutton:
         xpos package_OBJ.xpos

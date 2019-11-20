@@ -95,7 +95,7 @@ label potion_scene_2_1_1:
     hide screen hermione_main
     call set_her_action("lift_top")
     call her_chibi("hide")
-    hide screen genie
+    call gen_chibi("hide")
     show screen groping_naked_tits
     call hide_blkfade
 
@@ -161,12 +161,10 @@ label potion_scene_2_1_1:
     call blkfade
     pause 1
     hide screen hermione_main
-    hide screen chair_left
-    hide screen desk
     hide screen groping_naked_tits
     hide screen blktone
     call her_chibi("stand","desk","base")
-    show screen genie
+    call gen_chibi("sit_behind_desk")
     hide screen bld1
     hide screen blktone
     call hide_blkfade
@@ -259,7 +257,7 @@ label potion_scene_2_2:
     call nar(">Hermione hops over to your desk, her ass bouncing as she moves, and presents herself to you.")
     pause 1
     
-    hide screen genie
+    call gen_chibi("hide")
     show screen no_groping_02
     call hide_blkfade
     call ctc
@@ -334,11 +332,11 @@ label potion_scene_2_2:
             pause 1
 
             hide screen bld1
-            hide screen chair_left
             hide screen groping_01
             hide screen groping_02
             call her_chibi("stand","desk","base")
-            show screen genie
+            call gen_chibi("sit_behind_desk")
+
             hide screen blktone
             hide screen bld1
             call hide_blkfade
@@ -411,11 +409,11 @@ label potion_scene_2_2:
             call blkfade
             pause 1
 
-            hide screen chair_left
             hide screen groping_01
             hide screen groping_02
             call her_chibi("stand","desk","base")
-            show screen genie
+            call gen_chibi("sit_behind_desk")
+            
             hide screen blktone
             hide screen bld1
             call hide_blkfade

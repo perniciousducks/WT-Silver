@@ -254,7 +254,7 @@ label hermione_intro_E1:
         her "???"
         g4 "*breathing heavily* Yes! yes...."
 
-        call gen_chibi("cum_on_desk")
+        call gen_chibi("cum_behind_desk_done")
         with d3
         pause.5
 
@@ -285,7 +285,7 @@ label hermione_intro_E1:
         m "................."
         m "(She is cute, but quite a piece of work...)"
 
-    hide screen genie_jerking_sperm_02
+    call gen_chibi("sit_behind_desk")
     with d3
 
     $ snape_busy = True # No point in calling him during the day.

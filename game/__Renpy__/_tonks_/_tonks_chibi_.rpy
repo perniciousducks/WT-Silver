@@ -58,9 +58,9 @@ screen with_tonks_animated():
     zorder tonks_chibi.zorder
     
     if daytime:
-        add "genie_toast_goblet_daytime" xpos 435 ypos 200
+        add "ch_gen toast_goblet_daytime" xpos 435 ypos 200
     else:
-        add "genie_toast_goblet" xpos 435 ypos 200
+        add "ch_gen toast_goblet" xpos 435 ypos 200
 
     add "ch_ton sit" xpos 610 ypos 175
     

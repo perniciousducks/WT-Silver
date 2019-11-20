@@ -70,8 +70,8 @@ label ball_ending_E1:
     hide screen snape_main
     call blkfade
 
-    hide screen genie
     hide screen bld1
+    call gen_chibi("hide")
     call sna_chibi("hide")
     show screen chair_left
     show screen genie_snape_shake_hands(False)
@@ -108,9 +108,8 @@ label ball_ending_E1:
     call blkfade
 
     hide screen snape_main
-    hide screen chair_left
     hide screen genie_snape_shake_hands
-    show screen genie
+    call gen_chibi("sit_behind_desk")
     pause.5
 
     call sna_chibi("stand","desk","base")
@@ -184,12 +183,10 @@ label ball_ending_E1:
 
         m "Let's see..."
         call bld
-        hide screen genie
-        show screen paperwork
+        call gen_chibi("paperwork")
         with d3
         m "\"Dear...\""
-        show screen genie
-        hide screen paperwork
+        call gen_chibi("sit_behind_desk")
         with d3
         m "Hm... How should I address her?"
 
@@ -208,15 +205,13 @@ label ball_ending_E1:
             "\"friend\"":
                 $ word_01 = "Friend"
 
-        hide screen genie
-        show screen paperwork
+        call gen_chibi("paperwork")
         with d3
         m "Yes, \"Dear [word_01]\" fits perfectly..."
         ">scribble-scribble-scribble..."
         ">scribble-scribble-scribble..."
         m "\"...it is time for me to go back...\""
-        show screen genie
-        hide screen paperwork
+        call gen_chibi("sit_behind_desk")
         with d3
         m "What should I write now?"
 
@@ -233,15 +228,13 @@ label ball_ending_E1:
             "\"To my Home Planet - Krypton\"":
                 $ word_02 = "to my Home Planet - Krypton"
 
-        hide screen genie
-        show screen paperwork
+        call gen_chibi("paperwork")
         with d3
         m "Yes, \"Time to go back [word_02]\" that will do..."
         ">scribble-scribble-scribble..."
         ">scribble-scribble-scribble..."
         m "\"...farewell my little...\""
-        show screen genie
-        hide screen paperwork
+        call gen_chibi("sit_behind_desk")
         with d3
         m "What should I write now?"
 
@@ -256,14 +249,12 @@ label ball_ending_E1:
             "\"Witch\"":
                 $ word_03 = "witch"
 
-        hide screen genie
-        show screen paperwork
+        call gen_chibi("paperwork")
         with d3
         m "Yes, \"farewell my little [word_03]\" sounds about right..."
         ">scribble-scribble-scribble..."
         ">scribble-scribble-scribble..."
-        show screen genie
-        hide screen paperwork
+        call gen_chibi("sit_behind_desk")
         with d3
         m "And now to sign it as..."
 
@@ -276,12 +267,10 @@ label ball_ending_E1:
                 $ word_04 = "Genie"
             "\"Clark Kent\"":
                 $ word_04 = "Clark Kent"
-                hide screen genie
-                show screen paperwork
+                call gen_chibi("paperwork")
                 with d3
                 m "Yes, \"sincerely yours, [word_04]\"..."
-                show screen genie
-                hide screen paperwork
+                call gen_chibi("sit_behind_desk")
                 with d3
                 m "..........."
                 m "No, that doesn't make any sense..."
@@ -291,12 +280,10 @@ label ball_ending_E1:
             "\"Traveller\"":
                 $ word_04 = "Traveller"
 
-        hide screen genie
-        show screen paperwork
+        call gen_chibi("paperwork")
         with d3
         m "Yes, \"[word_04]\"..."
-        show screen genie
-        hide screen paperwork
+        call gen_chibi("sit_behind_desk")
         with d3
         m "........................"
         m "Yes, this should do..."
@@ -305,7 +292,6 @@ label ball_ending_E1:
 
     call blkfade
 
-    hide screen genie
     show screen chair_left
     show screen desk
     call gen_chibi("stand","desk","base")
@@ -448,8 +434,6 @@ label ball_ending_E2:
     hide screen room # MAIN BG (DAY).
 
     hide screen notes
-    hide screen done_reading
-    hide screen done_reading_near_fire
     with fade
     pause.1
 
@@ -2950,8 +2934,6 @@ label ball_ending_E3:
     stop bg_sounds #Stops playing the fire SFX.
     stop weather #Stops playing the rain SFX.
     hide screen notes
-    hide screen done_reading
-    hide screen done_reading_near_fire
     hide screen chair_left
     hide screen bld1
 
@@ -2963,7 +2945,7 @@ label ball_ending_E3:
     show screen main_room
     show screen chair_right
 
-    hide screen genie
+    call gen_chibi("hide")
     hide screen owl
     hide screen with_snape #Genie hangs out with Snape in front of the fireplace.
 

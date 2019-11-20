@@ -484,7 +484,6 @@ label hg_ps_cumslut_Scene_3:
     call blkfade
     pause.3
 
-    hide screen genie
     show screen chair_left
     call hg_chibi_transition("hj")
     #show screen desk_02 <- screen does not exist

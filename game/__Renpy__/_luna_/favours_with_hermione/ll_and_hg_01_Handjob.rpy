@@ -134,7 +134,6 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         hide screen bld1
         with d3
 
-        hide screen genie
         show screen chair_left
         show screen desk
         call gen_chibi("hold_dick")
@@ -261,9 +260,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         hide screen genie_main
         with d3
         hide screen bld1
-        show screen genie
-        hide screen chair_left
-        hide screen desk
+        call gen_chibi("sit_behind_desk")
 
         call lun_main("...","base","seductive","sad","mid")
         $ luna_flip = -1
@@ -546,7 +543,6 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         with d3
 
         hide screen bld1
-        hide screen genie
         show screen chair_left
         show screen desk
         call gen_chibi("hold_dick")
@@ -879,7 +875,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         show screen chair_left
         show screen desk
-        call gen_chibi("jerking_off","desk","base")
+        call gen_chibi("jerk_off","desk","base")
 
         hide screen blkfade
         with fade

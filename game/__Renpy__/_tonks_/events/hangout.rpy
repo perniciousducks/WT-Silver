@@ -726,7 +726,7 @@ label nt_he_story_centaur: # Not in use.
     hide screen bld1
     with d3
 
-    call gen_chibi("cum_on_desk")
+    call gen_chibi("cum_behind_desk_done")
     with d3
     pause.5
 

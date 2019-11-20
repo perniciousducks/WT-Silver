@@ -920,8 +920,8 @@ label hg_pf_strip_T1_masturbate:
     m "It's alright, [hermione_name]. Don't mind me..."
 
     show screen chair_left
-    call gen_chibi("jerking_off","behind_desk","behind_desk")
     show screen desk
+    call gen_chibi("jerk_off","behind_desk","behind_desk")
     call her_chibi("dance","on_desk","on_desk")
     hide screen blktone
     hide screen blkfade
@@ -969,8 +969,7 @@ label hg_pf_strip_T1_masturbate:
 
             hide screen chair_left
             hide screen desk
-            call gen_chibi("hide")
-            show screen genie
+            call gen_chibi("sit_behind_desk")
             call her_chibi("dance","on_desk","on_desk")
             hide screen blktone
             hide screen bld1
@@ -1319,7 +1318,7 @@ label hg_pf_strip_T2_masturbate:
     with d5
 
     show screen chair_left
-    call gen_chibi("jerking_off","behind_desk","behind_desk")
+    call gen_chibi("jerk_off","behind_desk","behind_desk")
     show screen desk
     hide screen blkfade
     with fade
@@ -1410,7 +1409,7 @@ label hg_pf_strip_T2_masturbate:
     g4 "ARGH! YOU FUCKING CUNT!"
 
     call cum_block
-    call gen_chibi("cumming","behind_desk","behind_desk")
+    call gen_chibi("cum","behind_desk","behind_desk")
     call ctc
 
     $ uni_sperm = True #Triggers universal sperm to show on hermione_main screen.
@@ -1421,7 +1420,7 @@ label hg_pf_strip_T2_masturbate:
     call her_main("??!!!", "shock", "wide", "base", "stare")
     call her_main("[genie_name]!!!", "angry", "worriedCl", "worried", "mid")
 
-    call gen_chibi("cumming_done","behind_desk","behind_desk")
+    call gen_chibi("cum_done","behind_desk","behind_desk")
 
     if d_flag_07: #Promised to hold it.
         call her_main("No, [genie_name]! You promised!", "angry", "worriedCl", "worried", "mid", ypos="head")

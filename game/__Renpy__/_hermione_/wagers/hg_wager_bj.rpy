@@ -18,11 +18,11 @@ label hg_wager_bj:
             g9 "Well, get over here then!"
             call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
             call blkfade
-            hide screen genie
             call her_main("Should I turn around, [genie_name]?", "open", "worriedCl", "worried", "mid")
             call her_main("", "upset", "base", "worried", "mid")
             m "No, not this time."
             call her_main("Okay then...", "annoyed", "narrow", "base", "R_soft")
+            call gen_chibi("hide")
             show screen no_groping_01
             with d1
             $ menu_x = 0.5
@@ -113,8 +113,6 @@ label hg_wager_bj:
         call blkfade
         call play_music("playful_tension")
         hide screen hermione_main
-        hide screen genie
-        call her_chibi("hide")
         show screen chair_left
         call hg_chibi_transition("bj")
         hide screen bld1
@@ -213,7 +211,8 @@ label hg_wager_bj:
                     call sna_walk(action="leave")
 
                 else: #if hermione has stripped twice (so snape walked in on her)
-                    call gen_chibi("dick_out_desk")
+                    show screen desk(427) # Desk was shifted during blowjob
+                    call gen_chibi("dick_out", 260, 205)
                     call her_chibi("stand","220","base", flip=True)
                     call sna_main("Miss Granger?! I tho-... I...", face="snape_14", wand=True)
                     hide screen snape_defends

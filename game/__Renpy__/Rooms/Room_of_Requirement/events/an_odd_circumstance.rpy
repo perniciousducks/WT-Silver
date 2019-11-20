@@ -70,7 +70,6 @@ label an_odd_circumstance():
     with d1
     her "Silencio."
     nar "After a few seconds I went to ask where that voice and bright light had come from... But as I tried, I could only feel my lips moving with no sound emerging..."
-    hide screen genie
     call gen_chibi("stand","260","base", flip=False)
     show screen chair_left
     show screen desk(430)

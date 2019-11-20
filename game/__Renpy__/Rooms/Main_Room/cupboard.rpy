@@ -7,7 +7,6 @@ label cupboard:
         $ cupboard_examined = True
         $ searched = True
         show screen chair_left
-        hide screen genie
         call gen_chibi("stand","behind_desk","base", flip=True)
         show screen desk
         with d5
@@ -19,9 +18,7 @@ label cupboard:
         m "Maybe I should rummage through this one later..."
         jump main_room_menu
 
-
     jump rummaging
-
 
 
 label rummaging:
@@ -29,11 +26,10 @@ label rummaging:
     $ searched = True # Resets every day/night.
     $ rum_times += 1  # Stat counter.
 
-    hide screen genie
     show screen chair_left
     show screen desk
     show screen cupboard_open
-    show screen rummaging
+    call gen_chibi("rummage", 160, 110, flip=False)
     with d3
     show screen bld1
     with d3

@@ -482,7 +482,7 @@ label hg_pf_strip_T2_Snape_masturbate:
     call her_main("!!!")
 
     show screen chair_left
-    call gen_chibi("jerking_off","behind_desk","behind_desk")
+    call gen_chibi("jerk_off","behind_desk","behind_desk")
     show screen desk
     call her_chibi("stand","on_desk","on_desk")
     call sna_chibi("jerking_off","desk","240")
@@ -510,9 +510,7 @@ label hg_pf_strip_T2_Snape_masturbate:
             hide screen bld1
             with d5
 
-            hide screen chair_left
-            hide screen desk
-            show screen genie
+            call gen_chibi("sit_behind_desk")
             call her_chibi("stand","on_desk","on_desk")
             call sna_chibi("stand","desk","base")
             with d7
@@ -637,7 +635,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         with d3
 
         call cum_block
-        call gen_chibi("cumming","behind_desk","base")
+        call gen_chibi("cum","behind_desk","base")
         pause.2
 
         $ uni_sperm = True #Triggers universal sperm to show on hermione_main screen.
@@ -671,7 +669,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         call sna_main("Ha-ha-ha! This is magnificent!","snape_21")
         g9 "I know, right!?"
 
-        call gen_chibi("cumming_done","behind_desk","base")
+        call gen_chibi("cum_done","behind_desk","base")
         call sna_chibi("cumming_done","desk_close","desk_close")
 
         call sna_main("Yes... We should do this more often.","snape_22")

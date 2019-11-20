@@ -757,6 +757,7 @@ label hg_show_ass_cumming:
 
                 g4 "Argh! You fat-assed slut!"
                 call her_main("Proff-- ??", "scream", "wide", "base", "stare", cheeks="blush", ypos="head")
+                call gen_chibi("cum_behind_desk")
                 call cum_block
 
                 g4 "Argh! YES!"
@@ -767,14 +768,12 @@ label hg_show_ass_cumming:
 
                 call her_main("[genie_name]!", "scream", "base", "angry", "mid", cheeks="blush", emote="01")
                 g4 "Oh, that's better..."
-                hide screen jerking_off_cum
+                call gen_chibi("cum_behind_desk_done")
                 with d3
 
                 call her_main("[genie_name], you came so much...", "angry", "squint", "base", "mid", cheeks="blush")
 
                 hide screen hermione_ass
-                call gen_chibi("stand","desk","base")
-                call her_chibi("stand","mid","base")
                 hide screen bld1
                 hide screen blktone
                 with fade
@@ -809,7 +808,7 @@ label hg_show_ass_cumming:
 
                 g4 "Argh! YES!"
 
-                call gen_chibi("cumming","on_girl","base")
+                call gen_chibi("cum_close","on_girl","base")
                 hide screen bld1
                 call hide_blkfade
                 call ctc
@@ -817,7 +816,7 @@ label hg_show_ass_cumming:
                 $ hermione_ass_cum = True
                 call her_main("[genie_name], no, you promised!", "scream", "base", "angry", "mid", cheeks="blush", emote="01")
                 g4 "Oh, this is great, yes..."
-                hide screen jerking_off_cum
+                call gen_chibi("cum_close_done","on_girl","base")
                 call ctc
 
                 hide screen hermione_ass
@@ -879,7 +878,7 @@ label hg_show_ass_cumming:
                 g4 "Argh! YES!"
 
                 $ hermione_ass_cum = True
-                call gen_chibi("cumming","on_girl","base")
+                call gen_chibi("cum","on_girl","base")
                 hide screen hermione_ass
                 hide screen bld1
                 hide screen blktone
@@ -904,7 +903,7 @@ label hg_show_ass_cumming:
 
                 $ hermione_ass_cum = True
                 hide screen hermione_ass
-                call gen_chibi("cumming","on_girl","base")
+                call gen_chibi("cum","on_girl","base")
                 hide screen bld1
                 hide screen blktone
                 hide screen blkfade

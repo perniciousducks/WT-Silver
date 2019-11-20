@@ -131,7 +131,6 @@ label luna_reversion_event: #DONE
 
 label luna_revert_1: #Reversion event #DONE
     hide screen bld1
-    hide screen genie
     show screen chair_left
     show screen desk
     #TODO Re-add chibis to this event
@@ -486,10 +485,9 @@ label luna_revert_2: #Non-Reversion event #DONE
     ">You stand up and walk around your desk, standing in front of Luna."
     ">You open your cloak and pull out your cock."
     hide screen bld1
-    hide screen genie
     show screen chair_left
     show screen desk
-    #TODO Add chibi of Genie jerking off ("genie_jerk_off_standing")
+    #TODO Add chibi of Genie jerking off ("ch_gen jerk_off")
     with fade
     hide screen blktone
     hide screen blkfade
@@ -990,7 +988,7 @@ label luna_revert_2: #Non-Reversion event #DONE
             lun "Mmmm, it's about time you started disciplining your students properly."
             m "Maybe you're right."
 
-            call gen_chibi("jerking_off","desk","base")
+            call gen_chibi("jerk_off","desk","base")
             hide screen bld1
             hide screen blkfade
             with d3
@@ -1052,7 +1050,7 @@ label luna_revert_2: #Non-Reversion event #DONE
             hide screen genie_main
             with d3
 
-            call gen_chibi("cumming")
+            call gen_chibi("cum")
             call cum_block
 
             g9  "{size=+7}Argh, TAKE THIS!!!{/size}"

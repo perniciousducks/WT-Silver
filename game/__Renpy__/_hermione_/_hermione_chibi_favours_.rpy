@@ -31,9 +31,9 @@ label hg_chibi_transition(action="stand", xpos="mid", ypos="base", flip=False, t
             if flip:
                 $ masturbating = True
                 if action == "admire_ass_jerk_off":
-                    call gen_chibi("jerking_off","behind_desk","base")
+                    call gen_chibi("jerk_off","behind_desk","base")
                 if action == "admire_ass_cum":
-                    call gen_chibi("cumming","behind_desk","base")
+                    call gen_chibi("cum","behind_desk","base")
             show screen no_groping_02
 
     elif action in ["grope_breasts"]:

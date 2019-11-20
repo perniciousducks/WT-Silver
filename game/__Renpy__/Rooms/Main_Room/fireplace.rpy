@@ -1,21 +1,16 @@
 label fireplace:
     if not fireplace_examined:
         $ fireplace_examined = True
-        hide screen genie
         call gen_chibi("stand","mid","base")
         show screen chair_left #Empty chair near the desk.
         show screen desk
-        with Dissolve(0.5)
+        with d5
         m "Hm... Looks like an ordinary fireplace..."
-        show screen genie
-        call gen_chibi("hide")
-        hide screen chair_left #Empty chair near the desk.
-        hide screen desk
-        with Dissolve(0.5)
+        call gen_chibi("sit_behind_desk")
+        with d5
         jump main_room_menu
 
-    if day >= 25 and not daytime and (1 < weather_gen < 4) and (puzzle_box_ITEM.unlocked == False and unlocked_7th == False):
-        hide screen genie
+    if is_puzzle_box_in_fireplace():
         call gen_chibi("stand", "fireplace", "fireplace")
         show screen chair_left
         show screen desk
@@ -33,18 +28,12 @@ label fireplace:
                 m "Maybe I should give it a try?"
                 menu:
                     "-Try solving the puzzle-":
-                        show screen genie
-                        call gen_chibi("hide")
-                        hide screen chair_left #Empty chair near the desk.
-                        hide screen desk
+                        call gen_chibi("sit_behind_desk")
                         with d3
                         jump start_slide_puzzle
                     "-Save it for later-":
                         pass
-                show screen genie
-                call gen_chibi("hide")
-                hide screen chair_left #Empty chair near the desk.
-                hide screen desk
+                call gen_chibi("sit_behind_desk")
                 with d3
 
     else:
@@ -57,3 +46,11 @@ label fireplace:
             show screen fireplace_fire
 
     jump main_room_menu
+
+init python:
+    def is_puzzle_box_in_fireplace():
+        return (
+            day >= 25 and not daytime and (1 < weather_gen < 4) and
+            puzzle_box_ITEM.unlocked == False and unlocked_7th == False
+        )
+        

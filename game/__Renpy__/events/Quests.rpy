@@ -121,7 +121,7 @@ label quests:
             if 1578528000 > int(time.time()) > 1577145600:
                 jump xmas
             else:
-                persistent.xmas_2019 = True
+                $ persistent.xmas_2019 = True
 
     # Cardgame
     if day >= twins_cards_delay:

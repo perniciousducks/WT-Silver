@@ -52,6 +52,7 @@ default cho_cloth_dress1 = cloth_class(char="cho", category="tops", subcat="onep
 
 # Hair
 default cho_hair_ponytail = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="ponytail", layers=2, color=[[52, 59, 80, 255], [70, 90, 147, 255]])
+default cho_hair_ponytail_natural = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="ponytail_natural", layers=2, color=[[52, 59, 80, 255], [70, 90, 147, 255]])
 default cho_hair_pigtails = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="pigtails", layers=3, color=[[52, 59, 80, 255], [70, 90, 147, 255], [242, 162, 73, 255]], unlocked=False, whoring=8)
 
 # Pelvis
@@ -156,7 +157,7 @@ python:
 
         cho_class.clothing = {
             "hat":        [None, 24, 0, 0, False],
-            "hair":       [cho_hair_ponytail, 12, 0, 0, False],
+            "hair":       [cho_hair_ponytail_natural, 12, 0, 0, False],
             "earring":    [None, 22, 0, 0, False],
             "neckwear":   [None, 17, 0, 0, False],
             "robe":       [None, 21, 0, 0, False],

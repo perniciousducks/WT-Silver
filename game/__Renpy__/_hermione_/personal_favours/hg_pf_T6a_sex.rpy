@@ -135,7 +135,8 @@ label hg_pf_sex_T1_intro_E3:
     call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
-    call hg_chibi_transition("admire_ass", flip=True, trans="fade")
+    call her_chibi_scene("lie_on_desk")
+    with fade
     pause.5
 
     call bld
@@ -165,7 +166,8 @@ label hg_pf_sex_T1_E3: # repeats
     call her_main("I do....", "angry", "narrow", "base", "down")
     stop music fadeout 1.0
 
-    call hg_chibi_transition("admire_ass", flip=True, trans="fade")
+    call her_chibi_scene("lie_on_desk")
+    with fade
     pause.5
 
     call bld
@@ -193,7 +195,7 @@ label hg_sex_1:
     call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
-    call hg_chibi_transition("grope_ass", flip=True, trans="fade")
+    call her_chibi_scene("grope_ass_back", trans="fade")
     pause.5
 
     call her_main(".............", "upset", "closed", "base", "mid", ypos="head")
@@ -221,7 +223,7 @@ label hg_sex_1:
         hide screen blkfade
         call her_main("", "normal", "worriedCl", "worried", "mid", ypos="head", trans="d5")
     else:
-        call hg_chibi_transition(action="sex", trans="d5")
+        call her_chibi_scene("sex", trans="d5")
     call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare")
     hide screen bld1
     call ctc
@@ -351,7 +353,7 @@ label hg_sex_1:
     call nar(">You tighten your grip on Hermione's buttocks and start to fuck her fiercely!")
 
     if not use_cgs:
-        call hg_chibi_transition(action="sex_fast", trans="d5")
+        call her_chibi_scene("sex_fast", trans="d5")
 
     #$ ccg2 = 30
     call her_main("NO! STOP! PLEASE!", "scream", "wide", "base", "stare", trans="hpunch")
@@ -378,7 +380,7 @@ label hg_sex_1:
             g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
 
             if not use_cgs:
-                call hg_chibi_transition(action="sex_cumming_out", trans="d5")
+                call her_chibi_scene("sex_cum_out", trans="d5")
 
             $ ccg3 = "s3"
             call cum_block
@@ -390,7 +392,7 @@ label hg_sex_1:
             call ctc
 
             if not use_cgs:
-                call hg_chibi_transition(action="sex_cumming_out_blink", trans="d5")
+                call her_chibi_scene("sex_cum_out_done", trans="d5")
 
             m "Well, that was rather intense..."
             #$ ccg2 = 28
@@ -406,7 +408,7 @@ label hg_sex_1:
             hide screen ccg
             $ hermione_flip = 1 #Default
             $ face_on_cg = False
-            call hg_chibi_transition(action="sex_creampie_blink", trans="d5")
+            call her_chibi_scene("sex_cum_in_done", trans="d5")
 
             if daytime:
                 call her_main("But I think I will be able to make it to my classes...", "silly", "narrow", "base", "dead", ypos="head")
@@ -428,7 +430,7 @@ label hg_sex_1:
             g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
 
             if not use_cgs:
-                call hg_chibi_transition(action="sex_creampie", trans="d5")
+                call her_chibi_scene("sex_cum_in", trans="d5")
 
             $ ccg3 = "s1"
             call cum_block
@@ -440,7 +442,7 @@ label hg_sex_1:
             call ctc
 
             if not use_cgs:
-                call hg_chibi_transition(action="sex_creampie_blink", trans="d5")
+                call her_chibi_scene("sex_cum_in_done", trans="d5")
 
             call her_main("You came inside of me...", "silly", "narrow", "base", "dead")
             g9 "I sure did."
@@ -450,7 +452,7 @@ label hg_sex_1:
 
             hide screen ccg
             $ face_on_cg = False
-            call hg_chibi_transition(action="sex_cumming_out_blink", trans="d5")
+            call her_chibi_scene("sex_cum_out_done", trans="d5")
 
             call her_main("But...", "silly", "narrow", "base", "dead", ypos="head",flip=False)
             m "What?"
@@ -490,7 +492,7 @@ label hg_sex_2:
         hide screen blkfade
         call her_main("", "open", "worriedCl", "worried", "mid", ypos="head")
     else:
-        call hg_chibi_transition(action="sex", trans="fade")
+        call her_chibi_scene("sex", trans="fade")
     
     call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare", ypos="head")
     hide screen bld1
@@ -557,7 +559,7 @@ label hg_sex_2:
             call nar(">You pick up the pace some more.","start")
 
             if not use_cgs:
-                call hg_chibi_transition(action="sex_fast", trans="d5")
+                call her_chibi_scene("sex_fast", trans="d5")
 
             call nar(">The room fills up with rhythmical sound of a flesh hitting flesh...","end")
             m "You let me molest you... You suck my cock..."
@@ -626,7 +628,7 @@ label hg_sex_2:
             $ ccg3 = "s1"
 
             if not use_cgs:
-                call hg_chibi_transition(action="sex_creampie", trans="d5")
+                call her_chibi_scene("sex_cum_in", trans="d5")
 
             call cum_block
             call ctc
@@ -646,7 +648,7 @@ label hg_sex_2:
             call ctc
 
             if not use_cgs:
-                call hg_chibi_transition(action="sex_creampie_blink", trans="d5")
+                call her_chibi_scene("sex_cum_in_done", trans="d5")
 
             #$ ccg2 = 40
             m "Well, this was pretty great..."
@@ -666,7 +668,7 @@ label hg_sex_2:
 
             $ face_on_cg = False
             hide screen ccg
-            call hg_chibi_transition(action="sex_creampie_blink", trans="d5")
+            call her_chibi_scene("sex_cum_in_done", trans="d5")
 
             call her_main("Maybe you are right, [genie_name], and I shouldn't worry so much.", "angry", "wink", "base", "mid", ypos="head",flip=False)
             call her_main("Can I get my payment now?")
@@ -680,7 +682,7 @@ label hg_sex_2:
             g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
 
             if not use_cgs:
-                call hg_chibi_transition(action="sex_cumming_out", trans="d5")
+                call her_chibi_scene("sex_cum_out", trans="d5")
 
             $ ccg3 = "s3"
 
@@ -696,7 +698,7 @@ label hg_sex_2:
             call ctc
 
             if not use_cgs:
-               call hg_chibi_transition(action="sex_cumming_out_blink", trans="d5")
+               call her_chibi_scene("sex_cum_out_done", trans="d5")
 
             m "Well, that was pretty great..."
             #$ ccg2 = 31
@@ -710,7 +712,7 @@ label hg_sex_2:
 
             $ face_on_cg = False
             hide screen ccg
-            call hg_chibi_transition(action="sex_creampie_blink", trans="d5")
+            call her_chibi_scene("sex_cum_in_done", trans="d5")
 
             call her_main("I think I came several times, [genie_name]...", "soft", "narrow", "annoyed", "up", ypos="head",flip=False)
             call her_main("Can I get my payment now?", "angry", "wink", "base", "mid")
@@ -739,7 +741,7 @@ label hg_sex_luna:
     with kissiris
     call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare", ypos="head") #HERMIONE
 
-    call hg_chibi_transition(action="sex", trans="fade")
+    call her_chibi_scene("sex", trans="fade")
     call ctc
 
     call play_music("playful_tension") # SEX THEME.
@@ -805,7 +807,7 @@ label hg_sex_luna:
     call nar(">You pick up the pace some more.")
     pause.2
 
-    call hg_chibi_transition(action="sex_fast", trans="d5")
+    call her_chibi_scene("sex_fast", trans="d5")
     pause.8
 
     call nar(">The room fills up with rhythmical sound of a flesh hitting flesh...")
@@ -854,7 +856,7 @@ label hg_sex_luna:
     call cum_block
     g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
 
-    call hg_chibi_transition(action="sex_cumming_out", trans="d5")
+    call her_chibi_scene("sex_cum_out", trans="d5")
     call cum_block
     call ctc
 
@@ -865,7 +867,7 @@ label hg_sex_luna:
     with d1
     call ctc
 
-    call hg_chibi_transition(action="sex_cumming_out_blink", trans="d5")
+    call her_chibi_scene("sex_cum_out_done", trans="d5")
 
     call bld
     m "Well, that was pretty great..."

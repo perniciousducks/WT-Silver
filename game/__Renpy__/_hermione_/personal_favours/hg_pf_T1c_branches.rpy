@@ -34,7 +34,7 @@ label hg_pf_admire_breasts_transition:
 
     ">Hermione slowly walks towards your desk."
 
-    call hg_chibi_transition("admire_breasts")
+    call her_chibi_scene("behind_desk_show_tits")
     call ctc
 
     if her_tier <= 2:
@@ -129,7 +129,7 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
     call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
 
     # Start Groping
-    call hg_chibi_transition("grope_breasts")
+    call her_chibi_scene("grope_tits")
     call ctc
 
     call bld
@@ -149,7 +149,7 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
 
     call set_her_action("none","update")
 
-    call hg_chibi_transition(xpos="desk", ypos="base")
+    call her_chibi_scene("reset", "desk", "base")
 
     call her_main("I think I'd better go...", "angry", "worriedCl", "worried", "mid", cheeks="blush", xpos="mid", ypos="base")
     m "Go ahead, [hermione_name]. You are not getting paid if you do..."
@@ -187,7 +187,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
     # Start Jerking Off.
     hide screen bld1
     hide screen blktone
-    call hg_chibi_transition("jerk_off", trans="fade")
+    call her_chibi_scene("grope_tits_jerk_off", trans="fade")
 
     if hg_jerkoff.trigger == False:
         $ achievement.unlock("busted")
@@ -222,7 +222,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
             g4 "Don't you dare to leave me in this state, [hermione_name]!"
 
             call set_her_action("none","update")
-            call hg_chibi_transition("stand","desk","base", flip=False, trans="fade")
+            call her_chibi_scene("reset","desk","base", trans="fade")
 
             call her_main("I am not setting a foot into your office ever again, [genie_name]!", "angry", "squint", "base", "mid", cheeks="blush", xpos="mid", ypos="base")
 
@@ -250,7 +250,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
 
             call her_main("Ew! [genie_name]!", "angry", "squint", "base", "mid", cheeks="blush")
 
-            call hg_chibi_transition("stand","desk","base", flip=False, trans="fade")
+            call her_chibi_scene("reset","desk","base", trans="fade")
 
             call her_main("I'm leaving!", "angry", "squint", "base", "mid", cheeks="blush")
 
@@ -322,7 +322,7 @@ label hg_pf_admire_breasts_T3_touch:
     call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
 
     # Start Groping
-    call hg_chibi_transition("grope_breasts")
+    call her_chibi_scene("grope_tits")
     call ctc
 
     call bld
@@ -348,7 +348,7 @@ label hg_pf_admire_breasts_T3_touch:
     m "It was hard to resist..."
 
     # End Groping
-    call hg_chibi_transition(xpos="desk", ypos="base")
+    call her_chibi_scene("reset", "desk", "base")
     pause.8
 
     call her_main(".............", "soft", "base", "base", "R", cheeks="blush")
@@ -374,7 +374,7 @@ label hg_pf_admire_breasts_T3_masturbate:
     #Start Jerking Off.
     hide screen bld1
     hide screen blktone
-    call hg_chibi_transition("jerk_off", trans="fade")
+    call her_chibi_scene("grope_tits_jerk_off", trans="fade")
     call ctc
 
     call her_main("[genie_name], I didn't agree to this...", "shock", "worriedCl", "worried", "mid")
@@ -423,17 +423,15 @@ label hg_pf_admire_breasts_T3_masturbate:
             hide screen bld1
             with d1
 
-            $ no_blinking = True #When True - blinking animation is not displayed.
-
-            call gen_chibi("cum_close")
+            call her_chibi_scene("grope_tits_cum")
             with d5
             call ctc
 
             $ sperm_on_tits = True
             call her_main("[genie_name], no, you promised!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
             g4 "Oh, this is great, yes..."
-            $ no_blinking = False #When True - blinking animation is not displayed.
-            call gen_chibi("cum_close_done")
+
+            call her_chibi_scene("grope_tits_cum_done")
             with d3
 
             call her_main("[genie_name], how could you...?", "angry", "squint", "base", "mid", cheeks="blush")
@@ -459,12 +457,11 @@ label hg_pf_admire_breasts_T3_masturbate:
 
             call set_her_action("none","update")
             $ sperm_on_tits = False
-
             call her_chibi("stand","desk","base")
             call gen_chibi("sit_behind_desk")
-
             hide screen blkfade
             with d5
+
             call her_main("", "angry", "base", "angry", "mid")
             call ctc
 
@@ -533,7 +530,6 @@ label hg_pf_admire_breasts_T4_promise: # Call label
     #End Admiring
     hide screen hermione_main
     hide screen chair_left
-    hide screen genie_and_tits_01
     hide screen blktone
     hide screen bld1
 
@@ -551,7 +547,7 @@ label hg_pf_admire_breasts_T4_touch: # Call label
     call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
 
     # Start Groping
-    call hg_chibi_transition("grope_breasts")
+    call her_chibi_scene("grope_tits")
     call ctc
 
     call bld
@@ -630,7 +626,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
     # Start Jerking off.
     hide screen bld1
     hide screen blktone
-    call hg_chibi_transition("jerk_off", trans="fade")
+    call her_chibi_scene("grope_tits_jerk_off", trans="fade")
     call ctc
 
     if her_whoring < 17:
@@ -695,18 +691,16 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
 
             g4 "Argh! YES!"
 
-            $ no_blinking = True #When True - blinking animation is not displayed.
             $ sperm_on_tits = True
 
-            call gen_chibi("cum_close")
+            call her_chibi_scene("grope_tits_cum")
             with d5
             call ctc
 
             call bld
             call her_main("[genie_name], I didn't mean that you can release your... semen on me, [genie_name]...", "angry", "worriedCl", "worried", "mid", cheeks="blush",emote="05")
             g4 "Oh, this is great, yes..."
-            $ no_blinking = False #When True - blinking animation is not displayed.
-            call gen_chibi("cum_close_done")
+            call her_chibi_scene("grope_tits_cum_done")
             with d5
 
             call her_main("Well, what's done is done I suppose...", "base", "base", "base", "R", cheeks="blush")
@@ -753,10 +747,9 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
 
             g4 "Argh! YES!"
 
-            $ no_blinking = True #When True - blinking animation is not displayed.
             $ sperm_on_tits = True
 
-            call gen_chibi("cum_close")
+            call her_chibi_scene("grope_tits_cum")
             call hide_blkfade
             call ctc
 
@@ -764,8 +757,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             call her_main("[genie_name], you promised...", "angry", "worriedCl", "worried", "mid", cheeks="blush",emote="05")
             g4 "Oh, this is great, yes..."
 
-            $ no_blinking = False #When True - blinking animation is not displayed.
-            call gen_chibi("cum_close_done")
+            call her_chibi_scene("grope_tits_cum_done")
             with d3
 
             call her_main("Well, what's done is done I suppose...", "angry", "worriedCl", "worried", "mid", cheeks="blush")

@@ -1,5 +1,5 @@
 
-# Transforms used by the chibi class
+# Transforms used by the chibi class or chibi images
 
 transform chibi_base(position, flip):
     pos position
@@ -46,3 +46,13 @@ transform chibi_wand(position, flip):
     xoffset -72 # Note: Offset seems to be applied after zoom
     xzoom (-1 if flip else 1)
     zoom (1.0/scaleratio)
+
+transform random_blink(close_image, open_image=Null()):
+    close_image
+    pause .1
+    open_image
+    choice:
+        pause 3
+    choice:
+        pause 1
+    repeat

@@ -145,75 +145,75 @@ label hg_pp_cumaddict_intro:
     pause 1
     hide screen hermione_main
     show screen chair_left
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     hide screen blkfade
     with d5
 
     show screen bld1
-    call hg_chibi_transition("bj")
+    call her_chibi_scene("bj")
     call nar(">As soon as you remove your cock from your robe Hermione is on top of you.")
     call her_main("", "disgust", "narrow", "base", "mid_soft")
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     her "Do you have any idea how hard it was sitting through classes today?"
     hide screen hermione_main
-    call hg_chibi_transition("bj")
+    call her_chibi_scene("bj")
     her "*Slurp!* *Slurp!* *Slurp!*"    ###start sucking etc....
     call her_main("", "annoyed", "narrow", "angry", "R")
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     her "Being this aroused."
     hide screen hermione_main
-    call hg_chibi_transition("bj")
+    call her_chibi_scene("bj")
     her "*Slurp!* *Gobble!* *Slurp!*"
     call her_main("", "grin", "base", "base", "R")
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     her "With no way to relieve myself."
     her "I tried everything."
     hide screen hermione_main
-    call hg_chibi_transition("bj")
+    call her_chibi_scene("bj")
     her "*Gobble!* *Slurp!* *Slurp!*"
     call her_main("", "smile", "narrow", "base", "mid_soft")
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     her "I even masturbated in the girls bathroom."
     hide screen hermione_main
-    call hg_chibi_transition("bj")
+    call her_chibi_scene("bj")
     her "*Gobble!!* *Gltch!!* *Gobble!!!*"
     call her_main("", "annoyed", "narrow", "annoyed", "mid")
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     her "But nothing worked."
     hide screen hermione_main
-    call hg_chibi_transition("bj")
+    call her_chibi_scene("bj")
     her "*Slurp!* *Gulp!* *Slurp!*"
     call her_main("", "base", "narrow", "base", "up")
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     her "All I could think about was the taste of your filthy cum."
     hide screen hermione_main
-    call hg_chibi_transition("bj")
+    call her_chibi_scene("bj")
     her "*Slurp!* *Gulp!* *Gulp!*"
     m "My my, someone is becoming quite the slut, wouldn't you say [hermione_name]?"
     her "*Slurp!* *Gulp!* *Slurp!*"
     call her_main("", "open_tongue", "narrow", "base", "mid_soft")
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     her "You know why this is happening to me."
     hide screen hermione_main
-    call hg_chibi_transition("bj")
+    call her_chibi_scene("bj")
     her "*Slurp!* *Slurp!* *Gulp!*"
     call her_main("", "smile", "narrow", "base", "mid_soft")
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     her "Whatever was in that delicious potion you made me drink this morning."
     hide screen hermione_main
-    call hg_chibi_transition("bj")
+    call her_chibi_scene("bj")
     m "Delicious? I thought you said it was just a bottle full of my cum?"
     m "Are you sure that you're just not a little slut who's become addicted to her Headmaster's semen?"
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     call her_main("I'm sure there was something else in there.", "angry", "wink", "base", "mid")
     hide screen hermione_main
-    call hg_chibi_transition("bj")
+    call her_chibi_scene("bj")
     m "Whatever you say [hermione_name]. Now if you want your reward you better get back to work."
     call her_main("", "base", "squint", "base", "mid")
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     her "..."
     hide screen hermione_main
-    call hg_chibi_transition("bj")
+    call her_chibi_scene("bj")
     her "*Slurp!* *Slurp!* *Gulp!*"
     call nar(">She is incredibly enthusiastic. You can feel your load building.")
 
@@ -230,7 +230,7 @@ label hg_pp_cumaddict_intro:
             m "Better start swallowing slut!"
             call nar(">You start pumping your thick load directly into her stomach.")
             call cum_block
-            call hg_chibi_transition("bj_cumming_in")
+            call her_chibi_scene("bj_cum_in")
             $ aftersperm = True
             call nar(">Hermione's eyes widen and tears form as she senses your semen enter her.")
             call cum_block
@@ -242,7 +242,7 @@ label hg_pp_cumaddict_intro:
             m "I bet you're loving this, being used as nothing more than a toy."
             call nar(">She says nothing but quickens the pace of her masturbation.","start")
             call nar(">You finally pull out of her eager mouth with a satisfactory pop.","end")
-            call hg_chibi_transition("bj_pause")
+            call her_chibi_scene("bj_pause")
             call her_main("It won't stop!", "shock", "worriedCl", "worried", "mid")
             hide screen hermione_main
             m "What won't?"
@@ -256,7 +256,7 @@ label hg_pp_cumaddict_intro:
             g4 "That's done it slut! Start swallowing!"
             call nar(">You explode into her mouth.")
             call cum_block
-            call hg_chibi_transition("bj_cumming_in")
+            call her_chibi_scene("bj_cum_in")
             $ aftersperm = True
             call her_main("mmmmmmm... *gulp* *gulp*", "full_cum", "narrow", "base", "dead")
             hide screen hermione_main
@@ -269,7 +269,7 @@ label hg_pp_cumaddict_intro:
             call her_main("*gulp* *gulp* *gulp* ", "full_cum", "narrow", "base", "dead")
             hide screen hermione_main
             call nar(">You finally remove your shaft from her hungry mouth.")
-            call hg_chibi_transition("bj_pause")
+            call her_chibi_scene("bj_pause")
             m "Very good girl. Almost entirely clean... except for a bit of cum on the tip."
             m "I can't dirty my robes now can I? Better wipe this off."
             call nar(">You wipe yourself clean on the tip of her nose.")
@@ -286,13 +286,13 @@ label hg_pp_cumaddict_intro:
             m "Get ready, girl! here it comes!"
             call nar(">Hermione increases her efforts and starts focusing on the head of your penis.")
             m "Not so quick [hermione_name]."
-            call hg_chibi_transition("bj_pause")
+            call her_chibi_scene("bj_pause")
             call nar(">You quickly pull your penis out from her mouth.")
             call her_main("What are you doing [genie_name]?", "shock", "wide", "base", "stare")
             hide screen hermione_main
             m "Giving you your well earned reward."
             call cum_block
-            call hg_chibi_transition("bj_cumming_out")
+            call her_chibi_scene("bj_cum_out")
             $ uni_sperm = True
             call nar(">You start pumping your cock quickly and explode all over the young witch's face")
             m "Take it you filthy cum slut!"
@@ -322,7 +322,7 @@ label hg_pp_cumaddict_intro:
             call her_main("mmmmmmmm...", "open_wide_tongue", "base", "base", "mid")
             hide screen hermione_main
             call nar(">She attempts to bury her face into your crotch but you put your palm on her forehead and push her away.")
-            call hg_chibi_transition("bj_pause")
+            call her_chibi_scene("bj_pause")
             call her_main("[genie_name], what are you doing?", "angry", "wide", "base", "stare")
             hide screen hermione_main
             m "giving you your reward!"

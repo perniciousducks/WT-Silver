@@ -518,7 +518,6 @@ label ball_quest_E4:
     hide screen hermione_main
     hide screen bld1
     with d3
-    hide screen no_groping_02
     call gen_chibi("sit_behind_desk")
     with d1
 

@@ -161,7 +161,7 @@ init -1 python:
     def color_picker_update_hsva():
         scope = renpy.get_screen("color_picker").scope
         (r, g, b, a) = scope["rgba"]
-        (h, s, v) = colorsys.rgb_to_hsv(r / 255.0, g / 255.0, b / 255.0) # TODO: Try replacing colorsys with renpy Color class
+        (h, s, v) = colorsys.rgb_to_hsv(r / 255.0, g / 255.0, b / 255.0)
         scope["hue"] = 1 - h
         scope["saturation"] = s
         scope["value"] = v

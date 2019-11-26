@@ -103,7 +103,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
                 call blkfade
                 show screen chair_left
-                call hg_chibi_transition("sex_slow")
+                call her_chibi_scene("sex_slow")
 
                 if use_cgs:
                     $ face_on_cg = True
@@ -144,7 +144,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 play bg_sounds "sounds/CreakingShip.mp3"
 
                 show screen chair_left
-                call hg_chibi_transition("bj")
+                call her_chibi_scene("bj")
 
                 hide screen blktone
                 hide screen bld1
@@ -174,7 +174,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main(".....................", "angry", "squint", "base", "mid",cheeks="blush")
 
                 show screen chair_left
-                call hg_chibi_transition("sex_slow")
+                call her_chibi_scene("sex_slow")
 
                 if use_cgs:
                     $ face_on_cg = True
@@ -211,7 +211,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 hide screen hermione_main
 
                 show screen chair_left
-                call hg_chibi_transition("bj")
+                call her_chibi_scene("bj")
 
                 hide screen blktone
                 hide screen bld1
@@ -227,7 +227,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call blkfade
 
                 show screen chair_left
-                call hg_chibi_transition("sex_slow")
+                call her_chibi_scene("sex_slow")
 
                 if use_cgs:
                     $ face_on_cg = True
@@ -282,7 +282,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call cum_block
                 g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
 
-                call hg_chibi_transition("sex_creampie")
+                call her_chibi_scene("sex_cum_in")
                 hide screen bld1
                 with d3
                 $ renpy.play('sounds/cannon.mp3')
@@ -324,7 +324,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 with d3
                 call ctc
 
-                call hg_chibi_transition("sex_creampie_blink")
+                call her_chibi_scene("sex_cum_in_done")
 
                 call her_main("*Sob!*...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 m "Whew!... I reckon me gunpowder needs restocking in the next harbour.' it be."
@@ -372,7 +372,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call cum_block
                 $ renpy.play('sounds/cannon.mp3')
                 with hpunch
-                call hg_chibi_transition("sex_cumming_out")
+                call her_chibi_scene("sex_cum_out")
                 call ctc
 
                 $ uni_sperm = True
@@ -391,7 +391,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call blkfade
                 $ face_on_cg = False
                 hide screen hermione_main
-                call hg_chibi_transition("sex_cumming_out_blink")
+                call her_chibi_scene("sex_cum_out_done")
                 m "Well, I'm done... You can get off my ship now."
                 call her_main("Yes, captain...", "silly", "base", "worried", "mid", cheeks="blush",tears="soft",ypos="head")
                 m "You feeling alright?"
@@ -447,7 +447,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         g4 "Agh! Ye wench! Ye always get me wit' yer words!"
 
         show screen chair_left
-        call hg_chibi_transition("sex")
+        call her_chibi_scene("sex")
 
         if use_cgs:
             $ face_on_cg = True
@@ -556,7 +556,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 with d3
                 
                 $ renpy.play('sounds/cannon.mp3')
-                call hg_chibi_transition("sex_creampie")
+                call her_chibi_scene("sex_cum_in")
                 call cum_block
                 with hpunch
                 call ctc
@@ -590,7 +590,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 with d3
 
                 $ renpy.play('sounds/cannon.mp3')
-                call hg_chibi_transition("sex_cumming_out")
+                call her_chibi_scene("sex_cum_out")
                 call cum_block
                 with hpunch
                 call ctc

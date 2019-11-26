@@ -91,12 +91,12 @@ label an_odd_circumstance():
     call gen_chibi("hide")
     hide screen desk
     call her_chibi("hide")
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     her "I hope this should suffice... I couldn't stand the thought of discussing this any further..."
     her "I have a reputation to uphold after all..."
     nar "After regaining my focus I looked down and found the girl kneeling in front of me, her hand wrapped around my shaft."
     nar "Even if I were able to respond I had but a seconds notice before her lips had wrapped themselves around my cock."
-    call hg_chibi_transition("bj")
+    call her_chibi_scene("bj")
     her "*Slurp!* *Gulp!* *Slurp!*"
     nar "Her head, now bobbing back and forwards as if her life depended on it..."
     nar "I felt myself growing harder in her mouth as her lips pressed against my skin..."
@@ -112,12 +112,12 @@ label an_odd_circumstance():
     hide screen blkfade
     with d3
     nar "Being unable to make any sort of comment, the girl suddenly pulled her mouth away..."
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     her "*G-g-gah...*"
     nar "A string of saliva still attached between her mouth and my penis slowly found itself moving down and then disconnected, resting across the front of her chest."
     nar "Now smiling, the girl started massaging my cock with a mixture of pre-cum and her saliva..."
     nar "Feeling more relaxed about the whole situation I couldn't help but forget about any consequences and began to just enjoy myself."
-    call hg_chibi_transition("bj")
+    call her_chibi_scene("bj")
     nar "Without warning, her lips wrapped themselves back around my now throbbing cock..."
     her "*Slurp!* *Gulp!* *Slurp!*"
     nar "Her head yet again found itself further and further down my shaft, easily taking the whole thing this time, as her tongue slowly moved across the bottom."
@@ -127,7 +127,7 @@ label an_odd_circumstance():
     nar "Suddenly she looked up into my eyes as she started to move her tongue, massaging the underside of my cock..."
     her "*Gobble!* *Gltch!* *Slurp!*"
     nar "My eyes closed and without warning I felt a sudden rush of ecstasy come over me, after only being able to let out a inaudible groan my pelvic muscles tightened as I ejaculated down her throat."
-    call hg_chibi_transition("bj_cumming_in")
+    call her_chibi_scene("bj_cum_in")
     with hpunch
     nar "I opened my eyes as hers locked with mine from the sudden overwhelming amount of semen hitting the back of her throat."
     call play_sound("gulp")
@@ -136,9 +136,9 @@ label an_odd_circumstance():
     her "*Gulp!*"
     nar "Her eyes watered, and she looked as if she was about to pass out, but she kept her mouth wrapped around my shaft as she tried to swallow it all, a couple of bubbles now forming around her nose."
     her "*Aahh!*"
-    call hg_chibi_transition("bj_cumming_out")
+    call her_chibi_scene("bj_cum_out")
     nar "She then pulled away, satisfied with her deed, moving back just as another spurt came out from my seemingly bottomless balls, coating her surprised face..."
-    call hg_chibi_transition("bj_cumming_out_blink")
+    call her_chibi_scene("bj_cum_out_done")
     nar "As the residue started flowing down her cheeks, she wiped some off with her finger and let it slide across the fingertip into her open mouth..."
     her "Looks like I've made a mess again..."
     show screen blkfade

@@ -254,7 +254,7 @@ label hg_pf_handjob_1:
     call her_main(".......................", "disgust", "worriedCl", "worried", "mid", ypos="head")
     pause.1
 
-    call hg_chibi_transition("hj_pause", trans="d9")
+    call her_chibi_scene("hj_pause", trans="d9")
     pause.8
 
     call nar(">Hermione puts her slender hands on your cock...")
@@ -263,7 +263,7 @@ label hg_pf_handjob_1:
     m "Good. Now stroke it."
     call her_main("Right...", "angry", "worriedCl", "worried", "mid", emote="05")
 
-    call hg_chibi_transition("hj", trans="d5")
+    call her_chibi_scene("hj", trans="d5")
     call ctc
 
     call play_music("playful_tension") # SEX THEME.
@@ -394,7 +394,7 @@ label hg_pf_handjob_1:
             call her_main("Well, I might as well, I suppose...")
 
             $ renpy.play('sounds/kiss.mp3')
-            call hg_chibi_transition("hj_kiss", trans="kissiris")
+            call her_chibi_scene("hj_kiss", trans="kissiris")
             pause 1
 
             if hg_kiss.trigger == False:
@@ -405,7 +405,7 @@ label hg_pf_handjob_1:
 
             call nar(">Hermione gives the tip of your engorged cock a tender kiss.")
 
-            call hg_chibi_transition("hj", trans="d5")
+            call her_chibi_scene("hj", trans="d5")
             pause.5
 
             call her_main("Like this?", "open", "narrow", "worried", "down")
@@ -417,7 +417,7 @@ label hg_pf_handjob_1:
             call her_main("Well, alright...", "open", "base", "base", "mid")
 
             $ renpy.play('sounds/kiss.mp3')
-            call hg_chibi_transition("hj_kiss", trans="kissiris")
+            call her_chibi_scene("hj_kiss", trans="kissiris")
             pause 3
 
             call nar(">Hermione gives your cock another kiss...")
@@ -426,7 +426,7 @@ label hg_pf_handjob_1:
             call nar(">This time she lingers a moment longer...")
             pause.5
 
-            call hg_chibi_transition("hj", trans="d5")
+            call her_chibi_scene("hj", trans="d5")
             pause.5
 
             m "Good... Now do it again and just stay there for a while."
@@ -445,7 +445,7 @@ label hg_pf_handjob_1:
             call nar(">She touches the tip of your cock with her lips and keeps them there...","end")
 
             $ renpy.play('sounds/kiss.mp3')
-            call hg_chibi_transition("hj_kiss", trans="kissiris")
+            call her_chibi_scene("hj_kiss", trans="kissiris")
             call ctc
 
             call bld
@@ -459,7 +459,7 @@ label hg_pf_handjob_1:
             call nar(">Hermione wiggles her tongue a little....")
             m "Yes... Good..."
 
-            call hg_chibi_transition("hj", trans="d5")
+            call her_chibi_scene("hj", trans="d5")
             pause.8
 
             call her_main("So, did it work? Are you ready to... finish, [genie_name]?", "open", "narrow", "worried", "down")
@@ -480,11 +480,11 @@ label hg_pf_handjob_1:
             call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
 
             stop music fadeout 1.0
-            call hg_chibi_transition("hj_cumming_in_pause", trans="d5")
+            call her_chibi_scene("hj_cum_in_done", trans="d5")
             pause.5
 
             call cum_block
-            call hg_chibi_transition("hj_cumming_in", trans="d5")
+            call her_chibi_scene("hj_cum_in", trans="d5")
             pause.8
 
             show screen bld1
@@ -493,7 +493,7 @@ label hg_pf_handjob_1:
             call nar(">The sensation of her warm skin against your cock overwhelms you and you begin to ejaculate like a mad-man.")
             call ctc
 
-            call hg_chibi_transition("hj_cumming_in_pause", trans="d5")
+            call her_chibi_scene("hj_cum_in_done", trans="d5")
 
             $ aftersperm = True
             call her_main(".......................", "angry", "wide", "base", "stare", xpos="right", ypos="base")
@@ -544,7 +544,7 @@ label hg_pf_handjob_1:
             g4 "Take this!"
 
             call cum_block
-            call hg_chibi_transition("hj_cumming_on", trans="d9")
+            call her_chibi_scene("hj_cum_on", trans="d9")
             pause.8
 
             call cum_block
@@ -552,7 +552,7 @@ label hg_pf_handjob_1:
             g4 "{size=+5}ARGH! YES!!!{/size}"
             call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
 
-            call hg_chibi_transition("hj_cumming_on_pause", trans="d5")
+            call her_chibi_scene("hj_cum_on_done", trans="d5")
             call ctc
 
             $ u_sperm = "characters/hermione/face/auto_06.png"
@@ -609,7 +609,7 @@ label hg_pf_handjob_1:
 
 label hg_pf_handjob_2:
     stop music fadeout 3.0
-    call hg_chibi_transition("hj", trans="fade")
+    call her_chibi_scene("hj", trans="fade")
     pause.8
 
     call her_main("Do you like it when I do it like this, [genie_name]?", "grin", "base", "base", "R", ypos="head")
@@ -748,7 +748,7 @@ label hg_pf_handjob_2:
 
 
 label hg_pf_handjob_2_continue:
-    call hg_chibi_transition("hj", trans="d5")
+    call her_chibi_scene("hj", trans="d5")
     call ctc
 
     call bld
@@ -780,7 +780,7 @@ label hg_pf_handjob_2_continue:
             call her_main("He throws me on my bed!")
             call her_main("I cry \"No, daddy, please, I'm still a virgin!\"", "scream", "worriedCl", "worried", "mid")
 
-            call hg_chibi_transition("hj_pause", trans="d5")
+            call her_chibi_scene("hj_pause", trans="d5")
             pause.5
 
             call her_main("But He doesn't listen! He rips my panties off!", "grin", "narrow", "base", "dead")
@@ -791,7 +791,7 @@ label hg_pf_handjob_2_continue:
             call her_main("Oh, I am sorry, [genie_name].", "grin", "worriedCl", "worried", "mid", emote="05")
             call her_main("I got lost in thought...")
 
-            call hg_chibi_transition("hj", trans="d5")
+            call her_chibi_scene("hj", trans="d5")
             pause.5
 
             call her_main("But everything I just said is not true of course!", "open", "base", "base", "mid")
@@ -861,7 +861,7 @@ label hg_pf_handjob_2_continue:
 
 
 label hg_pf_handjob_2_cumming:
-    call hg_chibi_transition("hj", trans="d5")
+    call her_chibi_scene("hj", trans="d5")
     pause.8
 
     call bld
@@ -880,7 +880,7 @@ label hg_pf_handjob_2_cumming:
         m "..."
         "\"(Yes, I must warn her.)\"":
             g4 "I think I'm about to--"
-            call hg_chibi_transition("hj_cumming_in_pause", trans="d5")
+            call her_chibi_scene("hj_cum_in_done", trans="d5")
             pause.8
 
             call nar(">Hermione swiftly pulls her shirt up...","start")
@@ -888,7 +888,7 @@ label hg_pf_handjob_2_cumming:
             call nar(">You can feel her incredibly soft tits rubbing against the tip of your cock...","end")
 
             call cum_block
-            call hg_chibi_transition("hj_cumming_in", trans="d5")
+            call her_chibi_scene("hj_cum_in", trans="d5")
             pause.8
 
             call bld
@@ -911,7 +911,7 @@ label hg_pf_handjob_2_cumming:
             call her_main("...[genie_name].")
             g4 "Argh!!!"
             m "............"
-            call hg_chibi_transition("hj_cumming_in_pause", trans="d5")
+            call her_chibi_scene("hj_cum_in_done", trans="d5")
             pause.8
 
             call bld
@@ -959,7 +959,7 @@ label hg_pf_handjob_2_cumming:
             g4 "Here! Take this, whore!"
 
             call cum_block
-            call hg_chibi_transition("hj_cumming_on", trans="d5")
+            call her_chibi_scene("hj_cum_on", trans="d5")
             pause.8
             g4 "ARGH!"
 
@@ -977,7 +977,7 @@ label hg_pf_handjob_2_cumming:
             $ aftersperm = True
             call her_main(".......................", "angry", "wide", "base", "stare")
 
-            call hg_chibi_transition("hj_cumming_on_pause", trans="d5")
+            call her_chibi_scene("hj_cum_on_done", trans="d5")
             pause.8
 
             call bld
@@ -1018,7 +1018,7 @@ label hg_pf_handjob_2_cumming:
             g4 "Open your mouth, or I'll have to cover your clothes!"
             call her_main(".....................", "upset", "worriedCl", "worried", "mid")
 
-            call hg_chibi_transition("hj_kiss", trans="kissiris")
+            call her_chibi_scene("hj_kiss", trans="kissiris")
             pause.8
 
             call nar(">Hermione swiftly puts the tip of your cock on her lips, as if to give it a kiss...","start")

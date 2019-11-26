@@ -550,5 +550,7 @@ label h_equip_temp_outfit(outfit=None):
     return
 label h_unequip_temp_outfit(outfit=None):
     return
+default hermione_action = None
 label set_her_action(action=None, update=None):
+    $ hermione_action = action
     return

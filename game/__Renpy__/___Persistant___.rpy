@@ -17,7 +17,6 @@ default rum_times      = 0 # Counts how many times have you rummaged the cupboar
 default current_payout = 0
 
 # Hermione main screen flags
-default no_blinking   = False # When True - blinking animation is not displayed.
 default sperm_on_tits = False # Sperm on tits when Hermione pulls her shirt up.
 default aftersperm    = False # Shows cum stains on Hermione's uniform.
 default uni_sperm     = False # Triggers universal sperm to show on hermione_main screen.

@@ -458,7 +458,7 @@ label hg_pf_strip_T4_fingering:
     ">Hermione slowly climbs down from the desk and stands in front of you."
     pause.5
 
-    call hg_chibi_transition("admire_breasts") #TODO Replace with naked chibi
+    call her_chibi_scene("behind_desk_show_tits") #TODO Replace with naked chibi
 
     hide screen blktone
     hide screen bld1
@@ -473,7 +473,7 @@ label hg_pf_strip_T4_fingering:
         m "..."
         "-Grab her tits-":
             call nar(">You reach forward and grab a hold of her supple breasts.")
-            call hg_chibi_transition("grope_breasts")
+            call her_chibi_scene("grope_tits")
             call set_her_action("fingering")
 
             call her_main("[genie_name]!", "shock", "worriedCl", "worried", "mid")
@@ -505,13 +505,13 @@ label hg_pf_strip_T4_fingering:
             call her_main("Please finger me...", "open", "narrow", "base", "up", cheeks="blush")
             m "Once more, a little louder this time."
             call her_main("Ah...{image=textheart} {size=+5}please finger my cunt!{/size}", "grin", "narrow", "base", "up", cheeks="blush")
-            show screen groping_06
+            call her_chibi_scene("grope_ass_front")
             call nar(">You swiftly plunge two fingers into her dripping pussy.")
             call set_her_action("lift_breasts_naked")
             call her_main("{image=textheart}{image=textheart}{size=+5}!!!{/size}{image=textheart}{image=textheart}", "silly", "narrow", "annoyed", "up")
 
         "-Finger her-":
-            show screen groping_06
+            call her_chibi_scene("grope_ass_front")
             call nar(">You run your hands up and down Hermione's legs...")
             call her_main("!!!", "open", "worriedCl", "worried", "mid")
             call nar(">And slowly move your hands towards her pussy...")
@@ -578,7 +578,7 @@ label hg_pf_strip_T4_fingering:
     call her_main("........................", "silly", "narrow", "annoyed", "up")
 
     call nar(">You release her...")
-    call hg_chibi_transition("admire_breasts")
+    call her_chibi_scene("behind_desk_show_tits")
     m "This will do for now [hermione_name]."
 
     jump end_hg_pf_strip

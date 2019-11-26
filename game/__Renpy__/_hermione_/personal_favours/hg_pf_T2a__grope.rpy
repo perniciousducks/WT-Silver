@@ -143,7 +143,7 @@ label hg_pf_grope_T1_intro_E1:
     call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
-    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
+    call her_chibi_scene("behind_desk_front", trans="fade")
     pause.5
 
     call her_main("[genie_name].....?", "annoyed", "base", "worried", "R", ypos="head")
@@ -168,7 +168,7 @@ label hg_pf_grope_T1_E1:
     m "Come closer [hermione_name]... Hop around my desk..."
     call her_main("...............", "annoyed", "base", "angry", "mid")
 
-    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
+    call her_chibi_scene("behind_desk_front", trans="fade")
 
     call her_main("[genie_name].....?", "annoyed", "narrow", "angry", "R", ypos="head")
     m "..."
@@ -225,7 +225,7 @@ label hg_pf_grope_T2_intro_E1:
     call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
-    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
+    call her_chibi_scene("behind_desk_front", trans="fade")
 
     call her_main("[genie_name].....?", "annoyed", "narrow", "angry", "R", ypos="head")
     m "..."
@@ -252,7 +252,7 @@ label hg_pf_grope_T2_E1:
     g9 "Get squeezed!"
     call her_main("....................................", "annoyed", "narrow", "angry", "R")
 
-    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
+    call her_chibi_scene("behind_desk_front", trans="fade")
 
     call her_main("[genie_name].....?", "annoyed", "narrow", "angry", "R", ypos="head")
     m "..."
@@ -289,7 +289,7 @@ label hg_pf_grope_T3_intro_E1:
     call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
-    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
+    call her_chibi_scene("behind_desk_front", trans="fade")
 
     call her_main("[genie_name].....?", "base", "narrow", "worried", "down", ypos="head")
     m "..."
@@ -312,7 +312,7 @@ label hg_pf_grope_T3_intro_E2:
     g9 "I feel like playing with you a little."
     call her_main("Yes, Sir...", "soft", "base", "base", "R")
 
-    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
+    call her_chibi_scene("behind_desk_front", trans="fade")
 
     call her_main("[genie_name].....?", "soft", "narrow", "worried", "down", ypos="head")
     m "Yes?"
@@ -338,7 +338,7 @@ label hg_pf_grope_T3_E2:
     g9 "[hermione_name]. Come here and let me grope you!"
     call her_main("Of course, [genie_name]...", "base", "narrow", "base", "mid_soft")
 
-    call hg_chibi_transition("stand_behind_desk", flip=False, trans="fade")
+    call her_chibi_scene("behind_desk_front", trans="fade")
 
     call her_main("Are you going to grope my breasts today, Sir?", "soft", "narrow", "base", "R_soft", ypos="head")
     call her_main("Or my bum?....", "soft", "narrow", "base", "mid_soft")

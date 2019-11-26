@@ -91,12 +91,9 @@ label potion_scene_2_1_1:
     call nar(">Hermione walks over to behind your desk, her breasts swaying rhythmically as she moves.")
     pause .8
 
-    #TODO Change chibi/sprite to match writing (shirt on) or change the writing (shirt off)
     hide screen hermione_main
-    call set_her_action("lift_top")
-    call her_chibi("hide")
-    call gen_chibi("hide")
-    show screen groping_naked_tits
+    # call set_her_action("lift_top")
+    call her_chibi_scene("grope_tits")
     call hide_blkfade
 
     call her_main("Well...", "upset", "wink", "base", "mid",xpos="mid",ypos="base")
@@ -119,16 +116,14 @@ label potion_scene_2_1_1:
     call her_main("You said that they wouldn't get any bigger! Now how would you explain this?!", "scream", "base", "angry", "mid",emote="01")
     m "Don't worry about that [hermione_name], worry about earning your 40 points."
     call her_main("Just hurry up.", "annoyed", "narrow", "annoyed", "mid")
-    menu: #Will add titfuck here
-        #"-Suck her nipples-":
-            #"asd"
-        #"-Titfuck her-":
-        #    m "Well come here then!"
-        #    hide screen hermione_main
-        #    call blkfade
-
-        #    hide screen groping_naked_tits
-        #   jump start_titfuck
+    menu: # TODO Add titfuck writing here
+        # "-Suck her nipples-":
+        #     pass
+        # "-Titfuck her-":
+        #     m "Well come here then!"
+        #     hide screen hermione_main
+        #     call blkfade
+        #     jump start_titfuck
         "-Play with her nipples-":
             pass
 
@@ -161,7 +156,6 @@ label potion_scene_2_1_1:
     call blkfade
     pause 1
     hide screen hermione_main
-    hide screen groping_naked_tits
     hide screen blktone
     call her_chibi("stand","desk","base")
     call gen_chibi("sit_behind_desk")
@@ -257,8 +251,7 @@ label potion_scene_2_2:
     call nar(">Hermione hops over to your desk, her ass bouncing as she moves, and presents herself to you.")
     pause 1
     
-    call gen_chibi("hide")
-    show screen no_groping_02
+    call her_chibi_scene("behind_desk_back")
     call hide_blkfade
     call ctc
 
@@ -267,9 +260,10 @@ label potion_scene_2_2:
     call her_main("Please [genie_name]... please take advantage of me...", "open", "worriedCl", "worried", "mid",xpos="mid",ypos="base")
     m "As you command."
     call nar(">You take her engorged buttocks in your hands. Each one is now much larger than before.")
-    hide screen no_groping_02
-    show screen groping_02
+
+    call her_chibi_scene("grope_ass_back")
     with d3
+
     m "Well this potion certainly is effective."
     call nar(">You start firmly stroking her ass cheeks. Pulling them apart to reveal her asshole and then squishing them together.","start")
     call nar(">Seeing her tight asshole gives you an idea.","end")
@@ -332,8 +326,6 @@ label potion_scene_2_2:
             pause 1
 
             hide screen bld1
-            hide screen groping_01
-            hide screen groping_02
             call her_chibi("stand","desk","base")
             call gen_chibi("sit_behind_desk")
 
@@ -353,9 +345,7 @@ label potion_scene_2_2:
         "-Hot dog her-" if her_whoring >= 17:
             m "Bend over [hermione_name]."
             call nar(">Before she even has a chance to react you push her forward over your desk.")
-            show screen chair_left
-            hide screen groping_02
-            show screen ch_hotdog
+            call her_chibi_scene("sex_hotdog")
             with d3
             call her_main("!!!", "angry", "wide", "base", "stare")
             call her_main("What are you going to do [genie_name]?", "angry", "wink", "base", "mid")
@@ -392,12 +382,9 @@ label potion_scene_2_2:
             hide screen hermione_main
             m "That's it girl, here I come!"
             call nar(">With one final thrust you cum, covering her fat ass with your seed.")
-            hide screen ch_hotdog
-            show screen chair_left
-            call hg_chibi_transition("sex_cumming_out")
 
+            call her_chibi_scene("sex_cum_out")
             call cum_block
-
             call ctc
 
             $ uni_sperm = True
@@ -409,8 +396,6 @@ label potion_scene_2_2:
             call blkfade
             pause 1
 
-            hide screen groping_01
-            hide screen groping_02
             call her_chibi("stand","desk","base")
             call gen_chibi("sit_behind_desk")
             
@@ -434,8 +419,6 @@ label potion_scene_2_2:
 
     hide screen hermione_main
     $ uni_sperm = False
-    hide screen no_groping_02
-    hide screen groping_02
     hide screen chair_left
     hide screen desk
     call gen_chibi("sit_behind_desk")

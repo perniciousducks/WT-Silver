@@ -202,7 +202,7 @@ label hg_pr_strip_rear_transition:
     # Setup
     $ hermione_class.strip("top")
     $ hermione_class.strip("bottom")
-    call hg_chibi_transition("stand_behind_desk", flip=True, trans="fade")
+    call her_chibi_scene("behind_desk_back", trans="fade")
     pause.8
 
     show screen hermione_ass
@@ -273,7 +273,7 @@ label hg_pr_strip_T2_grope_rear:
     with d3
     pause.2
 
-    call hg_chibi_transition("grope_ass", flip=True, trans="d5")
+    call her_chibi_scene("grope_ass_back", trans="d5")
 
     call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
     m "Relax, [hermione_name]. Just stand still!"
@@ -426,7 +426,7 @@ label hg_pr_strip_T3_grope_rear:
     with d3
     pause.2
 
-    call hg_chibi_transition("grope_ass", flip=True, trans="d5")
+    call her_chibi_scene("grope_ass_back", trans="d5")
 
     call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
     m "Relax, [hermione_name]. Just stand still!"
@@ -579,7 +579,7 @@ label hg_pr_strip_T4_grope_rear:
     with d3
     pause.2
 
-    call hg_chibi_transition("grope_ass", flip=True, trans="d5")
+    call her_chibi_scene("grope_ass_back", trans="d5")
 
     call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
     m "Relax, [hermione_name]. Just stand still!"
@@ -953,9 +953,6 @@ label end_hg_show_ass:
 
     hide screen hermione_main
     hide screen hermione_ass
-    hide screen jerking_off_01
-    hide screen groping_01
-    hide screen groping_02
 
     call set_her_action("none","update") #Resets clothing.
 

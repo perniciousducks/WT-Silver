@@ -1,12 +1,7 @@
 
-
-###HARRY POTTER ANIMATIONS###
-
-
-### HERMIONE GIVING GENIE A HANDJOB ###
-image handjob_ani:
+image hj:
     zoom 0.5
-    
+
     "characters/hermione/chibis/handjob/01.png"
     pause.1
     "characters/hermione/chibis/handjob/02.png"
@@ -21,10 +16,13 @@ image handjob_ani:
     pause.1
     repeat
 
-### HERMIONE HANDJOB CUMMING UNDER THE SHIRT ###
-image undershirt_cum_ani:
+image hj_pause:
     zoom 0.5
-    
+    "characters/hermione/chibis/handjob/01.png"
+
+image hj_cum_in:
+    zoom 0.5
+
     "characters/hermione/chibis/handjob/sperm_under_01.png"
     pause 1
     "characters/hermione/chibis/handjob/sperm_under_02.png"
@@ -53,10 +51,13 @@ image undershirt_cum_ani:
     pause.1
     repeat
 
-### HERMIONE HANDJOB CUMMING ON THE SHIRT ###
-image on_shirt_cum_ani:
+image hj_cum_in_done:
     zoom 0.5
-    
+    "characters/hermione/chibis/handjob/sperm_under_12.png"
+
+image hj_cum_on:
+    zoom 0.5
+
     "characters/hermione/chibis/handjob/sperm_on_00.png"
     pause.1
     "characters/hermione/chibis/handjob/sperm_on_01.png"
@@ -119,10 +120,13 @@ image on_shirt_cum_ani:
     pause.7
     repeat
 
-### HERMIONE GIVING A KISS TO GENIE'S COCK ###
-image kiss_ani:
+image hj_cum_on_done:
     zoom 0.5
-    
+    "characters/hermione/chibis/handjob/sperm_on_21.png"
+
+image hj_kiss:
+    zoom 0.5
+
     "characters/hermione/chibis/handjob/kiss_01.png"
     pause.1
     "characters/hermione/chibis/handjob/kiss_02.png"
@@ -149,10 +153,9 @@ image kiss_ani:
     pause.1
     repeat
 
-### HERMIONE HANDJOB KISS DRINKING CUM FROM COCK ###
-image kiss_cum_ani:
+image hj_kiss_cum:
     zoom 0.5
-    
+
     "characters/hermione/chibis/handjob/sperm_kiss_01.png"
     pause.1
     "characters/hermione/chibis/handjob/sperm_kiss_02.png"
@@ -169,9 +172,23 @@ image kiss_cum_ani:
     pause.1
     repeat
 
-image sex_ani:
+image sex_hotdog:
     zoom 0.5
-    
+    "characters/hermione/chibis/sex/sperm_01.png"
+    pause.3
+    "characters/hermione/chibis/sex/sperm_02.png"
+    pause.3
+    "characters/hermione/chibis/sex/sperm_03.png"
+    pause.3
+    "characters/hermione/chibis/sex/sperm_04.png"
+    pause 1
+    "characters/hermione/chibis/sex/sperm_03.png"
+    pause.3
+    repeat
+
+image sex:
+    zoom 0.5
+
     "characters/hermione/chibis/sex/01.png"
     pause.1
     "characters/hermione/chibis/sex/02.png"
@@ -188,9 +205,13 @@ image sex_ani:
     pause.1
     repeat
 
-image sex_slow_ani:
+image sex_pause:
     zoom 0.5
-    
+    "characters/hermione/chibis/sex/03.png"
+
+image sex_slow:
+    zoom 0.5
+
     "characters/hermione/chibis/sex/01.png"
     pause.15
     "characters/hermione/chibis/sex/02.png"
@@ -207,9 +228,9 @@ image sex_slow_ani:
     pause.15
     repeat
 
-image sex_fast_ani:
+image sex_fast:
     zoom 0.5
-    
+
     "characters/hermione/chibis/sex/01.png"
     pause.05
     "characters/hermione/chibis/sex/02.png"
@@ -226,66 +247,9 @@ image sex_fast_ani:
     pause.05
     repeat
 
-image sex_naked:
+image sex_cum_out:
     zoom 0.5
-    
-    "characters/hermione/chibis/sex/n_01.png"
-    pause.1
-    "characters/hermione/chibis/sex/n_02.png"
-    pause.1
-    "characters/hermione/chibis/sex/n_03.png"
-    pause.1
-    "characters/hermione/chibis/sex/n_04.png"
-    pause.1
-    "characters/hermione/chibis/sex/n_05.png"
-    pause.1
-    "characters/hermione/chibis/sex/n_06.png"
-    pause.1
-    "characters/hermione/chibis/sex/n_07.png"
-    pause.1
-    repeat
 
-image sex_naked_slow:
-    zoom 0.5
-    
-    "characters/hermione/chibis/sex/n_01.png"
-    pause.15
-    "characters/hermione/chibis/sex/n_02.png"
-    pause.15
-    "characters/hermione/chibis/sex/n_03.png"
-    pause.15
-    "characters/hermione/chibis/sex/n_04.png"
-    pause.15
-    "characters/hermione/chibis/sex/n_05.png"
-    pause.15
-    "characters/hermione/chibis/sex/n_06.png"
-    pause.15
-    "characters/hermione/chibis/sex/n_07.png"
-    pause.15
-    repeat
-
-image sex_naked_fast:
-    zoom 0.5
-    
-    "characters/hermione/chibis/sex/n_01.png"
-    pause.05
-    "characters/hermione/chibis/sex/n_02.png"
-    pause.05
-    "characters/hermione/chibis/sex/n_03.png"
-    pause.05
-    "characters/hermione/chibis/sex/n_04.png"
-    pause.05
-    "characters/hermione/chibis/sex/n_05.png"
-    pause.05
-    "characters/hermione/chibis/sex/n_06.png"
-    pause.05
-    "characters/hermione/chibis/sex/n_07.png"
-    pause.05
-    repeat
-
-image sex_cum_out_ani:
-    zoom 0.5
-    
     "characters/hermione/chibis/sex/sperm_01.png"
     pause.1
     "characters/hermione/chibis/sex/sperm_02.png"
@@ -334,98 +298,28 @@ image sex_cum_out_ani:
     pause.1
     repeat
 
-image sex_cum_out_blink_ani:
+image sex_cum_out_done:
     zoom 0.5
-    
+
     "characters/hermione/chibis/sex/sperm_19.png"
     pause 1
-    "characters/hermione/chibis/sex/sperm_24.png" #closed
+    "characters/hermione/chibis/sex/sperm_24.png" # blink
     pause.1
     "characters/hermione/chibis/sex/sperm_19.png"
     pause.1
-    "characters/hermione/chibis/sex/sperm_24.png" #closed
+    "characters/hermione/chibis/sex/sperm_24.png" # blink
     pause.1
     "characters/hermione/chibis/sex/sperm_19.png"
     pause 2
-    "characters/hermione/chibis/sex/sperm_24.png" #closed
+    "characters/hermione/chibis/sex/sperm_24.png" # blink
     pause.1
     "characters/hermione/chibis/sex/sperm_19.png"
     pause 2
     repeat
 
-image sex_cum_out_naked:
+image sex_cum_in:
     zoom 0.5
-    
-    "characters/hermione/chibis/sex/sperm_n_01.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_02.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_03.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_04.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_05.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_06.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_07.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_08.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_09.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_10.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_11.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_12.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_13.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_14.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_15.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_16.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_17.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_18.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_19.png"
-    pause 2
-    "characters/hermione/chibis/sex/sperm_n_20.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_21.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_22.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_23.png"
-    pause.1
-    repeat
 
-image sex_cum_out_naked_blink:
-    zoom 0.5
-    
-    "characters/hermione/chibis/sex/sperm_n_19.png"
-    pause 1
-    "characters/hermione/chibis/sex/sperm_n_24.png" #closed
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_19.png"
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_24.png" #closed
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_19.png"
-    pause 2
-    "characters/hermione/chibis/sex/sperm_n_24.png" #closed
-    pause.1
-    "characters/hermione/chibis/sex/sperm_n_19.png"
-    pause 2
-    repeat
-
-image sex_cum_in_ani:
-    zoom 0.5
-    
     "characters/hermione/chibis/sex/creampie_01.png"
     pause.1
     "characters/hermione/chibis/sex/creampie_02.png"
@@ -474,28 +368,159 @@ image sex_cum_in_ani:
     pause.1
     repeat
 
-image sex_cum_in_blink_ani:
+image sex_cum_in_done:
     zoom 0.5
-    
+
     "characters/hermione/chibis/sex/creampie_19.png"
     pause 1
-    "characters/hermione/chibis/sex/creampie_24.png" #closed
+    "characters/hermione/chibis/sex/creampie_24.png" # blink
     pause.1
     "characters/hermione/chibis/sex/creampie_19.png"
     pause.1
-    "characters/hermione/chibis/sex/creampie_24.png" #closed
+    "characters/hermione/chibis/sex/creampie_24.png" # blink
     pause.1
     "characters/hermione/chibis/sex/creampie_19.png"
     pause 2
-    "characters/hermione/chibis/sex/creampie_24.png" #closed
+    "characters/hermione/chibis/sex/creampie_24.png" # blink
     pause.1
     "characters/hermione/chibis/sex/creampie_19.png"
     pause 2
     repeat
 
-image sex_cum_in_naked_ani:
+image sex_naked:
     zoom 0.5
-    
+
+    "characters/hermione/chibis/sex/n_01.png"
+    pause.1
+    "characters/hermione/chibis/sex/n_02.png"
+    pause.1
+    "characters/hermione/chibis/sex/n_03.png"
+    pause.1
+    "characters/hermione/chibis/sex/n_04.png"
+    pause.1
+    "characters/hermione/chibis/sex/n_05.png"
+    pause.1
+    "characters/hermione/chibis/sex/n_06.png"
+    pause.1
+    "characters/hermione/chibis/sex/n_07.png"
+    pause.1
+    repeat
+
+image sex_naked_pause:
+    zoom 0.5
+    "characters/hermione/chibis/sex/n_03.png"
+
+image sex_naked_slow:
+    zoom 0.5
+
+    "characters/hermione/chibis/sex/n_01.png"
+    pause.15
+    "characters/hermione/chibis/sex/n_02.png"
+    pause.15
+    "characters/hermione/chibis/sex/n_03.png"
+    pause.15
+    "characters/hermione/chibis/sex/n_04.png"
+    pause.15
+    "characters/hermione/chibis/sex/n_05.png"
+    pause.15
+    "characters/hermione/chibis/sex/n_06.png"
+    pause.15
+    "characters/hermione/chibis/sex/n_07.png"
+    pause.15
+    repeat
+
+image sex_naked_fast:
+    zoom 0.5
+
+    "characters/hermione/chibis/sex/n_01.png"
+    pause.05
+    "characters/hermione/chibis/sex/n_02.png"
+    pause.05
+    "characters/hermione/chibis/sex/n_03.png"
+    pause.05
+    "characters/hermione/chibis/sex/n_04.png"
+    pause.05
+    "characters/hermione/chibis/sex/n_05.png"
+    pause.05
+    "characters/hermione/chibis/sex/n_06.png"
+    pause.05
+    "characters/hermione/chibis/sex/n_07.png"
+    pause.05
+    repeat
+
+image sex_naked_cum_out:
+    zoom 0.5
+
+    "characters/hermione/chibis/sex/sperm_n_01.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_02.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_03.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_04.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_05.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_06.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_07.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_08.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_09.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_10.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_11.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_12.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_13.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_14.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_15.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_16.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_17.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_18.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_19.png"
+    pause 2
+    "characters/hermione/chibis/sex/sperm_n_20.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_21.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_22.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_23.png"
+    pause.1
+    repeat
+
+image sex_naked_cum_out_done:
+    zoom 0.5
+
+    "characters/hermione/chibis/sex/sperm_n_19.png"
+    pause 1
+    "characters/hermione/chibis/sex/sperm_n_24.png" # blink
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_19.png"
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_24.png" # blink
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_19.png"
+    pause 2
+    "characters/hermione/chibis/sex/sperm_n_24.png" # blink
+    pause.1
+    "characters/hermione/chibis/sex/sperm_n_19.png"
+    pause 2
+    repeat
+
+image sex_naked_cum_in:
+    zoom 0.5
+
     "characters/hermione/chibis/sex/creampie_n_01.png"
     pause.1
     "characters/hermione/chibis/sex/creampie_n_02.png"
@@ -544,37 +569,69 @@ image sex_cum_in_naked_ani:
     pause.1
     repeat
 
-image sex_cum_in_naked_blink_ani:
+image sex_naked_cum_in_done:
     zoom 0.5
-    
+
     "characters/hermione/chibis/sex/creampie_n_19.png"
     pause 1
-    "characters/hermione/chibis/sex/creampie_n_24.png" #closed
+    "characters/hermione/chibis/sex/creampie_n_24.png" # blink
     pause.1
     "characters/hermione/chibis/sex/creampie_n_19.png"
     pause.1
-    "characters/hermione/chibis/sex/creampie_n_24.png" #closed
+    "characters/hermione/chibis/sex/creampie_n_24.png" # blink
     pause.1
     "characters/hermione/chibis/sex/creampie_n_19.png"
     pause 2
-    "characters/hermione/chibis/sex/creampie_n_24.png" #closed
+    "characters/hermione/chibis/sex/creampie_n_24.png" # blink
     pause.1
     "characters/hermione/chibis/sex/creampie_n_19.png"
     pause 2
     repeat
 
-image pause_sex:#---------------### HERMIONE PAUSE SEX ###
+image behind_desk_back:
     zoom 0.5
-    
-    "characters/hermione/chibis/sex/03.png"
+    contains:
+        "characters/hermione/chibis/behind_desk/back.png"
+    contains:
+        "desk_back_blink"
 
-
-
-### FAVORS ###
-### GROPINGS ###
-image grope_ass_front: #Genie groping Hermione under her skirt. Hermione is facing Genie.
+image behind_desk_back_topless:
     zoom 0.5
-    
+    contains:
+        "characters/hermione/chibis/behind_desk/back_topless.png"
+    contains:
+        "desk_back_blink"
+
+image behind_desk_front:
+    zoom 0.5
+    contains:
+        "characters/hermione/chibis/behind_desk/front.png"
+    contains:
+        "desk_front_blink"
+
+image behind_desk_front_topless:
+    zoom 0.5
+    contains:
+        "characters/hermione/chibis/behind_desk/front_topless.png"
+    contains:
+        "desk_front_blink"
+
+image behind_desk_show_tits:
+    contains:
+        pos (270+10,185)
+        "ch_gen sit_in_chair"
+    contains:
+        zoom 0.5
+        "characters/hermione/chibis/behind_desk/lift_top_alt.png"
+
+image desk_back_blink:
+    random_blink("characters/hermione/chibis/behind_desk/back_blink.png")
+
+image desk_front_blink:
+    random_blink("characters/hermione/chibis/behind_desk/front_blink.png")
+
+image grope_ass_front:
+    zoom 0.5
     "characters/hermione/chibis/grope_ass/front_01.png"
     pause.2
     "characters/hermione/chibis/grope_ass/front_02.png"
@@ -587,9 +644,36 @@ image grope_ass_front: #Genie groping Hermione under her skirt. Hermione is faci
     pause.2
     repeat
 
-image grope_ass_back: # Genie groping Hermione under her skirt. Hermione's is facing the desk.
+image grope_ass_front_topless:
     zoom 0.5
-    
+    "characters/hermione/chibis/grope_ass/front_e_01.png"
+    pause.2
+    "characters/hermione/chibis/grope_ass/front_e_02.png"
+    pause.2
+    "characters/hermione/chibis/grope_ass/front_e_03.png"
+    pause.5
+    "characters/hermione/chibis/grope_ass/front_e_02.png"
+    pause.2
+    "characters/hermione/chibis/grope_ass/front_e_01.png"
+    pause.2
+    repeat
+
+image grope_ass_front_topless_fast:
+    zoom 0.5
+    "characters/hermione/chibis/grope_ass/front_e_01.png"
+    pause.1
+    "characters/hermione/chibis/grope_ass/front_e_02.png"
+    pause.1
+    "characters/hermione/chibis/grope_ass/front_e_03.png"
+    pause.2
+    "characters/hermione/chibis/grope_ass/front_e_02.png"
+    pause.1
+    "characters/hermione/chibis/grope_ass/front_e_01.png"
+    pause.1
+    repeat
+
+image grope_ass_back:
+    zoom 0.5
     "characters/hermione/chibis/grope_ass/back_b_01.png"
     pause.2
     "characters/hermione/chibis/grope_ass/back_b_02.png"
@@ -602,112 +686,22 @@ image grope_ass_back: # Genie groping Hermione under her skirt. Hermione's is fa
     pause.2
     repeat
 
-
-image grope_front_blinking:
+image grope_ass_back_topless:
     zoom 0.5
-    
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/front_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    "characters/hermione/chibis/grope_ass/front_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/front_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    repeat
-
-image grope_back_blinking:
-    zoom 0.5
-    
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/back_b_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    "characters/hermione/chibis/grope_ass/back_b_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/back_b_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    repeat
-
-image groping_06: # Groping under skirt, front, topless
-    zoom 0.5
-    
-    "characters/hermione/chibis/grope_ass/front_e_01.png"
-    pause.2
-    "characters/hermione/chibis/grope_ass/front_e_02.png"
-    pause.2
-    "characters/hermione/chibis/grope_ass/front_e_03.png"
-    pause.5
-    "characters/hermione/chibis/grope_ass/front_e_02.png"
-    pause.2
-    "characters/hermione/chibis/grope_ass/front_e_01.png"
-    pause.2
-    repeat
-
-image groping_06b: # Groping under skirt, front, topless, faster
-    zoom 0.5
-    
-    "characters/hermione/chibis/grope_ass/front_e_01.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/front_e_02.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/front_e_03.png"
-    pause.2
-    "characters/hermione/chibis/grope_ass/front_e_02.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/front_e_01.png"
-    pause.1
-    repeat
-
-image groping_06_blinking:
-    zoom 0.5
-    
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/front_e_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    "characters/hermione/chibis/grope_ass/front_e_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/front_e_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    repeat
-
-image groping_05: # Genie groping Hermione under her skirt. Hermione is facing the desk.
-    zoom 0.5
-    
     "characters/hermione/chibis/grope_ass/back_d_01.png"
-    pause.2
+    pause .2
     "characters/hermione/chibis/grope_ass/back_d_02.png"
-    pause.2
+    pause .2
     "characters/hermione/chibis/grope_ass/back_d_03.png"
-    pause.5
+    pause .5
     "characters/hermione/chibis/grope_ass/back_d_02.png"
-    pause.2
+    pause .2
     "characters/hermione/chibis/grope_ass/back_d_01.png"
-    pause.2
+    pause .2
     repeat
 
-image groping_05b: # Genie groping Hermione under her skirt. Hermione is facing the desk. Faster version.
+image grope_ass_back_topless_fast:
     zoom 0.5
-    
     "characters/hermione/chibis/grope_ass/back_d_01.png"
     pause.1
     "characters/hermione/chibis/grope_ass/back_d_02.png"
@@ -720,69 +714,119 @@ image groping_05b: # Genie groping Hermione under her skirt. Hermione is facing 
     pause.1
     repeat
 
-image groping_05_blinking:
+image lie_on_desk:
     zoom 0.5
-    
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/back_d_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    "characters/hermione/chibis/grope_ass/back_d_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_ass/back_d_04.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    repeat
+    contains:
+        "characters/hermione/chibis/fingering/idle.png"
+    contains:
+        "lie_on_desk_blink"
 
-image fingering_naked:
+image lie_on_desk_jerk_off:
     zoom 0.5
-    
-    "characters/hermione/chibis/fingering/n_01.png"
-    pause.2
-    "characters/hermione/chibis/fingering/n_02.png"
-    pause.2
-    "characters/hermione/chibis/fingering/n_03.png"
-    pause.2
-    "characters/hermione/chibis/fingering/n_04.png"
-    pause.2
-    repeat
+    contains:
+        "characters/hermione/chibis/fingering/solo.png"
+    contains:
+        "lie_on_desk_blink"
+    contains:
+        offset (560,380)
+        "ch_gen jerk_off"
 
-image fingering_naked_slow:
+image lie_on_desk_cum:
     zoom 0.5
-    
-    "characters/hermione/chibis/fingering/n_01.png"
-    pause.3
-    "characters/hermione/chibis/fingering/n_02.png"
-    pause.3
-    "characters/hermione/chibis/fingering/n_03.png"
-    pause.3
-    "characters/hermione/chibis/fingering/n_04.png"
-    pause.3
-    repeat
+    contains:
+        "characters/hermione/chibis/fingering/solo.png"
+    contains:
+        "lie_on_desk_blink"
+    contains:
+        offset (560,380)
+        "ch_gen cum_close"
 
-image fingering_blinking:
+image lie_on_desk_naked:
     zoom 0.5
-    
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/fingering/blink.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    "characters/hermione/chibis/fingering/blink.png"
-    pause.1
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/fingering/blink.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    repeat
+    contains:
+        "characters/hermione/chibis/fingering/n_idle.png"
+    contains:
+        "lie_on_desk_blink"
+
+image lie_on_desk_naked_jerk_off:
+    zoom 0.5
+    contains:
+        "characters/hermione/chibis/fingering/n_solo.png"
+    contains:
+        "lie_on_desk_blink"
+    contains:
+        offset (560,380)
+        "ch_gen jerk_off"
+
+image lie_on_desk_naked_cum:
+    zoom 0.5
+    contains:
+        "characters/hermione/chibis/fingering/n_solo.png"
+    contains:
+        "lie_on_desk_blink"
+    contains:
+        offset (560,380)
+        "ch_gen cum_close"
+
+image lie_on_desk_blink:
+    random_blink("characters/hermione/chibis/fingering/blink.png")
+
+image finger_naked:
+    zoom 0.5
+    contains:
+        "characters/hermione/chibis/fingering/n_01.png"
+        pause.2
+        "characters/hermione/chibis/fingering/n_02.png"
+        pause.2
+        "characters/hermione/chibis/fingering/n_03.png"
+        pause.2
+        "characters/hermione/chibis/fingering/n_04.png"
+        pause.2
+        repeat
+    contains:
+        "lie_on_desk_blink"
+        # Sync blinking
+        xoffset 0
+        pause .2
+        xoffset 2
+        pause .2
+        xoffset 4
+        pause .2
+        xoffset 2
+        pause .2
+        repeat
+
+image finger_naked_slow:
+    zoom 0.5
+    contains:
+        "characters/hermione/chibis/fingering/n_01.png"
+        pause.3
+        "characters/hermione/chibis/fingering/n_02.png"
+        pause.3
+        "characters/hermione/chibis/fingering/n_03.png"
+        pause.3
+        "characters/hermione/chibis/fingering/n_04.png"
+        pause.3
+        repeat
+    contains:
+        "lie_on_desk_blink"
+        # Sync blinking
+        xoffset 0
+        pause .3
+        xoffset 2
+        pause .3
+        xoffset 4
+        pause .3
+        xoffset 2
+        pause .3
+        repeat
+
+image finger_naked_pause:
+    zoom 0.5
+    contains:
+        "characters/hermione/chibis/fingering/n_idle_touch.png"
+    contains:
+        "lie_on_desk_blink"
 
 image grope_on_podium_loop:
     "characters/hermione/chibis/grope_ass_podium/grope_1.png"
@@ -829,16 +873,16 @@ image grope_on_podium_blink:
     "images/animation/00.png"
     pause 3
     repeat
-    
+
 image grope_on_podium_horny:
-    zoom 0.5    
+    zoom 0.5
     contains:
         "grope_on_podium_loop"
     contains:
         "characters/hermione/chibis/grope_ass_podium/horny.png"
     contains:
         "grope_on_podium_blink"
-        
+
 image grope_on_podium_close:
     zoom 0.5
     contains:
@@ -847,8 +891,8 @@ image grope_on_podium_close:
         "characters/hermione/chibis/grope_ass_podium/close.png"
     contains:
         "grope_on_podium_blink"
-        
-image grope_on_podium_cumming:
+
+image grope_on_podium_cum:
     zoom 0.5
     contains:
         "grope_on_podium_loop"
@@ -857,10 +901,9 @@ image grope_on_podium_cumming:
     contains:
         "grope_on_podium_blink"
 
-### GROPING TITS FULLY CLOTHED ###
-image groping_tits: #Genie groping Hermione under her skirt. Hermione is facing Genie.
+image grope_tits:
     zoom 0.5
-    
+
     "characters/hermione/chibis/grope_breasts/01.png"
     pause.2
     "characters/hermione/chibis/grope_breasts/02.png"
@@ -879,10 +922,9 @@ image groping_tits: #Genie groping Hermione under her skirt. Hermione is facing 
     pause.2
     repeat
 
-### GROPING NAKED TITS ###
-image groping_naked_tits_ani: #Genie groping Hermione under her skirt. Hermione is facing Genie.
+image grope_tits_lift_top:
     zoom 0.5
-    
+
     "characters/hermione/chibis/grope_breasts/bare_01.png"
     pause.2
     "characters/hermione/chibis/grope_breasts/bare_02.png"
@@ -901,9 +943,9 @@ image groping_naked_tits_ani: #Genie groping Hermione under her skirt. Hermione 
     pause.2
     repeat
 
-image groping_naked_tits_ani_01: #Genie groping Hermione under her skirt. Hermione is facing Genie.
+image grope_tits_topless:
     zoom 0.5
-    
+
     "characters/hermione/chibis/grope_breasts/bare_n_01.png"
     pause.2
     "characters/hermione/chibis/grope_breasts/bare_n_02.png"
@@ -922,11 +964,9 @@ image groping_naked_tits_ani_01: #Genie groping Hermione under her skirt. Hermio
     pause.2
     repeat
 
-
-### JERKING OFF ###
-image jerking_off_ani: #Genie jerking off in front of top pulled up (shirt + vest) Hermione.
+image grope_tits_jerk_off:
     zoom 0.5
-    
+
     "characters/hermione/chibis/grope_breasts/masturbate_01.png"
     pause.2
     "characters/hermione/chibis/grope_breasts/masturbate_02.png"
@@ -937,30 +977,35 @@ image jerking_off_ani: #Genie jerking off in front of top pulled up (shirt + ves
     pause.2
     repeat
 
-
-
-image desk_blinking: #Animation of Hermione blinking her eyes standing at genie's desk.
+image grope_tits_cum:
     zoom 0.5
-    
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_breasts/blink.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    "characters/hermione/chibis/grope_breasts/blink.png"
-    pause.1
-    "images/animation/00.png"
-    pause.1
-    "characters/hermione/chibis/grope_breasts/blink.png"
-    pause.1
-    "images/animation/00.png"
-    pause 3
-    repeat
+    contains:
+        "characters/hermione/chibis/behind_desk/lift_top.png"
+    contains:
+        zoom 2
+        "characters/hermione/chibis/behind_desk/front_eyes_down.png"
+    contains:
+        "desk_front_blink"
+    contains:
+        pos (540,370)
+        "ch_gen cum_close"
 
-image blowjob_ani: # Hermione blowjob
+image grope_tits_cum_done:
     zoom 0.5
-    
+    contains:
+        "characters/hermione/chibis/behind_desk/lift_top.png"
+    contains:
+        zoom 2
+        "characters/hermione/chibis/behind_desk/front_eyes_down.png"
+    contains:
+        "desk_front_blink"
+    contains:
+        pos (540,370)
+        "ch_gen cum_close_done"
+
+image bj:
+    zoom 0.5
+
     "characters/hermione/chibis/blowjob/01.png"
     pause.1
     "characters/hermione/chibis/blowjob/02.png"
@@ -986,10 +1031,10 @@ image blowjob_ani: # Hermione blowjob
     "characters/hermione/chibis/blowjob/12.png"
     pause.1
     repeat
-    
-image hand_ani: # Hermione blowjob not sucking
+
+image bj_pause:
     zoom 0.5
-    
+
     "characters/hermione/chibis/blowjob/hand_01.png"
     pause 3
     "characters/hermione/chibis/blowjob/hand_02.png"
@@ -999,10 +1044,10 @@ image hand_ani: # Hermione blowjob not sucking
     "characters/hermione/chibis/blowjob/hand_04.png"
     pause.1
     repeat
-    
-image cum_in_mouth_ani: # Hermione blowjob cum in mouth
+
+image bj_cum_in:
     zoom 0.5
-    
+
     "characters/hermione/chibis/blowjob/sperm_throat_01.png"
     pause.1
     "characters/hermione/chibis/blowjob/sperm_throat_02.png"
@@ -1042,10 +1087,10 @@ image cum_in_mouth_ani: # Hermione blowjob cum in mouth
     "characters/hermione/chibis/blowjob/sperm_throat_01.png"
     pause 1
     repeat
-    
-image cum_on_face_ani: # Hermione blowjob cum on face
+
+image bj_cum_out:
     zoom 0.5
-    
+
     "characters/hermione/chibis/blowjob/sperm_face_01.png"
     pause.1
     "characters/hermione/chibis/blowjob/sperm_face_02.png"
@@ -1111,17 +1156,17 @@ image cum_on_face_ani: # Hermione blowjob cum on face
     "characters/hermione/chibis/blowjob/sperm_face_24.png"
     pause 2
     repeat
-    
-image cum_on_face_blink_ani: # Hermione cum covered face blinking
+
+image bj_cum_out_done:
     zoom 0.5
-    
+
     "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
     "characters/hermione/chibis/blowjob/sperm_face_24.png"
     pause 1
     "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
-    "characters/hermione/chibis/blowjob/sperm_face_22.png"
+    "characters/hermione/chibis/blowjob/sperm_face_22.png" # blink
     pause.1
     "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
@@ -1129,7 +1174,7 @@ image cum_on_face_blink_ani: # Hermione cum covered face blinking
     pause 1
     "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
-    "characters/hermione/chibis/blowjob/sperm_face_22.png"
+    "characters/hermione/chibis/blowjob/sperm_face_22.png" # blink
     pause.1
     "characters/hermione/chibis/blowjob/sperm_face_23.png"
     pause.1
@@ -1138,9 +1183,9 @@ image cum_on_face_blink_ani: # Hermione cum covered face blinking
     repeat
 
 
-image titjob_ani:
+image tj:
     zoom 0.5
-    
+
     "characters/hermione/chibis/titjob/tj_sex_01.png"
     pause.3
     "characters/hermione/chibis/titjob/tj_sex_02.png"
@@ -1151,9 +1196,18 @@ image titjob_ani:
     pause.3
     repeat
 
-image titjob_chest_ani:
+image tj_pause:
     zoom 0.5
-    
+    "characters/hermione/chibis/titjob/tj_sex_01.png"
+
+image tj_idle:
+    zoom 0.5
+    offset (-15, 16)
+    "characters/hermione/chibis/titjob/tj_cum_chest_02.png"
+
+image tj_cum_on:
+    zoom 0.5
+    offset (-15, 16)
     "characters/hermione/chibis/titjob/tj_cum_chest_01.png"
     pause.2
     "characters/hermione/chibis/titjob/tj_cum_chest_02.png"
@@ -1206,9 +1260,19 @@ image titjob_chest_ani:
     pause.2
     repeat
 
-image titjob_mouth_ani:
+image tj_cum_on_done:
     zoom 0.5
-    
+    offset (-15, 16)
+    "characters/hermione/chibis/titjob/tj_cum_chest_25.png"
+
+image tj_mouth:
+    zoom 0.5
+    offset (27, 16)
+    "characters/hermione/chibis/titjob/tj_cum_mouth_01.png"
+
+image tj_cum_in:
+    zoom 0.5
+    offset (27, 16)
     "characters/hermione/chibis/titjob/tj_cum_mouth_01.png"
     pause.2
     "characters/hermione/chibis/titjob/tj_cum_mouth_02.png"
@@ -1246,3 +1310,8 @@ image titjob_mouth_ani:
     "characters/hermione/chibis/titjob/tj_cum_mouth_18.png"
     pause.2
     repeat
+
+image tj_cum_in_done:
+    zoom 0.5
+    offset (27, 16)
+    "characters/hermione/chibis/titjob/tj_cum_mouth_09.png"

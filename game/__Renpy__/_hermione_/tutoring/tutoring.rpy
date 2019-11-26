@@ -420,15 +420,14 @@ label l_tutoring:
         call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
         call blkfade
 
-        call gen_chibi("hide")
-        show screen no_groping_01
+        call her_chibi_scene("behind_desk_front")
         call hide_blkfade
         call ctc
 
         call bld
         m "Have you ever touched yourself?"
         call her_main("Professor!", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft",xpos="mid",ypos="base")
-        show screen groping_01
+        call her_chibi_scene("grope_ass_front")
         with d7
         call nar(">You touch her leg with your hands.")
         m "Please answer the question, Miss Granger. Have you ever touched yourself?"
@@ -448,9 +447,10 @@ label l_tutoring:
             call nar(">You move forward to her pussy.")
         call her_main("", "open", "worriedCl", "worried", "mid",cheeks="blush")
         m "Good."
-        hide screen groping_01
-        show screen no_groping_01
+
+        call her_chibi_scene("behind_desk_front")
         with d3
+
         call nar(">You stop caressing her.")
         call her_main("Why... why did you stop?", "mad", "wide", "base", "stare",cheeks="blush")
         m "Oh, because I need you to think about all this before we meet again."
@@ -461,7 +461,6 @@ label l_tutoring:
         hide screen hermione_main
         call blkfade
 
-        hide screen no_groping_01
         "You dismiss Hermione."
         call her_chibi("stand","desk","base")
         call gen_chibi("sit_behind_desk")
@@ -519,8 +518,7 @@ label l_tutoring:
         ">You grab her tits and massage them softly."
         pause.5
 
-        call gen_chibi("hide")
-        show screen groping_03
+        call her_chibi_scene("grope_tits")
         with d1
         hide screen blkfade
         call her_main("", "open", "worriedCl", "worried", "mid",cheeks="blush",xpos="mid",ypos="base")
@@ -545,17 +543,14 @@ label l_tutoring:
         m "Fool?"
         call nar(">You firmly pinch her nipples.")
         call her_main("Ahhh yesss, not that hard, yesss...", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
-        call nar(">You abruptly stop.")
 
         call blkfade
+        call nar(">You abruptly stop.")
         pause.5
-
         call her_main("Don't stop, you idiot!", "scream", "base", "angry", "mid",cheeks="blush",emote="01",ypos="head")
-
+        
         hide screen hermione_main
-        hide screen groping_03
-        show screen genie_and_hermione
-        hide screen genie_and_hermione
+
         call gen_chibi("sit_behind_desk")
         call her_chibi("stand","desk","base")
         call hide_blkfade
@@ -566,7 +561,7 @@ label l_tutoring:
         call hide_blkfade
 
         call her_main("Sorry, professor.", "angry", "base", "angry", "mid",cheeks="blush")
-        m "Lesson is over. Time to practice by yourself."
+        m "Lesson is over. Time to practise by yourself."
         m "Good night my little witch."
         call her_main("Good night, professor, and thank you for this lesson.", "base", "happyCl", "base", "mid")
         call her_main("{size=-2}(I just wish it had lasted longer...){/size}", "annoyed", "squint", "base", "mid")
@@ -626,9 +621,7 @@ label l_tutoring:
 
         ">Hermione slowly walks towards your desk."
         ">She tries not to bounce her tits without much success..."
-        call her_chibi("hide")
-        call gen_chibi("hide")
-        show screen genie_and_tits_01
+        call her_chibi_scene("behind_desk_show_tits")
         with d1
 
         hide screen blkfade
@@ -644,9 +637,7 @@ label l_tutoring:
 
         ">You grab her tits and squeeze them gently."
 
-        show screen chair_left
-        hide screen genie_and_tits_01
-        show screen groping_naked_tits
+        call her_chibi_scene("grope_tits")
         call hide_blkfade
         call ctc
 
@@ -684,9 +675,7 @@ label l_tutoring:
         call set_her_action("none","update")
 
         hide screen chair_left
-        hide screen groping_naked_tits
-        call gen_chibi("hide")
-        show screen genie_and_hermione
+        call her_chibi_scene("behind_desk_front")
         call hide_blkfade
 
         call her_main("Is the lesson over professor?", "grin", "narrow", "base", "mid_soft",cheeks="blush",tears="mascara")
@@ -706,7 +695,6 @@ label l_tutoring:
         hide screen hermione_main
         call blkfade
 
-        hide screen genie_and_hermione
         "You dismiss Hermione."
         call her_chibi("stand","desk","base")
         call gen_chibi("sit_behind_desk")
@@ -760,9 +748,7 @@ label l_tutoring:
 
         call her_main("........", "annoyed", "closed", "base", "mid",cheeks="blush",ypos="head")
 
-        call her_chibi("hide")
-        call gen_chibi("hide")
-        show screen no_groping_06
+        call her_chibi_scene("behind_desk_front")
         call hide_blkfade
         call ctc
 
@@ -785,8 +771,7 @@ label l_tutoring:
             call her_main("You love my pussy don't you?", "base", "narrow", "base", "up",cheeks="blush")
             g9 "Oh yes, I love your smell, especially when you're wet."
             call her_main("Professor...", "angry", "worriedCl", "worried", "mid",cheeks="blush",emote="05")
-            hide screen no_groping_01
-            show screen groping_06
+            call her_chibi_scene("grope_ass_front")
             with d3
             call nar(">You caress her clit.")
             call her_main("Professor!", "mad", "wide", "base", "stare",cheeks="blush")
@@ -794,8 +779,7 @@ label l_tutoring:
             call her_main("You love my panties don't you?", "base", "narrow", "base", "up",cheeks="blush")
             g9 "Oh yes, I love their smell, especially when you're wet."
             call her_main("Professor...", "angry", "worriedCl", "worried", "mid",cheeks="blush",emote="05")
-            hide screen no_groping_01
-            show screen groping_06
+            call her_chibi_scene("grope_ass_front")
             with d3
             call nar(">You caress her clit through the fabric.")
             call her_main("Professor!", "mad", "wide", "base", "stare",cheeks="blush")
@@ -808,8 +792,7 @@ label l_tutoring:
 
             call set_her_action("None")
 
-            hide screen groping_06
-            show screen no_groping_06
+            call her_chibi_scene("behind_desk_front")
             call her_main("", "base", "closed", "base", "mid")
             call ctc
 
@@ -817,8 +800,7 @@ label l_tutoring:
         m "One can caress your clit while the other can play with your pussy."
         call nar(">You move from words to deeds and penetrate her already wet pussy with ease.")
 
-        hide screen no_groping_06
-        show screen groping_06
+        call her_chibi_scene("grope_ass_front")
         with d3
 
         call her_main("Yes, you're probably right.", "grin", "base", "angry", "mid",cheeks="blush")
@@ -833,8 +815,7 @@ label l_tutoring:
         call her_main("Don't be so bold.", "grin", "base", "angry", "mid",cheeks="blush",tears="soft")
         call nar(">Her whole body starts shaking as you increase your ramming.")
 
-        hide screen groping_06
-        show screen groping_06b
+        call her_chibi_scene("grope_ass_front_fast")
         with d3
 
         call her_main("Noo {image=textheart}{w=0.2} not so fast I will...", "open_tongue", "narrow", "base", "up",cheeks="blush")
@@ -848,9 +829,7 @@ label l_tutoring:
         call blkfade
 
         hide screen hermione_main
-        hide screen groping_06b
-        call gen_chibi("hide")
-        show screen no_groping_01
+        call her_chibi_scene("behind_desk_front")
         call hide_blkfade
 
         call her_main("I'm sure this lesson will be of great help tonight.", "grin", "narrow", "base", "mid_soft",cheeks="blush",tears="mascara")
@@ -868,7 +847,6 @@ label l_tutoring:
         hide screen hermione_main
         call blkfade
 
-        hide screen no_groping_01
         "You dismiss Hermione."
 
         call set_her_action("none","update") #Resets clothes.
@@ -1095,8 +1073,7 @@ label l_tutoring:
         call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
         call blkfade
 
-        call gen_chibi("hide")
-        show screen groping_05
+        call her_chibi_scene("grope_ass_back")
         call hide_blkfade
         call ctc
 
@@ -1162,8 +1139,7 @@ label l_tutoring:
         call nar(">You finger both her butthole and her pussy.")
         call her_main("Nooo it's too much {image=textheart}.", "open_wide_tongue", "narrow", "base", "up",cheeks="blush")
         g9 "Faster? No problem!"
-        hide screen groping_05
-        show screen groping_05b
+        call her_chibi_scene("grope_ass_back_fast")
         call her_main("Aaah, you're killing me {image=textheart}.", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
         call her_main("{size=-2}(And I love it){/size}", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
         m "More fingers?"
@@ -1179,8 +1155,7 @@ label l_tutoring:
         call her_main("Yesss {image=textheart}, nooo I will die!", "open_wide_tongue", "narrow", "base", "up",cheeks="blush")
         g9 "In ecstasy."
         call her_main("Aahh not again {image=textheart}.", "open_wide_tongue", "narrow", "base", "up",cheeks="blush")
-        hide screen groping_05b
-        show screen no_groping_05
+        call her_chibi_scene("behind_desk_back")
         m "I think you've had enough for one night."
         call her_main("Yes I... I better go.", "open_tongue", "narrow", "base", "up",cheeks="blush")
         m "You forgot your gift."
@@ -1191,8 +1166,7 @@ label l_tutoring:
         hide screen hermione_main
         call blkfade
 
-        hide screen no_groping_05
-        show screen no_groping_05_desk
+        call her_chibi_scene("lie_on_desk")
 
         ">She collapses panting on the desk."
         g9 "Best view in the world."
@@ -1201,7 +1175,6 @@ label l_tutoring:
 
         call set_her_action("none","update") #Resets clothes.
 
-        hide screen no_groping_05_desk
         call gen_chibi("sit_behind_desk")
         call her_chibi("stand","desk","base")
         call hide_blkfade
@@ -1287,8 +1260,7 @@ label l_tutoring:
         call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
         call blkfade
 
-        call gen_chibi("hide")
-        show screen no_groping_05
+        call her_chibi_scene("behind_desk_back")
         with d1
         call hide_blkfade
         call ctc
@@ -1310,8 +1282,7 @@ label l_tutoring:
         g9 "I suppose you want them in your ass?"
         call her_main("Naturally.", "base", "narrow", "base", "up",cheeks="blush")
         call her_main("{size=-2}(I'll try them in my pussy later tonight){/size}", "base", "closed", "base", "mid")
-        hide screen no_groping_05
-        show screen groping_05
+        call her_chibi_scene("grope_ass_back")
         call nar(">You push the first bead in with ease.")
         her "Hmmm {image=textheart}"
         m "How many do you think you can take, my dear?"
@@ -1345,8 +1316,7 @@ label l_tutoring:
         call her_main("My butthole is stretched so wide!", "open", "narrow", "base", "up",cheeks="blush")
         g9 "Your butthole is doing great."
         call nar(">You finger her butthole fiercely.")
-        hide screen groping_05
-        show screen groping_05b
+        call her_chibi_scene("grope_ass_back_fast")
         call her_main("Nooo... aahh {image=textheart}.", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
         m "Your pussy is getting neglected. We need to fix that!"
         call nar(">You start fingering her pussy with your other hand. She is panting heavily.")
@@ -1370,8 +1340,7 @@ label l_tutoring:
 
         ">There's a small puddle on your desk from her juices. You slowly remove your fingers."
 
-        hide screen groping_05b
-        show screen no_groping_05_desk
+        call her_chibi_scene("lie_on_desk")
         call hide_blkfade
         pause.5
 
@@ -1386,7 +1355,6 @@ label l_tutoring:
 
         call set_her_action("none","update") #Resets clothes.
 
-        hide screen no_groping_05_desk
         call her_chibi("stand","door","base",flip=True)
         call gen_chibi("sit_behind_desk")
         call hide_blkfade
@@ -1407,7 +1375,7 @@ label l_tutoring:
 
         ">She comes back and does not seem particularly upset."
 
-        call hg_chibi_transition("bj")
+        call her_chibi_scene("bj")
         show screen chair_left
         call hide_blkfade
         call ctc
@@ -1425,7 +1393,7 @@ label l_tutoring:
         g11 "Yes!"
 
         call cum_block
-        call hg_chibi_transition("bj_cumming_in")
+        call her_chibi_scene("bj_cum_in")
         hide screen bld1
         with d3
 
@@ -1582,16 +1550,12 @@ label l_tutoring:
 
         ">Hermione languorously climbs down your desk and bends over it."
 
-        call her_chibi("hide")
-        call gen_chibi("hide")
-
-        show screen no_groping_laying_02
+        call her_chibi_scene("lie_on_desk")
 
         call her_main("I'm ready, [genie_name].",ypos="head")
         ">You take an empty butterbeer bottle, spit on the neck and push it inside her butthole."
 
-        hide screen no_groping_laying_02
-        show screen scr_her_fingering_naked("slow")
+        call her_chibi_scene("finger_naked_slow") # Possible chibi clothing mismatch?
         hide screen bld1
         hide screen blktone
         call hide_blkfade
@@ -1611,7 +1575,7 @@ label l_tutoring:
         call nar(">You push the whole bottle neck up inside her asshole.")
         call her_main("Ohhh, yesss! {image=textheart}", "open", "narrow", "base", "up",cheeks="blush")
         call her_main("More, faster!", "open", "narrow", "base", "up",cheeks="blush")
-        show screen scr_her_fingering_naked()
+        call her_chibi_scene("finger_naked")
         call nar(">You rotate the bottle while going back and forth deeper and deeper.")
         call her_main("Yessss, don't forget my pussy {image=textheart}.", "grin", "narrow", "base", "up",cheeks="blush")
         g9 "Oh, your pussy better be ready for what's coming!"
@@ -1628,8 +1592,7 @@ label l_tutoring:
         hide screen hermione_main
         call blkfade
 
-        hide screen scr_her_fingering_naked
-        show screen no_groping_laying_02
+        call her_chibi_scene("finger_naked_pause")
         pause.3
         call hide_blkfade
         call ctc
@@ -1644,7 +1607,6 @@ label l_tutoring:
 
         $ hermione_wear_robe = True
 
-        hide screen no_groping_laying_02
         call gen_chibi("sit_behind_desk")
         call her_chibi("stand","desk","base")
         call hide_blkfade
@@ -1723,9 +1685,7 @@ label l_tutoring:
         hide screen hermione_main
         call blkfade
 
-        call her_chibi("hide")
-        call gen_chibi("hide")
-        show screen no_groping_laying_02
+        call her_chibi_scene("lie_on_desk")
         hide screen bld1
         hide screen blktone
         call hide_blkfade
@@ -1739,9 +1699,7 @@ label l_tutoring:
         hide screen hermione_main
         call nar(">You take advantage of her moment of distraction to force you cock into her butthole.")
 
-        hide screen no_groping_laying_02
-        show screen chair_left
-        show screen scr_her_sex("slow")
+        call her_chibi_scene("sex_naked_slow")
         hide screen bld1
         with d1
         with hpunch
@@ -1757,7 +1715,7 @@ label l_tutoring:
         m "Even without points?"
         call her_main("Don't make me regret agreeing to this.", "upset", "worriedCl", "worried", "mid",cheeks="blush")
         m "Say you love it even without points."
-        show screen scr_her_sex()
+        call her_chibi_scene("sex_naked")
         call nar(">You increase the pace.")
         call her_main("Ahh yesss {image=textheart}.", "open_tongue", "narrow", "base", "up",cheeks="blush")
         call her_main("I'm such a whore, I love sex even for free.", "mad", "wide", "base", "stare",cheeks="blush")
@@ -1795,14 +1753,13 @@ label l_tutoring:
         with hpunch
         pause.1
         call her_main("Cuuuum {image=textheart}{image=textheart}.", "open_wide_tongue", "narrow", "base", "up",cheeks="blush")
-        show screen scr_her_sex("fast")
+        call her_chibi_scene("sex_naked_fast")
         call nar(">You fuck her butthole fiercely.")
         call her_main("Yes, yes, again, aaaah {image=textheart}.", "open_wide_tongue", "narrow", "base", "up",cheeks="blush")
         g11 "Yes, my little whore, yes!"
-        hide screen scr_her_sex
-        show screen scr_her_sex_cum_outside()
+        call her_chibi_scene("sex_naked_cum_out")
         call her_main("*Panting* *panting*", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
-        show screen scr_her_sex_cum_outside(1)
+        call her_chibi_scene("sex_naked_cum_out_done")
         g11 "*Panting* *panting*"
 
         hide screen hermione_main
@@ -1810,9 +1767,8 @@ label l_tutoring:
 
         hide screen chair_left
         hide screen hermione_main
-        hide screen scr_her_sex_cum_outside
+        call her_chibi_scene("lie_on_desk")
         pause 1
-        show screen no_groping_laying_02
         hide screen bld1
         hide screen blktone
         call hide_blkfade
@@ -1844,12 +1800,10 @@ label l_tutoring:
 
         call set_her_action("none","update") #Resets clothes.
 
-        hide screen no_groping_laying_02
-        pause 1
-
         call gen_chibi("sit_behind_desk")
         call her_chibi("stand","desk","base")
         call hide_blkfade
+        pause 1
 
         call her_walk(xpos="door", ypos="base")
 

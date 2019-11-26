@@ -888,7 +888,7 @@ label slytherin_match:
     #
     #
     #
-    call hg_chibi_transition("grope_on_podium_idle")
+    call her_chibi_scene("grope_on_podium_idle")
     with d3
     pause .5
     # Genie starts sneaking up behind Hermione (Tonks)
@@ -896,7 +896,7 @@ label slytherin_match:
     hide screen hermione_main
     with d3
     pause 1.0
-    call hg_chibi_transition("grope_on_podium")
+    call her_chibi_scene("grope_on_podium")
     with d3
     pause 2.0
     call her_main("Whoa!","base","base","base","mid") # Look of surprise
@@ -907,7 +907,7 @@ label slytherin_match:
     g9 "..."
     call her_main("No worries ladies and gentlemen, just had a bit of a slip. It's very...{w=0.3} wet up here...","base","base","base","mid") #blushing
     m "(And it will be getting even wetter in a minute...)"
-    call hg_chibi_transition("grope_on_podium_horny")
+    call her_chibi_scene("grope_on_podium_horny")
     hide screen hermione_main
     show screen blktone5
     with d5
@@ -950,7 +950,7 @@ label slytherin_match:
     call her_main("And we all know...{w=0.3} *Ahh*{w=0.3} No excessive use of elbows...{w=0.3} *Ahh*{w=0.3} Permitted...","base","base","base","mid")
     call her_main("But it seems to have done the trick!","base","base","base","mid")
     call her_main("The Slytherin chasers are... {w=0.3}*Ahh*...{w=0.3} Edging ever closer... to the goal posts!","base","base","base","mid")
-    call hg_chibi_transition("grope_on_podium_close")
+    call her_chibi_scene("grope_on_podium_close")
     hide screen hermione_main
     show screen blktone5
     with d5
@@ -964,7 +964,7 @@ label slytherin_match:
     with d3
     pause 0.5
     call cum_block
-    call hg_chibi_transition("grope_on_podium_cumming")
+    call her_chibi_scene("grope_on_podium_cum")
     pause 0.7
     show screen blktone5
     with d5
@@ -978,7 +978,6 @@ label slytherin_match:
     $ hermione_chibi.zorder = 2
     $ genie_chibi.zorder = 3
     hide screen hermione_main
-    hide screen grope_ass_podium
     call her_chibi("kneel_pant", 325, 170)
     call gen_chibi("stand", flip=True)
     with d5

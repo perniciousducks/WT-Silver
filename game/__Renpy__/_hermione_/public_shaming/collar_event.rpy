@@ -54,7 +54,7 @@ label slut_scene: #Locked to her being your slut
     ">Hermione walks over and kneels before you as you pull out your cock from your robes."
 
     call play_music("playful_tension") #HERMIONE
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
 
     hide screen blktone
     hide screen bld1
@@ -81,7 +81,7 @@ label slut_scene: #Locked to her being your slut
             m "Here's you reward slut!"
             ">You grab the back of her head and force your cock into her mouth and to the entrance of her throat."
 
-            call hg_chibi_transition("bj")
+            call her_chibi_scene("bj")
             with d3
 
             call her_main("!!!", "shock", "wide", "base", "stare")
@@ -108,7 +108,7 @@ label slut_scene: #Locked to her being your slut
             m "Once more, so that I can hear you."
             ">You pull her head off your cock."
 
-            call hg_chibi_transition("bj_pause")
+            call her_chibi_scene("bj_pause")
             with d3
 
             call her_main("{size=+10}I'm a slut!{/size}", "scream", "worriedCl", "worried", "mid")
@@ -116,14 +116,14 @@ label slut_scene: #Locked to her being your slut
             m "Yes you are."
             ">You impale her back into your cock."
 
-            call hg_chibi_transition("bj")
+            call her_chibi_scene("bj")
             with d3
 
         "-Let her suck you-":
             m "Well if you insist [hermione_name]."
             ">Hermione takes you into her waiting mouth."
             
-            call hg_chibi_transition("bj")
+            call her_chibi_scene("bj")
             with d3
 
             m "See, don't you feel better now that you have a cock in your mouth?"
@@ -146,7 +146,7 @@ label slut_scene: #Locked to her being your slut
             hide screen hermione_main
             m "I asked you a question slut."
             
-            call hg_chibi_transition("bj_pause")
+            call her_chibi_scene("bj_pause")
             with d3
 
             ">She takes you out of her mouth."
@@ -157,7 +157,7 @@ label slut_scene: #Locked to her being your slut
             hide screen hermione_main
             ">Hermione takes you back into her mouth with renewed effort."
 
-            call hg_chibi_transition("bj")
+            call her_chibi_scene("bj")
             with d3
 
     m "Ughhh, I'm getting close girl."
@@ -165,14 +165,14 @@ label slut_scene: #Locked to her being your slut
     ">Hermione starts focusing on the tip of your cock, licking your slit."
     m "That did it. Here it comes!"
     ">You pull out of her mouth and start pumping your cock."
-    call hg_chibi_transition("bj_cumming_out")
+    call her_chibi_scene("bj_cum_out")
     $ u_sperm = "characters/hermione/face/auto_07.png"
     $ uni_sperm = True
     m "Here's your reward you filthy fucking cumslut!"
     ">You explode across her face."
     ">One string of your cum even goes up her nostril."
     m "Who's a slut?"
-    call hg_chibi_transition("bj_cumming_out_blink")
+    call her_chibi_scene("bj_cum_out_done")
     call her_main("I am...", "grin", "base", "base", "R")
     hide screen hermione_main
     m "Good, well now that we've established that I have a present for you."
@@ -246,7 +246,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
-    call hg_chibi_transition("sex_pause")
+    call her_chibi_scene("sex_pause")
     show screen chair_left
     call hide_blkfade
 
@@ -265,7 +265,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_main("{size=+5}Please fuck my cunt{/size}", "scream", "wide", "base", "stare")
     hide screen hermione_main
     m "Seeing as how you asked nicely."
-    call hg_chibi_transition("sex")
+    call her_chibi_scene("sex")
     ">You take a firm grip of her hips and thrust into her sopping pussy."
     m "Ugh you're still so tight."
     m "I thought that you would have loosened up after all the guys you've fucked."
@@ -298,7 +298,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     ">You increase your pumping of her pussy."
     m "Here's your cum, whore. You earned it."
     ">You push yourself all the way in and start shooting off into her womb."
-    call hg_chibi_transition("sex_creampie")
+    call her_chibi_scene("sex_cum_in")
     call her_main("!!!", "scream", "wide", "worried", "stare",cheeks="blush",tears="messy")
     hide screen hermione_main
     m "That's it, take it all you fucking slut."
@@ -378,7 +378,7 @@ label slave_scene:
     call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
     call blkfade
 
-    call hg_chibi_transition("sex_pause")
+    call her_chibi_scene("sex_pause")
     show screen chair_left
     call her_chibi("hide")
     call hide_blkfade
@@ -394,7 +394,7 @@ label slave_scene:
     m "Good girl."
     ">You thrust your full length into her in one motion."
 
-    call hg_chibi_transition("sex")
+    call her_chibi_scene("sex")
 
     m "You're very tight today, are you enjoying this?"
     call her_main("Yes [genie_name], I'm loving this.", "base", "narrow", "base", "up")
@@ -461,7 +461,7 @@ label slave_scene:
     ">You grab her hips and impale her on your throbbing member."
     m "Ughhh"
     
-    call hg_chibi_transition("sex_creampie")
+    call her_chibi_scene("sex_cum_in")
 
     ">You roar as you cum inside her tight hole."
     call her_main("I'm cumming!", "scream", "wide", "base", "stare")
@@ -485,7 +485,7 @@ label slave_scene:
     call her_main("Yes master.", "angry", "narrow", "base", "down")
     hide screen hermione_main
 
-    call hg_chibi_transition("bj_pause")
+    call her_chibi_scene("bj_pause")
     with d3
 
     ">Hermione pulls herself of the table and kneels in front of you."

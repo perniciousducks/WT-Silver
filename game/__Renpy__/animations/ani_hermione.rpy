@@ -28,19 +28,6 @@ image ch_hem potion:
     pause 1.5
     repeat
 
-image ch_hem hotdog:
-    "characters/hermione/chibis/sex/sperm_01.png"
-    pause.3
-    "characters/hermione/chibis/sex/sperm_02.png"
-    pause.3
-    "characters/hermione/chibis/sex/sperm_03.png"
-    pause.3
-    "characters/hermione/chibis/sex/sperm_04.png"
-    pause 1
-    "characters/hermione/chibis/sex/sperm_03.png"
-    pause.3
-    repeat
-
 image ch_hem walk:    #shirt 00
     "characters/hermione/chibis/walk/h_walk_a_01.png"
     pause.08

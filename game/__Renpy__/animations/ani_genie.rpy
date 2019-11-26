@@ -67,6 +67,11 @@ image ch_gen sit_behind_desk_hover:
 
     "characters/genie/chibis/idle/desk_hover.png"
 
+image ch_gen sit_in_chair:
+    zoom 0.5
+
+    "characters/genie/chibis/sit.png"
+
 # Working
 image ch_gen paperwork:
     "characters/genie/chibis/working/01.png"
@@ -252,7 +257,6 @@ image ch_gen cum_behind_desk_done:
         zoom 2
         "characters/genie/chibis/masturbating/desk_sperm_11.png"
 
-#TODO Remove desk from image (`show screen desk` where used)
 image ch_gen dick_out:
     "characters/genie/chibis/masturbating/dick_out.png"
 

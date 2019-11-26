@@ -69,11 +69,7 @@ label hg_ps_cumslut_Scene_1:
     hide screen hermione_main
     call blkfade
 
-    call her_chibi("hide")
-    call gen_chibi("handjob","desk","base")
-
-    show screen chair_left
-    hide screen desk
+    call her_chibi_scene("hj", "desk", "base")
     show screen desk
 
     hide screen blktone
@@ -271,11 +267,7 @@ label hg_ps_cumslut_Scene_2:
     hide screen hermione_main
     call blkfade
 
-    call her_chibi("hide")
-    call gen_chibi("handjob","desk","base")
-
-    show screen chair_left
-    hide screen desk
+    call her_chibi_scene("hj", "desk", "base")
     show screen desk
 
     hide screen blktone
@@ -484,9 +476,8 @@ label hg_ps_cumslut_Scene_3:
     call blkfade
     pause.3
 
-    show screen chair_left
-    call hg_chibi_transition("hj")
-    #show screen desk_02 <- screen does not exist
+    call her_chibi_scene("hj")
+    show screen desk
     hide screen blktone
     hide screen blkfade
     with d3
@@ -529,7 +520,7 @@ label hg_ps_cumslut_Scene_3:
             $ uni_sperm = True
 
             call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "worried", "down",xpos="right",ypos="base")
-            call hg_chibi_transition("hj_cumming_on")
+            call her_chibi_scene("hj_cum_on")
             hide screen blkfade
             hide screen bld1
             with d3
@@ -539,7 +530,7 @@ label hg_ps_cumslut_Scene_3:
             m "That's it, all over you slut."
             call her_main("......", "soft", "narrow", "annoyed", "up")
             pause
-            call hg_chibi_transition("hj_cumming_on_pause")
+            call her_chibi_scene("hj_cum_on_done")
             call her_main("It's so warm...{image=textheart}", "grin", "narrow", "base", "dead")
             m "That it is."
             call her_main("If it's alright with you, I think I better head to class now...", "base", "narrow", "worried", "down")
@@ -558,7 +549,7 @@ label hg_ps_cumslut_Scene_3:
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
             $ u_sperm = "characters/hermione/face//auto_07.png"
             $ uni_sperm = True
-            call hg_chibi_transition("hj_cumming_on")
+            call her_chibi_scene("hj_cum_on")
             hide screen blkfade
             hide screen bld1
             with d3

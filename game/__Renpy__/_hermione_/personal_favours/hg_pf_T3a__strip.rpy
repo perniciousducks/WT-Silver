@@ -949,7 +949,7 @@ label hg_pf_strip_T1_masturbate:
             ">Hermione jumps off your desk and starts to put her clothes back on while glaring at you..."
             m "Oh, come on! Don't leave me like that!"
 
-            call hg_chibi_transition("stand","desk","base", flip=False, trans="fade")
+            call her_chibi_scene("reset","desk","base", trans="fade")
 
             call reset_hermione
             call her_main("The dance is over, [genie_name]!", "soft", "base", "angry", "mid")

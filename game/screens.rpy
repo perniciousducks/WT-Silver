@@ -62,58 +62,32 @@ screen choice(items):
     if not any(itertools.imap(renpy.get_screen, ["say", "hermione_main", "cho_chang", "luna_main", "snape_main", "astoria_main", "tonks_main", "susan_main", "letter"])):
         add "interface/bld.png" at fadeOutOnly
     window at fadeInOut:
-        style "menu_window"
+        style "empty"
         xalign menu_x
         yalign menu_y
 
         vbox:
-            style "menu"
+            style_prefix menu_style
             spacing 0
 
             for i, item in enumerate(items, 1):
                 $ ico = None
-                
-                frame:
-                    style "empty"
+                if "{icon=" in item.caption:
+                    $ ico = item.caption.partition("{icon=")[2][:-1] # Icon must be at the end of caption
+
+                button:
+                    xsize int(config.screen_width * 0.5)
                     ysize 28
-                    xminimum int(config.screen_width * 0.5)
-                    xmaximum int(config.screen_width * 0.5)
-                    
-                    if "{icon=" in item.caption:
-                        $ ico = item.caption.partition("{icon=")[2][:-1]
-
-                    if item.action:
-                        button:
-                            action item.action
-                            style mnu_btn_style
-                            text item.caption.partition("{icon=")[0] style mnu_style yalign 0.5
-                    else:
-                        text item.caption.partition("{icon=")[0] style mnu_style
-                            
-                    hbox:
-                        spacing 3
-                        yalign 0.5
-                        
+                    action item.action
+                    if i < 10 and item.action:
+                        keysym (str(i), "K_KP"+str(i)) # Numeric hotkey support
+                    sensitive bool(item.action)
+                    fixed:
+                        text item.caption.partition("{icon=")[0] xalign 0.5 yalign 0.5
                         if i < 10 and item.action:
-                            text "{size=-2}[i].{/size}" style txt_style xpos 5 yalign 0.5
-                            # Numeric hotkey support
-                            key str(i) action item.action
-                            key "K_KP"+str(i) action item.action #Numpad
+                            text "{size=-2}[i].{/size}" xpos 5 yalign 0.5
                         if ico:
-                            add ico
-                        
-                #add "interface/general/"+interface_color+"/spacer.png" xalign 0.5 yalign 1.0
-
-
-style menu_window is default
-
-style menu_choice is button_text:
-    clear
-
-style menu_choice_button is button:
-    xminimum int(config.screen_width * 0.75)
-    xmaximum int(config.screen_width * 0.75)
-
+                            add ico xpos 40 yalign 0.5 anchor (0.5, 0.5)
 
 ##############################################################################
 # Input
@@ -123,7 +97,7 @@ style menu_choice_button is button:
     
 screen input(prompt):
     tag input
-    zorder 15 #Always on top
+    zorder 15 # Always on top
     
     button:
         xsize 1080
@@ -167,9 +141,10 @@ screen main_menu():
     
     # Version display
     text "{color=#fff}{size=-2}[title_version]{/size}{/color}" xpos 1024 ypos 228 outlines [ (1, "#000", 0, 0) ]
-    #text "{color=#c70000}EXPERIMENTAL VERSION{/color}" xpos 10 yalign 0.01 size 24 outlines [(2, "#000", 0, 0)]
-    #text "Expect bugs, crashes and other weird stuff.\nProceed at your own risk, you have been warned!" xpos 10 yalign 0.05 color "#fff" size 12 outlines [(2, "#000", 0, 0)]
-    #text "You can find most recent stable build on our {a=https://pastebin.com/6zbuZ5gS}pastebin{/a}." xpos 10 yalign 0.15 color "#fff" size 12 outlines [(2, "#000", 0, 0)]
+    if "EXPERIMENTAL" in config.name:
+        text "{color=#c70000}EXPERIMENTAL VERSION{/color}" xpos 10 yalign 0.01 size 24 outlines [(2, "#000", 0, 0)]
+        text "Expect bugs, crashes and other weird stuff.\nProceed at your own risk, you have been warned!" xpos 10 yalign 0.05 color "#fff" size 12 outlines [(2, "#000", 0, 0)]
+        text "You can find the most recent stable build on our {a=https://pastebin.com/6zbuZ5gS}pastebin{/a}" xpos 10 yalign 0.15 color "#fff" size 12 outlines [(2, "#000", 0, 0)]
     
     if update_available:        
         frame:

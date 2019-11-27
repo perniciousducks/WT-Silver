@@ -35,8 +35,7 @@ default commentaries = False
 default txt_style = "night_text"
 default btn_style = "night_button"
 default btn_hover = "#7d75aa40"
-default mnu_style = "menu_choice_night"
-default mnu_btn_style = "menu_choice_nightbutton"
+default menu_style = "night_menu"
 
 # Menu placement
 default menu_x = 0.5

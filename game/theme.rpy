@@ -132,43 +132,29 @@ style night_button:
     padding (5, 5, 5, 5)
 
 # Choice menu styles
-style menu_choice:
-    hover_color "#e9d570"
-    hover_outlines [(2, "#402313", 0, 0)]
-
-style menu_choice_day:
-    size 18
-    xalign 0.5
+style menu_text is default:
     text_align 0.5
+    outlines [ (1, "#00000080", 1, 0) ]
+
+style day_menu_text:
     color "#f9d592"
-    hover_color "#ffffff"
+    hover_color "#fff"
     insensitive_color "#444"
-    outlines [ (1, "#00000080", 1, 0) ]
 
-style menu_choice_night:
-    size 18
-    xalign 0.5
-    text_align 0.5
+style night_menu_text:
     color "#9b8d84"
-    hover_color "#ffffff"
+    hover_color "#fff"
     insensitive_color "#444"
-    outlines [ (1, "#00000080", 1, 0) ]
 
-style menu_choice_daybutton:
-    yminimum 28
-    xsize int(config.screen_width * 0.5)
+style menu_button is default:
+    activate_sound "sounds/click3.mp3"
+
+style day_menu_button:
     background "#ac8d5aE6"
     hover_background "#97681f"
     insensitive_background "#d1a02eB3"
-    activate_sound "sounds/click3.mp3"
 
-style menu_choice_nightbutton:
-    yminimum 28
-    xsize int(config.screen_width * 0.5)
+style night_menu_button:
     background "#5d5151E6"
     hover_background "#897e75"
     insensitive_background "#9e8449"
-    activate_sound "sounds/click3.mp3"
-
-style say_two_window_vbox:
-    yalign 1.0

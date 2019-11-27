@@ -145,7 +145,7 @@ label hermione_third_duel:
     call her_main("Wait, I should have asked for point for this.", "shock", "wide", "worried", "shocked")
     g9 "To late, here we go."
 
-    call play_music("boss_card_theme")
+    call play_music("cardgame")
     play sound "sounds/Genie_VS_Hermione4.mp3"
     show screen genie_vs_hermione
     show screen move_genie
@@ -233,7 +233,7 @@ label hermione_random_duel:
 
     label hermione_random_duel_rematch:
 
-    call play_music("boss_card_theme")
+    call play_music("cardgame")
 
     $ random_player_deck = create_random_deck(0,150,unlocked_cards)
 

@@ -48,7 +48,7 @@ label cho_intro_E1:
     # Cho enters your office for the first time.
     call cho_walk("660", "base", action="enter")
 
-    call play_music("cho_theme")
+    call play_music("cho")
     call cho_main("Good morning, Sir.","base","base","base","mid", xpos="mid", ypos="base")
     call ctc
 
@@ -418,7 +418,7 @@ label cho_intro_E2:
     m "I suppose..."
 
     # Back to cheerful.
-    call play_music("night_theme")
+    call play_music("night")
     call cho_main("Good.","base","base","base","mid")
     m "(...)"
     call cho_main("Have a nice evening, Professor.","smile","closed","base","mid")

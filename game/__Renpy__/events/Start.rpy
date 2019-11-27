@@ -1,5 +1,5 @@
 label start_wt:
-    call play_music("hedwigs_theme")
+    call play_music("prologue")
     show screen blkfade
     with d3
     pause 1

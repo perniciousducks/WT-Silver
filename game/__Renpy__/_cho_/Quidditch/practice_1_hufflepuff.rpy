@@ -236,7 +236,7 @@ label cc_ht_return_E2:
     call cho_main("I bet you were probably in on it...","upset","narrow","angry","mid")
     m "Now now, you know I'd never resort to any sort of foul play like that..."
     m "More importantly, how did the game go?"
-    call play_music("cho_theme")
+    call play_music("cho")
     call cho_main("{size=+10}I got it!!!{/size}","scream","base","base","mid")
     call cho_main("I caught the snitch!","smile","closed","base","mid")
     m "Congratulations..."
@@ -289,7 +289,7 @@ label cc_ht_return_E3:
 
     call play_music("stop")
     call cho_main("[cho_genie_name], there's been a disaster!","scream","closed","angry","mid", xpos="mid", ypos="base")
-    call play_music("night_theme")
+    call play_music("night")
     m "Off to a good start..."
     call cho_main("[cho_genie_name], something terrible happened to Lee Jordan!","quiver","narrow","sad","mid")
     m "Lee Jordan?{w=0.5} Is that a famous basketball player I'm not aware of?"
@@ -336,7 +336,7 @@ label cc_ht_return_E3:
     call cho_main("{size=-4}Probably anyone at this point...{/size}","pout","base","raised","R")
     call play_music("stop")
     call cho_main("(Wait a minute...)","pout","wide","raised","mid")
-    call play_music("cho_theme")
+    call play_music("cho")
     call cho_main("No...","smile","base","base","mid") #Mischievous smile
     g9 "I'll ask her... What's the worst that could happen..."
     call cho_main("Yeah, actually you're probably right...","angry","angry","angry","mid")

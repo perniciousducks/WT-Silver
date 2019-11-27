@@ -1,7 +1,7 @@
 
 
 label summon_tonks:
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call play_sound("door")
 
     $ active_girl = "tonks"

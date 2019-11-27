@@ -323,7 +323,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
 
     stop music fadeout 1.0
     m "What's the problem, [hermione_name]?"
-    call play_music("sad") # HERMIONE'S THEME.
+    call play_music("sad")
 
     call her_main("I'm sorry, [genie_name]...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
     call her_main("It's stuck...", "angry", "worriedCl", "worried", "mid", cheeks="blush")

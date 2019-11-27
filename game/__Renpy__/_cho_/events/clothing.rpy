@@ -29,7 +29,7 @@ label cho_summon_setup:
             call cho_chibi("stand","mid","base")
             with d3
 
-            call play_music("cho_theme")
+            call play_music("cho")
             call cho_main("","base","base","base","mid", xpos="mid", ypos="base", animation=moveFade)
             $ cho_animation = None
             call ctc
@@ -63,7 +63,7 @@ label cho_summon_setup:
             call cho_chibi("stand","mid","base")
             with d3
 
-            call play_music("cho_theme")
+            call play_music("cho")
             call cho_main("","base","base","base","mid", xpos="mid", ypos="base", animation=moveFade)
             $ cho_animation = None
             call ctc
@@ -97,7 +97,7 @@ label cho_summon_setup:
     call cho_chibi("stand","mid","base")
     with d3
 
-    call play_music("cho_theme")
+    call play_music("cho")
     if cho_mood != 0:
         call cho_main("[cho_genie_name]...", face="annoyed", xpos="base", ypos="base", animation=moveFade)
         ">Cho is upset with you."

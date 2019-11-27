@@ -743,7 +743,7 @@ label hg_hidden_blowjob_snape:
     call sna_walk(xpos="mid", ypos="base")
     pause.2
 
-    call play_music("snape_theme")
+    call play_music("snape")
     call sna_main("Good, you are here.","snape_01", xpos="base", ypos="base")
     call her_chibi_scene("bj")
     call her_main("{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}", "sucking", "slit", "worried", "ahegao")

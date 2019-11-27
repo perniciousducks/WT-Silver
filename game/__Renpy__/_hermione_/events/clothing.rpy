@@ -12,7 +12,7 @@ label hermione_summon_setup:
 
         call her_walk(action="enter", xpos="mid", ypos="base")
 
-        call play_music("hermione_theme")
+        call play_music("hermione")
         call ctc
 
         m "(...)"
@@ -91,7 +91,7 @@ label hermione_summon_setup:
                 # call her_chibi("stand","mid","base")
                 # with d3
 
-                # call play_music("hermione_theme")
+                # call play_music("hermione")
                 # call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
                 # call ctc
 
@@ -112,7 +112,7 @@ label hermione_summon_setup:
                 # call her_chibi("stand","mid","base")
                 # with d3
 
-                # call play_music("hermione_theme")
+                # call play_music("hermione")
                 # call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
 
             # #Unlocks rewards.
@@ -141,7 +141,7 @@ label hermione_summon_setup:
                 # call her_chibi("stand","mid","base")
                 # with d3
 
-                # call play_music("hermione_theme")
+                # call play_music("hermione")
                 # call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
                 # call ctc
 
@@ -175,7 +175,7 @@ label hermione_summon_setup:
                 # call her_chibi("stand","mid","base")
                 # with d3
 
-                # call play_music("hermione_theme")
+                # call play_music("hermione")
                 # call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
 
             # #Unlocks rewards.
@@ -202,7 +202,7 @@ label hermione_summon_setup:
                 # call her_chibi("stand","mid","base")
                 # with d3
 
-                # call play_music("hermione_theme")
+                # call play_music("hermione")
                 # call her_main("", "disgust", "narrow", "worried", "down", xpos="base", ypos="base")
                 # call ctc
 
@@ -223,7 +223,7 @@ label hermione_summon_setup:
                 # call her_chibi("stand","mid","base")
                 # with d3
 
-                # call play_music("hermione_theme")
+                # call play_music("hermione")
                 # call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
 
             # #Unlocks rewards.
@@ -238,7 +238,7 @@ label hermione_summon_setup:
             # call her_chibi("stand","mid","base")
             # with d3
 
-            # call play_music("hermione_theme")
+            # call play_music("hermione")
             # if her_mood > 1:
                 # call her_main("", "annoyed", "base", "base", "R", xpos="base", ypos="base")
             # else:
@@ -268,7 +268,7 @@ label hermione_summon_setup:
                 # call her_chibi("stand","mid","base")
                 # with d3
 
-                # call play_music("hermione_theme")
+                # call play_music("hermione")
                 # call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
                 # call ctc
 
@@ -286,7 +286,7 @@ label hermione_summon_setup:
                 # call her_chibi("stand","mid","base")
                 # with d3
 
-                # call play_music("hermione_theme")
+                # call play_music("hermione")
                 # call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
 
             # #Unlocks rewards.
@@ -311,7 +311,7 @@ label hermione_summon_setup:
                 # call her_chibi("stand","mid","base")
                 # with d3
 
-                # call play_music("hermione_theme")
+                # call play_music("hermione")
                 # call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
                 # call ctc
 
@@ -329,7 +329,7 @@ label hermione_summon_setup:
                 # call her_chibi("stand","mid","base")
                 # with d3
 
-                # call play_music("hermione_theme")
+                # call play_music("hermione")
                 # call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
 
             # #Unlocks rewards.
@@ -345,7 +345,7 @@ label hermione_summon_setup:
     with d3
 
     #Hermione greeting.
-    call play_music("hermione_theme")
+    call play_music("hermione")
     if her_mood >= 1:
 
         call set_her_face(change="all")

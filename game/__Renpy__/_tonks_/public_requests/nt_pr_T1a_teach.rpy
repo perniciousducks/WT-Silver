@@ -109,7 +109,7 @@ label nt_pr_teach_T1_E1: #Tier 1 - Event 1 - Slytherin boy
                 call ton_main("Gave him a couple of points for his house.","open","base","base","R")
                 m "Well done, [tonks_name]... We'll talk next time."
                 call ton_main("Yes, [ton_genie_name]. Have a good night.","base","base","base","mid")
-                call increase_house_points(house="s", points=20)
+                call increase_house_points("s", 20)
                 if ton_reputation < 4: # Points til 4.
                     $ ton_reputation += 1
                 jump end_tonks_event
@@ -157,7 +157,7 @@ label nt_pr_teach_T1_E1: #Tier 1 - Event 1 - Slytherin boy
 
     # Tonks leaves
 
-    call increase_house_points(house="s", points=20)
+    call increase_house_points("s", 20)
 
     if ton_reputation < 4: # Points til 4.
         $ ton_reputation += 1
@@ -181,7 +181,7 @@ label nt_pr_teach_T1_E2: # Tier 1 - Event 2 - Racenclaw boy
                 call ton_main("And he earned a bunch of points from me.","base","happyCl","base","mid")
                 m "Well done, [tonks_name]... We'll talk next time."
                 call ton_main("Yes, [ton_genie_name]. Have a good night.","base","base","base","mid")
-                call increase_house_points(house="r", points=10)
+                call increase_house_points("r", 10)
                 if ton_reputation < 4: # Points til 4.
                     $ ton_reputation += 1
                 jump end_tonks_event
@@ -223,7 +223,7 @@ label nt_pr_teach_T1_E2: # Tier 1 - Event 2 - Racenclaw boy
 
     # Tonks leaves
 
-    call increase_house_points(house="r", points=10)
+    call increase_house_points("r", 10)
 
     if ton_reputation < 4: # Points til 4.
         $ ton_reputation += 1
@@ -291,7 +291,7 @@ label nt_pr_teach_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys. Guess who...
 
     # Tonks leaves
 
-    call increase_house_points(house="g", points=20)
+    call increase_house_points("g", 20)
     if ton_reputation < 4: # Points til 4.
         $ ton_reputation += 1
 
@@ -315,7 +315,7 @@ label nt_pr_teach_T1_E4: # Tier 1 - Event 4 - Slytherin girl
                 call ton_main("But she was very happy about the points.","base","base","angry","mid")
                 m "Well done, [tonks_name]..."
                 call ton_main("Yes, [ton_genie_name]. Good night.","smile","happyCl","base","mid")
-                call increase_house_points(house="s", points=20)
+                call increase_house_points("s", 20)
                 if ton_reputation < 4: # Points til 4.
                     $ ton_reputation += 1
                 jump end_tonks_event
@@ -384,7 +384,7 @@ label nt_pr_teach_T1_E4: # Tier 1 - Event 4 - Slytherin girl
 
     # Tonks leaves
 
-    call increase_house_points(house="s", points=20)
+    call increase_house_points("s", 20)
 
     if ton_reputation < 4: # Points til 4.
         $ ton_reputation += 1
@@ -412,7 +412,7 @@ label nt_pr_teach_T2_E1: # Tier 2 - Event 1 - Hufflepuff girl
                 call ton_main("And I didn't use my wand to clean it...","horny","base","angry","mid")
                 m "Very good, [tonks_name]..."
                 call ton_main("Thank you, [ton_genie_name]. Until next time...","base","base","base","mid")
-                call increase_house_points(house="h", points=40)
+                call increase_house_points("h", 40)
                 if ton_reputation < 9: # Points til 9.
                     $ ton_reputation += 1
                 jump end_tonks_event
@@ -478,7 +478,7 @@ label nt_pr_teach_T2_E1: # Tier 2 - Event 1 - Hufflepuff girl
 
     # Tonks leaves
 
-    call increase_house_points(house="h", points=40)
+    call increase_house_points("h", 40)
 
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
@@ -503,7 +503,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
                 call ton_main("Every time he shot out some cum for me I gave him 5 points...","horny","base","angry","mid")
                 m "I bet he earned quite a lot today. Well done, [tonks_name]..."
                 call ton_main("That he did, [ton_genie_name]... See you next time...","base","base","base","mid")
-                call increase_house_points(house="r", points=20)
+                call increase_house_points("r", 20)
                 if ton_reputation < 9: # Points til 9.
                     $ ton_reputation += 1
                 jump end_tonks_event
@@ -582,7 +582,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
 
     # Tonks leaves
 
-    call increase_house_points(house="r", points=20)
+    call increase_house_points("r", 20)
 
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
@@ -606,7 +606,7 @@ label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
                 call ton_main("I did my best to punish him...thoroughly...","horny","base","angry","mid")
                 m "Very good, [tonks_name]..."
                 call ton_main("*Mhmm*... Until next time, [ton_genie_name]...","base","happyCl","base","mid")
-                call increase_house_points(house="s", points=20)
+                call increase_house_points("s", 20)
                 if ton_reputation < 9: # Points til 9.
                     $ ton_reputation += 1
                 jump end_tonks_event
@@ -654,7 +654,7 @@ label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
     call bld
     m "(This bitch might be crazier than I thought...)"
 
-    call increase_house_points(house="s", points=20)
+    call increase_house_points("s", 20)
 
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1
@@ -678,7 +678,7 @@ label nt_pr_teach_T2_E4: # Tier 2 - Event 4 - Slytherin girl
                 call ton_main("She's really starting to get into it!","base","base","angry","mid")
                 m "Good work, [tonks_name]..."
                 call ton_main("Thank you... Have a good night, [ton_genie_name]...","base","base","base","mid")
-                call increase_house_points(house="s", points=20)
+                call increase_house_points("s", 20)
                 if ton_reputation < 9: # Points til 9.
                     $ ton_reputation += 1
                 jump end_tonks_event
@@ -723,7 +723,7 @@ label nt_pr_teach_T2_E4: # Tier 2 - Event 4 - Slytherin girl
 
     # Tonks leaves
 
-    call increase_house_points(house="s", points=20)
+    call increase_house_points("s", 20)
 
     if ton_reputation < 9: # Points til 9.
         $ ton_reputation += 1

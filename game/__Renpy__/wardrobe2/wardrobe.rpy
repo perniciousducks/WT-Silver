@@ -82,7 +82,7 @@ label t_wardrobe(char_label):
         character_toggles.append(['piercing'])
     
     if wardrobe_music_active:
-        call play_music("my_immortal")
+        call play_music("wardrobe")
     
     label .after_init:
     
@@ -288,7 +288,7 @@ label t_wardrobe(char_label):
             call expression char_label pass (text="", face="annoyed")
         else:
             $ wardrobe_music_active = True
-            call play_music("my_immortal")
+            call play_music("wardrobe")
             call expression char_label pass (text="", face="happy")
     else: #_return == "Close":
         $ renpy.play('sounds/door2.mp3')

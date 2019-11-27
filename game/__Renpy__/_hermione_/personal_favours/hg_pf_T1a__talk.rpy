@@ -479,7 +479,7 @@ label hg_pf_talk_T3:
         call bld
         g4 "*Argh!* YES!"
 
-        call play_music("playful")
+        call play_music("playful_tension")
         if her_tier <= 4:
             $ her_mood = +7
             call her_main("[genie_name]...{w} did you just..?", "disgust", "narrow", "base", "down", ypos="head")

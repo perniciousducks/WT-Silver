@@ -565,7 +565,7 @@ label slytherin_match:
     call sna_main("*Ha-ha-HA-HA!*","snape_42")
     $ renpy.sound.stop(fadeout=1.0)
 
-    call play_music("fun")
+    call play_music("silly")
     stop weather fadeout 0.5
     show screen blkfade
     with d1

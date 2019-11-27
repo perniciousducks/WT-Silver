@@ -73,7 +73,7 @@ label door:
                 # jump main_room_menu
             # call nar(">Cho is already asleep.")
             # jump main_room_menu
-        # call play_music("cho_theme")
+        # call play_music("cho")
         # jump summon_cho
 
 

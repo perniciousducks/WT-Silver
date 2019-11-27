@@ -141,7 +141,7 @@ label tonks_summon_setup:
     call ton_chibi("stand","mid","base")
     with d3
 
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call ton_main("You called, [ton_genie_name]?","base","base","base","mid", xpos="base", ypos="base")
 
     return

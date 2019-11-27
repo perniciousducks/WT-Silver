@@ -93,7 +93,7 @@ label ag_st_imperio_E1:
     with d3
     pause.8
 
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call ast_main("","annoyed","base","base","mid", xpos="right", ypos="base")
     call ton_main("Good evening, Professor.","base","happyCl","base","mid", xpos="base", ypos="base")
     m "You are back."
@@ -240,7 +240,7 @@ label ag_st_imperio_E1:
     with fade
     pause.8
 
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call ast_main("","annoyed","base","angry","mid", xpos="right", ypos="base")
     call ton_main("Oh my...","upset","base","worried","down", xpos="base", ypos="base")
     call ton_main("Well that was fun!","smile","happyCl","base","mid") # Happy
@@ -291,7 +291,7 @@ label ag_st_imperio_E2:
     with d3
     pause.8
 
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call ast_main("","upset","base","base","mid", xpos="right", ypos="base")
     call ton_main("Hello, Professor.","base","happyCl","base","mid", xpos="base", ypos="base")
     call ast_main(".........................","upset","base","base","L")
@@ -413,7 +413,7 @@ label ag_st_imperio_E2:
             with fade
             pause.8
 
-            call play_music("astoria_theme")
+            call play_music("astoria")
             call ast_main("","open","base","base","down", xpos="right", ypos="base")
             call ton_main("Oh wow...","angry","base","worried","down", xpos="base", ypos="base", flip=False)
             call ton_main("You made me squeal like a pig!","smile","happyCl","base","mid")
@@ -495,7 +495,7 @@ label ag_st_imperio_E2:
             with fade
             pause.8
 
-            call play_music("tonks_theme")
+            call play_music("tonks")
             call ast_main("","annoyed","base","angry","mid", xpos="right", ypos="base")
             call ton_main("*huh*...","open","base","worried","mid", xpos="base", ypos="base", flip=False)
             call ton_main("Well that was something, wasn't it?","smile","happyCl","base","mid")
@@ -583,7 +583,7 @@ label ag_st_imperio_E2:
             with fade
             pause.8
 
-            call play_music("astoria_theme")
+            call play_music("astoria")
             call ast_main("","annoyed","base","base","mid", xpos="right", ypos="base")
             call ton_main("*Ouch*... That was painful!","angry","closed","angry","mid", xpos="base", ypos="base", flip=False)
             call ton_main("You nearly got me there.","smile","base","worried","mid")
@@ -626,7 +626,7 @@ label ag_st_imperio_E3:
     with d3
     pause.8
 
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call ast_main("","annoyed","base","base","mid", xpos="right", ypos="base")
     call ton_main("Well, Professor.","open","closed","base","mid", xpos="base", ypos="base")
     call ton_main("We're back...","base","base","base","mid")
@@ -807,7 +807,7 @@ label ag_st_imperio_E4:
     with d3
     pause.5
 
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call ton_main("","base","base","base","L", xpos="base", ypos="base")
     call ast_main("...","annoyed","narrow","base","down", xpos="right", ypos="base")
 
@@ -1040,7 +1040,7 @@ label ag_st_imperio_E4:
     with d3
     pause.8
 
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call ton_main("Well, that was interesting...","open","base","base","R", hair="neutral", xpos="mid", ypos="base", flip=False)
     m "Do you have any idea why she wanted to leave so abruptly?"
     call ton_main("I have a couple of theories, actually...","angry","base","sad","down")
@@ -1106,7 +1106,7 @@ label ag_st_imperio_E5:
     with d3
     pause.8
 
-    call play_music("astoria_theme")
+    call play_music("astoria")
     call ast_main("","smile","base","base","mid", xpos="right", ypos="base")
     call ton_main("Hi, Professor!","base","base","base","mid", xpos="base", ypos="base")
 
@@ -1451,7 +1451,7 @@ label ag_st_imperio_E5:
     call sna_walk("620","base")
     pause.2
 
-    call play_music("snape_theme")
+    call play_music("snape")
     call sna_main("What on Earth is going on here?!","snape_08", xpos="580" ,ypos="base")
     call sna_main("You two better explain to me what I just witnessed!","snape_32")
     call ton_main("Stop being such a wuss, Severus!","angry","base","angry","L", hair="angry", ypos="head", flip=True)
@@ -1516,7 +1516,7 @@ label ag_st_imperio_E5:
     call ton_main("","base","base","angry","L", xpos="275", ypos="base", flip=True)
     call sna_main(".........................","snape_05", xpos="580" ,ypos="base")
 
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call ton_main("Like what you see?","horny","base","raised","L", hair="horny") # Bit flirty, maybe just to calm Snape down.
     call sna_main(".............................","snape_12") # blushing
     g4 "You couldn't have picked a worse time to burst in here..."
@@ -1617,7 +1617,7 @@ label ag_st_imperio_E5:
             call ton_main("Sorry?","upset","base","worried","mid")
 
             #Music changes and darker overlay on screen
-            call play_music("playful")
+            call play_music("playful_tension")
             show screen blktone
             with d3
 
@@ -1661,7 +1661,7 @@ label ag_st_imperio_E5:
             call ton_main("Yes, Sir.","horny","base","angry","mid")
 
             #Overlay goes away and music returns to normal
-            call play_music("tonks_theme")
+            call play_music("tonks")
             hide screen blktone
             with d3
 

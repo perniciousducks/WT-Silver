@@ -2,7 +2,7 @@
 
 label summon_snape:
     #Snape theme
-    call play_music("snape_theme")
+    call play_music("snape")
     call play_sound("door")
     call sna_chibi("stand","mid","base")
     with d3

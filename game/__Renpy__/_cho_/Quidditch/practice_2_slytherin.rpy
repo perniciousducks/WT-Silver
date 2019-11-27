@@ -17,7 +17,7 @@ label cc_st_intro:
     cho "I'm worried about the future." # sad/relieved
     m "The futu...{w=0.7}{nw}"
     m "You didn't get pregnant during your little celebration event, did you?"
-    call play_music("cho_theme")
+    call play_music("cho")
     cho "WHAT?!" # Upset/whatthefuck face
     cho "Sir, why would you even suggest that?!" # upset
     m "Then what is it?"

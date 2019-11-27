@@ -110,7 +110,7 @@ label susan_intro_E1:
     else:
         m "How can I help you-"
 
-    call play_music("susan_theme")
+    call play_music("susan")
     call sus_main("","base","base","base","mid", xpos="right", ypos="base")
     pause.8
 

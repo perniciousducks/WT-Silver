@@ -358,7 +358,7 @@ label ball_quest_E2:
     call sna_walk(action="enter", xpos="mid", ypos="base")
     pause.2
 
-    call play_music("snape_theme")
+    call play_music("snape")
     call sna_main("Are you bloody insane?!","snape_01", xpos="base", ypos="base")
     m "You know, sometimes I think I may be..."
 

@@ -9,7 +9,7 @@ label an_odd_circumstance():
 
     call reset_menu_position
 
-    call play_music("jazz_take")
+    call play_music("jazz")
     hide screen blkfade
 
     nar "It was a normal night..."

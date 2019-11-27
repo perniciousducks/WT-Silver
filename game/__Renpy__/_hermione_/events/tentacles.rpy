@@ -1,6 +1,6 @@
 
 label tentacle_scene_intro: #Public tentacle scene
-    call play_music("playful")
+    call play_music("playful_tension")
     call play_sound("door")
 
     hide screen hermione_main
@@ -74,7 +74,7 @@ label tentacle_scene_intro: #Public tentacle scene
 
 
 label tentacle_1: #Public tentacle scene
-    call play_music("hermione_theme")
+    call play_music("hermione")
     pause.8
 
     call cg_scene(folder="", layer="p1")
@@ -177,7 +177,7 @@ label tentacle_1: #Public tentacle scene
     #have her talk about how enjoyable it is
 
 label tentacle_2: #Enjoyable tentacle scene
-    call play_music("hermione_theme")
+    call play_music("hermione")
     pause.8
 
     call cg_scene(folder="", layer="p1")

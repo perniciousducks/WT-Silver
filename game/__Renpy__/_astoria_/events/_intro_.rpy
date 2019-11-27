@@ -30,14 +30,14 @@ label astoria_intro_E1:
     # Tonks walks in.
     call ton_walk(action="enter", xpos="desk", ypos="base")
 
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call ton_main("Good evening, [ton_genie_name].","base","base","base","mid", xpos="mid", ypos="base")
     m "[tonks_name]..."
     call ton_main("I'm terribly sorry for bursting in like this!","open","base","worried","R")
     m "What in the world got you so flustered?"
     call ton_main("We might be in big trouble, [ton_genie_name]!","upset","base","worried","mid")
 
-    call play_music("playful")
+    call play_music("playful_tension")
     g9 "Miss Tonks... Have you been a bad girl?"
     call ton_main("I'm not joking, [ton_genie_name]!","angry","base","angry","mid")
     call ton_main("Something terrible has happened at school today!","open","base","angry","R")
@@ -452,7 +452,7 @@ label astoria_intro_E3:
 
     call her_walk(action="enter", xpos="desk", ypos="base")
 
-    call play_music("hermione_theme")
+    call play_music("hermione")
     call her_main("Hello sir.","normal","happy", xpos="mid", ypos="base")
     m "I thought you said you weren't alone?"
     call her_main("I'm not.", "annoyed", "narrow", "base", "R_soft")
@@ -483,7 +483,7 @@ label astoria_intro_E3:
     # Astoria enters.
     call ast_walk("500","base")
 
-    call play_music("playful")
+    call play_music("playful_tension")
     call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base", flip=False)
     call ast_main("...","annoyed","base","worried","R", xpos="right", ypos="base")
 
@@ -598,7 +598,7 @@ label astoria_intro_E3:
     $ snape_chibi.zorder = 4 # In front of Astoria
     call sna_walk(action="enter", xpos="mid", ypos="base")
 
-    call play_music("snape_theme")
+    call play_music("snape")
     $ astoria_zorder = 3
     call ast_main("","annoyed","base","worried","R", xpos="400", ypos="base")
     call sna_main("You wanted to see me?","snape_09", xpos="600", ypos="base")
@@ -680,7 +680,7 @@ label astoria_intro_E3:
     call ast_chibi("stand","desk","base", flip=False)
     with d3
 
-    call play_music("tonks_theme")
+    call play_music("tonks")
     pause.1
     call ast_main("","annoyed","base","base","mid", xpos="right", ypos="base", flip=False)
     call ton_main("Hello, Professor.","base","base","base","mid", hair="neutral", xpos="base", ypos="base")
@@ -772,7 +772,7 @@ label astoria_intro_E3:
 
     call ton_walk("desk","base")
 
-    call play_music("playful")
+    call play_music("playful_tension")
     call ton_main("She's {size=+5}so cute!{/size} Isn't she? {image=textheart}","upset","base","sad","R", xpos="mid", ypos="base")
 
     if d_flag_01:
@@ -968,7 +968,7 @@ label astoria_intro_E4:
     call ast_walk("desk","base")
     pause.2
 
-    call play_music("astoria_theme")
+    call play_music("astoria")
     call ast_main("Hello, Professor.","smile","base","base","mid", xpos="mid", ypos="base")
     call ast_main("Professor Tonks told me to talk to you, Sir.","open","base","base","R")
     m "....................."

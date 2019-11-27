@@ -62,7 +62,7 @@ label cc_pf_strip_T1_intro_E1:
     m "I need you to remove your clothes."
     call play_music("stop")
     call cho_main("!!!","soft","wide","base","mid")
-    call play_music("cho_theme")
+    call play_music("cho")
     m "Go on, girl. Start with the top..."
     call cho_main("No!","scream","closed","angry","mid", trans="hpunch")
     call cho_main("Why are you even asking me to do such a thing?!","angry","narrow","angry","mid")
@@ -392,7 +392,7 @@ label cc_pf_strip_T1_intro_E2:
             g9 "Of course!{w=0.2} I always did!"
             call cho_main("I may not like it. But this is all just part of my training...","soft","base","sad","R")
             m "*Uhhhh*... Sure..."
-            call play_music("cho_theme")
+            call play_music("cho")
             call cho_main("It's one of many challenges I have to face before I can call myself a Quidditch champion!","soft","closed","angry","mid")
             call cho_main("This is just about facing my inner demons, isn't it?","soft","narrow","angry","mid")
             call cho_main("Overcoming my fears...","soft","narrow","angry","R")
@@ -433,7 +433,7 @@ label cc_pf_strip_T1_intro_E2:
     menu:
         m "First, I'd like you to..."
         "\"Show me those big, juicy \"Quaffles\" of yours!\"":
-            call play_music("cho_theme")
+            call play_music("cho")
             call cho_main("*uhhh*...","upset","wide","base","mid")
             g9 "Those two mean, hearty \"bludgers\"!"
             call cho_main("Sir? Could it be that you are talking about my breasts?","soft","narrow","sad","mid")
@@ -500,7 +500,7 @@ label cc_pf_strip_T1_intro_E2:
             m "I stopped counting halfway through..."
 
         "\"Let me catch sight of that \"Snitch\"!\"":
-            call play_music("cho_theme")
+            call play_music("cho")
             call cho_main("Don't you mean \"Snatch\", Sir?","annoyed","narrow","angry","mid")
             g9 "Potato, Potato!"
             call cho_main("Your motives were nothing but for your own perverted gains, weren't they? From the very start.","soft","narrow","base","mid") # Annoyed

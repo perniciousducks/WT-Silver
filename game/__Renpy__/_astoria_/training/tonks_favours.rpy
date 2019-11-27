@@ -3,7 +3,7 @@
 ### TONKS EVENTS ###
 
 label astoria_tonks_0: #First time astoria sent to tonks.
-    call play_music("fun")
+    call play_music("silly")
     call play_sound("door")
     call ast_main("","smile","base","base","mid",xpos="right",ypos="base")
     pause.5
@@ -51,7 +51,7 @@ label astoria_tonks_0: #First time astoria sent to tonks.
 
 
 label astoria_tonks_1:
-    call play_music("fun")
+    call play_music("silly")
     call play_sound("door")
     call ast_main("","clench","narrow","angry","mid",xpos="right",ypos="base")
     pause.5
@@ -108,7 +108,7 @@ label astoria_tonks_1:
 
 
 label astoria_tonks_2:
-    call play_music("fun")
+    call play_music("silly")
     call play_sound("door")
     call ast_main("","smile","base","base","mid",xpos="right",ypos="base")
     pause.5
@@ -143,7 +143,7 @@ label astoria_tonks_2:
 
 
 label astoria_tonks_3:
-    #call play_music("fun")
+    #call play_music("silly")
     call play_sound("door")
     call ast_main("","upset","closed","base","mid",xpos="right",ypos="base")
     pause.5
@@ -187,7 +187,7 @@ label astoria_tonks_3:
 
 #Tonks gives Astoria a shorter skirt
 label astoria_tonks_4:
-    #call play_music("fun")
+    #call play_music("silly")
     call play_sound("door")
     call ast_main("","upset","closed","base","mid",xpos="right",ypos="base")
     pause.5
@@ -276,7 +276,7 @@ label astoria_tonks_random:
 
     #Tonks is into beast stuff?!
     if random_number == 1:
-        #call play_music("fun")
+        #call play_music("silly")
         call play_sound("door")
         call ast_main("", "annoyed", "base","base", "R",xpos="right",ypos="base")
         pause.5
@@ -294,7 +294,7 @@ label astoria_tonks_random:
 
     #Tonks is the best!
     if random_number == 2:
-        call play_music("fun")
+        call play_music("silly")
         call play_sound("door")
         call ast_main("","grin","base","base","mid",xpos="right",ypos="base")
         pause.5
@@ -311,7 +311,7 @@ label astoria_tonks_random:
 
     #Tonks sucks!
     if random_number == 3:
-        #call play_music("fun")
+        #call play_music("silly")
         call play_sound("door")
         call ast_main("", "annoyed", "narrow","angry", "R",xpos="right",ypos="base")
         pause.8

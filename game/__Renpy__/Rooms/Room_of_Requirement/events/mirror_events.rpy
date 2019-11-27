@@ -34,7 +34,7 @@ label prev_at_hogwarts:
 
     pause 2
 
-    call play_music("day_theme")
+    call play_music("day")
     hide screen blkfade
     with d9
     call ctc

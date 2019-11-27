@@ -29,7 +29,7 @@ label ag_se_imperio_sb_E1:
 
     call sus_main("Hello, [sus_genie_name]. You wanted to see me?.","open","base","worried","mid", xpos="right", ypos="base")
 
-    call play_music("astoria_theme")
+    call play_music("astoria")
     call ast_main("Hey [ast_susan_name]!","grin","narrow","base","L", xpos="base", ypos="base")
     call sus_main("Astoria? What are you doing here?","open","base","worried","R")
     call ast_main("Oh, don't mind me...","base","base","base","R")
@@ -161,7 +161,7 @@ label ag_se_imperio_sb_E1:
     with d3
     pause.1
 
-    call play_music("astoria_theme")
+    call play_music("astoria")
     g4 "(Damn it! Why did she do that?)"
     call sus_main("...","upset","base","worried","down")
     call ast_main("Put your clothes on, Susy.","smile","base","base","mid")
@@ -261,7 +261,7 @@ label ag_se_imperio_sb_E2:
     call sus_main("You wanted to see me, [sus_genie_name]?","open","base","worried","mid", xpos="right", ypos="base")
     call sus_main("Astoria? Why are you here?","open","base","worried","R")
 
-    call play_music("astoria_theme")
+    call play_music("astoria")
     call ast_main("Oh... no reason...","annoyed","base","base","down", xpos="base", ypos="base")
     call sus_main("Is there something wrong, Professor?","upset","base","worried","mid")
     m "As a matter of fact there is..."
@@ -517,7 +517,7 @@ label ag_se_imperio_sb_E2:
     with d3
     pause.5
 
-    call play_music("astoria_theme")
+    call play_music("astoria")
     call ast_main("Come on Susy, time to give professor Tonks another visit","open","base","base","L", ypos="head")
     call sus_main("...","upset", ypos="head")
 
@@ -564,7 +564,7 @@ label ag_se_imperio_sb_E3:
     call sus_main("Astoria?...","upset","base","worried","R")
     call sus_main("What are you doing here?","upset","narrow","worried","R")
 
-    call play_music("astoria_theme")
+    call play_music("astoria")
     call ast_chibi(action="wand",xpos="530",ypos="base")
     call ast_main("Yeah yeah, whatever...","open","base","base","R", xpos="base", ypos="base")
 
@@ -711,7 +711,7 @@ label ag_se_imperio_sb_E3:
     call ast_main("Time for you to wake up...","grin","narrow","angry","down")
     sus "..."
 
-    call play_music("susan_theme")
+    call play_music("susan")
     hide screen blktone
     hide screen bld1
     with d3
@@ -837,7 +837,7 @@ label ag_se_imperio_sb_E3:
     call sus_main("","upset","narrow","worried","L",xpos="right",ypos="base",trans="fade")
     call ctc
 
-    call play_music("astoria_theme")
+    call play_music("astoria")
     call ast_main("Oh my god! He absolutely covered you!","scream","base","base","mid",xpos="base",ypos="base")
     call sus_main("...","upset","narrow","base","L")
     call ast_main("I didn't know you had it in you, sir!","clench","base","base","mid")

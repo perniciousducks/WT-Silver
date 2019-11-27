@@ -165,7 +165,7 @@ label twins_random_duel:
         ger "Acceptable..."
         twi "Let's play."
        
-    call play_music("boss_card_theme")
+    call play_music("cardgame")
        
     $ random_player_deck = create_random_deck(0,150,unlocked_cards)
 

@@ -51,7 +51,7 @@ label reset_wardrobe_vars:
     if play_wardrobe_music:
         if not wardrobe_music_active:
             $ wardrobe_music_active = True
-            call play_music("my_immortal")
+            call play_music("wardrobe")
 
     return
 
@@ -121,7 +121,7 @@ label wardrobe_update:
     if play_wardrobe_music:
         if not wardrobe_music_active:
             $ wardrobe_music_active = True
-            call play_music("my_immortal")
+            call play_music("wardrobe")
     else:
         if wardrobe_music_active:
             $ wardrobe_music_active = False

@@ -430,7 +430,7 @@ label snape_intro_E3:
         jump snape_lost
 
     stop music
-    call play_music("boss_theme")
+    call play_music("boss")
     call play_sound("glass_break")
 
     pause.1

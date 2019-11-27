@@ -70,7 +70,7 @@ label tonks_intro_E1:
     call ton_walk(xpos="mid", ypos="base")
     pause.5
 
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call ton_main("Thank you, Professor.","base","base","base","mid", xpos="right", ypos="base")
     m "(Oh shit, she’s hot...)"
     call ton_main("I apologize for arriving unannounced...{w=0.8} And a couple of days late...","open","base","base","R")
@@ -266,7 +266,7 @@ label tonks_intro_E2:
 
     call ton_walk(action="enter", xpos="mid", ypos="base")
 
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call ton_main("Professor.","base","base","base","mid", xpos="right", ypos="base")
     m "Hey! If it isn't..."
 
@@ -463,7 +463,7 @@ label tonks_intro_E3:
     #Tonks enters the office
     call ton_walk(action="enter", xpos="desk", ypos="base")
 
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call ton_main("Professor...","base","base","base","mid", xpos="mid", ypos="base")
     m "How’s the investigation going? Nothing to report I gather?"
     call ton_main("On the contrary...","open","wide","wide","wide")
@@ -516,7 +516,7 @@ label tonks_intro_E3:
     # Glass break animation.
     # Duel won't happen and Tonks just casts a spell.
 
-    call play_music("boss_theme")
+    call play_music("boss")
     call play_sound("glass_break")
     pause.1
 
@@ -607,7 +607,7 @@ label tonks_intro_E3:
     call ton_main("Unless...", "upset","base","angry","R")
 
     g4 "Unless?"
-    call play_music("tonks_theme")
+    call play_music("tonks")
     call ton_main("You let me join in on the fun!","base","base","raised","mid", hair="horny")
     m "..."
     g4 "What?" #screenshake

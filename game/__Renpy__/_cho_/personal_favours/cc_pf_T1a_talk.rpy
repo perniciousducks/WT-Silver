@@ -33,7 +33,7 @@ label cc_pf_talk_T1_intro_E1:
 
     call cho_walk("desk", "base")
 
-    call play_music("cho_theme")
+    call play_music("cho")
     call cho_main(face="happy",xpos="mid",ypos="base",trans="fade")
     call ctc
 
@@ -260,7 +260,7 @@ label cc_pf_talk_T1_intro_E2:
 
     call cho_walk("desk","base")
 
-    call play_music("cho_theme")
+    call play_music("cho")
     call cho_main("","annoyed","narrow","angry","mid",xpos="mid",ypos="base",trans="fade")
     call ctc
 

@@ -1,7 +1,7 @@
 
 
 label summon_luna:
-    call play_music("luna_theme")
+    call play_music("luna")
     call play_sound("door")
     call lun_chibi("stand","mid","base")
     with d3

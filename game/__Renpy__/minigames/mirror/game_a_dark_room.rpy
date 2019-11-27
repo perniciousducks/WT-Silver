@@ -476,7 +476,7 @@ label DRgame_random_event:
     if DRgame.time in ["night"]:
 
         if DRgame.day == 6 and "stranger_intro" not in DRgame.events:
-            call play_music("outside_night")
+            call play_music("night_outside")
             show screen blkfade
             with d5
             pause .8

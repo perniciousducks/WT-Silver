@@ -140,7 +140,6 @@ label room(room=None, hide_screens=True, stop_sound=True):
 
     return
 
-
 # Return to main_room at resume point (after quests, before events)
 # Used to return from event sequences
 label main_room:
@@ -155,7 +154,6 @@ label main_room:
     else:
         jump night_resume
 
-
 # Return to main_room at menu point (after quests and events)
 # Used to return from main room interactions
 label main_room_menu:
@@ -169,7 +167,6 @@ label main_room_menu:
         jump day_main_menu
     else:
         jump night_main_menu
-
 
 label setup_fireplace_hangout(char=None):
 
@@ -210,8 +207,6 @@ label setup_fireplace_hangout(char=None):
     with fade
 
     return
-
-
 
 # Reset menu
 label reset_menu_position:
@@ -267,8 +262,6 @@ label ctc:
 
     return
 
-
-
 label cum_block:
     show screen white
     pause.1
@@ -318,7 +311,6 @@ label cast_spell(spell=""):
         with hpunch
 
     return
-
 
 label play_sound(sound=""):
 
@@ -400,47 +392,40 @@ label play_sound(sound=""):
 
     return
 
-
-#TODO One keyword per theme (use == instead of x in [..] checks, possibly define everything in a dictionary to simplify code further)
+#TODO One keyword per theme (maybe define everything in a dictionary to simplify code further?)
 label play_music(music=""):
-    if music in ["stop","pause"]: # stop
+    if music == "stop":
         stop music fadeout 1.0
         return
-
+    
     # Harry Potter
-    if music in ["hedwigs_theme", "hogwarts"]: # hogwarts
+    if music == "prologue":
         play music "music/01 Prologue.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["ball_theme", "ball"]: # ball
+    elif music == "ball":
         play music "music/11 Neville's Waltz.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["festive", "xmas"]: # festive
+    elif music == "festive":
         play music "music/07 Introducing Colin2.mp3" fadein 1 fadeout 1 if_changed
     elif music == "quidditch":
         play music "music/11 The Quidditch Match_original.mp3" fadein 1 fadeout 1 if_changed
+    
     # Character Music
-    elif music in ["snape", "snape_theme", "dark_fog"]: # snape
-        # Snape
+    elif music in ["snape", "dark_fog"]: # snape
         play music "music/Dark Fog.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["hermione", "hermione_theme", "chipper_doodle"]: # hermione
-        # Hermione
+    elif music in ["hermione", "chipper_doodle"]: # hermione
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["cho", "cho_theme", "happy_adventure"]: #cho
-        # Cho
+    elif music == "cho":
         play music "music/fuzzball-parade-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["astoria", "astoria_theme"]: #astoria
-        # Astoria
+    elif music == "astoria":
         play music "music/KMcL_OpenThoseBrightEyes.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["susan", "susan_theme"]: #susan
-        # Susan
+    elif music == "susan":
         play music "music/teddy-bear-waltz-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["tonks", "tonks_theme"]: # tonks
-        # Tonks
+    elif music == "tonks":
         play music "music/scheming-weasel-slower-version-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["luna", "luna_theme"]: # luna
-        # Luna
+    elif music == "luna":
         play music "music/wallpaper-by-kevin-macleod.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["playful", "playful_tension"]: # playful
+    elif music == "playful_tension":
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["silly", "fun", "silly_fun_loop"]: # silly
+    elif music == "silly":
         play music "music/silly_fun_loop.mp3" fadein 1 fadeout 1 if_changed
 
     # Store Music
@@ -450,25 +435,25 @@ label play_music(music=""):
         play music "music/clothing_store.mp3" fadein 1 fadeout 1 if_changed
 
     # Background Music
-    elif music in ["day", "day_theme", "brittle_rille"]: # day
+    elif music == "day":
         play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["night", "night_theme", "manatees"]: # night
+    elif music == "night":
         play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["night_outside", "outside_night"]: # night_outside
+    elif music == "night_outside":
         play music "sounds/night.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["jazz_take"]: # jazz?
+    elif music == "jazz":
         play music "sounds/jazz take 2.mp3" fadein 1 fadeout 1 if_changed
 
     # Interface
-    elif music in ["my_immortal"]: # wardrobe
+    elif music == "wardrobe":
         play music "music/Spring_In_My_Step.mp3" fadein 0.2 fadeout 0.2 if_changed
 
     # Misc
-    elif music in ["hitman"]:
+    elif music == "hitman":
         play music "music/hitman.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["boss_theme"]: # boss
+    elif music == "boss":
         play music "music/Final Fantasy VII Boss Theme.mp3" fadein 1 fadeout 1 if_changed
-    elif music in ["boss_card_theme"]: # cardgame
+    elif music == "cardgame":
         play music "music/Juhani_Junkala.mp3" fadein 1 fadeout 1 if_changed
     elif music in ["sad","grape_soda"]: # sad
         play music "music/GrapeSodaIsFuckingRawbyjrayteam6.mp3" fadein 0.2 fadeout 0.5 if_changed
@@ -479,44 +464,45 @@ label play_music(music=""):
     elif music == "despair":
         play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 if_changed
 
+    # Fallback
     else:
         python:
             try:
                 renpy.music.play(filenames="music/"+music+".mp3", channel="music", loop=True, fadeout=1.0, fadein=1.0)
             except IOError:
-                pass
+                if config.developer:
+                    raise Exception("Music not found: {}".format(music))
     return
 
 # Play day/night theme
 label music_block:
     if daytime:
-        call play_music("day_theme")
+        call play_music("day")
     else:
-        call play_music("night_theme")
+        call play_music("night")
     return
 
 label vague_idea:
     call nar(">You lack imagination for an idea of this caliber.")
     return
 
-label increase_house_points(house="Add house", points=0):
+label increase_house_points(house, points):
     call bld
     $ renpy.play('sounds/win_04.mp3')
     show screen notes
-    if house in ["gryffindor","g","gryff"]:
+    if house.startswith("g"):
         $ gryffindor += points
         ">Gryffindor has received [points] house points today!"
-    elif house in ["hufflepuff","h","huffl"]:
+    elif house.startswith("h"):
         $ hufflepuff += points
         ">Hufflepuff has received [points] house points today!"
-    elif house in ["ravenclaw","r","raven"]:
+    elif house.startswith("r"):
         $ ravenclaw += points
         ">Ravenclaw has received [points] house points today!"
     else:
         $ slytherin += points
         ">Slytherin has received [points] house points today!"
     hide screen notes
-
     return
 
 label adjust_game_difficulty(dif=None):

@@ -15,7 +15,7 @@ label astoria_summon_setup:
     call ast_chibi("stand","mid","base")
     with d3
 
-    call play_music("astoria_theme")
+    call play_music("astoria")
     if ast_mood != 0:
         call ast_main("[genie_name]...", face="annoyed", xpos="base",ypos="base")
     elif one_of_ten < 4:

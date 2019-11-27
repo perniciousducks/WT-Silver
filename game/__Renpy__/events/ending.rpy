@@ -43,7 +43,7 @@ label ball_ending_E1:
     call sna_walk(action="enter", xpos="desk", ypos="base")
     pause.8
 
-    call play_music("snape_theme")
+    call play_music("snape")
     call sna_main("Genie...","snape_01", xpos="base", ypos="base")
     m "Severus?"
     call sna_main("I think I may have figured out why your magic does not work the way it should...","snape_05")
@@ -2966,7 +2966,7 @@ label ball_ending_E3:
         pause.8
 
         call bld
-        call play_music("snape_theme")
+        call play_music("snape")
         dum_[1]"Good morning, Severus."
         call sna_main(".......................................","snape_09", xpos="base", ypos="base")
         dum_[1]"I have the most extraordinary tale to share with you, old friend."

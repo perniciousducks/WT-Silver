@@ -263,7 +263,7 @@ label snape_third_duel:
     call sna_main("Show me what you got genie... beat me and I'll give you a card from my collection and 3 tokens.","snape_18")
     m "Bring it."
 
-    call play_music("boss_card_theme")
+    call play_music("cardgame")
     play sound "sounds/Genie_VS_Snape.mp3"
     show screen genie_vs_snape
     show screen move_genie
@@ -317,7 +317,7 @@ label snape_third_duel:
 
 
 label snape_random_duel:
-    call play_music("boss_card_theme")
+    call play_music("cardgame")
 
     $ random_player_deck = create_random_deck(0,150,unlocked_cards)
 
@@ -421,7 +421,7 @@ label snape_random_duel:
 
 
 label snape_special_duel:
-    call play_music("boss_card_theme")
+    call play_music("cardgame")
 
     $ random_enemy_deck = create_random_deck(get_deck_score(playerdeck)-2, get_deck_score(playerdeck)+8, cards_all)
     $ duel_response = start_duel(random_enemy_deck) #snape_after_special

@@ -2,7 +2,7 @@
 
 
 label summon_susan:
-    call play_music("susan_theme")
+    call play_music("susan")
     call play_sound("door")
 
     call load_susan_clothing_saves

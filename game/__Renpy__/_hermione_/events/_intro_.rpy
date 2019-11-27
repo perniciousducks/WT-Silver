@@ -1031,7 +1031,7 @@ label hermione_intro_E6:
 
     call her_walk(action="enter", xpos="mid", ypos="base")
 
-    call play_music("day_theme")
+    call play_music("day")
     call her_main("Good day, professor...", "soft", "base", "base", "R", xpos="base", ypos="base")
     her "........................"
     call her_main("........................", "annoyed", "base", "worried", "R")

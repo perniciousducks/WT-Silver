@@ -9,7 +9,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     show screen blkfade
     with d3
 
-    call play_music("outside_night")
+    call play_music("night_outside")
     call play_sound("walking_on_grass")
 
     ">Sure enough, the map seems to {b}magically{/b} guide you to the young girl, alone in the midnight air..."
@@ -146,7 +146,7 @@ label forest_BJ_2:
     show screen blkfade
     with d3
 
-    call play_music("outside_night")
+    call play_music("night_outside")
     call play_sound("walking_on_grass")
 
     $ hermione_class.wear("all")
@@ -316,7 +316,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     show screen blkfade
     with d3
 
-    call play_music("outside_night")
+    call play_music("night_outside")
     call play_sound("walking_on_grass")
 
     $ hermione_class.wear("all")
@@ -580,7 +580,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     show screen blkfade
     with d3
 
-    call play_music("outside_night")
+    call play_music("night_outside")
     call play_sound("walking_on_grass")
 
     $ hermione_class.wear("top")

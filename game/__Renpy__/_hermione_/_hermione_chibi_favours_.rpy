@@ -18,13 +18,13 @@ label her_chibi_scene(action="reset", xpos="mid", ypos="base", trans=None):
         call gen_chibi("sit_behind_desk")
 
     # Stand behind desk
-    elif action in "behind_desk_back":
+    elif action == "behind_desk_back":
         show screen behind_desk("back")
 
-    elif action in "behind_desk_front":
+    elif action == "behind_desk_front":
         show screen behind_desk("front")
     
-    elif action in "behind_desk_show_tits":
+    elif action == "behind_desk_show_tits":
         show screen behind_desk("show_tits")
 
     # Grope ass

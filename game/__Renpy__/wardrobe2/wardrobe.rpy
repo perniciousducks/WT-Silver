@@ -44,12 +44,6 @@ label t_wardrobe(char_label):
     $ char_nickname = char_active.char
     $ hide_transitions = True
     
-    # Styling
-    if daytime:
-        $ btn_hover = "#e3ba7140"
-    else:
-        $ btn_hover = "#7d75aa40"
-        
     default bg_color_wardrobe_day = "#e8c97e"
     default bg_color_wardrobe_night = "#7d756e"
     
@@ -284,7 +278,7 @@ label t_wardrobe(char_label):
                 show screen t_wardrobe_menuitem(20, 50)
         if wardrobe_music_active:
             $ wardrobe_music_active = False
-            call play_music(active_girl+"_theme")
+            call play_music(active_girl)
             call expression char_label pass (text="", face="annoyed")
         else:
             $ wardrobe_music_active = True
@@ -297,7 +291,7 @@ label t_wardrobe(char_label):
         # add check for compatibility issues.
         $ char_active.clothes_compatible()
         if wardrobe_music_active:
-            call play_music(active_girl+"_theme")
+            call play_music(active_girl)
         return
     jump .after_init
         

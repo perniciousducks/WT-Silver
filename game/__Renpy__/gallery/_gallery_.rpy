@@ -1,10 +1,5 @@
 label open_gallery():
     $ hide_transitions = True
-    # Styling
-    if daytime:
-        $ btn_hover = "#edc48240"
-    else:
-        $ btn_hover = "#7d75aa40"
         
     # Door dictionary
     $ character_info = {

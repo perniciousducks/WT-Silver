@@ -25,11 +25,6 @@ transform rotate_circular():
 label inventory_menu(xx=150, yy=90):
 
     $ hide_transitions = True
-    # Styling
-    if daytime:
-        $ btn_hover = "#edc48240"
-    else:
-        $ btn_hover = "#7d75aa40"
         
     # Inventory dictionary
     $ inventory_dict = {
@@ -148,6 +143,7 @@ screen inventory_menuitem(xx, yy):
 
     frame:
         style "empty"
+        style_prefix interface_style
         pos (xx+217, yy-53)
         xsize 560
         ysize 507
@@ -249,7 +245,13 @@ screen inventory_menuitem(xx, yy):
                 text current_item.name ypos 380 size 16 xoffset 45
                 
             if current_category == "Quest Items":
-                textbutton "Use" action Return(["use", current_item.event]) xsize 90 ysize 26 xalign 0.89 ypos 374 text_size 16 xoffset 45 style btn_style text_style txt_style
+                textbutton "Use":
+                    xysize (90, 26)
+                    xalign 0.89
+                    xoffset 45
+                    ypos 374
+                    text_size 16
+                    action Return(["use", current_item.event])
             hbox:
                 pos (132, 407)
                 xsize 410

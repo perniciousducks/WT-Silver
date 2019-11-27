@@ -11,11 +11,6 @@ default stats_show_locked = False
 label stats_menu(xx=150, yy=90):
 
     $ hide_transitions = True
-    # Styling
-    if daytime:
-        $ btn_hover = "#edc48240"
-    else:
-        $ btn_hover = "#7d75aa40"
 
     call update_stats
 
@@ -110,19 +105,20 @@ screen stats_menu(xx, yy):
                 else:
                     frame:
                         style "empty"
-                        xsize 195
-                        ysize 50
+                        xysize (195, 50)
                         vbox:
-                            if current_category == category:
-                                if stats_dict[category]["flag"]:
-                                    textbutton category xsize 195 ysize 48 style "empty" background "interface/achievements/"+interface_color+"/highlight_left_b.png" text_xalign 0.6 text_yalign 0.5 text_xanchor 0.5 text_size 20
+                            textbutton (category if stats_dict[category]["flag"] else "???"):
+                                style "empty"
+                                xysize (195, 48)
+                                text_align (0.6, 0.5)
+                                text_xanchor 0.5
+                                text_size 20
+                                if current_category == category:
+                                    background "interface/achievements/"+interface_color+"/highlight_left_b.png"
                                 else:
-                                    textbutton "???" xsize 195 ysize 48 style "empty" background "interface/achievements/"+interface_color+"/highlight_left_b.png" text_xalign 0.6 text_yalign 0.5 text_xanchor 0.5 text_size 20
-                            else:
-                                if stats_dict[category]["flag"]:
-                                    textbutton category xsize 195 ysize 48 style "empty" hover_background "interface/achievements/"+interface_color+"/highlight_left_b.png" text_xalign 0.6 text_yalign 0.5 text_xanchor 0.5 text_size 20 action Return(["category", category])
-                                else:
-                                    textbutton "???" xsize 195 ysize 48 style "empty" hover_background "interface/achievements/"+interface_color+"/highlight_left_b.png" text_xalign 0.6 text_yalign 0.5 text_xanchor 0.5 text_size 20 action Return(["category", category])
+                                    hover_background "interface/achievements/"+interface_color+"/highlight_left_b.png"
+                                    action Return(["category", category])
+                            
                             add "interface/achievements/"+interface_color+"/spacer_left.png"
                         add "interface/achievements/"+interface_color+"/iconbox.png" yoffset 1
                         if stats_dict[category]["flag"]:
@@ -144,8 +140,9 @@ screen stats_menuitem(xx, yy):
     zorder 4
     frame:
         style "empty"
+        style_prefix interface_style
         pos (xx+217, yy-53)
-        xsize 560 ysize 507
+        xysize (560, 507)
 
         #add "interface/achievements/inventory.png"
         add "interface/achievements/"+interface_color+"/panel.png"
@@ -155,13 +152,19 @@ screen stats_menuitem(xx, yy):
 
         hbox:
             pos (24, 65)
-            textbutton "Overview" text_size 12 action [Return(["subcat", "overview"]), SelectedIf(current_subcategory=="overview")] background None style btn_style text_style txt_style
-            textbutton "Details" text_size 12 action [Return(["subcat", "details"]), SelectedIf(current_subcategory=="details")] background None style btn_style text_style txt_style
+            textbutton "Overview":
+                text_size 12
+                action [Return(["subcat", "overview"]), SelectedIf(current_subcategory=="overview")]
+                background None
+            textbutton "Details":
+                text_size 12
+                action [Return(["subcat", "details"]), SelectedIf(current_subcategory=="details")]
+                background None
 
         # Character sprites
         frame:
             style "empty"
-            xsize 200 ysize 406
+            xysize (200, 406)
             align (1.0, 1.0)
             offset (-10, -4)
 
@@ -200,8 +203,7 @@ screen stats_menuitem(xx, yy):
                         style "empty"
                         #align (0.7, 1.0)
                         at at_zoom(0.75)
-                        xoffset -620
-                        yoffset -44
+                        offset (-620, -44)
 
                         use luna_main
                 else:
@@ -217,8 +219,7 @@ screen stats_menuitem(xx, yy):
                         style "empty"
                         #align (0.7, 1.0)
                         at at_zoom(0.78)
-                        xoffset -350
-                        yoffset -62
+                        offset (-350, -62)
 
                         use susan_main
                 else:
@@ -226,7 +227,7 @@ screen stats_menuitem(xx, yy):
 
         frame:
             style "empty"
-            xsize 360 ysize 406
+            xysize (360, 406)
             yalign 1.0 xoffset 6
 
             if current_subcategory == "overview":

@@ -7,11 +7,6 @@ default door_show_busy = True
 label door_menu(xx=723, yy=90):
 
     $ hide_transitions = True
-    # Styling
-    if daytime:
-        $ btn_hover = "#edc48240"
-    else:
-        $ btn_hover = "#7d75aa40"
         
     call update_stats
     

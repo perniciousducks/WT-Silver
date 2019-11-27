@@ -215,13 +215,6 @@ label achievement_menu(xx=150, yy=90):
 
     $ hide_transitions = True
 
-    # Styling
-    if daytime:
-        #$ btn_hover = "#e3ba7140"
-        $ btn_hover = "#edc48240"
-    else:
-        $ btn_hover = "#7d75aa40"
-
     $ achievement_categories_sorted = ["All", "General", "Characters", "Cardgame", "Mirror"]
     $ achievement_categories_sorted_length = len(achievement_categories_sorted)
 

@@ -29,18 +29,6 @@ label temporary_post_default_init:
     call default_astoria_class_init
     call default_tonks_class_init
 
-# Turns commentaries on/off in gallery
-default commentaries = False
-
-default txt_style = "night_text"
-default btn_style = "night_button"
-default btn_hover = "#7d75aa40"
-default menu_style = "night_menu"
-
-# Menu placement
-default menu_x = 0.5
-default menu_y = 0.5
-
 # Transitions
 define d1 = Dissolve(0.1)
 define d2 = Dissolve(0.2)

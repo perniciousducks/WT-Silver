@@ -56,19 +56,19 @@ style default:
 
 style button:
     activate_sound "sounds/click3.mp3"
-    background "#5d5151E6" # ConditionSwitch("interface_color == \"gold\"", "#ac8d5aE6", "True", "#5d5151E6")
-    hover_background "#897e75" # ConditionSwitch("interface_color == \"gold\"", "#97681f", "True", "#897e75")
-    insensitive_background "#463b3bE6" # ConditionSwitch("interface_color == \"gold\"", "#917442E6", "True", "#463b3bE6")
-    selected_background "#766a6aE6" # ConditionSwitch("interface_color == \"gold\"", "#e5c48dE6", "True", "#766a6aE6")
-    selected_hover_background "#897e75" # onditionSwitch("interface_color == \"gold\"", "#97681f", "True", "#897e75")
-    # padding (5, 5, 5, 5)
+    background "#5d5151e6"
+    hover_background "#897e75"
+    insensitive_background "#463b3be6"
+    selected_background "#766a6ae6"
+    selected_hover_background "#897e75"
+    #padding (5, 5, 5, 5)
 
 style button_text:
-    color "#9b8d84" #If(interface_color == "gold", "#f9d592", "#9b8d84")
-    hover_color "#ffffff"
+    color "#9b8d84"
+    hover_color "#fff"
     insensitive_color "#50443c"
     selected_color "#eedfd5"
-    selected_hover_color "#FFFFFF"
+    selected_hover_color "#fff"
     outlines [(1, "#00000080", 1, 0)]
 
 style imagemap:
@@ -101,40 +101,44 @@ style say_label:
     xalign 0.5
     yalign 0.5
 
-# Day/night text styles
-style day_text:
-    color "#f9d592"
-    hover_color "#FFFFFF"
-    insensitive_color "#50443c"
-    selected_color "#eedfd5"
-    selected_hover_color "#FFFFFF"
-    outlines [ (1, "#00000080", 1, 0) ]
+# TODO Remove temporary styles day_text/night_text
+#style day_text is day_button_text
 
-style night_text:
-    color "#9b8d84"
-    hover_color "#FFFFFF"
-    insensitive_color "#50443c"
-    selected_color "#eedfd5"
-    selected_hover_color "#FFFFFF"
-    outlines [ (1, "#00000080", 1, 0) ]
+#style night_text is night_button_text
 
 # Day/night button styles
 style day_button:
-    background "#ac8d5aE6"
+    background "#ac8d5ae6"
     hover_background "#97681f"
-    insensitive_background "#d1a02eB3"
+    insensitive_background "#d1a02eb3"
     padding (5, 5, 5, 5)
 
 style night_button:
-    background "#5d5151E6"
+    background "#5d5151e6"
     hover_background "#897e75"
     insensitive_background "#9e8449"
     padding (5, 5, 5, 5)
 
+style day_button_text is default: # Don't inherit from button_text
+    color "#f9d592"
+    outlines [(1, "#00000080", 1, 0)]
+    hover_color "#fff"
+    insensitive_color "#50443c"
+    selected_color "#eedfd5"
+    selected_hover_color "#fff"
+
+style night_button_text is default: # Don't inherit from button_text
+    color "#9b8d84"
+    outlines [(1, "#00000080", 1, 0)]
+    hover_color "#fff"
+    insensitive_color "#50443c"
+    selected_color "#eedfd5"
+    selected_hover_color "#fff"
+
 # Choice menu styles
 style menu_text is default:
     text_align 0.5
-    outlines [ (1, "#00000080", 1, 0) ]
+    outlines [(1, "#00000080", 1, 0)]
 
 style day_menu_text:
     color "#f9d592"
@@ -150,11 +154,13 @@ style menu_button is default:
     activate_sound "sounds/click3.mp3"
 
 style day_menu_button:
-    background "#ac8d5aE6"
+    background "#ac8d5ae6"
     hover_background "#97681f"
     insensitive_background "#d1a02eB3"
 
 style night_menu_button:
-    background "#5d5151E6"
+    background "#5d5151e6"
     hover_background "#897e75"
     insensitive_background "#9e8449"
+
+# btn_hover day: (#edc48240|#e3ba7140) night: #7d75aa40

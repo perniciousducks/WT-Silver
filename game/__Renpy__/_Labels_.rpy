@@ -31,15 +31,11 @@ label update_interface_color(color=None):
         $ interface_color = "gray"
 
     if interface_color == "gold":
-        $ txt_style = "day_text"
-        $ btn_style = "day_button"
         $ btn_hover = "#e3ba7140"
-        $ menu_style = "day_menu"
+        $ interface_style = "day"
     else:
-        $ txt_style = "night_text"
-        $ btn_style = "night_button"
         $ btn_hover = "#7d75aa40"
-        $ menu_style = "night_menu"
+        $ interface_style = "night"
     return
 
 label stop_sound_effects:

@@ -2,7 +2,17 @@
 
 default tentacle_cosmetic = False
 
+# Menu placement
+default menu_x = 0.5
+default menu_y = 0.5
+
+# Turns commentaries on/off in gallery
+default commentaries = False
+
+# GUI color scheme
 default interface_color = "gold"
+default interface_style = "night"
+default btn_hover = "#7d75aa40"
 
 default gallery_active = False
 default ball_ending_2  = False

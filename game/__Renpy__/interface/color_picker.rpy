@@ -14,9 +14,12 @@ screen color_picker(color, alpha, title, pos_xy):
     on "show" action Function(color_picker_update_hsva)
 
     frame:
+        style_prefix interface_style
+
         area (pos_xy[0], pos_xy[1], 500, 350)
         padding (6, 6)
 
+        #TODO Move background style to day_frame/night_frame definition
         if interface_color == "gold":
             background "#e9ca7f"
         else:
@@ -84,21 +87,17 @@ screen color_picker(color, alpha, title, pos_xy):
             pos (355, 25)
             spacing 6
             textbutton "Red: " + str(int(rgba[0])):
-                style btn_style text_style txt_style
                 size_group "rgba"
                 xsize 110
                 clicked Return(["input", 0])
             textbutton "Green: " + str(int(rgba[1])):
-                style btn_style text_style txt_style
                 size_group "rgba"
                 clicked Return(["input", 1])
             textbutton "Blue: " + str(int(rgba[2])):
-                style btn_style text_style txt_style
                 size_group "rgba"
                 clicked Return(["input", 2])
             if alpha:
                 textbutton "Alpha: " + str(int(rgba[3])):
-                    style btn_style text_style txt_style
                     size_group "rgba"
                     clicked Return(["input", 3])
 
@@ -108,10 +107,8 @@ screen color_picker(color, alpha, title, pos_xy):
             xoffset -3
             spacing 6
             textbutton "Cancel":
-                style btn_style text_style txt_style
                 clicked Return("cancel")
             textbutton "Apply":
-                style btn_style text_style txt_style
                 clicked Return(["apply", rgba])
 
 default picking_color = None

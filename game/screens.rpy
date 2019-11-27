@@ -67,7 +67,7 @@ screen choice(items):
         yalign menu_y
 
         vbox:
-            style_prefix menu_style
+            style_prefix interface_style + "_menu"
             spacing 0
 
             for i, item in enumerate(items, 1):

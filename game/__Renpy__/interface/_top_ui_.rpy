@@ -20,6 +20,7 @@ label house_points:
     $ toggle_menu = False
 
     # Outline settings
+    #TODO Refactor interface_color dependent styles to definitions
     $ points_outline = [ (1, "#000", 0, 0) ]
     if interface_color == "gold":
         $ daygold_colour = "{color=#000}"
@@ -246,6 +247,7 @@ screen ui_menu():
         style "empty"
     frame:
         style "empty"
+        style_prefix interface_style        
         ypos 34
         xsize 102
         ysize 204
@@ -256,16 +258,16 @@ screen ui_menu():
             xanchor 0.5
             xalign 0.5
             ypos 15
-            textbutton "Save" action ShowMenu("save") background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
-            textbutton "Load" action ShowMenu("load") background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
+            textbutton "Save" action ShowMenu("save") background None xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
+            textbutton "Load" action ShowMenu("load") background None xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
             if cheats_active and game_difficulty <= 2 and day > 1:
-                textbutton "Cheats" action [SetVariable("toggle_menu", False), Jump("cheats")] background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
+                textbutton "Cheats" action [SetVariable("toggle_menu", False), Jump("cheats")] background None xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
             if day > 1 and renpy.variant('android'):
-                textbutton "Preferences" action ShowMenu("preferences") background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
+                textbutton "Preferences" action ShowMenu("preferences") background None xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
             if day > 1 and persistent.game_complete:
-                textbutton "Gallery" action [SetVariable("toggle_menu", False), Jump("scene_gallery")] background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
+                textbutton "Gallery" action [SetVariable("toggle_menu", False), Jump("scene_gallery")] background None xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
             if day > 1:
-                textbutton "Decorate" action [SetVariable("toggle_menu", False), Jump("decorate_room_menu")] background None text_style txt_style xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
+                textbutton "Decorate" action [SetVariable("toggle_menu", False), Jump("decorate_room_menu")] background None xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
 
             #if day > 1 and config.developer:
             #    textbutton "{size=-11}Show Chars{/size}" action [SetVariable("toggle_menu", False), Jump("summon_characters")] background #000

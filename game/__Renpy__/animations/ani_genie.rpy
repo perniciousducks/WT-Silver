@@ -2,10 +2,10 @@
 # Genie chibi images (one for each action)
 
 image ch_gen stand:
-    "characters/genie/chibis/walk_01.png"
+    "characters/genie/chibis/stand.png"
     
 image ch_gen stand_alt:
-    "characters/genie/chibis/standing.png"
+    "characters/genie/chibis/stand_alt.png"
     
 image ch_gen stand_shocked:
     "characters/genie/chibis/shocked/01.png"
@@ -410,37 +410,36 @@ image ch_gen grab_high:
     pause.1
     "characters/genie/chibis/grab/grab_01.png"
 
-#TODO Move petting images to Genie chibis folder
 image ch_gen petting:
     anchor (0.5, 0.5) # Workaround for position (petting bird)
-    "images/rooms/_objects_/phoenix/petting_ani/petting_01.png"
+    "characters/genie/chibis/petting/petting_01.png"
     pause 1
-    "images/rooms/_objects_/phoenix/petting_ani/petting_02.png"
+    "characters/genie/chibis/petting/petting_02.png"
     pause.1
-    "images/rooms/_objects_/phoenix/petting_ani/petting_03.png"
+    "characters/genie/chibis/petting/petting_03.png"
     pause.1
-    "images/rooms/_objects_/phoenix/petting_ani/petting_04.png"
+    "characters/genie/chibis/petting/petting_04.png"
     pause.1
-    "images/rooms/_objects_/phoenix/petting_ani/petting_05.png"
+    "characters/genie/chibis/petting/petting_05.png"
     pause.1
-    "images/rooms/_objects_/phoenix/petting_ani/petting_06.png"
+    "characters/genie/chibis/petting/petting_06.png"
     pause.2
-    "images/rooms/_objects_/phoenix/petting_ani/petting_05.png"
+    "characters/genie/chibis/petting/petting_05.png"
     pause.2
-    "images/rooms/_objects_/phoenix/petting_ani/petting_06.png"
+    "characters/genie/chibis/petting/petting_06.png"
     pause.2
-    "images/rooms/_objects_/phoenix/petting_ani/petting_05.png"
+    "characters/genie/chibis/petting/petting_05.png"
     pause.2
-    "images/rooms/_objects_/phoenix/petting_ani/petting_06.png"
+    "characters/genie/chibis/petting/petting_06.png"
     pause.2
-    "images/rooms/_objects_/phoenix/petting_ani/petting_05.png"
+    "characters/genie/chibis/petting/petting_05.png"
     pause.2
-    "images/rooms/_objects_/phoenix/petting_ani/petting_04.png"
+    "characters/genie/chibis/petting/petting_04.png"
     pause.1
-    "images/rooms/_objects_/phoenix/petting_ani/petting_03.png"
+    "characters/genie/chibis/petting/petting_03.png"
     pause.1
-    "images/rooms/_objects_/phoenix/petting_ani/petting_02.png"
+    "characters/genie/chibis/petting/petting_02.png"
     pause.1
-    "images/rooms/_objects_/phoenix/petting_ani/petting_01.png"
+    "characters/genie/chibis/petting/petting_01.png"
     pause 3
     repeat

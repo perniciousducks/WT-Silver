@@ -474,19 +474,19 @@ screen t_wardrobe_menuitem(xx, yy):
             if i < menu_items_length:
                 $ row = (i // 5) % 4
                 $ col = i % 5
-                $ image_zoom = get_zoom(menu_items[i].get_icon(), 86, 86)
+                $ image_zoom = get_zoom(menu_items[i].get_icon(), 83, 85)
                 frame:
                     style "empty"
-                    xsize 90
-                    ysize 90
-                    pos (14+90*col, 182+90*row)
+                    xsize 83
+                    ysize 85
+                    pos (12+90*col, 180+90*row)
                     
                     add menu_items[i].get_icon() zoom image_zoom xalign 0.5 yalign 0.5
                 if menu_items[i].id == char_active.get_equipped(current_category, current_subcategory, i):
                     button:
                         style "empty"
-                        xsize 90 ysize 90
-                        xpos 10+90*(col) ypos 176+90*(row)
+                        xsize 83 ysize 85
+                        pos (12+90*col, 180+90*row)
                         hover_background btn_hover
                         tooltip "Take off"
                         action Return(["equip", menu_items[i]])
@@ -495,8 +495,8 @@ screen t_wardrobe_menuitem(xx, yy):
                 else:   
                     button:
                         style "empty"
-                        xsize 90 ysize 90
-                        xpos 10+90*(col) ypos 176+90*(row)
+                        xsize 83 ysize 85
+                        pos (12+90*col, 180+90*row)
                         hover_background btn_hover
                         # tooltip "Put on"
                         action Return(["equip", menu_items[i]])

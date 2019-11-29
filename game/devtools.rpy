@@ -92,8 +92,13 @@ label missing_label():
     jump main_room
 
 label load_failed:
+    python:
+        # Clear all screens and stop all sound
+        renpy.scene("screens")
+        for c in ["music", "bg_sounds", "weather"]:
+            renpy.music.stop(c, 0.5)
+        active_girl = None
     $ renpy.block_rollback() # Prevent rollback to broken past
-    $ active_girl = None
     show screen blktone5
     "Something went wrong while loading your save, but all is not lost! You will be back in the office with the same progress as when you saved the game. However, you can't rollback to a time before that moment."
     hide screen blktone5

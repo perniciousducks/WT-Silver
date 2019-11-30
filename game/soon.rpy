@@ -250,7 +250,7 @@ label xmas:
     m "Oh fuck,{w=0.5} I know this story..."
     m "Let me guess, you're here to tell me of some moral wrongdoing and convince me to get on the right path..."
     $ renpy.sound.play("sounds/ghost1.mp3")
-    "\"Ghost\"" "I am here to tell you about your moral wrongdoings, to set you on the right path!"
+    "\"Ghost\"" "I am here to tell you of your moral wrooooongdoings, to set you on the right paaaaaath!" #about is technically corrrect, but 'of' sounds more dramatic and archaic, which is how i imagine the ghost of christmas past
     m "I knew it..."
     m "..."
     m "Just get to the flashback..."
@@ -274,7 +274,7 @@ label xmas:
     $ renpy.sound.play("sounds/ghost1.mp3")
     "\"Ghost\"" "The universe hasn't been createeeeed yet."
     $ renpy.sound.play("sounds/ghost1.mp3")
-    "\"Ghost\"" "Give me a mooooooament!"
+    "\"Ghost\"" "Give me a mooooooment!"
     $ gen_chibi_stand = "ghost_genie_stand_alternative"
     call gen_chibi("stand", 400, "base")
     with d3
@@ -294,7 +294,7 @@ label xmas:
     with _shake_long
     g4 "Take us out of here!{w=3.5}{nw}"
     $ renpy.sound.play("sounds/ghost2.mp3")
-    "\"Ghost\"" "Hoooold ooooon, I'm wooooorking ooon it!{w=5.0}{nw}"
+    "\"Ghost\"" "Hoooold ooooon, I'm wooooorking on it!{w=5.0}{nw}"
     #
     hide screen _location_0
     $ renpy.sound.stop(fadeout=2.0)
@@ -311,7 +311,7 @@ label xmas:
     m "Hold on a second, that's not me..."
     m "It's that Dumbledore guy..."
     $ renpy.sound.play("sounds/ghost1.mp3")
-    "\"Ghost\"" "Dumbledore, you're looking at yourself from the past..."
+    "\"Ghost\"" "Duuuumbledooooore, you're looking at yourself from the paaaast..."
     call gen_chibi("stand", 400, "base", flip=False)
     with d3
     pause 1.0
@@ -347,8 +347,8 @@ label xmas:
     #call sna_chibi("stand", 520, "base", flip=True)
     #with d3
     $ renpy.sound.play("sounds/ghost1.mp3")
-    "\"Ghost\"" "You will be visited by the ghost of Christmas present and the ghost of Christmas future."
-    m "I knew it, it's pre-recorded..."
+    "\"Ghost\"" "You shall also be visited by the ghost of Christmas present and the ghost of Christmas future."
+    m "Surprise surprise..."
     $ renpy.sound.play("sounds/ghost1.mp3")
     "\"Ghost\"" "Now, to return to the present!"
 
@@ -430,9 +430,9 @@ label xmas:
     $ renpy.sound.play("sounds/ghost1.mp3")
     "\"Ghost\"" "No friends."
     m "This is just a repeat from the last one."
-    m "This isn't some Christmas tale, this is some Time loop bullshit..."
+    m "This isn't a Christmas tale, this is some time loop bullshit..."
     $ renpy.sound.play("sounds/ghost1.mp3")
-    "\"Ghost\"" "You will be visited by the ghost of Christmas future."
+    "\"Ghost\"" "Next, you will be visited by the ghost of Christmas future."
     m "Yep yep, return to the present...{w=0.4} Flashing light...{w=0.4} Burnt cornea...{w=0.4} Got it."
     $ renpy.sound.play("sounds/ghost1.mp3")
     "\"Ghost\"" "Now, to return to the present!"
@@ -445,9 +445,9 @@ label xmas:
 
     pause 1.0
 
-    m "Damnit, this must be some curse Snape set up for that old man before I arrived..."
+    m "Damnit, this must be some curse Snape set up for the old man before I arrived..."
     m "Did Snape really expect anyone to fall for this?"
-    g4 "So how am I supposed convince this \"ghost\" following some shit script that I'm not that Dumbledore dude..."
+    g4 "So how am I supposed convince this \"ghost\" following some shit script that I'm not Dumbledore..."
     m "Maybe I'll just play out the story and tick the {b}yes{/b} box for bitches at the end."
 
     call blkfade
@@ -508,7 +508,7 @@ label xmas:
     $ renpy.sound.play("sounds/ghost1.mp3")
     "\"Ghost\"" "Wait, who's this girl..."
     m "I told you shit's about to happen!"
-    g9 "And it looks like We've got the first row seats!"
+    g9 "And it looks like we've got front row seats!"
     $ renpy.sound.play("sounds/ghost1.mp3")
     "\"Ghost\"" "No, this isn't riiiiight."
     g9 "Oh yes baby...."
@@ -552,7 +552,7 @@ label xmas:
     pause 1.0
     call play_music("tonks_theme")
     ton "Hmm... Why don't you find out for yourself..."
-    ton "These puppies has been clambering to get out their basket..."
+    ton "These puppies have been clambering to get out their basket..."
     pause 1.0
     $ renpy.sound.play("sounds/cloth_sound.mp3")
     $ tonks_class.strip("robe")
@@ -564,7 +564,7 @@ label xmas:
     show screen _jerking_off
     with d3
     $ renpy.sound.play("sounds/ghost1.mp3")
-    "\"Ghost\"" "No... This isn't what's supposed to have happened..."
+    "\"Ghost\"" "No... This isn't what's supposed to happen..."
     if not tonks_unlocked:
         g9 "Looks like the future is bright, look at that hot lady!"
         m "Wonder what her name is..."
@@ -609,7 +609,7 @@ label xmas:
     with d3
     call play_music("cho_theme")
 
-    cho "You better get Hermione in here then, that should convince you whose naked body is better!"
+    cho "You'd better get Hermione in here then, that should convince you whose naked body is better!"
     "\"Dumbledore\"" "That's a splendid idea!"
     g9 "Splendid indeed!" #Swap the portrait to the right so it's the other genie saying it
 
@@ -771,7 +771,7 @@ label xmas:
     "\"Ghost\"" "What is my purpose..."
     m "Looks to me like your job is done."
     m "Why don't you slide through that door and revaluate your existence..."
-    m "Bitches box, Checked!"
+    m "Bitches box, checked!"
     stop music fadeout 1
     play sound "sounds/boing.mp3"
     call sna_chibi("hide")
@@ -802,7 +802,7 @@ label xmas:
     m "*Snore*{w=2.0}{nw}"
     $ renpy.sound.play("sounds/snore2.mp3")
     m "......{w=0.5}*Snore*"
-    san_[1] "Merry Christmas and Happy new year!"
+    san_[1] "Merry Christmas and a Happy new year!"
     san_[4] "See you all in 2020 for update 1.38...."
     call hide_blkfade
 

@@ -50,11 +50,9 @@ init -1 python:
     def get_zoom(image, xsize, ysize):
         if isinstance(image, basestring):
             image = im.Image(image)
-
-        myRender = renpy.render(image, 800, 800, 0, 0)
-        sizes = myRender.get_size()
-        x = sizes[0]
-        y = sizes[1]
+        
+        r = renpy.render(image, 800, 800, 0, 0)
+        x, y = r.get_size()
 
         if xsize / x < ysize / y:
             return min(1.0, xsize / x)

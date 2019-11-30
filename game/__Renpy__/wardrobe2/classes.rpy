@@ -329,12 +329,13 @@ init python:
             
             # Initialize icon crop calculations A.K.A threading A.k.A lazyload
             layers = [] # This is NOT a class variable
+            boundryIndex = 0 if "tattoo" in self.type or "makeup" in self.type else self.layers+1 # Tattoos and makeup can't use the outlines for image crop calculation.
             for i in xrange(self.layers):
                 layers.append(self.get_imagelayer(i))
             layers.append(self.extralayer)
             layers.append(self.outline)
-                
-            self.sprite_ico = lazyload(layers, self.color, self.layers+1, self.layers)
+
+            self.sprite_ico = lazyload(layers, self.color, boundryIndex, self.layers)
                 
         def unlock(self):
             if not self.unlocked:
@@ -760,18 +761,12 @@ init python:
                     for key in value[0].incompatible:
                         if key not in self.incompatible_wardrobe:
                             self.incompatible_wardrobe.append(key)
-                        
-        def get_cloth_object(self, category, subcat, id):
-            for object in self.clothing_dictlist[category][subcat]:
-                if object.id == id:
-                    return object
-            return None
             
         def equip(self, object):
             if isinstance(object, outfit_class):
                 self.unequip("all")
                 for item in object.group:
-                    self.clothing[item.type][0] = self.get_cloth_object(item.category, item.subcat, item.id)
+                    self.clothing[item.type][0] = item
                     self.clothing[item.type][4] = False
                     self.clothing[item.type][0].set_color_alt(item.color)
                 self.reset_compatibility()

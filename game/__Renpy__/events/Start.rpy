@@ -187,6 +187,12 @@ label skip_to_hermione:
     $ cupboard_examined = True
     $ door_examined = True
     $ fireplace_examined = True
+    
+    $ wine_ITEM.number       += 5
+    $ firewhisky_ITEM.number += 5
+
+    $ rum_times = 6
+    $ day = 7
 
     $ achievement.unlock("start", True)
 
@@ -236,11 +242,9 @@ label skip_to_hermione:
     $ achievement.unlock("unlockher", True)
     $ tutoring_hermione_unlocked = True
     $ hermione_favors = True
-
-    $ wine_ITEM.number       += 5
-    $ firewhisky_ITEM.number += 5
-
-    $ rum_times = 6
-    $ day = 14
+    
+    python:
+        for i in xrange(0, 6):
+            hermione_diary.append("prologue_0"+str(i), "prologue_0"+str(i))
 
     jump day_start

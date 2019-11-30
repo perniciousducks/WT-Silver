@@ -295,8 +295,6 @@ label cheats:
                             i.unlocked = True
                     jump devroom
                 "-Read Hermione's Diary-":
-                    call her_whoring_pages
-                    call cheat_append_all_pages
                     call book_handle(book=hermione_diary)
                     jump devroom
                 "Gallery test":

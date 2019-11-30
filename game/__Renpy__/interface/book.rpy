@@ -1,42 +1,31 @@
 init python:
     class book_readable_class(object):
-        title = None
-        pages = None
-        contents = [["page_title", "page_text"]]
-        
-        page = 0
-        overflow=None
-        
-        def __init__(self, title, contents, **kwargs):
+        def __init__(self, title, contents=[], **kwargs):
+            self.title = title
+            self.page = 0
+            self.overflow=None
+            
             self.title = title
             self.contents = contents
             self.__dict__.update(**kwargs)
             
             self.pages = len(self.contents)-1
             
-        # Show book screen
         def open(self, page=0):
-            global current_book
-            current_book = self
             self.page = max(0, min(page, self.pages))
             self.refresh()
             return
             
-        # Hide book screen
         def close(self):
-            global current_book
-            current_book = None
             self.page = 0
             renpy.hide_screen("book_menu")
             return
             
-        # Next page
         def next(self):
             self.page = min(self.page+2, self.pages)
             self.refresh()
             return
             
-        # Previous page
         def prev(self):
             self.page = max(self.page-2, 0)
             self.refresh()
@@ -47,9 +36,6 @@ init python:
             if self.pages >= self.page+1:
                 return (self.contents[self.page][1][0:880], self.contents[self.page+1][1][0:880])
             return (self.contents[self.page][1][0:880], None)
-            
-        #def get_title(self):
-            #return self.contents[self.page][0]
             
         def get_title(self):
             if self.pages >= self.page+1:
@@ -65,27 +51,34 @@ init python:
             self.pages = len(self.contents)-1
             return
             
+    class diary_class(book_readable_class):
+        def __init__(self, title, dictionary):
+            super(diary_class, self).__init__(self)
+            
+            self.title = title
+            self.dictionary = dictionary
+            
+        def append(self, entry, id, branches=None):
+            for i in self.contents:
+                if i[2] == id:
+                    return
+                    
+            entry = list(self.dictionary[entry])
+            
+            if branches:
+                branches = tuple(self.dictionary[str(x)] for x in branches)
+                entry = [entry[0], entry[1].format(*branches)]
+                
+            self.contents.append(["Day {}\n{}".format(day, entry[0]), str(entry[1]), id])
+            self.pages = len(self.contents)-1
+            return
+            
     def text_image_scale(tag, argument):
         cropped = crop_image_zoom(argument, 100, 160)
         img = Transform(cropped[0], zoom=cropped[1])
         return [(renpy.TEXT_DISPLAYABLE, img)]
             
     config.self_closing_custom_text_tags["tis"] = text_image_scale
-
-    book_test = book_readable_class(title="My book", contents=[
-                ["Examplar title", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque, felis eu eleifend efficitur, augue quam viverra ipsum, a interdum risus libero in mi. Nullam condimentum mi et justo tristique gravida. Nulla at nisi tristique, eleifend diam eu, scelerisque justo. Pellentesque mi risus, accumsan id magna congue, ultrices ultrices purus. Etiam vulputate augue nec lacinia cursus. Integer gravida lacus quis tristique sollicitudin. Aenean in cursus dui, ut mattis augue. Nam et condimentum massa. Cras porta, orci in blandit eleifend, nisl mi lacinia leo, eu consequat quam odio at sapien. Pellentesque volutpat, nulla ac venenatis cursus, mi ex iaculis leo, eget suscipit turpis nunc vitae tortor. Quisque accumsan quam sollicitudin tincidunt condimentum. Etiam sit amet risus ac sapien tincidunt bibendum id eget sapien. Suspendisse tempus volutpat nibh, sit amet ultrices eros dignissim eget. Integer semper faucibus mattis. Etiam mattis ipsum ac lectus volutpat, a euismod nisl feugiat. Aliquam lectus justo, interdum a porttitor a, aliquet vel augue. {tis=interface/icons/cards.png}{/tis}"],
-                ["", "Mauris vestibulum quam nec est bibendum, eget pharetra orci ullamcorper. Phasellus blandit augue nibh, condimentum dictum nibh ultricies ut. Duis in nulla quis ante dignissim luctus ac in nibh. Pellentesque quis justo egestas, euismod nisi sit amet, tempor nulla. Duis tempor nisl urna, ut suscipit quam lacinia a. Nullam efficitur mauris in erat porttitor, vel sollicitudin arcu rutrum. Nulla eros nisi, condimentum ac sem et, tristique gravida arcu. Phasellus non diam eleifend, varius diam id, iaculis libero. Duis sollicitudin eget mauris sed blandit. Vestibulum mattis massa urna, ut interdum orci egestas vehicula. Pellentesque tempor eget ligula eget fringilla. Nullam facilisis mi turpis, id vestibulum neque vehicula a. Proin cursus lectus sed cursus fermentum. Donec ullamcorper nunc et velit lacinia venenatis sit amet eget justo. Curabitur vehicula vulputate urna, ut maximus enim viverra sit amet. Vivamus at tortor a mauris egestas aliquet ultricies eu quam. Donec nec lacus sit amet turpis congue volutpat. Cras et felis interdum, sollicitudin arcu nec, porta lacus. Phasellus congue at dui sed consequat. Sed mollis nulla convallis gravida accumsan. Pellentesque maximus dui ut quam maximus malesuada. Pellentesque id dapibus nibh. Ut elementum nunc at consectetur efficitur. Aliquam sit amet pellentesque sapien. Nam eleifend odio in condimentum gravida. Morbi pellentesque in nulla eu suscipit. Praesent eget nunc felis. Ut pellentesque massa a ligula suscipit, at placerat elit blandit. Sed pulvinar accumsan sem, a imperdiet justo egestas sit amet. Fusce eget neque non nisl rutrum faucibus eget id dui. Aliquam erat volutpat."],
-                ["Notes", "Vestibulum mattis massa urna, ut interdum orci egestas vehicula. Pellentesque tempor eget ligula eget fringilla. Nullam facilisis mi turpis, id vestibulum neque. Proin cursus lectus sed cursus fermentum. Donec ullamcorper nunc et velit lacinia venenatis sit amet eget justo.\n\n{b}Vehicula{/b}:\n{size=-2}1. Phasellus non diam eleifend.\n2. varius diam id, iaculis libero.\n3. Duis sollicitudin eget mauris sed blandit.{/size}\n\n Etiam at massa nec nunc convallis consequat ac vitae arcu. Aliquam faucibus metus sit amet risus ullamcorper finibus. Aenean euismod maximus augue, vitae dictum arcu vehicula quis. Nunc porta leo quis mauris luctus, ac pharetra sem volutpat. Nulla odio tellus, scelerisque vel risus tempor, sodales accumsan libero. Duis rhoncus, arcu dignissim consectetur faucibus, leo enim iaculis massa, sed luctus purus odio et neque."],
-                ["Notes2", "Vestibulum mattis massa urna, ut interdum orci egestas vehicula. Pellentesque tempor eget ligula eget fringilla. Nullam facilisis mi turpis, id vestibulum neque. Proin cursus lectus sed cursus fermentum. Donec ullamcorper nunc et velit lacinia venenatis sit amet eget justo.\n\n{b}Vehicula{/b}:\n{size=-2}1. Phasellus non diam eleifend.\n2. varius diam id, iaculis libero.\n3. Duis sollicitudin eget mauris sed blandit.{/size}\n\n Etiam at massa nec nunc convallis consequat ac vitae arcu. Aliquam faucibus metus sit amet risus ullamcorper finibus. Aenean euismod maximus augue, vitae dictum arcu vehicula quis. Nunc porta leo quis mauris luctus, ac pharetra sem volutpat. Nulla odio tellus, scelerisque vel risus tempor, sodales accumsan libero. Duis rhoncus, arcu dignissim consectetur faucibus, leo enim iaculis massa, sed luctus purus odio et neque."],
-                ["Notes3", "Vestibulum mattis massa urna, ut interdum orci egestas vehicula. Pellentesque tempor eget ligula eget fringilla. Nullam facilisis mi turpis, id vestibulum neque. Proin cursus lectus sed cursus fermentum. Donec ullamcorper nunc et velit lacinia venenatis sit amet eget justo.\n\n{b}Vehicula{/b}:\n{size=-2}1. Phasellus non diam eleifend.\n2. varius diam id, iaculis libero.\n3. Duis sollicitudin eget mauris sed blandit.{/size}\n\n Etiam at massa nec nunc convallis consequat ac vitae arcu. Aliquam faucibus metus sit amet risus ullamcorper finibus. Aenean euismod maximus augue, vitae dictum arcu vehicula quis. Nunc porta leo quis mauris luctus, ac pharetra sem volutpat. Nulla odio tellus, scelerisque vel risus tempor, sodales accumsan libero. Duis rhoncus, arcu dignissim consectetur faucibus, leo enim iaculis massa, sed luctus purus odio et neque."],
-                ["Notes3", "Vestibulum mattis massa urna, ut interdum orci egestas vehicula. Pellentesque tempor eget ligula eget fringilla. Nullam facilisis mi turpis, id vestibulum neque. Proin cursus lectus sed cursus fermentum. Donec ullamcorper nunc et velit lacinia venenatis sit amet eget justo.\n\n{b}Vehicula{/b}:\n{size=-2}1. Phasellus non diam eleifend.\n2. varius diam id, iaculis libero.\n3. Duis sollicitudin eget mauris sed blandit.{/size}\n\n Etiam at massa nec nunc convallis consequat ac vitae arcu. Aliquam faucibus metus sit amet risus ullamcorper finibus. Aenean euismod maximus augue, vitae dictum arcu vehicula quis. Nunc porta leo quis mauris luctus, ac pharetra sem volutpat. Nulla odio tellus, scelerisque vel risus tempor, sodales accumsan libero. Duis rhoncus, arcu dignissim consectetur faucibus, leo enim iaculis massa, sed luctus purus odio et neque."],
-                ["Notes3", "Vestibulum mattis massa urna, ut interdum orci egestas vehicula. Pellentesque tempor eget ligula eget fringilla. Nullam facilisis mi turpis, id vestibulum neque. Proin cursus lectus sed cursus fermentum. Donec ullamcorper nunc et velit lacinia venenatis sit amet eget justo.\n\n{b}Vehicula{/b}:\n{size=-2}1. Phasellus non diam eleifend.\n2. varius diam id, iaculis libero.\n3. Duis sollicitudin eget mauris sed blandit.{/size}\n\n Etiam at massa nec nunc convallis consequat ac vitae arcu. Aliquam faucibus metus sit amet risus ullamcorper finibus. Aenean euismod maximus augue, vitae dictum arcu vehicula quis. Nunc porta leo quis mauris luctus, ac pharetra sem volutpat. Nulla odio tellus, scelerisque vel risus tempor, sodales accumsan libero. Duis rhoncus, arcu dignissim consectetur faucibus, leo enim iaculis massa, sed luctus purus odio et neque."],
-                ["Notes3", "Vestibulum mattis massa urna, ut interdum orci egestas vehicula. Pellentesque tempor eget ligula eget fringilla. Nullam facilisis mi turpis, id vestibulum neque. Proin cursus lectus sed cursus fermentum. Donec ullamcorper nunc et velit lacinia venenatis sit amet eget justo.\n\n{b}Vehicula{/b}:\n{size=-2}1. Phasellus non diam eleifend.\n2. varius diam id, iaculis libero.\n3. Duis sollicitudin eget mauris sed blandit.{/size}\n\n Etiam at massa nec nunc convallis consequat ac vitae arcu. Aliquam faucibus metus sit amet risus ullamcorper finibus. Aenean euismod maximus augue, vitae dictum arcu vehicula quis. Nunc porta leo quis mauris luctus, ac pharetra sem volutpat. Nulla odio tellus, scelerisque vel risus tempor, sodales accumsan libero. Duis rhoncus, arcu dignissim consectetur faucibus, leo enim iaculis massa, sed luctus purus odio et neque."],
-                ["Notes3", "Vestibulum mattis massa urna, ut interdum orci egestas vehicula. Pellentesque tempor eget ligula eget fringilla. Nullam facilisis mi turpis, id vestibulum neque. Proin cursus lectus sed cursus fermentum. Donec ullamcorper nunc et velit lacinia venenatis sit amet eget justo.\n\n{b}Vehicula{/b}:\n{size=-2}1. Phasellus non diam eleifend.\n2. varius diam id, iaculis libero.\n3. Duis sollicitudin eget mauris sed blandit.{/size}\n\n Etiam at massa nec nunc convallis consequat ac vitae arcu. Aliquam faucibus metus sit amet risus ullamcorper finibus. Aenean euismod maximus augue, vitae dictum arcu vehicula quis. Nunc porta leo quis mauris luctus, ac pharetra sem volutpat. Nulla odio tellus, scelerisque vel risus tempor, sodales accumsan libero. Duis rhoncus, arcu dignissim consectetur faucibus, leo enim iaculis massa, sed luctus purus odio et neque."],
-                ["Notes3", "Vestibulum mattis massa urna, ut interdum orci egestas vehicula. Pellentesque tempor eget ligula eget fringilla. Nullam facilisis mi turpis, id vestibulum neque. Proin cursus lectus sed cursus fermentum. Donec ullamcorper nunc et velit lacinia venenatis sit amet eget justo.\n\n{b}Vehicula{/b}:\n{size=-2}1. Phasellus non diam eleifend.\n2. varius diam id, iaculis libero.\n3. Duis sollicitudin eget mauris sed blandit.{/size}\n\n Etiam at massa nec nunc convallis consequat ac vitae arcu. Aliquam faucibus metus sit amet risus ullamcorper finibus. Aenean euismod maximus augue, vitae dictum arcu vehicula quis. Nunc porta leo quis mauris luctus, ac pharetra sem volutpat. Nulla odio tellus, scelerisque vel risus tempor, sodales accumsan libero. Duis rhoncus, arcu dignissim consectetur faucibus, leo enim iaculis massa, sed luctus purus odio et neque."],
-                ["Notes3", "Vestibulum mattis massa urna, ut interdum orci egestas vehicula. Pellentesque tempor eget ligula eget fringilla. Nullam facilisis mi turpis, id vestibulum neque. Proin cursus lectus sed cursus fermentum. Donec ullamcorper nunc et velit lacinia venenatis sit amet eget justo.\n\n{b}Vehicula{/b}:\n{size=-2}1. Phasellus non diam eleifend.\n2. varius diam id, iaculis libero.\n3. Duis sollicitudin eget mauris sed blandit.{/size}\n\n Etiam at massa nec nunc convallis consequat ac vitae arcu. Aliquam faucibus metus sit amet risus ullamcorper finibus. Aenean euismod maximus augue, vitae dictum arcu vehicula quis. Nunc porta leo quis mauris luctus, ac pharetra sem volutpat. Nulla odio tellus, scelerisque vel risus tempor, sodales accumsan libero. Duis rhoncus, arcu dignissim consectetur faucibus, leo enim iaculis massa, sed luctus purus odio et neque."]])
-                
-default current_book = None
     
 label book_handle(book=None):
     $ book.open()
@@ -96,22 +89,22 @@ label book_handle(book=None):
     $ _return = ui.interact()
     
     if _return == "next":
-        $ current_book.next()
+        $ book.next()
         $ renpy.play('sounds/pageflip.mp3')
         show screen book_animator("book_page_next", 0.5)
         with d1
     elif _return == "prev":
-        $ current_book.prev()
+        $ book.prev()
         $ renpy.play('sounds/pageflip.mp3')
         show screen book_animator("book_page_prev", 0.5)
         with d1
     elif _return == "back":
-        $ current_book.open()
+        $ book.open()
         $ renpy.play('sounds/pageflipback.mp3')
         show screen book_animator("book_page_start", 0.5)
         with d1
     elif _return == "Close":
-        $ current_book.close()
+        $ book.close()
         $ renpy.play('sounds/bookclose.mp3')
         return
     jump .after_init
@@ -131,7 +124,7 @@ screen book_menu(page, pages, title, page_title, page_text, page_overflow):
         xsize 250
         ysize 300
         text page_title[0] ypos -20 size 16 xalign 0.5
-        text page_text[0] size 12
+        text page_text[0] size 12 ypos 40
         text "{b}"+str(page+1)+"{/b}" xalign 0.5 ypos 350 size 11 # fix page calc
         
     frame:
@@ -142,7 +135,7 @@ screen book_menu(page, pages, title, page_title, page_text, page_overflow):
         if page_title[1] != None:
             text page_title[1] ypos -20 size 16 xalign 0.5
         if page_text[1] != None:
-            text page_text[1] size 12
+            text page_text[1] size 12 ypos 40
         text "{b}"+str(page+2)+"{/b}" xalign 0.5 ypos 350 size 11
         
     imagebutton:

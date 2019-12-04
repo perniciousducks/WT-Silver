@@ -1,7 +1,7 @@
 screen bludger_flying(start, end, t=1.0):
     zorder 4
     tag bludger
-    
+
     add "images/rooms/quidditch_pitch/bludger.png":
         at transform:
             subpixel True
@@ -9,7 +9,7 @@ screen bludger_flying(start, end, t=1.0):
             align (0.5, 0.5)
             pos start
             ease t xpos end[0] ypos end[1]
-        
+
 
 ### Main Match ###
 
@@ -218,7 +218,8 @@ label slytherin_match:
     call sna_main("Ah *ahem*, yes... I suppose.","snape_12") #throat clear in the middle of the sentence for extra awkardness
     m "I may be immortal but I'm afraid I'll die from this awkwardness..."
     m "I'd take a hundred years in the lamp over this."
-    $ renpy.sound.play("sounds/giggle2_loud.mp3")
+
+    call play_sound("giggle")
     call ton_main("*Giggles*","base","happyCl","base","mid")
     call sna_main("...","snape_14")
     call sna_main("After me then...","snape_12")
@@ -233,7 +234,7 @@ label slytherin_match:
 
     #Scene Cloudy/rainy pitch
     #Sounds slightly windy/rain (Might need a new sound we'll see... It shouldn't overpower things)
-    
+
     $ qp_mob = 0 # Controls number of people
     $ qp_mob_reaction = [None, None, None] # Reset reactions
     #call sna_chibi("stand", "210", -40, flip=True)
@@ -246,7 +247,7 @@ label slytherin_match:
 
     call room("quidditch_pitch")
     with d3
-    play bg_sounds "sounds/crowd.mp3" fadein 2    
+    play bg_sounds "sounds/crowd.mp3" fadein 2
     pause 1
 
     #Quidditch pitch fills up a little
@@ -412,10 +413,10 @@ label slytherin_match:
     call sna_main("...","snape_38")
     call her_main("And now, if both teams have managed to find their way to their starting positions...","open","closed","base","mid")
     call her_main("Madam Hooch, if you please!","soft","base","base","L")
-    
+
     hide screen hermione_main
     with d3
-    
+
     pause.5
 
     $ renpy.sound.play("sounds/referee.mp3")
@@ -472,7 +473,7 @@ label slytherin_match:
             if gold >= 2000:
                 m "Fuck no, you think I'm some kind of charity?"
             else:
-                m "With what money?"   
+                m "With what money?"
             call sna_main("What?","snape_03")
             #Back to other two options
 
@@ -498,7 +499,7 @@ label slytherin_match:
     call her_main("Pucey passes the quaffle to Warrington, who scores another goal for team Slytherin!","annoyed","base","angry","up")
     hide screen hermione_main
     with d3
-    
+
     call sna_main("...","snape_45") #Smirks
     m "That's insane, how the hell did he hit that?"
     g4 "He was on the other side of the pitch!"
@@ -536,8 +537,8 @@ label slytherin_match:
 
     # Ball hitting the chibi's face.
     # DEVVV
-    
-    
+
+
     show screen bludger_flying((530, -100), (-50, 1000))
     pause .18
     $ renpy.play(["sounds/card_punch4.mp3", "sounds/microphone_feedback.mp3"])
@@ -825,7 +826,7 @@ label slytherin_match:
     call her_main("{size=-4}Oh, these boobs are so heavy...{/size}","disgust","base","worried","down", cheeks="blush")
     #Crowd ???
     call her_main("{size=-4}And why is this shirt so hot...{/size}","soft","base","base","down", cheeks="blush")
-    
+
     $ renpy.sound.play("sounds/cloth_sound.mp3")
     $ hermione_class.equip(hermione_outfit_default_no_vest)
     with d3
@@ -836,7 +837,7 @@ label slytherin_match:
     $ hermione_class.equip(hermione_outfit_default_no_tie_open_shirt)
     with d3
     pause 1.0
-    
+
     call her_main("{size=-4}That's better.{/size}","base","base","base","down", cheeks="blush")
     call her_main("So, after that short... intermission and removing that... streaker of the pitch...","open","base","base","L")
     #Crowd !!!
@@ -1036,11 +1037,12 @@ label slytherin_match:
 
     call nar("Malfoy spins his head around. Finally noticing that Cho's currently chasing the snitch in the distance, he quickly darts after her.")
     malf "You fucking idiots!"
-    
+
     #Hermione should now stand up after the CG
-    
+
     call her_main("Oh... it looks like things are heating up! Malfoy has finally realised Chang is going for the Snitch...","open","base","angry","L")
-    $ renpy.sound.play("sounds/giggle2_loud.mp3")
+
+    call play_sound("giggle")
     call her_main("*giggles* Look at that girl fly! I didn't think you could grip a broom so tightly... maybe I could learn a thing or two from her.","grin","base","angry","L")
     call sna_main("I see we've been playing different games...","snape_37")
     g9 "Quite..."
@@ -1123,137 +1125,380 @@ label slytherin_match:
 
 
 label slytherin_match_return:
+
     #Office screen, evening after game
-    menu:
-        "event not posed yet!"
-        "got it.":
-            pass
-    m "(That went well... Wine,{w=0.8} Ass...{w=0.5} and a good sho-...){w=0.8}{nw}"
+    call play_music("stop")
+    show screen blkfade
+    call room("main_room")
+    call gen_chibi("hide")
+    show screen chair_left
+    show screen desk
 
-    #Tonks as Hermione walks in
-    m "(Oh, shit...)"
-    call her_main("That was...{w=0.5} amazing!","base","base","base","mid")
-    g4 "What?"
-    call her_main("I've never experienced such a thrill before...","base","base","base","mid")
-    call her_main("Trying to keep it together when everyone was watching the game...","base","base","base","mid")
-    g4 "Err..."
-    g9 "Glad you enjoyed it!"
-    call her_main("*Hmm* - I think someone deserves a bit of a reward...","base","base","base","mid") #Horny
-    g4 "What do you-...{w=0.8}{nw}"
+    ### Event Setup ###
+    $ cho_outfit_last.save()
+    $ hermione_outfit_last.save()
+    $ tonks_outfit_last.save()
+    $ astoria_outfit_last.save()
+
+    $ cho_class.equip(cho_outfit_quidditch)
+    $ hermione_class.equip(hermione_outfit_default)
+    $ tonks_class.equip(tonks_outfit_default)
+    $ astoria_class.equip(astoria_outfit_default)
+
+    $ tonks_class.strip("all")
+
+    hide screen blkfade
+    with d9
+    pause 1.0
+
+    call play_sound("door")
+    call gen_chibi("stand","door","base", flip=True)
+    with d3
+    pause .3
+
+    call bld
+    m "(All things considered...)"
+    g9 "(I'd say this went down rather well!)"
+
+    call gen_walk(xpos="mid", ypos="base")
+
+    call play_music("night")
+    call gen_chibi("sit_behind_desk")
+    with fade
+    pause .8
+
+    call bld
+    m "(Even though, I didn't get any of the gold Snape promised to me...)"
+    m "(Got to drink plenty of his wine, though... At the very least...)"
+    g9 "(And getting to feel up Miss Granger's juicy ass is always worth the price of admission!)"
+    call bld("hide")
+
+    #Tonks as Hermione walks in.
+    call play_sound("door")
+    call her_chibi("stand","door","base", flip=False)
+    with d3
+    pause .8
+
+    call bld
+    m "(Speak of the devil...)"
+
+    call her_walk(xpos="desk", ypos="base")
+
+    call play_music("hermione")
+    call her_main("That{w=0.5} was{w=0.8} amazing!","smile","happy","base","mid", xpos="mid", ypos="base")
+    m "What was?{w=0.5} Getting hit in the face?"
+    call her_main("I've never experienced such a thrill before...","base","narrow","base","L")
+    call her_main("Trying to keep it together when you groped me down there...","soft","narrow","worried","down")
+    call her_main("While everyone was watching the game...","base","narrow","base","L")
+    g9 "Well, I'm glad you enjoyed it!"
+    call her_main("*Hmm*...{w=0.5} I think someone deserves a reward...","soft","narrow","base","mid") #Horny
+    pause .2
+
     #Hermione takes her top off
-    m "Miss Granger?"
-    call her_main("Be quiet you, just enjoy it!","base","base","base","mid")
-    #Hermione takes her bottoms off
-    call her_main("*Hmm* - You like these cute panties?","base","base","base","mid")
-    #Giggle sound effect
-    call her_main("*Hi-Hi-Hi*","base","base","base","mid")
-    g4 "..."
-    call her_main("Or these little puppies...","base","base","base","mid")
-    #Hermione takes her bra off
-    nar "Hermione glances at her breasts and removes her bra whilst shaking her breasts at you lustfully."
-    call her_main("Much better without the bra don't you think?","base","base","base","mid")
-    m "I..."
-    call her_main("You like looking at this body, don't you?","base","base","base","mid")
-    call her_main("Tell me!","base","base","base","mid")
-    g4 "I do!"
-    call her_main("I knew you did, I could feel your eyes in the back of my neck when I was up there...","base","base","base","mid")
-    m "Who wouldn't with a body like that..."
-    call her_main("Damn right...*Mmmm*","base","base","base","mid")
-    call her_main("And since you love this butt so much...","base","base","base","mid")
-    nar "Hermione bends over and takes her panties off, throwing them to the side."
-    call her_main("...","base","base","base","mid")
-    call her_main("What do you think?","base","base","base","mid")
-    m "Looking grea-{w=0.6}{nw}"
+    call play_sound("equip")
+    hide screen hermione_main
+    $ hermione_class.strip("robe","top")
+    show screen hermione_main
+    with d5
+    pause .8
 
-    #Cho walks in
-    cho "I did it! We won the...{w=0.8}{nw}"
-    #Hermione turns to Cho
-    cho "!!!" #Shocked face
-    call her_main("Oh, hello there Miss Chang...","base","base","base","mid")
-    call her_main("Like what you see?","base","base","base","mid")
-    cho "I..."
-    #Giggle sound effect
-    call her_main("*Hi-Hi-Hi*","base","base","base","mid")
-    call her_main("What's wrong sweetie?","base","base","base","mid")
-    call her_main("Want to find out if Gryffindors taste the same as Ravenclaws?","base","base","base","mid")
-    cho "..." #Blushes
-    cho "*HMPH!"
+    m "Miss Granger?"
+    call her_main("Be quiet you, just enjoy it!","base","narrow","base","mid")
+    g9 "!!!"
+
+    #Hermione takes her bottoms off
+    call play_sound("equip")
+    hide screen hermione_main
+    $ hermione_class.strip("bottom")
+    show screen hermione_main
+    with d5
+    pause .8
+
+    call her_main("*Hmm*... You like these cute panties?","soft","narrow","base","down")
+
+    call play_sound("giggle")
+    call her_main("*Hi-Hi-Hi*","grin","happyCl","base","mid")
+    g4 "..."
+    call her_main("Or these little puppies...","base","narrow","angry","mid")
+
+    #Hermione takes her bra off
+    call play_sound("equip")
+    hide screen hermione_main
+    $ hermione_class.strip("bra")
+    show screen hermione_main
+    with d5
+    pause .8
+
+    with hpunch
+    call nar("Hermione playfully shook her breasts for you.")
+    call her_main("Much better without the bra, don't you think?","soft","narrow","base","mid")
+    m "I..."
+    call her_main("Don't you just love looking at this body?","base","narrow","base","down")
+    g4 "I do!"
+    call her_main("I knew you did, I could feel your eyes in the back of my neck when I was up there...","open","narrow","angry","mid")
+    m "Who wouldn't, with a body like that..."
+    call her_main("*Mmmm*... Damn right...","angry","narrow","angry","down")
+    call her_main("And since you love this butt so much...","base","narrow","base","down")
+
+    #Hermione turns around
+    pause .5
+    call her_chibi(flip=True)
+    call her_main(xpos="440", ypos="base", flip=True)
+    pause .8
+
+    #Hermione takes her panties off
+    call play_sound("equip")
+    hide screen hermione_main
+    $ hermione_class.strip("panties")
+    show screen hermione_main
+    with d5
+    pause .8
+
+    call her_main("...","base","narrow","base","mid")
+    call her_main("What do you think?","soft","narrow","base","mid")
+    call her_main("Do you like your student's lusciously-shaped arse, Professor?","soft","closed","base","mid")
+    m "Your... arse?"
+    g9 "I mean - Of course, how could I not!"
+    g4 "Your arse looks great, Miss Grange-"
+
+    #Cho enters
+    call play_music("stop")
+    call hide_characters
+    hide screen bld1
+    with d3
+
+    call play_sound("door")
+    call cho_chibi("stand","door","base")
+    with d3
+
+    call cho_main("I did it! We won the...","smile","closed","base","mid", xpos="base", ypos="base", flip=False, trans="hpunch")
+    call her_main("","upset","base","base","L", xpos="440", ypos="base", flip=True)
+    call cho_main("!!!","pout","wide","base","L") #Shocked face
+
+    call play_music("hermione")
+    call her_main("Oh, hello there, Miss Chang...","grin","narrow","angry","L")
+    call her_main("Like what you see?","soft","narrow","base","L")
+    call cho_main("I...","angry","wide","base","L")
+
+    call play_sound("giggle")
+    call her_main("*Hi-Hi-Hi*","base","happyCl","base","mid")
+    call her_main("What's wrong sweetie?","soft","narrow","base","L")
+    call her_main("Want to find out if Gryffindors taste the same as Ravenclaws?","smile","narrow","base","L")
+    call cho_main("...","angry","base","sad","down") #Blushes
+    call cho_main("*HMPH!*","pout","narrow","angry","L")
+
     #Cho walks out and slams the door
-    call her_main("Meh...{w=0.4} Suit yourself...","base","base","base","mid") #Shruggs it off and turns back to genie
-    m "What the hell are you doing Granger?"
-    call her_main("Granger?","base","base","base","mid") #confused
-    call her_main("What are you talking about genie?","base","base","base","mid")
-    #Tonks turns back into herself (clothed)
+    call play_music("stop")
+    call hide_characters
+    hide screen bld1
+    with d3
+    pause .2
+
+    call cho_chibi("stand","door","base", flip=True)
+    with d3
+    pause .5
+
+    call play_sound("kick")
+    call cho_chibi("hide")
+    with hpunch
+    pause .5
+
+    call her_chibi("stand","desk","base", flip=False)
+    with d3
+    pause .5
+
+    call her_main("Suit yourself...","open","closed","base","mid", xpos="mid", ypos="base", flip=False) #Shruggs it off
+    m "What the hell are you doing, Granger?"
+    call her_main("Granger?","soft","wink","worried","mid") #confused
+
+    call play_music("tonks")
+    call her_main("What are you talking about, genie?","base","narrow","base","mid")
+    pause .8
+
+    # Tonks turns back into herself
+    call play_sound("magic")
+    call hide_characters
+    call her_chibi("hide")
+
+    call ton_chibi("stand","desk","base", flip=False)
+    call ton_main("","base","base","base","mid", xpos="mid", ypos="base", flip=False, trans="d9")
+    call ctc
+
     g4 "Whoa!"
+    call ton_main("Oh, silly me... I'm still naked...","upset","base","base","down")
+    pause .5
+
+    call play_sound("equip")
+    hide screen tonks_main
+    $ tonks_class.wear("all")
+    call ton_main("","horny","base","base","mid", trans="d5")
+    pause .8
 
     if tonks_morph_known:
         m "It all makes sense now."
         call ton_main("Hello sweet cheeks!","base","base","base","mid")
-        call ton_main("Thought I was about to lose focus there for a second when you started going at it!","base","base","base","mid")
+        call ton_main("Thought I was about to lose focus there for a second when you started going at it!","open","base","base","R")
         m "You should’ve told me it was you..."
-        call ton_main("I tried to!","base","base","base","mid")
-        call ton_main("You pretty much pushed me onto the podium when I got back...","base","base","base","mid")
+        call ton_main("I tried to!","upset","base","worried","mid")
+        call ton_main("You pretty much pushed me onto the podium when I got back...","open","base","sad","mid")
         m "Oh, yeah..."
+        m "So this is the ability you were speaking of?"
+        call ton_main("Impressive, isn't it?","horny","base","base","mid")
+
 
     else:
         $ tonks_morph_known = True
         g4 "You were Miss Granger the whole time?"
         m "Plot twist of the fucking century."
-        call ton_main("Of course not, don't be silly...","base","base","base","mid")
+        call ton_main("Of course not, don't be silly...","open","closed","base","mid")
         call ton_main("I'm a metamorphmagi...","base","base","base","mid")
         m "A meta what?"
         m "(I thought I was the only one allowed to be meta in this game...)"
 
-    call ton_main("It means I can look like whatever I want.","base","base","base","mid")
+    call ton_main("I can look like whatever I want.","open","base","base","R")
     m "Really?"
-    call ton_main("Of course!","base","base","base","mid")
+    call ton_main("Of course!","base","base","angry","mid")
+
     #Tonks turns into cho
-    cho "Hi professor, want to give this snatch a little lick?"
+    call play_music("cho")
+    call hide_characters
+    call ton_chibi("hide")
+
+    call cho_chibi("stand","desk","base", flip=False)
+    call cho_main("","base","base","base","mid", xpos="mid", ypos="base", flip=False, trans="d9")
+    pause .5
+
+    call cho_main("Hi professor!","smile","base","base","mid")
+    call cho_main("Want to give this snatch a little lick?","soft","narrow","base","mid")
+    g4 "!!!"
+
     #Tonks turns into Astoria if you've met her
-    ast "How about giving this little butt a spanking?"
-    #Tonks Turns into Susan if you've met her
-    sus "You want to s...spank me? W-Why would you want to s... spank me professor? Did I do something wrong?"
+    if astoria_unlocked:
+        call play_music("astoria")
+        call hide_characters
+        call cho_chibi("hide")
+
+        call ast_chibi("stand","desk","base", flip=False)
+        call ast_main("How about giving this little butt a spanking?","angry","base","angry","mid", xpos="mid", ypos="base", flip=False, trans="d9")
+
+        call play_music("susan")
+        call hide_characters
+        call cho_chibi("hide")
+        call ast_chibi("hide")
+
+        call sus_chibi("stand","desk","base", flip=False)
+        call sus_main("You want to s-spank me? W-Why would you want to sp-spank me, professor? Did I do something wrong?","upset","base","worried","mid", xpos="mid", ypos="base", flip=False, trans="d9")
+        call sus_main("Are you going to punish me for having these massive pair of tits-","open","base","worried","down")
+        call sus_main("Wow. They really are big... And they feel so soft...","open","wide","base","down")
+        call sus_main("(I think I'm gonna play with them later for a little...)","grin","base","angry","down")
+        m "Tonks?"
+        call sus_main("Oh right... Where was I?","open","narrow","worried","mid")
+
+    #Tonks Turns into Susan if you've met her and not Astoria
+    elif susan_unlocked:
+        call play_music("susan")
+        call hide_characters
+        call cho_chibi("hide")
+        call ast_chibi("hide")
+
+        call sus_chibi("stand","desk","base", flip=False)
+        call sus_main("Did I do something wrong, Sir?","upset","base","worried","mid", xpos="mid", ypos="base", flip=False, trans="d9")
+        call sus_main("Are you going to punish me for having these massive pair of tits-","open","base","worried","down")
+        call sus_main("Wow. They really are big... And they feel so soft...","open","wide","base","down")
+        call sus_main("(I think I'm gonna play with them later for a little...)","grin","base","angry","down")
+        m "Tonks?"
+        call sus_main("Oh right... Where was I?","open","narrow","worried","mid")
+
     #Tonks turns into Luna if you've met her
-    lun "Oh, Tonks look out you got a jigglypuff on your shoulder, let me lick it off for you!" #lmao nice
-    lun "*Hi-Hi-Hi*"
-    #Tonks turn into snape (Wearing the weird hat and handbag?)
-    call sna_main("Want some of this Genie? Mind if I...{w=0.4} Slithered in?","snape_01")
+    if luna_unlocked:
+        g9 "Now do Luna!"
+
+        call play_music("luna")
+        call hide_characters
+        call cho_chibi("hide")
+        call ast_chibi("hide")
+        call sus_chibi("hide")
+
+        call lun_chibi("stand","desk","base", flip=False)
+        call lun_main("Oh, Professor Tonks, look out you got a jigglypuff on your shoulder...","soft","seductive","sad","mid", xpos="mid", ypos="base", flip=False, trans="d9")
+        call lun_main("Let me lick it off for you!","crazy","seductive","sad","mid") #lmao nice
+        call lun_main("*Hi-Hi-Hi*","grin","happyCl","base","mid")
+
+    #Tonks turn into snape
+    call play_music("snape")
+    call hide_characters
+    call cho_chibi("hide")
+    call ast_chibi("hide")
+    call sus_chibi("hide")
+    call lun_chibi("hide")
+
+    call sna_chibi("stand","410","177", flip=False)
+    call sna_main("Want some of this, Genie?","snape_20", xpos="320", ypos="base", flip=False, trans="d9")
+    g4 "Aaaah!"
+    call sna_main("Mind if I...{w=0.4} Slithered in?","snape_13")
     g4 "..."
-    call sna_main("*Hi-Hi-Hi*","snape_01")
+    call play_sound("giggle")
+    call sna_main("*Hi-Hi-Hi*","snape_22")
+
     #Tonks turns into herself
-    call ton_main("I'm especially proud of that last one...","base","base","base","mid")
+    call play_music("tonks")
+    call hide_characters
+    call sna_chibi("hide")
+
+    call ton_chibi("stand","desk","base", flip=False)
+    call ton_main("","base","base","base","mid", xpos="mid", ypos="base", flip=False, trans="d9")
+    call ctc
+
+    call ton_main("I'm especially proud of that last one...","smile","happyCl","base","mid")
     m "..."
     m "So...{w=0.2} Can all wizards do this?"
-    call ton_main("Nah, I was born with it.","base","base","base","mid")
+    call ton_main("Nah, I was born with it.","horny","base","base","mid")
     m "This world, I swear there's something new every day..."
     m "What next?{w=0.2} Can you time travel?"
-    call ton_main("I wish! The ministry won't let me do it...","base","base","base","mid")
-    call ton_main("If I could I'd just go back to kill baby \"you know who\"...","base","base","base","mid")
+    call ton_main("I wish! The ministry won't let me do it...","open","base","sad","R")
+    call ton_main("If I could I'd just go back to kill baby \"you know who\"...","upset","base","angry","mid")
     m "(That is always the first thing people consider when talking about time travel...)"
     m "Unbelievable..."
 
     m "So...when Miss Granger got hit by that bludger..."
-    call ton_main("I took her to the hospital wing...","base","base","base","mid")
-    call ton_main("And I replaced her so she wouldn't get bullied.","base","base","base","mid")
+    call ton_main("I took her to the hospital wing...","open","closed","base","mid")
+    call ton_main("And I replaced her, so she wouldn't get picked on for leaving.","upset","base","worried","down")
     m "I see..."
-    m "And she..."
-    call ton_main("Her face is fine... *Hmmm* - Your face is so cute when you worry, you know...","base","base","base","mid")
+    m "And she-"
+    call ton_main("She's fine...","open","base","sad","R")
+    call ton_main("Your face is cute when you worry, you know that?","base","base","sad","mid")
     m "So, won't people find out you replaced her?"
-    call ton_main("You think so?","base","base","base","mid")
-    call ton_main("I can lie if I want! Who will they believe?","base","base","base","mid")
+    call ton_main("You think so?","upset","base","worried","down")
+    call ton_main("I can lie if I want! Who will they believe?","smile","happyCl","base","mid")
     g4 "..."
-    call ton_main("Anyway...","base","base","base","mid")
-    call ton_main("Unless she has a really good reason to I doubt she'll tell anyone.","base","base","base","mid")
-    call ton_main("*Urgh* My head hurts I'm gonna go sleep off whatever this is...","base","base","base","mid")
-    call ton_main("Toodaloo!","base","base","base","mid")
+    call ton_main("Anyway...","open","base","base","R")
+    call ton_main("I doubt she'll tell anyone, unless she has a really good reason to do so...","base","base","angry","mid")
+    call ton_main("*Urgh*... My head hurts.","upset","base","worried","up")
+    call ton_main("I'm gonna go sleep off whatever this is...","open","base","sad","mid")
+    call ton_main("Toodaloo!","base","happyCl","base","mid")
+
     #Tonks leaves
-    #End
+    call play_music("stop")
+    call ton_walk(action="leave")
+
+    call bld
+    m "Damn that witch is impressive!"
+    m "She reminds me of one of those ancient, semen-stealing succubi..."
+    g4 "Corrupting... enticing..."
+    g9 "I'd let her suck my life-force any day."
 
     $ tonks_busy = True
     $ snape_busy = True
     $ hermione_busy = True
     $ cho_busy = True
 
+    $ cho_mad += 9
     #$ cho_tier = 3 # TODO: activate this after adding favors.
+
+    # Reset
+    $ tonks_class.equip(tonks_outfit_last) # Equip player outfit.
+    $ hermione_class.equip(hermione_outfit_last) # Equip player outfit.
+    $ cho_class.equip(cho_outfit_last) # Equip player outfit.
+    $ astoria_class.equip(astoria_outfit_last) # Equip player outfit.
 
     jump main_room

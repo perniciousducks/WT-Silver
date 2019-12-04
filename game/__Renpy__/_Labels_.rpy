@@ -351,6 +351,8 @@ label play_sound(sound=""):
         $ renpy.play('sounds/snore2.mp3')
     if sound == "snore_loud":
         $ renpy.play('sounds/snore3.mp3')
+    if sound == "giggle":
+        $ renpy.sound.play("sounds/giggle2_loud.mp3")
 
     # Magic
     if sound == "spell":
@@ -391,7 +393,7 @@ label play_music(music=""):
     if music == "stop":
         stop music fadeout 1.0
         return
-    
+
     # Harry Potter
     if music == "prologue":
         play music "music/01 Prologue.mp3" fadein 1 fadeout 1 if_changed
@@ -401,7 +403,7 @@ label play_music(music=""):
         play music "music/07 Introducing Colin2.mp3" fadein 1 fadeout 1 if_changed
     elif music == "quidditch":
         play music "music/11 The Quidditch Match_original.mp3" fadein 1 fadeout 1 if_changed
-    
+
     # Character Music
     elif music in ["snape", "dark_fog"]: # snape
         play music "music/Dark Fog.mp3" fadein 1 fadeout 1 if_changed

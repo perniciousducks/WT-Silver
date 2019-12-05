@@ -353,6 +353,8 @@ label play_sound(sound=""):
         $ renpy.play('sounds/snore3.mp3')
     if sound == "giggle":
         $ renpy.sound.play("sounds/giggle2_loud.mp3")
+    if sound == "gasp":
+        $ renpy.sound.play("sounds/MaleGasp.mp3")
 
     # Magic
     if sound == "spell":

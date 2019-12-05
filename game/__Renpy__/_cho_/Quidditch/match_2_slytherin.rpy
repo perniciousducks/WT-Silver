@@ -1157,8 +1157,9 @@ label slytherin_match_return:
     pause .3
 
     call bld
-    m "(All things considered...)"
-    g9 "(I'd say this went down rather well!)"
+    m "(What a day...)"
+    m "(Although all things considered...)"
+    g9 "(I'd say it went down rather well!)"
 
     call gen_walk(xpos="mid", ypos="base")
 
@@ -1168,8 +1169,9 @@ label slytherin_match_return:
     pause .8
 
     call bld
-    m "(Even though, I didn't get any of the gold Snape promised to me...)"
-    m "(Got to drink plenty of his wine, though... At the very least...)"
+    m "(Even though I didn't get any of the gold Snape promised me...)"
+    m "(Oral contracts are the worst...)"
+    m "(At least I got to drink some of his wine for a change.)"
     g9 "(And getting to feel up Miss Granger's juicy ass is always worth the price of admission!)"
     call bld("hide")
 
@@ -1202,7 +1204,7 @@ label slytherin_match_return:
     with d5
     pause .8
 
-    m "Miss Granger?"
+    g4 "Miss Granger?"
     call her_main("Be quiet you, just enjoy it!","base","narrow","base","mid")
     g9 "!!!"
 
@@ -1230,13 +1232,13 @@ label slytherin_match_return:
     pause .8
 
     with hpunch
-    call nar("Hermione playfully shook her breasts for you.")
+    call nar("Hermione playfully shakes her breasts at you.")
     call her_main("Much better without the bra, don't you think?","soft","narrow","base","mid")
     m "I..."
-    call her_main("Don't you just love looking at this body?","base","narrow","base","down")
+    call her_main("Don't you just love this body?","base","narrow","base","down")
     g4 "I do!"
     call her_main("I knew you did, I could feel your eyes in the back of my neck when I was up there...","open","narrow","angry","mid")
-    m "Who wouldn't, with a body like that..."
+    g9 "Who wouldn't, with a body like that..."
     call her_main("*Mmmm*... Damn right...","angry","narrow","angry","down")
     call her_main("And since you love this butt so much...","base","narrow","base","down")
 
@@ -1257,9 +1259,9 @@ label slytherin_match_return:
     call her_main("...","base","narrow","base","mid")
     call her_main("What do you think?","soft","narrow","base","mid")
     call her_main("Do you like your student's lusciously-shaped arse, Professor?","soft","closed","base","mid")
-    m "Your... arse?"
-    g9 "I mean - Of course, how could I not!"
-    g4 "Your arse looks great, Miss Grange-"
+    m "Your...{w=0.4} arse?"
+    g9 "I mean -{w=0.3} Of course,{w=0.2} how could I not!"
+    g4 "Your arse looks great, Miss Grange-{w=0.6}{nw}"
 
     #Cho enters
     call play_music("stop")
@@ -1271,9 +1273,9 @@ label slytherin_match_return:
     call cho_chibi("stand","door","base")
     with d3
 
-    call cho_main("I did it! We won the...","smile","closed","base","mid", xpos="base", ypos="base", flip=False, trans="hpunch")
+    call cho_main("I did it! We won the...","smile","closed","base","mid", xpos="base", ypos="base", flip=False)
     call her_main("","upset","base","base","L", xpos="440", ypos="base", flip=True)
-    call cho_main("!!!","pout","wide","base","L") #Shocked face
+    call cho_main("!!!","pout","wide","base","L", trans="hpunch") #Shocked face
 
     call play_music("hermione")
     call her_main("Oh, hello there, Miss Chang...","grin","narrow","angry","L")
@@ -1316,12 +1318,13 @@ label slytherin_match_return:
     pause .8
 
     # Tonks turns back into herself
+    #Should the naked version only happen if you've done Imperio Training maybe?
     call play_sound("magic")
     call hide_characters
     call her_chibi("hide")
-
     call ton_chibi("stand","desk","base", flip=False)
-    call ton_main("","base","base","base","mid", xpos="mid", ypos="base", flip=False, trans="d9")
+    call ton_main("","base","base","base","mid", xpos="mid", ypos="base", flip=False)
+    with morph
     call ctc
 
     g4 "Whoa!"
@@ -1355,17 +1358,18 @@ label slytherin_match_return:
         m "A meta what?"
         m "(I thought I was the only one allowed to be meta in this game...)"
 
-    call ton_main("I can look like whatever I want.","open","base","base","R")
+    call ton_main("I can change my appearance to whatever I want.","open","base","base","R")
     m "Really?"
     call ton_main("Of course!","base","base","angry","mid")
 
     #Tonks turns into cho
+    call play_sound("magic")
     call play_music("cho")
     call hide_characters
     call ton_chibi("hide")
-
     call cho_chibi("stand","desk","base", flip=False)
-    call cho_main("","base","base","base","mid", xpos="mid", ypos="base", flip=False, trans="d9")
+    call cho_main("","base","base","base","mid", xpos="mid", ypos="base", flip=False, trans=None)
+    with morph
     pause .5
 
     call cho_main("Hi professor!","smile","base","base","mid")
@@ -1374,35 +1378,40 @@ label slytherin_match_return:
 
     #Tonks turns into Astoria if you've met her
     if astoria_unlocked:
+        call play_sound("magic")
         call play_music("astoria")
         call hide_characters
         call cho_chibi("hide")
-
         call ast_chibi("stand","desk","base", flip=False)
-        call ast_main("How about giving this little butt a spanking?","angry","base","angry","mid", xpos="mid", ypos="base", flip=False, trans="d9")
+        call ast_main("How about giving this little butt a spanking?","angry","base","angry","mid", xpos="mid", ypos="base", flip=False)
+        with morph
 
+        call play_sound("magic")
         call play_music("susan")
         call hide_characters
         call cho_chibi("hide")
         call ast_chibi("hide")
-
         call sus_chibi("stand","desk","base", flip=False)
-        call sus_main("You want to s-spank me? W-Why would you want to sp-spank me, professor? Did I do something wrong?","upset","base","worried","mid", xpos="mid", ypos="base", flip=False, trans="d9")
-        call sus_main("Are you going to punish me for having these massive pair of tits-","open","base","worried","down")
-        call sus_main("Wow. They really are big... And they feel so soft...","open","wide","base","down")
-        call sus_main("(I think I'm gonna play with them later for a little...)","grin","base","angry","down")
+        call sus_main("You want to s-spank me? W-Why would you want to sp-spank me, professor? Did I do something wrong?","upset","base","worried","mid", xpos="mid", ypos="base", flip=False)
+        with morph
+        
+        call sus_main("Are you going to punish me for flaunting these massive pair of tits-","open","base","worried","down")
+        call sus_main("Wow... They really are big aren't they... And they feel so soft...","open","wide","base","down")
+        call sus_main("(I'll give you two the attention you deserve tonight...)","grin","base","angry","down")
         m "Tonks?"
-        call sus_main("Oh right... Where was I?","open","narrow","worried","mid")
+        call sus_main("Oh right...{w=0.3} Where was I?","open","narrow","worried","mid")
 
     #Tonks Turns into Susan if you've met her and not Astoria
     elif susan_unlocked:
+        call play_sound("magic")
         call play_music("susan")
         call hide_characters
         call cho_chibi("hide")
         call ast_chibi("hide")
-
         call sus_chibi("stand","desk","base", flip=False)
-        call sus_main("Did I do something wrong, Sir?","upset","base","worried","mid", xpos="mid", ypos="base", flip=False, trans="d9")
+        call sus_main("Did I do something wrong, Sir?","upset","base","worried","mid", xpos="mid", ypos="base", flip=False)
+        with morph
+        
         call sus_main("Are you going to punish me for having these massive pair of tits-","open","base","worried","down")
         call sus_main("Wow. They really are big... And they feel so soft...","open","wide","base","down")
         call sus_main("(I think I'm gonna play with them later for a little...)","grin","base","angry","down")
@@ -1413,40 +1422,50 @@ label slytherin_match_return:
     if luna_unlocked:
         g9 "Now do Luna!"
 
+        call play_sound("magic")
         call play_music("luna")
         call hide_characters
         call cho_chibi("hide")
         call ast_chibi("hide")
         call sus_chibi("hide")
-
         call lun_chibi("stand","desk","base", flip=False)
-        call lun_main("Oh, Professor Tonks, look out you got a jigglypuff on your shoulder...","soft","seductive","sad","mid", xpos="mid", ypos="base", flip=False, trans="d9")
+        call lun_main("Professor Dumbledore, watch out for that jigglypuff on your shoulder...","soft","seductive","sad","mid", xpos="mid", ypos="base", flip=False)
+        with morph
+        
         call lun_main("Let me lick it off for you!","crazy","seductive","sad","mid") #lmao nice
+        call play_sound("giggle")
         call lun_main("*Hi-Hi-Hi*","grin","happyCl","base","mid")
 
     #Tonks turn into snape
+    g9 "Nice, now do-"
+
+    call play_sound("magic")
     call play_music("snape")
     call hide_characters
     call cho_chibi("hide")
     call ast_chibi("hide")
     call sus_chibi("hide")
     call lun_chibi("hide")
-
     call sna_chibi("stand","410","177", flip=False)
-    call sna_main("Want some of this, Genie?","snape_20", xpos="320", ypos="base", flip=False, trans="d9")
+    call sna_main("Want some of this, Genie?","snape_20", xpos="320", ypos="base", flip=False)
+    with morph
+    
+    call play_sound("gasp")
     g4 "Aaaah!"
+    with hpunch
     call sna_main("Mind if I...{w=0.4} Slithered in?","snape_13")
     g4 "..."
     call play_sound("giggle")
     call sna_main("*Hi-Hi-Hi*","snape_22")
 
     #Tonks turns into herself
+    call play_sound("magic")
     call play_music("tonks")
     call hide_characters
     call sna_chibi("hide")
-
     call ton_chibi("stand","desk","base", flip=False)
-    call ton_main("","base","base","base","mid", xpos="mid", ypos="base", flip=False, trans="d9")
+    call ton_main("","base","base","base","mid", xpos="mid", ypos="base", flip=False)
+    with morph
     call ctc
 
     call ton_main("I'm especially proud of that last one...","smile","happyCl","base","mid")
@@ -1457,8 +1476,8 @@ label slytherin_match_return:
     m "What next?{w=0.2} Can you time travel?"
     call ton_main("I wish! The ministry won't let me do it...","open","base","sad","R")
     call ton_main("If I could I'd just go back to kill baby \"you know who\"...","upset","base","angry","mid")
-    m "(That is always the first thing people consider when talking about time travel...)"
-    m "Unbelievable..."
+    m "(Why is that always the first thing people consider when talking about time travel...)"
+    m "(So predictable...)"
 
     m "So...when Miss Granger got hit by that bludger..."
     call ton_main("I took her to the hospital wing...","open","closed","base","mid")
@@ -1466,6 +1485,7 @@ label slytherin_match_return:
     m "I see..."
     m "And she-"
     call ton_main("She's fine...","open","base","sad","R")
+    #If we had the hospital wing drawn she could offer to take you there at this line
     call ton_main("Your face is cute when you worry, you know that?","base","base","sad","mid")
     m "So, won't people find out you replaced her?"
     call ton_main("You think so?","upset","base","worried","down")
@@ -1492,7 +1512,7 @@ label slytherin_match_return:
     $ hermione_busy = True
     $ cho_busy = True
 
-    $ cho_mad += 9
+    $ cho_mood += 9
     #$ cho_tier = 3 # TODO: activate this after adding favors.
 
     # Reset

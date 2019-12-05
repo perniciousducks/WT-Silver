@@ -49,6 +49,8 @@ define kissiris = Fade(0.2, 0.0, 0.8, color='#fb8dc8')
 define black_magic = Fade(0.2, 0.0, 0.5, color='#7f3590')
 define blackfade = Fade(0.9, 0.5, 1, color='#000000')
 
+define morph = ComposeTransition(Dissolve(0.9), before=Fade(0.1, 0.5, 0.5, color="#fff"), after=Dissolve(0.5))
+
 # Main title background animation
 image title_ani: 
     contains:

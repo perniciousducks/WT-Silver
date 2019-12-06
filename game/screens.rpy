@@ -13,8 +13,7 @@ screen say(who, what, side_image=None):
     #Add "hidden" window
     if hkey_chat_hidden:
         frame:
-            xalign 0.5
-            yalign 0.99
+            style "empty"
             ypos 1000 # hide below visible area
             if who:
                 text who id "who"

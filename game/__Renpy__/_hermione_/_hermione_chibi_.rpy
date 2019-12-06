@@ -59,6 +59,11 @@ label her_chibi(action=None, xpos=None, ypos=None, flip=False, pic=None):
     elif action == "kneel_pant":
         $ hermione_chibi.hide()
         show screen hermione_kneel_pant
+        
+    elif action == "hit_head":
+        $ hermione_chibi.hide()
+        show screen hermione_hit_head
+            
 
     elif action == "reset":
         $ hermione_chibi.do(None)
@@ -160,6 +165,11 @@ screen hermione_lying():
     tag hermione_chibi
     zorder hermione_chibi.zorder
     add "characters/hermione/chibis/lying/shime21.png" pos hermione_chibi.pos
+    
+screen hermione_hit_head():
+    tag hermione_chibi
+    zorder hermione_chibi.zorder
+    add "ch_hem hit_on_head" pos hermione_chibi.pos
 
 screen hermione_kneel_pant():
     tag hermione_chibi

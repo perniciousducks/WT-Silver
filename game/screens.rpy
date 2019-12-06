@@ -349,9 +349,9 @@ screen file_picker():
                                 yfill True
                                 ymaximum 50
                                 action FileDelete(i, persistent.delwarning)
-                            text "[file_name]. [file_time!t]\n[save_name!t]" xpos -40 yalign 0.5 style "night_text"
+                            text "[file_name]. [file_time!t]\n[save_name!t]" xpos -40 yalign 0.5 style "night_button_text"
                         else:
-                            text "[file_name]. [file_time!t]" xoffset 1 style "night_text"
+                            text "[file_name]. [file_time!t]" xoffset 1 style "night_button_text"
                             
                         key "save_delete" action FileDelete(i, persistent.delwarning)
                 else:

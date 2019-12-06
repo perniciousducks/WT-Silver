@@ -70,21 +70,21 @@ screen choice(items):
             style_prefix interface_style + "_menu"
             spacing 0
 
-            for i, item in enumerate(items, 1):
+            for i, entry in enumerate(items, 1):
                 $ ico = None
-                if "{icon=" in item.caption:
-                    $ ico = item.caption.partition("{icon=")[2][:-1] # Icon must be at the end of caption
+                if "{icon=" in entry.caption:
+                    $ ico = entry.caption.partition("{icon=")[2][:-1] # Icon must be at the end of caption
 
                 button:
                     xsize int(config.screen_width * 0.5)
                     ysize 28
-                    action item.action
-                    if i < 10 and item.action:
+                    action entry.action
+                    if i < 10 and entry.action:
                         keysym (str(i), "K_KP"+str(i)) # Numeric hotkey support
-                    sensitive bool(item.action)
+                    sensitive bool(entry.action)
                     fixed:
-                        text item.caption.partition("{icon=")[0] xalign 0.5 yalign 0.5
-                        if i < 10 and item.action:
+                        text entry.caption.partition("{icon=")[0] xalign 0.5 yalign 0.5
+                        if i < 10 and entry.action:
                             text "{size=-2}[i].{/size}" xpos 5 yalign 0.5
                         if ico:
                             add ico xpos 40 yalign 0.5 anchor (0.5, 0.5)

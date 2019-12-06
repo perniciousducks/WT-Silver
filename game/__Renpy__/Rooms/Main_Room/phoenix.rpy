@@ -10,7 +10,7 @@ label phoenix:
 
     if not bird_examined:
         $ bird_examined = True
-        call gen_chibi("stand","mid","base",flip=True)
+        call gen_chibi("stand","mid","base",flip=False)
         show screen chair_left #Empty chair near the desk.
         show screen desk
         with d5
@@ -34,7 +34,7 @@ label phoenix:
 label feeding:
     show screen chair_left
     show screen desk
-    call gen_chibi("grab_high", phoenix_OBJ.xpos, phoenix_OBJ.ypos)
+    call gen_chibi("grab_high", phoenix_OBJ.xpos, phoenix_OBJ.ypos, flip=False) # Note: Flip is inconsistent
     with d3
     pause .5
 
@@ -54,7 +54,7 @@ label feeding:
 label petting:
     show screen chair_left
     show screen desk
-    call gen_chibi("petting", phoenix_OBJ.xpos, phoenix_OBJ.ypos)
+    call gen_chibi("petting", phoenix_OBJ.xpos, phoenix_OBJ.ypos, flip=False) # Note: Flip is inconsistent
     with d3
     pause .5
 

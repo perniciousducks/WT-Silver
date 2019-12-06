@@ -165,7 +165,7 @@ label enter_room_of_req:
     if first_visit_req == False:
         $ first_visit_req = True
         $ achievement.unlock("mirror")
-        call gen_chibi("stand","door","base",flip=True)
+        call gen_chibi("stand","door","base",flip=False)
         call hide_blkfade
 
         stop music fadeout 1.0
@@ -173,9 +173,9 @@ label enter_room_of_req:
         $ renpy.sound.play( "sounds/door.mp3")
         m "..."
         $ renpy.music.play("music/RoomOfReqIntro.mp3")
-        call gen_chibi("stand","door","base",flip=False)
+        call gen_chibi("stand","door","base")
         g4 "It's just a room filled with a bunch of crap...."
-        call gen_chibi("stand","door","base",flip=True)
+        call gen_chibi("stand","door","base",flip=False)
         m "And a mirror?"
 
         call gen_walk(xpos="200", ypos="base")
@@ -213,7 +213,7 @@ label enter_room_of_req:
             call sna_main("Continuing where I left off.", "snape_09")
         call sna_main("Now, this mirror that you've found...", "snape_01")
         call sna_main("I thought Albus would've moved it out of the school after the last incident...", "snape_22")
-        call gen_chibi("stand","200","base",flip=True)
+        call gen_chibi("stand","200","base",flip=False)
         show screen bld1
         m "What kind of incident? It's just some dusty old mirror... why would Dumbledore care about it? And what's going on with this room?"
         call sna_main("I don't know about the room, I'm more concerned by this mirror. Why don't you have a look in it and tell me what you see?", "snape_01")
@@ -256,12 +256,12 @@ label enter_room_of_req:
     else:
         $ mirror_image = 0
         play music "music/song18.mp3" fadein 4 fadeout 1
-        call gen_chibi("stand","door","base",flip=True)
+        call gen_chibi("stand","door","base",flip=False)
         call hide_blkfade
 
         call gen_walk(xpos="200", ypos="base")
 
     $ mirror_image = 1
-    call gen_chibi("stand","200","base",flip=True)
+    call gen_chibi("stand","200","base",flip=False)
     call hide_blkfade
     call screen room_of_requirement_menu

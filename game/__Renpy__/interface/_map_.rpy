@@ -532,7 +532,7 @@ label floor_7th:
         show screen floor_7th_screen
 
         if unlocked_7th and first_time_7th:
-            call gen_chibi(xpos="door", ypos="base", flip=True)
+            call gen_chibi(xpos="door", ypos="base", flip=False)
             call hide_blkfade
 
             $ first_time_7th=False

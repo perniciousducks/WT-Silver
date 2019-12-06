@@ -184,4 +184,4 @@ image menu_ani:
 
     contains:
         alpha 0.8
-        "images/rooms/_bg_/color/black.png"
+        "#000"

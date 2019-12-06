@@ -7,7 +7,7 @@ label cupboard:
         $ cupboard_examined = True
         $ searched = True
         show screen chair_left
-        call gen_chibi("stand","behind_desk","base", flip=True)
+        call gen_chibi("stand","behind_desk","base", flip=False)
         show screen desk
         with d5
         pause.2
@@ -29,7 +29,7 @@ label rummaging:
     show screen chair_left
     show screen desk
     show screen cupboard_open
-    call gen_chibi("rummage", 160, 110, flip=False)
+    call gen_chibi("rummage", 160, 110, flip=False) # Note: Flip is inconsistent
     with d3
     show screen bld1
     with d3

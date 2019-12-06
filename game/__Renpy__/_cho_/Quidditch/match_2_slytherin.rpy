@@ -148,7 +148,7 @@ label slytherin_match:
     call gen_chibi("hide")
     with d3
 
-    call gen_chibi("stand","door","base", flip=False)
+    call gen_chibi("stand","door","base")
     call teleport(position="genie", effect=False)
     pause .2
 
@@ -156,7 +156,7 @@ label slytherin_match:
     with d3
     pause .2
 
-    call gen_chibi("stand","door","base", flip=True)
+    call gen_chibi("stand","door","base", flip=False)
     with d3
     pause .3
 
@@ -172,7 +172,7 @@ label slytherin_match:
     with d3
     pause .2
 
-    call gen_chibi("stand","door","base", flip=False)
+    call gen_chibi("stand","door","base")
     with d3
     pause .5
 
@@ -557,7 +557,7 @@ label slytherin_match:
     pause 0.5
     $ renpy.sound.play("sounds/crowd_gasp.mp3")
     call ton_chibi("slack_jaw", 200, 50, flip=True)
-    call gen_chibi("stand_shocked", 130, 10, flip=False)
+    call gen_chibi("stand_shocked", 130, 10)
     call sna_chibi("stand_shocked", 210, -40, flip=True)
     pause 1.0
     $ renpy.sound.play("sounds/dizzy.mp3", loop=True)
@@ -589,7 +589,7 @@ label slytherin_match:
     call her_chibi("lying", 330, 160)
     call ton_chibi("stand", xpos=395, ypos=110, flip=False)
     call sna_chibi("stand", xpos=260, ypos=0, flip=True)
-    call gen_chibi("stand", xpos=210, ypos=40, flip=False) # TODO: mirror Genie's flip so it's the same as any other character.
+    call gen_chibi("stand", xpos=210, ypos=40) # TODO: mirror Genie's flip so it's the same as any other character.
     with d3
 
     call weather_sound
@@ -641,7 +641,7 @@ label slytherin_match:
     hide screen hermione_lying
     call ton_chibi("hide")
     call her_chibi("hide")
-    call gen_chibi("stand", xpos=255, ypos=0, flip=True)
+    call gen_chibi("stand", xpos=255, ypos=0, flip=False)
     call sna_chibi("stand", xpos=170, ypos=-20, flip=False)
     with d3
 
@@ -696,7 +696,7 @@ label slytherin_match:
     call sna_main("Fine, in that case. I'll just go up and give a motivational-","snape_01")
 
     #Genie walks past him and snape stops
-    call gen_chibi(flip=False)
+    call gen_chibi()
     with d3
     pause .5
     m "No..."
@@ -793,7 +793,7 @@ label slytherin_match:
     call her_chibi("stand", 160, 70, flip=True)
     with d3
     pause .5
-    call gen_chibi(flip=True)
+    call gen_chibi(flip=False)
     with d3
     pause .2
 
@@ -816,7 +816,7 @@ label slytherin_match:
     pause .1
     call gen_chibi("hide")
     with d3
-    call gen_chibi("stand", 130, 10, flip=False)
+    call gen_chibi("stand", 130, 10)
     with d3
     pause .5
 
@@ -980,11 +980,11 @@ label slytherin_match:
     $ genie_chibi.zorder = 3
     hide screen hermione_main
     call her_chibi("kneel_pant", 325, 170)
-    call gen_chibi("stand", flip=True)
+    call gen_chibi("stand", flip=False)
     with d5
     # Genie walks back to his seat
     call gen_walk(xpos=130, ypos=10)
-    call gen_chibi("stand", flip=False)
+    call gen_chibi("stand")
 
     "With Hermione collapsed on the ground you give last quick look and then swiftly head back to your seat..."
     "Her legs still shaking slightly she tries fruitlessly to stand up and compose herself."
@@ -1068,7 +1068,7 @@ label slytherin_match:
 
     #TODO Show standing Hermione chibi when Cho's CG is hidden
     call her_chibi("hide") # Hermione is already gone.
-    call gen_chibi("stand_alt", xpos=130, ypos=10, flip=False)
+    call gen_chibi("stand_alt", xpos=130, ypos=10)
     call sna_chibi("stand", xpos=220, ypos=-50, flip=False)
 
     $ qp_mob_reaction[0] = None
@@ -1152,7 +1152,7 @@ label slytherin_match_return:
     pause 1.0
 
     call play_sound("door")
-    call gen_chibi("stand","door","base", flip=True)
+    call gen_chibi("stand","door","base", flip=False)
     with d3
     pause .3
 

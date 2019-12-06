@@ -9,8 +9,8 @@
 # read, read_done, read_near_fire, read_near_fire_done
 
 #TODO Genie chibi images and calls (at least for stand and walk) have to be flipped consistently with other chibis
-
-label gen_chibi(action=None, xpos=None, ypos=None, flip=False, pic=None):
+# Note: The flip parameter defaults to True, because Genie is most often facing right
+label gen_chibi(action=None, xpos=None, ypos=None, flip=True, pic=None):
     hide screen favor # screen tag
 
     #TODO Check if needed. These hide screen calls are not in other chibi labels
@@ -39,7 +39,7 @@ label gen_chibi(action=None, xpos=None, ypos=None, flip=False, pic=None):
         $ genie_chibi.do(None)
         return
 
-    # Special setup for certain actions
+    # Special setup for certain actions (these ignore the flip parameter)
 
     elif action == "sit_behind_desk":
         $ genie_chibi.hide()

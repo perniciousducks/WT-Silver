@@ -11,7 +11,6 @@ image ch_gen stand_shocked:
     "characters/genie/chibis/shocked/01.png"
 
 image ch_gen walk:
-    xzoom -1 # Flipped for consistency with chibi.move() method
     "characters/genie/chibis/walk_01.png"
     pause.18
     "characters/genie/chibis/walk_02.png"
@@ -206,13 +205,13 @@ image ch_gen toast_goblet_daytime:
 
 # Masturbating behind desk
 image ch_gen jerk_off_behind_desk:
-    "characters/genie/chibis/masturbating/desk_01.png"
+    "characters/genie/chibis/jerk_off_behind_desk/desk_01.png"
     pause.2
-    "characters/genie/chibis/masturbating/desk_02.png"
+    "characters/genie/chibis/jerk_off_behind_desk/desk_02.png"
     pause.2
-    "characters/genie/chibis/masturbating/desk_03.png"
+    "characters/genie/chibis/jerk_off_behind_desk/desk_03.png"
     pause.2
-    "characters/genie/chibis/masturbating/desk_02.png"
+    "characters/genie/chibis/jerk_off_behind_desk/desk_02.png"
     pause.2
     repeat
 
@@ -223,27 +222,27 @@ image ch_gen cum_behind_desk:
     contains:
         zoom 2
         alpha 1
-        "characters/genie/chibis/masturbating/desk_sperm_01.png"
+        "characters/genie/chibis/jerk_off_behind_desk/desk_sperm_01.png"
         pause.1
-        "characters/genie/chibis/masturbating/desk_sperm_02.png"
+        "characters/genie/chibis/jerk_off_behind_desk/desk_sperm_02.png"
         pause.1
-        "characters/genie/chibis/masturbating/desk_sperm_03.png"
+        "characters/genie/chibis/jerk_off_behind_desk/desk_sperm_03.png"
         pause.1
-        "characters/genie/chibis/masturbating/desk_sperm_04.png"
+        "characters/genie/chibis/jerk_off_behind_desk/desk_sperm_04.png"
         pause.1
-        "characters/genie/chibis/masturbating/desk_sperm_05.png"
+        "characters/genie/chibis/jerk_off_behind_desk/desk_sperm_05.png"
         pause.1
-        "characters/genie/chibis/masturbating/desk_sperm_06.png"
+        "characters/genie/chibis/jerk_off_behind_desk/desk_sperm_06.png"
         pause.1
-        "characters/genie/chibis/masturbating/desk_sperm_07.png"
+        "characters/genie/chibis/jerk_off_behind_desk/desk_sperm_07.png"
         pause.1
-        "characters/genie/chibis/masturbating/desk_sperm_08.png"
+        "characters/genie/chibis/jerk_off_behind_desk/desk_sperm_08.png"
         pause.1
-        "characters/genie/chibis/masturbating/desk_sperm_09.png"
+        "characters/genie/chibis/jerk_off_behind_desk/desk_sperm_09.png"
         pause.1
-        "characters/genie/chibis/masturbating/desk_sperm_10.png"
+        "characters/genie/chibis/jerk_off_behind_desk/desk_sperm_10.png"
         pause.1
-        "characters/genie/chibis/masturbating/desk_sperm_11.png"
+        "characters/genie/chibis/jerk_off_behind_desk/desk_sperm_11.png"
         pause 2
         linear .2 alpha 0
         pause .5
@@ -255,23 +254,23 @@ image ch_gen cum_behind_desk_done:
         "ch_gen sit_behind_desk"
     contains:
         zoom 2
-        "characters/genie/chibis/masturbating/desk_sperm_11.png"
+        "characters/genie/chibis/jerk_off_behind_desk/desk_sperm_11.png"
 
 image ch_gen dick_out:
-    "characters/genie/chibis/masturbating/dick_out.png"
+    "characters/genie/chibis/jerk_off/dick_out.png"
 
 # Masturbating while standing
 image ch_gen hold_dick:
-    "characters/genie/chibis/masturbating/01.png"
+    "characters/genie/chibis/jerk_off/01.png"
 
 image ch_gen jerk_off:
-    "characters/genie/chibis/masturbating/01.png"
+    "characters/genie/chibis/jerk_off/01.png"
     pause.2
-    "characters/genie/chibis/masturbating/02.png"
+    "characters/genie/chibis/jerk_off/02.png"
     pause.2
-    "characters/genie/chibis/masturbating/03.png"
+    "characters/genie/chibis/jerk_off/03.png"
     pause.2
-    "characters/genie/chibis/masturbating/04.png"
+    "characters/genie/chibis/jerk_off/04.png"
     pause.2
     repeat
 
@@ -280,44 +279,44 @@ image ch_gen cum:
     contains:
         "ch_gen jerk_off"
     contains:
-        offset (-540, -370)
+        offset (-760, -370)
         zoom 2
         alpha 1
-        "characters/genie/chibis/masturbating/sperm_wide_01.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_01.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_02.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_02.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_03.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_03.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_04.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_04.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_05.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_05.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_06.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_06.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_07.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_07.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_08.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_08.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_09.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_09.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_10.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_10.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_11.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_11.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_12.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_12.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_13.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_13.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_14.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_14.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_15.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_15.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_16.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_16.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_17.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_17.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_wide_18.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_18.png"
         pause 2
         linear .2 alpha 0
         pause .5
@@ -326,45 +325,45 @@ image ch_gen cum:
 image ch_gen cum_done:
     size (300,500)
     contains:
-        "characters/genie/chibis/masturbating/02.png"
+        "characters/genie/chibis/jerk_off/02.png"
     contains:
-        offset (-540, -370)
+        offset (-760, -370)
         zoom 2
-        "characters/genie/chibis/masturbating/sperm_wide_18.png"
+        "characters/genie/chibis/jerk_off/sperm_wide_18.png"
 
 image ch_gen cum_close:
     size (300,500)
     contains:
         "ch_gen jerk_off"
     contains:
-        offset (-540, -370)
+        offset (-760, -370)
         zoom 2
         alpha 1
-        "characters/genie/chibis/masturbating/sperm_short_01.png"
+        "characters/genie/chibis/jerk_off/sperm_short_01.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_short_02.png"
+        "characters/genie/chibis/jerk_off/sperm_short_02.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_short_03.png"
+        "characters/genie/chibis/jerk_off/sperm_short_03.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_short_04.png"
+        "characters/genie/chibis/jerk_off/sperm_short_04.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_short_05.png"
+        "characters/genie/chibis/jerk_off/sperm_short_05.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_short_06.png"
+        "characters/genie/chibis/jerk_off/sperm_short_06.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_short_07.png"
+        "characters/genie/chibis/jerk_off/sperm_short_07.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_short_08.png"
+        "characters/genie/chibis/jerk_off/sperm_short_08.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_short_09.png"
+        "characters/genie/chibis/jerk_off/sperm_short_09.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_short_10.png"
+        "characters/genie/chibis/jerk_off/sperm_short_10.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_short_11.png"
+        "characters/genie/chibis/jerk_off/sperm_short_11.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_short_12.png"
+        "characters/genie/chibis/jerk_off/sperm_short_12.png"
         pause.1
-        "characters/genie/chibis/masturbating/sperm_short_13.png"
+        "characters/genie/chibis/jerk_off/sperm_short_13.png"
         pause 3
         linear .2 alpha 0
         repeat
@@ -372,11 +371,11 @@ image ch_gen cum_close:
 image ch_gen cum_close_done:
     size (300,500)
     contains:
-        "characters/genie/chibis/masturbating/02.png"
+        "characters/genie/chibis/jerk_off/02.png"
     contains:
-        offset (-540, -370)
+        offset (-760, -370)
         zoom 2
-        "characters/genie/chibis/masturbating/sperm_short_13.png"
+        "characters/genie/chibis/jerk_off/sperm_short_13.png"
 
 # Grabbing
 #TODO Fix positions for grab and petting (make consistent with other images and adjust in events)

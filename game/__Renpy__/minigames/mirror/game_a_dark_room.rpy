@@ -166,7 +166,7 @@ label DRgame_chibis:
     #Player
     $ genie_chibi.zorder = 1
     if DRplayer in DRgame.characters:
-        call gen_chibi("stand","710","165",flip=True)
+        call gen_chibi("stand","710","165",flip=False)
 
     #Stranger
     $ snape_chibi.zorder = 1
@@ -385,7 +385,7 @@ label DRgame_random_event:
                 call play_music("stop")
                 call play_sound("door")
                 pause.5
-                call gen_chibi("stand","door","base",flip=True)
+                call gen_chibi("stand","door","base",flip=False)
                 with d5
                 pause.8
                 "The cabin, its walls strong against the harsh winds,... but still as cold as the outside..."
@@ -748,7 +748,7 @@ label DRgame_chop_wood:
 
     $ DRgame.wood += temp_number
 
-    call gen_chibi("stand","door","base",flip=True)
+    call gen_chibi("stand","door","base",flip=False)
     with d5
 
     "Exhausted you return to the cabin..."
@@ -784,7 +784,7 @@ label DRgame_hunt_animals:
 
     $ DRgame.meat += temp_number
 
-    call gen_chibi("stand","door","base",flip=True)
+    call gen_chibi("stand","door","base",flip=False)
     with d5
 
     "You returned from the hunt..."

@@ -100,11 +100,11 @@ label hufflepuff_match:
     call gen_chibi("hide")
     with d3
 
-    call gen_chibi("stand","door","base", flip=False)
+    call gen_chibi("stand","door","base")
     call teleport(position="genie", effect=False)
     pause.5
 
-    call gen_chibi("stand","door","base", flip=True)
+    call gen_chibi("stand","door","base", flip=False)
     with d3
     pause.2
 
@@ -122,7 +122,7 @@ label hufflepuff_match:
 
     m "Actually, I have no idea where we're going."
 
-    call gen_chibi("stand","door","base",flip=False)
+    call gen_chibi("stand","door","base")
     with d3
     pause.2
 
@@ -373,7 +373,7 @@ label hufflepuff_match:
             $ snape_chibi.zorder = 3
             $ genie_chibi.zorder = 2
             call sna_chibi("stand","260","40", flip=True)
-            call gen_chibi("stand", "340", "45", flip=True)
+            call gen_chibi("stand", "340", "45", flip=False)
             with d3
 
         "\"Nam\"":
@@ -424,7 +424,7 @@ label hufflepuff_match:
     $ snape_chibi.zorder = 2
     $ hermione_chibi.zorder   = 4
     $ genie_chibi.zorder = 3
-    call gen_chibi("stand", "130", "10", flip=False)
+    call gen_chibi("stand", "130", "10")
     call sna_chibi("stand", "210", -40, flip=True)
     with d3
     pause.2
@@ -766,7 +766,7 @@ label hufflepuff_match:
     pause 1.0
 
     call play_sound("door")
-    call gen_chibi("stand","door","base",flip=True)
+    call gen_chibi("stand","door","base",flip=False)
     with d3
     pause 0.3
 

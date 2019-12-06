@@ -70,12 +70,12 @@ label an_odd_circumstance():
     with d1
     her "Silencio."
     nar "After a few seconds I went to ask where that voice and bright light had come from... But as I tried, I could only feel my lips moving with no sound emerging..."
-    call gen_chibi("stand","260","base", flip=False)
+    call gen_chibi("stand","260","base")
     show screen chair_left
     show screen desk(430)
     with d3
     nar "Taken aback by this, I pushed myself back in my chair and stood up clutching my vocal cords..."
-    call gen_chibi("stand","260","base", flip=True)
+    call gen_chibi("stand","260","base", flip=False)
     with d3
     nar "I turned around, now feeling slightly worried, looking for the source of the voice."
     her "Don't say anything else... you know why I'm here, we had a deal remember..."
@@ -143,7 +143,7 @@ label an_odd_circumstance():
     her "Looks like I've made a mess again..."
     show screen blkfade
     with d3
-    call gen_chibi("stand","260","base", flip=True)
+    call gen_chibi("stand","260","base", flip=False)
     show screen chair_left
     show screen desk(430)
     call her_chibi("stand","mid",flip=True)

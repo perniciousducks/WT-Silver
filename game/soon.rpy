@@ -200,14 +200,12 @@ label xmas:
     call blkfade
     "You fall asleep and as you drift off, the power of Christmas grabs a hold of your soul."
     menu:
-        "This story contains some potential spoilers and information about future patches, do you wish to continue or do you want to skip until tomorrow?"
+        "This story contains some potential spoilers and information about future patches, do you wish to continue or do you want to skip until tomorrow?\n{size=-4}You can replay the event via cheat menu.{/size}"
         "Yes":
             pass
         "No (skip)":
             $ persistent.xmas_2019 = True
             jump main_room
-            
-    call hide_blkfade
     
     # Setup
     stop weather
@@ -216,6 +214,8 @@ label xmas:
     $ snowing = True
     $ weather_animations = ["snow"]
     show screen weather
+    
+    call hide_blkfade
     
     $ sna_chibi_stand = "ghost_1_snape_stand"
     $ sna_chibi_walk = "ghost_1_snape_walk"
@@ -678,7 +678,7 @@ label xmas:
     $ renpy.music.play("music/the-chamber-by-kevin-macleod.mp3")
     play bg_sounds "sounds/brewing_idle.mp3" fadeout 1.0 fadein 1.0
 
-    "\"Ghost\"" "What are you doing in my office? I told you not to wander around the castle..."
+    "Snape" "What are you doing in my office? I told you not to wander around the castle..."
 
     # reset outfits
     $ tonks_class.wear("all")
@@ -804,7 +804,6 @@ label xmas:
     m "......{w=0.5}*Snore*"
     san_[1] "Merry Christmas and a Happy new year!"
     san_[4] "See you all in 2020 for update 1.38...."
-    call hide_blkfade
 
     # reset
     $ gen_chibi_zorder = 2
@@ -820,4 +819,4 @@ label xmas:
     $ gen_chibi_stand = "genie_stand_ani"
     
     $ persistent.xmas_2019 = True
-    jump main_room
+    jump day_start

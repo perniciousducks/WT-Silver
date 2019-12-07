@@ -47,7 +47,7 @@ screen main_room():
 #Main Room Overlay - (layer is on top of main_room_menu screen)
 screen main_room_overlay():
     tag room_overlay_screen
-    zorder 3
+    zorder 2
     #Decorations
     #for i in deco_overlay_list:
     #    add deco_overlay_list[i].get_room_image() xpos i.xpos ypos i.ypos xanchor 0.5 yanchor 0.5

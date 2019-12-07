@@ -118,7 +118,7 @@ label quests:
             $ letter_deck.mailLetter()
     
         if persistent.xmas_2019 == None and not daytime:
-            if 1578528000 > int(time.time()) > 1577145600:
+            if 1578528000 > int(time.time()) > 1575676800:
                 jump xmas
             else:
                 $ persistent.xmas_2019 = True

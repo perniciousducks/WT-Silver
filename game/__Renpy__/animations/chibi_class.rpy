@@ -1,13 +1,5 @@
-label chibi_test_scene:
 
-    jump main_room
-
-#TEMP skip say statements (for testing chibi code)
-# python early:
-#     def say_none(who, what, *args, **kwargs):
-#         return
-#     renpy.say = say_none
-
+# Screen used by chibi class (each chibi object derives its own uniquely tagged screen from this one)
 screen chibi(chibi_object):
     zorder chibi_object.zorder
     fixed:
@@ -19,12 +11,12 @@ screen chibi(chibi_object):
         #     background "#00ff0055"
 
 init -1 python:
-    from collections import OrderedDict
-
     def update_chibi(name):
+        # Update the chibi object for a given character
         get_chibi_object(name).update()
 
     def get_chibi_object(name):
+        # Get a chibi object by its character's name
         name = "{}_chibi".format(name)
         c = getattr(renpy.store, name, None)
         if c and isinstance(c, chibi):
@@ -36,7 +28,6 @@ init -1 python:
     class chibi(object):
         #TODO Document usage of chibi class
         #TODO Implement chibi_effect
-        #TODO Fix chibi screen problems on rollback (eg. happens when astoria and tonks are both visible during imperio stuff)
         #TODO Fix: Coordinates vary for some chibis (maybe resolve positions outside of chibi class)
         #TODO Anchor chibi transforms to (0.5, 1.0) and realign positions
 
@@ -81,10 +72,12 @@ init -1 python:
 
         def __init__(self, tag, layers, update_callback, zorder=3, speed=100, image_path=None, actions=None, places=None):
             self.tag = tag
-            self.layers = OrderedDict([(k, None) for k in layers])
+            
+            # Use a tuple/list to specify the order of layers in a dict
+            self.layers_order = layers
+            self.layers = dict([(k, None) for k in layers])
+
             self.update_callback = update_callback
-            self.zorder = zorder
-            self.speed = speed # pixels/sec
 
             if image_path:
                 self.image_path = image_path
@@ -101,6 +94,9 @@ init -1 python:
                 self.places = dict(chibi.places)
                 self.places.update(places)
 
+            self.zorder = zorder
+            self.speed = speed # pixels/sec
+
             self.pos = (0,0)
             self.flip = False
             self.action = None
@@ -114,6 +110,7 @@ init -1 python:
 
         @staticmethod
         def _screen(chibi_object, **kwargs):
+            # Emulate a Ren'py `use` statement to derive a chibi screen from the generic one
             renpy.use_screen("chibi", chibi_object, _name=kwargs["_name"], _scope=kwargs["_scope"])
 
         def show(self):
@@ -207,7 +204,7 @@ init -1 python:
             trans = getattr(renpy.store, name, None)
             if not isinstance(trans, renpy.display.transform.ATLTransform):
                 if config.developer:
-                    raise Exception("Expected an instance of ATLTransform: {}".format(name))
+                    raise Exception("Expected a transform: {}".format(name))
                 else:
                     trans = chibi_base # Attempt to save the player from error
             return trans(*args)
@@ -223,7 +220,11 @@ init -1 python:
                     return self.actions[None]
 
         def displayables(self):
-            return (d for d in self.layers.itervalues() if d)
+            # Yields non-empty layers in an iterable manner
+            for k in self.layers_order:
+                d = self.layers.get(k, None)
+                if d != None:
+                    yield d
 
         def clear(self):
             for k in self.layers.iterkeys():

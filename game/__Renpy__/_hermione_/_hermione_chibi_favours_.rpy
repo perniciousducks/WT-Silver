@@ -177,6 +177,7 @@ screen grope_ass_front(fast=False):
 
 screen grope_on_podium(img):
     tag favor
+    zorder 5 # Same as podium zorder
     add img pos (328, 100)
 
 screen grope_tits(img):

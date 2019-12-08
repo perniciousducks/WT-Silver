@@ -894,14 +894,6 @@ label slytherin_match:
     g9 "Oh...{w=0.3} I see what you mean..."#Small text
     call gen_walk(xpos=290, ypos=55)
     call gen_chibi(action="hide")
-    $ hermione_chibi.zorder = 5
-    #
-    #
-    #
-    # You can use chibi call to display images if you set action="animation" and pic="image"
-    #
-    #
-    #
     call her_chibi_scene("grope_on_podium_idle")
     with d3
     pause .5
@@ -993,21 +985,18 @@ label slytherin_match:
     $ genie_chibi.zorder = 3
     hide screen hermione_main
     call her_chibi("kneel_pant", 325, 170)
-    call gen_chibi("stand", flip=False)
-    with d5
+    # Note: Commented out because walk looks weird with Hermione on ground
+    # call gen_chibi("stand", flip=False)
+    # with d5
     # Genie walks back to his seat
-    call gen_walk(xpos=130, ypos=10)
-    call gen_chibi("stand")
+    # call gen_walk(xpos=130, ypos=10)
+    call gen_chibi("stand", 130, 10)
+    with d5
 
     "With Hermione collapsed on the ground you give last quick look and then swiftly head back to your seat..."
     "Her legs still shaking slightly she tries fruitlessly to stand up and compose herself."
-    #Loafy move Hermione sprite down on the screen until she stands
-    call her_main("*Ahh*...{w=0.3}*Ahh*...{w=0.3}Sir...{w=0.2} that was...{w=0.3} *Ahh*...","base","base","base","mid")
-    #Loafy Hermione' sprite should probably not stay on the screen here
-    #"Before she finishes her sentence you give Hermione a quick smirk and swiftly head back to your seat..."
-    g9 "Now, where were we?" #Small text
-    hide screen hermione_main
-    with d3
+    call her_main("*Ahh*...{w=0.3}*Ahh*...{w=0.3}Sir...{w=0.2} that was...{w=0.3} *Ahh*...","base","base","base","mid", ypos="head")
+    g9 "Now, where were we?" # Small text
     call sna_main("Another goal for Slytherin... Although you might've missed it...","snape_37") #Small text
     "You smirk and look back at Hermione who's still on the floor trying to catch her breath."
     call sna_main("You can wipe that smile off your face now...","snape_01")
@@ -1017,8 +1006,7 @@ label slytherin_match:
     g9 "You say that..."
     call nar("Cho, now with her eyes fixed behind one of the goalposts, seemingly having spotted the snitch, gives you a quick glance and a smile as she flies up to Crabbe and Goyle.")
 
-
-    ### Cho CG ###
+    # Cho CG
 
     call hide_characters
     show screen blkfade
@@ -1051,8 +1039,9 @@ label slytherin_match:
     call nar("Malfoy spins his head around. Finally noticing that Cho's currently chasing the snitch in the distance, he quickly darts after her.")
     malf "You fucking idiots!"
 
-    #Hermione should now stand up after the CG
+    # End of Cho CG
 
+    call her_chibi("stand", 375, 105, flip=True)
     call her_main("Oh... it looks like things are heating up! Malfoy has finally realised Chang is going for the Snitch...","open","base","angry","L")
 
     call play_sound("giggle")
@@ -1079,7 +1068,6 @@ label slytherin_match:
     with d5
     pause .8
 
-    #TODO Show standing Hermione chibi when Cho's CG is hidden
     call her_chibi("hide") # Hermione is already gone.
     call gen_chibi("stand_alt", xpos=130, ypos=10)
     call sna_chibi("stand", xpos=220, ypos=-50, flip=False)

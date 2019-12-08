@@ -2831,7 +2831,7 @@ label ball_ending_credits:
 
     $ xder = 160
     $ yder = 160
-    $ dermo = "snape_jerking_off"
+    $ dermo = "ch_sna jerk_off"
     show screen uni_cr
     hide screen credits_chibi
 

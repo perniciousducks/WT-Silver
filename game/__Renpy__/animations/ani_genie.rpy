@@ -261,7 +261,7 @@ image ch_gen dick_out:
 
 # Masturbating while standing
 image ch_gen hold_dick:
-    "characters/genie/chibis/jerk_off/01.png"
+    "characters/genie/chibis/jerk_off/03.png"
 
 image ch_gen jerk_off:
     "characters/genie/chibis/jerk_off/01.png"

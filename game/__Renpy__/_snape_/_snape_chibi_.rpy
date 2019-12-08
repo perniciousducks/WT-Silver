@@ -13,22 +13,11 @@ label sna_chibi(action=None, xpos=None, ypos=None, flip=False):
         with d3
         pause .5
         return
-    #TODO Add Snape chibi wand actions
-    # elif action in ("wand",):
-    #     $ snape_chibi.do(action)
-    elif action in ("jerking_off", "cumming", "cumming_done"):
-        $ snape_chibi.hide() # Not handled by chibi class
-        show screen snape_jerking_off(action)
-    elif action == "hold_dick":
-        $ snape_chibi.hide() # Not handled by chibi class
-        show screen snape_stands_holds_dick
-    elif action == "stand_shocked":
-        $ snape_chibi.hide()
-        show screen snape_stand_shocked
     elif action == "reset":
         $ snape_chibi.do(None)
-    else: # stand
-        $ snape_chibi.do(None)
+        return
+
+    $ snape_chibi.do(action)
 
     return
 
@@ -57,7 +46,6 @@ label sna_walk(xpos=None, ypos=None, speed=1.0, action=None, loiter=True, redux_
 
     return
 
-#TODO Convert Snape chibi screens into chibi class actions if position and such depend on it
 # Screens
 screen with_snape(ani=False):
     tag hanging_with_snape
@@ -76,26 +64,6 @@ screen with_snape(ani=False):
             add "characters/genie/chibis/drinking/01.png" xpos 435 ypos 200 zoom 0.5
         add "characters/snape/chibis/drinking/01.png" xpos 618 ypos 200 zoom 0.5
 
-screen snape_jerking_off(action="jerking_off"):
-    tag snape_chibi
-    zorder snape_chibi.zorder
-    if action == "cumming":
-        add "snape_jerking_off_cum" pos snape_chibi.pos
-    elif action == "cumming_done":
-        add "snape_jerking_off_cum_done" pos snape_chibi.pos
-    else:
-        add "snape_jerking_off" pos snape_chibi.pos
-
-screen snape_stands_holds_dick():
-    tag snape_chibi
-    zorder snape_chibi.zorder
-    add "characters/snape/chibis/masturbating/01.png" pos snape_chibi.pos zoom 0.5 yoffset -60
-
-screen snape_stand_shocked:
-    tag snape_chibi
-    zorder snape_chibi.zorder
-    add "snape_stand_shocked" pos snape_chibi.pos
-
 # Chibi definition
 default snape_chibi = chibi("snape", ["base"], update_snape_chibi, places=snape_places)
 
@@ -107,7 +75,6 @@ define snape_places = {
 
 init python:
     def update_snape_chibi(chibi):
-        if chibi.action == "walk":
-            chibi["base"] = "snape_walk"
-        else:
-            chibi["base"] = "snape_stand"
+        # Assume chibi action has a matching image definition
+        chibi_image = "ch_sna {}".format(chibi.action or "stand")
+        chibi["base"] = chibi_image

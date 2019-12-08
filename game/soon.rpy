@@ -201,9 +201,9 @@ label xmas:
     "You fall asleep and as you drift off, the power of Christmas grabs a hold of your soul."
     menu:
         "This story contains some potential spoilers and information about future patches, do you wish to continue or do you want to skip until tomorrow?\n{size=-4}You can replay the event via cheat menu.{/size}"
-        "Yes":
+        "Continue":
             pass
-        "No (skip)":
+        "Skip":
             $ persistent.xmas_2019 = True
             jump main_room
     

@@ -84,7 +84,7 @@ label her_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
         hermione_class.special(emote=emote)
 
     if use_hermione_head and face_on_cg: #Only her face. Used in CG scenes.
-        show screen hermione_face
+        show screen hermione_face # TODO: <- Screen does not exist
     else:
         show screen hermione_main()
     show screen bld1
@@ -112,6 +112,7 @@ label her_kneel(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=No
 
     $ changeHermione(mouth, eye, cheeks, tears, extra, emote, hermione_xpos, hermione_ypos)
 
+    # TODO: <- Screen does not exist
     show screen hermione_kneel #h_head2
 
     show screen bld1 #Should be active anyways.

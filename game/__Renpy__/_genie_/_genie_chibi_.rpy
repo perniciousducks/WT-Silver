@@ -95,7 +95,7 @@ label gen_walk(xpos=None, ypos=None, speed=1.0, action=None, loiter=True, redux_
     return
 
 # Screen with interactive option
-screen genie_sit_behind_desk:
+screen genie_sit_behind_desk():
     tag genie_chibi
     zorder desk_zorder
     if room_menu_active:

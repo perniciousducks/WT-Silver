@@ -36,7 +36,7 @@ label summon_tonks:
         "-Let's hang-{icon=interface/icons/small/toast.png}" if (wine_ITEM.number > 0 and nt_he_drink.counter == 0) or (firewhisky_ITEM.number > 0 and nt_he_drink.counter > 0):
             jump tonks_hangout
 
-        "{color=#858585}-Let's hang-{/color}{/color}{icon=interface/icons/small/toast.png}" if (firewhisky_ITEM.number < 1 and nt_he_drink.counter > 0):
+        "{color=#858585}-Let's hang-{/color}{icon=interface/icons/small/toast.png}" if (firewhisky_ITEM.number < 1 and nt_he_drink.counter > 0):
             m "(I don't have any firewhisky...)"
             jump tonks_requests
 

@@ -561,7 +561,7 @@ image no_shirt_no_skirt_dance_ani: # No shirt, no skirt
     repeat
 
 image no_shirt_no_skirt_dance_pause:
-    "characters/hermione/chibis/dance/05_dance_01.png"
+    "characters/hermione/chibis/dance/05_panties_01.png"
 
 image no_panties_dance_ani: # No panties
     "characters/hermione/chibis/dance/07_dance_01.png"

@@ -138,7 +138,7 @@ screen hermione_chibi_dance():
         else: #Nude
             add "no_shirt_no_skirt_dance_ani" pos hermione_chibi.pos zoom 0.5
 
-screen hermione_chibi_dance_pause:
+screen hermione_chibi_dance_pause():
     tag hermione_chibi
     zorder hermione_chibi.zorder
     if hermione_class.get_worn("panties"):

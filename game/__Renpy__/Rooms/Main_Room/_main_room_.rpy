@@ -153,7 +153,7 @@ screen main_room():
 
 
 # Genie at desk
-screen genie_desk_interactive:
+screen genie_desk_interactive():
     tag genie_chibi # Uses same tag as chibi screens
     if renpy.variant('android'):
         add "ch_gen sit_behind_desk" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5
@@ -201,7 +201,7 @@ screen phoenix_food():
     zorder 2
 
 # Fireplace
-screen fireplace:
+screen fireplace():
     tag fireplace
     zorder 1
     imagebutton:
@@ -235,7 +235,7 @@ screen fireplace:
     if is_puzzle_box_in_fireplace():
         add "glow_effect" xpos 680 ypos 300 zoom 0.4 alpha 0.2
 
-screen fireplace_fire:
+screen fireplace_fire():
     tag fireplace_fire
     zorder 2
     add "fireplace_fire" xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos+25 xanchor 0.5 yanchor 0.5
@@ -267,7 +267,7 @@ screen cupboard_open():
         add "images/rooms/_objects_/cupboard/cupboard_open" +str(cupboard_deco)+ ".png"  xpos cupboard_OBJ.xpos ypos cupboard_OBJ.ypos xanchor 0.5 yanchor 0.5
 
 # Owl
-screen owl:
+screen owl():
     tag owl
     imagebutton:
         xpos owl_OBJ.xpos
@@ -286,7 +286,7 @@ screen owl:
         add owl_deco_OBJ.get_room_image() xpos owl_deco_OBJ.xpos ypos owl_deco_OBJ.ypos xanchor 0.5 yanchor 1.0
 
 # Package
-screen package:
+screen package():
     tag package
     imagebutton:
         xpos package_OBJ.xpos

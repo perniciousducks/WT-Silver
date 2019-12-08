@@ -31,7 +31,7 @@
 
 # all the metadata for the objects is stored statically any information
 # that needs to be persistent is stored in a separate known dict value
-default potion_lib = potion_item_library(
+define potion_lib = potion_item_library(
     lib = [
         potion_ingredient(
             id = "ing_wormwood",
@@ -162,14 +162,14 @@ default potion_lib = potion_item_library(
             start_label = "potion_scene_1_2",
             description = ""
         ),
-        silver_potion(
-            id = "p_lamia_transformation",
-            ingredients = ["ing_basilisk_scale","p_polyjuice_potion"],
-            name = "Lamia Transformation Potion",
-            start_label = "potion_scene_1_3",
-            effect = "Snek",
-            description = ""
-        ),
+        # silver_potion(
+        #     id = "p_lamia_transformation",
+        #     ingredients = ["ing_basilisk_scale","p_polyjuice_potion"],
+        #     name = "Lamia Transformation Potion",
+        #     start_label = "potion_scene_1_3",
+        #     effect = "Snek",
+        #     description = ""
+        # ),
         silver_potion(
             id = "p_transparency",
             ingredients = ["ing_niffler_fancy","p_transparent_tincture"],
@@ -186,14 +186,14 @@ default potion_lib = potion_item_library(
             start_label = "potion_scene_3_3_1",
             description = ""
         ),
-        silver_potion(
-            id = "p_clone",
-            ingredients = ["p_polyjuice_potion","p_imperius_potion"],
-            name = "Clone Potion",
-            effect = "Clone Potion",
-            start_label = "potion_scene_1_4",
-            description = ""
-        ),
+        # silver_potion(
+        #     id = "p_clone",
+        #     ingredients = ["p_polyjuice_potion","p_imperius_potion"],
+        #     name = "Clone Potion",
+        #     effect = "Clone Potion",
+        #     start_label = "potion_scene_1_4",
+        #     description = ""
+        # ),
         silver_potion(
             id = "p_milk_potion",
             name = "Lactantium",
@@ -297,7 +297,7 @@ label potions_menu:
     jump potions_menu
 
 
-init python:
+init -1 python:
 
     class silver_potion_obj(object):
         id = ""

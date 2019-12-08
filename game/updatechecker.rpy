@@ -70,6 +70,8 @@
             save_internal_version = 1.373
             
         if float(save_internal_version) < 1.374:
+            reset_variables("potion_lib")
+
             if fireplace_xmas_ITEM not in misc_deco_list:
                 misc_deco_list.append(fireplace_xmas_ITEM)
                 

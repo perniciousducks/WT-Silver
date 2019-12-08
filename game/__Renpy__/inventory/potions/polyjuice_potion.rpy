@@ -630,7 +630,7 @@ label potion_scene_1_2: #Luna potion
     hide screen hermione_main
     with hpunch
     hide screen hermione_stand
-    call lun_chibi("stand","base","base")
+    call lun_chibi("stand","mid","base")
     pause.5
 
     "*POOF*"
@@ -673,7 +673,7 @@ label potion_scene_1_2: #Luna potion
             m "Well you wont be receiving any of those points..."
             her "..."
             her "Yeah, that's still going to be a no, bye [genie_name]."
-            call her_walk(action="leave", speed=2)
+            call lun_walk("mid", "leave", speed=2)
             $ her_mood += 10
             $ hermione_busy = True
             jump main_room
@@ -711,7 +711,7 @@ label potion_scene_1_2: #Luna potion
             m "Then you wont be receiving any of those points..."
             her "..."
             her "Yeah, that's still going to be a no, bye [genie_name]."
-            call her_walk(action="leave", speed=2)
+            call lun_walk("mid", "leave", speed=2)
             $ her_mood += 10
             $ hermione_busy = True
             jump main_room

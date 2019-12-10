@@ -69,7 +69,7 @@ label studio(studio_char):
     $ studio_bg_list = ["wall_day", "castle", "forest", "highlight", "versus", "main_room_day", "main_room_night", "corridor", "custom"]
     $ studio_bg_overlay_list = [None, "curtains", "card", "g_bottom", "g_left", "g_circular"]
     
-    $ studio_outfit_saves = {"cho": cho_outfit_last, "tonks": tonks_outfit_last, "astoria": astoria_outfit_last}
+    $ studio_outfit_saves = {"cho": cho_outfit_last, "tonks": tonks_outfit_last, "astoria": astoria_outfit_last, "hermione": hermione_outfit_last}
     
     if studio_image_eyebrows > len(studio_eyebrows_list):
         $ studio_image_eyebrows = 0

@@ -38,9 +38,17 @@ default hermione_cloth_pokergloves1 = cloth_class(char="hermione", category="mis
 default hermione_cloth_pokerearring1 = cloth_class(char="hermione", category="head", subcat="earrings", type="earring", id="poker_earring_1", layers=1, color=[[255, 179, 3, 255]])
 default hermione_cloth_pokerbellypiercing1 = cloth_class(char="hermione", category="torso", subcat="piercing", type="piercing2", id="poker_belly_1", layers=4, color=[[26, 26, 35, 255], [232, 232, 232, 255], [153, 22, 10, 255], [255, 179, 3, 255]])
 
+# Basic underwear
+default hermione_cloth_basicpanties1 = cloth_class(char="hermione", category="panties", subcat="panties", type="panties", id="basic_panties_1", layers=2, color=[[232, 232, 232, 255], [202, 60, 1, 255]])
+default hermione_cloth_basicbra1 = cloth_class(char="hermione", category="bras", subcat="bras", type="bra", id="basic_bra_1", layers=4, color=[[232, 232, 232, 255], [202, 60, 1, 255], [167, 77, 42, 255], [237, 179, 14, 255]], bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
+
 # Rave bikini
 default hermione_cloth_bikinipanties1 = cloth_class(char="hermione", category="panties", subcat="panties", type="panties", id="bikini_panties_1", layers=2, color=[[138, 0, 0, 255], [252, 135, 0, 255]])
 default hermione_cloth_bikinibra1 = cloth_class(char="hermione", category="bras", subcat="bras", type="bra", id="bikini_bra_1", layers=2, color=[[138, 0, 0, 255], [252, 135, 0, 255]])
+
+# Bikini leather
+default hermione_cloth_bikinipanties2 = cloth_class(char="hermione", category="panties", subcat="panties", type="panties", id="bikini_panties_2", layers=2, color=[[55, 55, 55, 255], [197, 142, 35, 255]])
+default hermione_cloth_bikinibra2 = cloth_class(char="hermione", category="bras", subcat="bras", type="bra", id="bikini_bra_2", layers=2, color=[[55, 55, 55, 255], [197, 142, 35, 255]])
 
 # Bunny outfit
 default hermione_cloth_bunnytop1 = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="bunny_top_1", layers=1, color=[[48, 48, 48, 255]], incompatible=["panties", "bra"], zorder=15)
@@ -53,7 +61,7 @@ default hermione_cloth_bunnybowtie1 = cloth_class(char="hermione", category="hea
 # Temporal save
 default hermione_outfit_last = outfit_class(name="Last worn items", group=[hermione_hair_base])
 
-default hermione_outfit_custom = outfit_class(name = "Default", group = [hermione_hair_base.clone(), hermione_cloth_topschool1.clone(), hermione_cloth_schoolskirt1.clone()], unlocked=True)
+default hermione_outfit_custom = outfit_class(name = "Default", group = [hermione_hair_base.clone(), hermione_cloth_topschool1.clone(), hermione_cloth_schoolskirt1.clone(), hermione_cloth_basicpanties1.clone(), hermione_cloth_basicbra1.clone()], unlocked=True)
 
 # Outfits
 default hermione_outfit_default = outfit_class(name = "Default", group=[hermione_hair_base.clone(), hermione_cloth_topschool1.clone(), hermione_cloth_schoolskirt1.clone()])
@@ -98,10 +106,10 @@ python:
             "robe":       [None, 21, 0, 0, False],
             "gloves":     [None, 41, 0, 0, False],
             "top":        [hermione_cloth_topschool1, 19, 0, 0, False],
-            "bra":        [None, 18, 0, 0, False],
+            "bra":        [hermione_cloth_basicbra1, 18, 0, 0, False],
             "bottom":     [hermione_cloth_schoolskirt1, 16, 0, 0, False],
             "garterbelt": [None, 15, 0, 0, False],
-            "panties":    [None, 14, 0, 0, False],
+            "panties":    [hermione_cloth_basicpanties1, 14, 0, 0, False],
             "stockings":  [hermione_cloth_stockings1, 13, 0, 0, False],
             "buttplug":   [None, 0, 0, 0, False],
             "pubes":      [None, 11, 0, 0, False],

@@ -84,6 +84,7 @@ init -1 python:
         return im.MatrixColor(image, im.matrix.opacity(alpha))
         
     def set_clipboard(txt):
+        txt = str(txt)
         pygame.scrap.put(pygame.scrap.SCRAP_TEXT, txt.encode("utf-8"))
         
     def get_clipboard():

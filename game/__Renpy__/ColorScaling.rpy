@@ -72,7 +72,8 @@ init python:
                         if i < self.layers: # Colored layers
                             sprite = Composite((1010, 1200), (0,0), sprite, (0,0), self.get_imagelayer_color(i))
                         else: # Additional non-colored layers
-                            sprite = Composite((1010, 1200), (0,0), sprite, (0,0), self.images[i])
+                            if self.images[i]:
+                                sprite = Composite((1010, 1200), (0,0), sprite, (0,0), self.images[i])
                 sprite = Crop(box, sprite)
                 self.sprite = sprite
             return self.sprite

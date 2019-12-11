@@ -241,18 +241,20 @@ init python:
             self.layers = None
             self.color = []
             self.color_default = []
-            self.skinlayer = "characters/dummy.png"
-            self.extralayer = "characters/dummy.png"
+            self.skinlayer = None
+            self.extralayer = None
             self.overlayer = "characters/dummy.png"
             self.outline = None
             self.unlocked = True
             self.cloned = False
             self.cached = False
+            self.is_wet = False
             self.zorder = None # None - use pre-defined zorder, int - object zorder
             
             self.bodyfix = None
             self.incompatible = None
             self.mask = None
+            self.wet_mask = None
             
             self.layerfix = {}
             
@@ -324,6 +326,9 @@ init python:
             if renpy.loadable(self.imagepath+"mask.png"):
                 self.mask = self.imagepath+"mask.png"
                 
+            if renpy.loadable(self.imagepath+"wet_mask.png"):
+                self.wet_mask = self.imagepath+"wet_mask.png"
+                
             # Check if bodyfix exists
             if self.bodyfix != None and not self.cloned:
                 imagepath = "characters/"+self.char+"/body/"
@@ -382,11 +387,11 @@ init python:
                 if renpy.loadable(self.imagepath+"skin.png"):
                     self.skinlayer = self.imagepath+"skin.png"
                 else:
-                    self.skinlayer = "characters/dummy.png"
+                    self.skinlayer = None
                 if renpy.loadable(self.imagepath+"extra.png"):
                     self.extralayer = self.imagepath+"extra.png"
                 else:
-                    self.extralayer = "characters/dummy.png"
+                    self.extralayer = None
                 if renpy.loadable(self.imagepath+"overlay.png"):
                     self.overlayer = self.imagepath+"overlay.png"
                 else:
@@ -404,11 +409,11 @@ init python:
                 if renpy.loadable(self.imagepath+"/"+pose+"/skin.png"):
                     self.skinlayer = self.imagepath+"/"+pose+"/skin.png"
                 else:
-                    self.skinlayer = "characters/dummy.png"
+                    self.skinlayer = None
                 if renpy.loadable(self.imagepath+"/"+pose+"/extra.png"):
                     self.extralayer = self.imagepath+"/"+pose+"/extra.png"
                 else:
-                    self.extralayer = "characters/dummy.png"
+                    self.extralayer = None
                 if renpy.loadable(self.imagepath+"/"+pose+"/overlay.png"):
                     self.overlayer = self.imagepath+"/"+pose+"/overlay.png"
                 else:
@@ -526,13 +531,20 @@ init python:
                        (1010, 1200),
                        (0,0), self.sprite,
                        (0,0), self.get_imagelayer_color(i))
-                       
-            self.sprite = Composite(
-                    (1010, 1200),
-                    (0,0), self.sprite,
-                    (0,0), self.extralayer,
-                    (0,0), self.outline,
-                    (0,0), self.overlayer)
+            # Extra layer
+            if self.extralayer:           
+                self.sprite = Composite((1010, 1200), (0,0), self.sprite, (0,0), self.extralayer)
+                
+            # Outline
+            self.sprite = Composite((1010, 1200), (0,0), self.sprite, (0,0), self.outline)
+            
+            # Overlay
+            if self.overlayer:           
+                self.sprite = Composite((1010, 1200), (0,0), self.sprite, (0,0), self.overlayer)
+                    
+            # Apply alpha mask simulating cloth wetness (transparency)
+            if self.is_wet and self.wet_mask:
+                self.sprite = AlphaMask(self.sprite, self.wet_mask)
             return self.sprite
             
         def get_armfix(self, skingray=False, nohand=False):
@@ -1002,6 +1014,7 @@ init python:
             return self.mannequin_sprite
             
         def get_image(self):
+            global test, test2
             if not self.cached or self.cache_override:                
                 self.cached = True
                 
@@ -1011,6 +1024,8 @@ init python:
                 
                 # Create sprite list
                 sprite_list = []
+                mask_list = []
+                armfix_list = []
                 
                 # Add body to sprite list
                 for key, value in self.body.iteritems():
@@ -1051,9 +1066,23 @@ init python:
                         # check if clothing piece uses non-standard zorder
                         if value[0].zorder != None:
                             sprite_list.append([value[0], value[0].zorder, value[2], value[3], value[4]])
+                            if value[0].mask != None:
+                                mask_list.append([value[0].mask, value[0].zorder, value[2], value[3], value[4]])
                         else:
                             sprite_list.append(value)
-                        sprite_list.append([value[0].get_skin(), 5, 0, 0, False])
+                            if value[0].mask != None:
+                                mask_list.append([value[0].mask, value[1], value[2], value[3], value[4]])
+                        # Check if clothing has armfix layers
+                        if value[0].armfix:
+                            if armfix_list == []:
+                                armfix_list.append(value[0].get_armfix(False, False)[0]) # Lefthand
+                                armfix_list.append(value[0].get_armfix(False, False)[1]) # Righthand
+                            else:
+                                # add fixes WITHOUT hand image
+                                armfix_list.append(value[0].get_armfix(False, True)[0]) # L
+                                armfix_list.append(value[0].get_armfix(False, True)[1]) # R
+                        if value[0].skinlayer:
+                            sprite_list.append([value[0].get_skin(), 5, 0, 0, False])
                         
                 # Sort sprite list by zorder
                 sprite_list.sort(key=lambda x: x[1], reverse=False)
@@ -1065,56 +1094,37 @@ init python:
                     width = 1920
                     height = 1440
                 
-                # Armfix and alpha mask lists
-                armfix = []
-                mask = []
+                #debug
+                test = sprite_list
+                test2 = mask_list
                 
                 # Build image
                 self.sprite = Image("characters/dummy.png")
                 if sprite_list:
                     for sprite in sprite_list:
-                        # Check if sprite is an imagepath or an object
-                        if isinstance(sprite[0], (basestring, im.Image, im.MatrixColor)):
-                            self.sprite = Composite(
-                                    (width, height),
-                                    (0,0), self.sprite,
-                                    (sprite[2],sprite[3]), Image(sprite[0]))
+                        # Check if sprite is an object or an imagepath
+                        if isinstance(sprite[0], cloth_class):
+                            layer = sprite[0].get_image()
+                            
+                            # Apply alpha masking
+                            if mask_list:
+                                for mask in mask_list:
+                                    if sprite[1] < mask[1]:
+                                        layer = AlphaMask(layer, mask[0])
                         else:
-                            self.sprite = Composite(
-                                    (width, height),
-                                    (0,0), self.sprite,
-                                    (sprite[2],sprite[3]), sprite[0].get_image())
-                                    
-                            if sprite[0].armfix:
-                                # add fixes WITH a hand image
-                                if armfix == []:
-                                    armfix.append(sprite[0].get_armfix(False, False)[0]) # Lefthand
-                                    armfix.append(sprite[0].get_armfix(False, False)[1]) # Righthand
-                                else:
-                                    # add fixes WITHOUT hand image
-                                    armfix.append(sprite[0].get_armfix(False, True)[0]) # L
-                                    armfix.append(sprite[0].get_armfix(False, True)[1]) # R
-                                    
-                            if sprite[0].mask:
-                                mask.append(sprite[0].mask)
-                    
-                    if armfix > 0:
-                        for item in armfix:
+                            layer = Image(sprite[0])
+
+                        self.sprite = Composite(
+                                (width, height),
+                                (0,0), self.sprite,
+                                (sprite[2],sprite[3]), layer)
+                                
+                    if armfix_list:
+                        for armfix in armfix_list:
                             self.sprite = Composite(
                                 (width, height),
                                 (0,0), self.sprite,
-                                (0,0), item)
-                                 
-                    # Apply AlphaMask for problematic clothing layers such as bras with visible nipples.
-                    if mask != []:
-                        if len(mask) > 1:
-                            # Combine alpha masks
-                            m = AlphaMask(mask[0], mask[1])
-                            for i in xrange(2, len(mask)):
-                                m = AlphaMask(mask[i], mask[i+1])
-                            self.sprite = AlphaMask(self.sprite, m)
-                        else:
-                            self.sprite = AlphaMask(self.sprite, mask[0])
+                                (0,0), armfix)
                     
                     # Fixes alpha change issues during transitions
                     self.sprite = Flatten(self.sprite)

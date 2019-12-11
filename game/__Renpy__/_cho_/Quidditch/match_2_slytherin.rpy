@@ -556,7 +556,7 @@ label slytherin_match:
     pause .18
     $ renpy.play(["sounds/card_punch4.mp3", "sounds/microphone_feedback.mp3"])
     show screen gfx_effect(435, 118, img="glow_effect", zoom=0.7, duration=0.3)
-    call her_chibi("hit_head", flip=False) # Flipping does not work anymore?
+    call her_chibi("hit_head", flip=True)
     with vpunch
     hide screen gfx_effect
     show screen gfx_effect(355, 320, img="smoke", zoom=0.5)

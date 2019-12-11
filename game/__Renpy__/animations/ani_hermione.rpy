@@ -500,6 +500,7 @@ image ch_hem hit_head:
     repeat
 
 image ch_hem lying:
+    zoom 2.1 #TODO Upscale image (maybe make it less flat as well?)
     "characters/hermione/chibis/lying/shime21.png"
 
 ### HERMIONE DANCING ###

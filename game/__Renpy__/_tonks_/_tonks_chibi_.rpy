@@ -13,12 +13,11 @@ label ton_chibi(action=None, xpos=None, ypos=None, flip=False):
         with d3
         pause .5
         return
-    elif action == "slack_jaw":
-        pass #TODO Add slack_jaw action to Tonks chibi
     elif action == "reset":
         $ tonks_chibi.do(None)
-    else: # stand
-        $ tonks_chibi.do(None)
+        return
+
+    $ tonks_chibi.do(action)
 
     return
 
@@ -77,19 +76,18 @@ default tonks_chibi = chibi("tonks", ["fix", "base", "bottom", "shoes", "top", "
 
 init python:
     def update_tonks_chibi(chibi):
-        # Tonks special: drinking (not part of chibi definition)
-        if chibi.action == "walk":
-            chibi["base"] = "ch_ton walk"
-        else:
-            chibi["base"] = "ch_ton blink"
-                    
+        # Assume chibi action has a matching image definition
+        chibi_image = "ch_ton {}".format(chibi.action or "stand")
+        chibi["base"] = chibi_image
+
+        # Determine clothing state
         if tonks_class.get_worn("top"):
             chibi["top"] = "nt_top.png"
 
         if tonks_class.get_worn("bottom"):
             if tonks_class.get_cloth("bottom").subcat == "trousers":
                 if chibi.action == "walk":
-                    chibi["bottom"] = "ch_ton trousers"
+                    chibi["bottom"] = "ch_ton walk trousers"
                 else:
                     chibi["bottom"] = "nt_trousers.png"
             else:
@@ -103,6 +101,6 @@ init python:
 
         if tonks_class.get_worn("bottom") or tonks_class.get_worn("stockings"):
             if chibi.action == "walk":
-                chibi["shoes"] = "ch_ton walk_shoes"
+                chibi["shoes"] = "ch_ton walk shoes"
             else:
                 chibi["shoes"] = "nt_shoes.png"

@@ -2,8 +2,7 @@
 
 #Tonks Chibi
 
-#Stand
-image ch_ton blink:
+image ch_ton stand:
     "characters/tonks/chibis/nt_walk_01.png"
     pause 2
     "characters/tonks/chibis/nt_stand_blink.png"
@@ -21,8 +20,7 @@ image ch_ton blink:
 
     repeat
 
- #Walk
-image ch_ton walk: #No shoes.
+image ch_ton walk:
     "characters/tonks/chibis/nt_walk_01.png"
     pause.08
     "characters/tonks/chibis/nt_walk_02.png"
@@ -42,7 +40,7 @@ image ch_ton walk: #No shoes.
 
     repeat
 
-image ch_ton walk_shoes: #With Shoes.
+image ch_ton walk shoes:
     "characters/tonks/chibis/nt_walk_01_shoes.png"
     pause.08
     "characters/tonks/chibis/nt_walk_02_shoes.png"
@@ -62,7 +60,7 @@ image ch_ton walk_shoes: #With Shoes.
 
     repeat
     
-image ch_ton trousers:
+image ch_ton walk trousers:
     "characters/tonks/chibis/nt_walk_01_trousers.png"
     pause.08
     "characters/tonks/chibis/nt_walk_02_trousers.png"

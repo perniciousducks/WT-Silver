@@ -16,59 +16,11 @@ label her_chibi(action=None, xpos=None, ypos=None, flip=False, pic=None):
         pause .5
         return
 
-    elif action == "lift_top":
-        $ hermione_chibi.hide()
-        show screen hermione_chibi_lift_top
-
-    elif action == "lift_skirt":
-        $ hermione_chibi.hide()
-        show screen hermione_chibi_lift_skirt
-
-    elif action == "dance":
-        $ hermione_chibi.hide()
-        show screen hermione_chibi_dance
-
-    elif action == "dance_pause":
-        $ hermione_chibi.hide()
-        show screen hermione_chibi_dance_pause
-
-    elif action == "top_naked":
-        $ hermione_chibi.hide()
-        show screen hermione_chibi_stand_no_shirt
-
-    elif action == "sit":
-        $ hermione_chibi.hide()
-        show screen hermione_chibi_sit_naked_A #TODO Add clothing layers for this chibi
-
-    elif action == "sit_naked":
-        $ hermione_chibi.hide()
-        show screen hermione_chibi_sit_naked_A
-
-    elif action == "sit_naked_wide_eyes" or action == "sit_naked_scared" or action == "sit_naked_shocked":
-        $ hermione_chibi.hide()
-        show screen hermione_chibi_sit_naked_B
-
-    elif action == "drink_potion":
-        $ hermione_chibi.hide()
-        show screen ch_potion
-
-    elif action == "lying":
-        $ hermione_chibi.hide()
-        show screen hermione_lying
-
-    elif action == "kneel_pant":
-        $ hermione_chibi.hide()
-        show screen hermione_kneel_pant
-        
-    elif action == "hit_head":
-        $ hermione_chibi.hide()
-        show screen hermione_hit_head
-            
-
     elif action == "reset":
         $ hermione_chibi.do(None)
-    else: # stand
-        $ hermione_chibi.do(None)
+        return
+
+    $ hermione_chibi.do(action)
     
     return
 
@@ -97,90 +49,19 @@ label her_walk(xpos=None, ypos=None, speed=1.0, action=None, loiter=True, redux_
 
     return
 
-#TODO Convert Hermione chibis once cloth layers are made
-# Screens
-screen hermione_chibi_lift_top():
-    tag hermione_chibi
-    add "characters/hermione/chibis/lift_top/tits_00.png" pos hermione_chibi.pos zoom 0.5
-    zorder hermione_chibi.zorder
-
-screen hermione_chibi_lift_skirt():
-    tag hermione_chibi
-    zorder hermione_chibi.zorder
-    if hermione_wear_panties:
-        #TODO Move this into the actual event, use it to set clothing state before showing chibi
-        if hg_pf_admire_panties.counter <= 1:
-            add "characters/hermione/chibis/lift_skirt/panties_00.png" pos hermione_chibi.pos zoom 0.5
-        else:
-            add "characters/hermione/chibis/lift_skirt/panties_01.png" pos hermione_chibi.pos zoom 0.5
-    else:
-        add "characters/hermione/chibis/lift_skirt/panties_02.png" pos hermione_chibi.pos zoom 0.5
-
-screen ch_potion():
-    tag hermione_chibi
-    zorder hermione_chibi.zorder
-    add "ch_hem potion" pos hermione_chibi.pos xoffset -30 zoom 0.5
-
-screen hermione_chibi_dance():
-    tag hermione_chibi
-    zorder hermione_chibi.zorder
-    if hermione_wear_top:
-        if h_top == "top_1" or h_top == "top_6":
-            add "clothed_dance_ani" pos hermione_chibi.pos zoom 0.5
-        else:
-            if hermione_wear_bottom:
-                add "no_vest_dance_ani" pos hermione_chibi.pos zoom 0.5
-            else:
-                add "no_skirt_dance_ani" pos hermione_chibi.pos zoom 0.5
-    else:
-        if hermione_wear_bottom:
-            add "no_shirt_dance_ani" pos hermione_chibi.pos zoom 0.5
-        else: #Nude
-            add "no_shirt_no_skirt_dance_ani" pos hermione_chibi.pos zoom 0.5
-
-screen hermione_chibi_dance_pause():
-    tag hermione_chibi
-    zorder hermione_chibi.zorder
-    if hermione_class.get_worn("panties"):
-        add "no_shirt_no_skirt_dance_pause" pos hermione_chibi.pos zoom 0.5
-    else:
-        add "no_panties_dance_pause" pos hermione_chibi.pos zoom 0.5
-
-screen hermione_chibi_sit_naked_A():
-    tag hermione_chibi
-    zorder hermione_chibi.zorder
-    add "characters/hermione/chibis/sitting/sit_naked_blink.png" pos hermione_chibi.pos zoom 0.5 # 0.4
-
-screen hermione_chibi_sit_naked_B():
-    tag hermione_chibi
-    zorder hermione_chibi.zorder
-    add "characters/hermione/chibis/sitting/sit_naked.png" pos hermione_chibi.pos zoom 0.5 # 0.4
-    
-screen hermione_chibi_stand_no_shirt():
-    tag hermione_chibi
-    zorder hermione_chibi.zorder
-    add "characters/hermione/chibis/dance/03_no_shirt_03.png" pos hermione_chibi.pos zoom 0.5
-
-screen hermione_lying():
-    tag hermione_chibi
-    zorder hermione_chibi.zorder
-    add "characters/hermione/chibis/lying/shime21.png" pos hermione_chibi.pos
-    
-screen hermione_hit_head():
-    tag hermione_chibi
-    zorder hermione_chibi.zorder
-    add "ch_hem hit_on_head" pos hermione_chibi.pos
-
-screen hermione_kneel_pant():
-    tag hermione_chibi
-    zorder hermione_chibi.zorder
-    add "ch_hem kneel_pant" pos hermione_chibi.pos zoom 0.5
-
 # Chibi definition
 default hermione_chibi = chibi("hermione", ["base"], update_hermione_chibi)
 
+#TODO Hermione's chibis need clothing layers and then update logic must be reworked to set clothing state (using chibi class best practice, see Cho chibi for example)
+
 init python:
     def update_hermione_chibi(chibi):
+        # Assume chibi action has a matching image definition
+        chibi_image = "ch_hem {}".format(chibi.action or "stand")
+        chibi["base"] = chibi_image
+
+        # Certain actions require more complex image selection, which is handled below
+
         if chibi.action == "walk":
             # Determine clothing state
             if not hermione_class.get_worn("top") and not hermione_class.get_worn("bottom") and not hermione_class.get_worn("robe"):
@@ -193,10 +74,7 @@ init python:
             else:
                  chibi["base"] = "ch_hem walk"
 
-        elif chibi.action == "run":
-            chibi["base"] = "ch_hem run"
-
-        else:
+        elif not chibi.action or chibi.action == "stand":
             # Determine clothing state
             if not hermione_class.get_worn("top") and not hermione_class.get_worn("bottom") and not hermione_class.get_worn("robe"):
                 chibi["base"] = "ch_hem blink_n"
@@ -207,3 +85,40 @@ init python:
                     chibi["base"] = "ch_hem blink_robe_n"
             else:
                  chibi["base"] = "ch_hem blink"
+
+        elif chibi.action == "dance":
+            # Determine clothing state
+            if hermione_class.get_worn("top"):
+                if hermione_class.get_cloth("top").id in ("top_1", "top_6"):
+                    chibi["base"] =  "clothed_dance_ani"
+                elif hermione_class.get_worn("bottom"):
+                    chibi["base"] = "no_vest_dance_ani"
+                else:
+                    chibi["base"] = "no_skirt_dance_ani"
+            else:
+                if hermione_class.get_worn("bottom"):
+                    chibi["base"] = "no_shirt_dance_ani"
+                else:
+                    chibi["base"] = "no_shirt_no_skirt_dance_ani"
+        
+        elif chibi.action == "dance_pause":
+            # Determine clothing state
+            if hermione_class.get_worn("panties"):
+                chibi["base"] = "no_shirt_no_skirt_dance_pause"
+            else:
+                chibi["base"] = "no_panties_dance_pause"
+
+        elif chibi.action == "top_naked":
+            chibi["base"] = "dance/03_no_shirt_03.png" #TODO Should be 'stand' action without top clothes (needs layers first)
+        
+        elif chibi.action == "lift_skirt":
+            if hermione_class.get_worn("panties"):
+                #TODO Figure out a better way to determine the expression (so it can be reused in a different event)
+                if hg_pf_admire_panties.counter <= 1:
+                    # Reluctant expression
+                    chibi["base"] = "~/lift_skirt/panties_00.png"
+                else:
+                    # Happy expression
+                    chibi["base"] = "~/lift_skirt/panties_01.png"
+            else:
+                chibi["base"] = "~/lift_skirt/panties_02.png"

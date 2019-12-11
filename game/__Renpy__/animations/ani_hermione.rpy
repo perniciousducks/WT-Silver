@@ -17,7 +17,8 @@ image ch_hem blink:
     pause 3
     repeat
 
-image ch_hem potion:
+image ch_hem drink_potion:
+    xoffset -30
     "characters/hermione/chibis/potion/drink_1.png"
     pause 1
     "characters/hermione/chibis/potion/drink_2.png"
@@ -469,10 +470,24 @@ image ch_hem kneel_pant:
     pause 1
     repeat
     
-image ch_hem hit_on_head:
-    zoom 0.5
-    yoffset -18
-    xoffset 4
+image ch_hem sit:
+    #TODO Make chibi blink
+    #TODO Draw and add clothing layers (not really a priority unless required for some event)
+    # zoom 0.8 # chibi image is slightly too big?
+    "characters/hermione/chibis/sitting/sit_naked_blink.png"
+
+image ch_hem sit_naked:
+    #TODO Make chibi blink
+    # zoom 0.8 # chibi image is slightly too big?
+    "characters/hermione/chibis/sitting/sit_naked_blink.png"
+
+image ch_hem sit_naked_shocked:
+    # zoom 0.8 # chibi image is slightly too big?
+    "characters/hermione/chibis/sitting/sit_naked.png"
+
+image ch_hem hit_head:
+    yoffset -36
+    xoffset 8
     
     "characters/hermione/chibis/hit_on_head/01.png"
     pause.1
@@ -483,6 +498,9 @@ image ch_hem hit_on_head:
     "characters/hermione/chibis/hit_on_head/04.png"
     pause.1
     repeat
+
+image ch_hem lying:
+    "characters/hermione/chibis/lying/shime21.png"
 
 ### HERMIONE DANCING ###
 image clothed_dance_ani: # Fully clothed
@@ -605,3 +623,23 @@ image hermione_stripper_dance:
     "characters/hermione/chibis/dance/strip_08.png"
     pause.15
     repeat
+
+image ch_hem lift_top:
+    zoom 0.9 # chibi is slightly too big
+    xoffset -78
+    yoffset -2
+
+    "characters/hermione/chibis/lift_top/boing01.png"
+    pause 1
+    "characters/hermione/chibis/lift_top/boing01.png"
+    pause .22
+    "characters/hermione/chibis/lift_top/boing02.png"
+    pause .22
+    "characters/hermione/chibis/lift_top/boing03.png"
+    pause .22
+    "characters/hermione/chibis/lift_top/boing04.png"
+    pause .22
+    "characters/hermione/chibis/lift_top/boing05.png"
+    pause 1
+    # End with blink loop
+    random_blink("characters/hermione/chibis/lift_top/boing06.png", "characters/hermione/chibis/lift_top/boing05.png")

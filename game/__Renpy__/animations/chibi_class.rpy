@@ -242,7 +242,7 @@ init -1 python:
                 # Assume value is a filename and resolve it
                 if value.startswith('~') or not self.special:
                     # Avoid special directory
-                    value = self.image_path + "/" + value
+                    value = self.image_path + "/" + value.lstrip("~/")
                 else:
                     value = self.image_path + "/" + self.action + "/" + value
             

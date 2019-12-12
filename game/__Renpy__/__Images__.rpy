@@ -2,7 +2,7 @@
 # Common image definitions
 
 image blank:
-    "characters/dummy.png"
+    Null()
 
 image textheart = "interface/textheart.png"
 image check_07 = "interface/check_07.png"

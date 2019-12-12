@@ -1,45 +1,18 @@
-init python:
-    def get_character_object(key):
-        return character_list.get(key)
-        
-    def get_character_outfits_schedule(key):
-        global daytime, weather_gen, raining, snowing, blizzard, storm
-        
-        schedule = []
-        char = get_character_object(key)
-        outfits = char.outfits_schedule[daytime]
-        
-        for i in outfits:
-            if i.schedule[4] and (snowing or blizzard):
-                schedule.append(i)
-                continue
-            if i.schedule[3] and raining:
-                schedule.append(i)
-                continue
-            if i.schedule[2] and weather_gen >= 4 and not (raining or blizzard or snowing):
-                schedule.append(i)
-                continue
-            if not (i.schedule[2] or i.schedule[3] or i.schedule[4]) and weather_gen < 4:
-                schedule.append(i)
-                continue
-        return schedule
-            
+init python:  
     class outfit_class(object):
-        
         def __init__(self, **kwargs):
             self.name = None
             self.price = 0
             self.desc = ""
             self.unlocked = False
             self.group = []
+            self.sprite = None
             self.cached = False
             self.schedule = [False]*6 # 0=day, 1=night, 2=cloudy, 3=rainy, 4=snowing, 5=school
             
-            self.sprite = "empty"
             self.__dict__.update(**kwargs)
             
-            if self.name == None:
-                raise Exception('Outfit: "name" was not defined in outfit_class.')
+            self.char = get_character_object(self.group[0].char)
             
             if self.group < 1:
                 raise Exception('Outfit: "group" list was not defined in outfit_class.')
@@ -139,99 +112,85 @@ init python:
         def get_image(self):
             if not self.cached:
                 self.cached = True
+                
                 # Create sprite list
                 sprite_list = []
-                
-                char = get_character_object(self.group[0].char)
+                mask_list = []
+                armfix_list = []
                 
                 # Add body to sprite list
-                body = char.get_bodyparts()
-                for i in xrange(len(body)):
-                    item = [body[i][0], body[i][1]]
-                    sprite_list.append(item)
+                for i in self.char.get_bodyparts():
+                    sprite_list.append(i)
                 
                 # Add clothing to sprite list
-                for i in xrange(len(self.group)):
-                    item = [self.group[i], char.clothing[self.group[i].type][1]]
-                    sprite_list.append(item)
-                    sprite_list.append([self.group[i].get_skin(), 5])
-                    
-                    if self.group[i].bodyfix != None:
-                        for k, v in self.group[i].bodyfix.iteritems():
+                for i in self.group:
+                    if i.bodyfix:
+                        for k, v in i.bodyfix.iteritems():
                             sprite_list = [v if isinstance(x[0], basestring) and k in x[0] else x for x in sprite_list]
                             
-                    if self.group[i].layerfix != {}:
-                        for k, v in self.group[i].layerfix.iteritems():
+                    if i.layerfix:
+                        for k, v in i.layerfix.iteritems():
                             if k == "outline_above":
                                 sprite_list.append([v[0], 150])
                             elif k == "outline_below":
                                 sprite_list.append([v[0], -150])
                             else:
                                 if v[1] == 1:
-                                    sprite_list.append([self.group[i].get_layerfix(k), 100+k])
+                                    sprite_list.append([i.get_layerfix(k), 100+k])
                                 else:
-                                    sprite_list.append([self.group[i].get_layerfix(k), -100+k])
-                        
+                                    sprite_list.append([i.get_layerfix(k), -100+k])
+                                    
+                    if i.zorder:
+                        sprite_list.append([i, i.zorder])
+                        if i.mask:
+                            mask_list.append([i.mask, i.zorder,])
+                    else:
+                        sprite_list.append([i, self.char.clothing[i.type][1]])
+                        if i.mask:
+                            mask_list.append([i.mask, self.char.clothing[i.type][1]])
+                            
+                    # Check if clothing has armfix layers
+                    if i.armfix:
+                        if armfix_list:
+                            armfix_list.append(i.get_armfix(True, True)[0])
+                            armfix_list.append(i.get_armfix(True, True)[1])
+                        else:
+                            armfix_list.append(i.get_armfix(True, False)[0])
+                            armfix_list.append(i.get_armfix(True, False)[1])
+                                    
+                    if i.skinlayer:
+                        sprite_list.append([i.get_skin(), 5])
+                                    
                 # Sort sprite list by zorder based on character clothing zorder
                 sprite_list.sort(key=lambda x: x[1], reverse=False)
-
-                # Armfix
-                armfix = []
-                mask = []
                 
                 # Build image
-                self.sprite = Image("characters/dummy.png")
+                self.sprite = Null()
                 for sprite in sprite_list:                        
-                    if isinstance(sprite[0], basestring):
-                        self.sprite = Composite(
-                                (1010, 1200),
-                                (0,0), self.sprite,
-                                (0,0), im.MatrixColor(Image(sprite[0]), im.matrix.desaturate()))
-                    elif isinstance(sprite[0], (im.Image, im.MatrixColor)):
-                        self.sprite = Composite(
-                                (1010, 1200),
-                                (0,0), self.sprite,
-                                (0,0), Image(sprite[0]))
+                    if isinstance(sprite[0], cloth_class):
+                        layer = sprite[0].get_image()
+                        
+                        # Apply alpha masking
+                        for mask in mask_list:
+                            if sprite[1] < mask[1]:
+                                layer = AlphaMask(layer, mask[0])
                     else:
-                        self.sprite = Composite(
-                                (1010, 1200),
-                                (0,0), self.sprite,
-                                (0,0), sprite[0].get_image())
-                                    
-                        if sprite[0].armfix:
-                            # add fixes WITH a hand image
-                            if armfix == []:
-                                armfix.append(sprite[0].get_armfix(True, False)[0]) # Lefthand
-                                armfix.append(sprite[0].get_armfix(True, False)[1]) # Righthand
-                            else:
-                                # add fixes WITHOUT hand image
-                                armfix.append(sprite[0].get_armfix(True, True)[0]) # L
-                                armfix.append(sprite[0].get_armfix(True, True)[1]) # R
-                                
-                        if sprite[0].mask:
-                                mask.append(sprite[0].mask)
-                    
-                if armfix > 0:
-                    for item in armfix:
-                        self.sprite = Composite(
+                        layer = im.MatrixColor(Image(sprite[0]), im.matrix.desaturate())
+                        
+                    self.sprite = Composite(
                             (1010, 1200),
                             (0,0), self.sprite,
-                            (0,0), item)
-                            
-                if mask != []:
-                    if len(mask) > 1:
-                        # Combine alpha masks
-                        m = AlphaMask(mask[0], mask[1])
-                        for i in xrange(2, len(mask)):
-                            m = AlphaMask(mask[i], mask[i+1])
-                        self.sprite = AlphaMask(self.sprite, m)
-                    else:
-                        self.sprite = AlphaMask(self.sprite, mask[0])
+                            (0,0), layer)
+                    
+                for armfix in armfix_list:
+                    self.sprite = Composite(
+                        (1010, 1200),
+                        (0,0), self.sprite,
+                        (0,0), armfix)
+
             return self.sprite
             
-            
     class cloth_class(object):
-
         def __init__(self, **kwargs):
             self.char = None # astoria, cho, hermione, luna, susan, tonks
             self.category = None
@@ -243,7 +202,7 @@ init python:
             self.color_default = []
             self.skinlayer = None
             self.extralayer = None
-            self.overlayer = "characters/dummy.png"
+            self.overlayer = None
             self.outline = None
             self.unlocked = True
             self.cloned = False
@@ -259,9 +218,8 @@ init python:
             self.layerfix = {}
             
             self.armfix = False
-            self.armfix_L = []
+            self.armfixList = [[], []]
             self.armfix_Lx = ""
-            self.armfix_R = []
             self.armfix_Rx = ""
             
             self.sprite_ico = None
@@ -278,31 +236,22 @@ init python:
             
             if self.char == None:
                 raise Exception('Clothing: "char" was not defined in cloth_class.')
-                
             if self.category == None:
                 raise Exception('Clothing: "category" was not defined in cloth_class.')
-                
             if self.subcat == None:
                 raise Exception('Clothing: "subcat" was not defined in cloth_class.')
-                
             if self.type == None:
                 raise Exception('Clothing: "type" was not defined in cloth_class.')
-                
             if self.id == None:
                 raise Exception('Clothing: "id" was not defined in cloth_class.')
-                
             if self.layers == None:
                 raise Exception('Clothing: "layers" number was not defined in cloth_class.')
                 
             if len(self.color) < self.layers:
                 for i in xrange(len(self.color), self.layers):
-                    self.color.append([255, 255, 255, 255])
-                    
-            for i in xrange(len(self.color)):
-                self.color_default.append(list(self.color[i]))
-                
-            if self.layers != len(self.color):
-                raise Exception('Clothing: "color" list does not match the number of layers in cloth_class.')
+                    self.color.append([255, 0, 203, 255])
+
+            self.color_default = [x[:] for x in self.color]
             
             # Check if clothing folder is a category, subcategory or a type
             if renpy.loadable("characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/0.png"):
@@ -312,20 +261,14 @@ init python:
             else:
                 self.imagepath = "characters/"+self.char+"/clothes/"+self.type+"/"+self.id+"/"
             
-            # Check if skin layer exists
             if renpy.loadable(self.imagepath+"skin.png"):
                 self.skinlayer = self.imagepath+"skin.png"
-            
-            # Check if extra layer exists
             if renpy.loadable(self.imagepath+"extra.png"):
                 self.extralayer = self.imagepath+"extra.png"
-                
             if renpy.loadable(self.imagepath+"overlay.png"):
                 self.overlayer = self.imagepath+"overlay.png"
-                
             if renpy.loadable(self.imagepath+"mask.png"):
                 self.mask = self.imagepath+"mask.png"
-                
             if renpy.loadable(self.imagepath+"wet_mask.png"):
                 self.wet_mask = self.imagepath+"wet_mask.png"
                 
@@ -341,7 +284,6 @@ init python:
                 
             # Check if armfix layers exist
             self.set_armfix()
-            
             self.set_layerfix()
             
             # Set outline layer path
@@ -375,57 +317,28 @@ init python:
                 get_character_object(self.char).clothing_dictlist.setdefault(self.category, {}).setdefault(self.subcat, []).append(self)
             
         def clone(self):
-            color = []
-            for c in self.color:
-                color.append(list(c))
+            color = [x[:] for x in self.color]
             return cloth_class(char=self.char, category=self.category, subcat=self.subcat, type=self.type, id=self.id, layers=self.layers, color=color, unlocked=self.unlocked, cloned=True, name=self.name, desc=self.desc, armfix=self.armfix, layerfix=self.layerfix, whoring=self.whoring, bodyfix=self.bodyfix, incompatible=self.incompatible, mask=self.mask, zorder=self.zorder)
                 
         def set_pose(self, pose):
-            if pose == None:
-                self.pose = ""
-                self.outline = self.imagepath+"outline.png"
-                if renpy.loadable(self.imagepath+"skin.png"):
-                    self.skinlayer = self.imagepath+"skin.png"
-                else:
-                    self.skinlayer = None
-                if renpy.loadable(self.imagepath+"extra.png"):
-                    self.extralayer = self.imagepath+"extra.png"
-                else:
-                    self.extralayer = None
-                if renpy.loadable(self.imagepath+"overlay.png"):
-                    self.overlayer = self.imagepath+"overlay.png"
-                else:
-                    self.overlayer = "characters/dummy.png"
-                if renpy.loadable(self.imagepath+"mask.png"):
-                    self.mask = self.imagepath+"mask.png"
-                else:
-                    self.mask = None
-                self.set_armfix()
-                self.cached = False
-                return None
-            if renpy.loadable(self.imagepath+"/"+pose+"/0.png"):
-                self.pose = pose
-                self.outline = self.imagepath+"/"+pose+"/outline.png"
-                if renpy.loadable(self.imagepath+"/"+pose+"/skin.png"):
-                    self.skinlayer = self.imagepath+"/"+pose+"/skin.png"
-                else:
-                    self.skinlayer = None
-                if renpy.loadable(self.imagepath+"/"+pose+"/extra.png"):
-                    self.extralayer = self.imagepath+"/"+pose+"/extra.png"
-                else:
-                    self.extralayer = None
-                if renpy.loadable(self.imagepath+"/"+pose+"/overlay.png"):
-                    self.overlayer = self.imagepath+"/"+pose+"/overlay.png"
-                else:
-                    self.overlayer = "characters/dummy.png"
-                if renpy.loadable(self.imagepath+"/"+pose+"/mask.png"):
-                    self.mask = self.imagepath+"/"+pose+"/mask.png"
-                else:
-                    self.mask = None
-                self.set_armfix(True)
-                self.cached = False
-                return True
-            return False
+            self.pose = pose if pose else ""
+            self.outline = self.imagepath+"outline.png"
+            
+            path = self.imagepath+self.pose+"skin.png"
+            self.skinlayer = path if renpy.loadable(path) else None
+            
+            path = self.imagepath+self.pose+"extra.png"
+            self.skinlayer = path if renpy.loadable(path) else None
+            
+            path = self.imagepath+self.pose+"overlay.png"
+            self.skinlayer = path if renpy.loadable(path) else None
+            
+            path = self.imagepath+self.pose+"mask.png"
+            self.skinlayer = path if renpy.loadable(path) else None
+
+            self.set_armfix()
+            self.cached = False
+            return
             
         def set_layerfix(self, anim=False):
             pose = self.pose
@@ -434,19 +347,21 @@ init python:
                 
             self.layerfix = {}
             for layer in xrange(self.layers):
-                # Coloured Layer above all else
-                if renpy.loadable(self.imagepath+pose+str(layer)+"_above.png"):
-                    self.layerfix[layer] = [self.imagepath+pose+str(layer)+"_above.png", 1]
+                path = self.imagepath+pose+str(layer)+"_above.png"
+                if renpy.loadable(path):
+                    self.layerfix[layer] = [path, 1]
                     
-                # Coloured Layer below all else
-                if renpy.loadable(self.imagepath+pose+str(layer)+"_below.png"):
-                    self.layerfix[layer] = [self.imagepath+pose+str(layer)+"_below.png", 0]
+                path = self.imagepath+pose+str(layer)+"_below.png"
+                if renpy.loadable(path):
+                    self.layerfix[layer] = [path, 0]
                     
-            if renpy.loadable(self.imagepath+pose+"outline_above.png"):
-                self.layerfix['outline_above'] = [self.imagepath+pose+"outline_above.png", 2]
+            path = self.imagepath+pose+"outline_above.png"
+            if renpy.loadable(path):
+                self.layerfix['outline_above'] = [path, 2]
                 
-            if renpy.loadable(self.imagepath+pose+"outline_below.png"):
-                self.layerfix['outline_below'] = [self.imagepath+pose+"outline_below.png", 2]
+            path = self.imagepath+pose+"outline_below.png"
+            if renpy.loadable(path):
+                self.layerfix['outline_below'] = [path, 2]
             return
             
         def set_armfix(self, anim=False):
@@ -454,25 +369,22 @@ init python:
             if anim:
                 pose += "/"+self.pose+"/"
                 
-            self.armfix_L = []
-            self.armfix_R = []
+            self.armfixList = [[], []]
             if self.armfix:
                 for layer in xrange(self.layers):
-                    if renpy.loadable(self.imagepath+pose+str(layer)+"_armL.png"):
-                        self.armfix_L.append(self.imagepath+pose+str(layer)+"_armL.png")
+                    path = self.imagepath+pose+str(layer)+"_armL.png"
+                    if renpy.loadable(path):
+                        self.armfixList[0].append(path)
                         
-                    if renpy.loadable(self.imagepath+pose+str(layer)+"_armR.png"):
-                        self.armfix_R.append(self.imagepath+pose+str(layer)+"_armR.png")
+                    path = self.imagepath+pose+str(layer)+"_armR.png"
+                    if renpy.loadable(path):
+                        self.armfixList[1].append(path)
                         
-                if renpy.loadable(self.imagepath+pose+"outline_armL.png"):
-                    self.armfix_Lx = self.imagepath+pose+"outline_armL.png"
-                else:
-                    self.armfix_Lx = ""
-                    
-                if renpy.loadable(self.imagepath+pose+"outline_armR.png"):
-                    self.armfix_Rx = self.imagepath+pose+"outline_armR.png"
-                else:
-                    self.armfix_Rx = ""
+                path = self.imagepath+pose+"outline_armL.png"
+                self.armfix_Lx = path if renpy.loadable(path) else ""
+                
+                path = self.imagepath+pose+"outline_armR.png"
+                self.armfix_Rx = path if renpy.loadable(path) else ""
             return
 
         def get_matrixcolor(self, layer):
@@ -488,25 +400,18 @@ init python:
             return self.color[layer][3]/255.0
             
         def set_color_alt(self, l):
-            for i in xrange(len(l)):
-                self.color[i] = list(l[i])
+            self.color = [x[:] for x in l]
             self.sprite_ico.cached = False
             self.cached = False
 
         def set_color(self, layer):
-            if config.developer or cheat_wardrobe_alpha:
-                if self.type != "hair":
-                    self.color[layer] = color_picker(self.color[layer], True, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
-                else:
-                    self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
-            else:
-                self.color[layer] = color_picker(self.color[layer], False, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
+            x = bool(self.type != "hair" and (config.developer or cheat_wardrobe_alpha))
+            self.color[layer] = color_picker(self.color[layer], x, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
             self.sprite_ico.cached = False
             self.cached = False
             
         def reset_color(self):
-            for i in xrange(len(self.color)):
-                self.color[i] = list(self.color_default[i])
+            self.color = [x[:] for x in self.color_default]
             self.sprite_ico.cached = False
             self.cached = False
         
@@ -519,18 +424,11 @@ init python:
         def get_skin(self):
             return self.skinlayer
                     
-        def get_image(self):
-            
-            # Keep used clothes images in cache
-            #renpy.start_predict(self.imagepath)
-            
+        def get_image(self):            
             self.sprite = self.get_imagelayer_color(0)
-            
             for i in xrange(1, self.layers):
-                self.sprite = Composite(
-                       (1010, 1200),
-                       (0,0), self.sprite,
-                       (0,0), self.get_imagelayer_color(i))
+                self.sprite = Composite((1010, 1200), (0,0), self.sprite, (0,0), self.get_imagelayer_color(i))
+                
             # Extra layer
             if self.extralayer:           
                 self.sprite = Composite((1010, 1200), (0,0), self.sprite, (0,0), self.extralayer)
@@ -548,62 +446,37 @@ init python:
             return self.sprite
             
         def get_armfix(self, skingray=False, nohand=False):
-            armL = Image("characters/"+self.char+"/body/arms/armfixL.png")
-            armR = Image("characters/"+self.char+"/body/arms/armfixR.png")
-            
-            if nohand or self.pose != "":
-                armL = Image("characters/dummy.png")
-                armR = Image("characters/dummy.png")
-            
-            # Used in mannequin generation
             if skingray:
-                armL = im.MatrixColor(armL, im.matrix.desaturate())
-                armR = im.MatrixColor(armR, im.matrix.desaturate())
+                armL = Null() if nohand or bool(self.pose) else im.MatrixColor(Image("characters/"+self.char+"/body/arms/armfixL.png"), im.matrix.desaturate())
+                armR = Null() if nohand or bool(self.pose) else im.MatrixColor(Image("characters/"+self.char+"/body/arms/armfixR.png"), im.matrix.desaturate())
+            else:
+                armL = Null() if nohand or bool(self.pose) else Image("characters/"+self.char+"/body/arms/armfixL.png")
+                armR = Null() if nohand or bool(self.pose) else Image("characters/"+self.char+"/body/arms/armfixR.png")
             
             # Add armfix with proper colors
-            if self.armfix_L > 0:
-                for i in xrange(len(self.armfix_L)):
-                    armL = Composite(
-                           (1010, 1200),
-                           (0,0), armL,
-                           (0,0), im.MatrixColor(self.armfix_L[i], self.get_matrixcolor(i)))
-                           
-            if self.armfix_R > 0:
-                for i in xrange(len(self.armfix_R)):
-                    armR = Composite(
-                           (1010, 1200),
-                           (0,0), armR,
-                           (0,0), im.MatrixColor(self.armfix_R[i], self.get_matrixcolor(i)))
+            for i, layer in enumerate(self.armfixList[0]):
+                armL = Composite((1010, 1200), (0,0), armL, (0,0), im.MatrixColor(layer, self.get_matrixcolor(i)))
+            for i, layer in enumerate(self.armfixList[1]):
+                armR = Composite((1010, 1200), (0,0), armR, (0,0), im.MatrixColor(layer, self.get_matrixcolor(i)))
                        
             # Add armfix outline    
             if self.armfix_Lx != "":
-                armL = Composite(
-                        (1010, 1200),
-                        (0,0), armL,
-                        (0,0), self.armfix_Lx)
-                        
+                armL = Composite((1010, 1200), (0,0), armL, (0,0), self.armfix_Lx)                        
             if self.armfix_Rx != "":
-                armR = Composite(
-                        (1010, 1200),
-                        (0,0), armR,
-                        (0,0), self.armfix_Rx)
+                armR = Composite((1010, 1200), (0,0), armR, (0,0), self.armfix_Rx)
             return (armL, armR)
             
         def get_layerfix(self, layer):
-            return Image(im.MatrixColor(self.layerfix[layer][0], self.get_matrixcolor(layer) * im.matrix.opacity(self.get_alpha(layer))))
+            return Image(im.MatrixColor(self.layerfix[layer][0], self.get_matrixcolor(layer)*im.matrix.opacity(self.get_alpha(layer))))
             
         def get_icon(self):
             return self.sprite_ico.get_image()
             
     class char_class(object):
-
         def __init__(self, **kwargs):
             self.char = None
             
             self.stats = stats_class() # Initialize stats object instance
-            
-            self.cached = False
-            self.cache_override = False
             
             self.body = {}
             self.face = {}
@@ -617,13 +490,13 @@ init python:
             
             self.pose = ""
             
-            self.sprite = "empty"
+            self.sprite = None
             self.mannequin_sprite = None
+            
+            self.cached = False
+            self.cache_override = False
 
             self.__dict__.update(**kwargs)
-            
-            if self.char == None:
-                raise Exception('Character: "char" was not defined in char_class.')
             
             # Add a pointer to a global var
             globals()[self.char+'_stats'] = self.stats
@@ -645,40 +518,38 @@ init python:
                 return 'Warning: layer "'+str(layer)+'" not found.'
             
         def update_paths(self, *args):
-            symbol = "/"
+            s = ".png"
             
             if 'body' in args:
                 imagepath = "characters/"+self.char+"/body/"
                 
                 for key, value in self.body.iteritems():
-                    if value[0] != None and not symbol in value[0]:
-                        if key in ("armleft", "armright", "handleft", "handright"):
-                            self.body[key][0] = imagepath+"arms/"+value[0]+".png"
-                        else:
-                            self.body[key][0] = imagepath+key+"/"+value[0]+".png"
+                    if value[0] and not value[0].endswith(s):
+                        x = bool(key in ("armleft", "armright", "handleft", "handright"))
+                        value[0] = imagepath+"arms/"+value[0]+".png" if x else imagepath+key+"/"+value[0]+".png"
+                            
             if 'face' in args:
                 imagepath = "characters/"+self.char+"/face/"
                 
                 for key, value in self.face.iteritems():
-                    if value[0] != None and not symbol in value[0]:
+                    if value[0] and not value[0].endswith(s):
                         if key in ("tears", "cheeks"):
-                            self.face[key][0] = imagepath+"extras/"+value[0]+".png"
+                            value[0] = imagepath+"extras/"+value[0]+".png"
                         elif key == "whites":
-                            self.face[key][0] = imagepath+"eyes/"+value[0]+".png"
+                            value[0] = imagepath+"eyes/"+value[0]+".png"
                         else:
-                            self.face[key][0] = imagepath+key+"/"+value[0]+".png"
+                            value[0] = imagepath+key+"/"+value[0]+".png"
+                            
             if 'other' in args:
-                imagepath = "characters/emotes/"
-                
                 emote = self.get_object(self.other, 'emote')
                 cum = self.get_object(self.other, 'cum')
                 
-                if emote and symbol not in emote:
+                imagepath = "characters/emotes/"
+                if emote and not emote.endswith(s):
                     self.other['emote'][0] = imagepath+emote+".png"
                     
                 imagepath = "characters/"+self.char+"/cum/"
-                
-                if cum and symbol not in cum:
+                if cum and not cum.endswith(s):
                     self.other['cum'][0] = imagepath+cum+".png"
             self.cached = False
             
@@ -708,34 +579,23 @@ init python:
                     self.outfits_schedule[False].remove(obj)
             return
                     
-            
-            
         def expression(self, **kwargs):
             for arg, value in kwargs.iteritems():
                 if value:
-                    try:
-                        self.face[str(arg)][0] = value
-                    except KeyError:
-                        raise Exception('Character: "'+str(arg)+'" expression type was not defined for "'+self.char+'" character class.')
+                    self.face[str(arg)][0] = value
             self.update_paths("face")
             self.cached = False
             
         def special(self, **kwargs):
             for arg, value in kwargs.iteritems():
-                try:
-                    self.other[str(arg)][0] = value
-                except KeyError:
-                    raise Exception('Character: "'+str(arg)+'" other type was not defined for "'+self.char+'" character class.')
+                self.other[str(arg)][0] = value
             self.update_paths("other")
             self.cached = False
             
         def set_body(self, **kwargs):
             for arg, value in kwargs.iteritems():
-                try:
-                    self.body[str(arg)][0] = value
-                    self.body[str(arg)][4] = False
-                except KeyError:
-                    raise Exception('Character: "'+str(arg)+'" body part was not defined for "'+self.char+'" character class.')
+                self.body[str(arg)][0] = value
+                self.body[str(arg)][4] = False
             self.update_paths("body")
             self.cached = False
             return
@@ -744,30 +604,30 @@ init python:
             if not pose == None:
                 self.pose = pose
                 for key, value in self.body.iteritems():
-                    self.body[key][4] = True
+                    value[4] = True
                 for key, value in self.face.iteritems():
-                    self.face[key][2] = offset[0]
-                    self.face[key][3] = offset[1]
+                    value[2] = offset[0]
+                    value[3] = offset[1]
                 self.body['animation'][0] = pose
                 self.body['animation'][4] = False
             else:
                 self.pose = ""
                 for key, value in self.body.iteritems():
-                    self.body[key][4] = False
+                    value[4] = False
                 for key, value in self.face.iteritems():
-                    self.face[key][2] = 0
-                    self.face[key][3] = 0
+                    value[2] = 0
+                    value[3] = 0
                 self.body['animation'][0] = None
             self.update_paths("body")
             self.cached = False
             
         def animation(self, anim, offset=(0,0)):
             for key, value in self.clothing.iteritems():
-                if self.clothing[key][0]:
-                    if self.clothing[key][0].set_pose(anim) == False:
-                        self.clothing[key][4] = True
+                if value[0]:
+                    if value[0].set_pose(anim) == False:
+                        value[4] = True
                     else:
-                        self.clothing[key][4] = False
+                        value[4] = False
             self.set_pose(anim, offset)
             self.cached = False
             
@@ -804,48 +664,15 @@ init python:
             if not self.get_cloth(self.get_clothing_list(category, subcategory)[item].type) == None:
                 return self.get_cloth(self.get_clothing_list(category, subcategory)[item].type).id
             return None
-            
-        def get_score(self):
-            score = 0
-            for key, item in self.clothing.iteritems():
-                if item[0] != None:
-                    if not item[0].type in ("tattoo0", "tattoo1", "piercing0", "piercing1", "buttplug"):
-                        score += item[0].whoring
-                else:
-                    if key == "top":
-                        score += 30
-                        if not self.get_worn("bra"):
-                            score += 25
-                            if self.get_worn("piercing1"):
-                                score += 10
-                            if self.get_worn("tattoo1"):
-                                score += self.get_cloth("tattoo1").whoring
-                    elif key == "bra" and self.get_worn("top"):
-                        score += 10
-                    elif key == "bottom":
-                        score += 30
-                        if self.get_worn("buttplug"):
-                            score += 10
-                        if not self.get_worn("panties"):
-                            score += 25
-                            if self.get_worn("buttplug"):
-                                score += 25
-                            if self.get_worn("piercing0"):
-                                score += 10
-                            if self.get_worn("tattoo0"):
-                                score += self.get_cloth("tattoo0").whoring
-                    elif key == "panties" and self.get_worn("bottom"):
-                        score += 15
-            return score
-            
+
         def clothes_compatible(self, unequip=True):
             result = True
-            for key in self.clothing:
-                if self.clothing[key][0] != None and self.clothing[key][0].incompatible != None:
-                    for item in self.clothing[key][0].incompatible:
-                        if self.clothing[item][0] != None:
+            for value in self.clothing.itervalues():
+                if value[0] and value[0].incompatible:
+                    for itemtype in value[0].incompatible:
+                        if self.clothing[itemtype][0]:
                             if unequip:
-                                self.unequip(item)
+                                self.unequip(itemtype)
                             result = False
             return result
             
@@ -894,14 +721,11 @@ init python:
                 self.incompatible_wardrobe = []
             else:
                 for arg in args:
-                    try:
-                        if self.clothing[str(arg)][0] and self.clothing[str(arg)][0].incompatible != None:
-                            for key in self.clothing[str(arg)][0].incompatible:
-                                if key in self.incompatible_wardrobe:
-                                    self.incompatible_wardrobe.remove(key)
-                        self.clothing[str(arg)][0] = None
-                    except KeyError:
-                        raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
+                    if self.clothing[str(arg)][0] and self.clothing[str(arg)][0].incompatible != None:
+                        for key in self.clothing[str(arg)][0].incompatible:
+                            if key in self.incompatible_wardrobe:
+                                self.incompatible_wardrobe.remove(key)
+                    self.clothing[str(arg)][0] = None
             self.cached = False
             update_chibi(self.char)
             
@@ -917,10 +741,7 @@ init python:
                             if arg in key:
                                 self.clothing[key][4] = True
                     else:
-                        try:
-                            self.clothing[str(arg)][4] = True
-                        except KeyError:
-                            raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
+                        self.clothing[str(arg)][4] = True
             self.cached = False
             update_chibi(self.char)
             
@@ -935,10 +756,7 @@ init python:
                             if arg in key:
                                 self.clothing[key][4] = False
                     else:
-                        try:
-                            self.clothing[str(arg)][4] = False
-                        except KeyError:
-                            raise Exception('Character: "'+str(arg)+'" clothing type was not defined for "'+self.char+'" character class.')
+                        self.clothing[str(arg)][4] = False
             self.cached = False
             update_chibi(self.char)
             
@@ -948,13 +766,11 @@ init python:
                     if type in key:
                         self.clothing[key][4] = not self.clothing[key][4]
             else:
-                try:
-                    self.clothing[str(type)][4] = not self.clothing[str(type)][4]
-                except KeyError:
-                    raise Exception('Character: "'+str(type)+'" clothing type was not defined for "'+self.char+'" character class.')
+                self.clothing[str(type)][4] = not self.clothing[str(type)][4]
             self.cached = False
             
         def get_worn(self, type):
+            """Returns either True, False or None depending if cloth is equipped at all (None) and if it's currently visible (True/False)"""
             if type in ("makeup", "accessory", "piercing", "tattoo"):
                 for key in self.clothing.iterkeys():
                     if type in key:
@@ -968,11 +784,7 @@ init python:
             return False
 
         def create_outfit(self, name, desc, unlock=True):
-            clothes = []
-            clothing = self.clothing
-            for key in clothing:
-                if not clothing[key][0] == None:
-                    clothes.append(clothing[key][0].clone())
+            clothes = [x[0].clone() for x in self.clothing.itervalues() if x[0]]
             return outfit_class(name=name, desc=desc, unlocked=unlock, group=clothes)
                 
         def say(self, string, **kwargs):
@@ -1000,21 +812,14 @@ init python:
                         
                 # Sort sprite list by zorder based on zorder
                 sprite_list.sort(key=lambda x: x[1], reverse=False)
-
-                # Armfix
-                armfix = []
                 
                 # Build image
-                self.mannequin_sprite = Image("characters/dummy.png")
+                self.mannequin_sprite = Null()
                 for sprite in sprite_list:                        
-                    self.mannequin_sprite = Composite(
-                            (1010, 1200),
-                            (0,0), self.mannequin_sprite,
-                            (0,0), im.MatrixColor(Image(sprite[0]), im.matrix.desaturate()))
+                    self.mannequin_sprite = Composite((1010, 1200), (0,0), self.mannequin_sprite, (0,0), im.MatrixColor(Image(sprite[0]), im.matrix.desaturate()))
             return self.mannequin_sprite
             
         def get_image(self):
-            global test, test2
             if not self.cached or self.cache_override:                
                 self.cached = True
                 
@@ -1027,32 +832,40 @@ init python:
                 mask_list = []
                 armfix_list = []
                 
+                #### Character blinking prototype ####
+                # Image cannot be defined in the class init phase (Flatten overrides animation)
+                # TODO: find a way to fix that or create a new function if can't be fixed
+                ######################################
+                sprite_list.append([renpy.get_registered_image("spr_{} blink".format(self.char)), 8.5, 0, 0, False])
+                
                 # Add body to sprite list
-                for key, value in self.body.iteritems():
+                for value in self.body.itervalues():
                     if value[0] and not value[4]:
                         sprite_list.append(value)
                         
                 # Add face to sprite list
-                for key, value in self.face.iteritems():
+                for value in self.face.itervalues():
                     if value[0] and not value[4]:
                         sprite_list.append(value)
                 
                 # Add other to sprite list        
-                for key, value in self.other.iteritems():
+                for value in self.other.itervalues():
                     if value[0] and not value[4]:
                         sprite_list.append(value)
                         
                 # Add clothing to sprite list 
-                for key, value in self.clothing.iteritems():
+                for value in self.clothing.itervalues():
                     if value[0] and not value[4]:
+                    
                         # Perform an additional check for body parts modifications
-                        if value[0].bodyfix != None:
+                        if value[0].bodyfix:
                             # Iterate through all body fixes
                             for k, v in value[0].bodyfix.iteritems():
                                 # Temporarily replace a body part using list comprehension 
                                 sprite_list = [v if isinstance(x[0], basestring) and k in x[0] else x for x in sprite_list]
+                                
                         # Check if cloth requires layers below or above everything (such as hair locks, capes etc.)
-                        if value[0].layerfix != {}:
+                        if value[0].layerfix:
                             for k, v in value[0].layerfix.iteritems():
                                 if k == "outline_above":
                                     sprite_list.append([v[0], 150, 0, 0, False])
@@ -1063,69 +876,64 @@ init python:
                                         sprite_list.append([value[0].get_layerfix(k), 100+k, 0, 0, False])
                                     else:
                                         sprite_list.append([value[0].get_layerfix(k), -100+k, 0, 0, False])
+                                        
                         # check if clothing piece uses non-standard zorder
-                        if value[0].zorder != None:
+                        if value[0].zorder:
                             sprite_list.append([value[0], value[0].zorder, value[2], value[3], value[4]])
-                            if value[0].mask != None:
+                            if value[0].mask:
                                 mask_list.append([value[0].mask, value[0].zorder, value[2], value[3], value[4]])
                         else:
                             sprite_list.append(value)
-                            if value[0].mask != None:
+                            if value[0].mask:
                                 mask_list.append([value[0].mask, value[1], value[2], value[3], value[4]])
+                                
                         # Check if clothing has armfix layers
                         if value[0].armfix:
-                            if armfix_list == []:
-                                armfix_list.append(value[0].get_armfix(False, False)[0]) # Lefthand
-                                armfix_list.append(value[0].get_armfix(False, False)[1]) # Righthand
+                            if armfix_list:
+                                armfix_list.append(value[0].get_armfix(False, True)[0])
+                                armfix_list.append(value[0].get_armfix(False, True)[1])
                             else:
-                                # add fixes WITHOUT hand image
-                                armfix_list.append(value[0].get_armfix(False, True)[0]) # L
-                                armfix_list.append(value[0].get_armfix(False, True)[1]) # R
+                                armfix_list.append(value[0].get_armfix(False, False)[0])
+                                armfix_list.append(value[0].get_armfix(False, False)[1])
+
                         if value[0].skinlayer:
                             sprite_list.append([value[0].get_skin(), 5, 0, 0, False])
                         
                 # Sort sprite list by zorder
                 sprite_list.sort(key=lambda x: x[1], reverse=False)
                 
-                if self.pose == "":
-                    width = 1010
-                    height = 1200
+                if not self.pose:
+                    width, height = 1010, 1200
                 else:
-                    width = 1920
-                    height = 1440
-                
-                #debug
-                test = sprite_list
-                test2 = mask_list
+                    width, height = 1920, 1440
                 
                 # Build image
-                self.sprite = Image("characters/dummy.png")
-                if sprite_list:
-                    for sprite in sprite_list:
-                        # Check if sprite is an object or an imagepath
-                        if isinstance(sprite[0], cloth_class):
-                            layer = sprite[0].get_image()
-                            
-                            # Apply alpha masking
-                            if mask_list:
-                                for mask in mask_list:
-                                    if sprite[1] < mask[1]:
-                                        layer = AlphaMask(layer, mask[0])
-                        else:
-                            layer = Image(sprite[0])
+                self.sprite = Null()
+                for sprite in sprite_list:
+                    # Check if sprite is an object or an imagepath
+                    if isinstance(sprite[0], cloth_class):
+                        layer = sprite[0].get_image()
+                        
+                        # Apply alpha masking
+                        for mask in mask_list:
+                            if sprite[1] < mask[1]:
+                                layer = AlphaMask(layer, mask[0])
+                    elif isinstance(sprite[0], basestring):
+                        layer = Image(sprite[0])
+                    else:
+                        layer = sprite[0]
 
-                        self.sprite = Composite(
-                                (width, height),
-                                (0,0), self.sprite,
-                                (sprite[2],sprite[3]), layer)
-                                
-                    if armfix_list:
-                        for armfix in armfix_list:
-                            self.sprite = Composite(
-                                (width, height),
-                                (0,0), self.sprite,
-                                (0,0), armfix)
+                    self.sprite = Composite(
+                            (width, height),
+                            (0,0), self.sprite,
+                            (sprite[2],sprite[3]), layer)
+                            
+                for armfix in armfix_list:
+                    self.sprite = Composite(
+                        (width, height),
+                        (0,0), self.sprite,
+                        (0,0), armfix)
                     
-                    # Fixes alpha change issues during transitions
-                    self.sprite = Flatten(self.sprite)
+                # Fixes alpha change issues during transitions
+                self.sprite = Flatten(self.sprite)
             return self.sprite

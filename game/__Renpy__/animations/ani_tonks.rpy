@@ -1,4 +1,6 @@
-
+# Sprite blinking
+image spr_tonks blink:
+    sprite_blink("characters/tonks/face/eyes/closed.png")
 
 #Tonks Chibi
 

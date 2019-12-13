@@ -1,20 +1,23 @@
 
 
 label summon_hermione:
-
+    #call play_music("hermione")
+    #call play_sound("door")
+    
+    $ active_girl = "hermione"
+    $ hermione_busy = True
     call update_hermione
     call update_her_tier
-
-    ### RANDOM CLOTHING EVENTS ###
+    
+    # Clothes Events
     call hermione_summon_setup
 
     label hermione_requests:
-
+    
+    # Reset
     call reset_menu_position
-
+    call her_main(xpos="base",ypos="base")
     $ hide_transitions = False
-    $ hermione_busy = True
-    $ active_girl = "hermione"
 
     menu:
 
@@ -86,7 +89,6 @@ label summon_hermione:
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if hermione_wardrobe_unlocked: # Unlocks after first summoning her.
-            call her_main(xpos="wardrobe", ypos="base", face="neutral")
             call t_wardrobe("her_main")
             jump hermione_requests
 

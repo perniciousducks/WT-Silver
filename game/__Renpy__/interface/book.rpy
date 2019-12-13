@@ -162,7 +162,7 @@ screen book_menu(page, pages, title, page_title, page_text, page_overflow):
             hover im.Flip("interface/book/hover.png", horizontal=True)
             action Return("prev")
             
-    use top_bar_close_button
+    use close_button
     
 screen book_animator(img, timer):
     tag animator

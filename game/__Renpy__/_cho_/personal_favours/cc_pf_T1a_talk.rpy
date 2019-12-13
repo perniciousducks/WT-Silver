@@ -199,7 +199,7 @@ label cc_pf_talk_T1_intro_E1:
             $ cho_jerk_off_counter += 1
             $ masturbating = True
 
-            hide screen cho_chang
+            hide screen cho_main
             call nar(">You reach under the desk and grab your cock...")
 
             call gen_chibi("jerk_off_behind_desk")
@@ -297,7 +297,7 @@ label cc_pf_talk_T1_intro_E2:
 
     menu:
         "-Jerk off while she is talking-":
-            hide screen cho_chang
+            hide screen cho_main
             hide screen bld1
             with d5
             pause.5
@@ -458,7 +458,7 @@ label cc_pf_talk_T1_E3:
             $ cho_jerk_off_counter += 1
             $ masturbating = True
 
-            hide screen cho_chang
+            hide screen cho_main
             call nar(">You reach under the desk and grab your cock...")
 
             call gen_chibi("jerk_off_behind_desk")
@@ -650,7 +650,7 @@ label cc_pf_talk_T2_intro_E1:
             $ cho_jerk_off_counter += 1
             $ masturbating = True
 
-            hide screen cho_chang
+            hide screen cho_main
             call nar(">You reach under the desk and grab your cock...")
 
             call gen_chibi("jerk_off_behind_desk")
@@ -789,7 +789,7 @@ label cc_pf_talk_T2_intro_E2:
             $ cho_jerk_off_counter += 1
             $ masturbating = True
 
-            hide screen cho_chang
+            hide screen cho_main
             call nar(">You reach under the desk and grab your cock...")
 
             call gen_chibi("jerk_off_behind_desk")
@@ -827,7 +827,7 @@ label cc_pf_talk_T2_intro_E2:
                 $ cho_jerk_off_counter += 1
                 $ masturbating = True
 
-                hide screen cho_chang
+                hide screen cho_main
                 call nar(">You reach under the desk and grab your cock...")
 
                 call gen_chibi("jerk_off_behind_desk")
@@ -883,7 +883,7 @@ label cc_pf_talk_T2_intro_E2:
                 $ cho_jerk_off_counter += 1
                 $ masturbating = True
 
-                hide screen cho_chang
+                hide screen cho_main
                 call nar(">You reach under the desk and grab your cock...")
 
                 call gen_chibi("jerk_off_behind_desk")
@@ -1002,7 +1002,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
             $ cho_jerk_off_counter += 1
             $ masturbating = True
 
-            hide screen cho_chang
+            hide screen cho_main
             call nar(">You reach under the desk and grab your cock...")
 
             call gen_chibi("jerk_off_behind_desk")

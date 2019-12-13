@@ -216,7 +216,7 @@ label cho_intro_E1:
     if masturbating:
         call nar("You pull your cock out and and begin masturbating... focusing on the now heated argument between the two girls in front of you.")
 
-        show screen cho_chang
+        show screen cho_main
         call her_main("Oh yeah, well... I bet it can’t be anything good seeing how you usually act around men...", "mad", "narrow", "angry", "R")
         call cho_main("What’s that supposed to mean?!?", "scream", "angry", "angry", "L")
         call her_main("You know exactly what I mean... I heard about how you were flaunting those...things of yours at Seamus Finnigan.", "crooked_smile", "narrow", "base", "R_soft")

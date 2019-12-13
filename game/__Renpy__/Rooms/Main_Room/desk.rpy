@@ -265,7 +265,7 @@ screen desk_menu():
     if not daytime:
         add "interface/desk/_night_overlay_.png"
 
-    use close_button #Temporary
+    use close_button
 
 
 screen crystal_ball():

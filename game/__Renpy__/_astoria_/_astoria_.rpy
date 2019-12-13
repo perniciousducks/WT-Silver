@@ -72,7 +72,8 @@ label ast_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
         astoria_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
         astoria_class.special(emote=emote)
 
-    show screen astoria_main()
+    if not renpy.get_screen("t_wardrobe_menu"):
+        show screen astoria_main()
     show screen bld1
 
     call transition(trans, True)

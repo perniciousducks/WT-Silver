@@ -1,14 +1,21 @@
 
 
 label summon_astoria:
-
-    call astoria_summon_setup
-
+    #call play_music("astoria")
+    #call play_sound("door")
+    
     $ active_girl = "astoria"
     $ astoria_busy = True
+    #call update_ast_tier
+    
+    # Clothes Events
+    call astoria_summon_setup
 
     label astoria_requests:
 
+    # Reset
+    call reset_menu_position
+    call ast_main(xpos="base",ypos="base")
     $ hide_transitions = False
 
     menu:
@@ -36,7 +43,6 @@ label summon_astoria:
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if astoria_wardrobe_unlocked:
-            call ast_main(xpos="wardrobe", ypos="base", face="neutral")
             call t_wardrobe("ast_main")
             jump astoria_requests
 

@@ -102,7 +102,7 @@ screen inventory_menu(xx, yy):
     zorder 4
     modal True
 
-    use top_bar_close_button
+    use close_button
 
     frame:
         style "empty"

@@ -47,7 +47,6 @@ label tonks_wardrobe_check(section, arg=None):
         elif section == "category":
             #haircolour fix
             if arg[1] == "head":
-                call ton_main("",face="neutral")
                 $ tonks_class.get_cloth("hair").color = tonks_haircolor
             return arg #IMPORTANT
         elif section == "touching":

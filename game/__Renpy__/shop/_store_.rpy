@@ -234,7 +234,7 @@ screen weasley_store_menu():
     zorder 4
 
     # Close Button
-    use top_bar_close_button
+    use close_button
 
     # Gifts Button
     imagebutton:

@@ -154,8 +154,6 @@ screen deck_builder_screen():
         ysize 40
         button action Jump("color_change") background "#ffffff00"
         #add Solid(get_hex_string(playercolor_rgb))
-  
-    #use close_button
     
 screen deck_builder_gallery():
     zorder 8

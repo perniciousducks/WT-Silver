@@ -5,7 +5,7 @@ label cho_chibi(action=None, xpos=None, ypos=None, flip=False):
         $ cho_chibi.hide()
         return
     elif action == "leave":
-        hide screen cho_chang
+        hide screen cho_main
         hide screen bld1
         hide screen blktone
         call play_sound("door")

@@ -115,10 +115,10 @@ label cc_pf_strip_T1_intro_E1:
     pause.8
 
     # Remove top.
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.strip("robe","top")
     show screen cho_cloth_pile
-    show screen cho_chang
+    show screen cho_main
     with d3
     pause.5
 
@@ -222,9 +222,9 @@ label cc_pf_strip_T1_intro_E1:
     pause.4
 
     # Remove skirt.
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.strip("bottom")
-    show screen cho_chang
+    show screen cho_main
     with d3
     pause.5
 
@@ -270,7 +270,7 @@ label cc_pf_strip_T1_intro_E1:
     call cho_main("If you want a bimbo to strip for you, I suggest you call Hermione instead...","open","narrow","angry","mid")
     pause.5
 
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.wear("all")
     hide screen cho_cloth_pile
     call cho_main("","angry","angry","angry","mid")
@@ -304,7 +304,7 @@ label cc_pf_strip_T1_intro_E2:
     pause.4
 
     # Remove top.
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.strip("robe","top")
     show screen cho_cloth_pile
     call cho_main("","upset","narrow","base","mid")
@@ -321,9 +321,9 @@ label cc_pf_strip_T1_intro_E2:
     pause.4
 
     # Remove skirt.
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.strip("bottom")
-    show screen cho_chang
+    show screen cho_main
     with d3
     pause.5
 
@@ -460,9 +460,9 @@ label cc_pf_strip_T1_intro_E2:
             pause.4
 
             # Remove bra.
-            hide screen cho_chang
+            hide screen cho_main
             $ cho_class.strip("bra")
-            show screen cho_chang
+            show screen cho_main
             with d3
             pause.8
 
@@ -524,9 +524,9 @@ label cc_pf_strip_T1_intro_E2:
             pause.4
 
             # Remove panties.
-            hide screen cho_chang
+            hide screen cho_main
             $ cho_class.strip("panties")
-            show screen cho_chang
+            show screen cho_main
             with d3
             pause.5
 
@@ -656,7 +656,7 @@ label cc_pf_strip_T1_intro_E2:
 
     # Cho puts clothes back on.
     call play_sound("equip")
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.wear("all")
     hide screen cho_cloth_pile
     pause.8
@@ -707,10 +707,10 @@ label cc_pf_strip_T1_intro_E3:
     pause.8
 
     # Remove top.
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.strip("robe","top")
     show screen cho_cloth_pile
-    show screen cho_chang
+    show screen cho_main
     with d3
     pause.5
 
@@ -725,9 +725,9 @@ label cc_pf_strip_T1_intro_E3:
     pause.4
 
     # Remove skirt.
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.strip("bottom")
-    show screen cho_chang
+    show screen cho_main
     with d3
     pause.5
 
@@ -765,7 +765,7 @@ label cc_pf_strip_T1_intro_E3:
         call cho_main("","annoyed","closed","angry","mid")
         pause.5
 
-        hide screen cho_chang
+        hide screen cho_main
         $ cho_class.wear("all")
         hide screen cho_cloth_pile
         call cho_main("","angry","closed","angry","mid")
@@ -819,9 +819,9 @@ label cc_pf_strip_T1_intro_E3:
     pause.4
 
     # Remove bra.
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.strip("bra")
-    show screen cho_chang
+    show screen cho_main
     with d3
     pause.5
 
@@ -864,9 +864,9 @@ label cc_pf_strip_T1_intro_E3:
     pause.4
 
     # Remove panties.
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.strip("panties")
-    show screen cho_chang
+    show screen cho_main
     with d3
     pause.5
 
@@ -994,10 +994,10 @@ label cc_pf_strip_T1_E3: # Repeats
     pause.4
 
     # Remove top & robe.
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.strip("robe","top")
     show screen cho_cloth_pile
-    show screen cho_chang
+    show screen cho_main
     with d3
     pause.5
 
@@ -1007,9 +1007,9 @@ label cc_pf_strip_T1_E3: # Repeats
     pause.4
 
     # Remove bottom.
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.strip("bottom")
-    show screen cho_chang
+    show screen cho_main
     with d3
     pause.5
 
@@ -1021,9 +1021,9 @@ label cc_pf_strip_T1_E3: # Repeats
     pause.4
 
     # Remove bra.
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.strip("bra")
-    show screen cho_chang
+    show screen cho_main
     with d3
     pause.5
 
@@ -1032,9 +1032,9 @@ label cc_pf_strip_T1_E3: # Repeats
     pause.4
 
     # Remove panties.
-    hide screen cho_chang
+    hide screen cho_main
     $ cho_class.strip("panties")
-    show screen cho_chang
+    show screen cho_main
     with d3
     call ctc
 
@@ -1322,7 +1322,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             g9 "Well, that is yet to be seen."
 
             # Cho gets dressed.
-            hide screen cho_chang
+            hide screen cho_main
             $ cho_class.wear("all")
             hide screen cho_cloth_pile
             hide screen blkfade
@@ -1431,10 +1431,10 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             pause.4
 
             # Cho gets dressed.
-            hide screen cho_chang
+            hide screen cho_main
             $ cho_class.wear("all")
             hide screen cho_cloth_pile
-            show screen cho_chang
+            show screen cho_main
             with d3
             pause.5
 

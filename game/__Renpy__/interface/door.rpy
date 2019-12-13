@@ -58,7 +58,7 @@ screen door_menu(xx, yy):
     modal True
     zorder 4
 
-    use top_bar_close_button
+    use close_button
     frame:
         style "empty"
         pos (xx, yy)

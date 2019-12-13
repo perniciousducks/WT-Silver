@@ -376,7 +376,7 @@ label change_quidditch_tactics:
             "-Go Back-":
                 call cho_main("Very well, [cho_genie_name].","open","base","base","mid", ypos="head")
 
-                hide screen cho_chang
+                hide screen cho_main
                 show screen blkfade
                 with d3
 

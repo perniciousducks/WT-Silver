@@ -216,7 +216,6 @@ label studio(studio_char):
             $ studio_text_outline_color = color_picker(get_rgb_list(studio_text_outline_color), False, "Outline Color", pos_xy=[200, 130])
             $ studio_text_outline_color = get_hex_string(studio_text_outline_color[0]/255.0, studio_text_outline_color[1]/255.0, studio_text_outline_color[2]/255.0, studio_text_outline_color[3]/255.0)
     else:
-        call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
         return
         
     jump .after_init
@@ -296,7 +295,7 @@ screen character_studio():
     zorder 5
     
     if not export_in_progress:
-        use top_bar_close_button
+        use close_button
     
     if config.developer:
         vbox:

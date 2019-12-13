@@ -142,7 +142,7 @@ label open_gallery():
     
 screen gallery_outfits(character, gallery):
     zorder 6
-    use top_bar_close_button
+    use close_button
     use gallery_character_menu(menu_info=character)
 
     if len(gallery) > 0:

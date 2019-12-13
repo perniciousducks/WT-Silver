@@ -106,7 +106,7 @@ label door:
 # screen door_menu_old():
     # zorder 8
     # button style "empty" action [Return("Close")]
-    # use top_bar_close_button
+    # use close_button
     # use character_select_menu(summon_list, "-Summon-", 812, 40)
 
 #Day 1 room interact quest.

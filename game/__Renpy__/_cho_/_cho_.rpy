@@ -74,7 +74,8 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
         cho_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
         cho_class.special(emote=emote)
 
-    show screen cho_chang()
+    if not renpy.get_screen("t_wardrobe_menu"):
+        show screen cho_main()
     show screen bld1
 
     call transition(trans, True)
@@ -82,7 +83,7 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
     $ cho_class.say(text)
 
     if use_cho_head:
-        hide screen cho_chang
+        hide screen cho_main
 
     return
 
@@ -102,7 +103,7 @@ label update_cho:
 
 label end_cho_event:
     call cho_chibi("hide")
-    hide screen cho_chang
+    hide screen cho_main
     with d3
     pause.5
 
@@ -114,7 +115,7 @@ label end_cho_event:
     call music_block
     jump main_room
 
-screen cho_chang():
+screen cho_main():
     tag cho_main
     zorder cho_zorder
     if cho_animation != None:

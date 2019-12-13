@@ -10,7 +10,6 @@ default wardrobe_chitchat_active = True
 default hide_transitions = False
 
 default play_wardrobe_music   = False
-default wardrobe_music_active = False
 default add_wardrobe_sound    = False
 
 default wardrobe_color_update = True

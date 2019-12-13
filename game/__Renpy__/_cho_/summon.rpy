@@ -1,14 +1,20 @@
 
 
 label summon_cho:
-
+    #call play_music("cho")
+    #call play_sound("door")
+    
     $ active_girl = "cho"
     $ cho_busy = True
-
+    #call update_cho_tier
+    
+    # Clothes Events
     call cho_summon_setup
 
     label cho_requests:
 
+    # Reset
+    call reset_menu_position
     call cho_main(xpos="base",ypos="base")
     $ hide_transitions = False
 
@@ -88,7 +94,6 @@ label summon_cho:
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if cho_wardrobe_unlocked:
-            call cho_main(xpos="wardrobe",ypos="base", face="neutral")
             call t_wardrobe("cho_main")
             jump cho_requests
 

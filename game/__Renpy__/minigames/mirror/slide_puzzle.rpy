@@ -106,7 +106,7 @@ label open_puzzle_box:
 screen puzzle_board():
     tag puzzle
 
-    use top_bar_close_button
+    use close_button
 
     if puzzle_tries > 95:
         textbutton "Fuck it!" action Return(-2) text_size 32 xalign 0.5 yalign 0.93

@@ -7,13 +7,17 @@ label summon_tonks:
     $ active_girl = "tonks"
     $ tonks_busy = True
     call update_ton_tier
-
+    
+    # Clothes Events
     call tonks_summon_setup
 
     label tonks_requests:
+    # Hair fix
     $ tonks_class.get_cloth("hair").color = tonks_haircolor
     $ tonks_haircolor = tonks_class.get_cloth("hair").color
 
+    # Reset
+    call reset_menu_position
     call ton_main(xpos="base",ypos="base")
     $ hide_transitions = False
 
@@ -46,7 +50,6 @@ label summon_tonks:
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if tonks_wardrobe_unlocked:
-            call ton_main(xpos="wardrobe",ypos="base", face="neutral")
             call t_wardrobe("ton_main")
             jump tonks_requests
 

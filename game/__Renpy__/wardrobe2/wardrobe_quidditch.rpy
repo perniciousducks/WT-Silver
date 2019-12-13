@@ -60,7 +60,7 @@ screen t_wardrobe_quidditch_menuitem(xx, yy):
     tag wardrobe_menuitem
     zorder 4
     
-    use top_bar_close_button
+    use close_button
     
     # left
     for i in xrange(len(quidditch_items.keys())):

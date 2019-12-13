@@ -262,7 +262,7 @@ screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
     if not selectenemycard == -1:
         use cardrender(l_enemydeck[selectenemycard], 860,17+80*selectenemycard, backside= shown_cards[selectenemycard])
         
-    use top_bar_close_button
+    use close_button
     
 transform cardrender_move(xpos_card, ypos_card, start_xy):
     subpixel True

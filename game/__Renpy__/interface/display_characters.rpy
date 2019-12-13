@@ -128,7 +128,7 @@ label remove_character:
         hide screen susan_main
     if character_choice == "cho":
         $ summoned_character_list.remove("cho")
-        hide screen cho_chang
+        hide screen cho_main
     if character_choice == "genie":
         $ summoned_character_list.remove("genie")
         hide screen genie_main
@@ -238,7 +238,7 @@ label character_face_change:
     if character_choice == "cho":
         call cho_main("")
         label summon_cho_face_change:
-        show screen cho_chang
+        show screen cho_main
         menu:
             "Change Cho's face expression?"
             "-Mouth-":

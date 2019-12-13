@@ -49,8 +49,8 @@ label reset_wardrobe_vars:
 
     #Music
     if play_wardrobe_music:
-        if not wardrobe_music_active:
-            $ wardrobe_music_active = True
+        if not wardrobe_music:
+            $ wardrobe_music = True
             call play_music("wardrobe")
 
     return
@@ -119,12 +119,12 @@ label wardrobe_update:
 
     #Music
     if play_wardrobe_music:
-        if not wardrobe_music_active:
-            $ wardrobe_music_active = True
+        if not wardrobe_music:
+            $ wardrobe_music = True
             call play_music("wardrobe")
     else:
-        if wardrobe_music_active:
-            $ wardrobe_music_active = False
+        if wardrobe_music:
+            $ wardrobe_music = False
             call music_block
 
     #Sound Effects
@@ -189,8 +189,8 @@ label hide_wardrobe:
 label close_wardrobe:
     $ renpy.play('sounds/door2.mp3') #closing wardrobe page
     #Music
-    if wardrobe_music_active:
-        $ wardrobe_music_active = False
+    if wardrobe_music:
+        $ wardrobe_music = False
         call music_block
 
     if active_girl == "luna":

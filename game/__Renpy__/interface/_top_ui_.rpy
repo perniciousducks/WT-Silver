@@ -50,15 +50,12 @@ label house_points:
 
     return
 
-
 #Close Button
-screen top_bar_close_button(xoffset=0, yoffset=0, close_var="Close"):
+screen close_button(xoffset=0, yoffset=0, close_var="Close"):
     imagebutton:
-        xpos 1080
-        ypos 0
-        xoffset xoffset
-        yoffset yoffset
+        xalign 1.0
         xanchor 1.0
+        offset (xoffset, yoffset)
         idle "interface/topbar/buttons/"+interface_color+"/ui_close.png"
         hover image_hover("interface/topbar/buttons/"+interface_color+"/ui_close.png")
         action Return(close_var)

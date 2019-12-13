@@ -109,7 +109,7 @@ screen stat_menu(character=""):
     add "interface/stat_select/"+str(interface_color)+"/ground_stat_screen_"+str(wardrobe_color)+".png"
 
 
-    use top_bar_close_button
+    use close_button
 
     #Character Buttons.
 
@@ -167,7 +167,7 @@ screen stat_bar(steps, top_text, buttom_text, stat_number, top_padding = 20):
         xalign 0.5
         ysize 30
         xsize 360
-        add LiveCrop((0, 0, steps*36, 600), stateFullImage)
+        add Crop((0, 0, steps*36, 600), stateFullImage)
         add stateEmptyImage
     text "" +buttom_text+ " (lvl " +str(stat_number)+ ")" xalign 0.5 size 20
 

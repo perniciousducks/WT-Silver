@@ -15,8 +15,9 @@ label sus_chibi(action=None, xpos=None, ypos=None, flip=False):
         return
     elif action == "reset":
         $ susan_chibi.do(None)
-    else: # stand
-        $ susan_chibi.do(None)
+        return
+    
+    $ susan_chibi.do(action)
 
     return
 
@@ -49,10 +50,11 @@ default susan_chibi = chibi("susan", ["base", "shoes", "top", "bottom", "robe"],
 
 init python:
     def update_susan_chibi(chibi):
-        if chibi.action == "walk":
-            chibi["base"] = "ch_sus walk"
-        else:
-            chibi["base"] = "ch_sus blink"
+        # Assume chibi action has a matching image definition
+        chibi_image = "ch_sus {}".format(chibi.action or "stand")
+        chibi["base"] = chibi_image
+
+        # Determine clothing state
         
         if susan_wear_bottom or susan_wear_stockings:
             if chibi.action == "walk":

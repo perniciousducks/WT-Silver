@@ -49,10 +49,16 @@ transform chibi_wand(position, flip):
 
 transform random_blink(close_image, open_image=Null()):
     close_image
-    pause .1
+    pause .08
     open_image
+    choice:
+        pause 6
     choice:
         pause 3
     choice:
-        pause 1
+        # Double blink
+        close_image
+        pause .08
+        open_image
+        pause 5
     repeat

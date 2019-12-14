@@ -1,28 +1,10 @@
 
+# Susan chibi
 
-#Susan Chibi
+image ch_sus stand:
+    random_blink("characters/susan/chibis/sb_stand_blink.png", "characters/susan/chibis/sb_walk_01.png")
 
-#Stand
-image ch_sus blink:
-    "characters/susan/chibis/sb_walk_01.png"
-    pause 2
-    "characters/susan/chibis/sb_stand_blink.png"
-    pause.08
-    "characters/susan/chibis/sb_walk_01.png"
-    pause 5
-    "characters/susan/chibis/sb_stand_blink.png"
-    pause.08
-    "characters/susan/chibis/sb_walk_01.png"
-    pause.08
-    "characters/susan/chibis/sb_stand_blink.png"
-    pause.08
-    "characters/susan/chibis/sb_walk_01.png"
-    pause 3
-
-    repeat
-
- #Walk
-image ch_sus walk: #No shoes.
+image ch_sus walk:
     "characters/susan/chibis/sb_walk_01.png"
     pause.08
     "characters/susan/chibis/sb_walk_02.png"
@@ -42,7 +24,7 @@ image ch_sus walk: #No shoes.
 
     repeat
 
-image ch_sus walk_shoes: #With Shoes.
+image ch_sus walk_shoes: # Walk shoes layer
     "characters/susan/chibis/sb_walk_01_shoes.png"
     pause.08
     "characters/susan/chibis/sb_walk_02_shoes.png"

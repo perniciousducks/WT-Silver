@@ -81,6 +81,7 @@ init python:
         chibi["base"] = chibi_image
 
         # Determine clothing state
+        
         if tonks_class.get_worn("top"):
             chibi["top"] = "nt_top.png"
 

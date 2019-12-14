@@ -15,8 +15,9 @@ label lun_chibi(action=None, xpos=None, ypos=None, flip=False):
         return
     elif action == "reset":
         $ luna_chibi.do(None)
-    else: # stand
-        $ luna_chibi.do(None)
+        return
+    
+    $ luna_chibi.do(action)
 
     return
 
@@ -53,13 +54,13 @@ init python:
         if chibi.action == "walk":
             if luna_wear_top and luna_wear_bottom:
                 chibi["base"] = "ch_lun walk_a"
-            elif luna_wear_bottom and not luna_wear_top:
-                pass #TODO Add topless walking chibi for Luna
+            # elif luna_wear_bottom and not luna_wear_top:
+            #     pass #TODO Add topless walking chibi for Luna
             elif not luna_wear_top and not luna_wear_bottom:
                 chibi["base"] = "ch_lun walk_n"
             elif luna_wear_robe:
                 chibi["base"] = "ch_lun walk_robe"
-        else:
+        elif not chibi.action or chibi.action == "stand":
             if luna_wear_top and luna_wear_bottom:
                 chibi["base"] = "ch_lun blink_a"
             elif luna_wear_bottom and not luna_wear_top:
@@ -68,3 +69,7 @@ init python:
                 chibi["base"] = "ch_lun blink_n"
             elif luna_wear_robe:        
                 chibi["base"] = "ch_lun blink_robe"
+        else:
+            # Assume chibi action has a matching image definition
+            chibi_image = "ch_lun {}".format(chibi.action or "stand")
+            chibi["base"] = chibi_image

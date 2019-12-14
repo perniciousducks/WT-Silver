@@ -2,25 +2,10 @@
 image spr_tonks blink:
     sprite_blink("characters/tonks/face/eyes/closed.png")
 
-#Tonks Chibi
+# Tonks chibi
 
 image ch_ton stand:
-    "characters/tonks/chibis/nt_walk_01.png"
-    pause 2
-    "characters/tonks/chibis/nt_stand_blink.png"
-    pause.08
-    "characters/tonks/chibis/nt_walk_01.png"
-    pause 5
-    "characters/tonks/chibis/nt_stand_blink.png"
-    pause.08
-    "characters/tonks/chibis/nt_walk_01.png"
-    pause.08
-    "characters/tonks/chibis/nt_stand_blink.png"
-    pause.08
-    "characters/tonks/chibis/nt_walk_01.png"
-    pause 3
-
-    repeat
+    random_blink("characters/tonks/chibis/nt_stand_blink.png", "characters/tonks/chibis/nt_walk_01.png")
 
 image ch_ton walk:
     "characters/tonks/chibis/nt_walk_01.png"
@@ -42,7 +27,7 @@ image ch_ton walk:
 
     repeat
 
-image ch_ton walk shoes:
+image ch_ton walk shoes: # Walk shoes layer
     "characters/tonks/chibis/nt_walk_01_shoes.png"
     pause.08
     "characters/tonks/chibis/nt_walk_02_shoes.png"
@@ -62,7 +47,7 @@ image ch_ton walk shoes:
 
     repeat
     
-image ch_ton walk trousers:
+image ch_ton walk trousers: # Walk trousers layer
     "characters/tonks/chibis/nt_walk_01_trousers.png"
     pause.08
     "characters/tonks/chibis/nt_walk_02_trousers.png"
@@ -174,18 +159,4 @@ image ch_ton sit_top:
     "characters/tonks/chibis/drinking/nt_top.png"
 
 image ch_ton slack_jaw:
-    "characters/tonks/chibis/slack_jaw/nt_stand_01.png"
-    pause 2
-    "characters/tonks/chibis/slack_jaw/nt_stand_02.png"
-    pause.08
-    "characters/tonks/chibis/slack_jaw/nt_stand_01.png"
-    pause 5
-    "characters/tonks/chibis/slack_jaw/nt_stand_02.png"
-    pause.08
-    "characters/tonks/chibis/slack_jaw/nt_stand_01.png"
-    pause.08
-    "characters/tonks/chibis/slack_jaw/nt_stand_02.png"
-    pause.08
-    "characters/tonks/chibis/slack_jaw/nt_stand_01.png"
-    pause 3
-    repeat
+    random_blink("characters/tonks/chibis/slack_jaw/nt_stand_02.png", "characters/tonks/chibis/slack_jaw/nt_stand_01.png")

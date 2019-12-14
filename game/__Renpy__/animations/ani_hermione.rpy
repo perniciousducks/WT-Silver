@@ -4,21 +4,7 @@ image spr_hermione blink:
     
 # Hermione Solo Animations
 image ch_hem blink:
-    "characters/hermione/chibis/walk/h_walk_a_01.png"
-    pause 2
-    "characters/hermione/chibis/walk/h_walk_a_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_a_01.png"
-    pause 5
-    "characters/hermione/chibis/walk/h_walk_a_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_a_01.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_a_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_a_01.png"
-    pause 3
-    repeat
+    random_blink("characters/hermione/chibis/walk/h_walk_a_06.png", "characters/hermione/chibis/walk/h_walk_a_01.png")
 
 image ch_hem drink_potion:
     xoffset -30
@@ -52,21 +38,7 @@ image ch_hem walk:    #shirt 00
     repeat
 
 image ch_hem blink_a:
-    "characters/hermione/chibis/walk/h_walk_a_01.png"
-    pause 2
-    "characters/hermione/chibis/walk/h_walk_a_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_a_01.png"
-    pause 5
-    "characters/hermione/chibis/walk/h_walk_a_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_a_01.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_a_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_a_01.png"
-    pause 3
-    repeat
+    random_blink("characters/hermione/chibis/walk/h_walk_a_06.png", "characters/hermione/chibis/walk/h_walk_a_01.png")
 
 image ch_hem walk_b:    #shirt 00.1
     "characters/hermione/chibis/walk/h_walk_b_01.png"
@@ -88,21 +60,7 @@ image ch_hem walk_b:    #shirt 00.1
     repeat
 
 image ch_hem blink_b:
-    "characters/hermione/chibis/walk/h_walk_b_01.png"
-    pause 2
-    "characters/hermione/chibis/walk/h_walk_b_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_b_01.png"
-    pause 5
-    "characters/hermione/chibis/walk/h_walk_b_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_b_01.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_b_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_b_01.png"
-    pause 3
-    repeat
+    random_blink("characters/hermione/chibis/walk/h_walk_b_06.png", "characters/hermione/chibis/walk/h_walk_b_01.png")
 
 image ch_hem walk_c:    #shirt 00.2
     "characters/hermione/chibis/walk/h_walk_c_01.png"
@@ -124,21 +82,7 @@ image ch_hem walk_c:    #shirt 00.2
     repeat
 
 image ch_hem blink_c:
-    "characters/hermione/chibis/walk/h_walk_c_01.png"
-    pause 2
-    "characters/hermione/chibis/walk/h_walk_c_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_c_01.png"
-    pause 5
-    "characters/hermione/chibis/walk/h_walk_c_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_c_01.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_c_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_c_01.png"
-    pause 3
-    repeat
+    random_blink("characters/hermione/chibis/walk/h_walk_c_06.png", "characters/hermione/chibis/walk/h_walk_c_01.png")
 
 image ch_hem walk_d:    #shirt 01
     "characters/hermione/chibis/walk/h_walk_d_01.png"
@@ -160,21 +104,7 @@ image ch_hem walk_d:    #shirt 01
     repeat
 
 image ch_hem blink_d:
-    "characters/hermione/chibis/walk/h_walk_d_01.png"
-    pause 2
-    "characters/hermione/chibis/walk/h_walk_d_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_d_01.png"
-    pause 5
-    "characters/hermione/chibis/walk/h_walk_d_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_d_01.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_d_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_d_01.png"
-    pause 3
-    repeat
+    random_blink("characters/hermione/chibis/walk/h_walk_d_06.png", "characters/hermione/chibis/walk/h_walk_d_01.png")
 
 image ch_hem walk_e:    #shirt 02
     "characters/hermione/chibis/walk/h_walk_e_01.png"
@@ -196,21 +126,7 @@ image ch_hem walk_e:    #shirt 02
     repeat
 
 image ch_hem blink_e:
-    "characters/hermione/chibis/walk/h_walk_e_01.png"
-    pause 2
-    "characters/hermione/chibis/walk/h_walk_e_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_e_01.png"
-    pause 5
-    "characters/hermione/chibis/walk/h_walk_e_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_e_01.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_e_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_e_01.png"
-    pause 3
-    repeat
+    random_blink("characters/hermione/chibis/walk/h_walk_e_06.png", "characters/hermione/chibis/walk/h_walk_e_01.png")
 
 image ch_hem walk_f:    #shirt 03
     "characters/hermione/chibis/walk/h_walk_f_01.png"
@@ -232,21 +148,7 @@ image ch_hem walk_f:    #shirt 03
     repeat
 
 image ch_hem blink_f:
-    "characters/hermione/chibis/walk/h_walk_f_01.png"
-    pause 2
-    "characters/hermione/chibis/walk/h_walk_f_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_f_01.png"
-    pause 5
-    "characters/hermione/chibis/walk/h_walk_f_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_f_01.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_f_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_f_01.png"
-    pause 3
-    repeat
+    random_blink("characters/hermione/chibis/walk/h_walk_f_06.png", "characters/hermione/chibis/walk/h_walk_f_01.png")
 
 image ch_hem walk_g:    #shirt 04
     "characters/hermione/chibis/walk/h_walk_g_01.png"
@@ -268,21 +170,7 @@ image ch_hem walk_g:    #shirt 04
     repeat
 
 image ch_hem blink_g:
-    "characters/hermione/chibis/walk/h_walk_g_01.png"
-    pause 2
-    "characters/hermione/chibis/walk/h_walk_g_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_g_01.png"
-    pause 5
-    "characters/hermione/chibis/walk/h_walk_g_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_g_01.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_g_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_g_01.png"
-    pause 3
-    repeat
+    random_blink("characters/hermione/chibis/walk/h_walk_g_06.png", "characters/hermione/chibis/walk/h_walk_g_01.png")
 
 image ch_hem walk_h:    #shirt 05
     "characters/hermione/chibis/walk/h_walk_h_01.png"
@@ -304,21 +192,7 @@ image ch_hem walk_h:    #shirt 05
     repeat
 
 image ch_hem blink_h:
-    "characters/hermione/chibis/walk/h_walk_h_01.png"
-    pause 2
-    "characters/hermione/chibis/walk/h_walk_h_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_h_01.png"
-    pause 5
-    "characters/hermione/chibis/walk/h_walk_h_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_h_01.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_h_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_h_01.png"
-    pause 3
-    repeat
+    random_blink("characters/hermione/chibis/walk/h_walk_h_06.png", "characters/hermione/chibis/walk/h_walk_h_01.png")
 
 image ch_hem walk_n:    #no shirt
     "characters/hermione/chibis/walk/h_walk_n_01.png"
@@ -340,21 +214,7 @@ image ch_hem walk_n:    #no shirt
     repeat
 
 image ch_hem blink_n:
-    "characters/hermione/chibis/walk/h_walk_n_01.png"
-    pause 2
-    "characters/hermione/chibis/walk/h_walk_n_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_n_01.png"
-    pause 5
-    "characters/hermione/chibis/walk/h_walk_n_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_n_01.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_n_06.png"
-    pause.08
-    "characters/hermione/chibis/walk/h_walk_n_01.png"
-    pause 3
-    repeat
+    random_blink("characters/hermione/chibis/walk/h_walk_n_06.png", "characters/hermione/chibis/walk/h_walk_n_01.png")
 
 image ch_hem walk_robe: #hermione walking in robe
     "characters/hermione/chibis/walk/h_walk_robe_01.png"

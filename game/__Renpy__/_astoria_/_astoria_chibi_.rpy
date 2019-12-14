@@ -13,12 +13,11 @@ label ast_chibi(action=None, xpos=None, ypos=None, flip=False):
         with d3
         pause .5
         return
-    elif action in ("wand", "wand_casting", "wand_imperio"):
-        $ astoria_chibi.do(action)
     elif action == "reset":
         $ astoria_chibi.do(None)
-    else: # stand
-        $ astoria_chibi.do(None)
+        return
+
+    $ astoria_chibi.do(action)
 
     return
 
@@ -58,17 +57,11 @@ default astoria_chibi = chibi("astoria", ["fix", "base", "bottom", "shoes", "top
 
 init python:
     def update_astoria_chibi(chibi):
-        # Astoria actions: wand, wand_casting, wand_imperio
-        if chibi.action == "wand":
-            chibi["base"] = "ch_ast wand_stand"
-        elif chibi.action == "wand_casting":
-            chibi["base"] = "ch_ast wand_casting"
-        elif chibi.action == "wand_imperio":
-            chibi["base"] = "ch_ast wand_imperio"
-        elif chibi.action == "walk":
-            chibi["base"] = "ch_ast walk"
-        else:
-            chibi["base"] = "ch_ast blink"
+        # Assume chibi action has a matching image definition
+        chibi_image = "ch_ast {}".format(chibi.action or "stand")
+        chibi["base"] = chibi_image
+
+        # Determine clothing state
 
         if astoria_class.get_worn("top"):
             chibi["top"] = "ag_top.png"

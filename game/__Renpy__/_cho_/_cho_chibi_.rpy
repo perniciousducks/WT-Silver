@@ -13,12 +13,11 @@ label cho_chibi(action=None, xpos=None, ypos=None, flip=False):
         with d3
         pause .5
         return
-    elif action == "fly":
-        $ cho_chibi.do(action)
     elif action == "reset":
         $ cho_chibi.do(None)
-    else: # stand
-        $ cho_chibi.do(None)
+        return
+
+    $ cho_chibi.do(action)
 
     return
 
@@ -58,16 +57,12 @@ default cho_chibi = chibi("cho", ["fix", "base", "bottom", "shoes", "top", "robe
 
 init python:
     def update_cho_chibi(chibi):
-        # Cho actions: fly (fly_idle!), fly_move
-        if chibi.action == "fly":
-            chibi["base"] = "ch_cho fly_idle"
-        elif chibi.action == "fly_move":
-            chibi["base"] = "ch_cho fly"
-        elif chibi.action == "walk":
-            chibi["base"] = "ch_cho walk"
-        else:
-            chibi["base"] = "ch_cho blink"
+        # Assume chibi action has a matching image definition
+        chibi_image = "ch_cho {}".format(chibi.action or "stand")
+        chibi["base"] = chibi_image
 
+        # Determine clothing state
+        
         if cho_class.get_worn("top"):
             if cho_class.get_cloth("top").id == "top_sweater_1":
                 chibi["top"] = "cc_sweater.png"

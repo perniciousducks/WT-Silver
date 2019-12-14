@@ -2,29 +2,12 @@
 image spr_cho blink:
     sprite_blink("characters/cho/face/eyes/closed.png")
 
-#Cho Chibi
+# Cho chibi
 
-#Stand
-image ch_cho blink:
-    "characters/cho/chibis/cc_walk_01.png"
-    pause 2
-    "characters/cho/chibis/cc_stand_blink.png"
-    pause.08
-    "characters/cho/chibis/cc_walk_01.png"
-    pause 5
-    "characters/cho/chibis/cc_stand_blink.png"
-    pause.08
-    "characters/cho/chibis/cc_walk_01.png"
-    pause.08
-    "characters/cho/chibis/cc_stand_blink.png"
-    pause.08
-    "characters/cho/chibis/cc_walk_01.png"
-    pause 3
+image ch_cho stand:
+    random_blink("characters/cho/chibis/cc_stand_blink.png", "characters/cho/chibis/cc_walk_01.png")
 
-    repeat
-
- #Walk
-image ch_cho walk: #No shoes.
+image ch_cho walk:
     "characters/cho/chibis/cc_walk_01.png"
     pause.08
     "characters/cho/chibis/cc_walk_02.png"
@@ -44,7 +27,7 @@ image ch_cho walk: #No shoes.
 
     repeat
 
-image ch_cho walk_shoes: #With Shoes.
+image ch_cho walk_shoes: # Walk shoes layer
     "characters/cho/chibis/cc_walk_01_shoes.png"
     pause.08
     "characters/cho/chibis/cc_walk_02_shoes.png"
@@ -64,7 +47,7 @@ image ch_cho walk_shoes: #With Shoes.
 
     repeat
     
-image ch_cho walk_quid_shoes: #With quidditch Shoes.
+image ch_cho walk_quid_shoes: # Walk Quidditch shoes layer
     "characters/cho/chibis/cc_walk_01_quid_shoes.png"
     pause.08
     "characters/cho/chibis/cc_walk_02_quid_shoes.png"
@@ -84,7 +67,7 @@ image ch_cho walk_quid_shoes: #With quidditch Shoes.
 
     repeat
     
-image ch_cho trousers:
+image ch_cho trousers: # Walk trousers layer
     "characters/cho/chibis/cc_walk_01_trousers.png"
     pause.08
     "characters/cho/chibis/cc_walk_02_trousers.png"
@@ -104,37 +87,8 @@ image ch_cho trousers:
 
     repeat
 
-### FLYING ANIMATIONS ###        
 image ch_cho fly:
-    "characters/cho/chibis/fly_move/cc_fly0.png"
-    pause 2
-    "characters/cho/chibis/fly_move/cc_fly1.png"
-    pause.08
-    "characters/cho/chibis/fly_move/cc_fly0.png"
-    pause 5
-    "characters/cho/chibis/fly_move/cc_fly1.png"
-    pause.08
-    "characters/cho/chibis/fly_move/cc_fly0.png"
-    pause.08
-    "characters/cho/chibis/fly_move/cc_fly1.png"
-    pause.08
-    "characters/cho/chibis/fly_move/cc_fly0.png"
-    pause 3
-    repeat
-    
-image ch_cho fly_idle:
-    "characters/cho/chibis/fly/cc_fly_idle0.png"
-    pause 2
-    "characters/cho/chibis/fly/cc_fly_idle1.png"
-    pause.08
-    "characters/cho/chibis/fly/cc_fly_idle0.png"
-    pause 5
-    "characters/cho/chibis/fly/cc_fly_idle1.png"
-    pause.08
-    "characters/cho/chibis/fly/cc_fly_idle0.png"
-    pause.08
-    "characters/cho/chibis/fly/cc_fly_idle1.png"
-    pause.08
-    "characters/cho/chibis/fly/cc_fly_idle0.png"
-    pause 3
-    repeat
+    random_blink("characters/cho/chibis/fly/cc_fly_idle1.png", "characters/cho/chibis/fly/cc_fly_idle0.png")
+
+image ch_cho fly_move:
+    random_blink("characters/cho/chibis/fly_move/cc_fly1.png", "characters/cho/chibis/fly_move/cc_fly0.png")

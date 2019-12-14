@@ -315,7 +315,7 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
     g9 "You're getting brazen!"
     call ton_main("Wasn't that the plan?","open","base","worried","R")
     m "I never said it was a bad thing..."
-    call ton_main("Good!{w} Because I don't intent of slowing down...","open","closed","angry","mid")
+    call ton_main("Good!{w} Because I don't intend on slowing down...","open","closed","angry","mid")
     call ton_main("Not after what happened today!","horny","base","angry","mid")
     call ton_main("She was so cute!...","open","base","sad","mid")
     call ton_main("Still nervous, but not nearly as cocky...","open","base","sad","R")

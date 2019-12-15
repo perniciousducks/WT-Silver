@@ -203,7 +203,7 @@ label store_chit_chat:
                                 jump twins_first_duel
                             "-Challenge-" if twins_first_win:
                                 jump twins_second_duel
-                            "{color=#858585}-You need to beat the first duel-{/color}" if not twins_first_win:
+                            "{color=[menu_disabled]}-You need to beat the first duel-{/color}" if not twins_first_win:
                                 jump twins_duel_menu
                             "-Never mind-":
                                 twi "Your loss professor."
@@ -375,7 +375,7 @@ label object_purchase_item(item, quantity):
             "-add next day delivery (15 galleons)-" if gold >= order_cost + 15:
                 $ gold -= 15
                 $ transit_time = 1
-            "{color=#858585}-add next day delivery (15 galleons)-{/color}" if gold < order_cost + 15:
+            "{color=[menu_disabled]}-add next day delivery (15 galleons)-{/color}" if gold < order_cost + 15:
                 pass
             "-no thanks-":
                 pass
@@ -577,7 +577,7 @@ label shop_potion_menu:
         potion_menu.append(("-Questions acquiring items-", "questions"))
         for potion in potion_lib.getBuyable():
             if her_whoring < potion.whoring_rec:
-                potion_menu.append(("{color=#858585}-"+potion.name+"-{/color}","her_whoring"))
+                potion_menu.append(("{color=[menu_disabled]}-"+potion.name+"-{/color}","her_whoring"))
             else:
                 potion_menu.append(("-"+potion.name+"-",potion))
         potion_menu.append(("-Never mind-", "nvm"))

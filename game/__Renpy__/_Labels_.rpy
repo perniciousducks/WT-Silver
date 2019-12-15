@@ -33,9 +33,11 @@ label update_interface_color(color=None):
     if interface_color == "gold":
         $ btn_hover = "#e3ba7140"
         $ interface_style = "day"
+        $ menu_disabled = "#ae9566"
     else:
         $ btn_hover = "#7d75aa40"
         $ interface_style = "night"
+        $ menu_disabled = "#6c625c"
     return
 
 label stop_sound_effects:

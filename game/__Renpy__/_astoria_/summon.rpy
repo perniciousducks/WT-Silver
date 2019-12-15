@@ -37,16 +37,16 @@ label summon_astoria:
             else:
                 jump astoria_spells
                 
-        "{color=#858585}-Sexual favours-{/color}{icon=interface/icons/small/condom.png}" if cho_favors_unlocked:
+        "{color=[menu_disabled]}-Sexual favours-{/color}{icon=interface/icons/small/condom.png}" if cho_favors_unlocked:
             $ TBA_message()
             jump astoria_requests
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if astoria_wardrobe_unlocked:
-            call t_wardrobe("ast_main")
+            call wardrobe("ast_main")
             jump astoria_requests
 
-        "{color=#858585}-Hidden-{/color}" if not astoria_wardrobe_unlocked:
+        "{color=[menu_disabled]}-Hidden-{/color}" if not astoria_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")
             jump astoria_requests
 
@@ -56,7 +56,7 @@ label summon_astoria:
             call gift_menu
             jump astoria_requests
 
-        "{color=#858585}-Gifts-{/color}{icon=interface/icons/small/gift.png}" if gave_astoria_gift:
+        "{color=[menu_disabled]}-Gifts-{/color}{icon=interface/icons/small/gift.png}" if gave_astoria_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."
             jump astoria_requests
 
@@ -90,7 +90,7 @@ label astoria_spells:
                 if daytime and not tonks_busy:
                     spell_menu.append( (i.getMenuText(), i.start_label ) )
                 else:
-                    spell_menu.append( ("{color=#858585}"+i.getMenuText()+"{/color}","block") )
+                    spell_menu.append( ("{color=[menu_disabled]}"+i.getMenuText()+"{/color}","block") )
 
             else: # Spell trained and unlocked.
                 spell_menu.append( (i.getMenuText(), i.start_label ) )
@@ -206,7 +206,7 @@ label astoria_talk:
                     call ast_main("Hmpf...", face="angry")
                     call ast_main("Alright, why not. Nobody knows about it anyways.", face="neutral")
                     jump astoria_talk
-                "{color=#858585}-Master-{/color}" if ast_affection < 18:
+                "{color=[menu_disabled]}-Master-{/color}" if ast_affection < 18:
                     label .master_fail:
                     $ ast_genie_name = "Dumby" # Tricked
                     call ast_main("Hahahaha-- you want me to call you master?", face="happy")
@@ -231,7 +231,7 @@ label astoria_talk:
                     g4 "Shut it you ungrateful brat or there will be consequences!"
                     call ast_main("I'm sorry... It won't happen again, master...", face="neutral")
                     jump astoria_talk
-                "{color=#858585}-Custom Input-{/color}" if ast_affection < 18:
+                "{color=[menu_disabled]}-Custom Input-{/color}" if ast_affection < 18:
                     m "(I don't think she's yet ready for that)"
                     jump astoria_talk
                     
@@ -276,7 +276,7 @@ label astoria_talk:
                     $ astoria_name = "Cutie"
                     call ast_main("Fine... If you really have to, [ast_genie_name].", face="disgusted")
                     jump astoria_talk
-                "{color=#858585}-Slave-{/color}" if ast_affection < 18:
+                "{color=[menu_disabled]}-Slave-{/color}" if ast_affection < 18:
                     label .slave_fail:
                     call ast_main("I'm not your slave, [ast_genie_name]!", face="angry")
                     m "Of course you aren't! We are just playing a game, that's all..."
@@ -292,7 +292,7 @@ label astoria_talk:
                     call ast_main("Alrighty then!", face="happy")
                     jump astoria_talk
                     
-                "{color=#858585}-Custom Input-{/color}" if ast_affection < 18:
+                "{color=[menu_disabled]}-Custom Input-{/color}" if ast_affection < 18:
                     m "(I don't think she's yet ready for that)"
                     jump astoria_talk
                     

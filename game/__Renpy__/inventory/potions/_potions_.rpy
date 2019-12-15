@@ -330,9 +330,9 @@ init python:
         def getStoreMenuText(self):
             return "-"+self.name+"- ("+self.cost+" g.)"
         def getFailBuyRecMenu(self):
-            return "{color=#858585}-"+self.name+"- ("+self.cost+" g.){/color}"
+            return "{color=[menu_disabled]}-"+self.name+"- ("+self.cost+" g.){/color}"
         def getMissingIngMenu(self):
-            return "{color=#858585}-craft: \""+self.name+"\"-{/color}"
+            return "{color=[menu_disabled]}-craft: \""+self.name+"\"-{/color}"
         def getCraftingMenu(self):
             return "-craft: \""+self.name+"\"-"
         def getMixingMsg(self):

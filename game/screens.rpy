@@ -75,7 +75,7 @@ screen choice(items):
                     $ ico = entry.caption.partition("{icon=")[2][:-1] # Icon must be at the end of caption
 
                 button:
-                    xsize int(config.screen_width * 0.5)
+                    xsize int(config.screen_width*0.5)
                     ysize 28
                     action entry.action
                     if i < 10 and entry.action:
@@ -235,7 +235,7 @@ screen extras():
         textbutton _("About...") action Start("abouttrainer")
         textbutton _("F.A.Q.") action Start("faq")
         if not persistent.game_complete:
-            textbutton _("{color=#858585}Gallery{/color}") action Start("gallery_locked")
+            textbutton _("{color=[menu_disabled]}Gallery{/color}") action Start("gallery_locked")
         if persistent.game_complete:
             textbutton _("Gallery") action Start("gallery")
         textbutton _("Return") action Start("assmenu") # Sent here from "EXTRAS" menu. Basically just jumps to the title screen.

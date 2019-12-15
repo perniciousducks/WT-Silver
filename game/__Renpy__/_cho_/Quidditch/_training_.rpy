@@ -120,7 +120,7 @@ label cho_quid_E1:
 
         "\"Panties are Key!\"":
             $ cho_quid.position = "above"
-            call cho_main("Panties? What does panties have to do with Quidditch?","soft","wide","raised","mid")
+            call cho_main("Panties? What do panties have anything to do with Quidditch?","soft","wide","raised","mid")
             m "Everything, girl!{w} For some they are the meaning of life!"
             call cho_main("What?!{w} Are you seriously suggesting \"this\"?{w} To win?{w} Panties?","angry","narrow","angry","mid")
             m "I was never more sure about anything in my life..."
@@ -340,7 +340,7 @@ label change_quidditch_tactics:
                 call cho_chibi(action="fly", xpos="550", ypos="260")
                 with d5
                 pause.8
-            "{color=#858585}-Change Tactic-{/color}" if cho_quid.lock_tactic:
+            "{color=[menu_disabled]}-Change Tactic-{/color}" if cho_quid.lock_tactic:
                 if hufflepuff_match == "end":
                     m "(We have won with this tactic before. I don't see why we should change it.)"
                 else:
@@ -352,7 +352,7 @@ label change_quidditch_tactics:
                 call t_wardrobe_quidditch() # Open quidditch wardrobe
                 $ cho_class.equip(cho_outfit_quidditch)
                 call cho_main(face="neutral", xpos="mid", ypos="base")
-            "{color=#858585}-Customize quidditch outfit-{/color}" if cho_quid.lock_tactic:
+            "{color=[menu_disabled]}-Customize quidditch outfit-{/color}" if cho_quid.lock_tactic:
                 if hufflepuff_match == "end":
                     m "(We have won with this tactic before. I don't see why we should change it.)"
                 else:
@@ -367,7 +367,7 @@ label change_quidditch_tactics:
                 if cho_tier == 2: # Slytherin
                     jump cc_st_start
 
-            "{color=#858585}-Start Practice Match-{/color}" if not daytime or cho_quid.lock_practice:
+            "{color=[menu_disabled]}-Start Practice Match-{/color}" if not daytime or cho_quid.lock_practice:
                 if cho_quid.lock_practice:
                     call nar(">You can't do that right now.")
                 else:

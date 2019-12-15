@@ -144,12 +144,12 @@ style menu_text is default:
 style day_menu_text:
     color "#f9d592"
     hover_color "#fff"
-    insensitive_color "#444"
+    insensitive_color "#ae9566"
 
 style night_menu_text:
     color "#9b8d84"
     hover_color "#fff"
-    insensitive_color "#444"
+    insensitive_color "#6c625c"
 
 style menu_button is default:
     activate_sound "sounds/click3.mp3"
@@ -163,5 +163,35 @@ style night_menu_button:
     background "#5d5151e6"
     hover_background "#897e75"
     insensitive_background "#9e8449"
+    
+style day_dropdown:
+    ysize 24
+    
+style day_dropdown_text:
+    yalign 0.5
+    first_indent 26
+    size 12
+    color "#f9d592"
+    hover_color "#FFF"
+    insensitive_color "#ae9566"
+    outlines [(1, "#00000080", 1, 0)]
+    background "#a1a1a1"
+    
+style night_dropdown:
+    ysize 24
+    
+style night_dropdown_text:
+    yalign 0.5
+    first_indent 26
+    size 12
+    color "#9b8d84"
+    hover_color "#FFF"
+    insensitive_color "#6c625c"
+    outlines [(1, "#00000080", 1, 0)]
+    
+style tooltip_text is default:
+    color "#fff"
+    size 14
+    outlines [(1, "#00000080", 1, 0)]
 
 # btn_hover day: (#edc48240|#e3ba7140) night: #7d75aa40

@@ -183,7 +183,7 @@ label astoria_tonks_3:
 
     $ hide_transitions = True
     call ast_main(xpos="wardrobe",ypos="base")
-    call screen wardrobe
+    call screen wardrobe_old
 
 #Tonks gives Astoria a shorter skirt
 label astoria_tonks_4:

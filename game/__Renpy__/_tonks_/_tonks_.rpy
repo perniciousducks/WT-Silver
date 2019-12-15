@@ -97,7 +97,7 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
         tonks_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
         tonks_class.special(emote=emote)
 
-    if not renpy.get_screen("t_wardrobe_menu"):
+    if not renpy.get_screen("wardrobe_menu"):
         show screen tonks_main()
     show screen bld1
 
@@ -106,7 +106,7 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
     # Hair transition, performs only when applying new colour
     if target_color != None and target_color != tonks_class.get_cloth("hair").color:
         $ tonks_class.get_cloth("hair").color = target_color
-        if not renpy.get_screen("t_wardrobe_menu"):
+        if not renpy.get_screen("wardrobe_menu"):
             show screen tonks_main()
         call transition("d3", False)
 

@@ -5,14 +5,7 @@ screen mouse_tooltip():
     $ tooltip = GetTooltip()
 
     if persistent.tooltip and tooltip:
-        add MouseTooltip(
-            Window(
-                Text(tooltip, color="#FFF", size=14),
-                style="frame",
-                style_prefix="dropdown_gm"
-            ),
-            padding=(10,5)
-        )
+        add MouseTooltip(Window(Text(tooltip, style="tooltip_text"), style="frame", background="#00000080"), padding=(10,5))
 
 init python:
     class MouseTooltip(renpy.Displayable):
@@ -21,9 +14,7 @@ init python:
 
             self.child = renpy.displayable(child)
             self.padding = padding or (0,0)
-            (x,y) = renpy.get_mouse_pos()
-            self.x = x
-            self.y = y
+            self.x, self.y = renpy.get_mouse_pos()
 
         def render(self, width, height, st, at):
             # Render child displayable
@@ -35,7 +26,7 @@ init python:
             x = self.x + self.padding[0]
             y = self.y + self.padding[1]
             if x + self.width > config.screen_width:
-                x = self.x - self.width - self.padding[0]
+                x = self.x- self.width - self.padding[0]
             if y + self.height > config.screen_height:
                 y = self.y - self.height - self.padding[1]
 
@@ -45,6 +36,5 @@ init python:
         def event(self, ev, x, y, st):
             # Update mouse position
             if ev.type == pygame.MOUSEMOTION:
-                self.x = x
-                self.y = y
+                self.x, self.y = x, y
                 renpy.redraw(self, 0)

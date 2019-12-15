@@ -86,7 +86,7 @@ label her_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
     if use_hermione_head and face_on_cg: #Only her face. Used in CG scenes.
         show screen hermione_face # TODO: <- Screen does not exist
     else:
-        if not renpy.get_screen("t_wardrobe_menu"):
+        if not renpy.get_screen("wardrobe_menu"):
             show screen hermione_main()
     show screen bld1
 

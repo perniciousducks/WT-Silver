@@ -56,6 +56,10 @@ transform sprite_blink(img):
     pause.05
     linear 0.13 alpha 0.0
     choice:
+        pause 5
+    choice:
+        pause 4
+    choice:
         pause 3
     choice:
         pause 2

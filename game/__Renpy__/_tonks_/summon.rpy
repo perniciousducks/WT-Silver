@@ -40,20 +40,20 @@ label summon_tonks:
         "-Let's hang-{icon=interface/icons/small/toast.png}" if (wine_ITEM.number > 0 and nt_he_drink.counter == 0) or (firewhisky_ITEM.number > 0 and nt_he_drink.counter > 0):
             jump tonks_hangout
 
-        "{color=#858585}-Let's hang-{/color}{icon=interface/icons/small/toast.png}" if (firewhisky_ITEM.number < 1 and nt_he_drink.counter > 0):
+        "{color=[menu_disabled]}-Let's hang-{/color}{icon=interface/icons/small/toast.png}" if (firewhisky_ITEM.number < 1 and nt_he_drink.counter > 0):
             m "(I don't have any firewhisky...)"
             jump tonks_requests
 
-        "{color=#858585}-Let's hang-{/color}{icon=interface/icons/small/toast.png}" if (wine_ITEM.number < 1 and nt_he_drink.counter == 0):
+        "{color=[menu_disabled]}-Let's hang-{/color}{icon=interface/icons/small/toast.png}" if (wine_ITEM.number < 1 and nt_he_drink.counter == 0):
             m "(I don't have any wine...)"
             jump tonks_requests
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if tonks_wardrobe_unlocked:
-            call t_wardrobe("ton_main")
+            call wardrobe("ton_main")
             jump tonks_requests
 
-        "{color=#858585}-Hidden-{/color}" if not tonks_wardrobe_unlocked:
+        "{color=[menu_disabled]}-Hidden-{/color}" if not tonks_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")
             jump tonks_requests
 
@@ -63,7 +63,7 @@ label summon_tonks:
             call gift_menu
             jump tonks_requests
 
-        "{color=#858585}-Gifts-{/color}{icon=interface/icons/small/gift.png}" if gave_tonks_gift:
+        "{color=[menu_disabled]}-Gifts-{/color}{icon=interface/icons/small/gift.png}" if gave_tonks_gift:
             m "I already gave her a gift today."
             jump tonks_requests
 
@@ -117,7 +117,7 @@ label tonks_favor_menu:
             call tonks_level_up(tier=ton_level_up)
             jump tonks_requests
             
-        "{color=#858585}-Personal Favours-{/color}{icon=interface/icons/small/heart_red.png}":
+        "{color=[menu_disabled]}-Personal Favours-{/color}{icon=interface/icons/small/heart_red.png}":
             call not_available
             jump tonks_favor_menu
             #
@@ -129,9 +129,9 @@ label tonks_favor_menu:
                 # menu_choices = []
                 # for i in nt_favor_list:
                     # if i in []: # Not in the game yet.
-                        # menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
+                        # menu_choices.append(("{color=[menu_disabled]}-Not Available-{/color}","na"))
                     # elif i.start_tier > ton_tier:
-                        # menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
+                        # menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
                     # else:
                         # menu_choices.append((i.getMenuText(),i.start_label))
                         
@@ -151,7 +151,7 @@ label tonks_favor_menu:
         "-Public Requests-{icon=interface/icons/small/star_yellow.png}" if daytime and tonks_requests_unlocked:
             jump tonks_requests_menu
 
-        "{color=#858585}-Public Requests-{/color}{icon=interface/icons/small/star_yellow.png}" if not daytime or not tonks_requests_unlocked:
+        "{color=[menu_disabled]}-Public Requests-{/color}{icon=interface/icons/small/star_yellow.png}" if not daytime or not tonks_requests_unlocked:
             if not tonks_requests_unlocked:
                 call nar(">You haven't unlocked this feature yet.")
             elif not daytime:
@@ -167,9 +167,9 @@ label tonks_requests_menu:
         menu_choices = []
         for i in nt_requests_list:
             if i in []: # Not in the game yet.
-                menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
+                menu_choices.append(("{color=[menu_disabled]}-Not Available-{/color}","na"))
             elif i.start_tier > ton_tier:
-                menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
+                menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
             else:
                 menu_choices.append((i.getMenuText(),i.start_label))
         menu_choices.append(("-Never mind-", "nvm"))
@@ -361,7 +361,7 @@ label tonks_talk:
                     call ton_main("Oh, I don't mind at all, [ton_genie_name]!","horny","base","base","mid")
                     jump tonks_talk
 
-                "{color=#858585}-Master-{/color}" if ton_friendship < 60:
+                "{color=[menu_disabled]}-Master-{/color}" if ton_friendship < 60:
                     label .master_fail:
                     call ton_main("No.","base","base","base","R")
                     m "What?- Why not?"
@@ -385,7 +385,7 @@ label tonks_talk:
                     g9 "(I could get used to that.)"
                     jump tonks_talk
 
-                "{color=#858585}-Custom Input--{/color}" if ton_friendship < 60:
+                "{color=[menu_disabled]}-Custom Input--{/color}" if ton_friendship < 60:
                     m "(I don't think she's yet ready for that)"
                     jump tonks_talk
 
@@ -450,7 +450,7 @@ label tonks_talk:
                     g4 "(What does she mean by that?)"
                     jump tonks_talk
 
-                "{color=#858585}-Cunt-{/color}" if ton_friendship < 60:
+                "{color=[menu_disabled]}-Cunt-{/color}" if ton_friendship < 60:
                     label .cunt_fail:
                     call ton_main("[ton_genie_name], I'm used to getting insulted by my many previous lovers...","base","base","raised","mid")
                     call ton_main("Truth be told I bloody love it!","open_wide_tongue","base","base","ahegao")
@@ -469,7 +469,7 @@ label tonks_talk:
                     call ton_main("Do it, I dare you!","horny","base","base","mid", hair="horny")
                     jump tonks_talk
 
-                "{color=#858585}-Custom Input--{/color}" if ton_friendship < 60:
+                "{color=[menu_disabled]}-Custom Input--{/color}" if ton_friendship < 60:
                     m "(I don't think she's yet ready for that)"
                     jump tonks_talk
 

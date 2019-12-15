@@ -42,7 +42,7 @@ label summon_susan:
             else:
                 jump susan_talk
                 
-        "{color=#858585}-Sexual favours-{/color}{icon=interface/icons/small/condom.png}" if cho_favors_unlocked:
+        "{color=[menu_disabled]}-Sexual favours-{/color}{icon=interface/icons/small/condom.png}" if cho_favors_unlocked:
             $ TBA_message()
             jump susan_requests
 
@@ -55,9 +55,9 @@ label summon_susan:
 
             $ hide_transitions = True
             call sus_main(xpos="wardrobe",ypos="base")
-            call screen wardrobe
+            call screen wardrobe_old
 
-        "{color=#858585}-Hidden-{/color}" if not susan_wardrobe_unlocked:
+        "{color=[menu_disabled]}-Hidden-{/color}" if not susan_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")
             jump susan_requests
 
@@ -67,7 +67,7 @@ label summon_susan:
             call gift_menu
             jump susan_requests
 
-        "{color=#858585}-Gifts-{/color}{icon=interface/icons/small/gift.png}" if gave_susan_gift:
+        "{color=[menu_disabled]}-Gifts-{/color}{icon=interface/icons/small/gift.png}" if gave_susan_gift:
             $ TBA_message()
             #m "I already gave her a gift today. Don't want to spoil her too much..."
             jump susan_requests

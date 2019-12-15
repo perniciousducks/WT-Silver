@@ -558,8 +558,6 @@ screen DRgame_blktone(): #Use this instead of "blktone", or it will cause issues
         add im.Alpha("interface/blackfade.png", 0.7)
     elif DRgame.fire == 1:
         add im.Alpha("interface/blackfade.png", 0.3)
-    else:
-        add "blank.png"
     zorder 4
 
 screen DRgame_menu():
@@ -678,14 +676,14 @@ label DRgame_fireplace:
             if DRgame.fire == 2:
                 "The fire is roaring..."
                 "It will burn until night falls."
-        "{color=#858585}-Stoke the fire-{/color}" if DRgame.wood < 1 or DRgame.fire >= 2:
+        "{color=[menu_disabled]}-Stoke the fire-{/color}" if DRgame.wood < 1 or DRgame.fire >= 2:
             if DRgame.fire >= 2:
                 call nar("The fire burns more than enough.")
             else:
                 call nar("You don't have any more wood to burn.\nSoon you will all freeze to death.")
         "-Cook some meat-" if DRgame.fire >= 1 and DRgame.meat >= 1:
             jump DRgame_cook_meat
-        "{color=#858585}-Cook some meat-{/color}" if DRgame.fire >= 1 and DRgame.meat < 1:
+        "{color=[menu_disabled]}-Cook some meat-{/color}" if DRgame.fire >= 1 and DRgame.meat < 1:
             call nar("You don't have any meat to cook.")
         "-Leave the fireplace-":
             jump DRgame_resume

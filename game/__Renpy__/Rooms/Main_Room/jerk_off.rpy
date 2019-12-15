@@ -21,13 +21,13 @@ label jerk_off:
     menu:
         "-Hermione's panties-" if hg_ps_get_panties.inProgress:
             $ her_panties_soaked = True #True when choose to cum on Hermione's panties.
-        "{color=#858585}...(LOCKED)...{/color}" if not hg_ps_get_panties.inProgress:
+        "{color=[menu_disabled]}...(LOCKED)...{/color}" if not hg_ps_get_panties.inProgress:
             ">You lack the item required for this option."
             jump  how_to_finish
 
         "-Cho's panties-" if has_cho_panties:
             $ cho_panties_soaked = True
-        "{color=#858585}...(LOCKED)...{/color}" if not has_cho_panties:
+        "{color=[menu_disabled]}...(LOCKED)...{/color}" if not has_cho_panties:
             ">You lack the item required for this option."
             jump  how_to_finish
 

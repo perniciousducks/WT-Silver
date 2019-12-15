@@ -74,7 +74,7 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
         cho_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
         cho_class.special(emote=emote)
 
-    if not renpy.get_screen("t_wardrobe_menu"):
+    if not renpy.get_screen("wardrobe_menu"):
         show screen cho_main()
     show screen bld1
 

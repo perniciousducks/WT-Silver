@@ -75,7 +75,7 @@ label summon_cho:
                 jump cho_requests
             jump cho_training_menu
             
-        "{color=#858585}-Training-{icon=interface/icons/small/quidditch.png}" if cho_quid.lock_training:
+        "{color=[menu_disabled]}-Training-{icon=interface/icons/small/quidditch.png}" if cho_quid.lock_training:
             m "(She's as ready as one can be.)"
             jump cho_requests
             
@@ -87,17 +87,17 @@ label summon_cho:
             else:
                 jump cho_favor_menu
                 
-        "{color=#858585}-Sexual favours-{/color}{icon=interface/icons/small/condom.png}" if not cho_favors_unlocked:
+        "{color=[menu_disabled]}-Sexual favours-{/color}{icon=interface/icons/small/condom.png}" if not cho_favors_unlocked:
             m "(I need to help her with her Quidditch training, before I can ask for something like this.)"
             jump cho_requests
 
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if cho_wardrobe_unlocked:
-            call t_wardrobe("cho_main")
+            call wardrobe("cho_main")
             jump cho_requests
 
-        "{color=#858585}-Hidden-{/color}" if not cho_wardrobe_unlocked:
+        "{color=[menu_disabled]}-Hidden-{/color}" if not cho_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")
             jump cho_requests
 
@@ -107,7 +107,7 @@ label summon_cho:
             call gift_menu
             jump cho_requests
 
-        "{color=#858585}-Gifts-{/color}" if gave_cho_gift:
+        "{color=[menu_disabled]}-Gifts-{/color}" if gave_cho_gift:
             m "I already gave her a gift today. Don't want to spoil her too much..."
             jump cho_requests
 
@@ -134,9 +134,9 @@ label cho_favor_menu:
                 menu_choices = []
                 for i in cc_favor_list:
                     if i in []: # Not in the game yet.
-                        menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
+                        menu_choices.append(("{color=[menu_disabled]}-Not Available-{/color}","na"))
                     elif i.start_tier > cho_tier:
-                        menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
+                        menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
                     else:
                         menu_choices.append((i.getMenuText(),i.start_label))
                         
@@ -153,7 +153,7 @@ label cho_favor_menu:
             else:
                 $ renpy.jump(result)
                 
-        "{color=#858585}-Public Requests-{/color}{icon=interface/icons/small/star_yellow.png}" if not daytime or not cho_requests_unlocked:
+        "{color=[menu_disabled]}-Public Requests-{/color}{icon=interface/icons/small/star_yellow.png}" if not daytime or not cho_requests_unlocked:
             if not cho_requests_unlocked:
                 call nar(">You haven't unlocked this feature yet.")
             elif not daytime:
@@ -180,9 +180,9 @@ label cho_requests_menu:
         menu_choices = []
         for i in cc_requests_list:
             if i in []: # Not in the game yet.
-                menu_choices.append(("{color=#858585}-Not Available-{/color}","na"))
+                menu_choices.append(("{color=[menu_disabled]}-Not Available-{/color}","na"))
             elif i.start_tier > cho_tier:
-                menu_choices.append(("{color=#858585}-Not ready-{/color}","vague"))
+                menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
             else:
                 menu_choices.append((i.getMenuText(),i.start_label))
         menu_choices.append(("-Never mind-", "nvm"))

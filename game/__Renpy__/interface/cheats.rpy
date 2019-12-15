@@ -7,6 +7,11 @@ default skip_to_hermione = False
 
 label cheats:
     menu:
+        "-Replay Xmas Event-" if not daytime:
+            jump xmas
+        "{color=#858585}-Replay Xmas Event-{/color}" if daytime:
+            "Available during the night only."
+            jump cheats
         "-Hermione Cheats-" if hermione_unlocked:
             label cheats_hermione:
             menu:

@@ -649,26 +649,6 @@ label her_tattoos_toggle:
     show screen hermione_main
     call screen wardrobe
 
-#label her_toggle: #NOT WORKING Might work with: getattr()
-#    hide screen hermione_main
-#    if h_request_wear_"+str(toggle_obj)+":
-#        $ h_request_wear_"+str(toggle_obj)+" = False
-#        $ hermione_wear_"+str(toggle_obj)+" = False
-#    else:
-#        $ h_request_wear_"+str(toggle_obj)+" = True
-#        $ hermione_wear_"+str(toggle_obj)+" = True
-#    call update_her_uniform
-#    show screen hermione_main
-#    call screen wardrobe
-
-
-
-
-
-
-
-
-
 
 ### MISCELLANEOUS SECTION ###
 
@@ -677,7 +657,6 @@ label equip_piercing:
     if active_girl == "hermione":
         call set_her_piercing(piercing_choice)
     jump return_to_wardrobe
-
 
 
 ## Tattoos ##
@@ -695,17 +674,6 @@ label equip_tattoo:
         $ hermione_wear_tattoos = True
 
     jump return_to_wardrobe
-
-
-
-label wardrobe_fail(text=""):
-    hide screen wardrobe
-    if text != "":
-        call nar(">[text]")
-
-    return
-
-
 
 
 ### GIFTS SECTION ###

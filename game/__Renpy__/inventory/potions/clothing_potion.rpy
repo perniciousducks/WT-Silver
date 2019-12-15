@@ -3,18 +3,31 @@
 ### TRANSPARENCY POTION ###
 
 label potion_scene_4: #Transparent uniform
-    m "[hermione_name], I have another potion for you."
-    call her_main("I'm not sure that I like these potions [genie_name].","normal","frown")
-    call her_main("Especially after the time you tried to turn me into a cat.","annoyed","frown")
-    m "To be fair I was trying to turn you into another girl..."
-    call her_main("That's not much better [genie_name].","angry","angry")
-    m "Isn't it?"
-    call her_main("Well at least promise me that this one isn't going to embarrass me in the middle of class.","open","angryCl")
-    call her_main("My reputation is suffering enough as it is. I don't need these constant potions causing me to transform in front of my peers.","annoyed","angryL")
+    if her_potions_drunk:
+        m "[hermione_name], I have another potion for you."
+        call her_main("I'm not sure that I like these potions, [genie_name].","normal","frown")
+
+        if "cat_polyjuice" in her_potions_drunk:
+            call her_main("Especially after the time you tried to turn me into a cat.","annoyed","frown")
+            m "To be fair I was trying to turn you into another girl..."
+            call her_main("That's not much better [genie_name].","angry","angry")
+            m "Isn't it?"
+        
+        call her_main("At least promise me that this one isn't going to embarrass me in the middle of class.","open","angryCl")
+        call her_main("My reputation is suffering enough as it is. I don't need these constant potions causing me to transform in front of my peers.","annoyed","angryL")
+    else:
+        m "[hermione_name], I have a potion for you."
+        call her_main("I'm not sure I like the idea of drinking a random potion, [genie_name].","normal","frown")
+
     m "I promise that this potion won't affect your body in any way."
     call her_main("Well then what on earth is it going to do?","angry","angry")
-    m "As always [hermione_name], you'll ha-"
-    call her_main("Have to wait and see. I know.","normal","frown")
+
+    if her_potions_drunk:
+        m "As always [hermione_name], you'll ha-"
+        call her_main("Have to wait and see. I know.","normal","frown")
+    else:
+        m "You'll just have to wait and see..."
+        call her_main("*Hmmph*","normal","frown")
 
     call her_chibi("drink_potion","mid","base")
 
@@ -45,13 +58,15 @@ label potion_scene_4: #Transparent uniform
 
     $ transparent_quest = True
 
+    $ her_potions_drunk.add("transparency")
+
     jump main_room
 
 
 label potion_scene_4_2: #Scene where Hermione comes back after classes angry and confused at having her uniform made transparent
     $ transparent_quest = False
-    call play_sound("door")
-    call her_chibi("stand","mid","base")
+
+    call her_walk(action="enter", xpos="mid", ypos="base", speed=1.6)
 
     show screen bld1
     if her_whoring <= 7: #Very angry and embarrassed
@@ -120,7 +135,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "You're getting off on this aren't you?"
         call her_main("...","smile","baseL")
         call her_main("I've never been so turned on in my life. Having all eyes on me. Having every boy imagine doing unspeakable things to me.","soft","ahegao")
-        call her_main("Snape made me stand out the front of class after I talked back to him.","base","down")
+        call her_main("Snape made me stand in front of the class after I talked back to him.","base","down")
         call her_main("I think that I orgasmed just from the looks people gave me.","grin","dead")
         m "Well done [hermione_name]. You're becoming quite the slut."
         call her_main("Thank you [genie_name]. Is that all?","base","glance")
@@ -128,7 +143,6 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         call her_main("{image=textheart}","smile","baseL")
 
     call reset_her_transparency
-    $ transparent_quest = False
 
     call her_walk(action="leave", speed=2)
 

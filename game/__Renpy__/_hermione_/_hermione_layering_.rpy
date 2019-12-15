@@ -470,7 +470,7 @@ label update_her_action:
 
 
     #Naked Actions
-    if hermione_use_action and hermione_action in ["hands_behind","covering","covering_uniform","covering_cloak","fingering","covering_top","pinch","hands_cuffed","milk_breasts"]:
+    if hermione_use_action and hermione_action in ["hands_behind","covering","covering_uniform","covering_cloak","fingering","covering_top","pinch","hands_cuffed"]:
 
         $ hermione_wear_top = False
         $ hermione_wear_bra = False
@@ -527,12 +527,14 @@ label update_her_action:
             $ h_right_arm        = "blank"
             $ h_left_arm         = "cuffed"
 
-        if hermione_action == "milk_breasts":
+    if hermione_use_action and hermione_action == "milk_breasts":
+        $ hermione_wear_top = False
+        $ hermione_wear_bra = False
 
-            $ h_right_arm        = "right_1"
-            $ h_left_arm         = "left_1"
+        $ h_right_arm        = "right_1"
+        $ h_left_arm         = "left_1"
 
-            $ hermione_action_b  = "characters/hermione/clothes/milk/milk_"+str(milking)+".png"
+        $ hermione_action_b  = "characters/hermione/clothes/milk/milk_"+str(milking)+".png"
 
     return
 

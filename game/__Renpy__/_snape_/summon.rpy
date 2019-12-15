@@ -90,7 +90,7 @@ label snape_potion_menu:
             ">You already have a Lactantium potion."
             jump snape_ready
         "-Lactantium-" if not potion_inv.has("p_milk_potion"):
-            if potion_scene_11_progress < 1:
+            if potion_scene_11_progress == 0:
                 call sna_main("Ah yes, a unique concoction of mine. I have a bottle on hand at all times.","snape_37")
                 call sna_main("Just in case...","snape_41")
                 call sna_main("Here, take it!","snape_02")
@@ -132,8 +132,9 @@ label snape_potion_menu:
                     pass
                 menu:
                     "-Normal potion-":
-                        call sna_main("Here you are Mr. Adventurous...","snape_35")
                         $ potion_version = 1
+                        call sna_main("Here you are Mr. Adventurous...","snape_35")
+                    
                     "-futa potion-":
                         call sna_main("What? Are you sure you want this one?","snape_44")
                         call sna_main("I mean I figured you were a bit of a pervert...","snape_02")
@@ -141,29 +142,31 @@ label snape_potion_menu:
                         call sna_main("Oh well, if you want it, it's yours...","snape_02")
                         menu:
                             "-give it to me-":
+                                $ potion_version = 2
                                 call sna_main("really?","snape_44")
                                 call sna_main("you're more Adventurous than I thought!","snape_02")
                                 call sna_main("Here, I'll even give you an extra attachment for the milker!","snape_46")
                                 ">Snape hands you a different cannister with a soft plastic opening in the bottom. It looks almost like an anus."
                                 call sna_main("I also put an undetectable extension charm on the cannister... Promise to tell me what happens!","snape_45")
                             "-no-":
-                                  call sna_main("Too bad...","snape_35")
-                                  jump snape_potion_choice
-
-                        $ potion_version = 2
+                                call sna_main("Too bad...","snape_35")
+                                jump snape_potion_choice
+                    
                     "-Permanent breast expansion-":
                         call sna_main("The milk production will still only last a day...","snape_02")
                         call sna_main("But her big boobs will be permanent...","snape_37")
+                        if hermione_perm_expand_breasts:
+                            call sna_main("Drinking this potion again will undo the permanent effect","snape_02")    
                         call sna_main("Are you sure you want this?","snape_02")
                         call sna_main("She might not like it...","snape_46")
                         menu:
                             "-yes-":
+                                $ potion_version = 3
                                 call sna_main("Fantastic!!!","snape_45")
                             "-no-":
-                                  call sna_main("Too bad...","snape_35")
-                                  jump snape_potion_choice
-
-                        $ potion_version = 3
+                                call sna_main("Too bad...","snape_35")
+                                jump snape_potion_choice
+                    
                 ">Snape quickly pushes the milky potion into your hands."
                 ">Milking potion received!"
                 $ potion_inv.add("p_milk_potion")

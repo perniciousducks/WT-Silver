@@ -74,7 +74,7 @@ screen animation_feather(): #Falling feather animation
 
 screen phoenix_food(): #Phoenix's food.
     tag phoenix_food
-    add "images/rooms/_objects_/phoenix/food.png" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5
+    add "images/rooms/_objects_/phoenix/food.png" xpos phoenix_OBJ.xpos ypos phoenix_OBJ.ypos xanchor 0.5 yanchor 0.5 zoom 0.5
     zorder 2
 
 
@@ -263,19 +263,19 @@ screen blktone():
     add im.Alpha("interface/blackfade.png", 0.5)
 
 screen blktone2():
-    zorder 5 #Otherwise bird's food will be on top.
+    zorder 4
     add im.Alpha("interface/blackfade.png", 0.2)
 
 screen blktone5(): #For narrator. (label nar) #Don't add tag blktone!
-    zorder 5 #Otherwise bird's food will be on top.
+    zorder 4
     add im.Alpha("interface/blackfade.png", 0.5)
 
 screen blktone8():
-    zorder 5 #Otherwise bird's food will be on top.
+    zorder 4
     add im.Alpha("interface/blackfade.png", 0.8)
 
 screen whitetone8():
-    zorder 5 #Otherwise bird's food will be on top.
+    zorder 5
     add im.Alpha("interface/white.jpg", 0.8)
 
 screen white():

@@ -608,6 +608,7 @@ label ll_pf_blowjob_T1_marathon: # Call label
     ######################
     # NEXT DAY TRANSITION#
     ######################
+    #TODO Check if this day transition works as expected in the game (daytime is normally only changed by common_start)
     play bg_sounds "sounds/day.mp3" fadeout 5.0 fadein 6.0
     centered "{size=+7}{color=#cbcbcb}One eternity later..{/color}{/size}"
     $ daytime=True

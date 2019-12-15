@@ -742,7 +742,7 @@ label ag_st_imperio_E3:
     call ton_main("*Mhmm*... yeah...","horny","base","angry","mid", hair="horny")
     call ton_main("It's so goood! {image=textheart}","open_wide_tongue","base","worried","ahegao")
     g9 "I think you're enjoying this a bit too much!"
-    g9 "Just what would your students think if they knew their teacher gets off from being mind controlled?"
+    g9 "Just what would your students think if they knew their teacher gets off on being mind controlled?"
     call ton_main("Oh - be quiet you...","base","base","angry","mid")
     call ton_main("................................","upset","base","worried","R")
     call ton_main("Is it that obvious?","open","base","sad","mid")

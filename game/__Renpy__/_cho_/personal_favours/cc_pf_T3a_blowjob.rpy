@@ -1167,7 +1167,7 @@ label cho_favor_3_3:
             m "Get on your knees and open your mouth."
             call cho_main("Well...","smile","base","base","mid")
             call cho_main("Well...I am getting [current_payout] house Points...","smile","base","base","mid")
-            "Cho slides down to her knees and opens her mouth, sticking her tounge out."
+            "Cho slides down to her knees and opens her mouth, sticking her tongue out."
             call cho_main("ah Oo 'ea'y?(are you Ready?)","smile","base","base","mid")
             "Your cock throbs against your heavy robes."
             m "That's good, girl."

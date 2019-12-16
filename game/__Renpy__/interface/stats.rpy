@@ -389,3 +389,25 @@ screen stats_menuitem(xx, yy):
                         elif current_category == "Susan":
                             use text_stat("Cursed with Imperio:")
                             use text_stat("- ", " times -", ag_se_imperio_sb.counter)
+
+screen stat_bar(steps, top_text, buttom_text, stat_number, top_padding = 20):
+    $stateFullImage = "interface/stat_select/"+str(interface_color)+"/StatBar_Full.png"
+    $stateEmptyImage = "interface/stat_select/"+str(interface_color)+"/StatBar_Empty.png"
+
+    #Just some padding
+    frame:
+        background #00000000
+        ysize top_padding
+
+    text top_text xalign 0.5 size 30 bold 0.1
+    frame:
+        background #00000000
+        xalign 0.5
+        ysize 30
+        xsize 360
+        add Crop((0, 0, steps*36, 600), stateFullImage)
+        add stateEmptyImage
+    text "" +buttom_text+ " (lvl " +str(stat_number)+ ")" xalign 0.5 size 20
+
+screen text_stat(startText="", endText="", amount="", top_padding = 20):
+    text (startText +str(amount)+ endText) xpos 20 size 14

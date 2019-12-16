@@ -42,7 +42,7 @@ screen hotkeys_main():
         key hkey_work action Jump("paperwork")
     if store_intro_done:
         key hkey_book action Jump("read_book_menu")
-    key hkey_stats action Jump("open_stat_menu")
+    key hkey_stats action Jump("stats_menu")
     key hkey_inventory action Jump("inventory_menu")
     key hkey_fap action Jump("jerk_off")
 

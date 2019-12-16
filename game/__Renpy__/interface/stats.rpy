@@ -2,11 +2,88 @@ init python:
     def stats_sortfilter(item, sortby=False):
         return item
 
-####################################
-############# Menu #################
-####################################
-
 default stats_show_locked = False
+
+label update_stats:
+
+    ### Hermione ###
+
+    # Whoring
+    $ her_whoring_word_list = ["Pure", "Naive", "Curious", "Naughty", "Perverse", "Immoral", "Slutty", "Shameless", "Cumslut", "Total Cumslut", "Shameless Cumslut"]
+    $ her_whoring_word = her_whoring_word_list[int(her_whoring/2.4)]
+
+    # Reputation
+    $ her_reputation_word_list = ["Teacher's pet", "School star", "good girl", "minx", "slutty schoolgirl", "easy lay", "whore", "slut for sex", "gryffindor whore", "school cumdump", "mudblood cumdump"]
+    #$ slutWords = ["Teacher's pet", "School star", "good girl", "principal's pet", "slutty schoolgirl", "slut", "principal's slut", "daddy's girl", "gryffindor slut", "Dumbledore's whore", "Dumbledore's cumdump"]
+    $ her_reputation_word = her_reputation_word_list[int(her_reputation/2.4)]
+
+    # Tutoring
+    $ her_tutoring_word_list = ["Not started", "naive", "tempted", "curious", "tainted", "eager", "sinful", "perverted", "corrupted", "depraved", "shattered"]
+    $ her_tutoring_word = her_tutoring_word_list[int(her_tutoring/1.4)]
+
+    # Mood
+    $ her_mood_word_list = ["Cheerful", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]
+    if her_mood >= 0 and her_mood <= 10:
+        $ her_mood_word = her_mood_word_list[int(her_mood/1.0)]
+    else:
+        $ her_mood_word = "Very Angry"
+
+    ### Astoria ###
+    #call astoria_clothing_level
+    #$ ast_cuteness_word_list = ["Ugly Duckling", "Swot", "", "", "", "", "", "Cutypie", "", "", ""]
+    #$ ast_cuteness_word = ast_cuteness_word_list[int(ast_clothing_level/10)]
+    # Mood
+    $ ast_mood_word_list = ["Cheerful", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]
+    if ast_mood >= 0 and ast_mood <= 10:
+        $ ast_mood_word = ast_mood_word_list[int(ast_mood/1.0)]
+    else:
+        $ ast_mood_word = "Very Angry"
+
+    ### Cho ###
+
+    # Whoring
+    $ cho_whoring_word_list = ["Incorruptible", "Focused", "Resilient", "Bi-Curious", "Naughty", "Immoral", "Perverse", "Slutty", "Shameless", "Cumslut", "Shameless Cumslut"]
+    $ cho_whoring_word = cho_whoring_word_list[int(cho_whoring/2.4)]
+
+    # Reputation
+    $ cho_reputation_word_list = ["Tomboy", "Team Player", "Quidditch Star", "Flying Ace", "Minx", "Manipulative", "Exploiting", "Cheater", "Team's Cumdump", "Quidditch Whore", "Cheating Slut"]
+    $ cho_reputation_word = cho_reputation_word_list[int(cho_reputation/2.4)]
+
+    # Mood
+    $ cho_mood_word_list = ["Cheerful", "Reluctant", "Gloomy", "Stern", "Slightly Annoyed", "Annoyed", "Upset", "Outraged", "Mad", "Angry", "Very Angry"]
+    if cho_mood >= 0 and cho_mood <= 10:
+        $ cho_mood_word = cho_mood_word_list[int(cho_mood/1.0)]
+    else:
+        $ cho_mood_word = "Very Angry"
+
+    ### Snape ###
+
+    # Support
+    $ sna_support_word_list = ["Tight-Arse", "Miser", "Stingy", "Sparing", "Adequate", "Loose", "Easy", "Generous", "Frivolous", "Excessive", "Exorbitant"]
+    $ sna_support_word = sna_support_word_list[int(sna_support/1.5)]
+
+    # Friendship
+    $ sna_friendship_word_list = ["Unknown", "Colleague", "Confidant", "Trusted", "Acquaintance", "Friend", "Good friend", "Homie", "If I had to pick a dude...", "BFF", "Bros"]
+    $ sna_friendship_word = sna_friendship_word_list[int(sna_friendship/10)]
+
+    ### Tonks ###
+
+    # Reputation
+    $ ton_reputation_word_list = ["Teacher", "Bore", "Weirdo", "A Bit Nutty", "Easy Going", "Tart", "Naughty Teacher", "Slutty Teacher", "Slag", "Shameful", "Disgrace"]
+    $ ton_reputation_word = ton_reputation_word_list[int(ton_reputation/2.4)]
+
+    # Support
+    $ ton_support_word_list = ["Undecided", "Modest", "Candid", "Unbiased", "Positive", "Fair", "Neutral", "Biased", "Scummy", "Cruel", "Heartless"]
+    $ ton_support_word = ton_support_word_list[int(ton_support/1.2)]
+
+    # Friendship
+    $ ton_friendship_word_list = ["Unknown", "inferior", "employee", "advisor", "trusted advisor", "Acquaintance", "friend", "Girlfriend", "Partner in crime", "Bonnie & Clyde", "Master & Slave"]
+    $ ton_friendship_word = ton_friendship_word_list[int(ton_friendship/10)]
+
+    #$ ton_sluttiness_word_list = ["Masochist", "Disgrace", "Street Whore", "Harlot", "Tart", "Sexually open", "Naughty Teacher", "Easy Going", "Professor", "Bore", "Nun"]
+    #$ ton_sluttiness_word = ton_sluttiness_word_list[int(ton_clothing_level/10)]
+
+    return
 
 label stats_menu(xx=150, yy=90):
 
@@ -394,14 +471,14 @@ screen stat_bar(steps, top_text, buttom_text, stat_number, top_padding = 20):
     $stateFullImage = "interface/stat_select/"+str(interface_color)+"/StatBar_Full.png"
     $stateEmptyImage = "interface/stat_select/"+str(interface_color)+"/StatBar_Empty.png"
 
-    #Just some padding
+    # Just some padding
     frame:
-        background #00000000
+        background "#0000"
         ysize top_padding
 
     text top_text xalign 0.5 size 30 bold 0.1
     frame:
-        background #00000000
+        background "#0000"
         xalign 0.5
         ysize 30
         xsize 360

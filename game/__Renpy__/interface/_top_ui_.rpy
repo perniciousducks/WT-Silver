@@ -111,7 +111,7 @@ screen ui_top_bar():
                 if room_menu_active:
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
                     tooltip "Characters (c)"
-                    action Jump("open_stat_menu")
+                    action Jump("stats_menu")
 
             # Inventory button
             imagebutton:

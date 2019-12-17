@@ -345,7 +345,7 @@ screen wardrobe_menu(xx, yy):
                     background "interface/frames/"+str(interface_color)+"/check_"+str(_is_worn)+".png"
                     tooltip "Show/hide "+str(_item)
                     action [SensitiveIf(_is_equipped), Return(["toggle", _item])]
-        use drop_down_menu(name="Options", pos=(360, 29), items_offset=(-58, 2)):
+        use drop_down_menu(name="Options", pos=(350, 29), items_offset=(-48, 2)):
             textbutton "Music":
                 style interface_style+"_dropdown"
                 background "interface/frames/"+str(interface_color)+"/check_"+str(wardrobe_music)+".png"

@@ -1,17 +1,21 @@
 screen drop_down_menu(pos=(0, 0), name="", spacing=0, items_offset=(0, 0), background="#00000080"):
     modal True
     default visible = False
+    default icon = "{image=interface/general/arrow_up.png}"
+    
+    if visible:
+        button style "empty" action [SetLocalVariable("visible", False), SetLocalVariable("icon", "{image=interface/general/arrow_up.png}")]
 
-    frame:
+    window:
         style "empty"
         pos pos
-        textbutton "[name]":
+        textbutton "[name] [icon]":
             style "empty"
             ysize 24
             text_yalign 0.5
             text_size 12
             text_hover_color "#FFF"
-            action ToggleLocalVariable("visible", True, False)
+            action [ToggleLocalVariable("visible", True, False), ToggleLocalVariable("icon", "{image=interface/general/arrow_up.png}", "{image=interface/general/arrow_down.png}")]
         if visible:
             frame:
                 pos (0, 24)

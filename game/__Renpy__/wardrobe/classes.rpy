@@ -834,7 +834,9 @@ init python:
                 # Image cannot be defined in the class init phase (Flatten overrides animation)
                 # TODO: find a way to fix that or create a new function if can't be fixed
                 ######################################
-                sprite_list.append([renpy.get_registered_image("spr_{} blink".format(self.char)), 8.5, 0, 0, False])
+
+                if not "Cl" in self.face["eyes"][0]:
+                    sprite_list.append([renpy.get_registered_image("spr_{} blink".format(self.char)), 8.5, 0, 0, False])
                 
                 # Add body to sprite list
                 for value in self.body.itervalues():

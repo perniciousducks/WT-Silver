@@ -110,20 +110,20 @@ default choq_cloth_schoolskirt3     = cloth_class(char="cho", category="bottoms"
 default cho_outfit_quidditch = outfit_class(name="Quidditch", group=[choq_cloth_topsweater1, choq_cloth_pantslong2, choq_cloth_robequidditch1, choq_cloth_glovesquidditch1, cho_cloth_basicpanties1])
 
 # Unlockables
-default cho_outfit_party        = outfit_class(name="Party", group=[cho_hair_ponytail, cho_cloth_skirtshort2, cho_cloth_bikinitop1])
-default cho_outfit_trainee      = outfit_class(name="Trainee", group=[cho_hair_ponytail, cho_cloth_basicbra1, cho_cloth_basicpanties1, cho_cloth_schoolskirt2, cho_cloth_topschool3, cho_cloth_pantyhose_stockings_1, cho_earring_basic])
-default cho_outfit_sailor       = outfit_class(name="Sailor", group=[cho_hair_ponytail, cho_cloth_topsailor1, cho_cloth_skirtshort1, cho_cloth_sailor_stockings_1, cho_cloth_bikinibottom2])
-default cho_outfit_misty        = outfit_class(name="Misty", group=[cho_hair_ponytail, cho_acc_suspenders, cho_cloth_topshirt1, cho_cloth_pantsshort3])
-default cho_outfit_bikini       = outfit_class(name="Bikini", group=[cho_hair_ponytail, cho_cloth_bikinitop2, cho_cloth_bikinibottom1])
-default cho_outfit_lacelingerie = outfit_class(name="Lingerie", group=[cho_hair_ponytail, cho_cloth_chokerlace1, cho_cloth_lacegarter1, cho_cloth_lacepanties1, cho_cloth_lacebra1, cho_cloth_lace_stockings_1, cho_earring_feather])
-default cho_outfit_dress1       = outfit_class(name="Lingerie", group=[cho_hair_ponytail, cho_cloth_dress1])
+default cho_outfit_party        = outfit_class(name="Party", group=[cho_hair_ponytail_natural, cho_cloth_skirtshort2, cho_cloth_bikinitop1])
+default cho_outfit_trainee      = outfit_class(name="Trainee", group=[cho_hair_ponytail_natural, cho_cloth_basicbra1, cho_cloth_basicpanties1, cho_cloth_schoolskirt2, cho_cloth_topschool3, cho_cloth_pantyhose_stockings_1, cho_earring_basic])
+default cho_outfit_sailor       = outfit_class(name="Sailor", group=[cho_hair_ponytail_natural, cho_cloth_topsailor1, cho_cloth_skirtshort1, cho_cloth_sailor_stockings_1, cho_cloth_bikinibottom2])
+default cho_outfit_misty        = outfit_class(name="Misty", group=[cho_hair_ponytail_natural, cho_acc_suspenders, cho_cloth_topshirt1, cho_cloth_pantsshort3])
+default cho_outfit_bikini       = outfit_class(name="Bikini", group=[cho_hair_ponytail_natural, cho_cloth_bikinitop2, cho_cloth_bikinibottom1])
+default cho_outfit_lacelingerie = outfit_class(name="Lingerie", group=[cho_hair_ponytail_natural, cho_cloth_chokerlace1, cho_cloth_lacegarter1, cho_cloth_lacepanties1, cho_cloth_lacebra1, cho_cloth_lace_stockings_1, cho_earring_feather])
+default cho_outfit_dress1       = outfit_class(name="Lingerie", group=[cho_hair_ponytail_natural, cho_cloth_dress1])
 default cho_outfit_cheerleader  = outfit_class(name="Cheerleader", group=[cho_hair_pigtails, cho_earring_snitch, cho_cloth_quidstocking1, cho_cloth_sportpanties2, cho_cloth_sportbra1, cho_cloth_quidskirt1, cho_cloth_topquid1, cho_makeup_blush])
 
 # Temporal save
-default cho_outfit_last   = outfit_class(name="Last worn items", group=[cho_hair_ponytail])
-default cho_outfit_custom = outfit_class(name="Default", group=[cho_hair_ponytail.clone(), cho_cloth_topschool1.clone(), cho_cloth_schoolskirt1.clone(), cho_cloth_basicbra1.clone(), cho_cloth_basicpanties1.clone()], unlocked=True) # Don't change
+default cho_outfit_last   = outfit_class(name="Last worn items", group=[cho_hair_ponytail_natural])
+default cho_outfit_custom = outfit_class(name="Default", group=[cho_hair_ponytail_natural.clone(), cho_cloth_topschool1.clone(), cho_cloth_schoolskirt1.clone(), cho_cloth_basicbra1.clone(), cho_cloth_basicpanties1.clone()], unlocked=True) # Don't change
 
-default cho_outfit_default = outfit_class(name="Default", group=[cho_hair_ponytail.clone(), cho_cloth_topschool1.clone(), cho_cloth_schoolskirt1.clone(), cho_cloth_basicbra1.clone(), cho_cloth_basicpanties1.clone(), cho_cloth_house_stockings_1.clone()])
+default cho_outfit_default = outfit_class(name="Default", group=[cho_hair_ponytail_natural.clone(), cho_cloth_topschool1.clone(), cho_cloth_schoolskirt1.clone(), cho_cloth_basicbra1.clone(), cho_cloth_basicpanties1.clone(), cho_cloth_house_stockings_1.clone()])
 
 label default_cho_class_init:
 python:

@@ -736,10 +736,10 @@ label hg_pf_strip_T1_E2:
     call her_walk(xpos="door", ypos="base")
 
     pause.2
-    call chibi_effect("thought", "hermione")
+    call chibi_emote("thought", "hermione")
     pause.5
     call play_sound("lock")
-    call chibi_effect("hide")
+    call chibi_emote("hide", "hermione")
     pause.2
 
     m "??!"

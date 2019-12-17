@@ -206,10 +206,10 @@ label ball_quest_E1:
 
                     #Locks the door
                     pause.5
-                    call chibi_effect("thought","hermione")
+                    call chibi_emote("thought","hermione")
                     pause.5
 
-                    call chibi_effect("hide")
+                    call chibi_emote("hide", "hermione")
                     $ renpy.play('sounds/09_lock.wav')
                     pause.4
 

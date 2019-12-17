@@ -180,7 +180,7 @@ screen genie_desk_interactive():
                 tooltip "Open desk"
             else:
                 tooltip "Examine Desk"
-            hovered Show("gui_tooltip", img="exclaim_01", xx=195+140, yy=210)
+            hovered Show("gui_tooltip", img="emo_exclaim", xx=195+140, yy=210)
             unhovered Hide("gui_tooltip")
             action Jump("desk")
             sensitive room_menu_active

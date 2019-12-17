@@ -62,3 +62,11 @@ transform random_blink(close_image, open_image=Null()):
         open_image
         pause 5
     repeat
+
+transform emote_effect():
+    alpha 0.0
+    on show:
+        zoom 0.8
+        linear .2 zoom 1.0 alpha 1.0
+    on hide:
+        linear .2 zoom 1.2 alpha 0.0

@@ -56,11 +56,11 @@ label tonks_intro_E1:
 
     call play_sound("door")
     call ton_chibi("stand","door","base")
-    call chibi_effect(action="hearts", chibi="Tonks")
+    call chibi_emote("hearts", "tonks")
     with d3
     pause.5
 
-    call chibi_effect(action="hide")
+    call chibi_emote("hide", "tonks")
     with d3
     pause.1
 

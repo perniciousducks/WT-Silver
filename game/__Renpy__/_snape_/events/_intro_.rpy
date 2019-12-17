@@ -16,14 +16,14 @@ label snape_intro_E1:
     g4 "{size=-3}(An Indigenous life form!?){/size}"
     hide screen bld1
 
-    call chibi_effect("thought", "snape")
+    call chibi_emote("thought", "snape")
     pause 1
 
     call bld
     m "{size=-3}(looks human enough...){/size}"
     m "{size=-3}(Maybe if I just act cool he'll leave...?){/size}"
 
-    call chibi_effect("hide")
+    call chibi_emote("hide", "snape")
 
     call sna_walk(xpos="mid", ypos="base")
     pause.2

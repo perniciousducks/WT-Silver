@@ -1,8 +1,7 @@
 
+# Emotes
 
-### Emoticons ###
-
-image exclaim_01: #Exclamation mark.
+image emo_exclaim:
     "characters/emotes/animated/exlaim_01.png"
     pause.1
     "characters/emotes/animated/exlaim_02.png"
@@ -19,7 +18,7 @@ image exclaim_01: #Exclamation mark.
     pause.08
     "characters/emotes/animated/exlaim_07.png"
 
-image sad_01: #SAD SMILEY USED WHEN PETTING PHOENIX.
+image emo_sad:
     "characters/emotes/animated/exlaim_01.png"
     pause.1
     "characters/emotes/animated/sad_01.png"
@@ -42,7 +41,7 @@ image sad_01: #SAD SMILEY USED WHEN PETTING PHOENIX.
     pause.1
     "characters/emotes/animated/exlaim_07.png"
 
-image hoot: #OWL'S "HOOT!".
+image emo_hoot:
     "characters/emotes/animated/hoot_01.png"
     pause.07
     "characters/emotes/animated/hoot_02.png"
@@ -59,7 +58,20 @@ image hoot: #OWL'S "HOOT!".
     pause 3
     "characters/emotes/animated/exlaim_07.png"
 
-image notes: #A bunch of notes poping out with a "win" sound effect.
+image emo_thought:
+    "characters/emotes/animated/thought_02.png"
+    pause.5
+    "characters/emotes/animated/thought_01.png"
+    pause.5
+    repeat
+
+image emo_hearts:
+    zoom 0.5
+    offset (-60, 90)
+    "characters/emotes/animated/heart_01.png"
+
+# Not an emote...
+image notes:
     "images/animation/notes_01.png"
     pause.08
     "images/animation/notes_02.png"
@@ -78,14 +90,3 @@ image notes: #A bunch of notes poping out with a "win" sound effect.
     pause.08
     "images/animation/notes_09.png"
     pause.08
-
-image thought: #Thinking emotion over a chibi.
-    "characters/emotes/animated/thought_02.png"
-    pause.5
-    "characters/emotes/animated/thought_01.png"
-    pause.5
-    repeat
-
-
-
-

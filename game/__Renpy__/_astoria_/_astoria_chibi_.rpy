@@ -23,7 +23,6 @@ label ast_chibi(action=None, xpos=None, ypos=None, flip=False):
 
 label ast_walk(xpos=None, ypos=None, speed=1.0, action=None, loiter=True, redux_pause=0):
     call hide_characters
-    call hide_chibi_effects
     hide screen bld1
     hide screen blktone
     with d3

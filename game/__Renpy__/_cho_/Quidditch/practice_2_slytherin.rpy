@@ -869,7 +869,7 @@ label cc_st_hermione_blackmail:
     call cho_chibi("stand", "door", "base")
     with d3
 
-    call chibi_effect(action="thought", chibi="hermione")
+    call chibi_emote("thought", "hermione")
     pause 1
 
     call cho_walk(xpos="680", ypos="base")

@@ -10,6 +10,20 @@ screen chibi(chibi_object):
         # frame: # Debug frame
         #     background "#00ff0055"
 
+screen chibi_emote(emote, chibi_object):
+    zorder chibi_object.zorder
+    add "emo_{}".format(emote):
+        at emote_effect
+        anchor (0.5, 1.0)
+        pos chibi_object.pos
+        offset ((75, 50) if chibi_object.tag in ("genie", "snape") else (50, 0))
+
+label chibi_emote(emote, name):
+    python:
+        if emote == "hide":
+            emote = None
+        get_chibi_object(name).emote(emote)
+
 init -1 python:
     def update_chibi(name):
         # Update the chibi object for a given character
@@ -27,7 +41,6 @@ init -1 python:
 
     class chibi(object):
         #TODO Document usage of chibi class
-        #TODO Implement chibi_effect
         #TODO Fix: Coordinates vary for some chibis (maybe resolve positions outside of chibi class)
         #TODO Anchor chibi transforms to (0.5, 1.0) and realign positions
 
@@ -108,16 +121,33 @@ init -1 python:
             self.screen_tag = "{}_chibi".format(tag)
             renpy.define_screen(self.screen_tag, chibi._screen, tag=self.screen_tag, zorder="chibi_object.zorder")
 
+            # Define a screen for the chibi emote
+            self.emote_tag = "{}_chibi_emote".format(tag)
+            renpy.define_screen(self.emote_tag, chibi._emote_screen, tag=self.emote_tag, zorder="chibi_object.zorder")
+
         @staticmethod
         def _screen(chibi_object, **kwargs):
             # Emulate a Ren'py `use` statement to derive a chibi screen from the generic one
             renpy.use_screen("chibi", chibi_object, _name=kwargs["_name"], _scope=kwargs["_scope"])
+
+        @staticmethod
+        def _emote_screen(emote, chibi_object, **kwargs):
+            # Emulate a Ren'py `use` statement to derive a chibi_emote screen from the generic one
+            renpy.use_screen("chibi_emote", emote, chibi_object, _name=kwargs["_name"], _scope=kwargs["_scope"])
 
         def show(self):
             renpy.show_screen(self.screen_tag, chibi_object=self)
 
         def hide(self):
             renpy.hide_screen(self.screen_tag)
+            renpy.hide_screen(self.emote_tag)
+
+        def emote(self, emote=None):
+            if renpy.get_screen(self.emote_tag):
+                renpy.hide_screen(self.emote_tag)
+                renpy.pause(0.2) # Pause for duration of emote_effect
+            if emote:
+                renpy.show_screen(self.emote_tag, emote=emote, chibi_object=self)
         
         def update(self):
             self.clear()

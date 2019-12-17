@@ -651,7 +651,7 @@ label cc_pf_strip_T1_intro_E2:
 
     call cho_walk(xpos="desk", ypos="base")
     pause.5
-    call chibi_effect("thought","cho")
+    call chibi_emote("thought","cho")
     pause.8
 
     # Cho puts clothes back on.
@@ -1101,7 +1101,7 @@ label cc_pf_strip_T1_E3: # Repeats
     with d3
     pause.5
 
-    call chibi_effect("thought","hermione")
+    call chibi_emote("thought","hermione")
     pause.8
 
     call her_walk(xpos="660", ypos="base")

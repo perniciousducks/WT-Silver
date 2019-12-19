@@ -1,4 +1,4 @@
-screen drop_down_menu(pos=(0, 0), name="", spacing=0, items_offset=(0, 0), background="#00000080"):
+screen dropdown_menu(pos=(0, 0), name="", spacing=0, items_offset=(0, 0), background="#00000080"):
     modal True
     default visible = False
     default icon = "{image=interface/general/arrow_up.png}"

@@ -401,17 +401,20 @@ init python:
             
         def set_color_alt(self, l):
             self.color = [x[:] for x in l]
+            self.sprite_ico.color = self.color
             self.sprite_ico.cached = False
             self.cached = False
 
         def set_color(self, layer):
             x = bool(self.type != "hair" and (config.developer or cheat_wardrobe_alpha))
-            self.color[layer] = color_picker(self.color[layer], x, "Cloth layer "+str(layer+1), pos_xy=[20, 130])
+            self.color[layer] = color_picker(self.color[layer], x, "Colour channel "+str(layer+1), pos_xy=[20, 130], color_default=list(self.color_default[layer]))
+            self.sprite_ico.color = self.color
             self.sprite_ico.cached = False
             self.cached = False
             
         def reset_color(self):
             self.color = [x[:] for x in self.color_default]
+            self.sprite_ico.color = self.color
             self.sprite_ico.cached = False
             self.cached = False
         

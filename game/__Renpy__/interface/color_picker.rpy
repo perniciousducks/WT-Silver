@@ -1,10 +1,11 @@
-screen color_picker(color, alpha, title, pos_xy):
+screen color_picker(color, alpha, title, pos_xy, color_default):
     tag color_picker
     zorder 9
     modal True
 
     # Screen variables
     default rgba = color
+    default rgba_old = color
     default hue = 0
     default saturation = 0
     default value = 0
@@ -79,27 +80,47 @@ screen color_picker(color, alpha, title, pos_xy):
         # Selected color
         add Frame("interface/color_picker/checker.png", tile=True, ysize=100, xsize=100) xpos 360 ypos 180
         frame:
-            area (360, 180, 100, 100)
+            area (360, 180, 50, 100)
             background Solid(rgba)
+            text "New" xalign 0.5 color "#fff" outlines [(1, "#00000080", 1, 0)]
+        frame:
+            area (410, 180, 50, 100)
+            background Solid(rgba_old)
+            text "Old" xalign 0.5 color "#fff" outlines [(1, "#00000080", 1, 0)]
 
         # Text input
         vbox:
             pos (355, 25)
-            spacing 6
+            spacing 0
             textbutton "Red: " + str(int(rgba[0])):
                 size_group "rgba"
                 xsize 110
+                text_size 12
                 clicked Return(["input", 0])
             textbutton "Green: " + str(int(rgba[1])):
                 size_group "rgba"
+                xsize 110
+                text_size 12
                 clicked Return(["input", 1])
             textbutton "Blue: " + str(int(rgba[2])):
                 size_group "rgba"
+                xsize 110
+                text_size 12
                 clicked Return(["input", 2])
             if alpha:
                 textbutton "Alpha: " + str(int(rgba[3])):
                     size_group "rgba"
+                    xsize 110
+                    text_size 12
                     clicked Return(["input", 3])
+            if color_default:
+                textbutton "Reset":
+                    size_group "rgba"
+                    xsize 110
+                    text_size 12
+                    text_xalign 0.5
+                    tooltip "Reset colour to default"
+                    clicked Return("reset")
 
         # Window buttons
         hbox: 
@@ -117,24 +138,27 @@ define alpha_gradient_image = AlphaGradientImage(size=(255,30))
 define hue_gradient_image = HueGradientImage(size=(30,255))
 
 init -1 python:
-    def color_picker(color=[0,0,0,0], alpha=True, title="Pick a colour", pos_xy=(240, 130)):
+    def color_picker(color=[0,0,0,0], alpha=True, title="Pick a colour", pos_xy=(240, 130), color_default=None):
         global picking_color
         picking_color = color # Color object (list) to be updated live
         start_color = list(color) # Keep a copy
 
-        renpy.show_screen("color_picker", tuple(color), alpha, title, pos_xy)
+        renpy.show_screen("color_picker", tuple(color), alpha, title, pos_xy, color_default)
         while True:
             _return = ui.interact()
             
             if _return[0] == "input":
                 color_picker_input(_return[1])
-
+            elif _return == "reset":
+                scope = renpy.get_screen("color_picker").scope
+                scope["rgba"] = tuple(color_default)
+                color_picker_update_hsva()
+                update_picking_color(color_default)
             elif _return == "cancel":
                 renpy.hide_screen("color_picker")
                 update_picking_color(start_color) # Reset live color object
                 picking_color = None
                 return start_color
-
             elif _return[0] == "apply":
                 renpy.hide_screen("color_picker")
                 picking_color = None

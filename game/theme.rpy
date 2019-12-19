@@ -175,7 +175,6 @@ style day_dropdown_text:
     hover_color "#FFF"
     insensitive_color "#ae9566"
     outlines [(1, "#00000080", 1, 0)]
-    background "#a1a1a1"
     
 style night_dropdown:
     ysize 24
@@ -191,7 +190,7 @@ style night_dropdown_text:
     
 style tooltip_text is default:
     color "#fff"
-    size 14
+    size 12
     outlines [(1, "#00000080", 1, 0)]
 
 # btn_hover day: (#edc48240|#e3ba7140) night: #7d75aa40

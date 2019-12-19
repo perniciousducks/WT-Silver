@@ -18,7 +18,7 @@ label set_her_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
             $ temp_mouth    = renpy.random.choice(["annoyed","base"])
         elif mouth in ["happy"]:
             $ temp_mouth    = renpy.random.choice(["smile","grin"])
-        elif mouth in ["naughty","horny"]:
+        elif mouth in ["naughty"]:
             $ temp_mouth    = renpy.random.choice(["grin","horny"])
         elif mouth in ["annoyed"]:
             $ temp_mouth    = renpy.random.choice(["annoyed"])

@@ -4,12 +4,22 @@ default wardrobe_background_night = "#7d756e"
 default wardrobe_toggles = False
 default wardrobe_music = False
 default wardrobe_chitchats = True
+default wardrobe_requirements = False
 
 label wardrobe(char_label):
     python:
+        # TODO: Streamline and unify whoring variables.
+        _char_var_list = {
+            "hermione": her_whoring,
+            "tonks": ton_friendship,
+            "astoria": ast_affection,
+            "cho": cho_whoring
+            }
+            
         char_active = get_character_object(active_girl)
         char_nickname = char_active.char
         char_scale = 1.0/globals()[active_girl+"_scaleratio"]
+        char_level = _char_var_list[active_girl]
         hide_transitions = True
 
         wardrobe_background = wardrobe_background_day if interface_color == "gold" else wardrobe_background_night
@@ -335,7 +345,7 @@ screen wardrobe_menu(xx, yy):
             button style "empty" xysize (120, 50) action Return(["erozone", "pussy"])
         
         # Toggles and User Settings
-        use drop_down_menu(name="Toggles", pos=(116, 29), items_offset=(-5, 2)):
+        use dropdown_menu(name="Toggles", pos=(116, 29), items_offset=(-5, 2)):
             for item in character_toggles:
                 $ _item = item[0]
                 $ _is_worn = char_active.get_worn(_item)
@@ -345,7 +355,7 @@ screen wardrobe_menu(xx, yy):
                     background "interface/frames/"+str(interface_color)+"/check_"+str(_is_worn)+".png"
                     tooltip "Show/hide "+str(_item)
                     action [SensitiveIf(_is_equipped), Return(["toggle", _item])]
-        use drop_down_menu(name="Options", pos=(350, 29), items_offset=(-48, 2)):
+        use dropdown_menu(name="Options", pos=(350, 29), items_offset=(-59, 2)):
             textbutton "Music":
                 style interface_style+"_dropdown"
                 background "interface/frames/"+str(interface_color)+"/check_"+str(wardrobe_music)+".png"
@@ -361,6 +371,11 @@ screen wardrobe_menu(xx, yy):
                 background "interface/frames/"+str(interface_color)+"/check_"+str(wardrobe_chitchats)+".png"
                 tooltip "Toggle character chit-chats"
                 action ToggleVariable("wardrobe_chitchats", True, False)
+            textbutton "Requirements":
+                style interface_style+"_dropdown"
+                background "interface/frames/"+str(interface_color)+"/check_"+str(wardrobe_requirements)+".png"
+                tooltip "Toggle level requirements display"
+                action ToggleVariable("wardrobe_requirements", True, False)
                 
         # Zoom slider
         # bar:
@@ -482,17 +497,16 @@ screen wardrobe_menuitem(xx, yy):
                         action Return(["equip", menu_items[i]])
                     
                 # Whoring req
-                if config.developer:
-                    text "{color=#b20000}"+str(menu_items[i].whoring)+"{/color}" pos (15+90*col, 180+90*row) size 20 outlines [ (1, "#000", 0, 0) ]
-                if menu_items[i].incompatible != None:
-                    textbutton "{color=#b20000}!{/color}":
-                        pos (64+90*col, 180+90*row)
-                        background None
-                        text_size 20
-                        text_outlines [ (1, "#000", 0, 0) ]
-                        tooltip "Incompatible with:\n"+"\n".join(str(k) for k in menu_items[i].incompatible)+"\n{size=-4}{color=#009999}Above items will be unequipped.{/color}{/size}"
-                        action NullAction()
-                        
+                if wardrobe_requirements:
+                    if menu_items[i].whoring > her_whoring:
+                        textbutton str(menu_items[i].whoring):
+                            style "empty"
+                            pos (15+90*col, 180+90*row)
+                            text_size 20
+                            text_outlines [ (1, "#000", 0, 0) ]
+                            text_color "#b20000"
+                            tooltip ("{color=#35aae2}[active_girl]'s{/color} level is too low to wear that." if not active_girl.endswith("s") else "{color=#35aae2}[active_girl]'{/color} level is too low to wear that.")
+                            action NullAction()
                 # Check current item compatibility, if fails forbid equipping
                 if menu_items[i].type in char_active.incompatible_wardrobe:
                     textbutton "{color=#b20000}X{/color}":
@@ -501,6 +515,14 @@ screen wardrobe_menuitem(xx, yy):
                         text_size 20
                         text_outlines [ (1, "#000", 0, 0) ]
                         tooltip "Incompatible with your current setup."
+                        action NullAction()
+                elif menu_items[i].incompatible != None:
+                    textbutton "{color=#b20000}!{/color}":
+                        pos (64+90*col, 180+90*row)
+                        background None
+                        text_size 20
+                        text_outlines [ (1, "#000", 0, 0) ]
+                        tooltip "Incompatible with:\n{color=#35aae2}"+"\n".join(str(k) for k in menu_items[i].incompatible)+"{/color}\n{size=-4}{color=#e4cb35}Above items will be unequipped.{/color}{/size}"
                         action NullAction()
                     
         # Add empty items
@@ -663,7 +685,7 @@ screen wardrobe_outfit_menuitem(xx, yy):
                 style interface_style+"_dropdown"
                 pos (290, 42)
                 background "interface/frames/"+str(interface_color)+"/check_"+str(globals()[active_girl+"_outfits_schedule"])+".png"
-                tooltip "{size=-4}[active_girl] will automatically wear outfits\nbased on set schedule, time of day and weather.{/size}"
+                tooltip "{color=#35aae2}[active_girl]{/color} will automatically wear outfits\nbased on set schedule, time of day and weather."
                 action Return("toggle_schedule") 
                 
             if not globals()[active_girl+"_outfits_schedule"]:

@@ -62,9 +62,9 @@ init python:
 
         def get_image(self):
             if not self.cached:
-                box = crop_whitespace(self.path) # Get or calculate image area
-                
                 self.cached = True
+                box = crop_whitespace(self.path) # Get or calculate image area
+
                 sprite = Composite((1010, 1200), (0,0), self.get_imagelayer_color(0))
                 
                 if len(self.images) > 0:

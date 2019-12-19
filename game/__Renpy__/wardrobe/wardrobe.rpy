@@ -524,6 +524,15 @@ screen wardrobe_menuitem(xx, yy):
                         text_outlines [ (1, "#000", 0, 0) ]
                         tooltip "Incompatible with:\n{color=#35aae2}"+"\n".join(str(k) for k in menu_items[i].incompatible)+"{/color}\n{size=-4}{color=#e4cb35}Above items will be unequipped.{/color}{/size}"
                         action NullAction()
+                if menu_items[i].modpath:
+                    textbutton "{color=#00b200}M{/color}":
+                        style "empty"
+                        pos (15+90*col, 240+90*row)
+                        background None
+                        text_size 20
+                        text_outlines [ (1, "#000", 0, 0) ]
+                        tooltip "This item is a part of a mod."
+                        action NullAction()
                     
         # Add empty items
         for i in xrange(menu_items_length, items_shown):

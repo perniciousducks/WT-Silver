@@ -231,6 +231,7 @@ init python:
             self.pose = ""
 
             self.imagepath = ""
+            self.modpath = ""
             
             self.__dict__.update(**kwargs)
             
@@ -254,12 +255,12 @@ init python:
             self.color_default = [x[:] for x in self.color]
             
             # Check if clothing folder is a category, subcategory or a type
-            if renpy.loadable("characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/0.png"):
-                self.imagepath = "characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/"
-            elif renpy.loadable("characters/"+self.char+"/clothes/"+self.subcat+"/"+self.id+"/0.png"):
-                self.imagepath = "characters/"+self.char+"/clothes/"+self.subcat+"/"+self.id+"/"
+            if renpy.loadable(self.modpath+"characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/0.png"):
+                self.imagepath = self.modpath+"characters/"+self.char+"/clothes/"+self.category+"/"+self.id+"/"
+            elif renpy.loadable(self.modpath+"characters/"+self.char+"/clothes/"+self.subcat+"/"+self.id+"/0.png"):
+                self.imagepath = self.modpath+"characters/"+self.char+"/clothes/"+self.subcat+"/"+self.id+"/"
             else:
-                self.imagepath = "characters/"+self.char+"/clothes/"+self.type+"/"+self.id+"/"
+                self.imagepath = self.modpath+"characters/"+self.char+"/clothes/"+self.type+"/"+self.id+"/"
             
             if renpy.loadable(self.imagepath+"skin.png"):
                 self.skinlayer = self.imagepath+"skin.png"

@@ -1,0 +1,21 @@
+﻿# Add new hairstyle for character as an instance of cloth_class, 
+# make sure the variable name is unique, preferably starting with mod name.
+default MyMod_ponytail = cloth_class(
+    modpath="mods/mymod/",                                 # shortened filepath to this file
+    char="hermione",                                       # Character name (case sensitive)
+    category="head",                                       # Main category for the item
+    subcat="hair",                                         # Subcategory for the item     
+    type="hair",                                           # Item type
+    id="ponytail",                                         # Item identificator
+    unlocked = True,                                       # True=Item is unlocked by default, False=Item is a part of the outfit and requries to be bought
+    layers=2,                                              # Number of colourable file layers (Maximum is 4)
+    color=[[52, 59, 80, 255], [70, 90, 147, 255]]          # Python list with default colours in RGBA format applicable for each colourable file layer
+    )
+    
+# Add new outfit instance (Optional)
+default MyMod_outfit = outfit_class(
+    name="My Outfit",                                      # Name of the outfit set, usually displayed in Clothing Store menus
+    group=[MyMod_ponytail],                                # Python list with clothing object pointers
+    price=0,                                               # Value of the outfit in gold, has no effect if unlocked is set to True
+    unlocked=True                                          # True=Outfit is unlocked, False=Outfit is required to be bought in Clothing Store
+    )

@@ -40,6 +40,9 @@ label wardrobe(char_label):
         character_toggles.sort(key=lambda x: x[1], reverse=True)
         
         renpy.hide_screen(active_girl+"_main")
+        
+        # Forbid rollback to avoid bugs and unintended actions
+        config.rollback_enabled = False
     
     if wardrobe_music:
         call play_music("wardrobe")
@@ -148,7 +151,7 @@ label wardrobe(char_label):
     elif _return == "bg_color":
         $ active_layer = None
         show screen wardrobe_menu(550, 50)
-        $ wardrobe_background = color_picker(get_rgb_list(wardrobe_background), False, "Wardrobe Background Color", pos_xy=[20, 130])
+        $ wardrobe_background = color_picker(get_rgb_list(wardrobe_background), False, "Wardrobe Background Color", pos_xy=[40, 85])
         $ wardrobe_background = get_hex_string(wardrobe_background[0]/255.0, wardrobe_background[1]/255.0, wardrobe_background[2]/255.0, wardrobe_background[3]/255.0)
     elif _return == "inc":
         $ current_page += 1
@@ -250,6 +253,7 @@ label wardrobe(char_label):
             call play_music("wardrobe")
             call expression char_label pass (text="", face="happy")
     else: #_return == "Close":
+        $ config.rollback_enabled = True
         $ renpy.play('sounds/door2.mp3')
         $ hide_transitions = False
         $ char_active.wear("all")

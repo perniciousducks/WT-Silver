@@ -156,7 +156,6 @@ label ag_st_imperio_E1:
 
     # Astoria casts imperio.
     stop music fadeout 2.0
-    hide screen tonks_main
     call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
 
     call hide_characters
@@ -292,8 +291,8 @@ label ag_st_imperio_E2:
     pause.8
 
     call play_music("tonks")
-    call ast_main("","upset","base","base","mid", xpos="right", ypos="base")
-    call ton_main("Hello, Professor.","base","happyCl","base","mid", xpos="base", ypos="base")
+    call ast_main("","upset","base","base","mid", xpos="base", ypos="base")
+    call ton_main("Hello, Professor.","base","happyCl","base","mid", xpos="right", ypos="base")
     call ast_main(".........................","upset","base","base","L")
     m "Back already?"
     call ton_main("Yes, I gave Astoria a couple more pointers on how to improve the persuasiveness of the curse...","open","base","base","mid")
@@ -308,7 +307,6 @@ label ag_st_imperio_E2:
 
     # Astoria casts imperio.
     stop music fadeout 2.0
-    hide screen tonks_main
     call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
 
     call hide_characters
@@ -323,8 +321,8 @@ label ag_st_imperio_E2:
     pause.8
 
     call play_music("trance")
-    call ast_main("","clench","base","angry","L", xpos="base", ypos="base")
-    call ton_main(".........................","angry","wide","wide","ahegao", xpos="right", ypos="base") # shock
+    call ast_main("","clench","base","angry","L")
+    call ton_main(".........................","angry","wide","wide","ahegao") # shock
 
     g9 "Damn it, girl!"
     m "Give me a warning next time. You scared the crap out of me..."
@@ -355,7 +353,7 @@ label ag_st_imperio_E2:
 
             # Tonks turns around. (mirror sprite)
             call ton_chibi("stand","desk","base", flip=True)
-            call ton_main("","base","base","base","ahegao", xpos="500", ypos="base", flip=True)
+            call ton_main("","base","base","base","ahegao",  flip=True)
             pause.8
 
         "Ask her to remove her coat.":
@@ -374,7 +372,7 @@ label ag_st_imperio_E2:
             # Tonks removes her coat.
             call play_sound("equip")
             $ tonks_class.strip("robe")
-            call ton_main("","base","base","base","ahegao", xpos="right", ypos="base", flip=False)
+            call ton_main("","base","base","base","ahegao", flip=False)
             pause.8
 
 
@@ -414,8 +412,8 @@ label ag_st_imperio_E2:
             pause.8
 
             call play_music("astoria")
-            call ast_main("","open","base","base","down", xpos="right", ypos="base")
-            call ton_main("Oh wow...","angry","base","worried","down", xpos="base", ypos="base", flip=False)
+            call ast_main("","open","base","base","down")
+            call ton_main("Oh wow...","angry","base","worried","down", flip=False)
             call ton_main("You made me squeal like a pig!","smile","happyCl","base","mid")
             call ton_main("That was quite good!","base","base","base","mid")
             call ast_main("Thank you!","open","base","base","down")
@@ -439,7 +437,6 @@ label ag_st_imperio_E2:
 
             # Astoria casts imperio.
             stop music fadeout 2.0
-            hide screen tonks_main
             call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
 
             call hide_characters
@@ -454,7 +451,7 @@ label ag_st_imperio_E2:
             pause.8
 
             call play_music("trance")
-            call ast_main("","clench","base","angry","L", xpos="base", ypos="base")
+            call ast_main("","clench","base","angry","L")
             call ton_main("*hmmm*.............","base","base","base","ahegao")
             call ast_chibi(action="wand",xpos="530",ypos="base")
             call ast_main("And now?","open","base","base","mid")
@@ -496,8 +493,8 @@ label ag_st_imperio_E2:
             pause.8
 
             call play_music("tonks")
-            call ast_main("","annoyed","base","angry","mid", xpos="right", ypos="base")
-            call ton_main("*huh*...","open","base","worried","mid", xpos="base", ypos="base", flip=False)
+            call ast_main("","annoyed","base","angry","mid")
+            call ton_main("*huh*...","open","base","worried","mid", flip=False)
             call ton_main("Well that was something, wasn't it?","smile","happyCl","base","mid")
             call ast_main("..................................","annoyed","narrow","angry","L")
             m "You resisted her curse again."
@@ -584,8 +581,8 @@ label ag_st_imperio_E2:
             pause.8
 
             call play_music("astoria")
-            call ast_main("","annoyed","base","base","mid", xpos="right", ypos="base")
-            call ton_main("*Ouch*... That was painful!","angry","closed","angry","mid", xpos="base", ypos="base", flip=False)
+            call ast_main("","annoyed","base","base","mid")
+            call ton_main("*Ouch*... That was painful!","angry","closed","angry","mid", flip=False)
             call ton_main("You nearly got me there.","smile","base","worried","mid")
             call ast_main("Did I really?","smile","base","base","mid")
             call ton_main("Yes, well done, Astoria!","base","base","base","L")
@@ -648,7 +645,6 @@ label ag_st_imperio_E3:
 
     # Astoria casts imperio.
     stop music fadeout 2.0
-    hide screen tonks_main
     call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
 
     call hide_characters
@@ -856,7 +852,6 @@ label ag_st_imperio_E4:
 
     # Astoria casts imperio.
     stop music fadeout 2.0
-    hide screen tonks_main
     call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
 
     call hide_characters
@@ -1142,7 +1137,6 @@ label ag_st_imperio_E5:
 
     # Astoria casts imperio.
     stop music fadeout 2.0
-    hide screen tonks_main
     call ast_main("Imperio...{w=0.8}{nw}","open","closed","base","mid")
 
     call hide_characters

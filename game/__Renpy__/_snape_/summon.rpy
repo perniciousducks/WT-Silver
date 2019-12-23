@@ -213,7 +213,7 @@ label snape_potion_menu:
             jump snape_ready
 
         "-Voluptatem-" if potion_inv.has("p_voluptatem"):
-            ">You already a bottle of Voluptatem."
+            ">You already have a bottle of Voluptatem."
             jump snape_ready
         "-Voluptatem-" if not potion_inv.has("p_voluptatem"):
             m "Volupwhatem?"

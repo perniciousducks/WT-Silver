@@ -626,7 +626,7 @@ label give_her_gift(gift_item):
             call her_main("", "base", "base", "base", "R")
             call her_mood(-5)
         elif her_whoring >= 18:
-            call her_main("But, [genie_name].. You know I can't drink..","soft","mid", cheeks="blush")
+            call her_main("But, [genie_name].. You know I can't drink..","soft","base", cheeks="blush")
             call her_main("I get drunk too fast and I might do something I'll regret later.", "open", "base", "base", "R", cheeks="blush")
             call her_main("", "base", "base", "base", "R", cheeks="blush")
             call her_mood(0)

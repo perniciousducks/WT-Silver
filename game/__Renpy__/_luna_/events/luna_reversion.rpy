@@ -300,6 +300,7 @@ label luna_revert_1: #Reversion event #DONE
 
     call her_main("[genie_name], I hope you don't mind me coming in unannounced...", "angry", "closed", "base", "mid",xpos="base",ypos="base")
 
+    $ genie_base = "characters/genie/base/base.png"
     $ luna_flip = -1
     $ luna_r_arm = 2
 
@@ -471,6 +472,8 @@ label luna_revert_1: #Reversion event #DONE
     $ luna_wardrobe_unlocked = False
     $ lun_whoring = -2 #Triggers new intro event.
     $ ll_event_pause += 3
+
+    call reset_luna
 
     $ hermione_busy = True
 

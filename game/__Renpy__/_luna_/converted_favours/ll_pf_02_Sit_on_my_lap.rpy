@@ -479,7 +479,10 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_main("will that be all, [lun_genie_name]?","normal","suspicious","sad","mid",xpos="base",ypos="base")
                         m "Yes, thank you, [lun_name]."
                         call lun_main("You're welcome, [lun_genie_name].","upset","angry","sad","R")
-                        call lun_main("Well I better be off to class then.","upset","mad","sad","mid")
+                        if daytime:
+                            call lun_main("Well I better be off to class then.","upset","mad","sad","mid")
+                        else:
+                            call lun_main("Well I better be off to bed then.","upset","mad","sad","mid")
                         m "Don't you want your payment first?"
                         call lun_main("Oh right...","base","seductive","sad","R")
 
@@ -936,7 +939,10 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_main("will that be all, [lun_genie_name]?","base","suspicious","sad","mid",xpos="base",ypos="base")
                         m "Yes, thank you, [lun_name]."
                         call lun_main("You're welcome, [lun_genie_name].","upset","angry","sad","R")
-                        call lun_main("Well I better be off to class then.","upset","mad","sad","mid")
+                        if daytime:
+                            call lun_main("Well I better be off to class then.","upset","mad","sad","mid")
+                        else:
+                            call lun_main("Well I better be off to bed then.","upset","mad","sad","mid")
                         m "Don't you want your payment first?"
                         call lun_main("Oh right...","base","seductive","sad","R")
 

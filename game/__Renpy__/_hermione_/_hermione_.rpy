@@ -100,7 +100,7 @@ label her_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
     return
 
 
-
+#TODO Fix: her_kneel is broken (changeHermione is not defined)
 label her_kneel(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, trans=None):
     hide screen hermione_kneel
 

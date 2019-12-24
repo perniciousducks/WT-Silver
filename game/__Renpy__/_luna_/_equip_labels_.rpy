@@ -38,12 +38,12 @@ label update_luna_body:
     hide screen luna_main
 
     if luna_wear_top:
-        if lun_top in [""]:
-            $ luna_breasts               = "characters/luna/body/breasts/breasts_pressed.png"
+        if lun_top == "top_muggle_3":
+            $ luna_breasts               = "characters/luna/body/breasts/breasts_normal.png"
         else:
             $ luna_breasts               = "characters/luna/body/breasts/breasts_pressed.png"
     elif luna_wear_bra:
-        if lun_bra in [""]:
+        if lun_bra == "bra_silk":
             $ luna_breasts               = "characters/luna/body/breasts/breasts_normal.png"
         else:
             $ luna_breasts               = "characters/luna/body/breasts/breasts_pressed.png"

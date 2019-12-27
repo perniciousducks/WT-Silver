@@ -614,6 +614,23 @@ style pref_slider:
 
 style soundtest_button:
     xalign 1.0
+    
+screen notify(message):
+    zorder 100
+
+    text message:
+        at _notify_transform
+        color "#fff" 
+        outlines [(1, "#00000080", 1, 0)]
+
+    # This controls how long it takes between when the screen is
+    # first shown, and when it begins hiding.
+    timer 3.25 action Hide('notify')
+    
+screen skip_indicator():
+    zorder 100
+
+    add "ui_rewind"
 
 ##############################################################################
 # Yes/No Prompt

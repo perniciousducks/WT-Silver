@@ -1,13 +1,13 @@
 ### Cho Intro Slytherin Training ###
 label cc_st_intro:
     $ cho_quid.slytherin_talk = True
-    
+
     call play_sound("door")
     call cho_chibi("stand","mid","base")
     with d3
-    
+
     call play_music("stop")
-    
+
     # TODO: Needs posing
     cho "Hello, [cho_genie_name]..." # sad
     m "[cho_name]."
@@ -161,7 +161,7 @@ label cc_st_return:
 
 
 label cc_st_return_E1:
-    
+
     call play_music("stop")
     pause .5
 
@@ -692,7 +692,7 @@ label cc_st_tonks_E1:
     with hpunch
     $ renpy.play("sounds/hiccup_fem.mp3")
     call ton_main("*Hick!*... whoopsie...","upset","base","base","ahegao")
-    
+
     if daytime:
         ">You finish your drinks before calling it a day."
     else:
@@ -746,10 +746,8 @@ label cc_st_hermione_blackmail:
 
         # Hermione refuses.
         her "I'm sorry [genie_name], but my answer shall remain: No." # annoyed
-        g4 "(Dammit! She doesn't want to nudge one bit!)"
-        m "(Did I just reach one of those annoying adventure game roadblocks?)"
-        g4 "(Preventing me from progressing this quest, until I find some stupid item or do some other mindless task...)"
-        m "(I should just forget about this and have some fun with Cho...)"
+        g4 "(Dammit! This is such a waste of time!)"
+        m "(I might as well continue with Cho's \"Training\" and see if I can come up with some solution to this...)"
 
         jump hermione_requests
 
@@ -760,78 +758,11 @@ label cc_st_hermione_blackmail:
     her "What is it, [genie_name]?"
     m "..."
     g4 "(I'm done playing nice!)"
-    m "(Maybe I can blackmail her somehow...)"
     her "[genie_name]?"
     m "[hermione_name], you're going to commentate that match. Whether you like it or not."
     her "No. And you won't get me to change my mind on this."
     g9 "Are you sure about that?"
     her "Why?" # suspicious
-
-    menu:
-        m "I'll spread rumours that..."
-        "\"You're having sex with your headmaster!\"" if hg_pf_sex.counter > 0:
-            $ d_flag_01 = True
-            pass
-        "\"You like playing with your headmaster's cock!\"" if hg_pf_blowjob.counter > 0 or hg_pf_handjob.counter > 0 or hg_pf_titjob.counter > 0:
-            $ d_flag_01 = False
-            pass
-        "\"You like stripping for your headmaster!\"": # always happens at this stage.
-            $ d_flag_01 = None
-            pass
-
-    if her_tier == 6:
-        her "[genie_name], you can't do that!"
-        her "Please don't do that!" # sad.
-        m "I do whatever I want."
-        her "No you can't. We had an agreement."
-        g9 "Did we now?"
-        if d_flag_01 == None: # Strip
-            her "Yes..."
-        else:
-            her "I won't ever forgive you if you go through with that!"
-            $ her_mood += 4
-        her "If you intend to continue selling me favours, I suggest you don't make this public!"
-        her "I can't have any of my friends know about how I..."
-        if d_flag_01 == True:
-            g9 "Fucked your headmaster?"
-        elif d_flag_01 == False:
-            g9 "Played with my cock?"
-        else: # Strip
-            g9 "Put on a stip-show for me?"
-        her "Earned those points, is what I wanted to say..."
-        m "..."
-        her "My answer remains: No."
-
-    else: # Tier 3, 4, 5
-        if d_flag_01 == False: # Played with cock. 4 + 5 only.
-            her "What? That's insane!"
-            her "You're bluffing!"
-            m "Soon the whole school will know."
-            g9 "How well you can handle a cock!"
-            $ her_mood += 8
-        else:
-            her "You can't do that, [genie_name]!"
-            her "It's bad enough that Professor Snape knows..."
-            m "And soon the whole school will know."
-            $ her_mood += 4
-        her "No!"
-        her "I'll write to the ministry again, I'll have you know!"
-        her "You'd be sent to Azkaban for this."
-        if d_flag_01 == False:
-            m "For what?"
-            her "For forcing me to touch you!"
-        else:
-            m "For watching a harmless dance?"
-            her "For forcing me to strip for you!"
-        g4 "I didn't force you to-... Damnit..."
-        her "*Hpmf*..." # Annoyed
-
-
-    g4 "(If that doesn't change her mind then what will?)"
-    m "(I need an even smarter idea. Maybe I can ask Cho how we can get Granger to bend...)"
-    m "(She said she'd do anything to win that cup, so she better stick true to that.)"
-    m "(Maybe with her help we can get Granger to-...)"
-    g4 "(Oh, I know! That's just it!)"
 
     menu:
         g9 "[hermione_name]..."
@@ -850,7 +781,7 @@ label cc_st_hermione_blackmail:
     her "What?"
     her "[genie_name], you can't do this!"
     g9 "Sure I can."
-    
+
     call nar("> You telepathically call Cho into your office.")
 
     call hide_characters

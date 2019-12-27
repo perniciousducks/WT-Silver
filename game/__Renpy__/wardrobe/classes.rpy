@@ -40,7 +40,7 @@ init python:
                 #export_file.close()
             else:
                 set_clipboard(str(exported))
-            renpy.show_screen("popup_window", "Export successful!")
+            renpy.notify("Export successful!")
         
         def outfit_import(self, fromfile=True, filename="exported"):            
             imported = None
@@ -55,12 +55,12 @@ init python:
                         imported = _image_payload.decode(filename)
                     else:
                         renpy.block_rollback()
-                        return (False, renpy.show_screen("popup_window", "File doesn't exist!"))
+                        return (False, renpy.notify("File doesn't exist!"))
                 except:
                     if _image_payload._file:
                         _image_payload._file.close()
                     renpy.block_rollback()
-                    return (False, renpy.show_screen("popup_window", "Corrupted file!"))
+                    return (False, renpy.notify("Corrupted file!"))
             else:
                 imported = get_clipboard()
             
@@ -69,7 +69,7 @@ init python:
                     imported = evaluate(imported)
                 except:
                     renpy.block_rollback()
-                    return (False, renpy.show_screen("popup_window", "Corrupted file!"))
+                    return (False, renpy.notify("Corrupted file!"))
 
                 for item in imported:
                     if not isinstance(item, basestring):
@@ -79,17 +79,17 @@ init python:
                                     if not cheats_active:
                                         if not object.unlocked:
                                             renpy.block_rollback()
-                                            return (False, renpy.show_screen("popup_window", "Items locked!"))
+                                            return (False, renpy.notify("Items locked!"))
                                     item[0] = object.clone()
                                     item[0].color = item[1]
                                     item[0].cached = False
                                     group.append(item[0])
                 if len(group) > 0:
-                    renpy.show_screen("popup_window", "Import successful!")     
+                    renpy.notify("Import successful!")     
                     renpy.block_rollback()
                     return outfit_class(name="", desc="", unlocked=True, group=group)
             renpy.block_rollback()
-            return (False, renpy.show_screen("popup_window", "Import failed!"))
+            return (False, renpy.notify("Import failed!"))
                     
         def unlock(self):
             if not self.unlocked:

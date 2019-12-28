@@ -348,12 +348,12 @@ screen file_picker():
                                 xpos 235
                                 yfill True
                                 ymaximum 50
-                                action FileDelete(i, persistent.delwarning)
+                                action FileDelete(i, preferences.savedelwarn)
                             text "[file_name]. [file_time!t]\n[save_name!t]" xpos -40 yalign 0.5 style "night_button_text"
                         else:
                             text "[file_name]. [file_time!t]" xoffset 1 style "night_button_text"
                             
-                        key "save_delete" action FileDelete(i, persistent.delwarning)
+                        key "save_delete" action FileDelete(i, preferences.savedelwarn)
                 else:
                     button:
                         xfill True
@@ -374,12 +374,12 @@ screen file_picker():
                                 xpos 235
                                 yfill True
                                 ymaximum 50
-                                action FileDelete(i, persistent.delwarning)
+                                action FileDelete(i, preferences.savedelwarn)
                             text "[file_name]. [file_time!t]\n\n{color=#7a0000}NOT COMPATIBLE{/color}" xpos -40 yalign 0.5 style "night_text"
                         else:
                             text "[file_name]. [file_time!t]" xoffset 1 style "night_text"
                             
-                        key "save_delete" action FileDelete(i, persistent.delwarning)
+                        key "save_delete" action FileDelete(i, preferences.savedelwarn)
 
 screen save():
     tag menu
@@ -458,8 +458,8 @@ screen preferences():
                 
                 label _("Interface")
                 if not renpy.variant('android'):
-                    textbutton "Tooltips" action ToggleVariable("persistent.tooltip", True, False)
-                    textbutton _("Custom Cursor") action [ToggleVariable("persistent.customcursor", True, False), ToggleVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] }, None) ]
+                    textbutton "Tooltips" action ToggleVariable("preferences.tooltip", True, False)
+                    textbutton _("Custom Cursor") action [ToggleVariable("preferences.customcursor", True, False), ToggleVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] }, None) ]
                 textbutton _("Nightmode") action [ToggleVariable("persistent.nightmode", True, False), Function(renpy.call_in_new_context, "update_interface_color")]
             frame:
                 style_group "pref"
@@ -578,8 +578,8 @@ screen preferences():
                 has vbox
                 
                 label _("Saving&Loading")
-                textbutton _("Autosave") action [ToggleVariable("persistent.autosave", True, False), ToggleVariable("config.has_autosave", True, False), ToggleVariable("config.autosave_on_choice", True, False)]
-                textbutton _("Save Del. Warning") action ToggleVariable("persistent.delwarning", True, False)
+                textbutton _("Autosave") action [ToggleVariable("preferences.autosave", True, False), ToggleVariable("config.has_autosave", True, False), ToggleVariable("config.autosave_on_choice", True, False)]
+                textbutton _("Save Del. Warning") action ToggleVariable("preferences.savedelwarn", True, False)
         if not renpy.variant('android'):
             vbox:#Hotkeys
                 frame:

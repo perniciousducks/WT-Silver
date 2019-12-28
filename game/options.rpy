@@ -1,130 +1,114 @@
-# Ren'Py configuration
+################################################
+##                Preferences                 ##
+################################################
+
+default preferences.text_cps = 40
+default preferences.afm_time = 15
+default preferences.savedelwarn = True
+default preferences.customcursor = False
+default preferences.autosave = False
+default preferences.tooltip = True
+
+# DO NOT MODIFY ANYTHING BELOW THIS LINE IF YOU DON'T KNOW WHAT YOU'RE DOING.
+
+################################################
+##          Ren'py Configuration              ##
+##      For information please refer to:      ##
+## https://www.renpy.org/doc/html/config.html ##
+################################################
+
+# Pre-Release related flags and variables
+define is_release = False
+define _experimental = "" if is_release else " EXPERIMENTAL"
+define config.autoreload = True if is_release else False
+define config.debug = False if is_release else True
+define config.developer = "auto"
+
+# Game version and naming
+define config.version = "1.38"
 define title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
+define config.name = "WT Silver{}".format(_experimental)
+define config.window_title = "Witch Trainer (Silver) {}{}".format(title_version, _experimental)
 
-init -1 python hide:
-    is_release = False
+# Window settings
+define config.screen_width = 1080
+define config.screen_height = 600
+define config.save_physical_size = True
+define config.window_icon = "interface/icon.png"
+define config.window = "auto"
+
+# Graphics and cache settings
+define config.gl_enable = True
+define config.gl_resize = True
+define config.gl_clear_color = "#000"
+define config.hw_video = True
+define config.nearest_neighbor = False
+define config.cache_surfaces = False
+define config.image_cache_size_mb = 1024
+define config.load_before_transition = True
+define config.imagemap_cache = True
+define config.optimize_texture_bounds = True
+
+# Saving and Loading
+define config.save_directory = "WT SILVER"
+define config.autosave_on_quit = True
+define config.autosave_on_choice = False
+define config.has_autosave = True if preferences.autosave else False
+define config.autosave_frequency = 200
+
+# Sound and music settings
+define config.has_sound = True
+define config.has_music = True
+define config.has_voice = False
+define config.sound_sample_rate = 48000
+define config.main_menu_music = "music/01 Prologue.mp3"
+#define config.enter_sound = "click.wav"
+#define config.exit_sound = "click.wav"
+#define config.sample_sound = "click.wav"
+
+# General
+define config.quit_action = Quit(True)
+define config.narrator_menu = True
+define config.hard_rollback_limit = 150
+define config.mouse = {"default": [("interface/cursor.png", 0, 0)]} if preferences.customcursor else None
+
+# Help (Not implemented)
+define config.help = None
+
+# Transitions
+define config.enter_transition = CropMove(0.12, "irisout")
+define config.exit_transition = CropMove(0.12, "irisin")
+define config.intra_transition = None
+define config.main_game_transition = None
+define config.game_main_transition = fade
+define config.end_splash_transition = dissolve
+define config.end_game_transition = fade
+define config.after_load_transition = CropMove(0.5, "irisout")
+define config.window_show_transition = None
+define config.window_hide_transition = None
+define config.adv_nvl_transition = None
+define config.nvl_adv_transition = None
+define config.enter_yesno_transition = None
+define config.exit_yesno_transition = None
+define config.enter_replay_transition = None
+define config.exit_replay_transition = None
+define config.say_attribute_transition = None
+
+# Garbage Collector
+define config.manage_gc = True
+define config.gc_thresholds = (30000, 10, 10)
+define config.idle_gc_count = 3000
+define config.gc_print_unreachable = False
     
-    # Internal name and version
-    config.name    = "WT Silver" if is_release else "WT Silver EXPERIMENTAL VERSION"
-    config.version = "1.38"
+################################################
+##           Build configuration              ##
+##      For information please refer to:      ##
+## https://www.renpy.org/doc/html/build.html  ##
+################################################
 
-    # Window
-    title_version = config.version if len(config.version) < 5 else (config.version[:4] + "." + config.version[4:6])
-    if is_release:
-        config.window_title = "Witch Trainer (Silver) {}".format(title_version)
-    else:
-        config.window_title = "Witch Trainer (Silver) {} EXPERIMENTAL VERSION".format(title_version)
-    config.window_icon = "interface/icon.png"
-
-    # Window size
-    # 16:9 = 1080x600
-    # 4:3 = 800x600
-    config.screen_width = 1080
-    config.screen_height = 600
-
-    config.save_physical_size = True # Save the window size in preferences
-
-    # Garbage collector
-    config.manage_gc = True
-    config.gc_thresholds = (25000, 10, 10)
-    config.idle_gc_count = 2500
-    gc_print_unreachable = False
-    
-    # Graphics
-    config.gl_enable = True # Enable openGL acceleration
-    config.gl_clear_color = "#000"
-    config.hw_video = True
-    config.nearest_neighbor = False # Disable pixel art filtering
-
-    # Image cache
-    config.cache_surfaces = False # Use image cache
-    # config.image_cache_size = 32 # Number of screens worth of images in cache
-    config.image_cache_size_mb = 1024 # Image cache size in megabytes
-    config.load_before_transition = True # Preload assets (images, sounds etc.) before transition
-
-    # Sound
-    config.has_sound = True # Set this to False if the game does not have any sound effects.
-    config.has_music = True # Set this to False if the game does not have any music.
-    config.has_voice = False # Set this to True if the game has voicing
-
-    config.sound_sample_rate = 48000
-
-    config.main_menu_music = "music/01 Prologue.mp3"
-    # config.enter_sound = "click.wav" # Sound that is played when entering the game menu
-    # config.exit_sound = "click.wav" # Sound that is played when exiting the game menu
-    # config.sample_sound = "click.wav" # Sound that can be played to check the sound volume
-
-    # Default persistent values
-    if persistent.delwarning == None:
-        persistent.delwarning = True
-        persistent.customcursor = False
-        persistent.autosave = False
-        persistent.tooltip = True
-
-    # Preferences
-    config.default_fullscreen = False # Default fullscreen preference
-    config.default_text_cps = 40 # Default text speed preference (characters per second, 0 is infinite)
-    config.default_afm_time = 40 # Default auto-forward time preference
-
-    # Load custom preference options
-    if persistent.customcursor: 
-        config.mouse = { 'default' : [ ('interface/cursor.png', 0, 0)] } # Set custom pointer
-    else: 
-        config.mouse = None
-
-    if persistent.autosave: #True if true, false otherwise, still saves upon exit no matter what
-        config.has_autosave = True
-        config.autosave_on_choice = True
-    else: 
-        config.has_autosave = False
-        config.autosave_on_choice = False
-        config.autosave_on_quit = True
-
-    config.autoreload = False # If False, Ren'Py will reload the game once per press of shift+R
-
-    # Development
-    config.developer = "auto" # Will detect if you're using Renpy launcher, if not it will turn off the console
-    config.debug = False # Use ONLY for testing, disable before release
-
-    # Help feature
-    config.help = None
-    # config.help = "README.html"
-    # config.help = "LABEL"
-
-    # Transitions
-    config.enter_transition         = None # Used when entering the game menu from the game
-    config.exit_transition          = None # Used when exiting the game menu to the game
-    config.intra_transition         = None # Used between screens of the game menu
-    config.main_game_transition     = None # Used when entering the game menu from the main menu
-    config.game_main_transition     = None # Used when returning to the main menu from the game
-    config.end_splash_transition    = Dissolve(.3) # Used when entering the main menu from the splashscreen
-    config.end_game_transition      = Dissolve(.7) # Used when entering the main menu after the game has ended
-    config.after_load_transition    = Dissolve(.3) # Used when a game is loaded
-    config.window_show_transition   = Dissolve(.3) # Used when the window is shown
-    config.window_hide_transition   = Dissolve(.3) # Used when the window is hidden
-    config.adv_nvl_transition       = dissolve # Used when showing NVL-mode text directly after ADV-mode text
-    config.nvl_adv_transition       = dissolve # Used when showing ADV-mode text directly after NVL-mode text
-    config.enter_yesno_transition   = None # Used when yesno is shown
-    config.exit_yesno_transition    = None # Used when the yesno is hidden
-    config.enter_replay_transition  = None # Used when entering a replay
-    config.exit_replay_transition   = None # Used when exiting a replay
-    config.say_attribute_transition = None # Used when the image is changed by a say statement with image attributes
-
-    # Gameplay
-    config.hard_rollback_limit = 100
-    config.narrator_menu = True # If True, then display menu narration using narrator character
-
-    config.quit_action = Quit(True)
-
-# Save directory needs to be set in `python early` block
-python early: 
-    config.save_directory = "WT SILVER"
-
-# Build configuration
-# https://www.renpy.org/doc/html/build.html
-init python hide: 
-    build.directory_name = "WT_Silver_%s" % title_version # Name directories and archive files
-    build.executable_name = "WT Silver" # Name for executables
+init python: 
+    build.directory_name = "WT_Silver_{}".format(title_version)
+    build.executable_name = "WT Silver"
     build.include_update = False # If True, include update information into packages (allows the updater to run)
     
     build.classify("**.exe", None)
@@ -137,6 +121,10 @@ init python hide:
     build.classify("**.txt", None)
     build.classify("**.xml", None)
     build.classify('**/thumbs.db', None)
-    build.classify('saves/**', None)
-    build.classify('outfits/**', None)
+    build.classify("saves/**", None)
+    build.classify("outfits/**", None)
+    
+    build.allow_integrated_gpu = True # MacOS support Only!
+
+    #config.adjust_view_size = force_integer_multiplier
     

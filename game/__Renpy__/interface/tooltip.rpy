@@ -4,7 +4,7 @@ screen mouse_tooltip():
 
     $ tooltip = GetTooltip()
 
-    if persistent.tooltip and tooltip:
+    if preferences.tooltip and tooltip:
         add MouseTooltip(Window(Text(tooltip, style="tooltip_text"), style="frame", background="#00000080"), padding=(10,5))
 
 init python:

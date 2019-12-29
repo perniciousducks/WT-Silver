@@ -21,7 +21,7 @@ label ast_chibi(action=None, xpos=None, ypos=None, flip=False):
 
     return
 
-label ast_walk(xpos=None, ypos=None, speed=1.0, action=None, loiter=True, redux_pause=0):
+label ast_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
     call hide_characters
     hide screen bld1
     hide screen blktone
@@ -31,17 +31,17 @@ label ast_walk(xpos=None, ypos=None, speed=1.0, action=None, loiter=True, redux_
         call play_sound("door")
         call ast_chibi(None, "door", "base", False)
         if xpos or ypos:
-            $ astoria_chibi.move(xpos, ypos, speed)
+            $ astoria_chibi.move(xpos, ypos, speed, reduce)
     elif action == "leave":
         $ astoria_chibi.show()
-        $ astoria_chibi.move("door", "base", speed)
+        $ astoria_chibi.move("door", "base", speed, reduce)
         call play_sound("door")
         $ astoria_chibi.hide()
         with d3
         pause .5
     else:
         $ astoria_chibi.show()
-        $ astoria_chibi.move(xpos, ypos, speed)
+        $ astoria_chibi.move(xpos, ypos, speed, reduce)
 
     return
 

@@ -68,7 +68,7 @@ label gen_chibi(action=None, xpos=None, ypos=None, flip=True, pic=None):
 
     return
 
-label gen_walk(xpos=None, ypos=None, speed=1.0, action=None, loiter=True, redux_pause=0):
+label gen_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
     call hide_characters
     hide screen bld1
     hide screen blktone
@@ -78,17 +78,17 @@ label gen_walk(xpos=None, ypos=None, speed=1.0, action=None, loiter=True, redux_
         call play_sound("door")
         call gen_chibi(None, "door", "base", False)
         if xpos or ypos:
-            $ genie_chibi.move(xpos, ypos, speed)
+            $ genie_chibi.move(xpos, ypos, speed, reduce)
     elif action == "leave":
         $ genie_chibi.show()
-        $ genie_chibi.move("door", "base", speed)
+        $ genie_chibi.move("door", "base", speed, reduce)
         call play_sound("door")
         $ genie_chibi.hide()
         with d3
         pause .5
     else:
         $ genie_chibi.show()
-        $ genie_chibi.move(xpos, ypos, speed)
+        $ genie_chibi.move(xpos, ypos, speed, reduce)
         $ genie_chibi.do()
 
     return

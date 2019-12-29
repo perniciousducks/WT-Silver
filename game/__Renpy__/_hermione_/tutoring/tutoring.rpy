@@ -417,7 +417,7 @@ label l_tutoring:
         hide screen bld1
         with d3
 
-        call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+        call her_walk(xpos="desk", ypos="base", reduce=0.8)
         call blkfade
 
         call her_chibi_scene("behind_desk_front")
@@ -511,7 +511,7 @@ label l_tutoring:
         hide screen bld1
         with d3
 
-        call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+        call her_walk(xpos="desk", ypos="base", reduce=0.8)
         call blkfade
 
         ">Hermione walks towards your desk."
@@ -616,7 +616,7 @@ label l_tutoring:
         call her_main("", "base", "closed", "base", "mid")
         m "Now."
 
-        call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+        call her_walk(xpos="desk", ypos="base", reduce=0.8)
         call blkfade
 
         ">Hermione slowly walks towards your desk."
@@ -734,7 +734,7 @@ label l_tutoring:
         m "Enough of this! Now take off your shirt and come here."
         call her_main("Here we go for another \"lesson\".", "open", "squint", "base", "mid")
 
-        call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+        call her_walk(xpos="desk", ypos="base", reduce=0.8)
         call blkfade
 
         $ hermione_class.strip("robe")
@@ -1070,7 +1070,7 @@ label l_tutoring:
 
         ">She rips off her shirt and rushes to your desk."
 
-        call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+        call her_walk(xpos="desk", ypos="base", reduce=0.8)
         call blkfade
 
         call her_chibi_scene("grope_ass_back")
@@ -1257,7 +1257,7 @@ label l_tutoring:
         m "Oh, we have time."
         call her_main("Speaking of that...", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
 
-        call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+        call her_walk(xpos="desk", ypos="base", reduce=0.8)
         call blkfade
 
         call her_chibi_scene("behind_desk_back")
@@ -1509,7 +1509,7 @@ label l_tutoring:
         m "{size=-2}(It's not as if you don't like it rough){/size}"
         m "Alright, my desk, you, naked, now!"
 
-        call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+        call her_walk(xpos="desk", ypos="base", reduce=0.8)
         call blkfade
 
         $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking.
@@ -1662,7 +1662,7 @@ label l_tutoring:
         call her_main("{size=-2}(I give myself away for free now, what a bad whore I make){/size}", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
         m "Come here and strip."
 
-        call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+        call her_walk(xpos="desk", ypos="base", reduce=0.8)
         call blkfade
 
         hide screen hermione_main

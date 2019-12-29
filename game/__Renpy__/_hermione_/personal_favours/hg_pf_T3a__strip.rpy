@@ -403,7 +403,7 @@ label hg_pf_strip_T1_intro_E2:
 
     m "??!"
 
-    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", reduce=0.8)
     call blkfade
 
     $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking.
@@ -756,11 +756,8 @@ label hg_pf_strip_T1_E2:
     call her_main("Just in case...", "annoyed", "narrow", "angry", "R", ypos="head")
     stop music fadeout 1.0
 
-    call her_walk(xpos="desk", ypos="base", redux_pause=2, loiter=False)
-
-    show screen blkfade
-    with d5
-    pause.5
+    call her_walk(xpos="desk", ypos="base", reduce=0.8)
+    call blkfade
 
     call play_sound("climb_desk")
     pause 2
@@ -1079,7 +1076,7 @@ label hg_pf_strip_T2:
             call her_main("..................", "annoyed", "narrow", "angry", "R")
 
             stop music fadeout 1.0
-            call her_walk(xpos="desk", ypos="base", redux_pause=1, loiter=False)
+            call her_walk(xpos="desk", ypos="base", reduce=0.8)
 
             $ her_mood += 4
             pass
@@ -1092,10 +1089,7 @@ label hg_pf_strip_T2:
 
 
     # Climb desk
-    show screen blkfade
-    with d5
-    pause.5
-
+    call blkfade
     call play_sound("climb_desk")
     pause 2
     call her_chibi("dance","on_desk","on_desk")

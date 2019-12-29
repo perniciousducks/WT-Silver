@@ -132,7 +132,7 @@ label hg_pf_sex_T1_intro_E3:
     call her_main("I do....", "angry", "narrow", "base", "down")
     stop music fadeout 1.0
 
-    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", 0.8)
     call blkfade
 
     call her_chibi_scene("lie_on_desk")
@@ -192,7 +192,7 @@ label hg_pf_sex_T1_E3: # repeats
 
 label hg_sex_1:
     stop music fadeout 1.0
-    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", reduce=0.8)
     call blkfade
 
     call her_chibi_scene("grope_ass_back", trans="fade")

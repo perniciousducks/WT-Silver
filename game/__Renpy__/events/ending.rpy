@@ -3088,7 +3088,7 @@ label ball_ending_E3:
         call set_her_action("")
         call her_main("And I mean {size=+9}ANYTHING!!!{/size}", "scream", "base", "angry", "mid",emote="01", trans="hpunch")
 
-        call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+        call her_walk(xpos="desk", ypos="base", reduce=0.8)
         call blkfade
 
         call play_sound("climb_desk")

@@ -192,7 +192,7 @@ label hg_pf_blowjob_T1_intro_E1:
     call her_main("Although, now when I say it out loud like this...", "angry", "narrow", "base", "down")
     m "Too late! You already said \"yes\"!"
     call her_main("I know...", "grin", "worriedCl", "worried", "mid", emote="05")
-    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", reduce=0.8)
     call blkfade
 
     jump hg_pf_blowjob_1
@@ -289,7 +289,7 @@ label hg_pf_blowjob_T2_intro_E1:
     g4 "Come here, you dirty little minx!"
     call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "annoyed", "up")
 
-    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", reduce=0.8)
     call blkfade
 
     jump hg_pf_blowjob_2

@@ -48,7 +48,7 @@ label slut_scene: #Locked to her being your slut
     hide screen hermione_main
     with d3
 
-    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", reduce=0.8)
     call blkfade
 
     ">Hermione walks over and kneels before you as you pull out your cock from your robes."
@@ -243,7 +243,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     m "I am serious, now be a good little whore and bend over my desk and I'll give you what you want."
     call her_main("...", "angry", "narrow", "base", "down")
 
-    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", reduce=0.8)
     call blkfade
 
     call her_chibi_scene("sex_pause")
@@ -375,7 +375,7 @@ label slave_scene:
     m "Now be a good girl and bend over the desk."
     call her_main("...", "angry", "base", "base", "mid")
 
-    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", reduce=0.8)
     call blkfade
 
     call her_chibi_scene("sex_pause")

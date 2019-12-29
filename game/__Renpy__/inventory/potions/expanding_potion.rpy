@@ -85,7 +85,7 @@ label potion_scene_2_1_1:
     call her_main("If you want to touch my breasts it will be an extra 40 points.", "annoyed", "narrow", "angry", "R")
     m "Deal."
 
-    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", reduce=0.8)
     call blkfade
 
     call nar(">Hermione walks over to behind your desk, her breasts swaying rhythmically as she moves.")
@@ -245,7 +245,7 @@ label potion_scene_2_2:
     hide screen bld1
     with d3
 
-    call her_walk(xpos="desk", ypos="base", loiter=False, redux_pause=2)
+    call her_walk(xpos="desk", ypos="base", reduce=0.8)
     call blkfade
 
     call nar(">Hermione hops over to your desk, her ass bouncing as she moves, and presents herself to you.")

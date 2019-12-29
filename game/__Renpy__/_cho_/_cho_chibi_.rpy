@@ -21,7 +21,7 @@ label cho_chibi(action=None, xpos=None, ypos=None, flip=False):
 
     return
 
-label cho_walk(xpos=None, ypos=None, speed=1.0, action=None, loiter=True, redux_pause=0):
+label cho_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
     call hide_characters
     hide screen bld1
     hide screen blktone
@@ -31,17 +31,17 @@ label cho_walk(xpos=None, ypos=None, speed=1.0, action=None, loiter=True, redux_
         call play_sound("door")
         call cho_chibi(None, "door", "base", False)
         if xpos or ypos:
-            $ cho_chibi.move(xpos, ypos, speed)
+            $ cho_chibi.move(xpos, ypos, speed, reduce)
     elif action == "leave":
         $ cho_chibi.show()
-        $ cho_chibi.move("door", "base", speed)
+        $ cho_chibi.move("door", "base", speed, reduce)
         call play_sound("door")
         $ cho_chibi.hide()
         with d3
         pause .5
     else:
         $ cho_chibi.show()
-        $ cho_chibi.move(xpos, ypos, speed)
+        $ cho_chibi.move(xpos, ypos, speed, reduce)
 
     return
 

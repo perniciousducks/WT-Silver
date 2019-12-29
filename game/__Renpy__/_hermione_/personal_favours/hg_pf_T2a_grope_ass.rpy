@@ -179,9 +179,8 @@ label hg_pf_grope_ass_T1_back:
             call her_main("I hate you, [genie_name]! I hate you!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
 
             # Hermione runs out of the room.
-            call her_walk(action="run", xpos="door", ypos="base", speed=2, loiter=False)
-            call play_sound("door")
-            pause.2
+            call her_walk(action="run", xpos="door", ypos="base", speed=2, reduce=True)
+            call her_chibi("leave")
 
             call bld
             m ".............."

@@ -521,9 +521,8 @@ label ball_quest_E4:
     call gen_chibi("sit_behind_desk")
     with d1
 
-    call her_walk(action="run", xpos="door", ypos="base", speed=2, loiter=False)
-    call play_sound("door")
-    pause.5
+    call her_walk(action="run", xpos="door", ypos="base", speed=2, reduce=True)
+    call her_chibi("leave")
 
     call bld
     m "......................................."

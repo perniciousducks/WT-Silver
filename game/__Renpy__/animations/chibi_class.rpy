@@ -154,7 +154,7 @@ init -1 python:
             if self.update_callback:
                 self.update_callback(self)
 
-        def move(self, x=None, y=None, speed=1.0, time_speed=None, redux=False):
+        def move(self, x=None, y=None, speed=1.0, reduce=False):
             pos = self.resolve_position(x,y)
             dist = math.sqrt((self.pos[0] - pos[0])**2 + (self.pos[1] - pos[1])**2)
             time = dist / (float(self.speed) * speed)
@@ -176,11 +176,10 @@ init -1 python:
             self.do(move_action, trans)
             self.position(pos[0], pos[1])
 
-            #TODO Add usage of redux parameter to chibi walk labels
-            if redux:
+            if reduce:
                 # Reduce the pause and don't do the old action
-                if not isinstance(redux, bool):
-                    time -= float(redux)
+                if not isinstance(reduce, bool):
+                    time -= float(reduce)
                 if time > 0:
                     renpy.pause(time)
             else:

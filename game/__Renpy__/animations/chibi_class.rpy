@@ -191,7 +191,8 @@ init -1 python:
         def path_move(self, path, speed=1.0):
             for i in xrange(len(path)):
                 x,y = path[i]
-                self.move(x, y, speed, i == len(path))
+                reduce = i < len(path)-1 # Reduce all except last node
+                self.move(x, y, speed, reduce)
 
         def do(self, action=None, trans=None):
             self.action = action

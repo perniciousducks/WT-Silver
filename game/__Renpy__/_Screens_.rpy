@@ -240,7 +240,7 @@ screen blktone2():
     add im.Alpha("interface/blackfade.png", 0.2)
 
 screen blktone5(): #For narrator. (label nar) #Don't add tag blktone!
-    zorder 4
+    zorder 5
     add im.Alpha("interface/blackfade.png", 0.5)
 
 screen blktone8():

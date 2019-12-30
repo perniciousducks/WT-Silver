@@ -8,6 +8,10 @@ default preferences.savedelwarn = True
 default preferences.customcursor = False
 default preferences.autosave = False
 default preferences.tooltip = True
+default preferences.text_color_day = "#402313"
+default preferences.text_color_night = "#341c0f"
+default preferences.text_outline = "#00000000"
+default preferences.nightmode = False
 
 # DO NOT MODIFY ANYTHING BELOW THIS LINE IF YOU DON'T KNOW WHAT YOU'RE DOING.
 
@@ -30,12 +34,15 @@ define title_version = config.version if len(config.version) < 5 else (config.ve
 define config.name = "WT Silver{}".format(_experimental)
 define config.window_title = "Witch Trainer (Silver) {}{}".format(title_version, _experimental)
 
-# Window settings
+# Application Window settings
 define config.screen_width = 1080
 define config.screen_height = 600
 define config.save_physical_size = True
 define config.window_icon = "interface/icon.png"
-define config.window = "auto"
+
+# Say window
+define config.window = "hide"
+#define config.window_auto_hide = [ "scene", "menu", "call screen", "show", "call ton_chibi", "call ton_walk"]
 
 # Graphics and cache settings
 define config.gl_enable = True
@@ -48,12 +55,13 @@ define config.image_cache_size_mb = 1024
 define config.load_before_transition = True
 define config.imagemap_cache = True
 define config.optimize_texture_bounds = True
+define config.automatic_images = None
 
 # Saving and Loading
 define config.save_directory = "WT SILVER"
 define config.autosave_on_quit = True
 define config.autosave_on_choice = False
-define config.has_autosave = True if preferences.autosave else False
+define config.has_autosave = preferences.autosave
 define config.autosave_frequency = 200
 
 # Sound and music settings
@@ -84,15 +92,15 @@ define config.game_main_transition = fade
 define config.end_splash_transition = dissolve
 define config.end_game_transition = fade
 define config.after_load_transition = CropMove(0.5, "irisout")
-define config.window_show_transition = None
-define config.window_hide_transition = None
-define config.adv_nvl_transition = None
-define config.nvl_adv_transition = None
+define config.window_show_transition = Dissolve(0.2)
+define config.window_hide_transition = Dissolve(0.2)
+define config.adv_nvl_transition = Dissolve(0.2)
+define config.nvl_adv_transition = Dissolve(0.2)
 define config.enter_yesno_transition = None
 define config.exit_yesno_transition = None
 define config.enter_replay_transition = None
 define config.exit_replay_transition = None
-define config.say_attribute_transition = None
+define config.say_attribute_transition = Dissolve(0.3)
 
 # Garbage Collector
 define config.manage_gc = True
@@ -124,7 +132,4 @@ init python:
     build.classify("saves/**", None)
     build.classify("outfits/**", None)
     
-    build.allow_integrated_gpu = True # MacOS support Only!
-
-    #config.adjust_view_size = force_integer_multiplier
-    
+    build.allow_integrated_gpu = True # MacOS support Only!    

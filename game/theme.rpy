@@ -1,3 +1,9 @@
+################################################
+##              Legacy Themes                 ##
+##         (No documentation found)           ##
+##  TODO: Replace with standard style system  ##
+################################################
+
 init python hide:
     theme.threeD(
         ## Theme: 3D
@@ -38,15 +44,70 @@ init python hide:
         ## should take up the full height and width of the screen.
         gm_root = "menu_ani",
 
-
         ## If this is True, the in-game window is rounded. If False,
         ## the in-game window is square.
         rounded_window = False,
-
-        ## And we're done with the theme. The theme will customize
-        ## various styles, so if we want to change them, we should
-        ## do so below.
     )
+    
+################################################
+##                  Styling                   ##
+##       For information please refer to:     ##
+##  https://www.renpy.org/doc/html/style.html ##
+################################################
+    
+style quick_button:
+    is default
+    activate_sound "sounds/click3.mp3"
+    background None
+    xpadding 8
+    ypadding 8
+
+style quick_button_text:
+    is default
+    size 10
+    idle_color "#8888"
+    hover_color "#ccc"
+    selected_idle_color "#cc08"
+    selected_hover_color "#cc0"
+    insensitive_color "#4448"
+    
+style yesno_button:
+    size_group "yesno"
+
+style yesno_label_text:
+    text_align 0.5
+    layout "subtitle"
+
+style pref_frame:
+    xfill True
+    xmargin 5
+    top_margin 5
+
+style pref_vbox:
+    xfill True
+
+style pref_button:
+    size_group "pref"
+    xalign 1.0
+
+style pref_slider:
+    xmaximum 192
+    xalign 1.0
+
+style soundtest_button:
+    xalign 1.0
+    
+style gm_nav_button:
+    size_group "gm_nav"
+    
+style mm_button:
+    size_group "mm"
+    
+style file_picker_frame is menu_frame
+style file_picker_nav_button is small_button
+style file_picker_nav_button_text is small_button_text
+style file_picker_button is large_button
+style file_picker_text is large_button_text
 
 # Common control styles
 style default:
@@ -80,20 +141,15 @@ style input:
 # Dialogue styles
 style say_window:
     background Frame(DynamicDisplayable("'interface/frames/[interface_color]/frame.png'"))
+    ysize 143
+    padding (250, 40, 250, 0)
     top_margin 22
-    left_padding 250
-    right_padding 250
-    top_padding 40
-    yminimum 143
 
-style say_who_window:
-    is default
-    xminimum 164
-    ysize 32
-    xpadding 10
+style say_who_window is default:
     background Frame(DynamicDisplayable("'interface/frames/[interface_color]/namebox.png'"), 6, 6)
-    xpos 235
-    ypos 48
+    pos (-15, -50)
+    ysize 32
+    xminimum 164
     text_align 0.5
 
 style say_label:

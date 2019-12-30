@@ -25,7 +25,7 @@ label hide_screens:
 label update_interface_color(color=None):
     if color in ["gold", "gray"]:
         $ interface_color = color
-    elif not persistent.nightmode and daytime:
+    elif not preferences.nightmode and daytime:
         $ interface_color = "gold"
     else:
         $ interface_color = "gray"

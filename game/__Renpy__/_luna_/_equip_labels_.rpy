@@ -39,16 +39,20 @@ label update_luna_body:
 
     if luna_wear_top:
         if lun_top == "top_muggle_3":
-            $ luna_breasts               = "characters/luna/body/breasts/breasts_normal.png"
+            $ luna_breasts = "characters/luna/body/breasts/breasts_normal.png"
         else:
-            $ luna_breasts               = "characters/luna/body/breasts/breasts_pressed.png"
+            $ luna_breasts = "characters/luna/body/breasts/breasts_pressed.png"
     elif luna_wear_bra:
         if lun_bra == "bra_silk":
-            $ luna_breasts               = "characters/luna/body/breasts/breasts_normal.png"
+            $ luna_breasts = "characters/luna/body/breasts/breasts_normal.png"
         else:
-            $ luna_breasts               = "characters/luna/body/breasts/breasts_pressed.png"
+            $ luna_breasts = "characters/luna/body/breasts/breasts_pressed.png"
     else:
-        $ luna_breasts                   = "characters/luna/body/breasts/breasts_normal.png"
+        $ luna_breasts = "characters/luna/body/breasts/breasts_normal.png"
+
+    if (luna_wear_top and lun_top in luna_arms_up_list) or (luna_wear_outfit and luna_outfit_GLBL.id in luna_arms_up_list):
+        $ luna_l_arm = 2
+        $ luna_r_arm = 2
 
     return
 
@@ -324,8 +328,6 @@ label set_lun_transparency(top=None, bottom=None, bra=None, onepiece=None, panti
 
     if outfit != None:
         $ lun_outfit_transp    = outfit
-
-    #call update_cho_body #Only need this when there is boobies clipping through!
 
     return
 

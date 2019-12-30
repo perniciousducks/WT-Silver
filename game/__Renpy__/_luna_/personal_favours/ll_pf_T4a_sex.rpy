@@ -23,7 +23,10 @@ label ll_pf_sex_T1_intro:
 
     call lun_walk("mid", action="enter")
 
-    call lun_main("Good morning, [lun_genie_name]!","base","happyCl","sad","mid",cheeks="blush", xpos="mid" , ypos="base")
+    if daytime:
+        call lun_main("Good morning, [lun_genie_name]!","base","happyCl","sad","mid",cheeks="blush", xpos="mid" , ypos="base")
+    else:
+        call lun_main("Good evening, [lun_genie_name]!","base","happyCl","sad","mid",cheeks="blush", xpos="mid" , ypos="base")
 
     g9 "Miss Lovegood!{w} Here to surprise me again?"
 

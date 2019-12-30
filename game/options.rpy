@@ -20,8 +20,8 @@ default preferences.tooltip = True
 # Pre-Release related flags and variables
 define is_release = False
 define _experimental = "" if is_release else " EXPERIMENTAL"
-define config.autoreload = True if is_release else False
-define config.debug = False if is_release else True
+define config.autoreload = False
+define config.debug = not is_release
 define config.developer = "auto"
 
 # Game version and naming

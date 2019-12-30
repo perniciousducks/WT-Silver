@@ -554,6 +554,8 @@ label hg_pf_titjob_1:
 
             $ aftersperm = True
 
+    $ achievement.unlock("hertits")
+
     jump end_hg_pf_titjob
 
 

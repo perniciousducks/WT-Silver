@@ -21,7 +21,7 @@ label sna_chibi(action=None, xpos=None, ypos=None, flip=False):
 
     return
 
-label sna_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
+label sna_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=None):
     call hide_characters
     hide screen bld1
     hide screen blktone
@@ -39,6 +39,9 @@ label sna_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
         $ snape_chibi.hide()
         with d3
         pause .5
+    elif path:
+        $ snape_chibi.show()
+        $ snape_chibi.path_move(path, speed)
     else:
         $ snape_chibi.show()
         $ snape_chibi.move(xpos, ypos, speed, reduce)

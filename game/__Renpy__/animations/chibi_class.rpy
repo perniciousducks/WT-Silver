@@ -187,6 +187,11 @@ init -1 python:
                 renpy.pause(time)
                 if old_action != move_action:
                     self.do(old_action)
+        
+        def path_move(self, path, speed=1.0):
+            for i in xrange(len(path)):
+                x,y = path[i]
+                self.move(x, y, speed, i == len(path))
 
         def do(self, action=None, trans=None):
             self.action = action

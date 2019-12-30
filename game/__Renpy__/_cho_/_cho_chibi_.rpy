@@ -21,7 +21,7 @@ label cho_chibi(action=None, xpos=None, ypos=None, flip=False):
 
     return
 
-label cho_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
+label cho_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=None):
     call hide_characters
     hide screen bld1
     hide screen blktone
@@ -39,6 +39,9 @@ label cho_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
         $ cho_chibi.hide()
         with d3
         pause .5
+    elif path:
+        $ cho_chibi.show()
+        $ cho_chibi.path_move(path, speed)
     else:
         $ cho_chibi.show()
         $ cho_chibi.move(xpos, ypos, speed, reduce)

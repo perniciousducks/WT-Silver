@@ -21,7 +21,7 @@ label ton_chibi(action=None, xpos=None, ypos=None, flip=False):
 
     return
 
-label ton_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
+label ton_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=None):
     call hide_characters
     hide screen bld1
     hide screen blktone
@@ -39,6 +39,9 @@ label ton_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
         $ tonks_chibi.hide()
         with d3
         pause .5
+    elif path:
+        $ tonks_chibi.show()
+        $ tonks_chibi.path_move(path, speed)
     else:
         $ tonks_chibi.show()
         $ tonks_chibi.move(xpos, ypos, speed, reduce)

@@ -21,7 +21,7 @@ label ast_chibi(action=None, xpos=None, ypos=None, flip=False):
 
     return
 
-label ast_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
+label ast_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=None):
     call hide_characters
     hide screen bld1
     hide screen blktone
@@ -39,6 +39,9 @@ label ast_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
         $ astoria_chibi.hide()
         with d3
         pause .5
+    elif path:
+        $ astoria_chibi.show()
+        $ astoria_chibi.path_move(path, speed)
     else:
         $ astoria_chibi.show()
         $ astoria_chibi.move(xpos, ypos, speed, reduce)

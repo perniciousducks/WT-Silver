@@ -24,7 +24,7 @@ label her_chibi(action=None, xpos=None, ypos=None, flip=False, pic=None):
     
     return
 
-label her_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
+label her_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=None):
     call hide_characters
     hide screen bld1
     hide screen blktone
@@ -42,6 +42,9 @@ label her_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
         $ hermione_chibi.hide()
         with d3
         pause .5
+    elif path:
+        $ hermione_chibi.show()
+        $ hermione_chibi.path_move(path, speed)
     else:
         $ hermione_chibi.show()
         $ hermione_chibi.move(xpos, ypos, speed, reduce)

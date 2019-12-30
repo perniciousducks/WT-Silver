@@ -1468,10 +1468,7 @@ label ag_st_imperio_E5:
     call sna_main("A Slytherin takes better care of her equipment...","snape_10")
     call ast_main("Yes. I'm sorry, Professor.","clench","closed","angry","mid", emote="05")
 
-    #TODO Implement path-based movement in chibi class (or prevent chibi stopping at every turn somehow)
-    call ast_walk("270","290")
-    call ast_walk("370","290")
-    call ast_walk("desk","base")
+    call ast_walk(path=[(270, 290), (370,290), ("desk","base")])
     call ast_chibi("stand","desk","base", flip=False)
     with d3
     pause.1

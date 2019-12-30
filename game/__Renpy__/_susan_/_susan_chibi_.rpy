@@ -21,7 +21,7 @@ label sus_chibi(action=None, xpos=None, ypos=None, flip=False):
 
     return
 
-label sus_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
+label sus_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=None):
     call hide_characters
     hide screen bld1
     hide screen blktone
@@ -39,6 +39,9 @@ label sus_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False):
         $ susan_chibi.hide()
         with d3
         pause .5
+    elif path:
+        $ susan_chibi.show()
+        $ susan_chibi.path_move(path, speed)
     else:
         $ susan_chibi.show()
         $ susan_chibi.move(xpos, ypos, speed, reduce)

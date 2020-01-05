@@ -724,7 +724,7 @@ label astoria_intro_E3:
     call ast_main("So I'm not going to get in trouble?","open","base","worried","mid")
     call ton_main("I didn't say that... You still cast a very serious spell...","open","base","worried","L")
     call ast_main("","annoyed","base","base","mid")
-    call ton_main("A couple of hours of detention with me should be a sufficient enough punishment for casting an unforgivable curse.","open","base","base","L")
+    call ton_main("A couple of hours of detention with me should be an appropriate punishment for casting an unforgivable curse.","open","base","base","L")
     call ton_main("Wouldn't you agree, Professor?","base","base","raised","mid")
 
     $ d_flag_01 = False

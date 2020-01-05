@@ -70,25 +70,31 @@ screen choice(items):
         vbox:
             style_prefix interface_style + "_menu"
             spacing 0
+            $ choice_width = int(config.screen_width/2)
 
             for i, entry in enumerate(items, 1):
-                $ ico = None
-                if "{icon=" in entry.caption:
-                    $ ico = entry.caption.partition("{icon=")[2][:-1] # Icon must be at the end of caption
+                $ caption_text, _, ico = entry.caption.partition("{icon=") # Icon must be at the end of caption
 
                 button:
-                    xsize int(config.screen_width*0.5)
-                    ysize 28
+                    xsize choice_width
                     action entry.action
                     if i < 10 and entry.action:
                         keysym (str(i), "K_KP"+str(i))
                     sensitive bool(entry.action)
-                    fixed:
-                        text entry.caption.partition("{icon=")[0] xalign 0.5 yalign 0.5
-                        if i < 10 and entry.action:
-                            text "{size=-2}[i].{/size}" xpos 5 yalign 0.5
-                        if ico:
-                            add ico xpos 40 yalign 0.5 anchor (0.5, 0.5)
+                    frame:
+                        style "empty"
+                        ypadding 5
+                        fixed:
+                            fit_first "height"
+                            yalign 0.5
+                            text caption_text:
+                                xcenter choice_width/2
+                                xsize choice_width-120 # Leave enough margin for number and icon
+                                text_align 0.5
+                            if i < 10 and entry.action:
+                                text "{size=-2}[i].{/size}" xpos 5 yalign 0.5
+                            if ico:
+                                add ico[:-1] xcenter 40 yalign 0.5
     
 screen input(prompt):
     zorder 30

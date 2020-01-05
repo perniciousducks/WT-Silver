@@ -54,7 +54,7 @@ label cc_st_start:
         m "Alright, we need to try out those new tactics!"
         if cho_quid.bottom in ["skirt_long","skirt_short"] and cho_quid.position == "above":
             call cho_main("New tactics? Aren't we still using the ones from before?", "soft", "narrow", "base", "mid")
-            m "Right... Well I'm sure they're sufficient enough to secure a win."
+            m "Right... Well I'm sure they're good enough to secure a win."
             m "Well, I'm sure they're good enough to secure us another easy win."
             call cho_main("If you say so, [cho_genie_name].", "base", "base", "base", "mid")
         g4 "There is a lot at stake here! We can't afford to lose even a single game!"

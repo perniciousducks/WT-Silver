@@ -2,23 +2,13 @@
 
 ### HERMIONE GRANGER ###
 
-label her_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=False, tears=False, extra=False, emote=False, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
 
     #Flip
     if flip == False: #Default
         $ hermione_flip = 1
     if flip == True: #Flipped
         $ hermione_flip = -1
-
-    #Reset
-    if cheeks == None:
-        $ cheeks = "blank"
-    if tears == None:
-        $ tears = "blank"
-    if extra == None:
-        $ extra = "blank"
-    if emote == None:
-        $ emote = "blank"
 
     #Positioning
     if xpos != None:
@@ -66,22 +56,15 @@ label her_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
         else:
             $ hermione_ypos = int(ypos)
 
-    if face != None:
-        if mouth == None:
-            call set_her_face(mouth = face)
-        if eyes == None:
-            call set_her_face(eyes = face)
-        if eyebrows == None:
-            call set_her_face(eyebrows = face)
-        if pupils == None:
-            call set_her_face(pupils = face)
-
     if animation != False:
         $ hermione_animation = animation
+        
+    if face:
+        call set_her_face(face)
 
     python:
-        hermione_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
-        hermione_class.special(emote=emote)
+        hermione.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
+        #hermione_class.special(emote=emote)
 
     if use_hermione_head and face_on_cg: #Only her face. Used in CG scenes.
         show screen hermione_face # TODO: <- Screen does not exist
@@ -92,7 +75,8 @@ label her_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
 
     call transition(trans, True)
 
-    $ hermione_class.say(text)
+    if text:
+        $ renpy.say(her, text)
 
     if use_hermione_head and not face_on_cg:
         hide screen hermione_main
@@ -121,8 +105,8 @@ label her_kneel(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=No
     call transition(trans, True)
 
     #Text
-    if text != "":
-        $ renpy.say(her,text)
+    if text:
+        $ renpy.say(her, text)
 
     return
 
@@ -152,6 +136,6 @@ screen hermione_main():
     tag hermione_main
     zorder hermione_zorder
     if hermione_animation != None:
-        add hermione_class.get_image() xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio) at hermione_animation
+        add hermione.get_image() xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio) at hermione_animation
     else:
-        add hermione_class.get_image() xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
+        add hermione.get_image() xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)

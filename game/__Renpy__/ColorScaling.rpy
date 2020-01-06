@@ -14,9 +14,9 @@ init python:
         threading.Thread(target=image_crop_loop).start()
 
     def image_crop_loop():
-        for cloth in character_clothes_list:
+        for cloth in hermione.wardrobe_list:
             # Call to ensure whitespace is calculated
-            crop_whitespace(cloth.sprite_ico.path)
+            crop_whitespace(cloth.ico.bounds)
                 
     def crop_whitespace(path):
         # Return box from whitespace_dict, or calculate and store it
@@ -45,35 +45,18 @@ init python:
 
         return (sprite, zoom)
 
-    class lazyload(object):
-        def __init__(self, images, color, image_index, layers):
-            self.images = images
-            self.color = color
-            self.path = images[image_index]
-            self.layers = layers
+    class CroppedImage(object):
+        size = (1010, 1200)
+        
+        def __init__(self, sprites, bounds):
+            self.sprites = sprites
+            self.bounds = bounds
             self.cached = False
             self.sprite = None
-
-        def get_matrixcolor(self, layer):
-            return im.matrix.tint(float(self.color[layer][0])/255.0, float(self.color[layer][1])/255.0, float(self.color[layer][2])/255.0)
             
-        def get_imagelayer_color(self, layer):
-            return im.MatrixColor(self.images[layer], self.get_matrixcolor(layer))
-
         def get_image(self):
             if not self.cached:
                 self.cached = True
-                box = crop_whitespace(self.path) # Get or calculate image area
-
-                sprite = Composite((1010, 1200), (0,0), self.get_imagelayer_color(0))
-                
-                if len(self.images) > 0:
-                    for i in xrange(0, len(self.images)):
-                        if i < self.layers: # Colored layers
-                            sprite = Composite((1010, 1200), (0,0), sprite, (0,0), self.get_imagelayer_color(i))
-                        else: # Additional non-colored layers
-                            if self.images[i]:
-                                sprite = Composite((1010, 1200), (0,0), sprite, (0,0), self.images[i])
-                sprite = Crop(box, sprite)
-                self.sprite = sprite
+                box = crop_whitespace(self.bounds)
+                self.sprite = Crop(box, Composite(self.size, *self.sprites))
             return self.sprite

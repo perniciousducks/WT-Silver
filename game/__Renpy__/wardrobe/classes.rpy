@@ -309,7 +309,7 @@ init python:
             layers.append(self.extralayer)
             layers.append(self.outline)
 
-            self.sprite_ico = lazyload(layers, self.color, boundryIndex, self.layers)
+            #self.sprite_ico = CroppedImage(layers, self.color, boundryIndex, self.layers)
                 
         def unlock(self):
             if not self.unlocked:
@@ -586,8 +586,8 @@ init python:
         def expression(self, **kwargs):
             for arg, value in kwargs.iteritems():
                 if value:
-                    self.face[str(arg)][0] = value
-            self.update_paths("face")
+                    self.face[str(arg)][0] = eval(value)
+            #self.update_paths("face")
             self.cached = False
             
         def special(self, **kwargs):
@@ -851,6 +851,8 @@ init python:
                 for value in self.face.itervalues():
                     if value[0] and not value[4]:
                         sprite_list.append(value)
+                        if value[0].skin:
+                            sprite_list.append([value[0].skin, 5, 0, 0, False])
                 
                 # Add other to sprite list        
                 for value in self.other.itervalues():

@@ -62,7 +62,6 @@ label studio(studio_char):
     python:
         studio_eyebrows_list = system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyebrows/")
         studio_eyes_list = system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyes/")
-        studio_eyes_list.remove("_white_.png")
         studio_mouth_list = system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/mouth/")
         studio_pupils_list = system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/pupils/")
     

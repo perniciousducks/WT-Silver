@@ -50,12 +50,13 @@ define config.gl_resize = True
 define config.gl_clear_color = "#000"
 define config.hw_video = True
 define config.nearest_neighbor = False
-define config.cache_surfaces = False
+define config.cache_surfaces = True
 define config.image_cache_size_mb = 1024
 define config.load_before_transition = True
 define config.imagemap_cache = True
 define config.optimize_texture_bounds = True
 define config.automatic_images = None
+define config.debug_image_cache = False
 
 # Saving and Loading
 define config.save_directory = "WT SILVER"

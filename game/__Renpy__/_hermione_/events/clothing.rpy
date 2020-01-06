@@ -348,7 +348,7 @@ label hermione_summon_setup:
     call play_music("hermione")
     if her_mood >= 1:
 
-        call set_her_face(change="all")
+        #call set_her_face(change="all")
         call her_main(xpos="base", ypos="base")
         if her_mood >=1 and her_mood < 3:
             ">Looks like Hermione is still a little upset with you..."
@@ -366,7 +366,7 @@ label hermione_summon_setup:
             ">Hermione hates your guts."
 
     else: #Not mad.
-        call set_her_face(change="all")
+        #call set_her_face(change="all")
         if not hermione_door_event_happened:
             call her_main("Yes, [genie_name]?", xpos="base", ypos="base")
         else:

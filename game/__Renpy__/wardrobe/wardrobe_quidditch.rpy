@@ -49,7 +49,7 @@ label t_wardrobe_quidditch():
         $ hide_transitions = False
         return
     else:
-        m "Never mind, your current outfit is sufficient enough."
+        m "Never mind, your current outfit is good enough."
         cho "Okay."
         $ hide_transitions = False
         return
@@ -59,14 +59,19 @@ label t_wardrobe_quidditch():
 screen t_wardrobe_quidditch_menuitem(xx, yy):
     tag wardrobe_menuitem
     zorder 4
-    
-    use close_button
-    
-    # left
-    for i in xrange(len(quidditch_items.keys())):
-        hbox:
-            pos (460, 250+(100*i))
-            spacing 210
-            imagebutton idle image_arrow hover image_hover(image_arrow) action Return(["equip", "dec", i])
-            imagebutton idle im.Flip(image_arrow, horizontal=True) hover image_hover(im.Flip(image_arrow, horizontal=True)) action Return(["equip", "inc", i])
-    textbutton "Apply" action Return("apply") pos (400, 450)
+    fixed:
+        style_prefix interface_style
+        
+        use close_button
+        
+        # left
+        for i in xrange(len(quidditch_items.keys())):
+            hbox:
+                pos (460, 250+(100*i))
+                spacing 210
+                imagebutton idle image_arrow hover image_hover(image_arrow) action Return(["equip", "dec", i])
+                imagebutton idle im.Flip(image_arrow, horizontal=True) hover image_hover(im.Flip(image_arrow, horizontal=True)) action Return(["equip", "inc", i])
+
+        textbutton "Apply":
+            pos (400, 450)
+            action Return("apply")

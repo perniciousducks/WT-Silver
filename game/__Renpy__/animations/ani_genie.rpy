@@ -251,6 +251,7 @@ image ch_gen cum_behind_desk:
 image ch_gen cum_behind_desk_done:
     size (608,524)
     contains:
+        zoom 2
         "ch_gen sit_behind_desk"
     contains:
         zoom 2

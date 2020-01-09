@@ -16,6 +16,7 @@ init python:
             # Add body parts and skin layers from clothes
             sprites.extend(("{}{}/{}.png".format(self.imagepath, k, v[0]), v[1]) for k, v in self.body.iteritems() if v[0])
             sprites.extend((o[0].skin, self.zorder_skin) for o in self.char.clothes.itervalues() if o[0] and o[0].skin)
+            sprites.extend((x, self.zorder_skin) for x in self.char.face.get_skin())
 
             sprites.sort(key=lambda x: x[1], reverse=False)
             sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))

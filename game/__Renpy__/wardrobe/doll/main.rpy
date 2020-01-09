@@ -26,7 +26,6 @@ init python:
         def build_image(self):
             # Add body, face, clothes, masks
             masks = []
-            armfix = []
             sprites = [[self.body.get_image(), 0], [self.face.get_image(), 1]]
             
             for o in self.clothes.itervalues():
@@ -65,6 +64,7 @@ init python:
                 for i in obj.group:
                     self.clothes[i.type][0] = i.parent
                     self.clothes[i.type][0].set_color(i.color)
+            self.body.rebuild_image()
             self.rebuild_image()
             
         def unequip(self, *args):
@@ -78,7 +78,9 @@ init python:
                 test = args
                 for arg in args:
                     self.clothes[arg][0] = None
+            self.body.rebuild_image()
             self.rebuild_image()
+            
             
         def get_equipped(self, type):
             """Takes argument containing string cloth type. Returns equipped object for cloth type."""
@@ -98,6 +100,7 @@ init python:
                                 self.clothes[k][2] = False
                     else:
                         self.clothes[arg][2] = False
+            self.body.rebuild_image()
             self.rebuild_image()
                     
         def wear(self, *args):
@@ -113,6 +116,7 @@ init python:
                                 self.clothes[k][2] = True
                     else:
                         self.clothes[arg][2] = True
+            self.body.rebuild_image()
             self.rebuild_image()
             
         def toggle_wear(self, type):
@@ -123,6 +127,7 @@ init python:
                         v[2] = not v[2]
             else:
                 self.clothes[type][2] = not self.clothes[type][2]
+            self.body.rebuild_image()
             self.rebuild_image()
             
         def is_worn(self, type):

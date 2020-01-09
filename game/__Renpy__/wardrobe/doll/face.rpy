@@ -24,8 +24,12 @@ init python:
             path = "{}eyes/{}_mask.png".format(self.imagepath, self.face["eyes"][0])
             if renpy.loadable(path):
                 sprites.append((AlphaMask("{}pupils/{}.png".format(self.imagepath, self.face["pupils"][0]), "{}eyes/{}_mask.png".format(self.imagepath, self.face["eyes"][0])), self.face["pupils"][1]))
-                    
 
             sprites.sort(key=lambda x: x[1], reverse=False)
             sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))
             return sprites
+            
+        def get_skin(self):
+            return ["{}{}/{}_skin.png".format(self.imagepath, k, v[0]) for k, v in self.face.iteritems() if renpy.loadable("{}{}/{}_skin.png".format(self.imagepath, k, v[0]))]
+            
+            

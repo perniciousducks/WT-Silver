@@ -2,23 +2,13 @@
 
 ### Cho Chang ###
 
-label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=False, tears=False, extra=False, emote=False, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
 
     #Flip
     if flip == False:
         $ cho_flip = 1 #Default
     if flip == True:
         $ cho_flip = -1
-
-    #Reset
-    if cheeks == None:
-        $ cheeks = "blank"
-    if tears == None:
-        $ tears = "blank"
-    if extra == None:
-        $ extra = "blank"
-    if emote == None:
-        $ emote = "blank"
 
     #Positioning
     if xpos != None:
@@ -71,8 +61,8 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
         $ cho_animation = animation
 
     python:
-        cho_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
-        cho_class.special(emote=emote)
+        cho.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
+        #cho_class.special(emote=emote)
 
     if not renpy.get_screen("wardrobe_menu"):
         show screen cho_main()
@@ -80,7 +70,8 @@ label cho_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
 
     call transition(trans, True)
 
-    $ cho_class.say(text)
+    if text:
+        $ renpy.say(character.cho, text)
 
     if use_cho_head:
         hide screen cho_main
@@ -119,6 +110,6 @@ screen cho_main():
     tag cho_main
     zorder cho_zorder
     if cho_animation != None:
-        add cho_class.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) at cho_animation
+        add cho.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) at cho_animation
     else:
-        add cho_class.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+        add cho.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)

@@ -788,7 +788,7 @@ label hermione_intro_E3:
 
     call her_walk(action="leave")
 
-    $ hermione_class.strip("robe")
+    $ hermione.strip("robe")
     $ snape_busy = False
 
     $ hermione_intro.E3_complete = True

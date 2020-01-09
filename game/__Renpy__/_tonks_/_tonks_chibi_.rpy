@@ -65,11 +65,11 @@ screen with_tonks_animated():
 
     add "ch_ton sit" xpos 610 ypos 175
     
-    if tonks_class.get_worn("bottom"):
+    if tonks.is_worn("bottom"):
         add "ch_ton sit_trousers" xpos 610 ypos 175
-    if tonks_class.get_worn("bottom") or tonks_class.get_worn("stockings"):
+    if tonks.is_worn("bottom") or tonks.is_worn("stockings"):
         add "ch_ton sit_shoes" xpos 610 ypos 175
-    if tonks_class.get_worn("top"):
+    if tonks.is_worn("top"):
         add "ch_ton sit_top" xpos 610 ypos 175
 
 
@@ -84,11 +84,11 @@ init python:
 
         # Determine clothing state
         
-        if tonks_class.get_worn("top"):
+        if tonks.is_worn("top"):
             chibi["top"] = "nt_top.png"
 
-        if tonks_class.get_worn("bottom"):
-            if tonks_class.get_cloth("bottom").subcat == "trousers":
+        if tonks.is_worn("bottom"):
+            if tonks.get_equipped("bottom").categories[1] == "trousers":
                 if chibi.action == "walk":
                     chibi["bottom"] = "ch_ton walk trousers"
                 else:
@@ -96,13 +96,13 @@ init python:
             else:
                 chibi["bottom"] = "nt_skirt.png"
 
-        if tonks_class.get_worn("gloves"):
+        if tonks.is_worn("gloves"):
             chibi["gloves"] = "nt_gloves.png"
 
-        if tonks_class.get_worn("robe"):
+        if tonks.is_worn("robe"):
             chibi["robe"] = "nt_robe.png"
 
-        if tonks_class.get_worn("bottom") or tonks_class.get_worn("stockings"):
+        if tonks.is_worn("bottom") or tonks.is_worn("stockings"):
             if chibi.action == "walk":
                 chibi["shoes"] = "ch_ton walk shoes"
             else:

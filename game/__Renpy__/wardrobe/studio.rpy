@@ -68,7 +68,7 @@ label studio(studio_char):
     $ studio_bg_list = ["wall_day", "castle", "forest", "highlight", "versus", "main_room_day", "main_room_night", "corridor", "custom"]
     $ studio_bg_overlay_list = [None, "curtains", "card", "g_bottom", "g_left", "g_circular"]
     
-    $ studio_outfit_saves = {"cho": cho_outfit_last, "tonks": tonks_outfit_last, "astoria": astoria_outfit_last, "hermione": hermione_outfit_last}
+    $ studio_outfit_saves = {"cho": cho_outfit_last, "tonks": ton_outfit_last, "astoria": ast_outfit_last, "hermione": her_outfit_last}
     
     if studio_image_eyebrows > len(studio_eyebrows_list):
         $ studio_image_eyebrows = 0
@@ -98,7 +98,7 @@ label studio(studio_char):
         $ txt_filename = renpy.input("Filename", txt_filename, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#& ", length=64)
         $ studio_hide = True
         $ renpy.pause(0.1, hard=True)
-        $ item_to_export.outfit_export(True, txt_filename)
+        $ item_to_export.export_data(True, txt_filename)
         $ studio_hide = False
         $ char_active.equip(studio_outfit_saves.get(active_girl))
         hide screen studio

@@ -27,4 +27,10 @@ init python:
                 if not self.cached:
                     self.cached = True
                     self.sprite = Composite(self.size, *self.sprites)
-            return Flatten(self.sprite)
+            return self.sprite
+            
+# Notes and todo's:
+#   Avoid passing generators to the cache through first or third party functions, Ren'py will have problems pickling the manipulated images causing no image being displayed at all after the game reloads, alternatively the game may refuse to load at all. Use a tuple instead. This applies to renpy.start_predict(x) as well.
+#   AlphaMask and Flatten are costly operations which cause noticeable slowdowns, an alternative would be nice.
+#   
+#

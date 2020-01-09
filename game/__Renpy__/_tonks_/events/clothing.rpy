@@ -6,12 +6,12 @@ label tonks_summon_setup:
     $ tonks_wardrobe_unlocked = True
 
     $ random_number = renpy.random.randint(1, 20)
-    if random_number in [1,2,3,4,5] and tonks_class.get_worn("top") and ton_friendship >= 50: #Naked
+    if random_number in [1,2,3,4,5] and tonks.is_worn("top") and ton_friendship >= 50: #Naked
 
         if not tonks_strip_happened: #First time.
             $ tonks_strip_happened = True
 
-            $ tonks_class.strip("all")
+            $ tonks.strip("all")
             call play_sound("door")
             call ton_chibi("stand","mid","base")
             with d3
@@ -35,7 +35,7 @@ label tonks_summon_setup:
 
         else: #Repeated Event.
 
-            $ tonks_class.strip("all")
+            $ tonks.strip("all")
             call play_sound("door")
             call ton_chibi("stand","mid","base")
             with d3
@@ -132,10 +132,10 @@ label tonks_summon_setup:
 
         return
         
-    if tonks_outfits_schedule:
-        $ tmp_outfits = get_character_outfits_schedule("tonks")
-        if len(tmp_outfits) > 0:
-            $ tonks_class.equip(renpy.random.choice(tmp_outfits))
+    # if tonks_outfits_schedule:
+        # $ tmp_outfits = get_character_outfits_schedule("tonks")
+        # if len(tmp_outfits) > 0:
+            # $ tonks.equip(renpy.random.choice(tmp_outfits))
 
     call play_sound("door")
     call ton_chibi("stand","mid","base")

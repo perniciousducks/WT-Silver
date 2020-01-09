@@ -5,7 +5,7 @@ label cho_summon_setup:
 
     $ cho_wardrobe_unlocked = True
 
-    $ cho_class.wear("all")
+    $ cho.wear("all")
 
     $ random_number = renpy.random.randint(1, 10)
     
@@ -22,8 +22,8 @@ label cho_summon_setup:
         if cho_strip_complete and not cc_muggle_hot_ITEM:
             $ cc_muggle_hot_ITEM.unlocked = True
 
-            $ cho_class.unequip("all")
-            $ cho_class.equip(cho_outfit_trainee)
+            $ cho.unequip("all")
+            $ cho.equip(cho_outfit_trainee)
 
             call play_sound("door")
             call cho_chibi("stand","mid","base")
@@ -56,8 +56,8 @@ label cho_summon_setup:
         elif cho_whoring >= 14 and not cc_party_slut_ITEM.unlocked:
             $ cc_party_slut_ITEM.unlocked = True
 
-            $ cho_class.unequip("all")
-            $ cho_class.equip(cho_outfit_party)
+            $ cho.unequip("all")
+            $ cho.equip(cho_outfit_party)
 
             call play_sound("door")
             call cho_chibi("stand","mid","base")
@@ -88,10 +88,10 @@ label cho_summon_setup:
 
             return
             
-    if cho_outfits_schedule:
-        $ tmp_outfits = get_character_outfits_schedule("cho")
-        if len(tmp_outfits) > 0:
-            $ cho_class.equip(renpy.random.choice(tmp_outfits))
+    # if cho_outfits_schedule:
+        # $ tmp_outfits = get_character_outfits_schedule("cho")
+        # if len(tmp_outfits) > 0:
+            # $ cho.equip(renpy.random.choice(tmp_outfits))
 
     call play_sound("door")
     call cho_chibi("stand","mid","base")

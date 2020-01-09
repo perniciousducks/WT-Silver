@@ -605,11 +605,11 @@ label hg_pf_talk_tonks:
     pause 1
 
     # Setup
-    $ hermione_class.wear("all")
+    $ hermione.wear("all")
     call update_her_uniform
 
-    $ tonks_outfit_last.save() # Store current outfit.
-    $ tonks_class.equip(tonks_outfit_default)
+    $ ton_outfit_last.save() # Store current outfit.
+    $ tonks.equip(ton_outfit_default)
 
     call play_sound("door")
     call ton_chibi("stand","500","base")
@@ -678,7 +678,7 @@ label hg_pf_talk_tonks:
             call her_main("More than I could count!", "open", "closed", "angry", "mid")
             call ton_main("","angry","base","base","mid")
             call her_main("I'm almost certain one of the girls wasn't wearing any underwear in class - which is completely unhygienic.", "angry", "narrow", "worried", "mid_soft")
-            if not hermione_class.get_worn("panties"):
+            if not hermione.is_worn("panties"):
                 m "(Is she even wearing any herself right now?...)"
             call her_main("It was if a snail had dragged themselves across one of the seats.", "annoyed", "base", "base", "R", cheeks="blush")
             call her_main("I had to insist on staying after class - and I spent a good 10 minutes scourgifying everything.", "disgust", "narrow", "worried", "down", cheeks="blush")
@@ -1155,7 +1155,7 @@ label hg_pf_talk_tonks:
                     call ton_walk(action="leave")
 
 
-    $ tonks_class.equip(tonks_outfit_last) # Equip custom outfit.
+    $ tonks.equip(ton_outfit_last) # Equip custom outfit.
     $ tonks_busy = True
 
     return

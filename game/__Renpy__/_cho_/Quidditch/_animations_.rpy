@@ -4,7 +4,7 @@ screen hufflepuff_match_cho_chase(zoom1=0.5, zoom2=0.5):
     add "images/rooms/quidditch_pitch/sky.png"
     add "snitch" at snitch_chased(zoom1, zoom2)
     add "images/rooms/quidditch_pitch/cho_chase.png" at sprite_zoom_fly(zoom1, zoom2)
-    if cho_class.get_worn("panties"):
+    if cho.is_worn("panties"):
         add "images/rooms/quidditch_pitch/cho_chase_panties.png" at sprite_zoom_fly(zoom1, zoom2)
     
 image snitch:

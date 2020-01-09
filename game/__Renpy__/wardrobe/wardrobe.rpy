@@ -21,6 +21,10 @@ label wardrobe(char_label):
         char_scale = 1.0/globals()[active_girl+"_scaleratio"]
         char_level = _char_var_list[active_girl]
         hide_transitions = True
+        
+        renpy.start_predict("interface/wardrobe/*.png")
+        predict = tuple(x.get_image() for x in char_active.wardrobe_list)
+        renpy.start_predict(*predict)
 
         wardrobe_background = wardrobe_background_day if interface_color == "gold" else wardrobe_background_night
         
@@ -244,6 +248,8 @@ label wardrobe(char_label):
         #$ char_active.clothes_compatible()
         if wardrobe_music:
             call play_music(active_girl)
+        $ renpy.stop_predict("interface/wardrobe/*.png")
+        $ renpy.stop_predict(*predict)
         return
     jump .after_init
         

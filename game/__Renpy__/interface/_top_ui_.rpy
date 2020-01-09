@@ -320,18 +320,19 @@ label bugfix_menu:
             call reset_luna_base
             call reset_luna_clothing
             call reset_susan_clothing
-            $ hermione_class.animattion(None)
-            $ hermione_class.wear("all")
-            $ hermione_class.equip(hermione_outfit_default)
-            $ cho_class.animation(None)
-            $ cho_class.wear("all")
-            $ cho_class.equip(cho_outfit_default)
-            $ astoria_class.animation(None)
-            $ astoria_class.wear("all")
-            $ astoria_class.equip(astoria_outfit_default)
-            $ tonks_class.animation(None)
-            $ tonks_class.wear("all")
-            $ tonks_class.equip(tonks_outfit_default)
+
+            $ hermione.wear("all")
+            $ hermione.equip(her_outfit_default)
+            $ hermione.rebuild()
+            $ cho.wear("all")
+            $ cho.equip(cho_outfit_default)
+            $ cho.rebuild()
+            $ astoria.wear("all")
+            $ astoria.equip(ast_outfit_default)
+            $ astoria.rebuild()
+            $ tonks.wear("all")
+            $ tonks.equip(ton_outfit_default)
+            $ tonks.rebuild()
             ">Appearance of each girl set back to default."
             jump bugfix_menu
         "-Reset Cho public and personal favours-" if cho_unlocked:

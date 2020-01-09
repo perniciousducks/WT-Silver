@@ -99,8 +99,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         ">Hermione pulls off her top in a huff."
 
         hide screen hermione_main
-        $ hermione_class.strip("top")
-        $ hermione_class.strip("bra")
+        $ hermione.strip("top")
+        $ hermione.strip("bra")
 
         call her_main("Feel free to humiliate me!", "angry", "base", "angry", "mid",tears="crying")
         ">Hermione angrily removes her skirt."
@@ -802,7 +802,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call load_luna_clothing_saves
         call update_lun_uniform
         
-        $ hermione_class.wear("all")
+        $ hermione.wear("all")
 
         show screen luna_main
         show screen hermione_main
@@ -840,7 +840,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         call her_chibi("stand","mid","base")
 
-        $ hermione_class.wear("all")
+        $ hermione.wear("all")
 
         $ luna_flip = -1
         call lun_main("",xpos="mid",ypos="base")
@@ -1135,7 +1135,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     hide screen hermione_main
                     with d3
 
-                    $ hermione_class.wear("all")
+                    $ hermione.wear("all")
 
                     call her_walk(action="leave")
 
@@ -1169,7 +1169,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     call load_luna_clothing_saves
                     call update_lun_uniform
                    
-                    $ hermione_class.wear("all")
+                    $ hermione.wear("all")
 
                     with d3
                     pause.8

@@ -595,7 +595,7 @@ default luna_clothing_sets_list = [
 
 init offset = 1 # Initialize chunk after character class
 
-default ag_anntakamaki_ITEM = item_class(id="ag_ann_takamaki", name="Ann Takamaki Cosplay Outfit", type="outfit", items=["onepiece","gloves", "boots", "buttplug", "mask", "hairstyle"], image=astoria_outfit_anntakamaki, cost=600, wait_time=2, description=">The legend says that the one who wears it will\nlook like a different persona...")
+default ag_anntakamaki_ITEM = item_class(id="ag_ann_takamaki", name="Ann Takamaki Cosplay Outfit", type="outfit", items=["onepiece","gloves", "boots", "buttplug", "mask", "hairstyle"], image=ast_outfit_ann, cost=600, wait_time=2, description=">The legend says that the one who wears it will\nlook like a different persona...")
 
 default astoria_outfits_list=[
     #ag_boss_uniform_ITEM,
@@ -685,12 +685,7 @@ default outfit_linking = {
     cc_bikini_micro_ITEM.id:        "cho_outfit_bikini",
     cc_lingerie_lace_ITEM.id:       "cho_outfit_lacelingerie",
     cc_dress_red_ITEM.id:           "cho_outfit_dress1",
-    ag_anntakamaki_ITEM.id:         "astoria_outfit_anntakamaki"
+    ag_anntakamaki_ITEM.id:         "ast_outfit_ann"
 }
 
 init offset = 0 # back to normal
-
-# Tonks Outfits
-default tonks_outfits_list = []
-default tonks_costumes_list = []
-default tonks_dresses_list = []

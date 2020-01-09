@@ -1,136 +1,136 @@
-# Hermione wardrobe init
-default hermione_class = char_class(char="hermione")
+###############
+## Character ##
+###############
 
-default hermione_hair_base = cloth_class(char="hermione", category="head", subcat="hair", type="hair", id="base", layers=3, color=[[152, 89, 48, 255], [195, 137, 89, 255], [230, 141, 32, 255]])
+default hermione = Doll(name="hermione", 
+                        clothes={"hat":        [None, 15, True],
+                                 "hair":       [None, 4, True],
+                                 "earring":    [None, 14, True],
+                                 "neckwear":   [None, 11, True],
+                                 "robe":       [None, 22, True],
+                                 "gloves":     [None, 21, True],
+                                 "top":        [None, 15, True],
+                                 "bra":        [None, 9, True],
+                                 "bottom":     [None, 8, True],
+                                 "garterbelt": [None, 7, True],
+                                 "panties":    [None, 6, True],
+                                 "stockings":  [None, 5, True],
+                                 "buttplug":   [None, -1, True],
+                                 "pubes":      [None, 3, True],
+                                 "tattoo0":    [None, 1, True],
+                                 "tattoo1":    [None, 1, True],
+                                 "tattoo2":    [None, 1, True],
+                                 "tattoo3":    [None, 1, True],
+                                 "tattoo4":    [None, 1, True],
+                                 "piercing0":  [None, 2, True],
+                                 "piercing1":  [None, 2, True],
+                                 "piercing2":  [None, 2, True],
+                                 "piercing3":  [None, 2, True],
+                                 "piercing4":  [None, 2, True],
+                                 "accessory0": [None, 12, True],
+                                 "accessory1": [None, 12, True],
+                                 "accessory2": [None, 12, True],
+                                 "accessory3": [None, 12, True],
+                                 "accessory4": [None, 12, True],
+                                 "makeup0":    [None, 3, True],
+                                 "makeup1":    [None, 3, True],
+                                 "makeup2":    [None, 3, True],
+                                 "makeup3":    [None, 3, True],
+                                 "makeup4":    [None, 3, True]},
+                        face={"tears":    [None, 12, True],
+                              "cheeks":   [None, 7, True],
+                              "eyebrows": ["base", 11, True],
+                              "eyes":     ["base", 8, True],
+                              "pupils":   ["mid", 9, True],
+                              "mouth":    ["base", 13, True]},
+                        body={"armleft": ["down", 3], 
+                              "armright":["down", 1], 
+                              "base":    ["front", 0], 
+                              "breasts": ["normal", 2]})
+                              
+###############
+##   Hair    ##
+###############
 
-# School uniform set
+default her_hair_base = DollCloth("hermione", ("head", "hair"), "hair", "base", [[152, 89, 48, 255], [195, 137, 89, 255], [230, 141, 32, 255]])
 
-default hermione_cloth_topschool1 = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_1", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]], bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
-default hermione_cloth_topschool2     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_2", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=4, bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
-default hermione_cloth_topschool3     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_3", layers=3, color=[[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=8, bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
-default hermione_cloth_topschool4     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_4", layers=3, color=[[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=8, bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
-default hermione_cloth_topschool5     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_5", layers=3, color=[[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=12, bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
-default hermione_cloth_topschool6     = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="top_school_6", layers=3, color=[[109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]], whoring=12, bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
-default hermione_cloth_schoolskirt1 = cloth_class(char="hermione", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_1", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]])
-default hermione_cloth_schoolskirt2 = cloth_class(char="hermione", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_2", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=4)
-default hermione_cloth_schoolskirt3 = cloth_class(char="hermione", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_3", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=8)
-default hermione_cloth_schoolskirt4 = cloth_class(char="hermione", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_4", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=12)
-default hermione_cloth_stockings1 = cloth_class(char="hermione", category="legwear", subcat="stockings", type="stockings", id="stockings_1", layers=2, color=[[219, 165, 13, 255], [146, 63, 30, 255]])
+################
+## Schoolgirl ##
+################
 
-# Maid outfit
+default her_top_school1 = DollCloth("hermione", ("tops", "school"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
+default her_top_school2 = DollCloth("hermione", ("tops", "school"), "top", "top_school_2", [[183, 183, 184, 255], [109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
+default her_top_school3 = DollCloth("hermione", ("tops", "school"), "top", "top_school_3", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
+default her_top_school4 = DollCloth("hermione", ("tops", "school"), "top", "top_school_4", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
+default her_top_school5 = DollCloth("hermione", ("tops", "school"), "top", "top_school_5", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
+default her_top_school6 = DollCloth("hermione", ("tops", "school"), "top", "top_school_6", [[109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
+default her_bottom_school1 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_1", [[103, 90, 108, 255], [232, 177, 13, 255]])
+default her_bottom_school2 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_2", [[103, 90, 108, 255], [232, 177, 13, 255]])
+default her_bottom_school3 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_3", [[103, 90, 108, 255], [232, 177, 13, 255]])
+default her_bottom_school4 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_4", [[103, 90, 108, 255], [232, 177, 13, 255]])
+default her_stockings_base1 = DollCloth("hermione", ("legwear", "stockings"), "stockings", "stockings_1", [[219, 165, 13, 255], [146, 63, 30, 255]])
+default her_panties_base1 = DollCloth("hermione", ("panties", "panties"), "panties", "basic_panties_1", [[232, 232, 232, 255], [202, 60, 1, 255]])
+default her_bra_base1 = DollCloth("hermione", ("bras", "bras"), "bra", "basic_bra_1", [[232, 232, 232, 255], [202, 60, 1, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
 
-default hermione_cloth_maiddress1 = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="maid_dress_1", layers=3, color=[[40, 51, 61, 255], [236, 243, 244, 255], [53, 63, 84, 255]], bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
-default hermione_cloth_maidstockings1 = cloth_class(char="hermione", category="legwear", subcat="stockings", type="stockings", id="maid_stockings_1", layers=1, color=[[53, 33, 30, 255]])
-default hermione_cloth_maidhat1 = cloth_class(char="hermione", category="head", subcat="hats", type="hat", id="maid_hat_1", layers=1, color=[[236, 243, 244, 255]])
-default hermione_cloth_maidchoker1 = cloth_class(char="hermione", category="head", subcat="neckwear", type="neckwear", id="maid_choker_1", layers=2, color=[[40, 51, 61, 255], [236, 243, 244, 255]])
-default hermione_cloth_maidchoker2 = cloth_class(char="hermione", category="head", subcat="neckwear", type="neckwear", id="maid_choker_2", layers=1, color=[[236, 243, 244, 255]])
-default hermione_cloth_maidgloves1 = cloth_class(char="hermione", category="misc", subcat="gloves", type="gloves", id="maid_gloves_1", layers=3, color=[[40, 51, 61, 255], [236, 243, 244, 255], [53, 63, 84, 255]])
+default her_outfit_default = DollOutfit([her_hair_base, her_top_school1, her_bottom_school1, her_panties_base1, her_bra_base1, her_stockings_base1], True)
+default her_outfit_last = DollOutfit([her_hair_base])
 
-# Poker outfit
-default hermione_cloth_pokerhat1 = cloth_class(char="hermione", category="head", subcat="hats", type="hat", id="poker_hat_1", layers=3, color=[[26, 26, 35, 255], [232, 232, 232, 255], [153, 22, 10, 255]])
-default hermione_cloth_pokerhat2 = cloth_class(char="hermione", category="head", subcat="hats", type="hat", id="poker_hat_2", layers=3, color=[[26, 26, 35, 255], [232, 232, 232, 255], [153, 22, 10, 255]])
-default hermione_cloth_pokerbowtie1 = cloth_class(char="hermione", category="head", subcat="neckwear", type="neckwear", id="poker_bowtie_1", layers=3, color=[[232, 232, 232, 255], [153, 22, 10, 255], [255, 179, 3, 255]])
-default hermione_cloth_pokerstockings1 = cloth_class(char="hermione", category="legwear", subcat="stockings", type="stockings", id="poker_stockings_1", layers=2, color=[[26, 26, 35, 255], [153, 22, 10, 255]])
-default hermione_cloth_pokerstockings2 = cloth_class(char="hermione", category="legwear", subcat="stockings", type="stockings", id="poker_stockings_2", layers=2, color=[[26, 26, 35, 255], [153, 22, 10, 255]])
-default hermione_cloth_pokerpanties1 = cloth_class(char="hermione", category="panties", subcat="panties", type="panties", id="poker_panties_1", layers=3, color=[[26, 26, 35, 255], [153, 22, 10, 255], [255, 179, 3, 255]])
-default hermione_cloth_pokerbra1 = cloth_class(char="hermione", category="bras", subcat="bras", type="bra", id="poker_bra_1", layers=4, color=[[26, 26, 35, 255], [232, 232, 232, 255], [153, 22, 10, 255], [255, 179, 3, 255]], incompatible=["panties", "top", "bottom"])
-default hermione_cloth_pokergloves1 = cloth_class(char="hermione", category="misc", subcat="gloves", type="gloves", id="poker_gloves_1", layers=2, color=[[232, 232, 232, 255], [255, 179, 3, 255]])
-default hermione_cloth_pokerearring1 = cloth_class(char="hermione", category="head", subcat="earrings", type="earring", id="poker_earring_1", layers=1, color=[[255, 179, 3, 255]])
-default hermione_cloth_pokerbellypiercing1 = cloth_class(char="hermione", category="torso", subcat="piercing", type="piercing2", id="poker_belly_1", layers=4, color=[[26, 26, 35, 255], [232, 232, 232, 255], [153, 22, 10, 255], [255, 179, 3, 255]])
+###########################
+## Leather Bikini Outfit ##
+###########################
+default her_panties_bikini1 = DollCloth("hermione", ("panties", "panties"), "panties", "bikini_panties_1", [[138, 0, 0, 255], [252, 135, 0, 255]])
+default her_bra_bikini1 = DollCloth("hermione", ("bras", "bras"), "bra", "bikini_bra_1", [[138, 0, 0, 255], [252, 135, 0, 255]])
 
-# Basic underwear
-default hermione_cloth_basicpanties1 = cloth_class(char="hermione", category="panties", subcat="panties", type="panties", id="basic_panties_1", layers=2, color=[[232, 232, 232, 255], [202, 60, 1, 255]])
-default hermione_cloth_basicbra1 = cloth_class(char="hermione", category="bras", subcat="bras", type="bra", id="basic_bra_1", layers=4, color=[[232, 232, 232, 255], [202, 60, 1, 255], [167, 77, 42, 255], [237, 179, 14, 255]], bodyfix={"breasts": ["breasts_01_tight", 4, 0, 0, False]})
+default her_outfit_bikini1 = DollOutfit([her_panties_bikini1, her_bra_bikini1], price=100)
 
-# Rave bikini
-default hermione_cloth_bikinipanties1 = cloth_class(char="hermione", category="panties", subcat="panties", type="panties", id="bikini_panties_1", layers=2, color=[[138, 0, 0, 255], [252, 135, 0, 255]])
-default hermione_cloth_bikinibra1 = cloth_class(char="hermione", category="bras", subcat="bras", type="bra", id="bikini_bra_1", layers=2, color=[[138, 0, 0, 255], [252, 135, 0, 255]])
+########################
+## Rave Bikini Outfit ##
+########################
 
-# Bikini leather
-default hermione_cloth_bikinipanties2 = cloth_class(char="hermione", category="panties", subcat="panties", type="panties", id="bikini_panties_2", layers=2, color=[[55, 55, 55, 255], [197, 142, 35, 255]])
-default hermione_cloth_bikinibra2 = cloth_class(char="hermione", category="bras", subcat="bras", type="bra", id="bikini_bra_2", layers=2, color=[[55, 55, 55, 255], [197, 142, 35, 255]])
+default her_panties_bikini2 = DollCloth("hermione", ("panties", "panties"), "panties", "bikini_panties_2", [[55, 55, 55, 255], [197, 142, 35, 255]])
+default her_bra_bikini2 = DollCloth("hermione", ("bras", "bras"), "bra", "bikini_bra_2", [[55, 55, 55, 255], [197, 142, 35, 255]])
 
-# Bunny outfit
-default hermione_cloth_bunnytop1 = cloth_class(char="hermione", category="tops", subcat="school", type="top", id="bunny_top_1", layers=1, color=[[48, 48, 48, 255]], incompatible=["panties", "bra"], zorder=15)
-default hermione_cloth_bunnystockings1 = cloth_class(char="hermione", category="legwear", subcat="stockings", type="stockings", id="bunny_stockings_1", layers=1, color=[[81, 81, 81, 255]])
-default hermione_cloth_bunnytattoo1 = cloth_class(char="hermione", category="hips", subcat="tattoos", type="tattoo3", id="bunny_tattoo1", layers=1, color=[[0, 0, 1, 255]])
-default hermione_cloth_bunnyhat1 = cloth_class(char="hermione", category="head", subcat="hats", type="hat", id="bunny_hat_1", layers=2, color=[[48, 48, 48, 255], [232, 232, 232, 255]])
-default hermione_cloth_bunnygloves1 = cloth_class(char="hermione", category="misc", subcat="gloves", type="gloves", id="bunny_gloves_1", layers=1, color=[[232, 232, 232, 255]])
-default hermione_cloth_bunnybowtie1 = cloth_class(char="hermione", category="head", subcat="neckwear", type="neckwear", id="bunny_bowtie_1", layers=2, color=[[232, 232, 232, 255], [48, 48, 48, 255]])
+default her_outfit_bikini2 = DollOutfit([her_panties_bikini2, her_bra_bikini2], price=100)
 
-# Temporal save
-default hermione_outfit_last = outfit_class(name="Last worn items", group=[hermione_hair_base])
+#################
+## Maid Outfit ##
+#################
 
-default hermione_outfit_custom = outfit_class(name = "Default", group = [hermione_hair_base.clone(), hermione_cloth_topschool1.clone(), hermione_cloth_schoolskirt1.clone(), hermione_cloth_basicpanties1.clone(), hermione_cloth_basicbra1.clone()], unlocked=True)
+default her_top_maid1 = DollCloth("hermione", ("tops", "school"), "top", "maid_dress_1", [[40, 51, 61, 255], [236, 243, 244, 255], [53, 63, 84, 255]])
+default her_stockings_maid1 = DollCloth("hermione", ("legwear", "stockings"), "stockings", "maid_stockings_1", [[53, 33, 30, 255]])
+default her_hat_maid1 = DollCloth("hermione", ("head", "hats"), "hat", "maid_hat_1", [[236, 243, 244, 255]])
+default her_neckwear_maid1 = DollCloth("hermione", ("head", "neckwear"), "neckwear", "maid_choker_1", [[40, 51, 61, 255], [236, 243, 244, 255]])
+default her_neckwear_maid2 = DollCloth("hermione", ("head", "neckwear"), "neckwear", "maid_choker_2", [[236, 243, 244, 255]])
+default her_gloves_maid1 = DollCloth("hermione", ("misc", "gloves"), "gloves", "maid_gloves_1", [[40, 51, 61, 255], [236, 243, 244, 255], [53, 63, 84, 255]])
 
-# Outfits
-default hermione_outfit_default = outfit_class(name = "Default", group=[hermione_hair_base.clone(), hermione_cloth_topschool1.clone(), hermione_cloth_schoolskirt1.clone()])
-default hermione_outfit_default_no_vest = outfit_class(name = "Default", group=[hermione_hair_base.clone(), hermione_cloth_topschool3.clone(), hermione_cloth_schoolskirt1.clone()])
-default hermione_outfit_default_no_tie_open_shirt = outfit_class(name = "Default", group=[hermione_hair_base.clone(), hermione_cloth_topschool5.clone(), hermione_cloth_schoolskirt1.clone()])
-        
-label default_hermione_class_init:
-python:
-    # Because hermione_class must be defined before clothing, the default clothing can only be set afterwards, like so:
-    if not hermione_class.body or not hermione_class.face or not hermione_class.other or not hermione_class.clothing:
-        hermione_class.body = {
-            "armleft":   ["arm_down_l", 18, 0, 0, False],
-            "armright":  ["arm_down_r", 2, 0, 0, False],
-            "breasts":   ["breasts_01", 4, 0, 0, False],
-            "base":      ["base_01", 3, 0, 0, False],
-            "legs":      [None, 2, 0, 0, False],
-            "animation": [None, 2, 0, 0, False]
-        }
-                    
-        hermione_class.face = {
-            "tears":    [None, 11, 0, 0, False],
-            "cheeks":   [None, 10, 0, 0, False],
-            "eyebrows": ["base", 9, 0, 0, False],
-            "eyes":     ["base", 8, 0, 0, False],
-            "pupils":   ["mid", 7, 0, 0, False],
-            "whites":   ["_white_", 6, 0, 0, False],
-            "mouth":    ["base", 13, 0, 0, False]
-        }
+default her_outfit_maid = DollOutfit([her_hair_base, her_top_maid1, her_stockings_maid1, her_hat_maid1, her_neckwear_maid1, her_neckwear_maid2, her_gloves_maid1], price=250)
 
-        hermione_class.other = {
-            "cum":   [None, 15, 0, 0, False],
-            "emote": [None, 30, 0, 0, False]
-        }
-                    
-        hermione_class.update_paths("body", "face", "other")
+##################
+## Poker Outfit ##
+##################
 
-        hermione_class.clothing = {
-            "hat":        [None, 24, 0, 0, False],
-            "hair":       [hermione_hair_base, 12, 0, 0, False],
-            "earring":    [None, 22, 0, 0, False],
-            "neckwear":   [None, 20, 0, 0, False],
-            "robe":       [None, 21, 0, 0, False],
-            "gloves":     [None, 41, 0, 0, False],
-            "top":        [hermione_cloth_topschool1, 19, 0, 0, False],
-            "bra":        [hermione_cloth_basicbra1, 18, 0, 0, False],
-            "bottom":     [hermione_cloth_schoolskirt1, 16, 0, 0, False],
-            "garterbelt": [None, 15, 0, 0, False],
-            "panties":    [hermione_cloth_basicpanties1, 14, 0, 0, False],
-            "stockings":  [hermione_cloth_stockings1, 13, 0, 0, False],
-            "buttplug":   [None, 0, 0, 0, False],
-            "pubes":      [None, 11, 0, 0, False],
-            "tattoo0":    [None, 10, 0, 0, False],
-            "tattoo1":    [None, 10, 0, 0, False],
-            "tattoo2":    [None, 10, 0, 0, False],
-            "tattoo3":    [None, 10, 0, 0, False],
-            "tattoo4":    [None, 10, 0, 0, False],
-            "piercing0":  [None, 10, 0, 0, False],
-            "piercing1":  [None, 10, 0, 0, False],
-            "piercing2":  [None, 10, 0, 0, False],
-            "piercing3":  [None, 10, 0, 0, False],
-            "piercing4":  [None, 10, 0, 0, False],
-            "accessory0": [None, 20, 0, 0, False],
-            "accessory1": [None, 20, 0, 0, False],
-            "accessory2": [None, 20, 0, 0, False],
-            "accessory3": [None, 20, 0, 0, False],
-            "accessory4": [None, 20, 0, 0, False],
-            "makeup0":    [None, 11, 0, 0, False],
-            "makeup1":    [None, 11, 0, 0, False],
-            "makeup2":    [None, 11, 0, 0, False],
-            "makeup3":    [None, 11, 0, 0, False],
-            "makeup4":    [None, 11, 0, 0, False]
-        }
+default her_hat_poker1 = DollCloth("hermione", ("head", "hats"), "hat", "poker_hat_1", [[26, 26, 35, 255], [232, 232, 232, 255], [153, 22, 10, 255]])
+default her_hat_poker2 = DollCloth("hermione", ("head", "hats"), "hat", "poker_hat_2", [[26, 26, 35, 255], [232, 232, 232, 255], [153, 22, 10, 255]])
+default her_neckwear_poker1 = DollCloth("hermione", ("head", "neckwear"), "neckwear", "poker_bowtie_1", [[232, 232, 232, 255], [153, 22, 10, 255], [255, 179, 3, 255]])
+default her_stockings_poker1 = DollCloth("hermione", ("legwear", "stockings"), "stockings", "poker_stockings_1", [[26, 26, 35, 255], [153, 22, 10, 255]])
+default her_stockings_poker2 = DollCloth("hermione", ("legwear", "stockings"), "stockings", "poker_stockings_2", [[26, 26, 35, 255], [153, 22, 10, 255]])
+default her_panties_poker1 = DollCloth("hermione", ("panties", "panties"), "panties", "poker_panties_1", [[26, 26, 35, 255], [153, 22, 10, 255], [255, 179, 3, 255]])
+default her_bra_poker1 = DollCloth("hermione", ("bras", "bras"), "bra", "poker_bra_1", [[26, 26, 35, 255], [232, 232, 232, 255], [153, 22, 10, 255], [255, 179, 3, 255]], blacklist=["panties", "top", "bottom"])
+default her_gloves_poker1 = DollCloth("hermione", ("misc", "gloves"), "gloves", "poker_gloves_1", [[232, 232, 232, 255], [255, 179, 3, 255]])
+default her_earring_poker1 = DollCloth("hermione", ("head", "earrings"), "earring", "poker_earring_1", [[255, 179, 3, 255]])
+default her_piercing2_poker1 = DollCloth("hermione", ("torso", "piercing"), "piercing2", "poker_belly_1", [[26, 26, 35, 255], [232, 232, 232, 255], [153, 22, 10, 255], [255, 179, 3, 255]])
+
+default her_outfit_poker = DollOutfit([her_hat_poker1, her_hat_poker2, her_neckwear_poker1, her_stockings_poker1, her_stockings_poker2, her_panties_poker1, her_bra_poker1, her_gloves_poker1, her_earring_poker1, her_piercing2_poker1], price=250)
+
+##################
+## Bunny Outfit ##
+##################
+
+default her_top_bunny1 = DollCloth("hermione", ("tops", "school"), "top", "bunny_top_1", [[48, 48, 48, 255]], blacklist=["panties", "bra"], zorder=7)
+default her_stockings_bunny1 = DollCloth("hermione", ("legwear", "stockings"), "stockings", "bunny_stockings_1", [[81, 81, 81, 255]])
+default her_tattoo3_bunny1 = DollCloth("hermione", ("hips", "tattoos"), "tattoo3", "bunny_tattoo1", [[0, 0, 1, 255]])
+default her_hat_bunny1 = DollCloth("hermione", ("head", "hats"), "hat", "bunny_hat_1", [[48, 48, 48, 255], [232, 232, 232, 255]])
+default her_gloves_bunny1 = DollCloth("hermione", ("misc", "gloves"), "gloves", "bunny_gloves_1", [[232, 232, 232, 255]])
+default her_neckwear_bunny1 = DollCloth("hermione", ("head", "neckwear"), "neckwear", "bunny_bowtie_1", [[232, 232, 232, 255], [48, 48, 48, 255]])
+
+default her_outfit_bunny = DollOutfit([her_top_bunny1, her_stockings_bunny1, her_tattoo3_bunny1, her_hat_bunny1, her_gloves_bunny1, her_neckwear_bunny1], price=250)

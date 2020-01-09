@@ -269,7 +269,7 @@ label cc_st_return_E1:
     call bld
     m "That girl sure is a piece of work..."
 
-    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
+    $ cho.equip(cho_outfit_last) # Equip last worn clothes
 
     $ hermione_busy = True
     $ cho_busy = True
@@ -308,7 +308,7 @@ label cc_st_return_E2:
         "Dev Note" "You picked the right clothing combination, but Hermione is not yet a commentator."
 
 
-    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
+    $ cho.equip(cho_outfit_last) # Equip last worn clothes
 
     if cho_quid.commentator == "tonks":
         $ tonks_busy = True
@@ -329,7 +329,7 @@ label cc_st_return_E3:
     # TODO: add writing.
 
 
-    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
+    $ cho.equip(cho_outfit_last) # Equip last worn clothes
 
     if cho_quid.commentator == "hermione":
         $ her_mood += 6
@@ -362,7 +362,7 @@ label cc_st_return_fail:
 #        m "So what's the issue?"
 #        cho "She's not only distracting those Slytherins, but my team as well."
 
-    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
+    $ cho.equip(cho_outfit_last) # Equip last worn clothes
 
     if cho_quid.commentator == "hermione":
         $ her_mood += 6

@@ -338,7 +338,7 @@ label hermione_summon_setup:
     if hermione_outfits_schedule:
         $ tmp_outfits = get_character_outfits_schedule("hermione")
         if len(tmp_outfits) > 0:
-            $ hermione_class.equip(renpy.random.choice(tmp_outfits))
+            $ hermione.equip(renpy.random.choice(tmp_outfits))
 
     call play_sound("door")
     call her_chibi("stand","mid","base")

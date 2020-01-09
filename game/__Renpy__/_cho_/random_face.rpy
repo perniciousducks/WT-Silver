@@ -89,8 +89,8 @@ label set_cho_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
 
     #$ changeCho(temp_mouth, temp_eyes, temp_eyebrows, temp_pupils, temp_cheeks, temp_tears, temp_extra, temp_emote)
     python:
-        cho_class.expression(mouth=temp_mouth, eyes=temp_eyes, eyebrows=temp_eyebrows, pupils=temp_pupils, cheeks=temp_cheeks, tears=temp_tears)
-        cho_class.special(emote=temp_emote)
+        cho.set_face(mouth=temp_mouth, eyes=temp_eyes, eyebrows=temp_eyebrows, pupils=temp_pupils, cheeks=temp_cheeks, tears=temp_tears)
+        #cho_class.special(emote=temp_emote)
 
     return
 

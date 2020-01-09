@@ -1,6 +1,6 @@
 init python:            
     class DollCloth(DollMethods): 
-        def __init__(self, name, categories, type, id, color, zorder=None, unlocked=False, level=0, blacklist=None, parent=None):
+        def __init__(self, name, categories, type, id, color, zorder=None, unlocked=False, level=0, blacklist=None, parent=None, armfix=False, modpath=""):
             self.name = name
             self.char = eval(name)
             self.categories = categories
@@ -14,14 +14,16 @@ init python:
             self.ico = None
             self.blacklist = blacklist
             self.level = level
+            self.modpath = modpath
+            self.armfix = armfix
             
             # Inherit zorder from character if needed
             self.zorder = zorder if zorder else self.char.clothes[type][1]
             
             # Detect folder path
             for x in (categories[0], categories[1], type):
-                if renpy.loadable("characters/{}/clothes/{}/{}/".format(name, x, id)):
-                    self.imagepath = "characters/{}/clothes/{}/{}/".format(name, x, id)
+                if renpy.loadable("{}/characters/{}/clothes/{}/{}/".format(modpath, name, x, id)):
+                    self.imagepath = "{}/characters/{}/clothes/{}/{}/".format(modpath, name, x, id)
                     break
             
             # Detect special layers and define them
@@ -36,6 +38,9 @@ init python:
                     path = "{}{}_{}.png".format(self.imagepath, i, x)
                     if renpy.loadable(path):
                         self.__dict__[x].append(path)
+                if self.__dict__[x]:
+                    path = "{}outline_{}.png".format(self.imagepath, x)
+                    self.__dict__[x+"_outline"] = path if renpy.loadable(path) else None
                 
             # Add to character wardrobe and unordered list
             if not parent:
@@ -58,7 +63,7 @@ init python:
                     sprites.append((path, self.layers+n))
             
             sprites.sort(key=lambda x: x[1], reverse=False)
-            sprites = itertools.chain.from_iterable(((0,0), x[0]) for x in sprites)
+            sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))
             return sprites
             
         def build_icon(self):
@@ -75,7 +80,7 @@ init python:
             bounds = "{}outline.png".format(self.imagepath) if renpy.loadable("{}outline.png".format(self.imagepath)) else "{}0.png".format(self.imagepath)
                     
             sprites.sort(key=lambda x: x[1], reverse=False)
-            sprites = itertools.chain.from_iterable(((0,0), x[0]) for x in sprites)
+            sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))
             self.ico = CroppedImage(sprites, bounds)
             
         def get_back(self):

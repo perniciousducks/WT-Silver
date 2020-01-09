@@ -23,26 +23,26 @@ label t_wardrobe_quidditch():
         else:
             $ current_item[_return[2]] = clamp(current_item[_return[2]]+1, 0, len(quidditch_items.items()[_return[2]][1])-1)
             
-        if not cho_class.get_cloth(quidditch_items.keys()[_return[2]]) == quidditch_items.items()[_return[2]][1][current_item[_return[2]]]:
+        if not cho.get_equipped(quidditch_items.keys()[_return[2]]) == quidditch_items.items()[_return[2]][1][current_item[_return[2]]]:
             if not quidditch_items.items()[_return[2]][1][current_item[_return[2]]] == None:
-                $ cho_class.equip(quidditch_items.items()[_return[2]][1][current_item[_return[2]]])
+                $ cho.equip(quidditch_items.items()[_return[2]][1][current_item[_return[2]]])
             else:
-                $ cho_class.unequip(quidditch_items.keys()[_return[2]])
+                $ cho.unequip(quidditch_items.keys()[_return[2]])
     elif _return == "apply":
         # Add reactions here, example:
         
-        if cho_class.get_cloth("robe") == None:
+        if cho.get_equipped("robe") == None:
             call remove_quidditch_coat
             
         # If taking off coat failed
         if _return == "fail":
             jump .after_init
             
-        if cho_class.get_cloth("bottom").id == choq_cloth_schoolskirt3.id:
+        if cho.get_equipped("bottom").id == choq_cloth_schoolskirt3.id:
             call use_quidditch_skirt_1
-        elif cho_class.get_cloth("bottom").id == choq_cloth_pantslong2.id:
+        elif cho.get_equipped("bottom").id == choq_cloth_pantslong2.id:
             call use_quidditch_pants_1
-        elif cho_class.get_cloth("bottom").id == choq_cloth_pantsshort4.id:
+        elif cho.get_equipped("bottom").id == choq_cloth_pantsshort4.id:
             call use_quidditch_pants_2
             
         $ cho_outfit_quidditch.save() #<- use this to save quidditch outfit if all checks are passed

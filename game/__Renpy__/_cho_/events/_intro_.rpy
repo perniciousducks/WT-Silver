@@ -798,7 +798,7 @@ label cho_intro_E3:
     call her_main("What? Now?", "clench", "wide", "base", "stare")
 
     # Hermione quickly gets dressed.
-    if not hermione_class.get_worn("top") or not hermione_class.get_worn("top"):
+    if not hermione.is_worn("top") or not hermione.is_worn("top"):
         call her_main("Wait, she can't see me like this!", "disgust", "narrow", "worried", "down")
 
         hide screen hermione_main
@@ -807,7 +807,7 @@ label cho_intro_E3:
 
         m "(...)"
 
-        $ hermione_class.wear("all")
+        $ hermione.wear("all")
         pause.5
 
     else:

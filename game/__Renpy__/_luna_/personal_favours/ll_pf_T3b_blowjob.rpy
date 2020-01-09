@@ -1259,7 +1259,7 @@ label ll_pf_blowjob_T1_summon:
     call play_music("playful_tension") # SEX THEME.
     hide screen blkfade
     hide screen bld1
-    $ hermione_class.strip("bra")
+    $ hermione.strip("bra")
     call set_her_action("lift_top")
     with d5
     pause.5
@@ -1290,31 +1290,31 @@ label ll_pf_blowjob_T1_summon:
     ">Hermione stares at your desk while stripping down to nothing."
     pause.2
     $ lunCG(pos=13)
-    $ hermione_class.strip("bra")
+    $ hermione.strip("bra")
     call set_her_action("lift_top")
     call her_main("")
     pause.5
     $ lunCG(pos=10)
-    $ hermione_class.strip("top")
+    $ hermione.strip("top")
     call set_her_action("None")
     call her_main("")
     pause.5
     $ lunCG(pos=15)
     call nar(">One piece after another...")
     $ lunCG(pos=10)
-    $ hermione_class.wear("panties")
+    $ hermione.wear("panties")
     call set_her_action("lift_skirt")
     call her_main("")
     pause.5
     $ lunCG(pos=12)
-    $ hermione_class.strip("bottom")
+    $ hermione.strip("bottom")
     call set_her_action("None")
     call her_main("")
     pause.5
     $ lunCG(pos=8)
     call nar(">Vest, shirt, her skirt, and finally...")
     $ lunCG(pos=15)
-    $ hermione_class.strip("panties")
+    $ hermione.strip("panties")
     call set_her_action("covering")
     call her_main("So... who's hiding under the desk?", "smile", "narrow", "base", "down")
     $ lunCG(pos=9)

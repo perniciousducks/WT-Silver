@@ -61,6 +61,8 @@ label transition(trans=None, immediate=False):
         # Default transition
         $ dynamic_transition("d3", immediate)
     return
+    
+define character.cho = Character("cho_name", dynamic=True)
 
 init python:
     ### Characters ###
@@ -101,7 +103,7 @@ init python:
     ### STUDENTS ###
     her = Character('[hermione_name]')
     lun = Character('Luna')
-    cho = Character('[cho_name]')
+
     sus = Character('Susan')
     ast = Character('[astoria_name]')
     twi = Character('Fred and George', show_side_image=Image("characters/misc/weasley_twins/base_01.png", xalign=1.0))

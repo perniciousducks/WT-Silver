@@ -25,7 +25,7 @@ init python:
             sprites.extend((o.get_image(), o.zorder) for o in self.group)
             
             sprites.sort(key=lambda x: x[1], reverse=False)
-            sprites = itertools.chain.from_iterable(((0,0), x[0]) for x in sprites)
+            sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))
             return sprites
             
         def export_data(self, tofile=True, filename="exported"):
@@ -100,3 +100,11 @@ init python:
             self.unlocked = True
             for i in self.group:
                 i.unlocked, i.parent.unlocked = True, True
+                
+        def save(self):
+            self.group = []
+            for v in self.char.clothes.itervalues():
+                if v[0]:
+                    self.group.append(v[0].clone())
+            self.rebuild_image()
+            return

@@ -4,8 +4,8 @@ label astoria_wardrobe_check(section, arg=None):
             temp_count = [0, 0, 0] # [0: required level, 1: underwear changed, 2: underwear equipped]
             temp_score = 0
             for item in arg.group:
-                if ast_affection < item.whoring and temp_count[0]*2 < item.whoring*2:
-                    temp_count[0] = item.whoring
+                if ast_affection < item.level and temp_count[0]*2 < item.level*2:
+                    temp_count[0] = item.level
                 if item.type in ("bra", "panties"):
                     temp_count[2] += 1
                     if char_active.get_cloth(item.type) != None:
@@ -140,7 +140,7 @@ label astoria_wardrobe_check(section, arg=None):
                             $ wardrobe_fail_hint(12)
                             return
                 else:
-                    if ast_affection < arg.whoring:
+                    if ast_affection < arg.level:
                         call .too_much
                         return
             else:
@@ -161,7 +161,7 @@ label astoria_wardrobe_check(section, arg=None):
                                 $ wardrobe_fail_hint(12)
                                 return
                 label .too_much:
-                if ast_affection < arg.whoring:
+                if ast_affection < arg.level:
                     if wardrobe_chitchats:
                         $ random_number = renpy.random.randint(1, 3)
                         if random_number == 1:
@@ -172,10 +172,13 @@ label astoria_wardrobe_check(section, arg=None):
                             call ast_main("Don't be such a creep, thanks but no thanks.",face="annoyed")
 
                     #Hint
-                    $ wardrobe_fail_hint(arg.whoring)
+                    $ wardrobe_fail_hint(arg.level)
                     return
 
     $ renpy.play('sounds/equip.ogg')
     $ current_item = arg
-    $ char_active.equip(current_item)
+    if isinstance(current_item, DollCloth) and current_item.type != "hair" and char_active.is_worn(current_item.type) != None and char_active.clothes[current_item.type][0].id == current_item.id:
+        $ char_active.unequip(current_item.type)
+    else:
+        $ char_active.equip(current_item)
     return

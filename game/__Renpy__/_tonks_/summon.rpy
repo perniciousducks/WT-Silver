@@ -13,8 +13,8 @@ label summon_tonks:
 
     label tonks_requests:
     # Hair fix
-    $ tonks_class.get_cloth("hair").color = tonks_haircolor
-    $ tonks_haircolor = tonks_class.get_cloth("hair").color
+    $ tonks.get_equipped("hair").color = tonks_haircolor
+    $ tonks_haircolor = tonks.get_equipped("hair").color
 
     # Reset
     call reset_menu_position
@@ -79,7 +79,7 @@ label summon_tonks:
             call play_sound("door")
 
             $ tonks_busy = True
-            $ tonks_class.wear("all")
+            $ tonks.wear("all")
 
             jump main_room
 
@@ -237,13 +237,13 @@ label tonks_talk:
             m "(Is in this school at least ONE person that has no problems with alcohol...?)"
             jump tonks_talk
 
-        "-Get naked!-" if tonks_strip_happened and (not tonks_class.get_worn("top") or not tonks_class.get_worn("bottom") or not tonks_class.get_worn("robe")):
+        "-Get naked!-" if tonks_strip_happened and (not tonks.is_worn("top") or not tonks.is_worn("bottom") or not tonks.is_worn("robe")):
             m "Get naked, [tonks_name]!"
             call ton_main("Of course, [ton_genie_name].","horny","base","base","ahegao")
             hide screen tonks_main
             with d3
 
-            $ tonks_class.strip("all")
+            $ tonks.strip("all")
             pause.8
 
             call ton_main("Do you like it, [ton_genie_name]?","horny","base","raised","mid")
@@ -254,14 +254,14 @@ label tonks_talk:
             call ton_main("I like the way you think, [ton_genie_name]!","horny","base","base","mid")
             jump tonks_requests
 
-        "-Get dressed-" if tonks_strip_happened and not (tonks_class.get_worn("top") or tonks_class.get_worn("bottom") or tonks_class.get_worn("robe")):
+        "-Get dressed-" if tonks_strip_happened and not (tonks.is_worn("top") or tonks.is_worn("bottom") or tonks.is_worn("robe")):
             m "Put on some clothes, would you..."
             m "This is a school, after all."
             call ton_main("Of course, [ton_genie_name].","base","base","base","mid")
             hide screen tonks_main
             with d3
 
-            $ tonks_class.wear("all")
+            $ tonks.wear("all")
             pause.8
 
             call ton_main("...","base","base","base","mid")

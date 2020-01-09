@@ -9,7 +9,7 @@ label hg_pf_admire_breasts_transition:
     pause.2
 
     # Setup Pose
-    $ hermione_class.strip("bra")
+    $ hermione.strip("bra")
     call set_her_action("lift_top")
 
     call her_chibi("lift_top","mid","base")

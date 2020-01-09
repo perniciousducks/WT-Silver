@@ -428,7 +428,7 @@ label ball_ending_E2:
     #Setting up Hermione's outfit.
     
     # TODO: Uncomment once ball dress is added.
-    #$ hermione_class.equip(ball_dress_pointer)
+    #$ hermione.equip(ball_dress_pointer)
 
     hide screen hermione_main
     hide screen room # MAIN BG (DAY).
@@ -2925,7 +2925,7 @@ label ball_ending_E3:
     $ daytime = True
     call update_interface_color
 
-    $ hermione_class.equip(hermione_outfit_default)
+    $ hermione.equip(her_outfit_default)
     call reset_hermione
 
     hide screen ccg
@@ -3065,7 +3065,7 @@ label ball_ending_E3:
 
         ### TITS ###
         hide screen hermione_main
-        $ hermione_class.strip("bra")
+        $ hermione.strip("bra")
         call set_her_action("lift_top")
         call her_main("", "annoyed", "narrow", "annoyed", "mid", xpos="mid", ypos="base", trans="fade")
         stop music
@@ -3076,7 +3076,7 @@ label ball_ending_E3:
         call her_main("", "annoyed", "base", "angry", "mid")
 
         hide screen hermione_main
-        $ hermione_class.strip("panties")
+        $ hermione.strip("panties")
         call set_her_action("lift_skirt")
         call her_main("","angry","annoyed", trans="fade")
         call ctc

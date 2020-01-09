@@ -159,7 +159,7 @@ label cc_ht_return_fail:
     # Cho leaves.
     call cho_walk(action="leave")
 
-    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
+    $ cho.equip(cho_outfit_last) # Equip last worn clothes
 
     if cc_ht.win_counter == 0:
         $ cho_mood += 5
@@ -217,7 +217,7 @@ label cc_ht_return_E1:
     call bld
     m "(...)"
 
-    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
+    $ cho.equip(cho_outfit_last) # Equip last worn clothes
 
     $ cho_busy = True
 
@@ -274,7 +274,7 @@ label cc_ht_return_E2:
     # Cho leaves.
     call cho_walk(action="leave")
 
-    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
+    $ cho.equip(cho_outfit_last) # Equip last worn clothes
 
     $ cho_busy = True
 
@@ -357,7 +357,7 @@ label cc_ht_return_E3:
     call bld
     m "(...)"
 
-    $ cho_class.equip(cho_outfit_last) # Equip last worn clothes
+    $ cho.equip(cho_outfit_last) # Equip last worn clothes
 
     $ cho_busy = True
 

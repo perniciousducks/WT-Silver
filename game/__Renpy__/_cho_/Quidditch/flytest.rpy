@@ -232,8 +232,8 @@ transform flytest_anim11:
 label flytest_cho:
     
     # Equip quidditch outfit and set quidditch animations
-    $ cho_class.equip(cho_outfit_quidditch)
-    $ cho_class.animation("quid", (233, -78)) # <- Prepares cho for animating
+    $ cho.equip(cho_outfit_quidditch)
+    $ cho.animation("quid", (233, -78)) # <- Prepares cho for animating
     
     show screen flytest
     
@@ -246,7 +246,7 @@ label flytest_cho:
     # reset everything
     $ cho_animation = None # <- same as above, removes animations completely
     $ cho_class.animation(None) # <- change cho back to default
-    $ cho_class.equip(cho_outfit_custom) # <- equip standard school outfit (This will probably get changed so the player equips his old outfit instead
+    $ cho.equip(cho_outfit_custom) # <- equip standard school outfit (This will probably get changed so the player equips his old outfit instead
     hide screen flytest
     jump main_room_menu
     

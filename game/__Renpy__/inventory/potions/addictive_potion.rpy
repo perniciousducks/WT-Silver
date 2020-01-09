@@ -597,7 +597,7 @@ label potion_scene_3_3_1:
         call set_her_action("lift_top")
         pause.5
 
-        $ hermione_class.strip("top")
+        $ hermione.strip("top")
         call set_her_action("none","skip_update")
         pause.5
 
@@ -611,7 +611,7 @@ label potion_scene_3_3_1:
         call set_her_action("lift_bottom")
         pause.5
 
-        $ hermione_class.strip("bottom")
+        $ hermione.strip("bottom")
         call set_her_action("none","skip_update")
         pause.5
 
@@ -650,7 +650,7 @@ label potion_scene_3_3_1:
             call nar("Hermione conjures an -I {image=textheart} Cum- badge, which magically attaches itself to her breasts.")
 
             # TODO: Uncomment once badges have been added.
-            # hermione_class.equip(cumslut_badge)
+            # hermione.equip(cumslut_badge)
 
             call her_main("Yay! Do you like it?", "grin", "happyCl", "base", "mid")
             call her_main("Anything else you want from me mistah?... I'll do anything!{image=textheart}", "soft", "narrow", "base", "mid_soft")
@@ -685,8 +685,8 @@ label potion_scene_3_3_1:
     call set_her_action("lift_top")
     pause.5
 
-    $ hermione_class.strip("top")
-    $ hermione_class.strip("bra")
+    $ hermione.strip("top")
+    $ hermione.strip("bra")
     call set_her_action("none","skip_update")
     pause.5
 
@@ -697,8 +697,8 @@ label potion_scene_3_3_1:
     call set_her_action("lift_skirt")
     pause.5
 
-    $ hermione_class.strip("bottom")
-    $ hermione_class.strip("panties")
+    $ hermione.strip("bottom")
+    $ hermione.strip("panties")
     call set_her_action("none","skip_update")
     pause.5
 

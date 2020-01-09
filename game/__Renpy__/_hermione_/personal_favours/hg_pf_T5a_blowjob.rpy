@@ -1026,8 +1026,8 @@ label hg_hidden_blowjob_tonks:
     $ her_mood += 10
 
     # Setup
-    $ tonks_outfit_last.save() # Store current outfit.
-    $ tonks_class.equip(tonks_outfit_default)
+    $ ton_outfit_last.save() # Store current outfit.
+    $ tonks.equip(ton_outfit_default)
 
     stop music fadeout 1.0
     call her_main("[genie_name], no! Please she will know that-", "angry", "base", "angry", "mid", emote="01", ypos="head")
@@ -1238,7 +1238,7 @@ label hg_hidden_blowjob_tonks:
     call ton_walk(action="leave")
     pause.5
 
-    $ tonks_class.equip(tonks_outfit_last) # Equip custom outfit.
+    $ tonks.equip(ton_outfit_last) # Equip custom outfit.
     $ hermione_flip = 1 #Default
 
     call play_music("playful_tension") # SEX THEME.

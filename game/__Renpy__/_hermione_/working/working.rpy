@@ -709,7 +709,7 @@ label inn_menu:
             m "I present you you're new barmaid."
             $ hermione_wear_robe = True
             # TODO: Uncomment once maid outfit has been added.
-            # hermione_class.equip(maid_outfit_pointer)
+            # hermione.equip(maid_outfit_pointer)
             call her_main("", "normal", "squint", "angry", "mid")
             call ctc
 
@@ -717,7 +717,7 @@ label inn_menu:
             her "Fine..."
 
             hide screen hermione_main
-            $ hermione_class.strip("robe")
+            $ hermione.strip("robe")
             call her_main("", "normal", "worriedCl", "worried", "mid")
             pause
 

@@ -7,7 +7,7 @@ init python:
 
 # The game starts here
 label start:
-    call temporary_post_default_init
+    call wardrobe_init
 
     $ save_internal_version = config.version
     $ achievement_fix()
@@ -17,17 +17,6 @@ label start:
     $ start_image_crop()
     #scene black
     jump start_wt
-
-label after_load:
-    call temporary_post_default_init
-    return
-
-#TODO Remove the necessity for post-default-init calls by fixing code
-label temporary_post_default_init:
-    call default_hermione_class_init
-    call default_cho_class_init
-    call default_astoria_class_init
-    call default_tonks_class_init
 
 # Transitions
 define d1 = Dissolve(0.1)

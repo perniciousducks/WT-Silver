@@ -65,14 +65,14 @@ init python:
 
         # Determine clothing state
         
-        if cho_class.get_worn("top"):
-            if cho_class.get_cloth("top").id == "top_sweater_1":
+        if cho.is_worn("top"):
+            if cho.get_equipped("top").id == "top_sweater_1":
                 chibi["top"] = "cc_sweater.png"
             else:
                 chibi["top"] = "cc_top.png"
 
-        if cho_class.get_worn("bottom"):
-            if cho_class.get_cloth("bottom").id in ("pants_long_2", "pants_short_4"):
+        if cho.is_worn("bottom"):
+            if cho.get_equipped("bottom").id in ("pants_long_2", "pants_short_4"):
                 if chibi.action == "walk":
                     chibi["bottom"] = "ch_cho trousers"
                 else:
@@ -80,20 +80,20 @@ init python:
             else:
                 chibi["bottom"] = "cc_skirt.png"
 
-        if cho_class.get_worn("gloves"):
-            if cho_class.get_cloth("gloves").id == "quidditch":
+        if cho.is_worn("gloves"):
+            if cho.get_equipped("gloves").id == "quidditch":
                 chibi["gloves"] = "cc_gloves.png"
 
-        if cho_class.get_worn("robe"):
-            if cho_class.get_cloth("robe").id == "robe_quidditch_1":
+        if cho.is_worn("robe"):
+            if cho.get_equipped("robe").id == "robe_quidditch_1":
                 chibi["robe"] = "cc_quid_robe.png"
                 if not chibi.special:
                     chibi["fix"] = "cc_quid_robe_fix.png"
             else:
                 chibi["robe"] = "cc_robe.png"
 
-        if cho_class.get_worn("bottom") or cho_class.get_worn("stockings"):
-            if cho_class.get_worn("gloves") and cho_class.get_cloth("gloves").id == "quidditch":
+        if cho.is_worn("bottom") or cho.is_worn("stockings"):
+            if cho.is_worn("gloves") and cho.get_equipped("gloves").id == "quidditch":
                 if chibi.action == "walk":
                     chibi["shoes"] = "ch_cho walk_quid_shoes"
                 else:

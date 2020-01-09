@@ -1,6 +1,6 @@
 ### Tonks###
 
-label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, hair=None, cheeks=False, tears=False, extra=False, emote=False, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
 
     $ target_color = None
 
@@ -9,16 +9,6 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
         $ tonks_flip = 1 #Default
     if flip == True:
         $ tonks_flip = -1
-
-    #Reset
-    if cheeks == None:
-        $ cheeks = "blank"
-    if tears == None:
-        $ tears = "blank"
-    if extra == None:
-        $ extra = "blank"
-    if emote == None:
-        $ emote = "blank"
 
     #Positioning
     if xpos != None:
@@ -94,8 +84,8 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
         $ tonks_animation = animation
 
     python:
-        tonks_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
-        tonks_class.special(emote=emote)
+        tonks.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
+        #tonks_class.special(emote=emote)
 
     if not renpy.get_screen("wardrobe_menu"):
         show screen tonks_main()
@@ -104,13 +94,15 @@ label ton_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, hair=
     call transition(trans, True)
 
     # Hair transition, performs only when applying new colour
-    if target_color != None and target_color != tonks_class.get_cloth("hair").color:
-        $ tonks_class.get_cloth("hair").color = target_color
+    if target_color != None and target_color != tonks.get_equipped("hair").color:
+        $ tonks.get_equipped("hair").color = target_color
+        $ tonks.rebuild()
         if not renpy.get_screen("wardrobe_menu"):
             show screen tonks_main()
         call transition("d3", False)
 
-    $ tonks_class.say(text)
+    if text:
+        $ renpy.say(ton, text)
 
     if use_tonks_head:
         hide screen tonks_main
@@ -128,8 +120,8 @@ label update_tonks:
     hide screen ton_cloth_pile
 
     # Reset temporal hair colour
-    $ tonks_class.get_cloth("hair").color = tonks_haircolor
-    $ tonks_class.get_cloth("hair").cached = False
+    $ tonks.get_equipped("hair").color = tonks_haircolor
+    $ tonks.get_equipped("hair").cached = False
 
     return
     
@@ -179,6 +171,6 @@ screen tonks_main():
     tag tonks_main
     zorder tonks_zorder
     if tonks_animation != None:
-        add tonks_class.get_image() xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) at tonks_animation
+        add tonks.get_image() xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) at tonks_animation
     else:
-        add tonks_class.get_image() xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+        add tonks.get_image() xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)

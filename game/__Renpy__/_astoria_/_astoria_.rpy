@@ -2,23 +2,13 @@
 
 ### Astoria Greengrass ###
 
-label ast_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=False, tears=False, emote=False, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
 
     #Flip
     if flip == False:
         $ astoria_flip = 1 #Default
     if flip == True:
         $ astoria_flip = -1
-
-    #Reset
-    if cheeks == None:
-        $ cheeks = "blank"
-    if tears == None:
-        $ tears = "blank"
-    if extra == None:
-        $ extra = "blank"
-    if emote == None:
-        $ emote = "blank"
 
     #Positioning
     if xpos != None:
@@ -69,8 +59,8 @@ label ast_main(text="", mouth=None, eyes=None, eyebrows=None, pupils=None, cheek
         $ astoria_animation = animation
 
     python:
-        astoria_class.expression(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
-        astoria_class.special(emote=emote)
+        astoria.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
+        #astoria_class.special(emote=emote)
 
     if not renpy.get_screen("wardrobe_menu"):
         show screen astoria_main()
@@ -124,6 +114,6 @@ screen astoria_main():
     tag astoria_main
     zorder astoria_zorder
     if astoria_animation != None:
-        add astoria_class.get_image() xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio) at astoria_animation
+        add astoria.get_image() xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio) at astoria_animation
     else:
-        add astoria_class.get_image() xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)
+        add astoria.get_image() xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)

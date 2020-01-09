@@ -99,7 +99,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
                 call her_main("Promise me you will be gentle with them.", "soft", "narrow", "base", "mid_soft")
                 m "Sure..."
 
-                $ hermione_class.strip("bra")
+                $ hermione.strip("bra")
                 call set_her_action("lift_top")
                 call her_chibi_scene("behind_desk_show_tits", trans="d5")
                 call ctc
@@ -200,7 +200,7 @@ label hg_pf_grope_breasts_T3:
 
     menu:
         "\"That's right, take it off!\"":
-            $ hermione_class.strip("bra")
+            $ hermione.strip("bra")
             call set_her_action("lift_top")
             jump hg_pf_grope_breasts_T3_naked
 
@@ -219,8 +219,8 @@ label hg_pf_grope_breasts_T3_naked:
     call play_music("playful_tension") # SEX THEME.
 
     hide screen hermione_main
-    $ hermione_class.strip("top")
-    $ hermione_class.strip("bra")
+    $ hermione.strip("top")
+    $ hermione.strip("bra")
     show screen blktone
     call set_her_action("lift_top")
     call her_main(xpos="mid", ypos="base")
@@ -370,8 +370,8 @@ label hg_pf_grope_breasts_T4_naked: # No top.
     call play_music("playful_tension") # SEX THEME.
 
     hide screen hermione_main
-    $ hermione_class.strip("top")
-    $ hermione_class.strip("bra")
+    $ hermione.strip("top")
+    $ hermione.strip("bra")
     show screen blktone
     call set_her_action("lift_top")
     call her_main(xpos="mid", ypos="base")

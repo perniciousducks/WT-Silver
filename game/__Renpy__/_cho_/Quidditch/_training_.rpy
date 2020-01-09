@@ -246,7 +246,7 @@ label cho_quid_E2:
     call gen_chibi("stand","desk","base")
 
     $ cho_outfit_last.save()
-    $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
+    $ cho.equip(cho_outfit_quidditch) # Equip quidditch set
 
     call hide_blkfade
     pause.8
@@ -279,7 +279,7 @@ label change_quidditch_tactics:
     show screen desk
     call gen_chibi("stand","desk","base")
 
-    $ cho_class.equip(cho_outfit_quidditch) # Equip quidditch set
+    $ cho.equip(cho_outfit_quidditch) # Equip quidditch set
 
     hide screen bld1
     hide screen blkfade
@@ -350,7 +350,7 @@ label change_quidditch_tactics:
             "-Customize quidditch outfit-" if not cho_quid.lock_tactic:
                 call cho_main(face="neutral", xpos="mid", ypos="base")
                 call t_wardrobe_quidditch() # Open quidditch wardrobe
-                $ cho_class.equip(cho_outfit_quidditch)
+                $ cho.equip(cho_outfit_quidditch)
                 call cho_main(face="neutral", xpos="mid", ypos="base")
             "{color=[menu_disabled]}-Customize quidditch outfit-{/color}" if cho_quid.lock_tactic:
                 if hufflepuff_match == "end":
@@ -380,7 +380,7 @@ label change_quidditch_tactics:
                 show screen blkfade
                 with d3
 
-                $ cho_class.equip(cho_outfit_last)
+                $ cho.equip(cho_outfit_last)
 
                 call cho_chibi("stand","mid","base")
                 call gen_chibi("sit_behind_desk")

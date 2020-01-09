@@ -109,12 +109,12 @@ screen behind_desk(alt=None):
     fixed:
         pos desk_scene_position
         if alt == "back":
-            if not hermione_class.get_worn("top"):
+            if not hermione.is_worn("top"):
                 add "behind_desk_back_topless"
             else:
                 add "behind_desk_back"
         elif alt == "front":
-            if not hermione_class.get_worn("top"):
+            if not hermione.is_worn("top"):
                 add "behind_desk_front_topless"
             else:
                 add "behind_desk_front"
@@ -127,17 +127,17 @@ screen lie_on_desk(alt=None):
     fixed:
         pos desk_scene_position
         if alt == "jerk_off":
-            if hermione_class.get_worn("bottom"):
+            if hermione.is_worn("bottom"):
                 add "lie_on_desk_jerk_off"
             else:
                 add "lie_on_desk_naked_jerk_off"
         elif alt == "cum":
-            if hermione_class.get_worn("bottom"):
+            if hermione.is_worn("bottom"):
                 add "lie_on_desk_cum"
             else:
                 add "lie_on_desk_naked_cum"
         else:
-            if hermione_class.get_worn("bottom"):
+            if hermione.is_worn("bottom"):
                 add "lie_on_desk"
             else:
                 add "lie_on_desk_naked"
@@ -152,7 +152,7 @@ screen grope_ass_back(fast=False):
     zorder desk_zorder
     fixed:
         pos desk_scene_position
-        if not hermione_class.get_worn("top"):
+        if not hermione.is_worn("top"):
             if fast:
                 add "grope_ass_back_topless_fast"
             else:
@@ -166,7 +166,7 @@ screen grope_ass_front(fast=False):
     zorder desk_zorder
     fixed:
         pos desk_scene_position
-        if not hermione_class.get_worn("top"):
+        if not hermione.is_worn("top"):
             if fast:
                 add "grope_ass_front_topless_fast"
             else:
@@ -184,7 +184,7 @@ screen grope_tits(img):
     tag favor
     zorder desk_zorder
     if img == "grope_tits":
-        if not hermione_class.get_worn("top"):
+        if not hermione.is_worn("top"):
             $ img = "grope_tits_topless"
         elif hermione_action == "lift_top": #TODO Replace with proper char_class method
             $ img = "grope_tits_lift_top"

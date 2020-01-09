@@ -57,11 +57,11 @@ label ag_st_imperio:
     with d3
 
     # Setup
-    $ tonks_outfit_last.save() # Store current outfit.
-    $ astoria_outfit_last.save() # Store current outfit.
+    $ ton_outfit_last.save() # Store current outfit.
+    $ ast_outfit_last.save() # Store current outfit.
 
-    $ tonks_class.equip(tonks_outfit_default)
-    $ astoria_class.equip(astoria_outfit_default)
+    $ tonks.equip(ton_outfit_default)
+    $ astoria.equip(ast_outfit_default)
 
     $ ag_st_imperio.inProgress = True
 
@@ -76,8 +76,8 @@ label end_ag_st_imperio:
     hide screen bld1
     with d3
 
-    $ tonks_class.equip(tonks_outfit_last) # Equip player outfit.
-    $ astoria_class.equip(astoria_outfit_last) # Equip player outfit.
+    $ tonks.equip(ton_outfit_last) # Equip player outfit.
+    $ astoria.equip(ast_outfit_last) # Equip player outfit.
 
     $ tonks_busy = True
     $ astoria_busy = True
@@ -371,7 +371,7 @@ label ag_st_imperio_E2:
 
             # Tonks removes her coat.
             call play_sound("equip")
-            $ tonks_class.strip("robe")
+            $ tonks.strip("robe")
             call ton_main("","base","base","base","ahegao", flip=False)
             pause.8
 
@@ -531,7 +531,7 @@ label ag_st_imperio_E2:
 
             call bld
             m "I don't think we made much progress here..."
-            $ tonks_class.wear("all") # wear all previously stripped clothing pieces
+            $ tonks.wear("all") # wear all previously stripped clothing pieces
             jump main_room
 
         "Make her show us those tits!": # Succeeds
@@ -678,7 +678,7 @@ label ag_st_imperio_E3:
 
     # Remove coat.
     call play_sound("equip")
-    $ tonks_class.strip("robe")
+    $ tonks.strip("robe")
     call ton_main("","base","base","base","ahegao")
     pause.8
 
@@ -701,7 +701,7 @@ label ag_st_imperio_E3:
 
     # Tonks returns to normal, and puts her clothes back on.
     call play_sound("equip")
-    $ tonks_class.wear("all")
+    $ tonks.wear("all")
     call ton_main("","angry","base","angry","down")
     pause.8
 
@@ -910,7 +910,7 @@ label ag_st_imperio_E4:
 
     # Remove coat.
     call play_sound("equip")
-    $ tonks_class.strip("robe")
+    $ tonks.strip("robe")
     call ton_main("","base","base","base","ahegao")
     pause.8
 
@@ -956,11 +956,11 @@ label ag_st_imperio_E4:
 
     # Remove top.
     call play_sound("equip")
-    $ tonks_class.strip("top")
-    if tonks_class.get_worn("bra"): # Remove bra if True
+    $ tonks.strip("top")
+    if tonks.is_worn("bra"): # Remove bra if True
         call ast_main("and your bra...","clench","base","base","down")
         call play_sound("equip")
-        $ tonks_class.strip("bra")
+        $ tonks.strip("bra")
     call ton_main("","horny","base","angry","ahegao")
     call ast_main("","annoyed","closed","base","mid")
     call ctc
@@ -1168,7 +1168,7 @@ label ag_st_imperio_E5:
 
     # Remove coat.
     call play_sound("equip")
-    $ tonks_class.strip("robe")
+    $ tonks.strip("robe")
     call ton_main("","base","base","base","ahegao")
     pause.8
 
@@ -1180,8 +1180,8 @@ label ag_st_imperio_E5:
 
     # Remove top.
     call play_sound("equip")
-    $ tonks_class.strip("top")
-    $ tonks_class.strip("bra")
+    $ tonks.strip("top")
+    $ tonks.strip("bra")
     call ton_main("","horny","base","base","ahegao")
     pause.8
 
@@ -1195,8 +1195,8 @@ label ag_st_imperio_E5:
 
     # Remove bottom.
     call play_sound("equip")
-    $ tonks_class.strip("bottom")
-    $ tonks_class.strip("panties")
+    $ tonks.strip("bottom")
+    $ tonks.strip("panties")
     call ton_main("","base","base","sad","ahegao")
     pause.5
     call ast_main("","annoyed","narrow","angry","down")
@@ -1244,8 +1244,8 @@ label ag_st_imperio_E5:
 
     # Strip naked. Removes clothes and stockings.
     call play_sound("equip")
-    $ tonks_class.strip("stockings")
-    $ tonks_class.strip("gloves")
+    $ tonks.strip("stockings")
+    $ tonks.strip("gloves")
     call ton_main("","horny","base","base","ahegao")
     call ast_main("","horny","narrow","angry","L")
     call ctc
@@ -1702,7 +1702,7 @@ label ag_st_imperio_E5:
     $ tonks_busy = True
     $ astoria_busy = True
 
-    $ tonks_class.wear("all") # Wear all stripped clothing
+    $ tonks.wear("all") # Wear all stripped clothing
 
     # Increase affection once (this is the fifth event)
     if ag_st_imperio.counter == 5:

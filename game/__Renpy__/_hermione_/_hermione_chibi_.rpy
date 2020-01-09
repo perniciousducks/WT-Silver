@@ -66,10 +66,10 @@ init python:
 
         if chibi.action == "walk":
             # Determine clothing state
-            if not hermione_class.get_worn("top") and not hermione_class.get_worn("bottom") and not hermione_class.get_worn("robe"):
+            if not hermione.is_worn("top") and not hermione.is_worn("bottom") and not hermione.is_worn("robe"):
                 chibi["base"] = "ch_hem walk_n"
-            elif hermione_class.get_worn("robe"):
-                if hermione_class.get_worn("top"):
+            elif hermione.is_worn("robe"):
+                if hermione.is_worn("top"):
                     chibi["base"] = "ch_hem walk_robe"
                 else:
                     chibi["base"] = "ch_hem walk_robe_n"
@@ -78,10 +78,10 @@ init python:
 
         elif not chibi.action or chibi.action == "stand":
             # Determine clothing state
-            if not hermione_class.get_worn("top") and not hermione_class.get_worn("bottom") and not hermione_class.get_worn("robe"):
+            if not hermione.is_worn("top") and not hermione.is_worn("bottom") and not hermione.is_worn("robe"):
                 chibi["base"] = "ch_hem blink_n"
-            elif hermione_class.get_worn("robe"):
-                if hermione_class.get_worn("top"):
+            elif hermione.is_worn("robe"):
+                if hermione.is_worn("top"):
                     chibi["base"] = "ch_hem blink_robe"
                 else:
                     chibi["base"] = "ch_hem blink_robe_n"
@@ -90,22 +90,22 @@ init python:
 
         elif chibi.action == "dance":
             # Determine clothing state
-            if hermione_class.get_worn("top"):
-                if hermione_class.get_cloth("top").id in ("top_1", "top_6"):
+            if hermione.is_worn("top"):
+                if hermione.get_equipped("top").id in ("top_1", "top_6"):
                     chibi["base"] =  "clothed_dance_ani"
-                elif hermione_class.get_worn("bottom"):
+                elif hermione.is_worn("bottom"):
                     chibi["base"] = "no_vest_dance_ani"
                 else:
                     chibi["base"] = "no_skirt_dance_ani"
             else:
-                if hermione_class.get_worn("bottom"):
+                if hermione.is_worn("bottom"):
                     chibi["base"] = "no_shirt_dance_ani"
                 else:
                     chibi["base"] = "no_shirt_no_skirt_dance_ani"
         
         elif chibi.action == "dance_pause":
             # Determine clothing state
-            if hermione_class.get_worn("panties"):
+            if hermione.is_worn("panties"):
                 chibi["base"] = "no_shirt_no_skirt_dance_pause"
             else:
                 chibi["base"] = "no_panties_dance_pause"
@@ -114,7 +114,7 @@ init python:
             chibi["base"] = "dance/03_no_shirt_03.png" #TODO Should be 'stand' action without top clothes (needs layers first)
         
         elif chibi.action == "lift_skirt":
-            if hermione_class.get_worn("panties"):
+            if hermione.is_worn("panties"):
                 #TODO Figure out a better way to determine the expression (so it can be reused in a different event)
                 if hg_pf_admire_panties.counter <= 1:
                     # Reluctant expression

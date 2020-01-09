@@ -618,7 +618,7 @@ label hermione_talk:
         "-Give her the ball dress-" if ball_quest.E4_complete and hg_dress_yule_ball_ITEM.unlocked and not ball_quest.gave_dress:
             jump ball_quest_E5
 
-        "-Start the Ending-" if ball_quest.gave_dress: #Starts the ending of the game.
+        "-Start the Ending-" if ball_quest.gave_dress and not ball_quest.started: #Starts the ending of the game.
             jump ball_ending_start
 
         "-Never mind":

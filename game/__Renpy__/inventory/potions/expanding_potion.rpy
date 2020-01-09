@@ -210,11 +210,11 @@ label potion_scene_2_2:
     call nar(">You start to notice her ass increase in size.") #Use bigger butt from Captain Nemo
     call her_main("It feels too sensitive... I have to take my skirt off", "angry", "wide", "base", "stare")
 
-    $ hermione_class.strip("panties")
+    $ hermione.strip("panties")
     call set_her_action("lift_skirt")
     pause.5
 
-    $ hermione_class.strip("bottom")
+    $ hermione.strip("bottom")
     call set_her_action("none","skip_update")
 
     call her_main("", "silly", "slit", "worried", "ahegao",cheeks="blush")

@@ -15,7 +15,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     ">Sure enough, the map seems to {b}magically{/b} guide you to the young girl, alone in the midnight air..."
     ">Seemingly scrapping the resin off of a tree..."
 
-    $ hermione_class.wear("all")
+    $ hermione.wear("all")
     # TODO: Add robe force equip.
 
     $ ccg_folder = "herm_forest"
@@ -149,7 +149,7 @@ label forest_BJ_2:
     call play_music("night_outside")
     call play_sound("walking_on_grass")
 
-    $ hermione_class.wear("all")
+    $ hermione.wear("all")
     # TODO: Add robe force equip.
 
     ">The map yet again leads you to the curly haired girl, alone at the edge of the forest, picking mushrooms."
@@ -319,7 +319,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     call play_music("night_outside")
     call play_sound("walking_on_grass")
 
-    $ hermione_class.wear("all")
+    $ hermione.wear("all")
     # TODO: Add robe force equip.
 
     ">Surely enough, the handwritten words \'hermione granger\', manage to lead you to the lone girl at the edge of an imposing forest."
@@ -583,8 +583,8 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     call play_music("night_outside")
     call play_sound("walking_on_grass")
 
-    $ hermione_class.wear("top")
-    $ hermione_class.wear("bottom")
+    $ hermione.wear("top")
+    $ hermione.wear("bottom")
 
     ">Once more, the marauders map leads you to Hermione at the edge of the forest, waiting patiently, apparently having dropped all pretences botanical."
 

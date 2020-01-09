@@ -254,24 +254,17 @@ screen stats_menuitem(xx, yy):
                     add "interface/characters/snape_locked.png" zoom 0.34 align (0.9, 1.0)
             elif current_category == "Tonks":
                 if current_item["flag"]:
-                    add tonks_class.get_image() zoom 0.4 align (0.7, 1.0)
+                    add tonks.get_image() zoom 0.4 align (0.7, 1.0)
                 else:
                     add "interface/characters/tonks_locked.png" zoom 0.4 align (0.7, 1.0)
             elif current_category == "Hermione":
                 if current_item["flag"]:
-                    frame:
-                        style "empty"
-                        #align (0.7, 1.0)
-                        at at_zoom(0.75)
-                        xoffset -395
-                        yoffset -44
-
-                        use hermione_main
+                    add hermione.get_image() zoom 0.4 align (0.7, 1.0)
                 else:
                     add "interface/characters/hermione_locked.png" zoom 0.38 align (0.65, 1.0)
             elif current_category == "Cho":
                 if current_item["flag"]:
-                    add cho_class.get_image() zoom 0.4 align (0.65, 1.0)
+                    add cho.get_image() zoom 0.4 align (0.65, 1.0)
                 else:
                     add "interface/characters/cho_locked.png" zoom 0.4 align (0.65, 1.0)
             elif current_category == "Luna":
@@ -287,7 +280,7 @@ screen stats_menuitem(xx, yy):
                     add "interface/characters/luna_locked.png" zoom 0.38 align (0.75, 1.0)
             elif current_category == "Astoria":
                 if current_item["flag"]:
-                    add astoria_class.get_image() zoom 0.4 align (0.7, 1.0)
+                    add astoria.get_image() zoom 0.4 align (0.7, 1.0)
                 else:
                     add "interface/characters/astoria_locked.png" zoom 0.38 align (0.7, 1.0)
             elif current_category == "Susan":

@@ -79,12 +79,12 @@ label slytherin_match:
 
     ### Event Setup ###
     $ cho_outfit_last.save()
-    $ hermione_outfit_last.save()
-    $ tonks_outfit_last.save()
+    $ her_outfit_last.save()
+    $ ton_outfit_last.save()
 
-    $ cho_class.equip(cho_outfit_quidditch)
-    $ hermione_class.equip(hermione_outfit_default)
-    $ tonks_class.equip(tonks_outfit_default)
+    $ cho.equip(cho_outfit_quidditch)
+    $ hermione.equip(her_outfit_default)
+    $ tonks.equip(ton_outfit_default)
 
 
     # Scene before Match against Slytherin
@@ -841,13 +841,13 @@ label slytherin_match:
     call her_main("{size=-4}And why is this shirt so hot...{/size}","soft","base","base","down", cheeks="blush")
 
     $ renpy.sound.play("sounds/cloth_sound.mp3")
-    $ hermione_class.equip(hermione_outfit_default_no_vest)
+    $ hermione.equip(her_outfit_default_no_vest)
     with d3
     pause 1.0
 
     g4 "..."
     $ renpy.sound.play("sounds/cloth_sound2.mp3")
-    $ hermione_class.equip(hermione_outfit_default_no_tie_open_shirt)
+    $ hermione.equip(her_outfit_default_no_tie_open_shirt)
     with d3
     pause 1.0
 
@@ -1117,9 +1117,9 @@ label slytherin_match:
     "You make your way back to your office... wondering how the real old man could stand all these stairs, no wonder he always stayed in there."
 
     # Reset
-    $ tonks_class.equip(tonks_outfit_last) # Equip player outfit.
-    $ hermione_class.equip(hermione_outfit_last) # Equip player outfit.
-    $ cho_class.equip(cho_outfit_last) # Equip player outfit.
+    $ tonks.equip(ton_outfit_last) # Equip player outfit.
+    $ hermione.equip(her_outfit_last) # Equip player outfit.
+    $ cho.equip(cho_outfit_last) # Equip player outfit.
 
     jump night_start
 
@@ -1137,16 +1137,16 @@ label slytherin_match_return:
 
     ### Event Setup ###
     $ cho_outfit_last.save()
-    $ hermione_outfit_last.save()
-    $ tonks_outfit_last.save()
-    $ astoria_outfit_last.save()
+    $ her_outfit_last.save()
+    $ ton_outfit_last.save()
+    $ ast_outfit_last.save()
 
-    $ cho_class.equip(cho_outfit_quidditch)
-    $ hermione_class.equip(hermione_outfit_default)
-    $ tonks_class.equip(tonks_outfit_default)
-    $ astoria_class.equip(astoria_outfit_default)
+    $ cho.equip(cho_outfit_quidditch)
+    $ hermione.equip(her_outfit_default)
+    $ tonks.equip(ton_outfit_default)
+    $ astoria.equip(ast_outfit_default)
 
-    $ tonks_class.strip("all")
+    $ tonks.strip("all")
 
     hide screen blkfade
     with d9
@@ -1200,7 +1200,7 @@ label slytherin_match_return:
     #Hermione takes her top off
     call play_sound("equip")
     hide screen hermione_main
-    $ hermione_class.strip("robe","top")
+    $ hermione.strip("robe","top")
     show screen hermione_main
     with d5
     pause .8
@@ -1212,7 +1212,7 @@ label slytherin_match_return:
     #Hermione takes her bottoms off
     call play_sound("equip")
     hide screen hermione_main
-    $ hermione_class.strip("bottom")
+    $ hermione.strip("bottom")
     show screen hermione_main
     with d5
     pause .8
@@ -1227,7 +1227,7 @@ label slytherin_match_return:
     #Hermione takes her bra off
     call play_sound("equip")
     hide screen hermione_main
-    $ hermione_class.strip("bra")
+    $ hermione.strip("bra")
     show screen hermione_main
     with d5
     pause .8
@@ -1252,7 +1252,7 @@ label slytherin_match_return:
     #Hermione takes her panties off
     call play_sound("equip")
     hide screen hermione_main
-    $ hermione_class.strip("panties")
+    $ hermione.strip("panties")
     show screen hermione_main
     with d5
     pause .8
@@ -1334,7 +1334,7 @@ label slytherin_match_return:
 
     call play_sound("equip")
     hide screen tonks_main
-    $ tonks_class.wear("all")
+    $ tonks.wear("all")
     call ton_main("","horny","base","base","mid", trans="d5")
     pause .8
 
@@ -1517,9 +1517,9 @@ label slytherin_match_return:
     #$ cho_tier = 3 # TODO: activate this after adding favors.
 
     # Reset
-    $ tonks_class.equip(tonks_outfit_last) # Equip player outfit.
-    $ hermione_class.equip(hermione_outfit_last) # Equip player outfit.
-    $ cho_class.equip(cho_outfit_last) # Equip player outfit.
-    $ astoria_class.equip(astoria_outfit_last) # Equip player outfit.
+    $ tonks.equip(ton_outfit_last) # Equip player outfit.
+    $ hermione.equip(her_outfit_last) # Equip player outfit.
+    $ cho.equip(cho_outfit_last) # Equip player outfit.
+    $ astoria.equip(ast_outfit_last) # Equip player outfit.
 
     jump main_room

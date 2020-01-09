@@ -248,7 +248,7 @@ label hg_pf_admire_panties_T3_intro_E1:
     hide screen bld1
     with d3
 
-    $ hermione_class.strip("panties")
+    $ hermione.strip("panties")
     call set_her_action("lift_skirt")
 
     call her_chibi("lift_skirt","mid","base")
@@ -307,7 +307,7 @@ label hg_pf_admire_panties_T3_E1:
     hide screen bld1
     with d3
 
-    $ hermione_class.strip("panties")
+    $ hermione.strip("panties")
     call set_her_action("lift_skirt")
 
     call her_chibi("lift_skirt","mid","base")
@@ -360,7 +360,7 @@ label hg_pf_admire_panties_T3_E1:
             with d3
             ">Hermione puts on her panties."
 
-            $ hermione_class.wear("panties")
+            $ hermione.wear("panties")
 
             call update_her_uniform
             call her_chibi("lift_skirt")
@@ -389,9 +389,9 @@ label hg_pf_admire_panties_T3_E2:
     with d3
 
     if h_request_wear_panties:
-        $ hermione_class.wear("panties")
+        $ hermione.wear("panties")
     else:
-        $ hermione_class.strip("panties")
+        $ hermione.strip("panties")
 
     call set_her_action("lift_skirt")
 
@@ -404,7 +404,7 @@ label hg_pf_admire_panties_T3_E2:
     call ctc
 
     # No Panties.
-    if not hermione_class.get_worn("panties"):
+    if not hermione.is_worn("panties"):
         g9 "Where are your panties, [hermione_name]?"
         call her_main("I have them here in my pocket...", "open", "base", "base", "R")
         call her_main("Most of the time I just leave them in the Gryffindor common room...", "open", "base", "base", "R")
@@ -421,7 +421,7 @@ label hg_pf_admire_panties_T3_E2:
                 ">Hermione puts on her panties."
 
                 $ h_request_wear_panties = True
-                $ hermione_class.wear("panties")
+                $ hermione.wear("panties")
 
                 call update_her_uniform
                 call her_chibi("lift_skirt")
@@ -453,7 +453,7 @@ label hg_pf_admire_panties_T3_E2:
                 call nar(">Hermione takes off her panties.")
 
                 $ h_request_wear_panties = False
-                $ hermione_class.strip("panties")
+                $ hermione.strip("panties")
 
                 call update_her_uniform
 

@@ -48,10 +48,10 @@ label hufflepuff_match:
 
     ### Event Setup ###
     $ cho_outfit_last.save()
-    $ hermione_outfit_last.save()
+    $ her_outfit_last.save()
 
-    $ cho_class.equip(cho_outfit_quidditch)
-    $ hermione_class.equip(hermione_outfit_default)
+    $ cho.equip(cho_outfit_quidditch)
+    $ hermione.equip(her_outfit_default)
 
 
     # Scene before Match against Hufflepuff
@@ -686,6 +686,7 @@ label hufflepuff_match:
     "You see Cho flying over to the commentator booth glaring at Hermione with a look of pure hatred."
 
     # Transition to Cho on her broom.
+    # TODO: Broken by doll class update. Has to be fixed.
     $ cho_animation = sprite_fly_idle
     $ cho_class.animation("quid", (233, -78))
     call cho_chibi(action="fly", xpos=1200,ypos=-100)
@@ -867,7 +868,7 @@ label hufflepuff_match_return:
     $ snape_busy    = True
 
     # Reset Cho
-    $ cho_class.equip(cho_outfit_last)
+    $ cho.equip(cho_outfit_last)
 
     $ cho_tier = 2
     $ cho_training_unlocked = True

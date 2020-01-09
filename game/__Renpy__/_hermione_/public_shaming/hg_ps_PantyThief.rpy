@@ -58,7 +58,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         with d3
         call nar(">Suddenly Hermione extends her arm to you...","start")
         
-        $ hermione_class.strip("panties")
+        $ hermione.strip("panties")
         call update_her_uniform
 
         call nar(">You see that she is clutching a little piece of fabric in her fist...","end")
@@ -85,7 +85,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
             hide screen hermione_main
             with d3
 
-            $ hermione_class.strip("panties")
+            $ hermione.strip("panties")
             call update_her_uniform
             
             call nar(">Hermione pulls her panties out of her pocket...")
@@ -97,7 +97,7 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
             hide screen hermione_main
             with d3
 
-            $ hermione_class.strip("panties")
+            $ hermione.strip("panties")
             call update_her_uniform
 
             call nar(">Hermione takes off her panties and hands them over to you...")
@@ -154,7 +154,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 hide screen hermione_main
                 call nar(">Hermione hesitantly puts on her panties...","start")
 
-                $ hermione_class.wear("panties")
+                $ hermione.wear("panties")
                 call update_her_uniform
 
                 ">A tiny stream of cum trickles down one of her legs..."
@@ -183,7 +183,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         hide screen hermione_main
         call nar(">Hermione puts the panties on...")
 
-        $ hermione_class.wear("panties")
+        $ hermione.wear("panties")
         call update_her_uniform
 
         call her_main("(This feels funny...)", "angry", "worriedCl", "worried", "mid",emote="05")
@@ -228,7 +228,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         hide screen hermione_main
         call nar(">Hermione swiftly slides her drenched panties on...")
 
-        $ hermione_class.wear("panties")
+        $ hermione.wear("panties")
         call update_her_uniform
 
     elif her_whoring > 15: ###New variant of the event
@@ -250,7 +250,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 hide screen hermione_main
                 call nar(">Hermione swiftly slides her drenched panties on...")
 
-                $ hermione_class.wear("panties")
+                $ hermione.wear("panties")
                 call update_her_uniform
 
                 call her_main("...", "soft", "narrow", "annoyed", "up")
@@ -287,7 +287,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
 
 label hg_ps_get_panties_complete:
     $ hg_ps_get_panties.complete = True
-    $ hermione_class.strip("panties")
+    $ hermione.strip("panties")
     call update_her_uniform
 
 

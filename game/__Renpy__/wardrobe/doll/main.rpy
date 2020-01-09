@@ -23,22 +23,25 @@ init python:
                 o.rebuild_image()
             self.rebuild_image()
             
-            renpy.start_predict("characters/"+self.name+"/face/*.png")
-            #renpy.start_predict("characters/"+self.name+"/body/*.*")
-            #renpy.start_predict("characters/"+self.name+"/clothes/*.*")
-            
         def build_image(self):
             # Add body, face, clothes, masks
             masks = []
+            armfix = []
             sprites = [[self.body.get_image(), 0], [self.face.get_image(), 1]]
             
             for o in self.clothes.itervalues():
                 if o[0] and o[2]:
                     sprites.append([o[0].get_image(), o[0].zorder])
                     if o[0].back:
-                        sprites.extend([x, -50+n] for n, x in enumerate(o[0].get_back()))
+                        sprites.extend([x, -100+n+o[0].zorder] for n, x in enumerate(o[0].get_back()))
+                        if o[0].back_outline:
+                            sprites.append([o[0].back_outline, -100+o[0].zorder+o[0].layers])
                     if o[0].front:
-                        sprites.extend([x, 50+n] for n, x in enumerate(o[0].get_front()))
+                        sprites.extend([x, 100+n+o[0].zorder] for n, x in enumerate(o[0].get_front()))
+                        if o[0].front_outline:
+                            sprites.append([o[0].front_outline, 100+o[0].zorder+o[0].layers])
+                    if o[0].armfix:
+                        sprites.extend([("{}armleft/{}_fix.png".format(self.body.imagepath, self.body.get_part("armleft")), o[0].zorder+0.5), ("{}armright/{}_fix.png".format(self.body.imagepath, self.body.get_part("armright")), o[0].zorder+0.5)])
                     if o[0].mask:
                         masks.append([o[0].mask, o[0].zorder-1])
                         
@@ -50,7 +53,7 @@ init python:
                             s[0] = AlphaMask(s[0], m[0])
             
             sprites.sort(key=lambda x: x[1], reverse=False)
-            sprites = itertools.chain.from_iterable(((0,0), x[0]) for x in sprites)
+            sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))
             return sprites
             
         def equip(self, obj):

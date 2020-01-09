@@ -91,8 +91,8 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         #Remove Top Animation
         call set_her_action("lift_top")
         pause.5
-        $ hermione_class.strip("top")
-        $ hermione_class.strip("bra")
+        $ hermione.strip("top")
+        $ hermione.strip("bra")
         call set_her_action("None")
         pause.2
 
@@ -148,8 +148,8 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         #Remove Top Animation
         call set_her_action("lift_top")
         pause.5
-        $ hermione_class.strip("top")
-        $ hermione_class.strip("bra")
+        $ hermione.strip("top")
+        $ hermione.strip("bra")
         call set_her_action("None")
         pause.2
 
@@ -200,8 +200,8 @@ label hg_pr_strip_rear_transition:
     pause 1
 
     # Setup
-    $ hermione_class.strip("top")
-    $ hermione_class.strip("bottom")
+    $ hermione.strip("top")
+    $ hermione.strip("bottom")
     call her_chibi_scene("behind_desk_back", trans="fade")
     pause.8
 
@@ -326,8 +326,8 @@ label hg_pr_strip_T2_masturbate_rear:
     show screen blkfade
     with d5
 
-    $ hermione_class.strip("top")
-    $ hermione_class.strip("bottom")
+    $ hermione.strip("top")
+    $ hermione.strip("bottom")
 
     call gen_chibi("jerk_off_behind_desk")
     call play_music("chipper_doodle")
@@ -497,8 +497,8 @@ label hg_pr_strip_T3_masturbate_rear:
     show screen blkfade
     with d5
 
-    $ hermione_class.strip("top")
-    $ hermione_class.strip("bottom")
+    $ hermione.strip("top")
+    $ hermione.strip("bottom")
 
     call gen_chibi("jerk_off_behind_desk")
     call play_music("chipper_doodle")
@@ -676,8 +676,8 @@ label hg_pr_strip_T4_masturbate_rear:
     show screen blkfade
     with d5
 
-    $ hermione_class.strip("top")
-    $ hermione_class.strip("bottom")
+    $ hermione.strip("top")
+    $ hermione.strip("bottom")
 
     call gen_chibi("jerk_off_behind_desk")
     call play_music("chipper_doodle")

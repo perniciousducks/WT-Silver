@@ -88,8 +88,8 @@ label set_her_face(change=None, mouth=None, eyes=None, eyebrows=None, pupils=Non
             call set_her_face(mouth="happy",eyes="happy",eyebrows="happy",pupils="happy")
 
     python:
-        hermione_class.expression(mouth=temp_mouth, eyes=temp_eyes, eyebrows=temp_eyebrows, pupils=temp_pupils, cheeks=temp_cheeks, tears=temp_tears)
-        hermione_class.special(emote=temp_emote)
+        hermione.set_face(mouth=temp_mouth, eyes=temp_eyes, eyebrows=temp_eyebrows, pupils=temp_pupils, cheeks=temp_cheeks, tears=temp_tears)
+        #hermione_class.special(emote=temp_emote)
 
     return
 

@@ -73,7 +73,7 @@ label summon_astoria:
             call play_sound("door")
 
             $ astoria_busy = True
-            $ astoria_class.wear("all")
+            $ astoria.wear("all")
 
             jump main_room
 

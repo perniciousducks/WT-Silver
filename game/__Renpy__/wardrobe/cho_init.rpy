@@ -1,193 +1,199 @@
-# Cho wardrobe init
-default cho_class = char_class(char="cho")
+###############
+## Character ##
+###############
 
-# Tops
-default cho_cloth_topschool1     = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_1", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [216, 163, 10, 255], [89, 116, 194, 255]])
-default cho_cloth_topschool2     = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_2", layers=4, color=[[183, 183, 184, 255], [109, 105, 121, 255], [216, 163, 10, 255], [89, 116, 194, 255]], whoring=4)
-default cho_cloth_topschool3     = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_3", layers=3, color=[[183, 183, 184, 255], [216, 163, 10, 255], [89, 116, 194, 255]], whoring=8)
-default cho_cloth_topschool4     = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_4", layers=3, color=[[183, 183, 184, 255], [216, 163, 10, 255], [89, 116, 194, 255]], whoring=8)
-default cho_cloth_topschool5     = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_5", layers=3, color=[[183, 183, 184, 255], [216, 163, 10, 255], [89, 116, 194, 255]], whoring=12)
-default cho_cloth_topschool6     = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_school_6", layers=3, color=[[109, 105, 121, 255], [216, 163, 10, 255], [89, 116, 194, 255]], whoring=12)
-default cho_cloth_topshirt1      = cloth_class(char="cho", category="tops", subcat="muggle", type="top", id="top_shirt_1", layers=1, color=[[255, 229, 126, 255]], unlocked=False)
-default cho_cloth_topsailor1     = cloth_class(char="cho", category="tops", subcat="muggle", type="top", id="top_sailor_1", layers=2, color=[[252, 252, 253, 255], [89, 116, 194, 255]], unlocked=False, whoring=14)
-default cho_cloth_topsweater2    = cloth_class(char="cho", category="tops", subcat="muggle", type="top", id="top_sweater_2", layers=1, color=[[89, 116, 194, 255]], whoring=6)
-default cho_cloth_toptanktop1    = cloth_class(char="cho", category="tops", subcat="muggle", type="top", id="top_tanktop_1", layers=1, color=[[230, 230, 231, 255]], whoring=14)
-default cho_cloth_toptanktop2    = cloth_class(char="cho", category="tops", subcat="muggle", type="top", id="top_tanktop_2", layers=2, color=[[252, 192, 213, 255], [253, 221, 232, 255]], unlocked=False, whoring=16)
-default cho_cloth_topsweater1    = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_sweater_1", layers=2, color=[[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
-default cho_cloth_robequidditch1 = cloth_class(char="cho", category="tops", subcat="robes", type="robe", id="robe_quidditch_1", layers=2, color=[[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
-default cho_cloth_topquid1       = cloth_class(char="cho", category="tops", subcat="school", type="top", id="top_quid_1", layers=2, color=[[64, 84, 141, 255], [213, 161, 13, 255]], unlocked=False, whoring=10)
+default cho = Doll(name="cho", 
+                        clothes={"hat":        [None, 15, True],
+                                 "hair":       [None, 4, True],
+                                 "earring":    [None, 14, True],
+                                 "neckwear":   [None, 11, True],
+                                 "robe":       [None, 28, True],
+                                 "gloves":     [None, 21, True],
+                                 "top":        [None, 15, True],
+                                 "bra":        [None, 9, True],
+                                 "bottom":     [None, 8, True],
+                                 "garterbelt": [None, 7, True],
+                                 "panties":    [None, 6, True],
+                                 "stockings":  [None, 5, True],
+                                 "buttplug":   [None, -1, True],
+                                 "pubes":      [None, 3, True],
+                                 "tattoo0":    [None, 1, True],
+                                 "tattoo1":    [None, 1, True],
+                                 "tattoo2":    [None, 1, True],
+                                 "tattoo3":    [None, 1, True],
+                                 "tattoo4":    [None, 1, True],
+                                 "piercing0":  [None, 2, True],
+                                 "piercing1":  [None, 2, True],
+                                 "piercing2":  [None, 2, True],
+                                 "piercing3":  [None, 2, True],
+                                 "piercing4":  [None, 2, True],
+                                 "accessory0": [None, 12, True],
+                                 "accessory1": [None, 12, True],
+                                 "accessory2": [None, 12, True],
+                                 "accessory3": [None, 12, True],
+                                 "accessory4": [None, 12, True],
+                                 "makeup0":    [None, 3, True],
+                                 "makeup1":    [None, 3, True],
+                                 "makeup2":    [None, 3, True],
+                                 "makeup3":    [None, 3, True],
+                                 "makeup4":    [None, 3, True]},
+                        face={"tears":    [None, 12, True],
+                              "cheeks":   [None, 7, True],
+                              "eyebrows": ["base", 11, True],
+                              "eyes":     ["base", 8, True],
+                              "pupils":   ["mid", 9, True],
+                              "mouth":    ["base", 13, True]},
+                        body={"armleft": ["down", 3], 
+                              "armright":["down", 1], 
+                              "base":    ["front", 0], 
+                              "breasts": ["normal", 2]})
+                              
+################
+## Schoolgirl ##
+################
 
-# Bottoms
-default cho_cloth_schoolskirt1 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_1", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]])
-default cho_cloth_schoolskirt2 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_2", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=4)
-default cho_cloth_schoolskirt3 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_3", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=8)
-default cho_cloth_schoolskirt4 = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_4", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], whoring=12)
-default cho_cloth_pantslong1   = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_long_1", layers=1, color=[[230, 230, 231, 255]])
-default cho_cloth_pantsshort1  = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_short_1", layers=1, color=[[230, 230, 231, 255]], whoring=8)
-default cho_cloth_pantsshort2  = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_short_2", layers=2, color=[[114, 168, 210, 255], [232, 177, 13, 255]], unlocked=False, whoring=10)
-default cho_cloth_pantsshort3  = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_short_3", layers=3, color=[[47, 150, 136, 255], [175, 220, 191, 255], [247, 152, 38, 255]], unlocked=False, whoring=10)
-default cho_cloth_skirtshort1  = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="skirt_short_1", layers=1, color=[[89, 116, 194, 255]], unlocked=False, whoring=18)
-default cho_cloth_skirtshort2  = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="skirt_short_2", layers=1, color=[[93, 119, 173, 255]], unlocked=False, whoring=16)
-default cho_cloth_pantslong2   = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_long_2", layers=2, color=[[109, 105, 121, 255], [213, 161, 13, 255]])
-default cho_cloth_pantsshort4  = cloth_class(char="cho", category="bottoms", subcat="trousers", type="bottom", id="pants_short_4", layers=2, color=[[109, 105, 121, 255], [213, 161, 13, 255]], whoring=8)
-default cho_cloth_quidskirt1   = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="quid_skirt_1", layers=2, color=[[64, 84, 141, 255], [213, 161, 13, 255]], unlocked=False, whoring=10)
+default cho_hair_ponytail1 = DollCloth("cho", ("head", "hair"), "hair", "ponytail", [[52, 59, 80, 255], [70, 90, 147, 255]])
+default cho_hair_ponytail2 = DollCloth("cho", ("head", "hair"), "hair", "ponytail_natural", [[52, 59, 80, 255], [70, 90, 147, 255]])
+default cho_top_school1 = DollCloth("cho", ("tops", "school"), "top", "top_school_1", [[183, 183, 184, 255], [109, 105, 121, 255], [216, 163, 10, 255], [89, 116, 194, 255]])
+default cho_top_school2 = DollCloth("cho", ("tops", "school"), "top", "top_school_2", [[183, 183, 184, 255], [109, 105, 121, 255], [216, 163, 10, 255], [89, 116, 194, 255]], level=4)
+default cho_top_school3 = DollCloth("cho", ("tops", "school"), "top", "top_school_3", [[183, 183, 184, 255], [216, 163, 10, 255], [89, 116, 194, 255]], level=8)
+default cho_top_school4 = DollCloth("cho", ("tops", "school"), "top", "top_school_4", [[183, 183, 184, 255], [216, 163, 10, 255], [89, 116, 194, 255]], level=8)
+default cho_top_school5 = DollCloth("cho", ("tops", "school"), "top", "top_school_5", [[183, 183, 184, 255], [216, 163, 10, 255], [89, 116, 194, 255]], level=12)
+default cho_top_school6 = DollCloth("cho", ("tops", "school"), "top", "top_school_6", [[109, 105, 121, 255], [216, 163, 10, 255], [89, 116, 194, 255]], level=12)
+default cho_bottom_school1 = DollCloth("cho", ("bottoms", "skirts"), "bottom", "school_skirt_1", [[103, 90, 108, 255], [232, 177, 13, 255]], armfix=True)
+default cho_bottom_school2 = DollCloth("cho", ("bottoms", "skirts"), "bottom", "school_skirt_2", [[103, 90, 108, 255], [232, 177, 13, 255]], level=4, armfix=True)
+default cho_bottom_school3 = DollCloth("cho", ("bottoms", "skirts"), "bottom", "school_skirt_3", [[103, 90, 108, 255], [232, 177, 13, 255]], level=8, armfix=True)
+default cho_bottom_school4 = DollCloth("cho", ("bottoms", "skirts"), "bottom", "school_skirt_4", [[103, 90, 108, 255], [232, 177, 13, 255]], level=12, armfix=True)
+default cho_bra_basic1 = DollCloth("cho", ("bras", "bras"), "bra", "basic_bra_1", [[230, 230, 231, 255], [89, 116, 194, 255]])
+default cho_panties_basic1 = DollCloth("cho", ("panties", "panties"), "panties", "basic_panties_1", [[230, 230, 231, 255], [89, 116, 194, 255]])
+default cho_stockings_house = DollCloth("cho", ("legwear", "stockings"), "stockings", "house", [[216, 163, 10, 255], [89, 116, 194, 255]])
+default cho_neckwear_tie1  = DollCloth("cho", ("head", "neckwear"), "neckwear", "tie_1", [[216, 163, 10, 255], [89, 116, 194, 255]])
 
-# Bras
-default cho_cloth_basicbra1  = cloth_class(char="cho", category="bras", subcat="bras", type="bra", id="basic_bra_1", layers=2, color=[[230, 230, 231, 255], [89, 116, 194, 255]])
-default cho_cloth_bikinitop1 = cloth_class(char="cho", category="bras", subcat="bras", type="bra", id="bikini_top_1", layers=1, color=[[3, 237, 234, 255]], unlocked=False, whoring=10)
-default cho_cloth_bikinitop2 = cloth_class(char="cho", category="bras", subcat="bras", type="bra", id="bikini_top_2", layers=1, color=[[138, 22, 17, 255]], unlocked=False, whoring=14)
-default cho_cloth_lacebra1   = cloth_class(char="cho", category="bras", subcat="bras", type="bra", id="lace_bra_1", layers=3, color=[[100, 100, 255, 255], [220, 220, 221, 255], [89, 116, 194, 255]], unlocked=False, whoring=14)
-default cho_cloth_sportbra1  = cloth_class(char="cho", category="bras", subcat="bras", type="bra", id="sport_bra_1", layers=1, color=[[156, 204, 249, 255]])
+default cho_outfit_last = DollOutfit([cho_hair_ponytail2])
+default cho_outfit_default = DollOutfit([cho_hair_ponytail2, cho_top_school1, cho_bottom_school1, cho_bra_basic1, cho_panties_basic1, cho_stockings_house], True)
 
-# Panties
-default cho_cloth_basicpanties1 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="basic_panties_1", layers=2, color=[[230, 230, 231, 255], [89, 116, 194, 255]])
-default cho_cloth_bikinibottom1 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="bikini_bottom_1", layers=1, color=[[213, 161, 13, 255]], unlocked=False, whoring=14)
-default cho_cloth_bikinibottom2 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="bikini_bottom_2", layers=1, color=[[213, 161, 13, 255]], unlocked=False, whoring=18)
-default cho_cloth_lacepanties1  = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="lace_panties_1", layers=3, color=[[100, 100, 255, 255], [220, 220, 221, 255], [89, 116, 194, 255]], unlocked=False, whoring=12)
-default cho_cloth_sportpanties1 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="sport_panties_1", layers=1, color=[[156, 204, 249, 255]])
-default cho_cloth_sportpanties2 = cloth_class(char="cho", category="panties", subcat="panties", type="panties", id="sport_panties_2", layers=1, color=[[156, 204, 249, 255]], whoring=4)
+##################
+## Misty Outfit ##
+##################
 
-# Robes
-default cho_cloth_dress1 = cloth_class(char="cho", category="tops", subcat="onepieces", type="top", id="dress_1", layers=2, color=[[231, 29, 41, 255], [242, 162, 73, 255]], armfix=True, unlocked=False, whoring=12, incompatible=["bottom"])
+default cho_top_shirt1 = DollCloth("cho", ("tops", "muggle"), "top", "top_shirt_1", [[255, 229, 126, 255]])
+default cho_bottom_shorts3 = DollCloth("cho", ("bottoms", "trousers"), "bottom", "pants_short_3", [[47, 150, 136, 255], [175, 220, 191, 255], [247, 152, 38, 255]], level=10, armfix=True)
+default cho_accessory3_suspenders = DollCloth("cho", ("misc", "accessory"), "accessory3", "suspenders", [[137, 22, 17, 255], [229, 140, 33, 255]])
 
-# Hair
-default cho_hair_ponytail = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="ponytail", layers=2, color=[[52, 59, 80, 255], [70, 90, 147, 255]])
-default cho_hair_ponytail_natural = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="ponytail_natural", layers=2, color=[[52, 59, 80, 255], [70, 90, 147, 255]])
-default cho_hair_pigtails = cloth_class(char="cho", category="head", subcat="hair", type="hair", id="pigtails", layers=3, color=[[52, 59, 80, 255], [70, 90, 147, 255], [242, 162, 73, 255]], unlocked=False, whoring=8)
+default cho_outfit_misty = DollOutfit([cho_hair_ponytail2, cho_accessory3_suspenders, cho_top_shirt1, cho_bottom_shorts3], price=250)
 
-# Pelvis
-default cho_pubes_thick = cloth_class(char="cho", category="pelvis", subcat="pubes", type="pubes", id="thick", layers=2, color=[[52, 59, 80, 255], [70, 90, 147, 255]])
-default cho_pubes_heart = cloth_class(char="cho", category="pelvis", subcat="pubes", type="pubes", id="heart", layers=2, color=[[52, 59, 80, 255], [70, 90, 147, 255]])
+##################
+## Party Outfit ##
+##################
 
-default cho_tattoopelvis_free = cloth_class(char="cho", category="pelvis", subcat="tattoos", type="tattoo0", id="pelv_free", layers=1, color=[[0, 0, 1, 255]])
+default cho_bottom_skirt2 = DollCloth("cho", ("bottoms", "skirts"), "bottom", "skirt_short_2", [[93, 119, 173, 255]], level=16, armfix=True)
+default cho_bra_bikini1 = DollCloth("cho", ("bras", "bras"), "bra", "bikini_top_1", [[3, 237, 234, 255]], level=10)
 
-default cho_piercingpelvis_stud = cloth_class(char="cho", category="pelvis", subcat="piercing", type="piercing0", id="stud", layers=1, color=[[220, 220, 221, 255]])
+default cho_outfit_party = DollOutfit([cho_hair_ponytail2, cho_bottom_skirt2, cho_bra_bikini1], price=250)
 
-default cho_tattoobreasts_slut      = cloth_class(char="cho", category="breasts", subcat="tattoos", type="tattoo1", id="breasts_slut", layers=1, color=[[0, 0, 1, 255]])
-default cho_piercingbreasts_barbell = cloth_class(char="cho", category="breasts", subcat="piercing", type="piercing1", id="breast_barbell", layers=1, color=[[220, 220, 221, 255]])
+###################
+## Sailor Outfit ##
+###################
 
-# Headwear
-default cho_hats_catears = cloth_class(char="cho", category="head", subcat="hats", type="hat", id="catears", layers=1, color=[[70, 90, 147, 255]])
-default cho_hats_witch   = cloth_class(char="cho", category="head", subcat="hats", type="hat", id="witch", layers=2, color=[[71, 51, 102, 255], [215, 170, 98, 255]])
-default cho_glasses1     = cloth_class(char="cho", category="head", subcat="glasses", type="accessory4", id="glasses1", layers=1, color=[[240, 240, 241, 255]])
-default cho_goggles2     = cloth_class(char="cho", category="head", subcat="hats", type="hat", id="goggles", layers=2, color=[[137, 150, 193, 255], [165, 165, 166, 255]])
+default cho_bottom_skirt1 = DollCloth("cho", ("bottoms", "skirts"), "bottom", "skirt_short_1", [[89, 116, 194, 255]], level=18, armfix=True)
+default cho_top_sailor1 = DollCloth("cho", ("tops", "muggle"), "top", "top_sailor_1", [[252, 252, 253, 255], [89, 116, 194, 255]], level=14)
+default cho_stockings_sailor1 = DollCloth("cho", ("legwear", "stockings"), "stockings", "sailor", [[232, 232, 233, 255]])
+default cho_panties_bikini2 = DollCloth("cho", ("panties", "panties"), "panties", "bikini_bottom_2", [[213, 161, 13, 255]], level=18, armfix=True)
 
-# Neckwear
-default cho_cloth_chokerlace1     = cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="choker_lace_1", layers=2, color=[[100, 100, 255, 255], [220, 220, 221, 255]], unlocked=False)
-default cho_cloth_tie1            = cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="tie_1", layers=2, color=[[216, 163, 10, 255], [89, 116, 194, 255]])
-default cho_cloth_chokermedallion = cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="choker_medallion", layers=1, color=[[25, 25, 26, 255]])
-default cho_cloth_collarleather1  = cloth_class(char="cho", category="head", subcat="neckwear", type="neckwear", id="collar_leather_1", layers=1, color=[[56, 56, 57, 255]])
+default cho_outfit_sailor = DollOutfit([cho_hair_ponytail2, cho_top_sailor1, cho_bottom_skirt1, cho_stockings_sailor1, cho_panties_bikini2], price=250)
 
-default cho_makeup_blush = cloth_class(char="cho", category="makeup", subcat="blush", type="makeup0", id="blush", layers=1, color=[[238, 113, 196, 255]], unlocked=False, whoring=2)
+###################
+## Bikini Outfit ##
+###################
 
-# Stockings
-default cho_cloth_lace_stockings_1    = cloth_class(char="cho", category="legwear", subcat="stockings", type="stockings", id="lace_stockings_1", layers=2, color=[[100, 100, 255, 255], [220, 220, 221, 255]], unlocked=False, whoring=12)
-default cho_cloth_fishnet_stockings_1 = cloth_class(char="cho", category="legwear", subcat="stockings", type="stockings", id="fishnet", layers=2, color=[[100, 100, 101, 255], [50, 50, 51, 255]], whoring=14)
-default cho_cloth_sailor_stockings_1  = cloth_class(char="cho", category="legwear", subcat="stockings", type="stockings", id="sailor", layers=1, color=[[232, 232, 233, 255]], unlocked=False)
-default cho_cloth_quidstocking1       = cloth_class(char="cho", category="legwear", subcat="stockings", type="stockings", id="quid1", layers=2, color=[[64, 84, 141, 255], [213, 161, 13, 255]], unlocked=False, whoring=10)
+default cho_bra_bikini2 = DollCloth("cho", ("bras", "bras"), "bra", "bikini_top_2", [[138, 22, 17, 255]], level=14)
+default cho_panties_bikini1 = DollCloth("cho", ("panties", "panties"), "panties", "bikini_bottom_1", [[213, 161, 13, 255]], level=14, armfix=True)
 
-# Garterbelts
-default cho_cloth_lacegarter1           = cloth_class(char="cho", category="legwear", subcat="garterbelts", type="garterbelt", id="lace_garter_1", layers=4, color=[[220, 220, 221, 255], [100, 100, 255, 255], [220, 220, 221, 255], [89, 116, 194, 255]], unlocked=False)
-default cho_cloth_house_stockings_1     = cloth_class(char="cho", category="legwear", subcat="stockings", type="stockings", id="house", layers=2, color=[[216, 163, 10, 255], [89, 116, 194, 255]])
-default cho_cloth_pantyhose_stockings_1 = cloth_class(char="cho", category="legwear", subcat="stockings", type="stockings", id="pantyhose", layers=1, color=[[190, 146, 129, 255]])
+default cho_outfit_bikini = DollOutfit([cho_hair_ponytail2, cho_bra_bikini2, cho_panties_bikini1])
 
-# Accessories
-default cho_acc_suspenders  = cloth_class(char="cho", category="misc", subcat="accessory", type="accessory3", id="suspenders", layers=2, color=[[137, 22, 17, 255], [229, 140, 33, 255]], unlocked=False)
-default cho_earring_feather = cloth_class(char="cho", category="head", subcat="earrings", type="earring", id="feather", layers=3, color=[[232, 232, 232, 255], [70, 90, 147, 255], [136, 91, 34, 255]], unlocked=False)
-default cho_earring_basic   = cloth_class(char="cho", category="head", subcat="earrings", type="earring", id="basic", layers=1, color=[[220, 220, 221, 255]])
-default cho_earring_snitch  = cloth_class(char="cho", category="head", subcat="earrings", type="earring", id="snitch", layers=2, color=[[220, 220, 221, 255], [213, 161, 13, 255]], unlocked=False)
+##########################
+## Lace Lingerie Outfit ##
+##########################
+
+default cho_neckwear_lace1 = DollCloth("cho", ("head", "neckwear"), "neckwear", "choker_lace_1", [[100, 100, 255, 255], [220, 220, 221, 255]])
+default cho_garterbelt_lace1 = DollCloth("cho", ("legwear", "garterbelts"), "garterbelt", "lace_garter_1", [[220, 220, 221, 255], [100, 100, 255, 255], [220, 220, 221, 255], [89, 116, 194, 255]])
+default cho_stockings_lace1 = DollCloth("cho", ("legwear", "stockings"), "stockings", "lace_stockings_1", [[100, 100, 255, 255], [220, 220, 221, 255]], level=12)
+default cho_bra_lace1 = DollCloth("cho", ("bras", "bras"), "bra", "lace_bra_1", [[100, 100, 255, 255], [220, 220, 221, 255], [89, 116, 194, 255]], level=14)
+default cho_panties_lace1 = DollCloth("cho", ("panties", "panties"), "panties", "lace_panties_1", [[100, 100, 255, 255], [220, 220, 221, 255], [89, 116, 194, 255]], level=12)
+default cho_earring_feather = DollCloth("cho", ("head", "earrings"), "earring", "feather", [[232, 232, 232, 255], [70, 90, 147, 255], [136, 91, 34, 255]])
+
+default cho_outfit_lacelingerie = DollOutfit([cho_hair_ponytail2, cho_neckwear_lace1, cho_garterbelt_lace1, cho_panties_lace1, cho_bra_lace1, cho_stockings_lace1, cho_earring_feather], price=250)
+
+##################
+## Dress Outfit ##
+##################
+
+default cho_top_dress1 = DollCloth("cho", ("tops", "onepieces"), "top", "dress_1", [[231, 29, 41, 255], [242, 162, 73, 255]], armfix=True, level=12, blacklist=["bottom"])
+
+default cho_outfit_dress1 = DollOutfit([cho_hair_ponytail2, cho_top_dress1, cho_panties_basic1, cho_bra_basic1])
+
+########################
+## Cheerleader Outfit ##
+########################
+
+default cho_hair_pigtails = DollCloth("cho", ("head", "hair"), "hair", "pigtails", [[52, 59, 80, 255], [70, 90, 147, 255], [242, 162, 73, 255]], level=8)
+default cho_earring_snitch = DollCloth("cho", ("head", "earrings"), "earring", "snitch", [[220, 220, 221, 255], [213, 161, 13, 255]])
+default cho_stockings_quid1 = DollCloth("cho", ("legwear", "stockings"), "stockings", "quid1", [[64, 84, 141, 255], [213, 161, 13, 255]], level=10)
+default cho_panties_sport2 = DollCloth("cho", ("panties", "panties"), "panties", "sport_panties_2", [[156, 204, 249, 255]], level=4)
+default cho_bra_sports1 = DollCloth("cho", ("bras", "bras"), "bra", "sport_bra_1", [[156, 204, 249, 255]])
+default cho_top_quid1 = DollCloth("cho", ("tops", "school"), "top", "top_quid_1", [[64, 84, 141, 255], [213, 161, 13, 255]], level=10)
+default cho_bottom_quid1 = DollCloth("cho", ("bottoms", "skirts"), "bottom", "quid_skirt_1", [[64, 84, 141, 255], [213, 161, 13, 255]], level=10, armfix=True)
+default cho_makeup0_blush = DollCloth("cho", ("makeup", "blush"), "makeup0", "blush", [[238, 113, 196, 255]], level=2)
+
+default cho_outfit_cheerleader = DollOutfit([cho_hair_pigtails, cho_earring_snitch, cho_stockings_quid1, cho_panties_sport2, cho_bra_sports1, cho_bottom_quid1, cho_top_quid1, cho_makeup0_blush], price=250)
+
+####################
+## Trainee Outfit ##
+####################
+
+default cho_top_tank2 = DollCloth("cho", ("tops", "muggle"), "top", "top_tanktop_2", [[252, 192, 213, 255], [253, 221, 232, 255]], level=16)
+default cho_bottom_shorts1 = DollCloth("cho", ("bottoms", "trousers"), "bottom", "pants_short_1", [[230, 230, 231, 255]], level=8, armfix=True)
+default cho_stockings_pantyhose = DollCloth("cho", ("legwear", "stockings"), "stockings", "pantyhose", [[190, 146, 129, 255]])
+default cho_earring_basic = DollCloth("cho", ("head", "earrings"), "earring", "basic", [[220, 220, 221, 255]])
+
+default cho_outfit_trainee = DollOutfit([cho_hair_ponytail2, cho_bra_basic1, cho_panties_basic1, cho_bottom_shorts1
+, cho_top_tank2, cho_stockings_pantyhose, cho_earring_basic], price=250)
+
+###########
+## Other ##
+###########
+
+default cho_panties_sport1 = DollCloth("cho", ("panties", "panties"), "panties", "sport_panties_1", [[156, 204, 249, 255]])
+default cho_pubes_thick = DollCloth("cho", ("pelvis", "pubes"), "pubes", "thick", [[52, 59, 80, 255], [70, 90, 147, 255]])
+default cho_pubes_heart = DollCloth("cho", ("pelvis", "pubes"), "pubes", "heart", [[52, 59, 80, 255], [70, 90, 147, 255]])
+default cho_tattoo0_free = DollCloth("cho", ("pelvis", "tattoos"), "tattoo0", "pelv_free", [[0, 0, 1, 255]])
+default cho_piercing0_stud = DollCloth("cho", ("pelvis", "piercing"), "piercing0", "stud", [[220, 220, 221, 255]])
+default cho_tattoo1_slut = DollCloth("cho", ("breasts", "tattoos"), "tattoo1", "breasts_slut", [[0, 0, 1, 255]])
+default cho_piercing1_barbell = DollCloth("cho", ("breasts", "piercing"), "piercing1", "breast_barbell", [[220, 220, 221, 255]])
+default cho_hat_catears = DollCloth("cho", ("head", "hats"), "hat", "catears", [[70, 90, 147, 255]])
+default cho_hat_witch = DollCloth("cho", ("head", "hats"), "hat", "witch", [[71, 51, 102, 255], [215, 170, 98, 255]])
+default cho_accessory4_glasses1 = DollCloth("cho", ("head", "glasses"), "accessory4", "glasses1", [[240, 240, 241, 255]])
+default cho_hat_goggles = DollCloth("cho", ("head", "hats"), "hat", "goggles", [[137, 150, 193, 255], [165, 165, 166, 255]])
+default cho_neckwear_medallion = DollCloth("cho", ("head", "neckwear"), "neckwear", "choker_medallion", [[25, 25, 26, 255]])
+default cho_neckwear_leather1 = DollCloth("cho", ("head", "neckwear"), "neckwear", "collar_leather_1", [[56, 56, 57, 255]])
+default cho_stockings_fishnet = DollCloth("cho", ("legwear", "stockings"), "stockings", "fishnet", [[100, 100, 101, 255], [50, 50, 51, 255]], level=14)
+default cho_top_sweater1 = DollCloth("cho", ("tops", "school"), "top", "top_sweater_1", [[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
+default cho_top_sweater2 = DollCloth("cho", ("tops", "muggle"), "top", "top_sweater_2", [[89, 116, 194, 255]], level=6)
+default cho_top_tanktop1 = DollCloth("cho", ("tops", "muggle"), "top", "top_tanktop_1", [[230, 230, 231, 255]], level=14)
+default cho_robe_quidditch1 = DollCloth("cho", ("tops", "robes"), "robe", "robe_quidditch_1", [[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
+default cho_bottom_pants1 = DollCloth("cho", ("bottoms", "trousers"), "bottom", "pants_long_1", [[230, 230, 231, 255]], armfix=True)
+default cho_bottom_shorts2 = DollCloth("cho", ("bottoms", "trousers"), "bottom", "pants_short_2", [[114, 168, 210, 255], [232, 177, 13, 255]], level=10, armfix=True)
+default cho_bottom_pants2 = DollCloth("cho", ("bottoms", "trousers"), "bottom", "pants_long_2", [[109, 105, 121, 255], [213, 161, 13, 255]], armfix=True)
+default cho_bottom_shorts4 = DollCloth("cho", ("bottoms", "trousers"), "bottom", "pants_short_4", [[109, 105, 121, 255], [213, 161, 13, 255]], level=8, armfix=True)
 
 # Quidditch seperate category
-default choq_cloth_robequidditch1   = cloth_class(char="cho", category="event", subcat="robes", type="robe", id="robe_quidditch_1", layers=2, color=[[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
-default choq_cloth_topsweater1      = cloth_class(char="cho", category="event", subcat="tops", type="top", id="top_sweater_1", layers=2, color=[[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
-default choq_cloth_pantslong2       = cloth_class(char="cho", category="event", subcat="bottoms", type="bottom", id="pants_long_2", layers=2, color=[[109, 105, 121, 255], [213, 161, 13, 255]])
-default choq_cloth_pantsshort4      = cloth_class(char="cho", category="event", subcat="bottoms", type="bottom", id="pants_short_4", layers=2, color=[[109, 105, 121, 255], [213, 161, 13, 255]])
-default choq_cloth_glovesquidditch1 = cloth_class(char="cho", category="event", subcat="gloves", type="gloves", id="quidditch", layers=1, color=[[213, 161, 13, 255]], armfix=True)
-default choq_goggles                = cloth_class(char="cho", category="event", subcat="miscellaneous", type="hat", id="goggles", layers=2, color=[[137, 150, 193, 255], [165, 165, 166, 255]])
-default choq_goggles_face           = cloth_class(char="cho", category="event", subcat="miscellaneous", type="hat", id="goggles_face", layers=2, color=[[137, 150, 193, 255], [165, 165, 166, 255]], unlocked=False)
-default choq_cloth_schoolskirt3     = cloth_class(char="cho", category="bottoms", subcat="skirts", type="bottom", id="school_skirt_3", layers=2, color=[[103, 90, 108, 255], [232, 177, 13, 255]], unlocked=False)
+default choq_cloth_robequidditch1 = DollCloth("cho", ("event", "robes"), "robe", "robe_quidditch_1", [[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
+default choq_cloth_topsweater1 = DollCloth("cho", ("event", "tops"), "top", "top_sweater_1", [[89, 116, 194, 255], [213, 161, 13, 255]], armfix=True)
+default choq_cloth_pantslong2 = DollCloth("cho", ("event", "bottoms"), "bottom", "pants_long_2", [[109, 105, 121, 255], [213, 161, 13, 255]], armfix=True)
+default choq_cloth_pantsshort4 = DollCloth("cho", ("event", "bottoms"), "bottom", "pants_short_4", [[109, 105, 121, 255], [213, 161, 13, 255]], armfix=True)
+default choq_cloth_glovesquidditch1 = DollCloth("cho", ("event", "gloves"), "gloves", "quidditch", [[213, 161, 13, 255]], armfix=True)
+default choq_goggles = DollCloth("cho", ("event", "miscellaneous"), "hat", "goggles", [[137, 150, 193, 255], [165, 165, 166, 255]])
+default choq_goggles_face = DollCloth("cho", ("event", "miscellaneous"), "hat", "goggles_face", [[137, 150, 193, 255], [165, 165, 166, 255]], unlocked=False)
+default choq_cloth_schoolskirt3 = DollCloth("cho", ("bottoms", "skirts"), "bottom", "school_skirt_3", [[103, 90, 108, 255], [232, 177, 13, 255]], unlocked=False, armfix=True)
 
-default cho_outfit_quidditch = outfit_class(name="Quidditch", group=[choq_cloth_topsweater1, choq_cloth_pantslong2, choq_cloth_robequidditch1, choq_cloth_glovesquidditch1, cho_cloth_basicpanties1])
-
-# Unlockables
-default cho_outfit_party        = outfit_class(name="Party", group=[cho_hair_ponytail_natural, cho_cloth_skirtshort2, cho_cloth_bikinitop1])
-default cho_outfit_trainee      = outfit_class(name="Trainee", group=[cho_hair_ponytail_natural, cho_cloth_basicbra1, cho_cloth_basicpanties1, cho_cloth_schoolskirt2, cho_cloth_topschool3, cho_cloth_pantyhose_stockings_1, cho_earring_basic])
-default cho_outfit_sailor       = outfit_class(name="Sailor", group=[cho_hair_ponytail_natural, cho_cloth_topsailor1, cho_cloth_skirtshort1, cho_cloth_sailor_stockings_1, cho_cloth_bikinibottom2])
-default cho_outfit_misty        = outfit_class(name="Misty", group=[cho_hair_ponytail_natural, cho_acc_suspenders, cho_cloth_topshirt1, cho_cloth_pantsshort3])
-default cho_outfit_bikini       = outfit_class(name="Bikini", group=[cho_hair_ponytail_natural, cho_cloth_bikinitop2, cho_cloth_bikinibottom1])
-default cho_outfit_lacelingerie = outfit_class(name="Lingerie", group=[cho_hair_ponytail_natural, cho_cloth_chokerlace1, cho_cloth_lacegarter1, cho_cloth_lacepanties1, cho_cloth_lacebra1, cho_cloth_lace_stockings_1, cho_earring_feather])
-default cho_outfit_dress1       = outfit_class(name="Lingerie", group=[cho_hair_ponytail_natural, cho_cloth_dress1])
-default cho_outfit_cheerleader  = outfit_class(name="Cheerleader", group=[cho_hair_pigtails, cho_earring_snitch, cho_cloth_quidstocking1, cho_cloth_sportpanties2, cho_cloth_sportbra1, cho_cloth_quidskirt1, cho_cloth_topquid1, cho_makeup_blush])
-
-# Temporal save
-default cho_outfit_last   = outfit_class(name="Last worn items", group=[cho_hair_ponytail_natural])
-default cho_outfit_custom = outfit_class(name="Default", group=[cho_hair_ponytail_natural.clone(), cho_cloth_topschool1.clone(), cho_cloth_schoolskirt1.clone(), cho_cloth_basicbra1.clone(), cho_cloth_basicpanties1.clone()], unlocked=True) # Don't change
-
-default cho_outfit_default = outfit_class(name="Default", group=[cho_hair_ponytail_natural.clone(), cho_cloth_topschool1.clone(), cho_cloth_schoolskirt1.clone(), cho_cloth_basicbra1.clone(), cho_cloth_basicpanties1.clone(), cho_cloth_house_stockings_1.clone()])
-
-label default_cho_class_init:
-python:
-    # Because cho_class must be defined before clothing, the default clothing can only be set afterwards, like so:
-    if not cho_class.body or not cho_class.face or not cho_class.other or not cho_class.clothing:
-        cho_class.body = {
-            "armleft":   ["arm_down_l", 18, 0, 0, False],
-            "armright":  ["arm_down_r", 1, 0, 0, False],
-            "breasts":   ["breasts_bikini_tan", 3, 0, 0, False],
-            "base":      ["base_01", 2, 0, 0, False],
-            "legs":      [None, 4, 0, 0, False],
-            "animation": [None, 1, 0, 0, False]
-        }
-
-        cho_class.face = {
-            "tears":    [None, 11, 0, 0, False],
-            "cheeks":   [None, 10, 0, 0, False],
-            "eyebrows": ["base", 9, 0, 0, False],
-            "eyes":     ["base", 8, 0, 0, False],
-            "pupils":   ["mid", 7, 0, 0, False],
-            "whites":   ["_white_", 6, 0, 0, False],
-            "mouth":    ["base", 5, 0, 0, False]
-        }
-
-        cho_class.other = {
-            "cum":   [None, 15, 0, 0, False],
-            "emote": [None, 30, 0, 0, False]
-        }
-
-        cho_class.update_paths("body", "face", "other")
-
-        cho_class.clothing = {
-            "hat":        [None, 24, 0, 0, False],
-            "hair":       [cho_hair_ponytail_natural, 12, 0, 0, False],
-            "earring":    [None, 22, 0, 0, False],
-            "neckwear":   [None, 17, 0, 0, False],
-            "robe":       [None, 21, 0, 0, False],
-            "gloves":     [None, 20, 0, 0, False],
-            "top":        [cho_cloth_topschool1, 19, 0, 0, False],
-            "bra":        [cho_cloth_basicbra1, 18, 0, 0, False],
-            "bottom":     [cho_cloth_schoolskirt1, 16, 0, 0, False],
-            "garterbelt": [None, 15, 0, 0, False],
-            "panties":    [cho_cloth_basicpanties1, 14, 0, 0, False],
-            "stockings":  [cho_cloth_house_stockings_1, 13, 0, 0, False],
-            "buttplug":   [None, 0, 0, 0, False],
-            "pubes":      [None, 11, 0, 0, False],
-            "tattoo0":    [None, 10, 0, 0, False],
-            "tattoo1":    [None, 10, 0, 0, False],
-            "tattoo2":    [None, 10, 0, 0, False],
-            "tattoo3":    [None, 10, 0, 0, False],
-            "tattoo4":    [None, 10, 0, 0, False],
-            "piercing0":  [None, 10, 0, 0, False],
-            "piercing1":  [None, 10, 0, 0, False],
-            "piercing2":  [None, 10, 0, 0, False],
-            "piercing3":  [None, 10, 0, 0, False],
-            "piercing4":  [None, 10, 0, 0, False],
-            "accessory0": [None, 20, 0, 0, False],
-            "accessory1": [None, 20, 0, 0, False],
-            "accessory2": [None, 20, 0, 0, False],
-            "accessory3": [None, 20, 0, 0, False],
-            "accessory4": [None, 20, 0, 0, False],
-            "makeup0":    [None, 11, 0, 0, False],
-            "makeup1":    [None, 11, 0, 0, False],
-            "makeup2":    [None, 11, 0, 0, False],
-            "makeup3":    [None, 11, 0, 0, False],
-            "makeup4":    [None, 11, 0, 0, False]
-        }
+default cho_outfit_quidditch = DollOutfit([choq_cloth_topsweater1, choq_cloth_pantslong2, choq_cloth_robequidditch1, choq_cloth_glovesquidditch1, cho_bra_basic1, cho_panties_basic1])

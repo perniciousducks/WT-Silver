@@ -1,5 +1,5 @@
 label cho_wardrobe_check(section, arg=None):
-    if isinstance(arg, outfit_class):
+    if isinstance(arg, DollOutfit):
         python:
             temp_count = [0, 0, 0]
             temp_score = 0

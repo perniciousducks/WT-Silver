@@ -4,14 +4,14 @@
 
 label hg_pf_grope_ass_T1:
     stop music fadeout 5.0
-    call her_chibi_scene("grope_ass_front", trans="d7")
+    call her_chibi_scene("grope_ass_front", trans=d7)
 
     call her_main("[genie_name]!?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
     m "Relax, [hermione_name]. It will be the easiest [current_payout] points you've ever made, I promise."
     m "All I am going to do is squeeze your little butt a couple of times..."
     call her_main("No! I demand you to stop!", "scream", "closed", "angry", "mid", cheeks="blush")
 
-    call her_chibi_scene("behind_desk_front", trans="d5")
+    call her_chibi_scene("behind_desk_front", trans=d5)
 
     call her_main("This is inappropriate, [genie_name]................", "angry", "closed", "angry", "mid", cheeks="blush")
     m "Nobody needs to know how exactly you got the points..."
@@ -35,18 +35,18 @@ label hg_pf_grope_ass_T1:
 
 
 label hg_pf_grope_ass_T1_front:
-    call her_chibi_scene("behind_desk_front", trans="d7")
+    call her_chibi_scene("behind_desk_front", trans=d7)
 
     call her_main("(...)", "disgust", "narrow", "worried", "down", cheeks="blush", ypos="head")
 
-    call her_chibi_scene("grope_ass_front", trans="d5")
+    call her_chibi_scene("grope_ass_front", trans=d5)
     call ctc
 
     call her_main("(...)", "disgust", "narrow", "base", "down", cheeks="blush")
     call her_main("I'm sorry, Sir. But I can't do this!", "soft", "narrow", "base", "down", cheeks="blush")
     m "What is the problem, [hermione_name]?"
 
-    call her_chibi_scene("reset", "desk", "base", trans="fade")
+    call her_chibi_scene("reset", "desk", "base", trans=fade)
 
     call her_main("I can't do it when I can see you looking at me...", "mad", "worriedCl", "worried", "mid", cheeks="blush")
     m "That's the whole point [hermione_name], I want to look at you..."
@@ -66,11 +66,11 @@ label hg_pf_grope_ass_T1_front:
 
 
 label hg_pf_grope_ass_T1_back:
-    call her_chibi_scene("behind_desk_front", trans="d7")
+    call her_chibi_scene("behind_desk_front", trans=d7)
 
     call her_main("As you say, [genie_name]...", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
-    call her_chibi_scene("behind_desk_back", trans="d5")
+    call her_chibi_scene("behind_desk_back", trans=d5)
     call ctc
 
     call her_main(".............", "annoyed", "narrow", "angry", "R", cheeks="blush")
@@ -131,7 +131,7 @@ label hg_pf_grope_ass_T1_back:
     g4 "What?"
     call her_main("I'm leaving!", "angry", "worriedCl", "worried", "mid", cheeks="blush", ypos="head")
 
-    call her_chibi_scene("reset", "desk", "base", trans="fade")
+    call her_chibi_scene("reset", "desk", "base", trans=fade)
 
     # Event Fails
     menu:
@@ -227,7 +227,7 @@ label hg_pf_grope_ass_T1_continue:
 ### Tier 2 ###
 
 label hg_pf_grope_ass_T2:
-    call her_chibi_scene("behind_desk_front", trans="d7")
+    call her_chibi_scene("behind_desk_front", trans=d7)
 
     call her_main("Do you want me to turn around then, [genie_name]?", "base", "base", "base", "R", cheeks="blush", ypos="head")
 
@@ -321,7 +321,7 @@ label hg_pf_grope_ass_T2_front:
 
 
 label hg_pf_grope_ass_T2_back:
-    call her_chibi_scene("behind_desk_back", trans="d7")
+    call her_chibi_scene("behind_desk_back", trans=d7)
     call ctc
 
     call her_main(".............", "base", "narrow", "base", "up", cheeks="blush")
@@ -488,12 +488,12 @@ label hg_pf_grope_ass_T2_fail:
     call her_main("NO! What have you done!!?", "angry", "worriedCl", "worried", "mid", cheeks="blush", tears="soft_blink", ypos="head")
     call nar(">Hermione gives you an unexpectedly strong shove...")
 
-    call her_chibi_scene("behind_desk_front", trans="hpunch")
+    call her_chibi_scene("behind_desk_front", trans=hpunch)
 
     call her_main("Why would you do this to me, [genie_name]...?", "angry", "worriedCl", "worried", "mid", cheeks="blush", tears="soft_blink")
     call her_main("I never agreed to... to...", "angry", "worriedCl", "worried", "mid", cheeks="blush", tears="crying_blink")
     call her_main("You... you...", "angry", "worriedCl", "worried", "mid", cheeks="blush", tears="crying_blink")
-    call her_main("{size=+7}YOU RAPED ME!{/size}", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy", trans="hpunch")
+    call her_main("{size=+7}YOU RAPED ME!{/size}", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy", trans=hpunch)
     g4 "What? Don't be ridiculous, [hermione_name]! I did no such thing!"
     call her_main("Yes you did! Yes you did!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
     g4 "I most certainly did not!"
@@ -513,7 +513,7 @@ label hg_pf_grope_ass_T2_fail:
             call her_main("No, I will not!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy", ypos="head")
             call her_main("I've just been raped!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
             g4 "Oh, snap out of it [hermione_name], I didn't rape you! All I did was-"
-            call her_main("{size=+7}You raped me!!!{/size}", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy" , trans="hpunch")
+            call her_main("{size=+7}You raped me!!!{/size}", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy" , trans=hpunch)
             g4 "By the great desert sands, would you keep it down about the rapes!?"
             g4 "Someone may hear you!"
             call her_main("Good! I want them to hear!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
@@ -530,7 +530,7 @@ label hg_pf_grope_ass_T2_fail:
             call her_main("I hate you, [genie_name]!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
 
 
-    call her_chibi_scene("reset","desk","base", trans="fade")
+    call her_chibi_scene("reset","desk","base", trans=fade)
 
     call her_walk(xpos="door", ypos="base")
 
@@ -545,7 +545,7 @@ label hg_pf_grope_ass_T2_fail:
 ### Tier 3 ###
 
 label hg_pf_grope_ass_T3:
-    call her_chibi_scene("behind_desk_front", trans="d7")
+    call her_chibi_scene("behind_desk_front", trans=d7)
 
     call her_main("Do you want me to turn around then, [genie_name]?", "base", "base", "base", "R", cheeks="blush", ypos="head")
 
@@ -564,7 +564,7 @@ label hg_pf_grope_ass_T3:
 
 
 label hg_pf_grope_ass_T3_front:
-    call her_chibi_scene("behind_desk_front", trans="d7")
+    call her_chibi_scene("behind_desk_front", trans=d7)
     pause.8
 
     call her_main("...................", "base", "base", "base", "R", cheeks="blush", ypos="head")
@@ -577,7 +577,7 @@ label hg_pf_grope_ass_T3_front:
     m "Then why aren't you looking into my eyes when you say that..."
     call her_main("I...", "disgust", "base", "base", "mid", cheeks="blush") #looks back up
 
-    call her_chibi_scene("grope_ass_front", trans="d7")
+    call her_chibi_scene("grope_ass_front", trans=d7)
     pause.8
 
     call her_main("!!!", "mad", "wide", "base", "stare", cheeks="blush")
@@ -612,7 +612,7 @@ label hg_pf_grope_ass_T3_front:
     call her_main("...", "base", "narrow", "base", "mid_soft", cheeks="blush")
     call her_main("What do you-{w=0.6}{nw}", "soft", "narrow", "base", "mid_soft", cheeks="blush")
 
-    call her_chibi_scene("behind_desk_front", trans="d7")
+    call her_chibi_scene("behind_desk_front", trans=d7)
     pause.8
 
     call nar(">Bringing your hands out from underneath her skirt you hold them up in front of Hermione...")
@@ -622,7 +622,7 @@ label hg_pf_grope_ass_T3_front:
     call her_main("Oh...", "disgust", "narrow", "base", "down", cheeks="blush")
     call her_main("Well, your hands were moving so close and-{w=0.8}{nw}", "soft", "narrow", "worried", "down", cheeks="blush")
 
-    call her_chibi_scene("grope_ass_front", trans="d7")
+    call her_chibi_scene("grope_ass_front", trans=d7)
     pause.8
 
     call nar(">Before she finishes her sentence you put your hand back under her skirt...")
@@ -638,7 +638,7 @@ label hg_pf_grope_ass_T3_front:
 
     menu:
         "-Slide your hands under her panties-":
-            call her_chibi_scene("grope_ass_front", trans="d7")
+            call her_chibi_scene("grope_ass_front", trans=d7)
 
         "-No. That's enough for today. Dismiss her-":
             jump end_hg_pf_grope
@@ -648,7 +648,7 @@ label hg_pf_grope_ass_T3_front:
 
 
 label hg_pf_grope_ass_T3_back:
-    call her_chibi_scene("behind_desk_back", trans="d7")
+    call her_chibi_scene("behind_desk_back", trans=d7)
     pause.8
 
     call her_main("...", "base", "narrow", "annoyed", "up", cheeks="blush", ypos="head")
@@ -661,7 +661,7 @@ label hg_pf_grope_ass_T3_back:
     call her_main("It feels weird...{w} but...", "disgust", "narrow", "worried", "down", cheeks="blush")
     g9 "Butt?" #fucks sake
 
-    call her_chibi_scene("grope_ass_back", trans="d7")
+    call her_chibi_scene("grope_ass_back", trans=d7)
     pause.8
 
     call her_main("!!!", "mad", "wide", "base", "stare", cheeks="blush")
@@ -698,7 +698,7 @@ label hg_pf_grope_ass_T3_back:
 
     menu:
         "-Slide your hands under her panties-":
-            call her_chibi_scene("grope_ass_back", trans="d7")
+            call her_chibi_scene("grope_ass_back", trans=d7)
 
         "-No. That's enough for today. Dismiss her-":
             jump end_hg_pf_grope
@@ -812,7 +812,7 @@ label hg_pf_grope_ass_T3_continue:
 ### Tier 4 ###
 
 label hg_pf_grope_ass_T4: # Not in the game yet.
-    call her_chibi_scene("behind_desk_front", trans="d7")
+    call her_chibi_scene("behind_desk_front", trans=d7)
 
     call her_main("Do you want me to turn around then, [genie_name]?", "soft", "narrow", "base", "mid_soft", cheeks="blush", ypos="head")
 
@@ -940,7 +940,7 @@ label hg_pf_grope_ass_T4_front:
 
 
 label hg_pf_grope_ass_T4_back:
-    call her_chibi_scene("behind_desk_back", trans="d7")
+    call her_chibi_scene("behind_desk_back", trans=d7)
     call ctc
 
     "Dev Note" "This favour needs to be rewritten."

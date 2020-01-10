@@ -3,7 +3,7 @@
 label give_lun_gift(gift_item):
     hide screen luna_main
     with d5
-    call lun_main(xpos="mid",ypos="base",trans="d5")
+    call lun_main(xpos="mid",ypos="base",trans=d5)
     
     $ gave_luna_gift = True
 
@@ -97,7 +97,7 @@ label give_lun_gift(gift_item):
 
     hide screen luna_main
     with d5
-    call lun_main(xpos="base",ypos="base",trans="d5")
+    call lun_main(xpos="base",ypos="base",trans=d5)
 
     return
 

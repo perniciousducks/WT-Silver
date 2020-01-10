@@ -7,7 +7,7 @@
 #TODO Add Tonks chibi to all her public request nightly reports
 
 label nt_pr_kiss_start:
-    call ton_main("","base","base","base","mid", xpos="right", ypos="base", trans="fade")
+    call ton_main("","base","base","base","mid", xpos="right", ypos="base", trans=fade)
 
     if ton_tier == 2:
 
@@ -72,7 +72,7 @@ label nt_pr_kiss_start:
 label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
     #Gentle kissing
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 7 and nt_pr_kiss.points < 4: # First time.
         pass
@@ -143,7 +143,7 @@ label nt_pr_kiss_T1_intro_E1: # Tier 1 - Event 1 - Slytherin boy
 
 label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 7 and nt_pr_kiss.points < 4: # First time.
         pass
@@ -214,7 +214,7 @@ label nt_pr_kiss_T1_E2: # Tier 1 - Event 2 - Ravenclaw boy
 label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
     #Tonks pays two best friends to make out
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 7 and nt_pr_kiss.points < 4: # First time.
         pass
@@ -282,7 +282,7 @@ label nt_pr_kiss_T1_E3: # Tier 1 - Event 3 - Slytherin girls
 label nt_pr_kiss_T1_E4: #Level 1 Event 4
     #Tender make-out sesh with slytherin lesbian
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 7 and nt_pr_kiss.points < 4: # First time.
         pass
@@ -357,7 +357,7 @@ label nt_pr_kiss_T1_E4: #Level 1 Event 4
 
 label nt_pr_kiss_T2_E1: # Tier 2 Event 1 # Not in use.
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
     m "How did your extracurricular activities pan out today?"
     call ton_main("Honestly? I don't think I've ever been as turned on in my life...","base","base","base","mid")
     call ton_main("Fuck... It was incredible... the power I felt over him... it was intoxicating...","base","base","base","mid")

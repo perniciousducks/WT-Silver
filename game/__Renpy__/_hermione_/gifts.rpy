@@ -93,7 +93,7 @@ label give_her_quest_item: #(quest_item)
 label give_her_gift(gift_item):
     hide screen hermione_main
     with d5
-    call her_main(xpos="mid",ypos="base",trans="d5")
+    call her_main(xpos="mid",ypos="base",trans=d5)
 
     $ gave_hermione_gift = True
 
@@ -637,7 +637,7 @@ label give_her_gift(gift_item):
 
     hide screen hermione_main
     with d5
-    call her_main(xpos="base",ypos="base",trans="d5")
+    call her_main(xpos="base",ypos="base",trans=d5)
 
     return
 

@@ -26,7 +26,7 @@ label hg_anal_sex_1:
     call her_main(".................", "angry", "worriedCl", "worried", "mid",emote="05")
     m "Hm..."
 
-    call her_chibi_scene("sex_pause", trans="fade")
+    call her_chibi_scene("sex_pause", trans=fade)
 
     call her_main("!!!", "angry", "wide", "base", "stare")
     g4 "Oh, come on!"
@@ -84,7 +84,7 @@ label hg_anal_sex_1:
                 show screen ccg
                 call her_main("", "shock", "base", "base", "R",cheeks="blush",tears="soft",ypos="head")
             else:
-                call her_chibi_scene("sex_slow", trans="d5")
+                call her_chibi_scene("sex_slow", trans=d5)
 
             call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!", "scream", "wide", "base", "stare")
             g4 "Let us pump this little asshole full of semen then, shall we?"
@@ -110,7 +110,7 @@ label hg_anal_sex_1:
             call play_music("playful_tension") # SEX THEME.
 
             # Blowjob
-            call her_chibi_scene("bj", trans="fade")
+            call her_chibi_scene("bj", trans=fade)
             call ctc
 
             call her_main("*Slurp!* *Slurp!* *Slurp!*",ypos="head",flip=False)
@@ -119,7 +119,7 @@ label hg_anal_sex_1:
             m "Alright, I think that's enough. Back on the desk now."
 
             # Sex
-            call her_chibi_scene("sex_pause", trans="fade")
+            call her_chibi_scene("sex_pause", trans=fade)
 
             call her_main(".............", "open", "base", "base", "mid")
             g4 "Yes! Almost!"
@@ -140,7 +140,7 @@ label hg_anal_sex_1:
                 show screen ccg
                 call her_main("", "shock", "base", "base", "R",cheeks="blush",tears="soft",ypos="head")
             else:
-                call her_chibi_scene("sex_slow", trans="d5")
+                call her_chibi_scene("sex_slow", trans=d5)
 
             g4 "YES!!!"
             call her_main("My... my...", "scream", "wide", "base", "stare")
@@ -165,7 +165,7 @@ label hg_anal_sex_1:
             # Blowjob
             hide screen ccg
             $ face_on_cg = False
-            call her_chibi_scene("bj", trans="fade")
+            call her_chibi_scene("bj", trans=fade)
             call ctc
 
             call her_main("*Slurp!* *Slurp!* *Slurp!*",ypos="head",flip=False)
@@ -185,7 +185,7 @@ label hg_anal_sex_1:
                 show screen ccg
                 call her_main("", "shock", "base", "base", "R",cheeks="blush",tears="soft",ypos="head")
             else:
-                call her_chibi_scene("sex_slow", trans="fade")
+                call her_chibi_scene("sex_slow", trans=fade)
             call ctc
 
             call her_main("Ah...", "shock", "base", "base", "R",cheeks="blush",tears="soft")
@@ -225,7 +225,7 @@ label hg_anal_sex_1:
             g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
 
             if not use_cgs:
-                call her_chibi_scene("sex_cum_in", trans="d5")
+                call her_chibi_scene("sex_cum_in", trans=d5)
             else:
                 $ ccg3 = "s1"
             call cum_block
@@ -257,7 +257,7 @@ label hg_anal_sex_1:
 
             # AFTER CUM INSIDE
             if not use_cgs:
-                call her_chibi_scene("sex_cum_in_done", trans="d5")
+                call her_chibi_scene("sex_cum_in_done", trans=d5)
 
             call her_main("*Sob!*...", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             m "Whew!... I think that was the last of it."
@@ -273,7 +273,7 @@ label hg_anal_sex_1:
 
             $ face_on_cg = False
             hide screen ccg
-            call her_chibi_scene("sex_cum_in_done", trans="d5")
+            call her_chibi_scene("sex_cum_in_done", trans=d5)
             pause.8
 
             call her_main("I apologize for saying that I hate you, [genie_name]...", "base", "base", "base", "R",cheeks="blush",tears="mascara",ypos="head",flip=False)
@@ -300,7 +300,7 @@ label hg_anal_sex_1:
 
         "-Pull out and cum on Hermione-":
             if not use_cgs:
-                call her_chibi_scene("sex_cum_out", trans="d5")
+                call her_chibi_scene("sex_cum_out", trans=d5)
             else:
                 $ ccg3 = "s3"
             call cum_block
@@ -316,7 +316,7 @@ label hg_anal_sex_1:
 
             $ face_on_cg = False
             hide screen ccg
-            call her_chibi_scene("sex_cum_in_done", trans="d5")
+            call her_chibi_scene("sex_cum_in_done", trans=d5)
             pause.8
 
             m "Well, I'm done... You can get off my desk now."
@@ -369,7 +369,7 @@ label hg_anal_sex_2:
         hide screen blkfade
         call her_main("", "open", "closed", "base", "mid",ypos="head")
     else:
-        call her_chibi_scene("sex_slow", trans="d5")
+        call her_chibi_scene("sex_slow", trans=d5)
 
     g4 "Oh, ye-es!"
     call her_main("Ah...", "soft", "narrow", "annoyed", "up")
@@ -463,7 +463,7 @@ label hg_anal_sex_2:
         g4 "!!!"
         "-Fill Hermione up with cum-":
             if not use_cgs:
-                call her_chibi_scene("sex_cum_in", trans="d5")
+                call her_chibi_scene("sex_cum_in", trans=d5)
             else:
                 $ ccg3 = "s1"
             call cum_block
@@ -485,7 +485,7 @@ label hg_anal_sex_2:
 
         "-Cum all over Hermione-":
             if not use_cgs:
-                call her_chibi_scene("sex_cum_out", trans="d5")
+                call her_chibi_scene("sex_cum_out", trans=d5)
             else:
                 $ ccg3 = "s3"
             call cum_block
@@ -511,7 +511,7 @@ label hg_anal_sex_2:
 
     $ face_on_cg = False
     hide screen ccg
-    call her_chibi_scene("sex_pause", trans="fade")
+    call her_chibi_scene("sex_pause", trans=fade)
 
     m "Well, this was intense..."
     call her_main("Ah-ha...{image=textheart} ah...{image=textheart}", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy",ypos="head",flip=False)

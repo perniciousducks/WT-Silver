@@ -34,11 +34,11 @@ label hg_pf_admire_panties:
 
     hide screen blkfade
     if her_tier <= 2:
-        call her_main("..................", "annoyed", "base", "base", "R", xpos="mid", ypos="base", trans="fade")
+        call her_main("..................", "annoyed", "base", "base", "R", xpos="mid", ypos="base", trans=fade)
     elif her_tier <= 5:
-        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     else:
-        call her_main("", "smile", "narrow", "base", "mid_soft", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "smile", "narrow", "base", "mid_soft", xpos="mid", ypos="base", trans=fade)
 
 
     # Points
@@ -259,7 +259,7 @@ label hg_pf_admire_panties_T3_intro_E1:
     g4 "!!?"
 
     show screen blktone
-    call her_main("", "base", "narrow", "base", "mid_soft", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "narrow", "base", "mid_soft", xpos="mid", ypos="base", trans=fade)
     call ctc
 
     # No Panties!

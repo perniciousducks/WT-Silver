@@ -10,7 +10,7 @@ label use_potion:
 
 label use_hermione_potion:
     hide screen wardrobe_old
-    call her_main(xpos="base",ypos="base",trans="fade")
+    call her_main(xpos="base",ypos="base",trans=fade)
 
     if potion_choice == "polyjuice_potion":
         menu:
@@ -122,7 +122,7 @@ label use_hermione_potion:
 
 label use_luna_potion:
     hide screen wardrobe_old
-    call lun_main(xpos="base",ypos="base",trans="fade")
+    call lun_main(xpos="base",ypos="base",trans=fade)
 
     if potion_choice == "clothes_potion":
         menu:
@@ -139,7 +139,7 @@ label use_luna_potion:
 
 # label use_tonks_potion:
     # hide screen wardrobe_old
-    # call ton_main(xpos="base",ypos="base",trans="fade")
+    # call ton_main(xpos="base",ypos="base",trans=fade)
 
     # if potion_choice == "hair_growth_potion":
         # menu:
@@ -198,7 +198,7 @@ label use_luna_potion:
         # m "Does it matter?"
         # call nar("I guess not... not really... Please, continue.","end")
         # m "(...)"
-        # call ton_main("Fuck me! That tasted good!","open_wide_tongue","base","base","ahegao",trans="hpunch")
+        # call ton_main("Fuck me! That tasted good!","open_wide_tongue","base","base","ahegao",trans=hpunch)
         # call ton_main("I'm not used to potions this tasty! With so much delicious cum in it...","horny","base","base","mid")
         # m "Glad you liked it."
         # call ton_main("Now, here, is your reward...","base","base","angry","mid")

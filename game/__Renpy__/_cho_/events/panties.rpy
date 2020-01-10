@@ -14,13 +14,13 @@ label cho_panties_response_T2:
         call cho_walk("desk","base")
         pause.8
 
-        call cho_main("(...)","annoyed","narrow","angry","mid", xpos="mid", ypos="base", trans="fade") # Evil stare.
+        call cho_main("(...)","annoyed","narrow","angry","mid", xpos="mid", ypos="base", trans=fade) # Evil stare.
         m "What?"
         call cho_main("(...)","annoyed","narrow","angry","R")
         m "Anything wrong?"
         call cho_main("They are covered in semen.","soft","narrow","base","R")
         m "What was that?"
-        call cho_main("Semen, Sir!","scream","narrow","angry","mid", trans="hpunch") # Scream
+        call cho_main("Semen, Sir!","scream","narrow","angry","mid", trans=hpunch) # Scream
         call cho_main("","annoyed","narrow","angry","mid")
         g4 "You are correct!{w} They are indeed covered in a thick load of filthy, nasty reeking semen!"
         g9 "Who could have done this?!"
@@ -33,7 +33,7 @@ label cho_panties_response_T2:
         m "That makes sense to me..."
         call cho_main("So you admit that you did it?","soft","narrow","angry","mid")
         m "It's not my cum..."
-        call cho_main("*Argh!*","angry","narrow","angry","mid", trans="hpunch")
+        call cho_main("*Argh!*","angry","narrow","angry","mid", trans=hpunch)
         call cho_main("Well who's is it then?{w} The house-elves?","soft","narrow","base","mid")
         m "*Uhm*...{w} Yes?"
         call cho_main("It's disgusting!","annoyed","narrow","base","down")

@@ -15,7 +15,7 @@ screen bludger_flying(start, end, t=1.0):
 
 # Chat with Cho the day before.
 label start_slytherin_match:
-    call cho_main(xpos="mid", ypos="base", trans="fade")
+    call cho_main(xpos="mid", ypos="base", trans=fade)
     g9 "Alright, [cho_name]. Let's do this!"
     g4 "Tomorrow we shall wipe the floor with those Slytherins, and bathe in their salty tears!"
     g9 "(Snape's tears in particular, after I get a hold of all of his gold!)"
@@ -613,7 +613,7 @@ label slytherin_match:
 
     call sna_main("I'm surprised she didn't swallow that one - with how wide she was blabbing her mouth.","snape_42", ypos="head")
     call sna_main("That's liquid luck for you!","snape_45")
-    call ton_main("What?","angry","shocked","base","wide", hair="neutral", ypos="head", flip=True, trans="hpunch") #Shocked
+    call ton_main("What?","angry","shocked","base","wide", hair="neutral", ypos="head", flip=True, trans=hpunch) #Shocked
     g4 "What the fuck is liquid luck?"
     call ton_main("You gave those brutes a luck potion?!","scream","base","angry","L", hair="angry")
     call sna_main("Well...{w=0.8}{nw}","snape_14")
@@ -1276,7 +1276,7 @@ label slytherin_match_return:
 
     call cho_main("I did it! We won the...","smile","closed","base","mid", xpos="base", ypos="base", flip=False)
     call her_main("","upset","base","base","L", xpos="440", ypos="base", flip=True)
-    call cho_main("!!!","pout","wide","base","L", trans="hpunch") #Shocked face
+    call cho_main("!!!","pout","wide","base","L", trans=hpunch) #Shocked face
 
     call play_music("hermione")
     call her_main("Oh, hello there, Miss Chang...","grin","narrow","angry","L")
@@ -1335,7 +1335,7 @@ label slytherin_match_return:
     call play_sound("equip")
     hide screen tonks_main
     $ tonks.wear("all")
-    call ton_main("","horny","base","base","mid", trans="d5")
+    call ton_main("","horny","base","base","mid", trans=d5)
     pause .8
 
     if tonks_morph_known:

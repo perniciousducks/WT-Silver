@@ -26,7 +26,7 @@ label cho_training_menu:
 # Training Intro 1.
 label cho_quid_E1:
     # Genie should get into a drill sargeant mood here.
-    call cho_main(xpos="mid",ypos="base",trans="fade")
+    call cho_main(xpos="mid",ypos="base",trans=fade)
 
     m "Are you ready for your first training session?"
     call cho_main("Of course, Professor!","base","base","base","mid")
@@ -104,7 +104,7 @@ label cho_quid_E1:
     g9 "*Hehehehe*{w} Now you've said it!"
     call cho_main("Could we please just talk about your plan, [cho_genie_name]?","open","narrow","angry","R")
     m "Patience, Miss Chang."
-    call cho_main("Tell me!","scream","closed","angry","mid",trans="hpunch")
+    call cho_main("Tell me!","scream","closed","angry","mid",trans=hpunch)
     call cho_main("","annoyed","narrow","angry","mid")
     g9 "May I present to you{w}, the path to our victory!"
 
@@ -135,7 +135,7 @@ label cho_quid_E1:
             m "Am I not clear enough with how I word things?"
             m "You can also let him feel you up if you have to."
 
-    call cho_main("Sir, this is just ridiculous!","scream","closed","angry","mid",trans="hpunch")
+    call cho_main("Sir, this is just ridiculous!","scream","closed","angry","mid",trans=hpunch)
     call cho_main("I thought a highly regarded wizard of your stature would know at least something that could help us at Quidditch.","open","narrow","angry","mid")
     call cho_main("I didn't hold it against you that you seemingly know very little about the sport.","open","base","angry","R")
     m "Which I proved you wrong, but who cares..."
@@ -184,7 +184,7 @@ label cho_quid_E1:
 
 # Training Intro 2.
 label cho_quid_E2:
-    call cho_main(xpos="mid",ypos="base",trans="fade")
+    call cho_main(xpos="mid",ypos="base",trans=fade)
     m "Did you finally come to terms with my training methods?"
     call cho_main("No, Sir.","soft","closed","angry","mid")
     call cho_main("But I've simply run out of options.{w} If we want to win the cup this year, you're the only hope we have left...","open","narrow","angry","mid")
@@ -388,7 +388,7 @@ label change_quidditch_tactics:
                 call reset_menu_position
 
                 hide screen blkfade
-                call cho_main(face="happy", xpos="base", ypos="base", trans="fade")
+                call cho_main(face="happy", xpos="base", ypos="base", trans=fade)
                 jump cho_requests
 
         jump demonstrate_quidditch_tactics

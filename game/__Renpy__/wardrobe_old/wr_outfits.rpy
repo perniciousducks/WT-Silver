@@ -386,7 +386,7 @@ label equip_outfit:
                     # call her_main("....................", "open_tongue", "slit", "worried", "ahegao")
                     # m "(Did she just break?)"
                     # m "Snap out of it, [hermione_name]! I need you to put on this outfit here..."
-                    # call her_main("What just happened?!", "open", "wide", "base", "stare",trans="hpunch")
+                    # call her_main("What just happened?!", "open", "wide", "base", "stare",trans=hpunch)
                     # call her_main("Oh right. The outfit! Give me a second!", "angry", "worriedCl", "worried", "mid",cheeks="blush")
                 # else: #Fail
                     # m "Giuchie, Giuchie, ya ya..."

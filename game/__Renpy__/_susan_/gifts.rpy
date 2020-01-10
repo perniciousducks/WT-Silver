@@ -3,7 +3,7 @@
 label give_sus_gift(gift_item):
     hide screen susan_main
     with d5
-    call sus_main(xpos="mid",ypos="base",trans="d5")
+    call sus_main(xpos="mid",ypos="base",trans=d5)
     
     $ gave_susan_gift = True
 
@@ -90,7 +90,7 @@ label give_sus_gift(gift_item):
 
     hide screen susan_main
     with d5
-    call sus_main(xpos="base",ypos="base",trans="d5")
+    call sus_main(xpos="base",ypos="base",trans=d5)
 
     return
     

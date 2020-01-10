@@ -4,7 +4,7 @@ label give_ast_gift(gift_item):
     $ gave_astoria_gift = True
     hide screen astoria_main
     with d5
-    call ast_main(xpos="mid", ypos="base", trans="d5")
+    call ast_main(xpos="mid", ypos="base", trans=d5)
 
     if gift_item == lollipop_ITEM:
 
@@ -486,7 +486,7 @@ label give_ast_gift(gift_item):
             call ast_main("I might even take a sip or two myself...", face="happy")
             call ast_mood(-1)
 
-    call ast_main(xpos="base",ypos="base", trans="d5")
+    call ast_main(xpos="base",ypos="base", trans=d5)
 
     return
 

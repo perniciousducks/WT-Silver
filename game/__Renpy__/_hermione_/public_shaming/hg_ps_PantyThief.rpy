@@ -316,7 +316,7 @@ label hg_ps_get_panties_complete:
                 call her_main("Although... I couldn't help but worry that somebody would notice somehow...", "soft", "base", "base", "R")
                 call her_main(".....", "annoyed", "base", "worried", "R")
                 hide screen sccg
-                call her_main("Can I have my panties back now?", "open", "base", "base", "mid",xpos="right",ypos="base",trans="fade")
+                call her_main("Can I have my panties back now?", "open", "base", "base", "mid",xpos="right",ypos="base",trans=fade)
                 m "Of course..."
                 hide screen hermione_main
                 with d3
@@ -339,7 +339,7 @@ label hg_ps_get_panties_complete:
                 call her_main("I gave a short speech on \"Why it is wrong to sell sexual favours in exchange for house points\"...", "open", "closed", "base", "mid")
                 call her_main("I felt bad that I had to give the speech without any underwear on...", "annoyed", "narrow", "angry", "R")
                 hide screen sccg
-                call her_main(xpos="right",ypos="base",trans="fade")
+                call her_main(xpos="right",ypos="base",trans=fade)
 
                 menu:
                     "\"You little hypocrite!\"":
@@ -379,7 +379,7 @@ label hg_ps_get_panties_complete:
                 her "It was oddly empowering to have no underwear on..."
                 her "Hm..."
                 hide screen sccg
-                call her_main("Can I have my panties back now please?", "base", "base", "base", "mid",xpos="right",ypos="base",trans="fade")
+                call her_main("Can I have my panties back now please?", "base", "base", "base", "mid",xpos="right",ypos="base",trans=fade)
                 m "Of course..."
                 hide screen hermione_main
                 with d3

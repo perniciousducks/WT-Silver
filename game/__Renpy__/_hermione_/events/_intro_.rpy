@@ -1103,7 +1103,7 @@ label hermione_intro_E6:
             her "(Wow. That's quite a lot...)"
             $ current_payout = 40
 
-    call her_main("Em, alright...", xpos="mid", ypos="base", trans="fade")
+    call her_main("Em, alright...", xpos="mid", ypos="base", trans=fade)
 
     if current_favor == "show_tongue":
         call her_main("M-my... tongue, sir?", "grin", "worriedCl", "worried", "mid", emote="05")
@@ -1248,7 +1248,7 @@ label hermione_intro_E6:
             m "[current_payout] points to the Gryffindor house."
         $ gryffindor += current_payout
 
-    call her_main("Yay!..............", "grin", "worriedCl", "worried", "mid", emote="05", xpos="base", ypos="base", flip=False, trans="fade")
+    call her_main("Yay!..............", "grin", "worriedCl", "worried", "mid", emote="05", xpos="base", ypos="base", flip=False, trans=fade)
     her "This was quite easy..."
     her "Do you think you could buy some more favours from me in the future, professor?"
 

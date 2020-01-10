@@ -352,7 +352,7 @@ label hg_ps_buttplug:
                     call her_main("(There's no way this thing will fit.)", "disgust", "narrow", "base", "down")
                     call nar(">Hermione slowly places the lubed up butt plug to her anus.")
                     call her_main("I'm telling you, [genie_name], this isn't going to-", "open", "closed", "base", "mid")
-                    call her_main("{size=+10}!!!{/size}", "soft", "wide", "base", "stare",cheeks="blush",trans="hpunch")
+                    call her_main("{size=+10}!!!{/size}", "soft", "wide", "base", "stare",cheeks="blush",trans=hpunch)
                     call her_main("{size=+10}It's moving!{/size}", "disgust", "worriedCl", "worried", "mid")
                     m "Really?"
                     call her_main("{size=+5}ugh...{/size}", "disgust", "worriedCl", "worried", "mid")
@@ -463,7 +463,7 @@ label hg_ps_buttplug_complete:
             call her_main("Still... being this distracted during class could really damage my grades...", "angry", "base", "base", "mid")
             m "I wouldn't worry about that. Just think of Gryffindor!"
             hide screen sccg
-            call her_main("Speaking of that...", "annoyed", "narrow", "annoyed", "mid", xpos="right",ypos="base",trans="fade")
+            call her_main("Speaking of that...", "annoyed", "narrow", "annoyed", "mid", xpos="right",ypos="base",trans=fade)
             m "Oh yes, quite right."
 
         elif one_out_of_three == 2: ### EVENT (B)
@@ -565,7 +565,7 @@ label hg_ps_buttplug_complete:
                     call her_main("very quiet...", "soft", "narrow", "annoyed", "up")
                     call her_main("barely making a sound...", "grin", "base", "base", "R")
                     hide screen sccg
-                    call her_main("[genie_name], can I get paid now, please?", "base", "narrow", "base", "mid_soft",xpos="right",ypos="base",trans="fade")
+                    call her_main("[genie_name], can I get paid now, please?", "base", "narrow", "base", "mid_soft",xpos="right",ypos="base",trans=fade)
                     her "......"
                 "\"Of course they did!\"":
                     $ sc34CG(1, 13, 2)
@@ -574,7 +574,7 @@ label hg_ps_buttplug_complete:
                     m "You were surrounded by people!"
                     call her_main("........", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
                     hide screen sccg
-                    call her_main("[genie_name], can I get paid now, please?", "angry", "base", "base", "mid",tears="soft",xpos="right",ypos="base",trans="fade")
+                    call her_main("[genie_name], can I get paid now, please?", "angry", "base", "base", "mid",tears="soft",xpos="right",ypos="base",trans=fade)
             m "Certainly."
 
         elif one_out_of_three == 3: ### EVENT (C)
@@ -596,7 +596,7 @@ label hg_ps_buttplug_complete:
             $ sc34CG(1, 11)
             m "Well I suppose something interesting can't happen everyday."
             hide screen sccg
-            call her_main("...", "annoyed", "base", "base", "R",xpos="right",ypos="base",trans="fade")
+            call her_main("...", "annoyed", "base", "base", "R",xpos="right",ypos="base",trans=fade)
 
 
     elif her_whoring >= 21 and buttplug_size == 1: # LEVEL 08+
@@ -638,7 +638,7 @@ label hg_ps_buttplug_complete:
             $ sc34CG(1, 17, 2)
             call her_main("..........", "soft", "narrow", "annoyed", "up")
             hide screen sccg
-            call her_main(xpos="right",ypos="base",trans="fade")
+            call her_main(xpos="right",ypos="base",trans=fade)
             m "Nice work, [hermione_name]."
 
         elif one_out_of_three == 2: ### EVENT (B)

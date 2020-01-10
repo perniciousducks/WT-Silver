@@ -12,7 +12,7 @@ label hg_pr_flash:
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    call her_main(face="happy", xpos="right", ypos="base", trans="fade")
+    call her_main(face="happy", xpos="right", ypos="base", trans=fade)
 
     #Intro.
     if hg_pr_flash.counter == 0:
@@ -241,7 +241,7 @@ label hg_pr_flash_T1_E3:
 
     show screen blktone
     hide screen blkfade
-    call her_main("Yes I did, [genie_name].", "annoyed", "base", "worried", "R", xpos="base", ypos="base", trans="fade")
+    call her_main("Yes I did, [genie_name].", "annoyed", "base", "worried", "R", xpos="base", ypos="base", trans=fade)
     m "Good. Tell me more."
     $ sc34CG(3, 4)
     call her_main("Ehm... There is not much to tell, really...", "open", "base", "base", "mid")
@@ -414,7 +414,7 @@ label hg_pr_flash_T3_E1:
     $ sc34CG(3, 5)
 
     hide screen blkfade
-    call her_main("Well... I had to spend a big portion of the day in the school library...", "upset", "wink", "base", "mid", xpos="base", ypos="base", trans="fade")
+    call her_main("Well... I had to spend a big portion of the day in the school library...", "upset", "wink", "base", "mid", xpos="base", ypos="base", trans=fade)
     call her_main("So I didn't really have the time to perform your task properly, [genie_name]...")
     m "Hm...?"
     $ sc34CG(3, 6)

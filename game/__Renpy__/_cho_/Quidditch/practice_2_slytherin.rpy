@@ -47,7 +47,7 @@ label cc_st_intro:
 ### Cho Slytherin Training ###
 label cc_st_start:
 
-    call cho_main("", "base", "base", "base", "mid", xpos="right", ypos="base", trans="fade")
+    call cho_main("", "base", "base", "base", "mid", xpos="right", ypos="base", trans=fade)
 
     # Intro 1
     if cc_st.match_counter == 0:
@@ -395,7 +395,7 @@ label cc_st_hermione_E1:
 
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base") # annoyed
     pause .5
-    call her_main("I can't believe her...", "base", "base", "base", "mid", trans="hpunch") # angry
+    call her_main("I can't believe her...", "base", "base", "base", "mid", trans=hpunch) # angry
     m "Good day to you too..."
     her "That bitch has been walking around saying that I quit the commentator job."
     m "Who did?"
@@ -711,7 +711,7 @@ label cc_st_tonks_E1:
 
 label cc_st_hermione_blackmail:
 
-    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
     # Before Cho stripped in front of Hermione.
     if cc_pf_strip.points < 3:
@@ -919,7 +919,7 @@ label cc_st_hermione_blackmail:
 
 label cc_st_talk:
 
-    call cho_main(xpos="mid", ypos="base", trans="fade")
+    call cho_main(xpos="mid", ypos="base", trans=fade)
 
     # you haven't talked to Tonks yet.
     if cho_quid.lock_practice:
@@ -974,6 +974,6 @@ label cc_st_talk:
         call cho_main("I'm confident that we can win this, [cho_genie_name].","smile","base","base","mid")
         call cho_main("Slythein has no blasted chance against us!","base","narrow","base","mid")
 
-    call cho_main(xpos="base", ypos="base", trans="fade")
+    call cho_main(xpos="base", ypos="base", trans=fade)
 
     return

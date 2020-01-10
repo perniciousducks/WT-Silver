@@ -48,7 +48,7 @@ label cho_summon_setup:
             #Unlocks rewards.
             call unlock_clothing(text = ">New clothing items for Cho have been unlocked!", item = cc_muggle_hot_ITEM)
 
-            call cho_main(xpos="base", ypos="base", trans="fade")
+            call cho_main(xpos="base", ypos="base", trans=fade)
 
             return
 
@@ -84,7 +84,7 @@ label cho_summon_setup:
             #Unlocks rewards.
             call unlock_clothing(text = ">New clothing items for Cho have been unlocked!", item = cc_party_slut_ITEM)
 
-            call cho_main(xpos="base", ypos="base", face="horny", trans="fade")
+            call cho_main(xpos="base", ypos="base", face="horny", trans=fade)
 
             return
             

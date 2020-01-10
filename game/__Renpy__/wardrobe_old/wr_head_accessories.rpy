@@ -24,7 +24,7 @@ label equip_makeup:
 
     # if makeup_choice in ["lipstick_red","lipstick_pink","lipstick_turquoise"]:
         # hide screen wardrobe_old
-        # call her_main(xpos="right",ypos="base",trans="fade")
+        # call her_main(xpos="right",ypos="base",trans=fade)
 
         # if makeup_choice != h_lipstick:
             # $ hide_transitions = False #activates dissolve in her_main

@@ -146,7 +146,7 @@ label astoria_intro_E1:
                     call ton_chibi("stand","desk","base")
 
                     hide screen blkfade
-                    call ton_main("","upset","base","base","mid", xpos="mid", ypos="base", trans="fade")
+                    call ton_main("","upset","base","base","mid", xpos="mid", ypos="base", trans=fade)
 
                     jump astoria_intro_E1_choices
 
@@ -289,7 +289,7 @@ label astoria_intro_E2_hermione:
     m "I- *uhm*...{w} She thought maybe you could be of help finding them?"
     call her_main("Of course, Sir.", "base", "happyCl", "base", "mid")
     m "Apparently a student got hit by an \"unforgivable curse\" here at the school."
-    call her_main("AN unforgivable CURSE!!!", "scream", "wide", "base", "stare", trans="hpunch")
+    call her_main("AN unforgivable CURSE!!!", "scream", "wide", "base", "stare", trans=hpunch)
     call her_main("AT our school?!", "shock", "wide", "base", "mid")
     call her_main("SOMEONE COULD BE DEAD!", "scream", "wide", "base", "R")
     call her_main("OR TORTURED!!", "disgust", "worriedCl", "worried", "mid")
@@ -466,7 +466,7 @@ label astoria_intro_E3:
 
     call her_main("Get in here, Astoria!", "annoyed", "narrow", "angry", "R", ypos="head", flip=True)
     ast "{size=+2}{b}No!{/b}{/size}"
-    call her_main("Do you want to make this worse?", "scream", "closed", "base", "mid", trans="hpunch")
+    call her_main("Do you want to make this worse?", "scream", "closed", "base", "mid", trans=hpunch)
     ast "no..."
     hide screen bld1
     with d3
@@ -612,8 +612,8 @@ label astoria_intro_E3:
     call sna_main("I expect better than this from my students, Miss Greengrass...","snape_10")
 
     call sna_main("The very first lesson I give you is don't-","snape_08")
-    call sna_main("get-","snape_08", trans="hpunch")
-    call sna_main("caught!","snape_15", trans="hpunch")
+    call sna_main("get-","snape_08", trans=hpunch)
+    call sna_main("caught!","snape_15", trans=hpunch)
     pause.5
 
     call sna_main("Do you have anything to say for yourself?","snape_10")
@@ -713,7 +713,7 @@ label astoria_intro_E3:
     call ton_main("Want to tell me what you made her do?","horny","base","angry","L")
     m "(Doesn't she already know that?)"
     call ast_main("I might have made her show her boobs to some second years...","annoyed","narrow","base","R")
-    call ton_main("*ha-ha-ha-ha!*","smile","happyCl","base","mid", trans="hpunch")
+    call ton_main("*ha-ha-ha-ha!*","smile","happyCl","base","mid", trans=hpunch)
     call ast_main("Just for a second!","clench","base","base","mid")
     m "(what's going on here?)"
     call ton_main("Is that all?","open","base","worried","L")

@@ -7,7 +7,7 @@
 label ag_st_imperio:
 
     if ag_st_imperio.points == 0: # Intro for 1st event.
-        call ast_main(face="neutral", xpos="right", ypos="base", trans="fade")
+        call ast_main(face="neutral", xpos="right", ypos="base", trans=fade)
         m "Ready for your first day of detention?"
         call ast_main("No...","annoyed","base","base","R")
         call ast_main("Do I really have to go there?","clench","base","base","mid")
@@ -33,7 +33,7 @@ label ag_st_imperio:
         call ast_main("See ya later!","smile","base","base","mid") #smell ya later newbie! - gary oak
 
     elif ag_st_imperio.points == 3: # Intro for 4th event.
-        call ast_main(face="annoyed", xpos="right", ypos="base", trans="fade")
+        call ast_main(face="annoyed", xpos="right", ypos="base", trans=fade)
         m "Time for another lesson, don't you think?"
         call ast_main("Do I really have to go there again?","open","narrow","base","R")
         call ast_main("I don't want to be yelled at by her...","annoyed","narrow","base","down")
@@ -43,7 +43,7 @@ label ag_st_imperio:
         call ast_main("...","annoyed","base","base","R")
 
     else:
-        call ast_main(face="happy", xpos="right", ypos="base", trans="fade")
+        call ast_main(face="happy", xpos="right", ypos="base", trans=fade)
         m "Ready for another curse lesson?"
         call ast_main("Yes, Professor.","smile","base","base","mid")
         g9 "I'm eager to see another demonstration of your progress!"
@@ -156,7 +156,7 @@ label ag_st_imperio_E1:
 
     # Astoria casts imperio.
     stop music fadeout 2.0
-    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
+    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans=hpunch) # Screams it even louder
 
     call hide_characters
     hide screen bld1
@@ -223,7 +223,7 @@ label ag_st_imperio_E1:
     call ast_main("Do it already!","angry","base","angry","L")
     call ast_main("*oink!*{w=0.8}-*oink!*{w=0.8}-*oink!*","clench","closed","angry","mid") # Angry
     g9 "*he-he-he!*"
-    call ast_main("*oink*...{w=0.8} you pig!","scream","base","angry","L", trans="hpunch") # Screaming
+    call ast_main("*oink*...{w=0.8} you pig!","scream","base","angry","L", trans=hpunch) # Screaming
     call ast_main("","clench","narrow","angry","L")
     m "I don't believe she's going to do it..."
     call ast_main("But!","clench","closed","base","mid")
@@ -244,7 +244,7 @@ label ag_st_imperio_E1:
     call ton_main("Oh my...","upset","base","worried","down", xpos="base", ypos="base")
     call ton_main("Well that was fun!","smile","happyCl","base","mid") # Happy
     call ast_main("No it wasn't!","clench","narrow","angry","mid")
-    call ast_main("Why weren't you doing pig noises!","scream","closed","angry","mid", trans="hpunch")
+    call ast_main("Why weren't you doing pig noises!","scream","closed","angry","mid", trans=hpunch)
     call ast_main("You refused to do what I demanded!","annoyed","narrow","angry","R")
     call ton_main("Yes I did!","open","base","base","L")
     call ton_main("It was quite easy, actually.","base","base","raised","mid")
@@ -307,7 +307,7 @@ label ag_st_imperio_E2:
 
     # Astoria casts imperio.
     stop music fadeout 2.0
-    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
+    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans=hpunch) # Screams it even louder
 
     call hide_characters
     hide screen bld1
@@ -400,7 +400,7 @@ label ag_st_imperio_E2:
             call ast_main("Do it again! Ten times!","clench","narrow","angry","L") # Angry
             call ton_main("*oink*{w=0.8}-*oink*{w=0.8}-*oink*{w=1.2}-*oink*{w=0.8}-*oink*{w=1.4}-*oink*{w=1.4}-*oink*{w=1.6}-*oink*{w=2.0}-*oink*{w}-*oink!*","open_wide_tongue","base","base","ahegao")
             m "......................."
-            call ast_main("Agai-","scream","closed","angry","mid", trans="hpunch")
+            call ast_main("Agai-","scream","closed","angry","mid", trans=hpunch)
             g4 "That's enough, Astoria!"
             call ast_main("Fine...","annoyed","narrow","angry","R")
 
@@ -437,7 +437,7 @@ label ag_st_imperio_E2:
 
             # Astoria casts imperio.
             stop music fadeout 2.0
-            call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
+            call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans=hpunch) # Screams it even louder
 
             call hide_characters
             hide screen bld1
@@ -645,7 +645,7 @@ label ag_st_imperio_E3:
 
     # Astoria casts imperio.
     stop music fadeout 2.0
-    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
+    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans=hpunch) # Screams it even louder
 
     call hide_characters
     hide screen bld1
@@ -697,7 +697,7 @@ label ag_st_imperio_E3:
     call ton_main("!!!","angry","base","angry","R", hair="angry") # Very angry
     call ast_main("And then shove her into our common room - and all the boys will laugh at her cow udders!","annoyed","narrow","angry","R")
     call ton_main("*Tzzzzz!*...","angry","closed","angry","mid", emote="01")
-    call ton_main("That's enough!{w=0.8}{nw}","scream","base","angry","R", trans="hpunch")
+    call ton_main("That's enough!{w=0.8}{nw}","scream","base","angry","R", trans=hpunch)
 
     # Tonks returns to normal, and puts her clothes back on.
     call play_sound("equip")
@@ -852,7 +852,7 @@ label ag_st_imperio_E4:
 
     # Astoria casts imperio.
     stop music fadeout 2.0
-    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
+    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans=hpunch) # Screams it even louder
 
     call hide_characters
     hide screen bld1
@@ -1239,7 +1239,7 @@ label ag_st_imperio_E5:
 
     call ast_main("Take off the rest of your clothes!","clench","base","angry","L") # angry
     g9 "Yes!"
-    call ast_main("Take them off, you slut!","scream","closed","angry","mid", trans="hpunch") # scream
+    call ast_main("Take them off, you slut!","scream","closed","angry","mid", trans=hpunch) # scream
     call ton_main("........{image=textheart}","horny","base","raised","ahegao")
 
     # Strip naked. Removes clothes and stockings.
@@ -1331,7 +1331,7 @@ label ag_st_imperio_E5:
     call ast_main("","horny","base","angry","L")
     call ton_main("............","base","base","base","mid")
     call ast_main("She's really doing everything I tell her!","smile","base","angry","mid")
-    call ast_main("Look how easy it is, Professor!","smile","closed","base","mid", emote="03" ,trans="hpunch")
+    call ast_main("Look how easy it is, Professor!","smile","closed","base","mid", emote="03" ,trans=hpunch)
 
     call nar(">Astoria joyfully jumps up and down on the spot, making a happy squeal...")
     call hide_characters
@@ -1413,7 +1413,7 @@ label ag_st_imperio_E5:
     pause.5
 
     call ast_main("*Huh?!*","annoyed","narrow","worried","L", ypos="head", flip=True)
-    call ast_main("*Aaaaaaaaaah!!!*.......................","scream","base","base","L", emote="02", trans="hpunch") # Screams
+    call ast_main("*Aaaaaaaaaah!!!*.......................","scream","base","base","L", emote="02", trans=hpunch) # Screams
     hide screen bld1
     with d3
     pause.1

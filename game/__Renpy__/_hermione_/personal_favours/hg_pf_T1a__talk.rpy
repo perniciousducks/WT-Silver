@@ -25,7 +25,7 @@ label hg_pf_talk:
     call gen_chibi("sit_behind_desk")
 
     hide screen blkfade
-    call her_main(xpos="mid", ypos="base", trans="fade")
+    call her_main(xpos="mid", ypos="base", trans=fade)
 
 
     # Points
@@ -77,7 +77,7 @@ label hg_pf_talk_T1_intro_E1:
     m "Alright then..."
     m "Just tell me some news about you."
     call her_main("Ehm... Alright...", "open", "squint", "base", "mid")
-    call her_main("I just stand here and talk then...? Like this?", "base", "squint", "base", "mid", xpos="mid", ypos="base", trans="fade")
+    call her_main("I just stand here and talk then...? Like this?", "base", "squint", "base", "mid", xpos="mid", ypos="base", trans=fade)
     pause.8
 
     m "Well?"
@@ -95,7 +95,7 @@ label hg_pf_talk_T1_E1:
 
     m "Alright then..."
     m "Just tell me some news about you."
-    call her_main("Here in the middle, right? I remember...", "open", "squint", "base", "mid", xpos="mid", ypos="base", trans="fade")
+    call her_main("Here in the middle, right? I remember...", "open", "squint", "base", "mid", xpos="mid", ypos="base", trans=fade)
     pause.8
 
     m "Yes?"
@@ -209,7 +209,7 @@ label hg_pf_talk_T2_E1:
 
 
 label hg_pf_talk_T2:
-    call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
     call her_main("My life has been quite uneventful lately, to be honest...", "annoyed", "narrow", "angry", "R")
     call her_main("Hm...", "annoyed", "base", "base", "R")
@@ -382,7 +382,7 @@ label hg_pf_talk_T3_repeat:
 
 
 label hg_pf_talk_T3:
-    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     pause.5
 
     menu:
@@ -552,7 +552,7 @@ label hg_pf_talk_T3:
 
 
 label hg_pf_talk_tonks_T3_intro_E1:
-    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name], for today's favour I'd like to bring in a guest to join us."
     call her_main("What? Didn't we decide it was going to be between just you and I?", "open", "squint", "angry", "mid")
     m "Well, why only the two of us when there was the option to bring another person in?"
@@ -582,7 +582,7 @@ label hg_pf_talk_tonks_T3_intro_E1:
 
 
 label hg_pf_talk_tonks_T3_E1:
-    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "Let's call Miss Tonks up for this one shall we."
     call her_main("For what?", "open", "happy", "base", "mid")
     m "For today's favour of course!"

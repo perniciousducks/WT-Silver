@@ -122,7 +122,7 @@ label ll_pf_blowjob:
 label ll_pf_blowjob_T1_intro_E1:
     $ ll_event_pause += renpy.random.randint(1, 2)
 
-    call lun_main("","base","happyCl","base","mid", xpos="mid", ypos="base", trans="fade")
+    call lun_main("","base","happyCl","base","mid", xpos="mid", ypos="base", trans=fade)
     m "Argh... these wrackspurts are causing a fair bit of swelling-"
     call lun_main("They are?!","pout","wide","sad","mid")
     m "Indeed. I think it's about time I taught you another important method to treat them."
@@ -159,7 +159,7 @@ label ll_pf_blowjob_T1_intro_E1:
 label ll_pf_blowjob_T1_intro_E2:
     $ ll_event_pause += renpy.random.randint(1, 2)
 
-    call lun_main("","base","happyCl","base","mid", xpos="mid", ypos="base", trans="fade")
+    call lun_main("","base","happyCl","base","mid", xpos="mid", ypos="base", trans=fade)
     m "Miss Lovegood, care to help me with my wackspurts infection again?"
     call lun_main("You are lucky, [lun_genie_name]!{w} Because today is a Sunday!","base","seductive","sad","mid")
     m "It is?"
@@ -211,7 +211,7 @@ label ll_pf_blowjob_T1_intro_E2:
 
 label ll_pf_blowjob_T1_E3:
 
-    call lun_main("","base","happyCl","base","mid", xpos="mid", ypos="base", trans="fade")
+    call lun_main("","base","happyCl","base","mid", xpos="mid", ypos="base", trans=fade)
     m "[lun_name], would you like to help me with those nasty wackspurts again?"
     call lun_main("I'd love to, [lun_genie_name]!","base","happyCl","base","mid",cheeks="blush")
     m "..."
@@ -237,7 +237,7 @@ label ll_pf_blowjob_T1_E3:
 
             call ll_pf_blowjob_T1_slapping
 
-            call lun_main("","base","happyCl","base","mid", cheeks="blush", xpos="mid", ypos="base", trans="fade")
+            call lun_main("","base","happyCl","base","mid", cheeks="blush", xpos="mid", ypos="base", trans=fade)
             m "Aren't you forgetting something?"
             call lun_main("Probably! I'm not the best when it comes to that.","soft","seductive","sad","down", cheeks="blush")
             m "Don't you think you should clean yourself off a little before you head back to your room?"
@@ -1226,7 +1226,7 @@ label ll_pf_blowjob_T1_summon:
     $ lun_cg_ypos_abs     = -100
     show screen luncg
 
-    call her_main("You wanted to see me [genie_name]?", "smile", "happyCl", "base", "mid", xpos=550, ypos=-140, trans="fade")
+    call her_main("You wanted to see me [genie_name]?", "smile", "happyCl", "base", "mid", xpos=550, ypos=-140, trans=fade)
     lun "{size=-5}*glck* *slrp* *glck*{/size}"
     m "Mmmmm... That I did..."
     $ lunCG(pupil='ahegao', eye='angry', pos=13)

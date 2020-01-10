@@ -26,7 +26,7 @@ label job_1:
     hide screen blkfade
     with d5
 
-    call her_main("", "base", "base", "base", "mid",xpos="right",ypos="base",trans="fade")
+    call her_main("", "base", "base", "base", "mid",xpos="right",ypos="base",trans=fade)
     pause.8
 
     m "Off you go then..."
@@ -117,7 +117,7 @@ label job_2:
     hide screen blkfade
     with d5
 
-    call her_main("", "base", "base", "base", "mid",xpos="right",ypos="base",trans="fade")
+    call her_main("", "base", "base", "base", "mid",xpos="right",ypos="base",trans=fade)
     pause.8
 
     m "Off you go then..."
@@ -189,7 +189,7 @@ label job_3:
     hide screen blkfade
     with d5
 
-    call her_main("", "base", "base", "base", "mid",xpos="right",ypos="base",trans="fade")
+    call her_main("", "base", "base", "base", "mid",xpos="right",ypos="base",trans=fade)
     pause.8
 
     g9 "You look great!"
@@ -339,7 +339,7 @@ label job_4:
     with d5
 
 
-    call her_main("", "base", "base", "base", "mid",xpos="right",ypos="base",trans="fade")
+    call her_main("", "base", "base", "base", "mid",xpos="right",ypos="base",trans=fade)
     pause.8
 
     g4 "You look incredible!"

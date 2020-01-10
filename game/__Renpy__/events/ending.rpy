@@ -516,7 +516,7 @@ label ball_ending_E2:
     call ctc
 
 
-    call cg_scene(layer="01", folder="ball", trans="d7")
+    call cg_scene(layer="01", folder="ball", trans=d7)
     call ctc
 
     call bld
@@ -548,7 +548,7 @@ label ball_ending_E2:
     hide screen blktone8
     hide screen blktone
     hide screen bld1
-    call cg_scene("02", trans="fade")
+    call cg_scene("02", trans=fade)
     call ctc
 
     call her_main("Sir, what is going on? Why are you... lurking in the shadows?", "upset", "base", "base", "mid")
@@ -913,7 +913,7 @@ label ball_ending_E2:
         show screen white
         pause.3
         hide screen white
-        call cg_scene("12", trans="vpunch")
+        call cg_scene("12", trans=vpunch)
         call ctc
 
         her "*gobble??!*"
@@ -932,7 +932,7 @@ label ball_ending_E2:
         show screen white
         pause.3
         hide screen white
-        call cg_scene("14", trans="vpunch")
+        call cg_scene("14", trans=vpunch)
         call ctc
 
         her "!!!!!!!!!!!"
@@ -952,7 +952,7 @@ label ball_ending_E2:
         m "Oh, I almost forgot..."
         call play_sound("spitting")
         pause.3
-        call cg_scene("17", trans="vpunch")
+        call cg_scene("17", trans=vpunch)
         call ctc
 
         her "..........................."
@@ -1034,7 +1034,7 @@ label ball_ending_E2:
         call play_sound("spitting")
         pause.5
 
-        call cg_scene("29", trans="vpunch")
+        call cg_scene("29", trans=vpunch)
         her "{size=+9}*!!!!!!!!!!!!!!!!!!*{/size}" # 4 (EYE)
 
         call cg_scene("30")
@@ -1414,7 +1414,7 @@ label ball_ending_E2:
         call cg_scene("59")
         her "You fucked her out of me, sir!"
         g4 "You're damn right I did!"
-        call cg_scene("124", trans="d2")
+        call cg_scene("124", trans=d2)
         her "You fucked her out of me with your enormous cock, sir!"
         g4 "Argh! You whore!"
 
@@ -1672,7 +1672,7 @@ label ball_ending_E2:
         her "Ah... Ah-aha..."
         her "You will pay for this, you spineless slytheri--"
         sly1 "Shut it, mudblood!"
-        call cg_scene("143", trans="hpunch")
+        call cg_scene("143", trans=hpunch)
         call ctc
 
 
@@ -1707,7 +1707,7 @@ label ball_ending_E2:
         show screen white
         pause .1
         hide screen white
-        call cg_scene("145", trans="hpunch")
+        call cg_scene("145", trans=hpunch)
         her "{size=+7}*gobble?!?*{/size}"
         sly1 "{size=+5}Yes, yes! Swallow it all!!!{/size}"
 
@@ -1728,7 +1728,7 @@ label ball_ending_E2:
         call cg_scene("137")
         her "Come on! Who's next?!"
         sly2 "Me! I'm next!"
-        call cg_scene("148", trans="hpunch")
+        call cg_scene("148", trans=hpunch)
         call ctc
 
         call cg_scene("149")
@@ -1766,7 +1766,7 @@ label ball_ending_E2:
         show screen white
         pause .1
         hide screen white
-        call cg_scene("150", trans="hpunch")
+        call cg_scene("150", trans=hpunch)
         her "{size=+7}*gobble?!?*{/size}"
         call cg_scene("149")
         her "{size=+5}*Gulp-gulp-gulp-gulp!*{/size}"
@@ -1861,7 +1861,7 @@ label ball_ending_E2:
         show screen white
         pause.1
         hide screen white
-        call cg_scene("159", trans="hpunch")
+        call cg_scene("159", trans=hpunch)
         her "{size=+7}*gobble?!?*{/size}"
         sly1 "{size=+5}Yes, yes! Swallow it all!!!{/size}"
 
@@ -1904,7 +1904,7 @@ label ball_ending_E2:
         show screen white
         pause .1
         hide screen white
-        call cg_scene("162", trans="hpunch")
+        call cg_scene("162", trans=hpunch)
         call ctc
 
         her "{size=+8}AAAAAAAAAAAAH!{/size}"
@@ -1918,7 +1918,7 @@ label ball_ending_E2:
         show screen white
         pause .1
         hide screen white
-        call cg_scene("163", trans="hpunch")
+        call cg_scene("163", trans=hpunch)
         call ctc
 
         her "{size=+5}AAAAAAAAAAAAH!{/size}"
@@ -1931,7 +1931,7 @@ label ball_ending_E2:
         show screen white
         pause .1
         hide screen white
-        call cg_scene("164", trans="hpunch")
+        call cg_scene("164", trans=hpunch)
         call ctc
 
         call cg_scene("165")
@@ -1950,7 +1950,7 @@ label ball_ending_E2:
         show screen white
         pause .1
         hide screen white
-        call cg_scene("167", trans="hpunch")
+        call cg_scene("167", trans=hpunch)
         call ctc
 
         her "{size=+8}AAAAAAAAAAAAH!{/size}"
@@ -1965,7 +1965,7 @@ label ball_ending_E2:
         show screen white
         pause.3
         hide screen white
-        call cg_scene("169", trans="vpunch")
+        call cg_scene("169", trans=vpunch)
         call ctc
 
         call cg_scene("170")
@@ -2079,7 +2079,7 @@ label ball_ending_E2:
         her ".........................................................................."
 
         call play_music("ball")
-        call cg_scene("38", trans="d3")
+        call cg_scene("38", trans=d3)
         her "Ah-a.........................................."
 
         call bld
@@ -2088,10 +2088,10 @@ label ball_ending_E2:
         g4 "What the hell is she doing?"
         call bld("hide")
 
-        call cg_scene("39", trans="d3")
+        call cg_scene("39", trans=d3)
         her "...................................."
         her "Helwo eweruone..." #Misspelled on purpose.
-        call cg_scene("40", trans="d3")
+        call cg_scene("40", trans=d3)
         her "Fenk you for being heah today..." #Misspelled on purpose.
 
         call bld
@@ -2105,15 +2105,15 @@ label ball_ending_E2:
         call bld("hide")
 
         her "................"
-        call cg_scene("37", trans="d3")
+        call cg_scene("37", trans=d3)
         stop music fadeout 1.0
         her ".................................................."
         call ctc
 
-        call cg_scene("41", trans="d3")
+        call cg_scene("41", trans=d3)
         call play_sound("gulp")
         her "{size=+5}*GULP!!!*{/size}"
-        call cg_scene("42", trans="d3")
+        call cg_scene("42", trans=d3)
         her "Gua-ha..."
         her "Thank you, professor."
         call bld
@@ -2124,7 +2124,7 @@ label ball_ending_E2:
         call bld("hide")
 
         call play_music("ball")
-        call cg_scene("43", trans="d3")
+        call cg_scene("43", trans=d3)
         her "I would also like to thank my parents..."
         her "Then I would like to thank my fellow students!"
         call bld
@@ -2134,7 +2134,7 @@ label ball_ending_E2:
         call bld("hide")
 
         her "And the teachers of course..."
-        call cg_scene("44", trans="d3")
+        call cg_scene("44", trans=d3)
 
         call bld
         ">A few rather feeble applauses..."
@@ -2185,13 +2185,13 @@ label ball_ending_E2:
         mal "(They do be crazy...)"
         call hide_blktone
 
-        call cg_scene("43", trans="d3")
+        call cg_scene("43", trans=d3)
         her "Thank you, everyone for being such a big help in organizing today's event."
         her "And thank you for choosing me as your queen again this year..."
-        call cg_scene("45", trans="d3")
+        call cg_scene("45", trans=d3)
         her "What a pleasant but completely unexpected surprise...!"
         her "And one more thing..."
-        call cg_scene("43", trans="d3")
+        call cg_scene("43", trans=d3)
         her "{size=+5}Go gryffindor!{/size}"
         call bld
 
@@ -2288,7 +2288,7 @@ label ball_ending_E2:
         show screen white
         pause.1
         hide screen white
-        call cg_scene("52", trans="hpunch")
+        call cg_scene("52", trans=hpunch)
 
         her "EEeeeeeeeegh!"
         m "Quiet, whore! Someone would hear!"
@@ -2299,7 +2299,7 @@ label ball_ending_E2:
         show screen white
         pause.3
         hide screen white
-        call cg_scene("54", trans="hpunch")
+        call cg_scene("54", trans=hpunch)
 
         her "{size=+7}EEghh!!!{/size}"
         m "Be quiet, I said!"
@@ -2310,7 +2310,7 @@ label ball_ending_E2:
         show screen white
         pause.3
         hide screen white
-        call cg_scene("55", trans="hpunch")
+        call cg_scene("55", trans=hpunch)
 
         her "Ah..."
         m "Yes, you're liking this aren't you?!"
@@ -2322,7 +2322,7 @@ label ball_ending_E2:
         show screen white
         pause.3
         hide screen white
-        call cg_scene("55", trans="hpunch")
+        call cg_scene("55", trans=hpunch)
 
         her "Yes, sir! I love it!!!"
         call cg_scene("53")
@@ -2334,42 +2334,42 @@ label ball_ending_E2:
         show screen white
         pause.3
         hide screen white
-        call cg_scene("55", trans="hpunch")
+        call cg_scene("55", trans=hpunch)
         call ctc
 
         call play_sound("slap")
         show screen white
         pause.3
         hide screen white
-        call cg_scene("55", trans="hpunch")
+        call cg_scene("55", trans=hpunch)
         call ctc
 
         call play_sound("slap")
         show screen white
         pause.3
         hide screen white
-        call cg_scene("58", trans="hpunch")
+        call cg_scene("58", trans=hpunch)
         call ctc
 
         call play_sound("slap")
         show screen white
         pause.3
         hide screen white
-        call cg_scene("58", trans="hpunch")
+        call cg_scene("58", trans=hpunch)
         call ctc
 
         call play_sound("slap")
         show screen white
         pause.3
         hide screen white
-        call cg_scene("59", trans="hpunch")
+        call cg_scene("59", trans=hpunch)
         call ctc
 
         call play_sound("slap")
         show screen white
         pause.3
         hide screen white
-        call cg_scene("59", trans="hpunch")
+        call cg_scene("59", trans=hpunch)
         call ctc
 
         her "{size=+7}Aaaaaah............................{/size}"
@@ -2454,7 +2454,7 @@ label ball_ending_E2:
         sna "No! Male - female pairs, you dull creatures. What do you think this is? A laboratory assignment?"
 
         call hide_blktone
-        call cg_scene("69", trans="fade")
+        call cg_scene("69", trans=fade)
 
         call play_music("festive")
         m "Don't you worry about missing out on your dance, whore."
@@ -2479,7 +2479,7 @@ label ball_ending_E2:
         show screen white
         pause.3
         hide screen white
-        call cg_scene("72", trans="hpunch")
+        call cg_scene("72", trans=hpunch)
 
         her "{size=+5}I'm a whore!!!{/size}"
         g4 "Yes you are!"
@@ -2579,7 +2579,7 @@ label ball_ending_E2:
                 show screen white
                 pause .1
                 hide screen white
-                call cg_scene("86", trans="hpunch")
+                call cg_scene("86", trans=hpunch)
 
                 her "{size=+5}Ah! AAaaah!!{/size}"
                 g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
@@ -3067,7 +3067,7 @@ label ball_ending_E3:
         hide screen hermione_main
         $ hermione.strip("bra")
         call set_her_action("lift_top")
-        call her_main("", "annoyed", "narrow", "annoyed", "mid", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "annoyed", "narrow", "annoyed", "mid", xpos="mid", ypos="base", trans=fade)
         stop music
         call ctc
 
@@ -3078,7 +3078,7 @@ label ball_ending_E3:
         hide screen hermione_main
         $ hermione.strip("panties")
         call set_her_action("lift_skirt")
-        call her_main("","angry","annoyed", trans="fade")
+        call her_main("","angry","annoyed", trans=fade)
         call ctc
 
         with hpunch
@@ -3086,7 +3086,7 @@ label ball_ending_E3:
         her "I am willing to do anything to get those points, sir!"
 
         call set_her_action("")
-        call her_main("And I mean {size=+9}ANYTHING!!!{/size}", "scream", "base", "angry", "mid",emote="01", trans="hpunch")
+        call her_main("And I mean {size=+9}ANYTHING!!!{/size}", "scream", "base", "angry", "mid",emote="01", trans=hpunch)
 
         call her_walk(xpos="desk", ypos="base", reduce=0.8)
         call blkfade

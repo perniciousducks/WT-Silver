@@ -479,11 +479,11 @@ label give_cho_gift(gift_item):
             call cho_mood(0)
             
     elif gift_item == firewhisky_ITEM:
-        call cho_main("Firewhisky?",face="happy",xpos="mid",ypos="base",trans="d5")
+        call cho_main("Firewhisky?",face="happy",xpos="mid",ypos="base",trans=d5)
         call cho_main("Why are you giving it to me?","annoyed","wide","base","L")
         call cho_mood(0)
 
-    call cho_main(xpos="base", ypos="base", trans="d5")
+    call cho_main(xpos="base", ypos="base", trans=d5)
     return
 
 label cho_mood(value=0):

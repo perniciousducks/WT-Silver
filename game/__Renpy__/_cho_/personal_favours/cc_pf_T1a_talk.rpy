@@ -34,12 +34,12 @@ label cc_pf_talk_T1_intro_E1:
     call cho_walk("desk", "base")
 
     call play_music("cho")
-    call cho_main(face="happy",xpos="mid",ypos="base",trans="fade")
+    call cho_main(face="happy",xpos="mid",ypos="base",trans=fade)
     call ctc
 
     call cho_main("What would you like to talk about?","soft","base","base","mid")
     m "Do you have a boyfriend, Miss Chang?"
-    call cho_main("Excuse me?","open","wide","base","mid",trans="hpunch") # Shocked
+    call cho_main("Excuse me?","open","wide","base","mid",trans=hpunch) # Shocked
     m "I asked if you have boyfriend. Anybody you fool around with?"
     call cho_main("Me? Professor? He-{w=0.8} hav-{w=0.5} a boyfriend?","open","wide","base","R") # Reluctant, Embarassed
     g9 "Or a girlfriend! That would be even better, now that I think about it!"
@@ -52,8 +52,8 @@ label cc_pf_talk_T1_intro_E1:
 
     call cho_main("Sir, I do not have a boyfriend at the moment.{w} I hope that answers your question.","soft","closed","angry","mid")
     g9 "So, a girlfriend then?"
-    call cho_main("!!!","angry","wide","raised","mid",trans="hpunch")
-    call cho_main("No!","scream","closed","angry","mid",trans="hpunch")
+    call cho_main("!!!","angry","wide","raised","mid",trans=hpunch)
+    call cho_main("No!","scream","closed","angry","mid",trans=hpunch)
     call cho_main("","annoyed","narrow","angry","mid")
     m "(She doesn’t seem that keen on the subject, perhaps I could tell her...)"
 
@@ -95,7 +95,7 @@ label cc_pf_talk_T1_intro_E1:
             g4 "Very sexual!"
             call cho_main("!!!","annoyed","wide","base","mid")
             g9 "Lots of acrobatic stuff!"
-            call cho_main("NO Sir, please!{w=0.5} I don't want to know any of that!","scream","closed","angry","mid",trans="hpunch")
+            call cho_main("NO Sir, please!{w=0.5} I don't want to know any of that!","scream","closed","angry","mid",trans=hpunch)
             call cho_main("(Gross!{w=0.5} Keep it to yourself...)","angry","narrow","sad","R")
             m "I just wanted to expand my backstory a little bit...{w=0.5} What's so wrong with that..."
 
@@ -261,7 +261,7 @@ label cc_pf_talk_T1_intro_E2:
     call cho_walk("desk","base")
 
     call play_music("cho")
-    call cho_main("","annoyed","narrow","angry","mid",xpos="mid",ypos="base",trans="fade")
+    call cho_main("","annoyed","narrow","angry","mid",xpos="mid",ypos="base",trans=fade)
     call ctc
 
     call cho_main("Another talk, Professor?","soft","narrow","angry","mid")
@@ -421,7 +421,7 @@ label cc_pf_talk_T1_E3:
 
     call cho_walk(xpos="desk", ypos="base")
 
-    call cho_main("Anything specific you'd like to know?","soft","base","base","mid", xpos="mid", ypos="base", trans="fade")
+    call cho_main("Anything specific you'd like to know?","soft","base","base","mid", xpos="mid", ypos="base", trans=fade)
     m "Yes. Let's talk some more about Diggory..."
     g9 "Your ex-boyfriend."
     call cho_main("{size=-4}I knew I shouldn't have told him...{/size}","angry","narrow","base","down")
@@ -617,7 +617,7 @@ label cc_pf_talk_T2_intro_E1:
 
     call cho_walk(xpos="desk", ypos="base")
 
-    call cho_main("","base","base","base","mid", xpos="mid", ypos="base", trans="fade")
+    call cho_main("","base","base","base","mid", xpos="mid", ypos="base", trans=fade)
     m "Tell me, how have you been?"
     g9 "I bet a lot has changed for you after your big win!"
     call cho_main("More or less...","soft","base","raised","mid")
@@ -630,7 +630,7 @@ label cc_pf_talk_T2_intro_E1:
 
     call cho_main("We'll be playing against them next.","annoyed","narrow","base","R")
     call cho_main("And of course they have to behave like the absolute worst!","soft","narrow","angry","mid")
-    call cho_main("They deserve to be publicly disgraced in front of the whole school!{w=0.8} The whole lot of them!","scream","closed","angry","mid", trans="hpunch")
+    call cho_main("They deserve to be publicly disgraced in front of the whole school!{w=0.8} The whole lot of them!","scream","closed","angry","mid", trans=hpunch)
     call cho_main("I'll make sure of it, [cho_genie_name]!{w} The Slytherin team will lose!","angry","narrow","angry","mid")
     g9 "(And I'll win my bet with Snape even sooner! Sweet!)"
     m "Anything you can tell me about them?{w} Are they better than Hufflepuff?"
@@ -688,7 +688,7 @@ label cc_pf_talk_T2_intro_E1:
     call cho_main("After all I'm only a small, helpless girl{w=0.6}, and they are a group of strong, ruthless alpha males!","soft","base","sad","R")
 
     call cho_main("Their attempts are pathetic!","angry","narrow","angry","mid")
-    call cho_main("They are pathetic!!!","angry","angry","angry","mid", trans="hpunch")
+    call cho_main("They are pathetic!!!","angry","angry","angry","mid", trans=hpunch)
     call cho_main("Trying to lift my skirt with first-year spells...","soft","narrow","angry","R")
     call cho_main("Stealing my underwear while I'm taking a shower after practice...","angry","narrow","angry","downR")
     if masturbating:
@@ -778,7 +778,7 @@ label cc_pf_talk_T2_intro_E2:
 
     call cho_walk(xpos="desk", ypos="base")
 
-    call cho_main("","base","base","base","mid", xpos="mid", ypos="base", trans="fade")
+    call cho_main("","base","base","base","mid", xpos="mid", ypos="base", trans=fade)
     m "How's school? Have anything to tell me?"
     call cho_main("Quite a bit, Sir!","smile","base","base","down")
     call cho_main("I feel like people have shown me more affection ever since our game against Hufflepuff.","base","base","base","mid")
@@ -929,7 +929,7 @@ label cc_pf_talk_T2_intro_E2:
     call cum_block
     pause.8
 
-    call cho_main("[cho_genie_name]! What the bloody hell are you doing?!","angry","wide","base","mid", trans="hpunch")
+    call cho_main("[cho_genie_name]! What the bloody hell are you doing?!","angry","wide","base","mid", trans=hpunch)
     m "(Oh no!)"
     g4 "(I'm busted!)"
 
@@ -946,7 +946,7 @@ label cc_pf_talk_T2_intro_E2:
     call cho_main("Don't tell me you were...","soft","wide","base","mid")
     g4 "I was merely scratching my leg!"
     call cho_main("Don't lie to me... I know exactly what you were doing!","angry","closed","angry","mid")
-    call cho_main("{size=+4}You were touching yourself!{/size}","scream","closed","angry","mid", trans="hpunch") # Scream
+    call cho_main("{size=+4}You were touching yourself!{/size}","scream","closed","angry","mid", trans=hpunch) # Scream
     call cho_main("","angry","narrow","angry","mid")
     g4 "{size=-2}Not so loud! People might hear you!{/size}"
     call cho_main("Why would you think I care?!","soft","narrow","angry","L")
@@ -990,7 +990,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
 
     call cho_walk("desk","base")
 
-    call cho_main("","annoyed", face="neutral", xpos="mid", ypos="base", trans="fade")
+    call cho_main("","annoyed", face="neutral", xpos="mid", ypos="base", trans=fade)
     g9 "So. How is school life?"
     m "I need to stay \"on top\" of all the latest \"hot goss\"..."
     call cho_main("Sir, I don't tend to pay attention to that sort of stuff.","soft","closed","base","mid")
@@ -1112,7 +1112,7 @@ label cc_pf_talk_T2_E3: # Complete. Needs review.
                 m "(...)"
                 call cho_main("While there are bludgers flying around, hitting her disgusting udders...","soft","narrow","angry","downR")
                 m "*Uhm*..."
-                call cho_main("What?!","angry","angry","angry","mid", trans="hpunch") # Angry
+                call cho_main("What?!","angry","angry","angry","mid", trans=hpunch) # Angry
                 m "Don't you think that's a bit extreme?"
                 call cho_main("Why? For putting Granger in her natural habitat?","annoyed","narrow","angry","mid")
                 call cho_main("Enclosed on a vast grassy field...","soft","closed","base","mid")

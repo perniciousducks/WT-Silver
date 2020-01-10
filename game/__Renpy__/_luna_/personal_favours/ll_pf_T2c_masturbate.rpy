@@ -403,7 +403,7 @@ label ll_pf_masturbate_T1_start: # Call label
 
     #$ luna_wear_top = False # Has to be removed because of the sleeves.
 
-    call lun_main("...","pout","base","sad","mid", xpos="mid", ypos="base", trans="fade")
+    call lun_main("...","pout","base","sad","mid", xpos="mid", ypos="base", trans=fade)
     m "That's it..."
     m "Begin when you're ready Miss lovegood."
 

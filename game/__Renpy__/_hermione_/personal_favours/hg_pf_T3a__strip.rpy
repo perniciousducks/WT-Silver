@@ -40,9 +40,9 @@ label hg_pf_strip:
 
     hide screen blkfade
     if her_mood != 0:
-        call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans=fade)
     else:
-        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
 
     # Points
@@ -245,7 +245,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
 
     pause.5
     show screen blktone
-    call her_main("{size=-5}(Am I really going to do this?){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush", xpos="base", ypos="base", trans="fade")
+    call her_main("{size=-5}(Am I really going to do this?){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush", xpos="base", ypos="base", trans=fade)
     hide screen blktone
     call ctc
 
@@ -331,7 +331,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     call her_main("Why won't it budge?! *sob*", "angry", "worriedCl", "worried", "mid", cheeks="blush")
     call her_main("No, I can't do this, [genie_name]! *sob*", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
     m "What?"
-    call her_main("I thought I could, but...", "angry", "squint", "base", "mid", cheeks="blush", trans="fade")
+    call her_main("I thought I could, but...", "angry", "squint", "base", "mid", cheeks="blush", trans=fade)
     call her_main("Stripping for points, [genie_name]?", "angry", "squint", "base", "mid", cheeks="blush")
     call her_main("People look up to me in this school!", "angry", "squint", "base", "mid", cheeks="blush")
     call her_main("I have a reputation...*sob*", "angry", "squint", "base", "mid", cheeks="blush")
@@ -345,7 +345,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     call her_chibi("stand","desk","base")
 
     hide screen blkfade
-    call her_main("[genie_name], I think I'd better go now... *Sob!*", "angry", "squint", "base", "mid", cheeks="blush", tears="messy", trans="fade")
+    call her_main("[genie_name], I think I'd better go now... *Sob!*", "angry", "squint", "base", "mid", cheeks="blush", tears="messy", trans=fade)
 
     menu:
         "\"Alright. I had fun. Here are your points.\"":
@@ -630,7 +630,7 @@ label hg_pf_strip_T1_intro_E2:
     call sna_main("Miss Granger?","snape_12")
 
     call set_her_action("covering")
-    call her_main("(No, no... This is not happening. Please...)", "shock", "worriedCl", "worried", "mid", cheeks="blush", trans="d5")
+    call her_main("(No, no... This is not happening. Please...)", "shock", "worriedCl", "worried", "mid", cheeks="blush", trans=d5)
     call play_music("playful_tension") # SEX THEME.
     m "...................................."
 
@@ -946,7 +946,7 @@ label hg_pf_strip_T1_masturbate:
             ">Hermione jumps off your desk and starts to put her clothes back on while glaring at you..."
             m "Oh, come on! Don't leave me like that!"
 
-            call her_chibi_scene("reset","desk","base", trans="fade")
+            call her_chibi_scene("reset","desk","base", trans=fade)
 
             call reset_hermione
             call her_main("The dance is over, [genie_name]!", "soft", "base", "angry", "mid")

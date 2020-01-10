@@ -462,7 +462,7 @@ label ll_pf_sex_T1_her_1: # Call label
 
     call play_sound("door")
     call her_main("[genie_name], I hope you're not too busy to ben-", "smile", "happyCl", "base", "mid", xpos=550, ypos=-140)
-    call her_main("[genie_name], Luna! What are you two doing?!", "soft", "wide", "worried", "shocked", trans="hpunch")
+    call her_main("[genie_name], Luna! What are you two doing?!", "soft", "wide", "worried", "shocked", trans=hpunch)
     m "ah... Isn't it obvious?"
     call her_main("Ugh... Why are you two fucking then?", "scream", "base", "angry", "mid")
     lun "Mmmm... we're getting rid... of some nasty wrackspurts!"

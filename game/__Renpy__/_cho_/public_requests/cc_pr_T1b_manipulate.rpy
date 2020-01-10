@@ -5,7 +5,7 @@
 ### Start ###
 label cc_pr_manipulate_start:
 
-    call cho_main(xpos="right", ypos="base", trans="fade")
+    call cho_main(xpos="right", ypos="base", trans=fade)
 
     ### Tier 1 (pre Hufflepuff) ###
     if cho_tier == 1:
@@ -79,8 +79,8 @@ label cc_pr_manipulate_start:
             m "Same as with that Diggory boy!"
             g4 "Go and talk to them, be affectionate and flirty, make out with them..."
             call cho_main("Make out with? Those Slytherins-","soft","wide","sad","mid")
-            call cho_main("*guargh*","scream","narrow","angry","mid", trans="hpunch")
-            call cho_main("*cough*{w=0.6} *guargh!*{w=0.8} *cough*","scream","closed","angry","mid", trans="hpunch")
+            call cho_main("*guargh*","scream","narrow","angry","mid", trans=hpunch)
+            call cho_main("*cough*{w=0.6} *guargh!*{w=0.8} *cough*","scream","closed","angry","mid", trans=hpunch)
             call nar(">You hear Cho make some inadvertent gag noises...")
             m "Is everything okay, girl?"
             call cho_main("No!{w=0.2} It's not ok!{w} Why would you think I want to snog with those repulsive, yuck-ugly, Slytherin degenerates?!","angry","wide","sad","mid")
@@ -139,7 +139,7 @@ label cc_pr_manipulate_T1_intro_E1:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans="fade")
+    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
     m "How did it go?"
     call cho_main("It went...{w} well?","soft","base","raised","R")
     call cho_main("Maybe a little too well... He tried to kiss me!","annoyed","base","raised","mid")
@@ -176,7 +176,7 @@ label cc_pr_manipulate_T1_E1:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans="fade")
+    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
     m "What's my favourite Quidditch player been up to today?"
     call cho_main("I think you'll be happy, [cho_genie_name]!","smile","narrow","base","mid")
     g9 "I like the sound of that! Tell me what happened."
@@ -213,7 +213,7 @@ label cc_pr_manipulate_T1_E2:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
+    call cho_main(face="annoyed", xpos="mid", ypos="base", trans=fade)
     g4 "[cho_name]! Do you have some good news for me?"
     call cho_main("I'm afraid not this time, Sir.","soft","narrow","sad","mid")
     m "Why not? Tell me what happened..."
@@ -227,7 +227,7 @@ label cc_pr_manipulate_T1_E2:
     g9 "Intriguing!{w} Who else did you manage to snag?"
     call cho_main("Professor Slughorn, Sir.","angry","base","sad","mid")
     m "Who?"
-    call cho_main("{size=+4}Professor Slughorn!{/size}","scream","closed","angry","mid", trans="hpunch")
+    call cho_main("{size=+4}Professor Slughorn!{/size}","scream","closed","angry","mid", trans=hpunch)
     call cho_main("Our Alchemy professor...{w} he once again had to stand in for professor Snape's potions lecture because he couldn't make it.","angry","narrow","sad","downR")
     m "Snape is missing his classes? How often has this been happening?"
     call cho_main("Probably every other week or so.","soft","base","sad","R")
@@ -267,7 +267,7 @@ label cc_pr_manipulate_T1_E3:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="happy", xpos="mid", ypos="base", trans="fade")
+    call cho_main(face="happy", xpos="mid", ypos="base", trans=fade)
     m "So? How did it go?"
     call cho_main("Very well, Sir!", mouth="smile", face="happy")
     g9 "Yeah? Tell me about it!"
@@ -308,7 +308,7 @@ label cc_pr_manipulate_T2_intro_E1:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="angry", xpos="mid", ypos="base", trans="fade")
+    call cho_main(face="angry", xpos="mid", ypos="base", trans=fade)
     m "Good evening [cho_name], How did today's task go?"
     call cho_main("I can't believe you convinced me to do this!","soft","narrow","angry","mid")
     m "So badly I take it?"
@@ -367,7 +367,7 @@ label cc_pr_manipulate_T2_E1:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
+    call cho_main(face="annoyed", xpos="mid", ypos="base", trans=fade)
     call cho_main("I managed to corner their seeker when he came out of the boys bathroom.{w} One of the only times those thugs weren't hanging around with him.","soft","narrow","base","down")
     m "Him?"
     call cho_main("Malfoy...","soft","narrow","sad","mid")
@@ -411,7 +411,7 @@ label cc_pr_manipulate_T2_intro_E2:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
+    call cho_main(face="annoyed", xpos="mid", ypos="base", trans=fade)
     m "Back already? How did it go?"
     call cho_main("Not too great this time, [cho_genie_name].","soft","narrow","sad","R")
     m "No? What happened?"
@@ -451,7 +451,7 @@ label cc_pr_manipulate_T2_intro_E3:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
+    call cho_main(face="annoyed", xpos="mid", ypos="base", trans=fade)
     m "[cho_name], how was your day?"
     m "Were you successful this time?"
     call cho_main("Sir, I believe they are onto me!","angry","narrow","sad","mid")
@@ -520,7 +520,7 @@ label cc_pr_manipulate_T2_E3:
     # Cho enters.
     call cho_walk(action="enter", xpos="desk", ypos="base")
 
-    call cho_main(face="annoyed", xpos="mid", ypos="base", trans="fade")
+    call cho_main(face="annoyed", xpos="mid", ypos="base", trans=fade)
     g9 "[cho_name]! You’re back."
     call cho_main("(...)","annoyed","narrow","angry","down") # Annoyed
     g9 "How was your day? Anything exciting to tell me?"

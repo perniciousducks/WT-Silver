@@ -306,7 +306,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             ">Luna quickly picks her clothes up off your desk and gets dressed."
             hide screen blkfade
 
-            call lun_main("I think I'd like to leave now, [lun_genie_name]...","normal","angry","sad","down",xpos="base",ypos="base",trans="fade")
+            call lun_main("I think I'd like to leave now, [lun_genie_name]...","normal","angry","sad","down",xpos="base",ypos="base",trans=fade)
             m "You're free to leave whenever you like, [lun_name]."
             call lun_main("Well I'm certainly not leaving until you pay me!","upset","suspicious","angry","mid")
 

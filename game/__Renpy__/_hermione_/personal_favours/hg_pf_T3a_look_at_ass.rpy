@@ -202,7 +202,7 @@ label hg_pr_strip_rear_transition:
     # Setup
     $ hermione.strip("top")
     $ hermione.strip("bottom")
-    call her_chibi_scene("behind_desk_back", trans="fade")
+    call her_chibi_scene("behind_desk_back", trans=fade)
     pause.8
 
     show screen hermione_ass
@@ -273,7 +273,7 @@ label hg_pr_strip_T2_grope_rear:
     with d3
     pause.2
 
-    call her_chibi_scene("grope_ass_back", trans="d5")
+    call her_chibi_scene("grope_ass_back", trans=d5)
 
     call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
     m "Relax, [hermione_name]. Just stand still!"
@@ -426,7 +426,7 @@ label hg_pr_strip_T3_grope_rear:
     with d3
     pause.2
 
-    call her_chibi_scene("grope_ass_back", trans="d5")
+    call her_chibi_scene("grope_ass_back", trans=d5)
 
     call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
     m "Relax, [hermione_name]. Just stand still!"
@@ -579,7 +579,7 @@ label hg_pr_strip_T4_grope_rear:
     with d3
     pause.2
 
-    call her_chibi_scene("grope_ass_back", trans="d5")
+    call her_chibi_scene("grope_ass_back", trans=d5)
 
     call her_main("[genie_name], what are you doing?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
     m "Relax, [hermione_name]. Just stand still!"
@@ -961,7 +961,7 @@ label end_hg_show_ass:
 
     hide screen blktone
     hide screen blkfade
-    call her_main(xpos="right", ypos="base",trans="fade")
+    call her_main(xpos="right", ypos="base",trans=fade)
 
     if her_whoring < 24:
         if her_whoring < 18:

@@ -221,7 +221,7 @@ label potion_scene_11_2:
     else:
         $ hermione_breasts = "characters/hermione/body/breasts/breasts_expanded.png"
 
-    call her_main("", "shock", "wide", "base", "stare",cheeks="blush",trans="hpunch")
+    call her_main("", "shock", "wide", "base", "stare",cheeks="blush",trans=hpunch)
     pause.5
 
     call her_main("!!!", "angry", "worriedCl", "worried", "mid",cheeks="blush")
@@ -740,7 +740,7 @@ label potion_scene_11_3:
 
         $ hermione_futa = True
 
-        call her_main("", "shock", "narrow", "base", "down",trans="hpunch")
+        call her_main("", "shock", "narrow", "base", "down",trans=hpunch)
         pause.8
 
         call her_main("You damn {size=+10}pervert!{/size}", "shock", "worriedCl", "worried", "mid",cheeks="blush")

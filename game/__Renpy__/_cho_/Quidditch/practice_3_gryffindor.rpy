@@ -23,9 +23,9 @@ label nothing_to_see_here_049:
     pause.1
     call play_sound("bump")
     pause.5
-    call cho_main("","annoyed","angry","angry","mid",xpos="mid",ypos="base",trans="fade")
+    call cho_main("","annoyed","angry","angry","mid",xpos="mid",ypos="base",trans=fade)
     pause.3
-    call cho_main("[cho_genie_name]! It's not fair!","scream","angry","sad","mid",trans="hpunch")
+    call cho_main("[cho_genie_name]! It's not fair!","scream","angry","sad","mid",trans=hpunch)
     call cho_main("Malfoy's pompous old man just bought the whole Slytherin' team brand new Nimbus 2018s!","scream","closed","angry","mid")
     call cho_main("Ravenclaw can't be expected to win against that!","angry","angry","angry","downR")
     call cho_main("I demand you level the playing field, [cho_genie_name]!","scream","angry","angry","mid")

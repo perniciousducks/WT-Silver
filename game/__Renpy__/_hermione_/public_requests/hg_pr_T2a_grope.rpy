@@ -13,7 +13,7 @@ label hg_pr_grope:
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    call her_main(face="happy", xpos="right", ypos="base", trans="fade")
+    call her_main(face="happy", xpos="right", ypos="base", trans=fade)
 
     #Intro.
     if hg_pr_grope.counter == 0:

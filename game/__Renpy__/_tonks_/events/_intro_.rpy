@@ -364,7 +364,7 @@ label ss_he_tonks_E1:
     call sna_main("Albus{w} Percival{w} Wulfric{w} Brian{w} Dumbledore!","snape_34")
     m "..........................."
     m "I thought I traded places with just one person..."
-    call sna_main("That \"is\" one person!","snape_30", trans="hpunch")
+    call sna_main("That \"is\" one person!","snape_30", trans=hpunch)
     call sna_main("It's our headmaster's full name. And it's your name now!{w} You best make sure to remember it.","snape_34")
     m "Yeah...{w}I'm not even going to try..."
     call sna_main("Let's just hope this whole Ministry situation will solve itself...","snape_31")
@@ -695,7 +695,7 @@ label ss_he_tonks_E2:
     m "..................."
     call sna_main("What a fool I was to believe that she'd be gone by now...","snape_31")
     call sna_main("But of course not! ","snape_32")
-    call sna_main("{size=+5}Instead they made that mischievous {b}cunt{/b} a teacher!{/size}","snape_33", trans="hpunch") # Screaming
+    call sna_main("{size=+5}Instead they made that mischievous {b}cunt{/b} a teacher!{/size}","snape_33", trans=hpunch) # Screaming
     m "Actually, that was-..."
     call sna_main("The whole universe has turned against me!","snape_43")
     call sna_main("That bloody Ministry! Curse them!","snape_35")
@@ -724,7 +724,7 @@ label ss_he_tonks_E2:
     call sna_main("Not a single word! A-Ha-ha-ha...","snape_28")
     m "Fair enough..."
     call sna_main("Ha-ha-ha-...{w=0.5}{nw}","snape_42")
-    call sna_main("*cough* {w=0.4}*cough* {w=0.6}*cough*{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8}{nw}","snape_17", trans="hpunch")
+    call sna_main("*cough* {w=0.4}*cough* {w=0.6}*cough*{w=0.2}.{w=0.2}.{w=0.2}.{w=0.8}{nw}","snape_17", trans=hpunch)
     m "..............."
     call sna_main("...................","snape_31")
 
@@ -813,7 +813,7 @@ label ss_he_tonks_E3:
     call sna_main("And a very competent and skilled teacher, to guide those hopeless souls through their lessons...","snape_40")
     call sna_main("Now, If you were to assign me for that, and give Tonks my old subject to teach...","snape_20")
     m "Yeah,...{w=0.4} I think I gave that role to her..."
-    call sna_main("{size=+5}You did what?!{/size}","snape_33", trans="hpunch")
+    call sna_main("{size=+5}You did what?!{/size}","snape_33", trans=hpunch)
     m "\"Defence against-...something-something\"..."
     call sna_main("You should have given me the \"defence against the dark arts\" position!","snape_34")
     call sna_main("And she could've had something else,...like \"muggle studies\", or something.","snape_16")

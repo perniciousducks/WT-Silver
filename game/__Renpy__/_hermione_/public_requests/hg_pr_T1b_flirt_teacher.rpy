@@ -13,7 +13,7 @@ label hg_pr_flirt_teacher:
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    call her_main(face="happy", xpos="right", ypos="base", trans="fade")
+    call her_main(face="happy", xpos="right", ypos="base", trans=fade)
     m "[hermione_name], I want you to be especially flirtatious with your teachers today."
 
     #Intro
@@ -296,7 +296,7 @@ label hg_pr_flirt_teacher_T2_E2: # Lockheart
                     call her_main("Well, alright, but only to clear my idol's name...", "angry", "base", "angry", "mid")
                     pause.5
 
-                    call her_main("Here....", "disgust", "narrow", "base", "down",cheeks="blush",xpos="mid",ypos="base",trans="fade")
+                    call her_main("Here....", "disgust", "narrow", "base", "down",cheeks="blush",xpos="mid",ypos="base",trans=fade)
 
                     call set_her_action("lift_skirt")
                     pause.5

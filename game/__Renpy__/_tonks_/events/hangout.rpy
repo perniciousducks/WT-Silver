@@ -136,7 +136,7 @@ label nt_he_firewhisky_intro:
     call ton_main("Sorry, I guess I talk a lot once I get going...","angry","base","wide","mid")
     call ton_main("Bottoms up.","horny","base","base","down")
     call play_sound("gulp")
-    call ton_main("*Gulp*{w=0.6}{nw}","base","closed","sad","mid", trans="hpunch")
+    call ton_main("*Gulp*{w=0.6}{nw}","base","closed","sad","mid", trans=hpunch)
     call ton_main("*Cough* *Cough*","open","closed","sad","mid")
     call ton_main("Yeah, that was a mistake.","angry","base","upset","down")
     m "I don't drink whisky that often, but even I know not to down it in one..."
@@ -163,7 +163,7 @@ label nt_he_firewhisky_E1:
             call ton_main("Oh don't you worry, [ton_genie_name].","smile","happyCl","base","mid")
             call ton_main("I could down this entire bottle without anybody being able to notice a thing.","horny","base","base","L")
             m "You're one glass in and swaying like a buoy..."
-            call ton_main("*Hic* Oh well-...","open","base","base","ahegao", trans="hpunch")
+            call ton_main("*Hic* Oh well-...","open","base","base","ahegao", trans=hpunch)
             call ton_main("No risk, no fun!","horny","base","base","mid")
         else:
             m "Long day?"
@@ -203,7 +203,7 @@ label nt_he_firewhisky_E4:
     call ton_main("*Gulp*{w=0.8}{nw}","scream","closed","worried","mid")
     call play_sound("gulp")
     call ton_main("*Gulp*{w=0.8}{nw}","scream","closed","sad","mid")
-    call ton_main("*Aaaaaaaahhhh!!!*...","open_wide_tongue","base","base","ahegao", trans="hpunch")
+    call ton_main("*Aaaaaaaahhhh!!!*...","open_wide_tongue","base","base","ahegao", trans=hpunch)
     m "....................."
 
     jump tonks_hangout_continue

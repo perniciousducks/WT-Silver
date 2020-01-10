@@ -116,7 +116,7 @@ label whose_points:
 
     m "Again, I don't think you understand the game..."
 
-    call ast_main("Give me the points!","scream","narrow","angry","mid", trans="hpunch")
+    call ast_main("Give me the points!","scream","narrow","angry","mid", trans=hpunch)
 
     m "Disqualified!"
 

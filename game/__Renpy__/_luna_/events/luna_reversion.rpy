@@ -317,7 +317,7 @@ label luna_revert_1: #Reversion event #DONE
     pause .1
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
-    call her_main("{size=+15}petrificus totalus!{/size}", "scream", "base", "angry", "mid",emote="01",trans="hpunch")
+    call her_main("{size=+15}petrificus totalus!{/size}", "scream", "base", "angry", "mid",emote="01",trans=hpunch)
     ">Hermione pulls out her wand with surprising speed and paralyses Luna."
     call lun_main("!!!","clench","wide","sad","mid")
     m "(Whoa...)"
@@ -442,7 +442,7 @@ label luna_revert_1: #Reversion event #DONE
     pause .1
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
-    call lun_main("","soft","wide","raised","mid",trans="hpunch")
+    call lun_main("","soft","wide","raised","mid",trans=hpunch)
     call her_main("liquescimus corporis!", "scream", "closed", "angry", "mid")
     ">Another flash of light as Luna becomes unpetrified."
     call lun_main("Ugh... where am I?","normal","suspicious","sad","R")
@@ -653,7 +653,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     pause .1
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
-    call lun_main("{size=+15}petrificus totalus!{/size}","open","angry","mad","mid",trans="hpunch")
+    call lun_main("{size=+15}petrificus totalus!{/size}","open","angry","mad","mid",trans=hpunch)
     ">Luna pulls out her wand with surprising speed and paralyses Hermione."
     call her_main("!!!", "soft", "wide", "worried", "shocked")
     m "(Whoa...)"
@@ -728,7 +728,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     pause .1
     hide screen white
     $ renpy.play('sounds/magic4.ogg')   #Not loud.
-    call her_main("", "soft", "wide", "base", "stare",trans="hpunch")
+    call her_main("", "soft", "wide", "base", "stare",trans=hpunch)
     call lun_main("liquescimus corporis!","open","seductive","angry","mid")
     ">Another flash of light as Hermione becomes unpetrified."
     call lun_main("","base","seductive","base","R",xpos="mid",ypos="base")
@@ -744,7 +744,7 @@ label luna_revert_2: #Non-Reversion event #DONE
     call her_main("You... you...", "annoyed", "narrow", "annoyed", "mid")
     call her_main("{size=+10}You Stupid whore!{/size}", "angry", "base", "angry", "mid")
     call her_main("{size=+15}You're nothing more than a prostit-{/size}", "angry", "base", "angry", "mid",emote="01")
-    call lun_main("{size=+15}petrificus totalus!{/size}","open","mad","mad","mid", trans="hpunch")
+    call lun_main("{size=+15}petrificus totalus!{/size}","open","mad","mad","mid", trans=hpunch)
     show screen white
     pause .1
     hide screen white
@@ -783,7 +783,7 @@ label luna_revert_2: #Non-Reversion event #DONE
             pause .1
             hide screen white
             $ renpy.play('sounds/magic4.ogg')   #Not loud.
-            call her_main("", "soft", "wide", "base", "stare",trans="hpunch")
+            call her_main("", "soft", "wide", "base", "stare",trans=hpunch)
             call lun_main("liquescimus corporis!","base","seductive","base","down")
             call her_main("...", "angry", "wink", "base", "mid")
             m "That will be all for now miss lovegood."

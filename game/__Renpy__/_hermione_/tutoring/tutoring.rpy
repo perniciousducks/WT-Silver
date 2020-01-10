@@ -48,7 +48,7 @@ label l_tutoring:
     $ d_flag_01 = False
 
     if her_tutoring == 0:   # Whoring lvl 0
-        call her_main("Again, thank you for doing this for me, sir...", "open", "base", "base", "mid",xpos="base",ypos="base",trans="fade")
+        call her_main("Again, thank you for doing this for me, sir...", "open", "base", "base", "mid",xpos="base",ypos="base",trans=fade)
         call her_main("Shall I go and fetch my books?", "open", "squint", "base", "mid")
         m "What?"
         call her_main("My Books, [genie_name]. I need to study them more for my tests.", "soft", "base", "base", "R")
@@ -113,7 +113,7 @@ label l_tutoring:
         jump day_start
 
     if her_tutoring == 1:   # Whoring lvl 1
-        call her_main("", "base", "base", "base", "mid",xpos="base",ypos="base",trans="fade")
+        call her_main("", "base", "base", "base", "mid",xpos="base",ypos="base",trans=fade)
         m "Miss Granger, time for your first lesson."
         call her_main("Yes, professor.", "soft", "base", "base", "R")
         m "Have you thought about what we discussed?"
@@ -1476,7 +1476,7 @@ label l_tutoring:
             $ hermione_robe = "characters/hermione/clothes/robe/robe_open_g.png"
         elif h_robe in slytherin_robe_list:
             $ hermione_robe = "characters/hermione/clothes/robe/robe_open_s.png"
-        call her_main("", "base", "closed", "base", "mid",cheeks="blush",trans="d5")
+        call her_main("", "base", "closed", "base", "mid",cheeks="blush",trans=d5)
         call ctc
 
         call her_main("Is that better?", "base", "narrow", "base", "mid_soft",cheeks="blush")

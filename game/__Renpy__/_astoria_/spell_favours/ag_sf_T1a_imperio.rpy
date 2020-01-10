@@ -44,7 +44,7 @@ label ag_se_imperio_sb_E1:
     # Astoria casts imperio.
     stop music fadeout 2.0
     hide screen susan_main
-    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch")
+    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans=hpunch)
 
     call hide_characters
     hide screen bld1
@@ -241,7 +241,7 @@ label ag_se_imperio_sb_E1:
 
 
 label ag_se_imperio_sb_E2:
-    call ast_main("Let's try something else this time!","grin","narrow","base","mid", xpos="close", ypos="base", trans="fade")
+    call ast_main("Let's try something else this time!","grin","narrow","base","mid", xpos="close", ypos="base", trans=fade)
     g9 "Of course!"
     call ast_main("Great, I can't wait to see the look on Susan's dumb face...","grin","closed","base","mid")
     m "Let me just bring her up here."
@@ -277,7 +277,7 @@ label ag_se_imperio_sb_E2:
     g9 "Hiding away those glorious milk duds of yours is a serious offence!"
     call sus_main("","open","wide","base","wide")
     call ast_main("(Pffft, gloriously gross)","annoyed","base","angry","R")
-    call sus_main("P-professor Dumbledore! Why would you want me to do s-something like that!","scream","base","angry","mid", trans="hpunch") #Perhaps she should be a bit intrigued =Blush
+    call sus_main("P-professor Dumbledore! Why would you want me to do s-something like that!","scream","base","angry","mid", trans=hpunch) #Perhaps she should be a bit intrigued =Blush
 
     call ast_chibi(action="wand",xpos="530",ypos="base")
     call sus_main("I think I better go...","upset","closed","worried","mid")
@@ -288,7 +288,7 @@ label ag_se_imperio_sb_E2:
     # Astoria casts imperio.
     stop music fadeout 2.0
     hide screen susan_main
-    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch") # Screams it even louder
+    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans=hpunch) # Screams it even louder
 
     call hide_characters
     hide screen bld1
@@ -413,7 +413,7 @@ label ag_se_imperio_sb_E2:
     call sus_main("Ugh! You're both sick!","open","narrow","angry","mid")
     g4 "Mmmm, keep shaking those tits of yours..."
     g4 "I'm almost there {b}slut!{/b}"
-    call sus_main("I am not a {size=+10}slut!{/size}","scream","closed","angry","mid",trans="vpunch")
+    call sus_main("I am not a {size=+10}slut!{/size}","scream","closed","angry","mid",trans=vpunch)
     call nar(">As Susan yells at the top of her voice, the effort causes her gigantic tits to rise and slap back together.")
     call sus_main("","open")
 
@@ -545,7 +545,7 @@ label ag_se_imperio_sb_E2:
 
 
 label ag_se_imperio_sb_E3:
-    call ast_main("","smile","base","base","mid",xpos="close",ypos="base",trans="fade")
+    call ast_main("","smile","base","base","mid",xpos="close",ypos="base",trans=fade)
     m "Ready for another go with the curse?"
     call ast_main("You bet [ast_genie_name]! I can't wait to see the look on Susy's stupid face this time!","grin","narrow","angry","down")
     m "Shall I bring her up here?"
@@ -574,7 +574,7 @@ label ag_se_imperio_sb_E3:
     # Astoria casts imperio.
     stop music fadeout 2.0
     hide screen susan_main
-    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans="hpunch")
+    call ast_main("IMPERIO!{w=0.8}{nw}","scream","base","angry","mid", trans=hpunch)
 
     call hide_characters
     hide screen bld1
@@ -617,7 +617,7 @@ label ag_se_imperio_sb_E3:
     g4 "(!!!)"
     call ast_main("Maybe it's because of you showing off your gross boobs?","annoyed","base","base","R")
     call sus_main("Astoria! H-how can you say something so rude! I'd never...","open","closed","angry","mid")
-    call sus_main("","upset","wide","worried","down",trans="hpunch")
+    call sus_main("","upset","wide","worried","down",trans=hpunch)
     pause.8
     call nar(">Susan's eyes drift down to her exposed chest.")
     call sus_main("WHAT?!?!?","scream","wide","worried","down")
@@ -643,7 +643,7 @@ label ag_se_imperio_sb_E3:
     call sus_main("...","upset","narrow","base","mid")
     call ast_main("Alright... that'll shut her up...{w} what should we make her do this time, [ast_genie_name]?","grin","base","base","mid",xpos="close",ypos="base")
     m "Hmmm... Are you actually going to let me choose this time or are you just asking to be annoying?"
-    call ast_main("Hey! I am not annoying!","scream","closed","angry","mid",trans="hpunch")
+    call ast_main("Hey! I am not annoying!","scream","closed","angry","mid",trans=hpunch)
     m "Well are you going to let me pick then?"
     call ast_main("Fine... Just nothing too disgusting!","clench","narrow","base","mid")
     call ast_main("Or boring... that'd be even worse!","upset","narrow","angry","mid")
@@ -686,7 +686,7 @@ label ag_se_imperio_sb_E3:
     call nar("Susan slowly starts walking around your desk before obediently crawling under.")
     pause.5
     hide screen blkfade
-    call ast_main("","smile","base","base","down",xpos="mid",ypos="base",trans="fade")
+    call ast_main("","smile","base","base","down",xpos="mid",ypos="base",trans=fade)
     hide screen bld1
     call ctc
 
@@ -782,7 +782,7 @@ label ag_se_imperio_sb_E3:
     call ast_main("","smile","narrow","angry","R")
     sus "That cock... that's the best part..."
     sus "I just want to--"
-    call ast_main("(Eeeegh--...)","scream","closed","angry","mid",trans="hpunch")
+    call ast_main("(Eeeegh--...)","scream","closed","angry","mid",trans=hpunch)
 
     sus "..."
     call nar(">You hear Susan's words trail off into nothingness as she takes another breath...")
@@ -834,7 +834,7 @@ label ag_se_imperio_sb_E3:
     call ast_chibi("reset","530","base")
     $ susan_face_covered = True
     hide screen blkfade
-    call sus_main("","upset","narrow","worried","L",xpos="right",ypos="base",trans="fade")
+    call sus_main("","upset","narrow","worried","L",xpos="right",ypos="base",trans=fade)
     call ctc
 
     call play_music("astoria")

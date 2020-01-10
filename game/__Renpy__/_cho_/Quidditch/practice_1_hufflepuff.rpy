@@ -4,7 +4,7 @@
 
 label cc_ht_start:
 
-    call cho_main("","base","base","base","mid", xpos="right", ypos="base", trans="fade")
+    call cho_main("","base","base","base","mid", xpos="right", ypos="base", trans=fade)
 
     # First Hufflepuff match.
     if cc_ht.win_counter < 2:
@@ -348,7 +348,7 @@ label cc_ht_return_E3:
     call cho_main("(She'll be humiliated and no one will ever see her as anything but a showoff that knows nothing!)","quiver","angry","angry","down")
     call cho_main("(I can already picture it...{w=0.8} the whole school laughing...)","quiver","base","raised","up")
     m "Miss Chang?"
-    call cho_main("Oh, thank you for handling it professor! Boy, you took a load off my mind...","open","base","base","mid",trans="hpunch")
+    call cho_main("Oh, thank you for handling it professor! Boy, you took a load off my mind...","open","base","base","mid",trans=hpunch)
     call cho_main("I'll be heading back to bed, if you don't mind.","soft","closed","base","mid")
 
     # Cho leaves.
@@ -368,7 +368,7 @@ label cc_ht_return_E3:
 
 label cc_ht_hermione_commentator:
 
-    call her_main(xpos="mid", ypos="base",trans="fade")
+    call her_main(xpos="mid", ypos="base",trans=fade)
     m "[hermione_name], how much do you know about Quidditch?"
     call her_main("[genie_name], I mean, I've taken flying lessons... they're mandatory.", "open", "base", "base", "R")
     m "Ah, okay... and here I was hoping that you'd be able to commentate this years quidditch games..."
@@ -376,7 +376,7 @@ label cc_ht_hermione_commentator:
     call her_main("Wait...{w=0.6} What did you say?", "open", "squint", "base", "mid")
     m "I was going to ask you if you'd commentate this years quidditch games..."
     call her_main("You want me... to commentate this years wizarding school cup?", "open", "wide", "base", "mid")
-    call her_main("I'd be honoured, sir!", "scream", "closed", "base", "mid",trans="hpunch")
+    call her_main("I'd be honoured, sir!", "scream", "closed", "base", "mid",trans=hpunch)
     call her_main("Quidditch has always been one of my passions, to be able to commentate it...", "open", "base", "angry", "mid")
     call her_main("Not to mention getting to make all the announcements...", "smile", "base", "base", "R")
     call her_main("The speeches...", "grin", "happy", "base", "mid")
@@ -387,12 +387,12 @@ label cc_ht_hermione_commentator:
     else:
         call her_main("Everybody will be focused on me...", "soft", "narrow", "annoyed", "up")
 
-    call her_main("I accept!", "scream", "closed", "angry", "mid",trans="hpunch")
+    call her_main("I accept!", "scream", "closed", "angry", "mid",trans=hpunch)
     g4 "I thought you just said you didn't..."
     call her_main("Cho will be so mad!", "crooked_smile", "happy", "base", "mid")
     m "I see..."
     g9 "Congratulations then, [hermione_name]! You got the j..."
-    call her_main("Ah!!! I better start lear...{w=0.8} I mean, preparing my opening speech!", "open", "wide", "base", "mid",trans="hpunch")
+    call her_main("Ah!!! I better start lear...{w=0.8} I mean, preparing my opening speech!", "open", "wide", "base", "mid",trans=hpunch)
 
     call her_walk(action="leave", speed=1.5)
 
@@ -412,7 +412,7 @@ label cc_ht_hermione_commentator:
 
 label cc_ht_talk:
 
-    call cho_main(xpos="mid", ypos="base", trans="fade")
+    call cho_main(xpos="mid", ypos="base", trans=fade)
 
     if cc_ht.return_E3 and cho_quid.commentator == None:
         call cho_main("Have you asked Hermione to be our commentator yet?","soft","base","base","mid")
@@ -451,6 +451,6 @@ label cc_ht_talk:
     else:
         call cho_main("I'm confident that we can win this, [cho_genie_name].","smile","base","base","mid")
 
-    call cho_main(xpos="base", ypos="base", trans="fade")
+    call cho_main(xpos="base", ypos="base", trans=fade)
 
     return

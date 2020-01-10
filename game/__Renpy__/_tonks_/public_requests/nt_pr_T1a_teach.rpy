@@ -10,7 +10,7 @@
 #TODO Add Tonks chibi to all her public request nightly reports
 
 label nt_pr_teach_start:
-    call ton_main("","base","base","base","mid", xpos="right", ypos="base", trans="fade")
+    call ton_main("","base","base","base","mid", xpos="right", ypos="base", trans=fade)
 
     if ton_tier == 1:
 
@@ -94,7 +94,7 @@ label nt_pr_teach_start:
 
 label nt_pr_teach_T1_E1: #Tier 1 - Event 1 - Slytherin boy
     call play_sound("door")
-    call ton_main("Hello, [ton_genie_name].","base","base","base","mid", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Hello, [ton_genie_name].","base","base","base","mid", xpos="mid", ypos="base", trans=fade)
     call ton_main("I'm back with my report...","horny","base","base","mid")
 
     if ton_reputation <= 3: # First time.
@@ -167,7 +167,7 @@ label nt_pr_teach_T1_E1: #Tier 1 - Event 1 - Slytherin boy
 
 label nt_pr_teach_T1_E2: # Tier 1 - Event 2 - Racenclaw boy
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 3: # First time.
         pass
@@ -233,7 +233,7 @@ label nt_pr_teach_T1_E2: # Tier 1 - Event 2 - Racenclaw boy
 
 label nt_pr_teach_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys. Guess who...
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 3: # First time.
         pass
@@ -300,7 +300,7 @@ label nt_pr_teach_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys. Guess who...
 
 label nt_pr_teach_T1_E4: # Tier 1 - Event 4 - Slytherin girl
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if ton_reputation <= 3: # First time.
         pass
@@ -397,7 +397,7 @@ label nt_pr_teach_T1_E4: # Tier 1 - Event 4 - Slytherin girl
 
 label nt_pr_teach_T2_E1: # Tier 2 - Event 1 - Hufflepuff girl
     call play_sound("door")
-    call ton_main("Guess what happened, [ton_genie_name]!","base","happyCl","base","mid", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Guess what happened, [ton_genie_name]!","base","happyCl","base","mid", xpos="mid", ypos="base", trans=fade)
 
     if nt_pr_teach.points <= 4 and ton_reputation <= 8: # First time.
         pass
@@ -489,7 +489,7 @@ label nt_pr_teach_T2_E1: # Tier 2 - Event 1 - Hufflepuff girl
 label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
     #Have a few drops of cum on her clothes when she comes in
     call play_sound("door")
-    call ton_main("Hello, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Hello, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if nt_pr_teach.points <= 4 and ton_reputation <= 8: # First time.
         pass
@@ -592,7 +592,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
 
 label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
     call play_sound("door")
-    call ton_main("[ton_genie_name]...", face="horny", xpos="mid", ypos="base", trans="fade")
+    call ton_main("[ton_genie_name]...", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if nt_pr_teach.points <= 4 and ton_reputation <= 8: # First time.
         pass
@@ -633,7 +633,7 @@ label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
     call ton_main("I demanded of him to start jacking it...","open","base","angry","mid")
     call ton_main("It was actually pretty cute at first...","base","happyCl","base","mid")
     call ton_main("Then just as he was about to blow his load...","open","closed","base","mid")
-    call ton_main("Boom! Petrficus totalus!","scream","base","angry","mid", trans="hpunch")
+    call ton_main("Boom! Petrficus totalus!","scream","base","angry","mid", trans=hpunch)
     m "Petrifi-{w} Petrifico?-{w} Petrificato-"
     call ton_main("I petrified him!","open","closed","angry","mid")
     m "*Ahh*..."
@@ -664,7 +664,7 @@ label nt_pr_teach_T2_E3: # Tier 2 - Event 3 - Slytherin boy
 
 label nt_pr_teach_T2_E4: # Tier 2 - Event 4 - Slytherin girl
     call play_sound("door")
-    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans="fade")
+    call ton_main("Hi, [ton_genie_name].", face="horny", xpos="mid", ypos="base", trans=fade)
 
     if nt_pr_teach.points <= 4 and ton_reputation <= 8: # First time.
         pass

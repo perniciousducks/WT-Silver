@@ -29,7 +29,7 @@ label cc_pf_strip_T1_intro_E1:
 
     call cho_walk(xpos="desk", ypos="base")
 
-    call cho_main(xpos="mid", ypos="base", trans="fade")
+    call cho_main(xpos="mid", ypos="base", trans=fade)
     call ctc
 
     m "How often do you typically exercise, Miss Chang?"
@@ -64,7 +64,7 @@ label cc_pf_strip_T1_intro_E1:
     call cho_main("!!!","soft","wide","base","mid")
     call play_music("cho")
     m "Go on, girl. Start with the top..."
-    call cho_main("No!","scream","closed","angry","mid", trans="hpunch")
+    call cho_main("No!","scream","closed","angry","mid", trans=hpunch)
     call cho_main("Why are you even asking me to do such a thing?!","angry","narrow","angry","mid")
     m "Didn't you take your skirt off for me after the Hufflepuff match?"
     call cho_main("{size=-4}Well, I probably shouldn't have done that..{/size}","pout","base","sad","R")
@@ -193,7 +193,7 @@ label cc_pf_strip_T1_intro_E1:
         "\"Nope, you lose\"":
             $ cho_mood +=6
 
-            call cho_main("What?!","scream","wide","angry","mid", trans="hpunch")
+            call cho_main("What?!","scream","wide","angry","mid", trans=hpunch)
             call cho_main("","angry","narrow","angry","mid")
             m "I'm afraid, Miss Granger is simply...{w} how shall I put it...{w} sexier!"
             m "Besides, jealousy is quite unbecoming of a young witch like yourself..."
@@ -251,7 +251,7 @@ label cc_pf_strip_T1_intro_E1:
             $ cho_mad_about_stripping = True # Flag that enables different dialogue that is a bit more "lewd" in the next favor repeat.
             call cho_main("","angry","wide","base","mid") # Shock
             g9 "Now take off that bra of yours and show me those titties!"
-            call cho_main("[cho_genie_name], how can you talk to me like that!","scream","closed","angry","mid", trans="hpunch")
+            call cho_main("[cho_genie_name], how can you talk to me like that!","scream","closed","angry","mid", trans=hpunch)
             call cho_main("I'm your student!","open","narrow","angry","mid")
             g9 "And a very pretty one at that!"
             call cho_main("You disgust me, Professor...","angry","narrow","angry","mid")
@@ -295,7 +295,7 @@ label cc_pf_strip_T1_intro_E2:
 
     call cho_walk(xpos="desk", ypos="base")
 
-    call cho_main("Down to my undergarments, [cho_genie_name]?","soft","closed","base","mid", xpos="mid", ypos="base", trans="fade")
+    call cho_main("Down to my undergarments, [cho_genie_name]?","soft","closed","base","mid", xpos="mid", ypos="base", trans=fade)
     call cho_main("Or would you like me to take off all of it?","soft","narrow","base","mid")
     m "*Uhm*... All of it?"
     call cho_main("Very well, Sir.","soft","closed","base","mid")
@@ -372,7 +372,7 @@ label cc_pf_strip_T1_intro_E2:
     call cho_main("No.{w} I'm already regretting climbing up here!!!","angry","closed","sad","mid")
     call cho_main("(What were you thinking, Cho?!)","angry","narrow","sad","down")
     m "You can come back down if it's too much for yo-"
-    call cho_main("Shut up!","scream","closed","angry","mid", trans="hpunch") # Scream
+    call cho_main("Shut up!","scream","closed","angry","mid", trans=hpunch) # Scream
     call cho_main("Can't you see what I'm trying to do here?","angry","angry","angry","mid")
     m "Not really, no."
     call cho_main("I-I'm... testing my limits, Sir.","angry","narrow","sad","down")
@@ -409,7 +409,7 @@ label cc_pf_strip_T1_intro_E2:
             call cho_main("What?!","soft","wide","base","mid")
             call cho_main("But Sir!","soft","wide","sad","mid")
             m "You can go now..."
-            call cho_main("You can't do that!","scream","narrow","angry","mid", trans="hpunch")
+            call cho_main("You can't do that!","scream","narrow","angry","mid", trans=hpunch)
             call cho_main("","angry","narrow","angry","mid")
             g4 "Didn't you just beg me to do just that?"
             call play_music("sad")
@@ -418,7 +418,7 @@ label cc_pf_strip_T1_intro_E2:
             call cho_main("How can I overcome my fear of losing if I can't even do... this!","soft","base","sad","down")
             call cho_main("You're supposed to encourage me! Get me through any challenges I'm confronted with.","soft","narrow","angry","mid")
             m "Including stripping?"
-            call cho_main("Including bloody stripping!","scream","closed","angry","mid", trans="hpunch")
+            call cho_main("Including bloody stripping!","scream","closed","angry","mid", trans=hpunch)
             call cho_main("","annoyed","narrow","angry","mid")
             m "To my defence. I got some mixed messages from you earlier..."
             call cho_main("(...)","annoyed","narrow","angry","R") # Annoyed
@@ -511,7 +511,7 @@ label cc_pf_strip_T1_intro_E2:
             call cho_main("And you'd be called a dead man, if you try to trick me!","angry","narrow","angry","mid")
             m "Well technically I'm a gen-"
             call play_sound("kick")
-            call cho_main("","annoyed","angry","angry","mid", trans="vpunch")
+            call cho_main("","annoyed","angry","angry","mid", trans=vpunch)
             g4 "*Aaaaah!*"
             call nar("Cho does a daunting stomp on your desk...")
             call cho_main("Don't think for a second I wouldn't do it! After all of this!","scream","narrow","angry","mid")
@@ -588,7 +588,7 @@ label cc_pf_strip_T1_intro_E2:
     m "I can see why Hermione is so jealous."
     call cho_main("","upset","base","base","mid")
     pause.8
-    call cho_main("She is?","scream","wide","base","mid", trans="vpunch")
+    call cho_main("She is?","scream","wide","base","mid", trans=vpunch)
     call cho_main("","horny","base","base","down")
     m "Look who perked up all of a sudden."
     call cho_main("She should be jealous, these thighs could break a broom in half if I tried hard enough.","smile","narrow","angry","mid")
@@ -647,7 +647,7 @@ label cc_pf_strip_T1_intro_E2:
     m "Aren't you forgetting about something?"
     call cho_main("Sir?","soft","narrow","base","mid")
     m "You're still naked...{w} I wouldn't go out there if I were you..."
-    call cho_main("Oh, yes of course!","soft","wide","base","mid", trans="hpunch")
+    call cho_main("Oh, yes of course!","soft","wide","base","mid", trans=hpunch)
 
     call cho_walk(xpos="desk", ypos="base")
     pause.5
@@ -689,7 +689,7 @@ label cc_pf_strip_T1_intro_E3:
 
     call cho_walk(xpos="desk", ypos="base")
 
-    call cho_main("Sir, Those favours were never about my training, were they?","soft","narrow","angry","mid", xpos="mid", ypos="base", trans="fade")
+    call cho_main("Sir, Those favours were never about my training, were they?","soft","narrow","angry","mid", xpos="mid", ypos="base", trans=fade)
     m "I never said they were!"
     call cho_main("","annoyed","narrow","angry","mid")
     pause.8
@@ -742,7 +742,7 @@ label cc_pf_strip_T1_intro_E3:
 
         m "Actually, she doesn't..."
         call cho_main("What? But I thought she'd-","soft","wide","base","mid")
-        call cho_main("Why do you ask me to do these favours, and not Granger?","open","angry","angry","mid", trans="hpunch")
+        call cho_main("Why do you ask me to do these favours, and not Granger?","open","angry","angry","mid", trans=hpunch)
         m "Lets just say, she isn’t as progressive as you...{w} yet."
         call cho_main("You haven’t even seen her naked?","angry","base","base","mid")
         call cho_main("What favours are you even buying from her?","open","base","angry","mid")
@@ -790,7 +790,7 @@ label cc_pf_strip_T1_intro_E3:
     m "We had an eye witness, for what it's worth..."
     call cho_main("Seriously?! Who was it?","smile","base","base","mid")
     m "Snape..."
-    call cho_main("What?! Professor Snape?","scream","wide","base","mid", trans="hpunch")
+    call cho_main("What?! Professor Snape?","scream","wide","base","mid", trans=hpunch)
     call cho_main("","smile","wide","base","mid")
     m "He sort of just walked in on the action.{w} After all, the door wasn't locked..."
     call cho_main("That's too funny! I wish I could have been there when that happened!","smile","base","base","R")
@@ -942,7 +942,7 @@ label cc_pf_strip_T1_intro_E3:
     call her_walk(xpos="660",ypos="base")
 
     call cho_main("","smile","narrow","angry","mid", xpos="mid", ypos="base", flip=True)
-    call her_main("What the bloody hell is going on here?!", "scream", "closed", "base", "mid", xpos="base", ypos="base", trans="hpunch") # Scream
+    call her_main("What the bloody hell is going on here?!", "scream", "closed", "base", "mid", xpos="base", ypos="base", trans=hpunch) # Scream
     call her_main("", "angry", "base", "angry", "mid")
 
     call cho_main("You know, just the usual...","soft","base","base","L")
@@ -985,7 +985,7 @@ label cc_pf_strip_T1_E3: # Repeats
 
     call cho_walk(xpos="desk", ypos="base")
 
-    call cho_main("","base","base","base","R", xpos="mid", ypos="base", trans="fade")
+    call cho_main("","base","base","base","R", xpos="mid", ypos="base", trans=fade)
     call ctc
 
     g9 "I’m in the mood for another striptease!"
@@ -1200,7 +1200,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 with d3
                 pause.2
 
-                call cho_main("Give them back you bitch!","scream","narrow","angry","L", ypos="head", flip=True, trans="hpunch")
+                call cho_main("Give them back you bitch!","scream","narrow","angry","L", ypos="head", flip=True, trans=hpunch)
 
                 call play_sound("running")
                 call cho_walk(action="leave", speed=2)
@@ -1211,7 +1211,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
                 with d3
                 pause.2
 
-                call cho_main("Give them back you bitch!","scream","narrow","angry","L", ypos="head", flip=True, trans="hpunch")
+                call cho_main("Give them back you bitch!","scream","narrow","angry","L", ypos="head", flip=True, trans=hpunch)
 
                 call play_sound("running")
                 call cho_walk(action="leave", speed=2)
@@ -1230,7 +1230,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("Professor, could you please repeat that for me?","angry","closed","angry","mid")
             m "Hermione's body is superior."
             call her_main("No surprise there...", "base", "base", "base", "R")
-            call cho_main("No!{w} It clearly isn't!","scream","angry","angry","mid", trans="hpunch")
+            call cho_main("No!{w} It clearly isn't!","scream","angry","angry","mid", trans=hpunch)
             call cho_main("Are you mad, old man?","angry","narrow","angry","mid")
             call her_main("Don't use that tone with the headmaster...", "soft", "closed", "base", "mid")
             call cho_main("Nobody asked you!","angry","angry","angry","L")
@@ -1311,7 +1311,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             with d3
 
             hide screen blkfade
-            call cho_main("I thought you were on my side, Sir!","soft","narrow","angry","mid", xpos="mid", ypos="base", flip=False, trans="fade")
+            call cho_main("I thought you were on my side, Sir!","soft","narrow","angry","mid", xpos="mid", ypos="base", flip=False, trans=fade)
             m "I'm on nobody's side, because nobody is on my side..."
             call cho_main("You were supposed to have my back! Not Granger's!","angry","closed","angry","mid")
             call cho_main("That \"whore\" doesn't deserve your praise!","soft","narrow","angry","mid")
@@ -1327,7 +1327,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             hide screen cho_cloth_pile
             hide screen blkfade
 
-            call cho_main("Sir, my *uhm*...{w} my panties...","soft","base","angry","R", xpos="mid", ypos="base", trans="fade")
+            call cho_main("Sir, my *uhm*...{w} my panties...","soft","base","angry","R", xpos="mid", ypos="base", trans=fade)
             m "Oh, of course..."
             call cho_main("","annoyed","narrow","angry","mid")
             pause.5
@@ -1366,7 +1366,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             call cho_main("*Mhmm*","base","closed","base","mid") # Self assured.
             call her_main("Fine...", "soft", "narrow", "angry", "R")
             call her_main("\"Poor\", I'd say...", "soft", "closed", "base", "mid")
-            call cho_main("How dare you!{w} You snobby skunk!","scream","angry","angry","L", trans="hpunch")
+            call cho_main("How dare you!{w} You snobby skunk!","scream","angry","angry","L", trans=hpunch)
             call her_main("", "base", "base", "base", "R")
             m "(Is that better or worse than \"troll\"?)" # Snape explained school ratings during the match.
             call cho_main("Our Professor asked you to rate my body truthfully!","angry","angry","angry","L")
@@ -1424,7 +1424,7 @@ label cc_pf_strip_T1_hermione: # Call label. # Almost complete. Missing 1 menu b
             with d3
 
             hide screen blkfade
-            call cho_main("I have to say, [cho_genie_name], doing these favours is fun!","smile","narrow","base","mid", xpos="mid", ypos="base", flip=False, trans="fade")
+            call cho_main("I have to say, [cho_genie_name], doing these favours is fun!","smile","narrow","base","mid", xpos="mid", ypos="base", flip=False, trans=fade)
             m "I'm glad you're enjoying yourself."
             call cho_main("Believe me, Sir. I am.","smile","narrow","angry","mid")
             call cho_main("","horny","narrow","angry","mid")

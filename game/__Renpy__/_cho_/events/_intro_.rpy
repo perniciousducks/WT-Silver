@@ -168,7 +168,7 @@ label cho_intro_E1:
     call her_chibi("stand","door","base")
 
     call her_main("Professor I'm sorry to bother you but I wanted to...", "open", "closed", "base", "mid", ypos="head")
-    call her_main("!!!", "normal", "wide", "base", "stare", ypos="head",trans="hpunch")
+    call her_main("!!!", "normal", "wide", "base", "stare", ypos="head",trans=hpunch)
 
     call her_walk(xpos="570", ypos="base")
     call her_chibi("stand","570","base",flip=True)
@@ -180,10 +180,10 @@ label cho_intro_E1:
     call cho_main("Oh, you know...{w=0.5} Just having a discussion with our dear headmaster...", "smile", "base", "base", "L")
 
     $ renpy.sound.play("sounds/card_punch4.mp3")
-    call her_main("{size=-5}Bitch...{/size}", "base", "closed", "angry", "mid",trans="hpunch")
+    call her_main("{size=-5}Bitch...{/size}", "base", "closed", "angry", "mid",trans=hpunch)
 
     $ renpy.sound.play("sounds/card_punch1.mp3")
-    call cho_main("{size=-5}Whore...{/size}", "soft", "angry", "angry", "L",trans="hpunch")
+    call cho_main("{size=-5}Whore...{/size}", "soft", "angry", "angry", "L",trans=hpunch)
     call her_main("...", "normal", "squint", "angry", "mid", cheeks="blush")
     call cho_main("...", "base", "angry", "base", "L")
     call her_main("So...{p=0.4}what have you been discussing? Anything I should know?", "open", "squint", "base", "mid", cheeks="blush")
@@ -288,7 +288,7 @@ label cho_intro_E1:
         call cho_main("*Hmph* There’s no argument here...","angry","narrow","angry","L")
         call cho_main("I’m sure that Hermione’s reasons for interrupting are totally valid...","upset","closed","angry","mid")
         call her_main("And I’m sure Cho wasn’t just coming here to flaunt her body again...", "soft", "closed", "base", "mid")
-        call cho_main("What’s that supposed to mean?!?","scream","base","base","mid",trans="hpunch")
+        call cho_main("What’s that supposed to mean?!?","scream","base","base","mid",trans=hpunch)
         m "(I guess I’ll just have to wait this one out..)"
 
         # Black screen
@@ -304,13 +304,13 @@ label cho_intro_E1:
         $ renpy.sound.play("sounds/snore1.mp3")
         gen "*Snore*{w=2.0}{nw}"
         show screen hermione_main
-        call cho_main("Well I’m sure that your reasons for being here are totally legitimate...","soft","narrow","base","L",trans="hpunch")
+        call cho_main("Well I’m sure that your reasons for being here are totally legitimate...","soft","narrow","base","L",trans=hpunch)
         $ renpy.sound.play("sounds/snore2.mp3")
         gen "......{w=0.5}*Snore*{w=1.0}{nw}"
-        call her_main("They are, for a fact. Completely legitimate... you tell her Professor!", "clench", "narrow", "angry", "R",trans="hpunch")
+        call her_main("They are, for a fact. Completely legitimate... you tell her Professor!", "clench", "narrow", "angry", "R",trans=hpunch)
         $ renpy.sound.play("sounds/snore3.mp3")
         gen "*Sn{cps=8}oooooooreeee*{/cps}{w=2.0}{nw}"
-        call her_main("Professor!", "scream", "closed", "angry", "mid",trans="hpunch")
+        call her_main("Professor!", "scream", "closed", "angry", "mid",trans=hpunch)
         g4 "*Grunt* {size=-4}Huh, what?{/size}"
         call her_main("I always have a valid reason for coming here, don’t I?", "base", "base", "base", "mid")
         m "Of course you-{w=0.6}{nw}"
@@ -383,7 +383,7 @@ label cho_intro_E2:
     call cho_walk("desk", "base")
     pause.2
 
-    call cho_main("I hate her!","scream","closed","angry","mid", xpos="mid", ypos="base",trans="hpunch")
+    call cho_main("I hate her!","scream","closed","angry","mid", xpos="mid", ypos="base",trans=hpunch)
     call cho_main("","angry","angry","angry","mid")
 
     g9 "Miss Chang! My favourite student!"
@@ -394,7 +394,7 @@ label cho_intro_E2:
     g4 "{size=-4}Please don't hurt me.{/size}"
     call cho_main("How could you have done this?{p=0.6}Sending this dim-witted Gryffindor tramp after me?","open","angry","angry","mid")
     g4 "W-who?"
-    call cho_main("Granger!","scream","closed","angry","mid",trans="hpunch")
+    call cho_main("Granger!","scream","closed","angry","mid",trans=hpunch)
     g4 "Aaa-h!{p=0.5}{nw}" # Girly scream
     call cho_main("Gryffindor's role model student.","angry","angry","angry","mid")
     call cho_main("She's out there spreading mean rumours about me!","open","narrow","base","R")
@@ -402,7 +402,7 @@ label cho_intro_E2:
     call cho_main("The worst kind! That I'm cheating at Quidditch!","angry","narrow","angry","down")
     call cho_main("How am I cheating, Professor? Ravenclaw is always in last place?!","soft","narrow","sad","downR")
     call cho_main("Not to mention that she's told everyone that I'm whoring myself out to my other classmates, and even my teachers!","open","narrow","angry","L")
-    call cho_main("I did none of that, Professor! None!","scream","closed","angry","mid",trans="hpunch")
+    call cho_main("I did none of that, Professor! None!","scream","closed","angry","mid",trans=hpunch)
     call cho_main("And she still won't lay off her stupid equality movement thing!","angry","angry","angry","mid")
     m "You need to calm down, girl."
     call cho_main("{size=-4}When I'm out of here I'm going to rip that bitch's head off...{/size}","quiver","narrow","angry","downR")
@@ -413,7 +413,7 @@ label cho_intro_E2:
     call cho_main("And rest assured that I will end her!","soft","narrow","angry","mid")
     m "I'd prefer you didn't."
     call cho_main("Don't even think about calling me to your office again until you've dealt with that skank!","open","narrow","angry","mid")
-    call cho_main("Do I make myself clear, Sir?","scream","closed","angry","mid",trans="hpunch")
+    call cho_main("Do I make myself clear, Sir?","scream","closed","angry","mid",trans=hpunch)
     call cho_main("","angry","narrow","angry","mid")
     m "I suppose..."
 
@@ -620,7 +620,7 @@ label ss_he_cho_E1:
 
 label cho_intro_E3:
 
-    call her_main("", xpos="mid", ypos="base",trans="fade")
+    call her_main("", xpos="mid", ypos="base",trans=fade)
 
     # Intro
     if not cho_intro.E3_intro:
@@ -662,7 +662,7 @@ label cho_intro_E3:
         call her_main("I worked very hard on gathering all records of past Quidditch matches, throughout the complete history of Quidditch!", "open", "wink", "base", "mid")
         call her_main("You'd be surprised just how few female-", "soft", "closed", "base", "mid")
         m "I'll give you ten house points."
-        call her_main("Ten points?", "soft", "wide", "base", "stare",trans="hpunch")
+        call her_main("Ten points?", "soft", "wide", "base", "stare",trans=hpunch)
         call her_main("Sir do you even realize how much time it took me to do all that research?", "angry", "squint", "angry", "mid")
         m "Twenty?"
         call her_main("Two hundred!", "angry", "closed", "angry", "mid")
@@ -691,7 +691,7 @@ label cho_intro_E3:
                 pass
 
             "\"I don't think so!\"":
-                call her_main("What?... Why?!", "shock", "wide", "base", "stare",trans="hpunch")
+                call her_main("What?... Why?!", "shock", "wide", "base", "stare",trans=hpunch)
                 m "Because you are being unreasonable."
                 call her_main("But you made it sound like it was something important to you!", "disgust", "narrow", "worried", "mid_soft")
                 m "And you believe that I'd just throw point at you because of that?"

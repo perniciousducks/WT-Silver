@@ -119,7 +119,7 @@ label potion_scene_1_1_2:
     $ her_cat_polyjuice_return = False
     call her_walk(action="enter", xpos="mid", ypos="base")
 
-    call her_main("How could you do this to me [genie_name]?", "angry", "base", "angry", "mid", xpos="mid", ypos="base", trans="hpunch")
+    call her_main("How could you do this to me [genie_name]?", "angry", "base", "angry", "mid", xpos="mid", ypos="base", trans=hpunch)
     her "Try and turn me into a cat!"
     call her_main("In the middle of class!", "annoyed", "base", "worried", "R")
     m "I didn't try and turn you into a cat [hermione_name]."
@@ -312,7 +312,7 @@ label potion_scene_1_1_2_alt:
             m "And how did that make you feel?"
             her "I'm not sure..."
     else:
-        call her_main("How could you do this to me [genie_name]?", "angry", "base", "angry", "mid", xpos="mid", ypos="base", trans="hpunch")
+        call her_main("How could you do this to me [genie_name]?", "angry", "base", "angry", "mid", xpos="mid", ypos="base", trans=hpunch)
         her "Try and turn me into a cat!"
         call her_main("In the middle of class!", "annoyed", "base", "worried", "R")
         m "I didn't try and turn you into a cat [hermione_name]."

@@ -44,9 +44,9 @@ label hg_pf_titjob:
 
     hide screen blkfade
     if her_mood != 0:
-        call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans=fade)
     else:
-        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
 
     # Points
@@ -86,7 +86,7 @@ label hg_pf_titjob:
 ### Fail Events ###
 
 label hg_pf_titjob_fail:
-    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]..."
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "Have you ever given somebody a \"titjob\"?"
@@ -103,7 +103,7 @@ label hg_pf_titjob_fail:
 # Event 2 (r) - Reluctantly does it again.
 
 label hg_pf_titjob_T1_intro_E1:
-    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "Now, [hermione_name]..."
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "Have you ever given someone a \"titjob?\""
@@ -168,7 +168,7 @@ label hg_pf_titjob_T1_intro_E1:
 
 
 label hg_pf_titjob_T1_repeat:
-    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name], would you like to earn some house points again?"
     call her_main("Of course, [genie_name]...", "base", "base", "base", "mid")
     call her_main("What would I have to do to earn them?", "open", "base", "base", "R")
@@ -194,7 +194,7 @@ label hg_pf_titjob_T1_repeat:
 # Event 3 (r) - Repeat.
 
 label hg_pf_titjob_T2_intro_E1:
-    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "How do you feel about wrapping those nice tits of yours around my cock again?"
@@ -212,7 +212,7 @@ label hg_pf_titjob_T2_intro_E1:
 
 
 label hg_pf_titjob_T2_intro_E2:
-    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
     m "I would very much like to see those perfect tits of yours again..."
@@ -228,7 +228,7 @@ label hg_pf_titjob_T2_intro_E2:
 
 
 label hg_pf_titjob_T2_repeat:
-    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+    call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name], how would you like wrapping those perfect tits of yours around my cock again?"
     call her_main("As long as I am getting paid...", "soft", "happy", "base", "R")
     g9 "Well, then... Time to earn those points!"
@@ -276,7 +276,7 @@ label hg_pf_titjob_1:
         show screen ccg
         with fade
 
-    call her_chibi_scene("tj_pause", trans="d9")
+    call her_chibi_scene("tj_pause", trans=d9)
     call ctc
     #pause.8
 
@@ -285,7 +285,7 @@ label hg_pf_titjob_1:
     m "That's a start. Now, up and down..."
     call her_main("Alright...", "angry", "worriedCl", "worried", "mid", emote="05", ypos="head")
 
-    call her_chibi_scene("tj", trans="d9")
+    call her_chibi_scene("tj", trans=d9)
     call ctc
 
     call play_music("playful_tension") # SEX THEME.
@@ -412,7 +412,7 @@ label hg_pf_titjob_1:
             call her_main(".................", "open_wide_tongue", "base", "base", "mid")
             pause.2
 
-            call her_chibi_scene("tj_mouth", trans="d9")
+            call her_chibi_scene("tj_mouth", trans=d9)
             call ctc
             #pause.8
 
@@ -435,7 +435,7 @@ label hg_pf_titjob_1:
             g4 "Here it comes, [hermione_name]! You better be ready!"
             $ ccg1 = 13
 
-            call her_chibi_scene("tj_pause", trans="d5")
+            call her_chibi_scene("tj_pause", trans=d5)
 
             call her_main("What? already?!", "shock", "wide", "base", "stare", ypos="head")
             g4 "{size=+5}Yeah, your tits felt great!!!{/size}"
@@ -447,7 +447,7 @@ label hg_pf_titjob_1:
 
             stop music fadeout 1.0
             call cum_block
-            call her_chibi_scene("tj_cum_in", trans="d9")
+            call her_chibi_scene("tj_cum_in", trans=d9)
             pause.8
 
             call nar(">You grab the back of Hermione's head and force your cock into her open mouth...")
@@ -459,7 +459,7 @@ label hg_pf_titjob_1:
             call bld("hide")
             call ctc
 
-            call her_chibi_scene("tj_cum_in_done", trans="d9")
+            call her_chibi_scene("tj_cum_in_done", trans=d9)
 
             call her_main(".......................", "full_cum", "narrow", "worried", "down",cheeks="blush")
             m "*Mmm*... That felt great...."
@@ -469,12 +469,12 @@ label hg_pf_titjob_1:
             m "[hermione_name]?"
             pause.2
 
-            call her_chibi_scene("tj_pause", trans="d9")
+            call her_chibi_scene("tj_pause", trans=d9)
             pause.5
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ ccg1 = 15
-            call her_main("*Ptui*...", "open_wide_tongue_cum", "base", "angry", "mid", trans="hpunch")
+            call her_main("*Ptui*...", "open_wide_tongue_cum", "base", "angry", "mid", trans=hpunch)
 
             $ u_sperm = "characters/hermione/face/auto_06.png"
             $ uni_sperm = True
@@ -486,7 +486,7 @@ label hg_pf_titjob_1:
 
             $ ccg1 = 17
 
-            call her_chibi_scene("tj_cum_on_done", trans="d9")
+            call her_chibi_scene("tj_cum_on_done", trans=d9)
             pause.5
 
             call nar(">Hermione lets go of your still pulsating cock...")
@@ -515,14 +515,14 @@ label hg_pf_titjob_1:
             g4 "ARGH!"
             $ ccg1 = 13
 
-            call her_chibi_scene("tj_pause", trans="d5")
+            call her_chibi_scene("tj_pause", trans=d5)
 
             call her_main("WHAT?!", "shock", "wide", "base", "stare", ypos="head")
             g4 "Take this slut!"
 
             stop music fadeout 1.0
             call cum_block
-            call her_chibi_scene("tj_cum_on", trans="d9")
+            call her_chibi_scene("tj_cum_on", trans=d9)
             pause.8
 
             call bld
@@ -535,7 +535,7 @@ label hg_pf_titjob_1:
             $ ccg1 = 18
             call ctc
 
-            call her_chibi_scene("tj_cum_on_done", trans="d9")
+            call her_chibi_scene("tj_cum_on_done", trans=d9)
 
             call her_main(".......................", "angry", "wide", "base", "stare")
             m "Well, I think that's about it..."
@@ -581,7 +581,7 @@ label hg_pf_titjob_2:
     call set_her_action("lift_breasts")
 
     $ ccg1 = 20
-    call her_chibi_scene("tj", trans="fade")
+    call her_chibi_scene("tj", trans=fade)
     call ctc
 
     call nar(">Hermione wraps her plump tits around your cock...")
@@ -631,7 +631,7 @@ label hg_pf_titjob_2:
             m "OK, I think I've heard enough."
             $ ccg1 = 21
 
-            call her_chibi_scene("tj_pause", trans="d5")
+            call her_chibi_scene("tj_pause", trans=d5)
             pause.8
 
             call her_main("Too much?", "angry", "wink", "base", "mid")
@@ -639,7 +639,7 @@ label hg_pf_titjob_2:
             call her_main("Sorry [genie_name], I got a bit carried away...", "angry", "worriedCl", "worried", "mid", emote="05")
             m "No worries. Just keep on massaging it with those big tits of yours."
 
-            call her_chibi_scene("tj", trans="d5")
+            call her_chibi_scene("tj", trans=d5)
             pause.8
 
             call her_main(".................", "soft", "narrow", "annoyed", "up")
@@ -747,7 +747,7 @@ label hg_pf_titjob_2:
 
 
 label hg_pf_titjob_2_continue:
-    call her_chibi_scene("tj", trans="d5")
+    call her_chibi_scene("tj", trans=d5)
 
     call bld
     m "Yes... Keep stroking it."
@@ -836,7 +836,7 @@ label hg_pf_titjob_2_continue:
 
 
 label hg_pf_titjob_2_cumming:
-    call her_chibi_scene("tj", trans="d5")
+    call her_chibi_scene("tj", trans=d5)
 
     call bld
     m "*Hmm*..."
@@ -858,7 +858,7 @@ label hg_pf_titjob_2_cumming:
             $ ccg1 = 25
             call her_main("What are you-", "angry", "wink", "base", "mid", ypos="head")
 
-            call her_chibi_scene("tj_mouth", trans="d5")
+            call her_chibi_scene("tj_mouth", trans=d5)
             pause.8
 
             call bld
@@ -869,7 +869,7 @@ label hg_pf_titjob_2_cumming:
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ ccg1 = 26
 
-            call her_chibi_scene("tj_cum_in", trans="d5")
+            call her_chibi_scene("tj_cum_in", trans=d5)
             pause.8
 
             call her_main("!!!!!!!!!!!", "full", "wide", "base", "stare")
@@ -881,7 +881,7 @@ label hg_pf_titjob_2_cumming:
             call her_main("...............", "full_cum", "narrow", "base", "dead")
             m "............"
 
-            call her_chibi_scene("tj_cum_in_done", trans="d5")
+            call her_chibi_scene("tj_cum_in_done", trans=d5)
             pause.8
 
             call bld
@@ -894,7 +894,7 @@ label hg_pf_titjob_2_cumming:
             $ ccg1 = 27
             call her_main("*GULP*", "cum", "worriedCl", "worried", "mid") #play noise here
 
-            call her_chibi_scene("tj_idle", trans="d5")
+            call her_chibi_scene("tj_idle", trans=d5)
             pause.8
 
             call bld
@@ -922,7 +922,7 @@ label hg_pf_titjob_2_cumming:
             $ aftersperm = False
 
         "\"(On her tits).\"":
-            call her_chibi_scene("tj_pause", trans="d5")
+            call her_chibi_scene("tj_pause", trans=d5)
 
             call bld
             g4 "Here! Take this you big-titted whore!"
@@ -933,7 +933,7 @@ label hg_pf_titjob_2_cumming:
             g4 "Yeah, your tits felt great slut!"
             call cum_block
 
-            call her_chibi_scene("tj_cum_on", trans="d9")
+            call her_chibi_scene("tj_cum_on", trans=d9)
             pause.8
 
             call bld
@@ -948,7 +948,7 @@ label hg_pf_titjob_2_cumming:
             call her_main(".......................", "angry", "wide", "base", "stare")
 
             $ ccg1 = 32
-            call her_chibi_scene("tj_cum_on_done", trans="d9")
+            call her_chibi_scene("tj_cum_on_done", trans=d9)
             pause.8
 
             call bld

@@ -35,9 +35,9 @@ label hg_pf_grope:
 
     hide screen blkfade
     if her_mood != 0:
-        call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "annoyed", "base", "angry", "mid", xpos="mid", ypos="base", trans=fade)
     else:
-        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans="fade")
+        call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
     m "This will do for now."
     if her_tier <= 3:
@@ -143,7 +143,7 @@ label hg_pf_grope_T1_intro_E1:
     call her_walk(xpos="desk", ypos="base", reduce=0.8)
     call blkfade
 
-    call her_chibi_scene("behind_desk_front", trans="fade")
+    call her_chibi_scene("behind_desk_front", trans=fade)
     pause.5
 
     call her_main("[genie_name].....?", "annoyed", "base", "worried", "R", ypos="head")
@@ -168,7 +168,7 @@ label hg_pf_grope_T1_E1:
     m "Come closer [hermione_name]... Hop around my desk..."
     call her_main("...............", "annoyed", "base", "angry", "mid")
 
-    call her_chibi_scene("behind_desk_front", trans="fade")
+    call her_chibi_scene("behind_desk_front", trans=fade)
 
     call her_main("[genie_name].....?", "annoyed", "narrow", "angry", "R", ypos="head")
     m "..."
@@ -225,7 +225,7 @@ label hg_pf_grope_T2_intro_E1:
     call her_walk(xpos="desk", ypos="base", reduce=0.8)
     call blkfade
 
-    call her_chibi_scene("behind_desk_front", trans="fade")
+    call her_chibi_scene("behind_desk_front", trans=fade)
 
     call her_main("[genie_name].....?", "annoyed", "narrow", "angry", "R", ypos="head")
     m "..."
@@ -252,7 +252,7 @@ label hg_pf_grope_T2_E1:
     g9 "Get squeezed!"
     call her_main("....................................", "annoyed", "narrow", "angry", "R")
 
-    call her_chibi_scene("behind_desk_front", trans="fade")
+    call her_chibi_scene("behind_desk_front", trans=fade)
 
     call her_main("[genie_name].....?", "annoyed", "narrow", "angry", "R", ypos="head")
     m "..."
@@ -289,7 +289,7 @@ label hg_pf_grope_T3_intro_E1:
     call her_walk(xpos="desk", ypos="base", reduce=0.8)
     call blkfade
 
-    call her_chibi_scene("behind_desk_front", trans="fade")
+    call her_chibi_scene("behind_desk_front", trans=fade)
 
     call her_main("[genie_name].....?", "base", "narrow", "worried", "down", ypos="head")
     m "..."
@@ -312,7 +312,7 @@ label hg_pf_grope_T3_intro_E2:
     g9 "I feel like playing with you a little."
     call her_main("Yes, Sir...", "soft", "base", "base", "R")
 
-    call her_chibi_scene("behind_desk_front", trans="fade")
+    call her_chibi_scene("behind_desk_front", trans=fade)
 
     call her_main("[genie_name].....?", "soft", "narrow", "worried", "down", ypos="head")
     m "Yes?"
@@ -338,7 +338,7 @@ label hg_pf_grope_T3_E2:
     g9 "[hermione_name]. Come here and let me grope you!"
     call her_main("Of course, [genie_name]...", "base", "narrow", "base", "mid_soft")
 
-    call her_chibi_scene("behind_desk_front", trans="fade")
+    call her_chibi_scene("behind_desk_front", trans=fade)
 
     call her_main("Are you going to grope my breasts today, Sir?", "soft", "narrow", "base", "R_soft", ypos="head")
     call her_main("Or my bum?....", "soft", "narrow", "base", "mid_soft")

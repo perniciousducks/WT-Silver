@@ -46,13 +46,13 @@ label hermione_summon_setup:
         with d5
         pause.2
 
-        call her_main("Yes?", "soft", "base", "base", "mid",trans="d5")
+        call her_main("Yes?", "soft", "base", "base", "mid",trans=d5)
         m "I didn't say anything..."
         call her_main("If you say so, [genie_name].", "open", "base", "base", "R")
         call her_main("Is it ok if we could start right away with the lessons?", "soft", "base", "base", "mid")
         m "Well... Of course..."
 
-        call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base",trans="fade")
+        call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base",trans=fade)
 
         return
 

@@ -666,7 +666,7 @@ label equip_top:
                 # else:
                     # if her_whoring < 5:
                         # call her_main("A--...", "shock", "worriedCl", "worried", "mid")
-                        # call her_main("A--Achou!!", "angry", "worriedCl", "worried", "mid",cheeks="blush",emote="05",trans="hpunch")
+                        # call her_main("A--Achou!!", "angry", "worriedCl", "worried", "mid",cheeks="blush",emote="05",trans=hpunch)
                         # call nar(">Hermione sneezed.")
                         # call her_main("Ahh,...", "silly", "narrow", "annoyed", "up")
                         # call her_main("I'm terribly sorry [genie_name]...", "angry", "wink", "base", "mid")

@@ -193,7 +193,7 @@ label equip_bra:
                         # call her_main("Do you ask this from every girl, [genie_name]?", "open", "wink", "base", "mid")
                         # m "Why uhm... I mean yes. All the girls..."
                         # call her_main("Is this some sort of protection for-", "open", "narrow", "worried", "down")
-                        # call her_main("It's those Blast-Ended Skrewts again, isn't it?!", "soft", "wide", "base", "stare",trans="hpunch")
+                        # call her_main("It's those Blast-Ended Skrewts again, isn't it?!", "soft", "wide", "base", "stare",trans=hpunch)
                         # call her_main("[genie_name], are they biting off the student's nipples???", "open", "wide", "base", "mid")
                         # m "What's so bad about biting nipples?"
                         # call her_main("[genie_name], these are some serious matters! We immediately have to inform the other teachers about this issue!", "open", "base", "angry", "mid")

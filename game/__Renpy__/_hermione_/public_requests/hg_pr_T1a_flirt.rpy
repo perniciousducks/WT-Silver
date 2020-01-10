@@ -13,7 +13,7 @@ label hg_pr_flirt:
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    call her_main(face="happy", xpos="right", ypos="base", trans="fade")
+    call her_main(face="happy", xpos="right", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes?", "soft", "base", "base", "R")
 
@@ -101,7 +101,7 @@ label hg_pr_flirt_intro:
     #if her_whoring >= 0 and her_whoring < 3:
     call her_walk(action="enter", xpos="mid", ypos="base")
 
-    call her_main("Good evening, [genie_name].", face="happy", xpos="mid", ypos="base", trans="fade")
+    call her_main("Good evening, [genie_name].", face="happy", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]..."
     m "Did you complete your task?"
     her "I did as you asked, [genie_name]..."
@@ -383,7 +383,7 @@ label hg_pr_flirt_T3_E1:
 
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     hide screen blkfade
-    call her_main("Eleven boys, [genie_name]!", "smile", "happyCl", "base", "mid", xpos="right", ypos="base", trans="d5")
+    call her_main("Eleven boys, [genie_name]!", "smile", "happyCl", "base", "mid", xpos="right", ypos="base", trans=d5)
     m "Eleven? Really? Your personal best, [hermione_name]."
     call her_main("Yes.", "base", "happyCl", "base", "mid")
     call her_main("Let's see...", "grin", "base", "base", "R")

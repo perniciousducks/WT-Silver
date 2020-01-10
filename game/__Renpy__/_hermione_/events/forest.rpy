@@ -27,7 +27,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
     with d3
 
     m "Miss Granger? What are you doing out here at this time of night?"
-    call her_main("[genie_name]! I, ugh, I wasn't doing anything bad, I swear!", "open", "wide", "base", "R",xpos="right",ypos="base",trans="d5")
+    call her_main("[genie_name]! I, ugh, I wasn't doing anything bad, I swear!", "open", "wide", "base", "R",xpos="right",ypos="base",trans=d5)
     m "..."
     call her_main("Ugh, fine! If you must know, I was out here gathering up some mastick resin.", "upset", "narrow", "worried", "down")
     call her_main("I know Students aren't {i}technically{/i} supposed to touch the stuff since it's normally just used to make belch powder...", "annoyed", "base", "base", "R")
@@ -51,7 +51,7 @@ label forest_BJ_1: #BJ in the forest interrupted by moaning myrtle
             m "Well, seeing that we're all alone out here..."
             call her_main("Oh... I, um, guess we are...", "open", "wide", "base", "R")
             m "Wanna fool around?"
-            call her_main("Oh thank goodness... I thought you were going to murder me for a second there...", "base", "happyCl", "base", "mid",trans="hpunch")
+            call her_main("Oh thank goodness... I thought you were going to murder me for a second there...", "base", "happyCl", "base", "mid",trans=hpunch)
             m "What? How could you think such a thing!"
             m "I don't know if I'll be able to-"
             call her_main("How about I make it up to you with my mouth then, hmmm?", "base", "squint", "base", "mid")
@@ -164,7 +164,7 @@ label forest_BJ_2:
 
     m "More late night gardening?"
     pause.1
-    call her_main("{size=+10}[genie_name]!{/size}", "shock", "wide", "base", "stare",xpos="right",ypos="base",trans="hpunch")
+    call her_main("{size=+10}[genie_name]!{/size}", "shock", "wide", "base", "stare",xpos="right",ypos="base",trans=hpunch)
     call her_main("Ugh... Don't startle me like that!", "annoyed", "base", "base", "R")
     call her_main("And yes, I've been collecting some mushroom samples.", "soft", "base", "base", "mid")
     m "Cool..."
@@ -334,7 +334,7 @@ label forest_BJ_3: #Complete BJ with Myrtle appearing after the cumshot
     with d3
 
     m "Aren't you usually out her to collect some forbidden plant, [hermione_name]?"
-    call her_main("Not always... Sometimes I just come out her to enjoy the cool air...", "soft", "base", "base", "R",xpos="right",ypos="base",trans="d5")
+    call her_main("Not always... Sometimes I just come out her to enjoy the cool air...", "soft", "base", "base", "R",xpos="right",ypos="base",trans=d5)
     m "I see..."
     m "So you're not waiting out here for your headmaster to arrive, just so you can suck his cock in public?"
     call her_main("What! o-of course not!", "base", "narrow", "worried", "down")
@@ -597,7 +597,7 @@ label forest_BJ_4: #Moaning myrtle dirty talk (Repeatable) (Threaten to expose)
     with d3
 
     m "[hermione_name]..."
-    call her_main("About time you got here, [genie_name]!", "upset", "narrow", "annoyed", "mid", xpos="right",ypos="base",trans="d5")
+    call her_main("About time you got here, [genie_name]!", "upset", "narrow", "annoyed", "mid", xpos="right",ypos="base",trans=d5)
     call her_main("Do you know how long I've been waiting out here in the cold?", "annoyed", "happy", "base", "mid")
 
     menu:

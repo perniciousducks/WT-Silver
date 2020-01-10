@@ -3,7 +3,7 @@
 ### Ravenclaw vs. Hufflepuff ###
 
 label start_hufflepuff_match:
-    call cho_main(xpos="mid", ypos="base", trans="fade")
+    call cho_main(xpos="mid", ypos="base", trans=fade)
     m "[cho_name], what do you say... ready for your first game of the season?"
     call cho_main("To be honest, [cho_genie_name], I'm feeling quite nervous.","soft","base","sad","R")
     m "Don't worry. I believe you are ready..."
@@ -714,14 +714,14 @@ label hufflepuff_match:
     call her_main("Oh...", "normal", "wide", "worried", "shocked")
     call her_main("So should I announce it now?", "open", "worriedCl", "worried", "mid")
     call sna_main("Obviousl-","snape_12",ypos="head")
-    call cho_main("{size=+10}YES!{/size}", "scream", "angry", "angry", "L", trans="vpunch")
+    call cho_main("{size=+10}YES!{/size}", "scream", "angry", "angry", "L", trans=vpunch)
     call her_main("", "normal", "base", "worried", "mid")
-    call cho_main("{size=+6}WHAT ARE YOU EVEN WAITING FOR?{/size}", "scream", "angry", "raised", "L", trans="hpunch")
+    call cho_main("{size=+6}WHAT ARE YOU EVEN WAITING FOR?{/size}", "scream", "angry", "raised", "L", trans=hpunch)
     call cho_main("", "upset", "angry", "angry", "down")
-    call her_main("Don’t scream at me like that, bitch!", "scream", "base", "angry", "mid", trans="hpunch")
+    call her_main("Don’t scream at me like that, bitch!", "scream", "base", "angry", "mid", trans=hpunch)
     call cho_main("", "angry", "shocked", "angry", "L")
     call her_main("", "normal", "base", "angry", "mid")
-    call cho_main("{size=+6}WHAT DID YOU JUST CALL ME?!!!{/size}", "scream", "shocked", "angry", "L", trans="vpunch")
+    call cho_main("{size=+6}WHAT DID YOU JUST CALL ME?!!!{/size}", "scream", "shocked", "angry", "L", trans=vpunch)
     call cho_main("", "angry", "shocked", "angry", "L")
     call her_main("Everyone, Ravenclaw wins!", "grin", "happy", "base", "mid_soft")
     call her_main("Cho Chang managed to catch it, the snitch that is...", "smile", "happyCl", "base", "mid")
@@ -811,7 +811,7 @@ label hufflepuff_match_return:
     call cho_walk("desk", "base", action="enter")
 
     $ renpy.sound.play("sounds/punch01.mp3")
-    call cho_main("We beat Hufflepuff!!!","smile","angry","base","mid", ypos="base", trans="hpunch")
+    call cho_main("We beat Hufflepuff!!!","smile","angry","base","mid", ypos="base", trans=hpunch)
     $ renpy.sound.play("sounds/MaleGasp.mp3")
     g4 "{size=+10}IT WASN'T ME!{/size}"
     m "..........."

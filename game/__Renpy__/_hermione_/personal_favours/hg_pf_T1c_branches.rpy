@@ -187,7 +187,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
     # Start Jerking Off.
     hide screen bld1
     hide screen blktone
-    call her_chibi_scene("grope_tits_jerk_off", trans="fade")
+    call her_chibi_scene("grope_tits_jerk_off", trans=fade)
 
     if hg_jerkoff.trigger == False:
         $ achievement.unlock("busted")
@@ -222,7 +222,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
             g4 "Don't you dare to leave me in this state, [hermione_name]!"
 
             call set_her_action("none","update")
-            call her_chibi_scene("reset","desk","base", trans="fade")
+            call her_chibi_scene("reset","desk","base", trans=fade)
 
             call her_main("I am not setting a foot into your office ever again, [genie_name]!", "angry", "squint", "base", "mid", cheeks="blush", xpos="mid", ypos="base")
 
@@ -250,7 +250,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
 
             call her_main("Ew! [genie_name]!", "angry", "squint", "base", "mid", cheeks="blush")
 
-            call her_chibi_scene("reset","desk","base", trans="fade")
+            call her_chibi_scene("reset","desk","base", trans=fade)
 
             call her_main("I'm leaving!", "angry", "squint", "base", "mid", cheeks="blush")
 
@@ -374,7 +374,7 @@ label hg_pf_admire_breasts_T3_masturbate:
     #Start Jerking Off.
     hide screen bld1
     hide screen blktone
-    call her_chibi_scene("grope_tits_jerk_off", trans="fade")
+    call her_chibi_scene("grope_tits_jerk_off", trans=fade)
     call ctc
 
     call her_main("[genie_name], I didn't agree to this...", "shock", "worriedCl", "worried", "mid")
@@ -626,7 +626,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
     # Start Jerking off.
     hide screen bld1
     hide screen blktone
-    call her_chibi_scene("grope_tits_jerk_off", trans="fade")
+    call her_chibi_scene("grope_tits_jerk_off", trans=fade)
     call ctc
 
     if her_whoring < 17:

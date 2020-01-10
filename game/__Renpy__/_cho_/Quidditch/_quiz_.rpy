@@ -54,7 +54,7 @@ screen swear_bubble(type):
 ### Quidditch Quiz ###
 
 label cho_quiz:
-    call cho_main(xpos="mid",ypos="base",trans="fade")
+    call cho_main(xpos="mid",ypos="base",trans=fade)
 
     $ cho_quiz.correct_answers = 0
     if cho_quiz.checkpoint:
@@ -88,7 +88,7 @@ label cho_quiz:
         m "Great!"
         call cho_main("And longer!","smile","narrow","base","mid")
         m "Longer?"
-        call cho_main("And harder!","angry","narrow","angry","mid",trans="hpunch")
+        call cho_main("And harder!","angry","narrow","angry","mid",trans=hpunch)
         m "(Oh my...)"
         call cho_main("But...","soft","closed","base","mid")
         m "Yes?"
@@ -104,7 +104,7 @@ label cho_quiz:
         call cho_main("Well, how do I know that you actually know anything about the game?","open","base","base","mid")
         call cho_main("I mean...{w} I never really saw you showing too much interest before...","soft","narrow","base","mid")
         m "About what?"
-        call cho_main("Quidditch!","angry","closed","angry","mid",trans="hpunch")
+        call cho_main("Quidditch!","angry","closed","angry","mid",trans=hpunch)
         g9 "Ah, yes,... Quidditch.{w} It's like the Wizards version of Basketball, right?"
         call cho_main("Basketball?{w} Is that the muggle sport nobody cares about?","annoyed","narrow","raised","mid")
         g4 "Nobody cares?{w} What are you...{w} Haven't you seen \"Space Jam\"?"

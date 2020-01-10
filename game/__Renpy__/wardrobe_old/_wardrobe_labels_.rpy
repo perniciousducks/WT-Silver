@@ -45,9 +45,9 @@ label reset_wardrobe_vars:
 label return_to_wardrobe:
     if not hide_transitions:
         if active_girl == "luna":
-            call lun_main(eye="base", mouth='base',xpos="wardrobe",ypos="base",trans="fade")
+            call lun_main(eye="base", mouth='base',xpos="wardrobe",ypos="base",trans=fade)
         if active_girl == "susan":
-            call sus_main(face="happy",xpos="wardrobe",ypos="base",trans="fade")
+            call sus_main(face="happy",xpos="wardrobe",ypos="base",trans=fade)
 
         $ hide_transitions = True
         call screen wardrobe_old

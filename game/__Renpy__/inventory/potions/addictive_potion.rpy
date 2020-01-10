@@ -123,7 +123,7 @@ label hg_pp_cumaddict_intro:
 
     call her_walk(action="enter", xpos="mid", ypos="base")
     pause.2
-    call her_main("What the hell did you do to me?", "scream", "worriedCl", "worried", "mid", xpos="mid", ypos="base", trans="hpunch")
+    call her_main("What the hell did you do to me?", "scream", "worriedCl", "worried", "mid", xpos="mid", ypos="base", trans=hpunch)
     m "Whatever are you talking about, [hermione_name]?"
     call her_main("Ughh, it doesn't matter, just let me suck it.", "annoyed", "base", "worried", "R")
     m "Why on earth would you want to do that? You're a top student, that doesn't sound appropriate."
@@ -423,7 +423,7 @@ label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the 
     call her_walk(action="enter", xpos="mid", ypos="base")
     pause.2
 
-    call her_main("Take off your pants! No questions!", "scream", "worriedCl", "worried", "mid", xpos="mid", ypos="base", trans="hpunch")
+    call her_main("Take off your pants! No questions!", "scream", "worriedCl", "worried", "mid", xpos="mid", ypos="base", trans=hpunch)
     m "Hold on a minute, what are you-....{w=0.5}{nw}"
     call her_main("Shut it, just let me suck it.", "annoyed", "base", "worried", "R")
     m "...."

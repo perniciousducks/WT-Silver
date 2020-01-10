@@ -289,7 +289,7 @@ label cho_quiz:
         m "(Perhaps it might be worth trying to learn a bit more about Quidditch before I ruin this whole thing...)"
         g9 "Oh, well... look at the time!"
         call cho_main("What?", "open", "shocked", "raised", "mid")
-        g9 "You’ve made me go about basketball for such a long time so we’re already at the end of today's session."
+        g9 "You’ve made me go on about basketball for such a long time so we’re already at the end of today's session."
         call cho_main("But we didn’t even get to any tutoring...", "annoyed", "narrow", "base", "mid")
         m "We’ll get there, don’t you worry... next time..."
         call cho_main("...{w=0.4}Fine.", "pout", "base", "base", "mid")

@@ -158,11 +158,6 @@ style say_label:
     xalign 0.5
     yalign 0.5
 
-# TODO Remove temporary styles day_text/night_text
-#style day_text is day_button_text
-
-#style night_text is night_button_text
-
 # Day/night button styles
 style day_button:
     background "#ac8d5ae6"

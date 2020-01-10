@@ -45,14 +45,14 @@ label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
         else:
             $ astoria_ypos = int(ypos)
 
-    if face != None:
-        if mouth == None:
+    if face:
+        if not mouth:
             call set_ast_face(mouth = face)
-        if eyes == None:
+        if not eyes:
             call set_ast_face(eyes = face)
-        if eyebrows == None:
+        if not eyebrows:
             call set_ast_face(eyebrows = face)
-        if pupils == None:
+        if not pupils:
             call set_ast_face(pupils = face)
 
     if animation != False:
@@ -66,9 +66,10 @@ label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
         show screen astoria_main()
     show screen bld1
 
-    call transition(trans, True)
+    if trans:
+        with trans
 
-    if text != "":
+    if text:
         $ renpy.say(ast, text)
 
     if use_astoria_head:
@@ -113,7 +114,10 @@ label end_astoria_event:
 screen astoria_main():
     tag astoria_main
     zorder astoria_zorder
+    default astoria_img = astoria.get_image()
     if astoria_animation != None:
-        add astoria.get_image() xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio) at astoria_animation
+        add astoria_img xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio) at astoria_animation
     else:
-        add astoria.get_image() xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)
+        add astoria_img xpos astoria_xpos ypos astoria_ypos xzoom astoria_flip zoom (1.0/astoria_scaleratio)
+    
+    on ("show", "replace") action Function(apply_doll_transition, astoria, "astoria_main", "astoria_img", use_astoria_head)

@@ -62,7 +62,9 @@ label genie_house_elf:
     nar "Snape says, pulling his wand out, waving it."
 
     call sna_main("Revelio!","snape_01", xpos="base", ypos="base")
-    call sna_main(remove=True)
+    hide screen snape_main
+    hide screen bld1
+    pause 0.1
 
     nar "After a flash of light and a small pop a house elf appears in the corner of the room."
 
@@ -93,7 +95,10 @@ label genie_house_elf:
     m "I thought I had some sort of magic self cleaning desk..."
 
     nar "The genie said sheepishly."
-    call sna_main(remove=True)
+    
+    hide screen snape_main
+    hide screen bld1
+    pause 0.1
 
     call helf_main("No sir...")
 

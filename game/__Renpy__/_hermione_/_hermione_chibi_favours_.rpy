@@ -96,8 +96,8 @@ label her_chibi_scene(action="reset", xpos="mid", ypos="base", trans=None):
             $ uni_sperm = True
             $ u_sperm = "characters/hermione/face/auto_08.png"
 
-    if trans != None:
-        call transition(trans)
+    if trans:
+        with trans
 
     return
 

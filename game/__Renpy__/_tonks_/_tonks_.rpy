@@ -87,19 +87,17 @@ label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, h
         tonks.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
         #tonks_class.special(emote=emote)
 
-    if not renpy.get_screen("wardrobe_menu"):
-        show screen tonks_main()
-    show screen bld1
-
-    call transition(trans, True)
-
     # Hair transition, performs only when applying new colour
     if target_color != None and target_color != tonks.get_equipped("hair").color:
         $ tonks.get_equipped("hair").color = target_color
         $ tonks.rebuild()
-        if not renpy.get_screen("wardrobe_menu"):
-            show screen tonks_main()
-        call transition("d3", False)
+
+    if not renpy.get_screen("wardrobe_menu"):
+        show screen tonks_main()
+    show screen bld1
+
+    if trans:
+        with trans
 
     if text:
         $ renpy.say(ton, text)
@@ -170,7 +168,10 @@ label end_tonks_event:
 screen tonks_main():
     tag tonks_main
     zorder tonks_zorder
+    default tonks_img = tonks.get_image()
     if tonks_animation != None:
-        add tonks.get_image() xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) at tonks_animation
+        add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio) at tonks_animation
     else:
-        add tonks.get_image() xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+        add tonks_img xpos tonks_xpos ypos tonks_ypos xzoom tonks_flip zoom (1.0/tonks_scaleratio)
+
+    on ("show", "replace") action Function(apply_doll_transition, tonks, "tonks_main", "tonks_img", use_tonks_head)

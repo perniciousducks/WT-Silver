@@ -73,7 +73,8 @@ label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
             show screen hermione_main()
     show screen bld1
 
-    call transition(trans, True)
+    if trans:
+        with trans
 
     if text:
         $ renpy.say(her, text)
@@ -102,9 +103,9 @@ label her_kneel(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=No
 
     show screen bld1 #Should be active anyways.
 
-    call transition(trans, True)
+    if trans:
+        with trans
 
-    #Text
     if text:
         $ renpy.say(her, text)
 
@@ -135,7 +136,10 @@ label end_her_event:
 screen hermione_main():
     tag hermione_main
     zorder hermione_zorder
+    default hermione_img = hermione.get_image()
     if hermione_animation != None:
-        add hermione.get_image() xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio) at hermione_animation
+        add hermione_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio) at hermione_animation
     else:
-        add hermione.get_image() xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
+        add hermione_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
+
+    on ("show", "replace") action Function(apply_doll_transition, hermione, "hermione_main", "hermione_img", use_hermione_head)

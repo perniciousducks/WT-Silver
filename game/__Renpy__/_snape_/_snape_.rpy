@@ -1,18 +1,11 @@
 
-
-label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, remove=False, wand=False):
-    hide screen snape_main
+label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, wand=False):
 
     #Flip
     if flip == False:
         $ snape_flip = 1 #Default
     if flip == True:
         $ snape_flip = -1
-
-    if remove == True:
-        hide screen bld1
-        pause 0.1
-        return
 
     #Positioning
     if xpos != None:
@@ -49,21 +42,21 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, r
         else:
             $ snape_ypos = int(ypos)
 
+    $ old_s_sprite = s_sprite
     if face != "":
         $ s_sprite = "characters/snape/main/"+str(face)+".png"
 
-    show screen snape_main(wand=wand)
+    if not renpy.get_screen("snape_main"):
+        $ old_s_sprite = s_sprite # Forget old sprite if screen is currently hidden
+
+    show screen snape_main(old_s_sprite, s_sprite, wand)
     show screen bld1
 
-    call transition(trans, True)
+    if trans:
+        with trans
 
-    if text != "":
-        if "[hermione_name]" in text or "[genie_name]" in text:
-            if "[genie_name]" in text:
-                $ text = text.replace("[genie_name]",genie_name)
-            if "[hermione_name]" in text:
-                $ text = text.replace("[hermione_name]",hermione_name)
-        sna "[text]"
+    if text:
+        $ renpy.say(sna, text)
 
     if use_snape_head:
         hide screen snape_main
@@ -77,16 +70,15 @@ label update_snape:
     return
 
 
-### SNAPE FULL
-screen snape_main(wand=False):
+screen snape_main(old_sprite=s_sprite, new_sprite=s_sprite, wand=False):
     tag big_snape
+    zorder snape_zorder
 
-    add s_sprite xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
+    add doll_transition(old_sprite, new_sprite):
+        xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
 
     if wand:
         add "characters/snape/main/wand.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)
-
-    zorder snape_zorder
 
 screen snape_picture_frame():
     add "characters/snape/main/picture_frame.png" xpos snape_xpos ypos snape_ypos xzoom snape_flip zoom (1.0/snape_scaleratio)

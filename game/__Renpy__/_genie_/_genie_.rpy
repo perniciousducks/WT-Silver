@@ -2,8 +2,7 @@
 
 ### Genie ###
 
-label gen_main(text="", face=None, xpos=None, ypos=None, flip=True, trans=None):
-    hide screen genie_main
+label gen_main(text="", face=None, base=None, xpos=None, ypos=None, flip=True, trans=None):
 
     #Flip
     if flip == False:
@@ -50,15 +49,19 @@ label gen_main(text="", face=None, xpos=None, ypos=None, flip=True, trans=None):
         if xpos in ["wardrobe"]:
             $ genie_zorder = 5
 
-    if face != None:
-        $ genie_face = "characters/genie/face/"+str(face)+".png"
+    if face:
+        $ genie_face = "characters/genie/face/{}.png".format(face)
+
+    #TODO Use base parameter instead of setting genie_base in event scripts
+    if base:
+        $ genie_base  = "characters/genie/base/{}.png".format(base)
 
     show screen genie_main
     show screen bld1
 
-    call transition(trans, True)
+    with trans
 
-    if text != "":
+    if text:
         $ renpy.say(gen, text)
 
     if use_genie_head:

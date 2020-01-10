@@ -3,7 +3,6 @@
 ### Luna Lovegood ###
 
 label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
-    hide screen luna_main
 
     #Flip
     if flip == False:
@@ -71,9 +70,9 @@ label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
     show screen luna_main
     show screen bld1
 
-    call transition(trans, True)
+    with trans
 
-    if text != "":
+    if text:
         $ renpy.say(lun, text)
 
     if use_luna_head:

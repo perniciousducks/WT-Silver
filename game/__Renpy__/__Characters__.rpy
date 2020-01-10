@@ -15,13 +15,13 @@ label helf_main(text="", trans=None, remove=False):
     show screen house_elf
     show screen bld1
 
-    call transition(trans, True)
+    with trans
 
     helf "[text]"
 
     return
 
-#Narrator
+# Narrator (not the same as 'nar' character)
 label nar(text="",action=""):
 
     if action != "end": #Narration ended, blktone was already active.
@@ -37,44 +37,13 @@ label nar(text="",action=""):
 
     return
 
-#Transitions
+# Characters
 init python:
-    def dynamic_transition(trans, immediate):
-        """Apply a transition normally or immediately (at the same time as next interaction)."""
-        try:
-            # Assume `trans` refers to an existing transition, rely on exception for fallback
-            x = globals()[trans]
-            if immediate:
-                renpy.with_statement({ "screens": x })
-            else:
-                renpy.with_statement(x)
-        except:
-            renpy.with_statement(None) # Fallback
-
-label transition(trans=None, immediate=False):
-    if trans != None:
-        if trans in ["None", "none", "skip"]:
-            return # Skip transition
-        # Note: runs regardless of hide_transitions setting
-        $ dynamic_transition(trans, immediate)
-    elif not hide_transitions:
-        # Default transition
-        $ dynamic_transition("d3", immediate)
-    return
-    
-define character.cho = Character("cho_name", dynamic=True)
-
-init python:
-    ### Characters ###
-    # Name has to be left empty "" otherwise quickmenu will be shown
-    centered = Character(None, what_style="centered_text", window_style="centered_window")
-    vcentered = Character(None, what_style="centered_vtext", window_style="centered_window")
-
-    #Genie
+    # Genie
     gen = Character('Genie')
     m = Character("", show_side_image=Image("characters/genie/mage.png", xpos=20))
-    g = Character("", show_side_image=Image("characters/genie/mage2.png", xpos=20))
-    g2 = Character("", show_side_image=Image("characters/genie/mage3.png", xpos=20))
+    g2 = Character("", show_side_image=Image("characters/genie/mage2.png", xpos=20))
+    g3 = Character("", show_side_image=Image("characters/genie/mage3.png", xpos=20))
     g4 = Character("", show_side_image=Image("characters/genie/mage4.png", xpos=20))
     g5 = Character("", show_side_image=Image("characters/genie/mage5.png", xpos=20))
     g6 = Character("", show_side_image=Image("characters/genie/mage6.png", xpos=20))
@@ -88,35 +57,35 @@ init python:
     g14 = Character("", show_side_image=Image("characters/genie/mage14.png", xpos=20))
     g15 = Character("", show_side_image=Image("characters/genie/mage15.png", xpos=20))
 
-    #Dumbledore
+    # Dumbledore
     dum_ = [""]
     for i in xrange(1,6):
         dum_.append("")
         dum_[i] = Character("Dumbledore", show_side_image=Image("characters/misc/dumbledore/dum_"+str(i)+".png", xpos=20))
 
-    #Santa
+    # Santa
     san_ = [""]
     for i in xrange(1,7):
         san_.append("")
         san_[i] = Character("Santa", show_side_image=Image("characters/misc/santa/santa_"+str(i)+".png", xpos=20))
 
-    ### STUDENTS ###
+    # Students
     her = Character('[hermione_name]')
-    lun = Character('Luna')
-
-    sus = Character('Susan')
+    lun = Character('[lun_name]')
+    cho = Character('[cho_name]')
+    sus = Character('[susan_name]')
     ast = Character('[astoria_name]')
     twi = Character('Fred and George', show_side_image=Image("characters/misc/weasley_twins/base_01.png", xalign=1.0))
     fre = Character('Fred', show_side_image=Image("characters/misc/weasley_twins/fred_01.png", xalign=1.0))
     ger = Character('George', show_side_image=Image("characters/misc/weasley_twins/george_01.png", xalign=1.0))
 
-    ### TEACHERS ###
+    # Teachers
     sna = Character('Severus Snape')
     ton = Character('[tonks_name]')
     spo = Character('Professor Sprout')
     hoo = Character('Madam Hooch')
 
-    ### Other Characters ###
+    # Other characters
     hat = Character('Sorting Hat', show_side_image=Image("characters/misc/hat/hat.png", xalign=1.0))
     helf = Character("House-Elf")
     nar = Character('Narrator', show_side_image=Image("characters/misc/dumbledore/dum_narritor.png"))
@@ -133,8 +102,8 @@ init python:
     faw = Character('Fawkes', color="#f21111")
 
     fem = Character('Female Student')
-    mal = Character('Male Student # 1')
-    mal2 = Character('Male Student # 2')
+    mal = Character('Male Student')
+    mal2 = Character('Another Male Student')
     sly1 = Character('Slytherin student')
     sly2 = Character('Another Slytherin student')
     qcr = Character('Quidditch Crowd')

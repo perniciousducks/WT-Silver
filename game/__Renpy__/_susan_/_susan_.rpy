@@ -3,7 +3,6 @@
 ### Susan Bones ###
 
 label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None):
-    hide screen susan_main
 
     #Flip
     if flip == False:
@@ -71,9 +70,9 @@ label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
     show screen susan_main
     show screen bld1
 
-    call transition(trans, True)
+    with trans
 
-    if text != "":
+    if text:
         $ renpy.say(sus, text)
 
     if use_susan_head:

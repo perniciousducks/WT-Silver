@@ -793,7 +793,7 @@ label ball_ending_E2:
         call ctc
 
         call blkfade
-        call cg_scene("102", trans="skip")
+        call cg_scene("102")
         g4 "{size=+5}What the...!? Why did you stop?!{/size}"
         g4 "{size=+5}What the hell are you doing--{/size}"
         call hide_blkfade
@@ -1565,7 +1565,7 @@ label ball_ending_E2:
 
         call play_sound("spit")
         show screen white
-        call cg_scene("132", trans="skip")
+        call cg_scene("132")
         pause.2
         hide screen white
         with hpunch
@@ -1621,7 +1621,7 @@ label ball_ending_E2:
 
         call play_sound("spit")
         show screen white
-        call cg_scene("139", trans="skip")
+        call cg_scene("139")
         pause.2
         hide screen white
         with hpunch
@@ -1634,7 +1634,7 @@ label ball_ending_E2:
 
         call play_sound("spit")
         show screen white
-        call cg_scene("141", trans="skip")
+        call cg_scene("141")
         pause.2
         hide screen white
         with hpunch
@@ -1651,7 +1651,7 @@ label ball_ending_E2:
 
         call play_sound("spit")
         show screen white
-        call cg_scene("141", trans="skip")
+        call cg_scene("141")
         pause.2
         hide screen white
         with hpunch
@@ -1788,7 +1788,7 @@ label ball_ending_E2:
 
         call play_sound("spit")
         show screen white
-        call cg_scene("141", trans="skip")
+        call cg_scene("141")
         pause.2
         hide screen white
         with hpunch

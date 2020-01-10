@@ -47,14 +47,14 @@ label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
         else:
             $ cho_ypos = int(ypos)
 
-    if face != None:
-        if mouth == None:
+    if face:
+        if not mouth:
             call set_cho_face(mouth = face)
-        if eyes == None:
+        if not eyes:
             call set_cho_face(eyes = face)
-        if eyebrows == None:
+        if not eyebrows:
             call set_cho_face(eyebrows = face)
-        if pupils == None:
+        if not pupils:
             call set_cho_face(pupils = face)
 
     if animation != False:
@@ -68,17 +68,16 @@ label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
         show screen cho_main()
     show screen bld1
 
-    call transition(trans, True)
+    if trans:
+        with trans
 
     if text:
-        $ renpy.say(character.cho, text)
+        $ renpy.say(cho, text)
 
     if use_cho_head:
         hide screen cho_main
 
     return
-
-
 
 label update_cho:
 
@@ -89,8 +88,6 @@ label update_cho:
     hide screen cho_cloth_pile
 
     return
-
-
 
 label end_cho_event:
     call cho_chibi("hide")
@@ -109,7 +106,11 @@ label end_cho_event:
 screen cho_main():
     tag cho_main
     zorder cho_zorder
+    default cho_img = cho.get_image()
     if cho_animation != None:
-        add cho.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) at cho_animation
+        add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio) at cho_animation
     else:
-        add cho.get_image() xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+        add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
+    
+    on ("show", "replace") action Function(apply_doll_transition, cho, "cho_main", "cho_img", use_cho_head)
+

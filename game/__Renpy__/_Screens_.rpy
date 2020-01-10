@@ -66,7 +66,7 @@ label cg_scene(layer=None, folder=None, trans=None):
     if trans == None:
         with d5 # Default
     else:
-        call transition(trans)
+        with trans
 
     return
 

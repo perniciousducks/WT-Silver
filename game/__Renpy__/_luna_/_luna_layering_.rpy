@@ -1,108 +1,75 @@
 
-
-# Luna Screens.
-
 screen luna_main():
     tag luna_main
     zorder luna_zorder
+    
+    fixed:
+        at transform:
+            xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
 
-    ### BASE IMAGE
-    add luna_base xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
+        add luna_base
 
-    add "characters/luna/body/arms/left_"+str(luna_l_arm)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the left arm
-    add luna_breasts xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
-    add "characters/luna/body/arms/right_"+str(luna_r_arm)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the right arm
+        add "characters/luna/body/arms/left_"+str(luna_l_arm)+".png"
+        add luna_breasts
+        add "characters/luna/body/arms/right_"+str(luna_r_arm)+".png"
 
-    ### FACE
-    add luna_hair xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the hair base
+        add luna_hair
+        add luna_mouth
+        add "characters/luna/face/eyes/_white_.png"
+        add luna_pupil
+        add luna_eye
+        add luna_eyebrow
+        add luna_cheeks
+        add luna_tears
+        add luna_hair_shadow
 
-    add luna_mouth xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the mouth
-    add "characters/luna/face/eyes/_white_.png"  xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
-    add luna_pupil xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the pupil
-    add luna_eye xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the eye outline
-    add luna_eyebrow xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the eyebrow
-    #add luna_cheeks xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add her blush to base
-    add luna_tears xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
-    add luna_hair_shadow xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio) #add the hair overlayer
+        if luna_wear_cum_under:
+            add "characters/luna/body/cum/cum_"+str(luna_cum)+".png"
 
-    if luna_wear_cum_under: #Luna cum but under clothes
-        add "characters/luna/body/cum/cum_"+str(luna_cum)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)# Add the top
-
-    ### CLOTHING LAYERS ###
-
-    #Uniform
-    if not luna_wear_outfit:
-        use luna_uniform
-
-    #Outfit
-    if luna_wear_outfit:
-        if luna_wear_top:
-            use luna_outfit
+        if luna_wear_outfit and luna_wear_top:
+            # Outfit
+            for i in luna_outfit_GLBL.getOutfitLayers():
+                add "characters/luna/clothes/"+i+".png" alpha lun_outfit_transp
         else:
-            use luna_uniform
+            # Clothes
+            if luna_wear_bra and not luna_wear_top:
+                add luna_bra alpha lun_bra_transp
+            if luna_wear_panties:
+                add luna_panties alpha lun_panties_transp
+            if luna_wear_onepiece and not luna_wear_top and not luna_wear_bottom:
+                add luna_onepiece alpha lun_onepiece_transp
+            if luna_wear_stockings:
+                add luna_stockings alpha lun_stockings_transp
+            if luna_wear_bottom:
+                add luna_bottom alpha lun_bottom_transp
+            if luna_wear_top:
+                add luna_top alpha lun_top_transp
+            if luna_wear_neckwear:
+                add luna_neckwear alpha lun_top_transp
 
-    ### ACCESORIES LAYERS ###
+        # Accessories
+        if luna_wear_hat:
+            add luna_hat
+        if luna_wear_glasses:
+            add luna_glasses
+        if luna_wear_ears:
+            add luna_ears
+        if luna_wear_accs:
+            add luna_accs
 
-    if luna_wear_hat:
-        add luna_hat xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
-    if luna_wear_glasses:
-        add luna_glasses xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
-    if luna_wear_ears:
-        add luna_ears xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
-    if luna_wear_accs:
-        add luna_accs xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
+        add "characters/luna/body/arms/left_"+str(luna_l_arm)+"_2.png" # Left arm
+        add "characters/luna/body/arms/right_"+str(luna_r_arm)+"_2.png" # Right arm
 
+        if luna_wear_cum:
+            add "characters/luna/body/cum/cum_"+str(luna_cum)+".png"
 
-    ### ARM OVERLAYS
-    add "characters/luna/body/arms/left_"+str(luna_l_arm)+"_2.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the left arm
-    add "characters/luna/body/arms/right_"+str(luna_r_arm)+"_2.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the right arm
-
-    if luna_wear_cum:
-        add "characters/luna/body/cum/cum_"+str(luna_cum)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
-
-    if genie_base == "characters/genie/base/hard.png": #add genies dick for licking/sucking
+    # Extra stuff
+    if genie_base == "characters/genie/base/hard.png":
+        # Genie's dick
         add "characters/genie/dick_1.png" xpos genie_xpos ypos genie_ypos
-    if genie_base == "characters/genie/base/hard.png" and not luna_wear_bottom and not luna_wear_panties: #add leg
-        add "characters/luna/body/legs/right_1.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)#Add the right leg cover for the dick. What's a thigh job called again?
-
-    if luna_wear_cum and genie_base == "characters/genie/base/hard.png":
-        add "characters/luna/body/arms/right_4_2.png" xpos 390 ypos 0 xzoom luna_flip zoom (1.0/luna_scaleratio)
-
-
-screen luna_uniform():
-    tag luna_main
-
-    ### CLOTHES
-    if luna_wear_bra and not luna_wear_top:
-        add luna_bra xpos luna_xpos ypos luna_ypos alpha lun_bra_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
-    if luna_wear_panties:
-        add luna_panties xpos luna_xpos ypos luna_ypos alpha lun_panties_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
-
-    #One-Piece
-    if luna_wear_onepiece:
-        if luna_wear_top or luna_wear_bottom:
-            pass
-        else:
-            add luna_onepiece xpos luna_xpos ypos luna_ypos alpha lun_onepiece_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
-
-    if luna_wear_stockings:
-        add luna_stockings xpos luna_xpos ypos luna_ypos alpha lun_stockings_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
-    if luna_wear_bottom:
-        add luna_bottom xpos luna_xpos ypos luna_ypos alpha lun_bottom_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
-    if luna_wear_top:
-        add luna_top xpos luna_xpos ypos luna_ypos alpha lun_top_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
-    if luna_wear_neckwear:
-        add luna_neckwear xpos luna_xpos ypos luna_ypos alpha lun_top_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
-
-    ### ZORDER
-    zorder luna_zorder
-
-
-screen luna_outfit():
-    tag luna_main
-
-    for i in luna_outfit_GLBL.getOutfitLayers():
-        add "characters/luna/clothes/"+i+".png" xpos luna_xpos ypos luna_ypos alpha lun_outfit_transp xzoom luna_flip zoom (1.0/luna_scaleratio)
-
-    ### ZORDER
-    zorder luna_zorder
+        if not luna_wear_bottom and not luna_wear_panties:
+            # Add the right leg cover for the dick. What's a thigh job called again?
+            add "characters/luna/body/legs/right_1.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
+        if luna_wear_cum:
+            # Cumshot
+            add "characters/luna/body/arms/right_4_2.png" xpos 390 ypos 0 xzoom luna_flip zoom (1.0/luna_scaleratio)

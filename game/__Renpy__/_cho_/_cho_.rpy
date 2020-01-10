@@ -72,7 +72,7 @@ label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
         with trans
 
     if text:
-        $ renpy.say(cho, text)
+        $ renpy.say(character.cho, text)
 
     if use_cho_head:
         hide screen cho_main
@@ -113,4 +113,3 @@ screen cho_main():
         add cho_img xpos cho_xpos ypos cho_ypos xzoom cho_flip zoom (1.0/cho_scaleratio)
     
     on ("show", "replace") action Function(apply_doll_transition, cho, "cho_main", "cho_img", use_cho_head)
-

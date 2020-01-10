@@ -38,6 +38,9 @@ label nar(text="",action=""):
     return
 
 # Characters
+
+define character.cho = Character('[cho_name]') # Add to character store to avoid name conflict with Doll instance
+
 init python:
     # Genie
     gen = Character('Genie')
@@ -72,7 +75,6 @@ init python:
     # Students
     her = Character('[hermione_name]')
     lun = Character('[lun_name]')
-    cho = Character('[cho_name]')
     sus = Character('[susan_name]')
     ast = Character('[astoria_name]')
     twi = Character('Fred and George', show_side_image=Image("characters/misc/weasley_twins/base_01.png", xalign=1.0))

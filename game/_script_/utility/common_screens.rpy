@@ -47,3 +47,30 @@ screen bld2():
     tag bld2
     add im.Flip("interface/bld.png", vertical=True)
     zorder 4
+
+screen notes():
+    add "notes" xpos 320+140 ypos 330
+    zorder 1
+
+screen gift():
+    zorder 6
+    #add "interface/frames/"+str(interface_color)+"/reward_background.png" xalign 0.5 yalign 0.547
+    add the_gift align (0.5, 0.4) zoom get_zoom(the_gift, 320,320)
+
+screen clothing_unlock():
+    zorder 6
+    add "interface/panels/"+str(interface_color)+"/clothing_panel_B.png" at Position(xalign=0.5, ypos=100)
+    add mannequin_preview xalign 0.47 ypos 52 zoom 0.6/scaleratio
+
+#TODO Fix final event credits and then remove these screens
+screen credits_chibi(): # ONE CHIBI
+    zorder 5
+    add dermo at Position(xpos=420, ypos=140)
+
+screen credits_chibi2(): # TWO CHIBIs
+    zorder 5
+    add dermo at Position(xpos=290, ypos=140)
+
+screen uni_cr(): # UNIVERSAL CREDITS CHIBI
+    zorder 5
+    add dermo at Position(xpos=xder+140, ypos=yder)

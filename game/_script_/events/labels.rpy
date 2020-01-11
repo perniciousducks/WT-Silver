@@ -110,7 +110,73 @@ label increase_house_points(house, points):
         ">Slytherin has received [points] house points today!"
     hide screen notes
     return
-    
+
+label teleport(position=None,effect=True,poof_label=None):
+    if position == "genie":
+        $ teleport_xpos = genie_chibi.pos[0]+75
+        $ teleport_ypos = genie_chibi.pos[1]-15
+        $ teleport_zorder = 3
+    elif position == "hermione":
+        $ teleport_xpos = hermione_chibi.pos[0]+45
+        $ teleport_ypos = hermione_chibi.pos[1]-80
+        $ teleport_zorder = 3
+    elif position == "cho":
+        $ teleport_xpos = cho_chibi.pos[0]+45
+        $ teleport_ypos = cho_chibi.pos[1]-80
+        $ teleport_zorder = 3
+    elif position == "astoria":
+        $ teleport_xpos = astoria_chibi.pos[0]+45
+        $ teleport_ypos = astoria_chibi.pos[1]-80
+        $ teleport_zorder = 3
+    elif position == "desk":
+        $ teleport_xpos = 320
+        $ teleport_ypos = 160
+        $ teleport_zorder = 1
+        show screen desk
+    else:
+        $ teleport_xpos = position[0]
+        $ teleport_ypos = position[1]
+        $ teleport_zorder = 2
+
+    if effect == True:
+        $ renpy.play('sounds/magic4.ogg')
+        show screen whitefade
+        with d1
+
+        hide screen whitefade
+        with d1
+
+        show screen blkfade
+        with d1
+
+        hide screen blkfade
+        show screen heal_animation
+        with d3
+
+    #stop music fadeout 1
+
+    hide screen heal_animation
+    if poof_label != None:
+        $ renpy.call(poof_label)
+    show screen teleport_animation
+    with d5
+
+    hide screen teleport_animation
+    with d5
+
+    if effect == True:
+        pause 1
+
+    return
+
+screen teleport_animation():
+    add "teleport_ani" xalign 0.5 xpos teleport_xpos ypos teleport_ypos+60 zoom 0.5
+    zorder teleport_zorder
+
+screen heal_animation():
+    add "heal_ani" xalign 0.5 xpos teleport_xpos ypos teleport_ypos zoom 0.5
+    zorder teleport_zorder
+
 # Dummy labels. To prevent crashes. # TODO: Remove later.
 label update_her_uniform:
     $ hermione_wear_top=False

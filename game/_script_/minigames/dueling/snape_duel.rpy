@@ -471,7 +471,39 @@ screen hp_bar():
 
     use duel_buttons
 
+screen snape_defends(xx=0):
+    add "ch_sna defend" at Position(xpos=-90+140+xx, ypos=-5)
+    zorder 2
 
+transform damage_transform:
+    alpha 1.0
+    linear 1.5 yoffset -100 alpha 0.0
+
+screen duel_damage(value=0, attacking=True):
+    tag damage
+    frame:
+        style "empty"
+        at damage_transform
+        if attacking:
+            xpos 780
+            ypos 120
+        else:
+            xpos 450
+            ypos 120
+        add "images/dueling/damage/"+str(value)+".png"
+
+screen duel_heal(value=300, player=True):
+    tag damage
+    frame:
+        style "empty"
+        at damage_transform
+        if not player:
+            xpos 780
+            ypos 120
+        else:
+            xpos 450
+            ypos 120
+        add "images/dueling/damage/plus_"+str(value)+".png"
 
 ### SNAPE LOSES ###
 label snape_lost:

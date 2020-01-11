@@ -60,10 +60,10 @@ label studio(studio_char):
     call hide_characters
     
     python:
-        studio_eyebrows_list = system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyebrows/")
-        studio_eyes_list = system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyes/")
-        studio_mouth_list = system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/mouth/")
-        studio_pupils_list = system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/pupils/")
+        studio_eyebrows_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyebrows/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
+        studio_eyes_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/eyes/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
+        studio_mouth_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/mouth/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
+        studio_pupils_list = [x[:-4] for x in system.listdir(config.basedir+"/game/characters/"+active_girl+"/face/pupils/") if x.endswith(".png") and not "_mask" in x and not "_skin" in x]
     
     $ studio_bg_list = ["wall_day", "castle", "forest", "highlight", "versus", "main_room_day", "main_room_night", "corridor", "custom"]
     $ studio_bg_overlay_list = [None, "curtains", "card", "g_bottom", "g_left", "g_circular"]
@@ -79,7 +79,7 @@ label studio(studio_char):
     if studio_image_mouth > len(studio_mouth_list):
         $ studio_image_mouth = 0
     
-    $ char_active.expression(eyebrows=studio_eyebrows_list[studio_image_eyebrows][:-4], eyes=studio_eyes_list[studio_image_eyes][:-4], pupils=studio_pupils_list[studio_image_pupils][:-4], mouth=studio_mouth_list[studio_image_mouth][:-4])
+    $ char_active.set_face(eyebrows=studio_eyebrows_list[studio_image_eyebrows], eyes=studio_eyes_list[studio_image_eyes], pupils=studio_pupils_list[studio_image_pupils], mouth=studio_mouth_list[studio_image_mouth])
     
     $ studio_hide = False
     
@@ -102,11 +102,11 @@ label studio(studio_char):
         $ studio_hide = False
         $ char_active.equip(studio_outfit_saves.get(active_girl))
         hide screen studio
-        call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
+        #call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
         return
     elif _return == "cancel":
         $ char_active.equip(studio_outfit_saves.get(active_girl))
-        call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
+        #call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
         return
     elif _return[0] == "body":
         $ studio_outfit_saves.get(active_girl).save()
@@ -118,28 +118,28 @@ label studio(studio_char):
         else:
             $ studio_image_eyebrows -= 1
         $ studio_image_eyebrows = clamp(studio_image_eyebrows, 0, len(studio_eyebrows_list)-1)
-        $ char_active.expression(eyebrows=studio_eyebrows_list[studio_image_eyebrows][:-4])
+        $ char_active.set_face(eyebrows=studio_eyebrows_list[studio_image_eyebrows])
     elif _return[0] == "eyes":
         if _return[1] == "inc":
             $ studio_image_eyes += 1
         else:
             $ studio_image_eyes -= 1
         $ studio_image_eyes = clamp(studio_image_eyes, 0, len(studio_eyes_list)-1)
-        $ char_active.expression(eyes=studio_eyes_list[studio_image_eyes][:-4])
+        $ char_active.set_face(eyes=studio_eyes_list[studio_image_eyes])
     elif _return[0] == "pupils":
         if _return[1] == "inc":
             $ studio_image_pupils += 1
         else:
             $ studio_image_pupils -= 1
         $ studio_image_pupils = clamp(studio_image_pupils, 0, len(studio_pupils_list)-1)
-        $ char_active.expression(pupils=studio_pupils_list[studio_image_pupils][:-4])
+        $ char_active.set_face(pupils=studio_pupils_list[studio_image_pupils])
     elif _return[0] == "mouth":
         if _return[1] == "inc":
             $ studio_image_mouth += 1
         else:
             $ studio_image_mouth -= 1
         $ studio_image_mouth = clamp(studio_image_mouth, 0, len(studio_mouth_list)-1)
-        $ char_active.expression(mouth=studio_mouth_list[studio_image_mouth][:-4])
+        $ char_active.set_face(mouth=studio_mouth_list[studio_image_mouth])
     elif _return[0] == "bg":
         if _return[1] == "inc":
             $ studio_room_bg += 1
@@ -299,10 +299,10 @@ screen character_studio():
     if config.developer:
         vbox:
             xpos 50 yalign 0.9
-            text "Eyebrows: {size=-4}{color=#93c763}"+studio_eyebrows_list[studio_image_eyebrows][:-4]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
-            text "Eyes: {size=-4}{color=#93c763}"+studio_eyes_list[studio_image_eyes][:-4]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
-            text "Pupils: {size=-4}{color=#93c763}"+studio_pupils_list[studio_image_pupils][:-4]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
-            text "Mouth: {size=-4}{color=#93c763}"+studio_mouth_list[studio_image_mouth][:-4]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
+            text "Eyebrows: {size=-4}{color=#93c763}"+studio_eyebrows_list[studio_image_eyebrows]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
+            text "Eyes: {size=-4}{color=#93c763}"+studio_eyes_list[studio_image_eyes]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
+            text "Pupils: {size=-4}{color=#93c763}"+studio_pupils_list[studio_image_pupils]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
+            text "Mouth: {size=-4}{color=#93c763}"+studio_mouth_list[studio_image_mouth]+"{/color}{/size}" color "#fff" outlines [(1, "#000000", 0, 0)]
     
     frame:
         ypos 50
@@ -332,10 +332,6 @@ screen character_studio():
                         spacing 32
                         imagebutton idle image_arrow hover image_hover(image_arrow) action Return(["body", True])
                         imagebutton idle im.Flip(image_arrow, horizontal=True) hover image_hover(im.Flip(image_arrow, horizontal=True)) action Return(["body", False])
-                    hbox:
-                        spacing 32
-                        imagebutton idle image_arrow
-                        imagebutton idle im.Flip(image_arrow, horizontal=True)
                     
                 frame:
                     style "empty"

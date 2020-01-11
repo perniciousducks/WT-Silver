@@ -27,13 +27,13 @@ label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
 
         if face:
             if not mouth:
-                hermione.set_face(mouth=renpy.random.hermioneice(her_face["mouth"].get(face, None)))
+                hermione.set_face(mouth=renpy.random.choice(her_face["mouth"].get(face, None)))
             if not eyes:
-                hermione.set_face(eyes=renpy.random.hermioneice(her_face["eyes"].get(face, None)))
+                hermione.set_face(eyes=renpy.random.choice(her_face["eyes"].get(face, None)))
             if not eyebrows:
-                hermione.set_face(eyebrows=renpy.random.hermioneice(her_face["eyebrows"].get(face, None)))
+                hermione.set_face(eyebrows=renpy.random.choice(her_face["eyebrows"].get(face, None)))
             if not pupils:
-                hermione.set_face(pupils=renpy.random.hermioneice(her_face["pupils"].get(face, None)))
+                hermione.set_face(pupils=renpy.random.choice(her_face["pupils"].get(face, None)))
 
     if not renpy.get_screen("wardrobe_menu"):
         show screen hermione_main()

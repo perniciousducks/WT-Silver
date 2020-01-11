@@ -1,66 +1,42 @@
+define sprite_pos = {"x": {"base": 640, "default": 640, "mid": 300, "left": 200, "right": 400, "wardrobe": 540, "close": 540},
+                     "y": {"base": 0, "default": 0, "head": 200}}
+                     
+define ast_face = {"mouth": {"neutral": ["annoyed", "base"], "happy": ["smile", "grin"], "naughty": ["grin", "horny"], "horny": ["grin", "horny"], "annoyed": ["annoyed"], "disgusted": ["clench", "annoyed"], "angry": ["clench","angry"]},
+                   "eyes": {"neutral": ["base"], "happy": ["base"], "naughty": ["narrow", "base"], "horny": ["narrow", "base"], "annoyed": ["narrow"], "disgusted": ["narrow"], "angry": ["narrow", "base"]},
+                   "eyebrows": {"neutral": ["base"], "happy": ["base"], "naughty": ["base"], "horny": ["base"], "annoyed": ["worried"], "disgusted": ["base", "angry"], "angry": ["angry"]},
+                   "pupils": {"neutral": ["mid","L","R"], "happy": ["mid","L","R"], "naughty": ["mid","L","R","down"], "horny": ["mid","L","R","down"], "annoyed": ["mid","R"], "disgusted": ["down"], "angry": ["L"]}}
 
-
-### Astoria Greengrass ###
-
-label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=False, tears=False, emote=False, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
-
-    #Flip
-    if flip == False:
-        $ astoria_flip = 1 #Default
-    if flip == True:
-        $ astoria_flip = -1
-
-    #Positioning
-    if xpos != None:
-        if xpos in ["base","default"]:     # All the way to the right.
-            $ astoria_xpos = 640
-        elif xpos == "mid":                # Centered.
-            $ astoria_xpos = 300
-        elif xpos == "right":              # Bit more to the right.
-            $ astoria_xpos = 400
-        elif xpos in ["wardrobe","close"]:
-            $ astoria_xpos = 540
-        else:
-            $ astoria_xpos = int(xpos)
-
-    if ypos != None:
-        if ypos in ["base","default"]:
-            $ astoria_ypos = 0
-            $ astoria_scaleratio = 2
-            $ astoria_zorder = 5
-            $ use_astoria_head = False
-        elif ypos in ["head"]:
-            # Use ypos="head" to activate her head position.
-            # Use ypos="base" to disable it.
-            # Use ypos="200" or any other number to move her head up or down.
-            $ use_astoria_head = True
-            $ astoria_scaleratio = 2
-
-            if astoria_flip == -1: #Flipped
-                $ astoria_xpos = -80
-            else:
-                $ astoria_xpos = 650
-            $ astoria_ypos = 200
-            $ astoria_zorder = 8
-        else:
-            $ astoria_ypos = int(ypos)
-
-    if face:
-        if not mouth:
-            call set_ast_face(mouth = face)
-        if not eyes:
-            call set_ast_face(eyes = face)
-        if not eyebrows:
-            call set_ast_face(eyebrows = face)
-        if not pupils:
-            call set_ast_face(pupils = face)
-
-    if animation != False:
-        $ astoria_animation = animation
-
+label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=False, tears=False, extra=False, emote=False, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
     python:
+    
+        if flip != None:
+            astoria_flip = -1 if flip else 1
+            
+        if animation != False:
+            astoria_animation = animation
+        
+        if xpos:
+            astoria_xpos = int(sprite_pos["x"].get(xpos, xpos))
+
+        if ypos:
+            if ypos == "head":
+                use_astoria_head = True
+            elif ypos in ("base", "default"):
+                use_astoria_head = False
+                
+            astoria_ypos = int(sprite_pos["y"].get(ypos, ypos))
+            
         astoria.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
-        #astoria_class.special(emote=emote)
+
+        if face:
+            if not mouth:
+                astoria.set_face(mouth=renpy.random.choice(ast_face["mouth"].get(face, None)))
+            if not eyes:
+                astoria.set_face(eyes=renpy.random.choice(ast_face["eyes"].get(face, None)))
+            if not eyebrows:
+                astoria.set_face(eyebrows=renpy.random.choice(ast_face["eyebrows"].get(face, None)))
+            if not pupils:
+                astoria.set_face(pupils=renpy.random.choice(ast_face["pupils"].get(face, None)))
 
     if not renpy.get_screen("wardrobe_menu"):
         show screen astoria_main()
@@ -71,10 +47,9 @@ label ast_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
 
     if text:
         $ renpy.say(ast, text)
-
+        
     if use_astoria_head:
         hide screen astoria_main
-
     return
 
 label set_random_nicknames:
@@ -85,7 +60,7 @@ label set_random_nicknames:
         $ ast_tonks_name = renpy.random.choice(["Hag","Old Hag","Punk","Dyke","Lesbo"])
     if random_number in [3,5]:
         $ ton_astoria_name = renpy.random.choice(["Cutie","Kitty","Princess","Little girl","Honey"])
-
+        
     return
 
 label update_astoria:
@@ -95,7 +70,7 @@ label update_astoria:
     $ astoria_chibi.position(flip=False)
     $ astoria_flip = 1
     hide screen astoria_cloth_pile
-
+    
     return
 
 label end_astoria_event:
@@ -108,7 +83,12 @@ label end_astoria_event:
 
     $ active_girl = None
     $ astoria_busy = True
+    $ astoria.wear("all")
+    
+    $ renpy.stop_predict(astoria.get_image())
+    $ renpy.stop_predict("characters/astoria/face/*.png")
 
+    call music_block
     jump main_room
 
 screen astoria_main():

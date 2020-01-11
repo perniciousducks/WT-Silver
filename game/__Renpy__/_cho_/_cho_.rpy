@@ -1,68 +1,39 @@
-
-
-### Cho Chang ###
+define cho_face = {"mouth": {"neutral": ["base"], "happy": ["base", "smile"], "naughty": ["quiver","horny","soft"], "horny": ["quiver","horny","soft"], "annoyed": ["annoyed","pout"], "disgusted": ["angry","upset"], "angry": ["angry","upset"]},
+                   "eyes": {"neutral": ["base","base","closed"], "happy": ["base"], "naughty": ["base","narrow"], "horny": ["base","narrow"], "annoyed": ["base","closed","narrow"], "disgusted": ["base","narrow"], "angry": ["angry","narrow"]},
+                   "eyebrows": {"neutral": ["base"], "happy": ["base"], "naughty": ["base","raised"], "horny": ["base","raised"], "annoyed": ["base","angry"], "disgusted": ["base","raised","sad"], "angry": ["angry"]},
+                   "pupils": {"neutral": ["mid","L","R"], "happy": ["mid","L","R"], "naughty": ["mid","L","R","down","up"], "horny": ["mid","L","R","down","up"], "annoyed": ["mid","L","R","down","downR"], "disgusted": ["mid","down"], "angry": ["mid"]}}
 
 label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=False, tears=False, extra=False, emote=False, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
-
-    #Flip
-    if flip == False:
-        $ cho_flip = 1 #Default
-    if flip == True:
-        $ cho_flip = -1
-
-    #Positioning
-    if xpos != None:
-        if xpos in ["base","default"]:     # All the way to the right.
-            $ cho_xpos = 640
-        elif xpos == "left":
-            $ cho_xpos = 200
-        elif xpos == "mid":                # Centered.
-            $ cho_xpos = 300
-        elif xpos == "right":              # Bit more to the right.
-            $ cho_xpos = 400
-        elif xpos in ["wardrobe","close"]:
-            $ cho_xpos = 540
-        else:
-            $ cho_xpos = int(xpos)
-
-    if ypos != None:
-        if ypos in ["base","default"]:
-            $ cho_ypos = 0
-            $ cho_scaleratio = 2
-            $ cho_zorder = 5
-            $ use_cho_head = False
-        elif ypos in ["head"]:
-            # Use ypos="head" to activate her head position.
-            # Use ypos="base" to disable it.
-            # Use ypos="200" or any other number to move her head up or down.
-            $ use_cho_head = True
-            $ cho_scaleratio = 2
-
-            if cho_flip == -1: #Flipped
-                $ cho_xpos = -50
-            else:
-                $ cho_xpos = 660
-            $ cho_ypos = 200
-            $ cho_zorder = 8
-        else:
-            $ cho_ypos = int(ypos)
-
-    if face:
-        if not mouth:
-            call set_cho_face(mouth = face)
-        if not eyes:
-            call set_cho_face(eyes = face)
-        if not eyebrows:
-            call set_cho_face(eyebrows = face)
-        if not pupils:
-            call set_cho_face(pupils = face)
-
-    if animation != False:
-        $ cho_animation = animation
-
     python:
+    
+        if flip != None:
+            cho_flip = -1 if flip else 1
+            
+        if animation != False:
+            cho_animation = animation
+        
+        if xpos:
+            cho_xpos = int(sprite_pos["x"].get(xpos, xpos))
+
+        if ypos:
+            if ypos == "head":
+                use_cho_head = True
+            elif ypos in ("base", "default"):
+                use_cho_head = False
+                
+            cho_ypos = int(sprite_pos["y"].get(ypos, ypos))
+            
         cho.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
-        #cho_class.special(emote=emote)
+
+        if face:
+            if not mouth:
+                cho.set_face(mouth=renpy.random.choice(cho_face["mouth"].get(face, None)))
+            if not eyes:
+                cho.set_face(eyes=renpy.random.choice(cho_face["eyes"].get(face, None)))
+            if not eyebrows:
+                cho.set_face(eyebrows=renpy.random.choice(cho_face["eyebrows"].get(face, None)))
+            if not pupils:
+                cho.set_face(pupils=renpy.random.choice(cho_face["pupils"].get(face, None)))
 
     if not renpy.get_screen("wardrobe_menu"):
         show screen cho_main()
@@ -73,10 +44,9 @@ label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
 
     if text:
         $ renpy.say(character.cho, text)
-
+        
     if use_cho_head:
         hide screen cho_main
-
     return
 
 label update_cho:
@@ -99,6 +69,10 @@ label end_cho_event:
 
     $ active_girl = None
     $ cho_busy = True
+    $ cho.wear("all")
+    
+    $ renpy.stop_predict(cho.get_image())
+    $ renpy.stop_predict("characters/cho/face/*.png")
 
     call music_block
     jump main_room

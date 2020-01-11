@@ -50,19 +50,17 @@ transform blink:
         repeat
         
 transform sprite_blink(img):
-    alpha 0.0
-    img
-    linear 0.13 alpha 1.0
-    pause.05
-    linear 0.13 alpha 0.0
-    choice:
-        pause 5
     choice:
         pause 4
     choice:
         pause 3
     choice:
         pause 2
+    alpha 0.0
+    img
+    linear 0.13 alpha 1.0
+    pause.05
+    linear 0.13 alpha 0.0
     repeat
 
 transform pulse:

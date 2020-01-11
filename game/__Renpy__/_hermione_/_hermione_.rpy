@@ -1,76 +1,42 @@
-
-
-### HERMIONE GRANGER ###
+define her_face = {"mouth": {"neutral": ["annoyed","base"], "happy": ["smile","grin"], "naughty": ["grin","horny"], "horny": ["grin","horny"], "annoyed": ["annoyed"], "disgusted": ["clench","annoyed"], "angry": ["clench","angry"]},
+                   "eyes": {"neutral": ["base"], "happy": ["base"], "naughty": ["narrow","base"], "horny": ["narrow","base"], "annoyed": ["narrow"], "disgusted": ["narrow"], "angry": ["narrow","base"]},
+                   "eyebrows": {"neutral": ["base"], "happy": ["base"], "naughty": ["base"], "horny": ["base"], "annoyed": ["worried"], "disgusted": ["base", "angry"], "angry": ["angry"]},
+                   "pupils": {"neutral": ["mid","L","R"], "happy": ["mid","L","R"], "naughty": ["mid","L","R","down"], "horny": ["mid","L","R","down"], "annoyed": ["mid","R"], "disgusted": ["down"], "angry": ["L"]}}
 
 label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=False, tears=False, extra=False, emote=False, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
-
-    #Flip
-    if flip == False: #Default
-        $ hermione_flip = 1
-    if flip == True: #Flipped
-        $ hermione_flip = -1
-
-    #Positioning
-    if xpos != None:
-        if xpos in ["base","default"]:      # All the way to the right.
-            $ hermione_xpos = 640
-        elif xpos == "left":
-            $ hermione_xpos = 200
-        elif xpos == "mid":                 # Centered.
-            $ hermione_xpos = 300
-        elif xpos == "right":               # Bit more to the right.
-            $ hermione_xpos = 400
-        elif xpos in ["wardrobe","close"]:
-            $ hermione_xpos = 540
-        else:
-            $ hermione_xpos = int(xpos)
-
-    if ypos != None:
-        if ypos in ["base","default"]:
-            $ hermione_ypos = 0
-            $ hermione_scaleratio = 2
-            $ hermione_zorder = 5
-            $ use_hermione_head = False
-        elif ypos in ["head"]:
-            # Use ypos="head" to activate her head position.
-            # Use ypos="base" to disable it.
-            # Use ypos="200" or any other number to move her head up or down.
-            $ use_hermione_head = True
-            $ hermione_scaleratio = 2
-
-            if face_on_cg: #Only her face is visible. Face gets placed on top of the CG screen.
-                if ccg_folder == "herm_sex":
-                    $ hermione_flip = -1 #Flipped.
-                    $ hermione_scaleratio = 1.75
-                    $ hermione_xpos = 277
-                    $ hermione_ypos = 122
-                $ hermione_zorder = 5
-
-            else:
-                if hermione_flip == -1: #Flipped
-                    $ hermione_xpos = -70 #Left side of screen!
-                else:
-                    $ hermione_xpos = 640
-                $ hermione_ypos = 230
-                $ hermione_zorder = 8
-        else:
-            $ hermione_ypos = int(ypos)
-
-    if animation != False:
-        $ hermione_animation = animation
-        
-    if face:
-        call set_her_face(face)
-
     python:
-        hermione.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
-        #hermione_class.special(emote=emote)
+    
+        if flip != None:
+            hermione_flip = -1 if flip else 1
+            
+        if animation != False:
+            hermione_animation = animation
+        
+        if xpos:
+            hermione_xpos = int(sprite_pos["x"].get(xpos, xpos))
 
-    if use_hermione_head and face_on_cg: #Only her face. Used in CG scenes.
-        show screen hermione_face # TODO: <- Screen does not exist
-    else:
-        if not renpy.get_screen("wardrobe_menu"):
-            show screen hermione_main()
+        if ypos:
+            if ypos == "head":
+                use_hermione_head = True
+            elif ypos in ("base", "default"):
+                use_hermione_head = False
+                
+            hermione_ypos = int(sprite_pos["y"].get(ypos, ypos))
+            
+        hermione.set_face(mouth=mouth, eyes=eyes, eyebrows=eyebrows, pupils=pupils, cheeks=cheeks, tears=tears)
+
+        if face:
+            if not mouth:
+                hermione.set_face(mouth=renpy.random.hermioneice(her_face["mouth"].get(face, None)))
+            if not eyes:
+                hermione.set_face(eyes=renpy.random.hermioneice(her_face["eyes"].get(face, None)))
+            if not eyebrows:
+                hermione.set_face(eyebrows=renpy.random.hermioneice(her_face["eyebrows"].get(face, None)))
+            if not pupils:
+                hermione.set_face(pupils=renpy.random.hermioneice(her_face["pupils"].get(face, None)))
+
+    if not renpy.get_screen("wardrobe_menu"):
+        show screen hermione_main()
     show screen bld1
 
     if trans:
@@ -78,10 +44,9 @@ label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
 
     if text:
         $ renpy.say(her, text)
-
-    if use_hermione_head and not face_on_cg:
+        
+    if use_hermione_head:
         hide screen hermione_main
-
     return
 
 
@@ -119,7 +84,7 @@ label update_hermione:
 
     return
 
-label end_her_event:
+label end_hermione_event:
     call her_chibi("hide")
     hide screen hermione_main
     with d3
@@ -129,6 +94,10 @@ label end_her_event:
 
     $ active_girl = None
     $ hermione_busy = True
+    $ hermione.wear("all")
+    
+    $ renpy.stop_predict(hermione.get_image())
+    $ renpy.stop_predict("characters/hermione/face/*.png")
 
     call music_block
     jump main_room

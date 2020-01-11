@@ -1,6 +1,9 @@
 
 
 label summon_astoria:
+    $ renpy.start_predict(astoria.get_image())
+    $ renpy.start_predict("characters/astoria/face/*.png")
+    
     #call play_music("astoria")
     #call play_sound("door")
     
@@ -63,7 +66,7 @@ label summon_astoria:
 
         # Dismiss
         "-Dismiss her-":
-            stop music fadeout 1.0
+            stop music fadeout 3.0
 
             if daytime:
                 call ast_main("I will go back to classes then, [ast_genie_name].", face="neutral")
@@ -72,10 +75,7 @@ label summon_astoria:
 
             call play_sound("door")
 
-            $ astoria_busy = True
-            $ astoria.wear("all")
-
-            jump main_room
+            jump end_astoria_event
 
 
 
@@ -315,17 +315,6 @@ label astoria_talk:
                     jump astoria_talk
                 "-Never mind-":
                     jump astoria_talk
-                    
-        "-You may wear your current outfit only-{icon=interface/icons/small/wardrobe.png}" if astoria_wardrobe_unlocked and astoria_outfits_schedule:
-            ast "Okay, [ast_genie_name]."
-            $ astoria_outfits_schedule = False
-            jump astoria_talk
-            
-        "-You may wear whatever you like-{icon=interface/icons/small/wardrobe.png}" if astoria_wardrobe_unlocked and not astoria_outfits_schedule:
-            ast "Okay, [ast_genie_name]."
-            $ astoria_outfits_schedule = True
-            jump astoria_talk
-
 
         "-Never mind":
             jump astoria_requests

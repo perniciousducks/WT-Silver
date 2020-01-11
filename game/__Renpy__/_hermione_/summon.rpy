@@ -1,6 +1,9 @@
 
 
 label summon_hermione:
+    $ renpy.start_predict(hermione.get_image())
+    $ renpy.start_predict("characters/hermione/face/*.png")
+    
     #call play_music("hermione")
     #call play_sound("door")
     
@@ -108,6 +111,8 @@ label summon_hermione:
 
         # Dismiss
         "-Dismiss her-":
+            stop music fadeout 3.0
+            
             if daytime:
                 if her_mood >=3 and her_mood < 7:
                     her "..............................."
@@ -125,9 +130,7 @@ label summon_hermione:
 
             call play_sound("door")
 
-            $ hermione_busy = True
-
-            jump main_room
+            jump end_hermione_event
 
 
 
@@ -604,16 +607,6 @@ label hermione_talk:
                         jump hermione_change_fail
                 "-Never mind-":
                     jump hermione_talk
-                    
-        "-You may wear your current outfit only-{icon=interface/icons/small/wardrobe.png}" if hermione_wardrobe_unlocked and hermione_outfits_schedule:
-            her "Okay, [genie_name]."
-            $ hermione_outfits_schedule = False
-            jump hermione_talk
-            
-        "-You may wear whatever you like-{icon=interface/icons/small/wardrobe.png}" if hermione_wardrobe_unlocked and not hermione_outfits_schedule:
-            her "Okay, [genie_name]."
-            $ hermione_outfits_schedule = True
-            jump hermione_talk
 
         "-Give her the ball dress-" if ball_quest.E4_complete and hg_dress_yule_ball_ITEM.unlocked and not ball_quest.gave_dress:
             jump ball_quest_E5

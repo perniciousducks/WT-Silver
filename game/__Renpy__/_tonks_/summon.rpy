@@ -1,6 +1,9 @@
 
 
 label summon_tonks:
+    $ renpy.start_predict(tonks.get_image())
+    $ renpy.start_predict("characters/tonks/face/*.png")
+    
     call play_music("tonks")
     call play_sound("door")
 
@@ -69,7 +72,7 @@ label summon_tonks:
 
         # Dismiss
         "-Never mind-":
-            stop music fadeout 1.0
+            stop music fadeout 3.0
 
             if daytime:
                 ton "Alright, back to work then..."
@@ -78,10 +81,7 @@ label summon_tonks:
 
             call play_sound("door")
 
-            $ tonks_busy = True
-            $ tonks.wear("all")
-
-            jump main_room
+            jump end_tonks_event
 
 
 # Tonks level up
@@ -494,16 +494,6 @@ label tonks_talk:
                     jump tonks_talk
                 "-Never mind-":
                     jump tonks_talk
-                    
-        "-You may wear your current outfit only-{icon=interface/icons/small/wardrobe.png}" if tonks_wardrobe_unlocked and tonks_outfits_schedule:
-            ton "Okay, [ton_genie_name]."
-            $ tonks_outfits_schedule = False
-            jump tonks_talk
-            
-        "-You may wear whatever you like-{icon=interface/icons/small/wardrobe.png}" if tonks_wardrobe_unlocked and not tonks_outfits_schedule:
-            ton "Okay, [ton_genie_name]."
-            $ tonks_outfits_schedule = True
-            jump tonks_talk
 
         "-Never mind-":
             jump tonks_requests

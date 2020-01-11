@@ -8,8 +8,8 @@ label astoria_wardrobe_check(section, arg=None):
                     temp_count[0] = item.level
                 if item.type in ("bra", "panties"):
                     temp_count[2] += 1
-                    if char_active.get_cloth(item.type) != None:
-                        if not char_active.get_cloth(item.type).id == item.id:
+                    if char_active.is_worn(item.type) != None:
+                        if not char_active.get_equipped(item.type).id == item.id:
                             if ast_affection < 12:
                                 temp_count[1] += 1
 
@@ -123,15 +123,15 @@ label astoria_wardrobe_check(section, arg=None):
         elif section == "equip":
             if arg.type in ("bra", "panties"):
                 if ast_affection < 12:
-                    if char_active.get_cloth("bra"):
-                        if arg.id == char_active.get_cloth("bra").id:
+                    if char_active.is_worn("bra"):
+                        if arg.id == char_active.get_equipped("bra").id:
                             if wardrobe_chitchats:
                                 call ast_main("I'd rather not do that right now, [ast_genie_name].",face="angry")
                             #Hint
                             $ wardrobe_fail_hint(12)
                             return
-                    if char_active.get_cloth("panties"):
-                        if arg.id == char_active.get_cloth("panties").id:
+                    if char_active.is_worn("panties"):
+                        if arg.id == char_active.get_equipped("panties").id:
                             if wardrobe_chitchats:
                                 call ast_main("",face="happy")
                                 nar "> Astoria starts giggling."
@@ -146,15 +146,15 @@ label astoria_wardrobe_check(section, arg=None):
             else:
                 if ast_affection < 12:
                     if arg.type in ("top", "bottom"):
-                        if char_active.get_cloth("top"):
-                            if arg.id == char_active.get_cloth("top").id:
+                        if char_active.is_worn("top"):
+                            if arg.id == char_active.get_equipped("top").id:
                                 if wardrobe_chitchats:
                                     call ast_main("I guess I could... but I'm not going to.",face="annoyed")
                                 #Hint
                                 $ wardrobe_fail_hint(12)
                                 return
-                        if char_active.get_cloth("bottom"):
-                            if arg.id == char_active.get_cloth("bottom").id:
+                        if char_active.is_worn("bottom"):
+                            if arg.id == char_active.get_equipped("bottom").id:
                                 if wardrobe_chitchats:
                                     call ast_main("Hey, that's a great idea... but not in this universe.",face="angry")
                                 #Hint

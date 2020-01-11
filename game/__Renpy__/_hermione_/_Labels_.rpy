@@ -1,16 +1,3 @@
-label end_hermione_event:
-    call hide_characters
-    hide screen bld1
-    hide screen blktone
-    with d3
-
-    call her_chibi(action="hide")
-
-    $ hermione_busy = True
-
-    jump main_room
-
-
 label too_much:
     stop music fadeout 2.0
     call her_main("[genie_name]??!", "shock", "wide", "base", "stare",xpos="mid",trans=fade)

@@ -1,6 +1,9 @@
 
 
 label summon_cho:
+    $ renpy.start_predict(cho.get_image())
+    $ renpy.start_predict("characters/cho/face/*.png")
+    
     #call play_music("cho")
     #call play_sound("door")
     
@@ -114,10 +117,14 @@ label summon_cho:
 
         # Dismiss
         "-Dismiss Her-":
+            stop music fadeout 3.0
+            
             if cho_mood != 0:
                 call cho_main("Good bye, [cho_genie_name].",face="annoyed")
             else:
                 call cho_main("Good bye, [cho_genie_name].",face="happy")
+                
+            call play_sound("door")
 
             jump end_cho_event
 
@@ -273,16 +280,6 @@ label cho_talk:
                     jump cho_talk
 
             call cho_main("Very well,...",face="neutral")
-            jump cho_talk
-            
-        "-You may wear your current outfit only-{icon=interface/icons/small/wardrobe.png}" if cho_wardrobe_unlocked and cho_outfits_schedule:
-            cho "Okay, [cho_genie_name]."
-            $ cho_outfits_schedule = False
-            jump cho_talk
-            
-        "-You may wear whatever you like-{icon=interface/icons/small/wardrobe.png}" if cho_wardrobe_unlocked and not cho_outfits_schedule:
-            cho "Okay, [cho_genie_name]."
-            $ cho_outfits_schedule = True
             jump cho_talk
 
         "\"Never mind\"":

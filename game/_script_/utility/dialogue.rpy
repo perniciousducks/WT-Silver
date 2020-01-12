@@ -19,8 +19,6 @@ init -1 python:
         doll_old = last_doll_images.get(scr_name, None)
 
         if doll_new != doll_old:
-            print "Old: "+str(last_say_who)
-            print "New: "+str(get_say_who())
             if not doll_old or (use_head and last_say_who != get_say_who()):
                 doll_old = doll_new
 

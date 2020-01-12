@@ -16,28 +16,6 @@ label gameover(fake=False):
     $ renpy.play('sounds/killswitch_on.mp3')
     $ renpy.pause(4.0, hard=True)
     if fake:
-        python:
-            credits_duration = 30.0
-            credits_text = "{image=logo/title.png}\n\n"
-
-            credits_artists = ("A Professional Pervert", "The Purveyor of Pencils", "The Deviant Drawer", "A Painter of Filth")
-            credits_writers = ("The Scribbler of smut", "The Lore keeper of Whores")
-            credits_programmers = ("The Engineer of ecstasy", "A Tits Techie", "A guy that gets erect from calculator spelling boobs")
-            credits_music = ("Happy Rooster OST\n{size=-5}{color=#808080}{k=0.7}\"Prologue\"\n\"Shanghai Honey\"\n\"Introducing Colin\"\n\"Neville's Waltz\"\n\"The Quidditch Match\"{/k}{/color}{/size}\n", "Music Dude#1\n{size=-5}{color=#808080}{k=0.7}\"Anguish\"\n\"Awkward Meeting\"\n\"Brittle Rille\"\n\"Chipper Doodle v2\"\n\"Dark Fog\"\n\"Despair\"\n\"Game Over Theme\"\n\"Boss Theme\"\n\"Hitman\"\n\"Music for Manatees\"\n\"Plaint\"\n\"Fuzzball Parade\"\n\"Teddy Bear Waltz\"\n\"Scheming Weasel (Slower version)\"\n\"Open Those Bright Eyes\"{/k}{/color}{/size}\n", "Music Dude#2\n{size=-5}{color=#808080}{k=0.7}\"Under-the-radar\"{/k}{/color}{/size}\n", "Music Dude#3\n{size=-5}{color=#808080}{k=0.7}\"Playful Tension (Orchestral)\"{/k}{/color}{/size}\n", "Music Dude#4\n{size=-5}{color=#808080}{k=0.7}\"Item Shop\"{/k}{/color}{/size}\n", "Music Dude#5\n{size=-5}{color=#808080}{k=0.7}\"Grape Soda is Fucking Raw\"{/k}{/color}{/size}\n", "Music Dude#5\n{size=-5}{color=#808080}{k=0.7}Retro Game Music Pack:\n\"Title Screen\"\n\"Level 1\"\n\"Level 3\"{/k}{/color}{/size}")
-            credits_special = ("{size=+4}Pervert#1{/size}\n{color=#808080}{size=-5}{k=0.7}Creator of the original Witch Trainer and other awesome games! {a=https://www.patreon.com/akabur}PATREON{/a}{/size}{/color}\n{/k}", "Pervert#2", "Pervert#3", "Pervert#4", "Pervert#5", "Pervert#6", "Pervert#7", "Pervert#8", "Pervert#9", "Pervert#10", "Pervert#11", "Pervert#12", "Pervert#13", "Pervert#14", "Pervert#15", "Pervert#16", "Pervert#17", "Pervert#18", "Pervert#19", "Pervert#20", "Pervert#21")
-            
-            # Start
-            credits_text = addSection(credits_text, "Director", ["The Orchestrator of Sex"])
-            credits_text = addSection(credits_text, "Artists", credits_artists)
-            credits_text = addSection(credits_text, "Writers", credits_writers)
-            credits_text = addSection(credits_text, "Programmers", credits_programmers)
-            credits_text = addSection(credits_text, "Music", credits_music)
-            credits_text = addSection(credits_text, "Special Thanks", credits_special)
-            
-            credits_text += "\nSpecial thanks to our pervs, discord perverators and {a=https://www.patreon.com/SilverStudioGames/}perverted supporters{/a} {image=images/misc/heart.png}\n\n\n"
-            credits_text += "{image=logo/silverstudiogames.png}\n\n"
-            credits_text += "\n{space=220}{image=characters/genie/mage9.png}{rb}{space=-60}Thanks for cumin!{/rb}"
-            
         show screen blkfade
         with d9
         
@@ -47,16 +25,43 @@ label gameover(fake=False):
         
         hide screen gameover
         hide screen blkfade
-        show screen credits_screen(False)
+        show screen credits(fake_credits_text, 30)
         with blinds
         
         $ renpy.pause(12, hard=True)
         
-        hide screen credits_screen
+        hide screen credits
         with None
         
     hide screen gameover
     return
+
+define fake_credits_text = "\n".join([
+    "{image=logo/title.png}{vspace=200}",
+    credits_title("Director"),
+    credits_group("The Orchestrator of Sex"),
+    credits_title("Artists"),
+    credits_group("A Professional Pervert", "The Purveyor of Pencils", "The Deviant Drawer", "A Painter of Filth"),
+    credits_title("Writers"),
+    credits_group("The Scribbler of smut", "The Lore keeper of Whores"),
+    credits_title("Programmers"),
+    credits_group("The Engineer of ecstasy", "A Tits Techie", "A guy that gets erect from calculator spelling boobs"),
+    credits_title("Music"),
+    credits_group(
+        "Happy Rooster OST\n{size=-5}{color=#808080}{k=0.7}\"Prologue\"\n\"Shanghai Honey\"\n\"Introducing Colin\"\n\"Neville's Waltz\"\n\"The Quidditch Match\"{/k}{/color}{/size}\n",
+        "Music Dude#1\n{size=-5}{color=#808080}{k=0.7}\"Anguish\"\n\"Awkward Meeting\"\n\"Brittle Rille\"\n\"Chipper Doodle v2\"\n\"Dark Fog\"\n\"Despair\"\n\"Game Over Theme\"\n\"Boss Theme\"\n\"Hitman\"\n\"Music for Manatees\"\n\"Plaint\"\n\"Fuzzball Parade\"\n\"Teddy Bear Waltz\"\n\"Scheming Weasel (Slower version)\"\n\"Open Those Bright Eyes\"{/k}{/color}{/size}\n",
+        "Music Dude#2\n{size=-5}{color=#808080}{k=0.7}\"Under-the-radar\"{/k}{/color}{/size}\n",
+        "Music Dude#3\n{size=-5}{color=#808080}{k=0.7}\"Playful Tension (Orchestral)\"{/k}{/color}{/size}\n",
+        "Music Dude#4\n{size=-5}{color=#808080}{k=0.7}\"Item Shop\"{/k}{/color}{/size}\n",
+        "Music Dude#5\n{size=-5}{color=#808080}{k=0.7}\"Grape Soda is Fucking Raw\"{/k}{/color}{/size}\n",
+        "Music Dude#5\n{size=-5}{color=#808080}{k=0.7}Retro Game Music Pack:\n\"Title Screen\"\n\"Level 1\"\n\"Level 3\"{/k}{/color}{/size}"
+    ),
+    credits_title("Special Thanks"),
+    credits_group("{size=+4}Pervert#1{/size}\n{color=#808080}{size=-5}{k=0.7}Creator of the original Witch Trainer and other awesome games! {a=https://www.patreon.com/akabur}PATREON{/a}{/size}{/color}\n{/k}", "Pervert#2", "Pervert#3", "Pervert#4", "Pervert#5", "Pervert#6", "Pervert#7", "Pervert#8", "Pervert#9", "Pervert#10", "Pervert#11", "Pervert#12", "Pervert#13", "Pervert#14", "Pervert#15", "Pervert#16", "Pervert#17", "Pervert#18", "Pervert#19", "Pervert#20", "Pervert#21"),
+    "\nSpecial thanks to our pervs, discord perverators and {a=https://www.patreon.com/SilverStudioGames/}perverted supporters{/a} {image=images/misc/heart.png}\n\n",
+    "{image=logo/silverstudiogames.png}\n"
+    "\n{space=220}{image=characters/genie/mage9.png}{rb}{space=-60}Thanks for cumin!{/rb}"
+])
         
 screen cartoon_zoom():
     tag gameover

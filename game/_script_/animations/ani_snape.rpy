@@ -91,7 +91,28 @@ image ch_sna cum_done:
         xoffset -980
         "characters/snape/chibis/masturbating/sperm_18.png"
 
-#TODO Add Snape chibi wand actions
+#TODO Add Snape chibi wand cast actions
+image ch_sna wand_idle:
+    "characters/snape/chibis/wand_idle/wand_idle_1.png"
+    pause.1
+    "characters/snape/chibis/wand_idle/wand_idle_2.png"
+    pause.1
+    "characters/snape/chibis/wand_idle/wand_idle_3.png"
+    pause.1
+    "characters/snape/chibis/wand_idle/wand_idle_2.png"
+    pause.1
+    repeat
+
+image ch_sna wand_defend:
+    "characters/snape/chibis/wand_defend/wand_defend_1.png"
+    pause.1
+    "characters/snape/chibis/wand_defend/wand_defend_2.png"
+    pause.1
+    "characters/snape/chibis/wand_defend/wand_defend_3.png"
+    pause.1
+    "characters/snape/chibis/wand_defend/wand_defend_2.png"
+    pause.1
+    repeat
 
 # Snape sitting in front of fireplace, right side
 image snape_toast_goblet:

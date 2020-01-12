@@ -81,7 +81,7 @@ default her_outfit_last = DollOutfit([her_hair_base])
 default her_panties_bikini1 = DollCloth("hermione", ("panties", "panties"), "panties", "bikini_panties_1", [[138, 0, 0, 255], [252, 135, 0, 255]])
 default her_bra_bikini1 = DollCloth("hermione", ("bras", "bras"), "bra", "bikini_bra_1", [[138, 0, 0, 255], [252, 135, 0, 255]])
 
-default her_outfit_bikini1 = DollOutfit([her_panties_bikini1, her_bra_bikini1], price=100)
+default her_outfit_bikini1 = DollOutfit([her_hair_base, her_panties_bikini1, her_bra_bikini1], price=100)
 
 ########################
 ## Rave Bikini Outfit ##
@@ -90,7 +90,7 @@ default her_outfit_bikini1 = DollOutfit([her_panties_bikini1, her_bra_bikini1], 
 default her_panties_bikini2 = DollCloth("hermione", ("panties", "panties"), "panties", "bikini_panties_2", [[55, 55, 55, 255], [197, 142, 35, 255]])
 default her_bra_bikini2 = DollCloth("hermione", ("bras", "bras"), "bra", "bikini_bra_2", [[55, 55, 55, 255], [197, 142, 35, 255]])
 
-default her_outfit_bikini2 = DollOutfit([her_panties_bikini2, her_bra_bikini2], price=100)
+default her_outfit_bikini2 = DollOutfit([her_hair_base, her_panties_bikini2, her_bra_bikini2], price=100)
 
 #################
 ## Maid Outfit ##
@@ -120,7 +120,7 @@ default her_gloves_poker1 = DollCloth("hermione", ("misc", "gloves"), "gloves", 
 default her_earring_poker1 = DollCloth("hermione", ("head", "earrings"), "earring", "poker_earring_1", [[255, 179, 3, 255]])
 default her_piercing2_poker1 = DollCloth("hermione", ("torso", "piercing"), "piercing2", "poker_belly_1", [[26, 26, 35, 255], [232, 232, 232, 255], [153, 22, 10, 255], [255, 179, 3, 255]])
 
-default her_outfit_poker = DollOutfit([her_hat_poker1, her_hat_poker2, her_neckwear_poker1, her_stockings_poker1, her_stockings_poker2, her_panties_poker1, her_bra_poker1, her_gloves_poker1, her_earring_poker1, her_piercing2_poker1], price=250)
+default her_outfit_poker = DollOutfit([her_hair_base, her_hat_poker1, her_hat_poker2, her_neckwear_poker1, her_stockings_poker1, her_stockings_poker2, her_panties_poker1, her_bra_poker1, her_gloves_poker1, her_earring_poker1, her_piercing2_poker1], price=250)
 
 ##################
 ## Bunny Outfit ##
@@ -133,4 +133,4 @@ default her_hat_bunny1 = DollCloth("hermione", ("head", "hats"), "hat", "bunny_h
 default her_gloves_bunny1 = DollCloth("hermione", ("misc", "gloves"), "gloves", "bunny_gloves_1", [[232, 232, 232, 255]])
 default her_neckwear_bunny1 = DollCloth("hermione", ("head", "neckwear"), "neckwear", "bunny_bowtie_1", [[232, 232, 232, 255], [48, 48, 48, 255]])
 
-default her_outfit_bunny = DollOutfit([her_top_bunny1, her_stockings_bunny1, her_tattoo3_bunny1, her_hat_bunny1, her_gloves_bunny1, her_neckwear_bunny1], price=250)
+default her_outfit_bunny = DollOutfit([her_hair_base, her_top_bunny1, her_stockings_bunny1, her_tattoo3_bunny1, her_hat_bunny1, her_gloves_bunny1, her_neckwear_bunny1], price=250)

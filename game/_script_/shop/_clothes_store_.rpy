@@ -3,8 +3,10 @@ init python:
         """Unlock a clothing item. Compatible with new outfit system."""
         if isinstance(item, item_class):
             item.unlocked = True
-        elif isinstance(item, outfit_class) or isinstance(item, cloth_class):
+        elif isinstance(item, DollOutfit):
             item.unlock()
+        elif isinstance(item, DollCloth):
+            item.unlocked = True
 
         #TODO Find a better solution than outfit linking (probably just convert all clothes to new wardrobe system)
         if isinstance(item, item_class) and item.id in outfit_linking:
@@ -299,177 +301,148 @@ label purchase_outfit(item):
     with d3
 
     if clothing_mail_item != None:
-        maf "I'm sorry luv, but I'm still quite busy working on your item."
-        maf "Come back once you got my package."
+        maf "I'm sorry luv, but I'm still quite busy working on your previous order."
+        maf "Come back once you received my package."
         return
 
     if gold < item.cost:
         m "I don't have enough gold."
         return
 
-    if item == hg_cheer_g_ITEM:
-        m "I'd like to order a cheerleader outfit."
-        maf "A cheerleader outfit? Those horribly crass things popular in America?"
-        maf "Why on earth would you want to buy that?"
-        m "Well I was speaking to Madam Hooch and she was practically begging me to start a Cheer squad for each house."
-        maf "Madam Hooch said that?"
-        m "Yes, of course I said no but I did agree to a one student trial for Gryffindor."
-        maf "Well, that seems fair enough. Did you have any preference as to the design?"
-        m "Not really, just make it sporty I suppose."
-        maf "Ok, well come and see me in a few days and I will have it for you."
-        m "Thank you."
+    # if item == hg_outfit_maid_ITEM:
+        # m "I'd like to order a maid outfit."
+        # maf "A maid costume, what on earth for? Surely the cleaning elves keep your office tidy."
+        # m "It's going to be a present."
+        # maf "For whom?"
+        # m "I'm afraid I can't say."
+        # maf "Well as long as it's not for a student..."
+        # maf "Did you have any style in mind?"
+        # m "Preferably a french maid."
+        # maf "..."
+        # maf "Well I should have it available for pick-up in a few days after I get the materials in."
+        # m "Thank you."
 
-    if item == hg_cheer_s_ITEM:
-        m "I'd like to order another cheerleader outfit."
-        maf "Another cheerleader outfit? I thought you said that it was only a one person trial?"
-        m "It was at first but due to the success of the Gryffindor cheerleader Slytherin demanded one as well."
-        maf "Those Slytherins never could stand being second."
-        maf "So do you just want the same basic design modified to suit?"
-        m "Maybe make this one a little more sporty if you know what I mean."
-        maf "Well you can come pick it up in a few days."
-        m "Thank you."
+    # if item == hg_nighty_silk_ITEM:
+        # m "I'd like to order another custom outfit today."
+        # maf "Certainly Sir. These outfits have started to become the highlight of my job. Everything else seems quite conservative by comparison."
+        # m "Well I can assure you that this outfit is not conservative."
+        # maf "Hmmm?"
+        # m "I'd like to order a girls Nightgown."
+        # maf "Well that doesn't seem overl-"
+        # m "Made of silk."
+        # maf "Ahh. I assume that you also want it transparent?"
+        # m "If it's possible."
+        # maf "Of course it is possible, who do you take me for?"
+        # maf "I just have to order in the materials, although silks not cheap."
+        # m "Don't worry about the cost."
+        # maf "As you wish Sir, it should be ready in a couple of days."
+        # m "Thank you."
 
-    #if item == hg_cheer_r_ITEM:
-    #    jump place_outfit_order
+    # if item == hg_dress_yule_ball_ITEM:
+        # if not ball_quest.E4_complete:
+            # m "Do you sell Dresses?"
+            # maf "A dress? Are we talking ball dresses, or more burlesque?"
+            # m "Hmm... Balls actually."
+            # maf "How surprising."
+            # m "I was thinking that I could have a custom one made. For a very good girl of mine."
+        # if ball_quest.E4_complete:
+            # m "Do you sell Ball dresses?"
+            # maf "Hmmm, we do although they're nothing special. Why?"
+            # m "A 'girl' approached me with a problem. Apparently she's unable to acquire a dress for this years autumn ball."
+            # maf "How tragic, well I'm sure that one of these cheap ones will suffice."
+            # m "I was thinking that I could have a custom one made. She is a very good girl."
+        # maf "I see. Would I be correct in assuming that this girls measurements are the same as the other outfits you've had me make?"
+        # m "Yes you would."
+        # maf "Well then I'll make her the best dress this school's ever seen. From what I've heard she's earned it..."
+        # maf "It should be ready in about a week."
+        # m "A week? Why so long?"
+        # maf "A ball dress isn't something that's thrown together. It requires love and attention. It doesn't come cheap either."
+        # m "Well, thank you."
+        # maf "You're welcome."
 
-    #if item == hg_cheer_h_ITEM:
-    #    jump place_outfit_order
+    # if item == hg_costume_ms_marvel_ITEM:
+        # m "Tell me Madam Mafkin, have you ever heard of superheroes?"
+        # maf "Yes yes, those people in the comic books. My grandson is quite fond of them."
+        # m "Fantastic, I was wondering if it would be possible for you to make me a costume."
+        # maf "Certainly, who did you have in mind?"
+        # m "Do you know Ms Marvel?"
+        # maf "I'm afraid not..."
+        # maf "But I'm sure that my grandson has a comic of hers. I'm set to visit him this weekend so I can take a look."
+        # m "Thank you very much."
+        # maf "No need to thank me sir. Payment will suffice."
 
-    if item == hg_outfit_maid_ITEM:
-        m "I'd like to order a maid outfit."
-        maf "A maid costume, what on earth for? Surely the cleaning elves keep your office tidy."
-        m "It's going to be a present."
-        maf "For whom?"
-        m "I'm afraid I can't say."
-        maf "Well as long as it's not for a student..."
-        maf "Did you have any style in mind?"
-        m "Preferably a french maid."
-        maf "..."
-        maf "Well I should have it available for pick-up in a few days after I get the materials in."
-        m "Thank you."
+    # if item == hg_dress_dancer_ITEM:
+        # m "Have you ever seen a burlesque show Madam?"
+        # maf "I've done more than that, I've designed a few of the outfits for them!"
+        # m "Splendid, I was wondering if I could commission one."
+        # maf "Most Certainly, any particular colour in mind?"
+        # m "Ideally red."
+        # maf "As you wish."
+        # m "Thank you very much."
+        # maf "You're quite welcome sir."
 
-    if item == hg_nighty_silk_ITEM:
-        m "I'd like to order another custom outfit today."
-        maf "Certainly Sir. These outfits have started to become the highlight of my job. Everything else seems quite conservative by comparison."
-        m "Well I can assure you that this outfit is not conservative."
-        maf "Hmmm?"
-        m "I'd like to order a girls Nightgown."
-        maf "Well that doesn't seem overl-"
-        m "Made of silk."
-        maf "Ahh. I assume that you also want it transparent?"
-        m "If it's possible."
-        maf "Of course it is possible, who do you take me for?"
-        maf "I just have to order in the materials, although silks not cheap."
-        m "Don't worry about the cost."
-        maf "As you wish Sir, it should be ready in a couple of days."
-        m "Thank you."
+    # if item == hg_costume_power_girl_ITEM:
+        # m "I was wondering if it would be possible for you to make me a super hero costume."
+        # maf "Certainly, who did you have in mind?"
+        # m "Do you know Power Girl?"
+        # maf "I'm afraid not..."
+        # maf "But I'm sure that my grandson has a comic of hers. I'm set to visit him this weekend so I can take a look."
+        # m "Thank you very much."
+        # maf "No need to thank me sir. Payment will suffice."
 
-    if item == hg_dress_yule_ball_ITEM:
-        if not ball_quest.E4_complete:
-            m "Do you sell Dresses?"
-            maf "A dress? Are we talking ball dresses, or more burlesque?"
-            m "Hmm... Balls actually."
-            maf "How surprising."
-            m "I was thinking that I could have a custom one made. For a very good girl of mine."
-        if ball_quest.E4_complete:
-            m "Do you sell Ball dresses?"
-            maf "Hmmm, we do although they're nothing special. Why?"
-            m "A 'girl' approached me with a problem. Apparently she's unable to acquire a dress for this years autumn ball."
-            maf "How tragic, well I'm sure that one of these cheap ones will suffice."
-            m "I was thinking that I could have a custom one made. She is a very good girl."
-        maf "I see. Would I be correct in assuming that this girls measurements are the same as the other outfits you've had me make?"
-        m "Yes you would."
-        maf "Well then I'll make her the best dress this school's ever seen. From what I've heard she's earned it..."
-        maf "It should be ready in about a week."
-        m "A week? Why so long?"
-        maf "A ball dress isn't something that's thrown together. It requires love and attention. It doesn't come cheap either."
-        m "Well, thank you."
-        maf "You're welcome."
+    # if item == hg_costume_harley_quinn_ITEM:
+        # m "I was wondering if it would be possible for you to make me a super villain costume."
+        # maf "Certainly, who did you have in mind?"
+        # m "Do you know Harley Quinn?"
+        # maf "I'm afraid not..."
+        # maf "But I'm sure that my grandson has a comic of hers. I'll just have to wrestle it out of his grubby little hands."
+        # m "Thank you very much."
+        # maf "You're quite welcome."
 
-    if item == hg_costume_ms_marvel_ITEM:
-        m "Tell me Madam Mafkin, have you ever heard of superheroes?"
-        maf "Yes yes, those people in the comic books. My grandson is quite fond of them."
-        m "Fantastic, I was wondering if it would be possible for you to make me a costume."
-        maf "Certainly, who did you have in mind?"
-        m "Do you know Ms Marvel?"
-        maf "I'm afraid not..."
-        maf "But I'm sure that my grandson has a comic of hers. I'm set to visit him this weekend so I can take a look."
-        m "Thank you very much."
-        maf "No need to thank me sir. Payment will suffice."
+    # if item == hg_costume_lara_croft_ITEM:
+        # m "I was wondering if it would be possible for you to make me another costume."
+        # maf "Certainly, what are you after?"
+        # m "I don't suppose that you know Lara croft?"
+        # maf "I'm afraid not..."
+        # m "She's a video game character..."
+        # maf "Well my little muggle grandson loves video games. I'm sure he can show me what she looks like."
+        # m "Thank you very much."
+        # maf "You're welcome. I'm seeing him tonight so I should be able to complete this one slightly faster than usual."
+        # m "Fantastic."
 
-    if item == hg_dress_dancer_ITEM:
-        m "Have you ever seen a burlesque show Madam?"
-        maf "I've done more than that, I've designed a few of the outfits for them!"
-        m "Splendid, I was wondering if I could commission one."
-        maf "Most Certainly, any particular colour in mind?"
-        m "Ideally red."
-        maf "As you wish."
-        m "Thank you very much."
-        maf "You're quite welcome sir."
+    # if item == hg_outfit_christmas_ITEM:
+        # m "I was wondering if it would be possible for you to make me a festive costume."
+        # maf "Certainly, what what holiday are you looking to \"celebrate\"?"
+        # m "Christmas."
+        # maf "At this time of year?"
+        # m "It's never to early to start the festivities..."
+        # maf "Evidently not. I'll have it done as soon as I can. "
+        # m "Thank you very much."
+        # maf "You're welcome. I'll even give you a special price. Consider it my Christmas gift to you.."
+        # m "Thank you."
 
-    if item == hg_costume_power_girl_ITEM:
-        m "I was wondering if it would be possible for you to make me a super hero costume."
-        maf "Certainly, who did you have in mind?"
-        m "Do you know Power Girl?"
-        maf "I'm afraid not..."
-        maf "But I'm sure that my grandson has a comic of hers. I'm set to visit him this weekend so I can take a look."
-        m "Thank you very much."
-        maf "No need to thank me sir. Payment will suffice."
+    # if item == hg_outfit_pirate_ITEM:
+        # m "I want a pirate outfit"
+        # maf "ok"
 
-    if item == hg_costume_harley_quinn_ITEM:
-        m "I was wondering if it would be possible for you to make me a super villain costume."
-        maf "Certainly, who did you have in mind?"
-        m "Do you know Harley Quinn?"
-        maf "I'm afraid not..."
-        maf "But I'm sure that my grandson has a comic of hers. I'll just have to wrestle it out of his grubby little hands."
-        m "Thank you very much."
-        maf "You're quite welcome."
+    # if item == hg_costume_elizabeth_ITEM:
+        # m "Have you ever heard of bioshock infinite?"
+        # maf "Biology what now?"
+        # m "..."
+        # m "It might be something to ask your grandson about..."
+        # maf "I assume you want the costume from whatever that is?"
+        # m "If it's not too much..."
+        # maf "Consider it done!"
+        # m "Thank you very much."
+        # maf "You're welcome."
 
-    if item == hg_costume_lara_croft_ITEM:
-        m "I was wondering if it would be possible for you to make me another costume."
-        maf "Certainly, what are you after?"
-        m "I don't suppose that you know Lara croft?"
-        maf "I'm afraid not..."
-        m "She's a video game character..."
-        maf "Well my little muggle grandson loves video games. I'm sure he can show me what she looks like."
-        m "Thank you very much."
-        maf "You're welcome. I'm seeing him tonight so I should be able to complete this one slightly faster than usual."
-        m "Fantastic."
-
-    if item == hg_outfit_christmas_ITEM:
-        m "I was wondering if it would be possible for you to make me a festive costume."
-        maf "Certainly, what what holiday are you looking to \"celebrate\"?"
-        m "Christmas."
-        maf "At this time of year?"
-        m "It's never to early to start the festivities..."
-        maf "Evidently not. I'll have it done as soon as I can. "
-        m "Thank you very much."
-        maf "You're welcome. I'll even give you a special price. Consider it my Christmas gift to you.."
-        m "Thank you."
-
-    if item == hg_outfit_pirate_ITEM:
-        m "I want a pirate outfit"
-        maf "ok"
-
-    if item == hg_costume_elizabeth_ITEM:
-        m "Have you ever heard of bioshock infinite?"
-        maf "Biology what now?"
-        m "..."
-        m "It might be something to ask your grandson about..."
-        maf "I assume you want the costume from whatever that is?"
-        m "If it's not too much..."
-        maf "Consider it done!"
-        m "Thank you very much."
-        maf "You're welcome."
-
-    if item == hg_costume_yennefer_ITEM:
-        m "Have you ever heard of the sorceress yennefer?"
-        maf "Of course! The mother of a universe hopper isn't quickly forgotten..."
-        m "Think you could make a copy of her outfit?"
-        maf "Certainly."
-        m "Thank you very much."
-        maf "You can thank me with coin!"
-
+    # if item == hg_costume_yennefer_ITEM:
+        # m "Have you ever heard of the sorceress Yennefer?"
+        # maf "Of course! The mother of a universe hopper isn't quickly forgotten..."
+        # m "Think you could make a copy of her outfit?"
+        # maf "Certainly."
+        # m "Thank you very much."
+        # maf "Toss a coin to your tailor."
 
     # Purchase Outfit
     $ clothing_mail_item = item
@@ -483,6 +456,7 @@ label purchase_outfit(item):
     if item.wait_time == 1:
         maf "You can expect a package with the outfit by tomorrow."
     else:
-        maf "You can expect a package with the outfit in about [item.wait_time] days."
+        $ _tmp = "You can expect a package with the outfit in about "+num_to_word(item.wait_time)+" days."
+        maf "[_tmp]"
 
     return

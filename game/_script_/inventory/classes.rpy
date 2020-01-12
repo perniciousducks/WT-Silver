@@ -29,7 +29,7 @@ init -2 python:
 
         def get_image(self):
             if self.image != "":
-                if isinstance(self.image, outfit_class):
+                if isinstance(self.image, DollOutfit):
                     return self.image.get_image()
                 else:
                     self.imagepath = "interface/icons/"+str(self.image)+".png"

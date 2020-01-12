@@ -22,8 +22,20 @@ init python:
             sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))
             return sprites
             
-        def get_mannequin_parts(self):
-            return tuple((im.MatrixColor("{}{}/{}.png".format(self.imagepath, k, v[0]), im.matrix.desaturate()), v[1]) for k, v in self.body.iteritems() if v[0])
+        def build_mannequin(self, group):
+            sprites = []
+            
+            # Add body parts and skin layers from clothes
+            sprites.extend(("{}{}/{}.png".format(self.imagepath, k, v[0]), v[1]) for k, v in self.body.iteritems() if v[0])
+            sprites.extend((o.skin, self.zorder_skin) for o in group if o and o.skin)
+
+            sprites.sort(key=lambda x: x[1], reverse=False)
+            sprites = tuple(itertools.chain.from_iterable(((0,0), im.MatrixColor(x[0], im.matrix.desaturate())) for x in sprites))
+            return sprites
+            
+        def get_mannequin(self, group):
+            mannequin = self.build_mannequin(group)
+            return Composite(self.size, *mannequin)
             
         def get_part(self, arg):
             return self.body[arg][0]

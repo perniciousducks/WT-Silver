@@ -17,12 +17,33 @@ init python:
             self.rebuild_image()
             
         def build_image(self):
+            masks = []
             sprites = []
             
             # Add body parts and skin layers from clothes, then make them grayscale
-            sprites.extend(self.char.body.get_mannequin_parts())
-            sprites.extend((im.MatrixColor(o.skin, im.matrix.desaturate()), self.char.body.zorder_skin) for o in self.group if o.skin)
-            sprites.extend((o.get_image(), o.zorder) for o in self.group)
+            sprites.append([self.char.body.get_mannequin(self.group), 0])
+            
+            for o in self.group:
+                sprites.append([o.get_image(), o.zorder])
+                if o.back:
+                    sprites.extend([x, -100+n+o.zorder] for n, x in enumerate(o.get_back()))
+                    if o.back_outline:
+                        sprites.append([o.back_outline, -100+o.zorder+o.layers])
+                if o.front:
+                    sprites.extend([x, 100+n+o.zorder] for n, x in enumerate(o.get_front()))
+                    if o.front_outline:
+                        sprites.append([o.front_outline, 100+o.zorder+o.layers])
+                if o.armfix:
+                    sprites.extend([[im.MatrixColor("{}armleft/{}_fix.png".format(self.body.imagepath, self.body.get_part("armleft")), im.matrix.desaturate()), o.zorder+0.5], [im.MatrixColor("{}armright/{}_fix.png".format(self.body.imagepath, self.body.get_part("armright")), im.matrix.desaturate()), o.zorder+0.5]])
+                if o.mask:
+                    masks.append([o.mask, o.zorder-1])
+                        
+            # Apply alpha mask
+            if masks:
+                for m in masks:
+                    for s in sprites:
+                        if m[1] > s[1] >= 0:
+                            s[0] = AlphaMask(s[0], m[0])
             
             sprites.sort(key=lambda x: x[1], reverse=False)
             sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))
@@ -102,6 +123,7 @@ init python:
                 i.unlocked, i.parent.unlocked = True, True
                 
         def save(self):
+            """Overwrites this outfit with clothes currently equipped by the character."""
             self.group = []
             for v in self.char.clothes.itervalues():
                 if v[0]:

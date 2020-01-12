@@ -16,6 +16,8 @@ init python:
             self.level = level
             self.modpath = modpath
             self.armfix = armfix
+            self.back_outline = None
+            self.front_outline = None
             
             # Inherit zorder from character if needed
             self.zorder = zorder if zorder else self.char.clothes[type][1]
@@ -71,6 +73,10 @@ init python:
             sprites.extend((self.apply_color("{}{}.png".format(self.imagepath, x), x), x) for x in xrange(self.layers))
             sprites.extend((self.apply_color(x, n), n-50) for n, x in enumerate(self.back))
             sprites.extend((self.apply_color(x, n), 50+n) for n, x in enumerate(self.front))
+            if self.back_outline:
+                sprites.append([self.back_outline, -50+self.zorder+self.layers])
+            if self.front_outline:
+                sprites.append([self.front_outline, 50+self.zorder+self.layers])
             
             for n, x in enumerate(self.layers_extra):
                 path = "{}{}.png".format(self.imagepath, x)

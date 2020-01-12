@@ -1,4 +1,4 @@
-define her_face = {"mouth": {"neutral": ["annoyed","base"], "happy": ["smile","grin"], "naughty": ["grin","horny"], "horny": ["grin","horny"], "annoyed": ["annoyed"], "disgusted": ["clench","annoyed"], "angry": ["clench","angry"]},
+define her_face = {"mouth": {"neutral": ["annoyed","base"], "happy": ["smile","grin"], "naughty": ["grin"], "horny": ["grin"], "annoyed": ["annoyed"], "disgusted": ["clench","annoyed"], "angry": ["clench","angry"]},
                    "eyes": {"neutral": ["base"], "happy": ["base"], "naughty": ["narrow","base"], "horny": ["narrow","base"], "annoyed": ["narrow"], "disgusted": ["narrow"], "angry": ["narrow","base"]},
                    "eyebrows": {"neutral": ["base"], "happy": ["base"], "naughty": ["base"], "horny": ["base"], "annoyed": ["worried"], "disgusted": ["base", "angry"], "angry": ["angry"]},
                    "pupils": {"neutral": ["mid","L","R"], "happy": ["mid","L","R"], "naughty": ["mid","L","R","down"], "horny": ["mid","L","R","down"], "annoyed": ["mid","R"], "disgusted": ["down"], "angry": ["L"]}}

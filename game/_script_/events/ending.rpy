@@ -3005,22 +3005,11 @@ label ball_ending_E2:
     else:
         $ persistent.ending_01 = True
 
-    # End the game or continue playing
-    g14 "Ah, finally back to my ultimate form. Being infinite and all-powerful again sure feels nice."
-    menu:
-        g14 "What should I do though?"
-        "Cause a time-travel paradox at Hogwarts":
-            g15 "Unlimited power!"
-            jump day_start
-        "End all of existence (exit to main menu)":
-            g15 "Goodbye, cruel..... everything..."
-            $ renpy.full_restart()
+    # But wait, there's even more
+    jump ending_after
 
 label original_credits:
     play music "music/02 - Shanghai Honey.mp3" fadein 1 fadeout 1
-
-    # $ dermo = "ch_sna defend"
-    # show screen credits_chibi
 
     centered """{cps=20}{size=+5}{color=#ea91b0}-Witch Trainer-{/color}{/size}\n\n
     {size=+5}{color=#cbcbcb}(The following credits are the creators of the original game, Witch Trainer,\nand did not take part in creating,\nor are affiliated in any way with the Silver mod.){/color}{/size}\n\n
@@ -3031,12 +3020,6 @@ label original_credits:
     {color=#e5e297}-\{Texts proofread and edited by\}-{/color}\n   {size=+5}{color=#cbcbcb}LYK.D9{/color}{/size}\n\n
     {color=#e5e297}-\{Technical advisor\}-{/color}\n   {size=+5}{color=#cbcbcb}XALJIO{/color}{/size}\n\n
     {color=#e5e297}-\{Game testers\}-{/color}\n   {size=+5}{color=#cbcbcb}XALJIO\nLYK.D9\nDAHR\nAKABUR{/color}{/size}\n\n{/cps}"""
-
-    # $ xder = 160
-    # $ yder = 160
-    # $ dermo = "ch_sna jerk_off"
-    # show screen uni_cr
-    # hide screen credits_chibi
 
     centered """{cps=40}
     {size=+5}{color=#e5e297}-\{Sound Effects\}-{/color}{/size}\n{color=#cbcbcb} http://www.freesound.org/ {/color}\n\n
@@ -3060,10 +3043,6 @@ label original_credits:
     {color=#e5e297}\"Plaint\" {/color}{color=#cbcbcb}by  Kevin MacLeod.{/color}\n
     {color=#e5e297}\"Under-the-Radar\" {/color}{color=#cbcbcb}by  PhobyAk.{/color}{/cps}"""
 
-    # $ xder = 670
-    # $ yder = 410
-    # $ dermo = im.Flip("ch_hem run", horizontal=True)
-
     centered """{cps=40}
     {size=+2}{color=#e5e297}-\{CREATOR OF THIS GAME WOULD ALSO LIKE TO PERSONALLY THANK\}-{/color}{/size}\n\n
     {size=+5}{color=#cbcbcb}Dahr{/color}{/size}\n
@@ -3078,8 +3057,6 @@ label original_credits:
     {color=#e5e297}For giving me an opportunity to release another game while retaining complete creative freedom.{/color}\n\n\n
     {size=-1}{color=#cbcbcb}A whole bunch of other people who helped me with development of this game in one way or another,\n but whom I forgot to mention.{/color}\n
     {color=#cbcbcb}And of course to everyone else who supports\nme and my work.{/color}{/size}{/cps}"""
-
-    # hide screen uni_cr
 
     centered """{cps=70}
     {color=#cbcbcb}This is not a commercial video game. The entire project was independently founded solely through\nhttp://www.patreon.com/ and\nby \"Hentai United\" subscribers.{/color}\n\n\n

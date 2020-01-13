@@ -30,7 +30,7 @@ screen whitetone8():
     add im.Alpha("interface/white.jpg", 0.8)
 
 screen white():
-    zorder 5
+    zorder 6
     add "interface/white.jpg"
     
 screen blkback():
@@ -61,16 +61,3 @@ screen clothing_unlock():
     zorder 6
     add "interface/panels/"+str(interface_color)+"/clothing_panel_B.png" at Position(xalign=0.5, ypos=100)
     add mannequin_preview xalign 0.47 ypos 52 zoom 0.6/scaleratio
-
-#TODO Fix final event credits and then remove these screens
-screen credits_chibi(): # ONE CHIBI
-    zorder 5
-    add dermo at Position(xpos=420, ypos=140)
-
-screen credits_chibi2(): # TWO CHIBIs
-    zorder 5
-    add dermo at Position(xpos=290, ypos=140)
-
-screen uni_cr(): # UNIVERSAL CREDITS CHIBI
-    zorder 5
-    add dermo at Position(xpos=xder+140, ypos=yder)

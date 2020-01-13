@@ -75,7 +75,7 @@ label gen_main(text="", face=None, base=None, xpos=None, ypos=None, flip=True, t
 
 screen genie_main():
     tag genie_main
-
+    sensitive False
     add genie_base xpos genie_xpos ypos genie_ypos xzoom genie_flip zoom (1.0/genie_scaleratio)#Add the base body
     add genie_face xpos genie_xpos ypos genie_ypos xzoom genie_flip zoom (1.0/genie_scaleratio)#Add genie expression
 

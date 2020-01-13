@@ -47,6 +47,8 @@ image qp_fire:
 screen quidditch_pitch():
     tag quidditch_pitch
     zorder 0
+    sensitive False
+
     if qp_cloudy:
         add "images/rooms/quidditch_pitch/bg_cloudy.png"
     else:
@@ -73,6 +75,8 @@ screen quidditch_pitch():
 screen quidditch_pitch_overlay():
     tag quidditch_pitch_overlay
     zorder 5
+    sensitive False
+
     add "images/rooms/quidditch_pitch/podium_top.png"
     if qp_spotlight:
         add "images/rooms/quidditch_pitch/spotlight_front.png"

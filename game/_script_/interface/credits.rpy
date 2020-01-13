@@ -83,6 +83,7 @@ transform credits_chibi_fade(start, duration):
 screen credits(credits=credits_text, duration=credits_duration, chibis=credits_chibis):
     tag credits
     zorder 8
+    sensitive False
     
     add Solid("#000")
 

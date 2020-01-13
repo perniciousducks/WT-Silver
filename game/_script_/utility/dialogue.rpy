@@ -4,7 +4,7 @@
 default last_doll_images = dict()
 default last_say_who = None
 
-transform doll_transition(old_img, new_img, trans=d3):
+transform doll_transition(old_img, new_img, trans=d9):
     old_img
     new_img with trans
 
@@ -21,6 +21,8 @@ init -1 python:
         if doll_new != doll_old:
             if not doll_old or (use_head and last_say_who != get_say_who()):
                 doll_old = doll_new
+
+            print "doll transition: " + scr_name
 
             scope = renpy.get_screen(scr_name).scope
             scope[img_name] = doll_transition(doll_old, doll_new)

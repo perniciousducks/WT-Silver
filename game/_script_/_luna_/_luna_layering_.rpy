@@ -2,7 +2,7 @@
 screen luna_main():
     tag luna_main
     zorder luna_zorder
-    
+    sensitive False
     fixed:
         at transform:
             xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)

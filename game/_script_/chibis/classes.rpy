@@ -2,6 +2,7 @@
 # Screen used by chibi class (each chibi object derives its own uniquely tagged screen from this one)
 screen chibi(chibi_object):
     zorder chibi_object.zorder
+    sensitive False
     fixed:
         at chibi_object.transform
         fit_first True
@@ -12,6 +13,7 @@ screen chibi(chibi_object):
 
 screen chibi_emote(emote, chibi_object):
     zorder chibi_object.zorder
+    sensitive False
     add "emo_{}".format(emote):
         at emote_effect
         anchor (0.5, 1.0)

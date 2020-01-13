@@ -10,6 +10,7 @@ screen main_room_menu():
 screen main_room():
     tag room
     zorder 0
+    sensitive room_menu_active
 
     # Hotkeys
     if room_menu_active and day > 1 and not renpy.variant('android'):

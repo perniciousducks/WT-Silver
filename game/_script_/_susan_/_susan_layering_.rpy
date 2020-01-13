@@ -2,6 +2,7 @@
 screen susan_main():
     tag susan_main
     zorder susan_zorder
+    sensitive False
 
     fixed:
         at transform:

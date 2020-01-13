@@ -210,6 +210,8 @@ image lightning: #Lightening during rain behind the window.
 
 screen weather():
     zorder -1
+    sensitive False
+    
     if daytime:
         if weather_gen < 4:# (cloud across sky)
             add "images/rooms/_weather_/sky.png" at Position(xpos=430, ypos=218, xanchor="center", yanchor="center")

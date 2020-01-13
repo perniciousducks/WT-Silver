@@ -4148,7 +4148,6 @@ images/rooms/weasley_store/store_empty2.png:0,0,1080,600
 images/rooms/weasley_store/store_night.png:0,0,1080,600
 images/rooms/_bg_/castle.png:0,0,1080,600
 images/rooms/_bg_/corridor.png:0,0,1080,600
-images/rooms/_bg_/custom.png:0,0,1080,600
 images/rooms/_bg_/desk.png:0,0,1080,634
 images/rooms/_bg_/forest.png:0,0,1080,600
 images/rooms/_bg_/highlight.png:0,0,1080,600
@@ -4156,19 +4155,6 @@ images/rooms/_bg_/main_room_day.png:0,0,2160,1200
 images/rooms/_bg_/main_room_night.png:0,0,2160,1200
 images/rooms/_bg_/versus.png:0,0,1080,600
 images/rooms/_bg_/wall_day.png:0,0,1080,600
-images/rooms/_bg_/white.png:0,0,1080,600
-images/rooms/_bg_/color/baby_blue.png:0,0,1080,600
-images/rooms/_bg_/color/black.png:0,0,1080,600
-images/rooms/_bg_/color/blue.png:0,0,1080,600
-images/rooms/_bg_/color/dark_gray.png:0,0,1080,600
-images/rooms/_bg_/color/dark_gray_blue.png:0,0,1080,600
-images/rooms/_bg_/color/dark_gray_red.png:0,0,1080,600
-images/rooms/_bg_/color/gray.png:0,0,1080,600
-images/rooms/_bg_/color/green.png:0,0,1080,600
-images/rooms/_bg_/color/light_blue.png:0,0,1080,600
-images/rooms/_bg_/color/pink.png:0,0,1080,600
-images/rooms/_bg_/color/purple.png:0,0,1080,600
-images/rooms/_bg_/color/white.png:0,0,1080,600
 images/rooms/_objects_/candles/candle.png:188,200,36,119
 images/rooms/_objects_/candles/candleM.png:190,199,36,120
 images/rooms/_objects_/candles/fire_01.png:27,21,150,152
@@ -4359,7 +4345,6 @@ interface/3_stars.png:0,1,59,19
 interface/3_stars_00.png:0,0,59,20
 interface/3_stars_01.png:0,0,59,20
 interface/3_stars_02.png:0,0,59,20
-interface/blackfade.png:0,0,1080,600
 interface/bld.png:0,0,1080,600
 interface/bld2.png:0,0,1080,600
 interface/cards.png:0,0,28,20
@@ -4406,7 +4391,6 @@ interface/loading.png:0,0,128,128
 interface/note.png:0,0,15,18
 interface/note2.png:0,0,21,22
 interface/page.png:0,0,24,32
-interface/red.jpg:0,0,1080,600
 interface/return.png:0,0,114,65
 interface/return_hover.png:0,0,114,65
 interface/textheart.png:0,0,12,11

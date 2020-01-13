@@ -60,9 +60,9 @@ screen choice(items):
     zorder 30
 
     # Dont add the fade if character or saybox is present (They have their own triggers for fading)
-    if not any(itertools.imap(renpy.get_screen, ["say", "hermione_main", "cho_main", "luna_main", "snape_main", "astoria_main", "tonks_main", "susan_main", "letter"])):
-        add "interface/bld.png" at fadeOutOnly
-    window at fadeInOut:
+    showif not any(itertools.imap(renpy.get_screen, ["say", "hermione_main", "cho_main", "luna_main", "snape_main", "astoria_main", "tonks_main", "susan_main", "letter"])):
+        add "interface/bld.png" at fade_hide(0.15)
+    window at fade_show_hide(0.15):
         style "empty"
         xalign menu_x
         yalign menu_y

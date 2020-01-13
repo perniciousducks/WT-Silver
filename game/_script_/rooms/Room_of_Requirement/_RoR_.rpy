@@ -88,7 +88,7 @@ label mirror_menu:
         jump mirror_menu
 
 screen room_of_req_door():
-    add "images/rooms/_objects_/doors/front_door.png" at fade_in(420, 105, 1)
+    add "images/rooms/_objects_/doors/front_door.png" at fade_show(1) xpos 420 ypos 105
     zorder -1
 
 screen floor_7th_door():

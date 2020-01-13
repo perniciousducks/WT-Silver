@@ -554,6 +554,6 @@ label genie_lost:
     $ MainMenu(confirm=False)
 
 screen snape_glass():
-    # add "interface/blackfade.png"
+    # add Color("#000")
     add "glass" at Position(xpos=0,ypos=0)
     zorder 10

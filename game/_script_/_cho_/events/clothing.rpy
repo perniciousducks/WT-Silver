@@ -30,7 +30,7 @@ label cho_summon_setup:
             with d3
 
             call play_music("cho")
-            call cho_main("","base","base","base","mid", xpos="mid", ypos="base", animation=moveFade)
+            call cho_main("","base","base","base","mid", xpos="mid", ypos="base", animation=move_fade)
             $ cho_animation = None
             call ctc
 
@@ -64,7 +64,7 @@ label cho_summon_setup:
             with d3
 
             call play_music("cho")
-            call cho_main("","base","base","base","mid", xpos="mid", ypos="base", animation=moveFade)
+            call cho_main("","base","base","base","mid", xpos="mid", ypos="base", animation=move_fade)
             $ cho_animation = None
             call ctc
 
@@ -99,10 +99,10 @@ label cho_summon_setup:
 
     call play_music("cho")
     if cho_mood != 0:
-        call cho_main("[cho_genie_name]...", face="annoyed", xpos="base", ypos="base", animation=moveFade)
+        call cho_main("[cho_genie_name]...", face="annoyed", xpos="base", ypos="base", animation=move_fade)
         ">Cho is upset with you."
     else:
-        call cho_main("Hello, [cho_genie_name].", face="happy", xpos="base", ypos="base", animation=moveFade)
+        call cho_main("Hello, [cho_genie_name].", face="happy", xpos="base", ypos="base", animation=move_fade)
     $ cho_animation = None
 
     return

@@ -555,9 +555,9 @@ screen dark_room():
 screen DRgame_blktone(): #Use this instead of "blktone", or it will cause issues with chibis.
     tag DRgame_blktone
     if DRgame.fire <= 0:
-        add im.Alpha("interface/blackfade.png", 0.7)
+        add Color("#000", alpha=0.7)
     elif DRgame.fire == 1:
-        add im.Alpha("interface/blackfade.png", 0.3)
+        add Color("#000", alpha=0.3)
     zorder 4
 
 screen DRgame_menu():

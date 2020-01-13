@@ -67,26 +67,6 @@ image love_heart:
     pause.06
     "magic/love15.png"
 
-image magic = "magic/magic1.png"
-image magic2 = "magic/magic2.png"
-image magic3 = "magic/magic3.png"
-image magic4 = "magic/magic4.png"
-image magic5 = "magic/magic5.png"
-
-image bld = "interface/bld.png"
-image bld2 = "interface/bld2.png"
-image white = "interface/white.jpg"
-image white = "interface/white.jpg"
-image blkfade = "interface/blackfade.png"
-image blkfade = "interface/blackfade.png"
-image whitefade = "interface/whitefade.png"
-image whitefade = "interface/whitefade.png"
-image con1 = "interface/cont1.png"
-
-image blk50: 
-    alpha 0.5
-    "interface/blackfade.png"
-
 image ctc:
     pos (0.99, 0.995)
     anchor (0.8, 1.0)

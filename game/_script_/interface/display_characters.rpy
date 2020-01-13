@@ -15,6 +15,21 @@ default display_character_tonks = False
 default display_background = False
 default custom_bg_image = "images/rooms/_bg_/main_room_night.png"
 
+define color_bg_list = (
+    "#d0e4ff", # baby_blue
+    "#000000", # black
+    "#0090ff", # blue
+    "#545a61", # dark_gray
+    "#365074", # dark_gray_blue
+    "#6f3674", # dark_gray_red
+    "#dcdcdc", # gray
+    "#58ff9b", # green
+    "#c0f2ff", # light_blue
+    "#fcd8ff", # pink
+    "#c597ff", # purple
+    "#ffffff", # white
+)
+
 label summon_characters:
     call update_display_characters_summon_list
 
@@ -376,8 +391,6 @@ label pick_custom_background:
             call custom_bg("forest")
         "-Castle-":
             call custom_bg("castle")
-        "-White-":
-            call custom_bg("white")
         "-Change BG Color-":
             $ custom_bg_color = color_picker([255.0, 255.0, 255.0, 255], False, "background color")
             $ color_background = True
@@ -408,16 +421,11 @@ screen custom_background():
     tag custom_background
 
     if color_background:
-        add im.MatrixColor( "images/rooms/_bg_/white.png", im.matrix.tint(custom_bg_color[0]/255.0, custom_bg_color[1]/255.0, custom_bg_color[2]/255.0)) alpha bg_transp
+        add Color(tuple(custom_bg_color), alpha=bg_transp)
     else:
         add custom_bg_image alpha bg_transp
 
     zorder 3
-
-
-
-
-
 
 screen summon_characters():
 

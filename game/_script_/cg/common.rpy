@@ -36,7 +36,7 @@ screen ccg():
 screen sccg():
     # Used by function sc34CG
     zorder 6
-    add "interface/blackfade.png"
+    add Color("#000")
     add sc_cg_base xpos sccgxpos ypos sccgypos
     add sc_cg_image_1 xpos sccgxpos ypos sccgypos
     add sc_cg_image_2 xpos sccgxpos ypos sccgypos

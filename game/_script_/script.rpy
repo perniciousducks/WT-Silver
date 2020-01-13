@@ -29,6 +29,7 @@ define d9 = Dissolve(0.9)
 
 define teleport = ImageDissolve("id_teleport.png", 1.0, 0)
 
+define flash = Fade(0.1, 0.0, 0.5, color="#fff")
 define flashbulb = Fade(0.2, 0.0, 0.8, color='#fff')
 define flashbb = Fade(0.2, 0.0, 0.8, color='#000')
 define flashblood = Fade(0.2, 0.0, 0.8, color='#f02424')

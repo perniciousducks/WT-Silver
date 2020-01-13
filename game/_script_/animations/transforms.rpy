@@ -1,19 +1,11 @@
-transform fade_in(x, y, speed):
-    alpha 0
+
+transform move_in(x, t):
     xpos x
-    ypos y
-    linear speed alpha 1
+    linear t xpos 0
+    pause t
 
-define flash = Fade(0.1, 0.0, 0.5, color="#fff")
-
-transform move_in(x, speed):
-    xpos x
-    linear speed xpos 0
-    pause speed
-
-transform moveFade:
+transform move_fade:
     subpixel True
-
     on show, appear, start:
         alpha 0.0
         xoffset 200
@@ -24,22 +16,20 @@ transform moveFade:
         xoffset 0
         easeout_back 1.0 alpha 0.0 xoffset absolute(200)
 
-transform basicfade:
-        on show:
-            alpha 1.0
-            linear 0.2 alpha 1.0
-        on hide:
-            linear 1.5 alpha 0.0
+transform fade_show(t):
+    alpha 0
+    on show:
+        linear t alpha 1
 
-transform fadeInOut:
-    alpha 0.0
-    linear 0.15 alpha 1.0
+transform fade_show_hide(t):
+    alpha 0
+    linear t alpha 1
     on hide:
-        linear 0.15 alpha 0.0
+        linear t alpha 0
 
-transform fadeOutOnly:
+transform fade_hide(t):
     on hide:
-        linear 0.15 alpha 0.0
+        linear t alpha 0.0
 
 transform blink:
     on show:
@@ -71,13 +61,13 @@ transform pulse:
         linear 0.8 xzoom 1.0 yzoom 1.0
         repeat
 
-transform moveto(start_x=0, start_y=0, target_x, target_y, duration=1.0):
+transform move_to(start_x=0, start_y=0, target_x, target_y, duration=1.0):
     on show:
         xpos start_x
         ypos start_y
         linear duration xpos target_x ypos target_y
 
-transform _notify_transform:
+transform notify_transform:
     xalign .02 yalign .015
 
     on show:

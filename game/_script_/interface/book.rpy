@@ -115,7 +115,7 @@ screen book_menu(page, pages, title, page_title, page_text, page_overflow):
     
     button style "empty" action NullAction()
     
-    add im.Alpha("interface/blackfade.png", 0.5)
+    add Color("#000", alpha=0.5)
     add "interface/book/book_open.png"
             
     frame:

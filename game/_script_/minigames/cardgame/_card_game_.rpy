@@ -383,7 +383,7 @@ screen rules_display(game_rules_list):
     tag rules
     zorder 8
     
-    add "interface/bld.png" at fadeInOut
+    add "interface/bld.png" at fade_show_hide(0.15)
     
     vbox:
         ypos 40

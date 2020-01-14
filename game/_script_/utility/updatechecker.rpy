@@ -1,4 +1,10 @@
-﻿init python:
+﻿
+define update_available = check_for_updates()
+
+init python:
+    config.after_load_callbacks.append(update_savefile)
+
+init -1 python:
     import urllib2
 
     def check_for_updates():
@@ -14,22 +20,15 @@
             except:
                 pass
         return False
-            
-    update_available = check_for_updates() 
-            
+    
     # Groundwork for future save compatibility patches
-    def check_save_compatibility(page, slot):
-        if renpy.slot_json(page+"-"+slot) != None:
-            try:
-                save_version = renpy.slot_json(page+"-"+slot)['_version']
-                
-                if float(save_version) < 1.37: #float(config.version)
-                    return False
-                return True
-            except:
-                return False
-        return None
-        
+    def check_save_compatibility(slot, page=None):
+        save_version = FileJson(slot, "_version", missing=0, page=page)
+        if save_version is not None:
+            return float(save_version) >= 1.37 # float(config.version)
+        else:
+            return True # Slot is empty
+    
     # Save compatibility patches
     def update_savefile():
         # Check for version variable
@@ -68,5 +67,3 @@
             
         if float(save_internal_version) < 1.373:
             save_internal_version = 1.373
-        
-    config.after_load_callbacks.append(update_savefile)

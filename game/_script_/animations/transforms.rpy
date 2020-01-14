@@ -66,12 +66,3 @@ transform move_to(start_x=0, start_y=0, target_x, target_y, duration=1.0):
         xpos start_x
         ypos start_y
         linear duration xpos target_x ypos target_y
-
-transform notify_transform:
-    xalign .02 yalign .015
-
-    on show:
-        alpha 0
-        linear .25 alpha 1.0
-    on hide:
-        linear .5 alpha 0.0

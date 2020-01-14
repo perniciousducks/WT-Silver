@@ -24,8 +24,10 @@ screen say(who, what, side_image=None):
         id "window"
         if hkey_chat_hidden:
             ypos 1000
-            
-        use quick_menu
+        
+        if _game_menu_screen:
+            use quick_menu
+        
         use hotkeys_say
 
         if who:
@@ -196,8 +198,9 @@ screen navigation():
 
     frame:
         style_group "gm_nav"
-        xalign .98
-        yalign .98
+        margin (5,5)
+        xalign 1.0
+        yalign 1.0
 
         has vbox
 
@@ -211,152 +214,120 @@ screen navigation():
 
 screen file_picker():
     frame:
-        style "file_picker_frame"
+        margin (5,5)
 
         has vbox
         hbox:
-            style_group "file_picker_nav"
-
-            textbutton _("Previous") action FilePagePrevious()
+            if renpy.get_screen("load"):
+                label _("Load game") xsize 160 yalign 0.5
+            else:
+                label _("Save game") xsize 160 yalign 0.5
             textbutton _("Auto") action FilePage("auto")
             textbutton _("Quick") action FilePage("quick")
+
+            textbutton _("«") action FilePagePrevious(auto=False, quick=False)
 
             for i in xrange(1, 11):
                 textbutton str(i) action FilePage(i)
 
-            textbutton _("Next") action FilePageNext()
+            textbutton _("»") action FilePageNext(max=10)
+
+        null height 5
 
         $ columns = 3
         $ rows = 6
 
-        # Display a grid of file slots.
+        # Display a grid of file slots
         grid columns rows:
             transpose True
             xfill True
-            style_group "file_picker"
 
-            # Display ten file slots, numbered 1 - 10.
             for i in xrange(1, columns * rows + 1):
-                $ is_compatible = check_save_compatibility(FileCurrentPage(), str(i))
+                $ is_compatible = check_save_compatibility(i)
+                $ file_name = FileSlotName(i, columns * rows)
+                $ file_time = FileTime(i, empty=_("Empty Slot"))
+                $ save_name = FileSaveName(i)
                 
-                if renpy.get_screen("load"):
-                    $ current_action = Confirm("{color=#7a0000}Warning!{/color}\nThe save file you're trying to load is incompatible with the current version of the game and may result in broken gameplay and multiple errors.\nDo you still wish to proceed?", yes=FileAction(i), no=NullAction())
-                else:
-                    $ current_action = FileAction(i)
-                
-                if is_compatible == True or is_compatible == None:
-                    button:
-                        xfill True
+                button:
+                    xfill True
+                    ysize 52
+                    padding (0,0)
+
+                    if not is_compatible and renpy.get_screen("load"):
+                        action Confirm("{color=#7a0000}Warning!{/color}\nThe save file you're trying to load is incompatible with the current version of the game and may result in broken gameplay and multiple errors.\nDo you still wish to proceed?", yes=FileAction(i), no=NullAction())
+                    else:
                         action FileAction(i)
-                        has hbox
 
-                        # Add the screenshot.
+                    key "save_delete" action FileDelete(i, preferences.savedelwarn)
+
+                    if is_compatible:
                         add FileScreenshot(i)
-
-                        $ file_name = FileSlotName(i, columns * rows)
-                        $ file_time = FileTime(i, empty=_("Empty Slot."))
-                        $ save_name = FileSaveName(i)
-                        
-                        if save_name != "":
-                            textbutton _("X"):
-                                yalign 0.5
-                                xpos 235
-                                yfill True
-                                ymaximum 50
-                                action FileDelete(i, preferences.savedelwarn)
-                            text "[file_name]. [file_time!t]\n[save_name!t]" xpos -40 yalign 0.5 style "night_button_text"
-                        else:
-                            text "[file_name]. [file_time!t]" xoffset 1 style "night_button_text"
-                            
-                        key "save_delete" action FileDelete(i, preferences.savedelwarn)
-                else:
-                    button:
-                        xfill True
-                        action current_action
-                            
-                        has hbox
-
-                        # Add the screenshot.
+                    else:
                         add grayTint(FileScreenshot(i))
+                    
+                    if FileLoadable(i):
+                        textbutton _("X"):
+                            yalign 0.5
+                            xalign 1.0
+                            yfill True
+                            margin (0,0)
+                            action FileDelete(i, preferences.savedelwarn)
 
-                        $ file_name = FileSlotName(i, columns * rows)
-                        $ file_time = FileTime(i, empty=_("Empty Slot."))
-                        $ save_name = FileSaveName(i)
-                        
-                        if save_name != "":
-                            textbutton _("X"):
-                                yalign 0.5
-                                xpos 235
-                                yfill True
-                                ymaximum 50
-                                action FileDelete(i, preferences.savedelwarn)
-                            text "[file_name]. [file_time!t]\n\n{color=#7a0000}NOT COMPATIBLE{/color}" xpos -40 yalign 0.5 style "night_text"
+                        if not is_compatible:
+                            text "[file_name]. [file_time!t]\n\n{color=#7a0000}NOT COMPATIBLE{/color}" xpos 70 style "night_button_text"
                         else:
-                            text "[file_name]. [file_time!t]" xoffset 1 style "night_text"
-                            
-                        key "save_delete" action FileDelete(i, preferences.savedelwarn)
+                            text "[file_name]. [file_time!t]\n[save_name]" xpos 70 style "night_button_text"
+                    else:
+                        text "[file_name]. [file_time!t]" xpos 70 style "night_button_text"
 
 screen save():
     tag menu
+    zorder 5
 
     use navigation
     use file_picker
-
-    zorder 5
 
 screen load():
     tag menu
+    zorder 5
 
     use navigation
     use file_picker
 
-    zorder 5
-
 screen preferences():
     tag menu
+    zorder 5
 
-    # Include the navigation.
     use navigation
 
-    # Put the navigation columns in a four-wide grid.
     if not renpy.variant('android'):
         $ columns = 4
         $ rows = 1
     else:
         $ columns = 3
         $ rows = 1
+    
     grid columns rows:
-        style_group "prefs"
+        style_prefix "pref"
         xfill True
+        spacing 5
+        area (5, 5, config.screen_width-10, config.screen_height-10)
 
-        # The left column.
         vbox:
+            spacing 5
+
             if not renpy.variant('android'):
                 frame:
-                    style_group "pref"
                     has vbox
 
                     label _("Display")
-                    textbutton _("Window") action Preference("display", "window")
+                    textbutton _("Default"):
+                        action Preference("display", "window")
+                        sensitive (renpy.get_physical_size() != (config.screen_width, config.screen_height))
+                    textbutton _("Window") action Preference("display", "any window")
                     textbutton _("Fullscreen") action Preference("display", "fullscreen")
                     
             frame:
-                style_group "pref"
-                has vbox
-
-                label _("Transitions")
-                textbutton _("All") action Preference("transitions", "all")
-                textbutton _("None") action Preference("transitions", "none")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Text Speed")
-                bar value Preference("text speed")
-            ####
-            frame:
-                style_group "pref"
                 has vbox
                 
                 label _("Interface")
@@ -364,39 +335,27 @@ screen preferences():
                     textbutton "Tooltips" action ToggleVariable("preferences.tooltip", True, False)
                     textbutton _("Custom Cursor") action [ToggleVariable("preferences.customcursor", True, False), ToggleVariable("config.mouse", { 'default' : [ ('interface/cursor.png', 0, 0)] }, None) ]
                 textbutton _("Nightmode") action [ToggleVariable("preferences.nightmode", True, False), Function(renpy.call_in_new_context, "update_interface_color")]
+
             frame:
-                style_group "pref"
                 has vbox
 
                 label _("Text colour")
-                if not preferences.nightmode:
-                    textbutton _("Day {color=[preferences.text_color_day]}text{/color}") action Function(renpy.invoke_in_new_context, set_text_color)
+                textbutton _("Day {color=[preferences.text_color_day]}text{/color}") action Function(renpy.invoke_in_new_context, set_text_color) sensitive (not preferences.nightmode)
                 textbutton _("Night {color=[preferences.text_color_night]}text{/color}") action Function(renpy.invoke_in_new_context, set_text_color, False)
                 textbutton _("Shadow") action ToggleVariable("preferences.text_outline", "#00000080", "#00000000")
                 textbutton _("Default") action [SetVariable("preferences.text_color_day", "#402313"), SetVariable("preferences.text_color_night", "#341c0f"), SetVariable("preferences.text_outline", "#00000000")]
-                
-            if not main_menu:
-                frame:
-                    style_group "pref"
-                    has vbox
-                    
-                    label _("Difficulty")
-                    hbox:
-                        xalign 0.5
-                        textbutton _("Easy"):
-                            text_size 14 text_color "#93b04c66" text_selected_color "#93b04c" xsize 80
-                            action [Function(renpy.call_in_new_context, "adjust_game_difficulty", 1), SelectedIf(game_difficulty == 1)]
-                        textbutton _("Normal"):
-                            text_size 14 xsize 80
-                            action [Function(renpy.call_in_new_context, "adjust_game_difficulty", 2), SelectedIf(game_difficulty == 2)]
-                        if persistent.game_complete:
-                            textbutton _("Hard"):
-                                text_size 14 text_color "#7a000066" text_selected_color "#7a0000" xsize 80
-                                action [Function(renpy.call_in_new_context, "adjust_game_difficulty", 3), SelectedIf(game_difficulty == 3)]
+
+            frame:
+                has vbox
+
+                label _("Transitions")
+                textbutton _("All") action Preference("transitions", "all")
+                textbutton _("None") action Preference("transitions", "none")
 
         vbox:
+            spacing 5
+
             frame:
-                style_group "pref"
                 has vbox
 
                 label _("Skip")
@@ -404,7 +363,6 @@ screen preferences():
                 textbutton _("All Messages") action Preference("skip", "all")
 
             frame:
-                style_group "pref"
                 has vbox
 
                 label _("After Choices")
@@ -412,33 +370,56 @@ screen preferences():
                 textbutton _("Keep Skipping") action Preference("after choices", "skip")
 
             frame:
-                style_group "pref"
                 has vbox
 
-                label _("Auto-Forward Time")
+                label _("Text Speed")
+                bar value Preference("text speed")
+
+            frame:
+                has vbox
+
+                label _("{size=-4}Auto-Forward Time{/size}")
                 bar value Preference("auto-forward time")
 
                 if config.has_voice:
                     textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
+
+            if not main_menu:
+                frame:
+                    has vbox
                     
-            frame:
-                style_group "pref"
-                has vbox
+                    label _("{size=-4}Animation preference{/size}")
+                    textbutton _("Chibis") action SetVariable("use_cgs", False)
+                    textbutton _("CG images") action SetVariable("use_cgs", True)
                 
-                label _("{size=-4}Animation preference{/size}")
-                textbutton _("Chibis") action SetVariable("use_cgs", False)
-                textbutton _("Sprites") action SetVariable("use_cgs", True)
+                frame:
+                    has vbox
+                    
+                    label _("Difficulty")
+                    grid 3 1:
+                        xfill True
+                        textbutton _("Easy"):
+                            text_size 14 text_color "#93b04c66" text_selected_color "#93b04c"
+                            action [Function(renpy.call_in_new_context, "adjust_game_difficulty", 1), SelectedIf(game_difficulty == 1)]
+                        textbutton _("Normal"):
+                            text_size 14
+                            action [Function(renpy.call_in_new_context, "adjust_game_difficulty", 2), SelectedIf(game_difficulty == 2)]
+                        textbutton _("Hard"):
+                            text_size 14 text_color "#b33e2766" text_selected_color "#b33e27"
+                            action [Function(renpy.call_in_new_context, "adjust_game_difficulty", 3), SelectedIf(game_difficulty == 3)] sensitive persistent.game_complete
+                    
+                    textbutton _("With cheats") action ToggleVariable("cheats_active", True, False) sensitive (game_difficulty < 3)
 
         vbox:
+            spacing 5
+
             frame:
-                style_group "pref"
                 has vbox
 
                 label _("Music Volume")
                 bar value Preference("music volume")
 
             frame:
-                style_group "pref"
                 has vbox
 
                 label _("Sound Volume")
@@ -451,7 +432,6 @@ screen preferences():
 
             if config.has_voice:
                 frame:
-                    style_group "pref"
                     has vbox
 
                     label _("Voice Volume")
@@ -463,16 +443,15 @@ screen preferences():
                             action Play("voice", config.sample_voice)
                             style "soundtest_button"
             frame:
-                style_group "pref"
                 has vbox
                 
-                label _("Saving&Loading")
-                textbutton _("Autosave") action [ToggleVariable("preferences.autosave", True, False), ToggleVariable("config.has_autosave", True, False), ToggleVariable("config.autosave_on_choice", True, False)]
-                textbutton _("Save Del. Warning") action ToggleVariable("preferences.savedelwarn", True, False)
+                label _("Saving & Loading")
+                textbutton _("Autosave") action [ToggleVariable("preferences.autosave", True, False), Notify(("Autosave preference will take effect after restarting the game", left))]
+                textbutton _("Save Delete Warning") action ToggleVariable("preferences.savedelwarn", True, False)
+
         if not renpy.variant('android'):
-            vbox:#Hotkeys
+            vbox:
                 frame:
-                    style_group "pref"
                     has vbox
 
                     label _("Hotkeys")
@@ -483,15 +462,30 @@ screen preferences():
                     textbutton _("Inventory - [hkey_inventory]") action None
                     textbutton _("Sleep - [hkey_sleep]") action None
                     textbutton _("Jerk off - [hkey_fap]") action None
-    zorder 5
     
 screen notify(message):
     zorder 100
 
-    text message:
-        at _notify_transform
-        color "#fff" 
-        outlines [(1, "#00000080", 1, 0)]
+    # Pass a tuple to customise notify transform (for positioning)
+    if isinstance(message, tuple):
+        $ m, t = message
+    else:
+        $ m, t = message, reset
+
+    frame:
+        style "empty"
+        margin (5,5)
+        at transform:
+            t
+            on show:
+                alpha 0
+                linear .25 alpha 1.0
+            on hide:
+                linear .5 alpha 0.0
+        
+        text m:
+            color "#fff" 
+            outlines [(1, "#00000080", 1, 0)]
 
     timer 3.25 action Hide('notify')
     

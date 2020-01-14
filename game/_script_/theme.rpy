@@ -80,19 +80,23 @@ style yesno_label_text:
 
 style pref_frame:
     xfill True
-    xmargin 5
-    top_margin 5
 
 style pref_vbox:
     xfill True
 
+style pref_label:
+    bottom_margin 5
+    xalign 0.5
+    yminimum 27
+
 style pref_button:
-    size_group "pref"
-    xalign 1.0
+    xfill True
+    xalign 0.5
 
 style pref_slider:
-    xmaximum 192
-    xalign 1.0
+    #xmaximum 200
+    xfill True
+    xalign 0.5
 
 style soundtest_button:
     xalign 1.0
@@ -102,12 +106,6 @@ style gm_nav_button:
     
 style mm_button:
     size_group "mm"
-    
-style file_picker_frame is menu_frame
-style file_picker_nav_button is small_button
-style file_picker_nav_button_text is small_button_text
-style file_picker_button is large_button
-style file_picker_text is large_button_text
 
 # Common control styles
 style default:

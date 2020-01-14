@@ -1,5 +1,5 @@
-init offset = -1
-init python:
+
+init -1 python:
     class DollMethods(object):
         """Container class for commonly used methods and attributes"""
         size = (1010, 1200)

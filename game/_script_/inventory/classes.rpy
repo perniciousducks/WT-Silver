@@ -1,6 +1,6 @@
 ### Item Classes ###
 
-init -2 python:
+init -1 python:
 
     #Items Main
     class item_class(object):

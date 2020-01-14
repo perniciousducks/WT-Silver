@@ -1,18 +1,16 @@
-﻿init python hide:
-    config.load_failed_label = "load_failed"
-    config.after_load_callbacks.append(scan_and_fix_stack)
+﻿
+default _checking_for_errors = False
+
+init python:
     if not config.developer:
         config.missing_image_callback = missing_image_func
         config.missing_label_callback = missing_label_func
-    config.after_load_callbacks.append(check_errors)
-        
-default _checking_for_errors = False
+    else:
+        config.after_load_callbacks.append(check_errors)
 
-init -2 python:
-    import os as system
-    
+init -1 python:
     rpy_version = int('%d%d%d%d' % renpy.version_tuple)
-    
+
     if rpy_version >= 735606:
         pass
     else:
@@ -45,45 +43,6 @@ init -2 python:
         renpy.hide_screen("blktone5")
         renpy.with_statement(d3)
         return
-
-    def reset_variables(*args):
-        """Resets the given variables to their default values."""
-        # Refer to renpy.ast.Default.set_default for implementation details
-        defaults_set = renpy.store._defaults_set
-        changed_set = renpy.store.__dict__.ever_been_changed
-        for arg in args:
-            if arg in defaults_set:
-                if arg in changed_set:
-                    defaults_set.remove(arg)
-                    changed_set.remove(arg)
-            elif config.developer:
-                raise Exception("The variable `{}` was not previously set with a default value.".format(arg))
-        renpy.execute_default_statement(False)
-
-    def scan_and_fix_stack():
-        # Scan the call stack for missing labels
-        # If a label is missing, assume a fatal error will occur eventually
-        # Then wipe the stack and jump to config.load_failed_label to prevent the error
-        context = renpy.game.context()
-        script = renpy.game.script
-        for i in xrange(-1, -len(context.return_stack)-1, -1):
-            node = None
-
-            if script.has_label(context.return_stack[i]):
-                node = script.lookup(context.return_stack[i])
-            elif script.has_label(context.call_location_stack[i]):
-                node = script.lookup(context.call_location_stack[i]).next
-
-            if node is None:
-                # Clean up similar to RollbackLog.load_failed
-                while renpy.exports.call_stack_depth():
-                    renpy.exports.pop_call()
-                
-                renpy.game.contexts[0].force_checkpoint = True
-                renpy.game.contexts[0].goto_label(renpy.config.load_failed_label)
-
-                raise renpy.game.RestartTopContext()
-                return
         
     def check_for_call_errors(char, auto=True):
         global _checking_for_errors
@@ -185,19 +144,4 @@ label missing_label():
     if active_girl:
         $ active_girl = None
     $ systemerror = [None, None]
-    jump main_room
-
-label load_failed:
-    python:
-        # Clear all screens and stop all sound
-        renpy.scene("screens")
-        for c in ["music", "bg_sounds", "weather"]:
-            renpy.music.stop(c, 0.5)
-        active_girl = None
-    $ renpy.block_rollback() # Prevent rollback to broken past
-    show screen blktone5
-    "Something went wrong while loading your save, but all is not lost! You will be back in the office with the same progress as when you saved the game. However, you can't rollback to a time before that moment."
-    hide screen blktone5
-    with d5
-    $ renpy.block_rollback() # Prevent rollback to this message
     jump main_room

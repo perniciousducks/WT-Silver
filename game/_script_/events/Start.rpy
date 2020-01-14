@@ -12,6 +12,9 @@ label start_wt:
     $ menu_x = 0.5
     $ menu_y = 0.7
 
+    $ disable_game_menu()
+    show screen close_button(close_action=MainMenu())
+
     label choose_your_difficulty:
     menu:
         "Difficulty" ">How difficult do you want the game to be?"
@@ -88,6 +91,9 @@ label start_wt:
                 $ skip_to_hermione = False
             "-Skip to Hermione-" if cheats_active or persistent.game_complete:
                 $ skip_to_hermione = True
+
+    $ enable_game_menu()
+    hide screen close_button
 
     ### GAME STARTS HERE ###
     stop music fadeout 1

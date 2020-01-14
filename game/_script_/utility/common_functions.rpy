@@ -1,12 +1,12 @@
 init -1 python:
     # Import commonly used python modules
-    #import os as system # Already imported in devtools.rpy
     import time
     import math
     import random
     import pygame
     import colorsys
     import itertools
+    import os as system
     
     def num_to_word(n, readable=True):
         """Transcript numbers (integers) into readable words."""
@@ -110,3 +110,26 @@ init -1 python:
             preferences.text_color_night = get_hex_string(preferences.text_color_night[0]/255.0, preferences.text_color_night[1]/255.0, preferences.text_color_night[2]/255.0)
         # Reset interface color
         renpy.call_in_new_context("update_interface_color", tmp_color)
+    
+    def reset_variables(*args):
+        """Resets the given variables to their default values."""
+        # Refer to renpy.ast.Default.set_default for implementation details
+        defaults_set = renpy.store._defaults_set
+        changed_set = renpy.store.__dict__.ever_been_changed
+        for arg in args:
+            if arg in defaults_set:
+                if arg in changed_set:
+                    defaults_set.remove(arg)
+                    changed_set.remove(arg)
+            elif config.developer:
+                raise Exception("The variable `{}` was not previously set with a default value.".format(arg))
+        renpy.execute_default_statement(False)
+    
+    def disable_game_menu():
+        store._tmp_menu = store._game_menu_screen
+        store._game_menu_screen = None
+
+    def enable_game_menu():
+        if hasattr(store, "_tmp_menu"):
+            store._game_menu_screen = store._tmp_menu
+            del store._tmp_menu

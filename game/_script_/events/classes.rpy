@@ -2,7 +2,7 @@
 
 ### Classes ###
 
-init -2 python:
+init -1 python:
 
     #Favours
     class silver_request(object):

@@ -1,21 +1,21 @@
 screen dropdown_menu(pos=(0, 0), name="", spacing=0, items_offset=(0, 0), background="#00000080"):
     modal True
     default visible = False
-    default icon = "{image=interface/general/arrow_up.png}"
+    default icon = "▾"
     
     if visible:
-        button style "empty" action [SetLocalVariable("visible", False), SetLocalVariable("icon", "{image=interface/general/arrow_up.png}")]
+        button style "empty" action [SetLocalVariable("visible", False), SetLocalVariable("icon", "▾")]
 
     window:
         style "empty"
         pos pos
-        textbutton "[name] [icon]":
+        textbutton "[name] {unicode}{size=+1}[icon]{/size}{/unicode}":
             style "empty"
             ysize 24
             text_yalign 0.5
             text_size 12
             text_hover_color "#FFF"
-            action [ToggleLocalVariable("visible", True, False), ToggleLocalVariable("icon", "{image=interface/general/arrow_up.png}", "{image=interface/general/arrow_down.png}")]
+            action [ToggleLocalVariable("visible", True, False), ToggleLocalVariable("icon", "▾", "▴")]
         if visible:
             frame:
                 pos (0, 24)
@@ -28,14 +28,17 @@ screen dropdown_menu(pos=(0, 0), name="", spacing=0, items_offset=(0, 0), backgr
                     transclude
                 
 #Close Button
-screen close_button(xoffset=0, yoffset=0, close_var="Close"):
+screen close_button(xoffset=0, yoffset=0, close_var="Close", close_action=None):
     imagebutton:
         xalign 1.0
         xanchor 1.0
         offset (xoffset, yoffset)
         idle "interface/topbar/buttons/"+interface_color+"/ui_close.png"
         hover image_hover("interface/topbar/buttons/"+interface_color+"/ui_close.png")
-        action Return(close_var)
+        if close_action:
+            action close_action
+        else:
+            action Return(close_var)
         keysym "game_menu"
 
 # Animation effect controller

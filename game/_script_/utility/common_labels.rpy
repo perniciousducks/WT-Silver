@@ -286,6 +286,7 @@ label adjust_game_difficulty(dif=None):
         $ wine_ITEM.cost = 60
         $ firewhisky_ITEM.cost = 80
     else:
+        $ cheats_active = False
         $ cheat_reading = False
         $ wine_ITEM.cost = 140
         $ firewhisky_ITEM.cost = 160

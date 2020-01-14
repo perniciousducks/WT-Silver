@@ -1,5 +1,10 @@
 ### Universal Menus ###
 
+default toggle1_bool = True
+default toggle2_bool = True
+default toggle3_bool = True
+default toggle4_bool = True
+
 #List Menu #Customizable
 screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=""):
     $ items_shown=4
@@ -422,16 +427,3 @@ screen character_select_menu(character_list=[], menu_text="menu name", xposition
             hotspot(13+(90*col), 87+(92*row), 83, 85) clicked Return(character_list[i][0])
 
             add button_image xpos (90*col) ypos 92+(92*row)
-
-
-
-
-
-### Menu Init ###
-
-init -2 python:
-
-    toggle1_bool = True
-    toggle2_bool = True
-    toggle3_bool = True
-    toggle4_bool = True

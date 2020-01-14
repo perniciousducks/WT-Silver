@@ -60,10 +60,10 @@ define config.debug_image_cache = False
 
 # Saving and Loading
 define config.save_directory = "WT SILVER"
-define config.autosave_on_quit = True
-define config.autosave_on_choice = False
 define config.has_autosave = preferences.autosave
-define config.autosave_frequency = 200
+define config.autosave_on_quit = preferences.autosave
+define config.autosave_on_choice = False
+define config.autosave_frequency = 100
 
 # Sound and music settings
 define config.has_sound = True
@@ -93,15 +93,15 @@ define config.game_main_transition = fade
 define config.end_splash_transition = dissolve
 define config.end_game_transition = fade
 define config.after_load_transition = CropMove(0.5, "irisout")
-define config.window_show_transition = Dissolve(0.2)
-define config.window_hide_transition = Dissolve(0.2)
-define config.adv_nvl_transition = Dissolve(0.2)
-define config.nvl_adv_transition = Dissolve(0.2)
+define config.window_show_transition = d3
+define config.window_hide_transition = d3
+define config.adv_nvl_transition = d3
+define config.nvl_adv_transition = d3
 define config.enter_yesno_transition = None
 define config.exit_yesno_transition = None
 define config.enter_replay_transition = None
 define config.exit_replay_transition = None
-define config.say_attribute_transition = Dissolve(0.3)
+define config.say_attribute_transition = d3
 
 # Garbage Collector
 define config.manage_gc = True

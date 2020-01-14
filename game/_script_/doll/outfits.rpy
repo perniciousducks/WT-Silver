@@ -38,14 +38,23 @@ init python:
                 if o.mask:
                     masks.append([o.mask, o.zorder-1])
                         
+            sprites.sort(key=lambda x: x[1])
+
+            back_sprites = [x for x in sprites if x[1] < 0]
+            sprites = [x for x in sprites if x[1] >= 0]
+
             # Apply alpha mask
-            if masks:
-                for m in masks:
-                    for s in sprites:
-                        if m[1] > s[1] >= 0:
-                            s[0] = AlphaMask(s[0], m[0])
+            for m in sorted(masks, key=lambda x: x[1]):
+                for i, s in enumerate(sprites):
+                    if m[1] <= s[1]:
+                        if i > 0:
+                            masked = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites[:i]))
+                            c = AlphaMask(Composite(self.size, *masked), m[0])
+                            sprites = sprites[i:]
+                            sprites.insert(0, (c, m[1]-1))
+                        break
             
-            sprites.sort(key=lambda x: x[1], reverse=False)
+            sprites = back_sprites + sprites
             sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))
             return sprites
             

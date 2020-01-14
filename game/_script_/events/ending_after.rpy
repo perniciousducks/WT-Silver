@@ -4,6 +4,9 @@
 
 # Genie gets stuck in the cosmos not being able to go anywhere
 label ending_after:
+    $ daytime = False
+    call update_interface_color
+
     call blkfade
     centered "{size=+7}{color=#cbcbcb}Somewhere outside of time and space...{/color}{/size}\n\n"
     play music "music/epic-unease-by-kevin-macleod.mp3" fadein 1 fadeout 1 # noloop

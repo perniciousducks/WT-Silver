@@ -3,32 +3,23 @@
 ### Yule Ball Ending ###
 
 label ball_ending_start:
-    $ renpy.choice_for_skipping()
-    call nar("It would probably be a good idea to wrap things up with other girls before you start the ending and make sure you don't have any unfinished business in Hogwarts.")
-    call nar("Are you sure you wish to start the game ending event chain?")
+    m "[hermione_name], that ball you've mentioned..."
+    m "When did you say it would start again?"
+    call her_main("The autumn ball?!", "grin", "base", "base", "mid")
+    call her_main("I'm so excited!!! I can't wait for it!", "grin", "happyCl", "base", "mid")
+    call her_main("Just two more days, [genie_name]", "base", "narrow", "base", "mid_soft")
+    m "That soon, huh?"
+    call her_main("Yep! I still have a tonne of preparation to do, though.", "soft", "base", "base", "R")
+    m "Well then I better not keep you occupied any longer..."
+    m "Unless..."
+    g9 "Maybe we could..."
+    call her_main("Have some fun?", "soft", "narrow", "base", "mid_soft")
+    g9 "You can read my mind, girl."
 
-    menu:
-        "Yes!":
-            m "[hermione_name], that ball you've mentioned..."
-            m "When did you say it would start again?"
-            call her_main("The autumn ball?!", "grin", "base", "base", "mid")
-            call her_main("I'm so excited!!! I can't wait for it!", "grin", "happyCl", "base", "mid")
-            call her_main("Just two more days, [genie_name]", "base", "narrow", "base", "mid_soft")
-            m "That soon, huh?"
-            call her_main("Yep! I still have a tonne of preparation to do, though.", "soft", "base", "base", "R")
-            m "Well then I better not keep you occupied any longer..."
-            m "Unless..."
-            g9 "Maybe we could..."
-            call her_main("Have some fun?", "soft", "narrow", "base", "mid_soft")
-            g9 "You can read my mind, girl."
+    $ ball_quest.started = True
+    $ ss_event_pause += 2
 
-            $ ball_quest.started = True
-            $ ss_event_pause += 2
-
-            jump hermione_favor_menu
-
-        "No.":
-            jump hermione_talk
+    jump hermione_favor_menu
 
 
 screen genie_snape_shake_hands(shake=False):
@@ -2992,7 +2983,7 @@ label ball_ending_E2:
 
     $ renpy.play('sounds/win2.mp3')
 
-    centered "{size=+7}{color=#cbcbcb}-\{Thank you for playing!\}-{/color}{/size}\n\n"
+    centered "{color=#cbcbcb}This concludes the original Witch Trainer ending{fast}\n\n{size=+7}-\{Thank you for playing!\}-{/size}{/color}"
 
     pause 2
 

@@ -6,9 +6,9 @@ default hermione = Doll(name="hermione",
                         clothes={"hat":        [None, 15, True],
                                  "hair":       [None, 4, True],
                                  "earring":    [None, 14, True],
-                                 "neckwear":   [None, 11, True],
+                                 "neckwear":   [None, 16, True],
                                  "robe":       [None, 22, True],
-                                 "gloves":     [None, 21, True],
+                                 "gloves":     [None, 14, True],
                                  "top":        [None, 15, True],
                                  "bra":        [None, 9, True],
                                  "bottom":     [None, 8, True],
@@ -134,3 +134,32 @@ default her_gloves_bunny1 = DollCloth("hermione", ("misc", "gloves"), "gloves", 
 default her_neckwear_bunny1 = DollCloth("hermione", ("head", "neckwear"), "neckwear", "bunny_bowtie_1", [[232, 232, 232, 255], [48, 48, 48, 255]])
 
 default her_outfit_bunny = DollOutfit([her_hair_base, her_top_bunny1, her_stockings_bunny1, her_tattoo3_bunny1, her_hat_bunny1, her_gloves_bunny1, her_neckwear_bunny1], price=250)
+
+################
+## Ball Dress ##
+################
+
+default her_top_ball1 = DollCloth("hermione", ("tops", "school"), "top", "ball_dress_1", [[240, 120, 161, 255], [247, 222, 231, 255]], blacklist=["bottom"])
+#default her_gloves_bunny1 = DollCloth("hermione", ("misc", "gloves"), "gloves", "bunny_gloves_1", [[232, 232, 232, 255]])
+default her_earring_pearls1 = DollCloth("hermione", ("head", "earrings"), "earring", "pearl_1", [[233, 166, 253, 255]])
+default her_neckwear_pearls1 = DollCloth("hermione", ("head", "neckwear"), "neckwear", "ball_pearls_1", [[233, 166, 253, 255]])
+default her_accessory_ball_sash1 = DollCloth("hermione", ("misc", "accessory"), "accessory4", "ball_sash", [[247, 222, 231, 255], [161, 82, 159, 255]], zorder=16)
+
+default her_outfit_ball = DollOutfit([her_hair_base, her_neckwear_pearls1, her_top_ball1, her_earring_pearls1, her_accessory_ball_sash1], price=1000)
+
+#####################
+## Yennefer Outfit ##
+#####################
+
+default her_top_yen1 = DollCloth("hermione", ("tops", "school"), "top", "yen_top", [[9, 32, 47, 255]])
+default her_bottom_yen_skirt1 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "yen_skirt", [[26, 26, 26, 255]])
+default her_stockings_yen1 = DollCloth("hermione", ("legwear", "stockings"), "stockings", "yen_stockings", [[76, 76, 76, 255]])
+default her_accessory_yen_sash1 = DollCloth("hermione", ("misc", "accessory"), "accessory4", "yen_sash", [[25, 25, 25, 255], [51, 51, 51, 255]], zorder=9)
+default her_accessory_yen_belt1 = DollCloth("hermione", ("misc", "accessory"), "accessory3", "yen_belt", [[52, 37, 31, 255], [146, 142, 137, 255]], zorder=10)
+default her_accessory_yen_feathers1 = DollCloth("hermione", ("misc", "accessory"), "accessory2", "yen_feathers", [[42, 190, 199, 255]], zorder=16)
+default her_accessory_yen_scarf1 = DollCloth("hermione", ("misc", "accessory"), "accessory1", "yen_scarf", [[9, 32, 47, 255]], zorder=17)
+default her_accessory_yen_corset1 = DollCloth("hermione", ("misc", "accessory"), "accessory0", "yen_corset", [[37, 27, 27, 255], [19, 14, 11, 255]], zorder=16)
+default her_neckwear_yen_choker1 = DollCloth("hermione", ("head", "neckwear"), "neckwear", "yen_choker", [[30, 29, 28, 255]])
+default her_gloves_yen1 = DollCloth("hermione", ("misc", "gloves"), "gloves", "yen_gloves", [[52, 37, 31, 255]], zorder=16)
+
+default her_outfit_yennefer = DollOutfit([her_hair_base, her_top_yen1, her_bottom_yen_skirt1, her_accessory_yen_sash1, her_stockings_yen1, her_accessory_yen_feathers1, her_accessory_yen_scarf1, her_neckwear_yen_choker1, her_gloves_yen1, her_accessory_yen_corset1, her_accessory_yen_belt1], price=250)

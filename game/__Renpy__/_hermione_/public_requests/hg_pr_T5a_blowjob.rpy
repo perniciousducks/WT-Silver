@@ -181,7 +181,7 @@ label hg_pr_blowjob_T1_E2:
     call her_main("Of course... I would not expect you to, [genie_name].","annoyed","annoyed", tears="soft")
     her "I failed to complete my task and deserve no praise of any kind..."
     her "And should you pay me out of pity..."
-    call her_main("Then That would only worsen the insult...","annoyed","angryL")
+    call her_main("Then that would only worsen the insult...","annoyed","angryL")
     m "Hm... In that case, maybe I should pay you anyway..."
     call her_main("No, [genie_name]. I would not accept it...","annoyed","annoyed")
     m "Hm... Well, this will be all then."

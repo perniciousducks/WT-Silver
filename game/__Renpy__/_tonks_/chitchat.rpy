@@ -118,7 +118,7 @@ label tonks_chit_chat:
         elif random_number == 24:
             call ton_main("There are rumours that Snape has set up an Age Line in his office to keep students away from his private stash...","open","base","base","R")
             call ton_main("Won't stop me borrowing some polyjuice potions though... Not that I need them...","open","base","base","R")
-            call ton_main("But maybe I find a girl that doesn't mind drinking it and have some fun.","horny","base","raised","R")
+            call ton_main("But maybe I can find a girl that doesn't mind drinking it and have some fun.","horny","base","raised","R")
 
         elif random_number == 25:
             call ton_main("I don't like when people call me Nymphadora... It's Tonks!","open","base","angry","mid")

@@ -31,13 +31,13 @@ define credits_text = "\n".join([
         "{color=#808080}{size=-5}{k=0.7}Creator of the original Witch Trainer and other awesome games! {a=https://www.patreon.com/akabur}PATREON{/a}{/size}{/color}{/k}\n",
         "Dr. Lupin", "Lineup", "MaiL", "MedicBear", "STG Anon", "Boom313", "Sandmaster", "Pinguino", "UE Crew", "Catbug", "CaptainNemo", "Artguy", "Linear", "Amadan", "Anons", "Heretic", "Maverick", "Cleanzo", "Techy", "Zuel32", "Darwin7"
     ),
-"""{vspace=200}
+"""{vspace=100}
 
 Special thanks to our fans, discord moderators
 and {a=https://www.patreon.com/SilverStudioGames/}patreon supporters{/a} {image=images/misc/heart.png}
 
 {image=logo/silverstudiogames.png}
-{vspace=50}
+{vspace=100}
 
 Thank you for playing!
 
@@ -83,7 +83,7 @@ transform credits_chibi_fade(start, duration):
 screen credits(credits=credits_text, duration=credits_duration, chibis=credits_chibis):
     tag credits
     zorder 8
-    sensitive False
+    #sensitive False
     
     add Solid("#000")
 

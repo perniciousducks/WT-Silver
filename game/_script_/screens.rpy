@@ -126,41 +126,38 @@ screen main_menu():
 
     text "{color=#fff}{size=-2}[title_version]{/size}{/color}" xpos 1024 ypos 228 outlines [ (1, "#000", 0, 0) ]
     if not is_release:
-        text "{color=#c70000}EXPERIMENTAL VERSION{/color}" xpos 10 yalign 0.01 size 24 outlines [(2, "#000", 0, 0)]
-        text "Expect bugs, crashes and other weird stuff.\nProceed at your own risk, you have been warned!" xpos 10 yalign 0.05 color "#fff" size 12 outlines [(2, "#000", 0, 0)]
-        text "You can find the most recent stable build on our {a=https://pastebin.com/6zbuZ5gS}pastebin{/a}" xpos 10 yalign 0.15 color "#fff" size 12 outlines [(2, "#000", 0, 0)]
+        vbox:
+            pos (10, 10)
+            text "{color=#c70000}EXPERIMENTAL VERSION{/color}" size 24 outlines [(2, "#000", 0, 0)]
+            text "Expect bugs, crashes and other weird stuff." color "#fff" size 12 outlines [(2, "#000", 0, 0)]
+            text "Proceed at your own risk, you have been warned!" color "#fff" size 12 outlines [(2, "#000", 0, 0)]
+            text "You can find the most recent stable build on our {a=https://pastebin.com/6zbuZ5gS}pastebin{/a}" color "#fff" size 12 outlines [(2, "#000", 0, 0)]
     
-    if update_available:        
+    vbox:
+        style_prefix "mm"
+        spacing 10
+        align (1.0, 1.0)
+        offset (-40, -80)
+
+        if update_available:        
+            frame:
+                has vbox
+                textbutton _("{size=-6}{color=#c70000}UPDATE AVAILABLE{/color}{/size}") action OpenURL("https://pastebin.com/6zbuZ5gS")
+
         frame:
-            style_group "mm"
-            xalign .96
-            yalign .575
-            
             has vbox
-            textbutton _("{size=-6}{color=#7a0000}UPDATE AVAILABLE{/color}{/size}") action OpenURL("https://pastebin.com/6zbuZ5gS")
 
-    frame:
-        style_group "mm"
-        xalign .96
-        yalign .75
+            if not persistent.game_complete:
+                textbutton _("New Game") action Start()
+            else:
+                textbutton _("New Game {size=+3}+{/size}") action Start()
+            textbutton _("Load Game") action ShowMenu("load")
+            textbutton _("Preferences") action ShowMenu("preferences")
+            textbutton _("Quit") action Quit(confirm=False)
 
-        has vbox
-
-        if not persistent.game_complete:
-            textbutton _("New Game") action Start()
-        else:
-            textbutton _("New Game {size=+3}+{/size}") action Start()
-        textbutton _("Load Game") action ShowMenu("load")
-        textbutton _("Preferences") action ShowMenu("preferences")
-        textbutton _("Quit") action Quit(confirm=False)
-
-    frame:
-        style_group "mm"
-        xalign .96
-        yalign .86
-
-        has vbox
-        textbutton _("Credits") action Jump("credits")
+        frame:
+            has vbox
+            textbutton _("Credits") action Jump("credits")
         
     imagebutton:
         xpos 910
@@ -205,9 +202,9 @@ screen navigation():
         has vbox
 
         textbutton _("Return") action Return()
-        textbutton _("Preferences") action ShowMenu("preferences")
         textbutton _("Save Game") action ShowMenu("save")
         textbutton _("Load Game") action ShowMenu("load")
+        textbutton _("Preferences") action ShowMenu("preferences")
         textbutton _("Main Menu") action MainMenu()
         #textbutton _("Help") action Help()
         textbutton _("Quit") action Quit()
@@ -227,8 +224,8 @@ screen file_picker():
 
             textbutton _("«") action FilePagePrevious(auto=False, quick=False)
 
-            $ p = int(FileCurrentPage())
-            for i in xrange(1 + max(0, p-10), 11 + max(0, p-10)):
+            $ p = max(0, int(FileCurrentPage())-10)
+            for i in xrange(1+p, 11+p):
                 textbutton str(i) action FilePage(i) xsize 60
 
             textbutton _("»") action FilePageNext()

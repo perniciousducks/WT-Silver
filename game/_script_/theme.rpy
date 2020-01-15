@@ -185,6 +185,8 @@ style night_button_text is default: # Don't inherit from button_text
     selected_color "#eedfd5"
     selected_hover_color "#fff"
 
+#TODO btn_hover day: (#edc48240|#e3ba7140) night: #7d75aa40
+
 # Choice menu styles
 style menu_text is default:
     text_align 0.5
@@ -242,4 +244,8 @@ style tooltip_text is default:
     size 12
     outlines [(1, "#00000080", 1, 0)]
 
-# btn_hover day: (#edc48240|#e3ba7140) night: #7d75aa40
+# Hyperlinks
+style hyperlink_text:
+    underline False
+    hover_color "#4cf"
+    idle_color "#08f"

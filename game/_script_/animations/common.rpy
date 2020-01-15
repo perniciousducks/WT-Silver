@@ -322,7 +322,6 @@ image title_ani:
         repeat
 
     contains:
-        xanchor 1.0
         xalign 1.0
         zoom 0.9
         ypos 12

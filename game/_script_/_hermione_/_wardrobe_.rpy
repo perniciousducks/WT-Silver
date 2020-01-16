@@ -44,8 +44,8 @@ default hermione = Doll(name="hermione",
                               "pupils":   ["mid", 9, True],
                               "mouth":    ["base", 13, True]},
                         body={"armleft": ["down", 3], 
-                              "armright":["down", 1], 
-                              "base":    ["front", 0], 
+                              "armright":["down", 0], 
+                              "base":    ["front", 1], 
                               "breasts": ["normal", 2]})
                               
 ###############

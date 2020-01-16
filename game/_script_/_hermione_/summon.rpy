@@ -92,7 +92,7 @@ label summon_hermione:
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if hermione_wardrobe_unlocked: # Unlocks after first summoning her.
-            call wardrobe("her_main")
+            $ renpy.call_in_new_context("wardrobe", "her_main")
             jump hermione_requests
 
         # Cardgame

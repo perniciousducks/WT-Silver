@@ -46,7 +46,7 @@ label summon_astoria:
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if astoria_wardrobe_unlocked:
-            call wardrobe("ast_main")
+            $ renpy.call_in_new_context("wardrobe", "ast_main")
             jump astoria_requests
 
         "{color=[menu_disabled]}-Hidden-{/color}" if not astoria_wardrobe_unlocked:

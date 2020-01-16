@@ -53,7 +53,7 @@ label summon_tonks:
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if tonks_wardrobe_unlocked:
-            call wardrobe("ton_main")
+            $ renpy.call_in_new_context("wardrobe", "ton_main")
             jump tonks_requests
 
         "{color=[menu_disabled]}-Hidden-{/color}" if not tonks_wardrobe_unlocked:

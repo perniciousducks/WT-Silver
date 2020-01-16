@@ -132,5 +132,6 @@ init python:
     build.classify('**/thumbs.db', None)
     build.classify("saves/**", None)
     build.classify("outfits/**", None)
+    build.classify("music/not_used/**", None)
     
     build.allow_integrated_gpu = True # MacOS support Only!    

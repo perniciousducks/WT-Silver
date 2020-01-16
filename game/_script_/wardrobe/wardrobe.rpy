@@ -50,6 +50,9 @@ label wardrobe(char_label):
     
     if wardrobe_music:
         call play_music("wardrobe")
+        
+    if not renpy.variant("android"):
+        show screen mouse_tooltip
     
     label .after_init:
     

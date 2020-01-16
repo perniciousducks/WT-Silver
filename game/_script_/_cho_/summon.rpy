@@ -97,7 +97,7 @@ label summon_cho:
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if cho_wardrobe_unlocked:
-            call wardrobe("cho_main")
+            $ renpy.call_in_new_context("wardrobe", "cho_main")
             jump cho_requests
 
         "{color=[menu_disabled]}-Hidden-{/color}" if not cho_wardrobe_unlocked:

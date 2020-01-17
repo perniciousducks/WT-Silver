@@ -97,8 +97,13 @@ label summon_cho:
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if cho_wardrobe_unlocked:
+            hide screen cho_main with d1
+            $ screenshot_image = ScreenshotImage.capture()
             $ renpy.call_in_new_context("wardrobe", "cho_main")
+            with d2
             jump cho_requests
+            
+            
 
         "{color=[menu_disabled]}-Hidden-{/color}" if not cho_wardrobe_unlocked:
             call nar(">You haven't unlocked this feature yet.")

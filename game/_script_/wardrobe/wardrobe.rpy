@@ -20,7 +20,6 @@ label wardrobe(char_label):
         char_nickname = char_active.name
         char_scale = 1.0/globals()[active_girl+"_scaleratio"]
         char_level = _char_var_list[active_girl]
-        hide_transitions = True
         
         renpy.start_predict("interface/wardrobe/*.png")
         predict = tuple(x.get_image() for x in char_active.wardrobe_list)
@@ -44,15 +43,16 @@ label wardrobe(char_label):
         character_toggles.sort(key=lambda x: x[1], reverse=True)
         
         renpy.hide_screen(active_girl+"_main")
-        
-        # Forbid rollback to avoid bugs and unintended actions
-        config.rollback_enabled = False
     
     if wardrobe_music:
         call play_music("wardrobe")
         
     if not renpy.variant("android"):
         show screen mouse_tooltip
+        
+    show screen wardrobe_menu(550, 50) 
+    with d2
+    
     
     label .after_init:
     
@@ -244,9 +244,7 @@ label wardrobe(char_label):
             call play_music("wardrobe")
             call expression char_label pass (text="", face="happy")
     else: #_return == "Close":
-        $ config.rollback_enabled = True
         $ renpy.play('sounds/door2.mp3')
-        $ hide_transitions = False
         $ char_active.wear("all")
         #$ char_active.clothes_compatible()
         if wardrobe_music:
@@ -258,7 +256,9 @@ label wardrobe(char_label):
         
 screen wardrobe_menu(xx, yy):
     tag wardrobe
-    zorder 4
+    zorder 10
+    
+    add im.Blur(screenshot_image, 2)
 
     use close_button
     
@@ -386,7 +386,7 @@ screen wardrobe_menu(xx, yy):
         
 screen wardrobe_menuitem(xx, yy):
     tag wardrobe_menuitem
-    zorder 4
+    zorder 10
     
     # Navigational Buttons Up/Down
     if menu_items_length > items_shown:
@@ -539,7 +539,7 @@ screen wardrobe_menuitem(xx, yy):
                     
 screen wardrobe_outfit_menuitem(xx, yy):
     tag wardrobe_menuitem
-    zorder 4
+    zorder 10
     
     # Navigational Buttons Up/Down
     if menu_items_length > 9:

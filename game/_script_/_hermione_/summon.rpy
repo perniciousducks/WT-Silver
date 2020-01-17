@@ -92,7 +92,10 @@ label summon_hermione:
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if hermione_wardrobe_unlocked: # Unlocks after first summoning her.
+            hide screen hermione_main with d1
+            $ screenshot_image = ScreenshotImage.capture()
             $ renpy.call_in_new_context("wardrobe", "her_main")
+            with d2
             jump hermione_requests
 
         # Cardgame

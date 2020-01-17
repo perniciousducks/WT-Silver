@@ -53,7 +53,10 @@ label summon_tonks:
 
         # Wardrobe
         "-Wardrobe-{icon=interface/icons/small/wardrobe.png}" if tonks_wardrobe_unlocked:
+            hide screen tonks_main with d1
+            $ screenshot_image = ScreenshotImage.capture()
             $ renpy.call_in_new_context("wardrobe", "ton_main")
+            with d2
             jump tonks_requests
 
         "{color=[menu_disabled]}-Hidden-{/color}" if not tonks_wardrobe_unlocked:

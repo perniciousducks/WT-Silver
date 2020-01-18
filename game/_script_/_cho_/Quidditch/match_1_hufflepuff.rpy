@@ -151,7 +151,7 @@ label hufflepuff_match:
 
     centered "{size=+7}{color=#cbcbcb}At the Quidditch pitch...{/color}{/size}"
 
-    call room("quidditch_pitch")
+    call room("quidditch_stands")
     $ qp_mob = 2 # Controls number of people
     $ qp_mob_reaction = [None, None, None] # Reset reactions
     #call sna_chibi("stand", "210", -40, flip=True)

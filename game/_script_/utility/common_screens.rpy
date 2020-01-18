@@ -39,7 +39,7 @@ screen blkback():
     
 screen bld1():
     tag bld1
-    if not current_room == "quidditch_pitch":
+    if not current_room == "quidditch_stands":
         add "interface/bld.png"
     zorder 4
 

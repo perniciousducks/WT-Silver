@@ -2,7 +2,7 @@ screen bludger_flying(start, end, t=1.0):
     zorder 4
     tag bludger
 
-    add "images/rooms/quidditch_pitch/bludger.png":
+    add "images/rooms/quidditch_stands/bludger.png":
         at transform:
             subpixel True
             anchor (0.5, 0.5)
@@ -245,7 +245,7 @@ label slytherin_match:
     $ tonks_chibi.zorder = 3
     $ genie_chibi.zorder = 4
 
-    call room("quidditch_pitch")
+    call room("quidditch_stands")
     with d3
     play bg_sounds "sounds/crowd.mp3" fadein 2
     pause 1

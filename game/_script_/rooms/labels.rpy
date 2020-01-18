@@ -74,11 +74,11 @@ label room(room=None, hide_screens=True, stop_sound=True):
 
         show screen room_of_requirement
 
-    if room in ["quidditch_pitch", "quid", "qp"]:
-        $ current_room = "quidditch_pitch"
+    if room in ["quidditch_stands", "quid", "qp"]:
+        $ current_room = "quidditch_stands"
 
-        show screen quidditch_pitch
-        show screen quidditch_pitch_overlay
+        show screen quidditch_stands
+        show screen quidditch_stands_overlay
 
     return
 

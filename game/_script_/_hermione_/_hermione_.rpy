@@ -49,13 +49,6 @@ label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
         hide screen hermione_main
     return
 
-
-#label her_kneel(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, trans=None):
-label her_kneel(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=False, tears=False, extra=False, emote=False, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):    
-    #TODO Hermione's kneel pose was removed. Events that use it need to be posed again.
-    call her_main(text, mouth, eyes, eyebrows, pupils, cheeks, tears, extra, emote, face, xpos, ypos, flip, trans, animation)
-    return
-
 label update_hermione:
 
     $ hermione_chibi.update()

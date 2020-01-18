@@ -7,6 +7,7 @@ init python:
             self.price = price
             self.char = self.group[0].char
             self.unlocked = unlocked
+            self.schedule = {"day": False, "night": False, "cloudy": False, "rainy": False, "snowy": False}
             
             if unlocked:
                 self.unlock()

@@ -36,7 +36,7 @@ label wardrobe(char_label):
         wardrobe_categories = char_active.wardrobe
         export_in_progress = False
         item_to_export = None
-        wardrobe_outfit_schedule = ("Day", "Night", "Cloudy", "Rainy", "Snowy", "School")
+        wardrobe_outfit_schedule = ("Day", "Night", "Cloudy", "Rainy", "Snowy")
 
         character_toggles = [(k, v[1]) for k, v in char_active.clothes.iteritems() if k != "hair" and not any(i.isdigit() for i in k)]
         character_toggles.extend([("tattoo", 30), ("piercing", 31), ("makeup", 32), ("accessory", 33)])
@@ -105,12 +105,7 @@ label wardrobe(char_label):
         $ menu_items = filter(lambda x: x.unlocked==True, char_active.outfits)
         $ menu_items_length = len(menu_items)
     elif _return[0] == "tagoutfit":
-        $ _item = char_active.outfits[_return[1]]
-        $ _item.schedule[_return[2]] = not _item.schedule[_return[2]]
-        if _return[2] > 1 and (not _item.schedule[0] and not _item.schedule[1]):
-            $ _item.schedule[0] = True
-            $ _item.schedule[1] = True
-        $ char_active.update_outfits_schedule(_item)
+        $ _return[1].schedule[_return[2]] = not _return[1].schedule[_return[2]]
     elif _return[0] == "export":
         menu:
             "Export to PNG file" if not renpy.variant('android'):
@@ -639,25 +634,23 @@ screen wardrobe_outfit_menuitem(xx, yy):
                         vbox:
                             spacing 5
                             xpos 5
-                            for x in xrange(6):
-                                $ _bg = "interface/wardrobe/icons/"+wardrobe_outfit_schedule[x].lower()+".png"
-                                $ _bool = str(menu_items[i].schedule[x])
+                            for x in wardrobe_outfit_schedule:
+                                $ _ico = "interface/wardrobe/icons/"+x.lower()+".png"
+                                $ _bool = str(menu_items[i].schedule[x.lower()])
                                 
-                                if wardrobe_outfit_schedule[x] in ("Day", "Night"):
-                                    $ _tooltip = "Worn during the "+wardrobe_outfit_schedule[x]+":\n{size=-4}"+_bool+"{/size}"
-                                elif wardrobe_outfit_schedule[x] in ("Rainy", "Cloudy", "Snowy"):
-                                    $ _tooltip = "Worn during "+wardrobe_outfit_schedule[x]+" weather:\n{size=-4}"+_bool+"{/size}"
-                                else:
-                                    $ _tooltip = "Worn during school events:"+"\n{size=-4}"+_bool+"{/size}"
+                                if x in ("Day", "Night"):
+                                    $ _tooltip = "Worn during the "+x+":\n{size=-4}"+_bool+"{/size}"
+                                elif x in ("Rainy", "Cloudy", "Snowy"):
+                                    $ _tooltip = "Worn during "+x+" weather:\n{size=-4}"+_bool+"{/size}"
                                     
                                 button:
                                     style "empty" 
                                     xysize (25, 25) 
-                                    background grayTint(_bg) 
-                                    hover_background whiteTint(_bg) 
-                                    selected_background _bg 
+                                    background grayTint(_ico) 
+                                    hover_background whiteTint(_ico) 
+                                    selected_background _ico 
                                     tooltip _tooltip
-                                    action [SelectedIf(menu_items[i].schedule[x] == True), Return(["tagoutfit", i, x])]
+                                    action [SelectedIf(menu_items[i].schedule[x.lower()] == True), Return(["tagoutfit", menu_items[i], x.lower()])]
                     
         # Add empty items
         for i in xrange(menu_items_length, (current_page*10)+10):

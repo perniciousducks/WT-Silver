@@ -183,3 +183,28 @@ init python:
         def create_outfit(self):
             """Creates a copy of the current character clothes and stores it."""
             return DollOutfit([x[0] for x in self.clothes.itervalues() if x[0]], True)
+            
+        def get_schedule(self):
+            """Returns a list of outfits available for current daytime and weather conditions."""
+            global daytime, raining, snowing, blizzard, storm, cloudy
+            schedule = []
+            
+            for o in self.outfits:
+                if o.unlocked and o.schedule["day" if daytime else "night"]:
+                    if (storm or cloudy) and o.schedule["cloudy"]:
+                        schedule.append(o)
+                    elif raining and o.schedule["rainy"]:
+                        schedule.append(o)
+                    elif (snowing or blizzard) and o.schedule["snowy"]:
+                        schedule.append(o)
+                    elif not (cloudy or storm or raining or snowing or blizzard) and not (o.schedule["cloudy"] or o.schedule["rainy"] or o.schedule["snowy"]):
+                        schedule.append(o)
+            return schedule
+                        
+        def equip_random_outfit(self):
+            """Equips random outfit based on Outfits Schedule."""
+            schedule = self.get_schedule()
+            
+            if schedule:
+                self.equip(renpy.random.choice(schedule))
+            

@@ -33,16 +33,12 @@ init python:
 
     #TODO Rename: show_weather updates the weather state, doesn't show anything
     def show_weather():
-        global weather_animations
-        global weather_gen
-        global raining
-        global snowing
-        global blizzard
-        global storm
+        global weather_animations, weather_gen, raining, snowing, blizzard, storm, cloudy
         raining = False
         snowing = False
         blizzard = False
         storm = False
+        cloudy = False
         weather_animations = []
         snow_gen      = renpy.random.randint(1, 3)
         lightning_gen = renpy.random.randint(1, 3)
@@ -68,6 +64,8 @@ init python:
             else:
                 raining = True
                 weather_animations.append("rain")
+        elif weather_gen == 4:
+            cloudy = True
 
 label weather_sound:
     if blizzard:

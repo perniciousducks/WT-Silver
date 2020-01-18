@@ -55,6 +55,9 @@ label hermione_summon_setup:
         call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base",trans=fade)
 
         return
+        
+    if hermione_outfits_schedule:
+        $ hermione.equip_random_outfit()
 
     # weather_gen 1-3   = good weather
     # weather_gen 4     = cloudy weather

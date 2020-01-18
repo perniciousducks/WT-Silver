@@ -75,6 +75,42 @@ image ch_lun blink_n:
     pause 3
     repeat
 
+image ch_lun walk_topless:
+    "characters/luna/chibis/walk/walk_topless_01.png"
+    pause.08
+    "characters/luna/chibis/walk/walk_topless_02.png"
+    pause.08
+    "characters/luna/chibis/walk/walk_topless_03.png"
+    pause.08
+    "characters/luna/chibis/walk/walk_topless_02.png"
+    pause.08
+    "characters/luna/chibis/walk/walk_topless_01.png"
+    pause.08
+    "characters/luna/chibis/walk/walk_topless_04.png"
+    pause.08
+    "characters/luna/chibis/walk/walk_topless_05.png"
+    pause.08
+    "characters/luna/chibis/walk/walk_topless_04.png"
+    pause.08
+    repeat
+
+image ch_lun blink_topless:
+    "characters/luna/chibis/walk/walk_topless_01.png"
+    pause 2
+    "characters/luna/chibis/walk/walk_topless_06.png"
+    pause.08
+    "characters/luna/chibis/walk/walk_topless_01.png"
+    pause 5
+    "characters/luna/chibis/walk/walk_topless_06.png"
+    pause.08
+    "characters/luna/chibis/walk/walk_topless_01.png"
+    pause.08
+    "characters/luna/chibis/walk/walk_topless_06.png"
+    pause.08
+    "characters/luna/chibis/walk/walk_topless_01.png"
+    pause 3
+    repeat
+
 image ch_lun walk_robe:
     "characters/luna/chibis/walk/l_walk_robe_01.png"
     pause.08

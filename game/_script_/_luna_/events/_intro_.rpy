@@ -219,7 +219,8 @@ label hat_intro_3: #Luna change scene #DONE
 label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
 
     $ ll_event_pause += renpy.random.randint(2, 5)
-    $ lun_whoring = 0 #Triggers event during the evening.
+    $ luna_reverted_intro = False
+    $ lun_whoring = 0
 
     #Reset Luna Model
     call reset_luna_base

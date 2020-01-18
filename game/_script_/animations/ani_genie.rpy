@@ -261,6 +261,7 @@ image ch_gen dick_out:
     "characters/genie/chibis/jerk_off/dick_out.png"
 
 # Masturbating while standing
+#TODO Genie's standing jerk off chibis don't stand level with the others. Fix this and check/correct relevant events
 image ch_gen hold_dick:
     "characters/genie/chibis/jerk_off/03.png"
 

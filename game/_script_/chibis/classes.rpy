@@ -80,6 +80,7 @@ init -1 python:
             "base": (None, 250), # sna: 190 (240/245?) gen: 190
             "mid": (540, None), # cho:560 lun:580 sna:500 gen:500
             "desk": (440, None),
+            "right": (620, None),
             "on_desk": (350, 180),
             "behind_desk": (230, 260), # gen:210, 190
             "door": (750, None),

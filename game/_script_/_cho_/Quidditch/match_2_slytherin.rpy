@@ -602,7 +602,7 @@ label slytherin_match:
     call her_chibi("lying", 330, 160)
     call ton_chibi("stand", xpos=395, ypos=110, flip=False)
     call sna_chibi("stand", xpos=260, ypos=0, flip=True)
-    call gen_chibi("stand", xpos=210, ypos=40) # TODO: mirror Genie's flip so it's the same as any other character.
+    call gen_chibi("stand", xpos=210, ypos=40)
     with d3
 
     call weather_sound

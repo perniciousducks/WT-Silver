@@ -4,8 +4,7 @@ screen luna_main():
     zorder luna_zorder
     sensitive False
     fixed:
-        at transform:
-            xpos luna_xpos ypos luna_ypos xzoom luna_flip zoom (1.0/luna_scaleratio)
+        at main_sprite_position(luna_xpos, luna_ypos, luna_flip, luna_scaleratio)
 
         add luna_base
 
@@ -64,7 +63,7 @@ screen luna_main():
             add "characters/luna/body/cum/cum_"+str(luna_cum)+".png"
 
     # Extra stuff
-    if genie_base == "characters/genie/base/hard.png":
+    if genie_base == "characters/genie/base/hard.png" and renpy.get_screen("genie_main"):
         # Genie's dick
         add "characters/genie/dick_1.png" xpos genie_xpos ypos genie_ypos
         if not luna_wear_bottom and not luna_wear_panties:

@@ -326,6 +326,9 @@ image ch_hem fly_a:
     pause.1
     repeat
 
+image ch_hem kneel:
+    "characters/hermione/chibis/kneel/1.png"
+
 image ch_hem kneel_pant:
     "characters/hermione/chibis/kneel/1.png"
     pause 1

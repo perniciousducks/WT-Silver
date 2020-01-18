@@ -50,30 +50,10 @@ label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, c
     return
 
 
-#TODO Fix: her_kneel is broken (changeHermione is not defined)
-label her_kneel(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, trans=None):
-    hide screen hermione_kneel
-
-    if cheeks == None:
-        $ cheeks = "blank"
-    if tears == None:
-        $ tears = "blank"
-    if emote == None:
-        $ emote = "blank"
-
-    $ changeHermione(mouth, eye, cheeks, tears, extra, emote, hermione_xpos, hermione_ypos)
-
-    # TODO: <- Screen does not exist
-    show screen hermione_kneel #h_head2
-
-    show screen bld1 #Should be active anyways.
-
-    if trans:
-        with trans
-
-    if text:
-        $ renpy.say(her, text)
-
+#label her_kneel(text="", mouth=None, eye=None, cheeks=None, tears=None, extra=None, emote=None, xpos=None, ypos=None, trans=None):
+label her_kneel(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=False, tears=False, extra=False, emote=False, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):    
+    #TODO Hermione's kneel pose was removed. Events that use it need to be posed again.
+    call her_main(text, mouth, eyes, eyebrows, pupils, cheeks, tears, extra, emote, face, xpos, ypos, flip, trans, animation)
     return
 
 label update_hermione:

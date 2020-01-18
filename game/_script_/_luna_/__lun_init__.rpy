@@ -256,7 +256,8 @@ default luna_unlocked = False
 default luna_wardrobe_unlocked = False
 
 default luna_herm_talk = False
-default luna_reverted = False
+default luna_reverted = False # True if Luna is on normal path
+default luna_reverted_intro = False # True if Luna was just reverted
 default luna_addicted = False
 
 # Names

@@ -5,8 +5,7 @@ screen susan_main():
     sensitive False
 
     fixed:
-        at transform:
-            xpos susan_xpos ypos susan_ypos xzoom susan_flip zoom (1.0/susan_scaleratio)
+        at main_sprite_position(susan_xpos, susan_ypos, susan_flip, susan_scaleratio)
 
         add susan_hair
         add susan_l_arm

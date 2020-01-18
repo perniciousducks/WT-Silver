@@ -56,8 +56,8 @@ init python:
         if chibi.action == "walk":
             if luna_wear_top and luna_wear_bottom:
                 chibi["base"] = "ch_lun walk_a"
-            # elif luna_wear_bottom and not luna_wear_top:
-            #     pass #TODO Add topless walking chibi for Luna
+            elif luna_wear_bottom and not luna_wear_top:
+                chibi["base"] = "ch_lun walk_topless"
             elif not luna_wear_top and not luna_wear_bottom:
                 chibi["base"] = "ch_lun walk_n"
             elif luna_wear_robe:
@@ -66,7 +66,7 @@ init python:
             if luna_wear_top and luna_wear_bottom:
                 chibi["base"] = "ch_lun blink_a"
             elif luna_wear_bottom and not luna_wear_top:
-                chibi["base"] = "luna_stand_topless.png"
+                chibi["base"] = "ch_lun blink_topless"
             elif not luna_wear_top and not luna_wear_bottom:
                 chibi["base"] = "ch_lun blink_n"
             elif luna_wear_robe:        

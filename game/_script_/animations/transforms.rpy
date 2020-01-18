@@ -66,3 +66,9 @@ transform move_to(start_x=0, start_y=0, target_x, target_y, duration=1.0):
         xpos start_x
         ypos start_y
         linear duration xpos target_x ypos target_y
+
+transform main_sprite_position(x, y, flip, scale):
+    xpos x
+    ypos y
+    xzoom flip
+    zoom (1.0/scale)

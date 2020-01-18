@@ -8,14 +8,13 @@
 # hold_dick, jerk_off, cum, cum_done, cum_close, cum_close_done
 # read, read_done, read_near_fire, read_near_fire_done
 
-#TODO Genie chibi images and calls (at least for stand and walk) have to be flipped consistently with other chibis
 # Note: The flip parameter defaults to True, because Genie is most often facing right
 label gen_chibi(action=None, xpos=None, ypos=None, flip=True, pic=None):
     hide screen favor # screen tag
 
     #TODO Check if needed. These hide screen calls are not in other chibi labels
-    hide screen blktone
-    hide screen bld1
+    # hide screen blktone
+    # hide screen bld1
 
     # Rarely used position
     if xpos == "on_girl": # Girl has to stand at mid

@@ -261,10 +261,9 @@ label hufflepuff_match:
 
     call gen_walk(xpos="360", ypos="45")
 
-    $ genie_base = "characters/genie/base/base.png"
     $ genie_zorder = 5
 
-    call gen_main(face="base", xpos="100", ypos="120")
+    call gen_main(face="base", base="base", xpos=100, ypos=120)
     call ctc
 
     call gen_main("", face="angry")

@@ -124,6 +124,9 @@ label reset_luna:
     $ luna_wear_cum = False
     $ luna_wear_cum_under = False
 
+    $ luna_chibi.zorder = 3
+    $ luna_zorder = 5
+
     call update_luna
 
     return

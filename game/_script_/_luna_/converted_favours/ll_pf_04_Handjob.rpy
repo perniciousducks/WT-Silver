@@ -465,7 +465,7 @@ label luna_favour_4: ###Luna handjob #DONE
             g4 "mmmm"
             call lun_main("Now...","normal","mad","mad","mid")
             call lun_main("Cum.","base","seductive","angry","mid")
-            call gen_chibi("cum") #TODO Use "short distance" cumming animation
+            call gen_chibi("cum_close") #TODO Use "short distance" cumming animation
             $ luna_wear_cum_under = True
             $ luna_cum = 10
             call cum_block
@@ -476,7 +476,7 @@ label luna_favour_4: ###Luna handjob #DONE
             call lun_main("(It's so warm...)","base","seductive","sad","R")
             g4 "{size=+10}TAKE IT ALL YOU sLUT!{/size}"
             g4 "mmmm....."
-            call gen_chibi("hold_dick")
+            call gen_chibi("cum_close_done")
             $ luna_r_arm = 2
             hide screen genie_main
             with d3
@@ -704,7 +704,7 @@ label luna_favour_4: ###Luna handjob #DONE
                     $ luna_cum = 5
                     $ luna_wear_cum = True
                     call cum_block
-                    call gen_chibi("cum")
+                    call gen_chibi("cum_close")
                     ">You start shooting your load across her chest, coating her tits in cum."
 
                 "-thighs-":
@@ -712,7 +712,7 @@ label luna_favour_4: ###Luna handjob #DONE
                     $ luna_cum = 10
                     $ luna_wear_cum = True
                     call cum_block
-                    call gen_chibi("cum")
+                    call gen_chibi("cum_close")
                     ">You start spurting over Luna's soft thighs, coating her pussy in cum."
 
                 "-{size=+10}FACE!{/size}-":
@@ -723,7 +723,7 @@ label luna_favour_4: ###Luna handjob #DONE
             call lun_main("(It's so warm...)","base","seductive","sad","R")
             g4 "{size=+10}TAKE IT ALL YOU big-titted sLUT!{/size}"
             g4 "mmmm....."
-            call gen_chibi("hold_dick")
+            call gen_chibi("cum_close_done")
             $ luna_r_arm = 2
             hide screen genie_main
             with d3
@@ -754,7 +754,6 @@ label luna_favour_4: ###Luna handjob #DONE
                 call lun_main("amazing...","base","seductive","sad","mid")
 
             m "Ahh... that was fantastic slut..."
-            call gen_chibi("hold_dick")
             call lun_main("[lun_genie_name]...","base","suspicious","angry","R")
 
     hide screen luna_main
@@ -773,8 +772,6 @@ label luna_favour_4: ###Luna handjob #DONE
     $ luna_wear_cum = False
     $ luna_wear_cum_under = False
 
-    call gen_chibi("sit_behind_desk")
-
     jump luna_away
 
 
@@ -791,6 +788,7 @@ label luna_cum_addict_event:
     g4 "Argh, too late slut!"
     call lun_main("!!!","upset","closed","mad","mid")
     $ luna_cum = 11
+    call gen_chibi("cum_close")
     call cum_block
 
     $ luna_wear_cum = True
@@ -801,7 +799,7 @@ label luna_cum_addict_event:
     call lun_main("(What's this smell?)","pout","seductive","sad","downL")
     g4 "{size=+10}TAKE IT ALL YOU big-titted SLUT!{/size}"
     g4 "mmmm....."
-    call gen_chibi("hold_dick")
+    call gen_chibi("cum_close_done")
     $ luna_r_arm = 2
     hide screen genie_main
     $ genie_base = "characters/genie/base/open.png"

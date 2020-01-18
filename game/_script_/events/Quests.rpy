@@ -231,8 +231,8 @@ label quests:
             if her_whoring >= 21 and not hat_known:
                 jump hat_intro
 
-            if luna_reverted and lun_whoring == -2:
-                jump luna_reverted_greeting_1 #Sets lun_whoring to -1, returns next night.
+            if luna_reverted and luna_reverted_intro:
+                jump luna_reverted_greeting_1
 
             # Unlock reverted favors.
             if luna_reverted:

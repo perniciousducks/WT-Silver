@@ -1,7 +1,7 @@
 # Sprite
 default genie_xpos       = 200
 default genie_ypos       = 0
-default genie_zorder     = 4
+default genie_zorder     = 5
 default genie_flip       = 1
 default use_genie_head   = False
 

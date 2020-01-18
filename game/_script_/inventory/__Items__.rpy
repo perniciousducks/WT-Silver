@@ -250,10 +250,30 @@ default dye_list=[
 # Hermione
 
 default hg_bikini1 = costume_class(
-    id="hg_bikini1", name="Bikini", type="outfit", items=["bikini bra","thong"],
+    id="hg_bikini1", name="Rave Bikini", type="outfit", items=["bikini bra","thong"],
     cost=her_outfit_bikini1.price, wait_time=1, image=her_outfit_bikini1, description="> A Bunch of straps for a bunch of gold!")
+    
+default hg_bikini2 = costume_class(
+    id="hg_bikini2", name="Leather Bikini", type="outfit", items=["bikini bra","thong"],
+    cost=her_outfit_bikini2.price, wait_time=1, image=her_outfit_bikini2, description="> A Bunch of straps for a bunch of gold!")
+    
+default hg_maid = costume_class(
+    id="hg_maid", name="French Maid Costume", type="outfit", items=["top","stockings","hat","choker","gloves"],
+    cost=her_outfit_maid.price, wait_time=1, image=her_outfit_maid, description="> Oui, sir! At once!")
+    
+default hg_bunny = costume_class(
+    id="hg_bunny", name="Sexy Bunny Costume", type="outfit", items=["top","stockings","hat","bowtie","gloves","tattoo"],
+    cost=her_outfit_bunny.price, wait_time=1, image=her_outfit_bunny, description="> Oui, sir! At once!")
+    
+default hg_ball = costume_class(
+    id="hg_ball", name="Classy Ball Dress", type="outfit", items=["top","earrings","necklace","sash"],
+    cost=her_outfit_ball.price, wait_time=1, image=her_outfit_ball, description="> A fancy dress for a fancy witch.")
+    
+default hg_yennefer = costume_class(
+    id="hg_yennefer", name="Yennefer Costume", type="outfit", items=["top","bottom","stockings","sash","belt","feathers","scarf","corset","pendant","gloves"],
+    cost=her_outfit_yennefer.price, wait_time=1, image=her_outfit_yennefer, description="> Smells like lilac and gooseberries.")
 
-default hermione_outfits_list = [hg_bikini1]#[her_outfit_bikini1, her_outfit_bikini2, her_outfit_maid, her_outfit_bunny]
+default hermione_outfits_list = [hg_bikini1, hg_bikini2, hg_maid, hg_bunny, hg_ball, hg_yennefer]
 default hermione_costumes_list = []
 default hermione_dresses_list = []
 default hermione_clothing_sets_list=[]
@@ -396,7 +416,12 @@ default outfit_linking = {
     cc_lingerie_lace_ITEM.id:       "cho_outfit_lacelingerie",
     cc_dress_red_ITEM.id:           "cho_outfit_dress1",
     ag_anntakamaki_ITEM.id:         "ast_outfit_ann",
-    hg_bikini1.id:                  "her_outfit_bikini1"
+    hg_bikini1.id:                  "her_outfit_bikini1",
+    hg_bikini2.id:                  "her_outfit_bikini2",
+    hg_maid.id:                     "her_outfit_maid",
+    hg_bunny.id:                    "her_outfit_bunny",
+    hg_ball.id:                     "her_outfit_ball",
+    hg_yennefer.id:                 "her_outfit_yennefer"
 }
 
 init offset = 0 # back to normal

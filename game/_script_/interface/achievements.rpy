@@ -118,42 +118,6 @@ init python:
             item = sorted(item, key=lambda x: x[1][1])
         return item
 
-    def restart_achievements_thread():
-        renpy.invoke_in_thread(update_achievements)
-        return
-
-    def update_achievements():
-        while True:
-            time.sleep(5)
-
-            if not achievement.status('gold') and gold >= 10000:
-                achievement.unlock("gold")
-
-            if not achievement.status('drunkard') and wine_ITEM.number >= 25:
-                achievement.unlock("drunkard")
-
-            if not achievement.status('peta') and (day-phoenix_fed_counter) >= 50:
-                achievement.unlock("peta")
-
-            if not achievement.status('petpal') and phoenix_petted_counter >= 25:
-                achievement.unlock("petpal")
-
-            if not achievement.status('bros') and sna_friendship >= 100:
-                achievement.unlock("bros")
-
-            if not achievement.status('overwhored') and her_whoring >= 24:
-                achievement.unlock("overwhored")
-
-            if not achievement.status('fireplace') and stat_fireplace_counter >= 5:
-                achievement.unlock("fireplace")
-
-            if not achievement.status('workaholic') and stat_reports_counter >= 5:
-                achievement.unlock("workaholic")
-        return
-
-    #config.interact_callbacks.append(update_achievements)
-    config.after_load_callbacks.append(restart_achievements_thread)
-
     achievement = achievement_class()
 
 label popup(string="", title="", icon=None, xpos=0, ypos=60, sound=True, soundfile='sounds/achievement.mp3'):

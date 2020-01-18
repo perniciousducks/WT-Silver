@@ -224,11 +224,12 @@ screen file_picker():
 
             textbutton _("«") action FilePagePrevious(auto=False, quick=False)
 
-            $ p = max(0, int(FileCurrentPage())-10)
+            default p = 0
+            $ p = max(0, int(FilePageName(str(p+10), str(p+10)))-10)
             for i in xrange(1+p, 11+p):
                 textbutton str(i) action FilePage(i) xsize 60
 
-            textbutton _("»") action FilePageNext()
+            textbutton _("»") action FilePageNext() sensitive bool(FilePageName(0, 0))
 
         null height 5
 

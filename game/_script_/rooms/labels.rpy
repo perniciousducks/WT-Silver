@@ -9,9 +9,9 @@ label room(room=None, hide_screens=True, stop_sound=True):
     if stop_sound:
         call stop_sound_effects
 
-    if room in ["main_room", "main"]:
-        $ current_room = "main_room"
+    $ current_room = room
 
+    if room == "main_room":
         # Update sound effects
         call weather_sound
         call fireplace_sound
@@ -47,36 +47,29 @@ label room(room=None, hide_screens=True, stop_sound=True):
         call house_points
         show screen ui_top_bar
 
-    if room in ["weasley_store"]:
-        $ current_room = "weasley_store"
-
+    if room == "weasley_store":
         show screen weasley_store_room
 
-    if room in ["potions_room","potions_classroom"]:
-        $ current_room = "potions_classroom"
-
+    if room == "potions_room":
         show screen potions_room
 
-    if room in ["clothing_store", "clothe_store"]:
-        $ current_room = "clothing_store"
-
+    if room == "clothing_store":
         show screen clothing_store_room
 
-    if room in ["7th floor"]:
-        $ current_room = "7th_floor"
-
+    if room == "7th floor":
         show screen floor_7th_door
         show screen room_of_req_door
         show screen floor_7th_screen
 
-    if room in ["room_of_requirement","ror"]:
-        $ current_room = "room_of_requirement"
-
+    if room == "room_of_requirement":
         show screen room_of_requirement
 
-    if room in ["quidditch_stands", "quid", "qp"]:
-        $ current_room = "quidditch_stands"
+    if room == "quidditch_pitch":
+        show screen quid_pitch_back
+        show screen quid_pitch_mid
+        show screen quid_pitch_front
 
+    if room == "quidditch_stands":
         show screen quidditch_stands
         show screen quidditch_stands_overlay
 

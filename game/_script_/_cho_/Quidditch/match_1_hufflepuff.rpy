@@ -139,18 +139,46 @@ label hufflepuff_match:
     call blkfade
     pause 2
 
+
     ">You make your way towards the pitch with Snape, pondering if this was such a good idea."
     call play_sound("grass")
     ">After walking for a while across the school grounds a huge oval shaped pitch with massive towers around it looms before you."
     ">Amazed by...{w=0.6}{nw}"
     m "Agrabah's towers are larger..."
-    ">Amazed... by the sight, Snape then leads you up one of the towers, narrowly dodging one of the teachers greeting you."
+    ">Amazed... by the sight, Snape then leads you to the base of one of the towers."
     if _preferences.volumes['music'] < 0.1 or _preferences.volumes['sfx'] < 0.1:
         sil "This section of the game is best played with audio/music unmuted."
 
 
     centered "{size=+7}{color=#cbcbcb}At the Quidditch pitch...{/color}{/size}"
 
+    # Pitch entrance
+    call room("quidditch_pitch")
+
+    #TODO Expand the chibi system to allow per-room scaling. These chibis are too small here
+    # call sna_chibi("stand", "right", 250, flip=True)
+    # call gen_chibi("stand", "mid", 250)
+
+    call hide_blkfade
+
+    m "So, this is it? This is where the quidditch is played?"
+    call sna_main("Of course, did you expect something else?","snape_05",ypos="head")
+    m "I mean... What's the point of the grass and sand? Isn't it played in the air?"
+    call sna_main("...","snape_25",ypos="head")
+    m "Wouldn't it make more sense to have the ground be something soft if they fall?"
+    g9 "Like...{w=0.3} magic marshmallow or something..."
+    call sna_main("You think there's a spell for everything?","snape_35",ypos="head")
+    m "From previous experiences with this world so far...{w} yes, pretty much."
+    call sna_main("Anyhow... time go get moving, this place will be filled with teachers and students any minute now.","snape_03",ypos="head")
+    call sna_main("After me...","snape_02",ypos="head")
+    #Snape walks up the stairs
+    #Genie walks up to the entrance of the commentator booth and sees the sign
+    g9 "(*He-heh*... Snape sux...)"
+    #Genie walks up the stairs    
+
+    call blkfade
+
+    # Pitch stands
     call room("quidditch_stands")
     $ qp_mob = 2 # Controls number of people
     $ qp_mob_reaction = [None, None, None] # Reset reactions

@@ -240,10 +240,10 @@ label potions_room:
     call gen_chibi("hide")
 
     if store_intro_done:
-        call gen_chibi("stand","left","base")
+        call gen_chibi("stand", "left", "base")
         call hide_blkfade
     else:
-        call gen_chibi("stand","0","base")
+        call gen_chibi("stand", 0, "base")
         call hide_blkfade
         call gen_walk("left", "base")
     pause.2

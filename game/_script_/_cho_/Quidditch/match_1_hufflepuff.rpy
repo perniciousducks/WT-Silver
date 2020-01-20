@@ -712,7 +712,7 @@ label hufflepuff_match:
     # TODO: Broken by doll class update. Has to be fixed.
     $ cho_animation = sprite_fly_idle
     $ cho_class.animation("quid", (233, -78))
-    call cho_chibi("fly",1200,-100)
+    call cho_chibi("fly",1200,-100+180)
     call cho_walk(500, 50+180)
     pause 1.5
     show screen bld2
@@ -765,7 +765,7 @@ label hufflepuff_match:
     pause.8
     $ cho_animation = None
     $ cho_class.animation(None)
-    call cho_chibi("reset",1200,"base")
+    call cho_chibi("reset")
 
     # Outro
     m "This isn’t such a bad game after all."

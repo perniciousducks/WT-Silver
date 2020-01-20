@@ -28,12 +28,30 @@ init python:
 
     ChibiRoom("quidditch_stands", 1.0, {})
 
-    ChibiRoom("room_of_requirement", 1.0, {})
+    ChibiRoom("room_of_requirement", 1.0, {
+        "door": (750, None),
+        "left": (200, None),
+        "base": (None, 430),
+    })
 
-    ChibiRoom("weasley_store", 1.0, {})
+    ChibiRoom("weasley_store", 1.0, {
+        "left": (100, None),
+        "base": (None, 430),
+    })
 
-    ChibiRoom("clothing_store", 1.0, {})
+    ChibiRoom("clothing_store", 1.0, {
+        "left": (100, None),
+        "base": (None, 430),
+    })
 
-    ChibiRoom("potions_room", 1.0, {})
+    ChibiRoom("potions_room", 1.0, {
+        "left": (100, None),
+        "base": (None, 430),
+    })
 
-    ChibiRoom("floor_seven", 1.0, {})
+    ChibiRoom("floor_seven", 1.0, {
+        "base": (None, 430),
+        "right": (750, None),
+        "left_mid": (200, None),
+        "left": (120, None),
+    })

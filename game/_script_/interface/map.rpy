@@ -522,57 +522,57 @@ screen map_screen_characters():
 
 
 label floor_7th:
-    if unlocked_7th == False:
+    if not unlocked_7th:
         m"\"I don't have any reason to go there...\""
         jump desk
     else:
         call blkfade
         call hide_screens
         call update_interface_color("gray")
-        show screen floor_7th_screen
+        call room("floor_seven")
 
-        if unlocked_7th and first_time_7th:
-            call gen_chibi(xpos="door", ypos="base", flip=False)
+        if first_time_7th:
+            $ first_time_7th = False
+            call gen_chibi("stand", "right", "base", flip=False)
             call hide_blkfade
-
-            $ first_time_7th=False
+            
             m "So... The diary mentioned he was walking around here."
 
-            call gen_walk(200, "base", speed=1.5)
-
+            call gen_walk("left_mid", speed=1.5)
             call bld
+            
             m "I can definitely sense a strong magical energy in this place..."
 
-            call gen_walk("door", "base", speed=1.5)
-
+            call gen_walk("right", speed=1.5)
             call bld
+            
             m "Maybe if I...or I could..."
 
-            call gen_walk(120, "base", speed=1.5)
-
+            call gen_walk("left", speed=1.5)
             call bld
+            
             g4 "I could be in my office jacking off right now!!"
-            show screen room_of_req_door
-            pause 1
-
-            call gen_chibi(xpos=120,ypos="base")
+            hide screen bld1
+            show screen floor_7th_door
+            with d9
+            pause .5
+            call gen_chibi(flip=True)
             pause.8
-
             call bld
+
             g9 "Well... will you look at that"
+
             hide screen bld1
             with d3
-            hide screen room_of_req_door
-            show screen floor_7th_door
             call screen floor_7th_menu
         else:
-            call gen_chibi(xpos=120, ypos="base")
+            call gen_chibi("stand", "left", "base")
             show screen floor_7th_door
             call hide_blkfade
             call screen floor_7th_menu
 
 
-label map_attic: #Label controlling what happens when you access the attic
+label map_attic:
     #TODO Maybe show something other than Genie sitting in his office during the following script:
     if not sealed_scroll_ITEM.unlocked:
         ">You venture up to the attic but find that the door is locked."
@@ -598,7 +598,7 @@ label map_attic: #Label controlling what happens when you access the attic
         jump desk
 
 
-label map_forest: #Label controlling what happens when you go to the forest
+label map_forest:
     if daytime:
         m "I shouldn't be leaving the castle during the day. It's too risky..."
         jump desk
@@ -636,7 +636,8 @@ label map_forest: #Label controlling what happens when you go to the forest
                 ">You search around the forest but find nothing of interest."
                 jump return_office
 
-label map_lake: #Label controlling what happens when you go to the lake
+
+label map_lake:
     if daytime:
         m "I shouldn't be leaving the castle during the day. It's too risky..."
         jump desk
@@ -673,7 +674,6 @@ label map_lake: #Label controlling what happens when you go to the lake
             else:
                 ">You search around the lake but find nothing of interest."
                 jump return_office
-
 
 
 label gryffindor_dormitories:
@@ -733,7 +733,7 @@ label ravenclaw_dormitories:
 
 
 
-label map_pitch: #Label controlling what happens when you go to the quidditch pitch
+label map_pitch:
     if pitch_open:
         hoo "Hello Professor Dumbledore, nice to see you out of your office today."
         hoo "What brings you down to the Quidditch pitch today?"

@@ -1,6 +1,3 @@
-define sprite_pos = {"x": {"base": 640, "default": 640, "mid": 300, "left": 200, "right": 400, "wardrobe": 540, "close": 540},
-                     "y": {"base": 0, "default": 0, "head": 200}}
-                     
 define ast_face = {"mouth": {"neutral": ["annoyed", "base"], "happy": ["smile", "grin"], "naughty": ["grin", "horny"], "horny": ["grin", "horny"], "annoyed": ["annoyed"], "disgusted": ["clench", "annoyed"], "angry": ["clench","angry"]},
                    "eyes": {"neutral": ["base"], "happy": ["base"], "naughty": ["narrow", "base"], "horny": ["narrow", "base"], "annoyed": ["narrow"], "disgusted": ["narrow"], "angry": ["narrow", "base"]},
                    "eyebrows": {"neutral": ["base"], "happy": ["base"], "naughty": ["base"], "horny": ["base"], "annoyed": ["worried"], "disgusted": ["base", "angry"], "angry": ["angry"]},

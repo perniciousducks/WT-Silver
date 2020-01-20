@@ -1,6 +1,9 @@
 
 # Handling of doll transitions in dialogue
 
+define sprite_pos = {"x": {"base": 640, "default": 640, "mid": 300, "left": 200, "right": 400, "wardrobe": 540, "close": 540},
+                     "y": {"base": 0, "default": 0, "head": 200}}
+
 default last_doll_images = dict()
 default last_say_who = None
 

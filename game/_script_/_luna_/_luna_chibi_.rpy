@@ -49,7 +49,7 @@ label lun_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
     return
 
 # Chibi definition
-default luna_chibi = chibi("luna", ["base"], update_luna_chibi)
+default luna_chibi = Chibi("luna", ["base"], update_luna_chibi)
 
 init python:
     def update_luna_chibi(chibi):

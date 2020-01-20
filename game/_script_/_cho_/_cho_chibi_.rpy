@@ -55,7 +55,7 @@ screen cho_cloth_pile(position=(440, 425)): # Default position: Right of desk, b
     add "characters/chibis/cloth_pile_r.png" pos position zoom 0.5
 
 # Chibi definition
-default cho_chibi = chibi("cho", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves"], update_cho_chibi)
+default cho_chibi = Chibi("cho", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves"], update_cho_chibi)
 
 init python:
     def update_cho_chibi(chibi):

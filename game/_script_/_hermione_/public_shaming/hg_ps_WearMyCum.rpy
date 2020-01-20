@@ -472,7 +472,7 @@ label hg_ps_cumslut_Scene_3:
     hide screen bld1
     with d3
 
-    call her_walk(xpos="desk", ypos="base", reduce=0.8)
+    call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
     call her_chibi_scene("hj")

@@ -520,7 +520,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call nar(">With a flick of Hermione's wand, Luna's clothes slither back onto her naked form.")
     call her_main("Wingardium Leviosaaaaa!", "open", "happyCl", "base", "mid")
 
-    call lun_chibi("stand","on_desk","140")
+    call lun_chibi("stand","on_desk",140+180)
     pause.2
 
     call nar(">Luna's body lifts gently into the air, as if she was the star of a magic show.")

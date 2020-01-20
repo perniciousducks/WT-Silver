@@ -1,24 +1,18 @@
 
 # Transforms used by the chibi class or chibi images
 
-transform chibi_base(position, flip):
+transform chibi_base(position, flip, scale):
     pos position
-    # anchor (0.5, 1.0)
+    anchor (0.0, 1.0)
     xzoom (-1 if flip else 1)
-    zoom (1.0/scaleratio)
+    zoom (0.5 * scale)
 
-transform chibi_walk(start, end, flip, speed):
+transform chibi_walk(start, end, speed):
     pos start
-    # anchor (0.5, 1.0)
-    xzoom (-1 if flip else 1)
-    zoom (1.0/scaleratio)
     linear speed pos end
 
-transform chibi_fly(position, flip):
+transform chibi_fly:
     pos position
-    # anchor (0.5, 1.0)
-    xzoom (-1 if flip else 1)
-    zoom (1.0/scaleratio)
     block:
         yoffset absolute(0)
         ease 2 yoffset absolute(-10)
@@ -26,10 +20,7 @@ transform chibi_fly(position, flip):
         ease 2 yoffset absolute(0)
         repeat
 
-transform chibi_fly_move(start, end, flip, speed):
-    # anchor (0.5, 1.0)
-    xzoom (-1 if flip else 1)
-    zoom (1.0/scaleratio)
+transform chibi_fly_move(start, end, speed):
     parallel:
         pos start
         ease_quad speed pos end
@@ -41,11 +32,8 @@ transform chibi_fly_move(start, end, flip, speed):
         ease 2 yoffset absolute(0)
         repeat
 
-transform chibi_wand(position, flip):
-    pos position
+transform chibi_wand:
     xoffset -72 # Note: Offset seems to be applied after zoom
-    xzoom (-1 if flip else 1)
-    zoom (1.0/scaleratio)
 
 transform random_blink(close_image, open_image=Null()):
     close_image

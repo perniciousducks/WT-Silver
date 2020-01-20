@@ -29,7 +29,7 @@ label hg_pf_admire_breasts_transition:
     with d3
     pause.2
 
-    call her_walk(xpos="desk", ypos="base", reduce=0.8)
+    call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
     ">Hermione slowly walks towards your desk."

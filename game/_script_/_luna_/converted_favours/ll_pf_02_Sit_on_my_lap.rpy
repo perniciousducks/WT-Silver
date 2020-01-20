@@ -23,7 +23,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         $ luna_flip = -1
         $ luna_xpos = 120
 
-        call lun_chibi("stand","300","base")
+        call lun_chibi("stand",300,"base")
         hide screen blkfade
         with d3
 
@@ -348,7 +348,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         $ luna_flip = -1
         $ luna_xpos = 120
 
-        call lun_chibi("stand","300","base")
+        call lun_chibi("stand",300,"base")
         hide screen blkfade
         with d3
 
@@ -812,7 +812,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         $ luna_flip = -1
         $ luna_xpos = 120
 
-        call lun_chibi("stand","300","base")
+        call lun_chibi("stand",300,"base")
         hide screen blkfade
         with d3
 

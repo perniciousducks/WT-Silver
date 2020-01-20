@@ -49,12 +49,9 @@ label hg_pf_talk:
     m "Yes, you can go now."
     her "Thank you, [genie_name]."
 
-
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base")
-
-    call her_chibi(action="leave")
-
+    call her_walk("door", "base")
+    call her_chibi("leave")
 
     # Increase level
     if her_tier == 1:
@@ -612,7 +609,7 @@ label hg_pf_talk_tonks:
     $ tonks.equip(ton_outfit_default)
 
     call play_sound("door")
-    call ton_chibi("stand","500","base")
+    call ton_chibi("stand",500,"base")
     call her_chibi("stand","desk","base")
     hide screen blkfade
     with d5

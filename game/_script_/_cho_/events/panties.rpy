@@ -44,7 +44,7 @@ label cho_panties_response_T2:
         call bld
         m "Where are you going?"
 
-        call cho_chibi(action="leave")
+        call cho_chibi("leave")
 
         call bld
         m "(...)"

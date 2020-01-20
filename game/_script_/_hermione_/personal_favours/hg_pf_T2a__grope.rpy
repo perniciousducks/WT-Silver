@@ -70,7 +70,7 @@ label hg_pf_grope:
 
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
 
     if her_tier > 5:
         call her_main("(What about my points?)", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
@@ -80,7 +80,7 @@ label hg_pf_grope:
             call her_main("(Eh, who cares...)", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
         pause.5
 
-    call her_chibi(action="leave")
+    call her_chibi("leave")
 
 
     # Increase level
@@ -140,7 +140,7 @@ label hg_pf_grope_T1_intro_E1:
     m "Come closer [hermione_name]... Hop around my desk..."
     call her_main("*Uhm*... very well, Sir.", "disgust", "narrow", "base", "down")
 
-    call her_walk(xpos="desk", ypos="base", reduce=0.8)
+    call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
     call her_chibi_scene("behind_desk_front", trans=fade)
@@ -222,7 +222,7 @@ label hg_pf_grope_T2_intro_E1:
     m "Well, I feel more like touching, actually..."
     her "...................................."
 
-    call her_walk(xpos="desk", ypos="base", reduce=0.8)
+    call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
     call her_chibi_scene("behind_desk_front", trans=fade)
@@ -286,7 +286,7 @@ label hg_pf_grope_T3_intro_E1:
     g9 "You just read my mind!"
     call her_main("...................", "disgust", "narrow", "base", "down")
 
-    call her_walk(xpos="desk", ypos="base", reduce=0.8)
+    call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
     call her_chibi_scene("behind_desk_front", trans=fade)

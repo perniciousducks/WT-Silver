@@ -112,14 +112,14 @@ screen letter():
 label shoo_owl_away:
     show screen chair_left
     show screen desk
-    call gen_chibi("stand_alt", 420, 160, flip=False)
+    call gen_chibi("stand_alt", 420, 160+250, flip=False)
     with d5
     pause.2
 
     $ renpy.say(g4, renpy.random.choice(["fuck off", "bug off", "get out", "get the hell out of here", "go away", "away with you", "don't you even dare shit on my floor"])+", you"+renpy.random.choice([" stupid", " silly", " annoying", "", " idiotic", " bloody"])+renpy.random.choice([" flying rat!", " bird!", " poor excuse for a pigeon!", " pigeon!", " idiot!"]))
     pause.1
 
-    call gen_chibi("rummage", 360, 80, flip=False) # Note: Flip is inconsistent
+    call gen_chibi("rummage", 360, 80+349, flip=False)
     call play_sound("owl")
     hide screen owl
     with hpunch

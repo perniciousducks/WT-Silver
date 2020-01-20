@@ -337,7 +337,7 @@ label change_quidditch_tactics:
                 with d3
                 pause.2
 
-                call cho_chibi(action="fly", xpos="550", ypos="260")
+                call cho_chibi("fly",550,260+180)
                 with d5
                 pause.8
             "{color=[menu_disabled]}-Change Tactic-{/color}" if cho_quid.lock_tactic:
@@ -400,12 +400,12 @@ label demonstrate_tactic(position=""):
     # The *ASS* position!
     if position == "front":
         m "Now turn away from me."
-        call cho_walk(xpos=580, ypos=220)
+        call cho_walk(580, 220+180)
 
         call cho_main("Like this?","soft","base","base","R", ypos="head")
         m "A bit higher maybe..."
 
-        call cho_walk(xpos=600, ypos=150)
+        call cho_walk(600, 150+180)
 
         call bld
         m "Yes, very good. Keep that position."
@@ -427,7 +427,7 @@ label demonstrate_tactic(position=""):
     elif position == "above":
         m "Now move a bit higher."
 
-        call cho_walk(xpos=550, ypos=200)
+        call cho_walk(550, 200+180)
 
         call cho_main("Like this?","soft","base","base","downR", ypos="head")
         with hpunch
@@ -442,7 +442,7 @@ label demonstrate_tactic(position=""):
         else:
             call cho_main("Of course, [cho_genie_name]...","base","base","base","downR", ypos="head")
 
-        call cho_walk(xpos=500, ypos=100)
+        call cho_walk(500, 100+180)
 
         call cho_main("How is this?","open","base","base","down", ypos="head")
 
@@ -470,7 +470,7 @@ label demonstrate_tactic(position=""):
         m "Come as close to me as you can..."
         call cho_main("Yes, [cho_genie_name].","soft","base","base","R", ypos="head")
 
-        call cho_walk(xpos=450, ypos=240)
+        call cho_walk(450, 240+180)
 
         call cho_main("How's this? Too close?","soft","wink","raised","mid", ypos="head")
         m "No! It's the perfect distance!"

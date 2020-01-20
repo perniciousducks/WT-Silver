@@ -51,9 +51,9 @@ label hg_pf_strip:
 
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
 
-    call her_chibi(action="leave")
+    call her_chibi("leave")
 
 
     # Increase level
@@ -403,7 +403,7 @@ label hg_pf_strip_T1_intro_E2:
 
     m "??!"
 
-    call her_walk(xpos="desk", ypos="base", reduce=0.8)
+    call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
     $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking.
@@ -678,7 +678,7 @@ label hg_pf_strip_T1_intro_E2:
     with d3
     pause.2
 
-    call her_walk(xpos="mid", ypos="base")
+    call her_walk("mid", "base")
 
     call her_main("................................", "disgust", "narrow", "base", "down", ypos="head")
     pause.2
@@ -690,7 +690,7 @@ label hg_pf_strip_T1_intro_E2:
     call her_chibi("stand","mid","base", flip=True)
     pause.2
 
-    call her_walk(xpos="desk", ypos="base")
+    call her_walk("desk", "base")
 
     call her_main("........................", "normal", "worriedCl", "worried", "mid", xpos="base", ypos="base")
     stop music fadeout 2.0
@@ -733,7 +733,7 @@ label hg_pf_strip_T1_E2:
     with d3
     pause.5
 
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
 
     pause.2
     call chibi_emote("thought", "hermione")
@@ -750,13 +750,13 @@ label hg_pf_strip_T1_E2:
     call her_chibi("stand","door","base")
     pause.1
 
-    call her_walk(xpos="mid", ypos="base")
+    call her_walk("mid", "base")
     pause.2
 
     call her_main("Just in case...", "annoyed", "narrow", "angry", "R", ypos="head")
     stop music fadeout 1.0
 
-    call her_walk(xpos="desk", ypos="base", reduce=0.8)
+    call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
     call play_sound("climb_desk")
@@ -1050,7 +1050,7 @@ label hg_pf_strip_T2:
         with d3
         pause.5
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         pause.5
         call play_sound("lock")
@@ -1059,7 +1059,7 @@ label hg_pf_strip_T2:
         call her_chibi("stand","door","base")
         pause.1
 
-        call her_walk(xpos="mid", ypos="base")
+        call her_walk("mid", "base")
         pause.2
 
         call her_main("All done!", "smile", "closed", "base", "mid", ypos="head")
@@ -1076,7 +1076,7 @@ label hg_pf_strip_T2:
             call her_main("..................", "annoyed", "narrow", "angry", "R")
 
             stop music fadeout 1.0
-            call her_walk(xpos="desk", ypos="base", reduce=0.8)
+            call her_walk("desk", "base", reduce=0.8)
 
             $ her_mood += 4
             pass

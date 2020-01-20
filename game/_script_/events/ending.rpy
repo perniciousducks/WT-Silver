@@ -108,7 +108,7 @@ label ball_ending_E1:
     call hide_blkfade
     pause.5
 
-    call sna_walk(xpos="door", ypos="base")
+    call sna_walk("door", "base")
     pause.5
 
     call sna_chibi("stand","door","base", flip=False)
@@ -292,7 +292,7 @@ label ball_ending_E1:
     call bld
     m "........."
 
-    call gen_walk(xpos="door", ypos="base")
+    call gen_walk("door", "base")
     pause.5
 
     call bld
@@ -300,7 +300,7 @@ label ball_ending_E1:
     m "Agrabah... here I come..."
     call ctc
 
-    call gen_chibi(action="leave")
+    call gen_chibi("leave")
     pause.3
 
     ">.......................{w}............................{w}.....................{w}......................"
@@ -2845,7 +2845,7 @@ label ball_ending_E2:
         call sna_chibi("stand","door","base", flip=False)
         pause.8
 
-        call sna_walk(xpos="mid", ypos="base")
+        call sna_walk("mid", "base")
         pause.8
 
         call bld
@@ -2885,7 +2885,7 @@ label ball_ending_E2:
         call her_chibi("stand","door","base", flip=False)
         pause.8
 
-        call her_walk(xpos="mid", ypos="base")
+        call her_walk("mid", "base")
         pause.8
 
         call play_music("hermione")
@@ -2971,7 +2971,7 @@ label ball_ending_E2:
         call set_her_action("")
         call her_main("And I mean {size=+9}ANYTHING!!!{/size}", "scream", "base", "angry", "mid",emote="01", trans=hpunch)
 
-        call her_walk(xpos="desk", ypos="base", reduce=0.8)
+        call her_walk("desk", "base", reduce=0.8)
         call blkfade
 
         call play_sound("climb_desk")

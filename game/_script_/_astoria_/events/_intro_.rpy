@@ -102,8 +102,8 @@ label astoria_intro_E1:
                     # Genie and Tonks stand behind the desk.
                     $ genie_chibi.zorder = 1
                     $ tonks_chibi.zorder = 1
-                    call ton_chibi("stand","275","behind_desk")
-                    call gen_chibi("stand","190","behind_desk")
+                    call ton_chibi("stand",275,"behind_desk")
+                    call gen_chibi("stand",190,"behind_desk")
                     show screen chair_left
                     show screen desk
                     hide screen blkfade
@@ -481,7 +481,7 @@ label astoria_intro_E3:
     pause.8
 
     # Astoria enters.
-    call ast_walk("500","base")
+    call ast_walk(500,"base")
 
     call play_music("playful_tension")
     call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base", flip=False)
@@ -582,7 +582,7 @@ label astoria_intro_E3:
     call her_walk(action="leave")
     pause.2
 
-    call ast_walk("460","base")
+    call ast_walk(460,"base")
     pause.2
 
     call ast_main("...","annoyed","base","base","L")
@@ -647,14 +647,14 @@ label astoria_intro_E3:
 
     # Snape leaves and runs into Tonks.
     call play_music("stop")
-    call sna_walk("660","base")
+    call sna_walk(660,"base")
 
     # Equip Tonks default clothing.
     $ ton_outfit_last.save() # Store current outfit.
     $ tonks.equip(ton_outfit_default)
 
     call play_sound("door")
-    call ton_chibi("stand","780","base")
+    call ton_chibi("stand",780,"base")
     with d3
     pause.2
 
@@ -676,7 +676,7 @@ label astoria_intro_E3:
     pause.2
     $ snape_chibi.zorder = 2 # Reset zorder
 
-    call ton_walk("500","base")
+    call ton_walk(500,"base")
     call ast_chibi("stand","desk","base", flip=False)
     with d3
 

@@ -80,7 +80,7 @@ label hermione_intro_E1:
     else:
         m "?!!"
 
-    call her_walk(xpos="mid", ypos="base")
+    call her_walk("mid", "base")
     pause.5
 
     call her_main("", "base", "base", "base", "mid", xpos="base", ypos="base")
@@ -809,7 +809,7 @@ label hermione_intro_E4:
     her "....................."
     m "???"
 
-    call her_walk(xpos="desk", ypos="base")
+    call her_walk("desk", "base")
 
     call bld
     her "............"
@@ -1267,7 +1267,7 @@ label hermione_intro_E6:
     call her_main("Well... I suppose I'd better go now...", "base", "base", "base", "mid")
     m "............"
 
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
     pause.3
 
     if current_favor == "show_tongue":

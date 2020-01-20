@@ -131,7 +131,7 @@ label potion_scene_1_1_2:
     call her_main("Well at least I know that it will wear off by morning.", "annoyed", "narrow", "angry", "R")
 
     if her_whoring >= 17:
-        call her_walk(xpos="door")
+        call her_walk("door")
         "You see Hermione reaching for the door knob but an idea strikes you."
         menu:
             "-Make her suck you off-":
@@ -139,7 +139,7 @@ label potion_scene_1_1_2:
                 call her_chibi("stand","door",flip=False)
                 with d3
                 her ".......?"
-                call her_walk(xpos="desk")
+                call her_walk("desk")
                 call her_main("What is it, [genie_name]?", "upset", "base", "angry", "mid")
                 call her_main("Haven't you humiliated me enough?", "annoyed", "closed", "base", "mid")
                 call her_main("", "annoyed", "base", "base", "R")

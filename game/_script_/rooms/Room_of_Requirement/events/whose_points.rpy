@@ -9,11 +9,11 @@ label whose_points:
     show screen blkfade
     with d3
 
-    call ast_chibi("stand","380","240")
+    call ast_chibi("stand",380,240+180)
     pause.4
-    call her_chibi("stand","450","240")
+    call her_chibi("stand",450,240+186)
     pause.6
-    call lun_chibi("stand", "530", "250")
+    call lun_chibi("stand", 530, 250+180)
 
     hide screen blkfade
     with d3
@@ -189,7 +189,7 @@ label whose_points:
     pause.1
 
     stop music
-    call her_chibi("lift_top","450","240")
+    call her_chibi("lift_top",450,240+186)
     with d5
     pause.8
 

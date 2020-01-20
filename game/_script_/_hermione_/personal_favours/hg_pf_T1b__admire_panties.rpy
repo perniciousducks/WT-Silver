@@ -61,13 +61,13 @@ label hg_pf_admire_panties:
 
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
 
     if her_tier > 3:
         her "What about my points?"
         her "Eh, Who cares. It's only [current_payout] points..."
 
-    call her_chibi(action="leave")
+    call her_chibi("leave")
 
 
     # Increase level

@@ -67,7 +67,7 @@ label tonks_intro_E1:
     call bld
     m "*hmmm?*..."
 
-    call ton_walk(xpos="mid", ypos="base")
+    call ton_walk("mid", "base")
     pause.5
 
     call play_music("tonks")

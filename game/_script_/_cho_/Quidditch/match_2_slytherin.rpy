@@ -165,7 +165,7 @@ label slytherin_match:
     g9 "Ladies first."
     call ton_main("What a gentleman.","base","happyCl","base","mid")
 
-    call ton_walk(xpos="680", ypos="base")
+    call ton_walk(680, "base")
 
     call play_sound("door")
     call ton_chibi("hide")
@@ -237,9 +237,9 @@ label slytherin_match:
 
     $ qp_mob = 0 # Controls number of people
     $ qp_mob_reaction = [None, None, None] # Reset reactions
-    #call sna_chibi("stand", "210", -40, flip=True)
-    #call gen_chibi("stand", "130", "10")
-    #call her_chibi("stand", "375", "105", flip=True)
+    #call sna_chibi("stand", 210, -40+250, flip=True)
+    #call gen_chibi("stand", 130, 10+250)
+    #call her_chibi("stand", 375, 105+186, flip=True)
     $ snape_chibi.zorder = 1
     $ hermione_chibi.zorder = 2
     $ tonks_chibi.zorder = 3
@@ -257,14 +257,14 @@ label slytherin_match:
 
     call play_sound("footsteps")
     pause .8
-    call sna_chibi("stand", 210, -40, flip=True)
+    call sna_chibi("stand", 210, -40+250, flip=True)
     with d3
     pause .5
 
-    call ton_chibi("stand", 200, 50, flip=True)
+    call ton_chibi("stand", 200, 50+180, flip=True)
     with d3
     pause .3
-    call ton_chibi("stand", 200, 50, flip=False)
+    call ton_chibi("stand", 200, 50+180, flip=False)
     with d3
     pause .1
 
@@ -280,14 +280,14 @@ label slytherin_match:
 
     call play_sound("footsteps")
     pause .8
-    call gen_chibi("stand", 130, 10)
+    call gen_chibi("stand", 130, 10+250)
     with d3
     pause .2
-    call ton_chibi("stand", 200, 50, flip=True)
+    call ton_chibi("stand", 200, 50+180, flip=True)
     with d3
     pause .3
 
-    call ton_walk(xpos= 220, ypos= 130)
+    call ton_walk( 220,  130+180)
     pause .2
 
     call ton_main("Oh, what a view! Much better than the one from the Hufflepuff stands!","base","happyCl","base","mid", flip=True, ypos="head")
@@ -307,10 +307,10 @@ label slytherin_match:
 
     #Hermione enters from the left and walks up to the podium
 
-    call her_chibi("stand", 220, 50, flip=True)
+    call her_chibi("stand", 220, 50+186, flip=True)
     with d3
     pause .3
-    call her_walk(xpos=375, ypos=105)
+    call her_walk(375, 105+186)
     pause .5
 
     #Hermione turns around
@@ -336,7 +336,7 @@ label slytherin_match:
 
     # Tonks goes back up, now stands between Snape and Genie.
     pause.2
-    call ton_chibi("stand", 200, 50, flip=True)
+    call ton_chibi("stand", 200, 50+180, flip=True)
     with d5
     pause.3
 
@@ -569,9 +569,9 @@ label slytherin_match:
     stop music fadeout 2
     pause 0.5
     $ renpy.sound.play("sounds/crowd_gasp.mp3")
-    call ton_chibi("slack_jaw", 200, 50, flip=True)
-    call gen_chibi("stand_shocked", 130, 10)
-    call sna_chibi("stand_shocked", 210, -40, flip=True)
+    call ton_chibi("slack_jaw", 200, 50+180, flip=True)
+    call gen_chibi("stand_shocked", 130, 10+250)
+    call sna_chibi("stand_shocked", 210, -40+250, flip=True)
     pause 1.0
     $ renpy.sound.play("sounds/dizzy.mp3", loop=True)
     pause 2.0
@@ -599,10 +599,10 @@ label slytherin_match:
     $ tonks_chibi.zorder = 2
     $ genie_chibi.zorder = 4
 
-    call her_chibi("lying", 330, 160)
-    call ton_chibi("stand", xpos=395, ypos=110, flip=False)
-    call sna_chibi("stand", xpos=260, ypos=0, flip=True)
-    call gen_chibi("stand", xpos=210, ypos=40)
+    call her_chibi("lying", 330, 160+186)
+    call ton_chibi("stand",395,110+180, flip=False)
+    call sna_chibi("stand",260,0+250, flip=True)
+    call gen_chibi("stand",210,40+250)
     with d3
 
     call weather_sound
@@ -632,7 +632,7 @@ label slytherin_match:
     with d3
     pause .2
 
-    call ton_walk(xpos=430, ypos=70)
+    call ton_walk(430, 70+180)
 
 
     pause .5
@@ -643,7 +643,7 @@ label slytherin_match:
     call ton_chibi(flip=False)
     with d3
 
-    call ton_walk(xpos=395, ypos=110)
+    call ton_walk(395, 110+180)
     pause .5
 
     call play_sound("footsteps")
@@ -654,8 +654,8 @@ label slytherin_match:
     hide screen hermione_lying
     call ton_chibi("hide")
     call her_chibi("hide")
-    call gen_chibi("stand", xpos=255, ypos=0, flip=False)
-    call sna_chibi("stand", xpos=170, ypos=-20, flip=False)
+    call gen_chibi("stand",255,0+250, flip=False)
+    call sna_chibi("stand",170,-20, flip=False)
     with d3
 
     hide screen blkfade
@@ -715,7 +715,7 @@ label slytherin_match:
     m "No..."
     pause .3
 
-    call gen_walk(xpos=360, ypos=45)
+    call gen_walk(360, 45+250)
     pause .8
 
     $ genie_zorder = 5
@@ -803,14 +803,14 @@ label slytherin_match:
     $ hermione_chibi.zorder = 3
     $ genie_chibi.zorder = 2
 
-    call her_chibi("stand", 160, 70, flip=True)
+    call her_chibi("stand", 160, 70+186, flip=True)
     with d3
     pause .5
     call gen_chibi(flip=False)
     with d3
     pause .2
 
-    call her_walk(xpos=310, ypos=105)
+    call her_walk(310, 105+186)
     pause .3
 
     play bg_sounds "sounds/crowd_low.mp3" fadein 3 fadeout 2
@@ -819,17 +819,17 @@ label slytherin_match:
     call sna_main("Miss Granger?","snape_05", ypos="head")
     call her_main("It's...","disgust","base","worried","down", cheeks="blush")
 
-    call gen_walk(xpos=345, ypos=25)
+    call gen_walk(345, 25+250)
     pause .2
 
     m "Get up there, the crowd has started to suspect something..."
     call her_main("Oh...{w=0.5} of course!","soft","narrow","worried","mid", cheeks="blush")
 
-    call her_walk(xpos=375, ypos=105)
+    call her_walk(375, 105+186)
     pause .1
     call gen_chibi("hide")
     with d3
-    call gen_chibi("stand", 130, 10)
+    call gen_chibi("stand", 130, 10+250)
     with d3
     pause .5
 
@@ -892,8 +892,8 @@ label slytherin_match:
     m "So?" #Small text
     call sna_main("...","snape_37") #Smirks
     g9 "Oh...{w=0.3} I see what you mean..."#Small text
-    call gen_walk(xpos=290, ypos=55)
-    call gen_chibi(action="hide")
+    call gen_walk(290, 55+250)
+    call gen_chibi("hide")
     call her_chibi_scene("grope_on_podium_idle")
     with d3
     pause .5
@@ -984,13 +984,13 @@ label slytherin_match:
     $ hermione_chibi.zorder = 2
     $ genie_chibi.zorder = 3
     hide screen hermione_main
-    call her_chibi("kneel_pant", 325, 170)
+    call her_chibi("kneel_pant", 325, 170+186)
     # Note: Commented out because walk looks weird with Hermione on ground
     # call gen_chibi("stand", flip=False)
     # with d5
     # Genie walks back to his seat
-    # call gen_walk(xpos=130, ypos=10)
-    call gen_chibi("stand", 130, 10)
+    # call gen_walk(130, 10+250)
+    call gen_chibi("stand", 130, 10+250)
     with d5
 
     "With Hermione collapsed on the ground you give last quick look and then swiftly head back to your seat..."
@@ -1041,7 +1041,7 @@ label slytherin_match:
 
     # End of Cho CG
 
-    call her_chibi("stand", 375, 105, flip=True)
+    call her_chibi("stand", 375, 105+186, flip=True)
     call her_main("Oh... it looks like things are heating up! Malfoy has finally realised Chang is going for the Snitch...","open","base","angry","L")
 
     call play_sound("giggle")
@@ -1069,8 +1069,8 @@ label slytherin_match:
     pause .8
 
     call her_chibi("hide") # Hermione is already gone.
-    call gen_chibi("stand_alt", xpos=130, ypos=10)
-    call sna_chibi("stand", xpos=220, ypos=-50, flip=False)
+    call gen_chibi("stand_alt",130,10+250)
+    call sna_chibi("stand",220,-50, flip=False)
 
     $ qp_mob_reaction[0] = None
     $ qp_mob_reaction[1] = None
@@ -1162,7 +1162,7 @@ label slytherin_match_return:
     m "(Although all things considered...)"
     g9 "(I'd say it went down rather well!)"
 
-    call gen_walk(xpos="mid", ypos="base")
+    call gen_walk("mid", "base")
 
     call play_music("night")
     call gen_chibi("sit_behind_desk")
@@ -1185,7 +1185,7 @@ label slytherin_match_return:
     call bld
     m "(Speak of the devil...)"
 
-    call her_walk(xpos="desk", ypos="base")
+    call her_walk("desk", "base")
 
     call play_music("hermione")
     call her_main("That{w=0.5} was{w=0.8} amazing!","smile","happy","base","mid", xpos="mid", ypos="base")
@@ -1447,7 +1447,7 @@ label slytherin_match_return:
     call ast_chibi("hide")
     call sus_chibi("hide")
     call lun_chibi("hide")
-    call sna_chibi("stand","410","177", flip=False)
+    call sna_chibi("stand",410,177+250, flip=False)
     call sna_main("Want some of this, Genie?","snape_20", xpos="320", ypos="base", flip=False)
     with morph
     

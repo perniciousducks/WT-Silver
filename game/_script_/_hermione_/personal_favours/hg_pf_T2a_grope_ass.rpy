@@ -532,11 +532,11 @@ label hg_pf_grope_ass_T2_fail:
 
     call her_chibi_scene("reset","desk","base", trans=fade)
 
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
 
     call her_main("...........................", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
 
-    call her_chibi(action="leave")
+    call her_chibi("leave")
 
     jump end_hermione_event
 

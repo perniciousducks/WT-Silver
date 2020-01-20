@@ -561,7 +561,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("On your knees then, slut...","base","seductive","angry","mid")
         hide screen hermione_main
         $ hermione_xpos=590
-        call her_chibi("sit_naked", 40, 60)
+        call her_chibi("sit_naked", 40, 60+186)
         with d3
 
         hide screen bld1

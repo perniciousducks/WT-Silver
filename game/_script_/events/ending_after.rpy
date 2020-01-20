@@ -208,7 +208,7 @@ label ending_after:
                 sna "..." # Smirks
                 sna "Very well... our little scheme continues."
                 sna "Although at the moment I've got a class to attend to."
-                call sna_walk(xpos="door")
+                call sna_walk("door")
                 m "Yes... I also have very important business to get on with..."
                 sna "I'm sure..."
                 call sna_walk(action="leave")

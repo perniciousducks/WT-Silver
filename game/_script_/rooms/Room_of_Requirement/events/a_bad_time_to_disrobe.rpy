@@ -51,7 +51,7 @@ label a_bad_time_to_disrobe_part_1:
 
     m "25 points you said? sounds good to me."
 
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
 
     call her_main("{size=7}You heard what I said...{/size}", "annoyed", "closed", "base", "mid",ypos="head")
     call her_chibi("leave")
@@ -165,7 +165,7 @@ label a_bad_time_to_disrobe_part_1:
     g9 "35 points to Gryffindor!"
     call her_main("Thank you professor....", "grin", "base", "base", "mid", tears="mascara")
 
-    call her_walk (xpos="door", ypos="base")
+    call her_walk ("door", "base")
 
     call her_main("\"He's right, they wouldn't recognize me if I didn't show my face...\"", "base", "base", "base", "mid", cheeks="blush", tears="mascara",ypos="head")
     call her_main("\"would they?\"", "base", "base", "base", "mid", cheeks="blush", tears="mascara",ypos="head")
@@ -266,7 +266,7 @@ label a_bad_time_to_disrobe_part_2:
     hide screen day_to_night
     with d3
 
-    call her_walk(xpos="desk", ypos="base")
+    call her_walk("desk", "base")
     pause.5
 
     call her_main("...", "normal", "narrow", "base", "dead", cheeks="blush",xpos="right",ypos="base")
@@ -332,7 +332,7 @@ label a_bad_time_to_disrobe_part_2:
     m "40 points to Gryffindor!"
     call her_main("Thank you professor...", "soft", "base", "base", "mid_soft")
 
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
 
     call her_main("\"I'm glad I had time to clean the cloak before walking in here...\"", "base", "narrow", "base", "dead", cheeks="blush",ypos="head")
     call her_main("\"That thing was massive...\"", "normal", "narrow", "worried", "down",ypos="head")

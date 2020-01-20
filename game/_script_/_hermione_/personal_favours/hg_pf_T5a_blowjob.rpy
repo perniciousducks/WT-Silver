@@ -58,9 +58,9 @@ label hg_pf_blowjob:
         call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R")
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
 
-    call her_chibi(action="leave")
+    call her_chibi("leave")
 
 
     # Increase level
@@ -192,7 +192,7 @@ label hg_pf_blowjob_T1_intro_E1:
     call her_main("Although, now when I say it out loud like this...", "angry", "narrow", "base", "down")
     m "Too late! You already said \"yes\"!"
     call her_main("I know...", "grin", "worriedCl", "worried", "mid", emote="05")
-    call her_walk(xpos="desk", ypos="base", reduce=0.8)
+    call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
     jump hg_pf_blowjob_1
@@ -289,7 +289,7 @@ label hg_pf_blowjob_T2_intro_E1:
     g4 "Come here, you dirty little minx!"
     call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "annoyed", "up")
 
-    call her_walk(xpos="desk", ypos="base", reduce=0.8)
+    call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
     jump hg_pf_blowjob_2
@@ -740,7 +740,7 @@ label hg_hidden_blowjob_snape:
     with d3
     pause.8
 
-    call sna_walk(xpos="mid", ypos="base")
+    call sna_walk("mid", "base")
     pause.2
 
     call play_music("snape")

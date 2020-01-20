@@ -56,7 +56,7 @@ label room(room=None, hide_screens=True, stop_sound=True):
     if room == "clothing_store":
         show screen clothing_store_room
 
-    if room == "7th floor":
+    if room == "floor_seven":
         show screen floor_7th_door
         show screen room_of_req_door
         show screen floor_7th_screen

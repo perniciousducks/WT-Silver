@@ -34,11 +34,11 @@ label ag_se_imperio_sb_E1:
     call sus_main("Astoria? What are you doing here?","open","base","worried","R")
     call ast_main("Oh, don't mind me...","base","base","base","R")
 
-    call ast_chibi(action="wand",xpos="530",ypos="base")
+    call ast_chibi("wand",530,"base")
     call ast_main("I'm only here to put a curse on you.","grin","narrow","angry","mid")
     call sus_main("P-Put a curse on me?!!","open","wide","worried","wide")
 
-    call ast_chibi(action="wand_casting",xpos="530",ypos="base")
+    call ast_chibi("wand_casting",530,"base")
     call sus_main("No! Professor, do someth--","scream","wide","worried","mid")
 
     # Astoria casts imperio.
@@ -53,7 +53,7 @@ label ag_se_imperio_sb_E1:
 
     # chibi spell animation.
     call play_sound("spell")
-    call ast_chibi(action="wand_imperio",xpos="530",ypos="base")
+    call ast_chibi("wand_imperio",530,"base")
     with hpunch
     pause.8
 
@@ -63,7 +63,7 @@ label ag_se_imperio_sb_E1:
     call sus_main("-doing...","upset","base","base","up")
     call sus_main("...","upset","narrow","base","up")
 
-    call ast_chibi(action="wand",xpos="530",ypos="base")
+    call ast_chibi("wand",530,"base")
     call ast_main("OK, so what should we do now?","grin","base","angry","mid",xpos="close",ypos="base")
     call ast_main("We could do whatever we want [ast_genie_name]!","open","base","base","R")
     m "How about we have her take her clothes off?"
@@ -147,7 +147,7 @@ label ag_se_imperio_sb_E1:
 
     call play_music("stop")
     call hide_characters
-    call ast_chibi("reset","530","base")
+    call ast_chibi("reset",530,"base")
     hide screen bld1
     with fade
     pause.8
@@ -251,7 +251,7 @@ label ag_se_imperio_sb_E2:
     call ast_main("...","annoyed","base","base","R")
 
     call hide_characters
-    call ast_chibi("stand","530","base")
+    call ast_chibi("stand",530,"base")
     hide screen bld1
     with d3
     call sus_walk(action="enter", xpos="desk", ypos="base")
@@ -279,9 +279,9 @@ label ag_se_imperio_sb_E2:
     call ast_main("(Pffft, gloriously gross)","annoyed","base","angry","R")
     call sus_main("P-professor Dumbledore! Why would you want me to do s-something like that!","scream","base","angry","mid", trans=hpunch) #Perhaps she should be a bit intrigued =Blush
 
-    call ast_chibi(action="wand",xpos="530",ypos="base")
+    call ast_chibi("wand",530,"base")
     call sus_main("I think I better go...","upset","closed","worried","mid")
-    call ast_chibi(action="wand_casting",xpos="530",ypos="base")
+    call ast_chibi("wand_casting",530,"base")
     call ast_main("","grin","base","angry","L")
     pause.5
 
@@ -297,7 +297,7 @@ label ag_se_imperio_sb_E2:
 
     # chibi spell animation.
     call play_sound("spell")
-    call ast_chibi(action="wand_imperio",xpos="530",ypos="base")
+    call ast_chibi("wand_imperio",530,"base")
     with hpunch
     pause.8
 
@@ -308,7 +308,7 @@ label ag_se_imperio_sb_E2:
     m "You liked that?"
     call ast_main("Of course! Anything to bring Bessy here down a peg.","smile","base","base","L")
 
-    call ast_chibi(action="wand",xpos="530",ypos="base")
+    call ast_chibi("wand",530,"base")
     call ast_main("So what should we make her do today, [ast_genie_name]?","smile","base","base","mid")
     m "Something fun, perhaps?"
     call ast_main("*Hmmm*...","annoyed","narrow","base","R")
@@ -510,7 +510,7 @@ label ag_se_imperio_sb_E2:
 
     call play_music("stop")
     call hide_characters
-    call ast_chibi("reset","530","base")
+    call ast_chibi("reset",530,"base")
     call ast_walk("door","base")
     pause.2
     call ast_chibi("stand","door","base", flip=False)
@@ -554,7 +554,7 @@ label ag_se_imperio_sb_E3:
 
     call play_music("stop")
     call hide_characters
-    call ast_chibi("stand","530","base")
+    call ast_chibi("stand",530,"base")
     hide screen bld1
     with d3
     call sus_walk(action="enter", xpos="desk", ypos="base")
@@ -565,10 +565,10 @@ label ag_se_imperio_sb_E3:
     call sus_main("What are you doing here?","upset","narrow","worried","R")
 
     call play_music("astoria")
-    call ast_chibi(action="wand",xpos="530",ypos="base")
+    call ast_chibi("wand",530,"base")
     call ast_main("Yeah yeah, whatever...","open","base","base","R", xpos="base", ypos="base")
 
-    call ast_chibi(action="wand_casting",xpos="530",ypos="base")
+    call ast_chibi("wand_casting",530,"base")
     call sus_main("Well I'm not sure why I was brought here...","open","base","worried","mid")
 
     # Astoria casts imperio.
@@ -583,7 +583,7 @@ label ag_se_imperio_sb_E3:
 
     # chibi spell animation.
     call play_sound("spell")
-    call ast_chibi(action="wand_imperio",xpos="530",ypos="base")
+    call ast_chibi("wand_imperio",530,"base")
     with hpunch
     pause.8
 
@@ -591,7 +591,7 @@ label ag_se_imperio_sb_E3:
     call sus_main("Wait, wha-","open","wide","base","wide")
     m "Couldn't even wait this time?"
     call ast_main("Quiet old man.","open","narrow","angry","mid")
-    call ast_chibi(action="wand",xpos="530",ypos="base")
+    call ast_chibi("wand",530,"base")
     call ast_main("Susan, I want you to keep listening to my commands and act normally as you take your top off!","smile","narrow","angry","L")
     g4 "!!!"
 
@@ -831,7 +831,7 @@ label ag_se_imperio_sb_E3:
     call nar(">Susan slowly crawls out from under your desk...")
 
     call sus_chibi("stand","desk","base")
-    call ast_chibi("reset","530","base")
+    call ast_chibi("reset",530,"base")
     $ susan_face_covered = True
     hide screen blkfade
     call sus_main("","upset","narrow","worried","L",xpos="right",ypos="base",trans=fade)

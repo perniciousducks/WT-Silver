@@ -166,13 +166,13 @@ label DRgame_chibis:
     #Player
     $ genie_chibi.zorder = 1
     if DRplayer in DRgame.characters:
-        call gen_chibi("stand","710","165",flip=False)
+        call gen_chibi("stand",710,165+250,flip=False)
 
     #Stranger
     $ snape_chibi.zorder = 1
     if DRstranger in DRgame.characters:
         if DRstranger.location != "outside":
-            call sna_chibi("stand","450","180",flip=True)
+            call sna_chibi("stand",450,180+250,flip=True)
 
     return
 

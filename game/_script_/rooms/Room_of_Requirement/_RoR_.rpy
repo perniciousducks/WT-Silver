@@ -178,7 +178,7 @@ label enter_room_of_req:
         call gen_chibi("stand","door","base",flip=False)
         m "And a mirror?"
 
-        call gen_walk(xpos="200", ypos="base")
+        call gen_walk(200, "base")
 
         call bld
         m "..."
@@ -189,7 +189,7 @@ label enter_room_of_req:
         g4 "Dumbledore!"
         $ renpy.sound.play( "sounds/soft_wind.mp3")
         call sna_chibi("stand","door","base")
-        call gen_chibi("stand","200","base")
+        call gen_chibi("stand",200,"base")
         g9 "*Cough* I mean... Yes Severus, it is I...{w} \"Dumbledore\"."
         m "I'm so glad to be back..."
         call sna_main(".....","snape_05")
@@ -213,7 +213,7 @@ label enter_room_of_req:
             call sna_main("Continuing where I left off.", "snape_09")
         call sna_main("Now, this mirror that you've found...", "snape_01")
         call sna_main("I thought Albus would've moved it out of the school after the last incident...", "snape_22")
-        call gen_chibi("stand","200","base",flip=False)
+        call gen_chibi("stand",200,"base",flip=False)
         show screen bld1
         m "What kind of incident? It's just some dusty old mirror... why would Dumbledore care about it? And what's going on with this room?"
         call sna_main("I don't know about the room, I'm more concerned by this mirror. Why don't you have a look in it and tell me what you see?", "snape_01")
@@ -235,7 +235,7 @@ label enter_room_of_req:
         m "Booooring."
         call sna_main("It's a porn creator...", "snape_03")
         $ mirror_image = 0
-        call gen_chibi("stand","200","base")
+        call gen_chibi("stand",200,"base")
         g5 "A what, sorry?"
         call sna_main("A porn creator. Well, technically it's used to let you live out your fantasies, be they impure or not. So not necessarily porn.", "snape_01")
         g5 "And you didn't tell me a thing like this existed?"
@@ -259,9 +259,9 @@ label enter_room_of_req:
         call gen_chibi("stand","door","base",flip=False)
         call hide_blkfade
 
-        call gen_walk(xpos="200", ypos="base")
+        call gen_walk(200, "base")
 
     $ mirror_image = 1
-    call gen_chibi("stand","200","base",flip=False)
+    call gen_chibi("stand",200,"base",flip=False)
     call hide_blkfade
     call screen room_of_requirement_menu

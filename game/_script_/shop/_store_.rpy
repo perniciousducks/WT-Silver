@@ -30,7 +30,7 @@ label open_weasley_store:
         call gen_chibi("stand","0","base")
         call hide_blkfade
 
-        call gen_walk(xpos="left", ypos="base")
+        call gen_walk("left", "base")
 
     pause.2
 

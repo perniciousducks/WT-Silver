@@ -16,7 +16,7 @@ label hg_wager_bj:
             call her_main("Okay, I can do that...", "open", "base", "base", "mid_soft", cheeks="blush")
             call her_main("", "base", "base", "base", "mid_soft")
             g9 "Well, get over here then!"
-            call her_walk(xpos="desk", ypos="base", reduce=0.8)
+            call her_walk("desk", "base", reduce=0.8)
             call blkfade
             call her_main("Should I turn around, [genie_name]?", "open", "worriedCl", "worried", "mid")
             call her_main("", "upset", "base", "worried", "mid")
@@ -60,7 +60,7 @@ label hg_wager_bj:
                 with d1
                 ">You take your hands off Hermione"
                 call gen_chibi("sit_behind_desk")
-                call her_chibi("stand","410","base", flip=True)
+                call her_chibi("stand",410,"base", flip=True)
                 call sna_main("The perfect Hermione Granger letting her headmaster feel her up over a card game and some house points!", face="snape_02")
                 call sna_main("How sweet...", face="snape_03")
                 call her_main("Can I leave now?", "annoyed", "narrow", "worried", "down", flip=True)
@@ -111,7 +111,7 @@ label hg_wager_bj:
             if her_whoring > 18:
                 call her_main("And it does feel good having my mouth full of your cock...", "soft", "happyCl", "base", "mid", cheeks="blush")
         m "Get over here then!"
-        call her_walk(xpos="desk", ypos="base", reduce=0.8)
+        call her_walk("desk", "base", reduce=0.8)
         call blkfade
         call play_music("playful_tension")
         hide screen hermione_main
@@ -179,7 +179,7 @@ label hg_wager_bj:
                 call sna_main("I’ll leave you to it then...", face="snape_03")
                 call her_main("...", "full_cum", "narrow", "base", "down", cheeks="blush")
 
-                call sna_walk(xpos="door", ypos="base") #snape walks to the door, pauses on gulp sound
+                call sna_walk("door", "base") #snape walks to the door, pauses on gulp sound
 
                 $ renpy.play('sounds/gulp.mp3')
                 call her_main("{image=textheart}*Gulp* {image=textheart}", "cum", "narrow", "annoyed", "up")
@@ -214,12 +214,12 @@ label hg_wager_bj:
 
                 else: #if hermione has stripped twice (so snape walked in on her)
                     show screen desk(427) # Desk was shifted during blowjob
-                    call gen_chibi("dick_out", 260, 205)
-                    call her_chibi("stand","220","base", flip=True)
+                    call gen_chibi("dick_out", 260, 205+250)
+                    call her_chibi("stand",220,"base", flip=True)
                     call sna_main("Miss Granger?! I tho-... I...", face="snape_14", wand=True)
                     hide screen snape_defends
                     hide screen snape_main
-                    call sna_chibi("stand","460","base")
+                    call sna_chibi("stand",460,"base")
                     $ renpy.music.play("music/Dark Fog.mp3")
                     if her_whoring > 20:
                         call her_main("Hello, Professor Snape.", "cum", "base", "base", "mid", xpos="left", ypos="base", flip=True)
@@ -608,7 +608,7 @@ label hg_wager_bj_secret:
     call blkfade
     $ renpy.block_rollback()
     call her_chibi_scene("bj")
-    call sna_chibi("stand","460","base")
+    call sna_chibi("stand",460,"base")
     pause 1.0
     show screen hg_wager_bj_secret
     call hide_blkfade

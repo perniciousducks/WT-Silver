@@ -74,7 +74,7 @@ screen with_tonks_animated():
 
 
 # Chibi definition
-default tonks_chibi = chibi("tonks", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves"], update_tonks_chibi)
+default tonks_chibi = Chibi("tonks", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves"], update_tonks_chibi)
 
 init python:
     def update_tonks_chibi(chibi):

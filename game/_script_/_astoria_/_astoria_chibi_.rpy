@@ -55,7 +55,7 @@ screen ast_cloth_pile(position=(440, 425)): # Default position: Right of desk, b
     add "characters/chibis/cloth_pile_r.png" pos position zoom 0.5
 
 # Chibi definition
-default astoria_chibi = chibi("astoria", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves"], update_astoria_chibi)
+default astoria_chibi = Chibi("astoria", ["fix", "base", "bottom", "shoes", "top", "robe", "gloves"], update_astoria_chibi)
 
 init python:
     def update_astoria_chibi(chibi):

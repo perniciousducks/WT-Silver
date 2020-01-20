@@ -538,24 +538,24 @@ label floor_7th:
             $ first_time_7th=False
             m "So... The diary mentioned he was walking around here."
 
-            call gen_walk(xpos="200", ypos="base", speed=1.5)
+            call gen_walk(200, "base", speed=1.5)
 
             call bld
             m "I can definitely sense a strong magical energy in this place..."
 
-            call gen_walk(xpos="door", ypos="base", speed=1.5)
+            call gen_walk("door", "base", speed=1.5)
 
             call bld
             m "Maybe if I...or I could..."
 
-            call gen_walk(xpos="120", ypos="base", speed=1.5)
+            call gen_walk(120, "base", speed=1.5)
 
             call bld
             g4 "I could be in my office jacking off right now!!"
             show screen room_of_req_door
             pause 1
 
-            call gen_chibi(xpos="120",ypos="base")
+            call gen_chibi(xpos=120,ypos="base")
             pause.8
 
             call bld
@@ -566,7 +566,7 @@ label floor_7th:
             show screen floor_7th_door
             call screen floor_7th_menu
         else:
-            call gen_chibi(xpos="120", ypos="base")
+            call gen_chibi(xpos=120, ypos="base")
             show screen floor_7th_door
             call hide_blkfade
             call screen floor_7th_menu

@@ -985,7 +985,7 @@ label end_hg_show_ass:
     else:
         her "I'd better go now then. It's getting pretty late..."
 
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
 
     #First event.
     if her_whoring < 15:
@@ -1006,7 +1006,7 @@ label end_hg_show_ass:
         call her_main("{size=-5}(it was shameful! good girls don't get turned on by stripping for their headmaster!) {/size}", "angry", "base", "angry", "mid", cheeks="blush", ypos="head")
         call her_main(".................................", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
 
-    call her_chibi(action="leave")
+    call her_chibi("leave")
 
 
     $ hg_pf_look_at_ass.level = 1 #Event hearts level (0-3)

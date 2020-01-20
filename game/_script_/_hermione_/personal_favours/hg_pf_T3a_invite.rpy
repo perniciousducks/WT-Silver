@@ -485,7 +485,7 @@ label hg_pf_strip_T2_Snape_masturbate:
     call gen_chibi("jerk_off","behind_desk","behind_desk")
     show screen desk
     call her_chibi("stand","on_desk","on_desk")
-    call sna_chibi("jerk_off","desk","240")
+    call sna_chibi("jerk_off","desk",240+250)
     hide screen blktone
     hide screen blkfade
     with d5
@@ -611,6 +611,8 @@ label hg_pf_strip_T2_Snape_masturbate:
         m "{size=-4}(Was that an attempt at a joke?){/size}"
         m "{size=-4}(Man, horny Snape is weird...){/size}"
 
+        label dev2:
+
         call hide_characters
         show screen blkfade
         with d5
@@ -698,7 +700,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         pause 2
         hide screen hermione_main
 
-        call sna_chibi("hold_dick","mid","245")
+        call sna_chibi("hold_dick","mid",245+250)
         call gen_chibi("sit_behind_desk")
         call her_chibi("stand","desk","base", flip=True)
 

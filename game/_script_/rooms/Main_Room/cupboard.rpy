@@ -29,7 +29,7 @@ label rummaging:
     show screen chair_left
     show screen desk
     show screen cupboard_open
-    call gen_chibi("rummage", 160, 110, flip=False) # Note: Flip is inconsistent
+    call gen_chibi("rummage", 160, 110+349, flip=False) # Note: Flip is inconsistent
     with d3
     show screen bld1
     with d3

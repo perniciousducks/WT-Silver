@@ -820,7 +820,7 @@ label luna_revert_2:
 
     ">Luna places her hands on Hermione's shoulders and gently forces her paralysed body to her knees."
     call lun_chibi("stand","right","base")
-    call her_chibi("kneel","mid",320,flip=True)
+    call her_chibi("kneel","mid","base",flip=True)
     call gen_chibi("dick_out")
     call ctc
 

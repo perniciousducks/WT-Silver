@@ -152,7 +152,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "Did you finish your assignment?"
         call her_main("about that...", "soft", "narrow", "base", "R_soft", cheeks="blush")
 
-        call her_walk(xpos="desk", ypos="base")
+        call her_walk("desk", "base")
 
         "She elegantly drops a pair of frilly pink panties on your desk."
         call her_main("And for extra credit...", "soft", "narrow", "worried", "down", cheeks="blush")
@@ -231,7 +231,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 m "Take your house points and go...{w=0.5} 35 points to Gryffindor!"
                 call her_main("{size=+4}Really?!{/size}{w=0.2} Thank you so much [genie_name]!", "smile", "base", "base", "mid", cheeks="blush")
 
-                call her_walk(xpos="mid", ypos="base")
+                call her_walk("mid", "base")
 
                 m "I hope next time you do better though."
                 call her_main("(Next time...?!)", "shock", "wide", "worried", "shocked", cheeks="blush", flip=True)
@@ -284,7 +284,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "You're free to go then."
         call her_main("Thank you sir.", "open", "base", "base", "mid")
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call bld
         m "Oh and one more thing.."
@@ -332,7 +332,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Am I free to go now?", "soft", "base", "base", "mid", cheeks="blush")
                 m "Yes, you are free to go."
 
-                call her_walk(xpos="mid", ypos="base")
+                call her_walk("mid", "base")
 
                 $ renpy.play('sounds/sniff.mp3')
                 g9 "{size=-4}Such nice fragrance, I wonder to whom these belong?{/size}"
@@ -376,7 +376,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 m "I suppose..."
                 call her_main("Goodnight then sir.", "open", "base", "base", "mid")
 
-                call her_walk(xpos="door", ypos="base")
+                call her_walk("door", "base")
 
                 m "{size=-4}Ginny..{w=1.0} its time for you to meet 'George'.{/size}{w=0.2}{nw}"
                 call gen_chibi("jerk_off_behind_desk")
@@ -463,7 +463,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "The perfect hunting grounds."
         call her_main("I am astonished that I'll have to agree with you but yes... I had the pick of the litter with no absence of choice.{w=0.3} Speaking of...", "open", "closed", "base", "mid")
 
-        call her_walk(xpos="desk", ypos="base")
+        call her_walk("desk", "base")
 
         $ renpy.play('sounds/cloth_sound.mp3')
         "She drops a bunched-up ball of about half a dozen girl's panties on your desk, coming in an array of different sizes, designs and colours."
@@ -581,7 +581,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", "upset", "base", "base", "R")
         pause 0.5
 
-        call her_walk(xpos="mid", ypos="base")
+        call her_walk("mid", "base")
 
         g9 "Bon apetite!"
         call her_main("", "open", "base", "base", "R", flip=True)
@@ -694,7 +694,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
 
         call her_main("Hello [genie_name], I hope I didn't keep you waiting for too long...", "smile", "happy", "base", "mid_soft")
 
-        call her_walk(xpos="desk", ypos="base")
+        call her_walk("desk", "base")
 
         call her_main("I had a little..{w=0.5} 'setback'{w=0.2} if you know what I mean..", "grin", "narrow", "base", "mid_soft", cheeks="blush")
         call her_main("", mouth="base", cheeks="blush")

@@ -52,7 +52,7 @@ label her_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
     return
 
 # Chibi definition
-default hermione_chibi = chibi("hermione", ["base"], update_hermione_chibi)
+default hermione_chibi = Chibi("hermione", ["base"], update_hermione_chibi)
 
 #TODO Hermione's chibis need clothing layers and then update logic must be reworked to set clothing state (using chibi class best practice, see Cho chibi for example)
 

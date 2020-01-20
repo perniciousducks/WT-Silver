@@ -419,7 +419,7 @@ label cc_pf_talk_T1_E3:
     m "First, come closer. Let me have a good look at you!"
     call cho_main("Yes, Sir.","base","base","base","mid")
 
-    call cho_walk(xpos="desk", ypos="base")
+    call cho_walk("desk", "base")
 
     call cho_main("Anything specific you'd like to know?","soft","base","base","mid", xpos="mid", ypos="base", trans=fade)
     m "Yes. Let's talk some more about Diggory..."
@@ -615,7 +615,7 @@ label cc_pf_talk_T2_intro_E1:
     m "Please come a bit closer..."
     call cho_main("Yes, Sir.","base","base","base","mid")
 
-    call cho_walk(xpos="desk", ypos="base")
+    call cho_walk("desk", "base")
 
     call cho_main("","base","base","base","mid", xpos="mid", ypos="base", trans=fade)
     m "Tell me, how have you been?"
@@ -776,7 +776,7 @@ label cc_pf_talk_T2_intro_E2:
     call cho_main("Of course not, [cho_genie_name]!","smile","base","base","mid")
     m "Come closer..."
 
-    call cho_walk(xpos="desk", ypos="base")
+    call cho_walk("desk", "base")
 
     call cho_main("","base","base","base","mid", xpos="mid", ypos="base", trans=fade)
     m "How's school? Have anything to tell me?"

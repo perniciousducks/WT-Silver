@@ -48,7 +48,7 @@ label sus_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
     return
 
 # Chibi definition
-default susan_chibi = chibi("susan", ["base", "shoes", "top", "bottom", "robe"], update_susan_chibi)
+default susan_chibi = Chibi("susan", ["base", "shoes", "top", "bottom", "robe"], update_susan_chibi)
 
 init python:
     def update_susan_chibi(chibi):

@@ -119,7 +119,7 @@ label end_hg_pr_flash:
     m "The Gryffindor house gets [current_payout] points!"
     her "Thank you, [genie_name]."
 
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
     pause.2
 
     show screen blktone
@@ -141,7 +141,7 @@ label end_hg_pr_flash:
         call her_main(".........................", "grin", "narrow", "base", "dead", ypos="head")
 
     hide screen blktone
-    call her_chibi(action="leave")
+    call her_chibi("leave")
 
     $ hg_pr_flash.inProgress = False
 

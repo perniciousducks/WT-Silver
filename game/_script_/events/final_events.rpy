@@ -202,7 +202,7 @@ label ball_quest_E1:
                     with d5
 
                     #Walks to the door
-                    call her_walk(xpos="door", ypos="base")
+                    call her_walk("door", "base")
 
                     #Locks the door
                     pause.5
@@ -219,7 +219,7 @@ label ball_quest_E1:
                     #Returns from the door
                     m "??!"
 
-                    call her_walk(xpos="mid", ypos="base")
+                    call her_walk("mid", "base")
                     pause.2
 
                     call her_main("Just in case...", "annoyed", "narrow", "angry", "R")
@@ -464,13 +464,13 @@ label ball_quest_E3:
     call her_main("I think I'd better go now...*sob*", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     m "Well, don't let me keep you a moment longer, miss Granger...."
 
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
     pause.3
 
     call her_main("(My life is ruined...)", "angry", "squint", "base", "mid", cheeks="blush", tears="messy", ypos="head")
     pause.1
 
-    call her_chibi(action="leave")
+    call her_chibi("leave")
 
     call bld
     m "Hm... I don't remember ever seeing the girl this desperate..."

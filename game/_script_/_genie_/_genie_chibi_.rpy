@@ -105,16 +105,7 @@ screen genie_sit_behind_desk():
         add "ch_gen sit_behind_desk" xpos 370 ypos 336 xanchor 0.5 yanchor 0.5
 
 # Chibi definition
-default genie_chibi = chibi("genie", ["base"], update_genie_chibi, places=genie_places)
-
-define genie_places = {
-    "base": (None, 190),
-    "behind_desk": (210, 190),
-    "mid": (500, None),
-    "left": (100, None),
-    "fireplace": (550, 160),
-    "cupboard": (260, None),
-}
+default genie_chibi = Chibi("genie", ["base"], update_genie_chibi)
 
 init python:
     def update_genie_chibi(chibi):

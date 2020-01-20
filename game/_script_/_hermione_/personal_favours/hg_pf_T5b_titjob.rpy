@@ -66,9 +66,9 @@ label hg_pf_titjob:
 
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
 
-    call her_chibi(action="leave")
+    call her_chibi("leave")
 
 
     # Increase level
@@ -248,8 +248,8 @@ label hg_pf_titjob_1:
 
     show screen chair_left
     show screen desk
-    call her_chibi("stand","560","base")
-    call gen_chibi("jerk_off","450","base")
+    call her_chibi("stand",560,"base")
+    call gen_chibi("jerk_off",450,"base")
 
     hide screen blkfade
     with fade

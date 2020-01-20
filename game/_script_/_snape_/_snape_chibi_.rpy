@@ -67,13 +67,7 @@ screen with_snape(ani=False):
         add "characters/snape/chibis/drinking/01.png" xpos 618 ypos 200 zoom 0.5
 
 # Chibi definition
-default snape_chibi = chibi("snape", ["base"], update_snape_chibi, places=snape_places)
-
-define snape_places = {
-    "base": (None, 190),
-    "mid": (500, None),
-    "desk_close": (425, 245)
-}
+default snape_chibi = Chibi("snape", ["base"], update_snape_chibi)
 
 init python:
     def update_snape_chibi(chibi):

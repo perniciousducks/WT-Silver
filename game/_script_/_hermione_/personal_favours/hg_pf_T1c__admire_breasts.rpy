@@ -63,7 +63,7 @@ label hg_pf_admire_breasts:
 
 
     # Hermione leaves
-    call her_walk(xpos="door", ypos="base")
+    call her_walk("door", "base")
 
     if her_tier <= 1 and hg_pf_admire_breasts.points == 1:
         call her_main("........................", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
@@ -82,7 +82,7 @@ label hg_pf_admire_breasts:
         call her_main("{size=-5}(What will people think of me?){/size}", "open", "narrow", "base", "up", cheeks="blush", ypos="head")
         call her_main(".................................", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
 
-    call her_chibi(action="leave")
+    call her_chibi("leave")
 
 
     # Increase level

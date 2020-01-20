@@ -391,7 +391,7 @@ label cc_st_hermione_E1:
     g4 "..."
 
     # Hermione barges in.
-    call her_walk(xpos="desk", ypos="base")
+    call her_walk("desk", "base")
 
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base") # annoyed
     pause .5
@@ -792,7 +792,7 @@ label cc_st_hermione_blackmail:
     # Hermione puts her clothes on if she's naked.
     # TODO: add clothing equip for Hermione.
 
-    call her_walk(xpos="mid", ypos="base")
+    call her_walk("mid", "base")
     pause .1
 
     # Summon Cho.
@@ -803,7 +803,7 @@ label cc_st_hermione_blackmail:
     call chibi_emote("thought", "hermione")
     pause 1
 
-    call cho_walk(xpos="680", ypos="base")
+    call cho_walk(680, "base")
     pause .2
 
     call her_main("", "base", "base", "base", "mid", xpos="270", ypos="base", flip=True)

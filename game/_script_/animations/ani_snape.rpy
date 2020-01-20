@@ -87,6 +87,7 @@ image ch_sna cum_done:
         yoffset -120
         "characters/snape/chibis/masturbating/02.png"
     contains:
+        zoom 2
         yoffset -480
         xoffset -980
         "characters/snape/chibis/masturbating/sperm_18.png"

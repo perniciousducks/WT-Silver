@@ -63,7 +63,7 @@ screen ui_top_bar():
     use ui_points
 
     # Don't display buttons in certain rooms or on the first day
-    if current_room not in ["clothing_store", "weasley_store", "room_of_requirement", "7th_floor"] and day > 1:
+    if current_room not in ["clothing_store", "weasley_store", "room_of_requirement", "floor_seven"] and day > 1:
         # Menu button
         imagebutton:
             xpos 0

@@ -102,12 +102,12 @@ label l_tutoring:
 
         call nar("You dismiss Hermione.")
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(I'm glad the professor agreed to tutor me!){/size}", "base", "worriedCl", "worried", "mid",cheeks="blush",ypos="head")
         call her_main("{size=-4}(But pleasure and pain? I don't understand where this is going...){/size}", "annoyed", "base", "base", "R",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 1
         jump day_start
@@ -147,12 +147,12 @@ label l_tutoring:
         hide screen hermione_main
         call nar("You dismiss Hermione.")
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(Filthy whores...){/size}", "angry", "closed", "angry", "mid",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Oh, I should not talk like that...{w=0.5} but it feels so good!){/size}", "base", "worriedCl", "worried", "mid",cheeks="blush",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 2
         jump day_start
@@ -191,13 +191,13 @@ label l_tutoring:
         hide screen hermione_main
         call nar("You dismiss Hermione.")
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about.){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Probably all the problems caused by those harlots.){/size}", "base", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Well, I will never be like them, so no need to worry.){/size}", "silly", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 3
         jump day_start
@@ -267,13 +267,13 @@ label l_tutoring:
         hide screen hermione_main
         call nar("You dismiss Hermione.")
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(Well, I'll try to investigate those two girls again.){/size}", "disgust", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Like a real anthropologist!){/size}", "base", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Yes, that's right. Hermione the anthropologist!){/size}", "base", "worriedCl", "worried", "mid",cheeks="blush",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 4
         jump day_start
@@ -380,13 +380,13 @@ label l_tutoring:
         hide screen hermione_main
         call nar("You dismiss Hermione.")
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(I enjoyed it too much. Maybe I'm becoming a pervert as well){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I lost control, it won't happen again!){/size}", "shock", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Good thing I'm not a degenerate like those filthy girls!){/size}", "base", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 5
         jump day_start
@@ -417,7 +417,7 @@ label l_tutoring:
         hide screen bld1
         with d3
 
-        call her_walk(xpos="desk", ypos="base", reduce=0.8)
+        call her_walk("desk", "base", reduce=0.8)
         call blkfade
 
         call her_chibi_scene("behind_desk_front")
@@ -467,13 +467,13 @@ label l_tutoring:
         hide screen bld1
         call hide_blkfade
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(This is wrong...){/size}", "disgust", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I shouldn't listen to him.){/size}", "angry", "worriedCl", "worried", "mid",cheeks="blush",ypos="head")
         call her_main("{size=-4}(And yet...){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 6
         jump day_start
@@ -511,7 +511,7 @@ label l_tutoring:
         hide screen bld1
         with d3
 
-        call her_walk(xpos="desk", ypos="base", reduce=0.8)
+        call her_walk("desk", "base", reduce=0.8)
         call blkfade
 
         ">Hermione walks towards your desk."
@@ -569,12 +569,12 @@ label l_tutoring:
         hide screen hermione_main
         with d3
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(\"My little witch?\"){/size}", "annoyed", "narrow", "angry", "R",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Why not, after all...){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 7
         jump day_start
@@ -616,7 +616,7 @@ label l_tutoring:
         call her_main("", "base", "closed", "base", "mid")
         m "Now."
 
-        call her_walk(xpos="desk", ypos="base", reduce=0.8)
+        call her_walk("desk", "base", reduce=0.8)
         call blkfade
 
         ">Hermione slowly walks towards your desk."
@@ -700,13 +700,13 @@ label l_tutoring:
         call gen_chibi("sit_behind_desk")
         call hide_blkfade
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(I'm such a slut...){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Cumming in front of my professor...){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I definitely need to do that again!){/size}", "base", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 8
         jump day_start
@@ -734,7 +734,7 @@ label l_tutoring:
         m "Enough of this! Now take off your shirt and come here."
         call her_main("Here we go for another \"lesson\".", "open", "squint", "base", "mid")
 
-        call her_walk(xpos="desk", ypos="base", reduce=0.8)
+        call her_walk("desk", "base", reduce=0.8)
         call blkfade
 
         $ hermione.strip("robe")
@@ -855,13 +855,13 @@ label l_tutoring:
         call gen_chibi("sit_behind_desk")
         call hide_blkfade
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(Favourite...){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
         call her_main("{size=-4}(There's another one?){/size}", "mad", "wide", "base", "stare",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I'll do my best to remain his favourite!){/size}", "base", "worriedCl", "worried", "mid",cheeks="blush",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 9
         jump day_start
@@ -1024,13 +1024,13 @@ label l_tutoring:
         m "Good night, my dirty little slut."
         call nar("You dismiss Hermione.")
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(Rest...){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Not before I've played with this marvelous toy again){/size}", "base", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
         call her_main("{size=-4}(And again){/size}", "silly", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 10
         jump day_start
@@ -1070,7 +1070,7 @@ label l_tutoring:
 
         ">She rips off her shirt and rushes to your desk."
 
-        call her_walk(xpos="desk", ypos="base", reduce=0.8)
+        call her_walk("desk", "base", reduce=0.8)
         call blkfade
 
         call her_chibi_scene("grope_ass_back")
@@ -1190,13 +1190,13 @@ label l_tutoring:
 
         call nar("You dismiss Hermione.")
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(Finally tonight I'll just go to bed){/size}", "base", "worriedCl", "worried", "mid",cheeks="blush",ypos="head")
         call her_main("{size=-4}(That was a little too intense){/size}", "angry", "worriedCl", "worried", "mid",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Not that I'm complaining...){/size}", "silly", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 11
         jump day_start
@@ -1257,7 +1257,7 @@ label l_tutoring:
         m "Oh, we have time."
         call her_main("Speaking of that...", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
 
-        call her_walk(xpos="desk", ypos="base", reduce=0.8)
+        call her_walk("desk", "base", reduce=0.8)
         call blkfade
 
         call her_chibi_scene("behind_desk_back")
@@ -1415,13 +1415,13 @@ label l_tutoring:
         call her_main("Good night, professor.", "annoyed", "closed", "base", "mid",cheeks="blush")
         call nar("You dismiss Hermione.")
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(Sucking his cock without getting any points!){/size}", "annoyed", "narrow", "angry", "R",cheeks="blush",ypos="head")
         call her_main("{size=-4}(If he hadn't made me come so hard...){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
         call her_main("{size=-4}(*sigh* Although I guess it's not that high a price...){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 12
         jump day_start
@@ -1446,7 +1446,7 @@ label l_tutoring:
         call her_chibi("stand","door","base")
         call hide_blkfade
 
-        call her_walk(xpos="mid", ypos="base")
+        call her_walk("mid", "base")
 
         call her_main("{size=-4}*panting*{/size} Oh good, you're still here.", "open", "base", "base", "mid",cheeks="blush",xpos="right",ypos="base")
         m "Is it safe to assume you have honoured my request this time?"
@@ -1509,7 +1509,7 @@ label l_tutoring:
         m "{size=-2}(It's not as if you don't like it rough){/size}"
         m "Alright, my desk, you, naked, now!"
 
-        call her_walk(xpos="desk", ypos="base", reduce=0.8)
+        call her_walk("desk", "base", reduce=0.8)
         call blkfade
 
         $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking.
@@ -1619,12 +1619,12 @@ label l_tutoring:
         m "And next time bring your books, I'll help you with your revisions."
         call nar("You dismiss Hermione.")
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(Yes, sweet dreams...){/size}", "base", "worriedCl", "worried", "mid",cheeks="blush",ypos="head")
         call her_main("{size=-4}(Sweet and wet!){/size}", "silly", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 13
 
@@ -1662,7 +1662,7 @@ label l_tutoring:
         call her_main("{size=-2}(I give myself away for free now, what a bad whore I make){/size}", "base", "narrow", "worried", "mid_soft",cheeks="blush",tears="soft")
         m "Come here and strip."
 
-        call her_walk(xpos="desk", ypos="base", reduce=0.8)
+        call her_walk("desk", "base", reduce=0.8)
         call blkfade
 
         hide screen hermione_main
@@ -1805,13 +1805,13 @@ label l_tutoring:
         call hide_blkfade
         pause 1
 
-        call her_walk(xpos="door", ypos="base")
+        call her_walk("door", "base")
 
         call her_main("{size=-4}(\"my beloved prince\"...){/size}", "base", "narrow", "base", "down",cheeks="blush",ypos="head")
         call her_main("{size=-4}(He's hardly Prince Charming but...){/size}", "base", "narrow", "base", "mid_soft",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I doubt Prince Charming could fuck me half as well as he can!){/size}", "grin", "narrow", "base", "up",cheeks="blush",ypos="head")
 
-        call her_chibi(action="leave")
+        call her_chibi("leave")
 
         $ her_tutoring = 14
         jump day_start

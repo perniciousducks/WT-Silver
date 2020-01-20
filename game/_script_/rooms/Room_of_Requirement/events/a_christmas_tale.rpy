@@ -45,7 +45,7 @@ label a_christmas_tale:
     with d3
     nar "Severus then entered, all flustered and spent."
 
-    call sna_walk(xpos="mid", ypos="base")
+    call sna_walk("mid", "base")
     pause.2
 
     call sna_main("Genie? Where are you... I came here, to vent...",face="snape_03",ypos="head")
@@ -132,7 +132,7 @@ label a_christmas_tale:
 
     call sna_chibi("hide")
     with d3
-    call sna_chibi("stand","570","190",flip=True)
+    call sna_chibi("stand",570,190+250,flip=True)
     with d3
     pause.5
 

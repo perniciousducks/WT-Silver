@@ -132,8 +132,6 @@ label hufflepuff_match:
 
     call sna_walk(700, "base")
 
-    label dev:
-
     # Blackfade
     stop music fadeout 2
     stop bg_sounds fadeout 2
@@ -154,8 +152,8 @@ label hufflepuff_match:
     centered "{size=+7}{color=#cbcbcb}At the Quidditch pitch...{/color}{/size}"
 
     call room("quidditch_pitch")
-    call sna_chibi("stand", 600, 500+250)
-    call gen_chibi("stand", 400, 500+250, flip=True)
+    call sna_chibi("stand", "right", "base")
+    call gen_chibi("stand", "mid", "base", flip=True)
     call hide_blkfade
 
     m "So, this is it? This is where the quidditch is played?"
@@ -168,10 +166,11 @@ label hufflepuff_match:
     m "From previous experiences with this world so far...{w} yes, pretty much."
     call sna_main("Anyhow... time go get moving, this place will be filled with teachers and students any minute now.","snape_03",ypos="head")
     call sna_main("After me...","snape_02",ypos="head")
-    #Snape walks up the stairs
-    #Genie walks up to the entrance of the commentator booth and sees the sign
-    g9 "(*He-heh*... Snape sux...)"
-    #Genie walks up the stairs    
+
+    call sna_walk(path=[("stairs_base","base"),("stairs_up","stairs_up")])
+    call gen_walk("stairs_base")
+    g9 "(*He-heh*... \"Snape sux\"...)"
+    call gen_walk("stairs_up","stairs_up")
 
     call blkfade
 

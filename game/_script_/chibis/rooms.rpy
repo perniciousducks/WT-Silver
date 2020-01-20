@@ -19,11 +19,11 @@ init python:
 
     ChibiRoom("quidditch_pitch", 1.4, {
         "base": (None, 500),
-        "left": (None, None),
-        "mid": (None, None),
-        "right": (None, None),
-        "stairs_base": (None, None),
-        "stairs_up": (None, None),
+        "left": (300, None),
+        "mid": (450, None),
+        "right": (600, None),
+        "stairs_base": (800, 500),
+        "stairs_up": (1000, 370),
     })
 
     ChibiRoom("quidditch_stands", 1.0, {})

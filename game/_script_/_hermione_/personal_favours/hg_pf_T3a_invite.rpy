@@ -611,8 +611,6 @@ label hg_pf_strip_T2_Snape_masturbate:
         m "{size=-4}(Was that an attempt at a joke?){/size}"
         m "{size=-4}(Man, horny Snape is weird...){/size}"
 
-        label dev2:
-
         call hide_characters
         show screen blkfade
         with d5

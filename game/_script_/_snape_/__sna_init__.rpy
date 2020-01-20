@@ -1,8 +1,9 @@
+# Main
 default snape_xpos = 525
 default snape_ypos = 0
-default snape_zorder = 5
+default snape_zorder = 15
 default snape_flip = 1
-default use_snape_head            = False
+default use_snape_head = False
 
 default s_sprite = "characters/snape/main/snape_01.png"
 

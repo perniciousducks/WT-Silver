@@ -1,8 +1,9 @@
-default tonks_xpos      = 600
-default tonks_ypos      = 0
-default tonks_zorder    = 5
-default tonks_flip      = 1
-default use_tonks_head  = False
+# Main
+default tonks_xpos = 600
+default tonks_ypos = 0
+default tonks_zorder = 15
+default tonks_flip = 1
+default use_tonks_head = False
 default tonks_animation = None
 
 default tonks_haircolor = [[243, 158, 189, 255]]

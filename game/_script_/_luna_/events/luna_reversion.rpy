@@ -7,7 +7,7 @@ label luna_reversion_event:
 
     call play_music("chipper_doodle")
 
-    $ luna_zorder = 6 # Needed for handjob pose
+    $ luna_zorder = 16 # Needed for handjob pose
 
     if lun_sub > lun_dom:
         # Sub intro

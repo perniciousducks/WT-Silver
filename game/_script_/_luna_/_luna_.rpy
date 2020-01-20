@@ -37,7 +37,7 @@ label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
         if ypos in ["base","default"]:
             $ luna_ypos = 0
             $ luna_scaleratio = 2
-            $ luna_zorder = 5
+            $ luna_zorder = 15
             $ use_luna_head = False
         elif ypos in ["head"]:
             # Use ypos="head" to activate her head position.
@@ -51,7 +51,7 @@ label lun_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
             else:
                 $ luna_xpos = 590
             $ luna_ypos = 230
-            $ luna_zorder = 8
+            $ luna_zorder = 18
         else:
             $ luna_ypos = int(ypos)
 
@@ -125,7 +125,7 @@ label reset_luna:
     $ luna_wear_cum_under = False
 
     $ luna_chibi.zorder = 3
-    $ luna_zorder = 5
+    $ luna_zorder = 15
 
     call update_luna
 

@@ -1,5 +1,5 @@
 screen luncg():
-    zorder 6
+    zorder 16
     
     add lun_cg_base
     add lun_cg_body         xpos (lun_cg_xpos_abs+lun_cg_xpos) ypos (lun_cg_ypos_abs+lun_cg_ypos)   xzoom lun_cg_zoom

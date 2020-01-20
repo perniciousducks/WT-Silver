@@ -1,13 +1,15 @@
+# Main
+default susan_xpos = 300
+default susan_ypos = 0
+default susan_zorder = 15
+default susan_flip = 1
+default use_susan_head = False
+
 # Body
 default susan_base     = "characters/susan/body/base/base_01.png"
 default susan_breasts  = "characters/susan/body/base/boobs_nipfix.png"
 default susan_l_arm    = "characters/susan/body/arms/l_arm_back.png"
 default susan_r_arm    = "characters/susan/body/arms/r_arm_thigh.png"
-default susan_xpos     = 300
-default susan_ypos     = 0
-default susan_zorder   = 5
-default susan_flip     = 1
-default use_susan_head = False
 
 # Face
 default susan_mouth  = "characters/susan/face/mouth/base.png"

@@ -155,7 +155,7 @@ label stats_menu(xx=150, yy=90):
 
 screen stats_menu(xx, yy):
     tag stats_menu
-    zorder 4
+    zorder 30
     modal True
 
     use close_button
@@ -214,7 +214,7 @@ transform at_zoom(zoom=1.0):
 
 screen stats_menuitem(xx, yy):
     tag stats_menuitem
-    zorder 4
+    zorder 30
     frame:
         style "empty"
         style_prefix interface_style

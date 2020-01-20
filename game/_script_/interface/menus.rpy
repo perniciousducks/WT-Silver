@@ -221,7 +221,7 @@ screen bottom_menu(menu_items, categories, title, xpos, ypos, func_btn=False, fu
     $ items_shown= 9
     $ UI_xpos_offset = xpos
     $ UI_ypos_offset = ypos
-    zorder 5
+    zorder 30
 
     #Close Button
     use close_button

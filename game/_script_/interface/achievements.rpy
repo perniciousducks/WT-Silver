@@ -260,7 +260,7 @@ label achievement_menu(xx=150, yy=90):
 
 screen achievement_menu(xx, yy):
     tag achievement_menu
-    zorder 4
+    zorder 30
     modal True
 
     use close_button
@@ -292,7 +292,7 @@ screen achievement_menu(xx, yy):
 
 screen achievement_menuitem(xx, yy):
     tag achievement_menuitem
-    zorder 4
+    zorder 30
 
     frame:
         style "empty"

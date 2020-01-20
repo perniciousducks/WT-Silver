@@ -24,7 +24,7 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, w
         if ypos in ["base","default"]:
             $ snape_ypos = 0
             $ snape_scaleratio = 2
-            $ snape_zorder = 5
+            $ snape_zorder = 15
             $ use_snape_head = False
         elif ypos in ["head"]:
             # Use ypos="head" to activate her head position.
@@ -38,7 +38,7 @@ label sna_main(text="", face="", xpos=None, ypos=None, flip=False, trans=None, w
             else:
                 $ snape_xpos = 615
             $ snape_ypos = 320
-            $ snape_zorder = 8
+            $ snape_zorder = 18
         else:
             $ snape_ypos = int(ypos)
 

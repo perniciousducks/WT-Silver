@@ -1,5 +1,5 @@
 screen hufflepuff_match_cho_chase(zoom1=0.5, zoom2=0.5):
-    zorder 6
+    zorder 16
     tag cg
     add "images/rooms/quidditch_stands/sky.png"
     add "snitch" at snitch_chased(zoom1, zoom2)

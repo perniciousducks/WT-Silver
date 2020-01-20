@@ -1,10 +1,10 @@
+# Main
+default cho_xpos = 300
+default cho_ypos = 0
+default cho_zorder = 15
+default cho_flip = 1
+default cho_animation = None
 default use_cho_head = False
-
-default cho_xpos                = 300
-default cho_ypos                = 0
-default cho_zorder              = 5
-default cho_flip                = 1
-default cho_animation           = None
 
 # Stats
 default cho_tier                = 1

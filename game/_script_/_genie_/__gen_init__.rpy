@@ -1,10 +1,11 @@
-# Sprite
-default genie_xpos       = 200
-default genie_ypos       = 0
-default genie_zorder     = 5
-default genie_flip       = 1
-default use_genie_head   = False
+# Main
+default genie_xpos = 200
+default genie_ypos = 0
+default genie_zorder = 15
+default genie_flip = 1
+default use_genie_head = False
 
+# Body
 default genie_base = "characters/genie/base/base.png"
 default genie_face = "characters/genie/face/base.png"
 

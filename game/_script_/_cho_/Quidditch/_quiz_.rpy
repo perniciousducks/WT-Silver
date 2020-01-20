@@ -15,7 +15,7 @@ label exp_o_meter(fill=50, opacity=1.0, alt=False, alt_text=None):
 
 screen exp_o_meter(fill, opacity, alt, alt_text):
     tag exp_o_meter
-    zorder 4
+    zorder 30
 
     frame:
         style "empty"
@@ -44,7 +44,7 @@ screen exp_o_meter(fill, opacity, alt, alt_text):
 
 screen swear_bubble(type):
     tag bubble
-    zorder 6
+    zorder 30
 
     add "interface/meter/bubble/"+str(type)+".png" ypos 100 xpos 100
     timer 1.0 action Hide("swear_bubble")

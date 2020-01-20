@@ -329,7 +329,7 @@ label big_bang:
     return
 
 screen big_bang(bang=False):
-    zorder 7
+    zorder 10
 
     add Solid("#000")
 

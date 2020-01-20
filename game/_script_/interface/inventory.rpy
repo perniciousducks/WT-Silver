@@ -99,7 +99,7 @@ label inventory_menu(xx=150, yy=90):
 
 screen inventory_menu(xx, yy):
     tag inventory_menu
-    zorder 4
+    zorder 30
     modal True
 
     use close_button
@@ -139,7 +139,7 @@ screen inventory_menu(xx, yy):
 
 screen inventory_menuitem(xx, yy):
     tag inventory_menuitem
-    zorder 4
+    zorder 30
 
     frame:
         style "empty"

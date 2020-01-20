@@ -37,7 +37,7 @@ label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
         if ypos in ["base","default"]:
             $ susan_ypos = 0
             $ susan_scaleratio = 2
-            $ susan_zorder = 5
+            $ susan_zorder = 15
             $ use_susan_head = False
         elif ypos in ["head"]:
             # Use ypos="head" to activate her head position.
@@ -51,7 +51,7 @@ label sus_main(text="", mouth=None, eye=None, brows=None, pupils=None, cheeks=No
             else:
                 $ susan_xpos = 660
             $ susan_ypos = 230
-            $ susan_zorder = 8
+            $ susan_zorder = 18
         else:
             $ susan_ypos = int(ypos)
 

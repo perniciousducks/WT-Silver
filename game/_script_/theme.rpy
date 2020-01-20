@@ -145,6 +145,7 @@ style say_window:
 
 style say_who_window is default:
     background Frame(DynamicDisplayable("'interface/frames/[interface_color]/namebox.png'"), 6, 6)
+    xpadding 15
     pos (-15, -50)
     ysize 32
     xminimum 164

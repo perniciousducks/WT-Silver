@@ -105,6 +105,7 @@ label open_puzzle_box:
 
 screen puzzle_board():
     tag puzzle
+    zorder 25
 
     use close_button
 
@@ -131,5 +132,3 @@ screen puzzle_board():
                         xmargin 0
                         ymargin 0
                         action Return((y)+(4*(x)))
-
-    zorder 8

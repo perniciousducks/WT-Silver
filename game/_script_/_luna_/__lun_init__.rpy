@@ -1,13 +1,15 @@
+# Main
+default luna_xpos = 640
+default luna_ypos = 0
+default luna_zorder = 15
+default luna_flip = 1
+default use_luna_head = False
+
 # Body
-default luna_base              = "characters/luna/body/base/base_01.png"
-default luna_breasts           = "characters/luna/body/breasts/breasts_normal.png"
-default luna_l_arm             = 1
-default luna_r_arm             = 1
-default luna_xpos              = 640
-default luna_ypos              = 0
-default luna_zorder            = 5
-default luna_flip              = 1
-default use_luna_head          = False
+default luna_base = "characters/luna/body/base/base_01.png"
+default luna_breasts = "characters/luna/body/breasts/breasts_normal.png"
+default luna_l_arm = 1
+default luna_r_arm = 1
 
 # Hair
 default luna_hair              = "characters/luna/body/hair/playful_blonde_base.png"

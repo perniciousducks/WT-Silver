@@ -132,6 +132,8 @@ label hufflepuff_match:
 
     call sna_walk(700, "base")
 
+    label dev:
+
     # Blackfade
     stop music fadeout 2
     stop bg_sounds fadeout 2
@@ -285,7 +287,7 @@ label hufflepuff_match:
 
     call gen_walk(360, 45+250)
 
-    $ genie_zorder = 5
+    $ genie_zorder = 15
 
     call gen_main(face="base", base="base", xpos=100, ypos=120)
     call ctc

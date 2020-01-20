@@ -1,5 +1,5 @@
 screen hercg():
-    zorder 6
+    zorder 16
     
     add her_cg_base
     add her_cg_genie        xpos her_cg_xpos_abs ypos her_cg_ypos_abs   xzoom her_cg_zoom

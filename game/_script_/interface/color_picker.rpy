@@ -3,7 +3,7 @@ default color_favorites = [[167, 77, 42, 255], [237, 179, 14, 255], [89, 116, 19
 
 screen color_picker(color, alpha, title, pos_xy, color_default):
     tag color_picker
-    zorder 11
+    zorder 30
     modal True
 
     # Screen variables

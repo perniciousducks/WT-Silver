@@ -167,8 +167,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         # Handjob pose
         $ luna_r_arm = 3
-        $ luna_zorder = 6
-        $ hermione_zorder = 7
+        $ luna_zorder = 16
+        $ hermione_zorder = 17
         call her_main(None)
         call lun_main(None, xpos=390,flip=False)
         call gen_main(None,"grin",base="open",xpos=300,ypos=0)
@@ -264,8 +264,8 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "that was fantastic!"
 
         # Reset zorder
-        $ hermione_zorder = 5
-        $ luna_zorder = 5
+        $ hermione_zorder = 15
+        $ luna_zorder = 15
         call lun_main(None)
         call her_main(None)
 
@@ -638,7 +638,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         show screen blkfade
         with d3
 
-        $ hermione_zorder = 4 #CHANGE BACK TO 5 AFTER THIS
+        $ hermione_zorder = 14 #CHANGE BACK TO 5 AFTER THIS
         hide screen hermione_kneel
         ">Hermione grabs a hold of your cock as she and Luna switch places."
         ">You're unable to deny that she's much more experienced that Luna, quickly bringing you to the edge."
@@ -747,7 +747,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
 
         # TODO: Fix me.
         #$ hermione_right_arm = "characters/hermione/body/arms/right/right_1.png"
-        $ hermione_zorder = 5
+        $ hermione_zorder = 15
 
         #call load_hermione_clothing_saves
         #call update_her_uniform
@@ -1057,7 +1057,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ luna_flip = -1
         $ hermione_right_arm = "characters/hermione/body/arms/right/right_1.png"
         $ genie_base = "characters/genie/base/base.png"
-        $ hermione_zorder = 5
+        $ hermione_zorder = 15
         $ luna_r_arm = 1
 
         call gen_chibi("sit_behind_desk")

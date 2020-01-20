@@ -718,7 +718,7 @@ label slytherin_match:
     call gen_walk(360, 45+250)
     pause .8
 
-    $ genie_zorder = 5
+    $ genie_zorder = 15
     show screen blktone5
     call gen_main(face="base", xpos="100", ypos="120")
     call ctc

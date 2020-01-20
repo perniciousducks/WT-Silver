@@ -111,7 +111,7 @@ label book_handle(book=None):
     
 screen book_menu(page, pages, title, page_title, page_text, page_overflow):
     tag book_menu
-    zorder 6
+    zorder 30
     
     button style "empty" action NullAction()
     
@@ -166,7 +166,7 @@ screen book_menu(page, pages, title, page_title, page_text, page_overflow):
     
 screen book_animator(img, timer):
     tag animator
-    zorder 7
+    zorder 31
     
     add img 
     button style "empty" action [Hide("book_animator"), With(Dissolve(0.05))]

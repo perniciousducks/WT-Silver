@@ -1,8 +1,8 @@
-
-default astoria_xpos      = 300
-default astoria_ypos      = 0
-default astoria_zorder    = 5
-default astoria_flip      = 1
+# Main
+default astoria_xpos = 300
+default astoria_ypos = 0
+default astoria_zorder = 15
+default astoria_flip = 1
 default astoria_animation = None
 default use_astoria_head  = False
 

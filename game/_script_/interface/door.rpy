@@ -56,7 +56,7 @@ label door_menu(xx=723, yy=90):
 screen door_menu(xx, yy):
     tag door_menu
     modal True
-    zorder 4
+    zorder 30
 
     use close_button
     frame:

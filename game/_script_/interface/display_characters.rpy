@@ -418,6 +418,7 @@ label custom_bg(bg=""):
     return
 
 screen custom_background():
+    zorder 3
     tag custom_background
 
     if color_background:
@@ -425,12 +426,9 @@ screen custom_background():
     else:
         add custom_bg_image alpha bg_transp
 
-    zorder 3
-
 screen summon_characters():
-
     tag summon_characters_menu
-    zorder 5
+    zorder 30
 
     # Close Button
     imagebutton:

@@ -53,5 +53,5 @@ screen gfx_effect(start_x=None, start_y=None, target_x=None, target_y=None, img,
     timer timer action Hide("gfx_effect")
     
 screen ctc():
+    zorder 30
     add "ctc"
-    zorder 9

@@ -17,14 +17,14 @@ label cg_scene(layer=None, folder=None, trans=d5):
 screen cg():
     # Used by label cg_scene
     tag cg_screen
-    zorder 4
+    zorder 14
 
     add cg_image xpos 540 xanchor 0.5 ypos 0 # At Screen Center
 
 screen ccg():
     # Used by function ccg
     tag cg_screen
-    zorder 4
+    zorder 14
 
     add "images/CG/"+ccg_folder+"/base.png"          xpos 540 xanchor 0.5 ypos 0 # At Screen Center
     add "images/CG/"+ccg_folder+"/"+str(ccg1)+".png" xpos 540 xanchor 0.5 ypos 0
@@ -35,7 +35,7 @@ screen ccg():
 
 screen sccg():
     # Used by function sc34CG
-    zorder 6
+    zorder 14
     add Color("#000")
     add sc_cg_base xpos sccgxpos ypos sccgypos
     add sc_cg_image_1 xpos sccgxpos ypos sccgypos
@@ -45,19 +45,19 @@ screen sccg():
 # Snape CG
 screen snape_groping():
     add "images/CG/scene_01.png"
-    zorder 6
+    zorder 14
 
 screen snape_facial():
     add "images/CG/scene_03.png"
-    zorder 6
+    zorder 14
 
 screen snape_sex():
     add "images/CG/scene_04.png"
-    zorder 6
+    zorder 14
 
 screen dual_hand_job():
     add "images/CG/scene_02.png"
-    zorder 6
+    zorder 14
 
 init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
 

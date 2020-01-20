@@ -62,7 +62,7 @@ label slut_scene: #Locked to her being your slut
     call ctc
 
     call bld
-    $ hermione_zorder = 8
+    $ hermione_zorder = 18
     m "That's a good little slut. Now if you want to suck my cock I expect you to ask nicely."
     call her_main("What? This is bad enough, just let me suck your cock.", "upset", "wink", "base", "mid")
     hide screen hermione_main
@@ -213,7 +213,7 @@ label slut_scene: #Locked to her being your slut
 
     call her_walk(action="leave")
 
-    $ hermione_zorder = 5
+    $ hermione_zorder = 15
 
     jump end_hermione_event
 
@@ -250,7 +250,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     show screen chair_left
     call hide_blkfade
 
-    $ hermione_zorder = 8
+    $ hermione_zorder = 18
 
     ">Hermione walks over to your desk silently, bends over and presents herself."
     m "See what a good little whore you are. Now if you ask nicely I'll fuck you."
@@ -319,7 +319,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
     call her_chibi("stand","desk","base")
     hide screen blkfade
     with d3
-    $ hermione_zorder = 5
+    $ hermione_zorder = 15
     ">Hermione gets to her feet"
     m "Well seeing as how you said thank you I have a present for you."
     call her_main("A present?", "open", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
@@ -351,7 +351,7 @@ label whore_scene: #(locked behind the public her_whoring flag)
 
     call her_walk(action="leave")
 
-    $ hermione_zorder = 5
+    $ hermione_zorder = 15
 
     jump end_hermione_event
 
@@ -383,7 +383,7 @@ label slave_scene:
     call her_chibi("hide")
     call hide_blkfade
 
-    $ hermione_zorder = 8
+    $ hermione_zorder = 18
     ">Hermione walks over to your desk, bends over it and then lifts her skirt up."
     call her_main("Yes [genie_name].", "angry", "narrow", "base", "down")
     hide screen hermione_main
@@ -528,7 +528,7 @@ label slave_scene:
 
     call her_walk(action="leave")
 
-    $ hermione_zorder = 5
+    $ hermione_zorder = 15
 
     jump end_hermione_event
 
@@ -576,6 +576,6 @@ label good_girl_scene:
 
     call her_walk(action="leave")
 
-    $ hermione_zorder = 5
+    $ hermione_zorder = 15
 
     jump end_hermione_event

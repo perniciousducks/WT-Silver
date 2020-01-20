@@ -599,7 +599,7 @@ label astoria_intro_E3:
     call sna_walk(action="enter", xpos="mid", ypos="base")
 
     call play_music("snape")
-    $ astoria_zorder = 3
+    $ astoria_zorder = 13
     call ast_main("","annoyed","base","worried","R", xpos="400", ypos="base")
     call sna_main("You wanted to see me?","snape_09", xpos="600", ypos="base")
     call ast_main("...","annoyed","narrow","worried","L")

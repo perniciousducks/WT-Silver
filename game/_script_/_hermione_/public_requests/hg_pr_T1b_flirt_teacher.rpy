@@ -467,7 +467,6 @@ label hg_pr_flirt_teacher_T3_E2: # Snape +CG
     call ctc
 
     hide screen snape_groping
-    show screen blkfade
     with fade
 
     jump end_hg_pr_flirt_teacher

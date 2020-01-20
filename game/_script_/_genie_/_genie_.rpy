@@ -28,7 +28,7 @@ label gen_main(text="", face=None, base=None, xpos=None, ypos=None, flip=True, t
         if ypos in ["base","default"]:
             $ genie_ypos = 0
             $ genie_scaleratio = 2
-            $ genie_zorder = 5
+            $ genie_zorder = 15
             $ use_genie_head = False
         elif ypos in ["head"]:
             # Use ypos="head" to activate her head position.
@@ -42,12 +42,12 @@ label gen_main(text="", face=None, base=None, xpos=None, ypos=None, flip=True, t
             else:
                 $ genie_xpos = 620
             $ genie_ypos = 230
-            $ genie_zorder = 8
+            $ genie_zorder = 18
         else:
             $ genie_ypos = int(ypos)
 
         if xpos in ["wardrobe"]:
-            $ genie_zorder = 5
+            $ genie_zorder = 15
 
     if face:
         $ genie_face = "characters/genie/face/{}.png".format(face)
@@ -78,7 +78,7 @@ label update_genie:
 
     $ genie_flip = 1
     $ genie_scaleratio = 2 # Reset
-    $ genie_zorder = 5
+    $ genie_zorder = 15
     $ use_genie_head = False
 
     return

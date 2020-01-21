@@ -51,17 +51,17 @@ label gen_chibi(action=None, xpos=None, ypos=None, flip=True, pic=None):
         hide screen chair_left
         hide screen desk
         $ masturbating = True #TODO Set this flag in events for clarity (only when needed)
-        $ genie_chibi.position(218, 205, False)
+        $ genie_chibi.position(218, 205+262, False)
 
     elif action in ("read", "read_done", "read_near_fire", "read_near_fire_done"):
         show screen chair_left
         show screen desk
-        $ genie_chibi.position(430, 205, False)
+        $ genie_chibi.position(430, 205+340, False)
     
     elif action == "paperwork":
         hide screen chair_left
         hide screen desk
-        $ genie_chibi.position(224, 205, False)
+        $ genie_chibi.position(224, 205+262, False)
 
     $ genie_chibi.do(action)
 

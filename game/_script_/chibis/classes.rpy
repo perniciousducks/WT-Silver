@@ -18,7 +18,7 @@ screen chibi_emote(emote, chibi_object):
         at emote_effect
         anchor (0.5, 1.0)
         pos chibi_object.pos
-        offset ((75, 50) if chibi_object.tag in ("genie", "snape") else (50, 0))
+        offset ((75, -200) if chibi_object.tag in ("genie", "snape") else (50, 0))
 
 label chibi_emote(emote, name):
     python:
@@ -35,7 +35,7 @@ init -1 python:
         # Get a chibi object by its character's name
         name = "{}_chibi".format(name)
         c = getattr(renpy.store, name, None)
-        if c and isinstance(c, chibi):
+        if c and isinstance(c, Chibi):
             return c
         else:
             # Fail early, returning None is no good

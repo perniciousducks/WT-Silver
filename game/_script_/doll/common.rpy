@@ -20,7 +20,7 @@ init -1 python:
             self.cached = False
             
         def get_image(self):
-            if not renpy.is_skipping():
+            if not renpy.is_skipping() or self.sprite == None:
                 if self.override:
                     self.rebuild_image()
                     self.sprite = Composite(self.size, *self.sprites)

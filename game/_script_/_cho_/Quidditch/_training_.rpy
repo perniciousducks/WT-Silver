@@ -349,7 +349,7 @@ label change_quidditch_tactics:
 
             "-Customize quidditch outfit-" if not cho_quid.lock_tactic:
                 call cho_main(face="neutral", xpos="mid", ypos="base")
-                call t_wardrobe_quidditch() # Open quidditch wardrobe
+                call wardrobe_quidditch() # Open quidditch wardrobe
                 $ cho.equip(cho_outfit_quidditch)
                 call cho_main(face="neutral", xpos="mid", ypos="base")
             "{color=[menu_disabled]}-Customize quidditch outfit-{/color}" if cho_quid.lock_tactic:

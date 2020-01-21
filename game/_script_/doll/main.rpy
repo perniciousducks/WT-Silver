@@ -65,6 +65,10 @@ init python:
             sprites = tuple(itertools.chain.from_iterable(((0,0), x[0]) for x in sprites))
             return sprites
             
+        def apply_transition(self):
+            if renpy.get_screen("{}_main".format(self.name)):
+                apply_doll_transition(self, "{}_main".format(self.name), "{}_img".format(self.name), eval("use_{}_head".format(self.name)))
+            
         def equip(self, obj):
             """Takes DollCloth or DollOutfit object to equip."""
             if isinstance(obj, DollCloth):
@@ -76,6 +80,7 @@ init python:
                     self.clothes[i.type][0].set_color(i.color)
             self.body.rebuild_image()
             self.rebuild_image()
+            self.apply_transition()
             
         def unequip(self, *args):
             """Takes argument(s) containing string cloth type(s) to unequip."""
@@ -90,7 +95,7 @@ init python:
                     self.clothes[arg][0] = None
             self.body.rebuild_image()
             self.rebuild_image()
-            
+            self.apply_transition()
             
         def get_equipped(self, type):
             """Takes argument containing string cloth type. Returns equipped object for cloth type."""
@@ -112,6 +117,7 @@ init python:
                         self.clothes[arg][2] = False
             self.body.rebuild_image()
             self.rebuild_image()
+            self.apply_transition()
                     
         def wear(self, *args):
             """Takes argument(s) containing string cloth type(s) to put on (unhide)."""
@@ -128,6 +134,7 @@ init python:
                         self.clothes[arg][2] = True
             self.body.rebuild_image()
             self.rebuild_image()
+            self.apply_transition()
             
         def toggle_wear(self, type):
             """Takes argument containing string cloth type to toggle visibility (hide/unhide). Used in wardrobe."""
@@ -139,6 +146,7 @@ init python:
                 self.clothes[type][2] = not self.clothes[type][2]
             self.body.rebuild_image()
             self.rebuild_image()
+            self.apply_transition()
             
         def is_worn(self, type):
             """Takes argument containing string cloth type. Returns True if worn, False if hidden, None if not equipped at all."""

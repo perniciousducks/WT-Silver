@@ -1,5 +1,4 @@
-label t_wardrobe_quidditch():
-    $ hide_transitions = True
+label wardrobe_quidditch():
     
     $ image_arrow = "interface/frames/"+interface_color+"/arrow2.png"
     
@@ -10,11 +9,11 @@ label t_wardrobe_quidditch():
     
     label .after_init:
     
-    show screen t_wardrobe_quidditch_menuitem(550, 50)
+    show screen wardrobe_quidditch_menuitem(550, 50)
     
     $ _return = ui.interact()
     
-    hide screen t_wardrobe_quidditch_menuitem
+    hide screen wardrobe_quidditch_menuitem
     
     if _return[0] == "equip":
         $ renpy.play('sounds/equip.ogg')
@@ -36,6 +35,7 @@ label t_wardrobe_quidditch():
             
         # If taking off coat failed
         if _return == "fail":
+            $ cho.equip(choq_cloth_robequidditch1)
             jump .after_init
             
         if cho.get_equipped("bottom").id == choq_cloth_schoolskirt3.id:
@@ -46,19 +46,18 @@ label t_wardrobe_quidditch():
             call use_quidditch_pants_2
             
         $ cho_outfit_quidditch.save() #<- use this to save quidditch outfit if all checks are passed
-        $ hide_transitions = False
         return
     else:
         m "Never mind, your current outfit is good enough."
         cho "Okay."
-        $ hide_transitions = False
         return
 
     jump .after_init
         
-screen t_wardrobe_quidditch_menuitem(xx, yy):
+screen wardrobe_quidditch_menuitem(xx, yy):
     tag wardrobe_menuitem
-    zorder 4
+    zorder 20
+    
     fixed:
         style_prefix interface_style
         

@@ -85,5 +85,4 @@ screen hermione_main():
     else:
         add hermione_img xpos hermione_xpos ypos hermione_ypos xzoom hermione_flip zoom (1.0/hermione_scaleratio)
 
-    $ update_doll_transition(hermione, "hermione_main", "hermione_img", use_hermione_head)
     on ("show", "replace") action Function(apply_doll_transition, hermione, "hermione_main", "hermione_img", use_hermione_head)

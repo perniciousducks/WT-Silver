@@ -14,10 +14,13 @@ transform doll_transition(old_img, new_img, trans=d3):
 init python:
     config.all_character_callbacks.append(set_last_say)
     config.mode_callbacks.append(reset_last_say)
+    config.start_interact_callbacks.append(track_skipping_interact)
+
+    after_skip_callbacks.append(update_doll_transitions)
 
 init -1 python:
     def apply_doll_transition(doll, scr_name, img_name, use_head):
-        """Apply a transition between old and new images of a doll that's on screen"""
+        """Apply a transition between old and new images of a doll that's on screen."""
         doll_new = doll.get_image()
         doll_old = last_doll_images.get(scr_name, None)
 
@@ -29,18 +32,11 @@ init -1 python:
             scope[img_name] = doll_transition(doll_old, doll_new)
 
             last_doll_images[scr_name] = doll_new
-    
-    def update_doll_transition(doll, scr_name, img_name, use_head):
-        scope = renpy.get_screen(scr_name).scope
-        was_skipping = scope.get("was_skipping", False)
-        if not was_skipping and renpy.is_skipping():
-            # Started skipping
-            scope["was_skipping"] = True
-        elif was_skipping and not renpy.is_skipping():
-            # Skipping stopped
-            scope["was_skipping"] = False
-            # Force transition update
-            apply_doll_transition(doll, scr_name, img_name, use_head)
+        
+    def update_doll_transitions():
+        """Used after skip to update doll images on all visible character screens."""
+        for doll in [astoria, cho, hermione, tonks]:
+            doll.apply_transition()
 
     def get_say_who():
         say_screen = renpy.get_screen("say")
@@ -59,3 +55,18 @@ init -1 python:
         global last_say_who
         if event == "show_done":
             last_say_who = get_say_who()
+
+    was_skipping = False
+    after_skip_callbacks = []
+    def track_skipping_interact():
+        """Determines if the game started or stopped skipping and invokes callbacks after skip."""
+        global was_skipping
+        if not was_skipping and renpy.is_skipping():
+            # Skipping started
+            was_skipping = True
+        elif was_skipping and not renpy.is_skipping():
+            # Skipping stopped
+            was_skipping = False
+            for c in after_skip_callbacks:
+                c()
+    

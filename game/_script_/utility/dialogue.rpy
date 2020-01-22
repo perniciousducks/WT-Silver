@@ -21,7 +21,7 @@ init -1 python:
         doll_new = doll.get_image()
         doll_old = last_doll_images.get(scr_name, None)
 
-        if doll_new != doll_old:
+        if doll_new != doll_old and not renpy.in_rollback():
             if not doll_old or (use_head and last_say_who != get_say_who()):
                 doll_old = doll_new
 
@@ -29,6 +29,18 @@ init -1 python:
             scope[img_name] = doll_transition(doll_old, doll_new)
 
             last_doll_images[scr_name] = doll_new
+    
+    def update_doll_transition(doll, scr_name, img_name, use_head):
+        scope = renpy.get_screen(scr_name).scope
+        was_skipping = scope.get("was_skipping", False)
+        if not was_skipping and renpy.is_skipping():
+            # Started skipping
+            scope["was_skipping"] = True
+        elif was_skipping and not renpy.is_skipping():
+            # Skipping stopped
+            scope["was_skipping"] = False
+            # Force transition update
+            apply_doll_transition(doll, scr_name, img_name, use_head)
 
     def get_say_who():
         say_screen = renpy.get_screen("say")

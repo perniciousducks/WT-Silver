@@ -4,7 +4,6 @@ init -1 python:
         """Container class for commonly used methods and attributes"""
         size = (1010, 1200)
         sprite = None
-        sprites = None
         cached = False
         override = False
         
@@ -16,18 +15,18 @@ init -1 python:
         blacklist_unequip = ("hair")
         
         def rebuild_image(self):
-            self.sprites = self.build_image()
+            # Defers rebuild until next time get_image is called
             self.cached = False
             
         def get_image(self):
-            if not renpy.is_skipping() or self.sprite == None:
+            if not renpy.is_skipping() or self.sprite is None:
                 if self.override:
-                    self.rebuild_image()
-                    self.sprite = Composite(self.size, *self.sprites)
-                else:
-                    if not self.cached:
-                        self.cached = True
-                        self.sprite = Composite(self.size, *self.sprites)
+                    sprites = self.build_image()
+                    self.sprite = Composite(self.size, *sprites)
+                elif not self.cached:
+                    sprites = self.build_image()
+                    self.sprite = Composite(self.size, *sprites)
+                    self.cached = True
             return self.sprite
             
 # Notes and todo's:

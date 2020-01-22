@@ -419,7 +419,7 @@ label ball_ending_E2:
     #Setting up Hermione's outfit.
     
     # TODO: Uncomment once ball dress is added.
-    #$ hermione.equip(ball_dress_pointer)
+    $ hermione.equip(her_outfit_ball)
 
     hide screen hermione_main
     hide screen room # MAIN BG (DAY).

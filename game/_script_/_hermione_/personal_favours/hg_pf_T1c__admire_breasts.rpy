@@ -163,7 +163,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
     # Change Top
     $ her_outfit_last.save()
     hide screen hermione_main
-    $ hermione.equip(hermione_cloth_topschool3)
+    $ hermione.equip(her_top_school3)
     call update_her_uniform
     call her_main("", "annoyed", "narrow", "angry", "R")
     call ctc

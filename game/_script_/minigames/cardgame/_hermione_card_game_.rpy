@@ -83,7 +83,7 @@ label hermione_cardgame_menu:
 label hermione_first_duel:
     call play_music("grape_soda")
 
-    $ duel_response = start_duel(her_first_deck)
+    $ renpy.call_in_new_context("start_duel", her_first_deck)
 
     if duel_response == "Close":
         jump her_duel_cancel
@@ -111,7 +111,7 @@ label hermione_first_duel:
 label hermione_second_duel:
     call play_music("grape_soda")
 
-    $ duel_response = start_duel(her_second_deck)
+    $ renpy.call_in_new_context("start_duel", her_second_deck)
 
     if duel_response == "Close":
         jump her_duel_cancel
@@ -144,7 +144,7 @@ label hermione_third_duel:
     call her_main( "I'll make my house proud, you'll see.","grin","happy")
     call her_main("Wait, I should have asked for point for this.", "shock", "wide", "worried", "shocked")
     g9 "To late, here we go."
-
+    hide screen hermione_main
     call play_music("cardgame")
     play sound "sounds/Genie_VS_Hermione4.mp3"
     show screen genie_vs_hermione
@@ -164,8 +164,8 @@ label hermione_third_duel:
     hide screen genie_vs_hermione
     hide screen genie_vs_hermione_smile
     play music "music/vs_hermione.mp3"
-
-    $ duel_response = start_duel(her_third_deck, her_after)
+    
+    $ renpy.call_in_new_context("start_duel", her_third_deck, her_after)
 
     if duel_response == "Close":
         jump her_duel_cancel
@@ -239,7 +239,7 @@ label hermione_random_duel:
 
     $ random_enemy_deck = create_random_deck(get_deck_score(random_player_deck)-2, get_deck_score(random_player_deck)+8, cards_all)
 
-    $ duel_response = start_duel(random_enemy_deck, her_after, [5, False, False, True], random_player_deck)
+    $ renpy.call_in_new_context("start_duel", random_enemy_deck, her_after, [5, False, False, True], random_player_deck)
 
     if duel_response == "Close":
         jump her_duel_cancel
@@ -343,14 +343,14 @@ label her_duel_cancel:
     jump main_room
 
 screen genie_vs_hermione():
-    zorder 8
+    zorder 15
     add "images/cardgame/VS/background_twins.png" xalign 0.5 yalign 0.5
 screen move_hermione():
-    zorder 8
+    zorder 16
     add "images/cardgame/VS/hermione_01.png" at move_in(300, 0.5)
 
 screen genie_vs_hermione_smile():
-    zorder 8
+    zorder 16
     add "images/cardgame/VS/genie_03.png"
     add "images/cardgame/VS/hermione_02.png"
     text "Click to continue" xalign 0.5 yalign 1.0

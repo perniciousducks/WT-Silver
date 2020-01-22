@@ -172,7 +172,7 @@ label snape_first_duel:
 
     call play_music("grape_soda")
 
-    $ duel_response = start_duel(snape_first_deck)
+    $ renpy.call_in_new_context("start_duel", snape_first_deck)
 
     if duel_response == "Close":
         jump snape_duel_cancel
@@ -208,7 +208,7 @@ label snape_second_duel:
 
     call play_music("grape_soda")
 
-    $ duel_response = start_duel(snape_second_deck)
+    $ renpy.call_in_new_context("start_duel", snape_second_deck)
 
     if duel_response == "Close":
         jump snape_duel_cancel
@@ -280,7 +280,7 @@ label snape_third_duel:
     hide screen genie_vs_snape
     hide screen genie_vs_snape_smile
 
-    $ duel_response = start_duel(snape_third_deck, snape_after)
+    $ renpy.call_in_new_context("start_duel", snape_third_deck, snape_after)
 
     if duel_response == "Close":
         jump snape_duel_cancel
@@ -314,8 +314,6 @@ label snape_third_duel:
 
     jump main_room
 
-
-
 label snape_random_duel:
     call play_music("cardgame")
 
@@ -323,7 +321,7 @@ label snape_random_duel:
 
     $ random_enemy_deck = create_random_deck(get_deck_score(random_player_deck)-2, get_deck_score(random_player_deck)+8, cards_all)
 
-    $ duel_response = start_duel(random_enemy_deck, snape_after, [renpy.random.randint(0,3), False, True, False], random_player_deck)
+    $ renpy.call_in_new_context("start_duel", random_enemy_deck, snape_after, [renpy.random.randint(0,3), False, True, False], random_player_deck)
 
     if duel_response == "Close":
         $ wine_ITEM.number -= 1
@@ -424,7 +422,8 @@ label snape_special_duel:
     call play_music("cardgame")
 
     $ random_enemy_deck = create_random_deck(get_deck_score(playerdeck)-2, get_deck_score(playerdeck)+8, cards_all)
-    $ duel_response = start_duel(random_enemy_deck) #snape_after_special
+    
+    $ renpy.call_in_new_context("start_duel", random_enemy_deck)
 
     stop music fadeout 1
     hide screen blkfade
@@ -561,20 +560,20 @@ label snape_duel_cancel:
 
 
 screen genie_vs_snape():
-    zorder 8
+    zorder 16
     add "images/cardgame/VS/background_snape.png" xalign 0.5 yalign 0.5
 screen move_genie():
-    zorder 8
+    zorder 16
     add "images/cardgame/VS/genie_01.png" at move_in(-300, 0.5)
 screen versus():
-    zorder 8
+    zorder 15
     add "images/cardgame/VS/vs.png"
 screen move_snape():
-    zorder 8
+    zorder 16
     add "images/cardgame/VS/snape_01.png" at move_in(300, 0.5)
 
 screen genie_vs_snape_smile():
-    zorder 8
+    zorder 16
     add "images/cardgame/VS/genie_02.png"
     add "images/cardgame/VS/snape_02.png"
     text "Click to continue" xalign 0.5 yalign 1.0

@@ -481,6 +481,7 @@ label hufflepuff_match:
     hide screen hermione_main
     call sna_main("Back down to Troll...","snape_09",ypos="head")
     call her_chibi("stand",375,105+186, flip=False)
+    with d3
     her "*grrrrr*"
     $ qp_mob_reaction[2] = None
     call her_chibi("stand",375,105+186, flip=True)

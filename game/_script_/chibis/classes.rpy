@@ -215,7 +215,7 @@ init -1 python:
                 trans = getattr(renpy.store, name, None)
                 if isinstance(trans, renpy.display.transform.ATLTransform):
                     # Combine with base transform
-                    return (self.base_transform(), trans(*args))
+                    return combine_transforms(self.base_transform(), trans(*args))
                 elif config.developer:
                     raise Exception("Expected a transform: {}".format(name))
             # No transform was given or found

@@ -1,7 +1,7 @@
 label twins_first_duel:
     call play_music("grape_soda")
 
-    $ duel_response = start_duel(twins_first_deck)    
+    $ renpy.call_in_new_context("start_duel", twins_first_deck)
         
     if duel_response == "Close":
         jump twins_duel_cancel
@@ -61,7 +61,7 @@ label twins_second_duel:
     hide screen genie_vs_twins_smile
     hide screen genie_vs_twins
 
-    $ duel_response = start_duel(twins_second_deck, twins_after)    
+    $ renpy.call_in_new_context("start_duel", twins_second_deck, twins_after)
         
     if duel_response == "Close":
         jump twins_duel_cancel
@@ -171,7 +171,7 @@ label twins_random_duel:
 
     $ random_enemy_deck = create_random_deck(get_deck_score(random_player_deck)-2, get_deck_score(random_player_deck)+8, cards_all)
 
-    $ duel_response = start_duel(random_enemy_deck, twins_after, [0, True, True, False], random_player_deck)
+    $ renpy.call_in_new_context("start_duel", random_enemy_deck, twins_after, [0, True, True, False], random_player_deck)
         
     if duel_response == "Close":
         jump twins_duel_cancel
@@ -261,14 +261,14 @@ label twins_duel_cancel:
     jump main_room
 
 screen genie_vs_twins():
-    zorder 8
+    zorder 15
     add "images/cardgame/VS/background_twins.png" xalign 0.5 yalign 0.5
 screen move_twins():
-    zorder 8
+    zorder 16
     add "images/cardgame/VS/twins_01.png" at move_in(300, 1)
 
 screen genie_vs_twins_smile():
-    zorder 8
+    zorder 16
     add "images/cardgame/VS/genie_04.png"
     add "images/cardgame/VS/twins_02.png"
     text "Click to continue" xalign 0.5 yalign 1.0

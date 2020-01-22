@@ -231,7 +231,7 @@ init python:
         return
 
 screen card_battle(l_playerdeck, l_enemydeck, shown_cards):
-    zorder 5
+    zorder 13
     imagebutton idle "images/cardgame/card_table.png" action Return("unselect")
     
     #fix card error when you select the last card
@@ -272,7 +272,7 @@ transform cardrender_move(xpos_card, ypos_card, start_xy):
         linear 0.2 xpos absolute(xpos_card) ypos absolute(ypos_card)
 
 screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None, cardzoom=0.5, color=True, gallery=False, backside=False, animated=False):
-    zorder 10
+    zorder 14
     if return_value == None:
         $ return_value = card
     frame:
@@ -357,14 +357,14 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
                     text lefttext+str(card.get_totalvalue())+righttext xalign 0.15 yalign 0.1 size sizetext xoffset 5
             
 screen start_deck():
-    zorder 9
+    zorder 15
 
     for i in xrange(len(unlocked_cards)):
         use cardrender(unlocked_cards[i],40+125*i,200, interact=False, cardzoom=0.375)
         
 screen advance_deck():
     tag advance_deck
-    zorder 9
+    zorder 15
     
     for i in xrange(len(cards_dynamic)):
         use cardrender(cards_dynamic[i],40+125*i,200, interact=False, cardzoom=0.375)
@@ -375,13 +375,13 @@ screen advance_deck():
         
         
 screen card_end_message(message):
-    zorder 9
+    zorder 15
 
     text "{color=#FFF}{size=+40}[message]{/size}{/color}" xpos 540 ypos 300 xalign 0.5 yalign 0.5 outlines [ (5, "#000", 0, 0) ]
     
 screen rules_display(game_rules_list):
     tag rules
-    zorder 8
+    zorder 16
     
     add "interface/bld.png" at fade_show_hide(0.15)
     
@@ -407,3 +407,7 @@ screen rules_display(game_rules_list):
                         xfill True
                         text game_rules_list[i].description yalign 0.5 size 12
                     add "images/cardgame/spacer.png"
+                    
+label start_duel(opppent_deck, after_enemy = None, rules = None, duel_player_deck = None):
+    $ duel_response = start_duel(opppent_deck, after_enemy, rules, duel_player_deck)
+    return

@@ -1,6 +1,10 @@
 
 # Transforms used by the chibi class or chibi images
 
+transform combine_transforms(one, two):
+  one
+  two
+
 transform chibi_base(position, flip, scale):
     pos position
     anchor (0.0, 1.0)

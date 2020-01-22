@@ -251,7 +251,7 @@ label wardrobe(char_label):
         
 screen wardrobe_menu(xx, yy):
     tag wardrobe
-    zorder 10
+    zorder 15
     
     add im.Blur(screenshot_image, 2)
 
@@ -381,7 +381,7 @@ screen wardrobe_menu(xx, yy):
         
 screen wardrobe_menuitem(xx, yy):
     tag wardrobe_menuitem
-    zorder 10
+    zorder 16
     
     # Navigational Buttons Up/Down
     if menu_items_length > items_shown:
@@ -534,7 +534,7 @@ screen wardrobe_menuitem(xx, yy):
                     
 screen wardrobe_outfit_menuitem(xx, yy):
     tag wardrobe_menuitem
-    zorder 10
+    zorder 16
     
     # Navigational Buttons Up/Down
     if menu_items_length > 9:

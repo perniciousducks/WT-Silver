@@ -428,7 +428,7 @@ screen duel():
 
     use chair_left
     use chair_right
-    add "duel_table" at Position(xpos=325, ypos=330, xanchor="center", yanchor="center")
+    add "duel_table" xpos 335 ypos 336 xanchor 0.5 yanchor 0.5
 
     if pentogram:
         add "pentogram" at Position(xpos=690, ypos=250, xanchor="center", yanchor="center")

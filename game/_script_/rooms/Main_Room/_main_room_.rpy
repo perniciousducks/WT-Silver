@@ -242,10 +242,10 @@ screen fireplace_fire():
     add "fireplace_fire" xpos fireplace_OBJ.xpos ypos fireplace_OBJ.ypos+25 xanchor 0.5 yanchor 0.5
 
 # Furniture
-screen desk(x=360): # Desk only
+screen desk(x=370): # Desk only
     tag desk
     zorder 2
-    add "images/rooms/main_room/desk_with_shadow.png" xpos x ypos 330 xanchor 0.5 yanchor 0.5 zoom 0.5
+    add "images/rooms/main_room/desk_with_shadow.png" xpos x ypos 336 xanchor 0.5 yanchor 0.5 zoom 0.5
 
 screen dumbledore(): # Dumbledore and desk
     tag dumbledore

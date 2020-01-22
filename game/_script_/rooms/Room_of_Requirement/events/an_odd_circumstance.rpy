@@ -72,7 +72,7 @@ label an_odd_circumstance():
     nar "After a few seconds I went to ask where that voice and bright light had come from... But as I tried, I could only feel my lips moving with no sound emerging..."
     call gen_chibi("stand",260,"base")
     show screen chair_left
-    show screen desk(430)
+    show screen desk(440)
     with d3
     nar "Taken aback by this, I pushed myself back in my chair and stood up clutching my vocal cords..."
     call gen_chibi("stand",260,"base", flip=False)
@@ -145,7 +145,7 @@ label an_odd_circumstance():
     with d3
     call gen_chibi("stand",260,"base", flip=False)
     show screen chair_left
-    show screen desk(430)
+    show screen desk(440)
     call her_chibi("stand","mid",flip=True)
     nar "The girl stood up and walked around the desk"
     hide screen blkfade

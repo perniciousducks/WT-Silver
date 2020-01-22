@@ -707,8 +707,7 @@ label inn_menu:
     menu:
         "-Present Hermione to Aberforth-":
             m "I present you you're new barmaid."
-            $ hermione_wear_robe = True
-            hermione.equip(her_outfit_maid)
+            $ hermione.equip(her_outfit_maid)
             call her_main("", "normal", "squint", "angry", "mid")
             call ctc
 

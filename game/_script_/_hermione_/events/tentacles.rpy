@@ -279,7 +279,7 @@ label costume_scene_1: #Maid role-play
         m "35 points sounds fair."
     call her_main("...", "smile", "narrow", "base", "mid_soft")
     call her_main("Let me go change.", "smile", "narrow", "base", "mid_soft")
-    hermione.equip(her_outfit_maid)
+    $ hermione.equip(her_outfit_maid)
     call her_main("", "smile", "narrow", "base", "mid_soft")
     call ctc
 

@@ -491,7 +491,13 @@ screen notify(message):
 screen skip_indicator():
     zorder 100
 
-    add "ui_rewind"
+    add "ui_rewind" align (0.5, 0.5)
+
+    if room_menu_active:
+        if daytime:
+            timer 10 action Jump("night_start")
+        else:
+            timer 10 action Jump("day_start")
     
 screen confirm(message, yes_action, no_action):
     zorder 999

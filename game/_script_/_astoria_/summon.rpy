@@ -143,7 +143,7 @@ label astoria_talk:
             m "Could you help me with something?"
             ast "Depends what it is."
             ast "And what's in it for me..."
-            m "Well, the Slytherin Quidditch team refuses to practice against the Ravenclaws."
+            m "Well, the Slytherin Quidditch team refuses to practise against the Ravenclaws."
             ast "And?"
             m "I was wondering if there's something you could do about it."
             ast "Like what?"

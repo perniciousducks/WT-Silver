@@ -1134,7 +1134,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     call her_main("So I've just been doing additional study in the library after classes in exhchange for a special reccomendation from the school.", "smile", "happyCl", "base", "mid")
                     call her_main("although recently I've been spending most of my free time in here...", "base", "narrow", "worried", "down")
                     call lun_main("but why did you want to study with me then? Surely you don't need the quizzing anymore?","normal","mad","raised","mid")
-                    call her_main("I've always wanted to practice teaching and I get to help out my friend while I do it!", "grin", "base", "base", "R")
+                    call her_main("I've always wanted to practise teaching and I get to help out my friend while I do it!", "grin", "base", "base", "R")
                     call lun_main("Friend?","normal","suspicious","sad","mid")
                     call her_main("of course we're friends luna! Maybe even best friends after all this...", "base", "happy", "base", "mid")
                     call lun_main("...","normal","seductive","sad","mid")

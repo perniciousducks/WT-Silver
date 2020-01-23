@@ -181,7 +181,7 @@ label give_ast_gift(gift_item):
             call ast_main("Porn magazines?", face="disgusted")
             call give_gift(">You give an assortment of pornographic magazines to Astoria...", gift_item)
             call ast_main("I'll take it!", mouth="grin", face="happy")
-            call ast_main("I'll put one in Susan's bag when she's not looking. Can't wait to see that cows face when her friends notices.", mouth="open", face="angry")
+            call ast_main("I'll put one in Susan's bag when she's not looking. Can't wait to see that cows face when her friends notice.", mouth="open", face="angry")
             call ast_main("Thank you, [ast_genie_name].", face="happy")
             call ast_mood(-1)
         elif ast_affection > 5 and ast_affection < 12:

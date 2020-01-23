@@ -80,7 +80,7 @@ define random_home = [
     ]
 
 define random_school = [
-    "{size=-2}You go to the school stadium and relax on the bleachers, while you watch cheerleaders practice in the distance...{/size}",
+    "{size=-2}You go to the school stadium and relax on the bleachers, while you watch cheerleaders practise in the distance...{/size}",
     "{size=-2}You sneak to your secret place: the school building's rooftop and watch heavy clouds creep closer slowly high above, hoping that it's gonna rain tonight.{/size}",
     "{size=-2}You roam through the deserted school hallways and run into the janitor. He gives you the stink eye and goes on about his business. You head home.{/size}" ,
     "{size=-2}You buy a chocolate bar from a vending machine, then sneak into one of the empty classrooms and spend a couple of hours with reading one of your favourite sci-fi novels.{/size}",

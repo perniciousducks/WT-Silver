@@ -681,7 +681,7 @@ label hg_pf_titjob_2:
                     call her_main("How was that, [genie_name]?", "angry", "wink", "base", "mid")
                     m "Perfect."
 
-        "\"This is really good. Did you practice?\"":
+        "\"This is really good. Did you practise?\"":
             $ ccg1 = 22
             call her_main("*Hmm?*...", "base", "happyCl", "base", "mid", ypos="head")
             $ ccg1 = 21

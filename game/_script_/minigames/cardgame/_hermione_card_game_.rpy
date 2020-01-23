@@ -55,7 +55,7 @@ label hermione_cardgame_menu:
         call her_main("Ah, yes...", "normal", "base", "base", "mid_soft")
         call her_main("I went there to see if you had shut them down and ended up with a deck of cards.", "mad", "closed", "angry", "mid")
         g9 "\"Sounds like even I could learn some bartering tricks from those two.\""
-        m "So, how about a little some practice rounds then?"
+        m "So, how about some practice rounds then?"
         call her_main(" I've only recently started playing so I'm not that good yet.", "base", "narrow", "base", "mid_soft")
         m "Don't worry, after a few practice rounds you'll get up to speed, when you're ready we'll play the real challenge..."
         $ her_cards_stocked_talk = True

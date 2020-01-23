@@ -526,7 +526,7 @@ label l_tutoring:
 
         call bld
         m "Like I said, it's important you learn how to properly stimulate your \"emotional\" body areas."
-        m "It's not enough if I do it myself, you need to practice when you're alone."
+        m "It's not enough if I do it myself, you need to practise when you're alone."
         call her_main("", "upset", "worriedCl", "worried", "mid",cheeks="blush")
         m "Like in your bed or in the shower, for example."
         call nar(">You keep massaging her tits...")
@@ -585,7 +585,7 @@ label l_tutoring:
         m "And?"
         call her_main("It feels even better when I'm naked.", "smile", "happyCl", "base", "mid",cheeks="blush",emote="06")
         call her_main("{size=-2}(Oh no, I shouldn't have said that...){/size}", "mad", "wide", "base", "stare",cheeks="blush")
-        m "Well come here and undress, we'll practice."
+        m "Well come here and undress, we'll practise."
         call her_main("Completely?!", "mad", "base", "angry", "mid",cheeks="blush")
         m "No, only the top will suffice."
         g9 "{size=-2}(For the moment...){/size}"

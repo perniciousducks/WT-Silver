@@ -21,7 +21,7 @@ label hg_pf_talk:
     show screen blkfade
     with d3
 
-    call her_chibi("stand","desk","base", flip=False)
+    call her_chibi("stand", flip=False)
     call gen_chibi("sit_behind_desk")
 
     hide screen blkfade
@@ -31,7 +31,7 @@ label hg_pf_talk:
     # Points
     if her_tier <= 3:
         $ gryffindor += current_payout
-        m "[current_payout] points to Gryffindor [hermione_name]. Well done."
+        m "[current_payout] points to Gryffindor, [hermione_name]. Well done."
     elif her_tier == 4 and hg_pf_talk.points == 1:
         m "[current_payout] points to Gryffindor, [hermione_name]. Well done."
         her "Oh, don't worry about the points, [genie_name]. We were just having a nice talk."

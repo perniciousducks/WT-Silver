@@ -242,7 +242,7 @@ label snape_second_duel:
 
 label snape_third_duel:
     if her_know_cards == False:
-        m "(I should probably see if Hermione is interested and practice some more before challenging Snape.)"
+        m "(I should probably see if Hermione is interested and practise some more before challenging Snape.)"
         jump snape_duel_menu
 
     if twins_cards_stocked_talk == False:

@@ -1284,7 +1284,7 @@ label hermione_intro_E6:
     if current_favor == "silly_face":
         call her_main("{size=-4}(Stupid face...){/size}", "silly", "base", "base", "squint", ypos="head")
         call her_main("{size=-4}(Stupid face...){/size}", "silly", "happy", "base", "mid_soft")
-        call her_main("{size=-4}(I need to practice this.){/size}", "base", "happyCl", "base", "mid")
+        call her_main("{size=-4}(I need to practise this.){/size}", "base", "happyCl", "base", "mid")
 
     if current_favor == "bad_girl":
         call her_main("{size=-4}(I'm a bad girl...){/size}", "angry", "base", "angry", "mid", ypos="head")

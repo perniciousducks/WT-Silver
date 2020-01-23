@@ -642,7 +642,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("hey luna! another blowjob?", "base", "squint", "base", "mid")
         call lun_main("Mhmmm...","base","angry","base","R")
         call her_main("yay!!!", "grin", "worriedCl", "worried", "mid")
-        call her_main("we can finally practice deepthroating!", "base", "narrow", "base", "mid_soft")
+        call her_main("we can finally practise deepthroating!", "base", "narrow", "base", "mid_soft")
         m "really? are you sure she's ready for that?"
         call lun_main("*hmph* of course I am...","pout","angry","angry","R")
         call her_main("believe me sir, she's been practising really hard!", "open", "base", "base", "R")

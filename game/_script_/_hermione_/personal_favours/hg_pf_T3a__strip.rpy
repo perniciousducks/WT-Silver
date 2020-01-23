@@ -896,7 +896,7 @@ label hg_pf_strip_T1_watch:
         "{size=-3}\"Hm... This was quite awful...\"{/size}":
             $ her_mood += 4
             call her_main("............", "annoyed", "base", "angry", "mid")
-            m "You just need to practice more..."
+            m "You just need to practise more..."
             call her_main("Whatever..........", "annoyed", "narrow", "angry", "R")
         "{size=-3}\".................................................\"{/size}":
             call her_main(".......................", "silly", "worriedCl", "worried", "mid", emote="05")
@@ -1256,7 +1256,7 @@ label hg_pf_strip_T2_watch:
     call nar(">Hermione gives her breasts a squeeze followed by another series of rather complex (and naughty) movements...")
     call ctc
 
-    m "{size=-4}(Did she practice this?){/size}"
+    m "{size=-4}(Did she practise this?){/size}"
     g9 "Oh, why would I care?"
     call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}", "open", "closed", "base", "mid")
 
@@ -1294,7 +1294,7 @@ label hg_pf_strip_T2_watch:
             call her_main("Thank you [genie_name].", "silly", "worriedCl", "worried", "mid", emote="05")
         "{size=-3}\"Hm... This was quite awful...\"{/size}":
             call her_main("Oh... I'm sorry...", "soft", "happy", "base", "R")
-            m "That's OK... You just need to practice more..."
+            m "That's OK... You just need to practise more..."
             call her_main("Em... I will keep that in mind, [genie_name]...", "open", "base", "base", "R")
         "{size=-3}\".................................................\"{/size}":
             call her_main(".......................", "silly", "worriedCl", "worried", "mid", emote="05")
@@ -1372,7 +1372,7 @@ label hg_pf_strip_T2_masturbate:
     call nar(">Hermione gives her breasts a squeeze followed by another series of rather complex (and naughty) movements...")
     call ctc
 
-    m "{size=-4}(Did she practice this?){/size}"
+    m "{size=-4}(Did she practise this?){/size}"
     g9 "Oh, what do I care?"
     call nar(">You stroke your diamond-hard cock furiously.")
     call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}", "open", "closed", "base", "mid")

@@ -478,7 +478,7 @@ label cc_st_snape_E1:
     g4 "What kind of game are you playing?"
     call sna_main("I'm sorry?","snape_38")
     m "Your team didn't show up to the last practice match!"
-    call sna_main("Well, there's no specific rule that forces the teams to practice against each other...","snape_05")
+    call sna_main("Well, there's no specific rule that forces the teams to practise against each other...","snape_05")
     m "There's not?"
     m "(Actually that does make sense...)"
     call sna_main("Of course not, but it is heavily encouraged for students that are looking to make it professionally.","snape_09")
@@ -926,7 +926,7 @@ label cc_st_talk:
         call cho_main("Have you gotten those Slytherin pigs to play yet?","open","narrow","base","mid")
         m "Not yet, but I'm on it."
         call cho_main("Please just hurry up, Sir.","annoyed","narrow","base","mid")
-        call cho_main("We need to practice...","annoyed","narrow","sad","R")
+        call cho_main("We need to practise...","annoyed","narrow","sad","R")
         m "Any ideas on how I would do that?"
         call cho_main("How would I know, I'm not a teacher am I... ask one of them.", "annoyed","base","angry","R")
         if cc_st.snape_E1:

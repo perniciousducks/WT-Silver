@@ -917,7 +917,7 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("You're the headmaster aren't you, sir? Make them run it!","smile","narrow","angry","mid")
     m "Let's just focus on your magic for the moment, leave the journalism for later."
     call ast_main("Hmph!", "annoyed", "narrow","angry", "R")
-    call ast_main("If you want me to focus on magic then bring those boobs on legs up here so I have someone to practice on!", "annoyed", "narrow","angry", "mid")
+    call ast_main("If you want me to focus on magic then bring those boobs on legs up here so I have someone to practise on!", "annoyed", "narrow","angry", "mid")
     m "Couldn't have said it better myself..."
     call ast_main("Hang on, wait!","smile","base","narrow","mid")
     ">Astoria runs around your desk and hops up on your lap..."
@@ -1113,8 +1113,8 @@ label hornify_spell_1: #first level hornify spell
 
 
 label hornify_spell_2: #second level hornify spell
-    call ast_main("Ready to practice that hornify spell again?","base","base","base","base")
-    m "Are you sure you wanna practice that one again? We could start to learn a new spell instead."
+    call ast_main("Ready to practise that hornify spell again?","base","base","base","base")
+    m "Are you sure you wanna practise that one again? We could start to learn a new spell instead."
     m "Don't forget you have to have to visit Tonks each time we try one..."
     call ast_main("Pfft, what's she going to do? Make me try on another cute skirt?","base","base","base","base")
     ">Astoria gives her hips a quick shake, almost flashing you due to the shortness of it."
@@ -1296,7 +1296,7 @@ label hornify_spell_2: #second level hornify spell
 label hornify_spell_3: #third level hornify spell
     ">Astoria quickly walks around your desk and hops up onto your lap."
     m "What's the special occasion?"
-    call ast_main("You want to practice that spell don't you?","base","base","base","base")
+    call ast_main("You want to practise that spell don't you?","base","base","base","base")
     ">Astoria starts shamelessly rolling her hips on your cock."
     call ast_main("I'm just getting ready...","base","base","base","base")
     ">Astoria then gives her butt a little wriggle until your cock is resting in-between her butt cheeks."
@@ -1583,7 +1583,7 @@ label tentacle_spell_3: #third level tentacle spell
     #Extreme tentacles and hornify for Susan, Astoria cums on genie's dick rubbing against her pussy
 
 label hermione_spell: #Branching path event based on Astoria and Genie casting spells on Hermione.
-    m "Ready to practice some more spells?"
+    m "Ready to practise some more spells?"
     ast "You bet! What are we going to {b}blast{/b} Susan with today?"
     m "Actually, I was thinking we could bring someone else up..."
     ast "Really?"

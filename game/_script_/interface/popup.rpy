@@ -18,25 +18,20 @@ screen popup_window(string="", xpos=0, ypos=60):
         text string align (0.5, 0.5) size 12
     timer 4.0 action Hide("popup_window")
     
-label give_reward(text="",gift="", sound=True):
-
-    if sound == True:
-        $ renpy.play('sounds/win2.mp3')
-        show screen notes
-        with d9
-        hide screen notes
-        with d3
-
-    if gift!="":
+label give_reward(text=None, gift=None, sound=True):
+    if gift:
         $ the_gift = gift
     else:
         $ the_gift = "interface/icons/box_blue_2.png"
 
-    show screen gift
+    show screen gift(sound)
     show screen blktone5
     with d3
 
-    "[text]"
+    if text:
+        $ renpy.say(None, text)
+    else:
+        call ctc
 
     hide screen gift
     hide screen blktone5

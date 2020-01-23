@@ -42,6 +42,9 @@ label her_walk(xpos=None, ypos=None, speed=1.0, action=None, reduce=False, path=
         $ hermione_chibi.hide()
         with d3
         pause .5
+    elif action == "run":
+        $ hermione_chibi.show()
+        $ hermione_chibi.move(xpos, ypos, speed, reduce, action)
     elif path:
         $ hermione_chibi.show()
         $ hermione_chibi.path_move(path, speed)

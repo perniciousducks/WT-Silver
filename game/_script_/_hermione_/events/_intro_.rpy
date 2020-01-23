@@ -833,7 +833,7 @@ label hermione_intro_E4:
     her "I think I'd better go..."
     m "..................."
 
-    call her_walk(action="run", xpos="door", ypos="base", speed=2, reduce=True)
+    call her_walk(action="run", xpos="door", speed=2, reduce=True)
     call her_chibi("leave")
 
     call bld

@@ -25,6 +25,7 @@ label chibi_emote(emote, name):
         if emote == "hide":
             emote = None
         get_chibi_object(name).emote(emote)
+    return
 
 init -1 python:
     def update_chibi(name):
@@ -51,13 +52,15 @@ init -1 python:
             
             There are two types of actions, one is used in place and the other while moving.
 
-            Actions are defined in the `actions` dict as a tuple: (special, transform, move_action).
+            Actions are defined in the `actions` dict as a tuple: (special, transform, move_action|loop_time).
             * `special` (bool) specifies whether layer images should come from a folder with the same name as the action.
               This can be useful to prevent repetitive code in update callbacks.
             * `transform` (string) is the name of the transform that is used for this action.
               It will be combined with a base transform.
             * `move_action` (string) if set, it's the action that will be used when the chibi starts moving after the current action.
               It should not be set for move actions.
+            * `loop_time` (float) if set, it's the time in seconds for one animation loop of this action. Used to calculate movement time.
+              It should only be set for move actions. Set to zero to disable time adjustments.
             
             Layers:
             A chibi is made up of one or more named layers. These are cleared on update and should be set by a callback function.
@@ -71,9 +74,10 @@ init -1 python:
 
         actions = {
             None: (False, None, "walk"),
-            "walk": (False, "chibi_walk"),
+            "walk": (False, "chibi_walk", 0.32),
+            "run": (False, "chibi_walk", 0),
             "fly": (True, "chibi_fly", "fly_move"),
-            "fly_move": (True, "chibi_fly_move"),
+            "fly_move": (True, "chibi_fly_move", 0),
             "wand": (True, "chibi_wand", "walk"),
         }
 
@@ -143,24 +147,37 @@ init -1 python:
             if self.update_callback:
                 self.update_callback(self)
 
-        def move(self, x=None, y=None, speed=1.0, reduce=False):
+        def move(self, x=None, y=None, speed=1.0, reduce=False, action=None):
+            """Moves to a certain point, taking into account the action, direction, time and transitions."""
             pos = self.resolve_position(x,y)
-            dist = math.sqrt((self.pos[0] - pos[0])**2 + (self.pos[1] - pos[1])**2)
-            time = dist / (float(self.speed) * speed)
             
-            self.flip = self.pos[0] <= pos[0]
+            flip = self.pos[0] <= pos[0]
+            if self.flip != flip:
+                self.flip = flip
+                self.do() # Do a flip!
+                renpy.with_statement(d3)
 
-            #TODO Chibi action after moving should be configurable per action (default to stand/None)
+            # Resolve the move action
             old_action = self.action
-            if len(self.action_info) == 3:
+            if action:
+                move_action = action
+            elif isinstance(self.action_info[2], basestring):
                 # Action info provides a move action
                 move_action = self.action_info[2]
             else:
                 # Current action is already a move action
                 move_action = self.action
-            
+                
+            _, trans_name, loop_time = self.resolve_action(move_action)
+
+            # Calculate movement time
+            dist = math.sqrt((self.pos[0] - pos[0])**2 + (self.pos[1] - pos[1])**2)
+            time = dist / (float(self.speed) * speed)
+            if loop_time > 0:
+                # Round to nearest multiple of loop time to end on the right frame
+                time = loop_time * round(time/loop_time)
+
             # Apply the action with a transform
-            trans_name = self.resolve_action(move_action)[1]
             trans = self.resolve_transform(trans_name, self.pos, pos, time)
             self.do(move_action, trans)
             self.position(pos[0], pos[1])
@@ -176,20 +193,23 @@ init -1 python:
                 renpy.pause(time)
                 if old_action != move_action:
                     self.do(old_action)
+                    renpy.with_statement(None)
         
         def path_move(self, path, speed=1.0):
+            """Moves non-stop from point to point. Looks best without direction flips."""
             for i in xrange(len(path)):
                 x,y = path[i]
                 reduce = i < len(path)-1 # Reduce all except last node
                 self.move(x, y, speed, reduce)
 
         def do(self, action=None, trans=None):
+            """Performs an action. Applies a transform and updates the chibi."""
             self.action = action
             self.action_info = self.resolve_action(action)
             self.special = self.action_info[0]
 
             # Set the transform (static version by default)
-            if trans == None:
+            if trans is None:
                 trans = self.resolve_transform(self.action_info[1])
 
             # Hide the screen so transform is reset properly
@@ -201,7 +221,7 @@ init -1 python:
         def position(self, x=None, y=None, flip=None):
             """Set the position to be used on next update."""
             (x,y) = self.resolve_position(x,y)
-            if flip != None:
+            if flip is not None:
                 self.flip = flip
             self.pos = (x,y)
         
@@ -239,7 +259,7 @@ init -1 python:
             """Yields non-empty layers in an iterable manner."""
             for k in self.layers_order:
                 d = self.layers.get(k, None)
-                if d != None:
+                if d is not None:
                     yield d
 
         def clear(self):
@@ -280,7 +300,7 @@ init -1 python:
         def resolve(self, p, d, x_or_y):
             """Resolve p as coordinate, if None return d, else return p as integer."""
             if not isinstance(p, int):
-                if p == None:
+                if p is None:
                     return d
                 elif p in self.places:
                     return self.places[p][int(x_or_y)] or d

@@ -175,9 +175,12 @@ transform rotate_circular():
 ############# Menu #################
 ####################################
 
+label achievement:
+    $ screenshot_image = ScreenshotImage.capture()
+    $ renpy.call_in_new_context("achievement_menu")
+    jump main_room_menu
+    
 label achievement_menu(xx=150, yy=90):
-
-    $ hide_transitions = True
 
     $ achievement_categories_sorted = ["All", "General", "Characters", "Cardgame", "Mirror"]
     $ achievement_categories_sorted_length = len(achievement_categories_sorted)
@@ -192,17 +195,18 @@ label achievement_menu(xx=150, yy=90):
     $ category_items = list(persistent.achievements.iteritems())
     $ menu_items = achievement_sortfilter(category_items, current_sorting, current_filter)
     $ menu_items_length = len(menu_items)
+    
+    if not renpy.variant("android"):
+        show screen mouse_tooltip
 
     label .after_init:
     $ renpy.block_rollback()
 
-    show screen bld1
     show screen achievement_menu(xx, yy)
     show screen achievement_menuitem(xx, yy)
 
     $ _return = ui.interact()
 
-    hide screen bld1
     hide screen achievement_menu
     hide screen achievement_menuitem
 
@@ -253,8 +257,7 @@ label achievement_menu(xx=150, yy=90):
         $ current_page = 0
         $ current_item = None
     else:
-        $ hide_transitions = False
-        jump main_room_menu
+        return
 
     jump .after_init
 
@@ -262,6 +265,8 @@ screen achievement_menu(xx, yy):
     tag achievement_menu
     zorder 30
     modal True
+    
+    add im.Blur(screenshot_image, 2)
 
     use close_button
 

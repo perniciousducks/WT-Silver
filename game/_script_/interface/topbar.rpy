@@ -103,7 +103,7 @@ screen ui_top_bar():
                 if room_menu_active:
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_achievements.png")
                     tooltip "Achievements"
-                    action Jump("achievement_menu")
+                    action Jump("achievement")
 
             # Stats button
             imagebutton:
@@ -111,7 +111,7 @@ screen ui_top_bar():
                 if room_menu_active:
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_stats.png")
                     tooltip "Characters (c)"
-                    action Jump("stats_menu")
+                    action Jump("stats")
 
             # Inventory button
             imagebutton:
@@ -119,7 +119,7 @@ screen ui_top_bar():
                 if room_menu_active:
                     hover image_hover("interface/topbar/buttons/"+str(interface_color)+"/ui_inv.png")
                     tooltip "Inventory (i)"
-                    action Jump("inventory_menu")
+                    action Jump("inventory")
 
             # Work button
             if letter_min_work.read:

@@ -84,10 +84,13 @@ label update_stats:
     #$ ton_sluttiness_word = ton_sluttiness_word_list[int(ton_clothing_level/10)]
 
     return
+    
+label stats:
+    $ screenshot_image = ScreenshotImage.capture()
+    $ renpy.call_in_new_context("stats_menu")
+    jump main_room_menu
 
 label stats_menu(xx=150, yy=90):
-
-    $ hide_transitions = True
 
     call update_stats
 
@@ -117,23 +120,22 @@ label stats_menu(xx=150, yy=90):
 
     # Reset legacy character positioning
     # TODO: Remove it once all characters have been converted into a class.
-    $ hermione_xpos = 370
-    $ hermione_ypos = 0
     $ luna_xpos = 640
     $ luna_ypos = 0
     $ susan_xpos = 300
     $ susan_ypos = 0
-    #
+    
+    if not renpy.variant("android"):
+        show screen mouse_tooltip
+        
     label .after_init:
     $ renpy.block_rollback()
 
-    show screen bld1
     show screen stats_menu(xx, yy)
     show screen stats_menuitem(xx, yy)
 
     $ _return = ui.interact()
 
-    hide screen bld1
     hide screen stats_menu
     hide screen stats_menuitem
 
@@ -148,8 +150,7 @@ label stats_menu(xx=150, yy=90):
         if _return[1] != current_subcategory:
             $ current_subcategory = _return[1]
     else:
-        $ hide_transitions = False
-        jump main_room_menu
+        return
 
     jump .after_init
 
@@ -157,6 +158,8 @@ screen stats_menu(xx, yy):
     tag stats_menu
     zorder 30
     modal True
+    
+    add im.Blur(screenshot_image, 2)
 
     use close_button
     frame:

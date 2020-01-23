@@ -22,10 +22,12 @@ transform rotate_circular():
 ############# Menu #################
 ####################################
 
-label inventory_menu(xx=150, yy=90):
+label inventory:
+    $ screenshot_image = ScreenshotImage.capture()
+    $ renpy.call_in_new_context("inventory_menu")
+    jump main_room_menu
 
-    $ hide_transitions = True
-        
+label inventory_menu(xx=150, yy=90):
     # Inventory dictionary
     $ inventory_dict = {
                         "Gifts": candy_gift_list+mag_gift_list+drink_gift_list+toy_gift_list,
@@ -44,17 +46,18 @@ label inventory_menu(xx=150, yy=90):
     $ category_items = inventory_dict[current_category]
     $ menu_items = inventory_sortfilter(category_items, current_sorting)
     $ menu_items_length = len(menu_items)
+    
+    if not renpy.variant("android"):
+        show screen mouse_tooltip
 
     label .after_init:
     $ renpy.block_rollback()
 
-    show screen bld1
     show screen inventory_menu(xx, yy)
     show screen inventory_menuitem(xx, yy)
 
     $ _return = ui.interact()
 
-    hide screen bld1
     hide screen inventory_menu
     hide screen inventory_menuitem
 
@@ -92,8 +95,7 @@ label inventory_menu(xx=150, yy=90):
         $ current_page = 0
         $ current_item = None
     else:
-        $ hide_transitions = False
-        jump main_room_menu
+        return
 
     jump .after_init
 
@@ -101,6 +103,8 @@ screen inventory_menu(xx, yy):
     tag inventory_menu
     zorder 30
     modal True
+    
+    add im.Blur(screenshot_image, 2)
 
     use close_button
 

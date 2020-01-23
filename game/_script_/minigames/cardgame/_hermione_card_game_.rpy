@@ -357,8 +357,7 @@ screen genie_vs_hermione_smile():
 
 init python:
     def her_after():
-        volume = _preferences.volumes['music']
-        _preferences.volumes['music'] *= .5
+        renpy.music.set_volume(0.5)
         s_punch = renpy.random.randint(1, 4)
         renpy.sound.play("sounds/card_punch%s.mp3" % s_punch)
         # Prevents volume to change again when using rollback
@@ -366,5 +365,5 @@ init python:
         her_speech = her_speech_card[renpy.random.randint(0,len(her_speech_card)-1)]
         renpy.say(her, her_speech)
         renpy.hide_screen("hermione_main")
-        _preferences.volumes['music'] = volume
+        renpy.music.set_volume(1.0)
         return

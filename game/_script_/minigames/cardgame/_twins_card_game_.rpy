@@ -275,8 +275,7 @@ screen genie_vs_twins_smile():
 
 init python:
     def twins_after():
-        volume = _preferences.volumes['music']
-        _preferences.volumes['music'] *= .5
+        renpy.music.set_volume(0.5)
         s_punch = renpy.random.randint(1, 4)
         renpy.sound.play( "sounds/card_punch%s.mp3" % s_punch)
         # Prevents volume to change again when using rollback
@@ -288,5 +287,5 @@ init python:
             renpy.say(fre, rnd_text)
         else:
             renpy.say(ger, rnd_text)
-        _preferences.volumes['music'] = volume
+        renpy.music.set_volume(1.0)
         return

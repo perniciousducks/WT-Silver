@@ -133,3 +133,5 @@ init -1 python:
         if hasattr(store, "_tmp_menu"):
             store._game_menu_screen = store._tmp_menu
             del store._tmp_menu
+
+    get_volume_preference = renpy.game.preferences.get_volume

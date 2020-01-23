@@ -580,14 +580,13 @@ screen genie_vs_snape_smile():
 
 init python:
     def snape_after():
-        volume = _preferences.volumes['music']
-        _preferences.volumes['music'] *= .5
+        renpy.music.set_volume(0.5)
         s_punch = renpy.random.randint(1, 4)
         renpy.sound.play("sounds/card_punch%s.mp3" % s_punch)
         # Prevents volume to change again when using rollback
         renpy.block_rollback()
         renpy.say(sna,snape_speech_card[renpy.random.randint(0,len(snape_speech_card)-1)])
-        _preferences.volumes['music'] = volume
+        renpy.music.set_volume(1.0)
         return
 
     def snape_after_special():

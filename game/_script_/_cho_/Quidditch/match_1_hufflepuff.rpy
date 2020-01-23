@@ -132,8 +132,6 @@ label hufflepuff_match:
 
     call sna_walk(700, "base")
 
-    label dev:
-
     # Blackfade
     stop music fadeout 2
     stop bg_sounds fadeout 2
@@ -147,8 +145,6 @@ label hufflepuff_match:
     ">Amazed by...{w=0.6}{nw}"
     m "Agrabah's towers are larger..."
     ">Amazed... by the sight, Snape then leads you to the base of one of the towers."
-    if _preferences.volumes['music'] < 0.1 or _preferences.volumes['sfx'] < 0.1:
-        sil "This section of the game is best played with audio/music unmuted."
 
     # Pitch entrance
     centered "{size=+7}{color=#cbcbcb}At the Quidditch pitch...{/color}{/size}"
@@ -176,6 +172,12 @@ label hufflepuff_match:
 
     call blkfade
 
+    # Sound check
+    if get_volume_preference('music') < 0.1 or get_volume_preference('sfx') < 0.1:
+        sil "This section of the game is best played with the sound turned on. Go to preferences to set the volume."
+
+    pause 1
+
     # Pitch stands
     call room("quidditch_stands")
     $ qp_mob = 2 # Controls number of people
@@ -186,12 +188,11 @@ label hufflepuff_match:
     $ snape_chibi.zorder = 2
     $ hermione_chibi.zorder = 3
     $ genie_chibi.zorder = 4
-    pause 1
 
     ### Main Match Starts ###
     play bg_sounds "sounds/crowd.mp3" fadein 2
     call hide_blkfade
-    call ctc
+    pause 1
 
     call play_sound("footsteps")
     pause.8

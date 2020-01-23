@@ -38,10 +38,10 @@ label gift_menu:
         if current_category == "ui_quest_items":
             # Give quest item
             $ quest_item = _return
-            call expression 'give_'+active_girl[:3]+'_quest_item'
+            $ renpy.call("give_"+active_girl[:3]+"_quest_item")
         elif _return.number > 0:
             # Give gift
-            call expression 'give_'+active_girl[:3]+'_gift' pass (gift_item=_return)
+            $ renpy.call("give_"+active_girl[:3]+"_gift", _return)
             if globals()[active_girl[:3]+"_mood"] <= 0:
                 return
         else:

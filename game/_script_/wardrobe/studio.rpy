@@ -102,11 +102,9 @@ label studio(studio_char):
         $ studio_hide = False
         $ char_active.equip(studio_outfit_saves.get(active_girl))
         hide screen studio
-        #call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
         return
     elif _return == "cancel":
         $ char_active.equip(studio_outfit_saves.get(active_girl))
-        #call expression studio_char pass (xpos="wardrobe", ypos="base", face="neutral")
         return
     elif _return[0] == "body":
         $ studio_outfit_saves.get(active_girl).save()

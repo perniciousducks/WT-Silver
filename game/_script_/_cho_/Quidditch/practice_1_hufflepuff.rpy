@@ -243,7 +243,7 @@ label cc_ht_return_E2:
     call cho_main("That blockhead Cedric didn't stand a chance against me!","open","base","sad","R")
     call cho_main("Usually I'm never fast enough to beat him with my crummy old nimbus...","pout","angry","angry","downR")
     call cho_main("But today, I flew above him as we were both racing after the snitch, just like you said I should.","smile","base","base","mid")
-    g9 "Sounds like somebody should get a reward for his efforts!"
+    g9 "Sounds like somebody should get a reward for their efforts!"
     call cho_main("I can't believe I was able to finally catch it!","smile","closed","base","mid")
     m "Is this the first time you've caught one?"
     call cho_main("*Mhmm*... This is the first game of quidditch Ravenclaw has won in over six years!","smile","base","base","mid")

@@ -495,7 +495,7 @@ label hg_anal_sex_2:
             $ u_sperm = "characters/hermione/face/auto_08.png"
 
             call her_main("Ah-aha! You're cumming! {image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead",ypos="head")
-            g4 "{size=+7}Yes I do, whore!{/size}"
+            g4 "{size=+7}Yes I am, whore!{/size}"
             call her_main("Ah, me too! Me too!", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="messy")
             g4 "{size=+7}FUCKING SLUT!{/size}"
             call her_main("Ah...{image=textheart} your cum...{image=textheart}", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")

@@ -706,7 +706,7 @@ label inn_menu:
     abe "Welcome to the Hog's Head Inn"
     menu:
         "-Present Hermione to Aberforth-":
-            m "I present you you're new barmaid."
+            m "I present you your new barmaid."
             $ hermione.equip(her_outfit_maid)
             call her_main("", "normal", "squint", "angry", "mid")
             call ctc

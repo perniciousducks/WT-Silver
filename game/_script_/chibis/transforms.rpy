@@ -17,7 +17,6 @@ transform chibi_walk(start, end, speed):
 
 transform chibi_fly:
     subpixel True
-    pos position
     block:
         yoffset absolute(0)
         ease 2 yoffset absolute(-10)

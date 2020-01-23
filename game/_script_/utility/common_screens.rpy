@@ -50,9 +50,12 @@ screen notes():
     add "notes" xpos 320+140 ypos 330
     zorder 1
 
-screen gift():
+screen gift(win=False):
     zorder 20
-    #add "interface/frames/"+str(interface_color)+"/reward_background.png" xalign 0.5 yalign 0.547
+    if win:
+        use notes
+        on "show" action Play("sound", "sounds/win2.mp3")
+    # add "interface/frames/"+str(interface_color)+"/reward_background.png" xalign 0.5 yalign 0.547
     add the_gift align (0.5, 0.4) zoom get_zoom(the_gift, 320,320)
 
 screen clothing_unlock():

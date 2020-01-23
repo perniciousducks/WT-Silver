@@ -31,19 +31,14 @@ init python:
 
     def crop_image_zoom(path, xsize, ysize, grayscale=False):
         box = crop_whitespace(path)
-
-        if float(xsize)/box[2] < float(ysize)/box[3]:
-            zoom = float(xsize)/box[2]
-        else:
-            zoom = float(ysize)/box[3]
-            
+        zoom = min(float(xsize)/box[2], float(ysize)/box[3])
+        
+        sprite = Image(path)
         if grayscale:
-            sprite = Image(im.MatrixColor(path, im.matrix.desaturate()))
-        else:
-            sprite = Image(path)
-        sprite = Crop(box, sprite)
-
-        return (sprite, zoom)
+            sprite = im.Grayscale(path)
+        sprite = im.Crop(sprite, box)
+        sprite = im.FactorScale(sprite, zoom*2)
+        return (sprite, 0.5)
 
     class CroppedImage(object):
         size = (1010, 1200)

@@ -692,8 +692,8 @@ label hg_pf_titjob_2:
             m "A friend of yours?"
             call her_main("yes. I asked if she had any tips for this sort of thing...", "base", "base", "base", "R")
             $ ccg1 = 21
-            call her_main("She said the best way to improve was practice...", "base", "happy", "base", "mid")
-            m "Practice on what?"
+            call her_main("She said the best way to improve was to practise...", "base", "happy", "base", "mid")
+            m "Practise on what?"
             $ ccg1 = 22
             call her_main("On Ginny", "smile", "base", "base", "R")
             $ ccg1 = 23

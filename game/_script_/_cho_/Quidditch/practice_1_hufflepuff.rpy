@@ -232,7 +232,7 @@ label cc_ht_return_E2:
     m "You seem a little on edge..."
     call cho_main("On edge?","scream","shocked","angry","mid")
     call cho_main("Of course I'm on edge! I've never felt so humiliated in my life!","angry","wide","angry","mid")
-    call cho_main("You had to have me do this on the day half of hufflepuff shows up to watch us practice, didn't you!","pout","narrow","angry","R")
+    call cho_main("You had to have me do this on the day half of hufflepuff shows up to watch us practise, didn't you!","pout","narrow","angry","R")
     call cho_main("I bet you were probably in on it...","upset","narrow","angry","mid")
     m "Now now, you know I'd never resort to any sort of foul play like that..."
     m "More importantly, how did the game go?"

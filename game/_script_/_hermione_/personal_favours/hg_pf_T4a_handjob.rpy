@@ -694,7 +694,7 @@ label hg_pf_handjob_2:
                     call her_main("How was that, [genie_name]?", "angry", "wink", "base", "mid")
                     m "Perfect."
 
-        "\"This is really good. Did you practice?\"":
+        "\"This is really good. Did you practise?\"":
             call her_main("Hm?", "base", "happyCl", "base", "mid")
             call her_main("Sort of... Well not really...")
             call her_main("I had a talk with the girls, and...", "angry", "wink", "base", "mid")

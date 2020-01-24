@@ -216,57 +216,26 @@ label clothing_shop_menu:
 
     jump clothing_shop_menu
 
-
-
-#Clothing Items
 label clothing_items_shop_menu:
     hide screen clothing_menu
     show screen clothing_store_menu
 
-    python:
-        item_list = []
-        if toggle1_bool:
-            pass
-            #item_list.extend()
-        if toggle2_bool:
-            item_list.extend(accs_list)
-        if toggle3_bool:
-            item_list.extend(misc_list)
-        if toggle4_bool:
-            item_list.extend(dye_list)
+    $ item_list = [filter(lambda x : not (x.unlocked or x.unlockable), y) for y in [[], accs_list, misc_list, dye_list]]
 
-        item_list = list(filter(lambda x: (x.unlocked==False and x.unlockable==False), item_list))
+    show screen list_menu("clothing_items_shop_menu", "Clothing Items", ("Clothing", "Accessories", "Other", "Dyes"), item_list)
+    with d3
 
-    show screen list_menu(item_list, "Clothing Items", toggle1="Clothing", toggle2="Accs.", toggle3="Misc.", toggle4="Dyes" )
-
+    label .interact:
     $ _return = ui.interact()
-
-    hide screen list_menu
 
     if isinstance(_return, item_class):
         call purchase_clothing_item(_return)
+        jump clothing_items_shop_menu
 
     elif _return == "Close":
-        $ current_page = 0
         jump close_clothing_store
 
-    elif _return == "toggle1":
-        $ toggle1_bool = not toggle1_bool
-    elif _return == "toggle2":
-        $ toggle2_bool = not toggle2_bool
-    elif _return == "toggle3":
-        $ toggle3_bool = not toggle3_bool
-    elif _return == "toggle4":
-        $ toggle4_bool = not toggle4_bool
-
-    elif _return == "inc":
-        $ current_page += 1
-    elif _return == "dec":
-        $ current_page += -1
-
-    jump clothing_items_shop_menu
-
-
+    jump .interact
 
 label purchase_clothing_item(item):
     hide screen clothing_store_menu

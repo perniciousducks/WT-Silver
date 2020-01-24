@@ -295,52 +295,27 @@ screen weasley_store_menu():
 label gift_shop_menu:
     show screen weasley_store_menu
 
-    python:
-        item_list = []
-        if toggle1_bool:
-            item_list.extend(candy_gift_list)
-        if toggle2_bool:
-            item_list.extend(drink_gift_list)
-        if toggle3_bool:
-            item_list.extend(mag_gift_list)
-        if toggle4_bool:
-            item_list.extend(toy_gift_list)
+    $ item_list = [filter(lambda x : not x.unlocked, y) for y in [candy_gift_list, drink_gift_list, mag_gift_list, toy_gift_list]]
 
-        #item_list = list(filter(lambda x: x.unlocked==False, item_list))
+    show screen list_menu("gift_shop_menu", "Gifts", ("Candy", "Beverages", "Mags", "Toys"), item_list)
+    with d3
 
-    show screen list_menu(item_list, "Gifts", toggle1="Candy", toggle2="Beverages", toggle3="Mags", toggle4="Toys" )
-
+    label .interact:
     $ _return = ui.interact()
 
-    hide screen list_menu
     if isinstance(_return, item_class):
         call object_gift_block(_return)
+        jump gift_shop_menu
 
     elif _return == "Close":
-        $ current_page = 0
         jump close_weasley_store
 
-    elif _return == "toggle1":
-        $ toggle1_bool = not toggle1_bool
-        $ current_page = 0
-    elif _return == "toggle2":
-        $ toggle2_bool = not toggle2_bool
-        $ current_page = 0
-    elif _return == "toggle3":
-        $ toggle3_bool = not toggle3_bool
-        $ current_page = 0
-    elif _return == "toggle4":
-        $ toggle4_bool = not toggle4_bool
-        $ current_page = 0
+    jump .interact
 
-    elif _return == "inc":
-        $ current_page += 1
-    elif _return == "dec":
-        $ current_page += -1
-
-    jump gift_shop_menu
 
 label object_gift_block(item):
+    hide screen weasley_store_menu
+    hide screen list_menu
     $ the_gift = item.get_image()
     show screen gift
     with d3
@@ -398,8 +373,6 @@ label object_purchase_item(item, quantity):
 
 #Books & Scrolls
 label book_shop_menu:
-    show screen weasley_store_menu
-
     if not book_store_intro_done:
         hide screen weasley_store_menu
         hide screen list_menu
@@ -410,60 +383,39 @@ label book_shop_menu:
         $ book_store_intro_done = True
         pause.5
 
-        jump book_shop_menu
+    show screen weasley_store_menu
 
-    python:
-        item_list = []
-        if toggle1_bool:
-            item_list.extend(book_list.fiction_books)
-        if toggle2_bool:
-            item_list.extend(book_list.read_books)
-            item_list.extend(book_list.write_books)
-        if toggle3_bool:
-            item_list.extend(forbidden_scroll_list)
-            item_list.extend(scroll_list_A)
-            item_list.extend(scroll_list_B)
-            item_list.extend(scroll_list_C)
+    $ item_list = [filter(lambda x: not (x.unlocked or x.unlockable), y) for y in [
+        book_list.fiction_books,
+        book_list.read_books + book_list.write_books,
+        forbidden_scroll_list + scroll_list_A + scroll_list_B + scroll_list_C
+    ]]
 
-        item_list = list(filter(lambda x: x.unlocked==False and x.unlockable==False, item_list))
+    show screen list_menu("book_shop_menu", "Books & Scrolls", ("Fictional", "Educational", "Scrolls"), item_list)
+    with d3
 
-    show screen list_menu(item_list, "Books & Scrolls", toggle1="Fictional", toggle2="Educational", toggle3="Scrolls" )
-
+    label .interact:
     $ _return = ui.interact()
-
-    hide screen list_menu
 
     if isinstance(_return, item_class):
         if _return.type == "book":
             call purchase_book(_return)
+        elif _return in forbidden_scroll_list:
+            call purchase_forbidden_scroll(_return)
         else:
-            if _return in forbidden_scroll_list:
-                call purchase_forbidden_scroll(_return)
-            else:
-                call purchase_scroll(_return)
+            call purchase_scroll(_return)
+        jump book_shop_menu
 
     elif _return == "Close":
-        $ current_page = 0
         jump close_weasley_store
 
-    elif _return == "toggle1":
-        $ toggle1_bool = not toggle1_bool
-        $ current_page = 0
-    elif _return == "toggle2":
-        $ toggle2_bool = not toggle2_bool
-        $ current_page = 0
-    elif _return == "toggle3":
-        $ toggle3_bool = not toggle3_bool
-        $ current_page = 0
-
-    elif _return == "inc":
-        $ current_page += 1
-    elif _return == "dec":
-        $ current_page += -1
+    jump .interact
 
     jump book_shop_menu
 
 label purchase_book(item):
+    hide screen weasley_store_menu
+    hide screen list_menu
     $ the_gift = item.get_image()
     show screen gift
     with d3
@@ -486,6 +438,7 @@ label purchase_book(item):
 
 label purchase_forbidden_scroll(item):
     hide screen weasley_store_menu
+    hide screen list_menu
     with d3
 
     if her_whoring <= 15:
@@ -545,6 +498,8 @@ label purchase_forbidden_scroll(item):
     return
 
 label purchase_scroll(item):
+    hide screen weasley_store_menu
+    hide screen list_menu
     $ the_gift = item.get_image() # SACRED SCROLL.
     show screen gift
     with d3
@@ -625,56 +580,30 @@ label shop_potion_menu:
 label token_shop_menu:
     show screen weasley_store_menu
 
-    python:
-        item_list = []
+    $ item_list = [filter(lambda x: not (x.hidden or x.unlocked), y) for y in [
+        [hg_gamble_slut_ITEM],
+        fireplace_deco_list+cupboard_deco_list+wall_deco_list+misc_deco_list+misc_hat_list,
+        [lootbox_quest_ITEM]
+    ]]
 
-        if toggle1_bool:
-            item_list.extend([hg_gamble_slut_ITEM])
-        if toggle2_bool:
-            item_list.extend(fireplace_deco_list)
-            item_list.extend(cupboard_deco_list)
-            item_list.extend(wall_deco_list)
-            item_list.extend(misc_deco_list)
-            item_list.extend(misc_hat_list)
-        if toggle3_bool:
-            item_list.extend([lootbox_quest_ITEM])
+    show screen list_menu("token_shop_menu", "Token Shop", ("Outfits", "Decorations", "Other"), item_list)
+    with d3
 
-        item_list = list(filter(lambda x: x.hidden==False and x.unlocked==False, item_list))
-
-    show screen list_menu(item_list, "Token Shop", toggle1="Outfits", toggle2="Decorations", toggle3="Other")
-
+    label .interact:
     $ _return = ui.interact()
-
-    hide screen list_menu
 
     if isinstance(_return, item_class):
         call purchase_deco(_return)
+        jump token_shop_menu
 
     elif _return == "Close":
-        $ current_page = 0
         jump close_weasley_store
 
-    elif _return == "toggle1":
-        $ toggle1_bool = not toggle1_bool
-        $ current_page = 0
-    elif _return == "toggle2":
-        $ toggle2_bool = not toggle2_bool
-        $ current_page = 0
-    elif _return == "toggle3":
-        $ toggle3_bool = not toggle3_bool
-        $ current_page = 0
-    elif _return == "toggle4":
-        $ toggle4_bool = not toggle4_bool
-        $ current_page = 0
-
-    elif _return == "inc":
-        $ current_page += 1
-    elif _return == "dec":
-        $ current_page += -1
-
-    jump token_shop_menu
+    jump .interact
 
 label purchase_deco(item):
+    hide screen weasley_store_menu
+    hide screen list_menu
     $ the_gift = item.get_image()
     show screen gift
     with d3

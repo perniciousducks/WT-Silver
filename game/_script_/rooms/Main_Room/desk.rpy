@@ -168,17 +168,6 @@ label desk:
 
     $ renpy.jump(_return)
 
-
-screen desk_empty():
-    tag desk_interface
-
-    zorder 5
-
-    #add "interface/desk/_bg_.png"
-    add "interface/desk/_hands_.png"
-    if not daytime:
-        add "interface/desk/_night_overlay_.png"
-
 screen desk_menu():
     tag desk_interface
 
@@ -189,9 +178,9 @@ screen desk_menu():
 
     if map_unlocked:
         use map_screen
-        use map_screen_characters
 
-    add "interface/desk/_hands_.png" xpos 0 ypos -30
+    # Ugly hands
+    # add "interface/desk/_hands_.png" xpos 0 ypos -30
 
     use crystal_ball
     use watch

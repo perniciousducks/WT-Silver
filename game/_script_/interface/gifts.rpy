@@ -1,65 +1,42 @@
 label gift_menu:
-    python:
-        category_list = ["ui_gifts", "ui_quest_items"] #Max 5 items! #Use the item's name inside the 'interface/icons' folder.
-        current_category = category_list[0]
-        category_choice = category_list[0]
-        current_page = 0
-
-    label .after_init:
-
-    python:
-        item_list = []
-        if current_category == "ui_gifts":
-            menu_title = "Gift Items"
-            item_list.extend(candy_gift_list)
-            item_list.extend(mag_gift_list)
-            item_list.extend(drink_gift_list)
-            item_list.extend(toy_gift_list)
-
-        if current_category == "ui_quest_items":
-            menu_title = "Quest Items"
-            #item_list.extend(toy_gift_list)
-
-            #TODO Manage (quest) items for all girls (avoid using globals() magic, maybe have one global inventory object)
-            if active_girl == "hermione":
-                item_list.extend(her_quest_items_list)
-
-        #item_list = list(filter(lambda x: x.unlocked==False, item_list))
     
-    show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475)
+    $ item_list = [candy_gift_list+mag_gift_list+drink_gift_list+toy_gift_list]
+    if active_girl == "hermione":
+        $ item_list.append(her_quest_items_list)
 
+    # $ item_list = list(filter(lambda x: not x.unlocked, y) for y in item_list)
+
+    show screen bottom_menu("gift_menu", (("Gift Items", "ui_gifts"), ("Quest Items", "ui_quest_items")), item_list)
+
+    label .interact:
     $ _return = ui.interact()
 
-    hide screen bottom_menu
-    
-    if category_choice != current_category:
-        $ current_category = _return
-    elif isinstance(_return, item_class):
-        if current_category == "ui_quest_items":
-            # Give quest item
-            $ quest_item = _return
-            $ renpy.call("give_"+active_girl[:3]+"_quest_item")
-        elif _return.number > 0:
+    if isinstance(_return, tuple):
+        if _return[0] == 0:
+            hide screen bottom_menu
+            with d3
             # Give gift
-            $ renpy.call("give_"+active_girl[:3]+"_gift", _return)
-            if globals()[active_girl[:3]+"_mood"] <= 0:
-                return
-        else:
-            ">You don't own this item."
-    elif _return == "inc":
-        $ current_page += 1
-    elif _return == "dec":
-        $ current_page -= 1
+            if _return[1].number > 0:
+                $ renpy.call("give_"+active_girl[:3]+"_gift", _return[1])
+                if globals()[active_girl[:3]+"_mood"] <= 0:
+                    return
+            else:
+                ">You don't own this item."
+        
+        elif _return[0] == 1:
+            hide screen bottom_menu
+            with d3
+            # Give quest item
+            $ renpy.call("give_"+active_girl[:3]+"_quest_item", _return[1])
+
     elif _return == "Close":
         hide screen bottom_menu
         with d3
         return
 
-    jump .after_init
+    jump .interact
     
-label give_gift(text = "", gift = ""):
-    hide screen hermione_main
-    with d3
+label give_gift(text, gift):
     $ the_gift = "interface/icons/"+str(gift.image)+".png"
     show screen gift
     with d3

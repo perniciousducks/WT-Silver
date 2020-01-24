@@ -154,7 +154,7 @@ init -1 python:
             flip = self.pos[0] <= pos[0]
             if self.flip != flip:
                 self.flip = flip
-                self.do() # Do a flip!
+                self.do(self.action) # Do a flip!
                 renpy.with_statement(d3)
 
             # Resolve the move action

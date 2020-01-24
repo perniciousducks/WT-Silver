@@ -717,7 +717,7 @@ label hufflepuff_match:
     $ cho_animation = sprite_fly_idle
     
     call cho_chibi("fly",1200,-100+180)
-    call cho_walk(500, 50+180)
+    call cho_walk(500, 50+180, speed=2)
     pause 1.5
     show screen bld2
     call cho_main("Hey, Granger!", "open", "angry", "angry", "L", ypos=-200, xpos=560)
@@ -764,7 +764,7 @@ label hufflepuff_match:
     call cho_main("", "quiver", "wide", "sad", "downR")
     ">Hermione’s commentating is drowned out by the sound of the Ravenclaw grandstand cheering."
     call cho_main("{size=+6}You are done, Granger!{/size}", "scream", "closed", "angry", "L")
-    call cho_walk(1200, 800+180)
+    call cho_walk(1200, 500+180, speed=2)
     pause 5
     $ cho_animation = None
     $ cho.set_pose(None)

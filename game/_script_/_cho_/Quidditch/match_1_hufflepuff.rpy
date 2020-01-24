@@ -166,9 +166,16 @@ label hufflepuff_match:
     call sna_main("After me...","snape_02",ypos="head")
 
     call sna_walk(path=[("stairs_base","base"),("stairs_up","stairs_up")])
-    call gen_walk("stairs_base")
+    call gen_walk(650)
+    call chibi_emote("exclaim", "genie")
+    pause 0.8
+    call chibi_emote("hide", "genie")
+    call gen_chibi("stand_alt")
+    with d3
+    pause 0.8
     g9 "(*He-heh*... \"Snape sux\"...)"
-    call gen_walk("stairs_up","stairs_up")
+    call gen_chibi("stand")
+    call gen_walk(path=[("stairs_base", "base"),("stairs_up","stairs_up")])
 
     call blkfade
 
@@ -720,6 +727,7 @@ label hufflepuff_match:
     call cho_walk(500, 50+180, speed=2)
     pause 1.5
     show screen bld2
+    call her_main(face="neutral")
     call cho_main("Hey, Granger!", "open", "angry", "angry", "L", ypos=-200, xpos=560)
     call her_main("What do you want? Shouldn’t you be busy with,{w=0.3} I don’t know...", "open", "base", "angry", "mid", flip=True,xpos="120",ypos="base")
     call cho_main("", "pout", "angry", "raised", "L")
@@ -761,6 +769,7 @@ label hufflepuff_match:
     $ renpy.sound.play("sounds/crowd_applause.mp3")
     hide screen hermione_main
     hide screen bld2
+    with d3
     call cho_main("", "quiver", "wide", "sad", "downR")
     ">Hermione’s commentating is drowned out by the sound of the Ravenclaw grandstand cheering."
     call cho_main("{size=+6}You are done, Granger!{/size}", "scream", "closed", "angry", "L")

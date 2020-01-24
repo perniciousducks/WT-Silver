@@ -28,12 +28,21 @@ init python:
                     self.imagepath = "{}/characters/{}/clothes/{}/{}/".format(modpath, name, x, id)
                     break
             
-            # Detect special layers and define them
+            self.set_layers()
+                
+            # Add to character wardrobe and unordered list
+            if not parent:
+                self.char.wardrobe.setdefault(self.categories[0], {}).setdefault(self.categories[1], []).append(self)
+                self.char.wardrobe_list.append(self)
+                
+            self.rebuild_image()
+            self.build_icon()
+            
+        def set_layers(self):
             for x in self.layers_special:
                 path = "{}{}.png".format(self.imagepath, x)
                 self.__dict__[x] = path if renpy.loadable(path) else None
                 
-            # Detect back and front layers and define them
             for x in self.layers_additional:
                 self.__dict__[x] = []
                 for i in xrange(self.layers):
@@ -43,14 +52,6 @@ init python:
                 if self.__dict__[x]:
                     path = "{}outline_{}.png".format(self.imagepath, x)
                     self.__dict__[x+"_outline"] = path if renpy.loadable(path) else None
-                
-            # Add to character wardrobe and unordered list
-            if not parent:
-                self.char.wardrobe.setdefault(self.categories[0], {}).setdefault(self.categories[1], []).append(self)
-                self.char.wardrobe_list.append(self)
-                
-            self.rebuild_image()
-            self.build_icon()
             
         def build_image(self):
             sprites = []
@@ -145,18 +146,6 @@ init python:
                         self.imagepath = "{}/characters/{}/poses/{}/clothes/{}/{}/".format(self.modpath, self.name, pose, x, self.id)
                         break
                         
-            for x in self.layers_special:
-                path = "{}{}.png".format(self.imagepath, x)
-                self.__dict__[x] = path if renpy.loadable(path) else None
-                
-            for x in self.layers_additional:
-                self.__dict__[x] = []
-                for i in xrange(self.layers):
-                    path = "{}{}_{}.png".format(self.imagepath, i, x)
-                    if renpy.loadable(path):
-                        self.__dict__[x].append(path)
-                if self.__dict__[x]:
-                    path = "{}outline_{}.png".format(self.imagepath, x)
-                    self.__dict__[x+"_outline"] = path if renpy.loadable(path) else None
+            self.set_layers()
             self.rebuild_image()
             return

@@ -18,7 +18,9 @@ screen chibi_emote(emote, chibi_object):
         at emote_effect
         anchor (0.5, 1.0)
         pos chibi_object.pos
-        offset ((75, -200) if chibi_object.tag in ("genie", "snape") else (50, 0))
+        zoom ChibiRoom.get().scale
+        xzoom (-1 if chibi_object.flip else 1)
+        offset ((int(75*ChibiRoom.get().scale), int(-200*ChibiRoom.get().scale)) if chibi_object.tag in ("genie", "snape") else (int(50*ChibiRoom.get().scale), 0))
 
 label chibi_emote(emote, name):
     python:

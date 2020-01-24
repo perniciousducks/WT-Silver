@@ -35,7 +35,7 @@ init python:
                     if o.front_outline:
                         sprites.append([o.front_outline, 100+o.zorder+o.layers])
                 if o.armfix:
-                    sprites.extend([[im.MatrixColor("{}armleft/{}_fix.png".format(self.body.imagepath, self.body.get_part("armleft")), im.matrix.desaturate()), o.zorder+0.5], [im.MatrixColor("{}armright/{}_fix.png".format(self.body.imagepath, self.body.get_part("armright")), im.matrix.desaturate()), o.zorder+0.5]])
+                    sprites.extend([[im.Grayscale("{}armleft/{}_fix.png".format(self.body.imagepath, self.body.get_part("armleft"))), o.zorder+0.5], [im.Grayscale("{}armright/{}_fix.png".format(self.body.imagepath, self.body.get_part("armright"))), o.zorder+0.5]])
                 if o.mask:
                     masks.append([o.mask, o.zorder-1])
                         

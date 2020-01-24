@@ -31,7 +31,7 @@ init python:
                 sprites.extend((o.skin, self.zorder_skin) for o in group if o and o.skin)
 
             sprites.sort(key=lambda x: x[1], reverse=False)
-            sprites = tuple(itertools.chain.from_iterable(((0,0), im.MatrixColor(x[0], im.matrix.desaturate())) for x in sprites))
+            sprites = tuple(itertools.chain.from_iterable(((0,0), im.Grayscale(x[0])) for x in sprites))
             return sprites
             
         def get_mannequin(self, group=None):

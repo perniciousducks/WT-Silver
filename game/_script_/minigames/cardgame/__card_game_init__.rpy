@@ -576,8 +576,6 @@ init python:
         return im.MatrixColor(image, im.matrix.tint(playercolor_rgb[0]/255.0, playercolor_rgb[1]/255.0, playercolor_rgb[2]/255.0))
     def enemyTint(image):
         return im.MatrixColor(image, im.matrix.tint(enemycolor_rgb[0]/255.0, enemycolor_rgb[1]/255.0, enemycolor_rgb[2]/255.0))
-    def grayTint(image):
-        return im.MatrixColor(image, im.matrix.desaturate())
 
     def get_image_size(image):
         myDisplayable = im.Image(image)

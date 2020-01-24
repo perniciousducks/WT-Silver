@@ -48,7 +48,7 @@ init -1 python:
         return im.MatrixColor( image, im.matrix.tint(1.1, 1.1, 1.1))
 
     def grayTint(image):
-        return im.MatrixColor( image, im.matrix.desaturate() * im.matrix.tint(1.0, 1.0, 1.0))
+        return im.Grayscale(image)
 
     def yellowTint(image):
         return im.MatrixColor( image,  im.matrix.tint(1.2, 1.1, 0.7))

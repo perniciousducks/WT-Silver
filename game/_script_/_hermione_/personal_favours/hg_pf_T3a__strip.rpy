@@ -14,6 +14,7 @@ label hg_pf_strip:
 
 
     # Start Event
+    # TODO: Fix event, remove aftersperm and temporal variables
     $ temp_top = h_top # Save
     $ current_payout = 35
     $ hg_pf_strip.start()

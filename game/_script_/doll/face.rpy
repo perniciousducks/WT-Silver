@@ -32,4 +32,12 @@ init python:
         def get_skin(self):
             return ["{}{}/{}_skin.png".format(self.imagepath, k, v[0]) for k, v in self.face.iteritems() if renpy.loadable("{}{}/{}_skin.png".format(self.imagepath, k, v[0]))]
             
-            
+        def set_pose(self, pose):
+            if pose is None:
+                self.imagepath = "characters/{}/face/".format(self.name)
+                self.blink = "spr_{} blink".format(self.name) if renpy.has_image("spr_{} blink".format(self.name)) else None
+            else:
+                self.imagepath = "characters/{}/poses/{}/face/".format(self.name, pose)
+                self.blink = "spr_{} blink {}".format(self.name, pose) if renpy.has_image("spr_{} blink {}".format(self.name, pose)) else None
+            self.rebuild_image()
+            return

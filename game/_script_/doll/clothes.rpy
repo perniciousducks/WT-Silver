@@ -133,3 +133,30 @@ init python:
         def clone(self):
             """Creates a clone of this cloth object. Since it requires a parent object it should be used internally only to avoid object depth issue."""
             return DollCloth(self.name, self.categories, self.type, self.id, [x[:] for x in self.color], self.zorder, self.unlocked, self.level, self.blacklist, self)
+            
+        def set_pose(self, pose):
+            for x in (self.categories[0], self.categories[1], self.type):
+                if pose is None:
+                    if renpy.loadable("{}/characters/{}/clothes/{}/{}/".format(self.modpath, self.name, x, self.id)):
+                        self.imagepath = "{}/characters/{}/clothes/{}/{}/".format(self.modpath, self.name, x, self.id)
+                        break
+                else:
+                    if renpy.loadable("{}/characters/{}/poses/{}/clothes/{}/{}/".format(self.modpath, self.name, pose, x, self.id)):
+                        self.imagepath = "{}/characters/{}/poses/{}/clothes/{}/{}/".format(self.modpath, self.name, pose, x, self.id)
+                        break
+                        
+            for x in self.layers_special:
+                path = "{}{}.png".format(self.imagepath, x)
+                self.__dict__[x] = path if renpy.loadable(path) else None
+                
+            for x in self.layers_additional:
+                self.__dict__[x] = []
+                for i in xrange(self.layers):
+                    path = "{}{}_{}.png".format(self.imagepath, i, x)
+                    if renpy.loadable(path):
+                        self.__dict__[x].append(path)
+                if self.__dict__[x]:
+                    path = "{}outline_{}.png".format(self.imagepath, x)
+                    self.__dict__[x+"_outline"] = path if renpy.loadable(path) else None
+            self.rebuild_image()
+            return

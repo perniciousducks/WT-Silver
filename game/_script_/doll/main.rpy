@@ -9,6 +9,7 @@ init python:
             self.clothes = clothes
             self.face = DollFace(self, face)
             self.body = DollBody(self, body)
+            self.pose = None
             
             self.rebuild_image()
         
@@ -73,11 +74,15 @@ init python:
             """Takes DollCloth or DollOutfit object to equip."""
             if isinstance(obj, DollCloth):
                 self.clothes[obj.type][0], self.clothes[obj.type][2] = obj, True
+                if self.pose:
+                    obj.set_pose(self.pose)
             elif isinstance(obj, DollOutfit):
                 self.unequip("all")
                 for i in obj.group:
                     self.clothes[i.type][0] = i.parent
                     self.clothes[i.type][0].set_color(i.color)
+                    if self.pose:
+                        i.parent.set_pose(self.pose)
             self.body.rebuild_image()
             self.rebuild_image()
             self.apply_transition()
@@ -87,12 +92,15 @@ init python:
             if "all" in args:
                 for k, v in self.clothes.iteritems():
                     if not k.startswith(self.blacklist_unequip):
+                        if self.pose:
+                            v[0].set_pose(None)
                         v[0], v[2] = None, True
             else:
-                global test
-                test = args
                 for arg in args:
+                    if self.pose and self.clothes[arg][0]:
+                        self.clothes[arg][0].set_pose(None)
                     self.clothes[arg][0] = None
+                
             self.body.rebuild_image()
             self.rebuild_image()
             self.apply_transition()
@@ -174,6 +182,19 @@ init python:
                     self.body.body[str(arg)][0] = value
             self.body.rebuild_image()
             self.rebuild_image()
+            
+        def set_pose(self, pose):
+            if pose is None or renpy.loadable("characters/{}/poses/{}".format(self.name, pose)):
+                self.pose = pose
+                self.face.set_pose(pose)
+                self.body.set_pose(pose)
+                for v in self.clothes.itervalues():
+                    if v[0]:
+                        v[0].set_pose(pose)
+                self.rebuild_image()
+                self.apply_transition()
+            else:
+                raise IOError("'{}' pose doesn't exist for character named '{}'.".format(pose, self.name))
             
         def reset_blacklist(self, unequip=True):
             """Resets wardrobe blacklist based on worn clothes. Takes optional argument that causes blacklisted clothes to be unequipped."""

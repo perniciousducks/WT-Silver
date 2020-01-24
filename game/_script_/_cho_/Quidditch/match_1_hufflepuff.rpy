@@ -713,14 +713,14 @@ label hufflepuff_match:
     "You see Cho flying over to the commentator booth glaring at Hermione with a look of pure hatred."
 
     # Transition to Cho on her broom.
-    # TODO: Broken by doll class update. Has to be fixed.
+    $ cho.set_pose("broom")
     $ cho_animation = sprite_fly_idle
-    $ cho_class.animation("quid", (233, -78))
+    
     call cho_chibi("fly",1200,-100+180)
     call cho_walk(500, 50+180)
     pause 1.5
     show screen bld2
-    call cho_main("Hey, Granger!", "open", "angry", "angry", "L", ypos=-200)
+    call cho_main("Hey, Granger!", "open", "angry", "angry", "L", ypos=-200, xpos=560)
     call her_main("What do you want? Shouldn’t you be busy with,{w=0.3} I don’t know...", "open", "base", "angry", "mid", flip=True,xpos="120",ypos="base")
     call cho_main("", "pout", "angry", "raised", "L")
     call her_main("playing the game?", "smile", "closed", "base", "mid")
@@ -730,12 +730,11 @@ label hufflepuff_match:
     call cho_main("", "upset", "angry", "angry", "L")
     call her_main("But who caught the Snitch?", "open", "wide", "base", "stare")
     call cho_main("", "open", "angry", "angry", "L")
-    $ cho_class.set_body(armright="arm_snitch_r")
+    $ cho.set_body(armright="snitch")
     with d3
     ">Cho waves the snitch in front of her."
     call her_main("", "mad", "wide", "worried", "shocked")
-    $ cho_class.set_body(armright="arm_down_r")
-    $ cho_class.body['armright'][4] = True
+    $ cho.set_body(armright="down")
     call cho_main("My first ever win this season and you didn’t even notice it! No one did, thanks to your dreadful commentating!", "scream", "closed", "angry", "L")
     call cho_main("", "upset", "angry", "angry", "down")
     call her_main("Oh...", "normal", "wide", "worried", "shocked")
@@ -766,9 +765,9 @@ label hufflepuff_match:
     ">Hermione’s commentating is drowned out by the sound of the Ravenclaw grandstand cheering."
     call cho_main("{size=+6}You are done, Granger!{/size}", "scream", "closed", "angry", "L")
     call cho_walk(1200, 800+180)
-    pause.8
+    pause 5
     $ cho_animation = None
-    $ cho_class.animation(None)
+    $ cho.set_pose(None)
     call cho_chibi("reset")
 
     # Outro
@@ -807,17 +806,8 @@ label hufflepuff_match:
 
     call blkfade
 
-    # Change hermione outfit to previous one
-    call h_unequip_temp_outfit()
-
     # Skip to evening.
     jump night_start
-
-
-
-
-
-
 
 # Return Response
 label hufflepuff_match_return:

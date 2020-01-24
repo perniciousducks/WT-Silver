@@ -1,6 +1,9 @@
 # Sprite blinking
 image spr_cho blink:
     sprite_blink("characters/cho/face/eyes/closed.png")
+    
+image spr_cho blink broom:
+    sprite_blink("characters/cho/poses/broom/face/eyes/closed.png")
 
 # Cho chibi
 

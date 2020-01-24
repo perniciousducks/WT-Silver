@@ -40,3 +40,11 @@ init python:
             
         def get_part(self, arg):
             return self.body[arg][0]
+            
+        def set_pose(self, pose):
+            if pose is None:
+                self.imagepath = "characters/{}/body/".format(self.name)
+            else:
+                self.imagepath = "characters/{}/poses/{}/body/".format(self.name, pose)
+            self.rebuild_image()
+            return

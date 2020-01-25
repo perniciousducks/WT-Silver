@@ -67,14 +67,6 @@ init -1 python:
             return min(1.0, xsize / x)
         return min(1.0, ysize / y)
         
-    def get_boundries(image):
-        if isinstance(image, basestring):
-            image = im.Image(image)
-
-        myRender = renpy.render(image, 800, 800, 0, 0)
-        sizes = myRender.get_size()
-        return (0, 0, sizes[0], sizes[1])
-        
     def image_hover(image):
         """Returns slightly brighter image used during hover events"""
         return im.MatrixColor(image, im.matrix.brightness(0.12))

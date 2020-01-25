@@ -17,7 +17,7 @@ default pitch_open = True
 default inn_intro = False
 default attic_open = False
 
-default map_animated = True
+default map_animated = "once"
 
 define map_scale = 0.35
 define map_ani_time = 1.5
@@ -42,7 +42,13 @@ screen map_screen():
     tag map
     zorder 4
 
-    default unfold = map_animated # Avoids changing the screen if the animation is toggled quickly
+    # Default avoids changing the screen if the animation is toggled quickly
+    default unfold = map_animated
+
+    # Disable animation after first time (can still be toggled)
+    if map_animated == "once":
+        timer map_ani_time+1 action SetVariable("map_animated", False)
+
     if unfold:
         add "map_unfold" xpos UI_xpos_offset ypos UI_ypos_offset zoom map_scale # 588x420
     else:

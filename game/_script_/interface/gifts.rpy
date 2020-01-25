@@ -28,6 +28,8 @@ label gift_menu:
             with d3
             # Give quest item
             $ renpy.call("give_"+active_girl[:3]+"_quest_item", _return[1])
+        
+        jump gift_menu
 
     elif _return == "Close":
         hide screen bottom_menu

@@ -438,7 +438,10 @@ label ll_pf_sex_random: # Call label
                 call ll_pf_sex_T1_ton_1
             else:
                 call ll_pf_sex_T1_ton_2
-
+    
+    $ hermione_scaleratio = 2
+    $ astoria_scaleratio = 2
+    $ tonks_scaleratio = 2
 
     return
 

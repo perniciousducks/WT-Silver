@@ -1,8 +1,7 @@
-### Item Classes ###
 
+# Item classes
 init -1 python:
 
-    #Items Main
     class item_class(object):
         def __init__(self, **kwargs):
             self.id = ""
@@ -11,16 +10,16 @@ init -1 python:
             self.items = []
             self.image = ""
             self.imagepath = "interface/icons/box_blue_2.png"
-            self.unlockable = False #If True, prevents this item to be shown in the shop.
-            self.unlocked = False #Set to True once unlocked or purchased.
+            self.unlockable = False # If True, prevents this item to be shown in the shop.
+            self.unlocked = False # Set to True once unlocked or purchased.
             self.hidden = False # Not visible in any menus.
-            self.number = 0 #Amount of items of this type that you possess. Can be used for weasley store and gift items.
+            self.number = 0 # Amount of items of this type that you possess. Can be used for weasley store and gift items.
             self.cost = 0
             self.wait_time = 1
             self.description = ""
 
-            #Used in decorations
-            self.active = False # Check if decoration is used or not
+            # Used with decorations
+            self.active = False
 
             self.__dict__.update(**kwargs)
 
@@ -28,20 +27,20 @@ init -1 python:
             return self.name
 
         def get_image(self):
-            if self.image != "":
+            if self.image:
                 if isinstance(self.image, DollOutfit):
                     return self.image.get_image()
                 else:
                     self.imagepath = "interface/icons/"+str(self.image)+".png"
-                    return self.imagepath
+                    return Image(self.imagepath)
             else:
                 return self.imagepath
 
         def get_cost(self):
             if self.type in ("owl", "fireplace", "mail", "phoenix", "poster", "trophy", "outfit_token"):
-                return ""+str(self.cost)+" token" if self.cost == 1 else ""+str(self.cost)+" tokens"
+                return str(self.cost)+" token" if self.cost == 1 else str(self.cost)+" tokens"
             else:
-                return ""+str(self.cost)+" gold"
+                return str(self.cost)+" gold"
 
         def get_wait_time(self):
             if self.wait_time == 1:
@@ -55,10 +54,9 @@ init -1 python:
             return self.type
         def get_description(self):
             return self.description
-        def get_buttom_right(self):
+        def get_annotation(self):
             return ""
 
-    #Outfit Items
     class costume_class(item_class):
 
         def __init__(self, **kwargs):
@@ -80,7 +78,6 @@ init -1 python:
         def getActionImage(self, action):
             return self.action_images[self.actions.index(action)]
 
-    #Book Items
     class silver_book_lib(object):
         read_books = []
         write_books = []
@@ -138,7 +135,6 @@ init -1 python:
         def getChapterDesc(self):
            return self.chapter_description[self.progress-1] #"Chapter "+str(self.progress)+": "+
 
-    #Scroll Items
     class scroll_class(item_class):
         scroll_image = ""
         comments = []

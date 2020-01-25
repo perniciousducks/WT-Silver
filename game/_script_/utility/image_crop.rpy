@@ -16,7 +16,7 @@ init python:
     def image_crop_loop():
         for cloth in hermione.wardrobe_list:
             # Call to ensure whitespace is calculated
-            crop_whitespace(cloth.ico.bounds)
+            crop_whitespace(cloth.ico.path)
                 
     def crop_whitespace(path):
         # Return box from whitespace_dict, or calculate and store it
@@ -43,16 +43,16 @@ init python:
     class CroppedImage(object):
         size = (1010, 1200)
         
-        def __init__(self, sprites, bounds):
+        def __init__(self, sprites, path):
             self.sprites = sprites
-            self.bounds = bounds
+            self.path = path
             self.cached = False
             self.sprite = None
             
         def get_image(self):
             if not self.cached:
                 self.cached = True
-                box = crop_whitespace(self.bounds)
+                box = crop_whitespace(self.path)
                 self.sprite = Crop(box, Composite(self.size, *self.sprites))
             return self.sprite
             

@@ -67,25 +67,21 @@ label hide_room_req:
     return
 
 label mirror_menu:
-    show screen list_menu(mr_evs_list, "Mirror Stories\n{size=9}Short stories written by the Witch Trainer community.{/size}")
+    show screen list_menu("mirror_menu", "Mirror Stories\n{size=9}Short stories written by the Witch Trainer community.{/size}", (), [mr_evs_list])
+    with d3
 
+    label .interact:
     $ _return = ui.interact()
 
-    hide screen list_menu
+    if isinstance(_return, mirror_stories):
+        hide screen list_menu
+        $ renpy.jump(_return.start_label)
 
-    if isinstance(_return, item_class):
-        $ current_page = 0
-        $renpy.jump(_return.start_label)
-
-    if _return == "Close":
+    elif _return == "Close":
+        hide screen list_menu
         call screen room_of_requirement_menu
 
-    elif _return == "inc":
-        $ current_page += 1
-        jump mirror_menu
-    elif _return == "dec":
-        $ current_page += -1
-        jump mirror_menu
+    jump .interact
 
 screen floor_7th_door():
     add "images/rooms/_objects_/doors/front_door.png" xpos 420 ypos 105
@@ -156,10 +152,10 @@ label enter_room_of_req:
 
     python:
         for i in mr_evs_list:
-            i.checkLock()
+            i.check_lock()
 
-    if first_visit_req == False:
-        $ first_visit_req = True
+    if not mirror_intro_done:
+        $ mirror_intro_done = True
         $ achievement.unlock("mirror")
         call gen_chibi("stand","door","base",flip=False)
         call hide_blkfade

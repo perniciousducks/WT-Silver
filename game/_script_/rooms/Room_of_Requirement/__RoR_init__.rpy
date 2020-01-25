@@ -1,5 +1,5 @@
 default temp_outfit_GLBL = None
-default first_visit_req = False
+default mirror_intro_done = False
 
 default mr_ev_WPIIA = mirror_stories(
     name = "Whose points is it anyway?",
@@ -117,7 +117,7 @@ default mr_evs_list = [
     mr_ev_ABTTD,
     mr_ev_ASOC,
     mr_ev_ABAS,
-    mr_ev_ADR,
+    #mr_ev_ADR, # Out of commission
     mr_ev_PR,
     mr_ev_AOC
     # mr_ev_CM
@@ -139,31 +139,19 @@ init python:
             self.__dict__.update(**kwargs)
 
         def get_name(self):
-            ret_str = "{size=12}\""+self.name+"\" by "
+            ret_str = "{size=-2}\""+self.name+"\"{/size}{size=-6} by "
             for s in self.authors:
                 ret_str += s +", "
 
             return ret_str[0:len(ret_str)-2]+"{/size}"
 
         def get_description(self):
-            returnV = "{size=10}"
             if self.unlocked:
-                returnV += "story description: " + self.story_description
+                return self.story_description
             else:
-                returnV += self.ach_desc
+                return self.ach_desc
 
-            return returnV+"{/size}"
-
-        def get_buttom_right(self):
-            return self.getCharcters()
-
-        def get_image(self):
-            if self.unlocked == False:
-                return "interface/icons/icon_lock.png"
-            else:
-                return "interface/icons/icon_lock_open.png"
-
-        def getCharcters(self):
+        def get_annotation(self):
             ret_str = ""
             for c in self.content_characters:
                 if c == "luna":
@@ -183,7 +171,13 @@ init python:
 
             return ret_str
 
-        def checkLock(self):
+        def get_image(self):
+            if self.unlocked:
+                return Image("interface/unlocked_True.png")
+            else:
+                return Image("interface/unlocked_False.png")
+
+        def check_lock(self):
             unlocked = True
             for c in self.content_characters:
                 if c == "luna":

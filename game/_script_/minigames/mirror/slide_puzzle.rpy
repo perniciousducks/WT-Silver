@@ -113,7 +113,7 @@ screen puzzle_board():
         textbutton "Fuck it!" action Return(-2) text_size 32 xalign 0.5 yalign 0.93
 
     frame:
-        background #00000000
+        background None
         xalign 0.5
         yalign 0.5
         xsize 425

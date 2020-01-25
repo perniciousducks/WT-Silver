@@ -51,7 +51,7 @@ screen notes():
     zorder 1
 
 screen gift(win=False):
-    zorder 20
+    zorder 30
     if win:
         use notes
         on "show" action Play("sound", "sounds/win2.mp3")
@@ -59,6 +59,6 @@ screen gift(win=False):
     add the_gift align (0.5, 0.4) zoom get_zoom(the_gift, 320,320)
 
 screen clothing_unlock():
-    zorder 20
+    zorder 30
     add "interface/panels/"+str(interface_color)+"/clothing_panel_B.png" at Position(xalign=0.5, ypos=100)
     add mannequin_preview xalign 0.47 ypos 52 zoom 0.6/scaleratio

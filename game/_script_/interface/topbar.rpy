@@ -256,7 +256,7 @@ screen ui_menu():
                 textbutton "Decorate" action [SetVariable("toggle_menu", False), Jump("decorate_room_menu")] background None xalign 0.5 text_outlines [ (2, "#00000080", 1, 0) ]
 
             #if day > 1 and config.developer:
-            #    textbutton "{size=-11}Show Chars{/size}" action [SetVariable("toggle_menu", False), Jump("summon_characters")] background #000
+            #    textbutton "{size=-11}Show Chars{/size}" action [SetVariable("toggle_menu", False), Jump("summon_characters")] background "#000"
 
         hbox:
             xpos 50
@@ -373,72 +373,32 @@ label scene_gallery:
 label return_gallery:
     call blkfade
     $ gallery_active = False
-
     jump main_room
 
-
-
-
-
-
-
 label decorate_room_menu:
-    $ current_category = None
 
-    label deco_menu:
-    python:
+    $ item_list = [wall_deco_list, fireplace_deco_list, cupboard_deco_list+misc_deco_list+misc_hat_list]
 
-        category_list = []
-        # Use the category item's name for the button images inside the 'interface/topbar/buttons/color/' folder.
-        category_list.append("deco_wall")
-        category_list.append("deco_fireplace")
-        category_list.append("deco_cupboard")
+    show screen bottom_menu("decorate_room_menu", (
+        ("Posters", "deco_wall"), ("Trophies", "ui_quest_items"), ("Miscellaneous", "deco_cupboard")
+    ), item_list, "ui_delete")
+    with d3
 
-        if current_category == None:
-            menu_title = "Wall Deco"
-            current_category = category_list[0]
-            category_choice = category_list[0]
-
-        item_list = []
-        if current_category == "deco_wall":
-            menu_title = "Posters"
-            item_list.extend(wall_deco_list)
-        if current_category == "deco_fireplace":
-            menu_title = "Trophies"
-            item_list.extend(fireplace_deco_list)
-        if current_category == "deco_cupboard":
-            menu_title = "Miscellaneous"
-            item_list.extend(cupboard_deco_list)
-            item_list.extend(misc_deco_list)
-            item_list.extend(misc_hat_list)
-
-        #item_list = list(filter(lambda x: x.unlocked==False, item_list))
-    show screen bottom_menu(item_list, category_list, menu_title, xpos=0, ypos=475, func_btn=True, func_btn_ico="ui_delete")
-
+    label .interact:
     $ _return = ui.interact()
 
-    hide screen bottom_menu
-    if category_choice != current_category: # Updates categories.
-        $ current_category = _return
-    elif isinstance(_return, item_class):
-        if _return.number > 0 or _return.unlocked:
-            call use_deco_item(_return)
+    if isinstance(_return, tuple):
+        if _return[1].number > 0 or _return[1].unlocked:
+            call use_deco_item(_return[1])
             $ achievement.unlock("decorator")
         else:
-            "You haven't unlocked this decoration yet."
-            jump deco_menu
+            ">You haven't unlocked this decoration yet."
 
-
-    elif _return == "Close":
-        $ current_page = 0
-        $ category_choice = None
+    elif _return == "func":
         hide screen bottom_menu
         with d3
-
-        jump main_room_menu
-    elif _return == "func":
         menu:
-            "> Remove all decorations?"
+            ">Remove all decorations?"
             "Yes":
                 # Loop through all decorations and deactivate them
                 python:
@@ -453,24 +413,27 @@ label decorate_room_menu:
                     for i in xrange(len(misc_hat_list)):
                         misc_hat_list[i].active = False
 
-                $ poster_OBJ.room_image = ""
-                $ trophy_OBJ.room_image = ""
-                $ cupboard_deco = ""
-                $ phoenix_deco_OBJ.room_image = ""
-                $ fireplace_deco_OBJ.room_image = ""
-                $ owl_deco_OBJ.room_image = ""
-                $ owl_OBJ.room_image = "owl_idle"
-                $ owl_OBJ.idle_image = "owl_letter"
-                $ owl_OBJ.hover_image = "owl_hover"
+                    poster_OBJ.room_image = ""
+                    trophy_OBJ.room_image = ""
+                    cupboard_deco = ""
+                    phoenix_deco_OBJ.room_image = ""
+                    fireplace_deco_OBJ.room_image = ""
+                    owl_deco_OBJ.room_image = ""
+                    owl_OBJ.room_image = "owl_idle"
+                    owl_OBJ.idle_image = "owl_letter"
+                    owl_OBJ.hover_image = "owl_hover"
             "No":
-                jump deco_menu
-    elif _return == "inc":
-        $ current_page += 1
-    elif _return == "dec":
-        $ current_page += -1
+                pass
+        jump decorate_room_menu
+    
+    elif _return == "Close":
+        $ current_page = 0
+        $ category_choice = None
+        hide screen bottom_menu
+        with d3
+        jump main_room_menu
 
-    jump deco_menu
-
+    jump .interact
 
 label use_deco_item(item=None): # Add the 'item' decoration to the room. Remove it when 'item' is currently displayed as a deco.
     if item.type == "poster":

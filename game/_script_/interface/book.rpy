@@ -72,13 +72,6 @@ init python:
             self.contents.append(["Day {}\n{}".format(day, entry[0]), str(entry[1]), id])
             self.pages = len(self.contents)-1
             return
-            
-    def text_image_scale(tag, argument):
-        cropped = crop_image_zoom(argument, 100, 160)
-        img = Transform(cropped[0], zoom=cropped[1])
-        return [(renpy.TEXT_DISPLAYABLE, img)]
-            
-    config.self_closing_custom_text_tags["tis"] = text_image_scale
     
 label book_handle(book=None):
     $ book.open()

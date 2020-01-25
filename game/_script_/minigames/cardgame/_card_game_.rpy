@@ -280,7 +280,7 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
         ypos ypos_card -6
         xsize card_width*cardzoom
         ysize card_height*cardzoom
-        background #00000000
+        background None
 
         if interact:
             imagebutton:

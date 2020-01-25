@@ -212,52 +212,26 @@ default  books = [] # Not used!
 label read_book_menu:
     hide screen desk_menu
 
-    python:
-        item_list = []
-        if toggle1_bool:
-            item_list.extend(book_list.fiction_books)
-        if toggle2_bool:
-            item_list.extend(book_list.write_books)
-        if toggle4_bool:
-            item_list.extend(book_list.read_books)
+    $ item_list = [filter(lambda x : x.unlocked and not x.done, y) for y in [book_list.fiction_books, book_list.write_books, book_list.read_books]]
 
-        item_list = list(filter(lambda x: (x.unlocked == True and x.done==False), item_list))
+    show screen list_menu("read_book_menu", "Read Books", ("Fictional", "Educational", "Efficiency"), item_list)
+    with d3
 
-    show screen list_menu(item_list, "Read Books", toggle1="Fictional", toggle2="Educational", toggle4="Efficiency")
-    with d1
-
+    label .interact:
     $ _return = ui.interact()
-
-    hide screen list_menu
 
     if isinstance(_return, item_class):
         $ book_choice = _return
-        hide screen desk_empty
         jump handle_book_selection
 
     elif _return == "Close":
-        $ current_page = 0
-        hide screen desk_empty
+        hide screen list_menu
         jump main_room_menu
 
-    elif _return == "toggle1":
-        $ toggle1_bool = not toggle1_bool
-    elif _return == "toggle2":
-        $ toggle2_bool = not toggle2_bool
-    elif _return == "toggle3":
-        $ toggle3_bool = not toggle3_bool
-    elif _return == "toggle4":
-        $ toggle4_bool = not toggle4_bool
-
-    elif _return == "inc":
-        $ current_page += 1
-    elif _return == "dec":
-        $ current_page += -1
-
-    jump read_book_menu
-
+    jump .interact
 
 label handle_book_selection:
+    hide screen list_menu
     $ the_gift = book_choice.get_image()
     show screen gift
     with d3
@@ -476,52 +450,28 @@ label book_complete:
 label read_scroll_menu:
     hide screen desk_menu
 
-    python:
-        item_list = []
-        if toggle1_bool:
-            item_list.extend(scroll_list_A)
-        if toggle2_bool:
-            item_list.extend(scroll_list_B)
-        if toggle3_bool:
-            item_list.extend(scroll_list_C) #Silver Scrolls.
+    $ item_list = [filter(lambda x : x.unlocked, y) for y in [scroll_list_A, scroll_list_B, scroll_list_C]]
 
-        item_list = list(filter(lambda x: x.unlocked == True , item_list))
+    show screen list_menu("read_scroll_menu", "Scrolls", ("Volume I", "Volume II", "Silver", "Comments"), item_list)
+    with d3
 
-    show screen list_menu(item_list, "Scrolls", toggle1="Volume I", toggle2="Volume II", toggle3="Silver", toggle4="Comments")
-    with d1
-
+    label .interact:
     $ _return = ui.interact()
-
-    hide screen list_menu
 
     if isinstance(_return, item_class):
         $ scroll_choice = _return
+        hide screen list_menu
         jump read_scroll
 
     elif _return == "Close":
-        $ current_page = 0
+        hide screen list_menu
         jump main_room_menu
 
-    elif _return == "toggle1":
-        $ toggle1_bool = not toggle1_bool
-    elif _return == "toggle2":
-        $ toggle2_bool = not toggle2_bool
-    elif _return == "toggle3":
-        $ toggle3_bool = not toggle3_bool
-    elif _return == "toggle4":
-        $ toggle4_bool = not toggle4_bool
-        if toggle4_bool == True:
-            $ commentaries = True
-        else:
-            $ commentaries = False
+    elif isinstance(_return, tuple):
+        if _return[0] == "toggle4":
+            $ commentaries = _return[1]
 
-    elif _return == "inc":
-        $ current_page += 1
-    elif _return == "dec":
-        $ current_page += -1
-
-    jump read_scroll_menu
-
+    jump .interact
 
 label read_scroll:
     $ scroll = scroll_choice

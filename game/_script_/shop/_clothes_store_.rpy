@@ -14,6 +14,19 @@ init python:
             outfit = globals()[var_name]
             outfit.unlock()
             
+init python:
+    # Used for prediction
+    def all_clothes_images():
+        lists = [
+            hermione_outfits_list, hermione_costumes_list, hermione_dresses_list, hermione_clothing_sets_list,
+            luna_outfits_list, luna_costumes_list, luna_dresses_list, luna_clothing_sets_list,
+            astoria_outfits_list, astoria_costumes_list, astoria_dresses_list, astoria_clothing_sets_list,
+            susan_outfits_list, susan_costumes_list, susan_dresses_list, susan_clothing_sets_list,
+            cho_outfits_list, cho_costumes_list, cho_dresses_list, cho_clothing_sets_list
+        ]
+        for i in lists:
+            for j in i:
+                yield j.get_image()
 
 ### CLOTHING STORE ###
 
@@ -44,6 +57,8 @@ label open_clothing_store:
     pause.2
 
     $ renpy.block_rollback()
+
+    $ renpy.start_predict(*all_clothes_images())
 
     call clothing_store_chitchat
 
@@ -94,6 +109,8 @@ label close_clothing_store:
     hide screen list_menu
     hide screen clothing_menu
     with d3
+
+    $ renpy.stop_predict(*all_clothes_images())
 
     m "That's all for today, thank you."
     maf "You're welcome, sir. Come back any time."
@@ -181,6 +198,7 @@ label clothing_shop_menu:
         item_list = list(filter(lambda x: (x.unlocked==False and x.unlockable==False), item_list))
 
     show screen clothing_menu(item_list, character_choice, item_choice)
+    with d3
 
     $ _return = ui.interact()
 
@@ -216,57 +234,26 @@ label clothing_shop_menu:
 
     jump clothing_shop_menu
 
-
-
-#Clothing Items
 label clothing_items_shop_menu:
     hide screen clothing_menu
     show screen clothing_store_menu
 
-    python:
-        item_list = []
-        if toggle1_bool:
-            pass
-            #item_list.extend()
-        if toggle2_bool:
-            item_list.extend(accs_list)
-        if toggle3_bool:
-            item_list.extend(misc_list)
-        if toggle4_bool:
-            item_list.extend(dye_list)
+    $ item_list = [filter(lambda x : not (x.unlocked or x.unlockable), y) for y in [[], accs_list, misc_list, dye_list]]
 
-        item_list = list(filter(lambda x: (x.unlocked==False and x.unlockable==False), item_list))
+    show screen list_menu("clothing_items_shop_menu", "Clothing Items", ("Clothing", "Accessories", "Other", "Dyes"), item_list)
+    with d3
 
-    show screen list_menu(item_list, "Clothing Items", toggle1="Clothing", toggle2="Accs.", toggle3="Misc.", toggle4="Dyes" )
-
+    label .interact:
     $ _return = ui.interact()
-
-    hide screen list_menu
 
     if isinstance(_return, item_class):
         call purchase_clothing_item(_return)
+        jump clothing_items_shop_menu
 
     elif _return == "Close":
-        $ current_page = 0
         jump close_clothing_store
 
-    elif _return == "toggle1":
-        $ toggle1_bool = not toggle1_bool
-    elif _return == "toggle2":
-        $ toggle2_bool = not toggle2_bool
-    elif _return == "toggle3":
-        $ toggle3_bool = not toggle3_bool
-    elif _return == "toggle4":
-        $ toggle4_bool = not toggle4_bool
-
-    elif _return == "inc":
-        $ current_page += 1
-    elif _return == "dec":
-        $ current_page += -1
-
-    jump clothing_items_shop_menu
-
-
+    jump .interact
 
 label purchase_clothing_item(item):
     hide screen clothing_store_menu

@@ -1,36 +1,52 @@
-### Universal Menus ###
 
-default toggle1_bool = True
-default toggle2_bool = True
-default toggle3_bool = True
-default toggle4_bool = True
+# Maps title + toggle names to menu state (current page and toggles)
+default menu_states = {}
+
+init python:
+    def store_menu_states(menu_id, scope):
+        menu_states[menu_id] = scope
 
 #List Menu #Customizable
-screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=""):
-    $ items_shown=4
+screen list_menu(menu_id, title, toggle_names=tuple(), menu_groups=[]):
     zorder 5
 
     use close_button
 
-    #Up Button
+    # Store screen variables while hidden
+    default old_scope = menu_states.get(menu_id, None)
+    on ("hide","replaced") action Function(store_menu_states, menu_id, _scope)
+
+    default current_page = 0 if old_scope is None else old_scope["current_page"]
+    default toggles = set([i for i in xrange(0,max(len(toggle_names), len(menu_groups)))]) if old_scope is None else old_scope["toggles"]
+
+    # Menu items from enabled groups
+    default menu_items = []
+    $ menu_items = list(itertools.chain.from_iterable([menu_groups[i] for i in sorted(toggles) if i < len(menu_groups)]))
+
+    default items_shown = 4    
+    default max_page = 0
+    $ max_page = max(0, (len(menu_items)-1)/items_shown)
+    $ current_page = min(current_page, max_page)
+
+    # Page up
     imagebutton:
         xpos 825
         ypos 240
         idle "interface/general/"+interface_color+"/button_arrow_up.png"
-        if not current_page <= 0:
-            hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
-            action Return("dec")
+        hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
+        sensitive current_page > 0
+        action SetScreenVariable("current_page", max(0, current_page-1))
 
-    #Down Button
+    # Page down
     imagebutton:
         xpos 825
         ypos 292
         idle "interface/general/"+interface_color+"/button_arrow_down.png"
-        if current_page < math.ceil((len(menu_items)-1)/items_shown):
-            hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
-            action Return("inc")
+        hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
+        sensitive current_page <= max_page
+        action SetScreenVariable("current_page", min(max_page, current_page+1))
 
-    #Main Window
+    # Main window
     imagemap:
         xsize 638
         ysize 544
@@ -40,255 +56,184 @@ screen list_menu(menu_items, title, toggle1="", toggle2="", toggle3="", toggle4=
         ground "interface/panels/"+interface_color+"/items_panel.png"
         hover "interface/panels/"+interface_color+"/items_panel_hover.png"
 
-        #Header
+        # Header
         hbox:
-            xpos 11
-            ypos 30
-            xsize 265
-            ysize 45
-            text title xalign 0.5 yalign 0.5 size 16 bold 0.2
+            pos (11,30)
+            xysize (265,45)
+            text title align (0.5,0.5) size 16 bold 0.2
 
-        #Toggles
-        if toggle1 != "": #Top left
-            $ toggle1_image = "interface/general/"+interface_color+"/check_true.png" if toggle1_bool else "interface/general/"+interface_color+"/check_false.png"
-            hotspot (319, 31, 115, 22) clicked Return("toggle1")
-            add toggle1_image xpos 322 ypos 30 zoom 0.8
-            text "{size=10}" + toggle1 + "{/size}" xpos 342 ypos 35
+        # Toggles
+        grid 2 2:
+            pos (319,31)
+            for i in xrange(0,4):
+                if i < len(toggle_names):
+                    $ toggle_names[i]
+                    if i in toggles:
+                        $ toggle_image = "interface/general/"+interface_color+"/check_true.png"
+                    else:
+                        $ toggle_image = "interface/general/"+interface_color+"/check_false.png"
+                    button:
+                        style "empty"
+                        xysize (110,22)
+                        left_margin 5
+                        clicked [ToggleSetMembership(toggles, i),SetScreenVariable("current_page", 0),Return(("toggle"+str(i), i in toggles))]
+                        add toggle_image zoom 0.8
+                        text "{size=10}" + toggle_names[i] + "{/size}" xpos 22 yalign 0.5
+                else:
+                    null
 
-        if toggle2 != "": #Borrom left
-            $ toggle1_image = "interface/general/"+interface_color+"/check_true.png" if toggle2_bool else "interface/general/"+interface_color+"/check_false.png"
-            hotspot (319, 31+20, 115, 22) clicked Return("toggle2")
-            add toggle1_image xpos 322 ypos 30+22 zoom 0.8
-            text "{size=10}" + toggle2 + "{/size}" xpos 342 ypos 35+20
-
-        if toggle3 != "": #Top right
-            $ toggle1_image = "interface/general/"+interface_color+"/check_true.png" if toggle3_bool else "interface/general/"+interface_color+"/check_false.png"
-            hotspot (319+114, 31, 115, 22) clicked Return("toggle3")
-            add toggle1_image xpos 322+115 ypos 30 zoom 0.8
-            text "{size=10}" + toggle3 + "{/size}" xpos 342+115 ypos 35
-
-        if toggle4 != "": #Borrom right
-            $ toggle1_image = "interface/general/"+interface_color+"/check_true.png" if toggle4_bool else "interface/general/"+interface_color+"/check_false.png"
-            hotspot (319+114, 31+20, 115, 22) clicked Return("toggle4")
-            add toggle1_image xpos 322+115 ypos 30+22 zoom 0.8
-            text "{size=10}" + toggle4 + "{/size}" xpos 342+115 ypos 35+20
-
-        #Items
-        for i in xrange(current_page*items_shown, (current_page*items_shown)+items_shown):
+        # Items
+        $ page_offset = current_page*items_shown
+        for i in xrange(page_offset, page_offset+items_shown):
             if i < len(menu_items):
-                if menu_items[i].unlockable == False: #Unlockables are shown but aren't buyable/clickable
-                    hotspot (12, 86+90*(i-(current_page*items_shown)), 540, 90) clicked Return(menu_items[i])
-                use list_menu_item(menu_items[i], 77+90*(i-(current_page*items_shown)))
-
+                $ item_ypos = 85+90*(i-page_offset)
+                if not menu_items[i].unlockable: # Unlockables are shown but aren't buyable/clickable
+                    hotspot (16, item_ypos, 528, 87) clicked Return(menu_items[i])
+                use list_menu_item(menu_items[i], item_ypos)
 
 screen list_menu_item(menu_item, ypos=0):
     frame:
-        background #00000000
-        xpos 12
+        style "empty"
+        xpos 16
         ypos ypos
-        xsize 530
-        ysize 100
+        xsize 528
+        ysize 87
 
-        $ image_zoom = get_zoom(menu_item.get_image(), 82, 81)
+        $ item_image = menu_item.get_image()
+        if isinstance(item_image, im.ImageBase):
+            $ item_image, image_zoom = crop_image_zoom(item_image, 83, 83)
+        else:
+            $ image_zoom = get_zoom(item_image, 83, 83)
 
-        vbox:
-            xpos 0
-            ypos 1
-            xsize 82
-            ysize 81
-            add menu_item.get_image() xalign 0.5 yalign 0.5 zoom image_zoom
+        fixed:
+            pos (6,2)
+            xysize (83, 83)
+            add item_image align (0.5, 0.5) zoom image_zoom
 
-        vbox:
-            xpos 100
-            ypos 5
-            xsize 440
-            ysize 22
-            text menu_item.get_name() size 16 yalign 0.5
+        fixed:
+            pos (100, 0)
+            xysize (420, 24)
+            text menu_item.get_name() size 16 yalign 1.0
 
-        if store_menu: #Displays item's gold value.
-            vbox:
-                xpos 270
-                ypos 5
-                xsize 250
-                ysize 22
-                text menu_item.get_cost() size 16 xalign 1.0 yalign 0.5
+            if store_menu: # Displays item's gold value
+                text menu_item.get_cost() size 16 text_align 1.0 align (1.0,1.0)
 
-        vbox:
-            xpos 100
-            ypos 35
-            xsize 430
-            ysize 55
+        fixed:
+            pos (100, 32)
+            xysize (420, 50)
             text menu_item.get_description() size 12
 
-        text menu_item.get_buttom_right() xalign 1.0 yalign 1.0
+        text menu_item.get_annotation() align (1.0,1.0) offset (-2,-2)
 
-
-
-#Icon Menu #Customizable
-screen icon_menu(menu_items, categories, character, title, xpos, ypos):
-    $ items_shown = 20
-    $ ui_xpos = xpos
-    $ ui_ypos = ypos
-    zorder 5
-
-    #Close Button
-    use close_button
-
-    #Up Button
-    imagebutton:
-        xpos ui_xpos +480
-        ypos ui_ypos +175
-        idle "interface/general/"+interface_color+"/button_arrow_up.png"
-        if not current_page <= 0:
-            hover "interface/general/"+interface_color+"/button_arrow_up_hover.png"
-            action Return("dec")
-
-    #Down Button
-    imagebutton:
-        xpos ui_xpos +480
-        ypos ui_ypos +175 +52
-        idle "interface/general/"+interface_color+"/button_arrow_down.png"
-        if current_page < math.ceil((len(menu_items)-1)/items_shown):
-            hover "interface/general/"+interface_color+"/button_arrow_down_hover.png"
-            action Return("inc")
-
-    #Main Window
-    imagemap:
-        xpos ui_xpos
-        ypos ui_ypos
-        xsize 467 #width of ground/hover image.
-        ysize 548 #height of ground/hover image.
-
-        ground "interface/panels/"+interface_color+"/icon_panel.png"
-        hover "interface/panels/"+interface_color+"/icon_panel_hover.png"
-
-        #Header
-        hbox:
-            xpos 11
-            ypos 30
-            xsize 265
-            ysize 45
-            text title xalign 0.5 yalign 0.5 size 16 bold 0.2
-
-        #Categories
-        for i in xrange(0,len(categories)): #Max 5 items!
-            hotspot (12+(90*i), 87, 83, 85) clicked SetVariable("category_choice",categories[i]), Return(categories[i])
-            add "interface/icons/" +str(categories[i])+ ".png" xpos 0+(90*i) ypos 70 zoom 0.35
-
-        #Items
-        for i in xrange(current_page*items_shown, (current_page*items_shown)+items_shown):
-            if i < len(menu_items):
-                $ row = i // 5
-                $ col = i % 5
-                if menu_items[i].number > 0 or menu_items[i].unlocked == True:
-                    hotspot ( (12+(90*col)), (87+92+(92*row)-(current_page*items_shown)), 83, 85) clicked Return(menu_items[i])
-                text str(menu_items[i].number) xpos 75+(90*col) ypos 150+92+(92*row)
-                use icon_menu_item(menu_items[i], 5+90*(col-(current_page*items_shown)), 175+90*(row-(current_page*items_shown)))
-
-
-screen icon_menu_item(menu_item, xpos=0, ypos=0):
-    frame:
-        background #00000000
-        xpos xpos
-        ypos ypos
-        xsize 90
-        ysize 92
-
-        $ image_zoom = get_zoom(menu_item.get_image(), 82, 81)
-
-        vbox:
-            xpos 0
-            ypos 1
-            xsize 82
-            ysize 81
-            if menu_item.number > 0 or menu_item.unlocked == True:
-                add menu_item.get_image() xalign 0.5 yalign 0.5 zoom image_zoom
-            else:
-                add grayTint(menu_item.get_image() ) xalign 0.5 yalign 0.5 zoom image_zoom
-
-            if menu_item.number > 0:
-                text "{color=#ffffff}" +str(menu_item.number)+ "{/color}" xalign 0.5 xpos 15 ypos -80
-
-            if menu_item.active:
-                #text "{color=#ffffff}Active{/color}" xalign 0.5 ypos -20
-                add "interface/topbar/icon_check.png" xalign 0.95 ypos -40
-
-
-
-
-# Bottom Menu #Customizable
-screen bottom_menu(menu_items, categories, title, xpos, ypos, func_btn=False, func_btn_ico="ui_empty"):
-    $ items_shown= 9
-    $ UI_xpos_offset = xpos
-    $ UI_ypos_offset = ypos
+screen bottom_menu(menu_id, group_names, menu_groups, func_btn=None):
     zorder 30
 
-    #Close Button
     use close_button
 
-    #Main Window
+    # Store screen variables while hidden
+    default old_scope = menu_states.get(menu_id, None)
+    on ("hide","replaced") action Function(store_menu_states, menu_id, _scope)
+
+    default current_page = 0 if old_scope is None else old_scope["current_page"]
+    default current_group = 0 if old_scope is None else old_scope["current_group"]
+
+    # Menu items from enabled groups
+    default menu_items = []
+    $ menu_items = menu_groups[current_group]
+
+    default items_shown = 9
+    default max_page = 0
+    $ max_page = max(0, (len(menu_items)-1)/items_shown)
+    $ current_page = min(current_page, max_page)
+
+    # Main window
     imagemap:
-        xpos UI_xpos_offset
-        ypos UI_ypos_offset
-        xsize 1080 #width of ground/hover image.
-        ysize 548 #height of ground/hover image.
+        xpos 0
+        ypos 475
+        xsize 1080
+        ysize 548
 
-        ground "interface/panels/" +interface_color+ "/bottom_panel.png"
-        hover "interface/panels/"  +interface_color+ "/bottom_panel_hover.png"
+        ground "interface/panels/"+interface_color+"/bottom_panel.png"
+        hover "interface/panels/"+interface_color+"/bottom_panel_hover.png"
 
-
-        #Menu Name
-        add "interface/general/" +interface_color+ "/button_wide.png" xpos 130 ypos 0
+        # Menu name
+        $ title = group_names[current_group][0]
+        add "interface/general/"+interface_color+"/button_wide.png" xpos 130 ypos 0
         text title xalign 0.5 yalign 0.5 xpos 130+70 ypos 0+18 size 12
 
-        #Categories
-        for i in xrange(0,len(categories)):
-            #hotspot (300+(33*i), 0, 33, 34) clicked SetVariable("category_choice",categories[i]), Return(categories[i])
-            #add "interface/topbar/buttons/" +interface_color+ "/" +str(categories[i])+ ".png" xpos 300+(33*i) ypos 0
-
-            # Use imagebutton instead of hotspot to make use of imagehover() tint function
+        # Categories
+        for i in xrange(0,len(menu_groups)):
+            $ group_icon = group_names[i][1]
             imagebutton:
                 xpos 300+(33*i)
                 ypos 0
-                idle "interface/topbar/buttons/" +interface_color+ "/" +str(categories[i])+ ".png"
-                hover image_hover("interface/topbar/buttons/" +interface_color+ "/" +str(categories[i])+ ".png")
-                action [SetVariable("category_choice",categories[i]), Return(categories[i])]
+                idle "interface/topbar/buttons/"+interface_color+"/"+group_icon+".png"
+                hover image_hover("interface/topbar/buttons/" +interface_color+ "/" +group_icon+".png")
+                sensitive current_group != i
+                action [SetScreenVariable("current_group", i), SetScreenVariable("current_page", 0)]
 
         if func_btn:
             imagebutton:
-                xpos 300+(33*(len(categories)+1))
+                xpos 300+(33*(len(menu_groups)+1))
                 ypos 0
-                idle "interface/topbar/buttons/"+interface_color+"/"+func_btn_ico+".png"
-                hover image_hover("interface/topbar/buttons/"+interface_color+"/"+func_btn_ico+".png")
+                idle "interface/topbar/buttons/"+interface_color+"/"+func_btn+".png"
+                hover image_hover("interface/topbar/buttons/"+interface_color+"/"+func_btn+".png")
                 action Return("func")
 
-        #Items
-        for i in xrange(current_page*items_shown, (current_page*items_shown)+items_shown):
+        # Items
+        $ page_offset = current_page*items_shown
+        for i in xrange(page_offset, page_offset+items_shown):
             if i < len(menu_items):
                 $ col = i % 5
                 $ row = i % 1
-                hotspot ( 140+(90*(i-(current_page*items_shown))), 34, 83, 85) clicked Return(menu_items[i])
-                use icon_menu_item(menu_items[i], 135+(90*(i-(current_page*items_shown))), 34 )
+                hotspot ( 140+(90*(i-page_offset)), 34, 90, 90) clicked Return((current_group, menu_items[i]))
+                use icon_menu_item(menu_items[i], 140+(90*(i-page_offset)), 34 )
 
-    #Left Button
+    # Page left
     imagebutton:
-        xpos UI_xpos_offset +80
-        ypos UI_ypos_offset +50
+        xpos 80
+        ypos 475+50
         idle "interface/general/"+interface_color+"/button_arrow_left.png"
-        if not current_page <= 0:
-            hover "interface/general/"+interface_color+"/button_arrow_left_hover.png"
-            action Return("dec")
+        hover "interface/general/"+interface_color+"/button_arrow_left_hover.png"
+        sensitive current_page > 0
+        action SetScreenVariable("current_page", max(0, current_page-1))
 
-    #Right Button
+    # Page right
     imagebutton:
-        xpos UI_xpos_offset +80 +880
-        ypos UI_ypos_offset +50
+        xpos 880+80
+        ypos 475+50
         idle "interface/general/"+interface_color+"/button_arrow_right.png"
-        if current_page < math.ceil((len(menu_items)-1)/items_shown):
-            hover "interface/general/"+interface_color+"/button_arrow_right_hover.png"
-            action Return("inc")
+        hover "interface/general/"+interface_color+"/button_arrow_right_hover.png"
+        sensitive current_page <= max_page
+        action SetScreenVariable("current_page", min(max_page, current_page+1))
 
+screen icon_menu_item(menu_item, xpos=0, ypos=0):
+    frame:
+        background None
+        xpos xpos
+        ypos ypos
+        xsize 90
+        ysize 90
 
+        $ item_image = menu_item.get_image()
+        if isinstance(item_image, im.ImageBase):
+            $ item_image, image_zoom = crop_image_zoom(item_image, 80, 80)
+        else:
+            $ image_zoom = get_zoom(item_image, 80, 80)
+
+        fixed:
+            xsize 80
+            ysize 80
+            if menu_item.number > 0 or menu_item.unlocked == True:
+                add item_image xalign 0.5 yalign 0.5 zoom image_zoom
+            else:
+                add grayTint(item_image) xalign 0.5 yalign 0.5 zoom image_zoom
+
+            if menu_item.number > 0:
+                text "{color=#ffffff}" +str(menu_item.number)+ "{/color}"
+
+            if menu_item.active:
+                add "interface/topbar/icon_check.png" align (1.0,1.0)
 
 # Clothing Menu #Customizable
 screen clothing_menu(menu_items, character, preview):
@@ -374,11 +319,12 @@ screen clothing_menu(menu_items, character, preview):
             text "Gold: "+preview.get_cost() xpos 509 ypos 557 size 16
 
         #Mannequin Display Panels.
-        for i in xrange(current_page*items_shown, (current_page*items_shown)+items_shown):
+        $ page_offset = current_page*items_shown
+        for i in xrange(page_offset, page_offset+items_shown):
             if i < len(menu_items):
-                hotspot( 70+(227*(i-(current_page*items_shown))) , (107) , 175 , 284 ) clicked Return(menu_items[i])
+                hotspot( 70+(227*(i-page_offset)) , (107) , 175 , 284 ) clicked Return(menu_items[i])
 
-                add menu_items[i].get_image() xpos (-7+(227*(i-(current_page*items_shown)) )) ypos 30 zoom 0.6/scaleratio
+                add menu_items[i].get_image() xpos (-7+(227*(i-page_offset))) ypos 30 zoom 0.6/scaleratio
 
         #Large Mannequin Preview.
         if preview != None:
@@ -392,38 +338,3 @@ screen clothing_menu(menu_items, character, preview):
                 add cho.body.get_mannequin() xpos 600 ypos 0 zoom 1.0/scaleratio
             else:
                 add "interface/icons/outfits/mannequin_"+str(character)+".png" xpos 600 ypos 0 zoom 1.0/scaleratio
-
-
-
-#Character Select Menu #Customizable
-screen character_select_menu(character_list=[], menu_text="menu name", xposition=24, yposition=52):
-
-    imagemap:
-        xpos xposition
-        ypos yposition
-        xsize 198
-        ysize 548
-
-        ground "interface/stat_select/"+str(interface_color)+"/ground_character_screen_"+str(wardrobe_color)+".png"
-        hover "interface/stat_select/"+str(interface_color)+"/hover_character_screen_"+str(wardrobe_color)+".png"
-        
-        button style "empty" action NullAction()
-
-        vbox:
-            xpos 11
-            ypos 31
-            xsize 173
-            ysize 41
-            text menu_text xalign 0.5 yalign 0.5  size 14
-
-        for i in xrange(0,len(character_list)):
-            $ row = i // 2
-            $ col = i % 2
-
-            $ button_image = im.FactorScale(get_head_icon(character_list[i][0]), 0.4) if character_list[i][1] == 1 else grayTint(im.FactorScale(get_head_icon(character_list[i][0]), 0.4))
-
-
-
-            hotspot(13+(90*col), 87+(92*row), 83, 85) clicked Return(character_list[i][0])
-
-            add button_image xpos (90*col) ypos 92+(92*row)

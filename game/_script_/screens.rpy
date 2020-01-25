@@ -445,8 +445,21 @@ screen preferences():
                 has vbox
                 
                 label _("Saving & Loading")
-                textbutton _("Autosave") action [ToggleVariable("preferences.autosave", True, False), Notify(("Autosave preference will take effect after restarting the game", left))]
+                textbutton _("Autosave") action [
+                    ToggleVariable("preferences.autosave", True, False),
+                    Notify(("Autosave preference will take effect after restarting the game", left))
+                ]
                 textbutton _("Save Delete Warning") action ToggleVariable("preferences.savedelwarn", True, False)
+
+            if config.developer:
+                frame:
+                    has vbox
+
+                    label "Advanced"
+                    textbutton "Use drawable resolution" action [
+                        ToggleVariable("preferences.use_drawable_resolution", True, False),
+                        Function(set_use_drawable_resolution)
+                    ]
 
         if not renpy.variant('android'):
             vbox:

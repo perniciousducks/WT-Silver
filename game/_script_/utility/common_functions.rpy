@@ -126,4 +126,15 @@ init -1 python:
             store._game_menu_screen = store._tmp_menu
             del store._tmp_menu
 
+    def set_use_drawable_resolution():
+        config.use_drawable_resolution = preferences.use_drawable_resolution
+        config.drawable_resolution_text = preferences.use_drawable_resolution
+        renpy.force_full_redraw()
+        if preferences.fullscreen:
+            renpy.reset_physical_size()
+            preferences.fullscreen = True
+        else:
+            s = renpy.get_physical_size()
+            renpy.set_physical_size(s)
+
     get_volume_preference = renpy.game.preferences.get_volume

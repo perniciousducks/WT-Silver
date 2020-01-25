@@ -12,6 +12,7 @@ default preferences.text_color_day = "#402313"
 default preferences.text_color_night = "#341c0f"
 default preferences.text_outline = "#00000000"
 default preferences.nightmode = False
+default preferences.use_drawable_resolution = True
 
 # DO NOT MODIFY ANYTHING BELOW THIS LINE IF YOU DON'T KNOW WHAT YOU'RE DOING.
 
@@ -57,6 +58,8 @@ define config.imagemap_cache = True
 define config.optimize_texture_bounds = True
 define config.automatic_images = None
 define config.debug_image_cache = False
+define config.use_drawable_resolution = preferences.use_drawable_resolution
+define config.drawable_resolution_text = preferences.use_drawable_resolution
 
 # Saving and Loading
 define config.save_directory = "WT SILVER"

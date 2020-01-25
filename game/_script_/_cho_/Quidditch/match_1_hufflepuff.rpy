@@ -150,6 +150,7 @@ label hufflepuff_match:
     centered "{size=+7}{color=#cbcbcb}At the Quidditch pitch...{/color}{/size}"
 
     call room("quidditch_pitch")
+    play bg_sounds "sounds/outskirts.mp3" fadein 2
     call sna_chibi("stand", "right", "base")
     call gen_chibi("stand", "mid", "base", flip=True)
     call hide_blkfade

@@ -145,7 +145,7 @@ screen map_buttons():
 
     #Room of Requirement
     if unlocked_7th:
-        if not first_visit_req:
+        if not mirror_intro_done:
             frame:
                 style "empty"
                 xpos UI_xpos_offset +80

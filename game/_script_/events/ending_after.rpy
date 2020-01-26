@@ -110,7 +110,7 @@ label ending_after:
                 call play_music("ball") #can this fade in/be a bit lower volume
                 ">But before you get the chance to say anything, music suddenly emerges out the great hall doorway."
                 her "Care for a dance?" # smiles
-                m "I... of course!"
+                g9 "I... of course!"
                 her "..." # smiles
                 ">With your arms wrapped around Hermione's waist the two of you begin moving along with the music."
                 ">As some time passes it's very clear that the students are still eyeing Hermione up and are now staring at her through the doorway."
@@ -121,7 +121,7 @@ label ending_after:
                 her "Hey! At least warn me!" # Blush, smiles
                 ">Swiftly taking your hand away from Hermione's butt you give a quick smirk towards your audience."
                 her "I didn't say stop..."
-                m "Of course..."
+                g9 "Of course..."
                 ">Without a moments hesitation you lift her skirt up, holding it against her back and leaving her panties exposed."
                 her "Sir..." #could change the sirs here to the name that the player has set for hermione to call you
                 ">Now firmly gripping her butt with your other hand you begin to massage her cheeks whilst moving along with the music."
@@ -142,12 +142,12 @@ label ending_after:
                 her "Sir... this isn't the time for..."
                 ">As the music reaches it's peak, Hermione moves one of her hands off your back and puts it against her mouth to quickly try and stifle herself."
                 her "*Mmmmf*..."
-                stop music fadeout 3
+                stop music fadeout 6
                 ">Hermione shudders in your arms and then quickly lets go as the music comes to an end and you snag the letter from her skirt, pocketing it."
-                her "*Ah*...{w=0.3}*Ah*...{w=0.3}*Ah*..."
+                her "*Ah*...{w=0.8}*Ah*...{w=0.8}*Ah*..."
                 ">With a quick glance towards the doorway you notice some Slytherin students have blocked it with their backs towards you."
                 m "You look tired girl, you'd better pull yourself together..."
-                her "Yes...{w=0.3} *Ah*... I just need to...{w=0.3} catch my breath..."
+                her "Yes...{w=0.3} *Ah*...{w=0.6} I just need to...{w=0.3} catch my breath..."
                 m "Perhaps sooner rather than later, the music has stopped..."
                 her "Oh...{w=0.3} *Ah*...{w=0.3} I didn't even notice..."
                 ">Hermione moves to stand up but stumbles as she tries to compose herself..."
@@ -193,24 +193,24 @@ label ending_after:
 
                 # Snape enters and walks up to desk
                 call sna_walk(action="enter", xpos="desk")
-                g4 "What did I said about knocking!"
-                sna "Who rule..."
-                sna "You mother fucker..."
-                sna "I knew it!"
-                sna "I knew you couldn't make yourself leave yet."
+                g4 "What did I tell you about knocking!"
+                call sna_main("Who rule...","snape_03",ypos="head")
+                call sna_main("You mother fucker...","snape_01",ypos="head")
+                call sna_main("I knew it!","snape_02",ypos="head")
+                call sna_main("I knew you couldn't make yourself leave yet.","snape_02",ypos="head")
                 g9 "Hey, it's not my fault this place has so many..."
                 g4 "I have urges okay!"
-                sna "How very uncharacteristic of you..."
-                sna "But good news nonetheless..." # Smirks
-                sna "So I take it you have... unfinished business before you depart?"
+                call sna_main("How very uncharacteristic of you...","snape_01",ypos="head")
+                call sna_main("But good news nonetheless...","snape_02",ypos="head")
+                call sna_main("So I take it you have... unfinished business before you depart?","snape_37",ypos="head")
                 m "A headmaster can't just up and leave before the school year is over can he?"
                 m "Also I'm getting quite fond of the place... Not that I want to pick out curtains or anything."
-                sna "..." # Smirks
-                sna "Very well... our little scheme continues."
-                sna "Although at the moment I've got a class to attend to."
+                call sna_main("...","snape_45",ypos="head")
+                call sna_main("Very well... our little scheme continues.","snape_02",ypos="head")
+                call sna_main("Although at the moment I've got a class to attend to.","snape_01",ypos="head")
                 call sna_walk("door")
                 m "Yes... I also have very important business to get on with..."
-                sna "I'm sure..."
+                call sna_main("Sure you do...","snape_01",ypos="head")
                 call sna_walk(action="leave")
                 jump main_room
             else:

@@ -1176,7 +1176,8 @@ label hg_pf_talk_tonks:
                     call ton_walk(action="leave")
 
 
-    $ tonks.equip(ton_outfit_last) # Equip custom outfit.
+    $ tonks.equip(ton_outfit_last)
+    $ hermione.equip(her_outfit_last)
     $ tonks_busy = True
 
     return

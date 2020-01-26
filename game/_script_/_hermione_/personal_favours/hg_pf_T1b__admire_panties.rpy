@@ -18,7 +18,6 @@ label hg_pf_admire_panties:
     $ current_payout = 10
     $ hg_pf_admire_panties.start()
 
-
     # End Event
     label end_hg_pf_admire_panties:
 
@@ -28,7 +27,6 @@ label hg_pf_admire_panties:
     show screen blkfade
     with d3
 
-    call set_her_action(None)
     call her_chibi("stand","desk","base", flip=False)
     call gen_chibi("sit_behind_desk")
 
@@ -39,7 +37,6 @@ label hg_pf_admire_panties:
         call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     else:
         call her_main("", "smile", "narrow", "base", "mid_soft", xpos="mid", ypos="base", trans=fade)
-
 
     # Points
     if her_tier <= 3:
@@ -106,7 +103,7 @@ label hg_pf_admire_panties_T1_intro_E1:
     m "What don't you understand, [hermione_name]?"
     m "Do you need these points or not?"
     call her_main("I do...", "open", "base", "base", "mid")
-    m "Lift up your skirt then..."
+    m "Show them to me then..."
     call her_main(".............", "angry", "base", "angry", "mid")
 
     call hg_pf_admire_panties_T1
@@ -118,7 +115,7 @@ label hg_pf_admire_panties_T1_E1:
     m "Nothing drastic, really..."
     m "I just want you to show me your panties."
     call her_main("This again?", "angry", "base", "angry", "mid")
-    m "Yes. Now lift up your skirt..."
+    m "Yes. Show them to me..."
     call her_main(".............", "angry", "base", "angry", "mid")
 
     call hg_pf_admire_panties_T1
@@ -131,12 +128,12 @@ label hg_pf_admire_panties_T1: # Call label
     hide screen bld1
     with d3
 
-    call set_her_action("lift_skirt")
-
+    $ hermione.strip("bottom")
     call her_chibi("lift_skirt","mid","base")
     with d3
+    
     call ctc
-
+        
     call play_music("playful_tension")
     show screen blktone
     call her_main(".....................", "angry", "base", "angry", "mid", xpos="mid", ypos="base")
@@ -198,8 +195,7 @@ label hg_pf_admire_panties_T2: # Call label
     hide screen bld1
     with d3
 
-    call set_her_action("lift_skirt")
-
+    $ hermione.strip("bottom")
     call her_chibi("lift_skirt","mid","base")
     with d3
 
@@ -248,9 +244,7 @@ label hg_pf_admire_panties_T3_intro_E1:
     hide screen bld1
     with d3
 
-    $ hermione.strip("panties")
-    call set_her_action("lift_skirt")
-
+    $ hermione.strip("bottom", "panties")
     call her_chibi("lift_skirt","mid","base")
     with d3
     pause.8
@@ -307,9 +301,7 @@ label hg_pf_admire_panties_T3_E1:
     hide screen bld1
     with d3
 
-    $ hermione.strip("panties")
-    call set_her_action("lift_skirt")
-
+    $ hermione.strip("bottom", "panties")
     call her_chibi("lift_skirt","mid","base")
     with d3
     pause.8
@@ -360,11 +352,11 @@ label hg_pf_admire_panties_T3_E1:
             with d3
             ">Hermione puts on her panties."
 
-            $ hermione.wear("panties")
-
-            call update_her_uniform
+            if hermione.is_worn("panties") == False:
+                $ hermione.wear("panties")
+            else:
+                $ hermione.equip(her_panties_base1)
             call her_chibi("lift_skirt")
-            call set_her_action("lift_skirt")
 
             call her_main("", "base", "narrow", "base", "mid_soft")
             call ctc
@@ -373,6 +365,7 @@ label hg_pf_admire_panties_T3_E1:
 
         "\"No, keep them off!\"":
             call her_main("Of course, [genie_name].", "soft", "narrow", "annoyed", "up")
+            $ hermione.unequip("panties")
             call ctc
 
     jump end_hg_pf_admire_panties
@@ -388,13 +381,7 @@ label hg_pf_admire_panties_T3_E2:
     hide screen bld1
     with d3
 
-    if h_request_wear_panties:
-        $ hermione.wear("panties")
-    else:
-        $ hermione.strip("panties")
-
-    call set_her_action("lift_skirt")
-
+    $ hermione.strip("bottom")
     call her_chibi("lift_skirt","mid","base")
     with d3
     pause.8
@@ -420,13 +407,12 @@ label hg_pf_admire_panties_T3_E2:
                 with d3
                 ">Hermione puts on her panties."
 
-                $ h_request_wear_panties = True
-                $ hermione.wear("panties")
+                if hermione.is_worn("panties") == False:
+                    $ hermione.wear("panties")
+                else:
+                    $ hermione.equip(her_panties_base1)
 
-                call update_her_uniform
                 call her_chibi("lift_skirt")
-                call set_her_action("lift_skirt")
-
                 call her_main("", "base", "narrow", "base", "mid_soft")
                 call ctc
 
@@ -434,6 +420,7 @@ label hg_pf_admire_panties_T3_E2:
 
             "\"No, keep them off!\"":
                 call her_main("Of course, [genie_name].", "soft", "narrow", "annoyed", "up")
+                $ hermione.unequip("panties")
                 call ctc
 
     else:
@@ -452,13 +439,8 @@ label hg_pf_admire_panties_T3_E2:
                 with d3
                 call nar(">Hermione takes off her panties.")
 
-                $ h_request_wear_panties = False
                 $ hermione.strip("panties")
-
-                call update_her_uniform
-
                 call her_chibi("lift_skirt")
-                call set_her_action("lift_skirt")
 
                 call her_main("", "base", "narrow", "base", "mid_soft")
                 call ctc

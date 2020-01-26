@@ -707,7 +707,7 @@ label hg_pf_strip_T1_E2:
         $ hermione.strip("top")
         pause.5
     if hermione.is_worn("bra"):
-        call nar(">Continuing with taking off her bra somewhat clumsily...")
+        call nar(">She takes off her bra somewhat clumsily...")
         $ hermione.strip("bra")
 
     pause.2

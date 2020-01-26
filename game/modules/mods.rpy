@@ -40,7 +40,6 @@ init python:
         print "{} Mods Enabled".format(_count)
         return
 
-init python:
     mods_module()
     
 label splashscreen:

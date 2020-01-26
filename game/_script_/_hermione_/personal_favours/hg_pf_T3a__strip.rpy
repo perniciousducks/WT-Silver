@@ -216,7 +216,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
 
     call her_main(".............................................................", "disgust", "narrow", "base", "down", cheeks="blush")
     call nar(">Hermione gives you a confused look...")
-        
+
     pause.5
     show screen blktone
     call her_main("{size=-5}(Am I really going to do this?){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush", xpos="base", ypos="base", trans=fade)
@@ -253,7 +253,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
             call her_main(".................................", "angry", "worriedCl", "worried", "mid", cheeks="blush")
             call nar(">Hermione starts taking off her top...","start")
             ">She seems very hesitant and takes her time..."
-            call nar(">Finally she takes a deep breath and takes off her top...","end")
+            call nar(">Finally she takes a deep breath and removes her top...","end")
 
             call her_main("{size=-5}(Alright, here it comes...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
             call her_main("{size=-5}(For the honour of the Gryffindor!){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
@@ -261,7 +261,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
 
             $ hermione.strip("top")
             call ctc
-            
+
             call her_main("{size=-5}(I actually did it...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
             call her_main("{size=-5}([genie_name] can see my breasts while I'm dancing for him...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
             call her_main("{size=-5}(This is so demeaning...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
@@ -280,7 +280,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
             with d3
 
             call nar(">Hermione looks extremely embarrassed...","start")
-            call nar(">She fumbles with the clasp...","end")
+            call nar(">Her fingers shaking as she fumbles somewhat...","end")
 
     stop music fadeout 1.0
     m "What's the problem, [hermione_name]?"
@@ -385,8 +385,8 @@ label hg_pf_strip_T1_intro_E2:
     call her_main("*groan*", "clench", "narrow", "base", "down")
 
     if hermione.is_worn("top"):
-        call nar(">Hermione starts take off her top...")
-        call nar(">Her top seems to be stuck somehow, but the girl keeps pulling on at the fabric with anger...")
+        call nar(">Hermione begins taking off her top...")
+        call nar(">Pulling at the fabric in anger, making it more difficult than it should be...")
         call her_main("Why won't it....?!")
         call her_main("There!", "annoyed", "narrow", "annoyed", "mid")
         call nar(">Hermione finally manages to untangle herself and sends her top flying to the other side of the room...")
@@ -423,14 +423,14 @@ label hg_pf_strip_T1_intro_E2:
     call her_main("Clothes?!!", "disgust", "narrow", "base", "mid_soft")
     call her_main("{size=+9}I don't need them!{/size}", "scream", "base", "angry", "mid", emote="01")
     if hermione.is_worn("bra"):
-        call nar(">Hermione keeps dancing, angrily just when...")
+        call nar(">Hermione keeps dancing angrily, and then...")
         call her_main("", "angry", "base", "angry", "mid")
         $ hermione.strip("bra")
         pause.2
         g4 "{size=-4}(When did she??!){/size}"
     call ctc
 
-    call her_main("Do you enjoy this, [genie_name]?")
+    call her_main("Are you enjoying this, [genie_name]?")
     call her_main("", "angry", "base", "angry", "mid")
 
     call her_main("Shall I shake my breasts for you like one of those harlots?", "scream", "closed", "angry", "mid")
@@ -438,10 +438,10 @@ label hg_pf_strip_T1_intro_E2:
     call her_main("Of course! Why wouldn't I degrade myself for your pleasure?!")
     call her_main("This is completely {size=+7}acceptable!{/size}", "scream", "base", "angry", "mid", emote="01")
     call her_main("", "angry", "base", "angry", "mid")
-    
+
     pause.2
     call nar(">Hermione is starting to shake her naked breasts rather clumsily...","start")
-    call nar(">As you watch the girl's tits sway right and left before your face you find yourself fighting the urge to...","end")
+    call nar(">As you watch the girl's tits sway right and left you find yourself fighting the urge to...","end")
 
     menu:
         m "..."
@@ -500,9 +500,9 @@ label hg_pf_strip_T1_intro_E2:
 
     ">Hermione puts her hands on her tits and starts squeezing them..."
     ">You can only assume that she means to look seductive, but she just looks awkward and ashamed."
-    call her_main("(I used to be a top student... Used to have standards...)")
+    call her_main("(I used to be a top student...{w=0.4} Used to have standards...)")
     ">Hermione clutches her tits even harder and then gives them a couple of twists..."
-    ">It almost looks as if she is mad at her own breasts and trying to punish them..."
+    ">Almost looking as if she is mad at her own breasts and trying her best to punish them..."
 
     call nar(">You find the thought strangely arousing...","end")
 
@@ -525,10 +525,10 @@ label hg_pf_strip_T1_intro_E2:
         m "Now take off your panties!"
         call her_main("................", "angry", "wide", "base", "stare")
 
-        call nar(">Hermione looks horror-struck. All of her anger is gone...","start")
+        call nar(">Hermione looks at you horror-struck. All of her anger now gone...","start")
         call her_main(".................", "annoyed", "closed", "base", "mid")
         ">Without saying another word..."
-        call nar(">She starts to pull down her panties...","end")
+        call nar(">She starts pulling down her panties...","end")
 
         $ hermione.strip("panties")
 
@@ -597,7 +597,7 @@ label hg_pf_strip_T1_intro_E2:
 
     show screen blkfade
     with d5
-    
+
     $ hermione.wear("bra", "panties", "bottom")
     ">Hermione hastily hops off your desk."
     ">She starts putting her clothes back on rather frantically..."
@@ -606,7 +606,7 @@ label hg_pf_strip_T1_intro_E2:
     hide screen blkfade
     with d5
 
-    call her_main("My top! Where is my top?!", "scream", "worriedCl", "worried", "mid", xpos="mid", ypos="base", flip=False)
+    call her_main("My top! Where's my top?!", "scream", "worriedCl", "worried", "mid", xpos="mid", ypos="base", flip=False)
     m "It's over there, by the fireplace..."
 
     hide screen hermione_main
@@ -703,16 +703,16 @@ label hg_pf_strip_T1_E2:
     call her_main("..........", "annoyed", "narrow", "angry", "R")
 
     if hermione.is_worn("top"):
-        call nar(">Hermione starts undoing her top...")
+        call nar(">Hermione shifts her body towards you and starts taking off her top...")
         $ hermione.strip("top")
         pause.5
     if hermione.is_worn("bra"):
-        call nar(">Hermione takes off her bra somewhat clumsily...")
+        call nar(">Continuing with taking off her bra somewhat clumsily...")
         $ hermione.strip("bra")
-    
+
     pause.2
     call ctc
-    
+
     g9 "Yes! The tits!"
 
     call play_music("playful_tension") # SEX THEME.
@@ -751,9 +751,9 @@ label hg_pf_strip_T1_E2:
 
 
     call nar(">Hermione is starting to sway her hips rather seductively...")
-    
+
     if hermione.is_worn("bottom"):
-        call nar(">While she slides her bottoms down...")
+        call nar(">Whilst sliding her bottoms down...")
         $ hermione.strip("bottom")
     pause.3
     call ctc
@@ -778,7 +778,7 @@ label hg_pf_strip_T1_watch:
 
     call nar(">You can see that she is doing her best to not fall off the desk...","start")
     call nar(">But she looks rather ridiculous in her attempts to act like a professional stripper...","end")
-    
+
     call ctc
 
     call her_main("..........", "disgust", "worriedCl", "worried", "mid")
@@ -1012,39 +1012,39 @@ label hg_pf_strip_T2:
     call her_main("...", "base", "narrow", "base", "mid_soft", xpos="mid", ypos="base")
     m "Yes, very nice."
     call her_main("...", "annoyed", "narrow", "worried", "down")
-    
+
     if hermione.is_worn("top"):
         call nar(">Hermione hastily starts pulling at her top...")
-        
+
     m "Slowly, please..."
     m "There's no rush."
-    
+
     if hermione.is_worn("top"):
         call her_main("I'm not!", "open", "base", "angry", "mid")
-        call her_main("It's just... it's stuck.", "disgust", "narrow", "base", "down")
+        call her_main("It's just... I...", "disgust", "narrow", "base", "down")
         g9 "Would you like some help with it?"
         if her_tier <= 5:
             call her_main("No...", "annoyed", "base", "angry", "mid")
-            call her_main("I can do it myself, [genie_name].", "open", "closed", "base", "mid")
+            call her_main("I can do it, [genie_name].", "open", "closed", "base", "mid")
         else:
             call her_main("No, [genie_name].", "base", "narrow", "base", "mid_soft")
             call her_main("Just enjoy the show...", "soft", "narrow", "base", "mid_soft")
             g9 "I will, [hermione_name]."
-            
+
     call her_main("...", "base", "narrow", "worried", "down")
-    
+
     if hermione.is_worn("top"):
         call nar(">Hermione pulls her top over her head...")
         call nar(">And takes it off somewhat gracefully...")
         $ hermione.strip("top")
         pause.5
-        
+
     if hermione.is_worn("bra"):
-        call nar(">hermione undoes her bra rather provocatively.")
-        
+        call nar(">Hermione undoes her bra rather provocatively.")
+
         $ hermione.strip("bra")
         pause.5
-    
+
     call ctc
 
     g9 "Yes! Shake those tits!"
@@ -1122,9 +1122,9 @@ label hg_pf_strip_T2:
                 call her_main("Right...", "annoyed", "base", "worried", "R")
 
     call nar(">Hermione is starting to sway her hips rather seductively...")
-    
+
     if hermione.is_worn("bottom"):
-        call nar(">While she slides her bottoms down...")
+        call nar(">Whilst sliding her bottoms down...")
         $ hermione.strip("bottom")
         pause.5
     call ctc
@@ -1255,7 +1255,7 @@ label hg_pf_strip_T2_masturbate:
     call nar(">You keep on wanking while you watch Hermione's dance...")
     show screen blktone
     call her_main("Time for the finishing act I suppose...", "annoyed", "closed", "base", "mid")
-    
+
     if hermione.is_worn("panties"):
         m "Yes, [hermione_name]! Take them off!"
         call her_main("........", "annoyed", "narrow", "base", "dead")
@@ -1312,7 +1312,7 @@ label hg_pf_strip_T2_masturbate:
     #
     # TODO: CUM LAYER
     #
-    
+
     call her_chibi("sit_naked_shocked","on_desk","on_desk")
 
     call her_main("??!!!", "shock", "wide", "base", "stare")
@@ -1332,7 +1332,7 @@ label hg_pf_strip_T2_masturbate:
         call her_main("*sob!*........................", "shock", "narrow", "angry", "R", tears="messy")
         show screen blkfade
         with d5
-        
+
         $ hermione.wear("all")
         stop music fadeout 5.0
         ">.................{w}.................{w}.................{w}................."

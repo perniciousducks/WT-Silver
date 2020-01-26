@@ -32,8 +32,6 @@ label hg_pf_grope_ass_T1:
         "\"No. Just stand still, [hermione_name].\"": # Fails
             jump hg_pf_grope_ass_T1_front
 
-
-
 label hg_pf_grope_ass_T1_front:
     call her_chibi_scene("behind_desk_front", trans=d7)
 
@@ -62,8 +60,6 @@ label hg_pf_grope_ass_T1_front:
     $ her_mood += 4
 
     jump end_hermione_event
-
-
 
 label hg_pf_grope_ass_T1_back:
     call her_chibi_scene("behind_desk_front", trans=d7)
@@ -110,12 +106,12 @@ label hg_pf_grope_ass_T1_back:
     call her_main("You said all you were going to do is touch!", "angry", "base", "angry", "mid", cheeks="blush")
 
     menu:
-        "\"Fine, fine... I just couldn't resist....\"":
+        "\"Alright, alright... stop making a scene, sheesh....\"":
             call her_main(".......................", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
             jump hg_pf_grope_ass_T1_continue
 
-        "-Give her butt another slap-":
+        "-Give her butt yet another slap-":
             $ her_mood += 2
             pass
 
@@ -137,6 +133,7 @@ label hg_pf_grope_ass_T1_back:
     menu:
         g4 "Tsk..."
         "\"I... I apologize...\"":
+            m "......It's not my fault......"
             call her_main("An apology won't be enough, [genie_name]!", "angry", "base", "angry", "mid", cheeks="blush")
             m "What else do you want? More points?"
             call her_main("Yes, I believe I'm owed at least that much!", "angry", "base", "angry", "mid", cheeks="blush")
@@ -172,7 +169,7 @@ label hg_pf_grope_ass_T1_back:
             call her_main("You can't be serious!?", "scream", "wide", "base", "stare", cheeks="blush")
             g4 "The Gryffindor house, minus 10 points!"
             g4 "There! It's done!"
-            call her_main("Gr...........", "angry", "base", "angry", "mid", cheeks="blush")
+            call her_main("Grr...........", "angry", "base", "angry", "mid", cheeks="blush")
             call her_main("........................", "angry", "base", "angry", "mid", cheeks="blush")
             call her_main("This is not fair...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
             m "What? Hey, wait, don't you start crying on me..."
@@ -199,8 +196,6 @@ label hg_pf_grope_ass_T1_back:
 
             jump end_hermione_event
 
-
-
 label hg_pf_grope_ass_T1_continue:
     call her_chibi_scene("grope_ass_back")
     with d7
@@ -221,8 +216,6 @@ label hg_pf_grope_ass_T1_continue:
     call her_main("...................", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
     jump end_hg_pf_grope
-
-
 
 ### Tier 2 ###
 
@@ -245,8 +238,6 @@ label hg_pf_grope_ass_T2:
 
             jump hg_pf_grope_ass_T2_front
 
-
-
 label hg_pf_grope_ass_T2_front:
     call her_chibi_scene("behind_desk_front")
     with d7
@@ -266,7 +257,7 @@ label hg_pf_grope_ass_T2_front:
 
     call her_main("!!!", "mad", "wide", "base", "stare", cheeks="blush")
     m "What is it?"
-    call her_main("nothing, [genie_name]. Your hands are cold, that's all...", "open", "base", "base", "R", cheeks="blush")
+    call her_main("N-nothing, [genie_name]. Your hands are cold, that's all...", "open", "base", "base", "R", cheeks="blush")
 
     call nar(">You run your hands up and down Hermione's legs...")
     call her_main(".........................", "annoyed", "narrow", "angry", "R", cheeks="blush")
@@ -295,7 +286,7 @@ label hg_pf_grope_ass_T2_front:
         "\"Open your eyes, or you'll lose the points!\"":
             $ her_mood += 10
 
-            call her_main("Tsk! {size=-5}(You perverted old--{/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush", ypos="head")
+            call her_main("Tsk! {size=-5}(You wretched old--{/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush", ypos="head")
             m "Did you say something, [hermione_name]?"
             call her_main("It's nothing, [genie_name].", "angry", "base", "angry", "mid")
 
@@ -317,8 +308,6 @@ label hg_pf_grope_ass_T2_front:
             call her_main(".....................", "annoyed", "base", "angry", "mid", cheeks="blush")
 
             jump end_hg_pf_grope
-
-
 
 label hg_pf_grope_ass_T2_back:
     call her_chibi_scene("behind_desk_back", trans=d7)
@@ -353,12 +342,12 @@ label hg_pf_grope_ass_T2_back:
             pass
 
     menu:
-        "\"Fine, fine... I just couldn't resist....\"":
+        "\"Alright, alright...\"":
             call her_main("It's not a big deal...", "base", "base", "base", "R", cheeks="blush")
 
             jump hg_pf_grope_ass_T2_continue
 
-        "-Give her butt another slap-":
+        "-Give her butt yet another slap-":
             call slap_her
 
             call her_main("[genie_name], not so loud, please...", "silly", "narrow", "base", "up", cheeks="blush")
@@ -367,8 +356,6 @@ label hg_pf_grope_ass_T2_back:
             call her_main("................", "base", "base", "base", "R", cheeks="blush")
 
             jump hg_pf_grope_ass_T2_continue
-
-
 
 label hg_pf_grope_ass_T2_continue:
     call her_chibi_scene("grope_ass_back")
@@ -426,14 +413,20 @@ label hg_pf_grope_ass_T2_continue:
             call her_main("(Shall I just be quiet, then.....?)", "disgust", "narrow", "base", "down", cheeks="blush")
 
     call nar(">You keep on playing with Hermione's buttocks...","start")
-
     call nar(">You slide your hands up and down her inner thighs...","end")
-
     call her_main("................", "angry", "worriedCl", "worried", "mid", cheeks="blush")
 
     menu:
-        "-Slide your hands under her panties-":
+        "-Slide your hands under her panties-" if hermione.is_worn("panties"):
             call nar(">You slowly slide one of your hands under the fabric of the girl's panties...")
+            call her_main("[genie_name]... What are you...?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
+            m "That's alright, just think about those 15 points your house is about to receive..."
+            call her_main(".............", "disgust", "narrow", "base", "down", cheeks="blush")
+
+            pass
+            
+        "-Slide your hands across her pussy-" if not hermione.is_worn("panties"):
+            call nar(">You slowly slide one of your hands across her pussy..")
             call her_main("[genie_name]... What are you...?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
             m "That's alright, just think about those 15 points your house is about to receive..."
             call her_main(".............", "disgust", "narrow", "base", "down", cheeks="blush")
@@ -454,7 +447,7 @@ label hg_pf_grope_ass_T2_continue:
                 "-Force your finger into her pussy!-":
                     ">You force one of your fingers into her pussy..."
                     ">It's very tight and warm..."
-                    ">Also it is relatively dry... Doesn't look like Hermione's taking any pleasure in this..."
+                    ">Also it is relatively dry... Doesn't look like Hermione's taking much pleasure in this..."
 
                     jump hg_pf_grope_ass_T2_fail
 
@@ -482,8 +475,6 @@ label hg_pf_grope_ass_T2_continue:
         "-Stop pushing your luck. Dismiss the girl-":
             jump end_hg_pf_grope
 
-
-
 label hg_pf_grope_ass_T2_fail:
     call her_main("NO! What have you done!!?", "angry", "worriedCl", "worried", "mid", cheeks="blush", tears="soft_blink", ypos="head")
     call nar(">Hermione gives you an unexpectedly strong shove...")
@@ -495,9 +486,9 @@ label hg_pf_grope_ass_T2_fail:
     call her_main("You... you...", "angry", "worriedCl", "worried", "mid", cheeks="blush", tears="crying_blink")
     call her_main("{size=+7}YOU RAPED ME!{/size}", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy", trans=hpunch)
     g4 "What? Don't be ridiculous, [hermione_name]! I did no such thing!"
-    call her_main("Yes you did! Yes you did!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+    call her_main("Yes you did. {size=+4}Yes you did!{/size}", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
     g4 "I most certainly did not!"
-    call her_main("No, you did, [genie_name]!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+    call her_main("No, you {size=+4}did{/size}, [genie_name]!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
     call her_main("Now, you will give me 20-", "angry", "base", "angry", "mid", cheeks="blush", tears="soft")
     call her_main("No, 100 house points or I am reporting you to the Ministry of magic!", "angry", "base", "angry", "mid", cheeks="blush", tears="soft")
 
@@ -529,7 +520,6 @@ label hg_pf_grope_ass_T2_fail:
             g4 "There was no rape!"
             call her_main("I hate you, [genie_name]!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
 
-
     call her_chibi_scene("reset","desk","base", trans=fade)
 
     call her_walk("door", "base")
@@ -539,8 +529,6 @@ label hg_pf_grope_ass_T2_fail:
     call her_chibi("leave")
 
     jump end_hermione_event
-
-
 
 ### Tier 3 ###
 
@@ -560,8 +548,6 @@ label hg_pf_grope_ass_T3:
         "\"No. Just stand still, [hermione_name].\"":
             call her_main("As you say, [genie_name]...", "soft", "base", "base", "mid", cheeks="blush", ypos="head")
             jump hg_pf_grope_ass_T3_front
-
-
 
 label hg_pf_grope_ass_T3_front:
     call her_chibi_scene("behind_desk_front", trans=d7)
@@ -595,7 +581,10 @@ label hg_pf_grope_ass_T3_front:
     call nar(">You give her butt another firm squeeze as you gently move to massage her inner leg...")
     call her_main("I'll take that as a yes...", "base", "narrow", "annoyed", "up", cheeks="blush")
 
-    call nar(">You continue to massage her inner thigh and occasionally gently brush against her panties...")
+    if hermione.is_worn("panties"):
+        call nar(">You continue to massage her inner thigh and occasionally gently brush against her panties...")
+    else:
+        call nar(">You continue to massage her inner thigh and occasionally gently brush against her pussy...")
     call her_main("Ah...", "soft", "narrow", "annoyed", "up", cheeks="blush")
     call her_main("...", "clench", "narrow", "annoyed", "up", cheeks="blush")
     g9 "..."
@@ -615,7 +604,7 @@ label hg_pf_grope_ass_T3_front:
     call her_chibi_scene("behind_desk_front", trans=d7)
     pause.8
 
-    call nar(">Bringing your hands out from underneath her skirt you hold them up in front of Hermione...")
+    call nar(">Bringing your hands out from between her legs you hold them up in front of Hermione...")
     m "What would you call this then, [hermione_name]?"
 
     call nar(">Hermione embarrassingly looks at you - as you present her with a sticky substance gleaming across your upper hand...")
@@ -625,7 +614,7 @@ label hg_pf_grope_ass_T3_front:
     call her_chibi_scene("grope_ass_front", trans=d7)
     pause.8
 
-    call nar(">Before she finishes her sentence you put your hand back under her skirt...")
+    call nar(">Before she finishes her sentence you put your hand back in place...")
     call her_main("...", "clench", "wide", "base", "stare", cheeks="blush")
 
     call nar(">You slowly brush your fingertips across her legs and move your hands to rest on her firm cheeks...")
@@ -637,15 +626,16 @@ label hg_pf_grope_ass_T3_front:
     call her_main("Oh, sorry...", "base", "narrow", "base", "mid_soft", cheeks="blush")
 
     menu:
-        "-Slide your hands under her panties-":
+        "-Slide your hands under her panties-" if hermione.is_worn("panties"):
+            call her_chibi_scene("grope_ass_front", trans=d7)
+            
+        "-Slide your hands across her pussy-" if not hermione.is_worn("panties"):
             call her_chibi_scene("grope_ass_front", trans=d7)
 
         "-No. That's enough for today. Dismiss her-":
             jump end_hg_pf_grope
 
     jump hg_pf_grope_ass_T3_continue
-
-
 
 label hg_pf_grope_ass_T3_back:
     call her_chibi_scene("behind_desk_back", trans=d7)
@@ -679,7 +669,6 @@ label hg_pf_grope_ass_T3_back:
     call her_main("It feels fine...", "soft", "narrow", "worried", "down", cheeks="blush")
     m "I meant not having to look at me..."
     call her_main("Oh...{w} it doesn't matter to me how you want it...", "soft", "base", "base", "R", cheeks="blush")
-
     m "Is that so?"
     call her_main("Of cours-{w=0.6}{nw}", "soft", "closed", "base", "mid", cheeks="blush")
     call her_main("!!!", "clench", "wide", "base", "stare", cheeks="blush") #yelps
@@ -689,7 +678,10 @@ label hg_pf_grope_ass_T3_back:
     call nar(">Lessening your grip of her cheeks slightly - you then move down towards her inner thighs - and gently begin massaging her with your thumbs...")
     call her_main("...", "soft", "narrow", "annoyed", "up", cheeks="blush")
 
-    call nar(">Moving them gently up and down Hermione begins to relax as your soft hands occasionally brush against her panties...")
+    if hermione.is_worn("panties"):
+        call nar(">Moving them gently up and down Hermione begins to relax as your soft hands occasionally brush against her panties...")
+    else:
+        call nar(">Moving them gently up and down Hermione begins to relax as your soft hands occasionally brush against her pussy...")
     call her_main("Ah...", "open", "narrow", "annoyed", "up", cheeks="blush") #Involuntarily moans
     call her_main("...", "base", "narrow", "annoyed", "up", cheeks="blush") #Blushes furiously
     g9 "..."
@@ -697,7 +689,10 @@ label hg_pf_grope_ass_T3_back:
     call nar(">You continue in silence and notices Hermione's chest has begun moving up and down faster than previously...")
 
     menu:
-        "-Slide your hands under her panties-":
+        "-Slide your hands under her panties-" if hermione.is_worn("panties"):
+            call her_chibi_scene("grope_ass_back", trans=d7)
+            
+        "-Slide your hands across her pussy-" if not hermione.is_worn("panties"):
             call her_chibi_scene("grope_ass_back", trans=d7)
 
         "-No. That's enough for today. Dismiss her-":
@@ -705,16 +700,12 @@ label hg_pf_grope_ass_T3_back:
 
     jump hg_pf_grope_ass_T3_continue
 
-
-
-
-
-
-
-
 label hg_pf_grope_ass_T3_continue:
 
-    call nar(">You slowly slide one of your hands under the fabric of the girl's panties...")
+    if hermione.is_worn("panties"):
+        call nar(">You slowly slide one of your hands under the fabric of the girl's panties...")
+    else:
+        call nar(">You slowly slide one of your hands across her pussy..")
     call her_main("[genie_name]... What are you...?", "open", "base", "base", "R", cheeks="blush", ypos="head")
 
     if her_tier <= 5:

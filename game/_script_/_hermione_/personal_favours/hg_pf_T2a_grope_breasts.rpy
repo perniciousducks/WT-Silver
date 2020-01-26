@@ -16,7 +16,7 @@ label hg_pf_grope_breasts_T1:
 
     call nar(">Hermione tries to pull away from you, but you hold her firmly by her breasts...")
 
-    call her_main("(??!)", "base", "narrow", "base", "up", cheeks="blush")
+    call her_main("??!", "base", "narrow", "base", "up", cheeks="blush")
     call play_music("playful_tension") #SEX THEME.
     call her_main("[genie_name], what are you-?", "angry", "worriedCl", "worried", "mid", cheeks="blush",emote="05")
     call nar(">She tries to pull away again.")
@@ -42,7 +42,7 @@ label hg_pf_grope_breasts_T1:
             call nar(">You squeeze her tits even harder...")
             call her_main("[genie_name], you're hurting them...", "shock", "worriedCl", "worried", "mid")
             m "Be quiet [hermione_name]..."
-            call her_main("aw..............", "disgust", "narrow", "base", "down", cheeks="blush")
+            call her_main("Ouch..............", "disgust", "narrow", "base", "down", cheeks="blush")
             call nar(">You squeeze her ample tits with all your strength.")
             call her_main("Ah! It hurts!", "angry", "squint", "base", "mid", cheeks="blush")
             call her_main("They're gonna burst! Please stop it!", "angry", "squint", "base", "mid", cheeks="blush")
@@ -56,7 +56,7 @@ label hg_pf_grope_breasts_T1:
 
         "-Give her tits a tender massage-":
             $ her_mood += 3
-            call nar(">You start massaging Hermione's beasts through her uniform...")
+            call nar(">You start massaging Hermione's beasts through her clothes...")
             call her_main("[genie_name]...?", "shock", "worriedCl", "worried", "mid")
             m "The points, [hermione_name]... You need the points. Concentrate on that."
             call her_main("Yes...", "annoyed", "narrow", "angry", "R", cheeks="blush")
@@ -65,7 +65,7 @@ label hg_pf_grope_breasts_T1:
             call nar(">You keep massaging her tits...","start")
             call nar(">You give one of her breasts a few pinches trying to locate the nipple...","end")
             call her_main("[genie_name]... you're pinching me...?", "shock", "worriedCl", "worried", "mid")
-            call nar(">Your attempts prove to be fruitless though. The fabric of the uniform is quite thick...")
+            call nar(">Your attempts prove to be fruitless though. The fabric of her clothes is quite thick...")
             call her_main("gryffindor ............", "angry", "worriedCl", "worried", "mid", cheeks="blush")
 
             jump end_hg_pf_grope
@@ -79,8 +79,6 @@ label hg_pf_grope_breasts_T1:
 
             jump end_hg_pf_grope
 
-
-
 ### Tier 2 ###
 
 label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
@@ -89,7 +87,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
 
     if hg_strip.trigger:
         menu:
-            "\"First, lift up your top\"":
+            "\"First, lift up your top\"" if hermione.is_worn("top"):
                 call her_main("Sir?!", "clench", "base", "base", "mid")
                 m "What? It's not like I haven't seen them before..."
                 call her_main("But!", "clench", "narrow", "base", "down")
@@ -98,9 +96,12 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
                 call her_main("...............................", "annoyed", "narrow", "base", "down")
                 call her_main("Promise me you will be gentle with them.", "soft", "narrow", "base", "mid_soft")
                 m "Sure..."
-
-                $ hermione.strip("bra")
-                call set_her_action("lift_top")
+                
+                $ hermione.strip("top")
+                if hermione.is_worn("bra"):
+                    m "Now your bra..."
+                    $ hermione.strip("bra")
+                    
                 call her_chibi_scene("behind_desk_show_tits", trans=d5)
                 call ctc
 
@@ -131,7 +132,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
     call her_main("What girl in her right mind would like to be treated this way?")
     stop music fadeout 1.0
 
-    call set_her_action("none")
+    $ hermione.wear("all")
     call her_chibi_scene("reset","desk","base", trans=fade)
     pause.5
 
@@ -144,8 +145,6 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
     m "Well, no points for Gryffindor then..."
 
     jump end_hermione_event
-
-
 
 label hg_pf_grope_breasts_T2_continue:
     call her_chibi_scene("grope_tits", trans=d7)
@@ -184,8 +183,6 @@ label hg_pf_grope_breasts_T2_continue:
 
     jump end_hg_pf_grope
 
-
-
 ### Tier 3 ###
 
 label hg_pf_grope_breasts_T3:
@@ -196,20 +193,25 @@ label hg_pf_grope_breasts_T3:
     call her_main("............", "base", "narrow", "worried", "down", cheeks="blush", ypos="head")
 
     call play_music("playful_tension") # SEX THEME.
-    call nar(">Hermione is starting to pull her uniform up...")
+    if hermione.is_worn("top") or hermione.is_worn("bra"):
+        call nar(">Hermione is reaches to undo her clothes...")
 
-    menu:
-        "\"That's right, take it off!\"":
-            $ hermione.strip("bra")
-            call set_her_action("lift_top")
-            jump hg_pf_grope_breasts_T3_naked
+        menu:
+            "\"That's right, take it off!\"":
+                $ hermione.strip("top")
+                
+                if hermione.is_worn("bra"):
+                    g9 "Show them to me at once!"
+                    her "......."
+                    $ hermione.strip("bra")
+                pass
 
-        "\"No, leave it on.\"":
-            m "I want to massage them while you are fully dressed..."
-            call her_main("Oh, I see...", "base", "base", "base", "R", cheeks="blush", ypos="head")
-            jump hg_pf_grope_breasts_T3_clothed
-
-
+            "\"No, leave it on.\"":
+                m "I want to massage them while you are fully dressed..."
+                call her_main("Oh, I see...", "base", "base", "base", "R", cheeks="blush", ypos="head")
+                jump hg_pf_grope_breasts_T3_clothed
+                
+    jump hg_pf_grope_breasts_T3_naked
 
 label hg_pf_grope_breasts_T3_naked:
     stop music fadeout 1.0
@@ -219,10 +221,7 @@ label hg_pf_grope_breasts_T3_naked:
     call play_music("playful_tension") # SEX THEME.
 
     hide screen hermione_main
-    $ hermione.strip("top")
-    $ hermione.strip("bra")
     show screen blktone
-    call set_her_action("lift_top")
     call her_main(xpos="mid", ypos="base")
     call ctc
 
@@ -258,8 +257,6 @@ label hg_pf_grope_breasts_T3_naked:
 
     jump hg_pf_grope_breasts_T3_continue
 
-
-
 label hg_pf_grope_breasts_T3_clothed:
     call her_chibi_scene("grope_tits", trans=d7)
     call ctc
@@ -281,12 +278,14 @@ label hg_pf_grope_breasts_T3_clothed:
 
             if her_tier <= 5:
                 call her_main("I mean, this isn't a big deal, as long as I am getting paid...", "base", "narrow", "base", "up", cheeks="blush")
-                call nar(">You keep on massaging her tits through her uniform...")
+                if hermione.is_worn("top"):
+                    call nar(">You keep on massaging her tits through her clothes...")
                 call her_main("A small price to pay for the honour of my house, really......{image=textheart}", "soft", "base", "base", "R", cheeks="blush")
             else:
                 m "Really? It seems to me as if you love it."
                 call her_main("I wouldn't say that I love it...", "base", "narrow", "base", "up", cheeks="blush")
-                call nar(">You keep on massaging her tits through her uniform...")
+                if hermione.is_worn("top"):
+                    call nar(">You keep on massaging her tits through her uniform...")
                 m "What would you say then, [hermione_name]?"
                 call her_main("I just like it, {size=-4}a lot{image=textheart}{/size}", "base", "narrow", "base", "up", cheeks="blush")
 
@@ -307,8 +306,6 @@ label hg_pf_grope_breasts_T3_clothed:
             call her_main("You don't need to be so rough with me....{image=textheart}", "base", "base", "base", "R", cheeks="blush")
 
             jump hg_pf_grope_breasts_T3_continue
-
-
 
 label hg_pf_grope_breasts_T3_continue:
     call her_chibi_scene("grope_tits", trans=d7)
@@ -358,8 +355,6 @@ label hg_pf_grope_breasts_T3_continue:
 
     jump end_hg_pf_grope
 
-
-
 ### Tier 4 ###
 
 label hg_pf_grope_breasts_T4_naked: # No top.
@@ -370,10 +365,7 @@ label hg_pf_grope_breasts_T4_naked: # No top.
     call play_music("playful_tension") # SEX THEME.
 
     hide screen hermione_main
-    $ hermione.strip("top")
-    $ hermione.strip("bra")
     show screen blktone
-    call set_her_action("lift_top")
     call her_main(xpos="mid", ypos="base")
     call ctc
 

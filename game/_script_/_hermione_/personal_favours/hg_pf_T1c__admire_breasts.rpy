@@ -76,11 +76,16 @@ label hg_pf_admire_breasts:
         call her_main("{size=-5}(No, Hermione, you silly girl!){/size}", "angry", "base", "angry", "mid", cheeks="blush", ypos="head")
         call her_main("{size=-5}(We are doing this to protect the honour of our house!){/size}", "angry", "base", "angry", "mid", cheeks="blush", ypos="head")
         call her_main(".................................", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
-    elif aftersperm:
-        call her_main("{size=-5}(That was so exhilarating...){/size}", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
-        call her_main("{size=-5}(I wonder if anyone will notice my uniform!){/size}", "open", "narrow", "base", "up", cheeks="blush", ypos="head")
-        call her_main("{size=-5}(What will people think of me?){/size}", "open", "narrow", "base", "up", cheeks="blush", ypos="head")
-        call her_main(".................................", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
+        
+    #    
+    # TODO: CUM LAYERS
+    #
+    
+    # elif aftersperm:
+        # call her_main("{size=-5}(That was so exhilarating...){/size}", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
+        # call her_main("{size=-5}(I wonder if anyone will notice my clothes!){/size}", "open", "narrow", "base", "up", cheeks="blush", ypos="head")
+        # call her_main("{size=-5}(What will people think of me?){/size}", "open", "narrow", "base", "up", cheeks="blush", ypos="head")
+        # call her_main(".................................", "base", "narrow", "base", "up", cheeks="blush", ypos="head")
 
     call her_chibi("leave")
 
@@ -127,18 +132,20 @@ label hg_pf_admire_breasts_T1_intro_E1:
     g9 "Isn't that a steal?"
     call her_main("No it isn't!", "clench", "closed", "angry", "mid", emote="01")
     m "Please?"
-    m "You can keep your bra on for all I care..."
-    call her_main("And my shirt! I will not remove my shirt either!", "angry", "base", "angry", "mid")
+    if hermione.is_worn("bra"):
+        m "You can keep your bra on for all I care..."
+    call her_main("Three seconds! Not even a second longer!", "angry", "base", "angry", "mid")
+    m "How about fi-.."
+    her "{size=+4}Not even a second longer!{/size}"
     m "(...)"
 
     menu:
         "\"Very well, [hermione_name].\"":
-            m "Take off your vest then..."
-
+            m "Better than nothing I guess..."
             pass
 
         "\"That won't be enough, [hermione_name]...\"":
-            g4 "I'm not giving Gryffindor [current_payout] whole points because you took off a vest..."
+            g4 "I'm not giving Gryffindor [current_payout] whole points for a mere glimpse..."
             call her_main("But-", "open", "wide", "base", "stare")
             m "No buts! You are dismissed."
             call her_main("Please, [genie_name]. I need those points!", "disgust", "worriedCl", "worried", "mid")
@@ -160,11 +167,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
     call her_main("(................)", "annoyed", "narrow", "angry", "R")
     pause.4
 
-    # Change Top
-    $ her_outfit_last.save()
-    hide screen hermione_main
-    $ hermione.equip(her_top_school3)
-    call update_her_uniform
+    $ hermione.strip("top")
     call her_main("", "annoyed", "narrow", "angry", "R")
     call ctc
 
@@ -172,15 +175,14 @@ label hg_pf_admire_breasts_T1_intro_E1:
     m "..........."
     call her_main("Sir?", "clench", "base", "angry", "mid")
     g4 "(I wonder what cup size those are.)"
+    
+    $ hermione.wear("top")
     call her_main("Sir, I would like to have my points now.", "open", "closed", "angry", "mid")
     m "What? Oh yes. Of course..."
 
     call hide_characters
     show screen blkfade
     with d3
-
-    # Reset Top
-    $ hermione.equip(her_outfit_last)
 
     jump end_hg_pf_admire_breasts
 
@@ -192,9 +194,8 @@ label hg_pf_admire_breasts_T1_intro_E2:
     m "[hermione_name], Is it just me?"
     g9 "Or is it getting really hot in here?!"
     call her_main("Sir...?", "open", "wink", "base", "mid")
-    m "Take off your vest for me, would you..."
+    m "Take off your top for me, would you..."
     call her_main("(...............)", "annoyed", "base", "angry", "mid")
-    g9 "And your shirt! Take that off as well!"
     call her_main("Sir, this is a very inappropriate thing to ask of me!!!", "scream", "closed", "angry", "mid")
     m "Yeah, yeah... What else is new..."
     call her_main("Sir!!!", "clench", "wide", "base", "stare")
@@ -264,9 +265,7 @@ label hg_pf_admire_breasts_T1: # Call label
     call her_main(".............", "annoyed", "base", "worried", "R")
     pause.4
 
-    # Lift top
-    call set_her_action("lift_top")
-
+    $ hermione.strip("top")
     call her_main("", "annoyed", "base", "worried", "R")
     call ctc
 
@@ -325,7 +324,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
         "\"I will give you 5 points to see your tits.\"":
             call her_main("Five?!", "scream", "wide", "base", "mid")
             call her_main("[genie_name], I am not going to expose myself for a meagre five points!", "angry", "base", "angry", "mid",emote="01")
-            m "Well, your tits sure aren't worth 200, [hermione_name]!"
+            m "Well, your tits sure aren't worth two hundred, [hermione_name]!"
             call her_main("(They aren't?)", "annoyed", "narrow", "worried", "down")
             call her_main("Maybe one hundred - then?", "annoyed", "narrow", "angry", "R")
 
@@ -372,7 +371,6 @@ label hg_pf_admire_breasts_T2_intro_E2:
     m "Are you sure?"
     g9 "You could earn 25 house points for it!"
     call her_main(".............", "annoyed", "base", "worried", "R")
-
     call her_main("Very well, [genie_name].", "angry", "base", "angry", "mid")
     call her_main("But you better keep your hands to yourself!", "annoyed", "narrow", "angry", "R", cheeks="blush")
     call her_main("Don't you dare touch them!", "annoyed", "narrow", "angry", "R", cheeks="blush")
@@ -382,8 +380,6 @@ label hg_pf_admire_breasts_T2_intro_E2:
     $ current_payout = 25
 
     jump hg_pf_admire_breasts_T2
-
-
 
 label hg_pf_admire_breasts_T2_E2:
     call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
@@ -400,12 +396,6 @@ label hg_pf_admire_breasts_T2_E2:
     $ current_payout = 25
 
     jump hg_pf_admire_breasts_T2
-
-
-
-
-
-
 
 ### Tier 3 ###
 
@@ -429,8 +419,6 @@ label hg_pf_admire_breasts_T3_intro_E1:
 
     jump hg_pf_admire_breasts_T3
 
-
-
 label hg_pf_admire_breasts_T3_E1:
     call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
@@ -441,16 +429,6 @@ label hg_pf_admire_breasts_T3_E1:
     $ current_payout = 25
 
     jump hg_pf_admire_breasts_T3
-
-
-
-
-
-
-
-
-
-
 
 ### Tier 4 ###
 
@@ -476,25 +454,21 @@ label hg_pf_admire_breasts_T4_intro_E1:
 
     jump hg_pf_admire_breasts_T4
 
-
-
 label hg_pf_admire_breasts_T4_E1:
     call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
     m "I need to see your tits, [hermione_name]."
-    call her_main("Of course [genie_name].", "base", "narrow", "base", "up", cheeks="blush")
+    call her_main("Of course, [genie_name].", "base", "narrow", "base", "up", cheeks="blush")
 
     $ current_payout = 25
 
     jump hg_pf_admire_breasts_T4
 
-
-
 label hg_pf_admire_breasts_T4_E2:
     call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
-    m "I need to see your tits, [hermione_name]."
-    call her_main("Of course [genie_name]", "base", "narrow", "base", "up", cheeks="blush")
+    m "I have to see your marvelous knockers, [hermione_name]."
+    call her_main("Of course, [genie_name]", "base", "narrow", "base", "up", cheeks="blush")
 
     $ current_payout = 25
 

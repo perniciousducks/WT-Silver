@@ -81,36 +81,44 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
 
                 jump end_hermione_event
 
-
         m "Alright, alright..."
-        g9 "Just get naked already!"
+        if hermione.is_worn("top") or hermione.is_worn("bottom") or hermione.is_worn("panties") or hermione.is_worn("bra"):
+            g9 "Just get naked already!"
+            call her_main("...","annoyed","narrow", "annoyed", "mid", xpos="mid", ypos="base")
+            call her_main("{size=-5}(I can't believe I'm going to strip for him...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
 
-        show screen blktone
-        call her_main("...","annoyed","narrow", "annoyed", "mid", xpos="mid", ypos="base")
-
-        #Remove Top Animation
-        call set_her_action("lift_top")
-        pause.5
-        $ hermione.strip("top")
-        $ hermione.strip("bra")
-        call set_her_action("None")
-        pause.2
-
-        call her_main("{size=-5}(I can't believe I'm going to strip for him...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
-        m "That's it [hermione_name], now your skirt..."
-        call her_main("............", "annoyed", "narrow", "angry", "R", cheeks="blush")
-
-        #Remove Skirt Animation
-        call set_her_action("lift_skirt")
-        pause.5
-        call set_her_action("naked") #Removes all clothing.
-        call set_her_action("None")
-        pause.2
-        call ctc
-
-        call her_main("............", "soft", "base", "base", "R", cheeks="blush")
-        m "Very nice..."
-        call her_main(".....", "annoyed", "narrow", "angry", "R", cheeks="blush")
+            if hermione.is_worn("top"):
+                $ hermione.strip("top")
+                
+                call ctc
+            
+            if hermione.is_worn("bottom"):
+                m "That's it [hermione_name], take off your bottoms..."
+                call her_main("............", "annoyed", "narrow", "angry", "R", cheeks="blush")
+                $ hermione.strip("bottom")
+            
+                call ctc
+                
+            if hermione.is_worn("bra"):
+                m "Show me your titties too!"
+                call her_main("............", "soft", "base", "base", "R", cheeks="blush")
+                $ hermione.strip("bra")
+                m "Very nice..."
+                
+                call ctc
+                
+            if hermione.is_worn("panties"):
+                g9 "The grand finale..."
+                call her_main(".....", "annoyed", "narrow", "angry", "R", cheeks="blush")
+                
+                $ hermione.strip("panties")
+                
+                call ctc
+                
+                if hermione.is_worn("pubes"):
+                    g9 "Nice patch of hair you got there!"
+                    call her_main("............", "annoyed", "narrow", "angry", "R", cheeks="blush")
+                
         m "Now turn around..."
         call blkfade
 
@@ -142,66 +150,76 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
             m "Of course..."
         else:
             call her_main("anything for you [genie_name]", "base", "narrow", "base", "up", cheeks="blush")
-        call ctc
 
+        if hermione.is_worn("top") or hermione.is_worn("bottom") or hermione.is_worn("panties") or hermione.is_worn("bra"):
+            g9 "Just get naked already!"
+            call her_main("...","annoyed","narrow", "annoyed", "mid", xpos="mid", ypos="base")
+            call her_main("{size=-5}(I can't believe I'm going to strip for him...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
 
-        #Remove Top Animation
-        call set_her_action("lift_top")
-        pause.5
-        $ hermione.strip("top")
-        $ hermione.strip("bra")
-        call set_her_action("None")
-        pause.2
-
-
-        m "Hm..."
-        m "That's it [hermione_name], now the skirt..."
-
-
-        #Remove Skirt Animation
-        call set_her_action("lift_skirt")
-        pause.5
-        call set_her_action("naked") #Removes all clothing.
-        call set_her_action("None")
-        pause.2
-        call ctc
-
-
-        m "Very nice..."
-
-        if her_whoring < 18:
-            call her_main(".....", "annoyed", "narrow", "angry", "R", cheeks="blush")
-        else:
-            call her_main("............", "soft", "base", "base", "R", cheeks="blush")
+            if hermione.is_worn("top"):
+                $ hermione.strip("top")
+                
+                call ctc
+            
+            if hermione.is_worn("bottom"):
+                m "That's it [hermione_name], take off your bottoms..."
+                if her_whoring < 18:
+                    call her_main(".....", "annoyed", "narrow", "angry", "R", cheeks="blush")
+                else:
+                    call her_main("............", "soft", "base", "base", "R", cheeks="blush")
+                $ hermione.strip("bottom")
+            
+                call ctc
+                
+            if hermione.is_worn("bra"):
+                m "Show me your titties too!"
+                if her_whoring < 18:
+                    call her_main(".....", "annoyed", "narrow", "angry", "R", cheeks="blush")
+                else:
+                    call her_main("............", "soft", "base", "base", "R", cheeks="blush")
+                $ hermione.strip("bra")
+                m "Very nice..."
+                
+                call ctc
+                
+            if hermione.is_worn("panties"):
+                g9 "The grand finale..."
+                if her_whoring < 18:
+                    call her_main(".....", "annoyed", "narrow", "angry", "R", cheeks="blush")
+                else:
+                    call her_main("............", "soft", "base", "base", "R", cheeks="blush")
+                $ hermione.strip("panties")
+                
+                call ctc
+                
+                if hermione.is_worn("pubes"):
+                    g9 "Nice patch of hair you got there!"
+                    if her_whoring < 18:
+                        call her_main(".....", "annoyed", "narrow", "angry", "R", cheeks="blush")
+                    else:
+                        call her_main("Thank you, [genie_name]", "soft", "base", "base", "R", cheeks="blush")
 
         m "Now turn around..."
         call blkfade
-
-        call her_main("")
-        pause.5
 
         call hg_show_ass
 
         jump end_hg_show_ass
 
-
-
 ### SHOW ASS ###
 
 label hg_show_ass:
-
-
-
-label hg_pr_strip_rear_transition:
+    label hg_pr_strip_rear_transition:
     call hide_characters
     show screen blkfade
     with d5
     call play_sound("climb_desk")
     pause 1
+    
+    #
+    # TODO: Naked ass sprite
+    #
 
-    # Setup
-    $ hermione.strip("top")
-    $ hermione.strip("bottom")
     call her_chibi_scene("behind_desk_back", trans=fade)
     pause.8
 
@@ -210,8 +228,6 @@ label hg_pr_strip_rear_transition:
     call ctc
 
     return
-
-
 
 ### Tier 2 ###
 

@@ -947,7 +947,7 @@ label cc_st_talk:
         call cho_main("Professor Tonks won't stop flirting with the boys on my team!","angry","closed","angry","mid")
         call cho_main("Those stupid idiots can barely sit on their brooms because of her...","annoyed","narrow","angry","mid")
         m "Why? Is the wood too hard?"
-        m "(When do those people realize that carpets are more comfortable...)"
+        m "(When do those people realise that carpets are more comfortable...)"
         call cho_main("We need to get that Gryffindor skunk to peeve those Slytherins, so we can get past them!","annoyed","base","angry","mid")
 
     # after strip and before blackmailing Hermione.

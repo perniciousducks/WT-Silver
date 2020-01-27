@@ -565,7 +565,7 @@ label ss_he_cho_E1:
                 m "I jerked off.{w} Beat my meat.{w} Wrestled the snake.{w} Whatever you want to call it."
                 m "Don't tell me you never do it..."
                 call sna_main("Not in front of my students!","snape_07")
-                call sna_main("How did neither of them realize what you were doing?","snape_10")
+                call sna_main("How did neither of them realise what you were doing?","snape_10")
                 m "They were too occupied with insulting each other..."
                 call sna_main("I can imagine that...","snape_20")
 
@@ -663,7 +663,7 @@ label cho_intro_E3:
         call her_main("You'd be surprised just how few female-", "soft", "closed", "base", "mid")
         m "I'll give you ten house points."
         call her_main("Ten points?", "soft", "wide", "base", "stare",trans=hpunch)
-        call her_main("Sir do you even realize how much time it took me to do all that research?", "angry", "squint", "angry", "mid")
+        call her_main("Sir do you even realise how much time it took me to do all that research?", "angry", "squint", "angry", "mid")
         m "Twenty?"
         call her_main("Two hundred!", "angry", "closed", "angry", "mid")
         g4 "Two hundred? Are you nuts?"

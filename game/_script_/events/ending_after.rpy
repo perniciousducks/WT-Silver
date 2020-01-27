@@ -127,7 +127,7 @@ label ending_after:
                 ">Now firmly gripping her butt with your other hand you begin to massage her cheeks whilst moving along with the music."
                 her "..." #Look of pleasure
                 ">Suddenly the feeling of her soft cheeks is interrupted by something hard brushing against he back of your palm..."
-                ">Moving your hand up against her back, you realize Hermione has tucked the letter you gave her firmly in-between the top edge of her skirt..."
+                ">Moving your hand up against her back, you realise Hermione has tucked the letter you gave her firmly in-between the top edge of her skirt..."
                 ">Continuing to move along with the music your hand finds its way back down, pulling Hermione's panties with them."
                 her "Sir...{w=0.4} what are you doing?"
                 m "You seem a little bit tense... just giving you a hand..."

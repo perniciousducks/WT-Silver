@@ -167,21 +167,11 @@ label hg_pf_strip_T2_Snape:
     call her_main("Uhm... Yes, [genie_name].", "base", "happy", "base", "mid")
     pause.2
 
-
-    if hermione_wear_top and (h_top == "top_1" or h_top == "top_6"):
-        call nar(">Hermione takes her vest off and starts to sway her hips seductively.")
-
-        if h_top == "top_1":
-            $ h_top = "top_2"
-        else:
-            $ h_top = "top_4"
-        call update_her_uniform
-        pause.2
-
-        call her_main("")
-
-    else:
-        call nar(">Hermione starts to sway her hips seductively.")
+    call nar(">Hermione starts to sway her hips seductively.")
+    
+    if hermione.is_worn("top"):
+        call nar(">Hermione reaches to take off her top...")
+        $ hermione.strip("top")
 
     call ctc
 
@@ -189,7 +179,7 @@ label hg_pf_strip_T2_Snape:
     call sna_main("Hm... You are being suspiciously quiet, Miss Granger.","snape_05")
     call her_main("{size=-4}(Oh no! Is he onto us?){/size}", "shock", "wide", "base", "stare")
     call her_main("I'm just doing what the headmaster told me to, Professor Snape...", "grin", "worriedCl", "worried", "mid", emote="05")
-    call sna_main("Aren't you going to lecture me on the \"corruption that is taking over Hogwarts\" like you do every other day?","snape_03")
+    call sna_main("Aren't you going to lecture me on the \"corruption that is taking over Hogwarts\" like you do every other day during classes?","snape_03")
     m "Severus..."
     call sna_main("No, Albus I want to hear little miss perfect's answer.","snape_03")
     call her_main("I just want you to have a good time, Professor Snape...", "grin", "worriedCl", "worried", "mid", emote="05")
@@ -199,10 +189,10 @@ label hg_pf_strip_T2_Snape:
     call her_main(".............", "grin", "worriedCl", "worried", "mid", emote="05")
     call sna_main("Yes, I know what are you calling me behind my back, you wretched girl!","snape_08")
     call her_main("Well, maybe that's because you deserve it... Snivellus.", "scream", "base", "angry", "mid", emote="01")
-    call sna_main("What?!","snape_10")
+    call sna_main("{size=+2}What did you just say?!{/size}","snape_10")
     call sna_main("How dare you....?")
     call sna_main("Who do you think you are? You filthy mu--","snape_15")
-    call her_main("[genie_name], one of your staff is verbally abusing me!", "scream", "closed", "angry", "mid")
+    call her_main("[genie_name], one of your staff members is verbally abusing me!", "scream", "closed", "angry", "mid")
     call her_main("Are you going to allow this?")
     call sna_main("Verbally abusing...?! You have some nerve, girl!","snape_08")
     call sna_main("Albus, will you allow her to talk back to a teacher like that?","snape_10")
@@ -217,11 +207,13 @@ label hg_pf_strip_T2_Snape:
             call her_main("But [genie_name]!")
             m "Young lady, you {size=+4}will{/size} calm down now."
             call her_main("Tsk!", "disgust", "narrow", "base", "mid_soft")
-            m "And take off your skirt already, would you?"
-            call her_main(".......", "annoyed", "narrow", "angry", "R")
+            if hermione.is_worn("bottom"):
+                m "And take off your bottoms already, would you?"
+                call her_main(".......", "annoyed", "narrow", "angry", "R")
             call sna_main("...........","snape_13")
 
         "\"Severus, you started this.\"":
+            $ sna_friendship -= 5
             call sna_main("What? Me?!","snape_10")
             call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
             call sna_main("Albus, you are spoiling the girl! She must be taught a lesson!","snape_08")
@@ -235,21 +227,26 @@ label hg_pf_strip_T2_Snape:
             call sna_main("Alright, alright, I see your point...","snape_17")
             m "[hermione_name], are you going to strip or are you going to climb on my desk to give us a better view?"
             call her_main("Ehm...", "open", "narrow", "worried", "down")
-            m "Take of your skirt, [hermione_name]!"
-            call her_main("Yes, [genie_name]...", "soft", "base", "base", "mid")
+            if hermione.is_worn("bottom"):
+                m "Take of your bottoms, [hermione_name]!"
+                call her_main("Yes, [genie_name]...", "soft", "base", "base", "mid")
 
         "\"Both of you, calm the fuck down.\"":
             m "You, tall-dark-and-handsome, calm down a bit, would you?"
             call sna_main("I beg your pardon?","snape_03")
             call her_main("Yes! You tell him profess--", "annoyed", "narrow", "angry", "R")
             m "You as well, you perverted little minx!"
-            m "Calm down and take your skirt off already."
+            if hermione.is_worn("bottom"):
+                m "Calm down and take your bottoms off already."
+            else:
+                m "Calm down and keep doing what you were paid to do!"
             call her_main("I am not perverted...", "annoyed", "narrow", "annoyed", "mid")
-            m "The skirt, [hermione_name]!"
-            call her_main("......", "annoyed", "narrow", "angry", "R")
+            if hermione.is_worn("bottom"):
+                m "Your bottoms, [hermione_name]!"
+                call her_main("......", "annoyed", "narrow", "angry", "R")
             call sna_main(".............","snape_13")
 
-        "-HARDCORE-" if game_difficulty >= 3: #Hardcore difficulty dialogue.
+        "-Unleash your rage ({size=-2}Hardcore{/size}-" if game_difficulty >= 3: #Hardcore difficulty dialogue.
             $ her_mood += 18
             $ sna_friendship -= 10
             m "Both of you,..."
@@ -262,7 +259,7 @@ label hg_pf_strip_T2_Snape:
             call her_main("(... yikes!)", "angry", "wink", "base", "mid")
             call sna_main("(What did he just say to me?!)","snape_08")
             g4 "Shut your stupid mouth or I will send you flying out that bloody window!"
-            g4 "That Bitch is already stripping for you, so what more do you want?!"
+            g4 "That bitch is already stripping for you, so what more do you want?!"
             call her_main("(That B-Bi--", "shock", "wide", "base", "stare")
             g4 "And you,... stripper-whore!"
             g4 "Do what you are paid for and start stripping already!!!"
@@ -270,24 +267,23 @@ label hg_pf_strip_T2_Snape:
             call sna_main(".............","snape_05")
             call her_main("...", "mad", "squint", "angry", "mid")
 
-    pause.2
-
-    $ hermione.wear("panties")
-    call set_her_action("lift_skirt")
     pause.5
 
-    $ hermione.strip("bottom")
-    call set_her_action("None")
-    pause.2
+    if hermione.is_worn("bottom"):
+        call nar(">Hermione swiftly takes off her bottoms, showing off her muggle-born ass...")
+        $ hermione.strip("bottom")
+        call ctc
 
-    call nar(">Hermione swiftly takes off her \"Hogwarts\" skirt...")
-    call ctc
+        sna "Hm..."
+        call her_main("........................", "open", "narrow", "worried", "down")
+        m "Yes, much better!"
 
-    sna "Hm..."
-    call her_main("........................", "open", "narrow", "worried", "down")
-    m "Yes, much better!"
-
-    call nar(">Hermione keeps on dancing, while she's Wearing nothing but her shirt now...")
+    if hermione.is_worn("bra") and hermione.is_worn("panties"):
+        call nar(">Hermione keeps on dancing, while she's Wearing nothing but her underwear now...")
+    elif hermione.is_worn("bra"):
+        call nar(">Hermione keeps on dancing, while she's Wearing nothing but her bra now...")
+    elif hermione.is_worn("panties"):
+        call nar(">Hermione keeps on dancing, while she's Wearing nothing but her panties now...")
 
     menu:
         m "..."
@@ -302,7 +298,9 @@ label hg_pf_strip_T2_Snape:
             call sna_main("But lately I have way more interesting projects to occupy myself with...","snape_02")
             call her_main("...................", "soft", "base", "base", "mid")
 
-        "\"Severus, what about the Weasleys?\"":
+        "\"Severus, what about the Weasels?\"":
+            call sna_main("Weasels?","snape_05")
+            call sna_main("Oh you mean Weasley's...","snape_09")
             call sna_main("What about them?","snape_09")
             m "Are they still causing you trouble?"
             call sna_main("Yes... More than ever.","snape_09")
@@ -338,22 +336,20 @@ label hg_pf_strip_T2_Snape:
             sna "Look at that pitiful thing. Tiny and skinny... That's a boy's butt."
             call her_main("!!!!!!!!!!", "angry", "narrow", "annoyed", "mid", emote="01")
 
-    call nar(">One after another, Hermione undoes the buttons of her shirt...")
-    pause.2
-
-    $ hermione.strip("bra")
-    call set_her_action("lift_top")
-    pause.5
-
-    $ hermione.strip("top")
-    call set_her_action("None")
-    pause.2
-
-    call nar(">Then takes it off...")
+    if hermione.is_worn("bra"):
+        m "Why don't you take off your bra now, [hermione_name]?"
+        call her_main(".............", "open", "narrow", "worried", "down")
+        call nar(">Hermione undoes her bra...")
+        call nar(">Then takes it off...")
+        pause .5
+        $ hermione.strip("bra")
+        
+        call ctc
+    else:
+        call nar(">Hermione cups her breasts playfuly, squeezing them in the process...")
 
     m "Alright! We Finally get to the good stuff!"
     call sna_main("Hm...","snape_13")
-
     call her_main("........", "annoyed", "closed", "base", "mid")
 
     menu:
@@ -363,8 +359,6 @@ label hg_pf_strip_T2_Snape:
 
         "-Just keep on watching-":
             jump hg_pf_strip_T2_Snape_watch
-
-
 
 label hg_pf_strip_T2_Snape_watch:
     call play_music("dark_fog")
@@ -393,23 +387,23 @@ label hg_pf_strip_T2_Snape_watch:
     call her_main("(Time for my finishing act then!)", "open", "closed", "base", "mid")
     pause.1
 
-    $ hermione.strip("panties")
-    call set_her_action("pinch")
-    pause.5
+    if hermione.is_worn("panties"):
+        call nar(">Hermione bends over and slides her panties down.","start")
+        ">Her movements lack grace..."
+        call nar(">But a pretty pussy is always a welcome sight nonetheless...","end")
+        pause.5
+        
+        $ hermione.strip("panties")
+    
+        call ctc
 
-    call nar(">Hermione bends over and slides her panties down.","start")
-    ">Her movements lack grace..."
-    call nar(">But a pretty pussy is always a welcome sight nonetheless...","end")
-    call ctc
-
-    call sna_main("Yes... Yes...","snape_20")
+        call sna_main("Yes... Yes...","snape_20")
     sna "Now shake those B+ titties for me, you harlot!"
     call her_main(".......", "angry", "worriedCl", "worried", "mid")
 
-    call set_her_action("None")
     pause.5
 
-    call nar(">Hermione suddenly breaks into a series of rather complex pirouettes.")
+    call nar(">All of a sudden Hermione breaks into a series of rather complex pirouettes.")
     call sna_main("Yes, such grace...","snape_19")
     call sna_main("That lithe, young body!","snape_20")
     call her_main("{size=-5}(Three-two-one... Three-two-one... And step!){/size}", "open", "closed", "base", "mid")
@@ -441,6 +435,8 @@ label hg_pf_strip_T2_Snape_watch:
         sna "Don't you have potion class with me today, Miss Granger?"
         call her_main("Yes, [genie_name]...", "annoyed", "narrow", "base", "dead")
         call sna_main("Well, don't be late, girl...","snape_22")
+        call sna_main("Albus...","snape_02")
+        g9 "See you soon, Severus."
     else:
         call sna_main("Well, it is getting rather late. I think I will be leaving now.","snape_22")
         sna "Good night, Albus."
@@ -458,13 +454,11 @@ label hg_pf_strip_T2_Snape_watch:
     stop music fadeout 1.0
     call her_main("....................", "annoyed", "narrow", "base", "dead", ypos="head")
     pause.5
-    ">.................{w}.................{w}.................{w}................."
+    ">.................{w=0.5}.................{w=0.5}.................{w=0.5}................."
 
-    call her_main("May I... may get paid now... [genie_name]...?", "normal", "worriedCl", "worried", "mid")
+    call her_main("May I... may I get paid now... [genie_name]...?", "normal", "worriedCl", "worried", "mid")
 
     jump end_hg_pf_strip
-
-
 
 label hg_pf_strip_T2_Snape_masturbate:
     call play_music("playful_tension") # SEX THEME
@@ -518,7 +512,7 @@ label hg_pf_strip_T2_Snape_masturbate:
 
             jump hg_pf_strip_T2_Snape_watch
 
-        "\"(Pst! Remember why we are doing this!)\"":
+        "\"(Psst! Remember why we are doing this!)\"":
             pass
 
 
@@ -528,7 +522,8 @@ label hg_pf_strip_T2_Snape_masturbate:
         call hide_characters
         show screen blkfade
         with d5
-
+        
+        $ hermione.wear("all")
         ">Hermione jumps off the desk and starts to put her clothes back on."
         call sna_main("Well, this was awfully anticlimactic...","snape_03")
         g4 "You don't say..."
@@ -581,24 +576,21 @@ label hg_pf_strip_T2_Snape_masturbate:
         call her_main("(Time for my finishing act then!)", "open", "closed", "base", "mid")
         pause.1
 
-        $ hermione.strip("panties")
-        call set_her_action("pinch")
-        pause.5
-
-        call nar(">Hermione bends over and slides her panties down.","start")
-        ">Her movements lack grace..."
-        ">But a pretty pussy is always a welcome sight nonetheless..."
-        call nar(">You show your appreciation by stroking your cock even faster...","end")
-        call ctc
+        if hermione.is_worn("panties"):
+            pause.5
+            $ hermione.strip("panties")
+            call nar(">Hermione bends over and slides her panties down.","start")
+            ">Her movements lack grace..."
+            ">But a pretty pussy is always a welcome sight nonetheless..."
+            call nar(">You show your appreciation by stroking your cock even faster...","end")
+            call ctc
 
         call sna_main("Yes... Yes!!!","snape_18")
         call sna_main("Now shake those B+ titties for me, you harlot!")
         call her_main(".......", "angry", "worriedCl", "worried", "mid")
-
-        call set_her_action("None")
         pause.5
 
-        call nar(">Hermione suddenly breaks into a series of rather complex pirouettes.")
+        call nar(">All of a sudden Hermione breaks into a series of rather complex pirouettes.")
         call sna_main("Yes, such grace...","snape_19")
         call sna_main("That lithe, young body!","snape_20")
         call her_main(".........", "grin", "narrow", "annoyed", "up")
@@ -638,8 +630,9 @@ label hg_pf_strip_T2_Snape_masturbate:
         call gen_chibi("cum","behind_desk","base")
         pause.2
 
-        $ uni_sperm = True #Triggers universal sperm to show on hermione_main screen.
-        $ u_sperm = "characters/hermione/face/auto_04.png"
+        #
+        # TODO: CUM LAYERS
+        #
 
         call her_main("??!!!", "shock", "wide", "base", "stare")
         call her_main("", "angry", "worriedCl", "worried", "mid")
@@ -654,8 +647,9 @@ label hg_pf_strip_T2_Snape_masturbate:
         call sna_chibi("cum","desk_close","desk_close")
         pause.2
 
-        $ uni_sperm = True #Triggers universal sperm to show on hermione_main screen.
-        $ u_sperm = "characters/hermione/face/auto_05.png"
+        #
+        # TODO: CUM LAYERS
+        #
 
         call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
         hide screen bld1
@@ -708,8 +702,9 @@ label hg_pf_strip_T2_Snape_masturbate:
         with d5
         call ctc
 
-        $ flip = True # Flips hermione_main screen.
-        $ u_sperm = "characters/hermione/face/auto_05.png"
+        #
+        # TODO: CUM LAYERS
+        #
 
         call her_main("I demand a higher grade than that!", "soft", "base", "angry", "mid", xpos="right", ypos="base")
         call sna_main("You do not demand a grade miss Granger, you earn it.","snape_09")
@@ -732,9 +727,6 @@ label hg_pf_strip_T2_Snape_masturbate:
         ">Then he beats a hasty retreat before Hermione has a chance to start another argument..."
         pause 1
 
-        $ flip = False # Flips hermione_main
-        $ aftersperm = True #Show cum stains.
-        $ uni_sperm = False #Don't show cum.
         call sna_chibi("stand","mid","base", flip=True)
         hide screen blkfade
         with d5
@@ -745,7 +737,7 @@ label hg_pf_strip_T2_Snape_masturbate:
         call her_chibi("stand","desk","base")
         pause.2
 
-        call her_main("Well...", "annoyed", "base", "worried", "R", xpos="mid", ypos="base")
+        call her_main("Well...", "annoyed", "base", "worried", "R", xpos="mid", ypos="base", flip=False)
         her "Was our mission a success, [genie_name]?"
 
         menu:

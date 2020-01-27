@@ -86,6 +86,7 @@ init python:
             self.body.rebuild_image()
             self.rebuild_image()
             self.apply_transition()
+            update_chibi(self.name)
             
         def unequip(self, *args):
             """Takes argument(s) containing string cloth type(s) to unequip."""
@@ -104,6 +105,7 @@ init python:
             self.body.rebuild_image()
             self.rebuild_image()
             self.apply_transition()
+            update_chibi(self.name)
             
         def get_equipped(self, type):
             """Takes argument containing string cloth type. Returns equipped object for cloth type."""
@@ -126,6 +128,7 @@ init python:
             self.body.rebuild_image()
             self.rebuild_image()
             self.apply_transition()
+            update_chibi(self.name)
                     
         def wear(self, *args):
             """Takes argument(s) containing string cloth type(s) to put on (unhide)."""
@@ -143,6 +146,7 @@ init python:
             self.body.rebuild_image()
             self.rebuild_image()
             self.apply_transition()
+            update_chibi(self.name)
             
         def toggle_wear(self, type):
             """Takes argument containing string cloth type to toggle visibility (hide/unhide). Used in wardrobe."""
@@ -155,6 +159,7 @@ init python:
             self.body.rebuild_image()
             self.rebuild_image()
             self.apply_transition()
+            update_chibi(self.name)
             
         def is_worn(self, type):
             """Takes argument containing string cloth type. Returns True if worn, False if hidden, None if not equipped at all."""

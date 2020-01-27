@@ -1,7 +1,7 @@
 init python:
     def unlock_clothing_compat(item):
         """Unlock a clothing item. Compatible with new outfit system."""
-        if isinstance(item, item_class):
+        if isinstance(item, Item):
             item.unlocked = True
         elif isinstance(item, DollOutfit):
             item.unlock()
@@ -9,7 +9,7 @@ init python:
             item.unlocked = True
 
         #TODO Find a better solution than outfit linking (probably just convert all clothes to new wardrobe system)
-        if isinstance(item, item_class) and item.id in outfit_linking:
+        if isinstance(item, Item) and item.id in outfit_linking:
             var_name = outfit_linking[item.id]
             outfit = globals()[var_name]
             outfit.unlock()
@@ -204,7 +204,7 @@ label clothing_shop_menu:
 
     hide screen clothing_menu
 
-    if isinstance(_return, item_class):
+    if isinstance(_return, Item):
         $ item_choice = _return
 
     elif _return == "buy":
@@ -246,7 +246,7 @@ label clothing_items_shop_menu:
     label .interact:
     $ _return = ui.interact()
 
-    if isinstance(_return, item_class):
+    if isinstance(_return, Item):
         call purchase_clothing_item(_return)
         jump clothing_items_shop_menu
 

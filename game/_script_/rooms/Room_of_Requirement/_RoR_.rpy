@@ -73,7 +73,7 @@ label mirror_menu:
     label .interact:
     $ _return = ui.interact()
 
-    if isinstance(_return, mirror_stories):
+    if isinstance(_return, MirrorStory):
         hide screen list_menu
         $ renpy.jump(_return.start_label)
 

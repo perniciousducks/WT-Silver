@@ -75,8 +75,7 @@ init python:
         return True
         
 
-    class achievement_class(object):
-        achievements = {}
+    class Achievements(object):
 
         def __init__(self):
             self.achievements = persistent.achievements
@@ -118,7 +117,7 @@ init python:
             item = sorted(item, key=lambda x: x[1][1])
         return item
 
-    achievement = achievement_class()
+    achievement = Achievements()
 
 label popup(string="", title="", icon=None, xpos=0, ypos=60, sound=True, soundfile='sounds/achievement.mp3'):
     if sound:

@@ -1,7 +1,6 @@
-default temp_outfit_GLBL = None
 default mirror_intro_done = False
 
-default mr_ev_WPIIA = mirror_stories(
+default mr_ev_WPIIA = MirrorStory(
     name = "Whose points is it anyway?",
     unlockable = True,
     story_description = "Parody of the game show of \"whose points is it anyway?\"",
@@ -11,7 +10,7 @@ default mr_ev_WPIIA = mirror_stories(
     ach_desc = "Unlock the characters",
     content_characters = ["luna", "astoria", "hermione"]
 )
-default mr_ev_GHE = mirror_stories(
+default mr_ev_GHE = MirrorStory(
     name = "The genie, the desk and the door",
     story_description = "The genie tries to figure out how people know when he calls for them.",
     start_label = "genie_house_elf",
@@ -20,7 +19,7 @@ default mr_ev_GHE = mirror_stories(
     ach_desc = "Unlock the mirror of noisrevrep/Erised",
     content_characters = []
 )
-default mr_ev_AOC = mirror_stories(
+default mr_ev_AOC = MirrorStory(
     name = "An odd circumstance",
     unlockable = True,
     story_description = "You find yourself being confronted by a mysterious girl that seemingly seems to know you.",
@@ -30,7 +29,7 @@ default mr_ev_AOC = mirror_stories(
     ach_desc = "Completed Hermione's Suck It personal favours",
     content_characters = ["hermione"]
 )
-default mr_ev_ABTTD = mirror_stories(
+default mr_ev_ABTTD = MirrorStory(
     name = "A bad time to disrobe",
     unlockable = True,
     story_description = "The genie gets a hold of a invisibility cloak and puts it to good use.",
@@ -40,7 +39,7 @@ default mr_ev_ABTTD = mirror_stories(
     ach_desc = "Finish private favour, \"Show them to me!\" at least once.",
     content_characters = ["hermione"]
 )
-default mr_ev_ASOC = mirror_stories(
+default mr_ev_ASOC = MirrorStory(
     name = "A spaced out conversation",
     unlockable = True,
     story_description = "The genie and Snape gets real for a little bit.",
@@ -50,7 +49,7 @@ default mr_ev_ASOC = mirror_stories(
     ach_desc = "Unlocks after spending some evenings drinking by the fire with Snape.",
     content_characters = []
 )
-default mr_ev_ABAS = mirror_stories(
+default mr_ev_ABAS = MirrorStory(
     name = "A Booty at sea",
     unlockable = True,
     story_description = "The genie imagine himself to be a great pirate and roleplays his most intimate times with Hermione.",
@@ -60,7 +59,7 @@ default mr_ev_ABAS = mirror_stories(
     ach_desc = "Finish the \"Time for Anal\" Private favours.",
     content_characters = ["hermione"]
 )
-default mr_ev_ADR = mirror_stories(
+default mr_ev_ADR = MirrorStory(
     name = "A Dark Room (Incomplete)",
     story_description = "A minigame inspired by the text-based game \"A Dark Room\".\n>WIP! It is currently incomplete but in a playable state.",
     start_label = "start_dark_room_game",
@@ -69,7 +68,7 @@ default mr_ev_ADR = mirror_stories(
     ach_desc = "",
     content_characters = []
 )
-default mr_ev_AXmasTale = mirror_stories(
+default mr_ev_AXmasTale = MirrorStory(
     name = "A Christmas Tale",
     story_description = "A surprise visit.",
     start_label = "a_christmas_tale",
@@ -79,7 +78,7 @@ default mr_ev_AXmasTale = mirror_stories(
     content_characters = []
 )
 # Story Unlock requirements: Finish the first 3 Wizard Cards challenges.
-default mr_ev_PaH = mirror_stories(
+default mr_ev_PaH = MirrorStory(
     name = "Previously at Hogwarts",
     story_description = "Snape tries to find a solution to stifle his anger and finds himself yet again in the headmaster's office.",
     start_label = "prev_at_hogwarts",
@@ -88,7 +87,7 @@ default mr_ev_PaH = mirror_stories(
     ach_desc = "",
     content_characters = []
 )
-default mr_ev_PR = mirror_stories(
+default mr_ev_PR = MirrorStory(
     name = "Panty Raid",
     story_description = "Genie asks Hermione to go out and collect other girls panties.",
     start_label = "panty_raid_event",
@@ -99,7 +98,7 @@ default mr_ev_PR = mirror_stories(
 )
 
 # WIP
-# default mr_ev_CM = mirror_stories(
+# default mr_ev_CM = MirrorStory(
 #     name = "Class Masturbation",
 #     story_description = "Genie asks Hermione to go out and masturbate in her classes",
 #     start_label = "class_masturbation_event",
@@ -127,7 +126,7 @@ default current_page = 0
 
 init python:
 
-    class mirror_stories(item_class):
+    class MirrorStory(Item): # This class extends Item only so it can be displayed in the item menu screen (refactor?)
         start_label = ""
         authors = []
         categories = []
@@ -196,12 +195,12 @@ init python:
                     unlocked = False
             self.unlocked = unlocked and self.unlock_check()
             if self.unlocked:
-                self.unlockable = False #Makes you able to click on the item.
+                self.unlockable = False # Makes item clickable
             return self.unlocked
 
-        #Make a elif with the name and the criteria to unlock
-        #And if you dont make any then it will all ways be true
         def unlock_check(self):
+            # Add elif with the name and the condition to unlock,
+            # otherwise it will always be unlocked
             if self.name == "A bad time to disrobe":
                 return hg_pf_admire_breasts.tier > 1
             elif self.name == "A spaced out conversation":

@@ -186,7 +186,7 @@ screen ui_points():
             if toggle_ui_lock and room_menu_active or renpy.get_screen("room_of_requirement_menu") or renpy.get_screen("floor_7th_menu"):
                 imagebutton:
                     idle "interface/topbar/hover_zone.png"
-                    tooltip "House Points\n{size=-6}Click to toggle raw points display{/size}"
+                    tooltip "House Points\n{size=-2}Click to toggle{/size}"
                     hovered SetVariable("toggle_points", True)
                     unhovered SetVariable("toggle_points", False)
                     action ToggleVariable("persistent.toggle_points", True, False)
@@ -259,29 +259,30 @@ screen ui_menu():
             #    textbutton "{size=-11}Show Chars{/size}" action [SetVariable("toggle_menu", False), Jump("summon_characters")] background "#000"
 
         hbox:
-            xpos 50
-            ypos 185
-            spacing 5
-            yanchor 0.5
-            xanchor 0.5
-            #Discord
+            pos (50, 185)
+            anchor (0.5, 0.5)
+            spacing 10
+            # Discord
             imagebutton:
-                idle image_alpha("interface/topbar/icon_discord.png")
+                idle Transform("interface/topbar/icon_discord.png", alpha=0.5)
                 hover "interface/topbar/icon_discord.png"
-                tooltip "Visit {size=-6}SilverStudioGames{/size} discord"
+                tooltip "Visit {color=#c1c1c1}SilverStudioGames{/color}\ndiscord"
                 action OpenURL("https://discord.gg/7PD57yt")
-            #Patreon
+                yanchor 0.5
+            # Patreon
             imagebutton:
-                idle image_alpha("interface/topbar/icon_patreon.png")
+                idle Transform("interface/topbar/icon_patreon.png", alpha=0.5)
                 hover "interface/topbar/icon_patreon.png"
-                tooltip "Visit {size=-6}SilverStudioGames{/size} patreon"
+                tooltip "Visit {color=#c1c1c1}SilverStudioGames{/color}\npatreon"
                 action OpenURL("https://www.patreon.com/SilverStudioGames")
-            #Bugfixes
+                yanchor 0.5
+            # Bugfixes
             imagebutton:
-                idle image_alpha("interface/topbar/icon_bug.png")
+                idle Transform("interface/topbar/icon_bug.png", alpha=0.5)
                 hover "interface/topbar/icon_bug.png"
                 tooltip "Open bugfix menu"
                 action [SetVariable("toggle_menu", False), Jump("bugfix_menu")]
+                yanchor 0.5
 
 ### Ingame Options Menu ###
 
@@ -345,15 +346,6 @@ label bugfix_menu:
             jump bugfix_menu
         "-Back-":
             pass
-    jump main_room_menu
-
-label custom_save:
-    $ temp_name = renpy.input("(Please enter the save name.)")
-    $ temp_name = temp_name.strip()
-    if temp_name == "":
-        $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(her_whoring)
-    $ save_name = temp_name
-    "Done."
     jump main_room_menu
 
 label scene_gallery:

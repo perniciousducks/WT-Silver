@@ -183,10 +183,10 @@ screen deck_builder_gallery():
 label color_change:
     
     $ color_rgb = color_picker(playercolor_rgb, False, "Player border")
-    $ playerborder = playerTint("images/cardgame/border.png")
+    $ playerborder = player_tint("images/cardgame/border.png")
     
     $ color_rgb = color_picker(enemycolor_rgb, False, "Enemy border")
-    $ enemyborder = enemyTint("images/cardgame/border.png")
+    $ enemyborder = enemy_tint("images/cardgame/border.png")
     
     jump deck_builder
 

@@ -1,7 +1,7 @@
 init python:
     ui_rewindFrame = 0
     
-    def animationHandler(trans, st, at):
+    def ui_rewind_handler(trans, st, at):
         global ui_rewindFrame
         if ui_rewindFrame < 80:
             ui_rewindFrame += 1
@@ -9,7 +9,7 @@ init python:
             ui_rewindFrame = 0
         
 image ui_rewind:
-    function animationHandler
+    function ui_rewind_handler
     DynamicImage("interface/rewind/[ui_rewindFrame].png")
     pause 0.05
     repeat

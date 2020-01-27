@@ -303,7 +303,7 @@ label gift_shop_menu:
     label .interact:
     $ _return = ui.interact()
 
-    if isinstance(_return, item_class):
+    if isinstance(_return, Item):
         call object_gift_block(_return)
         jump gift_shop_menu
 
@@ -355,7 +355,7 @@ label object_purchase_item(item, quantity):
             "-no thanks-":
                 pass
         $ gold -= order_cost
-        $ deliveryQ.send(item, transit_time, quantity,'Gift')
+        $ deliveries.send(item, transit_time, quantity,'Gift')
         if transit_time ==  1:
             "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered tomorrow."
         else:
@@ -397,7 +397,7 @@ label book_shop_menu:
     label .interact:
     $ _return = ui.interact()
 
-    if isinstance(_return, item_class):
+    if isinstance(_return, Item):
         if _return.type == "book":
             call purchase_book(_return)
         elif _return in forbidden_scroll_list:
@@ -530,28 +530,28 @@ label shop_potion_menu:
     python:
         potion_menu = []
         potion_menu.append(("-Questions acquiring items-", "questions"))
-        for potion in potion_lib.getBuyable():
+        for potion in potion_lib.get_buyables():
             if her_whoring < potion.whoring_rec:
                 potion_menu.append(("{color=[menu_disabled]}-"+potion.name+"-{/color}","her_whoring"))
             else:
                 potion_menu.append(("-"+potion.name+"-",potion))
         potion_menu.append(("-Never mind-", "nvm"))
-        PotionOBJ = renpy.display_menu(potion_menu)
-    if isinstance(PotionOBJ, silver_potion):
+        potion_choice = renpy.display_menu(potion_menu)
+    if isinstance(potion_choice, Potion):
         python:
             potion_menu = []
-            potion_menu.append(("-Buy the potion for "+str(PotionOBJ.cost)+" Gold-", PotionOBJ))
+            potion_menu.append(("-Buy the potion for "+str(potion_choice.cost)+" Gold-", potion_choice))
             potion_menu.append(("-Never mind-", "nvm"))
             choice = renpy.display_menu(potion_menu)
-        if isinstance(choice, silver_potion):
-            if gold >= PotionOBJ.cost:
-                $ gold -= PotionOBJ.cost
-                $ potion_inv.add(PotionOBJ.id)
-                $ renpy.say(m, PotionOBJ.name+" acquired, although it's missing a key ingredient...")
+        if isinstance(choice, Potion):
+            if gold >= potion_choice.cost:
+                $ gold -= potion_choice.cost
+                $ potion_inv.add(potion_choice.id)
+                $ renpy.say(m, potion_choice.name+" acquired, although it's missing a key ingredient...")
             else:
                 $ renpy.say(m, "I don't have enough gold.")
         jump shop_potion_menu
-    if PotionOBJ == "questions":
+    if potion_choice == "questions":
         menu:
             "-Knotgrass-":
                 m "Do you know where I can find \"Knotgrass\"?"
@@ -566,9 +566,9 @@ label shop_potion_menu:
                 m "Do you know where I can find \"Niffler's Fancy\"?"
                 fre "Hmm... I think I heard that it's found by the lake."
         jump shop_potion_menu
-    if PotionOBJ == "her_whoring":
+    if potion_choice == "her_whoring":
         "Hermione must be \"Trained\" more before you can purchase this."
-    if PotionOBJ == "nvm":
+    if potion_choice == "nvm":
         pass
     $ store_category = 0
     jump gift_shop_menu
@@ -592,7 +592,7 @@ label token_shop_menu:
     label .interact:
     $ _return = ui.interact()
 
-    if isinstance(_return, item_class):
+    if isinstance(_return, Item):
         call purchase_deco(_return)
         jump token_shop_menu
 

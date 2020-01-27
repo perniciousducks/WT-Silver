@@ -1,12 +1,3 @@
-init python:
-    class hermione_job(object):
-        inProgress = False
-        responses = ""
-
-        def checkProgress(self):
-            if self.inProgress:
-                renpy.jump(self.responses)
-
 
 # Maid Job
 label job_1:

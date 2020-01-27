@@ -72,7 +72,7 @@ init python:
                 img = pygame.transform.smoothscale(img, (1080, 600))
                 subsurface = img.subsurface((384, 63, 309, 470))
                 pygame.image.save(subsurface, path)
-                _image_payload.encode(filename, str(exported))
+                image_payload.encode(filename, str(exported))
             else:
                 set_clipboard(exported)
             renpy.notify("Export successful!")
@@ -83,14 +83,14 @@ init python:
             if fromfile:
                 try:
                     if renpy.loadable("/outfits/{}.png".format(filename)):
-                        imported = _image_payload.decode(filename)
+                        imported = image_payload.decode(filename)
                     else:
                         renpy.notify("File doesn't exist!")
                         renpy.block_rollback()
                         return False
                 except:
-                    if _image_payload._file:
-                        _image_payload._file.close()
+                    if image_payload._file:
+                        image_payload._file.close()
                     renpy.notify("Corrupted file!")
                     renpy.block_rollback()
                     return False

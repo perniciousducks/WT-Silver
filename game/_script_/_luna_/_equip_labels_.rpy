@@ -289,10 +289,10 @@ label set_lun_outfit(outfit):
         $ luna_outfit_GLBL = outfit
 
         if luna_outfit_GLBL.hair_layer != "":
-            $ lun_hair_style = luna_outfit_GLBL.getHairLayers()
+            $ lun_hair_style = luna_outfit_GLBL.hair_layer
         if luna_outfit_GLBL.top_layers != []:
             $ lun_request_wear_hat = True
-            $ lun_hat = luna_outfit_GLBL.getTopLayers()
+            $ lun_hat = luna_outfit_GLBL.top_layers
 
     call load_luna_clothing_saves
     call update_lun_uniform

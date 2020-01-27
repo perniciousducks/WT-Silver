@@ -25,7 +25,7 @@ screen susan_main():
 
         if susan_wear_top and susan_wear_outfit:
             # Outfit
-            for i in susan_outfit_GLBL.getOutfitLayers():
+            for i in susan_outfit_GLBL.outfit_layers:
                 add "characters/susan/clothes/"+i+".png"
         else:
             # Clothes

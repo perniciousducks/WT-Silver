@@ -20,7 +20,7 @@ label desk:
                     hide screen letter_on_desk
 
             # First letter from Hermione
-            $ letter_hg_1.mailLetter()
+            $ letter_hg_1.send_letter()
             $ letter = letter_queue_list[0]
 
             $ menu_x = 0.5
@@ -35,7 +35,7 @@ label desk:
 
             call reset_menu_position
 
-            $ letter_hg_1.mailRead()
+            $ letter_hg_1.read_letter()
             hide screen letter
             with d5
             pause.5

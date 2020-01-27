@@ -802,7 +802,7 @@ screen wardrobe_old():
                             hotspot ((75+(90*col)), (140+92+(92*row)), 83, 85) clicked [SetVariable("wardrobe_gift_item",candy_gift_list[i]),Jump("wardrobe_give_gift")]
                             add "interface/icons/"+str(candy_gift_list[i].image)+".png" xalign 0.5 yalign 0.5 xpos 120+(90*col) ypos 180+92+(92*row) zoom 0.30
                         else:
-                            add grayTint("interface/icons/"+str(candy_gift_list[i].image)+".png") xalign 0.5 yalign 0.5 xpos 120+(90*col) ypos 180+92+(92*row) zoom 0.30
+                            add gray_tint("interface/icons/"+str(candy_gift_list[i].image)+".png") xalign 0.5 yalign 0.5 xpos 120+(90*col) ypos 180+92+(92*row) zoom 0.30
                         text str(candy_gift_list[i].number) xpos 75+(90*col) ypos (210+92+(92*row))
 
             #Magazines
@@ -819,7 +819,7 @@ screen wardrobe_old():
                             hotspot ((75+(90*col)), (140+92+(92*row)), 83, 85) clicked [SetVariable("wardrobe_gift_item",mag_gift_list[i]),Jump("wardrobe_give_gift")]
                             add "interface/icons/"+str(mag_gift_list[i].image)+".png" xalign 0.5 yalign 0.5  xpos 120+(90*col) ypos 180+92+(92*row) zoom 0.30
                         else:
-                            add grayTint("interface/icons/"+str(mag_gift_list[i].image)+".png") xalign 0.5 yalign 0.5 xpos 120+(90*col) ypos 180+92+(92*row) zoom 0.30
+                            add gray_tint("interface/icons/"+str(mag_gift_list[i].image)+".png") xalign 0.5 yalign 0.5 xpos 120+(90*col) ypos 180+92+(92*row) zoom 0.30
                         text str(mag_gift_list[i].number) xpos 75+(90*col) ypos (210+92+(92*row))
 
             #Beverages
@@ -836,7 +836,7 @@ screen wardrobe_old():
                             hotspot ((75+(90*col)), (140+92+(92*row)), 83, 85) clicked [SetVariable("wardrobe_gift_item",drink_gift_list[i]),Jump("wardrobe_give_gift")]
                             add "interface/icons/"+str(drink_gift_list[i].image)+".png" xalign 0.5 yalign 0.5  xpos 120+(90*col) ypos 180+92+(92*row) zoom 0.30
                         else:
-                            add grayTint("interface/icons/"+str(drink_gift_list[i].image)+".png") xalign 0.5 yalign 0.5 xpos 120+(90*col) ypos 180+92+(92*row) zoom 0.30
+                            add gray_tint("interface/icons/"+str(drink_gift_list[i].image)+".png") xalign 0.5 yalign 0.5 xpos 120+(90*col) ypos 180+92+(92*row) zoom 0.30
                         text str(drink_gift_list[i].number) xpos 75+(90*col) ypos (210+92+(92*row))
 
             #Toys
@@ -853,7 +853,7 @@ screen wardrobe_old():
                             hotspot ((75+(90*col)), (140+92+(92*row)), 83, 85) clicked [SetVariable("wardrobe_gift_item",toy_gift_list[i]),Jump("wardrobe_give_gift")]
                             add "interface/icons/"+str(toy_gift_list[i].image)+".png" xalign 0.5 yalign 0.5  xpos 120+(90*col) ypos 180+92+(92*row) zoom 0.30
                         else:
-                            add grayTint("interface/icons/"+str(toy_gift_list[i].image)+".png") xalign 0.5 yalign 0.5 xpos 120+(90*col) ypos 180+92+(92*row) zoom 0.30
+                            add gray_tint("interface/icons/"+str(toy_gift_list[i].image)+".png") xalign 0.5 yalign 0.5 xpos 120+(90*col) ypos 180+92+(92*row) zoom 0.30
                         text str(toy_gift_list[i].number) xpos 75+(90*col) ypos (210+92+(92*row))
 
             #Quest Items
@@ -871,7 +871,7 @@ screen wardrobe_old():
             #            add "interface/icons/icon_collar.png" xpos 72 ypos 128+92 zoom 0.30
             #            text "Collar Event" xalign 0.5 xpos 115 ypos 140+75+92 size 10
             #        else:
-            #            add add grayTint("interface/icons/icon_collar.png") xpos 72 ypos 128+92 zoom 0.30
+            #            add add gray_tint("interface/icons/icon_collar.png") xpos 72 ypos 128+92 zoom 0.30
 
 
 # ADD wardrobe page for stats here!

@@ -27,7 +27,7 @@ screen luna_main():
 
         if luna_wear_outfit and luna_wear_top:
             # Outfit
-            for i in luna_outfit_GLBL.getOutfitLayers():
+            for i in luna_outfit_GLBL.outfit_layers:
                 add "characters/luna/clothes/"+i+".png" alpha lun_outfit_transp
         else:
             # Clothes

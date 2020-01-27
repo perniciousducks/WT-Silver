@@ -151,7 +151,7 @@ label update_day_values:
         $ day_of_week = 0
         if finished_report >= 1:
             call update_report_money
-            $ letter_min_report.mailLetter()
+            $ letter_min_report.send_letter()
         if not first_random_twins:
             $ twins_interest = True
 
@@ -167,7 +167,7 @@ label update_day_values:
         $ weather_gen = 1
 
     # Package delivery
-    if deliveryQ.got_mail():
+    if deliveries.got_mail():
         $ package_is_here = True
 
     if clothing_mail_item != None:

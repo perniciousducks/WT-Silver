@@ -104,7 +104,7 @@ init python:
             random_event = events_filtered[random.randint(0, len(events_filtered)-1)][0]
             return renpy.jump(random_event)
 
-        def getMenuText(self):
+        def get_menu_text(self):
             heart_list = []
             imagepath = "interface/icons/small/"
             menu_text = ""

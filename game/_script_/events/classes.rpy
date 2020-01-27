@@ -22,7 +22,7 @@ init -1 python:
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
 
-        def getMenuText(self):
+        def get_menu_text(self):
             heart_list = []
             menu_text = None
             for i in xrange(self.max_level):
@@ -52,7 +52,7 @@ init -1 python:
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
 
-        def getMenuText(self):
+        def get_menu_text(self):
             menu_image = "interface/check_"+str(self.complete)+".png"
             ret_str = "\""+self.title+"\" {image="+menu_image+"}"
             if self.hint:
@@ -66,7 +66,7 @@ init -1 python:
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
 
-        def getMenuText(self):
+        def get_menu_text(self):
             menu_image = "interface/check_"+str(self.complete)+".png"
             ret_str = "\""+self.title+"\" {image="+menu_image+"}"
             if self.hint:

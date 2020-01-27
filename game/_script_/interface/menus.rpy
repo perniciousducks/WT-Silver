@@ -87,7 +87,7 @@ screen list_menu(menu_id, title, toggle_names=tuple(), menu_groups=[]):
         for i in xrange(page_offset, page_offset+items_shown):
             if i < len(menu_items):
                 $ item_ypos = 85+90*(i-page_offset)
-                if not menu_items[i].unlockable: # Unlockables are shown but aren't buyable/clickable
+                if not menu_items[i].unlockable: # Unlockables are shown but aren't clickable
                     hotspot (16, item_ypos, 528, 87) clicked Return(menu_items[i])
                 use list_menu_item(menu_items[i], item_ypos)
 
@@ -227,7 +227,7 @@ screen icon_menu_item(menu_item, xpos=0, ypos=0):
             if menu_item.number > 0 or menu_item.unlocked == True:
                 add item_image xalign 0.5 yalign 0.5 zoom image_zoom
             else:
-                add grayTint(item_image) xalign 0.5 yalign 0.5 zoom image_zoom
+                add gray_tint(item_image) xalign 0.5 yalign 0.5 zoom image_zoom
 
             if menu_item.number > 0:
                 text "{color=#ffffff}" +str(menu_item.number)+ "{/color}"
@@ -288,8 +288,8 @@ screen clothing_menu(menu_items, character, preview):
                 idle  "interface/general/gold_bag.png"
                 hover "interface/general/gold_bag_hover.png"
             else:
-                idle  grayTint("interface/general/gold_bag.png")
-                hover grayTint("interface/general/gold_bag.png")
+                idle  gray_tint("interface/general/gold_bag.png")
+                hover gray_tint("interface/general/gold_bag.png")
             action Return("buy") #Buys whatever is currently previewed (item_choice)
 
 

@@ -136,7 +136,7 @@ label tonks_favor_menu:
                     # elif i.start_tier > ton_tier:
                         # menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
                     # else:
-                        # menu_choices.append((i.getMenuText(),i.start_label))
+                        # menu_choices.append((i.get_menu_text(),i.start_label))
                         
                 # menu_choices.append(("-Never mind-", "nvm"))
                 # result = renpy.display_menu(menu_choices)
@@ -174,7 +174,7 @@ label tonks_requests_menu:
             elif i.start_tier > ton_tier:
                 menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
             else:
-                menu_choices.append((i.getMenuText(),i.start_label))
+                menu_choices.append((i.get_menu_text(),i.start_label))
         menu_choices.append(("-Never mind-", "nvm"))
         result = renpy.display_menu(menu_choices)
     if result == "nvm":

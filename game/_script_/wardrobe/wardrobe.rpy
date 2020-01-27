@@ -646,8 +646,8 @@ screen wardrobe_outfit_menuitem(xx, yy):
                                 button:
                                     style "empty" 
                                     xysize (25, 25) 
-                                    background grayTint(_ico) 
-                                    hover_background whiteTint(_ico) 
+                                    background gray_tint(_ico) 
+                                    hover_background white_tint(_ico) 
                                     selected_background _ico 
                                     tooltip _tooltip
                                     action [SelectedIf(menu_items[i].schedule[x.lower()] == True), Return(["tagoutfit", menu_items[i], x.lower()])]

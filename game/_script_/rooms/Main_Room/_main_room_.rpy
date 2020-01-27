@@ -164,7 +164,7 @@ screen genie_desk_interactive():
             xanchor 0.5
             yanchor 0.5
             ground "images/rooms/main_room/desk_small_border.png"
-            hover yellowTint("images/rooms/main_room/desk_small_border.png")
+            hover yellow_tint("images/rooms/main_room/desk_small_border.png")
             hotspot (0, 10, 128, 160):
                 action Jump("desk")
                 sensitive room_menu_active

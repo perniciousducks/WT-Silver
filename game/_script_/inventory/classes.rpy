@@ -2,7 +2,7 @@
 # Item classes
 init -1 python:
 
-    class item_class(object):
+    class Item(object):
         def __init__(self, **kwargs):
             self.id = ""
             self.name = ""
@@ -50,35 +50,27 @@ init -1 python:
 
         def get_items(self):
             return self.items
+        
         def get_type(self):
             return self.type
+        
         def get_description(self):
             return self.description
+        
         def get_annotation(self):
             return ""
 
-    class costume_class(item_class):
+    class CostumeItem(Item):
 
         def __init__(self, **kwargs):
             self.top_layers = []
             self.outfit_layers = []
-            self.actions = []
-            self.action_images = []
             self.hair_layer = ""
             self.breast_layer = "breasts_nipfix"
 
-            super(costume_class, self).__init__(**kwargs)
+            super(CostumeItem, self).__init__(**kwargs)
 
-        def getOutfitLayers(self):
-            return self.outfit_layers
-        def getHairLayers(self):
-            return self.hair_layer
-        def getTopLayers(self):
-            return self.top_layers
-        def getActionImage(self, action):
-            return self.action_images[self.actions.index(action)]
-
-    class silver_book_lib(object):
+    class BookCollection(object):
         read_books = []
         write_books = []
         fiction_books = []
@@ -100,13 +92,13 @@ init -1 python:
         def get_fic(self):
             return self.fiction_books
 
-        def isDone(self, id=""):
+        def is_done(self, id=""):
             for book in self.get_all():
                 if book.id == id:
                     return book.done
             return None
 
-    class book_class(item_class):
+    class Book(Item):
         chapters = 0
         progress = 0
         done = False
@@ -114,10 +106,9 @@ init -1 python:
 
         def __repr__(self):
             return self.id
-        def getMenuText(self):
+
+        def get_menu_text(self):
             return "-"+str(self.name)+"-"
-        def getMenuTextDone(self):
-            return "-"+str(self.name)+"-{image=check_08}"
 
         def get_description(self):
             out_des = ""
@@ -127,15 +118,12 @@ init -1 python:
                 out_des = self.description
             return out_des
 
-    class educational_book(book_class):
-        pass
-
-    class fiction_book(book_class):
+    class FictionBook(Book):
         chapter_description = []
-        def getChapterDesc(self):
+        def get_chapter_description(self):
            return self.chapter_description[self.progress-1] #"Chapter "+str(self.progress)+": "+
 
-    class scroll_class(item_class):
+    class Scroll(Item):
         scroll_image = ""
         comments = []
 

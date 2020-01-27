@@ -97,9 +97,9 @@ screen duel_buttons():
             hover image_hover("images/dueling/snape/attack_tease.png")
             action [Jump("main_tease")]
         else:
-            idle grayTint("images/dueling/snape/attack_tease.png")
+            idle gray_tint("images/dueling/snape/attack_tease.png")
             if not in_action:
-                hover image_hover(grayTint("images/dueling/snape/attack_tease.png"))
+                hover image_hover(gray_tint("images/dueling/snape/attack_tease.png"))
                 action [Jump("main_tease")]
     imagebutton: # attack
         xpos 802
@@ -110,9 +110,9 @@ screen duel_buttons():
             hover image_hover("images/dueling/snape/attack_melee.png")
             action [Jump("main_attack")]
         else:
-            idle grayTint("images/dueling/snape/attack_melee.png")
+            idle gray_tint("images/dueling/snape/attack_melee.png")
             if not in_action:
-                hover image_hover(grayTint("images/dueling/snape/attack_melee.png"))
+                hover image_hover(gray_tint("images/dueling/snape/attack_melee.png"))
                 action [Jump("main_attack")]
     imagebutton: # aguard
         xpos 868
@@ -123,9 +123,9 @@ screen duel_buttons():
             hover image_hover("images/dueling/snape/attack_defend.png")
             action [Jump("main_defend")]
         else:
-            idle grayTint("images/dueling/snape/attack_defend.png")
+            idle gray_tint("images/dueling/snape/attack_defend.png")
             if not in_action:
-                hover image_hover(grayTint("images/dueling/snape/attack_defend.png"))
+                hover image_hover(gray_tint("images/dueling/snape/attack_defend.png"))
                 action [Jump("main_defend")]
     imagebutton: # item
         xpos 954
@@ -136,9 +136,9 @@ screen duel_buttons():
             hover image_hover("images/dueling/snape/attack_item.png")
             action [Jump("main_potion")]
         else:
-            idle grayTint("images/dueling/snape/attack_item.png")
+            idle gray_tint("images/dueling/snape/attack_item.png")
             if not in_action:
-                hover image_hover(grayTint("images/dueling/snape/attack_item.png"))
+                hover image_hover(gray_tint("images/dueling/snape/attack_item.png"))
                 action [Jump("main_potion")]
 
 label main_tease:

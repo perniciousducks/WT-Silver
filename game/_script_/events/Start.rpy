@@ -232,11 +232,11 @@ label skip_to_hermione:
     $ hermione_intro.E5_complete = True
     $ hermione_intro.E6_complete = True
 
-    $ letter_hg_1.mailRead()
-    $ letter_hg_2.mailRead()
-    $ letter_min_work.mailRead()
-    $ letter_min_report.mailRead()
-    $ letter_min_favors.mailRead()
+    $ letter_hg_1.read_letter()
+    $ letter_hg_2.read_letter()
+    $ letter_min_work.read_letter()
+    $ letter_min_report.read_letter()
+    $ letter_min_favors.read_letter()
 
     $ snape_unlocked = True
     $ achievement.unlock("unlocksna", True)

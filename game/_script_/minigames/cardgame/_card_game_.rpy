@@ -168,13 +168,13 @@ init python:
         high_score_pos = (0,0)
         
         #Fix for not finding a card
-        tuple_my = enemy_deck[0].getAIScore(table_cards, reverse, dobelt_number)
+        tuple_my = enemy_deck[0].get_ai_score(table_cards, reverse, dobelt_number)
         high_score = tuple_my[0]
         high_score_pos = tuple_my[1]
         high_score_card = enemy_deck[0]
         
         for card in enemy_deck:
-            tuple_my = card.getAIScore(table_cards, reverse, dobelt_number)
+            tuple_my = card.get_ai_score(table_cards, reverse, dobelt_number)
             if tuple_my[0] > high_score:
                 high_score = tuple_my[0]
                 high_score_pos = tuple_my[1]
@@ -288,11 +288,11 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
                     idle card.get_back_image(zoom=cardzoom)
                     hover card.get_back_hover(zoom=cardzoom)
                 elif not color and not gallery and card.copies <= -1:
-                    idle grayTint(card.get_card_image(zoom=cardzoom))
-                    hover grayTint(card.get_card_hover(zoom=cardzoom))
+                    idle gray_tint(card.get_card_image(zoom=cardzoom))
+                    hover gray_tint(card.get_card_hover(zoom=cardzoom))
                 elif gallery and not card_exist(unlocked_cards, card):
-                    idle grayTint(card.get_card_image(zoom=cardzoom))
-                    hover grayTint(card.get_card_hover(zoom=cardzoom))
+                    idle gray_tint(card.get_card_image(zoom=cardzoom))
+                    hover gray_tint(card.get_card_hover(zoom=cardzoom))
                 else:
                     idle card.get_card_image(zoom=cardzoom)
                     hover card.get_card_hover(zoom=cardzoom)
@@ -301,15 +301,15 @@ screen cardrender(card, xpos_card, ypos_card, interact=False, return_value=None,
             if backside:
                 add card.get_back_image(zoom=cardzoom)
             elif not color and not gallery:
-                add grayTint(card.get_card_image(zoom=cardzoom))
+                add gray_tint(card.get_card_image(zoom=cardzoom))
             elif gallery and not card_exist(unlocked_cards, card):
-                add grayTint(card.get_card_image(zoom=cardzoom))
+                add gray_tint(card.get_card_image(zoom=cardzoom))
             else:
                 add card.get_card_image(zoom=cardzoom)
         
         if not backside:
             if gallery and not card_exist(unlocked_cards, card):
-                add grayTint(playerborder) zoom cardzoom
+                add gray_tint(playerborder) zoom cardzoom
             elif card.playercard:
                 add playerborder zoom cardzoom
             else:

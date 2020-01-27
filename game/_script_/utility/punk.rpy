@@ -8,7 +8,7 @@ init python:
     import binascii
     import struct
 
-    class image_payload(object):
+    class ImagePayload(object):
 
         _END_CHUNK_TYPE = 'IEND'
         _PUNK_CHUNK_TYPE = 'wtSi'
@@ -134,4 +134,4 @@ init python:
 
             self._read_next_chunk()
             
-    _image_payload = image_payload()
+    image_payload = ImagePayload()

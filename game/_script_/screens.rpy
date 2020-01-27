@@ -262,7 +262,7 @@ screen file_picker():
                     if is_compatible:
                         add FileScreenshot(i)
                     else:
-                        add grayTint(FileScreenshot(i))
+                        add gray_tint(FileScreenshot(i))
                     
                     if FileLoadable(i):
                         textbutton _("X"):

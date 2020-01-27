@@ -17,14 +17,14 @@ label use_hermione_potion:
             ">Polyjuice potion. You know what it does..."
             "-Cat Transformation-" if daytime and potion_inv.has("p_cat_transformation"):
                 $ potion_inv.remove("p_cat_transformation")
-                $ renpy.jump( potion_lib.getJumpLabel("p_cat_transformation") )
+                $ renpy.jump( potion_lib.get_start_label("p_cat_transformation") )
             "{color=[menu_disabled]}-Cat Transformation-{/color}" if not daytime and potion_inv.has("p_cat_transformation"): # Missing?
                 "This potion can only be used during the day."
                 jump return_to_wardrobe
 
             "-Luna Transformation-" if daytime and potion_inv.has("p_luna_transformation"):
                 $ potion_inv.remove("p_luna_transformation")
-                $ renpy.jump( potion_lib.getJumpLabel("p_luna_transformation") )
+                $ renpy.jump( potion_lib.get_start_label("p_luna_transformation") )
             "{color=[menu_disabled]}-Luna Transformation-{/color}" if not daytime and potion_inv.has("p_luna_transformation"):
                 "This potion can only be used during the day."
                 jump return_to_wardrobe
@@ -32,7 +32,7 @@ label use_hermione_potion:
             # TODO: uncomment when scene is complete
             # "-Clone potion-" if potion_inv.has("p_clone"):
             #     $ potion_inv.remove("p_clone")
-            #     $ renpy.jump( potion_lib.getJumpLabel("p_clone") )
+            #     $ renpy.jump( potion_lib.get_start_label("p_clone") )
             "-Never mind-":
                 jump return_to_wardrobe
 
@@ -41,14 +41,14 @@ label use_hermione_potion:
             ">Potions that enhance the user's body."
             "-Breast Expansion-" if daytime and potion_inv.has("p_breast_expansion"):
                 $ potion_inv.remove("p_breast_expansion")
-                $ renpy.jump( potion_lib.getJumpLabel("p_breast_expansion") )
+                $ renpy.jump( potion_lib.get_start_label("p_breast_expansion") )
             "{color=[menu_disabled]}-Breast Expansion-{/color}" if not daytime and potion_inv.has("p_breast_expansion"):
                 "This potion can only be used during the day."
                 jump return_to_wardrobe
 
             "-Ass Expansion" if daytime and potion_inv.has("p_ass_expansion"):
                 $ potion_inv.remove("p_ass_expansion")
-                $ renpy.jump( potion_lib.getJumpLabel("p_ass_expansion") )
+                $ renpy.jump( potion_lib.get_start_label("p_ass_expansion") )
             "{color=[menu_disabled]}-Ass Expansion-{/color}" if not daytime and potion_inv.has("p_ass_expansion"):
                 "This potion can only be used during the day."
                 jump return_to_wardrobe
@@ -61,7 +61,7 @@ label use_hermione_potion:
             ">Potions for when you run out of milk in the fridge."
             "-Lactantium-" if daytime and potion_inv.has("p_milk_potion"):
                 $ potion_inv.remove("p_milk_potion")
-                $ renpy.jump( potion_lib.getJumpLabel("p_milk_potion") )
+                $ renpy.jump( potion_lib.get_start_label("p_milk_potion") )
             "{color=[menu_disabled]}-Lactantium-{/color}" if not daytime and potion_inv.has("p_milk_potion"):
                 "This potion can only be used during the day."
                 jump return_to_wardrobe
@@ -75,7 +75,7 @@ label use_hermione_potion:
 
             "-Cum Addiction-" if daytime and potion_inv.has("p_cum_addiction"):
                 $ potion_inv.remove("p_cum_addiction")
-                $ renpy.jump( potion_lib.getJumpLabel("p_cum_addiction") )
+                $ renpy.jump( potion_lib.get_start_label("p_cum_addiction") )
             "{color=[menu_disabled]}-Cum Addiction-{/color}" if not daytime and potion_inv.has("p_cum_addiction"):
                 "This potion can only be used during the day."
                 jump return_to_wardrobe
@@ -85,7 +85,7 @@ label use_hermione_potion:
                     "This potion will change Hermione's appearance. Do you want to continue?"
                     "-Yes-":
                         $ potion_inv.remove("p_hypno")
-                        $ renpy.jump( potion_lib.getJumpLabel("p_hypno") )
+                        $ renpy.jump( potion_lib.get_start_label("p_hypno") )
                     "-No-":
                         jump return_to_wardrobe
             "{color=[menu_disabled]}-Hypno potion-{/color}" if not daytime and potion_inv.has("p_hypno"):
@@ -95,7 +95,7 @@ label use_hermione_potion:
             # TODO: uncomment if ready unsure if ready for current release
             # "-Voluptatem-" if potion_inv.has("p_voluptatem"):
             #     $ potion_inv.remove("p_voluptatem")
-            #     $ renpy.jump( potion_lib.getJumpLabel("p_voluptatem") )
+            #     $ renpy.jump( potion_lib.get_start_label("p_voluptatem") )
             "-Never mind-":
                 jump return_to_wardrobe
 
@@ -104,7 +104,7 @@ label use_hermione_potion:
             ">Potions that affect the wearer's clothing."
             "-Transparent Clothes-" if daytime and potion_inv.has("p_transparency"):
                 $ potion_inv.remove("p_transparency")
-                $ renpy.jump( potion_lib.getJumpLabel("p_transparency") )
+                $ renpy.jump( potion_lib.get_start_label("p_transparency") )
             "{color=[menu_disabled]}-Transparent Clothes-{/color}" if not daytime and potion_inv.has("p_transparency"):
                 "This potion can only be used during the day."
                 jump return_to_wardrobe

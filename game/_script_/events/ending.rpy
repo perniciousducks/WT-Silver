@@ -2909,7 +2909,7 @@ label ball_ending_E2:
         pause.1
 
         # Read letter from Genie
-        $ letter = mail_letter_class(
+        $ letter = Letter(
             text = "{size=-7}To: Hermione Granger\n\n{/size}{size=-4}Dear Hermione.\nI am not who you think I am... Not even human so to speak. For months now I have been posing as a person known to you as Professor Dumbledore. But it is time for me to go back to the place I belong. By the time you will receive this letter I shall be long gone. We shall never cross paths again, but I promise you that I will cherish the memories of my brief time in your strange world. \n\nFarewell, my little [hermione_name]. {size=-3}\n\n-Yours truly, Genie-{/size}"
         )
 

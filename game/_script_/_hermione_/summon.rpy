@@ -232,7 +232,7 @@ label hermione_favor_menu:
                         elif i.start_tier > her_tier:
                             menu_choices.append(("{color=[menu_disabled]}-Not ready-{/color}","vague"))
                         else:
-                            menu_choices.append((i.getMenuText(),i.start_label))
+                            menu_choices.append((i.get_menu_text(),i.start_label))
 
                     menu_choices.append(("-Never mind-", "nvm"))
                     result = renpy.display_menu(menu_choices)
@@ -255,7 +255,7 @@ label hermione_favor_menu:
                 python:
                     menu_choices = []
                     for i in hg_requests_list:
-                        menu_choices.append((i.getMenuText(),i.start_label))
+                        menu_choices.append((i.get_menu_text(),i.start_label))
                     menu_choices.append(("-Never mind-", "nvm"))
                     result = renpy.display_menu(menu_choices)
                 if result == "nvm":
@@ -275,7 +275,7 @@ label hermione_favor_menu:
                         if i.tier > bdsm_imagination:
                             menu_choices.append(("{color=[menu_disabled]}-A vague idea-{/color}","vague"))
                         else:
-                            menu_choices.append((i.getMenuText(),i.start_label))
+                            menu_choices.append((i.get_menu_text(),i.start_label))
                     menu_choices.append(("-Never mind-", "nvm"))
                     result = renpy.display_menu(menu_choices)
                 if result == "nvm":

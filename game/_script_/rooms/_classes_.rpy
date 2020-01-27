@@ -1,21 +1,24 @@
 
-
-### Classes ###
-
 init -1 python:
 
-    class room_object_class(item_class):
-        room_image = ""
-        room_image_path = ""
+    class RoomObject(object):
 
-        idle_image = ""
-        idle_image_path = ""
+        def __init__(self, **kwargs):
+            self.type = ""
 
-        hover_image = ""
-        hover_image_path = ""
+            self.room_image = ""
+            self.room_image_path = ""
 
-        xpos = 0
-        ypos = 0
+            self.idle_image = ""
+            self.idle_image_path = ""
+
+            self.hover_image = ""
+            self.hover_image_path = ""
+
+            self.xpos = 0
+            self.ypos = 0
+
+            self.__dict__.update(**kwargs)
 
         def get_room_image(self):
             if self.room_image_path != "":

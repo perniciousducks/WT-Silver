@@ -91,12 +91,12 @@ label astoria_spells:
         for i in ag_spell_list:
             if not i.complete: # Not trained yet.
                 if daytime and not tonks_busy:
-                    spell_menu.append( (i.getMenuText(), i.start_label ) )
+                    spell_menu.append( (i.get_menu_text(), i.start_label ) )
                 else:
-                    spell_menu.append( ("{color=[menu_disabled]}"+i.getMenuText()+"{/color}","block") )
+                    spell_menu.append( ("{color=[menu_disabled]}"+i.get_menu_text()+"{/color}","block") )
 
             else: # Spell trained and unlocked.
-                spell_menu.append( (i.getMenuText(), i.start_label ) )
+                spell_menu.append( (i.get_menu_text(), i.start_label ) )
 
 
         spell_menu.append( ("-Never mind-", "nvm") )

@@ -243,10 +243,10 @@ label set_sus_outfit(outfit):
         $ susan_outfit_GLBL = outfit
 
         if susan_outfit_GLBL.hair_layer != "":
-            $ sus_hair_style = susan_outfit_GLBL.getHairLayers()
+            $ sus_hair_style = susan_outfit_GLBL.hair_layer
         if susan_outfit_GLBL.top_layers != []:
             $ sus_request_wear_hat = True
-            $ sus_hat = susan_outfit_GLBL.getTopLayers()
+            $ sus_hat = susan_outfit_GLBL.top_layers
 
     call load_susan_clothing_saves
     call update_sus_uniform

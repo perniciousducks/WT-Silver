@@ -1,11 +1,11 @@
 
-default DRgame = game_class()
+default DRgame = DarkRoomGame()
 
-default DRplayer   = game_character_class(name="You",          hp=8, skills=["strength"],              unskilled=["cooking","hunting","sewing"], inventory=["axe"])
-default DRstranger = game_character_class(name="The Stranger", hp=7, skills=["hunting"],               unskilled=["sewing"],                     inventory=["knife"])
-default DRmaid     = game_character_class(name="The Maiden",   hp=3, skills=["sewing"],                unskilled=["hunting","strength"])
-# default DRmaid     = game_character_class(name="The Maiden",   hp=3, skills=["cooking"],               unskilled=["hunting"],                    inventory=[])
-default DRhunter   = game_character_class(name="The Hunter",   hp=7, skills=["hunting","sewing"],      unskilled=["cooking"],                    inventory=["knife","rifle"])
+default DRplayer   = DarkRoomCharacter(name="You",          hp=8, skills=["strength"],              unskilled=["cooking","hunting","sewing"], inventory=["axe"])
+default DRstranger = DarkRoomCharacter(name="The Stranger", hp=7, skills=["hunting"],               unskilled=["sewing"],                     inventory=["knife"])
+default DRmaid     = DarkRoomCharacter(name="The Maiden",   hp=3, skills=["sewing"],                unskilled=["hunting","strength"])
+# default DRmaid     = DarkRoomCharacter(name="The Maiden",   hp=3, skills=["cooking"],               unskilled=["hunting"],                    inventory=[])
+default DRhunter   = DarkRoomCharacter(name="The Hunter",   hp=7, skills=["hunting","sewing"],      unskilled=["cooking"],                    inventory=["knife","rifle"])
 
 label reset_dark_room_init:
     $ reset_variables(
@@ -593,7 +593,7 @@ screen DRgame_menu():
         xanchor "center"
         yanchor "center"
         idle "images/rooms/main_room/chair_left_no_shadow.png"
-        hover yellowTint("images/rooms/main_room/chair_left_no_shadow.png")
+        hover yellow_tint("images/rooms/main_room/chair_left_no_shadow.png")
         action [Hide("DRgame_menu"), Jump("dark_room_chair_left")]
 
     #Desk
@@ -604,7 +604,7 @@ screen DRgame_menu():
         xanchor "center"
         yanchor "center"
         idle "images/rooms/main_room/desk_no_shadow.png"
-        hover yellowTint("images/rooms/main_room/desk_no_shadow.png")
+        hover yellow_tint("images/rooms/main_room/desk_no_shadow.png")
         action [Hide("DRgame_menu"), Jump("dark_room_desk")]
 
     #Player
@@ -616,10 +616,10 @@ screen DRgame_menu():
         #yanchor "center"
         if not genie_chibi.flip:
             idle "ch_gen stand"
-            hover yellowTint("ch_gen stand")
+            hover yellow_tint("ch_gen stand")
         else:
             idle im.Flip("ch_gen stand", horizontal=True)
-            hover yellowTint( im.Flip("ch_gen stand", horizontal=True) )
+            hover yellow_tint( im.Flip("ch_gen stand", horizontal=True) )
         action [Hide("DRgame_menu"), Jump("dark_room_player")]
 
     #Stranger
@@ -631,10 +631,10 @@ screen DRgame_menu():
             #yanchor "center"
             if not snape_chibi.flip:
                 idle "ch_sna stand"
-                hover yellowTint("ch_sna stand")
+                hover yellow_tint("ch_sna stand")
             else:
                 idle im.Flip("ch_sna stand", horizontal=True)
-                hover yellowTint( im.Flip("ch_sna stand", horizontal=True) )
+                hover yellow_tint( im.Flip("ch_sna stand", horizontal=True) )
             action [Hide("DRgame_menu"), Jump("dark_room_stranger")]
 
     if DRmaid in DRgame.characters and DRmaid.location in ["room","desk","fireplace"]:
@@ -644,7 +644,7 @@ screen DRgame_menu():
             xanchor "center"
             yanchor "center"
             idle hermione_chibi_blink
-            hover yellowTint(hermione_chibi_blink)
+            hover yellow_tint(hermione_chibi_blink)
             action [Hide("DRgame_menu"), Jump("dark_room_maid")]
 
     zorder 1
@@ -931,8 +931,7 @@ label DRgame_advance_time:
 
 init -1 python:
 
-    #Game
-    class game_class(object):
+    class DarkRoomGame(object):
         day = 1
         time = ""
         characters = []
@@ -954,8 +953,7 @@ init -1 python:
         def getChar(self):
             return self.characters
 
-    #Characters
-    class game_character_class(object):
+    class DarkRoomCharacter(object):
         name = ""
         hp = 10
         hunger = 5

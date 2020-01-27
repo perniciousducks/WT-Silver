@@ -7,6 +7,8 @@ init -1 python:
     import colorsys
     import itertools
     import os as system
+
+    get_volume_preference = renpy.game.preferences.get_volume
     
     def num_to_word(n, readable=True):
         """Transcript numbers (integers) into readable words."""
@@ -44,14 +46,14 @@ init -1 python:
     def clamp(n, smallest, largest):
         return max(smallest, min(n, largest))
         
-    def whiteTint(image):
-        return im.MatrixColor( image, im.matrix.tint(1.1, 1.1, 1.1))
+    def white_tint(image):
+        return im.MatrixColor(image, im.matrix.tint(1.1, 1.1, 1.1))
 
-    def grayTint(image):
+    def gray_tint(image):
         return im.Grayscale(image)
 
-    def yellowTint(image):
-        return im.MatrixColor( image,  im.matrix.tint(1.2, 1.1, 0.7))
+    def yellow_tint(image):
+        return im.MatrixColor(image,  im.matrix.tint(1.2, 1.1, 0.7))
         
     def get_head_icon(name):
         return "interface/icons/head/head_"+str(name)+"_1.png"
@@ -136,5 +138,3 @@ init -1 python:
         else:
             s = renpy.get_physical_size()
             renpy.set_physical_size(s)
-
-    get_volume_preference = renpy.game.preferences.get_volume

@@ -1,23 +1,23 @@
 # Speedreading books
-default Speedreading_1_ITEM = book_class(
+default Speedreading_1_ITEM = Book(
     id = "Speedreading_1", name = "\"Copper book of spirit\"",
     cost = 40,  type = "book", image = "book_general",
     chapters = 2,  description = ">This book contains various tips on speed reading. 2 chapters.",
     effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when reading."
 )
-default Speedreading_2_ITEM = book_class(
+default Speedreading_2_ITEM = Book(
     id = "Speedreading_2", name = "\"Bronze book of spirit\"",
     cost = 60, type = "book", image = "book_general",
     chapters = 4, description = ">This book contains various tips on speed reading. 4 chapters.",
     effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when reading."
 )
-default Speedreading_3_ITEM = book_class(
+default Speedreading_3_ITEM = Book(
     id = "Speedreading_3", name = "\"Silver book of spirit\"",
     cost = 80, type = "book", image = "book_general",
     chapters = 6, description = ">This book contains various tips on speed reading. 6 chapters.",
     effect = ">New skill unlocked: always complete an additional chapter when reading."
 )
-default Speedreading_4_ITEM = book_class(
+default Speedreading_4_ITEM = Book(
     id = "Speedreading_4", name = "\"Golden book of spirit\"",
     cost = 160, type = "book", image="book_general",
     chapters = 8, description = ">This book contains various tips on speed reading. 8 chapters.",
@@ -25,25 +25,25 @@ default Speedreading_4_ITEM = book_class(
 )
 
 # Speedwriting books
-default Speedwriting_1_ITEM = book_class(
+default Speedwriting_1_ITEM = Book(
     id = "Speedwriting_1", name = "\"Speedwriting for beginners\"",
     cost = 90, type = "book", image = "book_general",
     chapters = 2, description = ">This book contains a bunch of very basic techniques used to improve one's ability to write quickly. 2 chapters.",
     effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when doing paperwork."
 )
-default Speedwriting_2_ITEM = book_class(
+default Speedwriting_2_ITEM = Book(
     id="Speedwriting_2", name="\"Speedwriting for amateurs\"",
     cost=110, type="book", image="book_general",
     chapters=4, description=">This book contains intermediate techniques used to improve one's ability to write quickly. 4 chapters.",
     effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when doing paperwork."
 )
-default Speedwriting_3_ITEM = book_class(
+default Speedwriting_3_ITEM = Book(
     id="Speedwriting_3", name="\"Speedwriting for advanced\"",
     cost=130, type="book", image="book_general",
     chapters=6, description=">This book contains advanced techniques used to improve one's ability to write quickly. 6 chapters.",
     effect = ">New skill unlocked: always complete an additional chapter when doing paperwork."
 )
-default Speedwriting_4_ITEM = book_class(
+default Speedwriting_4_ITEM = Book(
     id="Speedwriting_4", name="\"Speedwriting for experts\"",
     cost=150, type="book", image="book_general",
     chapters=8, description=">This book contains expert techniques used to improve one's ability to read quickly. 8 chapters.",
@@ -51,7 +51,7 @@ default Speedwriting_4_ITEM = book_class(
 )
 
 # Fictional books
-default Galadriel_I_ITEM = fiction_book(
+default Galadriel_I_ITEM = FictionBook(
     id          = "Galadriel_I",
     name        = "\"The Tale of Galadriel. Book I.\"",
     cost        = 100,
@@ -84,7 +84,7 @@ default Galadriel_I_ITEM = fiction_book(
     ]
 )
 
-default Galadriel_II_ITEM = fiction_book(
+default Galadriel_II_ITEM = FictionBook(
     id          = "Galadriel_II",
     name        = "\"The Tale of Galadriel. Book II.\"",
     cost        = 200,
@@ -118,7 +118,7 @@ default Galadriel_II_ITEM = fiction_book(
     ]
 )
 
-default Armchairs_ITEM = fiction_book(
+default Armchairs_ITEM = FictionBook(
     id          = "Armchairs",
     name        = "\"A game of Armchairs\"",
     cost        = 300,
@@ -151,7 +151,7 @@ default Armchairs_ITEM = fiction_book(
     ]
 )
 
-default Dear_Wifu_ITEM = fiction_book(
+default Dear_Wifu_ITEM = FictionBook(
     id          = "Dear_Wifu",
     name        = "\"My dear waifu\"",
     cost        = 300,
@@ -162,7 +162,7 @@ default Dear_Wifu_ITEM = fiction_book(
     effect      = ">Your imagination has improved."
 )
 
-default quidditch_book_1_ITEM = fiction_book(
+default quidditch_book_1_ITEM = FictionBook(
     id          = "quidditch_book_1",
     name        = "\"Quidditch for Dummies\"",
     unlockable  = True,
@@ -185,7 +185,7 @@ default quidditch_book_1_ITEM = fiction_book(
     ]
 )
 
-default book_list = silver_book_lib(
+default book_list = BookCollection(
     read_books = [
         Speedreading_1_ITEM,
         Speedreading_2_ITEM,
@@ -220,7 +220,7 @@ label read_book_menu:
     label .interact:
     $ _return = ui.interact()
 
-    if isinstance(_return, item_class):
+    if isinstance(_return, Item):
         $ book_choice = _return
         jump handle_book_selection
 
@@ -250,15 +250,15 @@ label handle_book_selection:
 
 label check_book_order:
     if book_choice in book_list.read_books:
-        if (book_choice.id == "Speedreading_1") or (book_choice.id == "Speedreading_2" and book_list.isDone("Speedreading_1")) or (book_choice.id == "Speedreading_3" and book_list.isDone("Speedreading_2")) or (book_choice.id == "Speedreading_4" and book_list.isDone("Speedreading_3")):
+        if (book_choice.id == "Speedreading_1") or (book_choice.id == "Speedreading_2" and book_list.is_done("Speedreading_1")) or (book_choice.id == "Speedreading_3" and book_list.is_done("Speedreading_2")) or (book_choice.id == "Speedreading_4" and book_list.is_done("Speedreading_3")):
             jump reading_book
 
     if book_choice in book_list.write_books:
-       if (book_choice.id == "Speedwriting_1") or (book_choice.id == "Speedwriting_2" and book_list.isDone("Speedwriting_1")) or (book_choice.id == "Speedwriting_3" and book_list.isDone("Speedwriting_2")) or (book_choice.id == "Speedwriting_4" and book_list.isDone("Speedwriting_3")):
+       if (book_choice.id == "Speedwriting_1") or (book_choice.id == "Speedwriting_2" and book_list.is_done("Speedwriting_1")) or (book_choice.id == "Speedwriting_3" and book_list.is_done("Speedwriting_2")) or (book_choice.id == "Speedwriting_4" and book_list.is_done("Speedwriting_3")):
             jump reading_book
 
     if book_choice in book_list.fiction_books:
-        if (book_choice.id == "Galadriel_II" and book_list.isDone("Galadriel_I")):
+        if (book_choice.id == "Galadriel_II" and book_list.is_done("Galadriel_I")):
             jump reading_book
         elif book_choice.id != "Galadriel_II":
             jump reading_book
@@ -391,11 +391,11 @@ label read_chapter:
         if book_choice.id == "Dear_Wifu":
             call waifu
         else:
-            $tmp_desc = book_choice.getChapterDesc()
+            $ tmp_desc = book_choice.get_chapter_description()
             "[tmp_desc]"
             if book_choice.progress < book_choice.chapters:
                 $ book_choice.progress += 1
-                $tmp_desc = book_choice.getChapterDesc()
+                $ tmp_desc = book_choice.get_chapter_description()
                 "[tmp_desc]"
     return
 
@@ -458,7 +458,7 @@ label read_scroll_menu:
     label .interact:
     $ _return = ui.interact()
 
-    if isinstance(_return, item_class):
+    if isinstance(_return, Item):
         $ scroll_choice = _return
         hide screen list_menu
         jump read_scroll

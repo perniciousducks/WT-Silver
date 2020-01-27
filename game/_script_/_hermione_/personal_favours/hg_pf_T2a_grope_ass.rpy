@@ -106,12 +106,12 @@ label hg_pf_grope_ass_T1_back:
     call her_main("You said all you were going to do is touch!", "angry", "base", "angry", "mid", cheeks="blush")
 
     menu:
-        "\"Alright, alright... stop making a scene, sheesh....\"":
+        "\"Alright, alright... stop making a scene....\"":
             call her_main(".......................", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
             jump hg_pf_grope_ass_T1_continue
 
-        "-Give her butt yet another slap-":
+        "-Give her butt another slap-":
             $ her_mood += 2
             pass
 
@@ -424,7 +424,7 @@ label hg_pf_grope_ass_T2_continue:
             call her_main(".............", "disgust", "narrow", "base", "down", cheeks="blush")
 
             pass
-            
+
         "-Slide your hands across her pussy-" if not hermione.is_worn("panties"):
             call nar(">You slowly slide one of your hands across her pussy..")
             call her_main("[genie_name]... What are you...?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
@@ -628,7 +628,7 @@ label hg_pf_grope_ass_T3_front:
     menu:
         "-Slide your hands under her panties-" if hermione.is_worn("panties"):
             call her_chibi_scene("grope_ass_front", trans=d7)
-            
+
         "-Slide your hands across her pussy-" if not hermione.is_worn("panties"):
             call her_chibi_scene("grope_ass_front", trans=d7)
 
@@ -691,7 +691,7 @@ label hg_pf_grope_ass_T3_back:
     menu:
         "-Slide your hands under her panties-" if hermione.is_worn("panties"):
             call her_chibi_scene("grope_ass_back", trans=d7)
-            
+
         "-Slide your hands across her pussy-" if not hermione.is_worn("panties"):
             call her_chibi_scene("grope_ass_back", trans=d7)
 

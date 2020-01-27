@@ -14,7 +14,7 @@ label hg_pf_admire_breasts_transition:
     call ctc
 
     call bld
-    
+
     m "Hm..."
     if her_tier <= 2:
         call her_main("{size=-5}(My breasts are completely exposed...){/size}", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
@@ -197,7 +197,7 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
 
             ">Hermione pulls away from you and covers up..."
             g4 "Don't you dare to leave me in this state, [hermione_name]!"
-            
+
             $ hermione.wear("all")
             call her_chibi_scene("reset","desk","base", trans=fade)
 
@@ -393,7 +393,7 @@ label hg_pf_admire_breasts_T3_masturbate:
             #
             # TODO: CUM LAYERS
             #
-            
+
             call her_main("[genie_name], no, you promised!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
             g4 "Oh, this is great, yes..."
 
@@ -595,7 +595,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         m "It will be over soon."
         call her_main("..................", "shock", "worriedCl", "worried", "mid")
         m "Yes... Yes, like this..."
-        m "Yes, with your tits all naked..."
+        m "Yes, your tits all exposed..."
         call her_main("..............", "disgust", "narrow", "base", "down", cheeks="blush")
         call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
         call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
@@ -615,7 +615,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         call her_main("You just couldn't help yourself, could you [genie_name]?", "base", "base", "base", "R", cheeks="blush")
         call her_main("..................", "base", "narrow", "base", "up", cheeks="blush")
         m "Yes... Yes, just like that..."
-        m "...with your whorish tits all naked..."
+        m "...with your tits all exposed..."
         call her_main("..............", "base", "narrow", "base", "up", cheeks="blush")
         call her_main("well, so be it...", "open", "base", "base", "R", cheeks="blush")
         call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
@@ -651,7 +651,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             #
             # TODO: CUM LAYERS
             #
-            
+
             call her_chibi_scene("grope_tits_cum")
             with d5
             call ctc
@@ -685,7 +685,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             #
             # TODO: CUM LAYERS
             #
-            
+
             $ hermione.wear("all")
             call her_chibi("stand","desk","base")
             call gen_chibi("sit_behind_desk")
@@ -729,7 +729,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             call her_main("", "disgust", "narrow", "base", "down", xpos="mid", ypos="base")
             call ctc
 
-            her "My body is all covered in jizz though..."
+            her "My body is all covered in semen though..."
             m "Don't worry, it looks good on you."
             m "You did great."
 
@@ -744,7 +744,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             #
             # TODO: CUM LAYERS
             #
-            
+
             $ hermione.wear("all")
             call her_chibi("stand","desk","base")
             call gen_chibi("sit_behind_desk")

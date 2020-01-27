@@ -208,7 +208,7 @@ label hg_pf_strip_T1_intro_E1: # Complete
     hide screen blktone
     call nar(">Hermione starts dancing again...")
 
-    call her_chibi("dance","mid","base")
+    call her_chibi("dance","mid","base") #Chibi takes off the vest here btw but Hermione does not even if she's wearing it
     with d5
 
     call her_main("{size=-5}(...........................................){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
@@ -256,13 +256,23 @@ label hg_pf_strip_T1_intro_E1: # Complete
             call nar(">Finally she takes a deep breath and removes her top...","end")
 
             call her_main("{size=-5}(Alright, here it comes...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-            call her_main("{size=-5}(For the honour of the Gryffindor!){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+            call her_main("{size=-5}(For the honour of the Gryffindor!){/size}", "angry", "base", "worried", "mid", cheeks="blush")
             pause.2
 
             $ hermione.strip("top")
             call ctc
 
-            call her_main("{size=-5}(I actually did it...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+            if hermione.is_worn("bra"):
+                m "And your bra..."
+                call her_main("...", "angry", "base", "angry", "mid")
+                $ hermione.strip("bra")
+                call her_main("{size=-5}(I...{w=0.4} I did it...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+            else:
+                call her_main("{size=-5}(I actually did it...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+
+            # call her_chibi("dance","mid","base")
+
+
             call her_main("{size=-5}([genie_name] can see my breasts while I'm dancing for him...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
             call her_main("{size=-5}(This is so demeaning...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
             call her_main("{size=-5}(But I am doing this for my house...){/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
@@ -287,9 +297,9 @@ label hg_pf_strip_T1_intro_E1: # Complete
     call play_music("sad")
 
     call her_main("I'm sorry, [genie_name]...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-    call her_main("It's stuck...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-    call her_main("It won't budge...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-    call her_main("Why won't it budge?! *sob*", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("I...{w=0.4} I'm trying...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("But my hands...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("Why is this so hard! *sob*", "angry", "worriedCl", "worried", "mid", cheeks="blush")
     call her_main("No, I can't do this, [genie_name]! *sob*", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
     m "What?"
     call her_main("I thought I could, but...", "angry", "squint", "base", "mid", cheeks="blush", trans=fade)

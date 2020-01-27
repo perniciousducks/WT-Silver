@@ -417,15 +417,15 @@ label hg_pf_talk_T3:
     else:
         m "Is that so?"
         m "So, what were they doing exactly?"
-        
+
     call her_main("Well, her room is filled with a bunch of muggle toys, instruments and trinkets...", "open", "base", "base", "mid")
-    call her_main("Her collection would even bring Mrs Weasley's to shame.", "base", "base", "base", "mid")
-    
+    call her_main("Her collection would even bring Mr Weasley's to shame.", "base", "base", "base", "mid")
+
     if masturbating:
         m "(I bet she has a bunch of sex toys in there...)"
     else:
         m "Maybe I should have a look at her collection myself."
-        
+
     call her_main("There's obviously nothing that stands out as odd to me in any way.", "open", "base", "base", "mid", cheeks="blush")
     call her_main("But since most of the Slytherins are pure-blood they were handling her items with little to no care.", "mad", "base", "base", "R")
     call her_main("So when they weren't silently insulting her about her views they were constantly making suggestive remarks about the objects asking where she'd insert that one...", "annoyed", "base", "worried", "R")
@@ -825,11 +825,11 @@ label hg_pf_talk_tonks:
     call her_main("I just...{w=0.6} Sometimes Gryffindor is just so far behind in points...", "soft", "narrow", "base", "down")
     call ton_main("Oh, I see...","base","base","upset","L", hair="basic")
     call her_main("I also only asked Professor Dumbledore for a favour once or twice...", "soft", "base", "base", "mid", cheeks="blush")
-    
+
     if not masturbating:
         m "[tmp_word] times..."
         call her_main("*Hmpf*...", "annoyed", "narrow", "angry", "R", cheeks="blush")
-        
+
     call ton_main("And I suppose you're against the idea of doing favours for another teacher?","horny","base","raised","L", hair="horny")
     call her_main("I...", "angry", "narrow", "worried", "down", cheeks="blush")
     call her_main("*Umm*... maybe I could?", "soft", "base", "base", "R", cheeks="blush")

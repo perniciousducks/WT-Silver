@@ -96,12 +96,12 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
                 call her_main("...............................", "annoyed", "narrow", "base", "down")
                 call her_main("Promise me you will be gentle with them.", "soft", "narrow", "base", "mid_soft")
                 m "Sure..."
-                
+
                 $ hermione.strip("top")
                 if hermione.is_worn("bra"):
                     m "Now your bra..."
                     $ hermione.strip("bra")
-                    
+
                 call her_chibi_scene("behind_desk_show_tits", trans=d5)
                 call ctc
 
@@ -194,12 +194,12 @@ label hg_pf_grope_breasts_T3:
 
     call play_music("playful_tension") # SEX THEME.
     if hermione.is_worn("top") or hermione.is_worn("bra"):
-        call nar(">Hermione is reaches to undo her clothes...")
+        call nar(">Hermione shifts to start undoing her clothes...")
 
         menu:
             "\"That's right, take it off!\"":
                 $ hermione.strip("top")
-                
+
                 if hermione.is_worn("bra"):
                     g9 "Show them to me at once!"
                     her "......."
@@ -210,7 +210,7 @@ label hg_pf_grope_breasts_T3:
                 m "I want to massage them while you are fully dressed..."
                 call her_main("Oh, I see...", "base", "base", "base", "R", cheeks="blush", ypos="head")
                 jump hg_pf_grope_breasts_T3_clothed
-                
+
     jump hg_pf_grope_breasts_T3_naked
 
 label hg_pf_grope_breasts_T3_naked:

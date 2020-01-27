@@ -56,7 +56,7 @@ label hg_pf_sex:
     $ hg_anal.trigger = True
     if her_whoring < 24: #Adds points till 24.
         $ her_whoring += 1
-        
+
     $ achievement.unlock("nerdgasm")
 
     jump end_hermione_event
@@ -116,8 +116,10 @@ label hg_pf_sex_T1_intro_E2:
     call her_main("Did I happen to receive 65 house points afterwards?", "angry", "base", "angry", "mid")
     g9 "Why yes, you did, [hermione_name]."
     call her_main("...............................", "disgust", "narrow", "base", "mid_soft")
-    her "Let me just take my panties off..."
-
+    if hermione.is_worn("panties"):
+        her "Let me just take my panties off..."
+    else:
+        call her_main("At least I didn't wear my panties today...", "disgust", "base", "base", "down")
     call hg_sex_2
 
     jump end_hg_pf_sex
@@ -200,7 +202,10 @@ label hg_sex_1:
 
     call her_main(".............", "upset", "closed", "base", "mid", ypos="head")
     call her_main("!!!!!!!!!!!!!!!", "angry", "wide", "base", "stare")
-    m "Relax, [hermione_name]. I'm Just gonna take off your panties."
+    if hermione.is_worn("panties"):
+        m "Relax, [hermione_name]. I'm Just gonna take off your panties."
+    else:
+        m "Relax, [hermione_name]..."
     call her_main("..............", "angry", "base", "angry", "mid")
     m "Are you ready?"
     call her_main("No...", "annoyed", "narrow", "annoyed", "mid")
@@ -493,7 +498,7 @@ label hg_sex_2:
         call her_main("", "open", "worriedCl", "worried", "mid", ypos="head")
     else:
         call her_chibi_scene("sex", trans=fade)
-    
+
     call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare", ypos="head")
     hide screen bld1
     call ctc

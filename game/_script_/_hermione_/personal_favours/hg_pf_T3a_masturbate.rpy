@@ -98,7 +98,9 @@ label hg_pf_strip_T2_fingering:
             call her_main("I'm doing this for the honour of gryffindor...")
             call her_main("To help my--")
             call nar(">You notice how she's starting to grind her hips a little faster.")
-            $ hermione_dribble = True
+            #
+            # TODO: Add wet layer for panties/pussy
+            #
             call her_main("ah...{image=textheart}{image=textheart}{image=textheart}", "soft", "narrow", "annoyed", "up")
             call her_main("My classmates win the house cup...", "angry", "wink", "base", "mid")
             m "Are you sure that's the only reason slut?"

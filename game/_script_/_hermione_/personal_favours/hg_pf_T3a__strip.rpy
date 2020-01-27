@@ -1140,7 +1140,7 @@ label hg_pf_strip_T2:
     call ctc
 
     menu:
-        "-Ask her to masturbate-":
+        "-Ask her to masturbate- (UNFINISHED)" if config.developer:
             if her_tier <= 4:
                 jump hg_pf_strip_T2_fingering
             elif her_tier == 5:
@@ -1153,9 +1153,6 @@ label hg_pf_strip_T2:
 
         "-Show some manners, just watch-":
             jump hg_pf_strip_T2_watch
-
-
-
 
 label hg_pf_strip_T2_watch:
     call blktone

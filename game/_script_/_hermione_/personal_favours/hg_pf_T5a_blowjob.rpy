@@ -18,6 +18,7 @@ label hg_pf_blowjob:
 
     # Start Event
     $ current_payout = 55
+    $ mouth_full_of_cum = False
     $ hg_pf_blowjob.start()
 
 
@@ -51,7 +52,6 @@ label hg_pf_blowjob:
     else:
         m "You can go now, [hermione_name]."
 
-    #TODO Check if mouth_full_of_cum is defined in all paths leading up to this point
     if mouth_full_of_cum:
         call her_main("...", "full_cum", "narrow", "annoyed", "up", cheeks="blush", tears="mascara")
     else:
@@ -1841,6 +1841,7 @@ label hg_pf_blowjob_2:
 
             call her_main("*She nods her head up and down enthusiastically*", "full_cum", "narrow", "annoyed", "up", cheeks="blush", tears="mascara") #Smile.
             m "Good slut."
+            $ mouth_full_of_cum = True
 
     jump end_hg_pf_blowjob
 

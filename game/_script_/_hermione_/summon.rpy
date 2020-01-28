@@ -780,7 +780,7 @@ label hermione_change:
                     m "Lets just void this whole... deal of yours shall we."
                     call her_main("B-but, [genie_name]?!", "mad", "wide", "base", "mid", emote="02")
                     call her_main("", "mad", "wide", "base", "mid")
-                    m "I must apologize {b}Miss Granger{/b}, I thought we had come to some kind of agreeable arrangement by now..."
+                    m "I must apologise {b}Miss Granger{/b}, I thought we had come to some kind of agreeable arrangement by now..."
                     call her_main("But I...", "mad", "wide", "worried", "stare")
                     m "...I should have known better to believe that this sort of thing would work out..."
                     call her_main("Maybe I coul-...","clench","WorriedCl")

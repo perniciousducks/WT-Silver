@@ -65,7 +65,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", "normal", "base", "base", "mid")
         m "Something like that..."
         call her_main("", "normal", "base", "base", "mid")
-        call her_main("I am glad you're finally asking me to properly utilize my abilities as one of Hogwarts top students.", "open", "closed", "base", "mid")
+        call her_main("I am glad you're finally asking me to properly utilise my abilities as one of Hogwarts top students.", "open", "closed", "base", "mid")
         call her_main("{size=-4}I only wish you would have asked this of me sooner..{/size}","open","narrow", "base","R_soft")
         call her_main("", "normal", "closed", "base", "mid")
         call her_main("Never fear! I am happy to complete a task such as this one!", "smile", "base", "base", "mid")

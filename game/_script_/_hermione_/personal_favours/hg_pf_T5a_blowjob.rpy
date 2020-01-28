@@ -470,7 +470,7 @@ label hg_pf_blowjob_1:
 
             call her_chibi_scene("bj_pause")
             call her_main("Professor Minerva McGonagall is the headmistress of our house.", "open", "closed", "base", "mid")
-            call her_main("The Gryffindor house emphasizes the traits of courage...")
+            call her_main("The Gryffindor house emphasises the traits of courage...")
             call her_main("As well as \"daring, nerve and chivalry\"...")
             call her_main("And thus its members are generally regarded as brave but reckless...")
 
@@ -1460,7 +1460,7 @@ label hg_hidden_blowjob_cumming:
 
             if her_tier >= 6:
                 m "What, even after I just gave you a salon treatment?"
-                m "Other women pay a lot of money for a good facial moisturizer."
+                m "Other women pay a lot of money for a good facial moisturiser."
                 call her_main(".............", "annoyed", "squint", "base", "mid") #Smile.
                 call her_main("Fine, but my skin better look glamour tomorrow.")
                 g9 "You can always come for a second dosage."

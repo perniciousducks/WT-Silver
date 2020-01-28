@@ -129,7 +129,7 @@ label chit_chat:
         elif one_of_ten == 3:
             call her_main("Ashwinder eggs, rose thorns, moonstone...", "open", "base", "worried", "R")
             call her_main("Huh? Am I thinking out loud again?", "open", "base", "worried", "mid")
-            call her_main("I apologize...", "grin", "worriedCl", "worried", "mid",emote="05")
+            call her_main("I apologise...", "grin", "worriedCl", "worried", "mid",emote="05")
             call her_main("It's just that we have another test soon...", "soft", "base", "base", "R")
 
         elif one_of_ten == 4:

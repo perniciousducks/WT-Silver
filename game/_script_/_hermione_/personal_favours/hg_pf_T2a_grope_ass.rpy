@@ -132,7 +132,7 @@ label hg_pf_grope_ass_T1_back:
     # Event Fails
     menu:
         g4 "Tsk..."
-        "\"I... I apologize...\"":
+        "\"I... I apologise...\"":
             m "......It's not my fault......"
             call her_main("An apology won't be enough, [genie_name]!", "angry", "base", "angry", "mid", cheeks="blush")
             m "What else do you want? More points?"

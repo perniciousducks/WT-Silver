@@ -40,7 +40,7 @@ label give_ton_gift(gift_item):
     elif gift_item == girls_mag_ITEM:
         call ton_main("Some girl magazines? I could definitely put these in my classroom.",mouth="open",face="neutral",xpos="mid",ypos="base",trans=d5)
         call give_gift(">You give an assortment of rather girly magazines to Tonks...", gift_item)
-        call ton_main("The girls do love staying after hours to socialize.",face="happy")
+        call ton_main("The girls do love staying after hours to socialise.",face="happy")
         call ton_friendship(0)
 
     elif gift_item == adult_mag_ITEM:

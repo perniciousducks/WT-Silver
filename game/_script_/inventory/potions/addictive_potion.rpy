@@ -431,7 +431,7 @@ label hg_pp_cumaddict_E1: #Repetitive version where she doesn't faint after the 
     menu:
         "-Let her suck your dick-":
             g9 "Be my guest, [hermione_name]."
-        "-Make her apologize first-":
+        "-Make her apologise first-":
             m "I don't think that you deserve to suck my dick after being this rude."
             m "Maybe if you apologised..."
             call her_main("......", "upset", "wink", "base", "mid")

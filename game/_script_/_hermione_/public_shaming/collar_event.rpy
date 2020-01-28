@@ -540,7 +540,7 @@ label good_girl_scene:
     call her_main("*sob* Really [genie_name]?", "open", "worriedCl", "worried", "mid")
     m "Really. You wouldn't have done any of this if the point system was fair would you?"
     call her_main("*sob* I guess not...", "angry", "base", "base", "mid")
-    m "I'm sure once Miss Bones realizes what you are doing this for she will understand."
+    m "I'm sure once Miss Bones realises what you are doing this for she will understand."
     call her_main("Do you really think so [genie_name]?", "angry", "narrow", "base", "down")
     m "I do, you're a good girl Miss Granger."
     call her_main("Thank you [genie_name].", "base", "base", "base", "mid")

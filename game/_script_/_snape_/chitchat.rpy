@@ -194,7 +194,7 @@ label snape_chitchat:
             call sna_main("","snape_23") 
 
         elif one_of_ten == 4:
-            call sna_main("According to a recent study 9 out of 10 girls secretly fantasize about being abused by their teacher.","snape_24") 
+            call sna_main("According to a recent study nine out of ten girls secretly fantasise about being abused by their teacher.","snape_24") 
             call sna_main("I bet that 10th girl was Hermione Granger.","snape_03") 
             call sna_main("","snape_01") 
 
@@ -394,7 +394,7 @@ label snape_chitchat:
             call sna_main("","snape_23") 
 
         elif one_of_ten == 9:
-            call sna_main("This one girl confessed to me that she has frequent fantasizes about being abused by that squib mr.Filch.","snape_19") 
+            call sna_main("This one girl confessed to me that she has frequent fantasises about being abused by that squib mr.Filch.","snape_19") 
             call sna_main("I think I could arrange that. Should I?","snape_14") 
             call sna_main("","snape_02") 
 

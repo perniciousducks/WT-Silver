@@ -40,7 +40,7 @@ label hg_pr_handjob:
         call her_main("I most certainly would not, [genie_name]! This is beyond inappropriate!", "scream", "closed", "angry", "mid")
         m "Alright, fine, maybe I really did cross some sort of line this time..."
         call her_main("You think [genie_name]?! You think!!?", "angry", "base", "angry", "mid")
-        m "Yes, I apologize..."
+        m "Yes, I apologise..."
         call her_main(".........", "annoyed", "narrow", "annoyed", "mid")
         m "How about we try something less... engaging instead?"
         call her_main("............", "upset", "closed", "base", "mid")

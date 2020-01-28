@@ -99,9 +99,9 @@ label hg_pf_handjob_T1_intro_E1:
     call her_main("[genie_name]!", "angry", "base", "angry", "mid")
     m "Just another favour. No big deal, right?"
     call her_main("......", "disgust", "narrow", "base", "mid_soft")
-    call her_main("{size=-7}I want hundred house points for this...{/size}", "angry", "worriedCl", "worried", "mid", emote="05")
+    call her_main("{size=-7}I want a hundred house points for this...{/size}", "angry", "worriedCl", "worried", "mid", emote="05")
     m "Huh? What was that?"
-    call her_main("I want hundred house points for this!!!", "scream", "worriedCl", "worried", "mid")
+    call her_main("I want a hundred house points for this!!!", "scream", "worriedCl", "worried", "mid")
     call her_main("", "clench", "worriedCl", "worried", "mid")
     m "Hundred house points, huh?"
     m "And you will stroke my cock and everything?"
@@ -134,11 +134,11 @@ label hg_pf_handjob_T1_intro_E1:
         "\"you will get 100 house points.\"":
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ current_payout = 100
-            call her_main("Hundred house points?!", "scream", "wide", "base", "mid")
+            call her_main("One hundred house points?!", "scream", "wide", "base", "mid")
             her "This will definitely put Gryffindor in the lead!"
             m "Is that a \"yes\" then?"
             call her_main("Of course!", "smile", "happyCl", "base", "mid")
-            call her_main("If it will bring Gryffindor hundred house points, I don't mind touching your... thing a little.", "smile", "happyCl", "base", "mid", emote="06")
+            call her_main("If it will bring Gryffindor a hundred house points, I don't mind touching your... thing a little.", "smile", "happyCl", "base", "mid", emote="06")
             pass
 
     jump hg_pf_handjob_1
@@ -762,7 +762,7 @@ label hg_pf_handjob_2_continue:
 
     menu:
         m "..."
-        "{size=-4}\"I fantasize about being raped by my father.\"{/size}":
+        "{size=-4}\"I fantasise about being raped by my father.\"{/size}":
             $ her_mood += 11
             call her_main("I do not!", "angry", "base", "angry", "mid")
             m "I know. Just say it."
@@ -770,7 +770,7 @@ label hg_pf_handjob_2_continue:
             m "Humour me."
             call her_main("...........", "annoyed", "narrow", "annoyed", "mid")
             call her_main("Well...", "open", "narrow", "worried", "down")
-            call her_main("Sometimes I fantasize about being raped...")
+            call her_main("Sometimes I fantasise about being raped...")
             call her_main(".......")
             m "I see. And in those fantasies of yours..."
             m "Who is doing the raping?"

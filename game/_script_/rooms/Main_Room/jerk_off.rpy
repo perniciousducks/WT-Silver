@@ -41,16 +41,16 @@ call nar(">You decide to spend some time by jerking off...")
 pause.5
 
 if her_panties_soaked:
-    call nar(">You fantasize about Hermione...")
+    call nar(">You fantasise about Hermione...")
 
 elif cho_panties_soaked:
-    call nar(">You fantasize about Cho...")
+    call nar(">You fantasise about Cho...")
 
 else:
     if d_flag_01:
-        call nar(">You fantasize about Princess Jasmine...")
+        call nar(">You fantasise about Princess Jasmine...")
     if d_flag_02:
-        call nar(">You fantasize about Lara Croft...")
+        call nar(">You fantasise about Lara Croft...")
 
 g4 "Yes... that's a good slut!"
 pause.5

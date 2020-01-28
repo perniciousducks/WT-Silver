@@ -276,7 +276,7 @@ label hg_anal_sex_1:
             call her_chibi_scene("sex_cum_in_done", trans=d5)
             pause.8
 
-            call her_main("I apologize for saying that I hate you, [genie_name]...", "base", "base", "base", "R",cheeks="blush",tears="mascara",ypos="head",flip=False)
+            call her_main("I apologise for saying that I hate you, [genie_name]...", "base", "base", "base", "R",cheeks="blush",tears="mascara",ypos="head",flip=False)
             call her_main("And your cock is not nasty...",cheeks="blush",tears="mascara")
             call her_main("I don't know what's gotten into me...", "grin", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
             g9 "My dick!"

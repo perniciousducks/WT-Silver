@@ -496,7 +496,7 @@ label ball_quest_E4:
     call bld
     m "Miss Granger?"
     call her_main("Sorry to disturb you sir...", "open", "base", "worried", "mid", xpos="right", ypos="base")
-    call her_main("I came to apologize for my...", "open", "base", "worried", "R")
+    call her_main("I came to apologise for my...", "open", "base", "worried", "R")
     her "...my hysterical behaviour yesterday."
     m "Sure thing, don't worry about it."
     call her_main("Thank you, sir.", "open", "base", "base", "mid")

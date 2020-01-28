@@ -167,7 +167,7 @@ label a_bad_time_to_disrobe_part_1:
 
     call her_walk ("door", "base")
 
-    call her_main("\"He's right, they wouldn't recognize me if I didn't show my face...\"", "base", "base", "base", "mid", cheeks="blush", tears="mascara",ypos="head")
+    call her_main("\"He's right, they wouldn't recognise me if I didn't show my face...\"", "base", "base", "base", "mid", cheeks="blush", tears="mascara",ypos="head")
     call her_main("\"would they?\"", "base", "base", "base", "mid", cheeks="blush", tears="mascara",ypos="head")
 
     call her_chibi("leave")
@@ -234,7 +234,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("With my butt out?!?", "disgust", "wide", "worried", "stare")
     m "With your bu..."
     m "No, well... yes, but this time you'll be prepared."
-    call her_main("But... what if they recognize me sir?", "open", "base", "worried", "mid")
+    call her_main("But... what if they recognise me sir?", "open", "base", "worried", "mid")
     m "You'd already know if they had recognised you..."
     call her_main("\"That's true...\"", "soft", "base", "base", "mid_soft", cheeks="blush")
     call her_main("And then what, you want me to just walk away?", "base", "base", "base", "mid", cheeks="blush")

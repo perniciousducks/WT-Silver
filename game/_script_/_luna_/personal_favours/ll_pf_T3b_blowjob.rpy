@@ -339,7 +339,7 @@ label luna_blowjob_under_desk: # Call label
             lun "{size=-7}wow...{/size}"
             m "Now this special technique requires you to suck those nasty little critters out of the affected area..."
             m "For me that's right here..."
-            ">You give your thick cock a lazy stroke to emphasize."
+            ">You give your thick cock a lazy stroke to emphasise."
             $ lunCG('base', 'wink', 'base', 'up')
             lun "Is there any way in particular that you want me to suck it?"
             m "Imagine it's a tasty lollipop..."

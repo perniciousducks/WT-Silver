@@ -205,7 +205,7 @@ label cc_pf_strip_T1_intro_E1:
             call cho_main("I'm not sure I want to after what you've just said...","annoyed","narrow","angry","R")
             m "Why? What did I say?"
             call cho_main("That Granger's body is better?! We both know that isn't true.","angry","narrow","angry","mid")
-            m "Do you expect me to apologize?"
+            m "Do you expect me to apologise?"
             call cho_main("Yes!{w} Admit that I'm sexier!","annoyed","closed","angry","mid") # Snobby
             g9 "You are indeed, \"very sexy\", Miss Chang!"
             call cho_main("Thank you, Sir.","base","narrow","base","mid")

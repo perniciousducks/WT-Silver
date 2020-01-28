@@ -110,7 +110,7 @@ label hg_pr_sex_T1_intro_E2:
     call her_main(face="neutral", xpos="right", ypos="base")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     m "[hermione_name], you missed your debriefing yesterday."
-    call her_main("Yes, [genie_name], I apologize... *yawn*...", "open", "closed", "base", "mid")
+    call her_main("Yes, [genie_name], I apologise... *yawn*...", "open", "closed", "base", "mid")
     m "Care to explain yourself?"
     call her_main("Of course, [genie_name].", "open", "happy", "base", "mid", cheeks="blush")
     call her_main("It is sort of embarrassing, though...", "base", "base", "base", "R", cheeks="blush")

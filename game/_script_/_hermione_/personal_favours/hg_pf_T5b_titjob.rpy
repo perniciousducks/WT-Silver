@@ -116,9 +116,9 @@ label hg_pf_titjob_T1_intro_E1:
     call her_main("And giving \"titjobs\" isn't one of them...", "angry", "base", "angry", "mid")
     m "At least this is something you'll be able to use in the real world."
     call her_main("If you say so, [genie_name]...", "annoyed", "narrow", "angry", "R")
-    call her_main("{size=-7}I want hundred points for this...{/size}", "angry", "worriedCl", "worried", "mid", emote="05")
+    call her_main("{size=-7}I want a hundred points for this...{/size}", "angry", "worriedCl", "worried", "mid", emote="05")
     m "Speak up, [hermione_name]."
-    call her_main("I want hundred points!", "scream", "worriedCl", "worried", "mid")
+    call her_main("I want a hundred points!", "scream", "worriedCl", "worried", "mid")
     call her_main("", "annoyed", "narrow", "angry", "R")
 
     label back_to_titjob_choices:
@@ -151,7 +151,7 @@ label hg_pf_titjob_T1_intro_E1:
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ current_payout = 100
             $ her_mood = 0
-            call her_main("hundred house points?!", "scream", "wide", "base", "mid")
+            call her_main("One hundred house points?!", "scream", "wide", "base", "mid")
             call her_main("This might be enough to put Gryffindor in the lead!", "smile", "wide", "base", "stare")
             m "So,...is that a yes?"
             call her_main("Yes, [genie_name]!", "smile", "happyCl", "base", "mid")

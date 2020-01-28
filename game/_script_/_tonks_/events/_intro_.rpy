@@ -73,7 +73,7 @@ label tonks_intro_E1:
     call play_music("tonks")
     call ton_main("Thank you, Professor.","base","base","base","mid", xpos="right", ypos="base")
     m "(Oh shit, she’s hot...)"
-    call ton_main("I apologize for arriving unannounced...{w=0.8} And a couple of days late...","open","base","base","R")
+    call ton_main("I apologise for arriving unannounced...{w=0.8} And a couple of days late...","open","base","base","R")
     g9 "Please, I'm glad you could make it."
     call ton_main("I was occupied with some unfinished ministry business. Took me a lot longer to solve than I had anticipated...","open","base","base","mid")
 

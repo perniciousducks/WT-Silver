@@ -1259,7 +1259,7 @@ label hornify_spell_2: #second level hornify spell
     call sus_main("!!!","base","base","base","base")
     call ast_main("Take the scenic route, I think you'll need the fresh air...","base","base","base","base")
     call sus_main("!!!","base","base","base","base")
-    ">You can see a desperate pleading in the poor redheads eyes as she realizes the humiliation she's about to endure..."
+    ">You can see a desperate pleading in the poor redheads eyes as she realises the humiliation she's about to endure..."
     m "don't you think that's a little much [astoria_name]?"
     call ast_main("Pfft, no... Besides, Everyone already stares at her big tits, it's not like anything will change...","base","base","base","base")
     call sus_main("...","base","base","base","base")

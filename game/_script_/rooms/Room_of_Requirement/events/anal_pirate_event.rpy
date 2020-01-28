@@ -342,7 +342,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ face_on_cg = False
                 hide screen hermione_main
 
-                call her_main("I apologize for saying that I hate you, captain...", "base", "base", "base", "R",cheeks="blush",tears="mascara",ypos="head")
+                call her_main("I apologise for saying that I hate you, captain...", "base", "base", "base", "R",cheeks="blush",tears="mascara",ypos="head")
                 call her_main("And your canon is not rusty...",cheeks="blush",tears="mascara")
                 call her_main("I don't know what's gotten into me...", "grin", "narrow", "worried", "mid_soft",cheeks="blush",tears="mascara")
                 g9 "My canonfire!"

@@ -246,7 +246,7 @@ label hg_pf_strip_T2_Snape:
                 call her_main("......", "annoyed", "narrow", "angry", "R")
             call sna_main(".............","snape_13")
 
-        "-Unleash your rage ({size=-2}Hardcore{/size}-" if game_difficulty >= 3: #Hardcore difficulty dialogue.
+        "-Unleash your rage {size=-2}(Hardcore){/size}-" if game_difficulty >= 3: #Hardcore difficulty dialogue.
             $ her_mood += 18
             $ sna_friendship -= 10
             m "Both of you,..."

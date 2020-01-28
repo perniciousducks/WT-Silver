@@ -203,7 +203,7 @@ label l_tutoring:
         jump day_start
 
     elif her_tutoring == 3:   # Whoring lvl 3
-        call her_main("Sir, I want to apologize for doubting you.", "open", "base", "base", "mid")
+        call her_main("Sir, I want to apologise for doubting you.", "open", "base", "base", "mid")
         m "Yes?"
         call her_main("Your \"atypical\" method works!", "angry", "worriedCl", "worried", "mid",emote="05")
         m "{size=-2}(Impossible!){/size}"

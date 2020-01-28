@@ -715,7 +715,7 @@ label potion_scene_1_2:
             her "Not at all, I suppose it is only natural that someone of your advanced age has trouble with their eyesight."
             m "(definitely struck a nerve there.) Is that any way to talk to your elders, [hermione_name]? Perhaps you need a good spanking to remind you of your manners. We old people are good at giving those."
             $ changeLuna("disgust","base","sad","mid")
-            her "I..I apologize, [genie_name]. I don't know what came over me."
+            her "I..I apologise, [genie_name]. I don't know what came over me."
             m "Apology accepted. I'm sure they can't hold a candle to the brilliance of your boobs."
             $ changeLuna("pout","base","base","R")
             her "I'd like to think I'm more than just a pair of breasts... but thank you [genie_name]. That was flattering. In a way."

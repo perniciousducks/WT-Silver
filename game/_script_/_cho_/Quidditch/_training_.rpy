@@ -347,12 +347,12 @@ label change_quidditch_tactics:
                     m "(The outfit and tactics seems to be fine. I should probably do some favours to improve her confidence a bit.)"
                 jump demonstrate_quidditch_tactics
 
-            "-Customize quidditch outfit-" if not cho_quid.lock_tactic:
+            "-Customise quidditch outfit-" if not cho_quid.lock_tactic:
                 call cho_main(face="neutral", xpos="mid", ypos="base")
                 call wardrobe_quidditch() # Open quidditch wardrobe
                 $ cho.equip(cho_outfit_quidditch)
                 call cho_main(face="neutral", xpos="mid", ypos="base")
-            "{color=[menu_disabled]}-Customize quidditch outfit-{/color}" if cho_quid.lock_tactic:
+            "{color=[menu_disabled]}-Customise quidditch outfit-{/color}" if cho_quid.lock_tactic:
                 if hufflepuff_match == "end":
                     m "(We have won with this tactic before. I don't see why we should change it.)"
                 else:
@@ -415,7 +415,7 @@ label demonstrate_tactic(position=""):
             m "(Maybe I can get her to remove it...)"
         elif cho_quid.bottom in ["skirt_short","skirt_long"]:
             m "(This might work!)"
-            m "(Although, her skirt doesn't really emphasize her ass enough...)"
+            m "(Although, her skirt doesn't really emphasise her ass enough...)"
             m "(Maybe there is a better option for this position...)"
         else:
             m "(This might work!)"

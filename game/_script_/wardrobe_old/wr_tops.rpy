@@ -508,7 +508,7 @@ label equip_top:
                         # call her_main("But, [genie_name], that's muggle clothing!", "angry", "wink", "base", "mid")
                         # m "... So what?"
                         # call her_main("They are against the Hogwarts rules for--", "open", "closed", "base", "mid")
-                        # m "Proper school attire... Yeah yeah, heard that one a hundred times already..."
+                        # m "Proper school attire... Yeah yeah, heard that over a hundred times already..."
                         # call her_main("(...)", "annoyed", "narrow", "annoyed", "mid")
                         # m "I'm telling you to wear it. I'm the headmaster, after all."
                         # g9 "(I can do shit like that!)"
@@ -660,7 +660,7 @@ label equip_top:
                         # call her_main("Just let me change it real quick.", "base", "narrow", "base", "mid_soft")
                     # else: #23+
                         # call her_main("Of course, [genie_name].", "soft", "narrow", "annoyed", "up")
-                        # call her_main("I like how much it emphasizes my breasts!", "smile", "narrow", "base", "mid_soft")
+                        # call her_main("I like how much it emphasises my breasts!", "smile", "narrow", "base", "mid_soft")
                         # call her_main("I really do love it!", "smile", "happyCl", "base", "mid")
                         # call her_main("Let me just put it on real quick.", "base", "narrow", "base", "mid_soft")
                 # else:

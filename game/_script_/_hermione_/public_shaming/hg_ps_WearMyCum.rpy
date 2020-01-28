@@ -2,12 +2,12 @@
 
 ### Wear My Cum ###
 
-label hg_ps_cumslut: #Walk around school covered in genies cum
+label hg_ps_cumslut:
     hide screen hermione_main
     with d3
 
-    m "{size=-4}(Should I ask her to walk around with my cum on her face?){/size}"
-    $ menu_x = 0.5 #Default position of the menu. Version B is $ menu_x = 0.2
+    m "{size=-4}(Should I ask her to walk around with my cum on her?){/size}"
+    $ menu_x = 0.5
     menu:
         "\"(Yes, let's do it!)\"":
             pass
@@ -15,14 +15,14 @@ label hg_ps_cumslut: #Walk around school covered in genies cum
             jump hermione_favor_menu
 
     m "[hermione_name]?"
-    call her_main("Yes, [genie_name].",xpos="right",ypos="base")
+    call her_main("Yes, [genie_name].", xpos="right", ypos="base")
 
-    call play_music("playful_tension") # SEX THEME.
+    call play_music("playful_tension")
     m "Today I have another small favour to ask of you."
     call her_main("What is it?", "base", "base", "base", "mid")
-    m "I'd like you to attend class."
+    m "I'd like you to attend class..."
     call her_main("Of course...", "base", "base", "base", "mid")
-    m "After I cum on you...."
+    m "After I cum on you."
 
     if her_whoring < 9:
         jump too_much
@@ -30,14 +30,9 @@ label hg_ps_cumslut: #Walk around school covered in genies cum
     elif her_whoring < 15:
         jump hg_ps_cumslut_Scene_1
     elif her_whoring < 21:
-        jump hg_ps_cumslut_Scene_2 #This is 1 until I write 2
+        jump hg_ps_cumslut_Scene_2
     else:
-        jump hg_ps_cumslut_Scene_2 #This is 1 until I write 3
-
-
-
-
-
+        jump hg_ps_cumslut_Scene_3
 
 
 label hg_ps_cumslut_Scene_1:
@@ -52,20 +47,21 @@ label hg_ps_cumslut_Scene_1:
     call her_main("Well I suppose that would be alright...", "annoyed", "narrow", "annoyed", "mid")
     call her_main("But what's the point if they can't see it?", "annoyed", "base", "worried", "R")
     m "You'll know it's there."
-    call her_main("Hmmmm...", "annoyed", "narrow", "angry", "R") #Haggle here
+    call her_main("Hmmmm...", "annoyed", "narrow", "angry", "R")
+
+    # Haggle
     call her_main("How much will I be paid?", "annoyed", "squint", "base", "mid")
-    m "30 points."
-    call her_main("30! I expect at least 70 for such a filthy act!", "scream", "worriedCl", "worried", "mid")
-    m "40."
-    call her_main("60!", "scream", "closed", "angry", "mid")
-    m "50 points, final offer."
+    m "Thirty points."
+    call her_main("Thirty?! I expect at least seventy for such a filthy act!", "scream", "worriedCl", "worried", "mid")
+    m "Forty."
+    call her_main("Sixty!", "scream", "closed", "angry", "mid")
+    m "Fifty points, final offer."
     call her_main("Ok, I'll do it.", "annoyed", "base", "worried", "R")
     m "Really?"
     call her_main("As long as nobody can see it then I don't see the big issue.", "annoyed", "narrow", "angry", "R")
     m "Splendid. Care to give me a hand?"
     call her_main("...", "base", "narrow", "worried", "down")
 
-    #Start jerk off chibis
     hide screen hermione_main
     call blkfade
 
@@ -77,7 +73,7 @@ label hg_ps_cumslut_Scene_1:
     call hide_blkfade
     call ctc
 
-    call her_main("Why are you making me do this, [genie_name]?", "angry", "base", "base", "mid",ypos="head")
+    call her_main("Why are you making me do this, [genie_name]?", "angry", "base", "base", "mid",xpos="base",ypos="head")
     m "What do you mean?"
     call her_main("Why are you making me jerk you off...", "angry", "narrow", "base", "down")
     call her_main("So that you can cum on me...", "soft", "narrow", "annoyed", "up")
@@ -96,12 +92,12 @@ label hg_ps_cumslut_Scene_1:
     m "Doing slutty things in front of your peers because I tell you."
     call her_main("...", "disgust", "narrow", "base", "down")
     m "I'll tell you what, I'll make things interesting."
-    m "So long as I cum on you and you wear it around classes today, Gryffindor will get 50 points."
+    m "So long as I cum on you and you wear it around classes today, Gryffindor will get fifty points."
     call her_main("How does that make it interesting?", "disgust", "narrow", "base", "mid_soft")
     m "Because I'll let you choose where I cum."
-    call nar(">You fell her hands tense around your cock.")
+    call nar(">You feel her hands tense around your cock.")
     call her_main("You're letting me choose?", "smile", "base", "base", "R")
-    m "Anywhere, as long as it's on you. It can be your shoes for all I care."
+    m "Anywhere, as long as it's on you. It can be on your shoes for all I care."
     call her_main("Ok...", "base", "happy", "base", "mid")
     m "Well hurry up [hermione_name], classes will start soon."
     call nar(">She starts jerking your cock with renewed vigour.")
@@ -114,97 +110,106 @@ label hg_ps_cumslut_Scene_1:
     call her_main("Already? Where should I-", "angry", "wide", "base", "stare")
 
     menu:
-        "-Stay Silent-": # Cum under shirt
+        "-Stay Silent-":
+            # Cum under shirt
             $ cum_location = 1
+
             call nar(">Hermione swiftly pulls her shirt up...","start")
             call nar(">You can feel her incredibly soft tits rubbing against the tip of your cock, making you cum!","end")
             g4 "{size=+5}ARGH! YES!!!{/size}"
 
             hide screen hermione_main
             hide screen bld1
-            call gen_chibi("cumming_under_shirt")
+            call her_chibi_scene("hj_cum_in")
             call cum_block
             pause.5
 
-            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare",ypos="head")
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
 
             $ aftersperm = True
+            # TODO Cum layer
 
-            call her_main("Well, this shouldn't be too bad...", "upset", "wink", "base", "mid",xpos="right",ypos="base")
+            call her_chibi_scene("hj_cum_in_done")
+
+            call her_main("Well, this shouldn't be too bad...", "upset", "wink", "base", "mid")
             m "I'm sure no one will notice."
             call her_main("They better not.", "angry", "base", "angry", "mid")
 
-        "\"Just keep on jerking [hermione_name]!\"": # Cum on skirt
+        "\"Just keep on jerking [hermione_name]!\"":
+            # Cum on skirt
             $ cum_location = 2
 
             call nar(">Hermione keeps jerking your cock, her eyes darting between it and herself.")
             g4 "Get ready whore, here it comes!"
-            call her_main("Wait, where am I supposed to-", "angry", "base", "worried", "mid", ypos="head")
+            call her_main("Wait, where am I supposed to-", "angry", "base", "worried", "mid")
             g9 "{size=+5}ARGH! YES!!!{/size}"
 
-            call play_music("chipper_doodle") # HERMIONE'S THEME.
+            call play_music("chipper_doodle")
 
             hide screen hermione_main
             hide screen bld1
-            call gen_chibi("cumming_on_shirt")
+            call her_chibi_scene("hj_cum_on")
             call cum_block
             pause.5
 
             $ u_sperm = "characters/hermione/face/auto_11.png"
             $ uni_sperm = True
+            # TODO Cum layer
 
-            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare",xpos="right",ypos="base")
-            m "That's it, all over you slut."
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
+            m "That's it! All over you, slut!"
             call her_main("...", "annoyed", "narrow", "worried", "down")
 
             hide screen hermione_main
             hide screen bld1
             with d3
-            call gen_chibi("cumming_on_shirt_pause")
+            call her_chibi_scene("hj_cum_on_done")
             call ctc
 
-            call her_main("Will that be all [genie_name].", "annoyed", "narrow", "annoyed", "up")
+            call her_main("Will that be all, [genie_name]?", "annoyed", "narrow", "annoyed", "up")
             m "I don't suppose you could kiss it for good luck?"
             call her_main("I don't think so.", "annoyed", "narrow", "angry", "R")
-            m "Well then that should be all then [hermione_name]."
+            m "Well then that should be all, [hermione_name]."
 
         "\"Take it on your face slut!\"":
+            # Cum on head
             $ cum_location = 3
 
-            call nar(">Hermione bends down and place your cock in front of her face.")
+            call nar(">Hermione bends down and holds your cock in front of her face.")
             m "Get ready slut, here it comes!"
-            call her_main("...", "scream", "wide", "base", "mid",ypos="head")
+            call her_main("...", "scream", "wide", "base", "mid")
             g9 "{size=+5}ARGH! YES!!!{/size}"
             call her_main("I can't...", "clench", "narrow", "base", "down")
 
             call nar(">Hermione moves your cock away from her face at the last second.","start")
             call nar(">You erupt over the top of her head, covering her hair in your spunk.","end")
 
-            call play_music("chipper_doodle") # HERMIONE'S THEME.
+            call play_music("chipper_doodle")
             hide screen bld1
-            call gen_chibi("cumming_on_shirt")
+            call her_chibi_scene("hj_cum_on")
             call cum_block
             pause.5
 
             $ u_sperm = "characters/hermione/face/auto_12.png"
             $ uni_sperm = True
+            # TODO Cum layer
 
-            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare",xpos="right",ypos="base")
-            m "Yes... I Feel so much better now..."
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
+            m "Yes! I Feel so much better now..."
             call her_main("..............", "normal", "worriedCl", "worried", "mid")
 
             hide screen hermione_main
             hide screen bld1
             with d3
-            call gen_chibi("cumming_on_shirt_pause")
+            call her_chibi_scene("hj_cum_on_done")
             call ctc
 
-            call her_main("How could you!", "scream", "worriedCl", "worried", "mid")
+            call her_main("How could you!?", "scream", "worriedCl", "worried", "mid")
             m "How could I?"
             call her_main("You told me to let you cum on my face!", "scream", "closed", "angry", "mid")
             m "I did."
-            call her_main("Why would you say something like that!", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
-            call her_main("If I hadn't moved at the last second my face would be covered!", "angry", "base", "base", "mid",tears="soft")
+            call her_main("Why would you say something like that!?", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
+            call her_main("If I hadn't moved at the last second, my face would be covered!", "angry", "base", "base", "mid",tears="soft")
             m "You didn't have to listen to me."
             call her_main("What?", "angry", "base", "worried", "mid")
             m "I only said that you had to have my cum on you."
@@ -238,32 +243,31 @@ label hg_ps_cumslut_Scene_1:
     jump end_hermione_event
 
 
-
-
 label hg_ps_cumslut_Scene_2:
     $ hg_ps_cumslut.inProgress = True
     call her_main("Again?", "shock", "wide", "base", "stare")
-    call her_main("You can not be serious!", "angry", "base", "angry", "mid")
+    call her_main("You can not be serious!?", "angry", "base", "angry", "mid")
     call her_main("I already let you do this to me once, isn't that enough?", "annoyed", "narrow", "annoyed", "mid")
     m "It's enough when I say it's enough."
     m "Besides, was it really such an issue last time?"
     call her_main("Well I guess not...", "annoyed", "base", "base", "mid")
     call her_main("But will it still be hidden this time?", "annoyed", "base", "worried", "R")
     m "That's up to you."
-    call her_main("Hmmmm...", "annoyed", "narrow", "angry", "R") #Haggle here
+    call her_main("Hmmmm...", "annoyed", "narrow", "angry", "R")
+
+    # Haggle
     call her_main("How much will I be paid this time then?", "annoyed", "squint", "base", "mid")
-    m "20 points."
-    call her_main("20! we agreed on 50 last time!", "scream", "worriedCl", "worried", "mid")
-    m "40."
-    call her_main("70!", "scream", "closed", "angry", "mid")
-    m "50 points, final offer."
-    call her_main("80 and I'll let people see it.", "base", "narrow", "base", "mid_soft")
+    m "Twenty points."
+    call her_main("Twenty!? we agreed on fifty last time!", "scream", "worriedCl", "worried", "mid")
+    m "Forty."
+    call her_main("Seventy!", "scream", "closed", "angry", "mid")
+    m "Fifty points then, final offer."
+    call her_main("Eighty and I'll let people see it.", "base", "narrow", "base", "mid_soft")
     m "Really?"
     call her_main("As long as it isn't too obvious.", "base", "narrow", "worried", "down")
     m "Deal."
     call her_main("...", "base", "narrow", "worried", "down")
 
-    #Start jerk off chibis
     hide screen hermione_main
     call blkfade
 
@@ -294,15 +298,15 @@ label hg_ps_cumslut_Scene_2:
     call her_main("Good", "base", "happy", "base", "mid")
     m "But I want you to be honest."
     m "So I'm going to give you a choice."
-    m "You can stop jerking me off right now, leave the room and I'll give you the 80 points. However, I'll be very upset."
+    m "You can stop jerking me off right now, leave the room and I'll give you the eighty points. However, I'll be very upset."
     call her_main("or?", "open", "base", "base", "mid")
     m "Or, you can keep jerking me off, wear my cum around the school and get no points."
     call her_main("NO POINTS?", "scream", "worriedCl", "worried", "mid")
     m "None. You will make an old man very happy though."
     call her_main("Can't you just pay me for wearing your cum?", "angry", "worriedCl", "worried", "mid",emote="05")
     m "No."
-    call nar(">You fell her hands tense around your cock.")
-    call her_main("You're making me choose? Between getting 80 points for doing nothing.", "annoyed", "narrow", "annoyed", "mid")
+    call nar(">You feel her hands tense around your cock.")
+    call her_main("You're making me choose? Between getting eighty points for doing nothing.", "annoyed", "narrow", "annoyed", "mid")
     call her_main("Or getting paid nothing for wearing your cum around the school.", "angry", "narrow", "annoyed", "mid", emote="01")
     m "Indeed I am [hermione_name]."
     call her_main("{size=-5}Ok...{/size}", "disgust", "narrow", "base", "down")
@@ -316,7 +320,8 @@ label hg_ps_cumslut_Scene_2:
     call her_main("What, Already? Where should I-", "angry", "wide", "base", "stare")
 
     menu:
-        "-Stay Silent-": # Legs
+        "-Stay Silent-":
+            # Cum on legs
             $ cum_location = 4
 
             call nar(">Hermione keeps jerking your cock, her eyes darting between it and herself.")
@@ -324,14 +329,15 @@ label hg_ps_cumslut_Scene_2:
             call her_main("Wait, where am I supposed to-", "angry", "base", "worried", "mid", ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
 
-            call play_music("chipper_doodle") # HERMIONE'S THEME.
+            call play_music("chipper_doodle")
             hide screen bld1
-            call gen_chibi("cumming_on_shirt")
+            call her_chibi_scene("hj_cum_on")
             call cum_block
             pause.5
 
             $ u_sperm = "characters/hermione/face/auto_13.png"
             $ uni_sperm = True
+            #TODO Cum layer
 
             call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare",xpos="right",ypos="base")
 
@@ -341,49 +347,51 @@ label hg_ps_cumslut_Scene_2:
             hide screen hermione_main
             hide screen bld1
             with d3
-            call gen_chibi("cumming_on_shirt_pause")
+            call her_chibi_scene("hj_cum_on_done")
             call ctc
 
-            call her_main("Will that be all [genie_name].", "annoyed", "narrow", "annoyed", "up")
+            call her_main("Will that be all [genie_name]?", "annoyed", "narrow", "annoyed", "up")
             m "I don't suppose you could kiss it for good luck?"
-            call her_main("...{p}...", "base", "narrow", "base", "up")
+            call her_main("...{w=0.5} ...", "base", "narrow", "base", "up")
 
             hide screen hermione_main
             hide screen bld1
             with d3
-            call gen_chibi("handjob_kiss")
+            call her_chibi_scene("hj_kiss")
             $ renpy.play('sounds/kiss.mp3')
             with kissiris
             call ctc
 
-            call gen_chibi("cumming_on_shirt_pause")
+            call her_chibi_scene("hj_cum_on_done")
             m "Good girl."
 
-        "\"Just keep on jerking [hermione_name]!\"": # Cum on shirt front
+        "\"Just keep on jerking [hermione_name]!\"":
+            # Cum on shirt
             $ cum_location = 5
 
             call nar(">Hermione keeps jerking your cock, her eyes focused intently on it.")
-            g4 "Get ready whore, here i come!"
+            g4 "Get ready whore, here I come!"
             call her_main("...", "angry", "base", "worried", "mid", ypos="head")
             g9 "{size=+5}ARGH! YES!!! RIGHT ON THOSE TITS!{/size}"
 
-            call play_music("chipper_doodle") # HERMIONE'S THEME.
+            call play_music("chipper_doodle")
             hide screen bld1
-            call gen_chibi("cumming_on_shirt")
+            call her_chibi_scene("hj_cum_on")
             call cum_block
             pause.5
 
             $ u_sperm = "characters/hermione/face/auto_06.png"
             $ uni_sperm = True
+            #TODO Cum layer
 
             call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare",xpos="right",ypos="base")
-            m "That's it, all over you slut."
+            m "That's it! All over you, slut!"
             call her_main("...", "annoyed", "narrow", "worried", "down")
 
             hide screen hermione_main
             hide screen bld1
             with d3
-            call gen_chibi("cumming_on_shirt_pause")
+            call her_chibi_scene("hj_cum_on_done")
             call ctc
 
             call her_main("It's all over me.", "annoyed", "narrow", "annoyed", "up")
@@ -391,39 +399,41 @@ label hg_ps_cumslut_Scene_2:
             call her_main("I think I should go now...", "annoyed", "narrow", "worried", "down")
 
         "\"Take it on your face slut!\"":
+            # Cum on face
             $ cum_location = 6
 
-            call nar(">Hermione bends down and place your cock in front of her face.")
+            call nar(">Hermione bends down and holds your cock in front of her face.")
             m "Get ready slut, here it comes!"
             call her_main("...", "scream", "wide", "base", "mid",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
             call her_main("...", "clench", "narrow", "base", "down")
             call nar(">You erupt onto her face, dousing her in your spunk.")
 
-            call play_music("chipper_doodle") # HERMIONE'S THEME.
+            call play_music("chipper_doodle")
             hide screen bld1
-            call gen_chibi("cumming_on_shirt")
+            call her_chibi_scene("hj_cum_on")
             call cum_block
             pause.5
 
             $ u_sperm = "characters/hermione/face/auto_07.png"
             $ uni_sperm = True
+            #TODO Cum layer
 
             call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare",xpos="right",ypos="base")
-            m "Yes... I Feel so much better now..."
+            m "Yes! I Feel so much better now..."
             call her_main("..............", "normal", "worriedCl", "worried", "mid")
 
             hide screen hermione_main
             hide screen bld1
             with d3
-            call gen_chibi("cumming_on_shirt_pause")
+            call her_chibi_scene("hj_cum_on_done")
             call ctc
 
-            call her_main("How could you!", "scream", "worriedCl", "worried", "mid")
+            call her_main("How could you!?", "scream", "worriedCl", "worried", "mid")
             m "How could I?"
             call her_main("You came all over my face!", "scream", "closed", "angry", "mid")
             m "I did."
-            call her_main("Why would you ask me to do that!", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
+            call her_main("Why would you ask me to do that!?", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
             call her_main("I'm completely covered in your cum!", "angry", "base", "base", "mid",tears="soft")
             m "You didn't have to listen to me."
             call her_main("...", "angry", "base", "worried", "mid")
@@ -462,24 +472,21 @@ label hg_ps_cumslut_Scene_3:
     call her_main("Are you serious?", "shock", "wide", "base", "stare")
     call her_main("Can I?", "grin", "narrow", "annoyed", "up")
     m "well-"
-    call her_main("I was going to ask you if I could seeing as how it made you so happy last time [genie_name].", "smile", "happyCl", "base", "mid",emote="06")
+    call her_main("I was going to ask you if I could, seeing as how it made you so happy last time, [genie_name].", "smile", "happyCl", "base", "mid",emote="06")
     call her_main("I'll even do it for free if that would make you happier!", "base", "narrow", "base", "up")
     m "really?"
     m "Well let's get started then!"
 
-    #Start jerk off chibis
     hide screen hermione_main
-    hide screen bld1
-    with d3
-
-    call her_walk("desk", "base", reduce=0.8)
     call blkfade
 
-    call her_chibi_scene("hj")
+    call her_chibi_scene("hj", "desk", "base")
     show screen desk
+
     hide screen blktone
-    hide screen blkfade
-    with d3
+    hide screen bld1
+    call hide_blkfade
+    call ctc
 
     call bld
     m "Gods, you're good at this, [hermione_name]!"
@@ -488,35 +495,37 @@ label hg_ps_cumslut_Scene_3:
     call her_main("about why I do this... sell you these sort of favours.", "upset", "closed", "base", "mid")
     call her_main("At the start it was just to get points, so that gryffindor could win the house cup...", "angry", "wink", "base", "mid")
     call her_main("but lately...", "base", "narrow", "worried", "down")
-    call her_main("...it’s been more than that... now I do it to make you happy, [genie_name].", "base", "narrow", "base", "mid_soft")
+    call her_main("it’s been more than that...{w=0.5} now I do it to make you happy, [genie_name].", "base", "narrow", "base", "mid_soft")
     call her_main("Because making you happy, makes me happy...", "base", "squint", "base", "mid")
     m "That's great... but what would really make me happy right now is you focusing a little more on the task at hand..."
     call her_main("Oh! Of course, [genie_name]...", "open", "worriedCl", "worried", "mid")
     call her_main("Do you need some extra encouragement?", "open", "closed", "base", "mid")
     m "it would help..."
     call her_main("well... do you know how much I've been thinking about this? How much I wanted to ask you to cover me again?", "base", "narrow", "worried", "down")
-    call her_main("I've become such a slut [genie_name], it's all I've been able to think about... going to class covered in your {image=textheart}cum{image=textheart}", "grin", "narrow", "annoyed", "up")
-    call her_main("I Imagine it staining my uniform, so much that I can never wash it out. I imagine being covered in your cum constantly. So everyone knows who and what I am.", "grin", "narrow", "base", "dead")
+    call her_main("I've become such a slut, [genie_name]. It's all I've been able to think about... going to class covered in your {image=textheart}cum{image=textheart}", "grin", "narrow", "annoyed", "up")
+    call her_main("I Imagine it staining my uniform so much that I can never wash it out. I imagine being covered in your cum constantly, so everyone knows what I am.", "grin", "narrow", "base", "dead")
     call her_main("not just A slut... a cumslut...", "soft", "narrow", "annoyed", "up")
-    call her_main("Your {image=textheart}cum{image=textheart}slut...", "silly", "narrow", "annoyed", "up")
+    call her_main("Your {image=textheart}cumslut{image=textheart}...", "silly", "narrow", "annoyed", "up")
     g9 "That did it slut!"
     g4 "HERE IT COMES!!!"
     call her_main("Shoot it wherever you want [genie_name]...", "open_wide_tongue", "narrow", "annoyed", "up")
     menu:
-        "\"take it on your tits!\"": # Cum on shirt front
+        "\"take it on your tits!\"":
+            # Cum on shirt
             $ cum_location = 7
             call her_main("Please cover my tits with your sticky cum! I need it, [genie_name]!", "grin", "narrow", "annoyed", "up",ypos="head")
-            ">Hermionely keeps jerking your cock, her eyes focused intently on it."
+            ">Hermione keeps jerking your cock, her eyes focused intently on it."
             g4 "Get ready whore, here i come!"
             call her_main("...", "silly", "narrow", "base", "dead")
             ">Hermione leans forward, lining up her tits directly with your cock."
-            g9 "{size=+5}ARGH! YES!!! RIGHT in between your TITS!{/size}"
+            g9 "{size=+5}ARGH! YES!!! RIGHT between your TITS!{/size}"
 
             call cum_block
 
-            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+            call play_music("chipper_doodle")
             $ u_sperm = "characters/hermione/face/auto_06.png"
             $ uni_sperm = True
+            #TODO Cum layer
 
             call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "worried", "down",xpos="right",ypos="base")
             call her_chibi_scene("hj_cum_on")
@@ -526,7 +535,7 @@ label hg_ps_cumslut_Scene_3:
             call ctc
 
             call bld
-            m "That's it, all over you slut."
+            m "That's it! All over you, slut!"
             call her_main("......", "soft", "narrow", "annoyed", "up")
             pause
             call her_chibi_scene("hj_cum_on_done")
@@ -535,8 +544,9 @@ label hg_ps_cumslut_Scene_3:
             call her_main("If it's alright with you, I think I better head to class now...", "base", "narrow", "worried", "down")
 
         "\"Take it on your face, slut!\"":
+            # Cum on face
             $ cum_location = 8
-            ">Hermione bends down and place your cock in front of her face."
+            ">Hermione bends down and holds your cock in front of her face."
             m "Get ready slut, here it comes!"
             call her_main("Please give it to me! I need it, [genie_name]!", "grin", "narrow", "annoyed", "up",ypos="head")
             g9 "{size=+5}ARGH! YES!!!{/size}"
@@ -545,9 +555,11 @@ label hg_ps_cumslut_Scene_3:
 
             call cum_block
 
-            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+            call play_music("chipper_doodle")
             $ u_sperm = "characters/hermione/face//auto_07.png"
             $ uni_sperm = True
+            #TODO Cum layer
+
             call her_chibi_scene("hj_cum_on")
             hide screen blkfade
             hide screen bld1
@@ -563,7 +575,7 @@ label hg_ps_cumslut_Scene_3:
 
     ">You tuck your cock back into your robe."
 
-    call her_chibi("stand","desk"."base")
+    call her_chibi("stand", "desk", "base")
     call gen_chibi("sit_behind_desk")
     hide screen blkfade
     hide screen bld1
@@ -573,34 +585,39 @@ label hg_ps_cumslut_Scene_3:
     call bld
     m "I’ll see you after classes. And as before, if you come back without any cum on you, I’ll be very disappointed."
     call her_main("of course [genie_name]...", "soft", "narrow", "annoyed", "up",xpos="right",ypos="base")
-    call her_main("(I can't wait to see the look on peoples faces...)", "grin", "narrow", "base", "dead")
+    call her_main("(I can't wait to see the look on people's faces...)", "grin", "narrow", "base", "dead")
 
     call her_walk(action="leave")
 
     jump end_hermione_event
 
 
-
-label hg_ps_cumslut_complete: #Hermione returns from her day of wearing your cum
+label hg_ps_cumslut_complete:
+    # Hermione returns from her day of wearing your cum
     $ hg_ps_cumslut.inProgress = False
     $ hg_ps_cumslut.complete = True
-    if cum_location <= 3:
+    if cum_location < 4:
         jump hg_ps_cumslut_complete_1
-    else:
+    elif cum_location < 7:
         jump hg_ps_cumslut_complete_2
+    else:
+        jump hg_ps_cumslut_complete_3
 
 
 label hg_ps_cumslut_complete_1:
 
     call her_walk(action="enter", xpos="mid", ypos="base")
 
-    if cum_location == 1: #Cum under shirt
+    if cum_location == 1:
+        # Cum under shirt
         $ aftersperm = True
+        #TODO Cum layer
+
         call her_main("...I did it, [genie_name].", "base", "happy", "base", "mid",xpos="right",ypos="base")
         call her_main("I kept your cum on me all day.", "base", "base", "base", "R")
 
         menu:
-            "\"50 Points to gryffindor!\"":
+            "\"Fifty points to gryffindor!\"":
                 $ gryffindor += 50
                 call her_main("Thank you [genie_name], will that be all?", "soft", "base", "base", "mid")
                 m "Yes [hermione_name], you may leave now. "
@@ -616,40 +633,46 @@ label hg_ps_cumslut_complete_1:
                 m "Very well, goodnight [hermione_name]."
                 call her_main("Good night [genie_name].", "base", "base", "base", "mid")
 
-    elif cum_location == 2: #Cum on skirt
+    elif cum_location == 2:
+        # Cum on skirt
         $ u_sperm = "characters/hermione/face/auto_11.png"
         $ uni_sperm = True
+        #TODO Cum layer
 
         call her_main("...I did it [genie_name].", "normal", "worriedCl", "worried", "mid",xpos="right",ypos="base")
         call her_main("I kept your cum on me all day.", "angry", "worriedCl", "worried", "mid",emote="05")
 
         menu:
-            "\"50 Points to gryffindor!\"":
+            "\"Fifty points to gryffindor!\"":
                 $ gryffindor += 50
                 call her_main("Thank you [genie_name], will that be all?", "annoyed", "base", "worried", "R")
                 m "Yes [hermione_name], you may leave now. "
             "\"Tell me about your day.\"":
+                hide screen hermione_main
                 $ sc34CG(1, 10, 2)
+                with d5
                 call her_main("It was a pretty normal day, I had potions class and then transfiguration.", "annoyed", "base", "worried", "R",xpos="base",ypos="base")
                 m "And do you think that anyone noticed?"
                 call her_main("I think a few people did [genie_name]. I could hear The first years all whispering as I walked past.", "grin", "worriedCl", "worried", "mid")
                 m "And how did you feel?"
                 call her_main("Excited. I just wish that they knew why I was doing this.", "base", "narrow", "worried", "down")
-                m "Speaking of that, 50 points to Gryffindor."
+                m "Speaking of that, fifty points to Gryffindor."
                 $ gryffindor += 50
                 call her_main("Oh, right the points, Thank you [genie_name]. if that's all I might head to bed.", "open", "narrow", "worried", "down")
                 m "Very well, goodnight [hermione_name]."
                 call her_main("Good night [genie_name].", "annoyed", "closed", "base", "mid")
 
-    else: #Cum on hair
+    else:
+        # Cum on hair
         $ u_sperm = "characters/hermione/face/auto_12.png"
         $ uni_sperm = True
+        #TODO Cum layer
 
         call her_main("...I did it [genie_name].", "upset", "narrow", "base", "dead",tears="mascara",xpos="right",ypos="base")
-        call her_main("I kept your cum on me {p}all day.", "upset", "worriedCl", "worried", "mid",tears="mascara_soft_blink")
+        call her_main("I kept your cum on me all day.", "upset", "worriedCl", "worried", "mid",tears="mascara_soft_blink")
 
         menu:
-            "\"50 Points to gryffindor!\"":
+            "\"Fifty points to gryffindor!\"":
                 $ gryffindor += 50
                 $ her_mood += 5
                 call her_main("...", "annoyed", "narrow", "annoyed", "mid", tears="mascara_soft")
@@ -657,7 +680,9 @@ label hg_ps_cumslut_complete_1:
                 call her_main("Hmmmphh...", "angry", "narrow", "annoyed", "mid", emote="01",tears="mascara")
             "\"Tell me about your day.\"":
                 $ her_mood += 10
+                hide screen hermione_main
                 $ sc34CG(1, 8, 8)
+                with d5
                 call her_main("My day...", "normal", "worriedCl", "worried", "mid",tears="mascara_soft_blink",xpos="base",ypos="base")
                 call her_main("This was the worst day of my life!", "scream", "worriedCl", "worried", "mid",tears="mascara_soft_blink")
                 call her_main("I've never been so ashamed!", "angry", "worriedCl", "worried", "mid",emote="05",tears="mascara_soft_blink")
@@ -688,6 +713,7 @@ label hg_ps_cumslut_complete_2:
     if cum_location == 4: #Cum on legs
         $ u_sperm = "characters/hermione/face/auto_13.png"
         $ uni_sperm = True
+        #TODO Cum layer
 
         call her_main("...I did it, [genie_name].", "base", "happy", "base", "mid",xpos="right",ypos="base")
         call her_main("I kept your cum on me all day.", "base", "base", "base", "R")
@@ -718,6 +744,7 @@ label hg_ps_cumslut_complete_2:
     elif cum_location == 5: #Cum on shirt
         $ u_sperm = "characters/hermione/face/auto_06.png"
         $ uni_sperm = True
+        #TODO Cum layer
 
         call her_main("...I did it, [genie_name].", "normal", "worriedCl", "worried", "mid",xpos="right",ypos="base")
         call her_main("I kept your cum on me all day.", "angry", "worriedCl", "worried", "mid",emote="05")
@@ -727,7 +754,9 @@ label hg_ps_cumslut_complete_2:
                 call her_main("Thank you [genie_name], will that be all?", "annoyed", "base", "worried", "R")
                 m "Yes [hermione_name], you may leave now. "
             "\"Tell me about your day.\"":
+                hide screen hermione_main
                 $ sc34CG(1, 14, 7)
+                with d5
                 call her_main("It was a pretty normal day, I had Defense against the dark arts class and then herbology.", "annoyed", "base", "worried", "R",xpos="base",ypos="base")
                 m "And do you think that anyone noticed?"
                 call her_main("I think most people did [genie_name]. I'm not sure if they all knew it was cum though.", "grin", "worriedCl", "worried", "mid")
@@ -741,6 +770,7 @@ label hg_ps_cumslut_complete_2:
     else: #Cum on face
         $ u_sperm = "characters/hermione/face/auto_07.png"
         $ uni_sperm = True
+        #TODO Cum layer
 
         call her_main("...I did it, [genie_name].", "annoyed", "narrow", "base", "dead",tears="mascara",xpos="right",ypos="base")
         call her_main("I kept your cum on me {p}all day.", "annoyed", "narrow", "base", "dead",tears="mascara")
@@ -753,22 +783,24 @@ label hg_ps_cumslut_complete_2:
                 m "You did."
                 call her_main("Good.", "annoyed", "closed", "base", "mid",tears="mascara")
             "\"Tell me about your day.\"":
+                hide screen hermione_main
                 $ sc34CG(1, 16, 6)
+                with d5
                 call her_main("My day...", "normal", "worriedCl", "worried", "mid",tears="mascara",xpos="base",ypos="base")
                 call her_main("It was completely normal.", "scream", "worriedCl", "worried", "mid",tears="mascara")
                 m "Really? Nothing strange happened at all?"
                 call her_main("No. Everyone treated me how I deserved to be treated.", "scream", "closed", "angry", "mid",tears="mascara")
                 m "And how's that?"
-                call her_main("Like a slut.", "annoyed", "base", "worried", "R",tears="mascara")
-                call her_main("Boys cat called me.", "annoyed", "narrow", "angry", "R",tears="mascara")
-                call her_main("Put me down.", "mad", "worriedCl", "worried", "mid",tears="soft_blink",tears="mascara")
-                call her_main("Snape made me stand out the front of the class During defense against the dark arts.", "angry", "base", "base", "mid",tears="mascara_soft")
+                call her_main("Like a slut...", "annoyed", "base", "worried", "R",tears="mascara")
+                call her_main("Boys catcalled me...", "annoyed", "narrow", "angry", "R",tears="mascara")
+                call her_main("Put me down...", "mad", "worriedCl", "worried", "mid",tears="soft_blink",tears="mascara")
+                call her_main("Snape made me stand out the front of the class during Defense against the dark arts.", "angry", "base", "base", "mid",tears="mascara_soft")
                 m "What did he make you do in front of the class?"
                 call her_main("Nothing, I just had to stand there for the whole lesson.", "upset", "worriedCl", "worried", "mid",tears="mascara_soft_blink")
                 m "Did your friends say anything?"
                 call her_main("Nothing.", "angry", "base", "worried", "mid", tears="mascara_soft")
                 call her_main("...", "upset", "worriedCl", "worried", "mid",tears="mascara_soft_blink")
-                call her_main("Did I{p}make you happy?", "open", "narrow", "annoyed", "mid", tears="mascara_soft")
+                call her_main("Did I...{w=0.5} make you happy?", "open", "narrow", "annoyed", "mid", tears="mascara_soft")
                 m "You did."
                 call her_main("Good night, [genie_name].", "normal", "worriedCl", "worried", "mid",tears="mascara_soft")
 
@@ -779,9 +811,15 @@ label hg_ps_cumslut_complete_2:
 
 
 label hg_ps_cumslut_complete_3:
-    if cum_location == 7: #Cleavage
+
+    call her_walk(action="enter", xpos="mid", ypos="base")
+
+    if cum_location == 7:
+        # Cum on shirt
         $ u_sperm = "characters/hermione/face/auto_06.png"
         $ uni_sperm = True
+        #TODO Cum layer
+
         ">Hermione returns to your office, her shirt still covered in cum."
         call her_main("...I did it [genie_name].", "open", "squint", "base", "mid")
         call her_main("I kept your cum on me all day.", "grin", "worriedCl", "worried", "mid",emote="05")
@@ -790,7 +828,9 @@ label hg_ps_cumslut_complete_3:
                 call her_main("Thank you [genie_name], will that be all?", "base", "base", "base", "mid")
                 m "Yes [hermione_name], you may leave now. "
             "\"Tell me about your day.\"":
+                hide screen hermione_main
                 $ sc34CG(1, 17, 7)
+                with d5
                 call her_main("It was actually quite frustrating [genie_name]...", "annoyed", "narrow", "angry", "R")
                 m "frustrating?"
                 call her_main("yes! Having to spend the whole day smelling your delicous cum but not being able to taste any of it!", "open", "base", "base", "R")
@@ -799,10 +839,13 @@ label hg_ps_cumslut_complete_3:
                 call her_main("I couldn't say [genie_name]... I was too distracted by the smell...", "angry", "wink", "base", "mid")
                 m "Very well, goodnight [hermione_name]."
                 call her_main("Good night [genie_name].", "grin", "narrow", "base", "dead")
-    else: #Cum on face
+    else:
+        # Cum on face
         $ u_sperm = "characters/hermione/face/auto_07.png"
         $ uni_sperm = True
-        ">Hermione returns to your office."
+        #TODO Cum layer
+        
+        ">Hermione returns to your office, her face still covered in cum."
         call her_main("I did it, [genie_name].", "open", "squint", "base", "mid")
         call her_main("I kept your cum on me all day.", "base", "base", "base", "mid")
         menu:
@@ -813,7 +856,9 @@ label hg_ps_cumslut_complete_3:
                 m "Only if you want to..."
                 call her_main("thank you [genie_name]!", "grin", "narrow", "annoyed", "up")
             "\"Tell me about your day.\"":
+                hide screen hermione_main
                 $ sc34CG(1, 17, 6)
+                with d5
                 call her_main("My day...", "soft", "happy", "base", "R")
                 call her_main("It was a normal day [genie_name]. Well what is normal for me now.", "soft", "narrow", "annoyed", "up")
                 call her_main("I got called names again, and some of the boys groped me.", "grin", "narrow", "base", "dead")

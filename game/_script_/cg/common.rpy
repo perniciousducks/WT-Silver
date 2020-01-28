@@ -92,14 +92,14 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         if image1 is not None:
             sc_cg_image_1 = "images/CG/sc34/"+str(scene)+"/A_"+str(image1)+".png"
         else:
-            sc_cg_image_1 = "blank.png"
+            sc_cg_image_1 = "blank"
         if image2 is not None:
             sc_cg_image_2 = "images/CG/sc34/"+str(scene)+"/B_"+str(image2)+".png"
         else:
-            sc_cg_image_2 = "blank.png"
+            sc_cg_image_2 = "blank"
         if image3 is not None:
             sc_cg_image_3 = "images/CG/sc34/"+str(scene)+"/C_"+str(image3)+".png"
         else:
-            sc_cg_image_3 = "blank.png"
+            sc_cg_image_3 = "blank"
         renpy.show_screen("sccg")
         renpy.with_statement(Dissolve(0.5))

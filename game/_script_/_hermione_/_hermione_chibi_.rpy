@@ -94,7 +94,7 @@ init python:
         elif chibi.action == "dance":
             # Determine clothing state
             if hermione.is_worn("top"):
-                if hermione.get_equipped("top").id in ("top_1", "top_6"):
+                if hermione.get_equipped("top").id in ("top_school_1", "top_school_6"):
                     chibi["base"] =  "clothed_dance_ani"
                 elif hermione.is_worn("bottom"):
                     chibi["base"] = "no_vest_dance_ani"

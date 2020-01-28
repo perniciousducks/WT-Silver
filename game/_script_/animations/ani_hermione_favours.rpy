@@ -53,7 +53,7 @@ image hj_cum_in:
 
 image hj_cum_in_done:
     zoom 0.5
-    "characters/hermione/chibis/handjob/sperm_under_12.png"
+    "characters/hermione/chibis/handjob/sperm_under_13.png"
 
 image hj_cum_on:
     zoom 0.5

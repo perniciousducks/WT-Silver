@@ -1773,7 +1773,7 @@ label hg_pf_blowjob_2:
             call her_chibi_scene("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "worried", "down")
             call her_chibi_scene("bj_pause")
-            call her_main("Recently, I even started to moan whenever I'm washing them...", "grin", "narrow", "base", "dead")
+            call her_main("Recently, I even started moaning whenever I'm brushing my teeth...", "grin", "narrow", "base", "dead")
             call her_chibi_scene("bj")
             call her_main("*Gobble!* *lick!* *Gobble!*", "sucking", "narrow", "annoyed", "up")
             m "That's it cock-slut, Almost there..."

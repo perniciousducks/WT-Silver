@@ -222,8 +222,7 @@ label hg_anal_sex_1:
             
         "\"Lets use some lubrication.\"{size=-2}(Item){/size}" if anal_lube_ITEM.number > 0:
             $ anal_lube_ITEM.number -= 1
-            
-            label test_anal:
+
             call play_music("playful_tension") # SEX THEME.
             call her_chibi_scene("sex_pause", trans=fade)
             call her_main("Lubrication, [genie_name]?!", "angry", "wide", "base", "stare",ypos="head")
@@ -257,7 +256,7 @@ label hg_anal_sex_1:
             g4 "*Argh* Fuck, I can't pull out!"
             call her_main("Ah! It hurts!", "scream", "worriedCl", "worried", "mid")
             g4 "Then stop clenching on me so hard, [hermione_name]!"
-            g4 "Your anus is so tight I even can't move!"
+            g4 "Your anus is so tight I can't even move!"
             call her_main("Please, do something!", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
             g4 "I'm trying, [hermione_name]!"
             call her_main("Then try harder!", "scream", "base", "angry", "mid",tears="soft")

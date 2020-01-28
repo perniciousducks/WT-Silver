@@ -431,7 +431,7 @@ label luna_revert_1:
             call her_main("I suppose that's OK then...", "annoyed", "narrow", "angry", "R")
             call her_main("{size=-5}(Why don't I ever get paid in gold...){/size}", "annoyed", "narrow", "annoyed", "mid")
             call her_main("{size=-5}(No, Hermione! If I did that I'd be a prostitute...){/size}", "normal", "worriedCl", "worried", "mid")
-            call her_main("{size=-5}{image=textheart}{image=textheart}{image=textheart}{/size}", "grin", "narrow", "annoyed", "up")
+            call her_main("{size=-5}{heart}{heart}{heart}{/size}", "grin", "narrow", "annoyed", "up")
 
     call her_main("Well regardless, she has to be punished.", "annoyed", "narrow", "annoyed", "mid")
     m "Wait, she's being punished?"
@@ -640,7 +640,7 @@ label luna_revert_2:
     call gen_chibi("cum_close_done")
 
     m "That hit the spot..."
-    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","mid")
+    call lun_main("{heart}{heart}{heart}","base","seductive","sad","mid")
     call lun_main("[lun_genie_name]!","base","mad","mad","mid")
     call lun_main("How could you! Cumming on your students {size=-10}pussy{/size}...","base","angry","angry","mid")
     m "Ahh... that was fantastic slut..."
@@ -920,7 +920,7 @@ label luna_revert_2:
             m "There, I trust you're still able to administer your punishment [lun_name]?"
             call lun_main("Mmmm, I think so...","base","seductive","base","down")
             ">Luna walks over to hermione and presses her sex back onto the girls open tongue."
-            call lun_main("Ah... {image=textheart}","base","seductive","base","down")
+            call lun_main("Ah... {heart}","base","seductive","base","down")
             call her_main("...","angry","wink","base","mid")
             ">You slowly lift hermione's skirt."
             call her_main("!!!","angry","wink","base","mid")
@@ -929,16 +929,16 @@ label luna_revert_2:
             m "Come on barbie..."
             ">You thrust your full length into hermione's cunt!"
             g9  "Let's go party!"
-            call her_main("{image=textheart}{image=textheart}{image=textheart}","angry","wink","base","mid")
+            call her_main("{heart}{heart}{heart}","angry","wink","base","mid")
             g9  "Gods yes!"
-            call lun_main("mmmm {image=textheart}","base","seductive","base","down")
+            call lun_main("mmmm {heart}","base","seductive","base","down")
             ">You start fucking hermione in earnest."
             call lun_main("so, [lun_genie_name]...","base","seductive","base","down")
             call lun_main("How long has this been going on?","base","seductive","base","down")
             m "With miss granger? A while..."
             call lun_main("figures...","base","seductive","base","down")
             call lun_main("You always were a teacher's pet weren't you...","base","seductive","base","down")
-            call her_main("{image=textheart}{image=textheart}{image=textheart}","angry","wink","base","mid")
+            call her_main("{heart}{heart}{heart}","angry","wink","base","mid")
             call lun_main("I bet you even came here on your own didn't you...","base","seductive","base","down")
             call lun_main("Eager to sell your body for a few lousy points...","base","seductive","base","down")
             g9  "Yes..."

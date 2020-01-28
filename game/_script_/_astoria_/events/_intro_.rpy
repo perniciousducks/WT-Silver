@@ -668,7 +668,7 @@ label astoria_intro_E3:
     call sna_main("...","snape_12")
     m "*Ahem*..."
     call sna_main("Would you mind?","snape_12")
-    call ton_main("Sure...{image=textheart}","horny","base","angry","mid")
+    call ton_main("Sure...{heart}","horny","base","angry","mid")
     call sna_main("Stepping aside.","snape_18")
     call ton_main("Oh, okay...","smile","happyCl","base","mid")
 
@@ -702,7 +702,7 @@ label astoria_intro_E3:
     call ast_main("","annoyed","narrow","base","down")
     call ton_main("Don't worry, It won't come to that...","smile","happyCl","base","mid")
     call ton_main("The ministry isn't going to lock away such a cute little thing like yourself...","base","base","base","L")
-    call ton_main("{size=+2}Over a little harmless fun.{/size} {image=textheart}","horny","base","angry","L")
+    call ton_main("{size=+2}Over a little harmless fun.{/size} {heart}","horny","base","angry","L")
 
     call ton_main("It's just the Imperius curse.","open","base","worried","R")
     call ton_main("Most students don't have the guts to cast crucio on another person...","open","base","worried","mid")
@@ -773,7 +773,7 @@ label astoria_intro_E3:
     call ton_walk("desk","base")
 
     call play_music("playful_tension")
-    call ton_main("She's {size=+5}so cute!{/size} Isn't she? {image=textheart}","upset","base","sad","R", xpos="mid", ypos="base")
+    call ton_main("She's {size=+5}so cute!{/size} Isn't she? {heart}","upset","base","sad","R", xpos="mid", ypos="base")
 
     if d_flag_01:
         m "You gave her 50 house points..."
@@ -795,9 +795,9 @@ label astoria_intro_E3:
     m "We should have a chat about Astoria again..."
     m "Discuss the severity of her... \"detention.\""
     call ton_main("Of course, [ton_genie_name].","base","base","sad","mid")
-    call ton_main("I'm glad we're on the same page...{image=textheart}","smile","happyCl","base","mid")
+    call ton_main("I'm glad we're on the same page...{heart}","smile","happyCl","base","mid")
     m "Until next time, [tonks_name]."
-    call ton_main("Until next time!{image=textheart}","base","happyCl","base","mid")
+    call ton_main("Until next time!{heart}","base","happyCl","base","mid")
     call play_music("stop")
 
     call ton_walk(action="leave")

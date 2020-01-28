@@ -634,7 +634,7 @@ label ag_st_imperio_E3:
     m "Of course not..."
     g9 "You're very skilled at what you do!"
     g9 "You've shown me many times."
-    call ton_main("Thank you! {image=textheart}","base","happyCl","base","mid")
+    call ton_main("Thank you! {heart}","base","happyCl","base","mid")
     call ast_main("*Ugh*...","clench","narrow","base","down") # Disgusted from the flirting?
 
     call ast_chibi("wand",530,"base")
@@ -736,7 +736,7 @@ label ag_st_imperio_E3:
     call ton_main("And it feels really good when you're under its effect...","base","base","base","mid")
     m "It does?"
     call ton_main("*Mhmm*... yeah...","horny","base","angry","mid", hair="horny")
-    call ton_main("It's so goood! {image=textheart}","open_wide_tongue","base","worried","ahegao")
+    call ton_main("It's so goood! {heart}","open_wide_tongue","base","worried","ahegao")
     g9 "I think you're enjoying this a bit too much!"
     g9 "Just what would your students think if they knew their teacher gets off on being mind controlled?"
     call ton_main("Oh - be quiet you...","base","base","angry","mid")
@@ -825,7 +825,7 @@ label ag_st_imperio_E4:
     g4 "(I'm dying to see some tits!)"
     call ast_main("........................","annoyed","base","base","R")
     call ton_main("Very good, Astoria.","base","happyCl","base","mid")
-    call ton_main("I'm proud of you. {image=textheart}","base","base","base","L")
+    call ton_main("I'm proud of you. {heart}","base","base","base","L")
     call ast_main(".........................","annoyed","base","base","down") # embarrassed
     m "......................."
 
@@ -906,7 +906,7 @@ label ag_st_imperio_E4:
     call ast_main("And now?","clench","base","base","mid")
     g9 "Her coat! Tell her to take it off!"
     call ast_main("Professor Tonks, please remove your coat for me.","open","base","worried","L")
-    call ton_main("Of course, honey! {image=textheart}","base","happyCl","base","mid")
+    call ton_main("Of course, honey! {heart}","base","happyCl","base","mid")
 
     # Remove coat.
     call play_sound("equip")
@@ -1164,7 +1164,7 @@ label ag_st_imperio_E5:
     call ast_main("Professor, would you please take off your coat?","open","base","base","L")
     call ton_main("*hmmm*... My coat?...","open","base","worried","ahegao")
     call ton_main("...............","base","base","worried","ahegao")
-    call ton_main("Sure {image=textheart}","smile","happyCl","base","mid")
+    call ton_main("Sure {heart}","smile","happyCl","base","mid")
 
     # Remove coat.
     call play_sound("equip")
@@ -1216,13 +1216,13 @@ label ag_st_imperio_E5:
     call ton_main("I feel so much better without a bra on... or panties...","open","base","base","ahegao")
     call ast_main("You're a teacher! This is disgusting!","clench","closed","angry","mid", emote="01")
     g4 "Dis-{w=0.8}gusting!"
-    call ton_main("{image=textheart} {image=textheart} {image=textheart}","base","base","sad","ahegao")
+    call ton_main("{heart} {heart} {heart}","base","base","sad","ahegao")
     call ast_main("I can't believe my teacher is such a slut!","angry","narrow","angry","L")
     g4 "Des-{w=0.8}picable!"
     call ast_main("Are you a slut, Professor?","open","narrow","angry","L")
     call ton_main("...............","upset","base","worried","down") # ahegao
     call ast_main("Are you?!","clench","base","angry","L")
-    call ton_main("I am! {image=textheart}","open","closed","sad","mid")
+    call ton_main("I am! {heart}","open","closed","sad","mid")
     call ast_main("I knew it!","smile","narrow","angry","L")
     call ast_main("That's why she has such difficulty resisting our commands!","open","base","worried","mid")
     m "Yes. She's clearly trying her hardest..."
@@ -1240,7 +1240,7 @@ label ag_st_imperio_E5:
     call ast_main("Take off the rest of your clothes!","clench","base","angry","L") # angry
     g9 "Yes!"
     call ast_main("Take them off, you slut!","scream","closed","angry","mid", trans=hpunch) # scream
-    call ton_main("........{image=textheart}","horny","base","raised","ahegao")
+    call ton_main("........{heart}","horny","base","raised","ahegao")
 
     # Strip naked. Removes clothes and stockings.
     call play_sound("equip")
@@ -1289,7 +1289,7 @@ label ag_st_imperio_E5:
     g9 "Have her do a little dance for us."
     call ast_main("Did you hear him, Professor?","smile","closed","base","mid")
     call ast_main("Get on that desk, and start dancing!","open","narrow","angry","L")
-    call ton_main("Yes...{image=textheart}","horny","wink","base","mid")
+    call ton_main("Yes...{heart}","horny","wink","base","mid")
 
     # Climb desk and dance.
     call hide_characters

@@ -649,7 +649,7 @@ label tonks_intro_E3:
             call ton_main("Are all Genies this desperate?","smile","base","sad","mid", hair="happy")
             m "Desperate? Why Desperate?..."
             call ton_main("Nothing...","base","base","base","mid", hair="happy")
-            call ton_main("Very well,... \"Daddy\"! {image=textheart}{image=textheart}{image=textheart}","horny","base","base","mid", hair="horny")
+            call ton_main("Very well,... \"Daddy\"! {heart}{heart}{heart}","horny","base","base","mid", hair="horny")
             g9 "*He*-*He*-*He*-He*..."
 
     call ton_main("Call me to your office whenever you require my help, [ton_genie_name].","base","base","base","mid") #would it be better to have her call him by the requested name here, since later on we have the bit where Tonks submits to genie and calls him sir

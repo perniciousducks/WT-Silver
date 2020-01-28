@@ -168,7 +168,7 @@ label ll_pf_sex_T1_lake_sex: # Call label
     ">Without even the slightest bit of hesitation, Luna rips off her top and throws it to the ground."
     call lun_main("What's next?","base","seductive","sad","mid")
     m "Bend over."
-    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","empty")
+    call lun_main("{heart}{heart}{heart}","base","seductive","sad","empty")
 
     hide screen luna_main
     show screen blkfade
@@ -176,7 +176,7 @@ label ll_pf_sex_T1_lake_sex: # Call label
 
     ">Without saying anything, Luna goes to bend over, desperate to give herself to you..."
     m "Now pull down your skirt..."
-    lun "{image=textheart}!!!{image=textheart}"
+    lun "{heart}!!!{heart}"
     ">Luna enthusiastically yanks down her skirt and pants, revealing her sopping pussy."
     lun "Please, [lun_genie_name]..."
 
@@ -211,28 +211,28 @@ label ll_pf_sex_T1_lake_sex: # Call label
     with d3
 
     ">Tired of talking, you decide to end the poor girl's suffering by slamming into her needy little fuckhole."
-    lun "{size=+10}{image=textheart}!!!{image=textheart}{/size}"
+    lun "{size=+10}{heart}!!!{heart}{/size}"
     m "That's it you little slut!"
     $ lunCG(pupil='up', eye='seductive', mouth='base')
-    lun "{size=-5}{image=textheart}wow...{image=textheart}{/size}"
+    lun "{size=-5}{heart}wow...{heart}{/size}"
     $ lunCG(pupil='left', eye='seductive', mouth='open')
     ">Before you're able to even start a steady pace of fucking the girl, her hips start violently slamming against you..."
     m "Ugh... steady on there, [lun_name], we've only just started!"
     $ lunCG(pupil='dr', eye='furious', mouth='open')
-    lun "{image=textheart}a-ah...{w=0.3} I can't...{w=0.3} [lun_genie_name]...{w=0.3} it's just...{w=0.3} too... {image=textheart}{b}goood{/b}...{image=textheart}"
+    lun "{heart}a-ah...{w=0.3} I can't...{w=0.3} [lun_genie_name]...{w=0.3} it's just...{w=0.3} too... {heart}{b}goood{/b}...{heart}"
     $ lunCG(pupil='up', eye='furious', mouth='open_tongue', extra_1='speed')
     ">All you can do is stand there as Luna fucks herself senseless on your cock..."
-    lun "{image=textheart}ah...{image=textheart}the wrackspurts...{image=textheart}{w=0.3} they're going...{image=textheart}{w=0.3} aaaahhh..."
+    lun "{heart}ah...{heart}the wrackspurts...{heart}{w=0.3} they're going...{heart}{w=0.3} aaaahhh..."
     $ lunCG(pupil='dl', eye='tired', mouth='pout')
-    lun "I'm almost...{w=0.3} sad to lose...{w=0.3} them...{image=textheart}{image=textheart}"
+    lun "I'm almost...{w=0.3} sad to lose...{w=0.3} them...{heart}{heart}"
     $ lunCG(pupil='ahegao', eye='furious', mouth='open_tongue', overlay='fade')
-    lun "They feel {image=textheart}{b}amazing{/b}...{image=textheart}"
+    lun "They feel {heart}{b}amazing{/b}...{heart}"
     m "About that..."
     $ lunCG(pupil='left', eye='wink', mouth='base')
     lun "W-what?"
     m "This isn't wickspots or whatever you call them..."
     $ lunCG(pupil='left', eye='wide', mouth='open')
-    lun "It isn't?... then... ah...{image=textheart} what's this feeling..."
+    lun "It isn't?... then... ah...{heart} what's this feeling..."
     m "This is sex..."
     $ lunCG(pupil='dr', eye='tired', mouth='pout', extra_1='blank')
     ">Luna's hips slam into your stomach and hold there."
@@ -257,21 +257,21 @@ label ll_pf_sex_T1_lake_sex: # Call label
     ">Grabbing a hold of her hips, you start to fuck the witch in earnest."
     g4 "take this, slut!"
     $ lunCG(pupil='ahegao', eye='furious', mouth='open_tongue', tears='tears')
-    lun "{size=+10}{image=textheart}!!!{image=textheart}{/size}"
+    lun "{size=+10}{heart}!!!{heart}{/size}"
     $ lunCG(pupil='ahegao', eye='furious', mouth='wide')
     lun "a-ahhhhh..."
     ">You keep pounding her from behind. Luna's lovely breasts jiggle a little with every thrust."
     ">You turn your attention to her butt... It's so milky and... pert... she's such a needy little girl...."
     $ lunCG(pupil='right', eye='wide', mouth='wide', extra_3='spanking')
     $ renpy.play('sounds/slap.mp3')
-    lun "ah...{image=textheart}{image=textheart}{image=textheart}"
+    lun "ah...{heart}{heart}{heart}"
     ">You give her buttocks another loud slap."
     $ lunCG('open_tongue', 'furious', 'mad', 'up')
     $ renpy.play('sounds/slap.mp3')
     lun "Thank you, [lun_genie_name]."
     ">You pick up the pace and feel you're getting close..."
     $ lunCG(eyebrow='sad', eye='furious', pupil='ahegao', mouth='wide')
-    lun "Yes! Yes! Thank you! Thank you! I'm almost... almost...{image=textheart}{image=textheart}{image=textheart}{image=textheart}"
+    lun "Yes! Yes! Thank you! Thank you! I'm almost... almost...{heart}{heart}{heart}{heart}"
     $ lunCG(eyebrow='mad', eye='furious', pupil='ahegao', mouth='open_tongue')
     ">You feel Luna's tight cunt start to spasm and grip down hard on your cock..."
     m "Argh! You dirty little slut! Who said you could cum yet!"
@@ -282,11 +282,11 @@ label ll_pf_sex_T1_lake_sex: # Call label
     lun "I {b}need{/b} it..."
     $ lunCG(pupil='up', eye='wide', mouth='wide', extra_2='cum_1')
     ">You let out a roar and start cumming uncontrollably right into her pussy..."
-    lun "ahh!{image=textheart} Yes!{image=textheart} ah...{image=textheart} it's so {b}hot{/b}...{image=textheart}"
+    lun "ahh!{heart} Yes!{heart} ah...{heart} it's so {b}hot{/b}...{heart}"
     $ lunCG(pupil='ahegao', eye='furious', mouth='open_tongue')
     lun "Your cum is {b}filling{/b} me up..."
     $ lunCG(pupil='dl', eye='tired', mouth='open')
-    lun "{size=-3}It's...{/size}{w} {size=-7}i...{/size}{w} {size=-9}I'm cumming...{image=textheart}{image=textheart}again...{image=textheart}{/size}"
+    lun "{size=-3}It's...{/size}{w} {size=-7}i...{/size}{w} {size=-9}I'm cumming...{heart}{heart}again...{heart}{/size}"
     ">You keep firing cum deep inside her pussy until the last drop..."
     $ lunCG(mouth='open_tongue', eye='furious', eyebrow='sad', pupil='ahegao')
     ">You can see that Luna is still trying to thrust onto you, but her legs refuse to listen to her with multiple orgasms taking over her body..."
@@ -347,22 +347,22 @@ label ll_pf_sex_start: # Call label
     hide screen blkfade
     with d5
 
-    lun "{size=+10}{image=textheart}!!!{image=textheart}{/size}"
+    lun "{size=+10}{heart}!!!{heart}{/size}"
     m "That's it you little slut!"
     $ lunCG('open', 'furious', '', 'ahegao')
-    lun "{size=-5}{image=textheart}wow...{image=textheart}{/size}"
+    lun "{size=-5}{heart}wow...{heart}{/size}"
     $ lunCG('base', 'angry', 'base', 'up')
     ">She starts grinding her hips against you immediately. Desperate for as much stimulation as she can get..."
     m "Ugh... steady on there, [lun_name], we've only just started!"
     $ lunCG('open', 'seductive', 'sad', 'dl')
-    lun "{image=textheart}a-ah... I can't... [lun_genie_name]... it's just... too... {image=textheart}{b}goood{/b}...{image=textheart}"
+    lun "{heart}a-ah... I can't... [lun_genie_name]... it's just... too... {heart}{b}goood{/b}...{heart}"
     $ lunCG('open_tongue', 'furious', '', 'up')
     ">Not content to just stand there, you start thrusting back into Luna's tight pussy..."
     $ lunCG(pupil='ahegao', eye='seductive', mouth='open_tongue', extra_1='speed')
-    lun "{image=textheart}ah...{image=textheart}the wrackspurts...{image=textheart} they're going...{image=textheart}aaaahhh..."
+    lun "{heart}ah...{heart}the wrackspurts...{heart} they're going...{heart}aaaahhh..."
     m "I already told you- Argh... They're not real!"
     $ lunCG('open', 'wide', '', 'dr')
-    lun "Ugh... I can see... them... ah...{image=textheart}{image=textheart} with my own two... eyes..."
+    lun "Ugh... I can see... them... ah...{heart}{heart} with my own two... eyes..."
     $ lunCG('base', 'seductive', '', 'left')
     lun "Can't you see them? The red mist..."
     $ lunCG('base', 'tired', '', 'dl')
@@ -541,7 +541,7 @@ label ll_pf_sex_T1_her_1: # Call label
     with d5
 
     ">Luna slumps forwards onto your desk, drooling as her legs shake uncontrollably."
-    call lun_main("{image=textheart}{image=textheart}{image=textheart}","soft","seductive","base","up", ypos="head")
+    call lun_main("{heart}{heart}{heart}","soft","seductive","base","up", ypos="head")
     ">You slump back into your chair, leaving Luna on your desk, leaking cum."
     m "Are you good to make your own way back?"
     call lun_main("*ah*... y-y-yea...","base","seductive","base","up", ypos="head")
@@ -625,12 +625,12 @@ label ll_pf_sex_T1_her_2: # Call label
     ">Your cock explodes inside Luna, unleashing an avalanche of your thick seed into her tight little pussy."
     g9 "FUCK YES!!!"
     $ lunCG('open_tongue', 'wide', 'sad', 'ahegao')
-    lun "it's{image=textheart}I can't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
+    lun "it's{heart}I can't{heart}what{heart}ahhhhhhhhh{heart}{heart}{heart}"
     $ lunCG('base', 'angry', '', 'ahegao')
     lun "..."
     $ lunCG('open', 'tired', '', 'ahegao')
-    lun "mmm{image=textheart}{image=textheart}"
-    lun "ah...{image=textheart}{image=textheart}{image=textheart}{image=textheart}"
+    lun "mmm{heart}{heart}"
+    lun "ah...{heart}{heart}{heart}{heart}"
 
     hide screen luncg
     show screen blkfade
@@ -744,7 +744,7 @@ label ll_pf_sex_T1_ast_1: # Call label
     hide screen astoria_main
     with d3
     $ lunCG('open_tongue', 'wide', '', 'ahegao')
-    lun "{image=textheart}{image=textheart}{image=textheart}"
+    lun "{heart}{heart}{heart}"
 
     hide screen luncg
     show screen blkfade
@@ -848,20 +848,20 @@ label ll_pf_sex_T1_ast_2: # Call label
     ">Your cock explodes inside Luna, unleashing an avalanche of your thick seed into her tight little pussy."
     g9 "FUCK YES!!!"
     $ lunCG('open_tongue', 'wide', 'sad', 'ahegao')
-    lun "it's{image=textheart}I can't{image=textheart}what{image=textheart}ahhhhhhhhh{image=textheart}{image=textheart}{image=textheart}"
+    lun "it's{heart}I can't{heart}what{heart}ahhhhhhhhh{heart}{heart}{heart}"
     $ lunCG('base', 'angry', '', 'ahegao')
     lun "..."
     call ast_main("Wow...", "upset","base","worried","mid")
     $ lunCG('open', 'tired', '', 'ahegao')
-    lun "{image=textheart}ah...{image=textheart} Did you see... them?"
+    lun "{heart}ah...{heart} Did you see... them?"
     call ast_main("Pffft", "upset","narrow","angry","mid")
     call ast_main("The only thing I saw was a super slut getting banged by her gross old headmaster!","scream","narrow","angry","mid")
     $ lunCG('base', 'seductive', '', 'dl')
-    lun "mmm{image=textheart}{image=textheart}"
+    lun "mmm{heart}{heart}"
     hide screen astoria_main
     with d3
     ">With that, Astoria turns and leaves, a confused look plastered across her face."
-    lun "ah...{image=textheart}{image=textheart}{image=textheart}{image=textheart}"
+    lun "ah...{heart}{heart}{heart}{heart}"
 
     hide screen luncg
     show screen blkfade
@@ -920,20 +920,20 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ lunCG(pupil='up', eye='furious')
     call ton_main("...","horny","base","raised","L")
     $ lunCG('open', 'wink', 'sad', 'right')
-    lun "You should... ah... be careful, Ms Tonks... {image=textheart} we're expelling a lot... {image=textheart} of them..."
+    lun "You should... ah... be careful, Ms Tonks... {heart} we're expelling a lot... {heart} of them..."
     $ lunCG('base', 'seductive', 'sad', 'dl')
     call ton_main("Really? And how will I know If these \"wrackspurts\" are after me...?","horny","base","raised","L")
     $ lunCG('base', 'angry', 'base', 'dr')
-    lun "You'll feel... ah... hot...{image=textheart} down there..."
+    lun "You'll feel... ah... hot...{heart} down there..."
     call ton_main("Oh... I see...","horny","base","raised","L")
     $ lunCG('base', 'furious', 'sad', 'right')
     call ton_main("You know, you should come visit me after hours Miss Lovegood, I think I might also be able to help you out...","horny","base","raised","L")
     m "Hey!"
     $ lunCG('base', 'seductive', 'sad', 'dl')
-    lun "Ah... thank you... {image=textheart} Ms tonks... but I don't think... ah... you'll {b}taste{/b} as good..."
+    lun "Ah... thank you... {heart} Ms tonks... but I don't think... ah... you'll {b}taste{/b} as good..."
     call ton_main("Now, now, you don't know that... I taste like {b}heaven{/b}...","base","base","raised","L")
     $ lunCG('base', 'furious', 'mad', 'ahegao')
-    lun "There's just... ah{image=textheart} no way... you can...{image=textheart} taste half as good..."
+    lun "There's just... ah{heart} no way... you can...{heart} taste half as good..."
     $ lunCG('open_tongue', 'seductive', 'sad', 'dr')
     ">Tonks hand disappears down the front of her pants..."
     call ton_main("Oh I see how it is...","horny","base","raised","L")
@@ -948,7 +948,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ lunCG('base', 'wide', 'base', 'right')
     lun "Of course! I'm proud... to be a cumslut!"
     $ lunCG('open', 'happyCl', 'sad', 'dr')
-    lun "As an auror you should... ah{image=textheart} know the importance of... mmm{image=textheart} warding off evil magic!"
+    lun "As an auror you should... ah{heart} know the importance of... mmm{heart} warding off evil magic!"
     $ lunCG('open', 'seductive', 'sad', 'up')
     call ton_main("There's warding...","base","base","base","L")
     $ lunCG('open_tongue', 'furious', 'sad', 'ahegao')
@@ -976,7 +976,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     lun "You do?"
     $ lunCG('open_tongue', 'angry', 'sad', 'ahegao')
     call ton_main("Ugh... you bet... nothing like seeing your students soaking in their headmaster's spunk...","base","base","raised","L")
-    lun "{image=textheart}{image=textheart}{image=textheart}"
+    lun "{heart}{heart}{heart}"
     show screen blkfade
     with d3
 
@@ -1004,7 +1004,7 @@ label ll_pf_sex_T1_ton_1: # Call label
             ton "..."
             ">Eager to show off to your audience you fire off a colossal load of cum over luna's waiting face."
             $ lunCG('open_tongue', 'seductive', 'sad', 'ahegao', extra_1='cum_3')
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
             lun "{size=-5}thank you...{/size}"
             ">Tonks' fingers noticeably begin to speed up."
             ton "Mmmm, damn... where were all the sluts like this when I was in school..."
@@ -1017,7 +1017,7 @@ label ll_pf_sex_T1_ton_1: # Call label
             lun "Oh thank you! thank you! thank you!"
             call ton_main("Wow...","horny","base","raised","L")
             $ lunCG('open_tongue', 'furious', 'sad', 'right')
-            lun "Ugh...{image=textheart} it's like he's... pumped me full of magic..."
+            lun "Ugh...{heart} it's like he's... pumped me full of magic..."
             ">Tonks' fingers noticeably begin to speed up."
             $ lunCG('open_tongue', 'furious', 'sad', 'ahegao')
             call ton_main("Mmmm, damn... where were all the sluts like this when I was in school...","horny","base","raised","L")
@@ -1046,7 +1046,7 @@ label ll_pf_sex_T1_ton_1: # Call label
     $ lunCG('open', 'angry', 'sad', 'up', extra_2='speed')
     call ton_main("Wow... you two really are going to go again, aren't you?","base","base","raised","L")
     $ lunCG('open', 'wink', 'sad', 'right')
-    lun "You don't have to... a-ah...{image=textheart} stay if you don't want to..."
+    lun "You don't have to... a-ah...{heart} stay if you don't want to..."
     call ton_main("Oh... {w=0.5}I may as well stick around for a little bit longer...","base","base","raised","L")
     $ lunCG('open_tongue', 'furious', 'sad', 'up')
     ">Tonks' angrily fingers her cunt while she stares hungrily at Luna's bouncing boobs."
@@ -1186,22 +1186,22 @@ label ll_pf_sex_T1_ton_2: # Call label
     $ lunCG('open', 'angry', 'sad', 'right')
     lun "Of course!"
     $ lunCG('open_tongue', 'seductive', 'sad', 'ahegao')
-    call ton_main("Ugh... {image=textheart}fuck{image=textheart}... that's it...","open","base","angry","L")
+    call ton_main("Ugh... {heart}fuck{heart}... that's it...","open","base","angry","L")
     call ton_main("Last time I walked you home...","open","base","base","ahegao")
     $ lunCG('base', 'wink', 'sad', 'right')
-    lun "{image=textheart}Ah... yes? ah...{image=textheart}"
+    lun "{heart}Ah... yes? ah...{heart}"
     call ton_main("God, I've never been so turned on in my life!","horny","base","angry","ahegao")
     $ lunCG('open_tongue', 'seductive', 'sad', 'right')
     call ton_main("Watching everyone in the school turn to look at you...","open","base","base","L")
     $ lunCG('open_tongue', 'angry', 'mad', 'up')
     call ton_main("Coated in the biggest fucking load of cum...","open","base","base","ahegao")
     $ lunCG('wide', 'angry', 'sad', 'ahegao')
-    lun "Ah...{image=textheart}"
+    lun "Ah...{heart}"
     $ lunCG('open', 'angry', 'sad', 'right')
     call ton_main("And no one said a word...","base","base","base","L")
     call ton_main("They just {b}fucked{/b} you with their eyes...","horny","base","base","mid")
     $ lunCG('open_tongue', 'wide', 'sad', 'right')
-    lun "They did?{image=textheart}"
+    lun "They did?{heart}"
     $ lunCG(pupil='up')
     call ton_main("Can you blame them? You were such pretty, well-fucked mess...","horny","base","base","mid")
     call ton_main("Ugh... I stayed up all night fingering myself to the sight of you...","open","base","angry","ahegao")
@@ -1218,7 +1218,7 @@ label ll_pf_sex_T1_ton_2: # Call label
     call ton_main("Mmmm, fantastic...","open","base","angry","mid")
     lun "Fantastic? Why...{w=0.3} ah...{w=0.3} would you..."
     ">Before Luna can say anymore, you grab onto her hips before slamming into her."
-    lun "Ah...{image=textheart}{image=textheart}{image=textheart}"
+    lun "Ah...{heart}{heart}{heart}"
     g9 "Here it comes you cumsluts!"
 
     menu:
@@ -1231,7 +1231,7 @@ label ll_pf_sex_T1_ton_2: # Call label
             $ lunCG('wide', 'mad', 'angry', 'ahegao')
             ">Luna slumps forwards onto your desk, drooling as her legs shake uncontrollably."
             $ lunCG('base', 'mad', 'mad', 'ahegao')
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
             ">You slump back into your chair, leaving Luna on your desk, leaking cum."
             $ lunCG('open_tongue', 'angry', 'angry', 'ahegao')
             call ton_main("Dumbledore, what do you think you're doing?","open","wide","wide","mid")
@@ -1264,13 +1264,13 @@ label ll_pf_sex_T1_ton_2: # Call label
             $ lunCG('open_tongue', 'seductive', 'sad', 'dick')
             ">Luna quickly hops off the desk and kneels in front of your cock..."
             $ lunCG('open_tongue', 'seductive', 'sad', 'up')
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
             g4 "Ugh... here it is you little whore!"
             $ lunCG('open_tongue', 'seductive', 'sad', 'dick', extra_1='cum_3')
             call ton_main("...","horny","base","base","L")
             ">Eager to show off to your audience you fire off a colossal load over cum over luna's waiting face."
             $ lunCG('open_tongue', 'angry', 'sad', 'up')
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
             $ lunCG('base', 'seductive', 'sad', 'up')
             lun "{size=-5}thank you...{/size}"
             ">Tonks' fingers noticeably begin to speed up."
@@ -1452,13 +1452,13 @@ label ll_pf_sex_bedroom:
             m "I'm not sure that'd work... Besides, what do you need a wish for?"
             ">You grab a hold of Luna's hips and go to town on the greedy fuckslut."
             $ lunCG('open_tongue', 'furious', 'sad', 'up')
-            lun "Ohh... wow... I...{image=textheart}"
+            lun "Ohh... wow... I...{heart}"
             m "You've got everything you could ever want right here!"
             $ lunCG('talk', 'furious', 'sad', 'ur')
             lun "Ah... the wrackspurts... we need to do something about-"
             ">Tired of hearing about this again, you decide to slam into the blabbering girl to shut her up."
             $ lunCG('open_tongue', 'furious', 'sad', 'ahegao')
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
 
         "-Talk about the bed-":
             m "Fuck me, this feels incredible..."
@@ -1476,7 +1476,7 @@ label ll_pf_sex_bedroom:
             $ lunCG('base', 'furious', 'sad', 'dl')
             lun "Ugh... you poor thing..."
             $ lunCG('talk', 'seductive', 'sad', 'dl')
-            lun "Where have you been... ah...{image=textheart} sleeping?"
+            lun "Where have you been... ah...{heart} sleeping?"
             m "I just fall asleep in my chair most nights..."
             $ lunCG('talk', 'wide', 'sad', 'dl')
             lun "Your chair?"
@@ -1484,7 +1484,7 @@ label ll_pf_sex_bedroom:
             lun "That must be so uncomfortable!"
             m "You get used to it."
             $ lunCG('talk', 'seductive', 'sad', 'dl')
-            lun "You know... ah...{image=textheart}"
+            lun "You know... ah...{heart}"
             $ lunCG('base', 'seductive', 'sad', 'right')
             lun "You're welcome to..."
             $ lunCG('talk', 'furious', 'sad', 'ur')
@@ -1493,7 +1493,7 @@ label ll_pf_sex_bedroom:
             lun "If you like."
             m "As much as I'd love to spend every single night in here with you..."
             $ lunCG('base', 'wide', 'sad', 'dl')
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
             m "I'm not sure what would happen if people found out you slept with your headmaster every night..."
             $ lunCG('talk', 'wide', 'sad', 'dl')
             lun "But you're not my headmaster, you're my genie!"
@@ -1502,7 +1502,7 @@ label ll_pf_sex_bedroom:
             lun "..."
             ">You decide to cheer the girl up by bouncing her enthusiastically up on your cock."
             $ lunCG('open_tongue', 'furious', 'sad', 'up')
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
 
 
 
@@ -1517,7 +1517,7 @@ label ll_pf_sex_bedroom:
     $ lunCG('open', 'angry', 'sad', 'ahegao')
     lun "ah..."
     $ lunCG('base', 'seductive', 'sad', 'dl')
-    lun "{image=textheart}{image=textheart}{image=textheart}"
+    lun "{heart}{heart}{heart}"
     hide screen luncg
     show screen blkfade
     with d3

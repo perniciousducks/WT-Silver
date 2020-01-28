@@ -130,7 +130,7 @@ label slytherin_match:
     call ton_main("May I be allowed to accompany you anyway?","upset","base","worried","mid") #sad
     call ton_main("I've been looking forward to watching the game from the commentator booth...","open","base","sad","R")
     g9 "Of course! I'd be delighted to have you!"
-    call ton_main("Thank you, [ton_genie_name].{image=textheart}","base","happyCl","base","mid", hair="happy")
+    call ton_main("Thank you, [ton_genie_name].{heart}","base","happyCl","base","mid", hair="happy")
     call ton_main("Are we to expect another great performance this time around?","horny","base","base","mid", hair="neutral")
     g9 "Oh, you'll see..."
     call ton_main("Great, shall we?","base","base","angry","mid")

@@ -47,7 +47,7 @@ label cc_pf_talk_T1_intro_E1:
     call cho_main("And I don’t see how this information would be of importance for my training.","open","wide","raised","downR")
     call cho_main("Why would it matter if- {w}Even if I did I'd-","soft","wide","base","down")
     g9 "So you don't have one?"
-    call cho_main("You're making me nervous, [cho_genie_name]. {image=textheart}","horny","narrow","sad","R")
+    call cho_main("You're making me nervous, [cho_genie_name]. {heart}","horny","narrow","sad","R")
     m "(So cute.{w=0.5} Perhaps this is something I could push her further on...)"
 
     call cho_main("Sir, I do not have a boyfriend at the moment.{w} I hope that answers your question.","soft","closed","angry","mid")

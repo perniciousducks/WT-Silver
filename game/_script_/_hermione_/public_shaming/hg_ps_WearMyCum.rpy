@@ -502,10 +502,10 @@ label hg_ps_cumslut_Scene_3:
     call her_main("Do you need some extra encouragement?", "open", "closed", "base", "mid")
     m "it would help..."
     call her_main("well... do you know how much I've been thinking about this? How much I wanted to ask you to cover me again?", "base", "narrow", "worried", "down")
-    call her_main("I've become such a slut, [genie_name]. It's all I've been able to think about... going to class covered in your {image=textheart}cum{image=textheart}", "grin", "narrow", "annoyed", "up")
+    call her_main("I've become such a slut, [genie_name]. It's all I've been able to think about... going to class covered in your {heart}cum{heart}", "grin", "narrow", "annoyed", "up")
     call her_main("I Imagine it staining my uniform so much that I can never wash it out. I imagine being covered in your cum constantly, so everyone knows what I am.", "grin", "narrow", "base", "dead")
     call her_main("not just A slut... a cumslut...", "soft", "narrow", "annoyed", "up")
-    call her_main("Your {image=textheart}cumslut{image=textheart}...", "silly", "narrow", "annoyed", "up")
+    call her_main("Your {heart}cumslut{heart}...", "silly", "narrow", "annoyed", "up")
     g9 "That did it slut!"
     g4 "HERE IT COMES!!!"
     call her_main("Shoot it wherever you want [genie_name]...", "open_wide_tongue", "narrow", "annoyed", "up")
@@ -527,7 +527,7 @@ label hg_ps_cumslut_Scene_3:
             $ uni_sperm = True
             #TODO Cum layer
 
-            call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "worried", "down",xpos="right",ypos="base")
+            call her_main("{heart}{heart}{heart}", "base", "narrow", "worried", "down",xpos="right",ypos="base")
             call her_chibi_scene("hj_cum_on")
             hide screen blkfade
             hide screen bld1
@@ -539,7 +539,7 @@ label hg_ps_cumslut_Scene_3:
             call her_main("......", "soft", "narrow", "annoyed", "up")
             pause
             call her_chibi_scene("hj_cum_on_done")
-            call her_main("It's so warm...{image=textheart}", "grin", "narrow", "base", "dead")
+            call her_main("It's so warm...{heart}", "grin", "narrow", "base", "dead")
             m "That it is."
             call her_main("If it's alright with you, I think I better head to class now...", "base", "narrow", "worried", "down")
 
@@ -566,7 +566,7 @@ label hg_ps_cumslut_Scene_3:
             with d3
             call ctc
 
-            call her_main("{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up",xpos="right",ypos="base")
+            call her_main("{heart}{heart}{heart}{heart}{heart}{heart}{heart}", "open_wide_tongue", "narrow", "annoyed", "up",xpos="right",ypos="base")
             m "Yes... I Feel so much better now..."
             call her_main("me too...", "normal", "worriedCl", "worried", "mid")
 
@@ -868,7 +868,7 @@ label hg_ps_cumslut_complete_3:
                 m "Truly?"
                 call her_main("Of course, it made me even happier knowing that it makes you happy.", "base", "narrow", "worried", "down")
                 m "that you did..."
-                call her_main("...{image=textheart}", "grin", "narrow", "annoyed", "up")
+                call her_main("...{heart}", "grin", "narrow", "annoyed", "up")
                 call her_main("thank you [genie_name]. well, goodnight.", "open", "base", "base", "R")
                 m "goodnight [hermione_name]."
     hide screen sccg

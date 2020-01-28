@@ -1012,7 +1012,7 @@ label hornify_spell_1: #first level hornify spell
     ">Unable to hold back any longer, susan's hands fly towards her breasts before they start to roll and knead the tender globes of flesh..."
     call sus_main("Ah.... w-wow...","base","base","base","base")
     call sus_main("I've never felt anything like...","base","base","base","base")
-    call sus_main("{image=textheart}{image=textheart}{image=textheart}","base","base","base","base")
+    call sus_main("{heart}{heart}{heart}","base","base","base","base")
     ">As Susan's hands mesmerisingly tend to her own tits, your cock begins to strain in earnest against the girl above."
     ">You shamelessly start to hump against astoria, desperate for any stimulation to accompany the sight before you."
     call ast_main("Mmmm... your liking this aren't you...","base","base","base","base")
@@ -1024,7 +1024,7 @@ label hornify_spell_1: #first level hornify spell
     call sus_main("...","base","base","base","base")
     call ast_main("Tell me.","base","base","base","base")
     m "y-"
-    call sus_main("Ah... yes...{image=textheart}","base","base","base","base")
+    call sus_main("Ah... yes...{heart}","base","base","base","base")
     call ast_main("Mmmm...","base","base","base","base")
     ">Astoria pushes hard into your lap."
     m "Argh..."
@@ -1053,7 +1053,7 @@ label hornify_spell_1: #first level hornify spell
     m "ARGH! FUCK YES!"
     ">That, combined with the sight of the innocent redhead cumming helplessly as she claws at her own tits prove too much for your poor cock..."
     m "FUCKING TAKE THIS YOU WHORES!"
-    call sus_main("{image=textheart}{image=textheart}{image=textheart}","base","base","base","base")
+    call sus_main("{heart}{heart}{heart}","base","base","base","base")
     ">Your hips writhe desperately against Astoria giggling body as you pump a huge load of cum into the inside of your robe."
     m "Ugh... keep fucking moving..."
     ">Both astoria and susan take your advice to heart, the redhead groping her tits anew and the blonde shamelessly grinding against you."
@@ -1063,9 +1063,9 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("All done now sir?","base","base","base","base")
     m "Yeah... I could go for a nap right about now..."
     call ast_main("Don't fall asleep now old man, we've still got bessy here putting on a show for us...","base","base","base","base")
-    call sus_main("Arghh...{image=textheart}{image=textheart}{image=textheart}","base","base","base","base")
+    call sus_main("Arghh...{heart}{heart}{heart}","base","base","base","base")
     call sus_main("I thought...","base","base","base","base")
-    call sus_main("why do...{image=textheart}{image=textheart}{image=textheart} they still feel so {b}gooood{/b}.","base","base","base","base")
+    call sus_main("why do...{heart}{heart}{heart} they still feel so {b}gooood{/b}.","base","base","base","base")
     call ast_main("Hmmm... I thought that it would wear off after the first one...","base","base","base","base")
     call ast_main("Oh well, I'm bored now.","base","base","base","base")
     ">Astoria hops off your lap, causing you to notice a huge cum stain on her skirt..."
@@ -1222,10 +1222,10 @@ label hornify_spell_2: #second level hornify spell
     ">Astoria leans in close to Susan."
     call sus_main("*Slrp*glp*slrp*","base","base","base","base")
     call ast_main("{size=-5}Hear that? He's going to coat you with his nasty cum...{/size}","base","base","base","base")
-    call sus_main("*Slrp{image=textheart}*glp*{image=textheart}slrp*","base","base","base","base")
+    call sus_main("*Slrp{heart}*glp*{heart}slrp*","base","base","base","base")
     g4 "ARGH, THAT'S IT YOU LITTLE WHORES!"
     call ast_main("Get ready slut-","base","base","base","base")
-    call sus_main("*Slrp{image=textheart}*!!!*{image=textheart}slrp*","base","base","base","base")
+    call sus_main("*Slrp{heart}*!!!*{heart}slrp*","base","base","base","base")
     ">Your cock can handle Susan's amateur tongue no longer."
     g4 "AHH TAKE THIS SLUTS!"
     ">You pull your dick out of Susan's mouth with a satisfying pop as it begins to fire it's load."

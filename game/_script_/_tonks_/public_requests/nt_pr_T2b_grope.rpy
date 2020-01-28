@@ -54,7 +54,7 @@ label nt_pr_grope_start:
             g9 "Any way they like!"
             call ton_main("That sounds perfect!","base","base","base","mid")
             m "I'll see you after class..."
-            call ton_main("Yes, [ton_genie_name]...{image=textheart}","base","base","base","mid")
+            call ton_main("Yes, [ton_genie_name]...{heart}","base","base","base","mid")
 
     # Tonks leaves
 

@@ -383,7 +383,7 @@ label cc_ht_hermione_commentator:
 
     if her_whoring < 18:
         call her_main("The paper...", "soft", "narrow", "annoyed", "up")
-        call her_main("The {image=textheart}{i}preparation{/i}{image=textheart}...", "open_tongue", "narrow", "base", "up")
+        call her_main("The {heart}{i}preparation{/i}{heart}...", "open_tongue", "narrow", "base", "up")
     else:
         call her_main("Everybody will be focused on me...", "soft", "narrow", "annoyed", "up")
 

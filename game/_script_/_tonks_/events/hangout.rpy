@@ -672,7 +672,7 @@ label nt_he_story_centaur: # Not in use.
 
     call nar(">*Fap!* *Fap!* *Fap!*")
     call ton_main("Centaurs don't do well with Ministry personnel{w} Even less so with female witches such as myself...","open","base","raised","mid")
-    call ton_main("Making them a compelling offer so they'd peacefully return to their assigned territory was quite...{w}challenging {image=textheart}","horny","base","base","R")
+    call ton_main("Making them a compelling offer so they'd peacefully return to their assigned territory was quite...{w}challenging {heart}","horny","base","base","R")
     g4 "Go on..."
     call ton_main("All I did was do them a small favour.{w} A little service the Ministry would never even think of providing them with.","angry","base","worried","down")
     call ton_main("But I did it anyway...","base","base","angry","base")
@@ -720,7 +720,7 @@ label nt_he_story_centaur: # Not in use.
     g4 "You dirty slut!"
 
     call ton_main("(I'd better not tell him what I had to do for their chieftain...)","angry","base","worried","L", hair="horny")
-    call ton_main("(I can still taste him) {image=textheart} {image=textheart} {image=textheart}","horny","base","base","ahegao", hair="horny")
+    call ton_main("(I can still taste him) {heart} {heart} {heart}","horny","base","base","ahegao", hair="horny")
 
     call hide_characters
     hide screen bld1

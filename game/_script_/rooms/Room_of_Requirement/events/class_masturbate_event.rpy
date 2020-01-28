@@ -390,7 +390,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 m "No No, you're doing fine on your own. And don't forget your story."
                 call her_main("Oh [genie_name] I really felt like a storybook witch then. Casting a charm over a whole village. Hagh Hagh, wrapping them around my finger.", "grin", "wide", "base", "stare", cheeks="blush")
                 m "Or maybe a succubus!"
-                call her_main("Yesssss. Ah I'm Cumming! {image=textheart}{image=textheart}{image=textheart}", "open_tongue", "wide", "worried", "ahegao", cheeks="blush")
+                call her_main("Yesssss. Ah I'm Cumming! {heart}{heart}{heart}", "open_tongue", "wide", "worried", "ahegao", cheeks="blush")
                 $ hermione_squirt = True
                 call her_main("God, never in my whole life have I ever felt that wanted, all those eyes on me. Thinking ME more important to look at then their tests. Ngh!", "grin", "narrow", "annoyed", "up", cheeks="blush")
                 call her_main("And I was sure to grab the attention of the Slytherins first.", "smile", "narrow", "annoyed", "up", cheeks="blush")
@@ -404,7 +404,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Oh him. Ha-ha Let's just say his eye wasn't doing much spinning that class. I hear it can even see through walls to so-", "soft", "base", "base", "mid_soft", cheeks="blush")
                 call her_main("and ah ah ah, that was the best part. I got an owl delivering my graded test back, before coming here. ah ah", "smile", "narrow", "annoyed", "up", cheeks="blush")
                 call her_main("A+ 100%% no questions answered.", "grin", "wide", "base", "stare", cheeks="blush")
-                call her_main("AGGGH! {image=textheart}{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up", cheeks="blush")
+                call her_main("AGGGH! {heart}{heart}{heart}", "open_wide_tongue", "narrow", "annoyed", "up", cheeks="blush")
                 m "Well it certainly sounds like you had a fun day."
                 call her_main("Pant Pant, heh and I didn't tell you about my other classes.", "smile", "happy", "base", "mid_soft", cheeks="blush")
                 m "[hermione_name] I'm going to repeal the rule about not giving bonus points, you'll get double for today."

@@ -227,7 +227,7 @@ label hg_sex_1:
         call her_main("", "normal", "worriedCl", "worried", "mid", ypos="head", trans=d5)
     else:
         call her_chibi_scene("sex", trans=d5)
-    call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare")
+    call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "stare")
     hide screen bld1
     call ctc
 
@@ -252,7 +252,7 @@ label hg_sex_1:
             call her_main("My housemates depend on me... ah-a...")
             m "Are you sure that's the only reason?"
             call her_main("I don't know--", "normal", "worriedCl", "worried", "mid")
-            call her_main("ah-a...{image=textheart}", "open", "worriedCl", "worried", "mid")
+            call her_main("ah-a...{heart}", "open", "worriedCl", "worried", "mid")
             call her_main("I don't know what you mean, [genie_name].", "angry", "narrow", "base", "down")
             m "It seems to me that you are enjoying this a little bit too much."
             #$ ccg2 = 21
@@ -260,24 +260,24 @@ label hg_sex_1:
             m "Really?"
             call her_main("......................", "normal", "worriedCl", "worried", "mid")
             m "Then why is your pussy so wet?"
-            call her_main("....................a-ha.{image=textheart}", "open", "worriedCl", "worried", "mid")
+            call her_main("....................a-ha.{heart}", "open", "worriedCl", "worried", "mid")
             m "Admit it, you enjoy getting fucked by your [genie_name]!"
             #$ ccg2 = 25
             call her_main("I do not!", "normal", "worriedCl", "worried", "mid")
             m "Stubborn girl..."
-            call her_main("Ah-ha...{image=textheart}", "open", "worriedCl", "worried", "mid")
+            call her_main("Ah-ha...{heart}", "open", "worriedCl", "worried", "mid")
 
         "\"So... What's new in your life?\"":
             #$ ccg2 = 14
             call her_main("...[genie_name]?", "open", "base", "base", "mid")
             m "Just trying to have a polite conversation."
             #$ ccg2 = 17
-            call her_main("Ah-ah...{image=textheart} But... ah...{image=textheart}{image=textheart}", "open", "base", "base", "mid")
+            call her_main("Ah-ah...{heart} But... ah...{heart}{heart}", "open", "base", "base", "mid")
             m "Any news from your folks?"
             call her_main("My parents?", "angry", "worriedCl", "worried", "mid", emote="05")
             call her_main("[genie_name], please, *ah-ah* I cannot talk...", "open", "worriedCl", "worried", "mid")
             m "Why not? Enjoying this too much?"
-            call her_main("I am not... ah...{image=textheart}", "open", "worriedCl", "worried", "mid")
+            call her_main("I am not... ah...{heart}", "open", "worriedCl", "worried", "mid")
             m "I think you are."
             call her_main("I am only doing this for the points, [genie_name]...", "open", "worriedCl", "worried", "mid")
             m "Oh, I see..."
@@ -294,8 +294,8 @@ label hg_sex_1:
             call her_main("Not because of that!", "angry", "narrow", "base", "down")
             m "If you say so..."
             #$ ccg2 = 20
-            call her_main("A-ah...{image=textheart}", "open", "worriedCl", "worried", "mid")
-            call her_main("I am... ah...{image=textheart} not a prostitute...", "shock", "worriedCl", "worried", "mid")
+            call her_main("A-ah...{heart}", "open", "worriedCl", "worried", "mid")
+            call her_main("I am... ah...{heart} not a prostitute...", "shock", "worriedCl", "worried", "mid")
 
         "\"......................................................\"":
             #$ ccg2 = 14
@@ -327,10 +327,10 @@ label hg_sex_1:
             call her_main("I will... ah... Get used to it eventually... ah...")
             m "As you say, [hermione_name]."
             #$ ccg2 = 21
-            call her_main("Ah-a...{image=textheart}", "open", "worriedCl", "worried", "mid")
+            call her_main("Ah-a...{heart}", "open", "worriedCl", "worried", "mid")
             m "Yes, this is great!"
 
-    call her_main("Ah-ah...{image=textheart}", "open", "worriedCl", "worried", "mid", ypos="head")
+    call her_main("Ah-ah...{heart}", "open", "worriedCl", "worried", "mid", ypos="head")
 
     if daytime:
         m "Going to classes after this?"
@@ -338,17 +338,17 @@ label hg_sex_1:
         m "Going to bed after this?"
 
     #$ ccg2 = 22
-    call her_main("Yes, ah...{image=textheart}", "open", "worriedCl", "worried", "mid")
+    call her_main("Yes, ah...{heart}", "open", "worriedCl", "worried", "mid")
     call her_main("If I'll be able to walk...")
-    g4 "Ght! {image=textheart} Yes, you always say the right things, [hermione_name]!"
-    call her_main("Ah...{image=textheart} ah...{image=textheart}{image=textheart}", "shock", "worriedCl", "worried", "mid")
+    g4 "Ght! {heart} Yes, you always say the right things, [hermione_name]!"
+    call her_main("Ah...{heart} ah...{heart}{heart}", "shock", "worriedCl", "worried", "mid")
     #$ ccg2 = 24
-    call her_main("{size=+7}!!!!!!!!!!!!!!!{/size}{image=textheart}{image=textheart}{image=textheart}", "scream", "wide", "base", "stare", trans=hpunch)
+    call her_main("{size=+7}!!!!!!!!!!!!!!!{/size}{heart}{heart}{heart}", "scream", "wide", "base", "stare", trans=hpunch)
     m "Huh? You alright?"
     call nar(">Hermione's legs are shaking...")
     m "[hermione_name]?"
     #$ ccg2 = 28
-    call her_main("{image=textheart}{image=textheart}{image=textheart}I think I'm cumming, [genie_name]!{image=textheart}{image=textheart}{image=textheart}", "scream", "wide", "base", "stare")
+    call her_main("{heart}{heart}{heart}I think I'm cumming, [genie_name]!{heart}{heart}{heart}", "scream", "wide", "base", "stare")
     g9 "Tch... You nasty slut!"
     #$ ccg2 = 29
     call her_main("AAH! I can't hold it!", "silly", "narrow", "base", "dead")
@@ -361,18 +361,18 @@ label hg_sex_1:
     #$ ccg2 = 30
     call her_main("NO! STOP! PLEASE!", "scream", "wide", "base", "stare", trans=hpunch)
     g4 "Who told you you could cum, slut? This is your punishment!"
-    call her_main("[genie_name], no, ah-a!{image=textheart}", "open", "worriedCl", "worried", "mid")
+    call her_main("[genie_name], no, ah-a!{heart}", "open", "worriedCl", "worried", "mid")
     #$ ccg2 = 31
-    call her_main("Ah-a...{image=textheart}I will go insane!{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "annoyed", "up")
+    call her_main("Ah-a...{heart}I will go insane!{heart}{heart}{heart}", "silly", "narrow", "annoyed", "up")
     g4 "{size=+7}Grragh!{/size}"
     hide screen bld1
     with d1
     call ctc
 
     #$ ccg2 = 32
-    call her_main("No...{image=textheart} ah...{image=textheart}", "silly", "narrow", "annoyed", "up")
+    call her_main("No...{heart} ah...{heart}", "silly", "narrow", "annoyed", "up")
     #$ ccg2 = 33
-    call her_main("I think I will...{image=textheart} pass out...{image=textheart}", ypos="head")
+    call her_main("I think I will...{heart} pass out...{heart}", ypos="head")
     g4 "ARGH! YOU WHORE!"
 
     menu:
@@ -390,7 +390,7 @@ label hg_sex_1:
             call ctc
 
             #$ ccg2 = 42
-            call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead")
+            call her_main("Ah...{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
             hide screen bld1
             call ctc
 
@@ -401,9 +401,9 @@ label hg_sex_1:
             #$ ccg2 = 28
             call her_main("*heavy panting*", "open_wide_tongue", "narrow", "annoyed", "up")
             m "You alright?"
-            call her_main("Ah... yes...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead")
+            call her_main("Ah... yes...{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
             #$ ccg2 = 29
-            call her_main("My legs are still shaking...{image=textheart}")
+            call her_main("My legs are still shaking...{heart}")
             hide screen bld1
             with d1
             call ctc
@@ -439,7 +439,7 @@ label hg_sex_1:
             call cum_block
             call ctc
 
-            call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead")
+            call her_main("Ah...{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
             hide screen bld1
             with d1
             call ctc
@@ -495,41 +495,41 @@ label hg_sex_2:
     else:
         call her_chibi_scene("sex", trans=fade)
 
-    call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare", ypos="head")
+    call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "stare", ypos="head")
     hide screen bld1
     call ctc
 
     call play_music("playful_tension") # SEX THEME.
 
-    call her_main("Ah...{image=textheart}", "open", "worriedCl", "worried", "mid")
+    call her_main("Ah...{heart}", "open", "worriedCl", "worried", "mid")
     m "Your pussy feels a bit looser today..."
     #$ ccg2 = 4
-    call her_main("Does it...{image=textheart} ah...?{image=textheart}", "open", "worriedCl", "worried", "mid")
+    call her_main("Does it...{heart} ah...?{heart}", "open", "worriedCl", "worried", "mid")
     #$ ccg2 = 5
-    call her_main("That's all ...ah... because of you [genie_name]...{image=textheart}", "shock", "worriedCl", "worried", "mid")
+    call her_main("That's all ...ah... because of you [genie_name]...{heart}", "shock", "worriedCl", "worried", "mid")
     #$ ccg2 = 6
-    call her_main("You are ruining my cute little pussy with your monstrous penis...{image=textheart}", "silly", "narrow", "annoyed", "up")
+    call her_main("You are ruining my cute little pussy with your monstrous penis...{heart}", "silly", "narrow", "annoyed", "up")
     g4 "Agh, you whore!"
     #$ ccg2 = 10
-    call her_main("Ah...{image=textheart}{image=textheart}", "silly", "narrow", "annoyed", "up")
+    call her_main("Ah...{heart}{heart}", "silly", "narrow", "annoyed", "up")
     m "Yes! Do you like it when I fuck you like this?"
-    call her_main("Yes, [genie_name]...{image=textheart}", "base", "narrow", "base", "mid_soft", ypos="head")
+    call her_main("Yes, [genie_name]...{heart}", "base", "narrow", "base", "mid_soft", ypos="head")
 
     menu:
         g4 "..."
         "\"Be sweet but passionate.\"":
             m "Yes, you're liking this?"
             #$ ccg2 = 14
-            call her_main("I do, [genie_name]... ah...{image=textheart}", "open", "closed", "base", "mid")
+            call her_main("I do, [genie_name]... ah...{heart}", "open", "closed", "base", "mid")
             m "Good girl!"
             m "Just relax and take my cock!"
-            call her_main("Yes... ah...{image=textheart}", "open", "closed", "base", "mid")
+            call her_main("Yes... ah...{heart}", "open", "closed", "base", "mid")
             m "All the way in... all the way..."
-            call her_main("Ah...{image=textheart}{image=textheart}", "open", "worriedCl", "worried", "mid")
+            call her_main("Ah...{heart}{heart}", "open", "worriedCl", "worried", "mid")
             m "Yes, my little princess..."
             #$ ccg2 = 15
             call her_main("What?", "angry", "wide", "base", "stare")
-            call her_main("No, please don't call me that... ah...{image=textheart}", "angry", "narrow", "base", "down")
+            call her_main("No, please don't call me that... ah...{heart}", "angry", "narrow", "base", "down")
             call her_main("My daddy used to call me his little princess when I was little...")
             if genie_name == "Daddy":
                 m "Well, you didn't mind calling me daddy earlier!"
@@ -537,32 +537,32 @@ label hg_sex_2:
             else:
                 m "Well, right now I am your daddy!"
             #$ ccg2 = 16
-            call her_main("Ah...{image=textheart} ah-ah...{image=textheart}{image=textheart}", "soft", "narrow", "annoyed", "up")
+            call her_main("Ah...{heart} ah-ah...{heart}{heart}", "soft", "narrow", "annoyed", "up")
             m "And you are my little princess-slut!"
             #$ ccg2 = 17
-            call her_main("Ah...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}", "grin", "narrow", "base", "dead")
+            call her_main("Ah...{heart} ah...{heart}{heart}{heart}", "grin", "narrow", "base", "dead")
             if genie_name == "Daddy":
-                her "[genie_name]...{image=textheart}{image=textheart}{image=textheart}"
+                her "[genie_name]...{heart}{heart}{heart}"
 
         "\"Be mean to her!\"":
             m "Yes, you slut!"
             m "I bet you love every second of this!"
             call nar(">You pick up the pace.")
             #$ ccg2 = 17
-            call her_main("Ah...{image=textheart} [genie_name]...", "open", "worriedCl", "worried", "mid")
+            call her_main("Ah...{heart} [genie_name]...", "open", "worriedCl", "worried", "mid")
             m "You nasty slut!"
-            call her_main("Ah...{image=textheart} ah-a...{image=textheart}", "shock", "worriedCl", "worried", "mid")
+            call her_main("Ah...{heart} ah-a...{heart}", "shock", "worriedCl", "worried", "mid")
             m "You are a disgrace, [hermione_name]!"
             #$ ccg2 = 18
-            call her_main("Ah-ah...{image=textheart}{image=textheart}{image=textheart}", "shock", "worriedCl", "worried", "mid")
+            call her_main("Ah-ah...{heart}{heart}{heart}", "shock", "worriedCl", "worried", "mid")
             m "Your parents sent you here to study, not to screw your teachers, you filthy cunt!"
             #$ ccg2 = 19
-            call her_main("Ah-a...{image=textheart} But I am only doing this--", "shock", "worriedCl", "worried", "mid")
+            call her_main("Ah-a...{heart} But I am only doing this--", "shock", "worriedCl", "worried", "mid")
             m "Nobody cares why you are doing this, you stupid cocksucker!"
             m "Look at what you've become!"
             m "Butt-naked, cunt full of your headmaster's cock, taking it like a cheap whore!"
             #$ ccg2 = 20
-            call her_main("Ah...{image=textheart} No...{image=textheart} stop saying...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "annoyed", "up")
+            call her_main("Ah...{heart} No...{heart} stop saying...{heart} ah...{heart}{heart}{heart}", "silly", "narrow", "annoyed", "up")
             call nar(">You pick up the pace some more.","start")
 
             if not use_cgs:
@@ -573,13 +573,13 @@ label hg_sex_2:
             m "What are you after that I ask you!?"
             #$ ccg2 = 21
             call her_main("................", "grin", "narrow", "base", "dead")
-            call her_main("Ah...{image=textheart} ah....{image=textheart}{image=textheart}{image=textheart}", "shock", "worriedCl", "worried", "mid")
+            call her_main("Ah...{heart} ah....{heart}{heart}{heart}", "shock", "worriedCl", "worried", "mid")
             call her_main(".......................", "angry", "narrow", "base", "down")
             call her_main("{size=-5}I am a whore...{/size}")
             m "Yes! That's exactly what you are!"
 
     #$ ccg2 = 22
-    call her_main("Ah... ah... ah...{image=textheart}", "angry", "narrow", "base", "down", ypos="head")
+    call her_main("Ah... ah... ah...{heart}", "angry", "narrow", "base", "down", ypos="head")
     call her_main("[genie_name], you think you could... ah...")
     m "What?"
     call her_main("Could you spank me a little... ah...?", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
@@ -587,12 +587,12 @@ label hg_sex_2:
     call slap_her
 
     #$ ccg2 = 24
-    call her_main("Aa-a-ah!{image=textheart}{image=textheart}{image=textheart}", "shock", "base", "base", "R", cheeks="blush", tears="soft")
+    call her_main("Aa-a-ah!{heart}{heart}{heart}", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     m "You liked that one, huh?"
     call slap_her
 
     #$ ccg2 = 28
-    call her_main("Ah..!{image=textheart} Yes!{image=textheart}{image=textheart}{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("Ah..!{heart} Yes!{heart}{heart}{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "And some more!"
     call slap_her
 
@@ -609,19 +609,19 @@ label hg_sex_2:
     call slap_her
 
     #$ ccg2 = 31
-    call her_main("Aah!!!{image=textheart}{image=textheart}{image=textheart} IT HURTS!{image=textheart}{image=textheart}{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("Aah!!!{heart}{heart}{heart} IT HURTS!{heart}{heart}{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     #$ ccg2 = 32
-    call her_main("It hurts...{image=textheart}{image=textheart}{image=textheart}{w=0.5} It hurts so good...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "annoyed", "up")
+    call her_main("It hurts...{heart}{heart}{heart}{w=0.5} It hurts so good...{heart}{heart}{heart}", "silly", "narrow", "annoyed", "up")
     m "Hm?"
     m "Why are your legs shaking, [hermione_name]?"
     m "Are you cumming?"
     #$ ccg2 = 33
-    call her_main("Yes...{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead")
+    call her_main("Yes...{heart}{heart}{heart}{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
     m "Well, I think I will follow your example then."
     call her_main("..............", "silly", "narrow", "base", "dead")
     call nar(">You start fucking Hermione with renewed determination!")
     #$ ccg2 = 34
-    call her_main("Ah! No! I can't...{image=textheart} I...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}", "shock", "base", "base", "R", cheeks="blush", tears="soft", ypos="head")
+    call her_main("Ah! No! I can't...{heart} I...{heart} ah...{heart}{heart}{heart}", "shock", "base", "base", "R", cheeks="blush", tears="soft", ypos="head")
     m "Shut it whore!"
     g4 "Argh!"
 
@@ -643,7 +643,7 @@ label hg_sex_2:
             #$ ccg2 = 33
             call her_main("!!!", "silly", "narrow", "base", "dead")
             #$ ccg2 = 38
-            call her_main("AH! IT'S FILLING ME UP!{image=textheart}{image=textheart}{image=textheart}")
+            call her_main("AH! IT'S FILLING ME UP!{heart}{heart}{heart}")
             g4 "I'm Not done yet, bitch!"
             g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
             call cum_block
@@ -659,9 +659,9 @@ label hg_sex_2:
 
             #$ ccg2 = 40
             m "Well, this was pretty great..."
-            call her_main("Ah...{image=textheart}", "silly", "narrow", "base", "dead")
+            call her_main("Ah...{heart}", "silly", "narrow", "base", "dead")
             m "You alright there, slut? Ehm, I mean, [hermione_name]."
-            call her_main("Yes... I...{image=textheart}", "silly", "narrow", "base", "dead")
+            call her_main("Yes... I...{heart}", "silly", "narrow", "base", "dead")
             #$ ccg2 = 41
             call her_main("I feel so full...", "open_wide_tongue", "narrow", "annoyed", "up")
             call her_main("!!!", "scream", "wide", "base", "stare")
@@ -697,7 +697,7 @@ label hg_sex_2:
             call ctc
 
             #$ ccg2 = 30
-            call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead")
+            call her_main("Ah...{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
             g4 "{size=+5}You whore! Take this!{/size}"
             call her_main("{size=+5}!!!{/size}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
             hide screen bld1
@@ -709,7 +709,7 @@ label hg_sex_2:
 
             m "Well, that was pretty great..."
             #$ ccg2 = 31
-            call her_main("Ah...{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+            call her_main("Ah...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
             m "You alright there, slut?"
             call her_main("Yes... I...", "silly", "narrow", "base", "dead")
             m "Did you enjoy this?"
@@ -735,7 +735,7 @@ label hg_sex_luna:
     call her_main("Well I may have made some plans...", "base", "narrow", "worried", "down")
     her "but I can't tell you what..."
     m "well as long as you bend over my desk I don't really care..."
-    call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "worried", "down")
+    call her_main("{heart}{heart}{heart}", "base", "narrow", "worried", "down")
     stop music fadeout 1.0
     hide screen hermione_main
     call blkfade
@@ -744,25 +744,25 @@ label hg_sex_luna:
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
     with kissiris
-    call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare", ypos="head") #HERMIONE
+    call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "stare", ypos="head") #HERMIONE
 
     call her_chibi_scene("sex", trans=fade)
     call ctc
 
     call play_music("playful_tension") # SEX THEME.
 
-    call her_main("Ah...{image=textheart}", "open", "worriedCl", "worried", "mid")
+    call her_main("Ah...{heart}", "open", "worriedCl", "worried", "mid")
     m "Your pussy feels drenched today..."
-    call her_main("Does it...{image=textheart} ah...{image=textheart}", "open", "worriedCl", "worried", "mid")
-    call her_main("That's all because of you [genie_name]...{image=textheart}", "shock", "worriedCl", "worried", "mid")
+    call her_main("Does it...{heart} ah...{heart}", "open", "worriedCl", "worried", "mid")
+    call her_main("That's all because of you [genie_name]...{heart}", "shock", "worriedCl", "worried", "mid")
 
     if daytime:
-        call her_main("I've been... looking forward to this all morning...{image=textheart}", "silly", "narrow", "annoyed", "up")
+        call her_main("I've been... looking forward to this all morning...{heart}", "silly", "narrow", "annoyed", "up")
     else:
-        call her_main("I've been... looking forward to this all day...{image=textheart}", "silly", "narrow", "annoyed", "up")
+        call her_main("I've been... looking forward to this all day...{heart}", "silly", "narrow", "annoyed", "up")
 
     g4 "Agh, you whore!"
-    call her_main("Ah...{image=textheart}{image=textheart}", "silly", "narrow", "annoyed", "up")
+    call her_main("Ah...{heart}{heart}", "silly", "narrow", "annoyed", "up")
     m "Yes! Do you like it when I fuck you like this?"
     call her_main("Yes, [genie_name]...", "base", "narrow", "base", "mid_soft")
 
@@ -774,17 +774,17 @@ label hg_sex_luna:
             m "(Who would be knocking at a time like this?)"
             lun "It's Luna Lovegood sir."
             m "{size=-3}Who's that again, [hermione_name]?{/size}"
-            call her_main("the crazy blonde... ah...{image=textheart}... with the nice breasts...", "open", "closed", "base", "mid")
+            call her_main("the crazy blonde... ah...{heart}... with the nice breasts...", "open", "closed", "base", "mid")
             m "Come in!"
         "-Tell them to go away.-":
             m "Go aw-!"
             call her_main("no [genie_name]... let them in...", "open", "worriedCl", "worried", "mid")
             m "You want to get caught?!"
-            call her_main("Ah...{image=textheart} yes...{image=textheart}", "shock", "worriedCl", "worried", "mid")
+            call her_main("Ah...{heart} yes...{heart}", "shock", "worriedCl", "worried", "mid")
             m "You are a such a little whore, [hermione_name]!"
-            call her_main("Ah-ah...{image=textheart} let them in... please...", "shock", "worriedCl", "worried", "mid")
+            call her_main("Ah-ah...{heart} let them in... please...", "shock", "worriedCl", "worried", "mid")
             m "You asked for it!"
-            call her_main("Ah-a...{image=textheart}{image=textheart}{image=textheart}", "shock", "worriedCl", "worried", "mid")
+            call her_main("Ah-a...{heart}{heart}{heart}", "shock", "worriedCl", "worried", "mid")
             m "Come in!"
 
     call nar(">The door opens as Luna Lovegood walks in.")
@@ -808,7 +808,7 @@ label hg_sex_luna:
     call her_main("I may have suggested that she come here...", "silly", "narrow", "annoyed", "up")
     call her_main("And that she be unable to see me...", "silly", "narrow", "annoyed", "up")
     m "But what about me and my lack of clothes?"
-    her "{image=textheart}"
+    her "{heart}"
     lun "*ahem*"
     lun "As I was saying sir, the school uniform simply cannot stay as it is."
 
@@ -819,11 +819,11 @@ label hg_sex_luna:
     pause.8
 
     call nar(">The room fills up with rhythmical sound of a flesh hitting flesh...")
-    call her_main("Ah...{image=textheart} ah...{image=textheart} ah...{image=textheart}", "angry", "narrow", "base", "down")
+    call her_main("Ah...{heart} ah...{heart} ah...{heart}", "angry", "narrow", "base", "down")
     m "{size=-3}So let me get this straight.{/size}"
     m "{size=-3}You drugged your class mate...{/size}"
     m "{size=-3}Just so she would come in here and watch you have sex with your headmaster.{/size}"
-    call her_main("Ah... yes...{image=textheart}{image=textheart}{image=textheart}")
+    call her_main("Ah... yes...{heart}{heart}{heart}")
     lun "The uniforms us girls are supposed to wear are far too conservative!"
     m "conservative?"
     lun "Indeed! Miss Granger is the only student that is dressing appropriately."
@@ -838,33 +838,33 @@ label hg_sex_luna:
         
     call her_main("ah...", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "{size=-3}What else did you do to her?{/size}"
-    call her_main("I may have suggested her to... ah...{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
-    call her_main("...act like the a total slut...{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("I may have suggested her to... ah...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("...act like the a total slut...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "{size=-3}So just like you then?{/size}"
-    call her_main("Yessss...{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("Yessss...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     lun "[lun_genie_name], are you listening?"
     m "Sorry [lun_name], go on."
     lun "Thank you. As I was saying I think you need to enact several new policies regarding school uniform."
     lun "Everyone should strive to achieve the same level of perfection as Miss granger."
-    call her_main("{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     lun "I've come up with several rules that should help achieve great results and I hoped you would help me out on this."
     m "Alright..."
     lun "{b}Rule number one:{/b} shirts must reveal a minimum of 3 inches of cleavage."
-    call her_main("{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     lun "{b}Rule number two:{/b} No skirt over 5 inches worn should be worn."
-    call her_main("{image=textheart}{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("{heart}{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     lun "{b}Rule number three:{/b} No bras to be worn... at {u}any{/u} time."
-    call her_main("{image=textheart}{image=textheart}{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("{heart}{heart}{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     lun "And finally, {b}Rule number four:{/b} No panties are allowed at the school grounds."
-    call her_main("{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("{heart}{heart}{heart}{heart}{heart}{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
 
     m "Why are your legs shaking, [hermione_name]?"
     m "Are you cumming? In front of your classmate?"
-    call her_main("Yes...{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead")
+    call her_main("Yes...{heart}{heart}{heart}{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
     m "Well, I think I will follow your example then."
     call her_main("..............", "silly", "narrow", "base", "dead")
     call nar(">You start fucking Hermione with renewed determination!")
-    call her_main("Ah! No! I can't...{image=textheart} not in front of...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}", "shock", "base", "base", "R", cheeks="blush", tears="soft")
+    call her_main("Ah! No! I can't...{heart} not in front of...{heart} ah...{heart}{heart}{heart}", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     lun "Headmaster, are you alr-"
     m "Shut it whore!"
     lun "Yes sir."
@@ -878,7 +878,7 @@ label hg_sex_luna:
     call cum_block
     call ctc
 
-    call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead")
+    call her_main("Ah...{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
     g4 "{size=+5}You fucking whore! Take this!{/size}"
     call her_main("{size=+5}!!!{/size}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     hide screen bld1
@@ -889,7 +889,7 @@ label hg_sex_luna:
 
     call bld
     m "Well, that was pretty great..."
-    call her_main("Ah...{image=textheart}{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("Ah...{heart}{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "You good, slut?"
     call her_main("Yes...", "silly", "narrow", "base", "dead")
     m "Enjoyed yourself?"

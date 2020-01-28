@@ -292,7 +292,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ uni_sperm = True
                 $ u_sperm = "characters/hermione/face/auto_08.png"
 
-                call her_main("AH! ME BILGE IS FILLING UP! Sink Me!{image=textheart}{image=textheart}{image=textheart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
+                call her_main("AH! ME BILGE IS FILLING UP! Sink Me!{heart}{heart}{heart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 g4 "Aye, ye wench! I be shooting me canons!"
                 call her_main("Me hull is splintering, spare me Captain!", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
                 g4 "Ye're nah sunk yet!"
@@ -378,7 +378,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ uni_sperm = True
                 $ u_sperm = "characters/hermione/face/auto_08.png"
 
-                call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead",ypos="head")
+                call her_main("Ah...{heart}{heart}{heart}", "silly", "narrow", "base", "dead",ypos="head")
                 g4 "Aye!!! All over yer hold!"
                 call her_main("Ah... No, me hull!", "silly", "narrow", "annoyed", "up")
                 hide screen bld1
@@ -438,7 +438,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
-        call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare")
+        call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "stare")
         g4 "Oh, ye-es!"
         call her_main("Ah...", "soft", "narrow", "annoyed", "up")
         m "It seems like yer cavern be a bit more welcomin', lass."
@@ -482,10 +482,10 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main("I meant t' say, would ye stop plunderin for a lass {size=+5}like{/size} me?", "angry", "narrow", "base", "down")
         call her_main("I would ne'er propose t' a scallywag wit' his pegleg in me arse, captain...", "angry", "worriedCl", "worried", "mid",emote="05")
         m "Good. 'cause I don't reckon any scallywag would be able t' say \"neigh\" to you lassie."
-        call her_main("Ah{image=textheart}...", "open", "closed", "base", "mid")
-        call her_main("Wha' I meant... ah{image=textheart} {w} ...t' say was ah{image=textheart}... {w}...do ye reckon any pirate would ever ah{image=textheart}... {w} ...leave th' sea fer a lass like me?", "angry", "narrow", "base", "down")
+        call her_main("Ah{heart}...", "open", "closed", "base", "mid")
+        call her_main("Wha' I meant... ah{heart} {w} ...t' say was ah{heart}... {w}...do ye reckon any pirate would ever ah{heart}... {w} ...leave th' sea fer a lass like me?", "angry", "narrow", "base", "down")
         m "Huh?"
-        call her_main("I mean, wit' all that booty plunderin happenin' lately... ah{image=textheart}...", "angry", "narrow", "base", "down")
+        call her_main("I mean, wit' all that booty plunderin happenin' lately... ah{heart}...", "angry", "narrow", "base", "down")
         call her_main("I can nah help but feel like me hull is scratched... leakin even.")
         call her_main("'n in a no way untarnished...")
         call her_main("Who would wants t' settle fer a lass like that.", "angry", "base", "base", "mid")
@@ -495,19 +495,19 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
             "\"I would leave me ship in a heartbeat!\"":
                 call her_main("What?", "open", "base", "base", "mid",ypos="head")
                 m "Aye, if only a lass like ye would board me ship..."
-                call her_main("...Aye...{image=textheart}", "base", "base", "base", "R")
+                call her_main("...Aye...{heart}", "base", "base", "base", "R")
                 call her_main("..............", "base", "happy", "base", "mid")
                 call her_main("Aye if only a lass like I, cap'n? So, why neigh me?", "soft", "base", "base", "mid")
                 m "Huh?"
                 m "Wha' do ye mean \"why\", wench?"
                 m "Ye be right out of harbour 'n ye only just set sail..."
                 m "Tight cabin, shimering tits, 'n wet wee powder pan..."
-                call her_main("Ah...{image=textheart}", "open", "closed", "base", "mid")
+                call her_main("Ah...{heart}", "open", "closed", "base", "mid")
                 m "Ye will make some lucky scallywag a mighty happy one, some day, wench."
                 m "Ehm, I mean, lass."
                 call her_main("No, \"wench\" be good. you be calling me that more, captain.", "silly", "narrow", "annoyed", "up")
                 m "Thar, ye see? Ye be a great catch, I be tellin' ye, wench."
-                call her_main("Ah...{image=textheart} Thank you, captain.", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
+                call her_main("Ah...{heart} Thank you, captain.", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 m "Huh?"
                 m "Ye helm be leakin."
                 pass
@@ -533,16 +533,16 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 m  "Aye, that be a good wench."
                 call her_main("I be a wench, aren't I?", "silly", "narrow", "base", "dead")
                 m "Ye jus' sold me yer asshole fer 90 galleon points. What ye be calling that?"
-                call her_main("Yes, yes...{image=textheart} I be nothing but a wench...{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
+                call her_main("Yes, yes...{heart} I be nothing but a wench...{heart}", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
                 m "Ye helm be leakin."
                 pass
 
-        call her_main("Not only me helm, captain...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead")
+        call her_main("Not only me helm, captain...{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
         m "Not just ye helm?"
-        call her_main("I'm cumming captain...{image=textheart}{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up")
+        call her_main("I'm cumming captain...{heart}{heart}{heart}", "open_wide_tongue", "narrow", "annoyed", "up")
         g4 "Agh! My cock!"
         g4 "Relax your muscles a little, would you?"
-        call her_main("BUT I'M CUMMING!{image=textheart}{image=textheart}{image=textheart}", "open", "worriedCl", "worried", "mid")
+        call her_main("BUT I'M CUMMING!{heart}{heart}{heart}", "open", "worriedCl", "worried", "mid")
         g4 "Fine! 'ave it yer way wench!"
         with hpunch
         call her_main("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}", "scream", "wide", "base", "stare")
@@ -566,18 +566,18 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
 
                 call her_main("!!!", "scream", "wide", "base", "stare",ypos="head")
                 m "Shiver me timbers! Argh!"
-                call her_main("Ah!{image=textheart} 'tis fillin' me up!{image=textheart} me bilge is takin in water!{image=textheart}", "silly", "narrow", "annoyed", "up")
+                call her_main("Ah!{heart} 'tis fillin' me up!{heart} me bilge is takin in water!{heart}", "silly", "narrow", "annoyed", "up")
                 m "'tis nah water, wench!"
                 $ renpy.play('sounds/cannon.mp3')
                 call cum_block
                 with hpunch
-                call her_main("Ah! I BE A WENCH!!!!{image=textheart}{image=textheart}{image=textheart}", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="crying")
+                call her_main("Ah! I BE A WENCH!!!!{heart}{heart}{heart}", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="crying")
                 $ renpy.play('sounds/cannon.mp3')
                 with hpunch
                 m "Agh!"
-                call her_main("Ah...{image=textheart} yer seamen, captain...{image=textheart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
+                call her_main("Ah...{heart} yer seamen, captain...{heart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 m "Aye, my semen..."
-                call her_main("Ah...{image=textheart}", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
+                call her_main("Ah...{heart}", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
                 m "......"
                 hide screen bld1
                 with d3
@@ -598,15 +598,15 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ uni_sperm = True
                 $ u_sperm = "characters/hermione/face/auto_08.png"
 
-                call her_main("Ah-aha! Ye're cummin'! {image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead",ypos="head")
+                call her_main("Ah-aha! Ye're cummin'! {heart}{heart}{heart}", "silly", "narrow", "base", "dead",ypos="head")
                 g4 "{size=+7}Aye I do, wench{/size}"
                 call her_main("Blisterin' Barnacles, me too! Me too!", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="messy")
                 g4 "{size=+7}FARRRGIN' WENCH!{/size}"
                 $ renpy.play('sounds/cannon.mp3')
                 call cum_block
                 with hpunch
-                call her_main("Ah...{image=textheart} yer cum...{image=textheart}", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
-                call her_main("Ye covered me whole deck{image=textheart}{image=textheart}{image=textheart}")
+                call her_main("Ah...{heart} yer cum...{heart}", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
+                call her_main("Ye covered me whole deck{heart}{heart}{heart}")
                 g4 "Aye!!! All o'er yer hull!"
                 $ renpy.play('sounds/cannon.mp3')
                 with hpunch
@@ -621,7 +621,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         $ face_on_cg = False
 
         m "Well, tis been intense..."
-        call her_main("Ah-ha...{image=textheart} ah...{image=textheart}", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy",ypos="head")
+        call her_main("Ah-ha...{heart} ah...{heart}", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy",ypos="head")
         m "Ye be fine lass?"
         call her_main("I reckon so... I be nah sure...", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
         call her_main("I reckon I may still be leakin', captain.", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")

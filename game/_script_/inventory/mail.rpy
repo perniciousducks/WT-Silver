@@ -14,7 +14,7 @@ default letter_hg_2 = Letter(
 )
 
 default letter_nt_1 = Letter(
-    text = "{size=-7}From: Tonks\nTo: My beloved headmaster\n\n{/size}{size=-4}As promised, here is a very lewd picture of me.{image=textheart}\n\nI sincerely hope you received this letter before anybody had a chance to inspect the owl.\n\nIt would be shameful for me if this image was made public, and shared across all of Hogwarts...\nDon't you think so too, Professor?{image=textheart}\n\nI had so much fun making this for you.\nPlease jerk off to it as much as you like! {image=textheart} {image=textheart} {image=textheart}{/size}\n\n{size=-7}With love,\nTonks. {image=textheart}{/size}",
+    text = "{size=-7}From: Tonks\nTo: My beloved headmaster\n\n{/size}{size=-4}As promised, here is a very lewd picture of me.{heart}\n\nI sincerely hope you received this letter before anybody had a chance to inspect the owl.\n\nIt would be shameful for me if this image was made public, and shared across all of Hogwarts...\nDon't you think so too, Professor?{heart}\n\nI had so much fun making this for you.\nPlease jerk off to it as much as you like! {heart} {heart} {heart}{/size}\n\n{size=-7}With love,\nTonks. {heart}{/size}",
     label = "letter_nt_1"
 )
 
@@ -175,7 +175,7 @@ label letter_nt_1:
     call nar(">You roll out the poster completely - getting a good look of it.")
     g9 "Nice!"
 
-    call give_reward(text="{image=textheart} {image=textheart} {image=textheart}", gift="interface/icons/posters/tonks.png", sound=True)
+    call give_reward(text="{heart} {heart} {heart}", gift="interface/icons/posters/tonks.png", sound=True)
     $ poster_tonks_ITEM.unlocked = True
     $ poster_tonks_ITEM.hidden = False
 

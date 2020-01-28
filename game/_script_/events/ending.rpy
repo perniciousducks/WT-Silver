@@ -1257,7 +1257,7 @@ label ball_ending_E2:
         call cg_scene("119")
         her "I wish you could see how much Hogwarts changed me..."
         her "I wish you could see your little girl right now..."
-        her "{size=-5}Ah...{/size}{image=textheart}"
+        her "{size=-5}Ah...{/size}{heart}"
         call ctc
 
         call blktone
@@ -1288,8 +1288,8 @@ label ball_ending_E2:
         call hide_blktone
 
         call cg_scene("121")
-        her "{size=-3}Ah...{/size}{image=textheart}"
-        her "...............................a-ha...{image=textheart}{image=textheart}{image=textheart}"
+        her "{size=-3}Ah...{/size}{heart}"
+        her "...............................a-ha...{heart}{heart}{heart}"
         call ctc
 
         call bld
@@ -1325,7 +1325,7 @@ label ball_ending_E2:
         call cg_scene("120")
         her "How embarrassing..."
         call cg_scene("121")
-        her "Ah...{image=textheart}{image=textheart}{image=textheart}"
+        her "Ah...{heart}{heart}{heart}"
         call ctc
 
         call bld
@@ -1770,7 +1770,7 @@ label ball_ending_E2:
         her "Next! Come on! Is this all you got?"
         sly1 "I'm next, mudblood!"
         call cg_scene("154")
-        her "{size=-5}Ah... Don't call me that, you bastard...{/size}{image=textheart}"
+        her "{size=-5}Ah... Don't call me that, you bastard...{/size}{heart}"
         sly1 "Gonna fuck your face real good, whore!"
         sly1 "And after I fill your mouth with my cum, you're gonna thank me!"
         sly1 "Aren't you, mudblood whore?"
@@ -2251,11 +2251,11 @@ label ball_ending_E2:
         m "Hm? Your pussy..."
         m "It's dripping wet, girl."
         call cg_scene("47")
-        her "Ah...{image=textheart} It is, sir?"
+        her "Ah...{heart} It is, sir?"
         her "That's probably from before..."
         m "From before?"
         m "You mean from when you were choking on my cock?"
-        her "Ah...{image=textheart} Yes, sir..."
+        her "Ah...{heart} Yes, sir..."
         m "Did it make you cum?"
         call cg_scene("48")
         her "A little..."
@@ -2977,7 +2977,7 @@ label ball_ending_E2:
         call play_sound("climb_desk")
         pause.7
 
-        dum_[4] "Oh, dear... {image=textheart} "
+        dum_[4] "Oh, dear... {heart} "
         pause 1
 
 

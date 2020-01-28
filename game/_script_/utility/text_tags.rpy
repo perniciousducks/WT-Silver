@@ -14,11 +14,20 @@ init python:
         name = getattr(renpy.store, name_var, None)
         #TODO Contextual name logic
         return [(renpy.TEXT_TEXT, name)]
+    
+    def text_tag_heart(tag, argument):
+        """Insert a unicode heart symbol. Usage {heart}"""
+        return [
+            (renpy.TEXT_TAG, "unicode"), (renpy.TEXT_TAG, "size=-2"),
+            (renpy.TEXT_TEXT, "❤"),
+            (renpy.TEXT_TAG, "/size"), (renpy.TEXT_TAG, "/unicode")
+        ]
 
 define config.custom_text_tags = {
     "unicode": text_tag_unicode,
 }
 
 define config.self_closing_custom_text_tags = {
-    "name": text_tag_name
+    "name": text_tag_name,
+    "heart": text_tag_heart
 }

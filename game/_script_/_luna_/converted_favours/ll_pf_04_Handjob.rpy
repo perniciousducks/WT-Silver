@@ -187,7 +187,7 @@ label luna_favour_4: ###Luna handjob #DONE
                 $ luna_wear_cum = True
                 call cum_block
 
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","silly","happyCl","sad","down")
+                call lun_main("{heart}{heart}{heart}","silly","happyCl","sad","down")
                 call ctc
                 $ luna_r_arm = 2
                 $ luna_l_arm = 2
@@ -201,21 +201,21 @@ label luna_favour_4: ###Luna handjob #DONE
                 ">Luna hops to her feet."
                 $ luna_cum = 12
                 ">Luna then collects a strand of cum on the end of her finger, staring at it intently before putting it into her mouth."
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","angry","angry","mid")
+                call lun_main("{heart}{heart}{heart}","base","angry","angry","mid")
                 call lun_main("Just give me a moment to clean up sir...","base","seductive","angry","mid")
                 m "Sure..."
                 ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
                 $ luna_cum = 13
                 call lun_main("...","full","seductive","sad","empty")
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+                call lun_main("{heart}{heart}{heart}","base","happyCl","sad","mid")
                 call ctc
 
                 $ luna_cum = 14
                 call lun_main("...","full","seductive","sad","empty")
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+                call lun_main("{heart}{heart}{heart}","base","happyCl","sad","mid")
                 $ luna_cum = 15
                 call lun_main("...","full","seductive","sad","empty")
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+                call lun_main("{heart}{heart}{heart}","base","happyCl","sad","mid")
                 $ luna_wear_cum = False
                 call lun_main("...","full","seductive","sad","empty")
                 call lun_main("*gulp*","base","happyCl","sad","mid")
@@ -227,7 +227,7 @@ label luna_favour_4: ###Luna handjob #DONE
                 call cum_block
                 call gen_chibi("cum")
 
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","full","happyCl","sad","down")
+                call lun_main("{heart}{heart}{heart}","full","happyCl","sad","down")
                 call ctc
 
                 ">You start firing your load directly into her open mouth. Her eyes glaze over as she struggles to fit it all in."
@@ -249,7 +249,7 @@ label luna_favour_4: ###Luna handjob #DONE
 
                 m "That hit the spot..."
                 call lun_main("*gulp*","base","happyCl","sad","mid")
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","empty")
+                call lun_main("{heart}{heart}{heart}","base","seductive","sad","empty")
                 m "Ahh... that was fantastic slut..."
                 call lun_main("[lun_genie_name]...","base","suspicious","angry","R")
 
@@ -482,7 +482,7 @@ label luna_favour_4: ###Luna handjob #DONE
             with d3
 
             m "That hit the spot..."
-            call lun_main("({image=textheart}{image=textheart}{image=textheart})","base","seductive","sad","mid")
+            call lun_main("({heart}{heart}{heart})","base","seductive","sad","mid")
             call lun_main("[lun_genie_name]!","base","mad","mad","mid")
             call lun_main("How could you! Cumming on your students {size=-10}pussy{/size}...","base","angry","angry","mid")
             m "Ahh... that was fantastic slut..."
@@ -729,26 +729,26 @@ label luna_favour_4: ###Luna handjob #DONE
             with d3
 
             m "That hit the spot..."
-            call lun_main("({image=textheart}{image=textheart}{image=textheart})","base","seductive","sad","mid")
+            call lun_main("({heart}{heart}{heart})","base","seductive","sad","mid")
             if luna_choice == 1:
                 $ luna_cum = 12
                 ">Luna collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","mid")
-                call lun_main("{size=+4}It's {size=+4}amazing!!!!!{image=textheart}{image=textheart}{/size}","base","seductive","sad","mid")
+                call lun_main("{heart}{heart}{heart}","base","seductive","sad","mid")
+                call lun_main("{size=+4}It's {size=+4}amazing!!!!!{heart}{heart}{/size}","base","seductive","sad","mid")
                 call lun_main("but please just shoot it into my mouth next time?","base","seductive","sad","mid")
                 m "Sure..."
                 ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
                 $ luna_cum = 13
                 call lun_main("...","base","seductive","sad","mid")
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","mid")
+                call lun_main("{heart}{heart}{heart}","base","seductive","sad","mid")
                 call ctc
 
                 $ luna_cum = 14
                 call lun_main("...","base","seductive","sad","mid")
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","mid")
+                call lun_main("{heart}{heart}{heart}","base","seductive","sad","mid")
                 $ luna_cum = 15
                 call lun_main("...","base","seductive","sad","mid")
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","mid")
+                call lun_main("{heart}{heart}{heart}","base","seductive","sad","mid")
                 $ luna_wear_cum = False
                 call lun_main("ah...","base","seductive","sad","mid")
                 call lun_main("amazing...","base","seductive","sad","mid")
@@ -833,21 +833,21 @@ label luna_cum_addict_event:
     m "(She seems different...)"
     $ luna_cum = 12
     ">Luna collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."
-    call lun_main("{image=textheart}{image=textheart}{image=textheart}","full","seductive","sad","empty")
-    call lun_main("{size=+4}It's {size=+4}amazing!!!!!{image=textheart}{image=textheart}{/size}","base","happyCl","sad","mid")
+    call lun_main("{heart}{heart}{heart}","full","seductive","sad","empty")
+    call lun_main("{size=+4}It's {size=+4}amazing!!!!!{heart}{heart}{/size}","base","happyCl","sad","mid")
     call lun_main("Can I have the rest? Please sir?","base","wide","sad","mid")
     m "Sure..."
     ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
     $ luna_cum = 13
     call lun_main("...","full","seductive","sad","empty")
-    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+    call lun_main("{heart}{heart}{heart}","base","happyCl","sad","mid")
     pause
     $ luna_cum = 14
     call lun_main("...","full","seductive","sad","empty")
-    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+    call lun_main("{heart}{heart}{heart}","base","happyCl","sad","mid")
     $ luna_cum = 15
     call lun_main("...","full","seductive","sad","empty")
-    call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+    call lun_main("{heart}{heart}{heart}","base","happyCl","sad","mid")
     $ luna_wear_cum = False
     call lun_main("Ah...","base","happyCl","sad","mid")
     call lun_main("Amazing...","base","seductive","sad","mid")

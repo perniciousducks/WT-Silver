@@ -606,7 +606,7 @@ label potion_scene_3_3_1:
     if hermione_wear_bottom:
         call her_main("It really suuuuucks that I have to wear anything at all in this boring nunnery...", "annoyed", "narrow", "annoyed", "up")
         call her_main("(Why can't I wear something shorter. A skirt, but...)")
-        call her_main("(A reeealy short one!!!{image=textheart}{image=textheart}{image=textheart})",face="horny")
+        call her_main("(A reeealy short one!!!{heart}{heart}{heart})",face="horny")
 
         call set_her_action("lift_bottom")
         pause.5
@@ -615,7 +615,7 @@ label potion_scene_3_3_1:
         call set_her_action("none","skip_update")
         pause.5
 
-        call her_main("I bet you like watching me strip mistah{image=textheart}", "smile", "narrow", "base", "mid_soft")
+        call her_main("I bet you like watching me strip mistah{heart}", "smile", "narrow", "base", "mid_soft")
 
     call her_main("I'm not sure what under-thingies I should wear though...", "annoyed", "narrow", "base", "down")
     call her_main("Definitely something in pink!!!", "smile", "happyCl", "base", "mid")
@@ -640,20 +640,20 @@ label potion_scene_3_3_1:
     menu:
         g9"!!!"
         "-You look amazing!-":
-            call her_main("Thank youuuuu!!!{image=textheart}{image=textheart}{image=textheart}", "grin", "narrow", "annoyed", "up")
+            call her_main("Thank youuuuu!!!{heart}{heart}{heart}", "grin", "narrow", "annoyed", "up")
             call her_main("Aaaaanyway...", "open", "base", "base", "R")
-            call her_main("Is there anything you want from me mistah... I'll do anything!{image=textheart}", "soft", "narrow", "base", "mid_soft")
+            call her_main("Is there anything you want from me mistah... I'll do anything!{heart}", "soft", "narrow", "base", "mid_soft")
         "-Where is your badge, cumslut?!-":
             call her_main("Oh no I forgot that!", "soft", "wide", "base", "stare")
             call her_main("I'm soooo sorry!!!", "shock", "worriedCl", "worried", "mid", cheeks="blush")
             call her_main("It's this one, isn't it...", "soft", "narrow", "worried", "down")
-            call nar("Hermione conjures an -I {image=textheart} Cum- badge, which magically attaches itself to her breasts.")
+            call nar("Hermione conjures an -I {heart} Cum- badge, which magically attaches itself to her breasts.")
 
             # TODO: Uncomment once badges have been added.
             # hermione.equip(cumslut_badge)
 
             call her_main("Yay! Do you like it?", "grin", "happyCl", "base", "mid")
-            call her_main("Anything else you want from me mistah?... I'll do anything!{image=textheart}", "soft", "narrow", "base", "mid_soft")
+            call her_main("Anything else you want from me mistah?... I'll do anything!{heart}", "soft", "narrow", "base", "mid_soft")
 
     m "I'm just going to ask you a few questions."
     call her_main("(...)", "annoyed", "base", "angry", "mid")
@@ -666,12 +666,12 @@ label potion_scene_3_3_1:
     m "First question, Who are you?"
     call her_main("That's an easy one! I'm Hermione Granger, the prettiest girl in the whole school!", "smile", "happyCl", "base", "mid",emote="06")
     m "And what are your hobbies?"
-    call her_main("Doing my makeup{image=textheart}, dancing{image=textheart} and dressing happy{image=textheart}!", "base", "happyCl", "base", "mid")
+    call her_main("Doing my makeup{heart}, dancing{heart} and dressing happy{heart}!", "base", "happyCl", "base", "mid")
     m "Dressing happy?"
-    call her_main("You know, wearing nice things to make other people happy!{image=textheart}", "base", "narrow", "base", "up")
+    call her_main("You know, wearing nice things to make other people happy!{heart}", "base", "narrow", "base", "up")
     m "You like making people happy?"
-    call her_main("Of course mistah professor, making people happy{image=textheart} makes me happy{image=textheart}!", "smile", "happyCl", "base", "mid")
-    call her_main("Once I finish school I want to get a job where all I do is make people happy{image=textheart}!", "base", "happyCl", "base", "mid")
+    call her_main("Of course mistah professor, making people happy{heart} makes me happy{heart}!", "smile", "happyCl", "base", "mid")
+    call her_main("Once I finish school I want to get a job where all I do is make people happy{heart}!", "base", "happyCl", "base", "mid")
     m "Ok, final question"
     m "How would you like to make yourself happy?"
     call her_main("Make myself happy?", "annoyed", "narrow", "worried", "down")
@@ -680,7 +680,7 @@ label potion_scene_3_3_1:
     call her_main("Even happier? {size=+10}YAY!{/size}", "smile", "happyCl", "base", "mid",emote="06")
     call her_main("So how am I going to be happier? Am I going to get naked?", "grin", "base", "base", "R")
     m "That'd be a good start."
-    call her_main("{image=textheart}AAAAAAWWWEEESOOOOOOOOMMME!{image=textheart}", "grin", "narrow", "annoyed", "up")
+    call her_main("{heart}AAAAAAWWWEEESOOOOOOOOMMME!{heart}", "grin", "narrow", "annoyed", "up")
 
     call set_her_action("lift_top")
     pause.5
@@ -692,7 +692,7 @@ label potion_scene_3_3_1:
 
     call her_main("You know they don't let us walk around naked at school?", "annoyed", "narrow", "angry", "R")
     m "Really? I can't imagine why not."
-    call her_main("I know right? It's like so dumb! Everyone would just be happier{image=textheart} if they got to be naked.", "soft", "narrow", "annoyed", "up")
+    call her_main("I know right? It's like so dumb! Everyone would just be happier{heart} if they got to be naked.", "soft", "narrow", "annoyed", "up")
 
     call set_her_action("lift_skirt")
     pause.5
@@ -704,7 +704,7 @@ label potion_scene_3_3_1:
 
     call her_main("I know everyone who sees me naked is happy!", "base", "narrow", "base", "mid_soft")
     m "You've certainly made me happy."
-    call her_main("Thanks mistah professor sir! That makes me so happy{image=textheart}!", "grin", "worriedCl", "worried", "mid")
+    call her_main("Thanks mistah professor sir! That makes me so happy{heart}!", "grin", "worriedCl", "worried", "mid")
     m "(I don't think I can stand her saying the word happy much more...)"
     m "Now Hermione, I want you to touch your breasts."
     call nar(">Hermione moves her hands up to her breasts")
@@ -729,11 +729,11 @@ label potion_scene_3_3_1:
             m "More."
             call her_main("geez, I'm a dumb bimbo fuckbunny... that just wants to feel happy...", "silly", "narrow", "annoyed", "up")
             m "And what makes you happy?"
-            call her_main("Making you happy{image=textheart} [genie_name].", "silly", "narrow", "base", "dead")
+            call her_main("Making you happy{heart} [genie_name].", "silly", "narrow", "base", "dead")
             m "Good girl."
         "-let her touch herself-":
             m "Go on then."
-            call her_main("Thank you soooo{image=textheart} much [genie_name]!", "silly", "narrow", "annoyed", "up")
+            call her_main("Thank you soooo{heart} much [genie_name]!", "silly", "narrow", "annoyed", "up")
 
     call set_her_action("covering")
     call her_main("This is soooo goood", "grin", "narrow", "annoyed", "up")
@@ -769,7 +769,7 @@ label potion_scene_3_3_1:
     call her_main("I mean I can barely stop mahself coming here everyday!", "smile", "happyCl", "base", "mid")
     m "That's it..."
     call set_her_action("pinch")
-    call her_main("Hmmm, I just luv playin' with mah boobies{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "base", "up")
+    call her_main("Hmmm, I just luv playin' with mah boobies{heart}{heart}{heart}", "base", "narrow", "base", "up")
     call her_main("They're just so soft...", "open", "narrow", "base", "up",cheeks="blush")
     call set_her_action("covering")
     call her_main("And they feel soo good. They're really sensi--", "base", "narrow", "base", "up",cheeks="blush")
@@ -791,31 +791,31 @@ label potion_scene_3_3_1:
     menu:
         "-Cum on her face-":
             g4 "Here it comes slut!"
-            call her_main("{image=textheart}!!!{image=textheart}", "shock", "wide", "base", "stare",cheeks="blush")
+            call her_main("{heart}!!!{heart}", "shock", "wide", "base", "stare",cheeks="blush")
             call gen_chibi("cum","desk","base")
             $ u_sperm = "characters/hermione/face/auto_07.png"
             $ uni_sperm = True
             g4 "that's it, all over your face."
             call set_her_action("pinch")
-            call her_main("...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "up",cheeks="blush")
+            call her_main("...{heart}{heart}{heart}", "silly", "narrow", "base", "up",cheeks="blush")
         "-Cum on her tits-":
             g4 "Here it comes fuckbunny!"
-            call her_main("{image=textheart}{image=textheart}{image=textheart}", "shock", "wide", "base", "stare",cheeks="blush")
+            call her_main("{heart}{heart}{heart}", "shock", "wide", "base", "stare",cheeks="blush")
             call gen_chibi("cum","desk","base")
             $ u_sperm = "characters/hermione/face/auto_02.png"
             $ uni_sperm = True
             g4 "All over your tits."
             call set_her_action("pinch")
-            call her_main("It's so warm...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "up",cheeks="blush")
+            call her_main("It's so warm...{heart}{heart}{heart}", "silly", "narrow", "base", "up",cheeks="blush")
         "-cover her in cum-":
             g4 "Here it comes whore!"
-            call her_main("{image=textheart}{image=textheart}{image=textheart}", "shock", "wide", "base", "stare",cheeks="blush")
+            call her_main("{heart}{heart}{heart}", "shock", "wide", "base", "stare",cheeks="blush")
             call gen_chibi("cum","desk","base")
             $ u_sperm = "characters/hermione/face/auto_05.png"
             $ uni_sperm = True
             g4 "that's right slut, All over you."
             call set_her_action("pinch")
-            call her_main("{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "up",cheeks="blush")
+            call her_main("{heart}{heart}{heart}", "silly", "narrow", "base", "up",cheeks="blush")
 
     call gen_chibi("hold_dick","desk","base")
     call her_main("...", "grin", "narrow", "annoyed", "up")
@@ -840,7 +840,7 @@ label potion_scene_3_3_1:
     m "I think you need to have a little nap and let this wear off."
     call her_main("whatever you say sir!", "annoyed", "closed", "base", "mid")
     call set_her_action("none","skip_update")
-    call her_main("And thanks again!{image=textheart} You're the best!", "smile", "happyCl", "base", "mid",emote="06")
+    call her_main("And thanks again!{heart} You're the best!", "smile", "happyCl", "base", "mid",emote="06")
 
     call her_walk(action="leave")
 
@@ -880,7 +880,7 @@ label potion_scene_3_4_1:
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
     with kissiris
-    call her_main("ahhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare")
+    call her_main("ahhhhhhhhh....{heart}", "scream", "wide", "base", "stare")
     hide screen hermione_main
     call gen_chibi("hide")
     $ ccg_folder = "herm_sex"
@@ -890,14 +890,14 @@ label potion_scene_3_4_1:
     show screen ccg
     hide screen blkfade
     with d3
-    her "Ah...{image=textheart}"
+    her "Ah...{heart}"
     g4 "mmmm, you like that don't you slut?"
     $ ccg2 = 2
-    her "yes...{image=textheart}"
+    her "yes...{heart}"
     $ ccg2 = 3
     her "even though I have to miss class..."
     $ ccg2 = 4
-    her "I Honestly don't care...{image=textheart}"
+    her "I Honestly don't care...{heart}"
     $ ccg2 = 5
     her "This just feels too goooood..."
     pause
@@ -916,7 +916,7 @@ label potion_scene_3_4_1:
     her "What was that?"
     m "Ugh... nothing... just a bit of spit. Keep going slut."
     $ ccg2 = 9
-    her "Ah...{image=textheart} alright then..."
+    her "Ah...{heart} alright then..."
     ">You quickly put the stopper back into the vial and slip it back into your robes."
     $ ccg2 = 10
     her "Ah... ah... ah..."
@@ -940,16 +940,16 @@ label potion_scene_3_4_1:
     ">Hermione's sopping cunt starts contracting around your cock uncontrollably."
     g4 "Mmmm, cumming already slut?"
     $ ccg2 = 14
-    her "Y-yes...{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}"
+    her "Y-yes...{heart}{heart}{heart}{heart}{heart}{heart}"
     $ ccg2 = 15
-    her "I{image=textheart} can't{image=textheart} stop..........{image=textheart}{image=textheart}{image=textheart}"
+    her "I{heart} can't{heart} stop..........{heart}{heart}{heart}"
     ">True to her word, you don't feel an end to her relentless spasming."
     g4 "I love it when cum on my cock whore!"
     $ ccg2 = 16
     pause
-    her "no...{image=textheart} sir...{image=textheart} you...{image=textheart} don't...{image=textheart} understand...{image=textheart}"
+    her "no...{heart} sir...{heart} you...{heart} don't...{heart} understand...{heart}"
     $ ccg2 = 17
-    her "It...{image=textheart} won't...{image=textheart} stop...{image=textheart}"
+    her "It...{heart} won't...{heart} stop...{heart}"
     g4 "I don't see how that's my problem!"
     $ renpy.play('sounds/slap.mp3')
     show screen white
@@ -960,34 +960,34 @@ label potion_scene_3_4_1:
     $ ccg2 = 18
     her "{size=+10}!!!{/size}"
     $ ccg2 = 19
-    her "its......{image=textheart} {image=textheart} "
+    her "its......{heart} {heart} "
     $ ccg2 = 20
     pause
-    her "my{image=textheart}  whole{image=textheart}  body...{image=textheart}{image=textheart}{image=textheart} "
+    her "my{heart}  whole{heart}  body...{heart}{heart}{heart} "
     g4 "Speak up slut!"
     $ ccg2 = 21
-    her "My body's...{image=textheart} {image=textheart} on fire..."
+    her "My body's...{heart} {heart} on fire..."
     $ ccg2 = 22
-    her "I can't...{image=textheart}"
+    her "I can't...{heart}"
     $ ccg2 = 23
-    her "why...{image=textheart}"
+    her "why...{heart}"
     $ ccg2 = 24
-    her "Why {image=textheart}does {image=textheart}it {image=textheart}feel {image=textheart}this {image=textheart}goooooooooood...{image=textheart}{image=textheart}{image=textheart}"
+    her "Why {heart}does {heart}it {heart}feel {heart}this {heart}goooooooooood...{heart}{heart}{heart}"
     g4 "enjoying yourself are we?"
     $ ccg2 = 25
-    her "No...{image=textheart} ah... yesssss....{image=textheart}"
+    her "No...{heart} ah... yesssss....{heart}"
     $ ccg2 = 26
-    her "it's like...{image=textheart}"
+    her "it's like...{heart}"
     $ ccg2 = 27
-    her "each time you thrust...{image=textheart}{image=textheart} that big fat {image=textheart}cock{image=textheart} in me...{image=textheart}"
+    her "each time you thrust...{heart}{heart} that big fat {heart}cock{heart} in me...{heart}"
     $ ccg2 = 28
     pause
-    her "it's like I {image=textheart}{image=textheart}cum{image=textheart}{image=textheart}..."
+    her "it's like I {heart}{heart}cum{heart}{heart}..."
     her "But it never resets..."
     $ ccg2 = 29
-    her "Each time is just another stronger {image=textheart}orgasm{image=textheart}..."
+    her "Each time is just another stronger {heart}orgasm{heart}..."
     $ ccg2 = 30
-    her "{size=+10}AND{image=textheart} THEY{image=textheart} NEVER{image=textheart} STOOO{image=textheart}OOOP!!!!!!{/size}"
+    her "{size=+10}AND{heart} THEY{heart} NEVER{heart} STOOO{heart}OOOP!!!!!!{/size}"
     g4 "Sounds nice... and what about when I give your fat ass a nice... slap?"
     $ renpy.play('sounds/slap.mp3')
     show screen white
@@ -996,26 +996,26 @@ label potion_scene_3_4_1:
     with hpunch
     ">You give her ass another hard slap, holding your hand against her warm flesh, swirling the potion around underneath it."
     $ ccg2 = 31
-    her "{size=+20}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{/size}"
+    her "{size=+20}{heart}{heart}!!!{heart}{heart}{/size}"
     $ ccg2 = 32
-    her "{image=textheart}my{image=textheart} {image=textheart}brain...{image=textheart}"
+    her "{heart}my{heart} {heart}brain...{heart}"
     $ ccg2 = 33
-    her "You're{image=textheart} going{image=textheart} to{image=textheart} kill{image=textheart} me...{image=textheart}"
+    her "You're{heart} going{heart} to{heart} kill{heart} me...{heart}"
     g4 "Stop being so overdramatic..."
     pause
     $ ccg2 = 34
-    her "I'm not...{image=textheart}"
-    her "Ah.....{image=textheart} some....{image=textheart} thing....{image=textheart} is....{image=textheart} wrong....{image=textheart}"
+    her "I'm not...{heart}"
+    her "Ah.....{heart} some....{heart} thing....{heart} is....{heart} wrong....{heart}"
     ">Hermione's words start to slow, eventually only being able to mutter a squeak of a word every time you thrust into her."
     g4 "Maybe it was the potion I poured all over your ass earlier?"
     $ ccg2 = 35
-    her "{size=+20}{image=textheart}{image=textheart}what?{image=textheart}{image=textheart}{/size}"
+    her "{size=+20}{heart}{heart}what?{heart}{heart}{/size}"
     g4 "Don't worry, the effects should wear off in about an hour..."
     $ ccg2 = 36
     her "{size=+20}!!!!!!!{/size}"
     g4 "In the mean time, why don't you just sit back and enjoy the ride."
     $ ccg2 = 37
-    her "{image=textheart}e-e-enjoy....{image=textheart}"
+    her "{heart}e-e-enjoy....{heart}"
     $ renpy.play('sounds/slap.mp3')
     show screen white
     pause.1
@@ -1025,23 +1025,23 @@ label potion_scene_3_4_1:
     pause
     her "{size=+20}!!!!!!!{/size}"
     $ ccg2 = 39
-    her "Pleeeease...{image=textheart}{image=textheart}{image=textheart}"
+    her "Pleeeease...{heart}{heart}{heart}"
     $ ccg2 = 40
-    her "my...{image=textheart}mind...{image=textheart}is...{image=textheart}breaking...{image=textheart}"
+    her "my...{heart}mind...{heart}is...{heart}breaking...{heart}"
     ">You start to pick up the pace, treating her as nothing more than your mewling fuckmeat..."
     g4 "MMMM, you always know what to say to get me going!!"
     $ ccg2 = 41
-    her "...{image=textheart}{image=textheart}{image=textheart}"
+    her "...{heart}{heart}{heart}"
     ">Eventually the endless spasming of her drenched pussy around your cock proves too much."
     g4 "Ah!!! Here It comes whore!"
     $ ccg2 = 42
     pause
-    her "{image=textheart}........{image=textheart}"
+    her "{heart}........{heart}"
     ">You start firing cum directly into her womb."
     $ ccg3 = "s4"
     $ ccg2 = 43
     pause
-    her "{image=textheart}!!!{image=textheart}"
+    her "{heart}!!!{heart}"
     g4 "TAKE THIS!!!"
     $ renpy.play('sounds/slap.mp3')
     show screen white
@@ -1052,11 +1052,11 @@ label potion_scene_3_4_1:
     $ ccg3 = "s5"
     $ ccg2 = 44
     pause
-    her "{image=textheart}........{image=textheart}"
-    her "{image=textheart}...............{image=textheart}"
+    her "{heart}........{heart}"
+    her "{heart}...............{heart}"
     $ ccg2 = 45
     pause
-    her "{image=textheart}.......................{image=textheart}"
+    her "{heart}.......................{heart}"
     show screen blkfade
     with d3
     ">Eventually hermione's eyes roll back into her head as she collapses forward onto your desk."

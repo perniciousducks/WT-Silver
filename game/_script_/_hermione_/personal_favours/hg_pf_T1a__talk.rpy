@@ -1046,7 +1046,7 @@ label hg_pf_talk_tonks:
                 call gen_chibi("sit_behind_desk")
             call her_main("I...", "angry", "worriedCl", "worried", "mid")
             call ton_main("Go on, I'm sure the Headmaster doesn't mind.","open","base","base","L")
-            call ton_main("My lips are sealed.{image=textheart}","horny","base","base","mid")
+            call ton_main("My lips are sealed.{heart}","horny","base","base","mid")
             call her_main("Professor...", "disgust", "narrow", "base", "down")
             m "Miss Granger, your professor asked you a question..."
             call her_main("But, I thought it was supposed to stay between just you and I...", "disgust", "narrow", "base", "mid_soft")

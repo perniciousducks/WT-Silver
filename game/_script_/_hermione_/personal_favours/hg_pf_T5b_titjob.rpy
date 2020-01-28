@@ -195,7 +195,7 @@ label hg_pf_titjob_T2_intro_E1:
     m "You like it when I call them perfect don't you?"
     call her_main(".............", "base", "narrow", "worried", "down")
     g9 "you don't have to say anything, just bring those {b}perfect{/b} tits over here."
-    call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "worriedCl", "worried", "mid")
+    call her_main("{heart}{heart}{heart}", "base", "worriedCl", "worried", "mid")
     call her_main("yes, [genie_name]...", "grin", "base", "base", "R")
 
     jump hg_pf_titjob_2
@@ -220,7 +220,7 @@ label hg_pf_titjob_T2_repeat:
     m "[hermione_name], how would you like wrapping those perfect tits of yours around my cock again?"
     call her_main("As long as I am getting paid...", "soft", "happy", "base", "R")
     g9 "Well, then... Time to earn those points!"
-    call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "base", "up")
+    call her_main("{heart}{heart}{heart}", "base", "narrow", "base", "up")
 
     jump hg_pf_titjob_2
 
@@ -768,7 +768,7 @@ label hg_pf_titjob_2_continue:
             call her_main("Then I give him a kiss on the forehead...", "soft", "happy", "base", "R")
             $ ccg1 = 23
             call her_main("Making sure that he can see down my blouse...", "grin", "worriedCl", "worried", "mid", emote="05")
-            call her_main("{image=textheart}{image=textheart}{image=textheart}")
+            call her_main("{heart}{heart}{heart}")
             $ ccg1 = 25
             call her_main("But all of that is not true of course!", "open", "base", "base", "mid")
             $ ccg1 = 22
@@ -853,7 +853,7 @@ label hg_pf_titjob_2_cumming:
 
             call her_main("!!!!!!!!!!!", "full", "wide", "base", "stare")
             g4 "Argh! You whore!"
-            call her_main("{image=textheart}{image=textheart}{image=textheart}", "full_cum", "narrow", "base", "dead")
+            call her_main("{heart}{heart}{heart}", "full_cum", "narrow", "base", "dead")
             call cum_block
 
             g4 "Argh! you big-titted slut! Take it all!"

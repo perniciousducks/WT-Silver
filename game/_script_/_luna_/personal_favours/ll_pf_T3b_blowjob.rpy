@@ -761,7 +761,7 @@ label ll_pf_blowjob_T1_slapping: # Call label
             $ lunCG(pos=6)
             g9 "I bet you're loving this aren't you..."
             $ lunCG(pupil='dick', eye='seductive', pos=11)
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
             $ lunCG(pupil='right', pos=5)
             g9 "Cumslut that you are..."
             $ lunCG(pos=13)
@@ -783,7 +783,7 @@ label ll_pf_blowjob_T1_slapping: # Call label
             $ lunCG(pupil='dick')
             ">Almost instantly you fill Luna's cheeks to the brim..."
             $ lunCG(pupil='ahegao')
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
             $ lunCG(pupil='dick')
             g9 "This isn't too much is it?"
             $ lunCG(pupil='ahegao', eye='wide', pos=15, extra_3='cum_4', tears='mascara')
@@ -791,25 +791,25 @@ label ll_pf_blowjob_T1_slapping: # Call label
             $ lunCG(pupil='ahegao', eye='sad', pos=6)
             g9 "Mmmm, I love it when this happens..."
             $ lunCG(pos=14)
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
             $ lunCG(pos=4)
             g9 "The best part of this is..."
             $ lunCG(pos=15)
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
             $ lunCG(pos=6, extra_1='cum_2')
             m "I know that this is all you'll be smelling for the next week..."
             $ lunCG(pos=16)
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
             $ lunCG(pos=6)
             m "It'll find it's way into every nook and cranny of your nose..."
             $ lunCG(pos=15)
             m "And I will be the only thing you'll be able to think about..."
             $ lunCG(pos=7)
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
             $ lunCG(pos=13)
             m "Is this how much of a dirty little cumslut you really are!"
             $ lunCG(pos=14)
-            lun "{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}{heart}{heart}{heart}"
             ">With that, you feel Luna's body start to violently shudder as her hips spasm and liquid runs down her thighs onto the floor..."
             g9 "Alright slut, here it comes again{b}{/b}!"
 
@@ -843,7 +843,7 @@ label ll_pf_blowjob_T1_slapping: # Call label
             ">With that, you begin firing a huge load, coating the poor girl in a thick layer of cum..."
             call cum_block
             $ lunCG(pupil='dick', eye='sad', mouth='open_tongue', extra_1='cum_3')
-            lun "{image=textheart}{image=textheart}{image=textheart}"
+            lun "{heart}{heart}{heart}"
             g9 "ugh yes...{w=0.3} take this slut..."
             lun "Ah..."
 
@@ -867,7 +867,7 @@ label ll_pf_blowjob_T1_slapping: # Call label
             call cum_block
             $ lunCG(pupil='ahegao', eye='wide', mouth='base', extra_1='cum_3')
             $ lunCG(pupil='ahegao', eye='closed', mouth='base')
-            lun "*sob*{image=textheart}*sob*{image=textheart}*sob*{image=textheart}*sob*"
+            lun "*sob*{heart}*sob*{heart}*sob*{heart}*sob*"
             $ lunCG(pupil='ahegao', eye='seductive')
             g9 "ugh yes...{w=0.3} take this, slut..."
             $ lunCG(pupil='dick')
@@ -966,15 +966,15 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     $ lunCG(pupil='ahegao', eye='mad', pos=15)
     m "AND THEN PROCEED TO SUCK ME OFF FOR AN ENTIRE DAY!"
     $ lunCG(pupil='ahegao', eye='seductive', pos=6)
-    lun "*glck*{image=textheart}*glck*{image=textheart}*glck*{image=textheart}"
+    lun "*glck*{heart}*glck*{heart}*glck*{heart}"
     $ lunCG(pupil='ahegao', eye='seductive', pos=15)
     m "And if you want cum so much, just beg like a normal cumslut!"
     $ lunCG(pupil='ahegao', eye='seductive', pos=6)
-    lun "*glck*{image=textheart}*glck*{image=textheart}*glck*{image=textheart}"
+    lun "*glck*{heart}*glck*{heart}*glck*{heart}"
     $ lunCG(pupil='up', eye='wink', pos=14)
     m "Speaking of, ready for your first load slut?"
     $ lunCG(pupil='dick', eye='wide', pos=6)
-    lun "*glck*{image=textheart}*glck*mmmhhmmmm*glck*{image=textheart}"
+    lun "*glck*{heart}*glck*mmmhhmmmm*glck*{heart}"
     $ lunCG(pupil='ahegao', eye='seductive', pos=15, extra_1='cum_1')
     m "Good girl! Here it comes!!!"
     $ lunCG(pupil='ahegao', eye='seductive', pos=6)
@@ -982,17 +982,17 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     $ lunCG(pupil='ahegao', eye='angry', pos=13)
     m "Ughhh... here you are, slut... here's your favourite meal!"
     $ lunCG(pupil='ahegao', eye='seductive', pos=6, extra_1='cum_3')
-    lun "*glck*{image=textheart}*glck*{image=textheart}mmmmm{image=textheart}*glck*{image=textheart}*glck*"
+    lun "*glck*{heart}*glck*{heart}mmmmm{heart}*glck*{heart}*glck*"
     $ lunCG(pupil='ahegao', eye='mad', pos=14)
     ">After the first three shots, you feel your orgasm start to subside..."
     $ lunCG(pupil='ahegao', eye='seductive', pos=6)
     m "Ughh... I don't think that's going to be enough of a load to satisfy a nasty little cumslut like you now, is it?"
     $ lunCG(pupil='dick', eye='base', pos=16)
-    lun "*glck*{image=textheart}*glck*{image=textheart}*glck*{image=textheart}"
+    lun "*glck*{heart}*glck*{heart}*glck*{heart}"
     $ lunCG(pupil='up', eye='seductive', pos=6)
     ">You muster what little genie magic you can and focus it on your empty balls..."
     $ lunCG(pupil='ahegao', eye='seductive', pos=15)
-    lun "*glck*{image=textheart}*glck*!!!*Gulp*{image=textheart}*glck*{image=textheart}"
+    lun "*glck*{heart}*glck*!!!*Gulp*{heart}*glck*{heart}"
     $ lunCG(pupil='dick', eye='wide', pos=16)
     ">Allowing your weakening cock to come back to life, firing a inhumane volley of cum into the girls stomach."
     $ lunCG('sucking', 'wide', 'sad', 'ahegao', pos=6, extra_3='cum_4')
@@ -1000,11 +1000,11 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     $ lunCG(pos=10)
     ">Luna's hands have both managed to sneak under her skirt and are now a blur of movement..."
     $ lunCG(pos=3)
-    lun "*Gulp*{image=textheart}*glck*{image=textheart}*Gulp*{image=textheart}*glck*{image=textheart}"
+    lun "*Gulp*{heart}*glck*{heart}*Gulp*{heart}*glck*{heart}"
     $ lunCG(pos=11)
     m "Ughhh... If you'd just asked..."
     $ lunCG(pos=4)
-    lun "*Gulp*{image=textheart}*glck*{image=textheart}*Gulp*{image=textheart}*glck*{image=textheart}"
+    lun "*Gulp*{heart}*glck*{heart}*Gulp*{heart}*glck*{heart}"
     $ lunCG(pos=14)
     m "Instead I have to teach you a lesson."
     $ lunCG(pos=1)
@@ -1086,7 +1086,7 @@ label ll_pf_blowjob_T1_facefuck: # Call label
     $ lunCG('pout', 'sad', 'sad', 'up', pos=1)
     lun "What? Already? But there's still so much magic..."
     $ lunCG('base', 'wide', '', 'dick')
-    lun "{image=textheart}{image=textheart}{image=textheart}"
+    lun "{heart}{heart}{heart}"
     $ lunCG('pout', 'sad', '', 'up')
     lun "Can't we keep going? There must be so many wrackspurts left in you..."
     m "(Oh right... those things...)"
@@ -1152,27 +1152,27 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG('', 'angry', '', 'ahegao', pos=16)
     ">You fire your third load of the day into Luna's hungry mouth."
     $ lunCG('', 'seductive', '', 'up', pos=6)
-    lun "*gulp*{image=textheart}*gulp*{image=textheart}*gulp*"
+    lun "*gulp*{heart}*gulp*{heart}*gulp*"
     $ lunCG('', 'seductive', '', 'dick', pos=9)
     m "Fuck that's good... Ugh..."
     $ lunCG('', 'sad', '', 'dick', pos=3, extra_2='blank')
     ">Sensing that your orgasm has ended, Luna begins to slow down, sucking the end of your cock to nurse it back to health..."
-    lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
+    lun "*glck*{heart}*slrp*{heart}*glck*"
     m "Ugh... I should... mmmm... do some work... or something..."
     $ lunCG('', 'wink', '', 'up', pos=4)
-    lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
+    lun "*glck*{heart}*slrp*{heart}*glck*"
 
     menu:
         "-Try and do some paperwork-":
             ">Intent on not losing the entire day to Luna's mouth, you begin to write out a report for the ministry."
             m "Yes... school activities..."
             $ lunCG('', 'seductive', '', 'dick', pos=6)
-            lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
+            lun "*glck*{heart}*slrp*{heart}*glck*"
             m "..."
             pause 2
             m "There, all done!"
             $ lunCG('sucking', 'wink', 'base', 'up', pos=13)
-            lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
+            lun "*glck*{heart}*slrp*{heart}*glck*"
             $ lunCG('', 'seductive', '', 'down', pos=5)
             m "(It only took three hours and twice as many orgasms)"
             $ lunCG('', 'angry', '', 'dick', pos=10)
@@ -1199,7 +1199,7 @@ label ll_pf_blowjob_T1_summon:
             $ lunCG('base', 'wide', 'base', 'dick',)
             lun "Oh, right!"
             $ lunCG('sucking', 'angry', 'sad', 'up', pos=13)
-            lun "*glck*{image=textheart}*slrp*{image=textheart}*glck*"
+            lun "*glck*{heart}*slrp*{heart}*glck*"
             m "Ugh... that's it slut..."
 
         "-Summon someone-":
@@ -1249,7 +1249,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG(pos=6)
     call her_main("Do you want me to suck your cock?", "base", "narrow", "base", "down")
     $ lunCG(pos=12)
-    call her_main("Or maybe you want to bend me over your desk again{image=textheart}{image=textheart}{image=textheart}...", "smile", "squint", "angry", "mid")
+    call her_main("Or maybe you want to bend me over your desk again{heart}{heart}{heart}...", "smile", "squint", "angry", "mid")
     $ lunCG(pos=8)
     m "I love your enthusiasm... but lets just start with a nice look at your tits..."
     $ lunCG(pos=15)

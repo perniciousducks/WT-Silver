@@ -289,7 +289,7 @@ label hg_pf_blowjob_T2_intro_E1:
     call her_main("Please punish me with your cock, [genie_name]!", "soft", "narrow", "base", "mid_soft")
     call her_main("I beg you!", "soft", "narrow", "base", "mid_soft")
     g4 "Come here, you dirty little minx!"
-    call her_main("{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "annoyed", "up")
+    call her_main("{heart}{heart}{heart}", "base", "narrow", "annoyed", "up")
 
     call her_walk("desk", "base", reduce=0.8)
     call blkfade
@@ -2108,10 +2108,10 @@ label hg_pf_facefuck_1: # Bondage facefuck scene
             g9 "ARGH!!! YOU WHORE!!!"
             $ uni_sperm = True
             $ u_sperm = "characters/hermione/face/auto_07.png"
-            call her_main("*pant*{image=textheart}{image=textheart}{image=textheart}*pant*", "cumshot", "slit", "worried", "ahegao")
+            call her_main("*pant*{heart}{heart}{heart}*pant*", "cumshot", "slit", "worried", "ahegao")
             g9 "TAKE THIS!!!"
             ">You start unloading onto the girl's waiting face."
-            call her_main("{image=textheart}Yesss....{image=textheart}", "soft", "narrow", "base", "up")
+            call her_main("{heart}Yesss....{heart}", "soft", "narrow", "base", "up")
             ">Hermione closes her eyes and smiles, holding her face dead still, allowing you to paint it with cum..."
 
     hide screen hercg

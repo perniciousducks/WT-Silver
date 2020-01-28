@@ -546,11 +546,11 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                                 call lun_main("...","upset","suspicious","sad","down")
                                 call lun_main("you're despicable, [lun_genie_name]...","upset","mad","angry","R",tears="soft")
                                 ">You give her tits a couple of firm squeezes..."
-                                call lun_main("ah{image=textheart}...","upset","angry","sad","down",tears="soft")
+                                call lun_main("ah{heart}...","upset","angry","sad","down",tears="soft")
                                 call lun_main("this isn't right...","upset","angry","sad","R",tears="soft")
                                 m "I know, I know... But it's hard to resist..."
                                 call lun_main(".................","normal","seductive","sad","down",tears="soft")
-                                call lun_main("....................ah...{image=textheart}","soft","seductive","sad","down",tears="soft")
+                                call lun_main("....................ah...{heart}","soft","seductive","sad","down",tears="soft")
                                 call lun_main("[lun_genie_name], you need to stop now...","upset","angry","sad","R",tears="soft")
                                 m "Just a bit longer..."
                                 call lun_main("please...","upset","angry","sad","down",tears="crying")
@@ -746,7 +746,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 g11 "{size=+4}aghhh!{/size}"
                 call lun_main("shoot another filthy load...","base","suspicious","mad","R")
                 g4 "{size=+4}*Argh!* It's too much!{/size}"
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","suspicious","mad","down")
+                call lun_main("{heart}{heart}{heart}","base","suspicious","mad","down")
                 ">You start shooting another load against the inside of your sodden cloak."
                 hide screen luna_main
                 with d3
@@ -844,14 +844,14 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                     $ lun_sub += 1
                 m "why don-"
                 ">Luna quickly sits down on your lap, wriggling around slightly until your cock rests between her cheeks."
-                call lun_main("(ah...{image=textheart})","base","mad","sad","down")
+                call lun_main("(ah...{heart})","base","mad","sad","down")
                 call lun_main("......","upset","wide","sad","R")
                 m "Some one's eager today..."
                 call lun_main("...","upset","mad","sad","down")
                 ">Luna softly starts rocking her hips back and forth."
                 m "mmmmm..."
                 call lun_main("...","normal","suspicious","sad","R")
-                call lun_main("(he's so hard...{image=textheart})","base","suspicious","sad","down")
+                call lun_main("(he's so hard...{heart})","base","suspicious","sad","down")
 
                 label luna_lap_dance_3:
                     m "That's it, now just start moving your ass a little more."
@@ -949,7 +949,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                     "-Grope her-" if luna_grope:
                         $ current_payout = 35
                         ">You start running your hands along the outside of her thighs."
-                        call lun_main("ah...{image=textheart}","base","wide","sad","mid")
+                        call lun_main("ah...{heart}","base","wide","sad","mid")
                         m "mmmm, lovely."
                         ">You keep grinding your cock against her butt checks."
                         call lun_main("....","clench","seductive","sad","down")
@@ -976,11 +976,11 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                         call lun_main("...","upset","wide","sad","down",tears="soft")
                         call lun_main("[lun_genie_name]...","upset","mad","angry","R",tears="soft")
                         ">You start lightly running your the tips of your fingers up and down her thighs..."
-                        call lun_main("ah{image=textheart}...","upset","angry","sad","down",tears="soft")
+                        call lun_main("ah{heart}...","upset","angry","sad","down",tears="soft")
                         call lun_main("[lun_genie_name]... this isn't right...","upset","angry","sad","R",tears="crying")
                         m "you don't seem to mind..."
                         call lun_main("(I'll let him keep going for a little bit more...)","normal","seductive","sad","down",tears="crying")
-                        call lun_main("(Then I'll make him stop).......ah...{image=textheart}","soft","seductive","sad","down",tears="crying")
+                        call lun_main("(Then I'll make him stop).......ah...{heart}","soft","seductive","sad","down",tears="crying")
                         call lun_main("[lun_genie_name], how much longer do you need?...","upset","angry","sad","R",tears="crying")
                         m "Just a bit longer..."
                         ">Luna keeps rubbing her ass against your sensitive cock."
@@ -1109,7 +1109,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
                 g11 "{size=+4}aghhh!{/size}"
                 call lun_main("shoot another filthy load...","base","suspicious","mad","R")
                 g4 "{size=+4}*Argh!* It's too much!{/size}"
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","suspicious","mad","down")
+                call lun_main("{heart}{heart}{heart}","base","suspicious","mad","down")
                 ">You start shooting another load against the inside of your sodden cloak."
                 hide screen luna_main
                 with d3
@@ -1325,7 +1325,7 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         call set_her_action("pinch")
         call her_main("cum for me you nasty perverts!", "base", "squint", "base", "mid")
         g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
-        call lun_main("ah...{image=textheart}{image=textheart}{image=textheart}","open","angry","sad","up", cheeks="blush")
+        call lun_main("ah...{heart}{heart}{heart}","open","angry","sad","up", cheeks="blush")
         ">You start shooting your load against the inside of your cloak as you feel an explosion of wetness from luna's pussy."
         hide screen luna_main
         with d3

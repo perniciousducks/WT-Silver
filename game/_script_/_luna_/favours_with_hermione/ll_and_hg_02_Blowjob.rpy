@@ -230,7 +230,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         her "do you want to shoot it all down her slutty little throat?"
         $ ccg2 = 19
         pause
-        lun "*mmmmm*...{image=textheart}"
+        lun "*mmmmm*...{heart}"
         $ ccg2 = 21
         ">Luna's mouth vibrate pleasantly around your cock."
         $ ccg2 = 17
@@ -242,7 +242,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         $ ccg2 = 21
         her "she wants you to shoot it all into her mouth and down her throat..."
         $ ccg2 = 19
-        lun "{image=textheart}{image=textheart}{image=textheart}"
+        lun "{heart}{heart}{heart}"
         $ ccg2 = 20
         her "she even made me promise before we came here..."
         $ ccg2 = 21
@@ -275,7 +275,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         lun "*gulp*"
         $ ccg2 = 27
         pause
-        lun "ah... {image=textheart}{image=textheart}{image=textheart}"
+        lun "ah... {heart}{heart}{heart}"
         #fade to black.
         hide screen ccg
         with fade
@@ -481,7 +481,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         m "well that practice is paying off!"
         her "hear that luna?"
         $ ccg2 = 31
-        lun "{image=textheart}{image=textheart}{image=textheart}"
+        lun "{heart}{heart}{heart}"
         pause
         her "She was a little worried you wouldn't like it..."
         her "anyway, time to start the real thing!"
@@ -531,7 +531,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         her "do you want to shoot it all down her slutty little throat?"
         $ ccg2 = 32
         pause
-        lun "*mmmmm*...{image=textheart}"
+        lun "*mmmmm*...{heart}"
         $ ccg2 = 21
         ">Luna's mouth vibrate pleasantly around your cock."
         $ ccg2 = 17
@@ -543,7 +543,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         $ ccg2 = 21
         her "she wants you to shoot it all into her mouth and down her throat again..."
         $ ccg2 = 32
-        lun "{image=textheart}{image=textheart}{image=textheart}"
+        lun "{heart}{heart}{heart}"
         $ ccg2 = 20
         her "but this isn't about making her happy..."
         $ ccg2 = 21
@@ -780,7 +780,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         $ ccg2 = 52
         her "I was talking to Luna, [genie_name]."
         $ ccg2 = 56
-        lun "...*glckk*{image=textheart}*glckk*..."
+        lun "...*glckk*{heart}*glckk*..."
         $ ccg2 = 52
         her "mmm, I knew you'd love it."
         $ ccg2 = 54
@@ -788,7 +788,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         $ ccg2 = 52
         lun "*glckk*glckk*glckk*"
         $ ccg2 = 56
-        lun "*glckk*{image=textheart}*glckk*{image=textheart}*glckk*"
+        lun "*glckk*{heart}*glckk*{heart}*glckk*"
         $ ccg2 = 52
         ">This continues for a few more minutes. Luna mindlessly having her throat impaled while hermione gives her further instructions."
         $ ccg2 = 57
@@ -801,7 +801,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         her "I think she wants it shot down her slutty little throat again..."
         $ ccg2 = 56
         pause
-        lun "*mmmmm*...{image=textheart}"
+        lun "*mmmmm*...{heart}"
         $ ccg2 = 58
         ">Luna's mouth vibrate pleasantly around your cock."
         $ ccg2 = 54
@@ -813,7 +813,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         $ ccg2 = 57
         her "she doesn't deserve all of that yummy cum to herself does she?"
         $ ccg2 = 52
-        lun "{image=textheart}{image=textheart}{image=textheart}"
+        lun "{heart}{heart}{heart}"
         $ ccg2 = 54
         her "she needs to learn to share..."
         $ ccg2 = 52

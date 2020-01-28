@@ -604,9 +604,9 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call play_sound("door")
         her "Hello Katie I-..{w=1.5}{nw}"
         $ renpy.play('sounds/giggle2.mp3')
-        "Katie" "Hey there sweet cheeks.{image=textheart}{w=0.5} I have been waiting for you. {image=textheart}{image=textheart}{image=textheart}"
+        "Katie" "Hey there sweet cheeks.{heart}{w=0.5} I have been waiting for you. {heart}{heart}{heart}"
         her "We need to ta-..{w=1.0}{nw}"
-        "Katie" "I know exactly what we need.{image=textheart}"
+        "Katie" "I know exactly what we need.{heart}"
         $ renpy.play('sounds/slap_03.mp3')
         "> Katie grabs Hermione and pulls her in the room{nw}"
         $ renpy.play('sounds/door2.mp3')
@@ -619,8 +619,8 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         "> Katie starts taking off her clothes."
         her "Wha- wha- what-t-t are you d-doing?!"
         $ renpy.play('sounds/giggle.mp3')
-        "Katie" "Aren't you talkative today?{w=0.5} I would save my breath if I was you. {image=textheart}{image=textheart}{image=textheart}"
-        "Katie" "I'm quite{w=0.2} {image=textheart}horny{image=textheart}{w=0.2} so you might be 'stuck' for a while."
+        "Katie" "Aren't you talkative today?{w=0.5} I would save my breath if I was you. {heart}{heart}{heart}"
+        "Katie" "I'm quite{w=0.2} {heart}horny{heart}{w=0.2} so you might be 'stuck' for a while."
         $ renpy.play('sounds/push_on_bed.mp3')
         "> She pushes Hermione onto the bed." with vpunch
         her "{size=+4}W-wait?!{/size}"
@@ -630,11 +630,11 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         her "..........!!!{w=1.0}{nw}"
         her "*Hmph*"
         $ renpy.play('sounds/gasp2.mp3')
-        "Katie" "Ahh!{image=textheart} {w=0.5}So much better..{image=textheart}{image=textheart}{image=textheart}"
+        "Katie" "Ahh!{heart} {w=0.5}So much better..{heart}{heart}{heart}"
         "Katie" "I'll start moving now.{w=0.5} You ready?"
         her "*nwh*!!!"
         $ renpy.play('sounds/giggle3.mp3')
-        "Katie" "I'll take that as a yes. {image=textheart}{image=textheart}{image=textheart}"
+        "Katie" "I'll take that as a yes. {heart}{heart}{heart}"
         $ renpy.play('sounds/jump_on_bed.mp3')
         her "*Hmph{cps=10}hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh{/cps}*{nw}" with vpunch_repeat
         pause 1.0
@@ -649,7 +649,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
 
         call her_walk(action="enter", xpos="mid", ypos="base")
 
-        call her_main("Hello, [genie_name].{image=textheart}", "smile", "wink", "base", "mid", flip=False)
+        call her_main("Hello, [genie_name].{heart}", "smile", "wink", "base", "mid", flip=False)
         call her_main("", "smile", "base", "base", "mid")
         g9 "[hermione_name]! My favourite slut."
         m "I have another riddle for you."

@@ -978,20 +978,20 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call lun_main("Well seeing as how you've ...finished... I suppose I better clean up.","normal","angry","angry","R")
                 $ luna_cum = 12
                 ">Luna collects a strand of cum on the end of her finger, staring at it intently before putting it into her mouth."
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","empty")
-                call lun_main("mmmm{image=textheart}{image=textheart}","base","seductive","sad","mid")
+                call lun_main("{heart}{heart}{heart}","base","seductive","sad","empty")
+                call lun_main("mmmm{heart}{heart}","base","seductive","sad","mid")
                 ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
                 $ luna_cum = 13
                 call lun_main("...","full","seductive","sad","empty")
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","mid")
+                call lun_main("{heart}{heart}{heart}","base","seductive","sad","mid")
                 call ctc
 
                 $ luna_cum = 14
                 call lun_main("...","full","seductive","sad","empty")
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","mid")
+                call lun_main("{heart}{heart}{heart}","base","seductive","sad","mid")
                 $ luna_cum = 15
                 call lun_main("...","full","seductive","sad","empty")
-                call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","seductive","sad","mid")
+                call lun_main("{heart}{heart}{heart}","base","seductive","sad","mid")
                 $ luna_wear_cum = False
                 call lun_main("ah...","base","seductive","sad","mid")
                 call lun_main("amazing...","base","seductive","sad","L")

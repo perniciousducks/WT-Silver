@@ -231,7 +231,7 @@ label hg_anal_sex_1:
             call cum_block
             call ctc
 
-            call her_main("AH! IT'S FILLING ME UP!{image=textheart}{image=textheart}{image=textheart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
+            call her_main("AH! IT'S FILLING ME UP!{heart}{heart}{heart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             g4 "Yes, you whore! Yes!"
             call her_main("It hurts, it hurts!", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
             g4 "Shut up!"
@@ -307,7 +307,7 @@ label hg_anal_sex_1:
             call ctc
             
 
-            call her_main("Ah...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead",ypos="head")
+            call her_main("Ah...{heart}{heart}{heart}", "silly", "narrow", "base", "dead",ypos="head")
             g4 "Yes!!! All over your ass!"
             call her_main("Ah... It's so hot!", "silly", "narrow", "annoyed", "up")
             hide screen bld1
@@ -356,7 +356,7 @@ label hg_anal_sex_2:
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
     with kissiris
-    call her_main("Ooooohhhhhhhhhhhh....{image=textheart}", "scream", "wide", "base", "stare")
+    call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "stare")
 
     # Transition
     if use_cgs:
@@ -394,10 +394,10 @@ label hg_anal_sex_2:
     call her_main("I meant to say, would you marry a girl {size=+5}like{/size} me?", "angry", "narrow", "base", "down")
     call her_main("I would never propose to a man with his cock in my ass, [genie_name]...", "angry", "worriedCl", "worried", "mid",emote="05")
     m "Good. Because I don't think any man would be able to say \"no\" then."
-    call her_main("Ah{image=textheart}...", "open", "closed", "base", "mid")
-    call her_main("What I meant... ah{image=textheart} {w} ...to say was ah{image=textheart}... {w}...do you think someone would ever ah{image=textheart}... {w} ...want to marry a girl like me?", "angry", "narrow", "base", "down")
+    call her_main("Ah{heart}...", "open", "closed", "base", "mid")
+    call her_main("What I meant... ah{heart} {w} ...to say was ah{heart}... {w}...do you think someone would ever ah{heart}... {w} ...want to marry a girl like me?", "angry", "narrow", "base", "down")
     m "Huh?"
-    call her_main("I mean, with all that was happening lately... ah{image=textheart}...", "angry", "narrow", "base", "down")
+    call her_main("I mean, with all that was happening lately... ah{heart}...", "angry", "narrow", "base", "down")
     call her_main("I can't help but feel unclean... damaged even.")
     call her_main("And in a no way innocent...")
     call her_main("Who would want a wife like that?", "angry", "base", "base", "mid")
@@ -407,19 +407,19 @@ label hg_anal_sex_2:
         "\"I would marry you in a heartbeat!\"":
             call her_main("What?", "open", "base", "base", "mid",ypos="head")
             m "Well, hypothetically speaking of course..."
-            call her_main("...of course...{image=textheart}", "base", "base", "base", "R")
+            call her_main("...of course...{heart}", "base", "base", "base", "R")
             call her_main("..............", "base", "happy", "base", "mid")
             call her_main("But why do you say that, [genie_name]?", "soft", "base", "base", "mid")
             m "Huh?"
             m "What do you mean \"why\", whore?"
             m "You are young and attractive..."
             m "Tight asshole, full tits and wet little pussy..."
-            call her_main("Ah...{image=textheart}", "open", "closed", "base", "mid")
+            call her_main("Ah...{heart}", "open", "closed", "base", "mid")
             m "You will make some lucky guy a very happy man one day, whore."
             m "Ehm, I mean, [hermione_name]."
             call her_main("No, \"whore\" is good. Call me that, [genie_name].", "silly", "narrow", "annoyed", "up")
             m "There, you see? You are a great catch, I'm telling you, whore."
-            call her_main("Ah...{image=textheart} Thank you, [genie_name].", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
+            call her_main("Ah...{heart} Thank you, [genie_name].", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             m "Huh?"
             m "Are you crying?"
 
@@ -444,16 +444,16 @@ label hg_anal_sex_2:
             m  "Yes, that's a good whore."
             call her_main("I am a whore, aren't I?", "silly", "narrow", "base", "dead")
             m "You just sold me your asshole for 90 house points. How would you call that?"
-            call her_main("Yes, yes...{image=textheart} I am a whore...{image=textheart}", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
+            call her_main("Yes, yes...{heart} I am a whore...{heart}", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
             m "Are you crying?"
 
 
-    call her_main("Among other things, [genie_name]...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead",ypos="head")
+    call her_main("Among other things, [genie_name]...{heart}{heart}{heart}", "silly", "narrow", "base", "dead",ypos="head")
     m "Among other things?"
-    call her_main("I'm cumming [genie_name]...{image=textheart}{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up")
+    call her_main("I'm cumming [genie_name]...{heart}{heart}{heart}", "open_wide_tongue", "narrow", "annoyed", "up")
     g4 "Agh! My cock!"
     g4 "Relax your muscles a little, would you?"
-    call her_main("BUT I'M CUMMING!{image=textheart}{image=textheart}{image=textheart}", "open", "worriedCl", "worried", "mid")
+    call her_main("BUT I'M CUMMING!{heart}{heart}{heart}", "open", "worriedCl", "worried", "mid")
     g4 "Fine! Have it your way whore!"
     with hpunch
     call her_main("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}", "scream", "wide", "base", "stare")
@@ -474,13 +474,13 @@ label hg_anal_sex_2:
 
             call her_main("!!!", "scream", "wide", "base", "stare",ypos="head")
             m "Yes! Argh!"
-            call her_main("Ah!{image=textheart} It's filling me up!{image=textheart} I can feel it!{image=textheart}", "silly", "narrow", "annoyed", "up")
+            call her_main("Ah!{heart} It's filling me up!{heart} I can feel it!{heart}", "silly", "narrow", "annoyed", "up")
             m "Shut up, whore!"
-            call her_main("Ah! I AM A WHORE!!!!{image=textheart}{image=textheart}{image=textheart}", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="crying")
+            call her_main("Ah! I AM A WHORE!!!!{heart}{heart}{heart}", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="crying")
             m "Agh!"
-            call her_main("Ah...{image=textheart} your cum, [genie_name]...{image=textheart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
+            call her_main("Ah...{heart} your cum, [genie_name]...{heart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             m "Yes, yes..."
-            call her_main("Ah...{image=textheart}", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
+            call her_main("Ah...{heart}", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
             m "......"
 
         "-Cum all over Hermione-":
@@ -494,12 +494,12 @@ label hg_anal_sex_2:
             $ uni_sperm = True
             $ u_sperm = "characters/hermione/face/auto_08.png"
 
-            call her_main("Ah-aha! You're cumming! {image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead",ypos="head")
+            call her_main("Ah-aha! You're cumming! {heart}{heart}{heart}", "silly", "narrow", "base", "dead",ypos="head")
             g4 "{size=+7}Yes I am, whore!{/size}"
             call her_main("Ah, me too! Me too!", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="messy")
             g4 "{size=+7}FUCKING SLUT!{/size}"
-            call her_main("Ah...{image=textheart} your cum...{image=textheart}", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
-            call her_main("I'm so full...{image=textheart}{image=textheart}{image=textheart}")
+            call her_main("Ah...{heart} your cum...{heart}", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
+            call her_main("I'm so full...{heart}{heart}{heart}")
             g4 "Yes!!! All over your ass!"
             call her_main("Ah... It's so hot!", "silly", "narrow", "annoyed", "up")
 
@@ -514,7 +514,7 @@ label hg_anal_sex_2:
     call her_chibi_scene("sex_pause", trans=fade)
 
     m "Well, this was intense..."
-    call her_main("Ah-ha...{image=textheart} ah...{image=textheart}", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy",ypos="head",flip=False)
+    call her_main("Ah-ha...{heart} ah...{heart}", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy",ypos="head",flip=False)
     m "Are You alright, [hermione_name]?"
     call her_main("I think so... I'm not sure...", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")
     call her_main("I think I may still be cumming, [genie_name].", "grin", "narrow", "base", "dead",cheeks="blush",tears="messy")

@@ -195,16 +195,16 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         call lun_main("While another student jerks him off...","base","seductive","sad","R")
         call her_main("...","soft","narrow","annoyed","up")
         call lun_main("Waiting patiently to be covered in cum...","grin","mad","sad","down")
-        call her_main("{image=textheart}{image=textheart}{image=textheart}","grin","narrow","base","dead")
+        call her_main("{heart}{heart}{heart}","grin","narrow","base","dead")
         call ctc
 
         call lun_main("in fact, I can think of only one sort of student who'd do that...","base","seductive","angry","down")
         call lun_main("do you know what sort of student that is hermione?","base","angry","sad","mid")
-        call her_main("ah...{image=textheart} a...","soft","happy","base","R")
+        call her_main("ah...{heart} a...","soft","happy","base","R")
         call lun_main("Mhmmm, go on...","base","seductive","angry","down")
-        call her_main("ah... {p}a slut...{image=textheart}","open","base","base","R")
+        call her_main("ah... {p}a slut...{heart}","open","base","base","R")
         call lun_main("good girl...","base","seductive","sad","down")
-        call her_main("{image=textheart}{image=textheart}{image=textheart}","grin","narrow","base","dead")
+        call her_main("{heart}{heart}{heart}","grin","narrow","base","dead")
         m "Ah... almost there [lun_name]..."
         ">Luna gives your cock a hard squeeze."
         g9 "Ah!"
@@ -231,7 +231,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         g4 "Ah!!!"
         g4 "This is it sluts!"
         call lun_main("do it...","base","seductive","sad","mid")
-        call her_main("mmmm...{image=textheart}{image=textheart}{image=textheart}","open_wide_tongue","narrow","annoyed","up")
+        call her_main("mmmm...{heart}{heart}{heart}","open_wide_tongue","narrow","annoyed","up")
         call lun_main("cover the slut...","base","angry","mad","down")
         g9 "Argh! by the gods {size=+10}YES!{/size}"
 
@@ -391,7 +391,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
             call her_main("","cum","worriedCl","worried","mid")
             ">Hermione swallows the last mouthful of your cum."
             call her_main("*gulp*","cum","worriedCl","worried","mid")
-            call her_main("mmmm...{image=textheart}{image=textheart}{image=textheart}","grin","narrow","base","dead")
+            call her_main("mmmm...{heart}{heart}{heart}","grin","narrow","base","dead")
             ">She picks herself up from the floor gracefully. Getting dressed before turning to address you."
 
         call set_her_action("none","update")
@@ -688,7 +688,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ genie_base = "characters/genie/base/open.png"
         $ luna_cum = 12
         ">Luna then collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."
-        call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","angry","angry","mid")
+        call lun_main("{heart}{heart}{heart}","base","angry","angry","mid")
         call lun_main("it's not nasty!","base","seductive","angry","mid")
         call her_main("oh that's right... I almost forgot how much of a cumslut you are.", "angry", "narrow", "base", "down")
         call lun_main("I am not!","normal","angry","angry","up")
@@ -698,17 +698,17 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         $ luna_cum = 13
         call lun_main("...","full","seductive","sad","empty")
         call her_main("that's it Cumslut...", "base", "narrow", "base", "mid_soft")
-        call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+        call lun_main("{heart}{heart}{heart}","base","happyCl","sad","mid")
         call ctc
 
         $ luna_cum = 14
         call lun_main("...","full","seductive","sad","empty")
         call her_main("keep going...", "base", "narrow", "worried", "down")
-        call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+        call lun_main("{heart}{heart}{heart}","base","happyCl","sad","mid")
         $ luna_cum = 15
         call lun_main("...","full","seductive","sad","empty")
         call her_main("mmmm...", "grin", "base", "base", "R")
-        call lun_main("{image=textheart}{image=textheart}{image=textheart}","base","happyCl","sad","mid")
+        call lun_main("{heart}{heart}{heart}","base","happyCl","sad","mid")
         $ luna_wear_cum = False
         call lun_main("...","full","seductive","sad","empty")
         call lun_main("*gulp*","base","happyCl","sad","mid")

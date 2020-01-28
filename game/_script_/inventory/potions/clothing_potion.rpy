@@ -142,7 +142,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "Well done [hermione_name]. You're becoming quite the slut."
         call her_main("Thank you [genie_name]. Is that all?", "base", "narrow", "base", "mid_soft")
         m "Yes, you can go now slut."
-        call her_main("{image=textheart}", "smile", "base", "base", "R")
+        call her_main("{heart}", "smile", "base", "base", "R")
 
     # TODO: Fix once scenario issues have been resolved.
     #call reset_her_transparency

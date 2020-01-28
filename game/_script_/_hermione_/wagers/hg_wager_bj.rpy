@@ -182,7 +182,7 @@ label hg_wager_bj:
                 call sna_walk("door", "base") #snape walks to the door, pauses on gulp sound
 
                 $ renpy.play('sounds/gulp.mp3')
-                call her_main("{image=textheart}*Gulp* {image=textheart}", "cum", "narrow", "annoyed", "up")
+                call her_main("{heart}*Gulp* {heart}", "cum", "narrow", "annoyed", "up")
                 call sna_main("...", face="snape_07", flip=True)
                 pause.2
                 call blkfade
@@ -310,7 +310,7 @@ label hg_wager_bj:
                             call her_chibi_scene("bj_pause")
                             call her_main("*Mmmh!!*", "full_cum", "wide", "base", "stare", cheeks="blush")
                             $ renpy.play('sounds/gulp.mp3')
-                            call her_main("{image=textheart}*Gulp* {image=textheart}", "cum", "narrow", "annoyed", "up")
+                            call her_main("{heart}*Gulp* {heart}", "cum", "narrow", "annoyed", "up")
                             m "Who said you could continue?"
                             call her_main("From my perspective it looks like you appreciated the initiative...", "cum", "base", "base", "mid_soft")
                             m "..."

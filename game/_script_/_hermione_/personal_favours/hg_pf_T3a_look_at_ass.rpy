@@ -606,19 +606,19 @@ label hg_pr_strip_T4_grope_rear:
     call ctc
 
     call her_main("But...", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
-    call her_main("ah...{image=textheart}", "shock", "worriedCl", "worried", "mid")
+    call her_main("ah...{heart}", "shock", "worriedCl", "worried", "mid")
 
     if current_payout < 100:
         call her_main("I didn't agree to this...", "disgust", "narrow", "base", "down", cheeks="blush")
     else:
-        call her_main("please [genie_name], not so rough...{image=textheart}", "shock", "worriedCl", "worried", "mid")
+        call her_main("please [genie_name], not so rough...{heart}", "shock", "worriedCl", "worried", "mid")
 
     m "But you like it, don't you?"
 
     if her_whoring >= 21:
-        call her_main("I love it [genie_name]!{image=textheart}", "open", "base", "base", "R", cheeks="blush")
+        call her_main("I love it [genie_name]!{heart}", "open", "base", "base", "R", cheeks="blush")
     else:
-        call her_main("maybe... [genie_name]{image=textheart}", "shock", "worriedCl", "worried", "mid")
+        call her_main("maybe... [genie_name]{heart}", "shock", "worriedCl", "worried", "mid")
 
     call nar(">You give her cheeks a couple of firm squeezes...")
 
@@ -626,15 +626,15 @@ label hg_pr_strip_T4_grope_rear:
         if current_payout < 100:
             call her_main("[genie_name], you promised not to touch...", "base", "base", "base", "R", cheeks="blush")
             m "I know, I know... but admit it, you wanted me to..."
-            call her_main(".................{image=textheart}{image=textheart}{image=textheart}", "base", "narrow", "base", "up", cheeks="blush")
+            call her_main(".................{heart}{heart}{heart}", "base", "narrow", "base", "up", cheeks="blush")
         else:
-            call her_main("[genie_name], please...{image=textheart}", "base", "base", "base", "R", cheeks="blush")
+            call her_main("[genie_name], please...{heart}", "base", "base", "base", "R", cheeks="blush")
     else:
         call her_main("[genie_name], you promised not to touch...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
         m "I know, I know... but admit it, you wanted me to..."
-        call her_main("ah{image=textheart}... of course not [genie_name]{image=textheart}", "angry", "base", "angry", "mid", cheeks="blush")
+        call her_main("ah{heart}... of course not [genie_name]{heart}", "angry", "base", "angry", "mid", cheeks="blush")
 
-    call her_main("mmmm.......................{image=textheart}", "base", "narrow", "base", "up", cheeks="blush")
+    call her_main("mmmm.......................{heart}", "base", "narrow", "base", "up", cheeks="blush")
     call her_main("[genie_name], you need to stop now...", "base", "narrow", "base", "up", cheeks="blush")
     m "Just a bit longer..."
 
@@ -647,7 +647,7 @@ label hg_pr_strip_T4_grope_rear:
 
     call nar(">You pull the cheeks apart in opposite directions and then squish them together...")
 
-    call her_main("Ah...{image=textheart} [genie_name], I really need to go... before I-", "base", "narrow", "base", "up", cheeks="blush")
+    call her_main("Ah...{heart} [genie_name], I really need to go... before I-", "base", "narrow", "base", "up", cheeks="blush")
 
     if daytime:
         call her_main("am late for class... they're about to start...", "open", "base", "base", "R", cheeks="blush")
@@ -908,7 +908,7 @@ label hg_show_ass_cumming:
 
                 call her_main("that's it [genie_name], release your... semen on me...", "angry", "worriedCl", "worried", "mid", cheeks="blush", emote="05")
                 g4 "Oh, this is great, yes..."
-                call her_main("ah{image=textheart}, what's done is done I suppose...", "base", "base", "base", "R", cheeks="blush")
+                call her_main("ah{heart}, what's done is done I suppose...", "base", "base", "base", "R", cheeks="blush")
 
             "-Just start cumming-":
                 g4 "Argh! You fat-assed whore!"
@@ -930,10 +930,10 @@ label hg_show_ass_cumming:
                 show screen hermione_ass
                 with fade
 
-                call her_main("ah...{image=textheart} It's so hot...{image=textheart}", "shock", "worriedCl", "worried", "mid")
-                call her_main("there's so much...{image=textheart}", "angry", "worriedCl", "worried", "mid", cheeks="blush", emote="05")
+                call her_main("ah...{heart} It's so hot...{heart}", "shock", "worriedCl", "worried", "mid")
+                call her_main("there's so much...{heart}", "angry", "worriedCl", "worried", "mid", cheeks="blush", emote="05")
                 g4 "Oh, this is great, yes..."
-                call her_main("ah...{image=textheart}", "angry", "worriedCl", "worried", "mid", cheeks="blush", emote="05")
+                call her_main("ah...{heart}", "angry", "worriedCl", "worried", "mid", cheeks="blush", emote="05")
 
                 call her_main("Well, what's done is done I suppose...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
 

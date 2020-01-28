@@ -280,14 +280,14 @@ label hg_pf_grope_breasts_T3_clothed:
                 call her_main("I mean, this isn't a big deal, as long as I am getting paid...", "base", "narrow", "base", "up", cheeks="blush")
                 if hermione.is_worn("top"):
                     call nar(">You keep on massaging her tits through her clothes...")
-                call her_main("A small price to pay for the honour of my house, really......{image=textheart}", "soft", "base", "base", "R", cheeks="blush")
+                call her_main("A small price to pay for the honour of my house, really......{heart}", "soft", "base", "base", "R", cheeks="blush")
             else:
                 m "Really? It seems to me as if you love it."
                 call her_main("I wouldn't say that I love it...", "base", "narrow", "base", "up", cheeks="blush")
                 if hermione.is_worn("top"):
                     call nar(">You keep on massaging her tits through her uniform...")
                 m "What would you say then, [hermione_name]?"
-                call her_main("I just like it, {size=-4}a lot{image=textheart}{/size}", "base", "narrow", "base", "up", cheeks="blush")
+                call her_main("I just like it, {size=-4}a lot{heart}{/size}", "base", "narrow", "base", "up", cheeks="blush")
 
             jump hg_pf_grope_breasts_T3_continue
 
@@ -303,7 +303,7 @@ label hg_pf_grope_breasts_T3_clothed:
             with vpunch
             call nar(">Hermione almost loses balance...","end")
             call her_main("*Panting* What are you doing, [genie_name]...?", "open", "base", "base", "R", cheeks="blush")
-            call her_main("You don't need to be so rough with me....{image=textheart}", "base", "base", "base", "R", cheeks="blush")
+            call her_main("You don't need to be so rough with me....{heart}", "base", "base", "base", "R", cheeks="blush")
 
             jump hg_pf_grope_breasts_T3_continue
 

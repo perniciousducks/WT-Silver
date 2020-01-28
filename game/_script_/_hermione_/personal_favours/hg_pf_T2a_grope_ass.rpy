@@ -889,7 +889,7 @@ label hg_pf_grope_ass_T4_front:
     call her_main("I... i said i want you to finger me!", "shock", "worriedCl", "worried", "mid")
 
     call nar(">You swiftly plunge two fingers into her drenched snatch.")
-    call her_main("!!!{image=textheart}{image=textheart}", "grin", "narrow", "annoyed", "up")
+    call her_main("!!!{heart}{heart}", "grin", "narrow", "annoyed", "up")
 
     call nar(">you start to pump your fingers inside her before she can do more than gasp.")
     call her_main("...................................", "disgust", "narrow", "base", "down", cheeks="blush")
@@ -900,7 +900,7 @@ label hg_pf_grope_ass_T4_front:
     call nar(">her hips roll in rhythm as you fuck her with your fingers")
     m "do you like this?"
     m "you like it when i finger your cunt?"
-    call her_main("i love it!{image=textheart} i love your long fingers in my tight, wet cunt!!{image=textheart}", "silly", "narrow", "annoyed", "up", tears="crying")
+    call her_main("i love it!{heart} i love your long fingers in my tight, wet cunt!!{heart}", "silly", "narrow", "annoyed", "up", tears="crying")
     m "well, i think we can do better."
 
     call nar(">with your other hand, you force a finger up her tight asshole.")
@@ -908,13 +908,13 @@ label hg_pf_grope_ass_T4_front:
     call her_main("my cunt and my ass!", "grin", "narrow", "base", "dead", cheeks="blush", tears="messy")
 
     call nar(">you don't even need to move as she pounds herself against your fingers.")
-    call her_main("fingering my cunt and ass!{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead", tears="messy")
+    call her_main("fingering my cunt and ass!{heart}{heart}", "silly", "narrow", "base", "dead", tears="messy")
     m "no, we can still do better."
 
     call nar(">you force another finger up her ass.")
     call her_main("iloveitiloveitiloveit", "grin", "narrow", "annoyed", "up", tears="messy")
     m "what do you love, [hermione_name]?"
-    call her_main("ah!!{image=textheart} i love your fingers in my ass and cunt!{image=textheart}", "shock", "wide", "base", "stare", tears="messy")
+    call her_main("ah!!{heart} i love your fingers in my ass and cunt!{heart}", "shock", "wide", "base", "stare", tears="messy")
 
     call nar(">her movements have become more frantic.")
     m "are you cumming, [hermione_name]?"
@@ -973,7 +973,7 @@ label hg_pf_grope_ass_T4_back:
             m "you'll have to speak up. I couldn't quite hear you."
             call slap_her
 
-            call her_main("slap my slutty ass harder!!{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up")
+            call her_main("slap my slutty ass harder!!{heart}{heart}", "open_wide_tongue", "narrow", "annoyed", "up")
             m "you're being rather loud today."
 
             call slap_her
@@ -995,7 +995,7 @@ label hg_pf_grope_ass_T4_back:
 
             call slap_her
             call her_main("cumcumcummingcumming", "silly", "narrow", "annoyed", "up")
-            call her_main("I'm cumming!!!{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up")
+            call her_main("I'm cumming!!!{heart}{heart}", "open_wide_tongue", "narrow", "annoyed", "up")
             ">you take a moment watch her spasms"
             m "well, then... proceeding with groping..."
             call her_main("................", "base", "narrow", "base", "up")
@@ -1007,7 +1007,7 @@ label hg_pf_grope_ass_T4_back:
     call her_main("-wait I juuuus-!!!", "base", "base", "base", "R", cheeks="blush", ypos="head")
     call nar(">Her voice trails off to a squeak as you start to knead her big, round ass")
     m "Hm? what's that? i couldn't hear you, [hermione_name]."
-    call her_main("You bastard{image=textheart}", "grin", "narrow", "base", "up", cheeks="blush")
+    call her_main("You bastard{heart}", "grin", "narrow", "base", "up", cheeks="blush")
     call nar(">Hermione's body quivers as her hips roll")
     m "Well, someone's enjoying herself."
     call her_main("Well, you know me, [genie_name]...", "base", "narrow", "base", "up", cheeks="blush")
@@ -1055,9 +1055,9 @@ label hg_pf_grope_T4_continue:
             ">you slowly start to pump your fingers..."
             call her_main("-Only fifteen poin-", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
             ">you speed up slightly..."
-            call her_main("{image=textheart}-My duty-{image=textheart}", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
+            call her_main("{heart}-My duty-{heart}", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
             ">you start rubbing her clit..."
-            call her_main("!!{image=textheart}-Gryffindor-{image=textheart}", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
+            call her_main("!!{heart}-Gryffindor-{heart}", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
             m "we can, of course, stop right here, unfulfilled. If that's what you really want."
             call her_main("...", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
             m "well?"
@@ -1065,16 +1065,16 @@ label hg_pf_grope_T4_continue:
             m "hm?"
             call her_main("Keep fingering my pussy!!", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
             m "You want me to keep fingering your cunt? is that what your saying?"
-            call her_main("Yes, [genie_name]! {image=textheart} Fuck my cunt with your fingers!{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up", tears="messy")
+            call her_main("Yes, [genie_name]! {heart} Fuck my cunt with your fingers!{heart}", "open_wide_tongue", "narrow", "annoyed", "up", tears="messy")
             ">Her hips roll and slam into your fingers."
-            call her_main("Shove them deep in my slutty fuckhole!!{image=textheart}", "silly", "narrow", "base", "dead", tears="messy")
+            call her_main("Shove them deep in my slutty fuckhole!!{heart}", "silly", "narrow", "base", "dead", tears="messy")
             m "Hm... I don't think my fingers are up to this task after all..."
             ">You take your fingers out of the girl's gushing cunt."
             call her_main("what!!? no, don't st-", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="crying")
             ">...so you can take the dildo out of your desk."
             call her_main("oh, god yes!!", "grin", "narrow", "base", "dead", cheeks="blush", tears="messy")
             m "this is a much better fit isn't it?"
-            call her_main("aah!{image=textheart}", "silly", "narrow", "base", "dead", tears="messy")
+            call her_main("aah!{heart}", "silly", "narrow", "base", "dead", tears="messy")
             m "you're far too much of slut to be satisfied by fingers, aren't you?"
             call her_main("yesfinewhatever!", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
             call her_main("i don't care!", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
@@ -1088,7 +1088,7 @@ label hg_pf_grope_T4_continue:
             call her_main("I love how you play with my little fuckholes!", "grin", "narrow", "base", "up", cheeks="blush", tears="messy")
             call her_main("ohgodohgodohgod", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
             ">Hermione tries to scream as her body bucks and the orgasm takes her, but can't get enough air to do more then moan."
-            call her_main("oooooooh...{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up")
+            call her_main("oooooooh...{heart}{heart}{heart}{heart}{heart}", "open_wide_tongue", "narrow", "annoyed", "up")
 
             jump end_hg_pf_grope
 
@@ -1106,9 +1106,9 @@ label hg_pf_grope_T4_continue:
 
             call her_main("-only fifteen poin-", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
             ">you speed up slightly"
-            call her_main("{image=textheart}-my duty-{image=textheart}", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
+            call her_main("{heart}-my duty-{heart}", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
             ">you rotate thumb as you go"
-            call her_main("!!{image=textheart}-gryffindor-{image=textheart}", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
+            call her_main("!!{heart}-gryffindor-{heart}", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
             m "we can, of course, stop right here, unfulfilled. if that's what you really want."
             call her_main("...", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
             m "well?"
@@ -1120,8 +1120,8 @@ label hg_pf_grope_T4_continue:
             call her_main("why w-", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
             ">...and replace it with two fingers"
             call her_main("Aaah!", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
-            call her_main("B-Bastard!{image=textheart}", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
-            call her_main("Y-you teasing b-bastard!{image=textheart}{image=textheart}", "grin", "narrow", "base", "dead", cheeks="blush", tears="messy")
+            call her_main("B-Bastard!{heart}", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+            call her_main("Y-you teasing b-bastard!{heart}{heart}", "grin", "narrow", "base", "dead", cheeks="blush", tears="messy")
             m "do you like this, [hermione_name]?"
             call her_main("yes!!!", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
             m "do you love it?"
@@ -1129,7 +1129,7 @@ label hg_pf_grope_T4_continue:
             m "tell me what you love!"
             call slap_her
 
-            call her_main("aaah!!{image=textheart}{image=textheart}{image=textheart}", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
+            call her_main("aaah!!{heart}{heart}{heart}", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
             m "I asked you a question."
 
             call slap_her
@@ -1153,14 +1153,14 @@ label hg_pf_grope_T4_continue:
             m "you're cumming from having your headmaster's fingers shoved up your tight little asshole?"
 
             call slap_her
-            call her_main("yes!!!{image=textheart}", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
+            call her_main("yes!!!{heart}", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
             ">Hermione's body starts to buck wildly."
             ">you grab herby the hair with your free hand to keep her on the desk even as you frantically pump your fingers into her big, tight ass"
             call her_main("ohgodohgodohgod", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
             m "what are you cumming from, little whore?"
             call her_main("!!!!", "mad", "wide", "base", "stare", cheeks="blush", tears="messy")
             m "where's all this pleasure coming from?!"
-            call her_main("my aaaaaaaass!{image=textheart}", "open_wide_tongue", "narrow", "annoyed", "up", tears="messy")
+            call her_main("my aaaaaaaass!{heart}", "open_wide_tongue", "narrow", "annoyed", "up", tears="messy")
             ">with one last spasm,hermione collapses to the desk. even after fainting, her Body still twitches, and her hips keep rolling."
 
             jump end_hg_pf_grope

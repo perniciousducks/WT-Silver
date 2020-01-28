@@ -504,7 +504,7 @@ label potion_scene_11_3:
         $ milking = 3
         call set_her_action("milk_breasts")
 
-        call her_main("ah...{image=textheart}{image=textheart}{image=textheart}", "grin", "narrow", "base", "dead")
+        call her_main("ah...{heart}{heart}{heart}", "grin", "narrow", "base", "dead")
         call nar(">You notice the canister in front of her fill with milk at an alarming rate...")
         call her_main("ah... it's so good...", "grin", "narrow", "annoyed", "up")
 
@@ -650,14 +650,14 @@ label potion_scene_11_3:
         call cum_block
         $ hermione_squirt = True
 
-        call her_main("{size=+5}{image=textheart}{image=textheart}{image=textheart}{/size}", "silly", "narrow", "base", "dead")
+        call her_main("{size=+5}{heart}{heart}{heart}{/size}", "silly", "narrow", "base", "dead")
         $ hermione_squirt = False
         "*Zzzzkkk*"
 
         call cum_block
         $ hermione_squirt = True
 
-        call her_main("{size=+5}{image=textheart}{image=textheart}{image=textheart}{/size}", "grin", "narrow", "annoyed", "up")
+        call her_main("{size=+5}{heart}{heart}{heart}{/size}", "grin", "narrow", "annoyed", "up")
         $ hermione_squirt = False
 
         hide screen hermione_main
@@ -793,14 +793,14 @@ label potion_scene_11_3:
         call her_main("{size=+10}It's too much... TURN it off!!!{/size}", "scream", "wide", "base", "stare")
         m "What's wrong?"
         call her_main("ah... it's sucking {b}everything{/b}...", "silly", "narrow", "annoyed", "up")
-        call her_main("ah... and the milk is splashing on my {image=textheart}dick{image=textheart}......", "grin", "narrow", "annoyed", "up")
+        call her_main("ah... and the milk is splashing on my {heart}dick{heart}......", "grin", "narrow", "annoyed", "up")
         m "is it hurting you?"
-        call her_main("ah.... no... {p}It's just too good...{image=textheart}", "grin", "narrow", "base", "dead")
+        call her_main("ah.... no... {p}It's just too good...{heart}", "grin", "narrow", "base", "dead")
 
         $ milking = 3
         call set_her_action("milk_breasts")
 
-        call her_main("ah...{image=textheart}{image=textheart}{image=textheart}", "silly", "narrow", "base", "dead")
+        call her_main("ah...{heart}{heart}{heart}", "silly", "narrow", "base", "dead")
         call nar(">You notice the canister in front of her fill with milk at an alarming rate...")
         call her_main("ah... please [genie_name]...", "angry", "squint", "base", "mid",cheeks="blush")
         call her_main("ah... you have to turn it off...", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
@@ -823,11 +823,11 @@ label potion_scene_11_3:
         call her_main("Will it ever stop?", "shock", "narrow", "base", "down",cheeks="blush",tears="crying")
         m "ahhhh..."
         call her_main("!!!", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
-        call her_main("ugh... {image=textheart}it's so{image=textheart} gooood...", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
+        call her_main("ugh... {heart}it's so{heart} gooood...", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
 
         $ hermione_dribble = True
         call her_main("ah... the straps are massaging me while it sucks my dick...", "silly", "narrow", "annoyed", "up")
-        call her_main("mmmm... it's amazing...{image=textheart}{image=textheart}", "grin", "narrow", "annoyed", "up")
+        call her_main("mmmm... it's amazing...{heart}{heart}", "grin", "narrow", "annoyed", "up")
         call nar(">Hermione lets the machine continue its work.")
         call her_main("...", "open_wide_tongue", "narrow", "annoyed", "up")
         call nar(">You notice the amount of milk coming from hermione's breasts has almost stopped.")
@@ -844,7 +844,7 @@ label potion_scene_11_3:
         call cum_block
         $ hermione_squirt = True
 
-        call her_main("{size=+15}!!!{image=textheart}{image=textheart}{image=textheart}!!!{/size}", "grin", "narrow", "base", "dead")
+        call her_main("{size=+15}!!!{heart}{heart}{heart}!!!{/size}", "grin", "narrow", "base", "dead")
         call nar(">You see a small squirt of milk come out of hermione's nipples.")
         $ hermione_squirt = False
 
@@ -854,7 +854,7 @@ label potion_scene_11_3:
         call cum_block
         $ hermione_squirt = True
 
-        call her_main("{size=+5}{image=textheart}{image=textheart}{image=textheart}{/size}", "grin", "narrow", "base", "dead")
+        call her_main("{size=+5}{heart}{heart}{heart}{/size}", "grin", "narrow", "base", "dead")
         call nar(">Another small squirt of milk comes out of hermione's nipples.")
         $ hermione_squirt = False
 
@@ -865,7 +865,7 @@ label potion_scene_11_3:
         call cum_block
         $ hermione_squirt = True
 
-        call her_main("{size=+5}{image=textheart}{image=textheart}{image=textheart}{/size}", "grin", "narrow", "annoyed", "up")
+        call her_main("{size=+5}{heart}{heart}{heart}{/size}", "grin", "narrow", "annoyed", "up")
         $ hermione_squirt = False
 
         "*Zzzzkkk*"
@@ -873,7 +873,7 @@ label potion_scene_11_3:
         call cum_block
         $ hermione_squirt = True
 
-        call her_main("{size=+5}{image=textheart}{image=textheart}{image=textheart}{/size}", "silly", "narrow", "annoyed", "up")
+        call her_main("{size=+5}{heart}{heart}{heart}{/size}", "silly", "narrow", "annoyed", "up")
         $ hermione_squirt = False
         call blkfade
 

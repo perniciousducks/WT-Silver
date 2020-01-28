@@ -272,7 +272,7 @@ label nt_pr_teach_T1_E3: # Tier 1 - Event 3 - Two Gryffindor boys. Guess who...
     call ton_main("Which probably meant that they were going too far...","upset","base","angry","mid")
     call ton_main("So,...I kept them after class... Gave them the whole lecture about \"responsibility\" and \"respect\"...","open","closed","base","mid")
     m "................"
-    call ton_main("Then I told them that I'd pay them both ten points, to show me their cocks... {image=textheart}","base","base","base","ahegao")
+    call ton_main("Then I told them that I'd pay them both ten points, to show me their cocks... {heart}","base","base","base","ahegao")
     m "Just like that?"
     call ton_main("Well, there's a lot more subtlety to it in practice...","open","base","worried","R")
     call ton_main("Not that I think I needed subtlety, given how horny they were...","base","base","angry","mid")

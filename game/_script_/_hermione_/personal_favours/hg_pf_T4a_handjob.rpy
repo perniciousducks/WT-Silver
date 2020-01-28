@@ -103,7 +103,7 @@ label hg_pf_handjob_T1_intro_E1:
     m "Huh? What was that?"
     call her_main("I want a hundred house points for this!!!", "scream", "worriedCl", "worried", "mid")
     call her_main("", "clench", "worriedCl", "worried", "mid")
-    m "Hundred house points, huh?"
+    m "A Hundred house points, huh?"
     m "And you will stroke my cock and everything?"
     call her_main("{size=-7}Yes...{/size}", "disgust", "narrow", "base", "mid_soft")
     m "Sorry, I couldn't hear you..."
@@ -124,7 +124,7 @@ label hg_pf_handjob_T1_intro_E1:
         "\"you will get 45 house points.\"":
             $ her_mood += 3
             call her_main(".....", "annoyed", "narrow", "angry", "R")
-            call her_main("fortyfive house points...?", "open", "narrow", "worried", "down")
+            call her_main("Fortyfive house points...?", "open", "narrow", "worried", "down")
             her "This could put Gryffindor back in the lead..."
             m "Is that a \"yes\"?"
             call her_main("Yes, it is a yes, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
@@ -375,7 +375,7 @@ label hg_pf_handjob_1:
             m "Sure... That will speed things up, I'm telling you."
             call her_main("*sigh!*..............", "open", "narrow", "worried", "down")
             call her_main("Well, I might as well, I suppose...")
-            
+
             call nar(">Hermione gives the tip of your engorged cock a tender kiss.")
 
             $ renpy.play('sounds/kiss.mp3')
@@ -860,7 +860,7 @@ label hg_pf_handjob_2_continue:
                 m "Just say it."
                 call her_main("[tmp_name]", "scream", "closed", "angry", "mid")
             g9 "He-he..."
-                
+
         "{size=-4}\"-Manual user input-\"{/size}" if renpy.variant("android"):
             if one_out_of_three == 1:
                 call her_main("I don't want to say that...", "annoyed", "base", "worried", "R")
@@ -1014,7 +1014,7 @@ label hg_pf_handjob_2_cumming:
             #
             # TODO: CUM LAYERS
             #
-            
+
             call her_main(".......................", "angry", "wide", "base", "stare")
 
             call her_chibi_scene("hj_cum_on_done", trans=d5)

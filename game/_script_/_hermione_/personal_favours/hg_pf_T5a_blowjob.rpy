@@ -34,7 +34,7 @@ label hg_pf_blowjob:
     #
     # TODO: CUM LAYERS
     #
-    
+
     $ hermione.wear("all")
 
     call her_chibi("stand","desk","base", flip=False)
@@ -218,7 +218,7 @@ label hg_pf_blowjob_T1_intro_E2:
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("I got you... [genie_name].", "grin", "worriedCl", "worried", "mid", emote="05")
             m "What?"
-            
+
         "\"Two can play that game...\"":
             stop music fadeout 1.0
             m "Oh nooooo... whatever I'm gonna do now."
@@ -469,7 +469,7 @@ label hg_pf_blowjob_1:
             call her_main("*Gulp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
 
             call her_chibi_scene("bj_pause")
-            call her_main("Professor Minerva McGonagall is the headmistress of our house.", "open", "closed", "base", "mid")
+            call her_main("Professor Minerva McGonagall is the head of our house.", "open", "closed", "base", "mid")
             call her_main("The Gryffindor house emphasises the traits of courage...")
             call her_main("As well as \"daring, nerve and chivalry\"...")
             call her_main("And thus its members are generally regarded as brave but reckless...")
@@ -581,7 +581,7 @@ label hg_pf_blowjob_1:
                 call her_main("Yes. I think I may skip supper tonight...", "soft", "narrow", "annoyed", "up")
 
             call her_main("Can I get paid now?", "angry", "wink", "base", "mid")
-            
+
             $ achievement.unlock("headlib")
 
         "-Don't bother-":
@@ -1441,7 +1441,7 @@ label hg_hidden_blowjob_cumming:
 
             stop music fadeout 1.0
             ">A while later."
-            
+
             #
             # TODO: CUM LAYERS
             #
@@ -1460,9 +1460,9 @@ label hg_hidden_blowjob_cumming:
 
             if her_tier >= 6:
                 m "What, even after I just gave you a salon treatment?"
-                m "Other women pay a lot of money for a good facial moisturiser."
+                m "Other women pay a lot of money for a good facial."
                 call her_main(".............", "annoyed", "squint", "base", "mid") #Smile.
-                call her_main("Fine, but my skin better look glamour tomorrow.")
+                call her_main("Fine, but my skin better look glamourous by tomorrow.")
                 g9 "You can always come for a second dosage."
 
     jump end_hg_pf_blowjob
@@ -1505,7 +1505,7 @@ label hg_pf_blowjob_2:
             m "Anything wrong with that?"
             call her_main("I suppose not...", "base", "narrow", "worried", "down")
             call her_main("I mean it's just pretending...", "grin", "narrow", "base", "dead")
-            m "Great. Dick back in the mouth then."
+            m "Great. Get that dick back in your mouth then."
 
             call her_chibi_scene("bj")
             call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
@@ -1579,7 +1579,7 @@ label hg_pf_blowjob_2:
             call her_main("*Slurp!* *Gulp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
             m "Yes, like that... Good girl..."
             call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
-            m "Do it for your daddy."
+            m "Do it for daddy."
             call her_main("*Slurp!* *Slurp!* *Slurp!*", "sucking", "narrow", "annoyed", "up")
             m "Come on princess."
             call her_main("*Slurp!* *Gobble!* *Gobble!*", "sucking", "narrow", "base", "up")
@@ -1607,7 +1607,7 @@ label hg_pf_blowjob_2:
 
                     call her_main("*Gulp!-Gulp!-Gulp!*", "sucking", "narrow", "annoyed", "up")
                     with hpunch
-                    g4 "Yes! Down your fucking slutty throat!"
+                    g4 "Yes! Down your fucking throat, slut!"
                     call her_main("*Gulp-gulp-gulp-gulp-gulp!*", "sucking", "narrow", "base", "up")
                     stop music fadeout 1.0
                     call ctc
@@ -1679,7 +1679,7 @@ label hg_pf_blowjob_2:
                     call blkfade
 
                     ">A while later."
-                    
+
                     #
                     # TODO: CUM LAYERS
                     #
@@ -1735,7 +1735,7 @@ label hg_pf_blowjob_2:
                 call her_chibi_scene("bj")
                 call her_main("*Gobble!* *Slurp!* *lick!*", "sucking", "narrow", "base", "dead")
                 call her_chibi_scene("bj_pause")
-                call her_main("Or that it's your hot load shot across my slutty face...", "grin", "narrow", "base", "dead")
+                call her_main("Or that it's your hot load shot across my face...", "grin", "narrow", "base", "dead")
                 call her_chibi_scene("bj")
                 call her_main("*Gobble!* *Slurp!* *lick!*", "sucking", "narrow", "base", "up")
 
@@ -1813,7 +1813,7 @@ label hg_pf_blowjob_2:
             g4 "Take my cum, slut!"
             call her_main("*Gulp!-Gulp!-Gulp!*", "cumming", "narrow", "annoyed", "up")
             with hpunch
-            g4 "Yes! Down your fucking cumdumpster!"
+            g4 "Yes! Down your mouth you fucking cumdumpster!"
             call her_main("*Gulp-gulp-gulp-gulp-gulp!*", "cumming", "narrow", "annoyed", "up")
 
             stop music fadeout 1.0
@@ -1840,7 +1840,7 @@ label hg_pf_blowjob_2:
                 m "So you're going to go to sleep with a mouth full of my cum?"
 
             call her_main("*She nods her head up and down enthusiastically*", "full_cum", "narrow", "annoyed", "up", cheeks="blush", tears="mascara") #Smile.
-            m "Good slut."
+            m "Good, like a proper slut should..."
             $ mouth_full_of_cum = True
 
     jump end_hg_pf_blowjob

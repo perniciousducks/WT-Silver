@@ -8,6 +8,7 @@ label ending_after:
     call update_interface_color
 
     call blkfade
+    call hide_screens
     centered "{size=+7}{color=#cbcbcb}Somewhere outside of time and space...{/color}{/size}\n\n"
     play music "music/epic-unease-by-kevin-macleod.mp3" fadein 1 fadeout 1 # noloop
     pause 3
@@ -92,6 +93,7 @@ label ending_after:
             call play_music("night_outside")
             call blkfade
             hide screen ccg
+            call hide_screens
             call play_sound("walking_on_grass")
             pause .5
 

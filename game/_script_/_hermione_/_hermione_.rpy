@@ -3,7 +3,7 @@ define her_face = {"mouth": {"neutral": ["annoyed","base"], "happy": ["smile","g
                    "eyebrows": {"neutral": ["base"], "happy": ["base"], "naughty": ["base"], "horny": ["base"], "annoyed": ["worried"], "disgusted": ["base", "angry"], "angry": ["angry"]},
                    "pupils": {"neutral": ["mid","L","R"], "happy": ["mid","L","R"], "naughty": ["mid","L","R","down"], "horny": ["mid","L","R","down"], "annoyed": ["mid","R"], "disgusted": ["down"], "angry": ["L"]}}
 
-label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, extra=False, emote=False, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+label her_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
     python:
     
         if flip != None:

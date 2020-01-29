@@ -3,7 +3,7 @@ define ton_face = {"mouth": {"neutral": ["base"], "happy": ["base", "smile"], "n
                    "eyebrows": {"neutral": ["base"], "happy": ["base","raised"], "naughty": ["base","raised","angry"], "horny": ["base","raised","angry"], "annoyed": ["base","angry"], "disgusted": ["raised","worried"], "angry": ["angry"]},
                    "pupils": {"neutral": ["mid"], "happy": ["mid","L","R"], "naughty": ["mid","up","ahegao"], "horny": ["mid","up","ahegao"], "annoyed": ["mid","L","R"], "disgusted": ["mid","down"], "angry": ["mid"]}}
 
-label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, hair=None, cheeks=False, tears=False, extra=False, emote=False, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+label ton_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, hair=None, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
     python:
     
         if flip != None:

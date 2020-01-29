@@ -3,7 +3,7 @@ define cho_face = {"mouth": {"neutral": ["base"], "happy": ["base", "smile"], "n
                    "eyebrows": {"neutral": ["base"], "happy": ["base"], "naughty": ["base","raised"], "horny": ["base","raised"], "annoyed": ["base","angry"], "disgusted": ["base","raised","sad"], "angry": ["angry"]},
                    "pupils": {"neutral": ["mid","L","R"], "happy": ["mid","L","R"], "naughty": ["mid","L","R","down","up"], "horny": ["mid","L","R","down","up"], "annoyed": ["mid","L","R","down","downR"], "disgusted": ["mid","down"], "angry": ["mid"]}}
 
-label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=False, tears=False, extra=False, emote=False, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
+label cho_main(text="", mouth=False, eyes=False, eyebrows=False, pupils=False, cheeks=None, tears=None, extra=None, emote=None, face=None, xpos=None, ypos=None, flip=None, trans=None, animation=False):
     python:
     
         if flip != None:

@@ -21,7 +21,7 @@ label cho_favor_3: # Not in use.
                 call cho_main("i'll only charge you 60 points.","smile","base","base","mid")
                 menu:
                     "-I'll give you 70 points-":
-                        m "I'll give you 80."
+                        m "I'll give you 70."
                         call cho_main("Really?","smile","base","base","mid")
                         call cho_main("Really? 70 points?","smile","base","base","mid")
                         call cho_main("Okay.","smile","base","base","mid")
@@ -54,7 +54,7 @@ label cho_favor_3: # Not in use.
 
                 menu:
                     "-I'll give you 70 points-":
-                        m "I'll give you 80."
+                        m "I'll give you 70."
                         call cho_main("Really?","smile","base","base","mid")
                         call cho_main("Really? 70 points?","smile","base","base","mid")
                         call cho_main("Okay.","smile","base","base","mid")

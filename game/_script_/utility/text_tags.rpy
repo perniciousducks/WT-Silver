@@ -22,6 +22,12 @@ init python:
             (renpy.TEXT_TEXT, "❤"),
             (renpy.TEXT_TAG, "/size"), (renpy.TEXT_TAG, "/unicode")
         ]
+    
+    def text_tag_number(tag, argument):
+        """Convert a number to words. Usage {number=expression}"""
+        num = int(renpy.store.eval(argument))
+        words = num_to_word(num)
+        return [(renpy.TEXT_TEXT, words)]
 
 define config.custom_text_tags = {
     "unicode": text_tag_unicode,
@@ -29,5 +35,6 @@ define config.custom_text_tags = {
 
 define config.self_closing_custom_text_tags = {
     "name": text_tag_name,
-    "heart": text_tag_heart
+    "heart": text_tag_heart,
+    "number": text_tag_number,
 }

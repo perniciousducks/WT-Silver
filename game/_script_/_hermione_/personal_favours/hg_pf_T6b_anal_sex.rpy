@@ -215,11 +215,11 @@ label hg_anal_sex_1:
             call her_main("*SOB!* Yeees! *SOB!*", "scream", "squint", "base", "mid",cheeks="blush",tears="messy")
             g4 "Argh!"
             call her_main("No, I'm scared! *SOB!*", "scream", "worriedCl", "worried", "mid",cheeks="blush",tears="messy")
-            
+
         "{color=[menu_disabled]}\"Lets use some lubrication.\"{size=-2}(Item){/size}{/color}" if anal_lube_ITEM.number <= 0:
             m "(I don't have any lube left. I'm gonna have to be more creative.)"
             jump hg_anal_sex_1.choices
-            
+
         "\"Lets use some lubrication.\"{size=-2}(Item){/size}" if anal_lube_ITEM.number > 0:
             $ anal_lube_ITEM.number -= 1
 
@@ -237,9 +237,9 @@ label hg_anal_sex_1:
             with hpunch
             with kissiris
             call her_main("ARGH!", "shock", "base", "base", "mid",tears="soft")
-            call nar(">You have applied too much force into your thrust, making you bottom out inside of her.")
+            call nar(">Your cock fully penetrating Hermione as the lubrication does its job.")
             g4 "Holy shit!"
-            
+
             if use_cgs:
                 $ face_on_cg = True
                 $ ccg_folder = "herm_sex"
@@ -250,7 +250,7 @@ label hg_anal_sex_1:
                 call her_main("", "shock", "base", "base", "R",cheeks="blush",tears="soft",ypos="head")
             else:
                 call her_chibi_scene("sex_slow", trans=d5)
-                
+
             call her_main("Ouch! Ouch! Ouch!", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
             call her_main("No, you're hurting me! You are hurting me!", "scream", "worriedCl", "worried", "mid")
             g4 "*Argh* Fuck, I can't pull out!"
@@ -272,13 +272,13 @@ label hg_anal_sex_1:
             g4 "It's... your... bloody... {fast}fault!"
             call slap_her
             pause 1.0
-            call play_sound("boing") 
+            call play_sound("boing")
             with hpunch
             if not use_cgs:
                 call her_chibi_scene("sex_pause", trans=d5)
             pause 1.0
             m "Oh, it worked."
-            
+
             call her_main("*sob!*", "mad", "base", "angry", "down",cheeks="blush",tears="soft")
             call her_main("...my asshole... my poor asshole... *sob*","mad", "base", "angry", "mid",cheeks="blush",tears="soft")
             g9 "In that case, lets try it again."
@@ -291,7 +291,7 @@ label hg_anal_sex_1:
             with kissiris
             call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "stare")
             g4 "YES!!!"
-            
+
             if not use_cgs:
                 call her_chibi_scene("sex_slow", trans=d5)
 
@@ -402,7 +402,7 @@ label hg_anal_sex_1:
                 $ ccg3 = "s3"
             call cum_block
             call ctc
-            
+
 
             call her_main("Ah...{heart}{heart}{heart}", "silly", "narrow", "base", "dead",ypos="head")
             g4 "Yes!!! All over your ass!"

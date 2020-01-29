@@ -430,7 +430,7 @@ label luna_revert_1:
             m "Not one."
             call her_main("I suppose that's OK then...", "annoyed", "narrow", "angry", "R")
             call her_main("{size=-5}(Why don't I ever get paid in gold...){/size}", "annoyed", "narrow", "annoyed", "mid")
-            call her_main("{size=-5}(No, Hermione! If I did that I'd be a prostitute...){/size}", "normal", "worriedCl", "worried", "mid")
+            call her_main("{size=-5}(No, Hermione! If I did that I'd be a prostitute...){/size}", "normal", "happyCl", "worried", "mid")
             call her_main("{size=-5}{heart}{heart}{heart}{/size}", "grin", "narrow", "annoyed", "up")
 
     call her_main("Well regardless, she has to be punished.", "annoyed", "narrow", "annoyed", "mid")
@@ -708,7 +708,7 @@ label luna_revert_2:
             call her_main("!!!", "angry", "wide", "base", "stare")
             m "(Is that bad?)"
             ">Hermione gives you a pleading look with her eyes."
-            call her_main("...", "angry", "worriedCl", "worried", "mid", tears="crying")
+            call her_main("...", "angry", "happyCl", "worried", "mid", tears="crying")
             m "(Probably...)"
             m "Um..."
             call lun_main("Go on old man...","normal","suspicious","mad","mid")
@@ -841,7 +841,7 @@ label luna_revert_2:
     call lun_main("Now, before you so rudely decided to interrupt us, Professor Dumbledore made a nasty mess...","base","seductive","base","down")
     call her_main("...","angry","base","worried","mid")
     call lun_main("I was going to go back to my room and tidy up before class but seeing as how your interruption has taken so long, you'll have to tidy me up instead.","base","seductive","angry","R")
-    call her_main("...","normal","worriedCl","worried","mid")
+    call her_main("...","normal","happyCl","worried","mid")
 
     hide screen luna_main
     $ luna_wear_panties = False
@@ -864,11 +864,11 @@ label luna_revert_2:
     ">Luna thrusts her mound forward, grinding it under Hermione's nose and against her closed mouth."
     hide screen blkfade
 
-    call her_main("!!!","angry","worriedCl","worried","mid")
+    call her_main("!!!","angry","happyCl","worried","mid")
     m "!!!"
     call lun_main("Mmmm, that's it...","base","seductive","base","down")
     call lun_main("who's a good girl...","grin","seductive","base","mid")
-    call her_main("!!!","normal","worriedCl","worried","mid")
+    call her_main("!!!","normal","happyCl","worried","mid")
     call lun_main("mmmm... smells good doesn't it, slut?","base","seductive","base","down")
     call lun_main("mmmm... you look like you want more though...","grin","seductive","angry","down")
     # $ luna_xpos = 550
@@ -1134,7 +1134,7 @@ label luna_revert_2:
     m "I think it's for the best if you did it."
     call lun_main("Fine... I suppose you'll want me to wipe her memories too?","normal","seductive","base","R")
     m "Wipe her memories?"
-    call her_main("???","angry","worriedCl","worried","mid")
+    call her_main("???","angry","happyCl","worried","mid")
     call lun_main("Of course. I mean what we just did to her was a little questionable...","normal","angry","angry","mid")
     call lun_main("A memory charm would probably be for the best.","base","mad","base","R")
     call her_main("!!!","annoyed","narrow","annoyed","mid")
@@ -1191,8 +1191,8 @@ label luna_revert_2:
     call her_main("agh... what happened?", "open", "narrow", "worried", "down",ypos="head",xpos="base")
     call her_main("Was Luna lovegood here?", "upset", "wink", "base", "mid")
     m "Who?"
-    call her_main("never mind...", "normal", "worriedCl", "worried", "mid")
-    call her_main("I think I'm going go now [genie_name]...", "angry", "worriedCl", "worried", "mid",emote="05")
+    call her_main("never mind...", "normal", "happyCl", "worried", "mid")
+    call her_main("I think I'm going go now [genie_name]...", "angry", "happyCl", "worried", "mid",emote="05")
     m "Alright, well have a nice day."
     call her_main("ugh...", "disgust", "narrow", "base", "down")
     call her_main("(I could have sworn Luna was here...)", "annoyed", "base", "worried", "R")

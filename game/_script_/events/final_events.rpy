@@ -171,7 +171,7 @@ label ball_quest_E1:
                     call her_main("", "annoyed", "base", "base", "mid")
                     call ctc
 
-                    call her_main("", "base", "worriedCl", "worried", "mid")
+                    call her_main("", "base", "happyCl", "worried", "mid")
                     call ctc
 
                     her ".............................."
@@ -267,7 +267,7 @@ label ball_quest_E1:
                     call her_main("Oh, please, don't mind me, sir.", "open", "base", "base", "R",)
                     call her_main("Just enjoy the... {w}the... {w}the view...", "soft", "happy", "base", "R")
                     m "Are you... crying?"
-                    call her_main("*Sob!* No, not really, sir... *sob!*...", "angry", "worriedCl", "worried", "mid")
+                    call her_main("*Sob!* No, not really, sir... *sob!*...", "angry", "happyCl", "worried", "mid")
                     her "It is just that I am standing here before my headmaster completely naked... *SOB!*"
                     call her_main("These are the tears of shame, sir.", "shock", "narrow", "angry", "R", tears="messy")
                     her "I can't help it! *Sob!*"
@@ -510,7 +510,7 @@ label ball_quest_E4:
 
     call play_music("despair")
     call her_main("I won't be able to attend the ball this year... so what?", "annoyed", "narrow", "worried", "down")
-    call her_main("I spent countless hours with organizing the event...", "normal", "worriedCl", "worried", "mid")
+    call her_main("I spent countless hours with organizing the event...", "normal", "happyCl", "worried", "mid")
     call her_main("I worked so hard... and...", "open", "base", "worried", "mid", tears="soft")
     call her_main("And now I will not even be able to... to... *Sob!*", "shock", "base", "base", "R", cheeks="blush", tears="soft")
     call her_main("To... *SOB!*", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
@@ -562,7 +562,7 @@ label ball_quest_E5:
     her "Thank you, sir. Thank you so much."
     call her_main("I cannot believe that you would do something like that for me...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     m "Well, I did. Now stop crying."
-    call her_main("I can't, sir. I am so happy and so grateful...", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+    call her_main("I can't, sir. I am so happy and so grateful...", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
     call her_main("Do you want me to suck your cock, sir?", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
     m "What?"
     call her_main("Because I will do it!", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
@@ -576,7 +576,7 @@ label ball_quest_E5:
     call her_main("Thank you sir! *SOB!* Thank you! *SOB!*", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     m "Well... err... there, there..."
     m "Better stop crying before you stain that new dress of yours with those tears..."
-    call her_main("My new dress! *SOB!*", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+    call her_main("My new dress! *SOB!*", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
     m "Alright, you know what? Just get out of my office."
     m "Just take your dress and leave."
     call her_main("Of course... I am sorry, sir!", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")

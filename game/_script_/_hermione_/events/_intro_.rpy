@@ -740,7 +740,7 @@ label hermione_intro_E3:
         "\"You should study more, girl!\"":
             call her_main("But I studied all night for this test!", "soft", "base", "base", "mid", tears="soft")
         "\"There, there... It'll be alright.\"":
-            call her_main("No it won't! This is a catastrophe!", "mad", "worriedCl", "worried", "mid", tears="soft_blink")
+            call her_main("No it won't! This is a catastrophe!", "mad", "happyCl", "worried", "mid", tears="soft_blink")
 
     call her_main("And the worst part is that I think I might be the only one who failed...", "angry", "base", "base", "mid", tears="soft")
     call her_main("How will this make me look?", "angry", "base", "base", "mid", tears="soft")
@@ -755,7 +755,7 @@ label hermione_intro_E3:
         "{size=-3}\"Of course. You are a top student after all.\"{/size}":
             call her_main("Exactly...", "annoyed", "squint", "angry", "mid")
             her "Or at least I used to be until today..."
-            call her_main("I cannot believe this is happening!", "mad", "worriedCl", "worried", "mid", tears="soft_blink")
+            call her_main("I cannot believe this is happening!", "mad", "happyCl", "worried", "mid", tears="soft_blink")
         "{size=-3}\"You could prepare better if I were to tutor you.\"{/size}":
             $ tutoring_offer_made = True
             call her_main("hm...", "annoyed", "squint", "base", "mid")
@@ -775,7 +775,7 @@ label hermione_intro_E3:
             jump cant_say
 
     m "............"
-    call her_main("I'm sorry, professor, I'm probably just overreacting anyway...", "grin", "worriedCl", "worried", "mid", emote="05")
+    call her_main("I'm sorry, professor, I'm probably just overreacting anyway...", "grin", "happyCl", "worried", "mid", emote="05")
     call her_main("But you must understand that my reputation is at stake here!", "open", "base", "base", "mid")
     call her_main("There's gotta be something wrong with the test...", "annoyed", "narrow", "angry", "R")
     her "And although the entire class might have failed, I probably still got the most points on the test..."
@@ -828,7 +828,7 @@ label hermione_intro_E4:
     her "I did... uhm..."
     her "... I failed that test after all."
     her "I..."
-    call her_main("I'm sorry, professor...", "upset", "worriedCl", "worried", "mid", tears="mascara_soft_blink")
+    call her_main("I'm sorry, professor...", "upset", "happyCl", "worried", "mid", tears="mascara_soft_blink")
     her "I'm not sure why I'm here..."
     her "I think I'd better go..."
     m "..................."
@@ -893,7 +893,7 @@ label hermione_intro_E5:
                                 m "Of course not, miss Granger."
                                 m "It was a test... You passed. Good job."
                                 call her_main("What...?", "open", "base", "base", "mid")
-                                call her_main("Oh, of course. I'm so silly sometimes. Sorry about the yelling, sir.", "grin", "worriedCl", "worried", "mid", emote="05")
+                                call her_main("Oh, of course. I'm so silly sometimes. Sorry about the yelling, sir.", "grin", "happyCl", "worried", "mid", emote="05")
                                 m "My offer is still valid. If you want me to then I can tutor you."
                                 call her_main("..............", "annoyed", "base", "worried", "R")
                             "\"Well, alright, alright...\"":
@@ -1045,15 +1045,15 @@ label hermione_intro_E6:
     m "............................"
     her "Professor Dumbledore...."
     stop music fadeout 2.0
-    call her_main("I want you to buy a favour from me!", "scream", "worriedCl", "worried", "mid")
-    call her_main("", "normal", "worriedCl", "worried", "mid")
+    call her_main("I want you to buy a favour from me!", "scream", "happyCl", "worried", "mid")
+    call her_main("", "normal", "happyCl", "worried", "mid")
 
     menu:
         "\"You mean like a sexual favour?\"":
-            call her_main("Ehm... I'm not sure...", "angry", "worriedCl", "worried", "mid", emote="05")
+            call her_main("Ehm... I'm not sure...", "angry", "happyCl", "worried", "mid", emote="05")
             her "The kind that would gain our house additional points..."
             call her_main("I could write an essay for you or...", "open", "base", "base", "mid")
-            call her_main("Or maybe clean your tower..?", "angry", "worriedCl", "worried", "mid", emote="05")
+            call her_main("Or maybe clean your tower..?", "angry", "happyCl", "worried", "mid", emote="05")
             m "{size=-4}(Clean my tower? Heh... There's gotta be dirty joke in there somewhere...){/size}"
             m "Well, alright then, I think we can figure something out."
         "\"Well, if you insist...\"":
@@ -1106,7 +1106,7 @@ label hermione_intro_E6:
     call her_main("Em, alright...", xpos="mid", ypos="base", trans=fade)
 
     if current_favor == "show_tongue":
-        call her_main("M-my... tongue, sir?", "grin", "worriedCl", "worried", "mid", emote="05")
+        call her_main("M-my... tongue, sir?", "grin", "happyCl", "worried", "mid", emote="05")
         m "Yes, girl. Open your mouth, and show me your tongue."
         call her_main("{size=-7}(What a weirdo...){/size}", "annoyed", "narrow", "angry", "R")
         call her_main("Ehm... well, alright then...", "normal", "squint", "angry", "mid")
@@ -1170,7 +1170,7 @@ label hermione_intro_E6:
         her "................."
 
     if current_favor == "silly_face":
-        call her_main("A silly face then...", "grin", "worriedCl", "worried", "mid", emote="05")
+        call her_main("A silly face then...", "grin", "happyCl", "worried", "mid", emote="05")
         her "Let's see..."
         label stupid_faces:
         call her_main("How about this one?", "silly", "base", "base", "squint")
@@ -1220,7 +1220,7 @@ label hermione_intro_E6:
                 m "You are overanalysing this, girl."
                 m "Just say that you need to be punished!"
                 call her_main("Fine. I need to be punished!", "angry", "base", "angry", "mid")
-                call her_main("{size=-5}(And I truly do think so sometimes...){/size}", "normal", "worriedCl", "worried", "mid")
+                call her_main("{size=-5}(And I truly do think so sometimes...){/size}", "normal", "happyCl", "worried", "mid")
                 m "That's a good girl."
                 call her_main("................??", "upset", "wink", "base", "mid")
                 m "Now that wasn't hard at all, was it?"
@@ -1248,7 +1248,7 @@ label hermione_intro_E6:
             m "[current_payout] points to the Gryffindor house."
         $ gryffindor += current_payout
 
-    call her_main("Yay!..............", "grin", "worriedCl", "worried", "mid", emote="05", xpos="base", ypos="base", flip=False, trans=fade)
+    call her_main("Yay!..............", "grin", "happyCl", "worried", "mid", emote="05", xpos="base", ypos="base", flip=False, trans=fade)
     her "This was quite easy..."
     her "Do you think you could buy some more favours from me in the future, professor?"
 

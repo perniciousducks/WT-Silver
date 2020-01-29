@@ -1,7 +1,7 @@
 init python:
     class DollFace(DollMethods):
     
-        blacklist_blink = ("closed", "happyCl", "worriedCl")
+        blacklist_blink = ("closed", "happyCl")
         
         def __init__(self, obj, face):
             self.char = obj

@@ -601,7 +601,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         call her_main("typical...", "base", "narrow", "worried", "down")
         call her_main("so what did you want me here for?", "base", "narrow", "base", "mid_soft")
         call lun_main("I figured you could lend a hand... plus this way we both get paid.","normal","angry","angry","R")
-        call her_main("Aw, that's so sweet luna!", "base", "worriedCl", "worried", "mid")
+        call her_main("Aw, that's so sweet luna!", "base", "happyCl", "worried", "mid")
         call lun_main("Well, it's more like I want a lesson on dirty talk...","normal","mad","sad","R")
         call her_main("whatever you say... now I think it's about time you started stroking that cock of yours don't you [genie_name]?", "base", "narrow", "base", "mid_soft")
         $ luna_flip = 1

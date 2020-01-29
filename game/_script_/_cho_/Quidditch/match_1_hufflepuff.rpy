@@ -747,7 +747,7 @@ label hufflepuff_match:
     call cho_main("My first ever win this season and you didn’t even notice it! No one did, thanks to your dreadful commentating!", "scream", "closed", "angry", "L")
     call cho_main("", "upset", "angry", "angry", "down")
     call her_main("Oh...", "normal", "wide", "worried", "shocked")
-    call her_main("So should I announce it now?", "open", "worriedCl", "worried", "mid")
+    call her_main("So should I announce it now?", "open", "happyCl", "worried", "mid")
     call sna_main("Obviousl-","snape_12",ypos="head")
     call cho_main("{size=+10}YES!{/size}", "scream", "angry", "angry", "L", trans=vpunch)
     call her_main("", "normal", "base", "worried", "mid")

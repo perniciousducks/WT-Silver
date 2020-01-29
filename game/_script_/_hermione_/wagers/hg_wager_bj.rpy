@@ -18,7 +18,7 @@ label hg_wager_bj:
             g9 "Well, get over here then!"
             call her_walk("desk", "base", reduce=0.8)
             call blkfade
-            call her_main("Should I turn around, [genie_name]?", "open", "worriedCl", "worried", "mid")
+            call her_main("Should I turn around, [genie_name]?", "open", "happyCl", "worried", "mid")
             call her_main("", "upset", "base", "worried", "mid")
             m "No, not this time."
             call her_main("Okay then...", "annoyed", "narrow", "base", "R_soft")
@@ -33,7 +33,7 @@ label hg_wager_bj:
             with d1
             m "Have you been working out [hermione_name]? This feels great!"
             call her_main("No... can we just get this over with?", "annoyed", "narrow", "base", "mid_soft")
-            call her_main("{size=-5}All this because of a stupid card game{/size}.", "upset", "worriedCl", "worried", "mid")
+            call her_main("{size=-5}All this because of a stupid card game{/size}.", "upset", "happyCl", "worried", "mid")
             m "I know, we should definitely do this again."
 
             if hg_strip.trigger: #If snape walked in during the dance favour.
@@ -48,7 +48,7 @@ label hg_wager_bj:
                 hide screen hermione_main
                 call sna_main( "So you're not having your headmaster feel you up?", face="snape_05")
                 call sna_main( "And enjoying it, by the looks of it!", face="snape_02")
-                call her_main("I knew playing another round of cards wasn't a good idea...", "mad", "worriedCl", "worried", "mid", cheeks="blush")
+                call her_main("I knew playing another round of cards wasn't a good idea...", "mad", "happyCl", "worried", "mid", cheeks="blush")
                 call her_main("...", "annoyed", "narrow", "annoyed", "mid", cheeks="blush")
                 call her_main("Take your hands off me now!!", "scream", "closed", "angry", "mid", cheeks="blush")
                 m "Fine, calm down miss Granger"
@@ -144,12 +144,12 @@ label hg_wager_bj:
         m "{size=-5}Don't stop, [hermione_name]...{/size}"
         g4 "What do you mean, rematch? I beat you fair and square!"
         call her_chibi_scene("bj")
-        call her_main("*Slurp*, *Gulp*, *Urk*", ypos="head", "open_wide_tongue", "worriedCl", "worried", "mid", cheeks="blush")
+        call her_main("*Slurp*, *Gulp*, *Urk*", ypos="head", "open_wide_tongue", "happyCl", "worried", "mid", cheeks="blush")
         call sna_main("I'm certain you were cheating, my deck is way better than yours.", face="snape_06")
         call sna_main("Hold on... what's that noise?", face="snape_03")
         m "Probably ghosts...{w} This place must be haunted."
         g9 "And I'm better than you, just accept it."
-        call her_main("*Gulp*, *Gobble*, *Gltch*", "open_wide_tongue", "worriedCl", "worried", "mid", cheeks="blush")
+        call her_main("*Gulp*, *Gobble*, *Gltch*", "open_wide_tongue", "happyCl", "worried", "mid", cheeks="blush")
         call sna_main("{size=-5}That doesn't sound like any ghost I've ever heard...{/size}", face="snape_01")
         call sna_main("Are you sure?", face="snape_05")
         call her_main("*Slurp*, *Gobble*, *Urk*")
@@ -229,7 +229,7 @@ label hg_wager_bj:
                         call sna_main("Well, in that case I hope you don't mind giving me a scratc...{w=1.0}{nw}", face="snape_13")
                     else: #whoring of 20 or less
                         call her_main("Oh, hello there professor...", "cum", "base", "worried", "mid", cheeks="blush", xpos="left", ypos="base", flip=True)
-                        call her_main("I was just helping the headmaster with some cleaning under his desk.", "open", "worriedCl", "worried", "mid", cheeks="blush")
+                        call her_main("I was just helping the headmaster with some cleaning under his desk.", "open", "happyCl", "worried", "mid", cheeks="blush")
                         $ random_choice = renpy.random.randint(0, 2)
                         if random_choice == 0:
                             call sna_main("Sure... And I live a double life as a death eater...", face="snape_02")
@@ -332,7 +332,7 @@ label hg_wager_bj:
                             call her_main("...?", "open_wide_tongue", "wide", "worried", "stare", cheeks="blush")
                             call sna_main("With the exorcism...", face="snape_05")
                             m "Oh..."
-                            call her_main("*Slurp*, *Slurp*, *Slurp*", "open_wide_tongue", "worriedCl", "worried", "mid", cheeks="blush")
+                            call her_main("*Slurp*, *Slurp*, *Slurp*", "open_wide_tongue", "happyCl", "worried", "mid", cheeks="blush")
                             m "No... It's all good... I can feel the ghostly presence being expelled as we speak..."
                             g4 "Now take this you whore!"
                             call her_chibi_scene("bj_cum_in")
@@ -587,7 +587,7 @@ label hg_wager_bj:
                         "-Yes-":
                             g4 "Of course I am, you didn't finish the job!"
                             call her_main("...", "annoyed", "wide", "base", "stare")
-                            call her_main("But, Snape was going to...", "open", "worriedCl", "worried", "mid")
+                            call her_main("But, Snape was going to...", "open", "happyCl", "worried", "mid")
                             call her_main("...", "upset", "narrow", "worried", "down")
                             call her_main("Fine...", "clench", "narrow", "annoyed", "mid")
                             m "20 Points from Gryffindor!"

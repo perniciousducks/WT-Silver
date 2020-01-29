@@ -181,7 +181,7 @@ label change_hair:
                     # call her_main("It is a really nice colour, [genie_name].", "soft", "base", "base", "mid")
                     # call her_main("Let me go change it real quick.", "base", "base", "base", "mid")
                 # else:
-                    # call her_main("That's a bit much don't you think?", "angry", "worriedCl", "worried", "mid")
+                    # call her_main("That's a bit much don't you think?", "angry", "happyCl", "worried", "mid")
                     # call her_main("(I'm not dying my hair red to look like some harlot.)", "annoyed", "base", "base", "R")
                     # call her_main("I have to refuse, [genie_name]!", "normal", "base", "base", "mid")
                     # if cheats_active or game_difficulty <= 2:
@@ -287,7 +287,7 @@ label change_hair:
                 # else:
                     # call her_main("Dye my hair...", "angry", "base", "angry", "mid") #mad, angry
                     # call her_main("Dye my hair Pink?... {w=0.9}Pink?!", "angry", "base", "angry", "mid",emote="01")
-                    # call her_main("I can't dye my hair pink, [genie_name]!", "scream", "worriedCl", "worried", "mid")
+                    # call her_main("I can't dye my hair pink, [genie_name]!", "scream", "happyCl", "worried", "mid")
                     # call her_main("(What does he think I am? Some cheap dress-up doll?)", "annoyed", "narrow", "angry", "R")
                     # call her_main("It's an ugly colour anyway.", "open", "closed", "base", "mid")
                     # call her_main("I definitely refuse!", "annoyed", "narrow", "annoyed", "mid")

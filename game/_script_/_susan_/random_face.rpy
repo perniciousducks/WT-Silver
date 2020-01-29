@@ -106,7 +106,7 @@ define sus_eye_layers = [
     "eager",
     "narrow", "suspicious",
     "wide",
-    "worriedCl"
+    "happyCl"
 ]
 define sus_brow_layers = [
     "angry",

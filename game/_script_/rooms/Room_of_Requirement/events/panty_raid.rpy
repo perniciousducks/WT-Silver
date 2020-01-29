@@ -235,7 +235,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
 
                 m "I hope next time you do better though."
                 call her_main("(Next time...?!)", "shock", "wide", "worried", "shocked", cheeks="blush", flip=True)
-                call her_main("(Think about the points Hermione, the points......)", "angry", "worriedCl", "worried", "mid", cheeks="blush", flip=True)
+                call her_main("(Think about the points Hermione, the points......)", "angry", "happyCl", "worried", "mid", cheeks="blush", flip=True)
 
         call her_walk(action="leave")
 
@@ -272,7 +272,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("{size=-4}...100 points{/size}", "open", "base", "worried", "R")
         call her_main("", mouth="upset")
         m "35."
-        call her_main("...75 points", "open", "worriedCl", "worried", "mid")
+        call her_main("...75 points", "open", "happyCl", "worried", "mid")
         call her_main("", mouth="upset")
         m "40.."
         call her_main("...50 points", mouth="upset")
@@ -348,7 +348,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Umm...{w=0.3} Does that really matter?", "open", "base", "base", "mid", cheeks="blush")
                 call her_main("", mouth="soft", cheeks="blush")
                 m "It does to me."
-                call her_main("*sigh*", "soft", "worriedCl", "worried", "mid", cheeks="blush")
+                call her_main("*sigh*", "soft", "happyCl", "worried", "mid", cheeks="blush")
                 call her_main("It was Ginny, sir...", "open", "base", "worried", "mid", cheeks="blush")
                 call her_main("", mouth="soft", cheeks="blush")
                 m "Interesting...{w=0.5} I don't know who that is."
@@ -474,7 +474,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Loss of said property is expected when leaving their undergarments strewn around as if a hurricane blew through their drawers.", "open", "base", "base", "mid")
         call her_main("", mouth="soft")
         m "Yes, Yes... But how does this connect back to a ‘Connie’?"
-        call her_main("Right... Well, I obviously chose a time that I believed all my dorm mates would be gone.", "open", "worriedCl", "worried", "mid")
+        call her_main("Right... Well, I obviously chose a time that I believed all my dorm mates would be gone.", "open", "happyCl", "worried", "mid")
         call her_main("", mouth="normal")
         call her_main("But just as I was shoving the last pair into my bag, Katie Bell walked in...", "angry", "narrow", "base", "down", cheeks="blush")
         call her_main("She caught me red handed!", "disgust", "narrow", "worried", "down", cheeks="blush")
@@ -541,7 +541,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         g9 "Because in my experience it feels awesome...{w=0.5}{nw}"
         m "Because in my experience it feels awesome...{fast} Wait, did that make it sound like I have a vagin-"
         call her_main("You're wrong! She- She-", "shock", "closed", "angry", "mid", cheeks="blush")
-        call her_main("", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+        call her_main("", "angry", "happyCl", "worried", "mid", cheeks="blush")
         m "What? Never done it before?"
         call her_main("{size=+4}OF COURSE NOT!{/size}", "angry", "base", "angry", "mid", cheeks="blush")
         g9 "I mean, I assumed you didn't have any real friends... But to get to your age and never eat another girl out? How shameful."

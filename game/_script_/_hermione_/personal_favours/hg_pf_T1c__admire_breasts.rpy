@@ -149,7 +149,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
             g4 "I'm not giving Gryffindor [current_payout] whole points for a mere glimpse..."
             call her_main("But-", "open", "wide", "base", "stare")
             m "No buts! You are dismissed."
-            call her_main("Please, [genie_name]. I need those points!", "disgust", "worriedCl", "worried", "mid")
+            call her_main("Please, [genie_name]. I need those points!", "disgust", "happyCl", "worried", "mid")
             m "Then might I suggest you put in some work to earn them..."
             call her_main("(................)", "annoyed", "narrow", "angry", "R")
             m "Have a nice day, Miss Granger."
@@ -276,7 +276,7 @@ label hg_pf_admire_breasts_T1: # Call label
 
     m "............."
     m "Very good, [hermione_name]."
-    call her_main("Can I get my points then?", "disgust", "worriedCl", "worried", "mid")
+    call her_main("Can I get my points then?", "disgust", "happyCl", "worried", "mid")
     m "Of course..."
 
     return
@@ -308,7 +308,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
     m "Please don't mind me..."
     m "All I want to do is help you..."
     call her_main(".............", "annoyed", "base", "worried", "R")
-    call her_main("200 house points, [genie_name].", "normal", "worriedCl", "worried", "mid")
+    call her_main("200 house points, [genie_name].", "normal", "happyCl", "worried", "mid")
     m "So if I give you 200 house points, [hermione_name]..."
     m "You will shamelessly bare your melons before me?"
     call her_main("[genie_name]! No need to be so vulgar!", "angry", "base", "angry", "mid")
@@ -322,7 +322,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
             call her_main("......................................", "annoyed", "base", "worried", "R")
             her "You have to promise me not to touch them, [genie_name]."
             m "Sure, sure..."
-            call her_main("I am only doing this for the honour of my house, [genie_name]!", "scream", "worriedCl", "worried", "mid")
+            call her_main("I am only doing this for the honour of my house, [genie_name]!", "scream", "happyCl", "worried", "mid")
 
             pass
 
@@ -428,7 +428,7 @@ label hg_pf_admire_breasts_T3_E1:
     call her_main("", "normal", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
     m "I need to see your tits, [hermione_name]."
-    call her_main("Are you only going to watch, [genie_name]?", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("Are you only going to watch, [genie_name]?", "angry", "happyCl", "worried", "mid", cheeks="blush")
     m "Of course..."
 
     $ current_payout = 25
@@ -451,7 +451,7 @@ label hg_pf_admire_breasts_T4_intro_E1:
     call her_main("Yes, [genie_name]?", "soft", "narrow", "base", "mid_soft")
     m "Did I ever tell you what magnificent tits you have?"
     call her_main("............", "clench", "narrow", "base", "down", cheeks="blush")
-    call her_main("Why do you have to be so vulgar, [genie_name]?!", "clench", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("Why do you have to be so vulgar, [genie_name]?!", "clench", "happyCl", "worried", "mid", cheeks="blush")
     m "Just take the compliment and show them to me..."
     call her_main("Yes, [genie_name]...", "base", "narrow", "worried", "down", cheeks="blush")
 

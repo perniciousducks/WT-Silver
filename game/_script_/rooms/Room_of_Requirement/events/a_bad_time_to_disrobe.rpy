@@ -276,7 +276,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("Oh, hello professor, yes. Here's your cloak back.", "base", "narrow", "worried", "down")
     m "..."
     m "And?"
-    call her_main("And what?", "normal", "worriedCl", "worried", "mid")
+    call her_main("And what?", "normal", "happyCl", "worried", "mid")
     m "And what about your assignment. How did it go?"
     call her_main("Oh... yes, it went very well thank you... no hurdles in any way.", "soft", "base", "worried", "R", cheeks="blush")
     m "Your face is glowing miss Granger, I can tell when you're being untruthful."
@@ -316,7 +316,7 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("As I was saying...", "base", "narrow", "base", "down")
     call her_main("I went into one of the toilets and I heard the boy shuffling outside.", "base", "closed", "base", "mid")
     call her_main("The room was so small so I tried to back into a corner, but as he came in I knew it wasn't going to work...", "base", "narrow", "base", "down", cheeks="blush")
-    call her_main("So I prayed he wasn't about to sit down and instead I positioned myself above the toilet with my legs around the base.", "clench", "worriedCl", "worried", "mid")
+    call her_main("So I prayed he wasn't about to sit down and instead I positioned myself above the toilet with my legs around the base.", "clench", "happyCl", "worried", "mid")
     m "And did he sit down or not?"
     call her_main("No, but he was close enough for me to feel his...", "mad", "squint", "worried", "up")
     call her_main("His...", "base", "slit", "worried", "ahegao")
@@ -336,7 +336,7 @@ label a_bad_time_to_disrobe_part_2:
 
     call her_main("\"I'm glad I had time to clean the cloak before walking in here...\"", "base", "narrow", "base", "dead", cheeks="blush",ypos="head")
     call her_main("\"That thing was massive...\"", "normal", "narrow", "worried", "down",ypos="head")
-    call her_main("\"What am I thinking? snap out of it...\"", "base", "worriedCl", "worried", "mid", cheeks="blush",ypos="head")
+    call her_main("\"What am I thinking? snap out of it...\"", "base", "happyCl", "worried", "mid", cheeks="blush",ypos="head")
 
     call her_chibi("leave")
 

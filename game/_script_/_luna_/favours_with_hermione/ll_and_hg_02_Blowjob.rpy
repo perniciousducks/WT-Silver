@@ -57,7 +57,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         m "You're still biting?!?"
         call lun_main("I just said not hard!","pout","mad","angry","mid")
         m "You shouldn't be biting at all!"
-        call her_main("Don't worry [genie_name], I'll be standing right beside her. I'll make sure she doesn't do anything she shouldn't.", "grin", "worriedCl", "worried", "mid")
+        call her_main("Don't worry [genie_name], I'll be standing right beside her. I'll make sure she doesn't do anything she shouldn't.", "grin", "happyCl", "worried", "mid")
         m "Alright then..."
         g4 "But if you bite my cock off you're both getting expelled!"
         call lun_main("Pffft... as if you could have us expelled for failing to give a good blowjob...","base","angry","angry","R")
@@ -283,11 +283,11 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         ">Luna and Hermione both get dressed while you sit in your chair, enjoying the show."
         call her_main("So what did you think luna? Not so bad now was it?", "grin", "base", "base", "R")
         call lun_main("I suppose not. although next time I think I should be able to move my head on my own!","normal","seductive","base","R")
-        call her_main("Hmmm, I'm not sure if you're ready for that just yet...", "grin", "worriedCl", "worried", "mid")
+        call her_main("Hmmm, I'm not sure if you're ready for that just yet...", "grin", "happyCl", "worried", "mid")
         call lun_main("Whatever... now about our payment [lun_genie_name]...","normal","suspicious","angry","R")
         m "Yes, yes. How does 60 points to gryffindor for Hermione and 150 gold for you sound?"
         call her_main("Actually we wanted to talk to you about that [genie_name]...", "base", "narrow", "worried", "down")
-        call her_main("Luna and I have been talking, and we're not sure it's fair that we both are paid in separate currencies.", "base", "worriedCl", "worried", "mid")
+        call her_main("Luna and I have been talking, and we're not sure it's fair that we both are paid in separate currencies.", "base", "happyCl", "worried", "mid")
         call her_main("We think it would be more fair if we're both paid points and gold.", "base", "closed", "base", "mid")
         m "Really? I'm surprised miss lovegood would agree to that."
         call lun_main("Well I didn't want to-","normal","angry","mad","R")
@@ -351,7 +351,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("You should have heard her [genie_name]... She was practically begging for more lessons...", "open", "base", "base", "R")
         call lun_main("...","base","seductive","sad","down", cheeks="blush")
         call her_main("she insisted I spend all of our last study session teaching her about proper tongue work...", "base", "happy", "base", "mid")
-        call her_main("I made sure she studied transfiguration and herbology first though...", "grin", "worriedCl", "worried", "mid",emote="05")
+        call her_main("I made sure she studied transfiguration and herbology first though...", "grin", "happyCl", "worried", "mid",emote="05")
         $ luna_flip = 1
         call lun_main("can we stop talking and get started already!","normal","angry","mad","R", cheeks="blush")
         call her_main("See, I told you she was eager!", "soft", "happy", "base", "R")
@@ -596,10 +596,10 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("There we are Luna, how was that?", "grin", "base", "base", "R")
         call lun_main("It was OK...","normal","seductive","base","R")
         call lun_main("although I prefer it when he shoots into my mouth...","normal","seductive","base","R")
-        call her_main("I know... but it's not about how you like it.", "grin", "worriedCl", "worried", "mid")
+        call her_main("I know... but it's not about how you like it.", "grin", "happyCl", "worried", "mid")
         call lun_main("why not?","normal","suspicious","angry","R")
-        call her_main("because a good blowjob is all about making him feel good.", "grin", "worriedCl", "worried", "mid")
-        call her_main("I can see we're still going to have another lesson after we get paid. speaking of which...", "grin", "worriedCl", "worried", "mid")
+        call her_main("because a good blowjob is all about making him feel good.", "grin", "happyCl", "worried", "mid")
+        call her_main("I can see we're still going to have another lesson after we get paid. speaking of which...", "grin", "happyCl", "worried", "mid")
         $ ravenclaw += 30
         $ gryffindor += 30
         m "30 points to gryffindor and ravenclaw!"
@@ -641,7 +641,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("hello Professor!", "base", "closed", "base", "mid")
         call her_main("hey luna! another blowjob?", "base", "squint", "base", "mid")
         call lun_main("Mhmmm...","base","angry","base","R")
-        call her_main("yay!!!", "grin", "worriedCl", "worried", "mid")
+        call her_main("yay!!!", "grin", "happyCl", "worried", "mid")
         call her_main("we can finally practise deepthroating!", "base", "narrow", "base", "mid_soft")
         m "really? are you sure she's ready for that?"
         call lun_main("*hmph* of course I am...","pout","angry","angry","R")
@@ -652,7 +652,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("but I'm sure she'll manage with the real thing...", "grin", "base", "base", "R")
         $ luna_flip = 1
         call lun_main("can we stop talking and get started already!","base","angry","angry","R", cheeks="blush")
-        call her_main("See, I told you she was ready!", "grin", "worriedCl", "worried", "mid")
+        call her_main("See, I told you she was ready!", "grin", "happyCl", "worried", "mid")
         m "I can hardly believe it..."
         call her_main("Alright... let's get started then.", "grin", "narrow", "annoyed", "up")
         call lun_main("finally...","base","seductive","sad","R", cheeks="blush")
@@ -878,9 +878,9 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("There we are Luna, how was that?", "grin", "base", "base", "R")
         call lun_main("......","normal","seductive","sad","down", cheeks="blush",tears="mascara")
         call lun_main("incredible...","base","seductive","sad","R", cheeks="blush",tears="mascara")
-        call her_main("I told you you'd love it didn't I?", "grin", "worriedCl", "worried", "mid")
+        call her_main("I told you you'd love it didn't I?", "grin", "happyCl", "worried", "mid")
         call lun_main("yes hermione...","base","mad","sad","down", cheeks="blush",tears="mascara")
-        call her_main("good, now I think we need to go do some actual study, could you please pay us [genie_name]?", "grin", "worriedCl", "worried", "mid")
+        call her_main("good, now I think we need to go do some actual study, could you please pay us [genie_name]?", "grin", "happyCl", "worried", "mid")
         $ ravenclaw += 30
         $ gryffindor += 30
         m "30 points to gryffindor and ravenclaw!"

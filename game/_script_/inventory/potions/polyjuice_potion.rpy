@@ -39,7 +39,7 @@ label potion_scene_1_1_1:
                 call her_main("Depends whose enjoyment you're talking about...", "open", "squint", "base", "mid")
                 m "20 points."
                 call her_main("Hmmm, can't you tell me what kind of potion it is?", "annoyed", "squint", "base", "mid")
-                call her_main("Polyjuice? Amortentia? Babbling Beverage? Felix Felicis?", "grin", "worriedCl", "worried", "mid",emote="05")
+                call her_main("Polyjuice? Amortentia? Babbling Beverage? Felix Felicis?", "grin", "happyCl", "worried", "mid",emote="05")
                 m "That's going to have to stay a secret [hermione_name]."
                 call her_main("...", "annoyed", "narrow", "worried", "down")
                 m "Well [hermione_name], what do you say? Will you drink a harmless little potion?"
@@ -59,7 +59,7 @@ label potion_scene_1_1_1:
     call her_main("It smells disgusting. Like mud and wet dog fur.", "disgust", "slit", "low", "stare")
     call her_main("Do I really have to drink this?", "open", "base", "worried", "mid")
     m "You do. I suggest holding your nose if the smell is too much."
-    call her_main("For Gryffindor.", "mad", "worriedCl", "worried", "mid",tears="soft_blink")
+    call her_main("For Gryffindor.", "mad", "happyCl", "worried", "mid",tears="soft_blink")
 
     hide screen hermione_main
     with d3
@@ -236,13 +236,13 @@ label potion_scene_1_1_2:
                 with d3
                 call her_main("", "full_cum", "narrow", "base", "dead")
                 pause .1
-                call her_main("*gulp* *Purr* *Purr*", "cum", "worriedCl", "worried", "mid")
+                call her_main("*gulp* *Purr* *Purr*", "cum", "happyCl", "worried", "mid")
                 call her_main("", "full_cum", "narrow", "base", "dead")
                 pause .1
-                call her_main("*gulp* *Purr* *gulp*", "cum", "worriedCl", "worried", "mid")
+                call her_main("*gulp* *Purr* *gulp*", "cum", "happyCl", "worried", "mid")
                 call her_main("", "full_cum", "narrow", "base", "dead")
                 pause .1
-                call her_main("*Purr* *gulp* *gulp*", "cum", "worriedCl", "worried", "mid")
+                call her_main("*Purr* *gulp* *gulp*", "cum", "happyCl", "worried", "mid")
                 
                 call her_chibi_scene("bj_pause")
                 call nar(">You pull your cock out of her purring mouth.")
@@ -471,13 +471,13 @@ label potion_scene_1_1_2_alt:
     with d3
     call her_main("", "full_cum", "narrow", "base", "dead")
     pause .1
-    call her_main("*gulp* *Purr* *Purr*", "cum", "worriedCl", "worried", "mid")
+    call her_main("*gulp* *Purr* *Purr*", "cum", "happyCl", "worried", "mid")
     call her_main("", "full_cum", "narrow", "base", "dead")
     pause .1
-    call her_main("*gulp* *Purr* *gulp*", "cum", "worriedCl", "worried", "mid")
+    call her_main("*gulp* *Purr* *gulp*", "cum", "happyCl", "worried", "mid")
     call her_main("", "full_cum", "narrow", "base", "dead")
     pause .1
-    call her_main("*Purr* *gulp* *gulp*", "cum", "worriedCl", "worried", "mid")
+    call her_main("*Purr* *gulp* *gulp*", "cum", "happyCl", "worried", "mid")
     call nar(">You pull your cock out of her purring mouth.")
     call her_chibi_scene("bj_pause")
     with d3
@@ -548,7 +548,7 @@ label potion_scene_1_2:
         her "... and somehow worrying"
         her "So what exactly is it then?"
         m "It's your regular, run-off-the-mill Polyjuice Potion."
-        call her_main("Ugh. Those taste like muck.", "normal", "worriedCl", "worried", "mid")
+        call her_main("Ugh. Those taste like muck.", "normal", "happyCl", "worried", "mid")
         her "...and what will it turn me into?"
         m "That, Miss Granger, is a secret."
         call her_main("Typical.", "base", "base", "R",tears="soft")
@@ -799,7 +799,7 @@ label potion_scene_1_2:
 # #Lamia transformation.
 
 # label potion_scene_1_3: #Lamia potion
-    # call her_main("That's dumb.", "scream", "worriedCl", "worried", "mid")
+    # call her_main("That's dumb.", "scream", "happyCl", "worried", "mid")
     # m "I literally don't know."
     # jump main_room
 

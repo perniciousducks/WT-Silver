@@ -38,7 +38,7 @@ label hg_pr_grope:
         m "Yes, touch you. The way boys touch girls?"
         m "How old are you, [hermione_name]? You look mature enough..."
         m "Haven't you had \"the talk\" with your parents already?"
-        call her_main("\"The talk\", [genie_name]?", "angry", "worriedCl", "worried", "mid", emote="05")
+        call her_main("\"The talk\", [genie_name]?", "angry", "happyCl", "worried", "mid", emote="05")
         m "Yes, \"the talk\"! About how boys are different than the girls...?"
         m "Boys have a \"pee-pee\" and girls like to put that  \"pee-pee\" in their mouths?"
         call her_main("!!!", "normal", "base", "base", "mid")
@@ -86,7 +86,7 @@ label hg_pr_grope:
         call her_main("You mean like...", "base", "base", "base", "mid")
         call her_main("In a sexual way, [genie_name]?", "angry", "wink", "base", "mid")
         m "What? No, I mean just let him get under your uniform that's all..."
-        call her_main("Oh, I see...", "grin", "worriedCl", "worried", "mid", emote="05")
+        call her_main("Oh, I see...", "grin", "happyCl", "worried", "mid", emote="05")
         call her_main("I wonder who it should be this time...", "grin", "base", "base", "R")
         call her_main("More than one boy, is not a problem, is it, [genie_name]?", "angry", "base", "base", "mid")
         m "A problem? Of course not!"
@@ -164,17 +164,17 @@ label hg_pr_grope_T1_E1:
     her "Well, there is not much to tell..."
     call her_main("I told that one guy I know that he could touch me a little if he wants...", "open", "base", "base", "mid")
     call her_main("He thought I was joking at first...", "annoyed", "base", "worried", "R")
-    call her_main("So embarrassing...", "normal", "worriedCl", "worried", "mid")
+    call her_main("So embarrassing...", "normal", "happyCl", "worried", "mid")
     m "So, did he cop a feel or not?"
     call play_music("playful_tension") # SEX THEME.
-    call her_main("He did...", "normal", "worriedCl", "worried", "mid")
+    call her_main("He did...", "normal", "happyCl", "worried", "mid")
     m "Well, where did he touch you, [hermione_name]?"
     call her_main("Ehm... My legs...", "annoyed", "base", "worried", "R")
     her "And my breasts a little I suppose..."
     m "That's all?"
     call her_main("Yes, [genie_name]...", "open", "base", "base", "mid")
-    call her_main("It's getting late... I think I'd better leave now...", "normal", "worriedCl", "worried", "mid")
-    call her_main("I'm sorry, [genie_name]...", "angry", "worriedCl", "worried", "mid", emote="05")
+    call her_main("It's getting late... I think I'd better leave now...", "normal", "happyCl", "worried", "mid")
+    call her_main("I'm sorry, [genie_name]...", "angry", "happyCl", "worried", "mid", emote="05")
     m "Nothing to be sorry about, [hermione_name]."
     m "You did good. This will do for now."
 
@@ -195,10 +195,10 @@ label hg_pr_grope_T1_E2:
     her "Then I let him rub my..."
     call her_main("...my pussy through the panties, [genie_name].", "angry", "narrow", "base", "down")
     m "Very good. Then what happened?"
-    call her_main("Then he sort of started to touch himself [genie_name]...", "open", "worriedCl", "worried", "mid")
+    call her_main("Then he sort of started to touch himself [genie_name]...", "open", "happyCl", "worried", "mid")
     her "So, I decided to leave..."
     m "I see..."
-    call her_main(".............", "normal", "worriedCl", "worried", "mid")
+    call her_main(".............", "normal", "happyCl", "worried", "mid")
 
     jump end_hg_pr_grope
 
@@ -213,7 +213,7 @@ label hg_pr_grope_T1_E3:
     call her_main("...........", "annoyed", "base", "worried", "R")
     m "And?"
     call her_main("Well, he did touch me a little at first...", "open", "base", "base", "mid")
-    call her_main("......", "normal", "worriedCl", "worried", "mid")
+    call her_main("......", "normal", "happyCl", "worried", "mid")
     m "Don't make me pull every word out of you, [hermione_name]!"
     m "Then what happened?"
     call her_main("Well...", "open", "narrow", "worried", "down")
@@ -249,7 +249,7 @@ label hg_pr_grope_T2_E1:
     her "Led him to one of the empty classrooms in the eastern wing..."
     her "He thought I wanted to make out with him..."
     her "But I told him that I just want him to touch me..."
-    call her_main("...so he did.", "normal", "worriedCl", "worried", "mid")
+    call her_main("...so he did.", "normal", "happyCl", "worried", "mid")
     m "I see..."
     m "Well done, [hermione_name]."
     call her_main("Will I be getting my points now?", "upset", "wink", "base", "mid")
@@ -306,7 +306,7 @@ label hg_pr_grope_T2_E3:
     m "What happened, [hermione_name]. Spit it out."
     call her_main(".................", "annoyed", "narrow", "annoyed", "mid")
     call her_main("But... it's so embarrassing...", "open", "base", "base", "mid")
-    call her_main("Do I really have to, [genie_name]?", "normal", "worriedCl", "worried", "mid")
+    call her_main("Do I really have to, [genie_name]?", "normal", "happyCl", "worried", "mid")
     m "Yes, I happen to love embarrassing things!"
     call her_main(".................", "annoyed", "narrow", "angry", "R")
     her "Well, alright..."
@@ -322,9 +322,9 @@ label hg_pr_grope_T2_E3:
     her "And...."
     call her_main("..........", "clench", "narrow", "base", "down")
     m "What?"
-    call her_main(".....................", "normal", "worriedCl", "worried", "mid")
+    call her_main(".....................", "normal", "happyCl", "worried", "mid")
     call play_music("despair")
-    call her_main("He started to touch my... feet, [genie_name].", "scream", "worriedCl", "worried", "mid")
+    call her_main("He started to touch my... feet, [genie_name].", "scream", "happyCl", "worried", "mid")
     m "Huh?"
     m "Your \"Feet\"? Is that what kids call tits these days?"
     call her_main("I'd wish, [genie_name]...", "disgust", "narrow", "base", "mid_soft")
@@ -456,7 +456,7 @@ label hg_pr_grope_T3_E3:
     m "Totally..."
     m "Seems that true love {size=+5}does{/size} exist after all."
     m "Then what happened?"
-    call her_main("Ehm... Well, they kissed of course...", "grin", "worriedCl", "worried", "mid", emote="05")
+    call her_main("Ehm... Well, they kissed of course...", "grin", "happyCl", "worried", "mid", emote="05")
     call her_main("And then they both started to touch me again...", "upset", "wink", "base", "mid")
     call her_main("And then he was kind of only touching her and she was only touching him...", "annoyed", "base", "worried", "R")
     her "And they kissed..."

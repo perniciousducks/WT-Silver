@@ -18,7 +18,7 @@ label hermione_cardgame_menu:
         call her_main("I'm sorry sir, I should have told you...", "open", "base", "worried", "mid")
         call her_main("Fred and George have a secret shop set up in the school.", "normal", "base", "worried", "R")
         m "I see..."
-        call her_main( "Please don't tell them I told you.","open","worriedCl")
+        call her_main( "Please don't tell them I told you.","open","happyCl")
         m "So you say they might have some cards?"
         call her_main("Wha... yes, maybe.", "base", "base", "base", "mid_soft")
         call her_main("You're not going to shut them down?", "angry", "squint", "base", "mid")
@@ -228,7 +228,7 @@ label hermione_random_duel:
         call her_main("And if I lose?", "open", "happy", "base", "R")
         m "I'll take the same amount away."
         m "\"As if she's going to let that happen...\""
-        call her_main("...","normal","WorriedCl", cheeks="blush")
+        call her_main("...","normal","happyCl", cheeks="blush")
         call her_main("Okay... In that case to make it fair, let's add these extra rules...", "open", "happy", "base", "mid_soft")
 
     label hermione_random_duel_rematch:
@@ -263,7 +263,7 @@ label hermione_random_duel:
     m "You do know what this means, don't you?"
     call her_main("...", "normal", "base", "worried", "mid")
     g9 "This means I'm going to have to deduct 20 points from Gryffindor house."
-    call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's 20 house points missing...", "open", "worriedCl", "worried", "mid")
+    call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's 20 house points missing...", "open", "happyCl", "worried", "mid")
     m "Well, in that case..."
 
     menu:
@@ -287,7 +287,7 @@ label hermione_random_duel:
     m "No, sorry miss Granger... Minus 20 points to Gryffindor..."
     call her_main("...", "disgust", "narrow", "worried", "down")
     call her_main("Fine, that's fair...", "open", "narrow", "base", "down")
-    call her_main("But I'm done playing for today...", "normal", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("But I'm done playing for today...", "normal", "happyCl", "worried", "mid", cheeks="blush")
     $ gryffindor -= 20
 
     call play_sound("door")

@@ -924,7 +924,7 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("There, ready!","smile","happyCl","base","mid", flip=True, xpos=100)
     m "..."
     ">Without further ado you summon the well-endowed, Hufflepuff to your hallowed office."
-    call sus_main("You wanted to see me, sir?","base","worriedCl","worried","down")
+    call sus_main("You wanted to see me, sir?","base","happyCl","worried","down")
     ">Without even consciously realizing, Susan calmly removes her top and bra, bearing her magnificent breasts to you and Astoria..."
     m "mmm, that I did..."
     ">The sight of Susan's milky tits rapidly cause your cock to spring to life, straining against the weight of Astoria on your lap."
@@ -932,7 +932,7 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("Sir! We haven't even started yet!","smile","angry","base","R")
     m "Don't blame me for this, [astoria_name]!"
     call ast_main("I do! I expect you to wait until we start...", "annoyed", "happyCl","base", "R")
-    call sus_main("Excuse me!","scream","worriedCl","angry","mid")
+    call sus_main("Excuse me!","scream","happyCl","angry","mid")
     call sus_main("Why are you sitting on Dumbledore's lap Astoria?","open","suspicious","angry","mid")
     call sus_main("And what are you starting?","open","narrow","worried","mid")
     m "We brought you up here to help with a magic experiment."
@@ -971,9 +971,9 @@ label hornify_spell_1: #first level hornify spell
     call ast_main("We're not really sure... All we know is that I have to target it somewhere on your body...","smile","angry","worried","mid")
     call ast_main("Guess where?","grin","narrow","angry","mid")
     call sus_main("You don't mean...","open","wide","worried","wide")
-    call sus_main("I don't think I want to help with this experiment Dumbledore! I'm going to leave now...","open","worriedCl","worried","mid",flip=True)
+    call sus_main("I don't think I want to help with this experiment Dumbledore! I'm going to leave now...","open","happyCl","worried","mid",flip=True)
     ">Susan turns to leave, but is compelled by Astoria's previous imperio to be unable to leave until excused..."
-    call sus_main("I can't... I can't leave!","upset","worriedCl","worried","wide")
+    call sus_main("I can't... I can't leave!","upset","happyCl","worried","wide")
     call ast_main("We know! Just get back here and let us cast the spell!", "annoyed", "narrow","base", "R")
     call sus_main("...","upset","narrow","worried","empty")
     ">Susan begrudgingly walks back in front of your desk, sullenly standing before you and Astoria."

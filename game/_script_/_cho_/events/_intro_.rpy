@@ -232,7 +232,7 @@ label cho_intro_E1:
         g9 "(How naughty, didn’t expect such indecent behaviour from a girl with such a cute face...)"
         call cho_main("Yeah? You ever even kissed a boy before Granger? And I’m talking about a real kiss and not your daddy kissing you good night...", "soft", "angry", "raised", "L")
         call her_main("Oh...{w=0.5} Of course I have!", "angry", "base", "worried", "R", cheeks="blush")
-        call her_main("Hey, just because I’m not the kind of person to jump on every opportunity they get to have a peek at some random boys wand... that doesn’t mean I’ve never kissed anyone...","open","WorriedCl", cheeks="blush")
+        call her_main("Hey, just because I’m not the kind of person to jump on every opportunity they get to have a peek at some random boys wand... that doesn’t mean I’ve never kissed anyone...","open","happyCl", cheeks="blush")
         g9 "..."
         call her_main("And I didn’t need to have my breasts enlarged not to be confused as a boy!","open", "base", "worried", "R", cheeks="blush")
         call cho_main("Oh yeah, like you haven't been flaunting yours around either...", "base", "closed", "raised", "mid")

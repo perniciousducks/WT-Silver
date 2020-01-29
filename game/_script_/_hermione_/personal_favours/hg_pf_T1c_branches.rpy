@@ -117,7 +117,7 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
     m "Relax, [hermione_name]. Just stand still!"
     m "Oh... Those are some nice titties you've got..."
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("No, [genie_name], please! You mustn't do this...", "shock", "worriedCl", "worried", "mid")
+    call her_main("No, [genie_name], please! You mustn't do this...", "shock", "happyCl", "worried", "mid")
     m "This won't take long, just stand still."
     call her_main("[genie_name], I didn't agree to this!", "angry", "base", "angry", "mid", cheeks="blush")
     with hpunch
@@ -130,14 +130,14 @@ label hg_pf_admire_breasts_T2_touch: # Not a Call label
     $ hermione.wear("all")
     call her_chibi_scene("reset", "desk", "base")
 
-    call her_main("I think I'd better go...", "angry", "worriedCl", "worried", "mid", cheeks="blush", xpos="mid", ypos="base")
+    call her_main("I think I'd better go...", "angry", "happyCl", "worried", "mid", cheeks="blush", xpos="mid", ypos="base")
     m "Go ahead, [hermione_name]. You are not getting paid if you do..."
-    call her_main("But I showed you my...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("But I showed you my...", "angry", "happyCl", "worried", "mid", cheeks="blush")
     call her_main("And you touched me...", "angry", "base", "angry", "mid", cheeks="blush")
     call her_main("And I am getting nothing in return?", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
     m "You are dismissed, [hermione_name]..."
-    call her_main("Grr..................", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-    call her_main("{size=-5}(Burn in hell, you wretched old-{/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("Grr..................", "angry", "happyCl", "worried", "mid", cheeks="blush")
+    call her_main("{size=-5}(Burn in hell, you wretched old-{/size}", "angry", "happyCl", "worried", "mid", cheeks="blush")
 
     call her_walk(action="leave")
 
@@ -175,15 +175,15 @@ label hg_pf_admire_breasts_T2_masturbate: # Not a Call label
 
     call bld
     call nar(">You stare at Hermione's breasts with hunger...")
-    call her_main("[genie_name], what are you...?", "shock", "worriedCl", "worried", "mid")
+    call her_main("[genie_name], what are you...?", "shock", "happyCl", "worried", "mid")
     call nar(">You keep stroking your hard cock...")
     call her_main("[genie_name], no...", "disgust", "narrow", "base", "down", cheeks="blush")
     call her_main("You must... Put it away...", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Stop whining [hermione_name]. I'm not touching you, am I?"
-    call her_main("But...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("But...", "angry", "happyCl", "worried", "mid", cheeks="blush")
     call her_main("But I didn't agree to this!", "angry", "base", "angry", "mid", cheeks="blush")
-    call her_main("I...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-    call her_main("I think I'd better leave now!", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("I...", "angry", "happyCl", "worried", "mid", cheeks="blush")
+    call her_main("I think I'd better leave now!", "angry", "happyCl", "worried", "mid", cheeks="blush")
 
     menu:
         "\"Leave now, and you'll get no points!\"":
@@ -298,7 +298,7 @@ label hg_pf_admire_breasts_T3_touch:
     call her_main("...............", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Admit it, you like it a little bit..."
     call her_main("{size=-5}(So strange to see my breasts in someone else's hands...){/size}", "disgust", "narrow", "base", "down", cheeks="blush")
-    call her_main("[genie_name], I am letting you do this to me to help my house out, nothing more!", "shock", "worriedCl", "worried", "mid")
+    call her_main("[genie_name], I am letting you do this to me to help my house out, nothing more!", "shock", "happyCl", "worried", "mid")
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("Please, unhand me now!", "annoyed", "narrow", "angry", "R", cheeks="blush")
     show screen blkfade
@@ -315,7 +315,7 @@ label hg_pf_admire_breasts_T3_touch:
     pause.8
 
     call her_main(".............", "soft", "base", "base", "R", cheeks="blush")
-    call her_main("Can I get paid now please?", "angry", "worriedCl", "worried", "mid", cheeks="blush",emote="05")
+    call her_main("Can I get paid now please?", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="05")
     m "Sure..."
 
     $ her_mood += 9
@@ -340,14 +340,14 @@ label hg_pf_admire_breasts_T3_masturbate:
     call her_chibi_scene("grope_tits_jerk_off", trans=fade)
     call ctc
 
-    call her_main("[genie_name], I didn't agree to this...", "shock", "worriedCl", "worried", "mid")
+    call her_main("[genie_name], I didn't agree to this...", "shock", "happyCl", "worried", "mid")
     m "What are you complaining about, [hermione_name]?"
     m "I'm not even touching you..."
-    call her_main("Yes, but you are... touching yourself, [genie_name].", "shock", "worriedCl", "worried", "mid")
+    call her_main("Yes, but you are... touching yourself, [genie_name].", "shock", "happyCl", "worried", "mid")
     call nar(">You pick up the pace...")
     m "just stand still, [hermione_name]."
     m "It will be over soon."
-    call her_main("..................", "shock", "worriedCl", "worried", "mid")
+    call her_main("..................", "shock", "happyCl", "worried", "mid")
     call her_main("(It's so big...)", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Yes... Yes, like this..."
     m "Yes, with your tits all naked..."
@@ -360,10 +360,10 @@ label hg_pf_admire_breasts_T3_masturbate:
     call her_main("Not in front of me, [genie_name]...", "angry", "base", "angry", "mid")
     m "Fine, whatever..."
     m "Oh, you little slut. You nasty little slut!"
-    call her_main(".......................", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main(".......................", "angry", "happyCl", "worried", "mid", cheeks="blush")
     call nar(">You start to stroke your cock even harder...")
     g4 "Yes, I know you want this! Yes!"
-    call her_main("................", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("................", "angry", "happyCl", "worried", "mid", cheeks="blush")
 
     ">You are about to cum..."
 
@@ -372,7 +372,7 @@ label hg_pf_admire_breasts_T3_masturbate:
             m "Oh, alright..."
             m "I'd better stop now I suppose..."
             g4 "(Fuck me that hurts...)"
-            call her_main("...............", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+            call her_main("...............", "angry", "happyCl", "worried", "mid", cheeks="blush")
             ">Hermione covers up..."
             $ hermione.wear("all")
 
@@ -511,14 +511,14 @@ label hg_pf_admire_breasts_T4_touch: # Call label
     call bld
     m "Relax, [hermione_name]. Just stand still!"
     call her_main("But...", "disgust", "narrow", "base", "down", cheeks="blush")
-    call her_main("ah...{heart}", "shock", "worriedCl", "worried", "mid")
+    call her_main("ah...{heart}", "shock", "happyCl", "worried", "mid")
     call her_main("I didn't agree to this...", "disgust", "narrow", "base", "down", cheeks="blush")
     m "But you like it, don't you?"
 
     if her_whoring >= 17:
         call her_main("I love it [genie_name]!{heart}", "open", "base", "base", "R", cheeks="blush")
     else:
-        call her_main("I do not, [genie_name]!{heart}", "shock", "worriedCl", "worried", "mid")
+        call her_main("I do not, [genie_name]!{heart}", "shock", "happyCl", "worried", "mid")
 
     call blktone
     ">You give her tits a couple of firm squeezes..."
@@ -529,7 +529,7 @@ label hg_pf_admire_breasts_T4_touch: # Call label
         m "I know, I know... But it's hard to resist..."
         call her_main(".................{heart}{heart}{heart}", "base", "narrow", "base", "up", cheeks="blush")
     else:
-        call her_main("[genie_name], you promised not to touch...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+        call her_main("[genie_name], you promised not to touch...", "angry", "happyCl", "worried", "mid", cheeks="blush")
         m "I know, I know... But it's hard to resist..."
         call her_main(".................", "angry", "base", "angry", "mid", cheeks="blush")
 
@@ -587,13 +587,13 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
     call ctc
 
     if her_whoring < 17:
-        call her_main("[genie_name], actually I never agreed to this...", "shock", "worriedCl", "worried", "mid")
+        call her_main("[genie_name], actually I never agreed to this...", "shock", "happyCl", "worried", "mid")
         m "What are you complaining about, [hermione_name]?"
         m "I'm not even touching you..."
-        call her_main("Yes, but you are... touching yourself, [genie_name].", "shock", "worriedCl", "worried", "mid")
+        call her_main("Yes, but you are... touching yourself, [genie_name].", "shock", "happyCl", "worried", "mid")
         m "Just stand still, [hermione_name]."
         m "It will be over soon."
-        call her_main("..................", "shock", "worriedCl", "worried", "mid")
+        call her_main("..................", "shock", "happyCl", "worried", "mid")
         m "Yes... Yes, like this..."
         m "Yes, your tits all exposed..."
         call her_main("..............", "disgust", "narrow", "base", "down", cheeks="blush")
@@ -638,7 +638,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             call her_main("...............", "disgust", "narrow", "base", "down", cheeks="blush", ypos="head")
             call her_main("Ehm... I read that that is bad for you, [genie_name]...", "disgust", "narrow", "base", "down", cheeks="blush")
             m "Huh?"
-            call her_main("It is bad for your health to just hold it in like this...", "shock", "worriedCl", "worried", "mid")
+            call her_main("It is bad for your health to just hold it in like this...", "shock", "happyCl", "worried", "mid")
             call her_main("Em...", "disgust", "narrow", "base", "down", cheeks="blush")
             call her_main("If you want to you can--", "base", "base", "base", "R", cheeks="blush")
             g4 "Argh! You whore!"
@@ -657,7 +657,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             call ctc
 
             call bld
-            call her_main("[genie_name], I didn't mean that you can release your... semen on me, [genie_name]...", "angry", "worriedCl", "worried", "mid", cheeks="blush",emote="05")
+            call her_main("[genie_name], I didn't mean that you can release your... semen on me, [genie_name]...", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="05")
             g4 "Oh, this is great, yes..."
             call her_chibi_scene("grope_tits_cum_done")
             with d5
@@ -715,14 +715,14 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
             call hide_blkfade
             call ctc
 
-            call her_main("ah...{heart} It's so hot...{heart}", "shock", "worriedCl", "worried", "mid")
-            call her_main("[genie_name], you promised...", "angry", "worriedCl", "worried", "mid", cheeks="blush",emote="05")
+            call her_main("ah...{heart} It's so hot...{heart}", "shock", "happyCl", "worried", "mid")
+            call her_main("[genie_name], you promised...", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="05")
             g4 "Oh, this is great, yes..."
 
             call her_chibi_scene("grope_tits_cum_done")
             with d3
 
-            call her_main("Well, what's done is done I suppose...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+            call her_main("Well, what's done is done I suppose...", "angry", "happyCl", "worried", "mid", cheeks="blush")
             m "Oh, this was quite amazing..."
 
             show screen blktone8

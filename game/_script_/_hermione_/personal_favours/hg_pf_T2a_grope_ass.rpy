@@ -18,7 +18,7 @@ label hg_pf_grope_ass_T1:
     call her_main("But....", "annoyed", "base", "angry", "mid")
     m "Do it for \"Gryffimdor\"..."
     call her_main("(These [current_payout] points could really make a difference...)", "disgust", "narrow", "base", "down", cheeks="blush")
-    call her_main("(Darn it.....!)", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("(Darn it.....!)", "angry", "happyCl", "worried", "mid", cheeks="blush")
     call her_main("(...............................)", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
     call her_main("Can I at least turn around then, Sir?", "soft", "base", "angry", "mid", cheeks="blush")
@@ -46,7 +46,7 @@ label hg_pf_grope_ass_T1_front:
 
     call her_chibi_scene("reset", "desk", "base", trans=fade)
 
-    call her_main("I can't do it when I can see you looking at me...", "mad", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("I can't do it when I can see you looking at me...", "mad", "happyCl", "worried", "mid", cheeks="blush")
     m "That's the whole point [hermione_name], I want to look at you..."
     call her_main(".............", "annoyed", "base", "worried", "mid", cheeks="blush")
     call her_main("It's demeaning!", "angry", "closed", "angry", "mid", cheeks="blush")
@@ -121,11 +121,11 @@ label hg_pf_grope_ass_T1_back:
     call her_main("This is so demeaning!", "angry", "base", "angry", "mid", cheeks="blush")
     call her_main("You said all you were going to do is touch...", "angry", "base", "angry", "mid", cheeks="blush")
     g4 "Just stand still, [hermione_name]!"
-    call her_main("I don't think so, [genie_name]!", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("I don't think so, [genie_name]!", "angry", "happyCl", "worried", "mid", cheeks="blush")
     call her_main("No amount of points are worth this humiliation!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
     call her_main("You are abusing your power, [genie_name]!", "scream", "base", "angry", "mid", cheeks="blush",emote="01")
     g4 "What?"
-    call her_main("I'm leaving!", "angry", "worriedCl", "worried", "mid", cheeks="blush", ypos="head")
+    call her_main("I'm leaving!", "angry", "happyCl", "worried", "mid", cheeks="blush", ypos="head")
 
     call her_chibi_scene("reset", "desk", "base", trans=fade)
 
@@ -173,7 +173,7 @@ label hg_pf_grope_ass_T1_back:
             call her_main("........................", "angry", "base", "angry", "mid", cheeks="blush")
             call her_main("This is not fair...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
             m "What? Hey, wait, don't you start crying on me..."
-            call her_main("I hate you, [genie_name]! I hate you!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+            call her_main("I hate you, [genie_name]! I hate you!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
 
             # Hermione runs out of the room.
             call her_walk(action="run", xpos="door", speed=2, reduce=True)
@@ -205,8 +205,8 @@ label hg_pf_grope_ass_T1_continue:
     call nar("*squeeze* *squeeze* *squeeze*...")
 
     call her_main(".........................", "annoyed", "base", "angry", "mid", cheeks="blush")
-    call her_main("(I can't believe this is really happening...)", "disgust", "worriedCl", "worried", "mid", cheeks="blush")
-    call her_main("If you don't mind, Sir...", "soft", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("(I can't believe this is really happening...)", "disgust", "happyCl", "worried", "mid", cheeks="blush")
+    call her_main("If you don't mind, Sir...", "soft", "happyCl", "worried", "mid", cheeks="blush")
     call her_main("I'd like you to unhand me now...", "disgust", "base", "worried", "mid", cheeks="blush")
     m "What? Already?"
     call her_main("Yes! This has been demeaning enough!", "annoyed", "base", "angry", "mid", cheeks="blush")
@@ -263,30 +263,30 @@ label hg_pf_grope_ass_T2_front:
     call her_main(".........................", "annoyed", "narrow", "angry", "R", cheeks="blush")
 
     call nar(">And give her Ass a good squeeze...")
-    call her_main(".................", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main(".................", "angry", "happyCl", "worried", "mid", cheeks="blush")
     m "Don't look away, girl. I want you to look into my eyes."
-    call her_main("I would rather not, [genie_name]...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("I would rather not, [genie_name]...", "angry", "happyCl", "worried", "mid", cheeks="blush")
 
     menu:
         m "..."
         "\"Fine. Just keep on standing still then.\"":
-            call her_main("Thank you, [genie_name]...", "angry", "worriedCl", "worried", "mid", cheeks="blush", ypos="head")
+            call her_main("Thank you, [genie_name]...", "angry", "happyCl", "worried", "mid", cheeks="blush", ypos="head")
 
             call nar(">You massage her ass-cheeks lightly...")
-            call her_main("....................", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+            call her_main("....................", "angry", "happyCl", "worried", "mid", cheeks="blush")
 
             call nar(">And keep enjoying the sensation of her butt under your hands...")
-            call her_main(".....................", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+            call her_main(".....................", "angry", "happyCl", "worried", "mid", cheeks="blush")
 
             call nar(">Then You give Hermione's butt one last squeeze.")
-            call her_main(".....................", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+            call her_main(".....................", "angry", "happyCl", "worried", "mid", cheeks="blush")
 
             jump end_hg_pf_grope
 
         "\"Open your eyes, or you'll lose the points!\"":
             $ her_mood += 10
 
-            call her_main("Tsk! {size=-5}(You wretched old--{/size}", "angry", "worriedCl", "worried", "mid", cheeks="blush", ypos="head")
+            call her_main("Tsk! {size=-5}(You wretched old--{/size}", "angry", "happyCl", "worried", "mid", cheeks="blush", ypos="head")
             m "Did you say something, [hermione_name]?"
             call her_main("It's nothing, [genie_name].", "angry", "base", "angry", "mid")
 
@@ -296,7 +296,7 @@ label hg_pf_grope_ass_T2_front:
             call her_main("....................", "angry", "base", "angry", "mid")
             call her_main("...............................", "annoyed", "narrow", "angry", "R", cheeks="blush")
             m "What did I tell you about looking away?"
-            call her_main("Yes, I remember...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+            call her_main("Yes, I remember...", "angry", "happyCl", "worried", "mid", cheeks="blush")
             call her_main(".................................", "angry", "base", "angry", "mid")
             call her_main("...................................", "annoyed", "narrow", "angry", "R", cheeks="blush")
             call her_main("..................................................", "annoyed", "narrow", "angry", "R", cheeks="blush")
@@ -380,12 +380,12 @@ label hg_pf_grope_ass_T2_continue:
 
     call her_main("!!!!!!?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head")
     m "What is it, [hermione_name]?"
-    call her_main("It's nothing [genie_name]...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-    call her_main("It's just... ", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-    call her_main("This is so... inappropriate...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("It's nothing [genie_name]...", "angry", "happyCl", "worried", "mid", cheeks="blush")
+    call her_main("It's just... ", "angry", "happyCl", "worried", "mid", cheeks="blush")
+    call her_main("This is so... inappropriate...", "angry", "happyCl", "worried", "mid", cheeks="blush")
     m "Relax, [hermione_name]. It's not like you are enjoying this..."
-    call her_main("What? Of course not! This is depraved...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
-    call her_main("I am making this sacrifice for the honour of my house...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("What? Of course not! This is depraved...", "angry", "happyCl", "worried", "mid", cheeks="blush")
+    call her_main("I am making this sacrifice for the honour of my house...", "angry", "happyCl", "worried", "mid", cheeks="blush")
     m "Yes, concentrate on that..."
     call her_main("....................", "angry", "base", "angry", "mid", cheeks="blush")
     call ctc
@@ -414,7 +414,7 @@ label hg_pf_grope_ass_T2_continue:
 
     call nar(">You keep on playing with Hermione's buttocks...","start")
     call nar(">You slide your hands up and down her inner thighs...","end")
-    call her_main("................", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main("................", "angry", "happyCl", "worried", "mid", cheeks="blush")
 
     menu:
         "-Slide your hands under her panties-" if hermione.is_worn("panties"):
@@ -476,19 +476,19 @@ label hg_pf_grope_ass_T2_continue:
             jump end_hg_pf_grope
 
 label hg_pf_grope_ass_T2_fail:
-    call her_main("NO! What have you done!!?", "angry", "worriedCl", "worried", "mid", cheeks="blush", tears="soft_blink", ypos="head")
+    call her_main("NO! What have you done!!?", "angry", "happyCl", "worried", "mid", cheeks="blush", tears="soft_blink", ypos="head")
     call nar(">Hermione gives you an unexpectedly strong shove...")
 
     call her_chibi_scene("behind_desk_front", trans=hpunch)
 
-    call her_main("Why would you do this to me, [genie_name]...?", "angry", "worriedCl", "worried", "mid", cheeks="blush", tears="soft_blink")
-    call her_main("I never agreed to... to...", "angry", "worriedCl", "worried", "mid", cheeks="blush", tears="crying_blink")
-    call her_main("You... you...", "angry", "worriedCl", "worried", "mid", cheeks="blush", tears="crying_blink")
-    call her_main("{size=+7}YOU RAPED ME!{/size}", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy", trans=hpunch)
+    call her_main("Why would you do this to me, [genie_name]...?", "angry", "happyCl", "worried", "mid", cheeks="blush", tears="soft_blink")
+    call her_main("I never agreed to... to...", "angry", "happyCl", "worried", "mid", cheeks="blush", tears="crying_blink")
+    call her_main("You... you...", "angry", "happyCl", "worried", "mid", cheeks="blush", tears="crying_blink")
+    call her_main("{size=+7}YOU RAPED ME!{/size}", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy", trans=hpunch)
     g4 "What? Don't be ridiculous, [hermione_name]! I did no such thing!"
-    call her_main("Yes you did. {size=+4}Yes you did!{/size}", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+    call her_main("Yes you did. {size=+4}Yes you did!{/size}", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
     g4 "I most certainly did not!"
-    call her_main("No, you {size=+4}did{/size}, [genie_name]!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+    call her_main("No, you {size=+4}did{/size}, [genie_name]!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
     call her_main("Now, you will give me 20-", "angry", "base", "angry", "mid", cheeks="blush", tears="soft")
     call her_main("No, 100 house points or I am reporting you to the Ministry of magic!", "angry", "base", "angry", "mid", cheeks="blush", tears="soft")
 
@@ -501,13 +501,13 @@ label hg_pf_grope_ass_T2_fail:
             m "One hundred points to Gryffindor !"
             m "There, it is done..."
             m "Now would you calm yourself down, [hermione_name]?"
-            call her_main("No, I will not!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy", ypos="head")
-            call her_main("I've just been raped!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+            call her_main("No, I will not!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy", ypos="head")
+            call her_main("I've just been raped!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
             g4 "Oh, snap out of it [hermione_name], I didn't rape you! All I did was-"
-            call her_main("{size=+7}You raped me!!!{/size}", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy" , trans=hpunch)
+            call her_main("{size=+7}You raped me!!!{/size}", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy" , trans=hpunch)
             g4 "By the great desert sands, would you keep it down about the rapes!?"
             g4 "Someone may hear you!"
-            call her_main("Good! I want them to hear!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+            call her_main("Good! I want them to hear!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
             m "Why would you want that? I already paid you!"
             call her_main("Oh... right...", "angry", "base", "base", "mid", cheeks="blush", tears="mascara")
             call her_main("But I hate you! I hate you [genie_name]!", "scream", "closed", "angry", "mid", cheeks="blush", tears="mascara")
@@ -515,10 +515,10 @@ label hg_pf_grope_ass_T2_fail:
         "\"You're bluffing, [hermione_name]!\"":
             $ her_mood += 27
 
-            call her_main("No, I'm not! I'm gonna do it!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy", ypos="head")
+            call her_main("No, I'm not! I'm gonna do it!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy", ypos="head")
             g4 "By all means, go ahead..."
             g4 "There was no rape!"
-            call her_main("I hate you, [genie_name]!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+            call her_main("I hate you, [genie_name]!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
 
     call her_chibi_scene("reset","desk","base", trans=fade)
 
@@ -571,7 +571,7 @@ label hg_pf_grope_ass_T3_front:
     call her_main("........", "annoyed", "base", "angry", "mid", cheeks="blush")
 
     call nar(">You run your hands up and down Hermione's legs...")
-    call her_main(".........................", "upset", "worriedCl", "worried", "mid", cheeks="blush")
+    call her_main(".........................", "upset", "happyCl", "worried", "mid", cheeks="blush")
 
     call nar(">And give her Ass a good squeeze...")
     call her_main(".................", "soft", "base", "base", "mid", cheeks="blush")
@@ -740,19 +740,19 @@ label hg_pf_grope_ass_T3_continue:
                     menu:
                         "-Continue rubbing her-":
                             call nar(">As you continue rubbing her, Hermione closes her eyes and goes silent...")
-                            call her_main("......", "clench", "worriedCl", "worried", "mid", cheeks="blush")
-                            call her_main("Ah...", "silly", "worriedCl", "worried", "mid", cheeks="blush")
+                            call her_main("......", "clench", "happyCl", "worried", "mid", cheeks="blush")
+                            call her_main("Ah...", "silly", "happyCl", "worried", "mid", cheeks="blush")
                             call nar(">With no more objections you move your index finger across her clit and begin rubbing it gently...")
                             call her_main("...", "soft", "closed", "base", "mid", cheeks="blush")
                             call nar("Completely lost in the moment Hermione moves around as you massage her.")
                             call nar("In response to her movement you start rubbing her faster - and as you do she squeals and lets out a gentle moan.")
-                            call her_main("*Hnnngh*", "clench", "worriedCl", "worried", "mid", cheeks="blush") #still has eyes closed
+                            call her_main("*Hnnngh*", "clench", "happyCl", "worried", "mid", cheeks="blush") #still has eyes closed
                             call her_main("....", "disgust", "wide", "base", "stare", cheeks="blush") #Opens her eyes wide
                             m "Did you just?"
                             if her_tier <= 4:
-                                call her_main("No...", "angry", "worriedCl", "worried", "mid", cheeks="blush")
+                                call her_main("No...", "angry", "happyCl", "worried", "mid", cheeks="blush")
                                 m "Well it sure looks like you just-"
-                                call her_main("I think we're done here!", "soft", "worriedCl", "worried", "mid", cheeks="blush", emote="01")
+                                call her_main("I think we're done here!", "soft", "happyCl", "worried", "mid", cheeks="blush", emote="01")
                                 m "I see..."
                                 m "Well, in that case..."
                             else:
@@ -839,7 +839,7 @@ label hg_pf_grope_ass_T4_front:
     m "do you enjoy this so much?"
     call her_main("I wouldn't phrase it like that...", "annoyed", "wink", "base", "mid", cheeks="blush")
 
-    call her_main("Can we just start, please...?", "angry", "worriedCl", "worried", "mid", cheeks="blush",emote="05")
+    call her_main("Can we just start, please...?", "angry", "happyCl", "worried", "mid", cheeks="blush",emote="05")
     m "Well, since you asked so nicely..."
     call her_chibi_scene("grope_ass_front")
     with d7
@@ -886,7 +886,7 @@ label hg_pf_grope_ass_T4_front:
     call nar(">Hermione maintains eye contact as she's been told...","end")
 
     m "you're lying."
-    call her_main("I... i said i want you to finger me!", "shock", "worriedCl", "worried", "mid")
+    call her_main("I... i said i want you to finger me!", "shock", "happyCl", "worried", "mid")
 
     call nar(">You swiftly plunge two fingers into her drenched snatch.")
     call her_main("!!!{heart}{heart}", "grin", "narrow", "annoyed", "up")
@@ -919,7 +919,7 @@ label hg_pf_grope_ass_T4_front:
     call nar(">her movements have become more frantic.")
     m "are you cumming, [hermione_name]?"
     call her_main("yes!!", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
-    call her_main("i'm cumming!!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+    call her_main("i'm cumming!!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
     call her_main("i'm cumming from being fucked with your fingers!!", "grin", "narrow", "base", "dead", cheeks="blush", tears="messy")
     m "look at me!"
     m "show me your fuck-face!"
@@ -1070,7 +1070,7 @@ label hg_pf_grope_T4_continue:
             call her_main("Shove them deep in my slutty fuckhole!!{heart}", "silly", "narrow", "base", "dead", tears="messy")
             m "Hm... I don't think my fingers are up to this task after all..."
             ">You take your fingers out of the girl's gushing cunt."
-            call her_main("what!!? no, don't st-", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="crying")
+            call her_main("what!!? no, don't st-", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="crying")
             ">...so you can take the dildo out of your desk."
             call her_main("oh, god yes!!", "grin", "narrow", "base", "dead", cheeks="blush", tears="messy")
             m "this is a much better fit isn't it?"
@@ -1081,10 +1081,10 @@ label hg_pf_grope_T4_continue:
             call her_main("just don't stop!", "silly", "narrow", "annoyed", "up", tears="messy")
             ">her hips meet your every thrust, nearly tearing the toy from your grip."
             call her_main("donstopdonstopdonstop-", "grin", "narrow", "base", "dead", cheeks="blush", tears="messy")
-            call her_main("pleasepleasepleaseplease-", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+            call her_main("pleasepleasepleaseplease-", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
             m "are you enjoying yourself, [hermione_name]?"
             call her_main("yes! I love how you spank me!", "grin", "narrow", "base", "dead", cheeks="blush", tears="messy")
-            call her_main("I love how you grope me!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="crying")
+            call her_main("I love how you grope me!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="crying")
             call her_main("I love how you play with my little fuckholes!", "grin", "narrow", "base", "up", cheeks="blush", tears="messy")
             call her_main("ohgodohgodohgod", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
             ">Hermione tries to scream as her body bucks and the orgasm takes her, but can't get enough air to do more then moan."
@@ -1120,7 +1120,7 @@ label hg_pf_grope_T4_continue:
             call her_main("why w-", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
             ">...and replace it with two fingers"
             call her_main("Aaah!", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
-            call her_main("B-Bastard!{heart}", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+            call her_main("B-Bastard!{heart}", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
             call her_main("Y-you teasing b-bastard!{heart}{heart}", "grin", "narrow", "base", "dead", cheeks="blush", tears="messy")
             m "do you like this, [hermione_name]?"
             call her_main("yes!!!", "angry", "narrow", "base", "dead", cheeks="blush", tears="crying")
@@ -1133,12 +1133,12 @@ label hg_pf_grope_T4_continue:
             m "I asked you a question."
 
             call slap_her
-            call her_main("when you finger my ass!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+            call her_main("when you finger my ass!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
             call her_main("i love it when you fuck my ass with your fingers!", "grin", "narrow", "base", "dead", cheeks="blush", tears="messy")
             m "what else do you love?"
 
             call slap_her
-            call her_main("when you slap my slutty ass!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+            call her_main("when you slap my slutty ass!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
 
             call slap_her
             call her_main("a-again! i'm c-c", "scream", "wide", "worried", "stare", cheeks="blush", tears="messy")
@@ -1149,7 +1149,7 @@ label hg_pf_grope_T4_continue:
             m "you're cumming from being spanked again?"
 
             call slap_her
-            call her_main("yes!!", "scream", "worriedCl", "worried", "mid", cheeks="blush", tears="messy")
+            call her_main("yes!!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
             m "you're cumming from having your headmaster's fingers shoved up your tight little asshole?"
 
             call slap_her

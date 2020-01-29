@@ -134,10 +134,10 @@ label potion_scene_2_1_1:
     m "Like this?"
     call nar(">You take both nipples between your thumb and index finger.")
     call her_main("!!!", "scream", "wide", "base", "stare")
-    call her_main("Please stop... it's too much, it's like my nipples are on fire.", "shock", "worriedCl", "worried", "mid")
+    call her_main("Please stop... it's too much, it's like my nipples are on fire.", "shock", "happyCl", "worried", "mid")
     m "Shhhh, just be still, it'll all be over soon."
     call nar(">You start rolling her nipples in between your fingers.")
-    call her_main("...", "open", "worriedCl", "worried", "mid")
+    call her_main("...", "open", "happyCl", "worried", "mid")
     call nar(">You feel her push her crotch against your thigh.")
     m "Feeling a little aroused are we?"
     call nar(">You start to pinch and pull her nipples.")
@@ -199,7 +199,7 @@ label potion_scene_2_2:
     call her_chibi("stand","mid","base")
     pause.5
 
-    call her_main("Ahhh, that was good! So what was it?", "grin", "worriedCl", "worried", "mid",emote="05")
+    call her_main("Ahhh, that was good! So what was it?", "grin", "happyCl", "worried", "mid",emote="05")
     m "The effects should be visible soon enough."
     call her_main("Well can you at least give me a hint?", "open", "base", "base", "mid")
     m "Let's just say that it's a redistribution of ass{w}ets." ###Added {w} instead of your ...
@@ -257,7 +257,7 @@ label potion_scene_2_2:
 
     show screen bld1
     show screen blktone
-    call her_main("Please [genie_name]... please take advantage of me...", "open", "worriedCl", "worried", "mid",xpos="mid",ypos="base")
+    call her_main("Please [genie_name]... please take advantage of me...", "open", "happyCl", "worried", "mid",xpos="mid",ypos="base")
     m "As you command."
     call nar(">You take her engorged buttocks in your hands. Each one is now much larger than before.")
 
@@ -273,7 +273,7 @@ label potion_scene_2_2:
             call nar(">You pull her asscheeks open again to show her puckered hole.")
             m "Let's see how sensitive you really are."
             call nar(">You start teasing the entrance with your finger, circling the entrance slowly.")
-            call her_main("!!!", "shock", "worriedCl", "worried", "mid")
+            call her_main("!!!", "shock", "happyCl", "worried", "mid")
             call her_main("[genie_name] please... I'm too sensitive. If you do that, \nI'm not sure I'll be able to control myself.", "soft", "narrow", "annoyed", "up")
             hide screen hermione_main
             m "Well in that case..."
@@ -287,13 +287,13 @@ label potion_scene_2_2:
             hide screen hermione_main
             m "What was that?"
             call nar(">You start turning your finger.")
-            call her_main("{size=+10}I'm cumming!{/size}", "scream", "worriedCl", "worried", "mid")
+            call her_main("{size=+10}I'm cumming!{/size}", "scream", "happyCl", "worried", "mid")
             call nar(">Her asshole starts quivering around your finger.")
             hide screen hermione_main
             m "What a little anal slut. I wonder what you'll do once I try this."
             call nar(">You start pumping your finger in and out of her shivering asshole.")
-            call her_main("!!!", "shock", "worriedCl", "worried", "mid")
-            call her_main("I'm cumming again!", "open", "worriedCl", "worried", "mid")
+            call her_main("!!!", "shock", "happyCl", "worried", "mid")
+            call her_main("I'm cumming again!", "open", "happyCl", "worried", "mid")
             m "So soon?"
             call her_main("I can't stop! Please [genie_name], please, no more!", "angry", "wide", "base", "stare")
 
@@ -306,13 +306,13 @@ label potion_scene_2_2:
                 "-Keep Going-":
                     m "What was that [hermione_name]? It almost sounded like you asked me to stop."     ###Or would it be better if she start to tear up and cry a bit?
                     call nar(">You increase the pace.")
-                    call her_main("Please...", "open", "worriedCl", "worried", "mid")
+                    call her_main("Please...", "open", "happyCl", "worried", "mid")
                     m "Please what?"
                     call nar(">You insert a second finger.")
                     call her_main("Please... stop... you'll break me...", "angry", "narrow", "base", "down")
                     call nar(">You grab her hip with one hand and keep finger fucking her asshole.")
-                    call her_main("...", "shock", "worriedCl", "worried", "mid")
-                    call her_main("...", "scream", "worriedCl", "worried", "mid")
+                    call her_main("...", "shock", "happyCl", "worried", "mid")
+                    call her_main("...", "scream", "happyCl", "worried", "mid")
                     call nar(">You feel her body go limp as her asshole relentlessly quivers around your fingers.")
                     m "There, wasn't that nice?"
                     call nar(">You slow down and pull out of her asshole.")

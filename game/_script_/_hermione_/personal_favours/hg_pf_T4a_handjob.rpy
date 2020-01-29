@@ -46,7 +46,7 @@ label hg_pf_handjob:
 
     # Points
     if her_tier <= 5:
-        m "Yes, [hermione_name]. [current_payout] to Gryffindor."
+        m "Yes, [hermione_name]. {number=current_payout} to Gryffindor."
         $ gryffindor += current_payout
     else:
         m "You may leave now, [hermione_name]."
@@ -124,7 +124,7 @@ label hg_pf_handjob_T1_intro_E1:
         "\"you will get 45 house points.\"":
             $ her_mood += 3
             call her_main(".....", "annoyed", "narrow", "angry", "R")
-            call her_main("Fortyfive house points...?", "open", "narrow", "worried", "down")
+            call her_main("{number=current_payout} house points...?", "open", "narrow", "worried", "down")
             her "This could put Gryffindor back in the lead..."
             m "Is that a \"yes\"?"
             call her_main("Yes, it is a yes, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
@@ -134,7 +134,7 @@ label hg_pf_handjob_T1_intro_E1:
         "\"you will get 100 house points.\"":
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ current_payout = 100
-            call her_main("One hundred house points?!", "scream", "wide", "base", "mid")
+            call her_main("{number=current_payout} points?!", "scream", "wide", "base", "mid")
             her "This will definitely put Gryffindor in the lead!"
             m "Is that a \"yes\" then?"
             call her_main("Of course!", "smile", "happyCl", "base", "mid")
@@ -174,7 +174,7 @@ label hg_pf_handjob_T1_repeat:
 
     call her_main("...............", "upset", "base", "angry", "mid")
     call her_main("Will I be getting paid for it, [genie_name]?", "open", "base", "angry", "mid")
-    m "Of course. Fortyfive points."
+    m "Of course. {number=current_payout} points."
     call her_main(".........................", "upset", "narrow", "angry", "R")
 
     jump hg_pf_handjob_1
@@ -986,7 +986,7 @@ label hg_pf_handjob_2_cumming:
 
             if hg_blowjob.trigger == False: # Hasn't done blowjobs yet.
                 call her_main("With all due respect [genie_name]...", "upset", "closed", "base", "mid")
-                call her_main("Not for the meagre fortyfive points...", "angry", "wink", "base", "mid")
+                call her_main("Not for the meagre {number=current_payout} points...", "angry", "wink", "base", "mid")
                 call her_main("Speaking of which. Can I get may payment now please?")
             else:
                 call her_main("Maybe next time...", "angry", "wink", "base", "mid")

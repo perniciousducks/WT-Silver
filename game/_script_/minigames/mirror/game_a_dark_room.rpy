@@ -50,7 +50,7 @@ label start_dark_room_game:
                 "-Yes-":
                     $ current_payout = DRgame.day*2
                     $ gold += current_payout
-                    ">You have received [current_payout] gold.\n>Thank you for playing \"A Dark Room\"."
+                    ">You have received {number=current_payout} gold.\n>Thank you for playing \"A Dark Room\"."
                     call reset_dark_room_init
                     jump dark_room_game_start_menu
                 "-No-":

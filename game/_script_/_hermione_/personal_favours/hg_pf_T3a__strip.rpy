@@ -37,7 +37,7 @@ label hg_pf_strip:
         call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
     # Points
-    m "[current_payout] points to the Gryffindor house."
+    m "{number=current_payout} points to the Gryffindor house."
     call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R")
 
 
@@ -654,7 +654,7 @@ label hg_pf_strip_T1_E2:
     her "I would really rather not, [genie_name]..."
     m "Why? You are getting quite good at it."
     call her_main(".........................", "annoyed", "narrow", "annoyed", "mid")
-    call her_main("Thirty five house points?", "open", "narrow", "worried", "down")
+    call her_main("{number=current_payout} house points?", "open", "narrow", "worried", "down")
     m "Sure! The usual rate."
     call her_main("...................", "annoyed", "narrow", "angry", "R")
 
@@ -912,7 +912,7 @@ label hg_pf_strip_T2_intro_E1:
     her "I would really rather not, [genie_name]..."
     m "Why? You are getting quite good at it."
     call her_main(".........................", "annoyed", "narrow", "annoyed", "mid")
-    call her_main("Thirty five house points?", "open", "base", "base", "mid")
+    call her_main("{number=current_payout} house points?", "open", "base", "base", "mid")
     g9 "Sure!"
     call her_main("Very well, then...", "base", "base", "base", "R")
 

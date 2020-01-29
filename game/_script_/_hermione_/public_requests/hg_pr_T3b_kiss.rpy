@@ -4,6 +4,9 @@
 
 label hg_pr_kiss:
 
+    # setup
+    $ current_payout += 45
+
     if hg_pr_kiss.counter < 1:
         m "{size=-4}(Tell her to go make out with one of her female classmates?){/size}"
         menu:
@@ -37,7 +40,7 @@ label hg_pr_kiss:
         call her_main("*Humph!*...", "annoyed", "squint", "angry", "mid")
 
     elif her_tier < 4:
-        m "[hermione_name], forty five house points are up for grabs today!"
+        m "[hermione_name], {number=current_payout} house points are up for grabs today!"
         m "Are you interested?"
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         call her_main("It depends...", "normal", "base", "base", "mid")
@@ -47,7 +50,7 @@ label hg_pr_kiss:
         m "Fine, fine... But all I want you to do today is to make out with another girl."
         call her_main("Oh, is that all?", "angry", "base", "angry", "mid") # :(
         m "Yes... Pretty basic stuff for you, right?"
-        m "And you will be getting forty five house points afterwards of course."
+        m "And you will be getting {number=current_payout} house points afterwards of course."
         call her_main(".............", "normal", "squint", "angry", "mid")
         m "So... Are you up for it?"
         call her_main("I will see what I can do, [genie_name]...", "annoyed", "narrow", "angry", "R")
@@ -55,7 +58,7 @@ label hg_pr_kiss:
         call her_main("................", "annoyed", "narrow", "annoyed", "mid")
 
     elif her_tier < 5:
-        m "[hermione_name], forty five house points are up for grabs today!"
+        m "[hermione_name], {number=current_payout} house points are up for grabs today!"
         m "Are you interested?"
         call her_main("I suppose...", "annoyed", "narrow", "annoyed", "up")
         m "Great. All you need to do is make out with another girl."
@@ -65,7 +68,7 @@ label hg_pr_kiss:
         m "Great. See you after your classes then."
 
     else:
-        m "[hermione_name], forty five house points are up for grabs today!"
+        m "[hermione_name], {number=current_payout} house points are up for grabs today!"
         m "Are you interested?"
         call play_music("chipper_doodle") # HERMIONE'S THEME.
         call her_main("Sure, why not?", "base", "base", "base", "mid")
@@ -77,7 +80,6 @@ label hg_pr_kiss:
 
     call her_walk(action="leave")
 
-    $ current_payout += 45
     $ hg_pr_kiss.inProgress = True
 
     jump end_hermione_event
@@ -85,7 +87,7 @@ label hg_pr_kiss:
 
 label end_hg_pr_kiss:
     $ gryffindor += current_payout
-    m "The Gryffindor house gets [current_payout] points!"
+    m "The Gryffindor house gets {number=current_payout} points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave")

@@ -48,7 +48,7 @@ label hg_pf_titjob:
 
     # Points
     if her_tier <= 5:
-        m "Yes, [hermione_name]. [current_payout] to Gryffindor."
+        m "Yes, [hermione_name]. {number=current_payout} to Gryffindor."
         $ gryffindor += current_payout
     else:
         m "You may leave now, [hermione_name]."
@@ -139,11 +139,11 @@ label hg_pf_titjob_T1_intro_E1:
             jump back_to_titjob_choices
 
         "\"You'll get 45 house points.\"":
-            call her_main("Fortyfive house points...?", "open", "wink", "base", "mid")
+            call her_main("{number=current_payout} house points...?", "open", "wink", "base", "mid")
             call her_main("This could put Gryffindor back in the lead...", "annoyed", "narrow", "worried", "down")
             m "So,...is that a yes?"
             call her_main("That is a yes, [genie_name]...", "open", "closed", "base", "mid")
-            call her_main("Fortyfive points seem like a fair amount for-...", "open", "base", "base", "R")
+            call her_main("{number=current_payout} points seem like a fair amount for-...", "open", "base", "base", "R")
             g9 "For a titjob!"
             call her_main("(...)", "annoyed", "base", "angry", "mid")
 
@@ -151,7 +151,7 @@ label hg_pf_titjob_T1_intro_E1:
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ current_payout = 100
             $ her_mood = 0
-            call her_main("One hundred house points?!", "scream", "wide", "base", "mid")
+            call her_main("{number=current_payout} house points?!", "scream", "wide", "base", "mid")
             call her_main("This might be enough to put Gryffindor in the lead!", "smile", "wide", "base", "stare")
             m "So,...is that a yes?"
             call her_main("Yes, [genie_name]!", "smile", "happyCl", "base", "mid")
@@ -168,8 +168,8 @@ label hg_pf_titjob_T1_repeat:
     m "I'm just going to rub my cock between those precious tits of yours..."
     call her_main("This again...", "angry", "closed", "angry", "mid")
     call her_main("(...)", "annoyed", "narrow", "angry", "R")
-    call her_main("For fortyfive house points?", "open", "base", "angry", "mid")
-    m "Fortyfive house points, as always..."
+    call her_main("For {number=current_payout} house points?", "open", "base", "angry", "mid")
+    m "{number=current_payout} house points, as always..."
     call her_main("(...)", "annoyed", "narrow", "angry", "R")
     call her_main("Very well, [genie_name]", "open", "closed", "base", "mid")
     call her_main("But you have to promise me that you'll make it quick...", "annoyed", "base", "angry", "mid")
@@ -207,7 +207,7 @@ label hg_pf_titjob_T2_intro_E2:
     m "I would very much like to see those perfect fun-bags of yours again..."
     g9 "See them wrapped around my cock!"
     call her_main("Oh... Again?", "base", "narrow", "worried", "down")
-    call her_main("For fortyfive house points?", "soft", "narrow", "base", "mid_soft")
+    call her_main("For {number=current_payout} house points?", "soft", "narrow", "base", "mid_soft")
     m "Yes, [hermione_name]."
     call her_main("(...)", "annoyed", "base", "base", "R")
     call her_main("Very well then...", "smile", "happyCl", "base", "mid")

@@ -1243,9 +1243,9 @@ label hermione_intro_E6:
 
     label stupid_enogh:
         if current_payout == 1:
-            m "[current_payout] point to the Gryffindor house."
+            m "{number=current_payout} point to the Gryffindor house."
         else:
-            m "[current_payout] points to the Gryffindor house."
+            m "{number=current_payout} points to the Gryffindor house."
         $ gryffindor += current_payout
 
     call her_main("Yay!..............", "grin", "happyCl", "worried", "mid", emote="05", xpos="base", ypos="base", flip=False, trans=fade)

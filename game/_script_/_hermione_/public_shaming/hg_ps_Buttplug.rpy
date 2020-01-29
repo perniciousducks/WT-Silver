@@ -58,7 +58,7 @@ label hg_ps_buttplug:
         call her_main(".........", "annoyed", "narrow", "annoyed", "mid")
         m "How about we try one a little less... ambitious."
         call her_main("............", "upset", "closed", "base", "mid")
-        m "I'm willing to give Gryffindor fifty five points."
+        m "I'm willing to give Gryffindor fifty-five points."
         m "and All I ask for..."
         call her_main("..........?", "annoyed", "squint", "base", "mid")
         call nar(">You pull out the small butt plug from your desk.")
@@ -66,7 +66,7 @@ label hg_ps_buttplug:
         call her_main("!!!......", "angry", "base", "angry", "mid")
         m "Oh, come on... Just a harmless little baby one."
         call her_main("...", "disgust", "narrow", "base", "mid_soft")
-        m "Fifty five house points..."
+        m "Fifty-five house points..."
         call her_main("..............", "annoyed", "narrow", "angry", "R")
         call her_main("Fine.", "annoyed", "narrow", "annoyed", "mid")
         m "Fantastic."
@@ -149,7 +149,7 @@ label hg_ps_buttplug:
             m "Wearing your favourite little butt plug to class!"
             call her_main("...again?", "angry", "narrow", "base", "down")
             m "Sure, why not?"
-            m "And another fifty five house points for the Gryffindor house of course."
+            m "And another fifty-five house points for the Gryffindor house of course."
             call her_main("..........", "annoyed", "base", "worried", "R")
             m "So... Are you ok with that, [hermione_name]?"
             call her_main("I suppose so...", "annoyed", "narrow", "angry", "R")
@@ -168,7 +168,7 @@ label hg_ps_buttplug:
             m "How about this one then?"
             call her_main("Oh, ok then!", "smile", "happyCl", "base", "mid",emote="06")
             m "You'll do it that easily?"
-            call her_main("Well for fifty five house points I'd be crazy not to.", "base", "closed", "base", "mid")
+            call her_main("Well for fifty-five house points I'd be crazy not to.", "base", "closed", "base", "mid")
             call her_main("Plus I don't hate the way it feels", "open", "base", "base", "R")
             ">You hand her the butt plug."
             m "why don't you put it in now."
@@ -215,7 +215,7 @@ label hg_ps_buttplug:
             call her_main(".........", "angry", "base", "base", "mid",xpos="right",ypos="base")
             m "That you wear everyone's favourite magical butt plug to class!"
             call her_main("...again?", "angry", "narrow", "base", "down")
-            m "why not? This will be the easiest fifty five points you'll ever earn!"
+            m "why not? This will be the easiest fifty-five points you'll ever earn!"
             call her_main("..........", "annoyed", "base", "worried", "R")
             m "Do you have a problem with it, [hermione_name]?"
             call her_main("I suppose not...", "annoyed", "narrow", "angry", "R")
@@ -258,7 +258,7 @@ label hg_ps_buttplug:
                     "\"Done\"":
                         $ current_payout += 5
                         call her_main("thank you [genie_name], you won't regret it...", "open", "base", "base", "R")
-                    "\"Fifty five is all I can do.\"":
+                    "\"Fifty-five is all I can do.\"":
                         m "Any more and people might get suspicious."
                         call her_main("hmmmm I suppose you're right...", "annoyed", "narrow", "angry", "R")
                         call her_main("but as a present i'll show you anyway...", "base", "narrow", "worried", "down")
@@ -1027,7 +1027,7 @@ label hg_ps_buttplug_complete:
             m "Very good, [hermione_name]!"
 
     $ gryffindor += current_payout #55
-    m "The Gryffindor house gets [current_payout] points!"
+    m "The Gryffindor house gets {number=current_payout} points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave")

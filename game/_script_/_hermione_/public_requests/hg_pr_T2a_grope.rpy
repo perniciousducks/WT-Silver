@@ -4,6 +4,9 @@
 
 label hg_pr_grope:
 
+    # Setup
+    $ current_payout = 25
+
     if hg_pr_grope.counter < 1:
         m "{size=-4}(Tell her to go get touched by one of her classmates?){/size}"
         menu:
@@ -52,8 +55,8 @@ label hg_pr_grope:
         m "You are a pretty girl, it shouldn't be too hard."
         her "....................."
         call her_main("How many points would I receive after completing such a task, [genie_name]?", "disgust", "narrow", "base", "mid_soft")
-        m "Hm... Twenty five should do..."
-        call her_main("Twenty five house points...", "annoyed", "narrow", "angry", "R")
+        m "Hm... {number=current_payout} should do..."
+        call her_main("{number=current_payout} house points...", "annoyed", "narrow", "angry", "R")
         her "...."
         call her_main("Well, so be it then...", "disgust", "narrow", "base", "mid_soft")
         m "Great..."
@@ -64,7 +67,7 @@ label hg_pr_grope:
         call her_main("[genie_name]?", "base", "base", "base", "mid")
         m "How about you go let one of your classmates molest you a little again?"
         call her_main("........", "upset", "closed", "base", "mid")
-        m "Twenty five house points, [hermione_name]."
+        m "{number=current_payout} house points, [hermione_name]."
         call her_main("[genie_name], it's just...", "annoyed", "narrow", "angry", "R")
         call her_main("I do not understand why I must do things like that...", "annoyed", "narrow", "annoyed", "mid")
         m "To help out your house?"
@@ -96,7 +99,6 @@ label hg_pr_grope:
 
     call her_walk(action="leave")
 
-    $ current_payout = 25
     $ hg_pr_grope.inProgress = True
 
     jump end_hermione_event
@@ -104,7 +106,7 @@ label hg_pr_grope:
 
 label end_hg_pr_grope:
     $ gryffindor += current_payout
-    m "The Gryffindor house gets [current_payout] points!"
+    m "The Gryffindor house gets {number=current_payout} points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave")

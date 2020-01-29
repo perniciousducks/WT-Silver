@@ -1076,9 +1076,9 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
         m "well then, Here's your payment, [lun_name]."
     $ gold -= current_payout
     $ luna_gold += current_payout
-    ">You hand Luna [current_payout] gold."
+    ">You hand Luna {number=current_payout} gold."
     if current_payout <= 40:
-        call lun_main("(only [current_payout]?) *hmph*","upset","mad","angry","R")
+        call lun_main("(only {number=current_payout}?) *hmph*","upset","mad","angry","R")
         call lun_main("Thank you, [lun_genie_name].","normal","suspicious","angry","R")
     else:
         call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")

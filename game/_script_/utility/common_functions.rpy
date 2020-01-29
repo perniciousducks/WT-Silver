@@ -9,7 +9,7 @@ init -1 python:
     import os as system
 
     get_volume_preference = renpy.game.preferences.get_volume
-    
+
     def num_to_word(n, readable=True):
         """Transcript numbers (integers) into readable words."""
         n = int(n)
@@ -25,22 +25,35 @@ init -1 python:
             s = str(n)
             groups = (len(s)+2)/3
             s = s.zfill(groups*3)
+
             for i in xrange(0, groups*3, 3):
-                h,t,u = int(s[i]),int(s[i+1]),int(s[i+2])
+                h,t,u = int(s[i]), int(s[i+1]), int(s[i+2])
                 g = groups-(i/3+1)
-                if h >= 1:
-                    output.append(units[h])
-                    output.append("hundred")
+
+                if h > 0:
+                    output.append(units[h]+" hundred")
                 if t > 1:
-                    output.append(tens[t])
-                    if u >= 1: output.append(units[u])
+                    if u > 0:
+                        output.append(tens[t]+"-"+units[u])
+                    else:
+                        output.append(tens[t])
                 elif t == 1:
-                    output.append(teens[u]) if u >=1 else output.append(tens[t])
+                    if u > 0:
+                        output.append(teens[u])  
+                    else:
+                        output.append(tens[t])
                 else:
-                    if u >= 1: output.append(units[u])
-                if (g>=1) and ((h+t+u)>0): output.append(thousands[g]+",")
+                    if u > 0: 
+                        output.append(units[u])
+
+                if g > 0 and (h+t+u) > 0:
+                    if i == (groups*3)-6:
+                        output.append(thousands[g]+" and")
+                    else:
+                        output.append(thousands[g]+",")
+                        
         if readable:
-            return " ".join(output)
+            output = " ".join(output)
         return output
         
     def clamp(n, smallest, largest):

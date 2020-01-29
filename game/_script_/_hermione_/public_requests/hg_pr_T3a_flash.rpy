@@ -3,6 +3,9 @@
 ### Flash A Classmate ###
 
 label hg_pr_flash:
+    
+    # Setup
+    $ current_payout = 35
 
     if hg_pr_flash.counter < 1:
         m "{size=-4}(Tell her to flash her tits to one of her classmates?){/size}"
@@ -65,7 +68,7 @@ label hg_pr_flash:
         m "Yes, go do that and then report back to me..."
         call her_main("Will I get paid for this?", "annoyed", "narrow", "angry", "R")
         m "Of course you will get paid for this, [hermione_name]. Don't be silly."
-        m "Thirty five house points. The usual rate..."
+        m "{number=current_payout} house points. The usual rate..."
         call her_main(".................", "annoyed", "narrow", "angry", "R")
         call her_main("Well alright... I will see what I can do, [genie_name]...", "disgust", "narrow", "base", "mid_soft")
 
@@ -89,7 +92,7 @@ label hg_pr_flash:
         m "What was that, [hermione_name]?"
         call her_main("I said I'd better go then, [genie_name].", "annoyed", "narrow", "angry", "R")
         her "my classes are about to start..."
-        m "Thirty five house points will be waiting for you here upon your return, [hermione_name]."
+        m "{number=current_payout} house points will be waiting for you here upon your return, [hermione_name]."
         call her_main("..............", "annoyed", "narrow", "annoyed", "mid")
 
     else:
@@ -99,7 +102,7 @@ label hg_pr_flash:
         call her_main("I am getting paid for this, am I not?", "base", "narrow", "base", "mid_soft")
         m "Of course."
         call her_main("Why would I complain about a simple task like this then?", "open", "closed", "base", "mid")
-        her "Thirty five house points is a fair prices for a few seconds of excitement... err..."
+        her "{number=current_payout} house points is a fair prices for a few seconds of excitement... err..."
         call her_main("...I mean, embarrassment.", "base", "happyCl", "base", "mid")
         m "{size=-3}(She changed this much already?){/size}"
         g9 "{size=-3}(I'm so good at this training thing that it's starting to get creepy!){/size}"
@@ -108,7 +111,7 @@ label hg_pr_flash:
 
     call her_walk(action="leave")
 
-    $ current_payout = 35
+    
     $ hg_pr_flash.inProgress = True
 
     jump end_hermione_event
@@ -116,7 +119,7 @@ label hg_pr_flash:
 
 label end_hg_pr_flash:
     $ gryffindor += current_payout
-    m "The Gryffindor house gets [current_payout] points!"
+    m "The Gryffindor house gets {number=current_payout} points!"
     her "Thank you, [genie_name]."
 
     call her_walk("door", "base")
@@ -178,7 +181,7 @@ label hg_pr_flash_T1_E1:
     m "Well, I can't just give you the points for nothing, [hermione_name]."
     call her_main("Of course, [genie_name]... I understand...", "open", "closed", "base", "mid")
     call her_main("I shall try harder next time... I promise...", "annoyed", "base", "worried", "R")
-    m "Then I will just put these thirty five points aside for now..."
+    m "Then I will just put these {number=current_payout} points aside for now..."
     call her_main("Thank you, [genie_name]...", "annoyed", "base", "worried", "R")
     her "..."
     her "I'd better go now."

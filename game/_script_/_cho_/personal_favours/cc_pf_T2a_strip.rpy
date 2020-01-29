@@ -1531,7 +1531,7 @@ label cc_pf_strip_T2_E1:
     call cho_main("That's not why-","angry","closed","sad","mid")
     call cho_main("Please, Sir. Just this once!","soft","narrow","sad","mid")
     call cho_main("I won't ask for payment ever again!","soft","base","sad","mid")
-    call cho_main("I'll strip naked for you, for... [current_payout] house points!","angry","closed","sad","mid") # Embarrassed
+    call cho_main("I'll strip naked for you, for... {number=current_payout} house points!","angry","closed","sad","mid") # Embarrassed
 
     menu:
         "\"Yes! Make your house proud, you slut! Earn those points!\"":
@@ -1546,7 +1546,7 @@ label cc_pf_strip_T2_E1:
             call cho_main("That's the entire reason I want them!!!","open","narrow","angry","R")
             m "Seriously?"
             call cho_main("Give me those points, or I will walk right out of here!","open","narrow","angry","mid")
-            m "Fine. If you're that insistent on [current_payout] meagre points..."
+            m "Fine. If you're that insistent on {number=current_payout} meagre points..."
             call cho_main("Thank you.","soft","closed","base","mid")
 
 

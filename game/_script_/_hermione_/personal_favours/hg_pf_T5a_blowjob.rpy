@@ -47,7 +47,7 @@ label hg_pf_blowjob:
         call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
 
     if her_tier < 6:
-        m "Yes, [hermione_name]. [current_payout] points to Gryffindor."
+        m "Yes, [hermione_name]. {number=current_payout} points to Gryffindor."
         $ gryffindor += current_payout
     else:
         m "You can go now, [hermione_name]."
@@ -81,7 +81,7 @@ label hg_pf_blowjob_fail:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
-    m "I plan to grant Gryffindor fiftyfive house points today..."
+    m "I plan to grant Gryffindor {number=current_payout} house points today..."
     m "If you suck me off..."
 
     $ hg_pf_blowjob.counter -= 1
@@ -97,7 +97,7 @@ label hg_pf_blowjob_T0_fail_intro:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
-    m "I plan to grant Gryffindor fiftyfive house points today..."
+    m "I plan to grant Gryffindor {number=current_payout} house points today..."
     m "If you suck me off..."
     call her_main("Suck you...{w}off?", "disgust", "wide", "base", "mid")
     call her_main("With my mouth?!", "disgust", "wide", "base", "stare")
@@ -134,7 +134,7 @@ label hg_pf_blowjob_T0_fail_repeat:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
-    m "I plan to grant Gryffindor fiftyfive house points today..."
+    m "I plan to grant Gryffindor {number=current_payout} house points today..."
     call her_main("And let me guess...", "open", "closed", "angry", "mid")
     call her_main("You'd like me to \"suck you off\" for it?", "open", "base", "angry", "mid")
     g9 "That is correct!"
@@ -172,7 +172,7 @@ label hg_pf_blowjob_T1_intro_E1:
     call her_main("", "base", "base", "base", "mid", xpos="mid", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes, [genie_name]?", "base", "base", "base", "mid")
-    m "I plan to grant Gryffindor fiftyfive house points today..."
+    m "I plan to grant Gryffindor {number=current_payout} house points today..."
     m "If you suck me off..."
     call her_main("Oh...", "open", "narrow", "worried", "down")
     call her_main("Alright.", "base", "narrow", "worried", "down")
@@ -1136,7 +1136,7 @@ label hg_hidden_blowjob_tonks:
     call her_main("(Oh wow, that's a lot of points!)", "sucking", "narrow", "annoyed", "up")
 
     call her_chibi_scene("bj")
-    g4 "You can't give her that many points, [tonks_name]! She's already getting [current_payout] from me!"
+    g4 "You can't give her that many points, [tonks_name]! She's already getting {number=current_payout} from me!"
     m "Do you even realise how many days I'll have to spend with Snape, of all people, to get even with Slytherin again, after this?"
     call ton_main("So what? The girl has clearly earned it!","open","base","angry","mid")
     call ton_main("Sucking her headmaster's cock...","horny","base","angry","down")

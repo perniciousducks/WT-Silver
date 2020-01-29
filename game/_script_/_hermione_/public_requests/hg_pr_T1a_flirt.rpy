@@ -4,6 +4,9 @@
 
 label hg_pr_flirt:
 
+    # Setup
+    $ current_payout = 5
+
     if hg_pr_flirt.counter < 1:
         m "{size=-4}(Ask her to go flirt with some boys from Slytherin?){/size}"
         menu:
@@ -73,7 +76,6 @@ label hg_pr_flirt:
 
     call her_walk(action="leave")
 
-    $ current_payout = 5
     $ hg_pr_flirt.inProgress = True
 
     jump end_hermione_event
@@ -81,7 +83,7 @@ label hg_pr_flirt:
 # End Event
 label end_hg_pr_flirt:
     $ gryffindor += current_payout
-    m "The Gryffindor house gets [current_payout] points!"
+    m "The Gryffindor house gets {number=current_payout} points!"
     call her_main("Thank you, [genie_name].", face="happy")
 
     call her_walk(action="leave")

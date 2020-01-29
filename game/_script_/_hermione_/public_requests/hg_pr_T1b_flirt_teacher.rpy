@@ -4,6 +4,9 @@
 
 label hg_pr_flirt_teacher:
 
+    # Setup
+    $ current_payout = 15
+
     if hg_pr_flirt_teacher.counter < 1:
         m "{size=-4}(Tell her to be flirtatious with her teachers today?){/size}"
         menu:
@@ -40,7 +43,6 @@ label hg_pr_flirt_teacher:
 
     call her_walk(action="leave")
 
-    $ current_payout = 15
     $ hg_pr_flirt_teacher.inProgress = True
 
     jump end_hermione_event
@@ -49,7 +51,7 @@ label hg_pr_flirt_teacher:
 # End Event
 label end_hg_pr_flirt_teacher:
     $ gryffindor += current_payout
-    m "The Gryffindors get [current_payout] points!"
+    m "The Gryffindors get {number=current_payout} points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave")
@@ -417,7 +419,7 @@ label hg_pr_flirt_teacher_T3_E1: # Filch
     call her_main("Why would he do such a thing?", "mad", "happyCl", "worried", "mid", tears="soft_blink")
     her "One second we were just talking and then..."
     m "Well, your noble  sacrifice shall not go unnoticed, [hermione_name]!"
-    m "Fifteen points to \"Gryf--"
+    m "{number=current_payout} points to \"Gryf--"
     call her_main("Professor, please wait.", "soft", "base", "base", "mid", tears="soft")
     m "Huh?"
     call her_main("Well, aren't you going to do something about this?", "open", "base", "base", "mid")

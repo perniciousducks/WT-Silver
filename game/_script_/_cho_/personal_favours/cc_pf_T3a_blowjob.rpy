@@ -96,7 +96,7 @@ label cho_favor_3: # Not in use.
         if cho_mood >= 6:
             jump cho_mood_blowjob
         call cho_main("Okay. but i'm only doing this to help my House.","smile","base","base","mid")
-        call cho_main("And i want [current_payout] points.","smile","base","base","mid")
+        call cho_main("And I want {number=current_payout} points.","smile","base","base","mid")
         m "Yes, yes. Now get sucking."
         jump cho_favor_3_1
 
@@ -111,7 +111,7 @@ label cho_favor_3_1:
             call cho_main("Of course I'm serious! I'm not a whore like Hermione.","smile","base","base","mid")
             m "You just suck my cock in your mouth like a lollipop."
             call cho_main("(Like candy? ew... No way, that's nasty. Old...worm tasting like candy...)","smile","base","base","mid")
-            call cho_main("([current_payout]! [current_payout]!)","smile","base","base","mid")
+            call cho_main("({number=current_payout}! {number=current_payout}!)","smile","base","base","mid")
             "Cho awkwardly drops to her knees and opens her mouth, thrusting her tongue out."
             call cho_main("hoh's hhisss hHohessor?(How's this professor?)","smile","base","base","mid")
             "You feel your cock twitch under your robes at the sight of your student crouched down on her knees like a whore."
@@ -175,7 +175,7 @@ label cho_favor_3_1:
                             "After a few moments it's completely full."
                             call cho_main("Thank you, sir.","smile","base","base","mid")
                             "#gain item [Cum Goblet]"
-                            m "Yes...well, [current_payout] to Ravenclaw."
+                            m "Yes... well, {number=current_payout} points to Ravenclaw."
                             jump end_cho_event
 
                         "-Make her swallow it.-":
@@ -190,7 +190,7 @@ label cho_favor_3_1:
                             call cho_main("Blahg...","smile","base","base","mid")
                             call cho_main("Is...","smile","base","base","mid")
                             call cho_main("is...is that okay?","smile","base","base","mid")
-                            m "Very good. [current_payout] to Ravenclaw."
+                            m "Very good. {number=current_payout} points to Ravenclaw."
                             call cho_main("Thank you, Profe-","smile","base","base","mid")
                             $ renpy.play('sounds/burp.mp3')
                             call cho_main("...","smile","base","base","mid")
@@ -201,7 +201,7 @@ label cho_favor_3_1:
                     "You grab your cock and quickly stroke it."
                     "After a few fast pumps your cock explodes, coating Cho in your smelly cum."
                     call cho_main("W-what?...","smile","base","base","mid")
-                    m "[current_payout] to Ravenclaw. Now, get out of my office."
+                    m "{number=current_payout} points to Ravenclaw. Now, get out of my office."
                     call cho_main("But I can't go out like this!","smile","base","base","mid")
                     m "Get out."
                     call cho_main("...","smile","base","base","mid")
@@ -217,7 +217,7 @@ label cho_favor_3_1:
             call cho_main("I know that! But after that...","smile","base","base","mid")
             m "Just suck on it and tease it with your tongue."
             call cho_main("(Tease it with my tongue? ew. that sounds gross...)","smile","base","base","mid")
-            call cho_main("([current_payout]! [current_payout]!)","smile","base","base","mid")
+            call cho_main("({size=-4}{number=current_payout}...{/size} {number=current_payout} points!)","smile","base","base","mid")
             "Cho awkwardly drops to her knees and opens her mouth, thrusting her tongue out."
             call cho_main("'oo cahn puh i' In 'ow...(you can put it in now...)","smile","base","base","mid")
             "You feel your cock thicken under your robes."
@@ -275,7 +275,7 @@ label cho_favor_3_1:
 
                             menu:
                                 "-Fine 5 extra points-":
-                                    m "Very well, Ms. Chang. [current_payout] to Ravenclaw."
+                                    m "Very well, Ms. Chang. {number=current_payout} points to Ravenclaw."
                                     call cho_main("Thank you, sir.","smile","base","base","mid")
                                     $ current_payout += 5
                                     jump end_cho_event
@@ -287,7 +287,7 @@ label cho_favor_3_1:
                                     call cho_main("MY name is Chang, you old jerk!","smile","base","base","mid")
                                     m "Do you want your points or not?"
                                     call cho_main("yes, please.","smile","base","base","mid")
-                                    m "[current_payout] to Ravenclaw."
+                                    m "{number=current_payout} points to Ravenclaw."
                                     jump end_cho_event
                         "-Warn Her-":
                             m "I'm going to cum!"
@@ -333,7 +333,7 @@ label cho_favor_3_1:
                                             "After a few moments it's completely full."
                                             call cho_main("Thank you, sir.","smile","base","base","mid")
                                             "#gain item [Cum Goblet]"
-                                            m "Yes...well, [current_payout] to Ravenclaw."
+                                            m "Yes...well, {number=current_payout} points to Ravenclaw."
                                             jump end_cho_event
                                         "-Make her swallow it.-":
                                             m "Hey, I'm paying extra so you'd better swallow it."
@@ -347,7 +347,7 @@ label cho_favor_3_1:
                                             call cho_main("Blahg...","smile","base","base","mid")
                                             call cho_main("Is...","smile","base","base","mid")
                                             call cho_main("is...is that okay?","smile","base","base","mid")
-                                            m "Very good. [current_payout] to Ravenclaw."
+                                            m "Very good. {number=current_payout} points to Ravenclaw."
                                             call cho_main("THank you, Profe-","smile","base","base","mid")
                                             $ renpy.play('sounds/burp.mp3')
                                             call cho_main("...","smile","base","base","mid")
@@ -358,7 +358,7 @@ label cho_favor_3_1:
                                     "You grab your cock and quickly stroke it."
                                     "After a few fast pumps your cock explodes, coating Cho in your smelly cum."
                                     call cho_main("W-what?...","smile","base","base","mid")
-                                    m "[current_payout] to Ravenclaw. Now, get out of my office."
+                                    m "{number=current_payout} points to Ravenclaw. Now, get out of my office."
                                     call cho_main("But I can't go out like this!","smile","base","base","mid")
                                     m "Get out."
                                     call cho_main("...","smile","base","base","mid")
@@ -374,7 +374,7 @@ label cho_favor_3_1:
             m "Yes. Think of it like a lollipop."
             call cho_main("(Like a lollipop? That might be okay...)","smile","base","base","mid")
             call cho_main("(Just ignore the fact that that the wrinkly, old cock in my mouth belongs to a crusty, old wizard...)","smile","base","base","mid")
-            call cho_main("([current_payout]! current_payout]!)","smile","base","base","mid")
+            call cho_main("({number=current_payout} points!)","smile","base","base","mid")
             "Cho awkwardly drops to her knees and opens her mouth, thrusting her tongue out."
             call cho_main("I' I' 'ood 'o'esser?(is this good, professor?)","smile","base","base","mid")
             "You gently carress Cho's warm cheek with the back of your hand."
@@ -410,12 +410,12 @@ label cho_favor_3_1:
             menu:
                 "-That's probably enough-":
                     m "That's probably enough for now."
-                    m "[current_payout] to Ravenclaw."
+                    m "{number=current_payout} points to Ravenclaw."
                     jump end_cho_event
 
                 "-Keep going-":
                     m "We're almost done, girl."
-                    call cho_main("(this is definitely worth [current_payout]...)","smile","base","base","mid")
+                    call cho_main("(this is definitely worth {number=current_payout} points...)","smile","base","base","mid")
                     "You gently guide your cock back into her mouth, careful not to go too deep."
                     "Cho's tongue rolls around your cock with sweet effort, slipping around your head."
                     "To your surprise her tongue finds your hole, and the assault brings you to the edge."
@@ -433,7 +433,7 @@ label cho_favor_3_1:
                             call cho_main("(oh god...there was so much..)","smile","base","base","mid")
                             call cho_main("Gross!","smile","base","base","mid")
                             call cho_main("gross! warn me next time, okay?","smile","base","base","mid")
-                            m "That was great. [current_payout] to Ravenclaw."
+                            m "That was great. {number=current_payout} points to Ravenclaw."
                             jump end_cho_event
 
                         "-Warn Her-":
@@ -472,7 +472,7 @@ label cho_favor_3_1:
                                             "After a few moments it's completely full."
                                             call cho_main("Thank you, sir.","smile","base","base","mid")
                                             #gain item [Cum Goblet]
-                                            m "Yes...well, [current_payout] to Ravenclaw."
+                                            m "Yes...well, {number=current_payout} points to Ravenclaw."
                                             jump end_cho_event
                                         "-Make her swallow it.-":
                                             m "Hey, I'm paying extra so you'd better swallow it all."
@@ -486,7 +486,7 @@ label cho_favor_3_1:
                                             call cho_main("Blahg...","smile","base","base","mid")
                                             call cho_main("...","smile","base","base","mid")
                                             call cho_main("...All gone.","smile","base","base","mid")
-                                            m "Very good. [current_payout] to Ravenclaw."
+                                            m "Very good. {number=current_payout} points to Ravenclaw."
                                             call cho_main("THank you, Profe-","smile","base","base","mid")
                                             $ renpy.play('sounds/burp.mp3')
                                             call cho_main("...","smile","base","base","mid")
@@ -515,7 +515,7 @@ label cho_favor_3_1:
                                             "After a few moments it's completely full."
                                             call cho_main("Thank you, sir.","smile","base","base","mid")
                                             #gain item [Cum Goblet]
-                                            m "Yes...well, [current_payout] to Ravenclaw."
+                                            m "Yes...well, {number=current_payout} points to Ravenclaw."
                                             jump end_cho_event
                                         "-Make her swallow it.-":
                                             m "Hey, I'm paying extra so you'd better swallow it."
@@ -529,7 +529,7 @@ label cho_favor_3_1:
                                             call cho_main("Blahg...","smile","base","base","mid")
                                             call cho_main("Is...","smile","base","base","mid")
                                             call cho_main("is...is that okay?","smile","base","base","mid")
-                                            m "Very good. [current_payout] to Ravenclaw."
+                                            m "Very good. {number=current_payout} points to Ravenclaw."
                                             call cho_main("THank you, Profe-","smile","base","base","mid")
                                             $ renpy.play('sounds/burp.mp3')
                                             call cho_main("...","smile","base","base","mid")
@@ -542,7 +542,7 @@ label cho_favor_3_1:
                                     #Genie cums.
                                     "After a few fast pumps your cock explodes, coating Cho in your non-kosher cum."
                                     call cho_main("W-what?...","smile","base","base","mid")
-                                    m "[current_payout] to Ravenclaw. Now, get out of my office."
+                                    m "{number=current_payout} points to Ravenclaw. Now, get out of my office."
                                     call cho_main("but I can't go out like this!","smile","base","base","mid")
                                     m "Get out."
                                     call cho_main("...","smile","base","base","mid")
@@ -558,7 +558,7 @@ label cho_favor_3_2:
         if cho_mood > 10:
             jump cho_mood_blowjob
 
-        call cho_main("[current_payout] points.","smile","base","base","mid")
+        call cho_main("{number=current_payout} points.","smile","base","base","mid")
         m "Of course."
         "Cho drops to her knees and waits patiently."
         call cho_main("whenever you're ready.","smile","base","base","mid")
@@ -630,7 +630,7 @@ label cho_favor_3_2:
                                 menu:
 
                                     "-Fine 5 extra points-":
-                                        m "Fine, Ms. Chang. [current_payout] to Ravenclaw."
+                                        m "Fine, Ms. Chang. {number=current_payout} points to Ravenclaw."
                                         call cho_main("Thank you, sir.","smile","base","base","mid")
                                         jump end_cho_event
 
@@ -642,7 +642,7 @@ label cho_favor_3_2:
                                         #Cho_Sad"It's not even a hard name..."
                                         m "DO you want your points or not?"
                                         call cho_main("yes, please.","smile","base","base","mid")
-                                        m "[current_payout] to Ravenclaw."
+                                        m "{number=current_payout} points to Ravenclaw."
                                         jump end_cho_event
 
                             "-Warn Her-":
@@ -683,7 +683,7 @@ label cho_favor_3_2:
                                                 "After a few moments it's completely full."
                                                 call cho_main("Thank you, sir.","smile","base","base","mid")
                                                 #gain item [Cum Goblet]
-                                                m "Yes...well, [current_payout] to Ravenclaw."
+                                                m "Yes...well, {number=current_payout} points to Ravenclaw."
                                                 jump end_cho_event
 
                                             "-Make her swallow it.-":
@@ -700,7 +700,7 @@ label cho_favor_3_2:
                                                 call cho_main("Was...","smile","base","base","mid")
                                                 $ renpy.play('sounds/gulp.mp3')
                                                 call cho_main("Was...that what you wanted?","smile","base","base","mid")
-                                                m "Yes. [current_payout] to Ravenclaw."
+                                                m "Yes. {number=current_payout} points to Ravenclaw."
                                                 call cho_main("THank you, Profe-","smile","base","base","mid")
                                                 $ renpy.play('sounds/burp.mp3')
                                                 call cho_main("...","smile","base","base","mid")
@@ -730,7 +730,7 @@ label cho_favor_3_2:
                                                 "After a few moments it's completely full."
                                                 call cho_main("Thank you, sir.","smile","base","base","mid")
                                                 #gain item [Cum Goblet]
-                                                m "Yes...well, [current_payout] to Ravenclaw."
+                                                m "Yes...well, {number=current_payout} points to Ravenclaw."
                                                 jump end_cho_event
                                             "-Make her swallow it.-":
                                                 m "Hey, I'm paying extra so you'd better swallow it."
@@ -744,7 +744,7 @@ label cho_favor_3_2:
                                                 call cho_main("Blahg...","smile","base","base","mid")
                                                 call cho_main("Is...","smile","base","base","mid")
                                                 call cho_main("Is...is that okay?","smile","base","base","mid")
-                                                m "Very good. [current_payout] to Ravenclaw."
+                                                m "Very good. {number=current_payout} points to Ravenclaw."
                                                 call cho_main("THank you, Profe-","smile","base","base","mid")
                                                 $ renpy.play('sounds/burp.mp3')
                                                 call cho_main("...","smile","base","base","mid")
@@ -757,7 +757,7 @@ label cho_favor_3_2:
                                         #Genie cums.
                                         "After a few fast pumps your cock explodes, coating Cho in your smelly cum."
                                         call cho_main("W-what?...","smile","base","base","mid")
-                                        m "[current_payout] to Ravenclaw. Now, get out of my office."
+                                        m "{number=current_payout} points to Ravenclaw. Now, get out of my office."
                                         call cho_main("but I can't go out like this!","smile","base","base","mid")
                                         m "Get out."
                                         call cho_main("...","smile","base","base","mid")
@@ -801,7 +801,7 @@ label cho_favor_3_2:
                                 menu:
 
                                     "-I was pretty rough. 10 extra points.-":
-                                        m "Alright, Ms. Chang. [current_payout] to Ravenclaw."
+                                        m "Alright, Ms. Chang. {number=current_payout} points to Ravenclaw."
                                         call cho_main("That's all? I want more next time.","smile","base","base","mid")
                                         jump end_cho_event
 
@@ -813,7 +813,7 @@ label cho_favor_3_2:
                                         call cho_main("MY name is Chang, you old jerk!","smile","base","base","mid")
                                         m "DO you want your points or not?"
                                         call cho_main("yes, please.","smile","base","base","mid")
-                                        m "[current_payout] to Ravenclaw."
+                                        m "{number=current_payout} points to Ravenclaw."
                                         jump end_cho_event
 
                             "-Warn Her-":
@@ -852,7 +852,7 @@ label cho_favor_3_2:
                                                 "After a few moments it's completely full."
                                                 call cho_main("Thank you, sir.","smile","base","base","mid")
                                                 #gain item [Cum Goblet]
-                                                m "Yes...well, [current_payout] to Ravenclaw."
+                                                m "Yes...well, {number=current_payout} points to Ravenclaw."
                                                 jump end_cho_event
 
                                             "-Make her swallow it.-":
@@ -867,7 +867,7 @@ label cho_favor_3_2:
                                                 call cho_main("Blahg...","smile","base","base","mid")
                                                 call cho_main("Is...","smile","base","base","mid")
                                                 call cho_main("is...is that okay?","smile","base","base","mid")
-                                                m "Very good. [current_payout] to Ravenclaw."
+                                                m "Very good. {number=current_payout} points to Ravenclaw."
                                                 call cho_main("Thank you, Profe-","smile","base","base","mid")
                                                 $ renpy.play('sounds/burp.mp3')
                                                 call cho_main("...","smile","base","base","mid")
@@ -898,7 +898,7 @@ label cho_favor_3_2:
                                                 "After a few moments it's completely full."
                                                 call cho_main("Thank you, sir.","smile","base","base","mid")
                                                 #gain item [Cum Goblet]
-                                                m "Yes...well, [current_payout] to Ravenclaw."
+                                                m "Yes...well, {number=current_payout} points to Ravenclaw."
                                                 jump end_cho_event
                                             "-Make her swallow it.-":
                                                 m "Hey, I'm paying extra so you'd better swallow it."
@@ -912,7 +912,7 @@ label cho_favor_3_2:
                                                 call cho_main("Blahg...","smile","base","base","mid")
                                                 call cho_main("Is...","smile","base","base","mid")
                                                 call cho_main("is...is that okay?","smile","base","base","mid")
-                                                m "Very good. [current_payout] to Ravenclaw."
+                                                m "Very good. {number=current_payout} points to Ravenclaw."
                                                 call cho_main("Thank you, Profe-","smile","base","base","mid")
                                                 $ renpy.play('sounds/burp.mp3')
                                                 call cho_main("...","smile","base","base","mid")
@@ -930,7 +930,7 @@ label cho_favor_3_2:
                                         #Genie cums.
                                         "Your cock explodes, coating the defiant girl in your smelly cum."
                                         call cho_main("...","smile","base","base","mid")
-                                        m "[current_payout] to Ravenclaw. Now, get out of my office."
+                                        m "{number=current_payout} points to Ravenclaw. Now, get out of my office."
                                         call cho_main("......","smile","base","base","mid")
                                         m "Get out."
                                         call cho_main("...","smile","base","base","mid")
@@ -951,7 +951,7 @@ label cho_favor_3_3:
     m "Don't you want some points or something?"
     call cho_main("What?","smile","base","base","mid")
     call cho_main("Oh, yeah.","smile","base","base","mid")
-    call cho_main("That'll be [current_payout] points.","smile","base","base","mid")
+    call cho_main("That'll be {number=current_payout} points.","smile","base","base","mid")
 
     menu:
 
@@ -1043,7 +1043,7 @@ label cho_favor_3_3:
                     m "Thank you?"
                     call cho_main("i'll take my points now.","smile","base","base","mid")
                     m "..."
-                    m "...Yes, of course. [current_payout] to Ravenclaw."
+                    m "...Yes, of course. {number=current_payout} points to Ravenclaw."
                     jump end_cho_event
 
 
@@ -1087,7 +1087,7 @@ label cho_favor_3_3:
                                     call cho_main("Thank you, sir.","smile","base","base","mid")
                                     "Cho licks around the rim of the goblet cleaning it for you."
                                     #gain item [Cum Goblet]
-                                    m "[current_payout] to Ravenclaw."
+                                    m "{number=current_payout} points to Ravenclaw."
                                     jump end_cho_event
 
                                 "-Make her swallow it.-":
@@ -1101,7 +1101,7 @@ label cho_favor_3_3:
                                     call cho_main("Muh...","smile","base","base","mid")
                                     call cho_main("...","smile","base","base","mid")
                                     call cho_main("...Yummy.","smile","base","base","mid")
-                                    m "You whore. [current_payout] to Ravenclaw."
+                                    m "You whore. {number=current_payout} points to Ravenclaw."
                                     call cho_main("THank you, Profe-","smile","base","base","mid")
                                     $ renpy.play('sounds/burp.mp3')
                                     call cho_main("...","smile","base","base","mid")
@@ -1128,7 +1128,7 @@ label cho_favor_3_3:
                             call cho_main("(So much...)","smile","base","base","mid")
                             "When it's over your cock slips away from Cho's lips, leaving her dazed."
                             call cho_main("THank you, Dumblesir...","smile","base","base","mid")
-                            m "[current_payout] to Ravenclaw."
+                            m "{number=current_payout} points to Ravenclaw."
                             jump end_cho_event
 
                         "-Cum on her face.-":
@@ -1149,7 +1149,7 @@ label cho_favor_3_3:
                                 call cho_main("Yes...","smile","base","base","mid")
                                 call cho_main("Oh my god...","smile","base","base","mid")
                                 call cho_main("that was amazing.","smile","base","base","mid")
-                                m "[current_payout] to Ravenclaw."
+                                m "{number=current_payout} points to Ravenclaw."
                                 call cho_main("...","smile","base","base","mid")
                                 call cho_main("...i'm completely covered, aren't I?","smile","base","base","mid")
                                 m "Get out."
@@ -1166,7 +1166,7 @@ label cho_favor_3_3:
             call cho_main("Professor! that sounds so dirty.","smile","base","base","mid")
             m "Get on your knees and open your mouth."
             call cho_main("Well...","smile","base","base","mid")
-            call cho_main("Well...I am getting [current_payout] house Points...","smile","base","base","mid")
+            call cho_main("Well...I am getting {number=current_payout} house Points...","smile","base","base","mid")
             "Cho slides down to her knees and opens her mouth, sticking her tongue out."
             call cho_main("ah Oo 'ea'y?(are you Ready?)","smile","base","base","mid")
             "Your cock throbs against your heavy robes."
@@ -1215,7 +1215,7 @@ label cho_favor_3_3:
                     m "Thank you?"
                     call cho_main("I'll take my points now.","smile","base","base","mid")
                     m "..."
-                    m "...Yes, of course. [current_payout] to Ravenclaw."
+                    m "...Yes, of course. {number=current_payout} points to Ravenclaw."
                     jump end_cho_event
 
 
@@ -1259,7 +1259,7 @@ label cho_favor_3_3:
                                     call cho_main("Thank you, sir.","smile","base","base","mid")
                                     "Cho licks around the rim of the goblet cleaning it for you."
                                     #gain item [Cum Goblet]
-                                    m "[current_payout] to Ravenclaw."
+                                    m "{number=current_payout} points to Ravenclaw."
                                     jump end_cho_event
 
                                 "-Make her swallow it.-":
@@ -1273,7 +1273,7 @@ label cho_favor_3_3:
                                     call cho_main("Muh...","smile","base","base","mid")
                                     call cho_main("...","smile","base","base","mid")
                                     call cho_main("...Yummy.","smile","base","base","mid")
-                                    m "You whore. [current_payout] to Ravenclaw."
+                                    m "You whore. {number=current_payout} points to Ravenclaw."
                                     call cho_main("Thank you, Profe-","smile","base","base","mid")
                                     $ renpy.play('sounds/burp.mp3')
                                     call cho_main("...","smile","base","base","mid")
@@ -1302,7 +1302,7 @@ label cho_favor_3_3:
                             call cho_main("Thank","smile","base","base","mid")
                             call cho_main("Thank you","smile","base","base","mid")
                             call cho_main("Thank you, Dumbledore sir...","smile","base","base","mid")
-                            m "[current_payout] to Ravenclaw."
+                            m "{number=current_payout} points to Ravenclaw."
                             jump end_cho_event
 
                         "-Cum on her face.-":
@@ -1323,7 +1323,7 @@ label cho_favor_3_3:
                                 call cho_main("Yes...","smile","base","base","mid")
                                 call cho_main("Oh my god...","smile","base","base","mid")
                                 call cho_main("That was amazing.","smile","base","base","mid")
-                                m "[current_payout] to Ravenclaw."
+                                m "{number=current_payout} points to Ravenclaw."
                                 call cho_main("...","smile","base","base","mid")
                                 call cho_main("...I'm completely covered, aren't I?","smile","base","base","mid")
                                 m "Get out."
@@ -1385,7 +1385,7 @@ label cho_favor_3_3:
                     "Thick, heavy ropes of your cum shoot across the room, coating the floor at your feet."
                     call cho_main("Wow!","smile","base","base","mid")
                     call cho_main("Wow! that was intense...","smile","base","base","mid")
-                    m "Good work, Ms. Chang. [current_payout] to Ravenclaw..."
+                    m "Good work, Ms. Chang. {number=current_payout} points to Ravenclaw..."
                     call cho_main("Thank you, Professor Dumbledore.","smile","base","base","mid")
                     jump end_cho_event
 

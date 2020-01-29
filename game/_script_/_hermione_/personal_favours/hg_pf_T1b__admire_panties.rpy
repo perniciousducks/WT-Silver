@@ -42,10 +42,10 @@ label hg_pf_admire_panties:
     # Points
     if her_tier <= 3:
         $ gryffindor += current_payout
-        m "[current_payout] points to Gryffindor, [hermione_name]. Well done."
+        m "{number=current_payout} points to Gryffindor, [hermione_name]. Well done."
 
     if hg_pf_admire_panties.counter == 1: #First time.
-        call her_main("Another [current_payout] points...", "base", "narrow", "worried", "down")
+        call her_main("Another {number=current_payout} points...", "base", "narrow", "worried", "down")
         call her_main("Can't wait to tell the guys!", "smile", "happyCl", "base", "mid")
         call her_main("Only that I can't actually tell them about any of this...", "annoyed", "narrow", "angry", "R")
 
@@ -63,7 +63,7 @@ label hg_pf_admire_panties:
 
     if her_tier > 3:
         her "What about my points?"
-        her "Eh, Who cares. It's only [current_payout] points..."
+        her "Eh, Who cares. It's only {number=current_payout} points..."
 
     call her_chibi("leave")
 
@@ -258,7 +258,7 @@ label hg_pf_admire_panties_T3_intro_E1:
                 "\"Absolutely!\"":
                     m "Absolutely!"
                     $ current_payout +=10
-                    m "Ten additional points to Gryffindor!"
+                    m "{number=current_payout} additional points to Gryffindor!"
                     call her_main("Thank you, [genie_name]!", "base", "happyCl", "worried", "mid")
                     call ctc
 
@@ -267,13 +267,13 @@ label hg_pf_admire_panties_T3_intro_E1:
                     call her_main("Why not!?", "scream", "closed", "angry", "mid")
                     m "Sluts aren't getting paid."
                     m "That's what makes them sluts."
-                    call her_main("well are you even going to pay me [current_payout] points?", "annoyed", "base", "angry", "mid")
+                    call her_main("well are you even going to pay me {number=current_payout} points?", "annoyed", "base", "angry", "mid")
                     m "Are you a slut or are you a prostitute?"
                     her "{size=-4}...a slut {/size}"
                     m "Good girl."
                     call ctc
 
-        "\"Good! [current_payout] points!\"":
+        "\"Good! {number=current_payout} points!\"":
             pass
 
     jump end_hg_pf_admire_panties
@@ -310,7 +310,7 @@ label hg_pf_admire_panties_T3_E1:
                 "\"Absolutely!\"":
                     m "Absolutely!"
                     $ current_payout +=10
-                    m "Ten additional points to Gryffindor!"
+                    m "{number=current_payout} additional points to Gryffindor!"
                     call her_main("Thank you, [genie_name]!", "base", "happyCl", "worried", "mid")
                     call ctc
 
@@ -319,13 +319,13 @@ label hg_pf_admire_panties_T3_E1:
                     call her_main("Why not!?", "scream", "closed", "angry", "mid")
                     m "Sluts aren't getting paid."
                     m "That's what makes them sluts."
-                    call her_main("Well are you even going to pay me [current_payout] points?", "annoyed", "base", "angry", "mid")
+                    call her_main("Well are you even going to pay me {number=current_payout} points?", "annoyed", "base", "angry", "mid")
                     m "Are you a slut or are you a prostitute?"
                     her "{size=-4}...a slut {/size}"
                     m "Good girl."
                     call ctc
 
-        "\"Good! [current_payout] points!\"":
+        "\"Good! {number=current_payout} points!\"":
             pass
 
 

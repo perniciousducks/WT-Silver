@@ -411,7 +411,7 @@ label chit_chat:
         elif one_of_ten == 8:
             call her_main("Sir, could you put your penis in my mouth?", "angry", "base", "base", "mid")
             call her_main("Sir, I am begging you...", "open_wide_tongue", "narrow", "annoyed", "up")
-            call her_main("Fifty five points, please!", "smile", "base", "angry", "mid")
+            call her_main("Fifty-five points, please!", "smile", "base", "angry", "mid")
             call her_main("", "angry", "wink", "base", "mid")
 
         elif one_of_ten == 9:
@@ -468,7 +468,7 @@ label chit_chat:
         elif one_of_ten == 8:
             call her_main("Sir, could you put your penis in my mouth?", "angry", "base", "base", "mid") 
             call her_main("Sir, I am begging you...", "open_wide_tongue", "narrow", "annoyed", "up") 
-            call her_main("Fifty five points, please!", "smile", "base", "angry", "mid")
+            call her_main("Fifty-five points, please!", "smile", "base", "angry", "mid")
             call her_main("(Although I wouldn't mind doing it for free..).", "smile", "narrow", "annoyed", "up")
 
         elif one_of_ten == 9:

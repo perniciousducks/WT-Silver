@@ -40,7 +40,7 @@ label hg_pf_sex:
 
 
     # Points
-    m "Yes, [hermione_name]. [current_payout] points to the Gryffindor house."
+    m "Yes, [hermione_name]. {number=current_payout} points to the Gryffindor house."
     $ gryffindor += current_payout
     call her_main("Thank you, [genie_name]...", "soft", "base", "base", "R")
 

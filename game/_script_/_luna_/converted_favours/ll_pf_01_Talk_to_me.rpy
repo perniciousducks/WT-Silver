@@ -55,7 +55,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                     m "What, oh it's nothing. Simply adjusting my robe, that's all."
                     if current_payout < 50:
                         call lun_main("This is exactly what I mean!","upset","mad","mad","mid")
-                        call lun_main("Even the headmaster of this damn school thinks he can get away with touching himself in front of me for only [current_payout] gold!","upset","mad","mad","R")
+                        call lun_main("Even the headmaster of this damn school thinks he can get away with touching himself in front of me for only {number=current_payout} gold!","upset","mad","mad","R")
                         call gen_chibi("sit_behind_desk")
                         with d3
                         "You quickly tuck your cock back into your robe."
@@ -64,7 +64,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                         m "What! Already?"
                         call lun_main("Would you rather I stay and call the ministry of magic [lun_genie_name]?","upset","mad","mad","mid")
                         m "Fair enough."
-                        call lun_main("I mean if you're going to try this on you could at least offer a little more than [current_payout] gold...","pout","suspicious","angry","mid")
+                        call lun_main("I mean if you're going to try this on you could at least offer a little more than {number=current_payout} gold...","pout","suspicious","angry","mid")
                         jump luna_away
                     call lun_main("...","normal","suspicious","base","R")
                     call lun_main("{size=-5}(Well I suppose he did offer fifty gold...){/size}","base","suspicious","base","R")
@@ -126,7 +126,7 @@ label luna_favour_1: ###TALK TO ME #DONE
             m "Alright, alright. Here's your gold."
             $ gold -= current_payout
             $ luna_gold += current_payout
-            ">You hand Luna [current_payout] gold."
+            ">You hand Luna {number=current_payout} gold."
             call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
             ">Luna leaves your office."
 
@@ -345,7 +345,7 @@ label luna_favour_1: ###TALK TO ME #DONE
         m "Alright, alright. Here's your gold."
         $ gold -= current_payout
         $ luna_gold += current_payout
-        ">You hand Luna [current_payout] gold."
+        ">You hand Luna {number=current_payout} gold."
         call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
         ">Luna leaves your office."
 
@@ -553,10 +553,10 @@ label luna_favour_1: ###TALK TO ME #DONE
         m "Alright, alright. Here's your gold."
         $ gold -= current_payout
         $ luna_gold += current_payout
-        ">You hand Luna [current_payout] gold."
+        ">You hand Luna {number=current_payout} gold."
         call lun_main("Thank you, [lun_genie_name].","normal","seductive","base","R")
         if current_payout <= 50:
-            call lun_main("(only [current_payout]?) *hmph*","upset","mad","angry","R")
+            call lun_main("(only {number=current_payout}?) *hmph*","upset","mad","angry","R")
         ">Luna leaves your office."
 
     else: #HERMIONE INVOLVED

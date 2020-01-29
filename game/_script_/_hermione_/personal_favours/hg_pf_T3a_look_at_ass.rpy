@@ -39,11 +39,11 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         m "It's not like I haven't seen it all before."
         call her_main("......", "open", "base", "base", "mid")
         call her_main(".............", "annoyed", "base", "worried", "R")
-        call her_main("40 house points, [genie_name].", "normal", "happyCl", "worried", "mid")
-        m "So if I give you 40 house points, [hermione_name]..."
+        call her_main("{number=current_payout} house points, [genie_name].", "normal", "happyCl", "worried", "mid")
+        m "So if I give you {number=current_payout} house points, [hermione_name]..."
         m "You will shamelessly strip naked and present your lovely ass?"
         call her_main("[genie_name]! There's no reason to be so detestable!", "angry", "base", "angry", "mid")
-        her "I think I want 50 points now..."
+        her "I think I want fifty points now..."
 
         menu:
             "\"Fine. 50 points are yours. Show me!\"":
@@ -56,7 +56,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
                 call her_main("And you most certainly must not touch yourself!", "scream", "happyCl", "worried", "mid")
 
             "\"I will give you 40 points to see your ass.\"":
-                call her_main("Forty?", "annoyed", "squint", "angry", "mid")
+                call her_main("{number=current_payout}?", "annoyed", "squint", "angry", "mid")
                 call her_main("Well alright then...", "annoyed", "narrow", "angry", "R")
                 call her_main("but if you expect to touch me it'll cost you extra...", "annoyed", "narrow", "worried", "down")
                 call her_main("at least one hundred points", "annoyed", "narrow", "angry", "R")
@@ -986,7 +986,7 @@ label end_hg_show_ass:
                 $ her_mood +=7
 
         $ gryffindor +=current_payout
-        m "The Gryffindor house gets [current_payout] points!"
+        m "The Gryffindor house gets {number=current_payout} points!"
         stop music fadeout 10.0
 
         call her_main("..................", "annoyed", "base", "worried", "R")

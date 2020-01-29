@@ -4,6 +4,9 @@
 
 label hg_pr_sex:
 
+    # Setup
+    $ current_payout = 75
+
     if hg_pr_sex.counter < 1:
         m "{size=-4}(Tell her to fuck one of her classmates?){/size}"
         if her_tier < 6 or hg_sex.trigger == False or her_reputation < 18:
@@ -45,7 +48,7 @@ label hg_pr_sex:
         call her_main("I had the feeling that we would get to this sooner or later...", "disgust", "narrow", "base", "mid_soft")
         call her_main("But...", "annoyed", "narrow", "angry", "R")
         her "..................."
-        m "If you do this, Gryffindor will be getting seventy five points tonight."
+        m "If you do this, Gryffindor will be getting {number=current_payout} points tonight."
         call her_main("Well, then I will do it, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
         m "Great. See you after your classes then."
         call her_main(".............", "upset", "closed", "base", "mid")
@@ -54,12 +57,11 @@ label hg_pr_sex:
         m "[hermione_name]..."
         m "I need you to go have sex with another classmate of yours."
         call her_main("Again, [genie_name]?", "angry", "base", "base", "mid")
-        m "Yes. And you will get 75 points again as well."
+        m "Yes. And you will get {number=current_payout} points again as well."
         call her_main("Well, alright...", "annoyed", "narrow", "annoyed", "mid")
 
     call her_walk(action="leave")
 
-    $ current_payout = 75
     $ hg_pr_sex.inProgress = True
 
     jump end_hermione_event
@@ -67,7 +69,7 @@ label hg_pr_sex:
 
 label end_hg_pr_sex:
     $ gryffindor += current_payout
-    m "Gryffindor gets [current_payout] points!"
+    m "Gryffindor gets {number=current_payout} points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave")

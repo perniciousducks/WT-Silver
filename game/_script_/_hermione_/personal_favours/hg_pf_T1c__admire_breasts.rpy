@@ -44,7 +44,7 @@ label hg_pf_admire_breasts:
 
     # Points
     $ gryffindor += current_payout
-    m "The Gryffindor house gets [current_payout] points!"
+    m "The Gryffindor house gets {number=current_payout} points!"
     stop music fadeout 10.0
 
     if her_tier <= 2:
@@ -129,7 +129,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
     m "Don't you want to earn some house points?"
     call her_main("Yes... But not in a way such as this!", "angry", "narrow", "angry", "R")
 
-    m "I will award Gryffindor [current_payout] whole house points if you remove your top."
+    m "I will award Gryffindor {number=current_payout} whole house points if you remove your top."
     g9 "Isn't that a steal?"
     call her_main("No it isn't!", "clench", "closed", "angry", "mid", emote="01")
     m "Please?"
@@ -146,7 +146,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
             pass
 
         "\"That won't be enough, [hermione_name]...\"":
-            g4 "I'm not giving Gryffindor [current_payout] whole points for a mere glimpse..."
+            g4 "I'm not giving Gryffindor {number=current_payout} whole points for a mere glimpse..."
             call her_main("But-", "open", "wide", "base", "stare")
             m "No buts! You are dismissed."
             call her_main("Please, [genie_name]. I need those points!", "disgust", "happyCl", "worried", "mid")
@@ -216,7 +216,7 @@ label hg_pf_admire_breasts_T1_intro_E2:
             g9 "That was last time!"
             m "Now if you would like those points I suggest you remove that top of yours..."
             call her_main("How many points did you say I'd get for this?", "open", "base", "angry", "mid")
-            m "[current_payout] points."
+            m "{number=current_payout} points."
             call her_main("(.............................)", "annoyed", "base", "angry", "mid")
             m "And I expect you to do it today, if you don't mind. I have... *uhm*..."
             m "I have other things to take care off."
@@ -255,7 +255,7 @@ label hg_pf_admire_breasts_T1_E2:
 
     m "[hermione_name], how would you like to lift up your top for me?"
     call her_main("Will I be getting points for this, Sir?", "annoyed", "base", "angry", "mid")
-    g9 "Of course. [current_payout] points, as always."
+    g9 "Of course. {number=current_payout} points, as always."
     call her_main("(...............)", "annoyed", "base", "angry", "mid")
     call her_main("Very well then.", "angry", "base", "angry", "mid")
 

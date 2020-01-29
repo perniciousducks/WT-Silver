@@ -259,7 +259,7 @@ label luna_favour_4: ###Luna handjob #DONE
         m "well then, Here's your payment, [lun_name]."
         $ gold -= current_payout
         $ luna_gold += current_payout
-        ">You hand Luna [current_payout] gold."
+        ">You hand Luna {number=current_payout} gold."
         call lun_main("Oh um... yes, Thank you, [lun_genie_name].","base","seductive","base","R", cheeks="blush")
         call lun_main("let me just get dressed...","base","seductive","base","R", cheeks="blush")
         hide screen luna_main
@@ -766,7 +766,7 @@ label luna_favour_4: ###Luna handjob #DONE
     m "well then, Here's your payment, [lun_name]."
     $ gold -= current_payout
     $ luna_gold += current_payout
-    ">You hand Luna [current_payout] gold."
+    ">You hand Luna {number=current_payout} gold."
     call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
     ">Luna leaves your office."
     $ luna_wear_cum = False
@@ -873,7 +873,7 @@ label luna_cum_addict_event:
     m "Anyway, here's your payment, [lun_name]."
     $ gold -= current_payout
     $ luna_gold += current_payout
-    ">You hand Luna [current_payout] gold."
+    ">You hand Luna {number=current_payout} gold."
     call lun_main("Thank you, [lun_genie_name].","base","seductive","base","R")
 
     jump luna_away #DONE

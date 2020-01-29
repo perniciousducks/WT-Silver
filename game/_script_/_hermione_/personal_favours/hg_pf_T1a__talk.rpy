@@ -37,16 +37,16 @@ label hg_pf_talk:
     # Points
     if her_tier <= 3:
         $ gryffindor += current_payout
-        m "[current_payout] points to Gryffindor, [hermione_name]. Well done."
+        m "{number=current_payout} points to Gryffindor, [hermione_name]. Well done."
     elif her_tier == 4 and hg_pf_talk.points == 1:
-        m "[current_payout] points to Gryffindor, [hermione_name]. Well done."
+        m "{number=current_payout} points to Gryffindor, [hermione_name]. Well done."
         her "Oh, don't worry about the points, [genie_name]. We were just having a nice talk."
         m "Really? What about Gryffindor winning the cup?"
-        call her_main("It's only [current_payout] points...", "soft", "base", "base", "R")
+        call her_main("It's only {number=current_payout} points...", "soft", "base", "base", "R")
         m "If you say so."
 
     if hg_pf_talk.counter == 1: #First time.
-        call her_main("Another [current_payout] points... The Guys will be so happy!", "base", "happyCl", "base", "mid")
+        call her_main("Another {number=current_payout} points... The Guys will be so happy!", "base", "happyCl", "base", "mid")
 
     if her_mood != 0:
         call her_main("Will this be all then?", "annoyed", "base", "angry", "mid")

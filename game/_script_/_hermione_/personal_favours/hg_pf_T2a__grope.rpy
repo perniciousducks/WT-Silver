@@ -49,7 +49,7 @@ label hg_pf_grope:
     # Points
     if her_tier <= 5:
         $ gryffindor += current_payout
-        m "The Gryffindor house gets [current_payout] points!"
+        m "The Gryffindor house gets {number=current_payout} points!"
     else:
         m "You may leave now, [hermione_name]."
 

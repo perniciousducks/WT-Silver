@@ -3,6 +3,9 @@
 ### Give Classmate A Handjob ###
 
 label hg_pr_handjob:
+    
+    # setup
+    $ current_payout = 55
 
     if hg_pr_handjob.counter < 1:
         m "{size=-4}(Tell her to give a handjob to one of her classmates?){/size}"
@@ -44,14 +47,14 @@ label hg_pr_handjob:
         call her_main(".........", "annoyed", "narrow", "annoyed", "mid")
         m "How about we try something less... engaging instead?"
         call her_main("............", "upset", "closed", "base", "mid")
-        m "I'll be willing to grant Gryffindor fifty five points."
+        m "I'll be willing to grant Gryffindor {number=current_payout} points."
         m "All I ask in return is..."
         call her_main("..........?", "angry", "base", "angry", "mid", cheeks="blush")
         m "...that you go out there and give some lucky boy a handjob..."
         call her_main("!!!......", "angry", "base", "angry", "mid")
         m "Oh, come on... Just a harmless handjob."
         call her_main("...", "disgust", "narrow", "base", "mid_soft")
-        m "Fifty five house points..."
+        m "{number=current_payout} house points..."
         call her_main("..............", "annoyed", "narrow", "angry", "R")
         call her_main("I am glad that you came to your senses, [genie_name].", "annoyed", "narrow", "annoyed", "mid")
         m "Oh, but of course. Thank you for keeping me in check."
@@ -65,7 +68,7 @@ label hg_pr_handjob:
         m "A Handjob to the boy of your choosing!"
         call her_main("...again?", "angry", "narrow", "base", "down")
         m "Sure, why not?"
-        m "And another fifty five house points for the Gryffindor house of course."
+        m "And another {number=current_payout} house points for the Gryffindor house of course."
         call her_main("..........", "annoyed", "base", "worried", "R")
         m "So... Are you up for that, [hermione_name]?"
         call her_main("I will see what I can do...", "annoyed", "narrow", "angry", "R")
@@ -80,7 +83,7 @@ label hg_pr_handjob:
         call her_main("...............", "annoyed", "narrow", "angry", "R")
         m "Oh come on. You did it before."
         call her_main("hm..........", "annoyed", "narrow", "annoyed", "mid")
-        her "Fifty five house points?"
+        her "{number=current_payout} house points?"
         m "Naturally."
         call her_main("Well, alright... I'll see what I can do...", "angry", "narrow", "base", "down")
 
@@ -97,7 +100,6 @@ label hg_pr_handjob:
 
     call her_walk(action="leave")
 
-    $ current_payout = 55
     $ hg_pr_handjob.inProgress = True
 
     jump end_hermione_event
@@ -105,7 +107,7 @@ label hg_pr_handjob:
 
 label end_hg_pr_handjob:
     $ gryffindor += current_payout #55
-    m "The Gryffindor house gets [current_payout] points!"
+    m "The Gryffindor house gets {number=current_payout} points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave")
@@ -220,7 +222,7 @@ label hg_pr_handjob_T1_E2:
     call her_main("...........................", "angry", "narrow", "base", "down")
     call her_main("Still... Performing this sort of task could really damage my reputation...", "angry", "base", "base", "mid")
     m "Is this your way of asking for a raise, [hermione_name]?"
-    m "Fifty Five points is as high as I can go with this one."
+    m "{number=current_payout} points is as high as I can go with this one."
     call her_main("Oh... Of course...", "angry", "narrow", "base", "down")
     m "Unless, you've changed your mind about having sex with one of your classmates?"
     call her_main("What?", "shock", "wide", "base", "stare")

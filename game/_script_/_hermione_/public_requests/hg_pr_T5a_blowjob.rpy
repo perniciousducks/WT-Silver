@@ -4,6 +4,9 @@
 
 label hg_pr_blowjob:
 
+    # Setup
+    $ current_payout = 65
+
     if hg_pr_blowjob.counter < 1:
         m "{size=-4}(Tell her to go give a blowjob to one of her classmates?){/size}"
         if her_tier < 5 or hg_blowjob.trigger == False or her_reputation < 15:
@@ -93,7 +96,6 @@ label hg_pr_blowjob:
 
     call her_walk(action="leave")
 
-    $ current_payout = 65
     $ hg_pr_blowjob.inProgress = True
 
     jump end_hermione_event
@@ -101,7 +103,7 @@ label hg_pr_blowjob:
 
 label end_hg_pr_blowjob:
     $ gryffindor += current_payout
-    m "The Gryffindor house gets [current_payout] points!"
+    m "The Gryffindor house gets {number=current_payout} points!"
     her "Thank you, [genie_name]."
 
     call her_walk(action="leave")

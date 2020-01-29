@@ -343,6 +343,18 @@ label hermione_favor_menu:
                             jump hermione_requests
                     "-Forget it-":
                         pass
+            else:
+                if sna_friendship <= 10:
+                    m "What do you mean in the lead?"
+                    g4 "Explain yourself, [hermione_name]!"
+                    call her_main("With the current points distribution, I am certain getting the house cup for Gryffindor will be just a formality.", "smile", "closed", "base", "mid")
+                    call her_main("Thank you, [genie_name], but I don't need any more points.", "smile", "base", "base", "mid")
+                    g4 "(That little...)"
+                    m "(Perhaps I should hangout with that Snape dude tonight, he might know what to do.)"
+                    call her_main("Do you need anything else, [genie_name]?", "smile", "base", "base", "mid")
+                else:
+                    m "Right..."
+                    m "(I guess another hangout with Snape is in order.)"
         jump hermione_requests
 
 

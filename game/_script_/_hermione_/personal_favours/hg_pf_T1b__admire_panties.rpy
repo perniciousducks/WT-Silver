@@ -13,7 +13,6 @@ label hg_pf_admire_panties:
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-
     # Start Event
     $ current_payout = 10
     $ hg_pf_admire_panties.start()
@@ -29,6 +28,8 @@ label hg_pf_admire_panties:
 
     call her_chibi("stand","desk","base", flip=False)
     call gen_chibi("sit_behind_desk")
+    
+    $ hermione.wear("all")
 
     hide screen blkfade
     if her_tier <= 2:
@@ -48,14 +49,14 @@ label hg_pf_admire_panties:
         call her_main("Can't wait to tell the guys!", "smile", "happyCl", "base", "mid")
         call her_main("Only that I can't actually tell them about any of this...", "annoyed", "narrow", "angry", "R")
 
-    call her_main("Will this be all then?", "open", "base", "base", "mid")
-    m "Yes, you can go now."
-
     if daytime:
-        her "Well, my classes are about to start..."
+        pause 1.0
+        call her_main("Well, my classes are about to start...", "open", "closed", "base", "mid")
     else:
-        her "It's getting pretty late, [genie_name]... I should go..."
-
+        pause 1.0
+        call her_main("It's getting pretty late, [genie_name]...", "open", "closed", "base", "mid")
+    call her_main("Will this be all?", "open", "base", "base", "mid")
+    m "Yes, you can go now."
 
     # Hermione leaves
     call her_walk("door", "base")
@@ -81,8 +82,6 @@ label hg_pf_admire_panties:
             $ her_whoring += 1
 
     jump end_hermione_event
-
-
 
 ### Tier 1 ###
 
@@ -152,10 +151,6 @@ label hg_pf_admire_panties_T1: # Call label
     call ctc
     return
 
-
-
-
-
 ### Tier 2 ###
 
 # Hermione lifts her skirt for you.
@@ -177,7 +172,6 @@ label hg_pf_admire_panties_T2_intro_E1:
 
     jump end_hg_pf_admire_panties
 
-
 label hg_pf_admire_panties_T2_E1:
     call her_main("What will it be, [genie_name]?")
     m "I'd like you to show me your panties again."
@@ -187,7 +181,6 @@ label hg_pf_admire_panties_T2_E1:
     call hg_pf_admire_panties_T2
 
     jump end_hg_pf_admire_panties
-
 
 label hg_pf_admire_panties_T2: # Call label
 
@@ -220,11 +213,6 @@ label hg_pf_admire_panties_T2: # Call label
             call her_main("[genie_name], please... You are embarrassing me.", "grin", "worriedCl", "worried", "mid",emote="05")
     call ctc
     return
-
-
-
-
-
 
 ### Tier 3 ###
 
@@ -289,8 +277,6 @@ label hg_pf_admire_panties_T3_intro_E1:
             pass
 
     jump end_hg_pf_admire_panties
-
-
 
 label hg_pf_admire_panties_T3_E1:
     m "[hermione_name], I'd like you to show me your panties again if possible."

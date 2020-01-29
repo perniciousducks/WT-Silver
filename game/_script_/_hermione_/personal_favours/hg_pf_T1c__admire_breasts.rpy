@@ -28,9 +28,10 @@ label hg_pf_admire_breasts:
     show screen blkfade
     with d3
 
-    call set_her_action(None)
     call her_chibi("stand","desk","base", flip=False)
     call gen_chibi("sit_behind_desk")
+    
+    $ hermione.wear("all")
 
     hide screen blkfade
     if her_tier <= 2:
@@ -160,6 +161,8 @@ label hg_pf_admire_breasts_T1_intro_E1:
 
             $ her_mood += 3
             $ hg_pf_admire_breasts.fail()
+            
+            m "Well.. Next time I guess."
 
             jump main_room
 
@@ -167,7 +170,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
     call her_main("(................)", "annoyed", "narrow", "angry", "R")
     pause.4
 
-    $ hermione.strip("top")
+    $ hermione.strip("top", "accessory0")
     call her_main("", "annoyed", "narrow", "angry", "R")
     call ctc
 
@@ -204,16 +207,16 @@ label hg_pf_admire_breasts_T1_intro_E2:
 
     menu:
         "\"Your bra!\"":
-            g9 "I bet it's really cute..."
+            g9 "It looked really cute..."
             call her_main("(......................)", "clench", "closed", "angry", "mid")
-
-            call her_main("How many points did you say I'd get for this?", "open", "base", "angry", "mid")
-            m "[current_payout] points. Just like last time."
-            call her_main("But last time I didn't need to show you my bra!", "clench", "base", "base", "mid")
-            m "You're correct, Miss Granger."
-            m "But as you've already pointed our correctly..."
+            call her_main("You get three seconds like the last time, alright?", "open", "closed", "base", "mid")
+            m "No, no, no, Miss Granger."
+            m "As you've already pointed out..."
+            call her_main("", "angry", "base", "worried", "mid")
             g9 "That was last time!"
             m "Now if you would like those points I suggest you remove that top of yours..."
+            call her_main("How many points did you say I'd get for this?", "open", "base", "angry", "mid")
+            m "[current_payout] points."
             call her_main("(.............................)", "annoyed", "base", "angry", "mid")
             m "And I expect you to do it today, if you don't mind. I have... *uhm*..."
             m "I have other things to take care off."
@@ -236,6 +239,8 @@ label hg_pf_admire_breasts_T1_intro_E2:
 
             $ her_mood += 6
             $ hg_pf_admire_breasts.fail()
+            
+            m "Bummer.."
 
             jump main_room
 
@@ -265,7 +270,7 @@ label hg_pf_admire_breasts_T1: # Call label
     call her_main(".............", "annoyed", "base", "worried", "R")
     pause.4
 
-    $ hermione.strip("top")
+    $ hermione.strip("top", "accessory0")
     call her_main("", "annoyed", "base", "worried", "R")
     call ctc
 

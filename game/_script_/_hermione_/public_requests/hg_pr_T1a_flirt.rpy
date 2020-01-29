@@ -13,7 +13,7 @@ label hg_pr_flirt:
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    call her_main(face="happy", xpos="right", ypos="base", trans=fade)
+    call her_main(xpos="right", ypos="base", trans=fade)
     m "[hermione_name]?"
     call her_main("Yes?", "soft", "base", "base", "R")
 
@@ -48,16 +48,22 @@ label hg_pr_flirt:
     elif her_whoring < 6:
         m "I need you to go make some new friends at Slytherin house."
         her "You mean you need me to flirt with the Slytherin boys again [genie_name]?"
-        m "That's exactly what I need you to do today, [hermione_name]."
-        call her_main("Must I really do this [genie_name]?", "open", "base", "base", "mid")
-        m "We have been through this, [hermione_name]."
-        m "Going to the Slytherin boys is in your best interests."
-        call her_main("Yes, I know, [genie_name].", "open", "closed", "angry", "mid")
-        her "But why must I do this at all?"
-        m "Nobody is forcing you, [hermione_name]..."
-        call her_main("You don't need to remind me of that, [genie_name]...", "angry", "base", "angry", "mid")
-        call her_main("Alright if I must... [genie_name]...", "normal", "squint", "angry", "mid")
-
+        if hg_pr_flirt.counter == 1:
+            m "That's exactly what I need you to do today, [hermione_name]."
+            m "Just do it properly this time."
+            call her_main("Must I really do this [genie_name]?", "open", "base", "base", "mid")
+            m "We have been through this, [hermione_name]."
+            m "Going to the Slytherin boys is in your best interests."
+            call her_main("Yes, I know, [genie_name].", "open", "closed", "angry", "mid")
+            her "But why must I do this at all?"
+            m "Nobody is forcing you, [hermione_name]..."
+            call her_main("You don't need to remind me of that, [genie_name]...", "angry", "base", "angry", "mid")
+            call her_main("Alright if I must... [genie_name]...", "normal", "squint", "angry", "mid")
+        else:
+            call her_main("Must I really do this [genie_name]?", "upset", "base", "worried", "mid")
+            m "This again?"
+            call her_main("Fine.............", "upset", "base", "angry", "R")
+            call her_main("If I must... [genie_name]...", "normal", "squint", "angry", "mid")
     else:
         m "I need you to flirt with some boys from Slytherin today."
         her "I'll see what I can do, [genie_name]."
@@ -71,7 +77,6 @@ label hg_pr_flirt:
     $ hg_pr_flirt.inProgress = True
 
     jump end_hermione_event
-
 
 # End Event
 label end_hg_pr_flirt:
@@ -93,18 +98,18 @@ label end_hg_pr_flirt:
 
     jump end_hermione_event
 
-
-
 ### Tier 1 ###
 
 label hg_pr_flirt_intro:
     #if her_whoring >= 0 and her_whoring < 3:
     call her_walk(action="enter", xpos="mid", ypos="base")
 
-    call her_main("Good evening, [genie_name].", face="happy", xpos="mid", ypos="base", trans=fade)
+    call her_main("Good evening, [genie_name].", "open", "closed", "base", "mid", xpos="mid", ypos="base", trans=fade)
+    call her_main("", "normal", "base", "base", "mid")
     m "[hermione_name]..."
     m "Did you complete your task?"
-    her "I did as you asked, [genie_name]..."
+    call her_main("I did as you asked, [genie_name]...", "open", "base", "base", "R")
+    call her_main("", "normal", "base", "base", "R")
 
     if hg_pr_flirt.points > 4: # If you have seen all events in this tier once, you get the choice to skip it.
         menu:
@@ -115,7 +120,6 @@ label hg_pr_flirt_intro:
                 pass
 
     return
-
 
 label hg_pr_flirt_T1_E1:
 
@@ -207,13 +211,19 @@ label hg_pr_flirt_T1_E2:
             stop music fadeout 1.0
             call her_main("You are not going to pay me, [genie_name]?", "open", "base", "worried", "mid")
             call her_main("But, you promised!", "angry", "base", "base", "mid", tears="soft")
+            m "And you promised to flirt with the boys, not get bullied."
             call her_main("................", "mad", "worriedCl", "worried", "mid", tears="soft_blink")
 
-            call her_walk(action="leave")
+            call her_walk(action="run", xpos="door", speed=2, reduce=True)
+            call her_chibi("leave")
 
             $ her_mood += 10
 
             $ hg_pr_flirt.inProgress = False
+            
+            pause 1.0
+            m "..."
+            m "Now I feel bad for saying that..."
 
             jump end_hermione_event
 
@@ -247,8 +257,9 @@ label hg_pr_flirt_T1_E3:
 
         "\"Favour failed! No points for you!\"":
             stop music fadeout 1.0
-            call her_main("I don't feel like I deserved any this time anyway...", "annoyed", "narrow", "angry", "R")
-
+            call her_main("I don't feel like I deserved any this time anyway...", "annoyed", "worriedCl", "worried", "R")
+            call her_main("Can I leave now, [genie_name]?", "annoyed", "base", "worried", "mid")
+            m "Dismissed!"
             call her_walk(action="leave")
 
             $ hg_pr_flirt.inProgress = False

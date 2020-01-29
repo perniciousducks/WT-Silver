@@ -2,8 +2,7 @@
 
 ### Panty Thief ###
 
-################### REQUEST_03 (Level 02) (Available during daytime only). "Give me your panties" ###############################
-label hg_ps_get_panties: #(Whoring = 3 - 5)
+label hg_ps_get_panties: #(Whoring = 5 - 12)
     hide screen hermione_main
     with d3
     m "{size=-4}(I could ask her to take off her panties and give them to me before she leaves for classes today.){/size}"
@@ -17,11 +16,8 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
     call her_main("I am listening, [genie_name].",xpos="right",ypos="base")
     m "I will need your panties..."
 
-    if her_whoring <=2:
+    if not hg_pf_admire_panties.events[2][0][1] or her_whoring <= 5:
         jump too_much
-
-    # Keep current clothing state until after event is completed
-    $ tmp_hermione_wear_panties = hermione_wear_panties
 
     if hg_ps_get_panties.points == 0 and her_whoring <= 5:
         stop music fadeout 10.0
@@ -56,13 +52,20 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
         m "I wish I could give you the points but that would ruin the system..."
         hide screen hermione_main
         with d3
-        call nar(">Suddenly Hermione extends her arm to you...","start")
         
-        $ hermione.strip("panties")
-        call update_her_uniform
-
+        if hermione.is_worn("panties"):
+            $ hermione.strip("panties")
+            call nar(">Suddenly Hermione bends forward and takes off her panties...","start")
+        else:
+            if hermione.is_worn("top") or hermione.is_worn("bottom"):
+                call nar(">Suddenly Hermione reaches inside one of her hidden pockets...","start")
+            else:
+                call nar(">Suddenly Hermione reaches inside...","start")
+                call nar("Hmm, she's not exactly clothed...")
+                call nar("*Sigh*")
+                call nar("{cps=*2}{size=-6}She prepares her wand, closing her other fist. While shaking it vigorously from side to side she says the incantation \"teL ereht eb seitnap!\" done!{/size}{/cps}")
+        call nar(">Then she extends her arm to you...")
         call nar(">You see that she is clutching a little piece of fabric in her fist...","end")
-        #">Her panties? You can't help but wonder when she managed to take them off..."
         m "??!"
         call nar(">You acquired Hermione's panties...")
         call her_main("Just take them, [genie_name]...", "mad", "base", "worried", "mid", tears="soft")
@@ -85,22 +88,39 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
             hide screen hermione_main
             with d3
 
-            $ hermione.strip("panties")
-            call update_her_uniform
+            if hermione.is_worn("panties"):
+                $ hermione.strip("panties")
+                call nar(">Suddenly Hermione bends forward and takes off her panties...")
+            else:
+                if hermione.is_worn("top") or hermione.is_worn("bottom"):
+                    call nar(">Hermione pulls her panties out of her pocket...")
+                else:
+                    call nar(">Suddenly Hermione reaches inside...","start")
+                    call nar("Hmm, she's not exactly clothed...")
+                    call nar("*Sigh*")
+                    call nar("{cps=*2}{size=-6}She prepares her wand, closing her other fist. While shaking it vigorously from side to side she says the incantation \"teL ereht eb seitnap!\" done!{/size}{/cps}")
             
-            call nar(">Hermione pulls her panties out of her pocket...")
             m "What?"
             call her_main("Yes, I had a feeling that you might ask for these today, [genie_name].", "base", "base", "base", "mid")
             m "A feeling?"
             call her_main("Well, to be completely honest I just do not bother to wear them much anymore...", "grin", "base", "base", "R")
+            if hermione.is_worn("panties") != None:
+                her "Unless I'm asked to, that is..."
         else:
             hide screen hermione_main
             with d3
 
-            $ hermione.strip("panties")
-            call update_her_uniform
-
-            call nar(">Hermione takes off her panties and hands them over to you...")
+            if hermione.is_worn("panties"):
+                $ hermione.strip("panties")
+                call nar(">Hermione takes off her panties and hands them over to you...")
+            else:
+                if hermione.is_worn("top") or hermione.is_worn("bottom"):
+                    call nar(">Suddenly Hermione reaches inside one of her hidden pockets...")
+                else:
+                    call nar(">Suddenly Hermione reaches inside...","start")
+                    call nar("Hmm, she's not exactly clothed...")
+                    call nar("*Sigh*")
+                    call nar("{cps=*2}{size=-6}She prepares her wand, closing her other fist. While shaking it vigorously from side to side she says the incantation \"teL ereht eb seitnap!\" done!{/size}{/cps}", "end")
         
         call nar(">Hermione's panties acquired.")
         call her_main("Well, the classes are about to start, so I'd better go now...", "soft", "base", "base", "mid")
@@ -110,7 +130,6 @@ label hg_ps_get_panties: #(Whoring = 3 - 5)
     $ hg_ps_get_panties.inProgress = True #True when Hermione has no panties on.
 
     jump end_hermione_event
-
 
 label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
     if her_whoring >= 3 and her_whoring <= 5: # LEVEL 02
@@ -153,9 +172,11 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 her "Putting my panties back on!"
                 hide screen hermione_main
                 call nar(">Hermione hesitantly puts on her panties...","start")
-
-                $ hermione.wear("panties")
-                call update_her_uniform
+                
+                if hermione.is_worn("panties") != None:
+                    $ hermione.wear("panties")
+                else:
+                    $ hermione.equip(her_panties_base1)
 
                 ">A tiny stream of cum trickles down one of her legs..."
                 call nar(">Hermione looks very uncomfortable...","end")
@@ -183,8 +204,10 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         hide screen hermione_main
         call nar(">Hermione puts the panties on...")
 
-        $ hermione.wear("panties")
-        call update_her_uniform
+        if hermione.is_worn("panties") != None:
+            $ hermione.wear("panties")
+        else:
+            $ hermione.equip(her_panties_base1)
 
         call her_main("(This feels funny...)", "angry", "worriedCl", "worried", "mid",emote="05")
         call her_main("Will this be all, [genie_name]?", "upset", "wink", "base", "mid")
@@ -228,8 +251,10 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
         hide screen hermione_main
         call nar(">Hermione swiftly slides her drenched panties on...")
 
-        $ hermione.wear("panties")
-        call update_her_uniform
+        if hermione.is_worn("panties") != None:
+            $ hermione.wear("panties")
+        else:
+            $ hermione.equip(her_panties_base1)
 
     elif her_whoring > 15: ###New variant of the event
         call her_main("My panties...", "base", "narrow", "base", "up",xpos="right",ypos="base")
@@ -250,8 +275,10 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 hide screen hermione_main
                 call nar(">Hermione swiftly slides her drenched panties on...")
 
-                $ hermione.wear("panties")
-                call update_her_uniform
+                if hermione.is_worn("panties") != None:
+                    $ hermione.wear("panties")
+                else:
+                    $ hermione.equip(her_panties_base1)
 
                 call her_main("...", "soft", "narrow", "annoyed", "up")
             "\"Why don't you clean them now?\"":
@@ -288,8 +315,6 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
 label hg_ps_get_panties_complete:
     $ hg_ps_get_panties.complete = True
     $ hermione.strip("panties")
-    call update_her_uniform
-
 
     call her_walk(action="enter", xpos="mid", ypos="base")
 
@@ -431,11 +456,6 @@ label hg_ps_get_panties_complete:
     $ hg_ps_get_panties.points += 1
     $ hg_ps_get_panties.inProgress = False #False when favor is not in progress
     $ her_panties_soaked = False #TRUE if you jerked off in panties
-
-    # Restore clothing state from before the event
-    $ hermione_wear_panties = tmp_hermione_wear_panties
-    $ del tmp_hermione_wear_panties
-    call update_her_uniform
 
     # Stats
     $ hg_ps_get_panties.counter += 1

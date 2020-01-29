@@ -13,13 +13,19 @@ label hg_pr_flirt_teacher:
             "\"(Not right now.)\"":
                 jump hermione_favor_menu
 
-    call her_main(face="happy", xpos="right", ypos="base", trans=fade)
+    call her_main(xpos="right", ypos="base", trans=fade)
     m "[hermione_name], I want you to be especially flirtatious with your teachers today."
 
     #Intro
     if hg_pr_flirt_teacher.counter == 0 and her_whoring < 9:
-        call her_main("I will do my best, [genie_name]!", "base", "base", "base", "mid")
-        call her_main("I am glad you finally decided to act, [genie_name]!", "open", "base", "base", "mid")
+        if hg_pr_flirt.counter > 0:
+            call her_main("I will do my best, [genie_name]!", "base", "base", "base", "mid")
+            call her_main("Now I understand why you asked me to flirt with these pesky slytherin boys.", "open", "closed", "angry", "mid")
+            call her_main("I am glad you finally decided to act, [genie_name]!", "open", "base", "base", "mid")
+        else:
+            call her_main("Huh?!", "open", "base", "angry", "mid")
+            call her_main("Why would I want to flirt with the teach-...", "angry", "base", "angry", "mid")
+            call her_main("O-oh... I see...", "grin", "base", "base", "R")
         m "Huh?"
         call her_main("You are finally ready to investigate the teachers who made a habit out of buying favours from the students, aren't you?", "normal", "squint", "angry", "mid")
         call her_main("I am honoured to pose as bait in this noble endeavour.", "open", "closed", "base", "mid")
@@ -64,7 +70,8 @@ label end_hg_pr_flirt_teacher:
 label hg_pr_flirt_teacher_intro:
     call her_walk(action="enter", xpos="mid", ypos="base")
 
-    call her_main("Good evening, [genie_name].", face="happy", xpos="right", ypos="base")
+    call her_main("Good evening, [genie_name].", "open", "closed", "base", "mid", xpos="mid", ypos="base", trans=fade)
+    call her_main("", "normal", "base", "base", "mid")
     m "[hermione_name]..."
     m "Did you complete your task?"
     her "I did as you asked [genie_name]..."
@@ -82,8 +89,6 @@ label hg_pr_flirt_teacher_intro:
     with d3
 
     return
-
-
 
 ### Tier 1 ###
 
@@ -188,6 +193,8 @@ label hg_pr_flirt_teacher_T1_E2: # Snape
             call her_main("But I understand and won't argue with your decision...", "normal", "worriedCl", "worried", "mid")
 
             call her_walk(action="leave")
+            
+            $ her_mood += 3
 
             $ hg_pr_flirt_teacher.inProgress = False
 
@@ -199,18 +206,20 @@ label hg_pr_flirt_teacher_T1_E3: # Filch
     call hg_pr_flirt_teacher_intro
 
     stop music fadeout 1.0
-    call her_main("I tried to flirt with mr.Filch, [genie_name]...", "open", "base", "worried", "R")
+    call her_main("I tried to flirt with Mr. Filch, [genie_name]...", "open", "base", "worried", "R")
     m "I see. {size=-5}(No idea who that is.){/size}"
     call play_music("chipper_doodle") # HERMIONE'S THEME.
-    call her_main("Yes, I know that technically mr.Filch is not a teacher...", "open", "base", "worried", "mid")
+    call her_main("Yes, I know that technically Mr. Filch is not a teacher...", "open", "base", "worried", "mid")
     m "Huh?"
     call her_main("But he is part of the school's staff...", "base", "base", "base", "mid")
     her "And we did hit it off quite well too!"
     her "He was surprisingly sweet."
     her "But I don't think he is \"dirty\", [genie_name]."
-    m "Gotcha... Mr.Fil{size=+7}TH{/size} is off the list then."
-    call her_main("It's \"Mr.Filch\", [genie_name]...", "normal", "squint", "angry", "mid")
+    m "Gotcha... Mr. Filth is off the list then."
+    call her_main("It's \"Mr. Filch\", [genie_name]...", "normal", "squint", "angry", "mid")
     m "What did I say?"
+    call her_main(".......", "normal", "squint", "angry", "R")
+    call her_main("Can I get my points now?", "open", "base", "worried", "mid")
 
     jump end_hg_pr_flirt_teacher
 

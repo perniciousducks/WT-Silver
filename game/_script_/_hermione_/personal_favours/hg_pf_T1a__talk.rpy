@@ -6,6 +6,12 @@ label hg_pf_talk:
 
     m "{size=-4}(All I'll do is have an innocent conversation with her...){/size}"
 
+    if hg_pf_talk.counter < 1:
+        menu:
+            "\"(Yes, let's do it!)\"":
+                pass
+            "\"(Not right now.)\"":
+                jump hermione_favor_menu
 
     # Start Event
     $ current_payout = 5

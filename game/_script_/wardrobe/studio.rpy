@@ -226,7 +226,9 @@ screen studio():
     
     frame background "#000"
     
-    if studio_room_bg_blur > 0.0:
+    if studio_bg_list[studio_room_bg] == "custom":
+        add Color(hsv=(studio_room_bg_hue/360.0, studio_room_bg_saturation/4.0, studio_room_bg_brightness/2.0))
+    elif studio_room_bg_blur > 0.0:
         add im.Blur(im.MatrixColor("images/rooms/_bg_/"+studio_bg_list[studio_room_bg]+".png", (im.matrix.hue(studio_room_bg_hue)*im.matrix.saturation(clamp(studio_room_bg_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_bg_brightness-1.0)), studio_room_bg_blur) ypos studio_room_bg_yoffset-300 xpos studio_room_bg_xoffset-540 xzoom studio_room_bg_flipx yzoom studio_room_bg_flipy xanchor 0.5 yanchor 0.5
     else:
         add im.MatrixColor("images/rooms/_bg_/"+studio_bg_list[studio_room_bg]+".png", (im.matrix.hue(studio_room_bg_hue)*im.matrix.saturation(clamp(studio_room_bg_saturation-1.0, 0.0, 2.0)))*im.matrix.brightness(studio_room_bg_brightness-1.0)) ypos studio_room_bg_yoffset-300 xpos studio_room_bg_xoffset-540 xzoom studio_room_bg_flipx yzoom studio_room_bg_flipy xanchor 0.5 yanchor 0.5
@@ -244,9 +246,9 @@ screen studio():
         drag_offscreen True
         xpos 160 ypos -75
         if studio_image_body:
-            add char_active.get_image() zoom get_zoom(char_active.get_image(), int(studio_image_xx*studio_image_zoom), int(studio_image_yy*studio_image_zoom)) xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
+            add char_active.get_image() zoom studio_image_zoom xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
         else:
-            add studio_outfit_saves.get(active_girl).get_image() zoom get_zoom(char_active.get_image(), int(studio_image_xx*studio_image_zoom), int(studio_image_yy*studio_image_zoom)) xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
+            add studio_outfit_saves.get(active_girl).get_image() zoom studio_image_zoom xzoom studio_image_flip alpha studio_image_alpha rotate studio_image_rotation
         
     if not studio_bg_overlay_list[studio_room_overlay2] == None:
         if studio_room_overlay2_blur > 0.0:

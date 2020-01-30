@@ -119,7 +119,7 @@ label hg_pf_sex_T1_intro_E2:
         her "Let me just take my panties off..."
         $ hermione.strip("panties")
     else:
-        call her_main("Good I didn't wear my panties today...", "disgust", "base", "base", "down")
+        call her_main("Good thing I didn't wear my panties today...", "disgust", "base", "base", "down")
     call hg_sex_2
 
     jump end_hg_pf_sex
@@ -824,7 +824,7 @@ label hg_sex_luna:
     m "{size=-3}You drugged your class mate...{/size}"
     m "{size=-3}Just so she would come in here and watch you have sex with your headmaster.{/size}"
     call her_main("Ah... yes...{heart}{heart}{heart}")
-    lun "The uniforms us girls are supposed to wear are far too conservative!"
+    lun "The uniforms we girls are supposed to wear are far too conservative!"
     m "conservative?"
     lun "Indeed! Miss Granger is the only student that is dressing appropriately."
     if cho_whoring > 16:
@@ -838,8 +838,8 @@ label hg_sex_luna:
         
     call her_main("ah...", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "{size=-3}What else did you do to her?{/size}"
-    call her_main("I may have suggested her to... ah...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
-    call her_main("...act like the a total slut...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("I may have suggested to her that she... ah...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
+    call her_main("...act like a total slut...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     m "{size=-3}So just like you then?{/size}"
     call her_main("Yessss...{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     lun "[lun_genie_name], are you listening?"
@@ -855,7 +855,7 @@ label hg_sex_luna:
     call her_main("{heart}{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
     lun "{b}Rule number three:{/b} No bras to be worn... at {u}any{/u} time."
     call her_main("{heart}{heart}{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
-    lun "And finally, {b}Rule number four:{/b} No panties are allowed at the school grounds."
+    lun "And finally, {b}Rule number four:{/b} No panties are allowed on the school grounds."
     call her_main("{heart}{heart}{heart}{heart}{heart}{heart}", "silly", "base", "worried", "mid", cheeks="blush", tears="soft")
 
     m "Why are your legs shaking, [hermione_name]?"

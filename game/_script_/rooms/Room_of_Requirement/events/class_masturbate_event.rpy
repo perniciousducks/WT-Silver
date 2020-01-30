@@ -210,7 +210,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         m "Question one, if you wanted to earn eighty points, you'd need to..."
         m "A. Kiss a girl? B. Flash your Tits. C. Masturbate during class. D. Eat a wand."
         call her_main("C? And you aren't actually going to make me eat a wand one day, are you?", "open", "narrow", "worried", "mid_soft")
-        m "For sevnty-five house points I might."
+        m "For seventy-five house points I might."
         call her_main("I feel like it should be a lot more than that.", "open", "base", "base", "mid")
         m "For sucking a dick? Nah seems fair."
         call her_main("Suck a di- But you said eat a wand.", "clench", "squint", "angry", "mid")

@@ -601,7 +601,7 @@ label hg_pf_admire_breasts_T4_masturbate: # Call label
         call her_main("But you must promise me not to...", "soft", "base", "base", "R", cheeks="blush")
         call her_main("Not to... ehm...", "open", "base", "base", "R", cheeks="blush")
         call her_main("Not to discharge...", "annoyed", "narrow", "angry", "R", cheeks="blush")
-        call her_main("Not in front of me, [genie_name]...", "annoyed", "narrow", "angry", "R", cheeks="blush")
+        call her_main("Not on me, [genie_name]...", "annoyed", "narrow", "angry", "R", cheeks="blush")
         m "Fine, whatever..."
         m "Oh, you little slut. You nasty little slut!"
         call her_main(".......................", "disgust", "narrow", "base", "down", cheeks="blush")

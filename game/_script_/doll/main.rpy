@@ -165,8 +165,8 @@ init python:
             """Takes argument containing string cloth type. Returns True if worn, False if hidden, None if not equipped at all."""
             if type.startswith(self.blacklist_toggles):
                 for k, v in self.clothes.iteritems():
-                    if k.startswith(type) and v[0] and v[2]:
-                        return True
+                    if k.startswith(type) and v[0]:
+                        return True if v[2] else False
             else:
                 if self.clothes[type][0]:
                     return True if self.clothes[type][2] else False

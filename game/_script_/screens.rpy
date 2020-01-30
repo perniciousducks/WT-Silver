@@ -151,6 +151,8 @@ screen main_menu():
                 textbutton _("New Game") action Start()
             else:
                 textbutton _("New Game {size=+3}+{/size}") action Start()
+            if config.developer:
+                textbutton "Quick start" action Start("start_dev")
             textbutton _("Load Game") action ShowMenu("load")
             textbutton _("Preferences") action ShowMenu("preferences")
             textbutton _("Quit") action Quit(confirm=False)

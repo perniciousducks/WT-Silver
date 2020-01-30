@@ -104,7 +104,7 @@ label hermione_first_duel:
         call her_main("This game is stupid!", "angry", "closed", "angry", "mid")
         pass
 
-    $ geniecard_tokens += 1
+    $ tokens += 1
 
     jump main_room
 
@@ -136,7 +136,7 @@ label hermione_second_duel:
         call her_main("This game is stupid!", "angry", "closed", "angry", "mid")
         pass
 
-    $ geniecard_tokens += 1
+    $ tokens += 1
 
     jump main_room
 
@@ -188,9 +188,9 @@ label hermione_third_duel:
         $ unlocked_cards += [card_her_librarian]
         call give_reward("You have received a card!", "images/cardgame/t1/hermione/her_librarian_v1.png")
         $ her_third_win = True
-        $ geniecard_tokens += 3
+        $ tokens += 3
     else:
-        $ geniecard_tokens += 1
+        $ tokens += 1
 
     call play_sound("door")
     $ hermione_busy = True
@@ -254,9 +254,9 @@ label hermione_random_duel:
 
     if not her_random_win:
         $ her_random_win = True
-        $ geniecard_tokens += 3
+        $ tokens += 3
     else:
-        $ geniecard_tokens += 1
+        $ tokens += 1
 
     m "Seems like I've won this one [hermione_name]."
     call her_main("I noticed...", "normal", "base", "worried", "R")

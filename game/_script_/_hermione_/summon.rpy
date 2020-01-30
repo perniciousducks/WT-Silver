@@ -381,10 +381,10 @@ label hermione_talk:
         "-Working-{icon=interface/icons/small/gold.png}":
             label working_menu:
             menu:
-                "-Work as a maid-" if daytime and hg_outfit_maid_ITEM.unlocked:
+                "-Work as a maid-" if daytime and hg_maid.unlocked:
                     jump job_1
 
-                "-Work as a maid-" if daytime and not hg_outfit_maid_ITEM.unlocked:
+                "{color=[menu_disabled]}-Work as a maid-{/color}" if daytime and not hg_maid.unlocked:
                     m "(I'll need an outfit for hermione if I want her to work.)"
                     jump working_menu
 
@@ -392,35 +392,35 @@ label hermione_talk:
                     "This job is only available during the day."
                     jump working_menu
 
-                "-Work as a cheerleader for Gryffindor-" if daytime and (hg_cheer_g_ITEM.unlocked or hg_cheer_g_sexy_ITEM.unlocked):
-                     jump job_3
+                #"-Work as a cheerleader for Gryffindor-" if daytime and (hg_cheer_g_ITEM.unlocked or hg_cheer_g_sexy_ITEM.unlocked):
+                     #jump job_3
 
-                "-Work as a cheerleader for Gryffindor-" if daytime and not (hg_cheer_g_ITEM.unlocked or hg_cheer_g_sexy_ITEM.unlocked):
-                    m "(I'll need an outfit for hermione if I want her to work.)"
+                #"-Work as a cheerleader for Gryffindor-" if daytime and not (hg_cheer_g_ITEM.unlocked or hg_cheer_g_sexy_ITEM.unlocked):
+                    #m "(I'll need an outfit for hermione if I want her to work.)"
+                    #jump working_menu
+
+                #"{color=[menu_disabled]}-Work as a cheerleader for Gryffindor-{/color}" if not daytime:
+                    #"This job is only available during the day."
+                    #jump working_menu
+
+                #"-Work as a cheerleader for Slytherin-" if daytime and (hg_cheer_s_ITEM.unlocked or hg_cheer_s_sexy_ITEM.unlocked):
+                    #jump job_4
+
+                #"-Work as a cheerleader for Slytherin-" if daytime and not (hg_cheer_s_ITEM.unlocked or hg_cheer_s_sexy_ITEM.unlocked):
+                    #m "(I'll need a slytherin cheerleader outfit for hermione if I want her to work.)"
+                    #jump working_menu
+
+                #"{color=[menu_disabled]}-Work as a cheerleader for Slytherin-{/color}" if not daytime:
+                    #"This job is only available during the day."
+                    #jump working_menu
+
+                "{color=[menu_disabled]}-Hidden-{/color}" if daytime and not cardgame_work and not hg_poker.unlocked:
+                    "You haven't unlocked this job opportunity yet."
                     jump working_menu
 
-                "{color=[menu_disabled]}-Work as a cheerleader for Gryffindor-{/color}" if not daytime:
-                    "This job is only available during the day."
-                    jump working_menu
-
-                "-Work as a cheerleader for Slytherin-" if daytime and (hg_cheer_s_ITEM.unlocked or hg_cheer_s_sexy_ITEM.unlocked):
-                    jump job_4
-
-                "-Work as a cheerleader for Slytherin-" if daytime and not (hg_cheer_s_ITEM.unlocked or hg_cheer_s_sexy_ITEM.unlocked):
-                    m "(I'll need a slytherin cheerleader outfit for hermione if I want her to work.)"
-                    jump working_menu
-
-                "{color=[menu_disabled]}-Work as a cheerleader for Slytherin-{/color}" if not daytime:
-                    "This job is only available during the day."
-                    jump working_menu
-
-                "{color=[menu_disabled]}-Hidden-{/color}" if daytime and not cardgame_work and hg_gamble_slut_ITEM.unlocked:
-                    "You haven't unlocked this feature yet"
-                    jump working_menu
-
-                "-Work by advertising the card game-" if daytime and cardgame_work and hg_gamble_slut_ITEM.unlocked:
+                "-Work by advertising the card game-" if daytime and cardgame_work and hg_poker.unlocked:
                     jump job_5
-                "-Work by advertising the card game-" if daytime and cardgame_work and not hg_gamble_slut_ITEM.unlocked:
+                "{color=[menu_disabled]}-Work by advertising the card game-{/color}" if daytime and cardgame_work and not hg_poker.unlocked:
                     m "(I'll need an outfit for hermione if I want her to work.)"
                     m "(Maybe the twins have something fitting for her in their stock.)"
                     jump working_menu
@@ -623,7 +623,7 @@ label hermione_talk:
                 "-Never mind-":
                     jump hermione_talk
 
-        "-Give her the ball dress-" if ball_quest.E4_complete and hg_dress_yule_ball_ITEM.unlocked and not ball_quest.gave_dress:
+        "-Give her the ball dress-" if ball_quest.E4_complete and hg_ball.unlocked and not ball_quest.gave_dress:
             jump ball_quest_E5
 
         "-Start the autumn ball-" if ball_quest.gave_dress and not ball_quest.started:

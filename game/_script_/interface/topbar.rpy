@@ -216,7 +216,7 @@ screen ui_stats():
                 xpos 140 ypos 11
                 # Display tokens in token shop
                 if renpy.get_screen("weasley_store_room") and store_category == 3:
-                    text "{size=-4}[daygold_colour][geniecard_tokens]{/color}{/size}" outlines daygold_outline
+                    text "{size=-4}[daygold_colour][tokens]{/color}{/size}" outlines daygold_outline
                 else:
                     text "{size=-4}[daygold_colour][gold]{/color}{/size}" outlines daygold_outline
 

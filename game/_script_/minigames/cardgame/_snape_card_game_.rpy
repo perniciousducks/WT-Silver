@@ -194,7 +194,7 @@ label snape_first_duel:
 
     $ achievement.unlock("Cardwin")
     $ snape_first_win = True
-    $ geniecard_tokens += 1
+    $ tokens += 1
 
     jump main_room
 
@@ -234,7 +234,7 @@ label snape_second_duel:
     $ snape_busy = True
 
     $ snape_second_win = True
-    $ geniecard_tokens += 1
+    $ tokens += 1
 
     jump main_room
 
@@ -301,9 +301,9 @@ label snape_third_duel:
         $ snape_third_win = True
         $ unlocked_cards += [card_snape]
         call give_reward("You have received a special card!", "images/cardgame/t1/special/snape_v1.png")
-        $ geniecard_tokens += 3
+        $ tokens += 3
     else:
-        $ geniecard_tokens += 1
+        $ tokens += 1
 
     call play_sound("door")
     call hide_characters
@@ -412,7 +412,7 @@ label snape_random_duel:
     with d3
 
     $ snape_busy = True
-    $ geniecard_tokens += 1
+    $ tokens += 1
 
     jump main_room
 

@@ -16,7 +16,7 @@ default playercolor_rgb = [51.0, 92.0, 147.0, 255.0]
 default enemycolor_rgb = [116.0, 0, 0, 255.0]
 
 default geniecard_level = 1
-default geniecard_tokens = 0
+default tokens = 0
 default cardgame_eoc = False # End of content flag
 
 default table_cards = [[None for x in xrange(0,3)] for y in xrange(0,3)]

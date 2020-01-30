@@ -272,6 +272,10 @@ default hg_ball = CostumeItem(
 default hg_yennefer = CostumeItem(
     id="hg_yennefer", name="Yennefer Costume", type="outfit", items=["top","bottom","stockings","sash","belt","feathers","scarf","corset","pendant","gloves"],
     cost=her_outfit_yennefer.price, wait_time=1, image=her_outfit_yennefer, description="> Smells like lilac and gooseberries.")
+    
+default hg_poker = CostumeItem(
+    id="hg_poker", name="Poke-her-nips Outfit", type="outfit_token", items=["top"],
+    cost=10, wait_time=0, image=her_outfit_poker, description="")
 
 default hermione_outfits_list = [hg_bikini1, hg_bikini2, hg_maid, hg_bunny, hg_ball, hg_yennefer]
 default hermione_costumes_list = []
@@ -421,7 +425,8 @@ default outfit_linking = {
     hg_maid.id:                     "her_outfit_maid",
     hg_bunny.id:                    "her_outfit_bunny",
     hg_ball.id:                     "her_outfit_ball",
-    hg_yennefer.id:                 "her_outfit_yennefer"
+    hg_yennefer.id:                 "her_outfit_yennefer",
+    hg_poker.id:                    "her_outfit_poker"
 }
 
 init offset = 0 # back to normal

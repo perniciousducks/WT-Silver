@@ -28,21 +28,6 @@ label cheats:
                     "Hermione recovered some of her dignity"
                     jump cheats.hermione
 
-                "-Unlock all outfits & sets-":
-                    python:
-                        for item in hermione_outfits_list:
-                            unlock_clothing_compat(item)
-                        for item in hermione_costumes_list:
-                            unlock_clothing_compat(item)
-                        for item in hermione_dresses_list:
-                            unlock_clothing_compat(item)
-                        for item in hermione_clothing_sets_list:
-                            unlock_clothing_compat(item)
-                    ">All of Hermione's outfits and clothing sets have been unlocked."
-                    $ unlock_clothing_compat(hg_gamble_slut_ITEM) # Gambler outfit is not included in above lists
-                    call update_deco_items # Call needed to update gambler outfit image
-                    jump cheats.hermione
-
                 "-Back-":
                     jump cheats
 
@@ -106,31 +91,22 @@ label cheats:
         "-Cho Cheats-{icon=interface/icons/small/cho.png}" if cho_unlocked:
             label .cho:
             menu:
-                "-Reset Cho's mood-":
+                "-Reset Cho's mood-" if cho_mood != 0:
                     $ cho_mood = 0
                     ">Cho is no longer mad at you."
                     jump cheats.cho
-                "-Unlock Wardrobe-" if not cho_wardrobe_unlocked:
-                    $ cho_wardrobe_unlocked = True
-                    $ cc_muggle_hot_ITEM.unlocked = True
-                    ">Cho's wardrobe is now accessible."
+                "-Max Whoring-" if cho_whoring < 24:
+                    $ cho_whoring = 24
+                    ">Cho is now a giant slut."
                     jump cheats.cho
-                "-Unlock all outfits & sets-":
-                    python:
-                        for item in cho_outfits_list:
-                            unlock_clothing_compat(item)
-                        for item in cho_costumes_list:
-                            unlock_clothing_compat(item)
-                        for item in cho_dresses_list:
-                            unlock_clothing_compat(item)
-                        for item in cho_clothing_sets_list:
-                            unlock_clothing_compat(item)
-                        cho_outfit_cheerleader.unlock()
-                    ">All of Cho's outfits and clothing sets have been unlocked."
+
+                "-Increase Whoring-" if cho_whoring < 24:
+                    $ cho_whoring += 1
+                    ">Cho became more depraved..."
                     jump cheats.cho
-                "-Reset ALL Cho content-":
-                    call reset_cho_progress
-                    ">Cho content reset!"
+                "-Decrease Whoring-" if cho_whoring > 0:
+                    $ cho_whoring += -1
+                    "Cho recovered some of her dignity"
                     jump cheats.cho
                 "-Back-":
                     jump cheats

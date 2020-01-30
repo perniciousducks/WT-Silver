@@ -11,9 +11,12 @@ label job_1:
 
     show screen blkfade
     with d5
+    
+    # Setup
     call play_sound("equip_inventory")
+    $ her_outfit_last.save()
+    $ hermione.equip(her_outfit_maid)
     pause 2.5
-    call h_equip_temp_outfit(hg_outfit_maid_ITEM)
     hide screen blkfade
     with d5
 
@@ -23,8 +26,6 @@ label job_1:
     m "Off you go then..."
 
     call her_walk(action="leave")
-
-    call h_unequip_temp_outfit()
 
     $ hermione_busy = True
     $ current_job = 1
@@ -36,9 +37,7 @@ label maid_responses:
 
     call her_walk(action="enter", xpos="mid", ypos="base")
 
-    call h_equip_temp_outfit(hg_outfit_maid_ITEM)
-
-    call her_main("", "base", "base", "base", "mid",xpos="right",ypos="base")
+    call her_main("", "base", "base", "base", "mid", xpos="right",ypos="base")
     pause.5
 
     menu:
@@ -50,7 +49,7 @@ label maid_responses:
                 m "Don't worry [hermione_name], you'll get your points."
                 m "Just think of how happy your friends will be when they win the house cup this year."
                 her "I suppose..."
-                m "Ten points to Gryffindor"
+                m "Twenty points to Gryffindor"
             elif day_random <= 8:
                 call her_main("Do I really have to keep doing this?", "normal", "narrow", "base", "R_soft")
                 m "What do you mean, [hermione_name]?"
@@ -64,31 +63,29 @@ label maid_responses:
                 call her_main("I mean you're the school headmaster, can't you just file some reports and get paid by the ministry?", "base", "base", "base", "R")
                 m "I can, it's just not as enjoyable."
                 call her_main("Hmmph. Can I at least get my points now?", "angry", "closed", "angry", "mid")
-                m "Certainly, ten points to Gryffindor."
+                m "Certainly, twenty points to Gryffindor."
             else:
                 call her_main("I think you need to start enforcing harsher punishment for sexual harassment.", "mad", "base", "angry", "mid")
                 call her_main("Hmmph... Can I at least get my points now?", "angry", "closed", "angry", "mid")
-                m "Certainly, ten points to Gryffindor."
+                m "Certainly, twenty points to Gryffindor."
         "-Dismiss her-":
             call her_main("Here's your payment.", "base", "base", "base", "mid")
-            ">You receive [payment] gold coins."
+            ">You receive {number=payment} gold coins."
             m "Well done [hermione_name], twenty points to Gryffindor."
 
     call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
-    ">You receive [payment] gold coins."
+
     $ gryffindor+= 20
     $ gold += payment
 
     call her_walk(action="leave")
 
-    call h_unequip_temp_outfit()
+    $ hermione.equip(her_outfit_last)
 
     $ hermione_busy = True
     $ current_job = 0
 
     jump main_room_menu
-
-
 
 # Barmaid Job
 label job_2:
@@ -102,9 +99,11 @@ label job_2:
 
     show screen blkfade
     with d5
+    # Setup
     call play_sound("equip_inventory")
+    $ her_outfit_last.save()
+    $ hermione.equip(her_outfit_maid)
     pause 2.5
-    call h_equip_temp_outfit(hg_outfit_maid_ITEM)
     hide screen blkfade
     with d5
 
@@ -114,8 +113,6 @@ label job_2:
     m "Off you go then..."
 
     call her_walk(action="leave")
-
-    call h_unequip_temp_outfit()
 
     $ hermione_busy = True
     $ current_job = 2
@@ -127,8 +124,6 @@ label barmaid_responses:
 
     call her_walk(action="enter", xpos="mid", ypos="base")
 
-    call h_equip_temp_outfit(hg_outfit_maid_ITEM)
-
     call her_main("", "base", "base", "base", "mid",xpos="right",ypos="base")
     pause.5
 
@@ -137,29 +132,27 @@ label barmaid_responses:
             her "Fine..."
             m "Anything unusual happen?"
             her "Not really, I just served people drinks."
-            m "Well in that case ten points to Gryffindor."
+            m "Well in that case twenty points to Gryffindor."
             her "Thank you, [genie_name], here's your payment."
         "-Dismiss her-":
             her "Here's your payment."
-            ">You receive [payment] gold coins."
+            ">You receive {number=payment} gold coins."
             m "Well done [hermione_name], twenty points to Gryffindor."
 
     her "Thank you, [genie_name]."
-    ">You receive [payment] gold coins."
+    
     $ gryffindor+= 20
     $ gold += payment
 
     call her_walk(action="leave")
 
-    call h_unequip_temp_outfit()
+    $ hermione.equip(her_outfit_last)
 
     $ hermione_busy = True
     $ current_job = 0
     jump main_room_menu
 
-
-
-# Gryffindor Cheerleader Job
+# Gryffindor Cheerleader Job (Needs outfit)
 label job_3:
     $ menu_x = 0.5 #Menu position is back to default. (Center).
     if her_whoring <= 6:

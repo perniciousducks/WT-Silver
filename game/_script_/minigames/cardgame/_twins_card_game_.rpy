@@ -34,7 +34,7 @@ label twins_first_duel:
 
     "You return to your office."
 
-    $ geniecard_tokens += 1
+    $ tokens += 1
 
     jump main_room
 
@@ -81,11 +81,11 @@ label twins_second_duel:
         $ unlocked_cards += [card_rand_twins[0]]
         call give_reward("You have received a special card!", "images/cardgame/t1/special/%s_v1.png" % str(card_rand_twins[1]))
         $ twins_second_win = True
-        $ geniecard_tokens += 3
+        $ tokens += 3
     else:
         twi "Not again.."
         m "Tough luck boys."
-        $ geniecard_tokens += 1
+        $ tokens += 1
 
     "You return to your office."
     jump main_room
@@ -213,16 +213,16 @@ label twins_random_duel:
         call give_reward("You have received 5% of the twins profits", "interface/icons/cards.png")
         $ twins_profit += 0.05
         $ twins_random_win = False
-        $ geniecard_tokens += 3
+        $ tokens += 3
     elif twins_profit == 0.2:
         fre "Nice job but you've reached the cap I'm afraid."
         ger "Yeah, don't want to go minus do we?"
-        $ geniecard_tokens += 1
+        $ tokens += 1
     else:
         twi "Not again..."
         m "Time to pay up boys."
         ger "Fine... we'll up your profits by 1%%..."
-        $ geniecard_tokens += 1
+        $ tokens += 1
         $ twins_profit += 0.01
 
     "You return to your office."

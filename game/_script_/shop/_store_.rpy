@@ -143,7 +143,7 @@ label store_chit_chat:
         m "Unofficial... Official, you say?"
         ger "Yes, as we mentioned... there isn't really any official tournament rules."
         fre "We've sort of kept it that way in that we'll let the people playing set their own wagers and challenges to climb the ladder."
-        fre "Any normal game will make you one token richer and once the agreed upon winning conditions for a challenge is reached you'll get 3 tokens."
+        fre "Any normal game will make you one token richer and once the agreed upon winning conditions for a challenge is reached you'll get three tokens."
         ger "And whatever other forfeit your opponent might have added."
         fre "Three challenges won will let you climb to the next tier."
         ger "Which lets you challenge even higher skilled players."
@@ -157,7 +157,7 @@ label store_chit_chat:
         fre "He was using a polyjuice potion to disguise himself as a student."
         ger "But that weird walk of his where he sort of slides across the floor gives him away a mile off."
         fre "Tell you what, lets set a wager right now. Usually we'd make it a bit more difficult but since you gave us the idea for this."
-        ger "Beat us again and we'll give you 3 tokens."
+        ger "Beat us again and we'll give you three tokens."
         m "That's it? Sounds a bit out of character for you guys making it this easy."
         fre "Let's call it an insurance so that we can continue our business."
         ger "There's no way you'll beat us again anyway."
@@ -581,7 +581,7 @@ label token_shop_menu:
     show screen weasley_store_menu
 
     $ item_list = [filter(lambda x: not (x.hidden or x.unlocked), y) for y in [
-        [hg_gamble_slut_ITEM],
+        [hg_poker],
         fireplace_deco_list+cupboard_deco_list+wall_deco_list+misc_deco_list+misc_hat_list,
         [lootbox_quest_ITEM]
     ]]
@@ -619,8 +619,8 @@ label purchase_deco(item):
         $ item_token_type = ""
     menu:
         "-Buy [item.name][item_token_type] for [item.cost] tokens -" if not item.type == "quest item":
-            if geniecard_tokens >= item.cost:
-                $ geniecard_tokens -= item.cost
+            if tokens >= item.cost:
+                $ tokens -= item.cost
                 $ item.unlocked = True
                 "[item_token_str]"
 
@@ -628,7 +628,6 @@ label purchase_deco(item):
                     $ achievement.unlock("postman")
                 if len(filter(lambda x: x.unlocked==False, misc_hat_list)) <= 0:
                     $ achievement.unlock("hats")
-                call update_deco_items # Call needed to update gambler outfit image
             else:
                 m "I don't have enough tokens."
         "-Buy [item.name] for [item.cost] gold coins -" if item.type == "quest item":
@@ -645,10 +644,4 @@ label purchase_deco(item):
     hide screen gift
     with d3
 
-    return
-
-label update_deco_items:
-    # Updates image from shop icon to mannequin
-    if hg_gamble_slut_ITEM.unlocked:
-        $ hg_gamble_slut_ITEM.image = "outfits/hg_gambler_slut"
     return

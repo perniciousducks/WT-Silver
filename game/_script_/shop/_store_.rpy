@@ -145,7 +145,7 @@ label store_chit_chat:
         fre "We've sort of kept it that way in that we'll let the people playing set their own wagers and challenges to climb the ladder."
         fre "Any normal game will make you one token richer and once the agreed upon winning conditions for a challenge is reached you'll get 3 tokens."
         ger "And whatever other forfeit your opponent might have added."
-        fre "3 challenges won will let you climb to the next tier."
+        fre "Three challenges won will let you climb to the next tier."
         ger "Which lets you challenge even higher skilled players."
         m "And by skilled you mean players with better cards?"
         fre "Something like that."
@@ -469,8 +469,8 @@ label purchase_forbidden_scroll(item):
     fre "No idea!"
     ger "Certainly not in the attic!"
     m "Ok, well how much is the scroll?"
-    ger "300 gold coins."
-    m "300! Why on earth is it so expensive?"
+    ger "Three hundred gold coins."
+    m "Three hundred!? Why on earth is it so expensive?"
     fre "Forbidden magic is quite a risky and expensive endeavour Professor, We'll sell it for no less than 300."
 
     menu:

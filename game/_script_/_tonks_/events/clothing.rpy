@@ -72,20 +72,20 @@ label tonks_summon_setup:
                 call ton_main("How much am I worth to you, [ton_genie_name]?","base","base","raised","mid")
 
                 menu:
-                    "-1 gold-":
+                    "-One gold-":
                         m "A gold, if anything..."
                         call ton_main("(Bastard... How humiliating.)","base","base","raised","ahegao")
                         call ton_main("Thank you so much, [ton_genie_name].","base","base","base","mid")
                         m "Don't mention it, [tonks_name]."
                         $ gold -= 1
-                    "-20 gold-" if gold >= 20:
-                        m "How does 20 gold sound?"
+                    "-Twenty gold-" if gold >= 20:
+                        m "How does twenty gold sound?"
                         call ton_main("(Hmm... I kind of expected more.)","base","base","base","R")
                         call ton_main("Thank you, [ton_genie_name].","base","base","base","mid")
                         g9 "No, [tonks_name]. I have to thank you."
                         $ gold -= 20
-                    "-100 gold-" if gold >= 100:
-                        m "Does 100 gold sound nice to you?"
+                    "-A hundred gold-" if gold >= 100:
+                        m "Does one hundred gold sound nice to you?"
                         g9 "With a body like that, you could earn a fortune at a strip club!"
                         call ton_main("Really...","horny","base","raised","mid")
                         call ton_main("You think a noble teacher like me- an ex-auror... Would quit her highly regarded job to become a cheap stripper?","open","base","base","mid")
@@ -115,7 +115,7 @@ label tonks_summon_setup:
                 m "You went to this school, didn't you? Which house were you in?"
                 call ton_main("Me? I was in Hufflepuff.","open","base","raised","mid")
                 m "Very well then."
-                m "Minus 10 points from house hufflepuff!"
+                m "Minus ten points from house hufflepuff!"
                 $ hufflepuff -=10
                 call ton_main("What? But [ton_genie_name]! I'm not even a student--","open","wide","wide","mid", trans=hpunch)
                 g4 "In addition, from this point forward, you will be forbidden to wear even a single piece of clothing whenever you step into this room!"

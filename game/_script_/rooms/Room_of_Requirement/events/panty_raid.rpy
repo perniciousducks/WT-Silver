@@ -51,7 +51,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Hello professor.", "open", "base", "base", "mid", flip=False)
         call her_main("", mouth="base")
         m "Good day [hermione_name]."
-        m "How would you feel about going out and earning 35 points for your house today?"
+        m "How would you feel about going out and earning thirty-five points for your house today?"
         call her_main("I would love to...{w=0.3} as long as it doesn't involve me humiliating myself in front of my peers.", "open", "base", "base", "R", cheeks="blush")
         call her_main("", mouth="normal", cheeks="blush")
         g9 "Well then, perhaps today is your lucky day."
@@ -169,12 +169,12 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Does that mean I've earned some extra house points?", "open", "base", "base", "R")
         m "I think the situation calls for it..."
         call her_main("", "smile", "base", "base", "R")
-        g9 "90 points to Gryffi-... {w=0.5}{nw}"
-        g4 "90 points to Gryffi-... {fast} wait a second..."
+        g9 "Ninety points to Gryffi-... {w=0.5}{nw}"
+        g4 "Ninety points to Gryffi-... {fast} wait a second..."
         call her_main("", "smile", "base", "base", "mid")
         "> You take another look at the undergarments and notice something unusual."
         call her_main("", "base", "base", "base", "mid")
-        "> Both panties and a bra has a small piece of paper tied to it."
+        "> Both panties and bra have a small piece of paper tied to them."
         call her_main("", "normal", "base", "base", "mid")
         "> You reach out and grab the closest pair of undergarments then study the paper."
         call her_main("", "normal", "base", "base", "R")
@@ -228,7 +228,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("", "soft", "base", "worried", "R")
                 m "Now, I won't overburden you with compliments..."
                 call her_main("", "soft", "base", "worried", "mid")
-                m "Take your house points and go...{w=0.5} 35 points to Gryffindor!"
+                m "Take your house points and go...{w=0.5} Thirty-five points to Gryffindor!"
                 call her_main("{size=+4}Really?!{/size}{w=0.2} Thank you so much [genie_name]!", "smile", "base", "base", "mid", cheeks="blush")
 
                 call her_walk("mid", "base")
@@ -269,14 +269,14 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("I Do mind...", "upset", "narrow", "base", "down")
         call her_main("", "upset", "base", "worried", "mid")
         g9 "Then you'd better head on out and steal some girl's panties!"
-        call her_main("{size=-4}...100 points{/size}", "open", "base", "worried", "R")
+        call her_main("{size=-4}...one hundred points{/size}", "open", "base", "worried", "R")
         call her_main("", mouth="upset")
-        m "35."
-        call her_main("...75 points", "open", "happyCl", "worried", "mid")
+        m "Thirty-five."
+        call her_main("...seventy-five points", "open", "happyCl", "worried", "mid")
         call her_main("", mouth="upset")
-        m "40.."
-        call her_main("...50 points", mouth="upset")
-        m "45..."
+        m "Forty.."
+        call her_main("...fifty points", mouth="upset")
+        m "Forty-five..."
         call her_main("Fine.", "disgust", "narrow", "base", "R_soft")
         call her_main("", "upset", "base", "base", "R")
         g9 "We got a deal then, splendid!"
@@ -327,7 +327,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
             "\"Let her Go.\"":
                 m "Well, quality leaves a bit to be desired but a good step forward."
                 call her_main("", "soft", "base", "base", "mid", cheeks="blush")
-                m "45 points to Gryffindor!"
+                m "Forty-five points to Gryffindor!"
                 call her_main("Thank you, [genie_name].", "open", "base", "base", "mid", cheeks="blush")
                 call her_main("Am I free to go now?", "soft", "base", "base", "mid", cheeks="blush")
                 m "Yes, you are free to go."
@@ -371,7 +371,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
                 m "And?"
                 call her_main(" And... that’s really it.", "open", "base", "base", "mid")
                 call her_main("", mouth="normal")
-                g4 "How dull.{w=0.5} 45 stupid house points to Gryffindor."
+                g4 "How dull.{w=0.5} forty-five stupid house points to Gryffindor."
                 call her_main("Do those count the same as regular points?", mouth="annoyed")
                 m "I suppose..."
                 call her_main("Goodnight then sir.", "open", "base", "base", "mid")
@@ -576,7 +576,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("What about the points sir?", "open", "narrow", "worried", "mid_soft", cheeks="blush")
         call her_main("", "annoyed", "base", "worried", "mid", cheeks="blush")
         m "Oh yes, right.."
-        m "45 points to Gryffindor!"
+        m "Forty-five points to Gryffindor!"
         call her_main("Thank you sir...", "open", "narrow", "worried", "mid_soft")
         call her_main("", "upset", "base", "base", "R")
         pause 0.5
@@ -739,7 +739,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Hmm? Oh well, missing one or two wouldn't hurt... Especially if the headmaster has an important 'assignment' for me.", "base", "narrow", "base", "mid_soft", cheeks="blush")
         m "I'll consider it... Now let's circle back to you, Katie and your binge of her minge."
         call her_main("Professor.. How dare you.. I would never even think to shamelessly do something so heinous with a classmate and give you all the juicy details...", "annoyed", "base", "base", "R")
-        call her_main("For less than 40 house points.", "grin", "wink", "base", "mid", cheeks="blush")
+        call her_main("For less than forty house points.", "grin", "wink", "base", "mid", cheeks="blush")
         call her_main("", "base", "narrow", "base", "mid_soft", cheeks="blush")
         m "Maybe next time [hermione_name]. I'm a little... spent for tonight."
         call her_main("We both know you could go for longer if you wanted to...", "soft", "narrow", "base", "mid_soft", cheeks="blush")

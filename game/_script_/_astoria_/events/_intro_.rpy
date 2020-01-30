@@ -745,7 +745,7 @@ label astoria_intro_E3:
             call ton_main("But you're right though, Professor!","open","base","worried","mid")
             call ton_main("Casting the Imperius curse at her age is no easy task!","open","closed","base","mid")
             call ton_main("A girl with that type of...{w=0.3} talent, is a rare thing.","horny","base","raised","L") # Horny
-            call ton_main("I would say, 50 points for Slytherin should be appropriate.","base","base","angry","mid")
+            call ton_main("I would say, fifty points for Slytherin should be appropriate.","base","base","angry","mid")
             call ast_main("!!!","clench","base","base","mid")
             g4 "(If Hermione hears about this - she'll {i}Abra Kadabra{/i} my head off!)"
             g4 "(And not the one on my shoulders...)"
@@ -776,7 +776,7 @@ label astoria_intro_E3:
     call ton_main("She's {size=+5}so cute!{/size} Isn't she? {heart}","upset","base","sad","R", xpos="mid", ypos="base")
 
     if d_flag_01:
-        m "You gave her 50 house points..."
+        m "You gave her fifty house points..."
         g4 "For what you previously described as a serious crime?"
         call ton_main("I know! I shouldn't have rewarded her, but...","upset","closed","worried","mid")
         call ton_main("Did you see how her face lit up!","open","base","sad","mid")

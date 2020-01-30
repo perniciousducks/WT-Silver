@@ -107,7 +107,7 @@ label twins_random_duel:
         m "That confident are we?"
         fre "Of course."
         m "Well, if it's a monetary reward you're looking for then..."
-        m "How about if I lose then I give you 10 gold?"
+        m "How about if I lose, I'll give you ten gold?"
         ger "Let me just do some maths real quick."
         ger "..."
         ger "...carry the one..."
@@ -146,7 +146,7 @@ label twins_random_duel:
         m "Is there a limit?"
         fre "Of course... but you're not going to reach it..."
         m "..."
-        m "Okay, well... If you two win then I'll give you 10 gold."
+        m "Okay, well... If you two win then I'll give you ten gold."
         ger "One second, professor."
         "> George takes out a calculator and starts calculating something."
         if gold < 10:

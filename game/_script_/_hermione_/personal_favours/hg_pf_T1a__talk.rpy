@@ -689,7 +689,7 @@ label hg_pf_talk_tonks:
             if not hermione.is_worn("panties"):
                 m "(Is she even wearing any herself right now?...)"
             call her_main("It was if a snail had dragged themselves across one of the seats.", "annoyed", "base", "base", "R", cheeks="blush")
-            call her_main("I had to insist on staying after class - and I spent a good 10 minutes scourgifying everything.", "disgust", "narrow", "worried", "down", cheeks="blush")
+            call her_main("I had to insist on staying after class - and I spent a good ten minutes scourgifying everything.", "disgust", "narrow", "worried", "down", cheeks="blush")
             if masturbating:
                 g9 "(I bet you lapped it all up, slut!)"
             call ton_main("Why bother, the elves would've done it anyway.","open","base","base","R")

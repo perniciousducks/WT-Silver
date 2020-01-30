@@ -308,14 +308,14 @@ label hg_pf_admire_breasts_T2_intro_E1:
     m "Please don't mind me..."
     m "All I want to do is help you..."
     call her_main(".............", "annoyed", "base", "worried", "R")
-    call her_main("200 house points, [genie_name].", "normal", "happyCl", "worried", "mid")
-    m "So if I give you 200 house points, [hermione_name]..."
+    call her_main("Two hundred house points, [genie_name].", "normal", "happyCl", "worried", "mid")
+    m "So if I give you two hundred house points, [hermione_name]..."
     m "You will shamelessly bare your melons before me?"
     call her_main("[genie_name]! No need to be so vulgar!", "angry", "base", "angry", "mid")
     her "I think I'd better go..."
 
     menu:
-        "\"Wait. 200 points are yours. Show me!\"":
+        "\"Wait. Two hundred points are yours. Show me!\"":
             $ current_payout = 200
             call her_main("Really?", "open", "base", "base", "mid")
             m "Well?"
@@ -326,7 +326,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
 
             pass
 
-        "\"I will give you 5 points to see your tits.\"":
+        "\"I will give you five points to see your tits.\"":
             call her_main("Five?!", "scream", "wide", "base", "mid")
             call her_main("[genie_name], I am not going to expose myself for a meagre five points!", "angry", "base", "angry", "mid",emote="01")
             m "Well, your tits sure aren't worth two hundred, [hermione_name]!"
@@ -334,7 +334,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
             call her_main("Maybe one hundred - then?", "annoyed", "narrow", "angry", "R")
 
             menu:
-                "\"Fine. 100 it is! Bare them already!":
+                "\"Fine. A hundred it is! Bare them already!":
                     $ current_payout = 100
                     $ her_mood = 0
 
@@ -344,7 +344,7 @@ label hg_pf_admire_breasts_T2_intro_E1:
 
                     pass
 
-                "\"25 house points that's my final offer!\"":
+                "\"Twenty-five house points that's my final offer!\"":
                     $ current_payout = 25
                     $ her_mood += 9
 
@@ -374,7 +374,7 @@ label hg_pf_admire_breasts_T2_intro_E2:
     call play_music("chipper_doodle") # HERMIONE'S THEME.
     call her_main("I'd rather not, [genie_name]...", "annoyed", "narrow", "annoyed", "mid")
     m "Are you sure?"
-    g9 "You could earn 25 house points for it!"
+    g9 "You could earn twenty-five house points for it!"
     call her_main(".............", "annoyed", "base", "worried", "R")
     call her_main("Very well, [genie_name].", "angry", "base", "angry", "mid")
     call her_main("But you better keep your hands to yourself!", "annoyed", "narrow", "angry", "R", cheeks="blush")

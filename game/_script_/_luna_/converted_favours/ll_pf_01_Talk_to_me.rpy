@@ -10,7 +10,7 @@ label luna_favour_1: ###TALK TO ME #DONE
             m "Tell me a little about yourself, [lun_name]."
             call lun_main("*hmph* I assume you'll be paying me for this [lun_genie_name].","normal","angry","angry","mid")
             menu:
-                "-5 gold-":
+                "-Five gold-":
                     m "How does five gold sound [lun_name]?"
                     call lun_main("five gold! Who do you think I am!","pout","mad","angry","mid")
                     m "A student with no source of income."
@@ -22,13 +22,13 @@ label luna_favour_1: ###TALK TO ME #DONE
                     call lun_main("well, I suppose it would.","base","closed","base","down")
                     $ current_payout = 20
                     m "Good, well now that we've got that sorted out..."
-                "-10 gold-":
+                "-Ten gold-":
                     m "Will ten gold be enough for a conversation with your headmaster?"
                     call lun_main("I suppose so...","normal","suspicious","base","mid")
                     call lun_main("Just don't try anything funny.","upset","angry","angry","R")
                     $ current_payout = 10
                     m "Scouts honour. Now..."
-                "-50 gold-":
+                "-Fifty gold-":
                     $ current_payout = 50
                     m "How does fifty gold sound [lun_name]?"
                     call lun_main("{size=+10}(FIFTY GOLD!){/size}","open_wide_tongue","wide","base","mid")
@@ -110,7 +110,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                     call lun_main("Well, I expect a bonus.","normal","happyCl","raised","R")
                     m "I'm already paying you fifty gold!"
                     call lun_main("That was just for the conversation. If you expect me to stand here and watch you cum all over yourself, that costs extra.","upset","mad","mad","R")
-                    m "Fine, I'll make it 70 gold."
+                    m "Fine, I'll make it seventy gold."
                     $ current_payout = 70
                     call lun_main("Well I'm glad someone appreciates me.","base","seductive","raised","R")
                     call lun_main("(Even if it is a filthy old pervert...)","normal","closed","raised","R")
@@ -140,9 +140,9 @@ label luna_favour_1: ###TALK TO ME #DONE
         m "How's school going, [lun_name]."
         call lun_main("aren't we going to discuss how much you'll be paying me first, [lun_genie_name].","normal","angry","angry","mid")
         menu:
-            "-10 gold-": #just conversation (very short)
+            "-Ten gold-": #just conversation (very short)
                 $ current_payout = 10
-                m "How does 10 gold sound?"
+                m "How does ten gold sound?"
                 call lun_main("*Hmph* Fine...","normal","closed","base","down")
                 m "so about your school life..."
                 call lun_main("School is boring. All I do is go to classes.","upset","base","angry","mid")
@@ -151,7 +151,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                 call lun_main("And ten gold is barely a payment!","normal","base","angry","R")
                 m "I'd say it's a fair payment for a little bit of idle chit chat."
                 call lun_main("That's what you got. If you want more, pay more...","normal","base","mad","mid")
-            "-20 gold-": #Slightly flirty, still short
+            "-Twenty gold-": #Slightly flirty, still short
                 $ current_payout = 20
                 m "Will twenty gold be enough for you, [lun_name]?"
                 call lun_main("I suppose so...","normal","suspicious","base","mid")
@@ -171,7 +171,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                 m "Ah... Anything else?"
                 call lun_main("Hmmm... nothing comes to mind.","normal","suspicious","angry","down")
                 m "fair enough, well I think that was worth your twenty gold."
-            "-100 gold-": #JOI
+            "-One hundred gold-": #JOI
                 $ current_payout = 100
                 m "How about one hundred gold?"
                 call lun_main("Fine...","normal","seductive","angry","R")
@@ -179,7 +179,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                 call lun_main("......","upset","suspicious","raised","mid")
                 call lun_main("Well are you going to start?","upset","mad","mad","R")
                 m "Start what? You're the one who's supposed to be talking."
-                call lun_main("Oh please... You expect me to believe you're willing to pay your students 100 gold just to talk?","upset","angry","raised","mid")
+                call lun_main("Oh please... You expect me to believe you're willing to pay your students a hundred gold just to talk?","upset","angry","raised","mid")
                 m "Well I suppose that-"
                 call lun_main("Just start stroking your cock already [lun_genie_name].","normal","seductive","base","mid")
                 hide screen blktone
@@ -251,7 +251,7 @@ label luna_favour_1: ###TALK TO ME #DONE
                         call lun_main("Don't worry, I won't tell anyone...","base","seductive","raised","mid")
                         m "Thank you..."
                         call lun_main("I expect to be fairly compensated however...","base","angry","angry","R")
-                        m "Don't worry, I'll add an extra 50 gold to your payment."
+                        m "Don't worry, I'll add an extra fifty gold to your payment."
                         call lun_main("That's the least you could do [lun_genie_name]...","base","suspicious","raised","R")
 
 
@@ -359,8 +359,8 @@ label luna_favour_1: ###TALK TO ME #DONE
         call lun_main("In one word, [lun_genie_name], inadequate.","pout","angry","angry","mid")
         m "inadequate?"
         call lun_main("Yes! Someone such as myself should be showered with gifts and gold.","pout","mad","angry","R")
-        call lun_main("Instead I live in a chess piece while my stupid, worthless father struggles to sell 10 copies of his dumb paper!","upset","mad","mad","down")
-        m "Surely he sells more than 10 copies?"
+        call lun_main("Instead I live in a chess piece while my stupid, worthless father struggles to sell ten copies of his dumb paper!","upset","mad","mad","down")
+        m "Surely he sells more than ten copies?"
         call lun_main("Barely...","normal","angry","angry","R")
         call lun_main("He's struggling to get any institutions to stock it these days... ever since the ministry stopped buying it.","normal","suspicious","angry","R")
         menu:
@@ -681,11 +681,11 @@ label luna_favour_1: ###TALK TO ME #DONE
         m "Alright, alright. Here's your gold and points."
         $ gryffindor += 15
         $ ravenclaw += 15
-        m "15 points to gryffindor and ravenclaw."
+        m "Fifteen points to gryffindor and ravenclaw."
         $ gold -= 50
         $ luna_gold += 25
         m "and here's your gold."
-        ">You hand Luna and hermione 25 gold each."
+        ">You hand Luna and hermione twenty-five gold each."
         call her_main("Thank you [genie_name]!", "base", "base", "base", "mid")
         call lun_main("...Thank you sir.","normal","seductive","sad","R")
         ">Luna and hermione leave your office, talking as they go."

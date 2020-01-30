@@ -5,10 +5,10 @@ label hg_wager_bj:
         call her_main("I don't want to lose those points, but that is too much!", "angry", "base", "angry", "mid")
         call her_main("Isn't there anything else I could do?", "open", "base", "base", "mid")
         g4 "You're no fun!"
-        g9 "Come over here and let me give your butt a squeeze, then I'll only deduct 10 points from Gryffindor."
+        g9 "Come over here and let me give your butt a squeeze, then I'll only deduct ten points from Gryffindor."
         if her_whoring < 9:
             call her_main("No! what kind of girl do you take me for [genie_name]!", "scream", "base", "angry", "mid")
-            m "Fine, 20 points from Gryffindor!"
+            m "Fine, twenty points from Gryffindor!"
             $ gryffindor -= 20
             pause.5
             call her_chibi("leave","door","base")
@@ -55,7 +55,7 @@ label hg_wager_bj:
                 call her_main("Don't tell me to calm down!!!", "scream", "base", "angry", "mid", cheeks="blush")
                 hide screen hermione_main
                 call sna_main("Don't feel as if you have to stop on my behalf.", face="snape_01")
-                m "Fine, I'll stop... But I'm still taking 20 points from Gryffindor!"
+                m "Fine, I'll stop... But I'm still taking twenty points from Gryffindor!"
                 call her_chibi_scene("behind_desk_front")
                 with d1
                 ">You take your hands off Hermione"
@@ -64,7 +64,7 @@ label hg_wager_bj:
                 call sna_main("The perfect Hermione Granger letting her headmaster feel her up over a card game and some house points!", face="snape_02")
                 call sna_main("How sweet...", face="snape_03")
                 call her_main("Can I leave now?", "annoyed", "narrow", "worried", "down", flip=True)
-                m "You are excused miss Granger, but I will be taking 20 points from Gryffindor."
+                m "You are excused miss Granger, but I will be taking twenty points from Gryffindor."
                 $ gryffindor -= 20 #should take gryffindor points and then hermione leaves
 
                 call her_walk(action="leave")
@@ -90,8 +90,8 @@ label hg_wager_bj:
                 m "Fine, I'll let you go..."
                 call her_chibi_scene("behind_desk_front")
                 with d1
-                m "I'll only take 10 points from Gryffindor as we agreed."
-                m "10 Points from Gryffindor!"
+                m "I'll only take ten points from Gryffindor as we agreed."
+                m "Ten Points from Gryffindor!"
                 $ gryffindor -= 10
                 call blkfade
                 call her_chibi("stand","mid","base")
@@ -104,7 +104,7 @@ label hg_wager_bj:
                 call her_walk(action="leave")
 
     else: #If her whoring is higher than 15 (when she can do blowjob favour)
-        call her_main("Gryffindor really can't afford to lose 20 points...", "soft", "base", "worried", "mid")
+        call her_main("Gryffindor really can't afford to lose twenty points...", "soft", "base", "worried", "mid")
         call her_main("Okay then, I'll do it.", "open", "closed", "base", "mid")
         if hg_pf_blowjob.points > 0: #if shes done the blowjob favour these show
             call her_main("Not like I haven't done it before.", "base", "happy", "base", "mid_soft", cheeks="blush")
@@ -412,7 +412,7 @@ label hg_wager_bj:
                                 call sna_main("So no rematch?", face="snape_05")
                                 g4 "Wha..{w=0.5}"
                                 m "Yes, definitely no rematch..."
-                                m "I'm not sure I could handle another one of those for at least 30 minutes..."
+                                m "I'm not sure I could handle another one of those for at least thirty minutes..."
                                 call sna_main("That's oddly specific...", face="snape_04")
                                 m "You're oddly specific..."
                                 call sna_main("...", face="snape_03")
@@ -423,7 +423,7 @@ label hg_wager_bj:
 
                                 call her_chibi_scene("bj_pause")
                                 call her_main("So, no rematch then?", "crooked_smile", "narrow", "base", "mid_soft")
-                                g9 "As I said, at least not for another 30 minutes..."
+                                g9 "As I said, at least not for another thirty minutes..."
                                 call her_main("So I assume I'm not losing those points anymore?", "open", "narrow", "worried", "mid_soft")
                                 m "Definitely not..."
                                 if daytime:
@@ -480,9 +480,9 @@ label hg_wager_bj:
                                         call her_main("Well, I did what you asked me!", "mad", "narrow", "angry", "R", cheeks="blush")
                                         call her_main("So I'd very much appreciate if you didn't deduct those points", "open", "closed", "angry", "mid", cheeks="blush")
                                 menu:
-                                    "-Only deduct the 20-":
+                                    "-Only deduct the twenty-":
                                         g4 "You should be happy that I'm not deducting more!"
-                                        g4 "20 points from Gryffindor!"
+                                        g4 "Twenty points from Gryffindor!"
                                         $ gryffindor -= 20
                                         call her_main("...", "base", "base", "angry", "mid")
                                         call her_main("What ever...", "open", "closed", "angry", "mid")
@@ -490,7 +490,7 @@ label hg_wager_bj:
                                     "-Deduct even more-":
                                         m "Oh, don't you worry..."
                                         call her_main("...")
-                                        g4 "40 points from Gryffindor!"
+                                        g4 "Forty points from Gryffindor!"
                                         $ gryffindor -= 40
                                         call her_main("What, you can't do that!", "shock", "wide", "worried", "stare")
                                         g4 "Of course I can, I'm the headmaster!"
@@ -548,7 +548,7 @@ label hg_wager_bj:
                                 call her_main("What about the points...", "annoyed", "narrow", "worried", "down")
                                 g4 "Points?"
                                 g9 "Oh yes, the points!"
-                                g9 "20 points to gryffindor..."
+                                g9 "Twenty points to gryffindor..."
                                 $ gryffindor += 20
                                 call her_main("That's not...", "normal", "narrow", "base", "down")
                                 call her_main("Thank you...", "open", "closed", "base", "mid")
@@ -590,7 +590,7 @@ label hg_wager_bj:
                             call her_main("But, Snape was going to...", "open", "happyCl", "worried", "mid")
                             call her_main("...", "upset", "narrow", "worried", "down")
                             call her_main("Fine...", "clench", "narrow", "annoyed", "mid")
-                            m "20 Points from Gryffindor!"
+                            m "Twenty Points from Gryffindor!"
                             $ gryffindor -= 20
                             $ her_mood += 10
 

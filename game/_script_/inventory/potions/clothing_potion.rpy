@@ -37,7 +37,7 @@ label potion_scene_4: #Transparent uniform
     call her_chibi("stand","mid","base")
 
     her "Can I go now?"
-    m "Yes you may. 20 points to Gryffindor"
+    m "Yes you may. Twenty points to Gryffindor"
 
     $ gryffindor += 20
 
@@ -89,7 +89,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         call her_main("Ugh, you're such a pig.", "annoyed", "base", "worried", "R")
         m "Tell me about what happened."
         call her_main("...", "normal", "happyCl", "worried", "mid")
-        call her_main("Fine, but I expect an extra 10 points.", "open", "base", "base", "mid")
+        call her_main("Fine, but I expect an extra ten points.", "open", "base", "base", "mid")
         m "As you wish."
         call her_main("Well I started off with potions class as usual when I started to feel like all eyes were on me.", "disgust", "narrow", "base", "mid_soft")
         m "I wonder why."

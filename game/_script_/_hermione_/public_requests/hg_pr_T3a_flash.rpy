@@ -20,7 +20,7 @@ label hg_pr_flash:
     #Intro.
     if hg_pr_flash.counter == 0:
         m "[hermione_name]..."
-        m "I would like to award Gryffindor with 25 house points today."
+        m "I would like to award Gryffindor with twenty-five house points today."
         call her_main("Really?", "base", "base", "base", "mid")
         her "Thank you, [genie_name]!"
         m "Yes, but first I will require your help with something..."
@@ -55,7 +55,7 @@ label hg_pr_flash:
         call her_main("..............", "disgust", "narrow", "base", "mid_soft")
         m "All I ask you to do is to give some lucky boy a quick peek..."
         call her_main("But why? Why must I do things like this, [genie_name]?", "annoyed", "narrow", "angry", "R")
-        m "A minute of your time for 25 house points..."
+        m "A minute of your time for twenty-five house points..."
         m "A pretty nifty deal, wouldn't you agree?"
         her "I suppose..."
         her "Well alright, I'll see what I can do..."

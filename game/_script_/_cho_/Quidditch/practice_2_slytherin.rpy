@@ -883,7 +883,7 @@ label cc_st_hermione_blackmail:
     m "Great. Finally we can get on with this..."
     m "Miss Granger, you're expected to appear during the practice matches as commentator."
     her "..."
-    g9 "Every time you don't, I'll take 50 points from Gryffindor!"
+    g9 "Every time you don't, I'll take fifty points from Gryffindor!"
     her "That's just typical of you!"
     m "Make sure to be present..."
     her "..."

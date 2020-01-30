@@ -223,7 +223,7 @@ label cc_pf_talk_T1_intro_E1:
     if masturbating:
         g4 "What? Please don't go now. I've only just started!"
         call cho_main("Started with what, [cho_genie_name]?","annoyed","narrow","angry","mid")
-        g4 "I'll give you 10 house points if you stay!{w=0.8} Just a tiny bit longer!"
+        g4 "I'll give you ten house points if you stay!{w=0.8} Just a tiny bit longer!"
         call cho_main("And what makes you believe that I'd agree to such a thing? Getting rewarded with points for doing nothing?","open","closed","base","mid")
         call cho_main("Earning house points in such a way is despicable, and it would be unfair towards the other school houses, as well as my fellow students...","open","narrow","base","mid")
         call cho_main("","annoyed","narrow","angry","mid")

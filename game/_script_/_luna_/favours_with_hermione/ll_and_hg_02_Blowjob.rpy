@@ -285,7 +285,7 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call lun_main("I suppose not. although next time I think I should be able to move my head on my own!","normal","seductive","base","R")
         call her_main("Hmmm, I'm not sure if you're ready for that just yet...", "grin", "happyCl", "worried", "mid")
         call lun_main("Whatever... now about our payment [lun_genie_name]...","normal","suspicious","angry","R")
-        m "Yes, yes. How does 60 points to gryffindor for Hermione and 150 gold for you sound?"
+        m "Yes, yes. How does sixty points to gryffindor for Hermione and 150 gold for you sound?"
         call her_main("Actually we wanted to talk to you about that [genie_name]...", "base", "narrow", "worried", "down")
         call her_main("Luna and I have been talking, and we're not sure it's fair that we both are paid in separate currencies.", "base", "happyCl", "worried", "mid")
         call her_main("We think it would be more fair if we're both paid points and gold.", "base", "closed", "base", "mid")
@@ -297,10 +297,10 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         m "(It's not like I care who gets these worthless points)"
         $ ravenclaw += 30
         $ gryffindor += 30
-        m "30 points to gryffindor and ravenclaw!"
+        m "Thirty points to gryffindor and ravenclaw!"
         $ luna_gold += 75
         $ gold -= 150
-        m "And here's 75 gold each."
+        m "And here's seventy-five gold each."
         call her_main("Thank you [genie_name]!", "base", "base", "base", "mid")
         call lun_main("...","normal","angry","angry","R")
         call her_main("Luna! Don't be rude.", "angry", "base", "angry", "mid")
@@ -602,10 +602,10 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("I can see we're still going to have another lesson after we get paid. speaking of which...", "grin", "happyCl", "worried", "mid")
         $ ravenclaw += 30
         $ gryffindor += 30
-        m "30 points to gryffindor and ravenclaw!"
+        m "Thirty points to gryffindor and ravenclaw!"
         $ luna_gold += 75
         $ gold -= 150
-        m "And here's 75 gold each."
+        m "And here's seventy-five gold each."
         call her_main("Thank you [genie_name]!", "base", "base", "base", "mid")
         call lun_main("...","normal","angry","angry","R")
         call her_main("...", "disgust", "narrow", "base", "down")
@@ -883,10 +883,10 @@ label luna_favour_6: #luna and hermione blowjob #DONE
         call her_main("good, now I think we need to go do some actual study, could you please pay us [genie_name]?", "grin", "happyCl", "worried", "mid")
         $ ravenclaw += 30
         $ gryffindor += 30
-        m "30 points to gryffindor and ravenclaw!"
+        m "Thirty points to gryffindor and ravenclaw!"
         $ luna_gold += 75
         $ gold -= 150
-        m "And here's 75 gold each."
+        m "And here's seventy-five gold each."
         call her_main("Thank you [genie_name]! Any time you want to fuck luna's slutty little throat again just let us know!", "base", "base", "base", "mid")
         call lun_main("...Thank you sir.","base","seductive","sad","down", cheeks="blush",tears="mascara")
         call her_main("Well, we better be off sir, we still have a lot of studying to do!", "grin", "base", "base", "R")

@@ -551,7 +551,7 @@ label good_girl_scene:
     call her_main("Do you think that you could buy a favour off of me?", "smile", "narrow", "base", "mid_soft")
     m "Sure, what would you like to do?"
     call her_main("Well I suppose that I could show you my breasts.", "base", "narrow", "worried", "down")
-    call her_main("For 50 points of course...", "angry", "wink", "base", "mid")
+    call her_main("For fifty points of course...", "angry", "wink", "base", "mid")
     m "That seems fair."
     call her_main("Thank you [genie_name].", "base", "narrow", "base", "mid_soft")
     ">Hermione slowly lifts her top."
@@ -567,7 +567,7 @@ label good_girl_scene:
     call set_her_action("none")
     pause.5
 
-    m "50 points to Gryffindor."
+    m "Fifty points to Gryffindor."
     $ gryffindor += 50
     call her_main("Thank you [genie_name]. Have a nice night.", "smile", "base", "angry", "mid")
     m "You too [hermione_name]."

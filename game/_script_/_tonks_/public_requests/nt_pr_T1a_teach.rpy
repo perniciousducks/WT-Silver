@@ -145,7 +145,7 @@ label nt_pr_teach_T1_E1: #Tier 1 - Event 1 - Slytherin boy
     call ton_main("His underwear was practically {b}soaked{/b} in pre-cum.","horny","base","angry","mid")
     m "And do you think he'll spread the word about you?"
     call ton_main("I sure hope so...","base","base","base","down")
-    call ton_main("He earned 20 whole points from me today!","base","happyCl","base","down")
+    call ton_main("He earned twenty whole points from me today!","base","happyCl","base","down")
     call ton_main("Certainly he won't be able to keep his eyes off me anymore...","open","base","angry","mid")
     m "Very good."
     m "And try to reward those \"evil Slytherins\" with at least double the amount of points."
@@ -376,7 +376,7 @@ label nt_pr_teach_T1_E4: # Tier 1 - Event 4 - Slytherin girl
     m "I think you should give her some anyway."
     g9 "For being a tease!"
     call ton_main("Very well...","base","base","base","mid")
-    call ton_main("20 points for Slytherin!","open","closed","base","mid")
+    call ton_main("Twenty points for Slytherin!","open","closed","base","mid")
     call ton_main("Now, if you don't mind... It's getting a bit late...","open","base","base","R")
     m "Yes. You may leave..."
     call ton_main("Good night, [ton_genie_name].","base","happyCl","base","mid")
@@ -500,7 +500,7 @@ label nt_pr_teach_T2_E2: # Tier 2 - Event 2 - Ravenclaw boy
                 pass
             "\"Make it quick!\"":
                 call ton_main("Remember that cute boy?","open","base","base","mid")
-                call ton_main("Every time he shot out some cum for me I gave him 5 points...","horny","base","angry","mid")
+                call ton_main("Every time he shot out some cum for me I gave him five points...","horny","base","angry","mid")
                 m "I bet he earned quite a lot today. Well done, [tonks_name]..."
                 call ton_main("That he did, [ton_genie_name]... See you next time...","base","base","base","mid")
                 call increase_house_points("r", 20)
@@ -692,7 +692,7 @@ label nt_pr_teach_T2_E4: # Tier 2 - Event 4 - Slytherin girl
     call ton_main("Well, I had her stay back after class today...","open","closed","base","mid")
     call ton_main("For someone who supposedly hates selling favours,...she was surprisingly keen today...","base","base","angry","mid")
     m "Maybe she's finally coming around..."
-    call ton_main("I got her to give me a little peek under her skirt, for 20 house points...","open","closed","base","mid")
+    call ton_main("I got her to give me a little peek under her skirt, for twenty house points...","open","closed","base","mid")
     call ton_main("And, after she'd pulled up her skirt, I did the old-...offer more points for something else- trick...","open","base","base","mid")
     call ton_main("Had her to drop her panties as well.","base","base","base","mid")
     call ton_main("I was expecting her to at least argue at least a bit about the amount of points she would receive for it...","open","base","base","R")

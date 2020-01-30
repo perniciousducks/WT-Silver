@@ -28,10 +28,10 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         m "How familiar ye be wit' th' term \" Swabbing ye poop deck\"?"
 
 
-        call her_main("90 galleon points...", "annoyed", "narrow", "annoyed", "mid")
+        call her_main("Ninety galleon points...", "annoyed", "narrow", "annoyed", "mid")
         m "Wha'?"
         call her_main(".............................", "disgust", "narrow", "base", "mid_soft")
-        m "Ah, well then lass. 90 galleon points 'tis."
+        m "Ah, well then lass. Ninety galleon points 'tis."
         call blkfade
         hide screen hermione_main
         $ renpy.play('sounds/cloth_sound.mp3')
@@ -89,7 +89,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 g4 "Ye know... scallywags."
                 g4 "Argh, Blimey... Me canon be to wide now."
                 call her_main("Stop then! Avast, captain!", "open", "happyCl", "worried", "mid")
-                call her_main("Change course captain, I've changed me mind! I don't needs 90 galleon points!")
+                call her_main("Change course captain, I've changed me mind! I don't needs ninety galleon points!")
                 g4 "I reckon I be right on course..."
 
                 $ renpy.play('sounds/gltch.mp3')
@@ -532,7 +532,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Like this?", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
                 m  "Aye, that be a good wench."
                 call her_main("I be a wench, aren't I?", "silly", "narrow", "base", "dead")
-                m "Ye jus' sold me yer asshole fer 90 galleon points. What ye be calling that?"
+                m "Ye jus' sold me yer asshole fer ninety galleon points. What ye be calling that?"
                 call her_main("Yes, yes...{heart} I be nothing but a wench...{heart}", "silly", "base", "worried", "mid", cheeks="blush",tears="soft")
                 m "Ye helm be leakin."
                 pass

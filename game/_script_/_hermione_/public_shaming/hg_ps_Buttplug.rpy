@@ -96,14 +96,14 @@ label hg_ps_buttplug:
         call her_main("but it's so long! everyone will be able to see it!", "normal", "happyCl", "worried", "mid")
         m "That's the point, [hermione_name]..."
         call her_main("...........", "angry", "happyCl", "worried", "mid",emote="05")
-        call her_main("I want 100 points.", "annoyed", "base", "angry", "mid")
+        call her_main("I want a hundred points.", "annoyed", "base", "angry", "mid")
 
         menu:
             "\"Fine, but I expect you to put it in now.\"":
                 $ current_payout = 100
                 call her_main("What? Right now!?.", "angry", "happyCl", "worried", "mid")
                 call her_main("In front of you?", "angry", "wink", "base", "mid")
-                m "100 points [hermione_name]..."
+                m "One hundred points [hermione_name]..."
                 call her_main("ugh... Fine...", "angry", "narrow", "base", "down")
                 call her_main("But I'm not turning around!", "annoyed", "narrow", "annoyed", "mid")
                 m "Whatever suits you best..."
@@ -133,7 +133,7 @@ label hg_ps_buttplug:
                 $ current_payout = 70
                 call her_main("Hmmmph...", "annoyed", "narrow", "angry", "R")
                 call her_main("Alright then, just don't expect me to show it to you!", "angry", "base", "angry", "mid")
-                m "So long as you wear it to class then you'll get your 70 points."
+                m "So long as you wear it to class then you'll get your seventy points."
                 ">You hand her the butt plug."
                 call her_main("Will that be all [genie_name]?.", "annoyed", "narrow", "annoyed", "mid")
                 m "Yes [hermione_name], see you tonight."
@@ -253,7 +253,7 @@ label hg_ps_buttplug:
                 ">You pull out the butt plug."
                 m "Ready for the phoenix again?"
                 call her_main("Oh, alright then...", "open", "narrow", "worried", "down",xpos="right",ypos="base")
-                call her_main("but if you pay me and additional 5 points I'll turn around as I put it in...", "soft", "happy", "base", "R")
+                call her_main("but if you pay me and additional five points I'll turn around as I put it in...", "soft", "happy", "base", "R")
                 menu:
                     "\"Done\"":
                         $ current_payout += 5

@@ -222,9 +222,9 @@ label hermione_random_duel:
         m "Well, I was thinking house points."
         call her_main("House points...", "normal", "happy", "base", "R")
         call her_main("How would this work then?", "open", "happy", "base", "mid")
-        m "Well, if you win I'll give you 10 points to Gryffindor."
+        m "Well, if you win I'll give you ten points to Gryffindor."
         call her_main("Only 10?", "annoyed", "narrow", "base", "mid_soft")
-        m "20 then..."
+        m "Twenty then..."
         call her_main("And if I lose?", "open", "happy", "base", "R")
         m "I'll take the same amount away."
         m "\"As if she's going to let that happen...\""
@@ -262,8 +262,8 @@ label hermione_random_duel:
     call her_main("I noticed...", "normal", "base", "worried", "R")
     m "You do know what this means, don't you?"
     call her_main("...", "normal", "base", "worried", "mid")
-    g9 "This means I'm going to have to deduct 20 points from Gryffindor house."
-    call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's 20 house points missing...", "open", "happyCl", "worried", "mid")
+    g9 "This means I'm going to have to deduct twenty points from Gryffindor house."
+    call her_main("Please, don't. I don't want the others to wake up tomorrow wondering why there's twenty house points missing...", "open", "happyCl", "worried", "mid")
     m "Well, in that case..."
 
     menu:
@@ -284,7 +284,7 @@ label hermione_random_duel:
         "-Deduct the points-":
             pass
 
-    m "No, sorry miss Granger... Minus 20 points to Gryffindor..."
+    m "No, sorry miss Granger... Minus twenty points from Gryffindor..."
     call her_main("...", "disgust", "narrow", "worried", "down")
     call her_main("Fine, that's fair...", "open", "narrow", "base", "down")
     call her_main("But I'm done playing for today...", "normal", "happyCl", "worried", "mid", cheeks="blush")
@@ -316,7 +316,7 @@ label her_duel_lost:
     if geniecard_level > 1:
         her "Hah, told you I'd do it!"
         her "I'll take those points now."
-        m "Fine, 20 to gryffindor."
+        m "Fine, twenty to gryffindor."
         $ gryffindor += 20
 
     menu:

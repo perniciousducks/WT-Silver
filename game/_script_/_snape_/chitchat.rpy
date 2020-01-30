@@ -58,8 +58,8 @@ label snape_chitchat:
             sna "So I'm really Not in the mood for chit-chats..."
             
         elif one_of_ten == 9:
-            call sna_main("Being a wizard is a 24 hours a day...","snape_04") 
-            call sna_main("7 days a week...","snape_03") 
+            call sna_main("Being a wizard is a twenty-four hours a day...","snape_04") 
+            call sna_main("seven days a week...","snape_03") 
             call sna_main("365 days a year job.","snape_04") 
             sna "We get no vacation days..."
             
@@ -233,7 +233,7 @@ label snape_chitchat:
     ### WHORING LEVEL 05 ###
     if her_whoring >= 12 and her_whoring <= 14:
         if one_of_ten == 1:
-            call sna_main("15 points for a blowjob is a fair price, right?","snape_24") 
+            call sna_main("Fifteen points for a blowjob is a fair price, right?","snape_24") 
             call sna_main("","snape_23") 
 
         elif one_of_ten == 2:

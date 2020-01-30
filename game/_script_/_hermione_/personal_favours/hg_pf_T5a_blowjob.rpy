@@ -1195,12 +1195,12 @@ label hg_hidden_blowjob_tonks:
     call ton_main("Hermione, for your exceptional and benevolent effort of sucking your headmaster's cock, {w=0.5}I hereby reward the house Gryffindor...","open","base","base","down")
 
     call her_chibi_scene("bj_pause")
-    call ton_main("Sixtynine points!","horny","base","base","mid")
+    call ton_main("Sixty-nine points!","horny","base","base","mid")
     $ gryffindor += 69
 
-    call her_main("(Sixtynine! That's even more than she agreed on!)", "sucking", "narrow", "base", "up")
+    call her_main("(Sixty-nine! That's even more than she agreed on!)", "sucking", "narrow", "base", "up")
     m "Didn't you say fifty earlier?"
-    call ton_main("Yes, but sixtynine is so much better!","horny","base","raised","mid")
+    call ton_main("Yes, but sixty-nine is so much better!","horny","base","raised","mid")
     call ton_main("Don't you think so too, Miss Granger?","base","base","angry","down")
     call her_main("Uhm... Yes. Thank you, Miss Tonks.", "disgust", "happyCl", "worried", "mid")
     m "Less talking, more sucking, [hermione_name]!"

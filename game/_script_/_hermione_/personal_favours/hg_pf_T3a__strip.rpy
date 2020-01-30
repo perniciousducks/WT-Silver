@@ -1372,7 +1372,7 @@ label hg_pf_strip_T2_masturbate:
 
     menu:
         m "..."
-        "\"You get 1 extra point.\"":
+        "\"You get one extra point.\"":
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             call her_main("One extra point?", "soft", "base", "angry", "mid")
             call her_main("One meagre extra point for letting you do this to me?", "scream", "happyCl", "worried", "mid")
@@ -1392,7 +1392,7 @@ label hg_pf_strip_T2_masturbate:
             $ hermione.wear("all")
             jump end_hg_pf_strip
 
-        "\"You get 10 extra points.\"":
+        "\"You get ten extra points.\"":
             $ current_payout = 45
             call her_main("Ten extra points [genie_name]?", "soft", "base", "angry", "mid")
             call her_main("But that is not even nearly enough!")
@@ -1410,7 +1410,7 @@ label hg_pf_strip_T2_masturbate:
             $ hermione.wear("all")
             jump end_hg_pf_strip
 
-        "\"You get 25 extra points.\"":
+        "\"You get twenty-five extra points.\"":
             $ current_payout = 60
             call her_chibi("sit_naked","on_desk","on_desk")
 
@@ -1426,7 +1426,7 @@ label hg_pf_strip_T2_masturbate:
             $ hermione.wear("all")
             jump end_hg_pf_strip
 
-        "\"You get 50 extra points.\"":
+        "\"You get fifty extra points.\"":
             $ current_payout = 85
             call her_main("Seriously?!", "angry", "wide", "base", "stare")
             call her_chibi("sit_naked","on_desk","on_desk")

@@ -178,7 +178,7 @@ label cheats:
         "-Add Slytherin Points-{icon=interface/icons/small/slyt.png}":
             $ slytherin += 200
             call house_points
-            "200 points to Slytherin!"
+            "Two hundred points to Slytherin!"
             jump cheats
 
         "-Wardrobe transparency-{icon=interface/icons/small/wardrobe.png}":

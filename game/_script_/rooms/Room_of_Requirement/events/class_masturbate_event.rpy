@@ -91,8 +91,8 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("If you don't give me points right now, I'm leaving!", "mad", "base", "angry", "mid")
 
         menu:
-            "\"Here's 80 points.\"":
-                m "Party Pooper. 80 Points to Gryffindor."
+            "\"Here's eighty points.\"":
+                m "Party Pooper. Eighty points to Gryffindor."
                 call her_main("Thank you, professor. Good Day!", "open", "slit", "low", "stare")
                 call her_main("{size=-5}(Was that even worth it? I’d rather have just sucked his cock twice then try that again.){/size}", "annoyed", "narrow", "annoyed", "mid")
                 call her_main("{size=-5}(Did I really just think that?){/size}", "open", "narrow", "worried", "down")
@@ -118,13 +118,13 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Good morning [genie_name]", "smile", "happy", "base", "mid_soft")
         m "Did I ever tell you of the time I saved Christmas?"
         call her_main("Can we just skip to the part where you tell me to do something disgusting.", "clench", "squint", "angry", "mid")
-        m "...Go masturbate during class. 80 points."
+        m "...Go masturbate during class. Eighty points."
         call her_main("Fine.", "annoyed", "narrow", "annoyed", "mid")
 
         call her_walk(action="leave")
 
         call bld
-        m "I would have given you 200 for listening to my story!"
+        m "I would have given you two hundred for listening to my story!"
 
         call her_walk(action="enter", xpos="mid", ypos="base")
 
@@ -158,14 +158,14 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("... No, no I do not. Not until those Slytherins pay.", "open", "slit", "low", "stare")
         call her_main("[genie_name] I don't care about my points for this. I just want you to do something about Slytherin.", "open", "base", "base", "mid_soft")
         menu:
-            "\"Give 80 Points to Gryffindor.\"":
+            "\"Give eighty points to Gryffindor.\"":
                 m "Sorry [hermione_name], but there isn't much I can do."
-                m "But here these should cheer you up, 80 house points to Gryffindor."
+                m "But here, these should cheer you up. Eighty house points to Gryffindor."
                 call her_main("Ugh- It's like you don't even listen to me.", "annoyed", "narrow", "annoyed", "mid")
 
-            "\"Take 200 points from Slytherin.\"":
+            "\"Take two hundred points from Slytherin.\"":
                 m "Hmmm. While I doubt I can do anything official just yet..."
-                m "200 house points from Slytherin!"
+                m "Two hundred house points from Slytherin!"
                 call her_main("Serves them right. Heh, heh heh.", "grin", "happy", "base", "mid_soft")
                 call her_main("You know I understand now why I rushed here to talk to you.", "smile", "happy", "base", "mid_soft")
                 call her_main("You always know just what to say to make me feel good. [genie_name]", "open", "happy", "base", "mid_soft")
@@ -192,7 +192,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
                 m "Which you were."
                 m "And not for the first time."
                 call her_main("That's that- You're making me!", "annoyed", "narrow", "annoyed", "mid")
-                m "Making? All I did was offer you some house points. And not that many, what 80? I'm sure you could have done a little book report and gotten that many."
+                m "Making? All I did was offer you some house points. And not that many, what eighty? I'm sure you could have done a little book report and gotten that many."
                 m "Instead you choose to ignore your lesson in favour of pleasuring yourself in class."
                 m "Are you sure that you aren't you the..."
                 call her_main("Stop it...please.", "upset", "narrow", "worried", "down")
@@ -207,10 +207,10 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call bld
         m "POP QUIZ!"
         call her_main("{size=-5}(my ears!){/size}", "annoyed", "narrow", "annoyed", "mid")
-        m "Question 1 of 1 if you wanted to earn 80 points, you'd need to..."
+        m "Question one, if you wanted to earn eighty points, you'd need to..."
         m "A. Kiss a girl? B. Flash your Tits. C. Masturbate during class. D. Eat a wand."
         call her_main("C? And you aren't actually going to make me eat a wand one day, are you?", "open", "narrow", "worried", "mid_soft")
-        m "For 75 house points I might."
+        m "For sevnty-five house points I might."
         call her_main("I feel like it should be a lot more than that.", "open", "base", "base", "mid")
         m "For sucking a dick? Nah seems fair."
         call her_main("Suck a di- But you said eat a wand.", "clench", "squint", "angry", "mid")
@@ -277,7 +277,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Well the only person who doesn't seem to like the new me, is the old me.", "clench", "narrow", "base", "mid_soft")
         call her_main("And I think the new me is starting to listen to the old me less and less.", "smile", "happy", "base", "mid_soft", cheeks="blush")
         call her_main("Does that make sense?", "open", "base", "base", "mid")
-        m "Yes, I think it does. 80 house points."
+        m "Yes, I think it does. Eighty house points."
         call her_main("{size=-5}Really?{/size} For what? Oh right masturbating during class. Hahah, I already forgot.", "silly", "happy", "base", "mid_soft")
         m "Have a good night [hermione_name]"
         call her_main("You too [genie_name]", "open", "base", "base", "mid")
@@ -311,7 +311,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", "soft", "base", "base", "mid_soft", cheeks="blush")
         m "Oh you gorgeous little, teasing minx!"
         call her_main("I thought we were done with the nicknames.", "annoyed", "base", "base", "mid")
-        m "Hmm yes, well unfortunately according to the official rules, I may only give 80 points per day for masturbation related favours."
+        m "Hmm yes, well unfortunately according to the official rules, I may only give eighty points per day for masturbation related favours."
         call her_main("Oh I see, that's too bad.", "upset", "narrow", "worried", "down")
         g9 "A real shame...but there nothing preventing you from doing those 'bonus’ acts on your own."
         call her_main("I guess...", "upset", "squint", "angry", "mid")
@@ -331,7 +331,7 @@ label class_masturbation_event: #LV.8 (Whoring = 21 - 23)
 
         menu:
             "\"Just give her the points.\"":
-                m "Well I trust you at your word, [hermione_name] 80 points."
+                m "Well I trust you at your word, [hermione_name]. Eighty points."
                 call her_main("Oh really? Are you sure you don't want me to give you the details to be sure?", "upset", "squint", "angry", "mid")
                 m "No no, it's quite alright you deserve my trust. I'm sure you have some studying or some such to get to"
                 call her_main("I suppose. Well goodnight [genie_name]", "annoyed", "narrow", "annoyed", "mid")

@@ -213,7 +213,7 @@ label school_ended:
 ### EPILOGUE
 label epilogue:
     "\"Epilogue\"" "{size=-2}It's been a year. You attend a university abroad and actually enjoy learning for a change, so you seldom think about the past and have high hopes for your future.{/size}"
-    "\"Epilogue\"" "{size=-2}-Ending 01 of 04-{/size}"
+    "\"Epilogue\"" "{size=-2}-Ending 01 of 05-{/size}"
 
 
 ### HAREM ###

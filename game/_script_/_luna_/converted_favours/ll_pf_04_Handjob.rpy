@@ -694,7 +694,7 @@ label luna_favour_4: ###Luna handjob #DONE
             ">She gives them another shake."
             call lun_main("or my thighs...","base","seductive","angry","mid")
             ">She rubs them together as she rotates on the balls of her feet."
-            call lun_main("boobs are an extra 100...","base","angry","mad","mid")
+            call lun_main("boobs are an extra one hundred...","base","angry","mad","mid")
             call lun_main("thighs are 50...","normal","angry","angry","R")
             g4 "Ah{size=+2} here{/size} {size=+4}it{/size} {size=+6}is!{/size}"
 

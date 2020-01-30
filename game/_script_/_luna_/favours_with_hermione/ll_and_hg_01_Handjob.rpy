@@ -471,7 +471,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
         m "Anyway, thanks for your help today."
         call her_main("anything for my friends [genie_name]...", "soft", "happy", "base", "R")
         m "(Does that mean me?)"
-        m "Yes, well, 60 points to gryffindor!"
+        m "Yes, well, sixty points to gryffindor!"
         $ gryffindor += 60
         call her_main("Thank you [genie_name]...", "open", "base", "base", "R")
 
@@ -539,10 +539,10 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                 m "I didn't mean it like-"
                 call lun_main("*hmph* I suppose I'll strip then [lun_genie_name]... Just so you remember who has the better body.","normal","seductive","angry","mid")
                 call lun_main("But I expect extra for this [lun_genie_name]!","upset","angry","angry","R")
-        m "sure. I'll add another 40 gold."
+        m "sure. I'll add another forty gold."
         $ luna_payout += 40
         call her_main("If she's getting extra then I want some more points!", "scream", "closed", "angry", "mid")
-        m "whatever. An extra 20 points for gryffindor then."
+        m "whatever. An extra twenty points for gryffindor then."
         $ hermione_payout += 20
         call her_main("yay!", "smile", "base", "base", "R")
         call lun_main("I still can't believe you get excited over points.","normal","suspicious","angry","up")
@@ -1174,7 +1174,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face #DONE
                     m "Right, nearly forgot."
                     call her_main("...", "annoyed", "squint", "base", "mid")
                     $ gryffindor += 50
-                    m "50 points to gryffindor!"
+                    m "Fifty points to gryffindor!"
                     call her_main("thank you [genie_name]...", "base", "closed", "base", "mid")
                     call lun_main("...","normal","seductive","base","R")
                     $ luna_gold += 150

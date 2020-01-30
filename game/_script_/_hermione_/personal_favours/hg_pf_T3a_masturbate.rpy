@@ -142,7 +142,7 @@ label hg_pf_strip_T2_fingering:
             call set_her_action("covering_top")
 
             call her_main("I'm not sure if I should--", "clench", "narrow", "base", "down")
-            m "There's another 10 points for gryffindor in it for you..."
+            m "There's another ten points for Gryffindor in it for you..."
             $ current_payout += 10
             call her_main("...", "soft", "happy", "base", "R")
             call her_main("......", "soft", "happy", "base", "R")
@@ -240,7 +240,7 @@ label hg_pf_strip_T2_fingering:
             m "try harder..."
             call nar(">Hermione starts grinding furiously against hand")
             call her_main("*SOB!* i can't...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
-            m "well then, 0 points to Gryffindor..."
+            m "Well then, zero points to Gryffindor..."
             call her_main("{size=-5}After all...{/size} Really [genie_name]?", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
             call her_main("After I stood here and...", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
             call her_main("..........", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")

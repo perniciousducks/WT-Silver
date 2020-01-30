@@ -276,7 +276,7 @@ label costume_scene_1: #Maid role-play
     m "You could play the role of my personal maid."
     if her_whoring < 17:
         call her_main("And how much would this \"personal maid\" be paid?", "smile", "narrow", "base", "mid_soft")
-        m "35 points sounds fair."
+        m "Thirty-five points sounds fair."
     call her_main("...", "smile", "narrow", "base", "mid_soft")
     call her_main("Let me go change.", "smile", "narrow", "base", "mid_soft")
     $ hermione.equip(her_outfit_maid)
@@ -328,7 +328,7 @@ label costume_scene_1: #Maid role-play
     ">Hermione cleans up your cum from the floor and table."
     her "Well how did I do?"
     m "Very well indeed! You've taken to role-play like a duck to water."
-    m "40 points to Gryffindor."
+    m "Forty points to Gryffindor."
     her "Thank you [genie_name]."
 
     return

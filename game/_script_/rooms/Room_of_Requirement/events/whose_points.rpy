@@ -75,7 +75,7 @@ label whose_points:
     $ renpy.play('sounds/applause01.ogg')
     hat "Boo, there's no cauldrons in the bedroom!"
 
-    m "Quiet now, it was a good euphemism, 10 points to Gryffindor."
+    m "Quiet now, it was a good euphemism. Ten points to Gryffindor."
     hide screen hermione_main
     with d3
 
@@ -90,7 +90,7 @@ label whose_points:
     call lun_main("Oops... I was supposed to squeeze the mucus out with my hands and not crush it.","silly","closed","raised","mid", xpos="right", ypos="base")
 
     $ renpy.play('sounds/applause01.ogg')
-    m "Sounds painful... 15 points to Ravenclaw."
+    m "Sounds painful... Fifteen points to Ravenclaw."
     hide screen luna_main
     with d3
 
@@ -132,7 +132,7 @@ label whose_points:
     call her_main("I love the feeling of a hard wooden object between my legs. \nI tend to tense up during the climax.","grin", cheeks="blush")
 
     $ renpy.play('sounds/applause01.ogg')
-    m "A bit direct but I like it. \n15 points to Gryffindor."
+    m "A bit direct but I like it.\nFifteen points to Gryffindor."
     hide screen hermione_main
     with d3
 
@@ -141,7 +141,7 @@ label whose_points:
     g9 "(I don't mind having you end up with one of mine in your throat one day if you know what I mean...)"
 
     $ renpy.play('sounds/applause01.ogg')
-    m "20 points to Ravenclaw."
+    m "Twenty points to Ravenclaw."
     hide screen luna_main
     with d3
 
@@ -200,7 +200,7 @@ label whose_points:
     call her_main("...", "smile", "base", "worried", "mid")
 
 
-    g9 "500 points to Gryffindor!"
+    g9 "Five hundred points to Gryffindor!"
     hide screen hermione_main
     with d3
 

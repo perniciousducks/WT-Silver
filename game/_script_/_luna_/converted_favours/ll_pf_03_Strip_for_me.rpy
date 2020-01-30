@@ -1056,7 +1056,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 call lun_main("well...","base","suspicious","base","mid")
                 m "..."
                 call lun_main("let's just say I wouldn't let that happen if I were you...","base","suspicious","base","R")
-                call lun_main("Now forget about that, let's discuss payment. 100 gold sounds fair to me... {p}how about you?","base","suspicious","angry","mid")
+                call lun_main("Now forget about that, let's discuss payment. A hundred gold sounds fair to me... {p}how about you?","base","suspicious","angry","mid")
                 m "It sounds fair..."
                 call lun_main("I'm glad we could have a happy ending.","base","mad","sad","R")
                 m "yes, [lun_name]..."

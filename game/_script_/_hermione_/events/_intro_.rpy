@@ -1086,20 +1086,20 @@ label hermione_intro_E6:
     $ current_payout = 0
 
     menu:
-        "\"1 point.\"":
+        "\"One point.\"":
             if not current_favor in ["stand_there"]:
                 her "I don't think it's worth it then..."
                 jump choose_favor_again
             $ current_payout = 1
-        "\"10 points.\"":
+        "\"Ten points.\"":
             if not current_favor in ["stand_there","silly_face"]:
                 her "I don't think it's worth it then..."
                 jump choose_favor_again
             $ current_payout = 10
-        "\"20 points.\"":
+        "\"Twenty points.\"":
             her "So little...?"
             $ current_payout = 20
-        "\"40 points.\"":
+        "\"Forty points.\"":
             her "(Wow. That's quite a lot...)"
             $ current_payout = 40
 

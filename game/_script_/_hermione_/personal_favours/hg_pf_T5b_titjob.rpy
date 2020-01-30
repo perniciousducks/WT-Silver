@@ -124,7 +124,7 @@ label hg_pf_titjob_T1_intro_E1:
     label back_to_titjob_choices:
     menu:
         m "(...)"
-        "\"You'll get 15 house points.\"" if her_mood == 0:
+        "\"You'll get fifteen house points.\"" if her_mood == 0:
             $ her_mood += 7
             call her_main("[genie_name], are you seriously expecting me to give you a titjob...", "angry", "closed", "angry", "mid")
             call her_main("For fifteen meagre points?!", "scream", "base", "angry", "mid")
@@ -138,7 +138,7 @@ label hg_pf_titjob_T1_intro_E1:
             m "Fair enough..."
             jump back_to_titjob_choices
 
-        "\"You'll get 45 house points.\"":
+        "\"You'll get forty-five house points.\"":
             call her_main("{number=current_payout} house points...?", "open", "wink", "base", "mid")
             call her_main("This could put Gryffindor back in the lead...", "annoyed", "narrow", "worried", "down")
             m "So,...is that a yes?"
@@ -147,7 +147,7 @@ label hg_pf_titjob_T1_intro_E1:
             g9 "For a titjob!"
             call her_main("(...)", "annoyed", "base", "angry", "mid")
 
-        "\"You'll get 100 house points.\"":
+        "\"You'll get one hundred house points.\"":
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ current_payout = 100
             $ her_mood = 0

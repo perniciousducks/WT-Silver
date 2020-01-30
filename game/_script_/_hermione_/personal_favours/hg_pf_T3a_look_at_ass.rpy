@@ -46,7 +46,7 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
         her "I think I want fifty points now..."
 
         menu:
-            "\"Fine. 50 points are yours. Show me!\"":
+            "\"Fine. Fifty points are yours. Show me!\"":
                 $ current_payout = 50
                 call her_main("Really?", "open", "base", "base", "mid")
                 m "Well?"
@@ -55,19 +55,19 @@ label hg_pf_look_at_ass: #LV.3 (Whoring = 9 - 11)
                 m "Sure, sure..."
                 call her_main("And you most certainly must not touch yourself!", "scream", "happyCl", "worried", "mid")
 
-            "\"I will give you 40 points to see your ass.\"":
+            "\"I will give you forty points to see your ass.\"":
                 call her_main("{number=current_payout}?", "annoyed", "squint", "angry", "mid")
                 call her_main("Well alright then...", "annoyed", "narrow", "angry", "R")
                 call her_main("but if you expect to touch me it'll cost you extra...", "annoyed", "narrow", "worried", "down")
                 call her_main("at least one hundred points", "annoyed", "narrow", "angry", "R")
 
                 menu:
-                    "\"Fine. 100 it is! strip already!":
+                    "\"Fine. One hundred it is! strip already!":
                         $ current_payout = 100
                         her "................."
                         call her_main("(I didn't think he'd agree to this...)", "annoyed", "base", "worried", "R")
                         call her_main("W-Well alright then...", "normal", "happyCl", "worried", "mid")
-                    "\"40 house points it is then\"":
+                    "\"Forty house points it is then\"":
                         $ current_payout = 40
                         her "Well, so be it."
                         call her_main("but you better keep your hands you yourself...", "annoyed", "narrow", "angry", "R")

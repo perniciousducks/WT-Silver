@@ -374,7 +374,7 @@ label chit_chat:
 
         elif one_of_ten == 10:
             call her_main("Would you like to see my tits today, sir?", "smile", "narrow", "base", "mid_soft")
-            call her_main("25 house points, please.", "smile", "base", "angry", "mid")
+            call her_main("Twenty-five house points, please.", "smile", "base", "angry", "mid")
             call her_main("", "upset", "closed", "base", "mid")
 
 

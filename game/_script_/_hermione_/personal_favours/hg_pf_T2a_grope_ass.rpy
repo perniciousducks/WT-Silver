@@ -167,7 +167,7 @@ label hg_pf_grope_ass_T1_back:
 
         "\"I'm subtracting points from you then!\"":
             call her_main("You can't be serious!?", "scream", "wide", "base", "stare", cheeks="blush")
-            g4 "The Gryffindor house, minus 10 points!"
+            g4 "The Gryffindor house, minus ten points!"
             g4 "There! It's done!"
             call her_main("Grr...........", "angry", "base", "angry", "mid", cheeks="blush")
             call her_main("........................", "angry", "base", "angry", "mid", cheeks="blush")
@@ -489,12 +489,12 @@ label hg_pf_grope_ass_T2_fail:
     call her_main("Yes you did. {size=+4}Yes you did!{/size}", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
     g4 "I most certainly did not!"
     call her_main("No, you {size=+4}did{/size}, [genie_name]!", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
-    call her_main("Now, you will give me 20-", "angry", "base", "angry", "mid", cheeks="blush", tears="soft")
-    call her_main("No, 100 house points or I am reporting you to the Ministry of magic!", "angry", "base", "angry", "mid", cheeks="blush", tears="soft")
+    call her_main("Now, you will give me twenty-", "angry", "base", "angry", "mid", cheeks="blush", tears="soft")
+    call her_main("No, a hundred house points or I am reporting you to the Ministry of magic!", "angry", "base", "angry", "mid", cheeks="blush", tears="soft")
 
     menu:
         m "(Ah, crap...)"
-        "\"Alright, alright... 100 points it is...\"":
+        "\"Alright, alright... One hundred points it is...\"":
             $ gryffindor += 100
             $ her_mood += 9
 

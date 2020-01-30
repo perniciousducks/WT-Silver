@@ -120,7 +120,7 @@ label give_cho_gift(gift_item):
             call cho_main("Thank you, [cho_genie_name].",face="neutral")
             call cho_mood(-1)
         elif cho_tier == 3:
-            call cho_main("5 steps to modify your brooms legally...",pupils="down",face="horny",xpos="mid",ypos="base")
+            call cho_main("Five steps to modify your brooms legally...",pupils="down",face="horny",xpos="mid",ypos="base")
             call cho_main("Sounds useful.","smile","base","base","mid")
             call give_gift(">You give an assortment of educational magazines to Cho...",gift_item)
             call cho_main("Thank you, [cho_genie_name].",face="neutral")

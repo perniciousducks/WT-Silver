@@ -673,7 +673,7 @@ label cho_intro_E3:
         m "You’re testing my patience Miss Granger..."
         call her_main("Oh, I know!{p=0.5}I want a seat in the teacher stands during the Quidditch matches!", "smile", "happyCl", "base", "mid")
         call her_main("Cho would be so jealous if she saw me sitting near the commentator and teachers...", "grin", "narrow", "base", "mid_soft")
-        m "So, you want both 200 points and a seat in the teacher stands..."
+        m "So, you want both two hundred points and a seat in the teacher stands..."
         call her_main("Yes...", "base", "happy", "base", "mid_soft")
 
         menu:
@@ -683,7 +683,7 @@ label cho_intro_E3:
                 call her_main("Well...", "soft", "happy", "base", "R")
                 m "Don’t push your luck..."
                 call her_main("No, I think that should do...", "smile", "happyCl", "base", "mid")
-                m "200 points to gryffindor...{p=0.6}Happy?"
+                m "Two hundred points to gryffindor...{p=0.6}Happy?"
                 $ gryffindor += 200
 
                 call her_main("If I'm truly honest with you Sir,{p=0.6}My plans weren’t that popular with the Quidditch teams in any case.", "soft", "narrow", "base", "mid_soft")
@@ -741,7 +741,7 @@ label cho_intro_E3:
         g4 "fifty points..."
         call her_main("(...)", "annoyed", "narrow", "angry", "R")
         call her_main("Very well then.", "soft", "closed", "base", "mid")
-        m "50 points, to the Gryffindor house..."
+        m "Fifty points, to the Gryffindor house..."
         $ gryffindor += 50
         call her_main("Thank you, [genie_name].", "base", "base", "base", "mid")
 

@@ -220,7 +220,7 @@ label nt_he_favors_E1:
     call ton_main("How much for a lap dance?","horny","base","raised","mid")
     m "Again, it depends on the student."
     call ton_main("...","upset","base","base","R")
-    m "But if I had to guess, I'd say about 25 points."
+    m "But if I had to guess, I'd say about twenty-five points."
     call ton_main("Unbelievable that you've managed to convince these girls to offer themselves up to you, for a bunch of imaginary points...","open","base","angry","R")
     m "Works for the internet..."
     call ton_main("The what?","open","base","raised","mid")
@@ -396,7 +396,7 @@ label nt_he_story_intro_E5:
     m "That \"moody\" guy taught you, you said. You could start there."
     call ton_main("Well, the job of an auror is a bit different now than how it was ten or so years ago.","open","base","worried","mid")
     call ton_main("I studied to become an auror with the hopes of taking down evil wizards.","angry","base","worried","down")
-    m "Sounds like a 90s B movie to me."
+    m "Sounds like a nineties B movie to me."
     call ton_main("Tell me about it...","upset","base","angry","R")
     call ton_main("But that's not at all how the job is anymore.","open","closed","sad","mid")
     m "Was it ever?"

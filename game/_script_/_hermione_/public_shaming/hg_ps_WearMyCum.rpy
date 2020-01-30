@@ -233,9 +233,9 @@ label hg_ps_cumslut_Scene_1:
     call bld
     m "Oh and one last thing before you head to class."
     call her_main("Yes...", "annoyed", "narrow", "annoyed", "mid", xpos="right",ypos="base")
-    m "If you return to this office after classes without any cum on you, Slytherin will get 200 points."
-    call her_main("{size=+10}200! That is not fair!{/size}", "shock", "wide", "base", "stare")
-    m "It's Only unfair if you clean it off."
+    m "If you return to this office after classes without any cum on you, Slytherin will get two hundred points."
+    call her_main("{size=+10}Two hundred!? That is not fair!{/size}", "shock", "wide", "base", "stare")
+    m "It's only unfair if you clean it off."
     call her_main("...", "angry", "base", "angry", "mid")
 
     call her_walk(action="leave")
@@ -627,7 +627,7 @@ label hg_ps_cumslut_complete_1:
                 call her_main("I don't think so [genie_name]. Ginny Weasley asked me about it during transfiguration class though.", "soft", "base", "base", "mid")
                 m "And what did you tell her?"
                 call her_main("I just said that I spilled some Wiggenweld potion on myself in potions class.", "open", "base", "base", "mid")
-                m "Very cunning of you. 50 points to Gryffindor."
+                m "Very cunning of you. Fifty points to Gryffindor."
                 $ gryffindor += 50
                 call her_main("Thank you [genie_name], if that's all I might head to bed.", "soft", "base", "base", "mid")
                 m "Very well, goodnight [hermione_name]."

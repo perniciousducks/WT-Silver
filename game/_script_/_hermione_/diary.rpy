@@ -35,7 +35,7 @@ define hermione_diary_pages = {
     "admire_breasts_t2_e1": ["Well...", "I finally did it... I showed him my breasts...{}{}"], # FORMATTED {points}{action}
             # Branching
     "admire_breasts_t2_e1_points": " It's just... It was soooo many points and I've already been pulling up my shirt for him... it's not that different if I take off my bra... is it? ",
-    "admire_breasts_t2_e1_bargain": " For a meagre 25 points... I should have left.... or at least get a better deal.",
+    "admire_breasts_t2_e1_bargain": " For a meagre twenty-five points... I should have left.... or at least get a better deal.",
     "admire_breasts_t2_e1_touch": " I cannot believe he put his hands on me after he promised he wouldn't do that! The bastard! I am never selling any favours to him ever again... ",
     "admire_breasts_t2_e1_fap_1": " I still cannot believe he started touching himself in front of me! When I told him to stop, he told me I would not be getting any points, can you believe that?! After everything I have done for him.. Ugh! ",
     "admire_breasts_t2_e1_fap_2": " I still cannot believe he started touching himself in front of me, but when I asked him to stop he did. Thank be Merlin, I don't know what I would do if he kept going... I am still mad at him but at least I got my points. ",

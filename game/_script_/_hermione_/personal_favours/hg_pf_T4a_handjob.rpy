@@ -114,14 +114,14 @@ label hg_pf_handjob_T1_intro_E1:
 
     menu:
         m "..."
-        "\"You will get 15 house points.\"" if her_mood != 0:
+        "\"You will get fifteen house points.\"" if her_mood != 0:
             $ her_mood += 7
             call her_main("For fifteen house points I suppose I could let you molest me a little, but that is all you'll be getting, [genie_name].", "annoyed", "narrow", "angry", "R")
-            her "I will not stoop as low as to sell handjobs for 15 house points."
+            her "I will not stoop as low as to sell handjobs for fifteen house points."
             her "That is just insulting, [genie_name]."
             jump back_to_handjob_choices
 
-        "\"you will get 45 house points.\"":
+        "\"you will get forty-five house points.\"":
             $ her_mood += 3
             call her_main(".....", "annoyed", "narrow", "angry", "R")
             call her_main("{number=current_payout} house points...?", "open", "narrow", "worried", "down")
@@ -131,7 +131,7 @@ label hg_pf_handjob_T1_intro_E1:
             m "Great!"
             pass
 
-        "\"you will get 100 house points.\"":
+        "\"you will get one hundred house points.\"":
             call play_music("chipper_doodle") # HERMIONE'S THEME.
             $ current_payout = 100
             call her_main("{number=current_payout} points?!", "scream", "wide", "base", "mid")

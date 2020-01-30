@@ -51,7 +51,7 @@ label potion_scene_2_1_1:
     menu:
         "-Send her to class-":
             m "You're right, I suppose they are big enough."
-            m "Well that's all for today, 20 points to Gryffindor."
+            m "Well that's all for today, twenty points to Gryffindor."
             call her_main("That's all? You're not going to make me do something else?", "shock", "wide", "base", "stare")
             m "Why would I, I asked you to drink a potion and you drank it. You're free to leave."
             call her_main("Thank you [genie_name], I'll head back to my room.", "smile", "base", "base", "R")
@@ -61,7 +61,7 @@ label potion_scene_2_1_1:
             call her_main("Barely. And what will people think of me.", "angry", "narrow", "base", "down")
             m "Just tell them that you are still developing. I'm sure that they're used to enormous breasts anyway, what's a few extra sizes."
             call her_main("...Fine. Just promise me that they won't get any bigger.", "upset", "closed", "base", "mid")
-            m "I can't promise that, you're still in school. A lot of girls don't stop growing until their 30."
+            m "I can't promise that, you're still in school. A lot of girls don't stop growing until they're thirty."
             call her_main("You know what I mean [genie_name].", "scream", "base", "angry", "mid", emote="01")
             m "I'm afraid that I don't, [hermione_name], now you'd best hurry if you don't want to be late."
             call her_main("...Yes [genie_name].", "annoyed", "narrow", "annoyed", "mid")
@@ -82,7 +82,7 @@ label potion_scene_2_1_1:
     m "Now how would you like to earn some additional points?"
     call her_main("I want an extra 40.", "annoyed", "narrow", "annoyed", "mid")
     m "I haven't even told you what I want to-"
-    call her_main("If you want to touch my breasts it will be an extra 40 points.", "annoyed", "narrow", "angry", "R")
+    call her_main("If you want to touch my breasts it will be an extra forty points.", "annoyed", "narrow", "angry", "R")
     m "Deal."
 
     call her_walk("desk", "base", reduce=0.8)
@@ -114,7 +114,7 @@ label potion_scene_2_1_1:
 
     call her_main("!!!", "angry", "wide", "base", "stare")
     call her_main("You said that they wouldn't get any bigger! Now how would you explain this?!", "scream", "base", "angry", "mid",emote="01")
-    m "Don't worry about that [hermione_name], worry about earning your 40 points."
+    m "Don't worry about that [hermione_name], worry about earning your forty points."
     call her_main("Just hurry up.", "annoyed", "narrow", "annoyed", "mid")
     menu: # TODO Add titfuck writing here
         # "-Suck her nipples-":
@@ -186,7 +186,7 @@ label potion_scene_2_1_2:
 label potion_scene_2_2:
     m "[hermione_name], I have another potion for you to try today."
     call her_main("Another one? Where are you getting these?", "open", "squint", "base", "mid")
-    m "That's of no concern to you. What should concern you is the 20 points that you are able to earn should you drink it."
+    m "That's of no concern to you. What should concern you is the twenty points that you are able to earn should you drink it."
     call her_main("...Fine, give me the bottle.", "normal", "squint", "angry", "mid")
     call nar(">She takes a quizzical smell of the bottle.")
     call her_main("At least this one smells good.", "base", "base", "base", "mid")
@@ -336,7 +336,7 @@ label potion_scene_2_2:
 
             show screen bld1
             call her_main("Yes [genie_name].", "base", "narrow", "worried", "down")
-            m "Oh I almost forgot, 20 points to Gryffindor!"
+            m "Oh I almost forgot, twenty points to Gryffindor!"
             $ gryffindor += 20
             call her_main("Oh... right, the points. Thank you.", "grin", "narrow", "base", "dead")
             call nar(">Hermione picks up her skirt and attempts to put it on. Her ass is so huge that it barely covers half of it.")
@@ -408,7 +408,7 @@ label potion_scene_2_2:
             call her_main("...With my butt looking like this?", "angry", "squint", "base", "mid",cheeks="blush")
             m "I'm sure no one will be able to tell with your skirt on. Now hurry up, I feel like a nap."
             #call her_main("Yes [genie_name].", "angry", "squint", "base", "mid",cheeks="blush")
-            m "Oh I almost forgot, 20 points to Gryffindor!"
+            m "Oh I almost forgot, twenty points to Gryffindor!"
             $ gryffindor += 20
             call her_main("Oh... right, the points. Thank you.", "grin", "narrow", "annoyed", "up")
             call nar(">Hermione picks up her skirt and attempts to put it on. Her ass is so huge that it barely covers half of it.")

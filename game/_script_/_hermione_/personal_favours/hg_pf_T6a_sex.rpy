@@ -112,7 +112,7 @@ label hg_pf_sex_T1_intro_E2:
     m "Last night I had a dream..."
     g9 "You were lying on my desk and I was fucking your tight pussy like a madman..."
     call her_main("In that dream, [genie_name]...", "upset", "closed", "base", "mid", xpos="right", ypos="base")
-    call her_main("Did I happen to receive sixtyfive house points afterwards?", "angry", "base", "angry", "mid")
+    call her_main("Did I happen to receive sixty-five house points afterwards?", "angry", "base", "angry", "mid")
     g9 "Why yes, you did, [hermione_name]."
     call her_main("...............................", "disgust", "narrow", "base", "mid_soft")
     if hermione.is_worn("panties"):

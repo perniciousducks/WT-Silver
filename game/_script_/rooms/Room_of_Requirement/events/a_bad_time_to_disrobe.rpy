@@ -47,9 +47,9 @@ label a_bad_time_to_disrobe_part_1:
     m "You'll be wearing the cloak..."
     m "No one would even know you were there."
 
-    call her_main("{size=7}35 points...{/size}", "annoyed", "closed", "angry", "mid")
+    call her_main("{size=7}Thirty-five points...{/size}", "annoyed", "closed", "angry", "mid")
 
-    m "25 points you said? sounds good to me."
+    m "Twenty-five points you said? sounds good to me."
 
     call her_walk("door", "base")
 
@@ -151,7 +151,7 @@ label a_bad_time_to_disrobe_part_1:
     g11 "And what?"
     call her_main("And I slipped and my butt fell out!", "scream", "wide", "worried", "stare", tears="mascara")
 
-    g9 "{size=18}30 POINTS TO....{/size}"
+    g9 "{size=18}Thirty points to....{/size}"
 
     call her_main("I'm not done!", "open", "narrow", "worried", "down", tears="mascara")
     m "Sorry, you carry on my dear!"
@@ -161,8 +161,8 @@ label a_bad_time_to_disrobe_part_1:
     m "You could've draped the cloak around your head and it would be enough."
     call her_main("Professor!", "shock", "wide", "base", "mid", tears="mascara")
     m "Just trying to lighten the mood."
-    m "Here's an extra 5 points for a Job well done, miss Granger."
-    g9 "35 points to Gryffindor!"
+    m "Here's an extra five points for a job well done, miss Granger."
+    g9 "Thirty-five points to Gryffindor!"
     call her_main("Thank you professor....", "grin", "base", "base", "mid", tears="mascara")
 
     call her_walk ("door", "base")
@@ -240,8 +240,8 @@ label a_bad_time_to_disrobe_part_2:
     call her_main("And then what, you want me to just walk away?", "base", "base", "base", "mid", cheeks="blush")
     m "You can figure it out yourself miss Granger. Once you have the cloak it shouldn't be an issue getting away."
     call her_main("And I want...", "open", "base", "base", "mid")
-    m "I'll give you 40 house points for it."
-    call her_main("\"I was going to ask for 30.\"", "soft", "happy", "base", "R", cheeks="blush")
+    m "I'll give you forty house points for it."
+    call her_main("\"I was going to ask for thirty.\"", "soft", "happy", "base", "R", cheeks="blush")
     call her_main("I'll do it...", "base", "base", "base", "mid")
     g9 "Great, you're doing a great service to your house and making an old man very happy."
     call her_main("By getting your cloak back right?", "base", "base", "worried", "mid")
@@ -303,7 +303,7 @@ label a_bad_time_to_disrobe_part_2:
     g4 "*Cough* *Cough*... sorry."
     call her_main("It is hard to talk about this as it is without your chewing distracting me.", "annoyed", "base", "angry", "mid")
     call her_main("Anyhow...", "base", "narrow", "angry", "R")
-    call her_main("I expected the team to be going for at least another 30 minutes.", "open", "base", "base", "mid")
+    call her_main("I expected the team to be going for at least another thirty minutes.", "open", "base", "base", "mid")
     call her_main("But that's when the boy walked in...", "normal", "closed", "base", "mid")
     call her_main("And I panicked and threw the cloak over myself and hid in one of the toilets.", "open", "base", "worried", "R")
     m "Smart."
@@ -329,7 +329,7 @@ label a_bad_time_to_disrobe_part_2:
     m "..."
     call her_main("I'd like my points now.", "base", "narrow", "worried", "down")
     m "Certainly miss Granger..."
-    m "40 points to Gryffindor!"
+    m "Forty points to Gryffindor!"
     call her_main("Thank you professor...", "soft", "base", "base", "mid_soft")
 
     call her_walk("door", "base")

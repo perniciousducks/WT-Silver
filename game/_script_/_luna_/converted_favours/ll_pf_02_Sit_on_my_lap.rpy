@@ -1360,11 +1360,11 @@ label luna_favour_2: ###SIT ON MY LAP #DONE
         m "Alright, alright. Here's your gold and points."
         $ gryffindor += 25
         $ ravenclaw += 25
-        m "15 points to gryffindor and ravenclaw."
+        m "Fifteen points to gryffindor and ravenclaw."
         $ gold -= 80
         $ luna_gold += 40
         m "and here's your gold."
-        ">You hand Luna and hermione 40 gold each."
+        ">You hand Luna and hermione forty gold each."
         call her_main("Thank you [genie_name]!", "base", "base", "base", "mid")
         call lun_main("...Thank you sir.","normal","seductive","sad","R")
         ">Luna and hermione leave your office, talking as they go."

@@ -8,13 +8,13 @@ label potion_scene_3_1_1:
         m "Well, that's going to be a surprise..."
         if her_whoring <= 17: #Under when she stops caring about points too Much
                 her "And you'll pay me if I drink this?"
-                m "Of course...{w} I'll give you 30 points for Gryffindor house."
+                m "Of course...{w} I'll give you thirty points for Gryffindor house."
     else:
         call her_main("What does this one do?", "normal", "squint", "angry", "mid")
         m "As always, it's going to be a surprise."
         if her_whoring <= 17: #Under when she stops caring about points too Much
                 her "And you'll pay me if I drink this?"
-                m "Of course...{w} I'll give you 30 points for Gryffindor house."
+                m "Of course...{w} I'll give you thirty points for Gryffindor house."
 
     #TODO There are many more potions she could mention
     if "cat_polyjuice" in her_potions_drunk:
@@ -391,9 +391,7 @@ label hg_pp_cumaddict_intro:
             hide screen hermione_main
             call nar(">You place her carefully back into her bed.")
             m "Sleep tight, slut."
-            if her_whoring <= 17: #When she still cares about points (Defined at the start)
-                m "30 points to Gryffindor..."
-                $ gryffindor += 30
+            
         "-Clean her up and take her back to her room-":
             $ uni_sperm = False
             call nar(">You pick her limp body up and carry her to her room.","start")
@@ -402,9 +400,10 @@ label hg_pp_cumaddict_intro:
             hide screen hermione_main
             call nar(">You place her carefully back into her bed.")
             m "Sleep tight, [hermione_name]."
-            if her_whoring <= 17: #When she still cares about points (Defined at the start)
-                m "30 points to Gryffindor..."
-                $ gryffindor += 30
+    
+    if her_whoring <= 17: #When she still cares about points (Defined at the start)
+        m "Thirty points to Gryffindor..."
+        $ gryffindor += 30
 
     hide screen hermione_main
     hide screen ctc
@@ -489,14 +488,14 @@ label potion_scene_3_2_1: #TODO Hyper sensitive breasts potion
     m "But if you don't ask me to stop I get to massage you for as long as I like, wherever I like."
     her "Deal."
     m "Are you sure?"
-    her "No offence [genie_name], but I think I can resist a massage for 200 points."
+    her "No offence [genie_name], but I think I can resist a massage for two hundred points."
     m "you sound confident. Care to raise the stakes?"
-    her "Are you saying that I can earn more than 200 points?"
+    her "Are you saying that I can earn more than two hundred points?"
     m "five hundred."
     her "{size=+10}Five HUNDRED!{/size}" #size up
     her "Deal."
     m "I haven't even told you what happens if you lose."
-    her "it doesn't matter, For 500 points I would turn down a massage from Viktor Krum himself."
+    her "it doesn't matter. For five hundred points I would turn down a massage from Viktor Krum himself."
     m "Well for the sake of the bet I'll explain anyway."
     m "I expect you to strip naked if you want to be massaged after your two minutes are up."
     her "Naked!"
@@ -585,7 +584,7 @@ label potion_scene_3_3_1:
     m "You're in my office."
     call her_main("I am?", "upset", "wink", "base", "mid")
     call her_main("How did I get here?", "upset", "wink", "base", "mid")
-    m "You walked in here about 2 minutes ago."
+    m "You walked in here about two minutes ago."
     call her_main("Huh, I must have forgotten, silly old me.", "base", "happy", "base", "mid")
     call her_main("So professor, what am I doing here?", "base", "narrow", "worried", "down")
     call her_main("Aaaaaaah!!!!", "shock", "happyCl", "worried", "mid",cheeks="blush")

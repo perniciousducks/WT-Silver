@@ -52,7 +52,7 @@ label hg_ps_HiddenBlowjob_1:
     m "Perfect! Tell her to drop by my office."
     her "As soon as you tell me, what to tell her, what you want to see her for."
     m "Tell her I'd like to discuss the behaviour of certain students at the school"
-    her "Ok, I'll tell her to come to your office in about 10 minutes."
+    her "Ok, I'll tell her to come to your office in about ten minutes."
     her "That should give me time to get back here first."
     #Hermione walks out fade to black
     her "It's tiny under here!"

@@ -37,7 +37,7 @@ label potion_scene_1_1_1:
                 call her_main("And what kind of potion is it? It looks gross...", "normal", "squint", "angry", "mid")
                 m "Well, wouldn't it spoil half the enjoyment of it if I told you?"
                 call her_main("Depends whose enjoyment you're talking about...", "open", "squint", "base", "mid")
-                m "20 points."
+                m "Twenty points."
                 call her_main("Hmmm, can't you tell me what kind of potion it is?", "annoyed", "squint", "base", "mid")
                 call her_main("Polyjuice? Amortentia? Babbling Beverage? Felix Felicis?", "grin", "happyCl", "worried", "mid",emote="05")
                 m "That's going to have to stay a secret [hermione_name]."
@@ -81,7 +81,7 @@ label potion_scene_1_1_1:
         m "You'll just have to wait a minute remember?"
         her "In that case I'll be back after class..."
         her "Can't wait for the effects to kick in... it was bad enough the first time..."
-        m "I'm sure another extra 10 points should make it worth it, [hermione_name], 30 points to Gryffindor."
+        m "I'm sure another extra ten points should make it worth it, [hermione_name], thirty points to Gryffindor."
         call her_main("Thank you [genie_name].", "base", "base", "base", "mid")
         call nar(">Hermione heads off to class.")
         $ gryffindor += 30
@@ -93,7 +93,7 @@ label potion_scene_1_1_1:
         call her_main("What was it supposed to do?", "annoyed", "narrow", "annoyed", "up")
         m "There's no point in telling you now. It was going to be a surprise."
         call her_main("Is that all [genie_name]?", "soft", "base", "base", "mid")
-        m "Yes, [hermione_name], 20 points to Gryffindor."
+        m "Yes, [hermione_name], twenty points to Gryffindor."
         call her_main("Thank you [genie_name].", "base", "base", "base", "mid")
         call nar(">Hermione heads off to class.")
         $ gryffindor += 20
@@ -143,8 +143,8 @@ label potion_scene_1_1_2:
                 call her_main("What is it, [genie_name]?", "upset", "base", "angry", "mid")
                 call her_main("Haven't you humiliated me enough?", "annoyed", "closed", "base", "mid")
                 call her_main("", "annoyed", "base", "base", "R")
-                m "Would you like to earn 75 additional points?"
-                call her_main("75 points? How?", "annoyed", "squint", "base", "mid")
+                m "Would you like to earn seventy-five additional points?"
+                call her_main("Seventy-five points? How?", "annoyed", "squint", "base", "mid")
 
                 g9 "By sucking my cock, obviously."
                 call her_main("Right now? I look like a cat! Why would you ask me at a time like this?", "angry", "wide", "base", "stare")
@@ -248,7 +248,7 @@ label potion_scene_1_1_2:
                 call nar(">You pull your cock out of her purring mouth.")
                 call her_main("Mmmmm, it might be this potion but that tasted good...", "base", "narrow", "base", "mid_soft")
                 hide screen hermione_main
-                m "Well, you certainly earned your 75 points."
+                m "Well, you certainly earned your seventy-five points."
                 $ gryffindor += 75
                 with d3
                 call her_main("Thank you [genie_name]. Will that be all?", "base", "narrow", "base", "up")
@@ -345,8 +345,8 @@ label potion_scene_1_1_2_alt:
         "-Make her suck you off-" if her_whoring >= 17:
             pass
 
-    m "Wait [hermione_name], how would you like to earn 75 additional points?"
-    call her_main("75 points? How?", "annoyed", "squint", "base", "mid")
+    m "Wait [hermione_name], how would you like to earn seventy-five additional points?"
+    call her_main("Seventy-five points? How?", "annoyed", "squint", "base", "mid")
     m "By sucking my cock."
     if "cat_polyjuice" in her_potions_drunk:
         her "Again?"
@@ -484,7 +484,7 @@ label potion_scene_1_1_2_alt:
     call her_main("Mmmmm, it might be this potion but that tasted \ngood...", "base", "narrow", "base", "mid_soft")
     hide screen hermione_main
     with d3
-    m "Well, you certainly earned your 75 points."
+    m "Well, you certainly earned your seventy-five points."
     $ gryffindor += 75
 
     call her_main("Thank you [genie_name]. Will that be all.", "base", "narrow", "base", "up")
@@ -758,13 +758,13 @@ label potion_scene_1_2:
         m "You look a bit flustered [hermione_name]."
         $ changeLuna("pout","seductive","angry","mid")
         her "You're staring directly at my chest [genie_name] and I can't help but feel a bit guilty as its not my own..."
-        m "Well, hopefully this should take your mind off that... 20 points to Gryffindor."
+        m "Well, hopefully this should take your mind off that... twenty points to Gryffindor."
         her "Thank you, [genie_name]...."
     else:
         m "Yes yes, upon closer inspection it seems I was wrong. Luna's breasts are indeed second to your own."
         $ changeLuna("pout","seductive","angry","mid")
         her "I'm glad you came to your senses. Thank you, If you're completely satisfied, I'll cover these hideous things up now."
-        m "Completely, [hermione_name]. 20 points to Gryffindor."
+        m "Completely, [hermione_name]. Twenty points to Gryffindor."
     hide screen luna_main
     with d3
 

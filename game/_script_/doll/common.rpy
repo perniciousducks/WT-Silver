@@ -20,12 +20,13 @@ init -1 python:
             
         def get_image(self):
             if not renpy.is_skipping() or self.sprite is None:
+                IgnoresEvents = renpy.display.layout.IgnoresEvents
                 if self.override:
                     sprites = self.build_image()
-                    self.sprite = Composite(self.size, *sprites)
+                    self.sprite = IgnoresEvents(Composite(self.size, *sprites))
                 elif not self.cached:
                     sprites = self.build_image()
-                    self.sprite = Composite(self.size, *sprites)
+                    self.sprite = IgnoresEvents(Composite(self.size, *sprites))
                     self.cached = True
             return self.sprite
             

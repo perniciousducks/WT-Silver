@@ -219,7 +219,7 @@ label studio(studio_char):
 
 screen studio():
     tag studio
-    zorder 4
+    zorder 30
     
     key hkey_hide action ToggleVariable("studio_hide", True, False)
     key hkey_mhide action ToggleVariable("studio_hide", True, False)
@@ -291,7 +291,7 @@ screen studio():
     
 screen character_studio():
     tag character_studio
-    zorder 5
+    zorder 31
     
     if not export_in_progress:
         use close_button
@@ -456,7 +456,6 @@ screen character_studio():
                     text "[studio_image_mouth]" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5
                     if config.developer:
                         text "Body" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5
-                        text "3" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5
             vbox:
                 text "Background" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5 xpos -10
                 text "[studio_room_bg]" xanchor 0.5 color "#FFF" outlines [ (2, "#000", 0, 0) ] text_align 0.5 xpos -10 ypos 19

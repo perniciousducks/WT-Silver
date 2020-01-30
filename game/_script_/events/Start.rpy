@@ -104,6 +104,7 @@ label start_wt:
 
     ### CHEATS / SKIPPING ###
     if skip_to_hermione:
+        $ renpy.block_rollback()
         jump skip_to_hermione
 
     ### START ANIMATION ###
@@ -124,6 +125,7 @@ label start_wt:
 
     call reset_menu_position
 
+    $ renpy.block_rollback()
     jump day_start
 
 label swap_dumb_genie:

@@ -492,9 +492,9 @@ image hermione_stripper_dance:
     repeat
 
 image ch_hem lift_top:
-    zoom 0.9 # chibi is slightly too big
-    xoffset -78
-    yoffset -2
+    zoom 0.92 # chibi is slightly too big
+    xoffset -84
+    yoffset -18
 
     "characters/hermione/chibis/lift_top/boing01.png"
     pause 1

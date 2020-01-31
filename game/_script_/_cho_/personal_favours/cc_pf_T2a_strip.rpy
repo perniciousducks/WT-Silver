@@ -16,8 +16,6 @@ label cc_pf_strip:
     $ cho.wear("all") # Reset clothes
     jump end_cho_event
 
-
-
 ### Tier 1 (pre Slytherin) ###
 
 label cc_pf_strip_T1_intro_E1:
@@ -34,11 +32,11 @@ label cc_pf_strip_T1_intro_E1:
 
     m "How often do you typically exercise, Miss Chang?"
     call cho_main("As often as I can, [cho_genie_name]!","soft","base","base","mid")
-    m "Which is... how often? Twice a week?"
+    m "Which is... how often, exactly? Twice a week?"
     call cho_main("Three times a day, Sir!","base","narrow","base","mid")
     with hpunch
     g4 "What?!"
-    m "(I don't even jerk off that often!)"
+    g4 "(I don't even jerk off that often!)"
     m "I find that a bit hard to believe... You're not embellishing the truth, are you?"
     call cho_main("I'm not, Sir! It's necessary for someone in my position!","open","closed","angry","mid")
     call cho_main("I wake up every morning before dawn, then run around the Quidditch pitch until the sun rises!","open","narrow","angry","mid")
@@ -57,7 +55,7 @@ label cc_pf_strip_T1_intro_E1:
     call cho_main("Thank you, Sir.","base","base","base","mid")
 
     # Ask her to strip.
-    g9 "So, Why don't you show me what you are made of?{w} Let me have a proper look at you!"
+    g9 "So, Why don't you show me what you are made of?{w=1.0} Let me have a proper look at you!"
     call cho_main("Sir?","soft","wink","raised","mid")
     m "I need you to remove your clothes."
     call play_music("stop")
@@ -125,10 +123,6 @@ label cc_pf_strip_T1_intro_E1:
     call cho_main("","quiver","narrow","sad","mid")
     call ctc
 
-    g4 "Magnificent."
-    g4 "Simply...{w} magnificent..."
-    call cho_main("Thank you, Sir.","soft","narrow","sad","R")
-
     menu:
         "\"Your posture is remarkable!\"":
             call cho_main("I'm glad you noticed!","base","base","sad","mid") # Happy
@@ -148,26 +142,37 @@ label cc_pf_strip_T1_intro_E1:
             call cho_main("Thank you, Sir.","base","base","base","mid")
 
         "\"You have marvelous abs!\"":
+            g4 "Magnificent."
+            g4 "Simply...{w} magnificent..."
             call cho_main("*Uhmm*...","quiver","narrow","sad","R") # Embarrassed
             g4 "As if Michelangelo himself carved them onto your flesh..."
             m "I must say I'm very impressed!"
             call cho_main("Thank you, Sir.","soft","narrow","sad","downR")
+            
+        "\"I've seen better but that'll do.\"":
+            $ cho_mood += 3
+            call cho_main("What?!","angry","wide","angry","mid") # Upset
+            g4 "(Crap!)"
+            m "What I meant to say is, you're in great shape but I still see room for improvements."
+            m "I'm impressed nonetheless!"
+            call cho_main("Thank you, I guess...","pout","narrow","angry","downR")
 
-    m "Not every girl I get to see here has such fine...{w} contours..."
+    m "Not every girl I get to see here has such fine...{w=1.0} contours..."
     call cho_main("Other girls?","soft","wide","base","mid")
     call cho_main("Sir, you aren't training anybody else in Quidditch besides me, are you?","soft","narrow","angry","mid")
     m "What? Of course not..."
     call cho_main("Then which other girls are you talking about?","annoyed","narrow","angry","mid")
     g4 "(Shit! I better just tell her the truth.)"
-    m "Just...{w} Granger..."
-    call cho_main("*Phewww*{w} You scared me there for a second, Sir...","smile","narrow","sad","mid")
+    m "Just...{w=1.0} Granger..."
+    call cho_main("*Phewww*{w=1.0} You scared me there for a second, Sir...","smile","narrow","sad","mid")
     m "You... don't mind about it?"
     call cho_main("Please. Why should I care what Granger does for you in here?","soft","narrow","angry","R")
     call cho_main("I suspected she was one of those girls buying favours from her teachers!","soft","closed","angry","mid")
     call cho_main("With how many points she's earned for her house lately,... to win the house cup...","open","narrow","angry","R")
     call cho_main("But as long as you don't help any Gryffindor or Slytherin sluts win the Quidditch cup, everything will be fine.","base","narrow","base","mid")
-    m "That's a relief..."
+    g9 "No worries Miss Chang, I don't have plans to train other {i}sluts{/i} in quidditch."
 
+    call cho_main("That's a relief...","open","closed","base","mid")
     call cho_main("Besides, she clearly doesn't hold a candle against me!","open","narrow","base","R")
     call cho_main("All she does is sit on her arse all day, studying in the library...","soft","narrow","angry","mid")
     m "(...)"
@@ -191,7 +196,7 @@ label cc_pf_strip_T1_intro_E1:
             m "Yes, my dear."
 
         "\"Nope, you lose\"":
-            $ cho_mood +=6
+            $ cho_mood += 6
 
             call cho_main("What?!","scream","wide","angry","mid", trans=hpunch)
             call cho_main("","angry","narrow","angry","mid")

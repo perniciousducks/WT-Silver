@@ -4,6 +4,15 @@
 
 label cc_pf_talk:
 
+    m "{size=-4}(All I'll do is have an innocent conversation with her...){/size}"
+
+    if cc_pf_talk.counter < 1:
+        menu:
+            "\"(Yes, let's do it!)\"":
+                pass
+            "\"(Not right now.)\"":
+                jump cho_favor_menu.personal
+
     # Start Event
     $ cc_pf_talk.start()
 
@@ -57,8 +66,7 @@ label cc_pf_talk_T1_intro_E1:
     call cho_main("","annoyed","narrow","angry","mid")
     m "(She doesn’t seem that keen on the subject, perhaps I could tell her...)"
 
-    label get_cho_to_talk:
-
+    label .choices:
     menu:
         "\"It's important to open up to your headmaster.\"":
             m "Emphasis on \"opening up\"..."
@@ -76,6 +84,7 @@ label cc_pf_talk_T1_intro_E1:
             pass
 
         "\"It's okay if you like girls...\"":
+            $ cho_mood += 1
             m "Swinging the other way, you know..."
             call cho_main("What?","angry","wide","base","mid")
             m "Some people like flicking the bean rather than rubbing a wand..."
@@ -84,9 +93,10 @@ label cc_pf_talk_T1_intro_E1:
             call cho_main("I'd rather not talk about it right now...","soft","narrow","sad","mid")
             m "(Damn, maybe that's not the way to go about this, maybe instead I could tell her...)"
 
-            jump get_cho_to_talk
+            jump cc_pf_talk_T1_intro_E1.choices
 
         "\"Let me tell you something about my own previous relationships...\"":
+            $ cho_mood += 1
             call cho_main("Sir, I'd rather not hear a boring old tale about any of your old flames...","open","narrow","base","R")
             g9 "Oh they weren't boring at all!"
             call cho_main("Hmm?","annoyed","narrow","base","mid")
@@ -99,7 +109,7 @@ label cc_pf_talk_T1_intro_E1:
             call cho_main("(Gross!{w=0.5} Keep it to yourself...)","angry","narrow","sad","R")
             m "I just wanted to expand my backstory a little bit...{w=0.5} What's so wrong with that..."
 
-            jump get_cho_to_talk
+            jump cc_pf_talk_T1_intro_E1.choices
 
     # Cedric Diggory
     call cho_main("Cedric was my boyfriend during the time Hogwarts was hosting the \"triwizards tournament\".","soft","base","base","R")
@@ -266,14 +276,16 @@ label cc_pf_talk_T1_intro_E2:
 
     call cho_main("Another talk, Professor?","soft","narrow","angry","mid")
     call cho_main("Are we going to discuss my previous relationships again?","open","narrow","base","R")
-    g9 "I don't know.{w} Would you like to?"
+    m "I don't know.{w=1.0} Would you like to?"
     call cho_main("I'd rather not.","soft","narrow","angry","mid")
     m "Tell me about yourself then."
     call cho_main("Of course, [cho_genie_name].","smile","base","base","mid")
-    call cho_main("We did a couple more Quidditch session yesterday.{w} To get ready for our big game against Hufflepuff.","open","narrow","base","mid")
-    call cho_main("Our team really believes that we have a chance to win this time!{w} They got a huge boost of confidence after I told 'em that the great \"Albus Dumbledore\" would be training us himself!","smile","base","base","mid")
+    call cho_main("We had a training session yesterday. ","open","narrow","base","mid")
+    m "Training session?"
+    call cho_main("Yes. We are preparing ourselves for the Quidditch match against Hufflepuff.","open","narrow","base","mid")
+    call cho_main("Our team really believes that we have a chance to win this time!{w=1.0} They got a huge boost of confidence after I told 'em that the great \"Albus Dumbledore\" would be training us himself!","smile","base","base","mid")
     m "Are you getting along with your team well?"
-    call cho_main("I'd say so.{w} But there has been a time when...","soft","base","base","mid")
+    call cho_main("I'd say so.{w=1.0} But there has been a time when...","soft","base","base","mid")
     call cho_main("Let's just say that it has been difficult for me at first. After all Quidditch is largely dominated by men...","open","narrow","sad","down")
     call cho_main("Getting accepted into our Quidditch team was a challenge. I really had to prove I was worth it.","angry","narrow","sad","mid")
     g9 "And how exactly did you manage that? Mind spilling the beans?"
@@ -315,7 +327,7 @@ label cc_pf_talk_T1_intro_E2:
     call cho_main("Ever since I was a little girl Quidditch has been my dream...","quiver","narrow","sad","down")
     call cho_main("[cho_genie_name], can you imagine how \"hard\" it was for me?","soft","narrow","sad","mid")
     if masturbating:
-        g4 "{size=-4}Yes, yes... It's so hard for you, you little slut!!!{/size}"
+        g4 "{size=-4}(Yes, yes... It's so hard for you, you little slut!!!){/size}"
     call cho_main("How difficult it was for me at first?","open","narrow","sad","R")
     call cho_main("Getting accepted?","soft","closed","sad","mid")
     if masturbating:

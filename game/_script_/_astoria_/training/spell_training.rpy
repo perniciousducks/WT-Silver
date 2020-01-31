@@ -141,10 +141,12 @@ label ag_st_imperio_E1:
     call ast_main("Wicked!","grin","narrow","worried","down")
     call ton_main("Let's give this old man a quick demonstration of your talents, shall we...","base","base","angry","mid")
     call ast_chibi("wand",530,"base")
+    with d3
     call ast_main("","grin","narrow","base","mid")
     m ".............................."
 
     call ast_chibi("wand_casting",530,"base")
+    with d3
     call ton_main("Just like we practised...","open","closed","base","mid")
     call ton_main("Do the movement with your wand, and then you say-","open","base","base","R")
     call ast_main("Imperio!","scream","narrow","angry","mid") # angry scream
@@ -180,6 +182,7 @@ label ag_st_imperio_E1:
     g9 "You don't say?"
     g9 "I love magic!"
     call ast_chibi("wand",530,"base")
+    with d3
     call ast_main("What shall I do now, Professor?","clench","base","base","L")
     m "I don't know... Why are you asking me?"
     m "Did you not discuss this with her beforehand?"
@@ -624,8 +627,8 @@ label ag_st_imperio_E3:
     pause.8
 
     call play_music("tonks")
-    call ast_main("","annoyed","base","base","mid", xpos="right", ypos="base")
-    call ton_main("Well, Professor.","open","closed","base","mid", xpos="base", ypos="base")
+    call ast_main("","annoyed","base","base","mid", xpos="base", ypos="base")
+    call ton_main("Well, Professor.","open","closed","base","mid", xpos="right", ypos="base")
     call ton_main("We're back...","base","base","base","mid")
     call ast_main("...","annoyed","base","base","L")
     m "Did you make any progress today?"
@@ -638,9 +641,11 @@ label ag_st_imperio_E3:
     call ast_main("*Ugh*...","clench","narrow","base","down") # Disgusted from the flirting?
 
     call ast_chibi("wand",530,"base")
+    with d3
     call ton_main("I could teach you a thing or two as well, Professor.","base","base","angry","mid")
 
     call ast_chibi("wand_casting",530,"base")
+    with d3
     call ton_main("Even the great Albus Dumbledore doesn't know everything about-","horny","base","angry","mid")
 
     # Astoria casts imperio.
@@ -659,11 +664,12 @@ label ag_st_imperio_E3:
     pause.8
 
     call play_music("trance")
-    call ast_main("","clench","base","angry","L", xpos="base", ypos="base")
-    call ton_main("*hngh!*...","angry","wide","wide","ahegao", xpos="right", ypos="base") # shock
+    call ast_main("","clench","base","angry","L")
+    call ton_main("*hngh!*...","angry","wide","wide","ahegao") # shock
     call ton_main("*Hmmm*...","base","base","base","ahegao", hair="horny")
 
     call ast_chibi("wand",530,"base")
+    with d3
     call ast_main("Sir, I'm not here to listen to you two banter...","angry","closed","angry","mid")
     m "That's fair."
     m "Time is precious, after all..."
@@ -804,8 +810,8 @@ label ag_st_imperio_E4:
     pause.5
 
     call play_music("tonks")
-    call ton_main("","base","base","base","L", xpos="base", ypos="base")
-    call ast_main("...","annoyed","narrow","base","down", xpos="right", ypos="base")
+    call ton_main("","base","base","base","L", xpos="right", ypos="base")
+    call ast_main("...","annoyed","narrow","base","down", xpos="base", ypos="base")
 
     call ton_main("Astoria... isn't there something you'd like to say to our Professor?","base","base","worried","mid")
     m "..."
@@ -831,6 +837,7 @@ label ag_st_imperio_E4:
 
     call ton_main("So, let's begin...","smile","happyCl","base","mid")
     call ast_chibi("wand",530,"base")
+    with d3
     call ton_main("Astoria, try and focus on what we went through today...","base","base","base","L")
     call ton_main("Keep good track of your emotions after channeling the spell...","open","closed","base","mid")
     call ton_main("Anger and rage will cause you to lose control - and eventually break the connection with the target...","open","base","angry","L")
@@ -848,6 +855,7 @@ label ag_st_imperio_E4:
     call ton_main("Now then, let's get on with it, shall we?","base","base","angry","mid")
     call ast_main("...","annoyed","base","base","mid")
     call ast_chibi("wand_casting",530,"base")
+    with d3
     call ton_main("Astoria, as soon as I'm ready - I'd like you to-","open","closed","base","mid")
 
     # Astoria casts imperio.
@@ -866,12 +874,13 @@ label ag_st_imperio_E4:
     pause.8
 
     call play_music("trance")
-    call ast_main("","annoyed","base","base","L", xpos="base", ypos="base")
-    call ton_main(".........................","angry","wide","wide","ahegao", xpos="right", ypos="base") # shock
+    call ast_main("","annoyed","base","base","L")
+    call ton_main(".........................","angry","wide","wide","ahegao") # shock
 
     m "......................"
     call ton_main("*Aaaaah*...","open","base","worried","ahegao", hair="horny")
     call ast_chibi("wand",530,"base")
+    with d3
     call ast_main("I'm getting really good at this!","smile","base","angry","L")
     call ton_main(".......................","base","base","base","ahegao")
     call ast_main("What shall I have her do, Professor?","smile","base","base","mid")
@@ -893,8 +902,8 @@ label ag_st_imperio_E4:
             with d3
             pause.5
 
-            call ast_main("","clench","wink","worried","mid", xpos="base", ypos="base")
-            call ton_main("","base","base","base","L", xpos="500", ypos="base", flip=True)
+            call ast_main("","clench","wink","worried","mid")
+            call ton_main("","base","base","base","L", flip=True)
             pause.8
 
             call ton_main("........................","horny","base","angry","L")
@@ -992,7 +1001,7 @@ label ag_st_imperio_E4:
     m "*hmm*..."
     m "We might be able to push her even further!"
     call ast_main("Further, Sir? How?","annoyed","wink","base","mid")
-    g9 "By getting her to remove the rest of her clothing, naturally!"
+    g9 "By getting her to remove the rest of her clothing, of course!"
     call ton_main("..............","horny","base","angry","mid") # angry/horny expression
     g9 "What do you think? Want to give it a try?"
     call ast_main("Would that really be necessary, Sir?","open","base","base","R")
@@ -1102,8 +1111,8 @@ label ag_st_imperio_E5:
     pause.8
 
     call play_music("astoria")
-    call ast_main("","smile","base","base","mid", xpos="right", ypos="base")
-    call ton_main("Hi, Professor!","base","base","base","mid", xpos="base", ypos="base")
+    call ast_main("","smile","base","base","mid", xpos="base", ypos="base")
+    call ton_main("Hi, Professor!","base","base","base","mid", xpos="right", ypos="base")
 
     call ast_main("Hello!","smile","closed","base","mid", emote="06") # Happy
     m "All cheered up today, Astoria?"
@@ -1129,8 +1138,10 @@ label ag_st_imperio_E5:
 
     call ton_main("You may start now, Astoria...","base","happyCl","base","mid")
     call ast_chibi("wand",530,"base")
+    with d3
     call ton_main("...................","base","closed","base","mid")
     call ast_chibi("wand_casting",530,"base")
+    with d3
     call ast_main("...................","annoyed","base","base","down")
     call ton_main("Astoria? Would you cast the curse - please?","open","base","base","L")
     call ast_main("...................","clench","base","base","down")
@@ -1151,12 +1162,13 @@ label ag_st_imperio_E5:
     pause.8
 
     call play_music("trance")
-    call ast_main("","base","base","base","L", xpos="base", ypos="base")
-    call ton_main("*hmmm*............","base","base","worried","ahegao", xpos="right", ypos="base", hair="horny")
+    call ast_main("","base","base","base","L")
+    call ton_main("*hmmm*............","base","base","worried","ahegao", hair="horny")
 
     g9 "(Here we go!)"
     call ast_main("..............","grin","base","base","L")
     call ast_chibi("wand",530,"base")
+    with d3
     call ast_main("What should we start with, Professor?","open","base","worried","mid")
     m "Let's just try the same things as last time..."
     m "Ask her to take that coat off first."
@@ -1314,7 +1326,7 @@ label ag_st_imperio_E5:
     "*fap-fap-fap*"
     call ton_main("","horny","base","raised","down", xpos="mid", ypos="base")
 
-    call ast_main("Move your hips!","open","narrow","base","L", xpos="base", ypos="base")
+    call ast_main("Move your hips!","open","narrow","base","L")
     call hide_characters
     hide screen bld1
     with d3
@@ -1371,7 +1383,7 @@ label ag_st_imperio_E5:
     m "That- *uhm*..."
     m "That wasn't what I would have suggested, but..."
     m "I'm willing to give her a chance to try..."
-    m "Try to resist that urge, naturally..."
+    m "Try to resist that urge, I mean..."
     call ast_main("As long as I don't have to look at it...","angry","narrow","base","R")
     call ast_main("Professor Tonks, you can get under Professor Dumbledore's desk... and...","open","closed","base","mid")
     call ast_main("Do \"that\" thing...","angry","base","worried","mid")
@@ -1404,7 +1416,8 @@ label ag_st_imperio_E5:
     with d3
     pause.5
 
-    call ton_main("Shit!","angry","base","angry","L", hair="annoyed", ypos="head", flip=True)
+    call ton_main("Shit!","angry","base","angry","L", hair="annoyed", xpos="left", flip=True)
+    hide screen tonks_main
     hide screen bld1
     with d3
     pause.1
@@ -1412,8 +1425,9 @@ label ag_st_imperio_E5:
     with d3
     pause.5
 
-    call ast_main("*Huh?!*","annoyed","narrow","worried","L", ypos="head", flip=True)
+    call ast_main("*Huh?!*","annoyed","narrow","worried","L", xpos="mid", flip=True)
     call ast_main("*Aaaaaaaaaah!!!*.......................","scream","base","base","L", emote="02", trans=hpunch) # Screams
+    hide screen astoria_main
     hide screen bld1
     with d3
     pause.1
@@ -1446,10 +1460,10 @@ label ag_st_imperio_E5:
     pause.2
 
     call play_music("snape")
-    call sna_main("What on Earth is going on here?!","snape_08", xpos="580" ,ypos="base")
+    call sna_main("What on Earth is going on here?!","snape_08", xpos=580 ,ypos="base")
     call sna_main("You two better explain to me what I just witnessed!","snape_32")
-    call ton_main("Stop being such a wuss, Severus!","angry","base","angry","L", hair="angry", ypos="head", flip=True)
-    call ton_main("We were just practising some spells - with Miss Greengrass.","open","base","base","L", hair="neutral")
+    call ton_main("Stop being such a wuss, Severus!","angry","base","angry","L", hair="angry", xpos="mid", flip=True)
+    call ton_main("We were just practising some spells with Miss Greengrass.","open","base","base","L", hair="neutral")
     call sna_main("And that required you to be undressed? In front of a student?","snape_10")
     call ton_main("Well... she was the cause of it...","upset","base","base","down")
     call sna_main("Caused you to strip?","snape_34")
@@ -1457,7 +1471,7 @@ label ag_st_imperio_E5:
     call sna_main("Don't tell me you-","snape_36") # Shocked
     call ton_main("The Imperius Curse.","open","closed","base","mid")
     call sna_main("I can't believe you two...","snape_08")
-    call ast_main("Am I in trouble now, Professor?","annoyed","base","base","L") # Asking Snape
+    call ast_main("Am I in trouble now, Professor?","annoyed","base","base","L", xpos=10) # Asking Snape
     call sna_main("Keep quiet, girl!","snape_34")
     call sna_main("............","snape_04") # Snape sees the wand.
 
@@ -1504,8 +1518,8 @@ label ag_st_imperio_E5:
     call ton_walk(550,"base")
     pause.8
 
-    call ton_main("","base","base","angry","L", xpos="275", ypos="base", flip=True)
-    call sna_main(".........................","snape_05", xpos="580" ,ypos="base")
+    call ton_main("","base","base","angry","L", xpos=275, ypos="base", flip=True)
+    call sna_main(".........................","snape_05", xpos=580 ,ypos="base")
 
     call play_music("tonks")
     call ton_main("Like what you see?","horny","base","raised","L", hair="horny") # Bit flirty, maybe just to calm Snape down.

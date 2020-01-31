@@ -17,6 +17,7 @@ label game_init:
     $ save_internal_version = config.version
     $ achievement_fix()
     $ start_image_crop()
+    return
 
 init python:
     renpy.music.register_channel("bg_sounds", "sfx", True)

@@ -111,22 +111,23 @@ label increase_house_points(house, points):
     hide screen notes
     return
 
+#TODO Check and fix teleport/heal effect position (chibis are now anchored bottom-left)
 label teleport(position=None,effect=True,poof_label=None):
     if position == "genie":
         $ teleport_xpos = genie_chibi.pos[0]+75
-        $ teleport_ypos = genie_chibi.pos[1]-15
+        $ teleport_ypos = genie_chibi.pos[1]
         $ teleport_zorder = 3
     elif position == "hermione":
         $ teleport_xpos = hermione_chibi.pos[0]+45
-        $ teleport_ypos = hermione_chibi.pos[1]-80
+        $ teleport_ypos = hermione_chibi.pos[1]
         $ teleport_zorder = 3
     elif position == "cho":
         $ teleport_xpos = cho_chibi.pos[0]+45
-        $ teleport_ypos = cho_chibi.pos[1]-80
+        $ teleport_ypos = cho_chibi.pos[1]
         $ teleport_zorder = 3
     elif position == "astoria":
         $ teleport_xpos = astoria_chibi.pos[0]+45
-        $ teleport_ypos = astoria_chibi.pos[1]-80
+        $ teleport_ypos = astoria_chibi.pos[1]
         $ teleport_zorder = 3
     elif position == "desk":
         $ teleport_xpos = 320
@@ -170,11 +171,11 @@ label teleport(position=None,effect=True,poof_label=None):
     return
 
 screen teleport_animation():
-    add "teleport_ani" xalign 0.5 xpos teleport_xpos ypos teleport_ypos+60 zoom 0.5
+    add "teleport_ani" anchor (0.5, 0.7) xpos teleport_xpos ypos teleport_ypos zoom 0.5
     zorder teleport_zorder
 
 screen heal_animation():
-    add "heal_ani" xalign 0.5 xpos teleport_xpos ypos teleport_ypos zoom 0.5
+    add "heal_ani" anchor (0.5, 1.0) xpos teleport_xpos ypos teleport_ypos zoom 0.5
     zorder teleport_zorder
 
 # Dummy labels. To prevent crashes. # TODO: Remove later.

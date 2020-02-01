@@ -14,7 +14,7 @@ transform doll_transition(old_img, new_img, trans=d3):
 init python:
     config.all_character_callbacks.append(set_last_say)
     config.mode_callbacks.append(reset_last_say)
-    config.start_interact_callbacks.append(track_skipping_interact)
+    config.interact_callbacks.append(track_skipping_interact)
 
     after_skip_callbacks.append(update_doll_transitions)
 

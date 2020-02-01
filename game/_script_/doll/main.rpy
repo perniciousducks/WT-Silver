@@ -67,8 +67,9 @@ init python:
             return sprites
             
         def apply_transition(self):
-            if renpy.get_screen("{}_main".format(self.name)):
-                apply_doll_transition(self, "{}_main".format(self.name), "{}_img".format(self.name), eval("use_{}_head".format(self.name)))
+            scr_name = "{}_main".format(self.name)
+            if renpy.get_screen(scr_name):
+                renpy.show_screen(scr_name)
             
         def equip(self, obj):
             """Takes DollCloth or DollOutfit object to equip."""

@@ -2,7 +2,7 @@ init python:
     class DollOutfit(DollMethods): 
         def __init__(self, group, unlocked=False, name="", desc="", price=0):
             self.name = name
-            self.group = [x.clone() for x in group]
+            self.group = [x.clone() if not x.parent else x for x in group]
             self.desc = desc
             self.price = price
             self.char = self.group[0].char
@@ -100,11 +100,13 @@ init python:
             # Evaluate data
             if imported:
                 try:
-                    imported = evaluate(imported)
+                    imported = make_revertable(evaluate(imported))
                 except:
                     renpy.notify("Corrupted file!")
                     renpy.block_rollback()
                     return False
+                    
+                group = []
 
                 for x in imported:
                     if isinstance(x, list):
@@ -114,8 +116,7 @@ init python:
                                     renpy.notify("You haven't unlocked some of the items yet. Try again later.")
                                     renpy.block_rollback()
                                     return False
-                                x[0] = o
-                                # TODO: Because of no parent object It would override original object color list, it should be done only on equipping outfits, find a way to provide new color set. Perhaps through DollOutfit constructor?
+                                x[0] = o.clone()
                                 x[0].set_color(x[1])
                                 group.append(x[0])
                 if len(group) > 0:

@@ -151,3 +151,11 @@ init -1 python:
         else:
             s = renpy.get_physical_size()
             renpy.set_physical_size(s)
+
+    def make_revertable(obj):
+      if isinstance(obj, _list):
+        return [make_revertable(x) for x in obj]
+      elif isinstance(obj, _dict):
+        return dict([(make_revertable(k), make_revertable(v)) for (k,v) in obj.iteritems()])
+      else:
+        return obj

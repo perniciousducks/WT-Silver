@@ -170,7 +170,7 @@ label hg_pf_admire_breasts_T1_intro_E1:
     call her_main("(................)", "annoyed", "narrow", "angry", "R")
     pause.4
 
-    $ hermione.strip("top", "accessory0")
+    $ hermione.strip("top", "accessory")
     call her_main("", "annoyed", "narrow", "angry", "R")
     call ctc
 
@@ -270,7 +270,7 @@ label hg_pf_admire_breasts_T1: # Call label
     call her_main(".............", "annoyed", "base", "worried", "R")
     pause.4
 
-    $ hermione.strip("top", "accessory0")
+    $ hermione.strip("top", "accessory")
     call her_main("", "annoyed", "base", "worried", "R")
     call ctc
 

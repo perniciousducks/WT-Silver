@@ -81,10 +81,10 @@ label wardrobe(char_label):
             $ renpy.play('sounds/click3.mp3')
             if "head" in wardrobe_categories_sorted:
                 $ wardrobe_categories_sorted = ("face", "torso", "hips", "legs", "makeup", "breasts", "pelvis", "misc")
-                $ char_active.strip("top", "bottom", "robe", "bra", "panties")
+                $ char_active.strip("top", "bottom", "robe", "bra", "panties", "accessory")
             else:
                 $ wardrobe_categories_sorted = ("head", "tops", "bottoms", "legwear", "makeup", "bras", "panties", "misc")
-                $ char_active.wear("top", "bottom", "robe", "bra", "panties")
+                $ char_active.wear("top", "bottom", "robe", "bra", "panties", "accessory")
     elif _return == "studio":
         $ renpy.play('sounds/click3.mp3')
         call studio(char_label)
@@ -101,7 +101,6 @@ label wardrobe(char_label):
         $ menu_items_length = len(menu_items)
     elif _return[0] == "deloutfit":
         $ char_active.outfits.pop(_return[1])
-        $ char_active.update_outfits_schedule(all=True)
         $ menu_items = filter(lambda x: x.unlocked==True, char_active.outfits)
         $ menu_items_length = len(menu_items)
     elif _return[0] == "tagoutfit":
@@ -110,12 +109,12 @@ label wardrobe(char_label):
         menu:
             "Export to PNG file" if not renpy.variant('android'):
                 $ export_in_progress = True
-                $ globals()[active_girl+"_outfit_last"].save()
+                $ getattr(renpy.store, active_girl[:3]+"_outfit_last").save()
                 $ char_active.equip(_return[1])
                 $ item_to_export = _return[1]
                 call studio(char_label)
             "Export to clipboard":
-                $ _return[1].outfit_export(False)
+                $ _return[1].export_data(False)
             "Back":
                 pass
         $ achievement.unlock("export")
@@ -123,10 +122,10 @@ label wardrobe(char_label):
         menu:
             "Import from PNG file" if not renpy.variant('android'):
                 $ txt_filename = "exported"
-                $ txt_filename = renpy.input("Filename", txt_filename, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#& ", length=64)
-                $ globals()[active_girl+"_outfit_custom"].outfit_import(True, txt_filename)
+                $ txt_filename = renpy.input("Filename", txt_filename, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#&_- ", length=64)
+                $ getattr(renpy.store, active_girl[:3]+"_outfit_last").import_data(True, txt_filename)
             "Import from clipboard":
-                $ globals()[active_girl+"_outfit_custom"].outfit_import(False)
+                $ getattr(renpy.store, active_girl[:3]+"_outfit_last").import_data(False)
             "Back":
                 pass
         $ menu_items = filter(lambda x: x.unlocked==True, char_active.outfits)
@@ -169,10 +168,10 @@ label wardrobe(char_label):
                 $ menu_items_length = len(menu_items)
             else:
                 if current_category in ("bras", "panties"):
-                    $ char_active.strip("top", "bottom", "robe")
+                    $ char_active.strip("top", "bottom", "robe", "accessory")
                 else:
                     if 'head' in wardrobe_categories_sorted:
-                        $ char_active.wear("top", "bottom", "robe")
+                        $ char_active.wear("top", "bottom", "robe", "accessory")
                 $ category_items = wardrobe_categories.get(current_category)
                 # Default subcategory
                 if category_items:

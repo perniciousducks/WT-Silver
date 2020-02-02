@@ -185,7 +185,7 @@ label hg_pf_grope_ass_T1_back:
             menu:
                 "\"Dammit. Now I feel like crap...\"":
                     m "Dammit... Now I feel like crap..."
-                    g9 "But who could resist slapping that little behind of her's?"
+                    g9 "But who could resist slapping that little behind of hers?"
                 "\"She made me do this, that brat!\"":
                     g4 "She made me do this, that brat!"
                     m "Acting all wounded now..."

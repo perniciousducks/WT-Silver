@@ -43,7 +43,7 @@ label equip_bra:
                 # else: #Fail
                     # call her_main("No, [genie_name]!", "open", "closed", "base", "mid")
                     # m "Why not?"
-                    # call her_main("Why not?!", "shock", "wide", "base", "L")
+                    # call her_main("Why not?!", "shock", "wide", "base", "stare")
                     # call her_main("Why would you even requests something like that from one of your students?", "angry", "base", "angry", "mid")
                     # call her_main("I see no reason why I should ever change my bra for you...", "open", "closed", "base", "mid")
                     # call her_main("(Disgusting...)", "annoyed", "narrow", "angry", "R")
@@ -193,7 +193,7 @@ label equip_bra:
                         # call her_main("Do you ask this from every girl, [genie_name]?", "open", "wink", "base", "mid")
                         # m "Why uhm... I mean yes. All the girls..."
                         # call her_main("Is this some sort of protection for-", "open", "narrow", "worried", "down")
-                        # call her_main("It's those Blast-Ended Skrewts again, isn't it?!", "soft", "wide", "base", "L",trans=hpunch)
+                        # call her_main("It's those Blast-Ended Skrewts again, isn't it?!", "soft", "wide", "base", "stare",trans=hpunch)
                         # call her_main("[genie_name], are they biting off the student's nipples???", "open", "wide", "base", "mid")
                         # m "What's so bad about biting nipples?"
                         # call her_main("[genie_name], these are some serious matters! We immediately have to inform the other teachers about this issue!", "open", "base", "angry", "mid")
@@ -234,7 +234,7 @@ label equip_bra:
                     # else:
                         # call her_main("Another one of your way too revealing tops?", "disgust", "base", "angry", "mid")
                         # g9 "Yes, but I want you to wear it as a bra!"
-                        # call her_main("What?!", "open", "wide", "base", "L")
+                        # call her_main("What?!", "open", "wide", "base", "stare")
                         # call her_main("But you can see everything in this! My nipples would poke right through it!!!", "scream", "closed", "angry", "mid")
                         # m "I wouldn't mind if they did..."
                         # call her_main("That's just... typical!", "clench", "base", "angry", "mid")
@@ -365,7 +365,7 @@ label equip_panties:
                 # else: #Fail
                     # call her_main("No, [genie_name]!", "open", "closed", "base", "mid")
                     # m "Why not?"
-                    # call her_main("Why not?!", "shock", "wide", "base", "L")
+                    # call her_main("Why not?!", "shock", "wide", "base", "stare")
                     # call her_main("Why would you even requests something like that from one of your students?", "angry", "base", "angry", "mid")
                     # call her_main("I see no reason why I should ever change my panties for you...", "open", "closed", "base", "mid")
                     # call her_main("(Disgusting...)", "annoyed", "narrow", "angry", "R")
@@ -523,8 +523,8 @@ label equip_panties:
                     # else:
                         # call her_main("Another one of your way too revealing panties?", "disgust", "base", "angry", "mid")
                         # g9 "Even better! I can see through the net!"
-                        # call her_main("What?!", "open", "wide", "base", "L")
-                        # call her_main("This doesn't even cover anything!!!", "soft", "wide", "base", "L")
+                        # call her_main("What?!", "open", "wide", "base", "stare")
+                        # call her_main("This doesn't even cover anything!!!", "soft", "wide", "base", "stare")
                         # call her_main("[genie_name], this is disgusting!", "scream", "closed", "angry", "mid")
                         # call her_main("You can have them back you freak...", "clench", "base", "angry", "mid")
                         # m "Okay- Jeesh... No need to make a scene..."

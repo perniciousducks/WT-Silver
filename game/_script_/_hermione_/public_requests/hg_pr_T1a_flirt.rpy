@@ -31,7 +31,7 @@ label hg_pr_flirt:
         her "Yes, I think I can manage to be civil with them for one day."
         m "Yes, and when I say \"get friendly with them...\""
         m "I actually mean that I need you to flirt with them..."
-        call her_main("Flirt?!", "shock", "wide", "base", "L")
+        call her_main("Flirt?!", "shock", "wide", "base", "stare")
         call her_main("[genie_name]!", "angry", "base", "angry", "mid")
         call her_main("I'm not even going to ask why you'd be interested in this, [genie_name]...", "annoyed", "squint", "base", "mid")
         call her_main("But why Slytherin?", "open", "base", "worried", "mid")

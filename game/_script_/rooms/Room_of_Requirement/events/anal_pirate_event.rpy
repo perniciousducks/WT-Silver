@@ -48,7 +48,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         pause 2
         m "Hm..."
         $ renpy.play('sounds/boing02.mp3')
-        call her_main("!!!", "angry", "wide", "base", "L", ypos="head")
+        call her_main("!!!", "angry", "wide", "base", "stare", ypos="head")
         call play_sound("slap")
         g4 "Blistering barnacles!"
         call her_main("Ouch!", "mad", "happyCl", "worried", "mid",tears="soft_blink")
@@ -65,7 +65,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
             "\"I reckon I'll raise the anchor 'n jus' set sail!\"":
                 play music "music/pirate.mp3" fadein 1 fadeout 1
                 play bg_sounds "sounds/CreakingShip.mp3"
-                call her_main("Just set sail, captain?!", "angry", "wide", "base", "L",ypos="head")
+                call her_main("Just set sail, captain?!", "angry", "wide", "base", "stare",ypos="head")
                 $ renpy.play('sounds/spit.mp3') #Sound of spiting.
                 g4 "*SPIT!*"
                 call her_main("What are ye doing you Seadog!", "scream", "happyCl", "worried", "mid")
@@ -95,9 +95,9 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ renpy.play('sounds/gltch.mp3')
                 with hpunch
                 with kissiris
-                call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "L")
+                call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "stare")
                 g4 "Yo Ho Ho!!!"
-                call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!", "scream", "wide", "base", "L")
+                call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!", "scream", "wide", "base", "stare")
                 g4 "Let us pump this wee cavern full o' seamen then, savvy?"
                 call her_main("Aye... , I jus' wants this t' end...", "scream", "happyCl", "worried", "mid",cheeks="blush",tears="crying")
 
@@ -135,7 +135,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("'n now me wee asshole be gettin' ripped t' pieces... *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
                 g4 "Shiver Me Timbers!"
                 g4 "Agrh! Thar She Blows!"
-                call her_main("No! Be it gettin' bigger?! I be like a harpoon!", "open", "wide", "worried", "L",cheeks="blush",tears="messy")
+                call her_main("No! Be it gettin' bigger?! I be like a harpoon!", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 g4 "ARGH!"
 
             "\"Lather me canon balls first. Lubricate me pegleg!\"":
@@ -166,9 +166,9 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ renpy.play('sounds/gltch.mp3')
                 with hpunch
                 with kissiris
-                call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "L")
+                call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "stare")
                 g4 "Argh!!!"
-                call her_main("Ye... ye...", "scream", "wide", "base", "L")
+                call her_main("Ye... ye...", "scream", "wide", "base", "stare")
                 call her_main("Ye ship be to great", "shock", "happyCl", "worried", "mid")
                 g4 "Let us pump this wee cavern full o' seamen then, savvy?"
                 call her_main(".....................", "angry", "squint", "base", "mid",cheeks="blush")
@@ -277,7 +277,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
             "-Sink her vessel, fill her up-":
                 g4 "Argh!"
                 $ renpy.play('sounds/fuse.mp3')
-                call her_main("No! AH!", "scream", "wide", "base", "L",ypos="head")
+                call her_main("No! AH!", "scream", "wide", "base", "stare",ypos="head")
                 $ renpy.play('sounds/cannon.mp3')
                 call cum_block
                 g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
@@ -292,23 +292,23 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ uni_sperm = True
                 $ u_sperm = "characters/hermione/face/auto_08.png"
 
-                call her_main("AH! ME BILGE IS FILLING UP! Sink Me!{heart}{heart}{heart}", "open", "wide", "worried", "L",cheeks="blush",tears="messy")
+                call her_main("AH! ME BILGE IS FILLING UP! Sink Me!{heart}{heart}{heart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 g4 "Aye, ye wench! I be shooting me canons!"
                 call her_main("Me hull is splintering, spare me Captain!", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
                 g4 "Ye're nah sunk yet!"
                 $ renpy.play('sounds/cannon.mp3')
                 with hpunch
-                call her_main("No, I be already full! Stop cummin', ye bastard!", "scream", "wide", "worried", "L",cheeks="blush",tears="messy")
+                call her_main("No, I be already full! Stop cummin', ye bastard!", "scream", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 g4 "Shut th' farrg up, wench! Ye still be afloat!"
                 call her_main("No! Me stomach! Me ship will capsize!", "scream", "squint", "base", "mid",cheeks="blush",tears="messy")
                 $ renpy.play('sounds/cannon.mp3')
                 with hpunch
                 g4 "ARGH!"
-                call her_main("No! I reckon me bilge be flooded... I must get t' me pumps.", "open", "wide", "worried", "L",cheeks="blush",tears="messy")
+                call her_main("No! I reckon me bilge be flooded... I must get t' me pumps.", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 $ renpy.play('sounds/cannon.mp3')
                 with hpunch
                 play sound "sounds/burp.mp3"
-                call her_main("{size=+7}*BURP!*!!!!!{/size}", "full", "wide", "worried", "L",tears="messy")
+                call her_main("{size=+7}*BURP!*!!!!!{/size}", "full", "wide", "worried", "stare",tears="messy")
                 call her_main(".......................", "full", "base", "base", "mid",tears="messy")
                 call her_main(".............")
                 $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
@@ -438,7 +438,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
-        call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "L")
+        call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "stare")
         g4 "Oh, ye-es!"
         call her_main("Ah...", "soft", "narrow", "annoyed", "up")
         m "It seems like yer cavern be a bit more welcomin', lass."
@@ -519,10 +519,10 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 call her_main("Aye... Aft all th' thin's I had t' do fer me crew...")
                 call her_main("...nah one we pirate would leave th' sea fer me...", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
                 m "Oh, they be leavin th's sea fer ye alright!"
-                call her_main("Wha'? But ye said...", "open", "wide", "worried", "L",cheeks="blush",tears="messy")
+                call her_main("Wha'? But ye said...", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 m "T' plunder yer cave, lass. But they'd go back t' sea."
                 m "But as a canon swabber ye be a great catch!"
-                call her_main("Aye?", "open", "wide", "worried", "L",cheeks="blush",tears="messy")
+                call her_main("Aye?", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 m "Ye pullin' me pegleg?!"
                 m "Young, hot 'n slutty. Ye could 'ave any scallywag ye wants!"
                 m "Or a landlubber or whatever ye be after..."
@@ -545,7 +545,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
         call her_main("BUT I'M CUMMING!{heart}{heart}{heart}", "open", "happyCl", "worried", "mid")
         g4 "Fine! 'ave it yer way wench!"
         with hpunch
-        call her_main("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}", "scream", "wide", "base", "L")
+        call her_main("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}", "scream", "wide", "base", "stare")
         g4 "{size=+7}Argh!{/size}"
 
         $ renpy.play('sounds/fuse.mp3')
@@ -564,7 +564,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ uni_sperm = True
                 $ u_sperm = "characters/hermione/face/auto_08.png"
 
-                call her_main("!!!", "scream", "wide", "base", "L",ypos="head")
+                call her_main("!!!", "scream", "wide", "base", "stare",ypos="head")
                 m "Shiver me timbers! Argh!"
                 call her_main("Ah!{heart} 'tis fillin' me up!{heart} me bilge is takin in water!{heart}", "silly", "narrow", "annoyed", "up")
                 m "'tis nah water, wench!"
@@ -575,7 +575,7 @@ label anal_parit_event: #LV.8 (Whoring = 21 - 23)
                 $ renpy.play('sounds/cannon.mp3')
                 with hpunch
                 m "Agh!"
-                call her_main("Ah...{heart} yer seamen, captain...{heart}", "open", "wide", "worried", "L",cheeks="blush",tears="messy")
+                call her_main("Ah...{heart} yer seamen, captain...{heart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
                 m "Aye, my semen..."
                 call her_main("Ah...{heart}", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
                 m "......"

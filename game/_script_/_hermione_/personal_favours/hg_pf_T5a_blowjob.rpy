@@ -100,7 +100,7 @@ label hg_pf_blowjob_T0_fail_intro:
     m "I plan to grant Gryffindor {number=current_payout} house points today..."
     m "If you suck me off..."
     call her_main("Suck you...{w}off?", "disgust", "wide", "base", "mid")
-    call her_main("With my mouth?!", "disgust", "wide", "base", "L")
+    call her_main("With my mouth?!", "disgust", "wide", "base", "stare")
 
     if hg_kiss.trigger:
         g9 "Wouldn't even be the first time you've done it!"
@@ -534,7 +534,7 @@ label hg_pf_blowjob_1:
         "-Warn her-":
             call her_main("Yes, I love to suck and-", "soft", "narrow", "annoyed", "up", ypos="head")
             g4 "Heads up, [hermione_name]! Here it comes!"
-            call her_main("!!!", "angry", "wide", "base", "L")
+            call her_main("!!!", "angry", "wide", "base", "stare")
 
             call her_chibi_scene("bj", trans=d5)
             pause.8
@@ -589,12 +589,12 @@ label hg_pf_blowjob_1:
 
             call cum_block
             g4 "{size=+7}Whore!{/size}"
-            call her_main("!!?", "cumshot", "wide", "base", "L")
+            call her_main("!!?", "cumshot", "wide", "base", "stare")
 
             call her_chibi_scene("bj_cum_out", trans=d5)
             call ctc
 
-            call her_main("[genie_name]...", "shock", "wide", "base", "L")
+            call her_main("[genie_name]...", "shock", "wide", "base", "stare")
             g4 "Don't you move now, [hermione_name]."
             g4 "Yes, just be still and take it."
             g4 "Argh! You little slut! You make me cum hard, [hermione_name]!"
@@ -686,7 +686,7 @@ label hg_hidden_blowjob_snape:
     call her_chibi_scene("bj_pause", trans=d5)
     pause.8
 
-    call her_main("([genie_name], what should I do?)", "shock", "wide", "base", "L", ypos="head")
+    call her_main("([genie_name], what should I do?)", "shock", "wide", "base", "stare", ypos="head")
     m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
     call her_chibi_scene("bj", trans=d5)
     pause.8
@@ -799,14 +799,14 @@ label hg_hidden_blowjob_luna:
     call her_chibi_scene("bj_pause", trans=d5)
     pause.8
 
-    call her_main("[genie_name], what should I do?", "shock", "wide", "base", "L", ypos="head")
+    call her_main("[genie_name], what should I do?", "shock", "wide", "base", "stare", ypos="head")
     m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
     lun "[lun_genie_name]? Are you there? I need to talk to you."
     if lun_genie_name not in ["Sir","Professor","Dumbledore"]:
         call her_main("([lun_genie_name]?!)", "soft", "squint", "base", "mid")
-        call her_main("(Wait, it's Luna!)", "disgust", "wide", "base", "L")
+        call her_main("(Wait, it's Luna!)", "disgust", "wide", "base", "stare")
     else:
-        call her_main("(It's Luna!)", "disgust", "wide", "base", "L")
+        call her_main("(It's Luna!)", "disgust", "wide", "base", "stare")
     call her_main("{size=-2}Please, [genie_name], send her away, I beg you!{/size}", "shock", "happyCl", "worried", "mid")
 
     menu:
@@ -952,7 +952,7 @@ label hg_hidden_blowjob_tonks:
     call her_chibi_scene("bj_pause", trans=d5)
     pause.8
 
-    call her_main("[genie_name], what should I do?", "shock", "wide", "base", "L", ypos="head")
+    call her_main("[genie_name], what should I do?", "shock", "wide", "base", "stare", ypos="head")
     m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
     ton "[ton_genie_name]? Is it ok if I come in?"
     call her_main("(It's Professor Tonks!)", "clench", "happyCl", "worried", "mid")
@@ -1415,7 +1415,7 @@ label hg_hidden_blowjob_cumming:
 
             call bld
             g4 "{size=+7}Whore!{/size}"
-            call her_main("!!?", "cumshot", "wide", "base", "L", ypos="head")
+            call her_main("!!?", "cumshot", "wide", "base", "stare", ypos="head")
             hide screen bld1
             call ctc
 
@@ -1423,7 +1423,7 @@ label hg_hidden_blowjob_cumming:
             # TODO: CUM LAYERS
             #
 
-            call her_main("[genie_name]...", "cumshot", "wide", "base", "L")
+            call her_main("[genie_name]...", "cumshot", "wide", "base", "stare")
             g4 "All over your fucking face!"
             call her_main("*Aaah!*", "grin", "narrow", "base", "dead")
 
@@ -1657,7 +1657,7 @@ label hg_pf_blowjob_2:
                     # TODO: CUM LAYERS
                     #
 
-                    call her_main("Daddy...", "cumshot", "wide", "base", "L")
+                    call her_main("Daddy...", "cumshot", "wide", "base", "stare")
                     g4 "That's it, princess!"
                     call her_main("Aaah!", "grin", "narrow", "base", "dead")
 
@@ -2080,7 +2080,7 @@ label hg_pf_facefuck_1: # Bondage facefuck scene
             hide screen hercg
             with fade
             ">You quickly pull your cock out of her throat before placing it up against her left nostril."
-            call her_main("aaaaaaahhh.... *pant*wait...*pant* not there...", "nose_cum", "wide", "base", "L", ypos="head", tears="mascara")
+            call her_main("aaaaaaahhh.... *pant*wait...*pant* not there...", "nose_cum", "wide", "base", "stare", ypos="head", tears="mascara")
             ">Helpless to stop you, Hermione is unable to prevent you from firing a huge load up her nose."
             g9 "FUCK YES! TAKE THIS, WHORE!"
             call her_main("Ah... no... it's so hot! I can feel it! Ugh... it's coming down my throat...", "nose_cum", "narrow", "annoyed", "up")

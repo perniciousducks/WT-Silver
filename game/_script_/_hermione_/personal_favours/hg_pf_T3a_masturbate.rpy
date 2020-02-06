@@ -120,7 +120,7 @@ label hg_pf_strip_T2_fingering:
             call her_main("Aha...{heart}", "open", "happyCl", "worried", "mid")
             call her_main("I'm just thinking about how happy everyone will be when we win!", "shock", "happyCl", "worried", "mid")
             m "and what if they find out how you earned the points?"
-            call her_main("what?!", "shock", "wide", "base", "L")
+            call her_main("what?!", "shock", "wide", "base", "stare")
             m "then it wouldn't just be me degrading you..."
             call her_main("...", "soft", "happy", "base", "R")
             m "It would be the whole school."
@@ -233,7 +233,7 @@ label hg_pf_strip_T2_fingering:
     menu:
         "-Chastise her-":
             m "Well then I guess Slytherin will have to win the house cup this year."
-            call her_main("B-but--", "scream", "wide", "base", "L")
+            call her_main("B-but--", "scream", "wide", "base", "stare")
             m "now, now [hermione_name], a deals a deal."
             call her_main("Really?", "open", "happyCl", "worried", "mid")
             call her_main("but I'm trying [genie_name]...", "shock", "happyCl", "worried", "mid")
@@ -253,7 +253,7 @@ label hg_pf_strip_T2_fingering:
 
         "-Forgive her-":
             m "It's alright, [hermione_name]."
-            call her_main("Really?", "open", "wide", "worried", "L", cheeks="blush", tears="messy")
+            call her_main("Really?", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
             m "I'm sure you're just a little nervous."
             call her_main("Thank you [genie_name].", "clench", "base", "worried", "mid", cheeks="blush", tears="soft")
             call her_main("I promise to try harder next time.", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")

@@ -182,7 +182,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         m "[hermione_name]..."
         call her_main("Yes, [genie_name]?", "crooked_smile", "closed", "base", "mid")
         m "Do you know why is there a price tag on these?"
-        call her_main("...!", "angry", "wide", "base", "L")
+        call her_main("...!", "angry", "wide", "base", "stare")
         call her_main("Uh.... Well, the person I boug-... {w=0.3}*ahem*{w=0.2} {size=+2}BORROWED{/size} these from must have forgotten to take the price tag off.", "open", "happy", "base", "mid")
         call her_main("", mouth="normal")
         m "I see...{w=0.3} Well whoever you took them from must be a bit slow to forget something like that, don't you agree?"
@@ -535,7 +535,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("", "open_wide_tongue", "squint", "base", "mid")
         pause 1.0
         g9 "And stick it in her vagina!"
-        call her_main("{size=+8}WHAT?!{/size}", "shock", "wide", "base", "L", cheeks="blush")
+        call her_main("{size=+8}WHAT?!{/size}", "shock", "wide", "base", "stare", cheeks="blush")
         call her_main("Why would she want that?!", "shock", "wide", "base", "mid", cheeks="blush")
         call her_main("", mouth="angry", cheeks="blush")
         g9 "Because in my experience it feels awesome...{w=0.5}{nw}"
@@ -551,7 +551,7 @@ label panty_raid_event: #LV.8 (Whoring = 21 - 23)
         call her_main("Maybe I will...", "open", "closed", "angry", "mid")
         call her_main("", "upset", "narrow", "annoyed", "mid")
         call her_main("She will surely-...{w=0.5}{nw}", "open", "closed", "base", "mid")
-        call her_main("{size=+4}HOLD ON!{/size}", "scream", "wide", "base", "L")
+        call her_main("{size=+4}HOLD ON!{/size}", "scream", "wide", "base", "stare")
         call her_main("", mouth="shock")
         m "What?"
         call her_main("I-I-I-I-I.....", "angry", "wide", "base", "mid", cheeks="blush")

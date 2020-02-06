@@ -743,8 +743,8 @@ label hermione_change:
             call her_main("","base","happy",cheeks="blush")
     elif temp_name == "Slut":
         if her_whoring >=15 and her_whoring < 17:
-            call her_main("[genie_name]?!", "shock", "wide", "worried", "L")
-            call her_main("You can't just call someone that!", "mad", "wide", "base", "L")
+            call her_main("[genie_name]?!", "shock", "wide", "worried", "stare")
+            call her_main("You can't just call someone that!", "mad", "wide", "base", "stare")
             m "It'll just be between us..."
             call her_main("...", "disgust", "squint", "base", "mid")
             m "Nothing to add?"
@@ -759,7 +759,7 @@ label hermione_change:
             call her_main("I don't mind...", "smile", "happyCl", "base", "mid",cheeks="blush")
     elif temp_name == "Cumslut":
         if her_whoring >= 17 and her_whoring < 19:
-            call her_main("A cumslut?!", "open", "wide", "worried", "L")
+            call her_main("A cumslut?!", "open", "wide", "worried", "stare")
             m "Something wrong?"
             call her_main("You have to even ask?", "soft", "narrow", "worried", "down", cheeks="blush")
             call her_main("This is so degrading...", "normal", "narrow", "base", "down",cheeks="blush")
@@ -770,7 +770,7 @@ label hermione_change:
             call her_main("\"That taste, the texture..\"", "open", "narrow", "annoyed", "up",cheeks="blush")
             call her_main("\"..So warm, sticky and...\"", "silly", "narrow", "base", "up",cheeks="blush")
             m "Are you okay there, [temp_name]?"
-            call her_main("Wha-", "mad", "wide", "base", "L")
+            call her_main("Wha-", "mad", "wide", "base", "stare")
             call her_main("Of course I am!", "smile", "base", "base", "R",cheeks="blush")
     elif temp_name == "Slytherin Whore":
         if her_whoring >=19 and her_whoring < 21:
@@ -793,7 +793,7 @@ label hermione_change:
                     call her_main("B-but, [genie_name]?!", "mad", "wide", "base", "mid", emote="02")
                     call her_main("", "mad", "wide", "base", "mid")
                     m "I must apologise {b}Miss Granger{/b}, I thought we had come to some kind of agreeable arrangement by now..."
-                    call her_main("But I...", "mad", "wide", "worried", "L")
+                    call her_main("But I...", "mad", "wide", "worried", "stare")
                     m "...I should have known better to believe that this sort of thing would work out..."
                     call her_main("Maybe I coul-...","clench","happyCl")
                     m "...I thought we both had what we wanted..."
@@ -812,7 +812,7 @@ label hermione_change:
                 "-Threaten her-":
                     g4 "Either accept my offer or Gryffindor lose five hundred points..."
                     with hpunch
-                    call her_main("FIVE HUNDRED?!", "shock", "wide", "base", "L")
+                    call her_main("FIVE HUNDRED?!", "shock", "wide", "base", "stare")
                     call her_main("[genie_name]... This is blackmailing!", "scream", "closed", "angry", "mid")
                     call her_main("", "mad", "closed", "angry", "mid")
                     m "It is?"
@@ -833,7 +833,7 @@ label hermione_change:
             call her_main("Why do I even bother... *sigh*", "soft", "narrow", "base", "R_soft",cheeks="blush")
     elif temp_name == "Mudblood":
         if her_whoring >= 21:
-            call her_main("A{w=0.5}...{w=0.5} {size=+6}{b}{cps=20}mud{w=0.5}blood{/cps}{/b}?!{/size}", "shock", "wide", "base", "L")
+            call her_main("A{w=0.5}...{w=0.5} {size=+6}{b}{cps=20}mud{w=0.5}blood{/cps}{/b}?!{/size}", "shock", "wide", "base", "stare")
             call her_main("Did I hear you right, [genie_name]?!", "normal", "wide", "base", "mid")
             menu:
                 "-Confirm-":

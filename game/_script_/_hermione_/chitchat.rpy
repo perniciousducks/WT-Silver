@@ -27,7 +27,7 @@ label chit_chat:
 
         elif one_of_ten == 4:
             call her_main("If my body wouldn't require sleep...", "open", "base", "worried", "R")
-            call her_main("I would be able to spend twice as much time with studying!?", "angry", "wide", "base", "L")
+            call her_main("I would be able to spend twice as much time with studying!?", "angry", "wide", "base", "stare")
             call her_main("I wonder if there's a spell for that...", "open", "base", "base", "mid")
             call her_main("", "normal", "base", "base", "mid")
 
@@ -138,7 +138,7 @@ label chit_chat:
         elif one_of_ten == 5:
             call her_main("Hogwarts has really become a second home to me lately...", "open", "closed", "base", "mid")
             call her_main("I don't even miss my parents nearly as much anymore...", "annoyed", "narrow", "worried", "down")
-            call her_main("Come to think of it I don't miss them at all...", "angry", "wide", "base", "L")
+            call her_main("Come to think of it I don't miss them at all...", "angry", "wide", "base", "stare")
             call her_main("I'm an awful daughter...", "angry", "narrow", "base", "down")
 
         elif one_of_ten == 6:

@@ -26,7 +26,7 @@ label hg_anal_sex_1:
 
     call her_chibi_scene("sex_pause", trans=fade)
 
-    call her_main("!!!", "angry", "wide", "base", "L")
+    call her_main("!!!", "angry", "wide", "base", "stare")
     g4 "Oh, come on!"
     call her_main("Ouch!", "mad", "happyCl", "worried", "mid",tears="soft_blink")
     m "Just try to loosen up a little, would you?"
@@ -42,7 +42,7 @@ label hg_anal_sex_1:
         m "..."
         "\"I think I'll spit on it and just force it in!\"":
             call play_music("playful_tension") # SEX THEME.
-            call her_main("Force it in, [genie_name]?!", "angry", "wide", "base", "L",ypos="head")
+            call her_main("Force it in, [genie_name]?!", "angry", "wide", "base", "stare",ypos="head")
             $ renpy.play('sounds/spit.mp3') #Sound of spiting.
             g4 "*SPIT!*"
             call her_main("Eeeeeew!", "scream", "happyCl", "worried", "mid")
@@ -71,7 +71,7 @@ label hg_anal_sex_1:
             $ renpy.play('sounds/gltch.mp3')
             with hpunch
             with kissiris
-            call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "L")
+            call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "stare")
             g4 "YES!!!"
 
             if use_cgs:
@@ -85,7 +85,7 @@ label hg_anal_sex_1:
             else:
                 call her_chibi_scene("sex_slow", trans=d5)
 
-            call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!", "scream", "wide", "base", "L")
+            call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!", "scream", "wide", "base", "stare")
             g4 "Let us pump this little asshole full of semen then, shall we?"
             call her_main("Yes... Please, I just want this to end...", "scream", "happyCl", "worried", "mid",cheeks="blush",tears="crying")
             g4 "Agh... You want this to end sooner?"
@@ -101,7 +101,7 @@ label hg_anal_sex_1:
             call her_main("And now my tiny asshole is getting ripped apart... *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             g4 "Yes! Yes!"
             g4 "Agrh! Yes!"
-            call her_main("No! Is it getting bigger?! I'm scared!", "open", "wide", "worried", "L",cheeks="blush",tears="messy")
+            call her_main("No! Is it getting bigger?! I'm scared!", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             g4 "ARGH!"
 
         "\"Suck me off first. Lubricate my cock!\"":
@@ -128,7 +128,7 @@ label hg_anal_sex_1:
             $ renpy.play('sounds/gltch.mp3')
             with hpunch
             with kissiris
-            call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "L")
+            call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "stare")
 
             if use_cgs:
                 $ face_on_cg = True
@@ -142,7 +142,7 @@ label hg_anal_sex_1:
                 call her_chibi_scene("sex_slow", trans=d5)
 
             g4 "YES!!!"
-            call her_main("My... my...", "scream", "wide", "base", "L")
+            call her_main("My... my...", "scream", "wide", "base", "stare")
             call her_main("It hurts!", "shock", "happyCl", "worried", "mid")
             g4 "Let's pump this little asshole full of semen then, shall we?"
             call her_main(".....................", "angry", "squint", "base", "mid",cheeks="blush")
@@ -225,7 +225,7 @@ label hg_anal_sex_1:
 
             call play_music("playful_tension") # SEX THEME.
             call her_chibi_scene("sex_pause", trans=fade)
-            call her_main("Lubrication, [genie_name]?!", "angry", "wide", "base", "L",ypos="head")
+            call her_main("Lubrication, [genie_name]?!", "angry", "wide", "base", "stare",ypos="head")
             m "*Shhh*... Just stay still."
             "*Squeeze!*"
             call her_main("Ahhh! It's cold!", "scream", "happyCl", "worried", "mid")
@@ -289,13 +289,13 @@ label hg_anal_sex_1:
             $ renpy.play('sounds/gltch.mp3')
             with hpunch
             with kissiris
-            call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "L")
+            call her_main("{size=+5}AAAAAAAAhhhhh!!!{/size}", "scream", "wide", "base", "stare")
             g4 "YES!!!"
 
             if not use_cgs:
                 call her_chibi_scene("sex_slow", trans=d5)
 
-            call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!", "scream", "wide", "base", "L")
+            call her_main("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!", "scream", "wide", "base", "stare")
             g4 "Let us pump this little asshole full of semen then, shall we?"
             call her_main("Yes... Please, I just want this to end...", "scream", "happyCl", "worried", "mid",cheeks="blush",tears="crying")
             g4 "Agh... You want this to end sooner?"
@@ -311,13 +311,13 @@ label hg_anal_sex_1:
             call her_main("And now my tiny asshole is getting ripped apart... *Sob!*", "angry", "narrow", "base", "dead",cheeks="blush",tears="crying")
             g4 "Yes! Yes!"
             g4 "Agrh! Yes!"
-            call her_main("No! Is it getting bigger?! I'm scared!", "open", "wide", "worried", "L",cheeks="blush",tears="messy")
+            call her_main("No! Is it getting bigger?! I'm scared!", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             g4 "ARGH!"
 
     menu:
         "-Fill Hermione up with cum-":
             g4 "Argh!"
-            call her_main("No! AH!", "scream", "wide", "base", "L",ypos="head")
+            call her_main("No! AH!", "scream", "wide", "base", "stare",ypos="head")
             call cum_block
             g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
 
@@ -328,19 +328,19 @@ label hg_anal_sex_1:
             call cum_block
             call ctc
 
-            call her_main("AH! IT'S FILLING ME UP!{heart}{heart}{heart}", "open", "wide", "worried", "L",cheeks="blush",tears="messy")
+            call her_main("AH! IT'S FILLING ME UP!{heart}{heart}{heart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             g4 "Yes, you whore! Yes!"
             call her_main("It hurts, it hurts!", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
             g4 "Shut up!"
             with hpunch
-            call her_main("No, I am already full! Stop cumming, you bastard!", "scream", "wide", "worried", "L",cheeks="blush",tears="messy")
+            call her_main("No, I am already full! Stop cumming, you bastard!", "scream", "wide", "worried", "stare",cheeks="blush",tears="messy")
             g4 "Shut the fuck up, slut! I am not done yet!"
             call her_main("No! Please! My stomach! I will explode!", "scream", "squint", "base", "mid",cheeks="blush",tears="messy")
             g4 "ARGH!"
-            call her_main("No, I think I will throw up...", "open", "wide", "worried", "L",cheeks="blush",tears="messy")
+            call her_main("No, I think I will throw up...", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             with hpunch
             play sound "sounds/burp.mp3"
-            call her_main("{size=+7}*BURP!*!!!!!{/size}", "full", "wide", "worried", "L",tears="messy")
+            call her_main("{size=+7}*BURP!*!!!!!{/size}", "full", "wide", "worried", "stare",tears="messy")
             call her_main(".......................", "full", "base", "base", "mid",tears="messy")
             call her_main(".............")
             $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
@@ -453,7 +453,7 @@ label hg_anal_sex_2:
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
     with kissiris
-    call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "L")
+    call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "stare")
 
     # Transition
     if use_cgs:
@@ -527,10 +527,10 @@ label hg_anal_sex_2:
             call her_main("Yes... After all the things I had to do for my house...")
             call her_main("...no one will ever want me...", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
             m "Oh, they will want you alright!"
-            call her_main("What? But you said...", "open", "wide", "worried", "L",cheeks="blush",tears="messy")
+            call her_main("What? But you said...", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             m "Marriage, [hermione_name]. Marriage is impossible for you."
             m "But as a man-pleaser you are a great catch!"
-            call her_main("Really?", "open", "wide", "worried", "L",cheeks="blush",tears="messy")
+            call her_main("Really?", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             m "Are you kidding me?!"
             m "Young, hot and slutty. You could have any man you want!"
             m "Or a wizard or whatever you are into..."
@@ -552,7 +552,7 @@ label hg_anal_sex_2:
     call her_main("BUT I'M CUMMING!{heart}{heart}{heart}", "open", "happyCl", "worried", "mid")
     g4 "Fine! Have it your way whore!"
     with hpunch
-    call her_main("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}", "scream", "wide", "base", "L")
+    call her_main("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}", "scream", "wide", "base", "stare")
     g4 "{size=+7}Argh!{/size}"
 
     menu:
@@ -569,13 +569,13 @@ label hg_anal_sex_2:
             # TODO: CUM LAYERS
             #
 
-            call her_main("!!!", "scream", "wide", "base", "L",ypos="head")
+            call her_main("!!!", "scream", "wide", "base", "stare",ypos="head")
             m "Yes! Argh!"
             call her_main("Ah!{heart} It's filling me up!{heart} I can feel it!{heart}", "silly", "narrow", "annoyed", "up")
             m "Shut up, whore!"
             call her_main("Ah! I AM A WHORE!!!!{heart}{heart}{heart}", "scream", "happyCl", "worried", "mid",cheeks="blush",tears="crying")
             m "Agh!"
-            call her_main("Ah...{heart} your cum, [genie_name]...{heart}", "open", "wide", "worried", "L",cheeks="blush",tears="messy")
+            call her_main("Ah...{heart} your cum, [genie_name]...{heart}", "open", "wide", "worried", "stare",cheeks="blush",tears="messy")
             m "Yes, yes..."
             call her_main("Ah...{heart}", "angry", "squint", "base", "mid",cheeks="blush",tears="messy")
             m "......"

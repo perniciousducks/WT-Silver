@@ -59,7 +59,7 @@ label potion_scene_3_1_1:
         call nar(">Hermione takes a whiff of the potion contents.")
         $ renpy.play('sounds/sniff.mp3')
         pause 0.5
-        call her_main("*Ughhh*{w=0.5}{nw}", "disgust", "slit", "low", "L")
+        call her_main("*Ughhh*{w=0.5}{nw}", "disgust", "slit", "low", "stare")
         with hpunch
         call her_main("This isn't a potion! This is just a bottle full of your cum!", "scream", "closed", "angry", "mid")
         g4 "How did you know?"
@@ -82,7 +82,7 @@ label potion_scene_3_1_1:
             call her_chibi("stand","mid","base")
 
             call her_main("Is this bottle full of your cum?", "disgust", "closed", "angry", "mid")
-            call her_main("Ughhh and it's cold as well.", "disgust", "slit", "low", "L")
+            call her_main("Ughhh and it's cold as well.", "disgust", "slit", "low", "stare")
             m "So it just tastes like cum to you?"
             call her_main("Of course it does, what else would it taste like?", "angry", "base", "angry", "mid")
             call nar(">Hermione starts unconsciously licking her lips.")
@@ -234,7 +234,7 @@ label hg_pp_cumaddict_intro:
             $ aftersperm = True
             call nar(">Hermione's eyes widen and tears form as she senses your semen enter her.")
             call cum_block
-            call her_main("hhaanooo hhhheerrr", "scream", "wide", "base", "L")
+            call her_main("hhaanooo hhhheerrr", "scream", "wide", "base", "stare")
             hide screen hermione_main
             call nar(">Her hands shoot down into her panties as she starts violently orgasming.","start")
             call nar(">The sight of her pleasuring herself as you use her throat only prolongs your orgasm.","end")
@@ -288,7 +288,7 @@ label hg_pp_cumaddict_intro:
             m "Not so quick [hermione_name]."
             call her_chibi_scene("bj_pause")
             call nar(">You quickly pull your penis out from her mouth.")
-            call her_main("What are you doing [genie_name]?", "shock", "wide", "base", "L")
+            call her_main("What are you doing [genie_name]?", "shock", "wide", "base", "stare")
             hide screen hermione_main
             m "Giving you your well earned reward."
             call cum_block
@@ -304,7 +304,7 @@ label hg_pp_cumaddict_intro:
             with vpunch
             hide screen hermione_main
             m "What was that [hermione_name]?"
-            call her_main("I-I'm cumming again?!", "scream", "wide", "base", "L")
+            call her_main("I-I'm cumming again?!", "scream", "wide", "base", "stare")
             with hpunch
             hide screen hermione_main
             m "Just from a facial? What sort of cumslut have you become Miss Granger?"
@@ -323,7 +323,7 @@ label hg_pp_cumaddict_intro:
             hide screen hermione_main
             call nar(">She attempts to bury her face into your crotch but you put your palm on her forehead and push her away.")
             call her_chibi_scene("bj_pause")
-            call her_main("[genie_name], what are you doing?", "angry", "wide", "base", "L")
+            call her_main("[genie_name], what are you doing?", "angry", "wide", "base", "stare")
             hide screen hermione_main
             m "giving you your reward!"
             call nar(">After a few quick pumps you point your dick at the floor and explode.")
@@ -335,7 +335,7 @@ label hg_pp_cumaddict_intro:
             call her_main("I'm not going to eat that. The floor in here is disgusting.", "angry", "base", "base", "mid")
             hide screen hermione_main
             m "Well you can always wait until tomorrow morning then."
-            call her_main("TOMORROW MORNING!? I can't wait that long! Can't you just cum again?", "angry", "wide", "base", "L")
+            call her_main("TOMORROW MORNING!? I can't wait that long! Can't you just cum again?", "angry", "wide", "base", "stare")
             hide screen hermione_main
             m "No [hermione_name], I'm a tired old man and it's time for me to go to sleep."
             m "You can either eat off the floor or you can come back tomorrow."
@@ -643,7 +643,7 @@ label potion_scene_3_3_1:
             call her_main("Aaaaanyway...", "open", "base", "base", "R")
             call her_main("Is there anything you want from me mistah... I'll do anything!{heart}", "soft", "narrow", "base", "mid_soft")
         "-Where is your badge, cumslut?!-":
-            call her_main("Oh no I forgot that!", "soft", "wide", "base", "L")
+            call her_main("Oh no I forgot that!", "soft", "wide", "base", "stare")
             call her_main("I'm soooo sorry!!!", "shock", "happyCl", "worried", "mid", cheeks="blush")
             call her_main("It's this one, isn't it...", "soft", "narrow", "worried", "down")
             call nar("Hermione conjures an -I {heart} Cum- badge, which magically attaches itself to her breasts.")
@@ -790,7 +790,7 @@ label potion_scene_3_3_1:
     menu:
         "-Cum on her face-":
             g4 "Here it comes slut!"
-            call her_main("{heart}!!!{heart}", "shock", "wide", "base", "L",cheeks="blush")
+            call her_main("{heart}!!!{heart}", "shock", "wide", "base", "stare",cheeks="blush")
             call gen_chibi("cum","desk","base")
             $ u_sperm = "characters/hermione/face/auto_07.png"
             $ uni_sperm = True
@@ -799,7 +799,7 @@ label potion_scene_3_3_1:
             call her_main("...{heart}{heart}{heart}", "silly", "narrow", "base", "up",cheeks="blush")
         "-Cum on her tits-":
             g4 "Here it comes fuckbunny!"
-            call her_main("{heart}{heart}{heart}", "shock", "wide", "base", "L",cheeks="blush")
+            call her_main("{heart}{heart}{heart}", "shock", "wide", "base", "stare",cheeks="blush")
             call gen_chibi("cum","desk","base")
             $ u_sperm = "characters/hermione/face/auto_02.png"
             $ uni_sperm = True
@@ -808,7 +808,7 @@ label potion_scene_3_3_1:
             call her_main("It's so warm...{heart}{heart}{heart}", "silly", "narrow", "base", "up",cheeks="blush")
         "-cover her in cum-":
             g4 "Here it comes whore!"
-            call her_main("{heart}{heart}{heart}", "shock", "wide", "base", "L",cheeks="blush")
+            call her_main("{heart}{heart}{heart}", "shock", "wide", "base", "stare",cheeks="blush")
             call gen_chibi("cum","desk","base")
             $ u_sperm = "characters/hermione/face/auto_05.png"
             $ uni_sperm = True
@@ -879,7 +879,7 @@ label potion_scene_3_4_1:
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
     with kissiris
-    call her_main("ahhhhhhhhh....{heart}", "scream", "wide", "base", "L")
+    call her_main("ahhhhhhhhh....{heart}", "scream", "wide", "base", "stare")
     hide screen hermione_main
     call gen_chibi("hide")
     $ ccg_folder = "herm_sex"

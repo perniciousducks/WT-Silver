@@ -300,7 +300,7 @@ label hg_cum_on_panties_response:### PANTIES SOAKED IN CUM ###
                 call nar(">Hermione reluctantly puts her cum-soaked panties in her mouth.")
                 call her_main("Mmmmhhhhh!", "full", "slit", "worried", "ahegao")
                 m "That's it, not as bas as you thought now is it?"
-                call her_main("...", "full", "slit", "low", "L")
+                call her_main("...", "full", "slit", "low", "stare")
                 m "Make sure you get them nice and clean now..."
                 call her_main("*gulp*", "full_cum", "narrow", "worried", "down",cheeks="blush")
                 m "That's it. Do you think they're clean yet."

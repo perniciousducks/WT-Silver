@@ -249,7 +249,7 @@ label hg_pr_flirt_teacher_T2_E1: # Slughorn
     call her_main("Or at least I tried...", "annoyed", "squint", "base", "mid")
     her "Professor Slughorn seems to be more interested in much younger girls..."
     m "You almost sound jealous, [hermione_name]."
-    call her_main("What?!", "angry", "wide", "base", "L")
+    call her_main("What?!", "angry", "wide", "base", "stare")
     call her_main("That is preposterous!", "annoyed", "narrow", "angry", "R")
     m "Here are your points..."
     her "...................."

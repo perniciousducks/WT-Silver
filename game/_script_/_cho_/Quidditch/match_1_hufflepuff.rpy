@@ -559,9 +559,9 @@ label hufflepuff_match:
     # Cho’s Skirt gets addressed
     show screen hufflepuff_match_cho_chase(1.0, 1.0)
     play bg_sounds "sounds/snitchloop.ogg" fadein 2 fadeout 2
-    call her_main("Higher up, Cho seems to have caught an eye on the snitch and is chasing after it, directly followed by Cedric who...", "open", "slit", "low", "L")
+    call her_main("Higher up, Cho seems to have caught an eye on the snitch and is chasing after it, directly followed by Cedric who...", "open", "slit", "low", "stare")
     show screen hufflepuff_match_cho_chase(1.0, 0.5)
-    call her_main("Hold on a minute... Is Cho wearing a skirt?", "scream", "wide", "worried", "L")
+    call her_main("Hold on a minute... Is Cho wearing a skirt?", "scream", "wide", "worried", "stare")
     $ renpy.sound.play("sounds/crowd_gasp.mp3")
     stop music fadeout 4
     $ qp_mob_reaction[0] = "emo02"
@@ -735,9 +735,9 @@ label hufflepuff_match:
     call her_main("playing the game?", "smile", "closed", "base", "mid")
     call cho_main("The game is over, you dipstick!", "scream", "angry", "angry", "L")
     call cho_main("", "pout", "angry", "raised", "L")
-    call her_main("What? Already?", "shock", "wide", "worried", "L")
+    call her_main("What? Already?", "shock", "wide", "worried", "stare")
     call cho_main("", "upset", "angry", "angry", "L")
-    call her_main("But who caught the Snitch?", "open", "wide", "base", "L")
+    call her_main("But who caught the Snitch?", "open", "wide", "base", "stare")
     call cho_main("", "open", "angry", "angry", "L")
     $ cho.set_body(armright="snitch")
     with d3

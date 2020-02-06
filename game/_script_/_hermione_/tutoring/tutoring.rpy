@@ -93,7 +93,7 @@ label l_tutoring:
         m "{size=-2}(If only...){/size}"
         m "I must take care of all the students of this school."
         m "But yes, there is another girl who needs..."
-        call her_main("A Slytherin girl?!", "scream", "wide", "base", "L")
+        call her_main("A Slytherin girl?!", "scream", "wide", "base", "stare")
         g9 "That is none of your business, miss Granger."
         call her_main("Yes, professor. I'm sorry, but with all the recent events I'm a little on edge.", "angry", "base", "angry", "mid")
         m "Apology accepted, and now goodnight!"
@@ -120,7 +120,7 @@ label l_tutoring:
         call her_main("Not really, I'm not sure what you mean by \"emotions\".", "normal", "base", "base", "mid")
         g9 "{size=-2}(You'll learn soon enough, girl.){/size}"
         m "For example, what was your state of mind when you heard those rumours about the Slytherin girls?"
-        call her_main("Please don't bring that up, sir! it really makes me mad!", "scream", "wide", "base", "L")
+        call her_main("Please don't bring that up, sir! it really makes me mad!", "scream", "wide", "base", "stare")
         m "And what is this feeling?"
         call her_main("...{w=0.5}an emotion, I suppose...", "normal", "base", "base", "mid")
         m "Yes, and don't you have emotions you prefer over others?"
@@ -241,7 +241,7 @@ label l_tutoring:
         g9 "And? And?"
         call her_main("And a moment later they began to...", "open", "closed", "base", "mid")
         call her_main("They began to...", "open", "happyCl", "worried", "mid",cheeks="blush")
-        call her_main("They began to touch their breasts!", "scream", "wide", "base", "L",cheeks="blush")
+        call her_main("They began to touch their breasts!", "scream", "wide", "base", "stare",cheeks="blush")
         m "They were naked, I hope?"
         call her_main("What?", "open", "happy", "base", "mid",cheeks="blush")
         her "No, fortunately they were dressed."
@@ -302,7 +302,7 @@ label l_tutoring:
         call her_main("What? Lesbians? I'm not... I... No way, I...", "open", "base", "base", "mid",cheeks="blush")
         m "Alright, alright, back to your report, if you please."
         call her_main("{size=-2}(I'm not a lesbian...{w=0.3} I think...){/size}", "disgust", "narrow", "base", "down",cheeks="blush")
-        call her_main("{size=-2}(Hermione, girl, pull yourself together! You're not a harlot!){/size}", "mad", "wide", "base", "L",cheeks="blush")
+        call her_main("{size=-2}(Hermione, girl, pull yourself together! You're not a harlot!){/size}", "mad", "wide", "base", "stare",cheeks="blush")
         call her_main("No, I'm not!", "annoyed", "closed", "base", "mid",cheeks="blush")
         m "Excuse me?"
         call her_main("Uh... Yes, my report. My {b}scientific{/b} report.", "open", "base", "base", "mid",cheeks="blush")
@@ -370,7 +370,7 @@ label l_tutoring:
         m "You said that those girls became wet."
         g9 "Weren't you a little too?"
         call her_main("When I went to bed I noticed it, yes.", "disgust", "narrow", "base", "down",cheeks="blush")
-        call her_main("Apparently bad fluids are released from your body when you have faced such acts.", "mad", "wide", "base", "L",cheeks="blush")
+        call her_main("Apparently bad fluids are released from your body when you have faced such acts.", "mad", "wide", "base", "stare",cheeks="blush")
         m "No, they aren't bad. It happens when you're excited."
         call her_main("No way! I can control myself!", "scream", "happyCl", "worried", "mid",cheeks="blush",tears="soft_blink")
         call her_main("", "angry", "base", "angry", "mid",cheeks="blush")
@@ -452,9 +452,9 @@ label l_tutoring:
         with d3
 
         call nar(">You stop caressing her.")
-        call her_main("Why... why did you stop?", "mad", "wide", "base", "L",cheeks="blush")
+        call her_main("Why... why did you stop?", "mad", "wide", "base", "stare",cheeks="blush")
         m "Oh, because I need you to think about all this before we meet again."
-        call her_main("But...", "mad", "wide", "base", "L",cheeks="blush")
+        call her_main("But...", "mad", "wide", "base", "stare",cheeks="blush")
         m "Good night, my dear."
         call her_main("Good night, professor.", "annoyed", "base", "worried", "R")
 
@@ -555,7 +555,7 @@ label l_tutoring:
         call her_chibi("stand","desk","base")
         call hide_blkfade
 
-        call her_main("...........", "mad", "wide", "base", "L",cheeks="blush")
+        call her_main("...........", "mad", "wide", "base", "stare",cheeks="blush")
 
         hide screen bld1
         call hide_blkfade
@@ -584,7 +584,7 @@ label l_tutoring:
         call her_main("Yes...{w=0.2} a little.", "annoyed", "narrow", "angry", "R",cheeks="blush")
         m "And?"
         call her_main("It feels even better when I'm naked.", "smile", "happyCl", "base", "mid",cheeks="blush",emote="06")
-        call her_main("{size=-2}(Oh no, I shouldn't have said that...){/size}", "mad", "wide", "base", "L",cheeks="blush")
+        call her_main("{size=-2}(Oh no, I shouldn't have said that...){/size}", "mad", "wide", "base", "stare",cheeks="blush")
         m "Well come here and undress, we'll practise."
         call her_main("Completely?!", "mad", "base", "angry", "mid",cheeks="blush")
         m "No, only the top will suffice."
@@ -774,7 +774,7 @@ label l_tutoring:
             call her_chibi_scene("grope_ass_front")
             with d3
             call nar(">You caress her clit.")
-            call her_main("Professor!", "mad", "wide", "base", "L",cheeks="blush")
+            call her_main("Professor!", "mad", "wide", "base", "stare",cheeks="blush")
         else:
             call her_main("You love my panties don't you?", "base", "narrow", "base", "up",cheeks="blush")
             g9 "Oh yes, I love their smell, especially when you're wet."
@@ -782,7 +782,7 @@ label l_tutoring:
             call her_chibi_scene("grope_ass_front")
             with d3
             call nar(">You caress her clit through the fabric.")
-            call her_main("Professor!", "mad", "wide", "base", "L",cheeks="blush")
+            call her_main("Professor!", "mad", "wide", "base", "stare",cheeks="blush")
             m "Now take them off."
 
             $ hermione.strip("panties")
@@ -858,7 +858,7 @@ label l_tutoring:
         call her_walk("door", "base")
 
         call her_main("{size=-4}(Favourite...){/size}", "base", "narrow", "base", "up",cheeks="blush",ypos="head")
-        call her_main("{size=-4}(There's another one?){/size}", "mad", "wide", "base", "L",cheeks="blush",ypos="head")
+        call her_main("{size=-4}(There's another one?){/size}", "mad", "wide", "base", "stare",cheeks="blush",ypos="head")
         call her_main("{size=-4}(I'll do my best to remain his favourite!){/size}", "base", "happyCl", "worried", "mid",cheeks="blush",ypos="head")
 
         call her_chibi("leave")
@@ -1041,7 +1041,7 @@ label l_tutoring:
         m "Among other things..."
         call her_main("That's what I thought.", "annoyed", "squint", "base", "mid")
         call her_main("But to be honest, I was looking forward to this lesson.", "open", "closed", "base", "mid")
-        call her_main("{size=-2}(Maybe, I shouldn't have said that){/size}", "angry", "wide", "base", "L")
+        call her_main("{size=-2}(Maybe, I shouldn't have said that){/size}", "angry", "wide", "base", "stare")
         her "{size=-2}(This will drive him crazy and he'll rape me savagely on his desk){/size}"
         call her_main("{size=-2}(Not that I would mind...){/size}", "angry", "happyCl", "worried", "mid",cheeks="blush")
         call her_main("{size=-2}(And I could ask him for points afterwards){/size}", "smile", "base", "base", "R")
@@ -1229,7 +1229,7 @@ label l_tutoring:
 
         call give_gift(">You give the anal beads to Hermione",anal_beads_ITEM)
 
-        call her_main("Oh! That's even better than a butt plug.", "shock", "wide", "base", "L",cheeks="blush")
+        call her_main("Oh! That's even better than a butt plug.", "shock", "wide", "base", "stare",cheeks="blush")
         g9 "And they can be useful for your pussy too."
         call her_main("So many possibilities...", "smile", "base", "angry", "mid",cheeks="blush")
         her "...so little time."
@@ -1368,7 +1368,7 @@ label l_tutoring:
 
         call her_main("Professor!", "open", "happy", "base", "mid",cheeks="blush")
         call her_main(".........", "base", "narrow", "base", "up",cheeks="blush")
-        call her_main("Can I have points for this?", "mad", "wide", "base", "L",cheeks="blush")
+        call her_main("Can I have points for this?", "mad", "wide", "base", "stare",cheeks="blush")
         g11 "Now!"
         hide screen hermione_main
         call blkfade
@@ -1427,7 +1427,7 @@ label l_tutoring:
         jump day_start
 
     elif her_tutoring == 12:
-        call her_main("Oh! I can't believe I forgot! Stay where you are, I'll be right back!", "mad", "wide", "base", "L",cheeks="blush")
+        call her_main("Oh! I can't believe I forgot! Stay where you are, I'll be right back!", "mad", "wide", "base", "stare",cheeks="blush")
         hide screen hermione_main
         call play_sound("door")
         call blkfade
@@ -1492,7 +1492,7 @@ label l_tutoring:
         m "Maybe, I don't know... do you like butterbeer?"
         call her_main("You know I do. What's that got to do with...", "soft", "base", "base", "R",cheeks="blush")
         g9 "......."
-        call her_main("Do you mean...{w=0.3} no, no way professor!", "scream", "wide", "base", "L",cheeks="blush")
+        call her_main("Do you mean...{w=0.3} no, no way professor!", "scream", "wide", "base", "stare",cheeks="blush")
         m "Oh, rest assured, we won't start with the bottom end."
         call her_main("Still, professor, this is so dirty...", "silly", "narrow", "base", "up",cheeks="blush")
         call her_main("{size=-2}(And exciting){/size}", "silly", "narrow", "base", "up",cheeks="blush")
@@ -1718,7 +1718,7 @@ label l_tutoring:
         call her_chibi_scene("sex_naked")
         call nar(">You increase the pace.")
         call her_main("Ahh yesss {heart}.", "open_tongue", "narrow", "base", "up",cheeks="blush")
-        call her_main("I'm such a whore, I love sex even for free.", "mad", "wide", "base", "L",cheeks="blush")
+        call her_main("I'm such a whore, I love sex even for free.", "mad", "wide", "base", "stare",cheeks="blush")
         g9 "You know it!"
         call her_main("Don't make it a habit.", "open", "happy", "base", "mid",cheeks="blush")
         m "......"

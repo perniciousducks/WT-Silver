@@ -29,7 +29,7 @@ label hermione_cardgame_menu:
         call her_main("I mean...", "soft", "narrow", "base", "down")
         m "If they don't get shut down I mean."
         call her_main( "Oh, yes of course I'll play.","shock","wide")
-        call her_main("...", "soft", "wide", "worried", "L")
+        call her_main("...", "soft", "wide", "worried", "stare")
         call her_main("Anything else you needed or am I free to go?", "base", "base", "worried", "mid")
         $ her_know_cards = True
         jump hermione_requests
@@ -179,7 +179,7 @@ label hermione_third_duel:
 
     if her_third_win == False:
         call her_main("Nooo, how's this even possible?", "clench", "wide", "worried", "shocked")
-        call her_main("I'm supposed to be the smartest girl in my year...", "mad", "wide", "worried", "L")
+        call her_main("I'm supposed to be the smartest girl in my year...", "mad", "wide", "worried", "stare")
         g9 "Looks like Wisdom beats intelligence..."
         call her_main("You don't have to patronise me, I'll get you next time. You'll see.", "upset", "squint", "base", "mid")
         g9 "You seem to have forgotten something..."

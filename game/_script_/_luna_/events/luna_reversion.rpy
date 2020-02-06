@@ -317,7 +317,7 @@ label luna_revert_1:
 
     call lun_main("...","upset","wide","sad","mid", xpos="mid",ypos="base")
     call her_main("But I really need a good-.", "angry", "narrow", "base", "down")
-    call her_main("...", "shock", "wide", "base", "L")
+    call her_main("...", "shock", "wide", "base", "stare")
     call her_main("{size=+5}WHAT{/size}", "annoyed", "narrow", "annoyed", "mid")
     call lun_main("","upset","wide","sad","down")
     call her_main("{size=+10}THE{/size}", "angry", "base", "angry", "mid")
@@ -356,7 +356,7 @@ label luna_revert_1:
     m "Yes, well... the \"sorting\" hat mentioned that it may have made a mistake with the sorting of some students."
     hat "..."
     m "So it offered to use \"Legitimacy\" or something to fix-"
-    call her_main("You performed Legilimency?", "angry", "wide", "base", "L")
+    call her_main("You performed Legilimency?", "angry", "wide", "base", "stare")
     call her_main("On a {size=+5}student{/size}!?", "scream", "base", "angry", "mid",emote="01")
     m "It's not that bad, surely..."
     call her_main("Sir, it's bad enough to use Legilimency to read someone's mind...", "annoyed", "narrow", "annoyed", "mid")
@@ -703,9 +703,9 @@ label luna_revert_2:
             call lun_main("Really? You don't know...","clench","mad","mad","mid")
             m "No idea..."
             call lun_main("Well then, we'll just have to ask hermione...","pout","angry","mad","R")
-            call her_main("...", "open", "wide", "base", "L")
+            call her_main("...", "open", "wide", "base", "stare")
             call lun_main("I'm sure that some Veritaserum will clear things up...","clench","angry","mad","mid")
-            call her_main("!!!", "angry", "wide", "base", "L")
+            call her_main("!!!", "angry", "wide", "base", "stare")
             m "(Is that bad?)"
             ">Hermione gives you a pleading look with her eyes."
             call her_main("...", "angry", "happyCl", "worried", "mid", tears="crying")
@@ -755,7 +755,7 @@ label luna_revert_2:
     pause .1
     hide screen white
     $ renpy.play('sounds/magic4.ogg') # Not loud
-    call her_main("", "soft", "wide", "base", "L",trans=hpunch)
+    call her_main("", "soft", "wide", "base", "stare",trans=hpunch)
     call lun_main("liquescimus corporis!","open","seductive","angry","mid")
     ">Another flash of light as Hermione becomes unpetrified."
     call lun_main("","base","seductive","base","R",xpos="mid",ypos="base")
@@ -778,7 +778,7 @@ label luna_revert_2:
     $ renpy.play('sounds/magic4.ogg') # Not loud
     ">Luna paralyses Hermione for the second time."
     call lun_main("","normal","mad","mad","mid")
-    call her_main("!!!", "angry", "wide", "base", "L")
+    call her_main("!!!", "angry", "wide", "base", "stare")
     call her_main("...", "angry", "base", "angry", "mid")
     ">Hermione stares at Luna with a blind rage."
     m "Should you really be doing that?"
@@ -794,7 +794,7 @@ label luna_revert_2:
     call ctc
 
     call lun_main("So, how should we punish her?","grin","seductive","base","R")
-    call her_main("!!!", "angry", "wide", "base", "L")
+    call her_main("!!!", "angry", "wide", "base", "stare")
     m "Punish her?"
     call lun_main("Of course! For what she said.","smile","seductive","angry","mid")
     call her_main("...", "clench", "narrow", "base", "down")
@@ -811,7 +811,7 @@ label luna_revert_2:
     ">Luna turns to face hermione."
     call lun_main("Hmmm, what should I do...","base","mad","mad","mid")
     call lun_main("...","base","seductive","angry","mid")
-    call her_main("...", "open", "wide", "base", "L")
+    call her_main("...", "open", "wide", "base", "stare")
     call lun_main("I've got it!","grin","wide","angry","mid")
     hide screen hermione_main
     hide screen luna_main
@@ -849,7 +849,7 @@ label luna_revert_2:
     with d3
 
     ">Luna slowly pulls down her panties, revealing her cum-soaked pussy."
-    call her_main("!!!","disgust","slit","low","L")
+    call her_main("!!!","disgust","slit","low","stare")
     call lun_main("Well... get to work!","grin","mad","base","mid")
     ">Hermione glares at luna."
     call her_main("...","annoyed","narrow","annoyed","mid")

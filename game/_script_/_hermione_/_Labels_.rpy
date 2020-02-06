@@ -1,6 +1,6 @@
 label too_much:
     stop music fadeout 2.0
-    call her_main("[genie_name]??!", "shock", "wide", "base", "stare",xpos="mid",trans=fade)
+    call her_main("[genie_name]??!", "shock", "wide", "base", "L",xpos="mid",trans=fade)
     her "How could you ask for such a thing!?"
     call her_main("I think I better leave.", "angry", "happyCl", "worried", "mid",emote="05")
 

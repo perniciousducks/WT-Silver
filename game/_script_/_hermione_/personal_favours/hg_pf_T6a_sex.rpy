@@ -198,7 +198,7 @@ label hg_sex_1:
     pause.5
 
     call her_main(".............", "upset", "closed", "base", "mid", ypos="head")
-    call her_main("!!!!!!!!!!!!!!!", "angry", "wide", "base", "stare")
+    call her_main("!!!!!!!!!!!!!!!", "angry", "wide", "base", "L")
     if hermione.is_worn("panties"):
         m "Relax, [hermione_name]. I'm Just gonna take off your panties."
         $ hermione.strip("panties")
@@ -227,7 +227,7 @@ label hg_sex_1:
         call her_main("", "normal", "happyCl", "worried", "mid", ypos="head", trans=d5)
     else:
         call her_chibi_scene("sex", trans=d5)
-    call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "stare")
+    call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "L")
     hide screen bld1
     call ctc
 
@@ -343,12 +343,12 @@ label hg_sex_1:
     g4 "Ght! {heart} Yes, you always say the right things, [hermione_name]!"
     call her_main("Ah...{heart} ah...{heart}{heart}", "shock", "happyCl", "worried", "mid")
     #$ ccg2 = 24
-    call her_main("{size=+7}!!!!!!!!!!!!!!!{/size}{heart}{heart}{heart}", "scream", "wide", "base", "stare", trans=hpunch)
+    call her_main("{size=+7}!!!!!!!!!!!!!!!{/size}{heart}{heart}{heart}", "scream", "wide", "base", "L", trans=hpunch)
     m "Huh? You alright?"
     call nar(">Hermione's legs are shaking...")
     m "[hermione_name]?"
     #$ ccg2 = 28
-    call her_main("{heart}{heart}{heart}I think I'm cumming, [genie_name]!{heart}{heart}{heart}", "scream", "wide", "base", "stare")
+    call her_main("{heart}{heart}{heart}I think I'm cumming, [genie_name]!{heart}{heart}{heart}", "scream", "wide", "base", "L")
     g9 "Tch... You nasty slut!"
     #$ ccg2 = 29
     call her_main("AAH! I can't hold it!", "silly", "narrow", "base", "dead")
@@ -359,7 +359,7 @@ label hg_sex_1:
         call her_chibi_scene("sex_fast", trans=d5)
 
     #$ ccg2 = 30
-    call her_main("NO! STOP! PLEASE!", "scream", "wide", "base", "stare", trans=hpunch)
+    call her_main("NO! STOP! PLEASE!", "scream", "wide", "base", "L", trans=hpunch)
     g4 "Who told you you could cum, slut? This is your punishment!"
     call her_main("[genie_name], no, ah-a!{heart}", "open", "happyCl", "worried", "mid")
     #$ ccg2 = 31
@@ -495,7 +495,7 @@ label hg_sex_2:
     else:
         call her_chibi_scene("sex", trans=fade)
 
-    call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "stare", ypos="head")
+    call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "L", ypos="head")
     hide screen bld1
     call ctc
 
@@ -528,7 +528,7 @@ label hg_sex_2:
             call her_main("Ah...{heart}{heart}", "open", "happyCl", "worried", "mid")
             m "Yes, my little princess..."
             #$ ccg2 = 15
-            call her_main("What?", "angry", "wide", "base", "stare")
+            call her_main("What?", "angry", "wide", "base", "L")
             call her_main("No, please don't call me that... ah...{heart}", "angry", "narrow", "base", "down")
             call her_main("My daddy used to call me his little princess when I was little...")
             if genie_name == "Daddy":
@@ -664,7 +664,7 @@ label hg_sex_2:
             call her_main("Yes... I...{heart}", "silly", "narrow", "base", "dead")
             #$ ccg2 = 41
             call her_main("I feel so full...", "open_wide_tongue", "narrow", "annoyed", "up")
-            call her_main("!!!", "scream", "wide", "base", "stare")
+            call her_main("!!!", "scream", "wide", "base", "L")
             call her_main("You came inside of me, [genie_name]!")
             m "I sure did."
             call her_main("You shouldn't have...", "open", "happyCl", "worried", "mid")
@@ -744,7 +744,7 @@ label hg_sex_luna:
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
     with kissiris
-    call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "stare", ypos="head") #HERMIONE
+    call her_main("Ooooohhhhhhhhhhhh....{heart}", "scream", "wide", "base", "L", ypos="head") #HERMIONE
 
     call her_chibi_scene("sex", trans=fade)
     call ctc

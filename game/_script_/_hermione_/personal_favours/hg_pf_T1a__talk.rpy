@@ -516,7 +516,7 @@ label hg_pf_talk_T3:
         call her_main("{size=-4}I am not-{/size}", "annoyed", "happyCl", "worried", "mid")
         call her_main("(...................)", "disgust", "base", "worried", "mid")
         m "You've done well today [hermione_name]..."
-        call her_main("You've soiled your entire desk!", "mad", "wide", "base", "stare")
+        call her_main("You've soiled your entire desk!", "mad", "wide", "base", "L")
         m "I'm sure it will be cleaned at one point or another..."
         if her_tier <= 4:
             call her_main("Gross...", "normal", "happyCl", "worried", "mid", cheeks="blush")
@@ -535,8 +535,8 @@ label hg_pf_talk_T3:
         m "So, since you're muggle born and all..."
         call her_main("Yes?", "open", "happy", "base", "mid_soft")
         m "I hope you properly demonstrated how to use it to them."
-        call her_main("What? Why on earth do you think I would do that?", "shock", "wide", "base", "stare", cheeks="blush")
-        call her_main("Do you take me for some sort of exhibitionist?", "mad", "wide", "base", "stare", cheeks="blush")
+        call her_main("What? Why on earth do you think I would do that?", "shock", "wide", "base", "L", cheeks="blush")
+        call her_main("Do you take me for some sort of exhibitionist?", "mad", "wide", "base", "L", cheeks="blush")
         m "Sorry?"
         call her_main("Don't you sorry me...{w=0.5} you expect me to get my fanny out and casually just shove it in there for the whole class to see?", "angry", "base", "angry", "mid", cheeks="blush")
         call her_main("I'm sure they would love that and find it more than educational...", "base", "closed", "angry", "mid", cheeks="blush")
@@ -545,7 +545,7 @@ label hg_pf_talk_T3:
         m "What are you talking about? Weren't we talking about back massagers?"
         call her_main("-I'd just tear my clothes off and...", "open", "closed", "angry", "mid", cheeks="blush")
         $ renpy.sound.play("sounds/glass_shatter.mp3")
-        call her_main("...", "mad", "wide", "base", "stare", cheeks="blush")
+        call her_main("...", "mad", "wide", "base", "L", cheeks="blush")
         her "I...{w} I'm sorry professor!"
         g9 "I didn't take you for such a naughty girl, [hermione_name]!"
         g9 "Here we were having an innocent conversation about back massagers and you spring all this on me."
@@ -774,7 +774,7 @@ label hg_pf_talk_tonks:
                 else:
                     call ton_main("Wow! Who would have thought you're the girl from top of the list.","smile","happyCl","base","mid")
                     call ton_main("Colour me surprised, looks like they were telling the truth after all.","horny","base","angry","L", hair="horny")
-                    call her_main("(...a list ... what list...?)", "angry", "wide", "worried", "stare", cheeks="blush")
+                    call her_main("(...a list ... what list...?)", "angry", "wide", "worried", "L", cheeks="blush")
                     call ton_main("Congratulations for being a \"top\" student.","horny","base","raised","L")
                     call her_main("...", "disgust", "narrow", "base", "R_soft", cheeks="blush")
 

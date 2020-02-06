@@ -42,7 +42,7 @@ label a_bad_time_to_disrobe_part_1:
 
     m "You'd be naked of course."
 
-    call her_main("Naked!?! But what if someone saw me?", "open", "wide", "base", "stare")
+    call her_main("Naked!?! But what if someone saw me?", "open", "wide", "base", "L")
 
     m "You'll be wearing the cloak..."
     m "No one would even know you were there."
@@ -75,7 +75,7 @@ label a_bad_time_to_disrobe_part_1:
     g9 "I'll take that cloak back if you don't mind."
     call her_main("Certainly.", "base", "base", "base", "mid",xpos="right",ypos="base")
     m "Now, spill the beans."
-    call her_main("I..I don't have any beans on me sir.", "soft", "slit", "low", "stare")
+    call her_main("I..I don't have any beans on me sir.", "soft", "slit", "low", "L")
     m "\"Is this girl for real?\""
     m "It's just an expression, tell me... did you complete your assignment?"
     call her_main("I did sir. I snuck into the boys dormitory using the cloak as you suggested.", "soft", "happyCl", "base", "mid")
@@ -149,7 +149,7 @@ label a_bad_time_to_disrobe_part_1:
     m "\"Well, that's a shame.\""
     call her_main("One of the boys saw me shuffle and moved to see what it was so I tried to get away but I slipped...and...and.", "upset", "wide", "base", "shocked", tears="mascara")
     g11 "And what?"
-    call her_main("And I slipped and my butt fell out!", "scream", "wide", "worried", "stare", tears="mascara")
+    call her_main("And I slipped and my butt fell out!", "scream", "wide", "worried", "L", tears="mascara")
 
     g9 "{size=18}Thirty points to....{/size}"
 
@@ -231,7 +231,7 @@ label a_bad_time_to_disrobe_part_2:
     m "..."
     call her_main("...", "upset", "narrow", "worried", "down")
     m "Fine, but only if we continue where we left of."
-    call her_main("With my butt out?!?", "disgust", "wide", "worried", "stare")
+    call her_main("With my butt out?!?", "disgust", "wide", "worried", "L")
     m "With your bu..."
     m "No, well... yes, but this time you'll be prepared."
     call her_main("But... what if they recognise me sir?", "open", "base", "worried", "mid")

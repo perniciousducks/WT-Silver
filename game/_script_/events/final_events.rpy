@@ -59,7 +59,7 @@ label ball_quest_E1:
                 "\"You will have to sleep with me.\"" if not d_flag_04:
                     $ her_mood += 17
                     $ d_flag_04 = True
-                    call her_main("I will have to... sleep...?", "angry", "wide", "base", "stare")
+                    call her_main("I will have to... sleep...?", "angry", "wide", "base", "L")
                     call her_main("...................", "angry", "base", "angry", "mid", cheeks="blush")
                     call play_music("chipper_doodle") # HERMIONE'S THEME.
                     her "I am not stupid, sir... Quite the opposite in fact."
@@ -273,7 +273,7 @@ label ball_quest_E1:
                     her "I can't help it! *Sob!*"
                     m "Are you sure that you are ok with this?"
                     call her_main("Yes, yes, sir, please.... *Sob!*", "soft", "base", "angry", "mid", tears="messy")
-                    call her_main("Please keep on looking at my naked body... *Sob!*", "shock", "wide", "base", "stare", tears="messy")
+                    call her_main("Please keep on looking at my naked body... *Sob!*", "shock", "wide", "base", "L", tears="messy")
 
                     call her_main("", "angry", "base", "angry", "mid", cheeks="blush", tears="messy")
                     call set_her_action("lift_breasts")
@@ -456,7 +456,7 @@ label ball_quest_E3:
     call her_main("Oh, you wouldn't understand...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     call her_main("You're just like my father!", "scream", "base", "angry", "mid", cheeks="blush", tears="messy")
     m "I beg your pardon?"
-    call her_main("I mean... ehm...", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
+    call her_main("I mean... ehm...", "open", "wide", "worried", "L", cheeks="blush", tears="messy")
     her "Forgive me sir..."
     call her_main("I don't know why I am telling you all of this...", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     m "................"
@@ -546,7 +546,7 @@ label ball_quest_E5:
     call give_reward(">You give the ball gown to Hermione...","interface/icons/box_red_1.png")
 
     call her_main("Hm...? What is this?", "base", "base", "base", "mid")
-    call her_main("{size=+7}A DRESS?!{/size}", "angry", "wide", "base", "stare")
+    call her_main("{size=+7}A DRESS?!{/size}", "angry", "wide", "base", "L")
     with hpunch
     m "I thought that you--"
 
@@ -563,9 +563,9 @@ label ball_quest_E5:
     call her_main("I cannot believe that you would do something like that for me...", "angry", "squint", "base", "mid", cheeks="blush", tears="messy")
     m "Well, I did. Now stop crying."
     call her_main("I can't, sir. I am so happy and so grateful...", "scream", "happyCl", "worried", "mid", cheeks="blush", tears="messy")
-    call her_main("Do you want me to suck your cock, sir?", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
+    call her_main("Do you want me to suck your cock, sir?", "open", "wide", "worried", "L", cheeks="blush", tears="messy")
     m "What?"
-    call her_main("Because I will do it!", "open", "wide", "worried", "stare", cheeks="blush", tears="messy")
+    call her_main("Because I will do it!", "open", "wide", "worried", "L", cheeks="blush", tears="messy")
     her "And I will swallow and everything!"
     call her_main("And you wouldn't have to pay me a single house point!", "shock", "narrow", "base", "down", cheeks="blush", tears="crying")
     m "uhm... Maybe some other time..."

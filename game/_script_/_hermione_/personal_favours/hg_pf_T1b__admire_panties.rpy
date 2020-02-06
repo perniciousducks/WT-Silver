@@ -95,7 +95,7 @@ label hg_pf_admire_panties_T1_intro_E1:
     call her_main("My... panties...?", "open", "base", "base", "mid")
     call her_main("[genie_name]!", "angry", "base", "angry", "mid")
     m "I know, I know, this a little weird..."
-    call her_main("{size=+7}A little !?{/size}", "shock", "wide", "base", "stare")
+    call her_main("{size=+7}A little !?{/size}", "shock", "wide", "base", "L")
     her "This is completely inappropriate!"
     m "Listen, we need to go through this phase before we get to the good stuff, alright?"
     call her_main("The \"good stuff\"? [genie_name], I don't understand...", "open", "base", "base", "mid")

@@ -170,7 +170,7 @@ label hg_wager_bj:
                 call her_chibi_scene("bj_cum_in")
                 call cum_block
                 g4 "{size=+7}ARGH!{/size}"
-                call her_main("...", "full", "wide", "worried", "stare")
+                call her_main("...", "full", "wide", "worried", "L")
                 call sna_main("...", face="snape_25")
                 g4 "..."
                 call sna_main("Hmm...{w} it seems the weird sound is gone.", face="snape_04")
@@ -308,7 +308,7 @@ label hg_wager_bj:
                             call cum_block
                             pause 1
                             call her_chibi_scene("bj_pause")
-                            call her_main("*Mmmh!!*", "full_cum", "wide", "base", "stare", cheeks="blush")
+                            call her_main("*Mmmh!!*", "full_cum", "wide", "base", "L", cheeks="blush")
                             $ renpy.play('sounds/gulp.mp3')
                             call her_main("{heart}*Gulp* {heart}", "cum", "narrow", "annoyed", "up")
                             m "Who said you could continue?"
@@ -329,7 +329,7 @@ label hg_wager_bj:
                             call sna_main("Is there anything I could assist with?","snape_04")
                             with hpunch
                             g4 "{size=+7}What?!?{/size}"
-                            call her_main("...?", "open_wide_tongue", "wide", "worried", "stare", cheeks="blush")
+                            call her_main("...?", "open_wide_tongue", "wide", "worried", "L", cheeks="blush")
                             call sna_main("With the exorcism...", face="snape_05")
                             m "Oh..."
                             call her_main("*Slurp*, *Slurp*, *Slurp*", "open_wide_tongue", "happyCl", "worried", "mid", cheeks="blush")
@@ -492,7 +492,7 @@ label hg_wager_bj:
                                         call her_main("...")
                                         g4 "Forty points from Gryffindor!"
                                         $ gryffindor -= 40
-                                        call her_main("What, you can't do that!", "shock", "wide", "worried", "stare")
+                                        call her_main("What, you can't do that!", "shock", "wide", "worried", "L")
                                         g4 "Of course I can, I'm the headmaster!"
                                         call her_main("I can't believe you've done this...", "mad", "base", "angry", "mid")
                                         m "Suck it up..."
@@ -586,7 +586,7 @@ label hg_wager_bj:
                             call her_main("Thank you professor...", "smile", "happy", "base", "mid_soft")
                         "-Yes-":
                             g4 "Of course I am, you didn't finish the job!"
-                            call her_main("...", "annoyed", "wide", "base", "stare")
+                            call her_main("...", "annoyed", "wide", "base", "L")
                             call her_main("But, Snape was going to...", "open", "happyCl", "worried", "mid")
                             call her_main("...", "upset", "narrow", "worried", "down")
                             call her_main("Fine...", "clench", "narrow", "annoyed", "mid")

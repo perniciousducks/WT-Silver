@@ -42,7 +42,7 @@ label hg_pr_blowjob:
         m "Sure, Happy to help."
         m "I need you to go give a blowjob to one of your classmates."
         stop music fadeout 1.0
-        call her_main("!!!", "shock", "wide", "base", "stare")
+        call her_main("!!!", "shock", "wide", "base", "L")
         her "...with my mouth?"
 
         if her_tier < 5 or hg_blowjob.trigger == False or her_reputation < 15:
@@ -301,7 +301,7 @@ label hg_pr_blowjob_T2_E2:
     m "I see..."
     her "Can I just--"
     play sound "sounds/burp.mp3"
-    call her_main("*Burp!*...", "shock", "wide", "base", "stare")
+    call her_main("*Burp!*...", "shock", "wide", "base", "L")
     call her_main("Excuse me, [genie_name].", "angry", "narrow", "base", "down")
     call her_main("{size=-3}(He just kept on cumming... My stomach feels so full...){/size}", "angry", "happyCl", "worried", "mid", emote="05")
     call her_main("Can I get my payment now, please?", "open", "base", "base", "mid")

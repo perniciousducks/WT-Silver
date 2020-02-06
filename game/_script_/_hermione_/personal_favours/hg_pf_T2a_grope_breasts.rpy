@@ -10,7 +10,7 @@ label hg_pf_grope_breasts_T1:
     call her_main("!!!", "normal", "wide", "worried", "shocked")
     call nar(">Hermione takes a hesitant step back...")
 
-    call her_main("!!!?", "mad", "wide", "base", "stare", cheeks="blush", ypos="head", trans=hpunch)
+    call her_main("!!!?", "mad", "wide", "base", "L", cheeks="blush", ypos="head", trans=hpunch)
     hide screen bld1
     call ctc
 
@@ -24,7 +24,7 @@ label hg_pf_grope_breasts_T1:
 
     call her_main("[genie_name], you're hurting me!", "angry", "squint", "base", "mid", cheeks="blush")
     g4 "Then stand still, [hermione_name]!"
-    call her_main("B-but...", "soft", "wide", "base", "stare")
+    call her_main("B-but...", "soft", "wide", "base", "L")
     m "All I want to do is squeeze your tits a little, then you will get your points!"
     call her_main("B-but... this is...", "disgust", "narrow", "base", "down", cheeks="blush")
     m "Just stand still..."
@@ -125,7 +125,7 @@ label hg_pf_grope_breasts_T2: # Favor fails if you Slap them.
     call slap_her
 
     $ her_mood += 10
-    call her_main("!!!", "scream", "wide", "base", "stare", cheeks="blush")
+    call her_main("!!!", "scream", "wide", "base", "L", cheeks="blush")
     call her_main("Ouch! It hurts! *SOB!*", "angry", "base", "worried", "mid", cheeks="blush")
     m "Did you like it though?"
     call her_main("Did I... \"like it\", [genie_name]..?", "annoyed", "narrow", "annoyed", "mid")
@@ -159,8 +159,8 @@ label hg_pf_grope_breasts_T2_continue:
     call her_main("Not because I enjoy it...", "upset", "closed", "base", "mid")
     m "I see..."
     m "So, you're more like a prostitute then..."
-    call her_main("[genie_name]!", "angry", "wide", "base", "stare")
-    call her_main("Prostitutes are paid to have sex with men...", "angry", "wide", "base", "stare")
+    call her_main("[genie_name]!", "angry", "wide", "base", "L")
+    call her_main("Prostitutes are paid to have sex with men...", "angry", "wide", "base", "L")
     call her_main("I'd never do something like that!", "upset", "closed", "base", "mid")
 
     call nar(">You squeeze one of the girl's tits tightly and give the other a couple of firm tugs.")
@@ -237,7 +237,7 @@ label hg_pf_grope_breasts_T3_naked:
     call nar(">You give Hermione's tits a loud slap!")
     call slap_her
 
-    call her_main("!!!", "scream", "wide", "base", "stare", cheeks="blush")
+    call her_main("!!!", "scream", "wide", "base", "L", cheeks="blush")
     call her_main("Ouch!", "angry", "base", "worried", "mid", cheeks="blush")
     call her_main("[genie_name], what did you do this for?")
     m "Dunno... Seemed like a good idea..."
@@ -247,7 +247,7 @@ label hg_pf_grope_breasts_T3_naked:
     call her_main("What?", "annoyed", "base", "base", "mid")
     call slap_her
 
-    call her_main("!!!", "scream", "wide", "base", "stare", cheeks="blush")
+    call her_main("!!!", "scream", "wide", "base", "L", cheeks="blush")
     call her_main("Ouch! Stop hurting me!")
     m "Admit that you enjoy it and I will."
     call her_main("But I don't...", "disgust", "narrow", "base", "down")
@@ -382,7 +382,7 @@ label hg_pf_grope_breasts_T4_naked: # No top.
     call slap_her
 
     #elif her_whoring >= 15:
-    call her_main("Ah!!!", "scream", "wide", "base", "stare", cheeks="blush")
+    call her_main("Ah!!!", "scream", "wide", "base", "L", cheeks="blush")
     call her_main("[genie_name], why did you do that?", "grin", "narrow", "base", "mid_soft", cheeks="blush")
     m "Dunno... Seemed like a good idea..."
     m "Did you like it?"
@@ -452,7 +452,7 @@ label hg_pf_grope_breasts_T5_naked:
     m "What if I pull even harder?"
     with hpunch
 
-    call her_main("Ah... [genie_name], please...", "scream", "wide", "base", "stare")
+    call her_main("Ah... [genie_name], please...", "scream", "wide", "base", "L")
     call nar(">Hermione clutches the edge of your desk to keep herself from taking a step towards you...")
     m "Good girl..."
     call her_main("*Panting heavily*", "grin", "narrow", "base", "dead")

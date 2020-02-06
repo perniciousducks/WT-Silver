@@ -26,7 +26,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call lun_main("I wanted you to be here for it.","base","suspicious","sad","mid")
     call her_main("you mean...", "shock", "happy", "base", "mid_soft")
     call her_main("Awww that's so sweet Luna.", "grin", "base", "base", "mid_soft")
-    call her_main("You better ask her nicely sir!", "mad", "slit", "low", "stare")
+    call her_main("You better ask her nicely sir!", "mad", "slit", "low", "L")
     m "You don't even know what-"
     call her_main("Everyone knows what you're going to ask for next sir.", "open", "closed", "base", "mid")
     call her_main("At least try and make it a little romantic for her...", "smile", "base", "base", "mid_soft")
@@ -43,7 +43,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call lun_main("I...","base","wide","sad","R")
     call lun_main("I......","normal","wide","sad","R")
     call lun_main("I can't!","upset","wide","sad","down")
-    call her_main("What?", "shock", "wide", "base", "stare")
+    call her_main("What?", "shock", "wide", "base", "L")
     call her_main("Why not Luna? We've talked about this...", "soft", "base", "worried", "mid")
     call her_main("We even spent all last weekend \'practising\'...", "normal", "base", "worried", "R")
     call lun_main("I know...","pout","base","mad","R")
@@ -528,7 +528,7 @@ label luna_favour_7: #Luna and Hermione Sex #DONE
     call her_main("Well I better be off, [genie_name], it's getting a little late.","grin","happy",xpos="base",ypos="base")
 
     m "Goodnight, [hermione_name]."
-    call her_main("Goodnight {size=-5}daddy{/size}...", "grin", "slit", "low", "stare")
+    call her_main("Goodnight {size=-5}daddy{/size}...", "grin", "slit", "low", "L")
     hide screen hermione_main
     with d3
     pause.2

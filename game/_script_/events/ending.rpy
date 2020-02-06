@@ -522,7 +522,7 @@ label ball_ending_E2:
     mal2 "Like hell you were!"
     mal "Alright, pal! That does it!"
     mal2 "I'm not your \"pal\", buddy!"
-    call her_main("..............", "open", "wide", "worried", "stare")
+    call her_main("..............", "open", "wide", "worried", "L")
     show screen blktone8
     with d3
 
@@ -857,7 +857,7 @@ label ball_ending_E2:
         sna "You are about to miss your own coronation, girl!"
         sna "(Not that I care...)"
 
-        call her_main("The coronation! I must go now!", "open", "wide", "worried", "stare")
+        call her_main("The coronation! I must go now!", "open", "wide", "worried", "L")
         call play_sound("running")
         pause 3
 
@@ -2239,7 +2239,7 @@ label ball_ending_E2:
         with hpunch
         with kissiris
 
-        call her_main("{size=+5}Ahh!!!{/size}", "open", "wide", "worried", "stare",cheeks="blush",tears="soft")
+        call her_main("{size=+5}Ahh!!!{/size}", "open", "wide", "worried", "L",cheeks="blush",tears="soft")
         g4 "Oh, yes!"
 
         call cg_scene("46")
@@ -2403,17 +2403,17 @@ label ball_ending_E2:
 
         ### INSERTION ###
 
-        call her_main("Ah...", "open", "wide", "worried", "stare",cheeks="blush",tears="soft", ypos="head")
+        call her_main("Ah...", "open", "wide", "worried", "L",cheeks="blush",tears="soft", ypos="head")
         call her_main("Sir, no. You must listen to me--", "open_tongue", "narrow", "worried", "mid_soft",cheeks="blush")
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
 
-        call her_main("{size=+7}!!!!!!!!!!!!!!!!!{/size}", "scream", "wide", "worried", "stare",cheeks="blush",tears="soft")
+        call her_main("{size=+7}!!!!!!!!!!!!!!!!!{/size}", "scream", "wide", "worried", "L",cheeks="blush",tears="soft")
         call her_main("My...{w} My...{w} My...")
         m "Shut it, girl! You are being loud."
         with hpunch
-        call her_main("{size=+7}My anus!!!!!!!!!!!!!{/size}", "scream", "wide", "worried", "stare",cheeks="blush",tears="soft")
+        call her_main("{size=+7}My anus!!!!!!!!!!!!!{/size}", "scream", "wide", "worried", "L",cheeks="blush",tears="soft")
         g4 "Dammit, girl. I said, be quiet."
 
         call cg_scene("63")
@@ -2666,7 +2666,7 @@ label ball_ending_E2:
         m "I wrote you a letter, so what?"
         call her_main("I think it's sweet.............", "base", "base", "worried", "mid", cheeks="blush",tears="mascara")
         g4 "I said, stop gawking at me girl. I thought you were late for your dance or something!"
-        call her_main("THE DANCE!", "open", "wide", "base", "stare",cheeks="blush",tears="mascara")
+        call her_main("THE DANCE!", "open", "wide", "base", "L",cheeks="blush",tears="mascara")
         call her_main("I'm sorry, I have to go!")
         call her_main("I will see you later, sir!")
 

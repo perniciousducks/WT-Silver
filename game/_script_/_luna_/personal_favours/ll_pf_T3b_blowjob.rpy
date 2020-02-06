@@ -1414,7 +1414,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG('sucking', 'seductive', 'angry', 'dick', pos=14, body='base')
     lun "*glck* *slrp* *glck*"
     $ lunCG(pos=8)
-    call her_main("Six times already? How long does she stay under there?", "disgust", "slit", "low", "stare")
+    call her_main("Six times already? How long does she stay under there?", "disgust", "slit", "low", "L")
     m "She'd live under there if she could..."
     $ lunCG('', '', '', 'ahegao', pos=13)
     lun "*glck* *slrp* *glck*"
@@ -1427,7 +1427,7 @@ label ll_pf_blowjob_T1_summon:
     $ lunCG('', 'angry', '', 'dick', pos=6)
     m "So you don't want to earn some points for your house?"
     $ lunCG(pos=14)
-    call her_main("I didn't say no... I just wanted to make sure you know how perverted this is!", "smile", "slit", "low", "stare")
+    call her_main("I didn't say no... I just wanted to make sure you know how perverted this is!", "smile", "slit", "low", "L")
     $ lunCG(pos=8)
     lun "*glck* *slrp* *glck*"
     $ lunCG('', 'wide', '', 'up', pos=12)

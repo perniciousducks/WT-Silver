@@ -56,7 +56,7 @@ label potion_scene_1_1_1:
 
     $ renpy.sound.play("sounds/sniff.mp3")
     call nar(">Hermione takes a whiff of the thick potion.")
-    call her_main("It smells disgusting. Like mud and wet dog fur.", "disgust", "slit", "low", "stare")
+    call her_main("It smells disgusting. Like mud and wet dog fur.", "disgust", "slit", "low", "L")
     call her_main("Do I really have to drink this?", "open", "base", "worried", "mid")
     m "You do. I suggest holding your nose if the smell is too much."
     call her_main("For Gryffindor.", "mad", "happyCl", "worried", "mid",tears="soft_blink")
@@ -72,7 +72,7 @@ label potion_scene_1_1_1:
     pause.5
     call her_chibi("stand","mid","base")
     pause.2
-    call her_main("Blehgh.", "disgust", "slit", "low", "stare")
+    call her_main("Blehgh.", "disgust", "slit", "low", "L")
     m "Well done."
 
     if "polyjuice" in her_potions_drunk:
@@ -125,7 +125,7 @@ label potion_scene_1_1_2:
     m "I didn't try and turn you into a cat [hermione_name]."
     call her_main("Then why do I have ears and a tail?", "scream", "closed", "angry", "mid")
     m "I have no idea. The potion I gave you was supposed to turn you into a different girl."
-    call her_main("What!? You didn't use polyjuice potion did you [genie_name]?", "shock", "wide", "base", "stare")
+    call her_main("What!? You didn't use polyjuice potion did you [genie_name]?", "shock", "wide", "base", "L")
     m "What's that?"
     call her_main("There's no point playing dumb [genie_name].", "annoyed", "narrow", "annoyed", "mid")
     call her_main("Well at least I know that it will wear off by morning.", "annoyed", "narrow", "angry", "R")
@@ -147,7 +147,7 @@ label potion_scene_1_1_2:
                 call her_main("Seventy-five points? How?", "annoyed", "squint", "base", "mid")
 
                 g9 "By sucking my cock, obviously."
-                call her_main("Right now? I look like a cat! Why would you ask me at a time like this?", "angry", "wide", "base", "stare")
+                call her_main("Right now? I look like a cat! Why would you ask me at a time like this?", "angry", "wide", "base", "L")
                 call her_main("You're not some sort of pervert who likes animals are you?", "angry", "base", "base", "mid")
                 m "Of course not, I just think that you have a very unique look at the moment and that it would be a shame not to do anything with it."
                 call her_main("Fine, just promise me you aren't going to do anything weird.", "upset", "closed", "base", "mid")
@@ -318,7 +318,7 @@ label potion_scene_1_1_2_alt:
         m "I didn't try and turn you into a cat [hermione_name]."
         call her_main("Then why do I have ears and a tail?", "scream", "closed", "angry", "mid")
         m "I have no idea. The potion I gave you was supposed to turn you into a different girl."
-        call her_main("What!? You didn't use polyjuice potion did you [genie_name]?", "shock", "wide", "base", "stare")
+        call her_main("What!? You didn't use polyjuice potion did you [genie_name]?", "shock", "wide", "base", "L")
         m "What's that?"
         call her_main("There's no point playing dumb [genie_name].", "annoyed", "narrow", "annoyed", "mid")
         call her_main("Well at least I know that it will wear off by morning.", "annoyed", "narrow", "angry", "R")
@@ -354,7 +354,7 @@ label potion_scene_1_1_2_alt:
         m "Well, the purring certainly made well up for that aspect."
         her "Okay then..."
     else:
-        call her_main("Like this? I look like a cat! Why would you ask me at a time like this?", "angry", "wide", "base", "stare")
+        call her_main("Like this? I look like a cat! Why would you ask me at a time like this?", "angry", "wide", "base", "L")
         call her_main("You're not some sort of pervert who likes animals are you?", "angry", "base", "base", "mid")
         m "Of course not, I just think that you have a very unique look at the moment and that it would be a shame not to do anything with it."
         call her_main("Fine, just promise me you aren't going to do anything weird.", "upset", "closed", "base", "mid")

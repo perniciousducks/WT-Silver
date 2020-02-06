@@ -254,7 +254,7 @@ label hg_pf_handjob_1:
     g9 "Nice..."
 
     if hg_pf_handjob.points == 0:
-        call her_main("!!!", "shock", "wide", "base", "stare")
+        call her_main("!!!", "shock", "wide", "base", "L")
         call her_main("Are you about to finish, [genie_name]?!")
         m "About to finish?"
         m "Don't be ridiculous [hermione_name], we are just getting started."
@@ -319,7 +319,7 @@ label hg_pf_handjob_1:
             call her_main("I crave cock all the time.")
             m "Very nice!"
             m "But, like I said, you don't have to be honest."
-            call her_main("What?", "shock", "wide", "base", "stare")
+            call her_main("What?", "shock", "wide", "base", "L")
             call her_main("[genie_name], those things I say are not true!", "upset", "wink", "base", "mid")
             g9 "Heh... I know. I'm just messing with you."
             call her_main("[genie_name]!", "disgust", "narrow", "base", "mid_soft")
@@ -371,7 +371,7 @@ label hg_pf_handjob_1:
             call her_main("Excuse me?", "angry", "base", "angry", "mid")
             m "You know, just a little kiss, right on the tip."
             call her_main(".............", "angry", "base", "angry", "mid")
-            call her_main("...with my lips?", "shock", "wide", "base", "stare")
+            call her_main("...with my lips?", "shock", "wide", "base", "L")
             m "Sure... That will speed things up, I'm telling you."
             call her_main("*sigh!*..............", "open", "narrow", "worried", "down")
             call her_main("Well, I might as well, I suppose...")
@@ -454,14 +454,14 @@ label hg_pf_handjob_1:
         m "..."
         "-Give her a warning-":
             g4 "Here it comes, [hermione_name]! You better be ready!"
-            call her_main("What? So soon?!", "shock", "wide", "base", "stare")
+            call her_main("What? So soon?!", "shock", "wide", "base", "L")
             g4 "{size=+5}Yeah, you did a great job!!!{/size}"
             g4 "{size=+5}You little whore!!!{/size}"
             call her_main("No, [genie_name], wait, I--", "angry", "base", "base", "mid")
             g4 "{size=+5}Too late for that, slut!{/size}"
             call her_main("*whimper*", "angry", "narrow", "base", "down")
             g4 "{size=+5}ARGH! YES!!!{/size}"
-            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "L")
 
             stop music fadeout 1.0
             call her_chibi_scene("hj_cum_in_done", trans=d5)
@@ -483,9 +483,9 @@ label hg_pf_handjob_1:
             call her_chibi_scene("hj_cum_in_done", trans=d5)
 
             $ aftersperm = True
-            call her_main(".......................", "angry", "wide", "base", "stare", xpos="right", ypos="base")
+            call her_main(".......................", "angry", "wide", "base", "L", xpos="right", ypos="base")
             m "..........................."
-            call her_main(".......................", "angry", "wide", "base", "stare")
+            call her_main(".......................", "angry", "wide", "base", "L")
             m "....................?"
             call her_main(".......................", "angry", "narrow", "base", "down")
             m "...What the fuck just happened?"
@@ -539,7 +539,7 @@ label hg_pf_handjob_1:
         "-Just start cumming-":
             with hpunch
             g4 "ARGH!"
-            call her_main("WHAT?!", "shock", "wide", "base", "stare")
+            call her_main("WHAT?!", "shock", "wide", "base", "L")
             g4 "Take this!"
 
             call cum_block
@@ -549,7 +549,7 @@ label hg_pf_handjob_1:
             call cum_block
             call bld
             g4 "{size=+5}ARGH! YES!!!{/size}"
-            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "L")
 
             call her_chibi_scene("hj_cum_on_done", trans=d5)
             call ctc
@@ -558,7 +558,7 @@ label hg_pf_handjob_1:
             # TODO: CUM LAYERS
             #
 
-            call her_main(".......................", "angry", "wide", "base", "stare", xpos="right", ypos="base")
+            call her_main(".......................", "angry", "wide", "base", "L", xpos="right", ypos="base")
             m "Yes... I Feel so much better now..."
             call hide_characters
             show screen blkfade
@@ -707,7 +707,7 @@ label hg_pf_handjob_2:
             m "About handjobs?"
             call her_main("Among other things...", "smile", "happyCl", "base", "mid", emote="06")
             m "So those girls of yours, they know a lot about such things?"
-            call her_main("Actually, yes. I was surprised myself.", "shock", "wide", "base", "stare")
+            call her_main("Actually, yes. I was surprised myself.", "shock", "wide", "base", "L")
             call her_main("All sorts of weird sexual things seem to be happening lately in our school...", "grin", "base", "base", "R")
             call her_main("Can't say I approve of that...")
             call her_main("But they did teach me quite a few... tricks.", "base", "happyCl", "base", "mid")
@@ -805,7 +805,7 @@ label hg_pf_handjob_2_continue:
             m "Right."
 
         "{size=-4}\"Sometimes I get lonely and let my dog mount me.\"{/size}":
-            call her_main("What?!", "angry", "wide", "base", "stare")
+            call her_main("What?!", "angry", "wide", "base", "L")
             call her_main("That's disgusting.", "annoyed", "squint", "base", "mid")
             call her_main("Dogs carry {size=+5}STD{/size}s, [genie_name].", "open", "closed", "base", "mid")
             m "Actually, human and canine {size=+5}STD{/size}s are species specific..."
@@ -921,7 +921,7 @@ label hg_pf_handjob_2_cumming:
             g4 "{size=+5}ARGH! YES!!!{/size}"
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare", ypos="head")
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "L", ypos="head")
             hide screen bld1
             call ctc
 
@@ -1000,14 +1000,14 @@ label hg_pf_handjob_2_cumming:
             pause.8
             g4 "ARGH!"
 
-            call her_main("WHAT?!", "shock", "wide", "base", "stare", ypos="head")
+            call her_main("WHAT?!", "shock", "wide", "base", "L", ypos="head")
             g4 "Take this!"
 
             call cum_block
             g4 "{size=+5}ARGH! YES!!!{/size}"
 
             call play_music("chipper_doodle") # HERMIONE'S THEME.
-            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "stare")
+            call her_main("!!!!!!!!!!!", "shock", "wide", "base", "L")
             hide screen bld1
             call ctc
 
@@ -1015,7 +1015,7 @@ label hg_pf_handjob_2_cumming:
             # TODO: CUM LAYERS
             #
 
-            call her_main(".......................", "angry", "wide", "base", "stare")
+            call her_main(".......................", "angry", "wide", "base", "L")
 
             call her_chibi_scene("hj_cum_on_done", trans=d5)
             pause.8
@@ -1058,7 +1058,7 @@ label hg_pf_handjob_2_cumming:
         "\"(Cum in her mouth!)\"" if hg_blowjob.trigger == True: # Has done blowjobs already.
             call bld
             m "Open your mouth, [hermione_name]!"
-            call her_main("What?!", "open", "wide", "base", "stare", ypos="head")
+            call her_main("What?!", "open", "wide", "base", "L", ypos="head")
             if hermione.is_worn("top"):
                 g4 "Open your mouth, or I'll have to cover your clothes!"
             else:
@@ -1073,7 +1073,7 @@ label hg_pf_handjob_2_cumming:
 
             call cum_block
             g4 "{size=+5}ARGH! YES!!!{/size}"
-            call her_main("*Gulp!-Gulp!-Gulp!*", "full", "wide", "base", "stare")
+            call her_main("*Gulp!-Gulp!-Gulp!*", "full", "wide", "base", "L")
 
             call cum_block
             g4 "Argh! You little whore!"

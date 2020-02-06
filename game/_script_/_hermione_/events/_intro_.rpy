@@ -248,7 +248,7 @@ label hermione_intro_E1:
         with d3
         pause 3
 
-        call her_main("Professor?! What is going on...?", "angry", "wide", "base", "stare")
+        call her_main("Professor?! What is going on...?", "angry", "wide", "base", "L")
 
         g4 "Ah... YESSSSS.....!"
         her "???"
@@ -883,7 +883,7 @@ label hermione_intro_E5:
                         call her_main("Please, sir. I really need your help.", "angry", "base", "worried", "mid")
                         menu:
                             "\"Show me your tits and it's a deal!\"":
-                                call her_main("m-my...?", "angry", "wide", "base", "stare")
+                                call her_main("m-my...?", "angry", "wide", "base", "L")
                                 call her_main("............", "annoyed", "base", "worried", "R")
                                 her "....."
                                 with hpunch
@@ -1149,7 +1149,7 @@ label hermione_intro_E6:
                 call her_main("............", "soft", "base", "base", "R",cheeks="blush")
                 call her_main("Thank you, professor Dumbledore...", "open", "base", "base", "R",cheeks="blush")
             "\"You have a nice body, miss Granger...\"":
-                call her_main("!!?", "soft", "wide", "base", "stare")
+                call her_main("!!?", "soft", "wide", "base", "L")
                 call her_main("..............", "annoyed", "narrow", "angry", "R",cheeks="blush")
                 call her_main("Thank you, professor...")
             "\"That's enough. Here are your points...\"":
@@ -1182,7 +1182,7 @@ label hermione_intro_E6:
                 pass
 
         call her_main(".........", "annoyed", "narrow", "angry", "R")
-        call her_main("What about this one then?", "disgust", "slit", "low", "stare")
+        call her_main("What about this one then?", "disgust", "slit", "low", "L")
 
         menu:
             "\"Ha-ha! You look like an idiot!\"":
@@ -1228,7 +1228,7 @@ label hermione_intro_E6:
                 m "Alrighty, then..."
             "\"Do you want to get spanked?\"":
                 call her_main("Do I want to...", "open", "base", "worried", "mid")
-                call her_main("Get s-spanked??", "angry", "wide", "base", "stare")
+                call her_main("Get s-spanked??", "angry", "wide", "base", "L")
                 call her_main("Tsk!", "angry", "base", "angry", "mid")
                 call her_main("Professor, I don't think I'm comfortable with--", "open", "closed", "angry", "mid")
                 m "Apologies, let me rephrase the question..."

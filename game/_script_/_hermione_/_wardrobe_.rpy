@@ -64,6 +64,7 @@ default her_top_school3 = DollCloth("hermione", ("tops", "school"), "top", "top_
 default her_top_school4 = DollCloth("hermione", ("tops", "school"), "top", "top_school_4", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
 default her_top_school5 = DollCloth("hermione", ("tops", "school"), "top", "top_school_5", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
 default her_top_school6 = DollCloth("hermione", ("tops", "school"), "top", "top_school_6", [[109, 105, 121, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
+default her_top_school7 = DollCloth("hermione", ("tops", "school"), "top", "top_school_7", [[183, 183, 184, 255], [167, 77, 42, 255], [237, 179, 14, 255]])
 default her_bottom_school1 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_1", [[103, 90, 108, 255], [232, 177, 13, 255]])
 default her_bottom_school2 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_2", [[103, 90, 108, 255], [232, 177, 13, 255]])
 default her_bottom_school3 = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "school_skirt_3", [[103, 90, 108, 255], [232, 177, 13, 255]])

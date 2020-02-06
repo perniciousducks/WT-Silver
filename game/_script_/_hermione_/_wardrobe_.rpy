@@ -168,3 +168,13 @@ default her_neckwear_yen_choker1 = DollCloth("hermione", ("head", "neckwear"), "
 default her_gloves_yen1 = DollCloth("hermione", ("misc", "gloves"), "gloves", "yen_gloves", [[52, 37, 31, 255]], zorder=16)
 
 default her_outfit_yennefer = DollOutfit([her_hair_base, her_top_yen1, her_bottom_yen_skirt1, her_accessory_yen_sash1, her_stockings_yen1, her_accessory_yen_feathers1, her_accessory_yen_scarf1, her_neckwear_yen_choker1, her_gloves_yen1, her_accessory_yen_corset1, her_accessory_yen_belt1], price=250)
+
+#######################
+## Pizza Slut Outfit ##
+#######################
+
+default her_bottom_pizza = DollCloth("hermione", ("bottoms", "skirts"), "bottom", "pizza_slut", [[180, 50, 10, 255], [235, 199, 44, 255]])
+default her_top_pizza = DollCloth("hermione", ("tops", "school"), "top", "pizza_slut", [[180, 50, 10, 255]])
+default her_panties_pizza = DollCloth("hermione", ("panties", "panties"), "panties", "pizza_slut", [[180, 50, 10, 255]])
+
+default her_outfit_pizza = DollOutfit([her_hair_base, her_bottom_pizza, her_top_pizza, her_panties_pizza])

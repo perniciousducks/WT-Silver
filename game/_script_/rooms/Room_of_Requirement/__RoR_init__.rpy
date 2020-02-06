@@ -97,16 +97,15 @@ default mr_ev_PR = MirrorStory(
     content_characters = ["hermione"]
 )
 
-# WIP
-# default mr_ev_CM = MirrorStory(
-#     name = "Class Masturbation",
-#     story_description = "Genie asks Hermione to go out and masturbate in her classes",
-#     start_label = "class_masturbation_event",
-#     authors = ["WaxerRed"],
-#     categories= [],
-#     ach_desc = "",
-#     content_characters = ["hermione"]
-# )
+default mr_ev_EFP = MirrorStory(
+    name = "Eating for pleasure",
+    story_description = "You get hungry and decide to get something to eat.",
+    start_label = "eating_for_pleasure",
+    authors = ["TeamSilver"],
+    categories= ["Food fetish", "Call girl", "Parody"],
+    ach_desc = "",
+    content_characters = ["hermione"]
+)
 
 default mr_evs_list = [
     mr_ev_PaH,
@@ -116,11 +115,10 @@ default mr_evs_list = [
     mr_ev_ABTTD,
     mr_ev_ASOC,
     mr_ev_ABAS,
-    #mr_ev_ADR, # Out of commission
     mr_ev_PR,
-    mr_ev_AOC
-    # mr_ev_CM
-]
+    mr_ev_AOC,
+    mr_ev_EFP
+    ]
 
 default current_page = 0
 

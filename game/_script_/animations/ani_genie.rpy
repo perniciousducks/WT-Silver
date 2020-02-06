@@ -9,6 +9,9 @@ image ch_gen stand_alt:
     
 image ch_gen stand_shocked:
     "characters/genie/chibis/shocked/01.png"
+    
+image ch_gen sneeze:
+    "characters/genie/chibis/sneeze.png"
 
 image ch_gen walk:
     "characters/genie/chibis/walk_01.png"
@@ -444,3 +447,16 @@ image ch_gen petting:
     "characters/genie/chibis/petting/petting_01.png"
     pause 3
     repeat
+    
+image ch_gen grab_low: # Used in pizza mirror event
+    xzoom -1 # Flip fix
+    offset (20, 58) # pos fix
+    "characters/genie/chibis/grab/grab_01.png"
+    pause.5
+    "characters/genie/chibis/grab/grab_02.png"
+    pause.1
+    "characters/genie/chibis/grab/grab_03.png"
+    pause.7
+    "characters/genie/chibis/grab/grab_02.png"
+    pause.1
+    "characters/genie/chibis/grab/grab_01.png"

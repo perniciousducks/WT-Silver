@@ -59,6 +59,7 @@ init python:
     g13 = Character("", show_side_image=Image("characters/genie/mage13.png", xpos=20))
     g14 = Character("", show_side_image=Image("characters/genie/mage14.png", xpos=20))
     g15 = Character("", show_side_image=Image("characters/genie/mage15.png", xpos=20))
+    g16 = Character("", show_side_image=Image("characters/genie/mage16.png", xpos=20))
 
     # Dumbledore
     dum_ = [""]

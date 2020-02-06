@@ -81,26 +81,27 @@ label open_puzzle_box:
     hide screen chair_right
     call gen_chibi("read")
     with d3
-    m "My dear phoenix has been losing his feathers lately, I think it's time soon..... "
+    m "\"My dear phoenix has been losing his feathers lately, I think it's time soon.....\" "
     m "(Time for what?)"
-    m "That Potter boy is mighty cute, looks just like his father.... "
+    m "\"That Potter boy is mighty cute, looks just like his father....\" "
     g9 "(Well, well....)"
-    m "Severus gave me a weird look today, I wonder what he thinks about my......"
+    m "\"Severus gave me a weird look today, I wonder what he thinks about my......\""
     g4 "(This is all trash...)"
     m "(Wait a minute.... this seems interesting.)"
-    m "I was walking around in the seventh floor corridor looking for a bathroom..."
-    m "Whilst searching, a room that I had never seen before appeared, filled with chamber pots... But when I returned later, it was gone."
+    m "\"I was walking around in the seventh floor corridor looking for a bathroom...\""
+    m "\"Whilst searching, a room that I had never seen before appeared, filled with chamber pots... But when I returned later, it was gone.\""
     m "(I've seen enough magic to know where this is going... I should investigate that corridor on the seventh floor.)"
-    show screen chair_right
-    call gen_chibi("sit_behind_desk")
-    with d3
-    call give_reward("You've unlocked something on the 7th floor, check your map to get there.","/interface/icons/head/head_genie_question_mark.png")
+    call give_reward("You've unlocked something on the 7th floor, check your map to get there.","/images/rooms/room_of_requirement/mirror.png")
     $ unlocked_7th = True
     call update_quest_items
     if deck_unlocked:
         m "What's this?"
         call give_reward("You have found a card on the bottom of the box!", "images/cardgame/t1/other/elf_v1.png")
     $ unlocked_cards += [card_item_elf]
+    
+    show screen chair_right
+    call gen_chibi("sit_behind_desk")
+    with d3
     jump main_room
 
 screen puzzle_board():

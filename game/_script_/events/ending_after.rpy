@@ -12,10 +12,10 @@ label ending_after:
     centered "{size=+7}{color=#cbcbcb}Somewhere outside of time and space...{/color}{/size}\n\n"
     play music "music/epic-unease-by-kevin-macleod.mp3" fadein 1 fadeout 1 # noloop
     pause 3
-    g2 "Where... where am I...?" with d5
-    g2 "Am I dead... is this the end...?"
+    g2 "Where...{w=0.4} where am I...?" with d5
+    g2 "Am I dead...{w=0.4} is this the end...?"
     g2 "Genies aren't supposed to die are they?"
-    g12 "No wait...{w=0.4} this is different...{w=0.4} I feel..."
+    g12 "No wait...{w=0.4} this is different...{w=0.4} what is this feeling..."
     g12 "I feel..."
     show screen white
     pause .1
@@ -28,16 +28,20 @@ label ending_after:
     show screen white
     pause .1
     hide screen white
+    $ renpy.sound.play("sounds/thunder_2.mp3")
+    play bg_sounds "sounds/pulse.mp3"
     g15 "ARGH!" with hpunch
-    g15 "I... I feel like I'm being torn apart!"
     g15 "My form is being pulled in multiple directions!"
+    g15 "If I don't get out of here I'll get torn apart!"
+    stop bg_sounds fadeout 4
     show screen white
     pause .1
     hide screen white
-    g14 "Wait...{w=0.4} I know..." with d3
-    g14 "This...{w=0.6} this spell!"
+    g14 "Wait...{w=0.8} I know..." with d3
+    g14 "This...{w=0.6} it must be my magic!"
     g14 "I need to focus where I want to be... Or I'll be stuck... stuck here forever!"
     g14 "Stupid...{w=0.4} life choices!"
+    play bg_sounds "sounds/pulse.mp3"
     g14 "Focus..."
     g14 "I just left a bunch of Sluts at that school!"
     g14 "But...{w=0.6} I need to get home!"
@@ -50,8 +54,10 @@ label ending_after:
             show screen white
             pause .1
             hide screen white
+            $ renpy.sound.play("sounds/thunder_2.mp3")
             g15 "Agrabah... here I come! You better prepare yourself..." with hpunch
 
+            stop bg_sounds fadeout 4
             stop music fadeout 10
             call big_bang
 
@@ -63,9 +69,11 @@ label ending_after:
             show screen white
             pause .1
             hide screen white
+            $ renpy.sound.play("sounds/thunder_2.mp3")
             g15 "A good old time paradox!" with hpunch
             g15 "It better be worth it... Here I go!"
 
+            stop bg_sounds fadeout 4
             stop music fadeout 10
             call big_bang
 
@@ -219,7 +227,7 @@ label ending_after:
                 call play_music("ball") #How do I add fade in to this?/can we make the music a bit lower since they're outside the doors
                 ">Arriving at the great hall you decide to take a quick glance through the doors before heading back to your office."
                 ">Hermione is currently occupied looking out one of the windows and doesn't notice your presence."
-                ">You look over at the teachers table and lock eyes with Snape who stands up and quickly slides towards you."
+                ">You glance over at the teachers table and lock eyes with Snape who hastily stands up and quickly slides towards you."
                 call sna_main("Good evening sir...{w=0.5} I...{w=0.8} I didn't expect you so soon.","snape_29",ypos="head")
                 m "Hello again Severus."
                 m "I have returned..."
@@ -254,32 +262,32 @@ label ending_after:
                 m "Okay then..."
                 m "In that case I'll head back to my office."
 
-                ">As Snape heads back towards the teachers table, Hermione notices your presence and quickly starts heading in your direction."
-                ">Before you can even attemp to slip into the shadows again, she's already come through the doorway with one of her arms held out in front of her."
-                her "Care for a dance?" # smiles
-                m "I...{w=0.4}Oh, what the hell... why not."
-                her "..." # smiles
-                ">With your arms wrapped around Hermione's waist the two of you begin moving along with the music."
+                ">As Snape slides back towards the teachers table, Hermione notices your presence and quickly starts walking towards you."
+                ">Before you can even attempt to slip into the shadows again, she's already come through the doorway with one of her arms held out in front of her."
+                call her_main("Care for a dance?", "base", "base", "base", "mid", xpos="base", ypos="head") # smiles
+                m "I...{w=0.4} Oh, what the hell... why not."
+                call her_main("...", "base", "narrow", "base", "down", cheeks="blush", xpos="base", ypos="head") # smiles
+                ">With your arms wrapped around Hermione's waist, the two of you begin moving along with the music."
                 ">After some time passes you can't help but look down on Hermione's butt sticking out below your hands."
                 m "Miss Granger..."
-                her "Yes?"
+                call her_main("Yes?", "base", "base", "base", "L", cheeks="blush", xpos="base", ypos="head")
                 ">Hands now wandering down towards Hermione's butt she smiles and tightens her grip around you."
                 ">Gently resting your hands against her cheeks you return to slowly moving along with the music."
-                her "Sir..." #same thing as earlier here, get hermione to use the name you've set and genie to do the same
+                her "Sir..."
                 m "Yes Miss Granger?"
                 her "Could..."
                 her "Why can't this moment go on forever?"
                 m "We both know that everything has to come to an end..."
-                m "But hopefully I've been able to teach you to cherish every moment."
+                m "But hopefully I've been able to teach you how to cherish every moment."
                 ">Hermione tightens her arms even more as you continue the dance in silence."
-                ">After a while her grip loosens slightly as she shifts her head to look up at you."
+                ">After a while, her grip loosens slightly as she shifts her head to look up at you."
                 her "I..."
                 her "I just wanted to say that...{w=0.5} I'm glad I have you."
                 m "Where's this suddenly coming from Miss Granger?"
                 her "I don't know... it's just..."
                 her "I couldn't help having this bad feeling in my stomach the entire day."
-                her "And it's stayed there up until now...{w} Now it's finally feeling as if the pain has started to go away..."
-                ">Not knowing how to respond you stand there in silence for a moment until Hermione pulls you towards her and you both begin moving along with the music once more."
+                her "It's stayed there up until now...{w} But now it's finally feeling as if the pain has started to go away..."
+                ">Not knowing how to respond, you stand there in silence for a moment until Hermione pulls you towards her and you both begin moving along with the music once more."
                 ">After what only feels like seconds the music comes to a close and Hermione takes a step back to look up at you."
                 m "You look tired girl, you'd better head off to bed...{w=0.4} there's always tomorrow."
                 her "Oh, yes... I suppose so..."
